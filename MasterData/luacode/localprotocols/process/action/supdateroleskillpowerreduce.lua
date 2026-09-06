@@ -1,11 +1,6 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/localprotocols/process/action/supdateroleskillpowerreduce.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local SUpdateRoleSkillPowerReduce = require("localprotocols.def.action.supdateroleskillpowerreduce")
-SUpdateRoleSkillPowerReduce.Process = function(self, controller)
-  -- function num : 0_0 , upvalues : _ENV
+
+function SUpdateRoleSkillPowerReduce:Process(controller)
   if LocalProtocolDebug then
     LogInfo("LocalProtocol", "SUpdateRoleSkillPowerReduce Process")
   end
@@ -15,4 +10,3 @@ SUpdateRoleSkillPowerReduce.Process = function(self, controller)
 end
 
 return SUpdateRoleSkillPowerReduce
-

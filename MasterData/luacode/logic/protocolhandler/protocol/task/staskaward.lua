@@ -1,22 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/protocolhandler/protocol/task/staskaward.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local p1 = function(protocol)
-  -- function num : 0_0 , upvalues : _ENV
-  ((NekoData.DataManager).DM_Task):OnSTaskAward(protocol)
-  local list = {items = protocol.itemList}
+local function p1(protocol)
+  NekoData.DataManager.DM_Task:OnSTaskAward(protocol)
+  
+  local list = {
+    items = protocol.itemList
+  }
   if protocol.gold ~= 0 then
-    (table.insert)(list.items, 1, {id = DataCommon.ManaID, number = protocol.gold, itemtype = 1})
+    table.insert(list.items, 1, {
+      id = DataCommon.ManaID,
+      number = protocol.gold,
+      itemtype = 1
+    })
   end
-  ;
-  ((NekoData.DataManager).DM_ItemAccountShow):AddShowDialogData({tag = (DataCommon.ShowDialogType).ItemAccount, data = list})
+  NekoData.DataManager.DM_ItemAccountShow:AddShowDialogData({
+    tag = DataCommon.ShowDialogType.ItemAccount,
+    data = list
+  })
 end
 
-local p2 = function(protocol, client)
-  -- function num : 0_1
+local function p2(protocol, client)
 end
 
 return {p1, p2}
-

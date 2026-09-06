@@ -1,38 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/def/protocol/user/cchoosebackground.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local CChooseBackground = dataclass("CChooseBackground", require("framework.net.protocol"))
 CChooseBackground.ProtocolType = 2271
 CChooseBackground.MaxSize = 65535
 CChooseBackground.roleId = 0
 CChooseBackground.skin = 0
-CChooseBackground.Ctor = function(self, client)
-  -- function num : 0_0 , upvalues : CChooseBackground
-  ((CChooseBackground.super).Ctor)(self, client)
+
+function CChooseBackground:Ctor(client)
+  CChooseBackground.super.Ctor(self, client)
 end
 
-CChooseBackground.Marshal = function(self, buffer)
-  -- function num : 0_1 , upvalues : ProtocolBufferStaticFunctions
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.roleId) then
+function CChooseBackground:Marshal(buffer)
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.roleId) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.skin) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.skin) then
     return false
   end
   return true
 end
 
-CChooseBackground.Unmarshal = function(self, buffer)
-  -- function num : 0_2 , upvalues : ProtocolBufferStaticFunctions
+function CChooseBackground:Unmarshal(buffer)
   local ret = true
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.roleId = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.skin = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
@@ -40,4 +33,3 @@ CChooseBackground.Unmarshal = function(self, buffer)
 end
 
 return CChooseBackground
-

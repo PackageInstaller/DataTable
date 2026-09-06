@@ -1,30 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/def/protocol/yard/csynchronizationcaverntask.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local CSynchronizationCavernTask = dataclass("CSynchronizationCavernTask", require("framework.net.protocol"))
 CSynchronizationCavernTask.ProtocolType = 2326
 CSynchronizationCavernTask.MaxSize = 65535
 CSynchronizationCavernTask.id = 0
-CSynchronizationCavernTask.Ctor = function(self, client)
-  -- function num : 0_0 , upvalues : CSynchronizationCavernTask
-  ((CSynchronizationCavernTask.super).Ctor)(self, client)
+
+function CSynchronizationCavernTask:Ctor(client)
+  CSynchronizationCavernTask.super.Ctor(self, client)
 end
 
-CSynchronizationCavernTask.Marshal = function(self, buffer)
-  -- function num : 0_1 , upvalues : ProtocolBufferStaticFunctions
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.id) then
+function CSynchronizationCavernTask:Marshal(buffer)
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.id) then
     return false
   end
   return true
 end
 
-CSynchronizationCavernTask.Unmarshal = function(self, buffer)
-  -- function num : 0_2 , upvalues : ProtocolBufferStaticFunctions
+function CSynchronizationCavernTask:Unmarshal(buffer)
   local ret = true
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.id = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
@@ -32,4 +25,3 @@ CSynchronizationCavernTask.Unmarshal = function(self, buffer)
 end
 
 return CSynchronizationCavernTask
-

@@ -1,72 +1,53 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/scene/types/buff/scenebuff.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local SceneBuff = class("Buff")
-local cdungeonbuffconfig = (BeanManager.GetTableByName)("sceneinteractive.cdungeonbuffconfig")
-SceneBuff.Ctor = function(self, id)
-  -- function num : 0_0 , upvalues : cdungeonbuffconfig
+local cdungeonbuffconfig = BeanManager.GetTableByName("sceneinteractive.cdungeonbuffconfig")
+
+function SceneBuff:Ctor(id)
   self._id = id
   self._state = 0
   self._cfg = cdungeonbuffconfig:GetRecorder(id)
 end
 
-SceneBuff.Destroy = function(self)
-  -- function num : 0_1
+function SceneBuff:Destroy()
 end
 
-SceneBuff.Activate = function(self)
-  -- function num : 0_2
+function SceneBuff:Activate()
 end
 
-SceneBuff.Deactivate = function(self)
-  -- function num : 0_3
+function SceneBuff:Deactivate()
 end
 
-SceneBuff.GetID = function(self)
-  -- function num : 0_4
+function SceneBuff:GetID()
   return self._id
 end
 
-SceneBuff.GetType = function(self)
-  -- function num : 0_5
-  return (self._cfg).typeID
+function SceneBuff:GetType()
+  return self._cfg.typeID
 end
 
-SceneBuff.GetState = function(self)
-  -- function num : 0_6
+function SceneBuff:GetState()
   return self._state
 end
 
-SceneBuff.ToState = function(self, state)
-  -- function num : 0_7
+function SceneBuff:ToState(state)
   self._state = state
 end
 
-SceneBuff.GetDurationTime = function(self)
-  -- function num : 0_8
+function SceneBuff:GetDurationTime()
 end
 
-SceneBuff.GetRespawnTime = function(self)
-  -- function num : 0_9
+function SceneBuff:GetRespawnTime()
 end
 
-SceneBuff.OnActive = function(self)
-  -- function num : 0_10
+function SceneBuff:OnActive()
 end
 
-SceneBuff.OnInactivate = function(self)
-  -- function num : 0_11
+function SceneBuff:OnInactivate()
 end
 
-SceneBuff.OnRespawn = function(self)
-  -- function num : 0_12
+function SceneBuff:OnRespawn()
 end
 
-SceneBuff.OnUpdate = function(self, delta)
-  -- function num : 0_13
+function SceneBuff:OnUpdate(delta)
 end
 
 return SceneBuff
-

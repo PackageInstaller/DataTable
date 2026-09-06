@@ -1,71 +1,53 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/dialog/login/loginphonedialog.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local GridFrame = require("framework.ui.frame.grid.gridframe")
 local LoginPhoneDialog = class("LoginPhoneDialog", Dialog)
 LoginPhoneDialog.AssetBundleName = "ui/layouts.login"
 LoginPhoneDialog.AssetName = "LoginDialogPhone"
 local columnNums = 6
-LoginPhoneDialog.Ctor = function(self, ...)
-  -- function num : 0_0 , upvalues : LoginPhoneDialog
-  ((LoginPhoneDialog.super).Ctor)(self, ...)
+
+function LoginPhoneDialog:Ctor(...)
+  LoginPhoneDialog.super.Ctor(self, ...)
   self._groupName = "Modal"
 end
 
-LoginPhoneDialog.OnCreate = function(self)
-  -- function num : 0_1 , upvalues : _ENV, columnNums, GridFrame
+function LoginPhoneDialog:OnCreate()
   self._panel = self:GetChild("Frame")
-  ;
-  (UIBackManager.SetUIBackShow)(true)
-  ;
-  (UIBackManager.SetUIModalBackColor)(1)
+  UIBackManager.SetUIBackShow(true)
+  UIBackManager.SetUIModalBackColor(1)
   self._data = client_server_list
   local canSlide = true
   if #self._data <= columnNums * 2 then
     canSlide = false
   end
-  self._frame = (GridFrame.Create)(self._panel, self, true, columnNums, canSlide)
-  ;
-  (self._frame):ReloadAllCell()
+  self._frame = GridFrame.Create(self._panel, self, true, columnNums, canSlide)
+  self._frame:ReloadAllCell()
 end
 
-LoginPhoneDialog.OnDestroy = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function LoginPhoneDialog:OnDestroy()
   if self._frame then
-    (self._frame):Destroy()
+    self._frame:Destroy()
   end
-  ;
-  (UIBackManager.SetUIBackShow)(false)
+  UIBackManager.SetUIBackShow(false)
 end
 
-LoginPhoneDialog.Init = function(self, delegate)
-  -- function num : 0_3
+function LoginPhoneDialog:Init(delegate)
   self._delegate = delegate
 end
 
-LoginPhoneDialog.NumberOfCell = function(self, frame)
-  -- function num : 0_4
+function LoginPhoneDialog:NumberOfCell(frame)
   return #self._data
 end
 
-LoginPhoneDialog.CellAtIndex = function(self, frame)
-  -- function num : 0_5
+function LoginPhoneDialog:CellAtIndex(frame)
   return "login.logindialogcell"
 end
 
-LoginPhoneDialog.DataAtIndex = function(self, frame, index)
-  -- function num : 0_6
-  return (self._data)[index]
+function LoginPhoneDialog:DataAtIndex(frame, index)
+  return self._data[index]
 end
 
-LoginPhoneDialog.OnCellClicked = function(self, data)
-  -- function num : 0_7
+function LoginPhoneDialog:OnCellClicked(data)
   self:Destroy()
-  ;
-  (self._delegate):OnServerCellClicked(data)
+  self._delegate:OnServerCellClicked(data)
 end
 
 return LoginPhoneDialog
-

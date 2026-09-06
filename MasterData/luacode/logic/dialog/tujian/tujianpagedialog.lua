@@ -1,18 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/dialog/tujian/tujianpagedialog.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local GridFrame = require("framework.ui.frame.grid.gridframe")
-local CRoleConfigTable = (BeanManager.GetTableByName)("role.roleconfig")
-local CVocationCfgTable = (BeanManager.GetTableByName)("role.cvocationcfg")
-local CHandbookConditionsTable = (BeanManager.GetTableByName)("handbook.cscreeningconditions_handbook")
+local CRoleConfigTable = BeanManager.GetTableByName("role.roleconfig")
+local CVocationCfgTable = BeanManager.GetTableByName("role.cvocationcfg")
+local CHandbookConditionsTable = BeanManager.GetTableByName("handbook.cscreeningconditions_handbook")
 local TuJianPageDialog = class("TuJianPageDialog", Dialog)
 TuJianPageDialog.AssetBundleName = "ui/layouts.tujian"
 TuJianPageDialog.AssetName = "TuJianPage"
-TuJianPageDialog.Ctor = function(self, ...)
-  -- function num : 0_0 , upvalues : TuJianPageDialog
-  ((TuJianPageDialog.super).Ctor)(self, ...)
+
+function TuJianPageDialog:Ctor(...)
+  TuJianPageDialog.super.Ctor(self, ...)
   self._groupName = "Modal"
   self._data = {}
   self._filterList = {}
@@ -21,8 +16,7 @@ TuJianPageDialog.Ctor = function(self, ...)
   self._nameIdList2 = {}
 end
 
-TuJianPageDialog.OnCreate = function(self)
-  -- function num : 0_1 , upvalues : GridFrame, CRoleConfigTable, _ENV
+function TuJianPageDialog:OnCreate()
   self._btn1 = self:GetChild("GroupButtons/GroupButton1")
   self._btn2 = self:GetChild("GroupButtons/GroupButton2")
   self._btn3 = self:GetChild("GroupButtons/GroupButton3")
@@ -31,125 +25,93 @@ TuJianPageDialog.OnCreate = function(self)
   self._num1 = self:GetChild("Txt1/Num")
   self._num2 = self:GetChild("Txt2/Num")
   self._cellFrame = self:GetChild("CellFrame")
-  self._frame = (GridFrame.Create)(self._cellFrame, self, true, 3)
+  self._frame = GridFrame.Create(self._cellFrame, self, true, 3)
   self._allIdListExcludeMaterial = CRoleConfigTable:GetAllIds()
-  ;
-  (self._filterBtn):Subscribe_PointerClickEvent(self.OnFilterBtnClick, self)
+  self._filterBtn:Subscribe_PointerClickEvent(self.OnFilterBtnClick, self)
   self:LoadLocalData()
-  ;
-  (self._frame):ReloadAllCell()
-  ;
-  (self._num1):SetText(#((NekoData.BehaviorManager).BM_Game):GetTuJianList())
-  ;
-  (self._num2):SetText(#self._allIdListExcludeMaterial)
+  self._frame:ReloadAllCell()
+  self._num1:SetText(#NekoData.BehaviorManager.BM_Game:GetTuJianList())
+  self._num2:SetText(#self._allIdListExcludeMaterial)
 end
 
-TuJianPageDialog.OnDestroy = function(self)
-  -- function num : 0_2
-  (self._frame):Destroy()
+function TuJianPageDialog:OnDestroy()
+  self._frame:Destroy()
 end
 
-TuJianPageDialog.LoadLocalData = function(self)
-  -- function num : 0_3 , upvalues : _ENV, CHandbookConditionsTable
+function TuJianPageDialog:LoadLocalData()
   local all = self._allIdListExcludeMaterial
-  ;
-  (table.sort)(all, function(a, b)
-    -- function num : 0_3_0
-    do return a < b end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  local own = ((NekoData.BehaviorManager).BM_Game):GetTuJianList()
-  for _,v in pairs(all) do
+  table.sort(all, function(a, b)
+    return a < b
+  end)
+  local own = NekoData.BehaviorManager.BM_Game:GetTuJianList()
+  for _, v in pairs(all) do
     local data = {}
     data.id = v
     data.own = false
-    for _,u in pairs(own) do
+    for _, u in pairs(own) do
       if v == u.id then
         data.own = true
         break
       end
     end
-    do
-      do
-        ;
-        (table.insert)(self._data, data)
-        -- DECOMPILER ERROR at PC34: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
-    end
+    table.insert(self._data, data)
   end
-  for _,v in pairs(CHandbookConditionsTable:GetAllIds()) do
+  for _, v in pairs(CHandbookConditionsTable:GetAllIds()) do
     local data = CHandbookConditionsTable:GetRecorder(v)
     if data.index == 1 then
-      (table.insert)(self._nameIdList1, data.nameid)
-    else
-      if data.index == 2 then
-        (table.insert)(self._nameIdList2, data.nameid)
-      end
+      table.insert(self._nameIdList1, data.nameid)
+    elseif data.index == 2 then
+      table.insert(self._nameIdList2, data.nameid)
     end
   end
 end
 
-TuJianPageDialog.OnFilter = function(self, list1, list2)
-  -- function num : 0_4 , upvalues : _ENV, CRoleConfigTable, CVocationCfgTable
+function TuJianPageDialog:OnFilter(list1, list2)
   self._nameIdList1 = list1
   self._nameIdList2 = list2
   self._filterList = self._data
-  if #list1 > 0 then
+  if 0 < #list1 then
     self._filterList = {}
-    for _,v in pairs(self._data) do
-      local rarity = (CRoleConfigTable:GetRecorder(v.id)).rarity
-      for _,u in pairs(list1) do
+    for _, v in pairs(self._data) do
+      local rarity = CRoleConfigTable:GetRecorder(v.id).rarity
+      for _, u in pairs(list1) do
         if u == 21 and rarity == 1 then
-          (table.insert)(self._filterList, v)
+          table.insert(self._filterList, v)
           break
-        else
-          if u == 22 and rarity == 2 then
-            (table.insert)(self._filterList, v)
-            break
-          else
-            if u == 23 and rarity == 3 then
-              (table.insert)(self._filterList, v)
-              break
-            else
-              if u == 27 and rarity == 4 then
-                (table.insert)(self._filterList, v)
-                break
-              end
-            end
-          end
+        elseif u == 22 and rarity == 2 then
+          table.insert(self._filterList, v)
+          break
+        elseif u == 23 and rarity == 3 then
+          table.insert(self._filterList, v)
+          break
+        elseif u == 27 and rarity == 4 then
+          table.insert(self._filterList, v)
+          break
         end
       end
     end
   end
-  do
-    local list = self._filterList
-    if #list2 > 0 then
-      self._filterList = {}
-      for _,v in pairs(list) do
-        local nameId = (CVocationCfgTable:GetRecorder((CRoleConfigTable:GetRecorder(v.id)).vocation)).nameid
-        for _,u in pairs(list2) do
-          if u == nameId then
-            (table.insert)(self._filterList, v)
-            break
-          end
+  local list = self._filterList
+  if 0 < #list2 then
+    self._filterList = {}
+    for _, v in pairs(list) do
+      local nameId = CVocationCfgTable:GetRecorder(CRoleConfigTable:GetRecorder(v.id).vocation).nameid
+      for _, u in pairs(list2) do
+        if u == nameId then
+          table.insert(self._filterList, v)
+          break
         end
       end
     end
-    do
-      if #list1 == 0 or #list2 == 0 then
-        self._filterList = {}
-      end
-      self._filter = true
-      ;
-      (self._frame):ReloadAllCell()
-    end
   end
+  if #list1 == 0 or #list2 == 0 then
+    self._filterList = {}
+  end
+  self._filter = true
+  self._frame:ReloadAllCell()
 end
 
-TuJianPageDialog.ReturnData = function(self)
-  -- function num : 0_5
+function TuJianPageDialog:ReturnData()
   if self._filter then
     return self._filterList
   else
@@ -157,17 +119,15 @@ TuJianPageDialog.ReturnData = function(self)
   end
 end
 
-TuJianPageDialog.DataAtIndex = function(self, frame, index)
-  -- function num : 0_6
+function TuJianPageDialog:DataAtIndex(frame, index)
   if self._filter then
-    return (self._filterList)[index]
+    return self._filterList[index]
   else
-    return (self._data)[index]
+    return self._data[index]
   end
 end
 
-TuJianPageDialog.NumberOfCell = function(self, frame)
-  -- function num : 0_7
+function TuJianPageDialog:NumberOfCell(frame)
   if self._filter then
     return #self._filterList
   else
@@ -175,30 +135,24 @@ TuJianPageDialog.NumberOfCell = function(self, frame)
   end
 end
 
-TuJianPageDialog.CellAtIndex = function(self, frame)
-  -- function num : 0_8
+function TuJianPageDialog:CellAtIndex(frame)
   return "tujian.tujiancharcell"
 end
 
-TuJianPageDialog.OnFilterBtnClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  ((DialogManager.CreateSingletonDialog)("tujian.tujiancharacterlistsortdialog")):SetData(self._nameIdList1, self._nameIdList2)
+function TuJianPageDialog:OnFilterBtnClick()
+  DialogManager.CreateSingletonDialog("tujian.tujiancharacterlistsortdialog"):SetData(self._nameIdList1, self._nameIdList2)
 end
 
-TuJianPageDialog.OnBackPressed = function(self)
-  -- function num : 0_10
+function TuJianPageDialog:OnBackPressed()
   self:Destroy()
   return true, true
 end
 
-TuJianPageDialog.AddNewModal = function(self)
-  -- function num : 0_11
+function TuJianPageDialog:AddNewModal()
 end
 
-TuJianPageDialog.SetActive = function(self, value)
-  -- function num : 0_12
-  (self:GetRootWindow()):SetActive(value)
+function TuJianPageDialog:SetActive(value)
+  self:GetRootWindow():SetActive(value)
 end
 
 return TuJianPageDialog
-

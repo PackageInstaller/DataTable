@@ -1,130 +1,97 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/dialog/teamedit/promptunlockskilldialog.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local TableFrame = require("framework.ui.frame.table.tableframe")
 local BottomToTop = 4
 local PromptUnlockSkillDialog = class("PromptUnlockSkillDialog", Dialog)
 PromptUnlockSkillDialog.AssetBundleName = "ui/layouts.teamedit"
 PromptUnlockSkillDialog.AssetName = "TeamEditSkillUnlock"
-PromptUnlockSkillDialog.Ctor = function(self, ...)
-  -- function num : 0_0 , upvalues : PromptUnlockSkillDialog
-  ((PromptUnlockSkillDialog.super).Ctor)(self, ...)
+
+function PromptUnlockSkillDialog:Ctor(...)
+  PromptUnlockSkillDialog.super.Ctor(self, ...)
 end
 
-PromptUnlockSkillDialog.OnCreate = function(self)
-  -- function num : 0_1 , upvalues : BottomToTop, TableFrame, _ENV
+function PromptUnlockSkillDialog:OnCreate()
   self._emptyTxt = self:GetChild("Panel/EmptyTxt")
   self._panel = self:GetChild("Panel/Frame")
   self._closeBtn = self:GetChild("Panel/CloseBtn")
   self._goBtn = self:GetChild("Panel/StartBtn")
   self._scrollBar = self:GetChild("Panel/Scrollbar")
-  ;
-  (self._scrollBar):SetScrollDirection(BottomToTop)
-  self._width = (self._panel):GetRectSize()
-  self._frame = (TableFrame.Create)(self._panel, self, true, true, true)
-  ;
-  (self._closeBtn):Subscribe_PointerClickEvent(self.OnBackBtnClicked, self)
-  ;
-  (self._goBtn):Subscribe_PointerClickEvent(self.OnGoBtnClick, self)
-  ;
-  (LuaNotificationCenter.AddObserver)(self, self.OnSkillUnlock, Common.n_ImproveSkill, nil)
+  self._scrollBar:SetScrollDirection(BottomToTop)
+  self._width, self._height = self._panel:GetRectSize()
+  self._frame = TableFrame.Create(self._panel, self, true, true, true)
+  self._closeBtn:Subscribe_PointerClickEvent(self.OnBackBtnClicked, self)
+  self._goBtn:Subscribe_PointerClickEvent(self.OnGoBtnClick, self)
+  LuaNotificationCenter.AddObserver(self, self.OnSkillUnlock, Common.n_ImproveSkill, nil)
 end
 
-PromptUnlockSkillDialog.OnDestroy = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (LuaNotificationCenter.RemoveObserver)(self)
-  ;
-  (self._frame):Destroy()
+function PromptUnlockSkillDialog:OnDestroy()
+  LuaNotificationCenter.RemoveObserver(self)
+  self._frame:Destroy()
 end
 
-local RefreshEmptyTxtShow = function(self)
-  -- function num : 0_3
+local function RefreshEmptyTxtShow(self)
   if #self._list > 0 then
-    (self._emptyTxt):SetActive(false)
-    ;
-    (self._panel):SetActive(true)
-    ;
-    (self._frame):ReloadAllCell()
-    ;
-    (self._frame):MoveToTop()
+    self._emptyTxt:SetActive(false)
+    self._panel:SetActive(true)
+    self._frame:ReloadAllCell()
+    self._frame:MoveToTop()
   else
-    ;
-    (self._emptyTxt):SetActive(true)
-    ;
-    (self._panel):SetActive(false)
+    self._emptyTxt:SetActive(true)
+    self._panel:SetActive(false)
   end
 end
 
-PromptUnlockSkillDialog.OnSkillUnlock = function(self)
-  -- function num : 0_4 , upvalues : _ENV, RefreshEmptyTxtShow
+function PromptUnlockSkillDialog:OnSkillUnlock()
   local deleteIndex = {}
-  for i,role in ipairs(self._list) do
+  for i, role in ipairs(self._list) do
     local skill2Info = role:GetShowSkillDataByIndex(2)
     if skill2Info.unlock then
-      (table.insert)(deleteIndex, i)
+      table.insert(deleteIndex, i)
     end
   end
-  do
-    while deleteIndex[#deleteIndex] do
-      (table.remove)(self._list, deleteIndex[#deleteIndex])
-      ;
-      (table.remove)(deleteIndex, #deleteIndex)
-    end
-    RefreshEmptyTxtShow(self)
+  while deleteIndex[#deleteIndex] do
+    table.remove(self._list, deleteIndex[#deleteIndex])
+    table.remove(deleteIndex, #deleteIndex)
   end
+  RefreshEmptyTxtShow(self)
 end
 
-PromptUnlockSkillDialog.SetData = function(self, list)
-  -- function num : 0_5 , upvalues : RefreshEmptyTxtShow
+function PromptUnlockSkillDialog:SetData(list)
   self._list = list
   RefreshEmptyTxtShow(self)
 end
 
-PromptUnlockSkillDialog.NumberOfCell = function(self, frame)
-  -- function num : 0_6
+function PromptUnlockSkillDialog:NumberOfCell(frame)
   return #self._list
 end
 
-PromptUnlockSkillDialog.CellAtIndex = function(self, frame, index)
-  -- function num : 0_7
+function PromptUnlockSkillDialog:CellAtIndex(frame, index)
   return "teamedit.promptunlockskillcell"
 end
 
-PromptUnlockSkillDialog.DataAtIndex = function(self, frame, index)
-  -- function num : 0_8
-  return (self._list)[index]
+function PromptUnlockSkillDialog:DataAtIndex(frame, index)
+  return self._list[index]
 end
 
-PromptUnlockSkillDialog.OnCurPosChange = function(self, frame, proportion)
-  -- function num : 0_9
-  local total = (self._frame):GetTotalLength()
-  if self._height < total then
-    (self._scrollBar):SetActive(true)
-    ;
-    (self._scrollBar):SetScrollSize(self._height / total)
-    ;
-    (self._scrollBar):SetScrollValue(proportion)
+function PromptUnlockSkillDialog:OnCurPosChange(frame, proportion)
+  local total = self._frame:GetTotalLength()
+  if total > self._height then
+    self._scrollBar:SetActive(true)
+    self._scrollBar:SetScrollSize(self._height / total)
+    self._scrollBar:SetScrollValue(proportion)
   else
-    ;
-    (self._scrollBar):SetActive(false)
+    self._scrollBar:SetActive(false)
   end
 end
 
-PromptUnlockSkillDialog.OnGoBtnClick = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local dialog = (DialogManager.GetDialog)("teamedit.teameditprewardialog")
+function PromptUnlockSkillDialog:OnGoBtnClick()
+  local dialog = DialogManager.GetDialog("teamedit.teameditprewardialog")
   if dialog then
     dialog:BeginTaskBtnClicked()
   end
   self:Destroy()
 end
 
-PromptUnlockSkillDialog.OnBackBtnClicked = function(self)
-  -- function num : 0_11
+function PromptUnlockSkillDialog:OnBackBtnClicked()
   self:Destroy()
 end
 
 return PromptUnlockSkillDialog
-

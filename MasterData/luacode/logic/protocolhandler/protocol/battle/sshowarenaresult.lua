@@ -1,19 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/protocolhandler/protocol/battle/sshowarenaresult.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local p1 = function(protocol)
-  -- function num : 0_0 , upvalues : _ENV
-  local dialog = (DialogManager.CreateSingletonDialog)("mainline.offlinepvp.offlinepvpaccountdialog")
+local function p1(protocol)
+  local dialog = DialogManager.CreateSingletonDialog("mainline.offlinepvp.offlinepvpaccountdialog")
+  
   if dialog then
     dialog:Init(protocol)
   end
 end
 
-local p2 = function(protocol, client)
-  -- function num : 0_1
+local function p2(protocol, client)
 end
 
 return {p1, p2}
-

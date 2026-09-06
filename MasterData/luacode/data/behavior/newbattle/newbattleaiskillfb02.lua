@@ -1,8 +1,3 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/data/behavior/newbattle/newbattleaiskillfb02.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local LoopUntil = require("luabehavior.decorators.loopuntil")
 local Not = require("luabehavior.decorators.not")
 local Weight = require("luabehavior.decorators.weight")
@@ -16,15 +11,15 @@ local Noop = require("luabehavior.actions.noop")
 local Wait = require("luabehavior.actions.wait")
 local WaitFrames = require("luabehavior.actions.waitframes")
 local Agent = require("luabehavior.agent.battleai")
-local CreateNewBattleAIskillfb02 = function(behavior)
-  -- function num : 0_0 , upvalues : Sequence, Agent, IfElse
+
+local function CreateNewBattleAIskillfb02(behavior)
   local data = behavior._data
-  local node1 = (Sequence.Create)()
-  local node2 = ((Agent.IfHasEnoughConditionsUseSkill).Create)(behavior)
-  local node3 = (IfElse.Create)()
-  local node4 = ((Agent.MonsterHasBuff).Create)(behavior, 0, 20829)
-  local node5 = ((Agent.ChangeBehaviac).Create)(behavior, "NewBattleAIshadow2")
-  local node6 = ((Agent.UseSkill).Create)(behavior, 201470)
+  local node1 = Sequence.Create()
+  local node2 = Agent.IfHasEnoughConditionsUseSkill.Create(behavior)
+  local node3 = IfElse.Create()
+  local node4 = Agent.MonsterHasBuff.Create(behavior, 0, 20829)
+  local node5 = Agent.ChangeBehaviac.Create(behavior, "NewBattleAIshadow2")
+  local node6 = Agent.UseSkill.Create(behavior, 201470)
   node3:AddTask(node4, node5, node6)
   node1:AddTask(node2)
   node1:AddTask(node3)
@@ -32,4 +27,3 @@ local CreateNewBattleAIskillfb02 = function(behavior)
 end
 
 return CreateNewBattleAIskillfb02
-

@@ -1,27 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/def/protocol/chat/snotifyfriendspoint.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local SNotifyFriendsPoint = dataclass("SNotifyFriendsPoint", require("framework.net.protocol"))
 SNotifyFriendsPoint.ProtocolType = 1155
 SNotifyFriendsPoint.MaxSize = 65535
-SNotifyFriendsPoint.Ctor = function(self, client)
-  -- function num : 0_0 , upvalues : SNotifyFriendsPoint
-  ((SNotifyFriendsPoint.super).Ctor)(self, client)
+
+function SNotifyFriendsPoint:Ctor(client)
+  SNotifyFriendsPoint.super.Ctor(self, client)
 end
 
-SNotifyFriendsPoint.Marshal = function(self, buffer)
-  -- function num : 0_1
+function SNotifyFriendsPoint:Marshal(buffer)
   return true
 end
 
-SNotifyFriendsPoint.Unmarshal = function(self, buffer)
-  -- function num : 0_2
+function SNotifyFriendsPoint:Unmarshal(buffer)
   local ret = true
   return ret
 end
 
 return SNotifyFriendsPoint
-

@@ -1,20 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/dialog/traincamp/trainaccountcell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local SCompleteTrain = (LuaNetManager.GetProtocolDef)("protocol.yard.scompletetrain")
+local SCompleteTrain = LuaNetManager.GetProtocolDef("protocol.yard.scompletetrain")
 local Item = require("logic.manager.experimental.types.item")
 local TrainAccountCell = class("TrainAccountCell", Dialog)
 TrainAccountCell.AssetBundleName = "ui/layouts.yard"
 TrainAccountCell.AssetName = "TrainFinishCell"
-TrainAccountCell.Ctor = function(self, ...)
-  -- function num : 0_0 , upvalues : TrainAccountCell
-  ((TrainAccountCell.super).Ctor)(self, ...)
+
+function TrainAccountCell:Ctor(...)
+  TrainAccountCell.super.Ctor(self, ...)
 end
 
-TrainAccountCell.OnCreate = function(self)
-  -- function num : 0_1
+function TrainAccountCell:OnCreate()
   self._frame = self:GetChild("Panel/CharSmallCell/Frame")
   self._photo = self:GetChild("Panel/CharSmallCell/Photo")
   self._downRankBack = self:GetChild("Panel/CharSmallCell/DownRankBack")
@@ -46,115 +40,77 @@ TrainAccountCell.OnCreate = function(self)
   self._expPanel_exp = self:GetChild("Panel/Normal/Exp/Num")
 end
 
-TrainAccountCell.OnDestroy = function(self)
-  -- function num : 0_2
+function TrainAccountCell:OnDestroy()
 end
 
-TrainAccountCell.RefreshCell = function(self, data)
-  -- function num : 0_3 , upvalues : _ENV, SCompleteTrain, Item
-  local role = ((NekoData.BehaviorManager).BM_AllRoles):GetRole(data.roleId)
+function TrainAccountCell:RefreshCell(data)
+  local role = NekoData.BehaviorManager.BM_AllRoles:GetRole(data.roleId)
   if role then
     local image = role:GetShapeLittleHeadImageRecord()
-    ;
-    (self._photo):SetSprite(image.assetBundle, image.assetName)
+    self._photo:SetSprite(image.assetBundle, image.assetName)
     image = role:GetSmallRarityFrameRecord()
-    ;
-    (self._frame):SetSprite(image.assetBundle, image.assetName)
+    self._frame:SetSprite(image.assetBundle, image.assetName)
     image = role:GetRarityBottomBackRecord()
-    ;
-    (self._downRankBack):SetSprite(image.assetBundle, image.assetName)
-    ;
-    (self._level):SetText(role:GetShowLv())
+    self._downRankBack:SetSprite(image.assetBundle, image.assetName)
+    self._level:SetText(role:GetShowLv())
     image = role:GetRarityImageRecord()
-    ;
-    (self._rank):SetSprite(image.assetBundle, image.assetName)
+    self._rank:SetSprite(image.assetBundle, image.assetName)
     image = role:GetVocationImageRecord()
-    ;
-    (self._job):SetSprite(image.assetBundle, image.assetName)
+    self._job:SetSprite(image.assetBundle, image.assetName)
     local breakLv = role:GetBreakLv()
-    ;
-    (self._breakLevelBackBlack):SetActive(breakLv == 0)
-    ;
-    (self._breakLevelBack):SetActive(breakLv > 0)
-    ;
-    (self._breakLevelNum):SetActive(breakLv > 0)
-    if breakLv > 0 then
+    self._breakLevelBackBlack:SetActive(breakLv == 0)
+    self._breakLevelBack:SetActive(0 < breakLv)
+    self._breakLevelNum:SetActive(0 < breakLv)
+    if 0 < breakLv then
       image = role:GetCurBreakFrame1ImageRecord()
-      ;
-      (self._breakLevelBack):SetSprite(image.assetBundle, image.assetName)
-      ;
-      (self._breakLevelNum):SetText(breakLv)
+      self._breakLevelBack:SetSprite(image.assetBundle, image.assetName)
+      self._breakLevelNum:SetText(breakLv)
     end
     image = role:GetElementImageRecord()
-    ;
-    (self._element):SetSprite(image.assetBundle, image.assetName)
+    self._element:SetSprite(image.assetBundle, image.assetName)
   else
     LogError("Data Error!")
   end
   if data.type == SCompleteTrain.ADD_EXP then
-    (self._expPanel):SetActive(true)
-    ;
-    (self._lvUpPanel):SetActive(false)
-    ;
-    (self._maxPanel):SetActive(false)
-    ;
-    (self._expPanel_exp):SetText(data.award)
+    self._expPanel:SetActive(true)
+    self._lvUpPanel:SetActive(false)
+    self._maxPanel:SetActive(false)
+    self._expPanel_exp:SetText(data.award)
   elseif data.type == SCompleteTrain.ADD_LEVEL then
-    (self._expPanel):SetActive(false)
-    ;
-    (self._lvUpPanel):SetActive(true)
-    ;
-    (self._maxPanel):SetActive(false)
-    local strList = (string.split)(data.award, ";")
-    ;
-    (self._lvUpPanel_exp):SetText(strList[1])
+    self._expPanel:SetActive(false)
+    self._lvUpPanel:SetActive(true)
+    self._maxPanel:SetActive(false)
+    local strList = string.split(data.award, ";")
+    self._lvUpPanel_exp:SetText(strList[1])
     local breakLv, showLv = role:GetBreakLvAndShowLvByRoleLv(tonumber(strList[2]))
-    ;
-    (self._lvUpPanel_last_lv):SetText(showLv)
-    ;
-    (self._lvUpPanel_last_breakLevelBackBlack):SetActive(breakLv == 0)
-    ;
-    (self._lvUpPanel_last_breakLevelBack):SetActive(breakLv > 0)
-    ;
-    (self._lvUpPanel_last_breakLevelNum):SetActive(breakLv > 0)
-    if breakLv > 0 then
+    self._lvUpPanel_last_lv:SetText(showLv)
+    self._lvUpPanel_last_breakLevelBackBlack:SetActive(breakLv == 0)
+    self._lvUpPanel_last_breakLevelBack:SetActive(0 < breakLv)
+    self._lvUpPanel_last_breakLevelNum:SetActive(0 < breakLv)
+    if 0 < breakLv then
       image = role:GetCurBreakFrame1ImageRecord()
-      ;
-      (self._lvUpPanel_last_breakLevelBack):SetSprite(image.assetBundle, image.assetName)
-      ;
-      (self._lvUpPanel_last_breakLevelNum):SetText(breakLv)
+      self._lvUpPanel_last_breakLevelBack:SetSprite(image.assetBundle, image.assetName)
+      self._lvUpPanel_last_breakLevelNum:SetText(breakLv)
     end
-    breakLv = role:GetBreakLvAndShowLvByRoleLv(tonumber(strList[3]))
-    ;
-    (self._lvUpPanel_lv):SetText(showLv)
-    ;
-    (self._lvUpPanel_breakLevelBackBlack):SetActive(breakLv == 0)
-    ;
-    (self._lvUpPanel_breakLevelBack):SetActive(breakLv > 0)
-    ;
-    (self._lvUpPanel_breakLevelNum):SetActive(breakLv > 0)
-    if breakLv > 0 then
+    breakLv, showLv = role:GetBreakLvAndShowLvByRoleLv(tonumber(strList[3]))
+    self._lvUpPanel_lv:SetText(showLv)
+    self._lvUpPanel_breakLevelBackBlack:SetActive(breakLv == 0)
+    self._lvUpPanel_breakLevelBack:SetActive(0 < breakLv)
+    self._lvUpPanel_breakLevelNum:SetActive(0 < breakLv)
+    if 0 < breakLv then
       image = role:GetCurBreakFrame1ImageRecord()
-      ;
-      (self._lvUpPanel_breakLevelBack):SetSprite(image.assetBundle, image.assetName)
-      ;
-      (self._lvUpPanel_breakLevelNum):SetText(breakLv)
+      self._lvUpPanel_breakLevelBack:SetSprite(image.assetBundle, image.assetName)
+      self._lvUpPanel_breakLevelNum:SetText(breakLv)
     end
   elseif data.type == SCompleteTrain.ADD_MONEY then
-    (self._expPanel):SetActive(false)
-    ;
-    (self._lvUpPanel):SetActive(false)
-    ;
-    (self._maxPanel):SetActive(true)
-    local item = (Item.Create)(DataCommon.ManaID)
+    self._expPanel:SetActive(false)
+    self._lvUpPanel:SetActive(false)
+    self._maxPanel:SetActive(true)
+    local item = Item.Create(DataCommon.ManaID)
     local imgRecord = item:GetIcon()
-    ;
-    (self._maxPanel_itemIcon):SetSprite(imgRecord.assetBundle, imgRecord.assetName)
-    ;
-    (self._maxPanel_itemNum):SetText(data.award)
+    self._maxPanel_itemIcon:SetSprite(imgRecord.assetBundle, imgRecord.assetName)
+    self._maxPanel_itemNum:SetText(data.award)
   end
-  -- DECOMPILER ERROR: 16 unprocessed JMP targets
 end
 
 return TrainAccountCell
-

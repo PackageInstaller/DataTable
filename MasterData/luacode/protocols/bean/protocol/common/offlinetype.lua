@@ -1,9 +1,4 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/bean/protocol/common/offlinetype.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local OfflineType = dataclass("OfflineType")
 OfflineType.LINK_OUTPUT_BUFFER_OVERFLOW = 94
 OfflineType.XIO_CLOSE = 95
@@ -42,20 +37,17 @@ OfflineType.REGISTER_FULL = 28
 OfflineType.RECEIVING_DATA = 29
 OfflineType.ANTI_BLACK = 31
 OfflineType.TIME_SPEED = 32
-OfflineType.Ctor = function(self)
-  -- function num : 0_0
+
+function OfflineType:Ctor()
 end
 
-OfflineType.Marshal = function(self, buffer)
-  -- function num : 0_1
+function OfflineType:Marshal(buffer)
   return true
 end
 
-OfflineType.Unmarshal = function(self, buffer)
-  -- function num : 0_2
+function OfflineType:Unmarshal(buffer)
   local ret = true
   return ret
 end
 
 return OfflineType
-

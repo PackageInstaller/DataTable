@@ -1,27 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/def/protocol/activity/cgettowerfloorinfo.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local CGetTowerFloorInfo = dataclass("CGetTowerFloorInfo", require("framework.net.protocol"))
 CGetTowerFloorInfo.ProtocolType = 2414
 CGetTowerFloorInfo.MaxSize = 65535
-CGetTowerFloorInfo.Ctor = function(self, client)
-  -- function num : 0_0 , upvalues : CGetTowerFloorInfo
-  ((CGetTowerFloorInfo.super).Ctor)(self, client)
+
+function CGetTowerFloorInfo:Ctor(client)
+  CGetTowerFloorInfo.super.Ctor(self, client)
 end
 
-CGetTowerFloorInfo.Marshal = function(self, buffer)
-  -- function num : 0_1
+function CGetTowerFloorInfo:Marshal(buffer)
   return true
 end
 
-CGetTowerFloorInfo.Unmarshal = function(self, buffer)
-  -- function num : 0_2
+function CGetTowerFloorInfo:Unmarshal(buffer)
   local ret = true
   return ret
 end
 
 return CGetTowerFloorInfo
-

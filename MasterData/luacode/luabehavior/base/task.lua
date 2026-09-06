@@ -1,42 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/luabehavior/base/task.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local Behavior_Status = require("luabehavior.base.taskstatus")
 local Task = class("Task")
-Task.Ctor = function(self)
-  -- function num : 0_0 , upvalues : Behavior_Status
+
+function Task:Ctor()
   self._status = Behavior_Status.Invalid
 end
 
-Task.OnStart = function(self)
-  -- function num : 0_1
+function Task:OnStart()
 end
 
-Task.OnUpdate = function(self, deltaTime)
-  -- function num : 0_2
+function Task:OnUpdate(deltaTime)
 end
 
-Task.OnEnd = function(self)
-  -- function num : 0_3
+function Task:OnEnd()
 end
 
-Task.GetStatus = function(self)
-  -- function num : 0_4
+function Task:GetStatus()
   return self._status
 end
 
-Task.SetStatus = function(self, status)
-  -- function num : 0_5
+function Task:SetStatus(status)
   self._status = status
   return status
 end
 
-Task.GetCheckPoints = function(self)
-  -- function num : 0_6
+function Task:GetCheckPoints()
   return 0
 end
 
 return Task
-

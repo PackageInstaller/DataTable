@@ -1,16 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/manager/experimental/types/friend.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local CstringCfg = (BeanManager.GetTableByName)("message.cstringres")
-local HeadTable = (BeanManager.GetTableByName)("headphoto.cheadphotoconfig")
-local FrameTable = (BeanManager.GetTableByName)("headphoto.cheadphotoframeconfig")
-local ImageTable = (BeanManager.GetTableByName)("ui.cimagepath")
-local OtherUserInfo = (LuaNetManager.GetBeanDef)("protocol.chat.otheruserinfo")
+local CstringCfg = BeanManager.GetTableByName("message.cstringres")
+local HeadTable = BeanManager.GetTableByName("headphoto.cheadphotoconfig")
+local FrameTable = BeanManager.GetTableByName("headphoto.cheadphotoframeconfig")
+local ImageTable = BeanManager.GetTableByName("ui.cimagepath")
+local OtherUserInfo = LuaNetManager.GetBeanDef("protocol.chat.otheruserinfo")
 local Friend = strictclass("Friend")
-Friend.Ctor = function(self)
-  -- function num : 0_0
+
+function Friend:Ctor()
   self._id = -1
   self._name = nil
   self._level = nil
@@ -23,14 +18,13 @@ Friend.Ctor = function(self)
   self._sparkStatus = nil
 end
 
-Friend.SetDataFromProtol = function(self, bean)
-  -- function num : 0_1
-  self._id = (bean.baseUserData).userId
-  self._name = (bean.baseUserData).userName
-  self._level = (bean.baseUserData).userLv
-  self._headid = (bean.baseUserData).avatarId
-  self._frameid = (bean.baseUserData).frameId
-  self._spiritvip = (bean.baseUserData).spiritvip
+function Friend:SetDataFromProtol(bean)
+  self._id = bean.baseUserData.userId
+  self._name = bean.baseUserData.userName
+  self._level = bean.baseUserData.userLv
+  self._headid = bean.baseUserData.avatarId
+  self._frameid = bean.baseUserData.frameId
+  self._spiritvip = bean.baseUserData.spiritvip
   self._identity = bean.identity
   self._lastLogoutTime = bean.lastLogoutTime
   self._friendTime = bean.friendTime
@@ -39,184 +33,175 @@ Friend.SetDataFromProtol = function(self, bean)
   self._sparkStatus = bean.sparkStatus
 end
 
-Friend.SetIdentity = function(self, identity)
-  -- function num : 0_2
+function Friend:SetDataFromChatMsg(chatinfo)
+  local friend = NekoData.BehaviorManager.BM_Friends:GetFriend(chatinfo.userid)
+  if friend and friend:IsFriend() then
+    self._id = friend._id
+    self._name = friend._name
+    self._level = friend._level
+    self._headid = friend._headid
+    self._frameid = friend._frameid
+    self._spiritvip = friend._spiritvip
+    self._identity = friend._identity
+    self._lastLogoutTime = friend._lastLogoutTime
+    self._friendTime = friend._friendTime
+    self._lastOnLineTime = friend._lastOnLineTime
+    self._likeStatus = friend._likeStatus
+    self._sparkStatus = friend._sparkStatus
+  else
+    self._id = chatinfo.userid
+    self._name = chatinfo.username
+    self._level = chatinfo.level
+    self._headid = chatinfo.headid
+    self._frameid = chatinfo.frameid
+    self._spiritvip = chatinfo.spiritvip
+    self._identity = OtherUserInfo.STRANGER
+    self._lastLogoutTime = 0
+    self._friendTime = 0
+    self._lastOnLineTime = 0
+    self._likeStatus = 0
+    self._sparkStatus = 0
+  end
+end
+
+function Friend:SetIdentity(identity)
   self._identity = identity
 end
 
-Friend.GetIdentity = function(self)
-  -- function num : 0_3
+function Friend:GetIdentity()
   return self._identity
 end
 
-Friend.GetID = function(self)
-  -- function num : 0_4
+function Friend:GetID()
   return self._id
 end
 
-Friend.GetName = function(self)
-  -- function num : 0_5
+function Friend:GetName()
   if self._name ~= "" then
     return self._name
   end
   return self._id
 end
 
-Friend.GetLevel = function(self)
-  -- function num : 0_6
+function Friend:GetLevel()
   return self._level
 end
 
-Friend.GetHeadImagePath = function(self)
-  -- function num : 0_7 , upvalues : HeadTable, ImageTable
+function Friend:GetHeadImagePath()
   local temp = HeadTable:GetRecorder(self._headid)
   if not temp then
-    return 
+    return
   end
   local gamerInfo = ImageTable:GetRecorder(temp.photoid)
   if not gamerInfo then
-    return 
+    return
   end
   return gamerInfo
 end
 
-Friend.GetFrameImagePath = function(self)
-  -- function num : 0_8 , upvalues : FrameTable, ImageTable
+function Friend:GetFrameImagePath()
   local temp = FrameTable:GetRecorder(self._frameid)
   if not temp then
-    return 
+    return
   end
   local gamerInfo = ImageTable:GetRecorder(temp.photoid)
   if not gamerInfo then
-    return 
+    return
   end
   return gamerInfo
 end
 
-Friend.GetSpiritVip = function(self)
-  -- function num : 0_9
+function Friend:GetSpiritVip()
   return self._spiritvip
 end
 
-Friend.IsOnLine = function(self)
-  -- function num : 0_10
-  do return self._lastLogoutTime <= 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function Friend:IsOnLine()
+  return self._lastLogoutTime <= 0
 end
 
-Friend.GetLastOnLineTime = function(self)
-  -- function num : 0_11
+function Friend:GetLastOnLineTime()
   return self._lastLogoutTime
 end
 
-Friend.GetFriendTime = function(self)
-  -- function num : 0_12
+function Friend:GetFriendTime()
   return self._friendTime
 end
 
-Friend.GetLastLoginTime = function(self)
-  -- function num : 0_13
+function Friend:GetLastLoginTime()
   return self._lastOnLineTime
 end
 
-Friend.IsFriend = function(self)
-  -- function num : 0_14 , upvalues : OtherUserInfo
-  do return self._identity == OtherUserInfo.FRIEND end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function Friend:IsFriend()
+  return self._identity == OtherUserInfo.FRIEND
 end
 
-Friend.IsBlack = function(self)
-  -- function num : 0_15 , upvalues : OtherUserInfo
-  do return self._identity == OtherUserInfo.BLACK_LIST end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function Friend:IsBlack()
+  return self._identity == OtherUserInfo.BLACK_LIST
 end
 
-Friend.IsApplicant = function(self)
-  -- function num : 0_16 , upvalues : OtherUserInfo
-  do return self._identity == OtherUserInfo.APPLICANT end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function Friend:IsApplicant()
+  return self._identity == OtherUserInfo.APPLICANT
 end
 
-Friend.IsStranger = function(self)
-  -- function num : 0_17 , upvalues : OtherUserInfo
-  do return self._identity == OtherUserInfo.STRANGER end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function Friend:IsStranger()
+  return self._identity == OtherUserInfo.STRANGER
 end
 
-Friend.GetStatusStr = function(self)
-  -- function num : 0_18 , upvalues : _ENV, CstringCfg
+function Friend:GetStatusStr()
   if self._lastLogoutTime <= 0 then
-    return (TextManager.GetText)((CstringCfg:GetRecorder(1032)).msgTextID)
+    return TextManager.GetText(CstringCfg:GetRecorder(1032).msgTextID)
   end
-  local time = (ServerGameTimer.GetServerTime)() - self._lastLogoutTime
-  local day = (math.floor)(time / 86400000)
-  do
-    if day >= 7 then
-      local str = (TextManager.GetText)((CstringCfg:GetRecorder(1547)).msgTextID)
-      return (string.gsub)(str, "%$parameter1%$", tostring(day))
-    end
-    do
-      if day > 0 then
-        local str = (TextManager.GetText)((CstringCfg:GetRecorder(1031)).msgTextID)
-        return (string.gsub)(str, "%$parameter1%$", tostring(day))
-      end
-      local hour = (math.floor)(time / 3600000)
-      do
-        if hour > 0 then
-          local str = (TextManager.GetText)((CstringCfg:GetRecorder(1030)).msgTextID)
-          return (string.gsub)(str, "%$parameter1%$", tostring(hour))
-        end
-        local min = (math.floor)(time / 60000)
-        do
-          if min > 0 then
-            local str = (TextManager.GetText)((CstringCfg:GetRecorder(1029)).msgTextID)
-            return (string.gsub)(str, "%$parameter1%$", tostring(min))
-          end
-          local second = (math.floor)(time / 1000)
-          do
-            if second > 0 then
-              local str = (TextManager.GetText)((CstringCfg:GetRecorder(1028)).msgTextID)
-              return (string.gsub)(str, "%$parameter1%$", tostring(second))
-            end
-            local str = (TextManager.GetText)((CstringCfg:GetRecorder(1552)).msgTextID)
-            return str
-          end
-        end
-      end
-    end
+  local time = ServerGameTimer.GetServerTime() - self._lastLogoutTime
+  local day = math.floor(time / 86400000)
+  if 7 <= day then
+    local str = TextManager.GetText(CstringCfg:GetRecorder(1547).msgTextID)
+    return string.gsub(str, "%$parameter1%$", tostring(day))
   end
+  if 0 < day then
+    local str = TextManager.GetText(CstringCfg:GetRecorder(1031).msgTextID)
+    return string.gsub(str, "%$parameter1%$", tostring(day))
+  end
+  local hour = math.floor(time / 3600000)
+  if 0 < hour then
+    local str = TextManager.GetText(CstringCfg:GetRecorder(1030).msgTextID)
+    return string.gsub(str, "%$parameter1%$", tostring(hour))
+  end
+  local min = math.floor(time / 60000)
+  if 0 < min then
+    local str = TextManager.GetText(CstringCfg:GetRecorder(1029).msgTextID)
+    return string.gsub(str, "%$parameter1%$", tostring(min))
+  end
+  local second = math.floor(time / 1000)
+  if 0 < second then
+    local str = TextManager.GetText(CstringCfg:GetRecorder(1028).msgTextID)
+    return string.gsub(str, "%$parameter1%$", tostring(second))
+  end
+  local str = TextManager.GetText(CstringCfg:GetRecorder(1552).msgTextID)
+  return str
 end
 
-Friend.GetLastChatTime = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  return ((NekoData.BehaviorManager).BM_FriendsChat):GetLastChatTime(self._id)
+function Friend:GetLastChatTime()
+  return NekoData.BehaviorManager.BM_FriendsChat:GetLastChatTime(self._id)
 end
 
-Friend.IsHasNotReadMsg = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  do return ((NekoData.BehaviorManager).BM_FriendsChat):GetNotReadNum(self._id) > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function Friend:IsHasNotReadMsg()
+  return NekoData.BehaviorManager.BM_FriendsChat:GetNotReadNum(self._id) > 0
 end
 
-Friend.SetLikeStatus = function(self, status)
-  -- function num : 0_21
+function Friend:SetLikeStatus(status)
   self._likeStatus = status
 end
 
-Friend.GetLikeStatus = function(self, status)
-  -- function num : 0_22
+function Friend:GetLikeStatus(status)
   return self._likeStatus
 end
 
-Friend.SetSparkStatus = function(self, status)
-  -- function num : 0_23
+function Friend:SetSparkStatus(status)
   self._sparkStatus = status
 end
 
-Friend.GetSparkStatus = function(self, status)
-  -- function num : 0_24
+function Friend:GetSparkStatus(status)
   return self._sparkStatus
 end
 
 return Friend
-

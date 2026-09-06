@@ -1,19 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/dialog/tujian/tujiancharacterinfoprofilecell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local CRoleConfigTable = (BeanManager.GetTableByName)("role.roleconfig")
+local CRoleConfigTable = BeanManager.GetTableByName("role.roleconfig")
 local TuJianCharacterInfoProfileCell = class("TuJianCharacterInfoProfileCell", Dialog)
 TuJianCharacterInfoProfileCell.AssetBundleName = "ui/layouts.tujian"
 TuJianCharacterInfoProfileCell.AssetName = "TuJianCharInfoProfile"
-TuJianCharacterInfoProfileCell.Ctor = function(self, ...)
-  -- function num : 0_0 , upvalues : TuJianCharacterInfoProfileCell
-  ((TuJianCharacterInfoProfileCell.super).Ctor)(self, ...)
+
+function TuJianCharacterInfoProfileCell:Ctor(...)
+  TuJianCharacterInfoProfileCell.super.Ctor(self, ...)
 end
 
-TuJianCharacterInfoProfileCell.OnCreate = function(self)
-  -- function num : 0_1
+function TuJianCharacterInfoProfileCell:OnCreate()
   self._height = self:GetChild("Height/Num")
   self._weight = self:GetChild("Weight/Num")
   self._blood = self:GetChild("Boold/Num")
@@ -22,26 +16,17 @@ TuJianCharacterInfoProfileCell.OnCreate = function(self)
   self._sex = self:GetChild("Sex/Num")
 end
 
-TuJianCharacterInfoProfileCell.OnDestroy = function(self)
-  -- function num : 0_2
+function TuJianCharacterInfoProfileCell:OnDestroy()
 end
 
-TuJianCharacterInfoProfileCell.RefreshCell = function(self, data)
-  -- function num : 0_3 , upvalues : CRoleConfigTable, _ENV
+function TuJianCharacterInfoProfileCell:RefreshCell(data)
   local roleConfig = CRoleConfigTable:GetRecorder(data.id)
-  ;
-  (self._height):SetText(tostring(roleConfig.height))
-  ;
-  (self._weight):SetText(tostring(roleConfig.weight))
-  ;
-  (self._blood):SetText(tostring(roleConfig.bloodtype))
-  ;
-  (self._hobby):SetText(tostring(roleConfig.hobby))
-  ;
-  (self._nature):SetText(tostring(roleConfig.attribute))
-  ;
-  (self._sex):SetText((TextManager.GetText)(roleConfig.sex))
+  self._height:SetText(tostring(roleConfig.height))
+  self._weight:SetText(tostring(roleConfig.weight))
+  self._blood:SetText(tostring(roleConfig.bloodtype))
+  self._hobby:SetText(tostring(roleConfig.hobby))
+  self._nature:SetText(tostring(roleConfig.attribute))
+  self._sex:SetText(TextManager.GetText(roleConfig.sex))
 end
 
 return TuJianCharacterInfoProfileCell
-

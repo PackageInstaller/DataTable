@@ -1,8 +1,3 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/data/behavior/newbattle/newbattleai1.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local LoopUntil = require("luabehavior.decorators.loopuntil")
 local Not = require("luabehavior.decorators.not")
 local Weight = require("luabehavior.decorators.weight")
@@ -15,13 +10,13 @@ local SelectorProbability = require("luabehavior.composites.selectorprobability"
 local Noop = require("luabehavior.actions.noop")
 local Wait = require("luabehavior.actions.wait")
 local Agent = require("luabehavior.agent.battleai")
-local CreateNewBattleAI1 = function(behavior)
-  -- function num : 0_0 , upvalues : Sequence, Agent
+
+local function CreateNewBattleAI1(behavior)
   local data = behavior._data
-  local node1 = (Sequence.Create)()
-  local node2 = ((Agent.IfHasEnoughConditionsUseSkill).Create)(behavior)
-  local node3 = ((Agent.MonsterSkillIsInCD).Create)(behavior, 201010)
-  local node4 = ((Agent.UseSkill).Create)(behavior, 201010)
+  local node1 = Sequence.Create()
+  local node2 = Agent.IfHasEnoughConditionsUseSkill.Create(behavior)
+  local node3 = Agent.MonsterSkillIsInCD.Create(behavior, 201010)
+  local node4 = Agent.UseSkill.Create(behavior, 201010)
   node1:AddTask(node2)
   node1:AddTask(node3)
   node1:AddTask(node4)
@@ -29,4 +24,3 @@ local CreateNewBattleAI1 = function(behavior)
 end
 
 return CreateNewBattleAI1
-

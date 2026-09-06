@@ -1,35 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/bean/protocol/yard/production.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local Production = dataclass("Production")
 Production.itemId = 0
 Production.nums = 0
-Production.Ctor = function(self)
-  -- function num : 0_0
+
+function Production:Ctor()
 end
 
-Production.Marshal = function(self, buffer)
-  -- function num : 0_1 , upvalues : ProtocolBufferStaticFunctions
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.itemId) then
+function Production:Marshal(buffer)
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.itemId) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.nums) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.nums) then
     return false
   end
   return true
 end
 
-Production.Unmarshal = function(self, buffer)
-  -- function num : 0_2 , upvalues : ProtocolBufferStaticFunctions
+function Production:Unmarshal(buffer)
   local ret = true
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.itemId = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.nums = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
@@ -37,4 +30,3 @@ Production.Unmarshal = function(self, buffer)
 end
 
 return Production
-

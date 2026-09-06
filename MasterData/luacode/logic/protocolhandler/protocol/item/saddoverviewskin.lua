@@ -1,20 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/protocolhandler/protocol/item/saddoverviewskin.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local p1 = function(protocol)
-  -- function num : 0_0 , upvalues : _ENV
-  ((NekoData.DataManager).DM_SkinList):OnSAddOverviewSkin(protocol)
-  local dialog = (DialogManager.GetDialog)("shop.roleskinlist.roleskinlistmaindialog")
+local function p1(protocol)
+  NekoData.DataManager.DM_SkinList:OnSAddOverviewSkin(protocol)
+  
+  local dialog = DialogManager.GetDialog("shop.roleskinlist.roleskinlistmaindialog")
   if dialog then
     dialog:SendUnLockSkin(protocol.skinId)
   end
 end
 
-local p2 = function(protocol, client)
-  -- function num : 0_1
+local function p2(protocol, client)
 end
 
 return {p1, p2}
-

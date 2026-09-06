@@ -1,38 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/def/protocol/activity/cfetchactivitysupply.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local CFetchActivitySupply = dataclass("CFetchActivitySupply", require("framework.net.protocol"))
 CFetchActivitySupply.ProtocolType = 2702
 CFetchActivitySupply.MaxSize = 65535
 CFetchActivitySupply.activityId = 0
 CFetchActivitySupply.supply = 0
-CFetchActivitySupply.Ctor = function(self, client)
-  -- function num : 0_0 , upvalues : CFetchActivitySupply
-  ((CFetchActivitySupply.super).Ctor)(self, client)
+
+function CFetchActivitySupply:Ctor(client)
+  CFetchActivitySupply.super.Ctor(self, client)
 end
 
-CFetchActivitySupply.Marshal = function(self, buffer)
-  -- function num : 0_1 , upvalues : ProtocolBufferStaticFunctions
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.activityId) then
+function CFetchActivitySupply:Marshal(buffer)
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.activityId) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.supply) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.supply) then
     return false
   end
   return true
 end
 
-CFetchActivitySupply.Unmarshal = function(self, buffer)
-  -- function num : 0_2 , upvalues : ProtocolBufferStaticFunctions
+function CFetchActivitySupply:Unmarshal(buffer)
   local ret = true
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.activityId = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.supply = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
@@ -40,4 +33,3 @@ CFetchActivitySupply.Unmarshal = function(self, buffer)
 end
 
 return CFetchActivitySupply
-

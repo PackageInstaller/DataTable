@@ -1,133 +1,109 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/dialog/activity/chrismascall/callrankdialog.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local TableFrame = require("framework.ui.frame.table.tableframe")
 local CallRankCellHelper = require("logic.dialog.activity.chrismascall.callrankcellhelper")
-local CStringRes = (BeanManager.GetTableByName)("message.cstringres")
+local CStringRes = BeanManager.GetTableByName("message.cstringres")
 local TopToBottom = 4
 local CallRankDialog = class("CallRankDialog", Dialog)
 CallRankDialog.AssetBundleName = "ui/layouts.activitychristmascall"
 CallRankDialog.AssetName = "ActivityChristmasCallRank"
-CallRankDialog.Ctor = function(self, ...)
-  -- function num : 0_0 , upvalues : CallRankDialog
-  ((CallRankDialog.super).Ctor)(self, ...)
+
+function CallRankDialog:Ctor(...)
+  CallRankDialog.super.Ctor(self, ...)
   self._groupName = "Modal"
   self._playerRankData = nil
   self._totalRankData = {}
 end
 
-CallRankDialog.OnCreate = function(self)
-  -- function num : 0_1 , upvalues : TopToBottom, TableFrame, CallRankCellHelper, _ENV
+function CallRankDialog:OnCreate()
   self._backBtn = self:GetChild("Back/CloseBtn")
-  ;
-  (self._backBtn):Subscribe_PointerClickEvent(self.OnBackBtnClicked, self)
+  self._backBtn:Subscribe_PointerClickEvent(self.OnBackBtnClicked, self)
   self._scrollBar = self:GetChild("Back/Scrollbar")
-  ;
-  (self._scrollBar):SetScrollDirection(TopToBottom)
+  self._scrollBar:SetScrollDirection(TopToBottom)
   self._noRank = self:GetChild("NoRank")
   self._panel = self:GetChild("Back/Frame")
-  self._frame = (TableFrame.Create)(self._panel, self, true, true, true)
+  self._frame = TableFrame.Create(self._panel, self, true, true, true)
   self._activityChristmasCallRankCell = self:GetChild("ActivityChristmasCallRankCell")
-  self._playerCallRankCellHelper = (CallRankCellHelper.Create)(self._activityChristmasCallRankCell, true)
+  self._playerCallRankCellHelper = CallRankCellHelper.Create(self._activityChristmasCallRankCell, true)
   self._timeText = self:GetChild("Back/Time")
   self._text1 = self:GetChild("Back/Text")
-  ;
-  (LuaNotificationCenter.AddObserver)(self, self.RefreshRankData, Common.n_OnSSimpleRank, nil)
+  LuaNotificationCenter.AddObserver(self, self.RefreshRankData, Common.n_OnSSimpleRank, nil)
   self:SetStaticRes()
   self:SetData()
 end
 
-CallRankDialog.SetStaticRes = function(self)
-  -- function num : 0_2 , upvalues : _ENV, CStringRes
-  (self._text1):SetText((TextManager.GetText)((CStringRes:GetRecorder(1690)).msgTextID, self._exchangeNum))
-  ;
-  (self._timeText):SetText((TextManager.GetText)((CStringRes:GetRecorder(1667)).msgTextID, self._exchangeNum))
+function CallRankDialog:SetStaticRes()
+  self._text1:SetText(TextManager.GetText(CStringRes:GetRecorder(1690).msgTextID, self._exchangeNum))
+  self._timeText:SetText(TextManager.GetText(CStringRes:GetRecorder(1667).msgTextID, self._exchangeNum))
 end
 
-CallRankDialog.OnDestroy = function(self)
-  -- function num : 0_3
+function CallRankDialog:OnDestroy()
   if self._frame then
-    (self._frame):Destroy()
+    self._frame:Destroy()
   end
   if self._playerCallRankCellHelper then
-    (self._playerCallRankCellHelper):OnDestroy()
+    self._playerCallRankCellHelper:OnDestroy()
   end
 end
 
-CallRankDialog.SetData = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._dm = ((NekoData.DataManager).DM_Activity):GetManager(DataCommon.ChristmasCallActivityManagerID)
-  self._bm = ((NekoData.BehaviorManager).BM_Activity):GetManager(DataCommon.ChristmasCallActivityManagerID)
-  ;
-  (self._bm):SendCSimpleRank()
+function CallRankDialog:SetData()
+  self._dm = NekoData.DataManager.DM_Activity:GetManager(DataCommon.ChristmasCallActivityManagerID)
+  self._bm = NekoData.BehaviorManager.BM_Activity:GetManager(DataCommon.ChristmasCallActivityManagerID)
+  self._bm:SendCSimpleRank()
   self:RefreshRankData()
 end
 
-CallRankDialog.RefreshRankData = function(self, notification)
-  -- function num : 0_5 , upvalues : _ENV
-  local rankData = ((NekoData.BehaviorManager).BM_SimpleRank):GetChristmasCallRankData()
+function CallRankDialog:RefreshRankData(notification)
+  local rankData = NekoData.BehaviorManager.BM_SimpleRank:GetChristmasCallRankData()
   if rankData == nil then
-    return 
+    return
   end
   rankData = rankData[0]
-  ;
-  (self._noRank):SetActive(next(rankData.totalRanking) == nil)
-  for key,_ in pairs(self._totalRankData) do
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R8 in 'UnsetPending'
-
-    (self._totalRankData)[key] = nil
+  self._noRank:SetActive(next(rankData.totalRanking) == nil)
+  for key, _ in pairs(self._totalRankData) do
+    self._totalRankData[key] = nil
   end
-  for _,value in ipairs(rankData.totalRanking) do
-    (table.insert)(self._totalRankData, {remoteData = value, localData = (self._bm):GetRewardCfgByRank(value.rank)})
+  for _, value in ipairs(rankData.totalRanking) do
+    table.insert(self._totalRankData, {
+      remoteData = value,
+      localData = self._bm:GetRewardCfgByRank(value.rank)
+    })
   end
-  self._playerRankData = {remoteData = rankData.playerRanking, localData = (self._bm):GetRewardCfgByRank((rankData.playerRanking).rank)}
-  ;
-  (self._frame):ReloadAllCell()
-  ;
-  (self._frame):MoveToTop()
+  self._playerRankData = {
+    remoteData = rankData.playerRanking,
+    localData = self._bm:GetRewardCfgByRank(rankData.playerRanking.rank)
+  }
+  self._frame:ReloadAllCell()
+  self._frame:MoveToTop()
   if self._playerCallRankCellHelper then
-    (self._playerCallRankCellHelper):RefreshCell(self._playerRankData)
+    self._playerCallRankCellHelper:RefreshCell(self._playerRankData)
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
-CallRankDialog.OnBackBtnClicked = function(self)
-  -- function num : 0_6
+function CallRankDialog:OnBackBtnClicked()
   self:Destroy()
 end
 
-CallRankDialog.CellAtIndex = function(self, frame, index)
-  -- function num : 0_7
+function CallRankDialog:CellAtIndex(frame, index)
   return "activity.chrismascall.callrankcell"
 end
 
-CallRankDialog.NumberOfCell = function(self, frame, index)
-  -- function num : 0_8
+function CallRankDialog:NumberOfCell(frame, index)
   return #self._totalRankData
 end
 
-CallRankDialog.DataAtIndex = function(self, frame, index)
-  -- function num : 0_9
-  return (self._totalRankData)[index]
+function CallRankDialog:DataAtIndex(frame, index)
+  return self._totalRankData[index]
 end
 
-CallRankDialog.OnCurPosChange = function(self, frame, proportion)
-  -- function num : 0_10
-  local width, height = (self._panel):GetRectSize()
-  local total = (self._frame):GetTotalLength()
+function CallRankDialog:OnCurPosChange(frame, proportion)
+  local width, height = self._panel:GetRectSize()
+  local total = self._frame:GetTotalLength()
   if height < total then
-    (self._scrollBar):SetActive(true)
-    ;
-    (self._scrollBar):SetScrollSize(height / total)
-    ;
-    (self._scrollBar):SetScrollValue(proportion)
+    self._scrollBar:SetActive(true)
+    self._scrollBar:SetScrollSize(height / total)
+    self._scrollBar:SetScrollValue(proportion)
   else
-    ;
-    (self._scrollBar):SetActive(false)
+    self._scrollBar:SetActive(false)
   end
 end
 
 return CallRankDialog
-

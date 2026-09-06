@@ -1,9 +1,4 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/bean/protocol/item/beans/randomentry.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local RandomEntry = dataclass("RandomEntry")
 RandomEntry.index = 0
 RandomEntry.randomId = 0
@@ -11,57 +6,55 @@ RandomEntry.kind = 0
 RandomEntry.attr = 0
 RandomEntry.attrValue = 0
 RandomEntry.skill = 0
-RandomEntry.Ctor = function(self)
-  -- function num : 0_0
+
+function RandomEntry:Ctor()
 end
 
-RandomEntry.Marshal = function(self, buffer)
-  -- function num : 0_1 , upvalues : ProtocolBufferStaticFunctions
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.index) then
+function RandomEntry:Marshal(buffer)
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.index) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.randomId) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.randomId) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.kind) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.kind) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.attr) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.attr) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.attrValue) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.attrValue) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.skill) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.skill) then
     return false
   end
   return true
 end
 
-RandomEntry.Unmarshal = function(self, buffer)
-  -- function num : 0_2 , upvalues : ProtocolBufferStaticFunctions
+function RandomEntry:Unmarshal(buffer)
   local ret = true
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.index = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.randomId = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.kind = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.attr = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.attrValue = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.skill = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
@@ -69,4 +62,3 @@ RandomEntry.Unmarshal = function(self, buffer)
 end
 
 return RandomEntry
-

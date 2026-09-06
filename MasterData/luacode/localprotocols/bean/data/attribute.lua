@@ -1,8 +1,3 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/localprotocols/bean/data/attribute.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local Attribute = dataclass("Attribute")
 Attribute.id = 0
 Attribute.key = 0
@@ -59,8 +54,8 @@ Attribute.evolutionLevel = 0
 Attribute.exclusiveLevel = 0
 Attribute.damagereduce = 0
 Attribute.runelv = 0
-Attribute.Ctor = function(self)
-  -- function num : 0_0
+
+function Attribute:Ctor()
   self.skilllist = {}
   self.bosshpstage = {}
   self.passiveskill = {}
@@ -69,8 +64,7 @@ Attribute.Ctor = function(self)
   self.autoExploreSkill = {}
 end
 
-Attribute.Marshal = function(self, data)
-  -- function num : 0_1 , upvalues : _ENV
+function Attribute:Marshal(data)
   data.id = self.id
   data.key = self.key
   data.pos = self.pos
@@ -116,46 +110,31 @@ Attribute.Marshal = function(self, data)
   data.healingpower = self.healingpower
   data.camp = self.camp
   data.skilllist = {}
-  for index,value in ipairs(self.skilllist) do
-    -- DECOMPILER ERROR at PC96: Confused about usage of register: R7 in 'UnsetPending'
-
-    (data.skilllist)[index] = {}
-    ;
-    ((self.skilllist)[index]):Marshal((data.skilllist)[index])
+  for index, value in ipairs(self.skilllist) do
+    data.skilllist[index] = {}
+    self.skilllist[index]:Marshal(data.skilllist[index])
   end
   data.baseskill = self.baseskill
   data.bosshpstage = {}
-  for index,value in ipairs(self.bosshpstage) do
-    -- DECOMPILER ERROR at PC115: Confused about usage of register: R7 in 'UnsetPending'
-
-    (data.bosshpstage)[index] = {}
-    ;
-    ((self.bosshpstage)[index]):Marshal((data.bosshpstage)[index])
+  for index, value in ipairs(self.bosshpstage) do
+    data.bosshpstage[index] = {}
+    self.bosshpstage[index]:Marshal(data.bosshpstage[index])
   end
   data.bosshpstr = self.bosshpstr
   data.passiveskill = {}
-  for index,value in ipairs(self.passiveskill) do
-    -- DECOMPILER ERROR at PC134: Confused about usage of register: R7 in 'UnsetPending'
-
-    (data.passiveskill)[index] = {}
-    ;
-    ((self.passiveskill)[index]):Marshal((data.passiveskill)[index])
+  for index, value in ipairs(self.passiveskill) do
+    data.passiveskill[index] = {}
+    self.passiveskill[index]:Marshal(data.passiveskill[index])
   end
   data.equipskilllist = {}
-  for index,value in ipairs(self.equipskilllist) do
-    -- DECOMPILER ERROR at PC151: Confused about usage of register: R7 in 'UnsetPending'
-
-    (data.equipskilllist)[index] = {}
-    ;
-    ((self.equipskilllist)[index]):Marshal((data.equipskilllist)[index])
+  for index, value in ipairs(self.equipskilllist) do
+    data.equipskilllist[index] = {}
+    self.equipskilllist[index]:Marshal(data.equipskilllist[index])
   end
   data.runeskilllist = {}
-  for index,value in ipairs(self.runeskilllist) do
-    -- DECOMPILER ERROR at PC168: Confused about usage of register: R7 in 'UnsetPending'
-
-    (data.runeskilllist)[index] = {}
-    ;
-    ((self.runeskilllist)[index]):Marshal((data.runeskilllist)[index])
+  for index, value in ipairs(self.runeskilllist) do
+    data.runeskilllist[index] = {}
+    self.runeskilllist[index]:Marshal(data.runeskilllist[index])
   end
   data.assetbundlename = self.assetbundlename
   data.prefabname = self.prefabname
@@ -163,12 +142,9 @@ Attribute.Marshal = function(self, data)
   data.comborate2 = self.comborate2
   data.nameTextId = self.nameTextId
   data.autoExploreSkill = {}
-  for index,value in ipairs(self.autoExploreSkill) do
-    -- DECOMPILER ERROR at PC195: Confused about usage of register: R7 in 'UnsetPending'
-
-    (data.autoExploreSkill)[index] = {}
-    ;
-    ((self.autoExploreSkill)[index]):Marshal((data.autoExploreSkill)[index])
+  for index, value in ipairs(self.autoExploreSkill) do
+    data.autoExploreSkill[index] = {}
+    self.autoExploreSkill[index]:Marshal(data.autoExploreSkill[index])
   end
   data.evolutionLevel = self.evolutionLevel
   data.exclusiveLevel = self.exclusiveLevel
@@ -176,8 +152,7 @@ Attribute.Marshal = function(self, data)
   data.runelv = self.runelv
 end
 
-Attribute.Unmarshal = function(self, data)
-  -- function num : 0_2 , upvalues : _ENV
+function Attribute:Unmarshal(data)
   self.id = data.id
   self.key = data.key
   self.pos = data.pos
@@ -222,54 +197,36 @@ Attribute.Unmarshal = function(self, data)
   self.speed = data.speed
   self.healingpower = data.healingpower
   self.camp = data.camp
-  for index,value in ipairs(data.skilllist) do
-    -- DECOMPILER ERROR at PC94: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self.skilllist)[index] = {}
-    ;
-    ((data.skilllist)[index]):Unmarshal((self.skilllist)[index])
+  for index, value in ipairs(data.skilllist) do
+    self.skilllist[index] = {}
+    data.skilllist[index]:Unmarshal(self.skilllist[index])
   end
   self.baseskill = data.baseskill
-  for index,value in ipairs(data.bosshpstage) do
-    -- DECOMPILER ERROR at PC111: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self.bosshpstage)[index] = {}
-    ;
-    ((data.bosshpstage)[index]):Unmarshal((self.bosshpstage)[index])
+  for index, value in ipairs(data.bosshpstage) do
+    self.bosshpstage[index] = {}
+    data.bosshpstage[index]:Unmarshal(self.bosshpstage[index])
   end
   self.bosshpstr = data.bosshpstr
-  for index,value in ipairs(data.passiveskill) do
-    -- DECOMPILER ERROR at PC128: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self.passiveskill)[index] = {}
-    ;
-    ((data.passiveskill)[index]):Unmarshal((self.passiveskill)[index])
+  for index, value in ipairs(data.passiveskill) do
+    self.passiveskill[index] = {}
+    data.passiveskill[index]:Unmarshal(self.passiveskill[index])
   end
-  for index,value in ipairs(data.equipskilllist) do
-    -- DECOMPILER ERROR at PC143: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self.equipskilllist)[index] = {}
-    ;
-    ((data.equipskilllist)[index]):Unmarshal((self.equipskilllist)[index])
+  for index, value in ipairs(data.equipskilllist) do
+    self.equipskilllist[index] = {}
+    data.equipskilllist[index]:Unmarshal(self.equipskilllist[index])
   end
-  for index,value in ipairs(data.runeskilllist) do
-    -- DECOMPILER ERROR at PC158: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self.runeskilllist)[index] = {}
-    ;
-    ((data.runeskilllist)[index]):Unmarshal((self.runeskilllist)[index])
+  for index, value in ipairs(data.runeskilllist) do
+    self.runeskilllist[index] = {}
+    data.runeskilllist[index]:Unmarshal(self.runeskilllist[index])
   end
   self.assetbundlename = data.assetbundlename
   self.prefabname = data.prefabname
   self.comborate1 = data.comborate1
   self.comborate2 = data.comborate2
   self.nameTextId = data.nameTextId
-  for index,value in ipairs(data.autoExploreSkill) do
-    -- DECOMPILER ERROR at PC183: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self.autoExploreSkill)[index] = {}
-    ;
-    ((data.autoExploreSkill)[index]):Unmarshal((self.autoExploreSkill)[index])
+  for index, value in ipairs(data.autoExploreSkill) do
+    self.autoExploreSkill[index] = {}
+    data.autoExploreSkill[index]:Unmarshal(self.autoExploreSkill[index])
   end
   self.evolutionLevel = data.evolutionLevel
   self.exclusiveLevel = data.exclusiveLevel
@@ -277,8 +234,7 @@ Attribute.Unmarshal = function(self, data)
   self.runelv = data.runelv
 end
 
-Attribute.CheckVariable = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function Attribute:CheckVariable()
   if type(self.id) ~= "number" then
     LogErrorFormat("LocalProtocols", "type error!type(self.id) = %s. number required.", type(self.id))
     return false
@@ -459,9 +415,9 @@ Attribute.CheckVariable = function(self)
     LogErrorFormat("LocalProtocols", "type error!type(self.skilllist) = %s. table required.", type(self.skilllist))
     return false
   end
-  for index,value in ipairs(self.skilllist) do
-    if type(R7_PC636) ~= "number" then
-      LogErrorFormat(R7_PC636, "type error!type(self.skilllist -> value) = %s. number required.", type(R10_PC644))
+  for index, value in ipairs(self.skilllist) do
+    if type(value) ~= "number" then
+      LogErrorFormat("LocalProtocols", "type error!type(self.skilllist -> value) = %s. number required.", type(value))
       return false
     end
   end
@@ -473,13 +429,9 @@ Attribute.CheckVariable = function(self)
     LogErrorFormat("LocalProtocols", "type error!type(self.bosshpstage) = %s. table required.", type(self.bosshpstage))
     return false
   end
-  for index,value in ipairs(self.bosshpstage) do
-    -- DECOMPILER ERROR at PC683: Overwrote pending register: R7 in 'AssignReg'
-
-    -- DECOMPILER ERROR at PC688: Overwrote pending register: R7 in 'AssignReg'
-
-    if type(R7_PC636) ~= "number" then
-      LogErrorFormat(R7_PC636, "type error!type(self.bosshpstage -> value) = %s. number required.", type(R10_PC692))
+  for index, value in ipairs(self.bosshpstage) do
+    if type(value) ~= "number" then
+      LogErrorFormat("LocalProtocols", "type error!type(self.bosshpstage -> value) = %s. number required.", type(value))
       return false
     end
   end
@@ -491,13 +443,9 @@ Attribute.CheckVariable = function(self)
     LogErrorFormat("LocalProtocols", "type error!type(self.passiveskill) = %s. table required.", type(self.passiveskill))
     return false
   end
-  for index,value in ipairs(self.passiveskill) do
-    -- DECOMPILER ERROR at PC731: Overwrote pending register: R7 in 'AssignReg'
-
-    -- DECOMPILER ERROR at PC736: Overwrote pending register: R7 in 'AssignReg'
-
-    if type(R7_PC636) ~= "number" then
-      LogErrorFormat(R7_PC636, "type error!type(self.passiveskill -> value) = %s. number required.", type(R10_PC740))
+  for index, value in ipairs(self.passiveskill) do
+    if type(value) ~= "number" then
+      LogErrorFormat("LocalProtocols", "type error!type(self.passiveskill -> value) = %s. number required.", type(value))
       return false
     end
   end
@@ -505,13 +453,9 @@ Attribute.CheckVariable = function(self)
     LogErrorFormat("LocalProtocols", "type error!type(self.equipskilllist) = %s. table required.", type(self.equipskilllist))
     return false
   end
-  for index,value in ipairs(self.equipskilllist) do
-    -- DECOMPILER ERROR at PC765: Overwrote pending register: R7 in 'AssignReg'
-
-    -- DECOMPILER ERROR at PC770: Overwrote pending register: R7 in 'AssignReg'
-
-    if type(R7_PC636) ~= "number" then
-      LogErrorFormat(R7_PC636, "type error!type(self.equipskilllist -> value) = %s. number required.", type(R10_PC774))
+  for index, value in ipairs(self.equipskilllist) do
+    if type(value) ~= "number" then
+      LogErrorFormat("LocalProtocols", "type error!type(self.equipskilllist -> value) = %s. number required.", type(value))
       return false
     end
   end
@@ -519,13 +463,9 @@ Attribute.CheckVariable = function(self)
     LogErrorFormat("LocalProtocols", "type error!type(self.runeskilllist) = %s. table required.", type(self.runeskilllist))
     return false
   end
-  for index,value in ipairs(self.runeskilllist) do
-    -- DECOMPILER ERROR at PC799: Overwrote pending register: R7 in 'AssignReg'
-
-    -- DECOMPILER ERROR at PC804: Overwrote pending register: R7 in 'AssignReg'
-
-    if type(R7_PC636) ~= "number" then
-      LogErrorFormat(R7_PC636, "type error!type(self.runeskilllist -> value) = %s. number required.", type(R10_PC808))
+  for index, value in ipairs(self.runeskilllist) do
+    if type(value) ~= "number" then
+      LogErrorFormat("LocalProtocols", "type error!type(self.runeskilllist -> value) = %s. number required.", type(value))
       return false
     end
   end
@@ -553,9 +493,7 @@ Attribute.CheckVariable = function(self)
     LogErrorFormat("LocalProtocols", "type error!type(self.autoExploreSkill) = %s. table required.", type(self.autoExploreSkill))
     return false
   end
-  for index,value in ipairs(self.autoExploreSkill) do
-    -- DECOMPILER ERROR at PC902: Overwrote pending register: R7 in 'AssignReg'
-
+  for index, value in ipairs(self.autoExploreSkill) do
     if not value:CheckVariable() then
       return false
     end
@@ -580,4 +518,3 @@ Attribute.CheckVariable = function(self)
 end
 
 return Attribute
-

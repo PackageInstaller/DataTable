@@ -1,45 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/def/protocol/yard/sstrengthtask.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local SStrengthTask = dataclass("SStrengthTask", require("framework.net.protocol"))
 SStrengthTask.ProtocolType = 2339
 SStrengthTask.MaxSize = 65535
-SStrengthTask.Ctor = function(self, client)
-  -- function num : 0_0 , upvalues : SStrengthTask
-  ((SStrengthTask.super).Ctor)(self, client)
+
+function SStrengthTask:Ctor(client)
+  SStrengthTask.super.Ctor(self, client)
   self.tasks = {}
 end
 
-SStrengthTask.Marshal = function(self, buffer)
-  -- function num : 0_1 , upvalues : _ENV, ProtocolBufferStaticFunctions
-  local length = (table.slen)(self.tasks)
-  if not (ProtocolBufferStaticFunctions.WriteCompactUInt32)(buffer, length) then
+function SStrengthTask:Marshal(buffer)
+  local length = table.slen(self.tasks)
+  if not ProtocolBufferStaticFunctions.WriteCompactUInt32(buffer, length) then
     return false
   end
   for i = 1, length do
-    if not ((self.tasks)[i]):Marshal(buffer) then
+    if not self.tasks[i]:Marshal(buffer) then
       return false
     end
   end
   return true
 end
 
-SStrengthTask.Unmarshal = function(self, buffer)
-  -- function num : 0_2 , upvalues : ProtocolBufferStaticFunctions, _ENV
+function SStrengthTask:Unmarshal(buffer)
   local ret = true
   local length = 0
-  ret = (ProtocolBufferStaticFunctions.ReadCompactUInt32)(buffer)
+  ret, length = ProtocolBufferStaticFunctions.ReadCompactUInt32(buffer)
   if not ret then
     return ret
   end
   for i = 1, length do
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R8 in 'UnsetPending'
-
-    (self.tasks)[i] = ((require("protocols.bean.protocol.yard.tasktolevel")).Create)()
-    if not ((self.tasks)[i]):Unmarshal(buffer) then
+    self.tasks[i] = require("protocols.bean.protocol.yard.tasktolevel").Create()
+    if not self.tasks[i]:Unmarshal(buffer) then
       return false
     end
   end
@@ -47,4 +38,3 @@ SStrengthTask.Unmarshal = function(self, buffer)
 end
 
 return SStrengthTask
-

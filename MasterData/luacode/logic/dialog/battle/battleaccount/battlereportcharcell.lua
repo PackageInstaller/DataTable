@@ -1,19 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/dialog/battle/battleaccount/battlereportcharcell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local CStringres = (BeanManager.GetTableByName)("message.cstringres")
+local CStringres = BeanManager.GetTableByName("message.cstringres")
 local BattleReportCharCell = class("BattleReportCharCell", Dialog)
 BattleReportCharCell.AssetBundleName = "ui/layouts.battlewin"
 BattleReportCharCell.AssetName = "BattleReportCharCell"
-BattleReportCharCell.Ctor = function(self, ...)
-  -- function num : 0_0 , upvalues : BattleReportCharCell
-  ((BattleReportCharCell.super).Ctor)(self, ...)
+
+function BattleReportCharCell:Ctor(...)
+  BattleReportCharCell.super.Ctor(self, ...)
 end
 
-BattleReportCharCell.OnCreate = function(self)
-  -- function num : 0_1
+function BattleReportCharCell:OnCreate()
   self._img = self:GetChild("Char/CharBack/Image")
   self._name = self:GetChild("Char/Name")
   self._levelNum = self:GetChild("Char/LevelNum")
@@ -29,23 +23,17 @@ BattleReportCharCell.OnCreate = function(self)
   self._treatNum = self:GetChild("Char/Heal/Num")
   self._maxPercent = self:GetChild("Char/Damage/PercentYellow")
   self._maxNum = self:GetChild("Char/Damage/NumYellow")
-  ;
-  (self:GetRootWindow()):Subscribe_PointerClickEvent(self.OnCellClicked, self)
+  self:GetRootWindow():Subscribe_PointerClickEvent(self.OnCellClicked, self)
 end
 
-BattleReportCharCell.OnDestroy = function(self)
-  -- function num : 0_2
+function BattleReportCharCell:OnDestroy()
 end
 
-BattleReportCharCell.RefreshCell = function(self, data)
-  -- function num : 0_3 , upvalues : _ENV, CStringres
-  (self._injuryPercentNum):SetText(data.injuryPercent .. "%")
-  ;
-  (self._injuryProgress):SetFillAmount(data.injuryPercent / 100)
-  ;
-  (self._treatPercentNum):SetText(data.treatPercent .. "%")
-  ;
-  (self._treatProgress):SetFillAmount(data.treatPercent / 100)
+function BattleReportCharCell:RefreshCell(data)
+  self._injuryPercentNum:SetText(data.injuryPercent .. "%")
+  self._injuryProgress:SetFillAmount(data.injuryPercent / 100)
+  self._treatPercentNum:SetText(data.treatPercent .. "%")
+  self._treatProgress:SetFillAmount(data.treatPercent / 100)
   local damagenum = data.damage
   if damagenum < 0 then
     damagenum = -damagenum
@@ -58,89 +46,61 @@ BattleReportCharCell.RefreshCell = function(self, data)
   if treatnum < 0 then
     treatnum = -treatnum
   end
-  ;
-  (self._damageProgress):SetFillAmount(data.damagePercent / 100)
+  self._damageProgress:SetFillAmount(data.damagePercent / 100)
   if data.isMax then
-    (self._maxPercent):SetText(data.damagePercent .. "%")
-    ;
-    (self._maxNum):SetText((NumberManager.GetShowNumber)(damagenum))
-    ;
-    (self._damagePercentNum):SetActive(false)
-    ;
-    (self._damageNum):SetActive(false)
-    ;
-    (self._maxPercent):SetActive(true)
-    ;
-    (self._maxNum):SetActive(true)
+    self._maxPercent:SetText(data.damagePercent .. "%")
+    self._maxNum:SetText(NumberManager.GetShowNumber(damagenum))
+    self._damagePercentNum:SetActive(false)
+    self._damageNum:SetActive(false)
+    self._maxPercent:SetActive(true)
+    self._maxNum:SetActive(true)
   else
-    ;
-    (self._damagePercentNum):SetText(data.damagePercent .. "%")
-    ;
-    (self._damageNum):SetText((NumberManager.GetShowNumber)(damagenum))
-    ;
-    (self._damagePercentNum):SetActive(true)
-    ;
-    (self._damageNum):SetActive(true)
-    ;
-    (self._maxPercent):SetActive(false)
-    ;
-    (self._maxNum):SetActive(false)
+    self._damagePercentNum:SetText(data.damagePercent .. "%")
+    self._damageNum:SetText(NumberManager.GetShowNumber(damagenum))
+    self._damagePercentNum:SetActive(true)
+    self._damageNum:SetActive(true)
+    self._maxPercent:SetActive(false)
+    self._maxNum:SetActive(false)
   end
-  ;
-  (self._injuryNum):SetText((NumberManager.GetShowNumber)(injurynum))
-  ;
-  (self._treatNum):SetText((NumberManager.GetShowNumber)(treatnum))
-  local role = ((NekoData.BehaviorManager).BM_AllRoles):GetRoleById(data.roleId)
+  self._injuryNum:SetText(NumberManager.GetShowNumber(injurynum))
+  self._treatNum:SetText(NumberManager.GetShowNumber(treatnum))
+  local role = NekoData.BehaviorManager.BM_AllRoles:GetRoleById(data.roleId)
   if role then
-    (self._levelNum):SetText(role:GetShowLv())
-    ;
-    (self._breakLevelNum):SetText(role:GetBreakLv())
+    self._levelNum:SetText(role:GetShowLv())
+    self._breakLevelNum:SetText(role:GetBreakLv())
     if role:GetIsLeader() then
-      local str = (TextManager.GetText)((CStringres:GetRecorder(1433)).msgTextID)
-      ;
-      (self._name):SetText(str)
+      local str = TextManager.GetText(CStringres:GetRecorder(1433).msgTextID)
+      self._name:SetText(str)
     else
-      do
-        ;
-        (self._name):SetText(role:GetRoleName())
-        do
-          local imageRecord = role:GetSkillHeadImageRecord()
-          ;
-          (self._img):SetSprite(imageRecord.assetBundle, imageRecord.assetName)
-          LogErrorFormat("BattleReportCharCell", "wrong role id %s", data.roleId)
-        end
-      end
+      self._name:SetText(role:GetRoleName())
     end
+    local imageRecord = role:GetSkillHeadImageRecord()
+    self._img:SetSprite(imageRecord.assetBundle, imageRecord.assetName)
+  else
+    LogErrorFormat("BattleReportCharCell", "wrong role id %s", data.roleId)
   end
 end
 
-BattleReportCharCell.OnCellClicked = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  if (self._delegate)._canCheckRoleDetail then
-    local battler = nil
-    for k,v in pairs(((NekoData.BehaviorManager).BM_Battle):GetLeftBattlers()) do
-      if v:GetConfigId() == (self._cellData).roleId then
+function BattleReportCharCell:OnCellClicked()
+  if self._delegate._canCheckRoleDetail then
+    local battler
+    for k, v in pairs(NekoData.BehaviorManager.BM_Battle:GetLeftBattlers()) do
+      if v:GetConfigId() == self._cellData.roleId then
         battler = v
         break
       end
     end
-    do
-      if battler then
-        local dialog = (DialogManager.GetDialog)("newbattle.battleroledetaildialog")
-        if dialog then
-          dialog:SetData(battler)
-        else
-          ;
-          ((DialogManager.CreateSingletonDialog)("newbattle.battleroledetaildialog")):SetData(battler)
-        end
+    if battler then
+      local dialog = DialogManager.GetDialog("newbattle.battleroledetaildialog")
+      if dialog then
+        dialog:SetData(battler)
       else
-        do
-          LogErrorFormat("BattleReportCharCell", "role id %s no battler", (self._cellData).roleId)
-        end
+        DialogManager.CreateSingletonDialog("newbattle.battleroledetaildialog"):SetData(battler)
       end
+    else
+      LogErrorFormat("BattleReportCharCell", "role id %s no battler", self._cellData.roleId)
     end
   end
 end
 
 return BattleReportCharCell
-

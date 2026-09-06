@@ -1,84 +1,67 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/manager/experimental/behaviormanager/activity/bm_birthday.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local CActivityTasksProtocolDef = (LuaNetManager.GetProtocolDef)("protocol.task.cactivitytasks")
-local CLoginMissionAward = (BeanManager.GetTableByName)("mission.cloginmissionaward")
-local CLoginWishCfg = (BeanManager.GetTableByName)("activity.cloginwishcfg")
-local CLoginMission = (BeanManager.GetTableByName)("mission.cloginmission")
-local TaskStatus = (LuaNetManager.CreateBean)("protocol.task.taskstatus")
+local CActivityTasksProtocolDef = LuaNetManager.GetProtocolDef("protocol.task.cactivitytasks")
+local CLoginMissionAward = BeanManager.GetTableByName("mission.cloginmissionaward")
+local CLoginWishCfg = BeanManager.GetTableByName("activity.cloginwishcfg")
+local CLoginMission = BeanManager.GetTableByName("mission.cloginmission")
+local TaskStatus = LuaNetManager.CreateBean("protocol.task.taskstatus")
 local BM_BirthDay = class("BM_BirthDay")
-BM_BirthDay.Ctor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._birthday = ((NekoData.Data).activities).birthday
+
+function BM_BirthDay:Ctor()
+  self._birthday = NekoData.Data.activities.birthday
 end
 
-BM_BirthDay.GetIsOpen = function(self)
-  -- function num : 0_1
-  return (self._birthday).isOpen
+function BM_BirthDay:GetIsOpen()
+  return self._birthday.isOpen
 end
 
-BM_BirthDay.GetStartTime = function(self)
-  -- function num : 0_2
-  return (self._birthday).startTime
+function BM_BirthDay:GetStartTime()
+  return self._birthday.startTime
 end
 
-BM_BirthDay.GetEndTime = function(self)
-  -- function num : 0_3
-  return (self._birthday).endTime
+function BM_BirthDay:GetEndTime()
+  return self._birthday.endTime
 end
 
-BM_BirthDay.GetRemainTime = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  return (self._birthday).endTime - (ServerGameTimer.GetServerTimeForecast)()
+function BM_BirthDay:GetRemainTime()
+  return self._birthday.endTime - ServerGameTimer.GetServerTimeForecast()
 end
 
-BM_BirthDay.GetRewardRecord = function(self)
-  -- function num : 0_5
-  return (self._birthday).rewardRecord
+function BM_BirthDay:GetRewardRecord()
+  return self._birthday.rewardRecord
 end
 
-BM_BirthDay.GetShareRecord = function(self)
-  -- function num : 0_6
-  return (self._birthday).shareRecord
+function BM_BirthDay:GetShareRecord()
+  return self._birthday.shareRecord
 end
 
-BM_BirthDay.GetWishRecord = function(self)
-  -- function num : 0_7
-  return (self._birthday).wishRecord
+function BM_BirthDay:GetWishRecord()
+  return self._birthday.wishRecord
 end
 
-BM_BirthDay.GetMaxTaskID = function(self)
-  -- function num : 0_8
-  return (self._birthday).maxTaskID
+function BM_BirthDay:GetMaxTaskID()
+  return self._birthday.maxTaskID
 end
 
-BM_BirthDay.GetExtraItemIsLeft = function(self)
-  -- function num : 0_9
-  return (self._birthday).extraItemIsLeft
+function BM_BirthDay:GetExtraItemIsLeft()
+  return self._birthday.extraItemIsLeft
 end
 
-BM_BirthDay.GetWishRecordText = function(self)
-  -- function num : 0_10 , upvalues : _ENV, CLoginWishCfg
-  if (self._birthday).wishRecord == -1 then
+function BM_BirthDay:GetWishRecordText()
+  if self._birthday.wishRecord == -1 then
     return ""
   else
-    return (TextManager.GetText)((CLoginWishCfg:GetRecorder((self._birthday).wishRecord)).TextID)
+    return TextManager.GetText(CLoginWishCfg:GetRecorder(self._birthday.wishRecord).TextID)
   end
 end
 
-BM_BirthDay.HaveRedDot = function(self)
-  -- function num : 0_11
+function BM_BirthDay:HaveRedDot()
   return false
 end
 
-BM_BirthDay.GetBoxReddot = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function BM_BirthDay:GetBoxReddot()
   local remoteBoxData = self:GetRewardRecord()
-  local allIDs = (self:GetCLoginMissionAwardCfg()):GetAllIds()
-  for _,cfgID in ipairs(allIDs) do
-    local record = (self:GetCLoginMissionAwardCfg()):GetRecorder(cfgID)
+  local allIDs = self:GetCLoginMissionAwardCfg():GetAllIds()
+  for _, cfgID in ipairs(allIDs) do
+    local record = self:GetCLoginMissionAwardCfg():GetRecorder(cfgID)
     if not remoteBoxData[cfgID] and self:GetBoxCanGetStatus(record.missionid) then
       return true
     end
@@ -86,20 +69,15 @@ BM_BirthDay.GetBoxReddot = function(self)
   return false
 end
 
-BM_BirthDay.ShowRedDot = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function BM_BirthDay:ShowRedDot()
   if not self:GetIsOpen() then
     return false
   end
-  -- DECOMPILER ERROR at PC37: Unhandled construct in 'MakeBoolean' P3
-
-  do return not self:HaveRedDot() and ((((NekoData.BehaviorManager).BM_Game):ShowLocalTips((DataCommon.LocalTips).OpenBirthDayDialog) ~= nil or not self:GetBoxReddot()) and self:GetWishReddot()) end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return self:HaveRedDot() or NekoData.BehaviorManager.BM_ActivityTasks:BirthDayShowRedDot() or NekoData.BehaviorManager.BM_Game:ShowLocalTips(DataCommon.LocalTips.OpenBirthDayDialog) ~= nil or self:GetBoxReddot() or self:GetTaskReddot()
 end
 
-BM_BirthDay.SendCActivityTasks = function(self)
-  -- function num : 0_14 , upvalues : _ENV, CActivityTasksProtocolDef
-  local protocol = (LuaNetManager.CreateProtocol)("protocol.task.cactivitytasks")
+function BM_BirthDay:SendCActivityTasks()
+  local protocol = LuaNetManager.CreateProtocol("protocol.task.cactivitytasks")
   if protocol then
     protocol.activityID = CActivityTasksProtocolDef.BIRTH_DAY
     protocol:Send()
@@ -107,9 +85,8 @@ BM_BirthDay.SendCActivityTasks = function(self)
   return CActivityTasksProtocolDef.BIRTH_DAY
 end
 
-BM_BirthDay.SendCAcceptActivityTask = function(self, taskID)
-  -- function num : 0_15 , upvalues : _ENV, CActivityTasksProtocolDef
-  local protocol = (LuaNetManager.CreateProtocol)("protocol.task.cacceptactivitytask")
+function BM_BirthDay:SendCAcceptActivityTask(taskID)
+  local protocol = LuaNetManager.CreateProtocol("protocol.task.cacceptactivitytask")
   if protocol then
     protocol.activityID = CActivityTasksProtocolDef.BIRTH_DAY
     protocol.taskID = taskID
@@ -118,9 +95,8 @@ BM_BirthDay.SendCAcceptActivityTask = function(self, taskID)
   return CActivityTasksProtocolDef.BIRTH_DAY
 end
 
-BM_BirthDay.SendCCommitActivityTask = function(self, taskID)
-  -- function num : 0_16 , upvalues : _ENV, CActivityTasksProtocolDef
-  local protocol = (LuaNetManager.CreateProtocol)("protocol.task.ccommitactivitytask")
+function BM_BirthDay:SendCCommitActivityTask(taskID)
+  local protocol = LuaNetManager.CreateProtocol("protocol.task.ccommitactivitytask")
   if protocol then
     protocol.activityID = CActivityTasksProtocolDef.BIRTH_DAY
     protocol.taskID = taskID
@@ -129,59 +105,51 @@ BM_BirthDay.SendCCommitActivityTask = function(self, taskID)
   return CActivityTasksProtocolDef.BIRTH_DAY
 end
 
-BM_BirthDay.SendCChangeWish = function(self, index)
-  -- function num : 0_17 , upvalues : _ENV
-  local protocol = (LuaNetManager.CreateProtocol)("protocol.activity.cchangewish")
+function BM_BirthDay:SendCChangeWish(index)
+  local protocol = LuaNetManager.CreateProtocol("protocol.activity.cchangewish")
   if protocol then
     protocol.index = index
     protocol:Send()
   end
 end
 
-BM_BirthDay.SendCOpenBirthReward = function(self, rewardId)
-  -- function num : 0_18 , upvalues : _ENV
-  local protocol = (LuaNetManager.CreateProtocol)("protocol.activity.copenbirthreward")
+function BM_BirthDay:SendCOpenBirthReward(rewardId)
+  local protocol = LuaNetManager.CreateProtocol("protocol.activity.copenbirthreward")
   if protocol then
     protocol.rewardId = rewardId
     protocol:Send()
   end
 end
 
-BM_BirthDay.SendCBirthShare = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  local protocol = (LuaNetManager.CreateProtocol)("protocol.activity.cbirthshare")
+function BM_BirthDay:SendCBirthShare()
+  local protocol = LuaNetManager.CreateProtocol("protocol.activity.cbirthshare")
   if protocol then
     protocol:Send()
   end
 end
 
-BM_BirthDay.SendCGetShopInfo = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  local protocol = (LuaNetManager.CreateProtocol)("protocol.shop.cgetshopinfo")
+function BM_BirthDay:SendCGetShopInfo()
+  local protocol = LuaNetManager.CreateProtocol("protocol.shop.cgetshopinfo")
   if protocol then
     protocol.shopId = DataCommon.BirtDayShopID
     protocol:Send()
   end
 end
 
-BM_BirthDay.GetCLoginMissionAwardCfg = function(self)
-  -- function num : 0_21 , upvalues : CLoginMissionAward
+function BM_BirthDay:GetCLoginMissionAwardCfg()
   return CLoginMissionAward
 end
 
-BM_BirthDay.GetCLoginWishCfg = function(self)
-  -- function num : 0_22 , upvalues : CLoginWishCfg
+function BM_BirthDay:GetCLoginWishCfg()
   return CLoginWishCfg
 end
 
-BM_BirthDay.GetCLoginMission = function(self)
-  -- function num : 0_23 , upvalues : CLoginMission
+function BM_BirthDay:GetCLoginMission()
   return CLoginMission
 end
 
-BM_BirthDay.GetBoxCanGetStatus = function(self, missionID)
-  -- function num : 0_24 , upvalues : _ENV, TaskStatus
-  local tasks = ((NekoData.BehaviorManager).BM_ActivityTasks):GetBirthDayTasks()
+function BM_BirthDay:GetBoxCanGetStatus(missionID)
+  local tasks = NekoData.BehaviorManager.BM_ActivityTasks:GetBirthDayTasks()
   if tasks == nil then
     return false
   end
@@ -189,38 +157,37 @@ BM_BirthDay.GetBoxCanGetStatus = function(self, missionID)
     LogErrorFormat("BM_BirthDay", "Cannot find missionID %d!", missionID)
     return false
   end
-  do return (tasks[missionID]):GetStatus() == TaskStatus.FINISHED end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return tasks[missionID]:GetStatus() == TaskStatus.FINISHED
 end
 
-BM_BirthDay.GetNowTaskState = function(self)
-  -- function num : 0_25 , upvalues : _ENV, CLoginMission, TaskStatus
-  local remoteTaskData = ((NekoData.BehaviorManager).BM_ActivityTasks):GetBirthDayTasks()
+function BM_BirthDay:GetNowTaskState()
+  local remoteTaskData = NekoData.BehaviorManager.BM_ActivityTasks:GetBirthDayTasks()
   local localTaskData = CLoginMission
   local allIDs = localTaskData:GetAllIds()
   if remoteTaskData == nil then
     return nil, nil, false
   end
-  local firstProcessingTask, firstAcceptedTask = nil, nil
-  for _,cfgID in ipairs(allIDs) do
+  local firstProcessingTask, firstAcceptedTask
+  for _, cfgID in ipairs(allIDs) do
     local record = localTaskData:GetRecorder(cfgID)
     local theTask = remoteTaskData[record.id]
-    -- DECOMPILER ERROR at PC32: Unhandled construct in 'MakeBoolean' P1
-
-    -- DECOMPILER ERROR at PC32: Unhandled construct in 'MakeBoolean' P1
-
-    if theTask and theTask:GetStatus() == TaskStatus.PROCESSING and firstProcessingTask == nil then
-      firstProcessingTask = theTask
+    if theTask then
+      if theTask:GetStatus() == TaskStatus.PROCESSING then
+        if firstProcessingTask == nil then
+          firstProcessingTask = theTask
+        end
+      elseif theTask:GetStatus() == TaskStatus.ACCEPTED and firstAcceptedTask == nil then
+        firstAcceptedTask = theTask
+      end
+    else
+      LogErrorFormat("BM_BirthDay", "Unknown task id %d", record.id)
     end
-    if theTask:GetStatus() == TaskStatus.ACCEPTED and firstAcceptedTask == nil then
-      firstAcceptedTask = theTask
+    if firstProcessingTask and firstAcceptedTask then
+      break
     end
-    LogErrorFormat("BM_BirthDay", "Unknown task id %d", record.id)
   end
-  do
-    if not firstProcessingTask or not firstAcceptedTask then
-      local haveRedotFunc = function()
-    -- function num : 0_25_0 , upvalues : remoteTaskData, _ENV, firstAcceptedTask, firstProcessingTask, self
+  
+  local function haveRedotFunc()
     if remoteTaskData == nil or next(remoteTaskData) == nil then
       return false
     end
@@ -235,33 +202,35 @@ BM_BirthDay.GetNowTaskState = function(self)
     end
     return false
   end
-
-      local canAcceptTask = haveRedotFunc()
-      return firstProcessingTask, firstAcceptedTask, canAcceptTask
-    end
-  end
+  
+  local canAcceptTask = haveRedotFunc()
+  return firstProcessingTask, firstAcceptedTask, canAcceptTask
 end
 
-BM_BirthDay.GetWishReddot = function(self)
-  -- function num : 0_26
-  local allIDs = (self:GetCLoginMissionAwardCfg()):GetAllIds()
-  if (self:GetRewardRecord())[#allIDs] and self:GetWishRecord() == -1 then
+function BM_BirthDay:GetWishReddot()
+  local allIDs = self:GetCLoginMissionAwardCfg():GetAllIds()
+  if self:GetRewardRecord()[#allIDs] and self:GetWishRecord() == -1 then
     return true
   end
   return false
 end
 
-BM_BirthDay.GetTaskReddot = function(self)
-  -- function num : 0_27
+function BM_BirthDay:GetTaskReddot()
   local _, _, canAcceptTask = self:GetNowTaskState()
   return canAcceptTask
 end
 
-local boxProgressNumTbl = {[0] = 0, [1] = 0.125, [2] = 0.375, [3] = 0.625, [4] = 0.875, [5] = 1}
-BM_BirthDay.GetBoxProgressNum = function(self, boxID)
-  -- function num : 0_28 , upvalues : boxProgressNumTbl
+local boxProgressNumTbl = {
+  [0] = 0,
+  [1] = 0.125,
+  [2] = 0.375,
+  [3] = 0.625,
+  [4] = 0.875,
+  [5] = 1
+}
+
+function BM_BirthDay:GetBoxProgressNum(boxID)
   return boxProgressNumTbl[boxID] or 0
 end
 
 return BM_BirthDay
-

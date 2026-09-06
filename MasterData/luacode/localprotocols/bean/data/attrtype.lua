@@ -1,8 +1,3 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/localprotocols/bean/data/attrtype.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local AttrType = dataclass("AttrType")
 AttrType.HP = 10
 AttrType.MAX_HP = 20
@@ -64,22 +59,18 @@ AttrType.COMBORATE2 = 680
 AttrType.CRITDEGREERESISTANCE = 830
 AttrType.DAMAGE_REDUCE = 1060
 AttrType.RUNE_LV = 1070
-AttrType.Ctor = function(self)
-  -- function num : 0_0
+
+function AttrType:Ctor()
 end
 
-AttrType.Marshal = function(self, data)
-  -- function num : 0_1
+function AttrType:Marshal(data)
 end
 
-AttrType.Unmarshal = function(self, data)
-  -- function num : 0_2
+function AttrType:Unmarshal(data)
 end
 
-AttrType.CheckVariable = function(self)
-  -- function num : 0_3
+function AttrType:CheckVariable()
   return true
 end
 
 return AttrType
-

@@ -1,35 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/localprotocols/bean/data/equipreddotdata.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local EquipRedDotData = dataclass("EquipRedDotData")
 EquipRedDotData.roleKey = 0
 EquipRedDotData.weaponKey = 0
 EquipRedDotData.armorKey = 0
 EquipRedDotData.jewelryKey = 0
-EquipRedDotData.Ctor = function(self)
-  -- function num : 0_0
+
+function EquipRedDotData:Ctor()
 end
 
-EquipRedDotData.Marshal = function(self, data)
-  -- function num : 0_1
+function EquipRedDotData:Marshal(data)
   data.roleKey = self.roleKey
   data.weaponKey = self.weaponKey
   data.armorKey = self.armorKey
   data.jewelryKey = self.jewelryKey
 end
 
-EquipRedDotData.Unmarshal = function(self, data)
-  -- function num : 0_2
+function EquipRedDotData:Unmarshal(data)
   self.roleKey = data.roleKey
   self.weaponKey = data.weaponKey
   self.armorKey = data.armorKey
   self.jewelryKey = data.jewelryKey
 end
 
-EquipRedDotData.CheckVariable = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function EquipRedDotData:CheckVariable()
   if type(self.roleKey) ~= "number" then
     LogErrorFormat("LocalProtocols", "type error!type(self.roleKey) = %s. number required.", type(self.roleKey))
     return false
@@ -50,4 +42,3 @@ EquipRedDotData.CheckVariable = function(self)
 end
 
 return EquipRedDotData
-

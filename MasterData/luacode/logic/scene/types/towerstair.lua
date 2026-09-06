@@ -1,17 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/scene/types/towerstair.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local TowerStair = class("TowerStair")
-local AnimationHelper = ((CS.PixelNeko).Animation).AnimationHelper
-local TransformStaticFunctions = ((CS.PixelNeko).Lua).TransformStaticFunctions
-local PrefabLoader = ((CS.PixelNeko).Assets).PrefabLoader
-local SpriteRendererStaticFunctions = ((CS.PixelNeko).Lua).SpriteRendererStaticFunctions
-local cstairobjectconfig = (BeanManager.GetTableByName)("dungeonselect.cstairobjectconfig")
-local stair_animator_type = {nullary = 1, unary = 1, binary = 2, ternary = 3}
-TowerStair.Ctor = function(self, id, typeid, delegate)
-  -- function num : 0_0 , upvalues : cstairobjectconfig
+local AnimationHelper = CS.PixelNeko.Animation.AnimationHelper
+local TransformStaticFunctions = CS.PixelNeko.Lua.TransformStaticFunctions
+local PrefabLoader = CS.PixelNeko.Assets.PrefabLoader
+local SpriteRendererStaticFunctions = CS.PixelNeko.Lua.SpriteRendererStaticFunctions
+local UIManager = CS.PixelNeko.UI.UIManager
+local cstairobjectconfig = BeanManager.GetTableByName("dungeonselect.cstairobjectconfig")
+local stair_animator_type = {
+  nullary = 1,
+  unary = 1,
+  binary = 2,
+  ternary = 3
+}
+
+function TowerStair:Ctor(id, typeid, delegate)
   self._id = id
   self._typeid = typeid
   self._typecfg = cstairobjectconfig:GetRecorder(typeid)
@@ -21,25 +22,18 @@ TowerStair.Ctor = function(self, id, typeid, delegate)
   self._attachments = {}
   self._stairtype = "nullary"
   self._state = "hidden"
+  self._elapsed = 0
   self._normalizedTime = 0
 end
 
-TowerStair.Destroy = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  if self._handler then
-    ((((CS.PixelNeko).Animation).EventTriggerHelper).RemoveStateUpdateListener)(self._object, self._handler)
-    self._handler = nil
-  end
+function TowerStair:Destroy()
 end
 
-TowerStair.BuildObject = function(self, parent)
-  -- function num : 0_2 , upvalues : PrefabLoader, TransformStaticFunctions, _ENV
-  self._object = (PrefabLoader.LoadAndInstantiatePrefab)((self._typecfg).assetbundle, (self._typecfg).assetname)
-  ;
-  (TransformStaticFunctions.SetParent)((self._object).transform, parent.transform)
-  ;
-  (TransformStaticFunctions.SetLocalPosition)(self._object, -100, -100, -100)
-  self._transform = (self._object).transform
+function TowerStair:BuildObject(parent)
+  self._object = PrefabLoader.LoadAndInstantiatePrefab(self._typecfg.assetbundle, self._typecfg.assetname)
+  TransformStaticFunctions.SetParent(self._object.transform, parent.transform)
+  TransformStaticFunctions.SetLocalPosition(self._object, -100, -100, -100)
+  self._transform = self._object.transform
   local path_t = "Tile_#"
   local point_path_t = "Tile_#/point"
   local sprite_path_t = "Tile_#/Sprite"
@@ -47,93 +41,85 @@ TowerStair.BuildObject = function(self, parent)
     local path = path_t:gsub("#", i)
     local point_path = point_path_t:gsub("#", i)
     local sprite_path = sprite_path_t:gsub("#", i)
-    -- DECOMPILER ERROR at PC57: Confused about usage of register: R12 in 'UnsetPending'
-
-    ;
-    (self._children)[i] = {object = (TransformStaticFunctions.GetChild)(self._object, path), point = (TransformStaticFunctions.GetChild)(self._object, point_path), sprite = (TransformStaticFunctions.GetChild)(self._object, sprite_path)}
+    self._children[i] = {
+      object = TransformStaticFunctions.GetChild(self._object, path),
+      point = TransformStaticFunctions.GetChild(self._object, point_path),
+      sprite = TransformStaticFunctions.GetChild(self._object, sprite_path)
+    }
   end
-  self._director = (TransformStaticFunctions.GetChild)(self._object, "")
-  self._handler = ((((CS.PixelNeko).Animation).EventTriggerHelper).AddStateUpdateListener)(self._object, self.OnStateUpdate, self)
+  self._director = TransformStaticFunctions.GetChild(self._object, "")
 end
 
-TowerStair.SetBornPosition = function(x, y)
-  -- function num : 0_3 , upvalues : TowerStair
+function TowerStair.SetBornPosition(x, y)
   TowerStair.BornPosition = {x = x, y = y}
 end
 
-TowerStair.SetSpeed = function(speed)
-  -- function num : 0_4 , upvalues : TowerStair
+function TowerStair.SetSpeed(speed)
   TowerStair.speed = speed
 end
 
-TowerStair.SetVelocity = function(dir, speed)
-  -- function num : 0_5 , upvalues : TowerStair
+function TowerStair.SetVelocity(dir, speed)
   local dis = 1
-  if not speed then
-    speed = TowerStair.speed
-  end
-  TowerStair.velocity = {x = dir.x / dis * speed, y = dir.y / dis * speed, z = dir.z / dis * speed}
+  speed = speed or TowerStair.speed
+  TowerStair.velocity = {
+    x = dir.x / dis * speed,
+    y = dir.y / dis * speed,
+    z = dir.z / dis * speed
+  }
 end
 
-TowerStair.GetID = function(self)
-  -- function num : 0_6
+function TowerStair:GetID()
   return self._id
 end
 
-TowerStair.GetType = function(self)
-  -- function num : 0_7
+function TowerStair:SetID(id)
+  self._id = id
+end
+
+function TowerStair:GetType()
   return self._stairtype
 end
 
-TowerStair.GetTypeID = function(self)
-  -- function num : 0_8
+function TowerStair:GetTypeID()
   return self._typeid
 end
 
-TowerStair.SetType = function(self, stair_type)
-  -- function num : 0_9 , upvalues : AnimationHelper, stair_animator_type
+function TowerStair:SetType(stair_type)
   self._stairtype = stair_type
-  ;
-  (AnimationHelper.SetAnimatorInteger2)(self._object, "type", stair_animator_type[stair_type])
+  AnimationHelper.SetAnimatorInteger2(self._object, "type", stair_animator_type[stair_type])
 end
 
-TowerStair.GetState = function(self)
-  -- function num : 0_10
+function TowerStair:GetState()
   return self._state
 end
 
-TowerStair.GetChild = function(self, index)
-  -- function num : 0_11
-  return (self._children)[index]
+function TowerStair:GetChild(index)
+  return self._children[index]
 end
 
-TowerStair.SetSortingOrder = function(self, index, order)
-  -- function num : 0_12 , upvalues : SpriteRendererStaticFunctions, _ENV
-  if ((self._children)[index]).object then
-    (SpriteRendererStaticFunctions.SetSortingOrderRecursive)(((self._children)[index]).object, order, true)
-    if (self._attachments)[index] then
-      for _,v in pairs((self._attachments)[index]) do
-        (SpriteRendererStaticFunctions.SetSortingOrderRecursive)(v, order + 100, true)
+function TowerStair:SetSortingOrder(index, order)
+  if self._children[index].object then
+    SpriteRendererStaticFunctions.SetSortingOrderRecursive(self._children[index].object, order, true)
+    if self._attachments[index] then
+      for _, v in pairs(self._attachments[index]) do
+        SpriteRendererStaticFunctions.SetSortingOrderRecursive(v, order + 100, true)
       end
     end
   end
 end
 
-TowerStair.GetSortingOrder = function(self, index)
-  -- function num : 0_13 , upvalues : SpriteRendererStaticFunctions
-  if ((self._children)[index]).sprite then
-    return (SpriteRendererStaticFunctions.GetSortingOrder)(((self._children)[index]).sprite)
+function TowerStair:GetSortingOrder(index)
+  if self._children[index].sprite then
+    return SpriteRendererStaticFunctions.GetSortingOrder(self._children[index].sprite)
   end
 end
 
-TowerStair.GetObject = function(self)
-  -- function num : 0_14
+function TowerStair:GetObject()
   return self._object
 end
 
-TowerStair.MapChildren = function(self, object)
-  -- function num : 0_15 , upvalues : _ENV
-  for i,v in pairs(self._children) do
+function TowerStair:MapChildren(object)
+  for i, v in pairs(self._children) do
     if v.object == object then
       return i
     end
@@ -141,146 +127,144 @@ TowerStair.MapChildren = function(self, object)
   return -1
 end
 
-TowerStair.Attach = function(self, index, assetBundle, assetName)
-  -- function num : 0_16 , upvalues : TransformStaticFunctions, PrefabLoader, SpriteRendererStaticFunctions, _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R4 in 'UnsetPending'
-
-  if not (self._attachments)[index] then
-    (self._attachments)[index] = {}
-    ;
-    (TransformStaticFunctions.SetActive)(((self._children)[index]).point, true)
-    local obj = (PrefabLoader.LoadAndInstantiatePrefab)(assetBundle, assetName)
-    ;
-    (TransformStaticFunctions.SetLocalPosition)(obj, 0, 0, 0)
-    ;
-    (TransformStaticFunctions.SetParent)(obj.transform, (((self._children)[index]).point).transform, false)
-    ;
-    (SpriteRendererStaticFunctions.SetSortingOrderRecursive)(obj, 10, true)
-    ;
-    (table.insert)((self._attachments)[index], obj)
-  end
+function TowerStair:Attach(index, assetBundle, assetName)
+  self._attachments[index] = self._attachments[index] or {}
+  TransformStaticFunctions.SetActive(self._children[index].point, true)
+  local obj = PrefabLoader.LoadAndInstantiatePrefab(assetBundle, assetName)
+  TransformStaticFunctions.SetLocalPosition(obj, 0, 0, 0)
+  TransformStaticFunctions.SetParent(obj.transform, self._children[index].point.transform, false)
+  SpriteRendererStaticFunctions.SetSortingOrderRecursive(obj, 10, true)
+  table.insert(self._attachments[index], obj)
 end
 
-TowerStair.Detach = function(self, index)
-  -- function num : 0_17 , upvalues : _ENV
-  if (self._attachments)[index] then
-    for _,v in pairs((self._attachments)[index]) do
-      ((((CS.PixelNeko).Common).GameObjectHelper).DestroyObject)(v)
+function TowerStair:Detach(index)
+  if self._attachments[index] then
+    for _, v in pairs(self._attachments[index]) do
+      CS.PixelNeko.Common.GameObjectHelper.DestroyObject(v)
     end
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._attachments)[index] = nil
+    self._attachments[index] = nil
   end
 end
 
-TowerStair.DetachAll = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  for i,_ in pairs(self._attachments) do
+function TowerStair:DetachAll()
+  for i, _ in pairs(self._attachments) do
     self:Detach(i)
   end
 end
 
-TowerStair.SetAttachmentActive = function(self, active)
-  -- function num : 0_19 , upvalues : _ENV, TransformStaticFunctions
-  for i,_ in pairs(self._attachments) do
-    (TransformStaticFunctions.SetActive)(((self._children)[i]).point, active)
-    for _,v in pairs((self._attachments)[i]) do
-      (TransformStaticFunctions.SetActive)(v, active)
+function TowerStair:SetAttachmentActive(active)
+  for i, _ in pairs(self._attachments) do
+    TransformStaticFunctions.SetActive(self._children[i].point, active)
+    for _, v in pairs(self._attachments[i]) do
+      TransformStaticFunctions.SetActive(v, active)
     end
   end
 end
 
-TowerStair.Appear2 = function(self)
-  -- function num : 0_20 , upvalues : TransformStaticFunctions, _ENV
-  (TransformStaticFunctions.SetActive)(self._object, true)
-  ;
-  (TransformStaticFunctions.SetLocalPosition)(self._object, 0, 0, 0)
+function TowerStair:Appear2()
+  TransformStaticFunctions.SetActive(self._object, true)
+  TransformStaticFunctions.SetLocalPosition(self._object, 0, 0, 0)
   self._state = "appear"
-  local effect = (EffectFactory.CreateAnimatorStateChangeEffect)(nil, "state", 1)
+  self._elapsed = 0
+  self._startPos = CS.UnityEngine.Vector3(TransformStaticFunctions.GetPosition(self._object))
+  self:SetTargetPos()
+  local effect = EffectFactory.CreateAnimatorStateChangeEffect(nil, "state", 1)
   effect:Bind(self._object)
   return effect
 end
 
-TowerStair.Approach2 = function(self)
-  -- function num : 0_21 , upvalues : TransformStaticFunctions, stair_animator_type, _ENV
-  (TransformStaticFunctions.SetActive)(self._object, true)
+function TowerStair:Approach2()
+  TransformStaticFunctions.SetActive(self._object, true)
   self._state = "approach"
-  local stateName = nil
+  local stateName
   if stair_animator_type[self._stairtype] == 2 then
     stateName = "SelectionFinish2"
-  else
-    if stair_animator_type[self._stairtype] == 3 then
-      stateName = "SelectionFinish3"
-    end
+  elseif stair_animator_type[self._stairtype] == 3 then
+    stateName = "SelectionFinish3"
   end
-  local effect = (EffectFactory.CreateAnimatorStateChangeEffect)(nil, "state", 2, stateName, 1)
+  self._elapsed = 0
+  self._startPos = CS.UnityEngine.Vector3(TransformStaticFunctions.GetPosition(self._object))
+  self:SetTargetPos()
+  local effect = EffectFactory.CreateAnimatorStateChangeEffect(nil, "state", 2, stateName, 1)
   effect:Bind(self._object)
   return effect
 end
 
-TowerStair.Forward2 = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  return (EffectFactory.CreateCustomEffect)(function()
-    -- function num : 0_22_0 , upvalues : self
+function TowerStair:Forward2()
+  return EffectFactory.CreateCustomEffect(function()
     self._state = "running"
-  end
-)
+  end)
 end
 
-TowerStair.Hide = function(self)
-  -- function num : 0_23 , upvalues : TransformStaticFunctions, AnimationHelper
-  (TransformStaticFunctions.SetLocalPosition)(self._object, -100, -100, 0)
-  ;
-  (AnimationHelper.SetAnimatorInteger2)(self._object, "state", 0)
-  ;
-  (AnimationHelper.PlayAnimation2)(self._object, "New State", 0)
+function TowerStair:Hide()
+  TransformStaticFunctions.SetLocalPosition(self._object, -100, -100, 0)
+  AnimationHelper.SetAnimatorInteger2(self._object, "state", 0)
+  AnimationHelper.PlayAnimation2(self._object, "New State", 0)
   self:DetachAll()
   self._normalizedTime = 0
   self._state = "hide"
 end
 
-TowerStair.Hide2 = function(self)
-  -- function num : 0_24 , upvalues : _ENV, TransformStaticFunctions, AnimationHelper
-  return (EffectFactory.CreateCustomEffect)(function()
-    -- function num : 0_24_0 , upvalues : TransformStaticFunctions, self, AnimationHelper
-    (TransformStaticFunctions.SetLocalPosition)(self._object, -100, -100, 0)
-    ;
-    (AnimationHelper.SetAnimatorInteger2)(self._object, "state", 0)
-    ;
-    (AnimationHelper.PlayAnimation2)(self._object, "New State", 0)
-    self._normalizedTime = 0
-    self._state = "hide"
-    self:DetachAll()
-  end
-)
-end
-
-TowerStair.OnTimelineStop = function(self, notification)
-  -- function num : 0_25
+function TowerStair:OnTimelineStop(notification)
   if notification.userInfo ~= self._director then
-    return 
+    return
   end
 end
 
-TowerStair.OnUpdate = function(self, deltaTime, unscaledDeltaTime)
-  -- function num : 0_26 , upvalues : TransformStaticFunctions, TowerStair
+function TowerStair:Clamp01(t)
+  if t < 0 then
+    return 0
+  elseif 1 < t then
+    return 1
+  else
+    return t
+  end
+end
+
+function TowerStair:SetTargetPos()
+  local index = 0
+  for _, v in pairs(self._delegate._stairs.running) do
+    index = index + 1
+    v:SetID(index)
+  end
+  local rightObject = self._delegate._rightChildObject
+  if rightObject then
+    local offsetLocal = CS.UnityEngine.Vector3(-1, -0.5, 0) * -0.3 * self._id
+    local targetWorldPos = UIManager.TransformPoint(rightObject, offsetLocal)
+    self._targetPos = targetWorldPos
+  end
+end
+
+function TowerStair:OnUpdate(deltaTime, unscaledDeltaTime)
+  if self._state ~= "hide" and self._startPos and self._targetPos then
+    local currentPos = CS.UnityEngine.Vector3(TransformStaticFunctions.GetPosition(self._object))
+    local distance = CS.UnityEngine.Vector3.Distance(currentPos, self._targetPos)
+    if distance < 0.01 then
+      self:SetTargetPos()
+      TransformStaticFunctions.SetPosition(self._object, self._targetPos.x, self._targetPos.y, self._targetPos.z)
+      if self._state == "appear" then
+        self._state = "show"
+      elseif self._state == "approach" then
+        self._state = "reach"
+      end
+      return true
+    end
+    self._elapsed = self._elapsed + deltaTime
+    local t = self._elapsed / 1
+    t = self:Clamp01(t)
+    local pos = CS.UnityEngine.Vector3.Lerp(self._startPos, self._targetPos, t)
+    TransformStaticFunctions.SetPosition(self._object, pos.x, pos.y, pos.z)
+  end
+  return false
+end
+
+function TowerStair:OnMoveUpdate(deltaTime, unscaledDeltaTime)
   if self._state ~= "hide" then
-    (TransformStaticFunctions.TranslateRelativeToSelf)(self._transform, (TowerStair.velocity).x * deltaTime, (TowerStair.velocity).y * deltaTime, (TowerStair.velocity).z * deltaTime)
+    TransformStaticFunctions.TranslateRelativeToSelf(self._transform, TowerStair.velocity.x * deltaTime, TowerStair.velocity.y * deltaTime, TowerStair.velocity.z * deltaTime)
   end
 end
 
-TowerStair.OnStateUpdate = function(self, handle, stateName, normalizedTime)
-  -- function num : 0_27
-  local state_switched = normalizedTime >= 1 or normalizedTime < self._normalizedTime
-  self._normalizedTime = normalizedTime
-  if self._state == "appear" and state_switched then
-    self._state = "show"
-  elseif self._state == "approach" and state_switched then
-    self._state = "reach"
-  end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+function TowerStair:OnStateUpdate(handle, stateName, normalizedTime)
 end
 
 return TowerStair
-

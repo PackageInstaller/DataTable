@@ -1,26 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/protocolhandler/protocol/task/sactivitytasks.lua 
+local CActivityTasks = LuaNetManager.GetProtocolDef("protocol.task.cactivitytasks")
 
--- params : ...
--- function num : 0 , upvalues : _ENV
-local CActivityTasks = (LuaNetManager.GetProtocolDef)("protocol.task.cactivitytasks")
-local p1 = function(protocol)
-  -- function num : 0_0 , upvalues : CActivityTasks, _ENV
+local function p1(protocol)
   if protocol.activityID ~= CActivityTasks.ANNIVERSARY then
-    ((NekoData.DataManager).DM_ActivityTasks):OnSActivityTasks(protocol)
+    NekoData.DataManager.DM_ActivityTasks:OnSActivityTasks(protocol)
     if protocol.refresh == 1 then
-      (LuaNotificationCenter.PostNotification)(Common.n_OnSActivityTasks, nil, protocol)
+      LuaNotificationCenter.PostNotification(Common.n_OnSActivityTasks, nil, protocol)
     end
   else
-    local str = nil
-    for _,v in ipairs(protocol.activityTasks) do
+    local str
+    for _, v in ipairs(protocol.activityTasks) do
       if not str then
         str = "{"
       else
         str = str .. ", "
       end
-      local conditionStr = nil
-      for i,value in ipairs(v.conditions) do
+      local conditionStr
+      for i, value in ipairs(v.conditions) do
         if not conditionStr then
           conditionStr = "{"
         else
@@ -35,20 +30,14 @@ local p1 = function(protocol)
       end
       str = str .. "[" .. v.taskid .. "] = {taskstatus = " .. v.taskstatus .. ", condition = " .. conditionStr .. "}"
     end
-    if str then
-      str = str .. "}"
-    end
+    str = str and str .. "}"
     LogInfoFormat("sactivitytasks", "--- activityTasks = %s ---", str)
-    ;
-    ((NekoData.DataManager).DM_Anniversary):OnSActivityTasks(protocol)
-    ;
-    (LuaNotificationCenter.PostNotification)(Common.n_RefreshAnniversaryDailyTaskList, nil, protocol)
+    NekoData.DataManager.DM_Anniversary:OnSActivityTasks(protocol)
+    LuaNotificationCenter.PostNotification(Common.n_RefreshAnniversaryDailyTaskList, nil, protocol)
   end
 end
 
-local p2 = function(protocol, client)
-  -- function num : 0_1
+local function p2(protocol, client)
 end
 
 return {p1, p2}
-

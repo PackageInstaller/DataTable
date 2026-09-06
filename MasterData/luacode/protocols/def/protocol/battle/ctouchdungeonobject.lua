@@ -1,52 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/def/protocol/battle/ctouchdungeonobject.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local CTouchDungeonObject = dataclass("CTouchDungeonObject", require("framework.net.protocol"))
 CTouchDungeonObject.ProtocolType = 1930
 CTouchDungeonObject.MaxSize = 65535
 CTouchDungeonObject.sceneId = 0
-CTouchDungeonObject.Ctor = function(self, client)
-  -- function num : 0_0 , upvalues : CTouchDungeonObject
-  ((CTouchDungeonObject.super).Ctor)(self, client)
+
+function CTouchDungeonObject:Ctor(client)
+  CTouchDungeonObject.super.Ctor(self, client)
   self.keys = {}
 end
 
-CTouchDungeonObject.Marshal = function(self, buffer)
-  -- function num : 0_1 , upvalues : ProtocolBufferStaticFunctions, _ENV
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.sceneId) then
+function CTouchDungeonObject:Marshal(buffer)
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.sceneId) then
     return false
   end
-  local length = (table.slen)(self.keys)
-  if not (ProtocolBufferStaticFunctions.WriteCompactUInt32)(buffer, length) then
+  local length = table.slen(self.keys)
+  if not ProtocolBufferStaticFunctions.WriteCompactUInt32(buffer, length) then
     return false
   end
   for i = 1, length do
-    if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, (self.keys)[i]) then
+    if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.keys[i]) then
       return false
     end
   end
   return true
 end
 
-CTouchDungeonObject.Unmarshal = function(self, buffer)
-  -- function num : 0_2 , upvalues : ProtocolBufferStaticFunctions
+function CTouchDungeonObject:Unmarshal(buffer)
   local ret = true
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.sceneId = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
   local length = 0
-  ret = (ProtocolBufferStaticFunctions.ReadCompactUInt32)(buffer)
+  ret, length = ProtocolBufferStaticFunctions.ReadCompactUInt32(buffer)
   if not ret then
     return ret
   end
   for i = 1, length do
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R8 in 'UnsetPending'
-
-    ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+    ret, self.keys[i] = ProtocolBufferStaticFunctions.ReadInt32(buffer)
     if not ret then
       return ret
     end
@@ -55,4 +46,3 @@ CTouchDungeonObject.Unmarshal = function(self, buffer)
 end
 
 return CTouchDungeonObject
-

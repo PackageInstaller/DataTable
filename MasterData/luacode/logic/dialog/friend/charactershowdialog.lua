@@ -1,110 +1,59 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/dialog/friend/charactershowdialog.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local Role = require("logic.manager.experimental.types.role")
 local CheckOtherRoleInfoDialog = require("logic.dialog.mainline.bossrush.checkotherroleinfodialog")
-local HeadPhotoTable = (BeanManager.GetTableByName)("headphoto.cheadphotoconfig")
-local HeadPhotoFrameTable = (BeanManager.GetTableByName)("headphoto.cheadphotoframeconfig")
-local CImagePathTable = (BeanManager.GetTableByName)("ui.cimagepath")
-local RoleConfigTable = (BeanManager.GetTableByName)("role.roleconfig")
-local CVocationCfgTable = (BeanManager.GetTableByName)("role.cvocationcfg")
-local CNpcShapeTable = (BeanManager.GetTableByName)("npc.cnpcshape")
-local CRoleRarityCfgTable = (BeanManager.GetTableByName)("role.croleraritycfg")
-local CImagePathTable = (BeanManager.GetTableByName)("ui.cimagepath")
-local CRoleBreakCfgTable = (BeanManager.GetTableByName)("role.crolebreakcfg")
+local HeadPhotoTable = BeanManager.GetTableByName("headphoto.cheadphotoconfig")
+local HeadPhotoFrameTable = BeanManager.GetTableByName("headphoto.cheadphotoframeconfig")
+local CImagePathTable = BeanManager.GetTableByName("ui.cimagepath")
+local RoleConfigTable = BeanManager.GetTableByName("role.roleconfig")
+local CVocationCfgTable = BeanManager.GetTableByName("role.cvocationcfg")
+local CNpcShapeTable = BeanManager.GetTableByName("npc.cnpcshape")
+local CRoleRarityCfgTable = BeanManager.GetTableByName("role.croleraritycfg")
+local CImagePathTable = BeanManager.GetTableByName("ui.cimagepath")
+local CRoleBreakCfgTable = BeanManager.GetTableByName("role.crolebreakcfg")
 local TableFrame = require("framework.ui.frame.table.tableframe")
-local CAchievementBagConfig = (BeanManager.GetTableByName)("mission.cachievebadgeconfig")
+local CAchievementBagConfig = BeanManager.GetTableByName("mission.cachievebadgeconfig")
+local CPersonalityFrameConfig = BeanManager.GetTableByName("headphoto.cpersonalityframeconfig")
+local CStringRes = BeanManager.GetTableByName("message.cstringres")
 local CharacterShowDialog = class("CharacterShowDialog", Dialog)
 CharacterShowDialog.AssetBundleName = "ui/layouts.friends"
 CharacterShowDialog.AssetName = "PlayerShow"
-CharacterShowDialog.Ctor = function(self, ...)
-  -- function num : 0_0 , upvalues : CharacterShowDialog
-  ((CharacterShowDialog.super).Ctor)(self, ...)
+
+function CharacterShowDialog:Ctor(...)
+  CharacterShowDialog.super.Ctor(self, ...)
   self._groupName = "Modal"
 end
 
-CharacterShowDialog.OnCreate = function(self)
-  -- function num : 0_1 , upvalues : TableFrame
+function CharacterShowDialog:OnCreate()
   self._supportRolePanel = self:GetChild("Role")
   self._supportRolePanelLive2d = self:GetChild("Role/Live2D")
   self._supportRolePanelPhoto = self:GetChild("Role/Photo")
   self._showCells = {}
   for i = 1, 4 do
-    do
-      -- DECOMPILER ERROR at PC20: Confused about usage of register: R5 in 'UnsetPending'
-
-      (self._showCells)[i] = {}
-      -- DECOMPILER ERROR at PC28: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      ((self._showCells)[i]).role = self:GetChild("Show/ShowCellNew" .. i)
-      -- DECOMPILER ERROR at PC37: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      ((self._showCells)[i]).cell = self:GetChild("Show/ShowCellNew" .. i .. "/Cell")
-      -- DECOMPILER ERROR at PC46: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      ((self._showCells)[i]).cellDownRankBack = self:GetChild("Show/ShowCellNew" .. i .. "/Cell/DownRankBack")
-      -- DECOMPILER ERROR at PC55: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      ((self._showCells)[i]).cellPhoto = self:GetChild("Show/ShowCellNew" .. i .. "/Cell/Photo")
-      -- DECOMPILER ERROR at PC64: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      ((self._showCells)[i]).cellFrame = self:GetChild("Show/ShowCellNew" .. i .. "/Cell/Frame")
-      -- DECOMPILER ERROR at PC73: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      ((self._showCells)[i]).cellRank = self:GetChild("Show/ShowCellNew" .. i .. "/Cell/Rank")
-      -- DECOMPILER ERROR at PC82: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      ((self._showCells)[i]).cellJob = self:GetChild("Show/ShowCellNew" .. i .. "/Cell/Job")
-      -- DECOMPILER ERROR at PC91: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      ((self._showCells)[i]).cellLv = self:GetChild("Show/ShowCellNew" .. i .. "/Cell/Level/Num")
-      -- DECOMPILER ERROR at PC100: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      ((self._showCells)[i]).cellBreakLevelBackBlack = self:GetChild("Show/ShowCellNew" .. i .. "/Cell/BreakLevelBackBlack")
-      -- DECOMPILER ERROR at PC109: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      ((self._showCells)[i]).cellBreakLevelBack = self:GetChild("Show/ShowCellNew" .. i .. "/Cell/BreakLevelBack")
-      -- DECOMPILER ERROR at PC118: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      ((self._showCells)[i]).cellBreakLevel = self:GetChild("Show/ShowCellNew" .. i .. "/Cell/BreakLevelNum")
-      -- DECOMPILER ERROR at PC127: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      ((self._showCells)[i]).cellElementImage = self:GetChild("Show/ShowCellNew" .. i .. "/Cell/Element")
-      ;
-      (((self._showCells)[i]).role):Subscribe_PointerClickEvent(function()
-    -- function num : 0_1_0 , upvalues : self, i
-    self:OnRoleCellClicked(i)
-  end
-, self)
-      -- DECOMPILER ERROR at PC147: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      ((self._showCells)[i])._charUpgrade = {panel = self:GetChild("Show/ShowCellNew" .. i .. "/Cell/CharUpgrade"), 
-levelImage = {}
-}
-      for j = 1, 5 do
-        -- DECOMPILER ERROR at PC163: Confused about usage of register: R9 in 'UnsetPending'
-
-        ((((self._showCells)[i])._charUpgrade).levelImage)[j] = self:GetChild("Show/ShowCellNew" .. i .. "/Cell/CharUpgrade/Img" .. j)
-      end
+    self._showCells[i] = {}
+    self._showCells[i].role = self:GetChild("Show/ShowCellNew" .. i)
+    self._showCells[i].cell = self:GetChild("Show/ShowCellNew" .. i .. "/Cell")
+    self._showCells[i].cellDownRankBack = self:GetChild("Show/ShowCellNew" .. i .. "/Cell/DownRankBack")
+    self._showCells[i].cellPhoto = self:GetChild("Show/ShowCellNew" .. i .. "/Cell/Photo")
+    self._showCells[i].cellFrame = self:GetChild("Show/ShowCellNew" .. i .. "/Cell/Frame")
+    self._showCells[i].cellRank = self:GetChild("Show/ShowCellNew" .. i .. "/Cell/Rank")
+    self._showCells[i].cellJob = self:GetChild("Show/ShowCellNew" .. i .. "/Cell/Job")
+    self._showCells[i].cellLv = self:GetChild("Show/ShowCellNew" .. i .. "/Cell/Level/Num")
+    self._showCells[i].cellBreakLevelBackBlack = self:GetChild("Show/ShowCellNew" .. i .. "/Cell/BreakLevelBackBlack")
+    self._showCells[i].cellBreakLevelBack = self:GetChild("Show/ShowCellNew" .. i .. "/Cell/BreakLevelBack")
+    self._showCells[i].cellBreakLevel = self:GetChild("Show/ShowCellNew" .. i .. "/Cell/BreakLevelNum")
+    self._showCells[i].cellElementImage = self:GetChild("Show/ShowCellNew" .. i .. "/Cell/Element")
+    self._showCells[i].role:Subscribe_PointerClickEvent(function()
+      self:OnRoleCellClicked(i)
+    end, self)
+    self._showCells[i]._charUpgrade = {
+      panel = self:GetChild("Show/ShowCellNew" .. i .. "/Cell/CharUpgrade"),
+      levelImage = {}
+    }
+    for j = 1, 5 do
+      self._showCells[i]._charUpgrade.levelImage[j] = self:GetChild("Show/ShowCellNew" .. i .. "/Cell/CharUpgrade/Img" .. j)
     end
   end
   self._modalArea = self:GetChild("Show/MedalFrame")
-  self._modalFrame = (TableFrame.Create)(self._modalArea, self, false, false, false)
+  self._modalFrame = TableFrame.Create(self._modalArea, self, false, false, false)
   self._modalName = self:GetChild("Show/Name")
   self._modalDetail = self:GetChild("Show/Condition")
   self._id = self:GetChild("Detail/ID/IDNum")
@@ -123,68 +72,61 @@ levelImage = {}
   self._friendTitle = self:GetChild("TitleFriend")
   self._otherTitle = self:GetChild("TitlePlayer")
   self._newBack = self:GetChild("NewBack")
-  ;
-  (self._closeBtn):Subscribe_PointerClickEvent(self.OnBackBtnClicked, self)
-  ;
-  (self._addBtn):Subscribe_PointerClickEvent(self.OnAddBtnClicked, self)
-  ;
-  (self._copyIdBtn):Subscribe_PointerClickEvent(self.OnCopyIDBtnClicked, self)
+  self._closeBtn:Subscribe_PointerClickEvent(self.OnBackBtnClicked, self)
+  self._addBtn:Subscribe_PointerClickEvent(self.OnAddBtnClicked, self)
+  self._copyIdBtn:Subscribe_PointerClickEvent(self.OnCopyIDBtnClicked, self)
+  self._customBorder = {}
+  for i = 1, 4 do
+    self._customBorder[i] = self:GetChild("Frame" .. i)
+    self._customBorder[i]:SetActive(false)
+  end
+  self._guildBack = self:GetChild("Detail/Guild")
+  self._guildBack:SetActive(false)
+  self._guildName = self:GetChild("Detail/Guild/GuildTxt")
+  self._guildName:SetText("")
+  LuaNotificationCenter.AddObserver(self, self.Destroy, Common.n_BattleStateEnter, nil)
+  UIBackManager.SetUIBackShow(true)
 end
 
-CharacterShowDialog.OnDestroy = function(self)
-  -- function num : 0_2
-  (self._modalFrame):Destroy()
+function CharacterShowDialog:OnDestroy()
+  self._modalFrame:Destroy()
+  UIBackManager.SetUIBackShow(false)
 end
 
-CharacterShowDialog.NumberOfCell = function(self, frame)
-  -- function num : 0_3 , upvalues : _ENV
-  return (table.nums)(self._modalList)
+function CharacterShowDialog:NumberOfCell(frame)
+  return table.nums(self._modalList)
 end
 
-CharacterShowDialog.CellAtIndex = function(self, frame, index)
-  -- function num : 0_4
+function CharacterShowDialog:CellAtIndex(frame, index)
   return "achievement.charshowmodalcell"
 end
 
-CharacterShowDialog.DataAtIndex = function(self, frame, index)
-  -- function num : 0_5
+function CharacterShowDialog:DataAtIndex(frame, index)
   local data = {}
-  data.id = (self._modalList)[index]
+  data.id = self._modalList[index]
   return data
 end
 
-CharacterShowDialog.GetVocationImageRecord = function(self, rarityId, vocation)
-  -- function num : 0_6 , upvalues : CVocationCfgTable, CImagePathTable, _ENV
+function CharacterShowDialog:GetVocationImageRecord(rarityId, vocation)
   local vocationRecord = CVocationCfgTable:GetRecorder(vocation)
   if rarityId == 1 then
-    if not CImagePathTable:GetRecorder(vocationRecord.imgR) then
-      do return DataCommon.DefaultImageAsset end
-      if rarityId == 2 then
-        if not CImagePathTable:GetRecorder(vocationRecord.imgSR) then
-          do return DataCommon.DefaultImageAsset end
-          if rarityId == 3 then
-            if not CImagePathTable:GetRecorder(vocationRecord.imgSSR) then
-              do return DataCommon.DefaultImageAsset end
-              if rarityId == 4 then
-                if not CImagePathTable:GetRecorder(vocationRecord.imgUR) then
-                  do return DataCommon.DefaultImageAsset end
-                  if rarityId == 5 then
-                    if not CImagePathTable:GetRecorder(vocationRecord.imgEX) then
-                      do return DataCommon.DefaultImageAsset end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
-    end
+    return CImagePathTable:GetRecorder(vocationRecord.imgR) or DataCommon.DefaultImageAsset
+  end
+  if rarityId == 2 then
+    return CImagePathTable:GetRecorder(vocationRecord.imgSR) or DataCommon.DefaultImageAsset
+  end
+  if rarityId == 3 then
+    return CImagePathTable:GetRecorder(vocationRecord.imgSSR) or DataCommon.DefaultImageAsset
+  end
+  if rarityId == 4 then
+    return CImagePathTable:GetRecorder(vocationRecord.imgUR) or DataCommon.DefaultImageAsset
+  end
+  if rarityId == 5 then
+    return CImagePathTable:GetRecorder(vocationRecord.imgEX) or DataCommon.DefaultImageAsset
   end
 end
 
-CharacterShowDialog.GetBreakRecord = function(self, breakType, breaklevel)
-  -- function num : 0_7 , upvalues : CRoleBreakCfgTable
+function CharacterShowDialog:GetBreakRecord(breakType, breaklevel)
   for i = 1, #CRoleBreakCfgTable:GetAllIds() do
     local recorder = CRoleBreakCfgTable:GetRecorder(i)
     if recorder.breakType == breakType and breaklevel == recorder.breaklv then
@@ -193,200 +135,186 @@ CharacterShowDialog.GetBreakRecord = function(self, breakType, breaklevel)
   end
 end
 
-CharacterShowDialog.RefreshSupportRolePanel = function(self, protocol)
-  -- function num : 0_8 , upvalues : RoleConfigTable, Role, _ENV
-  local roleId = (protocol.support).roleId
+function CharacterShowDialog:RefreshSupportRolePanel(protocol)
+  local roleId = protocol.support.roleId
   local roleConfig = RoleConfigTable:GetRecorder(roleId)
   if roleConfig then
-    (self._supportRolePanel):SetActive(true)
-    local data = (Role.Create)(roleId)
+    self._supportRolePanel:SetActive(true)
+    local data = Role.Create(roleId)
     if data then
-      data:UpdateShape((protocol.support).skin)
+      data:UpdateShape(protocol.support.skin)
       local record = data:GetShapeLive2DRecord()
       if self._handler then
-        (self._supportRolePanelLive2d):Release(self._handler)
+        self._supportRolePanelLive2d:Release(self._handler)
       end
-      if data:IsFashionLive2D() and (Live2DManager.CanUse)() and record.live2DAssetBundleName and record.live2DAssetBundleName ~= "" and record.live2DPrefabName and record.live2DPrefabName ~= "" then
-        (self._supportRolePanelPhoto):SetActive(false)
-        self._handler = (self._supportRolePanelLive2d):AddLive2D(record.live2DAssetBundleName, record.live2DPrefabName, record.live2DScale)
+      if data:IsFashionLive2D() and Live2DManager.CanUse() and record.live2DAssetBundleName and record.live2DAssetBundleName ~= "" and record.live2DPrefabName and record.live2DPrefabName ~= "" then
+        self._supportRolePanelPhoto:SetActive(false)
+        self._handler = self._supportRolePanelLive2d:AddLive2D(record.live2DAssetBundleName, record.live2DPrefabName, record.live2DScale)
       else
-        ;
-        (self._supportRolePanelPhoto):SetActive(true)
-        ;
-        (self._supportRolePanelPhoto):SetSprite((data:GetShapeLiHuiImageRecord()).assetBundle, (data:GetShapeLiHuiImageRecord()).assetName)
+        self._supportRolePanelPhoto:SetActive(true)
+        self._supportRolePanelPhoto:SetSprite(data:GetShapeLiHuiImageRecord().assetBundle, data:GetShapeLiHuiImageRecord().assetName)
         local scale = data:GetPhotoScale()
-        ;
-        (self._supportRolePanelPhoto):SetLocalScale(scale, scale, scale)
+        self._supportRolePanelPhoto:SetLocalScale(scale, scale, scale)
         local photoPos = data:GetPhotoPosition()
-        ;
-        (self._supportRolePanelPhoto):SetAnchoredPosition(photoPos[1], photoPos[2])
+        self._supportRolePanelPhoto:SetAnchoredPosition(photoPos[1], photoPos[2])
       end
     else
-      do
-        do
-          LogErrorFormat("CharacterShowDialog", "support role id %s create with wrong", roleId)
-          ;
-          (self._supportRolePanel):SetActive(false)
-        end
-      end
+      LogErrorFormat("CharacterShowDialog", "support role id %s create with wrong", roleId)
     end
+  else
+    self._supportRolePanel:SetActive(false)
   end
 end
 
-CharacterShowDialog.RefreshDisplayRolesPanel = function(self, protocol)
-  -- function num : 0_9 , upvalues : Role
+function CharacterShowDialog:RefreshDisplayRolesPanel(protocol)
   for i = 1, 4 do
-    if #protocol.display < i then
-      (((self._showCells)[i]).cell):SetActive(false)
+    if i > #protocol.display then
+      self._showCells[i].cell:SetActive(false)
     else
-      local role = (Role.Create)(((protocol.display)[i]).id)
-      role:UpdateShape(((protocol.display)[i]).skin)
-      ;
-      (((self._showCells)[i]).cell):SetActive(true)
+      local role = Role.Create(protocol.display[i].id)
+      role:UpdateShape(protocol.display[i].skin)
+      self._showCells[i].cell:SetActive(true)
       local imageRecord = role:GetShapeLittleHeadImageRecord()
-      ;
-      (((self._showCells)[i]).cellPhoto):SetSprite(imageRecord.assetBundle, imageRecord.assetName)
+      self._showCells[i].cellPhoto:SetSprite(imageRecord.assetBundle, imageRecord.assetName)
       imageRecord = role:GetSmallRarityFrameRecord()
-      ;
-      (((self._showCells)[i]).cellFrame):SetSprite(imageRecord.assetBundle, imageRecord.assetName)
+      self._showCells[i].cellFrame:SetSprite(imageRecord.assetBundle, imageRecord.assetName)
       imageRecord = role:GetRarityImageRecord()
-      ;
-      (((self._showCells)[i]).cellRank):SetSprite(imageRecord.assetBundle, imageRecord.assetName)
+      self._showCells[i].cellRank:SetSprite(imageRecord.assetBundle, imageRecord.assetName)
       imageRecord = role:GetVocationImageRecord()
-      ;
-      (((self._showCells)[i]).cellJob):SetSprite(imageRecord.assetBundle, imageRecord.assetName)
-      role:SetLevel(((protocol.display)[i]).lv)
-      role:SetBreakLv(((protocol.display)[i]).breakLv)
-      ;
-      (((self._showCells)[i]).cellLv):SetText(role:GetShowLv())
-      local breakLv = ((protocol.display)[i]).breakLv
-      ;
-      (((self._showCells)[i]).cellBreakLevelBackBlack):SetActive(breakLv == 0)
-      ;
-      (((self._showCells)[i]).cellBreakLevelBack):SetActive(breakLv > 0)
-      ;
-      (((self._showCells)[i]).cellBreakLevel):SetActive(breakLv > 0)
-      if breakLv > 0 then
+      self._showCells[i].cellJob:SetSprite(imageRecord.assetBundle, imageRecord.assetName)
+      role:SetLevel(protocol.display[i].lv)
+      role:SetBreakLv(protocol.display[i].breakLv)
+      self._showCells[i].cellLv:SetText(role:GetShowLv())
+      local breakLv = protocol.display[i].breakLv
+      self._showCells[i].cellBreakLevelBackBlack:SetActive(breakLv == 0)
+      self._showCells[i].cellBreakLevelBack:SetActive(0 < breakLv)
+      self._showCells[i].cellBreakLevel:SetActive(0 < breakLv)
+      if 0 < breakLv then
         imageRecord = role:GetCurBreakFrame2ImageRecord()
-        ;
-        (((self._showCells)[i]).cellBreakLevelBack):SetSprite(imageRecord.assetBundle, imageRecord.assetName)
-        ;
-        (((self._showCells)[i]).cellBreakLevel):SetText(breakLv)
+        self._showCells[i].cellBreakLevelBack:SetSprite(imageRecord.assetBundle, imageRecord.assetName)
+        self._showCells[i].cellBreakLevel:SetText(breakLv)
       end
       imageRecord = role:GetRarityBottomBackRecord()
-      ;
-      (((self._showCells)[i]).cellDownRankBack):SetSprite(imageRecord.assetBundle, imageRecord.assetName)
+      self._showCells[i].cellDownRankBack:SetSprite(imageRecord.assetBundle, imageRecord.assetName)
       imageRecord = role:GetElementImageRecord()
-      ;
-      (((self._showCells)[i]).cellElementImage):SetSprite(imageRecord.assetBundle, imageRecord.assetName)
-      role:SetRuneLevel(((protocol.display)[i]).runeLevel)
+      self._showCells[i].cellElementImage:SetSprite(imageRecord.assetBundle, imageRecord.assetName)
+      role:SetRuneLevel(protocol.display[i].runeLevel)
       local level = role:GetRuneLevel()
-      ;
-      ((((self._showCells)[i])._charUpgrade).panel):SetActive(level ~= 0)
+      self._showCells[i]._charUpgrade.panel:SetActive(level ~= 0)
       for j = 1, 5 do
-        (((((self._showCells)[i])._charUpgrade).levelImage)[j]):SetActive(level == j)
+        self._showCells[i]._charUpgrade.levelImage[j]:SetActive(level == j)
       end
     end
   end
-  -- DECOMPILER ERROR: 7 unprocessed JMP targets
 end
 
-CharacterShowDialog.RefreshUserInfoPanel = function(self, protocol)
-  -- function num : 0_10 , upvalues : HeadPhotoTable, CImagePathTable, _ENV, HeadPhotoFrameTable
-  local headPhotoRecord = HeadPhotoTable:GetRecorder((protocol.baseUserData).avatarId)
-  if not CImagePathTable:GetRecorder(headPhotoRecord.photoid) then
-    local imageRecord = DataCommon.DefaultImageAsset
+function CharacterShowDialog:RefreshUserInfoPanel(protocol)
+  local headPhotoRecord = HeadPhotoTable:GetRecorder(protocol.baseUserData.avatarId)
+  local imageRecord = CImagePathTable:GetRecorder(headPhotoRecord.photoid) or DataCommon.DefaultImageAsset
+  self._headPhoto:SetSprite(imageRecord.assetBundle, imageRecord.assetName)
+  local headPhotoFrameRecord = HeadPhotoFrameTable:GetRecorder(protocol.baseUserData.frameId)
+  imageRecord = CImagePathTable:GetRecorder(headPhotoFrameRecord.photoid) or DataCommon.DefaultImageAsset
+  self._headFrame:SetSprite(imageRecord.assetBundle, imageRecord.assetName)
+  self._id:SetText(tostring(protocol.baseUserData.userId))
+  self._name:SetText(tostring(protocol.baseUserData.userName))
+  self._title:SetText(tostring(protocol.title))
+  self._level:SetText(tostring(protocol.baseUserData.userLv))
+  self._introduction:SetText(protocol.introduce)
+  self._IPHome:SetText(protocol.baseUserData.iplocaladdr)
+  self._userId = protocol.baseUserData.userId
+  self._guildBack:SetActive(true)
+  if string.len(protocol.partyName) > 0 then
+    self._guildName:SetText(protocol.partyName)
+  else
+    self._guildName:SetText(TextManager.GetText(CStringRes:GetRecorder(2296).msgTextID))
   end
-  ;
-  (self._headPhoto):SetSprite(imageRecord.assetBundle, imageRecord.assetName)
-  local headPhotoFrameRecord = HeadPhotoFrameTable:GetRecorder((protocol.baseUserData).frameId)
-  if not CImagePathTable:GetRecorder(headPhotoFrameRecord.photoid) then
-    imageRecord = DataCommon.DefaultImageAsset
-  end
-  ;
-  (self._headFrame):SetSprite(imageRecord.assetBundle, imageRecord.assetName)
-  ;
-  (self._id):SetText(tostring((protocol.baseUserData).userId))
-  ;
-  (self._name):SetText(tostring((protocol.baseUserData).userName))
-  ;
-  (self._title):SetText(tostring(protocol.title))
-  ;
-  (self._level):SetText(tostring((protocol.baseUserData).userLv))
-  ;
-  (self._introduction):SetText(protocol.introduce)
-  ;
-  (self._IPHome):SetText((protocol.baseUserData).iplocaladdr)
-  self._userId = (protocol.baseUserData).userId
 end
 
-CharacterShowDialog.SetData = function(self, protocol)
-  -- function num : 0_11 , upvalues : _ENV
+function CharacterShowDialog:SetData(protocol)
   self:RefreshSupportRolePanel(protocol)
   self:RefreshDisplayRolesPanel(protocol)
   self:RefreshUserInfoPanel(protocol)
+  self:RefreshBorderInfo(protocol)
   self._roleInfoList = protocol.display
-  self._modalList = ((NekoData.BehaviorManager).BM_Task):GetOtherShowBadges((protocol.baseUserData).showBadges)
+  self._modalList = NekoData.BehaviorManager.BM_Task:GetOtherShowBadges(protocol.baseUserData.showBadges)
   if self._modalList then
-    (self._modalFrame):ReloadAllCell()
+    self._modalFrame:ReloadAllCell()
   end
-  local isFriend = ((NekoData.BehaviorManager).BM_Friends):IsFriend((protocol.baseUserData).userId)
-  ;
-  (self._addBtn):SetActive(not isFriend)
-  ;
-  (self._friendTitle):SetActive(isFriend)
-  ;
-  (self._otherTitle):SetActive(not isFriend)
+  local isFriend = NekoData.BehaviorManager.BM_Friends:IsFriend(protocol.baseUserData.userId)
+  self._addBtn:SetActive(not isFriend)
+  self._friendTitle:SetActive(isFriend)
+  self._otherTitle:SetActive(not isFriend)
   local likeNumber = tonumber(protocol.likedNum)
   if likeNumber then
     if likeNumber < 999999 then
-      (self._greatNum):SetText(tostring(protocol.likedNum))
+      self._greatNum:SetText(tostring(protocol.likedNum))
     else
-      ;
-      (self._greatNum):SetText((TextManager.GetText)(701179))
+      self._greatNum:SetText(TextManager.GetText(701179))
     end
   end
-  if (DialogManager.GetDialog)("activity.chrismascall.maindialog") then
-    (self._newBack):SetActive(true)
+  if DialogManager.GetDialog("activity.chrismascall.maindialog") then
+    self._newBack:SetActive(true)
   else
-    ;
-    (self._newBack):SetActive(false)
+    self._newBack:SetActive(false)
   end
 end
 
-CharacterShowDialog.OnCopyIDBtnClicked = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  (self:GetRootWindow()):CopyToClipBoard(tostring(self._userId))
-  ;
-  ((NekoData.BehaviorManager).BM_Message):SendMessageById(100079)
+function CharacterShowDialog:OnCopyIDBtnClicked()
+  self:GetRootWindow():CopyToClipBoard(tostring(self._userId))
+  NekoData.BehaviorManager.BM_Message:SendMessageById(100079)
 end
 
-CharacterShowDialog.OnRoleCellClicked = function(self, index)
-  -- function num : 0_13 , upvalues : _ENV, CheckOtherRoleInfoDialog
-  if (self._roleInfoList)[index] then
-    ((DialogManager.CreateSingletonDialog)("mainline.bossrush.checkotherroleinfodialog")):Init({roleList = self._roleInfoList, index = index}, (CheckOtherRoleInfoDialog.ShowType).FriendShow)
+function CharacterShowDialog:OnRoleCellClicked(index)
+  if self._roleInfoList[index] then
+    DialogManager.CreateSingletonDialog("mainline.bossrush.checkotherroleinfodialog"):Init({
+      roleList = self._roleInfoList,
+      index = index
+    }, CheckOtherRoleInfoDialog.ShowType.FriendShow)
   end
 end
 
-CharacterShowDialog.OnAddBtnClicked = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  if ((NekoData.BehaviorManager).BM_Game):GetUserId() == self._userId then
-    ((NekoData.BehaviorManager).BM_Message):SendMessageById(100043)
-    return 
+function CharacterShowDialog:OnAddBtnClicked()
+  if NekoData.BehaviorManager.BM_Game:GetUserId() == self._userId then
+    NekoData.BehaviorManager.BM_Message:SendMessageById(100043)
+    return
   end
-  local friend = ((NekoData.BehaviorManager).BM_Friends):GetFriend(self._userId)
+  local friend = NekoData.BehaviorManager.BM_Friends:GetFriend(self._userId)
   if friend and friend:IsBlack() then
-    ((NekoData.BehaviorManager).BM_Message):SendMessageById(100046)
-    return 
+    NekoData.BehaviorManager.BM_Message:SendMessageById(100046)
+    return
   end
-  ;
-  ((NekoData.BehaviorManager).BM_Friends):RequesAddFriend(self._userId)
+  NekoData.BehaviorManager.BM_Friends:RequesAddFriend(self._userId)
 end
 
-CharacterShowDialog.OnBackBtnClicked = function(self)
-  -- function num : 0_15
+function CharacterShowDialog:OnBackBtnClicked()
   self:Destroy()
 end
 
-return CharacterShowDialog
+function CharacterShowDialog:RefreshBorderInfo(protocol)
+  local record = CPersonalityFrameConfig:GetRecorder(protocol.baseUserData.panelFrame)
+  if record then
+    if record.id > 0 then
+      for i = 1, 4 do
+        self._customBorder[i]:SetActive(true)
+      end
+      local imageRecord = CImagePathTable:GetRecorder(record.photoleft1)
+      self._customBorder[1]:SetSprite(imageRecord.assetBundle, imageRecord.assetName)
+      imageRecord = CImagePathTable:GetRecorder(record.photoright1)
+      self._customBorder[2]:SetSprite(imageRecord.assetBundle, imageRecord.assetName)
+      imageRecord = CImagePathTable:GetRecorder(record.photoleft2)
+      self._customBorder[3]:SetSprite(imageRecord.assetBundle, imageRecord.assetName)
+      imageRecord = CImagePathTable:GetRecorder(record.photoright2)
+      self._customBorder[4]:SetSprite(imageRecord.assetBundle, imageRecord.assetName)
+    else
+      for i = 1, 4 do
+        self._customBorder[i]:SetActive(false)
+      end
+    end
+  else
+    for i = 1, 4 do
+      self._customBorder[i]:SetActive(false)
+    end
+  end
+end
 
+return CharacterShowDialog

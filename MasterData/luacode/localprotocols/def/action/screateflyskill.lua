@@ -1,8 +1,3 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/localprotocols/def/action/screateflyskill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local SCreateFlySkill = dataclass("SCreateFlySkill")
 SCreateFlySkill.ProtocolType = 8
 SCreateFlySkill.entityId = 0
@@ -13,12 +8,11 @@ SCreateFlySkill.posY = 0
 SCreateFlySkill.posZ = 0
 SCreateFlySkill.rad = 0
 SCreateFlySkill.isImaged = 0
-SCreateFlySkill.Ctor = function(self, client)
-  -- function num : 0_0
+
+function SCreateFlySkill:Ctor(client)
 end
 
-SCreateFlySkill.Marshal = function(self, data)
-  -- function num : 0_1
+function SCreateFlySkill:Marshal(data)
   data.entityId = self.entityId
   data.playerEntityId = self.playerEntityId
   data.effectid = self.effectid
@@ -29,8 +23,7 @@ SCreateFlySkill.Marshal = function(self, data)
   data.isImaged = self.isImaged
 end
 
-SCreateFlySkill.Unmarshal = function(self, data)
-  -- function num : 0_2
+function SCreateFlySkill:Unmarshal(data)
   self.entityId = data.entityId
   self.playerEntityId = data.playerEntityId
   self.effectid = data.effectid
@@ -42,8 +35,7 @@ SCreateFlySkill.Unmarshal = function(self, data)
   return true
 end
 
-SCreateFlySkill.CheckVariable = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SCreateFlySkill:CheckVariable()
   if type(self.entityId) ~= "number" then
     LogErrorFormat("LocalProtocols", "type error!type(self.entityId) = %s. number required.", type(self.entityId))
     return false
@@ -80,4 +72,3 @@ SCreateFlySkill.CheckVariable = function(self)
 end
 
 return SCreateFlySkill
-

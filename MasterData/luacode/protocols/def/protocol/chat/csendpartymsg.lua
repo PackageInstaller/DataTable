@@ -1,61 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/def/protocol/chat/csendpartymsg.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local CSendPartyMsg = dataclass("CSendPartyMsg", require("framework.net.protocol"))
 CSendPartyMsg.ProtocolType = 1152
 CSendPartyMsg.MaxSize = 65535
 CSendPartyMsg.partyId = 0
 CSendPartyMsg.msg = ""
-CSendPartyMsg.Ctor = function(self, client)
-  -- function num : 0_0 , upvalues : CSendPartyMsg
-  ((CSendPartyMsg.super).Ctor)(self, client)
+
+function CSendPartyMsg:Ctor(client)
+  CSendPartyMsg.super.Ctor(self, client)
   self.hyperlinks = {}
 end
 
-CSendPartyMsg.Marshal = function(self, buffer)
-  -- function num : 0_1 , upvalues : ProtocolBufferStaticFunctions, _ENV
-  if not (ProtocolBufferStaticFunctions.WriteInt64)(buffer, self.partyId) then
+function CSendPartyMsg:Marshal(buffer)
+  if not ProtocolBufferStaticFunctions.WriteInt64(buffer, self.partyId) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteProtocolString)(buffer, self.msg) then
+  if not ProtocolBufferStaticFunctions.WriteProtocolString(buffer, self.msg) then
     return false
   end
-  local length = (table.slen)(self.hyperlinks)
-  if not (ProtocolBufferStaticFunctions.WriteCompactUInt32)(buffer, length) then
+  local length = table.slen(self.hyperlinks)
+  if not ProtocolBufferStaticFunctions.WriteCompactUInt32(buffer, length) then
     return false
   end
   for i = 1, length do
-    if not ((self.hyperlinks)[i]):Marshal(buffer) then
+    if not self.hyperlinks[i]:Marshal(buffer) then
       return false
     end
   end
   return true
 end
 
-CSendPartyMsg.Unmarshal = function(self, buffer)
-  -- function num : 0_2 , upvalues : ProtocolBufferStaticFunctions, _ENV
+function CSendPartyMsg:Unmarshal(buffer)
   local ret = true
-  ret = (ProtocolBufferStaticFunctions.ReadInt64)(buffer)
+  ret, self.partyId = ProtocolBufferStaticFunctions.ReadInt64(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadProtocolString)(buffer)
+  ret, self.msg = ProtocolBufferStaticFunctions.ReadProtocolString(buffer)
   if not ret then
     return ret
   end
   local length = 0
-  ret = (ProtocolBufferStaticFunctions.ReadCompactUInt32)(buffer)
+  ret, length = ProtocolBufferStaticFunctions.ReadCompactUInt32(buffer)
   if not ret then
     return ret
   end
   for i = 1, length do
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R8 in 'UnsetPending'
-
-    (self.hyperlinks)[i] = ((require("protocols.bean.protocol.chat.hyperlink")).Create)()
-    if not ((self.hyperlinks)[i]):Unmarshal(buffer) then
+    self.hyperlinks[i] = require("protocols.bean.protocol.chat.hyperlink").Create()
+    if not self.hyperlinks[i]:Unmarshal(buffer) then
       return false
     end
   end
@@ -63,4 +54,3 @@ CSendPartyMsg.Unmarshal = function(self, buffer)
 end
 
 return CSendPartyMsg
-

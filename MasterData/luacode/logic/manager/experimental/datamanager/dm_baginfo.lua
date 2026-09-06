@@ -1,325 +1,235 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/manager/experimental/datamanager/dm_baginfo.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local DM_BagInfo = class("DM_BagInfo")
-local ItemTypeEnum = (LuaNetManager.GetBeanDef)("protocol.item.beans.item")
-local EquipTypeEnum = (LuaNetManager.GetBeanDef)("protocol.item.equiptype")
-local BagTypeEnum = (LuaNetManager.GetBeanDef)("protocol.item.beans.bagtypes")
+local ItemTypeEnum = LuaNetManager.GetBeanDef("protocol.item.beans.item")
+local EquipTypeEnum = LuaNetManager.GetBeanDef("protocol.item.equiptype")
+local BagTypeEnum = LuaNetManager.GetBeanDef("protocol.item.beans.bagtypes")
 local Item = require("logic.manager.experimental.types.item")
 local Equip = require("logic.manager.experimental.types.equip")
 local Skill = require("logic.manager.experimental.types.skill")
 local FurnitureItem = require("logic.manager.experimental.types.furnitureitem")
-DM_BagInfo.Ctor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._bagInfoData = (NekoData.Data).baginfo
+
+function DM_BagInfo:Ctor()
+  self._bagInfoData = NekoData.Data.baginfo
 end
 
-DM_BagInfo.Clear = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function DM_BagInfo:Clear()
   if self._bagInfoData then
-    for k,v in pairs(self._bagInfoData) do
-      -- DECOMPILER ERROR at PC8: Confused about usage of register: R6 in 'UnsetPending'
-
-      (self._bagInfoData)[k] = nil
+    for k, v in pairs(self._bagInfoData) do
+      self._bagInfoData[k] = nil
     end
   end
-  do
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._bagInfoData).cachedPreFMKeyTable = nil
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._bagInfoData).preFMLastLuckValueTable = nil
-  end
+  self._bagInfoData.cachedPreFMKeyTable = nil
+  self._bagInfoData.preFMLastLuckValueTable = nil
 end
 
-DM_BagInfo.OnSEnter = function(self, protocol)
-  -- function num : 0_2 , upvalues : _ENV, BagTypeEnum, FurnitureItem, ItemTypeEnum, Item, Equip, Skill
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._bagInfoData).cachedPreFMKeyTable = {}
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bagInfoData).preFMLastLuckValueTable = {}
-  self._userid = (((NekoData.BehaviorManager).BM_Game):GetMyRoleInfo()).userid
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bagInfoData)[self._userid] = {}
-  local bagInfoData = (self._bagInfoData)[self._userid]
-  local item = nil
-  for type,bagInfo in pairs(protocol.bags) do
-    bagInfoData[type] = {capacity = bagInfo.capacity, 
-items = {}
-}
+function DM_BagInfo:OnSEnter(protocol)
+  self._bagInfoData.cachedPreFMKeyTable = {}
+  self._bagInfoData.preFMLastLuckValueTable = {}
+  self._userid = NekoData.BehaviorManager.BM_Game:GetMyRoleInfo().userid
+  self._bagInfoData[self._userid] = {}
+  local bagInfoData = self._bagInfoData[self._userid]
+  local item
+  for type, bagInfo in pairs(protocol.bags) do
+    bagInfoData[type] = {
+      capacity = bagInfo.capacity,
+      items = {}
+    }
     if type == BagTypeEnum.FURNITURE_BAG then
-      for i,value in ipairs(bagInfo.items) do
-        item = (FurnitureItem.Create)(value.id)
+      for i, value in ipairs(bagInfo.items) do
+        item = FurnitureItem.Create(value.id)
         item:InitWithFull(value)
-        -- DECOMPILER ERROR at PC48: Confused about usage of register: R14 in 'UnsetPending'
-
-        ;
-        ((bagInfoData[type]).items)[value.key] = item
+        bagInfoData[type].items[value.key] = item
       end
     else
-      do
-        for i,value in ipairs(bagInfo.items) do
-          if value.itemtype == ItemTypeEnum.BASEITEM then
-            item = (Item.Create)(value.id)
-          else
-            if value.itemtype == ItemTypeEnum.EQUIP then
-              item = (Equip.Create)(value.id)
-            else
-              if value.itemtype == ItemTypeEnum.SKILL then
-                item = (Skill.Create)(value.id)
-              end
-            end
-          end
-          item:InitWithFull(value)
-          -- DECOMPILER ERROR at PC88: Confused about usage of register: R14 in 'UnsetPending'
-
-          ;
-          ((bagInfoData[type]).items)[value.key] = item
-          if value.itemtype == ItemTypeEnum.EQUIP and #(value.extra).preRandomEntry > 0 then
-            item:SetPreRandomEntry((value.extra).preRandomEntry, (value.extra).preFinalAttrRandomEntry)
-            -- DECOMPILER ERROR at PC107: Confused about usage of register: R14 in 'UnsetPending'
-
-            ;
-            ((self._bagInfoData).cachedPreFMKeyTable)[value.key] = true
-          end
+      for i, value in ipairs(bagInfo.items) do
+        if value.itemtype == ItemTypeEnum.BASEITEM then
+          item = Item.Create(value.id)
+        elseif value.itemtype == ItemTypeEnum.EQUIP then
+          item = Equip.Create(value.id)
+        elseif value.itemtype == ItemTypeEnum.SKILL then
+          item = Skill.Create(value.id)
         end
-        do
-          -- DECOMPILER ERROR at PC110: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC110: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC110: LeaveBlock: unexpected jumping out IF_STMT
-
+        item:InitWithFull(value)
+        bagInfoData[type].items[value.key] = item
+        if value.itemtype == ItemTypeEnum.EQUIP and #value.extra.preRandomEntry > 0 then
+          item:SetPreRandomEntry(value.extra.preRandomEntry, value.extra.preFinalAttrRandomEntry)
+          self._bagInfoData.cachedPreFMKeyTable[value.key] = true
         end
       end
     end
   end
 end
 
-DM_BagInfo.OnSAddItem = function(self, protocol)
-  -- function num : 0_3 , upvalues : BagTypeEnum, _ENV, FurnitureItem, ItemTypeEnum, Item, Equip, Skill
-  local item = nil
+function DM_BagInfo:OnSAddItem(protocol)
+  local item
   local mydata = {}
   mydata.bagType = protocol.bagType
   mydata.data = protocol.data
   if mydata.bagType == BagTypeEnum.FURNITURE_BAG then
-    for i,value in ipairs(mydata.data) do
-      local item = ((((self._bagInfoData)[self._userid])[mydata.bagType]).items)[value.key]
+    for i, value in ipairs(mydata.data) do
+      local item = self._bagInfoData[self._userid][mydata.bagType].items[value.key]
       if item then
         item:SetCount(value.number)
       else
-        item = (FurnitureItem.Create)(value.id)
+        item = FurnitureItem.Create(value.id)
         item:InitWithFull(value)
-        -- DECOMPILER ERROR at PC42: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        ((((self._bagInfoData)[self._userid])[mydata.bagType]).items)[value.key] = item
+        self._bagInfoData[self._userid][mydata.bagType].items[value.key] = item
       end
     end
   else
-    do
-      for i,value in ipairs(mydata.data) do
-        local item = ((((self._bagInfoData)[self._userid])[mydata.bagType]).items)[value.key]
-        if item then
-          item:SetCount(value.number)
-        else
-          if value.itemtype == ItemTypeEnum.BASEITEM then
-            item = (Item.Create)(value.id)
-          else
-            if value.itemtype == ItemTypeEnum.EQUIP then
-              item = (Equip.Create)(value.id)
-            else
-              if value.itemtype == ItemTypeEnum.SKILL then
-                item = (Skill.Create)(value.id)
-              end
-            end
-          end
-          item:InitWithFull(value)
-          -- DECOMPILER ERROR at PC100: Confused about usage of register: R10 in 'UnsetPending'
-
-          ;
-          ((((self._bagInfoData)[self._userid])[mydata.bagType]).items)[value.key] = item
+    for i, value in ipairs(mydata.data) do
+      local item = self._bagInfoData[self._userid][mydata.bagType].items[value.key]
+      if item then
+        item:SetCount(value.number)
+      else
+        if value.itemtype == ItemTypeEnum.BASEITEM then
+          item = Item.Create(value.id)
+        elseif value.itemtype == ItemTypeEnum.EQUIP then
+          item = Equip.Create(value.id)
+        elseif value.itemtype == ItemTypeEnum.SKILL then
+          item = Skill.Create(value.id)
         end
+        item:InitWithFull(value)
+        self._bagInfoData[self._userid][mydata.bagType].items[value.key] = item
       end
     end
   end
 end
 
-DM_BagInfo.OnSRemoveItem = function(self, protocol)
-  -- function num : 0_4 , upvalues : _ENV
-  if not (self._bagInfoData)[self._userid] then
-    LogErrorFormat("DM_BagInfo", "-- self._userid(DM_BagInfo:OnSEnter) = %s, userid = %s", self._userid, (((NekoData.BehaviorManager).BM_Game):GetMyRoleInfo()).userid)
-    return 
-  else
-    if not ((self._bagInfoData)[self._userid])[protocol.bagType] then
-      LogErrorFormat("DM_BagInfo", "-- bagType = %s", protocol.bagType)
-      return 
-    end
+function DM_BagInfo:OnSRemoveItem(protocol)
+  if not self._bagInfoData[self._userid] then
+    LogErrorFormat("DM_BagInfo", "-- self._userid(DM_BagInfo:OnSEnter) = %s, userid = %s", self._userid, NekoData.BehaviorManager.BM_Game:GetMyRoleInfo().userid)
+    return
+  elseif not self._bagInfoData[self._userid][protocol.bagType] then
+    LogErrorFormat("DM_BagInfo", "-- bagType = %s", protocol.bagType)
+    return
   end
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((((self._bagInfoData)[self._userid])[protocol.bagType]).items)[protocol.itemKey] = nil
+  self._bagInfoData[self._userid][protocol.bagType].items[protocol.itemKey] = nil
 end
 
-DM_BagInfo.OnSModifyItemNum = function(self, protocol)
-  -- function num : 0_5
-  (((((self._bagInfoData)[self._userid])[protocol.bagType]).items)[protocol.itemKey]):SetCount(protocol.itemNum)
+function DM_BagInfo:OnSModifyItemNum(protocol)
+  self._bagInfoData[self._userid][protocol.bagType].items[protocol.itemKey]:SetCount(protocol.itemNum)
   if protocol.delTime then
-    (((((self._bagInfoData)[self._userid])[protocol.bagType]).items)[protocol.itemKey]):SetDelTimeList(protocol.delTime)
+    self._bagInfoData[self._userid][protocol.bagType].items[protocol.itemKey]:SetDelTimeList(protocol.delTime)
   end
 end
 
-DM_BagInfo.OnSChangeEquipment = function(self, protocol)
-  -- function num : 0_6 , upvalues : _ENV, EquipTypeEnum, BagTypeEnum
-  for equipKey,roleKey in pairs(protocol.equips) do
-    local type = nil
-    if (protocol.equipType)[equipKey] == EquipTypeEnum.WEAPON then
+function DM_BagInfo:OnSChangeEquipment(protocol)
+  for equipKey, roleKey in pairs(protocol.equips) do
+    local type
+    if protocol.equipType[equipKey] == EquipTypeEnum.WEAPON then
       type = EquipTypeEnum.WEAPON
     end
-    if (protocol.equipType)[equipKey] == EquipTypeEnum.JEWELRY then
+    if protocol.equipType[equipKey] == EquipTypeEnum.JEWELRY then
       type = EquipTypeEnum.JEWELRY
     end
-    if (protocol.equipType)[equipKey] == EquipTypeEnum.ARMOR then
+    if protocol.equipType[equipKey] == EquipTypeEnum.ARMOR then
       type = EquipTypeEnum.ARMOR
     end
-    if type and ((((self._bagInfoData)[self._userid])[BagTypeEnum.EQUIPBAG]).items)[equipKey] then
-      (((((self._bagInfoData)[self._userid])[BagTypeEnum.EQUIPBAG]).items)[equipKey]):SetRoleKey(roleKey)
+    if type and self._bagInfoData[self._userid][BagTypeEnum.EQUIPBAG].items[equipKey] then
+      self._bagInfoData[self._userid][BagTypeEnum.EQUIPBAG].items[equipKey]:SetRoleKey(roleKey)
     end
   end
 end
 
-DM_BagInfo.OnSIdentifyEquip = function(self, protocol)
-  -- function num : 0_7 , upvalues : BagTypeEnum
+function DM_BagInfo:OnSIdentifyEquip(protocol)
   local type = BagTypeEnum.EQUIPBAG
-  ;
-  (((((self._bagInfoData)[self._userid])[type]).items)[protocol.equipKey]):SetExtraInof(protocol.info)
+  self._bagInfoData[self._userid][type].items[protocol.equipKey]:SetExtraInof(protocol.info)
 end
 
-DM_BagInfo.OnSEquipLevelUp = function(self, protocol)
-  -- function num : 0_8 , upvalues : BagTypeEnum
+function DM_BagInfo:OnSEquipLevelUp(protocol)
   local type = BagTypeEnum.EQUIPBAG
-  if ((((self._bagInfoData)[self._userid])[type]).items)[protocol.equipKey] then
-    (((((self._bagInfoData)[self._userid])[type]).items)[protocol.equipKey]):SetStrengthenLevel(protocol.lv)
-    ;
-    (((((self._bagInfoData)[self._userid])[type]).items)[protocol.equipKey]):SetEquipExp(protocol.exp)
-    ;
-    (((((self._bagInfoData)[self._userid])[type]).items)[protocol.equipKey]):SetScore(protocol.power)
-    ;
-    (((((self._bagInfoData)[self._userid])[type]).items)[protocol.equipKey]):SetFinalAttr(protocol.finalAttr)
+  if self._bagInfoData[self._userid][type].items[protocol.equipKey] then
+    self._bagInfoData[self._userid][type].items[protocol.equipKey]:SetStrengthenLevel(protocol.lv)
+    self._bagInfoData[self._userid][type].items[protocol.equipKey]:SetEquipExp(protocol.exp)
+    self._bagInfoData[self._userid][type].items[protocol.equipKey]:SetScore(protocol.power)
+    self._bagInfoData[self._userid][type].items[protocol.equipKey]:SetFinalAttr(protocol.finalAttr)
   end
 end
 
-DM_BagInfo.OnSEquipExpUp = function(self, protocol)
-  -- function num : 0_9 , upvalues : BagTypeEnum
+function DM_BagInfo:OnSEquipExpUp(protocol)
   local type = BagTypeEnum.EQUIPBAG
-  if ((((self._bagInfoData)[self._userid])[type]).items)[protocol.equipKey] then
-    (((((self._bagInfoData)[self._userid])[type]).items)[protocol.equipKey]):SetEquipExp(protocol.exp)
+  if self._bagInfoData[self._userid][type].items[protocol.equipKey] then
+    self._bagInfoData[self._userid][type].items[protocol.equipKey]:SetEquipExp(protocol.exp)
   end
 end
 
-DM_BagInfo.OnSEquipBreak = function(self, protocol)
-  -- function num : 0_10 , upvalues : BagTypeEnum
+function DM_BagInfo:OnSEquipBreak(protocol)
   local type = BagTypeEnum.EQUIPBAG
-  if ((((self._bagInfoData)[self._userid])[type]).items)[protocol.equipKey] then
-    (((((self._bagInfoData)[self._userid])[type]).items)[protocol.equipKey]):SetStage(protocol.stage)
+  if self._bagInfoData[self._userid][type].items[protocol.equipKey] then
+    self._bagInfoData[self._userid][type].items[protocol.equipKey]:SetStage(protocol.stage)
   end
 end
 
-DM_BagInfo.OnSChangeEquipAppendAttrs = function(self, protocol)
-  -- function num : 0_11 , upvalues : BagTypeEnum
+function DM_BagInfo:OnSChangeEquipAppendAttrs(protocol)
   local type = BagTypeEnum.EQUIPBAG
-  if ((((self._bagInfoData)[self._userid])[type]).items)[protocol.equipKey] then
-    local recastAttrs = (((((self._bagInfoData)[self._userid])[type]).items)[protocol.equipKey]):SetEquipRecastAttr({})
-    ;
-    (((((self._bagInfoData)[self._userid])[type]).items)[protocol.equipKey]):SetEquipAdditionalAttr(protocol.appendAttr)
-    ;
-    (((((self._bagInfoData)[self._userid])[type]).items)[protocol.equipKey]):SetScore(protocol.power)
+  if self._bagInfoData[self._userid][type].items[protocol.equipKey] then
+    local recastAttrs = self._bagInfoData[self._userid][type].items[protocol.equipKey]:SetEquipRecastAttr({})
+    self._bagInfoData[self._userid][type].items[protocol.equipKey]:SetEquipAdditionalAttr(protocol.appendAttr)
+    self._bagInfoData[self._userid][type].items[protocol.equipKey]:SetScore(protocol.power)
   end
 end
 
-DM_BagInfo.OnSLockEquip = function(self, protocol)
-  -- function num : 0_12 , upvalues : BagTypeEnum
+function DM_BagInfo:OnSLockEquip(protocol)
   local type = BagTypeEnum.EQUIPBAG
-  if ((((self._bagInfoData)[self._userid])[type]).items)[protocol.key] then
-    (((((self._bagInfoData)[self._userid])[type]).items)[protocol.key]):SetIsLocked(protocol.lock)
+  if self._bagInfoData[self._userid][type].items[protocol.key] then
+    self._bagInfoData[self._userid][type].items[protocol.key]:SetIsLocked(protocol.lock)
   end
 end
 
-DM_BagInfo.OnSViewEquip = function(self, protocol)
-  -- function num : 0_13 , upvalues : BagTypeEnum
+function DM_BagInfo:OnSViewEquip(protocol)
   local type = BagTypeEnum.EQUIPBAG
-  if ((((self._bagInfoData)[self._userid])[type]).items)[protocol.key] then
-    (((((self._bagInfoData)[self._userid])[type]).items)[protocol.key]):SetIsChecked(protocol.viewDetails)
+  if self._bagInfoData[self._userid][type].items[protocol.key] then
+    self._bagInfoData[self._userid][type].items[protocol.key]:SetIsChecked(protocol.viewDetails)
   end
 end
 
-DM_BagInfo.OnSEnchantEquip = function(self, protocol)
-  -- function num : 0_14 , upvalues : BagTypeEnum
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
-  ((self._bagInfoData).cachedPreFMKeyTable)[protocol.equipKey] = nil
+function DM_BagInfo:OnSEnchantEquip(protocol)
+  self._bagInfoData.cachedPreFMKeyTable[protocol.equipKey] = nil
   local type = BagTypeEnum.EQUIPBAG
-  if ((((self._bagInfoData)[self._userid])[type]).items)[protocol.equipKey] then
-    (((((self._bagInfoData)[self._userid])[type]).items)[protocol.equipKey]):SetScore(protocol.power)
-    ;
-    (((((self._bagInfoData)[self._userid])[type]).items)[protocol.equipKey]):SetFinalAttr(protocol.finalAttr)
-    ;
-    (((((self._bagInfoData)[self._userid])[type]).items)[protocol.equipKey]):SetRandomEntry(protocol.randomEntry, protocol.finalAttrEntry)
-    ;
-    (((((self._bagInfoData)[self._userid])[type]).items)[protocol.equipKey]):SetRandomIndex(protocol.index)
-    ;
-    (((((self._bagInfoData)[self._userid])[type]).items)[protocol.equipKey]):SetLuckValue(protocol.luck)
-    ;
-    (((((self._bagInfoData)[self._userid])[type]).items)[protocol.equipKey]):SetIsEnchanted(true)
+  if self._bagInfoData[self._userid][type].items[protocol.equipKey] then
+    self._bagInfoData[self._userid][type].items[protocol.equipKey]:SetScore(protocol.power)
+    self._bagInfoData[self._userid][type].items[protocol.equipKey]:SetFinalAttr(protocol.finalAttr)
+    self._bagInfoData[self._userid][type].items[protocol.equipKey]:SetRandomEntry(protocol.randomEntry, protocol.finalAttrEntry)
+    self._bagInfoData[self._userid][type].items[protocol.equipKey]:SetRandomIndex(protocol.index)
+    self._bagInfoData[self._userid][type].items[protocol.equipKey]:SetLuckValue(protocol.luck)
+    self._bagInfoData[self._userid][type].items[protocol.equipKey]:SetIsEnchanted(true)
   end
 end
 
-DM_BagInfo.OnSPreviewEquipAttrs = function(self, protocol)
-  -- function num : 0_15 , upvalues : BagTypeEnum
+function DM_BagInfo:OnSPreviewEquipAttrs(protocol)
   local type = BagTypeEnum.EQUIPBAG
-  if ((((self._bagInfoData)[self._userid])[type]).items)[protocol.key] then
-    (((((self._bagInfoData)[self._userid])[type]).items)[protocol.key]):SetPreviewStrengthAttr(protocol.lvAttrs)
+  if self._bagInfoData[self._userid][type].items[protocol.key] then
+    self._bagInfoData[self._userid][type].items[protocol.key]:SetPreviewStrengthAttr(protocol.lvAttrs)
   end
 end
 
-DM_BagInfo.OnSPreEnchantEquip = function(self, protocol)
-  -- function num : 0_16 , upvalues : BagTypeEnum
+function DM_BagInfo:OnSPreEnchantEquip(protocol)
   local type = BagTypeEnum.EQUIPBAG
-  if ((((self._bagInfoData)[self._userid])[type]).items)[protocol.equipKey] then
-    (((((self._bagInfoData)[self._userid])[type]).items)[protocol.equipKey]):SetLuckValue(protocol.luck)
-    ;
-    (((((self._bagInfoData)[self._userid])[type]).items)[protocol.equipKey]):SetFMRequiredMana(protocol.nextCostMaNa)
+  if self._bagInfoData[self._userid][type].items[protocol.equipKey] then
+    self._bagInfoData[self._userid][type].items[protocol.equipKey]:SetLuckValue(protocol.luck)
+    self._bagInfoData[self._userid][type].items[protocol.equipKey]:SetFMRequiredMana(protocol.nextCostMaNa)
   end
 end
 
-DM_BagInfo.OnSDecomposeEquips = function(self, protocol)
-  -- function num : 0_17 , upvalues : _ENV, BagTypeEnum
-  if not (self._bagInfoData)[self._userid] then
-    LogErrorFormat("DM_BagInfo", "-- self._userid(DM_BagInfo:OnSEnter) = %s, userid = %s", self._userid, (((NekoData.BehaviorManager).BM_Game):GetMyRoleInfo()).userid)
-    return 
-  else
-    if not ((self._bagInfoData)[self._userid])[BagTypeEnum.EQUIPBAG] then
-      LogErrorFormat("DM_BagInfo", "-- bagType = %s", BagTypeEnum.EQUIPBAG)
-      return 
-    end
+function DM_BagInfo:OnSDecomposeEquips(protocol)
+  if not self._bagInfoData[self._userid] then
+    LogErrorFormat("DM_BagInfo", "-- self._userid(DM_BagInfo:OnSEnter) = %s, userid = %s", self._userid, NekoData.BehaviorManager.BM_Game:GetMyRoleInfo().userid)
+    return
+  elseif not self._bagInfoData[self._userid][BagTypeEnum.EQUIPBAG] then
+    LogErrorFormat("DM_BagInfo", "-- bagType = %s", BagTypeEnum.EQUIPBAG)
+    return
   end
-  for i,equipKey in ipairs(protocol.equipKeys) do
-    -- DECOMPILER ERROR at PC41: Confused about usage of register: R7 in 'UnsetPending'
+  for i, equipKey in ipairs(protocol.equipKeys) do
+    self._bagInfoData[self._userid][BagTypeEnum.EQUIPBAG].items[equipKey] = nil
+  end
+end
 
-    ((((self._bagInfoData)[self._userid])[BagTypeEnum.EQUIPBAG]).items)[equipKey] = nil
+function DM_BagInfo:OnSEquipGemInlay(protocol)
+  local type = BagTypeEnum.EQUIPBAG
+  if self._bagInfoData[self._userid][type].items[protocol.equipKey] then
+    self._bagInfoData[self._userid][type].items[protocol.equipKey]:SetGemInfo(protocol.pos, protocol.gemId, protocol.suitId)
+    self._bagInfoData[self._userid][type].items[protocol.equipKey]:SetScore(protocol.power)
   end
 end
 
 return DM_BagInfo
-

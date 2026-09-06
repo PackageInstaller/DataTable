@@ -1,45 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/protocolhandler/protocol/party/scheckpartymemberinfo.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local p1 = function(protocol)
-  -- function num : 0_0 , upvalues : _ENV
+local function p1(protocol)
   local list = protocol.allMember
-  ;
-  (table.sort)(list, function(a, b)
-    -- function num : 0_0_0
+  
+  table.sort(list, function(a, b)
     if a.position < b.position then
       return true
-    else
-      if a.position == b.position then
-        if a.lastTime < b.lastTime then
+    elseif a.position == b.position then
+      if a.lastTime < b.lastTime then
+        return true
+      elseif a.lastTime == b.lastTime then
+        if a.userLevel > b.userLevel then
           return true
-        else
-          if a.lastTime == b.lastTime then
-            if b.userLevel < a.userLevel then
-              return true
-            else
-              if a.userLevel == b.userLevel and b.donate < a.donate then
-                return true
-              end
-            end
-          end
+        elseif a.userLevel == b.userLevel and a.donate > b.donate then
+          return true
         end
       end
     end
     return false
-  end
-)
-  local dialog = (DialogManager.CreateSingletonDialog)("guild.guildmainmember")
+  end)
+  local dialog = DialogManager.CreateSingletonDialog("guild.guildmainmember")
   if dialog then
     dialog:OnSCheckPartyMember(list)
   end
 end
 
-local p2 = function(protocol, client)
-  -- function num : 0_1
+local function p2(protocol, client)
 end
 
 return {p1, p2}
-

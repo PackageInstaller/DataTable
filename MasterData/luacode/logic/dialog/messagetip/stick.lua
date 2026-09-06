@@ -1,92 +1,68 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/dialog/messagetip/stick.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local StickDialog = class("StickDialog", Dialog)
 StickDialog.AssetBundleName = "ui/layouts.dramadialog"
 StickDialog.AssetName = "DramaNarrator"
-StickDialog.Ctor = function(self, ...)
-  -- function num : 0_0 , upvalues : StickDialog
-  ((StickDialog.super).Ctor)(self, ...)
+
+function StickDialog:Ctor(...)
+  StickDialog.super.Ctor(self, ...)
   self._groupName = "Modal"
 end
 
-StickDialog.OnCreate = function(self)
-  -- function num : 0_1
+function StickDialog:OnCreate()
   self._text = self:GetChild("UI/Back/Text")
   self._enterNewState = false
-  ;
-  (self:GetRootWindow()):Subscribe_StateExitEvent(self.OnAnimatorStateExit, self)
+  self:GetRootWindow():Subscribe_StateExitEvent(self.OnAnimatorStateExit, self)
 end
 
-StickDialog.OnDestroy = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function StickDialog:OnDestroy()
   if self._timer then
-    (GameTimer.RemoveTask)(self._timer)
+    GameTimer.RemoveTask(self._timer)
     self._timer = nil
   end
 end
 
-StickDialog.Refresh = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg = (self._queue)[1]
+function StickDialog:Refresh()
+  local cfg = self._queue[1]
   if not cfg then
     self:Skip()
-    return 
+    return
   end
-  ;
-  (self._text):SetText((TextManager.GetText)(cfg.ContentTextID))
-  self._timer = (GameTimer.AddTask)((self._cfg).time, 0, function()
-    -- function num : 0_3_0 , upvalues : self, _ENV
+  self._text:SetText(TextManager.GetText(cfg.ContentTextID))
+  self._timer = GameTimer.AddTask(self._cfg.time, 0, function()
     self._timer = nil
-    ;
-    (table.remove)(self._queue, 1)
+    table.remove(self._queue, 1)
     self:Refresh()
-  end
-)
+  end)
 end
 
-StickDialog.SetData = function(self, id)
-  -- function num : 0_4 , upvalues : _ENV
-  local recorder = (BeanManager.GetTableByName)("popups.cpopupdialogconfig")
+function StickDialog:SetData(id)
+  local recorder = BeanManager.GetTableByName("popups.cpopupdialogconfig")
   id = tonumber(id)
   self._queue = {}
-  for _,i in pairs(recorder:GetAllIds()) do
+  for _, i in pairs(recorder:GetAllIds()) do
     local record = recorder:GetRecorder(i)
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R9 in 'UnsetPending'
-
     if record.dialog_id == id then
-      (self._queue)[#self._queue + 1] = record
+      self._queue[#self._queue + 1] = record
     end
   end
-  ;
-  (table.sort)(self._queue, function(lhs, rhs)
-    -- function num : 0_4_0
-    do return lhs.index < rhs.index end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  self._cfg = (self._queue)[1]
+  table.sort(self._queue, function(lhs, rhs)
+    return lhs.index < rhs.index
+  end)
+  self._cfg = self._queue[1]
   self:Refresh()
 end
 
-StickDialog.Skip = function(self)
-  -- function num : 0_5
+function StickDialog:Skip()
   if self._closing then
-    return 
+    return
   end
-  ;
-  (self:GetRootWindow()):SetAnimatorBool("onClose", true)
+  self:GetRootWindow():SetAnimatorBool("onClose", true)
   self._closing = true
 end
 
-StickDialog.OnAnimatorStateExit = function(self, handle, stateName, normalizedTime)
-  -- function num : 0_6
-  if stateName == (self._cfg).End then
+function StickDialog:OnAnimatorStateExit(handle, stateName, normalizedTime)
+  if stateName == self._cfg.End then
     self:Destroy()
   end
 end
 
 return StickDialog
-

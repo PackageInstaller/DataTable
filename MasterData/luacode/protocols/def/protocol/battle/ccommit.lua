@@ -1,38 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/def/protocol/battle/ccommit.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local CCommit = dataclass("CCommit", require("framework.net.protocol"))
 CCommit.ProtocolType = 1943
 CCommit.MaxSize = 65535
 CCommit.kind = 0
 CCommit.value = 0
-CCommit.Ctor = function(self, client)
-  -- function num : 0_0 , upvalues : CCommit
-  ((CCommit.super).Ctor)(self, client)
+
+function CCommit:Ctor(client)
+  CCommit.super.Ctor(self, client)
 end
 
-CCommit.Marshal = function(self, buffer)
-  -- function num : 0_1 , upvalues : ProtocolBufferStaticFunctions
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.kind) then
+function CCommit:Marshal(buffer)
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.kind) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.value) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.value) then
     return false
   end
   return true
 end
 
-CCommit.Unmarshal = function(self, buffer)
-  -- function num : 0_2 , upvalues : ProtocolBufferStaticFunctions
+function CCommit:Unmarshal(buffer)
   local ret = true
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.kind = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.value = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
@@ -40,4 +33,3 @@ CCommit.Unmarshal = function(self, buffer)
 end
 
 return CCommit
-

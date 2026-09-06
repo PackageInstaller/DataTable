@@ -1,8 +1,3 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/localprotocols/def/action/ssetcliprectforshikongzhimen.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local SSetClipRectForShiKongZhiMen = dataclass("SSetClipRectForShiKongZhiMen")
 SSetClipRectForShiKongZhiMen.ProtocolType = 50
 SSetClipRectForShiKongZhiMen.entityid = 0
@@ -11,12 +6,11 @@ SSetClipRectForShiKongZhiMen.h = 0
 SSetClipRectForShiKongZhiMen.camp = 0
 SSetClipRectForShiKongZhiMen.objectname = ""
 SSetClipRectForShiKongZhiMen.clipstate = ""
-SSetClipRectForShiKongZhiMen.Ctor = function(self, client)
-  -- function num : 0_0
+
+function SSetClipRectForShiKongZhiMen:Ctor(client)
 end
 
-SSetClipRectForShiKongZhiMen.Marshal = function(self, data)
-  -- function num : 0_1
+function SSetClipRectForShiKongZhiMen:Marshal(data)
   data.entityid = self.entityid
   data.w = self.w
   data.h = self.h
@@ -25,8 +19,7 @@ SSetClipRectForShiKongZhiMen.Marshal = function(self, data)
   data.clipstate = self.clipstate
 end
 
-SSetClipRectForShiKongZhiMen.Unmarshal = function(self, data)
-  -- function num : 0_2
+function SSetClipRectForShiKongZhiMen:Unmarshal(data)
   self.entityid = data.entityid
   self.w = data.w
   self.h = data.h
@@ -36,8 +29,7 @@ SSetClipRectForShiKongZhiMen.Unmarshal = function(self, data)
   return true
 end
 
-SSetClipRectForShiKongZhiMen.CheckVariable = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SSetClipRectForShiKongZhiMen:CheckVariable()
   if type(self.entityid) ~= "number" then
     LogErrorFormat("LocalProtocols", "type error!type(self.entityid) = %s. number required.", type(self.entityid))
     return false
@@ -66,4 +58,3 @@ SSetClipRectForShiKongZhiMen.CheckVariable = function(self)
 end
 
 return SSetClipRectForShiKongZhiMen
-

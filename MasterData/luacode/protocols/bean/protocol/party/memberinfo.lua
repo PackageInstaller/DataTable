@@ -1,9 +1,4 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/bean/protocol/party/memberinfo.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local MemberInfo = dataclass("MemberInfo")
 MemberInfo.userId = 0
 MemberInfo.username = ""
@@ -23,92 +18,90 @@ MemberInfo.CREAM = 3
 MemberInfo.MEMBER = 4
 MemberInfo.OFFLINE = 0
 MemberInfo.ONLINE = 1
-MemberInfo.Ctor = function(self)
-  -- function num : 0_0
+
+function MemberInfo:Ctor()
 end
 
-MemberInfo.Marshal = function(self, buffer)
-  -- function num : 0_1 , upvalues : ProtocolBufferStaticFunctions
-  if not (ProtocolBufferStaticFunctions.WriteInt64)(buffer, self.userId) then
+function MemberInfo:Marshal(buffer)
+  if not ProtocolBufferStaticFunctions.WriteInt64(buffer, self.userId) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteProtocolString)(buffer, self.username) then
+  if not ProtocolBufferStaticFunctions.WriteProtocolString(buffer, self.username) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.userLevel) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.userLevel) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.avatarId) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.avatarId) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.frameId) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.frameId) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt64)(buffer, self.applyTime) then
+  if not ProtocolBufferStaticFunctions.WriteInt64(buffer, self.applyTime) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt64)(buffer, self.lastTime) then
+  if not ProtocolBufferStaticFunctions.WriteInt64(buffer, self.lastTime) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.position) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.position) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.identity) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.identity) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.donate) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.donate) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.spiritvip) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.spiritvip) then
     return false
   end
   return true
 end
 
-MemberInfo.Unmarshal = function(self, buffer)
-  -- function num : 0_2 , upvalues : ProtocolBufferStaticFunctions
+function MemberInfo:Unmarshal(buffer)
   local ret = true
-  ret = (ProtocolBufferStaticFunctions.ReadInt64)(buffer)
+  ret, self.userId = ProtocolBufferStaticFunctions.ReadInt64(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadProtocolString)(buffer)
+  ret, self.username = ProtocolBufferStaticFunctions.ReadProtocolString(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.userLevel = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.avatarId = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.frameId = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt64)(buffer)
+  ret, self.applyTime = ProtocolBufferStaticFunctions.ReadInt64(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt64)(buffer)
+  ret, self.lastTime = ProtocolBufferStaticFunctions.ReadInt64(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.position = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.identity = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.donate = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.spiritvip = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
@@ -116,4 +109,3 @@ MemberInfo.Unmarshal = function(self, buffer)
 end
 
 return MemberInfo
-

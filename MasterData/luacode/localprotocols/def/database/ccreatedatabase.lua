@@ -1,31 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/localprotocols/def/database/ccreatedatabase.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local CCreateDataBase = dataclass("CCreateDataBase")
 CCreateDataBase.ProtocolType = 301
 CCreateDataBase.userId = 0
 CCreateDataBase.clientId = 0
-CCreateDataBase.Ctor = function(self, client)
-  -- function num : 0_0
+
+function CCreateDataBase:Ctor(client)
 end
 
-CCreateDataBase.Marshal = function(self, data)
-  -- function num : 0_1
+function CCreateDataBase:Marshal(data)
   data.userId = self.userId
   data.clientId = self.clientId
 end
 
-CCreateDataBase.Unmarshal = function(self, data)
-  -- function num : 0_2
+function CCreateDataBase:Unmarshal(data)
   self.userId = data.userId
   self.clientId = data.clientId
   return true
 end
 
-CCreateDataBase.CheckVariable = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function CCreateDataBase:CheckVariable()
   if type(self.userId) ~= "number" then
     LogErrorFormat("LocalProtocols", "type error!type(self.userId) = %s. number required.", type(self.userId))
     return false
@@ -38,4 +30,3 @@ CCreateDataBase.CheckVariable = function(self)
 end
 
 return CCreateDataBase
-

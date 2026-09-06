@@ -1,9 +1,4 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/bean/protocol/user/userinfo.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local UserInfo = dataclass("UserInfo")
 UserInfo.userid = 0
 UserInfo.username = ""
@@ -26,8 +21,9 @@ UserInfo.backgroundSkin = 0
 UserInfo.guest = 0
 UserInfo.likedNum = 0
 UserInfo.iplocaladdr = ""
-UserInfo.Ctor = function(self)
-  -- function num : 0_0
+UserInfo.partyName = ""
+
+function UserInfo:Ctor()
   self.guides = {}
   self.buffGuides = {}
   self.procedures = {}
@@ -36,352 +32,315 @@ UserInfo.Ctor = function(self)
   self.npcTips = {}
 end
 
-UserInfo.Marshal = function(self, buffer)
-  -- function num : 0_1 , upvalues : ProtocolBufferStaticFunctions, _ENV
-  if not (ProtocolBufferStaticFunctions.WriteInt64)(buffer, self.userid) then
+function UserInfo:Marshal(buffer)
+  if not ProtocolBufferStaticFunctions.WriteInt64(buffer, self.userid) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteProtocolString)(buffer, self.username) then
+  if not ProtocolBufferStaticFunctions.WriteProtocolString(buffer, self.username) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.userlevel) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.userlevel) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.userexp) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.userexp) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.strengthLimit) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.strengthLimit) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.serverId) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.serverId) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.isNew) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.isNew) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteCompactUInt32)(buffer, (table.nums)(self.guides)) then
+  if not ProtocolBufferStaticFunctions.WriteCompactUInt32(buffer, table.nums(self.guides)) then
     return false
   end
-  for key,value in pairs(self.guides) do
-    if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, R9_PC74) then
+  for key, value in pairs(self.guides) do
+    if not ProtocolBufferStaticFunctions.WriteInt32(buffer, key) then
       return false
     end
-    if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, R9_PC74) then
-      return false
-    end
-  end
-  if not (ProtocolBufferStaticFunctions.WriteCompactUInt32)(buffer, (table.nums)(self.buffGuides)) then
-    return false
-  end
-  for key,value in pairs(self.buffGuides) do
-    -- DECOMPILER ERROR at PC106: Overwrote pending register: R9 in 'AssignReg'
-
-    if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, R9_PC74) then
-      return false
-    end
-    -- DECOMPILER ERROR at PC114: Overwrote pending register: R9 in 'AssignReg'
-
-    if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, R9_PC74) then
+    if not ProtocolBufferStaticFunctions.WriteInt32(buffer, value) then
       return false
     end
   end
-  if not (ProtocolBufferStaticFunctions.WriteCompactUInt32)(buffer, (table.nums)(self.procedures)) then
+  if not ProtocolBufferStaticFunctions.WriteCompactUInt32(buffer, table.nums(self.buffGuides)) then
     return false
   end
-  for key,value in pairs(self.procedures) do
-    -- DECOMPILER ERROR at PC139: Overwrote pending register: R9 in 'AssignReg'
-
-    if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, R9_PC74) then
+  for key, value in pairs(self.buffGuides) do
+    if not ProtocolBufferStaticFunctions.WriteInt32(buffer, key) then
       return false
     end
-    -- DECOMPILER ERROR at PC147: Overwrote pending register: R9 in 'AssignReg'
-
-    if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, R9_PC74) then
+    if not ProtocolBufferStaticFunctions.WriteInt32(buffer, value) then
       return false
     end
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.power) then
+  if not ProtocolBufferStaticFunctions.WriteCompactUInt32(buffer, table.nums(self.procedures)) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.avatarId) then
-    return false
-  end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.frameId) then
-    return false
-  end
-  if not (ProtocolBufferStaticFunctions.WriteProtocolString)(buffer, self.introduce) then
-    return false
-  end
-  if not (ProtocolBufferStaticFunctions.WriteCompactUInt32)(buffer, (table.nums)(self.configs)) then
-    return false
-  end
-  for key,value in pairs(self.configs) do
-    -- DECOMPILER ERROR at PC204: Overwrote pending register: R9 in 'AssignReg'
-
-    if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, R9_PC74) then
+  for key, value in pairs(self.procedures) do
+    if not ProtocolBufferStaticFunctions.WriteInt32(buffer, key) then
       return false
     end
-    -- DECOMPILER ERROR at PC212: Overwrote pending register: R9 in 'AssignReg'
-
-    if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, R9_PC74) then
+    if not ProtocolBufferStaticFunctions.WriteInt32(buffer, value) then
       return false
     end
   end
-  if not (ProtocolBufferStaticFunctions.WriteProtocolString)(buffer, self.phoneNum) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.power) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteProtocolString)(buffer, self.mailAddr) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.avatarId) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt16)(buffer, self.isGM) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.frameId) then
     return false
   end
-  local length = (table.slen)(self.tips)
-  if not (ProtocolBufferStaticFunctions.WriteCompactUInt32)(buffer, length) then
+  if not ProtocolBufferStaticFunctions.WriteProtocolString(buffer, self.introduce) then
+    return false
+  end
+  if not ProtocolBufferStaticFunctions.WriteCompactUInt32(buffer, table.nums(self.configs)) then
+    return false
+  end
+  for key, value in pairs(self.configs) do
+    if not ProtocolBufferStaticFunctions.WriteInt32(buffer, key) then
+      return false
+    end
+    if not ProtocolBufferStaticFunctions.WriteInt32(buffer, value) then
+      return false
+    end
+  end
+  if not ProtocolBufferStaticFunctions.WriteProtocolString(buffer, self.phoneNum) then
+    return false
+  end
+  if not ProtocolBufferStaticFunctions.WriteProtocolString(buffer, self.mailAddr) then
+    return false
+  end
+  if not ProtocolBufferStaticFunctions.WriteInt16(buffer, self.isGM) then
+    return false
+  end
+  local length = table.slen(self.tips)
+  if not ProtocolBufferStaticFunctions.WriteCompactUInt32(buffer, length) then
     return false
   end
   for i = 1, length do
-    -- DECOMPILER ERROR at PC262: Overwrote pending register: R9 in 'AssignReg'
-
-    -- DECOMPILER ERROR at PC263: Overwrote pending register: R9 in 'AssignReg'
-
-    if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, R9_PC74) then
+    if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.tips[i]) then
       return false
     end
   end
-  local length = (table.slen)(self.npcTips)
-  if not (ProtocolBufferStaticFunctions.WriteCompactUInt32)(buffer, length) then
+  local length = table.slen(self.npcTips)
+  if not ProtocolBufferStaticFunctions.WriteCompactUInt32(buffer, length) then
     return false
   end
   for i = 1, length do
-    -- DECOMPILER ERROR at PC287: Overwrote pending register: R9 in 'AssignReg'
-
-    if not (ProtocolBufferStaticFunctions.WriteInt32)(R9_PC74, (self.npcTips)[i]) then
+    if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.npcTips[i]) then
       return false
     end
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.enchant_MaNa) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.enchant_MaNa) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt64)(buffer, self.createTime) then
+  if not ProtocolBufferStaticFunctions.WriteInt64(buffer, self.createTime) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.backgroundRole) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.backgroundRole) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.backgroundSkin) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.backgroundSkin) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.guest) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.guest) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.likedNum) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.likedNum) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteProtocolString)(buffer, self.iplocaladdr) then
+  if not ProtocolBufferStaticFunctions.WriteProtocolString(buffer, self.iplocaladdr) then
+    return false
+  end
+  if not ProtocolBufferStaticFunctions.WriteProtocolString(buffer, self.partyName) then
     return false
   end
   return true
 end
 
-UserInfo.Unmarshal = function(self, buffer)
-  -- function num : 0_2 , upvalues : ProtocolBufferStaticFunctions
+function UserInfo:Unmarshal(buffer)
   local ret = true
-  ret = (ProtocolBufferStaticFunctions.ReadInt64)(buffer)
+  ret, self.userid = ProtocolBufferStaticFunctions.ReadInt64(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadProtocolString)(buffer)
+  ret, self.username = ProtocolBufferStaticFunctions.ReadProtocolString(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.userlevel = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.userexp = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.strengthLimit = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.serverId = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.isNew = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  local length, key, value = 0, nil, nil
-  ret = (ProtocolBufferStaticFunctions.ReadCompactUInt32)(buffer)
-  if not ret then
-    return ret
-  end
-  for i = 1, length do
-    key = nil
-    ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
-    if not ret then
-      return ret
-    end
-    -- DECOMPILER ERROR at PC85: Overwrote pending register: R5 in 'AssignReg'
-
-    ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
-    if not ret then
-      return ret
-    end
-    -- DECOMPILER ERROR at PC91: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self.guides)[key] = value
-  end
-  local length, key, value = 0, nil, nil
-  ret = (ProtocolBufferStaticFunctions.ReadCompactUInt32)(buffer)
+  local length, key, value = 0
+  ret, length = ProtocolBufferStaticFunctions.ReadCompactUInt32(buffer)
   if not ret then
     return ret
   end
   for i = 1, length do
-    key = nil
-    ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+    key, value = nil, nil
+    ret, key = ProtocolBufferStaticFunctions.ReadInt32(buffer)
     if not ret then
       return ret
     end
-    -- DECOMPILER ERROR at PC121: Overwrote pending register: R8 in 'AssignReg'
-
-    ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+    ret, value = ProtocolBufferStaticFunctions.ReadInt32(buffer)
     if not ret then
       return ret
     end
-    -- DECOMPILER ERROR at PC127: Confused about usage of register: R13 in 'UnsetPending'
-
-    ;
-    (self.buffGuides)[key] = value
+    self.guides[key] = value
   end
-  local length, key, value = 0, nil, nil
-  ret = (ProtocolBufferStaticFunctions.ReadCompactUInt32)(buffer)
+  local length, key, value = 0
+  ret, length = ProtocolBufferStaticFunctions.ReadCompactUInt32(buffer)
   if not ret then
     return ret
   end
   for i = 1, length do
-    key = nil
-    ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+    key, value = nil, nil
+    ret, key = ProtocolBufferStaticFunctions.ReadInt32(buffer)
     if not ret then
       return ret
     end
-    -- DECOMPILER ERROR at PC157: Overwrote pending register: R11 in 'AssignReg'
-
-    ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+    ret, value = ProtocolBufferStaticFunctions.ReadInt32(buffer)
     if not ret then
       return ret
     end
-    -- DECOMPILER ERROR at PC163: Confused about usage of register: R16 in 'UnsetPending'
-
-    ;
-    (self.procedures)[key] = value
+    self.buffGuides[key] = value
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
-  if not ret then
-    return ret
-  end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
-  if not ret then
-    return ret
-  end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
-  if not ret then
-    return ret
-  end
-  ret = (ProtocolBufferStaticFunctions.ReadProtocolString)(buffer)
-  if not ret then
-    return ret
-  end
-  local length, key, value = 0, nil, nil
-  ret = (ProtocolBufferStaticFunctions.ReadCompactUInt32)(buffer)
+  local length, key, value = 0
+  ret, length = ProtocolBufferStaticFunctions.ReadCompactUInt32(buffer)
   if not ret then
     return ret
   end
   for i = 1, length do
-    key = nil
-    ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+    key, value = nil, nil
+    ret, key = ProtocolBufferStaticFunctions.ReadInt32(buffer)
     if not ret then
       return ret
     end
-    -- DECOMPILER ERROR at PC225: Overwrote pending register: R14 in 'AssignReg'
-
-    ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+    ret, value = ProtocolBufferStaticFunctions.ReadInt32(buffer)
     if not ret then
       return ret
     end
-    -- DECOMPILER ERROR at PC231: Confused about usage of register: R19 in 'UnsetPending'
-
-    ;
-    (self.configs)[key] = value
+    self.procedures[key] = value
   end
-  ret = (ProtocolBufferStaticFunctions.ReadProtocolString)(buffer)
+  ret, self.power = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadProtocolString)(buffer)
+  ret, self.avatarId = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt16)(buffer)
+  ret, self.frameId = ProtocolBufferStaticFunctions.ReadInt32(buffer)
+  if not ret then
+    return ret
+  end
+  ret, self.introduce = ProtocolBufferStaticFunctions.ReadProtocolString(buffer)
+  if not ret then
+    return ret
+  end
+  local length, key, value = 0
+  ret, length = ProtocolBufferStaticFunctions.ReadCompactUInt32(buffer)
+  if not ret then
+    return ret
+  end
+  for i = 1, length do
+    key, value = nil, nil
+    ret, key = ProtocolBufferStaticFunctions.ReadInt32(buffer)
+    if not ret then
+      return ret
+    end
+    ret, value = ProtocolBufferStaticFunctions.ReadInt32(buffer)
+    if not ret then
+      return ret
+    end
+    self.configs[key] = value
+  end
+  ret, self.phoneNum = ProtocolBufferStaticFunctions.ReadProtocolString(buffer)
+  if not ret then
+    return ret
+  end
+  ret, self.mailAddr = ProtocolBufferStaticFunctions.ReadProtocolString(buffer)
+  if not ret then
+    return ret
+  end
+  ret, self.isGM = ProtocolBufferStaticFunctions.ReadInt16(buffer)
   if not ret then
     return ret
   end
   local length = 0
-  ret = (ProtocolBufferStaticFunctions.ReadCompactUInt32)(buffer)
+  ret, length = ProtocolBufferStaticFunctions.ReadCompactUInt32(buffer)
   if not ret then
     return ret
   end
   for i = 1, length do
-    -- DECOMPILER ERROR at PC274: Confused about usage of register: R20 in 'UnsetPending'
-
-    ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+    ret, self.tips[i] = ProtocolBufferStaticFunctions.ReadInt32(buffer)
     if not ret then
       return ret
     end
   end
   local length = 0
-  ret = (ProtocolBufferStaticFunctions.ReadCompactUInt32)(buffer)
+  ret, length = ProtocolBufferStaticFunctions.ReadCompactUInt32(buffer)
   if not ret then
     return ret
   end
   for i = 1, length do
-    -- DECOMPILER ERROR at PC297: Confused about usage of register: R21 in 'UnsetPending'
-
-    ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+    ret, self.npcTips[i] = ProtocolBufferStaticFunctions.ReadInt32(buffer)
     if not ret then
       return ret
     end
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.enchant_MaNa = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt64)(buffer)
+  ret, self.createTime = ProtocolBufferStaticFunctions.ReadInt64(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.backgroundRole = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.backgroundSkin = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.guest = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.likedNum = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadProtocolString)(buffer)
+  ret, self.iplocaladdr = ProtocolBufferStaticFunctions.ReadProtocolString(buffer)
+  if not ret then
+    return ret
+  end
+  ret, self.partyName = ProtocolBufferStaticFunctions.ReadProtocolString(buffer)
   if not ret then
     return ret
   end
@@ -389,4 +348,3 @@ UserInfo.Unmarshal = function(self, buffer)
 end
 
 return UserInfo
-

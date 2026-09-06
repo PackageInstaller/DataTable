@@ -1,18 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/dialog/battle/battleaccount/guiderolelevelupcell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local GuideRoleLevelUpCell = class("GuideRoleLevelUpCell", Dialog)
 GuideRoleLevelUpCell.AssetBundleName = "ui/layouts.battlelose"
 GuideRoleLevelUpCell.AssetName = "DefeatGuideCharCell"
-GuideRoleLevelUpCell.Ctor = function(self, ...)
-  -- function num : 0_0 , upvalues : GuideRoleLevelUpCell
-  ((GuideRoleLevelUpCell.super).Ctor)(self, ...)
+
+function GuideRoleLevelUpCell:Ctor(...)
+  GuideRoleLevelUpCell.super.Ctor(self, ...)
 end
 
-GuideRoleLevelUpCell.OnCreate = function(self)
-  -- function num : 0_1
+function GuideRoleLevelUpCell:OnCreate()
   self._frame = self:GetChild("CharSmallCell/Frame")
   self._photo = self:GetChild("CharSmallCell/Photo")
   self._downRankBack = self:GetChild("CharSmallCell/DownRankBack")
@@ -29,74 +23,53 @@ GuideRoleLevelUpCell.OnCreate = function(self)
   self._select = self:GetChild("CharSmallCell/Select")
   self._txt = self:GetChild("Txt")
   self._goBtn = self:GetChild("GoBtn")
-  ;
-  (self._goBtn):Subscribe_PointerClickEvent(self.OnGoBtnClick, self)
+  self._goBtn:Subscribe_PointerClickEvent(self.OnGoBtnClick, self)
 end
 
-GuideRoleLevelUpCell.OnDestroy = function(self)
-  -- function num : 0_2
+function GuideRoleLevelUpCell:OnDestroy()
 end
 
-GuideRoleLevelUpCell.RefreshCell = function(self, data)
-  -- function num : 0_3 , upvalues : _ENV
-  local breakLv, showLv = data:GetBreakLvAndShowLvByRoleLv(((self._delegate)._selectGuideType).recommendRoleLevel)
-  local str = (TextManager.GetText)(701095)
-  str = (string.gsub)(str, "%$parameter1%$", breakLv)
-  str = (string.gsub)(str, "%$parameter2%$", showLv)
-  ;
-  (self._txt):SetText(str)
+function GuideRoleLevelUpCell:RefreshCell(data)
+  local breakLv, showLv = data:GetBreakLvAndShowLvByRoleLv(self._delegate._selectGuideType.recommendRoleLevel)
+  local str = TextManager.GetText(701095)
+  str = string.gsub(str, "%$parameter1%$", breakLv)
+  str = string.gsub(str, "%$parameter2%$", showLv)
+  self._txt:SetText(str)
   local image = data:GetShapeLittleHeadImageRecord()
-  ;
-  (self._photo):SetSprite(image.assetBundle, image.assetName)
+  self._photo:SetSprite(image.assetBundle, image.assetName)
   image = data:GetSmallRarityFrameRecord()
-  ;
-  (self._frame):SetSprite(image.assetBundle, image.assetName)
+  self._frame:SetSprite(image.assetBundle, image.assetName)
   image = data:GetRarityBottomBackRecord()
-  ;
-  (self._downRankBack):SetSprite(image.assetBundle, image.assetName)
-  ;
-  (self._level):SetText(data:GetShowLv())
+  self._downRankBack:SetSprite(image.assetBundle, image.assetName)
+  self._level:SetText(data:GetShowLv())
   image = data:GetRarityImageRecord()
-  ;
-  (self._rank):SetSprite(image.assetBundle, image.assetName)
+  self._rank:SetSprite(image.assetBundle, image.assetName)
   image = data:GetVocationImageRecord()
-  ;
-  (self._job):SetSprite(image.assetBundle, image.assetName)
+  self._job:SetSprite(image.assetBundle, image.assetName)
   local breakLv = data:GetBreakLv()
-  ;
-  (self._breakLevelBackBlack):SetActive(breakLv == 0)
-  ;
-  (self._breakLevelBack):SetActive(breakLv > 0)
-  ;
-  (self._breakLevelNum):SetActive(breakLv > 0)
-  if breakLv > 0 then
+  self._breakLevelBackBlack:SetActive(breakLv == 0)
+  self._breakLevelBack:SetActive(0 < breakLv)
+  self._breakLevelNum:SetActive(0 < breakLv)
+  if 0 < breakLv then
     image = data:GetCurBreakFrame1ImageRecord()
-    ;
-    (self._breakLevelBack):SetSprite(image.assetBundle, image.assetName)
-    ;
-    (self._breakLevelNum):SetText(breakLv)
+    self._breakLevelBack:SetSprite(image.assetBundle, image.assetName)
+    self._breakLevelNum:SetText(breakLv)
   end
   image = data:GetElementImageRecord()
-  ;
-  (self._element):SetSprite(image.assetBundle, image.assetName)
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  self._element:SetSprite(image.assetBundle, image.assetName)
 end
 
-GuideRoleLevelUpCell.OnGoBtnClick = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local dialog = (DialogManager.CreateSingletonDialog)("character.newcharacterinfodialog")
+function GuideRoleLevelUpCell:OnGoBtnClick()
+  local dialog = DialogManager.CreateSingletonDialog("character.newcharacterinfodialog")
   dialog:Refresh(self._cellData)
   dialog:OnLevelUpPanelClick()
 end
 
-GuideRoleLevelUpCell.OnEvent = function(self, eventName, arg)
-  -- function num : 0_5
+function GuideRoleLevelUpCell:OnEvent(eventName, arg)
   if eventName == "RefreshRoleLv" then
-    (self._charLevel):SetText((self._cellData):GetShowLv())
-    ;
-    (self._charBreakLevel):SetText((self._cellData):GetBreakLv())
+    self._charLevel:SetText(self._cellData:GetShowLv())
+    self._charBreakLevel:SetText(self._cellData:GetBreakLv())
   end
 end
 
 return GuideRoleLevelUpCell
-

@@ -1,9 +1,4 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/bean/protocol/chat/otheruserinfo.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local OtherUserInfo = dataclass("OtherUserInfo")
 OtherUserInfo.identity = 0
 OtherUserInfo.lastLogoutTime = 0
@@ -17,87 +12,83 @@ OtherUserInfo.APPLICANT = 3
 OtherUserInfo.SEARCH = 4
 OtherUserInfo.ADD = 5
 OtherUserInfo.STRANGER = 6
-OtherUserInfo.Ctor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.baseUserData = ((require("protocols.bean.protocol.chat.baseuserdata")).Create)()
+
+function OtherUserInfo:Ctor()
+  self.baseUserData = require("protocols.bean.protocol.chat.baseuserdata").Create()
   self.messages = {}
 end
 
-OtherUserInfo.Marshal = function(self, buffer)
-  -- function num : 0_1 , upvalues : ProtocolBufferStaticFunctions, _ENV
-  if not (self.baseUserData):Marshal(buffer) then
+function OtherUserInfo:Marshal(buffer)
+  if not self.baseUserData:Marshal(buffer) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.identity) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.identity) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt64)(buffer, self.lastLogoutTime) then
+  if not ProtocolBufferStaticFunctions.WriteInt64(buffer, self.lastLogoutTime) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt64)(buffer, self.friendTime) then
+  if not ProtocolBufferStaticFunctions.WriteInt64(buffer, self.friendTime) then
     return false
   end
-  local length = (table.slen)(self.messages)
-  if not (ProtocolBufferStaticFunctions.WriteCompactUInt32)(buffer, length) then
+  local length = table.slen(self.messages)
+  if not ProtocolBufferStaticFunctions.WriteCompactUInt32(buffer, length) then
     return false
   end
   for i = 1, length do
-    if not ((self.messages)[i]):Marshal(buffer) then
+    if not self.messages[i]:Marshal(buffer) then
       return false
     end
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt64)(buffer, self.lastOnLineTime) then
+  if not ProtocolBufferStaticFunctions.WriteInt64(buffer, self.lastOnLineTime) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.likeStatus) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.likeStatus) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.sparkStatus) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.sparkStatus) then
     return false
   end
   return true
 end
 
-OtherUserInfo.Unmarshal = function(self, buffer)
-  -- function num : 0_2 , upvalues : ProtocolBufferStaticFunctions, _ENV
+function OtherUserInfo:Unmarshal(buffer)
   local ret = true
-  if not (self.baseUserData):Unmarshal(buffer) then
+  if not self.baseUserData:Unmarshal(buffer) then
     return false
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.identity = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt64)(buffer)
+  ret, self.lastLogoutTime = ProtocolBufferStaticFunctions.ReadInt64(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt64)(buffer)
+  ret, self.friendTime = ProtocolBufferStaticFunctions.ReadInt64(buffer)
   if not ret then
     return ret
   end
   local length = 0
-  ret = (ProtocolBufferStaticFunctions.ReadCompactUInt32)(buffer)
+  ret, length = ProtocolBufferStaticFunctions.ReadCompactUInt32(buffer)
   if not ret then
     return ret
   end
   for i = 1, length do
-    -- DECOMPILER ERROR at PC52: Confused about usage of register: R8 in 'UnsetPending'
-
-    (self.messages)[i] = ((require("protocols.bean.protocol.chat.friendchat")).Create)()
-    if not ((self.messages)[i]):Unmarshal(buffer) then
+    self.messages[i] = require("protocols.bean.protocol.chat.friendchat").Create()
+    if not self.messages[i]:Unmarshal(buffer) then
       return false
     end
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt64)(buffer)
+  ret, self.lastOnLineTime = ProtocolBufferStaticFunctions.ReadInt64(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.likeStatus = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.sparkStatus = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
@@ -105,4 +96,3 @@ OtherUserInfo.Unmarshal = function(self, buffer)
 end
 
 return OtherUserInfo
-

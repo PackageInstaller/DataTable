@@ -1,8 +1,3 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/data/behavior/newbattle/newbattleaisummerlianzhan13.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local LoopUntil = require("luabehavior.decorators.loopuntil")
 local Not = require("luabehavior.decorators.not")
 local Weight = require("luabehavior.decorators.weight")
@@ -16,23 +11,23 @@ local Noop = require("luabehavior.actions.noop")
 local Wait = require("luabehavior.actions.wait")
 local WaitFrames = require("luabehavior.actions.waitframes")
 local Agent = require("luabehavior.agent.battleai")
-local CreateNewBattleAISummerLianzhan13 = function(behavior)
-  -- function num : 0_0 , upvalues : Selector, Sequence, Agent, LoopUntil
+
+local function CreateNewBattleAISummerLianzhan13(behavior)
   local data = behavior._data
-  local node1 = (Selector.Create)()
-  local node2 = (Sequence.Create)()
-  local node3 = ((Agent.PersonNum).Create)(behavior, 2, "eq", 1)
-  local node4 = (LoopUntil.Create)(behavior, 1, true)
-  local node5 = ((Agent.SummonMonster).Create)(behavior, 2, 29, 66189)
+  local node1 = Selector.Create()
+  local node2 = Sequence.Create()
+  local node3 = Agent.PersonNum.Create(behavior, 2, "eq", 1)
+  local node4 = LoopUntil.Create(behavior, 1, true)
+  local node5 = Agent.SummonMonster.Create(behavior, 2, 29, 66189)
   node4:SetTask(node5)
-  local node6 = ((Agent.UseSkill).Create)(behavior, 201664)
+  local node6 = Agent.UseSkill.Create(behavior, 201664)
   node2:AddTask(node3)
   node2:AddTask(node4)
   node2:AddTask(node6)
-  local node7 = (Sequence.Create)()
-  local node8 = ((Agent.PersonNum).Create)(behavior, 2, "eq", 1)
-  local node9 = ((Agent.MonsterHasBuff).Create)(behavior, 0, 21210)
-  local node10 = ((Agent.RunAway).Create)(behavior, "Hide")
+  local node7 = Sequence.Create()
+  local node8 = Agent.PersonNum.Create(behavior, 2, "eq", 1)
+  local node9 = Agent.MonsterHasBuff.Create(behavior, 0, 21210)
+  local node10 = Agent.RunAway.Create(behavior, "Hide")
   node7:AddTask(node8)
   node7:AddTask(node9)
   node7:AddTask(node10)
@@ -42,4 +37,3 @@ local CreateNewBattleAISummerLianzhan13 = function(behavior)
 end
 
 return CreateNewBattleAISummerLianzhan13
-

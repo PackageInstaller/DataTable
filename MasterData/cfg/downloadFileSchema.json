@@ -1,0 +1,134 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://rw.ledo.com/status",
+  "title": "Download File",
+  "description": "the json file download from server",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "version": {
+        "description": "fit version",
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "minItems": 1
+      },
+      "check": {
+        "description": "is check mode",
+        "type": "boolean"
+      },
+      "debug": {
+        "description": "is debug mode",
+        "type": "boolean"
+      },
+      "test": {
+        "description": "use intranet/internet server list",
+        "type": "boolean"
+      },
+      "serverlist": {
+        "description": "server list",
+        "type": "object",
+        "properties": {
+          "intranet": {
+            "description": "intranet server list",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "domain": {
+                  "type": "string"
+                },
+                "port": {
+                  "type": "string"
+                },
+                "sdkDomain": {
+                  "type": "string"
+                },
+                "sdkPort": {
+                  "type": "string"
+                },
+                "ipServerDomain": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "minItems": 1
+                },
+                "ipServerPort": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "name",
+                "domain",
+                "port",
+                "ipServerDomain",
+                "ipServerPort"
+              ]
+            }
+          }
+        },
+        "internet": {
+          "description": "internet server list",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "domain": {
+                "type": "string"
+              },
+              "port": {
+                "type": "string"
+              },
+              "sdkDomain": {
+                "type": "string"
+              },
+              "sdkPort": {
+                "type": "string"
+              },
+              "ipServerDomain": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 1
+              },
+              "ipServerPort": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 1
+              }
+            },
+            "required": [
+              "name",
+              "domain",
+              "port",
+              "ipServerDomain",
+              "ipServerPort"
+            ]
+          }
+        },
+        "required": [
+          "intranet",
+          "internet"
+        ]
+      }
+    }
+  },
+  "minItems": 1,
+  "uniqueItems": true
+}

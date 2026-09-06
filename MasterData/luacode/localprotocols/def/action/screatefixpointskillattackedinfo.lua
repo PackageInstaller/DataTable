@@ -1,8 +1,3 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/localprotocols/def/action/screatefixpointskillattackedinfo.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local SCreateFixPointSkillAttackedInfo = dataclass("SCreateFixPointSkillAttackedInfo")
 SCreateFixPointSkillAttackedInfo.ProtocolType = 9
 SCreateFixPointSkillAttackedInfo.entityId = 0
@@ -17,12 +12,11 @@ SCreateFixPointSkillAttackedInfo.rad = 0
 SCreateFixPointSkillAttackedInfo.isPlayHpBarAnimation = 0
 SCreateFixPointSkillAttackedInfo.damageType = 0
 SCreateFixPointSkillAttackedInfo.isPlayAttackedEffect = 0
-SCreateFixPointSkillAttackedInfo.Ctor = function(self, client)
-  -- function num : 0_0
+
+function SCreateFixPointSkillAttackedInfo:Ctor(client)
 end
 
-SCreateFixPointSkillAttackedInfo.Marshal = function(self, data)
-  -- function num : 0_1
+function SCreateFixPointSkillAttackedInfo:Marshal(data)
   data.entityId = self.entityId
   data.skillId = self.skillId
   data.damageFrom = self.damageFrom
@@ -37,8 +31,7 @@ SCreateFixPointSkillAttackedInfo.Marshal = function(self, data)
   data.isPlayAttackedEffect = self.isPlayAttackedEffect
 end
 
-SCreateFixPointSkillAttackedInfo.Unmarshal = function(self, data)
-  -- function num : 0_2
+function SCreateFixPointSkillAttackedInfo:Unmarshal(data)
   self.entityId = data.entityId
   self.skillId = data.skillId
   self.damageFrom = data.damageFrom
@@ -54,8 +47,7 @@ SCreateFixPointSkillAttackedInfo.Unmarshal = function(self, data)
   return true
 end
 
-SCreateFixPointSkillAttackedInfo.CheckVariable = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SCreateFixPointSkillAttackedInfo:CheckVariable()
   if type(self.entityId) ~= "number" then
     LogErrorFormat("LocalProtocols", "type error!type(self.entityId) = %s. number required.", type(self.entityId))
     return false
@@ -108,4 +100,3 @@ SCreateFixPointSkillAttackedInfo.CheckVariable = function(self)
 end
 
 return SCreateFixPointSkillAttackedInfo
-

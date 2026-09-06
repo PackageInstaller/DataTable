@@ -1,38 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/def/protocol/task/cresetactivitytask.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local CResetActivityTask = dataclass("CResetActivityTask", require("framework.net.protocol"))
 CResetActivityTask.ProtocolType = 1634
 CResetActivityTask.MaxSize = 65535
 CResetActivityTask.activityID = 0
 CResetActivityTask.taskID = 0
-CResetActivityTask.Ctor = function(self, client)
-  -- function num : 0_0 , upvalues : CResetActivityTask
-  ((CResetActivityTask.super).Ctor)(self, client)
+
+function CResetActivityTask:Ctor(client)
+  CResetActivityTask.super.Ctor(self, client)
 end
 
-CResetActivityTask.Marshal = function(self, buffer)
-  -- function num : 0_1 , upvalues : ProtocolBufferStaticFunctions
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.activityID) then
+function CResetActivityTask:Marshal(buffer)
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.activityID) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.taskID) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.taskID) then
     return false
   end
   return true
 end
 
-CResetActivityTask.Unmarshal = function(self, buffer)
-  -- function num : 0_2 , upvalues : ProtocolBufferStaticFunctions
+function CResetActivityTask:Unmarshal(buffer)
   local ret = true
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.activityID = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.taskID = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
@@ -40,4 +33,3 @@ CResetActivityTask.Unmarshal = function(self, buffer)
 end
 
 return CResetActivityTask
-

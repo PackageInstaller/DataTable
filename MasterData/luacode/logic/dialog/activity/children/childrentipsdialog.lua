@@ -1,82 +1,63 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/dialog/activity/children/childrentipsdialog.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local CStringRes = (BeanManager.GetTableByName)("message.cstringres")
+local CStringRes = BeanManager.GetTableByName("message.cstringres")
 local ChildrenTipsDialog = class("ChildrenTipsDialog", Dialog)
 ChildrenTipsDialog.AssetBundleName = "ui/layouts.activitychildrensday"
 ChildrenTipsDialog.AssetName = "ActivityChildrensDayTips"
 local TopToBottom = 4
-ChildrenTipsDialog.Ctor = function(self, ...)
-  -- function num : 0_0 , upvalues : ChildrenTipsDialog
-  ((ChildrenTipsDialog.super).Ctor)(self, ...)
+
+function ChildrenTipsDialog:Ctor(...)
+  ChildrenTipsDialog.super.Ctor(self, ...)
   self._groupName = "Tip"
 end
 
-ChildrenTipsDialog.OnCreate = function(self)
-  -- function num : 0_1 , upvalues : TopToBottom
+function ChildrenTipsDialog:OnCreate()
   self._title = self:GetChild("Back/Title")
   self._closeBtn = self:GetChild("CloseBtn")
   self._panel = self:GetChild("Back/Frame")
   self._text = self:GetChild("Back/Frame/Text")
   self._scrollBar = self:GetChild("Back/Scrollbar")
-  ;
-  (self._scrollBar):SetScrollDirection(TopToBottom)
+  self._scrollBar:SetScrollDirection(TopToBottom)
   self:SetStaticRes()
-  self._width = (self._text):GetRectSize()
+  self._width, self._height = self._text:GetRectSize()
   local _ = 0
-  _ = (self._text):GetPreferredSize()
-  self._text_size_x = (self._text):GetSize()
-  self._text_pos_x = (self._text):GetPosition()
-  ;
-  (self._closeBtn):Subscribe_PointerClickEvent(R4_PC41, R5_PC40)
+  _, self._oneline = self._text:GetPreferredSize()
+  self._text_size_x, self._text_size_offset_x, self._text_size_y, self._text_size_offset_y = self._text:GetSize()
+  self._text_pos_x, self._text_pos_offset_x, self._text_pos_y, self._text_pos_offset_y = self._text:GetPosition()
+  self._closeBtn:Subscribe_PointerClickEvent(self.OnBackBtnClicked, self)
 end
 
-ChildrenTipsDialog.SetStaticRes = function(self)
-  -- function num : 0_2 , upvalues : _ENV, CStringRes
-  (self._title):SetText((TextManager.GetText)((CStringRes:GetRecorder(1793)).msgTextID))
+function ChildrenTipsDialog:SetStaticRes()
+  self._title:SetText(TextManager.GetText(CStringRes:GetRecorder(1793).msgTextID))
 end
 
-ChildrenTipsDialog.OnDestroy = function(self)
-  -- function num : 0_3
+function ChildrenTipsDialog:OnDestroy()
 end
 
-ChildrenTipsDialog.OnBackBtnClicked = function(self)
-  -- function num : 0_4
+function ChildrenTipsDialog:OnBackBtnClicked()
   self:Destroy()
 end
 
-ChildrenTipsDialog.SetData = function(self, textID)
-  -- function num : 0_5 , upvalues : _ENV
-  (self._text):SetText((TextManager.GetText)(textID))
-  local fontsize = (self._text):GetFontSize()
-  local _, textheight = (self._text):GetPreferredSize()
-  if self._height < textheight then
+function ChildrenTipsDialog:SetData(textID)
+  self._text:SetText(TextManager.GetText(textID))
+  local fontsize = self._text:GetFontSize()
+  local _, textheight = self._text:GetPreferredSize()
+  if textheight > self._height then
     local line = (textheight - self._height) / fontsize
     local delta = line * fontsize
-    ;
-    (self._text):SetSize(self._text_size_x, self._text_size_offset_x, self._text_size_y, self._text_size_offset_y + delta)
-    ;
-    (self._text):SetPosition(self._text_pos_x, self._text_pos_offset_x, self._text_pos_y, self._text_pos_offset_y - delta)
+    self._text:SetSize(self._text_size_x, self._text_size_offset_x, self._text_size_y, self._text_size_offset_y + delta)
+    self._text:SetPosition(self._text_pos_x, self._text_pos_offset_x, self._text_pos_y, self._text_pos_offset_y - delta)
   end
 end
 
-ChildrenTipsDialog.OnCurPosChange = function(self, frame, proportion)
-  -- function num : 0_6
-  local width, height = (self._panel):GetRectSize()
-  local total = (self._text):GetTotalLength()
+function ChildrenTipsDialog:OnCurPosChange(frame, proportion)
+  local width, height = self._panel:GetRectSize()
+  local total = self._text:GetTotalLength()
   if height < total then
-    (self._scrollBar):SetActive(true)
-    ;
-    (self._scrollBar):SetScrollSize(height / total)
-    ;
-    (self._scrollBar):SetScrollValue(proportion)
+    self._scrollBar:SetActive(true)
+    self._scrollBar:SetScrollSize(height / total)
+    self._scrollBar:SetScrollValue(proportion)
   else
-    ;
-    (self._scrollBar):SetActive(false)
+    self._scrollBar:SetActive(false)
   end
 end
 
 return ChildrenTipsDialog
-

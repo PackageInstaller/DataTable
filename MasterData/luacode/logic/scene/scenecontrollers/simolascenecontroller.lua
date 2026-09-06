@@ -1,70 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/scene/scenecontrollers/simolascenecontroller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local NewBattleSceneController = require("logic.scene.scenecontrollers.newbattlescenecontroller")
-local CameraStaticFunctions = ((CS.PixelNeko).Lua).CameraStaticFunctions
+local CameraStaticFunctions = CS.PixelNeko.Lua.CameraStaticFunctions
 local SimolaSceneController = class("SimolaSceneController", NewBattleSceneController)
-SimolaSceneController.Init = function(self)
-  -- function num : 0_0 , upvalues : SimolaSceneController, _ENV
-  ((SimolaSceneController.super).Init)(self)
-  ;
-  ((((CS.PixelNeko).UI).UIManager).SetAnimatorAndParticleUseUnscaleTime)((self._sceneRef):GetSceneParticlesObject())
-  ;
-  (LuaNotificationCenter.AddObserver)(self, self.OnTimelineEnd, Common.n_TimelineStop, nil)
+
+function SimolaSceneController:Init()
+  SimolaSceneController.super.Init(self)
+  CS.PixelNeko.UI.UIManager.SetAnimatorAndParticleUseUnscaleTime(self._sceneRef:GetSceneParticlesObject())
+  LuaNotificationCenter.AddObserver(self, self.OnTimelineEnd, Common.n_TimelineStop, nil)
 end
 
-SimolaSceneController.BSC_TimeLineStart = function(self, timelineObjectName)
-  -- function num : 0_1 , upvalues : _ENV, CameraStaticFunctions
-  local dialog = (DialogManager.GetDialog)("newbattle.battlenewmaindialog")
+function SimolaSceneController:BSC_TimeLineStart(timelineObjectName)
+  local dialog = DialogManager.GetDialog("newbattle.battlenewmaindialog")
   if dialog then
-    (dialog:GetRootWindow()):SetActive(false)
+    dialog:GetRootWindow():SetActive(false)
   end
-  ;
-  ((NekoData.DataManager).DM_TimeScale):SetTimelinePause()
-  ;
-  (CameraStaticFunctions.CloseCameraLayer)((self._sceneRef):GetBattleMainCamera(), 30)
+  NekoData.DataManager.DM_TimeScale:SetTimelinePause()
+  CameraStaticFunctions.CloseCameraLayer(self._sceneRef:GetBattleMainCamera(), 30)
   if timelineObjectName == "W4_Battle_boss_01" then
-    ((self._sceneRef):GetTimeLine1Object()):SetActive(true)
-    ;
-    ((self._sceneRef):GetTimeLine1()):Play()
+    self._sceneRef:GetTimeLine1Object():SetActive(true)
+    self._sceneRef:GetTimeLine1():Play()
   else
-    ;
-    (self._bsc_battleFSM):SetBoolean("toUnloadTimeline", true)
+    self._bsc_battleFSM:SetBoolean("toUnloadTimeline", true)
   end
 end
 
-SimolaSceneController.BSC_TimeLineEnd = function(self, timelineObjectName)
-  -- function num : 0_2 , upvalues : _ENV, CameraStaticFunctions
-  local dialog = (DialogManager.GetDialog)("newbattle.battlenewmaindialog")
+function SimolaSceneController:BSC_TimeLineEnd(timelineObjectName)
+  local dialog = DialogManager.GetDialog("newbattle.battlenewmaindialog")
   if dialog then
-    (dialog:GetRootWindow()):SetActive(true)
+    dialog:GetRootWindow():SetActive(true)
   end
-  ;
-  ((NekoData.DataManager).DM_TimeScale):CancelTimelinePause()
-  ;
-  (CameraStaticFunctions.OpenCameraLayer)((self._sceneRef):GetBattleMainCamera(), 30)
+  NekoData.DataManager.DM_TimeScale:CancelTimelinePause()
+  CameraStaticFunctions.OpenCameraLayer(self._sceneRef:GetBattleMainCamera(), 30)
   if timelineObjectName == "W4_Battle_boss_01" then
-    ((self._sceneRef):GetTimeLine1Object()):SetActive(false)
+    self._sceneRef:GetTimeLine1Object():SetActive(false)
   end
   self:BSC_UpdateAllLocalProtocol()
   self:SetBattleTimelineTag(false)
 end
 
-SimolaSceneController.OnTimelineEnd = function(self, notification)
-  -- function num : 0_3
-  if notification.userInfo == (self._sceneRef):GetTimeLine1() then
-    (self._bsc_battleFSM):SetBoolean("toUnloadTimeline", true)
+function SimolaSceneController:OnTimelineEnd(notification)
+  if notification.userInfo == self._sceneRef:GetTimeLine1() then
+    self._bsc_battleFSM:SetBoolean("toUnloadTimeline", true)
   end
 end
 
-SimolaSceneController.OnSBattlePause = function(self, protocol)
-  -- function num : 0_4 , upvalues : _ENV, SimolaSceneController
-  ((NekoData.DataManager).DM_TimeScale):SetTimelinePause()
-  ;
-  ((SimolaSceneController.super).OnSBattlePause)(self, protocol)
+function SimolaSceneController:OnSBattlePause(protocol)
+  NekoData.DataManager.DM_TimeScale:SetTimelinePause()
+  SimolaSceneController.super.OnSBattlePause(self, protocol)
 end
 
 return SimolaSceneController
-

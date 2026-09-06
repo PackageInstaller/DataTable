@@ -1,31 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/localprotocols/def/action/sinvinciblestatechange.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local SInvincibleStateChange = dataclass("SInvincibleStateChange")
 SInvincibleStateChange.ProtocolType = 46
 SInvincibleStateChange.entityid = 0
 SInvincibleStateChange.state = 0
-SInvincibleStateChange.Ctor = function(self, client)
-  -- function num : 0_0
+
+function SInvincibleStateChange:Ctor(client)
 end
 
-SInvincibleStateChange.Marshal = function(self, data)
-  -- function num : 0_1
+function SInvincibleStateChange:Marshal(data)
   data.entityid = self.entityid
   data.state = self.state
 end
 
-SInvincibleStateChange.Unmarshal = function(self, data)
-  -- function num : 0_2
+function SInvincibleStateChange:Unmarshal(data)
   self.entityid = data.entityid
   self.state = data.state
   return true
 end
 
-SInvincibleStateChange.CheckVariable = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SInvincibleStateChange:CheckVariable()
   if type(self.entityid) ~= "number" then
     LogErrorFormat("LocalProtocols", "type error!type(self.entityid) = %s. number required.", type(self.entityid))
     return false
@@ -38,4 +30,3 @@ SInvincibleStateChange.CheckVariable = function(self)
 end
 
 return SInvincibleStateChange
-

@@ -1,45 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/def/protocol/activity/sopentrain.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local SOpenTrain = dataclass("SOpenTrain", require("framework.net.protocol"))
 SOpenTrain.ProtocolType = 2484
 SOpenTrain.MaxSize = 65535
-SOpenTrain.Ctor = function(self, client)
-  -- function num : 0_0 , upvalues : SOpenTrain
-  ((SOpenTrain.super).Ctor)(self, client)
+
+function SOpenTrain:Ctor(client)
+  SOpenTrain.super.Ctor(self, client)
   self.trainsInfo = {}
 end
 
-SOpenTrain.Marshal = function(self, buffer)
-  -- function num : 0_1 , upvalues : _ENV, ProtocolBufferStaticFunctions
-  local length = (table.slen)(self.trainsInfo)
-  if not (ProtocolBufferStaticFunctions.WriteCompactUInt32)(buffer, length) then
+function SOpenTrain:Marshal(buffer)
+  local length = table.slen(self.trainsInfo)
+  if not ProtocolBufferStaticFunctions.WriteCompactUInt32(buffer, length) then
     return false
   end
   for i = 1, length do
-    if not ((self.trainsInfo)[i]):Marshal(buffer) then
+    if not self.trainsInfo[i]:Marshal(buffer) then
       return false
     end
   end
   return true
 end
 
-SOpenTrain.Unmarshal = function(self, buffer)
-  -- function num : 0_2 , upvalues : ProtocolBufferStaticFunctions, _ENV
+function SOpenTrain:Unmarshal(buffer)
   local ret = true
   local length = 0
-  ret = (ProtocolBufferStaticFunctions.ReadCompactUInt32)(buffer)
+  ret, length = ProtocolBufferStaticFunctions.ReadCompactUInt32(buffer)
   if not ret then
     return ret
   end
   for i = 1, length do
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R8 in 'UnsetPending'
-
-    (self.trainsInfo)[i] = ((require("protocols.bean.protocol.activity.battleinfo")).Create)()
-    if not ((self.trainsInfo)[i]):Unmarshal(buffer) then
+    self.trainsInfo[i] = require("protocols.bean.protocol.activity.battleinfo").Create()
+    if not self.trainsInfo[i]:Unmarshal(buffer) then
       return false
     end
   end
@@ -47,4 +38,3 @@ SOpenTrain.Unmarshal = function(self, buffer)
 end
 
 return SOpenTrain
-

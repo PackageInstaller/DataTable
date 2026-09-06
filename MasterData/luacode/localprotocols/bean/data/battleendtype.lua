@@ -1,8 +1,3 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/localprotocols/bean/data/battleendtype.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local BattleEndType = dataclass("BattleEndType")
 BattleEndType.LeftWin = 1
 BattleEndType.RightWin = 2
@@ -14,22 +9,18 @@ BattleEndType.RightWinOverTime = 7
 BattleEndType.LeftWinOverTime = 8
 BattleEndType.LoseSettle = 9
 BattleEndType.SkipWin = 10
-BattleEndType.Ctor = function(self)
-  -- function num : 0_0
+
+function BattleEndType:Ctor()
 end
 
-BattleEndType.Marshal = function(self, data)
-  -- function num : 0_1
+function BattleEndType:Marshal(data)
 end
 
-BattleEndType.Unmarshal = function(self, data)
-  -- function num : 0_2
+function BattleEndType:Unmarshal(data)
 end
 
-BattleEndType.CheckVariable = function(self)
-  -- function num : 0_3
+function BattleEndType:CheckVariable()
   return true
 end
 
 return BattleEndType
-

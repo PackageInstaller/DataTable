@@ -1,27 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/def/protocol/activity/copentrain.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local COpenTrain = dataclass("COpenTrain", require("framework.net.protocol"))
 COpenTrain.ProtocolType = 2483
 COpenTrain.MaxSize = 65535
-COpenTrain.Ctor = function(self, client)
-  -- function num : 0_0 , upvalues : COpenTrain
-  ((COpenTrain.super).Ctor)(self, client)
+
+function COpenTrain:Ctor(client)
+  COpenTrain.super.Ctor(self, client)
 end
 
-COpenTrain.Marshal = function(self, buffer)
-  -- function num : 0_1
+function COpenTrain:Marshal(buffer)
   return true
 end
 
-COpenTrain.Unmarshal = function(self, buffer)
-  -- function num : 0_2
+function COpenTrain:Unmarshal(buffer)
   local ret = true
   return ret
 end
 
 return COpenTrain
-

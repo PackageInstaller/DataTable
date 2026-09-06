@@ -1,30 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/def/protocol/battle/simprovetalent.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local SImproveTalent = dataclass("SImproveTalent", require("framework.net.protocol"))
 SImproveTalent.ProtocolType = 4146
 SImproveTalent.MaxSize = 65535
 SImproveTalent.unlockNode = 0
-SImproveTalent.Ctor = function(self, client)
-  -- function num : 0_0 , upvalues : SImproveTalent
-  ((SImproveTalent.super).Ctor)(self, client)
+
+function SImproveTalent:Ctor(client)
+  SImproveTalent.super.Ctor(self, client)
 end
 
-SImproveTalent.Marshal = function(self, buffer)
-  -- function num : 0_1 , upvalues : ProtocolBufferStaticFunctions
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.unlockNode) then
+function SImproveTalent:Marshal(buffer)
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.unlockNode) then
     return false
   end
   return true
 end
 
-SImproveTalent.Unmarshal = function(self, buffer)
-  -- function num : 0_2 , upvalues : ProtocolBufferStaticFunctions
+function SImproveTalent:Unmarshal(buffer)
   local ret = true
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.unlockNode = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
@@ -32,4 +25,3 @@ SImproveTalent.Unmarshal = function(self, buffer)
 end
 
 return SImproveTalent
-

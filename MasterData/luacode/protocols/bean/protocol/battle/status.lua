@@ -1,43 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/bean/protocol/battle/status.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local Status = dataclass("Status")
 Status.leftHp = 0
 Status.monsterId = 0
 Status.skillId = 0
-Status.Ctor = function(self)
-  -- function num : 0_0
+
+function Status:Ctor()
 end
 
-Status.Marshal = function(self, buffer)
-  -- function num : 0_1 , upvalues : ProtocolBufferStaticFunctions
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.leftHp) then
+function Status:Marshal(buffer)
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.leftHp) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.monsterId) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.monsterId) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.skillId) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.skillId) then
     return false
   end
   return true
 end
 
-Status.Unmarshal = function(self, buffer)
-  -- function num : 0_2 , upvalues : ProtocolBufferStaticFunctions
+function Status:Unmarshal(buffer)
   local ret = true
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.leftHp = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.monsterId = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.skillId = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
@@ -45,4 +38,3 @@ Status.Unmarshal = function(self, buffer)
 end
 
 return Status
-

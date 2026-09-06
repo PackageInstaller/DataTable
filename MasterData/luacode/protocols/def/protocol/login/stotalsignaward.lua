@@ -1,61 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/def/protocol/login/stotalsignaward.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local STotalSignAward = dataclass("STotalSignAward", require("framework.net.protocol"))
 STotalSignAward.ProtocolType = 1073
 STotalSignAward.MaxSize = 65535
 STotalSignAward.day = 0
 STotalSignAward.success = 0
-STotalSignAward.Ctor = function(self, client)
-  -- function num : 0_0 , upvalues : STotalSignAward
-  ((STotalSignAward.super).Ctor)(self, client)
+
+function STotalSignAward:Ctor(client)
+  STotalSignAward.super.Ctor(self, client)
   self.awards = {}
 end
 
-STotalSignAward.Marshal = function(self, buffer)
-  -- function num : 0_1 , upvalues : ProtocolBufferStaticFunctions, _ENV
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.day) then
+function STotalSignAward:Marshal(buffer)
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.day) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.success) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.success) then
     return false
   end
-  local length = (table.slen)(self.awards)
-  if not (ProtocolBufferStaticFunctions.WriteCompactUInt32)(buffer, length) then
+  local length = table.slen(self.awards)
+  if not ProtocolBufferStaticFunctions.WriteCompactUInt32(buffer, length) then
     return false
   end
   for i = 1, length do
-    if not ((self.awards)[i]):Marshal(buffer) then
+    if not self.awards[i]:Marshal(buffer) then
       return false
     end
   end
   return true
 end
 
-STotalSignAward.Unmarshal = function(self, buffer)
-  -- function num : 0_2 , upvalues : ProtocolBufferStaticFunctions, _ENV
+function STotalSignAward:Unmarshal(buffer)
   local ret = true
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.day = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.success = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
   local length = 0
-  ret = (ProtocolBufferStaticFunctions.ReadCompactUInt32)(buffer)
+  ret, length = ProtocolBufferStaticFunctions.ReadCompactUInt32(buffer)
   if not ret then
     return ret
   end
   for i = 1, length do
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R8 in 'UnsetPending'
-
-    (self.awards)[i] = ((require("protocols.bean.protocol.item.beans.iteminfo")).Create)()
-    if not ((self.awards)[i]):Unmarshal(buffer) then
+    self.awards[i] = require("protocols.bean.protocol.item.beans.iteminfo").Create()
+    if not self.awards[i]:Unmarshal(buffer) then
       return false
     end
   end
@@ -63,4 +54,3 @@ STotalSignAward.Unmarshal = function(self, buffer)
 end
 
 return STotalSignAward
-

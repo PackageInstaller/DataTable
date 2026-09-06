@@ -1,8 +1,3 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/localprotocols/def/action/sskillpowercost.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local SSkillPowerCost = dataclass("SSkillPowerCost")
 SSkillPowerCost.ProtocolType = 6
 SSkillPowerCost.entityid = 0
@@ -13,12 +8,11 @@ SSkillPowerCost.redcurrent = 0
 SSkillPowerCost.bluecurrent = 0
 SSkillPowerCost.breakoutPower = 0
 SSkillPowerCost.breakoutPowerMax = 0
-SSkillPowerCost.Ctor = function(self, client)
-  -- function num : 0_0
+
+function SSkillPowerCost:Ctor(client)
 end
 
-SSkillPowerCost.Marshal = function(self, data)
-  -- function num : 0_1
+function SSkillPowerCost:Marshal(data)
   data.entityid = self.entityid
   data.skillid = self.skillid
   data.redchange = self.redchange
@@ -29,8 +23,7 @@ SSkillPowerCost.Marshal = function(self, data)
   data.breakoutPowerMax = self.breakoutPowerMax
 end
 
-SSkillPowerCost.Unmarshal = function(self, data)
-  -- function num : 0_2
+function SSkillPowerCost:Unmarshal(data)
   self.entityid = data.entityid
   self.skillid = data.skillid
   self.redchange = data.redchange
@@ -42,8 +35,7 @@ SSkillPowerCost.Unmarshal = function(self, data)
   return true
 end
 
-SSkillPowerCost.CheckVariable = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SSkillPowerCost:CheckVariable()
   if type(self.entityid) ~= "number" then
     LogErrorFormat("LocalProtocols", "type error!type(self.entityid) = %s. number required.", type(self.entityid))
     return false
@@ -80,4 +72,3 @@ SSkillPowerCost.CheckVariable = function(self)
 end
 
 return SSkillPowerCost
-

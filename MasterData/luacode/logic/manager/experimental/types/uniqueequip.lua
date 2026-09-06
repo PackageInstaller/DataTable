@@ -1,15 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/manager/experimental/types/uniqueequip.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local CUniqueEquipItem = (BeanManager.GetTableByName)("item.cuniqueequipitem")
-local CUniqueEquipCfg = (BeanManager.GetTableByName)("equip.cuniqueequipcfg")
+local CUniqueEquipItem = BeanManager.GetTableByName("item.cuniqueequipitem")
+local CUniqueEquipCfg = BeanManager.GetTableByName("equip.cuniqueequipcfg")
 local Item = require("logic.manager.experimental.types.item")
 local UniqueEquip = strictclass("UniqueEquip", Item)
-UniqueEquip.Ctor = function(self, id)
-  -- function num : 0_0 , upvalues : UniqueEquip, CUniqueEquipItem, _ENV, CUniqueEquipCfg
-  ((UniqueEquip.super).Ctor)(self, id)
+
+function UniqueEquip:Ctor(id)
+  UniqueEquip.super.Ctor(self, id)
   self._uniqueEquipItemRecord = CUniqueEquipItem:GetRecorder(self._itemId)
   if not self._uniqueEquipItemRecord then
     LogErrorFormat("UniqueEquip", "uniqueEquip with id %s is not exist in cuniqueequipitem", self._itemId)
@@ -23,90 +18,77 @@ UniqueEquip.Ctor = function(self, id)
     local record = CUniqueEquipCfg:GetRecorder(allIds[i])
     if record.UniqueEquipid == self._itemId then
       levelUpRecords[record.level] = record
-      if self._maxLevel < record.level then
+      if record.level > self._maxLevel then
         self._maxLevel = record.level
       end
     end
   end
-  for k,v in pairs(levelUpRecords) do
-    (table.insert)(self._levelUpRecordList, v)
+  for k, v in pairs(levelUpRecords) do
+    table.insert(self._levelUpRecordList, v)
   end
-  ;
-  (table.sort)(self._levelUpRecordList, function(a, b)
-    -- function num : 0_0_0
-    do return a.level < b.level end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(self._levelUpRecordList, function(a, b)
+    return a.level < b.level
+  end)
 end
 
-UniqueEquip.GetRoleId = function(self)
-  -- function num : 0_1
-  return (self._uniqueEquipItemRecord).roleid
+function UniqueEquip:GetRoleId()
+  return self._uniqueEquipItemRecord.roleid
 end
 
-UniqueEquip.GetInitAttrs = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UniqueEquip:GetInitAttrs()
   local map = {}
-  local record = (self._levelUpRecordList)[1]
+  local record = self._levelUpRecordList[1]
   if record then
-    for i,v in ipairs(record.attrid) do
-      local value = (record.attrnum)[i]
+    for i, v in ipairs(record.attrid) do
+      local value = record.attrnum[i]
       if value ~= 0 then
         map[v] = value
       end
     end
   else
-    do
-      LogErrorFormat("UniqueEquip", "uniqueEquip with id %s is not exist in cuniqueequipcfg", self._itemId)
-      return map
-    end
+    LogErrorFormat("UniqueEquip", "uniqueEquip with id %s is not exist in cuniqueequipcfg", self._itemId)
   end
+  return map
 end
 
-UniqueEquip.GetIndexByAttrId = function(self, attrId)
-  -- function num : 0_3 , upvalues : _ENV
-  local record = (self._levelUpRecordList)[1]
+function UniqueEquip:GetIndexByAttrId(attrId)
+  local record = self._levelUpRecordList[1]
   if record then
-    for i,v in ipairs(record.attrid) do
+    for i, v in ipairs(record.attrid) do
       if attrId == v then
         return i
       end
     end
   else
-    do
-      LogErrorFormat("UniqueEquip", "uniqueEquip with id %s is not exist in cuniqueequipcfg", self._itemId)
+    LogErrorFormat("UniqueEquip", "uniqueEquip with id %s is not exist in cuniqueequipcfg", self._itemId)
+  end
+end
+
+function UniqueEquip:GetSkillIdByLevel(level)
+  local record = self._levelUpRecordList[level]
+  if record then
+    if record.skillid ~= 0 then
+      return record.skillid
     end
+  else
+    LogError("UniqueEquip", "level error.")
   end
 end
 
-UniqueEquip.GetSkillIdByLevel = function(self, level)
-  -- function num : 0_4 , upvalues : _ENV
-  local record = (self._levelUpRecordList)[level]
-  -- DECOMPILER ERROR at PC8: Unhandled construct in 'MakeBoolean' P1
-
-  if record and record.skillid ~= 0 then
-    return record.skillid
+function UniqueEquip:GetNextLvStrengthenSkillByLevel(level)
+  if level >= self._maxLevel then
+    return
   end
-  LogError("UniqueEquip", "level error.")
-end
-
-UniqueEquip.GetNextLvStrengthenSkillByLevel = function(self, level)
-  -- function num : 0_5 , upvalues : _ENV
-  if self._maxLevel <= level then
-    return 
-  end
-  for i,v in ipairs(self._levelUpRecordList) do
+  for i, v in ipairs(self._levelUpRecordList) do
     if level < i and v.skillid ~= 0 then
       return i
     end
   end
 end
 
-UniqueEquip.GetCurShowSkillIdByLevel = function(self, level)
-  -- function num : 0_6 , upvalues : _ENV
-  local skillid = nil
-  for i,v in ipairs(self._levelUpRecordList) do
+function UniqueEquip:GetCurShowSkillIdByLevel(level)
+  local skillid
+  for i, v in ipairs(self._levelUpRecordList) do
     if i <= level then
       if v.skillid ~= 0 then
         skillid = v.skillid
@@ -115,93 +97,82 @@ UniqueEquip.GetCurShowSkillIdByLevel = function(self, level)
       break
     end
   end
-  do
-    return skillid
-  end
+  return skillid
 end
 
-UniqueEquip.GetNextLevelCostItemList = function(self, level)
-  -- function num : 0_7 , upvalues : _ENV
+function UniqueEquip:GetNextLevelCostItemList(level)
   local itemList = {}
   if level < self._maxLevel then
-    local record = (self._levelUpRecordList)[level]
+    local record = self._levelUpRecordList[level]
     if record then
-      for i,v in ipairs(record.itemId) do
-        (table.insert)(itemList, {itemId = v, itemNum = (record.itemNum)[i]})
+      for i, v in ipairs(record.itemId) do
+        table.insert(itemList, {
+          itemId = v,
+          itemNum = record.itemNum[i]
+        })
       end
     else
-      do
-        do
-          LogError("UniqueEquip", "level error.")
-          return itemList
-        end
-      end
+      LogError("UniqueEquip", "level error.")
     end
   end
+  return itemList
 end
 
-UniqueEquip.GetNextLevelCostManaNum = function(self, level)
-  -- function num : 0_8 , upvalues : _ENV
-  do
-    if level < self._maxLevel then
-      local record = (self._levelUpRecordList)[level]
-      if record then
-        return record.mana
-      else
-        LogError("UniqueEquip", "level error.")
-      end
+function UniqueEquip:GetNextLevelCostManaNum(level)
+  if level < self._maxLevel then
+    local record = self._levelUpRecordList[level]
+    if record then
+      return record.mana
+    else
+      LogError("UniqueEquip", "level error.")
     end
-    return 0
   end
+  return 0
 end
 
-UniqueEquip.GetMaxLevel = function(self)
-  -- function num : 0_9
+function UniqueEquip:GetMaxLevel()
   return self._maxLevel
 end
 
-UniqueEquip.GetSkillList = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UniqueEquip:GetSkillList()
   local list = {}
-  for i,v in ipairs(self._levelUpRecordList) do
+  for i, v in ipairs(self._levelUpRecordList) do
     if v.skillid ~= 0 then
-      (table.insert)(list, {uniqueEquipLv = i, skillId = v.skillid})
+      table.insert(list, {
+        uniqueEquipLv = i,
+        skillId = v.skillid
+      })
     end
   end
   return list
 end
 
-UniqueEquip.GetExtraSkillDestribeByLevel = function(self, level)
-  -- function num : 0_11 , upvalues : _ENV
-  local record = (self._levelUpRecordList)[level]
+function UniqueEquip:GetExtraSkillDestribeByLevel(level)
+  local record = self._levelUpRecordList[level]
   if record then
-    local role = ((NekoData.BehaviorManager).BM_AllRoles):GetRoleById(self:GetRoleId())
+    local role = NekoData.BehaviorManager.BM_AllRoles:GetRoleById(self:GetRoleId())
     local evolution = 0
     if role then
       evolution = role:GetEvolution()
     end
     if evolution == 0 then
-      return (TextManager.GetText)(record.noevolutiontext)
+      return TextManager.GetText(record.noevolutiontext)
     else
-      local str = (TextManager.GetText)(record.evolutiontext)
-      local paramsStr = (record.evolutionnum)[evolution + 1]
-      local params = (string.split)(paramsStr, ";")
-      for i,v in ipairs(params) do
-        str = (string.gsub)(str, "%$parameter1%$", v, 1)
+      local str = TextManager.GetText(record.evolutiontext)
+      local paramsStr = record.evolutionnum[evolution + 1]
+      local params = string.split(paramsStr, ";")
+      for i, v in ipairs(params) do
+        str = string.gsub(str, "%$parameter1%$", v, 1)
       end
       return str
     end
   else
-    do
-      LogError("UniqueEquip", "level error.")
-    end
+    LogError("UniqueEquip", "level error.")
   end
 end
 
-UniqueEquip.GetUnlockJumpType = function(self)
-  -- function num : 0_12
-  return (self._uniqueEquipItemRecord).unlockjump
+function UniqueEquip:GetUnlockJumpType()
+  return self._uniqueEquipItemRecord.unlockjump
 end
 
 return UniqueEquip
-

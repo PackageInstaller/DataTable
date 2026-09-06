@@ -1,8 +1,3 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/data/behavior/newbattle/newbattleaif404.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local LoopUntil = require("luabehavior.decorators.loopuntil")
 local Not = require("luabehavior.decorators.not")
 local Weight = require("luabehavior.decorators.weight")
@@ -16,26 +11,26 @@ local Noop = require("luabehavior.actions.noop")
 local Wait = require("luabehavior.actions.wait")
 local WaitFrames = require("luabehavior.actions.waitframes")
 local Agent = require("luabehavior.agent.battleai")
-local Createnewbattleaif404 = function(behavior)
-  -- function num : 0_0 , upvalues : Sequence, Agent, Selector, SelectorProbability, Weight
+
+local function Createnewbattleaif404(behavior)
   local data = behavior._data
-  local node1 = (Sequence.Create)()
-  local node2 = ((Agent.IfHasEnoughConditionsUseSkill).Create)(behavior)
-  local node3 = ((Agent.MonsterSkillCdRandom).Create)(behavior, 1, 30)
-  local node4 = (Selector.Create)()
-  local node5 = (Sequence.Create)()
-  local node6 = ((Agent.MonsterSkillIsInCD).Create)(behavior, 201092)
-  local node7 = ((Agent.UseSkill).Create)(behavior, 201092)
+  local node1 = Sequence.Create()
+  local node2 = Agent.IfHasEnoughConditionsUseSkill.Create(behavior)
+  local node3 = Agent.MonsterSkillCdRandom.Create(behavior, 1, 30)
+  local node4 = Selector.Create()
+  local node5 = Sequence.Create()
+  local node6 = Agent.MonsterSkillIsInCD.Create(behavior, 201092)
+  local node7 = Agent.UseSkill.Create(behavior, 201092)
   node5:AddTask(node6)
   node5:AddTask(node7)
-  local node8 = (Sequence.Create)()
-  local node9 = ((Agent.MonsterSkillIsInCD).Create)(behavior, 201233)
-  local node10 = (SelectorProbability.Create)(data.RandomFunction)
-  local node11 = (Weight.Create)(1)
-  local node12 = ((Agent.UseSkill).Create)(behavior, 201233)
+  local node8 = Sequence.Create()
+  local node9 = Agent.MonsterSkillIsInCD.Create(behavior, 201233)
+  local node10 = SelectorProbability.Create(data.RandomFunction)
+  local node11 = Weight.Create(1)
+  local node12 = Agent.UseSkill.Create(behavior, 201233)
   node11:SetTask(node12)
-  local node13 = (Weight.Create)(1)
-  local node14 = ((Agent.ClearSkillCurrentTime).Create)(behavior, 201233)
+  local node13 = Weight.Create(1)
+  local node14 = Agent.ClearSkillCurrentTime.Create(behavior, 201233)
   node13:SetTask(node14)
   node10:AddTask(node11)
   node10:AddTask(node13)
@@ -50,4 +45,3 @@ local Createnewbattleaif404 = function(behavior)
 end
 
 return Createnewbattleaif404
-

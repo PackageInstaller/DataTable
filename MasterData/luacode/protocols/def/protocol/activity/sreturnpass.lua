@@ -1,9 +1,4 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/def/protocol/activity/sreturnpass.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local SReturnPass = dataclass("SReturnPass", require("framework.net.protocol"))
 SReturnPass.ProtocolType = 2738
 SReturnPass.MaxSize = 65535
@@ -18,139 +13,133 @@ SReturnPass.needChipNum = 0
 SReturnPass.canReceiveMaxAward = 0
 SReturnPass.leftTime = 0
 SReturnPass.goodId = 0
-SReturnPass.Ctor = function(self, client)
-  -- function num : 0_0 , upvalues : SReturnPass
-  ((SReturnPass.super).Ctor)(self, client)
+
+function SReturnPass:Ctor(client)
+  SReturnPass.super.Ctor(self, client)
   self.commonCollection = {}
   self.highCollection = {}
 end
 
-SReturnPass.Marshal = function(self, buffer)
-  -- function num : 0_1 , upvalues : ProtocolBufferStaticFunctions, _ENV
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.actId) then
+function SReturnPass:Marshal(buffer)
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.actId) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt64)(buffer, self.deadline) then
+  if not ProtocolBufferStaticFunctions.WriteInt64(buffer, self.deadline) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.highUnlocked) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.highUnlocked) then
     return false
   end
-  local length = (table.slen)(self.commonCollection)
-  if not (ProtocolBufferStaticFunctions.WriteCompactUInt32)(buffer, length) then
-    return false
-  end
-  for i = 1, length do
-    if not ((self.commonCollection)[i]):Marshal(buffer) then
-      return false
-    end
-  end
-  local length = (table.slen)(self.highCollection)
-  if not (ProtocolBufferStaticFunctions.WriteCompactUInt32)(buffer, length) then
+  local length = table.slen(self.commonCollection)
+  if not ProtocolBufferStaticFunctions.WriteCompactUInt32(buffer, length) then
     return false
   end
   for i = 1, length do
-    if not ((self.highCollection)[i]):Marshal(buffer) then
+    if not self.commonCollection[i]:Marshal(buffer) then
       return false
     end
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.chargePrice) then
+  local length = table.slen(self.highCollection)
+  if not ProtocolBufferStaticFunctions.WriteCompactUInt32(buffer, length) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.levelPrice) then
+  for i = 1, length do
+    if not self.highCollection[i]:Marshal(buffer) then
+      return false
+    end
+  end
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.chargePrice) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.level) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.levelPrice) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.chipNum) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.level) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.needChipNum) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.chipNum) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.canReceiveMaxAward) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.needChipNum) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt64)(buffer, self.leftTime) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.canReceiveMaxAward) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.goodId) then
+  if not ProtocolBufferStaticFunctions.WriteInt64(buffer, self.leftTime) then
+    return false
+  end
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.goodId) then
     return false
   end
   return true
 end
 
-SReturnPass.Unmarshal = function(self, buffer)
-  -- function num : 0_2 , upvalues : ProtocolBufferStaticFunctions, _ENV
+function SReturnPass:Unmarshal(buffer)
   local ret = true
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.actId = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt64)(buffer)
+  ret, self.deadline = ProtocolBufferStaticFunctions.ReadInt64(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.highUnlocked = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
   local length = 0
-  ret = (ProtocolBufferStaticFunctions.ReadCompactUInt32)(buffer)
+  ret, length = ProtocolBufferStaticFunctions.ReadCompactUInt32(buffer)
   if not ret then
     return ret
   end
   for i = 1, length do
-    -- DECOMPILER ERROR at PC44: Confused about usage of register: R8 in 'UnsetPending'
-
-    (self.commonCollection)[i] = ((require("protocols.bean.protocol.activity.collection")).Create)()
-    if not ((self.commonCollection)[i]):Unmarshal(buffer) then
+    self.commonCollection[i] = require("protocols.bean.protocol.activity.collection").Create()
+    if not self.commonCollection[i]:Unmarshal(buffer) then
       return false
     end
   end
   local length = 0
-  ret = (ProtocolBufferStaticFunctions.ReadCompactUInt32)(buffer)
+  ret, length = ProtocolBufferStaticFunctions.ReadCompactUInt32(buffer)
   if not ret then
     return ret
   end
   for i = 1, length do
-    -- DECOMPILER ERROR at PC74: Confused about usage of register: R9 in 'UnsetPending'
-
-    (self.highCollection)[i] = ((require("protocols.bean.protocol.activity.collection")).Create)()
-    if not ((self.highCollection)[i]):Unmarshal(buffer) then
+    self.highCollection[i] = require("protocols.bean.protocol.activity.collection").Create()
+    if not self.highCollection[i]:Unmarshal(buffer) then
       return false
     end
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.chargePrice = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.levelPrice = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.level = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.chipNum = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.needChipNum = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.canReceiveMaxAward = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt64)(buffer)
+  ret, self.leftTime = ProtocolBufferStaticFunctions.ReadInt64(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.goodId = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
@@ -158,4 +147,3 @@ SReturnPass.Unmarshal = function(self, buffer)
 end
 
 return SReturnPass
-

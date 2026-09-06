@@ -1,8 +1,3 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/data/behavior/newbattle/newbattleaifb25.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local LoopUntil = require("luabehavior.decorators.loopuntil")
 local Not = require("luabehavior.decorators.not")
 local Weight = require("luabehavior.decorators.weight")
@@ -16,26 +11,26 @@ local Noop = require("luabehavior.actions.noop")
 local Wait = require("luabehavior.actions.wait")
 local WaitFrames = require("luabehavior.actions.waitframes")
 local Agent = require("luabehavior.agent.battleai")
-local CreateNewBattleAIfb25 = function(behavior)
-  -- function num : 0_0 , upvalues : Sequence, Agent, Selector
+
+local function CreateNewBattleAIfb25(behavior)
   local data = behavior._data
-  local node1 = (Sequence.Create)()
-  local node2 = ((Agent.IfHasEnoughConditionsUseSkill).Create)(behavior)
-  local node3 = ((Agent.MonsterSkillCdRandom).Create)(behavior, 1, 60)
-  local node4 = (Selector.Create)()
-  local node5 = (Sequence.Create)()
-  local node6 = ((Agent.MonsterSkillIsInCD).Create)(behavior, 201441)
-  local node7 = ((Agent.UseSkill).Create)(behavior, 201441)
-  local node8 = ((Agent.ClearSkillCurrentTime).Create)(behavior, 201439)
-  local node9 = ((Agent.ClearSkillCurrentTime).Create)(behavior, 201441)
+  local node1 = Sequence.Create()
+  local node2 = Agent.IfHasEnoughConditionsUseSkill.Create(behavior)
+  local node3 = Agent.MonsterSkillCdRandom.Create(behavior, 1, 60)
+  local node4 = Selector.Create()
+  local node5 = Sequence.Create()
+  local node6 = Agent.MonsterSkillIsInCD.Create(behavior, 201441)
+  local node7 = Agent.UseSkill.Create(behavior, 201441)
+  local node8 = Agent.ClearSkillCurrentTime.Create(behavior, 201439)
+  local node9 = Agent.ClearSkillCurrentTime.Create(behavior, 201441)
   node5:AddTask(node6)
   node5:AddTask(node7)
   node5:AddTask(node8)
   node5:AddTask(node9)
-  local node10 = (Sequence.Create)()
-  local node11 = ((Agent.MonsterSkillIsInCD).Create)(behavior, 201439)
-  local node12 = ((Agent.UseSkill).Create)(behavior, 201439)
-  local node13 = ((Agent.ClearSkillCurrentTime).Create)(behavior, 201439)
+  local node10 = Sequence.Create()
+  local node11 = Agent.MonsterSkillIsInCD.Create(behavior, 201439)
+  local node12 = Agent.UseSkill.Create(behavior, 201439)
+  local node13 = Agent.ClearSkillCurrentTime.Create(behavior, 201439)
   node10:AddTask(node11)
   node10:AddTask(node12)
   node10:AddTask(node13)
@@ -48,4 +43,3 @@ local CreateNewBattleAIfb25 = function(behavior)
 end
 
 return CreateNewBattleAIfb25
-

@@ -1,38 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/sdk/thinkinganalyticsinterface.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local ThinkingAnalyticsInterface = {}
-local IsLeitChannel = nil
-ThinkingAnalyticsInterface.DebugMode = {NORMAL = "NORMAL", DEBUG = "DEBUG", DEBUG_ONLY = "DEBUG_ONLY"}
-ThinkingAnalyticsInterface.Init_TA = function(parmeter)
-  -- function num : 0_0
+local IsLeitChannel
+ThinkingAnalyticsInterface.DebugMode = {
+  NORMAL = "NORMAL",
+  DEBUG = "DEBUG",
+  DEBUG_ONLY = "DEBUG_ONLY"
+}
+
+function ThinkingAnalyticsInterface.Init_TA(parmeter)
 end
 
-ThinkingAnalyticsInterface.Login_TA = function(parmeter)
-  -- function num : 0_1
+function ThinkingAnalyticsInterface.Login_TA(parmeter)
 end
 
-ThinkingAnalyticsInterface.Logout_TA = function()
-  -- function num : 0_2
+function ThinkingAnalyticsInterface.Logout_TA()
 end
 
-ThinkingAnalyticsInterface.UploadEvent_TA = function(parmeter)
-  -- function num : 0_3
+function ThinkingAnalyticsInterface.UploadEvent_TA(parmeter)
 end
 
-ThinkingAnalyticsInterface.AddUserProperties_TA = function(parmeter)
-  -- function num : 0_4
+function ThinkingAnalyticsInterface.AddUserProperties_TA(parmeter)
 end
 
-ThinkingAnalyticsInterface.SetUserPropertiesOnce_TA = function(parmeter)
-  -- function num : 0_5
+function ThinkingAnalyticsInterface.SetUserPropertiesOnce_TA(parmeter)
 end
 
-ThinkingAnalyticsInterface.TimeEvent_TA = function(parmeter)
-  -- function num : 0_6
+function ThinkingAnalyticsInterface.TimeEvent_TA(parmeter)
 end
 
 return ThinkingAnalyticsInterface
-

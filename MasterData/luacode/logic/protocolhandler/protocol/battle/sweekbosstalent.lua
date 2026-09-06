@@ -1,20 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/protocolhandler/protocol/battle/sweekbosstalent.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local p1 = function(protocol)
-  -- function num : 0_0 , upvalues : _ENV
-  if ((NekoData.DataManager).DM_WeekBoss):OnSWeekBossTalent(protocol) then
-    (DialogManager.CreateSingletonDialog)("mainline.bossrush.bossrushweekcultivatedialog")
+local function p1(protocol)
+  if NekoData.DataManager.DM_WeekBoss:OnSWeekBossTalent(protocol) then
+    DialogManager.CreateSingletonDialog("mainline.bossrush.bossrushweekcultivatedialog")
   end
-  ;
-  (LuaNotificationCenter.PostNotification)(Common.n_SWeekBossTalent, nil, protocol)
+  LuaNotificationCenter.PostNotification(Common.n_SWeekBossTalent, nil, protocol)
 end
 
-local p2 = function(protocol, client)
-  -- function num : 0_1
+local function p2(protocol, client)
 end
 
 return {p1, p2}
-

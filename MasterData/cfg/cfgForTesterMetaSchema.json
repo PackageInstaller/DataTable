@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://rw.ledo.com/jenkins",
+  "description": "the json file for test package",
+  "type": "object",
+  "properties": {
+    "updateStr": {
+      "description": "update information",
+      "type": "object",
+      "properties": {
+        "src": {
+          "description": "source",
+          "type": "string"
+        },
+        "des": {
+          "description": "destination",
+          "type": "string"
+        }
+      }
+    },
+    "notice": {
+      "description": "notice",
+      "type": "string"
+    },
+    "serverList": {
+      "description": "serverlist path in cfg folder",
+      "type": "string"
+    },
+    "timeStamp": {
+      "description": "timestamp",
+      "type": "string"
+    },
+    "sha1Signature": {
+      "description": "the above four items' sha1 sign result",
+      "type": "string"
+    }
+  },
+  "required": [
+    "updateStr",
+    "notice",
+    "serverList",
+    "timeStamp"
+  ]
+}

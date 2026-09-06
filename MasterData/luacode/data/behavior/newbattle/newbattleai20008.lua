@@ -1,8 +1,3 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/data/behavior/newbattle/newbattleai20008.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local LoopUntil = require("luabehavior.decorators.loopuntil")
 local Not = require("luabehavior.decorators.not")
 local IfElse = require("luabehavior.composites.ifelse")
@@ -13,20 +8,20 @@ local Selector = require("luabehavior.composites.selector")
 local Noop = require("luabehavior.actions.noop")
 local Wait = require("luabehavior.actions.wait")
 local Agent = require("luabehavior.agent.battleai")
-local CreateNewBattleAI20008 = function(behavior)
-  -- function num : 0_0 , upvalues : Sequence, Agent, Selector
+
+local function CreateNewBattleAI20008(behavior)
   local data = behavior._data
-  local node1 = (Sequence.Create)()
-  local node2 = ((Agent.IfHasEnoughConditionsUseSkill).Create)(behavior)
-  local node3 = (Selector.Create)()
-  local node4 = (Sequence.Create)()
-  local node5 = ((Agent.MonsterSkillIsInCD).Create)(behavior, 201018)
-  local node6 = ((Agent.UseSkill).Create)(behavior, 201018)
+  local node1 = Sequence.Create()
+  local node2 = Agent.IfHasEnoughConditionsUseSkill.Create(behavior)
+  local node3 = Selector.Create()
+  local node4 = Sequence.Create()
+  local node5 = Agent.MonsterSkillIsInCD.Create(behavior, 201018)
+  local node6 = Agent.UseSkill.Create(behavior, 201018)
   node4:AddTask(node5)
   node4:AddTask(node6)
-  local node7 = (Sequence.Create)()
-  local node8 = ((Agent.MonsterSkillIsInCD).Create)(behavior, 201019)
-  local node9 = ((Agent.UseSkill).Create)(behavior, 201019)
+  local node7 = Sequence.Create()
+  local node8 = Agent.MonsterSkillIsInCD.Create(behavior, 201019)
+  local node9 = Agent.UseSkill.Create(behavior, 201019)
   node7:AddTask(node8)
   node7:AddTask(node9)
   node3:AddTask(node4)
@@ -37,4 +32,3 @@ local CreateNewBattleAI20008 = function(behavior)
 end
 
 return CreateNewBattleAI20008
-

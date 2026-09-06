@@ -1,25 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/protocolhandler/protocol/activity/sconfirmsummerentries.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local p1 = function(protocol)
-  -- function num : 0_0 , upvalues : _ENV
+local function p1(protocol)
   if protocol.result == 1 then
-    local dialog = (DialogManager.GetDialog)("activity.swimsuitechoes.challenge.maindialog")
+    local dialog = DialogManager.GetDialog("activity.swimsuitechoes.challenge.maindialog")
+    
     if dialog then
       dialog:OpenTeam()
     end
   else
-    do
-      LogError("sconfirmsummerentries", "verification failed")
-    end
+    LogError("sconfirmsummerentries", "verification failed")
   end
 end
 
-local p2 = function(protocol, client)
-  -- function num : 0_1
+local function p2(protocol, client)
 end
 
 return {p1, p2}
-

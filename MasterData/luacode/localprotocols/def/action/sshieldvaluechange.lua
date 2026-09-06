@@ -1,28 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/localprotocols/def/action/sshieldvaluechange.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local SShieldValueChange = dataclass("SShieldValueChange")
 SShieldValueChange.ProtocolType = 47
 SShieldValueChange.entityid = 0
 SShieldValueChange.buffid = 0
 SShieldValueChange.shieldtype = 0
 SShieldValueChange.value = 0
-SShieldValueChange.Ctor = function(self, client)
-  -- function num : 0_0
+
+function SShieldValueChange:Ctor(client)
 end
 
-SShieldValueChange.Marshal = function(self, data)
-  -- function num : 0_1
+function SShieldValueChange:Marshal(data)
   data.entityid = self.entityid
   data.buffid = self.buffid
   data.shieldtype = self.shieldtype
   data.value = self.value
 end
 
-SShieldValueChange.Unmarshal = function(self, data)
-  -- function num : 0_2
+function SShieldValueChange:Unmarshal(data)
   self.entityid = data.entityid
   self.buffid = data.buffid
   self.shieldtype = data.shieldtype
@@ -30,8 +23,7 @@ SShieldValueChange.Unmarshal = function(self, data)
   return true
 end
 
-SShieldValueChange.CheckVariable = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SShieldValueChange:CheckVariable()
   if type(self.entityid) ~= "number" then
     LogErrorFormat("LocalProtocols", "type error!type(self.entityid) = %s. number required.", type(self.entityid))
     return false
@@ -52,4 +44,3 @@ SShieldValueChange.CheckVariable = function(self)
 end
 
 return SShieldValueChange
-

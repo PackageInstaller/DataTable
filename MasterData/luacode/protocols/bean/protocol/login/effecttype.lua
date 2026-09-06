@@ -1,9 +1,4 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/bean/protocol/login/effecttype.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local EffectType = dataclass("EffectType")
 EffectType.HP_ABL = 11
 EffectType.HP_PCT = 12
@@ -71,20 +66,17 @@ EffectType.CRIT_LEVEL_ABL = 331
 EffectType.CRIT_LEVEL_PCT = 332
 EffectType.CRIT_DEGREE_LEVEL_ABL = 341
 EffectType.CRIT_DEGREE_LEVEL_PCT = 342
-EffectType.Ctor = function(self)
-  -- function num : 0_0
+
+function EffectType:Ctor()
 end
 
-EffectType.Marshal = function(self, buffer)
-  -- function num : 0_1
+function EffectType:Marshal(buffer)
   return true
 end
 
-EffectType.Unmarshal = function(self, buffer)
-  -- function num : 0_2
+function EffectType:Unmarshal(buffer)
   local ret = true
   return ret
 end
 
 return EffectType
-

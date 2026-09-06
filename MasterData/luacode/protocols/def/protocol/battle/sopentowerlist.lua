@@ -1,9 +1,4 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/def/protocol/battle/sopentowerlist.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local SOpenTowerList = dataclass("SOpenTowerList", require("framework.net.protocol"))
 SOpenTowerList.ProtocolType = 1978
 SOpenTowerList.MaxSize = 65535
@@ -12,85 +7,78 @@ SOpenTowerList.totalChance = 0
 SOpenTowerList.challenging = 0
 SOpenTowerList.challengingFloor = 0
 SOpenTowerList.resetTimeLeft = 0
-SOpenTowerList.Ctor = function(self, client)
-  -- function num : 0_0 , upvalues : SOpenTowerList
-  ((SOpenTowerList.super).Ctor)(self, client)
+
+function SOpenTowerList:Ctor(client)
+  SOpenTowerList.super.Ctor(self, client)
   self.towerUnlock = {}
 end
 
-SOpenTowerList.Marshal = function(self, buffer)
-  -- function num : 0_1 , upvalues : ProtocolBufferStaticFunctions, _ENV
-  if not (ProtocolBufferStaticFunctions.WriteCompactUInt32)(buffer, (table.nums)(self.towerUnlock)) then
+function SOpenTowerList:Marshal(buffer)
+  if not ProtocolBufferStaticFunctions.WriteCompactUInt32(buffer, table.nums(self.towerUnlock)) then
     return false
   end
-  for key,value in pairs(self.towerUnlock) do
-    if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, R9_PC18) then
+  for key, value in pairs(self.towerUnlock) do
+    if not ProtocolBufferStaticFunctions.WriteInt32(buffer, key) then
       return false
     end
-    if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, R9_PC18) then
+    if not ProtocolBufferStaticFunctions.WriteInt32(buffer, value) then
       return false
     end
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.chanceLeft) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.chanceLeft) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.totalChance) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.totalChance) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.challenging) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.challenging) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.challengingFloor) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.challengingFloor) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt64)(buffer, self.resetTimeLeft) then
+  if not ProtocolBufferStaticFunctions.WriteInt64(buffer, self.resetTimeLeft) then
     return false
   end
   return true
 end
 
-SOpenTowerList.Unmarshal = function(self, buffer)
-  -- function num : 0_2 , upvalues : ProtocolBufferStaticFunctions
+function SOpenTowerList:Unmarshal(buffer)
   local ret = true
-  local length, key, value = 0, nil, nil
-  ret = (ProtocolBufferStaticFunctions.ReadCompactUInt32)(buffer)
+  local length, key, value = 0
+  ret, length = ProtocolBufferStaticFunctions.ReadCompactUInt32(buffer)
   if not ret then
     return ret
   end
   for i = 1, length do
-    key = nil
-    ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+    key, value = nil, nil
+    ret, key = ProtocolBufferStaticFunctions.ReadInt32(buffer)
     if not ret then
       return ret
     end
-    -- DECOMPILER ERROR at PC29: Overwrote pending register: R5 in 'AssignReg'
-
-    ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+    ret, value = ProtocolBufferStaticFunctions.ReadInt32(buffer)
     if not ret then
       return ret
     end
-    -- DECOMPILER ERROR at PC35: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self.towerUnlock)[key] = value
+    self.towerUnlock[key] = value
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.chanceLeft = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.totalChance = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.challenging = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.challengingFloor = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt64)(buffer)
+  ret, self.resetTimeLeft = ProtocolBufferStaticFunctions.ReadInt64(buffer)
   if not ret then
     return ret
   end
@@ -98,4 +86,3 @@ SOpenTowerList.Unmarshal = function(self, buffer)
 end
 
 return SOpenTowerList
-

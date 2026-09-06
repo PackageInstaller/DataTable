@@ -1,28 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/protocolhandler/protocol/item/sbagfulldialog.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local p1 = function(protocol)
-  -- function num : 0_0 , upvalues : _ENV
-  local dialog = (DialogManager.GetDialog)("gacha.gachamaindialog")
+local function p1(protocol)
+  local dialog = DialogManager.GetDialog("gacha.gachamaindialog")
+  
   if dialog then
     dialog:OnDrawCardResult()
   end
-  local BagTypeEnum = (LuaNetManager.GetBeanDef)("protocol.item.beans.bagtypes")
+  local BagTypeEnum = LuaNetManager.GetBeanDef("protocol.item.beans.bagtypes")
   local bagType = protocol.bagtype
   if bagType == BagTypeEnum.EQUIPBAG then
-    ((NekoData.BehaviorManager).BM_Message):AddSecondConfirmDialog(29, nil, function()
-    -- function num : 0_0_0 , upvalues : _ENV
-    (DialogManager.CreateSingletonDialog)("equip.bagdialog")
+    NekoData.BehaviorManager.BM_Message:AddSecondConfirmDialog(29, nil, function()
+      DialogManager.CreateSingletonDialog("equip.bagdialog")
+      local scenedlg = DialogManager.GetDialog("towerv2.scene.towerv2scenedialog")
+      if scenedlg then
+        EffectFactory.CreateJumpBackEffect(66):Run()
+      end
+    end, {}, function()
+      DialogManager.CreateSingletonDialog("equip.bagdialog")
+      local scenedlg = DialogManager.GetDialog("towerv2.scene.towerv2scenedialog")
+      if scenedlg then
+        EffectFactory.CreateJumpBackEffect(66):Run()
+      end
+    end, {})
   end
-, {}, nil, {})
-  end
+  DialogManager.DestroySingletonDialog("towerv2.towerv2shrinedialog")
+  DialogManager.DestroySingletonDialog("towerv2.towerv2eventdialog")
 end
 
-local p2 = function(protocol, client)
-  -- function num : 0_1
+local function p2(protocol, client)
 end
 
 return {p1, p2}
-

@@ -1,13 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/framework/ui/frame/grid/verticalgridframeinverseimpl.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local UIManager = ((CS.PixelNeko).UI).UIManager
+local UIManager = CS.PixelNeko.UI.UIManager
 local LogicCell = require("framework.ui.frame.grid.logiccell")
 local VerticalGridFrameInverseImpl = class("VerticalGridFrameInverseImpl")
-VerticalGridFrameInverseImpl.Ctor = function(self, interface, container, delegate, columnNums, canSlide, viewportName, rightToLeft)
-  -- function num : 0_0 , upvalues : _ENV
+
+function VerticalGridFrameInverseImpl:Ctor(interface, container, delegate, columnNums, canSlide, viewportName, rightToLeft)
   self._interface = interface
   self._container = container
   self._delegate = delegate
@@ -17,29 +12,24 @@ VerticalGridFrameInverseImpl.Ctor = function(self, interface, container, delegat
   self._recycleCells = {}
   self._logicCells = {}
   self._baseCells = {}
-  if (((((CS.PixelNeko).Lua).UI).FrameStaticFunctions).GetFrameChildCount)(container._uiObject) > 0 then
+  if CS.PixelNeko.Lua.UI.FrameStaticFunctions.GetFrameChildCount(container._uiObject) > 0 then
     LogErrorFormat("VerticalGridFrameInverseImpl", "非法操作: container [%s] 已经创建过frame Viewport", container._uiObject)
   end
-  self._viewport = ((((CS.PixelNeko).UI).UIManager).CreateLuaWindow)("ui/widgets.assetbundle", viewportName, container._uiObject)
-  ;
-  (((((CS.PixelNeko).Lua).UI).FrameStaticFunctions).AddFrameChild)(container._uiObject, (self._viewport)._uiObject)
-  self._viewcontainer = ((((CS.PixelNeko).UI).UIManager).GetChildLuaWindow)((self._viewport)._uiObject, "_Containter")
+  self._viewport = CS.PixelNeko.UI.UIManager.CreateLuaWindow("ui/widgets.assetbundle", viewportName, container._uiObject)
+  CS.PixelNeko.Lua.UI.FrameStaticFunctions.AddFrameChild(container._uiObject, self._viewport._uiObject)
+  self._viewcontainer = CS.PixelNeko.UI.UIManager.GetChildLuaWindow(self._viewport._uiObject, "_Containter")
   if self._canSlide then
-    self._beginDragHandler = (self._viewport):Subscribe_BeginDragEvent(self.OnBeginDrag, self)
-    self._dragHandler = (self._viewport):Subscribe_DragEvent(self.OnDrag, self)
-    self._endDragHandler = (self._viewport):Subscribe_EndDragEvent(self.OnEndDrag, self)
-    self._cancelDragHandler = (self._viewport):Subscribe_CancelDragEvent(self.OnEndDrag, self)
+    self._beginDragHandler = self._viewport:Subscribe_BeginDragEvent(self.OnBeginDrag, self)
+    self._dragHandler = self._viewport:Subscribe_DragEvent(self.OnDrag, self)
+    self._endDragHandler = self._viewport:Subscribe_EndDragEvent(self.OnEndDrag, self)
+    self._cancelDragHandler = self._viewport:Subscribe_CancelDragEvent(self.OnEndDrag, self)
   end
-  ;
-  (self._viewport):Subscribe_PointerDownEvent(self.OnPointerDown, self)
-  ;
-  (self._viewport):Subscribe_PointerUpEvent(self.OnPointerUp, self)
-  ;
-  (self._viewport):Subscribe_PointerCancelEvent(self.OnPointerUp, self)
-  ;
-  (LuaNotificationCenter.AddObserver)(self, self.OnLateUpdate, Common.n_LateUpdate, nil)
-  self._viewcontainer_sx = (self._viewcontainer):GetSize()
-  self._upMargin = (((((CS.PixelNeko).Lua).UI).FrameStaticFunctions).GetMargin)(container._uiObject)
+  self._viewport:Subscribe_PointerDownEvent(self.OnPointerDown, self)
+  self._viewport:Subscribe_PointerUpEvent(self.OnPointerUp, self)
+  self._viewport:Subscribe_PointerCancelEvent(self.OnPointerUp, self)
+  LuaNotificationCenter.AddObserver(self, self.OnLateUpdate, Common.n_LateUpdate, nil)
+  self._viewcontainer_sx, self._viewcontainer_sox = self._viewcontainer:GetSize()
+  self._upMargin, self._downMargin, self._leftMargin, self._rightMargin = CS.PixelNeko.Lua.UI.FrameStaticFunctions.GetMargin(container._uiObject)
   self._cellSizeX = 0
   self._cellSizeY = 0
   self._currentPosition = 0
@@ -56,51 +46,42 @@ VerticalGridFrameInverseImpl.Ctor = function(self, interface, container, delegat
   self._moveToAssignedPosDes = nil
 end
 
-VerticalGridFrameInverseImpl.Destroy = function(self)
-  -- function num : 0_1 , upvalues : _ENV, UIManager
+function VerticalGridFrameInverseImpl:Destroy()
   if self._baseCells then
-    for i,cell in pairs(self._baseCells) do
-      (UIManager.Destroy)(cell._uiObject)
+    for i, cell in pairs(self._baseCells) do
+      UIManager.Destroy(cell._uiObject)
     end
   end
-  do
-    for i,logicCell in ipairs(self._logicCells) do
-      if logicCell._cell then
-        self:RecycleCell(logicCell)
-      end
+  for i, logicCell in ipairs(self._logicCells) do
+    if logicCell._cell then
+      self:RecycleCell(logicCell)
     end
-    self._logicCells = {}
-    self._currentPosition = 0
-    self._totalLength = 0
-    for k,cells in pairs(self._recycleCells) do
-      for i,cell in ipairs(cells) do
-        cell:Destroy()
-        cell:RootWindowDestroy()
-      end
-    end
-    self._recycleCells = {}
-    ;
-    (((((CS.PixelNeko).Lua).UI).FrameStaticFunctions).RemoveFrameChild)((self._container)._uiObject, (self._viewport)._uiObject)
-    ;
-    ((((CS.PixelNeko).UI).UIManager).Destroy)((self._viewport)._uiObject)
-    ;
-    (LuaNotificationCenter.RemoveObserver)(self)
   end
+  self._logicCells = {}
+  self._currentPosition = 0
+  self._totalLength = 0
+  for k, cells in pairs(self._recycleCells) do
+    for i, cell in ipairs(cells) do
+      cell:Destroy()
+      cell:RootWindowDestroy()
+    end
+  end
+  self._recycleCells = {}
+  CS.PixelNeko.Lua.UI.FrameStaticFunctions.RemoveFrameChild(self._container._uiObject, self._viewport._uiObject)
+  CS.PixelNeko.UI.UIManager.Destroy(self._viewport._uiObject)
+  LuaNotificationCenter.RemoveObserver(self)
 end
 
-VerticalGridFrameInverseImpl.GetTotalLength = function(self)
-  -- function num : 0_2
+function VerticalGridFrameInverseImpl:GetTotalLength()
   return self._totalLength
 end
 
-VerticalGridFrameInverseImpl.GetCurrentPosition = function(self)
-  -- function num : 0_3
+function VerticalGridFrameInverseImpl:GetCurrentPosition()
   return self._currentPosition
 end
 
-VerticalGridFrameInverseImpl.ReloadAllCell = function(self)
-  -- function num : 0_4 , upvalues : _ENV, LogicCell, UIManager
-  for i,logicCell in ipairs(self._logicCells) do
+function VerticalGridFrameInverseImpl:ReloadAllCell()
+  for i, logicCell in ipairs(self._logicCells) do
     if logicCell._cell then
       self:RecycleCell(logicCell)
     end
@@ -108,33 +89,20 @@ VerticalGridFrameInverseImpl.ReloadAllCell = function(self)
   self._logicCells = {}
   self._currentPosition = 0 - self._downMargin
   self._totalLength = 0
-  local cellNums = (self._delegate):NumberOfCell(self._interface)
+  local cellNums = self._delegate:NumberOfCell(self._interface)
   for i = 1, cellNums do
-    local logicCell = (LogicCell.Create)()
-    logicCell._dialogName = (self._delegate):CellAtIndex(self._interface, i)
-    do
-      do
-        if not (self._baseCells)[logicCell._dialogName] then
-          local dialogDefine = require("logic.dialog." .. logicCell._dialogName)
-          -- DECOMPILER ERROR at PC54: Confused about usage of register: R8 in 'UnsetPending'
-
-          ;
-          (self._baseCells)[logicCell._dialogName] = (UIManager.CreateLuaWindow)(dialogDefine.AssetBundleName .. ".assetbundle", dialogDefine.AssetName, (self._viewcontainer)._uiObject)
-          ;
-          ((self._baseCells)[logicCell._dialogName]):SetPosition(0, 0, 0, -10000)
-        end
-        logicCell._data = (self._delegate):DataAtIndex(self._interface, i)
-        -- DECOMPILER ERROR at PC71: Confused about usage of register: R7 in 'UnsetPending'
-
-        ;
-        (self._logicCells)[i] = logicCell
-        -- DECOMPILER ERROR at PC72: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    local logicCell = LogicCell.Create()
+    logicCell._dialogName = self._delegate:CellAtIndex(self._interface, i)
+    if not self._baseCells[logicCell._dialogName] then
+      local dialogDefine = require("logic.dialog." .. logicCell._dialogName)
+      self._baseCells[logicCell._dialogName] = UIManager.CreateLuaWindow(dialogDefine.AssetBundleName .. ".assetbundle", dialogDefine.AssetName, self._viewcontainer._uiObject)
+      self._baseCells[logicCell._dialogName]:SetPosition(0, 0, 0, -10000)
     end
+    logicCell._data = self._delegate:DataAtIndex(self._interface, i)
+    self._logicCells[i] = logicCell
   end
   for i = cellNums, 1, -1 do
-    local logicCell = (self._logicCells)[i]
+    local logicCell = self._logicCells[i]
     local row, column = (i - 1) // self._columnNums, (i - 1) % self._columnNums
     if self._rightToLeft then
       column = self._columnNums - column - 1
@@ -143,23 +111,16 @@ VerticalGridFrameInverseImpl.ReloadAllCell = function(self)
     logicCell._col = column
     if self._cellSizeX == 0 or self._cellSizeY == 0 then
       self:GetCellDialog(logicCell)
-      -- DECOMPILER ERROR at PC104: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (logicCell._cell)._delegate = self._delegate
-      -- DECOMPILER ERROR at PC107: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (logicCell._cell)._cellData = logicCell._data
-      ;
-      (logicCell._cell):RefreshCell(logicCell._data)
-      self._cellSizeX = ((logicCell._cell):GetRootWindow()):GetRectSize()
+      logicCell._cell._delegate = self._delegate
+      logicCell._cell._cellData = logicCell._data
+      logicCell._cell:RefreshCell(logicCell._data)
+      self._cellSizeX, self._cellSizeY = logicCell._cell:GetRootWindow():GetRectSize()
       self:RecycleCell(logicCell)
     end
-    logicCell._posX = (column) * self._cellSizeX
+    logicCell._posX = column * self._cellSizeX
     logicCell._posY = row * self._cellSizeY
     local value = (row + 1) * self._cellSizeY
-    if self._totalLength < value then
+    if value > self._totalLength then
       self._totalLength = value
     end
   end
@@ -167,46 +128,47 @@ VerticalGridFrameInverseImpl.ReloadAllCell = function(self)
   self:UpdateView(0)
 end
 
-VerticalGridFrameInverseImpl.MoveToTop = function(self, isAnimate)
-  -- function num : 0_5 , upvalues : _ENV
+function VerticalGridFrameInverseImpl:MoveToTop(isAnimate)
   self._needUpdate = true
-  local width, height = (self._viewport):GetRectSize()
+  local width, height = self._viewport:GetRectSize()
   if height <= self._totalLength then
     if isAnimate then
-      local first = {pos = self._currentPosition}
-      local last = {pos = self._totalLength - height + self._upMargin}
-      self._moveTopTask = (Tween.new)(0.5, first, last, "outQuad")
+      local first = {
+        pos = self._currentPosition
+      }
+      local last = {
+        pos = self._totalLength - height + self._upMargin
+      }
+      self._moveTopTask = Tween.new(0.5, first, last, "outQuad")
     else
-      do
-        self:ClearAllPositionChangeTask()
-        self._currentPosition = self._totalLength - height + self._upMargin
-      end
+      self:ClearAllPositionChangeTask()
+      self._currentPosition = self._totalLength - height + self._upMargin
     end
   end
 end
 
-VerticalGridFrameInverseImpl.MoveToBottom = function(self, isAnimate)
-  -- function num : 0_6 , upvalues : _ENV
+function VerticalGridFrameInverseImpl:MoveToBottom(isAnimate)
   self._needUpdate = true
   if isAnimate then
-    local first = {pos = self._currentPosition}
-    local last = {pos = 0 - self._downMargin}
-    self._moveBottomTask = (Tween.new)(0.5, first, last, "outQuad")
+    local first = {
+      pos = self._currentPosition
+    }
+    local last = {
+      pos = 0 - self._downMargin
+    }
+    self._moveBottomTask = Tween.new(0.5, first, last, "outQuad")
   else
-    do
-      self:ClearAllPositionChangeTask()
-      self._currentPosition = 0 - self._downMargin
-    end
+    self:ClearAllPositionChangeTask()
+    self._currentPosition = 0 - self._downMargin
   end
 end
 
-VerticalGridFrameInverseImpl.MoveTopToIndex = function(self, desIndex, isAnimate)
-  -- function num : 0_7 , upvalues : _ENV
+function VerticalGridFrameInverseImpl:MoveTopToIndex(desIndex, isAnimate)
   self._needUpdate = true
   self._moveDownIndexTask = nil
-  local width, height = (self._viewport):GetRectSize()
-  local destination = ((self._logicCells)[desIndex])._posY + self._cellSizeY - height
-  if self._totalLength - height + self._upMargin < destination then
+  local width, height = self._viewport:GetRectSize()
+  local destination = self._logicCells[desIndex]._posY + self._cellSizeY - height
+  if destination > self._totalLength - height + self._upMargin then
     destination = self._totalLength - height + self._upMargin
   else
     destination = destination + self._upMargin
@@ -216,24 +178,23 @@ VerticalGridFrameInverseImpl.MoveTopToIndex = function(self, desIndex, isAnimate
   end
   self._moveTopIndexDes = destination
   if isAnimate then
-    local first = {pos = self._currentPosition}
+    local first = {
+      pos = self._currentPosition
+    }
     local last = {pos = destination}
-    self._moveTopIndexTask = (Tween.new)(0.5, first, last, "linear")
+    self._moveTopIndexTask = Tween.new(0.5, first, last, "linear")
   else
-    do
-      self:ClearAllPositionChangeTask()
-      self._currentPosition = destination
-    end
+    self:ClearAllPositionChangeTask()
+    self._currentPosition = destination
   end
 end
 
-VerticalGridFrameInverseImpl.MoveDownToIndex = function(self, desIndex, isAnimate)
-  -- function num : 0_8 , upvalues : _ENV
+function VerticalGridFrameInverseImpl:MoveDownToIndex(desIndex, isAnimate)
   self._needUpdate = true
   self._moveTopIndexTask = nil
-  local width, height = (self._viewport):GetRectSize()
-  local destination = ((self._logicCells)[desIndex])._posY
-  if self._totalLength - height + self._upMargin < destination then
+  local width, height = self._viewport:GetRectSize()
+  local destination = self._logicCells[desIndex]._posY
+  if destination > self._totalLength - height + self._upMargin then
     destination = self._totalLength - height + self._upMargin
   else
     destination = destination - self._downMargin
@@ -243,262 +204,183 @@ VerticalGridFrameInverseImpl.MoveDownToIndex = function(self, desIndex, isAnimat
   end
   self._moveDownIndexDes = destination
   if isAnimate then
-    local first = {pos = self._currentPosition}
+    local first = {
+      pos = self._currentPosition
+    }
     local last = {pos = destination}
-    self._moveDownIndexTask = (Tween.new)(0.5, first, last, "linear")
+    self._moveDownIndexTask = Tween.new(0.5, first, last, "linear")
   else
-    do
-      self:ClearAllPositionChangeTask()
-      self._currentPosition = destination
-    end
+    self:ClearAllPositionChangeTask()
+    self._currentPosition = destination
   end
 end
 
-VerticalGridFrameInverseImpl.MoveToAssignedPos = function(self, pos, isAnimate)
-  -- function num : 0_9 , upvalues : _ENV
+function VerticalGridFrameInverseImpl:MoveToAssignedPos(pos, isAnimate)
   self._needUpdate = true
   self._moveToAssignedPosDes = pos
   if isAnimate then
-    local first = {pos = self._currentPosition}
-    local last = {pos = self._moveToAssignedPosDes}
-    self._moveToAssignedPosTask = (Tween.new)(0.5, first, last, "linear")
+    local first = {
+      pos = self._currentPosition
+    }
+    local last = {
+      pos = self._moveToAssignedPosDes
+    }
+    self._moveToAssignedPosTask = Tween.new(0.5, first, last, "linear")
   else
-    do
-      self:ClearAllPositionChangeTask()
-      self._currentPosition = pos
-    end
+    self:ClearAllPositionChangeTask()
+    self._currentPosition = pos
   end
 end
 
-VerticalGridFrameInverseImpl.ReloadCellsAtIndex = function(self, indexList, isAnimate)
-  -- function num : 0_10 , upvalues : _ENV, UIManager
+function VerticalGridFrameInverseImpl:ReloadCellsAtIndex(indexList, isAnimate)
   if type(indexList) ~= "table" then
     LogError("VerticalGridFrameInverseImpl", "please input a table value")
-    return 
+    return
   end
-  local cellNums = (self._delegate):NumberOfCell(self._interface)
-  for _,index in pairs(indexList) do
-    if not index or cellNums < index then
+  local cellNums = self._delegate:NumberOfCell(self._interface)
+  for _, index in pairs(indexList) do
+    if not index or index > cellNums then
       LogErrorFormat("VerticalGridFrameInverseImpl", "the index %d is out of range", index)
-      return 
+      return
     end
-    local logicCell = (self._logicCells)[index]
-    logicCell._dialogName = (self._delegate):CellAtIndex(self._interface, index)
-    do
-      do
-        if not (self._baseCells)[logicCell._dialogName] then
-          local dialogDefine = require("logic.dialog." .. logicCell._dialogName)
-          -- DECOMPILER ERROR at PC56: Confused about usage of register: R11 in 'UnsetPending'
-
-          ;
-          (self._baseCells)[logicCell._dialogName] = (UIManager.CreateLuaWindow)(dialogDefine.AssetBundleName .. ".assetbundle", dialogDefine.AssetName, (self._viewcontainer)._uiObject)
-          ;
-          ((self._baseCells)[logicCell._dialogName]):SetPosition(0, 0, 0, -10000)
-        end
-        logicCell._data = (self._delegate):DataAtIndex(self._interface, index)
-        self:GetCellDialog(logicCell)
-        -- DECOMPILER ERROR at PC77: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (logicCell._cell)._cellData = logicCell._data
-        ;
-        (logicCell._cell):RefreshCell(logicCell._data)
-        self:RecycleCell(logicCell)
-        -- DECOMPILER ERROR at PC86: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (self._logicCells)[index] = logicCell
-        -- DECOMPILER ERROR at PC87: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    local logicCell = self._logicCells[index]
+    logicCell._dialogName = self._delegate:CellAtIndex(self._interface, index)
+    if not self._baseCells[logicCell._dialogName] then
+      local dialogDefine = require("logic.dialog." .. logicCell._dialogName)
+      self._baseCells[logicCell._dialogName] = UIManager.CreateLuaWindow(dialogDefine.AssetBundleName .. ".assetbundle", dialogDefine.AssetName, self._viewcontainer._uiObject)
+      self._baseCells[logicCell._dialogName]:SetPosition(0, 0, 0, -10000)
     end
+    logicCell._data = self._delegate:DataAtIndex(self._interface, index)
+    self:GetCellDialog(logicCell)
+    logicCell._cell._cellData = logicCell._data
+    logicCell._cell:RefreshCell(logicCell._data)
+    self:RecycleCell(logicCell)
+    self._logicCells[index] = logicCell
   end
   self:UpdateView(0)
 end
 
-VerticalGridFrameInverseImpl.RemoveCellsAtIndex = function(self, indexList, isAnimate)
-  -- function num : 0_11 , upvalues : _ENV
+function VerticalGridFrameInverseImpl:RemoveCellsAtIndex(indexList, isAnimate)
   if type(indexList) ~= "table" then
     LogError("VerticalGridFrameInverseImpl", "please input a table value")
-    return 
+    return
   end
   self._needUpdate = true
-  local width, height = (self._viewport):GetRectSize()
-  for _,index in ipairs(indexList) do
+  local width, height = self._viewport:GetRectSize()
+  for _, index in ipairs(indexList) do
     local cellNums = #self._logicCells
-    if cellNums < index then
+    if index > cellNums then
       LogErrorFormat("VerticalGridFrameInverseImpl", "Wrong index %d", index)
-      return 
+      return
     end
-    local posX = ((self._logicCells)[index])._posX
-    local posY = ((self._logicCells)[index])._posY
-    self:RecycleCell((self._logicCells)[index])
+    local posX = self._logicCells[index]._posX
+    local posY = self._logicCells[index]._posY
+    self:RecycleCell(self._logicCells[index])
     for i = index + 1, cellNums do
-      -- DECOMPILER ERROR at PC58: Confused about usage of register: R17 in 'UnsetPending'
-
       if self._rightToLeft then
-        if ((self._logicCells)[i])._col == self._columnNums - 1 then
-          ((self._logicCells)[i])._row = ((self._logicCells)[i])._row - 1
-          -- DECOMPILER ERROR at PC61: Confused about usage of register: R17 in 'UnsetPending'
-
-          ;
-          ((self._logicCells)[i])._col = 0
+        if self._logicCells[i]._col == self._columnNums - 1 then
+          self._logicCells[i]._row = self._logicCells[i]._row - 1
+          self._logicCells[i]._col = 0
         else
-          -- DECOMPILER ERROR at PC69: Confused about usage of register: R17 in 'UnsetPending'
-
-          ;
-          ((self._logicCells)[i])._col = ((self._logicCells)[i])._col + 1
+          self._logicCells[i]._col = self._logicCells[i]._col + 1
         end
+      elseif self._logicCells[i]._col == 0 then
+        self._logicCells[i]._row = self._logicCells[i]._row - 1
+        self._logicCells[i]._col = self._columnNums - 1
       else
-        -- DECOMPILER ERROR at PC82: Confused about usage of register: R17 in 'UnsetPending'
-
-        if ((self._logicCells)[i])._col == 0 then
-          ((self._logicCells)[i])._row = ((self._logicCells)[i])._row - 1
-          -- DECOMPILER ERROR at PC87: Confused about usage of register: R17 in 'UnsetPending'
-
-          ;
-          ((self._logicCells)[i])._col = self._columnNums - 1
-        else
-          -- DECOMPILER ERROR at PC95: Confused about usage of register: R17 in 'UnsetPending'
-
-          ;
-          ((self._logicCells)[i])._col = ((self._logicCells)[i])._col - 1
-        end
+        self._logicCells[i]._col = self._logicCells[i]._col - 1
       end
-      -- DECOMPILER ERROR at PC103: Confused about usage of register: R17 in 'UnsetPending'
-
-      ;
-      ((self._logicCells)[i])._posX = ((self._logicCells)[i])._col * self._cellSizeX
-      -- DECOMPILER ERROR at PC111: Confused about usage of register: R17 in 'UnsetPending'
-
-      ;
-      ((self._logicCells)[i])._posY = ((self._logicCells)[i])._row * self._cellSizeY
+      self._logicCells[i]._posX = self._logicCells[i]._col * self._cellSizeX
+      self._logicCells[i]._posY = self._logicCells[i]._row * self._cellSizeY
     end
-    ;
-    (table.remove)(self._logicCells, index)
+    table.remove(self._logicCells, index)
     self._totalLength = ((cellNums - 1 - 1) // self._columnNums + 1) * self._cellSizeY
   end
 end
 
-VerticalGridFrameInverseImpl.InsertCellsAtIndex = function(self, indexList, isAnimate)
-  -- function num : 0_12 , upvalues : _ENV, LogicCell, UIManager
+function VerticalGridFrameInverseImpl:InsertCellsAtIndex(indexList, isAnimate)
   if indexList and type(indexList) ~= "table" then
     LogError("VerticalGridFrameInverseImpl", "please input a table value")
-    return 
+    return
   end
   local cellNums = #self._logicCells
   self._needUpdate = true
   local lastinsert = false
   if not indexList or #indexList == 0 then
     indexList = {}
-    if cellNums + 1 <= (self._delegate):NumberOfCell(self._interface) then
-      for i = cellNums + 1, (self._delegate):NumberOfCell(self._interface) do
-        (table.insert)(indexList, i)
+    if self._delegate:NumberOfCell(self._interface) >= cellNums + 1 then
+      for i = cellNums + 1, self._delegate:NumberOfCell(self._interface) do
+        table.insert(indexList, i)
       end
       lastinsert = true
     else
       LogError("VerticalGridFrameInverseImpl", "no additional data")
-      return 
+      return
     end
   end
-  for _,index in ipairs(indexList) do
+  for _, index in ipairs(indexList) do
     cellNums = #self._logicCells
-    if not index or cellNums + 1 < index and not lastinsert then
+    if not index or index > cellNums + 1 and not lastinsert then
       LogErrorFormat("VerticalGridFrameInverseImpl", "Wrong index %d", index)
-      return 
+      return
     end
-    local logicCell = (LogicCell.Create)()
-    logicCell._dialogName = (self._delegate):CellAtIndex(self._interface, index)
-    do
-      if not (self._baseCells)[logicCell._dialogName] then
-        local dialogDefine = require("logic.dialog." .. logicCell._dialogName)
-        -- DECOMPILER ERROR at PC97: Confused about usage of register: R12 in 'UnsetPending'
-
-        ;
-        (self._baseCells)[logicCell._dialogName] = (UIManager.CreateLuaWindow)(dialogDefine.AssetBundleName .. ".assetbundle", dialogDefine.AssetName, (self._viewcontainer)._uiObject)
-        ;
-        ((self._baseCells)[logicCell._dialogName]):SetPosition(0, 0, 0, -10000)
+    local logicCell = LogicCell.Create()
+    logicCell._dialogName = self._delegate:CellAtIndex(self._interface, index)
+    if not self._baseCells[logicCell._dialogName] then
+      local dialogDefine = require("logic.dialog." .. logicCell._dialogName)
+      self._baseCells[logicCell._dialogName] = UIManager.CreateLuaWindow(dialogDefine.AssetBundleName .. ".assetbundle", dialogDefine.AssetName, self._viewcontainer._uiObject)
+      self._baseCells[logicCell._dialogName]:SetPosition(0, 0, 0, -10000)
+    end
+    logicCell._data = self._delegate:DataAtIndex(self._interface, index)
+    local row, column = (index - 1) // self._columnNums, (index - 1) % self._columnNums
+    if self._rightToLeft then
+      column = self._columnNums - column - 1
+    end
+    logicCell._row = row
+    logicCell._col = column
+    self:GetCellDialog(logicCell)
+    logicCell._cell._delegate = self._delegate
+    logicCell._cell._cellData = logicCell._data
+    logicCell._cell:RefreshCell(logicCell._data)
+    self._cellSizeX, self._cellSizeY = logicCell._cell:GetRootWindow():GetRectSize()
+    self:RecycleCell(logicCell)
+    logicCell._posX = column * self._cellSizeX
+    logicCell._posY = row * self._cellSizeY
+    table.insert(self._logicCells, index, logicCell)
+    cellNums = #self._logicCells
+    for i = index + 1, cellNums do
+      if self._logicCells[i]._col == self._columnNums - 1 then
+        self._logicCells[i]._col = 0
+        self._logicCells[i]._row = self._logicCells[i]._row + 1
+      else
+        self._logicCells[i]._col = self._logicCells[i]._col + 1
       end
-      logicCell._data = (self._delegate):DataAtIndex(self._interface, index)
-      do
-        local row, column = (index - 1) // self._columnNums, (index - 1) % self._columnNums
-        if self._rightToLeft then
-          column = self._columnNums - column - 1
-        end
-        logicCell._row = row
-        logicCell._col = column
-        self:GetCellDialog(logicCell)
-        -- DECOMPILER ERROR at PC132: Confused about usage of register: R13 in 'UnsetPending'
+      self._logicCells[i]._posX = self._logicCells[i]._col * self._cellSizeX
+      self._logicCells[i]._posY = self._logicCells[i]._row * self._cellSizeY
+    end
+    self._totalLength = ((cellNums - 1) // self._columnNums + 1) * self._cellSizeY
+  end
+end
 
-        ;
-        (logicCell._cell)._delegate = self._delegate
-        -- DECOMPILER ERROR at PC135: Confused about usage of register: R13 in 'UnsetPending'
-
-        ;
-        (logicCell._cell)._cellData = logicCell._data
-        ;
-        (logicCell._cell):RefreshCell(logicCell._data)
-        self._cellSizeX = ((logicCell._cell):GetRootWindow()):GetRectSize()
-        self:RecycleCell(logicCell)
-        logicCell._posX = (column) * self._cellSizeX
-        logicCell._posY = row * self._cellSizeY
-        ;
-        (table.insert)(self._logicCells, index, logicCell)
-        cellNums = #self._logicCells
-        for i = index + 1, cellNums do
-          -- DECOMPILER ERROR at PC177: Confused about usage of register: R17 in 'UnsetPending'
-
-          if ((self._logicCells)[i])._col == self._columnNums - 1 then
-            ((self._logicCells)[i])._col = 0
-            -- DECOMPILER ERROR at PC184: Confused about usage of register: R17 in 'UnsetPending'
-
-            ;
-            ((self._logicCells)[i])._row = ((self._logicCells)[i])._row + 1
-          else
-            -- DECOMPILER ERROR at PC192: Confused about usage of register: R17 in 'UnsetPending'
-
-            ;
-            ((self._logicCells)[i])._col = ((self._logicCells)[i])._col + 1
-          end
-          -- DECOMPILER ERROR at PC200: Confused about usage of register: R17 in 'UnsetPending'
-
-          ;
-          ((self._logicCells)[i])._posX = ((self._logicCells)[i])._col * self._cellSizeX
-          -- DECOMPILER ERROR at PC208: Confused about usage of register: R17 in 'UnsetPending'
-
-          ;
-          ((self._logicCells)[i])._posY = ((self._logicCells)[i])._row * self._cellSizeY
-        end
-        self._totalLength = ((cellNums - 1) // self._columnNums + 1) * self._cellSizeY
-        -- DECOMPILER ERROR at PC217: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+function VerticalGridFrameInverseImpl:FireEvent(eventName, ...)
+  for i, logicCell in ipairs(self._logicCells) do
+    if logicCell._cell and logicCell._cell.OnEvent then
+      logicCell._cell:OnEvent(eventName, ...)
     end
   end
 end
 
-VerticalGridFrameInverseImpl.FireEvent = function(self, eventName, ...)
-  -- function num : 0_13 , upvalues : _ENV
-  for i,logicCell in ipairs(self._logicCells) do
-    if logicCell._cell and (logicCell._cell).OnEvent then
-      (logicCell._cell):OnEvent(eventName, ...)
-    end
-  end
-end
-
-VerticalGridFrameInverseImpl.FireIndexCellEvent = function(self, eventName, index, ...)
-  -- function num : 0_14
-  local logicCell = (self._logicCells)[index]
+function VerticalGridFrameInverseImpl:FireIndexCellEvent(eventName, index, ...)
+  local logicCell = self._logicCells[index]
   if not logicCell then
-    return 
+    return
   end
-  if logicCell._cell and (logicCell._cell).OnEvent then
-    (logicCell._cell):OnEvent(eventName, ...)
+  if logicCell._cell and logicCell._cell.OnEvent then
+    logicCell._cell:OnEvent(eventName, ...)
   end
 end
 
-VerticalGridFrameInverseImpl.SetMargin = function(self, upValue, downValue)
-  -- function num : 0_15
+function VerticalGridFrameInverseImpl:SetMargin(upValue, downValue)
   if self._upMargin == 0 then
     self._upMargin = upValue
   end
@@ -507,36 +389,27 @@ VerticalGridFrameInverseImpl.SetMargin = function(self, upValue, downValue)
   end
 end
 
-VerticalGridFrameInverseImpl.OnBeginDrag = function(self, args)
-  -- function num : 0_16
+function VerticalGridFrameInverseImpl:OnBeginDrag(args)
   self._dragDelta = 0
   self._slideInertiaTime = 0.3
   self._sprintTime = 0.3
   self._slideInertiaTask = nil
   self._sprintTask = nil
   self._sprintclickdown = false
-  ;
-  (self._viewcontainer):SetBlocksRaycasts(false)
+  self._viewcontainer:SetBlocksRaycasts(false)
   self._moveSpeed = {x = 0, y = 0}
-  if (self._delegate).OnFrameBeginDrag then
-    (self._delegate):OnFrameBeginDrag(self._interface)
+  if self._delegate.OnFrameBeginDrag then
+    self._delegate:OnFrameBeginDrag(self._interface)
   end
 end
 
-VerticalGridFrameInverseImpl.OnDrag = function(self, args)
-  -- function num : 0_17 , upvalues : UIManager
+function VerticalGridFrameInverseImpl:OnDrag(args)
   local pressPosition = args.pressPosition
   local position = args.position
-  local localPressX, localPressY = (UIManager.ScreenPointToLocalPointInRectangle)((self._viewport)._uiObject, pressPosition.x, pressPosition.y)
-  local localX, localY = (UIManager.ScreenPointToLocalPointInRectangle)((self._viewport)._uiObject, position.x, position.y)
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._moveSpeed).x = args.xSpeed / 60
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._moveSpeed).y = args.ySpeed / 60
+  local localPressX, localPressY = UIManager.ScreenPointToLocalPointInRectangle(self._viewport._uiObject, pressPosition.x, pressPosition.y)
+  local localX, localY = UIManager.ScreenPointToLocalPointInRectangle(self._viewport._uiObject, position.x, position.y)
+  self._moveSpeed.x = args.xSpeed / 60
+  self._moveSpeed.y = args.ySpeed / 60
   local currentPosition = self._currentPosition
   self._currentPosition = currentPosition + self._dragDelta
   self._dragDelta = localY - localPressY
@@ -547,233 +420,215 @@ VerticalGridFrameInverseImpl.OnDrag = function(self, args)
   end
 end
 
-VerticalGridFrameInverseImpl.OnEndDrag = function(self, args)
-  -- function num : 0_18 , upvalues : UIManager, _ENV
+function VerticalGridFrameInverseImpl:OnEndDrag(args)
   self._dragDelta = 0
-  local _, original = (UIManager.ScreenPointToLocalPointInRectangle)((self._viewport)._uiObject, 0, 0)
-  local _, speed = (UIManager.ScreenPointToLocalPointInRectangle)((self._viewport)._uiObject, (self._moveSpeed).x, (self._moveSpeed).y)
+  local _, original = UIManager.ScreenPointToLocalPointInRectangle(self._viewport._uiObject, 0, 0)
+  local _, speed = UIManager.ScreenPointToLocalPointInRectangle(self._viewport._uiObject, self._moveSpeed.x, self._moveSpeed.y)
   speed = speed - original
-  local width, height = (self._viewport):GetRectSize()
+  local width, height = self._viewport:GetRectSize()
   local currentPosition = self._currentPosition
   if speed == 0 then
-    (self._viewcontainer):SetBlocksRaycasts(true)
-  else
-    if currentPosition + height <= self._totalLength + self._upMargin and 0 - self._downMargin <= currentPosition then
-      self._needUpdate = true
-      self._slideInertiaPosition = currentPosition
-      self._slideInertiaSpeed = (speed) * 20
-      self._sprintTask = nil
-      self._sprintPosition = nil
-      local lenofend = (speed) * 20 * self._slideInertiaTime / 2
-      currentPosition = currentPosition - lenofend
-      if self._totalLength - height + height / 3 + self._upMargin < currentPosition then
-        currentPosition = self._totalLength - height + height / 3 + self._upMargin
-        lenofend = self._slideInertiaPosition - (currentPosition)
-        self._slideInertiaTime = (lenofend) * 2 / self._slideInertiaSpeed
-      end
-      if currentPosition < -height / 3 - self._downMargin then
-        currentPosition = -height / 3 - self._downMargin
-        lenofend = self._slideInertiaPosition - (currentPosition)
-        self._slideInertiaTime = (lenofend) * 2 / self._slideInertiaSpeed
-      end
-      local first = {pos = self._slideInertiaSpeed}
-      local last = {pos = 0}
-      self._slideInertiaTask = (Tween.new)(self._slideInertiaTime, first, last, "linear")
+    self._viewcontainer:SetBlocksRaycasts(true)
+  elseif currentPosition + height <= self._totalLength + self._upMargin and currentPosition >= 0 - self._downMargin then
+    self._needUpdate = true
+    self._slideInertiaPosition = currentPosition
+    self._slideInertiaSpeed = speed * 20
+    self._sprintTask = nil
+    self._sprintPosition = nil
+    local lenofend = speed * 20 * self._slideInertiaTime / 2
+    currentPosition = currentPosition - lenofend
+    if currentPosition > self._totalLength - height + height / 3 + self._upMargin then
+      currentPosition = self._totalLength - height + height / 3 + self._upMargin
+      lenofend = self._slideInertiaPosition - currentPosition
+      self._slideInertiaTime = lenofend * 2 / self._slideInertiaSpeed
     end
+    if currentPosition < -height / 3 - self._downMargin then
+      currentPosition = -height / 3 - self._downMargin
+      lenofend = self._slideInertiaPosition - currentPosition
+      self._slideInertiaTime = lenofend * 2 / self._slideInertiaSpeed
+    end
+    local first = {
+      pos = self._slideInertiaSpeed
+    }
+    local last = {pos = 0}
+    self._slideInertiaTask = Tween.new(self._slideInertiaTime, first, last, "linear")
   end
-  do
-    if self._totalLength + self._upMargin < currentPosition + height then
-      self._sprintPosition = currentPosition
-      self._needUpdate = true
-      local lenofend = currentPosition - self._totalLength + height - self._upMargin
-      if self._totalLength + self._upMargin < height then
-        lenofend = currentPosition + self._downMargin
-      end
-      self._sprintSpeed = (lenofend) * 2 / self._sprintTime
-      local first = {pos = self._sprintSpeed}
-      local last = {pos = 0}
-      self._sprintTask = (Tween.new)(self._sprintTime, first, last, "linear")
+  if currentPosition + height > self._totalLength + self._upMargin then
+    self._sprintPosition = currentPosition
+    self._needUpdate = true
+    local lenofend = currentPosition - self._totalLength + height - self._upMargin
+    if height > self._totalLength + self._upMargin then
+      lenofend = currentPosition + self._downMargin
     end
-    do
-      if currentPosition < 0 - self._downMargin then
+    self._sprintSpeed = lenofend * 2 / self._sprintTime
+    local first = {
+      pos = self._sprintSpeed
+    }
+    local last = {pos = 0}
+    self._sprintTask = Tween.new(self._sprintTime, first, last, "linear")
+  end
+  if currentPosition < 0 - self._downMargin then
+    self._sprintPosition = currentPosition
+    self._needUpdate = true
+    local lenofend = currentPosition + self._downMargin
+    self._sprintSpeed = lenofend * 2 / self._sprintTime
+    local first = {
+      pos = self._sprintSpeed
+    }
+    local last = {pos = 0}
+    self._sprintTask = Tween.new(self._sprintTime, first, last, "linear")
+  end
+  if self._delegate.OnFrameEndDrag then
+    self._delegate:OnFrameEndDrag(self._interface)
+  end
+end
+
+function VerticalGridFrameInverseImpl:OnPointerDown(deltaTime)
+  self._dragDelta = 0
+  if self._slideInertiaTask then
+    self._slideInertiaTask = nil
+    self._viewcontainer:SetBlocksRaycasts(true)
+    if self._sprintTask then
+      local width, height = self._viewport:GetRectSize()
+      local currentPosition = self._currentPosition
+      if currentPosition + height > self._totalLength + self._upMargin then
+        self._sprintPosition = currentPosition
+        self._needUpdate = true
+        local lenofend = currentPosition - self._totalLength + height - self._upMargin
+        if height > self._totalLength + self._upMargin then
+          lenofend = currentPosition + self._downMargin
+        end
+        self._sprintSpeed = lenofend * 2 / self._sprintTime
+        local first = {
+          pos = self._sprintSpeed
+        }
+        local last = {pos = 0}
+        self._sprintTask = Tween.new(self._sprintTime, first, last, "linear")
+      elseif currentPosition < 0 - self._downMargin then
         self._sprintPosition = currentPosition
         self._needUpdate = true
         local lenofend = currentPosition + self._downMargin
         self._sprintSpeed = lenofend * 2 / self._sprintTime
-        local first = {pos = self._sprintSpeed}
+        local first = {
+          pos = self._sprintSpeed
+        }
         local last = {pos = 0}
-        self._sprintTask = (Tween.new)(self._sprintTime, first, last, "linear")
-      end
-      do
-        if (self._delegate).OnFrameEndDrag then
-          (self._delegate):OnFrameEndDrag(self._interface)
-        end
-      end
-    end
-  end
-end
-
-VerticalGridFrameInverseImpl.OnPointerDown = function(self, deltaTime)
-  -- function num : 0_19 , upvalues : _ENV
-  self._dragDelta = 0
-  if self._slideInertiaTask then
-    self._slideInertiaTask = nil
-    ;
-    (self._viewcontainer):SetBlocksRaycasts(true)
-    if self._sprintTask then
-      local width, height = (self._viewport):GetRectSize()
-      local currentPosition = self._currentPosition
-      if self._totalLength + self._upMargin < currentPosition + height then
-        self._sprintPosition = currentPosition
-        self._needUpdate = true
-        local lenofend = currentPosition - self._totalLength + height - self._upMargin
-        if self._totalLength + self._upMargin < height then
-          lenofend = currentPosition + self._downMargin
-        end
-        self._sprintSpeed = (lenofend) * 2 / self._sprintTime
-        local first = {pos = self._sprintSpeed}
-        local last = {pos = 0}
-        self._sprintTask = (Tween.new)(self._sprintTime, first, last, "linear")
+        self._sprintTask = Tween.new(self._sprintTime, first, last, "linear")
       else
-        do
-          if currentPosition < 0 - self._downMargin then
-            self._sprintPosition = currentPosition
-            self._needUpdate = true
-            local lenofend = currentPosition + self._downMargin
-            self._sprintSpeed = lenofend * 2 / self._sprintTime
-            local first = {pos = self._sprintSpeed}
-            local last = {pos = 0}
-            self._sprintTask = (Tween.new)(self._sprintTime, first, last, "linear")
-          else
-            do
-              do
-                self._sprintTask = nil
-                self._sprintclickdown = true
-              end
-            end
-          end
-        end
+        self._sprintTask = nil
       end
     end
   end
+  self._sprintclickdown = true
 end
 
-VerticalGridFrameInverseImpl.OnPointerUp = function(self, deltaTime)
-  -- function num : 0_20
+function VerticalGridFrameInverseImpl:OnPointerUp(deltaTime)
   self._sprintclickdown = false
   self:UpdateView(0)
 end
 
-VerticalGridFrameInverseImpl.OnLateUpdate = function(self, notification)
-  -- function num : 0_21
-  local deltaTime = (notification.userInfo).unscaledDeltaTime
-  local width, height = (self._viewport):GetRectSize()
+function VerticalGridFrameInverseImpl:OnLateUpdate(notification)
+  local deltaTime = notification.userInfo.unscaledDeltaTime
+  local width, height = self._viewport:GetRectSize()
   if self._needUpdate then
     if self._slideInertiaTask then
-      if (self._slideInertiaTask):update(deltaTime) then
-        self._currentPosition = self._slideInertiaPosition - (self._slideInertiaSpeed + ((self._slideInertiaTask).subject).pos) * self._slideInertiaTime / 2
+      if self._slideInertiaTask:update(deltaTime) then
+        self._currentPosition = self._slideInertiaPosition - (self._slideInertiaSpeed + self._slideInertiaTask.subject.pos) * self._slideInertiaTime / 2
         self._slideInertiaTask = nil
         self._slideInertiaPosition = nil
-        ;
-        (self._viewcontainer):SetBlocksRaycasts(true)
+        self._viewcontainer:SetBlocksRaycasts(true)
       else
-        self._currentPosition = self._slideInertiaPosition - (self._slideInertiaSpeed + ((self._slideInertiaTask).subject).pos) * (self._slideInertiaTask).clock / 2
+        self._currentPosition = self._slideInertiaPosition - (self._slideInertiaSpeed + self._slideInertiaTask.subject.pos) * self._slideInertiaTask.clock / 2
       end
-      -- DECOMPILER ERROR at PC67: Confused about usage of register: R5 in 'UnsetPending'
-
-      if self._slideInertiaTask and (self._totalLength - height + self._upMargin < self._currentPosition or self._currentPosition < 0 - self._downMargin) then
-        (self._slideInertiaTask).clock = (self._slideInertiaTask).clock + 2 * deltaTime
+      if self._slideInertiaTask and (self._currentPosition > self._totalLength - height + self._upMargin or self._currentPosition < 0 - self._downMargin) then
+        self._slideInertiaTask.clock = self._slideInertiaTask.clock + 2 * deltaTime
       end
-      if self._totalLength - height + height / 3 + self._upMargin < self._currentPosition then
+      if self._currentPosition > self._totalLength - height + height / 3 + self._upMargin then
         self._currentPosition = self._totalLength - height + height / 3 + self._upMargin
         self._slideInertiaTask = nil
         self._slideInertiaPosition = nil
-        ;
-        (self._viewcontainer):SetBlocksRaycasts(true)
+        self._viewcontainer:SetBlocksRaycasts(true)
       end
       if self._currentPosition < -height / 3 - self._downMargin then
         self._currentPosition = -height / 3 - self._downMargin
         self._slideInertiaTask = nil
         self._slideInertiaPosition = nil
-        ;
-        (self._viewcontainer):SetBlocksRaycasts(true)
+        self._viewcontainer:SetBlocksRaycasts(true)
       end
     end
     if not self._slideInertiaTask and self._sprintTask and not self._sprintclickdown then
-      (self._viewcontainer):SetBlocksRaycasts(false)
-      if (self._sprintTask):update(deltaTime) then
-        self._currentPosition = self._sprintPosition - (self._sprintSpeed + ((self._sprintTask).subject).pos) * self._sprintTime / 2
+      self._viewcontainer:SetBlocksRaycasts(false)
+      if self._sprintTask:update(deltaTime) then
+        self._currentPosition = self._sprintPosition - (self._sprintSpeed + self._sprintTask.subject.pos) * self._sprintTime / 2
         self._sprintTask = nil
         self._sprintPosition = nil
-        ;
-        (self._viewcontainer):SetBlocksRaycasts(true)
+        self._viewcontainer:SetBlocksRaycasts(true)
       else
-        self._currentPosition = self._sprintPosition - (self._sprintSpeed + ((self._sprintTask).subject).pos) * (self._sprintTask).clock / 2
+        self._currentPosition = self._sprintPosition - (self._sprintSpeed + self._sprintTask.subject.pos) * self._sprintTask.clock / 2
       end
     end
     if self._moveTopTask then
-      if (self._moveTopTask):update(deltaTime) then
+      if self._moveTopTask:update(deltaTime) then
         self._currentPosition = self._totalLength - height + self._upMargin
         self._moveTopTask = nil
       else
-        self._currentPosition = ((self._moveTopTask).subject).pos
+        self._currentPosition = self._moveTopTask.subject.pos
       end
     end
     if self._moveBottomTask then
-      if (self._moveBottomTask):update(deltaTime) then
+      if self._moveBottomTask:update(deltaTime) then
         self._currentPosition = 0 - self._downMargin
         self._moveBottomTask = nil
       else
-        self._currentPosition = ((self._moveBottomTask).subject).pos
+        self._currentPosition = self._moveBottomTask.subject.pos
       end
     end
     if self._moveTopIndexTask then
-      if (self._moveTopIndexTask):update(deltaTime) then
+      if self._moveTopIndexTask:update(deltaTime) then
         self._currentPosition = self._moveTopIndexDes
         self._moveTopIndexTask = nil
       else
-        self._currentPosition = ((self._moveTopIndexTask).subject).pos
+        self._currentPosition = self._moveTopIndexTask.subject.pos
       end
     end
     if self._moveDownIndexTask then
-      if (self._moveDownIndexTask):update(deltaTime) then
+      if self._moveDownIndexTask:update(deltaTime) then
         self._currentPosition = self._moveDownIndexDes
         self._moveDownIndexTask = nil
       else
-        self._currentPosition = ((self._moveDownIndexTask).subject).pos
+        self._currentPosition = self._moveDownIndexTask.subject.pos
       end
     end
     if self._moveToAssignedPosTask then
-      if (self._moveToAssignedPosTask):update(deltaTime) then
+      if self._moveToAssignedPosTask:update(deltaTime) then
         self._currentPosition = self._moveToAssignedPosDes
         self._moveToAssignedPosTask = nil
       else
-        self._currentPosition = ((self._moveToAssignedPosTask).subject).pos
+        self._currentPosition = self._moveToAssignedPosTask.subject.pos
       end
     end
     self:UpdateView(deltaTime)
   end
 end
 
-VerticalGridFrameInverseImpl.UpdateView = function(self, deltaTime)
-  -- function num : 0_22 , upvalues : _ENV
+function VerticalGridFrameInverseImpl:UpdateView(deltaTime)
   if self._needUpdate then
     local currentPosition = self._currentPosition
-    local width, height = (self._viewport):GetRectSize()
+    local width, height = self._viewport:GetRectSize()
     if height < self._totalLength + self._upMargin then
       if currentPosition < 0 - self._downMargin then
         currentPosition = currentPosition - 2 * (currentPosition + self._downMargin) / 3
       end
-      if self._totalLength + self._upMargin < currentPosition + height then
-        currentPosition = currentPosition - 2 * (height - self._totalLength + (currentPosition) - self._upMargin) / 3
+      if currentPosition + height > self._totalLength + self._upMargin then
+        currentPosition = currentPosition - 2 * (height - self._totalLength + currentPosition - self._upMargin) / 3
       end
     else
       currentPosition = currentPosition + self._downMargin
-      currentPosition = (currentPosition) / 3
+      currentPosition = currentPosition / 3
     end
-    for i,logicCell in ipairs(self._logicCells) do
+    for i, logicCell in ipairs(self._logicCells) do
       if height < self._totalLength + self._upMargin then
-        if logicCell._posY < currentPosition + height - self._upMargin and currentPosition + self._downMargin < logicCell._posY + self._cellSizeY then
+        if logicCell._posY < currentPosition + height - self._upMargin and logicCell._posY + self._cellSizeY > currentPosition + self._downMargin then
           if not logicCell._visible then
             self._refreshPosY = true
           end
@@ -787,190 +642,150 @@ VerticalGridFrameInverseImpl.UpdateView = function(self, deltaTime)
             self:RecycleCell(logicCell)
           end
         end
+      elseif logicCell._posY < height - self._upMargin and logicCell._posY + self._cellSizeY > self._downMargin then
+        logicCell._visible = true
       else
-        if logicCell._posY < height - self._upMargin and self._downMargin < logicCell._posY + self._cellSizeY then
-          logicCell._visible = true
-        else
-          logicCell._visible = false
-          if logicCell._cell then
-            self:RecycleCell(logicCell)
-          end
+        logicCell._visible = false
+        if logicCell._cell then
+          self:RecycleCell(logicCell)
         end
       end
     end
     self._cellX = -1
-    for i,logicCell in ipairs(self._logicCells) do
+    for i, logicCell in ipairs(self._logicCells) do
       if logicCell._visible then
         if not logicCell._cell then
           self:GetCellDialog(logicCell)
-          -- DECOMPILER ERROR at PC117: Confused about usage of register: R10 in 'UnsetPending'
-
-          ;
-          (logicCell._cell)._delegate = self._delegate
-          -- DECOMPILER ERROR at PC120: Confused about usage of register: R10 in 'UnsetPending'
-
-          ;
-          (logicCell._cell)._cellData = logicCell._data
-          ;
-          (logicCell._cell):RefreshCell(logicCell._data)
+          logicCell._cell._delegate = self._delegate
+          logicCell._cell._cellData = logicCell._data
+          logicCell._cell:RefreshCell(logicCell._data)
         end
-        ;
-        ((logicCell._cell):GetRootWindow()):SetPosition(0, logicCell._posX, 0, logicCell._posY)
+        logicCell._cell:GetRootWindow():SetPosition(0, logicCell._posX, 0, logicCell._posY)
         if self._cellX == -1 then
-          local y = nil
-          self._cellX = ((logicCell._cell):GetRootWindow()):GetRectSize()
+          local y
+          self._cellX, y = logicCell._cell:GetRootWindow():GetRectSize()
         end
       end
     end
     if self._refreshUIParticleClipper and self._refreshPosY then
       self._refreshPosY = false
-      ;
-      (((((CS.PixelNeko).Render).ShaderUtility).UIParticleClipper).RefreshUIParticleClipper)((self._viewport):GetUIObject())
+      CS.PixelNeko.Render.ShaderUtility.UIParticleClipper.RefreshUIParticleClipper(self._viewport:GetUIObject())
     end
-    for dialogName,cells in pairs(self._recycleCells) do
-      -- DECOMPILER ERROR at PC168: Overwrote pending register: R10 in 'AssignReg'
-
-      for i,cell in y(cells) do
-        (cell:GetRootWindow()):SetPosition(0, 0, 0, -10000)
+    for dialogName, cells in pairs(self._recycleCells) do
+      for i, cell in ipairs(cells) do
+        cell:GetRootWindow():SetPosition(0, 0, 0, -10000)
       end
     end
     local vx = self._cellX * self._columnNums
-    local viewportX, y = (self._viewport):GetRectSize()
-    if viewportX < vx then
+    local viewportX, y = self._viewport:GetRectSize()
+    if vx > viewportX then
       vx = viewportX
     end
-    ;
-    (self._viewcontainer):SetSize(0, vx, 0, self._totalLength)
-    ;
-    (self._viewcontainer):SetPosition(0, (viewportX - vx) / 2, 0, -(currentPosition))
-    do
-      if self._leftMargin ~= 0 or self._rightMargin ~= 0 then
-        local aMinX, aMinY, aMaxX, aMaxY, oMinX, oMinY, oMaxX, oMaxY = (self._viewcontainer):GetAnchorAndOffset()
-        ;
-        (self._viewcontainer):SetAnchorAndOffset(0, aMinY, 1, aMaxY, self._leftMargin, oMinY, -self._rightMargin, oMaxY)
-      end
-      if not self._sprintTask and not self._slideInertiaTask and not self._moveTopTask and not self._moveBottomTask and not self._moveTopIndexTask and not self._moveDownIndexTask and not self._moveToAssignedPosTask then
-        self._needUpdate = false
-      end
-      if (self._delegate).OnCurPosChange then
-        local width, height = (self._viewport):GetRectSize()
-        local ratio = 0
-        if height < self._totalLength then
-          ratio = self._currentPosition / (self._totalLength - height)
-          if ratio < 0 then
-            ratio = (self._currentPosition + self._downMargin) / (self._totalLength - height)
-          end
-          if ratio > 1 then
-            ratio = (self._currentPosition - self._upMargin) / (self._totalLength - height)
-          end
-          if 1 - ratio < 0.001 then
-            ratio = 1
-          else
-            if ratio < 0.001 then
-              ratio = 0
-            end
-          end
-        else
+    self._viewcontainer:SetSize(0, vx, 0, self._totalLength)
+    self._viewcontainer:SetPosition(0, (viewportX - vx) / 2, 0, -currentPosition)
+    if self._leftMargin ~= 0 or self._rightMargin ~= 0 then
+      local aMinX, aMinY, aMaxX, aMaxY, oMinX, oMinY, oMaxX, oMaxY = self._viewcontainer:GetAnchorAndOffset()
+      self._viewcontainer:SetAnchorAndOffset(0, aMinY, 1, aMaxY, self._leftMargin, oMinY, -self._rightMargin, oMaxY)
+    end
+    if not self._sprintTask and not self._slideInertiaTask and not self._moveTopTask and not self._moveBottomTask and not self._moveTopIndexTask and not self._moveDownIndexTask and not self._moveToAssignedPosTask then
+      self._needUpdate = false
+    end
+    if self._delegate.OnCurPosChange then
+      local width, height = self._viewport:GetRectSize()
+      local ratio = 0
+      if height < self._totalLength then
+        ratio = self._currentPosition / (self._totalLength - height)
+        if ratio < 0 then
+          ratio = (self._currentPosition + self._downMargin) / (self._totalLength - height)
+        end
+        if 1 < ratio then
+          ratio = (self._currentPosition - self._upMargin) / (self._totalLength - height)
+        end
+        if 1 - ratio < 0.001 then
+          ratio = 1
+        elseif ratio < 0.001 then
           ratio = 0
         end
-        ;
-        (self._delegate):OnCurPosChange(self._interface, ratio)
+      else
+        ratio = 0
       end
+      self._delegate:OnCurPosChange(self._interface, ratio)
     end
   end
 end
 
-VerticalGridFrameInverseImpl.GetCellDialog = function(self, logicCell)
-  -- function num : 0_23 , upvalues : _ENV
+function VerticalGridFrameInverseImpl:GetCellDialog(logicCell)
   if logicCell._cell then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-  if not (self._recycleCells)[logicCell._dialogName] then
-    (self._recycleCells)[logicCell._dialogName] = {}
+  if not self._recycleCells[logicCell._dialogName] then
+    self._recycleCells[logicCell._dialogName] = {}
   end
-  local recycleList = (self._recycleCells)[logicCell._dialogName]
-  if #recycleList > 0 then
+  local recycleList = self._recycleCells[logicCell._dialogName]
+  if 0 < #recycleList then
     logicCell._cell = recycleList[#recycleList]
     recycleList[#recycleList] = nil
   else
-    logicCell._cell = (DialogManager.CopyDialog)(logicCell._dialogName, ((self._baseCells)[logicCell._dialogName])._uiObject, (self._viewcontainer)._uiObject)
+    logicCell._cell = DialogManager.CopyDialog(logicCell._dialogName, self._baseCells[logicCell._dialogName]._uiObject, self._viewcontainer._uiObject)
   end
 end
 
-VerticalGridFrameInverseImpl.RecycleCell = function(self, logicCell)
-  -- function num : 0_24 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
+function VerticalGridFrameInverseImpl:RecycleCell(logicCell)
   if logicCell._cell then
-    if not (self._recycleCells)[logicCell._dialogName] then
-      (self._recycleCells)[logicCell._dialogName] = {}
+    if not self._recycleCells[logicCell._dialogName] then
+      self._recycleCells[logicCell._dialogName] = {}
     end
-    ;
-    (table.insert)((self._recycleCells)[logicCell._dialogName], logicCell._cell)
+    table.insert(self._recycleCells[logicCell._dialogName], logicCell._cell)
     logicCell._cell = nil
   end
 end
 
-VerticalGridFrameInverseImpl.SendMessageToInstance = function(self, name, args)
-  -- function num : 0_25 , upvalues : _ENV
-  for _,logicCell in ipairs(self._logicCells) do
-    if logicCell._cell and (logicCell._cell).HandleFrameMessage then
-      ((logicCell._cell).HandleFrameMessage)(logicCell._cell, name, args)
+function VerticalGridFrameInverseImpl:SendMessageToInstance(name, args)
+  for _, logicCell in ipairs(self._logicCells) do
+    if logicCell._cell and logicCell._cell.HandleFrameMessage then
+      logicCell._cell.HandleFrameMessage(logicCell._cell, name, args)
     end
   end
 end
 
-VerticalGridFrameInverseImpl.SetSlide = function(self, slide, showSoftMask)
-  -- function num : 0_26 , upvalues : _ENV
+function VerticalGridFrameInverseImpl:SetSlide(slide, showSoftMask)
   if slide then
     if self._beginDragHandler then
-      (self._viewport):Unsubscribe_BeginDragEvent(self._beginDragHandler)
+      self._viewport:Unsubscribe_BeginDragEvent(self._beginDragHandler)
     end
     if self._dragHandler then
-      (self._viewport):Unsubscribe_DragEvent(self._dragHandler)
+      self._viewport:Unsubscribe_DragEvent(self._dragHandler)
     end
     if self._endDragHandler then
-      (self._viewport):Unsubscribe_EndDragEvent(self._endDragHandler)
+      self._viewport:Unsubscribe_EndDragEvent(self._endDragHandler)
     end
     if self._cancelDragHandler then
-      (self._viewport):Unsubscribe_CancelDragEvent(self._cancelDragHandler)
+      self._viewport:Unsubscribe_CancelDragEvent(self._cancelDragHandler)
     end
-    self._beginDragHandler = (self._viewport):Subscribe_BeginDragEvent(self.OnBeginDrag, self)
-    self._dragHandler = (self._viewport):Subscribe_DragEvent(self.OnDrag, self)
-    self._endDragHandler = (self._viewport):Subscribe_EndDragEvent(self.OnEndDrag, self)
-    self._cancelDragHandler = (self._viewport):Subscribe_CancelDragEvent(self.OnEndDrag, self)
-    ;
-    ((((CS.PixelNeko).Lua).SoftMaskStaticFunctions).SetSoftMaskActive)((self._viewport)._uiObject, true)
+    self._beginDragHandler = self._viewport:Subscribe_BeginDragEvent(self.OnBeginDrag, self)
+    self._dragHandler = self._viewport:Subscribe_DragEvent(self.OnDrag, self)
+    self._endDragHandler = self._viewport:Subscribe_EndDragEvent(self.OnEndDrag, self)
+    self._cancelDragHandler = self._viewport:Subscribe_CancelDragEvent(self.OnEndDrag, self)
+    CS.PixelNeko.Lua.SoftMaskStaticFunctions.SetSoftMaskActive(self._viewport._uiObject, true)
   else
-    ;
-    ((((CS.PixelNeko).Lua).SoftMaskStaticFunctions).SetSoftMaskActive)((self._viewport)._uiObject, showSoftMask)
-    ;
-    (self._viewport):Unsubscribe_BeginDragEvent(self._beginDragHandler)
-    ;
-    (self._viewport):Unsubscribe_DragEvent(self._dragHandler)
-    ;
-    (self._viewport):Unsubscribe_EndDragEvent(self._endDragHandler)
-    ;
-    (self._viewport):Unsubscribe_CancelDragEvent(self._cancelDragHandler)
+    CS.PixelNeko.Lua.SoftMaskStaticFunctions.SetSoftMaskActive(self._viewport._uiObject, showSoftMask)
+    self._viewport:Unsubscribe_BeginDragEvent(self._beginDragHandler)
+    self._viewport:Unsubscribe_DragEvent(self._dragHandler)
+    self._viewport:Unsubscribe_EndDragEvent(self._endDragHandler)
+    self._viewport:Unsubscribe_CancelDragEvent(self._cancelDragHandler)
   end
 end
 
-VerticalGridFrameInverseImpl.SetSoftMaskActive = function(self, showSoftMask)
-  -- function num : 0_27 , upvalues : _ENV
-  ((((CS.PixelNeko).Lua).SoftMaskStaticFunctions).SetSoftMaskActive)((self._viewport)._uiObject, showSoftMask)
+function VerticalGridFrameInverseImpl:SetSoftMaskActive(showSoftMask)
+  CS.PixelNeko.Lua.SoftMaskStaticFunctions.SetSoftMaskActive(self._viewport._uiObject, showSoftMask)
 end
 
-VerticalGridFrameInverseImpl.RefreshUIParticleClipper = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function VerticalGridFrameInverseImpl:RefreshUIParticleClipper()
   self._refreshUIParticleClipper = true
-  ;
-  (((((CS.PixelNeko).Render).ShaderUtility).UIParticleClipper).RefreshUIParticleClipper)((self._viewport):GetUIObject())
+  CS.PixelNeko.Render.ShaderUtility.UIParticleClipper.RefreshUIParticleClipper(self._viewport:GetUIObject())
 end
 
-VerticalGridFrameInverseImpl.ClearAllPositionChangeTask = function(self)
-  -- function num : 0_29
+function VerticalGridFrameInverseImpl:ClearAllPositionChangeTask()
   self._slideInertiaTask = nil
   self._sprintTask = nil
   self._moveTopTask = nil
@@ -981,4 +796,3 @@ VerticalGridFrameInverseImpl.ClearAllPositionChangeTask = function(self)
 end
 
 return VerticalGridFrameInverseImpl
-

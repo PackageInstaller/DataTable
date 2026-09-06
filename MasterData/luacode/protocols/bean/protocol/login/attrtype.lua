@@ -1,9 +1,4 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/bean/protocol/login/attrtype.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local AttrType = dataclass("AttrType")
 AttrType.HP = 10
 AttrType.MAX_HP = 20
@@ -65,20 +60,17 @@ AttrType.COMBORATE2 = 680
 AttrType.CRITDEGREERESISTANCE = 830
 AttrType.DAMAGE_REDUCE = 1060
 AttrType.RUNE_LV = 1070
-AttrType.Ctor = function(self)
-  -- function num : 0_0
+
+function AttrType:Ctor()
 end
 
-AttrType.Marshal = function(self, buffer)
-  -- function num : 0_1
+function AttrType:Marshal(buffer)
   return true
 end
 
-AttrType.Unmarshal = function(self, buffer)
-  -- function num : 0_2
+function AttrType:Unmarshal(buffer)
   local ret = true
   return ret
 end
 
 return AttrType
-

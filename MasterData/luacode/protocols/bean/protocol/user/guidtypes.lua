@@ -1,9 +1,4 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/bean/protocol/user/guidtypes.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local GuidTypes = dataclass("GuidTypes")
 GuidTypes.NEW_GUIDE_1 = 1
 GuidTypes.TEN_DRAW = 2
@@ -37,20 +32,17 @@ GuidTypes.GUIDE_2009 = 2009
 GuidTypes.GUIDE_2010 = 2010
 GuidTypes.GUIDE_2003 = 2003
 GuidTypes.FORGE_WORKER_APPEAR = 100
-GuidTypes.Ctor = function(self)
-  -- function num : 0_0
+
+function GuidTypes:Ctor()
 end
 
-GuidTypes.Marshal = function(self, buffer)
-  -- function num : 0_1
+function GuidTypes:Marshal(buffer)
   return true
 end
 
-GuidTypes.Unmarshal = function(self, buffer)
-  -- function num : 0_2
+function GuidTypes:Unmarshal(buffer)
   local ret = true
   return ret
 end
 
 return GuidTypes
-

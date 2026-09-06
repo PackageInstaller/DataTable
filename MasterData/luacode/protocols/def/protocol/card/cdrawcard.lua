@@ -1,9 +1,4 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/def/protocol/card/cdrawcard.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local CDrawCard = dataclass("CDrawCard", require("framework.net.protocol"))
 CDrawCard.ProtocolType = 1503
 CDrawCard.MaxSize = 65535
@@ -17,37 +12,35 @@ CDrawCard.TYPE_TWO = 3
 CDrawCard.TYPE_CHARGE_TEN = 4
 CDrawCard.ITEM_COST_SOUL = 1
 CDrawCard.ITEM_COST_ORDINARY = 2
-CDrawCard.Ctor = function(self, client)
-  -- function num : 0_0 , upvalues : CDrawCard
-  ((CDrawCard.super).Ctor)(self, client)
+
+function CDrawCard:Ctor(client)
+  CDrawCard.super.Ctor(self, client)
 end
 
-CDrawCard.Marshal = function(self, buffer)
-  -- function num : 0_1 , upvalues : ProtocolBufferStaticFunctions
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.poolId) then
+function CDrawCard:Marshal(buffer)
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.poolId) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.drawType) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.drawType) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.costType) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.costType) then
     return false
   end
   return true
 end
 
-CDrawCard.Unmarshal = function(self, buffer)
-  -- function num : 0_2 , upvalues : ProtocolBufferStaticFunctions
+function CDrawCard:Unmarshal(buffer)
   local ret = true
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.poolId = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.drawType = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.costType = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
@@ -55,4 +48,3 @@ CDrawCard.Unmarshal = function(self, buffer)
 end
 
 return CDrawCard
-

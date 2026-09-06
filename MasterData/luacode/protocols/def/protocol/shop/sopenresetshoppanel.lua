@@ -1,9 +1,4 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/def/protocol/shop/sopenresetshoppanel.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local SOpenResetShopPanel = dataclass("SOpenResetShopPanel", require("framework.net.protocol"))
 SOpenResetShopPanel.ProtocolType = 3625
 SOpenResetShopPanel.MaxSize = 65535
@@ -11,44 +6,42 @@ SOpenResetShopPanel.shoptype = 0
 SOpenResetShopPanel.leftChance = 0
 SOpenResetShopPanel.currencyType = 0
 SOpenResetShopPanel.nextTimeCost = 0
-SOpenResetShopPanel.Ctor = function(self, client)
-  -- function num : 0_0 , upvalues : SOpenResetShopPanel
-  ((SOpenResetShopPanel.super).Ctor)(self, client)
+
+function SOpenResetShopPanel:Ctor(client)
+  SOpenResetShopPanel.super.Ctor(self, client)
 end
 
-SOpenResetShopPanel.Marshal = function(self, buffer)
-  -- function num : 0_1 , upvalues : ProtocolBufferStaticFunctions
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.shoptype) then
+function SOpenResetShopPanel:Marshal(buffer)
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.shoptype) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.leftChance) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.leftChance) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.currencyType) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.currencyType) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.nextTimeCost) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.nextTimeCost) then
     return false
   end
   return true
 end
 
-SOpenResetShopPanel.Unmarshal = function(self, buffer)
-  -- function num : 0_2 , upvalues : ProtocolBufferStaticFunctions
+function SOpenResetShopPanel:Unmarshal(buffer)
   local ret = true
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.shoptype = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.leftChance = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.currencyType = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.nextTimeCost = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
@@ -56,4 +49,3 @@ SOpenResetShopPanel.Unmarshal = function(self, buffer)
 end
 
 return SOpenResetShopPanel
-

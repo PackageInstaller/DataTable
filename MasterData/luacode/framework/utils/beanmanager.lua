@@ -1,53 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/framework/utils/beanmanager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local Bean = class("Bean")
-Bean.Ctor = function(self, data)
-  -- function num : 0_0 , upvalues : _ENV
+
+function Bean:Ctor(data)
   self._data = readonly_table(data)
 end
 
-Bean.GetAllIds = function(self)
-  -- function num : 0_1
+function Bean:GetAllIds()
   if self._data then
-    return (self._data).AllIds
+    return self._data.AllIds
   end
 end
 
-Bean.GetRecorder = function(self, id)
-  -- function num : 0_2
-  if self._data and ((self._data).Data)[id] then
-    return ((self._data).Data)[id]
+function Bean:GetRecorder(id)
+  if self._data and self._data.Data[id] then
+    return self._data.Data[id]
   end
 end
 
-Bean.GetRawRecorder = function(self, id)
-  -- function num : 0_3
-  return ((self._data).Data)[id]
+function Bean:GetRawRecorder(id)
+  return self._data.Data[id]
 end
 
-Bean.GetRecorderByValue = function(self, name, value)
-  -- function num : 0_4 , upvalues : _ENV
-  for i,v in ipairs((self._data).AllIds) do
-    if (((self._data).Data)[v])[name] == value then
-      return ((self._data).Data)[v]
+function Bean:GetRecorderByValue(name, value)
+  for i, v in ipairs(self._data.AllIds) do
+    if self._data.Data[v][name] == value then
+      return self._data.Data[v]
     end
   end
 end
 
 local BeanManager = {}
 local _tableInstance = {}
-local MakeTableValue = function(tablename)
-  -- function num : 0_5 , upvalues : _ENV, Bean, _tableInstance
+
+local function MakeTableValue(tablename)
   local data = require("data.exceldata." .. tablename)
-  local bean = (Bean.Create)(data)
+  local bean = Bean.Create(data)
   _tableInstance[tablename] = bean
 end
 
-BeanManager.GetTableByName = function(tablename)
-  -- function num : 0_6 , upvalues : _tableInstance, MakeTableValue
+function BeanManager.GetTableByName(tablename)
   if not _tableInstance[tablename] then
     MakeTableValue(tablename)
   end
@@ -55,61 +45,41 @@ BeanManager.GetTableByName = function(tablename)
 end
 
 BeanManager.GetTableByNameWithLanguageImpl = nil
-BeanManager.GetTableByNameWithLanguage = function(tablename)
-  -- function num : 0_7 , upvalues : BeanManager, _ENV
+
+function BeanManager.GetTableByNameWithLanguage(tablename)
   if BeanManager.GetTableByNameWithLanguageImpl == nil then
     if SdkManager.IsOverseas then
-      local channelName = (SdkManager.GetChannelName)()
+      local channelName = SdkManager.GetChannelName()
       if channelName == "en" then
-        BeanManager.GetTableByNameWithLanguageImpl = function(input)
-    -- function num : 0_7_0 , upvalues : BeanManager
-    return (BeanManager.GetTableByName)(input .. "_overseas_en")
-  end
-
+        function BeanManager.GetTableByNameWithLanguageImpl(input)
+          return BeanManager.GetTableByName(input .. "_overseas_en")
+        end
+      elseif channelName == "kr" then
+        function BeanManager.GetTableByNameWithLanguageImpl(input)
+          return BeanManager.GetTableByName(input .. "_overseas_kr")
+        end
+      elseif channelName == "jp" then
+        function BeanManager.GetTableByNameWithLanguageImpl(input)
+          return BeanManager.GetTableByName(input .. "_overseas_jp")
+        end
+      elseif channelName == "none" then
+        function BeanManager.GetTableByNameWithLanguageImpl(input)
+          return BeanManager.GetTableByName(input)
+        end
       else
-        if channelName == "kr" then
-          BeanManager.GetTableByNameWithLanguageImpl = function(input)
-    -- function num : 0_7_1 , upvalues : BeanManager
-    return (BeanManager.GetTableByName)(input .. "_overseas_kr")
-  end
-
-        else
-          if channelName == "jp" then
-            BeanManager.GetTableByNameWithLanguageImpl = function(input)
-    -- function num : 0_7_2 , upvalues : BeanManager
-    return (BeanManager.GetTableByName)(input .. "_overseas_jp")
-  end
-
-          else
-            if channelName == "none" then
-              BeanManager.GetTableByNameWithLanguageImpl = function(input)
-    -- function num : 0_7_3 , upvalues : BeanManager
-    return (BeanManager.GetTableByName)(input)
-  end
-
-            else
-              LogError("BeanManager.GetTableByNameWithLanguage", "The channelName is invalid value: " .. tostring(channelName))
-              BeanManager.GetTableByNameWithLanguageImpl = function(input)
-    -- function num : 0_7_4 , upvalues : BeanManager
-    return (BeanManager.GetTableByName)(input)
-  end
-
-            end
-          end
+        LogError("BeanManager.GetTableByNameWithLanguage", "The channelName is invalid value: " .. tostring(channelName))
+        
+        function BeanManager.GetTableByNameWithLanguageImpl(input)
+          return BeanManager.GetTableByName(input)
         end
       end
     else
-      do
-        BeanManager.GetTableByNameWithLanguageImpl = function(input)
-    -- function num : 0_7_5 , upvalues : BeanManager
-    return (BeanManager.GetTableByName)(input)
-  end
-
-        return (BeanManager.GetTableByNameWithLanguageImpl)(tablename)
+      function BeanManager.GetTableByNameWithLanguageImpl(input)
+        return BeanManager.GetTableByName(input)
       end
     end
   end
+  return BeanManager.GetTableByNameWithLanguageImpl(tablename)
 end
 
 return BeanManager
-

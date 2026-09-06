@@ -1,19 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/dialog/guide/basecharacterinfoskillchangedialog.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local BaseCharacterInfoSkillChangeDialog = class("BaseCharacterInfoSkillChangeDialog", Dialog)
 BaseCharacterInfoSkillChangeDialog.AssetBundleName = "ui/layouts.basecharacterinfo"
 BaseCharacterInfoSkillChangeDialog.AssetName = "BaseCharacterInfoSkillChange2"
-BaseCharacterInfoSkillChangeDialog.Ctor = function(self, ...)
-  -- function num : 0_0 , upvalues : BaseCharacterInfoSkillChangeDialog
-  ((BaseCharacterInfoSkillChangeDialog.super).Ctor)(self, ...)
+
+function BaseCharacterInfoSkillChangeDialog:Ctor(...)
+  BaseCharacterInfoSkillChangeDialog.super.Ctor(self, ...)
   self._groupName = "Modal"
 end
 
-BaseCharacterInfoSkillChangeDialog.OnCreate = function(self)
-  -- function num : 0_1
+function BaseCharacterInfoSkillChangeDialog:OnCreate()
   self._skillName = self:GetChild("SkillInfoPanel/SkillName")
   self._skillScore = self:GetChild("SkillInfoPanel/ScoreNum")
   self._equipTxt = self:GetChild("SkillInfoPanel/EquipTxt")
@@ -29,24 +23,18 @@ BaseCharacterInfoSkillChangeDialog.OnCreate = function(self)
   self._describe1 = self:GetChild("SkillPanel/Describe")
   self._describe2 = self:GetChild("SkillPanel/Describe(1)")
   self._changeBtn = self:GetChild("ChangeBtn")
-  ;
-  (self._changeBtn):Subscribe_PointerClickEvent(self.OnChangeBtnClick, self)
+  self._changeBtn:Subscribe_PointerClickEvent(self.OnChangeBtnClick, self)
 end
 
-BaseCharacterInfoSkillChangeDialog.OnDestroy = function(self)
-  -- function num : 0_2
+function BaseCharacterInfoSkillChangeDialog:OnDestroy()
 end
 
-BaseCharacterInfoSkillChangeDialog.Init = function(self, key)
-  -- function num : 0_3
+function BaseCharacterInfoSkillChangeDialog:Init(key)
 end
 
-BaseCharacterInfoSkillChangeDialog.OnChangeBtnClick = function(self)
-  -- function num : 0_4 , upvalues : _ENV, BaseCharacterInfoSkillChangeDialog
+function BaseCharacterInfoSkillChangeDialog:OnChangeBtnClick()
   self:Destroy()
-  ;
-  (LuaNotificationCenter.PostNotification)(Common.n_GuideGetSkill, BaseCharacterInfoSkillChangeDialog, nil)
+  LuaNotificationCenter.PostNotification(Common.n_GuideGetSkill, BaseCharacterInfoSkillChangeDialog, nil)
 end
 
 return BaseCharacterInfoSkillChangeDialog
-

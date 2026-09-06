@@ -1,27 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/def/protocol/party/cshowpartydonateprocess.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local CShowPartyDonateProcess = dataclass("CShowPartyDonateProcess", require("framework.net.protocol"))
 CShowPartyDonateProcess.ProtocolType = 5033
 CShowPartyDonateProcess.MaxSize = 65535
-CShowPartyDonateProcess.Ctor = function(self, client)
-  -- function num : 0_0 , upvalues : CShowPartyDonateProcess
-  ((CShowPartyDonateProcess.super).Ctor)(self, client)
+
+function CShowPartyDonateProcess:Ctor(client)
+  CShowPartyDonateProcess.super.Ctor(self, client)
 end
 
-CShowPartyDonateProcess.Marshal = function(self, buffer)
-  -- function num : 0_1
+function CShowPartyDonateProcess:Marshal(buffer)
   return true
 end
 
-CShowPartyDonateProcess.Unmarshal = function(self, buffer)
-  -- function num : 0_2
+function CShowPartyDonateProcess:Unmarshal(buffer)
   local ret = true
   return ret
 end
 
 return CShowPartyDonateProcess
-

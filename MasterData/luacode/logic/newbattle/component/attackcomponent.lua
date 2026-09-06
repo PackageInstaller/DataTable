@@ -1,13 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/newbattle/component/attackcomponent.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local Component = require("ecs.component")
 local AttackComponent = dataclass("AttackComponent", Component)
-AttackComponent.Ctor = function(self, ...)
-  -- function num : 0_0 , upvalues : AttackComponent, _ENV
-  ((AttackComponent.super).Ctor)(self, ...)
+
+function AttackComponent:Ctor(...)
+  AttackComponent.super.Ctor(self, ...)
   self._attack = fixedpoint_zero
   self._basicAttack = fixedpoint_zero
   self._attackCritRate = fixedpoint_zero
@@ -33,4 +28,3 @@ AttackComponent.Ctor = function(self, ...)
 end
 
 return AttackComponent
-

@@ -1,59 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/bean/protocol/activity/foolsdayrole.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local FoolsDayRole = dataclass("FoolsDayRole")
 FoolsDayRole.Id = 0
 FoolsDayRole.roleLv = 0
 FoolsDayRole.weaponLv = 0
 FoolsDayRole.attack = 0
 FoolsDayRole.blood = 0
-FoolsDayRole.Ctor = function(self)
-  -- function num : 0_0
+
+function FoolsDayRole:Ctor()
 end
 
-FoolsDayRole.Marshal = function(self, buffer)
-  -- function num : 0_1 , upvalues : ProtocolBufferStaticFunctions
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.Id) then
+function FoolsDayRole:Marshal(buffer)
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.Id) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.roleLv) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.roleLv) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.weaponLv) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.weaponLv) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.attack) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.attack) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.blood) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.blood) then
     return false
   end
   return true
 end
 
-FoolsDayRole.Unmarshal = function(self, buffer)
-  -- function num : 0_2 , upvalues : ProtocolBufferStaticFunctions
+function FoolsDayRole:Unmarshal(buffer)
   local ret = true
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.Id = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.roleLv = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.weaponLv = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.attack = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.blood = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
@@ -61,4 +54,3 @@ FoolsDayRole.Unmarshal = function(self, buffer)
 end
 
 return FoolsDayRole
-

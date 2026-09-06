@@ -1,29 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/manager/experimental/behaviormanager/bm_lines.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local BM_Lines = class("BM_Lines")
-local CSoundLines = (BeanManager.GetTableByName)("sound.csoundlines")
-local CSountLines_Skin = (BeanManager.GetTableByNameWithLanguage)("sound.csoundlines_skin")
-BM_Lines.Ctor = function(self)
-  -- function num : 0_0
+local CSoundLines = BeanManager.GetTableByName("sound.csoundlines")
+local CSountLines_Skin = BeanManager.GetTableByNameWithLanguage("sound.csoundlines_skin")
+
+function BM_Lines:Ctor()
 end
 
-BM_Lines.GetLines = function(self, roleID, tableKey, index)
-  -- function num : 0_1 , upvalues : _ENV
+function BM_Lines:GetLines(roleID, tableKey, index)
   LogError("BM_Lines", "没写")
   return ""
 end
 
-BM_Lines.GetLines2 = function(self, roleID, fashionID, tableKey, index)
-  -- function num : 0_2 , upvalues : CSountLines_Skin, CSoundLines, _ENV
-  if not roleID then
-    roleID = -1
-  end
-  if not fashionID then
-    fashionID = -1
-  end
+function BM_Lines:GetLines2(roleID, fashionID, tableKey, index)
+  roleID = roleID or -1
+  fashionID = fashionID or -1
   local recordFashion = CSountLines_Skin:GetRecorder(fashionID)
   local recordRole = CSoundLines:GetRecorder(roleID)
   local record = recordFashion or recordRole
@@ -41,17 +30,16 @@ BM_Lines.GetLines2 = function(self, roleID, fashionID, tableKey, index)
       return nil
     end
     if index == nil or index < 0 then
-      index = (math.random)(#linesValue)
+      index = math.random(#linesValue)
     end
-    if #linesValue < index then
+    if index > #linesValue then
       LogError("BM_Lines", "character id " .. record.id .. " " .. tableKey .. " has no lines id.")
       return nil
     end
     linesValue = linesValue[index]
   end
   LogInfo("BM_Lines", "Get lines " .. tableKey .. " index " .. (index or ""))
-  return (TextManager.GetText)(linesValue)
+  return TextManager.GetText(linesValue)
 end
 
 return BM_Lines
-

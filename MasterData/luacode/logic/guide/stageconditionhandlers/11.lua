@@ -1,34 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/guide/stageconditionhandlers/11.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local func = function(conditionInfo, luaWindow)
-  -- function num : 0_0 , upvalues : _ENV
+local function func(conditionInfo, luaWindow)
   if luaWindow then
-    local dialog = (DialogManager.GetDialog)("assistbattle.choosesupportroledialog")
+    local dialog = DialogManager.GetDialog("assistbattle.choosesupportroledialog")
+    
     if dialog then
       local index = 1
-      local logicCell = (dialog._frame):GetLogicCell(index)
-      if luaWindow ~= (logicCell._cell):GetRootWindow() then
-        do
-          do
-            local tag = not logicCell or not logicCell._cell
-            if tag then
-              (dialog._frame):SetSlide(true)
-              return true
-            else
-              return false
-            end
-            do return false end
-            do return false end
-            -- DECOMPILER ERROR: 5 unprocessed JMP targets
-          end
+      local logicCell = dialog._frame:GetLogicCell(index)
+      if logicCell and logicCell._cell then
+        local tag = luaWindow == logicCell._cell:GetRootWindow()
+        if tag then
+          dialog._frame:SetSlide(true)
+          return true
+        else
+          return false
         end
       end
+    else
+      return false
     end
+  else
+    return false
   end
 end
 
 return func
-

@@ -1,28 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/localprotocols/def/action/sbattleworldpowershow.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local SBattleWorldPowerShow = dataclass("SBattleWorldPowerShow")
 SBattleWorldPowerShow.ProtocolType = 11
 SBattleWorldPowerShow.redMaxPower = 0
 SBattleWorldPowerShow.redCurrentPower = 0
 SBattleWorldPowerShow.blueMaxPower = 0
 SBattleWorldPowerShow.blueCurrentPower = 0
-SBattleWorldPowerShow.Ctor = function(self, client)
-  -- function num : 0_0
+
+function SBattleWorldPowerShow:Ctor(client)
 end
 
-SBattleWorldPowerShow.Marshal = function(self, data)
-  -- function num : 0_1
+function SBattleWorldPowerShow:Marshal(data)
   data.redMaxPower = self.redMaxPower
   data.redCurrentPower = self.redCurrentPower
   data.blueMaxPower = self.blueMaxPower
   data.blueCurrentPower = self.blueCurrentPower
 end
 
-SBattleWorldPowerShow.Unmarshal = function(self, data)
-  -- function num : 0_2
+function SBattleWorldPowerShow:Unmarshal(data)
   self.redMaxPower = data.redMaxPower
   self.redCurrentPower = data.redCurrentPower
   self.blueMaxPower = data.blueMaxPower
@@ -30,8 +23,7 @@ SBattleWorldPowerShow.Unmarshal = function(self, data)
   return true
 end
 
-SBattleWorldPowerShow.CheckVariable = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SBattleWorldPowerShow:CheckVariable()
   if type(self.redMaxPower) ~= "number" then
     LogErrorFormat("LocalProtocols", "type error!type(self.redMaxPower) = %s. number required.", type(self.redMaxPower))
     return false
@@ -52,4 +44,3 @@ SBattleWorldPowerShow.CheckVariable = function(self)
 end
 
 return SBattleWorldPowerShow
-

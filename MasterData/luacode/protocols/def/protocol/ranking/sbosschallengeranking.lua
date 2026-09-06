@@ -1,60 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/def/protocol/ranking/sbosschallengeranking.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local SBossChallengeRanking = dataclass("SBossChallengeRanking", require("framework.net.protocol"))
 SBossChallengeRanking.ProtocolType = 3502
 SBossChallengeRanking.MaxSize = 655350
 SBossChallengeRanking.id = 0
-SBossChallengeRanking.Ctor = function(self, client)
-  -- function num : 0_0 , upvalues : SBossChallengeRanking, _ENV
-  ((SBossChallengeRanking.super).Ctor)(self, client)
-  self.personRank = ((require("protocols.bean.protocol.ranking.bosschallenge")).Create)()
+
+function SBossChallengeRanking:Ctor(client)
+  SBossChallengeRanking.super.Ctor(self, client)
+  self.personRank = require("protocols.bean.protocol.ranking.bosschallenge").Create()
   self.ranking = {}
 end
 
-SBossChallengeRanking.Marshal = function(self, buffer)
-  -- function num : 0_1 , upvalues : ProtocolBufferStaticFunctions, _ENV
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.id) then
+function SBossChallengeRanking:Marshal(buffer)
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.id) then
     return false
   end
-  if not (self.personRank):Marshal(buffer) then
+  if not self.personRank:Marshal(buffer) then
     return false
   end
-  local length = (table.slen)(self.ranking)
-  if not (ProtocolBufferStaticFunctions.WriteCompactUInt32)(buffer, length) then
+  local length = table.slen(self.ranking)
+  if not ProtocolBufferStaticFunctions.WriteCompactUInt32(buffer, length) then
     return false
   end
   for i = 1, length do
-    if not ((self.ranking)[i]):Marshal(buffer) then
+    if not self.ranking[i]:Marshal(buffer) then
       return false
     end
   end
   return true
 end
 
-SBossChallengeRanking.Unmarshal = function(self, buffer)
-  -- function num : 0_2 , upvalues : ProtocolBufferStaticFunctions, _ENV
+function SBossChallengeRanking:Unmarshal(buffer)
   local ret = true
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.id = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  if not (self.personRank):Unmarshal(buffer) then
+  if not self.personRank:Unmarshal(buffer) then
     return false
   end
   local length = 0
-  ret = (ProtocolBufferStaticFunctions.ReadCompactUInt32)(buffer)
+  ret, length = ProtocolBufferStaticFunctions.ReadCompactUInt32(buffer)
   if not ret then
     return ret
   end
   for i = 1, length do
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R8 in 'UnsetPending'
-
-    (self.ranking)[i] = ((require("protocols.bean.protocol.ranking.bosschallenge")).Create)()
-    if not ((self.ranking)[i]):Unmarshal(buffer) then
+    self.ranking[i] = require("protocols.bean.protocol.ranking.bosschallenge").Create()
+    if not self.ranking[i]:Unmarshal(buffer) then
       return false
     end
   end
@@ -62,4 +53,3 @@ SBossChallengeRanking.Unmarshal = function(self, buffer)
 end
 
 return SBossChallengeRanking
-

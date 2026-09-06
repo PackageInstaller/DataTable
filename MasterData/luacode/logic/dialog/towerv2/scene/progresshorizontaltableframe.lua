@@ -1,14 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/dialog/towerv2/scene/progresshorizontaltableframe.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local UIManager = ((CS.PixelNeko).UI).UIManager
+local UIManager = CS.PixelNeko.UI.UIManager
 local LogicCell = require("framework.ui.frame.table.logiccell")
 local AutoAlignMaxSpeed = 10
 local ProgressHorizontalTableFrame = class("ProgressHorizontalTableFrame")
-ProgressHorizontalTableFrame.Ctor = function(self, container, delegate, canSlide, autoAlign, viewportName)
-  -- function num : 0_0 , upvalues : _ENV, UIManager
+
+function ProgressHorizontalTableFrame:Ctor(container, delegate, canSlide, autoAlign, viewportName)
   self._interface = self
   self._container = container
   self._delegate = delegate
@@ -17,31 +12,25 @@ ProgressHorizontalTableFrame.Ctor = function(self, container, delegate, canSlide
   self._recycleCells = {}
   self._logicCells = {}
   self._baseCells = {}
-  if (((((CS.PixelNeko).Lua).UI).FrameStaticFunctions).GetFrameChildCount)(container._uiObject) > 0 then
+  if CS.PixelNeko.Lua.UI.FrameStaticFunctions.GetFrameChildCount(container._uiObject) > 0 then
     LogErrorFormat("ProgressHorizontalTableFrame", "非法操作: container [%s] 已经创建过frame Viewport", container._uiObject)
   end
-  self._viewport = (UIManager.CreateLuaWindow)("ui/widgets.assetbundle", viewportName, container._uiObject)
-  ;
-  (((((CS.PixelNeko).Lua).UI).FrameStaticFunctions).AddFrameChild)(container._uiObject, (self._viewport)._uiObject)
-  self._viewcontainer = (UIManager.GetChildLuaWindow)((self._viewport)._uiObject, "_Containter")
+  self._viewport = UIManager.CreateLuaWindow("ui/widgets.assetbundle", viewportName, container._uiObject)
+  CS.PixelNeko.Lua.UI.FrameStaticFunctions.AddFrameChild(container._uiObject, self._viewport._uiObject)
+  self._viewcontainer = UIManager.GetChildLuaWindow(self._viewport._uiObject, "_Containter")
   if self._canSlide then
-    self._beginDragHandler = (self._viewport):Subscribe_BeginDragEvent(self.OnBeginDrag, self)
-    self._dragHandler = (self._viewport):Subscribe_DragEvent(self.OnDrag, self)
-    self._endDragHandler = (self._viewport):Subscribe_EndDragEvent(self.OnEndDrag, self)
-    self._cancelDragHandler = (self._viewport):Subscribe_CancelDragEvent(self.OnEndDrag, self)
+    self._beginDragHandler = self._viewport:Subscribe_BeginDragEvent(self.OnBeginDrag, self)
+    self._dragHandler = self._viewport:Subscribe_DragEvent(self.OnDrag, self)
+    self._endDragHandler = self._viewport:Subscribe_EndDragEvent(self.OnEndDrag, self)
+    self._cancelDragHandler = self._viewport:Subscribe_CancelDragEvent(self.OnEndDrag, self)
   end
-  ;
-  (self._viewport):Subscribe_PointerDownEvent(self.OnPointerDown, self)
-  ;
-  (self._viewport):Subscribe_PointerUpEvent(self.OnPointerUp, self)
-  ;
-  (self._viewport):Subscribe_PointerCancelEvent(self.OnPointerUp, self)
-  ;
-  (LuaNotificationCenter.AddObserver)(self, self.OnLateUpdate, Common.n_LateUpdate, nil)
+  self._viewport:Subscribe_PointerDownEvent(self.OnPointerDown, self)
+  self._viewport:Subscribe_PointerUpEvent(self.OnPointerUp, self)
+  self._viewport:Subscribe_PointerCancelEvent(self.OnPointerUp, self)
+  LuaNotificationCenter.AddObserver(self, self.OnLateUpdate, Common.n_LateUpdate, nil)
   local _ = 0
-  -- DECOMPILER ERROR at PC105: Overwrote pending register: R6 in 'AssignReg'
-
-  self._upMargin = (((((CS.PixelNeko).Lua).UI).FrameStaticFunctions).GetMargin)(container._uiObject)
+  _, _, self._viewcontainer_sy, self._viewcontainer_soy = self._viewcontainer:GetSize()
+  self._upMargin, self._downMargin, self._leftMargin, self._rightMargin = CS.PixelNeko.Lua.UI.FrameStaticFunctions.GetMargin(container._uiObject)
   self._currentPosition = 0
   self._dragDelta = 0
   self._totalLength = 0
@@ -67,41 +56,34 @@ ProgressHorizontalTableFrame.Ctor = function(self, container, delegate, canSlide
   self._moveToAssignedPosDes = nil
 end
 
-ProgressHorizontalTableFrame.Destroy = function(self)
-  -- function num : 0_1 , upvalues : _ENV, UIManager
+function ProgressHorizontalTableFrame:Destroy()
   if self._baseCells then
-    for i,cell in pairs(self._baseCells) do
-      (UIManager.Destroy)(cell._uiObject)
+    for i, cell in pairs(self._baseCells) do
+      UIManager.Destroy(cell._uiObject)
     end
   end
-  do
-    for i,logicCell in ipairs(self._logicCells) do
-      if logicCell._cell then
-        self:RecycleCell(logicCell)
-      end
+  for i, logicCell in ipairs(self._logicCells) do
+    if logicCell._cell then
+      self:RecycleCell(logicCell)
     end
-    self._logicCells = {}
-    self._currentPosition = 0
-    self._totalLength = 0
-    for k,cells in pairs(self._recycleCells) do
-      for i,cell in ipairs(cells) do
-        cell:Destroy()
-        cell:RootWindowDestroy()
-      end
-    end
-    self._recycleCells = {}
-    ;
-    (((((CS.PixelNeko).Lua).UI).FrameStaticFunctions).RemoveFrameChild)((self._container)._uiObject, (self._viewport)._uiObject)
-    ;
-    ((((CS.PixelNeko).UI).UIManager).Destroy)((self._viewport)._uiObject)
-    ;
-    (LuaNotificationCenter.RemoveObserver)(self)
   end
+  self._logicCells = {}
+  self._currentPosition = 0
+  self._totalLength = 0
+  for k, cells in pairs(self._recycleCells) do
+    for i, cell in ipairs(cells) do
+      cell:Destroy()
+      cell:RootWindowDestroy()
+    end
+  end
+  self._recycleCells = {}
+  CS.PixelNeko.Lua.UI.FrameStaticFunctions.RemoveFrameChild(self._container._uiObject, self._viewport._uiObject)
+  CS.PixelNeko.UI.UIManager.Destroy(self._viewport._uiObject)
+  LuaNotificationCenter.RemoveObserver(self)
 end
 
-ProgressHorizontalTableFrame.ReloadAllCell = function(self)
-  -- function num : 0_2 , upvalues : _ENV, LogicCell, UIManager
-  for i,logicCell in ipairs(self._logicCells) do
+function ProgressHorizontalTableFrame:ReloadAllCell()
+  for i, logicCell in ipairs(self._logicCells) do
     if logicCell._cell then
       self:RecycleCell(logicCell)
     end
@@ -110,128 +92,91 @@ ProgressHorizontalTableFrame.ReloadAllCell = function(self)
   self._currentPosition = -self._leftMargin
   self._totalLength = 0
   self._needUpdate = true
-  local cellNums = (self._delegate):NumberOfCell(self._interface)
+  local cellNums = self._delegate:NumberOfCell(self._interface)
   for i = 1, cellNums do
-    local logicCell = (LogicCell.Create)()
-    logicCell._dialogName = (self._delegate):CellAtIndex(self._interface, i)
-    do
-      do
-        if not (self._baseCells)[logicCell._dialogName] then
-          local dialogDefine = require("logic.dialog." .. logicCell._dialogName)
-          -- DECOMPILER ERROR at PC55: Confused about usage of register: R8 in 'UnsetPending'
-
-          ;
-          (self._baseCells)[logicCell._dialogName] = (UIManager.CreateLuaWindow)(dialogDefine.AssetBundleName .. ".assetbundle", dialogDefine.AssetName, (self._viewcontainer)._uiObject)
-          ;
-          ((self._baseCells)[logicCell._dialogName]):SetPosition(0, -10000, 0, 0)
-        end
-        logicCell._data = (self._delegate):DataAtIndex(self._interface, i)
-        -- DECOMPILER ERROR at PC72: Confused about usage of register: R7 in 'UnsetPending'
-
-        ;
-        (self._logicCells)[i] = logicCell
-        -- DECOMPILER ERROR at PC73: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    local logicCell = LogicCell.Create()
+    logicCell._dialogName = self._delegate:CellAtIndex(self._interface, i)
+    if not self._baseCells[logicCell._dialogName] then
+      local dialogDefine = require("logic.dialog." .. logicCell._dialogName)
+      self._baseCells[logicCell._dialogName] = UIManager.CreateLuaWindow(dialogDefine.AssetBundleName .. ".assetbundle", dialogDefine.AssetName, self._viewcontainer._uiObject)
+      self._baseCells[logicCell._dialogName]:SetPosition(0, -10000, 0, 0)
     end
+    logicCell._data = self._delegate:DataAtIndex(self._interface, i)
+    self._logicCells[i] = logicCell
   end
   local tempSize = {}
-  for i,logicCell in ipairs(self._logicCells) do
-    if not (self._delegate).ShouldLengthChange or not (self._delegate):ShouldLengthChange(self._interface, i) then
+  for i, logicCell in ipairs(self._logicCells) do
+    if not self._delegate.ShouldLengthChange or not self._delegate:ShouldLengthChange(self._interface, i) then
       if not tempSize[logicCell._dialogName] then
         self:GetCellDialog(logicCell)
-        -- DECOMPILER ERROR at PC99: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (logicCell._cell)._delegate = self._delegate
-        -- DECOMPILER ERROR at PC102: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (logicCell._cell)._cellData = logicCell._data
-        ;
-        (logicCell._cell):RefreshCell(logicCell._data)
+        logicCell._cell._delegate = self._delegate
+        logicCell._cell._cellData = logicCell._data
+        logicCell._cell:RefreshCell(logicCell._data)
         local _ = 0
-        tempSize[logicCell._dialogName] = ((logicCell._cell):GetRootWindow()):GetRectSize()
+        tempSize[logicCell._dialogName], _ = logicCell._cell:GetRootWindow():GetRectSize()
         self:RecycleCell(logicCell)
       end
-      do
-        -- DECOMPILER ERROR at PC119: Overwrote pending register: R8 in 'AssignReg'
-
-        logicCell._size = tempSize[_]
-        logicCell._pos = self._totalLength
-        self._totalLength = self._totalLength + logicCell._size
-        self:GetCellDialog(logicCell)
-        -- DECOMPILER ERROR at PC134: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (logicCell._cell)._delegate = self._delegate
-        -- DECOMPILER ERROR at PC137: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (logicCell._cell)._cellData = logicCell._data
-        ;
-        (logicCell._cell):RefreshCell(logicCell._data)
-        do
-          local w, h = ((logicCell._cell):GetRootWindow()):GetRectSize()
-          self:RecycleCell(logicCell)
-          logicCell._size = w
-          logicCell._pos = self._totalLength
-          self._totalLength = self._totalLength + logicCell._size
-          -- DECOMPILER ERROR at PC157: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC157: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC157: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      logicCell._size = tempSize[logicCell._dialogName]
+      logicCell._pos = self._totalLength
+      self._totalLength = self._totalLength + logicCell._size
+    else
+      self:GetCellDialog(logicCell)
+      logicCell._cell._delegate = self._delegate
+      logicCell._cell._cellData = logicCell._data
+      logicCell._cell:RefreshCell(logicCell._data)
+      local w, h = logicCell._cell:GetRootWindow():GetRectSize()
+      self:RecycleCell(logicCell)
+      logicCell._size = w
+      logicCell._pos = self._totalLength
+      self._totalLength = self._totalLength + logicCell._size
     end
   end
   self:UpdateView(0)
 end
 
-ProgressHorizontalTableFrame.MoveToLeft = function(self, isAnimate)
-  -- function num : 0_3 , upvalues : _ENV
+function ProgressHorizontalTableFrame:MoveToLeft(isAnimate)
   self._needUpdate = true
   if isAnimate then
-    local first = {pos = self._currentPosition}
-    local last = {pos = 0 - self._leftMargin}
-    self._moveLeftTask = (Tween.new)(0.5, first, last, "outQuad")
+    local first = {
+      pos = self._currentPosition
+    }
+    local last = {
+      pos = 0 - self._leftMargin
+    }
+    self._moveLeftTask = Tween.new(0.5, first, last, "outQuad")
   else
-    do
-      self._currentPosition = 0 - self._leftMargin
-    end
+    self._currentPosition = 0 - self._leftMargin
   end
 end
 
-ProgressHorizontalTableFrame.MoveToRight = function(self, isAnimate)
-  -- function num : 0_4 , upvalues : _ENV
+function ProgressHorizontalTableFrame:MoveToRight(isAnimate)
   self._needUpdate = true
-  local width, height = (self._viewport):GetRectSize()
+  local width, height = self._viewport:GetRectSize()
   if width <= self._totalLength then
     if isAnimate then
-      local first = {pos = self._currentPosition}
-      local last = {pos = self._totalLength - width + self._rightMargin}
-      self._moveRightTask = (Tween.new)(0.5, first, last, "outQuad")
+      local first = {
+        pos = self._currentPosition
+      }
+      local last = {
+        pos = self._totalLength - width + self._rightMargin
+      }
+      self._moveRightTask = Tween.new(0.5, first, last, "outQuad")
     else
-      do
-        self._currentPosition = self._totalLength - width + self._rightMargin
-      end
+      self._currentPosition = self._totalLength - width + self._rightMargin
     end
   end
 end
 
-ProgressHorizontalTableFrame.MoveLeftToIndex = function(self, desIndex, isAnimate)
-  -- function num : 0_5 , upvalues : _ENV
+function ProgressHorizontalTableFrame:MoveLeftToIndex(desIndex, isAnimate)
   self._needUpdate = true
   self._moveRightIndexTask = nil
   self._slideInertiaTask = nil
   if self._moveLeftIndexTask then
     self._currentPosition = self._moveLeftIndexDes
   end
-  local destination = ((self._logicCells)[desIndex])._pos
-  local width, height = (self._viewport):GetRectSize()
-  if self._totalLength - width + self._rightMargin < destination then
+  local destination = self._logicCells[desIndex]._pos
+  local width, height = self._viewport:GetRectSize()
+  if destination > self._totalLength - width + self._rightMargin then
     destination = self._totalLength - width + self._rightMargin
   else
     destination = destination + self._leftMargin
@@ -241,43 +186,42 @@ ProgressHorizontalTableFrame.MoveLeftToIndex = function(self, desIndex, isAnimat
   end
   self._moveLeftIndexDes = destination
   if isAnimate then
-    local first = {pos = self._currentPosition}
+    local first = {
+      pos = self._currentPosition
+    }
     local last = {pos = destination}
     local time, easing = 0.2, "linar"
-    if (self._delegate).MoveLeftTweenParamAtIndex then
-      time = (self._delegate):MoveLeftTweenParamAtIndex(self._interface)
+    if self._delegate.MoveLeftTweenParamAtIndex then
+      time, easing = self._delegate:MoveLeftTweenParamAtIndex(self._interface)
     end
-    self._moveLeftIndexTask = (Tween.new)(time, first, last, easing)
+    self._moveLeftIndexTask = Tween.new(time, first, last, easing)
   else
-    do
-      self._currentPosition = destination
-    end
+    self._currentPosition = destination
   end
 end
 
-ProgressHorizontalTableFrame.MoveIndexToCentreInTime = function(self, desIndex, time)
-  -- function num : 0_6 , upvalues : _ENV
+function ProgressHorizontalTableFrame:MoveIndexToCentreInTime(desIndex, time)
   self._needUpdate = true
   self._moveRightIndexTask = nil
   self._slideInertiaTask = nil
   if self._moveLeftIndexTask then
     self._currentPosition = self._moveLeftIndexDes
   end
-  local destination = ((self._logicCells)[desIndex])._pos
-  local logicCell = (self._logicCells)[desIndex]
+  local destination = self._logicCells[desIndex]._pos
+  local logicCell = self._logicCells[desIndex]
   local isTemp = false
-  if not ((self._logicCells)[desIndex])._cell then
+  if not self._logicCells[desIndex]._cell then
     isTemp = true
     self:GetCellDialog(logicCell)
   end
-  local logicCellWidth = ((logicCell._cell):GetRootWindow()):GetRectSize()
+  local logicCellWidth = logicCell._cell:GetRootWindow():GetRectSize()
   if isTemp then
     self:RecycleCell(logicCell)
   end
-  local width, height = (self._viewport):GetRectSize()
+  local width, height = self._viewport:GetRectSize()
   local halfShowPos = width / 2
   destination = destination - halfShowPos + logicCellWidth / 2
-  if self._totalLength - width + self._rightMargin < destination then
+  if destination > self._totalLength - width + self._rightMargin then
     destination = self._totalLength - width + self._rightMargin
   else
     destination = destination + self._leftMargin
@@ -286,22 +230,23 @@ ProgressHorizontalTableFrame.MoveIndexToCentreInTime = function(self, desIndex, 
     destination = 0 - self._leftMargin
   end
   self._moveLeftIndexDes = destination
-  local first = {pos = self._currentPosition}
+  local first = {
+    pos = self._currentPosition
+  }
   local last = {pos = destination}
-  self._moveLeftIndexTask = (Tween.new)(time, first, last, "linear")
+  self._moveLeftIndexTask = Tween.new(time, first, last, "linear")
 end
 
-ProgressHorizontalTableFrame.MoveRightToIndex = function(self, desIndex, isAnimate)
-  -- function num : 0_7 , upvalues : _ENV
+function ProgressHorizontalTableFrame:MoveRightToIndex(desIndex, isAnimate)
   self._needUpdate = true
   self._moveLeftIndexTask = nil
   self._slideInertiaTask = nil
   if self._moveRightIndexTask then
     self._currentPosition = self._moveRightIndexDes
   end
-  local width, height = (self._viewport):GetRectSize()
-  local destination = ((self._logicCells)[desIndex])._pos + ((self._logicCells)[desIndex])._size - width
-  if self._totalLength - width + self._rightMargin < destination then
+  local width, height = self._viewport:GetRectSize()
+  local destination = self._logicCells[desIndex]._pos + self._logicCells[desIndex]._size - width
+  if destination > self._totalLength - width + self._rightMargin then
     destination = self._totalLength - width + self._rightMargin
   else
     destination = destination - self._rightMargin
@@ -311,419 +256,272 @@ ProgressHorizontalTableFrame.MoveRightToIndex = function(self, desIndex, isAnima
   end
   self._moveRightIndexDes = destination
   if isAnimate then
-    local first = {pos = self._currentPosition}
+    local first = {
+      pos = self._currentPosition
+    }
     local last = {pos = destination}
-    self._moveRightIndexTask = (Tween.new)(0.2, first, last, "linear")
+    self._moveRightIndexTask = Tween.new(0.2, first, last, "linear")
   else
-    do
-      self._currentPosition = destination
-    end
+    self._currentPosition = destination
   end
 end
 
-ProgressHorizontalTableFrame.MoveToAssignedPos = function(self, pos, isAnimate)
-  -- function num : 0_8 , upvalues : _ENV
+function ProgressHorizontalTableFrame:MoveToAssignedPos(pos, isAnimate)
   self._needUpdate = true
-  self._moveToAssignedPosDes = (math.max)(0, pos - 1) * ((self._logicCells)[self._leftIndex])._size
+  self._moveToAssignedPosDes = math.max(0, pos - 1) * self._logicCells[self._leftIndex]._size
   if isAnimate then
-    local first = {pos = self._currentPosition}
-    local last = {pos = self._moveToAssignedPosDes}
+    local first = {
+      pos = self._currentPosition
+    }
+    local last = {
+      pos = self._moveToAssignedPosDes
+    }
     local time, easing = 0.2, "linear"
-    if (self._delegate).MoveToAssignedPosTweenParam then
-      time = (self._delegate):MoveToAssignedPosTweenParam(self._interface)
+    if self._delegate.MoveToAssignedPosTweenParam then
+      time, easing = self._delegate:MoveToAssignedPosTweenParam(self._interface)
     end
-    self._moveToAssignedPosTask = (Tween.new)(time, first, last, easing)
+    self._moveToAssignedPosTask = Tween.new(time, first, last, easing)
   else
-    do
-      self._currentPosition = self._moveToAssignedPosDes
-    end
+    self._currentPosition = self._moveToAssignedPosDes
   end
 end
 
-ProgressHorizontalTableFrame.GetTotalLength = function(self)
-  -- function num : 0_9
+function ProgressHorizontalTableFrame:GetTotalLength()
   return self._totalLength
 end
 
-ProgressHorizontalTableFrame.GetCurrentPosition = function(self)
-  -- function num : 0_10
+function ProgressHorizontalTableFrame:GetCurrentPosition()
   return self._currentPosition
 end
 
-ProgressHorizontalTableFrame.ReloadCellsAtIndex = function(self, indexList, isAnimate)
-  -- function num : 0_11 , upvalues : _ENV, UIManager
+function ProgressHorizontalTableFrame:ReloadCellsAtIndex(indexList, isAnimate)
   if type(indexList) ~= "table" then
     LogError("ProgressHorizontalTableFrame", "please input a table value")
-    return 
+    return
   end
   self._needUpdate = true
-  local cellNums = (self._delegate):NumberOfCell(self._interface)
-  for _,index in ipairs(indexList) do
-    if not index or cellNums < index then
+  local cellNums = self._delegate:NumberOfCell(self._interface)
+  for _, index in ipairs(indexList) do
+    if not index or index > cellNums then
       LogErrorFormat("ProgressHorizontalTableFrame", "the index %d is out of range", index)
-      return 
+      return
     end
-    local logicCell = (self._logicCells)[index]
-    logicCell._dialogName = (self._delegate):CellAtIndex(self._interface, index)
-    do
-      if not (self._baseCells)[logicCell._dialogName] then
-        local dialogDefine = require("logic.dialog." .. logicCell._dialogName)
-        -- DECOMPILER ERROR at PC57: Confused about usage of register: R11 in 'UnsetPending'
-
-        ;
-        (self._baseCells)[logicCell._dialogName] = (UIManager.CreateLuaWindow)(dialogDefine.AssetBundleName .. ".assetbundle", dialogDefine.AssetName, (self._viewcontainer)._uiObject)
-        ;
-        ((self._baseCells)[logicCell._dialogName]):SetPosition(0, -10000, 0, 0)
-      end
-      logicCell._data = (self._delegate):DataAtIndex(self._interface, index)
-      self:GetCellDialog(logicCell)
-      -- DECOMPILER ERROR at PC78: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      (logicCell._cell)._delegate = self._delegate
-      -- DECOMPILER ERROR at PC81: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      (logicCell._cell)._cellData = logicCell._data
-      ;
-      (logicCell._cell):RefreshCell(logicCell._data)
-      local w = ((logicCell._cell):GetRootWindow()):GetRectSize()
-      self:RecycleCell(logicCell)
-      do
-        local delta = w - logicCell._size
-        logicCell._size = w
-        -- DECOMPILER ERROR at PC98: Confused about usage of register: R12 in 'UnsetPending'
-
-        ;
-        (self._logicCells)[index] = logicCell
-        for i = index + 1, cellNums do
-          -- DECOMPILER ERROR at PC109: Confused about usage of register: R16 in 'UnsetPending'
-
-          ((self._logicCells)[i])._pos = ((self._logicCells)[i])._pos + delta
-        end
-        self._totalLength = self._totalLength + delta
-        self._needUpdate = true
-        -- DECOMPILER ERROR at PC115: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    local logicCell = self._logicCells[index]
+    logicCell._dialogName = self._delegate:CellAtIndex(self._interface, index)
+    if not self._baseCells[logicCell._dialogName] then
+      local dialogDefine = require("logic.dialog." .. logicCell._dialogName)
+      self._baseCells[logicCell._dialogName] = UIManager.CreateLuaWindow(dialogDefine.AssetBundleName .. ".assetbundle", dialogDefine.AssetName, self._viewcontainer._uiObject)
+      self._baseCells[logicCell._dialogName]:SetPosition(0, -10000, 0, 0)
     end
+    logicCell._data = self._delegate:DataAtIndex(self._interface, index)
+    self:GetCellDialog(logicCell)
+    logicCell._cell._delegate = self._delegate
+    logicCell._cell._cellData = logicCell._data
+    logicCell._cell:RefreshCell(logicCell._data)
+    local w = logicCell._cell:GetRootWindow():GetRectSize()
+    self:RecycleCell(logicCell)
+    local delta = w - logicCell._size
+    logicCell._size = w
+    self._logicCells[index] = logicCell
+    for i = index + 1, cellNums do
+      self._logicCells[i]._pos = self._logicCells[i]._pos + delta
+    end
+    self._totalLength = self._totalLength + delta
+    self._needUpdate = true
   end
 end
 
-ProgressHorizontalTableFrame.RemoveCellsAtIndex = function(self, indexList, isAnimate)
-  -- function num : 0_12 , upvalues : _ENV
+function ProgressHorizontalTableFrame:RemoveCellsAtIndex(indexList, isAnimate)
   if type(indexList) ~= "table" then
     LogError("ProgressHorizontalTableFrame", "please input a table value")
-    return 
+    return
   end
   self._needUpdate = true
   local cellNums = #self._logicCells
-  local width, height = (self._viewport):GetRectSize()
+  local width, height = self._viewport:GetRectSize()
   local currentPosition = self._currentPosition
-  for _,index in ipairs(indexList) do
+  for _, index in ipairs(indexList) do
     cellNums = #self._logicCells
-    if cellNums < index then
+    if index > cellNums then
       LogErrorFormat("ProgressHorizontalTableFrame", "Wrong index %d", index)
-      return 
+      return
     end
-    local gap = ((self._logicCells)[index])._size
-    local pos = ((self._logicCells)[index])._pos
-    self:RecycleCell((self._logicCells)[index])
+    local gap = self._logicCells[index]._size
+    local pos = self._logicCells[index]._pos
+    self:RecycleCell(self._logicCells[index])
     if #self._insertTask ~= 0 then
-      for i,task in pairs(self._insertTask) do
-        local logicCell = (self._logicCells)[i + self._insertIndex - 1]
-        logicCell._pos = (self._insertDes)[i]
-        -- DECOMPILER ERROR at PC58: Confused about usage of register: R20 in 'UnsetPending'
-
-        ;
-        (self._insertDes)[i] = nil
-        -- DECOMPILER ERROR at PC60: Confused about usage of register: R20 in 'UnsetPending'
-
-        ;
-        (self._insertTask)[i] = nil
+      for i, task in pairs(self._insertTask) do
+        local logicCell = self._logicCells[i + self._insertIndex - 1]
+        logicCell._pos = self._insertDes[i]
+        self._insertDes[i] = nil
+        self._insertTask[i] = nil
       end
     end
-    do
-      if #self._removeTask ~= 0 then
-        for i,task in pairs(self._removeTask) do
-          -- DECOMPILER ERROR at PC78: Confused about usage of register: R19 in 'UnsetPending'
-
-          ((self._logicCells)[i + self._removeIndex - 1])._pos = (self._removeDes)[i]
-          -- DECOMPILER ERROR at PC80: Confused about usage of register: R19 in 'UnsetPending'
-
-          ;
-          (self._removeDes)[i] = nil
-          -- DECOMPILER ERROR at PC82: Confused about usage of register: R19 in 'UnsetPending'
-
-          ;
-          (self._removeTask)[i] = nil
-        end
-      end
-      do
-        if isAnimate and currentPosition < pos + gap and pos < currentPosition + width then
-          self._removeTask = {}
-          self._removeIndex = index
-          for i = index + 1, cellNums do
-            -- DECOMPILER ERROR at PC106: Confused about usage of register: R18 in 'UnsetPending'
-
-            (self._removeDes)[i - index] = ((self._logicCells)[i])._pos - gap
-            local first = {pos = ((self._logicCells)[i])._pos}
-            local last = {pos = (self._removeDes)[i - index]}
-            -- DECOMPILER ERROR at PC126: Confused about usage of register: R20 in 'UnsetPending'
-
-            ;
-            (self._removeTask)[i - index] = (Tween.new)(0.1, first, last, "linear")
-          end
-        else
-          do
-            for i = index + 1, cellNums do
-              -- DECOMPILER ERROR at PC139: Confused about usage of register: R18 in 'UnsetPending'
-
-              ((self._logicCells)[i])._pos = ((self._logicCells)[i])._pos - gap
-            end
-            do
-              do
-                ;
-                (table.remove)(self._logicCells, index)
-                self._totalLength = self._totalLength - gap
-                -- DECOMPILER ERROR at PC149: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC149: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC149: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                -- DECOMPILER ERROR at PC149: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC149: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC149: LeaveBlock: unexpected jumping out DO_STMT
-
-              end
-            end
-          end
-        end
+    if #self._removeTask ~= 0 then
+      for i, task in pairs(self._removeTask) do
+        self._logicCells[i + self._removeIndex - 1]._pos = self._removeDes[i]
+        self._removeDes[i] = nil
+        self._removeTask[i] = nil
       end
     end
+    if isAnimate and currentPosition < pos + gap and pos < currentPosition + width then
+      self._removeTask = {}
+      self._removeIndex = index
+      for i = index + 1, cellNums do
+        self._removeDes[i - index] = self._logicCells[i]._pos - gap
+        local first = {
+          pos = self._logicCells[i]._pos
+        }
+        local last = {
+          pos = self._removeDes[i - index]
+        }
+        self._removeTask[i - index] = Tween.new(0.1, first, last, "linear")
+      end
+    else
+      for i = index + 1, cellNums do
+        self._logicCells[i]._pos = self._logicCells[i]._pos - gap
+      end
+    end
+    table.remove(self._logicCells, index)
+    self._totalLength = self._totalLength - gap
   end
 end
 
-ProgressHorizontalTableFrame.InsertCellsAtIndex = function(self, indexList, isAnimate)
-  -- function num : 0_13 , upvalues : _ENV, LogicCell, UIManager
+function ProgressHorizontalTableFrame:InsertCellsAtIndex(indexList, isAnimate)
   if indexList and type(indexList) ~= "table" then
     LogError("ProgressHorizontalTableFrame", "please input a table value")
-    return 
+    return
   end
   local cellNums = #self._logicCells
   self._needUpdate = true
   local lastinsert = false
   if not indexList or #indexList == 0 then
     indexList = {}
-    if cellNums + 1 <= (self._delegate):NumberOfCell(self._interface) then
-      for i = cellNums + 1, (self._delegate):NumberOfCell(self._interface) do
-        (table.insert)(indexList, i)
+    if self._delegate:NumberOfCell(self._interface) >= cellNums + 1 then
+      for i = cellNums + 1, self._delegate:NumberOfCell(self._interface) do
+        table.insert(indexList, i)
       end
       lastinsert = true
     else
       LogError("ProgressHorizontalTableFrame", "no additional data")
-      return 
+      return
     end
   end
-  for _,index in ipairs(indexList) do
+  for _, index in ipairs(indexList) do
     cellNums = #self._logicCells
-    if not index or cellNums + 1 < index and not lastinsert then
+    if not index or index > cellNums + 1 and not lastinsert then
       LogErrorFormat("ProgressHorizontalTableFrame", "Wrong index %d", index)
-      return 
+      return
     end
-    local logicCell = (LogicCell.Create)()
-    logicCell._dialogName = (self._delegate):CellAtIndex(self._interface, index)
-    do
-      if not (self._baseCells)[logicCell._dialogName] then
-        local dialogDefine = require("logic.dialog." .. logicCell._dialogName)
-        -- DECOMPILER ERROR at PC97: Confused about usage of register: R12 in 'UnsetPending'
-
-        ;
-        (self._baseCells)[logicCell._dialogName] = (UIManager.CreateLuaWindow)(dialogDefine.AssetBundleName .. ".assetbundle", dialogDefine.AssetName, (self._viewcontainer)._uiObject)
-        ;
-        ((self._baseCells)[logicCell._dialogName]):SetPosition(0, -10000, 0, 0)
-      end
-      logicCell._data = (self._delegate):DataAtIndex(self._interface, index)
-      local tempSize = {}
-      local width, height = (self._viewport):GetRectSize()
-      if not (self._delegate).ShouldLengthChange or not (self._delegate):ShouldLengthChange(self._interface, i) then
-        if not tempSize[logicCell._dialogName] then
-          self:GetCellDialog(logicCell)
-          -- DECOMPILER ERROR at PC137: Confused about usage of register: R14 in 'UnsetPending'
-
-          ;
-          (logicCell._cell)._delegate = self._delegate
-          -- DECOMPILER ERROR at PC140: Confused about usage of register: R14 in 'UnsetPending'
-
-          ;
-          (logicCell._cell)._cellData = logicCell._data
-          ;
-          (logicCell._cell):RefreshCell(logicCell._data)
-          tempSize[logicCell._dialogName] = ((logicCell._cell):GetRootWindow()):GetRectSize()
-          self:RecycleCell(logicCell)
-        end
-        logicCell._size = tempSize[logicCell._dialogName]
-      else
+    local logicCell = LogicCell.Create()
+    logicCell._dialogName = self._delegate:CellAtIndex(self._interface, index)
+    if not self._baseCells[logicCell._dialogName] then
+      local dialogDefine = require("logic.dialog." .. logicCell._dialogName)
+      self._baseCells[logicCell._dialogName] = UIManager.CreateLuaWindow(dialogDefine.AssetBundleName .. ".assetbundle", dialogDefine.AssetName, self._viewcontainer._uiObject)
+      self._baseCells[logicCell._dialogName]:SetPosition(0, -10000, 0, 0)
+    end
+    logicCell._data = self._delegate:DataAtIndex(self._interface, index)
+    local tempSize = {}
+    local width, height = self._viewport:GetRectSize()
+    if not self._delegate.ShouldLengthChange or not self._delegate:ShouldLengthChange(self._interface, i) then
+      if not tempSize[logicCell._dialogName] then
         self:GetCellDialog(logicCell)
-        -- DECOMPILER ERROR at PC164: Confused about usage of register: R14 in 'UnsetPending'
-
-        ;
-        (logicCell._cell)._delegate = self._delegate
-        -- DECOMPILER ERROR at PC167: Confused about usage of register: R14 in 'UnsetPending'
-
-        ;
-        (logicCell._cell)._cellData = logicCell._data
-        ;
-        (logicCell._cell):RefreshCell(logicCell._data)
-        local w, h = ((logicCell._cell):GetRootWindow()):GetRectSize()
+        logicCell._cell._delegate = self._delegate
+        logicCell._cell._cellData = logicCell._data
+        logicCell._cell:RefreshCell(logicCell._data)
+        tempSize[logicCell._dialogName] = logicCell._cell:GetRootWindow():GetRectSize()
         self:RecycleCell(logicCell)
-        logicCell._size = w
       end
-      do
-        if #self._removeTask ~= 0 then
-          for i,task in pairs(self._removeTask) do
-            -- DECOMPILER ERROR at PC196: Confused about usage of register: R19 in 'UnsetPending'
-
-            ((self._logicCells)[i + self._removeIndex - 1])._pos = (self._removeDes)[i]
-            -- DECOMPILER ERROR at PC198: Confused about usage of register: R19 in 'UnsetPending'
-
-            ;
-            (self._removeDes)[i] = nil
-            -- DECOMPILER ERROR at PC200: Confused about usage of register: R19 in 'UnsetPending'
-
-            ;
-            (self._removeTask)[i] = nil
-          end
-        end
-        do
-          if #self._insertTask ~= 0 then
-            for i,task in pairs(self._insertTask) do
-              local logicCell = (self._logicCells)[i + self._insertIndex - 1]
-              logicCell._pos = (self._insertDes)[i]
-              -- DECOMPILER ERROR at PC220: Confused about usage of register: R20 in 'UnsetPending'
-
-              ;
-              (self._insertDes)[i] = nil
-              -- DECOMPILER ERROR at PC222: Confused about usage of register: R20 in 'UnsetPending'
-
-              ;
-              (self._insertTask)[i] = nil
-            end
-          end
-          do
-            ;
-            (table.insert)(self._logicCells, index, logicCell)
-            cellNums = #self._logicCells
-            if isAnimate then
-              self._insertTask = {}
-              self._insertIndex = index
-              for i = index + 1, cellNums do
-                -- DECOMPILER ERROR at PC250: Confused about usage of register: R18 in 'UnsetPending'
-
-                (self._insertDes)[i - index + 1] = ((self._logicCells)[i])._pos + logicCell._size
-                local first = {pos = ((self._logicCells)[i])._pos}
-                local last = {pos = (self._insertDes)[i - index + 1]}
-                -- DECOMPILER ERROR at PC272: Confused about usage of register: R20 in 'UnsetPending'
-
-                ;
-                (self._insertTask)[i - index + 1] = (Tween.new)(0.2, first, last, "linear")
-              end
-              -- DECOMPILER ERROR at PC287: Confused about usage of register: R14 in 'UnsetPending'
-
-              if index - 1 > 0 then
-                (self._insertDes)[1] = ((self._logicCells)[index - 1])._pos + ((self._logicCells)[index - 1])._size
-                local first = {pos = ((self._logicCells)[index - 1])._pos}
-                local last = {pos = (self._insertDes)[1]}
-                -- DECOMPILER ERROR at PC306: Confused about usage of register: R16 in 'UnsetPending'
-
-                ;
-                (self._insertTask)[1] = (Tween.new)(0.2, first, last, "linear")
-              else
-                do
-                  -- DECOMPILER ERROR at PC309: Confused about usage of register: R14 in 'UnsetPending'
-
-                  ;
-                  (self._insertDes)[1] = 0
-                  local first = {pos = -logicCell._size}
-                  do
-                    do
-                      local last = {pos = (self._insertDes)[1]}
-                      -- DECOMPILER ERROR at PC326: Confused about usage of register: R16 in 'UnsetPending'
-
-                      ;
-                      (self._insertTask)[1] = (Tween.new)(0.2, first, last, "linear")
-                      for i = index + 1, cellNums do
-                        -- DECOMPILER ERROR at PC339: Confused about usage of register: R18 in 'UnsetPending'
-
-                        ((self._logicCells)[i])._pos = ((self._logicCells)[i])._pos + logicCell._size
-                      end
-                      -- DECOMPILER ERROR at PC355: Confused about usage of register: R14 in 'UnsetPending'
-
-                      if index - 1 > 0 then
-                        ((self._logicCells)[index])._pos = ((self._logicCells)[index - 1])._pos + ((self._logicCells)[index - 1])._size
-                      else
-                        -- DECOMPILER ERROR at PC359: Confused about usage of register: R14 in 'UnsetPending'
-
-                        ;
-                        ((self._logicCells)[index])._pos = 0
-                      end
-                      self._totalLength = self._totalLength + logicCell._size
-                      -- DECOMPILER ERROR at PC364: LeaveBlock: unexpected jumping out DO_STMT
-
-                      -- DECOMPILER ERROR at PC364: LeaveBlock: unexpected jumping out DO_STMT
-
-                      -- DECOMPILER ERROR at PC364: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                      -- DECOMPILER ERROR at PC364: LeaveBlock: unexpected jumping out IF_STMT
-
-                      -- DECOMPILER ERROR at PC364: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                      -- DECOMPILER ERROR at PC364: LeaveBlock: unexpected jumping out IF_STMT
-
-                      -- DECOMPILER ERROR at PC364: LeaveBlock: unexpected jumping out DO_STMT
-
-                      -- DECOMPILER ERROR at PC364: LeaveBlock: unexpected jumping out DO_STMT
-
-                      -- DECOMPILER ERROR at PC364: LeaveBlock: unexpected jumping out DO_STMT
-
-                      -- DECOMPILER ERROR at PC364: LeaveBlock: unexpected jumping out DO_STMT
-
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
+      logicCell._size = tempSize[logicCell._dialogName]
+    else
+      self:GetCellDialog(logicCell)
+      logicCell._cell._delegate = self._delegate
+      logicCell._cell._cellData = logicCell._data
+      logicCell._cell:RefreshCell(logicCell._data)
+      local w, h = logicCell._cell:GetRootWindow():GetRectSize()
+      self:RecycleCell(logicCell)
+      logicCell._size = w
+    end
+    if #self._removeTask ~= 0 then
+      for i, task in pairs(self._removeTask) do
+        self._logicCells[i + self._removeIndex - 1]._pos = self._removeDes[i]
+        self._removeDes[i] = nil
+        self._removeTask[i] = nil
       end
+    end
+    if #self._insertTask ~= 0 then
+      for i, task in pairs(self._insertTask) do
+        local logicCell = self._logicCells[i + self._insertIndex - 1]
+        logicCell._pos = self._insertDes[i]
+        self._insertDes[i] = nil
+        self._insertTask[i] = nil
+      end
+    end
+    table.insert(self._logicCells, index, logicCell)
+    cellNums = #self._logicCells
+    if isAnimate then
+      self._insertTask = {}
+      self._insertIndex = index
+      for i = index + 1, cellNums do
+        self._insertDes[i - index + 1] = self._logicCells[i]._pos + logicCell._size
+        local first = {
+          pos = self._logicCells[i]._pos
+        }
+        local last = {
+          pos = self._insertDes[i - index + 1]
+        }
+        self._insertTask[i - index + 1] = Tween.new(0.2, first, last, "linear")
+      end
+      if 0 < index - 1 then
+        self._insertDes[1] = self._logicCells[index - 1]._pos + self._logicCells[index - 1]._size
+        local first = {
+          pos = self._logicCells[index - 1]._pos
+        }
+        local last = {
+          pos = self._insertDes[1]
+        }
+        self._insertTask[1] = Tween.new(0.2, first, last, "linear")
+      else
+        self._insertDes[1] = 0
+        local first = {
+          pos = -logicCell._size
+        }
+        local last = {
+          pos = self._insertDes[1]
+        }
+        self._insertTask[1] = Tween.new(0.2, first, last, "linear")
+      end
+    else
+      for i = index + 1, cellNums do
+        self._logicCells[i]._pos = self._logicCells[i]._pos + logicCell._size
+      end
+      if 0 < index - 1 then
+        self._logicCells[index]._pos = self._logicCells[index - 1]._pos + self._logicCells[index - 1]._size
+      else
+        self._logicCells[index]._pos = 0
+      end
+    end
+    self._totalLength = self._totalLength + logicCell._size
+  end
+end
+
+function ProgressHorizontalTableFrame:FireEvent(eventName, ...)
+  for i, logicCell in ipairs(self._logicCells) do
+    if logicCell._cell and logicCell._cell.OnEvent then
+      logicCell._cell:OnEvent(eventName, ...)
     end
   end
 end
 
-ProgressHorizontalTableFrame.FireEvent = function(self, eventName, ...)
-  -- function num : 0_14 , upvalues : _ENV
-  for i,logicCell in ipairs(self._logicCells) do
-    if logicCell._cell and (logicCell._cell).OnEvent then
-      (logicCell._cell):OnEvent(eventName, ...)
-    end
-  end
-end
-
-ProgressHorizontalTableFrame.GetLeftIndex = function(self)
-  -- function num : 0_15
+function ProgressHorizontalTableFrame:GetLeftIndex()
   return self._leftIndex
 end
 
-ProgressHorizontalTableFrame.GetRightIndex = function(self)
-  -- function num : 0_16
+function ProgressHorizontalTableFrame:GetRightIndex()
   return self._rightIndex
 end
 
-ProgressHorizontalTableFrame.SetMargin = function(self, leftValue, rightValue)
-  -- function num : 0_17
+function ProgressHorizontalTableFrame:SetMargin(leftValue, rightValue)
   if self._leftMargin == 0 then
     self._leftMargin = leftValue
   end
@@ -732,33 +530,24 @@ ProgressHorizontalTableFrame.SetMargin = function(self, leftValue, rightValue)
   end
 end
 
-ProgressHorizontalTableFrame.OnBeginDrag = function(self, args)
-  -- function num : 0_18
+function ProgressHorizontalTableFrame:OnBeginDrag(args)
   self._dragDelta = 0
   self._slideInertiaTime = 0.8
   self._sprintTime = 0.3
   self._slideInertiaTask = nil
   self._sprintTask = nil
   self._sprintclickdown = false
-  ;
-  (self._viewcontainer):SetBlocksRaycasts(false)
+  self._viewcontainer:SetBlocksRaycasts(false)
   self._moveSpeed = {x = 0, y = 0}
 end
 
-ProgressHorizontalTableFrame.OnDrag = function(self, args)
-  -- function num : 0_19 , upvalues : UIManager
+function ProgressHorizontalTableFrame:OnDrag(args)
   local pressPosition = args.pressPosition
   local position = args.position
-  local localPressX, _ = (UIManager.ScreenPointToLocalPointInRectangle)((self._viewport)._uiObject, pressPosition.x, pressPosition.y)
-  local localX, _ = (UIManager.ScreenPointToLocalPointInRectangle)((self._viewport)._uiObject, position.x, position.y)
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._moveSpeed).x = args.xSpeed / 60
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._moveSpeed).y = args.ySpeed / 60
+  local localPressX, _ = UIManager.ScreenPointToLocalPointInRectangle(self._viewport._uiObject, pressPosition.x, pressPosition.y)
+  local localX, _ = UIManager.ScreenPointToLocalPointInRectangle(self._viewport._uiObject, position.x, position.y)
+  self._moveSpeed.x = args.xSpeed / 60
+  self._moveSpeed.y = args.ySpeed / 60
   local currentPosition = self._currentPosition
   self._currentPosition = currentPosition + self._dragDelta
   self._dragDelta = localX - localPressX
@@ -769,398 +558,379 @@ ProgressHorizontalTableFrame.OnDrag = function(self, args)
   end
 end
 
-ProgressHorizontalTableFrame.OnEndDrag = function(self, args)
-  -- function num : 0_20 , upvalues : UIManager, _ENV, AutoAlignMaxSpeed
+function ProgressHorizontalTableFrame:OnEndDrag(args)
   local dragDelta = self._dragDelta
   self._dragDelta = 0
-  local original, _ = (UIManager.ScreenPointToLocalPointInRectangle)((self._viewport)._uiObject, 0, 0)
-  local speed, _ = (UIManager.ScreenPointToLocalPointInRectangle)((self._viewport)._uiObject, (self._moveSpeed).x, (self._moveSpeed).y)
+  local original, _ = UIManager.ScreenPointToLocalPointInRectangle(self._viewport._uiObject, 0, 0)
+  local speed, _ = UIManager.ScreenPointToLocalPointInRectangle(self._viewport._uiObject, self._moveSpeed.x, self._moveSpeed.y)
   speed = speed - original
   local currentPosition = self._currentPosition
-  local width, height = (self._viewport):GetRectSize()
+  local width, height = self._viewport:GetRectSize()
   if speed == 0 then
-    (self._viewcontainer):SetBlocksRaycasts(true)
+    self._viewcontainer:SetBlocksRaycasts(true)
     if self._autoAlign then
-      if dragDelta > 0 then
+      if 0 < dragDelta then
         self._needUpdate = true
-        local half = ((self._logicCells)[self._leftIndex])._pos + ((self._logicCells)[self._leftIndex])._size / 2
+        local half = self._logicCells[self._leftIndex]._pos + self._logicCells[self._leftIndex]._size / 2
         if half < self._currentPosition then
-          local first = {pos = self._currentPosition}
+          local first = {
+            pos = self._currentPosition
+          }
           local cellNums = #self._logicCells
-          if self._leftIndex + 1 <= cellNums then
-            self._alignDes = ((self._logicCells)[self._leftIndex + 1])._pos
-            local last = {pos = self._alignDes}
-            self._alignTask = (Tween.new)(0.2, first, last, "outQuad")
+          if cellNums >= self._leftIndex + 1 then
+            self._alignDes = self._logicCells[self._leftIndex + 1]._pos
+            local last = {
+              pos = self._alignDes
+            }
+            self._alignTask = Tween.new(0.2, first, last, "outQuad")
           end
-        else
-          do
-            if self._currentPosition <= half then
-              local first = {pos = self._currentPosition}
-              self._alignDes = ((self._logicCells)[self._leftIndex])._pos
-              local last = {pos = self._alignDes}
-              self._alignTask = (Tween.new)(0.2, first, last, "outQuad")
-            end
-            do
-              if dragDelta < 0 then
-                self._needUpdate = true
-                local half = ((self._logicCells)[self._rightIndex])._pos + ((self._logicCells)[self._rightIndex])._size / 2
-                if half <= self._currentPosition + width then
-                  local first = {pos = self._currentPosition}
-                  self._alignDes = ((self._logicCells)[self._rightIndex])._pos + ((self._logicCells)[self._rightIndex])._size - width
-                  local last = {pos = self._alignDes}
-                  self._alignTask = (Tween.new)(0.2, first, last, "outQuad")
-                else
-                  do
-                    if self._currentPosition + width < half then
-                      local first = {pos = self._currentPosition}
-                      if self._rightIndex - 1 > 0 then
-                        self._alignDes = ((self._logicCells)[self._rightIndex - 1])._pos + ((self._logicCells)[self._rightIndex - 1])._size - width
-                        local last = {pos = self._alignDes}
-                        self._alignTask = (Tween.new)(0.2, first, last, "outQuad")
-                      end
-                    end
-                    do
-                      -- DECOMPILER ERROR at PC197: Unhandled construct in 'MakeBoolean' P1
-
-                      if currentPosition + width <= self._totalLength + self._rightMargin and 0 - self._leftMargin <= currentPosition and self._autoAlign and (speed < -AutoAlignMaxSpeed or AutoAlignMaxSpeed < speed) then
-                        if dragDelta > 0 then
-                          self._needUpdate = true
-                          local first = {pos = self._currentPosition}
-                          self._alignDes = ((self._logicCells)[self._leftIndex])._pos
-                          local last = {pos = self._alignDes}
-                          self._alignTask = (Tween.new)(0.5, first, last, "outQuad")
-                        else
-                          do
-                            if dragDelta < 0 then
-                              self._needUpdate = true
-                              local first = {pos = self._currentPosition}
-                              self._alignDes = ((self._logicCells)[self._rightIndex])._pos + ((self._logicCells)[self._rightIndex])._size - width
-                              local last = {pos = self._alignDes}
-                              self._alignTask = (Tween.new)(0.5, first, last, "outQuad")
-                            end
-                            do
-                              self._needUpdate = true
-                              self._slideInertiaPosition = currentPosition
-                              self._slideInertiaSpeed = (speed) * 20
-                              self._sprintTask = nil
-                              self._sprintPosition = nil
-                              local lenofend = (speed) * 20 * self._slideInertiaTime / 2
-                              currentPosition = currentPosition - lenofend
-                              if self._totalLength - width + width / 3 + self._rightMargin < currentPosition then
-                                currentPosition = self._totalLength - width + width / 3 + self._rightMargin
-                                lenofend = self._slideInertiaPosition - (currentPosition)
-                                self._slideInertiaTime = (lenofend) * 2 / self._slideInertiaSpeed
-                              end
-                              if currentPosition < -width / 3 - self._leftMargin then
-                                currentPosition = -width / 3 - self._leftMargin
-                                lenofend = self._slideInertiaPosition - (currentPosition)
-                                self._slideInertiaTime = (lenofend) * 2 / self._slideInertiaSpeed
-                              end
-                              local first = {pos = self._slideInertiaSpeed}
-                              do
-                                local last = {pos = 0}
-                                self._slideInertiaTask = (Tween.new)(self._slideInertiaTime, first, last, "linear")
-                                if self._totalLength + self._rightMargin < currentPosition + width then
-                                  self._sprintPosition = currentPosition
-                                  self._needUpdate = true
-                                  local lenofend = currentPosition - self._totalLength + width - self._rightMargin
-                                  if self._totalLength + self._rightMargin < width then
-                                    lenofend = currentPosition + self._leftMargin
-                                  end
-                                  self._sprintSpeed = (lenofend) * 2 / self._sprintTime
-                                  local first = {pos = self._sprintSpeed}
-                                  local last = {pos = 0}
-                                  self._sprintTask = (Tween.new)(self._sprintTime, first, last, "linear")
-                                  if self._alignTask then
-                                    self._alignTask = nil
-                                  end
-                                end
-                                do
-                                  if currentPosition < 0 - self._leftMargin then
-                                    self._sprintPosition = currentPosition
-                                    self._needUpdate = true
-                                    local lenofend = currentPosition + self._leftMargin
-                                    self._sprintSpeed = lenofend * 2 / self._sprintTime
-                                    local first = {pos = self._sprintSpeed}
-                                    local last = {pos = 0}
-                                    self._sprintTask = (Tween.new)(self._sprintTime, first, last, "linear")
-                                    if self._alignTask then
-                                      self._alignTask = nil
-                                    end
-                                  end
-                                end
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
+        elseif half >= self._currentPosition then
+          local first = {
+            pos = self._currentPosition
+          }
+          self._alignDes = self._logicCells[self._leftIndex]._pos
+          local last = {
+            pos = self._alignDes
+          }
+          self._alignTask = Tween.new(0.2, first, last, "outQuad")
+        end
+      elseif dragDelta < 0 then
+        self._needUpdate = true
+        local half = self._logicCells[self._rightIndex]._pos + self._logicCells[self._rightIndex]._size / 2
+        if half <= self._currentPosition + width then
+          local first = {
+            pos = self._currentPosition
+          }
+          self._alignDes = self._logicCells[self._rightIndex]._pos + self._logicCells[self._rightIndex]._size - width
+          local last = {
+            pos = self._alignDes
+          }
+          self._alignTask = Tween.new(0.2, first, last, "outQuad")
+        elseif half > self._currentPosition + width then
+          local first = {
+            pos = self._currentPosition
+          }
+          if 0 < self._rightIndex - 1 then
+            self._alignDes = self._logicCells[self._rightIndex - 1]._pos + self._logicCells[self._rightIndex - 1]._size - width
+            local last = {
+              pos = self._alignDes
+            }
+            self._alignTask = Tween.new(0.2, first, last, "outQuad")
           end
         end
       end
     end
+  elseif currentPosition + width <= self._totalLength + self._rightMargin and currentPosition >= 0 - self._leftMargin then
+    if self._autoAlign then
+      if speed < -AutoAlignMaxSpeed or speed > AutoAlignMaxSpeed then
+        if 0 < dragDelta then
+          self._needUpdate = true
+          local first = {
+            pos = self._currentPosition
+          }
+          self._alignDes = self._logicCells[self._leftIndex]._pos
+          local last = {
+            pos = self._alignDes
+          }
+          self._alignTask = Tween.new(0.5, first, last, "outQuad")
+        elseif dragDelta < 0 then
+          self._needUpdate = true
+          local first = {
+            pos = self._currentPosition
+          }
+          self._alignDes = self._logicCells[self._rightIndex]._pos + self._logicCells[self._rightIndex]._size - width
+          local last = {
+            pos = self._alignDes
+          }
+          self._alignTask = Tween.new(0.5, first, last, "outQuad")
+        end
+      end
+    else
+      self._needUpdate = true
+      self._slideInertiaPosition = currentPosition
+      self._slideInertiaSpeed = speed * 20
+      self._sprintTask = nil
+      self._sprintPosition = nil
+      local lenofend = speed * 20 * self._slideInertiaTime / 2
+      currentPosition = currentPosition - lenofend
+      if currentPosition > self._totalLength - width + width / 3 + self._rightMargin then
+        currentPosition = self._totalLength - width + width / 3 + self._rightMargin
+        lenofend = self._slideInertiaPosition - currentPosition
+        self._slideInertiaTime = lenofend * 2 / self._slideInertiaSpeed
+      end
+      if currentPosition < -width / 3 - self._leftMargin then
+        currentPosition = -width / 3 - self._leftMargin
+        lenofend = self._slideInertiaPosition - currentPosition
+        self._slideInertiaTime = lenofend * 2 / self._slideInertiaSpeed
+      end
+      local first = {
+        pos = self._slideInertiaSpeed
+      }
+      local last = {pos = 0}
+      self._slideInertiaTask = Tween.new(self._slideInertiaTime, first, last, "linear")
+    end
+  end
+  if currentPosition + width > self._totalLength + self._rightMargin then
+    self._sprintPosition = currentPosition
+    self._needUpdate = true
+    local lenofend = currentPosition - self._totalLength + width - self._rightMargin
+    if width > self._totalLength + self._rightMargin then
+      lenofend = currentPosition + self._leftMargin
+    end
+    self._sprintSpeed = lenofend * 2 / self._sprintTime
+    local first = {
+      pos = self._sprintSpeed
+    }
+    local last = {pos = 0}
+    self._sprintTask = Tween.new(self._sprintTime, first, last, "linear")
+    if self._alignTask then
+      self._alignTask = nil
+    end
+  end
+  if currentPosition < 0 - self._leftMargin then
+    self._sprintPosition = currentPosition
+    self._needUpdate = true
+    local lenofend = currentPosition + self._leftMargin
+    self._sprintSpeed = lenofend * 2 / self._sprintTime
+    local first = {
+      pos = self._sprintSpeed
+    }
+    local last = {pos = 0}
+    self._sprintTask = Tween.new(self._sprintTime, first, last, "linear")
+    if self._alignTask then
+      self._alignTask = nil
+    end
   end
 end
 
-ProgressHorizontalTableFrame.OnPointerDown = function(self, deltaTime)
-  -- function num : 0_21 , upvalues : _ENV
+function ProgressHorizontalTableFrame:OnPointerDown(deltaTime)
   self._dragDelta = 0
   if self._slideInertiaTask then
     self._slideInertiaTask = nil
-    ;
-    (self._viewcontainer):SetBlocksRaycasts(true)
+    self._viewcontainer:SetBlocksRaycasts(true)
     if self._sprintTask then
-      local width, height = (self._viewport):GetRectSize()
+      local width, height = self._viewport:GetRectSize()
       local currentPosition = self._currentPosition
-      if self._totalLength + self._rightMargin < currentPosition + width then
+      if currentPosition + width > self._totalLength + self._rightMargin then
         self._sprintPosition = currentPosition
         self._needUpdate = true
         local lenofend = currentPosition - self._totalLength + width - self._rightMargin
         self._sprintSpeed = lenofend * 2 / self._sprintTime
-        local first = {pos = self._sprintSpeed}
+        local first = {
+          pos = self._sprintSpeed
+        }
         local last = {pos = 0}
-        self._sprintTask = (Tween.new)(self._sprintTime, first, last, "linear")
+        self._sprintTask = Tween.new(self._sprintTime, first, last, "linear")
+      elseif currentPosition < 0 - self._leftMargin then
+        self._sprintPosition = currentPosition
+        self._needUpdate = true
+        local lenofend = currentPosition + self._leftMargin
+        self._sprintSpeed = lenofend * 2 / self._sprintTime
+        local first = {
+          pos = self._sprintSpeed
+        }
+        local last = {pos = 0}
+        self._sprintTask = Tween.new(self._sprintTime, first, last, "linear")
       else
-        do
-          if currentPosition < 0 - self._leftMargin then
-            self._sprintPosition = currentPosition
-            self._needUpdate = true
-            local lenofend = currentPosition + self._leftMargin
-            self._sprintSpeed = lenofend * 2 / self._sprintTime
-            local first = {pos = self._sprintSpeed}
-            local last = {pos = 0}
-            self._sprintTask = (Tween.new)(self._sprintTime, first, last, "linear")
-          else
-            do
-              do
-                self._sprintTask = nil
-                self._sprintclickdown = true
-              end
-            end
-          end
-        end
+        self._sprintTask = nil
       end
     end
   end
+  self._sprintclickdown = true
 end
 
-ProgressHorizontalTableFrame.OnPointerUp = function(self, deltaTime)
-  -- function num : 0_22
+function ProgressHorizontalTableFrame:OnPointerUp(deltaTime)
   self._sprintclickdown = false
   self:UpdateView(0)
 end
 
-ProgressHorizontalTableFrame.OnLateUpdate = function(self, notification)
-  -- function num : 0_23 , upvalues : _ENV
-  local deltaTime = (notification.userInfo).unscaledDeltaTime
-  local width, height = (self._viewport):GetRectSize()
+function ProgressHorizontalTableFrame:OnLateUpdate(notification)
+  local deltaTime = notification.userInfo.unscaledDeltaTime
+  local width, height = self._viewport:GetRectSize()
   if self._needUpdate then
     if self._slideInertiaTask then
-      if (self._slideInertiaTask):update(deltaTime) then
-        self._currentPosition = self._slideInertiaPosition - (self._slideInertiaSpeed + ((self._slideInertiaTask).subject).pos) * self._slideInertiaTime / 2
+      if self._slideInertiaTask:update(deltaTime) then
+        self._currentPosition = self._slideInertiaPosition - (self._slideInertiaSpeed + self._slideInertiaTask.subject.pos) * self._slideInertiaTime / 2
         if self._autoAlign then
           if self._slideInertiaSpeed > 0 then
-            local half = ((self._logicCells)[self._leftIndex])._pos + ((self._logicCells)[self._leftIndex])._size / 2
+            local half = self._logicCells[self._leftIndex]._pos + self._logicCells[self._leftIndex]._size / 2
             if half < self._currentPosition then
-              local first = {pos = self._currentPosition}
+              local first = {
+                pos = self._currentPosition
+              }
               local cellNums = #self._logicCells
-              if self._leftIndex + 1 <= cellNums then
-                self._alignDes = ((self._logicCells)[self._leftIndex + 1])._pos
-                local last = {pos = self._alignDes}
-                self._alignTask = (Tween.new)(0.3, first, last, "linear")
+              if cellNums >= self._leftIndex + 1 then
+                self._alignDes = self._logicCells[self._leftIndex + 1]._pos
+                local last = {
+                  pos = self._alignDes
+                }
+                self._alignTask = Tween.new(0.3, first, last, "linear")
               end
-            else
-              do
-                if self._currentPosition <= half then
-                  local first = {pos = self._currentPosition}
-                  self._alignDes = ((self._logicCells)[self._leftIndex])._pos
-                  local last = {pos = self._alignDes}
-                  self._alignTask = (Tween.new)(0.3, first, last, "linear")
-                end
-                do
-                  if self._slideInertiaSpeed < 0 then
-                    local half = ((self._logicCells)[self._rightIndex])._pos + ((self._logicCells)[self._rightIndex])._size / 2
-                    if half <= self._currentPosition + width then
-                      local first = {pos = self._currentPosition}
-                      self._alignDes = ((self._logicCells)[self._rightIndex])._pos + ((self._logicCells)[self._rightIndex])._size - width
-                      local last = {pos = self._alignDes}
-                      self._alignTask = (Tween.new)(0.3, first, last, "linear")
-                    else
-                      do
-                        if self._currentPosition + width < half then
-                          local first = {pos = self._currentPosition}
-                          if self._rightIndex - 1 > 0 then
-                            self._alignDes = ((self._logicCells)[self._rightIndex - 1])._pos + ((self._logicCells)[self._rightIndex - 1])._size - width
-                            local last = {pos = self._alignDes}
-                            self._alignTask = (Tween.new)(0.3, first, last, "linear")
-                          end
-                        end
-                        do
-                          self._slideInertiaTask = nil
-                          self._slideInertiaPosition = nil
-                          ;
-                          (self._viewcontainer):SetBlocksRaycasts(true)
-                          self._currentPosition = self._slideInertiaPosition - (self._slideInertiaSpeed + ((self._slideInertiaTask).subject).pos) * (self._slideInertiaTask).clock / 2
-                          -- DECOMPILER ERROR at PC214: Confused about usage of register: R5 in 'UnsetPending'
-
-                          if self._slideInertiaTask and (self._totalLength - width + self._rightMargin < self._currentPosition or self._currentPosition < 0 - self._leftMargin) then
-                            (self._slideInertiaTask).clock = (self._slideInertiaTask).clock + 2 * deltaTime
-                          end
-                          if self._totalLength - width + width / 3 + self._rightMargin < self._currentPosition then
-                            self._currentPosition = self._totalLength - width + width / 3 + self._rightMargin
-                            self._slideInertiaTask = nil
-                            self._slideInertiaPosition = nil
-                            ;
-                            (self._viewcontainer):SetBlocksRaycasts(true)
-                          end
-                          if self._currentPosition < -width / 3 - self._leftMargin then
-                            self._currentPosition = -width / 3 - self._leftMargin
-                            self._slideInertiaTask = nil
-                            self._slideInertiaPosition = nil
-                            ;
-                            (self._viewcontainer):SetBlocksRaycasts(true)
-                          end
-                          if not self._slideInertiaTask and self._sprintTask and not self._sprintclickdown then
-                            (self._viewcontainer):SetBlocksRaycasts(false)
-                            if (self._sprintTask):update(deltaTime) then
-                              self._currentPosition = self._sprintPosition - (self._sprintSpeed + ((self._sprintTask).subject).pos) * self._sprintTime / 2
-                              self._sprintTask = nil
-                              self._sprintPosition = nil
-                              ;
-                              (self._viewcontainer):SetBlocksRaycasts(true)
-                            else
-                              self._currentPosition = self._sprintPosition - (self._sprintSpeed + ((self._sprintTask).subject).pos) * (self._sprintTask).clock / 2
-                            end
-                          end
-                          if self._alignTask then
-                            if (self._alignTask):update(deltaTime) then
-                              self._currentPosition = self._alignDes
-                              self._alignTask = nil
-                            else
-                              self._currentPosition = ((self._alignTask).subject).pos
-                            end
-                          end
-                          if self._insertTask then
-                            for i,task in pairs(self._insertTask) do
-                              local logicCell = (self._logicCells)[i + self._insertIndex - 1]
-                              if task:update(deltaTime) then
-                                logicCell._pos = (self._insertDes)[i]
-                                -- DECOMPILER ERROR at PC342: Confused about usage of register: R11 in 'UnsetPending'
-
-                                ;
-                                (self._insertDes)[i] = nil
-                                -- DECOMPILER ERROR at PC344: Confused about usage of register: R11 in 'UnsetPending'
-
-                                ;
-                                (self._insertTask)[i] = nil
-                              else
-                                logicCell._pos = (task.subject).pos
-                              end
-                            end
-                          end
-                          do
-                            if self._removeTask then
-                              for i,task in pairs(self._removeTask) do
-                                local logicCell = (self._logicCells)[i + self._removeIndex - 1]
-                                if task:update(deltaTime) then
-                                  logicCell._pos = (self._removeDes)[i]
-                                  -- DECOMPILER ERROR at PC372: Confused about usage of register: R11 in 'UnsetPending'
-
-                                  ;
-                                  (self._removeDes)[i] = nil
-                                  -- DECOMPILER ERROR at PC374: Confused about usage of register: R11 in 'UnsetPending'
-
-                                  ;
-                                  (self._removeTask)[i] = nil
-                                else
-                                  logicCell._pos = (task.subject).pos
-                                end
-                              end
-                            end
-                            do
-                              if self._moveLeftTask then
-                                if (self._moveLeftTask):update(deltaTime) then
-                                  self._currentPosition = 0 - self._leftMargin
-                                  self._moveLeftTask = nil
-                                else
-                                  self._currentPosition = ((self._moveLeftTask).subject).pos
-                                end
-                              end
-                              if self._moveRightTask then
-                                if (self._moveRightTask):update(deltaTime) then
-                                  self._currentPosition = self._totalLength - width + self._rightMargin
-                                  self._moveRightTask = nil
-                                else
-                                  self._currentPosition = ((self._moveRightTask).subject).pos
-                                end
-                              end
-                              if self._moveLeftIndexTask then
-                                if (self._moveLeftIndexTask):update(deltaTime) then
-                                  self._currentPosition = self._moveLeftIndexDes
-                                  self._moveLeftIndexTask = nil
-                                else
-                                  self._currentPosition = ((self._moveLeftIndexTask).subject).pos
-                                end
-                              end
-                              if self._moveRightIndexTask then
-                                if (self._moveRightIndexTask):update(deltaTime) then
-                                  self._currentPosition = self._moveRightIndexDes
-                                  self._moveRightIndexTask = nil
-                                else
-                                  self._currentPosition = ((self._moveRightIndexTask).subject).pos
-                                end
-                              end
-                              if self._moveToAssignedPosTask then
-                                if (self._moveToAssignedPosTask):update(deltaTime) then
-                                  self._currentPosition = self._moveToAssignedPosDes
-                                  self._moveToAssignedPosTask = nil
-                                  if (self._delegate).OnMovedToAssignedPos then
-                                    (self._delegate):OnMovedToAssignedPos(self._interface)
-                                  end
-                                else
-                                  self._currentPosition = ((self._moveToAssignedPosTask).subject).pos
-                                end
-                              end
-                              self:UpdateView(deltaTime)
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
+            elseif half >= self._currentPosition then
+              local first = {
+                pos = self._currentPosition
+              }
+              self._alignDes = self._logicCells[self._leftIndex]._pos
+              local last = {
+                pos = self._alignDes
+              }
+              self._alignTask = Tween.new(0.3, first, last, "linear")
+            end
+          elseif self._slideInertiaSpeed < 0 then
+            local half = self._logicCells[self._rightIndex]._pos + self._logicCells[self._rightIndex]._size / 2
+            if half <= self._currentPosition + width then
+              local first = {
+                pos = self._currentPosition
+              }
+              self._alignDes = self._logicCells[self._rightIndex]._pos + self._logicCells[self._rightIndex]._size - width
+              local last = {
+                pos = self._alignDes
+              }
+              self._alignTask = Tween.new(0.3, first, last, "linear")
+            elseif half > self._currentPosition + width then
+              local first = {
+                pos = self._currentPosition
+              }
+              if 0 < self._rightIndex - 1 then
+                self._alignDes = self._logicCells[self._rightIndex - 1]._pos + self._logicCells[self._rightIndex - 1]._size - width
+                local last = {
+                  pos = self._alignDes
+                }
+                self._alignTask = Tween.new(0.3, first, last, "linear")
               end
             end
           end
         end
+        self._slideInertiaTask = nil
+        self._slideInertiaPosition = nil
+        self._viewcontainer:SetBlocksRaycasts(true)
+      else
+        self._currentPosition = self._slideInertiaPosition - (self._slideInertiaSpeed + self._slideInertiaTask.subject.pos) * self._slideInertiaTask.clock / 2
+      end
+      if self._slideInertiaTask and (self._currentPosition > self._totalLength - width + self._rightMargin or self._currentPosition < 0 - self._leftMargin) then
+        self._slideInertiaTask.clock = self._slideInertiaTask.clock + 2 * deltaTime
+      end
+      if self._currentPosition > self._totalLength - width + width / 3 + self._rightMargin then
+        self._currentPosition = self._totalLength - width + width / 3 + self._rightMargin
+        self._slideInertiaTask = nil
+        self._slideInertiaPosition = nil
+        self._viewcontainer:SetBlocksRaycasts(true)
+      end
+      if self._currentPosition < -width / 3 - self._leftMargin then
+        self._currentPosition = -width / 3 - self._leftMargin
+        self._slideInertiaTask = nil
+        self._slideInertiaPosition = nil
+        self._viewcontainer:SetBlocksRaycasts(true)
       end
     end
+    if not self._slideInertiaTask and self._sprintTask and not self._sprintclickdown then
+      self._viewcontainer:SetBlocksRaycasts(false)
+      if self._sprintTask:update(deltaTime) then
+        self._currentPosition = self._sprintPosition - (self._sprintSpeed + self._sprintTask.subject.pos) * self._sprintTime / 2
+        self._sprintTask = nil
+        self._sprintPosition = nil
+        self._viewcontainer:SetBlocksRaycasts(true)
+      else
+        self._currentPosition = self._sprintPosition - (self._sprintSpeed + self._sprintTask.subject.pos) * self._sprintTask.clock / 2
+      end
+    end
+    if self._alignTask then
+      if self._alignTask:update(deltaTime) then
+        self._currentPosition = self._alignDes
+        self._alignTask = nil
+      else
+        self._currentPosition = self._alignTask.subject.pos
+      end
+    end
+    if self._insertTask then
+      for i, task in pairs(self._insertTask) do
+        local logicCell = self._logicCells[i + self._insertIndex - 1]
+        if task:update(deltaTime) then
+          logicCell._pos = self._insertDes[i]
+          self._insertDes[i] = nil
+          self._insertTask[i] = nil
+        else
+          logicCell._pos = task.subject.pos
+        end
+      end
+    end
+    if self._removeTask then
+      for i, task in pairs(self._removeTask) do
+        local logicCell = self._logicCells[i + self._removeIndex - 1]
+        if task:update(deltaTime) then
+          logicCell._pos = self._removeDes[i]
+          self._removeDes[i] = nil
+          self._removeTask[i] = nil
+        else
+          logicCell._pos = task.subject.pos
+        end
+      end
+    end
+    if self._moveLeftTask then
+      if self._moveLeftTask:update(deltaTime) then
+        self._currentPosition = 0 - self._leftMargin
+        self._moveLeftTask = nil
+      else
+        self._currentPosition = self._moveLeftTask.subject.pos
+      end
+    end
+    if self._moveRightTask then
+      if self._moveRightTask:update(deltaTime) then
+        self._currentPosition = self._totalLength - width + self._rightMargin
+        self._moveRightTask = nil
+      else
+        self._currentPosition = self._moveRightTask.subject.pos
+      end
+    end
+    if self._moveLeftIndexTask then
+      if self._moveLeftIndexTask:update(deltaTime) then
+        self._currentPosition = self._moveLeftIndexDes
+        self._moveLeftIndexTask = nil
+      else
+        self._currentPosition = self._moveLeftIndexTask.subject.pos
+      end
+    end
+    if self._moveRightIndexTask then
+      if self._moveRightIndexTask:update(deltaTime) then
+        self._currentPosition = self._moveRightIndexDes
+        self._moveRightIndexTask = nil
+      else
+        self._currentPosition = self._moveRightIndexTask.subject.pos
+      end
+    end
+    if self._moveToAssignedPosTask then
+      if self._moveToAssignedPosTask:update(deltaTime) then
+        self._currentPosition = self._moveToAssignedPosDes
+        self._moveToAssignedPosTask = nil
+        if self._delegate.OnMovedToAssignedPos then
+          self._delegate:OnMovedToAssignedPos(self._interface)
+        end
+      else
+        self._currentPosition = self._moveToAssignedPosTask.subject.pos
+      end
+    end
+    self:UpdateView(deltaTime)
   end
 end
 
-ProgressHorizontalTableFrame.UpdateView = function(self, deltaTime)
-  -- function num : 0_24 , upvalues : _ENV
+function ProgressHorizontalTableFrame:UpdateView(deltaTime)
   if self._needUpdate then
     local currentPosition = self._currentPosition
-    local width, height = (self._viewport):GetRectSize()
+    local width, height = self._viewport:GetRectSize()
     if width < self._totalLength + self._leftMargin then
       if currentPosition < 0 - self._leftMargin then
         currentPosition = currentPosition - 2 * (currentPosition + self._leftMargin) / 3
       end
-      if self._totalLength + self._rightMargin < currentPosition + width then
-        currentPosition = currentPosition - 2 * (width - self._totalLength + (currentPosition) - self._rightMargin) / 3
+      if currentPosition + width > self._totalLength + self._rightMargin then
+        currentPosition = currentPosition - 2 * (width - self._totalLength + currentPosition - self._rightMargin) / 3
       end
     else
       currentPosition = currentPosition + self._leftMargin
-      currentPosition = (currentPosition) / 3
+      currentPosition = currentPosition / 3
     end
     local flag = true
-    for i,logicCell in ipairs(self._logicCells) do
-      if currentPosition - self._leftMargin < logicCell._size + logicCell._pos and logicCell._pos < currentPosition + width + self._rightMargin then
+    for i, logicCell in ipairs(self._logicCells) do
+      if logicCell._size + logicCell._pos > currentPosition - self._leftMargin and logicCell._pos < currentPosition + width + self._rightMargin then
         if flag then
           flag = false
           self._leftIndex = i
@@ -1182,177 +952,140 @@ ProgressHorizontalTableFrame.UpdateView = function(self, deltaTime)
     end
     self:GetTopVisibleCellIndex()
     self._cellY = -1
-    for i,logicCell in ipairs(self._logicCells) do
+    for i, logicCell in ipairs(self._logicCells) do
       if logicCell._visible then
         if not logicCell._cell then
           self:GetCellDialog(logicCell)
-          -- DECOMPILER ERROR at PC99: Confused about usage of register: R11 in 'UnsetPending'
-
-          ;
-          (logicCell._cell)._delegate = self._delegate
-          -- DECOMPILER ERROR at PC102: Confused about usage of register: R11 in 'UnsetPending'
-
-          ;
-          (logicCell._cell)._cellData = logicCell._data
-          ;
-          (logicCell._cell):RefreshCell(logicCell._data)
+          logicCell._cell._delegate = self._delegate
+          logicCell._cell._cellData = logicCell._data
+          logicCell._cell:RefreshCell(logicCell._data)
         end
-        ;
-        ((logicCell._cell):GetRootWindow()):SetPosition(0, logicCell._pos, 0, 0)
+        logicCell._cell:GetRootWindow():SetPosition(0, logicCell._pos, 0, 0)
         if self._cellY == -1 then
-          local x = nil
-          x = ((logicCell._cell):GetRootWindow()):GetRectSize()
+          local x
+          x, self._cellY = logicCell._cell:GetRootWindow():GetRectSize()
         end
       end
     end
     if self._refreshUIParticleClipper and self._refreshPosY then
       self._refreshPosY = false
-      ;
-      (((((CS.PixelNeko).Render).ShaderUtility).UIParticleClipper).RefreshUIParticleClipper)((self._viewport):GetUIObject())
+      CS.PixelNeko.Render.ShaderUtility.UIParticleClipper.RefreshUIParticleClipper(self._viewport:GetUIObject())
     end
-    for dialogName,cells in pairs(self._recycleCells) do
-      for i,cell in ipairs(cells) do
-        (cell:GetRootWindow()):SetPosition(0, -10000, 0, 0)
+    for dialogName, cells in pairs(self._recycleCells) do
+      for i, cell in ipairs(cells) do
+        cell:GetRootWindow():SetPosition(0, -10000, 0, 0)
       end
     end
-    ;
-    (self._viewcontainer):SetSize(0, self._totalLength, 0, self._cellY)
-    local x, viewportY = (self._viewport):GetRectSize()
-    if self._totalLength + self._leftMargin < width then
-      (self._viewcontainer):SetPosition(0, -(currentPosition) + self._leftMargin, 0, (viewportY - self._cellY) / 2)
+    self._viewcontainer:SetSize(0, self._totalLength, 0, self._cellY)
+    local x, viewportY = self._viewport:GetRectSize()
+    if width > self._totalLength + self._leftMargin then
+      self._viewcontainer:SetPosition(0, -currentPosition + self._leftMargin, 0, (viewportY - self._cellY) / 2)
     else
-      ;
-      (self._viewcontainer):SetPosition(0, -(currentPosition), 0, (viewportY - self._cellY) / 2)
+      self._viewcontainer:SetPosition(0, -currentPosition, 0, (viewportY - self._cellY) / 2)
     end
-    do
-      if self._upMargin ~= 0 or self._downMargin ~= 0 then
-        local aMinX, aMinY, aMaxX, aMaxY, oMinX, oMinY, oMaxX, oMaxY = (self._viewcontainer):GetAnchorAndOffset()
-        ;
-        (self._viewcontainer):SetAnchorAndOffset(aMinX, 0, aMaxX, 1, oMinX, self._downMargin, oMaxX, -self._upMargin)
-      end
-      if not self._sprintTask and not self._slideInertiaTask and #self._insertTask == 0 and #self._removeTask == 0 and not self._moveLeftTask and not self._moveRightTask and not self._moveLeftIndexTask and not self._moveRightIndexTask and not self._alignTask and not self._moveToAssignedPosTask then
-        self._needUpdate = false
-      end
-      if (self._delegate).OnCurPosChange then
-        local width, height = (self._viewport):GetRectSize()
-        local ratio = 0
-        if width < self._totalLength then
-          ratio = self._currentPosition / (self._totalLength - width)
-          if ratio < 0 then
-            ratio = (self._currentPosition + self._leftMargin) / (self._totalLength - width)
-          end
-          if ratio > 1 then
-            ratio = (self._currentPosition - self._rightMargin) / (self._totalLength - width)
-          end
-          if 1 - ratio < 0.001 then
-            ratio = 1
-          else
-            if ratio < 0.001 then
-              ratio = 0
-            end
-          end
-        else
+    if self._upMargin ~= 0 or self._downMargin ~= 0 then
+      local aMinX, aMinY, aMaxX, aMaxY, oMinX, oMinY, oMaxX, oMaxY = self._viewcontainer:GetAnchorAndOffset()
+      self._viewcontainer:SetAnchorAndOffset(aMinX, 0, aMaxX, 1, oMinX, self._downMargin, oMaxX, -self._upMargin)
+    end
+    if not self._sprintTask and not self._slideInertiaTask and #self._insertTask == 0 and #self._removeTask == 0 and not self._moveLeftTask and not self._moveRightTask and not self._moveLeftIndexTask and not self._moveRightIndexTask and not self._alignTask and not self._moveToAssignedPosTask then
+      self._needUpdate = false
+    end
+    if self._delegate.OnCurPosChange then
+      local width, height = self._viewport:GetRectSize()
+      local ratio = 0
+      if width < self._totalLength then
+        ratio = self._currentPosition / (self._totalLength - width)
+        if ratio < 0 then
+          ratio = (self._currentPosition + self._leftMargin) / (self._totalLength - width)
+        end
+        if 1 < ratio then
+          ratio = (self._currentPosition - self._rightMargin) / (self._totalLength - width)
+        end
+        if 1 - ratio < 0.001 then
+          ratio = 1
+        elseif ratio < 0.001 then
           ratio = 0
         end
-        ;
-        (self._delegate):OnCurPosChange(self._interface, ratio)
+      else
+        ratio = 0
       end
+      self._delegate:OnCurPosChange(self._interface, ratio)
     end
   end
 end
 
-ProgressHorizontalTableFrame.GetCellDialog = function(self, logicCell)
-  -- function num : 0_25 , upvalues : _ENV
+function ProgressHorizontalTableFrame:GetCellDialog(logicCell)
   if logicCell._cell then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-  if not (self._recycleCells)[logicCell._dialogName] then
-    (self._recycleCells)[logicCell._dialogName] = {}
+  if not self._recycleCells[logicCell._dialogName] then
+    self._recycleCells[logicCell._dialogName] = {}
   end
-  local recycleList = (self._recycleCells)[logicCell._dialogName]
-  if #recycleList > 0 then
+  local recycleList = self._recycleCells[logicCell._dialogName]
+  if 0 < #recycleList then
     logicCell._cell = recycleList[#recycleList]
     recycleList[#recycleList] = nil
   else
-    logicCell._cell = (DialogManager.CopyDialog)(logicCell._dialogName, ((self._baseCells)[logicCell._dialogName])._uiObject, (self._viewcontainer)._uiObject)
+    logicCell._cell = DialogManager.CopyDialog(logicCell._dialogName, self._baseCells[logicCell._dialogName]._uiObject, self._viewcontainer._uiObject)
   end
 end
 
-ProgressHorizontalTableFrame.RecycleCell = function(self, logicCell)
-  -- function num : 0_26 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
+function ProgressHorizontalTableFrame:RecycleCell(logicCell)
   if logicCell._cell then
-    if not (self._recycleCells)[logicCell._dialogName] then
-      (self._recycleCells)[logicCell._dialogName] = {}
+    if not self._recycleCells[logicCell._dialogName] then
+      self._recycleCells[logicCell._dialogName] = {}
     end
-    ;
-    (table.insert)((self._recycleCells)[logicCell._dialogName], logicCell._cell)
+    table.insert(self._recycleCells[logicCell._dialogName], logicCell._cell)
     logicCell._cell = nil
   end
 end
 
-ProgressHorizontalTableFrame.GetTopVisibleCellIndex = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  for cellIndex,logicCell in pairs(self._logicCells) do
-    -- DECOMPILER ERROR at PC17: Unhandled construct in 'MakeBoolean' P1
-
-    if logicCell._visible and self._topVisibleIndex ~= cellIndex then
-      if (self._delegate).visibleChangeDo then
-        (self._delegate):visibleChangeDo(cellIndex)
+function ProgressHorizontalTableFrame:GetTopVisibleCellIndex()
+  for cellIndex, logicCell in pairs(self._logicCells) do
+    if logicCell._visible then
+      if self._topVisibleIndex ~= cellIndex then
+        if self._delegate.visibleChangeDo then
+          self._delegate:visibleChangeDo(cellIndex)
+        end
+        self._topVisibleIndex = cellIndex
       end
-      self._topVisibleIndex = cellIndex
+      break
     end
-    do break end
   end
-  do
-    return self._topVisibleIndex
-  end
+  return self._topVisibleIndex
 end
 
-ProgressHorizontalTableFrame.SetSlide = function(self, slide)
-  -- function num : 0_28 , upvalues : _ENV
+function ProgressHorizontalTableFrame:SetSlide(slide)
   if slide then
     if self._beginDragHandler then
-      (self._viewport):Unsubscribe_BeginDragEvent(self._beginDragHandler)
+      self._viewport:Unsubscribe_BeginDragEvent(self._beginDragHandler)
     end
     if self._dragHandler then
-      (self._viewport):Unsubscribe_DragEvent(self._dragHandler)
+      self._viewport:Unsubscribe_DragEvent(self._dragHandler)
     end
     if self._endDragHandler then
-      (self._viewport):Unsubscribe_EndDragEvent(self._endDragHandler)
+      self._viewport:Unsubscribe_EndDragEvent(self._endDragHandler)
     end
     if self._cancelDragHandler then
-      (self._viewport):Unsubscribe_CancelDragEvent(self._cancelDragHandler)
+      self._viewport:Unsubscribe_CancelDragEvent(self._cancelDragHandler)
     end
-    self._beginDragHandler = (self._viewport):Subscribe_BeginDragEvent(self.OnBeginDrag, self)
-    self._dragHandler = (self._viewport):Subscribe_DragEvent(self.OnDrag, self)
-    self._endDragHandler = (self._viewport):Subscribe_EndDragEvent(self.OnEndDrag, self)
-    self._cancelDragHandler = (self._viewport):Subscribe_CancelDragEvent(self.OnEndDrag, self)
-    ;
-    ((((CS.PixelNeko).Lua).SoftMaskStaticFunctions).SetSoftMaskActive)((self._viewport)._uiObject, true)
+    self._beginDragHandler = self._viewport:Subscribe_BeginDragEvent(self.OnBeginDrag, self)
+    self._dragHandler = self._viewport:Subscribe_DragEvent(self.OnDrag, self)
+    self._endDragHandler = self._viewport:Subscribe_EndDragEvent(self.OnEndDrag, self)
+    self._cancelDragHandler = self._viewport:Subscribe_CancelDragEvent(self.OnEndDrag, self)
+    CS.PixelNeko.Lua.SoftMaskStaticFunctions.SetSoftMaskActive(self._viewport._uiObject, true)
   else
-    ;
-    ((((CS.PixelNeko).Lua).SoftMaskStaticFunctions).SetSoftMaskActive)((self._viewport)._uiObject, false)
-    ;
-    (self._viewport):Unsubscribe_BeginDragEvent(self._beginDragHandler)
-    ;
-    (self._viewport):Unsubscribe_DragEvent(self._dragHandler)
-    ;
-    (self._viewport):Unsubscribe_EndDragEvent(self._endDragHandler)
-    ;
-    (self._viewport):Unsubscribe_CancelDragEvent(self._cancelDragHandler)
+    CS.PixelNeko.Lua.SoftMaskStaticFunctions.SetSoftMaskActive(self._viewport._uiObject, false)
+    self._viewport:Unsubscribe_BeginDragEvent(self._beginDragHandler)
+    self._viewport:Unsubscribe_DragEvent(self._dragHandler)
+    self._viewport:Unsubscribe_EndDragEvent(self._endDragHandler)
+    self._viewport:Unsubscribe_CancelDragEvent(self._cancelDragHandler)
   end
 end
 
-ProgressHorizontalTableFrame.RefreshUIParticleClipper = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function ProgressHorizontalTableFrame:RefreshUIParticleClipper()
   self._refreshUIParticleClipper = true
-  ;
-  (((((CS.PixelNeko).Render).ShaderUtility).UIParticleClipper).RefreshUIParticleClipper)((self._viewport):GetUIObject())
+  CS.PixelNeko.Render.ShaderUtility.UIParticleClipper.RefreshUIParticleClipper(self._viewport:GetUIObject())
 end
 
 return ProgressHorizontalTableFrame
-

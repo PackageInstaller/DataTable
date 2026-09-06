@@ -1,27 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/def/protocol/user/crefreshphonecdtime.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local CReFreshPhoneCDTime = dataclass("CReFreshPhoneCDTime", require("framework.net.protocol"))
 CReFreshPhoneCDTime.ProtocolType = 2276
 CReFreshPhoneCDTime.MaxSize = 65535
-CReFreshPhoneCDTime.Ctor = function(self, client)
-  -- function num : 0_0 , upvalues : CReFreshPhoneCDTime
-  ((CReFreshPhoneCDTime.super).Ctor)(self, client)
+
+function CReFreshPhoneCDTime:Ctor(client)
+  CReFreshPhoneCDTime.super.Ctor(self, client)
 end
 
-CReFreshPhoneCDTime.Marshal = function(self, buffer)
-  -- function num : 0_1
+function CReFreshPhoneCDTime:Marshal(buffer)
   return true
 end
 
-CReFreshPhoneCDTime.Unmarshal = function(self, buffer)
-  -- function num : 0_2
+function CReFreshPhoneCDTime:Unmarshal(buffer)
   local ret = true
   return ret
 end
 
 return CReFreshPhoneCDTime
-

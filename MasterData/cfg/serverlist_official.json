@@ -1,0 +1,43 @@
+{
+  "downloadurl": "http://version.meta.ledo.com/fhdmn_client/status/trunk/office/status.json",
+  "intranet": [
+    {
+      "name": "测试服",
+      "ipServerDomain": [
+        "http://10.237.80.89"
+      ],
+      "ipServerPort": [
+        "8082"
+      ]
+    },
+    {
+      "name": "发行测试服",
+      "ipServerDomain": [
+        "http://14.103.138.125"
+      ],
+      "ipServerPort": [
+        "8082"
+      ]
+    },
+    {
+      "name": "正式服",
+      "ipServerDomain": [
+        "https://fsdmn-api.ymtnet.com"
+      ],
+      "ipServerPort": [
+        "443"
+      ]
+    }
+  ],
+  "internet": [
+    {
+      "name": "正式服",
+      "ipServerDomain": [
+        "https://fsdmn-api.ymtnet.com"
+      ],
+      "ipServerPort": [
+        "443"
+      ]
+    }
+  ]
+}

@@ -1,44 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/fsm/basemainfsm/monthcarddailyreward.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local State = {}
-local controllera = nil
-State.OnEnter = function(controller, lastState)
-  -- function num : 0_0 , upvalues : _ENV, controllera, State
+local controllera
+
+function State.OnEnter(controller, lastState)
   LogInfo("BaseMainFSM", "MonthCardDailyReward Enter")
-  if ((NekoData.BehaviorManager).BM_ItemAccountShow):GetShowDialogDataFromCache((DataCommon.ShowDialogType).MonthCardDailyAward) then
+  if NekoData.BehaviorManager.BM_ItemAccountShow:GetShowDialogDataFromCache(DataCommon.ShowDialogType.MonthCardDailyAward) then
     controllera = controller
-    ;
-    ((NekoData.BehaviorManager).BM_ItemAccountShow):AddShowDialogDataFromCache((DataCommon.ShowDialogType).MonthCardDailyAward)
-    ;
-    (LuaNotificationCenter.AddObserver)(State, State.OnSingletonDialogDestroy, Common.n_SingletonDialogDestroy, nil)
+    NekoData.BehaviorManager.BM_ItemAccountShow:AddShowDialogDataFromCache(DataCommon.ShowDialogType.MonthCardDailyAward)
+    LuaNotificationCenter.AddObserver(State, State.OnSingletonDialogDestroy, Common.n_SingletonDialogDestroy, nil)
   else
-    ;
-    (controller._baseMainFSM):SetBoolean("toMonthCardDailyReward", false)
+    controller._baseMainFSM:SetBoolean("toMonthCardDailyReward", false)
   end
-  ;
-  (controller._baseMainFSM):SetBoolean("resonanceBegin", true)
+  controller._baseMainFSM:SetBoolean("resonanceBegin", true)
 end
 
-State.Update = function(controller)
-  -- function num : 0_1
+function State.Update(controller)
 end
 
-State.OnExit = function(controller, nextState)
-  -- function num : 0_2 , upvalues : _ENV, State
+function State.OnExit(controller, nextState)
   LogInfo("BaseMainFSM", "MonthCardDailyReward Exit")
-  ;
-  (LuaNotificationCenter.RemoveObserver)(State)
+  LuaNotificationCenter.RemoveObserver(State)
 end
 
-State.OnSingletonDialogDestroy = function(observer, notification)
-  -- function num : 0_3 , upvalues : _ENV, controllera
-  if (notification.userInfo)._dialogName == "shop.monthcarddailyawarddialog" and not ((NekoData.BehaviorManager).BM_ItemAccountShow):GetShowDialogDataFromCache((DataCommon.ShowDialogType).MonthCardDailyAward) then
-    (controllera._baseMainFSM):SetBoolean("toMonthCardDailyReward", false)
+function State.OnSingletonDialogDestroy(observer, notification)
+  if notification.userInfo._dialogName == "shop.monthcarddailyawarddialog" and not NekoData.BehaviorManager.BM_ItemAccountShow:GetShowDialogDataFromCache(DataCommon.ShowDialogType.MonthCardDailyAward) then
+    controllera._baseMainFSM:SetBoolean("toMonthCardDailyReward", false)
   end
 end
 
 return State
-

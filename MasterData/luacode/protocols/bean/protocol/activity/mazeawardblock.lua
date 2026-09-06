@@ -1,9 +1,4 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/bean/protocol/activity/mazeawardblock.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local MazeAwardBlock = dataclass("MazeAwardBlock")
 MazeAwardBlock.blockType = 0
 MazeAwardBlock.status = 0
@@ -11,43 +6,41 @@ MazeAwardBlock.itemId = 0
 MazeAwardBlock.itemNum = 0
 MazeAwardBlock.TO_FETCH = 0
 MazeAwardBlock.FETCHED = 1
-MazeAwardBlock.Ctor = function(self)
-  -- function num : 0_0
+
+function MazeAwardBlock:Ctor()
 end
 
-MazeAwardBlock.Marshal = function(self, buffer)
-  -- function num : 0_1 , upvalues : ProtocolBufferStaticFunctions
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.blockType) then
+function MazeAwardBlock:Marshal(buffer)
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.blockType) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.status) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.status) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.itemId) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.itemId) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.itemNum) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.itemNum) then
     return false
   end
   return true
 end
 
-MazeAwardBlock.Unmarshal = function(self, buffer)
-  -- function num : 0_2 , upvalues : ProtocolBufferStaticFunctions
+function MazeAwardBlock:Unmarshal(buffer)
   local ret = true
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.blockType = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.status = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.itemId = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.itemNum = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
@@ -55,4 +48,3 @@ MazeAwardBlock.Unmarshal = function(self, buffer)
 end
 
 return MazeAwardBlock
-

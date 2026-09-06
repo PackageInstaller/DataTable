@@ -1,35 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/bean/protocol/battle/islandmonsterinfo.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local IslandMonsterInfo = dataclass("IslandMonsterInfo")
 IslandMonsterInfo.monserid = 0
 IslandMonsterInfo.hppercent = 0
-IslandMonsterInfo.Ctor = function(self)
-  -- function num : 0_0
+
+function IslandMonsterInfo:Ctor()
 end
 
-IslandMonsterInfo.Marshal = function(self, buffer)
-  -- function num : 0_1 , upvalues : ProtocolBufferStaticFunctions
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.monserid) then
+function IslandMonsterInfo:Marshal(buffer)
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.monserid) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.hppercent) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.hppercent) then
     return false
   end
   return true
 end
 
-IslandMonsterInfo.Unmarshal = function(self, buffer)
-  -- function num : 0_2 , upvalues : ProtocolBufferStaticFunctions
+function IslandMonsterInfo:Unmarshal(buffer)
   local ret = true
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.monserid = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.hppercent = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
@@ -37,4 +30,3 @@ IslandMonsterInfo.Unmarshal = function(self, buffer)
 end
 
 return IslandMonsterInfo
-

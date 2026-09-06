@@ -1,28 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/localprotocols/def/friendchat/sgetlocalchatinfo.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local SGetLocalChatInfo = dataclass("SGetLocalChatInfo")
 SGetLocalChatInfo.ProtocolType = 108
 SGetLocalChatInfo.clientId = 0
 SGetLocalChatInfo.userId = 0
 SGetLocalChatInfo.redNum = 0
 SGetLocalChatInfo.totalNum = 0
-SGetLocalChatInfo.Ctor = function(self, client)
-  -- function num : 0_0
+
+function SGetLocalChatInfo:Ctor(client)
 end
 
-SGetLocalChatInfo.Marshal = function(self, data)
-  -- function num : 0_1
+function SGetLocalChatInfo:Marshal(data)
   data.clientId = self.clientId
   data.userId = self.userId
   data.redNum = self.redNum
   data.totalNum = self.totalNum
 end
 
-SGetLocalChatInfo.Unmarshal = function(self, data)
-  -- function num : 0_2
+function SGetLocalChatInfo:Unmarshal(data)
   self.clientId = data.clientId
   self.userId = data.userId
   self.redNum = data.redNum
@@ -30,8 +23,7 @@ SGetLocalChatInfo.Unmarshal = function(self, data)
   return true
 end
 
-SGetLocalChatInfo.CheckVariable = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SGetLocalChatInfo:CheckVariable()
   if type(self.clientId) ~= "number" then
     LogErrorFormat("LocalProtocols", "type error!type(self.clientId) = %s. number required.", type(self.clientId))
     return false
@@ -52,4 +44,3 @@ SGetLocalChatInfo.CheckVariable = function(self)
 end
 
 return SGetLocalChatInfo
-

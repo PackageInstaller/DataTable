@@ -1,9 +1,4 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/def/protocol/common/clogin.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local CLogin = dataclass("CLogin", require("framework.net.protocol"))
 CLogin.ProtocolType = 101
 CLogin.MaxSize = 10240
@@ -23,128 +18,126 @@ CLogin.clientVersion = ""
 CLogin.isRelogin = 0
 CLogin.oaid = ""
 CLogin.media = ""
-CLogin.Ctor = function(self, client)
-  -- function num : 0_0 , upvalues : CLogin
-  ((CLogin.super).Ctor)(self, client)
+
+function CLogin:Ctor(client)
+  CLogin.super.Ctor(self, client)
 end
 
-CLogin.Marshal = function(self, buffer)
-  -- function num : 0_1 , upvalues : ProtocolBufferStaticFunctions
-  if not (ProtocolBufferStaticFunctions.WriteProtocolString)(buffer, self.account) then
+function CLogin:Marshal(buffer)
+  if not ProtocolBufferStaticFunctions.WriteProtocolString(buffer, self.account) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteProtocolString)(buffer, self.token) then
+  if not ProtocolBufferStaticFunctions.WriteProtocolString(buffer, self.token) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteProtocolString)(buffer, self.plat) then
+  if not ProtocolBufferStaticFunctions.WriteProtocolString(buffer, self.plat) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteProtocolString)(buffer, self.deviceId) then
+  if not ProtocolBufferStaticFunctions.WriteProtocolString(buffer, self.deviceId) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteProtocolString)(buffer, self.channelId) then
+  if not ProtocolBufferStaticFunctions.WriteProtocolString(buffer, self.channelId) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteProtocolString)(buffer, self.imei) then
+  if not ProtocolBufferStaticFunctions.WriteProtocolString(buffer, self.imei) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.system) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.system) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteProtocolString)(buffer, self.model) then
+  if not ProtocolBufferStaticFunctions.WriteProtocolString(buffer, self.model) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteProtocolString)(buffer, self.resolution) then
+  if not ProtocolBufferStaticFunctions.WriteProtocolString(buffer, self.resolution) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteProtocolString)(buffer, self.systemVersion) then
+  if not ProtocolBufferStaticFunctions.WriteProtocolString(buffer, self.systemVersion) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteProtocolString)(buffer, self.networkMode) then
+  if not ProtocolBufferStaticFunctions.WriteProtocolString(buffer, self.networkMode) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteProtocolString)(buffer, self.operatorField) then
+  if not ProtocolBufferStaticFunctions.WriteProtocolString(buffer, self.operatorField) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteProtocolString)(buffer, self.clientVersion) then
+  if not ProtocolBufferStaticFunctions.WriteProtocolString(buffer, self.clientVersion) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteByte)(buffer, self.isRelogin) then
+  if not ProtocolBufferStaticFunctions.WriteByte(buffer, self.isRelogin) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteProtocolString)(buffer, self.oaid) then
+  if not ProtocolBufferStaticFunctions.WriteProtocolString(buffer, self.oaid) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteProtocolString)(buffer, self.media) then
+  if not ProtocolBufferStaticFunctions.WriteProtocolString(buffer, self.media) then
     return false
   end
   return true
 end
 
-CLogin.Unmarshal = function(self, buffer)
-  -- function num : 0_2 , upvalues : ProtocolBufferStaticFunctions
+function CLogin:Unmarshal(buffer)
   local ret = true
-  ret = (ProtocolBufferStaticFunctions.ReadProtocolString)(buffer)
+  ret, self.account = ProtocolBufferStaticFunctions.ReadProtocolString(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadProtocolString)(buffer)
+  ret, self.token = ProtocolBufferStaticFunctions.ReadProtocolString(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadProtocolString)(buffer)
+  ret, self.plat = ProtocolBufferStaticFunctions.ReadProtocolString(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadProtocolString)(buffer)
+  ret, self.deviceId = ProtocolBufferStaticFunctions.ReadProtocolString(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadProtocolString)(buffer)
+  ret, self.channelId = ProtocolBufferStaticFunctions.ReadProtocolString(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadProtocolString)(buffer)
+  ret, self.imei = ProtocolBufferStaticFunctions.ReadProtocolString(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.system = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadProtocolString)(buffer)
+  ret, self.model = ProtocolBufferStaticFunctions.ReadProtocolString(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadProtocolString)(buffer)
+  ret, self.resolution = ProtocolBufferStaticFunctions.ReadProtocolString(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadProtocolString)(buffer)
+  ret, self.systemVersion = ProtocolBufferStaticFunctions.ReadProtocolString(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadProtocolString)(buffer)
+  ret, self.networkMode = ProtocolBufferStaticFunctions.ReadProtocolString(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadProtocolString)(buffer)
+  ret, self.operatorField = ProtocolBufferStaticFunctions.ReadProtocolString(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadProtocolString)(buffer)
+  ret, self.clientVersion = ProtocolBufferStaticFunctions.ReadProtocolString(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadByte)(buffer)
+  ret, self.isRelogin = ProtocolBufferStaticFunctions.ReadByte(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadProtocolString)(buffer)
+  ret, self.oaid = ProtocolBufferStaticFunctions.ReadProtocolString(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadProtocolString)(buffer)
+  ret, self.media = ProtocolBufferStaticFunctions.ReadProtocolString(buffer)
   if not ret then
     return ret
   end
@@ -152,4 +145,3 @@ CLogin.Unmarshal = function(self, buffer)
 end
 
 return CLogin
-

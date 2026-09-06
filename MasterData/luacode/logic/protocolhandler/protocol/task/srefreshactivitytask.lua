@@ -1,16 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/protocolhandler/protocol/task/srefreshactivitytask.lua 
+local CActivityTasks = LuaNetManager.GetProtocolDef("protocol.task.cactivitytasks")
 
--- params : ...
--- function num : 0 , upvalues : _ENV
-local CActivityTasks = (LuaNetManager.GetProtocolDef)("protocol.task.cactivitytasks")
-local p1 = function(protocol)
-  -- function num : 0_0 , upvalues : CActivityTasks, _ENV
+local function p1(protocol)
   if protocol.activityID ~= CActivityTasks.ANNIVERSARY then
-    ((NekoData.DataManager).DM_ActivityTasks):OnSRefreshActivityTask(protocol)
+    NekoData.DataManager.DM_ActivityTasks:OnSRefreshActivityTask(protocol)
   else
     local conditionStr = ""
-    for i,value in ipairs((protocol.taskinfo).conditions) do
+    for i, value in ipairs(protocol.taskinfo.conditions) do
       if conditionStr == "" then
         conditionStr = conditionStr .. "{"
       else
@@ -21,20 +16,14 @@ local p1 = function(protocol)
     if conditionStr ~= "" then
       conditionStr = conditionStr .. "}"
     end
-    local str = "[" .. (protocol.taskinfo).taskid .. "] = {taskstatus = " .. (protocol.taskinfo).taskstatus .. ", condition = " .. conditionStr .. "}"
+    local str = "[" .. protocol.taskinfo.taskid .. "] = {taskstatus = " .. protocol.taskinfo.taskstatus .. ", condition = " .. conditionStr .. "}"
     LogErrorFormat("srefreshactivitytask", "--- activityTasks = %s ---", str)
-    ;
-    ((NekoData.DataManager).DM_Anniversary):OnSRefreshActivityTask(protocol)
+    NekoData.DataManager.DM_Anniversary:OnSRefreshActivityTask(protocol)
   end
-  do
-    ;
-    (LuaNotificationCenter.PostNotification)(Common.n_OnSRefreshActivityTask, nil, protocol)
-  end
+  LuaNotificationCenter.PostNotification(Common.n_OnSRefreshActivityTask, nil, protocol)
 end
 
-local p2 = function(protocol, client)
-  -- function num : 0_1
+local function p2(protocol, client)
 end
 
 return {p1, p2}
-

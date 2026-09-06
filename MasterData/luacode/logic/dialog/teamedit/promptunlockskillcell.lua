@@ -1,19 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/dialog/teamedit/promptunlockskillcell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local Skill = require("logic.manager.experimental.types.skill")
 local PromptUnlockSkillCell = class("PromptUnlockSkillCell", Dialog)
 PromptUnlockSkillCell.AssetBundleName = "ui/layouts.teamedit"
 PromptUnlockSkillCell.AssetName = "TeamEditSkillUnlockCell"
-PromptUnlockSkillCell.Ctor = function(self, ...)
-  -- function num : 0_0 , upvalues : PromptUnlockSkillCell
-  ((PromptUnlockSkillCell.super).Ctor)(self, ...)
+
+function PromptUnlockSkillCell:Ctor(...)
+  PromptUnlockSkillCell.super.Ctor(self, ...)
 end
 
-PromptUnlockSkillCell.OnCreate = function(self)
-  -- function num : 0_1
+function PromptUnlockSkillCell:OnCreate()
   self._frame = self:GetChild("Back/CharSmallCell/Frame")
   self._photo = self:GetChild("Back/CharSmallCell/Photo")
   self._downRankBack = self:GetChild("Back/CharSmallCell/DownRankBack")
@@ -33,105 +27,84 @@ PromptUnlockSkillCell.OnCreate = function(self)
   self._goBtn = self:GetChild("Back/GoBtn")
   self._lack = self:GetChild("Back/Lack")
   self._lackTxt = self:GetChild("Back/Lack/LackText")
-  ;
-  (self._goBtn):Subscribe_PointerClickEvent(self.OnGoBtnClick, self)
+  self._goBtn:Subscribe_PointerClickEvent(self.OnGoBtnClick, self)
 end
 
-PromptUnlockSkillCell.OnDestroy = function(self)
-  -- function num : 0_2
+function PromptUnlockSkillCell:OnDestroy()
 end
 
-PromptUnlockSkillCell.RefreshCell = function(self, role)
-  -- function num : 0_3 , upvalues : Skill, _ENV
+function PromptUnlockSkillCell:RefreshCell(role)
   local image = role:GetShapeLittleHeadImageRecord()
-  ;
-  (self._photo):SetSprite(image.assetBundle, image.assetName)
+  self._photo:SetSprite(image.assetBundle, image.assetName)
   image = role:GetSmallRarityFrameRecord()
-  ;
-  (self._frame):SetSprite(image.assetBundle, image.assetName)
+  self._frame:SetSprite(image.assetBundle, image.assetName)
   image = role:GetRarityBottomBackRecord()
-  ;
-  (self._downRankBack):SetSprite(image.assetBundle, image.assetName)
-  ;
-  (self._level):SetText(role:GetShowLv())
+  self._downRankBack:SetSprite(image.assetBundle, image.assetName)
+  self._level:SetText(role:GetShowLv())
   image = role:GetRarityImageRecord()
-  ;
-  (self._rank):SetSprite(image.assetBundle, image.assetName)
+  self._rank:SetSprite(image.assetBundle, image.assetName)
   image = role:GetVocationImageRecord()
-  ;
-  (self._job):SetSprite(image.assetBundle, image.assetName)
+  self._job:SetSprite(image.assetBundle, image.assetName)
   local breakLv = role:GetBreakLv()
-  ;
-  (self._breakLevelBackBlack):SetActive(breakLv == 0)
-  ;
-  (self._breakLevelBack):SetActive(breakLv > 0)
-  ;
-  (self._breakLevelNum):SetActive(breakLv > 0)
-  if breakLv > 0 then
+  self._breakLevelBackBlack:SetActive(breakLv == 0)
+  self._breakLevelBack:SetActive(0 < breakLv)
+  self._breakLevelNum:SetActive(0 < breakLv)
+  if 0 < breakLv then
     image = role:GetCurBreakFrame1ImageRecord()
-    ;
-    (self._breakLevelBack):SetSprite(image.assetBundle, image.assetName)
-    ;
-    (self._breakLevelNum):SetText(breakLv)
+    self._breakLevelBack:SetSprite(image.assetBundle, image.assetName)
+    self._breakLevelNum:SetText(breakLv)
   end
   image = role:GetElementImageRecord()
-  ;
-  (self._element):SetSprite(image.assetBundle, image.assetName)
+  self._element:SetSprite(image.assetBundle, image.assetName)
   local skill2Info = role:GetShowSkillDataByIndex(2)
-  local skill = (Skill.Create)(skill2Info.skillId, skill2Info.skillItemId or true)
+  local skill = Skill.Create(skill2Info.skillId, skill2Info.skillItemId or true)
   local imgRecord = skill:GetSkillIcon()
-  ;
-  (self._skillIcon):SetSprite(imgRecord.assetBundle, imgRecord.assetName)
+  self._skillIcon:SetSprite(imgRecord.assetBundle, imgRecord.assetName)
   local lv = skill:GetSkillLevel()
-  ;
-  (self._lvPanel_txt):SetText(lv)
-  ;
-  (self._chargingPanel):SetActive(skill:GetType() == (Skill.Type).Charging)
-  ;
-  (self._txt):SetText(((NekoData.BehaviorManager).BM_Message):GetString(1521, {skill:GetSkillName()}))
+  self._lvPanel_txt:SetText(lv)
+  self._chargingPanel:SetActive(skill:GetType() == Skill.Type.Charging)
+  self._txt:SetText(NekoData.BehaviorManager.BM_Message:GetString(1521, {
+    skill:GetSkillName()
+  }))
   local canUnlock = role:IsShowSkillRedDot()
-  ;
-  (self._goBtn):SetActive(canUnlock)
+  self._goBtn:SetActive(canUnlock)
   if not canUnlock then
-    local nodeRecord = nil
+    local nodeRecord
     local allNodes = role:GetAllSkillNodes()
-    for k,v in pairs(allNodes) do
-      local skillItemId = nil
+    for k, v in pairs(allNodes) do
+      local skillItemId
       local skillId = v.skillID
-      if ((NekoData.BehaviorManager).BM_Game):IsSkillItemId(skillId) then
-        local tempSkill = (Skill.Create)(skillId)
+      if NekoData.BehaviorManager.BM_Game:IsSkillItemId(skillId) then
+        local tempSkill = Skill.Create(skillId)
         tempSkill:SetLevel(v.skillLevel)
         skillItemId = tempSkill:GetID()
       else
         skillItemId = skillId
       end
       if skillItemId == skill2Info.skillItemId and v.skillLevel == lv then
-        nodeRecord = 
+        nodeRecord = v
         break
       end
     end
     local roleLvEnough = true
-    roleLvEnough = not nodeRecord or nodeRecord.roleSkill <= role:GetLevel()
-    local str = nil
-    if not roleLvEnough then
-      str = ((NekoData.BehaviorManager).BM_Message):GetString(1527)
-    else
-      str = ((NekoData.BehaviorManager).BM_Message):GetString(1526)
+    if nodeRecord then
+      roleLvEnough = role:GetLevel() >= nodeRecord.roleSkill
     end
-    ;
-    (self._lack):SetActive(true)
-    ;
-    (self._lackTxt):SetText(str)
+    local str
+    if not roleLvEnough then
+      str = NekoData.BehaviorManager.BM_Message:GetString(1527)
+    else
+      str = NekoData.BehaviorManager.BM_Message:GetString(1526)
+    end
+    self._lack:SetActive(true)
+    self._lackTxt:SetText(str)
   else
-    (self._lack):SetActive(false)
+    self._lack:SetActive(false)
   end
-  -- DECOMPILER ERROR: 16 unprocessed JMP targets
 end
 
-PromptUnlockSkillCell.OnGoBtnClick = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  ((DialogManager.CreateSingletonDialog)("character.characterskilldialog")):SetData((self._cellData):GetId())
+function PromptUnlockSkillCell:OnGoBtnClick()
+  DialogManager.CreateSingletonDialog("character.characterskilldialog"):SetData(self._cellData:GetId())
 end
 
 return PromptUnlockSkillCell
-

@@ -1,9 +1,4 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/def/protocol/activity/srefreshinvestactinfo.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local SRefreshInvestActInfo = dataclass("SRefreshInvestActInfo", require("framework.net.protocol"))
 SRefreshInvestActInfo.ProtocolType = 2659
 SRefreshInvestActInfo.MaxSize = 65535
@@ -13,81 +8,77 @@ SRefreshInvestActInfo.currentChannel = 0
 SRefreshInvestActInfo.leftTimes = 0
 SRefreshInvestActInfo.actLeftTime = 0
 SRefreshInvestActInfo.todayFetched = 0
-SRefreshInvestActInfo.Ctor = function(self, client)
-  -- function num : 0_0 , upvalues : SRefreshInvestActInfo
-  ((SRefreshInvestActInfo.super).Ctor)(self, client)
+
+function SRefreshInvestActInfo:Ctor(client)
+  SRefreshInvestActInfo.super.Ctor(self, client)
   self.channel = {}
 end
 
-SRefreshInvestActInfo.Marshal = function(self, buffer)
-  -- function num : 0_1 , upvalues : ProtocolBufferStaticFunctions, _ENV
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.close) then
+function SRefreshInvestActInfo:Marshal(buffer)
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.close) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.actId) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.actId) then
     return false
   end
-  local length = (table.slen)(self.channel)
-  if not (ProtocolBufferStaticFunctions.WriteCompactUInt32)(buffer, length) then
+  local length = table.slen(self.channel)
+  if not ProtocolBufferStaticFunctions.WriteCompactUInt32(buffer, length) then
     return false
   end
   for i = 1, length do
-    if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, (self.channel)[i]) then
+    if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.channel[i]) then
       return false
     end
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.currentChannel) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.currentChannel) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.leftTimes) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.leftTimes) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt64)(buffer, self.actLeftTime) then
+  if not ProtocolBufferStaticFunctions.WriteInt64(buffer, self.actLeftTime) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.todayFetched) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.todayFetched) then
     return false
   end
   return true
 end
 
-SRefreshInvestActInfo.Unmarshal = function(self, buffer)
-  -- function num : 0_2 , upvalues : ProtocolBufferStaticFunctions
+function SRefreshInvestActInfo:Unmarshal(buffer)
   local ret = true
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.close = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.actId = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
   local length = 0
-  ret = (ProtocolBufferStaticFunctions.ReadCompactUInt32)(buffer)
+  ret, length = ProtocolBufferStaticFunctions.ReadCompactUInt32(buffer)
   if not ret then
     return ret
   end
   for i = 1, length do
-    -- DECOMPILER ERROR at PC34: Confused about usage of register: R8 in 'UnsetPending'
-
-    ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+    ret, self.channel[i] = ProtocolBufferStaticFunctions.ReadInt32(buffer)
     if not ret then
       return ret
     end
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.currentChannel = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.leftTimes = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt64)(buffer)
+  ret, self.actLeftTime = ProtocolBufferStaticFunctions.ReadInt64(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.todayFetched = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
@@ -95,4 +86,3 @@ SRefreshInvestActInfo.Unmarshal = function(self, buffer)
 end
 
 return SRefreshInvestActInfo
-

@@ -1,12 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/scene/luaevent/effect/basic/blockchangeeffect.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local EffectBase = require("logic.scene.luaevent.effect.effectbase")
 local ObjectBlockEffect = class("ObjectBlockEffect", EffectBase)
-ObjectBlockEffect.Ctor = function(self, x, y, w, h, status, gridwidth, gridheight)
-  -- function num : 0_0
+
+function ObjectBlockEffect:Ctor(x, y, w, h, status, gridwidth, gridheight)
   self._x = x
   self._y = y
   self._w = w
@@ -16,23 +11,20 @@ ObjectBlockEffect.Ctor = function(self, x, y, w, h, status, gridwidth, gridheigh
   self._gridheight = gridheight or 0.56
 end
 
-ObjectBlockEffect.Run = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function ObjectBlockEffect:Run()
   if global_var_debug and self:GetParam("pause") then
-    (((CS.PixelNeko).LuaManager).Pause)()
+    CS.PixelNeko.LuaManager.Pause()
   end
-  local active_controller = (SceneManager.GetSceneControllerByLoadType)((SceneManager.LoadType).CommonDungeon)
+  local active_controller = SceneManager.GetSceneControllerByLoadType(SceneManager.LoadType.CommonDungeon)
   for i = self._x, self._x + self._w - 1 do
     for j = self._y, self._y + self._h - 1 do
       if self._status then
-        ((((CS.PixelNeko).Lua).NavMeshStaticFunctions).AddBlockingPoint)((active_controller._sceneRef).builder, i, j, self._gridwidth, self._gridheight)
+        CS.PixelNeko.Lua.NavMeshStaticFunctions.AddBlockingPoint(active_controller._sceneRef.builder, i, j, self._gridwidth, self._gridheight)
       else
-        ;
-        ((((CS.PixelNeko).Lua).NavMeshStaticFunctions).RemoveBlockingPoint)((active_controller._sceneRef).builder, i, j, self._gridwidth, self._gridheight)
+        CS.PixelNeko.Lua.NavMeshStaticFunctions.RemoveBlockingPoint(active_controller._sceneRef.builder, i, j, self._gridwidth, self._gridheight)
       end
     end
   end
 end
 
 return ObjectBlockEffect
-

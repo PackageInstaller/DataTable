@@ -1,8 +1,3 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/data/behavior/newbattle/newbattleai29002_0.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local LoopUntil = require("luabehavior.decorators.loopuntil")
 local Not = require("luabehavior.decorators.not")
 local Weight = require("luabehavior.decorators.weight")
@@ -16,15 +11,15 @@ local Noop = require("luabehavior.actions.noop")
 local Wait = require("luabehavior.actions.wait")
 local WaitFrames = require("luabehavior.actions.waitframes")
 local Agent = require("luabehavior.agent.battleai")
-local CreateNewBattleAI29002_0 = function(behavior)
-  -- function num : 0_0 , upvalues : Sequence, Agent, LoopUntil
+
+local function CreateNewBattleAI29002_0(behavior)
   local data = behavior._data
-  local node1 = (Sequence.Create)()
-  local node2 = ((Agent.IfHasEnoughConditionsUseSkill).Create)(behavior)
-  local node3 = (Sequence.Create)()
-  local node4 = ((Agent.EnergySection).Create)(behavior, 2, 3, 7)
-  local node5 = (LoopUntil.Create)(behavior, 1, true)
-  local node6 = ((Agent.UseSkill).Create)(behavior, 201018)
+  local node1 = Sequence.Create()
+  local node2 = Agent.IfHasEnoughConditionsUseSkill.Create(behavior)
+  local node3 = Sequence.Create()
+  local node4 = Agent.EnergySection.Create(behavior, 2, 3, 7)
+  local node5 = LoopUntil.Create(behavior, 1, true)
+  local node6 = Agent.UseSkill.Create(behavior, 201018)
   node5:SetTask(node6)
   node3:AddTask(node4)
   node3:AddTask(node5)
@@ -34,4 +29,3 @@ local CreateNewBattleAI29002_0 = function(behavior)
 end
 
 return CreateNewBattleAI29002_0
-

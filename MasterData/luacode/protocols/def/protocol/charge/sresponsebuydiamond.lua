@@ -1,9 +1,4 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/def/protocol/charge/sresponsebuydiamond.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local SResponseBuyDiamond = dataclass("SResponseBuyDiamond", require("framework.net.protocol"))
 SResponseBuyDiamond.ProtocolType = 3902
 SResponseBuyDiamond.MaxSize = 65535
@@ -15,72 +10,70 @@ SResponseBuyDiamond.gearid = 0
 SResponseBuyDiamond.extraparam = ""
 SResponseBuyDiamond.price = 0
 SResponseBuyDiamond.url = ""
-SResponseBuyDiamond.Ctor = function(self, client)
-  -- function num : 0_0 , upvalues : SResponseBuyDiamond
-  ((SResponseBuyDiamond.super).Ctor)(self, client)
+
+function SResponseBuyDiamond:Ctor(client)
+  SResponseBuyDiamond.super.Ctor(self, client)
 end
 
-SResponseBuyDiamond.Marshal = function(self, buffer)
-  -- function num : 0_1 , upvalues : ProtocolBufferStaticFunctions
-  if not (ProtocolBufferStaticFunctions.WriteProtocolString)(buffer, self.gameorderid) then
+function SResponseBuyDiamond:Marshal(buffer)
+  if not ProtocolBufferStaticFunctions.WriteProtocolString(buffer, self.gameorderid) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteProtocolString)(buffer, self.goodid) then
+  if not ProtocolBufferStaticFunctions.WriteProtocolString(buffer, self.goodid) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteProtocolString)(buffer, self.goodname) then
+  if not ProtocolBufferStaticFunctions.WriteProtocolString(buffer, self.goodname) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.platType) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.platType) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.gearid) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.gearid) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteProtocolString)(buffer, self.extraparam) then
+  if not ProtocolBufferStaticFunctions.WriteProtocolString(buffer, self.extraparam) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.price) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.price) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteProtocolString)(buffer, self.url) then
+  if not ProtocolBufferStaticFunctions.WriteProtocolString(buffer, self.url) then
     return false
   end
   return true
 end
 
-SResponseBuyDiamond.Unmarshal = function(self, buffer)
-  -- function num : 0_2 , upvalues : ProtocolBufferStaticFunctions
+function SResponseBuyDiamond:Unmarshal(buffer)
   local ret = true
-  ret = (ProtocolBufferStaticFunctions.ReadProtocolString)(buffer)
+  ret, self.gameorderid = ProtocolBufferStaticFunctions.ReadProtocolString(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadProtocolString)(buffer)
+  ret, self.goodid = ProtocolBufferStaticFunctions.ReadProtocolString(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadProtocolString)(buffer)
+  ret, self.goodname = ProtocolBufferStaticFunctions.ReadProtocolString(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.platType = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.gearid = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadProtocolString)(buffer)
+  ret, self.extraparam = ProtocolBufferStaticFunctions.ReadProtocolString(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.price = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadProtocolString)(buffer)
+  ret, self.url = ProtocolBufferStaticFunctions.ReadProtocolString(buffer)
   if not ret then
     return ret
   end
@@ -88,4 +81,3 @@ SResponseBuyDiamond.Unmarshal = function(self, buffer)
 end
 
 return SResponseBuyDiamond
-

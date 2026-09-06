@@ -1,38 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/manager/experimental/behaviormanager/activity/bm_giftoftime.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local CBpDailyTaskConfig = (BeanManager.GetTableByName)("mission.cbpdailytaskconfig")
-local CbpBossHitBoss = (BeanManager.GetTableByName)("activity.cbpbosshitboss")
-local CbpBossHitRole = (BeanManager.GetTableByName)("activity.cbpbosshitrole")
-local CLittleBattlePassReward = (BeanManager.GetTableByName)("activity.clittlebattlepassreward")
-local GuidTypes = (LuaNetManager.GetBeanDef)("protocol.user.guidtypes")
-local limmitMaxNum = tonumber((((BeanManager.GetTableByName)("var.cvarconfig")):GetRecorder(120)).Value)
+local CBpDailyTaskConfig = BeanManager.GetTableByName("mission.cbpdailytaskconfig")
+local CbpBossHitBoss = BeanManager.GetTableByName("activity.cbpbosshitboss")
+local CbpBossHitRole = BeanManager.GetTableByName("activity.cbpbosshitrole")
+local CLittleBattlePassReward = BeanManager.GetTableByName("activity.clittlebattlepassreward")
+local GuidTypes = LuaNetManager.GetBeanDef("protocol.user.guidtypes")
+local limmitMaxNum = tonumber(BeanManager.GetTableByName("var.cvarconfig"):GetRecorder(120).Value)
 local BM_GiftOfTime = class("BM_GiftOfTime")
-BM_GiftOfTime.Ctor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._data = ((NekoData.Data).activities).giftoftime
+
+function BM_GiftOfTime:Ctor()
+  self._data = NekoData.Data.activities.giftoftime
 end
 
-BM_GiftOfTime.GetIsOpen = function(self)
-  -- function num : 0_1
-  do return (self._data).actId > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function BM_GiftOfTime:GetIsOpen()
+  return self._data.actId > 0
 end
 
-BM_GiftOfTime.HasFreeGood = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  self._puzzleBM = ((NekoData.BehaviorManager).BM_Activity):GetManager(DataCommon.GiftOfTimePuzzleActivityManagerID)
-  self._mazeBM = ((NekoData.BehaviorManager).BM_Activity):GetManager(DataCommon.GiftOfTimeMazeActivityManagerID)
-  if not self:IsBossKillOpen() and (not self._puzzleBM or not (self._puzzleBM):GetIsOpen()) and (not self._mazeBM or not (self._mazeBM):GetIsOpen()) then
-    return 
+function BM_GiftOfTime:HasFreeGood()
+  self._puzzleBM = NekoData.BehaviorManager.BM_Activity:GetManager(DataCommon.GiftOfTimePuzzleActivityManagerID)
+  self._mazeBM = NekoData.BehaviorManager.BM_Activity:GetManager(DataCommon.GiftOfTimeMazeActivityManagerID)
+  if not self:IsBossKillOpen() and (not self._puzzleBM or not self._puzzleBM:GetIsOpen()) and (not self._mazeBM or not self._mazeBM:GetIsOpen()) then
+    return
   end
-  if not ((NekoData.BehaviorManager).BM_Shop):GetShopGoodInfoByID(((DataCommon.GiftofTime).Shop).ShopID) then
-    local shopData = {}
-  end
+  local shopData = NekoData.BehaviorManager.BM_Shop:GetShopGoodInfoByID(DataCommon.GiftofTime.Shop.ShopID) or {}
   local allFreeSoldOut = true
-  for _,good in ipairs(shopData) do
+  for _, good in ipairs(shopData) do
     if good.discountPrice == 0 then
       allFreeSoldOut = true
       if good.goodRemain ~= 0 then
@@ -41,249 +31,227 @@ BM_GiftOfTime.HasFreeGood = function(self)
       end
     end
   end
-  do
-    return not allFreeSoldOut
-  end
+  return not allFreeSoldOut
 end
 
-BM_GiftOfTime.ShowRedDot = function(self)
-  -- function num : 0_3
-  if self:GetIsOpen() and not self:HasUntakeAward() and not self:HasBossKillRedDot() then
-    return self:HasFreeGood()
-  end
+function BM_GiftOfTime:ShowRedDot()
+  return not self:GetIsOpen() or self:HasUntakeAward() or self:HasBossKillRedDot() or self:HasFreeGood()
 end
 
-BM_GiftOfTime.IsHighColltionLock = function(self)
-  -- function num : 0_4
-  do return (self._data).highUnlocked == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function BM_GiftOfTime:IsHighColltionLock()
+  return self._data.highUnlocked == 0
 end
 
-BM_GiftOfTime.GetUnLockHighItemid = function(self)
-  -- function num : 0_5
-  return (self._data).highUnlockItemid
+function BM_GiftOfTime:GetUnLockHighItemid()
+  return self._data.highUnlockItemid
 end
 
-BM_GiftOfTime.GetUnLockHighItemNum = function(self)
-  -- function num : 0_6
-  return (self._data).highUnlockItemNum
+function BM_GiftOfTime:GetUnLockHighItemNum()
+  return self._data.highUnlockItemNum
 end
 
-BM_GiftOfTime.GetHighAwardInfo = function(self)
-  -- function num : 0_7
-  return (self._data).highUnlockInfo
+function BM_GiftOfTime:GetHighAwardInfo()
+  return self._data.highUnlockInfo
 end
 
-BM_GiftOfTime.GetDailyTaskRefreshTime = function(self)
-  -- function num : 0_8
-  return (self._data).refreshDailyTime
+function BM_GiftOfTime:GetDailyTaskRefreshTime()
+  return self._data.refreshDailyTime
 end
 
-BM_GiftOfTime.GetDreamDelegateTasks = function(self)
-  -- function num : 0_9
-  return (self._data).tasks
+function BM_GiftOfTime:GetDreamDelegateTasks()
+  return self._data.tasks
 end
 
-BM_GiftOfTime.GetTaskRefreshTime = function(self)
-  -- function num : 0_10
-  return (self._data).refreshDailyTime
+function BM_GiftOfTime:GetTaskRefreshTime()
+  return self._data.refreshDailyTime
 end
 
-BM_GiftOfTime.GetColltion = function(self)
-  -- function num : 0_11 , upvalues : _ENV, CLittleBattlePassReward, limmitMaxNum
+function BM_GiftOfTime:GetColltion()
   if not self._curActRecorder then
     self._curActRecorder = {}
-    for i,v in ipairs(CLittleBattlePassReward:GetAllIds()) do
+    for i, v in ipairs(CLittleBattlePassReward:GetAllIds()) do
       local recoder = CLittleBattlePassReward:GetRecorder(v)
-      -- DECOMPILER ERROR at PC22: Confused about usage of register: R7 in 'UnsetPending'
-
-      if recoder.ShopType == (self._data).actId then
-        (self._curActRecorder)[recoder.level] = recoder
+      if recoder.ShopType == self._data.actId then
+        self._curActRecorder[recoder.level] = recoder
       end
     end
   end
-  do
-    if #(self._data).collection ~= 0 then
-      local maxColltionNum = #(self._data).collection
-      if (self._data).dreamLevel >= 25 then
-        local gap = (self._data).dreamLevel - 24
-        local t = (math.ceil)(gap / 3)
-        maxColltionNum = 3 * t + 30
-      end
-      do
-        maxColltionNum = (math.min)(limmitMaxNum, maxColltionNum)
-        do
-          local tempdata = {}
-          for i = 1, maxColltionNum do
-            local data = {}
-            if i <= #(self._data).collection then
-              data = ((self._data).collection)[i]
-            else
-              local index = i
-              if i > 30 then
-                index = i % 3
-                if index == 1 then
-                  index = -1
-                else
-                  if index == 2 then
-                    index = -2
-                  else
-                    if index == 0 then
-                      index = -3
-                    end
-                  end
-                end
-              end
-              local d = (self._curActRecorder)[index]
-              data.level = i
-              data.index = i
-              data.coinNum = d.coinNum
-              data.common = {state = 0, itemId = d.ItemID, itemNum = d.ItemNum}
-              data.high = {state = 0, itemId = d.PayItemID, itemNum = d.PayItemNum}
-            end
-            do
-              do
-                ;
-                (table.insert)(tempdata, data)
-                -- DECOMPILER ERROR at PC107: LeaveBlock: unexpected jumping out DO_STMT
-
-              end
-            end
+  if #self._data.collection ~= 0 then
+    local maxColltionNum = #self._data.collection
+    if self._data.dreamLevel >= 25 then
+      local gap = self._data.dreamLevel - 24
+      local t = math.ceil(gap / 3)
+      maxColltionNum = 3 * t + 30
+    end
+    maxColltionNum = math.min(limmitMaxNum, maxColltionNum)
+    local tempdata = {}
+    for i = 1, maxColltionNum do
+      local data = {}
+      if i <= #self._data.collection then
+        data = self._data.collection[i]
+      else
+        local index = i
+        if 30 < i then
+          index = i % 3
+          if index == 1 then
+            index = -1
+          elseif index == 2 then
+            index = -2
+          elseif index == 0 then
+            index = -3
           end
-          do return tempdata end
-          return {}
         end
+        local d = self._curActRecorder[index]
+        data.level = i
+        data.index = i
+        data.coinNum = d.coinNum
+        data.common = {
+          state = 0,
+          itemId = d.ItemID,
+          itemNum = d.ItemNum
+        }
+        data.high = {
+          state = 0,
+          itemId = d.PayItemID,
+          itemNum = d.PayItemNum
+        }
       end
+      table.insert(tempdata, data)
     end
+    return tempdata
   end
+  return {}
 end
 
-BM_GiftOfTime.GetCurrentActId = function(self)
-  -- function num : 0_12
-  return (self._data).actId
+function BM_GiftOfTime:GetCurrentActId()
+  return self._data.actId
 end
 
-BM_GiftOfTime.GetBaseInfo = function(self)
-  -- function num : 0_13
-  local d = {actId = (self._data).actId, endTime = (self._data).endTime, leftTime = (self._data).leftTime, chargeInfo = (self._data).chargeInfo, dreamLevel = (self._data).dreamLevel, highUnlocked = (self._data).highUnlocked, chipInfo = (self._data).chipInfo}
+function BM_GiftOfTime:GetBaseInfo()
+  local d = {
+    actId = self._data.actId,
+    endTime = self._data.endTime,
+    leftTime = self._data.leftTime,
+    chargeInfo = self._data.chargeInfo,
+    dreamLevel = self._data.dreamLevel,
+    highUnlocked = self._data.highUnlocked,
+    chipInfo = self._data.chipInfo
+  }
   return d
 end
 
-BM_GiftOfTime.HasUntakeAward = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function BM_GiftOfTime:HasUntakeAward()
   local has = false
-  local num = #(self._data).collection
-  for i,v in ipairs((self._data).collection) do
-    has = has or (v.common).state == 1 or (v.high).state == 1
+  local num = #self._data.collection
+  for i, v in ipairs(self._data.collection) do
+    has = has or v.common.state == 1 or v.high.state == 1
   end
-  do return has end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return has
 end
 
-BM_GiftOfTime.GetDreamCoins = function(self)
-  -- function num : 0_15
-  return ((self._data).chipInfo).has
+function BM_GiftOfTime:GetDreamCoins()
+  return self._data.chipInfo.has
 end
 
-BM_GiftOfTime.GetWeeklyLeftTime = function(self)
-  -- function num : 0_16
-  return (self._data).weeklyLeftTime
+function BM_GiftOfTime:GetWeeklyLeftTime()
+  return self._data.weeklyLeftTime
 end
 
-BM_GiftOfTime.IsBossKillOpen = function(self)
-  -- function num : 0_17
-  do return (self._data).weeklyLeftTime > 0 and #(self._data).bossInfoList > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function BM_GiftOfTime:IsBossKillOpen()
+  return self._data.weeklyLeftTime > 0 and 0 < #self._data.bossInfoList
 end
 
-BM_GiftOfTime.HasTasksAward = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function BM_GiftOfTime:HasTasksAward()
   local hasAward = false
-  for k,v in pairs((self._data).tasks) do
+  for k, v in pairs(self._data.tasks) do
     hasAward = hasAward or v.taskstatus == 3
   end
-  do return hasAward end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return hasAward
 end
 
-BM_GiftOfTime.HasWeekAward = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function BM_GiftOfTime:HasWeekAward()
   local hasAward = false
-  for k,v in pairs((self._data).weeklyAwardsList) do
+  for k, v in pairs(self._data.weeklyAwardsList) do
     hasAward = hasAward or v.awardStatus == 1
   end
-  do return hasAward end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return hasAward
 end
 
-BM_GiftOfTime.HasBossKillRedDot = function(self)
-  -- function num : 0_20
-  if self:IsBossKillOpen() and not self:CanWitchLevelUp() and not self:HasTasksAward() then
-    do return self:HasWeekAward() end
+function BM_GiftOfTime:HasBossKillRedDot()
+  if self:IsBossKillOpen() then
+    return self:CanWitchLevelUp() or self:HasTasksAward() or self:HasWeekAward()
   end
 end
 
-BM_GiftOfTime.CanWitchLevelUp = function(self)
-  -- function num : 0_21 , upvalues : _ENV, CbpBossHitRole
-  local charlevelupneeditemcurrentnum = ((NekoData.BehaviorManager).BM_Currency):GetCurrencyNum(DataCommon.KillBossCoin)
+function BM_GiftOfTime:CanWitchLevelUp()
+  local charlevelupneeditemcurrentnum = NekoData.BehaviorManager.BM_Currency:GetCurrencyNum(DataCommon.KillBossCoin)
   local charlevelupitemneednum = 0
-  if #CbpBossHitRole:GetAllIds() - 1 < (self._data).witchLevel then
+  if self._data.witchLevel > #CbpBossHitRole:GetAllIds() - 1 then
     charlevelupitemneednum = 0
   else
-    charlevelupitemneednum = (CbpBossHitRole:GetRecorder((self._data).witchLevel + 1)).num
+    charlevelupitemneednum = CbpBossHitRole:GetRecorder(self._data.witchLevel + 1).num
   end
-  if charlevelupitemneednum <= charlevelupneeditemcurrentnum and charlevelupitemneednum > 0 then
+  if charlevelupneeditemcurrentnum >= charlevelupitemneednum and 0 < charlevelupitemneednum then
     return true
   else
     return false
   end
 end
 
-BM_GiftOfTime.GetRoleList = function(self)
-  -- function num : 0_22 , upvalues : CbpBossHitRole, _ENV
+function BM_GiftOfTime:GetRoleList()
   local result = {}
-  local cfg = CbpBossHitRole:GetRecorder((self._data).witchLevel)
+  local cfg = CbpBossHitRole:GetRecorder(self._data.witchLevel)
   if cfg then
-    (table.insert)(result, {roleId = 1, roleLv = (self._data).witchLevel, attack = cfg.basicAttack, blood = cfg.basicHealth, cfg = cfg})
+    table.insert(result, {
+      roleId = 1,
+      roleLv = self._data.witchLevel,
+      attack = cfg.basicAttack,
+      blood = cfg.basicHealth,
+      cfg = cfg
+    })
   end
   return result
 end
 
-BM_GiftOfTime.GetMonsterList = function(self)
-  -- function num : 0_23 , upvalues : _ENV, CbpBossHitBoss
+function BM_GiftOfTime:GetMonsterList()
   local result = {}
-  for i,v in ipairs((self._data).bossInfoList) do
+  for i, v in ipairs(self._data.bossInfoList) do
     local cfg = CbpBossHitBoss:GetRecorder(v.bossID)
     if cfg then
-      (table.insert)(result, {id = cfg.id, lv = cfg.enemyLevel, name = (TextManager.GetText)(cfg.nameID), handbookid = cfg.handbookID, enemyHP = cfg.enemyHP, enemyATK = cfg.enemyATK, itemID = cfg.itemID, itemNum = cfg.itemNum, scale = cfg.scale, position = cfg.position, result = v.result})
+      table.insert(result, {
+        id = cfg.id,
+        lv = cfg.enemyLevel,
+        name = TextManager.GetText(cfg.nameID),
+        handbookid = cfg.handbookID,
+        enemyHP = cfg.enemyHP,
+        enemyATK = cfg.enemyATK,
+        itemID = cfg.itemID,
+        itemNum = cfg.itemNum,
+        scale = cfg.scale,
+        position = cfg.position,
+        result = v.result
+      })
     else
       LogErrorFormat("BM_GiftOfTime", "Sever BossID :%s is No Exist Clent Table(CbpBossHitBoss)", v.bossID)
     end
   end
-  ;
-  (table.sort)(result, function(v1, v2)
-    -- function num : 0_23_0
-    do return v1.id < v2.id end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(result, function(v1, v2)
+    return v1.id < v2.id
+  end)
   return result
 end
 
-BM_GiftOfTime.GetCurChallengingId = function(self)
-  -- function num : 0_24
-  return (self._data).curChallengingId
+function BM_GiftOfTime:GetCurChallengingId()
+  return self._data.curChallengingId
 end
 
-BM_GiftOfTime.GetAwardList = function(self)
-  -- function num : 0_25
-  return (self._data).weeklyAwardsList
+function BM_GiftOfTime:GetAwardList()
+  return self._data.weeklyAwardsList
 end
 
-BM_GiftOfTime.GetBossTime = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function BM_GiftOfTime:GetBossTime()
   local result = 0
-  for i,v in ipairs((self._data).bossInfoList) do
+  for i, v in ipairs(self._data.bossInfoList) do
     if v.result == 1 then
       result = result + 1
     end
@@ -291,33 +259,25 @@ BM_GiftOfTime.GetBossTime = function(self)
   return result
 end
 
-BM_GiftOfTime.GetLastBattleResult = function(self)
-  -- function num : 0_27
-  return (self._data).battleResult
+function BM_GiftOfTime:GetLastBattleResult()
+  return self._data.battleResult
 end
 
-BM_GiftOfTime.HandleTask = function(self, taskID)
-  -- function num : 0_28 , upvalues : CBpDailyTaskConfig, _ENV
+function BM_GiftOfTime:HandleTask(taskID)
   local record = CBpDailyTaskConfig:GetRecorder(taskID)
   if record then
     local type = record.jumptype
-    if type > 0 then
+    if 0 < type then
       local handler = require("logic.task.taskhandlers." .. type)
       if handler then
         handler:Handle(record)
       end
-    else
-      do
-        do
-          if type == -1 then
-            ((DialogManager.CreateSingletonDialog)("chat.guidecommentdialog")):SetData(3)
-          end
-          LogErrorFormat("BM_GiftOfTime", "Unknown task id " .. tostring(taskID))
-        end
-      end
+    elseif type == -1 then
+      DialogManager.CreateSingletonDialog("chat.guidecommentdialog"):SetData(3)
     end
+  else
+    LogErrorFormat("BM_GiftOfTime", "Unknown task id " .. tostring(taskID))
   end
 end
 
 return BM_GiftOfTime
-

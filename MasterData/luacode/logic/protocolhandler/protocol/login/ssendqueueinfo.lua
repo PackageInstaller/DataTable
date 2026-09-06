@@ -1,20 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/protocolhandler/protocol/login/ssendqueueinfo.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local p1 = function(protocol)
-  -- function num : 0_0 , upvalues : _ENV
-  local dialog = (DialogManager.GetDialog)("login.loginqueuedialog")
-  if not dialog then
-    dialog = (DialogManager.CreateSingletonDialog)("login.loginqueuedialog")
-  end
+local function p1(protocol)
+  local dialog = DialogManager.GetDialog("login.loginqueuedialog")
+  
+  dialog = dialog or DialogManager.CreateSingletonDialog("login.loginqueuedialog")
   dialog:SetData(protocol)
 end
 
-local p2 = function(protocol, client)
-  -- function num : 0_1
+local function p2(protocol, client)
 end
 
 return {p1, p2}
-

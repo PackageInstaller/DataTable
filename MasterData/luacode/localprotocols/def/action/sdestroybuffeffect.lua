@@ -1,34 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/localprotocols/def/action/sdestroybuffeffect.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local SDestroyBuffEffect = dataclass("SDestroyBuffEffect")
 SDestroyBuffEffect.ProtocolType = 22
 SDestroyBuffEffect.entityid = 0
 SDestroyBuffEffect.point = ""
 SDestroyBuffEffect.effectname = ""
-SDestroyBuffEffect.Ctor = function(self, client)
-  -- function num : 0_0
+
+function SDestroyBuffEffect:Ctor(client)
 end
 
-SDestroyBuffEffect.Marshal = function(self, data)
-  -- function num : 0_1
+function SDestroyBuffEffect:Marshal(data)
   data.entityid = self.entityid
   data.point = self.point
   data.effectname = self.effectname
 end
 
-SDestroyBuffEffect.Unmarshal = function(self, data)
-  -- function num : 0_2
+function SDestroyBuffEffect:Unmarshal(data)
   self.entityid = data.entityid
   self.point = data.point
   self.effectname = data.effectname
   return true
 end
 
-SDestroyBuffEffect.CheckVariable = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SDestroyBuffEffect:CheckVariable()
   if type(self.entityid) ~= "number" then
     LogErrorFormat("LocalProtocols", "type error!type(self.entityid) = %s. number required.", type(self.entityid))
     return false
@@ -45,4 +37,3 @@ SDestroyBuffEffect.CheckVariable = function(self)
 end
 
 return SDestroyBuffEffect
-

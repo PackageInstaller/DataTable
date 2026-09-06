@@ -1,26 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/fsm/battlefsm/battleending.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local State = {}
-local battleFSM = nil
-State.OnEnter = function(controller, lastState)
-  -- function num : 0_0 , upvalues : _ENV, battleFSM
+local battleFSM
+
+function State.OnEnter(controller, lastState)
   LogInfo("BattleFSM", "BattleEnding Enter")
   battleFSM = controller._bsc_battleFSM
-  battleFSM:SetBoolean("toBreak", not GlobalGameFSM or GlobalGameFSM:GetParameter("toLogin") == "BreakOrReconnection")
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  battleFSM:SetBoolean("toBreak", GlobalGameFSM and GlobalGameFSM:GetParameter("toLogin") == "BreakOrReconnection")
 end
 
-State.Update = function(controller, deltaTime)
-  -- function num : 0_1
+function State.Update(controller, deltaTime)
 end
 
-State.OnExit = function(controller, nextState)
-  -- function num : 0_2 , upvalues : _ENV
+function State.OnExit(controller, nextState)
   LogInfo("BattleFSM", "BattleEnding Exit")
 end
 
 return State
-

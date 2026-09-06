@@ -1,31 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/localprotocols/def/action/sroleiscanuseskill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local SRoleIsCanUseSKill = dataclass("SRoleIsCanUseSKill")
 SRoleIsCanUseSKill.ProtocolType = 36
 SRoleIsCanUseSKill.entityid = 0
 SRoleIsCanUseSKill.iscan = 0
-SRoleIsCanUseSKill.Ctor = function(self, client)
-  -- function num : 0_0
+
+function SRoleIsCanUseSKill:Ctor(client)
 end
 
-SRoleIsCanUseSKill.Marshal = function(self, data)
-  -- function num : 0_1
+function SRoleIsCanUseSKill:Marshal(data)
   data.entityid = self.entityid
   data.iscan = self.iscan
 end
 
-SRoleIsCanUseSKill.Unmarshal = function(self, data)
-  -- function num : 0_2
+function SRoleIsCanUseSKill:Unmarshal(data)
   self.entityid = data.entityid
   self.iscan = data.iscan
   return true
 end
 
-SRoleIsCanUseSKill.CheckVariable = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SRoleIsCanUseSKill:CheckVariable()
   if type(self.entityid) ~= "number" then
     LogErrorFormat("LocalProtocols", "type error!type(self.entityid) = %s. number required.", type(self.entityid))
     return false
@@ -38,4 +30,3 @@ SRoleIsCanUseSKill.CheckVariable = function(self)
 end
 
 return SRoleIsCanUseSKill
-

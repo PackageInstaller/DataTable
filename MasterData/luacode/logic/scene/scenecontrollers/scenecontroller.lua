@@ -1,84 +1,67 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/scene/scenecontrollers/scenecontroller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local GameSceneManager = (((CS.PixelNeko).P1).Scene).GameSceneManager
-local PrefabLoader = ((CS.PixelNeko).Assets).PrefabLoader
-local SerializedLightMapData = (((CS.PixelNeko).P1).Scene).SerializedLightMapData
-local Utility = (((CS.PixelNeko).P1).Common).Utility
-local GraphicsCommand = (((CS.PixelNeko).P1).Render).GraphicsCommand
-local GlobalCameras = (((CS.PixelNeko).P1).Common).GlobalCameras
-local TransformStaticFunctions = ((CS.PixelNeko).Lua).TransformStaticFunctions
-local PrefabLoader = ((CS.PixelNeko).Assets).PrefabLoader
-local SwitchLightmap = ((((CS.PixelNeko).P1).Render).DayNightSwitch).SwitchLightmap
-local SetDayNightLight = ((((CS.PixelNeko).P1).Render).DayNightSwitch).SetDayNightLight
-local CWeatherConfig = (BeanManager.GetTableByName)("scene.cweatherconfig")
-local CEffectRes = (BeanManager.GetTableByName)("skill.ceffectres")
-local CSceneLightConfig = (BeanManager.GetTableByName)("scene.cscenelightconfig")
-local CCinemachineSetting = (BeanManager.GetTableByName)("scene.ccinemachinesetting")
+local GameSceneManager = CS.PixelNeko.P1.Scene.GameSceneManager
+local PrefabLoader = CS.PixelNeko.Assets.PrefabLoader
+local SerializedLightMapData = CS.PixelNeko.P1.Scene.SerializedLightMapData
+local Utility = CS.PixelNeko.P1.Common.Utility
+local GraphicsCommand = CS.PixelNeko.P1.Render.GraphicsCommand
+local GlobalCameras = CS.PixelNeko.P1.Common.GlobalCameras
+local TransformStaticFunctions = CS.PixelNeko.Lua.TransformStaticFunctions
+local PrefabLoader = CS.PixelNeko.Assets.PrefabLoader
+local SwitchLightmap = CS.PixelNeko.P1.Render.DayNightSwitch.SwitchLightmap
+local SetDayNightLight = CS.PixelNeko.P1.Render.DayNightSwitch.SetDayNightLight
+local CWeatherConfig = BeanManager.GetTableByName("scene.cweatherconfig")
+local CEffectRes = BeanManager.GetTableByName("skill.ceffectres")
+local CSceneLightConfig = BeanManager.GetTableByName("scene.cscenelightconfig")
+local CCinemachineSetting = BeanManager.GetTableByName("scene.ccinemachinesetting")
 local SceneController = class("SceneController")
-local SetProgress = function(self, isDone, process)
-  -- function num : 0_0 , upvalues : _ENV
+
+local function SetProgress(self, isDone, process)
   if isDone then
     self._loadedProcess = 1
   else
     self._loadedProcess = process
   end
-  local loadingDialog = (DialogManager.GetDialog)("loadingdialog")
+  local loadingDialog = DialogManager.GetDialog("loadingdialog")
   if loadingDialog == nil then
-    return 
+    return
   end
   loadingDialog:UpdateSceneProgress(self._id, process)
 end
 
-local LoadSceneProgressNotificationHandler = function(self, notification)
-  -- function num : 0_1 , upvalues : SetProgress
+local function LoadSceneProgressNotificationHandler(self, notification)
   local userInfo = notification.userInfo
   if userInfo == nil then
-    return 
+    return
   end
-  ;
-  (self._sceneRef):LoadSceneProgressNotificationHandler(userInfo)
+  self._sceneRef:LoadSceneProgressNotificationHandler(userInfo)
   SetProgress(self, false, userInfo.progress)
 end
 
-local EndLoadSceneNotificationHandler = function(self, notification)
-  -- function num : 0_2 , upvalues : GraphicsCommand, SetProgress, _ENV, GameSceneManager
-  (GraphicsCommand.SetShadowDistance)(15)
-  ;
-  (self._sceneRef):EndLoadSceneNotificationHandler(self)
-  ;
-  (self._sceneRef):Init()
+local function EndLoadSceneNotificationHandler(self, notification)
+  GraphicsCommand.SetShadowDistance(15)
+  self._sceneRef:EndLoadSceneNotificationHandler(self)
+  self._sceneRef:Init()
   SetProgress(self, true, 1)
-  ;
-  (LuaNotificationCenter.RemoveObserver)(self, Common.n_LoadSceneProgress)
-  ;
-  (LuaNotificationCenter.RemoveObserver)(self, Common.n_EndLoadScene)
+  LuaNotificationCenter.RemoveObserver(self, Common.n_LoadSceneProgress)
+  LuaNotificationCenter.RemoveObserver(self, Common.n_EndLoadScene)
   self:Init()
-  ;
-  (GameSceneManager.SetSceneRootGameObjectActive)(self:GetSceneName(), self._isRootGameObjectActiveAfterLoaded)
-  for k,v in pairs(self._cachedCallTable) do
-    (v.method)((table.unpack)(v.params))
+  GameSceneManager.SetSceneRootGameObjectActive(self:GetSceneName(), self._isRootGameObjectActiveAfterLoaded)
+  for k, v in pairs(self._cachedCallTable) do
+    v.method(table.unpack(v.params))
   end
   self._cachedCallTable = nil
 end
 
-local BeginUnLoadSceneNotificationHandler = function(self, notification)
-  -- function num : 0_3 , upvalues : _ENV
+local function BeginUnLoadSceneNotificationHandler(self, notification)
   local sceneController = notification.userInfo
   if sceneController == nil then
-    return 
+    return
   end
-  ;
-  (LuaNotificationCenter.RemoveObserver)(self, Common.n_BeginUnLoadScene)
+  LuaNotificationCenter.RemoveObserver(self, Common.n_BeginUnLoadScene)
   self:OnDestroy()
-  ;
-  (self._sceneRef):OnDestroy()
+  self._sceneRef:OnDestroy()
 end
 
-SceneController.Ctor = function(self)
-  -- function num : 0_4 , upvalues : _ENV, LoadSceneProgressNotificationHandler, EndLoadSceneNotificationHandler, BeginUnLoadSceneNotificationHandler
+function SceneController:Ctor()
   self._cachedCallTable = {}
   self._data = {}
   self._info = nil
@@ -90,23 +73,17 @@ SceneController.Ctor = function(self)
   self._isRootGameObjectActiveAfterLoaded = nil
   self._loadedProcess = 0
   self._sceneHasDestroyed = false
-  ;
-  (LuaNotificationCenter.AddObserver)(self, LoadSceneProgressNotificationHandler, Common.n_LoadSceneProgress, self)
-  ;
-  (LuaNotificationCenter.AddObserver)(self, EndLoadSceneNotificationHandler, Common.n_EndLoadScene, self)
-  ;
-  (LuaNotificationCenter.AddObserver)(self, BeginUnLoadSceneNotificationHandler, Common.n_BeginUnLoadScene, self)
-  ;
-  (LuaNotificationCenter.AddObserver)(self, self.OnNavMeshBuildFinish, Common.n_NavMeshBuildFinish, nil)
+  LuaNotificationCenter.AddObserver(self, LoadSceneProgressNotificationHandler, Common.n_LoadSceneProgress, self)
+  LuaNotificationCenter.AddObserver(self, EndLoadSceneNotificationHandler, Common.n_EndLoadScene, self)
+  LuaNotificationCenter.AddObserver(self, BeginUnLoadSceneNotificationHandler, Common.n_BeginUnLoadScene, self)
+  LuaNotificationCenter.AddObserver(self, self.OnNavMeshBuildFinish, Common.n_NavMeshBuildFinish, nil)
 end
 
-SceneController.OnDestroyNotLoaded = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (LuaNotificationCenter.RemoveObserver)(self)
+function SceneController:OnDestroyNotLoaded()
+  LuaNotificationCenter.RemoveObserver(self)
 end
 
-SceneController.SetCtorParams = function(self, sceneRef, record, isSceneActiveAfterLoaded, isRootGameObjectActiveAfterLoaded)
-  -- function num : 0_6
+function SceneController:SetCtorParams(sceneRef, record, isSceneActiveAfterLoaded, isRootGameObjectActiveAfterLoaded)
   self._info = record
   self._id = record.id
   self._loadType = record.loadType
@@ -115,115 +92,94 @@ SceneController.SetCtorParams = function(self, sceneRef, record, isSceneActiveAf
   self._isRootGameObjectActiveAfterLoaded = isRootGameObjectActiveAfterLoaded
 end
 
-SceneController.IsSceneHasDestroyed = function(self)
-  -- function num : 0_7
+function SceneController:IsSceneHasDestroyed()
   return self._sceneHasDestroyed
 end
 
-SceneController.SetSceneDestroyed = function(self)
-  -- function num : 0_8
+function SceneController:SetSceneDestroyed()
   self._sceneHasDestroyed = true
 end
 
-SceneController.SetData = function(self, key, value)
-  -- function num : 0_9
+function SceneController:SetData(key, value)
   if self._data == nil then
     self._data = {}
   end
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._data)[key] = value
+  self._data[key] = value
 end
 
-SceneController.GetData = function(self, key)
-  -- function num : 0_10
-  return (self._data)[key]
+function SceneController:GetData(key)
+  return self._data[key]
 end
 
-SceneController.GetSceneID = function(self)
-  -- function num : 0_11
+function SceneController:GetSceneID()
   return self._id
 end
 
-SceneController.GetLoadType = function(self)
-  -- function num : 0_12
+function SceneController:GetLoadType()
   return self._loadType
 end
 
-SceneController.IsSceneActiveAfterLoaded = function(self)
-  -- function num : 0_13
+function SceneController:IsSceneActiveAfterLoaded()
   return self._isSceneActiveAfterLoaded
 end
 
-SceneController.IsRootGameObjectActiveAfterLoaded = function(self)
-  -- function num : 0_14
+function SceneController:IsRootGameObjectActiveAfterLoaded()
   return self._isRootGameObjectActiveAfterLoaded
 end
 
-SceneController.GetSceneXMLAssetBundleAndAssetName = function(self)
-  -- function num : 0_15
-  return (self._info).mapAssetBundle, (self._info).mapAsset
+function SceneController:GetSceneXMLAssetBundleAndAssetName()
+  return self._info.mapAssetBundle, self._info.mapAsset
 end
 
-SceneController.GetSceneName = function(self)
-  -- function num : 0_16
-  return (self._sceneRef):GetSceneName()
+function SceneController:GetSceneName()
+  return self._sceneRef:GetSceneName()
 end
 
-SceneController.GetSceneShowName = function(self)
-  -- function num : 0_17
-  return (self._sceneRef):GetSceneShowName()
+function SceneController:GetSceneShowName()
+  return self._sceneRef:GetSceneShowName()
 end
 
-SceneController.GetLoadHandler = function(self)
-  -- function num : 0_18
-  return (self._sceneRef):GetLoadHandler()
+function SceneController:GetLoadHandler()
+  return self._sceneRef:GetLoadHandler()
 end
 
-SceneController.SetRootGameObjectActive = function(self, isActive)
-  -- function num : 0_19 , upvalues : GameSceneManager
-  (GameSceneManager.SetSceneRootGameObjectActive)(self:GetSceneName(), isActive)
+function SceneController:SetRootGameObjectActive(isActive)
+  GameSceneManager.SetSceneRootGameObjectActive(self:GetSceneName(), isActive)
   if self.OnSceneRootGameObjectActiveChange then
     self:OnSceneRootGameObjectActiveChange(isActive)
   end
 end
 
-SceneController.IsSceneLoaded = function(self)
-  -- function num : 0_20
-  do return self._loadedProcess >= 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SceneController:IsSceneLoaded()
+  return self._loadedProcess >= 1
 end
 
-local LoadWeatherEffect = function(self, camera)
-  -- function num : 0_21 , upvalues : TransformStaticFunctions, CWeatherConfig, CEffectRes, PrefabLoader, _ENV
+local function LoadWeatherEffect(self, camera)
   if camera == nil then
-    return 
+    return
   end
-  local weatherEffectGO = (TransformStaticFunctions.GetChild)(camera.gameObject, "Effect")
+  local weatherEffectGO = TransformStaticFunctions.GetChild(camera.gameObject, "Effect")
   if weatherEffectGO == nil then
-    return 
+    return
   end
   local weatherInfo = CWeatherConfig:GetRecorder(self:GetSceneID())
   if weatherInfo == nil then
-    return 
+    return
   end
   local weatherEffectRecord = CEffectRes:GetRecorder(weatherInfo.weatherEffect)
   if weatherEffectRecord == nil then
-    return 
+    return
   end
-  local effect = (PrefabLoader.LoadAndInstantiatePrefab)((EffectUtil.GetAssetBundleNameAndAssetName)(weatherInfo.weatherEffect))
-  ;
-  (TransformStaticFunctions.SetParent)(effect.transform, weatherEffectGO.transform, false)
+  local effect = PrefabLoader.LoadAndInstantiatePrefab(EffectUtil.GetAssetBundleNameAndAssetName(weatherInfo.weatherEffect))
+  TransformStaticFunctions.SetParent(effect.transform, weatherEffectGO.transform, false)
 end
 
-local LoadDayNightLight = function(self)
-  -- function num : 0_22 , upvalues : SwitchLightmap, SetDayNightLight, _ENV, CSceneLightConfig
-  local root = (self._sceneRef):GetRootGameObject()
-  local switchLightmap = (SwitchLightmap.GetSwitchLightmap)(root)
-  local setDayNightLight = (SetDayNightLight.GetSetDayNightLight)(root)
-  local isDay = ((SceneManager.IsInDay)())
-  local isSwitchSuccess = nil
+local function LoadDayNightLight(self)
+  local root = self._sceneRef:GetRootGameObject()
+  local switchLightmap = SwitchLightmap.GetSwitchLightmap(root)
+  local setDayNightLight = SetDayNightLight.GetSetDayNightLight(root)
+  local isDay = SceneManager.IsInDay()
+  local isSwitchSuccess
   self._isDay = isDay
   if switchLightmap ~= nil then
     if isDay then
@@ -233,25 +189,24 @@ local LoadDayNightLight = function(self)
     end
     if setDayNightLight ~= nil then
       if setDayNightLight.DayLightRoot ~= nil then
-        (setDayNightLight.DayLightRoot):SetActive(false)
+        setDayNightLight.DayLightRoot:SetActive(false)
       end
       if setDayNightLight.NightLightRoot ~= nil then
-        (setDayNightLight.NightLightRoot):SetActive(false)
+        setDayNightLight.NightLightRoot:SetActive(false)
       end
     end
   end
   local sceneLightColor = CSceneLightConfig:GetRecorder(self:GetSceneID())
   if sceneLightColor ~= nil then
     if isDay then
-      (SetDayNightLight.SetAmbientLight)(sceneLightColor.colorDay)
+      SetDayNightLight.SetAmbientLight(sceneLightColor.colorDay)
       if sceneLightColor.fogDay ~= "0" then
-        (SetDayNightLight.SetFogColor)(sceneLightColor.fogDay)
+        SetDayNightLight.SetFogColor(sceneLightColor.fogDay)
       end
     else
-      ;
-      (SetDayNightLight.SetAmbientLight)(sceneLightColor.colorNight)
+      SetDayNightLight.SetAmbientLight(sceneLightColor.colorNight)
       if sceneLightColor.fogNight ~= "0" then
-        (SetDayNightLight.SetFogColor)(sceneLightColor.fogNight)
+        SetDayNightLight.SetFogColor(sceneLightColor.fogNight)
       end
     end
   end
@@ -264,26 +219,23 @@ local LoadDayNightLight = function(self)
   end
 end
 
-local InitCinemachineSetting = function(self)
-  -- function num : 0_23 , upvalues : CCinemachineSetting, _ENV
+local function InitCinemachineSetting(self)
   local record = CCinemachineSetting:GetRecorder(self._id)
   if record == nil then
-    return 
+    return
   end
   local cinemachinePath = record.cmName
-  local cinemachineObject = ((((CS.PixelNeko).Lua).TransformStaticFunctions).GetChild)(self._rootGameObject, cinemachinePath)
-  ;
-  (((((CS.PixelNeko).Lua).Cinemachine).CinemachineStateDrivenCameraStaticFunctions).SetBlendDuration)(cinemachineObject, record.time)
+  local cinemachineObject = CS.PixelNeko.Lua.TransformStaticFunctions.GetChild(self._rootGameObject, cinemachinePath)
+  CS.PixelNeko.Lua.Cinemachine.CinemachineStateDrivenCameraStaticFunctions.SetBlendDuration(cinemachineObject, record.time)
 end
 
-SceneController.Init = function(self)
-  -- function num : 0_24 , upvalues : _ENV, GlobalCameras, LoadWeatherEffect, LoadDayNightLight, InitCinemachineSetting
-  self._rootGameObject = (self._sceneRef):GetRootGameObject()
-  local mainCamera = nil
-  if (SceneManager.IsBattleScene)(self:GetSceneID()) then
-    mainCamera = (GlobalCameras.GetCamera)("BattleMain")
+function SceneController:Init()
+  self._rootGameObject = self._sceneRef:GetRootGameObject()
+  local mainCamera
+  if SceneManager.IsBattleScene(self:GetSceneID()) then
+    mainCamera = GlobalCameras.GetCamera("BattleMain")
   else
-    mainCamera = (GlobalCameras.GetCamera)("Main")
+    mainCamera = GlobalCameras.GetCamera("Main")
   end
   self._isDay = true
   LoadWeatherEffect(self, mainCamera)
@@ -291,66 +243,55 @@ SceneController.Init = function(self)
   InitCinemachineSetting(self)
 end
 
-SceneController.Update = function(self, deltaTime, unscaleDeltaTime)
-  -- function num : 0_25
+function SceneController:Update(deltaTime, unscaleDeltaTime)
 end
 
-SceneController.CallMethodAsync = function(self, method, ...)
-  -- function num : 0_26 , upvalues : _ENV
+function SceneController:CallMethodAsync(method, ...)
   if self:IsSceneLoaded() then
     method(self, ...)
   else
-    ;
-    (table.insert)(self._cachedCallTable, {method = method, 
-params = {self, ...}
-})
+    table.insert(self._cachedCallTable, {
+      method = method,
+      params = {
+        self,
+        ...
+      }
+    })
   end
 end
 
-SceneController.OnDestroy = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  (LuaNotificationCenter.RemoveObserver)(self)
+function SceneController:OnDestroy()
+  LuaNotificationCenter.RemoveObserver(self)
 end
 
-SceneController.OnDisable = function(self)
-  -- function num : 0_28
+function SceneController:OnDisable()
 end
 
-SceneController.OnEnable = function(self)
-  -- function num : 0_29
+function SceneController:OnEnable()
 end
 
-SceneController.OnNavMeshBuildFinish = function(self)
-  -- function num : 0_30
+function SceneController:OnNavMeshBuildFinish()
   self._navMeshReady = true
 end
 
-SceneController.IsNavMeshReady = function(self)
-  -- function num : 0_31
+function SceneController:IsNavMeshReady()
   return self._navMeshReady
 end
 
-SceneController.PlayTimeline = function(self, id)
-  -- function num : 0_32 , upvalues : _ENV
-  local director = ((self._sceneRef).timelineObjects)[id]
+function SceneController:PlayTimeline(id)
+  local director = self._sceneRef.timelineObjects[id]
   assert(director, "timeline " .. id .. " not found")
   director:Play()
 end
 
-SceneController.PlayTimelineBindObjectDynamically = function(self, timelineName, args)
-  -- function num : 0_33 , upvalues : _ENV
-  local root = (self._sceneRef):GetRootGameObject()
-  ;
-  (((((CS.PixelNeko).P1).TimeLine).TimelineManager).PlayTimelineBindObjectDynamically)(root, timelineName, args)
+function SceneController:PlayTimelineBindObjectDynamically(timelineName, args)
+  local root = self._sceneRef:GetRootGameObject()
+  CS.PixelNeko.P1.TimeLine.TimelineManager.PlayTimelineBindObjectDynamically(root, timelineName, args)
 end
 
-SceneController.GetPathResolver = function(self)
-  -- function num : 0_34 , upvalues : _ENV
-  if not self._resolver then
-    self._resolver = ((require("logic.scene.pathresolver")).Create)(self, self._sceneRef)
-    return self._resolver
-  end
+function SceneController:GetPathResolver()
+  self._resolver = self._resolver or require("logic.scene.pathresolver").Create(self, self._sceneRef)
+  return self._resolver
 end
 
 return SceneController
-

@@ -1,0 +1,88 @@
+{
+  "downloadurl": "http://version.meta.ledo.com/fhdmn_client/status/trunk/office/status.json",
+  "intranet": [
+    {
+      "name": "分支内",
+      "ipServerDomain": [
+        "http://10.237.80.82"
+      ],
+      "ipServerPort": [
+        "8082"
+      ]
+    },
+    {
+      "name": "测试服",
+      "ipServerDomain": [
+        "http://10.237.80.89"
+      ],
+      "ipServerPort": [
+        "8082"
+      ]
+    },
+    {
+      "name": "评测服",
+      "ipServerDomain": [
+        "http://124.243.220.97"
+      ],
+      "ipServerPort": [
+        "8082"
+      ]
+    },
+    {
+      "name": "陈春尧",
+      "ipServerDomain": [
+        "http://10.66.2.27"
+      ],
+      "ipServerPort": [
+        "8082"
+      ]
+    },
+    {
+      "name": "项云龙",
+      "ipServerDomain": [
+        "http://10.66.2.26"
+      ],
+      "ipServerPort": [
+        "8082"
+      ]
+    },
+    {
+      "name": "发行测试服",
+      "ipServerDomain": [
+        "http://14.103.138.125"
+      ],
+      "ipServerPort": [
+        "8082"
+      ]
+    },
+    {
+      "name": "正式服",
+      "ipServerDomain": [
+        "https://fsdmn-api.ymtnet.com"
+      ],
+      "ipServerPort": [
+        "443"
+      ]
+    },
+    {
+      "name": "提审服",
+      "ipServerDomain": [
+        "https://fsdmn-ios.ymtnet.com"
+      ],
+      "ipServerPort": [
+        "443"
+      ]
+    }
+  ],
+  "internet": [
+    {
+      "name": "正式服",
+      "ipServerDomain": [
+        "https://fsdmn-api.ymtnet.com"
+      ],
+      "ipServerPort": [
+        "443"
+      ]
+    }
+  ]
+}

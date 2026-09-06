@@ -1,11 +1,6 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/localprotocols/process/action/sroleiscanuseskill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local SRoleIsCanUseSKill = require("localprotocols.def.action.sroleiscanuseskill")
-SRoleIsCanUseSKill.Process = function(self, controller)
-  -- function num : 0_0 , upvalues : _ENV
+
+function SRoleIsCanUseSKill:Process(controller)
   if LocalProtocolDebug then
     LogInfo("LocalProtocol", "SRoleIsCanUseSKill Process")
   end
@@ -15,4 +10,3 @@ SRoleIsCanUseSKill.Process = function(self, controller)
 end
 
 return SRoleIsCanUseSKill
-

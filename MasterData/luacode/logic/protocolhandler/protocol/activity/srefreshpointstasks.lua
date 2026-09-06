@@ -1,24 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/protocolhandler/protocol/activity/srefreshpointstasks.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local p1 = function(protocol)
-  -- function num : 0_0 , upvalues : _ENV
+local function p1(protocol)
   LogErrorFormat("srefreshpointstasks", "--- activityId = %s ---", protocol.activityID)
-  if protocol.activityID == (DataCommon.Activities).StarMirage then
-    (((NekoData.DataManager).DM_Activity):GetManager(DataCommon.StarMirageManagerID)):OnSRefreshPointsTasks(protocol)
+  
+  if protocol.activityID == DataCommon.Activities.StarMirage then
+    NekoData.DataManager.DM_Activity:GetManager(DataCommon.StarMirageManagerID):OnSRefreshPointsTasks(protocol)
   else
-    ;
-    ((NekoData.DataManager).DM_Activity):OnSRefreshPointsTasks(protocol)
+    NekoData.DataManager.DM_Activity:OnSRefreshPointsTasks(protocol)
   end
-  ;
-  (LuaNotificationCenter.PostNotification)(Common.n_RefreshActivityRewards, nil, protocol)
+  LuaNotificationCenter.PostNotification(Common.n_RefreshActivityRewards, nil, protocol)
 end
 
-local p2 = function(protocol, client)
-  -- function num : 0_1
+local function p2(protocol, client)
 end
 
 return {p1, p2}
-

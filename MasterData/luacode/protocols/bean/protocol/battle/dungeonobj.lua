@@ -1,9 +1,4 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/bean/protocol/battle/dungeonobj.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local DungeonObj = dataclass("DungeonObj")
 DungeonObj.id = 0
 DungeonObj.objType = 0
@@ -14,57 +9,55 @@ DungeonObj.y = 0
 DungeonObj.MONSTER = 1
 DungeonObj.BOX = 2
 DungeonObj.TASK = 3
-DungeonObj.Ctor = function(self)
-  -- function num : 0_0
+
+function DungeonObj:Ctor()
 end
 
-DungeonObj.Marshal = function(self, buffer)
-  -- function num : 0_1 , upvalues : ProtocolBufferStaticFunctions
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.id) then
+function DungeonObj:Marshal(buffer)
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.id) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.objType) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.objType) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.objId) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.objId) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.status) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.status) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.x) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.x) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.y) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.y) then
     return false
   end
   return true
 end
 
-DungeonObj.Unmarshal = function(self, buffer)
-  -- function num : 0_2 , upvalues : ProtocolBufferStaticFunctions
+function DungeonObj:Unmarshal(buffer)
   local ret = true
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.id = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.objType = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.objId = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.status = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.x = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.y = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
@@ -72,4 +65,3 @@ DungeonObj.Unmarshal = function(self, buffer)
 end
 
 return DungeonObj
-

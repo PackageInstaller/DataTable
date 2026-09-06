@@ -1,9 +1,4 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/def/protocol/activity/csummeractivityevent.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local CSummerActivityEvent = dataclass("CSummerActivityEvent", require("framework.net.protocol"))
 CSummerActivityEvent.ProtocolType = 2500
 CSummerActivityEvent.MaxSize = 65535
@@ -18,37 +13,35 @@ CSummerActivityEvent.SUMMER_SHOP = 5
 CSummerActivityEvent.SUMMER_SNACK = 6
 CSummerActivityEvent.WATERMELON = 7
 CSummerActivityEvent.DISPLAY_ROOM = 8
-CSummerActivityEvent.Ctor = function(self, client)
-  -- function num : 0_0 , upvalues : CSummerActivityEvent
-  ((CSummerActivityEvent.super).Ctor)(self, client)
+
+function CSummerActivityEvent:Ctor(client)
+  CSummerActivityEvent.super.Ctor(self, client)
 end
 
-CSummerActivityEvent.Marshal = function(self, buffer)
-  -- function num : 0_1 , upvalues : ProtocolBufferStaticFunctions
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.constructionID) then
+function CSummerActivityEvent:Marshal(buffer)
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.constructionID) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.eventID) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.eventID) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.lineupID) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.lineupID) then
     return false
   end
   return true
 end
 
-CSummerActivityEvent.Unmarshal = function(self, buffer)
-  -- function num : 0_2 , upvalues : ProtocolBufferStaticFunctions
+function CSummerActivityEvent:Unmarshal(buffer)
   local ret = true
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.constructionID = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.eventID = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.lineupID = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
@@ -56,4 +49,3 @@ CSummerActivityEvent.Unmarshal = function(self, buffer)
 end
 
 return CSummerActivityEvent
-

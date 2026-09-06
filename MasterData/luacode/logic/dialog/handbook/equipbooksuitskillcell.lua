@@ -1,74 +1,60 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/dialog/handbook/equipbooksuitskillcell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local CSkillShow_Common = (BeanManager.GetTableByName)("skill.cskillshow_common")
-local CStringRes = (BeanManager.GetTableByName)("message.cstringres")
-local CWordColor = (BeanManager.GetTableByName)("message.cwordcolor")
+local CSkillShow_Common = BeanManager.GetTableByName("skill.cskillshow_common")
+local CStringRes = BeanManager.GetTableByName("message.cstringres")
+local CWordColor = BeanManager.GetTableByName("message.cwordcolor")
 local EquipBookSuitSkillCell = class("EquipBookSuitSkillCell", Dialog)
 EquipBookSuitSkillCell.AssetBundleName = "ui/layouts.tujian"
 EquipBookSuitSkillCell.AssetName = "EquipBookSuitEffect"
-local StrTextID = {[1] = 1494, [2] = 1495, [3] = 1496}
-EquipBookSuitSkillCell.Ctor = function(self, ...)
-  -- function num : 0_0 , upvalues : EquipBookSuitSkillCell
-  ((EquipBookSuitSkillCell.super).Ctor)(self, ...)
+local StrTextID = {
+  [1] = 1494,
+  [2] = 1495,
+  [3] = 1496
+}
+
+function EquipBookSuitSkillCell:Ctor(...)
+  EquipBookSuitSkillCell.super.Ctor(self, ...)
 end
 
-EquipBookSuitSkillCell.OnCreate = function(self)
-  -- function num : 0_1
+function EquipBookSuitSkillCell:OnCreate()
   self._text = self:GetChild("Txt")
-  self._width = (self._text):GetRectSize()
+  self._width, self._height = self._text:GetRectSize()
   local _ = 0
-  _ = (self._text):GetPreferredSize()
-  self._text_size_x = (self._text):GetSize()
-  self._text_pos_x = (self._text):GetPosition()
-  self._talk_size_x = (self:GetRootWindow()):GetSize()
-  self._talk_pos_x = (self:GetRootWindow()):GetPosition()
+  _, self._oneline = self._text:GetPreferredSize()
+  self._text_size_x, self._text_size_offset_x, self._text_size_y, self._text_size_offset_y = self._text:GetSize()
+  self._text_pos_x, self._text_pos_offset_x, self._text_pos_y, self._text_pos_offset_y = self._text:GetPosition()
+  self._talk_size_x, self._talk_size_offset_x, self._talk_size_y, self._talk_size_offset_y = self:GetRootWindow():GetSize()
+  self._talk_pos_x, self._talk_pos_offset_x, self._talk_pos_y, self._talk_pos_offset_y = self:GetRootWindow():GetPosition()
 end
 
-EquipBookSuitSkillCell.OnDestroy = function(self)
-  -- function num : 0_2
+function EquipBookSuitSkillCell:OnDestroy()
 end
 
-EquipBookSuitSkillCell.RefreshCell = function(self, data)
-  -- function num : 0_3 , upvalues : CWordColor, CSkillShow_Common, _ENV, CStringRes, StrTextID
-  local color = nil
+function EquipBookSuitSkillCell:RefreshCell(data)
+  local color
   if data.takeEffect then
-    color = (CWordColor:GetRecorder(28)).wordcolor
+    color = CWordColor:GetRecorder(28).wordcolor
   else
-    color = (CWordColor:GetRecorder(27)).wordcolor
+    color = CWordColor:GetRecorder(27).wordcolor
   end
-  local str = nil
-  local discribe = (CSkillShow_Common:GetRecorder(data.skillID)).exDiscribeTextID
-  discribe = (TextManager.GetText)(discribe)
-  discribe = (string.gsub)(discribe, "%%", "%%%%")
-  str = (TextManager.GetText)((CStringRes:GetRecorder(StrTextID[data.count])).msgTextID)
-  str = (string.gsub)(str, "%$parameter1%$", color)
-  str = (string.gsub)(str, "%$parameter2%$", discribe)
-  ;
-  (self._text):SetText(str)
-  local _, textheight = (self._text):GetPreferredSize()
-  if self._height < textheight then
-    local line = (math.ceil)((textheight - self._height) / self._oneline)
+  local str
+  local discribe = CSkillShow_Common:GetRecorder(data.skillID).exDiscribeTextID
+  discribe = TextManager.GetText(discribe)
+  discribe = string.gsub(discribe, "%%", "%%%%")
+  str = TextManager.GetText(CStringRes:GetRecorder(StrTextID[data.count]).msgTextID)
+  str = string.gsub(str, "%$parameter1%$", color)
+  str = string.gsub(str, "%$parameter2%$", discribe)
+  self._text:SetText(str)
+  local _, textheight = self._text:GetPreferredSize()
+  if textheight > self._height then
+    local line = math.ceil((textheight - self._height) / self._oneline)
     local delta = line * self._oneline
-    ;
-    (self._text):SetSize(self._text_size_x, self._text_size_offset_x, self._text_size_y, self._text_size_offset_y + delta)
-    ;
-    (self._text):SetPosition(self._text_pos_x, self._text_pos_offset_x, self._text_pos_y, self._text_pos_offset_y - delta)
-    ;
-    (self:GetRootWindow()):SetSize(self._talk_size_x, self._talk_size_offset_x, self._talk_size_y, self._talk_size_offset_y + delta)
+    self._text:SetSize(self._text_size_x, self._text_size_offset_x, self._text_size_y, self._text_size_offset_y + delta)
+    self._text:SetPosition(self._text_pos_x, self._text_pos_offset_x, self._text_pos_y, self._text_pos_offset_y - delta)
+    self:GetRootWindow():SetSize(self._talk_size_x, self._talk_size_offset_x, self._talk_size_y, self._talk_size_offset_y + delta)
   else
-    do
-      ;
-      (self._text):SetSize(self._text_size_x, self._text_size_offset_x, self._text_size_y, self._text_size_offset_y)
-      ;
-      (self._text):SetPosition(self._text_pos_x, self._text_pos_offset_x, self._text_pos_y, self._text_pos_offset_y)
-      ;
-      (self:GetRootWindow()):SetSize(self._talk_size_x, self._talk_size_offset_x, self._talk_size_y, self._talk_size_offset_y)
-    end
+    self._text:SetSize(self._text_size_x, self._text_size_offset_x, self._text_size_y, self._text_size_offset_y)
+    self._text:SetPosition(self._text_pos_x, self._text_pos_offset_x, self._text_pos_y, self._text_pos_offset_y)
+    self:GetRootWindow():SetSize(self._talk_size_x, self._talk_size_offset_x, self._talk_size_y, self._talk_size_offset_y)
   end
 end
 
 return EquipBookSuitSkillCell
-

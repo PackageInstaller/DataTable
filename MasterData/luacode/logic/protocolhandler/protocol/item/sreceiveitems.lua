@@ -1,29 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/protocolhandler/protocol/item/sreceiveitems.lua 
+local ItemTypeEnum = LuaNetManager.GetBeanDef("protocol.item.beans.item")
 
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ItemTypeEnum = (LuaNetManager.GetBeanDef)("protocol.item.beans.item")
-local p1 = function(protocol)
-  -- function num : 0_0 , upvalues : _ENV, ItemTypeEnum
-  local data = {items = protocol.itemList}
+local function p1(protocol)
+  local data = {
+    items = protocol.itemList
+  }
   if data.items and #data.items > 0 then
-    ((NekoData.DataManager).DM_ItemAccountShow):AddShowDialogData({tag = (DataCommon.ShowDialogType).ItemAccount, data = data})
+    NekoData.DataManager.DM_ItemAccountShow:AddShowDialogData({
+      tag = DataCommon.ShowDialogType.ItemAccount,
+      data = data
+    })
   end
   local str = ""
-  for i,v in ipairs(protocol.itemList) do
+  for i, v in ipairs(protocol.itemList) do
     if str ~= "" then
       str = str .. ", "
     end
     local itemId = v.id
-    local item = nil
+    local item
     if v.gain == 1 then
       if v.itemtype == ItemTypeEnum.BASEITEM then
-        item = ((NekoData.BehaviorManager).BM_BagInfo):GetItemWithBagType(v.bagtype, v.id)
-      else
-        if v.itemtype == ItemTypeEnum.EQUIP then
-          item = ((NekoData.BehaviorManager).BM_BagInfo):GetEquipItem(v.id)
-        end
+        item = NekoData.BehaviorManager.BM_BagInfo:GetItemWithBagType(v.bagtype, v.id)
+      elseif v.itemtype == ItemTypeEnum.EQUIP then
+        item = NekoData.BehaviorManager.BM_BagInfo:GetEquipItem(v.id)
       end
     end
     if item then
@@ -34,9 +32,7 @@ local p1 = function(protocol)
   LogInfoFormat("sreceiveitems", "%s", str)
 end
 
-local p2 = function(protocol, client)
-  -- function num : 0_1
+local function p2(protocol, client)
 end
 
 return {p1, p2}
-

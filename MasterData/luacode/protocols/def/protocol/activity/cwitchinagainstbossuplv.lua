@@ -1,27 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/def/protocol/activity/cwitchinagainstbossuplv.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local CWitchInAgainstBossUpLv = dataclass("CWitchInAgainstBossUpLv", require("framework.net.protocol"))
 CWitchInAgainstBossUpLv.ProtocolType = 2669
 CWitchInAgainstBossUpLv.MaxSize = 65535
-CWitchInAgainstBossUpLv.Ctor = function(self, client)
-  -- function num : 0_0 , upvalues : CWitchInAgainstBossUpLv
-  ((CWitchInAgainstBossUpLv.super).Ctor)(self, client)
+
+function CWitchInAgainstBossUpLv:Ctor(client)
+  CWitchInAgainstBossUpLv.super.Ctor(self, client)
 end
 
-CWitchInAgainstBossUpLv.Marshal = function(self, buffer)
-  -- function num : 0_1
+function CWitchInAgainstBossUpLv:Marshal(buffer)
   return true
 end
 
-CWitchInAgainstBossUpLv.Unmarshal = function(self, buffer)
-  -- function num : 0_2
+function CWitchInAgainstBossUpLv:Unmarshal(buffer)
   local ret = true
   return ret
 end
 
 return CWitchInAgainstBossUpLv
-

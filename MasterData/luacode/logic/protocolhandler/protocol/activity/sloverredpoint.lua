@@ -1,25 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/protocolhandler/protocol/activity/sloverredpoint.lua 
+local SLoverRedPoint = LuaNetManager.GetProtocolDef("protocol.activity.sloverredpoint")
 
--- params : ...
--- function num : 0 , upvalues : _ENV
-local SLoverRedPoint = (LuaNetManager.GetProtocolDef)("protocol.activity.sloverredpoint")
-local p1 = function(protocol)
-  -- function num : 0_0 , upvalues : _ENV, SLoverRedPoint
-  (((NekoData.DataManager).DM_Activity):GetManager(DataCommon.LoverActivityManagerID)):OnSLoverRedPoint(protocol)
-  local bm = ((NekoData.BehaviorManager).BM_Activity):GetManager(DataCommon.LoverActivityManagerID)
+local function p1(protocol)
+  NekoData.DataManager.DM_Activity:GetManager(DataCommon.LoverActivityManagerID):OnSLoverRedPoint(protocol)
+  local bm = NekoData.BehaviorManager.BM_Activity:GetManager(DataCommon.LoverActivityManagerID)
   if protocol.state == SLoverRedPoint.LOVER_CHOCOLATE then
-    (LuaNotificationCenter.PostNotification)(Common.n_LoverRefreshRedPoint, nil, (bm.RedPointKey).Chocolate)
-  else
-    if protocol.state == SLoverRedPoint.LOVER_FLOWER then
-      (LuaNotificationCenter.PostNotification)(Common.n_LoverRefreshRedPoint, nil, (bm.RedPointKey).Flower)
-    end
+    LuaNotificationCenter.PostNotification(Common.n_LoverRefreshRedPoint, nil, bm.RedPointKey.Chocolate)
+  elseif protocol.state == SLoverRedPoint.LOVER_FLOWER then
+    LuaNotificationCenter.PostNotification(Common.n_LoverRefreshRedPoint, nil, bm.RedPointKey.Flower)
   end
 end
 
-local p2 = function(protocol, client)
-  -- function num : 0_1
+local function p2(protocol, client)
 end
 
 return {p1, p2}
-

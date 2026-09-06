@@ -1,9 +1,4 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/def/protocol/user/sleitingantiaddiction.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local SLeiTingAntiAddiction = dataclass("SLeiTingAntiAddiction", require("framework.net.protocol"))
 SLeiTingAntiAddiction.ProtocolType = 2265
 SLeiTingAntiAddiction.MaxSize = 65535
@@ -14,44 +9,42 @@ SLeiTingAntiAddiction.auth = 0
 SLeiTingAntiAddiction.AUTH_UNDER_AGE = 0
 SLeiTingAntiAddiction.AUTH_ADULT = 1
 SLeiTingAntiAddiction.AUTH_UNIDENTIFIED = 2
-SLeiTingAntiAddiction.Ctor = function(self, client)
-  -- function num : 0_0 , upvalues : SLeiTingAntiAddiction
-  ((SLeiTingAntiAddiction.super).Ctor)(self, client)
+
+function SLeiTingAntiAddiction:Ctor(client)
+  SLeiTingAntiAddiction.super.Ctor(self, client)
 end
 
-SLeiTingAntiAddiction.Marshal = function(self, buffer)
-  -- function num : 0_1 , upvalues : ProtocolBufferStaticFunctions
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.lefttime) then
+function SLeiTingAntiAddiction:Marshal(buffer)
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.lefttime) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.totaltime) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.totaltime) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteByte)(buffer, self.isGuest) then
+  if not ProtocolBufferStaticFunctions.WriteByte(buffer, self.isGuest) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteByte)(buffer, self.auth) then
+  if not ProtocolBufferStaticFunctions.WriteByte(buffer, self.auth) then
     return false
   end
   return true
 end
 
-SLeiTingAntiAddiction.Unmarshal = function(self, buffer)
-  -- function num : 0_2 , upvalues : ProtocolBufferStaticFunctions
+function SLeiTingAntiAddiction:Unmarshal(buffer)
   local ret = true
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.lefttime = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.totaltime = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadByte)(buffer)
+  ret, self.isGuest = ProtocolBufferStaticFunctions.ReadByte(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadByte)(buffer)
+  ret, self.auth = ProtocolBufferStaticFunctions.ReadByte(buffer)
   if not ret then
     return ret
   end
@@ -59,4 +52,3 @@ SLeiTingAntiAddiction.Unmarshal = function(self, buffer)
 end
 
 return SLeiTingAntiAddiction
-

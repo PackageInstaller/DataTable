@@ -1,9 +1,4 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/def/protocol/activity/cloveractivityevent.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local CLoverActivityEvent = dataclass("CLoverActivityEvent", require("framework.net.protocol"))
 CLoverActivityEvent.ProtocolType = 2591
 CLoverActivityEvent.MaxSize = 65535
@@ -17,37 +12,35 @@ CLoverActivityEvent.COMMON_BATTLE = 4
 CLoverActivityEvent.CHOCOLATE = 5
 CLoverActivityEvent.FLOWER_LIST = 6
 CLoverActivityEvent.DIALOGUE_STORE = 7
-CLoverActivityEvent.Ctor = function(self, client)
-  -- function num : 0_0 , upvalues : CLoverActivityEvent
-  ((CLoverActivityEvent.super).Ctor)(self, client)
+
+function CLoverActivityEvent:Ctor(client)
+  CLoverActivityEvent.super.Ctor(self, client)
 end
 
-CLoverActivityEvent.Marshal = function(self, buffer)
-  -- function num : 0_1 , upvalues : ProtocolBufferStaticFunctions
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.constructionID) then
+function CLoverActivityEvent:Marshal(buffer)
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.constructionID) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.eventID) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.eventID) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.lineupID) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.lineupID) then
     return false
   end
   return true
 end
 
-CLoverActivityEvent.Unmarshal = function(self, buffer)
-  -- function num : 0_2 , upvalues : ProtocolBufferStaticFunctions
+function CLoverActivityEvent:Unmarshal(buffer)
   local ret = true
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.constructionID = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.eventID = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.lineupID = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
@@ -55,4 +48,3 @@ CLoverActivityEvent.Unmarshal = function(self, buffer)
 end
 
 return CLoverActivityEvent
-

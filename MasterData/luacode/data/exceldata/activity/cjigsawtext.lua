@@ -1,24 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/data/exceldata/activity/cjigsawtext.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local cjigsawtext = {}
 cjigsawtext.Data = {
-[11001] = {id = 11001, TextID = 1901044}
-, 
-[11002] = {id = 11002, TextID = 1901043}
-, 
-[11003] = {id = 11003, TextID = 1901044}
-, 
-[11004] = {id = 11004, TextID = 1901198}
-, 
-[11005] = {id = 11005, TextID = 1901515}
-, 
-[11006] = {id = 11006, TextID = 1901629}
-, 
-[11007] = {id = 11007, TextID = 1901664}
+  [11001] = {id = 11001, TextID = 1901044},
+  [11002] = {id = 11002, TextID = 1901043},
+  [11003] = {id = 11003, TextID = 1901044},
+  [11004] = {id = 11004, TextID = 1901198},
+  [11005] = {id = 11005, TextID = 1901515},
+  [11006] = {id = 11006, TextID = 1901629},
+  [11007] = {id = 11007, TextID = 1901664},
+  [11008] = {id = 11008, TextID = 1901722},
+  [11009] = {id = 11009, TextID = 1901722},
+  [11010] = {id = 11010, TextID = 1901722},
+  [11011] = {id = 11011, TextID = 1901722},
+  [11012] = {id = 11012, TextID = 1901722},
+  [11013] = {id = 11013, TextID = 1901722},
+  [11014] = {id = 11014, TextID = 1901722},
+  [11015] = {id = 11015, TextID = 1901722},
+  [11016] = {id = 11016, TextID = 1901722}
 }
-cjigsawtext.AllIds = {11001, 11002, 11003, 11004, 11005, 11006, 11007}
+cjigsawtext.AllIds = {
+  11001,
+  11002,
+  11003,
+  11004,
+  11005,
+  11006,
+  11007,
+  11008,
+  11009,
+  11010,
+  11011,
+  11012,
+  11013,
+  11014,
+  11015,
+  11016
+}
 return cjigsawtext
-

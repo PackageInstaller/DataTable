@@ -1,8 +1,3 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/localprotocols/bean/data/friendchatinfo.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local FriendChatInfo = dataclass("FriendChatInfo")
 FriendChatInfo.chatid = 0
 FriendChatInfo.sender = 0
@@ -10,32 +5,32 @@ FriendChatInfo.msg = ""
 FriendChatInfo.time = 0
 FriendChatInfo.mark = 0
 FriendChatInfo.hyperlinks = ""
-FriendChatInfo.Ctor = function(self)
-  -- function num : 0_0
+FriendChatInfo.bubbleID = 0
+
+function FriendChatInfo:Ctor()
 end
 
-FriendChatInfo.Marshal = function(self, data)
-  -- function num : 0_1
+function FriendChatInfo:Marshal(data)
   data.chatid = self.chatid
   data.sender = self.sender
   data.msg = self.msg
   data.time = self.time
   data.mark = self.mark
   data.hyperlinks = self.hyperlinks
+  data.bubbleID = self.bubbleID
 end
 
-FriendChatInfo.Unmarshal = function(self, data)
-  -- function num : 0_2
+function FriendChatInfo:Unmarshal(data)
   self.chatid = data.chatid
   self.sender = data.sender
   self.msg = data.msg
   self.time = data.time
   self.mark = data.mark
   self.hyperlinks = data.hyperlinks
+  self.bubbleID = data.bubbleID
 end
 
-FriendChatInfo.CheckVariable = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function FriendChatInfo:CheckVariable()
   if type(self.chatid) ~= "number" then
     LogErrorFormat("LocalProtocols", "type error!type(self.chatid) = %s. number required.", type(self.chatid))
     return false
@@ -60,8 +55,11 @@ FriendChatInfo.CheckVariable = function(self)
     LogErrorFormat("LocalProtocols", "type error!type(self.hyperlinks) = %s. string required.", type(self.hyperlinks))
     return false
   end
+  if type(self.bubbleID) ~= "number" then
+    LogErrorFormat("LocalProtocols", "type error!type(self.bubbleID) = %s. number required.", type(self.bubbleID))
+    return false
+  end
   return true
 end
 
 return FriendChatInfo
-

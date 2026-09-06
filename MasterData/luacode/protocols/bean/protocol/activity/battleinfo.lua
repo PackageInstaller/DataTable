@@ -1,43 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/bean/protocol/activity/battleinfo.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local BattleInfo = dataclass("BattleInfo")
 BattleInfo.battleId = 0
 BattleInfo.score = 0
 BattleInfo.battleTimes = 0
-BattleInfo.Ctor = function(self)
-  -- function num : 0_0
+
+function BattleInfo:Ctor()
 end
 
-BattleInfo.Marshal = function(self, buffer)
-  -- function num : 0_1 , upvalues : ProtocolBufferStaticFunctions
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.battleId) then
+function BattleInfo:Marshal(buffer)
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.battleId) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.score) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.score) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.battleTimes) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.battleTimes) then
     return false
   end
   return true
 end
 
-BattleInfo.Unmarshal = function(self, buffer)
-  -- function num : 0_2 , upvalues : ProtocolBufferStaticFunctions
+function BattleInfo:Unmarshal(buffer)
   local ret = true
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.battleId = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.score = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.battleTimes = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
@@ -45,4 +38,3 @@ BattleInfo.Unmarshal = function(self, buffer)
 end
 
 return BattleInfo
-

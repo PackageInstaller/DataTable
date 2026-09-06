@@ -1,160 +1,135 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/manager/experimental/behaviormanager/activity/bm_springfestival.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local CBossNianPart = (BeanManager.GetTableByName)("activity.cbossnianpart")
-local CBossNianRewardShow = (BeanManager.GetTableByName)("activity.cbossnianpointreward")
-local CSfblessingChat = (BeanManager.GetTableByName)("activity.csfblessingchat")
+local CBossNianPart = BeanManager.GetTableByName("activity.cbossnianpart")
+local CBossNianRewardShow = BeanManager.GetTableByName("activity.cbossnianpointreward")
+local CSfblessingChat = BeanManager.GetTableByName("activity.csfblessingchat")
 local CGetSpringRedPacket = require("protocols.def.protocol.activity.cgetspringredpacket")
 local BM_SpringFestival = class("BM_SpringFestival")
-BM_SpringFestival.Ctor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._data = ((NekoData.Data).activities).springfestival
+
+function BM_SpringFestival:Ctor()
+  self._data = NekoData.Data.activities.springfestival
 end
 
-BM_SpringFestival.IsRedPacketEnable = function(self)
-  -- function num : 0_1
-  return (self._data).redPacketIsOpen
+function BM_SpringFestival:IsRedPacketEnable()
+  return self._data.redPacketIsOpen
 end
 
-BM_SpringFestival.GetRedPacketState = function(self)
-  -- function num : 0_2
-  return (self._data).redPacketState
+function BM_SpringFestival:GetRedPacketState()
+  return self._data.redPacketState
 end
 
-BM_SpringFestival.GetBossInfo = function(self)
-  -- function num : 0_3
-  return (self._data).bossData
+function BM_SpringFestival:GetBossInfo()
+  return self._data.bossData
 end
 
-BM_SpringFestival.GetBossScoreAndRank = function(self)
-  -- function num : 0_4
-  return {score = ((self._data).bossData).score, rank = ((self._data).bossData).rank}
+function BM_SpringFestival:GetBossScoreAndRank()
+  return {
+    score = self._data.bossData.score,
+    rank = self._data.bossData.rank
+  }
 end
 
-BM_SpringFestival.GetBossInfoByID = function(self, id)
-  -- function num : 0_5
-  return (((self._data).bossData).bossList)[id]
+function BM_SpringFestival:GetBossInfoByID(id)
+  return self._data.bossData.bossList[id]
 end
 
-BM_SpringFestival.GetSpringSpirit = function(self)
-  -- function num : 0_6
-  return ((self._data).spirit).spirit
+function BM_SpringFestival:GetSpringSpirit()
+  return self._data.spirit.spirit
 end
 
-BM_SpringFestival.GetNextSpiritLeftTime = function(self)
-  -- function num : 0_7
-  return ((self._data).spirit).lefttime
+function BM_SpringFestival:GetNextSpiritLeftTime()
+  return self._data.spirit.lefttime
 end
 
-BM_SpringFestival.GetSpiritLimit = function(self)
-  -- function num : 0_8
-  return ((self._data).recorder).actPowerLimit
+function BM_SpringFestival:GetSpiritLimit()
+  return self._data.recorder.actPowerLimit
 end
 
-BM_SpringFestival.GetBossRewardData = function(self, bossId)
-  -- function num : 0_9 , upvalues : CBossNianPart, _ENV, CBossNianRewardShow
+function BM_SpringFestival:GetBossRewardData(bossId)
   local killReward = {}
   local stageReward = {}
   local recorder = CBossNianPart:GetRecorder(bossId)
-  for i,item in ipairs(recorder.showkillBossRewardId) do
-    (table.insert)(killReward, {id = item, num = (recorder.showkillBossRewardNum)[i], stage = -1})
+  for i, item in ipairs(recorder.showkillBossRewardId) do
+    table.insert(killReward, {
+      id = item,
+      num = recorder.showkillBossRewardNum[i],
+      stage = -1
+    })
   end
   local allIds = CBossNianRewardShow:GetAllIds()
-  for i,id in pairs(allIds) do
+  for i, id in pairs(allIds) do
     local bossid = id // 1000
     local stage = id - bossid * 1000
     recorder = CBossNianRewardShow:GetRecorder(id)
     if bossid == bossId then
-      for i,item in ipairs(recorder.battleRewardId) do
-        (table.insert)(stageReward, {id = item, num = (recorder.battleRewardNum)[i], stage = stage})
+      for i, item in ipairs(recorder.battleRewardId) do
+        table.insert(stageReward, {
+          id = item,
+          num = recorder.battleRewardNum[i],
+          stage = stage
+        })
       end
     end
   end
   return killReward, stageReward
 end
 
-BM_SpringFestival.GetCfgRecorder = function(self)
-  -- function num : 0_10
-  return (self._data).recorder
+function BM_SpringFestival:GetCfgRecorder()
+  return self._data.recorder
 end
 
-BM_SpringFestival.GetDay = function(self)
-  -- function num : 0_11
-  return (self._data).redPacketStateDay
+function BM_SpringFestival:GetDay()
+  return self._data.redPacketStateDay
 end
 
-BM_SpringFestival.GetSpringBattleResult = function(self)
-  -- function num : 0_12
-  return (self._data).battleresult
+function BM_SpringFestival:GetSpringBattleResult()
+  return self._data.battleresult
 end
 
-BM_SpringFestival.GetIsOpen = function(self)
-  -- function num : 0_13
-  do return (self._data).state == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function BM_SpringFestival:GetIsOpen()
+  return self._data.state == 1
 end
 
-BM_SpringFestival.GetNPCTalkTimeLineIDs = function(self)
-  -- function num : 0_14 , upvalues : _ENV, CSfblessingChat
+function BM_SpringFestival:GetNPCTalkTimeLineIDs()
   if not self._npcTalkTimeLineIDs then
     self._npcTalkTimeLineIDs = {}
-    for _,id in ipairs(CSfblessingChat:GetAllIds()) do
+    for _, id in ipairs(CSfblessingChat:GetAllIds()) do
       local record = CSfblessingChat:GetRecorder(id)
       if record.timelineID ~= 0 then
-        (table.insert)(self._npcTalkTimeLineIDs, record.timelineID)
+        table.insert(self._npcTalkTimeLineIDs, record.timelineID)
       end
     end
   end
-  do
-    return self._npcTalkTimeLineIDs
+  return self._npcTalkTimeLineIDs
+end
+
+function BM_SpringFestival:ShowRedDot()
+  local loginRedPoint = self._data.redPacketStateDay and self._data.redPacketStateDay ~= 0 and CS.UnityEngine.PlayerPrefs.GetInt("SpringFestivalDay") ~= self._data.redPacketStateDay
+  return loginRedPoint or self:ShowRedPacketRedPoint() or self:ShowBossRedPoint()
+end
+
+function BM_SpringFestival:ShowRedPacketRedPoint()
+  if self._data.redPacketIsOpen then
+    return self._data.redPacketState[CGetSpringRedPacket.FREE] == 0 or self._data.redPacketState[CGetSpringRedPacket.ACTIVE] == 0 and NekoData.BehaviorManager.BM_Task:GetActiveInfo().current >= 100
   end
 end
 
-BM_SpringFestival.ShowRedDot = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local loginRedPoint = not (self._data).redPacketStateDay or ((self._data).redPacketStateDay ~= 0 and (((CS.UnityEngine).PlayerPrefs).GetInt)("SpringFestivalDay") ~= (self._data).redPacketStateDay)
-  if not loginRedPoint and not self:ShowRedPacketRedPoint() then
-    do return self:ShowBossRedPoint() end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
-  end
+function BM_SpringFestival:ShowBossRedPoint()
+  return self._data.bossRewardRedPoint == 1
 end
 
-BM_SpringFestival.ShowRedPacketRedPoint = function(self)
-  -- function num : 0_16 , upvalues : CGetSpringRedPacket, _ENV
-  if ((self._data).redPacketState)[CGetSpringRedPacket.FREE] ~= 0 and (((self._data).redPacketState)[CGetSpringRedPacket.ACTIVE] ~= 0 or (((NekoData.BehaviorManager).BM_Task):GetActiveInfo()).current < 100) then
-    do return not (self._data).redPacketIsOpen end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
-  end
-end
-
-BM_SpringFestival.ShowBossRedPoint = function(self)
-  -- function num : 0_17
-  do return (self._data).bossRewardRedPoint == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
-end
-
-BM_SpringFestival.ShowRedDotByFunctionIndex = function(self, index)
-  -- function num : 0_18
+function BM_SpringFestival:ShowRedDotByFunctionIndex(index)
   if index == 1 then
     return self:ShowRedPacketRedPoint()
-  else
-    if index == 2 then
-      return self:ShowBossRedPoint()
-    end
+  elseif index == 2 then
+    return self:ShowBossRedPoint()
   end
 end
 
-BM_SpringFestival.GetRankID = function(self)
-  -- function num : 0_19
-  return (self._data).rankId
+function BM_SpringFestival:GetRankID()
+  return self._data.rankId
 end
 
-BM_SpringFestival.IsSpringShopEnable = function(self)
-  -- function num : 0_20
-  return (self._data).springShopIsOpen
+function BM_SpringFestival:IsSpringShopEnable()
+  return self._data.springShopIsOpen
 end
 
 return BM_SpringFestival
-

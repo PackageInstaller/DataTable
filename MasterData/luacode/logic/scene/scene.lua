@@ -1,12 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/scene/scene.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local GameSceneManager = (((CS.PixelNeko).P1).Scene).GameSceneManager
+local GameSceneManager = CS.PixelNeko.P1.Scene.GameSceneManager
 local Scene = class("Scene")
-Scene.Ctor = function(self, tag, assetBundleName, sceneName, isSingle)
-  -- function num : 0_0
+
+function Scene:Ctor(tag, assetBundleName, sceneName, isSingle)
   self._tag = tag
   self._assetBundleName = assetBundleName
   self._sceneName = sceneName
@@ -18,24 +13,21 @@ Scene.Ctor = function(self, tag, assetBundleName, sceneName, isSingle)
   self._loadHandler = 0
 end
 
-Scene.SetActive = function(self, active)
-  -- function num : 0_1 , upvalues : GameSceneManager
+function Scene:SetActive(active)
   self._active = active
   if not self._loading and active then
-    (GameSceneManager.SetSceneActive)(self._sceneName)
+    GameSceneManager.SetSceneActive(self._sceneName)
   end
 end
 
-Scene.SetRootGameObjectActive = function(self, active)
-  -- function num : 0_2 , upvalues : GameSceneManager
+function Scene:SetRootGameObjectActive(active)
   self._rootGameObjectActive = active
   if not self._loading then
-    (GameSceneManager.SetSceneRootGameObjectActive)(self._sceneName, active)
+    GameSceneManager.SetSceneRootGameObjectActive(self._sceneName, active)
   end
 end
 
-Scene.SetLoadProcess = function(self, isDone, process)
-  -- function num : 0_3
+function Scene:SetLoadProcess(isDone, process)
   if isDone then
     self._loading = false
     self._loadProcess = 1
@@ -46,31 +38,27 @@ Scene.SetLoadProcess = function(self, isDone, process)
   end
 end
 
-Scene.GetLoadProcess = function(self)
-  -- function num : 0_4
+function Scene:GetLoadProcess()
   return self._loading, self._loadProcess
 end
 
-Scene.Load = function(self)
-  -- function num : 0_5 , upvalues : GameSceneManager, _ENV
+function Scene:Load()
   if self._loadHandler == 0 then
     if self._isSingle then
-      self._loadHandler = (GameSceneManager.LoadSingleScene)(self._assetBundleName, self._sceneName)
+      self._loadHandler = GameSceneManager.LoadSingleScene(self._assetBundleName, self._sceneName)
     else
-      self._loadHandler = (GameSceneManager.LoadAdditiveScene)(self._assetBundleName, self._sceneName)
+      self._loadHandler = GameSceneManager.LoadAdditiveScene(self._assetBundleName, self._sceneName)
     end
   else
     LogError("Scene", "同一个场景不能Load两次")
   end
 end
 
-Scene.UnLoad = function(self)
-  -- function num : 0_6 , upvalues : GameSceneManager
+function Scene:UnLoad()
   if self._loadHandler > 0 then
-    (GameSceneManager.ReleaseScene)(self._loadHandler)
+    GameSceneManager.ReleaseScene(self._loadHandler)
     self._loadHandler = 0
   end
 end
 
 return Scene
-

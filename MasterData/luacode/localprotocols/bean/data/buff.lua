@@ -1,32 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/localprotocols/bean/data/buff.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local Buff = dataclass("Buff")
 Buff.id = 0
 Buff.key = 0
 Buff.countdown = 0
-Buff.Ctor = function(self)
-  -- function num : 0_0
+
+function Buff:Ctor()
 end
 
-Buff.Marshal = function(self, data)
-  -- function num : 0_1
+function Buff:Marshal(data)
   data.id = self.id
   data.key = self.key
   data.countdown = self.countdown
 end
 
-Buff.Unmarshal = function(self, data)
-  -- function num : 0_2
+function Buff:Unmarshal(data)
   self.id = data.id
   self.key = data.key
   self.countdown = data.countdown
 end
 
-Buff.CheckVariable = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function Buff:CheckVariable()
   if type(self.id) ~= "number" then
     LogErrorFormat("LocalProtocols", "type error!type(self.id) = %s. number required.", type(self.id))
     return false
@@ -43,4 +35,3 @@ Buff.CheckVariable = function(self)
 end
 
 return Buff
-

@@ -1,9 +1,4 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/def/protocol/battle/cbattlestart.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local CBattleStart = dataclass("CBattleStart", require("framework.net.protocol"))
 CBattleStart.ProtocolType = 1901
 CBattleStart.MaxSize = 65535
@@ -30,83 +25,75 @@ CBattleStart.STARRY_MIRROR = 16
 CBattleStart.SUMMER_ECHO = 17
 CBattleStart.PARTY_BOSS = 18
 CBattleStart.FANTASY_CONFLICT = 19
-CBattleStart.Ctor = function(self, client)
-  -- function num : 0_0 , upvalues : CBattleStart
-  ((CBattleStart.super).Ctor)(self, client)
+
+function CBattleStart:Ctor(client)
+  CBattleStart.super.Ctor(self, client)
   self.lineup = {}
 end
 
-CBattleStart.Marshal = function(self, buffer)
-  -- function num : 0_1 , upvalues : ProtocolBufferStaticFunctions, _ENV
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.battleType) then
+function CBattleStart:Marshal(buffer)
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.battleType) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.id) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.id) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.battleSceneId) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.battleSceneId) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.lineupID) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.lineupID) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteCompactUInt32)(buffer, (table.nums)(self.lineup)) then
+  if not ProtocolBufferStaticFunctions.WriteCompactUInt32(buffer, table.nums(self.lineup)) then
     return false
   end
-  for key,value in pairs(self.lineup) do
-    if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, R9_PC50) then
+  for key, value in pairs(self.lineup) do
+    if not ProtocolBufferStaticFunctions.WriteInt32(buffer, key) then
       return false
     end
-    if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, R9_PC50) then
+    if not ProtocolBufferStaticFunctions.WriteInt32(buffer, value) then
       return false
     end
   end
   return true
 end
 
-CBattleStart.Unmarshal = function(self, buffer)
-  -- function num : 0_2 , upvalues : ProtocolBufferStaticFunctions
+function CBattleStart:Unmarshal(buffer)
   local ret = true
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.battleType = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.id = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.battleSceneId = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.lineupID = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  local length, key, value = 0, nil, nil
-  ret = (ProtocolBufferStaticFunctions.ReadCompactUInt32)(buffer)
+  local length, key, value = 0
+  ret, length = ProtocolBufferStaticFunctions.ReadCompactUInt32(buffer)
   if not ret then
     return ret
   end
   for i = 1, length do
-    key = nil
-    ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+    key, value = nil, nil
+    ret, key = ProtocolBufferStaticFunctions.ReadInt32(buffer)
     if not ret then
       return ret
     end
-    -- DECOMPILER ERROR at PC61: Overwrote pending register: R5 in 'AssignReg'
-
-    ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+    ret, value = ProtocolBufferStaticFunctions.ReadInt32(buffer)
     if not ret then
       return ret
     end
-    -- DECOMPILER ERROR at PC67: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self.lineup)[key] = value
+    self.lineup[key] = value
   end
   return ret
 end
 
 return CBattleStart
-

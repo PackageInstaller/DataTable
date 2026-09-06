@@ -1,9 +1,4 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/bean/protocol/user/sysconfig.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local SysConfig = dataclass("SysConfig")
 SysConfig.music = 1
 SysConfig.musicNum = 2
@@ -21,20 +16,17 @@ SysConfig.moveType = 13
 SysConfig.showBuff = 14
 SysConfig.rockerType = 15
 SysConfig.autoBattleMode = 16
-SysConfig.Ctor = function(self)
-  -- function num : 0_0
+
+function SysConfig:Ctor()
 end
 
-SysConfig.Marshal = function(self, buffer)
-  -- function num : 0_1
+function SysConfig:Marshal(buffer)
   return true
 end
 
-SysConfig.Unmarshal = function(self, buffer)
-  -- function num : 0_2
+function SysConfig:Unmarshal(buffer)
   local ret = true
   return ret
 end
 
 return SysConfig
-

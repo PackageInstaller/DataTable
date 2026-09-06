@@ -1,8 +1,3 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/data/behavior/newbattle/newbattleai9.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local LoopUntil = require("luabehavior.decorators.loopuntil")
 local Not = require("luabehavior.decorators.not")
 local Weight = require("luabehavior.decorators.weight")
@@ -15,27 +10,27 @@ local SelectorProbability = require("luabehavior.composites.selectorprobability"
 local Noop = require("luabehavior.actions.noop")
 local Wait = require("luabehavior.actions.wait")
 local Agent = require("luabehavior.agent.battleai")
-local CreateNewBattleAI9 = function(behavior)
-  -- function num : 0_0 , upvalues : Selector, Sequence, Agent, LoopUntil
+
+local function CreateNewBattleAI9(behavior)
   local data = behavior._data
-  local node1 = (Selector.Create)()
-  local node2 = (Sequence.Create)()
-  local node3 = ((Agent.IfHasEnoughConditionsUseSkill).Create)(behavior)
-  local node4 = ((Agent.MonsterSkillCdRandom).Create)(behavior, 1, 30)
-  local node5 = ((Agent.MonsterSkillIsInCD).Create)(behavior, 201023)
-  local node6 = ((Agent.UseSkill).Create)(behavior, 201023)
+  local node1 = Selector.Create()
+  local node2 = Sequence.Create()
+  local node3 = Agent.IfHasEnoughConditionsUseSkill.Create(behavior)
+  local node4 = Agent.MonsterSkillCdRandom.Create(behavior, 1, 30)
+  local node5 = Agent.MonsterSkillIsInCD.Create(behavior, 201023)
+  local node6 = Agent.UseSkill.Create(behavior, 201023)
   node2:AddTask(node3)
   node2:AddTask(node4)
   node2:AddTask(node5)
   node2:AddTask(node6)
-  local node7 = (Sequence.Create)()
-  local node8 = ((Agent.MonsterHasBuff).Create)(behavior, 0, 20000)
-  local node9 = (Selector.Create)()
-  local node10 = (LoopUntil.Create)(behavior, 1, true)
-  local node11 = ((Agent.SummonMonsterType).Create)(behavior, 2, 21, 22, 0)
+  local node7 = Sequence.Create()
+  local node8 = Agent.MonsterHasBuff.Create(behavior, 0, 20000)
+  local node9 = Selector.Create()
+  local node10 = LoopUntil.Create(behavior, 1, true)
+  local node11 = Agent.SummonMonsterType.Create(behavior, 2, 21, 22, 0)
   node10:SetTask(node11)
-  local node12 = (LoopUntil.Create)(behavior, 1, true)
-  local node13 = ((Agent.SummonMonsterType).Create)(behavior, 2, 25, 22, 0)
+  local node12 = LoopUntil.Create(behavior, 1, true)
+  local node13 = Agent.SummonMonsterType.Create(behavior, 2, 25, 22, 0)
   node12:SetTask(node13)
   node9:AddTask(node10)
   node9:AddTask(node12)
@@ -47,4 +42,3 @@ local CreateNewBattleAI9 = function(behavior)
 end
 
 return CreateNewBattleAI9
-

@@ -1,33 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/dialog/dungeon/hint/dungeonhintleftcell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local DungeonHintLeftCell = class("DungeonHintLeftCell", Dialog)
 DungeonHintLeftCell.AssetBundleName = "ui/layouts.dungeon"
 DungeonHintLeftCell.AssetName = "DungeonCharTalk1"
-local cimagepath = (BeanManager.GetTableByName)("ui.cimagepath")
-DungeonHintLeftCell.Ctor = function(self, ...)
-  -- function num : 0_0 , upvalues : DungeonHintLeftCell
-  ((DungeonHintLeftCell.super).Ctor)(self, ...)
+local cimagepath = BeanManager.GetTableByName("ui.cimagepath")
+
+function DungeonHintLeftCell:Ctor(...)
+  DungeonHintLeftCell.super.Ctor(self, ...)
   self._groupName = "Default"
 end
 
-DungeonHintLeftCell.OnCreate = function(self)
-  -- function num : 0_1
+function DungeonHintLeftCell:OnCreate()
   self._name = self:GetChild("Back/Name")
   self._icon = self:GetChild("Back/HeadPhoto/Photo")
   self._text = self:GetChild("Back/Txt")
-  ;
-  (self:GetRootWindow()):Subscribe_StateExitEvent(self.OnStateExit, self)
+  self:GetRootWindow():Subscribe_StateExitEvent(self.OnStateExit, self)
 end
 
-DungeonHintLeftCell.OnDestroy = function(self)
-  -- function num : 0_2
+function DungeonHintLeftCell:OnDestroy()
 end
 
-DungeonHintLeftCell.SetData = function(self, delegate, role, textid, timeout)
-  -- function num : 0_3
+function DungeonHintLeftCell:SetData(delegate, role, textid, timeout)
   self._delegate = delegate
   self._role = role
   self._textid = textid
@@ -35,44 +26,34 @@ DungeonHintLeftCell.SetData = function(self, delegate, role, textid, timeout)
   self:Refresh()
 end
 
-DungeonHintLeftCell.Refresh = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._name):SetText((self._role):GetRoleName())
-  local icon = (self._role):GetDiamondHeadImageRecord()
-  ;
-  (self._icon):SetSprite(icon.assetBundle, icon.assetName)
-  local text = ((TextManager.GetText)(self._textid)):gsub("%$heroine%$", (((NekoData.BehaviorManager).BM_Game):GetMyRoleInfo()).username)
-  ;
-  (self._text):SetText(text)
+function DungeonHintLeftCell:Refresh()
+  self._name:SetText(self._role:GetRoleName())
+  local icon = self._role:GetDiamondHeadImageRecord()
+  self._icon:SetSprite(icon.assetBundle, icon.assetName)
+  local text = TextManager.GetText(self._textid):gsub("%$heroine%$", NekoData.BehaviorManager.BM_Game:GetMyRoleInfo().username)
+  self._text:SetText(text)
 end
 
-DungeonHintLeftCell.Appear = function(self)
-  -- function num : 0_5
-  (self:GetRootWindow()):SetAnimatorInteger("state", 1)
+function DungeonHintLeftCell:Appear()
+  self:GetRootWindow():SetAnimatorInteger("state", 1)
 end
 
-DungeonHintLeftCell.Disappear = function(self)
-  -- function num : 0_6
-  (self:GetRootWindow()):SetAnimatorInteger("state", 0)
+function DungeonHintLeftCell:Disappear()
+  self:GetRootWindow():SetAnimatorInteger("state", 0)
 end
 
-DungeonHintLeftCell.OnStateExit = function(self, handler, stateName, normalizedTime)
-  -- function num : 0_7
-  if stateName ~= "DungeonCharTalkHold" or stateName == "DungeonCharTalkShow" then
-    (self._delegate):OnCellAppear(self)
-  else
-    if stateName == "DungeonCharTalkHide" then
-      (self._delegate):OnCellDisappear(self)
-    end
+function DungeonHintLeftCell:OnStateExit(handler, stateName, normalizedTime)
+  if stateName == "DungeonCharTalkHold" then
+  elseif stateName == "DungeonCharTalkShow" then
+    self._delegate:OnCellAppear(self)
+  elseif stateName == "DungeonCharTalkHide" then
+    self._delegate:OnCellDisappear(self)
   end
 end
 
-DungeonHintLeftCell.Reset = function(self)
-  -- function num : 0_8
-  (self:GetRootWindow()):SetYPosition(0, -1000)
-  ;
-  (self:GetRootWindow()):PlayAnimation("DungeonCharTalkHideHold")
+function DungeonHintLeftCell:Reset()
+  self:GetRootWindow():SetYPosition(0, -1000)
+  self:GetRootWindow():PlayAnimation("DungeonCharTalkHideHold")
 end
 
 return DungeonHintLeftCell
-

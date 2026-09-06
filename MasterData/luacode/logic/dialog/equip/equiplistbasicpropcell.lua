@@ -1,36 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/dialog/equip/equiplistbasicpropcell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local CAttrNameTable = (BeanManager.GetTableByName)("role.cattreffectidname")
+local CAttrNameTable = BeanManager.GetTableByName("role.cattreffectidname")
 local EquipListBasicPropCell = class("EquipListBasicPropCell", Dialog)
 EquipListBasicPropCell.AssetBundleName = "ui/layouts.equip"
 EquipListBasicPropCell.AssetName = "EquipListBasicProp"
-EquipListBasicPropCell.Ctor = function(self, ...)
-  -- function num : 0_0 , upvalues : EquipListBasicPropCell
-  ((EquipListBasicPropCell.super).Ctor)(self, ...)
+
+function EquipListBasicPropCell:Ctor(...)
+  EquipListBasicPropCell.super.Ctor(self, ...)
 end
 
-EquipListBasicPropCell.OnCreate = function(self)
-  -- function num : 0_1
+function EquipListBasicPropCell:OnCreate()
   self._name = self:GetChild("Name")
   self._num = self:GetChild("Num")
 end
 
-EquipListBasicPropCell.OnDestroy = function(self)
-  -- function num : 0_2
+function EquipListBasicPropCell:OnDestroy()
 end
 
-EquipListBasicPropCell.RefreshCell = function(self, data)
-  -- function num : 0_3 , upvalues : CAttrNameTable, _ENV
+function EquipListBasicPropCell:RefreshCell(data)
   local record = CAttrNameTable:GetRecorder(data.attrId)
   if record then
-    (self._name):SetText((TextManager.GetText)(record.classnameTextID))
-    ;
-    (self._num):SetText((math.ceil)(data.value))
+    self._name:SetText(TextManager.GetText(record.classnameTextID))
+    self._num:SetText(math.ceil(data.value))
   end
 end
 
 return EquipListBasicPropCell
-

@@ -1,116 +1,95 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/logic/fsm/gamefsm/maincitybattleloading.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local State = {}
-local CBattleInfoTable = (BeanManager.GetTableByName)("battle.cbattleinfo")
-local CBattleTransferTable = (BeanManager.GetTableByName)("battle.cbattletransfer")
-local CBattleTransferEffectTable = (BeanManager.GetTableByName)("battle.cbattletransfereffect")
-local CEffectResTable = (BeanManager.GetTableByName)("skill.ceffectres")
-local CBattleStartProtocol = (require("protocols.def.protocol.battle.cbattlestart"))
-local dialog = nil
+local CBattleInfoTable = BeanManager.GetTableByName("battle.cbattleinfo")
+local CBattleTransferTable = BeanManager.GetTableByName("battle.cbattletransfer")
+local CBattleTransferEffectTable = BeanManager.GetTableByName("battle.cbattletransfereffect")
+local CEffectResTable = BeanManager.GetTableByName("skill.ceffectres")
+local CBattleStartProtocol = require("protocols.def.protocol.battle.cbattlestart")
+local dialog
 local loadBattleEffectEnd = false
 local loadBattleSceneEnd = false
-State.OnEnter = function(lastState)
-  -- function num : 0_0 , upvalues : _ENV, State, loadBattleSceneEnd, dialog, CBattleInfoTable, CBattleTransferTable, CBattleTransferEffectTable, CEffectResTable
+
+function State.OnEnter(lastState)
   LogInfo("GameFSM", "MainCityBattleLoading Enter")
   State.toCross = false
-  local protocol = ((NekoData.BehaviorManager).BM_SBattleStart):GetProtocol()
+  local protocol = NekoData.BehaviorManager.BM_SBattleStart:GetProtocol()
   local battleSceneId = protocol.battleSceneId
-  ;
-  (SceneManager.LoadScene)(battleSceneId, false, false, true, false, true)
-  local loadingDialog = (DialogManager.GetDialog)("loadingdialog")
+  SceneManager.LoadScene(battleSceneId, false, false, true, false, true)
+  local loadingDialog = DialogManager.GetDialog("loadingdialog")
   if loadingDialog == nil then
-    loadingDialog = (DialogManager.CreateSingletonDialog)("loadingdialog")
+    loadingDialog = DialogManager.CreateSingletonDialog("loadingdialog")
   end
   loadingDialog:ShowTips(battleSceneId)
-  ;
-  (LuaNotificationCenter.AddObserver)(State, function(observer, notification)
-    -- function num : 0_0_0 , upvalues : loadBattleSceneEnd, battleSceneId, dialog, State
+  LuaNotificationCenter.AddObserver(State, function(observer, notification)
     local controller = notification.userInfo
     loadBattleSceneEnd = controller:GetSceneID() == battleSceneId
     if loadBattleSceneEnd then
       if dialog then
-        (State.ToCross)()
+        State.ToCross()
       else
-        (State.ToBattle)()
+        State.ToBattle()
       end
     end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
-  end
-, Common.n_EndLoadScene, nil)
+  end, Common.n_EndLoadScene, nil)
   local cBattleInfoRecorder = CBattleInfoTable:GetRecorder(protocol.battleid)
   if cBattleInfoRecorder then
     local transferRecord = CBattleTransferTable:GetRecorder(cBattleInfoRecorder.transferID)
     local transferEffectRecord = CBattleTransferEffectTable:GetRecorder(transferRecord.effectID)
-    local flag = ((NekoData.BehaviorManager).BM_Login):IfCanUseLocalCBattleEnd(((NekoData.BehaviorManager).BM_SBattleStart):GetProtocol())
+    local flag = NekoData.BehaviorManager.BM_Login:IfCanUseLocalCBattleEnd(NekoData.BehaviorManager.BM_SBattleStart:GetProtocol())
     if not flag and transferEffectRecord and CEffectResTable:GetRecorder(transferEffectRecord.effectName) then
-      (LuaNotificationCenter.AddObserver)(State, State.OnLoadBattleEffectEnd, Common.n_LoadBattleEffectEnd, nil)
-      dialog = (DialogManager.CreateSingletonDialog)("dungeon.battlecrossdialog")
+      LuaNotificationCenter.AddObserver(State, State.OnLoadBattleEffectEnd, Common.n_LoadBattleEffectEnd, nil)
+      dialog = DialogManager.CreateSingletonDialog("dungeon.battlecrossdialog")
       dialog:SetData(protocol.battleid)
     end
   else
-    do
-      LogInfoFormat("GameFSM", "MainCityBattleLoading battleid %s dont in cbattleinfo", protocol.battleid)
-    end
+    LogInfoFormat("GameFSM", "MainCityBattleLoading battleid %s dont in cbattleinfo", protocol.battleid)
   end
 end
 
-State.Update = function(nextState)
-  -- function num : 0_1
+function State.Update(nextState)
 end
 
-State.OnExit = function()
-  -- function num : 0_2 , upvalues : _ENV, State, dialog, loadBattleSceneEnd
-  (LuaNotificationCenter.RemoveObserver)(State)
+function State.OnExit()
+  LuaNotificationCenter.RemoveObserver(State)
   dialog = nil
   loadBattleSceneEnd = false
   LogInfo("GameFSM", "MainCityBattleLoading Exit")
   GlobalGameFSM:SetBoolean("battleLoadingEnd", false)
 end
 
-State.ToCross = function()
-  -- function num : 0_3 , upvalues : State, dialog, loadBattleSceneEnd, _ENV
+function State.ToCross()
   if not State.toCross then
     dialog:PlayEndAnimation()
     if loadBattleSceneEnd then
-      (DialogManager.DestroySingletonDialog)("loadingdialog")
+      DialogManager.DestroySingletonDialog("loadingdialog")
     end
     State.toCross = true
   end
 end
 
-State.OnLoadBattleEffectEnd = function()
-  -- function num : 0_4 , upvalues : loadBattleSceneEnd, State
+function State.OnLoadBattleEffectEnd()
   if loadBattleSceneEnd then
-    (State.ToBattle)()
+    State.ToBattle()
   end
 end
 
-State.ToBattle = function()
-  -- function num : 0_5 , upvalues : _ENV, CBattleInfoTable
-  local protocol = ((NekoData.BehaviorManager).BM_SBattleStart):GetProtocol()
+function State.ToBattle()
+  local protocol = NekoData.BehaviorManager.BM_SBattleStart:GetProtocol()
   local recorder = CBattleInfoTable:GetRecorder(protocol.battleid)
-  local base_controller = (SceneManager.GetSceneControllerByLoadType)((SceneManager.LoadType).Base)
+  local base_controller = SceneManager.GetSceneControllerByLoadType(SceneManager.LoadType.Base)
   if base_controller then
     base_controller:SetRootGameObjectActive(false)
   end
-  if not (SceneManager.GetSceneControllerByLoadType)((SceneManager.LoadType).BossBattle) then
-    local controller = (SceneManager.GetSceneControllerByLoadType)((SceneManager.LoadType).CommonDungeonBattle)
-  end
+  local controller = SceneManager.GetSceneControllerByLoadType(SceneManager.LoadType.BossBattle) or SceneManager.GetSceneControllerByLoadType(SceneManager.LoadType.CommonDungeonBattle)
   controller:SetRootGameObjectActive(true)
-  ;
-  (SceneManager.SetSceneActive)(controller)
+  SceneManager.SetSceneActive(controller)
   controller:OnSBattleStart(protocol)
   if recorder then
-    (LuaAudioManager.PlayBGM)(recorder.bgm)
+    LuaAudioManager.PlayBGM(recorder.bgm)
   end
-  if (DialogManager.GetDialog)("loadingdialog") then
-    (DialogManager.DestroySingletonDialog)("loadingdialog")
+  if DialogManager.GetDialog("loadingdialog") then
+    DialogManager.DestroySingletonDialog("loadingdialog")
   end
   GlobalGameFSM:SetBoolean("battleLoadingEnd", true)
 end
 
 return State
-

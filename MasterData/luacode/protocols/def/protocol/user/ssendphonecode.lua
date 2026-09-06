@@ -1,38 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/def/protocol/user/ssendphonecode.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local SSendPhoneCode = dataclass("SSendPhoneCode", require("framework.net.protocol"))
 SSendPhoneCode.ProtocolType = 2252
 SSendPhoneCode.MaxSize = 65535
 SSendPhoneCode.result = 0
 SSendPhoneCode.time = 0
-SSendPhoneCode.Ctor = function(self, client)
-  -- function num : 0_0 , upvalues : SSendPhoneCode
-  ((SSendPhoneCode.super).Ctor)(self, client)
+
+function SSendPhoneCode:Ctor(client)
+  SSendPhoneCode.super.Ctor(self, client)
 end
 
-SSendPhoneCode.Marshal = function(self, buffer)
-  -- function num : 0_1 , upvalues : ProtocolBufferStaticFunctions
-  if not (ProtocolBufferStaticFunctions.WriteInt16)(buffer, self.result) then
+function SSendPhoneCode:Marshal(buffer)
+  if not ProtocolBufferStaticFunctions.WriteInt16(buffer, self.result) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt64)(buffer, self.time) then
+  if not ProtocolBufferStaticFunctions.WriteInt64(buffer, self.time) then
     return false
   end
   return true
 end
 
-SSendPhoneCode.Unmarshal = function(self, buffer)
-  -- function num : 0_2 , upvalues : ProtocolBufferStaticFunctions
+function SSendPhoneCode:Unmarshal(buffer)
   local ret = true
-  ret = (ProtocolBufferStaticFunctions.ReadInt16)(buffer)
+  ret, self.result = ProtocolBufferStaticFunctions.ReadInt16(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt64)(buffer)
+  ret, self.time = ProtocolBufferStaticFunctions.ReadInt64(buffer)
   if not ret then
     return ret
   end
@@ -40,4 +33,3 @@ SSendPhoneCode.Unmarshal = function(self, buffer)
 end
 
 return SSendPhoneCode
-

@@ -1,38 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/def/protocol/login/sevolution.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local SEvolution = dataclass("SEvolution", require("framework.net.protocol"))
 SEvolution.ProtocolType = 1066
 SEvolution.MaxSize = 65535
 SEvolution.roleId = 0
 SEvolution.evolution = 0
-SEvolution.Ctor = function(self, client)
-  -- function num : 0_0 , upvalues : SEvolution
-  ((SEvolution.super).Ctor)(self, client)
+
+function SEvolution:Ctor(client)
+  SEvolution.super.Ctor(self, client)
 end
 
-SEvolution.Marshal = function(self, buffer)
-  -- function num : 0_1 , upvalues : ProtocolBufferStaticFunctions
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.roleId) then
+function SEvolution:Marshal(buffer)
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.roleId) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.evolution) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.evolution) then
     return false
   end
   return true
 end
 
-SEvolution.Unmarshal = function(self, buffer)
-  -- function num : 0_2 , upvalues : ProtocolBufferStaticFunctions
+function SEvolution:Unmarshal(buffer)
   local ret = true
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.roleId = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.evolution = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
@@ -40,4 +33,3 @@ SEvolution.Unmarshal = function(self, buffer)
 end
 
 return SEvolution
-

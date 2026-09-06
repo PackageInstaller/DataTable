@@ -1,12 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/framework/ui/frame/looptable/looptableframe.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local LoopHorizontalTableFrameImpl = require("framework.ui.frame.looptable.loophorizontaltableframeimpl")
 local LoopTableFrame = class("LoopTableFrame")
-LoopTableFrame.Ctor = function(self, window, delegate, isVertical, canSlide, isInverse, autoAlign, loop, useSoftMask)
-  -- function num : 0_0 , upvalues : LoopHorizontalTableFrameImpl
+
+function LoopTableFrame:Ctor(window, delegate, isVertical, canSlide, isInverse, autoAlign, loop, useSoftMask)
   if not canSlide and canSlide ~= false then
     canSlide = true
   end
@@ -14,120 +9,100 @@ LoopTableFrame.Ctor = function(self, window, delegate, isVertical, canSlide, isI
   if useSoftMask then
     viewportName = "ViewportSoftMask"
   end
-  if isVertical and isInverse then
+  if isVertical then
     if isInverse then
-      self._impl = (LoopHorizontalTableFrameImpl.Create)(self, window, delegate, canSlide, autoAlign, loop, viewportName)
+    else
     end
-  end
-end
-
-LoopTableFrame.Destroy = function(self)
-  -- function num : 0_1
-  (self._impl):Destroy()
-end
-
-LoopTableFrame.ReloadAllCell = function(self)
-  -- function num : 0_2
-  (self._impl):ReloadAllCell()
-end
-
-LoopTableFrame.ReloadCellsAtIndex = function(self, indexList, isAnimate)
-  -- function num : 0_3
-  if isAnimate then
-    (self._impl):ReloadCellsAtIndex(indexList, isAnimate)
+  elseif isInverse then
   else
-    ;
-    (self._impl):ReloadCellsAtIndex(indexList, false)
+    self._impl = LoopHorizontalTableFrameImpl.Create(self, window, delegate, canSlide, autoAlign, loop, viewportName)
   end
 end
 
-LoopTableFrame.RemoveCellsAtIndex = function(self, indexList, isAnimate)
-  -- function num : 0_4
+function LoopTableFrame:Destroy()
+  self._impl:Destroy()
 end
 
-LoopTableFrame.InsertCellsAtIndex = function(self, indexList, isAnimate)
-  -- function num : 0_5
+function LoopTableFrame:ReloadAllCell()
+  self._impl:ReloadAllCell()
 end
 
-LoopTableFrame.MoveToRight = function(self, isAnimate)
-  -- function num : 0_6
+function LoopTableFrame:ReloadCellsAtIndex(indexList, isAnimate)
   if isAnimate then
-    (self._impl):MoveToRight(isAnimate)
+    self._impl:ReloadCellsAtIndex(indexList, isAnimate)
   else
-    ;
-    (self._impl):MoveToRight(false)
+    self._impl:ReloadCellsAtIndex(indexList, false)
   end
 end
 
-LoopTableFrame.MoveToLeft = function(self, isAnimate)
-  -- function num : 0_7
+function LoopTableFrame:RemoveCellsAtIndex(indexList, isAnimate)
+end
+
+function LoopTableFrame:InsertCellsAtIndex(indexList, isAnimate)
+end
+
+function LoopTableFrame:MoveToRight(isAnimate)
   if isAnimate then
-    (self._impl):MoveToLeft(isAnimate)
+    self._impl:MoveToRight(isAnimate)
   else
-    ;
-    (self._impl):MoveToLeft(false)
+    self._impl:MoveToRight(false)
   end
 end
 
-LoopTableFrame.MoveLeftToIndex = function(self, desIndex, isAnimate)
-  -- function num : 0_8
+function LoopTableFrame:MoveToLeft(isAnimate)
   if isAnimate then
-    (self._impl):MoveLeftToIndex(desIndex, isAnimate)
+    self._impl:MoveToLeft(isAnimate)
   else
-    ;
-    (self._impl):MoveLeftToIndex(desIndex, false)
+    self._impl:MoveToLeft(false)
   end
 end
 
-LoopTableFrame.MoveRightToIndex = function(self, desIndex, isAnimate)
-  -- function num : 0_9
+function LoopTableFrame:MoveLeftToIndex(desIndex, isAnimate)
   if isAnimate then
-    (self._impl):MoveRightToIndex(desIndex, isAnimate)
+    self._impl:MoveLeftToIndex(desIndex, isAnimate)
   else
-    ;
-    (self._impl):MoveRightToIndex(desIndex, false)
+    self._impl:MoveLeftToIndex(desIndex, false)
   end
 end
 
-LoopTableFrame.GetLeftIndex = function(self)
-  -- function num : 0_10
-  return (self._impl):GetLeftIndex()
+function LoopTableFrame:MoveRightToIndex(desIndex, isAnimate)
+  if isAnimate then
+    self._impl:MoveRightToIndex(desIndex, isAnimate)
+  else
+    self._impl:MoveRightToIndex(desIndex, false)
+  end
 end
 
-LoopTableFrame.GetRightIndex = function(self)
-  -- function num : 0_11
-  return (self._impl):GetRightIndex()
+function LoopTableFrame:GetLeftIndex()
+  return self._impl:GetLeftIndex()
 end
 
-LoopTableFrame.GetTotalLength = function(self)
-  -- function num : 0_12
-  return (self._impl):GetTotalLength()
+function LoopTableFrame:GetRightIndex()
+  return self._impl:GetRightIndex()
 end
 
-LoopTableFrame.SetMargin = function(self, oneValue, twoValue)
-  -- function num : 0_13
-  (self._impl):SetMargin(oneValue, twoValue)
+function LoopTableFrame:GetTotalLength()
+  return self._impl:GetTotalLength()
 end
 
-LoopTableFrame.FireEvent = function(self, eventName, ...)
-  -- function num : 0_14
-  (self._impl):FireEvent(eventName, ...)
+function LoopTableFrame:SetMargin(oneValue, twoValue)
+  self._impl:SetMargin(oneValue, twoValue)
 end
 
-LoopTableFrame.SetSlide = function(self, slide, showSoftMask)
-  -- function num : 0_15
-  (self._impl):SetSlide(slide, showSoftMask)
+function LoopTableFrame:FireEvent(eventName, ...)
+  self._impl:FireEvent(eventName, ...)
 end
 
-LoopTableFrame.RefreshUIParticleClipper = function(self)
-  -- function num : 0_16
-  return (self._impl):RefreshUIParticleClipper()
+function LoopTableFrame:SetSlide(slide, showSoftMask)
+  self._impl:SetSlide(slide, showSoftMask)
 end
 
-LoopTableFrame.SetSoftMaskActive = function(self, showSoftMask)
-  -- function num : 0_17
-  (self._impl):SetSoftMaskActive(showSoftMask)
+function LoopTableFrame:RefreshUIParticleClipper()
+  return self._impl:RefreshUIParticleClipper()
+end
+
+function LoopTableFrame:SetSoftMaskActive(showSoftMask)
+  self._impl:SetSoftMaskActive(showSoftMask)
 end
 
 return LoopTableFrame
-

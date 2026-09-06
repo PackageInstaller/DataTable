@@ -1,41 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/luabehavior/actions/yardcharacterai/isstate.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local Task = require("luabehavior.base.task")
 local TaskStatus = require("luabehavior.base.taskstatus")
 local IsState = class("IsState", Task)
-IsState.Ctor = function(self, context, type)
-  -- function num : 0_0 , upvalues : IsState
-  ((IsState.super).Ctor)(self)
+
+function IsState:Ctor(context, type)
+  IsState.super.Ctor(self)
   self._character = context._character
   self._type = type
 end
 
-IsState.OnStart = function(self)
-  -- function num : 0_1
+function IsState:OnStart()
 end
 
-IsState.OnUpdate = function(self, deltaTime)
-  -- function num : 0_2 , upvalues : TaskStatus
+function IsState:OnUpdate(deltaTime)
   if self._character then
-    local result = (self._character):IsState(self._type)
+    local result = self._character:IsState(self._type)
     if result then
       return TaskStatus.Success
     else
       return TaskStatus.Failure
     end
   else
-    do
-      do return TaskStatus.Failure end
-    end
+    return TaskStatus.Failure
   end
 end
 
-IsState.OnEnd = function(self)
-  -- function num : 0_3
+function IsState:OnEnd()
 end
 
 return IsState
-

@@ -1,0 +1,32 @@
+{
+  "cleanexternal": true,
+  "downloadserver": [
+    "http://fsdmn-oss.ymtnet.com/fhdmn_dalu_client/20251219/android/main"
+  ],
+  "fromversion": 0,
+  "name": "main",
+  "subresource": {
+    "audio-ja_JP": {
+      "require": false,
+      "versionserver": [
+        "http://fsdmn-oss.ymtnet.com/fhdmn_dalu_client/20251219/android/audio-ja_JP"
+      ]
+    },
+    "audio-zh_Hans": {
+      "require": false,
+      "versionserver": [
+        "http://fsdmn-oss.ymtnet.com/fhdmn_dalu_client/20251219/android/audio-zh_Hans"
+      ]
+    },
+    "live2d": {
+      "require": false,
+      "versionserver": [
+        "http://fsdmn-oss.ymtnet.com/fhdmn_dalu_client/20251219/android/live2d"
+      ]
+    }
+  },
+  "version": 166400,
+  "versionserver": [
+    "http://fsdmn-oss.ymtnet.com/fhdmn_dalu_client/20251219/android/main"
+  ]
+}

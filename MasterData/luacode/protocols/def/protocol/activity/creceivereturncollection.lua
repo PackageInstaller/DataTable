@@ -1,9 +1,4 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/def/protocol/activity/creceivereturncollection.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local CReceiveReturnCollection = dataclass("CReceiveReturnCollection", require("framework.net.protocol"))
 CReceiveReturnCollection.ProtocolType = 2740
 CReceiveReturnCollection.MaxSize = 65535
@@ -12,37 +7,35 @@ CReceiveReturnCollection.level = 0
 CReceiveReturnCollection.roleId = 0
 CReceiveReturnCollection.HIGH = 2
 CReceiveReturnCollection.COMMON = 1
-CReceiveReturnCollection.Ctor = function(self, client)
-  -- function num : 0_0 , upvalues : CReceiveReturnCollection
-  ((CReceiveReturnCollection.super).Ctor)(self, client)
+
+function CReceiveReturnCollection:Ctor(client)
+  CReceiveReturnCollection.super.Ctor(self, client)
 end
 
-CReceiveReturnCollection.Marshal = function(self, buffer)
-  -- function num : 0_1 , upvalues : ProtocolBufferStaticFunctions
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.CollectionType) then
+function CReceiveReturnCollection:Marshal(buffer)
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.CollectionType) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.level) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.level) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.roleId) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.roleId) then
     return false
   end
   return true
 end
 
-CReceiveReturnCollection.Unmarshal = function(self, buffer)
-  -- function num : 0_2 , upvalues : ProtocolBufferStaticFunctions
+function CReceiveReturnCollection:Unmarshal(buffer)
   local ret = true
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.CollectionType = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.level = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.roleId = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
@@ -50,4 +43,3 @@ CReceiveReturnCollection.Unmarshal = function(self, buffer)
 end
 
 return CReceiveReturnCollection
-

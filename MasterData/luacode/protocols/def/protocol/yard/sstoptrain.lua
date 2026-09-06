@@ -1,30 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/def/protocol/yard/sstoptrain.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local SSTopTrain = dataclass("SSTopTrain", require("framework.net.protocol"))
 SSTopTrain.ProtocolType = 2377
 SSTopTrain.MaxSize = 65535
 SSTopTrain.index = 0
-SSTopTrain.Ctor = function(self, client)
-  -- function num : 0_0 , upvalues : SSTopTrain
-  ((SSTopTrain.super).Ctor)(self, client)
+
+function SSTopTrain:Ctor(client)
+  SSTopTrain.super.Ctor(self, client)
 end
 
-SSTopTrain.Marshal = function(self, buffer)
-  -- function num : 0_1 , upvalues : ProtocolBufferStaticFunctions
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.index) then
+function SSTopTrain:Marshal(buffer)
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.index) then
     return false
   end
   return true
 end
 
-SSTopTrain.Unmarshal = function(self, buffer)
-  -- function num : 0_2 , upvalues : ProtocolBufferStaticFunctions
+function SSTopTrain:Unmarshal(buffer)
   local ret = true
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.index = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
@@ -32,4 +25,3 @@ SSTopTrain.Unmarshal = function(self, buffer)
 end
 
 return SSTopTrain
-

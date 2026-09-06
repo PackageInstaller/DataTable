@@ -1,9 +1,4 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/def/protocol/battle/sopenarenapanel.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local SOpenArenaPanel = dataclass("SOpenArenaPanel", require("framework.net.protocol"))
 SOpenArenaPanel.ProtocolType = 4108
 SOpenArenaPanel.MaxSize = 65535
@@ -17,65 +12,63 @@ SOpenArenaPanel.leftTime = 0
 SOpenArenaPanel.NOCAMP = 0
 SOpenArenaPanel.CAMP1 = 1
 SOpenArenaPanel.CAMP2 = 2
-SOpenArenaPanel.Ctor = function(self, client)
-  -- function num : 0_0 , upvalues : SOpenArenaPanel
-  ((SOpenArenaPanel.super).Ctor)(self, client)
+
+function SOpenArenaPanel:Ctor(client)
+  SOpenArenaPanel.super.Ctor(self, client)
 end
 
-SOpenArenaPanel.Marshal = function(self, buffer)
-  -- function num : 0_1 , upvalues : ProtocolBufferStaticFunctions
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.waiting) then
+function SOpenArenaPanel:Marshal(buffer)
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.waiting) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.seasonId) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.seasonId) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.arenaId) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.arenaId) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.camp) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.camp) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.firstEnter) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.firstEnter) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.apAddTimes) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.apAddTimes) then
     return false
   end
-  if not (ProtocolBufferStaticFunctions.WriteInt32)(buffer, self.leftTime) then
+  if not ProtocolBufferStaticFunctions.WriteInt32(buffer, self.leftTime) then
     return false
   end
   return true
 end
 
-SOpenArenaPanel.Unmarshal = function(self, buffer)
-  -- function num : 0_2 , upvalues : ProtocolBufferStaticFunctions
+function SOpenArenaPanel:Unmarshal(buffer)
   local ret = true
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.waiting = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.seasonId = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.arenaId = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.camp = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.firstEnter = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.apAddTimes = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
-  ret = (ProtocolBufferStaticFunctions.ReadInt32)(buffer)
+  ret, self.leftTime = ProtocolBufferStaticFunctions.ReadInt32(buffer)
   if not ret then
     return ret
   end
@@ -83,4 +76,3 @@ SOpenArenaPanel.Unmarshal = function(self, buffer)
 end
 
 return SOpenArenaPanel
-

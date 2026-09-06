@@ -1,8 +1,3 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/data/behavior/newbattle/newbattleaiw6boss02.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local LoopUntil = require("luabehavior.decorators.loopuntil")
 local Not = require("luabehavior.decorators.not")
 local Weight = require("luabehavior.decorators.weight")
@@ -16,12 +11,11 @@ local Noop = require("luabehavior.actions.noop")
 local Wait = require("luabehavior.actions.wait")
 local WaitFrames = require("luabehavior.actions.waitframes")
 local Agent = require("luabehavior.agent.battleai")
-local Createnewbattleaiw6boss02 = function(behavior)
-  -- function num : 0_0 , upvalues : Noop
+
+local function Createnewbattleaiw6boss02(behavior)
   local data = behavior._data
-  local node1 = (Noop.Create)()
+  local node1 = Noop.Create()
   return node1
 end
 
 return Createnewbattleaiw6boss02
-

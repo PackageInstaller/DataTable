@@ -1,27 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 luacode/protocols/def/protocol/activity/copensnackshop.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ProtocolBufferStaticFunctions = ((CS.PixelNeko).Net).ProtocolBufferStaticFunctions
+local ProtocolBufferStaticFunctions = CS.PixelNeko.Net.ProtocolBufferStaticFunctions
 local COpenSnackShop = dataclass("COpenSnackShop", require("framework.net.protocol"))
 COpenSnackShop.ProtocolType = 2502
 COpenSnackShop.MaxSize = 65535
-COpenSnackShop.Ctor = function(self, client)
-  -- function num : 0_0 , upvalues : COpenSnackShop
-  ((COpenSnackShop.super).Ctor)(self, client)
+
+function COpenSnackShop:Ctor(client)
+  COpenSnackShop.super.Ctor(self, client)
 end
 
-COpenSnackShop.Marshal = function(self, buffer)
-  -- function num : 0_1
+function COpenSnackShop:Marshal(buffer)
   return true
 end
 
-COpenSnackShop.Unmarshal = function(self, buffer)
-  -- function num : 0_2
+function COpenSnackShop:Unmarshal(buffer)
   local ret = true
   return ret
 end
 
 return COpenSnackShop
-
