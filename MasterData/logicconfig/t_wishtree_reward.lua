@@ -1,0 +1,265 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_wishtree_reward.lua
+
+module("logicconfig.config.t_wishtree_reward", package.seeall)
+
+local title = {
+	prizeId = 2,
+	rewardPlanId = 1,
+	prize = 3
+}
+local dataList = {
+	{
+		1,
+		1,
+		"4:510022:2"
+	},
+	{
+		1,
+		2,
+		"8:1:5000000"
+	},
+	{
+		1,
+		3,
+		"4:36:10"
+	},
+	{
+		1,
+		4,
+		"4:41004:1"
+	},
+	{
+		1,
+		5,
+		"4:90316:1"
+	},
+	{
+		1,
+		6,
+		"4:30006:100"
+	},
+	{
+		2,
+		1,
+		"4:510022:2"
+	},
+	{
+		2,
+		2,
+		"8:1:5000000"
+	},
+	{
+		2,
+		3,
+		"4:36:10"
+	},
+	{
+		2,
+		4,
+		"4:60005:1"
+	},
+	{
+		2,
+		5,
+		"4:90316:2"
+	},
+	{
+		2,
+		6,
+		"4:30006:60"
+	},
+	{
+		3,
+		1,
+		"4:510022:2"
+	},
+	{
+		3,
+		2,
+		"8:1:5000000"
+	},
+	{
+		3,
+		3,
+		"4:36:10"
+	},
+	{
+		3,
+		4,
+		"4:60005:1"
+	},
+	{
+		3,
+		5,
+		"4:90316:1"
+	},
+	{
+		3,
+		6,
+		"4:30006:100"
+	},
+	{
+		4,
+		1,
+		"4:12102:10"
+	},
+	{
+		4,
+		2,
+		"8:1:5000000"
+	},
+	{
+		4,
+		3,
+		"4:36:10"
+	},
+	{
+		4,
+		4,
+		"4:60005:1"
+	},
+	{
+		4,
+		5,
+		"4:90316:2"
+	},
+	{
+		4,
+		6,
+		"4:30006:100"
+	},
+	{
+		5,
+		1,
+		"4:12102:10"
+	},
+	{
+		5,
+		2,
+		"8:1:5000000"
+	},
+	{
+		5,
+		3,
+		"4:36:10"
+	},
+	{
+		5,
+		4,
+		"4:60005:1"
+	},
+	{
+		5,
+		5,
+		"4:90316:2"
+	},
+	{
+		5,
+		6,
+		"4:30006:60"
+	},
+	{
+		6,
+		1,
+		"4:12102:10"
+	},
+	{
+		6,
+		2,
+		"8:1:5000000"
+	},
+	{
+		6,
+		3,
+		"4:36:10"
+	},
+	{
+		6,
+		4,
+		"4:60005:1"
+	},
+	{
+		6,
+		5,
+		"4:510022:2"
+	},
+	{
+		6,
+		6,
+		"4:30006:100"
+	},
+	{
+		6,
+		7,
+		"4:90312:1"
+	}
+}
+local t_wishtree_reward = {
+	{
+		dataList[1],
+		dataList[2],
+		dataList[3],
+		dataList[4],
+		dataList[5],
+		dataList[6]
+	},
+	{
+		dataList[7],
+		dataList[8],
+		dataList[9],
+		dataList[10],
+		dataList[11],
+		dataList[12]
+	},
+	{
+		dataList[13],
+		dataList[14],
+		dataList[15],
+		dataList[16],
+		dataList[17],
+		dataList[18]
+	},
+	{
+		dataList[19],
+		dataList[20],
+		dataList[21],
+		dataList[22],
+		dataList[23],
+		dataList[24]
+	},
+	{
+		dataList[25],
+		dataList[26],
+		dataList[27],
+		dataList[28],
+		dataList[29],
+		dataList[30]
+	},
+	{
+		dataList[31],
+		dataList[32],
+		dataList[33],
+		dataList[34],
+		dataList[35],
+		dataList[36],
+		dataList[37]
+	}
+}
+
+t_wishtree_reward.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_wishtree_reward

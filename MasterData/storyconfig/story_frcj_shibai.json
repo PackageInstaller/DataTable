@@ -1,0 +1,1340 @@
+{
+  "takeName": "skill1",
+  "frames": 54,
+  "frameRate": 30,
+  "forbidBack": false,
+  "position": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "inits": [
+    {
+      "type": "position",
+      "typeExtra": "",
+      "go": "fx_fanrui_donghua_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 23,
+      "orderInLayer": 0,
+      "goResPath": "effect/prefabs/ui/20230825/fafx_nruichoujiang/fx_fanrui_donghua.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "localScale",
+      "typeExtra": "",
+      "go": "fx_fanrui_donghua_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 23,
+      "orderInLayer": 0,
+      "goResPath": "effect/prefabs/ui/20230825/fafx_nruichoujiang/fx_fanrui_donghua.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "position",
+      "typeExtra": "",
+      "go": "fx_fanrui_camera_anim_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 23,
+      "orderInLayer": -1,
+      "goResPath": "effect/prefabs/ui/20230825/fafx_nruichoujiang/fx_fanrui_camera_anim.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "localScale",
+      "typeExtra": "",
+      "go": "fx_fanrui_camera_anim_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 23,
+      "orderInLayer": -1,
+      "goResPath": "effect/prefabs/ui/20230825/fafx_nruichoujiang/fx_fanrui_camera_anim.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "position",
+      "typeExtra": "",
+      "go": "fx_fanrui_bg01_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 0,
+      "orderInLayer": -5,
+      "goResPath": "effect/prefabs/ui/20230825/fafx_nruichoujiang/fx_fanrui_bg01.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "localScale",
+      "typeExtra": "",
+      "go": "fx_fanrui_bg01_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 0,
+      "orderInLayer": -5,
+      "goResPath": "effect/prefabs/ui/20230825/fafx_nruichoujiang/fx_fanrui_bg01.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "position",
+      "typeExtra": "",
+      "go": "fx_fanrui_effect03_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 0,
+      "orderInLayer": 1,
+      "goResPath": "effect/prefabs/ui/20230825/fafx_nruichoujiang/fx_fanrui_effect03.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "localScale",
+      "typeExtra": "",
+      "go": "fx_fanrui_effect03_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 0,
+      "orderInLayer": 1,
+      "goResPath": "effect/prefabs/ui/20230825/fafx_nruichoujiang/fx_fanrui_effect03.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "position",
+      "typeExtra": "",
+      "go": "fx_fanrui_effect_04_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 0,
+      "orderInLayer": 1,
+      "goResPath": "effect/prefabs/ui/20230825/fafx_nruichoujiang/fx_fanrui_effect_04.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "localScale",
+      "typeExtra": "",
+      "go": "fx_fanrui_effect_04_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 0,
+      "orderInLayer": 1,
+      "goResPath": "effect/prefabs/ui/20230825/fafx_nruichoujiang/fx_fanrui_effect_04.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    }
+  ],
+  "actions": [
+    {
+      "method": "invokemethod",
+      "go": "fx_fanrui_donghua_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/ui/20230825/fafx_nruichoujiang/fx_fanrui_donghua.prefab",
+      "layer": 23,
+      "orderInLayer": 0,
+      "delay": 0.0,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "ActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": [
+        {
+          "valueType": 13,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        }
+      ]
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_fanrui_donghua_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/ui/20230825/fafx_nruichoujiang/fx_fanrui_donghua.prefab",
+      "layer": 23,
+      "orderInLayer": 0,
+      "delay": 0.0,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "PlaySpineAnimation"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": [
+        {
+          "valueType": 9,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "2",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        },
+        {
+          "valueType": 13,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        },
+        {
+          "valueType": 13,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        },
+        {
+          "valueType": 2,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 1.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        }
+      ]
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_fanrui_camera_anim_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/ui/20230825/fafx_nruichoujiang/fx_fanrui_camera_anim.prefab",
+      "layer": 23,
+      "orderInLayer": -1,
+      "delay": 0.0,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "ActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": [
+        {
+          "valueType": 13,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        }
+      ]
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_fanrui_bg01_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/ui/20230825/fafx_nruichoujiang/fx_fanrui_bg01.prefab",
+      "layer": 0,
+      "orderInLayer": -5,
+      "delay": 0.0,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "ActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": [
+        {
+          "valueType": 13,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        }
+      ]
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_fanrui_effect03_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/ui/20230825/fafx_nruichoujiang/fx_fanrui_effect03.prefab",
+      "layer": 0,
+      "orderInLayer": 1,
+      "delay": 0.0,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "DeActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_fanrui_effect_04_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/ui/20230825/fafx_nruichoujiang/fx_fanrui_effect_04.prefab",
+      "layer": 0,
+      "orderInLayer": 1,
+      "delay": 0.0,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "DeActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_fanrui_effect03_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/ui/20230825/fafx_nruichoujiang/fx_fanrui_effect03.prefab",
+      "layer": 0,
+      "orderInLayer": 1,
+      "delay": 0.5,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "ActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": [
+        {
+          "valueType": 13,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        }
+      ]
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_fanrui_effect_04_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/ui/20230825/fafx_nruichoujiang/fx_fanrui_effect_04.prefab",
+      "layer": 0,
+      "orderInLayer": 1,
+      "delay": 0.7333333492279053,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "ActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": [
+        {
+          "valueType": 13,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        }
+      ]
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_fanrui_effect03_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/ui/20230825/fafx_nruichoujiang/fx_fanrui_effect03.prefab",
+      "layer": 0,
+      "orderInLayer": 1,
+      "delay": 0.800000011920929,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "DeActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_fanrui_donghua_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/ui/20230825/fafx_nruichoujiang/fx_fanrui_donghua.prefab",
+      "layer": 23,
+      "orderInLayer": 0,
+      "delay": 1.6333333253860474,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "SkillWithDraw"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_fanrui_camera_anim_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/ui/20230825/fafx_nruichoujiang/fx_fanrui_camera_anim.prefab",
+      "layer": 23,
+      "orderInLayer": -1,
+      "delay": 1.7333333492279053,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "DeActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    }
+  ],
+  "modelNames": [
+    "effect/prefabs/ui/20230825/fafx_nruichoujiang/fx_fanrui_donghua.prefab",
+    "effect/prefabs/ui/20230825/fafx_nruichoujiang/fx_fanrui_camera_anim.prefab",
+    "effect/prefabs/ui/20230825/fafx_nruichoujiang/fx_fanrui_bg01.prefab",
+    "effect/prefabs/ui/20230825/fafx_nruichoujiang/fx_fanrui_effect03.prefab",
+    "effect/prefabs/ui/20230825/fafx_nruichoujiang/fx_fanrui_effect_04.prefab"
+  ]
+}

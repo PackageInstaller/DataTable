@@ -1,0 +1,4812 @@
+{
+  "takeName": "skill1",
+  "frames": 300,
+  "frameRate": 30,
+  "forbidBack": false,
+  "position": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "inits": [
+    {
+      "type": "position",
+      "typeExtra": "",
+      "go": "MainCamera",
+      "isChild": false,
+      "posTarget": "",
+      "layer": -1,
+      "orderInLayer": -1,
+      "goResPath": "",
+      "shadowRes": "",
+      "position": {
+        "x": 22.549999237060547,
+        "y": 61.900001525878906,
+        "z": -18000.150390625
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "camerafov",
+      "typeExtra": "",
+      "go": "MainCamera",
+      "isChild": false,
+      "posTarget": "",
+      "layer": -1,
+      "orderInLayer": -1,
+      "goResPath": "",
+      "shadowRes": "",
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [
+        3.5999999046325684
+      ],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "position",
+      "typeExtra": "",
+      "go": "fx_scene_glowju_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 0,
+      "orderInLayer": 0,
+      "goResPath": "effect/prefabs/story/saiji/cjsaiji/fx_scene_glowju.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 22.68000030517578,
+        "y": 64.08000183105469,
+        "z": -0.15032288432121277
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "position",
+      "typeExtra": "",
+      "go": "fx_scene_xian1_create",
+      "isChild": false,
+      "posTarget": "Target1",
+      "layer": 0,
+      "orderInLayer": 0,
+      "goResPath": "effect/prefabs/story/saiji/cjsaiji/fx_scene_xian1.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "position",
+      "typeExtra": "",
+      "go": "fx_scene_xian2_create",
+      "isChild": false,
+      "posTarget": "Target0",
+      "layer": 0,
+      "orderInLayer": 0,
+      "goResPath": "effect/prefabs/story/saiji/cjsaiji/fx_scene_xian1.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": -1.9073486328125e-06,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "position",
+      "typeExtra": "",
+      "go": "fx_scene_xian3_create",
+      "isChild": false,
+      "posTarget": "Target2",
+      "layer": 0,
+      "orderInLayer": 0,
+      "goResPath": "effect/prefabs/story/saiji/cjsaiji/fx_scene_xian1.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "position",
+      "typeExtra": "",
+      "go": "fx_scene_xian4_create",
+      "isChild": false,
+      "posTarget": "Target3",
+      "layer": 0,
+      "orderInLayer": 0,
+      "goResPath": "effect/prefabs/story/saiji/cjsaiji/fx_scene_xian1.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "position",
+      "typeExtra": "",
+      "go": "fx_scene_xian5_create",
+      "isChild": false,
+      "posTarget": "Target6",
+      "layer": 0,
+      "orderInLayer": 0,
+      "goResPath": "effect/prefabs/story/saiji/cjsaiji/fx_scene_xian1.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "position",
+      "typeExtra": "",
+      "go": "fx_scene_xian6_create",
+      "isChild": false,
+      "posTarget": "Target7",
+      "layer": 0,
+      "orderInLayer": 0,
+      "goResPath": "effect/prefabs/story/saiji/cjsaiji/fx_scene_xian1.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "localScale",
+      "typeExtra": "",
+      "go": "fx_scene_glowju_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 0,
+      "orderInLayer": 0,
+      "goResPath": "effect/prefabs/story/saiji/cjsaiji/fx_scene_glowju.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "localScale",
+      "typeExtra": "",
+      "go": "fx_scene_xian1_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 0,
+      "orderInLayer": 0,
+      "goResPath": "effect/prefabs/story/saiji/cjsaiji/fx_scene_xian1.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 0.3499999940395355,
+        "y": 0.3499999940395355,
+        "z": 0.3499999940395355
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "localScale",
+      "typeExtra": "",
+      "go": "fx_scene_xian2_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 0,
+      "orderInLayer": 0,
+      "goResPath": "effect/prefabs/story/saiji/cjsaiji/fx_scene_xian1.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 0.3499999940395355,
+        "y": 0.3499999940395355,
+        "z": 0.3499999940395355
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "localScale",
+      "typeExtra": "",
+      "go": "fx_scene_xian3_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 0,
+      "orderInLayer": 0,
+      "goResPath": "effect/prefabs/story/saiji/cjsaiji/fx_scene_xian1.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 0.3499999940395355,
+        "y": 0.3499999940395355,
+        "z": 0.3499999940395355
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "localScale",
+      "typeExtra": "",
+      "go": "fx_scene_xian4_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 0,
+      "orderInLayer": 0,
+      "goResPath": "effect/prefabs/story/saiji/cjsaiji/fx_scene_xian1.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 0.3499999940395355,
+        "y": 0.3499999940395355,
+        "z": 0.3499999940395355
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "localScale",
+      "typeExtra": "",
+      "go": "fx_scene_xian5_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 0,
+      "orderInLayer": 0,
+      "goResPath": "effect/prefabs/story/saiji/cjsaiji/fx_scene_xian1.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 0.3499999940395355,
+        "y": 0.3499999940395355,
+        "z": 0.3499999940395355
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "localScale",
+      "typeExtra": "",
+      "go": "fx_scene_xian6_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 0,
+      "orderInLayer": 0,
+      "goResPath": "effect/prefabs/story/saiji/cjsaiji/fx_scene_xian1.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 0.3499999940395355,
+        "y": 0.3499999940395355,
+        "z": 0.3499999940395355
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "position",
+      "typeExtra": "",
+      "go": "Target0",
+      "isChild": false,
+      "posTarget": "",
+      "layer": -1,
+      "orderInLayer": -1,
+      "goResPath": "",
+      "shadowRes": "",
+      "position": {
+        "x": 22.550003051757812,
+        "y": 56.06999969482422,
+        "z": -1.9863232374191284
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "localScale",
+      "typeExtra": "",
+      "go": "Target0",
+      "isChild": false,
+      "posTarget": "",
+      "layer": -1,
+      "orderInLayer": -1,
+      "goResPath": "",
+      "shadowRes": "",
+      "position": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    }
+  ],
+  "actions": [
+    {
+      "method": "moveto",
+      "go": "MainCamera",
+      "isChild": false,
+      "goResPath": "",
+      "layer": -1,
+      "orderInLayer": -1,
+      "delay": 0.0,
+      "time": 0.03333333507180214,
+      "easeType": 21,
+      "customEase": [],
+      "strings": [],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [
+        false,
+        false
+      ],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [
+        {
+          "x": 22.549999237060547,
+          "y": 61.900001525878906,
+          "z": -18000.150390625
+        },
+        {
+          "x": 22.549999237060547,
+          "y": 61.900001525878906,
+          "z": -18000.150390625
+        }
+      ],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "tweenFov",
+      "go": "MainCamera",
+      "isChild": false,
+      "goResPath": "",
+      "layer": -1,
+      "orderInLayer": -1,
+      "delay": 0.0,
+      "time": 0.20000000298023224,
+      "easeType": 21,
+      "customEase": [],
+      "strings": [],
+      "stringsExtra": [],
+      "floats": [
+        3.5999999046325684,
+        3.5999999046325684
+      ],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_scene_glowju_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/saiji/cjsaiji/fx_scene_glowju.prefab",
+      "layer": 0,
+      "orderInLayer": 0,
+      "delay": 0.0,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "DeActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_scene_xian1_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/saiji/cjsaiji/fx_scene_xian1.prefab",
+      "layer": 0,
+      "orderInLayer": 0,
+      "delay": 0.0,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "DeActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_scene_xian2_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/saiji/cjsaiji/fx_scene_xian1.prefab",
+      "layer": 0,
+      "orderInLayer": 0,
+      "delay": 0.0,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "DeActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_scene_xian3_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/saiji/cjsaiji/fx_scene_xian1.prefab",
+      "layer": 0,
+      "orderInLayer": 0,
+      "delay": 0.0,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "DeActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_scene_xian4_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/saiji/cjsaiji/fx_scene_xian1.prefab",
+      "layer": 0,
+      "orderInLayer": 0,
+      "delay": 0.0,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "DeActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_scene_xian5_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/saiji/cjsaiji/fx_scene_xian1.prefab",
+      "layer": 0,
+      "orderInLayer": 0,
+      "delay": 0.0,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "DeActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_scene_xian6_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/saiji/cjsaiji/fx_scene_xian1.prefab",
+      "layer": 0,
+      "orderInLayer": 0,
+      "delay": 0.0,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "DeActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "moveto",
+      "go": "MainCamera",
+      "isChild": false,
+      "goResPath": "",
+      "layer": -1,
+      "orderInLayer": -1,
+      "delay": 0.20000000298023224,
+      "time": 0.5,
+      "easeType": 21,
+      "customEase": [],
+      "strings": [],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [
+        true,
+        false
+      ],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [
+        {
+          "x": 22.549999237060547,
+          "y": 61.900001525878906,
+          "z": -18000.150390625
+        },
+        {
+          "x": 22.679983139038086,
+          "y": 62.74000930786133,
+          "z": -18000.158203125
+        }
+      ],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "tweenFov",
+      "go": "MainCamera",
+      "isChild": false,
+      "goResPath": "",
+      "layer": -1,
+      "orderInLayer": -1,
+      "delay": 0.20000000298023224,
+      "time": 0.5,
+      "easeType": 21,
+      "customEase": [],
+      "strings": [],
+      "stringsExtra": [],
+      "floats": [
+        3.5999999046325684,
+        3.200000047683716
+      ],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_scene_glowju_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/saiji/cjsaiji/fx_scene_glowju.prefab",
+      "layer": 0,
+      "orderInLayer": 0,
+      "delay": 0.2666666805744171,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "ActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": [
+        {
+          "valueType": 13,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        }
+      ]
+    },
+    {
+      "method": "moveto",
+      "go": "MainCamera",
+      "isChild": false,
+      "goResPath": "",
+      "layer": -1,
+      "orderInLayer": -1,
+      "delay": 0.699999988079071,
+      "time": 0.6666666865348816,
+      "easeType": 21,
+      "customEase": [],
+      "strings": [],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [
+        false,
+        true
+      ],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [
+        {
+          "x": 22.679983139038086,
+          "y": 62.74000930786133,
+          "z": -18000.158203125
+        },
+        {
+          "x": 22.679990768432617,
+          "y": 63.060001373291016,
+          "z": -18000.158203125
+        }
+      ],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "tweenFov",
+      "go": "MainCamera",
+      "isChild": false,
+      "goResPath": "",
+      "layer": -1,
+      "orderInLayer": -1,
+      "delay": 0.699999988079071,
+      "time": 0.6666666865348816,
+      "easeType": 21,
+      "customEase": [],
+      "strings": [],
+      "stringsExtra": [],
+      "floats": [
+        3.200000047683716,
+        3.0
+      ],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "moveto",
+      "go": "MainCamera",
+      "isChild": false,
+      "goResPath": "",
+      "layer": -1,
+      "orderInLayer": -1,
+      "delay": 1.3666666746139526,
+      "time": 0.10000000149011612,
+      "easeType": 21,
+      "customEase": [],
+      "strings": [],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [
+        true,
+        true
+      ],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [
+        {
+          "x": 22.679990768432617,
+          "y": 63.060001373291016,
+          "z": -18000.158203125
+        },
+        {
+          "x": 22.869997024536133,
+          "y": 63.380001068115234,
+          "z": -18000.146484375
+        }
+      ],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "tweenFov",
+      "go": "MainCamera",
+      "isChild": false,
+      "goResPath": "",
+      "layer": -1,
+      "orderInLayer": -1,
+      "delay": 1.3666666746139526,
+      "time": 0.4333333373069763,
+      "easeType": 21,
+      "customEase": [],
+      "strings": [],
+      "stringsExtra": [],
+      "floats": [
+        3.0,
+        4.0
+      ],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "moveto",
+      "go": "MainCamera",
+      "isChild": false,
+      "goResPath": "",
+      "layer": -1,
+      "orderInLayer": -1,
+      "delay": 1.4666666984558105,
+      "time": 0.10000000149011612,
+      "easeType": 21,
+      "customEase": [],
+      "strings": [],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [
+        true,
+        true
+      ],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [
+        {
+          "x": 22.869997024536133,
+          "y": 63.380001068115234,
+          "z": -18000.146484375
+        },
+        {
+          "x": 22.450000762939453,
+          "y": 63.70000076293945,
+          "z": -18000.138671875
+        }
+      ],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "moveto",
+      "go": "MainCamera",
+      "isChild": false,
+      "goResPath": "",
+      "layer": -1,
+      "orderInLayer": -1,
+      "delay": 1.5666667222976685,
+      "time": 0.10000000149011612,
+      "easeType": 21,
+      "customEase": [],
+      "strings": [],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [
+        true,
+        true
+      ],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [
+        {
+          "x": 22.450000762939453,
+          "y": 63.70000076293945,
+          "z": -18000.138671875
+        },
+        {
+          "x": 22.850008010864258,
+          "y": 63.53000259399414,
+          "z": -18000.138671875
+        }
+      ],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "moveto",
+      "go": "MainCamera",
+      "isChild": false,
+      "goResPath": "",
+      "layer": -1,
+      "orderInLayer": -1,
+      "delay": 1.6666666269302368,
+      "time": 0.10000000149011612,
+      "easeType": 21,
+      "customEase": [],
+      "strings": [],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [
+        true,
+        true
+      ],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [
+        {
+          "x": 22.850008010864258,
+          "y": 63.53000259399414,
+          "z": -18000.138671875
+        },
+        {
+          "x": 22.46000099182129,
+          "y": 63.6099967956543,
+          "z": -18000.138671875
+        }
+      ],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "moveto",
+      "go": "MainCamera",
+      "isChild": false,
+      "goResPath": "",
+      "layer": -1,
+      "orderInLayer": -1,
+      "delay": 1.7666666507720947,
+      "time": 0.10000000149011612,
+      "easeType": 21,
+      "customEase": [],
+      "strings": [],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [
+        true,
+        true
+      ],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [
+        {
+          "x": 22.46000099182129,
+          "y": 63.6099967956543,
+          "z": -18000.138671875
+        },
+        {
+          "x": 22.750001907348633,
+          "y": 63.499996185302734,
+          "z": -18000.13671875
+        }
+      ],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "tweenFov",
+      "go": "MainCamera",
+      "isChild": false,
+      "goResPath": "",
+      "layer": -1,
+      "orderInLayer": -1,
+      "delay": 1.7999999523162842,
+      "time": 0.6666666865348816,
+      "easeType": 21,
+      "customEase": [],
+      "strings": [],
+      "stringsExtra": [],
+      "floats": [
+        4.0,
+        4.5
+      ],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "moveto",
+      "go": "MainCamera",
+      "isChild": false,
+      "goResPath": "",
+      "layer": -1,
+      "orderInLayer": -1,
+      "delay": 1.8666666746139526,
+      "time": 0.10000000149011612,
+      "easeType": 21,
+      "customEase": [],
+      "strings": [],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [
+        true,
+        true
+      ],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [
+        {
+          "x": 22.750001907348633,
+          "y": 63.499996185302734,
+          "z": -18000.13671875
+        },
+        {
+          "x": 22.74000358581543,
+          "y": 63.439998626708984,
+          "z": -18000.15625
+        }
+      ],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "invokemethod",
+      "go": "Target0",
+      "isChild": false,
+      "goResPath": "",
+      "layer": -1,
+      "orderInLayer": -1,
+      "delay": 1.9333332777023315,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "SendMsg"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": [
+        {
+          "valueType": 9,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "eff_disappear",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        },
+        {
+          "valueType": 9,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        },
+        {
+          "valueType": 9,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        },
+        {
+          "valueType": 9,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        }
+      ]
+    },
+    {
+      "method": "moveto",
+      "go": "MainCamera",
+      "isChild": false,
+      "goResPath": "",
+      "layer": -1,
+      "orderInLayer": -1,
+      "delay": 1.9666666984558105,
+      "time": 0.10000000149011612,
+      "easeType": 21,
+      "customEase": [],
+      "strings": [],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [
+        true,
+        true
+      ],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [
+        {
+          "x": 22.74000358581543,
+          "y": 63.439998626708984,
+          "z": -18000.15625
+        },
+        {
+          "x": 22.679990768432617,
+          "y": 63.440006256103516,
+          "z": -18000.154296875
+        }
+      ],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "moveto",
+      "go": "MainCamera",
+      "isChild": false,
+      "goResPath": "",
+      "layer": -1,
+      "orderInLayer": -1,
+      "delay": 2.066666603088379,
+      "time": 0.4000000059604645,
+      "easeType": 21,
+      "customEase": [],
+      "strings": [],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [
+        true,
+        true
+      ],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [
+        {
+          "x": 22.679990768432617,
+          "y": 63.440006256103516,
+          "z": -18000.154296875
+        },
+        {
+          "x": 22.679990768432617,
+          "y": 63.440006256103516,
+          "z": -18000.154296875
+        }
+      ],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "moveto",
+      "go": "MainCamera",
+      "isChild": false,
+      "goResPath": "",
+      "layer": -1,
+      "orderInLayer": -1,
+      "delay": 2.4666666984558105,
+      "time": 0.4333333373069763,
+      "easeType": 21,
+      "customEase": [],
+      "strings": [
+        "",
+        "Target0"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [
+        true,
+        true
+      ],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [
+        {
+          "x": 22.679990768432617,
+          "y": 63.440006256103516,
+          "z": -18000.154296875
+        },
+        {
+          "x": 22.67998695373535,
+          "y": 55.81999969482422,
+          "z": -18000.146484375
+        },
+        {
+          "x": 22.679990768432617,
+          "y": 63.440006256103516,
+          "z": -18000.154296875
+        },
+        {
+          "x": -0.12998390197753906,
+          "y": -0.25,
+          "z": -17998.16015625
+        }
+      ],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "tweenFov",
+      "go": "MainCamera",
+      "isChild": false,
+      "goResPath": "",
+      "layer": -1,
+      "orderInLayer": -1,
+      "delay": 2.4666666984558105,
+      "time": 0.4333333373069763,
+      "easeType": 21,
+      "customEase": [],
+      "strings": [],
+      "stringsExtra": [],
+      "floats": [
+        4.5,
+        3.200000047683716
+      ],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "moveto",
+      "go": "MainCamera",
+      "isChild": false,
+      "goResPath": "",
+      "layer": -1,
+      "orderInLayer": -1,
+      "delay": 2.9000000953674316,
+      "time": 1.5,
+      "easeType": 21,
+      "customEase": [],
+      "strings": [
+        "Target0",
+        "Target0"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [
+        true,
+        true
+      ],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [
+        {
+          "x": 22.67998695373535,
+          "y": 55.81999969482422,
+          "z": -18000.146484375
+        },
+        {
+          "x": 22.679990768432617,
+          "y": 55.5,
+          "z": -18000.154296875
+        },
+        {
+          "x": -0.12998390197753906,
+          "y": -0.25,
+          "z": -17998.16015625
+        },
+        {
+          "x": -0.1299877166748047,
+          "y": -0.5699996948242188,
+          "z": -17998.16796875
+        }
+      ],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "tweenFov",
+      "go": "MainCamera",
+      "isChild": false,
+      "goResPath": "",
+      "layer": -1,
+      "orderInLayer": -1,
+      "delay": 2.9000000953674316,
+      "time": 1.5,
+      "easeType": 21,
+      "customEase": [],
+      "strings": [],
+      "stringsExtra": [],
+      "floats": [
+        3.200000047683716,
+        3.200000047683716
+      ],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_scene_xian1_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/saiji/cjsaiji/fx_scene_xian1.prefab",
+      "layer": 0,
+      "orderInLayer": 0,
+      "delay": 2.9000000953674316,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "ActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": [
+        {
+          "valueType": 13,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        }
+      ]
+    },
+    {
+      "method": "invokemethod",
+      "go": "Target0",
+      "isChild": false,
+      "goResPath": "",
+      "layer": -1,
+      "orderInLayer": -1,
+      "delay": 3.0,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "SendMsg"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": [
+        {
+          "valueType": 9,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "unlock_transpoint",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        },
+        {
+          "valueType": 9,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "0",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        },
+        {
+          "valueType": 9,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        },
+        {
+          "valueType": 9,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        }
+      ]
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_scene_xian2_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/saiji/cjsaiji/fx_scene_xian1.prefab",
+      "layer": 0,
+      "orderInLayer": 0,
+      "delay": 3.133333444595337,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "ActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": [
+        {
+          "valueType": 13,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        }
+      ]
+    },
+    {
+      "method": "invokemethod",
+      "go": "Target0",
+      "isChild": false,
+      "goResPath": "",
+      "layer": -1,
+      "orderInLayer": -1,
+      "delay": 3.366666555404663,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "SendMsg"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": [
+        {
+          "valueType": 9,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "unlock_transpoint",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        },
+        {
+          "valueType": 9,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "1",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        },
+        {
+          "valueType": 9,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        },
+        {
+          "valueType": 9,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        }
+      ]
+    },
+    {
+      "method": "moveto",
+      "go": "MainCamera",
+      "isChild": false,
+      "goResPath": "",
+      "layer": -1,
+      "orderInLayer": -1,
+      "delay": 4.400000095367432,
+      "time": 0.46666666865348816,
+      "easeType": 21,
+      "customEase": [],
+      "strings": [
+        "Target0",
+        "Target2"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [
+        true,
+        true
+      ],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [
+        {
+          "x": 22.679990768432617,
+          "y": 55.5,
+          "z": -18000.154296875
+        },
+        {
+          "x": 12.359997749328613,
+          "y": 49.16999816894531,
+          "z": -18000.150390625
+        },
+        {
+          "x": -0.1299877166748047,
+          "y": -0.5699996948242188,
+          "z": -17998.16796875
+        },
+        {
+          "x": 1.9073486328125e-06,
+          "y": -0.37000274658203125,
+          "z": -18000.0
+        }
+      ],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "tweenFov",
+      "go": "MainCamera",
+      "isChild": false,
+      "goResPath": "",
+      "layer": -1,
+      "orderInLayer": -1,
+      "delay": 4.400000095367432,
+      "time": 0.46666666865348816,
+      "easeType": 21,
+      "customEase": [],
+      "strings": [],
+      "stringsExtra": [],
+      "floats": [
+        3.200000047683716,
+        3.200000047683716
+      ],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "moveto",
+      "go": "MainCamera",
+      "isChild": false,
+      "goResPath": "",
+      "layer": -1,
+      "orderInLayer": -1,
+      "delay": 4.866666793823242,
+      "time": 1.6666666269302368,
+      "easeType": 21,
+      "customEase": [],
+      "strings": [
+        "Target2",
+        "Target2"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [
+        true,
+        true
+      ],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [
+        {
+          "x": 12.359997749328613,
+          "y": 49.16999816894531,
+          "z": -18000.150390625
+        },
+        {
+          "x": 11.840001106262207,
+          "y": 49.0200080871582,
+          "z": -18000.150390625
+        },
+        {
+          "x": 1.9073486328125e-06,
+          "y": -0.37000274658203125,
+          "z": -18000.0
+        },
+        {
+          "x": 0.5199985504150391,
+          "y": -0.5199928283691406,
+          "z": -18000.0
+        }
+      ],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "tweenFov",
+      "go": "MainCamera",
+      "isChild": false,
+      "goResPath": "",
+      "layer": -1,
+      "orderInLayer": -1,
+      "delay": 4.866666793823242,
+      "time": 4.066666603088379,
+      "easeType": 21,
+      "customEase": [],
+      "strings": [],
+      "stringsExtra": [],
+      "floats": [
+        3.200000047683716,
+        3.200000047683716
+      ],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_scene_xian3_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/saiji/cjsaiji/fx_scene_xian1.prefab",
+      "layer": 0,
+      "orderInLayer": 0,
+      "delay": 5.0333333015441895,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "ActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": [
+        {
+          "valueType": 13,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        }
+      ]
+    },
+    {
+      "method": "invokemethod",
+      "go": "Target0",
+      "isChild": false,
+      "goResPath": "",
+      "layer": -1,
+      "orderInLayer": -1,
+      "delay": 5.166666507720947,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "SendMsg"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": [
+        {
+          "valueType": 9,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "unlock_transpoint",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        },
+        {
+          "valueType": 9,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "2",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        },
+        {
+          "valueType": 9,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        },
+        {
+          "valueType": 9,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        }
+      ]
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_scene_xian4_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/saiji/cjsaiji/fx_scene_xian1.prefab",
+      "layer": 0,
+      "orderInLayer": 0,
+      "delay": 5.266666889190674,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "ActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": [
+        {
+          "valueType": 13,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        }
+      ]
+    },
+    {
+      "method": "invokemethod",
+      "go": "Target0",
+      "isChild": false,
+      "goResPath": "",
+      "layer": -1,
+      "orderInLayer": -1,
+      "delay": 5.400000095367432,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "SendMsg"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": [
+        {
+          "valueType": 9,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "unlock_transpoint",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        },
+        {
+          "valueType": 9,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "3",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        },
+        {
+          "valueType": 9,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        },
+        {
+          "valueType": 9,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        }
+      ]
+    },
+    {
+      "method": "moveto",
+      "go": "MainCamera",
+      "isChild": false,
+      "goResPath": "",
+      "layer": -1,
+      "orderInLayer": -1,
+      "delay": 6.5333333015441895,
+      "time": 0.6333333253860474,
+      "easeType": 21,
+      "customEase": [],
+      "strings": [
+        "Target2",
+        "Target6"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [
+        true,
+        true
+      ],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [
+        {
+          "x": 11.840001106262207,
+          "y": 49.0200080871582,
+          "z": -18000.150390625
+        },
+        {
+          "x": 33.5099983215332,
+          "y": 50.11000061035156,
+          "z": -18000.154296875
+        },
+        {
+          "x": 0.5199985504150391,
+          "y": -0.5199928283691406,
+          "z": -18000.0
+        },
+        {
+          "x": -0.9399986267089844,
+          "y": 0.5699996948242188,
+          "z": -18000.00390625
+        }
+      ],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "moveto",
+      "go": "MainCamera",
+      "isChild": false,
+      "goResPath": "",
+      "layer": -1,
+      "orderInLayer": -1,
+      "delay": 7.166666507720947,
+      "time": 1.7666666507720947,
+      "easeType": 21,
+      "customEase": [],
+      "strings": [
+        "Target6",
+        "Target6"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [
+        true,
+        true
+      ],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [
+        {
+          "x": 33.5099983215332,
+          "y": 50.11000061035156,
+          "z": -18000.154296875
+        },
+        {
+          "x": 34.1400032043457,
+          "y": 50.220001220703125,
+          "z": -18000.146484375
+        },
+        {
+          "x": -0.9399986267089844,
+          "y": 0.5699996948242188,
+          "z": -18000.00390625
+        },
+        {
+          "x": -1.5700035095214844,
+          "y": 0.6800003051757812,
+          "z": -17999.99609375
+        }
+      ],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_scene_xian5_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/saiji/cjsaiji/fx_scene_xian1.prefab",
+      "layer": 0,
+      "orderInLayer": 0,
+      "delay": 7.300000190734863,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "ActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": [
+        {
+          "valueType": 13,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        }
+      ]
+    },
+    {
+      "method": "invokemethod",
+      "go": "Target0",
+      "isChild": false,
+      "goResPath": "",
+      "layer": -1,
+      "orderInLayer": -1,
+      "delay": 7.433333396911621,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "SendMsg"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": [
+        {
+          "valueType": 9,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "unlock_transpoint",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        },
+        {
+          "valueType": 9,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "4",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        },
+        {
+          "valueType": 9,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        },
+        {
+          "valueType": 9,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        }
+      ]
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_scene_xian6_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/saiji/cjsaiji/fx_scene_xian1.prefab",
+      "layer": 0,
+      "orderInLayer": 0,
+      "delay": 7.566666603088379,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "ActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": [
+        {
+          "valueType": 13,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        }
+      ]
+    },
+    {
+      "method": "invokemethod",
+      "go": "Target0",
+      "isChild": false,
+      "goResPath": "",
+      "layer": -1,
+      "orderInLayer": -1,
+      "delay": 7.733333110809326,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "SendMsg"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": [
+        {
+          "valueType": 9,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "unlock_transpoint",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        },
+        {
+          "valueType": 9,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "5",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        },
+        {
+          "valueType": 9,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        },
+        {
+          "valueType": 9,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        }
+      ]
+    },
+    {
+      "method": "moveto",
+      "go": "MainCamera",
+      "isChild": false,
+      "goResPath": "",
+      "layer": -1,
+      "orderInLayer": -1,
+      "delay": 8.933333396911621,
+      "time": 0.8666666746139526,
+      "easeType": 21,
+      "customEase": [],
+      "strings": [
+        "Target6",
+        ""
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [
+        true,
+        false
+      ],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [
+        {
+          "x": 34.1400032043457,
+          "y": 50.220001220703125,
+          "z": -18000.146484375
+        },
+        {
+          "x": 22.549999237060547,
+          "y": 61.900001525878906,
+          "z": -18000.150390625
+        },
+        {
+          "x": -1.5700035095214844,
+          "y": 0.6800003051757812,
+          "z": -17999.99609375
+        },
+        {
+          "x": 22.549999237060547,
+          "y": 61.900001525878906,
+          "z": -18000.150390625
+        }
+      ],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "tweenFov",
+      "go": "MainCamera",
+      "isChild": false,
+      "goResPath": "",
+      "layer": -1,
+      "orderInLayer": -1,
+      "delay": 8.933333396911621,
+      "time": 0.8666666746139526,
+      "easeType": 21,
+      "customEase": [],
+      "strings": [],
+      "stringsExtra": [],
+      "floats": [
+        3.200000047683716,
+        3.5999999046325684
+      ],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    }
+  ],
+  "modelNames": [
+    "effect/prefabs/story/saiji/cjsaiji/fx_scene_glowju.prefab",
+    "effect/prefabs/story/saiji/cjsaiji/fx_scene_xian1.prefab"
+  ]
+}

@@ -1,0 +1,308 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_king_ciyuan_ext_challenge_plan.lua
+
+module("logicconfig.config.t_king_ciyuan_ext_challenge_plan", package.seeall)
+
+local title = {
+	stageId = 2,
+	petSkinId = 7,
+	resetAward = 6,
+	extPlanId = 1,
+	type = 3,
+	monsterId = 4,
+	prize = 5,
+	rolePos = 8
+}
+local dataList = {
+	{
+		1,
+		1,
+		1,
+		101,
+		"",
+		false,
+		10027,
+		{
+			100,
+			100,
+			1
+		}
+	},
+	{
+		1,
+		2,
+		2,
+		0,
+		"",
+		false,
+		10354,
+		{
+			40,
+			30,
+			1
+		}
+	},
+	{
+		1,
+		3,
+		1,
+		201,
+		"",
+		false,
+		10142,
+		{
+			60,
+			-20,
+			1
+		}
+	},
+	{
+		1,
+		4,
+		2,
+		0,
+		"",
+		false,
+		10354,
+		{
+			40,
+			30,
+			1
+		}
+	},
+	{
+		1,
+		5,
+		1,
+		301,
+		"",
+		false,
+		10327,
+		{
+			50,
+			40,
+			1
+		}
+	},
+	{
+		1,
+		6,
+		2,
+		0,
+		"",
+		false,
+		10354,
+		{
+			40,
+			30,
+			1
+		}
+	},
+	{
+		1,
+		7,
+		1,
+		401,
+		"",
+		false,
+		14008,
+		{
+			60,
+			80,
+			1
+		}
+	},
+	{
+		1,
+		8,
+		2,
+		0,
+		"",
+		false,
+		10354,
+		{
+			40,
+			30,
+			1
+		}
+	},
+	{
+		1,
+		9,
+		1,
+		501,
+		"",
+		false,
+		16000,
+		{
+			90,
+			70,
+			1
+		}
+	},
+	{
+		1,
+		10,
+		2,
+		0,
+		"",
+		false,
+		10354,
+		{
+			40,
+			30,
+			1
+		}
+	},
+	{
+		1,
+		11,
+		1,
+		601,
+		"",
+		false,
+		15006,
+		{
+			-80,
+			40,
+			1
+		}
+	},
+	{
+		1,
+		12,
+		2,
+		0,
+		"",
+		false,
+		10354,
+		{
+			40,
+			30,
+			1
+		}
+	},
+	{
+		1,
+		13,
+		1,
+		701,
+		"",
+		false,
+		10334,
+		{
+			40,
+			-20,
+			1
+		}
+	},
+	{
+		1,
+		14,
+		2,
+		0,
+		"",
+		false,
+		10354,
+		{
+			40,
+			30,
+			1
+		}
+	},
+	{
+		1,
+		15,
+		1,
+		801,
+		"",
+		false,
+		10181,
+		{
+			20,
+			40,
+			1
+		}
+	},
+	{
+		1,
+		16,
+		2,
+		0,
+		"",
+		false,
+		10354,
+		{
+			40,
+			30,
+			1
+		}
+	},
+	{
+		1,
+		17,
+		1,
+		901,
+		"",
+		false,
+		17006,
+		{
+			20,
+			50,
+			1
+		}
+	},
+	{
+		1,
+		18,
+		3,
+		0,
+		"100:14011:1:1",
+		false,
+		14011,
+		{
+			40,
+			110,
+			1
+		}
+	}
+}
+local t_king_ciyuan_ext_challenge_plan = {
+	{
+		dataList[1],
+		dataList[2],
+		dataList[3],
+		dataList[4],
+		dataList[5],
+		dataList[6],
+		dataList[7],
+		dataList[8],
+		dataList[9],
+		dataList[10],
+		dataList[11],
+		dataList[12],
+		dataList[13],
+		dataList[14],
+		dataList[15],
+		dataList[16],
+		dataList[17],
+		dataList[18]
+	}
+}
+
+t_king_ciyuan_ext_challenge_plan.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_king_ciyuan_ext_challenge_plan

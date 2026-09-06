@@ -1,0 +1,3433 @@
+{
+  "takeName": "skill1",
+  "frames": 150,
+  "frameRate": 30,
+  "forbidBack": false,
+  "position": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "inits": [
+    {
+      "type": "position",
+      "typeExtra": "",
+      "go": "fx_story_yanshen_changjing_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 21,
+      "orderInLayer": -8,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_changjing.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "position",
+      "typeExtra": "",
+      "go": "fx_story_yanshen_spine01_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 21,
+      "orderInLayer": 4,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_spine01.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 28.0,
+        "y": -129.77999877929688,
+        "z": 42.275001525878906
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "localScale",
+      "typeExtra": "",
+      "go": "fx_story_yanshen_spine01_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 21,
+      "orderInLayer": 4,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_spine01.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 14.547845840454102,
+        "y": 14.547845840454102,
+        "z": 14.547845840454102
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "position",
+      "typeExtra": "",
+      "go": "ui_anim_camera_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 0,
+      "orderInLayer": -1,
+      "goResPath": "effect/prefabs/story/dh_6long/liexin/ui_anim_camera_create.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -20.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "localScale",
+      "typeExtra": "",
+      "go": "ui_anim_camera_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 0,
+      "orderInLayer": -1,
+      "goResPath": "effect/prefabs/story/dh_6long/liexin/ui_anim_camera_create.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "position",
+      "typeExtra": "",
+      "go": "fx_story_liexin_longtx_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 21,
+      "orderInLayer": 0,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_longtx.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "localScale",
+      "typeExtra": "",
+      "go": "fx_story_liexin_longtx_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 21,
+      "orderInLayer": 0,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_longtx.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "position",
+      "typeExtra": "",
+      "go": "fx_story_liexin_zi_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 21,
+      "orderInLayer": 0,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_zi.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": -14.0,
+        "y": -8.199999809265137,
+        "z": 0.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "localScale",
+      "typeExtra": "",
+      "go": "fx_story_liexin_zi_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 21,
+      "orderInLayer": 0,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_zi.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "localScale",
+      "typeExtra": "",
+      "go": "fx_story_yanshen_changjing_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 21,
+      "orderInLayer": -8,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_changjing.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "position",
+      "typeExtra": "",
+      "go": "fx_story_yanshen_changjing2_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 21,
+      "orderInLayer": 3,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_changjing2.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "localScale",
+      "typeExtra": "",
+      "go": "fx_story_yanshen_changjing2_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 21,
+      "orderInLayer": 3,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_changjing2.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "position",
+      "typeExtra": "",
+      "go": "fx_story_yanshen_huo_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 21,
+      "orderInLayer": 0,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_huo.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "localScale",
+      "typeExtra": "",
+      "go": "fx_story_yanshen_huo_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 21,
+      "orderInLayer": 0,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_huo.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "position",
+      "typeExtra": "",
+      "go": "fx_story_yanshen_huoend_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 21,
+      "orderInLayer": 0,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_huoend.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "localScale",
+      "typeExtra": "",
+      "go": "fx_story_yanshen_huoend_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 21,
+      "orderInLayer": 0,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_huoend.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "position",
+      "typeExtra": "",
+      "go": "fx_story_liexin_lizi_create_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 21,
+      "orderInLayer": 0,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_liexin_lizi_create.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "localScale",
+      "typeExtra": "",
+      "go": "fx_story_liexin_lizi_create_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 21,
+      "orderInLayer": 0,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_liexin_lizi_create.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "position",
+      "typeExtra": "",
+      "go": "fx_story_yanshen_longtx2_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 21,
+      "orderInLayer": 0,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_longtx2.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "localScale",
+      "typeExtra": "",
+      "go": "fx_story_yanshen_longtx2_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 21,
+      "orderInLayer": 0,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_longtx2.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "position",
+      "typeExtra": "",
+      "go": "fx_story_yanshen_xian1_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 21,
+      "orderInLayer": 0,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_xian1.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "localScale",
+      "typeExtra": "",
+      "go": "fx_story_yanshen_xian1_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 21,
+      "orderInLayer": 0,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_xian1.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "position",
+      "typeExtra": "",
+      "go": "fx_story_yanshen_longtx3_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 21,
+      "orderInLayer": 0,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_longtx3.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 2.799999952316284,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "localScale",
+      "typeExtra": "",
+      "go": "fx_story_yanshen_longtx3_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 21,
+      "orderInLayer": 0,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_longtx3.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    }
+  ],
+  "actions": [
+    {
+      "method": "invokemethod",
+      "go": "fx_story_yanshen_spine01_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_spine01.prefab",
+      "layer": 21,
+      "orderInLayer": 4,
+      "delay": 0.0,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "PlaySpineAnimation"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": [
+        {
+          "valueType": 9,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "guochang",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        },
+        {
+          "valueType": 13,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        },
+        {
+          "valueType": 13,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        },
+        {
+          "valueType": 2,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 1.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        }
+      ]
+    },
+    {
+      "method": "invokemethod",
+      "go": "ui_anim_camera_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/dh_6long/liexin/ui_anim_camera_create.prefab",
+      "layer": 0,
+      "orderInLayer": -1,
+      "delay": 0.0,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "ActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": [
+        {
+          "valueType": 13,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        }
+      ]
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_story_liexin_longtx_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_longtx.prefab",
+      "layer": 21,
+      "orderInLayer": 0,
+      "delay": 0.0,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "DeActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_story_liexin_zi_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_zi.prefab",
+      "layer": 21,
+      "orderInLayer": 0,
+      "delay": 0.0,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "ActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": [
+        {
+          "valueType": 13,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        }
+      ]
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_story_yanshen_changjing_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_changjing.prefab",
+      "layer": 21,
+      "orderInLayer": -8,
+      "delay": 0.0,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "ActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": [
+        {
+          "valueType": 13,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        }
+      ]
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_story_yanshen_changjing2_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_changjing2.prefab",
+      "layer": 21,
+      "orderInLayer": 3,
+      "delay": 0.0,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "DeActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_story_yanshen_huo_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_huo.prefab",
+      "layer": 21,
+      "orderInLayer": 0,
+      "delay": 0.0,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "ActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": [
+        {
+          "valueType": 13,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        }
+      ]
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_story_yanshen_huoend_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_huoend.prefab",
+      "layer": 21,
+      "orderInLayer": 0,
+      "delay": 0.0,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "DeActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_story_liexin_lizi_create_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_liexin_lizi_create.prefab",
+      "layer": 21,
+      "orderInLayer": 0,
+      "delay": 0.0,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "ActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": [
+        {
+          "valueType": 13,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        }
+      ]
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_story_yanshen_longtx2_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_longtx2.prefab",
+      "layer": 21,
+      "orderInLayer": 0,
+      "delay": 0.0,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "DeActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_story_yanshen_xian1_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_xian1.prefab",
+      "layer": 21,
+      "orderInLayer": 0,
+      "delay": 0.0,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "DeActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_story_yanshen_longtx3_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_longtx3.prefab",
+      "layer": 21,
+      "orderInLayer": 0,
+      "delay": 0.0,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "DeActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_story_yanshen_spine01_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_spine01.prefab",
+      "layer": 21,
+      "orderInLayer": 4,
+      "delay": 0.03333333507180214,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "ActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": [
+        {
+          "valueType": 13,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        }
+      ]
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_story_liexin_longtx_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_longtx.prefab",
+      "layer": 21,
+      "orderInLayer": 0,
+      "delay": 0.10000000149011612,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "ActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": [
+        {
+          "valueType": 13,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        }
+      ]
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_story_yanshen_longtx2_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_longtx2.prefab",
+      "layer": 21,
+      "orderInLayer": 0,
+      "delay": 0.20000000298023224,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "ActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": [
+        {
+          "valueType": 13,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        }
+      ]
+    },
+    {
+      "method": "moveto",
+      "go": "fx_story_yanshen_changjing_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_changjing.prefab",
+      "layer": 21,
+      "orderInLayer": -8,
+      "delay": 0.23333333432674408,
+      "time": 0.06666667014360428,
+      "easeType": 21,
+      "customEase": [],
+      "strings": [],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [
+        true,
+        true
+      ],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        {
+          "x": 7.0,
+          "y": 15.540000915527344,
+          "z": 0.0
+        }
+      ],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "moveto",
+      "go": "fx_story_yanshen_spine01_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_spine01.prefab",
+      "layer": 21,
+      "orderInLayer": 4,
+      "delay": 0.23333333432674408,
+      "time": 0.06666667014360428,
+      "easeType": 21,
+      "customEase": [],
+      "strings": [],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [
+        true,
+        true
+      ],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [
+        {
+          "x": 28.0,
+          "y": -129.77999877929688,
+          "z": 42.275001525878906
+        },
+        {
+          "x": 28.3700008392334,
+          "y": -129.46998596191406,
+          "z": 42.27500915527344
+        }
+      ],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "moveto",
+      "go": "fx_story_yanshen_changjing_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_changjing.prefab",
+      "layer": 21,
+      "orderInLayer": -8,
+      "delay": 0.30000001192092896,
+      "time": 0.06666667014360428,
+      "easeType": 21,
+      "customEase": [],
+      "strings": [],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [
+        true,
+        true
+      ],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [
+        {
+          "x": 7.0,
+          "y": 15.540000915527344,
+          "z": 0.0
+        },
+        {
+          "x": 1.9799995422363281,
+          "y": -3.7099990844726562,
+          "z": 0.0
+        }
+      ],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "moveto",
+      "go": "fx_story_yanshen_spine01_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_spine01.prefab",
+      "layer": 21,
+      "orderInLayer": 4,
+      "delay": 0.30000001192092896,
+      "time": 0.06666667014360428,
+      "easeType": 21,
+      "customEase": [],
+      "strings": [],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [
+        true,
+        true
+      ],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [
+        {
+          "x": 28.3700008392334,
+          "y": -129.46998596191406,
+          "z": 42.27500915527344
+        },
+        {
+          "x": 28.32375144958496,
+          "y": -129.5087432861328,
+          "z": 42.27500915527344
+        }
+      ],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "moveto",
+      "go": "fx_story_yanshen_changjing_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_changjing.prefab",
+      "layer": 21,
+      "orderInLayer": -8,
+      "delay": 0.36666667461395264,
+      "time": 0.10000000149011612,
+      "easeType": 21,
+      "customEase": [],
+      "strings": [],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [
+        true,
+        true
+      ],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [
+        {
+          "x": 1.9799995422363281,
+          "y": -3.7099990844726562,
+          "z": 0.0
+        },
+        {
+          "x": -1.3299999237060547,
+          "y": 2.6499996185302734,
+          "z": 0.0
+        }
+      ],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "moveto",
+      "go": "fx_story_yanshen_spine01_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_spine01.prefab",
+      "layer": 21,
+      "orderInLayer": 4,
+      "delay": 0.36666667461395264,
+      "time": 0.46666666865348816,
+      "easeType": 21,
+      "customEase": [],
+      "strings": [],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [
+        true,
+        true
+      ],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [
+        {
+          "x": 28.32375144958496,
+          "y": -129.5087432861328,
+          "z": 42.27500915527344
+        },
+        {
+          "x": 28.0,
+          "y": -129.77999877929688,
+          "z": 42.275001525878906
+        }
+      ],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "moveto",
+      "go": "fx_story_yanshen_changjing_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_changjing.prefab",
+      "layer": 21,
+      "orderInLayer": -8,
+      "delay": 0.46666666865348816,
+      "time": 0.36666667461395264,
+      "easeType": 21,
+      "customEase": [],
+      "strings": [],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [
+        true,
+        true
+      ],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [
+        {
+          "x": -1.3299999237060547,
+          "y": 2.6499996185302734,
+          "z": 0.0
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      ],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_story_yanshen_xian1_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_xian1.prefab",
+      "layer": 21,
+      "orderInLayer": 0,
+      "delay": 1.100000023841858,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "ActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": [
+        {
+          "valueType": 13,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        }
+      ]
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_story_yanshen_changjing2_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_changjing2.prefab",
+      "layer": 21,
+      "orderInLayer": 3,
+      "delay": 1.2000000476837158,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "ActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": [
+        {
+          "valueType": 13,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        }
+      ]
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_story_yanshen_longtx3_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_longtx3.prefab",
+      "layer": 21,
+      "orderInLayer": 0,
+      "delay": 1.399999976158142,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "ActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": [
+        {
+          "valueType": 13,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        }
+      ]
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_story_yanshen_huoend_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_huoend.prefab",
+      "layer": 21,
+      "orderInLayer": 0,
+      "delay": 2.7666666507720947,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "ActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": [
+        {
+          "valueType": 13,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        }
+      ]
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_story_yanshen_longtx2_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_longtx2.prefab",
+      "layer": 21,
+      "orderInLayer": 0,
+      "delay": 2.799999952316284,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "DeActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_story_yanshen_spine01_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_spine01.prefab",
+      "layer": 21,
+      "orderInLayer": 4,
+      "delay": 3.799999952316284,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "DeActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_story_liexin_longtx_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_longtx.prefab",
+      "layer": 21,
+      "orderInLayer": 0,
+      "delay": 3.799999952316284,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "DeActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_story_liexin_zi_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_zi.prefab",
+      "layer": 21,
+      "orderInLayer": 0,
+      "delay": 3.799999952316284,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "DeActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_story_yanshen_changjing_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_changjing.prefab",
+      "layer": 21,
+      "orderInLayer": -8,
+      "delay": 3.799999952316284,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "DeActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_story_yanshen_changjing2_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_changjing2.prefab",
+      "layer": 21,
+      "orderInLayer": 3,
+      "delay": 3.799999952316284,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "DeActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_story_yanshen_huo_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_huo.prefab",
+      "layer": 21,
+      "orderInLayer": 0,
+      "delay": 3.799999952316284,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "DeActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_story_liexin_lizi_create_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/dh_6long/yanshen/fx_story_liexin_lizi_create.prefab",
+      "layer": 21,
+      "orderInLayer": 0,
+      "delay": 4.900000095367432,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "DeActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    }
+  ],
+  "modelNames": [
+    "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_changjing.prefab",
+    "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_spine01.prefab",
+    "effect/prefabs/story/dh_6long/liexin/ui_anim_camera_create.prefab",
+    "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_longtx.prefab",
+    "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_zi.prefab",
+    "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_changjing2.prefab",
+    "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_huo.prefab",
+    "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_huoend.prefab",
+    "effect/prefabs/story/dh_6long/yanshen/fx_story_liexin_lizi_create.prefab",
+    "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_longtx2.prefab",
+    "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_xian1.prefab",
+    "effect/prefabs/story/dh_6long/yanshen/fx_story_yanshen_longtx3.prefab"
+  ]
+}

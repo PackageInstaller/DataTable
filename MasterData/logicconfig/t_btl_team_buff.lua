@@ -1,0 +1,29 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_btl_team_buff.lua
+
+module("logicconfig.config.t_btl_team_buff", package.seeall)
+
+local title = {
+	id = 1,
+	name = 2,
+	desc = 3
+}
+local dataList = {}
+local t_btl_team_buff = {}
+
+t_btl_team_buff.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_btl_team_buff

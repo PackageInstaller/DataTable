@@ -1,0 +1,347 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_dark_dragon_knife_actor.lua
+
+module("logicconfig.config.t_dark_dragon_knife_actor", package.seeall)
+
+local title = {
+	blood = 4,
+	animation = 9,
+	damage = 3,
+	type = 2,
+	midNum = 5,
+	hitAni = 6,
+	moveAni = 8,
+	atkAni = 7,
+	gameId = 1
+}
+local dataList = {
+	{
+		1,
+		1,
+		0,
+		0,
+		0,
+		"",
+		"",
+		"",
+		""
+	},
+	{
+		1,
+		2,
+		0,
+		2000,
+		0,
+		"",
+		"",
+		"",
+		""
+	},
+	{
+		1,
+		3,
+		200,
+		120,
+		0,
+		"hit",
+		"atk",
+		"move",
+		"fx_ui_longzun/xiaoyouxi/jxiaobing_xiaoren/jinzhanbingzhong-ui_p.prefab"
+	},
+	{
+		1,
+		4,
+		100,
+		80,
+		0,
+		"hit",
+		"gongji",
+		"idle",
+		"fx_ui_longzun/xiaoyouxi/yxiaobing_xiaoren/yxiaobing_xiaoren-ui_p.prefab"
+	},
+	{
+		1,
+		5,
+		100,
+		0,
+		10,
+		"",
+		"",
+		"",
+		""
+	},
+	{
+		2,
+		1,
+		0,
+		0,
+		0,
+		"",
+		"",
+		"",
+		""
+	},
+	{
+		2,
+		2,
+		0,
+		2600,
+		0,
+		"",
+		"",
+		"",
+		""
+	},
+	{
+		2,
+		3,
+		200,
+		120,
+		0,
+		"hit",
+		"atk",
+		"move",
+		"fx_ui_longzun/xiaoyouxi/jxiaobing_xiaoren/jinzhanbingzhong-ui_p.prefab"
+	},
+	{
+		2,
+		4,
+		100,
+		80,
+		0,
+		"hit2",
+		"gongji",
+		"idle",
+		"fx_ui_longzun/xiaoyouxi/yxiaobing_xiaoren/yxiaobing_xiaoren-ui_p.prefab"
+	},
+	{
+		2,
+		5,
+		100,
+		0,
+		10,
+		"",
+		"",
+		"",
+		""
+	},
+	{
+		3,
+		1,
+		0,
+		0,
+		0,
+		"",
+		"",
+		"",
+		""
+	},
+	{
+		3,
+		2,
+		0,
+		2600,
+		0,
+		"",
+		"",
+		"",
+		""
+	},
+	{
+		3,
+		3,
+		200,
+		120,
+		0,
+		"hit",
+		"atk",
+		"move",
+		"fx_ui_longzun/xiaoyouxi/jxiaobing_xiaoren/jinzhanbingzhong-ui_p.prefab"
+	},
+	{
+		3,
+		4,
+		100,
+		80,
+		0,
+		"hit2",
+		"gongji",
+		"idle",
+		"fx_ui_longzun/xiaoyouxi/yxiaobing_xiaoren/yxiaobing_xiaoren-ui_p.prefab"
+	},
+	{
+		3,
+		5,
+		100,
+		0,
+		10,
+		"",
+		"",
+		"",
+		""
+	},
+	{
+		4,
+		1,
+		0,
+		0,
+		0,
+		"",
+		"",
+		"",
+		""
+	},
+	{
+		4,
+		2,
+		0,
+		2600,
+		0,
+		"",
+		"",
+		"",
+		""
+	},
+	{
+		4,
+		3,
+		200,
+		120,
+		0,
+		"hit",
+		"atk",
+		"move",
+		"fx_ui_longzun/xiaoyouxi/jxiaobing_xiaoren/jinzhanbingzhong-ui_p.prefab"
+	},
+	{
+		4,
+		4,
+		100,
+		80,
+		0,
+		"hit2",
+		"gongji",
+		"idle",
+		"fx_ui_longzun/xiaoyouxi/yxiaobing_xiaoren/yxiaobing_xiaoren-ui_p.prefab"
+	},
+	{
+		4,
+		5,
+		100,
+		0,
+		10,
+		"",
+		"",
+		"",
+		""
+	},
+	{
+		5,
+		1,
+		0,
+		0,
+		0,
+		"",
+		"",
+		"",
+		""
+	},
+	{
+		5,
+		2,
+		0,
+		2600,
+		0,
+		"",
+		"",
+		"",
+		""
+	},
+	{
+		5,
+		3,
+		200,
+		120,
+		0,
+		"hit",
+		"atk",
+		"move",
+		"fx_ui_longzun/xiaoyouxi/jxiaobing_xiaoren/jinzhanbingzhong-ui_p.prefab"
+	},
+	{
+		5,
+		4,
+		100,
+		80,
+		0,
+		"hit2",
+		"gongji",
+		"idle",
+		"fx_ui_longzun/xiaoyouxi/yxiaobing_xiaoren/yxiaobing_xiaoren-ui_p.prefab"
+	},
+	{
+		5,
+		5,
+		100,
+		0,
+		10,
+		"",
+		"",
+		"",
+		""
+	}
+}
+local t_dark_dragon_knife_actor = {
+	{
+		dataList[1],
+		dataList[2],
+		dataList[3],
+		dataList[4],
+		dataList[5]
+	},
+	{
+		dataList[6],
+		dataList[7],
+		dataList[8],
+		dataList[9],
+		dataList[10]
+	},
+	{
+		dataList[11],
+		dataList[12],
+		dataList[13],
+		dataList[14],
+		dataList[15]
+	},
+	{
+		dataList[16],
+		dataList[17],
+		dataList[18],
+		dataList[19],
+		dataList[20]
+	},
+	{
+		dataList[21],
+		dataList[22],
+		dataList[23],
+		dataList[24],
+		dataList[25]
+	}
+}
+
+t_dark_dragon_knife_actor.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_dark_dragon_knife_actor

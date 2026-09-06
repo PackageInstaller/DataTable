@@ -1,0 +1,286 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_season_mode_pve_task_introduce.lua
+
+module("logicconfig.config.t_season_mode_pve_task_introduce", package.seeall)
+
+local title = {
+	imgRes = 2,
+	txtDesc = 3,
+	txtTitle = 5,
+	jumpTo = 4,
+	tag = 6,
+	taskId = 1
+}
+local dataList = {
+	{
+		1,
+		"board_s2_sjwfdk_16",
+		"前往找到传送门-坤",
+		6021,
+		"寻找新的传送",
+		1
+	},
+	{
+		2,
+		"board_s2_sjwfdk_12",
+		"前往找到传送门-震",
+		7486,
+		"寻找新的传送",
+		1
+	},
+	{
+		3,
+		"board_s2_sjwfdk_13",
+		"前往找到传送门-巽",
+		2457,
+		"寻找新的传送",
+		1
+	},
+	{
+		4,
+		"board_s2_sjwfdk_09",
+		"前往找到传送门-中宫",
+		2385,
+		"寻找新的传送",
+		1
+	},
+	{
+		5,
+		"board_s2_sjwfdk_14",
+		"前往找到传送门-乾",
+		5251,
+		"寻找新的传送",
+		1
+	},
+	{
+		6,
+		"board_s2_sjwfdk_11",
+		"前往找到传送门-兑",
+		8030,
+		"寻找新的传送",
+		1
+	},
+	{
+		7,
+		"board_s2_sjwfdk_10",
+		"前往找到传送门-艮",
+		9157,
+		"寻找新的传送",
+		1
+	},
+	{
+		8,
+		"board_s2_sjwfdk_15",
+		"前往找到传送门-离",
+		2610,
+		"寻找新的传送",
+		1
+	},
+	{
+		9,
+		"board_s2_sjwfdk_21",
+		"持有桃符的队伍可以在地图上开启路上的大门",
+		8281,
+		"获得桃符-新",
+		1
+	},
+	{
+		10,
+		"board_s2_sjwfdk_20",
+		"持有桃符的队伍可以在地图上开启路上的大门",
+		6215,
+		"获得桃符-春",
+		1
+	},
+	{
+		11,
+		"board_s2_sjwfdk_18",
+		"持有桃符的队伍可以在地图上开启路上的大门",
+		9026,
+		"获得桃符-鸿",
+		1
+	},
+	{
+		12,
+		"board_s2_sjwfdk_19",
+		"持有桃符的队伍可以在地图上开启路上的大门",
+		6070,
+		"获得桃符-福",
+		1
+	},
+	{
+		13,
+		"board_s2_sjwfdk_25",
+		"击败3个魔王守卫后，即可攻打龙皇",
+		7557,
+		"魔王守卫—镭拉",
+		1
+	},
+	{
+		14,
+		"board_s2_sjwfdk_26",
+		"击败3个魔王守卫后，即可攻打龙皇",
+		8433,
+		"魔王守卫—暗影之子",
+		1
+	},
+	{
+		15,
+		"board_s2_sjwfdk_27",
+		"击败3个魔王守卫后，即可攻打龙皇",
+		1010,
+		"魔王守卫—艾希",
+		1
+	},
+	{
+		16,
+		"board_s2_sjwfdk_08",
+		"通过异界传送门-风可回到坎宫",
+		5272,
+		"异界传送门-风",
+		1
+	},
+	{
+		17,
+		"board_s2_sjwfdk_06",
+		"通过异界传送门-水可回到坎宫",
+		5243,
+		"异界传送门-水",
+		1
+	},
+	{
+		18,
+		"board_s2_sjwfdk_07",
+		"通过异界传送门-暗可回到中宫",
+		7150,
+		"异界传送门-暗",
+		1
+	},
+	{
+		19,
+		"board_s2_sjwfdk_29",
+		"获得天青，即可离开异界战场了",
+		6190,
+		"天青",
+		1
+	},
+	{
+		20,
+		"board_s2_sjwfdk_28",
+		"击败赤焰龙皇，夺回天青",
+		6091,
+		"赤焰龙皇",
+		1
+	},
+	{
+		21,
+		"board_s2_sjwfdk_24",
+		"通过精灵殿的挑战，可获得强力精灵助阵",
+		1747,
+		"精灵殿",
+		1
+	},
+	{
+		22,
+		"board_s2_sjwfdk_22",
+		"通过遗迹挑战，可获得大量资源",
+		344,
+		"遗迹",
+		1
+	},
+	{
+		23,
+		"board_s2_sjwfdk_01",
+		"驱散迷雾可以开启道路",
+		4290,
+		"迷雾-火",
+		1
+	},
+	{
+		24,
+		"board_s2_sjwfdk_02",
+		"驱散迷雾可以获得大量资源",
+		9326,
+		"迷雾-水",
+		1
+	},
+	{
+		25,
+		"board_s2_sjwfdk_03",
+		"驱散迷雾可以获得大量资源",
+		4924,
+		"迷雾-草",
+		1
+	},
+	{
+		26,
+		"board_s2_sjwfdk_04",
+		"驱散迷雾可以获得大量资源",
+		725,
+		"迷雾-光",
+		1
+	},
+	{
+		27,
+		"board_s2_sjwfdk_05",
+		"驱散迷雾可以获得大量资源",
+		8754,
+		"迷雾-暗",
+		1
+	},
+	{
+		28,
+		"board_s2_sjwfdk_23",
+		"获得对应的点睛笔可以点亮对应的醒狮",
+		2372,
+		"使用醒狮机关",
+		1
+	}
+}
+local t_season_mode_pve_task_introduce = {
+	dataList[1],
+	dataList[2],
+	dataList[3],
+	dataList[4],
+	dataList[5],
+	dataList[6],
+	dataList[7],
+	dataList[8],
+	dataList[9],
+	dataList[10],
+	dataList[11],
+	dataList[12],
+	dataList[13],
+	dataList[14],
+	dataList[15],
+	dataList[16],
+	dataList[17],
+	dataList[18],
+	dataList[19],
+	dataList[20],
+	dataList[21],
+	dataList[22],
+	dataList[23],
+	dataList[24],
+	dataList[25],
+	dataList[26],
+	dataList[27],
+	dataList[28]
+}
+
+t_season_mode_pve_task_introduce.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_season_mode_pve_task_introduce

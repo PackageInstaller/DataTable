@@ -1,0 +1,282 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_rich_man_x_plan_draw_item_event.lua
+
+module("logicconfig.config.t_rich_man_x_plan_draw_item_event", package.seeall)
+
+local title = {
+	digit = 3,
+	eventId = 2,
+	activityId = 1,
+	range = 4
+}
+local dataList = {
+	{
+		373001,
+		1,
+		1,
+		{
+			0,
+			9
+		}
+	},
+	{
+		373001,
+		1,
+		2,
+		{
+			0,
+			9
+		}
+	},
+	{
+		373001,
+		1,
+		3,
+		{
+			0,
+			9
+		}
+	},
+	{
+		373001,
+		1,
+		4,
+		{
+			0,
+			9
+		}
+	},
+	{
+		373001,
+		1,
+		5,
+		{
+			0,
+			4
+		}
+	},
+	{
+		373001,
+		1,
+		6,
+		{
+			1,
+			1
+		}
+	},
+	{
+		373001,
+		2,
+		1,
+		{
+			0,
+			9
+		}
+	},
+	{
+		373001,
+		2,
+		2,
+		{
+			0,
+			9
+		}
+	},
+	{
+		373001,
+		2,
+		3,
+		{
+			0,
+			9
+		}
+	},
+	{
+		373001,
+		2,
+		4,
+		{
+			0,
+			9
+		}
+	},
+	{
+		373001,
+		2,
+		5,
+		{
+			0,
+			9
+		}
+	},
+	{
+		373001,
+		2,
+		6,
+		{
+			1,
+			1
+		}
+	},
+	{
+		373001,
+		3,
+		1,
+		{
+			0,
+			9
+		}
+	},
+	{
+		373001,
+		3,
+		2,
+		{
+			0,
+			9
+		}
+	},
+	{
+		373001,
+		3,
+		3,
+		{
+			0,
+			9
+		}
+	},
+	{
+		373001,
+		3,
+		4,
+		{
+			0,
+			9
+		}
+	},
+	{
+		373001,
+		3,
+		5,
+		{
+			0,
+			9
+		}
+	},
+	{
+		373001,
+		3,
+		6,
+		{
+			1,
+			2
+		}
+	},
+	{
+		373001,
+		4,
+		1,
+		{
+			0,
+			9
+		}
+	},
+	{
+		373001,
+		4,
+		2,
+		{
+			0,
+			9
+		}
+	},
+	{
+		373001,
+		4,
+		3,
+		{
+			0,
+			9
+		}
+	},
+	{
+		373001,
+		4,
+		4,
+		{
+			0,
+			9
+		}
+	},
+	{
+		373001,
+		4,
+		5,
+		{
+			0,
+			9
+		}
+	},
+	{
+		373001,
+		4,
+		6,
+		{
+			0,
+			9
+		}
+	}
+}
+local t_rich_man_x_plan_draw_item_event = {
+	[373001] = {
+		{
+			dataList[1],
+			dataList[2],
+			dataList[3],
+			dataList[4],
+			dataList[5],
+			dataList[6]
+		},
+		{
+			dataList[7],
+			dataList[8],
+			dataList[9],
+			dataList[10],
+			dataList[11],
+			dataList[12]
+		},
+		{
+			dataList[13],
+			dataList[14],
+			dataList[15],
+			dataList[16],
+			dataList[17],
+			dataList[18]
+		},
+		{
+			dataList[19],
+			dataList[20],
+			dataList[21],
+			dataList[22],
+			dataList[23],
+			dataList[24]
+		}
+	}
+}
+
+t_rich_man_x_plan_draw_item_event.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_rich_man_x_plan_draw_item_event

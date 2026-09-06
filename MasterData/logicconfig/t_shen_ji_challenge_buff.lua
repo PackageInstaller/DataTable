@@ -1,0 +1,328 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_shen_ji_challenge_buff.lua
+
+module("logicconfig.config.t_shen_ji_challenge_buff", package.seeall)
+
+local title = {
+	buffDesc = 5,
+	buffIcon = 6,
+	buffId = 2,
+	buffName = 4,
+	value = 3,
+	actId = 1
+}
+local dataList = {
+	{
+		312001,
+		1,
+		0,
+		"无加成",
+		"",
+		""
+	},
+	{
+		312001,
+		2,
+		10,
+		"神恩buff1",
+		"全属性+50%",
+		"icon_expedition_ydnzhufu"
+	},
+	{
+		312001,
+		3,
+		20,
+		"神恩buff2",
+		"全属性+100%",
+		"icon_expedition_ydnzhufu"
+	},
+	{
+		312001,
+		4,
+		30,
+		"神恩buff3",
+		"全属性+150%",
+		"icon_expedition_ydnzhufu"
+	},
+	{
+		312001,
+		5,
+		40,
+		"神恩buff4",
+		"全属性+200%",
+		"icon_expedition_ydnzhufu"
+	},
+	{
+		312001,
+		6,
+		50,
+		"神恩buff5",
+		"全属性+300%",
+		"icon_expedition_ydnzhufu"
+	},
+	{
+		312001,
+		7,
+		60,
+		"神恩buff6",
+		"全属性+400%",
+		"icon_expedition_ydnzhufu"
+	},
+	{
+		312001,
+		8,
+		70,
+		"神恩buff7",
+		"全属性+500%",
+		"icon_expedition_ydnzhufu"
+	},
+	{
+		312001,
+		9,
+		80,
+		"神恩buff8",
+		"全属性+600%",
+		"icon_expedition_ydnzhufu"
+	},
+	{
+		312001,
+		10,
+		90,
+		"神恩buff9",
+		"全属性+700%",
+		"icon_expedition_ydnzhufu"
+	},
+	{
+		312001,
+		11,
+		100,
+		"神恩buff10",
+		"全属性+800%",
+		"icon_expedition_ydnzhufu"
+	},
+	{
+		312002,
+		1,
+		0,
+		"无加成",
+		"",
+		""
+	},
+	{
+		312002,
+		2,
+		10,
+		"化器buff1",
+		"全属性+10%",
+		"icon_lounahuizhang"
+	},
+	{
+		312002,
+		3,
+		20,
+		"化器buff2",
+		"全属性+30%",
+		"icon_lounahuizhang"
+	},
+	{
+		312002,
+		4,
+		30,
+		"化器buff3",
+		"全属性+50%",
+		"icon_lounahuizhang"
+	},
+	{
+		312002,
+		5,
+		40,
+		"化器buff4",
+		"全属性+150%",
+		"icon_lounahuizhang"
+	},
+	{
+		312002,
+		6,
+		50,
+		"化器buff5",
+		"全属性+300%",
+		"icon_lounahuizhang"
+	},
+	{
+		312002,
+		7,
+		60,
+		"化器buff6",
+		"全属性+400%",
+		"icon_lounahuizhang"
+	},
+	{
+		312002,
+		8,
+		70,
+		"化器buff7",
+		"全属性+500%",
+		"icon_lounahuizhang"
+	},
+	{
+		312002,
+		9,
+		80,
+		"化器buff8",
+		"全属性+800%",
+		"icon_lounahuizhang"
+	},
+	{
+		312002,
+		10,
+		90,
+		"化器buff9",
+		"全属性+1200%",
+		"icon_lounahuizhang"
+	},
+	{
+		312002,
+		11,
+		100,
+		"化器buff10",
+		"全属性+1500%",
+		"icon_lounahuizhang"
+	},
+	{
+		312003,
+		1,
+		0,
+		"无加成",
+		"",
+		""
+	},
+	{
+		312003,
+		2,
+		10,
+		"赐福buff1",
+		"全属性+10%",
+		"icon_lounahuizhang"
+	},
+	{
+		312003,
+		3,
+		20,
+		"赐福buff2",
+		"全属性+30%",
+		"icon_lounahuizhang"
+	},
+	{
+		312003,
+		4,
+		30,
+		"赐福buff3",
+		"全属性+50%",
+		"icon_lounahuizhang"
+	},
+	{
+		312003,
+		5,
+		40,
+		"赐福buff4",
+		"全属性+150%",
+		"icon_lounahuizhang"
+	},
+	{
+		312003,
+		6,
+		50,
+		"赐福buff5",
+		"全属性+300%",
+		"icon_lounahuizhang"
+	},
+	{
+		312003,
+		7,
+		60,
+		"赐福buff6",
+		"全属性+400%",
+		"icon_lounahuizhang"
+	},
+	{
+		312003,
+		8,
+		70,
+		"赐福buff7",
+		"全属性+500%",
+		"icon_lounahuizhang"
+	},
+	{
+		312003,
+		9,
+		80,
+		"赐福buff8",
+		"全属性+800%",
+		"icon_lounahuizhang"
+	},
+	{
+		312003,
+		10,
+		100,
+		"赐福buff9",
+		"全属性+1000%",
+		"icon_lounahuizhang"
+	}
+}
+local t_shen_ji_challenge_buff = {
+	[312001] = {
+		dataList[1],
+		dataList[2],
+		dataList[3],
+		dataList[4],
+		dataList[5],
+		dataList[6],
+		dataList[7],
+		dataList[8],
+		dataList[9],
+		dataList[10],
+		dataList[11]
+	},
+	[312002] = {
+		dataList[12],
+		dataList[13],
+		dataList[14],
+		dataList[15],
+		dataList[16],
+		dataList[17],
+		dataList[18],
+		dataList[19],
+		dataList[20],
+		dataList[21],
+		dataList[22]
+	},
+	[312003] = {
+		dataList[23],
+		dataList[24],
+		dataList[25],
+		dataList[26],
+		dataList[27],
+		dataList[28],
+		dataList[29],
+		dataList[30],
+		dataList[31],
+		dataList[32]
+	}
+}
+
+t_shen_ji_challenge_buff.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_shen_ji_challenge_buff

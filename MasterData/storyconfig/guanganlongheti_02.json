@@ -1,0 +1,1259 @@
+{
+  "takeName": "skill1",
+  "frames": 70,
+  "frameRate": 30,
+  "forbidBack": false,
+  "position": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "inits": [
+    {
+      "type": "position",
+      "typeExtra": "",
+      "go": "fx_yanmielongzun_lihui_worldcoord_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 23,
+      "orderInLayer": 0,
+      "goResPath": "effect/prefabs/story/story_guanganlongheti/fx_yanmielongzun_lihui.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 116.5,
+        "y": -36.70000076293945,
+        "z": 0.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "scaleto",
+      "typeExtra": "",
+      "go": "fx_yanmielongzun_lihui_worldcoord_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 23,
+      "orderInLayer": 0,
+      "goResPath": "effect/prefabs/story/story_guanganlongheti/fx_yanmielongzun_lihui.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 4.0,
+        "y": 4.0,
+        "z": 4.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "position",
+      "typeExtra": "",
+      "go": "fx_yanmielongzun_chuxian_worldcoord_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 23,
+      "orderInLayer": -5,
+      "goResPath": "effect/prefabs/story/story_guanganlongheti/fx_yanmielongzun_chuxian.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "localScale",
+      "typeExtra": "",
+      "go": "fx_yanmielongzun_chuxian_worldcoord_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 23,
+      "orderInLayer": -5,
+      "goResPath": "effect/prefabs/story/story_guanganlongheti/fx_yanmielongzun_chuxian.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "position",
+      "typeExtra": "",
+      "go": "fx_yanmielongzun_ziti02_worldcoord_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 23,
+      "orderInLayer": 0,
+      "goResPath": "effect/prefabs/story/story_guanganlongheti/fx_yanmielongzun_ziti02.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "localScale",
+      "typeExtra": "",
+      "go": "fx_yanmielongzun_ziti02_worldcoord_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 23,
+      "orderInLayer": 0,
+      "goResPath": "effect/prefabs/story/story_guanganlongheti/fx_yanmielongzun_ziti02.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "position",
+      "typeExtra": "",
+      "go": "heti_effect_camera_worldcoord_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 0,
+      "orderInLayer": -1,
+      "goResPath": "effect/prefabs/story/story_guanganlongheti/heti_effect_camera_worldcoord_create.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 0.0,
+        "y": 10.5,
+        "z": -216.8000030517578
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    },
+    {
+      "type": "localScale",
+      "typeExtra": "",
+      "go": "heti_effect_camera_worldcoord_create",
+      "isChild": false,
+      "posTarget": "",
+      "layer": 0,
+      "orderInLayer": -1,
+      "goResPath": "effect/prefabs/story/story_guanganlongheti/heti_effect_camera_worldcoord_create.prefab",
+      "shadowRes": "",
+      "position": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "shadow": [],
+      "euler": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "floats": [],
+      "strings": [],
+      "stringsExtra": [],
+      "_int": 0,
+      "_long": 0,
+      "_double": 0.0,
+      "_vect2": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "_rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      }
+    }
+  ],
+  "actions": [
+    {
+      "method": "invokemethod",
+      "go": "fx_yanmielongzun_lihui_worldcoord_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/story_guanganlongheti/fx_yanmielongzun_lihui.prefab",
+      "layer": 23,
+      "orderInLayer": 0,
+      "delay": 0.0,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "ActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": [
+        {
+          "valueType": 13,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        }
+      ]
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_yanmielongzun_lihui_worldcoord_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/story_guanganlongheti/fx_yanmielongzun_lihui.prefab",
+      "layer": 23,
+      "orderInLayer": 0,
+      "delay": 0.0,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "PlaySpineAnimation"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": [
+        {
+          "valueType": 9,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "idle",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        },
+        {
+          "valueType": 13,
+          "val_bool": true,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        },
+        {
+          "valueType": 13,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        },
+        {
+          "valueType": 2,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 1.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        }
+      ]
+    },
+    {
+      "method": "moveto",
+      "go": "fx_yanmielongzun_lihui_worldcoord_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/story_guanganlongheti/fx_yanmielongzun_lihui.prefab",
+      "layer": 23,
+      "orderInLayer": 0,
+      "delay": 0.0,
+      "time": 0.13333334028720856,
+      "easeType": 21,
+      "customEase": [],
+      "strings": [],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [
+        true,
+        true
+      ],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [
+        {
+          "x": 116.5,
+          "y": -36.70000076293945,
+          "z": 0.0
+        },
+        {
+          "x": 5.054132461547852,
+          "y": -23.370351791381836,
+          "z": 0.0
+        }
+      ],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_yanmielongzun_chuxian_worldcoord_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/story_guanganlongheti/fx_yanmielongzun_chuxian.prefab",
+      "layer": 23,
+      "orderInLayer": -5,
+      "delay": 0.0,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "ActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": [
+        {
+          "valueType": 13,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        }
+      ]
+    },
+    {
+      "method": "scaleto",
+      "go": "fx_yanmielongzun_lihui_worldcoord_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/story_guanganlongheti/fx_yanmielongzun_lihui.prefab",
+      "layer": 23,
+      "orderInLayer": 0,
+      "delay": 0.0,
+      "time": 0.13333334028720856,
+      "easeType": 21,
+      "customEase": [],
+      "strings": [],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [
+        {
+          "x": 4.0,
+          "y": 4.0,
+          "z": 4.0
+        },
+        {
+          "x": 8.699999809265137,
+          "y": 8.699999809265137,
+          "z": 8.699999809265137
+        }
+      ],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_yanmielongzun_ziti02_worldcoord_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/story_guanganlongheti/fx_yanmielongzun_ziti02.prefab",
+      "layer": 23,
+      "orderInLayer": 0,
+      "delay": 0.0,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "DeActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "invokemethod",
+      "go": "heti_effect_camera_worldcoord_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/story_guanganlongheti/heti_effect_camera_worldcoord_create.prefab",
+      "layer": 0,
+      "orderInLayer": -1,
+      "delay": 0.0,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "ActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": [
+        {
+          "valueType": 13,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        }
+      ]
+    },
+    {
+      "method": "moveto",
+      "go": "fx_yanmielongzun_lihui_worldcoord_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/story_guanganlongheti/fx_yanmielongzun_lihui.prefab",
+      "layer": 23,
+      "orderInLayer": 0,
+      "delay": 0.13333334028720856,
+      "time": 0.4000000059604645,
+      "easeType": 21,
+      "customEase": [],
+      "strings": [],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [
+        true,
+        true
+      ],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [
+        {
+          "x": 5.054132461547852,
+          "y": -23.370351791381836,
+          "z": 0.0
+        },
+        {
+          "x": 3.299999952316284,
+          "y": -23.0,
+          "z": 0.0
+        }
+      ],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "scaleto",
+      "go": "fx_yanmielongzun_lihui_worldcoord_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/story_guanganlongheti/fx_yanmielongzun_lihui.prefab",
+      "layer": 23,
+      "orderInLayer": 0,
+      "delay": 0.13333334028720856,
+      "time": 0.4000000059604645,
+      "easeType": 21,
+      "customEase": [],
+      "strings": [],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [
+        {
+          "x": 8.699999809265137,
+          "y": 8.699999809265137,
+          "z": 8.699999809265137
+        },
+        {
+          "x": 8.801258087158203,
+          "y": 8.801265716552734,
+          "z": 8.801265716552734
+        }
+      ],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    },
+    {
+      "method": "invokemethod",
+      "go": "fx_yanmielongzun_ziti02_worldcoord_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/story_guanganlongheti/fx_yanmielongzun_ziti02.prefab",
+      "layer": 23,
+      "orderInLayer": 0,
+      "delay": 0.3333333432674408,
+      "time": 0.0,
+      "easeType": 0,
+      "customEase": [],
+      "strings": [
+        "AMEventComponent",
+        "ActiveEffect"
+      ],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": [
+        {
+          "valueType": 13,
+          "val_bool": false,
+          "val_int": 0,
+          "val_float": 0.0,
+          "val_vect2": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "val_vect3": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "val_vect4": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "val_color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "val_rect": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          },
+          "val_string": "",
+          "val_obj": "",
+          "val_obj_extra": "",
+          "array": []
+        }
+      ]
+    },
+    {
+      "method": "scaleto",
+      "go": "fx_yanmielongzun_lihui_worldcoord_create",
+      "isChild": false,
+      "goResPath": "effect/prefabs/story/story_guanganlongheti/fx_yanmielongzun_lihui.prefab",
+      "layer": 23,
+      "orderInLayer": 0,
+      "delay": 0.5333333611488342,
+      "time": 1.7666666507720947,
+      "easeType": 21,
+      "customEase": [],
+      "strings": [],
+      "stringsExtra": [],
+      "floats": [],
+      "floatsExtra": [],
+      "bools": [],
+      "ints": [],
+      "longs": [],
+      "doubles": [],
+      "beziers": {
+        "beziers": [],
+        "useUniformInterp": true,
+        "uniformEaseType": 0,
+        "originDistance": 0.0
+      },
+      "shake": {
+        "shakeMode": 0,
+        "cameraName": "",
+        "shakeCount": 0,
+        "uniformRange": 0.0,
+        "shakeRange": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "shakeCD": 0.0020000000949949026,
+        "uniformCenter": true,
+        "shakeFadeOut": true,
+        "shakeResetPosition": true
+      },
+      "path": [
+        {
+          "x": 8.801258087158203,
+          "y": 8.801265716552734,
+          "z": 8.801265716552734
+        },
+        {
+          "x": 8.801258087158203,
+          "y": 8.801265716552734,
+          "z": 8.801265716552734
+        }
+      ],
+      "vect2s": [],
+      "colors": [],
+      "rects": [],
+      "eventParams": []
+    }
+  ],
+  "modelNames": [
+    "effect/prefabs/story/story_guanganlongheti/fx_yanmielongzun_lihui.prefab",
+    "effect/prefabs/story/story_guanganlongheti/fx_yanmielongzun_chuxian.prefab",
+    "effect/prefabs/story/story_guanganlongheti/fx_yanmielongzun_ziti02.prefab",
+    "effect/prefabs/story/story_guanganlongheti/heti_effect_camera_worldcoord_create.prefab"
+  ]
+}

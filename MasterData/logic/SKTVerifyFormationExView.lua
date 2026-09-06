@@ -1,0 +1,211 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logic/extensions/saintknighttask/view/dream/SKTVerifyFormationExView.lua
+
+module("logic.extensions.saintknighttask.view.dream.SKTVerifyFormationExView", package.seeall)
+
+local SKTVerifyFormationExView = class("SKTVerifyFormationExView", ViewComponent)
+
+function SKTVerifyFormationExView:ctor()
+	SKTVerifyFormationExView.super.ctor(self)
+end
+
+function SKTVerifyFormationExView:buildUI()
+	SKTVerifyFormationExView.super.buildUI(self)
+
+	self._petScrollercell = goutil.findChild(self.mainGO, "petCol/petScrollercell")
+	self._petScrollerview = goutil.findChild(self.mainGO, "petCol/petScrollerview")
+	self._petScrollList = ScrollerList.create(self._petScrollerview, self._petScrollercell, GameUtil.handler(self._updatePetCell, self), GameUtil.handler(self._clearPetCell, self))
+	self._txtTips = goutil.findChildTextComponent(self.mainGO, "descCol/txtTips")
+	self._txtDesc = goutil.findChildTextComponent(self.mainGO, "descCol/txtDesc")
+	self._imgRecZdl = goutil.findChild(self.mainGO, "descCol/txtTips/imgRecZdl"):GetComponent(ComponentType.UIImgNumeralText)
+	self._bg_6 = self:getGo("bg_6")
+	self._txtDesc2 = self:getTxt("txtDesc2")
+end
+
+function SKTVerifyFormationExView:bindEvents()
+	SKTVerifyFormationExView.super.bindEvents(self)
+end
+
+function SKTVerifyFormationExView:unbindEvents()
+	SKTVerifyFormationExView.super.unbindEvents(self)
+end
+
+function SKTVerifyFormationExView:destroyUI()
+	SKTVerifyFormationExView.super.destroyUI(self)
+end
+
+function SKTVerifyFormationExView:onEnter()
+	SKTVerifyFormationExView.super.onEnter(self)
+
+	local params = self:getOpenParam() or {}
+
+	self._customFmtMo = params[1]
+	self._activityId = self._customFmtMo:getActivityId()
+
+	local isInTime = SaintKnightTaskController.instance:isInActivityTimeAsSkt(self._activityId)
+
+	if not isInTime then
+		FloatWordMgr.instance:show("活动不在开启期限内")
+		self:close()
+
+		return
+	end
+
+	self._verifyData = SaintKnightTaskConfig.instance:getSktVerifyData(self._activityId)
+
+	self:_onSetUI()
+	self:_onUpdate()
+	self.addGEvent(self, GlobalNotify.SKTaskWorldTasksVerifyFmtUpdate, self._handleVerifyFmtUpdate, self)
+	self.addGEvent(self, GlobalNotify.SKTaskWorldTasksVerifyFormZdlRes, self._handleVerifyVerifyFormZdlRes, self)
+	settimer(0.3, self._onTicking, self)
+end
+
+function SKTVerifyFormationExView:onExit()
+	SKTVerifyFormationExView.super.onExit(self)
+	removetimer(self._onTicking, self)
+	self:_onClearPetCol()
+end
+
+function SKTVerifyFormationExView:_sendVerifyReq()
+	self._customFmtMo:fmtVerifyReq()
+end
+
+function SKTVerifyFormationExView:_handleVerifyFmtUpdate()
+	self._isNeedUpdateUI = true
+	self._isNeedVerify = true
+end
+
+function SKTVerifyFormationExView:_handleVerifyVerifyFormZdlRes()
+	self._isNeedUpdateUI = true
+end
+
+function SKTVerifyFormationExView:_onSetUI()
+	local tipStr = self._verifyData.tip
+
+	GameUtil.SetActive(self._txtDesc2.gameObject, not string.nilorempty(tipStr))
+	GameUtil.SetActive(self._bg_6, not string.nilorempty(tipStr))
+
+	if not string.nilorempty(tipStr) then
+		self._txtDesc2.text = tipStr
+	end
+end
+
+function SKTVerifyFormationExView:_onUpdate()
+	self:_onUpdatePetColUI()
+	self:_onUpdateDescColUI()
+end
+
+function SKTVerifyFormationExView:_onTicking()
+	if self._isNeedUpdateUI == true then
+		self._isNeedUpdateUI = false
+
+		self:_onUpdate()
+	end
+
+	if self._isNeedVerify == true then
+		self._isNeedVerify = false
+
+		self:_sendVerifyReq()
+	end
+end
+
+function SKTVerifyFormationExView:_onUpdatePetColUI()
+	local petInfoList = {}
+
+	for _, raceId in ipairs(self._verifyData.raceIds) do
+		local info = {}
+
+		info.raceId = raceId
+		info.isExist = BagModel.instance:isExistRaceId(raceId)
+		info.isUpFmt = self._customFmtMo:isUpFmt(raceId)
+
+		table.insert(petInfoList, info)
+	end
+
+	self._petScrollList:reloadData(petInfoList)
+end
+
+function SKTVerifyFormationExView:_onClearPetCol()
+	self._petScrollList:dispose()
+end
+
+function SKTVerifyFormationExView:_updatePetCell(view, cell, info, tag)
+	local mainGo = cell.gameObject
+	local raceId = info.raceId
+	local isExist = info.isExist
+	local isUpFmt = info.isUpFmt
+	local descData = SaintKnightTaskConfig.instance:getSktVerifyDescData(self._activityId, raceId)
+	local imgPet = goutil.findChild(mainGo, "petIcon/img/pet")
+	local btnUpZdl = goutil.findChild(mainGo, "btnUpZdl")
+	local btnGoGet = goutil.findChild(mainGo, "btnGoGet")
+	local txtName = goutil.findChildTextComponent(mainGo, "txtName")
+	local txtZdl = goutil.findChildTextComponent(mainGo, "txtZdl")
+	local tagNotGet = goutil.findChild(mainGo, "tagNotGet")
+	local tagNotUp = goutil.findChild(mainGo, "tagNotUp")
+	local tagUp = goutil.findChild(mainGo, "tagUp")
+
+	MaterialMgr.setIcon(imgPet, MatType.Pet, raceId, nil, nil)
+	GameUtil.SetActive(tagNotGet, not isExist)
+	GameUtil.SetActive(tagUp, isExist and isUpFmt)
+	GameUtil.SetActive(tagNotUp, isExist and not isUpFmt)
+
+	local petName
+	local petData = CharacterConfig.instance:getPetCo(raceId)
+
+	txtName.text = string.format("%s", (petData or nil) and petData.name)
+	txtZdl.text = string.format("精灵战力：<color=#F82330FF>%s</color>", isExist and self._customFmtMo:getPetZdlInListByRaceId(raceId) or "0")
+
+	local isNeedBtnGoGet = not isExist and not string.nilorempty(descData.goGetKey)
+
+	GameUtil.SetActive(btnGoGet, isNeedBtnGoGet)
+
+	if isNeedBtnGoGet then
+		GameUtil.addClickHandler(btnGoGet, GameUtil.handler(self._onClickPetGoGet, self, descData.goGetKey))
+	end
+
+	local isNeedBtnUpZdl = isExist and not string.nilorempty(descData.upZdlKey)
+
+	GameUtil.SetActive(btnUpZdl, isNeedBtnUpZdl)
+
+	if isNeedBtnUpZdl then
+		GameUtil.addClickHandler(btnUpZdl, GameUtil.handler(self._onClickPetUpZdl, self, descData.upZdlKey))
+	end
+end
+
+function SKTVerifyFormationExView:_clearPetCell(cell)
+	local mainGo = cell.gameObject
+	local imgPet = goutil.findChild(mainGo, "petIcon/img/pet")
+	local btnUpZdl = goutil.findChild(mainGo, "btnUpZdl")
+	local btnGoGet = goutil.findChild(mainGo, "btnGoGet")
+
+	MaterialMgr.resetAll(imgPet)
+	GameUtil.rmClickHandler(btnUpZdl)
+	GameUtil.rmClickHandler(btnGoGet)
+end
+
+function SKTVerifyFormationExView:_onClickPetUpZdl(jumpStr)
+	if not string.nilorempty(jumpStr) then
+		GotoMgr.gotoByString(jumpStr)
+	end
+end
+
+function SKTVerifyFormationExView:_onClickPetGoGet(jumpStr)
+	if not string.nilorempty(jumpStr) then
+		GotoMgr.gotoByString(jumpStr)
+	end
+end
+
+function SKTVerifyFormationExView:_onUpdateDescColUI()
+	local fmtZdl = 0
+	local overPercent = 0
+
+	if not self._customFmtMo:isEmptyFmt() then
+		fmtZdl = SaintKnightTaskModel.instance:getFormZdlOfVerify()
+		overPercent = SaintKnightTaskModel.instance:getOverPercentOfVerify()
+	end
+
+	self._imgRecZdl:SetNum(fmtZdl)
+
+	self._txtDesc.text = string.format("当前阵容战力已超过全服<color=#F82330FF>%s%%</color>的玩家", overPercent)
+end
+
+return SKTVerifyFormationExView

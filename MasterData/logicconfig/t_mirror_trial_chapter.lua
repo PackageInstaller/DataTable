@@ -1,0 +1,339 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_mirror_trial_chapter.lua
+
+module("logicconfig.config.t_mirror_trial_chapter", package.seeall)
+
+local title = {
+	description = 5,
+	nearBg = 7,
+	propertyPlanId = 4,
+	chapterId = 2,
+	farBg = 9,
+	stageName = 3,
+	middleBg = 8,
+	chapterPic = 6,
+	activityId = 1
+}
+local dataList = {
+	{
+		51001,
+		1,
+		"他是龙？",
+		1,
+		"本章装备属性增加50%",
+		"fubeng_juqing1",
+		"pinminku1",
+		"pinminku2",
+		"pinminku3"
+	},
+	{
+		51001,
+		2,
+		"阴暗角落",
+		2,
+		"本章等级属性增加50%",
+		"fubeng_juqing1",
+		"pinminku1",
+		"pinminku2",
+		"pinminku3"
+	},
+	{
+		51001,
+		3,
+		"牢狱之灾",
+		3,
+		"本章天赋属性增加50%",
+		"fubeng_juqing1",
+		"pinminku1",
+		"pinminku2",
+		"pinminku3"
+	},
+	{
+		51001,
+		4,
+		"狂神怒焰",
+		1,
+		"本章装备属性增加50%",
+		"fubeng_juqing1",
+		"pinminku1",
+		"pinminku2",
+		"pinminku3"
+	},
+	{
+		51001,
+		5,
+		"王之葬礼",
+		2,
+		"本章等级属性增加50%",
+		"fubeng_juqing1",
+		"pinminku1",
+		"pinminku2",
+		"pinminku3"
+	},
+	{
+		51001,
+		6,
+		"暗流涌动",
+		3,
+		"本章天赋属性增加50%",
+		"fubeng_juqing1",
+		"pinminku1",
+		"pinminku2",
+		"pinminku3"
+	},
+	{
+		51001,
+		7,
+		"棋局",
+		1,
+		"本章装备属性增加50%",
+		"fubeng_juqing1",
+		"pinminku1",
+		"pinminku2",
+		"pinminku3"
+	},
+	{
+		51001,
+		8,
+		"灾厄降临",
+		2,
+		"本章等级属性增加50%",
+		"fubeng_juqing1",
+		"pinminku1",
+		"pinminku2",
+		"pinminku3"
+	},
+	{
+		51001,
+		9,
+		"古墓探秘",
+		3,
+		"本章天赋属性增加50%",
+		"fubeng_juqing1",
+		"pinminku1",
+		"pinminku2",
+		"pinminku3"
+	},
+	{
+		51001,
+		10,
+		"荷鲁斯之眼",
+		1,
+		"本章装备属性增加50%",
+		"fubeng_juqing1",
+		"pinminku1",
+		"pinminku2",
+		"pinminku3"
+	},
+	{
+		51001,
+		11,
+		"神明的决心",
+		2,
+		"本章等级属性增加50%",
+		"fubeng_juqing1",
+		"pinminku1",
+		"pinminku2",
+		"pinminku3"
+	},
+	{
+		51001,
+		12,
+		"流放之地",
+		3,
+		"本章天赋属性增加50%",
+		"fubeng_juqing1",
+		"pinminku1",
+		"pinminku2",
+		"pinminku3"
+	},
+	{
+		51001,
+		13,
+		"审判与地下城",
+		1,
+		"本章装备属性增加50%",
+		"fubeng_juqing1",
+		"pinminku1",
+		"pinminku2",
+		"pinminku3"
+	},
+	{
+		51001,
+		14,
+		"背叛与过去",
+		2,
+		"本章等级属性增加50%",
+		"fubeng_juqing1",
+		"pinminku1",
+		"pinminku2",
+		"pinminku3"
+	},
+	{
+		51001,
+		15,
+		"拯救与离别",
+		3,
+		"本章天赋属性增加50%",
+		"fubeng_juqing1",
+		"pinminku1",
+		"pinminku2",
+		"pinminku3"
+	},
+	{
+		51001,
+		16,
+		"沉睡恶龙",
+		1,
+		"本章装备属性增加50%",
+		"fubeng_juqing1",
+		"pinminku1",
+		"pinminku2",
+		"pinminku3"
+	},
+	{
+		51001,
+		17,
+		"困境",
+		2,
+		"本章等级属性增加50%",
+		"fubeng_juqing1",
+		"pinminku1",
+		"pinminku2",
+		"pinminku3"
+	},
+	{
+		51001,
+		18,
+		"海之叹息",
+		3,
+		"本章天赋属性增加50%",
+		"fubeng_juqing1",
+		"pinminku1",
+		"pinminku2",
+		"pinminku3"
+	},
+	{
+		51001,
+		19,
+		"雪原旧恨",
+		1,
+		"本章装备属性增加50%",
+		"fubeng_juqing1",
+		"pinminku1",
+		"pinminku2",
+		"pinminku3"
+	},
+	{
+		51001,
+		20,
+		"不败传说",
+		2,
+		"本章等级属性增加50%",
+		"fubeng_juqing1",
+		"pinminku1",
+		"pinminku2",
+		"pinminku3"
+	},
+	{
+		51001,
+		21,
+		"复苏日",
+		3,
+		"本章天赋属性增加50%",
+		"fubeng_juqing1",
+		"pinminku1",
+		"pinminku2",
+		"pinminku3"
+	},
+	{
+		51001,
+		22,
+		"失控的王",
+		1,
+		"本章装备属性增加50%",
+		"fubeng_juqing1",
+		"pinminku1",
+		"pinminku2",
+		"pinminku3"
+	},
+	{
+		51001,
+		23,
+		"觉醒的龙",
+		2,
+		"本章等级属性增加50%",
+		"fubeng_juqing1",
+		"pinminku1",
+		"pinminku2",
+		"pinminku3"
+	},
+	{
+		51001,
+		24,
+		"机械少女",
+		3,
+		"本章天赋属性增加50%",
+		"fubeng_juqing1",
+		"pinminku1",
+		"pinminku2",
+		"pinminku3"
+	},
+	{
+		51001,
+		25,
+		"真相",
+		1,
+		"本章装备属性增加50%",
+		"fubeng_juqing1",
+		"pinminku1",
+		"pinminku2",
+		"pinminku3"
+	}
+}
+local t_mirror_trial_chapter = {
+	[51001] = {
+		dataList[1],
+		dataList[2],
+		dataList[3],
+		dataList[4],
+		dataList[5],
+		dataList[6],
+		dataList[7],
+		dataList[8],
+		dataList[9],
+		dataList[10],
+		dataList[11],
+		dataList[12],
+		dataList[13],
+		dataList[14],
+		dataList[15],
+		dataList[16],
+		dataList[17],
+		dataList[18],
+		dataList[19],
+		dataList[20],
+		dataList[21],
+		dataList[22],
+		dataList[23],
+		dataList[24],
+		dataList[25]
+	}
+}
+
+t_mirror_trial_chapter.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_mirror_trial_chapter

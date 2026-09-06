@@ -1,0 +1,262 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_season_mode_pve_boss_story_step.lua
+
+module("logicconfig.config.t_season_mode_pve_boss_story_step", package.seeall)
+
+local title = {
+	storyType = 3,
+	params = 4,
+	seasonId = 1,
+	storyId = 2
+}
+local dataList = {
+	{
+		1,
+		1,
+		1,
+		"4350004"
+	},
+	{
+		1,
+		2,
+		1,
+		"4350007"
+	},
+	{
+		2,
+		1,
+		1,
+		"4410005"
+	},
+	{
+		2,
+		2,
+		1,
+		"4410003"
+	},
+	{
+		2,
+		3,
+		1,
+		"4410004"
+	},
+	{
+		2,
+		4,
+		4,
+		"5251"
+	},
+	{
+		2,
+		5,
+		5,
+		"5251"
+	},
+	{
+		2,
+		6,
+		1,
+		"4410006"
+	},
+	{
+		2,
+		7,
+		6,
+		"cg_battlestart_s2zhengshi#cg_battlerounds_s2zhengshi#cg_battleresult_s2zhengshi"
+	},
+	{
+		2,
+		8,
+		1,
+		"4410007"
+	},
+	{
+		2,
+		9,
+		4,
+		"6091"
+	},
+	{
+		2,
+		10,
+		5,
+		"6091"
+	},
+	{
+		2,
+		11,
+		1,
+		"4410017"
+	},
+	{
+		2,
+		12,
+		4,
+		"1010"
+	},
+	{
+		2,
+		13,
+		5,
+		"1010"
+	},
+	{
+		2,
+		14,
+		4,
+		"7557"
+	},
+	{
+		2,
+		15,
+		5,
+		"7557"
+	},
+	{
+		2,
+		16,
+		4,
+		"8433"
+	},
+	{
+		2,
+		17,
+		5,
+		"8433"
+	},
+	{
+		2,
+		18,
+		1,
+		"4410015"
+	},
+	{
+		2,
+		19,
+		1,
+		"4410018"
+	},
+	{
+		2,
+		20,
+		1,
+		"4410019"
+	},
+	{
+		2,
+		21,
+		1,
+		"4410011"
+	},
+	{
+		2,
+		22,
+		1,
+		"4410016"
+	},
+	{
+		2,
+		23,
+		4,
+		"8433"
+	},
+	{
+		2,
+		24,
+		1,
+		"4410008"
+	},
+	{
+		2,
+		25,
+		4,
+		"7557"
+	},
+	{
+		2,
+		26,
+		1,
+		"4410009"
+	},
+	{
+		2,
+		27,
+		4,
+		"1010"
+	},
+	{
+		2,
+		28,
+		1,
+		"4410010"
+	},
+	{
+		3,
+		1,
+		1,
+		"4550002"
+	},
+	{
+		3,
+		2,
+		1,
+		"4550003"
+	}
+}
+local t_season_mode_pve_boss_story_step = {
+	{
+		dataList[1],
+		dataList[2]
+	},
+	{
+		dataList[3],
+		dataList[4],
+		dataList[5],
+		dataList[6],
+		dataList[7],
+		dataList[8],
+		dataList[9],
+		dataList[10],
+		dataList[11],
+		dataList[12],
+		dataList[13],
+		dataList[14],
+		dataList[15],
+		dataList[16],
+		dataList[17],
+		dataList[18],
+		dataList[19],
+		dataList[20],
+		dataList[21],
+		dataList[22],
+		dataList[23],
+		dataList[24],
+		dataList[25],
+		dataList[26],
+		dataList[27],
+		dataList[28],
+		dataList[29],
+		dataList[30]
+	},
+	{
+		dataList[31],
+		dataList[32]
+	}
+}
+
+t_season_mode_pve_boss_story_step.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_season_mode_pve_boss_story_step

@@ -1,0 +1,307 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_waking_lion_game_shapepart.lua
+
+module("logicconfig.config.t_waking_lion_game_shapepart", package.seeall)
+
+local title = {
+	colorPlan = 1,
+	name = 3,
+	img = 6,
+	colorImg = 5,
+	color = 4,
+	id = 2,
+	pos = 7
+}
+local dataList = {
+	{
+		1,
+		1,
+		"底色",
+		"ff00ff",
+		"board_xingshiwenhua_28",
+		"board_shizitou_01",
+		{
+			90,
+			138
+		}
+	},
+	{
+		1,
+		2,
+		"脸/嘴",
+		"ff01ff",
+		"board_xingshiwenhua_15",
+		"board_shizitou_02",
+		{
+			114,
+			108
+		}
+	},
+	{
+		1,
+		3,
+		"装饰",
+		"ff02ff",
+		"board_xingshiwenhua_16",
+		"board_shizitou_04",
+		{
+			164,
+			293.5
+		}
+	},
+	{
+		1,
+		4,
+		"眼白",
+		"ff03ff",
+		"board_xingshiwenhua_19",
+		"board_shizitou_05",
+		{
+			290,
+			261
+		}
+	},
+	{
+		1,
+		5,
+		"瞳孔",
+		"ff04ff",
+		"board_xingshiwenhua_20",
+		"board_shizitou_06",
+		{
+			82,
+			250
+		}
+	},
+	{
+		2,
+		1,
+		"底色",
+		"ff05ff",
+		"board_xingshiwenhua_28",
+		"board_shizitou_01",
+		{
+			90,
+			138
+		}
+	},
+	{
+		2,
+		2,
+		"脸/嘴",
+		"ff06ff",
+		"board_xingshiwenhua_19",
+		"board_shizitou_02",
+		{
+			114,
+			108
+		}
+	},
+	{
+		2,
+		3,
+		"瞳孔",
+		"ff07ff",
+		"board_xingshiwenhua_20",
+		"board_shizitou_08",
+		{
+			82,
+			250
+		}
+	},
+	{
+		3,
+		1,
+		"底色",
+		"ff08ff",
+		"board_xingshiwenhua_20",
+		"board_shizitou_01",
+		{
+			90,
+			138
+		}
+	},
+	{
+		3,
+		2,
+		"脸/嘴",
+		"ff09ff",
+		"board_xingshiwenhua_15",
+		"board_shizitou_03",
+		{
+			114,
+			108
+		}
+	},
+	{
+		3,
+		3,
+		"瞳孔",
+		"ff10ff",
+		"board_xingshiwenhua_28",
+		"board_shizitou_10",
+		{
+			82,
+			250
+		}
+	},
+	{
+		4,
+		1,
+		"底色",
+		"ff11ff",
+		"board_xingshiwenhua_20",
+		"board_shizitou_01",
+		{
+			90,
+			138
+		}
+	},
+	{
+		4,
+		2,
+		"脸/嘴",
+		"ff12ff",
+		"board_xingshiwenhua_18",
+		"board_shizitou_03",
+		{
+			114,
+			108
+		}
+	},
+	{
+		4,
+		3,
+		"瞳孔",
+		"ff13ff",
+		"board_xingshiwenhua_28",
+		"board_shizitou_12",
+		{
+			82,
+			250
+		}
+	},
+	{
+		5,
+		1,
+		"底色",
+		"ff14ff",
+		"board_xingshiwenhua_28",
+		"board_shizitou_01",
+		{
+			90,
+			138
+		}
+	},
+	{
+		5,
+		2,
+		"脸/嘴",
+		"ff15ff",
+		"board_xingshiwenhua_17",
+		"board_shizitou_02",
+		{
+			114,
+			108
+		}
+	},
+	{
+		5,
+		3,
+		"瞳孔",
+		"ff16ff",
+		"board_xingshiwenhua_16",
+		"board_shizitou_14",
+		{
+			82,
+			250
+		}
+	},
+	{
+		6,
+		1,
+		"底色",
+		"ff14ff",
+		"board_xingshiwenhua_28",
+		"board_shizitou_01",
+		{
+			90,
+			138
+		}
+	},
+	{
+		6,
+		2,
+		"脸/嘴",
+		"ff15ff",
+		"board_xingshiwenhua_18",
+		"board_shizitou_02",
+		{
+			114,
+			108
+		}
+	},
+	{
+		6,
+		3,
+		"瞳孔",
+		"ff16ff",
+		"board_xingshiwenhua_20",
+		"board_shizitou_16",
+		{
+			82,
+			250
+		}
+	}
+}
+local t_waking_lion_game_shapepart = {
+	{
+		dataList[1],
+		dataList[2],
+		dataList[3],
+		dataList[4],
+		dataList[5]
+	},
+	{
+		dataList[6],
+		dataList[7],
+		dataList[8]
+	},
+	{
+		dataList[9],
+		dataList[10],
+		dataList[11]
+	},
+	{
+		dataList[12],
+		dataList[13],
+		dataList[14]
+	},
+	{
+		dataList[15],
+		dataList[16],
+		dataList[17]
+	},
+	{
+		dataList[18],
+		dataList[19],
+		dataList[20]
+	}
+}
+
+t_waking_lion_game_shapepart.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_waking_lion_game_shapepart

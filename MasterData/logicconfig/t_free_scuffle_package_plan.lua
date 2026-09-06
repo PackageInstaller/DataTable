@@ -1,0 +1,310 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_free_scuffle_package_plan.lua
+
+module("logicconfig.config.t_free_scuffle_package_plan", package.seeall)
+
+local title = {
+	packageId = 2,
+	quality = 3,
+	prizeItemKey = 5,
+	increaseCoin = 4,
+	packagePrizePlan = 1,
+	packagePrizeNum = 6
+}
+local dataList = {
+	{
+		1,
+		1,
+		1,
+		{
+			10000,
+			20000
+		},
+		"10:489002",
+		{
+			2,
+			4
+		}
+	},
+	{
+		1,
+		2,
+		1,
+		{
+			20000,
+			30000
+		},
+		"10:489002",
+		{
+			3,
+			6
+		}
+	},
+	{
+		1,
+		3,
+		1,
+		{
+			30000,
+			40000
+		},
+		"10:489002",
+		{
+			4,
+			8
+		}
+	},
+	{
+		1,
+		4,
+		2,
+		{
+			40000,
+			60000
+		},
+		"10:489002",
+		{
+			5,
+			10
+		}
+	},
+	{
+		1,
+		5,
+		2,
+		{
+			60000,
+			80000
+		},
+		"10:489002",
+		{
+			6,
+			12
+		}
+	},
+	{
+		1,
+		6,
+		2,
+		{
+			80000,
+			100000
+		},
+		"10:489002",
+		{
+			7,
+			14
+		}
+	},
+	{
+		2,
+		1,
+		1,
+		{
+			10000,
+			20000
+		},
+		"10:489004",
+		{
+			2,
+			4
+		}
+	},
+	{
+		2,
+		2,
+		1,
+		{
+			20000,
+			30000
+		},
+		"10:489004",
+		{
+			3,
+			6
+		}
+	},
+	{
+		2,
+		3,
+		1,
+		{
+			30000,
+			40000
+		},
+		"10:489004",
+		{
+			4,
+			8
+		}
+	},
+	{
+		2,
+		4,
+		2,
+		{
+			40000,
+			60000
+		},
+		"10:489004",
+		{
+			5,
+			10
+		}
+	},
+	{
+		2,
+		5,
+		2,
+		{
+			60000,
+			80000
+		},
+		"10:489004",
+		{
+			6,
+			12
+		}
+	},
+	{
+		2,
+		6,
+		2,
+		{
+			80000,
+			100000
+		},
+		"10:489004",
+		{
+			7,
+			14
+		}
+	},
+	{
+		3,
+		1,
+		1,
+		{
+			10000,
+			20000
+		},
+		"10:489006",
+		{
+			2,
+			4
+		}
+	},
+	{
+		3,
+		2,
+		1,
+		{
+			20000,
+			30000
+		},
+		"10:489006",
+		{
+			3,
+			6
+		}
+	},
+	{
+		3,
+		3,
+		1,
+		{
+			30000,
+			40000
+		},
+		"10:489006",
+		{
+			4,
+			8
+		}
+	},
+	{
+		3,
+		4,
+		2,
+		{
+			40000,
+			60000
+		},
+		"10:489006",
+		{
+			5,
+			10
+		}
+	},
+	{
+		3,
+		5,
+		2,
+		{
+			60000,
+			80000
+		},
+		"10:489006",
+		{
+			6,
+			12
+		}
+	},
+	{
+		3,
+		6,
+		2,
+		{
+			80000,
+			100000
+		},
+		"10:489006",
+		{
+			7,
+			14
+		}
+	}
+}
+local t_free_scuffle_package_plan = {
+	{
+		dataList[1],
+		dataList[2],
+		dataList[3],
+		dataList[4],
+		dataList[5],
+		dataList[6]
+	},
+	{
+		dataList[7],
+		dataList[8],
+		dataList[9],
+		dataList[10],
+		dataList[11],
+		dataList[12]
+	},
+	{
+		dataList[13],
+		dataList[14],
+		dataList[15],
+		dataList[16],
+		dataList[17],
+		dataList[18]
+	}
+}
+
+t_free_scuffle_package_plan.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_free_scuffle_package_plan

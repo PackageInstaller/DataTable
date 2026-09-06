@@ -1,0 +1,11 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logic/extensions/funcamp/view/scufflemission/CampScuffleFastFormation.lua
+
+module("logic.extensions.funcamp.view.scufflemission.CampScuffleFastFormation", package.seeall)
+
+local CampScuffleFastFormation = class("CampScuffleFastFormation")
+
+function CampScuffleFastFormation:ctor()
+	return
+end
+
+return CampScuffleFastFormation

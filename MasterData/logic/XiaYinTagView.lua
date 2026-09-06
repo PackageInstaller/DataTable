@@ -1,0 +1,88 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logic/extensions/xiayin/view/XiaYinTagView.lua
+
+module("logic.extensions.xiayin.view.XiaYinTagView", package.seeall)
+
+local XiaYinTagView = class("XiaYinTagView", ViewComponent)
+
+XiaYinTagView.Word2Index = {
+	光 = 1,
+	暗 = 2,
+	欲 = 1,
+	希 = 2
+}
+
+function XiaYinTagView:ctor()
+	XiaYinTagView.super.ctor(self)
+end
+
+function XiaYinTagView:buildUI()
+	XiaYinTagView.super.buildUI(self)
+
+	self._tagList = {}
+
+	for i = 1, 9 do
+		local element = {}
+		local go = self:getGo("tag" .. i)
+
+		element.tagGo = go
+		element.tagChange = go:GetComponent(ComponentType.UIImageSpriteChange)
+		element.txtTag = goutil.findChildTextComponent(element.tagGo, "txt")
+
+		table.insert(self._tagList, element)
+	end
+end
+
+function XiaYinTagView:bindEvents()
+	XiaYinTagView.super.bindEvents(self)
+end
+
+function XiaYinTagView:unbindEvents()
+	XiaYinTagView.super.unbindEvents(self)
+end
+
+function XiaYinTagView:onEnter()
+	XiaYinTagView.super.onEnter(self)
+
+	self._customFmtMo = self:getFirstParam()
+
+	self:_initTags()
+end
+
+function XiaYinTagView:onExit()
+	XiaYinTagView.super.onExit(self)
+end
+
+function XiaYinTagView:_initTags()
+	self:_clearTags()
+
+	local creepsMasterId = self._customFmtMo:getCreepsMasterId()
+	local cfgCreeps = XiaYinConfig.instance:getCreeps(creepsMasterId)
+
+	for i, cfgEnemy in ipairs(cfgCreeps) do
+		local item = self._tagList[cfgEnemy.posId]
+
+		if item then
+			goutil.setActive(item.tagGo, true)
+
+			if cfgEnemy.buffMark ~= "" then
+				if not XiaYinTagView.Word2Index[cfgEnemy.buffMark] then
+					local buffMark = 0
+
+					item.tagChange:SetState(Mathf.Clamp(buffMark, 0, 2))
+
+					item.txtTag.text = cfgEnemy.buffMark
+
+					GameUtil.SetActive(item.tagGo, buffMark > 0)
+				end
+			end
+		end
+	end
+end
+
+function XiaYinTagView:_clearTags()
+	for i, v in ipairs(self._tagList) do
+		goutil.setActive(v.tagGo, false)
+	end
+end
+
+return XiaYinTagView

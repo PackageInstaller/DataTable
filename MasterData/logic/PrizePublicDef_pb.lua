@@ -1,0 +1,128 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logic/proto/PrizePublicDef_pb.lua
+
+local protobuf = require("protobuf.protobuf")
+
+module("logic.proto.PrizePublicDef_pb", package.seeall)
+
+local tb = {}
+
+PM_GAINPRIZEREQ_MSG = protobuf.Descriptor()
+tb.PM_GAINPRIZEREQ_PETID_FIELD = protobuf.FieldDescriptor()
+tb.PM_GAINPRIZEREQ_REPLACEMENT_FIELD = protobuf.FieldDescriptor()
+PM_GAINPRIZERES_MSG = protobuf.Descriptor()
+tb.PM_GAINPRIZERES_PETID_FIELD = protobuf.FieldDescriptor()
+tb.PM_GAINPRIZERES_CHANGESETID_FIELD = protobuf.FieldDescriptor()
+PM_SWEEPPRIZE_MSG = protobuf.Descriptor()
+tb.PM_SWEEPPRIZE_TIMES_FIELD = protobuf.FieldDescriptor()
+tb.PM_SWEEPPRIZE_PRIZES_FIELD = protobuf.FieldDescriptor()
+tb.PM_SWEEPPRIZE_EXPERIENCE_FIELD = protobuf.FieldDescriptor()
+tb.PM_SWEEPPRIZE_DOUBLINGSIZE_FIELD = protobuf.FieldDescriptor()
+tb.PM_GAINPRIZEREQ_PETID_FIELD.name = "petId"
+tb.PM_GAINPRIZEREQ_PETID_FIELD.full_name = ".PM_GainPrizeReq.petId"
+tb.PM_GAINPRIZEREQ_PETID_FIELD.number = 1
+tb.PM_GAINPRIZEREQ_PETID_FIELD.index = 0
+tb.PM_GAINPRIZEREQ_PETID_FIELD.label = 1
+tb.PM_GAINPRIZEREQ_PETID_FIELD.has_default_value = false
+tb.PM_GAINPRIZEREQ_PETID_FIELD.default_value = 0
+tb.PM_GAINPRIZEREQ_PETID_FIELD.type = 5
+tb.PM_GAINPRIZEREQ_PETID_FIELD.cpp_type = 1
+tb.PM_GAINPRIZEREQ_REPLACEMENT_FIELD.name = "replacement"
+tb.PM_GAINPRIZEREQ_REPLACEMENT_FIELD.full_name = ".PM_GainPrizeReq.replacement"
+tb.PM_GAINPRIZEREQ_REPLACEMENT_FIELD.number = 4
+tb.PM_GAINPRIZEREQ_REPLACEMENT_FIELD.index = 1
+tb.PM_GAINPRIZEREQ_REPLACEMENT_FIELD.label = 1
+tb.PM_GAINPRIZEREQ_REPLACEMENT_FIELD.has_default_value = false
+tb.PM_GAINPRIZEREQ_REPLACEMENT_FIELD.default_value = false
+tb.PM_GAINPRIZEREQ_REPLACEMENT_FIELD.type = 8
+tb.PM_GAINPRIZEREQ_REPLACEMENT_FIELD.cpp_type = 7
+PM_GAINPRIZEREQ_MSG.name = "PM_GainPrizeReq"
+PM_GAINPRIZEREQ_MSG.full_name = ".PM_GainPrizeReq"
+PM_GAINPRIZEREQ_MSG.nested_types = {}
+PM_GAINPRIZEREQ_MSG.enum_types = {}
+PM_GAINPRIZEREQ_MSG.fields = {
+	tb.PM_GAINPRIZEREQ_PETID_FIELD,
+	tb.PM_GAINPRIZEREQ_REPLACEMENT_FIELD
+}
+PM_GAINPRIZEREQ_MSG.is_extendable = false
+PM_GAINPRIZEREQ_MSG.extensions = {}
+tb.PM_GAINPRIZERES_PETID_FIELD.name = "petId"
+tb.PM_GAINPRIZERES_PETID_FIELD.full_name = ".PM_GainPrizeRes.petId"
+tb.PM_GAINPRIZERES_PETID_FIELD.number = 1
+tb.PM_GAINPRIZERES_PETID_FIELD.index = 0
+tb.PM_GAINPRIZERES_PETID_FIELD.label = 1
+tb.PM_GAINPRIZERES_PETID_FIELD.has_default_value = false
+tb.PM_GAINPRIZERES_PETID_FIELD.default_value = 0
+tb.PM_GAINPRIZERES_PETID_FIELD.type = 5
+tb.PM_GAINPRIZERES_PETID_FIELD.cpp_type = 1
+tb.PM_GAINPRIZERES_CHANGESETID_FIELD.name = "changeSetId"
+tb.PM_GAINPRIZERES_CHANGESETID_FIELD.full_name = ".PM_GainPrizeRes.changeSetId"
+tb.PM_GAINPRIZERES_CHANGESETID_FIELD.number = 2
+tb.PM_GAINPRIZERES_CHANGESETID_FIELD.index = 1
+tb.PM_GAINPRIZERES_CHANGESETID_FIELD.label = 1
+tb.PM_GAINPRIZERES_CHANGESETID_FIELD.has_default_value = false
+tb.PM_GAINPRIZERES_CHANGESETID_FIELD.default_value = 0
+tb.PM_GAINPRIZERES_CHANGESETID_FIELD.type = 5
+tb.PM_GAINPRIZERES_CHANGESETID_FIELD.cpp_type = 1
+PM_GAINPRIZERES_MSG.name = "PM_GainPrizeRes"
+PM_GAINPRIZERES_MSG.full_name = ".PM_GainPrizeRes"
+PM_GAINPRIZERES_MSG.nested_types = {}
+PM_GAINPRIZERES_MSG.enum_types = {}
+PM_GAINPRIZERES_MSG.fields = {
+	tb.PM_GAINPRIZERES_PETID_FIELD,
+	tb.PM_GAINPRIZERES_CHANGESETID_FIELD
+}
+PM_GAINPRIZERES_MSG.is_extendable = false
+PM_GAINPRIZERES_MSG.extensions = {}
+tb.PM_SWEEPPRIZE_TIMES_FIELD.name = "times"
+tb.PM_SWEEPPRIZE_TIMES_FIELD.full_name = ".PM_SweepPrize.times"
+tb.PM_SWEEPPRIZE_TIMES_FIELD.number = 1
+tb.PM_SWEEPPRIZE_TIMES_FIELD.index = 0
+tb.PM_SWEEPPRIZE_TIMES_FIELD.label = 2
+tb.PM_SWEEPPRIZE_TIMES_FIELD.has_default_value = false
+tb.PM_SWEEPPRIZE_TIMES_FIELD.default_value = 0
+tb.PM_SWEEPPRIZE_TIMES_FIELD.type = 5
+tb.PM_SWEEPPRIZE_TIMES_FIELD.cpp_type = 1
+tb.PM_SWEEPPRIZE_PRIZES_FIELD.name = "prizes"
+tb.PM_SWEEPPRIZE_PRIZES_FIELD.full_name = ".PM_SweepPrize.prizes"
+tb.PM_SWEEPPRIZE_PRIZES_FIELD.number = 2
+tb.PM_SWEEPPRIZE_PRIZES_FIELD.index = 1
+tb.PM_SWEEPPRIZE_PRIZES_FIELD.label = 2
+tb.PM_SWEEPPRIZE_PRIZES_FIELD.has_default_value = false
+tb.PM_SWEEPPRIZE_PRIZES_FIELD.default_value = ""
+tb.PM_SWEEPPRIZE_PRIZES_FIELD.type = 9
+tb.PM_SWEEPPRIZE_PRIZES_FIELD.cpp_type = 9
+tb.PM_SWEEPPRIZE_EXPERIENCE_FIELD.name = "experience"
+tb.PM_SWEEPPRIZE_EXPERIENCE_FIELD.full_name = ".PM_SweepPrize.experience"
+tb.PM_SWEEPPRIZE_EXPERIENCE_FIELD.number = 3
+tb.PM_SWEEPPRIZE_EXPERIENCE_FIELD.index = 2
+tb.PM_SWEEPPRIZE_EXPERIENCE_FIELD.label = 1
+tb.PM_SWEEPPRIZE_EXPERIENCE_FIELD.has_default_value = false
+tb.PM_SWEEPPRIZE_EXPERIENCE_FIELD.default_value = ""
+tb.PM_SWEEPPRIZE_EXPERIENCE_FIELD.type = 9
+tb.PM_SWEEPPRIZE_EXPERIENCE_FIELD.cpp_type = 9
+tb.PM_SWEEPPRIZE_DOUBLINGSIZE_FIELD.name = "doublingSize"
+tb.PM_SWEEPPRIZE_DOUBLINGSIZE_FIELD.full_name = ".PM_SweepPrize.doublingSize"
+tb.PM_SWEEPPRIZE_DOUBLINGSIZE_FIELD.number = 4
+tb.PM_SWEEPPRIZE_DOUBLINGSIZE_FIELD.index = 3
+tb.PM_SWEEPPRIZE_DOUBLINGSIZE_FIELD.label = 2
+tb.PM_SWEEPPRIZE_DOUBLINGSIZE_FIELD.has_default_value = false
+tb.PM_SWEEPPRIZE_DOUBLINGSIZE_FIELD.default_value = 0
+tb.PM_SWEEPPRIZE_DOUBLINGSIZE_FIELD.type = 5
+tb.PM_SWEEPPRIZE_DOUBLINGSIZE_FIELD.cpp_type = 1
+PM_SWEEPPRIZE_MSG.name = "PM_SweepPrize"
+PM_SWEEPPRIZE_MSG.full_name = ".PM_SweepPrize"
+PM_SWEEPPRIZE_MSG.nested_types = {}
+PM_SWEEPPRIZE_MSG.enum_types = {}
+PM_SWEEPPRIZE_MSG.fields = {
+	tb.PM_SWEEPPRIZE_TIMES_FIELD,
+	tb.PM_SWEEPPRIZE_PRIZES_FIELD,
+	tb.PM_SWEEPPRIZE_EXPERIENCE_FIELD,
+	tb.PM_SWEEPPRIZE_DOUBLINGSIZE_FIELD
+}
+PM_SWEEPPRIZE_MSG.is_extendable = false
+PM_SWEEPPRIZE_MSG.extensions = {}
+PM_GainPrizeReq = protobuf.Message(PM_GAINPRIZEREQ_MSG)
+PM_GainPrizeRes = protobuf.Message(PM_GAINPRIZERES_MSG)
+PM_SweepPrize = protobuf.Message(PM_SWEEPPRIZE_MSG)
+
+return _G["logic.proto.PrizePublicDef_pb"]

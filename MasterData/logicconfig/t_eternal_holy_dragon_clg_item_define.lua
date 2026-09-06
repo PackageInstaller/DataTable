@@ -1,0 +1,317 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_eternal_holy_dragon_clg_item_define.lua
+
+module("logicconfig.config.t_eternal_holy_dragon_clg_item_define", package.seeall)
+
+local title = {
+	itemId = 2,
+	name = 3,
+	desc = 4,
+	itemClazz = 6,
+	iconName = 7,
+	effectScope = 5,
+	itemPlanId = 1
+}
+local dataList = {
+	{
+		1,
+		1,
+		"路障",
+		"道具路障（不可清除）",
+		nil,
+		"BLOCK_CANNOT_CLEAR",
+		"ui/icon/eternalholydragon/board_cxsl_27"
+	},
+	{
+		1,
+		2,
+		"仙人掌-禁气",
+		"覆盖范围内进行挑战，己阵攻击会施加1回合无法增加气势效果",
+		{
+			{
+				-1,
+				0
+			},
+			{
+				1,
+				0
+			},
+			{
+				0,
+				-1
+			},
+			{
+				0,
+				1
+			}
+		},
+		"MY_TEAM_BUFF",
+		"ui/icon/eternalholydragon/board_cxsl_21"
+	},
+	{
+		1,
+		3,
+		"仙人掌-禁气",
+		"覆盖范围内进行挑战，己阵攻击会施加1回合无法增加气势效果",
+		{
+			{
+				-1,
+				0
+			},
+			{
+				1,
+				0
+			}
+		},
+		"MY_TEAM_BUFF",
+		"ui/icon/eternalholydragon/board_cxsl_21"
+	},
+	{
+		1,
+		4,
+		"仙人掌-禁气",
+		"覆盖范围内进行挑战，己阵攻击会施加1回合无法增加气势效果",
+		{
+			{
+				0,
+				-1
+			},
+			{
+				0,
+				1
+			}
+		},
+		"MY_TEAM_BUFF",
+		"ui/icon/eternalholydragon/board_cxsl_21"
+	},
+	{
+		1,
+		5,
+		"食人花-全属性降低",
+		"覆盖范围内进行挑战，敌阵全属性降低20%",
+		{
+			{
+				-1,
+				0
+			},
+			{
+				1,
+				0
+			},
+			{
+				0,
+				-1
+			},
+			{
+				0,
+				1
+			}
+		},
+		"MY_TEAM_BUFF",
+		"ui/icon/eternalholydragon/board_cxsl_29"
+	},
+	{
+		1,
+		6,
+		"食人花-全属性降低",
+		"覆盖范围内进行挑战，敌阵全属性降低20%",
+		{
+			{
+				-1,
+				0
+			},
+			{
+				1,
+				0
+			}
+		},
+		"MY_TEAM_BUFF",
+		"ui/icon/eternalholydragon/board_cxsl_29"
+	},
+	{
+		1,
+		7,
+		"食人花-全属性降低",
+		"覆盖范围内进行挑战，敌阵全属性降低20%",
+		{
+			{
+				0,
+				-1
+			},
+			{
+				0,
+				1
+			}
+		},
+		"MY_TEAM_BUFF",
+		"ui/icon/eternalholydragon/board_cxsl_29"
+	},
+	{
+		1,
+		8,
+		"三叶草-死亡降气",
+		"覆盖范围内进行挑战，敌阵精灵死亡时降低敌阵全体精灵30气势",
+		{
+			{
+				-1,
+				0
+			},
+			{
+				1,
+				0
+			},
+			{
+				0,
+				-1
+			},
+			{
+				0,
+				1
+			}
+		},
+		"MY_TEAM_BUFF",
+		"ui/icon/eternalholydragon/board_cxsl_26"
+	},
+	{
+		1,
+		9,
+		"三叶草-死亡降气",
+		"覆盖范围内进行挑战，敌阵精灵死亡时降低敌阵全体精灵30气势",
+		{
+			{
+				-1,
+				0
+			},
+			{
+				1,
+				0
+			}
+		},
+		"MY_TEAM_BUFF",
+		"ui/icon/eternalholydragon/board_cxsl_26"
+	},
+	{
+		1,
+		10,
+		"三叶草-死亡降气",
+		"覆盖范围内进行挑战，敌阵精灵死亡时降低敌阵全体精灵30气势",
+		{
+			{
+				0,
+				-1
+			},
+			{
+				0,
+				1
+			}
+		},
+		"MY_TEAM_BUFF",
+		"ui/icon/eternalholydragon/board_cxsl_26"
+	},
+	{
+		1,
+		11,
+		"泉水-恢复状态",
+		"覆盖范围内挑战敌阵后，回满该关上阵精灵血量",
+		{
+			{
+				-1,
+				0
+			},
+			{
+				1,
+				0
+			},
+			{
+				0,
+				-1
+			},
+			{
+				0,
+				1
+			}
+		},
+		"MY_TEAM_FULL_HP",
+		"ui/icon/eternalholydragon/board_cxsl_24"
+	},
+	{
+		1,
+		12,
+		"泉水-恢复状态",
+		"覆盖范围内挑战敌阵后，回满该关上阵精灵血量",
+		{
+			{
+				-1,
+				0
+			},
+			{
+				1,
+				0
+			}
+		},
+		"MY_TEAM_FULL_HP",
+		"ui/icon/eternalholydragon/board_cxsl_23"
+	},
+	{
+		1,
+		13,
+		"泉水-恢复状态",
+		"覆盖范围内挑战敌阵后，回满该关上阵精灵血量",
+		{
+			{
+				0,
+				-1
+			},
+			{
+				0,
+				1
+			}
+		},
+		"MY_TEAM_FULL_HP",
+		"ui/icon/eternalholydragon/board_cxsl_23"
+	},
+	{
+		1,
+		14,
+		"铲子",
+		"清理初始路障的道具-仅可放置在有锁链的格子处",
+		nil,
+		"CLEAR_LAND_MONSTER",
+		"ui/icon/eternalholydragon/board_cxsl_30"
+	}
+}
+local t_eternal_holy_dragon_clg_item_define = {
+	{
+		dataList[1],
+		dataList[2],
+		dataList[3],
+		dataList[4],
+		dataList[5],
+		dataList[6],
+		dataList[7],
+		dataList[8],
+		dataList[9],
+		dataList[10],
+		dataList[11],
+		dataList[12],
+		dataList[13],
+		dataList[14]
+	}
+}
+
+t_eternal_holy_dragon_clg_item_define.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_eternal_holy_dragon_clg_item_define

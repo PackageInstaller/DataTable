@@ -1,0 +1,340 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_mainui_jump_right.lua
+
+module("logicconfig.config.t_mainui_jump_right", package.seeall)
+
+local title = {
+	redId = 2,
+	name = 7,
+	isOff = 8,
+	jumpTo = 4,
+	viewName = 10,
+	height = 12,
+	showTimeType = 9,
+	funcId = 3,
+	id = 1,
+	icon = 6,
+	width = 11,
+	sortValue = 5
+}
+local dataList = {
+	{
+		1,
+		"-309",
+		60,
+		"event#escort_startfindnpc",
+		1,
+		"hs_bg20",
+		"家族护送",
+		1,
+		1,
+		"",
+		0,
+		0
+	},
+	{
+		2,
+		"ID_WORLD_BOSS_PRE_1",
+		93,
+		"ui#worldbosspopupview&&report_behavior#201463",
+		2,
+		"btn_ls_01",
+		"世界魔王",
+		1,
+		1,
+		"",
+		0,
+		0
+	},
+	{
+		3,
+		"ID_WORLD_BOSS_PRE_2",
+		93,
+		"ui#worldbosspopupview&&report_behavior#201463",
+		3,
+		"btn_xg_01",
+		"世界魔王",
+		1,
+		1,
+		"",
+		0,
+		0
+	},
+	{
+		4,
+		"ID_WORLD_BOSS_PRE_3",
+		93,
+		"ui#worldbosspopupview&&report_behavior#201463",
+		4,
+		"btn_lxl_01",
+		"世界魔王",
+		1,
+		1,
+		"",
+		0,
+		0
+	},
+	{
+		5,
+		"ID_WORLD_BOSS_PRE_4",
+		93,
+		"ui#worldbosspopupview&&report_behavior#201463",
+		5,
+		"btn_cyl_01",
+		"世界魔王",
+		1,
+		1,
+		"",
+		0,
+		0
+	},
+	{
+		6,
+		"ID_WORLD_BOSS_PRE_5",
+		93,
+		"ui#worldbosspopupview&&report_behavior#201463",
+		6,
+		"btn_zl_01",
+		"世界魔王",
+		1,
+		1,
+		"",
+		0,
+		0
+	},
+	{
+		7,
+		"ID_WORLD_BOSS_PRE_6",
+		93,
+		"ui#worldbosspopupview&&report_behavior#201463",
+		7,
+		"btn_wxl_01",
+		"世界魔王",
+		1,
+		1,
+		"",
+		0,
+		0
+	},
+	{
+		8,
+		"ID_WORLD_BOSS_PRE_7",
+		93,
+		"ui#worldbosspopupview&&report_behavior#201463",
+		8,
+		"btn_wxl_01",
+		"世界魔王",
+		1,
+		1,
+		"",
+		0,
+		0
+	},
+	{
+		9,
+		"ID_WORLD_BOSS_PRE_8",
+		93,
+		"ui#worldbosspopupview&&report_behavior#201463",
+		9,
+		"btn_ngmw_01",
+		"世界魔王",
+		1,
+		1,
+		"",
+		0,
+		0
+	},
+	{
+		10,
+		"ID_WORLD_BOSS_PRE_9",
+		93,
+		"ui#worldbosspopupview&&report_behavior#201463",
+		10,
+		"btn_ngmw_02",
+		"世界魔王",
+		1,
+		1,
+		"",
+		0,
+		0
+	},
+	{
+		11,
+		"-310",
+		736,
+		"ui#doubleeleven#2",
+		11,
+		"icon_tip_17",
+		"限时秒杀",
+		0,
+		1,
+		"",
+		0,
+		0
+	},
+	{
+		12,
+		"-313",
+		729,
+		"func#729&&report_behavior#201415",
+		12,
+		"board_dfs_17",
+		"巅峰赛",
+		0,
+		1,
+		"",
+		0,
+		0
+	},
+	{
+		13,
+		"-390",
+		60,
+		"func#60",
+		13,
+		"board_jiazuyanhui_05",
+		"家族宴会",
+		0,
+		1,
+		"",
+		0,
+		0
+	},
+	{
+		14,
+		"-416",
+		1106,
+		"event#Enter_Young_Champion_King_Room",
+		14,
+		"btn_snjjw_s1_01",
+		"少年竞技王",
+		0,
+		1,
+		"",
+		0,
+		0
+	},
+	{
+		15,
+		"-472",
+		1106,
+		"event#Enter_Teen_Champion_King_Schedule#501001",
+		15,
+		"btn_snjjw_s1_01",
+		"少年竞技王",
+		0,
+		1,
+		"",
+		0,
+		0
+	},
+	{
+		16,
+		"LanternFestival_MainUI_Channel_RedPoint_1",
+		1319,
+		"ui#chat#16",
+		16,
+		"btn_yuanxiaodengmi",
+		"山海灯谜会",
+		0,
+		1,
+		"",
+		0,
+		0
+	},
+	{
+		17,
+		"LanternFestival_MainUI_Channel_RedPoint_2",
+		1319,
+		"ui#chat#16",
+		17,
+		"btn_yuanxiaodengmi",
+		"山海灯谜会",
+		0,
+		1,
+		"",
+		0,
+		0
+	},
+	{
+		18,
+		"-490",
+		1337,
+		"ui#martialcontestfinalview#583001",
+		18,
+		"btn_bwzf_04",
+		"比武争锋·准备",
+		0,
+		1,
+		"martialcontestfinaljumpview",
+		0,
+		0
+	},
+	{
+		19,
+		"-506",
+		1376,
+		"event#openyoutharenathirdview",
+		19,
+		"btn_snjjds_11",
+		"少年竞技王",
+		0,
+		1,
+		"",
+		0,
+		0
+	},
+	{
+		20,
+		"-507",
+		1278,
+		"ui#survivalkinglevelpresetview#529002",
+		20,
+		"sjb_tip_yaohuachen",
+		"生存战报名",
+		0,
+		1,
+		"",
+		0,
+		0
+	}
+}
+local t_mainui_jump_right = {
+	dataList[1],
+	dataList[2],
+	dataList[3],
+	dataList[4],
+	dataList[5],
+	dataList[6],
+	dataList[7],
+	dataList[8],
+	dataList[9],
+	dataList[10],
+	dataList[11],
+	dataList[12],
+	dataList[13],
+	dataList[14],
+	dataList[15],
+	dataList[16],
+	dataList[17],
+	dataList[18],
+	dataList[19],
+	dataList[20]
+}
+
+t_mainui_jump_right.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_mainui_jump_right

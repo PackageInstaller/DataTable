@@ -1,0 +1,295 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_dragon_man_clg_buff_mark.lua
+
+module("logicconfig.config.t_dragon_man_clg_buff_mark", package.seeall)
+
+local title = {
+	mMarkDesc = 5,
+	eMarkDesc = 4,
+	markId = 2,
+	bgPicPath = 6,
+	actRaceIds = 3,
+	activityId = 1
+}
+local dataList = {
+	{
+		552001,
+		1,
+		{
+			15021,
+			15037
+		},
+		"铠甲1",
+		"勇士1",
+		"board_tz_yanlongxia_05"
+	},
+	{
+		552001,
+		2,
+		{
+			16024
+		},
+		"铠甲2",
+		"勇士2",
+		"board_tz_yanlongxia_06"
+	},
+	{
+		552001,
+		3,
+		{
+			17015,
+			17002
+		},
+		"铠甲3",
+		"勇士3",
+		"board_tz_yanlongxia_07"
+	},
+	{
+		552001,
+		4,
+		{
+			12011,
+			12035
+		},
+		"铠甲4",
+		"勇士4",
+		"board_tz_yanlongxia_08"
+	},
+	{
+		552001,
+		5,
+		{
+			14016,
+			10313
+		},
+		"铠甲5",
+		"勇士5",
+		"board_tz_yanlongxia_09"
+	},
+	{
+		552001,
+		6,
+		{
+			11014,
+			11030
+		},
+		"铠甲6",
+		"勇士6",
+		"board_tz_yanlongxia_10"
+	},
+	{
+		552001,
+		7,
+		{
+			14013,
+			10324
+		},
+		"铠甲1",
+		"勇士1",
+		"board_tz_yanlongxia_05"
+	},
+	{
+		552001,
+		8,
+		{
+			14036
+		},
+		"铠甲2",
+		"勇士2",
+		"board_tz_yanlongxia_06"
+	},
+	{
+		552001,
+		9,
+		{
+			14033,
+			14020
+		},
+		"铠甲3",
+		"勇士3",
+		"board_tz_yanlongxia_07"
+	},
+	{
+		552001,
+		10,
+		{
+			16035,
+			16019
+		},
+		"铠甲4",
+		"勇士4",
+		"board_tz_yanlongxia_08"
+	},
+	{
+		552001,
+		11,
+		{
+			16034,
+			16016
+		},
+		"铠甲5",
+		"勇士5",
+		"board_tz_yanlongxia_09"
+	},
+	{
+		552001,
+		12,
+		{
+			12036,
+			12012
+		},
+		"铠甲6",
+		"勇士6",
+		"board_tz_yanlongxia_10"
+	},
+	{
+		552001,
+		13,
+		{
+			12037
+		},
+		"铠甲1",
+		"勇士1",
+		"board_tz_yanlongxia_05"
+	},
+	{
+		552001,
+		14,
+		{
+			14040,
+			14018
+		},
+		"铠甲2",
+		"勇士2",
+		"board_tz_yanlongxia_06"
+	},
+	{
+		552001,
+		15,
+		{
+			15042,
+			15018
+		},
+		"铠甲3",
+		"勇士3",
+		"board_tz_yanlongxia_07"
+	},
+	{
+		552001,
+		16,
+		{
+			15043,
+			10330
+		},
+		"铠甲4",
+		"勇士4",
+		"board_tz_yanlongxia_08"
+	},
+	{
+		552001,
+		17,
+		{
+			14036
+		},
+		"铠甲5",
+		"勇士5",
+		"board_tz_yanlongxia_09"
+	},
+	{
+		552001,
+		18,
+		{
+			17024
+		},
+		"铠甲6",
+		"勇士6",
+		"board_tz_yanlongxia_10"
+	},
+	{
+		552001,
+		19,
+		{
+			16040,
+			16010
+		},
+		"铠甲1",
+		"勇士1",
+		"board_tz_yanlongxia_05"
+	},
+	{
+		552001,
+		20,
+		{
+			11032,
+			11012
+		},
+		"铠甲2",
+		"勇士2",
+		"board_tz_yanlongxia_06"
+	},
+	{
+		552001,
+		21,
+		{
+			16040,
+			16010
+		},
+		"铠甲3",
+		"勇士3",
+		"board_tz_yanlongxia_07"
+	},
+	{
+		552001,
+		22,
+		{
+			11035,
+			10345
+		},
+		"铠甲4",
+		"勇士4",
+		"board_tz_yanlongxia_08"
+	}
+}
+local t_dragon_man_clg_buff_mark = {
+	[552001] = {
+		dataList[1],
+		dataList[2],
+		dataList[3],
+		dataList[4],
+		dataList[5],
+		dataList[6],
+		dataList[7],
+		dataList[8],
+		dataList[9],
+		dataList[10],
+		dataList[11],
+		dataList[12],
+		dataList[13],
+		dataList[14],
+		dataList[15],
+		dataList[16],
+		dataList[17],
+		dataList[18],
+		dataList[19],
+		dataList[20],
+		dataList[21],
+		dataList[22]
+	}
+}
+
+t_dragon_man_clg_buff_mark.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_dragon_man_clg_buff_mark

@@ -1,0 +1,356 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_yuanxiao_kings_exchange_task.lua
+
+module("logicconfig.config.t_yuanxiao_kings_exchange_task", package.seeall)
+
+local title = {
+	periodType = 3,
+	viewId = 8,
+	taskType = 4,
+	jumpTo = 7,
+	prize = 10,
+	taskTitle = 5,
+	taskId = 2,
+	taskDesc = 6,
+	maxProgress = 9,
+	taskPlanId = 1
+}
+local dataList = {
+	{
+		1,
+		1,
+		"daily",
+		1,
+		"日常登录",
+		"每日登录1次",
+		"",
+		0,
+		1,
+		"10:240010:1"
+	},
+	{
+		1,
+		2,
+		"daily",
+		129,
+		"灵纹升级",
+		"灵纹强化1次",
+		"func#9#5",
+		0,
+		1,
+		"10:240009:1"
+	},
+	{
+		1,
+		3,
+		"daily",
+		2,
+		"主线副本",
+		"主线副本通关10次",
+		"ui#plotcopyview#0",
+		0,
+		10,
+		"10:240007:1"
+	},
+	{
+		1,
+		4,
+		"daily",
+		18,
+		"冒险幻境",
+		"冒险幻境通关10次",
+		"ui#rescopyview",
+		0,
+		10,
+		"10:240010:2"
+	},
+	{
+		1,
+		5,
+		"daily",
+		122,
+		"每日活跃",
+		"累积1天获得30点活跃度",
+		"func#5",
+		0,
+		1,
+		"10:240008:1"
+	},
+	{
+		1,
+		6,
+		"daily",
+		122,
+		"每日活跃",
+		"累积1天获得60点活跃度",
+		"func#5",
+		0,
+		1,
+		"10:240008:1"
+	},
+	{
+		1,
+		7,
+		"daily",
+		122,
+		"每日活跃",
+		"累积1天获得90点活跃度",
+		"func#5",
+		0,
+		1,
+		"10:240009:1"
+	},
+	{
+		1,
+		8,
+		"daily",
+		122,
+		"每日活跃",
+		"累积1天获得120点活跃度",
+		"func#5",
+		0,
+		1,
+		"10:240006:1"
+	},
+	{
+		2,
+		1,
+		"daily",
+		1,
+		"日常登录",
+		"每日登录1次",
+		"",
+		0,
+		1,
+		"10:240011:1"
+	},
+	{
+		2,
+		2,
+		"daily",
+		129,
+		"灵纹升级",
+		"灵纹强化1次",
+		"func#9#5",
+		0,
+		1,
+		"10:240012:1"
+	},
+	{
+		2,
+		3,
+		"daily",
+		2,
+		"主线副本",
+		"主线副本通关10次",
+		"ui#plotcopyview#0",
+		0,
+		10,
+		"10:240013:1"
+	},
+	{
+		2,
+		4,
+		"daily",
+		18,
+		"冒险幻境",
+		"冒险幻境通关10次",
+		"ui#rescopyview",
+		0,
+		10,
+		"10:240014:2"
+	},
+	{
+		2,
+		5,
+		"daily",
+		122,
+		"每日活跃",
+		"累积1天获得30点活跃度",
+		"func#5",
+		0,
+		1,
+		"10:240015:1"
+	},
+	{
+		2,
+		6,
+		"daily",
+		122,
+		"每日活跃",
+		"累积1天获得60点活跃度",
+		"func#5",
+		0,
+		1,
+		"10:240016:1"
+	},
+	{
+		2,
+		7,
+		"daily",
+		122,
+		"每日活跃",
+		"累积1天获得90点活跃度",
+		"func#5",
+		0,
+		1,
+		"10:240011:1"
+	},
+	{
+		2,
+		8,
+		"daily",
+		122,
+		"每日活跃",
+		"累积1天获得120点活跃度",
+		"func#5",
+		0,
+		1,
+		"10:240016:1"
+	},
+	{
+		3,
+		1,
+		"daily",
+		1,
+		"日常登录",
+		"每日登录1次",
+		"",
+		0,
+		1,
+		"10:240017:1"
+	},
+	{
+		3,
+		2,
+		"daily",
+		129,
+		"灵纹升级",
+		"灵纹强化1次",
+		"func#9#5",
+		0,
+		1,
+		"10:240018:1"
+	},
+	{
+		3,
+		3,
+		"daily",
+		2,
+		"主线副本",
+		"主线副本通关10次",
+		"ui#plotcopyview#0",
+		0,
+		10,
+		"10:240019:1"
+	},
+	{
+		3,
+		4,
+		"daily",
+		18,
+		"冒险幻境",
+		"冒险幻境通关10次",
+		"ui#rescopyview",
+		0,
+		10,
+		"10:240020:2"
+	},
+	{
+		3,
+		5,
+		"daily",
+		122,
+		"每日活跃",
+		"累积1天获得30点活跃度",
+		"func#5",
+		0,
+		1,
+		"10:240021:1"
+	},
+	{
+		3,
+		6,
+		"daily",
+		122,
+		"每日活跃",
+		"累积1天获得60点活跃度",
+		"func#5",
+		0,
+		1,
+		"10:240022:1"
+	},
+	{
+		3,
+		7,
+		"daily",
+		122,
+		"每日活跃",
+		"累积1天获得90点活跃度",
+		"func#5",
+		0,
+		1,
+		"10:240017:1"
+	},
+	{
+		3,
+		8,
+		"daily",
+		122,
+		"每日活跃",
+		"累积1天获得120点活跃度",
+		"func#5",
+		0,
+		1,
+		"10:240022:1"
+	}
+}
+local t_yuanxiao_kings_exchange_task = {
+	{
+		dataList[1],
+		dataList[2],
+		dataList[3],
+		dataList[4],
+		dataList[5],
+		dataList[6],
+		dataList[7],
+		dataList[8]
+	},
+	{
+		dataList[9],
+		dataList[10],
+		dataList[11],
+		dataList[12],
+		dataList[13],
+		dataList[14],
+		dataList[15],
+		dataList[16]
+	},
+	{
+		dataList[17],
+		dataList[18],
+		dataList[19],
+		dataList[20],
+		dataList[21],
+		dataList[22],
+		dataList[23],
+		dataList[24]
+	}
+}
+
+t_yuanxiao_kings_exchange_task.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_yuanxiao_kings_exchange_task

@@ -1,0 +1,301 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logic/extensions/scuffle/view/ScuffleMatchView.lua
+
+module("logic.extensions.scuffle.view.ScuffleMatchView", package.seeall)
+
+local ScuffleMatchView = class("ScuffleMatchView", ViewComponent)
+
+function ScuffleMatchView:ctor()
+	ScuffleMatchView.super.ctor(self)
+
+	self._waitTime = 0
+end
+
+function ScuffleMatchView:buildUI()
+	ScuffleMatchView.super.buildUI(self)
+
+	self._myHead = self:getGo("animNode/root/left/information/portrait")
+	self._myTxtRank = self:getTxt("animNode/root/left/information/group/Text03")
+	self._myTxtName = self:getTxt("animNode/root/left/information/group/Text01")
+	self._myTxtAreaName = self:getTxt("animNode/root/left/information/group/Text02")
+	self._myLevel = self:getGo("animNode/root/left/information/icon")
+	self._myLevelName = self:getTxt("animNode/root/left/information/icon/txt")
+	self._enemyParent = self:getGo("animNode/root/right/information")
+	self._enemyHead = self:getGo("animNode/root/right/information/portrait")
+	self._enemyTxtRank = self:getTxt("animNode/root/right/information/group/Text03")
+	self._enemyTxtName = self:getTxt("animNode/root/right/information/group/Text01")
+	self._enemyTxtAreaName = self:getTxt("animNode/root/right/information/group/Text02")
+	self._enemyLevel = self:getGo("animNode/root/right/information/icon")
+	self._enemyLevelName = self:getTxt("animNode/root/right/information/icon/txt")
+	self._txtCountdown = self:getTxt("txtCountdown")
+	self._btnCancel = self:getBtn("animNode/root/Image")
+	self._txtCancel = self:getTxt("animNode/root/Image/text")
+	self._goEffectVS = self:getGo("effectVS")
+	self._goEffectSuccess = self:getGo("effectSuccess")
+	self._questionMark = self:getGo("animNode/root/right/tiao_red/questionMark")
+	self._animator = goutil.findChildComponent(self.mainGO, "animNode", "Animator")
+end
+
+function ScuffleMatchView:bindEvents()
+	ScuffleMatchView.super.bindEvents(self)
+	self._btnCancel:AddClickListener(self._onClickCancel, self)
+end
+
+function ScuffleMatchView:unbindEvents()
+	ScuffleMatchView.super.unbindEvents(self)
+	self._btnCancel:RemoveClickListener()
+end
+
+function ScuffleMatchView:onEnter()
+	ScuffleMatchView.super.onEnter(self)
+	GlobalDispatcher:addListener(GlobalNotify.SF_NotifyGameStartRes, self._onMatchingSuccessRes, self)
+	GlobalDispatcher:addListener(GlobalNotify.SF_CancelMatchingRes, self._onCancelMatchingRes, self)
+	GlobalDispatcher:addListener(GlobalNotify.SF_NotifyMatchingOverTimeRes, self._onMatchingOverTimeRes, self)
+	GlobalDispatcher:addListener(GlobalNotify.SF_NotifyMatchFailRes, self._onMatchingFailRes, self)
+	GlobalDispatcher:addListener(GlobalNotify.SF_NotifyGameEndRes, self._onGameEndRes, self)
+	BattleSettlementModel.instance:clearChangeSetId()
+
+	self._waitTime = 0
+	self._isCanSendCancel = false
+
+	settimer(1, self._onSecond, self)
+	self._btnCancel.gameObject:SetActive(true)
+	self:_setMyInfo()
+	self:_setEnemyVisible(false)
+	self:_setBtnCancelTxt(false)
+	self:_setIsMatchSuccess(false)
+	self:_updateCountdown()
+	self:_resetEffectGo()
+	self:_loadEffect()
+	self:_showVsEffect()
+
+	local time = ScuffleConfig.instance:getCommonValueByKey("BEFORE_MATCH_TIME")
+
+	self._tweenStartDelay = TweenUtil.DoDelay(checknumber(time), function()
+		self:_sendMatchReq()
+
+		self._isCanSendCancel = true
+	end)
+end
+
+function ScuffleMatchView:onExit()
+	ScuffleMatchView.super.onExit(self)
+	GlobalDispatcher:removeListener(GlobalNotify.SF_NotifyGameStartRes, self._onMatchingSuccessRes, self)
+	GlobalDispatcher:removeListener(GlobalNotify.SF_CancelMatchingRes, self._onCancelMatchingRes, self)
+	GlobalDispatcher:removeListener(GlobalNotify.SF_NotifyMatchingOverTimeRes, self._onMatchingOverTimeRes, self)
+	GlobalDispatcher:removeListener(GlobalNotify.SF_NotifyMatchFailRes, self._onMatchingFailRes, self)
+	GlobalDispatcher:removeListener(GlobalNotify.SF_NotifyGameEndRes, self._onGameEndRes, self)
+	removetimer(self._onSecond, self)
+	self:_removeTween()
+	self:_removeLevelIcon()
+	self:_removeEffect()
+	HeadItemController.instance:resetHeadCell(self._myHead)
+	HeadItemController.instance:resetHeadCell(self._enemyHead)
+end
+
+function ScuffleMatchView:_onClickClose()
+	self:close()
+end
+
+function ScuffleMatchView:_onClickCancel()
+	if not self._isCanSendCancel then
+		self:_onClickClose()
+
+		return
+	end
+
+	if not self:_getIsMatchSuccess() then
+		ScuffleAgent.instance:sendSF_CancelMatchingReq()
+	end
+end
+
+function ScuffleMatchView:_onMatchingSuccessRes()
+	self:_setEnemyVisible(true)
+	self:_setBtnCancelTxt(true)
+	self:_setIsMatchSuccess(true)
+	self:_setEnemyInfo()
+
+	local time = ScuffleConfig.instance:getCommonValueByKey("AFTER_MATCH_TIME")
+
+	self._enterNextTween = TweenUtil.DoDelay(checknumber(time), function()
+		self:_onClickClose()
+		UIStateManager.instance:push(ViewName.ScuffleBanView)
+	end)
+
+	self:_showSucessEffect()
+	self._animator:Play("fx_ui_pipeichenggong")
+end
+
+function ScuffleMatchView:_onCancelMatchingRes(isSuccess)
+	if isSuccess then
+		self:_onClickClose()
+	end
+end
+
+function ScuffleMatchView:_onMatchingOverTimeRes()
+	FloatWordMgr.instance:show(lang("scuffleTip4"))
+	self:_onClickClose()
+end
+
+function ScuffleMatchView:_onMatchingFailRes()
+	FloatWordMgr.instance:show("匹配失败")
+	self:_onClickClose()
+end
+
+function ScuffleMatchView:_onGameEndRes()
+	ScuffleController.instance:onGameEndRes(function()
+		GlobalDispatcher:dispatch(GlobalNotify.ScuffleUpdateDailyGainedScore)
+		self:_onClickClose()
+	end)
+end
+
+function ScuffleMatchView:_onSecond()
+	self:_updateCountdown()
+end
+
+function ScuffleMatchView:_updateCountdown()
+	self._txtCountdown.text = GameUtil.FormatTimeSymbol(self._waitTime)
+	self._waitTime = self._waitTime + 1
+end
+
+function ScuffleMatchView:_setMyInfo()
+	self._myTxtRank.text = "排名 " .. ScuffleModel.instance:getMyRank()
+	self._myTxtName.text = RoleModel.instance:getUserName()
+	self._myTxtAreaName.text = RoleModel.instance:getAreaName()
+
+	HeadItemController.instance:setMyHeadCell(self._myHead)
+
+	local cfg = ScuffleController.instance:getCurLevelCfg()
+
+	if cfg then
+		uGuiUtil.setSpriteToImage(self._myLevel, uGuiUtil.SpriteType.BigBg, string.format(ScuffleModel.LevelPath, cfg.icon))
+
+		self._myLevelName.text = cfg.levelName
+	end
+end
+
+function ScuffleMatchView:_setEnemyInfo()
+	local rank = ScuffleModel.instance:getEnemyRank()
+
+	if checknumber(rank) < 0 then
+		rank = lang("未上榜")
+	end
+
+	self._enemyTxtRank.text = "排名 " .. rank
+	self._enemyTxtName.text = ScuffleModel.instance:getEnemyName()
+	self._enemyTxtAreaName.text = ScuffleModel.instance:getEnemyAreaName()
+
+	HeadItemController.instance:setHeadCellByInfo(self._enemyHead, ScuffleModel.instance:getEnemyHeadInfo())
+
+	local cfg = ScuffleConfig.instance:getLevelCfgByScore(ScuffleModel.instance:getEnemyScore())
+
+	if cfg then
+		uGuiUtil.setSpriteToImage(self._enemyLevel, uGuiUtil.SpriteType.BigBg, string.format(ScuffleModel.LevelPath, cfg.icon))
+
+		self._enemyLevelName.text = cfg.levelName
+	end
+end
+
+function ScuffleMatchView:_removeLevelIcon()
+	local myLevel = Framework.ImageBigBG.Get(self._myLevel)
+
+	myLevel:ClearImage()
+
+	local enemyLevel = Framework.ImageBigBG.Get(self._enemyLevel)
+
+	enemyLevel:ClearImage()
+end
+
+function ScuffleMatchView:_removeHead()
+	MaterialMgr.resetAll(self._myHead)
+	MaterialMgr.resetAll(self._enemyHead)
+end
+
+function ScuffleMatchView:_sendMatchReq()
+	local isFun = self:getFirstParam()
+
+	ScuffleAgent.instance:sendSF_StartMatchingReq(isFun)
+end
+
+function ScuffleMatchView:_setEnemyVisible(isVisible)
+	self._enemyParent:SetActive(isVisible)
+	self._questionMark:SetActive(not isVisible)
+end
+
+function ScuffleMatchView:_setBtnCancelTxt(isMatchSuccess)
+	self._txtCancel.text = isMatchSuccess and "匹配成功" or "取消匹配"
+end
+
+function ScuffleMatchView:_setIsMatchSuccess(isSuccess)
+	self._isMatchSuccess = isSuccess
+end
+
+function ScuffleMatchView:_getIsMatchSuccess()
+	return self._isMatchSuccess
+end
+
+function ScuffleMatchView:_removeTween()
+	if self._tweenStartDelay then
+		self._tweenStartDelay:Kill()
+
+		self._tweenStartDelay = nil
+	end
+
+	if self._enterNextTween then
+		self._enterNextTween:Kill()
+
+		self._enterNextTween = nil
+	end
+end
+
+function ScuffleMatchView:_loadEffect()
+	self._vsUIEffect = UIEffectManager.instance:playEffect(self, ScuffleMatchViewPresentor.VSPath, self._goEffectVS.transform, 0, 0, true, false)
+
+	self._vsUIEffect:setParent(self._goEffectVS.transform)
+	self._vsUIEffect:setScale(1)
+
+	self._imgUIEffect = UIEffectManager.instance:playEffect(self, ScuffleMatchViewPresentor.IngPath, self._goEffectVS.transform, 0, 0, true, false)
+
+	self._imgUIEffect:setParent(self._goEffectVS.transform)
+	self._imgUIEffect:setScale(1)
+	self._imgUIEffect:setLocalPos(0, 298, 0)
+
+	self._successUIEffect = UIEffectManager.instance:playEffect(self, ScuffleMatchViewPresentor.SuccessPath, self._goEffectSuccess.transform, 0, 0, true, false)
+
+	self._successUIEffect:setParent(self._goEffectSuccess.transform)
+	self._successUIEffect:setScale(1)
+end
+
+function ScuffleMatchView:_removeEffect()
+	if self._vsUIEffect then
+		UIEffectManager.instance:stopEffect(self._vsUIEffect)
+
+		self._vsUIEffect = nil
+	end
+
+	if self._imgUIEffect then
+		UIEffectManager.instance:stopEffect(self._imgUIEffect)
+
+		self._imgUIEffect = nil
+	end
+
+	if self._successUIEffect then
+		UIEffectManager.instance:stopEffect(self._successUIEffect)
+
+		self._successUIEffect = nil
+	end
+end
+
+function ScuffleMatchView:_showVsEffect()
+	self._goEffectVS:SetActive(true)
+end
+
+function ScuffleMatchView:_showSucessEffect()
+	self._goEffectSuccess:SetActive(true)
+end
+
+function ScuffleMatchView:_resetEffectGo()
+	self._goEffectVS:SetActive(false)
+	self._goEffectSuccess:SetActive(false)
+end
+
+return ScuffleMatchView

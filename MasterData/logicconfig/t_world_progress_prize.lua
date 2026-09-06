@@ -1,0 +1,310 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_world_progress_prize.lua
+
+module("logicconfig.config.t_world_progress_prize", package.seeall)
+
+local title = {
+	prizeId = 2,
+	needProgress = 3,
+	fx = 6,
+	prizePlanId = 1,
+	pic = 5,
+	prize = 4
+}
+local dataList = {
+	{
+		1,
+		1,
+		"2000000",
+		"60:1:500",
+		"bg_choubeizhounianqing_01",
+		"20230331/choubeizhounianqing/fx_ui_zhounian_jiemian01"
+	},
+	{
+		1,
+		2,
+		"4500000",
+		"60:1:500",
+		"bg_choubeizhounianqing_02",
+		"20230331/choubeizhounianqing/fx_ui_zhounian_jiemian01"
+	},
+	{
+		1,
+		3,
+		"7000000",
+		"60:1:500",
+		"bg_choubeizhounianqing_03",
+		"20230331/choubeizhounianqing/fx_ui_zhounian_jiemian02"
+	},
+	{
+		1,
+		4,
+		"9500000",
+		"60:1:500",
+		"bg_choubeizhounianqing_03",
+		"20230331/choubeizhounianqing/fx_ui_zhounian_jiemian02"
+	},
+	{
+		1,
+		5,
+		"12000000",
+		"60:1:500",
+		"bg_choubeizhounianqing_04",
+		"20230331/choubeizhounianqing/fx_ui_zhounian_jiemian02"
+	},
+	{
+		1,
+		6,
+		"14500000",
+		"60:1:500",
+		"bg_choubeizhounianqing_04",
+		"20230331/choubeizhounianqing/fx_ui_zhounian_jiemian02"
+	},
+	{
+		1,
+		7,
+		"17000000",
+		"60:1:500",
+		"bg_choubeizhounianqing_05",
+		"20230331/choubeizhounianqing/fx_ui_zhounian_jiemian02"
+	},
+	{
+		1,
+		8,
+		"19500000",
+		"60:1:500",
+		"bg_choubeizhounianqing_05",
+		"20230331/choubeizhounianqing/fx_ui_zhounian_jiemian02"
+	},
+	{
+		1,
+		9,
+		"22000000",
+		"60:1:500",
+		"bg_choubeizhounianqing_05",
+		"20230331/choubeizhounianqing/fx_ui_zhounian_jiemian03"
+	},
+	{
+		1,
+		10,
+		"25000000",
+		"60:1:500",
+		"bg_choubeizhounianqing_06",
+		"20230331/choubeizhounianqing/fx_ui_zhounian_jiemian03"
+	},
+	{
+		2,
+		1,
+		"5000",
+		"60:1:1500",
+		"bg_choubeizhounianqing_01",
+		"20230331/choubeizhounianqing/fx_ui_zhounian_jiemian01"
+	},
+	{
+		2,
+		2,
+		"10000",
+		"4:36:10",
+		"bg_choubeizhounianqing_02",
+		"20230331/choubeizhounianqing/fx_ui_zhounian_jiemian01"
+	},
+	{
+		2,
+		3,
+		"20000",
+		"4:510022:5",
+		"bg_choubeizhounianqing_03",
+		"20230331/choubeizhounianqing/fx_ui_zhounian_jiemian02"
+	},
+	{
+		2,
+		4,
+		"50000",
+		"8:1:5000000",
+		"bg_choubeizhounianqing_03",
+		"20230331/choubeizhounianqing/fx_ui_zhounian_jiemian02"
+	},
+	{
+		2,
+		5,
+		"80000",
+		"4:30006:50",
+		"bg_choubeizhounianqing_04",
+		"20230331/choubeizhounianqing/fx_ui_zhounian_jiemian02"
+	},
+	{
+		2,
+		6,
+		"120000",
+		"4:70018:1",
+		"bg_choubeizhounianqing_04",
+		"20230331/choubeizhounianqing/fx_ui_zhounian_jiemian02"
+	},
+	{
+		2,
+		7,
+		"160000",
+		"60:1:1500",
+		"bg_choubeizhounianqing_05",
+		"20230331/choubeizhounianqing/fx_ui_zhounian_jiemian02"
+	},
+	{
+		2,
+		8,
+		"200000",
+		"8:1:5000000",
+		"bg_choubeizhounianqing_05",
+		"20230331/choubeizhounianqing/fx_ui_zhounian_jiemian02"
+	},
+	{
+		2,
+		9,
+		"250000",
+		"4:30006:50",
+		"bg_choubeizhounianqing_05",
+		"20230331/choubeizhounianqing/fx_ui_zhounian_jiemian03"
+	},
+	{
+		2,
+		10,
+		"300000",
+		"2:261:1",
+		"bg_choubeizhounianqing_06",
+		"20230331/choubeizhounianqing/fx_ui_zhounian_jiemian03"
+	},
+	{
+		3,
+		1,
+		"1000000000000",
+		"10:595007:500",
+		"bg_choubeizhounianqing_01",
+		"20230331/choubeizhounianqing/fx_ui_zhounian_jiemian01"
+	},
+	{
+		3,
+		2,
+		"2000000000000",
+		"10:595007:500",
+		"bg_choubeizhounianqing_02",
+		"20230331/choubeizhounianqing/fx_ui_zhounian_jiemian01"
+	},
+	{
+		3,
+		3,
+		"3000000000000",
+		"10:595007:500",
+		"bg_choubeizhounianqing_03",
+		"20230331/choubeizhounianqing/fx_ui_zhounian_jiemian02"
+	},
+	{
+		3,
+		4,
+		"4000000000000",
+		"10:595007:500",
+		"bg_choubeizhounianqing_03",
+		"20230331/choubeizhounianqing/fx_ui_zhounian_jiemian02"
+	},
+	{
+		3,
+		5,
+		"5000000000000",
+		"10:595007:500",
+		"bg_choubeizhounianqing_04",
+		"20230331/choubeizhounianqing/fx_ui_zhounian_jiemian02"
+	},
+	{
+		3,
+		6,
+		"6000000000000",
+		"10:595007:500",
+		"bg_choubeizhounianqing_04",
+		"20230331/choubeizhounianqing/fx_ui_zhounian_jiemian02"
+	},
+	{
+		3,
+		7,
+		"7000000000000",
+		"10:595007:500",
+		"bg_choubeizhounianqing_05",
+		"20230331/choubeizhounianqing/fx_ui_zhounian_jiemian02"
+	},
+	{
+		3,
+		8,
+		"8000000000000",
+		"10:595007:500",
+		"bg_choubeizhounianqing_05",
+		"20230331/choubeizhounianqing/fx_ui_zhounian_jiemian02"
+	},
+	{
+		3,
+		9,
+		"9000000000000",
+		"10:595007:500",
+		"bg_choubeizhounianqing_05",
+		"20230331/choubeizhounianqing/fx_ui_zhounian_jiemian03"
+	},
+	{
+		3,
+		10,
+		"10000000000000",
+		"10:595007:500",
+		"bg_choubeizhounianqing_06",
+		"20230331/choubeizhounianqing/fx_ui_zhounian_jiemian03"
+	}
+}
+local t_world_progress_prize = {
+	{
+		dataList[1],
+		dataList[2],
+		dataList[3],
+		dataList[4],
+		dataList[5],
+		dataList[6],
+		dataList[7],
+		dataList[8],
+		dataList[9],
+		dataList[10]
+	},
+	{
+		dataList[11],
+		dataList[12],
+		dataList[13],
+		dataList[14],
+		dataList[15],
+		dataList[16],
+		dataList[17],
+		dataList[18],
+		dataList[19],
+		dataList[20]
+	},
+	{
+		dataList[21],
+		dataList[22],
+		dataList[23],
+		dataList[24],
+		dataList[25],
+		dataList[26],
+		dataList[27],
+		dataList[28],
+		dataList[29],
+		dataList[30]
+	}
+}
+
+t_world_progress_prize.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_world_progress_prize

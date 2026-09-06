@@ -1,0 +1,159 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logic/proto/TitleExtension_pb.lua
+
+local protobuf = require("protobuf.protobuf")
+
+module("logic.proto.TitleExtension_pb", package.seeall)
+
+local tb = {}
+
+PM_LOADALLTITLEREQ_MSG = protobuf.Descriptor()
+PM_LOADALLTITLERES_MSG = protobuf.Descriptor()
+tb.PM_LOADALLTITLERES_TITLELIST_FIELD = protobuf.FieldDescriptor()
+PM_WEARTITLEREQ_MSG = protobuf.Descriptor()
+tb.PM_WEARTITLEREQ_TITLEID_FIELD = protobuf.FieldDescriptor()
+PM_WEARTITLERES_MSG = protobuf.Descriptor()
+tb.PM_WEARTITLERES_CURTITLEID_FIELD = protobuf.FieldDescriptor()
+PM_NOTIFYGAINTITLERES_MSG = protobuf.Descriptor()
+tb.PM_NOTIFYGAINTITLERES_TITLELIST_FIELD = protobuf.FieldDescriptor()
+PM_TITLEINFO_MSG = protobuf.Descriptor()
+tb.PM_TITLEINFO_TITLEID_FIELD = protobuf.FieldDescriptor()
+tb.PM_TITLEINFO_STATE_FIELD = protobuf.FieldDescriptor()
+tb.PM_TITLEINFO_OVERDUETIME_FIELD = protobuf.FieldDescriptor()
+tb.PM_TITLEINFO_GAINTIME_FIELD = protobuf.FieldDescriptor()
+PM_LOADALLTITLEREQ_MSG.name = "PM_LoadAllTitleReq"
+PM_LOADALLTITLEREQ_MSG.full_name = ".PM_LoadAllTitleReq"
+PM_LOADALLTITLEREQ_MSG.nested_types = {}
+PM_LOADALLTITLEREQ_MSG.enum_types = {}
+PM_LOADALLTITLEREQ_MSG.fields = {}
+PM_LOADALLTITLEREQ_MSG.is_extendable = false
+PM_LOADALLTITLEREQ_MSG.extensions = {}
+tb.PM_LOADALLTITLERES_TITLELIST_FIELD.name = "titleList"
+tb.PM_LOADALLTITLERES_TITLELIST_FIELD.full_name = ".PM_LoadAllTitleRes.titleList"
+tb.PM_LOADALLTITLERES_TITLELIST_FIELD.number = 1
+tb.PM_LOADALLTITLERES_TITLELIST_FIELD.index = 0
+tb.PM_LOADALLTITLERES_TITLELIST_FIELD.label = 3
+tb.PM_LOADALLTITLERES_TITLELIST_FIELD.has_default_value = false
+tb.PM_LOADALLTITLERES_TITLELIST_FIELD.default_value = {}
+tb.PM_LOADALLTITLERES_TITLELIST_FIELD.message_type = PM_TITLEINFO_MSG
+tb.PM_LOADALLTITLERES_TITLELIST_FIELD.type = 11
+tb.PM_LOADALLTITLERES_TITLELIST_FIELD.cpp_type = 10
+PM_LOADALLTITLERES_MSG.name = "PM_LoadAllTitleRes"
+PM_LOADALLTITLERES_MSG.full_name = ".PM_LoadAllTitleRes"
+PM_LOADALLTITLERES_MSG.nested_types = {}
+PM_LOADALLTITLERES_MSG.enum_types = {}
+PM_LOADALLTITLERES_MSG.fields = {
+	tb.PM_LOADALLTITLERES_TITLELIST_FIELD
+}
+PM_LOADALLTITLERES_MSG.is_extendable = false
+PM_LOADALLTITLERES_MSG.extensions = {}
+tb.PM_WEARTITLEREQ_TITLEID_FIELD.name = "titleId"
+tb.PM_WEARTITLEREQ_TITLEID_FIELD.full_name = ".PM_WearTitleReq.titleId"
+tb.PM_WEARTITLEREQ_TITLEID_FIELD.number = 1
+tb.PM_WEARTITLEREQ_TITLEID_FIELD.index = 0
+tb.PM_WEARTITLEREQ_TITLEID_FIELD.label = 2
+tb.PM_WEARTITLEREQ_TITLEID_FIELD.has_default_value = false
+tb.PM_WEARTITLEREQ_TITLEID_FIELD.default_value = 0
+tb.PM_WEARTITLEREQ_TITLEID_FIELD.type = 5
+tb.PM_WEARTITLEREQ_TITLEID_FIELD.cpp_type = 1
+PM_WEARTITLEREQ_MSG.name = "PM_WearTitleReq"
+PM_WEARTITLEREQ_MSG.full_name = ".PM_WearTitleReq"
+PM_WEARTITLEREQ_MSG.nested_types = {}
+PM_WEARTITLEREQ_MSG.enum_types = {}
+PM_WEARTITLEREQ_MSG.fields = {
+	tb.PM_WEARTITLEREQ_TITLEID_FIELD
+}
+PM_WEARTITLEREQ_MSG.is_extendable = false
+PM_WEARTITLEREQ_MSG.extensions = {}
+tb.PM_WEARTITLERES_CURTITLEID_FIELD.name = "curTitleId"
+tb.PM_WEARTITLERES_CURTITLEID_FIELD.full_name = ".PM_WearTitleRes.curTitleId"
+tb.PM_WEARTITLERES_CURTITLEID_FIELD.number = 1
+tb.PM_WEARTITLERES_CURTITLEID_FIELD.index = 0
+tb.PM_WEARTITLERES_CURTITLEID_FIELD.label = 2
+tb.PM_WEARTITLERES_CURTITLEID_FIELD.has_default_value = false
+tb.PM_WEARTITLERES_CURTITLEID_FIELD.default_value = 0
+tb.PM_WEARTITLERES_CURTITLEID_FIELD.type = 5
+tb.PM_WEARTITLERES_CURTITLEID_FIELD.cpp_type = 1
+PM_WEARTITLERES_MSG.name = "PM_WearTitleRes"
+PM_WEARTITLERES_MSG.full_name = ".PM_WearTitleRes"
+PM_WEARTITLERES_MSG.nested_types = {}
+PM_WEARTITLERES_MSG.enum_types = {}
+PM_WEARTITLERES_MSG.fields = {
+	tb.PM_WEARTITLERES_CURTITLEID_FIELD
+}
+PM_WEARTITLERES_MSG.is_extendable = false
+PM_WEARTITLERES_MSG.extensions = {}
+tb.PM_NOTIFYGAINTITLERES_TITLELIST_FIELD.name = "titleList"
+tb.PM_NOTIFYGAINTITLERES_TITLELIST_FIELD.full_name = ".PM_notifyGainTitleRes.titleList"
+tb.PM_NOTIFYGAINTITLERES_TITLELIST_FIELD.number = 1
+tb.PM_NOTIFYGAINTITLERES_TITLELIST_FIELD.index = 0
+tb.PM_NOTIFYGAINTITLERES_TITLELIST_FIELD.label = 3
+tb.PM_NOTIFYGAINTITLERES_TITLELIST_FIELD.has_default_value = false
+tb.PM_NOTIFYGAINTITLERES_TITLELIST_FIELD.default_value = {}
+tb.PM_NOTIFYGAINTITLERES_TITLELIST_FIELD.message_type = PM_TITLEINFO_MSG
+tb.PM_NOTIFYGAINTITLERES_TITLELIST_FIELD.type = 11
+tb.PM_NOTIFYGAINTITLERES_TITLELIST_FIELD.cpp_type = 10
+PM_NOTIFYGAINTITLERES_MSG.name = "PM_notifyGainTitleRes"
+PM_NOTIFYGAINTITLERES_MSG.full_name = ".PM_notifyGainTitleRes"
+PM_NOTIFYGAINTITLERES_MSG.nested_types = {}
+PM_NOTIFYGAINTITLERES_MSG.enum_types = {}
+PM_NOTIFYGAINTITLERES_MSG.fields = {
+	tb.PM_NOTIFYGAINTITLERES_TITLELIST_FIELD
+}
+PM_NOTIFYGAINTITLERES_MSG.is_extendable = false
+PM_NOTIFYGAINTITLERES_MSG.extensions = {}
+tb.PM_TITLEINFO_TITLEID_FIELD.name = "titleId"
+tb.PM_TITLEINFO_TITLEID_FIELD.full_name = ".PM_TitleInfo.titleId"
+tb.PM_TITLEINFO_TITLEID_FIELD.number = 1
+tb.PM_TITLEINFO_TITLEID_FIELD.index = 0
+tb.PM_TITLEINFO_TITLEID_FIELD.label = 2
+tb.PM_TITLEINFO_TITLEID_FIELD.has_default_value = false
+tb.PM_TITLEINFO_TITLEID_FIELD.default_value = 0
+tb.PM_TITLEINFO_TITLEID_FIELD.type = 5
+tb.PM_TITLEINFO_TITLEID_FIELD.cpp_type = 1
+tb.PM_TITLEINFO_STATE_FIELD.name = "state"
+tb.PM_TITLEINFO_STATE_FIELD.full_name = ".PM_TitleInfo.state"
+tb.PM_TITLEINFO_STATE_FIELD.number = 2
+tb.PM_TITLEINFO_STATE_FIELD.index = 1
+tb.PM_TITLEINFO_STATE_FIELD.label = 2
+tb.PM_TITLEINFO_STATE_FIELD.has_default_value = false
+tb.PM_TITLEINFO_STATE_FIELD.default_value = 0
+tb.PM_TITLEINFO_STATE_FIELD.type = 5
+tb.PM_TITLEINFO_STATE_FIELD.cpp_type = 1
+tb.PM_TITLEINFO_OVERDUETIME_FIELD.name = "overdueTime"
+tb.PM_TITLEINFO_OVERDUETIME_FIELD.full_name = ".PM_TitleInfo.overdueTime"
+tb.PM_TITLEINFO_OVERDUETIME_FIELD.number = 3
+tb.PM_TITLEINFO_OVERDUETIME_FIELD.index = 2
+tb.PM_TITLEINFO_OVERDUETIME_FIELD.label = 2
+tb.PM_TITLEINFO_OVERDUETIME_FIELD.has_default_value = false
+tb.PM_TITLEINFO_OVERDUETIME_FIELD.default_value = 0
+tb.PM_TITLEINFO_OVERDUETIME_FIELD.type = 3
+tb.PM_TITLEINFO_OVERDUETIME_FIELD.cpp_type = 2
+tb.PM_TITLEINFO_GAINTIME_FIELD.name = "gainTime"
+tb.PM_TITLEINFO_GAINTIME_FIELD.full_name = ".PM_TitleInfo.gainTime"
+tb.PM_TITLEINFO_GAINTIME_FIELD.number = 4
+tb.PM_TITLEINFO_GAINTIME_FIELD.index = 3
+tb.PM_TITLEINFO_GAINTIME_FIELD.label = 2
+tb.PM_TITLEINFO_GAINTIME_FIELD.has_default_value = false
+tb.PM_TITLEINFO_GAINTIME_FIELD.default_value = 0
+tb.PM_TITLEINFO_GAINTIME_FIELD.type = 3
+tb.PM_TITLEINFO_GAINTIME_FIELD.cpp_type = 2
+PM_TITLEINFO_MSG.name = "PM_TitleInfo"
+PM_TITLEINFO_MSG.full_name = ".PM_TitleInfo"
+PM_TITLEINFO_MSG.nested_types = {}
+PM_TITLEINFO_MSG.enum_types = {}
+PM_TITLEINFO_MSG.fields = {
+	tb.PM_TITLEINFO_TITLEID_FIELD,
+	tb.PM_TITLEINFO_STATE_FIELD,
+	tb.PM_TITLEINFO_OVERDUETIME_FIELD,
+	tb.PM_TITLEINFO_GAINTIME_FIELD
+}
+PM_TITLEINFO_MSG.is_extendable = false
+PM_TITLEINFO_MSG.extensions = {}
+PM_LoadAllTitleReq = protobuf.Message(PM_LOADALLTITLEREQ_MSG)
+PM_LoadAllTitleRes = protobuf.Message(PM_LOADALLTITLERES_MSG)
+PM_TitleInfo = protobuf.Message(PM_TITLEINFO_MSG)
+PM_WearTitleReq = protobuf.Message(PM_WEARTITLEREQ_MSG)
+PM_WearTitleRes = protobuf.Message(PM_WEARTITLERES_MSG)
+PM_notifyGainTitleRes = protobuf.Message(PM_NOTIFYGAINTITLERES_MSG)
+
+return _G["logic.proto.TitleExtension_pb"]

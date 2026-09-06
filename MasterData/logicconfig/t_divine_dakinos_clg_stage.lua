@@ -1,0 +1,334 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_divine_dakinos_clg_stage.lua
+
+module("logicconfig.config.t_divine_dakinos_clg_stage", package.seeall)
+
+local title = {
+	stagePlanId = 1,
+	signBuffId = 4,
+	stageId = 2,
+	showCirclePos = 6,
+	creepsMasterId = 3,
+	needSaveCount = 5
+}
+local dataList = {
+	{
+		1,
+		1,
+		1001,
+		20058701,
+		2,
+		{
+			1,
+			2,
+			3
+		}
+	},
+	{
+		1,
+		2,
+		1002,
+		20058701,
+		2,
+		{
+			4,
+			5,
+			6
+		}
+	},
+	{
+		1,
+		3,
+		1003,
+		20058701,
+		2,
+		{
+			7,
+			8,
+			9
+		}
+	},
+	{
+		2,
+		1,
+		2001,
+		20058701,
+		4,
+		{
+			1,
+			3,
+			5,
+			7,
+			8,
+			9
+		}
+	},
+	{
+		2,
+		2,
+		2002,
+		20058701,
+		4,
+		{
+			1,
+			2,
+			3,
+			4,
+			5,
+			6
+		}
+	},
+	{
+		2,
+		3,
+		2003,
+		20058701,
+		4,
+		{
+			1,
+			2,
+			4,
+			5,
+			7,
+			8
+		}
+	},
+	{
+		3,
+		1,
+		3001,
+		20058701,
+		6,
+		{
+			1,
+			2,
+			3,
+			4,
+			5,
+			6,
+			7,
+			8,
+			9
+		}
+	},
+	{
+		3,
+		2,
+		3002,
+		20058701,
+		6,
+		{
+			1,
+			2,
+			3,
+			4,
+			5,
+			6,
+			7,
+			8,
+			9
+		}
+	},
+	{
+		3,
+		3,
+		3003,
+		20058701,
+		6,
+		{
+			1,
+			2,
+			3,
+			4,
+			5,
+			6,
+			7,
+			8,
+			9
+		}
+	},
+	{
+		4000021,
+		1,
+		40000211,
+		20068211,
+		2,
+		{
+			1,
+			2,
+			3
+		}
+	},
+	{
+		4000021,
+		2,
+		40000212,
+		20068211,
+		2,
+		{
+			1,
+			3,
+			4
+		}
+	},
+	{
+		4000021,
+		3,
+		40000213,
+		20068211,
+		2,
+		{
+			1,
+			2,
+			3
+		}
+	},
+	{
+		4000022,
+		1,
+		40000221,
+		20068211,
+		4,
+		{
+			1,
+			2,
+			3,
+			4,
+			5,
+			6
+		}
+	},
+	{
+		4000022,
+		2,
+		40000222,
+		20068211,
+		4,
+		{
+			1,
+			2,
+			3,
+			5,
+			6,
+			8
+		}
+	},
+	{
+		4000022,
+		3,
+		40000223,
+		20068211,
+		4,
+		{
+			1,
+			2,
+			3,
+			4,
+			5,
+			6
+		}
+	},
+	{
+		4000023,
+		1,
+		40000231,
+		20068211,
+		6,
+		{
+			1,
+			2,
+			3,
+			4,
+			5,
+			6,
+			7,
+			8,
+			9
+		}
+	},
+	{
+		4000023,
+		2,
+		40000232,
+		20068211,
+		6,
+		{
+			1,
+			2,
+			3,
+			4,
+			5,
+			6,
+			7,
+			8,
+			9
+		}
+	},
+	{
+		4000023,
+		3,
+		40000233,
+		20068211,
+		6,
+		{
+			1,
+			2,
+			3,
+			4,
+			5,
+			6,
+			7,
+			8,
+			9
+		}
+	}
+}
+local t_divine_dakinos_clg_stage = {
+	{
+		dataList[1],
+		dataList[2],
+		dataList[3]
+	},
+	{
+		dataList[4],
+		dataList[5],
+		dataList[6]
+	},
+	{
+		dataList[7],
+		dataList[8],
+		dataList[9]
+	},
+	[4000021] = {
+		dataList[10],
+		dataList[11],
+		dataList[12]
+	},
+	[4000022] = {
+		dataList[13],
+		dataList[14],
+		dataList[15]
+	},
+	[4000023] = {
+		dataList[16],
+		dataList[17],
+		dataList[18]
+	}
+}
+
+t_divine_dakinos_clg_stage.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_divine_dakinos_clg_stage

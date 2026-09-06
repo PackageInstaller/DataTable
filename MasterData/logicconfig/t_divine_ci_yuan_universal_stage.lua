@@ -1,0 +1,296 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_divine_ci_yuan_universal_stage.lua
+
+module("logicconfig.config.t_divine_ci_yuan_universal_stage", package.seeall)
+
+local title = {
+	bossId = 3,
+	creepsMasterId = 4,
+	activityId = 1,
+	tabId = 2
+}
+local dataList = {
+	{
+		302001,
+		1,
+		1,
+		2001
+	},
+	{
+		302001,
+		1,
+		2,
+		2002
+	},
+	{
+		302001,
+		1,
+		3,
+		2003
+	},
+	{
+		302001,
+		1,
+		4,
+		2004
+	},
+	{
+		302001,
+		1,
+		5,
+		2005
+	},
+	{
+		302001,
+		1,
+		6,
+		2006
+	},
+	{
+		302001,
+		1,
+		7,
+		2007
+	},
+	{
+		302001,
+		1,
+		8,
+		2008
+	},
+	{
+		302001,
+		1,
+		9,
+		2009
+	},
+	{
+		302001,
+		2,
+		1,
+		2001
+	},
+	{
+		302001,
+		2,
+		2,
+		2002
+	},
+	{
+		302001,
+		2,
+		3,
+		2003
+	},
+	{
+		302001,
+		2,
+		4,
+		2004
+	},
+	{
+		302001,
+		2,
+		5,
+		2005
+	},
+	{
+		302001,
+		2,
+		6,
+		2006
+	},
+	{
+		302001,
+		2,
+		7,
+		2007
+	},
+	{
+		302001,
+		2,
+		8,
+		2008
+	},
+	{
+		302001,
+		2,
+		9,
+		2009
+	},
+	{
+		302002,
+		1,
+		1,
+		2001
+	},
+	{
+		302002,
+		1,
+		2,
+		2002
+	},
+	{
+		302002,
+		1,
+		3,
+		2003
+	},
+	{
+		302002,
+		1,
+		4,
+		2004
+	},
+	{
+		302002,
+		1,
+		5,
+		2005
+	},
+	{
+		302002,
+		1,
+		6,
+		2006
+	},
+	{
+		302002,
+		1,
+		7,
+		2007
+	},
+	{
+		302002,
+		1,
+		8,
+		2008
+	},
+	{
+		302002,
+		1,
+		9,
+		2009
+	},
+	{
+		302002,
+		2,
+		1,
+		2001
+	},
+	{
+		302002,
+		2,
+		2,
+		2002
+	},
+	{
+		302002,
+		2,
+		3,
+		2003
+	},
+	{
+		302002,
+		2,
+		4,
+		2004
+	},
+	{
+		302002,
+		2,
+		5,
+		2005
+	},
+	{
+		302002,
+		2,
+		6,
+		2006
+	},
+	{
+		302002,
+		2,
+		7,
+		2007
+	},
+	{
+		302002,
+		2,
+		8,
+		2008
+	},
+	{
+		302002,
+		2,
+		9,
+		2009
+	}
+}
+local t_divine_ci_yuan_universal_stage = {
+	[302001] = {
+		{
+			dataList[1],
+			dataList[2],
+			dataList[3],
+			dataList[4],
+			dataList[5],
+			dataList[6],
+			dataList[7],
+			dataList[8],
+			dataList[9]
+		},
+		{
+			dataList[10],
+			dataList[11],
+			dataList[12],
+			dataList[13],
+			dataList[14],
+			dataList[15],
+			dataList[16],
+			dataList[17],
+			dataList[18]
+		}
+	},
+	[302002] = {
+		{
+			dataList[19],
+			dataList[20],
+			dataList[21],
+			dataList[22],
+			dataList[23],
+			dataList[24],
+			dataList[25],
+			dataList[26],
+			dataList[27]
+		},
+		{
+			dataList[28],
+			dataList[29],
+			dataList[30],
+			dataList[31],
+			dataList[32],
+			dataList[33],
+			dataList[34],
+			dataList[35],
+			dataList[36]
+		}
+	}
+}
+
+t_divine_ci_yuan_universal_stage.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_divine_ci_yuan_universal_stage

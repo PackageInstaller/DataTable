@@ -1,0 +1,297 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_empress_normal_clg_stage_group.lua
+
+module("logicconfig.config.t_empress_normal_clg_stage_group", package.seeall)
+
+local title = {
+	dataBitId = 3,
+	groupId = 2,
+	skinId = 5,
+	creepsMasterId = 4,
+	activityId = 1
+}
+local dataList = {
+	{
+		342001,
+		1,
+		1,
+		101,
+		10144
+	},
+	{
+		342001,
+		1,
+		2,
+		102,
+		16000
+	},
+	{
+		342001,
+		1,
+		3,
+		103,
+		10328
+	},
+	{
+		342001,
+		2,
+		1,
+		104,
+		10143
+	},
+	{
+		342001,
+		2,
+		2,
+		105,
+		10142
+	},
+	{
+		342001,
+		2,
+		3,
+		106,
+		16000
+	},
+	{
+		342001,
+		3,
+		1,
+		107,
+		10146
+	},
+	{
+		342001,
+		3,
+		2,
+		108,
+		10144
+	},
+	{
+		342001,
+		3,
+		3,
+		109,
+		12007
+	},
+	{
+		342001,
+		4,
+		1,
+		110,
+		16000
+	},
+	{
+		342001,
+		4,
+		2,
+		111,
+		10345
+	},
+	{
+		342001,
+		4,
+		3,
+		112,
+		10144
+	},
+	{
+		342001,
+		5,
+		1,
+		113,
+		10145
+	},
+	{
+		342001,
+		5,
+		2,
+		114,
+		10146
+	},
+	{
+		342001,
+		5,
+		3,
+		115,
+		10142
+	},
+	{
+		342002,
+		1,
+		1,
+		101,
+		10144
+	},
+	{
+		342002,
+		1,
+		2,
+		102,
+		16000
+	},
+	{
+		342002,
+		1,
+		3,
+		103,
+		10328
+	},
+	{
+		342002,
+		2,
+		1,
+		104,
+		10143
+	},
+	{
+		342002,
+		2,
+		2,
+		105,
+		10142
+	},
+	{
+		342002,
+		2,
+		3,
+		106,
+		16000
+	},
+	{
+		342002,
+		3,
+		1,
+		107,
+		10146
+	},
+	{
+		342002,
+		3,
+		2,
+		108,
+		10144
+	},
+	{
+		342002,
+		3,
+		3,
+		109,
+		12007
+	},
+	{
+		342002,
+		4,
+		1,
+		110,
+		16000
+	},
+	{
+		342002,
+		4,
+		2,
+		111,
+		10345
+	},
+	{
+		342002,
+		4,
+		3,
+		112,
+		10144
+	},
+	{
+		342002,
+		5,
+		1,
+		113,
+		10145
+	},
+	{
+		342002,
+		5,
+		2,
+		114,
+		10146
+	},
+	{
+		342002,
+		5,
+		3,
+		115,
+		10142
+	}
+}
+local t_empress_normal_clg_stage_group = {
+	[342001] = {
+		{
+			dataList[1],
+			dataList[2],
+			dataList[3]
+		},
+		{
+			dataList[4],
+			dataList[5],
+			dataList[6]
+		},
+		{
+			dataList[7],
+			dataList[8],
+			dataList[9]
+		},
+		{
+			dataList[10],
+			dataList[11],
+			dataList[12]
+		},
+		{
+			dataList[13],
+			dataList[14],
+			dataList[15]
+		}
+	},
+	[342002] = {
+		{
+			dataList[16],
+			dataList[17],
+			dataList[18]
+		},
+		{
+			dataList[19],
+			dataList[20],
+			dataList[21]
+		},
+		{
+			dataList[22],
+			dataList[23],
+			dataList[24]
+		},
+		{
+			dataList[25],
+			dataList[26],
+			dataList[27]
+		},
+		{
+			dataList[28],
+			dataList[29],
+			dataList[30]
+		}
+	}
+}
+
+t_empress_normal_clg_stage_group.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_empress_normal_clg_stage_group

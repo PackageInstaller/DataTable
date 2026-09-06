@@ -1,0 +1,327 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_consume_lottery_prize.lua
+
+module("logicconfig.config.t_consume_lottery_prize", package.seeall)
+
+local title = {
+	planId = 1,
+	prize = 5,
+	size = 7,
+	type = 4,
+	id = 3,
+	icon = 6,
+	round = 2
+}
+local dataList = {
+	{
+		1,
+		1,
+		1,
+		1,
+		"4:100008:1",
+		"",
+		{
+			300,
+			420
+		}
+	},
+	{
+		1,
+		1,
+		2,
+		2,
+		"100:10155:1:1",
+		"",
+		{
+			300,
+			420
+		}
+	},
+	{
+		1,
+		1,
+		3,
+		2,
+		"100:10316:1:1",
+		"",
+		{
+			300,
+			420
+		}
+	},
+	{
+		1,
+		1,
+		4,
+		3,
+		"4:3101:5",
+		"",
+		{
+			300,
+			420
+		}
+	},
+	{
+		1,
+		1,
+		5,
+		3,
+		"4:22:1",
+		"",
+		{
+			300,
+			420
+		}
+	},
+	{
+		1,
+		1,
+		6,
+		3,
+		"4:23:1",
+		"",
+		{
+			300,
+			420
+		}
+	},
+	{
+		1,
+		1,
+		7,
+		3,
+		"4:30001:1",
+		"",
+		{
+			300,
+			420
+		}
+	},
+	{
+		1,
+		1,
+		8,
+		3,
+		"4:30002:1",
+		"",
+		{
+			300,
+			420
+		}
+	},
+	{
+		1,
+		1,
+		9,
+		3,
+		"4:30003:1",
+		"",
+		{
+			300,
+			420
+		}
+	},
+	{
+		1,
+		1,
+		10,
+		3,
+		"4:501:1",
+		"",
+		{
+			300,
+			420
+		}
+	},
+	{
+		1,
+		1,
+		11,
+		3,
+		"4:502:1",
+		"",
+		{
+			300,
+			420
+		}
+	},
+	{
+		1,
+		2,
+		1,
+		2,
+		"100:10167:40:1",
+		"",
+		{
+			300,
+			420
+		}
+	},
+	{
+		1,
+		2,
+		2,
+		2,
+		"100:10155:1:1",
+		"",
+		{
+			300,
+			420
+		}
+	},
+	{
+		1,
+		2,
+		3,
+		2,
+		"100:10316:1:1",
+		"",
+		{
+			300,
+			420
+		}
+	},
+	{
+		1,
+		2,
+		4,
+		3,
+		"4:3101:5",
+		"",
+		{
+			300,
+			420
+		}
+	},
+	{
+		1,
+		2,
+		5,
+		3,
+		"4:22:1",
+		"",
+		{
+			300,
+			420
+		}
+	},
+	{
+		1,
+		2,
+		6,
+		3,
+		"4:23:1",
+		"",
+		{
+			300,
+			420
+		}
+	},
+	{
+		1,
+		2,
+		7,
+		3,
+		"4:30001:1",
+		"",
+		{
+			300,
+			420
+		}
+	},
+	{
+		1,
+		2,
+		8,
+		3,
+		"4:30002:1",
+		"",
+		{
+			300,
+			420
+		}
+	},
+	{
+		1,
+		2,
+		9,
+		3,
+		"4:30003:1",
+		"",
+		{
+			300,
+			420
+		}
+	},
+	{
+		1,
+		2,
+		10,
+		3,
+		"4:501:1",
+		"",
+		{
+			300,
+			420
+		}
+	},
+	{
+		1,
+		2,
+		11,
+		3,
+		"4:502:1",
+		"",
+		{
+			300,
+			420
+		}
+	}
+}
+local t_consume_lottery_prize = {
+	{
+		{
+			dataList[1],
+			dataList[2],
+			dataList[3],
+			dataList[4],
+			dataList[5],
+			dataList[6],
+			dataList[7],
+			dataList[8],
+			dataList[9],
+			dataList[10],
+			dataList[11]
+		},
+		{
+			dataList[12],
+			dataList[13],
+			dataList[14],
+			dataList[15],
+			dataList[16],
+			dataList[17],
+			dataList[18],
+			dataList[19],
+			dataList[20],
+			dataList[21],
+			dataList[22]
+		}
+	}
+}
+
+t_consume_lottery_prize.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_consume_lottery_prize

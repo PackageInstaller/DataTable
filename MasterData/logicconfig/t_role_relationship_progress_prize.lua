@@ -1,0 +1,287 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_role_relationship_progress_prize.lua
+
+module("logicconfig.config.t_role_relationship_progress_prize", package.seeall)
+
+local title = {
+	needTimes = 3,
+	prize = 4,
+	proPrizePlanId = 1,
+	proPrizeId = 2
+}
+local dataList = {
+	{
+		1,
+		1,
+		1,
+		"10:187002:200"
+	},
+	{
+		1,
+		2,
+		2,
+		"10:187002:200"
+	},
+	{
+		1,
+		3,
+		3,
+		"10:187002:200"
+	},
+	{
+		1,
+		4,
+		4,
+		"10:187002:200"
+	},
+	{
+		1,
+		5,
+		5,
+		"10:187002:200"
+	},
+	{
+		2,
+		1,
+		1,
+		"4:31:10"
+	},
+	{
+		2,
+		2,
+		2,
+		"60:1:300"
+	},
+	{
+		2,
+		3,
+		3,
+		"8:1:1000000"
+	},
+	{
+		2,
+		4,
+		4,
+		"4:31:10"
+	},
+	{
+		2,
+		5,
+		5,
+		"60:1:300"
+	},
+	{
+		2,
+		6,
+		6,
+		"8:1:1000000"
+	},
+	{
+		2,
+		7,
+		7,
+		"4:31:10"
+	},
+	{
+		2,
+		8,
+		8,
+		"60:1:400"
+	},
+	{
+		2,
+		9,
+		9,
+		"8:1:1000000"
+	},
+	{
+		2,
+		10,
+		10,
+		"60:1:500"
+	},
+	{
+		3,
+		1,
+		1,
+		"8:1:1000000"
+	},
+	{
+		3,
+		2,
+		2,
+		"104:2:200"
+	},
+	{
+		3,
+		3,
+		4,
+		"8:1:1000000"
+	},
+	{
+		3,
+		4,
+		6,
+		"104:2:200"
+	},
+	{
+		3,
+		5,
+		8,
+		"4:31:5"
+	},
+	{
+		3,
+		6,
+		10,
+		"8:1:1000000"
+	},
+	{
+		3,
+		7,
+		12,
+		"104:2:200"
+	},
+	{
+		3,
+		8,
+		14,
+		"8:1:2000000"
+	},
+	{
+		3,
+		9,
+		16,
+		"104:2:400"
+	},
+	{
+		3,
+		10,
+		20,
+		"4:31:5"
+	},
+	{
+		4,
+		1,
+		1,
+		"4:31:1"
+	},
+	{
+		4,
+		2,
+		5,
+		"4:31:1"
+	},
+	{
+		4,
+		3,
+		9,
+		"4:31:2"
+	},
+	{
+		4,
+		4,
+		13,
+		"4:31:2"
+	},
+	{
+		4,
+		5,
+		19,
+		"4:31:2"
+	},
+	{
+		5,
+		1,
+		1,
+		"4:31:2"
+	},
+	{
+		5,
+		2,
+		4,
+		"8:1:1000000"
+	},
+	{
+		5,
+		3,
+		8,
+		"4:31:4"
+	},
+	{
+		5,
+		4,
+		12,
+		"8:1:1800000"
+	},
+	{
+		5,
+		5,
+		16,
+		"4:31:4"
+	}
+}
+local t_role_relationship_progress_prize = {
+	{
+		dataList[1],
+		dataList[2],
+		dataList[3],
+		dataList[4],
+		dataList[5]
+	},
+	{
+		dataList[6],
+		dataList[7],
+		dataList[8],
+		dataList[9],
+		dataList[10],
+		dataList[11],
+		dataList[12],
+		dataList[13],
+		dataList[14],
+		dataList[15]
+	},
+	{
+		dataList[16],
+		dataList[17],
+		dataList[18],
+		dataList[19],
+		dataList[20],
+		dataList[21],
+		dataList[22],
+		dataList[23],
+		dataList[24],
+		dataList[25]
+	},
+	{
+		dataList[26],
+		dataList[27],
+		dataList[28],
+		dataList[29],
+		dataList[30]
+	},
+	{
+		dataList[31],
+		dataList[32],
+		dataList[33],
+		dataList[34],
+		dataList[35]
+	}
+}
+
+t_role_relationship_progress_prize.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_role_relationship_progress_prize

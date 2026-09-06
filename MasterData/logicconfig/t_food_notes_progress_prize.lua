@@ -1,0 +1,306 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_food_notes_progress_prize.lua
+
+module("logicconfig.config.t_food_notes_progress_prize", package.seeall)
+
+local title = {
+	prizeId = 2,
+	progressPrize = 4,
+	activityId = 1,
+	progress = 3
+}
+local dataList = {
+	{
+		125001,
+		1,
+		1,
+		"4:90045:6"
+	},
+	{
+		125001,
+		2,
+		3,
+		"4:90045:6"
+	},
+	{
+		125001,
+		3,
+		5,
+		"4:90045:12"
+	},
+	{
+		125001,
+		4,
+		7,
+		"4:90045:24"
+	},
+	{
+		125001,
+		5,
+		9,
+		"4:901:10000"
+	},
+	{
+		125001,
+		6,
+		10,
+		"4:90045:6"
+	},
+	{
+		125001,
+		7,
+		12,
+		"4:90045:6"
+	},
+	{
+		125001,
+		8,
+		14,
+		"4:90045:12"
+	},
+	{
+		125001,
+		9,
+		16,
+		"4:90045:24"
+	},
+	{
+		125001,
+		10,
+		18,
+		"4:901:10000"
+	},
+	{
+		125001,
+		11,
+		19,
+		"4:90045:6"
+	},
+	{
+		125001,
+		12,
+		21,
+		"4:90045:6"
+	},
+	{
+		125001,
+		13,
+		23,
+		"4:90045:12"
+	},
+	{
+		125001,
+		14,
+		25,
+		"4:90045:24"
+	},
+	{
+		125001,
+		15,
+		27,
+		"4:901:10000"
+	},
+	{
+		125001,
+		16,
+		29,
+		"4:90045:8"
+	},
+	{
+		125001,
+		17,
+		31,
+		"4:90045:16"
+	},
+	{
+		125001,
+		18,
+		33,
+		"4:90045:24"
+	},
+	{
+		125001,
+		19,
+		36,
+		"4:901:10000"
+	},
+	{
+		125002,
+		1,
+		5,
+		"8:1:400000"
+	},
+	{
+		125002,
+		2,
+		10,
+		"8:1:400000"
+	},
+	{
+		125002,
+		3,
+		15,
+		"4:502:100"
+	},
+	{
+		125002,
+		4,
+		20,
+		"8:1:400000"
+	},
+	{
+		125002,
+		5,
+		25,
+		"8:1:400000"
+	},
+	{
+		125002,
+		6,
+		30,
+		"8:1:400000"
+	},
+	{
+		125002,
+		7,
+		35,
+		"4:502:100"
+	},
+	{
+		125003,
+		1,
+		2,
+		"60:1:5000"
+	},
+	{
+		125003,
+		2,
+		4,
+		"4:90316:1"
+	},
+	{
+		125003,
+		3,
+		6,
+		"4:30006:100"
+	},
+	{
+		125003,
+		4,
+		8,
+		"60:1:5000"
+	},
+	{
+		125003,
+		5,
+		10,
+		"4:90316:1"
+	},
+	{
+		125003,
+		6,
+		12,
+		"4:7008:100"
+	},
+	{
+		125004,
+		1,
+		2,
+		"4:36:10"
+	},
+	{
+		125004,
+		2,
+		4,
+		"4:510022:2"
+	},
+	{
+		125004,
+		3,
+		6,
+		"4:112:5"
+	},
+	{
+		125004,
+		4,
+		8,
+		"8:1:1000000"
+	},
+	{
+		125004,
+		5,
+		10,
+		"4:112:5"
+	},
+	{
+		125004,
+		6,
+		12,
+		"4:510022:3"
+	}
+}
+local t_food_notes_progress_prize = {
+	[125001] = {
+		dataList[1],
+		dataList[2],
+		dataList[3],
+		dataList[4],
+		dataList[5],
+		dataList[6],
+		dataList[7],
+		dataList[8],
+		dataList[9],
+		dataList[10],
+		dataList[11],
+		dataList[12],
+		dataList[13],
+		dataList[14],
+		dataList[15],
+		dataList[16],
+		dataList[17],
+		dataList[18],
+		dataList[19]
+	},
+	[125002] = {
+		dataList[20],
+		dataList[21],
+		dataList[22],
+		dataList[23],
+		dataList[24],
+		dataList[25],
+		dataList[26]
+	},
+	[125003] = {
+		dataList[27],
+		dataList[28],
+		dataList[29],
+		dataList[30],
+		dataList[31],
+		dataList[32]
+	},
+	[125004] = {
+		dataList[33],
+		dataList[34],
+		dataList[35],
+		dataList[36],
+		dataList[37],
+		dataList[38]
+	}
+}
+
+t_food_notes_progress_prize.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_food_notes_progress_prize

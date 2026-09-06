@@ -1,0 +1,339 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_baby_bus_prize.lua
+
+module("logicconfig.config.t_baby_bus_prize", package.seeall)
+
+local title = {
+	progress = 3,
+	name = 7,
+	exchangeCodeGroupId = 5,
+	storyId = 8,
+	prizePlanId = 1,
+	exchangeCodeMaxCount = 6,
+	prize = 4,
+	jumpTo = 10,
+	prizeId = 2,
+	behaviorId = 11,
+	icon = 9
+}
+local dataList = {
+	{
+		1,
+		1,
+		1,
+		"4:31:10#4:510162:1",
+		1,
+		500000,
+		"邮局",
+		4450006,
+		"board_shizhounian_18",
+		"ui#recap2021presonlookbackview",
+		201726
+	},
+	{
+		1,
+		2,
+		2,
+		"4:31:20#4:510163:1",
+		2,
+		500000,
+		"电影院",
+		4450007,
+		"board_shizhounian_14",
+		"ui#recap2021gamelookbackview",
+		201727
+	},
+	{
+		1,
+		3,
+		3,
+		"4:510157:2#4:510162:1",
+		3,
+		500000,
+		"花园小亭",
+		0,
+		"board_shizhounian_20",
+		"",
+		201780
+	},
+	{
+		1,
+		4,
+		4,
+		"4:31:20#8:1:2000000",
+		0,
+		300000,
+		"唱片商店",
+		4450008,
+		"board_shizhounian_19",
+		"",
+		201729
+	},
+	{
+		1,
+		5,
+		5,
+		"4:510157:2#60:1:1250",
+		0,
+		300000,
+		"纪念碑",
+		0,
+		"board_shizhounian_17",
+		"",
+		201779
+	},
+	{
+		1,
+		6,
+		6,
+		"4:31:20#8:1:3000000",
+		0,
+		300000,
+		"茶餐厅",
+		4450009,
+		"board_shizhounian_12",
+		"",
+		201728
+	},
+	{
+		1,
+		7,
+		7,
+		"4:510157:2#60:1:1250",
+		0,
+		300000,
+		"奥奇城",
+		0,
+		"board_shizhounian_15",
+		"",
+		201781
+	},
+	{
+		2,
+		1,
+		1,
+		"60:1:10000#4:36:10",
+		0,
+		500000,
+		"邮局",
+		0,
+		"board_shizhounian_18",
+		"",
+		201726
+	},
+	{
+		2,
+		2,
+		2,
+		"4:30006:100#4:36:10",
+		0,
+		500000,
+		"电影院",
+		0,
+		"board_shizhounian_14",
+		"",
+		201727
+	},
+	{
+		2,
+		3,
+		3,
+		"4:7008:100#4:36:10",
+		0,
+		500000,
+		"花园小亭",
+		0,
+		"board_shizhounian_20",
+		"",
+		201780
+	},
+	{
+		2,
+		4,
+		4,
+		"4:90037:1#4:36:10",
+		0,
+		300000,
+		"唱片商店",
+		0,
+		"board_shizhounian_19",
+		"",
+		201729
+	},
+	{
+		2,
+		5,
+		5,
+		"4:90200:1#4:36:10",
+		0,
+		300000,
+		"纪念碑",
+		0,
+		"board_shizhounian_17",
+		"",
+		201779
+	},
+	{
+		2,
+		6,
+		6,
+		"4:12102:10#4:36:10",
+		0,
+		300000,
+		"茶餐厅",
+		0,
+		"board_shizhounian_12",
+		"",
+		201728
+	},
+	{
+		2,
+		7,
+		7,
+		"8:25:1200#4:36:10",
+		0,
+		300000,
+		"奥奇城",
+		0,
+		"board_shizhounian_15",
+		"",
+		201781
+	},
+	{
+		3,
+		1,
+		1,
+		"60:1:1000#4:60005:1",
+		0,
+		500000,
+		"璨金龙尊",
+		4800031,
+		"board_sizhounianqinghuodong_08",
+		"",
+		201726
+	},
+	{
+		3,
+		2,
+		2,
+		"60:1:1000#4:36:3",
+		0,
+		500000,
+		"昆仑",
+		4800030,
+		"board_sizhounianqinghuodong_10",
+		"",
+		201727
+	},
+	{
+		3,
+		3,
+		3,
+		"60:1:1000#4:36:3",
+		0,
+		500000,
+		"极",
+		4800032,
+		"board_sizhounianqinghuodong_09",
+		"",
+		201780
+	},
+	{
+		3,
+		4,
+		4,
+		"60:1:1000#4:36:3",
+		0,
+		300000,
+		"小路因",
+		4800033,
+		"board_sizhounianqinghuodong_12",
+		"",
+		201729
+	},
+	{
+		3,
+		5,
+		5,
+		"60:1:1000#4:36:3",
+		0,
+		300000,
+		"命渊",
+		4800034,
+		"board_sizhounianqinghuodong_07",
+		"",
+		201779
+	},
+	{
+		3,
+		6,
+		6,
+		"60:1:1000#4:36:3",
+		0,
+		300000,
+		"凡尔维斯",
+		4800035,
+		"board_sizhounianqinghuodong_11",
+		"",
+		201728
+	},
+	{
+		3,
+		7,
+		7,
+		"2:223:1#4:36:5",
+		0,
+		300000,
+		"奥奇城",
+		4800036,
+		"board_sizhounianqinghuodong_13",
+		"",
+		201781
+	}
+}
+local t_baby_bus_prize = {
+	{
+		dataList[1],
+		dataList[2],
+		dataList[3],
+		dataList[4],
+		dataList[5],
+		dataList[6],
+		dataList[7]
+	},
+	{
+		dataList[8],
+		dataList[9],
+		dataList[10],
+		dataList[11],
+		dataList[12],
+		dataList[13],
+		dataList[14]
+	},
+	{
+		dataList[15],
+		dataList[16],
+		dataList[17],
+		dataList[18],
+		dataList[19],
+		dataList[20],
+		dataList[21]
+	}
+}
+
+t_baby_bus_prize.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_baby_bus_prize

@@ -1,0 +1,276 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_mixixi_challenge_stage.lua
+
+module("logicconfig.config.t_mixixi_challenge_stage", package.seeall)
+
+local title = {
+	stageId = 2,
+	number = 4,
+	prize = 3,
+	challengePlanId = 1
+}
+local dataList = {
+	{
+		1,
+		1,
+		"4:31:1",
+		4
+	},
+	{
+		1,
+		2,
+		"4:31:1",
+		4
+	},
+	{
+		1,
+		3,
+		"4:31:2",
+		4
+	},
+	{
+		1,
+		4,
+		"4:31:2",
+		5
+	},
+	{
+		1,
+		5,
+		"4:31:2",
+		5
+	},
+	{
+		1,
+		6,
+		"4:31:3",
+		5
+	},
+	{
+		1,
+		7,
+		"4:31:3",
+		5
+	},
+	{
+		1,
+		8,
+		"4:31:3",
+		6
+	},
+	{
+		1,
+		9,
+		"4:31:3",
+		6
+	},
+	{
+		1,
+		10,
+		"100:11003:1:1",
+		6
+	},
+	{
+		2,
+		1,
+		"4:510096:1",
+		4
+	},
+	{
+		2,
+		2,
+		"4:30006:1",
+		4
+	},
+	{
+		2,
+		3,
+		"4:510096:1",
+		4
+	},
+	{
+		2,
+		4,
+		"4:30006:2",
+		5
+	},
+	{
+		2,
+		5,
+		"4:40008:1",
+		5
+	},
+	{
+		2,
+		6,
+		"4:510096:1",
+		5
+	},
+	{
+		2,
+		7,
+		"4:30006:3",
+		5
+	},
+	{
+		2,
+		8,
+		"4:40008:1",
+		6
+	},
+	{
+		2,
+		9,
+		"4:510096:2",
+		6
+	},
+	{
+		2,
+		10,
+		"4:30006:4",
+		6
+	},
+	{
+		2,
+		11,
+		"4:30006:10",
+		7
+	},
+	{
+		2,
+		12,
+		"100:17007:1:1",
+		7
+	},
+	{
+		3,
+		1,
+		"4:226:2",
+		10
+	},
+	{
+		3,
+		2,
+		"4:226:2",
+		10
+	},
+	{
+		3,
+		3,
+		"4:226:4",
+		12
+	},
+	{
+		3,
+		4,
+		"4:226:4",
+		12
+	},
+	{
+		3,
+		5,
+		"4:226:6",
+		14
+	},
+	{
+		3,
+		6,
+		"4:226:6",
+		14
+	},
+	{
+		3,
+		7,
+		"4:226:8",
+		16
+	},
+	{
+		3,
+		8,
+		"4:226:8",
+		16
+	},
+	{
+		3,
+		9,
+		"4:226:10",
+		17
+	},
+	{
+		3,
+		10,
+		"4:226:10",
+		17
+	},
+	{
+		3,
+		11,
+		"4:226:20",
+		18
+	},
+	{
+		3,
+		12,
+		"4:226:20",
+		18
+	}
+}
+local t_mixixi_challenge_stage = {
+	{
+		dataList[1],
+		dataList[2],
+		dataList[3],
+		dataList[4],
+		dataList[5],
+		dataList[6],
+		dataList[7],
+		dataList[8],
+		dataList[9],
+		dataList[10]
+	},
+	{
+		dataList[11],
+		dataList[12],
+		dataList[13],
+		dataList[14],
+		dataList[15],
+		dataList[16],
+		dataList[17],
+		dataList[18],
+		dataList[19],
+		dataList[20],
+		dataList[21],
+		dataList[22]
+	},
+	{
+		dataList[23],
+		dataList[24],
+		dataList[25],
+		dataList[26],
+		dataList[27],
+		dataList[28],
+		dataList[29],
+		dataList[30],
+		dataList[31],
+		dataList[32],
+		dataList[33],
+		dataList[34]
+	}
+}
+
+t_mixixi_challenge_stage.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_mixixi_challenge_stage

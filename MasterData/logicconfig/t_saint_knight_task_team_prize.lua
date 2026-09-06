@@ -1,0 +1,286 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_saint_knight_task_team_prize.lua
+
+module("logicconfig.config.t_saint_knight_task_team_prize", package.seeall)
+
+local title = {
+	prizeId = 2,
+	prize = 4,
+	activityId = 1,
+	progress = 3
+}
+local dataList = {
+	{
+		175022,
+		1,
+		10,
+		"4:11002:5000"
+	},
+	{
+		175022,
+		2,
+		20,
+		"60:1:1000"
+	},
+	{
+		175022,
+		3,
+		30,
+		"4:12102:3"
+	},
+	{
+		175022,
+		4,
+		40,
+		"4:11002:5000"
+	},
+	{
+		175022,
+		5,
+		50,
+		"60:1:1000"
+	},
+	{
+		175022,
+		6,
+		60,
+		"4:12102:3"
+	},
+	{
+		175022,
+		7,
+		70,
+		"4:11002:5000"
+	},
+	{
+		175022,
+		8,
+		80,
+		"60:1:1000"
+	},
+	{
+		175022,
+		9,
+		90,
+		"4:410062:1"
+	},
+	{
+		175022,
+		10,
+		100,
+		"4:12102:3"
+	},
+	{
+		175022,
+		11,
+		110,
+		"4:11002:5000"
+	},
+	{
+		175022,
+		12,
+		120,
+		"60:1:1000"
+	},
+	{
+		175022,
+		13,
+		130,
+		"4:12102:3"
+	},
+	{
+		175022,
+		14,
+		140,
+		"4:11002:5000"
+	},
+	{
+		175022,
+		15,
+		150,
+		"60:1:1000"
+	},
+	{
+		175022,
+		16,
+		160,
+		"4:12102:3"
+	},
+	{
+		175022,
+		17,
+		170,
+		"4:11002:5000"
+	},
+	{
+		175022,
+		18,
+		180,
+		"4:510817:1"
+	},
+	{
+		175022,
+		19,
+		190,
+		"60:1:1000"
+	},
+	{
+		175022,
+		20,
+		200,
+		"4:12102:3"
+	},
+	{
+		175022,
+		21,
+		210,
+		"4:11002:5000"
+	},
+	{
+		175022,
+		22,
+		220,
+		"60:1:1000"
+	},
+	{
+		175022,
+		23,
+		230,
+		"4:12102:3"
+	},
+	{
+		175022,
+		24,
+		240,
+		"4:11002:5000"
+	},
+	{
+		175022,
+		25,
+		250,
+		"60:1:1000"
+	},
+	{
+		175022,
+		26,
+		260,
+		"4:12102:3"
+	},
+	{
+		175022,
+		27,
+		270,
+		"4:410060:1"
+	},
+	{
+		175022,
+		28,
+		280,
+		"4:11002:5000"
+	},
+	{
+		175022,
+		29,
+		290,
+		"60:1:1000"
+	},
+	{
+		175022,
+		30,
+		300,
+		"4:12102:3"
+	},
+	{
+		175022,
+		31,
+		310,
+		"4:11002:5000"
+	},
+	{
+		175022,
+		32,
+		320,
+		"60:1:1000"
+	},
+	{
+		175022,
+		33,
+		330,
+		"4:12102:3"
+	},
+	{
+		175022,
+		34,
+		340,
+		"4:11002:5000"
+	},
+	{
+		175022,
+		35,
+		350,
+		"4:510817:1"
+	},
+	{
+		175022,
+		36,
+		360,
+		"4:11002:5000"
+	}
+}
+local t_saint_knight_task_team_prize = {
+	[175022] = {
+		dataList[1],
+		dataList[2],
+		dataList[3],
+		dataList[4],
+		dataList[5],
+		dataList[6],
+		dataList[7],
+		dataList[8],
+		dataList[9],
+		dataList[10],
+		dataList[11],
+		dataList[12],
+		dataList[13],
+		dataList[14],
+		dataList[15],
+		dataList[16],
+		dataList[17],
+		dataList[18],
+		dataList[19],
+		dataList[20],
+		dataList[21],
+		dataList[22],
+		dataList[23],
+		dataList[24],
+		dataList[25],
+		dataList[26],
+		dataList[27],
+		dataList[28],
+		dataList[29],
+		dataList[30],
+		dataList[31],
+		dataList[32],
+		dataList[33],
+		dataList[34],
+		dataList[35],
+		dataList[36]
+	}
+}
+
+t_saint_knight_task_team_prize.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_saint_knight_task_team_prize

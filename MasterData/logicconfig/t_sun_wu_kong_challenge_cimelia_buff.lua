@@ -1,0 +1,305 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_sun_wu_kong_challenge_cimelia_buff.lua
+
+module("logicconfig.config.t_sun_wu_kong_challenge_cimelia_buff", package.seeall)
+
+local title = {
+	cimeliaLevel = 3,
+	cimeliaBuffPlanId = 1,
+	id = 2,
+	icon = 5,
+	desc = 4
+}
+local dataList = {
+	{
+		1,
+		1,
+		1,
+		"命中+5%",
+		"icon_expedition_numu01"
+	},
+	{
+		1,
+		2,
+		2,
+		"命中+15%",
+		"icon_expedition_numu01"
+	},
+	{
+		1,
+		3,
+		3,
+		"命中+25%",
+		"icon_expedition_numu01"
+	},
+	{
+		1,
+		4,
+		4,
+		"命中+25%,属性克制效果提升+10%",
+		"icon_expedition_numu01"
+	},
+	{
+		2,
+		1,
+		1,
+		"抗暴+5%",
+		"icon_expedition_dikang_huo"
+	},
+	{
+		2,
+		2,
+		2,
+		"抗暴+15%",
+		"icon_expedition_dikang_huo"
+	},
+	{
+		2,
+		3,
+		3,
+		"抗暴+25%",
+		"icon_expedition_dikang_huo"
+	},
+	{
+		2,
+		4,
+		4,
+		"抗暴+25%,受到暴击伤害降低15%",
+		"icon_expedition_dikang_huo"
+	},
+	{
+		3,
+		1,
+		1,
+		"每回合回血+5%",
+		"icon_expedition_shengmingqishi"
+	},
+	{
+		3,
+		2,
+		2,
+		"每回合回血+10%",
+		"icon_expedition_shengmingqishi"
+	},
+	{
+		3,
+		3,
+		3,
+		"每回合回血+15%",
+		"icon_expedition_shengmingqishi"
+	},
+	{
+		3,
+		4,
+		4,
+		"每回合回血+15%,攻击吸血+10%",
+		"icon_expedition_shengmingqishi"
+	},
+	{
+		4,
+		1,
+		1,
+		"初始气势+10",
+		"icon_expedition_jihuo"
+	},
+	{
+		4,
+		2,
+		2,
+		"初始气势+20",
+		"icon_expedition_jihuo"
+	},
+	{
+		4,
+		3,
+		3,
+		"初始气势+30",
+		"icon_expedition_jihuo"
+	},
+	{
+		4,
+		4,
+		4,
+		"初始气势+30,超杀伤害+10%",
+		"icon_expedition_jihuo"
+	},
+	{
+		5,
+		1,
+		1,
+		"命中+5%",
+		"icon_expedition_numu01"
+	},
+	{
+		5,
+		2,
+		2,
+		"命中+15%",
+		"icon_expedition_numu01"
+	},
+	{
+		5,
+		3,
+		3,
+		"命中+25%",
+		"icon_expedition_numu01"
+	},
+	{
+		5,
+		4,
+		4,
+		"命中+25%,属性克制效果提升+10%,全属性+200%",
+		"icon_expedition_numu01"
+	},
+	{
+		6,
+		1,
+		1,
+		"抗暴+5%",
+		"icon_expedition_dikang_huo"
+	},
+	{
+		6,
+		2,
+		2,
+		"抗暴+15%",
+		"icon_expedition_dikang_huo"
+	},
+	{
+		6,
+		3,
+		3,
+		"抗暴+25%",
+		"icon_expedition_dikang_huo"
+	},
+	{
+		6,
+		4,
+		4,
+		"抗暴+25%,受到暴击伤害降低15%,全属性+200%",
+		"icon_expedition_dikang_huo"
+	},
+	{
+		7,
+		1,
+		1,
+		"每回合回血+5%",
+		"icon_expedition_shengmingqishi"
+	},
+	{
+		7,
+		2,
+		2,
+		"每回合回血+10%",
+		"icon_expedition_shengmingqishi"
+	},
+	{
+		7,
+		3,
+		3,
+		"每回合回血+15%",
+		"icon_expedition_shengmingqishi"
+	},
+	{
+		7,
+		4,
+		4,
+		"每回合回血+15%,攻击吸血+10%,全属性+200%",
+		"icon_expedition_shengmingqishi"
+	},
+	{
+		8,
+		1,
+		1,
+		"初始气势+10",
+		"icon_expedition_jihuo"
+	},
+	{
+		8,
+		2,
+		2,
+		"初始气势+20",
+		"icon_expedition_jihuo"
+	},
+	{
+		8,
+		3,
+		3,
+		"初始气势+30",
+		"icon_expedition_jihuo"
+	},
+	{
+		8,
+		4,
+		4,
+		"初始气势+30,超杀伤害+10%,全属性+200%",
+		"icon_expedition_jihuo"
+	}
+}
+local t_sun_wu_kong_challenge_cimelia_buff = {
+	{
+		dataList[1],
+		dataList[2],
+		dataList[3],
+		dataList[4]
+	},
+	{
+		dataList[5],
+		dataList[6],
+		dataList[7],
+		dataList[8]
+	},
+	{
+		dataList[9],
+		dataList[10],
+		dataList[11],
+		dataList[12]
+	},
+	{
+		dataList[13],
+		dataList[14],
+		dataList[15],
+		dataList[16]
+	},
+	{
+		dataList[17],
+		dataList[18],
+		dataList[19],
+		dataList[20]
+	},
+	{
+		dataList[21],
+		dataList[22],
+		dataList[23],
+		dataList[24]
+	},
+	{
+		dataList[25],
+		dataList[26],
+		dataList[27],
+		dataList[28]
+	},
+	{
+		dataList[29],
+		dataList[30],
+		dataList[31],
+		dataList[32]
+	}
+}
+
+t_sun_wu_kong_challenge_cimelia_buff.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_sun_wu_kong_challenge_cimelia_buff

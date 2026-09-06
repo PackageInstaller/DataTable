@@ -1,0 +1,281 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_prince_liyang_attribute_level.lua
+
+module("logicconfig.config.t_prince_liyang_attribute_level", package.seeall)
+
+local title = {
+	clgHelpPrizeTimes = 5,
+	progress = 4,
+	id = 2,
+	activityId = 1,
+	level = 3
+}
+local dataList = {
+	{
+		509001,
+		1,
+		1,
+		0,
+		0
+	},
+	{
+		509001,
+		1,
+		2,
+		3800000,
+		0
+	},
+	{
+		509001,
+		1,
+		3,
+		7220000,
+		0
+	},
+	{
+		509001,
+		1,
+		4,
+		13718000,
+		0
+	},
+	{
+		509001,
+		1,
+		5,
+		26064200,
+		0
+	},
+	{
+		509001,
+		1,
+		6,
+		51215760,
+		0
+	},
+	{
+		509001,
+		1,
+		7,
+		65000000,
+		0
+	},
+	{
+		509001,
+		1,
+		8,
+		80000000,
+		0
+	},
+	{
+		509001,
+		1,
+		9,
+		100000000,
+		0
+	},
+	{
+		509001,
+		1,
+		10,
+		123150960,
+		0
+	},
+	{
+		509001,
+		2,
+		1,
+		0,
+		0
+	},
+	{
+		509001,
+		2,
+		2,
+		290000,
+		0
+	},
+	{
+		509001,
+		2,
+		3,
+		638000,
+		0
+	},
+	{
+		509001,
+		2,
+		4,
+		1275000,
+		0
+	},
+	{
+		509001,
+		2,
+		5,
+		2550000,
+		0
+	},
+	{
+		509001,
+		2,
+		6,
+		5100000,
+		0
+	},
+	{
+		509001,
+		2,
+		7,
+		6000000,
+		0
+	},
+	{
+		509001,
+		2,
+		8,
+		7000000,
+		0
+	},
+	{
+		509001,
+		2,
+		9,
+		8000000,
+		0
+	},
+	{
+		509001,
+		2,
+		10,
+		9000000,
+		0
+	},
+	{
+		509001,
+		3,
+		1,
+		0,
+		2
+	},
+	{
+		509001,
+		3,
+		2,
+		202000,
+		2
+	},
+	{
+		509001,
+		3,
+		3,
+		445000,
+		2
+	},
+	{
+		509001,
+		3,
+		4,
+		890000,
+		2
+	},
+	{
+		509001,
+		3,
+		5,
+		1780000,
+		2
+	},
+	{
+		509001,
+		3,
+		6,
+		3560000,
+		2
+	},
+	{
+		509001,
+		3,
+		7,
+		4000000,
+		3
+	},
+	{
+		509001,
+		3,
+		8,
+		4500000,
+		3
+	},
+	{
+		509001,
+		3,
+		9,
+		5000000,
+		4
+	},
+	{
+		509001,
+		3,
+		10,
+		5500000,
+		4
+	}
+}
+local t_prince_liyang_attribute_level = {
+	[509001] = {
+		{
+			dataList[1],
+			dataList[2],
+			dataList[3],
+			dataList[4],
+			dataList[5],
+			dataList[6],
+			dataList[7],
+			dataList[8],
+			dataList[9],
+			dataList[10]
+		},
+		{
+			dataList[11],
+			dataList[12],
+			dataList[13],
+			dataList[14],
+			dataList[15],
+			dataList[16],
+			dataList[17],
+			dataList[18],
+			dataList[19],
+			dataList[20]
+		},
+		{
+			dataList[21],
+			dataList[22],
+			dataList[23],
+			dataList[24],
+			dataList[25],
+			dataList[26],
+			dataList[27],
+			dataList[28],
+			dataList[29],
+			dataList[30]
+		}
+	}
+}
+
+t_prince_liyang_attribute_level.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_prince_liyang_attribute_level

@@ -1,0 +1,280 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_tun_tian_extreme_clg_convert_plan.lua
+
+module("logicconfig.config.t_tun_tian_extreme_clg_convert_plan", package.seeall)
+
+local title = {
+	balancedConvertPlanId = 1,
+	originalValueRange = 3,
+	distId = 2,
+	convertedValue = 4
+}
+local dataList = {
+	{
+		1,
+		1,
+		{
+			1,
+			1
+		},
+		6
+	},
+	{
+		1,
+		2,
+		{
+			2,
+			2
+		},
+		5
+	},
+	{
+		1,
+		3,
+		{
+			3,
+			3
+		},
+		4
+	},
+	{
+		1,
+		4,
+		{
+			4,
+			4
+		},
+		3
+	},
+	{
+		1,
+		5,
+		{
+			5,
+			5
+		},
+		2
+	},
+	{
+		1,
+		6,
+		{
+			6,
+			99999
+		},
+		1
+	},
+	{
+		2,
+		1,
+		{
+			1,
+			1
+		},
+		1
+	},
+	{
+		2,
+		2,
+		{
+			2,
+			2
+		},
+		2
+	},
+	{
+		2,
+		3,
+		{
+			3,
+			3
+		},
+		3
+	},
+	{
+		2,
+		4,
+		{
+			4,
+			4
+		},
+		4
+	},
+	{
+		2,
+		5,
+		{
+			5,
+			5
+		},
+		5
+	},
+	{
+		2,
+		6,
+		{
+			6,
+			99999
+		},
+		6
+	},
+	{
+		3,
+		1,
+		{
+			0,
+			1
+		},
+		1
+	},
+	{
+		3,
+		2,
+		{
+			2,
+			3
+		},
+		2
+	},
+	{
+		3,
+		3,
+		{
+			4,
+			5
+		},
+		3
+	},
+	{
+		3,
+		4,
+		{
+			6,
+			6
+		},
+		4
+	},
+	{
+		3,
+		5,
+		{
+			7,
+			7
+		},
+		5
+	},
+	{
+		3,
+		6,
+		{
+			8,
+			99999
+		},
+		6
+	},
+	{
+		4,
+		1,
+		{
+			0,
+			1
+		},
+		1
+	},
+	{
+		4,
+		2,
+		{
+			2,
+			3
+		},
+		2
+	},
+	{
+		4,
+		3,
+		{
+			4,
+			5
+		},
+		3
+	},
+	{
+		4,
+		4,
+		{
+			6,
+			6
+		},
+		4
+	},
+	{
+		4,
+		5,
+		{
+			7,
+			7
+		},
+		5
+	},
+	{
+		4,
+		6,
+		{
+			8,
+			99999
+		},
+		6
+	}
+}
+local t_tun_tian_extreme_clg_convert_plan = {
+	{
+		dataList[1],
+		dataList[2],
+		dataList[3],
+		dataList[4],
+		dataList[5],
+		dataList[6]
+	},
+	{
+		dataList[7],
+		dataList[8],
+		dataList[9],
+		dataList[10],
+		dataList[11],
+		dataList[12]
+	},
+	{
+		dataList[13],
+		dataList[14],
+		dataList[15],
+		dataList[16],
+		dataList[17],
+		dataList[18]
+	},
+	{
+		dataList[19],
+		dataList[20],
+		dataList[21],
+		dataList[22],
+		dataList[23],
+		dataList[24]
+	}
+}
+
+t_tun_tian_extreme_clg_convert_plan.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_tun_tian_extreme_clg_convert_plan

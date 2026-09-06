@@ -1,0 +1,955 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_chat_system_msg_template.lua
+
+module("logicconfig.config.t_chat_system_msg_template", package.seeall)
+
+local title = {
+	id = 1,
+	template = 2,
+	params = 3
+}
+local dataList = {
+	{
+		1,
+		"你的好友#{b}上线了",
+		{
+			"b"
+		}
+	},
+	{
+		2,
+		"{cn}创建了{fn}家族，从此奥奇世界又多了一个温暖的大家庭！欢迎大家加入，位置有限，先到先得！",
+		{
+			"fid",
+			"fn",
+			"cid",
+			"cn"
+		}
+	},
+	{
+		3,
+		"号外号外，再有{count}个人签到就能领取特别礼包啦！速来签到，就差你啦！点击签到",
+		{
+			"count"
+		}
+	},
+	{
+		4,
+		"今日家族真热闹，签到人数已达[需求数量]，只要签到就能获得特别礼包啦！点击签到"
+	},
+	{
+		5,
+		"[{winnerName}]运气爆棚，获得了上周的锦鲤大奖[钻石]×{diamondCount}，[金币]×{coinCount}，可喜可贺！",
+		{
+			"winnerName",
+			"diamondCount",
+			"coinCount"
+		}
+	},
+	{
+		6,
+		"厉害到爆，我通过了传说挑战获得了精灵<color=#ebad32>{legendClgId}</color>！",
+		{
+			"legendClgId"
+		}
+	},
+	{
+		7,
+		"这是我的<color=#ebad32>{rare}</color>精灵<color=#ebad32>{raceId}</color>！赶紧来围观吧！",
+		{
+			"rare",
+			"raceId",
+			"petId"
+		}
+	},
+	{
+		8,
+		"这是我的<color=#ebad32>阵型</color>！赶紧来围观吧！",
+		{
+			"tabId"
+		}
+	},
+	{
+		9,
+		"快来加入我的<color=#ebad32>家族</color>吧{fn}",
+		{
+			"fn",
+			"fid"
+		}
+	},
+	{
+		10,
+		"恭喜玩家<color=#11a568>{userName}</color>，勇夺小游戏勇闯龙城排行榜第一名！",
+		{
+			"userName"
+		}
+	},
+	{
+		11,
+		"嗨！经过一番深思熟虑后，我决定不叫<color=#e58a29>[{oldName}]</color>了，从今以后我就叫[{newName}]！",
+		{
+			"newName",
+			"oldName"
+		}
+	},
+	{
+		12,
+		"家族成员[{oldName}]已经改名为[{newName}]！",
+		{
+			"newName",
+			"oldName"
+		}
+	},
+	{
+		13,
+		"这里有一只强力怪物<color=#ebad32>Lv.{bossLv}{bossName}</color>，有人能帮忙吗？<color=#ebad32>点击前往>></color>！",
+		{
+			"bossId",
+			"bossTypeId"
+		}
+	},
+	{
+		14,
+		"我通过挑战，成功获得了精灵<color=#ebad32>{raceId}</color>！赶紧来围观吧！",
+		{
+			"raceId",
+			"pgr"
+		}
+	},
+	{
+		15,
+		"{userName}在召唤中运气爆棚，获得了{raceName}！",
+		{
+			"userName",
+			"raceName",
+			"raceId",
+			"roomName",
+			"zoneId"
+		}
+	},
+	{
+		16,
+		"{userName}在完成了{clgName}挑战，获得了{raceName}！",
+		{
+			"userName",
+			"raceName",
+			"clgName",
+			"roomName",
+			"zoneId",
+			"raceId",
+			"clgId"
+		}
+	},
+	{
+		17,
+		"这是我与<color=#f2b743>{userName}</color>的切磋战绩，以<color=#f2b743>{score}</color>的比分战胜了他，快来看看吧",
+		{
+			"userName",
+			"score"
+		}
+	},
+	{
+		18,
+		"这是我与<color=#f2b743>{userName}</color>的切磋战绩，他以<color=#f2b743>{score}</color>的比分战胜了我，快来看看吧",
+		{
+			"userName",
+			"score"
+		}
+	},
+	{
+		19,
+		"这是我与<color=#f2b743>{userName}</color>的切磋战绩，以<color=#f2b743>{score}</color>的比分战平，快来看看吧",
+		{
+			"userName",
+			"score"
+		}
+	},
+	{
+		20,
+		"<color=#f2b743>{FN}</color>家族的<color=#f2b743>族长{UN}</color>邀请你完成<color=#f2b743>{BN}</color>挑战，<color=#f2b743>点击前往>></color>",
+		{
+			"FN",
+			"UN",
+			"BN"
+		}
+	},
+	{
+		21,
+		"分享一下我的{name}，点击一下查看吧",
+		{
+			"id",
+			"name"
+		}
+	},
+	{
+		22,
+		"我把你的装置卸载掉啦！",
+		{}
+	},
+	{
+		23,
+		"[{senderName}] 赠送了 [{flowerId}] * [{num} ]给 [{receiveName}]，[{receiveName}] 增加了 {addCharm}点魅力值!",
+		{
+			"senderName",
+			"receiveName",
+			"flowerId",
+			"num",
+			"addCharm",
+			"roomName",
+			"zoneId"
+		}
+	},
+	{
+		24,
+		"分享一下我的{petName}，当前战力{zdl}已超越全服<color=#FFF836FF>{overPercent}%</color>的玩家！",
+		{
+			"petName",
+			"zdl",
+			"overPercent"
+		}
+	},
+	{
+		25,
+		"快来帮我完成回归任务：<color=#ebad32>{taskName}</color>，可获得<color=#ebad32>{scoreCount}</color>，有人能帮忙吗？<color=#ebad32>点击前往>></color>！",
+		{
+			"taskId"
+		}
+	},
+	{
+		26,
+		"<color=#11a568>{userName}</color>欧气冲天，居然在红包中抽到了<color=#11a568>{spRpkId}</color>！",
+		{
+			"userName",
+			"spRpkId"
+		}
+	},
+	{
+		27,
+		"{showName}祝大家: {redPackDesc}！",
+		{
+			"showName",
+			"redPackDesc"
+		}
+	},
+	{
+		28,
+		"{userName}在召唤中运气爆棚，获得了{raceName}！",
+		{
+			"userName",
+			"raceName",
+			"raceId",
+			"roomName",
+			"zoneId"
+		}
+	},
+	{
+		29,
+		"分享一下我的<color=#ebad32>[{foodName}]</color>配方：\n<color=#ebad32>{foodFormula}</color>\n一起来为女神们制作礼物吧！",
+		{
+			"foodName",
+			"foodFormula"
+		}
+	},
+	{
+		30,
+		"{areaName}服-{userName}玩家在累充好礼活动中充值了{money}元，领取了超多好礼，引来一阵羡慕的目光！",
+		{
+			"areaName",
+			"userName",
+			"money"
+		}
+	},
+	{
+		31,
+		"{areaName}服-{userName}玩家在累消好礼活动中消费了{cost}神钻，领取了超多好礼，引来一阵羡慕的目光！",
+		{
+			"areaName",
+			"userName",
+			"cost"
+		}
+	},
+	{
+		32,
+		"分享一下我的<color=#ebad32>家族勋章墙</color>，<color=#ebad32>点击查看详情>></color>",
+		{
+			"familyId",
+			"wallId"
+		}
+	},
+	{
+		33,
+		"分享一下我得了<color=#ebad32>{score}</color>的评分，我已经赢了<color=#ebad32>{winTimes}场</color>啦！我的子弹和我一样帅气！<color=#ebad32>查看详情>></color>",
+		{
+			"score",
+			"winTimes"
+		}
+	},
+	{
+		34,
+		"天天有好礼，全民幸运抽锦鲤！恭喜来自<color=#ebad32>{areaName}</color>服-<color=#ebad32>{userName}</color>在花园锦鲤活动喜中锦鲤，获得100000钻石奖励！！",
+		{
+			"areaName",
+			"userName"
+		}
+	},
+	{
+		38,
+		"{sdarea}服{senderName}给{recvArea}服{receiveName}赠送了{flowerId}，{recvArea}服{receiveName}增加了{addCharm}魅力值，羡煞旁人！",
+		{
+			"sdarea",
+			"senderName",
+			"sdIcon",
+			"sdFrm",
+			"recvArea",
+			"recvIcon",
+			"receiveName",
+			"recvFrm",
+			"flowerId",
+			"num",
+			"addCharm"
+		}
+	},
+	{
+		39,
+		"{areaName}服-{userName}玩家在累充好礼活动中充值了{money}元，领取了超多好礼，引来一阵羡慕的目光！",
+		{
+			"areaName",
+			"userName",
+			"money"
+		}
+	},
+	{
+		40,
+		"{areaName}服-{userName}玩家的队伍在组队充值活动中充值了{money}元，队伍成员领取了超多好礼，引来一阵羡慕的目光！",
+		{
+			"areaName",
+			"userName",
+			"money"
+		}
+	},
+	{
+		41,
+		"恭喜<color=#ebad32>{campName}</color>金币鼓舞进度达成，发动鼓舞技能，为自己阵营添加大量<color=#ebad32>鼓舞值</color>",
+		{
+			"campId",
+			"campName"
+		}
+	},
+	{
+		42,
+		"恭喜<color=#ebad32>{campName}</color>金币捐献进度达成，发动掠夺技能，从其他阵营<color=#ebad32>掠夺固定积分</color>到自身阵营",
+		{
+			"campId",
+			"campName"
+		}
+	},
+	{
+		43,
+		"这里有一场激烈的战斗，请看我的精彩表演吧！<color=#ebad32>点击查看>></color>！",
+		{
+			"battleId"
+		}
+	},
+	{
+		44,
+		"本轮圣主派对，全服限量大奖仅剩{num}份，快去领取吧！",
+		{
+			"num"
+		}
+	},
+	{
+		45,
+		"恭喜<color=#ebad32>{userName}</color>在圣主派对中获得大奖<color=#ebad32>{item}</color>！",
+		{
+			"userName",
+			"item"
+		}
+	},
+	{
+		46,
+		"我给你赠送了{tokenId}，在邮箱中领取哦！快来和我一起参加活动，抽取幸运大奖吧！<color=#ebad32>点击前往>></color>！",
+		{
+			"tokenId"
+		}
+	},
+	{
+		47,
+		"恭喜<color=#ebad32>{userName}</color>在小诺生日蛋糕会上运气爆棚，获得了<color=#ebad32>{define}</color>！",
+		{
+			"userName",
+			"define"
+		}
+	},
+	{
+		48,
+		"我完成了任务[<color=#ebad32>{taskName}</color>]，给大家发个<color=#ebad32>{redpackName}</color>，前往领取>>！",
+		{
+			"redpackId",
+			"redpackTaskId"
+		}
+	},
+	{
+		49,
+		"欢迎年费用户{userName}进入精灵大陆~",
+		{
+			"userId",
+			"userName"
+		}
+	},
+	{
+		50,
+		"我在<color=#ebad32>斗技夺魁</color>中，作为<color=#ebad32>{identity}</color>角色，<color=#11a568>{landlordWin}了{goldValue}</color>个金豆，这模式 太刺激了！赶快来玩玩吧",
+		{
+			"identity",
+			"landlordWin",
+			"goldValue",
+			"activityId",
+			"battleId"
+		}
+	},
+	{
+		51,
+		"好基友一生一起走，我在梵瑞赠礼中给你增加了友爱值 x{score}噢！快来和我一起参加赠礼活动，拿限定活跃奖励吧！<color=#ebad32>点击前往>></color>",
+		{
+			"userId",
+			"score"
+		}
+	},
+	{
+		52,
+		"{sdarea}服{senderName}给{recvArea}服{receiveName}赠送了{flowerId}，{recvArea}服{receiveName}获得了珍贵的【{titleId}】限时称号，一抹香气纷芳你的心怀，一束缤纷绽放你的幸福，愿你人美如花，天天都有好心情！",
+		{
+			"sdarea",
+			"senderName",
+			"sdIcon",
+			"sdFrm",
+			"recvArea",
+			"recvIcon",
+			"receiveName",
+			"recvFrm",
+			"flowerId",
+			"num",
+			"addCharm",
+			"titleId"
+		}
+	},
+	{
+		53,
+		"我发送了总金额为{amount}的{count}个红包，快来和我一起给{faceName}打call领红包吧！",
+		{
+			"amount",
+			"count",
+			"faceName",
+			"activityId"
+		}
+	},
+	{
+		54,
+		"我发送了总金额为{amount}的{count}个红包，为{faceName}打call，领超多钻石吧！",
+		{
+			"amount",
+			"count",
+			"faceName",
+			"activityId"
+		}
+	},
+	{
+		55,
+		"我发送了总金额为{amount}的{count}个红包，只要你给{faceName}打call，我们就是好兄弟！",
+		{
+			"amount",
+			"count",
+			"faceName",
+			"activityId"
+		}
+	},
+	{
+		56,
+		"我发送了总金额为{amount}的{count}个红包，只要你给{faceName}打call，我们就是好姐妹！",
+		{
+			"amount",
+			"count",
+			"faceName",
+			"activityId"
+		}
+	},
+	{
+		57,
+		"记得要给女神投票哦！",
+		{}
+	},
+	{
+		58,
+		"我正在参与1神钻砍价活动，需要好友帮我挥手砍一刀！<color=#ebad32>点击砍价>></color>",
+		{
+			"goodsId",
+			"activityId",
+			"reduceUserId"
+		}
+	},
+	{
+		59,
+		"我的主城正面临LV.{lv}{name}的袭击，需要你的帮助！<color=#ebad32>点击前往>></color>！",
+		{
+			"lv",
+			"name",
+			"masterUniqueId"
+		}
+	},
+	{
+		60,
+		"我是次元圣使，我的奖励码是:{code}，快来参加我的圣使团，绑定奖励码，领取全套橙装、金色星神等好礼！",
+		{
+			"code",
+			"gtactId"
+		}
+	},
+	{
+		61,
+		"周年庆全民抽锦鲤，承包精灵、全额返钻、双倍返奖等你来抽！今日锦鲤已产生：{areaName}-{playerName}当选{poolDec}",
+		{
+			"areaName",
+			"playerName",
+			"poolDec"
+		}
+	},
+	{
+		62,
+		"我在红莲战场{memberNum}人模式中排名{rank}/{memberNum}",
+		{
+			"memberNum",
+			"rank",
+			"creepsIds",
+			"buffIds",
+			"score",
+			"killNum"
+		}
+	},
+	{
+		63,
+		"<color=#ebad32>房主战力：{power}切磋，<color=#FF7700CC>{roomName}</color>等待你的挑战>>！</color>",
+		{
+			"power",
+			"roomName"
+		}
+	},
+	{
+		64,
+		"发现了一个变强的超强阵，赶紧来围观吧！",
+		{
+			"periodId",
+			"viewType",
+			"fmtPlanId",
+			"fmtId"
+		}
+	},
+	{
+		65,
+		"夏日大作战，快来加入我的战队吧！现在我的队伍积分为<color=#ebad32>{teamScore}</color>,我的个人积分为<color=#ebad32>{personScore}</color>,还有<color=#ebad32>{number}</color>个空位，期待你的加入！<color=##ebad32>>>立即加入</color>",
+		{
+			"teamScore",
+			"personScore",
+			"number",
+			"teamName",
+			"activityId",
+			"teamId"
+		}
+	},
+	{
+		66,
+		"异界战场S3-迷雾骰局赛季开始了，快和我一起组队征战沙场吧！<color=#ebad32>点击前往>></color>！"
+	},
+	{
+		67,
+		"待配置"
+	},
+	{
+		68,
+		"<color=#466687>>>小诺生日会，惊喜开礼盒！我在开礼盒活动中获得了{score}欧气值，快来沾欧气吧</color><color=#cd7800>>>沾沾欧气</color>",
+		{
+			"activityId",
+			"score"
+		}
+	},
+	{
+		69,
+		"家族<color=#d56d08>{fn}</color>欢迎各路志同道合的的朋友，一起开心游戏，快乐交友！<color=#20b376>前往申请>>!</color>",
+		{
+			"fn",
+			"fid"
+		}
+	},
+	{
+		70,
+		"家人们，<color=#d56d08>{fn}</color>家族活跃玩家多多，天天都有活动，频道聊不停，一起快乐游戏！<color=#20b376>前往申请>>!</color>",
+		{
+			"fn",
+			"fid"
+		}
+	},
+	{
+		71,
+		"我的世界因你而美丽，家族因你而兴盛。<color=#d56d08>{fn}</color>家族欢迎各位活跃的小伙伴加入，一同壮大！<color=#20b376>前往申请>>!</color>",
+		{
+			"fn",
+			"fid"
+		}
+	},
+	{
+		72,
+		"游戏不止，家族永存，<color=#d56d08>{fn}</color>家族欢迎你的加入，共创辉煌！<color=#20b376>前往申请>>!</color>",
+		{
+			"fn",
+			"fid"
+		}
+	},
+	{
+		73,
+		"<color=#d56d08>{fn}</color>家族招新，休闲摸鱼，活跃肝帝，战力王者，我们全都要！<color=#20b376>前往申请>>!</color>",
+		{
+			"fn",
+			"fid"
+		}
+	},
+	{
+		74,
+		"荣耀之巅已开启，<color=#d56d08>{tn}</color>战队招募成员，需要玩家等级<color=#20b376>{pl}级至{pr}</color>级，战绩要求<color=#20b376>{w}胜</color>以上，拥有精灵数<color=#20b376>{o}</color>以上。\n符合条件的成员快来加入我的战队吧！",
+		{
+			"tn",
+			"pl",
+			"pr",
+			"w",
+			"o",
+			"a",
+			"t",
+			"c"
+		}
+	},
+	{
+		75,
+		"荣耀之巅{rank}战队：{userName}玩家已上线！",
+		{
+			"rank",
+			"userName"
+		}
+	},
+	{
+		76,
+		"我在{typeName}-{bossName}中需要你的帮助，战力{zdlLimit}以上的朋友们快来帮我！前往>>",
+		{
+			"teamId",
+			"groupId",
+			"teamCode",
+			"typeName",
+			"bossName",
+			"zdlLimit"
+		}
+	},
+	{
+		77,
+		"我在奥奇大神活动中发布了一条<color=#d56d08>{challengeName}挑战</color>的求助信息，大神们，请帮帮我！<color=#20b376>前往>></color>",
+		{
+			"activityId",
+			"targetUserId",
+			"id",
+			"challengeName"
+		}
+	},
+	{
+		78,
+		"<color=#d56d08>{name}</color>挑战已帮你通关，希望你接下来的旅程一路顺遂！",
+		{
+			"name"
+		}
+	},
+	{
+		79,
+		"我发送了<color=#d56d08>{count}</color>个总金额为<color=#d56d08>{amount}</color>钻石的拼手气<color=#d56d08>普通红包</color>，和我一起给<color=#d56d08>{faceName}</color>打call领红包吧！",
+		{
+			"amount",
+			"count",
+			"faceName"
+		}
+	},
+	{
+		80,
+		"奥奇传说圣骑队神曜归来，一起来抽实物大奖吧：【{inviteCode}】<color=#20b376>前往绑定>>!</color>",
+		{
+			"activityId",
+			"inviteCode"
+		}
+	},
+	{
+		81,
+		"我发送了<color=#d56d08>{count}</color>个总金额为<color=#d56d08>{amount}</color>钻石的拼手气<color=#d56d08>甄选红包</color>，和我一起给<color=#d56d08>{faceName}</color>打call领红包吧！",
+		{
+			"amount",
+			"count",
+			"faceName"
+		}
+	},
+	{
+		82,
+		"我发送了<color=#d56d08>{count}</color>个总金额为<color=#d56d08>{amount}</color>钻石的拼手气<color=#d56d08>豪华红包</color>，和我一起给<color=#d56d08>{faceName}</color>打call领红包吧！",
+		{
+			"amount",
+			"count",
+			"faceName"
+		}
+	},
+	{
+		83,
+		"我发送了<color=#d56d08>{count}</color>个<color=#d56d08>尊享红包</color>，和我一起给<color=#d56d08>{faceName}</color>打call领红包吧！有概率额外获得强力精灵、绝美皮肤、珍稀道具！",
+		{
+			"count",
+			"faceName"
+		}
+	},
+	{
+		84,
+		"我发送了<color=#d56d08>{count}</color>个<color=#d56d08>至尊红包</color>，和我一起给<color=#d56d08>{faceName}</color>打call领红包吧！有概率额外获得强力精灵、绝美皮肤、珍稀道具！",
+		{
+			"count",
+			"faceName"
+		}
+	},
+	{
+		85,
+		"我今日的集市价格为<color=#d56d08>{price}</color>，快来我的集市抢好价出售吧！<color=#d56d08>点击前往>>></color>",
+		{
+			"activityId",
+			"price",
+			"shareCode",
+			"sendChatTime"
+		}
+	},
+	{
+		86,
+		"救救我，终焉神临里的{star}星{typeId}类型敌阵我打不过了，有大神帮帮我吗？帮我打可获得{helpScore}积分哦，跪谢了！",
+		{
+			"activityId",
+			"otherUserId",
+			"positionId",
+			"helpId"
+		}
+	},
+	{
+		87,
+		"我的[{toyNameA}]正在寻找[{toyNameB}]做朋友，快来和我配对，领取积分奖励吧！<color=#d56d08>立即配对>></color>",
+		{
+			"activityId",
+			"toyNameA",
+			"toyNameB",
+			"matchKey",
+			"targetToyId"
+		}
+	},
+	{
+		88,
+		"我已经和你成功配对了，快回活动界面领奖吧！<color=#d56d08>前往界面>></color>",
+		{
+			"activityId"
+		}
+	},
+	{
+		89,
+		"救救我，离阳国君里的<color=#d56d08>{star}星{typeId}类型敌阵</color>我打不过了，有大神帮帮我吗？帮我打可获得<color=#d56d08>威望奖励</color>噢，跪谢了！",
+		{
+			"activityId",
+			"otherUserId",
+			"positionId",
+			"helpId"
+		}
+	},
+	{
+		90,
+		"11月21日奥奇手游全新时代 #源起# 上线，我们不见不散！我的邀请码是【{inviteCode}】，快来奥奇手游输入邀请码，和我一起出发新时代吧！",
+		{
+			"activityId",
+			"inviteCode"
+		}
+	},
+	{
+		91,
+		"我发布了一只{cutepetName}的出游邀请，请志同道合的驴友一同出游，寻找新的宠物！<color=#d56d08>点击查看>>></color>",
+		{
+			"cutepetName"
+		}
+	},
+	{
+		92,
+		"我创建了一个灵犀绘手的房间，快来一起玩吧！>>>立即前往"
+	},
+	{
+		93,
+		"拆福袋领红星/精灵/皮肤，我的邀请码是【{inviteCode}】，快来输入邀请码，帮我开福袋！",
+		{
+			"activityId",
+			"inviteCode"
+		}
+	},
+	{
+		94,
+		"我的【{bagId}号福袋】奖励是【{prizeName}x{prizeCount}】，点击消息可以直接来沾福！",
+		{
+			"activityId",
+			"buddyId",
+			"bagId",
+			"prizeId",
+			"prizeName",
+			"prizeCount"
+		}
+	},
+	{
+		95,
+		"拼刀刀砍价最低0神钻，快来帮我砍一刀，助力我圆梦吧！<color=#d56d08>点击前往>>></color>",
+		{
+			"activityId",
+			"reduceUserId",
+			"goodsId"
+		}
+	},
+	{
+		96,
+		"诚邀回归/新手玩家一起组队，我的邀请码是【{inviteCode}】，点击消息即可加入！",
+		{
+			"activityId",
+			"inviteCode"
+		}
+	},
+	{
+		97,
+		"快加入我的梦梦任务队伍吧，人越多肝度越低，点击消息即可加入！",
+		{
+			"activityId",
+			"captainId",
+			"captainName",
+			"teamScore"
+		}
+	},
+	{
+		98,
+		"【梦想通行证】3人同行减50神钻，我的进度我的队伍人数：{curMemberCount} / {maxMemberCount}，当前进度：{teamScore}，点击消息即可加入，一起领豪华奖励！",
+		{
+			"activityId",
+			"captainId",
+			"curMemberCount",
+			"maxMemberCount",
+			"teamScore"
+		}
+	}
+}
+local t_chat_system_msg_template = {
+	dataList[1],
+	dataList[2],
+	dataList[3],
+	dataList[4],
+	dataList[5],
+	dataList[6],
+	dataList[7],
+	dataList[8],
+	dataList[9],
+	dataList[10],
+	dataList[11],
+	dataList[12],
+	dataList[13],
+	dataList[14],
+	dataList[15],
+	dataList[16],
+	dataList[17],
+	dataList[18],
+	dataList[19],
+	dataList[20],
+	dataList[21],
+	dataList[22],
+	dataList[23],
+	dataList[24],
+	dataList[25],
+	dataList[26],
+	dataList[27],
+	dataList[28],
+	dataList[29],
+	dataList[30],
+	dataList[31],
+	dataList[32],
+	dataList[33],
+	dataList[34],
+	[38] = dataList[35],
+	[39] = dataList[36],
+	[40] = dataList[37],
+	[41] = dataList[38],
+	[42] = dataList[39],
+	[43] = dataList[40],
+	[44] = dataList[41],
+	[45] = dataList[42],
+	[46] = dataList[43],
+	[47] = dataList[44],
+	[48] = dataList[45],
+	[49] = dataList[46],
+	[50] = dataList[47],
+	[51] = dataList[48],
+	[52] = dataList[49],
+	[53] = dataList[50],
+	[54] = dataList[51],
+	[55] = dataList[52],
+	[56] = dataList[53],
+	[57] = dataList[54],
+	[58] = dataList[55],
+	[59] = dataList[56],
+	[60] = dataList[57],
+	[61] = dataList[58],
+	[62] = dataList[59],
+	[63] = dataList[60],
+	[64] = dataList[61],
+	[65] = dataList[62],
+	[66] = dataList[63],
+	[67] = dataList[64],
+	[68] = dataList[65],
+	[69] = dataList[66],
+	[70] = dataList[67],
+	[71] = dataList[68],
+	[72] = dataList[69],
+	[73] = dataList[70],
+	[74] = dataList[71],
+	[75] = dataList[72],
+	[76] = dataList[73],
+	[77] = dataList[74],
+	[78] = dataList[75],
+	[79] = dataList[76],
+	[80] = dataList[77],
+	[81] = dataList[78],
+	[82] = dataList[79],
+	[83] = dataList[80],
+	[84] = dataList[81],
+	[85] = dataList[82],
+	[86] = dataList[83],
+	[87] = dataList[84],
+	[88] = dataList[85],
+	[89] = dataList[86],
+	[90] = dataList[87],
+	[91] = dataList[88],
+	[92] = dataList[89],
+	[93] = dataList[90],
+	[94] = dataList[91],
+	[95] = dataList[92],
+	[96] = dataList[93],
+	[97] = dataList[94],
+	[98] = dataList[95]
+}
+
+t_chat_system_msg_template.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_chat_system_msg_template

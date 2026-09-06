@@ -1,0 +1,316 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_villain_pet_trial_spiritLine.lua
+
+module("logicconfig.config.t_villain_pet_trial_spiritLine", package.seeall)
+
+local title = {
+	suitDesc = 4,
+	buffs = 3,
+	spiritLinePlanId = 1,
+	suitName = 5,
+	suitIcon = 6,
+	spiritLineId = 2
+}
+local dataList = {
+	{
+		1,
+		1,
+		"20033105:99#20033106:99#20032219:99",
+		"生命+18000，双防<color=#C54949>+600</color>；己阵存活精灵越多，提升减伤越高，最高<color=#C54949>24%</color>",
+		"沉石之纹",
+		"icon_xitong_lingwen_07"
+	},
+	{
+		1,
+		2,
+		"20033102:99#20033106:99#20032231:99",
+		"攻击<color=#C54949>+2400</color>，双防<color=#C54949><color=#C54949>+600</color></color>；击杀目标时，恢复自身<color=#C54949>40点气势</color>（每个大回合限1次）",
+		"复引刻印",
+		"icon_xitong_lingwen_11"
+	},
+	{
+		1,
+		3,
+		"20033101:99#20032211:99",
+		"攻击<color=#C54949><color=#C54949>+3200</color></color>；对手剩余生命百分比越高，伤害加深越多，<color=#C54949>最高<color=#C54949>25%</color></color>",
+		"噬电之纹",
+		"icon_xitong_lingwen_01"
+	},
+	{
+		1,
+		4,
+		"20033102:99#20032212:99",
+		"攻击<color=#C54949><color=#C54949>+3200</color></color>；无视目标<color=#C54949><color=#C54949>25%</color></color>防御",
+		"破刃刻印",
+		"icon_xitong_lingwen_02"
+	},
+	{
+		1,
+		5,
+		"20033103:99#20032213:99",
+		"攻击<color=#C54949><color=#C54949>+3200</color></color>；每次出手后，永久提升伤害<color=#C54949><color=#C54949>5%</color></color>，最高可叠加6次",
+		"亘古鸣雷",
+		"icon_xitong_lingwen_03"
+	},
+	{
+		2,
+		1,
+		"20033105:99#20033106:99#20032219:99",
+		"生命+18000，双防<color=#C54949>+600</color>；己阵存活精灵越多，提升减伤越高，最高<color=#C54949>24%</color>",
+		"沉石之纹",
+		"icon_xitong_lingwen_07"
+	},
+	{
+		2,
+		2,
+		"20033102:99#20033106:99#20032231:99",
+		"攻击<color=#C54949>+2400</color>，双防<color=#C54949><color=#C54949>+600</color></color>；击杀目标时，恢复自身<color=#C54949>40点气势</color>（每个大回合限1次）",
+		"复引刻印",
+		"icon_xitong_lingwen_11"
+	},
+	{
+		2,
+		3,
+		"20033101:99#20032211:99",
+		"攻击<color=#C54949><color=#C54949>+3200</color></color>；对手剩余生命百分比越高，伤害加深越多，<color=#C54949>最高<color=#C54949>25%</color></color>",
+		"噬电之纹",
+		"icon_xitong_lingwen_01"
+	},
+	{
+		2,
+		4,
+		"20033102:99#20032212:99",
+		"攻击<color=#C54949><color=#C54949>+3200</color></color>；无视目标<color=#C54949><color=#C54949>25%</color></color>防御",
+		"破刃刻印",
+		"icon_xitong_lingwen_02"
+	},
+	{
+		2,
+		5,
+		"20033103:99#20032213:99",
+		"攻击<color=#C54949><color=#C54949>+3200</color></color>；每次出手后，永久提升伤害<color=#C54949><color=#C54949>5%</color></color>，最高可叠加6次",
+		"亘古鸣雷",
+		"icon_xitong_lingwen_03"
+	},
+	{
+		3,
+		1,
+		"20033105:99#20033106:99#20032219:99",
+		"生命+18000，双防<color=#C54949>+600</color>；己阵存活精灵越多，提升减伤越高，最高<color=#C54949>24%</color>",
+		"沉石之纹",
+		"icon_xitong_lingwen_07"
+	},
+	{
+		3,
+		2,
+		"20033102:99#20033106:99#20032231:99",
+		"攻击<color=#C54949>+2400</color>，双防<color=#C54949><color=#C54949>+600</color></color>；击杀目标时，恢复自身<color=#C54949>40点气势</color>（每个大回合限1次）",
+		"复引刻印",
+		"icon_xitong_lingwen_11"
+	},
+	{
+		3,
+		3,
+		"20033101:99#20032211:99",
+		"攻击<color=#C54949><color=#C54949>+3200</color></color>；对手剩余生命百分比越高，伤害加深越多，<color=#C54949>最高<color=#C54949>25%</color></color>",
+		"噬电之纹",
+		"icon_xitong_lingwen_01"
+	},
+	{
+		3,
+		4,
+		"20033102:99#20032212:99",
+		"攻击<color=#C54949><color=#C54949>+3200</color></color>；无视目标<color=#C54949><color=#C54949>25%</color></color>防御",
+		"破刃刻印",
+		"icon_xitong_lingwen_02"
+	},
+	{
+		3,
+		5,
+		"20033103:99#20032213:99",
+		"攻击<color=#C54949><color=#C54949>+3200</color></color>；每次出手后，永久提升伤害<color=#C54949><color=#C54949>5%</color></color>，最高可叠加6次",
+		"亘古鸣雷",
+		"icon_xitong_lingwen_03"
+	},
+	{
+		4,
+		1,
+		"20033102:99#20033106:99#20032229:99",
+		"攻击+2400，双防<color=#C54949>+600</color>；出手前，50%概率清除所有减益效果",
+		"落影之纹",
+		"icon_xitong_lingwen_10"
+	},
+	{
+		4,
+		2,
+		"20033102:99#20033106:99#20032233:99",
+		"攻击<color=#C54949>+2400</color>，双防<color=#C54949><color=#C54949>+600</color></color>；被击杀时，降低对手全属性<color=#C54949>30%(2回合)</color>，并有<color=#C54949><color=#C54949>20%</color>)</color>概率眩晕对手",
+		"冥刻暗咒",
+		"icon_xitong_lingwen_12"
+	},
+	{
+		4,
+		3,
+		"20033105:99#20033106:99#20032219:99",
+		"生命+18000，双防<color=#C54949>+600</color>；己阵存活精灵越多，提升减伤越高，最高<color=#C54949>24%</color>",
+		"沉石之纹",
+		"icon_xitong_lingwen_07"
+	},
+	{
+		4,
+		4,
+		"20033105:99#20033106:99#20032226:99",
+		"生命+18000，双防<color=#C54949>+600</color>；反弹20%攻击伤害，不超过自身生命值的<color=#C54949>40%</color>",
+		"固结刻印",
+		"icon_xitong_lingwen_08"
+	},
+	{
+		4,
+		5,
+		"20033105:99#20033106:99#20032227:99",
+		"生命+18000，双防<color=#C54949>+600</color>；每次受到攻击后，提升免伤<color=#C54949>4%</color>，最高可叠加6次",
+		"千载岩磐",
+		"icon_xitong_lingwen_09"
+	},
+	{
+		5,
+		1,
+		"20033102:99#20033106:99#20032229:99",
+		"攻击+2400，双防<color=#C54949>+600</color>；出手前，50%概率清除所有减益效果",
+		"落影之纹",
+		"icon_xitong_lingwen_10"
+	},
+	{
+		5,
+		2,
+		"20033104:99#20033101:99#20032215:99",
+		"生命<color=#C54949>+12000</color>，攻击<color=#C54949>+1600</color>；进入战斗时，获得攻击<color=#C54949>160%</color>的护盾值",
+		"御尘之纹",
+		"icon_xitong_lingwen_04"
+	},
+	{
+		5,
+		3,
+		"20033104:99#20033101:99#20032217:99",
+		"生命<color=#C54949>+12000</color>，攻击<color=#C54949>+1600</color>；攻击附带吸血20%，每次吸血不超自身生命值的20%",
+		"血誓刻印",
+		"icon_xitong_lingwen_05"
+	},
+	{
+		5,
+		4,
+		"20033104:99#20033101:99#20032218:99",
+		"生命<color=#C54949>+12000</color>，攻击<color=#C54949>+1600</color>；生命百分比越低，伤害越高，最高<color=#C54949>30%</color>",
+		"圣痕裂风",
+		"icon_xitong_lingwen_06"
+	},
+	{
+		5,
+		5,
+		"20033105:99#20033106:99#20032219:99",
+		"生命+18000，双防<color=#C54949>+600</color>；己阵存活精灵越多，提升减伤越高，最高<color=#C54949>24%</color>",
+		"沉石之纹",
+		"icon_xitong_lingwen_07"
+	},
+	{
+		6,
+		1,
+		"20033102:99#20033106:99#20032229:99",
+		"攻击+2400，双防<color=#C54949>+600</color>；出手前，50%概率清除所有减益效果",
+		"落影之纹",
+		"icon_xitong_lingwen_10"
+	},
+	{
+		6,
+		2,
+		"20033102:99#20033106:99#20032233:99",
+		"攻击<color=#C54949>+2400</color>，双防<color=#C54949><color=#C54949>+600</color></color>；被击杀时，降低对手全属性<color=#C54949>30%(2回合)</color>，并有<color=#C54949><color=#C54949>20%</color>)</color>概率眩晕对手",
+		"冥刻暗咒",
+		"icon_xitong_lingwen_12"
+	},
+	{
+		6,
+		3,
+		"20033105:99#20033106:99#20032219:99",
+		"生命+18000，双防<color=#C54949>+600</color>；己阵存活精灵越多，提升减伤越高，最高<color=#C54949>24%</color>",
+		"沉石之纹",
+		"icon_xitong_lingwen_07"
+	},
+	{
+		6,
+		4,
+		"20033105:99#20033106:99#20032226:99",
+		"生命+18000，双防<color=#C54949>+600</color>；反弹20%攻击伤害，不超过自身生命值的<color=#C54949>40%</color>",
+		"固结刻印",
+		"icon_xitong_lingwen_08"
+	},
+	{
+		6,
+		5,
+		"20033105:99#20033106:99#20032227:99",
+		"生命+18000，双防<color=#C54949>+600</color>；每次受到攻击后，提升免伤<color=#C54949>4%</color>，最高可叠加6次",
+		"千载岩磐",
+		"icon_xitong_lingwen_09"
+	}
+}
+local t_villain_pet_trial_spiritLine = {
+	{
+		dataList[1],
+		dataList[2],
+		dataList[3],
+		dataList[4],
+		dataList[5]
+	},
+	{
+		dataList[6],
+		dataList[7],
+		dataList[8],
+		dataList[9],
+		dataList[10]
+	},
+	{
+		dataList[11],
+		dataList[12],
+		dataList[13],
+		dataList[14],
+		dataList[15]
+	},
+	{
+		dataList[16],
+		dataList[17],
+		dataList[18],
+		dataList[19],
+		dataList[20]
+	},
+	{
+		dataList[21],
+		dataList[22],
+		dataList[23],
+		dataList[24],
+		dataList[25]
+	},
+	{
+		dataList[26],
+		dataList[27],
+		dataList[28],
+		dataList[29],
+		dataList[30]
+	}
+}
+
+t_villain_pet_trial_spiritLine.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_villain_pet_trial_spiritLine

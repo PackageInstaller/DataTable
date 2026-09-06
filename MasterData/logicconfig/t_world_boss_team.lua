@@ -1,0 +1,333 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_world_boss_team.lua
+
+module("logicconfig.config.t_world_boss_team", package.seeall)
+
+local title = {
+	description = 8,
+	name = 2,
+	video = 10,
+	skipTime = 3,
+	btlMode = 7,
+	btlBg = 4,
+	selfBuffProviderId = 9,
+	creepsMasterId = 1,
+	heroSkillId = 5,
+	recommendZdl = 6,
+	introdRaceId = 11
+}
+local dataList = {
+	{
+		1,
+		"沙之王者·洛萨",
+		5,
+		"",
+		"",
+		0,
+		"",
+		"",
+		0,
+		false,
+		0
+	},
+	{
+		2,
+		"天威雷神·星格",
+		5,
+		"",
+		"",
+		0,
+		"",
+		"",
+		0,
+		false,
+		0
+	},
+	{
+		3,
+		"不败传说·星蓝龙",
+		5,
+		"",
+		"",
+		0,
+		"",
+		"",
+		0,
+		false,
+		0
+	},
+	{
+		4,
+		"焚世·赤焰龙皇",
+		5,
+		"",
+		"",
+		0,
+		"",
+		"",
+		0,
+		false,
+		0
+	},
+	{
+		5,
+		"混元天命·真龙",
+		5,
+		"",
+		"",
+		0,
+		"",
+		"",
+		0,
+		false,
+		0
+	},
+	{
+		6,
+		"万象·次元圣龙",
+		5,
+		"",
+		"",
+		0,
+		"",
+		"",
+		0,
+		false,
+		0
+	},
+	{
+		7,
+		"万象·次元圣龙",
+		5,
+		"",
+		"",
+		0,
+		"",
+		"",
+		0,
+		false,
+		0
+	},
+	{
+		8,
+		"南瓜魔王",
+		5,
+		"",
+		"",
+		0,
+		"",
+		"",
+		0,
+		false,
+		0
+	},
+	{
+		9,
+		"赫魔莉·青骨",
+		5,
+		"",
+		"",
+		0,
+		"",
+		"",
+		0,
+		false,
+		0
+	},
+	{
+		10,
+		"暴运迎金·暴暴龙",
+		5,
+		"",
+		"",
+		0,
+		"",
+		"",
+		0,
+		false,
+		0
+	},
+	{
+		11,
+		"光子元墟·光耀神女",
+		5,
+		"",
+		"",
+		0,
+		"",
+		"",
+		0,
+		false,
+		0
+	},
+	{
+		12,
+		"美食萌主·奶龙",
+		5,
+		"",
+		"",
+		0,
+		"",
+		"",
+		0,
+		false,
+		0
+	},
+	{
+		13,
+		"御金耀世·光耀圣龙",
+		5,
+		"",
+		"",
+		0,
+		"",
+		"",
+		0,
+		false,
+		0
+	},
+	{
+		14,
+		"神曜离阳·敖九",
+		5,
+		"",
+		"",
+		0,
+		"",
+		"",
+		492,
+		false,
+		0
+	},
+	{
+		15,
+		"沙之王者·洛萨",
+		5,
+		"",
+		"",
+		0,
+		"",
+		"",
+		0,
+		false,
+		0
+	},
+	{
+		16,
+		"天威雷神·星格",
+		5,
+		"",
+		"",
+		0,
+		"",
+		"",
+		0,
+		false,
+		0
+	},
+	{
+		17,
+		"不败传说·星蓝龙",
+		5,
+		"",
+		"",
+		0,
+		"",
+		"",
+		0,
+		false,
+		0
+	},
+	{
+		18,
+		"焚世·赤焰龙皇",
+		5,
+		"",
+		"",
+		0,
+		"",
+		"",
+		0,
+		false,
+		0
+	},
+	{
+		19,
+		"混元天命·真龙",
+		5,
+		"",
+		"",
+		0,
+		"",
+		"",
+		0,
+		false,
+		0
+	},
+	{
+		20,
+		"万象·次元圣龙",
+		5,
+		"",
+		"",
+		0,
+		"",
+		"",
+		0,
+		false,
+		0
+	},
+	{
+		21,
+		"万象·次元圣龙",
+		5,
+		"",
+		"",
+		0,
+		"",
+		"",
+		0,
+		false,
+		0
+	}
+}
+local t_world_boss_team = {
+	dataList[1],
+	dataList[2],
+	dataList[3],
+	dataList[4],
+	dataList[5],
+	dataList[6],
+	dataList[7],
+	dataList[8],
+	dataList[9],
+	dataList[10],
+	dataList[11],
+	dataList[12],
+	dataList[13],
+	dataList[14],
+	dataList[15],
+	dataList[16],
+	dataList[17],
+	dataList[18],
+	dataList[19],
+	dataList[20],
+	dataList[21]
+}
+
+t_world_boss_team.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_world_boss_team

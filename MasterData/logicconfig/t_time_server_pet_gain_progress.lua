@@ -1,0 +1,260 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_time_server_pet_gain_progress.lua
+
+module("logicconfig.config.t_time_server_pet_gain_progress", package.seeall)
+
+local title = {
+	id = 2,
+	userNum = 3,
+	prize = 4,
+	progressPlanId = 1
+}
+local dataList = {
+	{
+		1,
+		1,
+		500,
+		"4:30005:13"
+	},
+	{
+		1,
+		2,
+		1000,
+		"4:30005:13"
+	},
+	{
+		1,
+		3,
+		1500,
+		"4:30005:13"
+	},
+	{
+		1,
+		4,
+		2000,
+		"4:30005:13"
+	},
+	{
+		1,
+		5,
+		2500,
+		"4:30005:13"
+	},
+	{
+		1,
+		6,
+		3000,
+		"4:30005:14"
+	},
+	{
+		1,
+		7,
+		3500,
+		"4:30005:13"
+	},
+	{
+		1,
+		8,
+		4000,
+		"4:30005:13"
+	},
+	{
+		1,
+		9,
+		4500,
+		"4:30005:13"
+	},
+	{
+		1,
+		10,
+		5000,
+		"4:30005:13"
+	},
+	{
+		1,
+		11,
+		5500,
+		"4:30005:15"
+	},
+	{
+		1,
+		12,
+		6000,
+		"4:30005:13"
+	},
+	{
+		1,
+		13,
+		6500,
+		"4:30005:13"
+	},
+	{
+		1,
+		14,
+		7000,
+		"4:30005:13"
+	},
+	{
+		1,
+		15,
+		7500,
+		"4:30005:15"
+	},
+	{
+		1,
+		16,
+		8000,
+		"4:510022:1"
+	},
+	{
+		2,
+		1,
+		500,
+		"4:30005:13"
+	},
+	{
+		2,
+		2,
+		1000,
+		"4:30005:13"
+	},
+	{
+		2,
+		3,
+		2000,
+		"4:30005:13"
+	},
+	{
+		2,
+		4,
+		3000,
+		"4:30005:13"
+	},
+	{
+		2,
+		5,
+		4000,
+		"4:30005:13"
+	},
+	{
+		2,
+		6,
+		5000,
+		"4:30005:14"
+	},
+	{
+		2,
+		7,
+		6000,
+		"4:30005:13"
+	},
+	{
+		2,
+		8,
+		7000,
+		"4:30005:13"
+	},
+	{
+		2,
+		9,
+		8000,
+		"4:30005:13"
+	},
+	{
+		2,
+		10,
+		9000,
+		"4:30005:13"
+	},
+	{
+		2,
+		11,
+		10000,
+		"4:30005:15"
+	},
+	{
+		2,
+		12,
+		11000,
+		"4:30005:13"
+	},
+	{
+		2,
+		13,
+		12000,
+		"4:30005:13"
+	},
+	{
+		2,
+		14,
+		13000,
+		"4:30005:13"
+	},
+	{
+		2,
+		15,
+		14000,
+		"4:30005:15"
+	},
+	{
+		2,
+		16,
+		15000,
+		"4:510022:1"
+	}
+}
+local t_time_server_pet_gain_progress = {
+	{
+		dataList[1],
+		dataList[2],
+		dataList[3],
+		dataList[4],
+		dataList[5],
+		dataList[6],
+		dataList[7],
+		dataList[8],
+		dataList[9],
+		dataList[10],
+		dataList[11],
+		dataList[12],
+		dataList[13],
+		dataList[14],
+		dataList[15],
+		dataList[16]
+	},
+	{
+		dataList[17],
+		dataList[18],
+		dataList[19],
+		dataList[20],
+		dataList[21],
+		dataList[22],
+		dataList[23],
+		dataList[24],
+		dataList[25],
+		dataList[26],
+		dataList[27],
+		dataList[28],
+		dataList[29],
+		dataList[30],
+		dataList[31],
+		dataList[32]
+	}
+}
+
+t_time_server_pet_gain_progress.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_time_server_pet_gain_progress

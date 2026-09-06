@@ -1,0 +1,484 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_expedition_grid_map.lua
+
+module("logicconfig.config.t_expedition_grid_map", package.seeall)
+
+local title = {
+	fightEventNum = 6,
+	name = 3,
+	mapSize = 2,
+	showPrizeDirectly = 5,
+	buffEventNum = 10,
+	exitType = 13,
+	bigPrizeEventNum = 8,
+	gridMapId = 1,
+	petEventNum = 11,
+	eventPic = 4,
+	reviveEventNum = 12,
+	exitParam = 14,
+	shopEventNum = 9,
+	desc = 15,
+	prizeEventNum = 7
+}
+local dataList = {
+	{
+		1,
+		{
+			8,
+			8
+		},
+		"普通战斗",
+		"btn_sj_ptzd",
+		true,
+		3,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		"fightWin",
+		"3",
+		"您将面对普通怪物，随手打发了他们，就可以获得一笔还算可观的奖励。"
+	},
+	{
+		2,
+		{
+			5,
+			5
+		},
+		"交易",
+		"btn_sj_jy",
+		true,
+		0,
+		0,
+		0,
+		1,
+		0,
+		0,
+		0,
+		"finishEventNum",
+		"1",
+		"您可以找到一些商人，他们将会出售一些从未知来源获得的奇怪商品。"
+	},
+	{
+		3,
+		{
+			5,
+			5
+		},
+		"援军",
+		"btn_sj_yj",
+		true,
+		0,
+		0,
+		0,
+		0,
+		0,
+		1,
+		0,
+		"finishEventNum",
+		"1",
+		"漫长的征途中，偶尔也需要一些外部力量的援助，选择一些支援精灵帮助您继续征战吧。"
+	},
+	{
+		4,
+		{
+			8,
+			8
+		},
+		"精英战斗",
+		"btn_sj_jyzd",
+		false,
+		3,
+		1,
+		0,
+		0,
+		0,
+		0,
+		0,
+		"finishEventNum",
+		"4",
+		"您将遭遇精英怪物，这会是一场有挑战性的战斗，但也会获得额外的丰厚奖励。"
+	},
+	{
+		5,
+		{
+			5,
+			5
+		},
+		"魔王战",
+		"btn_sj_mwz",
+		false,
+		1,
+		0,
+		1,
+		0,
+		0,
+		0,
+		0,
+		"finishEventNum",
+		"2",
+		"您将面对这片遗迹的魔王，远古的守护者，鼓起勇气向他发起挑战吧。"
+	},
+	{
+		6,
+		{
+			5,
+			5
+		},
+		"交易",
+		"btn_sj_jy",
+		true,
+		0,
+		0,
+		0,
+		1,
+		0,
+		0,
+		0,
+		"finishEventNum",
+		"1",
+		"您可以找到一些商人，他们将会出售一些从未知来源获得的奇怪商品。"
+	},
+	{
+		7,
+		{
+			5,
+			5
+		},
+		"援军",
+		"btn_sj_yj",
+		true,
+		0,
+		0,
+		0,
+		0,
+		0,
+		1,
+		0,
+		"finishEventNum",
+		"1",
+		"漫长的征途中，偶尔也需要一些外部力量的援助，选择一些支援精灵帮助您继续征战吧。"
+	},
+	{
+		8,
+		{
+			8,
+			8
+		},
+		"普通战斗",
+		"btn_sj_ptzd",
+		true,
+		3,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		"fightWin",
+		"3",
+		"您将面对普通怪物，随手打发了他们，就可以获得一笔还算可观的奖励。"
+	},
+	{
+		9,
+		{
+			8,
+			8
+		},
+		"普通战斗",
+		"btn_sj_ptzd",
+		true,
+		3,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		"fightWin",
+		"3",
+		"您将面对普通怪物，随手打发了他们，就可以获得一笔还算可观的奖励。"
+	},
+	{
+		10,
+		{
+			8,
+			8
+		},
+		"精英战斗",
+		"btn_sj_jyzd",
+		false,
+		3,
+		1,
+		0,
+		0,
+		0,
+		0,
+		0,
+		"finishEventNum",
+		"4",
+		"您将遭遇精英怪物，这会是一场有挑战性的战斗，但也会获得额外的丰厚奖励。"
+	},
+	{
+		11,
+		{
+			5,
+			5
+		},
+		"交易",
+		"btn_sj_jy",
+		true,
+		0,
+		0,
+		0,
+		1,
+		0,
+		0,
+		0,
+		"finishEventNum",
+		"1",
+		"您可以找到一些商人，他们将会出售一些从未知来源获得的奇怪商品。"
+	},
+	{
+		13,
+		{
+			5,
+			5
+		},
+		"援军",
+		"btn_sj_yj",
+		true,
+		0,
+		0,
+		0,
+		0,
+		0,
+		1,
+		0,
+		"finishEventNum",
+		"1",
+		"漫长的征途中，偶尔也需要一些外部力量的援助，选择一些支援精灵帮助您继续征战吧。"
+	},
+	{
+		14,
+		{
+			8,
+			8
+		},
+		"普通战斗",
+		"btn_sj_ptzd",
+		true,
+		1,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		"fightWin",
+		"1",
+		"您将面对普通怪物，随手打发了他们，就可以获得一笔还算可观的奖励。"
+	},
+	{
+		15,
+		{
+			8,
+			8
+		},
+		"普通战斗",
+		"btn_sj_ptzd",
+		true,
+		2,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		"fightWin",
+		"2",
+		"您将面对普通怪物，随手打发了他们，就可以获得一笔还算可观的奖励。"
+	},
+	{
+		16,
+		{
+			5,
+			5
+		},
+		"交易",
+		"btn_sj_jy",
+		true,
+		0,
+		0,
+		0,
+		1,
+		0,
+		0,
+		0,
+		"finishEventNum",
+		"1",
+		"您可以找到一些商人，他们将会出售一些从未知来源获得的奇怪商品。"
+	},
+	{
+		18,
+		{
+			5,
+			5
+		},
+		"援军",
+		"btn_sj_yj",
+		true,
+		0,
+		0,
+		0,
+		0,
+		0,
+		1,
+		0,
+		"finishEventNum",
+		"1",
+		"漫长的征途中，偶尔也需要一些外部力量的援助，选择一些支援精灵帮助您继续征战吧。"
+	},
+	{
+		19,
+		{
+			5,
+			5
+		},
+		"交易",
+		"btn_sj_jy",
+		true,
+		0,
+		0,
+		0,
+		1,
+		0,
+		0,
+		0,
+		"finishEventNum",
+		"1",
+		"您可以找到一些商人，他们将会出售一些从未知来源获得的奇怪商品。"
+	},
+	{
+		21,
+		{
+			5,
+			5
+		},
+		"援军",
+		"btn_sj_yj",
+		true,
+		0,
+		0,
+		0,
+		0,
+		0,
+		1,
+		0,
+		"finishEventNum",
+		"1",
+		"漫长的征途中，偶尔也需要一些外部力量的援助，选择一些支援精灵帮助您继续征战吧。"
+	},
+	{
+		22,
+		{
+			5,
+			5
+		},
+		"曙光泉水",
+		"btn_sj_sgqs",
+		true,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		1,
+		"finishEventNum",
+		"1",
+		"先驱们曾在这里发现过一个神奇的泉眼，他们小心翼翼地使用，这些神奇的泉水至今还在静谧的流淌。"
+	},
+	{
+		23,
+		{
+			5,
+			5
+		},
+		"曙光泉水",
+		"btn_sj_sgqs",
+		true,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		1,
+		"finishEventNum",
+		"1",
+		"先驱们曾在这里发现过一个神奇的泉眼，他们小心翼翼地使用，这些神奇的泉水至今还在静谧的流淌。"
+	},
+	{
+		24,
+		{
+			5,
+			5
+		},
+		"魔王战",
+		"btn_sj_mwz",
+		false,
+		1,
+		0,
+		1,
+		0,
+		0,
+		0,
+		0,
+		"finishEventNum",
+		"2",
+		"您将要面对探险以来的最大挑战，不具名的魔王，从远古时期一直在这片土地上徘徊，小心！！！"
+	}
+}
+local t_expedition_grid_map = {
+	dataList[1],
+	dataList[2],
+	dataList[3],
+	dataList[4],
+	dataList[5],
+	dataList[6],
+	dataList[7],
+	dataList[8],
+	dataList[9],
+	dataList[10],
+	dataList[11],
+	[13] = dataList[12],
+	[14] = dataList[13],
+	[15] = dataList[14],
+	[16] = dataList[15],
+	[18] = dataList[16],
+	[19] = dataList[17],
+	[21] = dataList[18],
+	[22] = dataList[19],
+	[23] = dataList[20],
+	[24] = dataList[21]
+}
+
+t_expedition_grid_map.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_expedition_grid_map

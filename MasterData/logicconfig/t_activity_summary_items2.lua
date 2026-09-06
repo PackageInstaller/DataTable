@@ -1,0 +1,468 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_activity_summary_items2.lua
+
+module("logicconfig.config.t_activity_summary_items2", package.seeall)
+
+local title = {
+	endTime = 10,
+	name = 16,
+	cellName = 20,
+	form = 7,
+	pos = 19,
+	viewname = 6,
+	params = 5,
+	icon = 17,
+	activityId = 12,
+	reportBehavior = 3,
+	tips = 15,
+	openCondition = 8,
+	redpointId = 13,
+	picture = 14,
+	planId = 1,
+	bgIcon = 18,
+	activityType = 11,
+	funcId = 4,
+	id = 2,
+	startTime = 9
+}
+local dataList = {
+	{
+		41001,
+		1,
+		0,
+		251,
+		"",
+		"",
+		0,
+		"",
+		"2021-06-10T05:00:00",
+		"2021-07-02T05:00:00",
+		39,
+		39001,
+		"1031",
+		"board_antishi_02",
+		"挑战",
+		"创界之路",
+		"ui/icon/character/icon_10165_mang",
+		"btn_antianshi_01",
+		{
+			-280,
+			125
+		},
+		"cell1"
+	},
+	{
+		41001,
+		2,
+		0,
+		244,
+		"",
+		"",
+		0,
+		"",
+		"2021-06-10T05:00:00",
+		"2021-07-02T05:00:00",
+		18,
+		18004,
+		"80",
+		"board_antishi_02",
+		"签到",
+		"暗天使赠礼",
+		"ui/icon/items/icon_shenhuanjuan02",
+		"btn_antianshi_01",
+		{
+			-320,
+			10
+		},
+		"cell1"
+	},
+	{
+		41001,
+		3,
+		200394,
+		248,
+		"",
+		"",
+		0,
+		"",
+		"2021-06-10T05:00:00",
+		"2021-07-02T05:00:00",
+		40,
+		40001,
+		"104",
+		"board_antishi_02",
+		"累消",
+		"累消送时装",
+		"ui/icon/items/icon_xueyuanhong",
+		"btn_antianshi_01",
+		{
+			-280,
+			-105
+		},
+		"cell1"
+	},
+	{
+		41001,
+		4,
+		200391,
+		233,
+		"",
+		"",
+		0,
+		"",
+		"2021-06-10T05:00:00",
+		"2021-07-02T05:00:00",
+		32,
+		32001,
+		"",
+		"board_antishi_02",
+		"活动",
+		"梦想扭蛋机",
+		"ui/icon/items/icon_niudanji",
+		"btn_antianshi_01",
+		{
+			275,
+			125
+		},
+		"cell2"
+	},
+	{
+		41001,
+		5,
+		200393,
+		253,
+		"",
+		"",
+		0,
+		"",
+		"2021-06-10T05:00:00",
+		"2021-07-02T05:00:00",
+		35,
+		35001,
+		"1100",
+		"board_antishi_02",
+		"活动",
+		"炼金工坊",
+		"ui/icon/items/icon_tiekui_8",
+		"btn_antianshi_01",
+		{
+			315,
+			10
+		},
+		"cell2"
+	},
+	{
+		41001,
+		6,
+		0,
+		111,
+		"",
+		"",
+		0,
+		"",
+		"2021-06-10T05:00:00",
+		"2021-07-02T05:00:00",
+		2,
+		2002,
+		"50",
+		"board_antishi_02",
+		"活动",
+		"暗羽密藏",
+		"ui/icon/items/icon_shop_zb02",
+		"btn_antianshi_01",
+		{
+			275,
+			-105
+		},
+		"cell2"
+	},
+	{
+		41002,
+		1,
+		200406,
+		254,
+		"",
+		"",
+		0,
+		"",
+		"2021-07-02T05:00:00",
+		"2021-07-22T05:00:00",
+		0,
+		0,
+		"116#119",
+		"",
+		"",
+		"光明王挑战",
+		"ui/icon/items/icon_guangmingwang",
+		"board_tclb_32",
+		{
+			116,
+			-145
+		},
+		"cell1"
+	},
+	{
+		41002,
+		2,
+		200407,
+		109,
+		"",
+		"",
+		0,
+		"",
+		"2021-07-02T05:00:00",
+		"2021-07-22T05:00:00",
+		3,
+		3010,
+		"-18",
+		"",
+		"",
+		"全民觉醒\n光明王",
+		"ui/icon/items/icon_gmwx",
+		"board_tclb_32",
+		{
+			267,
+			40
+		},
+		"cell1"
+	},
+	{
+		41002,
+		3,
+		200409,
+		245,
+		"",
+		"",
+		0,
+		"",
+		"2021-07-02T05:00:00",
+		"2021-07-22T05:00:00",
+		0,
+		0,
+		"113#114",
+		"",
+		"",
+		"乱斗兑\n60神唤券",
+		"ui/icon/items/icon_shenhuanxiang",
+		"board_tclb_32",
+		{
+			420,
+			-145
+		},
+		"cell1"
+	},
+	{
+		41002,
+		4,
+		200408,
+		255,
+		"1",
+		"",
+		0,
+		"",
+		"2021-07-02T05:00:00",
+		"2021-07-09T05:00:00",
+		18,
+		0,
+		"80",
+		"",
+		"",
+		"传说女仆全民送",
+		"ui/icon/items/icon_panduola_01",
+		"board_tclb_32",
+		{
+			267,
+			-145
+		},
+		"cell1"
+	},
+	{
+		41002,
+		5,
+		200408,
+		255,
+		"2",
+		"",
+		0,
+		"",
+		"2021-07-09T05:00:00",
+		"2021-07-16T05:00:00",
+		18,
+		0,
+		"80",
+		"",
+		"",
+		"登录送1000体力",
+		"ui/icon/items/icon_tilidai",
+		"board_tclb_32",
+		{
+			267,
+			-145
+		},
+		"cell1"
+	},
+	{
+		41002,
+		6,
+		200408,
+		255,
+		"3",
+		"",
+		0,
+		"",
+		"2021-07-16T05:00:00",
+		"2021-07-22T05:00:00",
+		18,
+		0,
+		"80",
+		"",
+		"",
+		"登录送橙色装备箱",
+		"ui/icon/items/icon_shop_zb02",
+		"board_tclb_32",
+		{
+			267,
+			-145
+		},
+		"cell1"
+	},
+	{
+		41002,
+		7,
+		200412,
+		47,
+		"",
+		"",
+		0,
+		"",
+		"2021-07-02T05:00:00",
+		"2021-07-08T05:00:00",
+		19,
+		19001,
+		"",
+		"",
+		"",
+		"主线掉落翻倍",
+		"ui/icon/items/icon_zhuxianlibao",
+		"board_tclb_32",
+		{
+			116,
+			40
+		},
+		"cell1"
+	},
+	{
+		41002,
+		8,
+		200412,
+		52,
+		"",
+		"",
+		0,
+		"",
+		"2021-07-08T05:00:00",
+		"2021-07-15T05:00:00",
+		19,
+		19002,
+		"36",
+		"",
+		"",
+		"失落遗迹奖励翻倍",
+		"ui/icon/items/icon_shop_zb02",
+		"board_tclb_32",
+		{
+			116,
+			40
+		},
+		"cell1"
+	},
+	{
+		41002,
+		9,
+		200412,
+		106,
+		"2",
+		"",
+		0,
+		"",
+		"2021-07-15T05:00:00",
+		"2021-07-22T05:00:00",
+		19,
+		19005,
+		"37",
+		"",
+		"",
+		"经验幻境翻倍",
+		"ui/icon/items/icon_jyglb",
+		"board_tclb_32",
+		{
+			116,
+			40
+		},
+		"cell1"
+	},
+	{
+		41002,
+		10,
+		200414,
+		3,
+		"happylemonview",
+		"",
+		0,
+		"",
+		"2021-07-02T05:00:00",
+		"2021-07-22T05:00:00",
+		0,
+		0,
+		"",
+		"",
+		"",
+		"快乐柠檬豪礼",
+		"ui/icon/headframe/icon_touxiang_16",
+		"board_tclb_32",
+		{
+			420,
+			40
+		},
+		"cell1"
+	}
+}
+local t_activity_summary_items2 = {
+	[41001] = {
+		dataList[1],
+		dataList[2],
+		dataList[3],
+		dataList[4],
+		dataList[5],
+		dataList[6]
+	},
+	[41002] = {
+		dataList[7],
+		dataList[8],
+		dataList[9],
+		dataList[10],
+		dataList[11],
+		dataList[12],
+		dataList[13],
+		dataList[14],
+		dataList[15],
+		dataList[16]
+	}
+}
+
+t_activity_summary_items2.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_activity_summary_items2

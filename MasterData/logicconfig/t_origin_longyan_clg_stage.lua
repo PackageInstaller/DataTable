@@ -1,0 +1,365 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_origin_longyan_clg_stage.lua
+
+module("logicconfig.config.t_origin_longyan_clg_stage", package.seeall)
+
+local title = {
+	stageId = 2,
+	ruleDesc = 8,
+	openDay = 3,
+	positionSignId = 5,
+	passDesc = 9,
+	showPic = 10,
+	prize = 7,
+	pos = 11,
+	passSignId = 6,
+	creepsMasterId = 4,
+	activityId = 1
+}
+local dataList = {
+	{
+		563001,
+		1,
+		0,
+		1001,
+		{
+			1,
+			1,
+			1,
+			1,
+			1,
+			0,
+			0,
+			0,
+			0
+		},
+		1,
+		"4:510702:5",
+		"击败敌阵并最先触发坚毅印记效果",
+		"击败敌阵并最先触发坚毅印记效果",
+		"board_yuanqilongyan_01",
+		{
+			0,
+			120
+		}
+	},
+	{
+		563001,
+		2,
+		0,
+		1002,
+		{
+			0,
+			0,
+			0,
+			0,
+			2,
+			2,
+			2,
+			2,
+			2
+		},
+		2,
+		"4:510702:5",
+		"击败敌阵并最先触发热血印记效果",
+		"击败敌阵并最先触发热血印记效果",
+		"board_yuanqilongyan_02",
+		{
+			0,
+			-137
+		}
+	},
+	{
+		563001,
+		3,
+		0,
+		1003,
+		{
+			1,
+			2,
+			1,
+			2,
+			1,
+			2,
+			0,
+			0,
+			0
+		},
+		1,
+		"4:510702:5",
+		"击败敌阵并最先触发坚毅印记效果",
+		"击败敌阵并最先触发坚毅印记效果",
+		"board_yuanqilongyan_03",
+		{
+			0,
+			120
+		}
+	},
+	{
+		563001,
+		4,
+		0,
+		1004,
+		{
+			0,
+			0,
+			0,
+			2,
+			1,
+			2,
+			1,
+			2,
+			1
+		},
+		2,
+		"4:510702:5",
+		"击败敌阵并最先触发热血印记效果",
+		"击败敌阵并最先触发热血印记效果",
+		"board_yuanqilongyan_04",
+		{
+			0,
+			-137
+		}
+	},
+	{
+		563001,
+		5,
+		1,
+		1005,
+		{
+			4,
+			0,
+			3,
+			0,
+			4,
+			0,
+			3,
+			0,
+			4
+		},
+		3,
+		"4:510702:5",
+		"击败敌阵并最先触发坚毅印记效果",
+		"击败敌阵并最先触发坚毅印记效果",
+		"board_yuanqilongyan_01",
+		{
+			0,
+			120
+		}
+	},
+	{
+		563001,
+		6,
+		1,
+		1006,
+		{
+			0,
+			3,
+			0,
+			4,
+			0,
+			3,
+			0,
+			4,
+			0
+		},
+		4,
+		"4:510702:5",
+		"击败敌阵并最先触发热血印记效果",
+		"击败敌阵并最先触发热血印记效果",
+		"board_yuanqilongyan_02",
+		{
+			0,
+			-137
+		}
+	},
+	{
+		563001,
+		7,
+		1,
+		1007,
+		{
+			0,
+			3,
+			0,
+			4,
+			4,
+			4,
+			3,
+			0,
+			3
+		},
+		3,
+		"4:510702:10",
+		"击败敌阵并最先触发坚毅印记效果",
+		"击败敌阵并最先触发坚毅印记效果",
+		"board_yuanqilongyan_03",
+		{
+			0,
+			120
+		}
+	},
+	{
+		563001,
+		8,
+		1,
+		1008,
+		{
+			3,
+			3,
+			3,
+			0,
+			4,
+			4,
+			4,
+			0,
+			4
+		},
+		4,
+		"4:510702:10",
+		"击败敌阵并最先触发热血印记效果",
+		"击败敌阵并最先触发热血印记效果",
+		"board_yuanqilongyan_04",
+		{
+			0,
+			-137
+		}
+	},
+	{
+		563001,
+		9,
+		2,
+		1009,
+		{
+			5,
+			6,
+			5,
+			6,
+			5,
+			6,
+			5,
+			6,
+			5
+		},
+		5,
+		"4:510702:10",
+		"击败敌阵并最先触发坚毅印记效果",
+		"击败敌阵并最先触发坚毅印记效果",
+		"board_yuanqilongyan_01",
+		{
+			0,
+			120
+		}
+	},
+	{
+		563001,
+		10,
+		2,
+		1010,
+		{
+			6,
+			5,
+			6,
+			5,
+			6,
+			5,
+			6,
+			5,
+			6
+		},
+		6,
+		"4:510702:10",
+		"击败敌阵并最先触发热血印记效果",
+		"击败敌阵并最先触发热血印记效果",
+		"board_yuanqilongyan_02",
+		{
+			0,
+			-137
+		}
+	},
+	{
+		563001,
+		11,
+		2,
+		1011,
+		{
+			6,
+			6,
+			6,
+			5,
+			5,
+			5,
+			6,
+			6,
+			6
+		},
+		5,
+		"4:510702:10",
+		"击败敌阵并最先触发坚毅印记效果",
+		"击败敌阵并最先触发坚毅印记效果",
+		"board_yuanqilongyan_03",
+		{
+			0,
+			120
+		}
+	},
+	{
+		563001,
+		12,
+		2,
+		1012,
+		{
+			5,
+			5,
+			5,
+			6,
+			6,
+			6,
+			5,
+			5,
+			5
+		},
+		6,
+		"4:510702:20",
+		"击败敌阵并最先触发热血印记效果",
+		"击败敌阵并最先触发热血印记效果",
+		"board_yuanqilongyan_04",
+		{
+			0,
+			-137
+		}
+	}
+}
+local t_origin_longyan_clg_stage = {
+	[563001] = {
+		dataList[1],
+		dataList[2],
+		dataList[3],
+		dataList[4],
+		dataList[5],
+		dataList[6],
+		dataList[7],
+		dataList[8],
+		dataList[9],
+		dataList[10],
+		dataList[11],
+		dataList[12]
+	}
+}
+
+t_origin_longyan_clg_stage.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_origin_longyan_clg_stage

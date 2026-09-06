@@ -1,0 +1,355 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_world_boss_type.lua
+
+module("logicconfig.config.t_world_boss_type", package.seeall)
+
+local title = {
+	description = 6,
+	name = 2,
+	buffId = 12,
+	mask = 9,
+	threshold = 5,
+	bg = 8,
+	nameId = 3,
+	bossNpc = 10,
+	teamId = 4,
+	rightBg = 11,
+	bossId = 1,
+	popBg = 7
+}
+local dataList = {
+	{
+		1,
+		"沙之王者·洛萨",
+		0,
+		1,
+		10000,
+		"己阵精灵的命中率降低20%；\r\n敌方洛萨每次攻击会施加随机的减益效果",
+		"sjb_ls_03",
+		"sjb_ls_01",
+		"sjb_mengban",
+		"1051008",
+		"board_jiazuboss_xinxi",
+		"20049025"
+	},
+	{
+		2,
+		"天威雷神·星格",
+		3,
+		2,
+		10000,
+		"敌方星格的攻击每命中一个精灵，便对一个随机己阵精灵造成雷电伤害",
+		"sjb_xg_03",
+		"sjb_xg_01",
+		"sjb_mengban",
+		"1051008",
+		"board_jiazuboss_xinxi",
+		"20049025"
+	},
+	{
+		3,
+		"不败传说·星蓝龙",
+		1,
+		3,
+		10000,
+		"每轮结束时，冻结己阵气势最高的精灵并清空其气势；\r\n敌方星蓝龙每回合出手两次",
+		"sjb_lxl_03",
+		"sjb_lxl_01",
+		"sjb_mengban",
+		"1051008",
+		"board_jiazuboss_xinxi",
+		"20049025"
+	},
+	{
+		4,
+		"焚世·赤焰龙皇",
+		5,
+		4,
+		10000,
+		"敌方赤焰龙皇的攻击会附带灼烧效果",
+		"sjb_bg_03",
+		"sjb_bg_01",
+		"sjb_bg_02",
+		"1051008",
+		"board_jiazuboss_xinxi",
+		"20049025"
+	},
+	{
+		5,
+		"混元天命·真龙",
+		4,
+		5,
+		10000,
+		"敌方精灵首次受到属性伤害后，之后受到的其他属性的伤害降低50%",
+		"sjb_zl_03",
+		"sjb_zl_01",
+		"sjb_mengban",
+		"1051008",
+		"board_jiazuboss_xinxi",
+		"20049025"
+	},
+	{
+		6,
+		"万象·次元圣龙",
+		2,
+		6,
+		10000,
+		"己阵精灵开局获得满气势",
+		"sjb_wxl_03",
+		"sjb_wxl_01",
+		"sjb_mengban",
+		"1051008",
+		"board_jiazuboss_xinxi",
+		"20049025"
+	},
+	{
+		7,
+		"万象·次元圣龙",
+		2,
+		7,
+		10000,
+		"己阵精灵开局获得满气势",
+		"sjb_wxl_03",
+		"sjb_wxl_01",
+		"sjb_mengban",
+		"1051008",
+		"board_jiazuboss_xinxi",
+		"20049025"
+	},
+	{
+		8,
+		"南瓜魔王",
+		8,
+		8,
+		10000,
+		"己阵精灵开局获得满气势",
+		"sjb_ngmw_03",
+		"sjb_ngmw_01",
+		"sjb_mengban",
+		"1051008",
+		"board_jiazuboss_xinxi",
+		"20049025"
+	},
+	{
+		9,
+		"赫魔莉·青骨",
+		7,
+		9,
+		10000,
+		"己方破除元素盾，可相应获得爆发性增益且青骨受到的伤害永久加深50%",
+		"sjb_qinggu_03",
+		"sjb_qinggu_01",
+		"sjb_mengban",
+		"1051008",
+		"board_jiazuboss_xinxi03",
+		"20049025"
+	},
+	{
+		10,
+		"暴运迎金·秩序",
+		9,
+		10,
+		10000,
+		"BOSS每次攻击后，降低敌阵全体30点气势",
+		"sjb_wxl_03",
+		"sjb_wxl_01",
+		"sjb_mengban",
+		"1051008",
+		"board_jiazuboss_xinxi",
+		"20049025"
+	},
+	{
+		11,
+		"光子元墟·光耀神女",
+		10,
+		11,
+		10000,
+		"奇数大回合内BOSS受到的一切伤害降低60%",
+		"sjb_wxl_03",
+		"sjb_wxl_01",
+		"sjb_mengban",
+		"1051008",
+		"board_jiazuboss_xinxi",
+		"20049025"
+	},
+	{
+		12,
+		"美食萌主·奶龙",
+		11,
+		12,
+		10000,
+		"BOSS会反弹20%伤害（单次最多不超过40%最大生命值）",
+		"sjb_ngmw_03",
+		"sjb_ngmw_01",
+		"sjb_mengban",
+		"1051008",
+		"board_jiazuboss_xinxi",
+		"20049025"
+	},
+	{
+		13,
+		"御金耀世·光耀圣龙",
+		12,
+		13,
+		10000,
+		"偶数大回合内BOSS受到的超杀伤害提高30%",
+		"sjb_qinggu_03",
+		"sjb_qinggu_01",
+		"sjb_mengban",
+		"1051008",
+		"board_jiazuboss_xinxi03",
+		"20049025"
+	},
+	{
+		14,
+		"神曜离阳·敖九",
+		13,
+		14,
+		10000,
+		"己阵每次攻击后，受到自身攻击*200%的伤害",
+		"sjb_wxl_03",
+		"sjb_wxl_01",
+		"sjb_mengban",
+		"1051008",
+		"board_jiazuboss_xinxi",
+		"20049025"
+	},
+	{
+		15,
+		"沙之王者·洛萨",
+		0,
+		15,
+		10000,
+		"己阵精灵的命中率降低20%；\r\n敌方洛萨每次攻击会施加随机的减益效果；\r\n女性精灵伤害增加30%",
+		"sjb_ls_03",
+		"sjb_ls_01",
+		"sjb_mengban",
+		"1051008",
+		"board_jiazuboss_xinxi",
+		"20062111"
+	},
+	{
+		16,
+		"天威雷神·星格",
+		3,
+		16,
+		10000,
+		"敌方星格的攻击每命中一个精灵，便对一个随机己阵精灵造成雷电伤害；\r\n女性精灵伤害增加30%",
+		"sjb_xg_03",
+		"sjb_xg_01",
+		"sjb_mengban",
+		"1051008",
+		"board_jiazuboss_xinxi",
+		"20062111"
+	},
+	{
+		17,
+		"不败传说·星蓝龙",
+		1,
+		17,
+		10000,
+		"每轮结束时，冻结己阵气势最高的精灵并清空其气势；\r\n敌方星蓝龙每回合出手两次；\r\n女性精灵伤害增加30%",
+		"sjb_lxl_03",
+		"sjb_lxl_01",
+		"sjb_mengban",
+		"1051008",
+		"board_jiazuboss_xinxi",
+		"20062111"
+	},
+	{
+		18,
+		"焚世·赤焰龙皇",
+		5,
+		18,
+		10000,
+		"敌方赤焰龙皇的攻击会附带灼烧效果；女性精灵伤害增加30%",
+		"sjb_bg_03",
+		"sjb_bg_01",
+		"sjb_bg_02",
+		"1051008",
+		"board_jiazuboss_xinxi",
+		"20062111"
+	},
+	{
+		19,
+		"混元天命·真龙",
+		4,
+		19,
+		10000,
+		"敌方精灵首次受到属性伤害后，之后受到的其他属性的伤害降低50%；女性精灵伤害增加30%",
+		"sjb_zl_03",
+		"sjb_zl_01",
+		"sjb_mengban",
+		"1051008",
+		"board_jiazuboss_xinxi",
+		"20062111"
+	},
+	{
+		20,
+		"万象·次元圣龙",
+		2,
+		20,
+		10000,
+		"己阵精灵开局获得满气势；女性精灵伤害增加30%",
+		"sjb_wxl_03",
+		"sjb_wxl_01",
+		"sjb_mengban",
+		"1051008",
+		"board_jiazuboss_xinxi",
+		"20062111"
+	},
+	{
+		21,
+		"万象·次元圣龙",
+		2,
+		21,
+		10000,
+		"己阵精灵开局获得满气势；女性精灵伤害增加30%",
+		"sjb_wxl_03",
+		"sjb_wxl_01",
+		"sjb_mengban",
+		"1051008",
+		"board_jiazuboss_xinxi",
+		"20062111"
+	}
+}
+local t_world_boss_type = {
+	dataList[1],
+	dataList[2],
+	dataList[3],
+	dataList[4],
+	dataList[5],
+	dataList[6],
+	dataList[7],
+	dataList[8],
+	dataList[9],
+	dataList[10],
+	dataList[11],
+	dataList[12],
+	dataList[13],
+	dataList[14],
+	dataList[15],
+	dataList[16],
+	dataList[17],
+	dataList[18],
+	dataList[19],
+	dataList[20],
+	dataList[21]
+}
+
+t_world_boss_type.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_world_boss_type

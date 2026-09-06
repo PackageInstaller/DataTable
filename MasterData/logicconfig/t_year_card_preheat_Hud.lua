@@ -1,0 +1,496 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_year_card_preheat_Hud.lua
+
+module("logicconfig.config.t_year_card_preheat_Hud", package.seeall)
+
+local title = {
+	showReward = 8,
+	params = 6,
+	enterPath = 10,
+	redpointId = 11,
+	showTip = 7,
+	perheatId = 1,
+	enterId = 2,
+	isShowTag = 9,
+	endTime = 4,
+	gotoStr = 12,
+	enterView = 5,
+	startTime = 3
+}
+local dataList = {
+	{
+		1001,
+		1,
+		"2021-12-17T05:00:00",
+		"2021-12-31T05:00:00",
+		"yearcardpreheatview",
+		"",
+		0,
+		"4:2:560#4:901:30800#4:902:112",
+		false,
+		"enterCell1",
+		"183",
+		""
+	},
+	{
+		1001,
+		2,
+		"2021-12-17T05:00:00",
+		"2021-12-31T05:00:00",
+		"nianfeicopyview",
+		"",
+		0,
+		"104:2:100",
+		false,
+		"enterCell2",
+		"",
+		""
+	},
+	{
+		1001,
+		3,
+		"2021-12-17T05:00:00",
+		"2021-12-24T05:00:00",
+		"yearcardnewadd2022view",
+		"",
+		0,
+		"",
+		false,
+		"enterCell3",
+		"",
+		""
+	},
+	{
+		1001,
+		4,
+		"2021-12-24T05:00:00",
+		"2021-12-31T05:00:00",
+		"yearcardmain2022view",
+		"",
+		0,
+		"",
+		true,
+		"enterCell3",
+		"190",
+		""
+	},
+	{
+		1001,
+		5,
+		"2021-12-17T05:00:00",
+		"2021-12-31T05:00:00",
+		"",
+		"",
+		82037564,
+		"",
+		false,
+		"enterCell4",
+		"46",
+		""
+	},
+	{
+		1002,
+		1,
+		"2022-10-23T05:00:00",
+		"2022-12-31T05:00:00",
+		"",
+		"",
+		82037565,
+		"",
+		false,
+		"enterCell1",
+		"183",
+		"ui#yearcardmain2023view#7#1"
+	},
+	{
+		1002,
+		2,
+		"2022-10-23T05:00:00",
+		"2022-12-31T05:00:00",
+		"",
+		"",
+		82037566,
+		"",
+		false,
+		"enterCell2",
+		"",
+		"ui#yearcardpreheat2023view#233001"
+	},
+	{
+		1002,
+		3,
+		"2022-10-23T05:00:00",
+		"2022-12-31T05:00:00",
+		"",
+		"",
+		82037567,
+		"",
+		false,
+		"enterCell3",
+		"190",
+		"ui#yearcardmain2022view"
+	},
+	{
+		1002,
+		4,
+		"2022-10-23T05:00:00",
+		"2022-12-31T05:00:00",
+		"",
+		"",
+		82037568,
+		"",
+		false,
+		"enterCell4",
+		"",
+		""
+	},
+	{
+		1002,
+		5,
+		"2022-10-23T05:00:00",
+		"2022-12-31T05:00:00",
+		"",
+		"",
+		82037569,
+		"4:90342:1",
+		false,
+		"enterCell5",
+		"",
+		""
+	},
+	{
+		1002,
+		6,
+		"2022-10-23T05:00:00",
+		"2022-12-31T05:00:00",
+		"",
+		"",
+		82037570,
+		"",
+		false,
+		"enterCell6",
+		"",
+		"ui#yearcardmain2023view"
+	},
+	{
+		1003,
+		1,
+		"2023-12-22T05:00:00",
+		"2024-01-01T05:00:00",
+		"",
+		"",
+		82037571,
+		"",
+		false,
+		"enterCell1",
+		"",
+		"ui#yearcardmain2024view#1#1"
+	},
+	{
+		1003,
+		2,
+		"2023-12-22T05:00:00",
+		"2024-01-01T05:00:00",
+		"",
+		"",
+		82037566,
+		"",
+		false,
+		"enterCell2",
+		"535#o23",
+		"func#990"
+	},
+	{
+		1003,
+		3,
+		"2023-12-22T05:00:00",
+		"2024-01-01T05:00:00",
+		"",
+		"",
+		82037572,
+		"",
+		false,
+		"enterCell3",
+		"190",
+		"ui#yearcardmain2023view"
+	},
+	{
+		1003,
+		4,
+		"2023-12-22T05:00:00",
+		"2024-01-01T05:00:00",
+		"",
+		"",
+		82037573,
+		"4:90429:1",
+		false,
+		"enterCell4",
+		"",
+		""
+	},
+	{
+		1003,
+		5,
+		"2023-12-22T05:00:00",
+		"2024-01-01T05:00:00",
+		"",
+		"",
+		82037574,
+		"4:510244:1",
+		false,
+		"enterCell5",
+		"",
+		""
+	},
+	{
+		1003,
+		6,
+		"2023-12-22T05:00:00",
+		"2024-01-01T05:00:00",
+		"",
+		"",
+		82037575,
+		"",
+		false,
+		"enterCell6",
+		"",
+		""
+	},
+	{
+		1004,
+		1,
+		"2024-12-20T05:00:00",
+		"2025-01-01T05:00:00",
+		"",
+		"",
+		82042584,
+		"",
+		false,
+		"enterCell1",
+		"438",
+		"ui#yearcardmain2025view#1#1"
+	},
+	{
+		1004,
+		2,
+		"2024-12-20T05:00:00",
+		"2025-01-01T05:00:00",
+		"",
+		"",
+		82037566,
+		"",
+		false,
+		"enterCell2",
+		"",
+		"ui#yearcardpreheat2023view"
+	},
+	{
+		1004,
+		3,
+		"2024-12-20T05:00:00",
+		"2025-01-01T05:00:00",
+		"",
+		"",
+		82037571,
+		"",
+		false,
+		"enterCell3",
+		"543",
+		"ui#yearcardmain2024view#1#1"
+	},
+	{
+		1004,
+		4,
+		"2024-12-20T05:00:00",
+		"2025-01-01T05:00:00",
+		"",
+		"",
+		82043348,
+		"4:510408:1",
+		false,
+		"enterCell4",
+		"",
+		""
+	},
+	{
+		1004,
+		5,
+		"2024-12-20T05:00:00",
+		"2025-01-01T05:00:00",
+		"",
+		"",
+		82043349,
+		"4:510407:1",
+		false,
+		"enterCell5",
+		"",
+		""
+	},
+	{
+		1004,
+		6,
+		"2024-12-20T05:00:00",
+		"2025-01-01T05:00:00",
+		"",
+		"",
+		82037575,
+		"",
+		false,
+		"enterCell6",
+		"",
+		""
+	},
+	{
+		1005,
+		1,
+		"2025-12-19T05:00:00",
+		"2026-01-01T05:00:00",
+		"",
+		"",
+		82050992,
+		"",
+		false,
+		"enterCell1",
+		"438",
+		"ui#yearcardmain2026view#nianfei"
+	},
+	{
+		1005,
+		2,
+		"2025-12-19T05:00:00",
+		"2026-01-01T05:00:00",
+		"",
+		"",
+		82051002,
+		"",
+		false,
+		"enterCell2",
+		"",
+		"ui#annualfubenmainview"
+	},
+	{
+		1005,
+		3,
+		"2025-12-19T05:00:00",
+		"2026-01-01T05:00:00",
+		"",
+		"",
+		82042584,
+		"",
+		false,
+		"enterCell3",
+		"543",
+		"ui#yearcardmain2025view#1#1"
+	},
+	{
+		1005,
+		4,
+		"2025-12-19T05:00:00",
+		"2026-01-01T05:00:00",
+		"",
+		"",
+		82052543,
+		"1004:1591:1",
+		false,
+		"enterCell4",
+		"",
+		""
+	},
+	{
+		1005,
+		5,
+		"2025-12-19T05:00:00",
+		"2026-01-01T05:00:00",
+		"",
+		"",
+		82051004,
+		"4:410001:1",
+		false,
+		"enterCell5",
+		"",
+		""
+	},
+	{
+		1005,
+		6,
+		"2025-12-19T05:00:00",
+		"2026-01-01T05:00:00",
+		"",
+		"",
+		82037575,
+		"",
+		false,
+		"enterCell6",
+		"",
+		""
+	}
+}
+local t_year_card_preheat_Hud = {
+	[1001] = {
+		dataList[1],
+		dataList[2],
+		dataList[3],
+		dataList[4],
+		dataList[5]
+	},
+	[1002] = {
+		dataList[6],
+		dataList[7],
+		dataList[8],
+		dataList[9],
+		dataList[10],
+		dataList[11]
+	},
+	[1003] = {
+		dataList[12],
+		dataList[13],
+		dataList[14],
+		dataList[15],
+		dataList[16],
+		dataList[17]
+	},
+	[1004] = {
+		dataList[18],
+		dataList[19],
+		dataList[20],
+		dataList[21],
+		dataList[22],
+		dataList[23]
+	},
+	[1005] = {
+		dataList[24],
+		dataList[25],
+		dataList[26],
+		dataList[27],
+		dataList[28],
+		dataList[29]
+	}
+}
+
+t_year_card_preheat_Hud.dataList = dataList
+
+local multiLanguageCells = {
+	showTip = true
+}
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			local value = rawget(t, index)
+
+			if multiLanguageCells[key] then
+				value = lang(value)
+			end
+
+			return value
+		else
+			printWarn(string.format("the field name [%s] is nonexist!", key))
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_year_card_preheat_Hud

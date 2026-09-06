@@ -1,0 +1,12 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/aounity-framework/Scripts/Lua/frameworkext/unit/import_ext_unit.lua
+
+usingnow("frameworkext.unit.UnitComponentBase", "UnitComponentBase")
+usingnow("frameworkext.unit.component.spine.UnitSpineDir", "UnitSpineDir")
+usingnow("frameworkext.unit.component.spine.UnitCompSpine", "UnitCompSpine")
+usingnow("frameworkext.unit.component.live2D.UnitCompLive2D", "UnitCompLive2D")
+usingnow("frameworkext.unit.component.live2D.UnitLive2DDir", "UnitLive2DDir")
+usingnow("frameworkext.unit.component.mover.NavWayPoint", "NavWayPoint")
+usingnow("frameworkext.unit.component.mover.UnitCompMover", "UnitCompMover")
+usingnow("frameworkext.unit.UnitTag", "UnitTag")
+usingnow("frameworkext.unit.UnitBase", "UnitBase")
+usingnow("frameworkext.unit.UnitNotify", "UnitNotify")

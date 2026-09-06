@@ -1,0 +1,303 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_gashapon_prize.lua
+
+module("logicconfig.config.t_gashapon_prize", package.seeall)
+
+local title = {
+	prizeId = 2,
+	quality = 4,
+	param = 5,
+	type = 3,
+	poolId = 1
+}
+local dataList = {
+	{
+		1,
+		1,
+		1,
+		5,
+		"0"
+	},
+	{
+		1,
+		2,
+		1,
+		5,
+		"0"
+	},
+	{
+		1,
+		3,
+		2,
+		5,
+		"10:35013:25"
+	},
+	{
+		1,
+		4,
+		2,
+		4,
+		"4:90053:1"
+	},
+	{
+		1,
+		5,
+		2,
+		5,
+		"4:36:1"
+	},
+	{
+		1,
+		6,
+		2,
+		4,
+		"4:31:1"
+	},
+	{
+		1,
+		7,
+		3,
+		4,
+		"4:30:1"
+	},
+	{
+		1,
+		8,
+		3,
+		3,
+		"4:30001:1"
+	},
+	{
+		1,
+		9,
+		3,
+		3,
+		"4:501:2"
+	},
+	{
+		1,
+		10,
+		3,
+		3,
+		"4:2:5"
+	},
+	{
+		1,
+		11,
+		3,
+		3,
+		"8:1:10000"
+	},
+	{
+		1,
+		12,
+		3,
+		3,
+		"10:35011:240"
+	},
+	{
+		1,
+		13,
+		3,
+		4,
+		"10:35012:120"
+	},
+	{
+		2,
+		1,
+		1,
+		5,
+		"0"
+	},
+	{
+		2,
+		2,
+		1,
+		5,
+		"0"
+	},
+	{
+		2,
+		3,
+		2,
+		5,
+		"10:35013:25"
+	},
+	{
+		2,
+		4,
+		2,
+		5,
+		"4:90053:1"
+	},
+	{
+		2,
+		5,
+		2,
+		5,
+		"4:36:1"
+	},
+	{
+		2,
+		6,
+		2,
+		5,
+		"4:31:1"
+	},
+	{
+		2,
+		7,
+		3,
+		4,
+		"4:30:1"
+	},
+	{
+		2,
+		8,
+		3,
+		3,
+		"4:30001:1"
+	},
+	{
+		2,
+		9,
+		3,
+		3,
+		"4:501:2"
+	},
+	{
+		2,
+		10,
+		3,
+		3,
+		"4:2:5"
+	},
+	{
+		3,
+		1,
+		1,
+		5,
+		"0"
+	},
+	{
+		3,
+		2,
+		1,
+		5,
+		"0"
+	},
+	{
+		3,
+		3,
+		2,
+		5,
+		"10:35013:25"
+	},
+	{
+		3,
+		4,
+		2,
+		5,
+		"4:90053:1"
+	},
+	{
+		3,
+		5,
+		2,
+		5,
+		"4:36:1"
+	},
+	{
+		3,
+		6,
+		2,
+		5,
+		"4:31:1"
+	},
+	{
+		3,
+		7,
+		3,
+		4,
+		"4:30:1"
+	},
+	{
+		3,
+		8,
+		3,
+		3,
+		"4:30001:1"
+	},
+	{
+		3,
+		9,
+		3,
+		3,
+		"4:501:2"
+	},
+	{
+		3,
+		10,
+		3,
+		3,
+		"4:2:5"
+	}
+}
+local t_gashapon_prize = {
+	{
+		dataList[1],
+		dataList[2],
+		dataList[3],
+		dataList[4],
+		dataList[5],
+		dataList[6],
+		dataList[7],
+		dataList[8],
+		dataList[9],
+		dataList[10],
+		dataList[11],
+		dataList[12],
+		dataList[13]
+	},
+	{
+		dataList[14],
+		dataList[15],
+		dataList[16],
+		dataList[17],
+		dataList[18],
+		dataList[19],
+		dataList[20],
+		dataList[21],
+		dataList[22],
+		dataList[23]
+	},
+	{
+		dataList[24],
+		dataList[25],
+		dataList[26],
+		dataList[27],
+		dataList[28],
+		dataList[29],
+		dataList[30],
+		dataList[31],
+		dataList[32],
+		dataList[33]
+	}
+}
+
+t_gashapon_prize.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_gashapon_prize

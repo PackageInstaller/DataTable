@@ -1,0 +1,290 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_operation_plot_buff.lua
+
+module("logicconfig.config.t_operation_plot_buff", package.seeall)
+
+local title = {
+	des = 4,
+	selfBuff = 3,
+	buffPlanId = 1,
+	showPrize = 6,
+	prize = 5,
+	level = 2
+}
+local dataList = {
+	{
+		1,
+		1,
+		"50042:99#50072:99",
+		"全属性+<color=#20B376FF>10%</color>",
+		"",
+		""
+	},
+	{
+		1,
+		2,
+		"50043:99#50073:99",
+		"全属性+<color=#20B376FF>20%</color>",
+		"",
+		""
+	},
+	{
+		1,
+		3,
+		"50044:99#50074:99",
+		"全属性+<color=#20B376FF>30%</color>",
+		"",
+		""
+	},
+	{
+		1,
+		4,
+		"50045:99#50075:99",
+		"全属性+<color=#20B376FF>40%</color>",
+		"",
+		""
+	},
+	{
+		1,
+		5,
+		"50046:99#50076:99",
+		"全属性+<color=#20B376FF>50%</color>",
+		"",
+		""
+	},
+	{
+		1,
+		6,
+		"50047:99#50077:99",
+		"全属性+<color=#20B376FF>60%</color>",
+		"",
+		""
+	},
+	{
+		1,
+		7,
+		"50048:99#50078:99",
+		"全属性+<color=#20B376FF>70%</color>",
+		"",
+		""
+	},
+	{
+		1,
+		8,
+		"50049:99#50079:99",
+		"全属性+<color=#20B376FF>80%</color>",
+		"",
+		""
+	},
+	{
+		1,
+		9,
+		"50050:99#50080:99",
+		"全属性+<color=#20B376FF>90%</color>",
+		"",
+		""
+	},
+	{
+		1,
+		10,
+		"50051:99#50081:99",
+		"全属性+<color=#20B376FF>100%</color>",
+		"",
+		""
+	},
+	{
+		1,
+		11,
+		"50052:99#50082:99",
+		"全属性+<color=#20B376FF>110%</color>",
+		"",
+		""
+	},
+	{
+		1,
+		12,
+		"50053:99#50083:99",
+		"全属性+<color=#20B376FF>120%</color>",
+		"",
+		""
+	},
+	{
+		1,
+		13,
+		"50054:99#50084:99",
+		"全属性+<color=#20B376FF>130%</color>",
+		"",
+		""
+	},
+	{
+		1,
+		14,
+		"50055:99#50085:99",
+		"全属性+<color=#20B376FF>140%</color>",
+		"",
+		""
+	},
+	{
+		1,
+		15,
+		"50056:99#50086:99",
+		"全属性+<color=#20B376FF>150%</color>",
+		"",
+		""
+	},
+	{
+		1,
+		16,
+		"50057:99#50087:99",
+		"全属性+<color=#20B376FF>160%</color>",
+		"",
+		""
+	},
+	{
+		1,
+		17,
+		"50058:99#50088:99",
+		"全属性+<color=#20B376FF>170%</color>",
+		"",
+		""
+	},
+	{
+		1,
+		18,
+		"50059:99#50089:99",
+		"全属性+<color=#20B376FF>180%</color>",
+		"",
+		""
+	},
+	{
+		1,
+		19,
+		"50060:99#50090:99",
+		"全属性+<color=#20B376FF>190%</color>",
+		"",
+		""
+	},
+	{
+		1,
+		20,
+		"50061:99#50091:99",
+		"全属性+<color=#20B376FF>200%</color>",
+		"",
+		""
+	},
+	{
+		1,
+		21,
+		"50062:99#50092:99",
+		"全属性+<color=#20B376FF>210%</color>",
+		"",
+		""
+	},
+	{
+		2,
+		1,
+		"50042:99#50072:99",
+		"全属性+<color=#20B376FF>10%</color>",
+		"",
+		""
+	},
+	{
+		2,
+		2,
+		"50043:99#50073:99",
+		"全属性+<color=#20B376FF>20%</color>",
+		"",
+		""
+	},
+	{
+		2,
+		3,
+		"50044:99#50074:99",
+		"全属性+<color=#20B376FF>30%</color>",
+		"",
+		""
+	},
+	{
+		2,
+		4,
+		"50045:99#50075:99",
+		"全属性+<color=#20B376FF>40%</color>",
+		"",
+		""
+	},
+	{
+		2,
+		5,
+		"50046:99#50076:99",
+		"全属性+<color=#20B376FF>50%</color>",
+		"",
+		""
+	},
+	{
+		2,
+		6,
+		"50048:99#50078:99",
+		"全属性+<color=#20B376FF>70%</color>",
+		"",
+		""
+	},
+	{
+		2,
+		7,
+		"50051:99#50081:99",
+		"全属性+<color=#20B376FF>100%</color>",
+		"",
+		""
+	}
+}
+local t_operation_plot_buff = {
+	{
+		dataList[1],
+		dataList[2],
+		dataList[3],
+		dataList[4],
+		dataList[5],
+		dataList[6],
+		dataList[7],
+		dataList[8],
+		dataList[9],
+		dataList[10],
+		dataList[11],
+		dataList[12],
+		dataList[13],
+		dataList[14],
+		dataList[15],
+		dataList[16],
+		dataList[17],
+		dataList[18],
+		dataList[19],
+		dataList[20],
+		dataList[21]
+	},
+	{
+		dataList[22],
+		dataList[23],
+		dataList[24],
+		dataList[25],
+		dataList[26],
+		dataList[27],
+		dataList[28]
+	}
+}
+
+t_operation_plot_buff.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_operation_plot_buff

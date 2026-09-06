@@ -1,0 +1,262 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_divine_dual_dragon_clg_stage.lua
+
+module("logicconfig.config.t_divine_dual_dragon_clg_stage", package.seeall)
+
+local title = {
+	stageId = 2,
+	finalStage = 3,
+	stagePlanId = 1,
+	creepsMasterId = 4
+}
+local dataList = {
+	{
+		1,
+		1,
+		false,
+		1002
+	},
+	{
+		1,
+		2,
+		true,
+		1003
+	},
+	{
+		1,
+		3,
+		false,
+		1001
+	},
+	{
+		2,
+		1,
+		false,
+		1005
+	},
+	{
+		2,
+		2,
+		true,
+		1006
+	},
+	{
+		2,
+		3,
+		false,
+		1004
+	},
+	{
+		3,
+		1,
+		false,
+		1008
+	},
+	{
+		3,
+		2,
+		true,
+		1009
+	},
+	{
+		3,
+		3,
+		false,
+		1007
+	},
+	{
+		4,
+		1,
+		false,
+		1011
+	},
+	{
+		4,
+		2,
+		true,
+		1012
+	},
+	{
+		4,
+		3,
+		false,
+		1010
+	},
+	{
+		5,
+		1,
+		false,
+		1014
+	},
+	{
+		5,
+		2,
+		true,
+		1015
+	},
+	{
+		5,
+		3,
+		false,
+		1013
+	},
+	{
+		6,
+		1,
+		false,
+		2002
+	},
+	{
+		6,
+		2,
+		true,
+		2003
+	},
+	{
+		6,
+		3,
+		false,
+		2001
+	},
+	{
+		7,
+		1,
+		false,
+		2005
+	},
+	{
+		7,
+		2,
+		true,
+		2006
+	},
+	{
+		7,
+		3,
+		false,
+		2004
+	},
+	{
+		8,
+		1,
+		false,
+		2008
+	},
+	{
+		8,
+		2,
+		true,
+		2009
+	},
+	{
+		8,
+		3,
+		false,
+		2007
+	},
+	{
+		9,
+		1,
+		false,
+		2011
+	},
+	{
+		9,
+		2,
+		true,
+		2012
+	},
+	{
+		9,
+		3,
+		false,
+		2020
+	},
+	{
+		10,
+		1,
+		false,
+		2014
+	},
+	{
+		10,
+		2,
+		true,
+		2015
+	},
+	{
+		10,
+		3,
+		false,
+		2013
+	}
+}
+local t_divine_dual_dragon_clg_stage = {
+	{
+		dataList[1],
+		dataList[2],
+		dataList[3]
+	},
+	{
+		dataList[4],
+		dataList[5],
+		dataList[6]
+	},
+	{
+		dataList[7],
+		dataList[8],
+		dataList[9]
+	},
+	{
+		dataList[10],
+		dataList[11],
+		dataList[12]
+	},
+	{
+		dataList[13],
+		dataList[14],
+		dataList[15]
+	},
+	{
+		dataList[16],
+		dataList[17],
+		dataList[18]
+	},
+	{
+		dataList[19],
+		dataList[20],
+		dataList[21]
+	},
+	{
+		dataList[22],
+		dataList[23],
+		dataList[24]
+	},
+	{
+		dataList[25],
+		dataList[26],
+		dataList[27]
+	},
+	{
+		dataList[28],
+		dataList[29],
+		dataList[30]
+	}
+}
+
+t_divine_dual_dragon_clg_stage.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_divine_dual_dragon_clg_stage

@@ -1,0 +1,284 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_jump_pillar.lua
+
+module("logicconfig.config.t_jump_pillar", package.seeall)
+
+local title = {
+	pillars = 2,
+	itemType = 4,
+	rate = 3,
+	id = 1,
+	itemRate = 5
+}
+local dataList = {
+	{
+		1,
+		3,
+		{
+			100,
+			100,
+			100
+		},
+		{
+			3,
+			4,
+			5
+		},
+		{
+			20,
+			20,
+			20
+		}
+	},
+	{
+		2,
+		3,
+		{
+			85,
+			85,
+			85
+		},
+		{
+			2,
+			3,
+			4,
+			5
+		},
+		{
+			20,
+			20,
+			20,
+			20
+		}
+	},
+	{
+		3,
+		3,
+		{
+			50,
+			50,
+			50
+		},
+		{
+			2,
+			3,
+			4,
+			5
+		},
+		{
+			20,
+			20,
+			20,
+			20
+		}
+	},
+	{
+		4,
+		3,
+		{
+			25,
+			25,
+			25
+		},
+		{
+			1,
+			2,
+			3,
+			4,
+			5
+		},
+		{
+			20,
+			20,
+			20,
+			20,
+			20
+		}
+	},
+	{
+		5,
+		2,
+		{
+			100,
+			100
+		},
+		{
+			3,
+			4,
+			5
+		},
+		{
+			20,
+			20,
+			20
+		}
+	},
+	{
+		6,
+		2,
+		{
+			85,
+			85
+		},
+		{
+			2,
+			3,
+			4,
+			5
+		},
+		{
+			20,
+			20,
+			20.2
+		}
+	},
+	{
+		7,
+		2,
+		{
+			50,
+			50
+		},
+		{
+			2,
+			3,
+			4,
+			5
+		},
+		{
+			20,
+			20,
+			20,
+			20
+		}
+	},
+	{
+		8,
+		2,
+		{
+			25,
+			25
+		},
+		{
+			1,
+			2,
+			3,
+			4,
+			5
+		},
+		{
+			20,
+			20,
+			20,
+			20,
+			20
+		}
+	},
+	{
+		9,
+		1,
+		{
+			100
+		},
+		{
+			3,
+			4,
+			5
+		},
+		{
+			20,
+			20,
+			20
+		}
+	},
+	{
+		10,
+		1,
+		{
+			85
+		},
+		{
+			2,
+			3,
+			4,
+			5
+		},
+		{
+			20,
+			20,
+			20,
+			20
+		}
+	},
+	{
+		11,
+		1,
+		{
+			20
+		},
+		{
+			2,
+			3,
+			4,
+			5
+		},
+		{
+			20,
+			20,
+			20,
+			20
+		}
+	},
+	{
+		12,
+		1,
+		{
+			25
+		},
+		{
+			1,
+			2,
+			3,
+			4,
+			5
+		},
+		{
+			20,
+			20,
+			20,
+			20,
+			20
+		}
+	}
+}
+local t_jump_pillar = {
+	dataList[1],
+	dataList[2],
+	dataList[3],
+	dataList[4],
+	dataList[5],
+	dataList[6],
+	dataList[7],
+	dataList[8],
+	dataList[9],
+	dataList[10],
+	dataList[11],
+	dataList[12]
+}
+
+t_jump_pillar.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_jump_pillar

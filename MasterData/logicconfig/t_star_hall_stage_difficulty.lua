@@ -1,0 +1,297 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_star_hall_stage_difficulty.lua
+
+module("logicconfig.config.t_star_hall_stage_difficulty", package.seeall)
+
+local title = {
+	score = 4,
+	stageId = 2,
+	creepsMasterId = 5,
+	id = 3,
+	activityId = 1
+}
+local dataList = {
+	{
+		494001,
+		1,
+		1,
+		5,
+		1001
+	},
+	{
+		494001,
+		1,
+		2,
+		10,
+		1002
+	},
+	{
+		494001,
+		1,
+		3,
+		15,
+		1003
+	},
+	{
+		494001,
+		2,
+		1,
+		5,
+		1004
+	},
+	{
+		494001,
+		2,
+		2,
+		10,
+		1005
+	},
+	{
+		494001,
+		2,
+		3,
+		15,
+		1006
+	},
+	{
+		494001,
+		3,
+		1,
+		5,
+		1007
+	},
+	{
+		494001,
+		3,
+		2,
+		10,
+		1008
+	},
+	{
+		494001,
+		3,
+		3,
+		15,
+		1009
+	},
+	{
+		494001,
+		4,
+		1,
+		5,
+		1010
+	},
+	{
+		494001,
+		4,
+		2,
+		10,
+		1011
+	},
+	{
+		494001,
+		4,
+		3,
+		15,
+		1012
+	},
+	{
+		494001,
+		5,
+		1,
+		5,
+		1013
+	},
+	{
+		494001,
+		5,
+		2,
+		10,
+		1014
+	},
+	{
+		494001,
+		5,
+		3,
+		15,
+		1015
+	},
+	{
+		494002,
+		1,
+		1,
+		5,
+		1016
+	},
+	{
+		494002,
+		1,
+		2,
+		10,
+		1017
+	},
+	{
+		494002,
+		1,
+		3,
+		15,
+		1018
+	},
+	{
+		494002,
+		2,
+		1,
+		5,
+		1019
+	},
+	{
+		494002,
+		2,
+		2,
+		10,
+		1020
+	},
+	{
+		494002,
+		2,
+		3,
+		15,
+		1021
+	},
+	{
+		494002,
+		3,
+		1,
+		5,
+		1022
+	},
+	{
+		494002,
+		3,
+		2,
+		10,
+		1023
+	},
+	{
+		494002,
+		3,
+		3,
+		15,
+		1024
+	},
+	{
+		494002,
+		4,
+		1,
+		5,
+		1025
+	},
+	{
+		494002,
+		4,
+		2,
+		10,
+		1026
+	},
+	{
+		494002,
+		4,
+		3,
+		15,
+		1027
+	},
+	{
+		494002,
+		5,
+		1,
+		5,
+		1028
+	},
+	{
+		494002,
+		5,
+		2,
+		10,
+		1029
+	},
+	{
+		494002,
+		5,
+		3,
+		15,
+		1030
+	}
+}
+local t_star_hall_stage_difficulty = {
+	[494001] = {
+		{
+			dataList[1],
+			dataList[2],
+			dataList[3]
+		},
+		{
+			dataList[4],
+			dataList[5],
+			dataList[6]
+		},
+		{
+			dataList[7],
+			dataList[8],
+			dataList[9]
+		},
+		{
+			dataList[10],
+			dataList[11],
+			dataList[12]
+		},
+		{
+			dataList[13],
+			dataList[14],
+			dataList[15]
+		}
+	},
+	[494002] = {
+		{
+			dataList[16],
+			dataList[17],
+			dataList[18]
+		},
+		{
+			dataList[19],
+			dataList[20],
+			dataList[21]
+		},
+		{
+			dataList[22],
+			dataList[23],
+			dataList[24]
+		},
+		{
+			dataList[25],
+			dataList[26],
+			dataList[27]
+		},
+		{
+			dataList[28],
+			dataList[29],
+			dataList[30]
+		}
+	}
+}
+
+t_star_hall_stage_difficulty.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_star_hall_stage_difficulty

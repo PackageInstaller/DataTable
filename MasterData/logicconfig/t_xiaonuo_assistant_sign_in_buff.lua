@@ -1,0 +1,253 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_xiaonuo_assistant_sign_in_buff.lua
+
+module("logicconfig.config.t_xiaonuo_assistant_sign_in_buff", package.seeall)
+
+local title = {
+	id = 1,
+	name = 2,
+	activityId = 3
+}
+local dataList = {
+	{
+		1,
+		"法度秩序",
+		284002
+	},
+	{
+		2,
+		"创正理挑战",
+		398001
+	},
+	{
+		3,
+		"娜克亚挑战",
+		414001
+	},
+	{
+		4,
+		"墨夜幽莲·末炎挑战",
+		374002
+	},
+	{
+		5,
+		"源起·启挑战",
+		374003
+	},
+	{
+		6,
+		"光暗大天使挑战",
+		288002
+	},
+	{
+		7,
+		"神曜弥娅挑战",
+		399001
+	},
+	{
+		8,
+		"神曜蜜西西挑战",
+		274002
+	},
+	{
+		9,
+		"神曜盖西瑞",
+		369001
+	},
+	{
+		10,
+		"神曜诺亚挑战",
+		316001
+	},
+	{
+		11,
+		"饥荒魔君古拉斯",
+		437001
+	},
+	{
+		12,
+		"源起天蛮王挑战",
+		437002
+	},
+	{
+		13,
+		"神曜达克诺斯",
+		400001
+	},
+	{
+		14,
+		"源起诺亚挑战",
+		400002
+	},
+	{
+		15,
+		"神曜路西法",
+		313002
+	},
+	{
+		16,
+		"神曜伏妖挑战",
+		502001
+	},
+	{
+		17,
+		"御神挑战",
+		323002
+	},
+	{
+		18,
+		"神曜玄冥天龙挑战",
+		293002
+	},
+	{
+		19,
+		"神曜耶梦加得挑战",
+		350002
+	},
+	{
+		20,
+		"多洛莉丝挑战",
+		524001
+	},
+	{
+		21,
+		"源起修尔挑战",
+		537001
+	},
+	{
+		22,
+		"神曜缪可",
+		305003
+	},
+	{
+		23,
+		"新时代通灵师极挑战",
+		542001
+	},
+	{
+		24,
+		"源起阿瑞斯挑战",
+		550001
+	},
+	{
+		25,
+		"源起召唤师末炎挑战",
+		313003
+	},
+	{
+		26,
+		"源起龙炎挑战",
+		563001
+	},
+	{
+		27,
+		"源起帝释天挑战",
+		575001
+	},
+	{
+		28,
+		"源起冰灵王挑战",
+		486002
+	},
+	{
+		29,
+		"源起伊丽莎白挑战",
+		293003
+	},
+	{
+		30,
+		"源起热血梦梦挑战",
+		599001
+	},
+	{
+		31,
+		"源起炼金梦梦挑战",
+		601001
+	},
+	{
+		32,
+		"源起爱心梦梦挑战",
+		350004
+	},
+	{
+		33,
+		"源起圣光飞龙挑战",
+		608001
+	},
+	{
+		34,
+		"源起阿特拉斯挑战",
+		524002
+	},
+	{
+		35,
+		"源起光明王挑战",
+		575002
+	},
+	{
+		36,
+		"源起黄金圣龙挑战",
+		617001
+	},
+	{
+		37,
+		"源起暗末炎挑战",
+		625001
+	}
+}
+local t_xiaonuo_assistant_sign_in_buff = {
+	dataList[1],
+	dataList[2],
+	dataList[3],
+	dataList[4],
+	dataList[5],
+	dataList[6],
+	dataList[7],
+	dataList[8],
+	dataList[9],
+	dataList[10],
+	dataList[11],
+	dataList[12],
+	dataList[13],
+	dataList[14],
+	dataList[15],
+	dataList[16],
+	dataList[17],
+	dataList[18],
+	dataList[19],
+	dataList[20],
+	dataList[21],
+	dataList[22],
+	dataList[23],
+	dataList[24],
+	dataList[25],
+	dataList[26],
+	dataList[27],
+	dataList[28],
+	dataList[29],
+	dataList[30],
+	dataList[31],
+	dataList[32],
+	dataList[33],
+	dataList[34],
+	dataList[35],
+	dataList[36],
+	dataList[37]
+}
+
+t_xiaonuo_assistant_sign_in_buff.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_xiaonuo_assistant_sign_in_buff

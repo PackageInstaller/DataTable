@@ -1,0 +1,273 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_link_game_icon.lua
+
+module("logicconfig.config.t_link_game_icon", package.seeall)
+
+local title = {
+	raceId = 3,
+	stateIdx = 2,
+	iconPlan = 1
+}
+local dataList = {
+	{
+		1,
+		1,
+		1803101
+	},
+	{
+		1,
+		2,
+		1602802
+	},
+	{
+		1,
+		3,
+		1604503
+	},
+	{
+		1,
+		4,
+		1302803
+	},
+	{
+		1,
+		5,
+		1202105
+	},
+	{
+		1,
+		6,
+		1204402
+	},
+	{
+		1,
+		7,
+		1204503
+	},
+	{
+		1,
+		8,
+		18031
+	},
+	{
+		1,
+		9,
+		12040
+	},
+	{
+		1,
+		10,
+		12042
+	},
+	{
+		2,
+		1,
+		16004
+	},
+	{
+		2,
+		2,
+		16019
+	},
+	{
+		2,
+		3,
+		16020
+	},
+	{
+		2,
+		4,
+		16021
+	},
+	{
+		2,
+		5,
+		16022
+	},
+	{
+		2,
+		6,
+		16023
+	},
+	{
+		2,
+		7,
+		15020
+	},
+	{
+		2,
+		8,
+		15019
+	},
+	{
+		2,
+		9,
+		17011
+	},
+	{
+		2,
+		10,
+		10137
+	},
+	{
+		3,
+		1,
+		13014
+	},
+	{
+		3,
+		2,
+		13015
+	},
+	{
+		3,
+		3,
+		13016
+	},
+	{
+		3,
+		4,
+		13017
+	},
+	{
+		3,
+		5,
+		13018
+	},
+	{
+		3,
+		6,
+		11019
+	},
+	{
+		3,
+		7,
+		11020
+	},
+	{
+		3,
+		8,
+		11021
+	},
+	{
+		3,
+		9,
+		11022
+	},
+	{
+		3,
+		10,
+		10139
+	},
+	{
+		4,
+		1,
+		13019
+	},
+	{
+		4,
+		2,
+		12022
+	},
+	{
+		4,
+		3,
+		16025
+	},
+	{
+		4,
+		4,
+		11024
+	},
+	{
+		4,
+		5,
+		11019
+	},
+	{
+		4,
+		6,
+		11020
+	},
+	{
+		4,
+		7,
+		11021
+	},
+	{
+		4,
+		8,
+		11022
+	},
+	{
+		4,
+		9,
+		13014
+	}
+}
+local t_link_game_icon = {
+	{
+		dataList[1],
+		dataList[2],
+		dataList[3],
+		dataList[4],
+		dataList[5],
+		dataList[6],
+		dataList[7],
+		dataList[8],
+		dataList[9],
+		dataList[10]
+	},
+	{
+		dataList[11],
+		dataList[12],
+		dataList[13],
+		dataList[14],
+		dataList[15],
+		dataList[16],
+		dataList[17],
+		dataList[18],
+		dataList[19],
+		dataList[20]
+	},
+	{
+		dataList[21],
+		dataList[22],
+		dataList[23],
+		dataList[24],
+		dataList[25],
+		dataList[26],
+		dataList[27],
+		dataList[28],
+		dataList[29],
+		dataList[30]
+	},
+	{
+		dataList[31],
+		dataList[32],
+		dataList[33],
+		dataList[34],
+		dataList[35],
+		dataList[36],
+		dataList[37],
+		dataList[38],
+		dataList[39]
+	}
+}
+
+t_link_game_icon.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_link_game_icon

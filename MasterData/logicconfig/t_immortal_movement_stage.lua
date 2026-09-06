@@ -1,0 +1,301 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_immortal_movement_stage.lua
+
+module("logicconfig.config.t_immortal_movement_stage", package.seeall)
+
+local title = {
+	stageId = 3,
+	groupId = 2,
+	notePosition = 5,
+	killRound = 6,
+	creepsMasterId = 4,
+	activityId = 1
+}
+local dataList = {
+	{
+		484001,
+		1,
+		1,
+		1001,
+		{
+			1,
+			3,
+			5
+		},
+		{
+			1,
+			3,
+			5
+		}
+	},
+	{
+		484001,
+		1,
+		2,
+		1002,
+		{
+			2,
+			4,
+			6
+		},
+		{
+			1,
+			3,
+			5
+		}
+	},
+	{
+		484001,
+		1,
+		3,
+		1003,
+		{
+			1,
+			2,
+			3
+		},
+		{
+			1,
+			3,
+			5
+		}
+	},
+	{
+		484001,
+		2,
+		1,
+		1004,
+		{
+			4,
+			5,
+			6
+		},
+		{
+			1,
+			3,
+			5
+		}
+	},
+	{
+		484001,
+		2,
+		2,
+		1005,
+		{
+			1,
+			2,
+			4
+		},
+		{
+			1,
+			3,
+			5
+		}
+	},
+	{
+		484001,
+		2,
+		3,
+		1006,
+		{
+			3,
+			5,
+			6
+		},
+		{
+			1,
+			3,
+			5
+		}
+	},
+	{
+		484001,
+		3,
+		1,
+		1007,
+		{
+			1,
+			3,
+			5
+		},
+		{
+			1,
+			3,
+			5
+		}
+	},
+	{
+		484001,
+		3,
+		2,
+		1008,
+		{
+			2,
+			4,
+			6
+		},
+		{
+			1,
+			3,
+			5
+		}
+	},
+	{
+		484001,
+		3,
+		3,
+		1009,
+		{
+			1,
+			2,
+			3
+		},
+		{
+			1,
+			3,
+			5
+		}
+	},
+	{
+		484001,
+		4,
+		1,
+		1010,
+		{
+			4,
+			5,
+			6
+		},
+		{
+			1,
+			3,
+			5
+		}
+	},
+	{
+		484001,
+		4,
+		2,
+		1011,
+		{
+			1,
+			2,
+			4
+		},
+		{
+			1,
+			3,
+			5
+		}
+	},
+	{
+		484001,
+		4,
+		3,
+		1012,
+		{
+			3,
+			5,
+			6
+		},
+		{
+			1,
+			3,
+			5
+		}
+	},
+	{
+		484001,
+		5,
+		1,
+		1013,
+		{
+			1,
+			3,
+			5
+		},
+		{
+			1,
+			3,
+			5
+		}
+	},
+	{
+		484001,
+		5,
+		2,
+		1014,
+		{
+			2,
+			4,
+			6
+		},
+		{
+			1,
+			3,
+			5
+		}
+	},
+	{
+		484001,
+		5,
+		3,
+		1015,
+		{
+			1,
+			2,
+			3
+		},
+		{
+			1,
+			3,
+			5
+		}
+	}
+}
+local t_immortal_movement_stage = {
+	[484001] = {
+		{
+			dataList[1],
+			dataList[2],
+			dataList[3]
+		},
+		{
+			dataList[4],
+			dataList[5],
+			dataList[6]
+		},
+		{
+			dataList[7],
+			dataList[8],
+			dataList[9]
+		},
+		{
+			dataList[10],
+			dataList[11],
+			dataList[12]
+		},
+		{
+			dataList[13],
+			dataList[14],
+			dataList[15]
+		}
+	}
+}
+
+t_immortal_movement_stage.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_immortal_movement_stage

@@ -1,0 +1,287 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_monopoly_step_level.lua
+
+module("logicconfig.config.t_monopoly_step_level", package.seeall)
+
+local title = {
+	rewardLevel = 2,
+	rewards = 3,
+	upgradePlanId = 1
+}
+local dataList = {
+	{
+		1,
+		1,
+		"4:2:10"
+	},
+	{
+		1,
+		2,
+		"4:2:15"
+	},
+	{
+		1,
+		3,
+		"4:2:20"
+	},
+	{
+		2,
+		1,
+		"4:501:4"
+	},
+	{
+		2,
+		2,
+		"4:501:5"
+	},
+	{
+		2,
+		3,
+		"4:501:6"
+	},
+	{
+		2,
+		4,
+		"4:501:7"
+	},
+	{
+		2,
+		5,
+		"4:501:8"
+	},
+	{
+		3,
+		1,
+		"4:501:9"
+	},
+	{
+		3,
+		2,
+		"4:501:10"
+	},
+	{
+		3,
+		3,
+		"4:501:11"
+	},
+	{
+		3,
+		4,
+		"4:501:12"
+	},
+	{
+		3,
+		5,
+		"4:501:13"
+	},
+	{
+		3,
+		6,
+		"4:501:14"
+	},
+	{
+		3,
+		7,
+		"4:501:15"
+	},
+	{
+		4,
+		1,
+		"4:30001:2"
+	},
+	{
+		4,
+		2,
+		"4:30001:3"
+	},
+	{
+		4,
+		3,
+		"4:30001:4"
+	},
+	{
+		4,
+		4,
+		"4:30001:5"
+	},
+	{
+		4,
+		5,
+		"4:30001:6"
+	},
+	{
+		4,
+		6,
+		"4:30001:7"
+	},
+	{
+		4,
+		7,
+		"4:30001:8"
+	},
+	{
+		4,
+		8,
+		"4:30001:9"
+	},
+	{
+		4,
+		9,
+		"4:30001:10"
+	},
+	{
+		5,
+		1,
+		"8:8:400"
+	},
+	{
+		6,
+		1,
+		"104:2:40"
+	},
+	{
+		6,
+		2,
+		"104:2:50"
+	},
+	{
+		6,
+		3,
+		"104:2:60"
+	},
+	{
+		6,
+		4,
+		"104:2:80"
+	},
+	{
+		6,
+		5,
+		"104:2:100"
+	},
+	{
+		7,
+		1,
+		"104:2:40"
+	},
+	{
+		7,
+		2,
+		"104:2:50"
+	},
+	{
+		7,
+		3,
+		"104:2:60"
+	},
+	{
+		7,
+		4,
+		"104:2:80"
+	},
+	{
+		7,
+		5,
+		"104:2:100"
+	},
+	{
+		8,
+		1,
+		"104:2:40"
+	},
+	{
+		8,
+		2,
+		"104:2:50"
+	},
+	{
+		8,
+		3,
+		"104:2:60"
+	},
+	{
+		8,
+		4,
+		"104:2:80"
+	},
+	{
+		8,
+		5,
+		"104:2:100"
+	}
+}
+local t_monopoly_step_level = {
+	{
+		dataList[1],
+		dataList[2],
+		dataList[3]
+	},
+	{
+		dataList[4],
+		dataList[5],
+		dataList[6],
+		dataList[7],
+		dataList[8]
+	},
+	{
+		dataList[9],
+		dataList[10],
+		dataList[11],
+		dataList[12],
+		dataList[13],
+		dataList[14],
+		dataList[15]
+	},
+	{
+		dataList[16],
+		dataList[17],
+		dataList[18],
+		dataList[19],
+		dataList[20],
+		dataList[21],
+		dataList[22],
+		dataList[23],
+		dataList[24]
+	},
+	{
+		dataList[25]
+	},
+	{
+		dataList[26],
+		dataList[27],
+		dataList[28],
+		dataList[29],
+		dataList[30]
+	},
+	{
+		dataList[31],
+		dataList[32],
+		dataList[33],
+		dataList[34],
+		dataList[35]
+	},
+	{
+		dataList[36],
+		dataList[37],
+		dataList[38],
+		dataList[39],
+		dataList[40]
+	}
+}
+
+t_monopoly_step_level.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_monopoly_step_level

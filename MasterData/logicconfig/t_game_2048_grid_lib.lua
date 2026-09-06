@@ -1,0 +1,289 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_game_2048_grid_lib.lua
+
+module("logicconfig.config.t_game_2048_grid_lib", package.seeall)
+
+local title = {
+	score = 3,
+	name = 2,
+	hangingEfficiency = 5,
+	gbId = 1,
+	iconPath = 4
+}
+local dataList = {
+	{
+		-1,
+		"万能",
+		0,
+		"ui/icon/items/icon_longzhu",
+		0
+	},
+	{
+		1,
+		"2",
+		2,
+		"ui/icon/items/icon_fenhuoyingshi_11",
+		0
+	},
+	{
+		2,
+		"4",
+		4,
+		"ui/icon/items/icon_fenhuoyingshi_09",
+		1
+	},
+	{
+		3,
+		"8",
+		8,
+		"ui/icon/items/icon_fenhuoyingshi_04",
+		1
+	},
+	{
+		4,
+		"16",
+		16,
+		"ui/icon/items/icon_fenhuoyingshi_03",
+		2
+	},
+	{
+		5,
+		"32",
+		32,
+		"ui/icon/items/icon_fenhuoyingshi_10",
+		2
+	},
+	{
+		6,
+		"64",
+		64,
+		"ui/icon/items/icon_fenhuoyingshi_06",
+		3
+	},
+	{
+		7,
+		"128",
+		128,
+		"ui/icon/items/icon_fenhuoyingshi_08",
+		3
+	},
+	{
+		8,
+		"256",
+		256,
+		"ui/icon/items/icon_fenhuoyingshi_05",
+		4
+	},
+	{
+		9,
+		"512",
+		512,
+		"ui/icon/items/icon_fenhuoyingshi_02",
+		4
+	},
+	{
+		10,
+		"1024",
+		1024,
+		"ui/icon/items/icon_fenhuoyingshi_01",
+		5
+	},
+	{
+		11,
+		"2048",
+		2048,
+		"ui/icon/items/icon_fenhuoyingshi_07",
+		5
+	},
+	{
+		12,
+		"4K",
+		4000,
+		"ui/icon/items/icon_fenhuoyingshi_09",
+		6
+	},
+	{
+		13,
+		"8K",
+		8000,
+		"ui/icon/items/icon_fenhuoyingshi_04",
+		6
+	},
+	{
+		14,
+		"16K",
+		16000,
+		"ui/icon/items/icon_fenhuoyingshi_03",
+		7
+	},
+	{
+		15,
+		"32K",
+		32000,
+		"ui/icon/items/icon_fenhuoyingshi_10",
+		7
+	},
+	{
+		16,
+		"64K",
+		64000,
+		"ui/icon/items/icon_fenhuoyingshi_06",
+		8
+	},
+	{
+		17,
+		"128K",
+		128000,
+		"ui/icon/items/icon_fenhuoyingshi_08",
+		8
+	},
+	{
+		18,
+		"256K",
+		256000,
+		"ui/icon/items/icon_fenhuoyingshi_05",
+		9
+	},
+	{
+		19,
+		"512K",
+		512000,
+		"ui/icon/items/icon_fenhuoyingshi_02",
+		9
+	},
+	{
+		20,
+		"1024K",
+		1024000,
+		"ui/icon/items/icon_fenhuoyingshi_01",
+		10
+	},
+	{
+		21,
+		"2048K",
+		2048000,
+		"ui/icon/items/icon_fenhuoyingshi_07",
+		10
+	},
+	{
+		22,
+		"4M",
+		4000000,
+		"ui/icon/items/icon_fenhuoyingshi_09",
+		11
+	},
+	{
+		23,
+		"8M",
+		8000000,
+		"ui/icon/items/icon_fenhuoyingshi_04",
+		11
+	},
+	{
+		24,
+		"16M",
+		16000000,
+		"ui/icon/items/icon_fenhuoyingshi_03",
+		12
+	},
+	{
+		25,
+		"32M",
+		32000000,
+		"ui/icon/items/icon_fenhuoyingshi_10",
+		12
+	},
+	{
+		26,
+		"64M",
+		64000000,
+		"ui/icon/items/icon_fenhuoyingshi_06",
+		13
+	},
+	{
+		27,
+		"128M",
+		128000000,
+		"ui/icon/items/icon_fenhuoyingshi_08",
+		13
+	},
+	{
+		28,
+		"256M",
+		256000000,
+		"ui/icon/items/icon_fenhuoyingshi_05",
+		14
+	},
+	{
+		29,
+		"512M",
+		512000000,
+		"ui/icon/items/icon_fenhuoyingshi_02",
+		14
+	},
+	{
+		30,
+		"1024M",
+		1024000000,
+		"ui/icon/items/icon_fenhuoyingshi_01",
+		15
+	},
+	{
+		31,
+		"2048M",
+		2048000000,
+		"ui/icon/items/icon_fenhuoyingshi_07",
+		15
+	}
+}
+local t_game_2048_grid_lib = {
+	[-1] = dataList[1],
+	dataList[2],
+	dataList[3],
+	dataList[4],
+	dataList[5],
+	dataList[6],
+	dataList[7],
+	dataList[8],
+	dataList[9],
+	dataList[10],
+	dataList[11],
+	dataList[12],
+	dataList[13],
+	dataList[14],
+	dataList[15],
+	dataList[16],
+	dataList[17],
+	dataList[18],
+	dataList[19],
+	dataList[20],
+	dataList[21],
+	dataList[22],
+	dataList[23],
+	dataList[24],
+	dataList[25],
+	dataList[26],
+	dataList[27],
+	dataList[28],
+	dataList[29],
+	dataList[30],
+	dataList[31],
+	dataList[32]
+}
+
+t_game_2048_grid_lib.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_game_2048_grid_lib

@@ -1,0 +1,286 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_martial_contest_qualifier_rank_score.lua
+
+module("logicconfig.config.t_martial_contest_qualifier_rank_score", package.seeall)
+
+local title = {
+	winStreak = 3,
+	rankScorePlanId = 1,
+	addRankScore = 4,
+	rankScoreId = 2
+}
+local dataList = {
+	{
+		1,
+		1,
+		0,
+		20
+	},
+	{
+		1,
+		2,
+		1,
+		20
+	},
+	{
+		1,
+		3,
+		2,
+		20
+	},
+	{
+		1,
+		4,
+		3,
+		30
+	},
+	{
+		1,
+		5,
+		4,
+		30
+	},
+	{
+		1,
+		6,
+		5,
+		30
+	},
+	{
+		1,
+		7,
+		6,
+		30
+	},
+	{
+		1,
+		8,
+		7,
+		30
+	},
+	{
+		1,
+		9,
+		8,
+		30
+	},
+	{
+		1,
+		10,
+		9,
+		30
+	},
+	{
+		1,
+		11,
+		10,
+		30
+	},
+	{
+		1,
+		12,
+		11,
+		30
+	},
+	{
+		1,
+		13,
+		12,
+		30
+	},
+	{
+		1,
+		14,
+		13,
+		30
+	},
+	{
+		1,
+		15,
+		14,
+		30
+	},
+	{
+		1,
+		16,
+		15,
+		30
+	},
+	{
+		1,
+		17,
+		16,
+		30
+	},
+	{
+		1,
+		18,
+		17,
+		30
+	},
+	{
+		1,
+		19,
+		18,
+		30
+	},
+	{
+		1,
+		20,
+		19,
+		30
+	},
+	{
+		1,
+		21,
+		20,
+		30
+	},
+	{
+		1,
+		22,
+		21,
+		30
+	},
+	{
+		1,
+		23,
+		22,
+		30
+	},
+	{
+		1,
+		24,
+		23,
+		30
+	},
+	{
+		1,
+		25,
+		24,
+		30
+	},
+	{
+		1,
+		26,
+		25,
+		30
+	},
+	{
+		1,
+		27,
+		26,
+		30
+	},
+	{
+		1,
+		28,
+		27,
+		30
+	},
+	{
+		1,
+		29,
+		28,
+		30
+	},
+	{
+		1,
+		30,
+		29,
+		30
+	},
+	{
+		1,
+		31,
+		30,
+		30
+	},
+	{
+		1,
+		32,
+		31,
+		30
+	},
+	{
+		1,
+		33,
+		32,
+		30
+	},
+	{
+		1,
+		34,
+		33,
+		30
+	},
+	{
+		1,
+		35,
+		34,
+		30
+	},
+	{
+		1,
+		36,
+		35,
+		30
+	}
+}
+local t_martial_contest_qualifier_rank_score = {
+	{
+		dataList[1],
+		dataList[2],
+		dataList[3],
+		dataList[4],
+		dataList[5],
+		dataList[6],
+		dataList[7],
+		dataList[8],
+		dataList[9],
+		dataList[10],
+		dataList[11],
+		dataList[12],
+		dataList[13],
+		dataList[14],
+		dataList[15],
+		dataList[16],
+		dataList[17],
+		dataList[18],
+		dataList[19],
+		dataList[20],
+		dataList[21],
+		dataList[22],
+		dataList[23],
+		dataList[24],
+		dataList[25],
+		dataList[26],
+		dataList[27],
+		dataList[28],
+		dataList[29],
+		dataList[30],
+		dataList[31],
+		dataList[32],
+		dataList[33],
+		dataList[34],
+		dataList[35],
+		dataList[36]
+	}
+}
+
+t_martial_contest_qualifier_rank_score.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_martial_contest_qualifier_rank_score

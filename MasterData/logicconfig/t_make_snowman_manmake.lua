@@ -1,0 +1,317 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_make_snowman_manmake.lua
+
+module("logicconfig.config.t_make_snowman_manmake", package.seeall)
+
+local title = {
+	posOffset = 3,
+	snowmanId = 1,
+	pickRes = 5,
+	completeRes = 7,
+	emptyRes = 4,
+	showRes = 6,
+	posId = 2
+}
+local dataList = {
+	{
+		1,
+		1,
+		{
+			-32.8,
+			122.6,
+			244,
+			222
+		},
+		"board_duixueren_29",
+		"board_duixueren_16",
+		"board_duixueren_16",
+		"board_duixueren_08"
+	},
+	{
+		1,
+		2,
+		{
+			-8.5,
+			-38.6,
+			285,
+			210
+		},
+		"board_duixueren_29",
+		"board_duixueren_22",
+		"board_duixueren_22",
+		"board_duixueren_08"
+	},
+	{
+		1,
+		3,
+		{
+			-8.5,
+			71,
+			89,
+			81
+		},
+		"board_duixueren_29",
+		"board_duixueren_28",
+		"board_duixueren_28",
+		"board_duixueren_08"
+	},
+	{
+		2,
+		1,
+		{
+			-32.8,
+			122.6,
+			244,
+			222
+		},
+		"board_duixueren_29",
+		"board_duixueren_15",
+		"board_duixueren_15",
+		"board_duixueren_07"
+	},
+	{
+		2,
+		2,
+		{
+			-13,
+			-31,
+			285,
+			285
+		},
+		"board_duixueren_29",
+		"board_duixueren_21",
+		"board_duixueren_21",
+		"board_duixueren_07"
+	},
+	{
+		2,
+		3,
+		{
+			-8.5,
+			71,
+			89,
+			81
+		},
+		"board_duixueren_29",
+		"board_duixueren_27",
+		"board_duixueren_27",
+		"board_duixueren_07"
+	},
+	{
+		3,
+		1,
+		{
+			-32.8,
+			122.6,
+			244,
+			222
+		},
+		"board_duixueren_29",
+		"board_duixueren_14",
+		"board_duixueren_14",
+		"board_duixueren_06"
+	},
+	{
+		3,
+		2,
+		{
+			-13,
+			-31,
+			285,
+			285
+		},
+		"board_duixueren_29",
+		"board_duixueren_20",
+		"board_duixueren_20",
+		"board_duixueren_06"
+	},
+	{
+		3,
+		3,
+		{
+			-8.5,
+			71,
+			89,
+			81
+		},
+		"board_duixueren_29",
+		"board_duixueren_26",
+		"board_duixueren_26",
+		"board_duixueren_06"
+	},
+	{
+		4,
+		1,
+		{
+			-32.8,
+			122.6,
+			244,
+			222
+		},
+		"board_duixueren_29",
+		"board_duixueren_13",
+		"board_duixueren_13",
+		"board_duixueren_05"
+	},
+	{
+		4,
+		2,
+		{
+			-13,
+			-31,
+			285,
+			285
+		},
+		"board_duixueren_29",
+		"board_duixueren_19",
+		"board_duixueren_19",
+		"board_duixueren_05"
+	},
+	{
+		4,
+		3,
+		{
+			-8.5,
+			71,
+			89,
+			81
+		},
+		"board_duixueren_29",
+		"board_duixueren_25",
+		"board_duixueren_25",
+		"board_duixueren_05"
+	},
+	{
+		5,
+		1,
+		{
+			-32.8,
+			122.6,
+			244,
+			222
+		},
+		"board_duixueren_29",
+		"board_duixueren_12",
+		"board_duixueren_12",
+		"board_duixueren_04"
+	},
+	{
+		5,
+		2,
+		{
+			-13,
+			-31,
+			285,
+			285
+		},
+		"board_duixueren_29",
+		"board_duixueren_18",
+		"board_duixueren_18",
+		"board_duixueren_04"
+	},
+	{
+		5,
+		3,
+		{
+			-8.5,
+			71,
+			89,
+			81
+		},
+		"board_duixueren_29",
+		"board_duixueren_24",
+		"board_duixueren_24",
+		"board_duixueren_04"
+	},
+	{
+		6,
+		1,
+		{
+			-32.8,
+			122.6,
+			244,
+			222
+		},
+		"board_duixueren_29",
+		"board_duixueren_11",
+		"board_duixueren_11",
+		"board_duixueren_03"
+	},
+	{
+		6,
+		2,
+		{
+			-13,
+			-31,
+			285,
+			285
+		},
+		"board_duixueren_29",
+		"board_duixueren_17",
+		"board_duixueren_17",
+		"board_duixueren_03"
+	},
+	{
+		6,
+		3,
+		{
+			-8.5,
+			71,
+			89,
+			81
+		},
+		"board_duixueren_29",
+		"board_duixueren_23",
+		"board_duixueren_23",
+		"board_duixueren_03"
+	}
+}
+local t_make_snowman_manmake = {
+	{
+		dataList[1],
+		dataList[2],
+		dataList[3]
+	},
+	{
+		dataList[4],
+		dataList[5],
+		dataList[6]
+	},
+	{
+		dataList[7],
+		dataList[8],
+		dataList[9]
+	},
+	{
+		dataList[10],
+		dataList[11],
+		dataList[12]
+	},
+	{
+		dataList[13],
+		dataList[14],
+		dataList[15]
+	},
+	{
+		dataList[16],
+		dataList[17],
+		dataList[18]
+	}
+}
+
+t_make_snowman_manmake.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_make_snowman_manmake

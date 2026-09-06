@@ -1,0 +1,67 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_legend_block.lua
+
+module("logicconfig.config.t_legend_block", package.seeall)
+
+local title = {
+	isPermitBigger = 3,
+	blockId = 1,
+	unlockId = 2
+}
+local dataList = {
+	{
+		1,
+		159,
+		true
+	},
+	{
+		2,
+		159,
+		true
+	},
+	{
+		3,
+		159,
+		true
+	},
+	{
+		4,
+		159,
+		false
+	},
+	{
+		5,
+		159,
+		false
+	},
+	{
+		6,
+		159,
+		true
+	}
+}
+local t_legend_block = {
+	dataList[1],
+	dataList[2],
+	dataList[3],
+	dataList[4],
+	dataList[5],
+	dataList[6]
+}
+
+t_legend_block.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_legend_block

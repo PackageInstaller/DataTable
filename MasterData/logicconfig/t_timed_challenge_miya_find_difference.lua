@@ -1,0 +1,286 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_timed_challenge_miya_find_difference.lua
+
+module("logicconfig.config.t_timed_challenge_miya_find_difference", package.seeall)
+
+local title = {
+	weight = 4,
+	passNeedNum = 6,
+	pictureId = 1,
+	pictureIdNew = 3,
+	gameTime = 5,
+	difficulty = 2
+}
+local dataList = {
+	{
+		1,
+		1,
+		1,
+		25,
+		60,
+		3
+	},
+	{
+		2,
+		1,
+		2,
+		0,
+		60,
+		3
+	},
+	{
+		3,
+		1,
+		3,
+		25,
+		60,
+		3
+	},
+	{
+		4,
+		1,
+		4,
+		25,
+		60,
+		3
+	},
+	{
+		5,
+		2,
+		1,
+		25,
+		50,
+		3
+	},
+	{
+		6,
+		2,
+		2,
+		0,
+		50,
+		3
+	},
+	{
+		7,
+		2,
+		3,
+		25,
+		50,
+		3
+	},
+	{
+		8,
+		2,
+		4,
+		25,
+		50,
+		3
+	},
+	{
+		9,
+		2,
+		5,
+		25,
+		50,
+		3
+	},
+	{
+		10,
+		2,
+		6,
+		25,
+		50,
+		3
+	},
+	{
+		11,
+		3,
+		1,
+		25,
+		45,
+		4
+	},
+	{
+		12,
+		3,
+		2,
+		0,
+		45,
+		4
+	},
+	{
+		13,
+		3,
+		3,
+		25,
+		45,
+		4
+	},
+	{
+		14,
+		3,
+		4,
+		25,
+		45,
+		4
+	},
+	{
+		15,
+		3,
+		5,
+		25,
+		45,
+		4
+	},
+	{
+		16,
+		3,
+		6,
+		25,
+		45,
+		4
+	},
+	{
+		17,
+		3,
+		7,
+		25,
+		45,
+		4
+	},
+	{
+		18,
+		3,
+		8,
+		25,
+		45,
+		4
+	},
+	{
+		19,
+		4,
+		1,
+		25,
+		40,
+		5
+	},
+	{
+		20,
+		4,
+		2,
+		0,
+		40,
+		5
+	},
+	{
+		21,
+		4,
+		3,
+		25,
+		40,
+		5
+	},
+	{
+		22,
+		4,
+		4,
+		25,
+		40,
+		5
+	},
+	{
+		23,
+		4,
+		5,
+		25,
+		40,
+		5
+	},
+	{
+		24,
+		4,
+		6,
+		25,
+		40,
+		5
+	},
+	{
+		25,
+		4,
+		7,
+		25,
+		40,
+		5
+	},
+	{
+		26,
+		4,
+		8,
+		25,
+		40,
+		5
+	},
+	{
+		27,
+		4,
+		9,
+		25,
+		40,
+		5
+	},
+	{
+		28,
+		4,
+		10,
+		25,
+		40,
+		5
+	}
+}
+local t_timed_challenge_miya_find_difference = {
+	dataList[1],
+	dataList[2],
+	dataList[3],
+	dataList[4],
+	dataList[5],
+	dataList[6],
+	dataList[7],
+	dataList[8],
+	dataList[9],
+	dataList[10],
+	dataList[11],
+	dataList[12],
+	dataList[13],
+	dataList[14],
+	dataList[15],
+	dataList[16],
+	dataList[17],
+	dataList[18],
+	dataList[19],
+	dataList[20],
+	dataList[21],
+	dataList[22],
+	dataList[23],
+	dataList[24],
+	dataList[25],
+	dataList[26],
+	dataList[27],
+	dataList[28]
+}
+
+t_timed_challenge_miya_find_difference.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_timed_challenge_miya_find_difference

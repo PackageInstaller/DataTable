@@ -1,0 +1,325 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_making_moon_cake_info.lua
+
+module("logicconfig.config.t_making_moon_cake_info", package.seeall)
+
+local title = {
+	audioId = 6,
+	name = 2,
+	materials = 4,
+	randMaterials = 5,
+	id = 1,
+	icon = 3,
+	pos = 8,
+	skinId = 7
+}
+local dataList = {
+	{
+		1,
+		"红豆汤圆",
+		"com_icon_tangyuan_01",
+		{
+			10,
+			7
+		},
+		{
+			1,
+			2,
+			3,
+			4
+		},
+		0,
+		0
+	},
+	{
+		2,
+		"红豆汤圆",
+		"com_icon_tangyuan_01",
+		{
+			10,
+			7,
+			1
+		},
+		{
+			2,
+			3,
+			4
+		},
+		0,
+		0
+	},
+	{
+		3,
+		"红豆汤圆",
+		"com_icon_tangyuan_01",
+		{
+			10,
+			7,
+			2
+		},
+		{
+			1,
+			3,
+			4,
+			5
+		},
+		0,
+		0
+	},
+	{
+		4,
+		"红豆汤圆",
+		"com_icon_tangyuan_01",
+		{
+			10,
+			7,
+			4
+		},
+		{
+			1,
+			2,
+			3
+		},
+		0,
+		0
+	},
+	{
+		5,
+		"黑芝麻汤圆",
+		"com_icon_tangyuan_06",
+		{
+			7,
+			9
+		},
+		{
+			2,
+			3,
+			4,
+			1
+		},
+		0,
+		0
+	},
+	{
+		6,
+		"黑芝麻汤圆",
+		"com_icon_tangyuan_06",
+		{
+			7,
+			9,
+			3
+		},
+		{
+			2,
+			4,
+			1
+		},
+		0,
+		0
+	},
+	{
+		7,
+		"黑芝麻汤圆",
+		"com_icon_tangyuan_06",
+		{
+			7,
+			9,
+			1
+		},
+		{
+			2,
+			3,
+			4
+		},
+		0,
+		0
+	},
+	{
+		8,
+		"黑芝麻汤圆",
+		"com_icon_tangyuan_06",
+		{
+			7,
+			9,
+			4
+		},
+		{
+			2,
+			3,
+			1
+		},
+		0,
+		0
+	},
+	{
+		9,
+		"花生汤圆",
+		"com_icon_tangyuan_02",
+		{
+			6,
+			7
+		},
+		{
+			1,
+			2,
+			3,
+			4
+		},
+		0,
+		0
+	},
+	{
+		10,
+		"花生汤圆",
+		"com_icon_tangyuan_02",
+		{
+			6,
+			7,
+			2
+		},
+		{
+			1,
+			3,
+			4
+		},
+		0,
+		0
+	},
+	{
+		11,
+		"花生汤圆",
+		"com_icon_tangyuan_02",
+		{
+			6,
+			7,
+			3
+		},
+		{
+			1,
+			2,
+			4
+		},
+		0,
+		0
+	},
+	{
+		12,
+		"花生汤圆",
+		"com_icon_tangyuan_02",
+		{
+			6,
+			7,
+			4
+		},
+		{
+			1,
+			2,
+			3
+		},
+		0,
+		0
+	},
+	{
+		13,
+		"羊肉元宵",
+		"com_icon_tangyuan_04",
+		{
+			7,
+			11
+		},
+		{
+			1,
+			2,
+			3,
+			4
+		},
+		0,
+		0
+	},
+	{
+		14,
+		"羊肉元宵",
+		"com_icon_tangyuan_04",
+		{
+			7,
+			11,
+			1
+		},
+		{
+			2,
+			3,
+			4
+		},
+		0,
+		0
+	},
+	{
+		15,
+		"羊肉元宵",
+		"com_icon_tangyuan_04",
+		{
+			7,
+			11,
+			2
+		},
+		{
+			1,
+			3,
+			4
+		},
+		0,
+		0
+	},
+	{
+		16,
+		"羊肉元宵",
+		"com_icon_tangyuan_04",
+		{
+			7,
+			11,
+			4
+		},
+		{
+			1,
+			2,
+			3
+		},
+		0,
+		0
+	}
+}
+local t_making_moon_cake_info = {
+	dataList[1],
+	dataList[2],
+	dataList[3],
+	dataList[4],
+	dataList[5],
+	dataList[6],
+	dataList[7],
+	dataList[8],
+	dataList[9],
+	dataList[10],
+	dataList[11],
+	dataList[12],
+	dataList[13],
+	dataList[14],
+	dataList[15],
+	dataList[16]
+}
+
+t_making_moon_cake_info.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_making_moon_cake_info

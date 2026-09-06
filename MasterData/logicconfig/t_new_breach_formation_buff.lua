@@ -1,0 +1,289 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_new_breach_formation_buff.lua
+
+module("logicconfig.config.t_new_breach_formation_buff", package.seeall)
+
+local title = {
+	buffPlanId = 1,
+	name = 3,
+	buffId = 2,
+	buffDesc = 4,
+	buffResName = 5
+}
+local dataList = {
+	{
+		1,
+		1,
+		"双刃剑",
+		"技能命中目标后，额外造成攻击20%的伤害",
+		"ui/icon/expevents/icon_expedition_jingzhun01.png"
+	},
+	{
+		1,
+		2,
+		"无视防御",
+		"无视目标35%防御",
+		"ui/icon/expevents/icon_expedition_yisun01.png"
+	},
+	{
+		1,
+		3,
+		"超杀伤害",
+		"超杀伤害+20%",
+		"ui/icon/expevents/icon_expedition_shanghaitisheng.png"
+	},
+	{
+		1,
+		4,
+		"恢复生命",
+		"每回合结束时，恢复8%的生命",
+		"ui/icon/expevents/icon_expedition_kaichanghuixue.png"
+	},
+	{
+		1,
+		5,
+		"死亡加伤",
+		"己方每死亡一个精灵，所有精灵伤害+5%",
+		"ui/icon/expevents/icon_expedition_liaoxiaojiangdi.png"
+	},
+	{
+		1,
+		6,
+		"残血收割",
+		"攻击50%以下生命的目标时，伤害+25%",
+		"ui/icon/expevents/icon_expedition_ganran.png"
+	},
+	{
+		1,
+		7,
+		"死亡减伤",
+		"己方每死亡一个精灵，所有精灵受伤-5%",
+		"ui/icon/expevents/icon_expedition_chushouqianjianshang.png"
+	},
+	{
+		1,
+		8,
+		"克制增伤",
+		"攻击目标时，若对方被自己克制，伤害+25%",
+		"ui/icon/expevents/icon_expedition_buqu.png"
+	},
+	{
+		1,
+		9,
+		"吸收气势",
+		"攻击命中目标后，吸收目标10点气势",
+		"ui/icon/expevents/icon_expedition_bianyi01.png"
+	},
+	{
+		1,
+		10,
+		"超杀降伤",
+		"释放超杀后，降低20%下次受到的伤害",
+		"ui/icon/expevents/icon_expedition_chaoshahoumianyi.png"
+	},
+	{
+		1,
+		11,
+		"额外出手",
+		"攻击后有20%的概率额外出手一次（每轮最多额外出手1次）",
+		"ui/icon/expevents/icon_expedition_zhuiji.png"
+	},
+	{
+		1,
+		12,
+		"格挡",
+		"格挡率+20%",
+		"ui/icon/expevents/icon_expedition_wufangqishi.png"
+	},
+	{
+		1,
+		13,
+		"穿透护盾",
+		"对带有护盾的目标伤害+25%",
+		"ui/icon/expevents/icon_expedition_wushifangyu.png"
+	},
+	{
+		2,
+		1,
+		"无敌增益",
+		"上阵无敌时获得20点通灵进度",
+		"ui/icon/character/icon_14017_wudi.png"
+	},
+	{
+		2,
+		2,
+		"神曜诺亚增益",
+		"神曜诺亚伤害增加20%",
+		"ui/icon/character/icon_14018_shenyaowangzhenuoya.png"
+	},
+	{
+		2,
+		3,
+		"王者诺雅增益",
+		"王者诺雅及与王者诺雅同横排的第一位其他精灵获得50点初始气势",
+		"ui/icon/character/icon_14020_wangzhenuoya.png"
+	},
+	{
+		2,
+		4,
+		"神曜月影王增益",
+		"神曜月影王获得15%闪避率",
+		"ui/icon/character/icon_15017_shenyaoyueyingwang.png"
+	},
+	{
+		2,
+		5,
+		"神曜修尔增益",
+		"神曜修尔神曜技获得满级效果",
+		"ui/icon/character/icon_15018_shenyaowangzhexiuer.png"
+	},
+	{
+		2,
+		6,
+		"女帝增益",
+		"女帝最大生命值增加50%",
+		"ui/icon/character/icon_16019_nvdi.png"
+	},
+	{
+		2,
+		7,
+		"王者以撒增益",
+		"每个大回合结束时己阵随机1位存活精灵获得免疫（持续1次攻击）",
+		"ui/icon/character/icon_16020_wangzheyisa.png"
+	},
+	{
+		2,
+		8,
+		"神曜龙炎增益",
+		"神曜龙炎神曜技获得满级效果",
+		"ui/icon/character/icon_12018_shenyaolongyan.png"
+	},
+	{
+		2,
+		9,
+		"神曜赤焰龙皇增益",
+		"神曜赤焰龙皇神曜技获得满级效果",
+		"ui/icon/character/icon_12019_shenyaochiyanlong.png"
+	},
+	{
+		3,
+		1,
+		"源起尘增益",
+		"源起尘伤害增加40%（1个大回合）",
+		"ui/icon/character/icon_16046_yuanqichen.png"
+	},
+	{
+		3,
+		2,
+		"源起弥梦离增益",
+		"源起弥梦离超杀后令全阵增加30气势（限4次）",
+		"ui/icon/character/icon_12047_yuanqimimengli.png"
+	},
+	{
+		3,
+		3,
+		"源起暗末炎增益",
+		"源起暗末炎每个大回合首次出手为己阵精灵加10%免伤（1个大回合）",
+		"ui/icon/character/icon_15051_yuanqianmoyan.png"
+	},
+	{
+		3,
+		4,
+		"源起无限未来增益",
+		"源起无限未来每个大回合首次出手为己阵精灵加10%免伤（1个大回合）",
+		"ui/icon/character/icon_16047_yuanqiwuxianweilai.png"
+	},
+	{
+		3,
+		5,
+		"源起双生圣龙增益",
+		"源起双生龙每个大回合开始时获得80气势",
+		"ui/icon/character/icon_16048_yuanqishuangshenglong.png"
+	},
+	{
+		4,
+		1,
+		"进战加气",
+		"己阵起始气势+30",
+		"ui/icon/expevents/icon_expedition_bianyi01.png"
+	},
+	{
+		4,
+		2,
+		"超杀降伤",
+		"释放超杀后，降低20%下次受到的伤害",
+		"ui/icon/expevents/icon_expedition_chaoshahoumianyi.png"
+	},
+	{
+		4,
+		3,
+		"额外出手",
+		"攻击后有20%的概率额外出手一次（每轮最多额外出手1次）",
+		"ui/icon/expevents/icon_expedition_zhuiji.png"
+	},
+	{
+		4,
+		4,
+		"超杀伤害",
+		"超杀伤害+20%",
+		"ui/icon/expevents/icon_expedition_shanghaitisheng.png"
+	}
+}
+local t_new_breach_formation_buff = {
+	{
+		dataList[1],
+		dataList[2],
+		dataList[3],
+		dataList[4],
+		dataList[5],
+		dataList[6],
+		dataList[7],
+		dataList[8],
+		dataList[9],
+		dataList[10],
+		dataList[11],
+		dataList[12],
+		dataList[13]
+	},
+	{
+		dataList[14],
+		dataList[15],
+		dataList[16],
+		dataList[17],
+		dataList[18],
+		dataList[19],
+		dataList[20],
+		dataList[21],
+		dataList[22]
+	},
+	{
+		dataList[23],
+		dataList[24],
+		dataList[25],
+		dataList[26],
+		dataList[27]
+	},
+	{
+		dataList[28],
+		dataList[29],
+		dataList[30],
+		dataList[31]
+	}
+}
+
+t_new_breach_formation_buff.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_new_breach_formation_buff

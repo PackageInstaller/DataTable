@@ -1,0 +1,290 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_form_prediction_pet.lua
+
+module("logicconfig.config.t_form_prediction_pet", package.seeall)
+
+local title = {
+	raceId = 3,
+	petId = 2,
+	petPlanId = 1,
+	fakeItem = 6,
+	petName = 4,
+	iconName = 5
+}
+local dataList = {
+	{
+		1,
+		1,
+		17018,
+		"",
+		"",
+		""
+	},
+	{
+		1,
+		2,
+		17016,
+		"",
+		"",
+		""
+	},
+	{
+		1,
+		3,
+		16026,
+		"",
+		"",
+		""
+	},
+	{
+		1,
+		4,
+		17017,
+		"",
+		"",
+		""
+	},
+	{
+		1,
+		5,
+		18001,
+		"",
+		"",
+		""
+	},
+	{
+		1,
+		6,
+		13009,
+		"",
+		"",
+		""
+	},
+	{
+		1,
+		7,
+		17015,
+		"",
+		"",
+		""
+	},
+	{
+		1,
+		8,
+		17010,
+		"",
+		"",
+		""
+	},
+	{
+		1,
+		9,
+		12021,
+		"",
+		"",
+		""
+	},
+	{
+		1,
+		10,
+		16010,
+		"",
+		"",
+		""
+	},
+	{
+		1,
+		11,
+		16018,
+		"",
+		"",
+		""
+	},
+	{
+		1,
+		12,
+		16024,
+		"",
+		"",
+		""
+	},
+	{
+		2,
+		1,
+		17014,
+		"",
+		"",
+		""
+	},
+	{
+		2,
+		2,
+		17017,
+		"",
+		"",
+		""
+	},
+	{
+		2,
+		3,
+		0,
+		"神曜解神·亦",
+		"icon_16026_shenyaoyi",
+		"1004:1393:1"
+	},
+	{
+		2,
+		4,
+		0,
+		"神曜诺雅",
+		"icon_17007_zhuzainuoyamm",
+		"1004:1394:1"
+	},
+	{
+		2,
+		5,
+		0,
+		"神曜萨拉诺斯",
+		"icon_17013_salaluosi",
+		"1004:1395:1"
+	},
+	{
+		2,
+		6,
+		17012,
+		"",
+		"",
+		""
+	},
+	{
+		2,
+		7,
+		17011,
+		"",
+		"",
+		""
+	},
+	{
+		2,
+		8,
+		0,
+		"神曜创诺亚",
+		"icon_17009_zhuzainuoya",
+		"1004:1396:1"
+	},
+	{
+		2,
+		9,
+		0,
+		"神曜弥娅",
+		"icon_17008_zhuzaimiya",
+		"1004:1397:1"
+	},
+	{
+		2,
+		10,
+		0,
+		"神曜贝朵",
+		"icon_17005_beiduo",
+		"1004:1398:1"
+	},
+	{
+		2,
+		11,
+		0,
+		"神曜修诺",
+		"icon_17006_xiunuo",
+		"1004:1399:1"
+	},
+	{
+		2,
+		12,
+		0,
+		"神曜达克诺斯",
+		"icon_17004_dakenuosi",
+		"1004:1400:1"
+	},
+	{
+		2,
+		13,
+		0,
+		"极幻冕下·正理",
+		"icon_common_jinglingjianying",
+		"1004:1401:1"
+	},
+	{
+		2,
+		14,
+		0,
+		"幻心晴",
+		"icon_common_jinglingjianying",
+		"1004:1402:1"
+	},
+	{
+		2,
+		15,
+		0,
+		"碎空终结者",
+		"icon_common_jinglingjianying",
+		"1004:1403:1"
+	},
+	{
+		2,
+		16,
+		18001,
+		"凋亡神骸·凡尔维斯",
+		"",
+		""
+	}
+}
+local t_form_prediction_pet = {
+	{
+		dataList[1],
+		dataList[2],
+		dataList[3],
+		dataList[4],
+		dataList[5],
+		dataList[6],
+		dataList[7],
+		dataList[8],
+		dataList[9],
+		dataList[10],
+		dataList[11],
+		dataList[12]
+	},
+	{
+		dataList[13],
+		dataList[14],
+		dataList[15],
+		dataList[16],
+		dataList[17],
+		dataList[18],
+		dataList[19],
+		dataList[20],
+		dataList[21],
+		dataList[22],
+		dataList[23],
+		dataList[24],
+		dataList[25],
+		dataList[26],
+		dataList[27],
+		dataList[28]
+	}
+}
+
+t_form_prediction_pet.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_form_prediction_pet

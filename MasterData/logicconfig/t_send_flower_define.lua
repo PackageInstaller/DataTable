@@ -1,0 +1,337 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_send_flower_define.lua
+
+module("logicconfig.config.t_send_flower_define", package.seeall)
+
+local title = {
+	sendPrize = 7,
+	effPath = 8,
+	mainEffPath = 9,
+	flowerCount = 4,
+	value = 5,
+	fetters = 6,
+	content = 2,
+	hasRank = 10,
+	id = 1,
+	sort = 3
+}
+local dataList = {
+	{
+		1,
+		"4:105:1",
+		99,
+		6,
+		6,
+		1,
+		"",
+		"fx_ui_yilishabaitiaozhan/fx_ui_songhua_1",
+		"",
+		false
+	},
+	{
+		2,
+		"4:106:1",
+		94,
+		66,
+		66,
+		11,
+		"",
+		"fx_ui_yilishabaitiaozhan/fx_ui_songhua_2",
+		"",
+		false
+	},
+	{
+		3,
+		"4:107:1",
+		93,
+		166,
+		166,
+		28,
+		"",
+		"fx_ui_yilishabaitiaozhan/fx_ui_songhua_3",
+		"",
+		false
+	},
+	{
+		4,
+		"4:108:1",
+		92,
+		888,
+		888,
+		148,
+		"",
+		"fx_ui_yilishabaitiaozhan/fx_ui_songhua_3",
+		"",
+		false
+	},
+	{
+		5,
+		"4:109:1",
+		91,
+		1314,
+		1314,
+		200,
+		"",
+		"fx_ui_yilishabaitiaozhan/fx_ui_songhua_3",
+		"",
+		false
+	},
+	{
+		6,
+		"4:115:1",
+		95,
+		66,
+		66,
+		11,
+		"",
+		"fx_ui_zhongqiu/songyuebing/fx_ui_songyuebing_1",
+		"",
+		false
+	},
+	{
+		7,
+		"4:116:1",
+		96,
+		66,
+		66,
+		11,
+		"",
+		"fx_ui_zhongqiu/songyuebing/fx_ui_songyuebing_2",
+		"",
+		false
+	},
+	{
+		8,
+		"4:117:1",
+		97,
+		66,
+		66,
+		11,
+		"",
+		"fx_ui_zhongqiu/songyuebing/fx_ui_songyuebing_3",
+		"",
+		false
+	},
+	{
+		9,
+		"4:118:1",
+		98,
+		66,
+		66,
+		11,
+		"",
+		"fx_ui_zhongqiu/songyuebing/fx_ui_songyuebing_4",
+		"",
+		false
+	},
+	{
+		10,
+		"4:147:1",
+		90,
+		3344,
+		3344,
+		200,
+		"",
+		"fx_ui_yilishabaitiaozhan/fx_ui_songhua_3",
+		"20220729/qixisonghua/fx_ui_qixisonghua",
+		false
+	},
+	{
+		11,
+		"4:170:1",
+		1,
+		13140,
+		13140,
+		200,
+		"",
+		"20230210/qixizengli/fx_ui_qixizengli_hua1",
+		"20230303/nvshensonghua/fx_ui_nanshensonghua",
+		true
+	},
+	{
+		12,
+		"4:171:1",
+		2,
+		13140,
+		13140,
+		200,
+		"",
+		"20230210/qixizengli/fx_ui_qixizengli_hua1",
+		"20230303/nvshensonghua/fx_ui_nvshensonghua",
+		true
+	},
+	{
+		13,
+		"4:198:1",
+		4,
+		5200,
+		5200,
+		200,
+		"",
+		"fx_ui_yilishabaitiaozhan/fx_ui_songhua_3",
+		"20230728/songhua/fx_ui_songhua_sbpk",
+		false
+	},
+	{
+		14,
+		"4:510283:1",
+		3,
+		6666,
+		6666,
+		200,
+		"",
+		"fx_ui_yilishabaitiaozhan/fx_ui_songhua_3",
+		"20240403/nvshensonghua/fx_ui_nvshensonghua",
+		false
+	},
+	{
+		15,
+		"4:510328:1",
+		89,
+		3344,
+		3344,
+		200,
+		"",
+		"fx_ui_yilishabaitiaozhan/fx_ui_songhua_3",
+		"20240726/qixihuabang/fx_ui_qixihuabang_fw",
+		false
+	},
+	{
+		16,
+		"4:510393:1",
+		88,
+		3699,
+		3699,
+		200,
+		"",
+		"fx_ui_yilishabaitiaozhan/fx_ui_songhua_3",
+		"20241220/songhua/fx_ui_songhua6",
+		false
+	},
+	{
+		17,
+		"4:510445:1",
+		87,
+		3452,
+		3452,
+		200,
+		"",
+		"fx_ui_yilishabaitiaozhan/fx_ui_songhua_3",
+		"20241220/songhua/fx_ui_songhua6",
+		false
+	},
+	{
+		18,
+		"4:278:1",
+		86,
+		3344,
+		3344,
+		200,
+		"",
+		"fx_ui_yilishabaitiaozhan/fx_ui_songhua_3",
+		"20241220/songhua/fx_ui_songhua6",
+		false
+	},
+	{
+		19,
+		"4:510570:1",
+		85,
+		3452,
+		3452,
+		200,
+		"",
+		"fx_ui_yilishabaitiaozhan/fx_ui_songhua_3",
+		"20241220/songhua/fx_ui_songhua6",
+		false
+	},
+	{
+		20,
+		"4:429:1",
+		84,
+		3344,
+		3344,
+		200,
+		"",
+		"fx_ui_yilishabaitiaozhan/fx_ui_songhua_3",
+		"20241220/songhua/fx_ui_songhua6",
+		false
+	},
+	{
+		21,
+		"4:435:1",
+		83,
+		5200,
+		5200,
+		200,
+		"",
+		"20230210/qixizengli/fx_ui_qixizengli_hua1",
+		"20240726/qixihuabang/fx_ui_qixihuabang_fw",
+		false
+	},
+	{
+		22,
+		"4:438:1",
+		83,
+		5200,
+		5200,
+		200,
+		"",
+		"20230210/qixizengli/fx_ui_qixizengli_hua1",
+		"20240726/qixihuabang/fx_ui_qixihuabang_fw",
+		false
+	},
+	{
+		23,
+		"4:441:1",
+		84,
+		3344,
+		3344,
+		200,
+		"",
+		"fx_ui_yilishabaitiaozhan/fx_ui_songhua_3",
+		"20241220/songhua/fx_ui_songhua6",
+		false
+	}
+}
+local t_send_flower_define = {
+	dataList[1],
+	dataList[2],
+	dataList[3],
+	dataList[4],
+	dataList[5],
+	dataList[6],
+	dataList[7],
+	dataList[8],
+	dataList[9],
+	dataList[10],
+	dataList[11],
+	dataList[12],
+	dataList[13],
+	dataList[14],
+	dataList[15],
+	dataList[16],
+	dataList[17],
+	dataList[18],
+	dataList[19],
+	dataList[20],
+	dataList[21],
+	dataList[22],
+	dataList[23]
+}
+
+t_send_flower_define.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_send_flower_define

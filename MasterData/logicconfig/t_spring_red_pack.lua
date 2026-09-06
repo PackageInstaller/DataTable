@@ -1,0 +1,286 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_spring_red_pack.lua
+
+module("logicconfig.config.t_spring_red_pack", package.seeall)
+
+local title = {
+	skinId = 4,
+	redPackId = 1,
+	bigPrizeName = 6,
+	prizePlanId = 3,
+	redPackDesc = 5,
+	prize = 2
+}
+local dataList = {
+	{
+		1,
+		"4:31:100",
+		1,
+		3,
+		"新春快乐",
+		"召唤券"
+	},
+	{
+		2,
+		"8:25:400",
+		2,
+		3,
+		"新春快乐",
+		"神器"
+	},
+	{
+		3,
+		"4:70003:5",
+		3,
+		4,
+		"新春快乐",
+		"传说之魂"
+	},
+	{
+		4,
+		"4:112:50",
+		4,
+		3,
+		"新春快乐",
+		"神炼石"
+	},
+	{
+		5,
+		"18:410:3",
+		5,
+		3,
+		"新春快乐",
+		"星神"
+	},
+	{
+		6,
+		"4:36:100",
+		6,
+		4,
+		"新春快乐",
+		"神唤"
+	},
+	{
+		7,
+		"4:10001:1",
+		7,
+		4,
+		"新春快乐",
+		"每日红包"
+	},
+	{
+		8,
+		"104:2:500",
+		8,
+		3,
+		"新春快乐",
+		"钻石红包"
+	},
+	{
+		9,
+		"4:31:10",
+		9,
+		1,
+		"勇战巅峰",
+		"巅峰赛红包"
+	},
+	{
+		10,
+		"4:30006:400",
+		10,
+		3,
+		"新春快乐",
+		"灵纹经验"
+	},
+	{
+		11,
+		"8:25:3000",
+		11,
+		4,
+		"新春快乐",
+		"神器币"
+	},
+	{
+		12,
+		"18:410:3",
+		12,
+		3,
+		"新春快乐",
+		"星神"
+	},
+	{
+		13,
+		"8:1:5000000",
+		13,
+		3,
+		"新春快乐",
+		"金币"
+	},
+	{
+		14,
+		"4:510022:50",
+		14,
+		3,
+		"新春快乐",
+		"红色灵纹"
+	},
+	{
+		15,
+		"4:11002:200000",
+		15,
+		3,
+		"新春快乐",
+		"品质药水"
+	},
+	{
+		16,
+		"4:11002:200000",
+		16,
+		3,
+		"周末快乐",
+		"品质药水"
+	},
+	{
+		17,
+		"4:12102:50",
+		17,
+		3,
+		"新春快乐",
+		"萌宠"
+	},
+	{
+		18,
+		"4:410002:3#4:410002:2#4:410002:1",
+		18,
+		4,
+		"除夕快乐",
+		"红色星神"
+	},
+	{
+		19,
+		"8:25:3000",
+		11,
+		4,
+		"新春快乐",
+		"神器币"
+	},
+	{
+		20,
+		"4:30006:400",
+		10,
+		4,
+		"新春快乐",
+		"灵纹经验"
+	},
+	{
+		21,
+		"4:70003:5",
+		3,
+		4,
+		"新春快乐",
+		"传说之魂"
+	},
+	{
+		22,
+		"18:410:3",
+		5,
+		4,
+		"新春快乐",
+		"橙色星神"
+	},
+	{
+		23,
+		"4:510022:50",
+		14,
+		4,
+		"新春快乐",
+		"随机红色灵纹"
+	},
+	{
+		24,
+		"4:36:100",
+		6,
+		4,
+		"新春快乐",
+		"神唤券"
+	},
+	{
+		25,
+		"4:12102:50",
+		17,
+		4,
+		"新春快乐",
+		"宠物"
+	},
+	{
+		26,
+		"4:70003:5",
+		3,
+		4,
+		"元宵快乐",
+		"传说之魂"
+	},
+	{
+		27,
+		"18:410:3",
+		19,
+		4,
+		"元宵快乐",
+		"橙色星神"
+	},
+	{
+		28,
+		"8:25:3000",
+		11,
+		4,
+		"元宵快乐",
+		"神器币"
+	}
+}
+local t_spring_red_pack = {
+	dataList[1],
+	dataList[2],
+	dataList[3],
+	dataList[4],
+	dataList[5],
+	dataList[6],
+	dataList[7],
+	dataList[8],
+	dataList[9],
+	dataList[10],
+	dataList[11],
+	dataList[12],
+	dataList[13],
+	dataList[14],
+	dataList[15],
+	dataList[16],
+	dataList[17],
+	dataList[18],
+	dataList[19],
+	dataList[20],
+	dataList[21],
+	dataList[22],
+	dataList[23],
+	dataList[24],
+	dataList[25],
+	dataList[26],
+	dataList[27],
+	dataList[28]
+}
+
+t_spring_red_pack.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_spring_red_pack

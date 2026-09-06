@@ -1,0 +1,311 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logicconfig/config/t_richman_resource_plan.lua
+
+module("logicconfig.config.t_richman_resource_plan", package.seeall)
+
+local title = {
+	attackMinGain = 6,
+	srcPlanId = 1,
+	product = 3,
+	buildingLevDesc = 7,
+	maxProduct = 5,
+	attackFactor = 4,
+	level = 2
+}
+local dataList = {
+	{
+		1,
+		1,
+		32,
+		0.3,
+		1440,
+		920,
+		"每10分钟产出32个金币"
+	},
+	{
+		1,
+		2,
+		48,
+		0.3,
+		1440,
+		1382,
+		"每10分钟产出48个金币"
+	},
+	{
+		1,
+		3,
+		64,
+		0.3,
+		1440,
+		1842,
+		"每10分钟产出64个金币"
+	},
+	{
+		1,
+		4,
+		80,
+		0.3,
+		1440,
+		2304,
+		"每10分钟产出80个金币"
+	},
+	{
+		1,
+		5,
+		96,
+		0.3,
+		1440,
+		2764,
+		"每10分钟产出96个金币"
+	},
+	{
+		1,
+		6,
+		112,
+		0.3,
+		1440,
+		3224,
+		"每10分钟产出112个金币"
+	},
+	{
+		1,
+		7,
+		128,
+		0.3,
+		1440,
+		3686,
+		"每10分钟产出128个金币"
+	},
+	{
+		1,
+		8,
+		144,
+		0.3,
+		1440,
+		4146,
+		"每10分钟产出144个金币"
+	},
+	{
+		1,
+		9,
+		160,
+		0.3,
+		1440,
+		4608,
+		"每10分钟产出160个金币"
+	},
+	{
+		1,
+		10,
+		176,
+		0.3,
+		1440,
+		5068,
+		"每10分钟产出176个金币"
+	},
+	{
+		2,
+		1,
+		1,
+		0.3,
+		1440,
+		28,
+		"每10分钟产出1个初级精粹"
+	},
+	{
+		2,
+		2,
+		2,
+		0.3,
+		1440,
+		43,
+		"每10分钟产出2个初级精粹"
+	},
+	{
+		2,
+		3,
+		3,
+		0.3,
+		1440,
+		57,
+		"每10分钟产出3个初级精粹"
+	},
+	{
+		2,
+		4,
+		4,
+		0.3,
+		1440,
+		72,
+		"每10分钟产出4个初级精粹"
+	},
+	{
+		2,
+		5,
+		5,
+		0.3,
+		1440,
+		86,
+		"每10分钟产出5个初级精粹"
+	},
+	{
+		2,
+		6,
+		6,
+		0.3,
+		1440,
+		100,
+		"每10分钟产出6个初级精粹"
+	},
+	{
+		2,
+		7,
+		7,
+		0.3,
+		1440,
+		115,
+		"每10分钟产出7个初级精粹"
+	},
+	{
+		3,
+		1,
+		1,
+		0.3,
+		1440,
+		14,
+		"每10分钟产出1个龙鳞精华"
+	},
+	{
+		3,
+		2,
+		2,
+		0.3,
+		1440,
+		28,
+		"每10分钟产出2个龙鳞精华"
+	},
+	{
+		3,
+		3,
+		3,
+		0.3,
+		1440,
+		43,
+		"每10分钟产出3个龙鳞精华"
+	},
+	{
+		3,
+		4,
+		4,
+		0.3,
+		1440,
+		57,
+		"每10分钟产出4个龙鳞精华"
+	},
+	{
+		3,
+		5,
+		5,
+		0.3,
+		1440,
+		72,
+		"每10分钟产出5个龙鳞精华"
+	},
+	{
+		3,
+		6,
+		6,
+		0.3,
+		1440,
+		86,
+		"每10分钟产出6个龙鳞精华"
+	},
+	{
+		3,
+		7,
+		7,
+		0.3,
+		1440,
+		100,
+		"每10分钟产出7个龙鳞精华"
+	},
+	{
+		3,
+		8,
+		8,
+		0.3,
+		1440,
+		115,
+		"每10分钟产出8个龙鳞精华"
+	},
+	{
+		3,
+		9,
+		9,
+		0.3,
+		1440,
+		129,
+		"每10分钟产出9个龙鳞精华"
+	},
+	{
+		3,
+		10,
+		10,
+		0.3,
+		1440,
+		144,
+		"每10分钟产出10个龙鳞精华"
+	}
+}
+local t_richman_resource_plan = {
+	{
+		dataList[1],
+		dataList[2],
+		dataList[3],
+		dataList[4],
+		dataList[5],
+		dataList[6],
+		dataList[7],
+		dataList[8],
+		dataList[9],
+		dataList[10]
+	},
+	{
+		dataList[11],
+		dataList[12],
+		dataList[13],
+		dataList[14],
+		dataList[15],
+		dataList[16],
+		dataList[17]
+	},
+	{
+		dataList[18],
+		dataList[19],
+		dataList[20],
+		dataList[21],
+		dataList[22],
+		dataList[23],
+		dataList[24],
+		dataList[25],
+		dataList[26],
+		dataList[27]
+	}
+}
+
+t_richman_resource_plan.dataList = dataList
+
+local mt = {
+	__index = function(t, key)
+		local index = title[key]
+
+		if index then
+			return rawget(t, index)
+		end
+	end
+}
+
+for i, v in ipairs(dataList) do
+	setmetatable(v, mt)
+end
+
+return t_richman_resource_plan

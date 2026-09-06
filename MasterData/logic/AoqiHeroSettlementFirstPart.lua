@@ -1,0 +1,233 @@
+﻿-- chunkname: @C:/GitLab-Runner/builds/sTUwNpCg/0/aqmobile/aqmobile-client/UnityProj/Assets/Scripts/Lua/logic/extensions/aoqihero/view/settlement/AoqiHeroSettlementFirstPart.lua
+
+module("logic.extensions.battlesettlement.view.AoqiHeroSettlementFirstPart", package.seeall)
+
+local AoqiHeroSettlementFirstPart = class("AoqiHeroSettlementFirstPart")
+
+function AoqiHeroSettlementFirstPart:ctor()
+	self._time1 = 0.5
+	self._delayTime1 = 0.4
+	self._time2 = 0.3
+	self._delayTime2 = 0.7
+	self._time3 = 0.2
+	self._delayTime3 = 1.3
+	self._needTime = self._time3 + self._delayTime3
+end
+
+function AoqiHeroSettlementFirstPart:buildUI(parent)
+	self._parent = parent
+	self._roleModel = goutil.findChild(parent, "roleModel")
+	self._dialogbox = goutil.findChild(parent, "dialogbox")
+	self._dialogTxt = goutil.findChild(parent, "dialogbox/txt"):GetComponent(goutil.Type_UIText)
+	self._dialogBg = goutil.findChild(parent, "dialogbox/bg"):GetComponent(goutil.Type_UIImage)
+	self._animShow = goutil.findChild(parent, "animShow"):GetComponent(goutil.Type_RectTransform)
+	self._animShowImg = goutil.findChildComponent(parent, "animShow/imgEffect", "UIImageSpriteChange")
+	self._effectParent = goutil.findChild(parent, "animShow/effect")
+end
+
+function AoqiHeroSettlementFirstPart:destroyUI()
+	return
+end
+
+function AoqiHeroSettlementFirstPart:bindEvents()
+	return
+end
+
+function AoqiHeroSettlementFirstPart:unbindEvents()
+	return
+end
+
+function AoqiHeroSettlementFirstPart:onEnter(isSuccess, view)
+	if self._isEntered then
+		return
+	end
+
+	self._isEntered = true
+	self._isSuccess = isSuccess
+
+	local myTeamMo = AoQiHeroEntityMgr.instance:getTeamMo(AoQiHeroConst.AttackTeam)
+	local firstPetId = myTeamMo.pos[1]
+	local raceId = 13015
+
+	if firstPetId then
+		local petMo = AoQiHeroEntityMgr.instance:getPet(firstPetId)
+		local petCfg = AoQiHeroConfig.instance:getPetCfg(petMo.activityId, petMo.configId)
+
+		raceId = checknumber(petCfg.faceIds)
+	end
+
+	self:_reset()
+	self:_init()
+	self:_showRoleModel(raceId)
+	self:_showDialogTxt(raceId)
+	self:_loadEffect(view, self._isSuccess)
+end
+
+function AoqiHeroSettlementFirstPart:_updateBubble(word)
+	word = word or ""
+	self._dialogTxt.text = word
+end
+
+function AoqiHeroSettlementFirstPart:onExit()
+	self._isEntered = false
+
+	PetCvController.instance:turnOffCurCv()
+
+	self.loader = RoleObjectPool.instance:removeRole(self.loader)
+
+	self:doKillTween()
+
+	if EndlessBattleModel.instance:getBattleFlag() then
+		goutil.setActive(self._animShowImg.gameObject, false)
+		self._animShowImg:SetState(0)
+		EndlessBattleModel.instance:setBattleFlag(false)
+	else
+		self:_removeEffect()
+	end
+end
+
+function AoqiHeroSettlementFirstPart:getNeedTime()
+	return self._needTime
+end
+
+function AoqiHeroSettlementFirstPart:doKillTween()
+	self._dialogBg:DOKill(true)
+	self._dialogTxt:DOKill(true)
+end
+
+function AoqiHeroSettlementFirstPart:doCompleteTween()
+	self:doKillTween()
+
+	local dialogBgColor = self._dialogBg.color
+
+	self._dialogBg.color = Color.New(dialogBgColor.r, dialogBgColor.g, dialogBgColor.b, 1)
+
+	local dialogTxtColor = self._dialogTxt.color
+
+	self._dialogTxt.color = Color.New(dialogTxtColor.r, dialogTxtColor.g, dialogTxtColor.b, 1)
+end
+
+function AoqiHeroSettlementFirstPart:_init()
+	self._dialogBg:DOFade(1, self._time2):SetDelay(self._delayTime2)
+	self._dialogTxt:DOFade(1, self._time2):SetDelay(self._delayTime2)
+end
+
+function AoqiHeroSettlementFirstPart:_reset()
+	local dialogBgColor = self._dialogBg.color
+
+	self._dialogBg.color = Color.New(dialogBgColor.r, dialogBgColor.g, dialogBgColor.b, 0)
+
+	local dialogTxtColor = self._dialogTxt.color
+
+	self._dialogTxt.color = Color.New(dialogTxtColor.r, dialogTxtColor.g, dialogTxtColor.b, 0)
+end
+
+function AoqiHeroSettlementFirstPart:_showRoleModel(skinId)
+	skinId = checknumber(skinId)
+
+	if skinId == 0 then
+		return
+	end
+
+	local offset = CharactorFacade.instance:getBattleResultModelUIPosAndScale(skinId)
+	local x, y, scale = 0, 0, 1
+
+	if offset then
+		x = checknumber(offset[1])
+		y = checknumber(offset[2])
+		scale = offset[3] or 1
+	end
+
+	self:_resetRoleModel()
+
+	local isAuto = true
+	local callback
+
+	self.loader = RoleObjectPool.instance:addRoleToParent(self.loader, skinId, self._roleModel, scale, callback, isAuto, x, y)
+end
+
+function AoqiHeroSettlementFirstPart:_resetRoleModel()
+	self.loader = RoleObjectPool.instance:removeRole(self.loader)
+end
+
+function AoqiHeroSettlementFirstPart:_showDialogTxt(raceId)
+	self._dialogbox:SetActive(false)
+
+	if not raceId or raceId == 0 then
+		return
+	end
+
+	self._dialogTxt.text = ""
+
+	if self._isSuccess then
+		self._dialogTxt.text = PetCvController.instance:playPetCv(raceId, GameEnum.PetCvType.BattleWin)
+	else
+		local originRaceId = raceId
+		local cfgSkin = PetSkinConfig.instance:getPetSkinCfg(originRaceId)
+
+		if cfgSkin then
+			originRaceId = cfgSkin.raceId
+		end
+
+		local rare = CharacterConfig.instance:getInitRare(originRaceId)
+
+		if rare > GameEnum.PetRare.R then
+			self._dialogTxt.text = PetCvController.instance:playPetCv(raceId, GameEnum.PetCvType.BattleLose)
+		end
+	end
+
+	self._dialogbox:SetActive(not string.nilorempty(self._dialogTxt.text))
+end
+
+function AoqiHeroSettlementFirstPart:_isHasLihui(raceId)
+	local modelCfg = CharacterConfig.instance:getModelCo(checknumber(raceId))
+	local bustName = modelCfg.bustName
+
+	return not string.nilorempty(bustName)
+end
+
+function AoqiHeroSettlementFirstPart:_getRaceIdByHurtValue()
+	local leftTeamId = BattleModel.instance:getLeftTeamId()
+	local playerDatas = BattleStatisticsDataModel.instance:getStatistics(leftTeamId)
+	local hightHurtData = playerDatas[1]
+
+	for i, v in pairs(playerDatas) do
+		if Mathf.Abs(hightHurtData.damage) < Mathf.Abs(v.damage) then
+			hightHurtData = v
+		end
+	end
+
+	local scene = SceneMgr.instance:getCurScene()
+	local unit
+
+	if hightHurtData then
+		unit = scene.unitFactory:getUnit(hightHurtData.teamId, hightHurtData.charactorId)
+	else
+		local units = BattleModel.instance:getUnits()
+
+		unit = units[1]
+	end
+
+	return unit.attrs:getOriginSkinId()
+end
+
+function AoqiHeroSettlementFirstPart:_loadEffect(view, isSuccess)
+	local effectPath
+	local effect = UIEffectManager.instance:playEffect(view, isSuccess == true and "fx_ui_zhandoujiesuan/fx_ui_shenglijiesuan_shengli.prefab" or "fx_ui_zhandoujiesuan/fx_ui_shenglijiesuan_shibai.prefab", self._effectParent.transform, 0, 0, true, false)
+
+	effect:setParent(self._effectParent.transform)
+	effect:setScale(1)
+
+	effect.hideEffWhileNotOnTop = false
+	self._uiEffect = effect
+end
+
+function AoqiHeroSettlementFirstPart:_removeEffect()
+	if self._uiEffect then
+		UIEffectManager.instance:stopEffect(self._uiEffect)
+
+		self._uiEffect = nil
+	end
+end
+
+return AoqiHeroSettlementFirstPart
