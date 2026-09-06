@@ -1,0 +1,63 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_APOSTLE_TYRIA_01",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_DOWNTOWN.png",
+      "UnitStrId": "NKM_UNIT_NPC_APOSTLE_TYRIA_NONE",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 5,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "우연히 티리아의 깃털을 주운 에핀델이, <color=#F7BE45>전설의 새</color>에 대한 상상을 펼친다.",
+      "UnitTalk_ENG": "After chancing upon one of Tyria's feathers, Epindel let her imagination run wild about a supposedly <color=#F7BE45>legendary bird</color>.",
+      "UnitTalk_JPN": "偶然にもティリアの羽根を拾ったエピンデルが、\n<color=#F7BE45>伝説の鳥</color>について想像を膨らませている。",
+      "UnitTalk_CHN": "偶然捡到缇莉雅羽毛的艾芬黛尔，展开了对<color=#F7BE45>传说中的鸟</color>的想像。",
+      "UnitTalk_TWN": "偶然撿到緹莉雅羽毛的艾芬黛爾，展開了對<color=#F7BE45>傳說中的鳥</color>的想像。",
+      "UnitTalk_FRA": "Épindel, qui a trouvé par hasard une plume de Tiria, laisse libre cours à son imagination sur <color=#F7BE45>l'oiseau légendaire</color>.",
+      "UnitTalk_DEU": "Epindel, der zufällig eine Feder von Tiria fand, stellt sich <color=#F7BE45>den legendären Vogel</color> vor.",
+      "UnitTalk_ESP": "Epindel, quien encontró casualmente una pluma de Tiria, imagina sobre el <color=#F7BE45>ave legendaria</color>.",
+      "UnitTalk_PRT": "Epindel, ao encontrar acidentalmente uma pena de Tiria, imagina sobre a <color=#F7BE45>lenda do pássaro</color>.",
+      "UnitTalk_THA": "เอฟินเดลที่เก็บขนของทีเรียมาโดยบังเอิญ จึงจินตนาการเกี่ยวกับ <color=#F7BE45>นกในตำนาน</color>",
+      "UnitTalk_IND": "Epindel yang secara kebetulan menemukan bulu Tiria, membayangkan tentang <color=#F7BE45>burung legendaris</color>.",
+      "UnitTalk_VIE": "Tình cờ nhặt được lông của Tiria, Epindel tưởng tượng về <color=#F7BE45>chim huyền thoại</color>.",
+      "UnitTalk_HIN": "एफिंडेल ने संयोग से टिरिया के पंख उठाए, <color=#F7BE45>किंवदंती के पक्षी</color> के बारे में कल्पना करते हैं।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SURPRISE"
+    }
+  ]
+}

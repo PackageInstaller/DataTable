@@ -1,0 +1,76 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_HARD_WITCH_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 2,
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_ASTRO_SANCTUM.png",
+      "StartBgmFileName": "MUSIC_ASTRO_SANCTUM.mp3",
+      "UnitStrId": "NKM_UNIT_S_NOA_ALICIA",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 16,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "최종 평가전을 앞두고, 알리시아는 [CHARACTER_NAME]에게 어울리는 축복을 내려주기로 했다.",
+      "UnitTalk_ENG": "Before the final trial, Alicia decided to grant [CHARACTER_NAME] a fitting blessing.",
+      "UnitTalk_JPN": "最終試験を前に、アリシアは[CHARACTER_NAME]にふさわしい祝福を授けることにした。",
+      "UnitTalk_CHN": "在最终评鉴战前夕，阿丽希亚决定赐予适合[CHARACTER_NAME]祝福。",
+      "UnitTalk_TWN": "在最終評鑑戰前夕，阿麗希亞決定賜予適合[CHARACTER_NAME]祝福。",
+      "UnitTalk_FRA": "Avant l'épreuve finale, Alicia a décidé d'accorder une bénédiction appropriée à [CHARACTER_NAME].",
+      "UnitTalk_DEU": "Vor der finalen Prüfung beschloss Alicia, [CHARACTER_NAME] einen passenden Segen zu erteilen.",
+      "UnitTalk_ESP": "Antes de la prueba final, Alicia decidió otorgarle a [CHARACTER_NAME] una bendición adecuada.",
+      "UnitTalk_PRT": "Antes da avaliação final, Alicia concedeu uma bênção a [CHARACTER_NAME].",
+      "UnitTalk_THA": "ก่อนการประเมินครั้งสุดท้าย อลิเซียตัดสินใจมอบพรที่เหมาะสมแก่ [CHARACTER_NAME] ครับ/ค่ะ",
+      "UnitTalk_IND": "Sebelum ujian akhir, Alicia memutuskan untuk menganugerahkan berkat yang pantas kepada [CHARACTER_NAME].",
+      "UnitTalk_VIE": "Trước trận đánh giá cuối cùng, Alicia đã quyết định ban phước lành phù hợp cho [CHARACTER_NAME].",
+      "UnitTalk_HIN": "अंतिम मूल्यांकन से पहले, एलिसिया ने [CHARACTER_NAME] को एक उपयुक्त आशीर्वाद देने का फैसला किया।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SPELL_LIGHT_03.wav",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "[CHARACTER_NAME]의 몸에 알리시아의 축복이 깃들었다!",
+      "UnitTalk_ENG": "[CHARACTER_NAME] was blessed by Alicia!",
+      "UnitTalk_JPN": "[CHARACTER_NAME]の体にアリシアの祝福が宿った！",
+      "UnitTalk_CHN": "阿丽希亚的祝福寄宿在[CHARACTER_NAME]的体内了！",
+      "UnitTalk_TWN": "阿麗希亞的祝福寄宿在[CHARACTER_NAME]的體內了！",
+      "UnitTalk_FRA": "[CHARACTER_NAME] a été béni(e) par Alicia !",
+      "UnitTalk_DEU": "Alicias Segen erfüllte [CHARACTER_NAME]s Körper!",
+      "UnitTalk_ESP": "¡La bendición de Alicia se infundió en el cuerpo de [CHARACTER_NAME]!",
+      "UnitTalk_PRT": "[CHARACTER_NAME] foi abençoado por Alicia!",
+      "UnitTalk_THA": "พรของอลิเซียได้สถิตอยู่ในร่างของ [CHARACTER_NAME] แล้วครับ/ค่ะ!",
+      "UnitTalk_IND": "Berkat berkat [CHARACTER_NAME] bersemayam di tubuhnya!",
+      "UnitTalk_VIE": "Phước lành của Alicia đã thấm nhuần vào cơ thể [CHARACTER_NAME]!",
+      "UnitTalk_HIN": "[CHARACTER_NAME] के शरीर में एलिसिया का आशीर्वाद समा गया!",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER"
+    }
+  ]
+}

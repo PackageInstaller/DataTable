@@ -1,0 +1,412 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: GUILD/GUILD_DUNGEON_SEASON_TEMPLET",
+    "_Version": 0,
+    "Data": [
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "GuildDungeonSeasonId" : 30101,
+          "PlayableIntervalId" : "DATE_GUILD_DUNGEON_SEASON_01",
+          "IntervalId" : "DATE_GUILD_DUNGEON_REWARD_SEASON_01",
+          "BattleTabId" : 30101,
+          "PersonalPointRewardGroupId" : 3010101,
+          "GuildPointRewardGroupId" : 3010102,
+          "RankingRewardGroupId" : 3010103,
+          "SpecialBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_CASTER_BUFF_ITEM_PROMOTION_01_01",
+          "SpecialBuffName" : "SI_GUILD_DUNGEON_BUFF_CASTER_S",
+          "SpecialBuffDesc" : "SI_GUILD_DUNGEON_BUFF_CASTER_S_DESC",
+          "SpecialBuffIcon" : "GUILD_BATTLE_DG_BUFF_CASTER_S.png",
+          "ReqNormalItem" : 409,
+          "GuildDungeonSeasonBuff" : 
+          [
+            {
+              "NormalBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_SUPPORTER_BUFF_ITEM_01_01",
+              "NormalBuffName" : "SI_GUILD_DUNGEON_BUFF_SUPPORTER",
+              "NormalBuffDesc" : "SI_GUILD_DUNGEON_BUFF_SUPPORTER_DESC",
+              "NormalBuffIcon" : "GUILD_BATTLE_DG_BUFF_SUPPORTER.png"
+            },
+
+            {
+              "NormalBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_DEFENDER_BUFF_ITEM_01_01",
+              "NormalBuffName" : "SI_GUILD_DUNGEON_BUFF_DEFFENDER",
+              "NormalBuffDesc" : "SI_GUILD_DUNGEON_BUFF_DEFFENDER_DESC",
+              "NormalBuffIcon" : "GUILD_BATTLE_DG_BUFF_DEFENDER.png"
+            },
+
+            {
+              "NormalBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_01_01",
+              "NormalBuffName" : "SI_GUILD_DUNGEON_BUFF_PARTY_FIRE",
+              "NormalBuffDesc" : "SI_GUILD_DUNGEON_BUFF_PARTY_FIRE_DESC",
+              "NormalBuffIcon" : "GUILD_BATTLE_DG_BUFF_PARTY_FIRE.png"
+            },
+
+            {
+              "NormalBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_03_01",
+              "NormalBuffName" : "SI_GUILD_DUNGEON_BUFF_PARTY_WIND",
+              "NormalBuffDesc" : "SI_GUILD_DUNGEON_BUFF_PARTY_WIND_DESC",
+              "NormalBuffIcon" : "GUILD_BATTLE_DG_BUFF_PARTY_WIND.png"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "GuildDungeonSeasonId" : 30102,
+          "PlayableIntervalId" : "DATE_GUILD_DUNGEON_SEASON_02",
+          "IntervalId" : "DATE_GUILD_DUNGEON_REWARD_SEASON_02",
+          "BattleTabId" : 30102,
+          "PersonalPointRewardGroupId" : 3010201,
+          "GuildPointRewardGroupId" : 3010202,
+          "RankingRewardGroupId" : 3010203,
+          "SpecialBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_ASSASSIN_BUFF_ITEM_PROMOTION_01_01",
+          "SpecialBuffName" : "SI_GUILD_DUNGEON_BUFF_ASSASSIN_S",
+          "SpecialBuffDesc" : "SI_GUILD_DUNGEON_BUFF_ASSASSIN_S_DESC",
+          "SpecialBuffIcon" : "GUILD_BATTLE_DG_BUFF_ASSASSIN_S.png",
+          "ReqNormalItem" : 409,
+          "GuildDungeonSeasonBuff" : 
+          [
+            {
+              "NormalBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_CASTER_BUFF_ITEM_01_01",
+              "NormalBuffName" : "SI_GUILD_DUNGEON_BUFF_CASTER",
+              "NormalBuffDesc" : "SI_GUILD_DUNGEON_BUFF_CASTER_DESC",
+              "NormalBuffIcon" : "GUILD_BATTLE_DG_BUFF_CASTER.png"
+            },
+
+            {
+              "NormalBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_RANGER_BUFF_ITEM_01_01",
+              "NormalBuffName" : "SI_GUILD_DUNGEON_BUFF_RANGER",
+              "NormalBuffDesc" : "SI_GUILD_DUNGEON_BUFF_RANGER_DESC",
+              "NormalBuffIcon" : "GUILD_BATTLE_DG_BUFF_RANGER.png"
+            },
+
+            {
+              "NormalBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_02_01",
+              "NormalBuffName" : "SI_GUILD_DUNGEON_BUFF_PARTY_FOREST",
+              "NormalBuffDesc" : "SI_GUILD_DUNGEON_BUFF_PARTY_FOREST_DESC",
+              "NormalBuffIcon" : "GUILD_BATTLE_DG_BUFF_PARTY_FOREST.png"
+            },
+
+            {
+              "NormalBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_04_01",
+              "NormalBuffName" : "SI_GUILD_DUNGEON_BUFF_PARTY_MOUNTAIN",
+              "NormalBuffDesc" : "SI_GUILD_DUNGEON_BUFF_PARTY_MOUNTAIN_DESC",
+              "NormalBuffIcon" : "GUILD_BATTLE_DG_BUFF_PARTY_MOUNTAIN.png"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "GuildDungeonSeasonId" : 30103,
+          "PlayableIntervalId" : "DATE_GUILD_DUNGEON_SEASON_G1",
+          "IntervalId" : "DATE_GUILD_DUNGEON_REWARD_SEASON_G1",
+          "BattleTabId" : 30103,
+          "PersonalPointRewardGroupId" : 3010301,
+          "GuildPointRewardGroupId" : 3010302,
+          "RankingRewardGroupId" : 3010303,
+          "SpecialBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_RANGER_BUFF_ITEM_PROMOTION_01_01",
+          "SpecialBuffName" : "SI_GUILD_DUNGEON_BUFF_RANGER_S",
+          "SpecialBuffDesc" : "SI_GUILD_DUNGEON_BUFF_RANGER_S_DESC",
+          "SpecialBuffIcon" : "GUILD_BATTLE_DG_BUFF_RANGER_S.png",
+          "ReqNormalItem" : 409,
+          "GuildDungeonSeasonBuff" : 
+          [
+            {
+              "NormalBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_DEFENDER_BUFF_ITEM_01_02",
+              "NormalBuffName" : "SI_GUILD_DUNGEON_BUFF_DEFFENDER_01",
+              "NormalBuffDesc" : "SI_GUILD_DUNGEON_BUFF_DEFFENDER_01_DESC",
+              "NormalBuffIcon" : "GUILD_BATTLE_DG_BUFF_DEFENDER.png"
+            },
+
+            {
+              "NormalBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_ASSASSIN_BUFF_ITEM_01_01",
+              "NormalBuffName" : "SI_GUILD_DUNGEON_BUFF_ASSASSIN",
+              "NormalBuffDesc" : "SI_GUILD_DUNGEON_BUFF_ASSASSIN_DESC",
+              "NormalBuffIcon" : "GUILD_BATTLE_DG_BUFF_ASSASSIN.png"
+            },
+
+            {
+              "NormalBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_01_01",
+              "NormalBuffName" : "SI_GUILD_DUNGEON_BUFF_PARTY_FIRE",
+              "NormalBuffDesc" : "SI_GUILD_DUNGEON_BUFF_PARTY_FIRE_DESC",
+              "NormalBuffIcon" : "GUILD_BATTLE_DG_BUFF_PARTY_FIRE.png"
+            },
+
+            {
+              "NormalBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_02_01",
+              "NormalBuffName" : "SI_GUILD_DUNGEON_BUFF_PARTY_FOREST",
+              "NormalBuffDesc" : "SI_GUILD_DUNGEON_BUFF_PARTY_FOREST_DESC",
+              "NormalBuffIcon" : "GUILD_BATTLE_DG_BUFF_PARTY_FOREST.png"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "GuildDungeonSeasonId" : 30104,
+          "PlayableIntervalId" : "DATE_GUILD_DUNGEON_SEASON_G2",
+          "IntervalId" : "DATE_GUILD_DUNGEON_REWARD_SEASON_G2",
+          "BattleTabId" : 30104,
+          "PersonalPointRewardGroupId" : 3010401,
+          "GuildPointRewardGroupId" : 3010402,
+          "RankingRewardGroupId" : 3010403,
+          "SpecialBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_STRIKER_BUFF_ITEM_PROMOTION_01_02",
+          "SpecialBuffName" : "SI_GUILD_DUNGEON_BUFF_STRIKER_S_01",
+          "SpecialBuffDesc" : "SI_GUILD_DUNGEON_BUFF_STRIKER_S_01_DESC",
+          "SpecialBuffIcon" : "GUILD_BATTLE_DG_BUFF_STRIKER_S.png",
+          "ReqNormalItem" : 409,
+          "GuildDungeonSeasonBuff" : 
+          [
+            {
+              "NormalBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_RANGER_BUFF_ITEM_01_02",
+              "NormalBuffName" : "SI_GUILD_DUNGEON_BUFF_RANGER_01",
+              "NormalBuffDesc" : "SI_GUILD_DUNGEON_BUFF_RANGER_01_DESC",
+              "NormalBuffIcon" : "GUILD_BATTLE_DG_BUFF_RANGER.png"
+            },
+
+            {
+              "NormalBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_CASTER_BUFF_ITEM_01_02",
+              "NormalBuffName" : "SI_GUILD_DUNGEON_BUFF_CASTER_01",
+              "NormalBuffDesc" : "SI_GUILD_DUNGEON_BUFF_CASTER_01_DESC",
+              "NormalBuffIcon" : "GUILD_BATTLE_DG_BUFF_CASTER.png"
+            },
+
+            {
+              "NormalBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_03_01",
+              "NormalBuffName" : "SI_GUILD_DUNGEON_BUFF_PARTY_WIND",
+              "NormalBuffDesc" : "SI_GUILD_DUNGEON_BUFF_PARTY_WIND_DESC",
+              "NormalBuffIcon" : "GUILD_BATTLE_DG_BUFF_PARTY_WIND.png"
+            },
+
+            {
+              "NormalBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_04_01",
+              "NormalBuffName" : "SI_GUILD_DUNGEON_BUFF_PARTY_MOUNTAIN",
+              "NormalBuffDesc" : "SI_GUILD_DUNGEON_BUFF_PARTY_MOUNTAIN_DESC",
+              "NormalBuffIcon" : "GUILD_BATTLE_DG_BUFF_PARTY_MOUNTAIN.png"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "GuildDungeonSeasonId" : 30105,
+          "PlayableIntervalId" : "DATE_GUILD_DUNGEON_SEASON_G3",
+          "IntervalId" : "DATE_GUILD_DUNGEON_REWARD_SEASON_G3",
+          "BattleTabId" : 30105,
+          "PersonalPointRewardGroupId" : 3010501,
+          "GuildPointRewardGroupId" : 3010502,
+          "RankingRewardGroupId" : 3010503,
+          "SpecialBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_ASSASSIN_BUFF_ITEM_PROMOTION_01_02",
+          "SpecialBuffName" : "SI_GUILD_DUNGEON_BUFF_ASSASSIN_S_01",
+          "SpecialBuffDesc" : "SI_GUILD_DUNGEON_BUFF_ASSASSIN_S_01_DESC",
+          "SpecialBuffIcon" : "GUILD_BATTLE_DG_BUFF_ASSASSIN_S.png",
+          "ReqNormalItem" : 409,
+          "GuildDungeonSeasonBuff" : 
+          [
+            {
+              "NormalBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_STRIKER_BUFF_ITEM_01_01",
+              "NormalBuffName" : "SI_GUILD_DUNGEON_BUFF_STRIKER",
+              "NormalBuffDesc" : "SI_GUILD_DUNGEON_BUFF_STRIKER__DESC",
+              "NormalBuffIcon" : "GUILD_BATTLE_DG_BUFF_STRIKER.png"
+            },
+
+            {
+              "NormalBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_RANGER_BUFF_ITEM_01_01",
+              "NormalBuffName" : "SI_GUILD_DUNGEON_BUFF_RANGER",
+              "NormalBuffDesc" : "SI_GUILD_DUNGEON_BUFF_RANGER_DESC",
+              "NormalBuffIcon" : "GUILD_BATTLE_DG_BUFF_RANGER.png"
+            },
+
+            {
+              "NormalBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_01_01",
+              "NormalBuffName" : "SI_GUILD_DUNGEON_BUFF_PARTY_FIRE",
+              "NormalBuffDesc" : "SI_GUILD_DUNGEON_BUFF_PARTY_FIRE_DESC",
+              "NormalBuffIcon" : "GUILD_BATTLE_DG_BUFF_PARTY_FIRE.png"
+            },
+
+            {
+              "NormalBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_04_01",
+              "NormalBuffName" : "SI_GUILD_DUNGEON_BUFF_PARTY_MOUNTAIN",
+              "NormalBuffDesc" : "SI_GUILD_DUNGEON_BUFF_PARTY_MOUNTAIN_DESC",
+              "NormalBuffIcon" : "GUILD_BATTLE_DG_BUFF_PARTY_MOUNTAIN.png"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "GuildDungeonSeasonId" : 30106,
+          "PlayableIntervalId" : "DATE_GUILD_DUNGEON_SEASON_G4",
+          "IntervalId" : "DATE_GUILD_DUNGEON_REWARD_SEASON_G4",
+          "BattleTabId" : 30106,
+          "PersonalPointRewardGroupId" : 3010601,
+          "GuildPointRewardGroupId" : 3010602,
+          "RankingRewardGroupId" : 3010603,
+          "SpecialBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_CASTER_BUFF_ITEM_PROMOTION_01_01",
+          "SpecialBuffName" : "SI_GUILD_DUNGEON_BUFF_CASTER_S",
+          "SpecialBuffDesc" : "SI_GUILD_DUNGEON_BUFF_CASTER_S_DESC",
+          "SpecialBuffIcon" : "GUILD_BATTLE_DG_BUFF_CASTER_S.png",
+          "ReqNormalItem" : 409,
+          "GuildDungeonSeasonBuff" : 
+          [
+            {
+              "NormalBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_SUPPORTER_BUFF_ITEM_01_01",
+              "NormalBuffName" : "SI_GUILD_DUNGEON_BUFF_SUPPORTER",
+              "NormalBuffDesc" : "SI_GUILD_DUNGEON_BUFF_SUPPORTER_DESC",
+              "NormalBuffIcon" : "GUILD_BATTLE_DG_BUFF_SUPPORTER.png"
+            },
+
+            {
+              "NormalBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_STRIKER_BUFF_ITEM_01_02",
+              "NormalBuffName" : "SI_GUILD_DUNGEON_BUFF_STRIKER_01",
+              "NormalBuffDesc" : "SI_GUILD_DUNGEON_BUFF_STRIKER_01_DESC",
+              "NormalBuffIcon" : "GUILD_BATTLE_DG_BUFF_STRIKER.png"
+            },
+
+            {
+              "NormalBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_02_01",
+              "NormalBuffName" : "SI_GUILD_DUNGEON_BUFF_PARTY_FOREST",
+              "NormalBuffDesc" : "SI_GUILD_DUNGEON_BUFF_PARTY_FOREST_DESC",
+              "NormalBuffIcon" : "GUILD_BATTLE_DG_BUFF_PARTY_FOREST.png"
+            },
+
+            {
+              "NormalBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_03_01",
+              "NormalBuffName" : "SI_GUILD_DUNGEON_BUFF_PARTY_WIND",
+              "NormalBuffDesc" : "SI_GUILD_DUNGEON_BUFF_PARTY_WIND_DESC",
+              "NormalBuffIcon" : "GUILD_BATTLE_DG_BUFF_PARTY_WIND.png"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "GuildDungeonSeasonId" : 30107,
+          "PlayableIntervalId" : "DATE_GUILD_DUNGEON_SEASON_G5",
+          "IntervalId" : "DATE_GUILD_DUNGEON_REWARD_SEASON_G5",
+          "BattleTabId" : 30107,
+          "PersonalPointRewardGroupId" : 3010701,
+          "GuildPointRewardGroupId" : 3010702,
+          "RankingRewardGroupId" : 3010703,
+          "SpecialBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_STRIKER_BUFF_ITEM_PROMOTION_01_02",
+          "SpecialBuffName" : "SI_GUILD_DUNGEON_BUFF_STRIKER_S_01",
+          "SpecialBuffDesc" : "SI_GUILD_DUNGEON_BUFF_STRIKER_S_01_DESC",
+          "SpecialBuffIcon" : "GUILD_BATTLE_DG_BUFF_STRIKER_S.png",
+          "ReqNormalItem" : 409,
+          "GuildDungeonSeasonBuff" : 
+          [
+            {
+              "NormalBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_CASTER_BUFF_ITEM_01_02",
+              "NormalBuffName" : "SI_GUILD_DUNGEON_BUFF_CASTER_01",
+              "NormalBuffDesc" : "SI_GUILD_DUNGEON_BUFF_CASTER_01_DESC",
+              "NormalBuffIcon" : "GUILD_BATTLE_DG_BUFF_CASTER.png"
+            },
+
+            {
+              "NormalBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_RANGER_BUFF_ITEM_01_01",
+              "NormalBuffName" : "SI_GUILD_DUNGEON_BUFF_RANGER",
+              "NormalBuffDesc" : "SI_GUILD_DUNGEON_BUFF_RANGER_DESC",
+              "NormalBuffIcon" : "GUILD_BATTLE_DG_BUFF_RANGER.png"
+            },
+
+            {
+              "NormalBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_04_01",
+              "NormalBuffName" : "SI_GUILD_DUNGEON_BUFF_PARTY_MOUNTAIN",
+              "NormalBuffDesc" : "SI_GUILD_DUNGEON_BUFF_PARTY_MOUNTAIN_DESC",
+              "NormalBuffIcon" : "GUILD_BATTLE_DG_BUFF_PARTY_MOUNTAIN.png"
+            },
+
+            {
+              "NormalBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_01_01",
+              "NormalBuffName" : "SI_GUILD_DUNGEON_BUFF_PARTY_FIRE",
+              "NormalBuffDesc" : "SI_GUILD_DUNGEON_BUFF_PARTY_FIRE_DESC",
+              "NormalBuffIcon" : "GUILD_BATTLE_DG_BUFF_PARTY_FIRE.png"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "GuildDungeonSeasonId" : 30108,
+          "PlayableIntervalId" : "DATE_GUILD_DUNGEON_SEASON_P1",
+          "IntervalId" : "DATE_GUILD_DUNGEON_REWARD_SEASON_P1",
+          "BattleTabId" : 30108,
+          "PersonalPointRewardGroupId" : 3010801,
+          "GuildPointRewardGroupId" : 3010802,
+          "RankingRewardGroupId" : 3010803,
+          "SpecialBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_ASSASSIN_BUFF_ITEM_PROMOTION_01_03",
+          "SpecialBuffName" : "SI_GUILD_DUNGEON_BUFF_ASSASSIN_S_02",
+          "SpecialBuffDesc" : "SI_GUILD_DUNGEON_BUFF_ASSASSIN_S_02_DESC",
+          "SpecialBuffIcon" : "GUILD_BATTLE_DG_BUFF_ASSASSIN_S.png",
+          "ReqNormalItem" : 409,
+          "GuildDungeonSeasonBuff" : 
+          [
+            {
+              "NormalBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_DEFENDER_BUFF_ITEM_01_02",
+              "NormalBuffName" : "SI_GUILD_DUNGEON_BUFF_DEFFENDER_01",
+              "NormalBuffDesc" : "SI_GUILD_DUNGEON_BUFF_DEFFENDER_01_DESC",
+              "NormalBuffIcon" : "GUILD_BATTLE_DG_BUFF_DEFENDER.png"
+            },
+
+            {
+              "NormalBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_STRIKER_BUFF_ITEM_01_02",
+              "NormalBuffName" : "SI_GUILD_DUNGEON_BUFF_STRIKER_01",
+              "NormalBuffDesc" : "SI_GUILD_DUNGEON_BUFF_STRIKER_01_DESC",
+              "NormalBuffIcon" : "GUILD_BATTLE_DG_BUFF_STRIKER.png"
+            },
+
+            {
+              "NormalBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_02_01",
+              "NormalBuffName" : "SI_GUILD_DUNGEON_BUFF_PARTY_FOREST",
+              "NormalBuffDesc" : "SI_GUILD_DUNGEON_BUFF_PARTY_FOREST_DESC",
+              "NormalBuffIcon" : "GUILD_BATTLE_DG_BUFF_PARTY_FOREST.png"
+            },
+
+            {
+              "NormalBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_03_01",
+              "NormalBuffName" : "SI_GUILD_DUNGEON_BUFF_PARTY_WIND",
+              "NormalBuffDesc" : "SI_GUILD_DUNGEON_BUFF_PARTY_WIND_DESC",
+              "NormalBuffIcon" : "GUILD_BATTLE_DG_BUFF_PARTY_WIND.png"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "GuildDungeonSeasonId" : 30109,
+          "PlayableIntervalId" : "DATE_GUILD_DUNGEON_SEASON_P2",
+          "IntervalId" : "DATE_GUILD_DUNGEON_REWARD_SEASON_P2",
+          "BattleTabId" : 30109,
+          "PersonalPointRewardGroupId" : 3010901,
+          "GuildPointRewardGroupId" : 3010902,
+          "RankingRewardGroupId" : 3010903,
+          "SpecialBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_ASSASSIN_BUFF_ITEM_PROMOTION_01_02",
+          "SpecialBuffName" : "SI_GUILD_DUNGEON_BUFF_ASSASSIN_S_01",
+          "SpecialBuffDesc" : "SI_GUILD_DUNGEON_BUFF_ASSASSIN_S_01_DESC",
+          "SpecialBuffIcon" : "GUILD_BATTLE_DG_BUFF_ASSASSIN_S.png",
+          "ReqNormalItem" : 409,
+          "GuildDungeonSeasonBuff" : 
+          [
+            {
+              "NormalBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_RANGER_BUFF_ITEM_01_02",
+              "NormalBuffName" : "SI_GUILD_DUNGEON_BUFF_RANGER_01",
+              "NormalBuffDesc" : "SI_GUILD_DUNGEON_BUFF_RANGER_01_DESC",
+              "NormalBuffIcon" : "GUILD_BATTLE_DG_BUFF_RANGER.png"
+            },
+
+            {
+              "NormalBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_DEFENDER_BUFF_ITEM_01_01",
+              "NormalBuffName" : "SI_GUILD_DUNGEON_BUFF_DEFFENDER",
+              "NormalBuffDesc" : "SI_GUILD_DUNGEON_BUFF_DEFFENDER_DESC",
+              "NormalBuffIcon" : "GUILD_BATTLE_DG_BUFF_DEFENDER.png"
+            },
+
+            {
+              "NormalBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_01_01",
+              "NormalBuffName" : "SI_GUILD_DUNGEON_BUFF_PARTY_FIRE",
+              "NormalBuffDesc" : "SI_GUILD_DUNGEON_BUFF_PARTY_FIRE_DESC",
+              "NormalBuffIcon" : "GUILD_BATTLE_DG_BUFF_PARTY_FIRE.png"
+            },
+
+            {
+              "NormalBuffStrId" : "BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_04_01",
+              "NormalBuffName" : "SI_GUILD_DUNGEON_BUFF_PARTY_MOUNTAIN",
+              "NormalBuffDesc" : "SI_GUILD_DUNGEON_BUFF_PARTY_MOUNTAIN_DESC",
+              "NormalBuffIcon" : "GUILD_BATTLE_DG_BUFF_PARTY_MOUNTAIN.png"
+            }
+          ]
+        }
+    ]
+}

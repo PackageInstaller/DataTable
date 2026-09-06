@@ -1,0 +1,213 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_COUNTERSIDE_HILDE_02",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_GRACE_DUALSWORD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_BRIDGE.png",
+      "UnitStrId": "NKM_UNIT_NPC_COUNTERSIDE_HILDE",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_GRACE_DUALSWORD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "힐데와 보육원 아이들을 돌봐준 이후, 린으로부터 보답을 받게 되었다.",
+      "UnitTalk_ENG": "After taking care of the children with Hilde, Lyn offered us something in return.",
+      "UnitTalk_JPN": "ヒルデと一緒に保育園の子供たちの世話をして、リンからお礼を受けた。",
+      "UnitTalk_CHN": "与希尔德一同照顾了年幼的孩子们后，从凌那里收到了回礼。",
+      "UnitTalk_TWN": "與希爾德一同照顧了年幼的孩子們後，從凌那裡收到了回禮。",
+      "UnitTalk_FRA": "Après avoir aidé Hilde et les enfants de l'orphelinat, j'ai reçu une marque de gratitude de la part de Lyn.",
+      "UnitTalk_DEU": "Nachdem ich Hilde und den Kindern im Waisenhaus geholfen hatte, erhielt ich eine Gegenleistung von Lyn.",
+      "UnitTalk_ESP": "Después de ayudar a Hilde y a los niños del orfanato, recibí una recompensa de Lyn.",
+      "UnitTalk_PRT": "Depois de ajudar Hilde e as crianças do orfanato, recebi uma retribuição de Lyn.",
+      "UnitTalk_THA": "หลังจากที่ช่วยฮิลเด้กับเด็ก ๆ ที่สถานเลี้ยงเด็กกำพร้า ฉันก็ได้รับคำตอบจากหลิน",
+      "UnitTalk_IND": "Setelah membantu Hilde dan anak-anak panti asuhan, aku menerima imbalan dari Lyn.",
+      "UnitTalk_VIE": "Sau khi giúp Hilde và bọn trẻ ở trại trẻ mồ côi, tôi nhận được sự đền đáp từ Lyn.",
+      "UnitTalk_HIN": "हिल्डे और अनाथालय के बच्चों की मदद करने के बाद, मुझे लिन से प्रतिफल मिला।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "린이 준비한 물건을 받는다.",
+          "JumpAnchorStringId_ENG": "Receive what Lyn has prepared.",
+          "JumpAnchorStringId_JPN": "リンが用意した物を受ける。",
+          "JumpAnchorStringId_CHN": "收下凌准备的物品。",
+          "JumpAnchorStringId_TWN": "收下凌準備的物品。",
+          "JumpAnchorStringId_FRA": "Je reçois les objets que Lyn a préparés.",
+          "JumpAnchorStringId_DEU": "Erhalte, was Lyn vorbereitet hat.",
+          "JumpAnchorStringId_ESP": "Recibo los objetos que Lyn había preparado.",
+          "JumpAnchorStringId_PRT": "Receba o que Lyn preparou.",
+          "JumpAnchorStringId_THA": "รับสิ่งของที่ลินเตรียมไว้",
+          "JumpAnchorStringId_IND": "Aku menerima barang-barang yang disiapkan Lyn.",
+          "JumpAnchorStringId_VIE": "Lyn nhận những món đồ cô đã chuẩn bị.",
+          "JumpAnchorStringId_HIN": "लिन अपनी तैयार की हुई चीज़ें लेती है।",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "바닥에 널브러진 인형을 가리킨다.",
+          "JumpAnchorStringId_ENG": "Point to the doll lying on the floor.",
+          "JumpAnchorStringId_JPN": "床に転がっている人形を指す。",
+          "JumpAnchorStringId_CHN": "指向散落在地上的玩偶。",
+          "JumpAnchorStringId_TWN": "指向散落在地上的玩偶。",
+          "JumpAnchorStringId_FRA": "Elle montre une poupée qui traîne par terre.",
+          "JumpAnchorStringId_DEU": "Sie zeigt auf eine Puppe, die auf dem Boden herumliegt.",
+          "JumpAnchorStringId_ESP": "Señala una muñeca tirada en el suelo.",
+          "JumpAnchorStringId_PRT": "Ela aponta para uma boneca caída no chão.",
+          "JumpAnchorStringId_THA": "เธอชี้ไปที่ตุ๊กตาที่วางอยู่บนพื้น",
+          "JumpAnchorStringId_IND": "Dia menunjuk boneka yang tergeletak di lantai.",
+          "JumpAnchorStringId_VIE": "Cô ấy chỉ vào một con búp bê đang nằm trên sàn.",
+          "JumpAnchorStringId_HIN": "वह ज़मीन पर पड़ी एक गुड़िया की ओर इशारा करती है।",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 7,
+      "JumpAnchorInfo": "JUMPANCHOR_1_SUCCESS",
+      "WaitClick": false,
+      "WaitTime": 0.0
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_COUNTERSIDE_HILDE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "힐데는 린이 건넨 피로회복제가 제법 마음에 든 모양이다!",
+      "UnitTalk_ENG": "Hilde seems to have taken quite a liking to the energy drink Lyn handed over!",
+      "UnitTalk_JPN": "ヒルデはリンが渡した疲労回復剤が気に入ったようだ。",
+      "UnitTalk_CHN": "希尔德似乎相当喜欢凌递来的疲劳恢复剂！",
+      "UnitTalk_TWN": "希爾德似乎相當喜歡凌遞來的疲勞恢復劑！",
+      "UnitTalk_FRA": "Hilde est un peu touchée par le produit anti-fatigue que Lyn lui a donné !",
+      "UnitTalk_DEU": "Hilde ist ziemlich angetan von dem Müdigkeits-Erholungsgegenstand, den Lyn ihr gab!",
+      "UnitTalk_ESP": "¡Hilde parece estar bastante complacida con el objeto de recuperación de fatiga que le dio Lyn!",
+      "UnitTalk_PRT": "Hilde parece ter gostado bastante do item de recuperação de fadiga que Lyn lhe deu!",
+      "UnitTalk_THA": "ฮิลเด้รู้สึกประทับใจเล็กน้อยกับไอเทมฟื้นฟูความเหนื่อยล้าที่หลินมอบให้!",
+      "UnitTalk_IND": "Hilde sepertinya cukup menyukai barang pemulih stamina yang diberikan Lyn!",
+      "UnitTalk_VIE": "Hilde có vẻ khá ưng ý với món đồ hồi phục thể lực mà Lyn đã tặng!",
+      "UnitTalk_HIN": "हिल्डे को लिन द्वारा दी गई थकान मिटाने वाली चीज़ काफी पसंद आती है!",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_GRACE_DUALSWORD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_GRACE_DUALSWORD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 8,
+      "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_EMOTION_STRESS.wav",
+      "UnitStrId": "NKM_UNIT_NPC_COUNTERSIDE_HILDE",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "STRESS"
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "린이 건넨 피로회복제에 아이들이 장난을 친 모양이다…",
+      "UnitTalk_ENG": "Looks like the children messed with the energy drink Lyn handed over...",
+      "UnitTalk_JPN": "リンが渡した疲労回復剤で、子供たちがいたずらをしたらしい。",
+      "UnitTalk_CHN": "看来孩子们对凌递来的疲劳恢复剂动了点手脚…",
+      "UnitTalk_TWN": "看來孩子們對凌遞來的疲勞恢復劑動了點手腳…",
+      "UnitTalk_FRA": "Les enfants semblent avoir fait des bêtises avec le produit anti-fatigue que Lyn leur a donné…",
+      "UnitTalk_DEU": "Die Kinder haben anscheinend mit dem Müdigkeits-Erholungsgegenstand gespielt, den Lyn ihnen gab…",
+      "UnitTalk_ESP": "Parece que los niños jugaron con el objeto de recuperación de fatiga que Lyn les dio…",
+      "UnitTalk_PRT": "Parece que as crianças mexeram na bebida energética que Lyn entregou…",
+      "UnitTalk_THA": "ดูเหมือนว่าเด็ก ๆ จะเอาไอเทมฟื้นฟูความเหนื่อยล้าที่หลินให้ไปเล่นกัน...",
+      "UnitTalk_IND": "Anak-anak sepertinya bermain-main dengan barang pemulih stamina yang diberikan Lyn…",
+      "UnitTalk_VIE": "Dường như lũ trẻ đã nghịch ngợm món thuốc bổ mà Lyra đưa cho…",
+      "UnitTalk_HIN": "ऐसा लगता है कि बच्चों ने लिन द्वारा दी गई थकान मिटाने वाली चीज़ से शरारत की है...",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_GRACE_DUALSWORD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_GRACE_DUALSWORD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 17,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_COUNTERSIDE_HILDE",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "인형 사이에서 보육원 아이들의 감사 인사가 담긴 편지를 발견했다.",
+      "UnitTalk_ENG": "I found a letter of thanks from the orphanage children tucked in among the dolls.",
+      "UnitTalk_JPN": "人形の間から、保育園の子供たちの感謝の手紙を見つけた。",
+      "UnitTalk_CHN": "在玩偶之间发现了一封写着育幼院孩子们感谢之意的信。",
+      "UnitTalk_TWN": "在玩偶之間發現了一封寫著育幼院孩子們感謝之意的信。",
+      "UnitTalk_FRA": "Parmi les poupées, j'ai trouvé une lettre de remerciement des enfants de l'orphelinat.",
+      "UnitTalk_DEU": "Zwischen den Puppen fand ich einen Dankesbrief der Waisenhauskinder.",
+      "UnitTalk_ESP": "Entre las muñecas, encontré una carta de agradecimiento de los niños del orfanato.",
+      "UnitTalk_PRT": "Entre as bonecas, encontrei uma carta de agradecimento das crianças do orfanato.",
+      "UnitTalk_THA": "ท่ามกลางตุ๊กตา ฉันพบจดหมายขอบคุณจากเด็ก ๆ ในสถานเลี้ยงเด็กกำพร้า",
+      "UnitTalk_IND": "Di antara boneka-boneka itu, aku menemukan surat terima kasih dari anak-anak panti asuhan.",
+      "UnitTalk_VIE": "Giữa những con búp bê, tôi tìm thấy một lá thư cảm ơn từ bọn trẻ trại trẻ mồ côi.",
+      "UnitTalk_HIN": "गुड़ियों के बीच, मुझे अनाथालय के बच्चों का एक धन्यवाद पत्र मिला।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_GRACE_DUALSWORD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_GRACE_DUALSWORD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    }
+  ]
+}

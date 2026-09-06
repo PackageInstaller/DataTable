@@ -6,44 +6,65 @@
         {
           "SuddenDeathGroupId" : 101,
           "SuddenDeathLevel" : 1,
-          "SuddenDeathDesc" : "SI_PVP_ASYNC_DEATH_LEVEL_DESC@@100",
-          "EffectActiveTurn" : 13,
+          "SuddenDeathDesc" : "SI_PVP_ASYNC_DEATH_LEVEL_DESC@@300",
+          "EffectActiveTurn" : 25,
           "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVP_ASYNC_A_LEVEL1_01"]
         },
         {
           "SuddenDeathGroupId" : 101,
           "SuddenDeathLevel" : 2,
-          "SuddenDeathDesc" : "SI_PVP_ASYNC_DEATH_LEVEL_DESC@@150",
-          "EffectActiveTurn" : 25,
+          "SuddenDeathDesc" : "SI_PVP_ASYNC_DEATH_LEVEL_DESC@@450",
+          "EffectActiveTurn" : 45,
           "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVP_ASYNC_A_LEVEL2_01"]
         },
         {
           "SuddenDeathGroupId" : 101,
           "SuddenDeathLevel" : 3,
-          "SuddenDeathDesc" : "SI_PVP_ASYNC_DEATH_LEVEL_DESC@@200",
-          "EffectActiveTurn" : 36,
+          "SuddenDeathDesc" : "SI_PVP_ASYNC_DEATH_LEVEL_DESC@@600",
+          "EffectActiveTurn" : 63,
           "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVP_ASYNC_A_LEVEL3_01"]
         },
         {
           "SuddenDeathGroupId" : 101,
           "SuddenDeathLevel" : 4,
-          "SuddenDeathDesc" : "SI_PVP_ASYNC_DEATH_LEVEL_DESC@@250",
-          "EffectActiveTurn" : 46,
+          "SuddenDeathDesc" : "SI_PVP_ASYNC_DEATH_LEVEL_DESC@@800",
+          "EffectActiveTurn" : 79,
           "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVP_ASYNC_A_LEVEL4_01"]
         },
         {
           "SuddenDeathGroupId" : 101,
           "SuddenDeathLevel" : 5,
-          "SuddenDeathDesc" : "SI_PVP_ASYNC_DEATH_LEVEL_DESC@@300",
-          "EffectActiveTurn" : 56,
+          "SuddenDeathDesc" : "SI_PVP_ASYNC_DEATH_LEVEL_DESC@@1000",
+          "EffectActiveTurn" : 93,
           "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVP_ASYNC_A_LEVEL5_01"]
         },
         {
           "SuddenDeathGroupId" : 101,
           "SuddenDeathLevel" : 6,
-          "SuddenDeathDesc" : "SI_PVP_ASYNC_DEATH_LEVEL_DESC@@400",
-          "EffectActiveTurn" : 66,
+          "SuddenDeathDesc" : "SI_PVP_ASYNC_DEATH_LEVEL_DESC@@1500",
+          "EffectActiveTurn" : 104,
           "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVP_ASYNC_A_LEVEL6_01"]
+        },
+        {
+          "SuddenDeathGroupId" : 101,
+          "SuddenDeathLevel" : 7,
+          "SuddenDeathDesc" : "SI_PVP_ASYNC_DEATH_LEVEL_DESC@@2000",
+          "EffectActiveTurn" : 112,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVP_ASYNC_A_LEVEL7_01"]
+        },
+        {
+          "SuddenDeathGroupId" : 101,
+          "SuddenDeathLevel" : 8,
+          "SuddenDeathDesc" : "SI_PVP_ASYNC_DEATH_LEVEL_DESC@@3000",
+          "EffectActiveTurn" : 118,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVP_ASYNC_A_LEVEL8_01"]
+        },
+        {
+          "SuddenDeathGroupId" : 101,
+          "SuddenDeathLevel" : 9,
+          "SuddenDeathDesc" : "SI_PVP_ASYNC_DEATH_LEVEL_DESC@@4500",
+          "EffectActiveTurn" : 121,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVP_ASYNC_A_LEVEL9_01"]
         },
         {
           "SuddenDeathGroupId" : 201,
@@ -56,34 +77,551 @@
           "SuddenDeathLevel" : 2,
           "SuddenDeathDesc" : "SI_PVP_RANK_DEATH_LEVEL_DESC",
           "EndLevelTurn" : 22,
-          "AllTeamBattleEffectList" : ["BATTLE_EFFECT_PVP_RANK_ALL_LEVEL2_01", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL2_02", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL2_03", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL2_04"]
+          "AllTeamBattleEffectList" : ["BATTLE_EFFECT_PVP_RANK_ALL_LEVEL2_01", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL2_02", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL2_03", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL2_04", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL2_05", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL2_06"]
         },
         {
           "SuddenDeathGroupId" : 201,
           "SuddenDeathLevel" : 3,
           "SuddenDeathDesc" : "SI_PVP_RANK_DEATH_LEVEL_DESC",
           "EndLevelTurn" : 30,
-          "AllTeamBattleEffectList" : ["BATTLE_EFFECT_PVP_RANK_ALL_LEVEL3_01", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL3_02", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL3_03", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL3_04"]
+          "AllTeamBattleEffectList" : ["BATTLE_EFFECT_PVP_RANK_ALL_LEVEL3_01", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL3_02", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL3_03", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL3_04", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL3_05", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL3_06"]
         },
         {
           "SuddenDeathGroupId" : 201,
           "SuddenDeathLevel" : 4,
           "SuddenDeathDesc" : "SI_PVP_RANK_DEATH_LEVEL_DESC",
           "EndLevelTurn" : 37,
-          "AllTeamBattleEffectList" : ["BATTLE_EFFECT_PVP_RANK_ALL_LEVEL4_01", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL4_02", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL4_03", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL4_04"]
+          "AllTeamBattleEffectList" : ["BATTLE_EFFECT_PVP_RANK_ALL_LEVEL4_01", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL4_02", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL4_03", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL4_04", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL4_05", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL4_06"]
         },
         {
           "SuddenDeathGroupId" : 201,
           "SuddenDeathLevel" : 5,
           "SuddenDeathDesc" : "SI_PVP_RANK_DEATH_LEVEL_DESC",
           "EndLevelTurn" : 43,
-          "AllTeamBattleEffectList" : ["BATTLE_EFFECT_PVP_RANK_ALL_LEVEL5_01", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL5_02", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL5_03", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL5_04"]
+          "AllTeamBattleEffectList" : ["BATTLE_EFFECT_PVP_RANK_ALL_LEVEL5_01", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL5_02", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL5_03", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL5_04", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL5_05", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL5_06"]
         },
         {
           "SuddenDeathGroupId" : 201,
           "SuddenDeathLevel" : 6,
           "SuddenDeathDesc" : "SI_PVP_RANK_DEATH_LEVEL_DESC",
-          "AllTeamBattleEffectList" : ["BATTLE_EFFECT_PVP_RANK_ALL_LEVEL6_01", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL6_02", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL6_03", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL6_04"]
+          "AllTeamBattleEffectList" : ["BATTLE_EFFECT_PVP_RANK_ALL_LEVEL6_01", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL6_02", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL6_03", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL6_04", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL6_05", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL6_06"]
+        },
+        {
+          "SuddenDeathGroupId" : 301,
+          "SuddenDeathLevel" : 1,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 199
+        },
+        {
+          "SuddenDeathGroupId" : 301,
+          "SuddenDeathLevel" : 2,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 209,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL2_01", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL2_02", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL2_03", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL2_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 301,
+          "SuddenDeathLevel" : 3,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 219,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL3_01", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL3_02", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL3_03", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL3_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 301,
+          "SuddenDeathLevel" : 4,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 229,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL4_01", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL4_02", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL4_03", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL4_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 301,
+          "SuddenDeathLevel" : 5,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 239,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL5_01", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL5_02", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL5_03", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL5_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 301,
+          "SuddenDeathLevel" : 6,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 249,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL6_01", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL6_02", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL6_03", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL6_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 301,
+          "SuddenDeathLevel" : 7,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL7_01", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL7_02", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL7_03", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL7_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 302,
+          "SuddenDeathLevel" : 1,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 149
+        },
+        {
+          "SuddenDeathGroupId" : 302,
+          "SuddenDeathLevel" : 2,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 159,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL2_01", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL2_02", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL2_03", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL2_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 302,
+          "SuddenDeathLevel" : 3,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 169,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL3_01", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL3_02", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL3_03", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL3_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 302,
+          "SuddenDeathLevel" : 4,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 179,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL4_01", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL4_02", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL4_03", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL4_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 302,
+          "SuddenDeathLevel" : 5,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 189,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL5_01", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL5_02", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL5_03", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL5_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 302,
+          "SuddenDeathLevel" : 6,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 199,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL6_01", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL6_02", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL6_03", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL6_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 302,
+          "SuddenDeathLevel" : 7,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL7_01", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL7_02", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL7_03", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL7_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 303,
+          "SuddenDeathLevel" : 1,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 149
+        },
+        {
+          "SuddenDeathGroupId" : 303,
+          "SuddenDeathLevel" : 2,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 159,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL2_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL2_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL2_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL2_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 303,
+          "SuddenDeathLevel" : 3,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 169,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL3_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL3_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL3_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL3_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 303,
+          "SuddenDeathLevel" : 4,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 179,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL4_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL4_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL4_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL4_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 303,
+          "SuddenDeathLevel" : 5,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 189,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL5_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL5_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL5_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL5_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 303,
+          "SuddenDeathLevel" : 6,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 199,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL6_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL6_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL6_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL6_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 303,
+          "SuddenDeathLevel" : 7,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL7_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL7_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL7_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL7_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 304,
+          "SuddenDeathLevel" : 1,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 99
+        },
+        {
+          "SuddenDeathGroupId" : 304,
+          "SuddenDeathLevel" : 2,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 109,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL2_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL2_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL2_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL2_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 304,
+          "SuddenDeathLevel" : 3,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 119,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL3_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL3_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL3_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL3_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 304,
+          "SuddenDeathLevel" : 4,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 129,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL4_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL4_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL4_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL4_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 304,
+          "SuddenDeathLevel" : 5,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 139,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL5_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL5_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL5_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL5_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 304,
+          "SuddenDeathLevel" : 6,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 149,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL6_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL6_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL6_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL6_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 304,
+          "SuddenDeathLevel" : 7,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL7_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL7_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL7_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL7_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 350,
+          "SuddenDeathLevel" : 1,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 199
+        },
+        {
+          "SuddenDeathGroupId" : 350,
+          "SuddenDeathLevel" : 2,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 209,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL2_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL2_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL2_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL2_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 350,
+          "SuddenDeathLevel" : 3,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 219,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL3_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL3_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL3_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL3_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 350,
+          "SuddenDeathLevel" : 4,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 229,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL4_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL4_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL4_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL4_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 350,
+          "SuddenDeathLevel" : 5,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 239,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL5_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL5_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL5_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL5_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 350,
+          "SuddenDeathLevel" : 6,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 249,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL6_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL6_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL6_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL6_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 350,
+          "SuddenDeathLevel" : 7,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL7_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL7_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL7_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL7_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 351,
+          "SuddenDeathLevel" : 1,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 149
+        },
+        {
+          "SuddenDeathGroupId" : 351,
+          "SuddenDeathLevel" : 2,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 159,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL2_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL2_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL2_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL2_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 351,
+          "SuddenDeathLevel" : 3,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 169,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL3_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL3_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL3_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL3_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 351,
+          "SuddenDeathLevel" : 4,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 179,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL4_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL4_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL4_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL4_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 351,
+          "SuddenDeathLevel" : 5,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 189,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL5_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL5_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL5_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL5_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 351,
+          "SuddenDeathLevel" : 6,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 199,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL6_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL6_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL6_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL6_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 351,
+          "SuddenDeathLevel" : 7,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL7_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL7_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL7_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL7_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 352,
+          "SuddenDeathLevel" : 1,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 99
+        },
+        {
+          "SuddenDeathGroupId" : 352,
+          "SuddenDeathLevel" : 2,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 109,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL2_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL2_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL2_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL2_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 352,
+          "SuddenDeathLevel" : 3,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 119,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL3_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL3_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL3_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL3_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 352,
+          "SuddenDeathLevel" : 4,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 129,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL4_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL4_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL4_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL4_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 352,
+          "SuddenDeathLevel" : 5,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 139,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL5_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL5_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL5_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL5_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 352,
+          "SuddenDeathLevel" : 6,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 149,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL6_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL6_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL6_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL6_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 352,
+          "SuddenDeathLevel" : 7,
+          "SuddenDeathDesc" : "SI_PVE_OPERATION_DEATH_LEVEL_DESC",
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL7_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL7_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL7_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL7_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 401,
+          "SuddenDeathLevel" : 1,
+          "SuddenDeathDesc" : "SI_PVE_CLOISTER_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 219
+        },
+        {
+          "SuddenDeathGroupId" : 401,
+          "SuddenDeathLevel" : 2,
+          "SuddenDeathDesc" : "SI_PVE_CLOISTER_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 229,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL2_01", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL2_02", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL2_03", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL2_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 401,
+          "SuddenDeathLevel" : 3,
+          "SuddenDeathDesc" : "SI_PVE_CLOISTER_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 239,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL3_01", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL3_02", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL3_03", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL3_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 401,
+          "SuddenDeathLevel" : 4,
+          "SuddenDeathDesc" : "SI_PVE_CLOISTER_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 249,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL4_01", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL4_02", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL4_03", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL4_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 401,
+          "SuddenDeathLevel" : 5,
+          "SuddenDeathDesc" : "SI_PVE_CLOISTER_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 259,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL5_01", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL5_02", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL5_03", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL5_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 401,
+          "SuddenDeathLevel" : 6,
+          "SuddenDeathDesc" : "SI_PVE_CLOISTER_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 269,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL6_01", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL6_02", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL6_03", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL6_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 401,
+          "SuddenDeathLevel" : 7,
+          "SuddenDeathDesc" : "SI_PVE_CLOISTER_DEATH_LEVEL_DESC",
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL7_01", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL7_02", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL7_03", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL7_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 402,
+          "SuddenDeathLevel" : 1,
+          "SuddenDeathDesc" : "SI_PVE_CLOISTER_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 169
+        },
+        {
+          "SuddenDeathGroupId" : 402,
+          "SuddenDeathLevel" : 2,
+          "SuddenDeathDesc" : "SI_PVE_CLOISTER_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 179,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL2_01", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL2_02", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL2_03", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL2_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 402,
+          "SuddenDeathLevel" : 3,
+          "SuddenDeathDesc" : "SI_PVE_CLOISTER_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 189,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL3_01", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL3_02", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL3_03", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL3_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 402,
+          "SuddenDeathLevel" : 4,
+          "SuddenDeathDesc" : "SI_PVE_CLOISTER_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 199,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL4_01", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL4_02", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL4_03", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL4_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 402,
+          "SuddenDeathLevel" : 5,
+          "SuddenDeathDesc" : "SI_PVE_CLOISTER_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 209,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL5_01", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL5_02", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL5_03", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL5_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 402,
+          "SuddenDeathLevel" : 6,
+          "SuddenDeathDesc" : "SI_PVE_CLOISTER_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 219,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL6_01", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL6_02", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL6_03", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL6_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 402,
+          "SuddenDeathLevel" : 7,
+          "SuddenDeathDesc" : "SI_PVE_CLOISTER_DEATH_LEVEL_DESC",
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL7_01", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL7_02", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL7_03", "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL7_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 403,
+          "SuddenDeathLevel" : 1,
+          "SuddenDeathDesc" : "SI_PVE_CLOISTER_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 169
+        },
+        {
+          "SuddenDeathGroupId" : 403,
+          "SuddenDeathLevel" : 2,
+          "SuddenDeathDesc" : "SI_PVE_CLOISTER_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 179,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL2_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL2_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL2_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL2_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 403,
+          "SuddenDeathLevel" : 3,
+          "SuddenDeathDesc" : "SI_PVE_CLOISTER_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 189,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL3_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL3_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL3_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL3_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 403,
+          "SuddenDeathLevel" : 4,
+          "SuddenDeathDesc" : "SI_PVE_CLOISTER_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 199,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL4_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL4_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL4_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL4_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 403,
+          "SuddenDeathLevel" : 5,
+          "SuddenDeathDesc" : "SI_PVE_CLOISTER_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 209,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL5_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL5_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL5_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL5_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 403,
+          "SuddenDeathLevel" : 6,
+          "SuddenDeathDesc" : "SI_PVE_CLOISTER_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 219,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL6_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL6_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL6_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL6_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 403,
+          "SuddenDeathLevel" : 7,
+          "SuddenDeathDesc" : "SI_PVE_CLOISTER_DEATH_LEVEL_DESC",
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL7_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL7_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL7_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL7_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 404,
+          "SuddenDeathLevel" : 1,
+          "SuddenDeathDesc" : "SI_PVE_CLOISTER_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 119
+        },
+        {
+          "SuddenDeathGroupId" : 404,
+          "SuddenDeathLevel" : 2,
+          "SuddenDeathDesc" : "SI_PVE_CLOISTER_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 129,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL2_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL2_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL2_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL2_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 404,
+          "SuddenDeathLevel" : 3,
+          "SuddenDeathDesc" : "SI_PVE_CLOISTER_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 139,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL3_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL3_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL3_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL3_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 404,
+          "SuddenDeathLevel" : 4,
+          "SuddenDeathDesc" : "SI_PVE_CLOISTER_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 149,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL4_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL4_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL4_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL4_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 404,
+          "SuddenDeathLevel" : 5,
+          "SuddenDeathDesc" : "SI_PVE_CLOISTER_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 159,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL5_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL5_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL5_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL5_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 404,
+          "SuddenDeathLevel" : 6,
+          "SuddenDeathDesc" : "SI_PVE_CLOISTER_DEATH_LEVEL_DESC",
+          "EndLevelTurn" : 169,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL6_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL6_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL6_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL6_04"]
+        },
+        {
+          "SuddenDeathGroupId" : 404,
+          "SuddenDeathLevel" : 7,
+          "SuddenDeathDesc" : "SI_PVE_CLOISTER_DEATH_LEVEL_DESC",
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL7_01", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL7_02", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL7_03", "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL7_04"]
         }
     ]
 }

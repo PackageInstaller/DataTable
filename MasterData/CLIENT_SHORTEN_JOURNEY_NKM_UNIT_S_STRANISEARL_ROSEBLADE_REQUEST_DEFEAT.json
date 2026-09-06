@@ -1,0 +1,153 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_STRANISEARL_ROSEBLADE_REQUEST_DEFEAT",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_CANDLE",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "DESPAIR"
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "의뢰에 실패한 <color=#F7BE45>[CHARACTER_NAME]</color>(은)는 기운이 없어 보인다.",
+      "UnitTalk_ENG": "<color=#F7BE45>[CHARACTER_NAME]</color> looks downhearted after failing the quest.",
+      "UnitTalk_JPN": "依頼の達成に失敗した<color=#F7BE45>[CHARACTER_NAME]</color>は元気がないようだ。",
+      "UnitTalk_CHN": "委托失败的<color=#F7BE45>[CHARACTER_NAME]</color>看起来无精打采。",
+      "UnitTalk_TWN": "委託失敗的<color=#F7BE45>[CHARACTER_NAME]</color>看起來無精打采。",
+      "UnitTalk_FRA": "Le moral de <color=#F7BE45>[CHARACTER_NAME]</color> semble épuisé.",
+      "UnitTalk_DEU": "Der Mut von <color=#F7BE45>[CHARACTER_NAME]</color> ist nicht mehr zu sehen.",
+      "UnitTalk_ESP": "El <color=#F7BE45>[CHARACTER_NAME]</color> no tiene energía.",
+      "UnitTalk_PRT": "A sorte de <color=#F7BE45>[CHARACTER_NAME]</color> parece ter acabado.",
+      "UnitTalk_THA": "พลังชีวิตของ <color=#F7BE45>[CHARACTER_NAME]</color> ดูเหมือนจะหมดลงแล้ว",
+      "UnitTalk_IND": "Nahasnya, <color=#F7BE45>[CHARACTER_NAME]</color> tak punya keberuntungan lagi.",
+      "UnitTalk_VIE": "Tình trạng của <color=#F7BE45>[CHARACTER_NAME]</color> dường như đã kiệt sức.",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 2,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그럴 때도 있는 거지. 너무 상심하진 마.",
+          "JumpAnchorStringId_ENG": "It happens. Don't be too hard on yourself.",
+          "JumpAnchorStringId_JPN": "そういう時もあるよ。あまり気を落とさないで。",
+          "JumpAnchorStringId_CHN": "总有这种时候的，别太沮丧。",
+          "JumpAnchorStringId_TWN": "總有這種時候的，別太沮喪。",
+          "JumpAnchorStringId_FRA": "Ce n'est pas une illusion. Ne t'en fais pas trop.",
+          "JumpAnchorStringId_DEU": "Das ist nicht so ungewöhnlich. Sei nicht so besorgt.",
+          "JumpAnchorStringId_ESP": "Incluso entonces, es una locura. No te sobreestimes.",
+          "JumpAnchorStringId_PRT": "Até isso é mentira. Não me importo.",
+          "JumpAnchorStringId_THA": "แม้แต่ในยามนั้นก็ยังมีอยู่จริง อย่าได้สงสัยเลย",
+          "JumpAnchorStringId_IND": "Bahkan ada yang seperti itu. Jangan terlalu mengagumi.",
+          "JumpAnchorStringId_VIE": "Ngay cả khi có, đó cũng là điều không nên quá tự hào.",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "활력 포션을 건넨다.",
+          "JumpAnchorStringId_ENG": "Hand out a Vitality Potion.",
+          "JumpAnchorStringId_JPN": "活力ポーションを渡す。",
+          "JumpAnchorStringId_CHN": "递给她活力药水。",
+          "JumpAnchorStringId_TWN": "遞給她活力藥水。",
+          "JumpAnchorStringId_FRA": "Je te donne une potion.",
+          "JumpAnchorStringId_DEU": "Ich gebe die Spezialfähigkeit weiter.",
+          "JumpAnchorStringId_ESP": "Le doy la poción de vitalidad.",
+          "JumpAnchorStringId_PRT": "Passo a poção adiante.",
+          "JumpAnchorStringId_THA": "กำลังจะให้พลังชีวิต",
+          "JumpAnchorStringId_IND": "Melewati posen.",
+          "JumpAnchorStringId_VIE": "Ta đang đưa một viên thuốc hồi phục.",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 3,
+      "JumpAnchorInfo": "JUMPANCHOR_1_SUCCESS",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 재충전의 시간을 가지기로 했다",
+      "UnitTalk_ENG": "<color=#F7BE45>[CHARACTER_NAME]</color> decided to take some time to recharge.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は気分転換の時間を持つことにした。",
+      "UnitTalk_CHN": "<color=#F7BE45>[CHARACTER_NAME]</color>决定好好充电一下。",
+      "UnitTalk_TWN": "<color=#F7BE45>[CHARACTER_NAME]</color>決定好好充電一下。",
+      "UnitTalk_FRA": "<color=#F7BE45>[CHARACTER_NAME]</color> a pris le temps de se ressourcer.",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color> hat die Zeit für die Wiedergeburt genommen.",
+      "UnitTalk_ESP": "El <color=#F7BE45>[CHARACTER_NAME]</color> ha decidido el momento de la reencarnación.",
+      "UnitTalk_PRT": "<color=#F7BE45>[CHARACTER_NAME]</color> decidiu recarregar.",
+      "UnitTalk_THA": "<color=#F7BE45>[CHARACTER_NAME]</color> ได้ใช้เวลาในการฟื้นฟู",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> telah menghabiskan waktu untuk mengisi ulang.",
+      "UnitTalk_VIE": "<color=#F7BE45>[CHARACTER_NAME]</color> đã mang theo thời gian tái sinh.",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "THINK2"
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 씁쓸한 얼굴을 한 채 돌아섰다.",
+      "UnitTalk_ENG": "<color=#F7BE45>[CHARACTER_NAME]</color> turned away with a bitter look on her face.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は苦い顔を浮かべたまま背を向けた。",
+      "UnitTalk_CHN": "<color=#F7BE45>[CHARACTER_NAME]</color>带着苦涩的表情转过身去。",
+      "UnitTalk_TWN": "<color=#F7BE45>[CHARACTER_NAME]</color>帶著苦澀的表情轉過身去。",
+      "UnitTalk_FRA": "<color=#F7BE45>[CHARACTER_NAME]</color> se retourne, le visage marqué.",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color> dreht sich um und zeigt ein gealtertes Gesicht.",
+      "UnitTalk_ESP": "El <color=#F7BE45>[CHARACTER_NAME]</color> se dio la vuelta con una cara triste.",
+      "UnitTalk_PRT": "<color=#F7BE45>[CHARACTER_NAME]</color> virou-se para encarar o espelho.",
+      "UnitTalk_THA": "<color=#F7BE45>[CHARACTER_NAME]</color> หันกลับมามองใบหน้าที่คุ้นเคย",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> berbalik dengan wajah yang sedih.",
+      "UnitTalk_VIE": "<color=#F7BE45>[CHARACTER_NAME]</color> quay lại với khuôn mặt bị làm mờ.",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN"
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "다행히도 포션을 마신 <color=#F7BE45>[CHARACTER_NAME]</color>(은)는 기운을 되찾은 듯했다.",
+      "UnitTalk_ENG": "Thankfully, the potion seemed to have restored <color=#F7BE45>[CHARACTER_NAME]</color>'s energy.",
+      "UnitTalk_JPN": "活力ポーションを飲んだ<color=#F7BE45>[CHARACTER_NAME]</color>は、元気を取り戻したようだ！",
+      "UnitTalk_CHN": "幸好喝了药水的<color=#F7BE45>[CHARACTER_NAME]</color>似乎恢复了精神。",
+      "UnitTalk_TWN": "幸好喝了藥水的<color=#F7BE45>[CHARACTER_NAME]</color>似乎恢復了精神。",
+      "UnitTalk_FRA": "Heureusement, <color=#F7BE45>[CHARACTER_NAME]</color> a retrouvé ses forces.",
+      "UnitTalk_DEU": "Glücklicherweise hat <color=#F7BE45>[CHARACTER_NAME]</color> den Mut wiedergefunden.",
+      "UnitTalk_ESP": "Por suerte, el <color=#F7BE45>[CHARACTER_NAME]</color> recuperó su energía.",
+      "UnitTalk_PRT": "Felizmente, <color=#F7BE45>[CHARACTER_NAME]</color> recuperou suas forças.",
+      "UnitTalk_THA": "โชคดีที่ได้ดื่มยาพิษแล้ว <color=#F7BE45>[CHARACTER_NAME]</color> ดูเหมือนกำลังฟื้นตัว",
+      "UnitTalk_IND": "Untungnya, <color=#F7BE45>[CHARACTER_NAME]</color> kembali mendapatkan tenaga.",
+      "UnitTalk_VIE": "May mắn thay, <color=#F7BE45>[CHARACTER_NAME]</color> đã hồi phục lại sức mạnh.",
+      "TalkTime": 0.03
+    }
+  ]
+}

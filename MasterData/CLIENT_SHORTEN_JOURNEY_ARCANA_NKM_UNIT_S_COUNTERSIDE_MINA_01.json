@@ -1,0 +1,167 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_COUNTERSIDE_MINA_01",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_GRACE_DUALSWORD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_STREET.png",
+      "UnitStrId": "NKM_UNIT_NPC_COUNTERSIDE_MINA",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_GRACE_DUALSWORD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "배달 업무는 유미나에게 영 맞지 않는 것 같다…",
+      "UnitTalk_ENG": "Delivery job just doesn't seem to suit Mina…",
+      "UnitTalk_JPN": "配達業務は、ミナには合わなかったようだ…",
+      "UnitTalk_CHN": "与贝拉一同运行送货任务的刘米娜，领悟到佣兵工作才是自己的天职。",
+      "UnitTalk_TWN": "與貝拉一同執行送貨任務的劉米娜，領悟到傭兵工作才是自己的天職。",
+      "UnitTalk_FRA": "Le travail de livraison ne semble pas convenir à Yumina…",
+      "UnitTalk_DEU": "Zustelldienste scheinen Yumina nicht zu liegen…",
+      "UnitTalk_ESP": "El trabajo de repartidora no parece irle bien a Yumina…",
+      "UnitTalk_PRT": "O trabalho de entregas não parece combinar com a Yumina…",
+      "UnitTalk_THA": "ดูเหมือนงานส่งของจะไม่เหมาะกับยูมินะเลยค่ะ…",
+      "UnitTalk_IND": "Pekerjaan pengiriman sepertinya tidak cocok untuk Yumina…",
+      "UnitTalk_VIE": "Công việc giao hàng có vẻ không hợp với Yumina…",
+      "UnitTalk_HIN": "डिलीवरी का काम यूमिना को सूट नहीं करता…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "다른 일을 해보자!",
+          "JumpAnchorStringId_ENG": "Let's try something else!",
+          "JumpAnchorStringId_JPN": "他の仕事をしてみよう！",
+          "JumpAnchorStringId_CHN": "换个工作试试吧！",
+          "JumpAnchorStringId_TWN": "換個工作試試吧！",
+          "JumpAnchorStringId_FRA": "Essayons autre chose !",
+          "JumpAnchorStringId_DEU": "Versuchen wir etwas anderes!",
+          "JumpAnchorStringId_ESP": "¡Intentemos otra cosa!",
+          "JumpAnchorStringId_PRT": "Vamos tentar outra coisa!",
+          "JumpAnchorStringId_THA": "ลองทำอย่างอื่นกันเถอะ!",
+          "JumpAnchorStringId_IND": "Ayo coba hal lain!",
+          "JumpAnchorStringId_VIE": "Hãy thử làm việc khác xem sao!",
+          "JumpAnchorStringId_HIN": "चलो कुछ और कोशिश करते हैं!",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "맛있는 걸 먹고 잊어버리자!",
+          "JumpAnchorStringId_ENG": "Let's eat something good and forget about it!",
+          "JumpAnchorStringId_JPN": "美味しいものを食べて忘れよう！",
+          "JumpAnchorStringId_CHN": "吃点好吃的忘掉吧！",
+          "JumpAnchorStringId_TWN": "吃點好吃的忘掉吧！",
+          "JumpAnchorStringId_FRA": "Mangeons quelque chose de délicieux et oublions tout !",
+          "JumpAnchorStringId_DEU": "Lass uns etwas Leckeres essen und es vergessen!",
+          "JumpAnchorStringId_ESP": "¡Comamos algo rico y olvidemos esto!",
+          "JumpAnchorStringId_PRT": "Vamos comer algo delicioso e esquecer isso!",
+          "JumpAnchorStringId_THA": "มากินของอร่อย ๆ แล้วลืมเรื่องนี้ไปกันเถอะ!",
+          "JumpAnchorStringId_IND": "Ayo makan sesuatu yang lezat dan lupakan saja!",
+          "JumpAnchorStringId_VIE": "Hãy ăn món gì đó ngon và quên hết mọi chuyện đi!",
+          "JumpAnchorStringId_HIN": "चलो कुछ स्वादिष्ट खाते हैं और सब भूल जाते हैं!",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 7,
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_COUNTERSIDE_MINA",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "호위 임무를 맡은 유미나는 주변 일대를 쑥대밭으로 만들어 버렸다…",
+      "UnitTalk_ENG": "Mina left the entire area in shambles while carrying out the mission...",
+      "UnitTalk_JPN": "護衛任務を引き受けたミナだったが、辺り一帯を破壊してしまった…",
+      "UnitTalk_CHN": "接下护卫任务的刘米娜把周围搞得一团糟…",
+      "UnitTalk_TWN": "接下護衛任務的劉米娜把周圍搞得一團糟…",
+      "UnitTalk_FRA": "Mina a semé le chaos dans toute la zone en accomplissant la mission…",
+      "UnitTalk_DEU": "Mina verwandelte die gesamte Umgebung in ein Chaos, während sie die Mission ausführte…",
+      "UnitTalk_ESP": "Mina dejó toda la zona en caos mientras llevaba a cabo la misión…",
+      "UnitTalk_PRT": "Mina destruiu toda a área ao redor enquanto cumpria a missão de guarda…",
+      "UnitTalk_THA": "มินาทำให้พื้นที่โดยรอบพังพินาศระหว่างปฏิบัติภารกิจ…",
+      "UnitTalk_IND": "Mina membuat seluruh area berantakan saat menjalankan misi…",
+      "UnitTalk_VIE": "Mina đã biến toàn bộ khu vực xung quanh thành đống đổ nát trong khi thực hiện nhiệm vụ hộ vệ…",
+      "UnitTalk_HIN": "मिना ने मिशन पूरा करते हुए पूरे इलाके को तबाह कर दिया…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_GRACE_DUALSWORD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_GRACE_DUALSWORD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 9,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_COUNTERSIDE_MINA",
+      "UnitMotion": "USN_UI_TOUCH"
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "유미나에게 비싼 음식을 대접하기로 했다!",
+      "UnitTalk_ENG": "I decided to treat Mina to a fancy meal!",
+      "UnitTalk_JPN": "ミナに高級料理をごちそうしてあげることにした！",
+      "UnitTalk_CHN": "决定请刘米娜吃一顿昂贵的料理！",
+      "UnitTalk_TWN": "決定請劉米娜吃一頓昂貴的料理！",
+      "UnitTalk_FRA": "J'ai décidé d'offrir un repas coûteux à Yumina !",
+      "UnitTalk_DEU": "Ich beschloss, Yumina ein teures Essen auszugeben!",
+      "UnitTalk_ESP": "¡Decidí invitar a Yumina a una comida cara!",
+      "UnitTalk_PRT": "Decidi oferecer uma comida cara para a Yumina!",
+      "UnitTalk_THA": "ฉันตัดสินใจเลี้ยงอาหารแพง ๆ ให้ยูมินะ!",
+      "UnitTalk_IND": "Aku memutuskan untuk mentraktir Yumina makanan mahal!",
+      "UnitTalk_VIE": "Tôi quyết định đãi Yumina một bữa ăn đắt tiền!",
+      "UnitTalk_HIN": "मैंने यूमिना को कुछ महंगा खाना खिलाने का फैसला किया!",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_GRACE_DUALSWORD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_GRACE_DUALSWORD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL"
+    }
+  ]
+}

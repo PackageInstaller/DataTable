@@ -1,0 +1,67 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_INCOGNITA_LANDGRAVE_01",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_INCOGNITA_FLOWER_03",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_BACK_STREET.png",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS8",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 9,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_LANDGRAVE",
+      "UnitMotion": "SPECIAL",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_INCOGNITA_FLOWER_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "크리스텔은 루나의 예언을 듣고 만족하며 루나에게 수상한 돈벌이를 알려주는데...",
+      "UnitTalk_ENG": "Pleased with Luna's prediction, Cristelle decides to share a questionable little money-making scheme with her...",
+      "UnitTalk_JPN": "クリステルはルナの予言に満足し、ルナに怪しげな金儲けの話を持ちかけるが…",
+      "UnitTalk_CHN": "克莉丝特听完露娜的预言后十分满意，便告诉露娜一个可疑的赚钱门路…",
+      "UnitTalk_TWN": "克莉絲特聽完露娜的預言後十分滿意，便告訴露娜一個可疑的賺錢門路…",
+      "UnitTalk_FRA": "À la gare, Éde et Cristel jurent de se venger.",
+      "UnitTalk_DEU": "Edde und Kristel schwören Rache.",
+      "UnitTalk_ESP": "Ede y Cristel se comprometen a vengar.",
+      "UnitTalk_PRT": "Emede e Cristel juram vingança.",
+      "UnitTalk_THA": "ที่สถานีรถไฟ เอเดและคริสเทลตั้งปณิธานแก้แค้น",
+      "UnitTalk_IND": "Di stasiun kereta, Ede dan Kristel bertekad untuk membalas dendam.",
+      "UnitTalk_VIE": "Ede và Kristel quyết tâm trả thù.",
+      "UnitTalk_HIN": "हेडी को ट्रेन में अपनी छवि दिख रही थी।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_INCOGNITA_FLOWER_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_INCOGNITA_FLOWER_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

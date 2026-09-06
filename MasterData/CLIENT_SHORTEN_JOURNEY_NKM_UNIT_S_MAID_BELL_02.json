@@ -1,0 +1,39 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_MAID_BELL_02",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_BELL_02",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_BELL_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "벨 리스는 자신의 가문에 얽힌 무시무시한 비밀을 알아버렸다.",
+      "UnitTalk_ENG": "Bell discovered a terrifying secret hidden within her family.",
+      "UnitTalk_JPN": "ベル・リースは、自分の家系にまつわる恐ろしい秘密を知ってしまった。",
+      "UnitTalk_CHN": "贝尔·莉丝得知了自己家族背后可怕的秘密。",
+      "UnitTalk_TWN": "貝爾·莉絲得知了自己家族背後可怕的祕密。",
+      "UnitTalk_FRA": "Bell Rhys a découvert un terrible secret lié à sa famille.",
+      "UnitTalk_DEU": "Bell Rhys hat ein schreckliches Geheimnis entdeckt, das in ihrer Familie verborgen war.",
+      "UnitTalk_ESP": "Bell Rhys descubrió un secreto aterrador oculto en su familia.",
+      "UnitTalk_PRT": "Bell Rhys descobriu um segredo terrível escondido em sua família.",
+      "UnitTalk_THA": "เบล รีส ได้ล่วงรู้ความลับอันน่าสะพรึงกลัวที่ซ่อนอยู่ในตระกูลของเธอแล้วค่ะ",
+      "UnitTalk_IND": "Bell Rhys telah menemukan rahasia mengerikan yang tersembunyi dalam keluarganya.",
+      "UnitTalk_VIE": "Bell Rhys đã phát hiện ra một bí mật kinh hoàng ẩn giấu trong gia tộc mình.",
+      "UnitTalk_HIN": "बेल रीस को अपने परिवार से जुड़ा एक भयानक रहस्य पता चला।",
+      "TalkTime": 0.03
+    }
+  ]
+}

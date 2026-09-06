@@ -5,6 +5,171 @@
     "Data": [
         {
           "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 1100301,
+          "m_SEStrID" : "POTEN_PASSIVE_1100301",
+          "SEGroupID" : 1100301,
+          "SEOrderList" : 1,
+          "SubShowSELog" : true,
+          "SkillConditionId" : 9200,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_POTEN_PASSIVE_110031",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 1100302,
+          "m_SEStrID" : "POTEN_PASSIVE_1100302",
+          "SEGroupID" : 1100302,
+          "SEOrderList" : 1,
+          "SubShowSELog" : true,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_POTEN_PASSIVE_110031",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 1100303,
+          "m_SEStrID" : "POTEN_PASSIVE_1100303",
+          "SEGroupID" : 1100303,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SkillConditionId" : 58001,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_AUTO_ENEMY_ONE",
+          "AutoTargetId" : 4,
+          "m_BuffStrID" : "BI_POTEN_PASSIVE_110032",
+          "m_BuffLifeTurn" : 0,
+          "AddDamageTargetType" : "NSETT_SELF",
+          "AddDamageStatType" : "NST_ATK",
+          "AddDamageRate" : 3200,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 1100304,
+          "m_SEStrID" : "POTEN_PASSIVE_1100304",
+          "SEGroupID" : 1100304,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SkillConditionId" : 58002,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_AUTO_ENEMY_ONE",
+          "AutoTargetId" : 4,
+          "m_BuffStrID" : "BI_POTEN_PASSIVE_110033",
+          "m_BuffLifeTurn" : 0,
+          "AddDamageTargetType" : "NSETT_SELF",
+          "AddDamageStatType" : "NST_ATK",
+          "AddDamageRate" : 3200,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 1100305,
+          "m_SEStrID" : "POTEN_PASSIVE_1100305",
+          "SEGroupID" : 1100305,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SkillConditionId" : 58003,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_AUTO_ENEMY_ONE",
+          "AutoTargetId" : 4,
+          "m_BuffStrID" : "BI_POTEN_PASSIVE_110034",
+          "m_BuffLifeTurn" : 0,
+          "AddDamageTargetType" : "NSETT_SELF",
+          "AddDamageStatType" : "NST_ATK",
+          "AddDamageRate" : 3200,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 1100306,
+          "m_SEStrID" : "POTEN_PASSIVE_1100306",
+          "SEGroupID" : 1100306,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SkillConditionId" : 58004,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_AUTO_ENEMY_ONE",
+          "AutoTargetId" : 4,
+          "m_BuffStrID" : "BI_POTEN_PASSIVE_110035",
+          "m_BuffLifeTurn" : 0,
+          "AddDamageTargetType" : "NSETT_SELF",
+          "AddDamageStatType" : "NST_ATK",
+          "AddDamageRate" : 3200,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 1100307,
+          "m_SEStrID" : "POTEN_PASSIVE_1100307",
+          "SEGroupID" : 1100307,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SkillConditionId" : 58005,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_AUTO_ENEMY_ONE",
+          "AutoTargetId" : 4,
+          "m_BuffStrID" : "BI_POTEN_PASSIVE_110036",
+          "m_BuffLifeTurn" : 0,
+          "AddDamageTargetType" : "NSETT_SELF",
+          "AddDamageStatType" : "NST_ATK",
+          "AddDamageRate" : 3200,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 1100308,
+          "m_SEStrID" : "POTEN_PASSIVE_1100308",
+          "SEGroupID" : 1100308,
+          "SEOrderList" : 1,
+          "SubShowSELog" : true,
+          "SkillConditionId" : 58000,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_DELETE_SPECIFIC_BUFF",
+          "m_BuffLifeTurn" : 0,
+          "BuffDeleteCount" : 0,
+          "DeleteSpecificBuffStrId" : "BI_POTEN_PASSIVE_110031",
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "m_SEID" : 1101101,
           "m_SEStrID" : "POTEN_PASSIVE_1101101",
           "SEGroupID" : 1101101,
@@ -13,12 +178,114 @@
           "SkillConditionId" : 35003,
           "SeCoolTurn" : 0,
           "m_BuffTargetType" : "NSETT_SELF",
-          "m_BuffStrID" : "BI_POTEN_PASSIVE_11011",
+          "m_BuffStrID" : "BI_POTEN_PASSIVE_110111",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_DAMAGE_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 1101102,
+          "m_SEStrID" : "POTEN_PASSIVE_1101102",
+          "SEGroupID" : 1101102,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SkillConditionId" : 35003,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_POTEN_PASSIVE_110112",
+          "m_BuffLifeTurn" : 0,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_DAMAGE_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 1101103,
+          "m_SEStrID" : "POTEN_PASSIVE_1101103",
+          "SEGroupID" : 1101103,
+          "SEOrderList" : 1,
+          "SubShowSELog" : true,
+          "SkillConditionId" : 55126,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_POTEN_PASSIVE_110111",
           "m_BuffLifeTurn" : 1,
           "m_Condition" : 
           {
             "m_ActiveType" : "NSEAT_DAMAGE_END",
             "m_fActiveRate" : 2500
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 1102601,
+          "m_SEStrID" : "POTEN_PASSIVE_1102601",
+          "SEGroupID" : 1102601,
+          "SEOrderList" : 1,
+          "SubShowSELog" : true,
+          "SkillConditionId" : 10002,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_VAMPIRISM",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 2000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_HIT",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 1102602,
+          "m_SEStrID" : "POTEN_PASSIVE_1102602",
+          "SEGroupID" : 1102602,
+          "SEOrderList" : 1,
+          "SubShowSELog" : true,
+          "SkillConditionId" : 10003,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_VAMPIRISM",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 2000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_HIT",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 1102901,
+          "m_SEStrID" : "POTEN_PASSIVE_1102901",
+          "SEGroupID" : 1102901,
+          "SEOrderList" : 1,
+          "SubShowSELog" : true,
+          "SkillConditionId" : 5020,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_POTEN_PASSIVE_110291",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_DAMAGE_END",
+            "m_fActiveRate" : 10000
           }
         },
         {
@@ -95,6 +362,174 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 1104304,
+          "m_SEStrID" : "POTEN_PASSIVE_1104304",
+          "SEGroupID" : 1104304,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SkillConditionId" : 1153,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_EFFECT_HIT",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 1104305,
+          "m_SEStrID" : "POTEN_PASSIVE_1104305",
+          "SEGroupID" : 1104305,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SkillConditionId" : 1154,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_EFFECT_HIT",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 1104306,
+          "m_SEStrID" : "POTEN_PASSIVE_1104306",
+          "SEGroupID" : 1104306,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SkillConditionId" : 1134,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 500
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 1104307,
+          "m_SEStrID" : "POTEN_PASSIVE_1104307",
+          "SEGroupID" : 1104307,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SkillConditionId" : 1135,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 500
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 1104308,
+          "m_SEStrID" : "POTEN_PASSIVE_1104308",
+          "SEGroupID" : 1104308,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SkillConditionId" : 1136,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 500
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 1104309,
+          "m_SEStrID" : "POTEN_PASSIVE_1104309",
+          "SEGroupID" : 1104309,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SkillConditionId" : 1153,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 500
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 1104310,
+          "m_SEStrID" : "POTEN_PASSIVE_1104310",
+          "SEGroupID" : 1104310,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SkillConditionId" : 1154,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 500
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "m_SEID" : 1104401,
           "m_SEStrID" : "POTEN_PASSIVE_1104401",
           "SEGroupID" : 1104401,
@@ -112,12 +547,53 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 1104601,
+          "m_SEStrID" : "POTEN_PASSIVE_1104601",
+          "SEGroupID" : 1104601,
+          "SEOrderList" : 1,
+          "SubShowSELog" : true,
+          "SkillConditionId" : 1001,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 2000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 1104602,
+          "m_SEStrID" : "POTEN_PASSIVE_1104602",
+          "SEGroupID" : 1104602,
+          "SEOrderList" : 1,
+          "SubShowSELog" : true,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_ADJUSTTYPE_RESOURCE_STAR",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "m_SEID" : 1105101,
           "m_SEStrID" : "POTEN_PASSIVE_1105101",
           "SEGroupID" : 1105101,
           "SEOrderList" : 1,
           "SubShowSELog" : true,
-          "SkillConditionId" : 8002,
+          "SkillConditionId" : 8000,
           "SeCoolTurn" : 0,
           "m_BuffTargetType" : "NSETT_SELF",
           "m_BuffStrID" : "BI_SPEED_GAUGE_UP",
@@ -132,24 +608,82 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 1105501,
+          "m_SEStrID" : "POTEN_PASSIVE_1105501",
+          "SEGroupID" : 1105501,
+          "SEOrderList" : 1,
+          "SubShowSELog" : true,
+          "SkillConditionId" : 8002,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_NOVA_FORCE_UP",
+          "m_BuffLifeTurn" : 0,
+          "NovaForceValue" : 2,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 1105502,
+          "m_SEStrID" : "POTEN_PASSIVE_1105502",
+          "SEGroupID" : 1105502,
+          "SEOrderList" : 1,
+          "SubShowSELog" : true,
+          "SkillConditionId" : 8003,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_NOVA_FORCE_UP",
+          "m_BuffLifeTurn" : 0,
+          "NovaForceValue" : 2,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 1300201,
+          "m_SEStrID" : "POTEN_PASSIVE_1300201",
+          "SEGroupID" : 1300201,
+          "SEOrderList" : 1,
+          "SubShowSELog" : true,
+          "SkillConditionId" : 2159,
+          "SeCoolTurn" : 1,
+          "m_BuffTargetType" : "NSETT_ENEMY_ALL",
+          "m_BuffStrID" : "BI_ADD_DAMAGE_2",
+          "m_BuffLifeTurn" : 0,
+          "AddDamageTargetType" : "NSETT_SELF",
+          "AddDamageStatType" : "NST_ATK",
+          "AddDamageRate" : 3000,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "m_SEID" : 2500101,
           "m_SEStrID" : "POTEN_PASSIVE_2500101",
           "SEGroupID" : 2500101,
           "SEOrderList" : 1,
           "SubShowSELog" : true,
-          "SeCoolTurn" : 0,
+          "SeCoolTurn" : 2,
           "m_BuffTargetType" : "NSETT_SELF",
           "m_BuffStrID" : "BI_HEAL",
           "m_BuffLifeTurn" : 0,
           "HealTargetType" : "NSETT_SELF",
           "HealStatType" : "NST_HP",
           "HealRate" : 500,
-          "m_bNoReuse" : true,
           "m_Condition" : 
           {
-            "m_ActiveType" : "NSEAT_TURN_START",
+            "m_ActiveType" : "NSEAT_DAMAGE_START",
             "m_fActiveRate" : 10000,
-            "m_fHPRateLess" : 2000
+            "m_fHPRateLess" : 2500
           }
         },
         {
@@ -237,7 +771,7 @@
           "m_BuffLifeTurn" : 2,
           "BarrierTargetType" : "NSETT_SELF",
           "BarrierStatType" : "NST_HP",
-          "BarrierRate" : 500,
+          "BarrierRate" : 2000,
           "m_Condition" : 
           {
             "m_ActiveType" : "NSEAT_BATTLE_START",
@@ -280,16 +814,40 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 3000401,
+          "m_SEStrID" : "POTEN_PASSIVE_3000401",
+          "SEGroupID" : 3000401,
+          "SEOrderList" : 1,
+          "SubShowSELog" : true,
+          "SkillConditionId" : 35532,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_CRITICAL_DAMAGE_REDUCE",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 2000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_DAMAGE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "m_SEID" : 3000501,
           "m_SEStrID" : "POTEN_PASSIVE_3000501",
           "SEGroupID" : 3000501,
           "SEOrderList" : 1,
           "SubShowSELog" : true,
-          "SeCoolTurn" : 3,
+          "SeCoolTurn" : 2,
           "m_BuffTargetType" : "NSETT_SELF",
           "m_BuffStrID" : "BI_NOVA_FORCE_UP",
           "m_BuffLifeTurn" : 0,
-          "NovaForceValue" : 1,
+          "NovaForceValue" : 2,
           "m_Condition" : 
           {
             "m_ActiveType" : "NSEAT_TURN_START",
@@ -321,19 +879,47 @@
           "SEGroupID" : 3100201,
           "SEOrderList" : 1,
           "SubShowSELog" : true,
-          "SkillConditionId" : 1138,
-          "SeCoolTurn" : 3,
-          "m_BuffTargetType" : "NSETT_AUTO_ENEMY_ONE",
-          "AutoTargetId" : 6,
-          "m_BuffStrID" : "BI_ADD_DAMAGE_1",
+          "SkillConditionId" : 1152,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
           "m_BuffLifeTurn" : 0,
-          "AddDamageTargetType" : "NSETT_SELF",
-          "AddDamageStatType" : "NST_ATK",
-          "AddDamageRate" : 500,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1500
+            }
+          ],
           "m_Condition" : 
           {
             "m_ActiveType" : "NSEAT_SKILL_START",
-            "m_fActiveRate" : 10000
+            "m_fActiveRate" : 10000,
+            "m_fHPRateOver" : 5000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 3100202,
+          "m_SEStrID" : "POTEN_PASSIVE_3100202",
+          "SEGroupID" : 3100202,
+          "SEOrderList" : 1,
+          "SubShowSELog" : true,
+          "SkillConditionId" : 5500,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_REDUCE",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1500
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_DAMAGE_START",
+            "m_fActiveRate" : 10000,
+            "m_fHPRateLess" : 4999
           }
         },
         {
@@ -426,24 +1012,6 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
-          "m_SEID" : 3200301,
-          "m_SEStrID" : "POTEN_PASSIVE_3200301",
-          "SEGroupID" : 3200301,
-          "SEOrderList" : 1,
-          "SubShowSELog" : true,
-          "SkillConditionId" : 8003,
-          "SeCoolTurn" : 0,
-          "m_BuffTargetType" : "NSETT_SELF",
-          "m_BuffStrID" : "BI_POTEN_PASSIVE_32003",
-          "m_BuffLifeTurn" : 1,
-          "m_Condition" : 
-          {
-            "m_ActiveType" : "NSEAT_SKILL_END",
-            "m_fActiveRate" : 10000
-          }
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
           "m_SEID" : 3200401,
           "m_SEStrID" : "POTEN_PASSIVE_3200401",
           "SEGroupID" : 3200401,
@@ -457,6 +1025,26 @@
           "m_Condition" : 
           {
             "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 3200501,
+          "m_SEStrID" : "POTEN_PASSIVE_3200501",
+          "SEGroupID" : 3200501,
+          "SEOrderList" : 1,
+          "SubShowSELog" : true,
+          "CheckCriticalCount" : true,
+          "CheckCriticalCountMax" : 5,
+          "SkillConditionId" : 2140,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_POTEN_PASSIVE_32005",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
             "m_fActiveRate" : 10000
           }
         },
@@ -487,7 +1075,7 @@
           "SeCoolTurn" : 0,
           "m_BuffTargetType" : "NSETT_SELF",
           "m_BuffStrID" : "BI_CRITICAL_CHANCE_INCREASE",
-          "m_BuffLifeTurn" : 1,
+          "m_BuffLifeTurn" : 2,
           "m_Condition" : 
           {
             "m_ActiveType" : "NSEAT_BATTLE_START",
@@ -503,20 +1091,56 @@
           "SubShowSELog" : true,
           "SeCoolTurn" : 0,
           "m_BuffTargetType" : "NSETT_SELF",
-          "m_BuffStrID" : "BI_STAT_NST_NV_RATE_ATK_INFINITE",
-          "m_BuffLifeTurn" : 1,
+          "m_BuffStrID" : "BI_BADGE",
+          "m_BuffLifeTurn" : 3,
           "m_bNoReuse" : true,
-          "Stats" : 
-          [
-            {
-              "NKM_STAT_TYPE_RATE" : 1000
-            }
-          ],
           "m_Condition" : 
           {
             "m_ActiveType" : "NSEAT_DAMAGE_END",
             "m_fActiveRate" : 10000,
-            "m_fHPRateLess" : 2500
+            "m_fHPRateLess" : 5000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 3300401,
+          "m_SEStrID" : "POTEN_PASSIVE_3300401",
+          "SEGroupID" : 3300401,
+          "SEOrderList" : 1,
+          "SubShowSELog" : true,
+          "SkillConditionId" : 2150,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_BADGE",
+          "m_BuffLifeTurn" : 2,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 3300402,
+          "m_SEStrID" : "POTEN_PASSIVE_3300402",
+          "SEGroupID" : 3300402,
+          "SEOrderList" : 1,
+          "SubShowSELog" : true,
+          "SkillConditionId" : 31058,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1500
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
           }
         },
         {
@@ -573,6 +1197,76 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 3400401,
+          "m_SEStrID" : "POTEN_PASSIVE_3400401",
+          "SEGroupID" : 3400401,
+          "SEOrderList" : 1,
+          "SubShowSELog" : true,
+          "SkillConditionId" : 1138,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_AUTO_ENEMY",
+          "AutoTargetId" : 28,
+          "m_BuffStrID" : "BI_ADD_DAMAGE_1",
+          "m_BuffLifeTurn" : 0,
+          "AddDamageTargetType" : "NSETT_SELF",
+          "AddDamageStatType" : "NST_ATK",
+          "AddDamageRate" : 7500,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 3400501,
+          "m_SEStrID" : "POTEN_PASSIVE_3400501",
+          "SEGroupID" : 3400501,
+          "SEOrderList" : 1,
+          "SubShowSELog" : true,
+          "SkillConditionId" : 1155,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 3400502,
+          "m_SEStrID" : "POTEN_PASSIVE_3400502",
+          "SEGroupID" : 3400502,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SkillConditionId" : 1156,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1500
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "m_SEID" : 3500101,
           "m_SEStrID" : "POTEN_PASSIVE_3500101",
           "SEGroupID" : 3500101,
@@ -620,6 +1314,1022 @@
           "m_Condition" : 
           {
             "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4000101,
+          "m_SEStrID" : "POTEN_PASSIVE_4000101",
+          "SEGroupID" : 4000101,
+          "SEOrderList" : 1,
+          "SubShowSELog" : true,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_POTEN_PASSIVE_400011",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4000102,
+          "m_SEStrID" : "POTEN_PASSIVE_4000102",
+          "SEGroupID" : 4000102,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SkillConditionId" : 8003,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_DELETE_SPECIFIC_BUFF",
+          "m_BuffLifeTurn" : 0,
+          "DeleteSpecificBuffStrId" : "BI_POTEN_PASSIVE_400011",
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4010101,
+          "m_SEStrID" : "POTEN_PASSIVE_4010101",
+          "SEGroupID" : 4010101,
+          "SEOrderList" : 1,
+          "SubShowSELog" : true,
+          "SkillConditionId" : 5000,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_HEAL",
+          "m_BuffLifeTurn" : 0,
+          "HealTargetType" : "NSETT_SELF",
+          "HealStatType" : "NST_HP",
+          "HealRate" : 800,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_DAMAGE_END",
+            "m_fActiveRate" : 2500
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4020101,
+          "m_SEStrID" : "POTEN_PASSIVE_4020101",
+          "SEGroupID" : 4020101,
+          "SEOrderList" : 1,
+          "SubShowSELog" : true,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_POTEN_PASSIVE_402011",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_DAMAGE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4020102,
+          "m_SEStrID" : "POTEN_PASSIVE_4020102",
+          "SEGroupID" : 4020102,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SkillConditionId" : 2107,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_DELETE_SPECIFIC_BUFF",
+          "m_BuffLifeTurn" : 0,
+          "DeleteSpecificBuffStrId" : "BI_POTEN_PASSIVE_402011",
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4030101,
+          "m_SEStrID" : "POTEN_PASSIVE_4030101",
+          "SEGroupID" : 4030101,
+          "SEOrderList" : 1,
+          "SubShowSELog" : true,
+          "SkillConditionId" : 8001,
+          "SeCoolTurn" : 1,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_SPEED_GAUGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "SpeedGaugeRate" : 1000,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 2500
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4040101,
+          "m_SEStrID" : "POTEN_PASSIVE_4040101",
+          "SEGroupID" : 4040101,
+          "SEOrderList" : 1,
+          "SubShowSELog" : true,
+          "SkillConditionId" : 2135,
+          "SeCoolTurn" : 1,
+          "m_BuffTargetType" : "NSETT_AUTO_ALLY_ONE",
+          "AutoTargetId" : 5,
+          "m_BuffStrID" : "BI_ENFORCE",
+          "m_BuffLifeTurn" : 0,
+          "EnforceSkillIndex" : "NSI_SKILL_1_ATTACK",
+          "EnforceAutoTargetId" : 4,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 2500
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4050101,
+          "m_SEStrID" : "POTEN_PASSIVE_4050101",
+          "SEGroupID" : 4050101,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SkillConditionId" : 52044,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_DELETE_SPECIFIC_BUFF",
+          "m_BuffLifeTurn" : 0,
+          "DeleteSpecificBuffStrId" : "BI_POTEN_PASSIVE_405011",
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4050102,
+          "m_SEStrID" : "POTEN_PASSIVE_4050102",
+          "SEGroupID" : 4050102,
+          "SEOrderList" : 1,
+          "SubShowSELog" : true,
+          "SkillConditionId" : 2020,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_POTEN_PASSIVE_405011",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4060101,
+          "m_SEStrID" : "POTEN_PASSIVE_4060101",
+          "SEGroupID" : 4060101,
+          "SEOrderList" : 1,
+          "SubShowSELog" : true,
+          "SkillConditionId" : 2000,
+          "m_fBuffActiveRate" : 5000,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_AUTO_ENEMY",
+          "AutoTargetId" : 21,
+          "m_BuffStrID" : "BI_BLEEDING",
+          "m_BuffLifeTurn" : 2,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END"
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4070101,
+          "m_SEStrID" : "POTEN_PASSIVE_4070101",
+          "SEGroupID" : 4070101,
+          "SEOrderList" : 1,
+          "SubShowSELog" : true,
+          "SkillConditionId" : 35529,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_AUTO_ENEMY_ONE",
+          "AutoTargetId" : 17,
+          "m_BuffStrID" : "BI_POTEN_PASSIVE_407011",
+          "m_BuffLifeTurn" : 0,
+          "AddDamageTargetType" : "NSETT_SELF",
+          "AddDamageStatType" : "NST_HP",
+          "AddDamageRate" : 800,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_DAMAGE_START",
+            "m_fActiveRate" : 5000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4100401,
+          "m_SEStrID" : "POTEN_PASSIVE_4100401",
+          "SEGroupID" : 4100401,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_NV_RATE_ATK_INFINITE",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_VALUE" : 200
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_BATTLE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4100402,
+          "m_SEStrID" : "POTEN_PASSIVE_4100402",
+          "SEGroupID" : 4100402,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_NV_RATE_HP_INFINITE",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_VALUE" : 200
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_BATTLE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4100403,
+          "m_SEStrID" : "POTEN_PASSIVE_4100403",
+          "SEGroupID" : 4100403,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_NV_RATE_DEF_INFINITE",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_VALUE" : 200
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_BATTLE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4100404,
+          "m_SEStrID" : "POTEN_PASSIVE_4100404",
+          "SEGroupID" : 4100404,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_NV_RATE_TURN_SPEED_INFINITE",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_VALUE" : 200
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_BATTLE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4100405,
+          "m_SEStrID" : "POTEN_PASSIVE_4100405",
+          "SEGroupID" : 4100405,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_CRITICAL_INFINITE",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_VALUE" : 200
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_BATTLE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4100406,
+          "m_SEStrID" : "POTEN_PASSIVE_4100406",
+          "SEGroupID" : 4100406,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_CRITICAL_DAMAGE_INFINITE",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_VALUE" : 200
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_BATTLE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4100407,
+          "m_SEStrID" : "POTEN_PASSIVE_4100407",
+          "SEGroupID" : 4100407,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_EFFECT_HIT_INFINITE",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_VALUE" : 200
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_BATTLE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4100408,
+          "m_SEStrID" : "POTEN_PASSIVE_4100408",
+          "SEGroupID" : 4100408,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_EFFECT_EVADE_INFINITE",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_VALUE" : 200
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_BATTLE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4200101,
+          "m_SEStrID" : "POTEN_PASSIVE_4200101",
+          "SEGroupID" : 4200101,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_NV_RATE_ATK_INFINITE",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 500
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_BATTLE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4200201,
+          "m_SEStrID" : "POTEN_PASSIVE_4200201",
+          "SEGroupID" : 4200201,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_NV_RATE_ATK_INFINITE",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_BATTLE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4200301,
+          "m_SEStrID" : "POTEN_PASSIVE_4200301",
+          "SEGroupID" : 4200301,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_NV_RATE_ATK_INFINITE",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1500
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_BATTLE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4201101,
+          "m_SEStrID" : "POTEN_PASSIVE_4201101",
+          "SEGroupID" : 4201101,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_NV_RATE_HP_INFINITE",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 500
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_BATTLE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4201201,
+          "m_SEStrID" : "POTEN_PASSIVE_4201201",
+          "SEGroupID" : 4201201,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_NV_RATE_HP_INFINITE",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_BATTLE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4201301,
+          "m_SEStrID" : "POTEN_PASSIVE_4201301",
+          "SEGroupID" : 4201301,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_NV_RATE_HP_INFINITE",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1500
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_BATTLE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4202101,
+          "m_SEStrID" : "POTEN_PASSIVE_4202101",
+          "SEGroupID" : 4202101,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_NV_RATE_DEF_INFINITE",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 500
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_BATTLE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4202201,
+          "m_SEStrID" : "POTEN_PASSIVE_4202201",
+          "SEGroupID" : 4202201,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_NV_RATE_DEF_INFINITE",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_BATTLE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4202301,
+          "m_SEStrID" : "POTEN_PASSIVE_4202301",
+          "SEGroupID" : 4202301,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_NV_RATE_DEF_INFINITE",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1500
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_BATTLE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4203101,
+          "m_SEStrID" : "POTEN_PASSIVE_4203101",
+          "SEGroupID" : 4203101,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_NV_RATE_TURN_SPEED_INFINITE",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_VALUE" : 5
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_BATTLE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4203201,
+          "m_SEStrID" : "POTEN_PASSIVE_4203201",
+          "SEGroupID" : 4203201,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_NV_RATE_TURN_SPEED_INFINITE",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_VALUE" : 10
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_BATTLE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4203301,
+          "m_SEStrID" : "POTEN_PASSIVE_4203301",
+          "SEGroupID" : 4203301,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_NV_RATE_TURN_SPEED_INFINITE",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_VALUE" : 15
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_BATTLE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4204101,
+          "m_SEStrID" : "POTEN_PASSIVE_4204101",
+          "SEGroupID" : 4204101,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_CRITICAL_INFINITE",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 500
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_BATTLE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4204201,
+          "m_SEStrID" : "POTEN_PASSIVE_4204201",
+          "SEGroupID" : 4204201,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_CRITICAL_INFINITE",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_BATTLE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4204301,
+          "m_SEStrID" : "POTEN_PASSIVE_4204301",
+          "SEGroupID" : 4204301,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_CRITICAL_INFINITE",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1500
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_BATTLE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4205101,
+          "m_SEStrID" : "POTEN_PASSIVE_4205101",
+          "SEGroupID" : 4205101,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_CRITICAL_DAMAGE_INFINITE",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_BATTLE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4205201,
+          "m_SEStrID" : "POTEN_PASSIVE_4205201",
+          "SEGroupID" : 4205201,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_CRITICAL_DAMAGE_INFINITE",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 2000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_BATTLE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4205301,
+          "m_SEStrID" : "POTEN_PASSIVE_4205301",
+          "SEGroupID" : 4205301,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_CRITICAL_DAMAGE_INFINITE",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 3000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_BATTLE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4206101,
+          "m_SEStrID" : "POTEN_PASSIVE_4206101",
+          "SEGroupID" : 4206101,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_EFFECT_HIT_INFINITE",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_BATTLE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4206201,
+          "m_SEStrID" : "POTEN_PASSIVE_4206201",
+          "SEGroupID" : 4206201,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_EFFECT_HIT_INFINITE",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 2000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_BATTLE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4206301,
+          "m_SEStrID" : "POTEN_PASSIVE_4206301",
+          "SEGroupID" : 4206301,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_EFFECT_HIT_INFINITE",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 3000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_BATTLE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4207101,
+          "m_SEStrID" : "POTEN_PASSIVE_4207101",
+          "SEGroupID" : 4207101,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_EFFECT_EVADE_INFINITE",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_BATTLE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4207201,
+          "m_SEStrID" : "POTEN_PASSIVE_4207201",
+          "SEGroupID" : 4207201,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_EFFECT_EVADE_INFINITE",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 2000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_BATTLE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4207301,
+          "m_SEStrID" : "POTEN_PASSIVE_4207301",
+          "SEGroupID" : 4207301,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_EFFECT_EVADE_INFINITE",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 3000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_BATTLE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4208101,
+          "m_SEStrID" : "POTEN_PASSIVE_4208101",
+          "SEGroupID" : 4208101,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_SUPER_ARMOR_INFINITE",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_VALUE" : 1
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_BATTLE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4208201,
+          "m_SEStrID" : "POTEN_PASSIVE_4208201",
+          "SEGroupID" : 4208201,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_SUPER_ARMOR_INFINITE",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_VALUE" : 2
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_BATTLE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 4208301,
+          "m_SEStrID" : "POTEN_PASSIVE_4208301",
+          "SEGroupID" : 4208301,
+          "SEOrderList" : 1,
+          "SubShowSELog" : false,
+          "SeCoolTurn" : 0,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_SUPER_ARMOR_INFINITE",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_VALUE" : 3
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_BATTLE_START",
             "m_fActiveRate" : 10000
           }
         }

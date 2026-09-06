@@ -1,0 +1,39 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_STARPIERCER_OMEGA_REST_BAD",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_REST_BAD",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_REST",
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 논리 모순을 연산하느라 쉬지 못했다...",
+      "UnitTalk_ENG": "<color=#F7BE45>[CHARACTER_NAME]</color> couldn't rest at all, stuck processing a logical paradox...",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は、論理の矛盾を計算し続けたため、休めなかった…",
+      "UnitTalk_CHN": "<color=#F7BE45>[CHARACTER_NAME]</color>因为运算逻辑矛盾而没有好好休息…",
+      "UnitTalk_TWN": "<color=#F7BE45>[CHARACTER_NAME]</color>因為運算邏輯矛盾而沒有好好休息…",
+      "UnitTalk_FRA": "<color=#F7BE45>[CHARACTER_NAME]</color> n'a pas pu se reposer, bloqué(e) à traiter un paradoxe logique…",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color> konnte sich nicht ausruhen, da er ununterbrochen einen logischen Widerspruch verarbeitete ...",
+      "UnitTalk_ESP": "<color=#F7BE45>[CHARACTER_NAME]</color> no pudo descansar, atrapado/a procesando una paradoja lógica...",
+      "UnitTalk_PRT": "<color=#F7BE45>[CHARACTER_NAME]</color> não conseguiu descansar, presa no processamento de um paradoxo lógico...",
+      "UnitTalk_THA": "<color=#F7BE45>[CHARACTER_NAME]</color> ไม่ได้พักเลย เพราะมัวแต่ประมวลผลความขัดแย้งเชิงตรรกะ...",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> tidak bisa beristirahat karena terus menghitung paradoks logis…",
+      "UnitTalk_VIE": "<color=#F7BE45>[CHARACTER_NAME]</color> không thể nghỉ ngơi vì phải xử lý mâu thuẫn logic…",
+      "UnitTalk_HIN": "<color=#F7BE45>[CHARACTER_NAME]</color> तार्किक विरोधाभास की गणना करने के कारण आराम नहीं कर सका...",
+      "TalkTime": 0.03
+    }
+  ]
+}

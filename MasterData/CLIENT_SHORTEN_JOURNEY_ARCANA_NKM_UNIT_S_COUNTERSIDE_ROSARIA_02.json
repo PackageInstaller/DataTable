@@ -1,0 +1,54 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_COUNTERSIDE_ROSARIA_02",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_BAND_GUITAR_01",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_STREET.png",
+      "UnitStrId": "NKM_UNIT_NPC_COUNTERSIDE_ROSARIA",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "로자리아가 퍼트린 이야기로 인해 한바탕 소동이 일어났다…",
+      "UnitTalk_ENG": "The rumors Rosaria spread led to a major commotion...",
+      "UnitTalk_JPN": "ロザリアが言いふらした話のせいで、ひと騒動起きてしまった…",
+      "UnitTalk_CHN": "由于罗莎莉亚散布的传言，引发了一场骚动…",
+      "UnitTalk_TWN": "由於羅莎莉亞散佈的傳言，引發了一場騷動…",
+      "UnitTalk_FRA": "L'histoire que Rosaria a répandue a causé tout un remue-ménage…",
+      "UnitTalk_DEU": "„Rosarias Geschichte sorgte für Aufruhr…“",
+      "UnitTalk_ESP": "La historia que Rosaria difundió causó un gran revuelo…",
+      "UnitTalk_PRT": "A história espalhada por Rosaria causou um grande alvoroço…",
+      "UnitTalk_THA": "เรื่องราวที่โรซาเรียแพร่กระจายออกไปทำให้เกิดความวุ่นวายขึ้น…",
+      "UnitTalk_IND": "Kisah yang disebarkan Rosaria menyebabkan keributan besar…",
+      "UnitTalk_VIE": "Một cuộc náo loạn đã nổ ra vì câu chuyện Rosaria lan truyền…",
+      "UnitTalk_HIN": "रोजारिया द्वारा फैलाई गई कहानी से काफी हंगामा हुआ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    }
+  ]
+}

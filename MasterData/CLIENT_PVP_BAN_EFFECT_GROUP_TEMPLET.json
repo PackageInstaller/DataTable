@@ -1,0 +1,31 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: PVP_BAN_EFFECT_GROUP_TEMPLET",
+    "_Version": 0,
+    "Data": [
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpBanEffectGroupId" : 1,
+          "BanLevel" : 1,
+          "BattleEffectIdList" : [21101, 21111, 21121, 21131, 21141, 21151]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpBanEffectGroupId" : 1,
+          "BanLevel" : 2,
+          "BattleEffectIdList" : [21102, 21112, 21122, 21132, 21142, 21152]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpBanEffectGroupId" : 1,
+          "BanLevel" : 3,
+          "BattleEffectIdList" : [21103, 21113, 21123, 21133, 21143, 21153]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpBanEffectGroupId" : 1,
+          "BanLevel" : 4,
+          "BattleEffectIdList" : [21104, 21114, 21124, 21134, 21144, 21154]
+        }
+    ]
+}

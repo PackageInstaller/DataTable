@@ -1,0 +1,39 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_MAID_BELL_06",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_BELL_06",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_BELL_06",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "벨이 수상하게 행동하던 이유를 알게 되었다.",
+      "UnitTalk_ENG": "I learned the reason behind Bell's suspicious behavior.",
+      "UnitTalk_JPN": "ベルが不審な行動を取っていた理由が分かった。",
+      "UnitTalk_CHN": "得知了贝尔行为可疑的原因。",
+      "UnitTalk_TWN": "得知了貝爾行為可疑的原因。",
+      "UnitTalk_FRA": "J'ai découvert la raison du comportement suspect de Bell.",
+      "UnitTalk_DEU": "Ich habe den Grund für Bells verdächtiges Verhalten erfahren.",
+      "UnitTalk_ESP": "Descubrí la razón detrás del comportamiento sospechoso de Bell.",
+      "UnitTalk_PRT": "Descobri o motivo do comportamento suspeito da Bell.",
+      "UnitTalk_THA": "ฉันได้รู้เหตุผลเบื้องหลังพฤติกรรมที่น่าสงสัยของเบลล์แล้ว",
+      "UnitTalk_IND": "Aku mengetahui alasan di balik perilaku mencurigakan Bell.",
+      "UnitTalk_VIE": "Tôi đã biết lý do tại sao Bell lại hành động đáng ngờ.",
+      "UnitTalk_HIN": "बेल के संदिग्ध व्यवहार का कारण मुझे पता चला।",
+      "TalkTime": 0.03
+    }
+  ]
+}

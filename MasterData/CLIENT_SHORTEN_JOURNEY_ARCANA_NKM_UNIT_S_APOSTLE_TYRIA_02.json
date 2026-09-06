@@ -1,0 +1,156 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_APOSTLE_TYRIA_02",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_WRENCH_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_BACK_STREET.png"
+    },
+    {
+      "Uid": 2,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_APOSTLE_TYRIA_NONE"
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "진상들을 연달아 상대한 후, 지친 티리아가 카페 마감을 앞당길 것을 제안했다.",
+      "UnitTalk_ENG": "After dealing with one difficult customer after another, an exhausted Tyria suggested closing the cafe early.",
+      "UnitTalk_JPN": "迷惑客を立て続けに相手したせいか、\n疲れ果てたティリアがカフェを早く閉めないかと提案してきた。",
+      "UnitTalk_CHN": "连续应付了奥客之后，疲惫的缇莉雅提议提早打烊咖啡厅。",
+      "UnitTalk_TWN": "連續應付了奧客之後，疲憊的緹莉雅提議提早打烊咖啡廳。",
+      "UnitTalk_FRA": "Après avoir affronté les véritables ennemis, la fatiguée Théria a proposé de fermer le café plus tôt.",
+      "UnitTalk_DEU": "Nach den Wahrheiten schlug Tilia vor, früher zu schließen.",
+      "UnitTalk_ESP": "Tras atender a clientes difíciles, Tiria, cansada, propuso cerrar antes.",
+      "UnitTalk_PRT": "Após lidar com as verdades, a cansada Tiria sugeriu antecipar o fechamento do café.",
+      "UnitTalk_THA": "หลังจากจัดการกับพวกเรื่องมากติดต่อกัน เทเรียที่เหนื่อยล้าจึงเสนอให้ปิดคาเฟ่เร็วขึ้น",
+      "UnitTalk_IND": "Setelah menghadapi pelanggan bermasalah satu demi satu, Tiria yang lelah mengusulkan untuk menutup kafe lebih awal.",
+      "UnitTalk_VIE": "Sau khi liên tiếp đối phó với những khách hàng khó tính, Tiria mệt mỏi đề xuất đóng cửa quán cà phê sớm hơn.",
+      "UnitTalk_HIN": "सच्चाई का सामना करने के बाद, टिरिया ने कैफे जाने का प्रस्ताव दिया।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "응. 오늘은 일찍 돌아가자.",
+          "JumpAnchorStringId_ENG": "Yeah. Let's head back early today.",
+          "JumpAnchorStringId_JPN": "うん、今日は早く帰ろう。",
+          "JumpAnchorStringId_CHN": "嗯，今天就早点回去吧。",
+          "JumpAnchorStringId_TWN": "嗯，今天就早點回去吧。",
+          "JumpAnchorStringId_FRA": "Oui. Rentrons tôt aujourd'hui.",
+          "JumpAnchorStringId_DEU": "Ja. Gehen wir früh zurück.",
+          "JumpAnchorStringId_ESP": "Sí. Volvamos pronto.",
+          "JumpAnchorStringId_PRT": "Sim. Vamos voltar cedo hoje.",
+          "JumpAnchorStringId_THA": "ใช่ วันนี้กลับกันเร็วเถอะ",
+          "JumpAnchorStringId_IND": "Ya. Ayo pulang cepat hari ini.",
+          "JumpAnchorStringId_VIE": "Ừ. Hôm nay về sớm thôi.",
+          "JumpAnchorStringId_HIN": "ठीक है। आज जल्दी घर चलते हैं।",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "그래도 마감 시간을 준수해야지.",
+          "JumpAnchorStringId_ENG": "Still, we should stick to closing time.",
+          "JumpAnchorStringId_JPN": "それでも閉店時間は守らないと。",
+          "JumpAnchorStringId_CHN": "还是要遵守打烊时间才行。",
+          "JumpAnchorStringId_TWN": "還是要遵守打烊時間才行。",
+          "JumpAnchorStringId_FRA": "Je dois respecter l'horaire du café.",
+          "JumpAnchorStringId_DEU": "Ich muss die Cafézeit einhalten.",
+          "JumpAnchorStringId_ESP": "Aún así, debo respetar la hora del café.",
+          "JumpAnchorStringId_PRT": "Também preciso manter o horário do café.",
+          "JumpAnchorStringId_THA": "ก็ต้องเคารพเวลาคาเฟ่นะ",
+          "JumpAnchorStringId_IND": "Tetap saja, kita harus mematuhi batas waktu.",
+          "JumpAnchorStringId_VIE": "Nhưng cũng phải giữ giờ cà phê.",
+          "JumpAnchorStringId_HIN": "फिर भी कैफे का समय रखना होगा।",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 7,
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_APOSTLE_TYRIA_NONE"
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_WRENCH_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "피로 회복에 좋은 블렌드를 내려주겠다는 티리아를 따라 숙소로 돌아갔다.",
+      "UnitTalk_ENG": "Tyria offered to brew a blend to help relieve fatigue, so I followed her back to the quarters.",
+      "UnitTalk_JPN": "疲労回復に効くブレンドを淹れてくれるというティリアに連れられ、宿へと戻った。",
+      "UnitTalk_CHN": "跟着说要泡一杯能有助于恢复疲劳的调和茶的缇莉雅回到了住处。",
+      "UnitTalk_TWN": "跟著說要泡一杯能有助於恢復疲勞的調和茶的緹莉雅回到了住處。",
+      "UnitTalk_FRA": "Suivant Théria qui promettait un mélange bénéfique pour la récupération, ils rentrèrent à l'auberge.",
+      "UnitTalk_DEU": "Tilia folgte mir eilig, um mir ein Getränk zu bringen, das gut für die Genesung ist.",
+      "UnitTalk_ESP": "Seguí a Tilia, quien prepararía un buen brebaje para la recuperación de fatiga, de vuelta al alojamiento.",
+      "UnitTalk_PRT": "Seguindo Tiria, que ofereceria um blend para recuperação de fadiga, voltei para a hospedagem.",
+      "UnitTalk_THA": "ตามเทเรียไปที่พักเพื่อรับเครื่องดื่มผสมที่ช่วยฟื้นฟูพลังงาน",
+      "UnitTalk_IND": "Mengikuti Tilia yang berjanji membuat ramuan pemulih lelah, mereka kembali ke penginapan.",
+      "UnitTalk_VIE": "Theo lời hứa của Tiria, người hứa sẽ pha một loại đồ uống hỗn hợp giúp phục hồi sức lực, tôi quay về nơi nghỉ ngơi.",
+      "UnitTalk_HIN": "पिरो की रिकवरी के लिए अच्छे ब्लेंड लाने के लिए टिरिया के साथ जल्दी चला गया।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_APOSTLE_TYRIA_NONE",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_WRENCH_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "카페를 마감하기 전까지, 계속해서 진상들에게 시달려야 했다.",
+      "UnitTalk_ENG": "Until closing time, we had to keep dealing with difficult customers one after another.",
+      "UnitTalk_JPN": "カフェを閉めるまで、迷惑客の相手をすることになった。",
+      "UnitTalk_CHN": "直到咖啡厅打烊前，都必须持续被奥客们折磨。",
+      "UnitTalk_TWN": "直到咖啡廳打烊前，都必須持續被奧客們折磨。",
+      "UnitTalk_FRA": "Avant la fermeture, j'ai dû subir les problèmes avec les clients difficiles.",
+      "UnitTalk_DEU": "Bis zur Schließung des Cafés musste ich weiterhin mit schwierigen Kunden kämpfen.",
+      "UnitTalk_ESP": "Hasta cerrar el café, sufrí constantes molestias.",
+      "UnitTalk_PRT": "Até fechar o café, sofri com clientes problemáticos.",
+      "UnitTalk_THA": "จนกว่าจะปิดร้านกาแฟ ต้องทนกับลูกค้าที่มีปัญหาอยู่เรื่อย ๆ",
+      "UnitTalk_IND": "Sebelum menutup kafe, terus-menerus direpotkan pelanggan bermasalah.",
+      "UnitTalk_VIE": "Cho đến khi đóng cửa quán cà phê, tôi phải chịu đựng những khách hàng khó tính.",
+      "UnitTalk_HIN": "कैफे जाने से पहले तक, मुझे लगातार सच्चाई बतानी पड़ी।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_WRENCH_01",
+      "JumpAnchorInfo": "JUMPANCHOR_FINISH",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_WRENCH_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    }
+  ]
+}

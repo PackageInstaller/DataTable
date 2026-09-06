@@ -5,19 +5,60 @@
     "Data": [
         {
           "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 11003,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_11003_01",
+          "PotenLevelSe" : ["POTEN_PASSIVE_1100301", "POTEN_PASSIVE_1100302", "POTEN_PASSIVE_1100303", "POTEN_PASSIVE_1100304", "POTEN_PASSIVE_1100305", "POTEN_PASSIVE_1100306", "POTEN_PASSIVE_1100307", "POTEN_PASSIVE_1100308"],
+          "PotenBattlePowerCheck" : true,
+          "PotenLevelUpReqPP" : 200
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 11011,
           "PotenLevelValue" : 1,
           "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_11011_01",
-          "PotenLevelSe" : ["POTEN_PASSIVE_1101101"],
+          "PotenLevelSe" : ["POTEN_PASSIVE_1101101", "POTEN_PASSIVE_1101102", "POTEN_PASSIVE_1101103"],
           "PotenBattlePowerCheck" : true,
           "PotenLevelUpReqPP" : 200
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 11026,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_11026_01",
+          "PotenLevelSe" : ["POTEN_PASSIVE_1102601", "POTEN_PASSIVE_1102602"],
+          "PotenBattlePowerCheck" : true,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_SUPER_ARMOR",
+              "PotenLevelStatValue" : 1
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 11029,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_11029_01",
+          "PotenLevelSe" : ["POTEN_PASSIVE_1102901"],
+          "PotenBattlePowerCheck" : true,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_SUPER_ARMOR",
+              "PotenLevelStatValue" : 1
+            }
+          ]
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 11043,
           "PotenLevelValue" : 1,
           "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_11043_01",
-          "PotenLevelSe" : ["POTEN_PASSIVE_1104301", "POTEN_PASSIVE_1104302", "POTEN_PASSIVE_1104303"],
+          "PotenLevelSe" : ["POTEN_PASSIVE_1104301", "POTEN_PASSIVE_1104302", "POTEN_PASSIVE_1104303", "POTEN_PASSIVE_1104304", "POTEN_PASSIVE_1104305", "POTEN_PASSIVE_1104306", "POTEN_PASSIVE_1104307", "POTEN_PASSIVE_1104308", "POTEN_PASSIVE_1104309", "POTEN_PASSIVE_1104310"],
           "PotenBattlePowerCheck" : true,
           "PotenLevelUpReqPP" : 200
         },
@@ -32,10 +73,44 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 11046,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_11046_01",
+          "PotenLevelSe" : ["POTEN_PASSIVE_1104601", "POTEN_PASSIVE_1104602"],
+          "PotenBattlePowerCheck" : true,
+          "PotenLevelUpReqPP" : 200
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 11051,
           "PotenLevelValue" : 1,
           "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_11051_01",
           "PotenLevelSe" : ["POTEN_PASSIVE_1105101"],
+          "PotenBattlePowerCheck" : true,
+          "PotenLevelUpReqPP" : 200
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 11055,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_11055_01",
+          "PotenLevelSe" : ["POTEN_PASSIVE_1105501", "POTEN_PASSIVE_1105502"],
+          "PotenBattlePowerCheck" : true,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_SUPER_ARMOR",
+              "PotenLevelStatValue" : 1
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 13002,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_13002_01",
+          "PotenLevelSe" : ["POTEN_PASSIVE_1300201"],
           "PotenBattlePowerCheck" : true,
           "PotenLevelUpReqPP" : 200
         },
@@ -343,14 +418,14 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 20005,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_RATE_CRITICAL@@1",
+          "PotenLevelDesc" : "SI_POTEN_DESC_RATE_CRITICAL@@1.5",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 100,
           "PotenLevelStat" : 
           [
             {
               "PotenLevelStatType" : "NST_RATE_CRITICAL",
-              "PotenLevelStatRate" : 100
+              "PotenLevelStatRate" : 150
             }
           ]
         },
@@ -358,24 +433,9 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 20005,
           "PotenLevelValue" : 2,
-          "PotenLevelDesc" : "SI_POTEN_DESC_RATE_CRITICAL@@2",
-          "PotenBattlePowerCheck" : false,
-          "PotenLevelUpReqPP" : 150,
-          "PotenLevelStat" : 
-          [
-            {
-              "PotenLevelStatType" : "NST_RATE_CRITICAL",
-              "PotenLevelStatRate" : 200
-            }
-          ]
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "PotenLevelGroupId" : 20005,
-          "PotenLevelValue" : 3,
           "PotenLevelDesc" : "SI_POTEN_DESC_RATE_CRITICAL@@3",
           "PotenBattlePowerCheck" : false,
-          "PotenLevelUpReqPP" : 200,
+          "PotenLevelUpReqPP" : 150,
           "PotenLevelStat" : 
           [
             {
@@ -387,15 +447,30 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 20005,
+          "PotenLevelValue" : 3,
+          "PotenLevelDesc" : "SI_POTEN_DESC_RATE_CRITICAL@@4.5",
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_RATE_CRITICAL",
+              "PotenLevelStatRate" : 450
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 20005,
           "PotenLevelValue" : 4,
-          "PotenLevelDesc" : "SI_POTEN_DESC_RATE_CRITICAL@@4",
+          "PotenLevelDesc" : "SI_POTEN_DESC_RATE_CRITICAL@@6",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 250,
           "PotenLevelStat" : 
           [
             {
               "PotenLevelStatType" : "NST_RATE_CRITICAL",
-              "PotenLevelStatRate" : 400
+              "PotenLevelStatRate" : 600
             }
           ]
         },
@@ -403,14 +478,14 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 20005,
           "PotenLevelValue" : 5,
-          "PotenLevelDesc" : "SI_POTEN_DESC_RATE_CRITICAL@@5",
+          "PotenLevelDesc" : "SI_POTEN_DESC_RATE_CRITICAL@@7.5",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 300,
           "PotenLevelStat" : 
           [
             {
               "PotenLevelStatType" : "NST_RATE_CRITICAL",
-              "PotenLevelStatRate" : 500
+              "PotenLevelStatRate" : 750
             }
           ]
         },
@@ -643,7 +718,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 21001,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_21001_01",
+          "PotenLevelDesc" : "SI_POTEN_STAT_DESC_RATE_ATK@@2",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 200,
           "PotenLevelStat" : 
@@ -658,7 +733,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 21002,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_21002_01",
+          "PotenLevelDesc" : "SI_POTEN_STAT_DESC_RATE_HP@@2",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 200,
           "PotenLevelStat" : 
@@ -673,7 +748,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 21003,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_21003_01",
+          "PotenLevelDesc" : "SI_POTEN_STAT_DESC_RATE_DEF@@2",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 200,
           "PotenLevelStat" : 
@@ -688,7 +763,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 21004,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_21004_01",
+          "PotenLevelDesc" : "SI_POTEN_STAT_DESC_TURN_SPEED@@2",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 200,
           "PotenLevelStat" : 
@@ -703,14 +778,14 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 21005,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_21005_01",
+          "PotenLevelDesc" : "SI_POTEN_STAT_DESC_RATE_CRITICAL@@3",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 200,
           "PotenLevelStat" : 
           [
             {
               "PotenLevelStatType" : "NST_RATE_CRITICAL",
-              "PotenLevelStatRate" : 200
+              "PotenLevelStatRate" : 300
             }
           ]
         },
@@ -718,7 +793,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 21006,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_21006_01",
+          "PotenLevelDesc" : "SI_POTEN_STAT_DESC_RATE_CRITICAL_DAMAGE@@4",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 200,
           "PotenLevelStat" : 
@@ -733,7 +808,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 21007,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_21007_01",
+          "PotenLevelDesc" : "SI_POTEN_STAT_DESC_RATE_EFFECT_HIT@@4",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 200,
           "PotenLevelStat" : 
@@ -748,7 +823,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 21008,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_21008_01",
+          "PotenLevelDesc" : "SI_POTEN_STAT_DESC_RATE_EFFECT_EVADE@@4",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 200,
           "PotenLevelStat" : 
@@ -763,7 +838,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 22001,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_22001_01",
+          "PotenLevelDesc" : "SI_POTEN_STAT_DESC_RATE_ATK@@3",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 300,
           "PotenLevelStat" : 
@@ -778,7 +853,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 22002,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_22002_01",
+          "PotenLevelDesc" : "SI_POTEN_STAT_DESC_RATE_HP@@3",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 300,
           "PotenLevelStat" : 
@@ -793,7 +868,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 22003,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_22003_01",
+          "PotenLevelDesc" : "SI_POTEN_STAT_DESC_RATE_DEF@@3",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 300,
           "PotenLevelStat" : 
@@ -808,7 +883,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 22004,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_22004_01",
+          "PotenLevelDesc" : "SI_POTEN_STAT_DESC_TURN_SPEED@@3",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 300,
           "PotenLevelStat" : 
@@ -823,14 +898,14 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 22005,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_22005_01",
+          "PotenLevelDesc" : "SI_POTEN_STAT_DESC_RATE_CRITICAL@@4.5",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 300,
           "PotenLevelStat" : 
           [
             {
               "PotenLevelStatType" : "NST_RATE_CRITICAL",
-              "PotenLevelStatRate" : 300
+              "PotenLevelStatRate" : 450
             }
           ]
         },
@@ -838,7 +913,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 22006,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_22006_01",
+          "PotenLevelDesc" : "SI_POTEN_STAT_DESC_RATE_CRITICAL_DAMAGE@@6",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 300,
           "PotenLevelStat" : 
@@ -853,7 +928,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 22007,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_22007_01",
+          "PotenLevelDesc" : "SI_POTEN_STAT_DESC_RATE_EFFECT_HIT@@6",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 300,
           "PotenLevelStat" : 
@@ -868,7 +943,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 22008,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_22008_01",
+          "PotenLevelDesc" : "SI_POTEN_STAT_DESC_RATE_EFFECT_EVADE@@6",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 300,
           "PotenLevelStat" : 
@@ -883,7 +958,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 22009,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_22009_01",
+          "PotenLevelDesc" : "SI_POTEN_STAT_DESC_RATE_CROSS_ATTACK@@1.5",
           "PotenBattlePowerCheck" : true,
           "PotenLevelUpReqPP" : 300,
           "PotenLevelStat" : 
@@ -898,7 +973,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 22010,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_22010_01",
+          "PotenLevelDesc" : "SI_POTEN_STAT_DESC_RATE_REVENGE_ATTACK@@1.5",
           "PotenBattlePowerCheck" : true,
           "PotenLevelUpReqPP" : 300,
           "PotenLevelStat" : 
@@ -1028,14 +1103,14 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 23007,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_25007_01",
+          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_23007",
           "PotenBattlePowerCheck" : true,
           "PotenLevelUpReqPP" : 200,
           "PotenLevelStat" : 
           [
             {
               "PotenLevelStatType" : "NST_SUPER_ARMOR",
-              "PotenLevelStatValue" : 1
+              "PotenLevelStatValue" : 2
             }
           ]
         },
@@ -1043,7 +1118,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 23008,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_25008_01",
+          "PotenLevelDesc" : "SI_POTEN_STAT_DESC_RATE_ATK@@8",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 200,
           "PotenLevelStat" : 
@@ -1058,7 +1133,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 23009,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_25009_01",
+          "PotenLevelDesc" : "SI_POTEN_STAT_DESC_RATE_HP@@8",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 200,
           "PotenLevelStat" : 
@@ -1073,7 +1148,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 23010,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_25010_01",
+          "PotenLevelDesc" : "SI_POTEN_STAT_DESC_RATE_DEF@@8",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 200,
           "PotenLevelStat" : 
@@ -1088,7 +1163,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 23011,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_25011_01",
+          "PotenLevelDesc" : "SI_POTEN_STAT_DESC_TURN_SPEED@@8",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 200,
           "PotenLevelStat" : 
@@ -1103,14 +1178,14 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 23012,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_25012_01",
+          "PotenLevelDesc" : "SI_POTEN_STAT_DESC_RATE_CRITICAL@@18",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 200,
           "PotenLevelStat" : 
           [
             {
               "PotenLevelStatType" : "NST_RATE_CRITICAL",
-              "PotenLevelStatRate" : 1200
+              "PotenLevelStatRate" : 1800
             }
           ]
         },
@@ -1118,14 +1193,14 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 23013,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_25013_01",
+          "PotenLevelDesc" : "SI_POTEN_STAT_DESC_RATE_CRITICAL_DAMAGE@@24",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 200,
           "PotenLevelStat" : 
           [
             {
               "PotenLevelStatType" : "NST_RATE_CRITICAL_DAMAGE",
-              "PotenLevelStatRate" : 1600
+              "PotenLevelStatRate" : 1800
             }
           ]
         },
@@ -1133,7 +1208,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 23014,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_25014_01",
+          "PotenLevelDesc" : "SI_POTEN_STAT_DESC_RATE_EFFECT_HIT@@16",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 200,
           "PotenLevelStat" : 
@@ -1148,7 +1223,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 23015,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_25015_01",
+          "PotenLevelDesc" : "SI_POTEN_STAT_DESC_RATE_EFFECT_EVADE@@16",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 200,
           "PotenLevelStat" : 
@@ -1163,7 +1238,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 23016,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_25016_01",
+          "PotenLevelDesc" : "SI_POTEN_DESC_RATE_ATK_AND_TURN_SPEED@@6@@2",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 200,
           "PotenLevelStat" : 
@@ -1183,7 +1258,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 23017,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_25017_01",
+          "PotenLevelDesc" : "SI_POTEN_DESC_RATE_HP_AND_TURN_SPEED@@6@@2",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 200,
           "PotenLevelStat" : 
@@ -1203,7 +1278,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 23018,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_25018_01",
+          "PotenLevelDesc" : "SI_POTEN_DESC_RATE_DEF_AND_TURN_SPEED@@6@@2",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 200,
           "PotenLevelStat" : 
@@ -1583,7 +1658,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 23037,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_25037_01",
+          "PotenLevelDesc" : "SI_POTEN_DESC_RATE_ATK_AND_RATE_CRITICAL@@6@@6",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 200,
           "PotenLevelStat" : 
@@ -1595,7 +1670,7 @@
 
             {
               "PotenLevelStatType" : "NST_RATE_CRITICAL",
-              "PotenLevelStatRate" : 300
+              "PotenLevelStatRate" : 600
             }
           ]
         },
@@ -1603,7 +1678,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 23038,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_25038_01",
+          "PotenLevelDesc" : "SI_POTEN_DESC_RATE_ATK_AND_RATE_CRITICAL_DAMAGE@@6@@8",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 200,
           "PotenLevelStat" : 
@@ -1615,7 +1690,7 @@
 
             {
               "PotenLevelStatType" : "NST_RATE_CRITICAL_DAMAGE",
-              "PotenLevelStatRate" : 400
+              "PotenLevelStatRate" : 600
             }
           ]
         },
@@ -1623,7 +1698,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 23039,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_25039_01",
+          "PotenLevelDesc" : "SI_POTEN_DESC_RATE_HP_AND_RATE_CRITICAL@@6@@6",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 200,
           "PotenLevelStat" : 
@@ -1635,7 +1710,7 @@
 
             {
               "PotenLevelStatType" : "NST_RATE_CRITICAL",
-              "PotenLevelStatRate" : 300
+              "PotenLevelStatRate" : 600
             }
           ]
         },
@@ -1643,7 +1718,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 23040,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_25040_01",
+          "PotenLevelDesc" : "SI_POTEN_DESC_RATE_HP_AND_RATE_CRITICAL_DAMAGE@@6@@8",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 200,
           "PotenLevelStat" : 
@@ -1655,7 +1730,7 @@
 
             {
               "PotenLevelStatType" : "NST_RATE_CRITICAL_DAMAGE",
-              "PotenLevelStatRate" : 400
+              "PotenLevelStatRate" : 600
             }
           ]
         },
@@ -1663,7 +1738,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 23041,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_25041_01",
+          "PotenLevelDesc" : "SI_POTEN_DESC_RATE_DEF_AND_RATE_CRITICAL@@6@@6",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 200,
           "PotenLevelStat" : 
@@ -1675,7 +1750,7 @@
 
             {
               "PotenLevelStatType" : "NST_RATE_CRITICAL",
-              "PotenLevelStatRate" : 300
+              "PotenLevelStatRate" : 600
             }
           ]
         },
@@ -1683,7 +1758,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 23042,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_25042_01",
+          "PotenLevelDesc" : "SI_POTEN_DESC_RATE_DEF_AND_RATE_CRITICAL_DAMAGE@@6@@8",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 200,
           "PotenLevelStat" : 
@@ -1695,7 +1770,7 @@
 
             {
               "PotenLevelStatType" : "NST_RATE_CRITICAL_DAMAGE",
-              "PotenLevelStatRate" : 400
+              "PotenLevelStatRate" : 600
             }
           ]
         },
@@ -1703,7 +1778,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 23043,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_25043_01",
+          "PotenLevelDesc" : "SI_POTEN_DESC_RATE_ATK_AND_RATE_EFFECT_HIT@@6@@4",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 200,
           "PotenLevelStat" : 
@@ -1723,7 +1798,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 23044,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_25044_01",
+          "PotenLevelDesc" : "SI_POTEN_DESC_RATE_ATK_AND_RATE_EFFECT_EVADE@@6@@4",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 200,
           "PotenLevelStat" : 
@@ -1743,7 +1818,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 23045,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_25045_01",
+          "PotenLevelDesc" : "SI_POTEN_DESC_RATE_HP_AND_RATE_EFFECT_HIT@@6@@4",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 200,
           "PotenLevelStat" : 
@@ -1763,7 +1838,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 23046,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_25046_01",
+          "PotenLevelDesc" : "SI_POTEN_DESC_RATE_HP_AND_RATE_EFFECT_EVADE@@6@@4",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 200,
           "PotenLevelStat" : 
@@ -1783,7 +1858,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 23047,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_25047_01",
+          "PotenLevelDesc" : "SI_POTEN_DESC_RATE_DEF_AND_RATE_EFFECT_HIT@@6@@4",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 200,
           "PotenLevelStat" : 
@@ -1803,18 +1878,38 @@
           "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 23048,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_25048_01",
+          "PotenLevelDesc" : "SI_POTEN_DESC_RATE_DEF_AND_RATE_EFFECT_EVADE@@8@@4",
           "PotenBattlePowerCheck" : false,
           "PotenLevelUpReqPP" : 200,
           "PotenLevelStat" : 
           [
             {
               "PotenLevelStatType" : "NST_NV_RATE_DEF",
-              "PotenLevelStatRate" : 600
+              "PotenLevelStatRate" : 800
             },
 
             {
               "PotenLevelStatType" : "NST_RATE_EFFECT_EVADE",
+              "PotenLevelStatRate" : 400
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 23050,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_RATE_RATE_CRITICAL_DAMAGE_AND_HP@@12@@4",
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_RATE_CRITICAL_DAMAGE",
+              "PotenLevelStatRate" : 1200
+            },
+
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_HP",
               "PotenLevelStatRate" : 400
             }
           ]
@@ -1898,13 +1993,14 @@
           "PotenLevelGroupId" : 30004,
           "PotenLevelValue" : 1,
           "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_30004_01",
+          "PotenLevelSe" : ["POTEN_PASSIVE_3000401"],
           "PotenBattlePowerCheck" : true,
           "PotenLevelUpReqPP" : 200,
           "PotenLevelStat" : 
           [
             {
               "PotenLevelStatType" : "NST_SUPER_ARMOR",
-              "PotenLevelStatValue" : 1
+              "PotenLevelStatValue" : 2
             }
           ]
         },
@@ -1916,6 +2012,21 @@
           "PotenLevelSe" : ["POTEN_PASSIVE_3000501"],
           "PotenBattlePowerCheck" : true,
           "PotenLevelUpReqPP" : 200
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 30006,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_30006_01",
+          "PotenBattlePowerCheck" : true,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_RATE_PREEMPTIVE_DEFEND",
+              "PotenLevelStatRate" : 2000
+            }
+          ]
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -1931,7 +2042,7 @@
           "PotenLevelGroupId" : 31002,
           "PotenLevelValue" : 1,
           "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_31002_01",
-          "PotenLevelSe" : ["POTEN_PASSIVE_3100201"],
+          "PotenLevelSe" : ["POTEN_PASSIVE_3100201", "POTEN_PASSIVE_3100202"],
           "PotenBattlePowerCheck" : true,
           "PotenLevelUpReqPP" : 200
         },
@@ -1964,19 +2075,19 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
-          "PotenLevelGroupId" : 32003,
+          "PotenLevelGroupId" : 32004,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_32003_01",
-          "PotenLevelSe" : ["POTEN_PASSIVE_3200301"],
+          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_32004_01",
+          "PotenLevelSe" : ["POTEN_PASSIVE_3200401"],
           "PotenBattlePowerCheck" : true,
           "PotenLevelUpReqPP" : 200
         },
         {
           "ContentsTag" : "MAIN_OPEN",
-          "PotenLevelGroupId" : 32004,
+          "PotenLevelGroupId" : 32005,
           "PotenLevelValue" : 1,
-          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_32004_01",
-          "PotenLevelSe" : ["POTEN_PASSIVE_3200401"],
+          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_32005_01",
+          "PotenLevelSe" : ["POTEN_PASSIVE_3200501"],
           "PotenBattlePowerCheck" : true,
           "PotenLevelUpReqPP" : 200
         },
@@ -2009,6 +2120,15 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 33004,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_33004_01",
+          "PotenLevelSe" : ["POTEN_PASSIVE_3300401", "POTEN_PASSIVE_3300402"],
+          "PotenBattlePowerCheck" : true,
+          "PotenLevelUpReqPP" : 200
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 34001,
           "PotenLevelValue" : 1,
           "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_34001_01",
@@ -2036,6 +2156,24 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 34004,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_34004_01",
+          "PotenLevelSe" : ["POTEN_PASSIVE_3400401"],
+          "PotenBattlePowerCheck" : true,
+          "PotenLevelUpReqPP" : 200
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 34005,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_34005_01",
+          "PotenLevelSe" : ["POTEN_PASSIVE_3400501", "POTEN_PASSIVE_3400502"],
+          "PotenBattlePowerCheck" : true,
+          "PotenLevelUpReqPP" : 200
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "PotenLevelGroupId" : 35001,
           "PotenLevelValue" : 1,
           "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_35001_01",
@@ -2058,6 +2196,1364 @@
           "PotenLevelValue" : 1,
           "PotenLevelDesc" : "SI_POTEN_DESC_PASSIVE_35003_01",
           "PotenLevelSe" : ["POTEN_PASSIVE_3500301"],
+          "PotenBattlePowerCheck" : true,
+          "PotenLevelUpReqPP" : 200
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40001,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_ATK3@@12@@8@@5",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4000101", "POTEN_PASSIVE_4000102"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_ATK",
+              "PotenLevelStatRate" : 1200
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40002,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_ATK2_HP@@8@@4@@8@@5",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4000101", "POTEN_PASSIVE_4000102"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_ATK",
+              "PotenLevelStatRate" : 800
+            },
+
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_HP",
+              "PotenLevelStatRate" : 400
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40003,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_ATK2_DEF@@8@@6@@8@@5",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4000101", "POTEN_PASSIVE_4000102"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_ATK",
+              "PotenLevelStatRate" : 800
+            },
+
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_DEF",
+              "PotenLevelStatRate" : 600
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40004,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_ATK2_TURN_SPEED@@8@@4@@8@@5",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4000101", "POTEN_PASSIVE_4000102"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_ATK",
+              "PotenLevelStatRate" : 800
+            },
+
+            {
+              "PotenLevelStatType" : "NST_TURN_SPEED",
+              "PotenLevelStatValue" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40005,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_ATK2_CRITICAL@@8@@5@@8@@5",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4000101", "POTEN_PASSIVE_4000102"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_ATK",
+              "PotenLevelStatRate" : 800
+            },
+
+            {
+              "PotenLevelStatType" : "NST_RATE_CRITICAL",
+              "PotenLevelStatRate" : 500
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40006,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_ATK2_CRITICAL_DAMAGE@@8@@5@@8@@5",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4000101", "POTEN_PASSIVE_4000102"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_ATK",
+              "PotenLevelStatRate" : 800
+            },
+
+            {
+              "PotenLevelStatType" : "NST_RATE_CRITICAL_DAMAGE",
+              "PotenLevelStatRate" : 500
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40007,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_ATK2_EFFECT_HIT@@8@@8@@8@@5",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4000101", "POTEN_PASSIVE_4000102"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_ATK",
+              "PotenLevelStatRate" : 800
+            },
+
+            {
+              "PotenLevelStatType" : "NST_RATE_EFFECT_HIT",
+              "PotenLevelStatRate" : 800
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40008,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_ATK2_EFFECT_EVADE@@8@@8@@8@@5",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4000101", "POTEN_PASSIVE_4000102"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_ATK",
+              "PotenLevelStatRate" : 800
+            },
+
+            {
+              "PotenLevelStatType" : "NST_RATE_EFFECT_EVADE",
+              "PotenLevelStatRate" : 800
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40101,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_HP2_ATK@@8@@4@@25",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4010101"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_HP",
+              "PotenLevelStatRate" : 800
+            },
+
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_ATK",
+              "PotenLevelStatRate" : 400
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40102,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_HP3@@12@@25",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4010101"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_HP",
+              "PotenLevelStatRate" : 1200
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40103,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_HP2_DEF@@8@@6@@25",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4010101"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_HP",
+              "PotenLevelStatRate" : 800
+            },
+
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_DEF",
+              "PotenLevelStatRate" : 600
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40104,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_HP2_TURN_SPEED@@8@@4@@25",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4010101"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_HP",
+              "PotenLevelStatRate" : 800
+            },
+
+            {
+              "PotenLevelStatType" : "NST_TURN_SPEED",
+              "PotenLevelStatValue" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40105,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_HP2_CRITICAL@@8@@5@@25",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4010101"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_HP",
+              "PotenLevelStatRate" : 800
+            },
+
+            {
+              "PotenLevelStatType" : "NST_RATE_CRITICAL",
+              "PotenLevelStatRate" : 500
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40106,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_HP2_CRITICAL_DAMAGE@@8@@5@@25",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4010101"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_HP",
+              "PotenLevelStatRate" : 800
+            },
+
+            {
+              "PotenLevelStatType" : "NST_RATE_CRITICAL_DAMAGE",
+              "PotenLevelStatRate" : 500
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40107,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_HP2_EFFECT_HIT@@8@@8@@25",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4010101"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_HP",
+              "PotenLevelStatRate" : 800
+            },
+
+            {
+              "PotenLevelStatType" : "NST_RATE_EFFECT_HIT",
+              "PotenLevelStatRate" : 800
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40108,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_HP2_EFFECT_EVADE@@8@@8@@25",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4010101"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_HP",
+              "PotenLevelStatRate" : 800
+            },
+
+            {
+              "PotenLevelStatType" : "NST_RATE_EFFECT_EVADE",
+              "PotenLevelStatRate" : 800
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40201,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_DEF2_ATK@@12@@4@@10@@5",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4020101", "POTEN_PASSIVE_4020102"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_DEF",
+              "PotenLevelStatRate" : 1200
+            },
+
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_ATK",
+              "PotenLevelStatRate" : 400
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40202,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_DEF2_HP@@12@@4@@10@@5",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4020101", "POTEN_PASSIVE_4020102"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_DEF",
+              "PotenLevelStatRate" : 1200
+            },
+
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_HP",
+              "PotenLevelStatRate" : 400
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40203,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_DEF3@@18@@10@@5",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4020101", "POTEN_PASSIVE_4020102"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_DEF",
+              "PotenLevelStatRate" : 1800
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40204,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_DEF2_TURN_SPEED@@12@@4@@10@@5",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4020101", "POTEN_PASSIVE_4020102"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_DEF",
+              "PotenLevelStatRate" : 1200
+            },
+
+            {
+              "PotenLevelStatType" : "NST_TURN_SPEED",
+              "PotenLevelStatValue" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40205,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_DEF2_CRITICAL@@12@@5@@10@@5",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4020101", "POTEN_PASSIVE_4020102"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_DEF",
+              "PotenLevelStatRate" : 1200
+            },
+
+            {
+              "PotenLevelStatType" : "NST_RATE_CRITICAL",
+              "PotenLevelStatRate" : 500
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40206,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_DEF2_CRITICAL_DAMAGE@@12@@5@@10@@5",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4020101", "POTEN_PASSIVE_4020102"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_DEF",
+              "PotenLevelStatRate" : 1200
+            },
+
+            {
+              "PotenLevelStatType" : "NST_RATE_CRITICAL_DAMAGE",
+              "PotenLevelStatRate" : 500
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40207,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_DEF2_EFFECT_HIT@@12@@8@@10@@5",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4020101", "POTEN_PASSIVE_4020102"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_DEF",
+              "PotenLevelStatRate" : 1200
+            },
+
+            {
+              "PotenLevelStatType" : "NST_RATE_EFFECT_HIT",
+              "PotenLevelStatRate" : 800
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40208,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_DEF2_EFFECT_EVADE@@12@@8@@10@@5",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4020101", "POTEN_PASSIVE_4020102"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_DEF",
+              "PotenLevelStatRate" : 1200
+            },
+
+            {
+              "PotenLevelStatType" : "NST_RATE_EFFECT_EVADE",
+              "PotenLevelStatRate" : 800
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40301,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_TURN_SPEED2_ATK@@8@@4@@25@@10",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4030101"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_TURN_SPEED",
+              "PotenLevelStatValue" : 8
+            },
+
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_ATK",
+              "PotenLevelStatRate" : 400
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40302,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_TURN_SPEED2_HP@@8@@4@@25@@10",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4030101"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_TURN_SPEED",
+              "PotenLevelStatValue" : 8
+            },
+
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_HP",
+              "PotenLevelStatRate" : 400
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40303,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_TURN_SPEED2_DEF@@8@@6@@25@@10",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4030101"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_TURN_SPEED",
+              "PotenLevelStatValue" : 8
+            },
+
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_DEF",
+              "PotenLevelStatRate" : 600
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40304,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_TURN_SPEED3@@12@@25@@10",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4030101"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_TURN_SPEED",
+              "PotenLevelStatValue" : 12
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40305,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_TURN_SPEED2_CRITICAL@@8@@5@@25@@10",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4030101"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_TURN_SPEED",
+              "PotenLevelStatValue" : 8
+            },
+
+            {
+              "PotenLevelStatType" : "NST_RATE_CRITICAL",
+              "PotenLevelStatRate" : 500
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40306,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_TURN_SPEED2_CRITICAL_DAMAGE@@8@@5@@25@@10",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4030101"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_TURN_SPEED",
+              "PotenLevelStatValue" : 8
+            },
+
+            {
+              "PotenLevelStatType" : "NST_RATE_CRITICAL_DAMAGE",
+              "PotenLevelStatRate" : 500
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40307,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_TURN_SPEED2_EFFECT_HIT@@8@@8@@25@@10",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4030101"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_TURN_SPEED",
+              "PotenLevelStatValue" : 8
+            },
+
+            {
+              "PotenLevelStatType" : "NST_RATE_EFFECT_HIT",
+              "PotenLevelStatRate" : 800
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40308,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_TURN_SPEED2_EFFECT_EVADE@@8@@8@@25@@10",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4030101"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_TURN_SPEED",
+              "PotenLevelStatValue" : 8
+            },
+
+            {
+              "PotenLevelStatType" : "NST_RATE_EFFECT_EVADE",
+              "PotenLevelStatRate" : 800
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40401,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_CRITICAL2_ATK@@10@@4@@25",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4040101"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_RATE_CRITICAL",
+              "PotenLevelStatRate" : 1000
+            },
+
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_ATK",
+              "PotenLevelStatRate" : 400
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40402,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_CRITICAL2_HP@@10@@4@@25",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4040101"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_RATE_CRITICAL",
+              "PotenLevelStatRate" : 1000
+            },
+
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_HP",
+              "PotenLevelStatRate" : 400
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40403,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_CRITICAL2_DEF@@10@@6@@25",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4040101"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_RATE_CRITICAL",
+              "PotenLevelStatRate" : 1000
+            },
+
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_DEF",
+              "PotenLevelStatRate" : 600
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40404,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_CRITICAL2_TURN_SPEED@@10@@4@@25",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4040101"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_RATE_CRITICAL",
+              "PotenLevelStatRate" : 1000
+            },
+
+            {
+              "PotenLevelStatType" : "NST_TURN_SPEED",
+              "PotenLevelStatValue" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40405,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_CRITICAL3@@15@@25",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4040101"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_RATE_CRITICAL",
+              "PotenLevelStatRate" : 1500
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40406,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_CRITICAL2_CRITICAL_DAMAGE@@10@@5@@25",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4040101"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_RATE_CRITICAL",
+              "PotenLevelStatRate" : 1000
+            },
+
+            {
+              "PotenLevelStatType" : "NST_RATE_CRITICAL_DAMAGE",
+              "PotenLevelStatRate" : 500
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40407,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_CRITICAL2_EFFECT_HIT@@10@@8@@25",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4040101"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_RATE_CRITICAL",
+              "PotenLevelStatRate" : 1000
+            },
+
+            {
+              "PotenLevelStatType" : "NST_RATE_EFFECT_HIT",
+              "PotenLevelStatRate" : 800
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40408,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_CRITICAL2_EFFECT_EVADE@@10@@8@@25",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4040101"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_RATE_CRITICAL",
+              "PotenLevelStatRate" : 1000
+            },
+
+            {
+              "PotenLevelStatType" : "NST_RATE_EFFECT_EVADE",
+              "PotenLevelStatRate" : 800
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40501,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_CRITICAL_DAMAGE2_ATK@@10@@4@@25",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4050101", "POTEN_PASSIVE_4050102"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_RATE_CRITICAL_DAMAGE",
+              "PotenLevelStatRate" : 1000
+            },
+
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_ATK",
+              "PotenLevelStatRate" : 400
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40502,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_CRITICAL_DAMAGE2_HP@@10@@4@@25",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4050101", "POTEN_PASSIVE_4050102"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_RATE_CRITICAL_DAMAGE",
+              "PotenLevelStatRate" : 1000
+            },
+
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_HP",
+              "PotenLevelStatRate" : 400
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40503,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_CRITICAL_DAMAGE2_DEF@@10@@6@@25",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4050101", "POTEN_PASSIVE_4050102"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_RATE_CRITICAL_DAMAGE",
+              "PotenLevelStatRate" : 1000
+            },
+
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_DEF",
+              "PotenLevelStatRate" : 600
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40504,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_CRITICAL_DAMAGE2_TURN_SPEED@@10@@4@@25",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4050101", "POTEN_PASSIVE_4050102"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_RATE_CRITICAL_DAMAGE",
+              "PotenLevelStatRate" : 1000
+            },
+
+            {
+              "PotenLevelStatType" : "NST_TURN_SPEED",
+              "PotenLevelStatValue" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40505,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_CRITICAL_DAMAGE2_CRITICAL@@10@@5@@25",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4050101", "POTEN_PASSIVE_4050102"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_RATE_CRITICAL_DAMAGE",
+              "PotenLevelStatRate" : 1000
+            },
+
+            {
+              "PotenLevelStatType" : "NST_RATE_CRITICAL",
+              "PotenLevelStatRate" : 500
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40506,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_CRITICAL_DAMAGE3@@15@@25",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4050101", "POTEN_PASSIVE_4050102"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_RATE_CRITICAL_DAMAGE",
+              "PotenLevelStatRate" : 1500
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40507,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_CRITICAL_DAMAGE2_EFFECT_HIT@@10@@8@@25",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4050101", "POTEN_PASSIVE_4050102"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_RATE_CRITICAL_DAMAGE",
+              "PotenLevelStatRate" : 1000
+            },
+
+            {
+              "PotenLevelStatType" : "NST_RATE_EFFECT_HIT",
+              "PotenLevelStatRate" : 800
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40508,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_CRITICAL_DAMAGE2_EFFECT_EVADE@@10@@8@@25",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4050101", "POTEN_PASSIVE_4050102"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_RATE_CRITICAL_DAMAGE",
+              "PotenLevelStatRate" : 1000
+            },
+
+            {
+              "PotenLevelStatType" : "NST_RATE_EFFECT_EVADE",
+              "PotenLevelStatRate" : 800
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40601,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_EFFECT_HIT2_ATK@@16@@4@@50",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4060101"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_RATE_EFFECT_HIT",
+              "PotenLevelStatRate" : 1600
+            },
+
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_ATK",
+              "PotenLevelStatRate" : 400
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40602,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_EFFECT_HIT2_HP@@16@@4@@50",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4060101"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_RATE_EFFECT_HIT",
+              "PotenLevelStatRate" : 1600
+            },
+
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_HP",
+              "PotenLevelStatRate" : 400
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40603,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_EFFECT_HIT2_DEF@@16@@6@@50",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4060101"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_RATE_EFFECT_HIT",
+              "PotenLevelStatRate" : 1600
+            },
+
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_DEF",
+              "PotenLevelStatRate" : 600
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40604,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_EFFECT_HIT2_TURN_SPEED@@16@@4@@50",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4060101"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_RATE_EFFECT_HIT",
+              "PotenLevelStatRate" : 1600
+            },
+
+            {
+              "PotenLevelStatType" : "NST_TURN_SPEED",
+              "PotenLevelStatValue" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40605,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_EFFECT_HIT2_CRITICAL@@16@@5@@50",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4060101"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_RATE_EFFECT_HIT",
+              "PotenLevelStatRate" : 1600
+            },
+
+            {
+              "PotenLevelStatType" : "NST_RATE_CRITICAL",
+              "PotenLevelStatRate" : 500
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40606,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_EFFECT_HIT2_CRITICAL_DAMAGE@@16@@5@@50",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4060101"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_RATE_EFFECT_HIT",
+              "PotenLevelStatRate" : 1600
+            },
+
+            {
+              "PotenLevelStatType" : "NST_RATE_CRITICAL_DAMAGE",
+              "PotenLevelStatRate" : 500
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40607,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_EFFECT_HIT3@@24@@50",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4060101"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_RATE_EFFECT_HIT",
+              "PotenLevelStatRate" : 2400
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40608,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_EFFECT_HIT2_EFFECT_EVADE@@16@@8@@50",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4060101"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_RATE_EFFECT_HIT",
+              "PotenLevelStatRate" : 1600
+            },
+
+            {
+              "PotenLevelStatType" : "NST_RATE_EFFECT_EVADE",
+              "PotenLevelStatRate" : 800
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40701,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_EFFECT_EVADE2_ATK@@16@@4@@50",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4070101"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_RATE_EFFECT_EVADE",
+              "PotenLevelStatRate" : 1600
+            },
+
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_ATK",
+              "PotenLevelStatRate" : 400
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40702,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_EFFECT_EVADE2_HP@@16@@4@@50",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4070101"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_RATE_EFFECT_EVADE",
+              "PotenLevelStatRate" : 1600
+            },
+
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_HP",
+              "PotenLevelStatRate" : 400
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40703,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_EFFECT_EVADE2_DEF@@16@@6@@50",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4070101"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_RATE_EFFECT_EVADE",
+              "PotenLevelStatRate" : 1600
+            },
+
+            {
+              "PotenLevelStatType" : "NST_NV_RATE_DEF",
+              "PotenLevelStatRate" : 600
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40704,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_EFFECT_EVADE2_TURN_SPEED@@16@@4@@50",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4070101"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_RATE_EFFECT_EVADE",
+              "PotenLevelStatRate" : 1600
+            },
+
+            {
+              "PotenLevelStatType" : "NST_TURN_SPEED",
+              "PotenLevelStatValue" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40705,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_EFFECT_EVADE2_CRITICAL@@16@@5@@50",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4070101"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_RATE_EFFECT_EVADE",
+              "PotenLevelStatRate" : 1600
+            },
+
+            {
+              "PotenLevelStatType" : "NST_RATE_CRITICAL",
+              "PotenLevelStatRate" : 500
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40706,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_EFFECT_EVADE2_CRITICAL_DAMAGE@@16@@5@@50",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4070101"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_RATE_EFFECT_EVADE",
+              "PotenLevelStatRate" : 1600
+            },
+
+            {
+              "PotenLevelStatType" : "NST_RATE_CRITICAL_DAMAGE",
+              "PotenLevelStatRate" : 500
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40707,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_EFFECT_EVADE2_EFFECT_HIT@@16@@8@@50",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4070101"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_RATE_EFFECT_EVADE",
+              "PotenLevelStatRate" : 1600
+            },
+
+            {
+              "PotenLevelStatType" : "NST_RATE_EFFECT_HIT",
+              "PotenLevelStatRate" : 800
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 40708,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_EFFECT_EVADE3@@24@@50",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4070101"],
+          "PotenBattlePowerCheck" : false,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_RATE_EFFECT_EVADE",
+              "PotenLevelStatRate" : 2400
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 41001,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_STAT_DESC_RATE_REVENGE_ATTACK@@20",
+          "PotenBattlePowerCheck" : true,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_RATE_REVENGE_ATTACK",
+              "PotenLevelStatRate" : 2000
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 41002,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_STAT_DESC_RRATE_DAMAGE_VAMPIRISM@@15",
+          "PotenBattlePowerCheck" : true,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_RATE_DAMAGE_VAMPIRISM",
+              "PotenLevelStatRate" : 1500
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 41003,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_STAT_DESC_SUPER_ARMOR@@3",
+          "PotenBattlePowerCheck" : true,
+          "PotenLevelUpReqPP" : 200,
+          "PotenLevelStat" : 
+          [
+            {
+              "PotenLevelStatType" : "NST_SUPER_ARMOR",
+              "PotenLevelStatValue" : 3
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PotenLevelGroupId" : 41004,
+          "PotenLevelValue" : 1,
+          "PotenLevelDesc" : "SI_POTEN_DESC_JOURNEY_SCENARIO_01_HARD_STAT_ALL@@2",
+          "PotenLevelSe" : ["POTEN_PASSIVE_4100401", "POTEN_PASSIVE_4100402", "POTEN_PASSIVE_4100403", "POTEN_PASSIVE_4100404", "POTEN_PASSIVE_4100405", "POTEN_PASSIVE_4100406", "POTEN_PASSIVE_4100407", "POTEN_PASSIVE_4100408"],
           "PotenBattlePowerCheck" : true,
           "PotenLevelUpReqPP" : 200
         }

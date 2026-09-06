@@ -1,0 +1,31 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: PVP_STAT_SCALE_TEMPLET",
+    "_Version": 0,
+    "Data": [
+        {
+          "PvpStatScaleId" : 1000,
+          "StatScale" : 1000,
+          "TacticsScale" : 500,
+          "StarLinkScale" : 500,
+          "StellarArchiveScale" : 1000,
+          "EquipScale" : 1000
+        },
+        {
+          "PvpStatScaleId" : 2000,
+          "StatScale" : 1000,
+          "TacticsScale" : 500,
+          "StarLinkScale" : 500,
+          "StellarArchiveScale" : 1000,
+          "EquipScale" : 1000
+        },
+        {
+          "PvpStatScaleId" : 2001,
+          "StatScale" : 1000,
+          "TacticsScale" : 0,
+          "StarLinkScale" : 0,
+          "StellarArchiveScale" : 1000,
+          "EquipScale" : 1000
+        }
+    ]
+}

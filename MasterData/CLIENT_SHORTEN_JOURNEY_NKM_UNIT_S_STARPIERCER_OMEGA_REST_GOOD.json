@@ -1,0 +1,39 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_STARPIERCER_OMEGA_REST_GOOD",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_REST_BAD",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_REST",
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "USN_UI_TOUCH"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 아주 기분이 좋아 보인다!",
+      "UnitTalk_ENG": "<color=#F7BE45>[CHARACTER_NAME]</color> looks especially cheerful today!",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は、とてもご機嫌な様子だ！",
+      "UnitTalk_CHN": "<color=#F7BE45>[CHARACTER_NAME]</color>看起来心情非常不错！",
+      "UnitTalk_TWN": "<color=#F7BE45>[CHARACTER_NAME]</color>看起來心情非常不錯！",
+      "UnitTalk_FRA": "<color=#F7BE45>[CHARACTER_NAME]</color> a l'air de très bonne humeur !",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color> sieht sehr gut gelaunt aus!",
+      "UnitTalk_ESP": "<color=#F7BE45>[CHARACTER_NAME]</color> parece estar de muy buen humor hoy.",
+      "UnitTalk_PRT": "<color=#F7BE45>[CHARACTER_NAME]</color> parece estar muito alegre hoje!",
+      "UnitTalk_THA": "<color=#F7BE45>[CHARACTER_NAME]</color>ดูท่าทางอารมณ์ดีเป็นพิเศษ!",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> terlihat sangat ceria!",
+      "UnitTalk_VIE": "<color=#F7BE45>[CHARACTER_NAME]</color> trông có vẻ rất vui!",
+      "UnitTalk_HIN": "<color=#F7BE45>[CHARACTER_NAME]</color> बहुत खुश लग रहा है!",
+      "TalkTime": 0.03
+    }
+  ]
+}

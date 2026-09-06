@@ -6,6 +6,8 @@
         {
           "DomainId" : 11,
           "DomainStrId" : "DOMAIN_GUNBLADE_TUTORIAL",
+          "DomainGlobalLifeTurn" : 5,
+          "DomainInfinityTurn" : false,
           "DomainIcon" : "ICON_ORBITAL_ARRAY_GUNBLADE.png",
           "DomainName" : "SI_TACTICAL_COMMAND",
           "DomainDesc" : "DOMAIN_GUNBLADE_TUTORIAL_DESC",
@@ -16,6 +18,8 @@
         {
           "DomainId" : 21,
           "DomainStrId" : "DOMAIN_GUNBLADE_JOURNEY",
+          "DomainGlobalLifeTurn" : 5,
+          "DomainInfinityTurn" : false,
           "DomainIcon" : "ICON_ORBITAL_ARRAY_GUNBLADE.png",
           "DomainName" : "SI_TACTICAL_COMMAND",
           "DomainDesc" : "DOMAIN_GUNBLADE_JOURNEY_DESC",
@@ -26,6 +30,8 @@
         {
           "DomainId" : 101,
           "DomainStrId" : "DOMAIN_LISA",
+          "DomainGlobalLifeTurn" : 5,
+          "DomainInfinityTurn" : false,
           "DomainIcon" : "ICON_ORBITAL_ARRAY_LISA.png",
           "DomainName" : "SI_STARLIGHT_HORIZON",
           "DomainDesc" : "DOMAIN_LISA_DESC",
@@ -36,6 +42,8 @@
         {
           "DomainId" : 102,
           "DomainStrId" : "DOMAIN_VOYAGER_GUNBLADE",
+          "DomainGlobalLifeTurn" : 5,
+          "DomainInfinityTurn" : false,
           "DomainIcon" : "ICON_ORBITAL_ARRAY_VOYAGER_GUNBLADE.png",
           "DomainName" : "SI_STRATEGIC_COMMAND",
           "DomainDesc" : "DOMAIN_VOYAGER_GUNBLADE_DESC",
@@ -46,6 +54,8 @@
         {
           "DomainId" : 103,
           "DomainStrId" : "DOMAIN_OMEGA",
+          "DomainGlobalLifeTurn" : 5,
+          "DomainInfinityTurn" : false,
           "DomainIcon" : "ICON_ORBITAL_ARRAY_OMEGA.png",
           "DomainName" : "SI_CHEAT_MATRIX",
           "DomainDesc" : "DOMAIN_OMEGA_DESC",
@@ -56,12 +66,40 @@
         {
           "DomainId" : 104,
           "DomainStrId" : "DOMAIN_ALICIA",
+          "DomainGlobalLifeTurn" : 5,
+          "DomainInfinityTurn" : false,
           "DomainIcon" : "ICON_ORBITAL_ARRAY_ALICIA.png",
           "DomainName" : "SI_WITCH_BLESSING",
           "DomainDesc" : "DOMAIN_ALICIA_DESC",
           "DomainFeedbackDesc" : "DOMAIN_ALICIA_FEEDBACK_DESC",
           "DomainMapStrId" : "MAP_BATTLE_DOMAIN_ALICIA",
-          "CharmList" : [7203001, 7203002, 7203003]
+          "CharmList" : [7203001, 7203002]
+        },
+        {
+          "DomainId" : 105,
+          "DomainStrId" : "DOMAIN_GLEIPNIRE",
+          "DomainGlobalLifeTurn" : 5,
+          "DomainInfinityTurn" : false,
+          "DomainIcon" : "ICON_ORBITAL_ARRAY_GLEIPNIRE.png",
+          "DomainName" : "SI_CRF_AMPLIFICATION",
+          "DomainDesc" : "DOMAIN_GLEIPNIRE_DESC",
+          "DomainFeedbackDesc" : "DOMAIN_GLEIPNIRE_FEEDBACK_DESC",
+          "DomainMapStrId" : "MAP_BATTLE_DOMAIN_GLEIPNIRE",
+          "CharmList" : [7205001, 7205002]
+        },
+        {
+          "DomainId" : 501,
+          "DomainStrId" : "DOMAIN_UNKNOWN_BOSS_MAINSTORY_07",
+          "DomainGlobalLifeTurn" : 100,
+          "DomainInfinityTurn" : true,
+          "DomainIcon" : "ICON_ORBITAL_ARRAY_UNKNOWN_BOSS.png",
+          "DomainName" : "SI_LAST_STAR_TOMB",
+          "DomainDesc" : "DOMAIN_UNKNOWN_BOSS_MAINSTORY_07_DESC",
+          "DomainFeedbackDesc" : "DOMAIN_UNKNOWN_BOSS_MAINSTORY_07_FEEDBACK_DESC",
+          "DomainMapStrId" : "MAP_BATTLE_DOMAIN_UNKNOWN",
+          "VfxDomainOpen" : "VFX_DOMAIN_OPEN_DARK_UNKNOWN",
+          "VfxDomainClose" : "VFX_DOMAIN_CLOSE_DARK_UNKNOWN",
+          "CharmList" : [7302001]
         }
     ]
 }

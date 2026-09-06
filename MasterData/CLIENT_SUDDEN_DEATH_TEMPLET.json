@@ -6,22 +6,145 @@
         {
           "SuddenDeathId" : 101,
           "SuddenDeathGroupId" : 101,
+          "SuddenDeathBattleType" : "SDBT_PVP",
           "SuddenDeathType" : "SDT_ONCE",
           "NoticeActiveType" : "ADD_DAMAGE",
           "SuddenDeathName" : "SI_ELVES_BOLT_STRIKE",
-          "SuddenDeathIcon" : "ICON_BATTLE_SUDDEN_DEATH_1.png",
-          "SuddenDeathTooltipIcon" : "ICON_SUDDEN_DEATH_1.png"
+          "SuddenDeathIcon" : "ICON_BATTLE_SUDDEN_DEATH_PVP_1.png",
+          "SuddenDeathTooltipIcon" : "ICON_SUDDEN_DEATH_PVP_1.png"
         },
         {
           "SuddenDeathId" : 201,
           "SuddenDeathGroupId" : 201,
+          "SuddenDeathBattleType" : "SDBT_PVP",
           "SuddenDeathType" : "SDT_ALWAYS",
           "NoticeActiveType" : "LEVEL_UP_TURN",
           "SuddenDeathName" : "SI_ROCHE_LIMIT",
-          "SuddenDeathIcon" : "ICON_BATTLE_SUDDEN_DEATH_2.png",
-          "SuddenDeathTooltipIcon" : "ICON_SUDDEN_DEATH_2.png",
+          "SuddenDeathIcon" : "ICON_BATTLE_SUDDEN_DEATH_PVP_2.png",
+          "SuddenDeathTooltipIcon" : "ICON_SUDDEN_DEATH_PVP_2.png",
           "PositiveStatList" : ["NST_RATE_DAMAGE_UP", "NST_RATE_EFFECT_HIT"],
-          "NegativeStatList" : ["NST_NV_RATE_HP", "NST_RATE_HEAL_GIVE"]
+          "NegativeStatList" : ["NST_NV_RATE_HP", "NST_NV_RATE_DEF", "NST_RATE_HEAL_GIVE", "NST_RATE_BARRIER_GIVE"]
+        },
+        {
+          "SuddenDeathId" : 301,
+          "SuddenDeathGroupId" : 301,
+          "SuddenDeathBattleType" : "SDBT_PVE",
+          "SuddenDeathType" : "SDT_ALWAYS",
+          "NoticeActiveType" : "LEVEL_UP_TURN",
+          "SuddenDeathName" : "SI_SUDDEN_PHASE_COLLAPSE",
+          "SuddenDeathIcon" : "ICON_BATTLE_SUDDEN_DEATH_PVE_1.png",
+          "SuddenDeathTooltipIcon" : "ICON_SUDDEN_DEATH_PVE_1.png",
+          "NegativeStatList" : ["NST_NV_RATE_HP", "NST_NV_RATE_DEF", "NST_RATE_HEAL_GIVE", "NST_RATE_BARRIER_GIVE"]
+        },
+        {
+          "SuddenDeathId" : 302,
+          "SuddenDeathGroupId" : 302,
+          "SuddenDeathBattleType" : "SDBT_PVE",
+          "SuddenDeathType" : "SDT_ALWAYS",
+          "NoticeActiveType" : "LEVEL_UP_TURN",
+          "SuddenDeathName" : "SI_SUDDEN_PHASE_COLLAPSE",
+          "SuddenDeathIcon" : "ICON_BATTLE_SUDDEN_DEATH_PVE_1.png",
+          "SuddenDeathTooltipIcon" : "ICON_SUDDEN_DEATH_PVE_1.png",
+          "NegativeStatList" : ["NST_NV_RATE_HP", "NST_NV_RATE_DEF", "NST_RATE_HEAL_GIVE", "NST_RATE_BARRIER_GIVE"]
+        },
+        {
+          "SuddenDeathId" : 303,
+          "SuddenDeathGroupId" : 303,
+          "SuddenDeathBattleType" : "SDBT_PVE",
+          "SuddenDeathType" : "SDT_ALWAYS",
+          "NoticeActiveType" : "LEVEL_UP_TURN",
+          "SuddenDeathName" : "SI_SUDDEN_PHASE_COLLAPSE",
+          "SuddenDeathIcon" : "ICON_BATTLE_SUDDEN_DEATH_PVE_1.png",
+          "SuddenDeathTooltipIcon" : "ICON_SUDDEN_DEATH_PVE_1.png",
+          "NegativeStatList" : ["NST_NV_RATE_HP", "NST_NV_RATE_DEF", "NST_RATE_HEAL_GIVE", "NST_RATE_BARRIER_GIVE"]
+        },
+        {
+          "SuddenDeathId" : 304,
+          "SuddenDeathGroupId" : 304,
+          "SuddenDeathBattleType" : "SDBT_PVE",
+          "SuddenDeathType" : "SDT_ALWAYS",
+          "NoticeActiveType" : "LEVEL_UP_TURN",
+          "SuddenDeathName" : "SI_SUDDEN_PHASE_COLLAPSE",
+          "SuddenDeathIcon" : "ICON_BATTLE_SUDDEN_DEATH_PVE_1.png",
+          "SuddenDeathTooltipIcon" : "ICON_SUDDEN_DEATH_PVE_1.png",
+          "NegativeStatList" : ["NST_NV_RATE_HP", "NST_NV_RATE_DEF", "NST_RATE_HEAL_GIVE", "NST_RATE_BARRIER_GIVE"]
+        },
+        {
+          "SuddenDeathId" : 350,
+          "SuddenDeathGroupId" : 350,
+          "SuddenDeathBattleType" : "SDBT_PVE",
+          "SuddenDeathType" : "SDT_ALWAYS",
+          "NoticeActiveType" : "LEVEL_UP_TURN",
+          "SuddenDeathName" : "SI_SUDDEN_PHASE_COLLAPSE",
+          "SuddenDeathIcon" : "ICON_BATTLE_SUDDEN_DEATH_PVE_1.png",
+          "SuddenDeathTooltipIcon" : "ICON_SUDDEN_DEATH_PVE_1.png",
+          "NegativeStatList" : ["NST_NV_RATE_HP", "NST_NV_RATE_DEF", "NST_RATE_HEAL_GIVE", "NST_RATE_BARRIER_GIVE"]
+        },
+        {
+          "SuddenDeathId" : 351,
+          "SuddenDeathGroupId" : 351,
+          "SuddenDeathBattleType" : "SDBT_PVE",
+          "SuddenDeathType" : "SDT_ALWAYS",
+          "NoticeActiveType" : "LEVEL_UP_TURN",
+          "SuddenDeathName" : "SI_SUDDEN_PHASE_COLLAPSE",
+          "SuddenDeathIcon" : "ICON_BATTLE_SUDDEN_DEATH_PVE_1.png",
+          "SuddenDeathTooltipIcon" : "ICON_SUDDEN_DEATH_PVE_1.png",
+          "NegativeStatList" : ["NST_NV_RATE_HP", "NST_NV_RATE_DEF", "NST_RATE_HEAL_GIVE", "NST_RATE_BARRIER_GIVE"]
+        },
+        {
+          "SuddenDeathId" : 352,
+          "SuddenDeathGroupId" : 352,
+          "SuddenDeathBattleType" : "SDBT_PVE",
+          "SuddenDeathType" : "SDT_ALWAYS",
+          "NoticeActiveType" : "LEVEL_UP_TURN",
+          "SuddenDeathName" : "SI_SUDDEN_PHASE_COLLAPSE",
+          "SuddenDeathIcon" : "ICON_BATTLE_SUDDEN_DEATH_PVE_1.png",
+          "SuddenDeathTooltipIcon" : "ICON_SUDDEN_DEATH_PVE_1.png",
+          "NegativeStatList" : ["NST_NV_RATE_HP", "NST_NV_RATE_DEF", "NST_RATE_HEAL_GIVE", "NST_RATE_BARRIER_GIVE"]
+        },
+        {
+          "SuddenDeathId" : 401,
+          "SuddenDeathGroupId" : 401,
+          "SuddenDeathBattleType" : "SDBT_PVE",
+          "SuddenDeathType" : "SDT_ALWAYS",
+          "NoticeActiveType" : "LEVEL_UP_TURN",
+          "SuddenDeathName" : "SI_SUDDEN_INTERSTELLAR_CRACK",
+          "SuddenDeathIcon" : "ICON_BATTLE_SUDDEN_DEATH_PVE_1.png",
+          "SuddenDeathTooltipIcon" : "ICON_SUDDEN_DEATH_PVE_1.png",
+          "NegativeStatList" : ["NST_NV_RATE_HP", "NST_NV_RATE_DEF", "NST_RATE_HEAL_GIVE", "NST_RATE_BARRIER_GIVE"]
+        },
+        {
+          "SuddenDeathId" : 402,
+          "SuddenDeathGroupId" : 402,
+          "SuddenDeathBattleType" : "SDBT_PVE",
+          "SuddenDeathType" : "SDT_ALWAYS",
+          "NoticeActiveType" : "LEVEL_UP_TURN",
+          "SuddenDeathName" : "SI_SUDDEN_INTERSTELLAR_CRACK",
+          "SuddenDeathIcon" : "ICON_BATTLE_SUDDEN_DEATH_PVE_1.png",
+          "SuddenDeathTooltipIcon" : "ICON_SUDDEN_DEATH_PVE_1.png",
+          "NegativeStatList" : ["NST_NV_RATE_HP", "NST_NV_RATE_DEF", "NST_RATE_HEAL_GIVE", "NST_RATE_BARRIER_GIVE"]
+        },
+        {
+          "SuddenDeathId" : 403,
+          "SuddenDeathGroupId" : 403,
+          "SuddenDeathBattleType" : "SDBT_PVE",
+          "SuddenDeathType" : "SDT_ALWAYS",
+          "NoticeActiveType" : "LEVEL_UP_TURN",
+          "SuddenDeathName" : "SI_SUDDEN_INTERSTELLAR_CRACK",
+          "SuddenDeathIcon" : "ICON_BATTLE_SUDDEN_DEATH_PVE_1.png",
+          "SuddenDeathTooltipIcon" : "ICON_SUDDEN_DEATH_PVE_1.png",
+          "NegativeStatList" : ["NST_NV_RATE_HP", "NST_NV_RATE_DEF", "NST_RATE_HEAL_GIVE", "NST_RATE_BARRIER_GIVE"]
+        },
+        {
+          "SuddenDeathId" : 404,
+          "SuddenDeathGroupId" : 404,
+          "SuddenDeathBattleType" : "SDBT_PVE",
+          "SuddenDeathType" : "SDT_ALWAYS",
+          "NoticeActiveType" : "LEVEL_UP_TURN",
+          "SuddenDeathName" : "SI_SUDDEN_INTERSTELLAR_CRACK",
+          "SuddenDeathIcon" : "ICON_BATTLE_SUDDEN_DEATH_PVE_1.png",
+          "SuddenDeathTooltipIcon" : "ICON_SUDDEN_DEATH_PVE_1.png",
+          "NegativeStatList" : ["NST_NV_RATE_HP", "NST_NV_RATE_DEF", "NST_RATE_HEAL_GIVE", "NST_RATE_BARRIER_GIVE"]
         }
     ]
 }

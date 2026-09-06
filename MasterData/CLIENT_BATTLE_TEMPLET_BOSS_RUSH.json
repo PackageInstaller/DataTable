@@ -1,0 +1,3727 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: BATTLE_TEMPLET_BOSS_RUSH",
+    "_Version": 0,
+    "Data": [
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 9910101,
+          "BattleStrID" : "BOSS_RUSH_01_BATTLE_01",
+          "BattleTabId" : 99101,
+          "OrderList" : 1,
+          "IsSweep" : true,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_BOSS_RUSH_CASINO_001.txt",
+          "BattleMapStrID" : "MAP_BATTLE_CASINO_HALL",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_BOSS_RUSH",
+          "BattleName" : "SI_BOSS_RUSH_NAME_BODYGUARD_HANDS_1",
+          "BattleDesc" : "SI_BOSS_RUSH_DESC_BODYGUARD_HANDS",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_BOSS_ADVICE_01",
+          "Difficulty" : "BOSS",
+          "BattleLevel" : 306,
+          "MusicName" : "MUSIC_CASINO_01.mp3",
+          "BattlePower" : 50000,
+          "AllClearMissionItemId" : 33100002,
+          "AllClearMissionItemCount" : 3,
+          "ReqNormalItem" : 413,
+          "ReqNormalItemCount" : 1,
+          "MissionTabGroupId" : 99101,
+          "BattleEffectData" : 
+          [
+            {
+              "BattleEffectId" : 60001,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_SUN_BUFF_01"
+            },
+
+            {
+              "BattleEffectId" : 60004,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_STRIKER_BUFF_01"
+            }
+          ],
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_WIN",
+              "BattleMissionTask" : 1
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 45
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 40
+            }
+          ],
+          "FirstClearNormalRewardData" : 
+          [
+            {
+              "FirstClearNormalRewardType" : "RT_NORMAL_ITEM",
+              "FirstClearNormalRewardID" : 33100001,
+              "FirstClearNormalRewardValue" : 3
+            }
+          ],
+          "NormalRewardData" : 
+          [
+            {
+              "NormalRewardGroup" : 29910001,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910006,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910011,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910012,
+              "NormalRewardRate" : 4000
+            }
+          ],
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 11003018
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 9910102,
+          "BattleStrID" : "BOSS_RUSH_01_BATTLE_02",
+          "BattleTabId" : 99101,
+          "OrderList" : 2,
+          "IsSweep" : true,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_BOSS_RUSH_CASINO_002.txt",
+          "BattleMapStrID" : "MAP_BATTLE_CASINO_HALL",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_BOSS_RUSH",
+          "BattleName" : "SI_BOSS_RUSH_NAME_BODYGUARD_HANDS_2",
+          "BattleDesc" : "SI_BOSS_RUSH_DESC_BODYGUARD_HANDS",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_BOSS_ADVICE_01",
+          "Difficulty" : "BOSS",
+          "BattleLevel" : 1209,
+          "MusicName" : "MUSIC_CASINO_01.mp3",
+          "BattlePower" : 160000,
+          "StellaMemoryWarning" : true,
+          "AllClearMissionItemId" : 33100002,
+          "AllClearMissionItemCount" : 3,
+          "ReqNormalItem" : 413,
+          "ReqNormalItemCount" : 1,
+          "MissionTabGroupId" : 99101,
+          "BattleEffectData" : 
+          [
+            {
+              "BattleEffectId" : 60001,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_SUN_BUFF_01"
+            },
+
+            {
+              "BattleEffectId" : 60004,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_STRIKER_BUFF_01"
+            }
+          ],
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_WIN",
+              "BattleMissionTask" : 1
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 45
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 40
+            }
+          ],
+          "FirstClearNormalRewardData" : 
+          [
+            {
+              "FirstClearNormalRewardType" : "RT_NORMAL_ITEM",
+              "FirstClearNormalRewardID" : 33100001,
+              "FirstClearNormalRewardValue" : 3
+            }
+          ],
+          "NormalRewardData" : 
+          [
+            {
+              "NormalRewardGroup" : 29910002,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910007,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910011,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910012,
+              "NormalRewardRate" : 4000
+            }
+          ],
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 9910101
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 9910103,
+          "BattleStrID" : "BOSS_RUSH_01_BATTLE_03",
+          "BattleTabId" : 99101,
+          "OrderList" : 3,
+          "IsSweep" : true,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_BOSS_RUSH_CASINO_003.txt",
+          "BattleMapStrID" : "MAP_BATTLE_CASINO_HALL",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_BOSS_RUSH",
+          "BattleName" : "SI_BOSS_RUSH_NAME_BODYGUARD_HANDS_3",
+          "BattleDesc" : "SI_BOSS_RUSH_DESC_BODYGUARD_HANDS",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_BOSS_ADVICE_01",
+          "Difficulty" : "BOSS",
+          "BattleLevel" : 1597,
+          "MusicName" : "MUSIC_CASINO_01.mp3",
+          "BattlePower" : 210000,
+          "StellaMemoryWarning" : true,
+          "AllClearMissionItemId" : 33100002,
+          "AllClearMissionItemCount" : 3,
+          "ReqNormalItem" : 413,
+          "ReqNormalItemCount" : 1,
+          "MissionTabGroupId" : 99101,
+          "BattleEffectData" : 
+          [
+            {
+              "BattleEffectId" : 60001,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_SUN_BUFF_01"
+            },
+
+            {
+              "BattleEffectId" : 60004,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_STRIKER_BUFF_01"
+            }
+          ],
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_WIN",
+              "BattleMissionTask" : 1
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 45
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 40
+            }
+          ],
+          "FirstClearNormalRewardData" : 
+          [
+            {
+              "FirstClearNormalRewardType" : "RT_NORMAL_ITEM",
+              "FirstClearNormalRewardID" : 33100001,
+              "FirstClearNormalRewardValue" : 3
+            }
+          ],
+          "NormalRewardData" : 
+          [
+            {
+              "NormalRewardGroup" : 29910003,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910008,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910011,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910012,
+              "NormalRewardRate" : 4000
+            }
+          ],
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 9910102
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 9910104,
+          "BattleStrID" : "BOSS_RUSH_01_BATTLE_04",
+          "BattleTabId" : 99101,
+          "OrderList" : 4,
+          "IsSweep" : false,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_BOSS_RUSH_CASINO_004.txt",
+          "BattleMapStrID" : "MAP_BATTLE_CASINO_HALL",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_BOSS_RUSH",
+          "BattleName" : "SI_BOSS_RUSH_NAME_BODYGUARD_HANDS_4",
+          "BattleDesc" : "SI_BOSS_RUSH_DESC_BODYGUARD_HANDS",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_BOSS_ADVICE_01",
+          "Difficulty" : "BOSS",
+          "BattleLevel" : 1600,
+          "MusicName" : "MUSIC_CASINO_01.mp3",
+          "BattlePower" : 220000,
+          "StellaMemoryWarning" : true,
+          "ReqNormalItem" : 413,
+          "ReqNormalItemCount" : 1,
+          "MissionTabGroupId" : 99101,
+          "DifficultyGroupId" : 3001,
+          "BattleEffectData" : 
+          [
+            {
+              "BattleEffectId" : 60001,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_SUN_BUFF_01"
+            },
+
+            {
+              "BattleEffectId" : 60004,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_STRIKER_BUFF_01"
+            }
+          ],
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "NONE",
+              "BattleMissionTask" : 0
+            },
+
+            {
+              "BattleMissionType" : "NONE",
+              "BattleMissionTask" : 0
+            },
+
+            {
+              "BattleMissionType" : "NONE",
+              "BattleMissionTask" : 0
+            }
+          ],
+          "FirstClearNormalRewardData" : 
+          [
+            {
+              "FirstClearNormalRewardType" : "RT_NORMAL_ITEM",
+              "FirstClearNormalRewardID" : 33100001,
+              "FirstClearNormalRewardValue" : 3
+            }
+          ],
+          "NormalRewardData" : 
+          [
+            {
+              "NormalRewardGroup" : 29910003,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910008,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910011,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910012,
+              "NormalRewardRate" : 4000
+            }
+          ],
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 9910102
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 9910201,
+          "BattleStrID" : "BOSS_RUSH_02_BATTLE_01",
+          "BattleTabId" : 99102,
+          "OrderList" : 1,
+          "IsSweep" : true,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_BOSS_RUSH_ODYSSEY_001.txt",
+          "BattleMapStrID" : "MAP_BATTLE_ODYSSEY_STORAGE_BIG",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_BOSS_RUSH",
+          "BattleName" : "SI_BOSS_RUSH_NAME_CARBONPUNK_LORD_1",
+          "BattleDesc" : "SI_BOSS_RUSH_DESC_CARBONPUNK_LORD",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_BOSS_ADVICE_01",
+          "Difficulty" : "BOSS",
+          "BattleLevel" : 306,
+          "MusicName" : "MUSIC_BATTLE_NORMAL_04.mp3",
+          "BattlePower" : 50000,
+          "AllClearMissionItemId" : 33100004,
+          "AllClearMissionItemCount" : 3,
+          "ReqNormalItem" : 413,
+          "ReqNormalItemCount" : 1,
+          "MissionTabGroupId" : 99102,
+          "BattleEffectData" : 
+          [
+            {
+              "BattleEffectId" : 60002,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_MOON_BUFF_01"
+            },
+
+            {
+              "BattleEffectId" : 60005,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_CASTER_BUFF_01"
+            }
+          ],
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_WIN",
+              "BattleMissionTask" : 1
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 45
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 40
+            }
+          ],
+          "FirstClearNormalRewardData" : 
+          [
+            {
+              "FirstClearNormalRewardType" : "RT_NORMAL_ITEM",
+              "FirstClearNormalRewardID" : 33100003,
+              "FirstClearNormalRewardValue" : 3
+            }
+          ],
+          "NormalRewardData" : 
+          [
+            {
+              "NormalRewardGroup" : 29910001,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910006,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910021,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910022,
+              "NormalRewardRate" : 4000
+            }
+          ],
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 11003018
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 9910202,
+          "BattleStrID" : "BOSS_RUSH_02_BATTLE_02",
+          "BattleTabId" : 99102,
+          "OrderList" : 2,
+          "IsSweep" : true,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_BOSS_RUSH_ODYSSEY_002.txt",
+          "BattleMapStrID" : "MAP_BATTLE_ODYSSEY_STORAGE_BIG",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_BOSS_RUSH",
+          "BattleName" : "SI_BOSS_RUSH_NAME_CARBONPUNK_LORD_2",
+          "BattleDesc" : "SI_BOSS_RUSH_DESC_CARBONPUNK_LORD",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_BOSS_ADVICE_01",
+          "Difficulty" : "BOSS",
+          "BattleLevel" : 1209,
+          "MusicName" : "MUSIC_BATTLE_NORMAL_04.mp3",
+          "BattlePower" : 160000,
+          "StellaMemoryWarning" : true,
+          "AllClearMissionItemId" : 33100004,
+          "AllClearMissionItemCount" : 3,
+          "ReqNormalItem" : 413,
+          "ReqNormalItemCount" : 1,
+          "MissionTabGroupId" : 99102,
+          "BattleEffectData" : 
+          [
+            {
+              "BattleEffectId" : 60002,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_MOON_BUFF_01"
+            },
+
+            {
+              "BattleEffectId" : 60005,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_CASTER_BUFF_01"
+            }
+          ],
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_WIN",
+              "BattleMissionTask" : 1
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 45
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 40
+            }
+          ],
+          "FirstClearNormalRewardData" : 
+          [
+            {
+              "FirstClearNormalRewardType" : "RT_NORMAL_ITEM",
+              "FirstClearNormalRewardID" : 33100003,
+              "FirstClearNormalRewardValue" : 3
+            }
+          ],
+          "NormalRewardData" : 
+          [
+            {
+              "NormalRewardGroup" : 29910002,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910007,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910021,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910022,
+              "NormalRewardRate" : 4000
+            }
+          ],
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 9910201
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 9910203,
+          "BattleStrID" : "BOSS_RUSH_02_BATTLE_03",
+          "BattleTabId" : 99102,
+          "OrderList" : 3,
+          "IsSweep" : true,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_BOSS_RUSH_ODYSSEY_003.txt",
+          "BattleMapStrID" : "MAP_BATTLE_ODYSSEY_STORAGE_BIG",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_BOSS_RUSH",
+          "BattleName" : "SI_BOSS_RUSH_NAME_CARBONPUNK_LORD_3",
+          "BattleDesc" : "SI_BOSS_RUSH_DESC_CARBONPUNK_LORD",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_BOSS_ADVICE_01",
+          "Difficulty" : "BOSS",
+          "BattleLevel" : 1597,
+          "MusicName" : "MUSIC_BATTLE_NORMAL_04.mp3",
+          "BattlePower" : 210000,
+          "StellaMemoryWarning" : true,
+          "AllClearMissionItemId" : 33100004,
+          "AllClearMissionItemCount" : 3,
+          "ReqNormalItem" : 413,
+          "ReqNormalItemCount" : 1,
+          "MissionTabGroupId" : 99102,
+          "BattleEffectData" : 
+          [
+            {
+              "BattleEffectId" : 60002,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_MOON_BUFF_01"
+            },
+
+            {
+              "BattleEffectId" : 60005,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_CASTER_BUFF_01"
+            }
+          ],
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_WIN",
+              "BattleMissionTask" : 1
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 45
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 40
+            }
+          ],
+          "FirstClearNormalRewardData" : 
+          [
+            {
+              "FirstClearNormalRewardType" : "RT_NORMAL_ITEM",
+              "FirstClearNormalRewardID" : 33100003,
+              "FirstClearNormalRewardValue" : 3
+            }
+          ],
+          "NormalRewardData" : 
+          [
+            {
+              "NormalRewardGroup" : 29910003,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910008,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910021,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910022,
+              "NormalRewardRate" : 4000
+            }
+          ],
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 9910202
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 9910204,
+          "BattleStrID" : "BOSS_RUSH_02_BATTLE_04",
+          "BattleTabId" : 99102,
+          "OrderList" : 4,
+          "IsSweep" : false,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_BOSS_RUSH_ODYSSEY_004.txt",
+          "BattleMapStrID" : "MAP_BATTLE_ODYSSEY_STORAGE_BIG",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_BOSS_RUSH",
+          "BattleName" : "SI_BOSS_RUSH_NAME_CARBONPUNK_LORD_4",
+          "BattleDesc" : "SI_BOSS_RUSH_DESC_CARBONPUNK_LORD",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_BOSS_ADVICE_01",
+          "Difficulty" : "BOSS",
+          "BattleLevel" : 1600,
+          "MusicName" : "MUSIC_BATTLE_NORMAL_04.mp3",
+          "BattlePower" : 220000,
+          "StellaMemoryWarning" : true,
+          "ReqNormalItem" : 413,
+          "ReqNormalItemCount" : 1,
+          "MissionTabGroupId" : 99102,
+          "DifficultyGroupId" : 3001,
+          "BattleEffectData" : 
+          [
+            {
+              "BattleEffectId" : 60002,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_MOON_BUFF_01"
+            },
+
+            {
+              "BattleEffectId" : 60005,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_CASTER_BUFF_01"
+            }
+          ],
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "NONE",
+              "BattleMissionTask" : 0
+            },
+
+            {
+              "BattleMissionType" : "NONE",
+              "BattleMissionTask" : 0
+            },
+
+            {
+              "BattleMissionType" : "NONE",
+              "BattleMissionTask" : 0
+            }
+          ],
+          "FirstClearNormalRewardData" : 
+          [
+            {
+              "FirstClearNormalRewardType" : "RT_NORMAL_ITEM",
+              "FirstClearNormalRewardID" : 33100003,
+              "FirstClearNormalRewardValue" : 3
+            }
+          ],
+          "NormalRewardData" : 
+          [
+            {
+              "NormalRewardGroup" : 29910003,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910008,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910021,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910022,
+              "NormalRewardRate" : 4000
+            }
+          ],
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 9910202
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 9910301,
+          "BattleStrID" : "BOSS_RUSH_03_BATTLE_01",
+          "BattleTabId" : 99103,
+          "OrderList" : 1,
+          "IsSweep" : true,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_BOSS_RUSH_DRESS_001.txt",
+          "BattleMapStrID" : "MAP_BATTLE_DRESS_BANQUET_HALL",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_BOSS_RUSH",
+          "BattleName" : "SI_BOSS_RUSH_NAME_EXCEED_UNSEAL_1",
+          "BattleDesc" : "SI_BOSS_RUSH_DESC_EXCEED_UNSEAL",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_BOSS_ADVICE_01",
+          "Difficulty" : "BOSS",
+          "BattleLevel" : 306,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 50000,
+          "AllClearMissionItemId" : 33200002,
+          "AllClearMissionItemCount" : 3,
+          "ReqNormalItem" : 413,
+          "ReqNormalItemCount" : 1,
+          "MissionTabGroupId" : 99103,
+          "BattleEffectData" : 
+          [
+            {
+              "BattleEffectId" : 60003,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_STAR_BUFF_01"
+            },
+
+            {
+              "BattleEffectId" : 60006,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_DEFENDER_BUFF_01"
+            }
+          ],
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_WIN",
+              "BattleMissionTask" : 1
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 45
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 40
+            }
+          ],
+          "FirstClearNormalRewardData" : 
+          [
+            {
+              "FirstClearNormalRewardType" : "RT_NORMAL_ITEM",
+              "FirstClearNormalRewardID" : 33200001,
+              "FirstClearNormalRewardValue" : 3
+            }
+          ],
+          "NormalRewardData" : 
+          [
+            {
+              "NormalRewardGroup" : 29910001,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910006,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910031,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910032,
+              "NormalRewardRate" : 4000
+            }
+          ],
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 11003018
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 9910302,
+          "BattleStrID" : "BOSS_RUSH_03_BATTLE_02",
+          "BattleTabId" : 99103,
+          "OrderList" : 2,
+          "IsSweep" : true,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_BOSS_RUSH_DRESS_002.txt",
+          "BattleMapStrID" : "MAP_BATTLE_DRESS_BANQUET_HALL",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_BOSS_RUSH",
+          "BattleName" : "SI_BOSS_RUSH_NAME_EXCEED_UNSEAL_2",
+          "BattleDesc" : "SI_BOSS_RUSH_DESC_EXCEED_UNSEAL",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_BOSS_ADVICE_01",
+          "Difficulty" : "BOSS",
+          "BattleLevel" : 1209,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 160000,
+          "StellaMemoryWarning" : true,
+          "AllClearMissionItemId" : 33200002,
+          "AllClearMissionItemCount" : 3,
+          "ReqNormalItem" : 413,
+          "ReqNormalItemCount" : 1,
+          "MissionTabGroupId" : 99103,
+          "BattleEffectData" : 
+          [
+            {
+              "BattleEffectId" : 60003,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_STAR_BUFF_01"
+            },
+
+            {
+              "BattleEffectId" : 60006,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_DEFENDER_BUFF_01"
+            }
+          ],
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_WIN",
+              "BattleMissionTask" : 1
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 45
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 40
+            }
+          ],
+          "FirstClearNormalRewardData" : 
+          [
+            {
+              "FirstClearNormalRewardType" : "RT_NORMAL_ITEM",
+              "FirstClearNormalRewardID" : 33200001,
+              "FirstClearNormalRewardValue" : 3
+            }
+          ],
+          "NormalRewardData" : 
+          [
+            {
+              "NormalRewardGroup" : 29910002,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910007,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910031,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910032,
+              "NormalRewardRate" : 4000
+            }
+          ],
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 9910301
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 9910303,
+          "BattleStrID" : "BOSS_RUSH_03_BATTLE_03",
+          "BattleTabId" : 99103,
+          "OrderList" : 3,
+          "IsSweep" : true,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_BOSS_RUSH_DRESS_003.txt",
+          "BattleMapStrID" : "MAP_BATTLE_DRESS_BANQUET_HALL",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_BOSS_RUSH",
+          "BattleName" : "SI_BOSS_RUSH_NAME_EXCEED_UNSEAL_3",
+          "BattleDesc" : "SI_BOSS_RUSH_DESC_EXCEED_UNSEAL",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_BOSS_ADVICE_01",
+          "Difficulty" : "BOSS",
+          "BattleLevel" : 1597,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 210000,
+          "StellaMemoryWarning" : true,
+          "AllClearMissionItemId" : 33200002,
+          "AllClearMissionItemCount" : 3,
+          "ReqNormalItem" : 413,
+          "ReqNormalItemCount" : 1,
+          "MissionTabGroupId" : 99103,
+          "BattleEffectData" : 
+          [
+            {
+              "BattleEffectId" : 60003,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_STAR_BUFF_01"
+            },
+
+            {
+              "BattleEffectId" : 60006,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_DEFENDER_BUFF_01"
+            }
+          ],
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_WIN",
+              "BattleMissionTask" : 1
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 45
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 40
+            }
+          ],
+          "FirstClearNormalRewardData" : 
+          [
+            {
+              "FirstClearNormalRewardType" : "RT_NORMAL_ITEM",
+              "FirstClearNormalRewardID" : 33200001,
+              "FirstClearNormalRewardValue" : 3
+            }
+          ],
+          "NormalRewardData" : 
+          [
+            {
+              "NormalRewardGroup" : 29910003,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910008,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910031,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910032,
+              "NormalRewardRate" : 4000
+            }
+          ],
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 9910302
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 9910304,
+          "BattleStrID" : "BOSS_RUSH_03_BATTLE_04",
+          "BattleTabId" : 99103,
+          "OrderList" : 4,
+          "IsSweep" : false,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_BOSS_RUSH_DRESS_004.txt",
+          "BattleMapStrID" : "MAP_BATTLE_DRESS_BANQUET_HALL",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_BOSS_RUSH",
+          "BattleName" : "SI_BOSS_RUSH_NAME_EXCEED_UNSEAL_4",
+          "BattleDesc" : "SI_BOSS_RUSH_DESC_EXCEED_UNSEAL",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_BOSS_ADVICE_01",
+          "Difficulty" : "BOSS",
+          "BattleLevel" : 1600,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 220000,
+          "StellaMemoryWarning" : true,
+          "ReqNormalItem" : 413,
+          "ReqNormalItemCount" : 1,
+          "MissionTabGroupId" : 99103,
+          "DifficultyGroupId" : 3001,
+          "BattleEffectData" : 
+          [
+            {
+              "BattleEffectId" : 60003,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_STAR_BUFF_01"
+            },
+
+            {
+              "BattleEffectId" : 60006,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_DEFENDER_BUFF_01"
+            }
+          ],
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "NONE",
+              "BattleMissionTask" : 0
+            },
+
+            {
+              "BattleMissionType" : "NONE",
+              "BattleMissionTask" : 0
+            },
+
+            {
+              "BattleMissionType" : "NONE",
+              "BattleMissionTask" : 0
+            }
+          ],
+          "FirstClearNormalRewardData" : 
+          [
+            {
+              "FirstClearNormalRewardType" : "RT_NORMAL_ITEM",
+              "FirstClearNormalRewardID" : 33200001,
+              "FirstClearNormalRewardValue" : 3
+            }
+          ],
+          "NormalRewardData" : 
+          [
+            {
+              "NormalRewardGroup" : 29910003,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910008,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910031,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910032,
+              "NormalRewardRate" : 4000
+            }
+          ],
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 9910302
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 9910401,
+          "BattleStrID" : "BOSS_RUSH_04_BATTLE_01",
+          "BattleTabId" : 99104,
+          "OrderList" : 1,
+          "IsSweep" : true,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_BOSS_RUSH_KRUNNADUN_001.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STARDUST_FORTRESS_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_BOSS_RUSH",
+          "BattleName" : "SI_BOSS_RUSH_NAME_RAIDER_KRUNNADUN_1",
+          "BattleDesc" : "SI_BOSS_RUSH_DESC_RAIDER_KRUNNADUN",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_BOSS_ADVICE_01",
+          "Difficulty" : "BOSS",
+          "BattleLevel" : 306,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 50000,
+          "AllClearMissionItemId" : 33100011,
+          "AllClearMissionItemCount" : 3,
+          "ReqNormalItem" : 413,
+          "ReqNormalItemCount" : 1,
+          "MissionTabGroupId" : 99104,
+          "BattleEffectData" : 
+          [
+            {
+              "BattleEffectId" : 60008,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_MOON_BUFF_02"
+            },
+
+            {
+              "BattleEffectId" : 60010,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_RANGER_BUFF_01"
+            }
+          ],
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_WIN",
+              "BattleMissionTask" : 1
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 45
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 40
+            }
+          ],
+          "FirstClearNormalRewardData" : 
+          [
+            {
+              "FirstClearNormalRewardType" : "RT_NORMAL_ITEM",
+              "FirstClearNormalRewardID" : 33100007,
+              "FirstClearNormalRewardValue" : 3
+            }
+          ],
+          "NormalRewardData" : 
+          [
+            {
+              "NormalRewardGroup" : 29910001,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910006,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910041,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910042,
+              "NormalRewardRate" : 4000
+            }
+          ],
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 11003018
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 9910402,
+          "BattleStrID" : "BOSS_RUSH_04_BATTLE_02",
+          "BattleTabId" : 99104,
+          "OrderList" : 2,
+          "IsSweep" : true,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_BOSS_RUSH_KRUNNADUN_002.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STARDUST_FORTRESS_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_BOSS_RUSH",
+          "BattleName" : "SI_BOSS_RUSH_NAME_RAIDER_KRUNNADUN_2",
+          "BattleDesc" : "SI_BOSS_RUSH_DESC_RAIDER_KRUNNADUN",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_BOSS_ADVICE_01",
+          "Difficulty" : "BOSS",
+          "BattleLevel" : 1209,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 160000,
+          "StellaMemoryWarning" : true,
+          "AllClearMissionItemId" : 33100011,
+          "AllClearMissionItemCount" : 3,
+          "ReqNormalItem" : 413,
+          "ReqNormalItemCount" : 1,
+          "MissionTabGroupId" : 99104,
+          "BattleEffectData" : 
+          [
+            {
+              "BattleEffectId" : 60008,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_MOON_BUFF_02"
+            },
+
+            {
+              "BattleEffectId" : 60010,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_RANGER_BUFF_01"
+            }
+          ],
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_WIN",
+              "BattleMissionTask" : 1
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 45
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 40
+            }
+          ],
+          "FirstClearNormalRewardData" : 
+          [
+            {
+              "FirstClearNormalRewardType" : "RT_NORMAL_ITEM",
+              "FirstClearNormalRewardID" : 33100007,
+              "FirstClearNormalRewardValue" : 3
+            }
+          ],
+          "NormalRewardData" : 
+          [
+            {
+              "NormalRewardGroup" : 29910002,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910007,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910041,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910042,
+              "NormalRewardRate" : 4000
+            }
+          ],
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 9910401
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 9910403,
+          "BattleStrID" : "BOSS_RUSH_04_BATTLE_03",
+          "BattleTabId" : 99104,
+          "OrderList" : 3,
+          "IsSweep" : true,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_BOSS_RUSH_KRUNNADUN_003.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STARDUST_FORTRESS_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_BOSS_RUSH",
+          "BattleName" : "SI_BOSS_RUSH_NAME_RAIDER_KRUNNADUN_3",
+          "BattleDesc" : "SI_BOSS_RUSH_DESC_RAIDER_KRUNNADUN",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_BOSS_ADVICE_01",
+          "Difficulty" : "BOSS",
+          "BattleLevel" : 1597,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 210000,
+          "StellaMemoryWarning" : true,
+          "AllClearMissionItemId" : 33100011,
+          "AllClearMissionItemCount" : 3,
+          "ReqNormalItem" : 413,
+          "ReqNormalItemCount" : 1,
+          "MissionTabGroupId" : 99104,
+          "BattleEffectData" : 
+          [
+            {
+              "BattleEffectId" : 60008,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_MOON_BUFF_02"
+            },
+
+            {
+              "BattleEffectId" : 60010,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_RANGER_BUFF_01"
+            }
+          ],
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_WIN",
+              "BattleMissionTask" : 1
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 45
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 40
+            }
+          ],
+          "FirstClearNormalRewardData" : 
+          [
+            {
+              "FirstClearNormalRewardType" : "RT_NORMAL_ITEM",
+              "FirstClearNormalRewardID" : 33100007,
+              "FirstClearNormalRewardValue" : 3
+            }
+          ],
+          "NormalRewardData" : 
+          [
+            {
+              "NormalRewardGroup" : 29910003,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910008,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910041,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910042,
+              "NormalRewardRate" : 4000
+            }
+          ],
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 9910402
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 9910404,
+          "BattleStrID" : "BOSS_RUSH_04_BATTLE_04",
+          "BattleTabId" : 99104,
+          "OrderList" : 4,
+          "IsSweep" : false,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_BOSS_RUSH_KRUNNADUN_004.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STARDUST_FORTRESS_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_BOSS_RUSH",
+          "BattleName" : "SI_BOSS_RUSH_NAME_RAIDER_KRUNNADUN_4",
+          "BattleDesc" : "SI_BOSS_RUSH_DESC_RAIDER_KRUNNADUN",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_BOSS_ADVICE_01",
+          "Difficulty" : "BOSS",
+          "BattleLevel" : 1600,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 220000,
+          "StellaMemoryWarning" : true,
+          "ReqNormalItem" : 413,
+          "ReqNormalItemCount" : 1,
+          "MissionTabGroupId" : 99104,
+          "DifficultyGroupId" : 3001,
+          "BattleEffectData" : 
+          [
+            {
+              "BattleEffectId" : 60008,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_MOON_BUFF_02"
+            },
+
+            {
+              "BattleEffectId" : 60010,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_RANGER_BUFF_01"
+            }
+          ],
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "NONE",
+              "BattleMissionTask" : 0
+            },
+
+            {
+              "BattleMissionType" : "NONE",
+              "BattleMissionTask" : 0
+            },
+
+            {
+              "BattleMissionType" : "NONE",
+              "BattleMissionTask" : 0
+            }
+          ],
+          "FirstClearNormalRewardData" : 
+          [
+            {
+              "FirstClearNormalRewardType" : "RT_NORMAL_ITEM",
+              "FirstClearNormalRewardID" : 33100007,
+              "FirstClearNormalRewardValue" : 3
+            }
+          ],
+          "NormalRewardData" : 
+          [
+            {
+              "NormalRewardGroup" : 29910003,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910008,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910041,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910042,
+              "NormalRewardRate" : 4000
+            }
+          ],
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 9910402
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 9910501,
+          "BattleStrID" : "BOSS_RUSH_05_BATTLE_01",
+          "BattleTabId" : 99105,
+          "OrderList" : 1,
+          "IsSweep" : true,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_BOSS_RUSH_PUNISHER_001.txt",
+          "BattleMapStrID" : "MAP_BATTLE_TWISTED_ANCIENT_SITE_TYPE_B_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_BOSS_RUSH",
+          "BattleName" : "SI_BOSS_RUSH_NAME_PUNISHER_ARMOR_1",
+          "BattleDesc" : "SI_BOSS_RUSH_DESC_PUNISHER_ARMOR",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_BOSS_ADVICE_01",
+          "Difficulty" : "BOSS",
+          "BattleLevel" : 306,
+          "MusicName" : "MUSIC_BATTLE_BOSS_03.mp3",
+          "BattlePower" : 50000,
+          "AllClearMissionItemId" : 33200012,
+          "AllClearMissionItemCount" : 3,
+          "ReqNormalItem" : 413,
+          "ReqNormalItemCount" : 1,
+          "MissionTabGroupId" : 99105,
+          "BattleEffectData" : 
+          [
+            {
+              "BattleEffectId" : 60007,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_SUN_BUFF_02"
+            },
+
+            {
+              "BattleEffectId" : 60009,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_DEFENDER_BUFF_02"
+            }
+          ],
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_WIN",
+              "BattleMissionTask" : 1
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 45
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 40
+            }
+          ],
+          "FirstClearNormalRewardData" : 
+          [
+            {
+              "FirstClearNormalRewardType" : "RT_NORMAL_ITEM",
+              "FirstClearNormalRewardID" : 33200011,
+              "FirstClearNormalRewardValue" : 3
+            }
+          ],
+          "NormalRewardData" : 
+          [
+            {
+              "NormalRewardGroup" : 29910001,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910006,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910051,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910052,
+              "NormalRewardRate" : 4000
+            }
+          ],
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 11003018
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 9910502,
+          "BattleStrID" : "BOSS_RUSH_05_BATTLE_02",
+          "BattleTabId" : 99105,
+          "OrderList" : 2,
+          "IsSweep" : true,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_BOSS_RUSH_PUNISHER_002.txt",
+          "BattleMapStrID" : "MAP_BATTLE_TWISTED_ANCIENT_SITE_TYPE_B_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_BOSS_RUSH",
+          "BattleName" : "SI_BOSS_RUSH_NAME_PUNISHER_ARMOR_2",
+          "BattleDesc" : "SI_BOSS_RUSH_DESC_PUNISHER_ARMOR",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_BOSS_ADVICE_01",
+          "Difficulty" : "BOSS",
+          "BattleLevel" : 1209,
+          "MusicName" : "MUSIC_BATTLE_BOSS_03.mp3",
+          "BattlePower" : 160000,
+          "StellaMemoryWarning" : true,
+          "AllClearMissionItemId" : 33200012,
+          "AllClearMissionItemCount" : 3,
+          "ReqNormalItem" : 413,
+          "ReqNormalItemCount" : 1,
+          "MissionTabGroupId" : 99105,
+          "BattleEffectData" : 
+          [
+            {
+              "BattleEffectId" : 60007,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_SUN_BUFF_02"
+            },
+
+            {
+              "BattleEffectId" : 60009,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_DEFENDER_BUFF_02"
+            }
+          ],
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_WIN",
+              "BattleMissionTask" : 1
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 45
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 40
+            }
+          ],
+          "FirstClearNormalRewardData" : 
+          [
+            {
+              "FirstClearNormalRewardType" : "RT_NORMAL_ITEM",
+              "FirstClearNormalRewardID" : 33200011,
+              "FirstClearNormalRewardValue" : 3
+            }
+          ],
+          "NormalRewardData" : 
+          [
+            {
+              "NormalRewardGroup" : 29910002,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910007,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910051,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910052,
+              "NormalRewardRate" : 4000
+            }
+          ],
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 9910501
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 9910503,
+          "BattleStrID" : "BOSS_RUSH_05_BATTLE_03",
+          "BattleTabId" : 99105,
+          "OrderList" : 3,
+          "IsSweep" : true,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_BOSS_RUSH_PUNISHER_003.txt",
+          "BattleMapStrID" : "MAP_BATTLE_TWISTED_ANCIENT_SITE_TYPE_B_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_BOSS_RUSH",
+          "BattleName" : "SI_BOSS_RUSH_NAME_PUNISHER_ARMOR_3",
+          "BattleDesc" : "SI_BOSS_RUSH_DESC_PUNISHER_ARMOR",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_BOSS_ADVICE_01",
+          "Difficulty" : "BOSS",
+          "BattleLevel" : 1597,
+          "MusicName" : "MUSIC_BATTLE_BOSS_03.mp3",
+          "BattlePower" : 210000,
+          "StellaMemoryWarning" : true,
+          "AllClearMissionItemId" : 33200012,
+          "AllClearMissionItemCount" : 3,
+          "ReqNormalItem" : 413,
+          "ReqNormalItemCount" : 1,
+          "MissionTabGroupId" : 99105,
+          "BattleEffectData" : 
+          [
+            {
+              "BattleEffectId" : 60007,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_SUN_BUFF_02"
+            },
+
+            {
+              "BattleEffectId" : 60009,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_DEFENDER_BUFF_02"
+            }
+          ],
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_WIN",
+              "BattleMissionTask" : 1
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 45
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 40
+            }
+          ],
+          "FirstClearNormalRewardData" : 
+          [
+            {
+              "FirstClearNormalRewardType" : "RT_NORMAL_ITEM",
+              "FirstClearNormalRewardID" : 33200011,
+              "FirstClearNormalRewardValue" : 3
+            }
+          ],
+          "NormalRewardData" : 
+          [
+            {
+              "NormalRewardGroup" : 29910003,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910008,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910051,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910052,
+              "NormalRewardRate" : 4000
+            }
+          ],
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 9910502
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 9910504,
+          "BattleStrID" : "BOSS_RUSH_05_BATTLE_04",
+          "BattleTabId" : 99105,
+          "OrderList" : 4,
+          "IsSweep" : false,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_BOSS_RUSH_PUNISHER_004.txt",
+          "BattleMapStrID" : "MAP_BATTLE_TWISTED_ANCIENT_SITE_TYPE_B_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_BOSS_RUSH",
+          "BattleName" : "SI_BOSS_RUSH_NAME_PUNISHER_ARMOR_4",
+          "BattleDesc" : "SI_BOSS_RUSH_DESC_PUNISHER_ARMOR",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_BOSS_ADVICE_01",
+          "Difficulty" : "BOSS",
+          "BattleLevel" : 1600,
+          "MusicName" : "MUSIC_BATTLE_BOSS_03.mp3",
+          "BattlePower" : 220000,
+          "StellaMemoryWarning" : true,
+          "ReqNormalItem" : 413,
+          "ReqNormalItemCount" : 1,
+          "MissionTabGroupId" : 99105,
+          "DifficultyGroupId" : 3001,
+          "BattleEffectData" : 
+          [
+            {
+              "BattleEffectId" : 60007,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_SUN_BUFF_02"
+            },
+
+            {
+              "BattleEffectId" : 60009,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_DEFENDER_BUFF_02"
+            }
+          ],
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "NONE",
+              "BattleMissionTask" : 0
+            },
+
+            {
+              "BattleMissionType" : "NONE",
+              "BattleMissionTask" : 0
+            },
+
+            {
+              "BattleMissionType" : "NONE",
+              "BattleMissionTask" : 0
+            }
+          ],
+          "FirstClearNormalRewardData" : 
+          [
+            {
+              "FirstClearNormalRewardType" : "RT_NORMAL_ITEM",
+              "FirstClearNormalRewardID" : 33200011,
+              "FirstClearNormalRewardValue" : 3
+            }
+          ],
+          "NormalRewardData" : 
+          [
+            {
+              "NormalRewardGroup" : 29910003,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910008,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910051,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910052,
+              "NormalRewardRate" : 4000
+            }
+          ],
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 9910502
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 9910601,
+          "BattleStrID" : "BOSS_RUSH_06_BATTLE_01",
+          "BattleTabId" : 99106,
+          "OrderList" : 1,
+          "IsSweep" : true,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_BOSS_RUSH_HAPPY68_001.txt",
+          "BattleMapStrID" : "MAP_BATTLE_TWISTED_STARDUST_FORTRESS_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_BOSS_RUSH",
+          "BattleName" : "SI_BOSS_RUSH_NAME_HAPPY68_1",
+          "BattleDesc" : "SI_BOSS_RUSH_DESC_HAPPY68",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_BOSS_ADVICE_01",
+          "Difficulty" : "BOSS",
+          "BattleLevel" : 306,
+          "MusicName" : "MUSIC_BATTLE_BOSS_03.mp3",
+          "BattlePower" : 50000,
+          "AllClearMissionItemId" : 9996,
+          "AllClearMissionItemCount" : 4,
+          "ReqNormalItem" : 413,
+          "ReqNormalItemCount" : 1,
+          "MissionTabGroupId" : 99106,
+          "BattleEffectData" : 
+          [
+            {
+              "BattleEffectId" : 60011,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_STAR_BUFF_02"
+            },
+
+            {
+              "BattleEffectId" : 60012,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_RANGER_BUFF_02"
+            }
+          ],
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_WIN",
+              "BattleMissionTask" : 1
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 45
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 40
+            }
+          ],
+          "FirstClearNormalRewardData" : 
+          [
+            {
+              "FirstClearNormalRewardType" : "RT_NORMAL_ITEM",
+              "FirstClearNormalRewardID" : 9996,
+              "FirstClearNormalRewardValue" : 4
+            }
+          ],
+          "NormalRewardData" : 
+          [
+            {
+              "NormalRewardGroup" : 29910001,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910006,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910061,
+              "NormalRewardRate" : 10000
+            }
+          ],
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 11003018
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 9910602,
+          "BattleStrID" : "BOSS_RUSH_06_BATTLE_02",
+          "BattleTabId" : 99106,
+          "OrderList" : 2,
+          "IsSweep" : true,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_BOSS_RUSH_HAPPY68_002.txt",
+          "BattleMapStrID" : "MAP_BATTLE_TWISTED_STARDUST_FORTRESS_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_BOSS_RUSH",
+          "BattleName" : "SI_BOSS_RUSH_NAME_HAPPY68_2",
+          "BattleDesc" : "SI_BOSS_RUSH_DESC_HAPPY68",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_BOSS_ADVICE_01",
+          "Difficulty" : "BOSS",
+          "BattleLevel" : 1209,
+          "MusicName" : "MUSIC_BATTLE_BOSS_03.mp3",
+          "BattlePower" : 160000,
+          "StellaMemoryWarning" : true,
+          "AllClearMissionItemId" : 9996,
+          "AllClearMissionItemCount" : 4,
+          "ReqNormalItem" : 413,
+          "ReqNormalItemCount" : 1,
+          "MissionTabGroupId" : 99106,
+          "BattleEffectData" : 
+          [
+            {
+              "BattleEffectId" : 60011,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_STAR_BUFF_02"
+            },
+
+            {
+              "BattleEffectId" : 60012,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_RANGER_BUFF_02"
+            }
+          ],
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_WIN",
+              "BattleMissionTask" : 1
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 45
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 40
+            }
+          ],
+          "FirstClearNormalRewardData" : 
+          [
+            {
+              "FirstClearNormalRewardType" : "RT_NORMAL_ITEM",
+              "FirstClearNormalRewardID" : 9996,
+              "FirstClearNormalRewardValue" : 4
+            }
+          ],
+          "NormalRewardData" : 
+          [
+            {
+              "NormalRewardGroup" : 29910002,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910007,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910061,
+              "NormalRewardRate" : 10000
+            }
+          ],
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 9910601
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 9910603,
+          "BattleStrID" : "BOSS_RUSH_06_BATTLE_03",
+          "BattleTabId" : 99106,
+          "OrderList" : 3,
+          "IsSweep" : true,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_BOSS_RUSH_HAPPY68_003.txt",
+          "BattleMapStrID" : "MAP_BATTLE_TWISTED_STARDUST_FORTRESS_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_BOSS_RUSH",
+          "BattleName" : "SI_BOSS_RUSH_NAME_HAPPY68_3",
+          "BattleDesc" : "SI_BOSS_RUSH_DESC_HAPPY68",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_BOSS_ADVICE_01",
+          "Difficulty" : "BOSS",
+          "BattleLevel" : 1597,
+          "MusicName" : "MUSIC_BATTLE_BOSS_03.mp3",
+          "BattlePower" : 210000,
+          "StellaMemoryWarning" : true,
+          "AllClearMissionItemId" : 9996,
+          "AllClearMissionItemCount" : 4,
+          "ReqNormalItem" : 413,
+          "ReqNormalItemCount" : 1,
+          "MissionTabGroupId" : 99106,
+          "BattleEffectData" : 
+          [
+            {
+              "BattleEffectId" : 60011,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_STAR_BUFF_02"
+            },
+
+            {
+              "BattleEffectId" : 60012,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_RANGER_BUFF_02"
+            }
+          ],
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_WIN",
+              "BattleMissionTask" : 1
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 45
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 40
+            }
+          ],
+          "FirstClearNormalRewardData" : 
+          [
+            {
+              "FirstClearNormalRewardType" : "RT_NORMAL_ITEM",
+              "FirstClearNormalRewardID" : 9996,
+              "FirstClearNormalRewardValue" : 4
+            }
+          ],
+          "NormalRewardData" : 
+          [
+            {
+              "NormalRewardGroup" : 29910003,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910008,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910061,
+              "NormalRewardRate" : 10000
+            }
+          ],
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 9910602
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 9910604,
+          "BattleStrID" : "BOSS_RUSH_06_BATTLE_04",
+          "BattleTabId" : 99106,
+          "OrderList" : 4,
+          "IsSweep" : false,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_BOSS_RUSH_HAPPY68_004.txt",
+          "BattleMapStrID" : "MAP_BATTLE_TWISTED_STARDUST_FORTRESS_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_BOSS_RUSH",
+          "BattleName" : "SI_BOSS_RUSH_NAME_HAPPY68_4",
+          "BattleDesc" : "SI_BOSS_RUSH_DESC_HAPPY68",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_BOSS_ADVICE_01",
+          "Difficulty" : "BOSS",
+          "BattleLevel" : 1600,
+          "MusicName" : "MUSIC_BATTLE_BOSS_03.mp3",
+          "BattlePower" : 220000,
+          "StellaMemoryWarning" : true,
+          "ReqNormalItem" : 413,
+          "ReqNormalItemCount" : 1,
+          "MissionTabGroupId" : 99106,
+          "DifficultyGroupId" : 3001,
+          "BattleEffectData" : 
+          [
+            {
+              "BattleEffectId" : 60011,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_STAR_BUFF_02"
+            },
+
+            {
+              "BattleEffectId" : 60012,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_RANGER_BUFF_02"
+            }
+          ],
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "NONE",
+              "BattleMissionTask" : 0
+            },
+
+            {
+              "BattleMissionType" : "NONE",
+              "BattleMissionTask" : 0
+            },
+
+            {
+              "BattleMissionType" : "NONE",
+              "BattleMissionTask" : 0
+            }
+          ],
+          "FirstClearNormalRewardData" : 
+          [
+            {
+              "FirstClearNormalRewardType" : "RT_NORMAL_ITEM",
+              "FirstClearNormalRewardID" : 9996,
+              "FirstClearNormalRewardValue" : 4
+            }
+          ],
+          "NormalRewardData" : 
+          [
+            {
+              "NormalRewardGroup" : 29910003,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910008,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910061,
+              "NormalRewardRate" : 10000
+            }
+          ],
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 9910602
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 9910701,
+          "BattleStrID" : "BOSS_RUSH_07_BATTLE_01",
+          "BattleTabId" : 99107,
+          "OrderList" : 1,
+          "IsSweep" : true,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_BOSS_RUSH_VOIDREAPER_001.txt",
+          "BattleMapStrID" : "MAP_BATTLE_CRACKED_RUIN_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_BOSS_RUSH",
+          "BattleName" : "SI_BOSS_RUSH_NAME_VOIDER_VOIDREAPER_1",
+          "BattleDesc" : "SI_BOSS_RUSH_DESC_VOIDER_VOIDREAPER",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_BOSS_ADVICE_01",
+          "Difficulty" : "BOSS",
+          "BattleLevel" : 306,
+          "MusicName" : "MUSIC_BATTLE_BOSS_03.mp3",
+          "BattlePower" : 50000,
+          "AllClearMissionItemId" : 33200017,
+          "AllClearMissionItemCount" : 3,
+          "ReqNormalItem" : 413,
+          "ReqNormalItemCount" : 1,
+          "MissionTabGroupId" : 99107,
+          "BattleEffectData" : 
+          [
+            {
+              "BattleEffectId" : 60013,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_SUN_BUFF_03"
+            },
+
+            {
+              "BattleEffectId" : 60014,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_STRIKER_BUFF_02"
+            }
+          ],
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_WIN",
+              "BattleMissionTask" : 1
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 45
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 40
+            }
+          ],
+          "FirstClearNormalRewardData" : 
+          [
+            {
+              "FirstClearNormalRewardType" : "RT_NORMAL_ITEM",
+              "FirstClearNormalRewardID" : 33200013,
+              "FirstClearNormalRewardValue" : 3
+            }
+          ],
+          "NormalRewardData" : 
+          [
+            {
+              "NormalRewardGroup" : 29910001,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910006,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910071,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910072,
+              "NormalRewardRate" : 4000
+            }
+          ],
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 11003018
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 9910702,
+          "BattleStrID" : "BOSS_RUSH_07_BATTLE_02",
+          "BattleTabId" : 99107,
+          "OrderList" : 2,
+          "IsSweep" : true,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_BOSS_RUSH_VOIDREAPER_002.txt",
+          "BattleMapStrID" : "MAP_BATTLE_CRACKED_RUIN_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_BOSS_RUSH",
+          "BattleName" : "SI_BOSS_RUSH_NAME_VOIDER_VOIDREAPER_2",
+          "BattleDesc" : "SI_BOSS_RUSH_DESC_VOIDER_VOIDREAPER",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_BOSS_ADVICE_01",
+          "Difficulty" : "BOSS",
+          "BattleLevel" : 1209,
+          "MusicName" : "MUSIC_BATTLE_BOSS_03.mp3",
+          "BattlePower" : 160000,
+          "StellaMemoryWarning" : true,
+          "AllClearMissionItemId" : 33200017,
+          "AllClearMissionItemCount" : 3,
+          "ReqNormalItem" : 413,
+          "ReqNormalItemCount" : 1,
+          "MissionTabGroupId" : 99107,
+          "BattleEffectData" : 
+          [
+            {
+              "BattleEffectId" : 60013,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_SUN_BUFF_03"
+            },
+
+            {
+              "BattleEffectId" : 60014,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_STRIKER_BUFF_02"
+            }
+          ],
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_WIN",
+              "BattleMissionTask" : 1
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 45
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 40
+            }
+          ],
+          "FirstClearNormalRewardData" : 
+          [
+            {
+              "FirstClearNormalRewardType" : "RT_NORMAL_ITEM",
+              "FirstClearNormalRewardID" : 33200013,
+              "FirstClearNormalRewardValue" : 3
+            }
+          ],
+          "NormalRewardData" : 
+          [
+            {
+              "NormalRewardGroup" : 29910002,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910007,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910071,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910072,
+              "NormalRewardRate" : 4000
+            }
+          ],
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 9910701
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 9910703,
+          "BattleStrID" : "BOSS_RUSH_07_BATTLE_03",
+          "BattleTabId" : 99107,
+          "OrderList" : 3,
+          "IsSweep" : true,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_BOSS_RUSH_VOIDREAPER_003.txt",
+          "BattleMapStrID" : "MAP_BATTLE_CRACKED_RUIN_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_BOSS_RUSH",
+          "BattleName" : "SI_BOSS_RUSH_NAME_VOIDER_VOIDREAPER_3",
+          "BattleDesc" : "SI_BOSS_RUSH_DESC_VOIDER_VOIDREAPER",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_BOSS_ADVICE_01",
+          "Difficulty" : "BOSS",
+          "BattleLevel" : 1597,
+          "MusicName" : "MUSIC_BATTLE_BOSS_03.mp3",
+          "BattlePower" : 210000,
+          "StellaMemoryWarning" : true,
+          "AllClearMissionItemId" : 33200017,
+          "AllClearMissionItemCount" : 3,
+          "ReqNormalItem" : 413,
+          "ReqNormalItemCount" : 1,
+          "MissionTabGroupId" : 99107,
+          "BattleEffectData" : 
+          [
+            {
+              "BattleEffectId" : 60013,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_SUN_BUFF_03"
+            },
+
+            {
+              "BattleEffectId" : 60014,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_STRIKER_BUFF_02"
+            }
+          ],
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_WIN",
+              "BattleMissionTask" : 1
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 45
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 40
+            }
+          ],
+          "FirstClearNormalRewardData" : 
+          [
+            {
+              "FirstClearNormalRewardType" : "RT_NORMAL_ITEM",
+              "FirstClearNormalRewardID" : 33200013,
+              "FirstClearNormalRewardValue" : 3
+            }
+          ],
+          "NormalRewardData" : 
+          [
+            {
+              "NormalRewardGroup" : 29910003,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910008,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910071,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910072,
+              "NormalRewardRate" : 4000
+            }
+          ],
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 9910702
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 9910704,
+          "BattleStrID" : "BOSS_RUSH_07_BATTLE_04",
+          "BattleTabId" : 99107,
+          "OrderList" : 4,
+          "IsSweep" : false,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_BOSS_RUSH_VOIDREAPER_004.txt",
+          "BattleMapStrID" : "MAP_BATTLE_CRACKED_RUIN_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_BOSS_RUSH",
+          "BattleName" : "SI_BOSS_RUSH_NAME_VOIDER_VOIDREAPER_4",
+          "BattleDesc" : "SI_BOSS_RUSH_DESC_VOIDER_VOIDREAPER",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_BOSS_ADVICE_01",
+          "Difficulty" : "BOSS",
+          "BattleLevel" : 1600,
+          "MusicName" : "MUSIC_BATTLE_BOSS_03.mp3",
+          "BattlePower" : 220000,
+          "StellaMemoryWarning" : true,
+          "ReqNormalItem" : 413,
+          "ReqNormalItemCount" : 1,
+          "MissionTabGroupId" : 99107,
+          "DifficultyGroupId" : 3001,
+          "BattleEffectData" : 
+          [
+            {
+              "BattleEffectId" : 60013,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_SUN_BUFF_03"
+            },
+
+            {
+              "BattleEffectId" : 60014,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_STRIKER_BUFF_02"
+            }
+          ],
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "NONE",
+              "BattleMissionTask" : 0
+            },
+
+            {
+              "BattleMissionType" : "NONE",
+              "BattleMissionTask" : 0
+            },
+
+            {
+              "BattleMissionType" : "NONE",
+              "BattleMissionTask" : 0
+            }
+          ],
+          "FirstClearNormalRewardData" : 
+          [
+            {
+              "FirstClearNormalRewardType" : "RT_NORMAL_ITEM",
+              "FirstClearNormalRewardID" : 33200013,
+              "FirstClearNormalRewardValue" : 3
+            }
+          ],
+          "NormalRewardData" : 
+          [
+            {
+              "NormalRewardGroup" : 29910003,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910008,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910071,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910072,
+              "NormalRewardRate" : 4000
+            }
+          ],
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 9910702
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 9910801,
+          "BattleStrID" : "BOSS_RUSH_08_BATTLE_01",
+          "BattleTabId" : 99108,
+          "OrderList" : 1,
+          "IsSweep" : true,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_BOSS_RUSH_COFFIN_001.txt",
+          "BattleMapStrID" : "MAP_BATTLE_CRACKED_FROZEN_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_BOSS_RUSH",
+          "BattleName" : "SI_BOSS_RUSH_NAME_WITNESS_COFFIN_1",
+          "BattleDesc" : "SI_BOSS_RUSH_DESC_WITNESS_COFFIN",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_BOSS_ADVICE_01",
+          "Difficulty" : "BOSS",
+          "BattleLevel" : 306,
+          "MusicName" : "MUSIC_BATTLE_BOSS_03.mp3",
+          "BattlePower" : 50000,
+          "AllClearMissionItemId" : 33200016,
+          "AllClearMissionItemCount" : 3,
+          "ReqNormalItem" : 413,
+          "ReqNormalItemCount" : 1,
+          "MissionTabGroupId" : 99108,
+          "BattleEffectData" : 
+          [
+            {
+              "BattleEffectId" : 60015,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_MOON_BUFF_03"
+            },
+
+            {
+              "BattleEffectId" : 60017,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_DEFENDER_BUFF_03"
+            }
+          ],
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_WIN",
+              "BattleMissionTask" : 1
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 45
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 40
+            }
+          ],
+          "FirstClearNormalRewardData" : 
+          [
+            {
+              "FirstClearNormalRewardType" : "RT_NORMAL_ITEM",
+              "FirstClearNormalRewardID" : 33200014,
+              "FirstClearNormalRewardValue" : 3
+            }
+          ],
+          "NormalRewardData" : 
+          [
+            {
+              "NormalRewardGroup" : 29910001,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910006,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910081,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910082,
+              "NormalRewardRate" : 4000
+            }
+          ],
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 11003018
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 9910802,
+          "BattleStrID" : "BOSS_RUSH_08_BATTLE_02",
+          "BattleTabId" : 99108,
+          "OrderList" : 2,
+          "IsSweep" : true,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_BOSS_RUSH_COFFIN_002.txt",
+          "BattleMapStrID" : "MAP_BATTLE_CRACKED_FROZEN_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_BOSS_RUSH",
+          "BattleName" : "SI_BOSS_RUSH_NAME_WITNESS_COFFIN_2",
+          "BattleDesc" : "SI_BOSS_RUSH_DESC_WITNESS_COFFIN",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_BOSS_ADVICE_01",
+          "Difficulty" : "BOSS",
+          "BattleLevel" : 1209,
+          "MusicName" : "MUSIC_BATTLE_BOSS_03.mp3",
+          "BattlePower" : 160000,
+          "StellaMemoryWarning" : true,
+          "AllClearMissionItemId" : 33200016,
+          "AllClearMissionItemCount" : 3,
+          "ReqNormalItem" : 413,
+          "ReqNormalItemCount" : 1,
+          "MissionTabGroupId" : 99108,
+          "BattleEffectData" : 
+          [
+            {
+              "BattleEffectId" : 60015,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_MOON_BUFF_03"
+            },
+
+            {
+              "BattleEffectId" : 60017,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_DEFENDER_BUFF_03"
+            }
+          ],
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_WIN",
+              "BattleMissionTask" : 1
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 45
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 40
+            }
+          ],
+          "FirstClearNormalRewardData" : 
+          [
+            {
+              "FirstClearNormalRewardType" : "RT_NORMAL_ITEM",
+              "FirstClearNormalRewardID" : 33200014,
+              "FirstClearNormalRewardValue" : 3
+            }
+          ],
+          "NormalRewardData" : 
+          [
+            {
+              "NormalRewardGroup" : 29910002,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910007,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910081,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910082,
+              "NormalRewardRate" : 4000
+            }
+          ],
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 9910801
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 9910803,
+          "BattleStrID" : "BOSS_RUSH_08_BATTLE_03",
+          "BattleTabId" : 99108,
+          "OrderList" : 3,
+          "IsSweep" : true,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_BOSS_RUSH_COFFIN_003.txt",
+          "BattleMapStrID" : "MAP_BATTLE_CRACKED_FROZEN_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_BOSS_RUSH",
+          "BattleName" : "SI_BOSS_RUSH_NAME_WITNESS_COFFIN_3",
+          "BattleDesc" : "SI_BOSS_RUSH_DESC_WITNESS_COFFIN",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_BOSS_ADVICE_01",
+          "Difficulty" : "BOSS",
+          "BattleLevel" : 1597,
+          "MusicName" : "MUSIC_BATTLE_BOSS_03.mp3",
+          "BattlePower" : 210000,
+          "StellaMemoryWarning" : true,
+          "AllClearMissionItemId" : 33200016,
+          "AllClearMissionItemCount" : 3,
+          "ReqNormalItem" : 413,
+          "ReqNormalItemCount" : 1,
+          "MissionTabGroupId" : 99108,
+          "BattleEffectData" : 
+          [
+            {
+              "BattleEffectId" : 60015,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_MOON_BUFF_03"
+            },
+
+            {
+              "BattleEffectId" : 60017,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_DEFENDER_BUFF_03"
+            }
+          ],
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_WIN",
+              "BattleMissionTask" : 1
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 45
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 40
+            }
+          ],
+          "FirstClearNormalRewardData" : 
+          [
+            {
+              "FirstClearNormalRewardType" : "RT_NORMAL_ITEM",
+              "FirstClearNormalRewardID" : 33200014,
+              "FirstClearNormalRewardValue" : 3
+            }
+          ],
+          "NormalRewardData" : 
+          [
+            {
+              "NormalRewardGroup" : 29910003,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910008,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910081,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910082,
+              "NormalRewardRate" : 4000
+            }
+          ],
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 9910802
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 9910804,
+          "BattleStrID" : "BOSS_RUSH_08_BATTLE_04",
+          "BattleTabId" : 99108,
+          "OrderList" : 4,
+          "IsSweep" : false,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_BOSS_RUSH_COFFIN_004.txt",
+          "BattleMapStrID" : "MAP_BATTLE_CRACKED_FROZEN_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_BOSS_RUSH",
+          "BattleName" : "SI_BOSS_RUSH_NAME_WITNESS_COFFIN_4",
+          "BattleDesc" : "SI_BOSS_RUSH_DESC_WITNESS_COFFIN",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_BOSS_ADVICE_01",
+          "Difficulty" : "BOSS",
+          "BattleLevel" : 1600,
+          "MusicName" : "MUSIC_BATTLE_BOSS_03.mp3",
+          "BattlePower" : 220000,
+          "StellaMemoryWarning" : true,
+          "ReqNormalItem" : 413,
+          "ReqNormalItemCount" : 1,
+          "MissionTabGroupId" : 99108,
+          "DifficultyGroupId" : 3001,
+          "BattleEffectData" : 
+          [
+            {
+              "BattleEffectId" : 60015,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_MOON_BUFF_03"
+            },
+
+            {
+              "BattleEffectId" : 60017,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_DEFENDER_BUFF_03"
+            }
+          ],
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "NONE",
+              "BattleMissionTask" : 0
+            },
+
+            {
+              "BattleMissionType" : "NONE",
+              "BattleMissionTask" : 0
+            },
+
+            {
+              "BattleMissionType" : "NONE",
+              "BattleMissionTask" : 0
+            }
+          ],
+          "FirstClearNormalRewardData" : 
+          [
+            {
+              "FirstClearNormalRewardType" : "RT_NORMAL_ITEM",
+              "FirstClearNormalRewardID" : 33200014,
+              "FirstClearNormalRewardValue" : 3
+            }
+          ],
+          "NormalRewardData" : 
+          [
+            {
+              "NormalRewardGroup" : 29910003,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910008,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910081,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910082,
+              "NormalRewardRate" : 4000
+            }
+          ],
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 9910802
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 9910901,
+          "BattleStrID" : "BOSS_RUSH_09_BATTLE_01",
+          "BattleTabId" : 99109,
+          "OrderList" : 1,
+          "IsSweep" : true,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_BOSS_RUSH_FALLEN_001.txt",
+          "BattleMapStrID" : "MAP_BATTLE_CRACKED_STARDUST_FORTRESS_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_BOSS_RUSH",
+          "BattleName" : "SI_BOSS_RUSH_NAME_VOIDER_FALLEN_1",
+          "BattleDesc" : "SI_BOSS_RUSH_DESC_VOIDER_FALLEN",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_BOSS_ADVICE_01",
+          "Difficulty" : "BOSS",
+          "BattleLevel" : 306,
+          "MusicName" : "MUSIC_BATTLE_BOSS_03.mp3",
+          "BattlePower" : 50000,
+          "AllClearMissionItemId" : 33200018,
+          "AllClearMissionItemCount" : 3,
+          "ReqNormalItem" : 413,
+          "ReqNormalItemCount" : 1,
+          "MissionTabGroupId" : 99109,
+          "BattleEffectData" : 
+          [
+            {
+              "BattleEffectId" : 60003,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_STAR_BUFF_01"
+            },
+
+            {
+              "BattleEffectId" : 60018,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_CASTER_BUFF_03"
+            }
+          ],
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_WIN",
+              "BattleMissionTask" : 1
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 45
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 40
+            }
+          ],
+          "FirstClearNormalRewardData" : 
+          [
+            {
+              "FirstClearNormalRewardType" : "RT_NORMAL_ITEM",
+              "FirstClearNormalRewardID" : 33200015,
+              "FirstClearNormalRewardValue" : 3
+            }
+          ],
+          "NormalRewardData" : 
+          [
+            {
+              "NormalRewardGroup" : 29910001,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910006,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910091,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910092,
+              "NormalRewardRate" : 4000
+            }
+          ],
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 11003018
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 9910902,
+          "BattleStrID" : "BOSS_RUSH_09_BATTLE_02",
+          "BattleTabId" : 99109,
+          "OrderList" : 2,
+          "IsSweep" : true,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_BOSS_RUSH_FALLEN_002.txt",
+          "BattleMapStrID" : "MAP_BATTLE_CRACKED_STARDUST_FORTRESS_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_BOSS_RUSH",
+          "BattleName" : "SI_BOSS_RUSH_NAME_VOIDER_FALLEN_2",
+          "BattleDesc" : "SI_BOSS_RUSH_DESC_VOIDER_FALLEN",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_BOSS_ADVICE_01",
+          "Difficulty" : "BOSS",
+          "BattleLevel" : 1209,
+          "MusicName" : "MUSIC_BATTLE_BOSS_03.mp3",
+          "BattlePower" : 160000,
+          "StellaMemoryWarning" : true,
+          "AllClearMissionItemId" : 33200018,
+          "AllClearMissionItemCount" : 3,
+          "ReqNormalItem" : 413,
+          "ReqNormalItemCount" : 1,
+          "MissionTabGroupId" : 99109,
+          "BattleEffectData" : 
+          [
+            {
+              "BattleEffectId" : 60003,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_STAR_BUFF_01"
+            },
+
+            {
+              "BattleEffectId" : 60018,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_CASTER_BUFF_03"
+            }
+          ],
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_WIN",
+              "BattleMissionTask" : 1
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 45
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 40
+            }
+          ],
+          "FirstClearNormalRewardData" : 
+          [
+            {
+              "FirstClearNormalRewardType" : "RT_NORMAL_ITEM",
+              "FirstClearNormalRewardID" : 33200015,
+              "FirstClearNormalRewardValue" : 3
+            }
+          ],
+          "NormalRewardData" : 
+          [
+            {
+              "NormalRewardGroup" : 29910002,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910007,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910091,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910092,
+              "NormalRewardRate" : 4000
+            }
+          ],
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 9910901
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 9910903,
+          "BattleStrID" : "BOSS_RUSH_09_BATTLE_03",
+          "BattleTabId" : 99109,
+          "OrderList" : 3,
+          "IsSweep" : true,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_BOSS_RUSH_FALLEN_003.txt",
+          "BattleMapStrID" : "MAP_BATTLE_CRACKED_STARDUST_FORTRESS_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_BOSS_RUSH",
+          "BattleName" : "SI_BOSS_RUSH_NAME_VOIDER_FALLEN_3",
+          "BattleDesc" : "SI_BOSS_RUSH_DESC_VOIDER_FALLEN",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_BOSS_ADVICE_01",
+          "Difficulty" : "BOSS",
+          "BattleLevel" : 1597,
+          "MusicName" : "MUSIC_BATTLE_BOSS_03.mp3",
+          "BattlePower" : 210000,
+          "StellaMemoryWarning" : true,
+          "AllClearMissionItemId" : 33200018,
+          "AllClearMissionItemCount" : 3,
+          "ReqNormalItem" : 413,
+          "ReqNormalItemCount" : 1,
+          "MissionTabGroupId" : 99109,
+          "BattleEffectData" : 
+          [
+            {
+              "BattleEffectId" : 60003,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_STAR_BUFF_01"
+            },
+
+            {
+              "BattleEffectId" : 60018,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_CASTER_BUFF_03"
+            }
+          ],
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_WIN",
+              "BattleMissionTask" : 1
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 45
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 40
+            }
+          ],
+          "FirstClearNormalRewardData" : 
+          [
+            {
+              "FirstClearNormalRewardType" : "RT_NORMAL_ITEM",
+              "FirstClearNormalRewardID" : 33200015,
+              "FirstClearNormalRewardValue" : 3
+            }
+          ],
+          "NormalRewardData" : 
+          [
+            {
+              "NormalRewardGroup" : 29910003,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910008,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910091,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910092,
+              "NormalRewardRate" : 4000
+            }
+          ],
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 9910902
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 9910904,
+          "BattleStrID" : "BOSS_RUSH_09_BATTLE_04",
+          "BattleTabId" : 99109,
+          "OrderList" : 4,
+          "IsSweep" : false,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_BOSS_RUSH_FALLEN_004.txt",
+          "BattleMapStrID" : "MAP_BATTLE_CRACKED_STARDUST_FORTRESS_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_BOSS_RUSH",
+          "BattleName" : "SI_BOSS_RUSH_NAME_VOIDER_FALLEN_4",
+          "BattleDesc" : "SI_BOSS_RUSH_DESC_VOIDER_FALLEN",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_BOSS_ADVICE_01",
+          "Difficulty" : "BOSS",
+          "BattleLevel" : 1600,
+          "MusicName" : "MUSIC_BATTLE_BOSS_03.mp3",
+          "BattlePower" : 220000,
+          "StellaMemoryWarning" : true,
+          "ReqNormalItem" : 413,
+          "ReqNormalItemCount" : 1,
+          "MissionTabGroupId" : 99109,
+          "DifficultyGroupId" : 3001,
+          "BattleEffectData" : 
+          [
+            {
+              "BattleEffectId" : 60003,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_STAR_BUFF_01"
+            },
+
+            {
+              "BattleEffectId" : 60018,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_CASTER_BUFF_03"
+            }
+          ],
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "NONE",
+              "BattleMissionTask" : 0
+            },
+
+            {
+              "BattleMissionType" : "NONE",
+              "BattleMissionTask" : 0
+            },
+
+            {
+              "BattleMissionType" : "NONE",
+              "BattleMissionTask" : 0
+            }
+          ],
+          "FirstClearNormalRewardData" : 
+          [
+            {
+              "FirstClearNormalRewardType" : "RT_NORMAL_ITEM",
+              "FirstClearNormalRewardID" : 33200015,
+              "FirstClearNormalRewardValue" : 3
+            }
+          ],
+          "NormalRewardData" : 
+          [
+            {
+              "NormalRewardGroup" : 29910003,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910008,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910091,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910092,
+              "NormalRewardRate" : 4000
+            }
+          ],
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 9910902
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 9911001,
+          "BattleStrID" : "BOSS_RUSH_10_BATTLE_01",
+          "BattleTabId" : 99110,
+          "OrderList" : 1,
+          "IsSweep" : true,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_BOSS_RUSH_HYPNOSIS_001.txt",
+          "BattleMapStrID" : "MAP_BATTLE_CASINO_HALL",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_BOSS_RUSH",
+          "BattleName" : "SI_BOSS_RUSH_NAME_MAFICIAN_HYPNOSIS_1",
+          "BattleDesc" : "SI_BOSS_RUSH_DESC_MAFICIAN_HYPNOSIS",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_BOSS_ADVICE_01",
+          "Difficulty" : "BOSS",
+          "BattleLevel" : 306,
+          "MusicName" : "MUSIC_BATTLE_BOSS_03.mp3",
+          "BattlePower" : 50000,
+          "AllClearMissionItemId" : 33200020,
+          "AllClearMissionItemCount" : 3,
+          "ReqNormalItem" : 413,
+          "ReqNormalItemCount" : 1,
+          "MissionTabGroupId" : 99110,
+          "BattleEffectData" : 
+          [
+            {
+              "BattleEffectId" : 60020,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_SUN_BUFF_04"
+            },
+
+            {
+              "BattleEffectId" : 60019,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_ASSASSIN_BUFF_01"
+            }
+          ],
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_WIN",
+              "BattleMissionTask" : 1
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 45
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 40
+            }
+          ],
+          "FirstClearNormalRewardData" : 
+          [
+            {
+              "FirstClearNormalRewardType" : "RT_NORMAL_ITEM",
+              "FirstClearNormalRewardID" : 33200019,
+              "FirstClearNormalRewardValue" : 3
+            }
+          ],
+          "NormalRewardData" : 
+          [
+            {
+              "NormalRewardGroup" : 29910001,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910006,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910101,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910102,
+              "NormalRewardRate" : 4000
+            }
+          ],
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 11003018
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 9911002,
+          "BattleStrID" : "BOSS_RUSH_10_BATTLE_02",
+          "BattleTabId" : 99110,
+          "OrderList" : 2,
+          "IsSweep" : true,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_BOSS_RUSH_HYPNOSIS_002.txt",
+          "BattleMapStrID" : "MAP_BATTLE_CASINO_HALL",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_BOSS_RUSH",
+          "BattleName" : "SI_BOSS_RUSH_NAME_MAFICIAN_HYPNOSIS_2",
+          "BattleDesc" : "SI_BOSS_RUSH_DESC_MAFICIAN_HYPNOSIS",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_BOSS_ADVICE_01",
+          "Difficulty" : "BOSS",
+          "BattleLevel" : 1209,
+          "MusicName" : "MUSIC_BATTLE_BOSS_03.mp3",
+          "BattlePower" : 160000,
+          "StellaMemoryWarning" : true,
+          "AllClearMissionItemId" : 33200020,
+          "AllClearMissionItemCount" : 3,
+          "ReqNormalItem" : 413,
+          "ReqNormalItemCount" : 1,
+          "MissionTabGroupId" : 99110,
+          "BattleEffectData" : 
+          [
+            {
+              "BattleEffectId" : 60020,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_SUN_BUFF_04"
+            },
+
+            {
+              "BattleEffectId" : 60019,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_ASSASSIN_BUFF_01"
+            }
+          ],
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_WIN",
+              "BattleMissionTask" : 1
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 45
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 40
+            }
+          ],
+          "FirstClearNormalRewardData" : 
+          [
+            {
+              "FirstClearNormalRewardType" : "RT_NORMAL_ITEM",
+              "FirstClearNormalRewardID" : 33200019,
+              "FirstClearNormalRewardValue" : 3
+            }
+          ],
+          "NormalRewardData" : 
+          [
+            {
+              "NormalRewardGroup" : 29910002,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910007,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910101,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910102,
+              "NormalRewardRate" : 4000
+            }
+          ],
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 9911001
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 9911003,
+          "BattleStrID" : "BOSS_RUSH_10_BATTLE_03",
+          "BattleTabId" : 99110,
+          "OrderList" : 3,
+          "IsSweep" : true,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_BOSS_RUSH_HYPNOSIS_003.txt",
+          "BattleMapStrID" : "MAP_BATTLE_CASINO_HALL",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_BOSS_RUSH",
+          "BattleName" : "SI_BOSS_RUSH_NAME_MAFICIAN_HYPNOSIS_3",
+          "BattleDesc" : "SI_BOSS_RUSH_DESC_MAFICIAN_HYPNOSIS",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_BOSS_ADVICE_01",
+          "Difficulty" : "BOSS",
+          "BattleLevel" : 1597,
+          "MusicName" : "MUSIC_BATTLE_BOSS_03.mp3",
+          "BattlePower" : 210000,
+          "StellaMemoryWarning" : true,
+          "AllClearMissionItemId" : 33200020,
+          "AllClearMissionItemCount" : 3,
+          "ReqNormalItem" : 413,
+          "ReqNormalItemCount" : 1,
+          "MissionTabGroupId" : 99110,
+          "BattleEffectData" : 
+          [
+            {
+              "BattleEffectId" : 60020,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_SUN_BUFF_04"
+            },
+
+            {
+              "BattleEffectId" : 60019,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_ASSASSIN_BUFF_01"
+            }
+          ],
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "BMT_WIN",
+              "BattleMissionTask" : 1
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 45
+            },
+
+            {
+              "BattleMissionType" : "BMT_LIMIT_TURN",
+              "BattleMissionTask" : 40
+            }
+          ],
+          "FirstClearNormalRewardData" : 
+          [
+            {
+              "FirstClearNormalRewardType" : "RT_NORMAL_ITEM",
+              "FirstClearNormalRewardID" : 33200019,
+              "FirstClearNormalRewardValue" : 3
+            }
+          ],
+          "NormalRewardData" : 
+          [
+            {
+              "NormalRewardGroup" : 29910003,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910008,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910101,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910102,
+              "NormalRewardRate" : 4000
+            }
+          ],
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 9911002
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 9911004,
+          "BattleStrID" : "BOSS_RUSH_10_BATTLE_04",
+          "BattleTabId" : 99110,
+          "OrderList" : 4,
+          "IsSweep" : false,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_BOSS_RUSH_HYPNOSIS_004.txt",
+          "BattleMapStrID" : "MAP_BATTLE_CASINO_HALL",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_BOSS_RUSH",
+          "BattleName" : "SI_BOSS_RUSH_NAME_MAFICIAN_HYPNOSIS_4",
+          "BattleDesc" : "SI_BOSS_RUSH_DESC_MAFICIAN_HYPNOSIS",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_BOSS_ADVICE_01",
+          "Difficulty" : "BOSS",
+          "BattleLevel" : 1600,
+          "MusicName" : "MUSIC_BATTLE_BOSS_03.mp3",
+          "BattlePower" : 220000,
+          "StellaMemoryWarning" : true,
+          "ReqNormalItem" : 413,
+          "ReqNormalItemCount" : 1,
+          "MissionTabGroupId" : 99110,
+          "DifficultyGroupId" : 3001,
+          "BattleEffectData" : 
+          [
+            {
+              "BattleEffectId" : 60020,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_SUN_BUFF_04"
+            },
+
+            {
+              "BattleEffectId" : 60019,
+              "BattleEffectDesc" : "SI_DESC_COND_BATTLE_EFFECT_BOSS_RUSH_ASSASSIN_BUFF_01"
+            }
+          ],
+          "BattleMissionData" : 
+          [
+            {
+              "BattleMissionType" : "NONE",
+              "BattleMissionTask" : 0
+            },
+
+            {
+              "BattleMissionType" : "NONE",
+              "BattleMissionTask" : 0
+            },
+
+            {
+              "BattleMissionType" : "NONE",
+              "BattleMissionTask" : 0
+            }
+          ],
+          "FirstClearNormalRewardData" : 
+          [
+            {
+              "FirstClearNormalRewardType" : "RT_NORMAL_ITEM",
+              "FirstClearNormalRewardID" : 33200019,
+              "FirstClearNormalRewardValue" : 3
+            }
+          ],
+          "NormalRewardData" : 
+          [
+            {
+              "NormalRewardGroup" : 29910003,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910008,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910101,
+              "NormalRewardRate" : 10000
+            },
+
+            {
+              "NormalRewardGroup" : 29910102,
+              "NormalRewardRate" : 4000
+            }
+          ],
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_CLEAR",
+              "BattleUnlockReqId" : 9911002
+            }
+          ]
+        }
+    ]
+}

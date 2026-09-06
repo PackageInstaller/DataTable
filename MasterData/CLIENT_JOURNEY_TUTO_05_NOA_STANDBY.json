@@ -23,8 +23,20 @@
       "UnitMotion": "SMILE",
       "EmotionEffect": "FUN",
       "UnitTalk_KOR": "단장님, 반가운 소식이 있습니다.",
+      "UnitTalk_ENG": "Captain, I have some good news.",
       "UnitTalk_JPN": "団長、嬉しいお知らせがあります。",
-      "TalkTime": 0.03
+      "UnitTalk_CHN": "团长，有个好消息。",
+      "UnitTalk_TWN": "團長，有個好消息。",
+      "UnitTalk_FRA": "Capitaine, j'ai une bonne nouvelle !",
+      "UnitTalk_DEU": "Kommandant, ich habe gute Nachrichten für Sie.",
+      "UnitTalk_ESP": "Capitán, tenemos noticias.",
+      "UnitTalk_PRT": "Comandante, tenho uma ótima notícia!",
+      "UnitTalk_THA": "หัวหน้าครับ มีข่าวดีครับ",
+      "UnitTalk_IND": "Komandan, ada kabar baik!",
+      "UnitTalk_VIE": "Thưa Trưởng đoàn, có tin vui đây ạ.",
+      "UnitTalk_HIN": "कमांडर, मेरे पास आपके लिए एक अच्छी खबर है।",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_05_NOA_NPC_NOA_LISA_001.wav"
     },
     {
       "Uid": 3,
@@ -34,8 +46,20 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitTalk_KOR": "오늘은 관측사 평의회 <color=#F7BE45>[폴라리스]</color>에서 추천한 동료가 합류하는 날입니다.",
+      "UnitTalk_ENG": "Today is the day we'll be joined by a companion recommended by the <color=#F7BE45>[Polaris]</color> Observation Council.",
       "UnitTalk_JPN": "本日は観測士評議会<color=#F7BE45>「ポラリス」</color>から推薦された仲間が合流する日です。",
-      "TalkTime": 0.03
+      "UnitTalk_CHN": "今天观测士评议会<color=#F7BE45>「北极星」</color>推荐的伙伴将会加入。",
+      "UnitTalk_TWN": "今天觀測士評議會<color=#F7BE45>「北極星」</color>推薦的夥伴將會加入。",
+      "UnitTalk_FRA": "Aujourd'hui, c'est le jour où un nouveau compagnon recommandé par le Conseil des Observateurs <color=#F7BE45>[Polaris]</color> nous rejoint.",
+      "UnitTalk_DEU": "Heute ist der Tag, an dem ein vom <color=#F7BE45>Polaris</color>-Beobachterrat empfohlener Kollege zu uns kommt.",
+      "UnitTalk_ESP": "Hoy se une un colega recomendado por el Consejo de Observadores <color=#F7BE45>[Polaris]</color>.",
+      "UnitTalk_PRT": "Hoje é o dia em que um novo colega, recomendado pelo Conselho de Observadores <color=#F7BE45>[Polaris]</color>, se junta a nós.",
+      "UnitTalk_THA": "วันนี้เป็นวันที่เพื่อนร่วมงานที่สภาผู้สังเกตการณ์ <color=#F7BE45>[โพลาริส]</color> แนะนำจะมาร่วมทีมครับ",
+      "UnitTalk_IND": "Hari ini adalah hari di mana rekan yang direkomendasikan oleh Dewan Pengamat <color=#F7BE45>[Polaris]</color> akan bergabung.",
+      "UnitTalk_VIE": "Hôm nay là ngày đồng đội được Hội đồng Quan sát viên <color=#F7BE45>[Polaris]</color> giới thiệu sẽ gia nhập.",
+      "UnitTalk_HIN": "आज ऑब्ज़र्वर काउंसिल <color=#F7BE45>[पोलारिस]</color> द्वारा सुझाए गए एक साथी के शामिल होने का दिन है।",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_05_NOA_NPC_NOA_LISA_002.wav"
     },
     {
       "Uid": 4,
@@ -48,7 +72,18 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "<color=#F7BE45>[동료]</color>?",
-          "JumpAnchorStringId_JPN": "<color=#F7BE45>「仲間」</color>？"
+          "JumpAnchorStringId_ENG": "A <color=#F7BE45>[Companion]</color>?",
+          "JumpAnchorStringId_JPN": "<color=#F7BE45>「仲間」</color>？",
+          "JumpAnchorStringId_CHN": "<color=#F7BE45>「伙伴」</color>？",
+          "JumpAnchorStringId_TWN": "<color=#F7BE45>「夥伴」</color>？",
+          "JumpAnchorStringId_FRA": "<color=#F7BE45>[Compagnon]</color> ?",
+          "JumpAnchorStringId_DEU": "<color=#F7BE45>[Kollege]</color>?",
+          "JumpAnchorStringId_ESP": "¿<color=#F7BE45>[Colega]</color>?",
+          "JumpAnchorStringId_PRT": "<color=#F7BE45>[Colega]</color>?",
+          "JumpAnchorStringId_THA": "<color=#F7BE45>[เพื่อนร่วมงาน]</color>?",
+          "JumpAnchorStringId_IND": "<color=#F7BE45>[Rekan]</color>?",
+          "JumpAnchorStringId_VIE": "<color=#F7BE45>[Đồng đội]</color>?",
+          "JumpAnchorStringId_HIN": "<color=#F7BE45>[साथी]</color>?"
         }
       ]
     },
@@ -61,8 +96,20 @@
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": " 네. 이제부터 여정 시험에 <color=#F7BE45>[동료]</color>의 도움을 받을 수 있습니다.",
+      "UnitTalk_ENG": " Yes. From now on, a <color=#F7BE45>[companion]</color> can assist you in Journey trials.",
       "UnitTalk_JPN": "ええ。これからは旅の試験で<color=#F7BE45>「仲間」</color>の助けを借りることができます。",
-      "TalkTime": 0.03
+      "UnitTalk_CHN": " 是的，从现在起在旅程考验中可以获得<color=#F7BE45>「伙伴」</color>的协助。",
+      "UnitTalk_TWN": " 是的，從現在起在旅程考驗中可以獲得<color=#F7BE45>「夥伴」</color>的協助。",
+      "UnitTalk_FRA": "Oui. À partir de maintenant, tu pourras bénéficier de l'aide d'un <color=#F7BE45>[compagnon]</color> pour l'épreuve du Périple.",
+      "UnitTalk_DEU": "Ja. Von nun an können Sie bei der Reise-Prüfung die Hilfe eines <color=#F7BE45>[Kollegen]</color> erhalten.",
+      "UnitTalk_ESP": "Sí. A partir de ahora, podrá contar con la ayuda de un <color=#F7BE45>[colega]</color> en la Prueba de Viaje.",
+      "UnitTalk_PRT": "Sim. A partir de agora, você poderá contar com a ajuda de um <color=#F7BE45>[colega]</color> para o Teste da Jornada.",
+      "UnitTalk_THA": "ใช่ครับ ตั้งแต่นี้ไป การทดสอบการเดินทางจะได้รับความช่วยเหลือจาก <color=#F7BE45>[เพื่อนร่วมงาน]</color> ครับ",
+      "UnitTalk_IND": "Ya. Mulai sekarang, Anda bisa mendapatkan bantuan dari <color=#F7BE45>[rekan]</color> dalam Ujian Perjalanan.",
+      "UnitTalk_VIE": "Vâng. Từ giờ Trưởng đoàn có thể nhận được sự giúp đỡ của <color=#F7BE45>[đồng đội]</color> trong các bài kiểm tra hành trình.",
+      "UnitTalk_HIN": "हाँ। अब आप अपनी यात्रा परीक्षा में <color=#F7BE45>[साथी]</color> की मदद ले सकते हैं।",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_05_NOA_NPC_NOA_LISA_003.wav"
     },
     {
       "Uid": 6,
@@ -72,8 +119,20 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitTalk_KOR": " 일반 임무는 물론 여정의 <color=#F7BE45>[평가전]</color>에도 같이 참가할 수 있죠.",
+      "UnitTalk_ENG": " They can join you in missions as well as <color=#F7BE45>[trials]</color>.",
       "UnitTalk_JPN": "通常任務はもちろん、旅の<color=#F7BE45>「試験」</color>にも一緒に参加できますよ。",
-      "TalkTime": 0.03
+      "UnitTalk_CHN": " 除了一般任务以外，也能一同参与旅程的<color=#F7BE45>「评鉴战」</color>。",
+      "UnitTalk_TWN": " 除了一般任務以外，也能一同參與旅程的<color=#F7BE45>「評鑑戰」</color>。",
+      "UnitTalk_FRA": "Tu pourras participer aux missions normales, et même aux <color=#F7BE45>[combats d'évaluation]</color> du Périple avec lui.",
+      "UnitTalk_DEU": "Sie können nicht nur an normalen Missionen, sondern auch an den <color=#F7BE45>[Bewertungskämpfen]</color> der Reise teilnehmen.",
+      "UnitTalk_ESP": "Podrá participar en misiones generales y también en la <color=#F7BE45>[Batalla de Evaluación]</color> de la Travesía.",
+      "UnitTalk_PRT": "Ele poderá participar tanto das missões normais quanto das <color=#F7BE45>[Batalhas de Avaliação]</color> da Jornada.",
+      "UnitTalk_THA": "ไม่เพียงแต่งานทั่วไปเท่านั้น แต่ยังสามารถเข้าร่วม <color=#F7BE45>[การทดสอบประเมินผล]</color> การเดินทางได้ด้วยครับ",
+      "UnitTalk_IND": "Tentu saja, Anda juga bisa berpartisipasi dalam misi umum dan <color=#F7BE45>[Ujian Penilaian]</color> Perjalanan.",
+      "UnitTalk_VIE": "Tất nhiên là có thể tham gia cùng trong các nhiệm vụ thông thường, cũng như <color=#F7BE45>[trận đánh giá]</color> của hành trình.",
+      "UnitTalk_HIN": "आप सामान्य मिशनों के साथ-साथ यात्रा के <color=#F7BE45>[मूल्यांकन युद्धों]</color> में भी भाग ले सकते हैं।",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_05_NOA_NPC_NOA_LISA_004.wav"
     },
     {
       "Uid": 7,
@@ -86,7 +145,18 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "…그래도 되는 건가?",
-          "JumpAnchorStringId_JPN": "…そんなことしていいの？"
+          "JumpAnchorStringId_ENG": "...Is that allowed?",
+          "JumpAnchorStringId_JPN": "…そんなことしていいの？",
+          "JumpAnchorStringId_CHN": "…这样也可以吗？",
+          "JumpAnchorStringId_TWN": "…這樣也可以嗎？",
+          "JumpAnchorStringId_FRA": "…Est-ce que c'est autorisé ?",
+          "JumpAnchorStringId_DEU": "…Ist das überhaupt erlaubt?",
+          "JumpAnchorStringId_ESP": "…¿Está bien eso?",
+          "JumpAnchorStringId_PRT": "…Isso é permitido?",
+          "JumpAnchorStringId_THA": "…ทำแบบนั้นได้ด้วยเหรอ?",
+          "JumpAnchorStringId_IND": "…Apakah itu boleh?",
+          "JumpAnchorStringId_VIE": "…Làm vậy có được không?",
+          "JumpAnchorStringId_HIN": "…क्या यह ठीक है?"
         }
       ]
     },
@@ -100,8 +170,20 @@
       "UnitMotion": "SERIOUS",
       "EmotionEffect": "EMARK",
       "UnitTalk_KOR": "당연하죠!",
+      "UnitTalk_ENG": "Of course!",
       "UnitTalk_JPN": "もちろんですよ！",
-      "TalkTime": 0.03
+      "UnitTalk_CHN": "那是当然的！",
+      "UnitTalk_TWN": "那是當然的！",
+      "UnitTalk_FRA": "Bien sûr !",
+      "UnitTalk_DEU": "Natürlich!",
+      "UnitTalk_ESP": "¡Por supuesto!",
+      "UnitTalk_PRT": "Claro!",
+      "UnitTalk_THA": "แน่นอนครับ!",
+      "UnitTalk_IND": "Tentu saja!",
+      "UnitTalk_VIE": "Đương nhiên rồi ạ!",
+      "UnitTalk_HIN": "बेशक!",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_05_NOA_NPC_NOA_LISA_005.wav"
     },
     {
       "Uid": 9,
@@ -111,8 +193,20 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitTalk_KOR": " 상황에 맞춰 다양한 파티원들을 지휘하는 능력 역시 실력의 일부니까요.",
+      "UnitTalk_ENG": " Being able to lead various party members based on the situation is also a measure of skill.",
       "UnitTalk_JPN": "状況に応じて、様々なメンバーを指揮するのも実力のうちですから。",
-      "TalkTime": 0.03
+      "UnitTalk_CHN": " 根据状况指挥各种队员的能力也是实力的一部分。",
+      "UnitTalk_TWN": " 根據狀況指揮各種隊員的能力也是實力的一部分。",
+      "UnitTalk_FRA": "La capacité à diriger divers membres d'équipe en fonction de la situation fait aussi partie de tes compétences.",
+      "UnitTalk_DEU": "Die Fähigkeit, verschiedene Teammitglieder situationsgerecht zu führen, ist schließlich auch Teil des Könnens.",
+      "UnitTalk_ESP": "La habilidad de dirigir a varios miembros del equipo según la situación también es parte de la destreza.",
+      "UnitTalk_PRT": "A capacidade de comandar diversos membros da equipe de acordo com a situação também faz parte da sua habilidade.",
+      "UnitTalk_THA": "การบังคับบัญชาปาร์ตี้ที่หลากหลายตามสถานการณ์ก็เป็นส่วนหนึ่งของทักษะเช่นกัน",
+      "UnitTalk_IND": "Kemampuan untuk memimpin berbagai anggota tim sesuai situasi juga merupakan bagian dari keahlian Anda.",
+      "UnitTalk_VIE": "Khả năng chỉ huy các thành viên khác nhau tùy theo tình huống cũng là một phần của thực lực mà.",
+      "UnitTalk_HIN": "विभिन्न पार्टी सदस्यों को स्थिति के अनुसार कमांड करने की क्षमता भी कौशल का एक हिस्सा है।",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_05_NOA_NPC_NOA_LISA_006.wav"
     },
     {
       "Uid": 10,
@@ -123,8 +217,20 @@
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": " 단장님이 동료를 지휘하는 모습을 보여주면 분명 여정 단원도 배우는 바가 있을 거예요.",
+      "UnitTalk_ENG": " Your Journey members will surely learn from watching you lead them.",
       "UnitTalk_JPN": "団長が仲間を指揮する姿を見れば、きっと団員の方も良い学びを得られるはずです。",
-      "TalkTime": 0.03
+      "UnitTalk_CHN": " 让团长展现指挥伙伴的模样，旅程团员肯定也能从中学到不少。",
+      "UnitTalk_TWN": " 讓團長展現指揮夥伴的模樣，旅程團員肯定也能從中學到不少。",
+      "UnitTalk_FRA": "Si tu montres comment tu diriges ton compagnon, le membre du Périple en tirera certainement des leçons.",
+      "UnitTalk_DEU": "Wenn Sie zeigen, wie Sie Ihre Kollegen führen, werden die Reise-Mitglieder sicherlich auch etwas lernen.",
+      "UnitTalk_ESP": "Si usted demuestra cómo dirige a un colega, el Miembro del Viaje seguramente aprenderá mucho.",
+      "UnitTalk_PRT": "Se o Comandante mostrar como lidera um colega, o Membro da Jornada certamente aprenderá muito.",
+      "UnitTalk_THA": "ถ้าหัวหน้าแสดงให้เห็นถึงการนำเพื่อนร่วมงาน สมาชิกการเดินทางก็จะเรียนรู้ได้แน่นอนครับ",
+      "UnitTalk_IND": "Jika Komandan menunjukkan bagaimana ia memimpin rekan, pasti anggota Perjalanan juga akan belajar.",
+      "UnitTalk_VIE": "Nếu Trưởng đoàn thể hiện khả năng chỉ huy đồng đội, chắc chắn các thành viên hành trình cũng sẽ học hỏi được nhiều điều.",
+      "UnitTalk_HIN": "यदि कमांडर अपने साथी को कमांड करते हुए दिखाते हैं, तो यात्रा के सदस्य भी निश्चित रूप से कुछ सीखेंगे।",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_05_NOA_NPC_NOA_LISA_007.wav"
     },
     {
       "Uid": 11,
@@ -137,7 +243,18 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "누가 동료로 오는 거지?",
-          "JumpAnchorStringId_JPN": "誰が仲間として来るんだろう？"
+          "JumpAnchorStringId_ENG": "So who's joining us?",
+          "JumpAnchorStringId_JPN": "誰が仲間として来るんだろう？",
+          "JumpAnchorStringId_CHN": "是谁要来当伙伴？",
+          "JumpAnchorStringId_TWN": "是誰要來當夥伴？",
+          "JumpAnchorStringId_FRA": "Qui sera ce compagnon ?",
+          "JumpAnchorStringId_DEU": "Wer wird denn mein Kollege?",
+          "JumpAnchorStringId_ESP": "¿Quién vendrá como colega?",
+          "JumpAnchorStringId_PRT": "Quem será o colega?",
+          "JumpAnchorStringId_THA": "ใครจะมาเป็นเพื่อนร่วมงานนะ?",
+          "JumpAnchorStringId_IND": "Siapa yang akan menjadi rekan?",
+          "JumpAnchorStringId_VIE": "Ai sẽ đến làm đồng đội đây?",
+          "JumpAnchorStringId_HIN": "कौन साथी के रूप में आ रहा है?"
         }
       ]
     },
@@ -149,8 +266,20 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitTalk_KOR": "폴라리스에서 별의 궤도를 관측하여 <color=#F7BE45>[여정 단원]</color>과 가장 상성이 맞는 사람을 추천한다고 해요.",
+      "UnitTalk_ENG": "Polaris analyzes the trajectories of the stars to select someone best suited to your <color=#F7BE45>[Journey member]</color>.",
       "UnitTalk_JPN": "<r=ポラリス>観測士評議会</r>が星の軌道を観測し、\n<color=#F7BE45>「旅の団員」</color>と最も相性の良い人物を推薦してくれるそうです。",
-      "TalkTime": 0.03
+      "UnitTalk_CHN": "据说北极星会观测星辰轨道，推荐与<color=#F7BE45>「旅程团员」</color>最适合的人。",
+      "UnitTalk_TWN": "據說北極星會觀測星辰軌道，推薦與<color=#F7BE45>「旅程團員」</color>最適合的人。",
+      "UnitTalk_FRA": "Polaris observe les orbites des étoiles et recommande la personne la plus compatible avec le <color=#F7BE45>[Membre du Voyage]</color>.",
+      "UnitTalk_DEU": "Polaris beobachtet die Umlaufbahnen der Sterne und empfiehlt die Person, die am besten zum <color=#F7BE45>[Reise-Mitglied]</color> passt.",
+      "UnitTalk_ESP": "Recomiendan a la persona con la mayor compatibilidad con los <color=#F7BE45>[Miembros del Equipo]</color> observando la órbita estelar en Polaris.",
+      "UnitTalk_PRT": "Dizem que a Polaris, observando a órbita das estrelas, recomenda a pessoa mais compatível com o <color=#F7BE45>[Membro da Jornada]</color>.",
+      "UnitTalk_THA": "โพลาริสจะสังเกตวงโคจรของดวงดาวและแนะนำคนที่เข้ากันได้ดีที่สุดกับ <color=#F7BE45>[สมาชิกการเดินทาง]</color> ครับ",
+      "UnitTalk_IND": "Polaris mengamati orbit bintang dan merekomendasikan orang yang paling cocok dengan <color=#F7BE45>[anggota tim Perjalanan]</color>.",
+      "UnitTalk_VIE": "Họ nói rằng Polaris sẽ quan sát quỹ đạo của các vì sao và giới thiệu người phù hợp nhất với <color=#F7BE45>[Thành viên Hành trình]</color>.",
+      "UnitTalk_HIN": "पोलारिस में, वे सितारों की कक्षाओं का निरीक्षण करके <color=#F7BE45>[यात्रा के सदस्य]</color> के साथ सबसे संगत व्यक्ति की सिफारिश करते हैं।",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_05_NOA_NPC_NOA_LISA_008.wav"
     },
     {
       "Uid": 13,
@@ -160,8 +289,20 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitTalk_KOR": " 듣기로는 전생의 인연이 깊은 자가 선택된다는 소문도 있던데…",
+      "UnitTalk_ENG": " Some say the chosen one shares a deep connection from a past life...",
       "UnitTalk_JPN": "前世での縁が深い者が選ばれるという噂もあるようですが…",
-      "TalkTime": 0.03
+      "UnitTalk_CHN": " 听说也有选择前世缘分深厚者的传闻…",
+      "UnitTalk_TWN": " 聽說也有選擇前世緣分深厚者的傳聞…",
+      "UnitTalk_FRA": "J'ai entendu dire qu'on choisit celui qui a un lien profond avec une vie antérieure…",
+      "UnitTalk_DEU": "Ich habe gehört, es gibt Gerüchte, dass jemand mit einer tiefen Verbindung aus einem früheren Leben ausgewählt wird …",
+      "UnitTalk_ESP": "He oído rumores de que se elige a alguien con una profunda conexión de vidas pasadas…",
+      "UnitTalk_PRT": "Ouvi dizer que há rumores de que alguém com uma profunda conexão de vidas passadas é escolhido…",
+      "UnitTalk_THA": "ได้ยินมาว่าผู้ที่มีบุญสัมพันธ์ลึกซึ้งจากชาติภพก่อนจะถูกเลือกด้วยนะ...",
+      "UnitTalk_IND": "Saya dengar ada rumor bahwa orang dengan ikatan reinkarnasi yang dalam akan dipilih…",
+      "UnitTalk_VIE": "Nghe nói có tin đồn rằng người có duyên tiền kiếp sâu nặng sẽ được chọn…",
+      "UnitTalk_HIN": "मैंने सुना है कि ऐसी अफवाहें हैं कि पिछले जन्म के गहरे संबंध वाले व्यक्ति को चुना जाता है…",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_05_NOA_NPC_NOA_LISA_009.wav"
     },
     {
       "Uid": 14,
@@ -172,8 +313,20 @@
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitMotion": "SMILE",
       "UnitTalk_KOR": " 하하하! 역시 그럴 리는 없겠죠. 무슨 미신도 아니고…",
-      "UnitTalk_JPN": "あはは！まさか、ありえませんよね。迷信でもないですし…",
-      "TalkTime": 0.03
+      "UnitTalk_ENG": " Haha, but that can't be true. It's not some kind of superstition...",
+      "UnitTalk_JPN": "あはは！まさか、ありえませんよね。迷信みたいなものです。",
+      "UnitTalk_CHN": " 哈哈哈！但这种说法果然不可能吧。又不是什么迷信…",
+      "UnitTalk_TWN": " 哈哈哈！但這種說法果然不可能吧。又不是什麼迷信…",
+      "UnitTalk_FRA": "Hahaha ! Non, ce n'est sûrement pas ça. Ce n'est pas une superstition…",
+      "UnitTalk_DEU": "Hahaha! Das kann natürlich nicht sein. Das ist doch kein Aberglaube …",
+      "UnitTalk_ESP": "¡Jajaja! Por supuesto que no. No es ninguna superstición…",
+      "UnitTalk_PRT": "Hahaha! Não é possível que seja verdade. Não é nenhuma superstição…",
+      "UnitTalk_THA": "ฮ่าฮ่าฮ่า! ไม่มีทางเป็นไปได้หรอกครับ ไม่ใช่เรื่องไสยศาสตร์อะไรแบบนั้น…",
+      "UnitTalk_IND": "Hahaha! Tentu saja tidak mungkin. Ini bukan takhayul atau apa pun…",
+      "UnitTalk_VIE": "Hahaha! Chắc chắn không phải vậy đâu. Đâu phải mê tín gì…",
+      "UnitTalk_HIN": "हाहाहा! ऐसा नहीं हो सकता। यह कोई अंधविश्वास नहीं है…",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_05_NOA_NPC_NOA_LISA_010.wav"
     },
     {
       "Uid": 15,
@@ -186,8 +339,20 @@
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "아무튼! 얼른 가시죠!",
+      "UnitTalk_ENG": "Anyway, let's get going!",
       "UnitTalk_JPN": "とにかく！早く行きましょう！",
-      "TalkTime": 0.03
+      "UnitTalk_CHN": "总之，快点去看看吧！",
+      "UnitTalk_TWN": "總之，快點去看看吧！",
+      "UnitTalk_FRA": "Bref ! Allons-y vite !",
+      "UnitTalk_DEU": "Jedenfalls! Gehen wir schnell!",
+      "UnitTalk_ESP": "¡De todos modos! ¡Vamos rápido!",
+      "UnitTalk_PRT": "Enfim! Vamos logo!",
+      "UnitTalk_THA": "เอาล่ะ! ไปกันเถอะครับ!",
+      "UnitTalk_IND": "Pokoknya! Ayo cepat pergi!",
+      "UnitTalk_VIE": "Dù sao đi nữa! Chúng ta đi nhanh thôi!",
+      "UnitTalk_HIN": "वैसे भी! जल्दी चलें!",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_05_NOA_NPC_NOA_LISA_011.wav"
     },
     {
       "Uid": 16,
@@ -197,8 +362,20 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitTalk_KOR": "새로 합류할 동료분이 기다리고 계신답니다.",
+      "UnitTalk_ENG": "Your new companion is waiting.",
       "UnitTalk_JPN": "新しい仲間がお待ちですよ。",
-      "TalkTime": 0.03
+      "UnitTalk_CHN": "新加入的伙伴正在等我们呢。",
+      "UnitTalk_TWN": "新加入的夥伴正在等我們呢。",
+      "UnitTalk_FRA": "Le nouveau compagnon t'attend.",
+      "UnitTalk_DEU": "Der neue Kollege wartet schon auf Sie.",
+      "UnitTalk_ESP": "Su nuevo colega le está esperando.",
+      "UnitTalk_PRT": "O novo colega está esperando.",
+      "UnitTalk_THA": "เพื่อนร่วมงานคนใหม่ที่กำลังจะเข้าร่วมกำลังรออยู่ครับ",
+      "UnitTalk_IND": "Rekan baru yang akan bergabung sudah menunggu.",
+      "UnitTalk_VIE": "Đồng đội mới sắp gia nhập đang chờ đợi đấy ạ.",
+      "UnitTalk_HIN": "आपका नया साथी इंतज़ार कर रहा है।",
+      "TalkTime": 0.03,
+      "TalkVoice": "JOURNEY_TUTO_05_NOA_NPC_NOA_LISA_012.wav"
     }
   ]
 }

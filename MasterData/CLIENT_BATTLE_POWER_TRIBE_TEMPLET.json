@@ -1,0 +1,225 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: BATTLE_POWER_TRIBE_TEMPLET",
+    "_Version": 0,
+    "Data": [
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RangeId" : 1,
+          "UnderBattlePowerMin" : 10,
+          "UnderBattlePowerMax" : 1000,
+          "RangeType" : "WARN",
+          "RangeDesc" : "SI_BATTLE_WARN_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RangeId" : 2,
+          "UnderBattlePowerMin" : 1000,
+          "UnderBattlePowerMax" : 1200,
+          "RangeType" : "ALERT",
+          "RangeValue" : 1,
+          "IsBattlePowerPopup" : true,
+          "RangeDesc" : "SI_BATTLE_ALERT_DESC_01"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RangeId" : 3,
+          "UnderBattlePowerMin" : 1200,
+          "UnderBattlePowerMax" : 1400,
+          "RangeType" : "ALERT",
+          "RangeValue" : 2,
+          "IsBattlePowerPopup" : true,
+          "RangeDesc" : "SI_BATTLE_ALERT_DESC_02"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RangeId" : 4,
+          "UnderBattlePowerMin" : 1400,
+          "UnderBattlePowerMax" : 1600,
+          "RangeType" : "ALERT",
+          "RangeValue" : 3,
+          "IsBattlePowerPopup" : true,
+          "RangeDesc" : "SI_BATTLE_ALERT_DESC_03"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RangeId" : 5,
+          "UnderBattlePowerMin" : 1600,
+          "UnderBattlePowerMax" : 1800,
+          "RangeType" : "ALERT",
+          "RangeValue" : 4,
+          "IsBattlePowerPopup" : true,
+          "RangeDesc" : "SI_BATTLE_ALERT_DESC_04"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RangeId" : 6,
+          "UnderBattlePowerMin" : 1800,
+          "UnderBattlePowerMax" : 2000,
+          "RangeType" : "ALERT",
+          "RangeValue" : 5,
+          "IsBattlePowerPopup" : true,
+          "RangeDesc" : "SI_BATTLE_ALERT_DESC_05"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RangeId" : 7,
+          "UnderBattlePowerMin" : 2000,
+          "UnderBattlePowerMax" : 2200,
+          "RangeType" : "HARD",
+          "RangeValue" : 1,
+          "IsBattlePowerPopup" : true,
+          "RangeDesc" : "SI_BATTLE_HARD_DESC_01"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RangeId" : 8,
+          "UnderBattlePowerMin" : 2200,
+          "UnderBattlePowerMax" : 2400,
+          "RangeType" : "HARD",
+          "RangeValue" : 2,
+          "IsBattlePowerPopup" : true,
+          "RangeDesc" : "SI_BATTLE_HARD_DESC_02"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RangeId" : 9,
+          "UnderBattlePowerMin" : 2400,
+          "UnderBattlePowerMax" : 2600,
+          "RangeType" : "HARD",
+          "RangeValue" : 3,
+          "IsBattlePowerPopup" : true,
+          "RangeDesc" : "SI_BATTLE_HARD_DESC_03"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RangeId" : 10,
+          "UnderBattlePowerMin" : 2600,
+          "UnderBattlePowerMax" : 2800,
+          "RangeType" : "HARD",
+          "RangeValue" : 4,
+          "IsBattlePowerPopup" : true,
+          "RangeDesc" : "SI_BATTLE_HARD_DESC_04"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RangeId" : 11,
+          "UnderBattlePowerMin" : 2800,
+          "UnderBattlePowerMax" : 3000,
+          "RangeType" : "HARD",
+          "RangeValue" : 5,
+          "IsBattlePowerPopup" : true,
+          "RangeDesc" : "SI_BATTLE_HARD_DESC_05"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RangeId" : 12,
+          "UnderBattlePowerMin" : 3000,
+          "UnderBattlePowerMax" : 3200,
+          "RangeType" : "VERY_HARD",
+          "RangeValue" : 1,
+          "BattlePowerFontColorChange" : true,
+          "IsBattlePowerPopup" : true,
+          "RangeDesc" : "SI_BATTLE_VERY_HARD_DESC_01"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RangeId" : 13,
+          "UnderBattlePowerMin" : 3200,
+          "UnderBattlePowerMax" : 3400,
+          "RangeType" : "VERY_HARD",
+          "RangeValue" : 2,
+          "BattlePowerFontColorChange" : true,
+          "IsBattlePowerPopup" : true,
+          "RangeDesc" : "SI_BATTLE_VERY_HARD_DESC_02"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RangeId" : 14,
+          "UnderBattlePowerMin" : 3400,
+          "UnderBattlePowerMax" : 3600,
+          "RangeType" : "VERY_HARD",
+          "RangeValue" : 3,
+          "BattlePowerFontColorChange" : true,
+          "IsBattlePowerPopup" : true,
+          "RangeDesc" : "SI_BATTLE_VERY_HARD_DESC_03"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RangeId" : 15,
+          "UnderBattlePowerMin" : 3600,
+          "UnderBattlePowerMax" : 3800,
+          "RangeType" : "VERY_HARD",
+          "RangeValue" : 4,
+          "BattlePowerFontColorChange" : true,
+          "IsBattlePowerPopup" : true,
+          "RangeDesc" : "SI_BATTLE_VERY_HARD_DESC_04"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RangeId" : 16,
+          "UnderBattlePowerMin" : 3800,
+          "UnderBattlePowerMax" : 4000,
+          "RangeType" : "VERY_HARD",
+          "RangeValue" : 5,
+          "BattlePowerFontColorChange" : true,
+          "IsBattlePowerPopup" : true,
+          "RangeDesc" : "SI_BATTLE_VERY_HARD_DESC_05"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RangeId" : 17,
+          "UnderBattlePowerMin" : 4000,
+          "UnderBattlePowerMax" : 4200,
+          "RangeType" : "VILLAINY",
+          "RangeValue" : 1,
+          "BattlePowerFontColorChange" : true,
+          "IsBattlePowerPopup" : true,
+          "RangeDesc" : "SI_BATTLE_VILLAINY_DESC_01"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RangeId" : 18,
+          "UnderBattlePowerMin" : 4200,
+          "UnderBattlePowerMax" : 4400,
+          "RangeType" : "VILLAINY",
+          "RangeValue" : 2,
+          "BattlePowerFontColorChange" : true,
+          "IsBattlePowerPopup" : true,
+          "RangeDesc" : "SI_BATTLE_VILLAINY_DESC_02"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RangeId" : 19,
+          "UnderBattlePowerMin" : 4400,
+          "UnderBattlePowerMax" : 4600,
+          "RangeType" : "VILLAINY",
+          "RangeValue" : 3,
+          "BattlePowerFontColorChange" : true,
+          "IsBattlePowerPopup" : true,
+          "RangeDesc" : "SI_BATTLE_VILLAINY_DESC_03"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RangeId" : 20,
+          "UnderBattlePowerMin" : 4600,
+          "UnderBattlePowerMax" : 4800,
+          "RangeType" : "VILLAINY",
+          "RangeValue" : 4,
+          "BattlePowerFontColorChange" : true,
+          "IsBattlePowerPopup" : true,
+          "RangeDesc" : "SI_BATTLE_VILLAINY_DESC_04"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RangeId" : 21,
+          "UnderBattlePowerMin" : 4800,
+          "UnderBattlePowerMax" : 10000,
+          "RangeType" : "VILLAINY",
+          "RangeValue" : 5,
+          "BattlePowerFontColorChange" : true,
+          "IsBattlePowerPopup" : true,
+          "RangeDesc" : "SI_BATTLE_VILLAINY_DESC_05"
+        }
+    ]
+}

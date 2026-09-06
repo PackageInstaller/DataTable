@@ -1,0 +1,56 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_COUNTERSIDE_HILDE_01",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_GRACE_DUALSWORD_01",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_HOTEL_2.png",
+      "UnitStrId": "NKM_UNIT_NPC_COUNTERSIDE_HILDE",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_GRACE_DUALSWORD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "타자에 익숙하지 않은 힐데와 함께 날이 저물 때까지 보고서를 작성했다.",
+      "UnitTalk_ENG": "I stayed with Hilde, who was having trouble using a typewriter, until nightfall to help finish her report.",
+      "UnitTalk_JPN": "タイピングに不慣れなヒルデと共に、日が暮れるまで報告書を作成した。",
+      "UnitTalk_CHN": "与不熟悉打字的希尔德一起写报告直到天黑。",
+      "UnitTalk_TWN": "與不熟悉打字的希爾德一起寫報告直到天黑。",
+      "UnitTalk_FRA": "J'ai rédigé le rapport avec Hilde, qui n'est pas habituée à taper, jusqu'à la tombée de la nuit.",
+      "UnitTalk_DEU": "Ich habe mit Hilde, die nicht ans Tippen gewöhnt ist, bis zum Einbruch der Nacht den Bericht geschrieben.",
+      "UnitTalk_ESP": "Escribí el informe con Hilde hasta el anochecer.",
+      "UnitTalk_PRT": "Com Hilde, que não estava acostumada a digitar, escrevi o relatório até o anoitecer.",
+      "UnitTalk_THA": "ฉันเขียนรายงานกับฮิลเดที่ยังไม่คุ้นเคยกับการพิมพ์ จนกระทั่งฟ้ามืด",
+      "UnitTalk_IND": "Aku menulis laporan bersama Hilde, yang tidak terbiasa mengetik, sampai matahari terbenam.",
+      "UnitTalk_VIE": "Tôi đã cùng Hilde, người chưa quen với việc đánh máy, viết báo cáo cho đến khi trời tối.",
+      "UnitTalk_HIN": "मैंने हिल्डे के साथ रिपोर्ट लिखी, जो टाइपिंग से परिचित नहीं थी, जब तक रात नहीं हो गई।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_GRACE_DUALSWORD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_GRACE_DUALSWORD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    }
+  ]
+}

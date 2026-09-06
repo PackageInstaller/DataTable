@@ -1,0 +1,56 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_BUNNY_KNIGHT_01",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_02",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_PLAYING_FIELD.png",
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_KNIGHT",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "샤를은 최고로 빠른 토끼를 가리는 대회에 참가하는 꿈을 꾸었다.",
+      "UnitTalk_ENG": "Charlotte dreamt that she entered a competition to determine the fastest bunny of them all.",
+      "UnitTalk_JPN": "シャルルは最速のウサギを決める大会に出場し、必死に走る夢を見た。",
+      "UnitTalk_CHN": "夏尔梦见自己参加了选拔最快兔子的比赛。",
+      "UnitTalk_TWN": "夏爾夢見自己參加了選拔最快兔子的比賽。",
+      "UnitTalk_FRA": "Charlotte a rêvé qu'elle participait à une compétition pour désigner le lapin le plus rapide.",
+      "UnitTalk_DEU": "Charlotte träumte, dass sie an einem Wettbewerb teilnahm, um den schnellsten Hasen zu ermitteln.",
+      "UnitTalk_ESP": "Charlotte soñó que participaba en una competición para determinar al conejo más rápido.",
+      "UnitTalk_PRT": "Charlotte sonhou que participava de uma competição para determinar o coelho mais rápido de todos.",
+      "UnitTalk_THA": "ชาร์ลอตต์ฝันว่าเธอได้เข้าร่วมการแข่งขันเพื่อค้นหากระต่ายที่เร็วที่สุด",
+      "UnitTalk_IND": "Charlotte bermimpi mengikuti kompetisi menentukan kelinci tercepat.",
+      "UnitTalk_VIE": "Charlotte đã mơ rằng cô ấy tham gia một cuộc thi để tìm ra chú thỏ nhanh nhất.",
+      "UnitTalk_HIN": "चार्ल्स ने सबसे तेज़ खरगोश का निर्धारण करने वाली प्रतियोगिता में भाग लेने का सपना देखा।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    }
+  ]
+}

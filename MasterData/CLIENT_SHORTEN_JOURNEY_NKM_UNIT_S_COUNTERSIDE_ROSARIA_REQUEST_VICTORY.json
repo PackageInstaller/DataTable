@@ -1,0 +1,39 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_COUNTERSIDE_ROSARIA_REQUEST_VICTORY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_REQUEST_VICTORY",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_CANDLE",
+      "UnitStrId": "NKM_UNIT_NPC_COUNTERSIDE_ROSARIA",
+      "UnitMotion": "SPECIAL"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_REQUEST_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "무사히 의뢰를 끝마친 뒤 <color=#F7BE45>[CHARACTER_NAME]</color>와 함께 숙소로 돌아갔다.",
+      "UnitTalk_ENG": "After finishing the quest, I returned to the quarters with <color=#F7BE45>[CHARACTER_NAME]</color>.",
+      "UnitTalk_JPN": "無事に依頼を終え、<color=#F7BE45>[CHARACTER_NAME]</color>と共に宿へ戻った。",
+      "UnitTalk_CHN": "顺利完成委托后，与<color=#F7BE45>[CHARACTER_NAME]</color>一起回到了住处。",
+      "UnitTalk_TWN": "順利完成委託後，與<color=#F7BE45>[CHARACTER_NAME]</color>一起回到了住處。",
+      "UnitTalk_FRA": "Après avoir terminé la quête avec succès, je suis retourné à l'auberge avec <color=#F7BE45>[CHARACTER_NAME]</color>.",
+      "UnitTalk_DEU": "Nach erfolgreichem Abschluss des Auftrags kehrte ich mit <color=#F7BE45>[CHARACTER_NAME]</color> zur Unterkunft zurück.",
+      "UnitTalk_ESP": "Después de completar la misión con éxito, regresé al alojamiento con <color=#F7BE45>[CHARACTER_NAME]</color>.",
+      "UnitTalk_PRT": "Após concluir a missão com sucesso, voltei com <color=#F7BE45>[CHARACTER_NAME]</color> para o alojamento.",
+      "UnitTalk_THA": "หลังจากทำภารกิจสำเร็จลุล่วงไปด้วยดี ก็กลับไปที่ที่พักพร้อมกับ<color=#F7BE45>[CHARACTER_NAME]</color>",
+      "UnitTalk_IND": "Setelah berhasil menyelesaikan misi, aku kembali ke penginapan bersama <color=#F7BE45>[CHARACTER_NAME]</color>.",
+      "UnitTalk_VIE": "Sau khi hoàn thành nhiệm vụ thuận lợi, tôi trở về chỗ ở cùng <color=#F7BE45>[CHARACTER_NAME]</color>.",
+      "UnitTalk_HIN": "अनुरोध को सफलतापूर्वक पूरा करने के बाद, मैं <color=#F7BE45>[CHARACTER_NAME]</color> के साथ अपने आवास पर लौट आया।",
+      "TalkTime": 0.03
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_INCOGNITA_LANDGRAVE_02",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 9,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_DOWNTOWN.png",
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_LANDGRAVE",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS7",
+      "EmotionEffect": "DESPAIR"
+    },
+    {
+      "Uid": 10,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS8",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 2,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "에데에게 상처받은 크리스텔이 울기 시작했다!",
+      "UnitTalk_ENG": "Cristelle began to cry after Haydee snapped at her!",
+      "UnitTalk_JPN": "エデに傷つけられたクリステルが泣き始めた！",
+      "UnitTalk_CHN": "被艾黛伤透心的克莉丝特哭了起来！",
+      "UnitTalk_TWN": "被艾黛傷透心的克莉絲特哭了起來！",
+      "UnitTalk_FRA": "Christel a commencé à pleurer après avoir été blessée par Haydee !",
+      "UnitTalk_DEU": "Christel begann zu weinen, weil sie von Haydee verletzt wurde!",
+      "UnitTalk_ESP": "¡Christel comenzó a llorar herida por Haydee!",
+      "UnitTalk_PRT": "Cristel começou a chorar após ser ferida por Haydee!",
+      "UnitTalk_THA": "คริสเทลทำให้เอเดเจ็บปวดจนร้องไห้!",
+      "UnitTalk_IND": "Kristel yang terluka oleh Ede mulai menangis!",
+      "UnitTalk_VIE": "Christel bắt đầu khóc vì bị Haydee thương tích.",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "분명 연기일 것이다.",
+          "JumpAnchorStringId_ENG": "It's obviously an act.",
+          "JumpAnchorStringId_JPN": "きっと演技に違いない。",
+          "JumpAnchorStringId_CHN": "这绝对是在演戏。",
+          "JumpAnchorStringId_TWN": "這絕對是在演戲。",
+          "JumpAnchorStringId_FRA": "C'est clairement une fin de cycle.",
+          "JumpAnchorStringId_DEU": "Es ist offensichtlich, dass dies ein Ende ist.",
+          "JumpAnchorStringId_ESP": "Claramente es el final de la actuación.",
+          "JumpAnchorStringId_PRT": "É um final claro.",
+          "JumpAnchorStringId_THA": "มันจะชัดเจนในไม่ช้า",
+          "JumpAnchorStringId_IND": "Ini pasti akan menjadi akhir yang jelas.",
+          "JumpAnchorStringId_VIE": "Rõ ràng là một màn kịch.",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "일단 사과해야 하지 않을까?",
+          "JumpAnchorStringId_ENG": "Maybe you should apologize first.",
+          "JumpAnchorStringId_JPN": "とりあえず謝るべきじゃないか？",
+          "JumpAnchorStringId_CHN": "是不是应该先道个歉？",
+          "JumpAnchorStringId_TWN": "是不是應該先道個歉？",
+          "JumpAnchorStringId_FRA": "Ne devrais-je pas vous laisser vous en tirer comme ça ?",
+          "JumpAnchorStringId_DEU": "Sollten wir uns nicht trotzdem trennen?",
+          "JumpAnchorStringId_ESP": "¿No deberíamos resolverlo ahora?",
+          "JumpAnchorStringId_PRT": "Não deveríamos ter nos separado?",
+          "JumpAnchorStringId_THA": "อย่างน้อยก็ต้องยอมรับความจริงไหม?",
+          "JumpAnchorStringId_IND": "Bukankah kita harus mengakhirinya?",
+          "JumpAnchorStringId_VIE": "Ít nhất thì chúng ta cũng nên giả vờ như không có chuyện gì xảy ra?",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 11,
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_DOWNTOWN.png",
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_LANDGRAVE",
+      "UnitMotion": "SPECIAL",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 12,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "역시 크리스텔의 연기였지만 여러모로 아까운 짓을 해버렸다.",
+      "UnitTalk_ENG": "Just as I thought, Cristelle had been faking it. Still, I'd missed a golden opportunity.",
+      "UnitTalk_JPN": "やはりクリステルの演技だったが、いろいろな意味で惜しいことをしてしまった。",
+      "UnitTalk_CHN": "虽然克莉丝特果然是在演戏，但总觉得错失了大好机会。",
+      "UnitTalk_TWN": "雖然克莉絲特果然是在演戲，但總覺得錯失了大好機會。",
+      "UnitTalk_FRA": "C'était bien la performance de Christel, mais j'ai commis plusieurs erreurs regrettables.",
+      "UnitTalk_DEU": "Ich war Christels treue Dienerin, aber jetzt bin ich ein schmutziges Ding.",
+      "UnitTalk_ESP": "Aún era la actuación de Christel, pero he cometido un error lamentable.",
+      "UnitTalk_PRT": "Cristel sempre foi tão... Mas agora ela cometeu algo que sentimos pena.",
+      "UnitTalk_THA": "เดิมทีมันคือความภักดีของคริสเทล แต่ตอนนี้ฉันก็ทำเรื่องแย่ๆ ไปเยอะเลย",
+      "UnitTalk_IND": "Dulu aku adalah boneka Kristel, tapi sekarang aku telah menjadi sampah yang tidak berguna.",
+      "UnitTalk_VIE": "Trước đây tôi đã từng là người tình của Christel, nhưng giờ tôi đã làm một điều đáng tiếc.",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_DOWNTOWN.png",
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_LANDGRAVE",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS7",
+      "EmotionEffect": "FUN"
+    },
+    {
+      "Uid": 14,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS8",
+      "EmotionEffect": "UPSET2"
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "에데에게 엄마 소리를 들은 크리스텔이 기뻐 날뛰었다.",
+      "UnitTalk_ENG": "Cristelle went wild with joy when Haydee called her Mom.",
+      "UnitTalk_JPN": "エデに「ママ」と呼ばれたクリステルは、大喜びした。",
+      "UnitTalk_CHN": "听到艾黛叫自己妈妈，克莉丝特高兴得手舞足蹈。",
+      "UnitTalk_TWN": "聽到艾黛叫自己媽媽，克莉絲特高興得手舞足蹈。",
+      "UnitTalk_FRA": "Christel, qui a entendu la voix de sa mère, s'est mise à sauter de joie.",
+      "UnitTalk_DEU": "Christel hat Haydee eine Nachricht geschickt, die sie fast zum Weinen brachte.",
+      "UnitTalk_ESP": "Christel, que imitaba la voz de mi madre, me ha engañado.",
+      "UnitTalk_PRT": "Cristel ouviu a voz da mãe e ficou feliz.",
+      "UnitTalk_THA": "คริสเทลที่เลียนแบบเสียงแม่ของเอเดได้ร้องไห้ด้วยความสุข",
+      "UnitTalk_IND": "Kristel, yang mendengar suara ibunya memanggil Luka, berteriak dengan gembira.",
+      "UnitTalk_VIE": "Christel đã vui sướng và hò hét khi nghe thấy tiếng mẹ của Edel.",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "JumpAnchorInfo": "JUMPANCHOR_FINISH",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 8,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

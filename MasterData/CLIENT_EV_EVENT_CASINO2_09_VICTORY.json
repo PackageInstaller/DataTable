@@ -1,0 +1,3278 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: EV_EVENT_CASINO2_09_VICTORY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 365,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_DEEP_FIELD_LOBBY.png",
+      "StartBgmFileName": "EMPTY.mp3"
+    },
+    {
+      "Uid": 122,
+      "WaitClick": false,
+      "WaitTime": 0.4,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.2,
+      "BgCrashTime": 0.3,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BUFF_BURN_HIT.wav"
+    },
+    {
+      "Uid": 123,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFlashBang": 0.3,
+      "BgCrash": 1.0,
+      "BgCrashTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HIT_56.wav"
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS6",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "윽! 크으윽…!",
+      "UnitTalk_JPN": "うっ！くうっ…！",
+      "UnitTalk_FRA": "Ugh ! Argh… !",
+      "UnitTalk_DEU": "Ugh! Kugh…!",
+      "UnitTalk_ESP": "¡Ugh! ¡Agh…!",
+      "UnitTalk_PRT": "Ugh! Kugh…!",
+      "UnitTalk_THA": "อึ่ก! อึ่ก…!",
+      "UnitTalk_IND": "Ugh! Kugh…!",
+      "UnitTalk_VIE": "Ư! Khụ khụ…!",
+      "UnitTalk_HIN": "उह! उहहह…!",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_22.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_KNIGHT",
+      "CameraOffset": "TWIN_7",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "앗, 다시 원래의 모습으로 돌아왔어요!",
+      "UnitTalk_JPN": "あっ、元の姿に戻りました！",
+      "UnitTalk_FRA": "Oh, il a retrouvé son apparence normale !",
+      "UnitTalk_DEU": "Oh, es ist wieder in seine ursprüngliche Form zurückgekehrt!",
+      "UnitTalk_ESP": "¡Oh, ha vuelto a su forma original!",
+      "UnitTalk_PRT": "Ah, eu voltei à minha forma original!",
+      "UnitTalk_THA": "อ๊ะ กลับคืนสู่ร่างเดิมแล้วค่ะ!",
+      "UnitTalk_IND": "Ah, dia sudah kembali ke wujud aslinya!",
+      "UnitTalk_VIE": "Á, anh ta đã trở lại hình dáng ban đầu rồi!",
+      "UnitTalk_HIN": "ओह, मैं फिर से अपने असली रूप में वापस आ गई हूँ!",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_PRAY",
+      "CameraOffset": "TWIN_4",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SPECIAL",
+      "UnitPos": "POS5",
+      "UnitTalk_KOR": "역시… 공허체를 닮은 그 커다란 모습도 실체 없는 환각이었군요.",
+      "UnitTalk_JPN": "やはり…<r=ヴォイドボーン>空虚体</r>に似たあの巨大な姿も\\n実体のない幻覚だったようですね。",
+      "UnitTalk_FRA": "Né du Vide",
+      "UnitTalk_DEU": "Wie erwartet… Diese riesige Gestalt, die einem Leerenwesen ähnelte, war auch nur eine körperlose Halluzination.",
+      "UnitTalk_ESP": "Como pensaba… esa enorme forma parecida a un Nacido del Vacío era solo una ilusión sin sustancia.",
+      "UnitTalk_PRT": "Como esperado… Aquela forma gigante, parecida com um Nascido do Vazio, era apenas uma alucinação sem substância.",
+      "UnitTalk_THA": "แน่นอน… รูปร่างใหญ่โตที่เหมือนกับ ก็เป็นเพียงภาพลวงตาที่ไม่มีตัวตนสินะ",
+      "UnitTalk_IND": "Ternyata… wujud besar yang menyerupai Voidborn itu hanyalah ilusi tanpa substansi.",
+      "UnitTalk_VIE": "Quả nhiên… hình dáng khổng lồ giống Sinh vật Hư Không đó cũng chỉ là ảo ảnh không có thực thể.",
+      "UnitTalk_HIN": "जैसा कि मैंने सोचा… शून्यजात को मिलता-जुलता वह विशाल रूप भी एक निराकार भ्रम था।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_PRAY",
+      "UnitTalk_KOR": "사람들에게 줄 수 있는 것도, 본인이 가진 것도…",
+      "UnitTalk_JPN": "人に与えるものも、本人が持っているものも…",
+      "UnitTalk_FRA": "Ce qu'il peut donner aux gens, ce qu'il possède…",
+      "UnitTalk_DEU": "Was er den Leuten geben konnte und was er selbst besaß…",
+      "UnitTalk_ESP": "Lo que podía dar a la gente, lo que él mismo tenía…",
+      "UnitTalk_PRT": "Tudo o que podia dar às pessoas, e tudo o que tinha…",
+      "UnitTalk_THA": "ทั้งสิ่งที่มอบให้คนอื่นได้ และสิ่งที่ตัวเองมี…",
+      "UnitTalk_IND": "Baik yang bisa dia berikan kepada orang lain, maupun yang dia miliki sendiri…",
+      "UnitTalk_VIE": "Thứ có thể cho người khác, và cả thứ bản thân anh ta có…",
+      "UnitTalk_HIN": "जो कोई लोगों को दे सकता है, और जो उसके पास है…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_PRAY",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "전부 허깨비 같은 사람이었군요.",
+      "UnitTalk_JPN": "すべてが幻のような人だったとは。",
+      "UnitTalk_FRA": "Tout n'était qu'une illusion, une personne fantôme.",
+      "UnitTalk_DEU": "Er war nur ein Phantom.",
+      "UnitTalk_ESP": "Era una persona como un fantasma.",
+      "UnitTalk_PRT": "Era uma pessoa completamente vazia.",
+      "UnitTalk_THA": "เป็นคนไร้ตัวตนจริงๆ ด้วยสินะคะ",
+      "UnitTalk_IND": "Semuanya hanyalah orang yang seperti hantu.",
+      "UnitTalk_VIE": "Tất cả đều là một người như bóng ma.",
+      "UnitTalk_HIN": "वह एक मायावी व्यक्ति था।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "크윽…!",
+      "UnitTalk_JPN": "クッ…！",
+      "UnitTalk_FRA": "Argh… !",
+      "UnitTalk_DEU": "Grrr…!",
+      "UnitTalk_ESP": "¡Agh…!",
+      "UnitTalk_PRT": "Urgh…!",
+      "UnitTalk_THA": "อึ่ก…!",
+      "UnitTalk_IND": "Argh…!",
+      "UnitTalk_VIE": "Khụ khụ…!",
+      "UnitTalk_HIN": "उहहह…!",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "이제 다 끝났어.",
+          "JumpAnchorStringId_JPN": "もう終わりだ。",
+          "JumpAnchorStringId_FRA": "C'est fini maintenant.",
+          "JumpAnchorStringId_DEU": "Es ist jetzt vorbei.",
+          "JumpAnchorStringId_ESP": "Ya se acabó.",
+          "JumpAnchorStringId_PRT": "Acabou.",
+          "JumpAnchorStringId_THA": "จบแล้ว",
+          "JumpAnchorStringId_IND": "Sudah berakhir sekarang.",
+          "JumpAnchorStringId_VIE": "Giờ thì xong rồi.",
+          "JumpAnchorStringId_HIN": "अब सब खत्म हो गया है।"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "괜히 저항하지 마.",
+          "JumpAnchorStringId_JPN": "無駄な抵抗はやめることだな。",
+          "JumpAnchorStringId_FRA": "Ne résiste pas inutilement.",
+          "JumpAnchorStringId_DEU": "Leisten Sie keinen unnötigen Widerstand.",
+          "JumpAnchorStringId_ESP": "No resistas.",
+          "JumpAnchorStringId_PRT": "Não resista mais.",
+          "JumpAnchorStringId_THA": "อย่าขัดขืนเลย",
+          "JumpAnchorStringId_IND": "Jangan melawan tanpa alasan.",
+          "JumpAnchorStringId_VIE": "Đừng kháng cự vô ích.",
+          "JumpAnchorStringId_HIN": "विरोध मत करो।"
+        }
+      ]
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "당신…",
+      "UnitTalk_JPN": "あんた…",
+      "UnitTalk_FRA": "Toi…",
+      "UnitTalk_DEU": "Sie…",
+      "UnitTalk_ESP": "Tú…",
+      "UnitTalk_PRT": "Você…",
+      "UnitTalk_THA": "คุณ…",
+      "UnitTalk_IND": "Kau…",
+      "UnitTalk_VIE": "Bạn…",
+      "UnitTalk_HIN": "तुम…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "UnitTalk_KOR": "당신은 대체 뭐지…?",
+      "UnitTalk_JPN": "あんたは一体何者なの…？",
+      "UnitTalk_FRA": "Qui es-tu, au juste… ?",
+      "UnitTalk_DEU": "Wer sind Sie überhaupt…?",
+      "UnitTalk_ESP": "¿Quién eres tú…?",
+      "UnitTalk_PRT": "Quem é você, afinal…?",
+      "UnitTalk_THA": "คุณเป็นใครกันแน่…?",
+      "UnitTalk_IND": "Sebenarnya kau ini siapa…?",
+      "UnitTalk_VIE": "Bạn rốt cuộc là ai…?",
+      "UnitTalk_HIN": "तुम आखिर कौन हो…?",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "욕망이 없는 사람 따위… 있을 리가 없는데…",
+      "UnitTalk_JPN": "欲望のない人間なんて…いるはずないのに…",
+      "UnitTalk_FRA": "Une personne sans désirs… ça ne peut pas exister…",
+      "UnitTalk_DEU": "Jemand ohne Verlangen… so etwas kann es doch nicht geben…",
+      "UnitTalk_ESP": "Una persona sin deseos… no puede existir…",
+      "UnitTalk_PRT": "Uma pessoa sem desejos… não pode existir…",
+      "UnitTalk_THA": "คนไร้ซึ่งความปรารถนา… ไม่มีทางมีอยู่จริงหรอก…",
+      "UnitTalk_IND": "Tidak mungkin ada orang tanpa keinginan…",
+      "UnitTalk_VIE": "Một người không có dục vọng… làm gì có chuyện đó chứ…",
+      "UnitTalk_HIN": "ऐसा कोई व्यक्ति नहीं हो सकता जिसकी कोई इच्छा न हो…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "갈라진 목소리로 중얼거리는 마술사는 이미 전의를 상실해 보였다.",
+      "UnitTalk_JPN": "かすれた声で呟くマジシャンは、すでに戦意を喪失しているように見えた。",
+      "UnitTalk_FRA": "Le magicien, marmonnant d'une voix brisée, semblait déjà avoir perdu toute volonté de se battre.",
+      "UnitTalk_DEU": "Der Magier murmelte mit gebrochener Stimme und schien bereits den Kampfgeist verloren zu haben.",
+      "UnitTalk_ESP": "El mago, murmurando con voz quebrada, ya parecía haber perdido toda voluntad de luchar.",
+      "UnitTalk_PRT": "O Mago, murmurando com a voz rouca, parecia já ter perdido a vontade de lutar.",
+      "UnitTalk_THA": "นักมายากลที่พึมพำด้วยเสียงแหบแห้งดูเหมือนจะหมดความตั้งใจที่จะสู้แล้ว",
+      "UnitTalk_IND": "Pesulap yang bergumam dengan suara serak itu sudah terlihat kehilangan semangat bertarung.",
+      "UnitTalk_VIE": "Pháp sư lẩm bẩm với giọng khàn đặc, dường như đã mất hết ý chí chiến đấu.",
+      "UnitTalk_HIN": "फटी हुई आवाज में बड़बड़ाता हुआ जादूगर पहले ही अपनी लड़ने की इच्छा खो चुका था।",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "이제 돌아가자.",
+          "JumpAnchorStringId_JPN": "あとの処理は、クラブに任せて…",
+          "JumpAnchorStringId_FRA": "Rentrons.",
+          "JumpAnchorStringId_DEU": "Lass uns gehen.",
+          "JumpAnchorStringId_ESP": "Volvamos.",
+          "JumpAnchorStringId_PRT": "Vamos voltar.",
+          "JumpAnchorStringId_THA": "ได้เวลาที่เราจะกลับกันแล้ว",
+          "JumpAnchorStringId_IND": "Mari kita kembali.",
+          "JumpAnchorStringId_VIE": "Chúng ta về thôi.",
+          "JumpAnchorStringId_HIN": "अब वापस चलते हैं।"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "이후의 처리는… 클럽에 맡기고.",
+          "JumpAnchorStringId_JPN": "もう帰ろう。",
+          "JumpAnchorStringId_FRA": "Laissons le club s'occuper du reste…",
+          "JumpAnchorStringId_DEU": "Die weitere Bearbeitung… überlassen wir dem Club.",
+          "JumpAnchorStringId_ESP": "El resto… se lo dejamos al club.",
+          "JumpAnchorStringId_PRT": "O resto… deixe com o clube.",
+          "JumpAnchorStringId_THA": "การจัดการหลังจากนี้… ปล่อยให้สโมสรจัดการเถอะค่ะ",
+          "JumpAnchorStringId_IND": "Untuk penanganan selanjutnya… serahkan pada klub.",
+          "JumpAnchorStringId_VIE": "Việc xử lý sau này… cứ để cho câu lạc bộ.",
+          "JumpAnchorStringId_HIN": "बाकी काम क्लब पर छोड़ दो।"
+        }
+      ]
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_PRAY",
+      "CameraOffset": "TWIN_4",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그래요. 지체할 시간이 없습니다.",
+      "UnitTalk_JPN": "えぇ。グズグズしている時間はありませんわ。",
+      "UnitTalk_FRA": "Oui. Il n'y a pas de temps à perdre.",
+      "UnitTalk_DEU": "Genau. Wir haben keine Zeit zu verlieren.",
+      "UnitTalk_ESP": "Así es. No hay tiempo que perder.",
+      "UnitTalk_PRT": "Isso mesmo. Não há tempo a perder.",
+      "UnitTalk_THA": "ใช่ค่ะ ไม่มีเวลาให้เสียแล้ว",
+      "UnitTalk_IND": "Betul. Tidak ada waktu untuk menunda.",
+      "UnitTalk_VIE": "Đúng vậy. Không còn thời gian để chần chừ nữa.",
+      "UnitTalk_HIN": "हाँ। हमारे पास समय नहीं है।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 314,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_KNIGHT",
+      "UnitMotion": "SPECIAL"
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_PRAY",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "발렌타인 데이가 끝나기 전에, 한시라도 빨리 다른 곳에 가서 초콜릿을 판매해야 합니다!",
+      "UnitTalk_JPN": "バレンタインデーが終わる前に、一刻も早く別の場所でチョコレートを販売しなくては！",
+      "UnitTalk_FRA": "Avant la fin de la Saint-Valentin, nous devons aller vendre des chocolats ailleurs le plus vite possible !",
+      "UnitTalk_DEU": "Bevor der Valentinstag vorbei ist, müssen wir so schnell wie möglich woanders hingehen und Schokolade verkaufen!",
+      "UnitTalk_ESP": "¡Antes de que termine el Día de San Valentín, debemos ir a otro lugar y vender chocolates lo antes posible!",
+      "UnitTalk_PRT": "Antes que o Dia dos Namorados termine, preciso ir a outro lugar e vender chocolates o mais rápido possível!",
+      "UnitTalk_THA": "ก่อนที่วันวาเลนไทน์จะจบลง ต้องรีบไปขายช็อกโกแลตที่อื่นให้เร็วที่สุดค่ะ!",
+      "UnitTalk_IND": "Sebelum Hari Valentine berakhir, kita harus segera pergi ke tempat lain dan menjual cokelat!",
+      "UnitTalk_VIE": "Trước khi Ngày Valentine kết thúc, chúng ta phải nhanh chóng đến nơi khác để bán sô cô la!",
+      "UnitTalk_HIN": "वेलेंटाइन डे खत्म होने से पहले, हमें जल्द से जल्द कहीं और जाकर चॉकलेट बेचनी होगी!",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_KNIGHT",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "또 무슨 사고를 치시려고요? 절대 안 돼요!",
+      "UnitTalk_JPN": "また何をしでかすおつもりですか！絶対にダメです！",
+      "UnitTalk_FRA": "Qu'est-ce que vous comptez encore faire comme bêtise ? Absolument pas !",
+      "UnitTalk_DEU": "Was wollen Sie denn schon wieder anstellen? Auf keinen Fall!",
+      "UnitTalk_ESP": "¿Qué otra travesura vas a hacer? ¡De ninguna manera!",
+      "UnitTalk_PRT": "O que você vai aprontar de novo? De jeito nenhum!",
+      "UnitTalk_THA": "จะก่อเรื่องอะไรอีกคะ? ไม่ได้เด็ดขาดค่ะ!",
+      "UnitTalk_IND": "Mau membuat masalah apa lagi? Tidak boleh!",
+      "UnitTalk_VIE": "Anh lại định gây ra chuyện gì nữa vậy? Tuyệt đối không được!",
+      "UnitTalk_HIN": "आप फिर से क्या गड़बड़ करने वाले हैं? बिल्कुल नहीं!",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.5,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_PRAY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "안 될 게 어딨어! 이 아까운 사업 아이템을 그냥 버리기라도 하라는 거야?",
+      "UnitTalk_JPN": "どうしてダメなのよ！この貴重な事業アイデアを無駄にするつもり？",
+      "UnitTalk_FRA": "Pourquoi pas ! Vous voulez que je jette cette précieuse idée commerciale ?",
+      "UnitTalk_DEU": "Was soll daran falsch sein?! Soll ich diese wertvolle Geschäftsidee einfach aufgeben?",
+      "UnitTalk_ESP": "¡¿Por qué no?! ¡¿Quieres que deseche esta valiosa idea de negocio?!",
+      "UnitTalk_PRT": "O que tem de errado? Você quer que eu jogue fora este valioso item de negócio?",
+      "UnitTalk_THA": "จะไม่ได้ได้ยังไง! จะให้ทิ้งไอเทมธุรกิจอันมีค่านี้ไปเฉยๆ งั้นเหรอ?",
+      "UnitTalk_IND": "Apa maksudmu tidak boleh! Apa kau mau membuang ide bisnis yang berharga ini begitu saja?",
+      "UnitTalk_VIE": "Không được là sao! Chẳng lẽ cô muốn vứt bỏ ý tưởng kinh doanh quý giá này sao?",
+      "UnitTalk_HIN": "क्या नहीं हो सकता! क्या आप चाहते हैं कि मैं इस कीमती व्यावसायिक वस्तु को बस छोड़ दूं?",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 361,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_PRAY",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.5,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_KNIGHT",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "매번 사업하신다면서 자꾸 사고를 일으키시잖아요!",
+      "UnitTalk_JPN": "ビジネスだの何だの言いながら、いつもトラブルを起こすじゃないですか！",
+      "UnitTalk_FRA": "À chaque fois que vous faites des affaires, vous causez des problèmes !",
+      "UnitTalk_DEU": "Sie machen jedes Mal Ärger, wenn Sie Geschäfte machen!",
+      "UnitTalk_ESP": "¡Siempre estás causando problemas con tus negocios!",
+      "UnitTalk_PRT": "Você sempre causa problemas com seus negócios!",
+      "UnitTalk_THA": "ถ้าทำธุรกิจทุกครั้งแล้วเกิดเรื่องแบบนี้ตลอดเลยนะคะ!",
+      "UnitTalk_IND": "Setiap kali Anda berbisnis, Anda selalu membuat masalah!",
+      "UnitTalk_VIE": "Nếu cứ kinh doanh mãi thế này thì cô sẽ gây ra tai nạn mất thôi!",
+      "UnitTalk_HIN": "हर बार व्यापार करते हुए आप हमेशा मुसीबत में पड़ जाती हैं!",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_KNIGHT",
+      "UnitTalk_KOR": "욕망을 다스려야 한다는 교훈, 분명히 배우셨겠죠-!",
+      "UnitTalk_JPN": "欲望は制するべきだという教訓を、さっき学んだでしょう！？",
+      "UnitTalk_FRA": "Vous avez sûrement appris la leçon qu'il faut maîtriser ses désirs, n'est-ce pas ?!",
+      "UnitTalk_DEU": "Sie haben doch sicher gelernt, dass man seine Begierden zügeln muss, oder?!",
+      "UnitTalk_ESP": "¡Seguro aprendiste la lección de controlar tus deseos!",
+      "UnitTalk_PRT": "Você certamente aprendeu a lição de controlar seus desejos, não é?!",
+      "UnitTalk_THA": "บทเรียนที่ว่าต้องควบคุมความปรารถนาให้ได้ คุณคงได้เรียนรู้แล้วสินะคะ-!",
+      "UnitTalk_IND": "Anda pasti sudah belajar pelajaran tentang mengendalikan keinginan, kan?!",
+      "UnitTalk_VIE": "Bài học phải kiểm soát dục vọng, chắc chắn cô đã học được rồi chứ-!",
+      "UnitTalk_HIN": "आपने ज़रूर सीखा होगा कि अपनी इच्छाओं को नियंत्रित करना चाहिए!",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_PRAY",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "흠흠! 맞아, 그래야지.",
+      "UnitTalk_JPN": "ンン！コホン！そうね、その通りよ。",
+      "UnitTalk_FRA": "Hum hum ! Oui, c'est ça, il faut.",
+      "UnitTalk_DEU": "Hmpf, hmpf! Genau, so ist es.",
+      "UnitTalk_ESP": "¡Jeje! Sí, así es.",
+      "UnitTalk_PRT": "Hum-hum! Isso mesmo, é assim que tem que ser.",
+      "UnitTalk_THA": "ฮึ่มๆ! ใช่แล้ว ต้องอย่างนั้นสิ",
+      "UnitTalk_IND": "Hmm, hmm! Benar, memang seharusnya begitu.",
+      "UnitTalk_VIE": "Khụ khụ! Đúng vậy, phải thế chứ.",
+      "UnitTalk_HIN": "हम्म! हाँ, ऐसा ही होना चाहिए।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_PRAY",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그러기 위해서 단장님도 지금부터 저와 함께-",
+      "UnitTalk_JPN": "そのためにも、団長はこれからわたくしと──",
+      "UnitTalk_FRA": "Pour cela, le Commandant doit maintenant, avec moi—",
+      "UnitTalk_DEU": "Dafür müssen Sie, Kommandant, von jetzt an mit mir zusammen –",
+      "UnitTalk_ESP": "Para eso, el Capitán también, a partir de ahora, conmigo...",
+      "UnitTalk_PRT": "Para isso, o Comandante também, a partir de agora, comigo—",
+      "UnitTalk_THA": "เพื่อการนั้น ท่านหัวหน้าก็ต้องอยู่กับฉันตั้งแต่ตอนนี้-",
+      "UnitTalk_IND": "Untuk itu, Komandan juga mulai sekarang bersama saya—",
+      "UnitTalk_VIE": "Để làm được điều đó, từ bây giờ Đội trưởng cũng phải cùng tôi-",
+      "UnitTalk_HIN": "उसके लिए, कमांडर को अब मेरे साथ—",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.5,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_KNIGHT",
+      "CameraOffset": "POS4_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "공녀님은 이대로 저랑 같이! 얌전히! 돌아가시는 거예요! 아셨죠?!",
+      "UnitTalk_JPN": "公女様は私と一緒に！おとなしく！帰るんですよ！分かりましたね？",
+      "UnitTalk_FRA": "Princesse, vous rentrez avec moi ! Calmement ! D'accord ?!",
+      "UnitTalk_DEU": "Prinzessin, Sie kommen jetzt brav mit mir zurück! Verstanden?!",
+      "UnitTalk_ESP": "¡Princesa, venga conmigo! ¡Sé obediente! ¡Volvamos! ¿Entendido?",
+      "UnitTalk_PRT": "Princesa, você vai voltar comigo, quietinha! Entendeu?!",
+      "UnitTalk_THA": "องค์หญิงต้องกลับไปกับฉันอย่างว่าง่ายเดี๋ยวนี้! เข้าใจนะคะ?!",
+      "UnitTalk_IND": "Putri harus pulang bersamaku! Dengan tenang! Mengerti?!",
+      "UnitTalk_VIE": "Công chúa cứ thế cùng tôi! Ngoan ngoãn! Quay về thôi! Rõ chưa?!",
+      "UnitTalk_HIN": "राजकुमारी, आप मेरे साथ चुपचाप वापस जा रही हैं! समझीं?!",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_PRAY",
+      "CameraOffset": "POS5_2X",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "으으… 잔소리…",
+      "UnitTalk_JPN": "うぅ…小言ばっかりなんだから…",
+      "UnitTalk_FRA": "Ugh… Quel rabat-joie…",
+      "UnitTalk_DEU": "Ugh… Das Gezeter…",
+      "UnitTalk_ESP": "Ugh… ¡Qué sermón…!",
+      "UnitTalk_PRT": "Ugh… Que sermão…",
+      "UnitTalk_THA": "อื้อออ… ขี้บ่นจัง…",
+      "UnitTalk_IND": "Ugh… cerewet…",
+      "UnitTalk_VIE": "Ư ư… Cằn nhằn…",
+      "UnitTalk_HIN": "उह… झिकझिक…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 338,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_KNIGHT",
+      "UnitMotion": "ANGRY"
+    },
+    {
+      "Uid": 339,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_PRAY",
+      "UnitMotion": "ANGRY"
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_4",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "티격태격하는 샤를과 프레이를 바라보며 잠시 마술사에게 시선을 거뒀던 그 순간-",
+      "UnitTalk_JPN": "言い争うシャルルとフレイを見つめ、マジシャンから視線を外した瞬間──",
+      "UnitTalk_FRA": "Alors que je regardais Charles et Frey se chamailler, j'ai un instant détourné les yeux du magicien—",
+      "UnitTalk_DEU": "Als ich Charles und Frey beim Streiten zusah und meinen Blick kurz vom Magier abwandte –",
+      "UnitTalk_ESP": "Mientras miraba a Charles y Frey discutiendo, y por un momento aparté la vista del Mago...",
+      "UnitTalk_PRT": "Enquanto eu observava Charles e Frey discutindo, por um instante desviei o olhar do Mágico—",
+      "UnitTalk_THA": "ในชั่วพริบตาที่ละสายตาจากชาร์ลกับเฟรย์ที่กำลังทะเลาะกันไปมองนักมายากล-",
+      "UnitTalk_IND": "Saat aku mengalihkan pandangan dari Charles dan Frey yang bertengkar, sejenak dari Penyihir—",
+      "UnitTalk_VIE": "Trong khoảnh khắc tôi rời mắt khỏi pháp sư để nhìn Charles và Frey đang cãi nhau-",
+      "UnitTalk_HIN": "शार्ल और फ्रेय को लड़ते हुए देखते हुए, जिस पल मैंने जादूगर से अपनी नज़र हटाई—",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 342,
+      "WaitClick": false,
+      "WaitTime": 1.5,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "THINK2",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "CameraOffset": "TWIN_1",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "역겨워…",
+      "UnitTalk_JPN": "反吐が出る…",
+      "UnitTalk_FRA": "Dégoûtant…",
+      "UnitTalk_DEU": "Ekelhaft…",
+      "UnitTalk_ESP": "Qué asco…",
+      "UnitTalk_PRT": "Nojento…",
+      "UnitTalk_THA": "น่ารังเกียจ…",
+      "UnitTalk_IND": "Menjijikkan…",
+      "UnitTalk_VIE": "Thật ghê tởm…",
+      "UnitTalk_HIN": "घिनौना…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "아무것도 모르고 저 역겨운 것들을 감싸고 돌면서…!",
+      "UnitTalk_JPN": "何も知らずに、そんなクソみたいな連中を庇い立てて…！",
+      "UnitTalk_FRA": "Sans rien savoir, tu protèges ces choses répugnantes… !",
+      "UnitTalk_DEU": "Ohne etwas zu wissen, beschützen Sie diese ekelhaften Dinge…!",
+      "UnitTalk_ESP": "¡Sin saber nada, defendiendo esas cosas asquerosas…!",
+      "UnitTalk_PRT": "Sem saber de nada, protegendo essas coisas nojentas…!",
+      "UnitTalk_THA": "ไม่รู้อิโหน่อิเหน่แล้วยังปกป้องพวกน่ารังเกียจพวกนั้นอีก…!",
+      "UnitTalk_IND": "Tidak tahu apa-apa dan melindungi hal-hal menjijikkan itu…!",
+      "UnitTalk_VIE": "Không biết gì mà cứ bao che cho những thứ ghê tởm đó…!",
+      "UnitTalk_HIN": "कुछ भी न जानते हुए, उन घिनौनी चीज़ों को बचाते हुए…!",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SPELL_DARK_75.wav",
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "CameraOffset": "POS6_2X",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "이 내가… 허깨비뿐인 여자라고…?!",
+      "UnitTalk_JPN": "このアタシが…幻だけの女だって言うの…！？",
+      "UnitTalk_FRA": "Moi… une femme qui n'est qu'un fantôme… ?!",
+      "UnitTalk_DEU": "Ich… soll nur eine Illusion sein…?!",
+      "UnitTalk_ESP": "¡¿Yo… soy solo una mujer ilusoria…?!",
+      "UnitTalk_PRT": "Eu… sou apenas uma mulher fantasma…?!",
+      "UnitTalk_THA": "ฉันคนนี้… เป็นแค่ผู้หญิงที่เป็นภาพลวงตาอย่างนั้นเหรอ…?!",
+      "UnitTalk_IND": "Aku… hanya wanita hantu…?!",
+      "UnitTalk_VIE": "Ta đây… chỉ là một người phụ nữ ảo ảnh thôi sao…?!",
+      "UnitTalk_HIN": "मैं… सिर्फ एक भ्रम वाली महिला हूँ…?!",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "?!",
+          "JumpAnchorStringId_JPN": "！？",
+          "JumpAnchorStringId_FRA": "?!",
+          "JumpAnchorStringId_DEU": "?!",
+          "JumpAnchorStringId_ESP": "¡¿?!",
+          "JumpAnchorStringId_PRT": "?!",
+          "JumpAnchorStringId_THA": "?!",
+          "JumpAnchorStringId_IND": "?!",
+          "JumpAnchorStringId_VIE": "?!",
+          "JumpAnchorStringId_HIN": "?!"
+        }
+      ]
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_20.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SPELL_LIGHT_03.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "순간, 발목에서 무시무시한 한기가 타고 올라왔다. ",
+      "UnitTalk_JPN": "突如、足首からおぞましい冷気が這い上がってきた。",
+      "UnitTalk_FRA": "Soudain, un froid glacial a remonté ma cheville.",
+      "UnitTalk_DEU": "Plötzlich stieg eine schreckliche Kälte von meinem Knöchel auf.",
+      "UnitTalk_ESP": "De repente, un frío espeluznante subió por mi tobillo.",
+      "UnitTalk_PRT": "De repente, um frio assustador subiu pelo meu tornozelo.",
+      "UnitTalk_THA": "ทันใดนั้น ความหนาวเย็นยะเยือกก็แล่นขึ้นมาจากข้อเท้า",
+      "UnitTalk_IND": "Seketika, hawa dingin yang mengerikan merambat naik dari pergelangan kakiku.",
+      "UnitTalk_VIE": "Khoảnh khắc đó, một luồng khí lạnh đáng sợ trào lên từ mắt cá chân.",
+      "UnitTalk_HIN": "अचानक, मेरे टखने से एक भयानक ठंडक ऊपर चढ़ी।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SWORD_HIT.wav",
+      "CameraOffset": "TWIN_1",
+      "UnitTalk_KOR": "시선을 돌리자 길게 뻗은 마술사의 손이 발목을 움켜쥐고 있었다.",
+      "UnitTalk_JPN": "視線を向けると、マジシャンの伸ばした手が私の足首を掴んでいる。",
+      "UnitTalk_FRA": "En tournant la tête, j'ai vu la main tendue du magicien agripper ma cheville.",
+      "UnitTalk_DEU": "Als ich den Blick abwandte, umklammerte die lange Hand des Magiers meinen Knöchel.",
+      "UnitTalk_ESP": "Al girar la mirada, la mano extendida del Mago me sujetaba el tobillo.",
+      "UnitTalk_PRT": "Ao desviar o olhar, a mão estendida do Mágico estava segurando meu tornozelo.",
+      "UnitTalk_THA": "พอหันไปมอง ก็เห็นมือนักมายากลที่ยื่นยาวออกมากำข้อเท้าฉันไว้",
+      "UnitTalk_IND": "Saat aku menoleh, tangan Penyihir yang terulur panjang mencengkeram pergelangan kakiku.",
+      "UnitTalk_VIE": "Khi tôi quay đầu lại, bàn tay dài của Nhà ảo thuật đang nắm chặt mắt cá chân tôi.",
+      "UnitTalk_HIN": "जब मैंने अपनी नज़र घुमाई, तो जादूगर का लंबा हाथ मेरे टखने को पकड़े हुए था।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SWOOSH_21.wav",
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "CameraOffset": "POS6_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS6",
+      "UnitTalk_KOR": "이 가식덩어리들 같으니이이이!!",
+      "UnitTalk_JPN": "この偽善者どもがァァァァァ！！",
+      "UnitTalk_FRA": "Ces hypocrites !!!",
+      "UnitTalk_DEU": "Ihr Heuchler!",
+      "UnitTalk_ESP": "¡¡Ustedes, hipócritas!!",
+      "UnitTalk_PRT": "Seus hipócritas de uma figa!",
+      "UnitTalk_THA": "พวกเสแสร้งเอ๊ยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยยย",
+      "UnitTalk_IND": "Dasar orang munafikkkkkk!!",
+      "UnitTalk_VIE": "Đồ giả dối nàyyyyyy!!",
+      "UnitTalk_HIN": "तुम पाखंडियों!!",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 366,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFlashBang": 1.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.5,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_FINGER_SNAP.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "순식간에 가까워진 마술사가, 내 얼굴 앞에 얼굴을 마주했다.",
+      "UnitTalk_JPN": "瞬時に距離を詰めてきたマジシャンが、至近距離で私の顔を覗き込んだ。",
+      "UnitTalk_FRA": "Le magicien s'est approché en un éclair, son visage face au mien.",
+      "UnitTalk_DEU": "Der Magier kam mir blitzschnell nahe und stellte sich mir direkt gegenüber.",
+      "UnitTalk_ESP": "El Mago se acercó rápidamente y puso su cara frente a la mía.",
+      "UnitTalk_PRT": "O Mágico, que se aproximou rapidamente, encarou meu rosto.",
+      "UnitTalk_THA": "นักมายากลที่เข้ามาใกล้ในพริบตา จ้องหน้าฉันตรงหน้า",
+      "UnitTalk_IND": "Penyihir yang mendekat dengan cepat, menatap wajahku dari dekat.",
+      "UnitTalk_VIE": "Nhà ảo thuật nhanh chóng tiến lại gần, đối mặt với tôi.",
+      "UnitTalk_HIN": "जादूगर, जो पल भर में करीब आ गया था, मेरे चेहरे के सामने अपना चेहरा ले आया।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_WEAPON_DROP_21.wav",
+      "UnitTalk_KOR": "줄곧 쓰고 있던 하얀 가면을 벗어던진 채─",
+      "UnitTalk_JPN": "ずっと着けていた白い仮面を外して──",
+      "UnitTalk_FRA": "Ayant jeté le masque blanc qu'il portait depuis toujours—",
+      "UnitTalk_DEU": "Er hatte die weiße Maske, die er die ganze Zeit getragen hatte, abgenommen –",
+      "UnitTalk_ESP": "Quitándose la máscara blanca que siempre llevaba puesta—",
+      "UnitTalk_PRT": "Tirei a máscara branca que usava há tanto tempo—",
+      "UnitTalk_THA": "พร้อมกับถอดหน้ากากสีขาวที่สวมมาตลอดทิ้งไป—",
+      "UnitTalk_IND": "Sambil melepas topeng putih yang selalu dia kenakan—",
+      "UnitTalk_VIE": "Trong khi vứt bỏ chiếc mặt nạ trắng đã đeo bấy lâu nay─",
+      "UnitTalk_HIN": "उसने अपना सफ़ेद मुखौटा उतार दिया था, जो उसने हमेशा पहना हुआ था—",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "UnitTalk_KOR": "아직도 그 역겨운 가면을 못 벗겠다면…!",
+      "UnitTalk_JPN": "まだその虫唾が走るような仮面を取らないって言うなら…！",
+      "UnitTalk_FRA": "Si tu ne peux toujours pas enlever ce masque répugnant… !",
+      "UnitTalk_DEU": "Wenn du diese ekelhafte Maske immer noch nicht abnehmen kannst…!",
+      "UnitTalk_ESP": "¡Si todavía no puedes quitarte esa asquerosa máscara…!",
+      "UnitTalk_PRT": "Se você ainda não consegue tirar essa máscara nojenta…!",
+      "UnitTalk_THA": "ถ้ายังถอดหน้ากากน่ารังเกียจนั่นไม่ได้อีกละก็…!",
+      "UnitTalk_IND": "Jika kau masih tidak bisa melepas topeng menjijikkan itu…!",
+      "UnitTalk_VIE": "Nếu vẫn không thể cởi bỏ chiếc mặt nạ ghê tởm đó…!",
+      "UnitTalk_HIN": "अगर तुम अभी भी उस घिनौने मुखौटे को नहीं उतार सकते…!",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 2.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SPELL_DARK_75.wav",
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "UnitTalk_KOR": "내가! 벗겨 주지!!",
+      "UnitTalk_JPN": "このアタシが！剥ぎ取ってやるわ！！",
+      "UnitTalk_FRA": "Je vais te l'arracher !!",
+      "UnitTalk_DEU": "Dann nehme ich sie dir ab!!",
+      "UnitTalk_ESP": "¡Yo te la quitaré!",
+      "UnitTalk_PRT": "Eu! Vou tirar para você!!",
+      "UnitTalk_THA": "ฉันนี่แหละ! จะถอดมันเอง!!",
+      "UnitTalk_IND": "Aku! Akan melepasnya!!",
+      "UnitTalk_VIE": "Ta sẽ! Lột nó ra!!",
+      "UnitTalk_HIN": "मैं! इसे उतार दूँगी!!",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 125,
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 2.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_FIRE_ENERGY_04.wav"
+    },
+    {
+      "Uid": 372,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeInStartCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInCol": [
+        "0.5647059",
+        "0",
+        "0.13333334",
+        "1"
+      ],
+      "BgFadeInTime": 1.0
+    },
+    {
+      "Uid": 126,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_BLACK.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 42,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_1",
+      "UnitTalk_KOR": "기괴한 색으로 물든 마술사의 눈이 시야를 가득 채웠다.",
+      "UnitTalk_JPN": "奇妙な色に染まったマジシャンの目が、私の視界を埋め尽くした。",
+      "UnitTalk_FRA": "Les yeux du magicien, teintés d'une couleur étrange, remplissent mon champ de vision.",
+      "UnitTalk_DEU": "Die Augen des Magiers, getränkt in seltsamer Farbe, füllen mein Blickfeld.",
+      "UnitTalk_ESP": "Los ojos del Mago, teñidos de un color extraño, llenan mi vista.",
+      "UnitTalk_PRT": "Os olhos do Mago, tingidos de uma cor estranha, preenchem minha visão.",
+      "UnitTalk_THA": "ดวงตาของนักมายากลที่ย้อมด้วยสีประหลาดเข้าครอบงำสายตาฉันจนเต็มไปหมด",
+      "UnitTalk_IND": "Mata penyihir yang diwarnai warna aneh memenuhi pandanganku.",
+      "UnitTalk_VIE": "Mắt của pháp sư nhuộm một màu kỳ lạ, lấp đầy tầm nhìn của tôi.",
+      "UnitTalk_HIN": "जादूगर की आँखें, जो एक विचित्र रंग से रंगी हुई थीं, मेरी दृष्टि में भर गईं।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "샤를과 프레이가 나를 부르는 목소리가, 먼 곳에서 들려오듯 아득해져서-",
+      "UnitTalk_JPN": "シャルルとフレイが私を呼ぶ声が、どんどん遠くなっていく──",
+      "UnitTalk_FRA": "Les voix de Charles et Frey m'appelant s'estompent au loin…",
+      "UnitTalk_DEU": "Charlottes und Freys Stimmen, die mich rufen, werden immer leiser ...",
+      "UnitTalk_ESP": "Las voces de Charles y Frey llamándome, se desvanecen en la distancia…",
+      "UnitTalk_PRT": "A voz de Charles e Frey me chamando, ecoando de longe, fica cada vez mais fraca…",
+      "UnitTalk_THA": "เสียงของชาร์ลกับเฟรย์ที่เรียกฉันดังมาจากที่ไกลๆ ราวกับว่ามันจางหายไป—",
+      "UnitTalk_IND": "Suara Charles dan Frey memanggilku, terdengar semakin jauh...",
+      "UnitTalk_VIE": "Tiếng Charles và Frey gọi tôi, như vọng từ xa xăm...",
+      "UnitTalk_HIN": "शार्ल और फ्रेय की आवाज़ें मुझे बुला रही थीं, जो दूर से आती हुई, धुंधली होती जा रही थीं—",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 367,
+      "WaitClick": false,
+      "WaitTime": 3.0,
+      "BgFadeInStartCol": [
+        "0.5647059",
+        "0",
+        "0.13333334",
+        "1"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 3.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HEARTSOUND_1.wav"
+    },
+    {
+      "Uid": 368,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT"
+    },
+    {
+      "Uid": 373,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HEARTSOUND_1.wav",
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitPos": "POS6",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 369,
+      "WaitClick": false,
+      "WaitTime": 3.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 3.0
+    },
+    {
+      "Uid": 45,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS6",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "UnitTalk_FRA": "…",
+      "UnitTalk_DEU": "…",
+      "UnitTalk_ESP": "…",
+      "UnitTalk_PRT": "…",
+      "UnitTalk_THA": "…",
+      "UnitTalk_IND": "…",
+      "UnitTalk_VIE": "…",
+      "UnitTalk_HIN": "…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 46,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "UnitTalk_KOR": "여긴가…? 그 남자의 욕망의 근원이…",
+      "UnitTalk_JPN": "あの男の欲望の根源は…ここ…？",
+      "UnitTalk_FRA": "C'est ici… ? La source du désir de cet homme…",
+      "UnitTalk_DEU": "Hier …? Die Quelle der Begierde dieses Mannes …",
+      "UnitTalk_ESP": "¿Es aquí…? La fuente de los deseos de ese hombre…",
+      "UnitTalk_PRT": "É aqui…? A fonte do desejo daquele homem…",
+      "UnitTalk_THA": "ที่นี่เหรอครับ…? ต้นกำเนิดความปรารถนาของผู้ชายคนนั้น…",
+      "UnitTalk_IND": "Di sinikah…? Sumber hasrat pria itu…?",
+      "UnitTalk_VIE": "Đây sao…? Nguồn gốc dục vọng của người đàn ông đó…",
+      "UnitTalk_HIN": "क्या यह यहाँ है…? उस आदमी की इच्छा का स्रोत…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 47,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "…뭐지? 왜 이렇게 텅 비어 있어? 정말로 이렇게 욕망이 없는 사람이라고?",
+      "UnitTalk_JPN": "…何これ？なんで空っぽなの？本当に欲のない人間ってこと？",
+      "UnitTalk_FRA": "…Quoi ? Pourquoi est-ce si vide ? Est-ce vraiment quelqu'un sans aucun désir ?",
+      "UnitTalk_DEU": "…Was ist das? Warum ist es so leer? Ist er wirklich ein Mensch ohne Begierde?",
+      "UnitTalk_ESP": "¿…Qué es esto? ¿Por qué está tan vacío? ¿De verdad es una persona sin deseos?",
+      "UnitTalk_PRT": "…O quê? Por que está tão vazio? Ele é mesmo uma pessoa sem desejos?",
+      "UnitTalk_THA": "…อะไรกันครับ? ทำไมมันถึงว่างเปล่าขนาดนี้? เขาเป็นคนที่ไม่ความปรารถนาจริงๆ เหรอครับ?",
+      "UnitTalk_IND": "…Apa ini? Kenapa kosong sekali? Apa benar dia orang yang tidak punya hasrat?",
+      "UnitTalk_VIE": "…Gì thế? Sao lại trống rỗng thế này? Thật sự là một người không có dục vọng sao?",
+      "UnitTalk_HIN": "…क्या? यह इतना खाली क्यों है? क्या वह सच में ऐसा व्यक्ति है जिसकी कोई इच्छा नहीं है?",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "아니, 아니, 아니! 그럴 리가, 그럴 리가 없지!",
+      "UnitTalk_JPN": "ううん！ありえない！そんな訳ない！",
+      "UnitTalk_FRA": "Non, non, non ! C'est impossible, impossible !",
+      "UnitTalk_DEU": "Nein, nein, nein! Das kann nicht sein, das kann nicht sein!",
+      "UnitTalk_ESP": "¡No, no, no! ¡Imposible, imposible!",
+      "UnitTalk_PRT": "Não, não, não! Impossível, impossível!",
+      "UnitTalk_THA": "ไม่ ไม่ ไม่! ไม่มีทาง ไม่มีทางหรอก!",
+      "UnitTalk_IND": "Tidak, tidak, tidak! Tidak mungkin, tidak mungkin!",
+      "UnitTalk_VIE": "Không, không, không! Không thể nào, không thể nào!",
+      "UnitTalk_HIN": "नहीं, नहीं, नहीं! ऐसा नहीं हो सकता, ऐसा नहीं हो सकता!",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그래, 정말로 훌륭히 욕망을 다스리나 보군.",
+      "UnitTalk_JPN": "見事に欲望を制御してるようね。",
+      "UnitTalk_FRA": "Oui, il maîtrise vraiment bien ses désirs.",
+      "UnitTalk_DEU": "Ja, er scheint seine Begierden wirklich hervorragend zu beherrschen.",
+      "UnitTalk_ESP": "Sí, parece que controla sus deseos de forma excelente.",
+      "UnitTalk_PRT": "Certo, ele deve estar controlando seus desejos muito bem.",
+      "UnitTalk_THA": "ใช่ครับ ดูเหมือนเขาจะควบคุมความปรารถนาได้ดีเยี่ยมจริงๆ",
+      "UnitTalk_IND": "Benar, dia benar-benar mengendalikan hasratnya dengan baik.",
+      "UnitTalk_VIE": "Đúng vậy, chắc hẳn anh ta đã kiểm soát dục vọng rất tốt.",
+      "UnitTalk_HIN": "हाँ, वह अपनी इच्छाओं को बहुत अच्छी तरह से नियंत्रित करता है।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "UnitTalk_KOR": "이 정도로 텅 비어 있으니 환각술이 작용하지 않는 것도 무리는 아니지.",
+      "UnitTalk_JPN": "ここまで空っぽなら、幻術が効かないのも無理ないわ。",
+      "UnitTalk_FRA": "Puisque c'est si vide, il n'est pas étonnant que l'illusion ne fonctionne pas.",
+      "UnitTalk_DEU": "Da es so leer ist, ist es kein Wunder, dass die Illusionsmagie nicht wirkt.",
+      "UnitTalk_ESP": "Si está tan vacío, no es de extrañar que la ilusión no funcione.",
+      "UnitTalk_PRT": "Com tanto vazio, não é de se admirar que a ilusão não funcione.",
+      "UnitTalk_THA": "เมื่อมันว่างเปล่าขนาดนี้ การที่ภาพลวงตาไม่ทำงานก็ไม่ใช่เรื่องแปลกครับ",
+      "UnitTalk_IND": "Wajar saja ilusi tidak bekerja jika kosong seperti ini.",
+      "UnitTalk_VIE": "Trống rỗng đến mức này thì ảo thuật không có tác dụng cũng phải thôi.",
+      "UnitTalk_HIN": "यह इतना खाली है, इसलिए यह कोई आश्चर्य की बात नहीं है कि भ्रम काम नहीं करता है।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "하지만…",
+      "UnitTalk_JPN": "でも…",
+      "UnitTalk_FRA": "Mais…",
+      "UnitTalk_DEU": "Aber …",
+      "UnitTalk_ESP": "Pero…",
+      "UnitTalk_PRT": "Mas…",
+      "UnitTalk_THA": "แต่ว่า…",
+      "UnitTalk_IND": "Tapi…",
+      "UnitTalk_VIE": "Nhưng…",
+      "UnitTalk_HIN": "लेकिन…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "UnitTalk_KOR": "하지만, 욕망을 다스리는 사람은 있어도, 욕망이 없는 사람 같은 건 없어!",
+      "UnitTalk_JPN": "でも、欲望を制する者はいても、欲望のない人間なんて存在しない！",
+      "UnitTalk_FRA": "Mais il y a des gens qui maîtrisent leurs désirs, mais personne n'est sans désir !",
+      "UnitTalk_DEU": "Aber es gibt Menschen, die ihre Begierden beherrschen, aber niemanden, der keine Begierden hat!",
+      "UnitTalk_ESP": "Pero, aunque haya gente que controle sus deseos, ¡no hay nadie sin deseos!",
+      "UnitTalk_PRT": "Mas, embora existam pessoas que controlam seus desejos, não existem pessoas sem desejos!",
+      "UnitTalk_THA": "แต่ว่า คนที่ควบคุมความปรารถนาได้น่ะมีอยู่จริง แต่คนที่ไม่มีความปรารถนาเลยน่ะไม่มีหรอกครับ!",
+      "UnitTalk_IND": "Tapi, ada orang yang mengendalikan hasrat, tapi tidak ada orang yang tidak punya hasrat!",
+      "UnitTalk_VIE": "Nhưng, có người kiểm soát được dục vọng, chứ không có người nào không có dục vọng cả!",
+      "UnitTalk_HIN": "लेकिन, ऐसे लोग हैं जो अपनी इच्छाओं को नियंत्रित करते हैं, लेकिन ऐसा कोई नहीं है जिसकी कोई इच्छा न हो!",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "아주 조그만 욕망이라도 있으면… 어마어마하게 부풀려 주마…!",
+      "UnitTalk_JPN": "ほんのわずかな欲望でも見つければ…おぞましいほどに膨らませてやる…！",
+      "UnitTalk_FRA": "S'il y a le moindre petit désir… je le ferai gonfler démesurément… !",
+      "UnitTalk_DEU": "Wenn es auch nur die kleinste Begierde gibt … werde ich sie ins Unermessliche aufblähen …!",
+      "UnitTalk_ESP": "Si hay un deseo, por muy pequeño que sea… ¡Lo inflaré enormemente…!",
+      "UnitTalk_PRT": "Se houver o menor desejo… eu o inflarei imensamente…!",
+      "UnitTalk_THA": "ถ้ามีเพียงความปรารถนาเล็กน้อย… ผมก็จะขยายมันให้ใหญ่โตมโหฬาร…!",
+      "UnitTalk_IND": "Jika ada sedikit saja hasrat… akan kubuat mengembang luar biasa…!",
+      "UnitTalk_VIE": "Chỉ cần có một chút dục vọng nhỏ thôi… ta sẽ thổi phồng nó lên thật lớn…!",
+      "UnitTalk_HIN": "अगर थोड़ी सी भी इच्छा है… तो मैं उसे बहुत बड़ा कर दूँगा…!",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "UnitTalk_KOR": "이 남자를 원하는 대로 움직일 수 있게 되면…",
+      "UnitTalk_JPN": "この男を意のままに操れるようになれば…",
+      "UnitTalk_FRA": "Si je peux faire bouger cet homme comme je veux…",
+      "UnitTalk_DEU": "Wenn ich diesen Mann nach Belieben bewegen kann …",
+      "UnitTalk_ESP": "Si puedo hacer que este hombre se mueva a mi antojo…",
+      "UnitTalk_PRT": "Se eu conseguir fazer este homem se mover como eu quiser…",
+      "UnitTalk_THA": "ถ้าผมสามารถควบคุมผู้ชายคนนี้ได้ตามที่ต้องการ…",
+      "UnitTalk_IND": "Jika aku bisa menggerakkan pria ini sesuai keinginanku…",
+      "UnitTalk_VIE": "Nếu có thể điều khiển người đàn ông này theo ý muốn…",
+      "UnitTalk_HIN": "अगर मैं इस आदमी को अपनी इच्छानुसार चला पाऊँ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "UnitTalk_KOR": "시간은 더 걸리겠지만, 다시 한번 모두가 진실된 모습의 세계로-",
+      "UnitTalk_JPN": "時間が掛かったとしても…もう一度、誰もが本当の自分に戻れる世界を──",
+      "UnitTalk_FRA": "Cela prendra plus de temps, mais encore une fois, un monde où tout le monde est dans sa vraie forme—",
+      "UnitTalk_DEU": "Es wird länger dauern, aber noch einmal alle in eine Welt der wahren Gestalten –",
+      "UnitTalk_ESP": "Tomará más tiempo, pero una vez más, todos volverán a un mundo de verdad…",
+      "UnitTalk_PRT": "Levará mais tempo, mas mais uma vez, todos para um mundo de suas verdadeiras formas—",
+      "UnitTalk_THA": "อาจจะใช้เวลานานขึ้น แต่ทุกคนจะได้กลับไปสู่โลกแห่งความจริงอีกครั้ง-",
+      "UnitTalk_IND": "Mungkin butuh waktu lebih lama, tapi sekali lagi, semua orang akan kembali ke dunia dengan wujud aslinya—",
+      "UnitTalk_VIE": "Sẽ mất nhiều thời gian hơn, nhưng một lần nữa, tất cả sẽ trở về thế giới của những hình ảnh chân thật-",
+      "UnitTalk_HIN": "इसमें और समय लगेगा, लेकिन एक बार फिर, हर कोई अपने सच्चे रूप की दुनिया में वापस आ जाएगा-",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 315,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 57,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_EARTHQUAKE_07.wav",
+      "UnitTalk_KOR": "쿠쿠쿵-!",
+      "UnitTalk_JPN": "ゴゴゴゴッ──",
+      "UnitTalk_FRA": "Kukukung—!",
+      "UnitTalk_DEU": "Kukukukung-!",
+      "UnitTalk_ESP": "¡Boom-boom!",
+      "UnitTalk_PRT": "Kukukung—!",
+      "UnitTalk_THA": "กูกูกัง-!",
+      "UnitTalk_IND": "Kukukukung—!",
+      "UnitTalk_VIE": "Gừ gừ gừ-!",
+      "UnitTalk_HIN": "गड़गड़ड़ड़—!",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 58,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "UnitTalk_KOR": "?! 뭐지? 공간이 흔들리고 있어…",
+      "UnitTalk_JPN": "なによ！？空間が揺れてるわ…",
+      "UnitTalk_FRA": "Quoi ?! L'espace tremble…",
+      "UnitTalk_DEU": "?! Was ist das? Der Raum bebt …",
+      "UnitTalk_ESP": "¡¿Qué?! ¿Qué es esto? El espacio está temblando…",
+      "UnitTalk_PRT": "?! O quê? O espaço está tremendo…",
+      "UnitTalk_THA": "?! อะไรกันคะ? พื้นที่กำลังสั่นสะเทือน…",
+      "UnitTalk_IND": "?! Apa ini? Ruangan ini bergetar…",
+      "UnitTalk_VIE": "Gì thế?! Không gian đang rung chuyển…",
+      "UnitTalk_HIN": "क्या?! क्या है? अंतरिक्ष हिल रहा है…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "제길, 어디냐… 어디 있지…?!",
+      "UnitTalk_JPN": "クソッ、一体どこにあるの…！？",
+      "UnitTalk_FRA": "Bon sang ! Où est-ce… Où est-ce… ?!",
+      "UnitTalk_DEU": "Verdammt, wo ist es … Wo ist es …?!",
+      "UnitTalk_ESP": "¡Maldita sea, ¿dónde está… dónde está?!",
+      "UnitTalk_PRT": "Droga, onde está…? Onde é…?!",
+      "UnitTalk_THA": "ให้ตายสิ อยู่ไหน… อยู่ไหนกัน…?!",
+      "UnitTalk_IND": "Sial, di mana…? Di mana dia…?!",
+      "UnitTalk_VIE": "Chết tiệt, ở đâu… ở đâu chứ?!",
+      "UnitTalk_HIN": "धिक्कार है, कहाँ है… कहाँ है…?!",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "UnitTalk_KOR": "더 안쪽으로… 더 안쪽까지 들어가면…!",
+      "UnitTalk_JPN": "もっと奥へ…もっと奥まで入り込めば…！",
+      "UnitTalk_FRA": "Plus profondément… Si j'entre encore plus profondément… !",
+      "UnitTalk_DEU": "Weiter hinein … Wenn ich noch weiter hineingehe …!",
+      "UnitTalk_ESP": "Más adentro… ¡Si voy más adentro…!",
+      "UnitTalk_PRT": "Mais para dentro… Se eu for mais para dentro…!",
+      "UnitTalk_THA": "เข้าไปข้างในอีก… เข้าไปข้างในอีก…!",
+      "UnitTalk_IND": "Lebih dalam… Jika aku masuk lebih dalam lagi…!",
+      "UnitTalk_VIE": "Sâu hơn nữa… nếu đi sâu hơn nữa…!",
+      "UnitTalk_HIN": "और अंदर… और अंदर तक जाऊँ तो…!",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 374,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 375,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_04.wav"
+    },
+    {
+      "Uid": 409,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "CameraOffset": "DEFAULT",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS3",
+      "FilterType": "CFT_SEPIA"
+    },
+    {
+      "Uid": 376,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 61,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그래, 이거다! 여기! 바로 여기서 느껴져! 아하하! 아하하핫!",
+      "UnitTalk_JPN": "ここね！ここから感じるわ！アハハ！アハハハハッ！",
+      "UnitTalk_FRA": "Oui, c'est ça ! Ici ! Je le sens juste ici ! Ahahaha ! Ahahahah !",
+      "UnitTalk_DEU": "Ja, das ist es! Hier! Genau hier spüre ich es! Ahahaha! Ahahahahat!",
+      "UnitTalk_ESP": "¡Sí, es esto! ¡Aquí! ¡Lo siento justo aquí! ¡Ajajaja! ¡Ajajajajá!",
+      "UnitTalk_PRT": "Isso! Aqui! Eu sinto bem aqui! Ahahaha! Ahahahah!",
+      "UnitTalk_THA": "ใช่แล้ว! นี่แหละ! ที่นี่! ฉันรู้สึกได้ที่นี่เลย! ฮ่าฮ่าฮ่า! ฮ่าฮ่าฮ่าฮ่าฮ่า!",
+      "UnitTalk_IND": "Benar, ini dia! Di sini! Aku merasakannya di sini! Ahahaha! Ahahahahat!",
+      "UnitTalk_VIE": "Đúng rồi, chính là đây! Ở đây! Cảm nhận được ngay tại đây! A ha ha! A ha ha ha ha!",
+      "UnitTalk_HIN": "हाँ, यह है! यहाँ! मुझे यहीं महसूस होता है! हाहाहा! हाहाहाहा!",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "UnitTalk_KOR": "어디, 어디, 어디, 무슨 욕망일까-? 응-?",
+      "UnitTalk_JPN": "さぁ、どんな欲望なのかしら？",
+      "UnitTalk_FRA": "Où, où, où, quel genre de désir-? Hein-?",
+      "UnitTalk_DEU": "Na, na, na, was für eine Begierde mag das sein-? Mmmh-?",
+      "UnitTalk_ESP": "Mmm, ¿qué clase de deseo será este...?",
+      "UnitTalk_PRT": "Onde, onde, onde, que desejo é esse-? Hein-?",
+      "UnitTalk_THA": "ไหน… ไหน… ไหน… ความปรารถนาแบบไหนกันนะ—? อื้อ—?",
+      "UnitTalk_IND": "Di mana, di mana, di mana, keinginan macam apa ini—? Uh—?",
+      "UnitTalk_VIE": "Đâu, đâu, đâu, là dục vọng gì vậy-? Ưm-?",
+      "UnitTalk_HIN": "कहाँ, कहाँ, कहाँ, कैसी इच्छा होगी-? उह-?",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_FINGER_SNAP.wav",
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "<color=#F7BE45>단장님</color>의 진짜 욕망을… 내게 보여ㅈ-",
+      "UnitTalk_JPN": "<color=#F7BE45>団長</color>の真なる欲望を…アタシに見せな──",
+      "UnitTalk_FRA": "Montre-moi le vrai désir du <color=#F7BE45>Capitaine</color>-!",
+      "UnitTalk_DEU": "Die wahre Begierde des <color=#F7BE45>Kommandanten</color>… zeig sie mir—",
+      "UnitTalk_ESP": "<color=#F7BE45>Capitán</color>… muéstrame tu verdadero deseo.",
+      "UnitTalk_PRT": "Mostre-me o verdadeiro desejo do <color=#F7BE45>Capitão</color>… com mais intensidade.",
+      "UnitTalk_THA": "ความปรารถนาที่แท้จริงของ<color=#F7BE45>หัวหน้า</color>… แสดงให้ฉันเห็นสิ—",
+      "UnitTalk_IND": "Keinginan <color=#F7BE45>Pemimpin</color> yang sebenarnya… tunjukkan padaku—",
+      "UnitTalk_VIE": "Dục vọng thật sự của <color=#F7BE45>Đội trưởng</color>… Hãy cho ta thấy-",
+      "UnitTalk_HIN": "<color=#F7BE45>कप्तान</color> की सच्ची इच्छा… मुझे दिखाओ-",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "CameraOffset": "DEFAULT",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS3",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "…으응?",
+      "UnitTalk_JPN": "ん…？",
+      "UnitTalk_FRA": "…Hein?",
+      "UnitTalk_DEU": "…M-Mmh?",
+      "UnitTalk_ESP": "¿…Eh?",
+      "UnitTalk_PRT": "…Hein?",
+      "UnitTalk_THA": "…อื้อ?",
+      "UnitTalk_IND": "…Uh?",
+      "UnitTalk_VIE": "…Ưm?",
+      "UnitTalk_HIN": "…उह?",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 128,
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "BgFileName": "ILLUST_BG_WELL_DIRAC.png",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_TINNITUS.wav",
+      "CutsceneClear": "CLEARTEXT",
+      "BgChangeTime": 2.0
+    },
+    {
+      "Uid": 164,
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "BgFileName": "ILLUST_BG_BLACK.png",
+      "BgChangeTime": 0.3
+    },
+    {
+      "Uid": 379,
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "BgFileName": "ILLUST_BG_STAR_CORRIDOR.png",
+      "BgChangeTime": 2.0
+    },
+    {
+      "Uid": 380,
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "BgFileName": "ILLUST_BG_BLACK.png",
+      "BgChangeTime": 0.3
+    },
+    {
+      "Uid": 381,
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "BgFileName": "ILLUST_BG_STELLA_ARCHIVE_4.png",
+      "BgChangeTime": 2.0
+    },
+    {
+      "Uid": 142,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "CameraOffsetTime": "FA",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "이… 이건… 뭐야…?",
+      "UnitTalk_JPN": "こ…これは…何なの…？",
+      "UnitTalk_FRA": "C-c'est… quoi…?",
+      "UnitTalk_DEU": "Wa-Was… ist das…?",
+      "UnitTalk_ESP": "¿E-esto… qué es…?",
+      "UnitTalk_PRT": "I… Isso… o que é…?",
+      "UnitTalk_THA": "นี่… นี่มัน… อะไรกัน…?",
+      "UnitTalk_IND": "I… Ini… apa…?",
+      "UnitTalk_VIE": "Cái… Cái này… là gì…?",
+      "UnitTalk_HIN": "य… यह… क्या है…?",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 410,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "BgFileName": "ILLUST_BG_BLACK.png",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_TINNITUS.wav",
+      "BgChangeTime": 0.2
+    },
+    {
+      "Uid": 382,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFileName": "ILLUST_BG_AGANON_LOWEST_02.png",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_TINNITUS.wav",
+      "CutsceneClear": "CLEARTEXT",
+      "BgChangeTime": 1.0
+    },
+    {
+      "Uid": 383,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "BgFileName": "ILLUST_BG_BLACK.png",
+      "BgChangeTime": 0.2
+    },
+    {
+      "Uid": 384,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFileName": "ILLUST_BG_STARDUST_FORTRESS_1.png",
+      "BgChangeTime": 1.0
+    },
+    {
+      "Uid": 390,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "BgFileName": "ILLUST_BG_BLACK.png",
+      "BgChangeTime": 0.2
+    },
+    {
+      "Uid": 387,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFileName": "ILLUST_BG_ASTRO_SANCTUM_NIGHT.png",
+      "BgChangeTime": 1.0
+    },
+    {
+      "Uid": 388,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "BgFileName": "ILLUST_BG_BLACK.png",
+      "BgChangeTime": 0.2
+    },
+    {
+      "Uid": 391,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFileName": "ILLUST_BG_CUBE_PALACE_DARK.png",
+      "BgChangeTime": 1.0
+    },
+    {
+      "Uid": 392,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "BgFileName": "ILLUST_BG_BLACK.png",
+      "BgChangeTime": 0.2
+    },
+    {
+      "Uid": 395,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFileName": "ILLUST_BG_EV_EVENT_CASINO2_03_1.png",
+      "BgChangeTime": 1.0
+    },
+    {
+      "Uid": 236,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 2.0,
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "히익? 히이이이-?!",
+      "UnitTalk_JPN": "ヒィッ！ギャーーーー！？",
+      "UnitTalk_FRA": "Hiiik? Hiiiiiiii-?!",
+      "UnitTalk_DEU": "Hii! Hiiiii—?!",
+      "UnitTalk_ESP": "¡¿Hiiik?! ¡¿Hiiiiii-?!",
+      "UnitTalk_PRT": "Hii! Hiiiiiii-?!",
+      "UnitTalk_THA": "กรี๊ด? กรี๊ดดดดด—?!",
+      "UnitTalk_IND": "Hiiik? Hiiiiii—?!",
+      "UnitTalk_VIE": "Híc? Hííííí-?!",
+      "UnitTalk_HIN": "हीक? हीईईईई-?!",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 397,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.5,
+      "StartBgmFileName": "MUSIC_CUTSCENE_21.mp3"
+    },
+    {
+      "Uid": 398,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "DRAMA_SOMEONE_UNKNOWN_MEMORY.prefab",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 399,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.5
+    },
+    {
+      "Uid": 400,
+      "WaitClick": false,
+      "WaitTime": 0.5
+    },
+    {
+      "Uid": 402,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 403,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "DRAMA_PLANET_LABISTA.prefab"
+    },
+    {
+      "Uid": 404,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.5
+    },
+    {
+      "Uid": 401,
+      "WaitClick": false,
+      "WaitTime": 0.5
+    },
+    {
+      "Uid": 406,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 407,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "DRAMA_SHOOTING_STAR_01.prefab"
+    },
+    {
+      "Uid": 408,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.5
+    },
+    {
+      "Uid": 405,
+      "WaitClick": false,
+      "WaitTime": 0.5
+    },
+    {
+      "Uid": 237,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "거짓말 거짓말 거짓말 거짓말 거짓말 거짓말!!",
+      "UnitTalk_JPN": "嘘よ嘘よ嘘よ嘘よ嘘よ嘘よ嘘よ嘘よ！！",
+      "UnitTalk_FRA": "Mensonge mensonge mensonge mensonge mensonge mensonge!!",
+      "UnitTalk_DEU": "Lüge, Lüge, Lüge, Lüge, Lüge, Lüge!!",
+      "UnitTalk_ESP": "¡¡Mentira, mentira, mentira, mentira, mentira, mentira!!",
+      "UnitTalk_PRT": "Mentira, mentira, mentira, mentira, mentira, mentira!!",
+      "UnitTalk_THA": "โกหก โกหก โกหก โกหก โกหก โกหก!!",
+      "UnitTalk_IND": "Bohong bohong bohong bohong bohong bohong!!",
+      "UnitTalk_VIE": "Nói dối nói dối nói dối nói dối nói dối nói dối!!",
+      "UnitTalk_HIN": "झूठ झूठ झूठ झूठ झूठ झूठ!!",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 311,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WHITE.png"
+    },
+    {
+      "Uid": 218,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFileName": "ILLUST_BG_STAR_CORRIDOR.png"
+    },
+    {
+      "Uid": 288,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WHITE.png"
+    },
+    {
+      "Uid": 222,
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND_FLORA.png"
+    },
+    {
+      "Uid": 223,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WHITE.png"
+    },
+    {
+      "Uid": 226,
+      "WaitClick": false,
+      "WaitTime": 0.1,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0.69803923",
+        "0.13333334",
+        "0.13333334",
+        "1"
+      ],
+      "BgFadeInTime": 0.1
+    },
+    {
+      "Uid": 227,
+      "WaitClick": false,
+      "WaitTime": 0.1,
+      "BgFadeOutCol": [
+        "0.69803923",
+        "0.13333334",
+        "0.13333334",
+        "1"
+      ],
+      "BgFadeOutTime": 0.1
+    },
+    {
+      "Uid": 224,
+      "WaitClick": false,
+      "WaitTime": 0.7,
+      "BgFileName": "ILLUST_BG_TRAIN_ROOM.png"
+    },
+    {
+      "Uid": 225,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WHITE.png"
+    },
+    {
+      "Uid": 230,
+      "WaitClick": false,
+      "WaitTime": 0.6,
+      "BgFileName": "ILLUST_BG_EV_EVENT_DRESS_05.png",
+      "BgChangeTime": 0.1
+    },
+    {
+      "Uid": 231,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WHITE.png"
+    },
+    {
+      "Uid": 232,
+      "WaitClick": false,
+      "WaitTime": 0.4,
+      "BgFileName": "ILLUST_BG_SKY_SUNSET.png"
+    },
+    {
+      "Uid": 233,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WHITE.png"
+    },
+    {
+      "Uid": 138,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "BgFileName": "ILLUST_BG_WELL_DIRAC_OPEN.png"
+    },
+    {
+      "Uid": 283,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WHITE.png"
+    },
+    {
+      "Uid": 280,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "이럴리가없잖아말도안돼거짓말이런건있을수가-",
+      "UnitTalk_JPN": "こんなはずないありえない嘘よあっていいはずない──",
+      "UnitTalk_FRA": "C'est impossible ce n'est pas vrai c'est un mensonge ça ne peut pas exister-",
+      "UnitTalk_DEU": "Das kann nicht sein, unmöglich, Lüge, so etwas darf es nicht geben—",
+      "UnitTalk_ESP": "¡Esto no puede ser, no tiene sentido, es mentira, algo así no puede existir-!",
+      "UnitTalk_PRT": "Não pode ser, é impossível, mentira, isso não pode existir-",
+      "UnitTalk_THA": "ไม่จริง ไม่มีทาง โกหก เรื่องแบบนี้ไม่มีทางเป็นไปได้—",
+      "UnitTalk_IND": "Tidak mungkin tidak masuk akal bohong hal seperti ini tidak mungkin ada—",
+      "UnitTalk_VIE": "Không thể nào không thể nào nói dối không thể có chuyện này-",
+      "UnitTalk_HIN": "ऐसा नहीं हो सकता, यह असंभव है, यह झूठ है, ऐसा कुछ नहीं हो सकता-",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 146,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WHITE.png"
+    },
+    {
+      "Uid": 240,
+      "WaitClick": false,
+      "WaitTime": 0.1,
+      "BgFileName": "ILLUST_BG_LIBRARY.png",
+      "BgChangeTime": 0.1
+    },
+    {
+      "Uid": 241,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WHITE.png"
+    },
+    {
+      "Uid": 242,
+      "WaitClick": false,
+      "WaitTime": 0.1,
+      "BgFileName": "ILLUST_BG_JOURNEY_CONSTRUCT_BOMB_02.png",
+      "BgChangeTime": 0.1
+    },
+    {
+      "Uid": 243,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WHITE.png"
+    },
+    {
+      "Uid": 238,
+      "WaitClick": false,
+      "WaitTime": 0.1,
+      "BgFileName": "ILLUST_BG_CUBE_PALACE.png",
+      "BgChangeTime": 0.1
+    },
+    {
+      "Uid": 239,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WHITE.png"
+    },
+    {
+      "Uid": 244,
+      "WaitClick": false,
+      "WaitTime": 0.1,
+      "BgFileName": "ILLUST_BG_JOURNEY_STARPIERCER_OMEGA_02.png",
+      "BgChangeTime": 0.1
+    },
+    {
+      "Uid": 245,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WHITE.png"
+    },
+    {
+      "Uid": 246,
+      "WaitClick": false,
+      "WaitTime": 0.1,
+      "BgFileName": "ILLUST_BG_JOURNEY_VOYAGER_ORACLE_03.png",
+      "BgChangeTime": 0.1
+    },
+    {
+      "Uid": 247,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WHITE.png"
+    },
+    {
+      "Uid": 248,
+      "WaitClick": false,
+      "WaitTime": 0.1,
+      "BgFileName": "ILLUST_BG_FIREWORKS_01.png",
+      "BgChangeTime": 0.1
+    },
+    {
+      "Uid": 249,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WHITE.png"
+    },
+    {
+      "Uid": 250,
+      "WaitClick": false,
+      "WaitTime": 0.1,
+      "BgFileName": "ILLUST_BG_JOURNEY_VOYAGER_STRANIS_03.png",
+      "BgChangeTime": 0.1
+    },
+    {
+      "Uid": 251,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WHITE.png"
+    },
+    {
+      "Uid": 252,
+      "WaitClick": false,
+      "WaitTime": 0.1,
+      "BgFileName": "ILLUST_BG_JOURNEY_VOYAGER_STRANIS_02.png",
+      "BgChangeTime": 0.1
+    },
+    {
+      "Uid": 253,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WHITE.png"
+    },
+    {
+      "Uid": 254,
+      "WaitClick": false,
+      "WaitTime": 0.1,
+      "BgFileName": "ILLUST_BG_HOTEL_2_NIGHT2.png",
+      "BgChangeTime": 0.1
+    },
+    {
+      "Uid": 255,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WHITE.png"
+    },
+    {
+      "Uid": 256,
+      "WaitClick": false,
+      "WaitTime": 0.1,
+      "BgFileName": "ILLUST_BG_JOURNEY_INDEPENDENT_DRAGON_02.png",
+      "BgChangeTime": 0.1
+    },
+    {
+      "Uid": 257,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WHITE.png"
+    },
+    {
+      "Uid": 258,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_OFFICE_01.png",
+      "BgChangeTime": 0.1
+    },
+    {
+      "Uid": 281,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WHITE.png"
+    },
+    {
+      "Uid": 260,
+      "WaitClick": false,
+      "WaitTime": 0.1,
+      "BgFileName": "ILLUST_BG_KINDERGARTEN.png",
+      "BgChangeTime": 0.1
+    },
+    {
+      "Uid": 261,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WHITE.png"
+    },
+    {
+      "Uid": 262,
+      "WaitClick": false,
+      "WaitTime": 0.1,
+      "BgFileName": "ILLUST_BG_JOURNEY_BUNNY_SCISSORS_01.png",
+      "BgChangeTime": 0.1
+    },
+    {
+      "Uid": 263,
+      "WaitClick": false,
+      "WaitTime": 0.1,
+      "BgFileName": "ILLUST_BG_WHITE.png"
+    },
+    {
+      "Uid": 264,
+      "WaitClick": false,
+      "WaitTime": 0.1,
+      "BgFileName": "ILLUST_BG_JOURNEY_MAID_SCISSORS_03.png",
+      "BgChangeTime": 0.1
+    },
+    {
+      "Uid": 265,
+      "WaitClick": false,
+      "WaitTime": 0.1,
+      "BgFileName": "ILLUST_BG_WHITE.png"
+    },
+    {
+      "Uid": 318,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_HOTEL_1.png"
+    },
+    {
+      "Uid": 319,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WHITE.png"
+    },
+    {
+      "Uid": 320,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_MAIN_EP_03_01.png"
+    },
+    {
+      "Uid": 321,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WHITE.png"
+    },
+    {
+      "Uid": 322,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_JOURNEY_LPU_POST_01.png"
+    },
+    {
+      "Uid": 323,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WHITE.png"
+    },
+    {
+      "Uid": 324,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_JOURNEY_EASTERN_OWL_01.png"
+    },
+    {
+      "Uid": 325,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WHITE.png"
+    },
+    {
+      "Uid": 326,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_JOURNEY_GRACE_DUALSWORD_01.png"
+    },
+    {
+      "Uid": 327,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WHITE.png"
+    },
+    {
+      "Uid": 328,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_TRADE_KALAID_NIGHT.png"
+    },
+    {
+      "Uid": 329,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WHITE.png"
+    },
+    {
+      "Uid": 266,
+      "WaitClick": false,
+      "WaitTime": 0.1,
+      "BgFileName": "ILLUST_BG_WELSH_MUSEUM.png",
+      "BgChangeTime": 0.1
+    },
+    {
+      "Uid": 267,
+      "WaitClick": false,
+      "WaitTime": 0.1,
+      "BgFileName": "ILLUST_BG_WHITE.png",
+      "BgChangeTime": 0.1
+    },
+    {
+      "Uid": 268,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_JOURNEY_MUTANT_MASK_02.png"
+    },
+    {
+      "Uid": 269,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WHITE.png"
+    },
+    {
+      "Uid": 272,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_JOURNEY_MAID_SPEAR_04.png"
+    },
+    {
+      "Uid": 273,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WHITE.png"
+    },
+    {
+      "Uid": 270,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_JOURNEY_VOYAGER_SMILE_02.png"
+    },
+    {
+      "Uid": 271,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WHITE.png"
+    },
+    {
+      "Uid": 274,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_JOURNEY_VOYAGER_STRANIS_TUTO_01.png",
+      "BgChangeTime": 0.1
+    },
+    {
+      "Uid": 282,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WHITE.png",
+      "BgChangeTime": 0.1
+    },
+    {
+      "Uid": 411,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_JOURNEY_WEST_ROD_02.png"
+    },
+    {
+      "Uid": 412,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WHITE.png"
+    },
+    {
+      "Uid": 415,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_MAIN_EP_01_01.png"
+    },
+    {
+      "Uid": 441,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WHITE.png"
+    },
+    {
+      "Uid": 276,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_EXPLOSION.wav",
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "그, 그만! 미안! 내가 잘못했어! 그만! 히이이이익-!",
+      "UnitTalk_JPN": "や、やめて！ごめんなさい、アタシが悪かったわ！やめて！あ、あぁぁぁぁっ！",
+      "UnitTalk_FRA": "Arrête, arrête! Pardon! J'ai fait une erreur! Arrête! Hiiiiiiiik-!",
+      "UnitTalk_DEU": "H-Hört auf! Entschuldigung! Ich habe einen Fehler gemacht! Hört auf! Hiiiieeeek—!",
+      "UnitTalk_ESP": "¡P-para! ¡Lo siento! ¡Me equivoqué! ¡Para! ¡Hiiiiiiik-!",
+      "UnitTalk_PRT": "Pa, pare! Desculpe! Eu errei! Pare! Hiiiiii-!",
+      "UnitTalk_THA": "พะ พอเถอะ! ขอโทษ! ฉันผิดไปแล้ว! พอเถอะ! กรี๊ดดดดด—!",
+      "UnitTalk_IND": "Hentikan, hentikan! Maaf! Aku salah! Hentikan! Hiiiiiiik—!",
+      "UnitTalk_VIE": "Dừng, dừng lại! Xin lỗi! Tôi sai rồi! Dừng lại! Hííííííc-!",
+      "UnitTalk_HIN": "ब, बस करो! माफ़ करना! मैंने गलती की! बस करो! हीईईईईक-!",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 74,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 2.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_TINNITUS.wav",
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "당신, 당신은 대체 뭐야…! 뭘 원했던 거야-?! 히이이-!!",
+      "UnitTalk_JPN": "あ、あんたは一体何者なの…！何を望んでるって言うの！？",
+      "UnitTalk_FRA": "Toi, qui es-tu…?! Que voulais-tu-?! Hiiii-!!",
+      "UnitTalk_DEU": "Du, du, wer bist du denn…! Was wolltest du—?! Hiii—!!",
+      "UnitTalk_ESP": "¡¿Tú, tú qué eres…?! ¡¿Qué querías-?! ¡¡Hiiii-!!",
+      "UnitTalk_PRT": "Você, quem é você…! O que você queria-?! Hiiii-!!",
+      "UnitTalk_THA": "คุณ คุณเป็นใครกันแน่…! ต้องการอะไรกัน—?! กรี๊ดดด—!!",
+      "UnitTalk_IND": "Kau, kau ini sebenarnya siapa…! Apa yang kau inginkan—?! Hiiii—!!",
+      "UnitTalk_VIE": "Ngươi, ngươi rốt cuộc là ai…! Ngươi muốn gì-?! Hííí-!!",
+      "UnitTalk_HIN": "तुम, तुम आखिर कौन हो…! तुम क्या चाहते थे-?! हीईई-!!",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 330,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitMotion": "ANGRY"
+    },
+    {
+      "Uid": 331,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 332,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 333,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 75,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 3.0,
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "흐으! 히이! 흐이-익-?!",
+      "UnitTalk_JPN": "ヒギィ！ぁ、あぁ…ッ！",
+      "UnitTalk_FRA": "Huuu! Hii! Huui-ik-?!",
+      "UnitTalk_DEU": "Huu! Hii! Huui-eek-?!",
+      "UnitTalk_ESP": "¡Ugh! ¡Hii! ¡Ugh-ik-?!",
+      "UnitTalk_PRT": "Huu! Hii! Hiiii-?!",
+      "UnitTalk_THA": "ฮือ! ฮี้! ฮือ—อึก—?!",
+      "UnitTalk_IND": "Huuu! Hii! Huu-iik—?!",
+      "UnitTalk_VIE": "Hí! Ái! Hí-ích-?!",
+      "UnitTalk_HIN": "हूह! ही! हूई-इक-?!",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 334,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 335,
+      "WaitClick": false,
+      "WaitTime": 0.1,
+      "BgFlashBang": 0.5,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BREAK_GLASS.wav",
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 336,
+      "WaitClick": false,
+      "WaitTime": 0.1,
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 337,
+      "WaitClick": false,
+      "WaitTime": 0.05,
+      "BgCrash": 0.3,
+      "BgCrashTime": 3.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_EXPLOSION.wav",
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "UnitMotion": "ANGRY"
+    },
+    {
+      "Uid": 147,
+      "WaitClick": false,
+      "WaitTime": 3.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 3.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_TINNITUS.wav"
+    },
+    {
+      "Uid": 148,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 76,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SPELL_LIGHT_03.wav",
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "UnitTalk_KOR": "흐아아아아아아아아아아-!!",
+      "UnitTalk_JPN": "ギャアアアアアアアアアアアア！！",
+      "UnitTalk_FRA": "Huaaaaaaaah-!!",
+      "UnitTalk_DEU": "Huuuaaaaaah—!!",
+      "UnitTalk_ESP": "¡¡Ugh-aaaaaaah-!!",
+      "UnitTalk_PRT": "Aaaaaaaaaaaaah-!!",
+      "UnitTalk_THA": "ฮือออออออออออออ—!!",
+      "UnitTalk_IND": "Huaaaaaaaaaaaaaaaaaa—!!",
+      "UnitTalk_VIE": "Aaaaaaaaaaaaa-!!",
+      "UnitTalk_HIN": "हूआआआआआआआआआआ-!!",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 150,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 151,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_BLACK.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 152,
+      "WaitClick": false,
+      "WaitTime": 3.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 3.0,
+      "FilterType": "CFT_NORMAL"
+    },
+    {
+      "Uid": 78,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_TINNITUS.wav",
+      "UnitTalk_KOR": "찌릿-",
+      "UnitTalk_JPN": "ズキッ──",
+      "UnitTalk_FRA": "Zzzzzzt-",
+      "UnitTalk_DEU": "Zwick—",
+      "UnitTalk_ESP": "¡Zas!",
+      "UnitTalk_PRT": "Ziiing-",
+      "UnitTalk_THA": "จี๊ด—",
+      "UnitTalk_IND": "Krik-",
+      "UnitTalk_VIE": "Chói-!",
+      "UnitTalk_HIN": "झुनझुनी-",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…",
+          "JumpAnchorStringId_JPN": "…",
+          "JumpAnchorStringId_FRA": "…",
+          "JumpAnchorStringId_DEU": "…",
+          "JumpAnchorStringId_ESP": "…",
+          "JumpAnchorStringId_PRT": "…",
+          "JumpAnchorStringId_THA": "…",
+          "JumpAnchorStringId_IND": "…",
+          "JumpAnchorStringId_VIE": "…",
+          "JumpAnchorStringId_HIN": "…"
+        }
+      ]
+    },
+    {
+      "Uid": 80,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "의식이 조금씩 선명해지는 가운데, 알 수 없는 고통이 밀려온다.",
+      "UnitTalk_JPN": "意識が少しずつ鮮明になる中で、得体の知れない痛みが押し寄せる。",
+      "UnitTalk_FRA": "Alors que ma conscience s'éclaircit peu à peu, une douleur inconnue me submerge.",
+      "UnitTalk_DEU": "Während mein Bewusstsein allmählich klarer wird, überkommt mich ein unbekannter Schmerz.",
+      "UnitTalk_ESP": "Mientras la conciencia se aclara poco a poco, un dolor desconocido me invade.",
+      "UnitTalk_PRT": "Enquanto a consciência ficava um pouco mais clara, uma dor desconhecida me invadia.",
+      "UnitTalk_THA": "ขณะที่สติค่อยๆ ชัดเจนขึ้น ความเจ็บปวดที่ไม่รู้จักก็ถาโถมเข้ามา",
+      "UnitTalk_IND": "Saat kesadaran perlahan menjadi jernih, rasa sakit yang tak diketahui menyeruak.",
+      "UnitTalk_VIE": "Trong lúc ý thức dần trở nên rõ ràng, một nỗi đau không rõ ập đến.",
+      "UnitTalk_HIN": "जैसे-जैसे चेतना थोड़ी-थोड़ी स्पष्ट होती है, एक अज्ञात दर्द उमड़ आता है।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 81,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "마치 누군가가 머릿속을 헤집어 놓은 듯한…",
+      "UnitTalk_JPN": "まるで誰かに、頭の中をかき乱されたかのように…",
+      "UnitTalk_FRA": "Comme si quelqu'un avait fouillé dans ma tête…",
+      "UnitTalk_DEU": "Als hätte jemand in meinem Kopf herumgewühlt…",
+      "UnitTalk_ESP": "Como si alguien hubiera hurgado en mi cabeza…",
+      "UnitTalk_PRT": "Como se alguém tivesse remexido na minha cabeça…",
+      "UnitTalk_THA": "ราวกับมีใครบางคนกำลังรื้อค้นอยู่ในหัว…",
+      "UnitTalk_IND": "Seolah-olah seseorang telah mengobrak-abrik isi kepala…",
+      "UnitTalk_VIE": "Cứ như thể có ai đó đang lục lọi trong đầu…",
+      "UnitTalk_HIN": "जैसे किसी ने दिमाग को मथ दिया हो…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 82,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아야야...",
+          "JumpAnchorStringId_JPN": "いたた…",
+          "JumpAnchorStringId_FRA": "Aïe aïe...",
+          "JumpAnchorStringId_DEU": "Aua…",
+          "JumpAnchorStringId_ESP": "Ayayay…",
+          "JumpAnchorStringId_PRT": "Ai, ai...",
+          "JumpAnchorStringId_THA": "โอ๊ยยย...",
+          "JumpAnchorStringId_IND": "Aduh aduh...",
+          "JumpAnchorStringId_VIE": "Ái chà...",
+          "JumpAnchorStringId_HIN": "आयाया..."
+        }
+      ]
+    },
+    {
+      "Uid": 153,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 154,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_DEEP_FIELD_LOBBY.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 155,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_KNIGHT",
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS6"
+    },
+    {
+      "Uid": 156,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_PRAY",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 157,
+      "WaitClick": false,
+      "WaitTime": 3.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 3.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_19.mp3"
+    },
+    {
+      "Uid": 84,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_KNIGHT",
+      "CameraOffset": "POS6_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "아! 눈을 뜨셨어요!",
+      "UnitTalk_JPN": "あっ！目を覚まされたようです！",
+      "UnitTalk_FRA": "Ah! Vous avez ouvert les yeux!",
+      "UnitTalk_DEU": "Ah! Sie haben die Augen geöffnet!",
+      "UnitTalk_ESP": "¡Ah! ¡Ha abierto los ojos!",
+      "UnitTalk_PRT": "Ah! Você abriu os olhos!",
+      "UnitTalk_THA": "อ๊ะ! ลืมตาแล้วค่ะ!",
+      "UnitTalk_IND": "Ah! Anda sudah membuka mata!",
+      "UnitTalk_VIE": "A! Ngài đã mở mắt rồi!",
+      "UnitTalk_HIN": "आह! आँखें खुल गईं!",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 85,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_PRAY",
+      "CameraOffset": "POS7_2X",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "단장님! 정신이 드세요?!",
+      "UnitTalk_JPN": "団長！大丈夫ですか？",
+      "UnitTalk_FRA": "Capitaine! Vous reprenez conscience?!",
+      "UnitTalk_DEU": "Kommandant! Sind Sie wieder bei Bewusstsein?!",
+      "UnitTalk_ESP": "¡Capitán! ¡¿Está consciente?!",
+      "UnitTalk_PRT": "Comandante! Você está consciente?!",
+      "UnitTalk_THA": "หัวหน้าคะ! ได้สติแล้วเหรอคะ?!",
+      "UnitTalk_IND": "Komandan! Anda sudah sadar?!",
+      "UnitTalk_VIE": "Đội trưởng! Ngài tỉnh rồi sao?!",
+      "UnitTalk_HIN": "कप्तान! क्या आप होश में हैं?!",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 159,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_KNIGHT",
+      "UnitMotion": "SPECIAL3"
+    },
+    {
+      "Uid": 86,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_PRAY",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "저희가 누군지, 기억이 나십니까?",
+      "UnitTalk_JPN": "わたくしたちが誰か、分かりますか？",
+      "UnitTalk_FRA": "Vous souvenez-vous de qui nous sommes ?",
+      "UnitTalk_DEU": "Wer wir sind, wissen Sie das noch?",
+      "UnitTalk_ESP": "Nosotras, ¿quiénes somos? ¿Lo recuerdas?",
+      "UnitTalk_PRT": "Nós… Quem somos nós? Você se lembra?",
+      "UnitTalk_THA": "พวกเราเป็นใครกันนะ จำไม่ได้เลยเหรอคะ?",
+      "UnitTalk_IND": "Apa Anda ingat siapa kami?",
+      "UnitTalk_VIE": "Chúng tôi là ai, ngài có nhớ không?",
+      "UnitTalk_HIN": "क्या आपको याद है कि हम <color=#F7BE45>कौन हैं</color>?",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 87,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "샤를, 프레이…",
+          "JumpAnchorStringId_JPN": "シャルル、フレイ…",
+          "JumpAnchorStringId_FRA": "Charles, Frey…",
+          "JumpAnchorStringId_DEU": "Charles, Frey …",
+          "JumpAnchorStringId_ESP": "Charles, Frey…",
+          "JumpAnchorStringId_PRT": "Charles, Frey…",
+          "JumpAnchorStringId_THA": "ชาร์ล, เฟรย์…",
+          "JumpAnchorStringId_IND": "Charles, Frey…",
+          "JumpAnchorStringId_VIE": "Charles, Frey…",
+          "JumpAnchorStringId_HIN": "चार्ल्स, फ्रेय…"
+        }
+      ]
+    },
+    {
+      "Uid": 343,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "두 사람, 표정이…",
+          "JumpAnchorStringId_JPN": "二人とも、そんな顔して…",
+          "JumpAnchorStringId_FRA": "Vous deux, vos expressions…",
+          "JumpAnchorStringId_DEU": "Ihr zwei, eure Gesichter …",
+          "JumpAnchorStringId_ESP": "Ustedes dos, sus expresiones…",
+          "JumpAnchorStringId_PRT": "As duas, com essas expressões…",
+          "JumpAnchorStringId_THA": "ทั้งสองคน สีหน้าแบบนั้น…",
+          "JumpAnchorStringId_IND": "Kalian berdua, ekspresi kalian…",
+          "JumpAnchorStringId_VIE": "Hai người, biểu cảm đó…",
+          "JumpAnchorStringId_HIN": "दोनों के चेहरे…"
+        }
+      ]
+    },
+    {
+      "Uid": 89,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_KNIGHT",
+      "CameraOffset": "POS6_2X",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…우우… 단장님-! 무사하셔서 정말 다행이에요!",
+      "UnitTalk_JPN": "…うぅ…団長殿ー！ご無事で本当に良かったです！",
+      "UnitTalk_FRA": "…Ouh ouh… Capitaine-! Je suis tellement contente que vous alliez bien !",
+      "UnitTalk_DEU": "…Uhh… Kommandant! Ich bin wirklich froh, dass Ihnen nichts passiert ist!",
+      "UnitTalk_ESP": "…¡Ugh…! ¡Comandante! ¡Qué alivio que esté a salvo!",
+      "UnitTalk_PRT": "…Ugh… Comandante! Que bom que está a salvo!",
+      "UnitTalk_THA": "…ฮือๆ… ท่านหัวหน้า! ดีใจจริงๆ ที่ท่านปลอดภัยค่ะ!",
+      "UnitTalk_IND": "…Ugh… Komandan! Saya sangat lega Anda baik-baik saja!",
+      "UnitTalk_VIE": "…Ôi… Thưa Đoàn trưởng! Ngài không sao thật may quá!",
+      "UnitTalk_HIN": "ऊऊ… कप्तान-! आप सुरक्षित हैं, सच में राहत मिली!",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 90,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_PRAY",
+      "CameraOffset": "POS7_2X",
+      "UnitTalk_KOR": "갑자기 멍한 표정이 되셔서 쓰러지길래 엄청 걱정했습니다.",
+      "UnitTalk_JPN": "急に虚ろな表情になって倒れられたので、心配いたしましたのよ。",
+      "UnitTalk_FRA": "Vous avez soudainement eu un air absent et êtes tombé, j'étais très inquiète.",
+      "UnitTalk_DEU": "Sie sahen plötzlich so leer aus und sind umgefallen, da habe ich mir große Sorgen gemacht.",
+      "UnitTalk_ESP": "De repente, su expresión se volvió vacía y se desmayó, me preocupó muchísimo.",
+      "UnitTalk_PRT": "Fiquei muito preocupada quando você desmaiou com aquela expressão vazia de repente.",
+      "UnitTalk_THA": "จู่ๆ ท่านก็มีสีหน้าว่างเปล่าแล้วล้มลงไป ฉันเป็นห่วงมากเลยค่ะ",
+      "UnitTalk_IND": "Anda tiba-tiba pingsan dengan ekspresi kosong, saya sangat khawatir.",
+      "UnitTalk_VIE": "Ngài đột nhiên trở nên vô cảm và ngã xuống, tôi đã rất lo lắng.",
+      "UnitTalk_HIN": "अचानक बेजान चेहरा होकर गिर गए थे, इसलिए बहुत चिंता हुई थी।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 91,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "고마워. 그런데…",
+          "JumpAnchorStringId_JPN": "ありがとう。ところで…",
+          "JumpAnchorStringId_FRA": "Merci. Mais…",
+          "JumpAnchorStringId_DEU": "Danke. Aber …",
+          "JumpAnchorStringId_ESP": "Gracias. Pero…",
+          "JumpAnchorStringId_PRT": "Obrigada. Mas…",
+          "JumpAnchorStringId_THA": "ขอบคุณค่ะ แต่ว่า…",
+          "JumpAnchorStringId_IND": "Terima kasih. Tapi…",
+          "JumpAnchorStringId_VIE": "Cảm ơn. Nhưng mà…",
+          "JumpAnchorStringId_HIN": "धन्यवाद। लेकिन…"
+        }
+      ]
+    },
+    {
+      "Uid": 92,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "프레이는 왜 내 위에 앉아있는 거야?",
+          "JumpAnchorStringId_JPN": "どうしてフレイが私のひざの上に座ってるんだ？",
+          "JumpAnchorStringId_FRA": "Pourquoi Frey est-elle assise sur moi ?",
+          "JumpAnchorStringId_DEU": "Warum sitzt Frey auf meinem Schoß?",
+          "JumpAnchorStringId_ESP": "¿Por qué Frey está sentada sobre mí?",
+          "JumpAnchorStringId_PRT": "Por que a Frey está sentada no meu colo?",
+          "JumpAnchorStringId_THA": "ทำไมเฟรย์ถึงมานั่งอยู่บนตักฉันล่ะ?",
+          "JumpAnchorStringId_IND": "Kenapa Frey duduk di pangkuanku?",
+          "JumpAnchorStringId_VIE": "Sao Frey lại ngồi trên người tôi vậy?",
+          "JumpAnchorStringId_HIN": "फ्रेय मेरे ऊपर क्यों बैठी है?"
+        }
+      ]
+    },
+    {
+      "Uid": 93,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_KNIGHT",
+      "CameraOffset": "POS6_2X",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "앗…",
+      "UnitTalk_JPN": "あっ…",
+      "UnitTalk_FRA": "Ah…",
+      "UnitTalk_DEU": "Ach …",
+      "UnitTalk_ESP": "Ah…",
+      "UnitTalk_PRT": "Ah…",
+      "UnitTalk_THA": "อ๊ะ…",
+      "UnitTalk_IND": "Ah…",
+      "UnitTalk_VIE": "Á…",
+      "UnitTalk_HIN": "आह…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 94,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_PRAY",
+      "CameraOffset": "POS7_2X",
+      "UnitMotion": "SPECIAL3",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "그건…",
+      "UnitTalk_JPN": "それは…",
+      "UnitTalk_FRA": "C'est…",
+      "UnitTalk_DEU": "Das ist …",
+      "UnitTalk_ESP": "Eso es…",
+      "UnitTalk_PRT": "Isso é…",
+      "UnitTalk_THA": "นั่นมัน…",
+      "UnitTalk_IND": "Itu…",
+      "UnitTalk_VIE": "Chuyện đó…",
+      "UnitTalk_HIN": "वह तो…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 95,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_02.wav",
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_PRAY",
+      "CameraOffset": "TWIN_5",
+      "CameraOffsetTime": "FA",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "UnitTalk_FRA": "…",
+      "UnitTalk_DEU": "…",
+      "UnitTalk_ESP": "…",
+      "UnitTalk_PRT": "…",
+      "UnitTalk_THA": "…",
+      "UnitTalk_IND": "…",
+      "UnitTalk_VIE": "…",
+      "UnitTalk_HIN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 96,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_PRAY",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "말하자면 좀 길군요.",
+      "UnitTalk_JPN": "話せば少し長くなります。",
+      "UnitTalk_FRA": "C'est une longue histoire.",
+      "UnitTalk_DEU": "Das ist eine längere Geschichte.",
+      "UnitTalk_ESP": "Sería una larga historia si lo explicara.",
+      "UnitTalk_PRT": "É uma longa história.",
+      "UnitTalk_THA": "ถ้าจะเล่าก็คงจะยาวหน่อยค่ะ",
+      "UnitTalk_IND": "Agak panjang ceritanya.",
+      "UnitTalk_VIE": "Nói ra thì hơi dài dòng một chút.",
+      "UnitTalk_HIN": "कहूँ तो थोड़ा लंबा हो जाएगा।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 97,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…내 뺨은 왜 이렇게 아픈 거고?",
+          "JumpAnchorStringId_JPN": "…あと、なんでこんなに頬が傷むんだ？",
+          "JumpAnchorStringId_FRA": "…Et pourquoi ma joue me fait-elle si mal ?",
+          "JumpAnchorStringId_DEU": "…Und warum tut meine Wange so weh?",
+          "JumpAnchorStringId_ESP": "…Y, ¿por qué me duele tanto la mejilla?",
+          "JumpAnchorStringId_PRT": "…E por que meu rosto está doendo tanto?",
+          "JumpAnchorStringId_THA": "…แล้วทำไมแก้มฉันถึงเจ็บแบบนี้ล่ะ?",
+          "JumpAnchorStringId_IND": "…Dan kenapa pipiku sakit sekali?",
+          "JumpAnchorStringId_VIE": "…Mà sao má tôi lại đau thế này?",
+          "JumpAnchorStringId_HIN": "…मेरे गाल को इतना दर्द क्यों है?"
+        }
+      ]
+    },
+    {
+      "Uid": 98,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_KNIGHT",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "에헤헤, 그게요… 공녀님께서 단장님을 깨우려면 <color=#F7BE45>물리적인 충격</color>이 필요할 거라고…",
+      "UnitTalk_JPN": "えへへ、それはですね…\n公女様が団長殿を起こすには<color=#F7BE45>物理的な衝撃</color>が必要だと…",
+      "UnitTalk_FRA": "Hé hé, eh bien… Mademoiselle la Princesse a dit que pour réveiller le Capitaine, il fallait un <color=#F7BE45>choc physique</color>…",
+      "UnitTalk_DEU": "Äh, hehe, nun … Die Prinzessin meinte, um den Kommandanten aufzuwecken, bräuchte es einen <color=#F7BE45>physischen Schock</color> …",
+      "UnitTalk_ESP": "Jejeje, bueno… La Princesa dijo que para despertar al Comandante, se necesitaría un <color=#F7BE45>impacto físico</color>…",
+      "UnitTalk_PRT": "Hehehe, bem… A Princesa disse que para acordar o Comandante, seria necessário um <color=#F7BE45>choque físico</color>…",
+      "UnitTalk_THA": "เอ๋เฮะๆ นั่นก็คือ… ท่านหญิงบอกว่าถ้าจะปลุกท่านหัวหน้าให้ตื่น ก็ต้องใช้<color=#F7BE45>แรงกระแทกทางกายภาพ</color>ค่ะ…",
+      "UnitTalk_IND": "Hehehe, itu… Putri bilang kalau untuk membangunkan Komandan, dibutuhkan <color=#F7BE45>guncangan fisik</color>…",
+      "UnitTalk_VIE": "Hehe, chuyện là… Công chúa nói rằng để đánh thức Đoàn trưởng thì cần có <color=#F7BE45>tác động vật lý</color> ạ…",
+      "UnitTalk_HIN": "एहेहे, वह क्या है… राजकुमारी ने कहा कि कमांडर को जगाने के लिए <color=#F7BE45>शारीरिक आघात</color> की ज़रूरत होगी…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 362,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_KNIGHT",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 99,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.5,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_PRAY",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "샤를! 그렇게 바로 일러바치는 게 어디 있어!",
+      "UnitTalk_JPN": "シャルル！そうやってすぐ言いつけるなんて、あんまりよ！",
+      "UnitTalk_FRA": "Charles ! On ne dénonce pas comme ça !",
+      "UnitTalk_DEU": "Charles! Wie kannst du das einfach so verraten!",
+      "UnitTalk_ESP": "¡Charles! ¡¿Cómo puedes delatarme así de inmediato?!",
+      "UnitTalk_PRT": "Charles! Não se entrega assim!",
+      "UnitTalk_THA": "ชาร์ล! ทำไมถึงฟ้องทันทีแบบนั้นล่ะ!",
+      "UnitTalk_IND": "Charles! Mengapa langsung mengeluh seperti itu!",
+      "UnitTalk_VIE": "Charles! Sao lại mách lẻo ngay như vậy chứ!",
+      "UnitTalk_HIN": "चार्ल्स! वैसे तुरंत बता देना कहाँ की बात है!",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 363,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_KNIGHT",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 100,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그럼, 프레이가…",
+          "JumpAnchorStringId_JPN": "ってことは、フレイが…",
+          "JumpAnchorStringId_FRA": "Alors, Frey a…",
+          "JumpAnchorStringId_DEU": "Dann hat Frey …",
+          "JumpAnchorStringId_ESP": "Entonces, Frey…",
+          "JumpAnchorStringId_PRT": "Então, a Frey…",
+          "JumpAnchorStringId_THA": "ถ้าอย่างนั้น เฟรย์ก็…",
+          "JumpAnchorStringId_IND": "Jadi, Frey…",
+          "JumpAnchorStringId_VIE": "Vậy là Frey…",
+          "JumpAnchorStringId_HIN": "तो, फ्रेय ने…"
+        }
+      ]
+    },
+    {
+      "Uid": 101,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_PRAY",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…네, 제가 단장님의 위에 앉아 깨어나실 때까지 뺨을 좀 잡아당겼습니다.",
+      "UnitTalk_JPN": "…はい、わたくしが団長の上に座って\nお目覚めになるまで頬を引っ張り続けました。",
+      "UnitTalk_FRA": "…Oui, je me suis assise sur le Capitaine et je lui ai tiré les joues jusqu'à ce qu'il se réveille.",
+      "UnitTalk_DEU": "…Ja, ich saß auf dem Kommandanten und habe ihm so lange an den Wangen gezogen, bis er aufgewacht ist.",
+      "UnitTalk_ESP": "…Sí, me senté sobre el Comandante y le estiré un poco las mejillas hasta que despertó.",
+      "UnitTalk_PRT": "…Sim, eu fiquei deitado em cima do Comandante e puxei suas bochechas até ele acordar.",
+      "UnitTalk_THA": "…ค่ะ ฉันนั่งอยู่บนตัวท่านหัวหน้าแล้วก็ดึงแก้มท่านจนกว่าท่านจะตื่นค่ะ",
+      "UnitTalk_IND": "…Ya, saya duduk di atas Komandan dan menarik-narik pipi Anda sampai Anda bangun.",
+      "UnitTalk_VIE": "…Vâng, tôi đã ngồi trên người Đoàn trưởng và kéo má ngài cho đến khi ngài tỉnh dậy.",
+      "UnitTalk_HIN": "…ने, मैंने कमांडर के ऊपर बैठकर उनके जागने तक गाल खींचे थे।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 102,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_PRAY",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "절대, 절대 그 외의 다른 어떤 접촉도 하진 않았으니까요!",
+      "UnitTalk_JPN": "決して！決して、それ以外の接触はしていませんから！",
+      "UnitTalk_FRA": "Absolument, absolument aucun autre contact n'a été fait !",
+      "UnitTalk_DEU": "Absolut, absolut keinen anderen Kontakt hatte ich zu ihm!",
+      "UnitTalk_ESP": "¡Absolutamente, absolutamente no hubo ningún otro tipo de contacto!",
+      "UnitTalk_PRT": "Absolutamente, absolutamente não houve nenhum outro tipo de contato!",
+      "UnitTalk_THA": "แน่นอนค่ะ! ฉันไม่ได้สัมผัสส่วนอื่นใดนอกจากนั้นเลยค่ะ!",
+      "UnitTalk_IND": "Sama sekali, sama sekali tidak ada kontak lain selain itu!",
+      "UnitTalk_VIE": "Tuyệt đối, tuyệt đối không có bất kỳ tiếp xúc nào khác ngoài việc đó đâu ạ!",
+      "UnitTalk_HIN": "बिल्कुल, बिल्कुल मैंने इसके अलावा कोई और संपर्क नहीं किया!",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 103,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아니, 딱히 의심한 적은 없는데…",
+          "JumpAnchorStringId_JPN": "いや、別に疑ってないけど…",
+          "JumpAnchorStringId_FRA": "Non, je ne doute pas… mais…",
+          "JumpAnchorStringId_DEU": "Nein, ich zweifle ja nicht, aber …",
+          "JumpAnchorStringId_ESP": "No, no es que desconfíe, pero…",
+          "JumpAnchorStringId_PRT": "Não, não é que eu esteja desconfiando, mas…",
+          "JumpAnchorStringId_THA": "เปล่าหรอก ฉันไม่ได้สงสัยอะไรหรอกนะ…",
+          "JumpAnchorStringId_IND": "Tidak, saya tidak meragukan, tapi…",
+          "JumpAnchorStringId_VIE": "Không, tôi đâu có nghi ngờ gì đâu…",
+          "JumpAnchorStringId_HIN": "नहीं, वैसे शक करने जैसा तो कुछ नहीं है…"
+        }
+      ]
+    },
+    {
+      "Uid": 104,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "주변에서 쓰러져 있던 사람들이 하나둘씩 일어나고 있었다.",
+      "UnitTalk_JPN": "周囲で倒れていた人々が一人、また一人と起き上がった。",
+      "UnitTalk_FRA": "Les gens qui étaient tombés autour se sont relevés un par un.",
+      "UnitTalk_DEU": "Die Leute, die um uns herum lagen, standen einer nach dem anderen auf.",
+      "UnitTalk_ESP": "Las personas que estaban tiradas alrededor se levantaron una por una.",
+      "UnitTalk_PRT": "As pessoas que estavam caídas ao redor se levantaram uma por uma.",
+      "UnitTalk_THA": "คนที่ล้มลงอยู่รอบๆ ก็เริ่มลุกขึ้นทีละคนค่ะ",
+      "UnitTalk_IND": "Orang-orang yang tergeletak di sekitar mulai bangkit satu per satu.",
+      "UnitTalk_VIE": "Những người nằm la liệt xung quanh đã tỉnh dậy từng người một.",
+      "UnitTalk_HIN": "आस-पास गिरे हुए लोग एक-एक करके उठ रहे थे।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 105,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "환각에서 깨어났는지, 어리둥절한 모습으로 주위를 둘러보면서.",
+      "UnitTalk_JPN": "幻覚から覚めたのか、戸惑った様子で辺りを見回しながら。",
+      "UnitTalk_FRA": "Comme s'ils se réveillaient d'une illusion, ils regardaient autour d'eux, l'air hébété.",
+      "UnitTalk_DEU": "Als ob sie aus einer Illusion erwachten, blickten sie sich verwirrt um.",
+      "UnitTalk_ESP": "Como si despertara de una ilusión, miró a su alrededor con una expresión aturdida.",
+      "UnitTalk_PRT": "Como se tivessem acordado de uma alucinação, olhavam ao redor com uma expressão perplexa.",
+      "UnitTalk_THA": "เหมือนเพิ่งตื่นจากภาพหลอน พวกเขามองไปรอบ ๆ ด้วยท่าทางงุนงง",
+      "UnitTalk_IND": "Entah terbangun dari halusinasi, mereka melihat sekeliling dengan bingung.",
+      "UnitTalk_VIE": "Như thể vừa thoát khỏi ảo giác, họ ngơ ngác nhìn xung quanh.",
+      "UnitTalk_HIN": "जैसे ही वे भ्रम से जागे, उन्होंने भ्रमित होकर चारों ओर देखा।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 106,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_PRAY",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "그럼 경비대원들이 상황을 파악하기 전에 어서 여길 떠나도록 하죠.",
+      "UnitTalk_JPN": "では、警備隊員が状況を把握する前に\\n早くここを離れましょう。",
+      "UnitTalk_FRA": "Alors, partons vite d'ici avant que les gardes ne comprennent la situation.",
+      "UnitTalk_DEU": "Also, lasst uns schnell verschwinden, bevor die Wachen die Lage erfassen.",
+      "UnitTalk_ESP": "Entonces, antes de que los guardias entiendan la situación, salgamos de aquí rápido.",
+      "UnitTalk_PRT": "Então, antes que os guardas entendam a situação, vamos sair daqui logo.",
+      "UnitTalk_THA": "งั้นก่อนที่เจ้าหน้าที่รักษาความปลอดภัยจะรู้สถานการณ์ เราควรรีบไปจากที่นี่กันเถอะค่ะ",
+      "UnitTalk_IND": "Kalau begitu, ayo kita pergi dari sini sebelum penjaga memahami situasinya.",
+      "UnitTalk_VIE": "Vậy thì, chúng ta hãy nhanh chóng rời khỏi đây trước khi đội tuần tra nắm bắt được tình hình.",
+      "UnitTalk_HIN": "तो, इससे पहले कि गार्ड स्थिति को समझें, हमें यहाँ से जल्दी निकल जाना चाहिए।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 107,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_PRAY",
+      "UnitTalk_KOR": "시간을 더 지체했다간 일이 귀찮아질 거예요.",
+      "UnitTalk_JPN": "これ以上時間を無駄にしていては、面倒なことになるはずです。",
+      "UnitTalk_FRA": "Si nous tardons plus, ça va devenir gênant.",
+      "UnitTalk_DEU": "Wenn wir noch länger warten, wird es nur noch lästiger.",
+      "UnitTalk_ESP": "Si retrasamos más el tiempo, se volverá molesto.",
+      "UnitTalk_PRT": "Se demorarmos mais, vai ficar complicado.",
+      "UnitTalk_THA": "ถ้าชักช้ากว่านี้คงจะยุ่งยากแน่ๆ ค่ะ",
+      "UnitTalk_IND": "Jika kita menunda lebih lama, ini akan merepotkan.",
+      "UnitTalk_VIE": "Nếu chúng ta trì hoãn thêm nữa, mọi chuyện sẽ trở nên phiền phức đấy.",
+      "UnitTalk_HIN": "समय को और बर्बाद करेंगे तो बात बिगड़ जाएगी।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 108,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_KNIGHT",
+      "CameraOffset": "TWIN_1",
+      "CameraOffsetTime": "FA",
+      "UnitPos": "POS1",
+      "UnitTalk_KOR": "으음, 그렇네요…",
+      "UnitTalk_JPN": "うーん、そうですね…",
+      "UnitTalk_FRA": "Hmm, c'est vrai…",
+      "UnitTalk_DEU": "Uhm, ja… das stimmt…",
+      "UnitTalk_ESP": "Uhm, sí…",
+      "UnitTalk_PRT": "Uhm, sim…",
+      "UnitTalk_THA": "อืมมม… นั่นสินะคะ…",
+      "UnitTalk_IND": "Uhm, benar juga…",
+      "UnitTalk_VIE": "Ưm, đúng vậy…",
+      "UnitTalk_HIN": "हम्म, ऐसा ही है…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 160,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS9"
+    },
+    {
+      "Uid": 364,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_PRAY",
+      "UnitMotion": "USN_UI_REST_START"
+    },
+    {
+      "Uid": 109,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_KNIGHT",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "그럼 저분은 어떻게 해야 할까요?",
+      "UnitTalk_JPN": "では、あの方はどうしましょうか？",
+      "UnitTalk_FRA": "Alors, que devons-nous faire de cette personne ?",
+      "UnitTalk_DEU": "Was sollen wir dann mit dieser Person tun?",
+      "UnitTalk_ESP": "¿Entonces qué debemos hacer con esa persona?",
+      "UnitTalk_PRT": "Então, o que devemos fazer com aquela pessoa?",
+      "UnitTalk_THA": "แล้วคนนั้นล่ะคะ เราจะทำยังไงดี?",
+      "UnitTalk_IND": "Lalu, bagaimana dengan orang itu?",
+      "UnitTalk_VIE": "Vậy thì, chúng ta phải làm gì với người đó đây?",
+      "UnitTalk_HIN": "तो, हमें उस व्यक्ति के साथ क्या करना चाहिए?",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 110,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "저분이라면…",
+          "JumpAnchorStringId_JPN": "あの方って…",
+          "JumpAnchorStringId_FRA": "Cette personne…",
+          "JumpAnchorStringId_DEU": "Diese Person…",
+          "JumpAnchorStringId_ESP": "Si te refieres a esa persona…",
+          "JumpAnchorStringId_PRT": "Aquela pessoa…",
+          "JumpAnchorStringId_THA": "ถ้าเป็นคนนั้น…",
+          "JumpAnchorStringId_IND": "Kalau orang itu…",
+          "JumpAnchorStringId_VIE": "Người đó thì…",
+          "JumpAnchorStringId_HIN": "उस व्यक्ति की बात करें तो…"
+        }
+      ]
+    },
+    {
+      "Uid": 111,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_4",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "조금 떨어진 곳에, 나를 덮쳤던 마술사가 쓰러진 채 몸을 조금씩 떨고 있었다.",
+      "UnitTalk_JPN": "少し離れた場所で、私を襲ったマジシャンが\n倒れたまま小刻みに震えていた。",
+      "UnitTalk_FRA": "Un peu plus loin, le magicien qui m'avait attaquée gisait, tremblant légèrement.",
+      "UnitTalk_DEU": "Ein Stück entfernt lag der Magier, der mich überfallen hatte, zitternd am Boden.",
+      "UnitTalk_ESP": "Un poco más lejos, el mago que me había atacado estaba tirado, temblando ligeramente.",
+      "UnitTalk_PRT": "Um pouco afastado, o mago que me atacou estava caído, tremendo um pouco.",
+      "UnitTalk_THA": "ห่างออกไปเล็กน้อย จอมเวทที่โจมตีฉันก็ล้มลงตัวสั่นเทา",
+      "UnitTalk_IND": "Agak jauh dari sana, penyihir yang menyerangku tergeletak dan sedikit gemetar.",
+      "UnitTalk_VIE": "Cách đó một chút, tên pháp sư đã tấn công tôi vẫn nằm bất động, người run rẩy từng hồi.",
+      "UnitTalk_HIN": "थोड़ी दूर पर, वह जादूगर जिसने मुझ पर हमला किया था, गिरा हुआ था और थोड़ा-थोड़ा काँप रहा था।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 112,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "죄송합니다죄송합니다죄송합니다…",
+      "UnitTalk_JPN": "ごめんなさいごめんなさいごめんなさい…",
+      "UnitTalk_FRA": "Pardon, pardon, pardon…",
+      "UnitTalk_DEU": "Es tut mir leid, es tut mir leid, es tut mir leid…",
+      "UnitTalk_ESP": "Lo siento, lo siento, lo siento…",
+      "UnitTalk_PRT": "Desculpe, desculpe, desculpe…",
+      "UnitTalk_THA": "ขอโทษค่ะขอโทษค่ะขอโทษค่ะ…",
+      "UnitTalk_IND": "Maafkan aku, maafkan aku, maafkan aku…",
+      "UnitTalk_VIE": "Xin lỗi, xin lỗi, xin lỗi…",
+      "UnitTalk_HIN": "माफ़ करना माफ़ करना माफ़ करना…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 113,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "UnitTalk_KOR": "잘못했습니다잘못했습니다잘못했습니다…",
+      "UnitTalk_JPN": "アタシが悪かったですごめんなさいごめんなさい…",
+      "UnitTalk_FRA": "J'ai eu tort, j'ai eu tort, j'ai eu tort…",
+      "UnitTalk_DEU": "Ich war falsch, ich war falsch, ich war falsch…",
+      "UnitTalk_ESP": "Me equivoqué, me equivoqué, me equivoqué…",
+      "UnitTalk_PRT": "Eu errei, eu errei, eu errei…",
+      "UnitTalk_THA": "ฉันผิดไปแล้วค่ะฉันผิดไปแล้วค่ะฉันผิดไปแล้วค่ะ…",
+      "UnitTalk_IND": "Aku salah, aku salah, aku salah…",
+      "UnitTalk_VIE": "Tôi sai rồi, tôi sai rồi, tôi sai rồi…",
+      "UnitTalk_HIN": "मेरी गलती थी मेरी गलती थी मेरी गलती थी…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 114,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MAGICIAN_CASINO",
+      "UnitNameString": [
+        "SI_MAGICIAN"
+      ],
+      "UnitTalk_KOR": "그만보여주세요그만보여주세요제발그만-…",
+      "UnitTalk_JPN": "もう見せないでくださいお願いしますどうかお願いです──…",
+      "UnitTalk_FRA": "Arrêtez, arrêtez, s'il vous plaît, arrêtez…",
+      "UnitTalk_DEU": "Bitte, zeigen Sie es nicht mehr! Bitte, bitte, bitte...",
+      "UnitTalk_ESP": "Por favor, no me lo muestres más, por favor, por favor…",
+      "UnitTalk_PRT": "Não me mostre mais, não me mostre mais, por favor, pare—…",
+      "UnitTalk_THA": "อย่ามองฉันเลยค่ะ อย่ามองฉันเลย ได้โปรดเถอะค่ะ...",
+      "UnitTalk_IND": "Tolong jangan tunjukkan lagi, tolong jangan tunjukkan lagi, kumohon hentikan—…",
+      "UnitTalk_VIE": "Xin đừng cho tôi thấy nữa, làm ơn, xin đừng…",
+      "UnitTalk_HIN": "बस दिखाना बंद करें बस दिखाना बंद करें कृपया बस-…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 359,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_PRAY",
+      "UnitMotion": "SPECIAL3"
+    },
+    {
+      "Uid": 115,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_KNIGHT",
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "사실, 아까 단장님이 쓰러지실 때 저 분도 같이 쓰러졌는데…",
+      "UnitTalk_JPN": "実は、さっき団長殿が倒れた時\\nあの方も一緒に倒れたんですが…",
+      "UnitTalk_FRA": "En fait, quand le Commandant est tombé tout à l'heure, cette personne est tombée aussi…",
+      "UnitTalk_DEU": "Eigentlich ist diese Person auch umgefallen, als der Kommandant vorhin umgefallen ist…",
+      "UnitTalk_ESP": "De hecho, cuando el Capitán se desmayó hace un momento, esa persona también se desmayó con él…",
+      "UnitTalk_PRT": "Na verdade, quando o Capitão caiu, aquela pessoa também caiu junto…",
+      "UnitTalk_THA": "จริง ๆ แล้วตอนที่หัวหน้าล้มลง คนนั้นก็ล้มลงไปด้วยกันนะคะ…",
+      "UnitTalk_IND": "Sebenarnya, saat Komandan jatuh tadi, dia juga ikut jatuh…",
+      "UnitTalk_VIE": "Thật ra, lúc nãy khi Đội trưởng ngã xuống, người đó cũng ngã theo…",
+      "UnitTalk_HIN": "दरअसल, जब थोड़ी देर पहले कप्तान गिरे थे, तो वह व्यक्ति भी उनके साथ गिर गया था…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 116,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_KNIGHT",
+      "UnitTalk_KOR": "저렇게 되어 버렸어요.",
+      "UnitTalk_JPN": "あんな風になってしまって。",
+      "UnitTalk_FRA": "Elle est devenue comme ça.",
+      "UnitTalk_DEU": "So ist es passiert.",
+      "UnitTalk_ESP": "Y terminó así.",
+      "UnitTalk_PRT": "E ficou assim.",
+      "UnitTalk_THA": "กลายเป็นแบบนั้นไปแล้วค่ะ",
+      "UnitTalk_IND": "Dia jadi seperti itu.",
+      "UnitTalk_VIE": "Thế là thành ra như vậy đó.",
+      "UnitTalk_HIN": "ऐसा ही हो गया है।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 117,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_PRAY",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "흐음, 다른 사람들의 마음을 멋대로 들여다보던 사람의 최후군요.",
+      "UnitTalk_JPN": "ふむ、他人の心を勝手に覗き見た者の末路ですわね。",
+      "UnitTalk_FRA": "Hmm, c'est la fin de quelqu'un qui a osé fouiller dans les cœurs des autres.",
+      "UnitTalk_DEU": "Hmpf, das ist das Ende für jemanden, der sich eigenmächtig in die Herzen anderer geblickt hat.",
+      "UnitTalk_ESP": "Hmm, este es el final de alguien que se atrevió a hurgar en la mente de los demás.",
+      "UnitTalk_PRT": "Hum, então esse é o fim de alguém que se intrometeu nos corações alheios.",
+      "UnitTalk_THA": "หืมม์ นี่คือจุดจบของคนที่แอบมองจิตใจของคนอื่นตามอำเภอใจสินะคะ",
+      "UnitTalk_IND": "Hmm, ini adalah akhir bagi seseorang yang sembarangan mengintip hati orang lain.",
+      "UnitTalk_VIE": "Hừm, đây là kết cục của kẻ đã tự tiện nhìn trộm tâm trí người khác.",
+      "UnitTalk_HIN": "हम्म, यह उस व्यक्ति का अंत है जिसने मनमाने ढंग से दूसरों के दिलों में झाँका।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 118,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_PRAY",
+      "UnitTalk_KOR": "마음 같아서는 그냥 두고 나가고 싶지만…",
+      "UnitTalk_JPN": "あのまま放っておきたいところですが…",
+      "UnitTalk_FRA": "Si ça ne tenait qu'à moi, je la laisserais là et je partirais…",
+      "UnitTalk_DEU": "Am liebsten würde ich ihn einfach liegen lassen und gehen…",
+      "UnitTalk_ESP": "Me gustaría dejarlo y marcharme, pero…",
+      "UnitTalk_PRT": "Se dependesse de mim, eu o deixaria aqui e iria embora, mas…",
+      "UnitTalk_THA": "ถ้าเป็นไปได้ก็อยากจะปล่อยทิ้งไว้แล้วออกไปเลยค่ะ…",
+      "UnitTalk_IND": "Sejujurnya, aku ingin meninggalkannya begitu saja dan pergi…",
+      "UnitTalk_VIE": "Thật lòng thì tôi muốn cứ để mặc rồi đi luôn…",
+      "UnitTalk_HIN": "मेरा मन तो उन्हें ऐसे ही छोड़कर जाने का कर रहा है, लेकिन…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 119,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_KNIGHT",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "그래도… 병원에 데려가는 게 좋지 않을까요?",
+      "UnitTalk_JPN": "それでも…病院へ連れて行った方がいいのではないでしょうか？",
+      "UnitTalk_FRA": "Quand même… ne serait-il pas mieux de l'emmener à l'hôpital ?",
+      "UnitTalk_DEU": "Trotzdem… wäre es nicht besser, ihn ins Krankenhaus zu bringen?",
+      "UnitTalk_ESP": "Aun así… ¿no sería mejor llevarlo al hospital?",
+      "UnitTalk_PRT": "Mesmo assim… não seria melhor levá-lo ao hospital?",
+      "UnitTalk_THA": "แต่ว่า… พาไปโรงพยาบาลจะดีกว่าไหมคะ?",
+      "UnitTalk_IND": "Tapi… bukankah lebih baik membawanya ke rumah sakit?",
+      "UnitTalk_VIE": "Dù sao thì… chúng ta đưa anh ta đến bệnh viện có tốt hơn không?",
+      "UnitTalk_HIN": "फिर भी… क्या उन्हें अस्पताल ले जाना बेहतर नहीं होगा?",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 360,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_PRAY",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 120,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "저한테 맡겨주세요.",
+      "UnitTalk_JPN": "私にお任せください。",
+      "UnitTalk_FRA": "Laissez-moi faire.",
+      "UnitTalk_DEU": "Überlassen Sie das mir.",
+      "UnitTalk_ESP": "Déjenmelo a mí.",
+      "UnitTalk_PRT": "Deixe comigo.",
+      "UnitTalk_THA": "เรื่องนั้นให้เป็นหน้าที่ของฉันเองค่ะ",
+      "UnitTalk_IND": "Serahkan padaku.",
+      "UnitTalk_VIE": "Cứ giao cho tôi.",
+      "UnitTalk_HIN": "यह मुझ पर छोड़ दो।",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 121,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…등 뒤에서, 익숙한 기계소리가 들렸다.",
+      "UnitTalk_JPN": "…背後から、聞き覚えのある機械音がした。",
+      "UnitTalk_FRA": "…Derrière moi, un bruit de machine familier se fit entendre.",
+      "UnitTalk_DEU": "…Hinter mir ertönte ein vertrautes Maschinengeräusch.",
+      "UnitTalk_ESP": "…Desde atrás, se escuchó un familiar sonido mecánico.",
+      "UnitTalk_PRT": "…Por trás, ouvi um som de máquina familiar.",
+      "UnitTalk_THA": "…จากด้านหลัง มีเสียงเครื่องจักรที่คุ้นเคยดังขึ้น",
+      "UnitTalk_IND": "…Dari belakang, terdengar suara mesin yang familiar.",
+      "UnitTalk_VIE": "…Từ phía sau, một tiếng máy móc quen thuộc vang lên.",
+      "UnitTalk_HIN": "…पीछे से, एक परिचित यांत्रिक ध्वनि सुनाई दी।",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_WEST_BEAMSWORD_04",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_WEST_BEAMSWORD_01",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 5,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_WEST_BEAMSWORD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "세레스는 수면 훈련을 통해 디저트의 악마를 물리쳤다. 아주 훌륭하게.",
+      "UnitTalk_ENG": "Through sleep training, Ceres defeated the dessert demon. Brilliantly.",
+      "UnitTalk_JPN": "セレスは睡眠トレーニングにて\nスイーツの悪魔を見事打ち破った。実に大したものだ。",
+      "UnitTalk_CHN": "瑟莱丝透过睡眠训练打倒了甜点恶魔。而且表现得非常优秀。",
+      "UnitTalk_TWN": "瑟萊絲透過睡眠訓練打倒了甜點惡魔。而且表現得非常優秀。",
+      "UnitTalk_FRA": "Ceres a vaincu le démon du désert grâce à l'entraînement du sommeil. C'était magnifique.",
+      "UnitTalk_DEU": "Ceres besiegte den Dämon der Wüste durch Schlaftraining. Sehr beeindruckend.",
+      "UnitTalk_ESP": "Ceres derrotó al demonio del desierto mediante entrenamiento del sueño. Magníficamente.",
+      "UnitTalk_PRT": "Ceres derrotou o demônio do deserto através do treinamento do sono. Muito bem.",
+      "UnitTalk_THA": "เซเรสเอาชนะปีศาจทะเลทรายผ่านการฝึกควบคุมการนอนอย่างยอดเยี่ยม",
+      "UnitTalk_IND": "Ceres mengalahkan iblis gurun melalui latihan tidur. Sangat luar biasa.",
+      "UnitTalk_VIE": "Ceres đã đánh bại quỷ sa mạc thông qua huấn luyện giấc ngủ. Rất xuất sắc.",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_WEST_BEAMSWORD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_WEST_BEAMSWORD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER"
+    }
+  ]
+}

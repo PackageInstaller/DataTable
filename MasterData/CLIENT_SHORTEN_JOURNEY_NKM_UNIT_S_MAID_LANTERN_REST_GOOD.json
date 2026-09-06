@@ -1,0 +1,39 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_MAID_LANTERN_REST_GOOD",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_REST_NORMAL",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_REST",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "FUN"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_REST_NORMAL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "숙면을 취했다는 <color=#F7BE45>[CHARACTER_NAME]</color>의 표정이 평소보다도 밝아 보인다!",
+      "UnitTalk_ENG": "<color=#F7BE45>[CHARACTER_NAME]</color>'s expression looks brighter than ever, having slept soundly!",
+      "UnitTalk_JPN": "よく眠れたと話す<color=#F7BE45>[CHARACTER_NAME]</color>の表情は、いつもよりひと際明るく見えた！",
+      "UnitTalk_CHN": "有好好睡觉的<color=#F7BE45>[CHARACTER_NAME]</color>的表情看起来比平常更加开朗！",
+      "UnitTalk_TWN": "有好好睡覺的<color=#F7BE45>[CHARACTER_NAME]</color>的表情看起來比平常更加開朗！",
+      "UnitTalk_FRA": "L'expression de <color=#F7BE45>[CHARACTER_NAME]</color> qui a bien dormi semble plus lumineuse que d'habitude!",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color>s Gesichtsausdruck wirkt heller als gewöhnlich, nachdem er gut geschlafen hat!",
+      "UnitTalk_ESP": "¡La expresión de <color=#F7BE45>[CHARACTER_NAME]</color> se ve más brillante que de costumbre después de dormir bien!",
+      "UnitTalk_PRT": "A expressão de <color=#F7BE45>[CHARACTER_NAME]</color> que dormiu bem parece mais brilhante que o usual!",
+      "UnitTalk_THA": "ใบหน้าของ <color=#F7BE45>[CHARACTER_NAME]</color> ที่ได้นอนหลับสนิทดูสดใสกว่าปกติ!",
+      "UnitTalk_IND": "Ekspresi <color=#F7BE45>[CHARACTER_NAME]</color> yang telah tidur nyenyak terlihat lebih cerah dari biasanya!",
+      "UnitTalk_VIE": "Biểu cảm của <color=#F7BE45>[CHARACTER_NAME]</color> sau giấc ngủ ngon trông sáng sủa hơn bình thường!",
+      "TalkTime": 0.03
+    }
+  ]
+}

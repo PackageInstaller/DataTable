@@ -1,0 +1,146 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_04",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_FOREST_ROAD.png",
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "투정을 부리는 세르팡을 위해 린이 특별한 간식을 준비해온 듯 하다.",
+      "UnitTalk_ENG": "It seems Lyn prepared a special snack for Serpang, who had been sulking.",
+      "UnitTalk_JPN": "わがままを言うセルパンのために、リンが特別なおやつを用意したようだ。",
+      "UnitTalk_CHN": "为了闹别扭的瑟乐芬，凌特地准备了特别的点心。",
+      "UnitTalk_TWN": "為了鬧彆扭的瑟樂芬，凌特地準備了特別的點心。",
+      "UnitTalk_FRA": "Il semble que Lin ait préparé une friandise spéciale pour Serpang qui boude.",
+      "UnitTalk_DEU": "Rin hat spezielle Snacks für Serping vorbereitet, um Verletzungen zu heilen.",
+      "UnitTalk_ESP": "Parece que Lin ha preparado un snack especial para Serpang, quien está de mal humor.",
+      "UnitTalk_PRT": "Parece que Rin preparou um lanche especial para Serpang.",
+      "UnitTalk_THA": "ดูเหมือนว่าลินจะเตรียมขนมพิเศษมาให้เซอร์แพนที่กำลังงอแง",
+      "UnitTalk_IND": "Rin tampaknya telah menyiapkan camilan khusus untuk Serping yang sedang merajuk.",
+      "UnitTalk_VIE": "Có vẻ như Rin đã chuẩn bị một bữa ăn nhẹ đặc biệt cho Serpang đang cáu kỉnh.",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "맛을 본다.",
+          "JumpAnchorStringId_ENG": "Taste it.",
+          "JumpAnchorStringId_JPN": "ありがたく受け取る。",
+          "JumpAnchorStringId_CHN": "尝一口。",
+          "JumpAnchorStringId_TWN": "嘗一口。",
+          "JumpAnchorStringId_FRA": "Goûter.",
+          "JumpAnchorStringId_DEU": "Kosten.",
+          "JumpAnchorStringId_ESP": "Probar.",
+          "JumpAnchorStringId_PRT": "Vou provar.",
+          "JumpAnchorStringId_THA": "ลองรส",
+          "JumpAnchorStringId_IND": "Lihat dengan seksama.",
+          "JumpAnchorStringId_VIE": "Nếm thử.",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "정중히 사양한다.",
+          "JumpAnchorStringId_ENG": "Politely decline.",
+          "JumpAnchorStringId_JPN": "…丁重に断る。",
+          "JumpAnchorStringId_CHN": "委婉地拒绝。",
+          "JumpAnchorStringId_TWN": "委婉地拒絕。",
+          "JumpAnchorStringId_FRA": "Je décline poliment.",
+          "JumpAnchorStringId_DEU": "Ich lehne höflich ab.",
+          "JumpAnchorStringId_ESP": "Declino respetuosamente.",
+          "JumpAnchorStringId_PRT": "Recuso educadamente.",
+          "JumpAnchorStringId_THA": "ปฏิเสธอย่างสุภาพ",
+          "JumpAnchorStringId_IND": "Bersikaplah dengan serius.",
+          "JumpAnchorStringId_VIE": "Từ chối lịch sự.",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 9,
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "린의 약초 주스는 엄청난 맛이었다…",
+      "UnitTalk_ENG": "Lyn's herbal juice had quite the taste...",
+      "UnitTalk_JPN": "リンの薬草ジュースは、すごい味だった…",
+      "UnitTalk_CHN": "凌的药草果汁味道相当惊人…",
+      "UnitTalk_TWN": "凌的藥草果汁味道相當驚人…",
+      "UnitTalk_FRA": "Le jus d'herbes de Lin a un goût terrible…",
+      "UnitTalk_DEU": "Rins Kräutersaft schmeckt furchtbar…",
+      "UnitTalk_ESP": "El jugo de hierbas medicinales de Rin es terriblemente amargo…",
+      "UnitTalk_PRT": "O suco de erva medicinal de Lyn tinha um gosto terrível…",
+      "UnitTalk_THA": "น้ำสมุนไพรพิเศษของลินมีรสชาติที่เข้มข้นมาก…",
+      "UnitTalk_IND": "Jus herbal khusus Lin terasa sangat pahit…",
+      "UnitTalk_VIE": "Nước cốt thảo dược của Rin có vị cực kỳ khó chịu…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_EASTERN_SWORDMASTER",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "세르팡은 린이 준비해온 약초 주스를 남김없이 마셔야 하는 운명에 처했다…",
+      "UnitTalk_ENG": "Serpang found herself destined to drink all of the herbal juice Lyn had prepared...",
+      "UnitTalk_JPN": "セルパンは、リンの特製薬草ジュースを飲み干さなければならない運命に直面した…",
+      "UnitTalk_CHN": "瑟乐芬陷入了必须把凌准备的药草果汁一滴不剩喝完的命运…",
+      "UnitTalk_TWN": "瑟樂芬陷入了必須把凌準備的藥草果汁一滴不剩喝完的命運…",
+      "UnitTalk_FRA": "Serpang est condamnée à boire ce jus de plantes médicinales que Lyn a préparé sans réserve…",
+      "UnitTalk_DEU": "Serpent war dazu verdammt, Rins spezielles Elixier zu trinken…",
+      "UnitTalk_ESP": "Serpent enfrenta un destino donde debe beber completamente el jugo especial de Rin…",
+      "UnitTalk_PRT": "Serpang foi condenado a beber todo o suco de ervas mágicas que Lyn preparou…",
+      "UnitTalk_THA": "เซอร์แพนต้องเผชิญกับชะตากรรมที่ต้องดื่มน้ำสมุนไพรพิเศษของลินให้หมด…",
+      "UnitTalk_IND": "Serpang menghadapi takdir harus menghabiskan jus herbal yang disiapkan Lin…",
+      "UnitTalk_VIE": "Serpang phải đối mặt với số phận phải uống hết nước ép thảo dược mà Lyn đã chuẩn bị…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "JumpAnchorInfo": "JUMPANCHOR_FINISH",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_EASTERN_SWORDMASTER_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    }
+  ]
+}

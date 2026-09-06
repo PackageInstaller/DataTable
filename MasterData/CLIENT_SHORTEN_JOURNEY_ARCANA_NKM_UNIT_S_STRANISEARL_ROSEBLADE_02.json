@@ -1,0 +1,52 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_STRANISEARL_ROSEBLADE_02",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 3,
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_TRADE.png",
+      "UnitStrId": "NKM_UNIT_NPC_STRANISEARL_ROSEBLADE",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN"
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "역시 <color=#F7BE45>딸</color>이 좋다는 아모라와 함께 여유로운 오후를 보냈다.",
+      "UnitTalk_ENG": "I spent a relaxing afternoon with Amora, who reaffirmed her belief that she'd rather have a <color=#F7BE45>daughter</color> than a son.",
+      "UnitTalk_JPN": "やっぱり<color=#F7BE45>「娘」</color>が一番だというアモラと、穏やかな午後を過ごした。",
+      "UnitTalk_CHN": "与说着果然还是<color=#F7BE45>女儿</color>最好的阿莫拉一起度过了悠闲的下午。",
+      "UnitTalk_TWN": "與說著果然還是<color=#F7BE45>女兒</color>最好的阿莫拉一起度過了悠閒的下午。",
+      "UnitTalk_FRA": "Amora, qui préfère les <color=#F7BE45>filles</color>, a passé un après-midi tranquille avec moi.",
+      "UnitTalk_DEU": "Verbrachte einen entspannten Nachmittag mit Amora, die sagte, dass <color=#F7BE45>Töchter</color> am besten sind.",
+      "UnitTalk_ESP": "Pasé una tarde tranquila con Amora, quien dijo que <color=#F7BE45>las hijas</color> son lo mejor.",
+      "UnitTalk_PRT": "Passou uma tarde tranquila com Amora, que diz que <color=#F7BE45>filhas</color> são as melhores.",
+      "UnitTalk_THA": "ได้ใช้เวลาช่วงบ่ายอันแสนสุขกับอโมร่า ผู้ซึ่งบอกว่า <color=#F7BE45>ลูกสาว</color> นั้นดีที่สุด",
+      "UnitTalk_IND": "Tentu saja, aku menghabiskan sore yang santai bersama Amora yang berkata <color=#F7BE45>putri</color> memang yang terbaik.",
+      "UnitTalk_VIE": "Bên cạnh Amora, người luôn khen <color=#F7BE45>con gái</color> mình, tôi đã có một buổi chiều thư thái.",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

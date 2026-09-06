@@ -1,0 +1,208 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_BUNNY_PRAY_01",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_PRAY",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 7,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "캔들 스퀘어 로비에서 <color=#F7BE45>승부 복장</color>을 입고 루나와 카드 대결을 하고 있는 프레이를 발견했다.",
+      "UnitTalk_ENG": "I found Frey in the Candle Square lobby in wearing her <color=#F7BE45>make-or-break outfit</color>, facing Luna in a card game.",
+      "UnitTalk_JPN": "キャンドル・スクエアのロビーで<color=#F7BE45>勝負服</color>に身を包み、ルナとのカード対決に興じているフレイを見かけた。",
+      "UnitTalk_CHN": "在烛光广场的大厅，可以发现芙蕾正穿着<color=#F7BE45>决胜服装</color>与露娜进行卡牌对决。",
+      "UnitTalk_TWN": "在燭光廣場的大廳，可以發現芙蕾正穿著<color=#F7BE45>決勝服裝</color>與露娜進行卡牌對決。",
+      "UnitTalk_FRA": "J'ai trouvé Frey dans le hall de Candle Square, vêtue de sa <color=#F7BE45>tenue de la dernière chance</color>, affrontant Luna dans une partie de cartes.",
+      "UnitTalk_DEU": "Ich fand Frey in der Lobby des Candle Square in ihrem <color=#F7BE45>Sieger-Outfit</color>, als sie Luna in einem Kartenspiel gegenüberstand.",
+      "UnitTalk_ESP": "Encontré a Frey en el vestíbulo de Candle Square, vestido con su <color=#F7BE45>traje de apuesta</color>, enfrentándose a Luna en una partida de cartas.",
+      "UnitTalk_PRT": "Encontrei Frey no lobby da Candle Square, usando seu <color=#F7BE45>traje da sorte</color>, enfrentando Luna em um jogo de cartas.",
+      "UnitTalk_THA": "ฉันเจอเฟรย์ที่ล็อบบี้แคนเดิลสแควร์ กำลังใส่<color=#F7BE45>ชุดแห่งชัยชนะ</color>และเล่นไพ่กับลูน่าอยู่ค่ะ",
+      "UnitTalk_IND": "Aku menemukan Frey di lobi Candle Square dengan <color=#F7BE45>pakaian pertarungan</color> miliknya, sedang bermain kartu melawan Luna.",
+      "UnitTalk_VIE": "Tôi tìm thấy Frey trong sảnh Candle Square, đang mặc <color=#F7BE45>trang phục quyết thắng</color>, đối đầu với Luna trong một ván bài.",
+      "UnitTalk_HIN": "कैंडल स्क्वायर की लॉबी में, मैंने फ़्रेय को अपनी <color=#F7BE45>निर्णायक पोशाक</color> पहने हुए, लूना के साथ ताश का खेल खेलते हुए पाया।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "프레이의 승리를 예측한다.",
+          "JumpAnchorStringId_ENG": "Bet on Frey to win.",
+          "JumpAnchorStringId_JPN": "フレイの勝利を予想する。",
+          "JumpAnchorStringId_CHN": "预测芙蕾会获胜。",
+          "JumpAnchorStringId_TWN": "預測芙蕾會獲勝。",
+          "JumpAnchorStringId_FRA": "« Je prédis la victoire de Frey. »",
+          "JumpAnchorStringId_DEU": "„Ich sage Freys Sieg voraus.“",
+          "JumpAnchorStringId_ESP": "Predigo la victoria de Frey.",
+          "JumpAnchorStringId_PRT": "Prevejo a vitória de Frey.",
+          "JumpAnchorStringId_THA": "ฉันทำนายว่าเฟรย์จะชนะค่ะ",
+          "JumpAnchorStringId_IND": "Aku memprediksi kemenangan Frey.",
+          "JumpAnchorStringId_VIE": "“Tôi dự đoán Frey sẽ thắng.”",
+          "JumpAnchorStringId_HIN": "मैं फ़्रेय की जीत की भविष्यवाणी करता हूँ।",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "루나의 승리를 예측한다.",
+          "JumpAnchorStringId_ENG": "Bet on Luna to win.",
+          "JumpAnchorStringId_JPN": "ルナの勝利を予想する。",
+          "JumpAnchorStringId_CHN": "预测露娜会获胜。",
+          "JumpAnchorStringId_TWN": "預測露娜會獲勝。",
+          "JumpAnchorStringId_FRA": "« Je prédis la victoire de Luna. »",
+          "JumpAnchorStringId_DEU": "„Ich sage Lunas Sieg voraus.“",
+          "JumpAnchorStringId_ESP": "Predigo la victoria de Luna.",
+          "JumpAnchorStringId_PRT": "Prevejo a vitória de Luna.",
+          "JumpAnchorStringId_THA": "ฉันทำนายว่าลูนาจะชนะค่ะ",
+          "JumpAnchorStringId_IND": "Aku memprediksi kemenangan Luna.",
+          "JumpAnchorStringId_VIE": "“Tôi dự đoán Luna sẽ thắng.”",
+          "JumpAnchorStringId_HIN": "मैं लूना की जीत की भविष्यवाणी करता हूँ।",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 10,
+      "JumpAnchorInfo": "JUMPANCHOR_1_SUCCESS",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_PRAY",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 19,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "두 사람 다 고만고만한 패를 가지고 승부를 내던 모양이다...",
+      "UnitTalk_ENG": "Looks like the both of them were trying to settle it with hands that were about evenly matched...",
+      "UnitTalk_JPN": "どうやら二人とも、似たり寄ったりの手札で勝負を挑んでいたようだ…",
+      "UnitTalk_CHN": "看来两人都是拿着差不多的手牌分出胜负的…",
+      "UnitTalk_TWN": "看來兩人都是拿著差不多的手牌分出勝負的…",
+      "UnitTalk_FRA": "Les deux avaient des mains équilibrées...",
+      "UnitTalk_DEU": "Es schien, als hätten beide ähnliche Karten und den Sieg angestrebt.",
+      "UnitTalk_ESP": "Ambos parecían tener manos iguales en el juego...",
+      "UnitTalk_PRT": "Ambos parecem estar jogando com mãos igualmente medíocres...",
+      "UnitTalk_THA": "ทั้งสองคนต่างก็มีไพ่ที่งั้นๆ และพยายามจะเอาชนะให้ได้...",
+      "UnitTalk_IND": "Sepertinya mereka berdua punya kartu yang biasa-biasa saja dan mencoba untuk menang...",
+      "UnitTalk_VIE": "Cả hai đều có bài tương đương nhau...",
+      "UnitTalk_HIN": "ऐसा लगता है कि उन दोनों के हाथ में साधारण पत्ते थे और वे जीतने की कोशिश कर रहे थे...",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_PRAY",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 15,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "두 사람 다 고만고만한 패를 가지고 승부를 내던 모양이다...",
+      "UnitTalk_ENG": "Looks like the both of them were trying to settle it with hands that were about evenly matched...",
+      "UnitTalk_JPN": "二人はどんぐりの背比べのような手札で、勝負をしていたようだ…",
+      "UnitTalk_CHN": "看来两人都是拿着差不多的手牌分出胜负的…",
+      "UnitTalk_TWN": "看來兩人都是拿著差不多的手牌分出勝負的…",
+      "UnitTalk_FRA": "Les deux avaient des mains équilibrées...",
+      "UnitTalk_DEU": "Es schien, als hätten beide ähnliche Karten und den Sieg angestrebt.",
+      "UnitTalk_ESP": "Ambos parecían tener manos iguales en el juego...",
+      "UnitTalk_PRT": "Ambos parecem estar jogando com mãos igualmente fracas...",
+      "UnitTalk_THA": "ทั้งสองคนต่างก็มีไพ่ที่งั้นๆ และพยายามจะเอาชนะให้ได้...",
+      "UnitTalk_IND": "Sepertinya mereka berdua punya kartu yang biasa-biasa saja dan mencoba untuk menang...",
+      "UnitTalk_VIE": "“Có vẻ cả hai đều có bài làng nhàng và đang cố gắng giành chiến thắng…”",
+      "UnitTalk_HIN": "ऐसा लगता है कि उन दोनों के हाथ में साधारण पत्ते थे और वे जीतने की कोशिश कर रहे थे...",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_PRAY",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 13,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "두 사람 다 고만고만한 패를 가지고 승부를 내던 모양이다...",
+      "UnitTalk_ENG": "Looks like the both of them were trying to settle it with hands that were about evenly matched...",
+      "UnitTalk_JPN": "二人はどんぐりの背比べのような手札で、勝負をしていたようだ…",
+      "UnitTalk_CHN": "看来两人都是拿着差不多的手牌分出胜负的…",
+      "UnitTalk_TWN": "看來兩人都是拿著差不多的手牌分出勝負的…",
+      "UnitTalk_FRA": "Les deux avaient des mains équilibrées...",
+      "UnitTalk_DEU": "Es schien, als hätten beide ähnliche Karten und den Sieg angestrebt.",
+      "UnitTalk_ESP": "Ambos parecían tener manos iguales en el juego...",
+      "UnitTalk_PRT": "Ambos parecem estar jogando com mãos igualmente fracas...",
+      "UnitTalk_THA": "ทั้งสองคนต่างก็มีไพ่ที่งั้นๆ และพยายามจะเอาชนะให้ได้...",
+      "UnitTalk_IND": "Sepertinya mereka berdua punya kartu yang biasa-biasa saja dan mencoba untuk menang...",
+      "UnitTalk_VIE": "Cả hai đều có bài tương đương nhau...",
+      "UnitTalk_HIN": "ऐसा लगता है कि उन दोनों के हाथ में साधारण पत्ते थे और वे जीतने की कोशिश कर रहे थे...",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "JumpAnchorInfo": "JUMPANCHOR_FINISH",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL"
+    }
+  ]
+}

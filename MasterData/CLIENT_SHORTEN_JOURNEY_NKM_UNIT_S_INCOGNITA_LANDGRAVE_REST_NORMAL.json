@@ -1,0 +1,34 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_INCOGNITA_LANDGRAVE_REST_NORMAL",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_REST",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 2,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 평범한 휴식을 취했다.",
+      "UnitTalk_ENG": "<color=#F7BE45>[CHARACTER_NAME]</color> got some rest.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は、十分に休息をとれたようだ。",
+      "UnitTalk_CHN": "<color=#F7BE45>[CHARACTER_NAME]</color>进行了平淡的休息。",
+      "UnitTalk_TWN": "<color=#F7BE45>[CHARACTER_NAME]</color>進行了平淡的休息。",
+      "UnitTalk_FRA": "<color=#F7BE45>[CHARACTER_NAME]</color> s'est accordé un repos ordinaire.",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color> hat sich normal ausgeruht.",
+      "UnitTalk_ESP": "<color=#F7BE45>[CHARACTER_NAME]</color> tomó un descanso normal.",
+      "UnitTalk_PRT": "<color=#F7BE45>[CHARACTER_NAME]</color> tirou um descanso comum.",
+      "UnitTalk_THA": "<color=#F7BE45>[CHARACTER_NAME]</color> พักผ่อนตามปกติ",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> mengambil istirahat biasa.",
+      "UnitTalk_VIE": "<color=#F7BE45>[CHARACTER_NAME]</color> đã có một quãng nghỉ bình thường.",
+      "TalkTime": 0.03
+    }
+  ]
+}

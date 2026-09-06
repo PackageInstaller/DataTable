@@ -1,0 +1,56 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_COUNTERSIDE_MINA_03",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_GRACE_DUALSWORD_01",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_FIELD_PLAIN.png",
+      "UnitStrId": "NKM_UNIT_NPC_COUNTERSIDE_MINA",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_GRACE_DUALSWORD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "힐데와 유미나는 놀라운 호흡으로 적을 제압했다.",
+      "UnitTalk_ENG": "Fighting in perfect sync, Hilde and Mina overwhelmed their enemies together.",
+      "UnitTalk_JPN": "ヒルデとミナは、阿吽の呼吸で敵を圧倒した。",
+      "UnitTalk_CHN": "希尔德与刘米娜以惊人的默契压制了敌人。",
+      "UnitTalk_TWN": "希爾德與劉米娜以驚人的默契壓制了敵人。",
+      "UnitTalk_FRA": "Hilde et Yumina ont maîtrisé l'ennemi avec une coordination incroyable.",
+      "UnitTalk_DEU": "„Hilde und Yumina überwältigten den Feind mit erstaunlichem Teamwork.“",
+      "UnitTalk_ESP": "Hilde y Yumina sometieron al enemigo con una coordinación asombrosa.",
+      "UnitTalk_PRT": "Hilde e Yumina dominaram o inimigo com uma sintonia incrível.",
+      "UnitTalk_THA": "ฮิลเด้และยูมิน่าปราบศัตรูลงได้ด้วยการประสานงานที่น่าทึ่งครับ/ค่ะ",
+      "UnitTalk_IND": "Hilde dan Yumina mengalahkan musuh dengan kerja sama tim yang luar biasa.",
+      "UnitTalk_VIE": "Hilde và Yumina đã áp đảo kẻ địch với sự phối hợp đáng kinh ngạc.",
+      "UnitTalk_HIN": "हिल्डे और यूमिना ने शानदार तालमेल से दुश्मन को काबू कर लिया।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_GRACE_DUALSWORD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_GRACE_DUALSWORD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    }
+  ]
+}

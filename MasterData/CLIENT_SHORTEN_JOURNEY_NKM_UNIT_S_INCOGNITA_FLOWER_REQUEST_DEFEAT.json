@@ -10,7 +10,7 @@
       "WaitClick": false,
       "WaitTime": 0.0,
       "BgFileName": "CURRENT_TOWN_CANDLE",
-      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitStrId": "CURRENT_CHARACTER",
       "UnitMotion": "SAD"
     },
     {
@@ -20,7 +20,18 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "의뢰를 실패한 <color=#F7BE45>[CHARACTER_NAME]</color>(은)는 모든 것이 부질없다고 자조한다.",
+      "UnitTalk_ENG": "After failing the quest, <color=#F7BE45>[CHARACTER_NAME]</color> self-deprecatingly laments that everything is pointless.",
       "UnitTalk_JPN": "依頼に失敗した<color=#F7BE45>[CHARACTER_NAME]</color>は、すべてが無駄だと自嘲する。",
+      "UnitTalk_CHN": "未能完成委托的<color=#F7BE45>[CHARACTER_NAME]</color>自嘲地说一切都是徒劳。",
+      "UnitTalk_TWN": "未能完成委託的<color=#F7BE45>[CHARACTER_NAME]</color>自嘲地說一切都是徒勞。",
+      "UnitTalk_FRA": "Après l'échec de la quête, <color=#F7BE45>[CHARACTER_NAME]</color> se lamente avec autodérision que tout est vain.",
+      "UnitTalk_DEU": "Nach dem Scheitern der Mission beklagt sich <color=#F7BE45>[CHARACTER_NAME]</color> selbstironisch, dass alles sinnlos ist.",
+      "UnitTalk_ESP": "Después de fallar la misión, <color=#F7BE45>[CHARACTER_NAME]</color> se lamenta con autodesprecio de que todo es inútil.",
+      "UnitTalk_PRT": "Após falhar na missão, <color=#F7BE45>[CHARACTER_NAME]</color> lamenta que tudo é inútil, com autodepreciação.",
+      "UnitTalk_THA": "หลังจากทำภารกิจไม่สำเร็จ <color=#F7BE45>[CHARACTER_NAME]</color> ก็คร่ำครวญอย่างตัดพ้อว่าทุกอย่างไร้ค่า",
+      "UnitTalk_IND": "Setelah gagal dalam misi, <color=#F7BE45>[CHARACTER_NAME]</color> mencela diri sendiri bahwa semuanya sia-sia.",
+      "UnitTalk_VIE": "Sau khi thất bại nhiệm vụ, <color=#F7BE45>[CHARACTER_NAME]</color> tự ti than thở rằng mọi thứ đều vô nghĩa.",
+      "UnitTalk_HIN": "मिशन में असफल होने के बाद, <color=#F7BE45>[CHARACTER_NAME]</color> खुद को कोसते हुए कहता है कि सब कुछ व्यर्थ है।",
       "TalkTime": 0.03
     },
     {
@@ -33,13 +44,35 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "다음엔 좋은 결과를 거두자!",
+          "JumpAnchorStringId_ENG": "We'll get better results next time!",
           "JumpAnchorStringId_JPN": "次は良い結果を出そう！",
+          "JumpAnchorStringId_CHN": "下次争取好结果吧！",
+          "JumpAnchorStringId_TWN": "下次爭取好結果吧！",
+          "JumpAnchorStringId_FRA": "Nous obtiendrons de meilleurs résultats la prochaine fois !",
+          "JumpAnchorStringId_DEU": "Nächstes Mal erzielen wir bessere Ergebnisse!",
+          "JumpAnchorStringId_ESP": "¡La próxima vez obtendremos mejores resultados!",
+          "JumpAnchorStringId_PRT": "Da próxima vez, teremos resultados melhores!",
+          "JumpAnchorStringId_THA": "ครั้งหน้าเราจะทำให้ได้ผลลัพธ์ที่ดีกว่านี้!",
+          "JumpAnchorStringId_IND": "Kita akan mendapatkan hasil yang lebih baik lain kali!",
+          "JumpAnchorStringId_VIE": "Lần tới, chúng ta hãy cùng đạt được kết quả tốt hơn!",
+          "JumpAnchorStringId_HIN": "अगली बार बेहतर परिणाम हासिल करें!",
           "JumpAnchorId": "REWARD_ANCHOR_1"
         },
         {
           "Uid": 2,
           "JumpAnchorStringId_KOR": "한입 마실래?",
+          "JumpAnchorStringId_ENG": "Want a sip?",
           "JumpAnchorStringId_JPN": "一口飲む？",
+          "JumpAnchorStringId_CHN": "要喝一口吗？",
+          "JumpAnchorStringId_TWN": "要喝一口嗎？",
+          "JumpAnchorStringId_FRA": "Tu veux une gorgée ?",
+          "JumpAnchorStringId_DEU": "Möchtest du einen Schluck?",
+          "JumpAnchorStringId_ESP": "¿Quieres un sorbo?",
+          "JumpAnchorStringId_PRT": "Quer um gole?",
+          "JumpAnchorStringId_THA": "อยากจิบหน่อยไหม?",
+          "JumpAnchorStringId_IND": "Mau seteguk?",
+          "JumpAnchorStringId_VIE": "Muốn uống một ngụm không?",
+          "JumpAnchorStringId_HIN": "एक घूंट लेना चाहते हो?",
           "JumpAnchorId": "REWARD_ANCHOR_2"
         }
       ]
@@ -51,7 +84,7 @@
       "JumpAnchorInfo": "JUMPANCHOR_1_SUCCESS",
       "WaitClick": false,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitStrId": "CURRENT_CHARACTER",
       "UnitMotion": "NORMAL"
     },
     {
@@ -61,7 +94,18 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 부정할 생각은 없는 모양이다.",
+      "UnitTalk_ENG": "<color=#F7BE45>[CHARACTER_NAME]</color> didn't seem intent on arguing the point.",
       "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は否定するつもりはないようだ。",
+      "UnitTalk_CHN": "<color=#F7BE45>[CHARACTER_NAME]</color>似乎无意否认。",
+      "UnitTalk_TWN": "<color=#F7BE45>[CHARACTER_NAME]</color>似乎無意否認。",
+      "UnitTalk_FRA": "<color=#F7BE45>[CHARACTER_NAME]</color> ne semblait pas vouloir nier.",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color> schien nicht die Absicht zu haben, es zu bestreiten.",
+      "UnitTalk_ESP": "<color=#F7BE45>[CHARACTER_NAME]</color> no parecía tener intención de negarlo.",
+      "UnitTalk_PRT": "<color=#F7BE45>[CHARACTER_NAME]</color> não parecia ter a intenção de negar.",
+      "UnitTalk_THA": "<color=#F7BE45>[CHARACTER_NAME]</color> ดูเหมือนจะไม่ได้คิดจะปฏิเสธ",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> tampaknya tidak berniat membantah.",
+      "UnitTalk_VIE": "<color=#F7BE45>[CHARACTER_NAME]</color> dường như không có ý định phủ nhận.",
+      "UnitTalk_HIN": "<color=#F7BE45>[CHARACTER_NAME]</color> का बहस करने का कोई इरादा नहीं लगता।",
       "TalkTime": 0.03
     },
     {
@@ -71,7 +115,7 @@
       "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
       "WaitClick": false,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitStrId": "CURRENT_CHARACTER",
       "UnitMotion": "SERIOUS"
     },
     {
@@ -81,7 +125,18 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "어깨를 늘어뜨린 <color=#F7BE45>[CHARACTER_NAME]</color>(은)는 힘없이 걸어갔다.",
+      "UnitTalk_ENG": "<color=#F7BE45>[CHARACTER_NAME]</color> sagged at the shoulders and walked off with heavy steps.",
       "UnitTalk_JPN": "肩を落とした<color=#F7BE45>[CHARACTER_NAME]</color>は、力なく歩いていった。",
+      "UnitTalk_CHN": "垂着肩膀的<color=#F7BE45>[CHARACTER_NAME]</color>有气无力地离开了。",
+      "UnitTalk_TWN": "垂著肩膀的<color=#F7BE45>[CHARACTER_NAME]</color>有氣無力地離開了。",
+      "UnitTalk_FRA": "<color=#F7BE45>[CHARACTER_NAME]</color> laissa tomber ses épaules et s'éloigna d'un pas lourd.",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color> ließ die Schultern hängen und ging mit schweren Schritten davon.",
+      "UnitTalk_ESP": "<color=#F7BE45>[CHARACTER_NAME]</color> con los hombros caídos, se fue con pasos pesados.",
+      "UnitTalk_PRT": "<color=#F7BE45>[CHARACTER_NAME]</color> com os ombros caídos, afastou-se sem forças.",
+      "UnitTalk_THA": "<color=#F7BE45>[CHARACTER_NAME]</color> ไหล่ตกและเดินจากไปอย่างหมดแรง",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> merosotkan bahunya dan berjalan pergi dengan langkah berat.",
+      "UnitTalk_VIE": "<color=#F7BE45>[CHARACTER_NAME]</color> thả lỏng vai, bước đi mệt mỏi.",
+      "UnitTalk_HIN": "<color=#F7BE45>[CHARACTER_NAME]</color> के कंधे झुक गए और वह भारी कदमों से चला गया।",
       "TalkTime": 0.03
     },
     {
@@ -91,7 +146,7 @@
       "JumpAnchorInfo": "JUMPANCHOR_2",
       "WaitClick": false,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitStrId": "CURRENT_CHARACTER",
       "UnitMotion": "SMILE"
     },
     {
@@ -101,7 +156,18 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 포션을 받고 기뻐했다.",
+      "UnitTalk_ENG": "<color=#F7BE45>[CHARACTER_NAME]</color> brightened up after receiving the potion.",
       "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は、ポーションを受け取って喜んだ。",
+      "UnitTalk_CHN": "<color=#F7BE45>[CHARACTER_NAME]</color>收到药水后很开心。",
+      "UnitTalk_TWN": "<color=#F7BE45>[CHARACTER_NAME]</color>收到藥水後很開心。",
+      "UnitTalk_FRA": "<color=#F7BE45>[CHARACTER_NAME]</color> s'est égayé(e) après avoir reçu la potion.",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color> freute sich, nachdem er den Trank erhalten hatte.",
+      "UnitTalk_ESP": "<color=#F7BE45>[CHARACTER_NAME]</color> se animó después de recibir la poción.",
+      "UnitTalk_PRT": "<color=#F7BE45>[CHARACTER_NAME]</color> se animou depois de receber a poção.",
+      "UnitTalk_THA": "หลังจากได้รับโพชั่น <color=#F7BE45>[CHARACTER_NAME]</color> ก็ดูสดใสขึ้น",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> menjadi ceria setelah menerima ramuan itu.",
+      "UnitTalk_VIE": "<color=#F7BE45>[CHARACTER_NAME]</color> vui vẻ hẳn lên sau khi nhận được bình thuốc.",
+      "UnitTalk_HIN": "पोशन मिलने के बाद <color=#F7BE45>[CHARACTER_NAME]</color> का चेहरा खिल उठा।",
       "TalkTime": 0.03
     }
   ]

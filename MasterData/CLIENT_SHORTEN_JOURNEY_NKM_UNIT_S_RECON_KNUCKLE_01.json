@@ -1,0 +1,39 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_RECON_KNUCKLE_01",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_KNUCKLE_01",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_TRAIN_STATION.png",
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitMotion": "USN_UI_TOUCH"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_KNUCKLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "로베르타는 기차역에서 벌어진 사건을 자신만의 방식으로 해결한다.",
+      "UnitTalk_ENG": "Roberta solved a case at the train station in her own unique way.",
+      "UnitTalk_JPN": "駅で起きた事件を、ロベルタは自分なりの方法で解決する。",
+      "UnitTalk_CHN": "萝贝塔以自己独特的方式解决了发生在火车站的事件。",
+      "UnitTalk_TWN": "蘿貝塔以自己獨特的方式解決了發生在火車站的事件。",
+      "UnitTalk_FRA": "Roberta résout l'incident de la gare à sa manière.",
+      "UnitTalk_DEU": "Roberta löst den Vorfall am Bahnhof auf ihre eigene Weise.",
+      "UnitTalk_ESP": "Roberta resuelve el caso en la estación de tren a su manera.",
+      "UnitTalk_PRT": "Roberta resolve o incidente na estação de trem à sua maneira.",
+      "UnitTalk_THA": "โรแบร์ตาแก้ไขคดีที่เกิดขึ้นที่สถานีรถไฟในแบบของเธอเอง",
+      "UnitTalk_IND": "Roberta menyelesaikan kasus yang terjadi di stasiun kereta dengan caranya sendiri.",
+      "UnitTalk_VIE": "Roberta giải quyết vụ án xảy ra tại Ga Tàu theo cách riêng của mình.",
+      "UnitTalk_HIN": "रोबर्टा ने रेलवे स्टेशन पर हुए मामले को अपने तरीके से सुलझाया।",
+      "TalkTime": 0.03
+    }
+  ]
+}

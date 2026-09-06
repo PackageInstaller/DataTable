@@ -1,0 +1,131 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: BATTLE_TEMPLET_EVENT_CUBE",
+    "_Version": 0,
+    "Data": [
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 2160301,
+          "BattleStrID" : "NORMAL_BATTLE_EVENT_CUBE_2160301",
+          "IntervalId" : "DATE_STORY_EVENT_SUMMER_01_OVERLOAD_01",
+          "OrderList" : 1,
+          "BattleTabId" : 21603,
+          "IsReroll" : true,
+          "LevelGroupId" : 1,
+          "MainBossPrefab" : "UI_EVENT_CUBE_UNIT_MON_SHARK_CHAIN_MAIN.prefab",
+          "EventBannerPrefab" : "EC_SUMMER_BANNER.prefab",
+          "TotalPointRewardGroupId" : 999,
+          "PointRewardGroupId" : 1,
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_EVENT_CUBE_SUMMER_01_001.txt",
+          "BattleMapStrID" : "MAP_BATTLE_ISLAND_WRECK_NIGHT_OVERLOAD",
+          "BattleType" : "NBT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "CubeType" : "CUBE_LIMIT_TURN_WAVE",
+          "BattleTitleName" : "SI_OVERLOAD_CUBE",
+          "BattleName" : "SI_EVENT_SUMMER_CHALLENGE_STAGE@@Ⅰ",
+          "BattleDesc" : "SI_NORMAL_BATTLE_DESC_EVENT_CUBE",
+          "AdviceDesc" : "SI_OVERLOAD_CUBE_ADVISE",
+          "BattleIcon" : "UFS_NKM_UNIT_MON_STALKER_SKELETON_BLACK.png",
+          "Difficulty" : "NORMAL",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 150,
+          "MusicName" : "MUSIC_BATTLE_CUBE_PALACE.mp3",
+          "BattlePower" : 25700,
+          "RerollSkillGroup" : 
+          [
+            {
+              "RerollSkillGroupId" : 991
+            },
+
+            {
+              "RerollSkillGroupId" : 992
+            },
+
+            {
+              "RerollSkillGroupId" : 993
+            }
+          ],
+          "SkillGroup" : 
+          [
+            {
+              "SkillGroupId" : 2160301
+            },
+
+            {
+              "SkillGroupId" : 2160302
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 2160302,
+          "BattleStrID" : "NORMAL_BATTLE_EVENT_CUBE_2160302",
+          "IntervalId" : "DATE_STORY_EVENT_SUMMER_01_OVERLOAD_02",
+          "OrderList" : 2,
+          "BattleTabId" : 21603,
+          "IsReroll" : true,
+          "MainBossPrefab" : "UI_EVENT_CUBE_UNIT_MON_SHARK_CHAIN_MAIN.prefab",
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_EVENT_CUBE_SUMMER_01_002.txt",
+          "BattleMapStrID" : "MAP_BATTLE_ISLAND_WRECK_NIGHT_OVERLOAD",
+          "BattleType" : "NBT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "CubeType" : "CUBE_LIMIT_TURN_WAVE",
+          "BattleTitleName" : "SI_OVERLOAD_CUBE",
+          "BattleName" : "SI_EVENT_SUMMER_CHALLENGE_STAGE@@Ⅱ",
+          "BattleDesc" : "SI_NORMAL_BATTLE_DESC_EVENT_CUBE",
+          "AdviceDesc" : "SI_OVERLOAD_CUBE_ADVISE",
+          "BattleIcon" : "UFS_NKM_UNIT_MON_STALKER_SKELETON_BLACK.png",
+          "Difficulty" : "NORMAL",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 550,
+          "MusicName" : "MUSIC_BATTLE_CUBE_PALACE.mp3",
+          "BattlePower" : 87700,
+          "StellaMemoryWarning" : true,
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_ALL_MISSION_CLEAR",
+              "BattleUnlockReqId" : 2160301
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 2160303,
+          "BattleStrID" : "NORMAL_BATTLE_EVENT_CUBE_2160303",
+          "IntervalId" : "DATE_STORY_EVENT_SUMMER_01_OVERLOAD_03",
+          "OrderList" : 3,
+          "BattleTabId" : 21603,
+          "IsReroll" : true,
+          "MainBossPrefab" : "UI_EVENT_CUBE_UNIT_MON_SHARK_CHAIN_MAIN.prefab",
+          "BattleTempletFileName" : "JSON_NORMAL_BATTLE_EVENT_CUBE_SUMMER_01_003.txt",
+          "BattleMapStrID" : "MAP_BATTLE_ISLAND_WRECK_NIGHT_OVERLOAD",
+          "BattleType" : "NBT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "CubeType" : "CUBE_LIMIT_TURN_WAVE",
+          "BattleTitleName" : "SI_OVERLOAD_CUBE",
+          "BattleName" : "SI_EVENT_SUMMER_CHALLENGE_STAGE@@Ⅲ",
+          "BattleDesc" : "SI_NORMAL_BATTLE_DESC_EVENT_CUBE",
+          "AdviceDesc" : "SI_OVERLOAD_CUBE_ADVISE",
+          "BattleIcon" : "UFS_NKM_UNIT_MON_STALKER_SKELETON_BLACK.png",
+          "Difficulty" : "NORMAL",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1150,
+          "MusicName" : "MUSIC_BATTLE_CUBE_PALACE.mp3",
+          "BattlePower" : 180700,
+          "StellaMemoryWarning" : true,
+          "BattleUnlockData" : 
+          [
+            {
+              "BattleUnlockType" : "BATTLE_ALL_MISSION_CLEAR",
+              "BattleUnlockReqId" : 2160302
+            },
+
+            {
+              "BattleUnlockType" : "EVENT_CUBE_TOP_POINT",
+              "BattleUnlockReqValue" : 8000
+            }
+          ]
+        }
+    ]
+}

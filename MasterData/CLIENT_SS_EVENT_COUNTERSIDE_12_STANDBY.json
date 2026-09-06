@@ -1,0 +1,835 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: SS_EVENT_COUNTERSIDE_12_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 51,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "BgFileName": "ILLUST_BG_BLACK.png",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CAR_BREAK.wav"
+    },
+    {
+      "Uid": 52,
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_DOOR_OPEN_1.wav"
+    },
+    {
+      "Uid": 53,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BIRD_CHIRPING.wav"
+    },
+    {
+      "Uid": 1,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_02.wav",
+      "UnitNameString": [
+        "SI_HILDE"
+      ],
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "그런데 신입, 양자 터널에서 배출될 때 꿨다던 꿈은 어떻게 됐지?",
+      "UnitTalk_ENG": "By the way, rookie. What happened to that dream you said you had when you were passed through the quantum tunnel?",
+      "UnitTalk_JPN": "ところで、新人。量子トンネルから出る時に見た夢はどうなった？",
+      "UnitTalk_CHN": "对了，新人，妳说从量子隧道排出的时候做的那个梦，后来怎么样了？",
+      "UnitTalk_TWN": "對了，新人，妳說從量子隧道排出的時候做的那個夢，後來怎麼樣了？",
+      "UnitTalk_FRA": "Alors, nouvelle recrue, qu'est-il advenu du rêve que tu as fait en sortant du tunnel quantique ?",
+      "UnitTalk_DEU": "Aber, Neuling, was ist mit dem Traum, den du hattest, als du aus dem Quantentunnel kamst?",
+      "UnitTalk_ESP": "¿Y qué pasó con el sueño que tuviste cuando fuiste expulsado del túnel cuántico, novato?",
+      "UnitTalk_PRT": "Mas, novata, o que aconteceu com o sonho que você teve quando foi ejetada do túnel quântico?",
+      "UnitTalk_THA": "แต่ว่าน้องใหม่ ความฝันที่เคยฝันตอนออกมาจากอุโมงค์ควอนตัมเป็นยังไงบ้างครับ?",
+      "UnitTalk_IND": "Tapi, Rekrut, bagaimana dengan mimpi yang kau alami saat dikeluarkan dari terowongan kuantum?",
+      "UnitTalk_VIE": "Mà này, người mới, giấc mơ cậu đã mơ khi thoát ra khỏi đường hầm lượng tử thì sao rồi?",
+      "UnitTalk_HIN": "लेकिन रंगरूट, जब तुम क्वांटम टनल से बाहर निकले थे, तो तुमने जो सपना देखा था, उसका क्या हुआ?",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 2,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_MINA"
+      ],
+      "UnitTalk_KOR": "꿈?",
+      "UnitTalk_ENG": "Dream?",
+      "UnitTalk_JPN": "夢？",
+      "UnitTalk_CHN": "梦？",
+      "UnitTalk_TWN": "夢？",
+      "UnitTalk_FRA": "Un rêve ?",
+      "UnitTalk_DEU": "Traum?",
+      "UnitTalk_ESP": "¿Sueño?",
+      "UnitTalk_PRT": "Sonho?",
+      "UnitTalk_THA": "ฝันเหรอคะ?",
+      "UnitTalk_IND": "Mimpi?",
+      "UnitTalk_VIE": "Mơ ư?",
+      "UnitTalk_HIN": "सपना?",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_MINA"
+      ],
+      "UnitTalk_KOR": "아아… 소대장이랑 둘이 이면세계에 남았던 꿈 말이지.",
+      "UnitTalk_ENG": "Ah... the one where you and I stayed behind in the Counterside?",
+      "UnitTalk_JPN": "あぁ…小隊長と二人で裏世界に取り残された夢のこと？",
+      "UnitTalk_CHN": "啊啊…是指和小队长两个人留在反面世界的那个梦啊。",
+      "UnitTalk_TWN": "啊啊…是指和小隊長兩個人留在反面世界的那個夢啊。",
+      "UnitTalk_FRA": "Ah oui… Le rêve où le chef d'escouade et moi étions restés dans le monde inversé.",
+      "UnitTalk_DEU": "Ach ja… der Traum, in dem der Truppführer und ich in der Gegenwelt zurückblieben.",
+      "UnitTalk_ESP": "Ah, sí… el sueño en el que el líder de escuadrón y yo nos quedamos en el mundo del otro lado.",
+      "UnitTalk_PRT": "Ah, sim… O sonho em que eu e o líder do esquadrão ficamos no mundo reverso.",
+      "UnitTalk_THA": "อ๋อ… ฝันที่ว่าฉันกับหัวหน้าหน่วยติดอยู่ในโลกเบื้องหลังน่ะเหรอคะ",
+      "UnitTalk_IND": "Oh… Maksudmu mimpi saat aku dan komandan peleton tertinggal di dunia lain.",
+      "UnitTalk_VIE": "À à… Giấc mơ tôi và trung đội trưởng đã ở lại thế giới khác ấy rồi.",
+      "UnitTalk_HIN": "ओह… वह सपना जब मैं और स्क्वाड लीडर दूसरी दुनिया में रह गए थे।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_MINA"
+      ],
+      "UnitTalk_KOR": "괜찮아. 그 뒤로 같은 꿈은 꾸지 않았어.",
+      "UnitTalk_ENG": "It's fine. I haven't had that dream again since then.",
+      "UnitTalk_JPN": "平気。あれ以降、同じ夢は見てないから。",
+      "UnitTalk_CHN": "没事了，从那之后就没再做过同样的梦了。",
+      "UnitTalk_TWN": "沒事了，從那之後就沒再做過同樣的夢了。",
+      "UnitTalk_FRA": "Ça va. Je n'ai plus fait le même rêve depuis.",
+      "UnitTalk_DEU": "Schon gut. Danach hatte ich denselben Traum nicht mehr.",
+      "UnitTalk_ESP": "Está bien. Después de eso, no volví a tener el mismo sueño.",
+      "UnitTalk_PRT": "Está tudo bem. Não tive o mesmo sonho depois disso.",
+      "UnitTalk_THA": "ไม่เป็นไรหรอกค่ะ หลังจากนั้นก็ไม่ฝันแบบนั้นอีกเลย",
+      "UnitTalk_IND": "Tidak apa-apa. Sejak itu, aku tidak pernah bermimpi yang sama lagi.",
+      "UnitTalk_VIE": "Không sao đâu. Sau đó tôi không mơ thấy giấc mơ tương tự nữa.",
+      "UnitTalk_HIN": "ठीक है। उसके बाद मैंने ऐसा कोई सपना नहीं देखा।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_MINA"
+      ],
+      "UnitTalk_KOR": "이제는 내용도 가물가물한걸.",
+      "UnitTalk_ENG": "I can barely remember the details anymore.",
+      "UnitTalk_JPN": "もう内容も、うろ覚えだしね。",
+      "UnitTalk_CHN": "现在连内容都记不太清楚了。",
+      "UnitTalk_TWN": "現在連內容都記不太清楚了。",
+      "UnitTalk_FRA": "Maintenant, même le contenu est flou.",
+      "UnitTalk_DEU": "Jetzt erinnere ich mich kaum noch an den Inhalt.",
+      "UnitTalk_ESP": "Ahora, el contenido es tan vago…",
+      "UnitTalk_PRT": "Agora, o conteúdo já está meio embaçado.",
+      "UnitTalk_THA": "ตอนนี้เนื้อหาก็เลือนลางไปหมดแล้วค่ะ",
+      "UnitTalk_IND": "Sekarang isinya pun sudah samar-samar.",
+      "UnitTalk_VIE": "Giờ thì nội dung cũng đã mơ hồ rồi.",
+      "UnitTalk_HIN": "अब तो मुझे उसकी बातें भी ठीक से याद नहीं।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_MINA"
+      ],
+      "UnitTalk_KOR": "하지만…",
+      "UnitTalk_ENG": "But...",
+      "UnitTalk_JPN": "でも…",
+      "UnitTalk_CHN": "不过…",
+      "UnitTalk_TWN": "不過…",
+      "UnitTalk_FRA": "Mais…",
+      "UnitTalk_DEU": "Aber…",
+      "UnitTalk_ESP": "Pero…",
+      "UnitTalk_PRT": "Mas…",
+      "UnitTalk_THA": "แต่ว่า…",
+      "UnitTalk_IND": "Tapi…",
+      "UnitTalk_VIE": "Nhưng mà…",
+      "UnitTalk_HIN": "लेकिन…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_MINA"
+      ],
+      "UnitTalk_KOR": "왠지 꿈 속에서, 굉장히 소중한 만남이 있었던 것 같아.",
+      "UnitTalk_ENG": "Somehow, it feels like I had a truly precious encounter in that dream.",
+      "UnitTalk_JPN": "なんだか夢の中で、すごく大切な出会いがあったような気がするの。",
+      "UnitTalk_CHN": "总觉得在梦里，好像有过一段非常珍贵的相遇。",
+      "UnitTalk_TWN": "總覺得在夢裡，好像有過一段非常珍貴的相遇。",
+      "UnitTalk_FRA": "J'ai l'impression d'avoir fait une rencontre très précieuse dans ce rêve.",
+      "UnitTalk_DEU": "Irgendwie hatte ich das Gefühl, dass es im Traum eine sehr wertvolle Begegnung gab.",
+      "UnitTalk_ESP": "Siento que en ese sueño tuve un encuentro muy valioso.",
+      "UnitTalk_PRT": "De alguma forma, parece que tive um encontro muito precioso naquele sonho.",
+      "UnitTalk_THA": "ไม่รู้ทำไมในฝันนั้นเหมือนมีการพบเจอที่สำคัญมากเกิดขึ้นค่ะ",
+      "UnitTalk_IND": "Entah kenapa, sepertinya ada pertemuan yang sangat berharga dalam mimpiku.",
+      "UnitTalk_VIE": "Không hiểu sao trong giấc mơ đó, tôi cảm thấy mình đã có một cuộc gặp gỡ rất quý giá.",
+      "UnitTalk_HIN": "मुझे लगता है कि सपने में मेरी किसी बहुत खास से मुलाकात हुई थी।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_MINA"
+      ],
+      "UnitTalk_KOR": "그 꿈을 떠올리면 지금도 왠지 가슴이 후련해지거든.",
+      "UnitTalk_ENG": "Even now, just thinking about it makes my chest feel lighter.",
+      "UnitTalk_JPN": "その夢を思い出すと、今でも胸がスッとするんだよね。",
+      "UnitTalk_CHN": "回想起那个梦，不知为何现在心里也会感到舒畅。",
+      "UnitTalk_TWN": "回想起那個夢，不知為何現在心裡也會感到舒暢。",
+      "UnitTalk_FRA": "Quand j'y repense, mon cœur se sent toujours étrangement apaisé.",
+      "UnitTalk_DEU": "Wenn ich an diesen Traum denke, fühlt sich mein Herz immer noch irgendwie erleichtert an.",
+      "UnitTalk_ESP": "Cuando recuerdo ese sueño, todavía siento una extraña ligereza en el pecho.",
+      "UnitTalk_PRT": "Quando penso naquele sonho, meu coração ainda se sente aliviado.",
+      "UnitTalk_THA": "พอคิดถึงฝันนั้นทีไร ตอนนี้ก็ยังรู้สึกโล่งใจอย่างบอกไม่ถูกเลยค่ะ",
+      "UnitTalk_IND": "Jika mengingat mimpi itu, entah kenapa hatiku terasa lega sampai sekarang.",
+      "UnitTalk_VIE": "Khi nhớ lại giấc mơ đó, không hiểu sao bây giờ tôi vẫn cảm thấy nhẹ nhõm trong lòng.",
+      "UnitTalk_HIN": "जब भी मैं उस सपने को याद करता हूँ, तो मेरा दिल हल्का हो जाता है।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_HILDE"
+      ],
+      "UnitTalk_KOR": "…그렇군. 그러면 됐다.",
+      "UnitTalk_ENG": "...I see. That's enough, then.",
+      "UnitTalk_JPN": "…そうか。ならよかった。",
+      "UnitTalk_CHN": "…是吗？那就好。",
+      "UnitTalk_TWN": "…是嗎？那就好。",
+      "UnitTalk_FRA": "…Je vois. C'est bon alors.",
+      "UnitTalk_DEU": "…Verstehe. Dann ist es gut.",
+      "UnitTalk_ESP": "…Ya veo. Entonces está bien.",
+      "UnitTalk_PRT": "…Entendi. Então está tudo bem.",
+      "UnitTalk_THA": "…อย่างนั้นเอง ถ้าอย่างนั้นก็ดีแล้ว",
+      "UnitTalk_IND": "…Begitu. Kalau begitu, baiklah.",
+      "UnitTalk_VIE": "…Ra vậy. Vậy thì được rồi.",
+      "UnitTalk_HIN": "…ठीक है। तो फिर सब ठीक है।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_JOOSHIYOON"
+      ],
+      "UnitTalk_KOR": "어라? 그러고 보니 스승님도 꿈 얘기를 하셨었죠?",
+      "UnitTalk_ENG": "Huh? Come to think of it, you mentioned a dream too, didn't you, Master?",
+      "UnitTalk_JPN": "おや？そういえば師匠も夢の話をしていましたよね？",
+      "UnitTalk_CHN": "咦？这么说来师父也提过梦的事呢？",
+      "UnitTalk_TWN": "咦？這麼說來師父也提過夢的事呢？",
+      "UnitTalk_FRA": "Joo Shiyoon : Tiens ? Maintenant que j'y pense, Maître a aussi parlé d'un rêve, n'est-ce pas ?",
+      "UnitTalk_DEU": "Joo Shiyoon: Oh? Hatte der Meister nicht auch von einem Traum erzählt?",
+      "UnitTalk_ESP": "Joo Shiyoon: ¿Oh? Ahora que lo pienso, ¿el Maestro también habló de un sueño?",
+      "UnitTalk_PRT": "Joo Shiyoon: Ah? Agora que você mencionou, o Mestre também falou sobre sonhos, não foi?",
+      "UnitTalk_THA": "จูชียุน: เอ๊ะ? ว่าไปแล้วอาจารย์ก็เคยพูดถึงเรื่องความฝันเหมือนกันนี่นาครับ?",
+      "UnitTalk_IND": "Joo Shiyoon: Oh? Kalau tidak salah, Guru juga pernah bercerita tentang mimpi, kan?",
+      "UnitTalk_VIE": "Joo Si-yoon: Ơ? Nhắc mới nhớ, Sư phụ cũng từng kể về giấc mơ mà?",
+      "UnitTalk_HIN": "जू सियुन: अरे? अब जब मैं सोचता हूँ, तो मास्टर ने भी सपने की बात की थी, है ना?",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_JOOSHIYOON"
+      ],
+      "UnitTalk_KOR": "저만 남겨 두고 두 분이서 즐거운 시간을 보내신 것 같아서 조금 섭섭한데요.",
+      "UnitTalk_ENG": "It feels a little unfair that you two had such a nice time together and left me out.",
+      "UnitTalk_JPN": "僕だけ仲間外れにして、二人で楽しい時間を過ごすなんて…寂しいですねぇ。",
+      "UnitTalk_CHN": "好像只有我被留下来，两位单独度过了愉快的时光，有点失落呢。",
+      "UnitTalk_TWN": "好像只有我被留下來，兩位單獨度過了愉快的時光，有點失落呢。",
+      "UnitTalk_FRA": "Joo Shiyoon : J'ai l'impression que vous vous êtes bien amusés tous les deux sans moi, c'est un peu décevant.",
+      "UnitTalk_DEU": "Joo Shiyoon: Es ist ein bisschen enttäuschend, dass ihr beide eine gute Zeit hattet und mich allein gelassen habt.",
+      "UnitTalk_ESP": "Joo Shiyoon: Me entristece que se divirtieran sin mí.",
+      "UnitTalk_PRT": "Joo Shiyoon: Fico um pouco chateado que vocês dois se divertiram e me deixaram de fora.",
+      "UnitTalk_THA": "จูชียุน: รู้สึกน้อยใจนิดหน่อยนะครับที่ปล่อยผมไว้คนเดียวแล้วทั้งสองคนก็ไปมีช่วงเวลาดีๆ ด้วยกัน",
+      "UnitTalk_IND": "Joo Shiyoon: Aku sedikit merasa sedih karena sepertinya kalian berdua bersenang-senang tanpa aku.",
+      "UnitTalk_VIE": "Hai người đã vui vẻ với nhau mà bỏ tôi lại một mình, tôi thấy hơi buồn đó nha.",
+      "UnitTalk_HIN": "जू सियुन: मुझे थोड़ा बुरा लग रहा है कि आप दोनों ने मुझे छोड़कर इतना अच्छा समय बिताया।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_MINA"
+      ],
+      "UnitTalk_KOR": "그런 말 하지 마. 그렇게 순탄한 꿈은 아니었으니까.",
+      "UnitTalk_ENG": "Don't say that. It wasn't exactly a pleasant dream.",
+      "UnitTalk_JPN": "変なこと言わないでよ。大変な夢だったんだから。",
+      "UnitTalk_CHN": "别这么说，那也不是多顺遂的梦。",
+      "UnitTalk_TWN": "別這麼說，那也不是多順遂的夢。",
+      "UnitTalk_FRA": "Ne dis pas ça. Ce n'était pas un rêve si paisible.",
+      "UnitTalk_DEU": "Sag so etwas nicht. Es war kein so reibungsloser Traum.",
+      "UnitTalk_ESP": "No digas eso. No fue un sueño tan tranquilo.",
+      "UnitTalk_PRT": "Não diga isso. Não foi um sonho tão tranquilo assim.",
+      "UnitTalk_THA": "อย่าพูดแบบนั้นสิคะ เพราะมันไม่ใช่ความฝันที่ราบรื่นขนาดนั้นหรอกค่ะ",
+      "UnitTalk_IND": "Jangan bilang begitu. Itu bukan mimpi yang mulus.",
+      "UnitTalk_VIE": "Đừng nói vậy. Đó không phải là một giấc mơ suôn sẻ đâu.",
+      "UnitTalk_HIN": "ऐसा मत कहो। वह इतना आसान सपना नहीं था।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_HILDE"
+      ],
+      "UnitTalk_KOR": "그럼 여기까지군.",
+      "UnitTalk_ENG": "Then this is where we part.",
+      "UnitTalk_JPN": "では、ここまでだな。",
+      "UnitTalk_CHN": "那么就到这里吧。",
+      "UnitTalk_TWN": "那麼就到這裡吧。",
+      "UnitTalk_FRA": "C'est tout pour le moment.",
+      "UnitTalk_DEU": "Dann bis hierhin.",
+      "UnitTalk_ESP": "Entonces, hasta aquí.",
+      "UnitTalk_PRT": "Então é isso.",
+      "UnitTalk_THA": "ถ้าอย่างนั้นก็ถึงตรงนี้แล้ว",
+      "UnitTalk_IND": "Kalau begitu, sampai di sini saja.",
+      "UnitTalk_VIE": "Vậy là đến đây thôi.",
+      "UnitTalk_HIN": "तो यहीं तक।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_HILDE"
+      ],
+      "UnitTalk_KOR": "다녀와라. 우리는 여기서 기다릴 테니.",
+      "UnitTalk_ENG": "Go on. We will wait here.",
+      "UnitTalk_JPN": "行ってこい。我々はここで待っている。",
+      "UnitTalk_CHN": "去吧，我们在这里等你。",
+      "UnitTalk_TWN": "去吧，我們在這裡等你。",
+      "UnitTalk_FRA": "Vas-y. Nous t'attendrons ici.",
+      "UnitTalk_DEU": "Geh nur. Wir warten hier auf dich.",
+      "UnitTalk_ESP": "Ve. Nosotros te esperaremos aquí.",
+      "UnitTalk_PRT": "Vá. Nós esperaremos aqui.",
+      "UnitTalk_THA": "ไปเถอะ พวกเราจะรออยู่ที่นี่",
+      "UnitTalk_IND": "Pergilah. Kami akan menunggu di sini.",
+      "UnitTalk_VIE": "Đi đi. Chúng tôi sẽ đợi ở đây.",
+      "UnitTalk_HIN": "जाओ और वापस आओ। हम यहीं तुम्हारा इंतज़ार करेंगे।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_MINA"
+      ],
+      "UnitTalk_KOR": "응. 같이 와 줘서 고마워.",
+      "UnitTalk_ENG": "Yeah. Thanks for coming with me.",
+      "UnitTalk_JPN": "うん。一緒に来てくれてありがとう。",
+      "UnitTalk_CHN": "嗯，谢谢你们陪我过来。",
+      "UnitTalk_TWN": "嗯，謝謝你們陪我過來。",
+      "UnitTalk_FRA": "Oui. Merci d'être venu avec moi.",
+      "UnitTalk_DEU": "Ja. Danke, dass du mitgekommen bist.",
+      "UnitTalk_ESP": "Sí. Gracias por venir conmigo.",
+      "UnitTalk_PRT": "Sim. Obrigada por vir comigo.",
+      "UnitTalk_THA": "อื้อ ขอบคุณที่มาด้วยกันนะคะ",
+      "UnitTalk_IND": "Ya. Terima kasih sudah menemaniku.",
+      "UnitTalk_VIE": "Ừm. Cảm ơn đã đi cùng tôi.",
+      "UnitTalk_HIN": "हाँ। साथ आने के लिए धन्यवाद।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_MINA"
+      ],
+      "UnitTalk_KOR": "금방 다녀올게.",
+      "UnitTalk_ENG": "I'll be back soon.",
+      "UnitTalk_JPN": "すぐに戻るよ。",
+      "UnitTalk_CHN": "我马上就回来。",
+      "UnitTalk_TWN": "我馬上就回來。",
+      "UnitTalk_FRA": "Je reviens vite.",
+      "UnitTalk_DEU": "Ich bin gleich zurück.",
+      "UnitTalk_ESP": "Volveré enseguida.",
+      "UnitTalk_PRT": "Volto já.",
+      "UnitTalk_THA": "เดี๋ยวจะรีบไปรีบกลับมาค่ะ",
+      "UnitTalk_IND": "Aku akan segera kembali.",
+      "UnitTalk_VIE": "Tôi sẽ quay lại ngay.",
+      "UnitTalk_HIN": "मैं जल्दी ही वापस आ जाऊँगा।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5,
+      "StartBgmFileName": "MUSIC_COUNTERSIDE_AULD_LANG_SYNE.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_02.wav"
+    },
+    {
+      "Uid": 36,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SS_EVENT_COUNTERSIDE_02.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "야트막한 비탈길을 오르면, 언덕 위에 나무 한 그루가 서 있다.",
+      "UnitTalk_ENG": "As I climbed a gentle slope, a single tree stood at the top of the hill.",
+      "UnitTalk_JPN": "なだらかな坂道をのぼると、丘の上に一本の木が立っている。",
+      "UnitTalk_CHN": "爬上平缓的小坡，山丘上伫立着一棵树。",
+      "UnitTalk_TWN": "爬上平緩的小坡，山丘上佇立著一棵樹。",
+      "UnitTalk_FRA": "En montant une légère pente, un arbre se dresse sur la colline.",
+      "UnitTalk_DEU": "Wenn man den sanften Hang hinaufsteigt, steht auf dem Hügel ein Baum.",
+      "UnitTalk_ESP": "Al subir por la suave pendiente, un árbol se alza en la cima de la colina.",
+      "UnitTalk_PRT": "Subindo uma ladeira suave, há uma árvore solitária no topo da colina.",
+      "UnitTalk_THA": "เมื่อเดินขึ้นเนินลาดชันไป ก็จะพบต้นไม้ต้นหนึ่งยืนอยู่บนเนินเขา",
+      "UnitTalk_IND": "Menaiki lereng yang landai, ada sebatang pohon berdiri di puncak bukit.",
+      "UnitTalk_VIE": "Leo lên con dốc thoai thoải, trên đồi có một cái cây đứng sừng sững.",
+      "UnitTalk_HIN": "जब आप एक हल्की ढलान पर चढ़ते हैं, तो पहाड़ी पर एक पेड़ खड़ा होता है।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나래는 그 아래 잠들어 있었다.",
+      "UnitTalk_ENG": "Narae was sleeping beneath it.",
+      "UnitTalk_JPN": "ナルミはその下で眠っていた。",
+      "UnitTalk_CHN": "娜莱就在那下面沉睡着。",
+      "UnitTalk_TWN": "娜萊就在那下面沉睡著。",
+      "UnitTalk_FRA": "Narae dormait en dessous.",
+      "UnitTalk_DEU": "Narae schlief darunter.",
+      "UnitTalk_ESP": "Narae estaba dormida debajo de él.",
+      "UnitTalk_PRT": "Narae estava dormindo debaixo dela.",
+      "UnitTalk_THA": "นารแอ นอนหลับอยู่ใต้นั้น",
+      "UnitTalk_IND": "Narae tertidur di bawahnya.",
+      "UnitTalk_VIE": "Narae đang ngủ dưới gốc cây đó.",
+      "UnitTalk_HIN": "नारे उसके नीचे सो रही थी।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT"
+    },
+    {
+      "Uid": 54,
+      "WaitClick": false,
+      "WaitTime": 4.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 4.0
+    },
+    {
+      "Uid": 61,
+      "WaitClick": false,
+      "WaitTime": 1.5
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_MINA"
+      ],
+      "UnitTalk_KOR": "……",
+      "UnitTalk_ENG": "...",
+      "UnitTalk_JPN": "……",
+      "UnitTalk_CHN": "……",
+      "UnitTalk_TWN": "……",
+      "UnitTalk_FRA": "……",
+      "UnitTalk_DEU": "……",
+      "UnitTalk_ESP": "……",
+      "UnitTalk_PRT": "……",
+      "UnitTalk_THA": "……",
+      "UnitTalk_IND": "……",
+      "UnitTalk_VIE": "……",
+      "UnitTalk_HIN": "……",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_MINA"
+      ],
+      "UnitTalk_KOR": "오래 걸렸지. 나래야.",
+      "UnitTalk_ENG": "It took a while, didn't it, Narae?",
+      "UnitTalk_JPN": "ずいぶん待たせちゃったよね、ナルミ。",
+      "UnitTalk_CHN": "让你久等了，娜莱。",
+      "UnitTalk_TWN": "讓你久等了，娜萊。",
+      "UnitTalk_FRA": "Ça a pris du temps, Narae.",
+      "UnitTalk_DEU": "Es hat lange gedauert, Narae.",
+      "UnitTalk_ESP": "Ha pasado mucho tiempo, Narae.",
+      "UnitTalk_PRT": "Demorou, não foi, Narae?",
+      "UnitTalk_THA": "ใช้เวลานานเลยนะ นารึ",
+      "UnitTalk_IND": "Maaf sudah membuatmu menunggu lama, Narae.",
+      "UnitTalk_VIE": "Lâu rồi nhỉ, Narae.",
+      "UnitTalk_HIN": "बहुत समय हो गया, नारा।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_MINA"
+      ],
+      "UnitTalk_KOR": "여기까지 오느라 많은 일들이 있었거든.",
+      "UnitTalk_ENG": "A lot happened on the way here.",
+      "UnitTalk_JPN": "ここまで来るのに、色んなことがあったんだ。",
+      "UnitTalk_CHN": "来到这里的路上，发生了很多事呢。",
+      "UnitTalk_TWN": "來到這裡的路上，發生了很多事呢。",
+      "UnitTalk_FRA": "Il s'est passé beaucoup de choses pour arriver ici.",
+      "UnitTalk_DEU": "Ich habe auf dem Weg hierher viel erlebt.",
+      "UnitTalk_ESP": "Han pasado muchas cosas para llegar hasta aquí.",
+      "UnitTalk_PRT": "Muitas coisas aconteceram até eu chegar aqui.",
+      "UnitTalk_THA": "กว่าจะมาถึงที่นี่ก็เจอเรื่องราวมากมายเลยล่ะ",
+      "UnitTalk_IND": "Banyak hal terjadi dalam perjalanan ke sini.",
+      "UnitTalk_VIE": "Để đến được đây, đã có rất nhiều chuyện xảy ra.",
+      "UnitTalk_HIN": "यहाँ तक आने में बहुत कुछ हुआ है।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_MINA"
+      ],
+      "UnitTalk_KOR": "사실 지금도… 지친 건 사실이야.",
+      "UnitTalk_ENG": "To be honest... I'm a bit fed up.",
+      "UnitTalk_JPN": "正直、今も…疲れきってるのは事実だよ。",
+      "UnitTalk_CHN": "其实我现在…也觉得非常累。",
+      "UnitTalk_TWN": "其實我現在…也覺得非常累。",
+      "UnitTalk_FRA": "En fait, même maintenant… je suis fatiguée.",
+      "UnitTalk_DEU": "Ehrlich gesagt bin ich immer noch… müde.",
+      "UnitTalk_ESP": "La verdad es que… todavía estoy cansada.",
+      "UnitTalk_PRT": "Na verdade, ainda estou… cansada.",
+      "UnitTalk_THA": "ความจริงตอนนี้… ฉันก็เหนื่อยนะ",
+      "UnitTalk_IND": "Sejujurnya, aku masih… lelah.",
+      "UnitTalk_VIE": "Thật ra thì bây giờ… tôi vẫn còn mệt mỏi lắm.",
+      "UnitTalk_HIN": "सच कहूँ तो, मैं अभी भी… थकी हुई हूँ।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_MINA"
+      ],
+      "UnitTalk_KOR": "마음 같아서는 그냥 주저앉고 싶을 만큼.",
+      "UnitTalk_ENG": "Fed up enough to feel like I want to give up.",
+      "UnitTalk_JPN": "本音を言えば、このまま座り込んじゃいたいくらい。",
+      "UnitTalk_CHN": "累到真的很想就这样坐下来休息。",
+      "UnitTalk_TWN": "累到真的很想就這樣坐下來休息。",
+      "UnitTalk_FRA": "Au point où j'aimerais juste m'effondrer.",
+      "UnitTalk_DEU": "So müde, dass ich am liebsten einfach aufgeben würde.",
+      "UnitTalk_ESP": "Me encantaría sentarme tanto que casi quiero desmayarme.",
+      "UnitTalk_PRT": "A ponto de querer apenas sentar e desistir.",
+      "UnitTalk_THA": "เหนื่อยจนอยากจะทิ้งตัวลงตรงนี้เลยล่ะ",
+      "UnitTalk_IND": "Sampai rasanya ingin menyerah dan duduk saja.",
+      "UnitTalk_VIE": "Đến mức chỉ muốn ngồi sụp xuống thôi.",
+      "UnitTalk_HIN": "इतना कि मेरा मन बस बैठ जाने का करता है।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 72,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT"
+    },
+    {
+      "Uid": 68,
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "BgFileName": "ILLUST_BG_SKY_SUNSET.png",
+      "BgChangeTime": 2.0
+    },
+    {
+      "Uid": 69,
+      "WaitClick": false,
+      "WaitTime": 1.0
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_MINA"
+      ],
+      "UnitTalk_KOR": "양자 터널을 통과했을 때…",
+      "UnitTalk_ENG": "When I passed through the quantum tunnel...",
+      "UnitTalk_JPN": "量子トンネルを通過した時…",
+      "UnitTalk_CHN": "通过量子隧道的时候…",
+      "UnitTalk_TWN": "通過量子隧道的時候…",
+      "UnitTalk_FRA": "Quand j'ai traversé le tunnel quantique…",
+      "UnitTalk_DEU": "Als ich den Quantentunnel durchquerte…",
+      "UnitTalk_ESP": "Cuando crucé el túnel cuántico…",
+      "UnitTalk_PRT": "Quando passei pelo túnel quântico…",
+      "UnitTalk_THA": "ตอนที่ผ่านอุโมงค์ควอนตัม…",
+      "UnitTalk_IND": "Saat melewati terowongan kuantum…",
+      "UnitTalk_VIE": "Khi đi qua đường hầm lượng tử…",
+      "UnitTalk_HIN": "जब मैं क्वांटम टनल से गुज़री…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_MINA"
+      ],
+      "UnitTalk_KOR": "잠깐이지만, 무서웠어.",
+      "UnitTalk_ENG": "Even if only for a moment, I was scared.",
+      "UnitTalk_JPN": "一瞬だけど、怖かった。",
+      "UnitTalk_CHN": "虽然只有一瞬间，但我很害怕。",
+      "UnitTalk_TWN": "雖然只有一瞬間，但我很害怕。",
+      "UnitTalk_FRA": "Ce fut bref, mais j'ai eu peur.",
+      "UnitTalk_DEU": "…hatte ich kurz Angst.",
+      "UnitTalk_ESP": "Aunque fue por un momento, tuve miedo.",
+      "UnitTalk_PRT": "Por um instante, tive medo.",
+      "UnitTalk_THA": "ถึงจะแค่แป๊บเดียว แต่ฉันก็กลัวนะ",
+      "UnitTalk_IND": "Meski sebentar, aku takut.",
+      "UnitTalk_VIE": "Dù chỉ trong chốc lát, tôi đã rất sợ hãi.",
+      "UnitTalk_HIN": "थोड़ी देर के लिए ही सही, मैं डर गई थी।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_MINA"
+      ],
+      "UnitTalk_KOR": "내 등 뒤에 있을 사람들을 잃어 버릴지도 모른다는 생각이 들었으니까.",
+      "UnitTalk_ENG": "I thought I might lose the people I care about.",
+      "UnitTalk_JPN": "背中を預け合う仲間を、また失うかもしれない…\nそう思ったら、怖くなったの。",
+      "UnitTalk_CHN": "因为想到可能会失去身后的人们。",
+      "UnitTalk_TWN": "因為想到可能會失去身後的人們。",
+      "UnitTalk_FRA": "J'ai cru que je pourrais perdre les gens derrière moi.",
+      "UnitTalk_DEU": "Ich dachte, ich könnte die Menschen hinter mir verlieren.",
+      "UnitTalk_ESP": "Porque pensé que podría perder a las personas que estaban detrás de mí.",
+      "UnitTalk_PRT": "Porque pensei que poderia perder as pessoas que estavam atrás de mim.",
+      "UnitTalk_THA": "เพราะฉันคิดว่าอาจจะเสียคนที่อยู่ข้างหลังไปก็ได้ค่ะ",
+      "UnitTalk_IND": "Karena aku berpikir mungkin akan kehilangan orang-orang di belakangku.",
+      "UnitTalk_VIE": "Vì tôi nghĩ mình có thể sẽ mất đi những người ở phía sau.",
+      "UnitTalk_HIN": "क्योंकि मुझे लगा कि मैं अपने पीछे के लोगों को खो सकती हूँ।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_MINA"
+      ],
+      "UnitTalk_KOR": "하지만… 이제 괜찮아.",
+      "UnitTalk_ENG": "But... I'm okay now.",
+      "UnitTalk_JPN": "でも…もう大丈夫。",
+      "UnitTalk_CHN": "但是…现在没关系了。",
+      "UnitTalk_TWN": "但是…現在沒關係了。",
+      "UnitTalk_FRA": "Mais… ça va maintenant.",
+      "UnitTalk_DEU": "Aber… jetzt ist es in Ordnung.",
+      "UnitTalk_ESP": "Pero… ahora estoy bien.",
+      "UnitTalk_PRT": "Mas… agora estou bem.",
+      "UnitTalk_THA": "แต่ว่า… ตอนนี้ไม่เป็นไรแล้วล่ะ",
+      "UnitTalk_IND": "Tapi… sekarang aku baik-baik saja.",
+      "UnitTalk_VIE": "Nhưng… bây giờ thì ổn rồi.",
+      "UnitTalk_HIN": "लेकिन… अब मैं ठीक हूँ।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 73,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT"
+    },
+    {
+      "Uid": 70,
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "BgFileName": "ILLUST_BG_SS_EVENT_COUNTERSIDE_02.png",
+      "BgChangeTime": 2.0
+    },
+    {
+      "Uid": 71,
+      "WaitClick": false,
+      "WaitTime": 1.0
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_MINA"
+      ],
+      "UnitTalk_KOR": "앞으로도 주저앉고 싶고, 포기하고 싶어질 때도 있겠지만…",
+      "UnitTalk_ENG": "There will be times when I feel like collapsing and giving up again...",
+      "UnitTalk_JPN": "これから先、くじけそうになったり、諦めたくなる時もあるだろうけど…",
+      "UnitTalk_CHN": "虽然今后可能还会有想止步不前、想放弃的时候…",
+      "UnitTalk_TWN": "雖然今後可能還會有想止步不前、想放棄的時候…",
+      "UnitTalk_FRA": "Même si je voudrais m'asseoir et abandonner…",
+      "UnitTalk_DEU": "Ich werde auch in Zukunft Momente haben, in denen ich aufgeben möchte…",
+      "UnitTalk_ESP": "Aunque en el futuro también quiera sentarme y rendirme…",
+      "UnitTalk_PRT": "Mesmo que eu queira desistir e abandonar tudo…",
+      "UnitTalk_THA": "ถึงแม้ว่าในอนาคตอาจจะมีบางครั้งที่ฉันอยากจะทิ้งตัวลงและยอมแพ้…",
+      "UnitTalk_IND": "Mungkin nanti aku akan merasa ingin menyerah dan putus asa lagi…",
+      "UnitTalk_VIE": "Dù sau này sẽ có lúc tôi muốn gục ngã, muốn từ bỏ…",
+      "UnitTalk_HIN": "भविष्य में भी ऐसे पल आएंगे जब मैं बैठना चाहूँगी और हार मानना चाहूँगी…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_MINA"
+      ],
+      "UnitTalk_KOR": "…이 다음으로, 한 발짝 더 내딛어 보려고.",
+      "UnitTalk_ENG": "...But I'm going to take one more step forward.",
+      "UnitTalk_JPN": "…一歩ずつ、前へ進んでいこうと思う。",
+      "UnitTalk_CHN": "…但接下来，我打算再向前迈出一步。",
+      "UnitTalk_TWN": "…但接下來，我打算再向前邁出一步。",
+      "UnitTalk_FRA": "…je vais essayer de faire un pas de plus.",
+      "UnitTalk_DEU": "…aber ich werde versuchen, einen weiteren Schritt zu tun.",
+      "UnitTalk_ESP": "…voy a dar un paso más.",
+      "UnitTalk_PRT": "…Vou tentar dar mais um passo adiante.",
+      "UnitTalk_THA": "…แต่ฉันก็จะลองก้าวไปข้างหน้าอีกก้าวหนึ่ง",
+      "UnitTalk_IND": "…tapi aku akan mencoba melangkah lebih jauh.",
+      "UnitTalk_VIE": "…tôi sẽ cố gắng bước thêm một bước nữa.",
+      "UnitTalk_HIN": "…लेकिन मैं एक और कदम आगे बढ़ाने की कोशिश करूँगी।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_MINA"
+      ],
+      "UnitTalk_KOR": "다시 올 때는 전부 말해 줄게.",
+      "UnitTalk_ENG": "When I come back, I'll tell you everything.",
+      "UnitTalk_JPN": "またここへ来た時に、全部話すね。",
+      "UnitTalk_CHN": "下次再来的时候，我会全部告诉你的。",
+      "UnitTalk_TWN": "下次再來的時候，我會全部告訴你的。",
+      "UnitTalk_FRA": "Quand je reviendrai, je te dirai tout.",
+      "UnitTalk_DEU": "Wenn ich zurückkomme, erzähle ich dir alles.",
+      "UnitTalk_ESP": "Cuando vuelva, te lo contaré todo.",
+      "UnitTalk_PRT": "Quando eu voltar, vou te contar tudo.",
+      "UnitTalk_THA": "พอฉันกลับมาอีกครั้ง ฉันจะเล่าทุกอย่างให้ฟังนะ",
+      "UnitTalk_IND": "Saat aku kembali, aku akan menceritakan semuanya.",
+      "UnitTalk_VIE": "Khi trở lại đây, tôi sẽ kể cho cậu nghe tất cả.",
+      "UnitTalk_HIN": "जब मैं वापस आऊँगी, तो तुम्हें सब बताऊँगी।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT"
+    },
+    {
+      "Uid": 74,
+      "WaitClick": false,
+      "WaitTime": 3.0,
+      "BgFileName": "ILLUST_BG_SKY_SUNSET.png",
+      "BgChangeTime": 3.0
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_MINA"
+      ],
+      "UnitTalk_KOR": "네가 열어 준 길 앞에… 어떤 것들이 있었는지.",
+      "UnitTalk_ENG": "About what lay beyond the path you opened for me... and what I found there.",
+      "UnitTalk_JPN": "あなたが切り開いてくれた道の先に…何があったのか。",
+      "UnitTalk_CHN": "在你为我开创的这条路前方…都有些什么样的事物。",
+      "UnitTalk_TWN": "在你為我開創的這條路前方…都有些什麼樣的事物。",
+      "UnitTalk_FRA": "Ce qu'il y avait devant le chemin que tu as ouvert…",
+      "UnitTalk_DEU": "Was vor dem Weg lag, den du mir geöffnet hast.",
+      "UnitTalk_ESP": "Qué cosas había delante del camino que abriste…",
+      "UnitTalk_PRT": "O que havia no caminho que você abriu…",
+      "UnitTalk_THA": "ว่ามีอะไรอยู่ข้างหน้าเส้นทางที่เธอเปิดให้บ้าง",
+      "UnitTalk_IND": "Apa saja yang ada di depan jalan yang kau buka…",
+      "UnitTalk_VIE": "Những gì đã xảy ra phía trước con đường cậu mở ra…",
+      "UnitTalk_HIN": "तुम्हारे द्वारा खोले गए रास्ते के आगे… क्या-क्या था।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "CutsceneClear": "CLEARTEXT"
+    },
+    {
+      "Uid": 75,
+      "WaitClick": false,
+      "WaitTime": 4.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 4.0
+    },
+    {
+      "Uid": 76,
+      "WaitClick": false,
+      "WaitTime": 1.0
+    }
+  ]
+}

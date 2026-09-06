@@ -1,0 +1,40 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_APOSTLE_TYRIA_REST_BAD",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_REST_BAD",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_REST",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS"
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>의 상태를 보아하니, 아무래도 오늘 훈련은 무리하지 않는 선에서 마무리해야 할 것 같다...",
+      "UnitTalk_ENG": "Judging by <color=#F7BE45>[CHARACTER_NAME]</color>'s condition, it seemed best to wrap up training for the day without pushing her too hard...",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>の状態を見るに、\n今日のトレーニングは無理のない範囲で行った方がよさそうだ…",
+      "UnitTalk_CHN": "看<color=#F7BE45>[CHARACTER_NAME]</color>的状态，今天的训练还是在不勉强的范围内结束比较好…",
+      "UnitTalk_TWN": "看<color=#F7BE45>[CHARACTER_NAME]</color>的狀態，今天的訓練還是在不勉強的範圍內結束比較好…",
+      "UnitTalk_FRA": "Vu l'état de <color=#F7BE45>[CHARACTER_NAME]</color>, je pense qu'il faudrait terminer l'entraînement d'aujourd'hui en douceur...",
+      "UnitTalk_DEU": "Dem Zustand von <color=#F7BE45>[CHARACTER_NAME]</color> nach zu urteilen, sollten wir das heutige Training wohl eher leicht halten...",
+      "UnitTalk_ESP": "Viendo el estado de <color=#F7BE45>[CHARACTER_NAME]</color>, parece que hoy deberíamos terminar el entrenamiento sin excedernos...",
+      "UnitTalk_PRT": "Pela condição de <color=#F7BE45>[CHARACTER_NAME]</color>, parece que teremos que encerrar o treino de hoje sem forçar muito...",
+      "UnitTalk_THA": "ดูจากสภาพของ<color=#F7BE45>[CHARACTER_NAME]</color>แล้ว วันนี้คงต้องจบการฝึกแบบไม่หักโหมนะครับ/คะ...",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> terlihat tidak dalam kondisi terbaik. Kurasa latihan hari ini sebaiknya kita lakukan dengan ringan saja...",
+      "UnitTalk_VIE": "Nhìn tình trạng của <color=#F7BE45>[CHARACTER_NAME]</color>, có lẽ hôm nay chúng ta nên kết thúc buổi huấn luyện một cách nhẹ nhàng thôi...",
+      "UnitTalk_HIN": "<color=#F7BE45>[CHARACTER_NAME]</color> की हालत देखकर लगता है कि आज का प्रशिक्षण हल्के में ही खत्म करना होगा...",
+      "TalkTime": 0.03
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_MAID_BELL_07",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_BELL_07",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_GRAVEYARD.png",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_BELL_07",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "벨은 돌을 모으며 스트레스를 해소했다.",
+      "UnitTalk_ENG": "Bell relieved her stress by collecting stones.",
+      "UnitTalk_JPN": "ベルは石を集めてストレスを解消していた。",
+      "UnitTalk_CHN": "贝尔透过收集石头来纾解压力。",
+      "UnitTalk_TWN": "貝爾透過收集石頭來紓解壓力。",
+      "UnitTalk_FRA": "Bell soulageait son stress en collectionnant des pierres.",
+      "UnitTalk_DEU": "Bell baute ihren Stress ab, indem sie Steine sammelte.",
+      "UnitTalk_ESP": "Bell alivió su estrés coleccionando piedras.",
+      "UnitTalk_PRT": "Bell aliviava o estresse colecionando pedras.",
+      "UnitTalk_THA": "เบลคลายเครียดด้วยการสะสมก้อนหิน",
+      "UnitTalk_IND": "Bell menghilangkan stresnya dengan mengumpulkan batu.",
+      "UnitTalk_VIE": "Bell giải tỏa căng thẳng bằng cách làm việc với đá.",
+      "UnitTalk_HIN": "बेल ने पत्थर इकट्ठा करके अपना तनाव कम किया।",
+      "TalkTime": 0.03
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_MAID_LANTERN_02",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_HOTEL_3.png",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_LANTERN",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 10,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "홍차에 대해 이야기를 나누던 두 사람에게 묘한 분위기가 느껴진다.",
+      "UnitTalk_ENG": "Something about the mood between them felt oddly different as they talked about tea.",
+      "UnitTalk_JPN": "紅茶について語り合う二人の間に、妙な空気が流れていた。",
+      "UnitTalk_CHN": "从谈论红茶的两人之间，弥漫着一股微妙的气氛。",
+      "UnitTalk_TWN": "從談論紅茶的兩人之間，瀰漫著一股微妙的氣氛。",
+      "TalkTime": 0.03,
+      "UnitTalk_FRA": "Je sens une atmosphère étrange entre ces deux personnes qui parlaient de thé noir.",
+      "UnitTalk_DEU": "Ich spüre eine seltsame Atmosphäre zwischen den beiden, die über schwarzen Tee sprachen.",
+      "UnitTalk_ESP": "Siento una atmósfera extraña entre los dos que estaban compartiendo historias sobre té negro.",
+      "UnitTalk_PRT": "Sinto uma atmosfera estranha entre os dois que conversavam sobre chá preto.",
+      "UnitTalk_THA": "ฉันรู้สึกได้ถึงบรรยากาศที่แปลกประหลาดระหว่างคนสองคนที่กำลังพูดคุยเกี่ยวกับชาดำ",
+      "UnitTalk_IND": "Saya merasakan suasana canggung di antara dua orang yang berbagi cerita tentang Hongcha.",
+      "UnitTalk_VIE": "Cảm thấy một bầu không khí lạ lẫm giữa hai người đang chia sẻ câu chuyện về trà đen."
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "같이 티타임을 가진다.",
+          "JumpAnchorStringId_ENG": "Have tea together.",
+          "JumpAnchorStringId_JPN": "ティータイムを楽しむ。",
+          "JumpAnchorStringId_CHN": "一起享用下午茶。",
+          "JumpAnchorStringId_TWN": "一起享用下午茶。",
+          "JumpAnchorId": "REWARD_ANCHOR_1",
+          "JumpAnchorStringId_FRA": "Prendre le thé ensemble.",
+          "JumpAnchorStringId_DEU": "Wir trinken Tee.",
+          "JumpAnchorStringId_ESP": "Tomamos el té juntos.",
+          "JumpAnchorStringId_PRT": "Toma chá comigo.",
+          "JumpAnchorStringId_THA": "ดื่มชายามบ่ายด้วยกัน",
+          "JumpAnchorStringId_IND": "Menikmati teh bersama",
+          "JumpAnchorStringId_VIE": "Cùng uống trà."
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "...잠깐 나가 있는 게 좋겠다.",
+          "JumpAnchorStringId_ENG": "...Maybe I should step out for a while.",
+          "JumpAnchorStringId_JPN": "…ここから離れよう。",
+          "JumpAnchorStringId_CHN": "…还是暂时离开一下比较好。",
+          "JumpAnchorStringId_TWN": "…還是暫時離開一下比較好。",
+          "JumpAnchorId": "REWARD_ANCHOR_2",
+          "JumpAnchorStringId_FRA": "...J'aimerais bien sortir un moment.",
+          "JumpAnchorStringId_DEU": "...Ich sollte kurz rausgehen.",
+          "JumpAnchorStringId_ESP": "...Creo que sería mejor que me fuera.",
+          "JumpAnchorStringId_PRT": "...Acho melhor eu ir embora.",
+          "JumpAnchorStringId_THA": "...ฉันคิดว่าการออกไปนอกจะดีกว่า",
+          "JumpAnchorStringId_IND": "...Lebih baik aku keluar sebentar.",
+          "JumpAnchorStringId_VIE": "...Tôi muốn ra ngoài một lát."
+        }
+      ]
+    },
+    {
+      "Uid": 3,
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_LANTERN",
+      "UnitMotion": "ANGRY"
+    },
+    {
+      "Uid": 12,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "UnitMotion": "ANGRY"
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>우유에 홍차</color>인지, <color=#F7BE45>홍차에 우유</color>인지... 뭐가 더 맛있는지는 알 수 없었다.",
+      "UnitTalk_ENG": "I still couldn't tell whether <color=#F7BE45>tea-first</color> or <color=#F7BE45>milk-first</color> made for the better cup.",
+      "UnitTalk_JPN": "<color=#F7BE45>ミルクに紅茶</color>か、<color=#F7BE45>紅茶にミルク</color>か…どちらがおいしいのかは分からなかった。",
+      "UnitTalk_CHN": "到底是<color=#F7BE45>牛奶上加红茶</color>好喝，还是<color=#F7BE45>红茶上加牛奶</color>好喝…到最后，我还是搞不懂到底哪边比较好喝。",
+      "UnitTalk_TWN": "到底是<color=#F7BE45>牛奶上加紅茶</color>好喝，還是<color=#F7BE45>紅茶上加牛奶</color>好喝…到最後，我還是搞不懂到底哪邊比較好喝。",
+      "TalkTime": 0.03,
+      "UnitTalk_FRA": "<color=#F7BE45>Du thé noir dans le lait</color> ou <color=#F7BE45>du lait dans le thé noir</color>... on ne saurait dire lequel était meilleur.",
+      "UnitTalk_DEU": "<color=#F7BE45>Schwarztee in Milch</color> oder <color=#F7BE45>Milch in Schwarztee</color>... welcher Geschmack besser war, konnte ich nicht sagen.",
+      "UnitTalk_ESP": "<color=#F7BE45>Té negro con leche</color> o <color=#F7BE45>leche con té negro</color>... nunca supo cuál sabía mejor.",
+      "UnitTalk_PRT": "<color=#F7BE45>Chá preto com leite</color> ou <color=#F7BE45>leite com chá preto</color>... nunca soube qual era mais saboroso.",
+      "UnitTalk_THA": "ไม่ว่าจะเป็น <color=#F7BE45>นมใส่ชา</color> หรือ <color=#F7BE45>ชาใส่นม</color>... ก็ไม่อาจรู้ได้เลยว่าแบบไหนอร่อยกว่ากัน",
+      "UnitTalk_IND": "<color=#F7BE45>susu dalam teh hitam</color> atau <color=#F7BE45>teh hitam dalam susu</color>... tidak bisa tahu mana yang lebih lezat.",
+      "UnitTalk_VIE": "<color=#F7BE45>Sữa với trà đen</color> hay <color=#F7BE45>trà đen với sữa</color>... Tôi không thể biết cái nào ngon hơn."
+    },
+    {
+      "Uid": 4,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 16,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_LANTERN",
+      "UnitMotion": "SPECIAL2"
+    },
+    {
+      "Uid": 14,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFileName": "ILLUST_BG_CAFE_02.png",
+      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 15,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "결국 두 사람과 함께 <color=#F7BE45>카페 스트레가</color>로 향해 한정 음료를 마셨다.",
+      "UnitTalk_ENG": "I headed for <color=#F7BE45>Cafe Strega</color> with the two of them for a limited-edition beverage.",
+      "UnitTalk_JPN": "結局、二人とともに<color=#F7BE45>カフェ・ストレガ</color>へ向かい、期限限定メニューを楽しんだ。",
+      "UnitTalk_CHN": "最后还是与两人一同前往<color=#F7BE45>斯特雷加咖啡厅</color>享用了了限定饮品。",
+      "UnitTalk_TWN": "最後還是與兩人一同前往<color=#F7BE45>斯特雷加咖啡廳</color>享用了了限定飲品。",
+      "TalkTime": 0.03,
+      "UnitTalk_FRA": "Finalement, j'ai accompagné ces deux personnes au <color=#F7BE45>Café Strega</color> pour prendre une boisson limitée.",
+      "UnitTalk_DEU": "Am Ende bin ich mit den beiden zum <color=#F7BE45>Café Strega</color> gegangen und habe ein limitiertes Getränk genossen.",
+      "UnitTalk_ESP": "Al final, me dirigí a <color=#F7BE45>Café Strega</color> con los dos y bebí una bebida limitada.",
+      "UnitTalk_PRT": "No final, os dois e eu fomos para o <color=#F7BE45>Café Strega</color> e tomamos uma bebida limitada.",
+      "UnitTalk_THA": "ในที่สุด ฉันไปที่ <color=#F7BE45>Cafe Strega</color> กับคนสองคนและดื่มเครื่องดื่มจำกัด",
+      "UnitTalk_IND": "Pada akhirnya, aku dan dua orang itu pergi ke <color=#F7BE45>Kafe Strega</color> dan menikmati minuman terbatas.",
+      "UnitTalk_VIE": "Cuối cùng, tôi đã đi đến <color=#F7BE45>Café Strega</color> cùng với cả hai người và uống những đồ uống giới hạn."
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_02",
+      "JumpAnchorInfo": "JUMPANCHOR_FINISH",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER"
+    }
+  ]
+}

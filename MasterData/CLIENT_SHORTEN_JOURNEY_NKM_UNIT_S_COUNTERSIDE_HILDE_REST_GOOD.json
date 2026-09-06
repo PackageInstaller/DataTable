@@ -1,0 +1,39 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_COUNTERSIDE_HILDE_REST_GOOD",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_BEAMSWORD_REST_GOOD",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_REST",
+      "UnitStrId": "NKM_UNIT_NPC_COUNTERSIDE_HILDE",
+      "UnitMotion": "SPECIAL"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_BEAMSWORD_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>에게 걱정 어린 잔소리를 들었다.",
+      "UnitTalk_ENG": "<color=#F7BE45>[CHARACTER_NAME]</color> scolded me out of concern for my well-being.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>から、案ずるがゆえの小言を聞かされる羽目になった。",
+      "UnitTalk_CHN": "被<color=#F7BE45>[CHARACTER_NAME]</color>语带担忧地唠叨了一顿。",
+      "UnitTalk_TWN": "被<color=#F7BE45>[CHARACTER_NAME]</color>語帶擔憂地嘮叨了一頓。",
+      "UnitTalk_FRA": "<color=#F7BE45>[CHARACTER_NAME]</color> m'a fait une remarque inquiète.",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color> hat dich besorgt ermahnt.",
+      "UnitTalk_ESP": "Recibiste una preocupada regañina de <color=#F7BE45>[CHARACTER_NAME]</color>.",
+      "UnitTalk_PRT": "Ouvi as repreensões preocupadas de <color=#F7BE45>[CHARACTER_NAME]</color>.",
+      "UnitTalk_THA": "<color=#F7BE45>[CHARACTER_NAME]</color> บ่นคุณด้วยความเป็นห่วง",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> mengomeliku dengan cemas.",
+      "UnitTalk_VIE": "Tôi đã bị <color=#F7BE45>[CHARACTER_NAME]</color> cằn nhằn đầy lo lắng.",
+      "UnitTalk_HIN": "<color=#F7BE45>[CHARACTER_NAME]</color> ने चिंता से टोका-टोकी की।",
+      "TalkTime": 0.03
+    }
+  ]
+}

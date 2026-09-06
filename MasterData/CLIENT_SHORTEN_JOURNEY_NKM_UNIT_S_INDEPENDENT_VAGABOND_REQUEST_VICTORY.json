@@ -1,0 +1,39 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_INDEPENDENT_VAGABOND_REQUEST_VICTORY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_INDEPENDENT_VAGABOND_REQUEST_VICTORY",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_CANDLE",
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_VAGABOND",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_INDEPENDENT_VAGABOND_REQUEST_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "의뢰를 끝내고 남은 시간 동안 <color=#F7BE45>[CHARACTER_NAME]</color>(와)과 천문에 대한 이야기를 나눴다.",
+      "UnitTalk_ENG": "After a successful quest, <color=#F7BE45>[CHARACTER_NAME]</color> and I spent the remaining time chatting about the Celestial Art.",
+      "UnitTalk_JPN": "依頼を終えた後、<color=#F7BE45>[CHARACTER_NAME]</color>と天問について話をした。",
+      "UnitTalk_CHN": "在完成委托后剩下的时间内，与<color=#F7BE45>[CHARACTER_NAME]</color>聊了关于天问的话题。",
+      "UnitTalk_TWN": "在完成委託後剩下的時間內，與<color=#F7BE45>[CHARACTER_NAME]</color>聊了關於天問的話題。",
+      "UnitTalk_FRA": "Après avoir terminé la quête, <color=#F7BE45>[CHARACTER_NAME]</color> et moi avons passé le temps restant à discuter de l'Art Céleste.",
+      "UnitTalk_DEU": "Nachdem der Auftrag erledigt war, unterhielt ich mich die restliche Zeit mit <color=#F7BE45>[CHARACTER_NAME]</color> über die Himmelskunde.",
+      "UnitTalk_ESP": "Después de terminar la misión, hablamos de <color=#F7BE45>[CHARACTER_NAME]</color> astronomía durante el tiempo restante.",
+      "UnitTalk_PRT": "Após concluir a missão, conversamos sobre <color=#F7BE45>[CHARACTER_NAME]</color> e o tema de Cheonmun no tempo restante.",
+      "UnitTalk_THA": "หลังจากเสร็จสิ้นภารกิจ ในเวลาที่เหลือ เราได้พูดคุยเกี่ยวกับ <color=#F7BE45>[CHARACTER_NAME]</color> ชอนมุน",
+      "UnitTalk_IND": "Setelah menyelesaikan misi, kami berbincang tentang <color=#F7BE45>[CHARACTER_NAME]</color> dan Astronomi di sisa waktu.",
+      "UnitTalk_VIE": "Sau khi hoàn thành nhiệm vụ, tôi và <color=#F7BE45>[CHARACTER_NAME]</color> đã dành thời gian còn lại để trò chuyện về Nghệ thuật Thiên Văn.",
+      "UnitTalk_HIN": "कार्य पूरा करने के बाद, हमने बचे हुए समय में <color=#F7BE45>[CHARACTER_NAME]</color> के साथ खगोलीय कला के बारे में बात की।",
+      "TalkTime": 0.03
+    }
+  ]
+}

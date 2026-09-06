@@ -1,0 +1,39 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_MAID_LANTERN_REQUEST_VICTORY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_REQUEST_VICTORY",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_CANDLE",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "FUN"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_REQUEST_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "의뢰에서 성과를 낸 <color=#F7BE45>[CHARACTER_NAME]</color>(와)과 함께 다과를 즐겼다.",
+      "UnitTalk_ENG": "After a successful quest, I shared some refreshments with <color=#F7BE45>[CHARACTER_NAME]</color>.",
+      "UnitTalk_JPN": "依頼で成果を上げた<color=#F7BE45>[CHARACTER_NAME]</color>と一緒にティータイムを楽しんだ。",
+      "UnitTalk_CHN": "和在委托中取得成果的<color=#F7BE45>[CHARACTER_NAME]</color>一起享用了茶点。",
+      "UnitTalk_TWN": "和在委託中取得成果的<color=#F7BE45>[CHARACTER_NAME]</color>一起享用了茶點。",
+      "UnitTalk_FRA": "J'ai partagé une collation avec <color=#F7BE45>[CHARACTER_NAME]</color> qui a réussi dans la mission.",
+      "UnitTalk_DEU": "Ich genoss Erfrischungen mit <color=#F7BE45>[CHARACTER_NAME]</color>, der bei der Aufgabe erfolgreich war.",
+      "UnitTalk_ESP": "Disfrutamos de refrescos junto a <color=#F7BE45>[CHARACTER_NAME]</color>, quien logró éxito en la misión.",
+      "UnitTalk_PRT": "Desfrutei de um lanche com <color=#F7BE45>[CHARACTER_NAME]</color>, que se destacou na missão.",
+      "UnitTalk_THA": "ร่วมเพลิดเพลินกับของว่างกับ <color=#F7BE45>[CHARACTER_NAME]</color> ผู้ที่ประสบความสำเร็จในงาน",
+      "UnitTalk_IND": "Menikmati camilan bersama <color=#F7BE45>[CHARACTER_NAME]</color> yang telah menyelesaikan misi.",
+      "UnitTalk_VIE": "Cùng <color=#F7BE45>[CHARACTER_NAME]</color> thưởng thức trà và bánh sau nhiệm vụ.",
+      "TalkTime": 0.03
+    }
+  ]
+}

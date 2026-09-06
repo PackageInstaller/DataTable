@@ -1,0 +1,56 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_NOA_LISA_01",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_NOA_LISA_01",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_DOWNTOWN.png",
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_NOA_LISA_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "고양이와 대화를 하고 있는 리사를 보게 됐다.",
+      "UnitTalk_ENG": "I saw Lisa talking to a cat.",
+      "UnitTalk_JPN": "猫と会話しているリサを見かけた。",
+      "UnitTalk_CHN": "看到了丽莎正在和猫说话。",
+      "UnitTalk_TWN": "看到了麗莎正在和貓說話。",
+      "UnitTalk_FRA": "J'ai vu Lisa parler à un chat.",
+      "UnitTalk_DEU": "Ich sah Lisa, wie sie mit einer Katze sprach.",
+      "UnitTalk_ESP": "Vi a Lisa hablando con un gato.",
+      "UnitTalk_PRT": "Eu vi a Lisa conversando com um gato.",
+      "UnitTalk_THA": "ฉันเห็นลิซ่ากำลังคุยกับแมว",
+      "UnitTalk_IND": "Aku melihat Lisa berbicara dengan kucing.",
+      "UnitTalk_VIE": "Tôi thấy Lisa đang nói chuyện với một con mèo.",
+      "UnitTalk_HIN": "मैंने लीसा को एक बिल्ली से बात करते देखा।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_NOA_LISA_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_NOA_LISA_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    }
+  ]
+}

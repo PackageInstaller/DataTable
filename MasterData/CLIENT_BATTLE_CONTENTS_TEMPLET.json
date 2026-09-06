@@ -7,18 +7,21 @@
           "ContentsTag" : "MAIN_OPEN",
           "BattleContentsID" : 1,
           "OrderList" : 1,
+          "IsShow" : true,
           "BattleContentsType" : "OPERATION",
           "BattleContentsIcon" : "I_CM_BG_DAILY.png",
           "BattleContentsThumbnail" : "HUB_CM_DAILY.png",
           "BattleContentsName" : "SI_OPERATION",
           "BattleContentsNameENG" : "SI_OPERATION_ENG",
           "BattleContentsComment" : "SI_OPERATION_COMMENT",
-          "BattleContentsDesc" : "SI_OPERATION_DESC"
+          "BattleContentsDesc" : "SI_OPERATION_DESC",
+          "MissionTabGroupId" : 3006
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "BattleContentsID" : 100,
           "OrderList" : 2,
+          "IsShow" : true,
           "BattleContentsType" : "MAINSTORY",
           "BattleContentsIcon" : "I_CM_BG_DAILY.png",
           "BattleContentsThumbnail" : "HUB_CM_DAILY.png",
@@ -31,6 +34,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "BattleContentsID" : 101,
           "OrderList" : 1,
+          "IsShow" : true,
           "BattleContentsType" : "NORMAL",
           "BattleContentsIcon" : "I_CM_BG_DAILY.png",
           "BattleContentsThumbnail" : "HUB_CM_EXPLORE.png",
@@ -47,6 +51,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "BattleContentsID" : 102,
           "OrderList" : 2,
+          "IsShow" : true,
           "BattleContentsType" : "SPECIAL_RAID",
           "BattleContentsIcon" : "I_CM_BG_EXPLORE.png",
           "BattleContentsThumbnail" : "HUB_CM_RAID.png",
@@ -63,18 +68,21 @@
           "ContentsTag" : "MAIN_OPEN",
           "BattleContentsID" : 103,
           "OrderList" : 3,
+          "IsShow" : true,
           "BattleContentsType" : "CLOISTER",
           "BattleContentsIcon" : "I_CM_BG_CLOISTER.png",
           "BattleContentsThumbnail" : "HUB_CM_CLOISTER.png",
           "BattleContentsName" : "SI_INTERSTELLAR_CLOISTER",
           "BattleContentsNameENG" : "SI_INTERSTELLAR_CLOISTER_ENG",
           "BattleContentsComment" : "SI_CLOISTER_COMMENT",
-          "BattleContentsDesc" : "SI_CLOISTER_DESC"
+          "BattleContentsDesc" : "SI_CLOISTER_DESC",
+          "MissionTabGroupId" : 3005
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "BattleContentsID" : 104,
           "OrderList" : 4,
+          "IsShow" : true,
           "BattleContentsType" : "CUBE",
           "BattleContentsIcon" : "I_CM_BG_CUBE.png",
           "BattleContentsThumbnail" : "HUB_CM_CUBE.png",
@@ -87,6 +95,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "BattleContentsID" : 105,
           "OrderList" : 5,
+          "IsShow" : true,
           "BattleContentsType" : "RANKING_RAID",
           "BattleContentsIcon" : "I_CM_BG_GATE.png",
           "BattleContentsThumbnail" : "HUB_CM_GATE.png",
@@ -96,10 +105,11 @@
           "BattleContentsDesc" : "SI_COSMO_GATE_DESC"
         },
         {
-          "ContentsTag" : "MAIN_OPEN",
-          "IntervalID" : "DATE_STORY_EVENT_CASINO_01",
+          "ContentsTag" : "SS_EVENT_CASINO",
+          "IntervalID" : "DATE_STORY_EVENT_CASINO_02",
           "BattleContentsID" : 201,
           "OrderList" : 1,
+          "IsShow" : true,
           "BattleContentsType" : "EVENT",
           "BattleContentsIcon" : "I_CM_BG_EXPLORE.png",
           "BattleContentsThumbnail" : "HUB_EC_CASINO.png",
@@ -114,7 +124,7 @@
           "ShopThumbnail" : "EC_B_CASINO_SHOP.png",
           "MissionTabGroupId" : 1001,
           "MissionThumbnail" : "EC_B_CASINO_MISSION.png",
-          "EventPointGroupId" : 1,
+          "EventPointGroupId" : 1001,
           "TopbarViewItemData" : 
           [
             {
@@ -123,6 +133,779 @@
 
             {
               "TopbarViewItemId" : 2010201
+            },
+
+            {
+              "TopbarViewItemId" : 101
+            },
+
+            {
+              "TopbarViewItemId" : 103
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "SS_EVENT_ODYSSEY",
+          "IntervalID" : "DATE_STORY_EVENT_ODYSSEY_02",
+          "BattleContentsID" : 202,
+          "OrderList" : 2,
+          "IsShow" : true,
+          "BattleContentsType" : "EVENT",
+          "BattleContentsIcon" : "I_CM_BG_EXPLORE.png",
+          "BattleContentsThumbnail" : "HUB_EC_ODYSSEY.png",
+          "BattleContentsListPrefab" : "WIDGET_EC_ODYSSEY.prefab",
+          "StoryEventBgm" : "MUSIC_ODYSSEY_01.mp3",
+          "BattleContentsName" : "SI_EVENT",
+          "BattleContentsNameENG" : "SI_EVENT_ENG",
+          "BattleContentsComment" : "SI_EVENT_COMMENT",
+          "BattleContentsDesc" : "SI_EVENT_ODYSSEY_DESC",
+          "ShopTabStrId" : "SHOP_EVENT_ODYSSEY",
+          "ShopTabIndex" : 0,
+          "ShopThumbnail" : "EC_B_ODYSSEY_SHOP.png",
+          "MissionTabGroupId" : 1002,
+          "MissionThumbnail" : "EC_B_ODYSSEY_MISSION.png",
+          "EventPointGroupId" : 1002,
+          "TopbarViewItemData" : 
+          [
+            {
+              "TopbarViewItemId" : 2020203
+            },
+
+            {
+              "TopbarViewItemId" : 2020201
+            },
+
+            {
+              "TopbarViewItemId" : 101
+            },
+
+            {
+              "TopbarViewItemId" : 103
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "SS_EVENT_DRESS",
+          "IntervalID" : "DATE_STORY_EVENT_DRESS_02",
+          "BattleContentsID" : 203,
+          "OrderList" : 3,
+          "IsShow" : true,
+          "BattleContentsType" : "EVENT",
+          "BattleContentsIcon" : "I_CM_BG_EXPLORE.png",
+          "BattleContentsThumbnail" : "HUB_EC_DRESS.png",
+          "BattleContentsListPrefab" : "WIDGET_EC_DRESS.prefab",
+          "StoryEventBgm" : "MUSIC_DRESS_01.mp3",
+          "BattleContentsName" : "SI_EVENT",
+          "BattleContentsNameENG" : "SI_EVENT_ENG",
+          "BattleContentsComment" : "SI_EVENT_COMMENT",
+          "BattleContentsDesc" : "SI_EVENT_DRESS_DESC",
+          "ShopTabStrId" : "SHOP_EVENT_DRESS",
+          "ShopTabIndex" : 0,
+          "ShopThumbnail" : "EC_B_DRESS_SHOP.png",
+          "MissionTabGroupId" : 1003,
+          "MissionThumbnail" : "EC_B_DRESS_MISSION.png",
+          "EventPointGroupId" : 1003,
+          "TopbarViewItemData" : 
+          [
+            {
+              "TopbarViewItemId" : 2030203
+            },
+
+            {
+              "TopbarViewItemId" : 2030201
+            },
+
+            {
+              "TopbarViewItemId" : 101
+            },
+
+            {
+              "TopbarViewItemId" : 103
+            }
+          ]
+        },
+        {
+          "ServiceRegion" : "Korea, Japan",
+          "ContentsTag" : "MAIN_OPEN",
+          "IntervalID" : "DATE_EVENT_BATTLE_TEST_WINTER",
+          "BattleContentsID" : 204,
+          "OrderList" : 4,
+          "IsShow" : false,
+          "BattleContentsType" : "EVENT",
+          "BattleContentsIcon" : "I_CM_BG_EXPLORE.png",
+          "BattleContentsThumbnail" : "HUB_EC_WINTER.png",
+          "BattleContentsListPrefab" : "WIDGET_EC_WINTER.prefab",
+          "StoryEventBgm" : "MUSIC_WINTER_01.mp3",
+          "BattleContentsName" : "SI_EVENT",
+          "BattleContentsNameENG" : "SI_EVENT_ENG",
+          "BattleContentsComment" : "SI_EVENT_COMMENT",
+          "BattleContentsDesc" : "SI_EVENT_WINTER_DESC",
+          "ShopTabStrId" : "SHOP_EVENT_WINTER",
+          "ShopTabIndex" : 0,
+          "ShopThumbnail" : "EC_B_WINTER_SHOP.png",
+          "MissionTabGroupId" : 1004,
+          "MissionThumbnail" : "EC_B_WINTER_MISSION.png",
+          "EventPointGroupId" : 4,
+          "TopbarViewItemData" : 
+          [
+            {
+              "TopbarViewItemId" : 3000001
+            },
+
+            {
+              "TopbarViewItemId" : 101
+            },
+
+            {
+              "TopbarViewItemId" : 103
+            }
+          ]
+        },
+        {
+          "ServiceRegion" : "Korea, Japan",
+          "ContentsTag" : "MAIN_OPEN",
+          "IntervalID" : "DATE_STORY_EVENT_EPISODE_4_01",
+          "BattleContentsID" : 205,
+          "OrderList" : 5,
+          "IsShow" : true,
+          "BattleContentsType" : "EVENT",
+          "BattleContentsIcon" : "I_CM_BG_EXPLORE.png",
+          "BattleContentsThumbnail" : "HUB_EC_EPISODE_4.png",
+          "BattleContentsListPrefab" : "WIDGET_EC_EPISODE_4.prefab",
+          "StoryEventBgm" : "MUSIC_EPISODE4_01.mp3",
+          "BattleContentsName" : "SI_EVENT",
+          "BattleContentsNameENG" : "SI_EVENT_ENG",
+          "BattleContentsComment" : "SI_EVENT_COMMENT",
+          "BattleContentsDesc" : "SI_EVENT_WINTER_DESC",
+          "ShopTabStrId" : "SHOP_EVENT_EPISODE_4",
+          "ShopTabIndex" : 0,
+          "ShopThumbnail" : "EC_B_EPISODE_4_SHOP.png",
+          "MissionTabGroupId" : 1005,
+          "MissionThumbnail" : "EC_B_EPISODE_4_MISSION.png",
+          "EventPointGroupId" : 5,
+          "TopbarViewItemData" : 
+          [
+            {
+              "TopbarViewItemId" : 2050203
+            },
+
+            {
+              "TopbarViewItemId" : 2050201
+            },
+
+            {
+              "TopbarViewItemId" : 101
+            },
+
+            {
+              "TopbarViewItemId" : 103
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "IntervalID" : "DATE_EVENT_BATTLE_TEST_CASINO2",
+          "BattleContentsID" : 206,
+          "OrderList" : 6,
+          "IsShow" : false,
+          "BattleContentsType" : "EVENT",
+          "BattleContentsIcon" : "I_CM_BG_EXPLORE.png",
+          "BattleContentsThumbnail" : "HUB_EC_CASINO2.png",
+          "BattleContentsListPrefab" : "WIDGET_EC_CASINO2.prefab",
+          "StoryEventBgm" : "MUSIC_CASINO2_01.mp3",
+          "BattleContentsName" : "SI_EVENT",
+          "BattleContentsNameENG" : "SI_EVENT_ENG",
+          "BattleContentsComment" : "SI_EVENT_COMMENT",
+          "BattleContentsDesc" : "SI_EVENT_CASINO2_DESC",
+          "ShopTabStrId" : "SHOP_EVENT_CASINO2",
+          "ShopTabIndex" : 0,
+          "ShopThumbnail" : "EC_B_CASINO2_SHOP.png",
+          "MissionTabGroupId" : 1006,
+          "MissionThumbnail" : "EC_B_CASINO2_MISSION.png",
+          "EventPointGroupId" : 6,
+          "BingoBannerId" : 101001,
+          "TopbarViewItemData" : 
+          [
+            {
+              "TopbarViewItemId" : 3000001
+            },
+
+            {
+              "TopbarViewItemId" : 101
+            },
+
+            {
+              "TopbarViewItemId" : 103
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "IntervalID" : "DATE_STORY_EVENT_EPISODE_5_01",
+          "BattleContentsID" : 207,
+          "OrderList" : 7,
+          "IsShow" : true,
+          "BattleContentsType" : "EVENT",
+          "BattleContentsIcon" : "I_CM_BG_EXPLORE.png",
+          "BattleContentsThumbnail" : "HUB_EC_EPISODE_5.png",
+          "BattleContentsListPrefab" : "WIDGET_EC_EPISODE_5.prefab",
+          "StoryEventBgm" : "MUSIC_EPISODE5_01.mp3",
+          "BattleContentsName" : "SI_EVENT",
+          "BattleContentsNameENG" : "SI_EVENT_ENG",
+          "BattleContentsComment" : "SI_EVENT_COMMENT",
+          "BattleContentsDesc" : "SI_EVENT_EPISODE_5_DESC",
+          "ShopTabStrId" : "SHOP_EVENT_EPISODE_5",
+          "ShopTabIndex" : 0,
+          "ShopThumbnail" : "EC_B_EPISODE_5_SHOP.png",
+          "MissionTabGroupId" : 1007,
+          "MissionThumbnail" : "EC_B_EPISODE_5_MISSION.png",
+          "EventPointGroupId" : 7,
+          "TopbarViewItemData" : 
+          [
+            {
+              "TopbarViewItemId" : 2070203
+            },
+
+            {
+              "TopbarViewItemId" : 2070201
+            },
+
+            {
+              "TopbarViewItemId" : 101
+            },
+
+            {
+              "TopbarViewItemId" : 103
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "IntervalID" : "DATE_STORY_EVENT_COUNTERSIDE_01",
+          "BattleContentsID" : 208,
+          "OrderList" : 8,
+          "IsShow" : true,
+          "BattleContentsType" : "EVENT",
+          "BattleContentsIcon" : "I_CM_BG_EXPLORE.png",
+          "BattleContentsThumbnail" : "HUB_EC_COUNTERSIDE.png",
+          "BattleContentsListPrefab" : "WIDGET_EC_COUNTERSIDE.prefab",
+          "StoryEventBgm" : "MUSIC_COUNTERSIDE_01.mp3",
+          "BattleContentsName" : "SI_EVENT",
+          "BattleContentsNameENG" : "SI_EVENT_ENG",
+          "BattleContentsComment" : "SI_EVENT_COMMENT",
+          "BattleContentsDesc" : "SI_EVENT_COUNTERSIDE_DESC",
+          "ShopTabStrId" : "SHOP_EVENT_COUNTERSIDE",
+          "ShopTabIndex" : 0,
+          "ShopThumbnail" : "EC_B_COUNTERSIDE_SHOP.png",
+          "MissionTabGroupId" : 1008,
+          "MissionThumbnail" : "EC_B_COUNTERSIDE_MISSION.png",
+          "EventPointGroupId" : 8,
+          "BingoBannerId" : 1408,
+          "TopbarViewItemData" : 
+          [
+            {
+              "TopbarViewItemId" : 2080203
+            },
+
+            {
+              "TopbarViewItemId" : 2080201
+            },
+
+            {
+              "TopbarViewItemId" : 101
+            },
+
+            {
+              "TopbarViewItemId" : 103
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "IntervalID" : "DATE_STORY_EVENT_EASTERN_01",
+          "BattleContentsID" : 209,
+          "OrderList" : 9,
+          "IsShow" : true,
+          "BattleContentsType" : "EVENT",
+          "BattleContentsIcon" : "I_CM_BG_EXPLORE.png",
+          "BattleContentsThumbnail" : "HUB_EC_EASTERN.png",
+          "BattleContentsListPrefab" : "WIDGET_EC_EASTERN.prefab",
+          "StoryEventBgm" : "MUSIC_EASTERN_01.mp3",
+          "BattleContentsName" : "SI_EVENT",
+          "BattleContentsNameENG" : "SI_EVENT_ENG",
+          "BattleContentsComment" : "SI_EVENT_COMMENT",
+          "BattleContentsDesc" : "SI_EVENT_EASTERN_DESC",
+          "ShopTabStrId" : "SHOP_EVENT_EASTERN",
+          "ShopTabIndex" : 0,
+          "ShopThumbnail" : "EC_B_EASTERN_SHOP.png",
+          "MissionTabGroupId" : 1009,
+          "MissionThumbnail" : "EC_B_EASTERN_MISSION.png",
+          "EventPointGroupId" : 9,
+          "BingoBannerId" : 1409,
+          "TopbarViewItemData" : 
+          [
+            {
+              "TopbarViewItemId" : 2090203
+            },
+
+            {
+              "TopbarViewItemId" : 2090201
+            },
+
+            {
+              "TopbarViewItemId" : 101
+            },
+
+            {
+              "TopbarViewItemId" : 103
+            }
+          ]
+        },
+        {
+          "ServiceRegion" : "Korea, Japan",
+          "ContentsTag" : "MAIN_OPEN",
+          "IntervalID" : "DATE_STORY_EVENT_MOCK_01",
+          "BattleContentsID" : 210,
+          "OrderList" : 10,
+          "IsShow" : true,
+          "BattleContentsType" : "EVENT",
+          "BattleContentsIcon" : "I_CM_BG_EXPLORE.png",
+          "BattleContentsThumbnail" : "HUB_EC_MOCK.png",
+          "BattleContentsListPrefab" : "WIDGET_EC_MOCK.prefab",
+          "StoryEventBgm" : "MUSIC_CUTSCENE_13.mp3",
+          "BattleContentsName" : "SI_EVENT",
+          "BattleContentsNameENG" : "SI_EVENT_ENG",
+          "BattleContentsComment" : "SI_EVENT_COMMENT",
+          "BattleContentsDesc" : "SI_EVENT_MOCK_DESC",
+          "ShopTabStrId" : "SHOP_EVENT_MOCK",
+          "ShopTabIndex" : 0,
+          "ShopThumbnail" : "EC_B_MOCK_SHOP.png",
+          "MissionTabGroupId" : 1010,
+          "MissionThumbnail" : "EC_B_MOCK_MISSION.png",
+          "EventPointGroupId" : 10,
+          "TopbarViewItemData" : 
+          [
+            {
+              "TopbarViewItemId" : 2100203
+            },
+
+            {
+              "TopbarViewItemId" : 2100201
+            },
+
+            {
+              "TopbarViewItemId" : 101
+            },
+
+            {
+              "TopbarViewItemId" : 103
+            }
+          ]
+        },
+        {
+          "ServiceRegion" : "Korea, Japan",
+          "ContentsTag" : "MAIN_OPEN",
+          "IntervalID" : "DATE_STORY_EVENT_ORBITAL_01",
+          "BattleContentsID" : 211,
+          "OrderList" : 11,
+          "IsShow" : true,
+          "BattleContentsType" : "EVENT",
+          "BattleContentsIcon" : "I_CM_BG_EXPLORE.png",
+          "BattleContentsThumbnail" : "HUB_EC_ORBITAL.png",
+          "BattleContentsListPrefab" : "WIDGET_EC_ORBITAL.prefab",
+          "StoryEventBgm" : "MUSIC_ORBITAL_01.mp3",
+          "BattleContentsName" : "SI_EVENT",
+          "BattleContentsNameENG" : "SI_EVENT_ENG",
+          "BattleContentsComment" : "SI_EVENT_COMMENT",
+          "BattleContentsDesc" : "SI_EVENT_ORBITAL_DESC",
+          "ShopTabStrId" : "SHOP_EVENT_ORBITAL",
+          "ShopTabIndex" : 0,
+          "ShopThumbnail" : "EC_B_ORBITAL_SHOP.png",
+          "MissionTabGroupId" : 1011,
+          "MissionThumbnail" : "EC_B_ORBITAL_MISSION.png",
+          "EventPointGroupId" : 11,
+          "TopbarViewItemData" : 
+          [
+            {
+              "TopbarViewItemId" : 2110203
+            },
+
+            {
+              "TopbarViewItemId" : 2110201
+            },
+
+            {
+              "TopbarViewItemId" : 101
+            },
+
+            {
+              "TopbarViewItemId" : 103
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "IntervalID" : "DATE_STORY_EVENT_MINI02_01",
+          "BattleContentsID" : 212,
+          "OrderList" : 12,
+          "IsShow" : true,
+          "BattleContentsType" : "EVENT",
+          "BattleContentsIcon" : "I_CM_BG_EXPLORE.png",
+          "BattleContentsThumbnail" : "HUB_EC_MINI02.png",
+          "BattleContentsListPrefab" : "WIDGET_EC_MINI02.prefab",
+          "StoryEventBgm" : "MUSIC_CUTSCENE_13.mp3",
+          "BattleContentsName" : "SI_EVENT",
+          "BattleContentsNameENG" : "SI_EVENT_ENG",
+          "BattleContentsComment" : "SI_EVENT_COMMENT",
+          "BattleContentsDesc" : "SI_EVENT_ORBITAL_DESC",
+          "ShopTabStrId" : "SHOP_EVENT_MINI02",
+          "ShopTabIndex" : 0,
+          "ShopThumbnail" : "EC_B_MINI02_SHOP.png",
+          "MissionTabGroupId" : 1012,
+          "MissionThumbnail" : "EC_B_MINI02_MISSION.png",
+          "EventPointGroupId" : 12,
+          "TopbarViewItemData" : 
+          [
+            {
+              "TopbarViewItemId" : 2120203
+            },
+
+            {
+              "TopbarViewItemId" : 2120201
+            },
+
+            {
+              "TopbarViewItemId" : 101
+            },
+
+            {
+              "TopbarViewItemId" : 103
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "IntervalID" : "DATE_STORY_EVENT_WEDDING_01",
+          "BattleContentsID" : 213,
+          "OrderList" : 13,
+          "IsShow" : true,
+          "BattleContentsType" : "EVENT",
+          "BattleContentsIcon" : "I_CM_BG_EXPLORE.png",
+          "BattleContentsThumbnail" : "HUB_EC_WEDDING.png",
+          "BattleContentsListPrefab" : "WIDGET_EC_WEDDING.prefab",
+          "StoryEventBgm" : "MUSIC_WEDDING_01.mp3",
+          "BattleContentsName" : "SI_EVENT",
+          "BattleContentsNameENG" : "SI_EVENT_ENG",
+          "BattleContentsComment" : "SI_EVENT_COMMENT",
+          "BattleContentsDesc" : "SI_EVENT_WEDDING_DESC",
+          "ShopTabStrId" : "SHOP_EVENT_WEDDING",
+          "ShopTabIndex" : 0,
+          "ShopThumbnail" : "EC_B_WEDDING_SHOP.png",
+          "MissionTabGroupId" : 1013,
+          "MissionThumbnail" : "EC_B_WEDDING_MISSION.png",
+          "EventPointGroupId" : 13,
+          "BingoBannerId" : 1410,
+          "TopbarViewItemData" : 
+          [
+            {
+              "TopbarViewItemId" : 2130203
+            },
+
+            {
+              "TopbarViewItemId" : 2130201
+            },
+
+            {
+              "TopbarViewItemId" : 101
+            },
+
+            {
+              "TopbarViewItemId" : 103
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "IntervalID" : "DATE_STORY_EVENT_LANTERN_01",
+          "BattleContentsID" : 214,
+          "OrderList" : 14,
+          "IsShow" : true,
+          "BattleContentsType" : "EVENT",
+          "BattleContentsIcon" : "I_CM_BG_EXPLORE.png",
+          "BattleContentsThumbnail" : "HUB_EC_LANTERN.png",
+          "BattleContentsListPrefab" : "WIDGET_EC_LANTERN.prefab",
+          "StoryEventBgm" : "MUSIC_LANTERN_01.mp3",
+          "BattleContentsName" : "SI_EVENT",
+          "BattleContentsNameENG" : "SI_EVENT_ENG",
+          "BattleContentsComment" : "SI_EVENT_COMMENT",
+          "BattleContentsDesc" : "SI_EVENT_LANTERN_DESC",
+          "ShopTabStrId" : "SHOP_EVENT_LANTERN",
+          "ShopTabIndex" : 0,
+          "ShopThumbnail" : "EC_B_LANTERN_SHOP.png",
+          "MissionTabGroupId" : 1014,
+          "MissionThumbnail" : "EC_B_LANTERN_MISSION.png",
+          "EventPointGroupId" : 14,
+          "TopbarViewItemData" : 
+          [
+            {
+              "TopbarViewItemId" : 2140203
+            },
+
+            {
+              "TopbarViewItemId" : 2140201
+            },
+
+            {
+              "TopbarViewItemId" : 101
+            },
+
+            {
+              "TopbarViewItemId" : 103
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "IntervalID" : "DATE_STORY_EVENT_EPISODE_6_01",
+          "BattleContentsID" : 215,
+          "OrderList" : 15,
+          "IsShow" : true,
+          "BattleContentsType" : "EVENT",
+          "BattleContentsIcon" : "I_CM_BG_EXPLORE.png",
+          "BattleContentsThumbnail" : "HUB_EC_EPISODE_6.png",
+          "BattleContentsListPrefab" : "WIDGET_EC_EPISODE_6.prefab",
+          "StoryEventBgm" : "MUSIC_EPISODE6_BATTLE.mp3",
+          "BattleContentsName" : "SI_EVENT",
+          "BattleContentsNameENG" : "SI_EVENT_ENG",
+          "BattleContentsComment" : "SI_EVENT_COMMENT",
+          "BattleContentsDesc" : "SI_EVENT_EPISODE_6_DESC",
+          "ShopTabStrId" : "SHOP_EVENT_EPISODE_6",
+          "ShopTabIndex" : 0,
+          "ShopThumbnail" : "EC_B_EPISODE_6_SHOP.png",
+          "MissionTabGroupId" : 1015,
+          "MissionThumbnail" : "EC_B_EPISODE_6_MISSION.png",
+          "EventPointGroupId" : 15,
+          "TopbarViewItemData" : 
+          [
+            {
+              "TopbarViewItemId" : 2150203
+            },
+
+            {
+              "TopbarViewItemId" : 2150201
+            },
+
+            {
+              "TopbarViewItemId" : 101
+            },
+
+            {
+              "TopbarViewItemId" : 103
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "IntervalID" : "DATE_STORY_EVENT_SUMMER_01",
+          "BattleContentsID" : 216,
+          "OrderList" : 16,
+          "IsShow" : true,
+          "BattleContentsType" : "EVENT",
+          "BattleContentsIcon" : "I_CM_BG_EXPLORE.png",
+          "BattleContentsThumbnail" : "HUB_EC_SUMMER.png",
+          "BattleContentsListPrefab" : "WIDGET_EC_SUMMER.prefab",
+          "StoryEventBgm" : "MUSIC_SUMMER_01.mp3",
+          "BattleContentsName" : "SI_EVENT",
+          "BattleContentsNameENG" : "SI_EVENT_ENG",
+          "BattleContentsComment" : "SI_EVENT_COMMENT",
+          "BattleContentsDesc" : "SI_EVENT_SUMMER_DESC",
+          "ShopTabStrId" : "SHOP_EVENT_SUMMER",
+          "ShopTabIndex" : 0,
+          "ShopThumbnail" : "EC_B_SUMMER_SHOP.png",
+          "MissionTabGroupId" : 1016,
+          "MissionThumbnail" : "EC_B_SUMMER_MISSION.png",
+          "EventPointGroupId" : 16,
+          "BingoBannerId" : 1411,
+          "TopbarViewItemData" : 
+          [
+            {
+              "TopbarViewItemId" : 2160203
+            },
+
+            {
+              "TopbarViewItemId" : 2160201
+            },
+
+            {
+              "TopbarViewItemId" : 101
+            },
+
+            {
+              "TopbarViewItemId" : 103
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "IntervalID" : "DATE_STORY_EVENT_MORREL_01",
+          "BattleContentsID" : 217,
+          "OrderList" : 17,
+          "IsShow" : true,
+          "BattleContentsType" : "EVENT",
+          "BattleContentsIcon" : "I_CM_BG_EXPLORE.png",
+          "BattleContentsThumbnail" : "HUB_EC_MORREL.png",
+          "BattleContentsListPrefab" : "WIDGET_EC_MORREL.prefab",
+          "StoryEventBgm" : "MUSIC_MORREL_01.mp3",
+          "BattleContentsName" : "SI_EVENT",
+          "BattleContentsNameENG" : "SI_EVENT_ENG",
+          "BattleContentsComment" : "SI_EVENT_COMMENT",
+          "BattleContentsDesc" : "SI_EVENT_MORREL_DESC",
+          "ShopTabStrId" : "SHOP_EVENT_MORREL",
+          "ShopTabIndex" : 0,
+          "ShopThumbnail" : "EC_B_MORREL_SHOP.png",
+          "MissionTabGroupId" : 1017,
+          "MissionThumbnail" : "EC_B_MORREL_MISSION.png",
+          "EventPointGroupId" : 17,
+          "TopbarViewItemData" : 
+          [
+            {
+              "TopbarViewItemId" : 2170203
+            },
+
+            {
+              "TopbarViewItemId" : 2170201
+            },
+
+            {
+              "TopbarViewItemId" : 101
+            },
+
+            {
+              "TopbarViewItemId" : 103
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "IntervalID" : "DATE_STORY_EVENT_EPISODE_7_01",
+          "BattleContentsID" : 221,
+          "OrderList" : 21,
+          "IsShow" : true,
+          "BattleContentsType" : "EVENT",
+          "BattleContentsIcon" : "I_CM_BG_EXPLORE.png",
+          "BattleContentsThumbnail" : "HUB_EC_EPISODE_7.png",
+          "BattleContentsListPrefab" : "WIDGET_EC_EPISODE_7.prefab",
+          "StoryEventBgm" : "MUSIC_EPISODE7_01.mp3",
+          "BattleContentsName" : "SI_EVENT",
+          "BattleContentsNameENG" : "SI_EVENT_ENG",
+          "BattleContentsComment" : "SI_EVENT_COMMENT",
+          "BattleContentsDesc" : "SI_EVENT_EPISODE_7_DESC",
+          "ShopTabStrId" : "SHOP_EVENT_EPISODE_7",
+          "ShopTabIndex" : 0,
+          "ShopThumbnail" : "EC_B_EPISODE_7_SHOP.png",
+          "MissionTabGroupId" : 1021,
+          "MissionThumbnail" : "EC_B_EPISODE_7_MISSION.png",
+          "EventPointGroupId" : 21,
+          "TopbarViewItemData" : 
+          [
+            {
+              "TopbarViewItemId" : 2210203
+            },
+
+            {
+              "TopbarViewItemId" : 2210201
+            },
+
+            {
+              "TopbarViewItemId" : 101
+            },
+
+            {
+              "TopbarViewItemId" : 103
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleContentsID" : 301,
+          "OrderList" : 1,
+          "IsShow" : true,
+          "BattleContentsType" : "GUILD_DUNGEON",
+          "BattleContentsIcon" : "I_CM_BG_GATE.png",
+          "BattleContentsThumbnail" : "HUB_CM_GATE.png",
+          "BattleContentsName" : "SI_GUILD_DUNGEON",
+          "BattleContentsNameENG" : "SI_GUILD_DUNGEON_ENG",
+          "BattleContentsComment" : "SI_GUILD_DUNGEON_COMMENT",
+          "BattleContentsDesc" : "SI_GUILD_DUNGEON_DESC",
+          "TopbarViewItemData" : 
+          [
+            {
+              "TopbarViewItemId" : 409
+            },
+
+            {
+              "TopbarViewItemId" : 101
+            },
+
+            {
+              "TopbarViewItemId" : 103
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "IntervalID" : "DATE_INTERVAL_MAX",
+          "BattleContentsID" : 991,
+          "OrderList" : 1,
+          "IsShow" : true,
+          "BattleContentsType" : "BOSS_RUSH",
+          "BattleContentsIcon" : "I_CM_BG_FLASH_POINT.png",
+          "BattleContentsThumbnail" : "HUB_CM_FLASH_POINT.png",
+          "BattleContentsListPrefab" : "WIDGET_EC_BOSS_RUSH.prefab",
+          "StoryEventBgm" : "MUSIC_COSMO_GATE.mp3",
+          "BattleContentsName" : "SI_BOSS_RUSH",
+          "BattleContentsNameENG" : "SI_BOSS_RUSH_ENG",
+          "BattleContentsComment" : "SI_BOSS_RUSH_COMMENT",
+          "BattleContentsDesc" : "SI_BOSS_RUSH_DESC",
+          "TopbarViewItemData" : 
+          [
+            {
+              "TopbarViewItemId" : 413
+            },
+
+            {
+              "TopbarViewItemId" : 101
+            },
+
+            {
+              "TopbarViewItemId" : 103
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "IntervalID" : "DATE_STARTRAIL_EVENT_01",
+          "BattleContentsID" : 1000,
+          "OrderList" : 1,
+          "IsShow" : false,
+          "BattleContentsType" : "EVENT",
+          "BattleContentsIcon" : "I_CM_BG_EXPLORE.png",
+          "BattleContentsThumbnail" : "HUB_EC_DRESS.png",
+          "BattleContentsListPrefab" : "WIDGET_EC_DRESS.prefab",
+          "BattleContentsName" : "SI_EVENT",
+          "BattleContentsNameENG" : "SI_EVENT_ENG",
+          "BattleContentsComment" : "SI_EVENT_COMMENT",
+          "BattleContentsDesc" : "SI_EVENT_STARTRAIL_DESC",
+          "ShopTabStrId" : "SHOP_EVENT_STARTRAIL",
+          "ShopTabIndex" : 0,
+          "ShopThumbnail" : "EC_B_STARTRAIL_SHOP.png",
+          "MissionTabGroupId" : 10000,
+          "MissionThumbnail" : "EC_B_STARTRAIL_MISSION.png",
+          "EventPointGroupId" : 101,
+          "TopbarViewItemData" : 
+          [
+            {
+              "TopbarViewItemId" : 3000001
             },
 
             {

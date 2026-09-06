@@ -1,0 +1,54 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_COUNTERSIDE_ROSARIA_01",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_BAND_GUITAR_01",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_HOTEL_2.png",
+      "UnitStrId": "NKM_UNIT_NPC_COUNTERSIDE_ROSARIA",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "음식을 가리던 로자리아는 감자칩을 먹은 뒤에야 겨우 만족했다.",
+      "UnitTalk_ENG": "After rejecting everything else, Rosaria was finally satisfied after eating potato chips.",
+      "UnitTalk_JPN": "好き嫌いの激しいロザリアだが、ポテトチップスを食べてようやく満足したようだ。",
+      "UnitTalk_CHN": "原本挑食的罗莎莉亚在吃了洋芋片后才总算感到满足。",
+      "UnitTalk_TWN": "原本挑食的羅莎莉亞在吃了洋芋片後才總算感到滿足。",
+      "UnitTalk_FRA": "Rosaria, qui était difficile avec la nourriture, n'a été satisfaite qu'après avoir mangé des chips.",
+      "UnitTalk_DEU": "Rosaria, die wählerisch beim Essen war, war erst zufrieden, nachdem sie Kartoffelchips gegessen hatte.",
+      "UnitTalk_ESP": "Rosaria, que era quisquillosa con la comida, solo se satisfizo después de comer papas fritas.",
+      "UnitTalk_PRT": "Rosaria, que era exigente com comida, só ficou satisfeita depois de comer batata chips.",
+      "UnitTalk_THA": "โรซาเรียที่เลือกกินอาหาร ในที่สุดก็พอใจหลังจากได้กินมันฝรั่งทอด",
+      "UnitTalk_IND": "Rosaria, yang pilih-pilih makanan, akhirnya puas setelah makan keripik kentang.",
+      "UnitTalk_VIE": "Rosaria, người kén ăn, cuối cùng cũng hài lòng sau khi ăn khoai tây chiên.",
+      "UnitTalk_HIN": "खाने में नखरे करने वाली रोज़ारिया, चिप्स खाने के बाद ही संतुष्ट हुई।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    }
+  ]
+}

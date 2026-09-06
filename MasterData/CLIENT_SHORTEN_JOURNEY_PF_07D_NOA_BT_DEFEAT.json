@@ -1,0 +1,37 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_07D_NOA_BT_DEFEAT",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_07B_NOA_BT_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_07B_NOA_BT_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "기초 평가전에서 패배했지만, <color=#F7BE45>[CHARACTER_NAME]</color>의 잠재력은 확인했다.",
+      "UnitTalk_ENG": "We lost in the basic trial, but I was able to confirm <color=#F7BE45>[CHARACTER_NAME]</color>'s potential.",
+      "UnitTalk_JPN": "基礎試験で敗北したが、<color=#F7BE45>[CHARACTER_NAME]</color>の潜在能力は確認した。",
+      "UnitTalk_CHN": "虽然在基础评鉴战中战败，但确认到了<color=#F7BE45>[CHARACTER_NAME]</color>的潜力。",
+      "UnitTalk_TWN": "雖然在基礎評鑑戰中戰敗，但確認到了<color=#F7BE45>[CHARACTER_NAME]</color>的潛力。",
+      "UnitTalk_FRA": "Défaite à l'évaluation de base, mais le potentiel de <color=#F7BE45>[CHARACTER_NAME]</color> a été confirmé.",
+      "UnitTalk_DEU": "Ich verlor die Grundbewertung, aber ich erkannte das Potenzial von <color=#F7BE45>[CHARACTER_NAME]</color>.",
+      "UnitTalk_ESP": "Perdí en la evaluación básica, pero confirmé el potencial de <color=#F7BE45>[CHARACTER_NAME]</color>.",
+      "UnitTalk_PRT": "Perdi na avaliação básica, mas confirmei o potencial de <color=#F7BE45>[CHARACTER_NAME]</color>.",
+      "UnitTalk_THA": "แพ้ในการประเมินพื้นฐาน แต่ยืนยันศักยภาพของ <color=#F7BE45>[CHARACTER_NAME]</color> แล้ว",
+      "UnitTalk_IND": "Kalah di pertandingan penilaian dasar, tapi potensi <color=#F7BE45>[CHARACTER_NAME]</color> sudah terkonfirmasi.",
+      "UnitTalk_VIE": "Thua trong trận đánh giá cơ bản, nhưng đã xác nhận tiềm năng của <color=#F7BE45>[CHARACTER_NAME]</color>.",
+      "TalkTime": 0.03
+    }
+  ]
+}

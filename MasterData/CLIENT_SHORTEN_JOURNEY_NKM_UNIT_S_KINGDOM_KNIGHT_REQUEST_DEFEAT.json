@@ -10,7 +10,7 @@
       "WaitClick": false,
       "WaitTime": 0.0,
       "BgFileName": "CURRENT_TOWN_CANDLE",
-      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitStrId": "CURRENT_CHARACTER",
       "UnitMotion": "SERIOUS"
     },
     {
@@ -20,7 +20,18 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "의뢰를 실패한 <color=#F7BE45>[CHARACTER_NAME]</color>(은)는 침울해 보인다.",
+      "UnitTalk_ENG": "<color=#F7BE45>[CHARACTER_NAME]</color> looks downhearted after failing the quest.",
       "UnitTalk_JPN": "依頼に失敗した<color=#F7BE45>[CHARACTER_NAME]</color>は、意気消沈しているようだ。",
+      "UnitTalk_CHN": "未能完成委托的<color=#F7BE45>[CHARACTER_NAME]</color>看起来很沮丧。",
+      "UnitTalk_TWN": "未能完成委託的<color=#F7BE45>[CHARACTER_NAME]</color>看起來很沮喪。",
+      "UnitTalk_FRA": "<color=#F7BE45>[CHARACTER_NAME]</color> a l'air abattu après l'échec de la quête.",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color> wirkt niedergeschlagen, nachdem die Quest nicht bestanden wurde.",
+      "UnitTalk_ESP": "<color=#F7BE45>[CHARACTER_NAME]</color> se ve desanimado(a) tras fallar la misión.",
+      "UnitTalk_PRT": "<color=#F7BE45>[CHARACTER_NAME]</color> parece desanimado(a) após falhar na missão.",
+      "UnitTalk_THA": "<color=#F7BE45>[CHARACTER_NAME]</color> ดูหงอยเหงาหลังจากทำภารกิจล้มเหลว",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> terlihat murung setelah gagal dalam misi.",
+      "UnitTalk_VIE": "<color=#F7BE45>[CHARACTER_NAME]</color> thất bại trong nhiệm vụ và trông rất thất vọng.",
+      "UnitTalk_HIN": "क्वेस्ट में असफल होने के बाद <color=#F7BE45>[CHARACTER_NAME]</color> उदास दिख रहा है।",
       "TalkTime": 0.03
     },
     {
@@ -33,13 +44,35 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "일단 캔들 근처 식당으로 가자.",
+          "JumpAnchorStringId_ENG": "Let's grab a bite near Candle Square.",
           "JumpAnchorStringId_JPN": "キャンドル・スクエア近くの食堂に行こう。",
+          "JumpAnchorStringId_CHN": "总之先去烛光广场附近的餐厅吧。",
+          "JumpAnchorStringId_TWN": "總之先去燭光廣場附近的餐廳吧。",
+          "JumpAnchorStringId_FRA": "Allons manger près de la Place des Bougies.",
+          "JumpAnchorStringId_DEU": "Gehen wir zuerst in ein Restaurant in der Nähe des Candle Square.",
+          "JumpAnchorStringId_ESP": "Vayamos a un restaurante cerca de Candle Square.",
+          "JumpAnchorStringId_PRT": "Vamos a um restaurante perto da vela.",
+          "JumpAnchorStringId_THA": "ไปหาอะไรกินแถว Candle Square กันเถอะ",
+          "JumpAnchorStringId_IND": "Ayo kita pergi ke restoran dekat Candle Square.",
+          "JumpAnchorStringId_VIE": "Hãy đến nhà hàng gần khu vực Candles.",
+          "JumpAnchorStringId_HIN": "चलो कैंडल स्क्वायर के पास कुछ खाते हैं।",
           "JumpAnchorId": "REWARD_ANCHOR_1"
         },
         {
           "Uid": 2,
           "JumpAnchorStringId_KOR": "활력 포션을 건넨다.",
+          "JumpAnchorStringId_ENG": "Hand out a Vitality Potion.",
           "JumpAnchorStringId_JPN": "活力ポーションを渡す",
+          "JumpAnchorStringId_CHN": "递给她活力药水。",
+          "JumpAnchorStringId_TWN": "遞給她活力藥水。",
+          "JumpAnchorStringId_FRA": "Donne une potion de vitalité.",
+          "JumpAnchorStringId_DEU": "Heiltränke überreicht.",
+          "JumpAnchorStringId_ESP": "Entrega poción vital.",
+          "JumpAnchorStringId_PRT": "Entrega Poção Vital",
+          "JumpAnchorStringId_THA": "มอบยาฟื้นพลัง",
+          "JumpAnchorStringId_IND": "Memberikan Ramuan Vitalitas.",
+          "JumpAnchorStringId_VIE": "Trao cho anh potion sức sống.",
+          "JumpAnchorStringId_HIN": "एक वाइटैलिटी पोशन दिया।",
           "JumpAnchorId": "REWARD_ANCHOR_2"
         }
       ]
@@ -51,7 +84,7 @@
       "JumpAnchorInfo": "JUMPANCHOR_1_SUCCESS",
       "WaitClick": false,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitStrId": "CURRENT_CHARACTER",
       "UnitMotion": "SAD"
     },
     {
@@ -61,7 +94,18 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 더 노력하겠다고 다짐했다.",
+      "UnitTalk_ENG": "<color=#F7BE45>[CHARACTER_NAME]</color> vowed to try even harder next time.",
       "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は、もっと努力しようと心に誓った。",
+      "UnitTalk_CHN": "<color=#F7BE45>[CHARACTER_NAME]</color>下定决心要更加努力。",
+      "UnitTalk_TWN": "<color=#F7BE45>[CHARACTER_NAME]</color>下定決心要更加努力。",
+      "UnitTalk_FRA": "<color=#F7BE45>[CHARACTER_NAME]</color> a juré de faire encore plus d'efforts la prochaine fois.",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color> schwor, sich beim nächsten Mal noch mehr anzustrengen.",
+      "UnitTalk_ESP": "<color=#F7BE45>[CHARACTER_NAME]</color> juró esforzarse aún más la próxima vez.",
+      "UnitTalk_PRT": "<color=#F7BE45>[CHARACTER_NAME]</color> prometeu se esforçar ainda mais da próxima vez.",
+      "UnitTalk_THA": "<color=#F7BE45>[CHARACTER_NAME]</color> สาบานว่าจะพยายามให้หนักขึ้นในครั้งหน้า",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> bersumpah akan berusaha lebih keras lain kali.",
+      "UnitTalk_VIE": "<color=#F7BE45>[CHARACTER_NAME]</color> thề sẽ cố gắng hơn nữa vào lần tới.",
+      "UnitTalk_HIN": "<color=#F7BE45>[CHARACTER_NAME]</color> ने अगली बार और भी कड़ी मेहनत करने की कसम खाई।",
       "TalkTime": 0.03
     },
     {
@@ -71,7 +115,7 @@
       "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
       "WaitClick": false,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitStrId": "CURRENT_CHARACTER",
       "UnitMotion": "SAD"
     },
     {
@@ -81,7 +125,18 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 더 노력하겠다고 다짐했다.",
+      "UnitTalk_ENG": "<color=#F7BE45>[CHARACTER_NAME]</color> vowed to try even harder next time.",
       "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は、もっと努力しようと心に誓った。",
+      "UnitTalk_CHN": "<color=#F7BE45>[CHARACTER_NAME]</color>下定决心要更加努力。",
+      "UnitTalk_TWN": "<color=#F7BE45>[CHARACTER_NAME]</color>下定決心要更加努力。",
+      "UnitTalk_FRA": "<color=#F7BE45>[CHARACTER_NAME]</color> a juré de faire encore plus d'efforts la prochaine fois.",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color> schwor, sich beim nächsten Mal noch mehr anzustrengen.",
+      "UnitTalk_ESP": "<color=#F7BE45>[CHARACTER_NAME]</color> juró esforzarse aún más la próxima vez.",
+      "UnitTalk_PRT": "<color=#F7BE45>[CHARACTER_NAME]</color> prometeu se esforçar ainda mais da próxima vez.",
+      "UnitTalk_THA": "<color=#F7BE45>[CHARACTER_NAME]</color> สาบานว่าจะพยายามให้หนักขึ้นในครั้งหน้า",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> bersumpah akan berusaha lebih keras lain kali.",
+      "UnitTalk_VIE": "<color=#F7BE45>[CHARACTER_NAME]</color> thề sẽ cố gắng hơn nữa vào lần tới.",
+      "UnitTalk_HIN": "<color=#F7BE45>[CHARACTER_NAME]</color> ने अगली बार और भी कड़ी मेहनत करने की कसम खाई।",
       "TalkTime": 0.03
     },
     {
@@ -91,7 +146,7 @@
       "JumpAnchorInfo": "JUMPANCHOR_2",
       "WaitClick": false,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "UnitStrId": "CURRENT_CHARACTER",
       "UnitMotion": "SMILE"
     },
     {
@@ -101,7 +156,18 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 포션을 받고 기뻐했다.",
+      "UnitTalk_ENG": "<color=#F7BE45>[CHARACTER_NAME]</color> brightened up after receiving the potion.",
       "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は、ポーションを受け取って喜んだ。",
+      "UnitTalk_CHN": "<color=#F7BE45>[CHARACTER_NAME]</color>收到药水后很开心。",
+      "UnitTalk_TWN": "<color=#F7BE45>[CHARACTER_NAME]</color>收到藥水後很開心。",
+      "UnitTalk_FRA": "<color=#F7BE45>[CHARACTER_NAME]</color> s'est égayé après avoir reçu la potion.",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color> freute sich über den erhaltenen Trank.",
+      "UnitTalk_ESP": "<color=#F7BE45>[CHARACTER_NAME]</color> se animó tras recibir la poción.",
+      "UnitTalk_PRT": "<color=#F7BE45>[CHARACTER_NAME]</color> se animou após receber a poção.",
+      "UnitTalk_THA": "<color=#F7BE45>[CHARACTER_NAME]</color> ดูสดใสขึ้นหลังจากได้รับยา",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> bersemangat setelah menerima ramuan itu.",
+      "UnitTalk_VIE": "<color=#F7BE45>[CHARACTER_NAME]</color> vui vẻ hơn sau khi nhận được bình thuốc.",
+      "UnitTalk_HIN": "पोशन मिलने के बाद <color=#F7BE45>[CHARACTER_NAME]</color> खुश हो गया।",
       "TalkTime": 0.03
     }
   ]

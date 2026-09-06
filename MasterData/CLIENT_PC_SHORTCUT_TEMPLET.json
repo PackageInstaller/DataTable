@@ -283,7 +283,7 @@
         },
         {
           "HotkeyType" : "UI",
-          "EventType" : "Option",
+          "EventType" : "JourneyOption",
           "KeyBinds" : 
           [
             {
@@ -338,6 +338,36 @@
           [
             {
               "KeyBind" : "I"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "UI",
+          "EventType" : "Option",
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "O"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "UI",
+          "EventType" : "Skip",
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "Tab"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "UI",
+          "EventType" : "Retry",
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "R"
             }
           ]
         },
@@ -441,6 +471,16 @@
         },
         {
           "HotkeyType" : "Battle",
+          "EventType" : "Skip",
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "Tab"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "Battle",
           "EventType" : "ShowSequence",
           "KeyBinds" : 
           [
@@ -474,6 +514,16 @@
 
             {
               "KeyBind" : "D"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "Battle",
+          "EventType" : "Emoticon",
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "T"
             }
           ]
         }

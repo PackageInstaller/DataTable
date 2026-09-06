@@ -1,0 +1,36 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_HARD_REWARD01_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN",
+      "UnitStrId": "NKM_UNIT_NPC_OBSERVER_MALE_1",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "얼마 전 진행한 토벌 의뢰의 성공을 축하하는 의미에서, 폴라리스의 관측사가 전리품 중 하나를 고르도록 해줬다! ",
+      "UnitTalk_ENG": "To celebrate our recent successful hunt quest, a Polaris Observer is allowing us to keep one of the spoils! ",
+      "UnitTalk_JPN": "先日行った討伐依頼の成功を祝し、ポラリスの観測士が戦利品の中から好きなものを選ばせてくれた！",
+      "UnitTalk_CHN": "为祝贺不久前进行的讨伐委托大获成功，北极星的观测士让我从战利品中挑选一个！ ",
+      "UnitTalk_TWN": "為祝賀不久前進行的討伐委託大獲成功，北極星的觀測士讓我從戰利品中挑選一個！ ",
+      "UnitTalk_FRA": "Pour célébrer le succès de notre récente quête de chasse, un observateur de Polaris nous a permis de garder l'un des butins !",
+      "UnitTalk_DEU": "Zur Feier des erfolgreichen Abschlusses unseres letzten Jagdauftrags erlaubte uns ein Polaris-Beobachter, eine der Beuten auszuwählen!",
+      "UnitTalk_ESP": "¡Para celebrar el éxito de nuestra reciente misión de cacería, un observador de Polaris nos permitió quedarnos con uno de los botines!",
+      "UnitTalk_PRT": "Para celebrar o sucesso da nossa recente missão de caça, um Observador de Polaris nos permitiu escolher um dos espólios!",
+      "UnitTalk_THA": "เพื่อเป็นการฉลองความสำเร็จของภารกิจปราบปรามที่ทำไปเมื่อไม่นานมานี้ ผู้สังเกตการณ์ของโพลาริสจึงให้เราเลือกของที่ได้มาได้หนึ่งชิ้น!",
+      "UnitTalk_IND": "Untuk merayakan keberhasilan misi perburuan baru-baru ini, seorang Pengamat Polaris mengizinkan kita untuk memilih salah satu jarahan!",
+      "UnitTalk_VIE": "Để chúc mừng thành công của nhiệm vụ tiêu diệt gần đây, một Quan Trắc Viên của Polaris đã cho phép chúng ta chọn một trong những chiến lợi phẩm!",
+      "UnitTalk_HIN": "हाल ही में किए गए शिकार के मिशन की सफलता का जश्न मनाने के लिए, पोलारिस के एक पर्यवेक्षक ने हमें लूट में से एक चुनने दिया!",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 2,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER"
+    }
+  ]
+}

@@ -159,6 +159,20 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "StatType" : "NST_RATE_BARRIER_GIVE",
+          "IconImg" : "ICON_NST_RATE_BARRIER_GIVE.png",
+          "StatName" : "NST_RATE_BARRIER_GIVE",
+          "StatDesc" : "SI_NST_RATE_BARRIER_GIVE_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StatType" : "NST_RATE_BARRIER_RECEIVE",
+          "IconImg" : "ICON_NST_RATE_BARRIER_RECEIVE.png",
+          "StatName" : "NST_RATE_BARRIER_RECEIVE",
+          "StatDesc" : "SI_NST_RATE_BARRIER_RECEIVE_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "StatType" : "JST_POWER",
           "IconImg" : "AB_UNIT_STAT_POWER.png",
           "RewardEffectIcon" : "JOURNEY_CMN_STAT_POWER_GET.png",

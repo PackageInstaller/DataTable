@@ -1,0 +1,42 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: JOURNEY_STAMINA_BUFF_TEMPLET",
+    "_Version": 0,
+    "Data": [
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StaminaBuffGroupId" : 1,
+          "StaminaMin" : 0,
+          "StaminaMax" : 30,
+          "BuffId" : "BI_STAMINA_WORST"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StaminaBuffGroupId" : 1,
+          "StaminaMin" : 31,
+          "StaminaMax" : 50,
+          "BuffId" : "BI_STAMINA_BAD"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StaminaBuffGroupId" : 1,
+          "StaminaMin" : 50,
+          "StaminaMax" : 70,
+          "BuffId" : "BI_STAMINA_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StaminaBuffGroupId" : 1,
+          "StaminaMin" : 71,
+          "StaminaMax" : 90,
+          "BuffId" : "BI_STAMINA_GOOD"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StaminaBuffGroupId" : 1,
+          "StaminaMin" : 90,
+          "StaminaMax" : 100,
+          "BuffId" : "BI_STAMINA_BEST"
+        }
+    ]
+}

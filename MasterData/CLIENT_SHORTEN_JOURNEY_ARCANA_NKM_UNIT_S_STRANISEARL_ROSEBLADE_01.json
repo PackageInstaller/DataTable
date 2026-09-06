@@ -1,0 +1,143 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_STRANISEARL_ROSEBLADE_01",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 13,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png",
+      "UnitStrId": "NKM_UNIT_NPC_STRANISEARL_ROSEBLADE"
+    },
+    {
+      "Uid": 1,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아모라가 자신이 만든 맛있는 요리와 함께 <color=#F7BE45>음료</color>를 내어주었다.",
+      "UnitTalk_ENG": "Amora served me a <color=#F7BE45>drink</color> alongside the delicious dish she'd made.",
+      "UnitTalk_JPN": "アモラが美味しい手作り料理と共に<color=#F7BE45>「飲み物」</color>を出してくれた。",
+      "UnitTalk_CHN": "阿莫拉端出了自己做的美味料理，还有一杯<color=#F7BE45>饮料</color>。",
+      "UnitTalk_TWN": "阿莫拉端出了自己做的美味料理，還有一杯<color=#F7BE45>飲料</color>。",
+      "UnitTalk_FRA": "Amora m'a offert une boisson savoureuse accompagnée d'un <color=#F7BE45>vin</color>.",
+      "UnitTalk_DEU": "Amora gab mir ein köstliches Gericht, das nach <color=#F7BE45>Wein</color> schmeckte.",
+      "UnitTalk_ESP": "Amora sirvió <color=#F7BE45>bebida</color> con la deliciosa comida que preparó.",
+      "UnitTalk_PRT": "Amora serviu um prato saboroso com o seu toque especial de <color=#F7BE45>licor</color>.",
+      "UnitTalk_THA": "อมอร่าทำอาหารที่เธอปรุงเองพร้อมกับเครื่องดื่มรสชาติ<color=#F7BE45>ที่ดี</color>ให้",
+      "UnitTalk_IND": "Amora memberiku minuman <color=#F7BE45>arak</color> yang rasanya enak.",
+      "UnitTalk_VIE": "Amora đã dọn món <color=#F7BE45>thức uống</color> cùng món ăn ngon do cô ấy tự làm.",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "향을 음미하며 마신다.",
+          "JumpAnchorStringId_ENG": "Savor the aroma while drinking.",
+          "JumpAnchorStringId_JPN": "香りを味わいながら飲む。",
+          "JumpAnchorStringId_CHN": "细细品味香气后喝下。",
+          "JumpAnchorStringId_TWN": "細細品味香氣後喝下。",
+          "JumpAnchorStringId_FRA": "Je profite de l'odeur en buvant.",
+          "JumpAnchorStringId_DEU": "Ich genieße den Geruch und trinke.",
+          "JumpAnchorStringId_ESP": "Bebí y me embriagué.",
+          "JumpAnchorStringId_PRT": "Cheirando e bebendo o aroma.",
+          "JumpAnchorStringId_THA": "ดื่มด่ำกับกลิ่นหอม",
+          "JumpAnchorStringId_IND": "Aku menikmati aroma itu sebelum meminumnya.",
+          "JumpAnchorStringId_VIE": "Uống và nếm thử.",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "벌컥벌컥 마신다.",
+          "JumpAnchorStringId_ENG": "Gulp it down.",
+          "JumpAnchorStringId_JPN": "一気に飲み干す。",
+          "JumpAnchorStringId_CHN": "大口大口地喝下。",
+          "JumpAnchorStringId_TWN": "大口大口地喝下。",
+          "JumpAnchorStringId_FRA": "Je bois à petites gorgées.",
+          "JumpAnchorStringId_DEU": "Ich trank und trank.",
+          "JumpAnchorStringId_ESP": "Bebí y me embriagué.",
+          "JumpAnchorStringId_PRT": "Bebendo e bebendo.",
+          "JumpAnchorStringId_THA": "ดื่มอย่างเอร็ดอร่อย",
+          "JumpAnchorStringId_IND": "Aku mabuk berat.",
+          "JumpAnchorStringId_VIE": "Uống và nếm thử.",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 3,
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STRANISEARL_ROSEBLADE",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "SWEAT2"
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "향긋하고 깊은 풍미가 느껴지나 싶었지만, 너무나 독한 술이었다는 걸 알게 되었다...",
+      "UnitTalk_ENG": "Just as I began to enjoy its rich, fragrant flavor, I realized it was incredibly strong alcohol...",
+      "UnitTalk_JPN": "芳醇で深い味わいかと思ったけれど、あまりにも強いお酒だと気づいた…",
+      "UnitTalk_CHN": "本以为能感受芳香浓郁的风味，却发现那是非常烈的酒…",
+      "UnitTalk_TWN": "本以為能感受芳香濃郁的風味，卻發現那是非常烈的酒…",
+      "UnitTalk_FRA": "J'ai bu une boisson qui sentait bon et avait une saveur profonde, mais j'ai réalisé que c'était un vin très fort.",
+      "UnitTalk_DEU": "Ich hätte nie gedacht, dass ein so starker Wein so berauschend sein könnte...",
+      "UnitTalk_ESP": "Aunque el aroma era profundo y embriagador, me di cuenta de que era un vino muy fuerte...",
+      "UnitTalk_PRT": "Eu sabia que era um vinho muito forte e escuro, mas não sabia que era tão venenoso...",
+      "UnitTalk_THA": "แม้ว่ากลิ่นจะหอมและลึกล้ำจนน่าหลงใหล แต่ฉันก็รู้ว่ามันคือเหล้าที่เข้มข้นเกินไป...",
+      "UnitTalk_IND": "Aku tahu itu adalah anggur yang memabukkan, tapi aku tidak menyangka akan begitu kuatnya.",
+      "UnitTalk_VIE": "Tôi đã nghĩ rằng đó là một loại rượu độc, nhưng hóa ra đó lại là một loại rượu rất độc...",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STRANISEARL_ROSEBLADE",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "SURPRISE"
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "격한 기침과 함께 머리가 어지럽기 시작했다! 마신 것은 너무나 독한 술이었다...",
+      "UnitTalk_ENG": "I started coughing violently, and my head began to spin! The alcohol was incredibly strong...",
+      "UnitTalk_JPN": "激しく咳き込み、頭がくらくらしてきた！\n飲んだのは、とんでもなく強いお酒だった…",
+      "UnitTalk_CHN": "伴随着剧烈的咳嗽，头也开始晕了！喝下的竟然是非常烈的酒…",
+      "UnitTalk_TWN": "伴隨著劇烈的咳嗽，頭也開始暈了！喝下的竟然是非常烈的酒…",
+      "UnitTalk_FRA": "J'ai commencé à avoir la tête qui tournait et le corps qui tremblait ! J'ai bu du vin...",
+      "UnitTalk_DEU": "Mit einem heftigen Rülpser und einem Schwindelgefühl begann mein Kopf zu schwanken! Ich hätte nie gedacht, dass ein so starker Wein so berauschend sein könnte...",
+      "UnitTalk_ESP": "¡Comencé a marearme y mi cabeza a enturbiarse con el fuerte mareo! Me di cuenta de que era un vino muy fuerte...",
+      "UnitTalk_PRT": "Comecei a tossir e minha cabeça ficou tonta! Beber vinho é muito forte...",
+      "UnitTalk_THA": "เริ่มเวียนหัวพร้อมกับอาการไอ! ดื่มเหล้าที่เข้มข้นเกินไป...",
+      "UnitTalk_IND": "Aku mulai pusing karena batuk dan kepala berputar! Anggur itu benar-benar beracun...",
+      "UnitTalk_VIE": "Cơn chóng mặt và đầu óc quay cuồng bắt đầu! Rượu đó thật sự rất độc...",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_02",
+      "JumpAnchorInfo": "JUMPANCHOR_FINISH",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

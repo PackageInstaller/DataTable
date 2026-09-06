@@ -1,0 +1,51 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_WEDDING_SHIELDER_01",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 2,
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_DEEP_FIELD_HALL.png",
+      "UnitStrId": "NKM_UNIT_NPC_WEDDING_SHIELDER",
+      "UnitMotion": "SPECIAL2"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "카르멘은 프레이가 추진한 엉터리 영화를 연기했다.",
+      "UnitTalk_ENG": "Carmen took part in a nonsensical movie directed by Frey.",
+      "UnitTalk_JPN": "カルメンは、フレイが推し進めたデタラメな映画を演じた。",
+      "UnitTalk_CHN": "卡蜜演出了由芙蕾所主导的乱七八糟的电影。",
+      "UnitTalk_TWN": "卡蜜演出了由芙蕾所主導的亂七八糟的電影。",
+      "UnitTalk_FRA": "Carmen a joué dans un film bidon de Frey.",
+      "UnitTalk_DEU": "Carmen spielte in Freys wirrem Film mit.",
+      "UnitTalk_ESP": "Carmen actuó en la película de pacotilla de Frey.",
+      "UnitTalk_PRT": "Carmen interpretou um filme mal feito por Frey.",
+      "UnitTalk_THA": "คาร์เมนแสดงในภาพยนตร์ห่วยๆ ของเฟรย์",
+      "UnitTalk_IND": "Carmen memerankan film palsu yang dipromosikan Frey.",
+      "UnitTalk_VIE": "Carmen đóng vai trong bộ phim nhảm của Frey.",
+      "UnitTalk_HIN": "कारमेन ने फ्रे द्वारा शुरू की गई घटिया फिल्म में अभिनय किया।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER"
+    }
+  ]
+}

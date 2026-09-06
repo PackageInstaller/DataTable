@@ -1,0 +1,39 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_COUNTERSIDE_ROSARIA_08",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_KNUCKLE_08",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_ASTRO_SANCTUM.png",
+      "UnitStrId": "NKM_UNIT_NPC_COUNTERSIDE_ROSARIA",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_KNUCKLE_08",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "세계의 멸망을 막기 위해, 두 차원을 잇는 <color=#F7BE45>[통로]</color>를 닫아야 함을 깨닫는다.",
+      "UnitTalk_ENG": "I learned that the <color=#F7BE45>[passage]</color> connecting the two dimensions had to be sealed to prevent the world's destruction.",
+      "UnitTalk_JPN": "世界の滅亡を阻止するため、二つの次元を繋ぐ<color=#F7BE45>「通路」</color>を閉じなければならないことを悟った。",
+      "UnitTalk_CHN": "为了阻止世界毁灭，必须关闭连接两个次元的<color=#F7BE45>「信道」</color>。",
+      "UnitTalk_TWN": "為了阻止世界毀滅，必須關閉連接兩個次元的<color=#F7BE45>「通道」</color>。",
+      "UnitTalk_FRA": "Pour empêcher la destruction du monde, nous devons fermer le <color=#F7BE45>[passage]</color> reliant les deux dimensions.",
+      "UnitTalk_DEU": "Um die Zerstörung der Welt zu verhindern, müssen wir den <color=#F7BE45>[Gang]</color> schließen, der die beiden Dimensionen verbindet.",
+      "UnitTalk_ESP": "Para evitar la destrucción del mundo, nos damos cuenta de que debemos cerrar el <color=#F7BE45>[pasaje]</color> que conecta las dos dimensiones.",
+      "UnitTalk_PRT": "Para evitar a destruição do mundo, percebemos que devemos fechar a <color=#F7BE45>[passagem]</color> que conecta as duas dimensões.",
+      "UnitTalk_THA": "เพื่อป้องกันการล่มสลายของโลก เราต้องปิด <color=#F7BE45>[ทางเดิน]</color> ที่เชื่อมต่อสองมิติ",
+      "UnitTalk_IND": "Untuk mencegah kehancuran dunia, kita harus menutup <color=#F7BE45>[lorong]</color> yang menghubungkan kedua dimensi.",
+      "UnitTalk_VIE": "Để ngăn chặn sự hủy diệt của thế giới, chúng ta phải đóng <color=#F7BE45>[con đường]</color> nối liền hai chiều không gian.",
+      "UnitTalk_HIN": "दुनिया के विनाश को रोकने के लिए, हमें दो आयामों को जोड़ने वाले <color=#F7BE45>[मार्ग]</color> को बंद करना होगा।",
+      "TalkTime": 0.03
+    }
+  ]
+}

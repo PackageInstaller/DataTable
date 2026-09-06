@@ -1,0 +1,39 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_MAID_BELL_REST_BAD",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_BELL_REST_BAD",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_REST",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_BELL_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 피로가 남아 있는 걸로 보인다.",
+      "UnitTalk_ENG": "<color=#F7BE45>[CHARACTER_NAME]</color> still seems tired.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は、疲れが残っているようだ。",
+      "UnitTalk_CHN": "<color=#F7BE45>[CHARACTER_NAME]</color>似乎还残留着疲劳。",
+      "UnitTalk_TWN": "<color=#F7BE45>[CHARACTER_NAME]</color>似乎還殘留著疲勞。",
+      "UnitTalk_FRA": "La fatigue semble persister chez <color=#F7BE45>[CHARACTER_NAME]</color>.",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color> scheint noch müde zu sein.",
+      "UnitTalk_ESP": "<color=#F7BE45>[CHARACTER_NAME]</color> aún parece cansado.",
+      "UnitTalk_PRT": "<color=#F7BE45>[CHARACTER_NAME]</color> ainda parece estar com fadiga.",
+      "UnitTalk_THA": "<color=#F7BE45>[CHARACTER_NAME]</color> ดูเหมือนจะยังเหนื่อยอยู่",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> masih terlihat lelah.",
+      "UnitTalk_VIE": "<color=#F7BE45>[CHARACTER_NAME]</color> có vẻ vẫn còn mệt mỏi.",
+      "UnitTalk_HIN": "<color=#F7BE45>[CHARACTER_NAME]</color> अभी भी थका हुआ लग रहा है।",
+      "TalkTime": 0.03
+    }
+  ]
+}

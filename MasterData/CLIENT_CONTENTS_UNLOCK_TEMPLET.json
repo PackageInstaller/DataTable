@@ -26,6 +26,18 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "ContentsTargetType" : "CT_REVIEW_POPUP",
+          "UnlockType" : "ALWAYS_OPEN",
+          "UnlockValue" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ContentsTargetType" : "CT_GUILD_DUNGEON",
+          "UnlockType" : "ALWAYS_OPEN",
+          "UnlockValue" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "ContentsTargetType" : "CT_CUBE_PALACE_STEP_4",
           "UnlockType" : "ALWAYS_OPEN",
           "UnlockValue" : 1
@@ -33,7 +45,7 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "ContentsTargetType" : "CT_CUBE_PALACE_STEP_5",
-          "UnlockType" : "ALWAYS_CLOSE",
+          "UnlockType" : "ALWAYS_OPEN",
           "UnlockValue" : 1
         },
         {
@@ -122,6 +134,12 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "ContentsTargetType" : "CT_OPERATION_BUFF",
+          "UnlockType" : "ALWAYS_OPEN",
+          "UnlockValue" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "ContentsTargetType" : "CT_BATTLE_AUTO",
           "UnlockType" : "NORMAL_BATTLE_CLEAR",
           "UnlockValue" : 200
@@ -180,14 +198,25 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "ContentsTargetType" : "CT_CHAT",
-          "UnlockType" : "JOURNEY_CLEAR",
-          "UnlockValue" : 99
+          "UnlockType" : "NORMAL_BATTLE_CLEAR",
+          "UnlockValue" : 11002015,
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@2@@12"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ContentsTargetType" : "CT_EMOTICON",
+          "UnlockType" : "NORMAL_BATTLE_CLEAR",
+          "UnlockValue" : 11002015,
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@2@@12"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ContentsTargetType" : "CT_MAINSTREAM_STORY",
           "UnlockType" : "JOURNEY_CLEAR",
-          "UnlockValue" : 99
+          "UnlockValue" : 99,
+          "UnlockIcon" : "SYSTEM_UNLOCK_ICON_CAMPAIGN.png",
+          "UnlockTitle" : "SI_MAIN_STORY",
+          "UnlockDesc" : "SI_MAIN_STORY_UNLOCK_DESC"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -348,7 +377,7 @@
           "ContentsTargetType" : "CT_RANKING_BOARD",
           "UnlockType" : "NORMAL_BATTLE_CLEAR",
           "UnlockValue" : 11002015,
-          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@2@@15",
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@2@@12",
           "UnlockIcon" : "SYSTEM_UNLOCK_ICON_RANKING_BOARD.png",
           "UnlockTitle" : "SI_RANKING_BOARD",
           "UnlockDesc" : "SI_RANKING_CONTENT_UNLCOK_DESC"
@@ -358,7 +387,7 @@
           "ContentsTargetType" : "CT_GUILD",
           "UnlockType" : "NORMAL_BATTLE_CLEAR",
           "UnlockValue" : 11002015,
-          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@2@@15",
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@2@@12",
           "UnlockIcon" : "SYSTEM_UNLOCK_ICON_GUILD.png",
           "UnlockTitle" : "SI_ACS_GUILD",
           "UnlockDesc" : "SI_COMMUNITY_GUILD_UNLOCK_DESC"
@@ -368,7 +397,7 @@
           "ContentsTargetType" : "CT_CUBE_PALACE",
           "UnlockType" : "NORMAL_BATTLE_CLEAR",
           "UnlockValue" : 11002015,
-          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@2@@15",
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@2@@12",
           "UnlockIcon" : "SYSTEM_UNLOCK_ICON_CUBE_PALACE.png",
           "UnlockTitle" : "SI_CUBE_PALACE",
           "UnlockDesc" : "SI_CUBE_PALACE_UNLOCK_DESC"
@@ -378,7 +407,7 @@
           "ContentsTargetType" : "CT_PVP",
           "UnlockType" : "NORMAL_BATTLE_CLEAR",
           "UnlockValue" : 11002015,
-          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@2@@15",
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@2@@12",
           "UnlockIcon" : "SYSTEM_UNLOCK_ICON_GAUNTLET.png",
           "UnlockTitle" : "SI_GAUNTLET",
           "UnlockDesc" : "SI_PVP_UNLOCK_DESC"
@@ -388,38 +417,48 @@
           "ContentsTargetType" : "CT_PVP_ASYNC",
           "UnlockType" : "NORMAL_BATTLE_CLEAR",
           "UnlockValue" : 11002015,
-          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@2@@15"
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@2@@12"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ContentsTargetType" : "CT_PVP_PRIVATE",
           "UnlockType" : "NORMAL_BATTLE_CLEAR",
           "UnlockValue" : 11002015,
-          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@2@@15"
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@2@@12"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ContentsTargetType" : "CT_PVP_RANK",
           "UnlockType" : "NORMAL_BATTLE_CLEAR",
           "UnlockValue" : 11002015,
-          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@2@@15"
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@2@@12"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ContentsTargetType" : "CT_SYNCHRO",
           "UnlockType" : "NORMAL_BATTLE_CLEAR",
           "UnlockValue" : 11003018,
-          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@3@@18",
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@3@@15",
           "UnlockIcon" : "SYSTEM_UNLOCK_ICON_SYNCHRO.png",
           "UnlockTitle" : "SI_FACILITY_SYNCHRO",
           "UnlockDesc" : "SI_SYNCHRO_UNLOCK_DESC"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "ContentsTargetType" : "CT_BOSS_RUSH",
+          "UnlockType" : "NORMAL_BATTLE_CLEAR",
+          "UnlockValue" : 11003018,
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@3@@15",
+          "UnlockIcon" : "SYSTEM_UNLOCK_BOSS_RUSH.png",
+          "UnlockTitle" : "SI_BOSS_RUSH",
+          "UnlockDesc" : "SI_BOSS_RUSH_UNLOCK_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "ContentsTargetType" : "CT_SPECIAL_RAID",
           "UnlockType" : "NORMAL_BATTLE_CLEAR",
           "UnlockValue" : 11004025,
-          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@4@@25",
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@4@@18",
           "UnlockIcon" : "SYSTEM_UNLOCK_ICON_SPECIAL_RAID.png",
           "UnlockTitle" : "SI_SPECIAL_RAID",
           "UnlockDesc" : "SI_SPECIAL_RAID_UNLOCK_DESC"
@@ -429,7 +468,7 @@
           "ContentsTargetType" : "CT_CRAFT",
           "UnlockType" : "NORMAL_BATTLE_CLEAR",
           "UnlockValue" : 11004025,
-          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@4@@25",
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@4@@18",
           "UnlockIcon" : "SYSTEM_UNLOCK_ICON_CRAFT.png",
           "UnlockTitle" : "SI_FACILITY_CRAFT",
           "UnlockDesc" : "SI_CRAFT_UNLOCK_DESC"
@@ -439,7 +478,7 @@
           "ContentsTargetType" : "CT_TACTICS",
           "UnlockType" : "NORMAL_BATTLE_CLEAR",
           "UnlockValue" : 11005028,
-          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@5@@28",
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@5@@20",
           "UnlockIcon" : "SYSTEM_UNLOCK_ICON_TACTICS.png",
           "UnlockTitle" : "SI_FACILITY_TACTICS",
           "UnlockDesc" : "SI_CT_TACTICS_UNLOCK_DESC"
@@ -449,7 +488,7 @@
           "ContentsTargetType" : "CT_CLOISTER",
           "UnlockType" : "NORMAL_BATTLE_CLEAR",
           "UnlockValue" : 11006032,
-          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@6@@32",
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@6@@20",
           "UnlockIcon" : "SYSTEM_UNLOCK_ICON_CLOISTER.png",
           "UnlockTitle" : "SI_INTERSTELLAR_CLOISTER",
           "UnlockDesc" : "SI_INTERSTELLAR_CLOISTER_UNLOCK_DESC"
@@ -458,8 +497,8 @@
           "ContentsTag" : "MAIN_OPEN",
           "ContentsTargetType" : "CT_RANKING_RAID",
           "UnlockType" : "NORMAL_BATTLE_CLEAR",
-          "UnlockValue" : 11012060,
-          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@12@@60",
+          "UnlockValue" : 11010048,
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@10@@28",
           "UnlockIcon" : "SYSTEM_UNLOCK_ICON_COSMO_GATE.png",
           "UnlockTitle" : "SI_COSMO_GATE",
           "UnlockDesc" : "SI_RANKING_RAID_UNLOCK_DESC"
@@ -471,6 +510,66 @@
           "UnlockValue" : 200,
           "UnlockTitle" : "SI_STAR_LINK_ENHANCE",
           "UnlockDesc" : "SI_STAR_LINK_ENHANCE_UNLOCK_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ContentsTargetType" : "CT_MAINSTREAM_OPERATION_HARD",
+          "UnlockType" : "NORMAL_BATTLE_CLEAR",
+          "UnlockValue" : 11016060,
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@16@@36",
+          "UnlockIcon" : "SYSTEM_UNLOCK_ICON_OPERATION.png",
+          "UnlockTitle" : "SI_OPERATION_HARD",
+          "UnlockDesc" : "SI_OPERATION_HARD_UNLOCK_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ContentsTargetType" : "CT_MAINSTREAM_MAINSTORY_EP_02",
+          "UnlockType" : "NORMAL_BATTLE_CLEAR",
+          "UnlockValue" : 11004025,
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@4@@18",
+          "UnlockIcon" : "SYSTEM_UNLOCK_ICON_DICTIONARY.png",
+          "UnlockTitle" : "SI_UNLOCK_TITLE_MAIN_STORY@@2@@SI_HAPPY_SMILE",
+          "UnlockDesc" : "SI_MAIN_STORY_UNLOCK_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ContentsTargetType" : "CT_MAINSTREAM_MAINSTORY_EP_03",
+          "UnlockType" : "NORMAL_BATTLE_CLEAR",
+          "UnlockValue" : 11008040,
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@8@@26",
+          "UnlockIcon" : "SYSTEM_UNLOCK_ICON_DICTIONARY.png",
+          "UnlockTitle" : "SI_UNLOCK_TITLE_MAIN_STORY@@3@@SI_MONOLITH_CHURCH",
+          "UnlockDesc" : "SI_MAIN_STORY_UNLOCK_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ContentsTargetType" : "CT_MAINSTREAM_MAINSTORY_EP_04",
+          "UnlockType" : "NORMAL_BATTLE_CLEAR",
+          "UnlockValue" : 11012060,
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@12@@36",
+          "UnlockIcon" : "SYSTEM_UNLOCK_ICON_DICTIONARY.png",
+          "UnlockTitle" : "SI_UNLOCK_TITLE_MAIN_STORY@@4@@SI_NAME_OF_TOMBSTONE",
+          "UnlockDesc" : "SI_MAIN_STORY_UNLOCK_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ContentsTargetType" : "CT_MAINSTREAM_MAINSTORY_EP_05",
+          "UnlockType" : "NORMAL_BATTLE_CLEAR",
+          "UnlockValue" : 11016060,
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@16@@36",
+          "UnlockIcon" : "SYSTEM_UNLOCK_ICON_DICTIONARY.png",
+          "UnlockTitle" : "SI_UNLOCK_TITLE_MAIN_STORY@@5@@SI_EVENT_EPISODE_5_TITLE",
+          "UnlockDesc" : "SI_MAIN_STORY_UNLOCK_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ContentsTargetType" : "CT_MAINSTREAM_MAINSTORY_EP_06",
+          "UnlockType" : "NORMAL_BATTLE_CLEAR",
+          "UnlockValue" : 11020060,
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@20@@36",
+          "UnlockIcon" : "SYSTEM_UNLOCK_ICON_DICTIONARY.png",
+          "UnlockTitle" : "SI_UNLOCK_TITLE_MAIN_STORY@@5@@SI_EVENT_EPISODE_5_TITLE",
+          "UnlockDesc" : "SI_MAIN_STORY_UNLOCK_DESC"
         }
     ]
 }

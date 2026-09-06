@@ -1,0 +1,167 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_COUNTERSIDE_MINA_02",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_GRACE_DUALSWORD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_AGANON_RUIN.png",
+      "UnitStrId": "NKM_UNIT_NPC_COUNTERSIDE_MINA",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_GRACE_DUALSWORD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "블랙 기업 출신인 유미나는 업무량이 늘어날수록 편안함을 느끼는 모양이다…",
+      "UnitTalk_ENG": "Due to her time in a brutally demanding workplace seems to feel more at ease as the heavier her workload becomes...",
+      "UnitTalk_JPN": "ブラック企業出身のミナは、仕事量が増えれば増えるほど安らぎを感じるようだ…",
+      "UnitTalk_CHN": "出身于黑心企业的刘米娜，似乎在工作量增加时反而会感到安心…",
+      "UnitTalk_TWN": "出身於黑心企業的劉米娜，似乎在工作量增加時反而會感到安心…",
+      "UnitTalk_FRA": "Yumina, ancienne employée d'une entreprise sans scrupules, semble se sentir plus à l'aise à mesure que sa charge de travail augmente…",
+      "UnitTalk_DEU": "Yumina, eine ehemalige Angestellte einer Ausbeuterfirma, scheint sich wohler zu fühlen, je mehr ihre Arbeitslast steigt …",
+      "UnitTalk_ESP": "Yumina, una ex empleada de una empresa explotadora, parece sentirse más cómoda cuanto más aumenta su carga de trabajo…",
+      "UnitTalk_PRT": "Yumina, que veio de uma empresa exploradora, parece se sentir mais à vontade quanto mais sua carga de trabalho aumenta…",
+      "UnitTalk_THA": "ยูมินะ อดีตพนักงานบริษัทสีดำ ดูเหมือนจะรู้สึกสบายใจขึ้นเรื่อย ๆ ยิ่งมีภาระงานเพิ่มขึ้นเรื่อย ๆ…",
+      "UnitTalk_IND": "Yumina, mantan karyawan perusahaan \"hitam\", tampaknya merasa lebih nyaman semakin banyak beban kerjanya…",
+      "UnitTalk_VIE": "Yumina, một cựu nhân viên của công ty bóc lột, dường như càng tăng khối lượng công việc, cô ấy càng cảm thấy thoải mái hơn…",
+      "UnitTalk_HIN": "यूमिना, जो एक ब्लैक कंपनी की पूर्व कर्मचारी है, ऐसा लगता है कि उसका काम जितना बढ़ता है, वह उतनी ही सहज महसूस करती है…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그때의 생활 패턴을 재현해 보면 어때?",
+          "JumpAnchorStringId_ENG": "What if you replicate that old routine?",
+          "JumpAnchorStringId_JPN": "その頃の生活パターンを再現してみるのはどう？",
+          "JumpAnchorStringId_CHN": "重现那时候的生活模式怎么样？",
+          "JumpAnchorStringId_TWN": "重現那時候的生活模式怎麼樣？",
+          "JumpAnchorStringId_FRA": "Et si on recréait ton ancienne routine quotidienne ?",
+          "JumpAnchorStringId_DEU": "Wie wäre es, wenn wir deinen alten Tagesablauf nachstellen?",
+          "JumpAnchorStringId_ESP": "¿Qué tal si recreamos tu antigua rutina diaria?",
+          "JumpAnchorStringId_PRT": "Que tal recriarmos sua antiga rotina diária?",
+          "JumpAnchorStringId_THA": "ลองจำลองรูปแบบการใช้ชีวิตแบบเดิมดูไหมครับ/คะ?",
+          "JumpAnchorStringId_IND": "Bagaimana kalau kita menciptakan kembali rutinitas harian lamamu?",
+          "JumpAnchorStringId_VIE": "Sao chúng ta không thử tái hiện lại lối sống lúc đó nhỉ?",
+          "JumpAnchorStringId_HIN": "तब की अपनी दिनचर्या को फिर से बनाने के बारे में क्या ख़याल है?",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "좀 더 확실하게 쉬어보자.",
+          "JumpAnchorStringId_ENG": "Let's take a long break.",
+          "JumpAnchorStringId_JPN": "もっとしっかり休もう。",
+          "JumpAnchorStringId_CHN": "再试试看吧！",
+          "JumpAnchorStringId_TWN": "再試試看吧！",
+          "JumpAnchorStringId_FRA": "Reposons-nous un peu plus profondément.",
+          "JumpAnchorStringId_DEU": "Lass uns etwas gründlicher ausruhen.",
+          "JumpAnchorStringId_ESP": "Descansemos un poco más a fondo.",
+          "JumpAnchorStringId_PRT": "Vamos descansar um pouco mais e de forma mais completa.",
+          "JumpAnchorStringId_THA": "มาพักผ่อนให้เต็มที่กว่านี้กันเถอะครับ/ค่ะ",
+          "JumpAnchorStringId_IND": "Mari kita beristirahat dengan lebih optimal.",
+          "JumpAnchorStringId_VIE": "Hãy nghỉ ngơi kỹ càng hơn một chút.",
+          "JumpAnchorStringId_HIN": "चलो, थोड़ा और अच्छे से आराम करते हैं।",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 7,
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_COUNTERSIDE_MINA",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "블랙기업의 희생자를 잘못된 길로 이끈 게 아닐까 고민이 깊어졌다…",
+      "UnitTalk_ENG": "Had I led a victim of an exploitative company even further down the wrong path?",
+      "UnitTalk_JPN": "ブラック企業の犠牲者を、さらなる修羅の道へ導いてしまったのではないか…と悩みは深まった。",
+      "UnitTalk_CHN": "我该不会把黑心企业的受害者引导到错误的道路上了吧？",
+      "UnitTalk_TWN": "我該不會把黑心企業的受害者引導到錯誤的道路上了吧？",
+      "UnitTalk_FRA": "Elle se demanda si elle avait mené une victime d'une entreprise sans scrupules sur la mauvaise voie…",
+      "UnitTalk_DEU": "Sie überlegte, ob sie ein Opfer einer Ausbeuterfirma auf den falschen Weg geführt hatte …",
+      "UnitTalk_ESP": "Se preguntó si había llevado a una víctima de la empresa negra por el camino equivocado…",
+      "UnitTalk_PRT": "Ela se preocupou em ter levado uma vítima da empresa negra pelo caminho errado…",
+      "UnitTalk_THA": "เขา/เธอครุ่นคิดว่าตัวเองได้นำพาเหยื่อของบริษัทสีดำไปในทางที่ผิดหรือเปล่า…",
+      "UnitTalk_IND": "Dia merenung, apakah dia telah menyesatkan korban perusahaan gelap ke jalan yang salah…",
+      "UnitTalk_VIE": "Cô ấy tự hỏi liệu mình có đã dẫn dắt một nạn nhân của công ty bóc lột đi sai đường không…",
+      "UnitTalk_HIN": "उसने सोचा कि क्या उसने एक ब्लैक कंपनी के शिकार को गलत रास्ते पर ले जाया था…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_GRACE_DUALSWORD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_GRACE_DUALSWORD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 9,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_COUNTERSIDE_MINA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "휴식 도중 발생한 사건으로 업무량이 늘어났지만, 유미나는 오히려 안정감을 느끼는 듯하다…",
+      "UnitTalk_ENG": "An incident during Mina's break increased her workload, but she seemed to find it oddly reassuring...",
+      "UnitTalk_JPN": "休ませるつもりが、ミナが起こしたトラブルのせいで仕事量はかえって増えてしまった。だがミナ本人は、むしろ充実感すら覚えているようだった…",
+      "UnitTalk_CHN": "虽然因为休息途中发生的事件让工作量增加，但刘米娜反而似乎感到安心…",
+      "UnitTalk_TWN": "雖然因為休息途中發生的事件讓工作量增加，但劉米娜反而似乎感到安心…",
+      "UnitTalk_FRA": "Bien que sa charge de travail ait augmenté suite à un incident pendant sa pause, Yumina semblait se sentir plus stable…",
+      "UnitTalk_DEU": "Obwohl ihre Arbeitslast aufgrund eines Vorfalls während ihrer Pause zunahm, schien Yumina sich stabiler zu fühlen …",
+      "UnitTalk_ESP": "Aunque su carga de trabajo aumentó debido a un incidente durante su descanso, Yumina parecía sentirse más estable…",
+      "UnitTalk_PRT": "Embora sua carga de trabalho tenha aumentado devido a um incidente durante seu descanso, Yumina parecia se sentir mais estável…",
+      "UnitTalk_THA": "แม้ว่าภาระงานของเธอจะเพิ่มขึ้นเนื่องจากเหตุการณ์ที่เกิดขึ้นระหว่างช่วงพัก แต่ยูมินะกลับดูเหมือนจะรู้สึกมั่นคงขึ้น…",
+      "UnitTalk_IND": "Meskipun beban kerjanya meningkat karena insiden saat istirahat, Yumina tampaknya merasa lebih stabil…",
+      "UnitTalk_VIE": "Mặc dù khối lượng công việc của Yumina tăng lên do một sự cố trong thời gian nghỉ, cô ấy dường như lại cảm thấy ổn định hơn…",
+      "UnitTalk_HIN": "हालांकि उसके ब्रेक के दौरान हुई एक घटना के कारण उसका काम बढ़ गया था, यूमिना अधिक स्थिर महसूस कर रही थी…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_GRACE_DUALSWORD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_GRACE_DUALSWORD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    }
+  ]
+}

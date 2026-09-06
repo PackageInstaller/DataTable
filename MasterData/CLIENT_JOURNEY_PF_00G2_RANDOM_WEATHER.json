@@ -1,0 +1,376 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_00G2_RANDOM_WEATHER",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_00A_RANDOM_WEATHER",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_HOTEL_2_NIGHT.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_18.mp3"
+    },
+    {
+      "Uid": 3,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "창밖에서 들려오는 벌레 소리, 땀이 마르지 않는 공기… ",
+      "UnitTalk_ENG": "The chirping of insects outside the window, the heavy air that won't let sweat dry... ",
+      "UnitTalk_JPN": "窓の外から聞こえる虫の声、まとわりつくような空気… ",
+      "UnitTalk_CHN": "窗外传来的虫鸣、空气中挥之不去的汗水… ",
+      "UnitTalk_TWN": "窗外傳來的蟲鳴、空氣中揮之不去的汗水… ",
+      "UnitTalk_FRA": "Le chant des insectes dehors, l'air lourd et humide… ",
+      "UnitTalk_DEU": "Das Zirpen der Insekten draußen, die schwüle Luft… ",
+      "UnitTalk_ESP": "El sonido de los insectos proveniente de fuera de la ventana, el aire húmedo que no deja secarse…",
+      "UnitTalk_PRT": "O som dos insetos lá fora, o ar úmido e pegajoso…",
+      "UnitTalk_THA": "เสียงแมลงจากนอกหน้าต่าง อากาศที่อบอ้าวไปด้วยเหงื่อ…",
+      "UnitTalk_IND": "Suara serangga dari luar jendela, udara yang lembap…",
+      "UnitTalk_VIE": "Tiếng côn trùng kêu ngoài cửa sổ, không khí ẩm ướt…",
+      "UnitTalk_HIN": "खिड़की से आती कीड़ों की आवाज़, हवा में चिपचिपी नमी… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "숨이 턱턱 막히는 열기가 숙소를 휘감고 있었다.",
+      "UnitTalk_ENG": "The suffocating heat wrapped around the quarters like a thick blanket.",
+      "UnitTalk_JPN": "息が詰まるような熱気が、宿を包み込んでいた。",
+      "UnitTalk_CHN": "令人窒息的热气笼罩着宿舍。",
+      "UnitTalk_TWN": "令人窒息的熱氣籠罩著宿舍。",
+      "UnitTalk_FRA": "Une chaleur étouffante enveloppait la chambre.",
+      "UnitTalk_DEU": "Eine erstickende Hitze hüllte die Unterkunft ein.",
+      "UnitTalk_ESP": "Un calor sofocante envolvía el alojamiento.",
+      "UnitTalk_PRT": "Um calor sufocante envolvia o alojamento.",
+      "UnitTalk_THA": "ความร้อนที่ทำให้หายใจติดขัดปกคลุมทั่วที่พัก",
+      "UnitTalk_IND": "Panas yang menyesakkan menyelimuti penginapan.",
+      "UnitTalk_VIE": "Hơi nóng ngột ngạt bao trùm lấy căn phòng.",
+      "UnitTalk_HIN": "दम घोंट देने वाली गर्मी ने पूरे कमरे को घेर रखा था।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 6,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_REST",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 7,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 8,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "EmotionEffect": "STRESS"
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitTalk_KOR": "[EVENT_RANDOM_WEATHER_07_01]",
+      "UnitTalk_ENG": "[EVENT_RANDOM_WEATHER_07_01]",
+      "UnitTalk_JPN": "[EVENT_RANDOM_WEATHER_07_01]",
+      "UnitTalk_CHN": "[EVENT_RANDOM_WEATHER_07_01]",
+      "UnitTalk_TWN": "[EVENT_RANDOM_WEATHER_07_01]",
+      "UnitTalk_FRA": "[EVENT_RANDOM_WEATHER_07_01]",
+      "UnitTalk_DEU": "[EVENT_RANDOM_WEATHER_07_01]",
+      "UnitTalk_ESP": "[EVENT_RANDOM_WEATHER_07_01]",
+      "UnitTalk_PRT": "[EVENT_RANDOM_WEATHER_07_01]",
+      "UnitTalk_THA": "[EVENT_RANDOM_WEATHER_07_01]",
+      "UnitTalk_IND": "[EVENT_RANDOM_WEATHER_07_01]",
+      "UnitTalk_VIE": "[EVENT_RANDOM_WEATHER_07_01]",
+      "UnitTalk_HIN": "[EVENT_RANDOM_WEATHER_07_01]",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitTalk_KOR": "[EVENT_RANDOM_WEATHER_07_02]",
+      "UnitTalk_ENG": "[EVENT_RANDOM_WEATHER_07_02]",
+      "UnitTalk_JPN": "[EVENT_RANDOM_WEATHER_07_02]",
+      "UnitTalk_CHN": "[EVENT_RANDOM_WEATHER_07_02]",
+      "UnitTalk_TWN": "[EVENT_RANDOM_WEATHER_07_02]",
+      "UnitTalk_FRA": "[EVENT_RANDOM_WEATHER_07_02]",
+      "UnitTalk_DEU": "[EVENT_RANDOM_WEATHER_07_02]",
+      "UnitTalk_ESP": "[EVENT_RANDOM_WEATHER_07_02]",
+      "UnitTalk_PRT": "[EVENT_RANDOM_WEATHER_07_02]",
+      "UnitTalk_THA": "[EVENT_RANDOM_WEATHER_07_02]",
+      "UnitTalk_IND": "[EVENT_RANDOM_WEATHER_07_02]",
+      "UnitTalk_VIE": "[EVENT_RANDOM_WEATHER_07_02]",
+      "UnitTalk_HIN": "[EVENT_RANDOM_WEATHER_07_02]",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이럴 때는…",
+      "UnitTalk_ENG": "At times like this...",
+      "UnitTalk_JPN": "こういう時は…",
+      "UnitTalk_CHN": "这种时候…",
+      "UnitTalk_TWN": "這種時候…",
+      "UnitTalk_FRA": "Dans ces moments-là…",
+      "UnitTalk_DEU": "In solchen Momenten…",
+      "UnitTalk_ESP": "En momentos como este…",
+      "UnitTalk_PRT": "Nessas horas…",
+      "UnitTalk_THA": "ในสถานการณ์แบบนี้…",
+      "UnitTalk_IND": "Dalam situasi seperti ini…",
+      "UnitTalk_VIE": "Trong trường hợp này…",
+      "UnitTalk_HIN": "ऐसे में…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "손 선풍기를 사용하자.",
+          "JumpAnchorStringId_ENG": "Let's use a handy fan.",
+          "JumpAnchorStringId_JPN": "ハンディファンを使おう。",
+          "JumpAnchorStringId_CHN": "使用手持电风扇吧。",
+          "JumpAnchorStringId_TWN": "使用手持電風扇吧。",
+          "JumpAnchorStringId_FRA": "Utilisons un ventilateur portable.",
+          "JumpAnchorStringId_DEU": "Nutzen wir den Handventilator.",
+          "JumpAnchorStringId_ESP": "Usemos el ventilador.",
+          "JumpAnchorStringId_PRT": "Vamos usar um ventilador de mão.",
+          "JumpAnchorStringId_THA": "มาใช้พัดลมมือถือกัน",
+          "JumpAnchorStringId_IND": "Mari gunakan kipas tangan.",
+          "JumpAnchorStringId_VIE": "Dùng quạt cầm tay.",
+          "JumpAnchorStringId_HIN": "हाथ के पंखे का इस्तेमाल करें।",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "어쩔 수 없지. 버텨볼 수밖에.",
+          "JumpAnchorStringId_ENG": "I'll power through it.",
+          "JumpAnchorStringId_JPN": "我慢して耐えるしかない。",
+          "JumpAnchorStringId_CHN": "没办法，只能忍耐了。",
+          "JumpAnchorStringId_TWN": "沒辦法，只能忍耐了。",
+          "JumpAnchorStringId_FRA": "Je n'ai pas le choix. Je dois juste supporter.",
+          "JumpAnchorStringId_DEU": "Was soll ich tun? Ich muss es einfach ertragen.",
+          "JumpAnchorStringId_ESP": "No hay remedio. Solo queda aguantar.",
+          "JumpAnchorStringId_PRT": "Não há o que fazer. Apenas aguentar.",
+          "JumpAnchorStringId_THA": "ไม่มีทางหนี ต้องรับมือให้ได้",
+          "JumpAnchorStringId_IND": "Tak bisa berbuat apa. Hanya bisa bertahan.",
+          "JumpAnchorStringId_VIE": "Không còn cách nào khác. Chỉ có thể chịu đựng.",
+          "JumpAnchorStringId_HIN": "कोई चारा नहीं। बस सहना ही होगा।",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 13,
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "EMARK",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "선풍기에서 나오는 바람이 더운 공기를 밀어내고, 기분 좋은 시원함이 퍼졌다.",
+      "UnitTalk_ENG": "The fan's breeze pushed away the hot air, filling the room with pleasant coolness.",
+      "UnitTalk_JPN": "ハンディファンから出る風が熱気を押し出し、心地よい涼しさが広がった。",
+      "UnitTalk_CHN": "电风扇吹出的风驱散了热空气，带来了舒适的凉爽感。",
+      "UnitTalk_TWN": "電風扇吹出的風驅散了熱空氣，帶來了舒適的涼爽感。",
+      "UnitTalk_FRA": "Le souffle du ventilateur repoussa l'air chaud, et une agréable fraîcheur se répandit.",
+      "UnitTalk_DEU": "Der Wind des Ventilators vertrieb die heiße Luft und eine angenehme Kühle breitete sich aus.",
+      "UnitTalk_ESP": "El aire del ventilador empujó el aire caliente, y una agradable frescura se extendió.",
+      "UnitTalk_PRT": "O vento do ventilador afastou o ar quente, e um frescor agradável se espalhou.",
+      "UnitTalk_THA": "ลมจากพัดลมพัดไล่อากาศร้อนออกไป และความเย็นสบายก็แผ่ซ่านไปทั่ว",
+      "UnitTalk_IND": "Angin dari kipas angin mendorong udara panas, dan kesejukan yang menyenangkan menyebar.",
+      "UnitTalk_VIE": "Gió từ quạt điện đẩy luồng khí nóng đi, mang đến sự mát mẻ dễ chịu.",
+      "UnitTalk_HIN": "पंखे से निकली हवा ने गर्म हवा को दूर धकेला, और एक सुखद ठंडक फैल गई।",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 15,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 16,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_REST",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 쾌적함을 만끽한 모양이다.",
+      "UnitTalk_ENG": "<color=#F7BE45>[ [CHARACTER_NAME] ]</color> seems to be enjoying the cool breeze.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は快適さを満喫したようだ。",
+      "UnitTalk_CHN": "<color=#F7BE45>[[CHARACTER_NAME]]</color>似乎沉浸在舒适之中。",
+      "UnitTalk_TWN": "<color=#F7BE45>[[CHARACTER_NAME]]</color>似乎沉浸在舒適之中。",
+      "UnitTalk_FRA": "<color=#F7BE45>[CHARACTER_NAME]</color> semble savourer ce confort.",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color> scheint die Annehmlichkeit zu genießen.",
+      "UnitTalk_ESP": "<color=#F7BE45>[CHARACTER_NAME]</color> parece estar disfrutando de la comodidad.",
+      "UnitTalk_PRT": "<color=#F7BE45>[CHARACTER_NAME]</color> parece ter desfrutado do conforto.",
+      "UnitTalk_THA": "<color=#F7BE45>[CHARACTER_NAME]</color>ดูเหมือนจะเพลิดเพลินกับความสบาย",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> tampaknya menikmati kenyamanan.",
+      "UnitTalk_VIE": "<color=#F7BE45>[CHARACTER_NAME]</color> dường như đang tận hưởng sự thoải mái.",
+      "UnitTalk_HIN": "<color=#F7BE45>[CHARACTER_NAME]</color> आराम का आनंद ले रहा है।",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 18,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.5
+    },
+    {
+      "Uid": 19,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 20,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 21,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5,
+      "CutsceneClear": "CLEARTEXT"
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 지금의 환경이 어딘가 불편한 듯하다.",
+      "UnitTalk_ENG": "<color=#F7BE45>[CHARACTER_NAME]</color> seems uncomfortable in the current environment.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は今の天気にどこか落ち着かないようだ。",
+      "UnitTalk_CHN": "<color=#F7BE45>[CHARACTER_NAME]</color>似乎对当前的环境有些不自在。",
+      "UnitTalk_TWN": "<color=#F7BE45>[CHARACTER_NAME]</color>似乎對當前的環境有些不自在。",
+      "UnitTalk_FRA": "<color=#F7BE45>[CHARACTER_NAME]</color> semble mal à l'aise dans cet environnement.",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color> scheint sich in der aktuellen Umgebung unwohl zu fühlen.",
+      "UnitTalk_ESP": "<color=#F7BE45>[CHARACTER_NAME]</color> parece sentirse incómodo con el ambiente actual.",
+      "UnitTalk_PRT": "<color=#F7BE45>[CHARACTER_NAME]</color> parece estar um tanto desconfortável com o ambiente atual.",
+      "UnitTalk_THA": "<color=#F7BE45>[CHARACTER_NAME]</color>ดูเหมือนจะไม่ค่อยสบายใจกับสภาพแวดล้อมในตอนนี้",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> merasa tidak nyaman dengan lingkungan saat ini.",
+      "UnitTalk_VIE": "<color=#F7BE45>[CHARACTER_NAME]</color> có vẻ không thoải mái với môi trường hiện tại.",
+      "UnitTalk_HIN": "<color=#F7BE45>[CHARACTER_NAME]</color> को मौजूदा माहौल कुछ असहज लग रहा है।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_REST",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 24,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 25,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.5
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "결국, 다음 날이 되어서도 불편한 기색을 감추지 못했다…",
+      "UnitTalk_ENG": "In the end, even the next day, she still couldn’t hide her frustration…",
+      "UnitTalk_JPN": "結局、翌日になってもどこか気分が晴れない様子だった…",
+      "UnitTalk_CHN": "结果，即使到了隔天，仍无法掩饰那份不适…",
+      "UnitTalk_TWN": "結果，即使到了隔天，仍無法掩飾那份不適…",
+      "UnitTalk_FRA": "Finalement, le lendemain, il/elle ne put cacher son malaise…",
+      "UnitTalk_DEU": "Letztendlich konnte er/sie sein/ihr Unbehagen auch am nächsten Tag nicht verbergen…",
+      "UnitTalk_ESP": "Al final, no pudo ocultar su incomodidad ni siquiera al día siguiente…",
+      "UnitTalk_PRT": "No fim, mesmo no dia seguinte, não conseguiu esconder o desconforto…",
+      "UnitTalk_THA": "สุดท้าย แม้จะถึงวันรุ่งขึ้นก็ยังคงไม่สามารถซ่อนสีหน้าไม่สบายใจได้…",
+      "UnitTalk_IND": "Pada akhirnya, dia masih tidak bisa menyembunyikan ketidaknyamanannya keesokan harinya…",
+      "UnitTalk_VIE": "Cuối cùng, ngay cả đến ngày hôm sau, vẫn không giấu được vẻ khó chịu…",
+      "UnitTalk_HIN": "आखिरकार, अगले दिन भी वह अपनी बेचैनी छिपा नहीं पाया…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

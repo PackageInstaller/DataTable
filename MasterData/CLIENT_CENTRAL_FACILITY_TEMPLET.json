@@ -21,13 +21,13 @@
           "FacilityIcon" : "ICON_FACILITY_ACCRUE.png",
           "ContentsTargetType" : "CT_ACCRUE",
           "FacilityLevel" : 1,
-          "LevelMax" : 10
+          "LevelMax" : 12
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "FacilityType" : "FACILITY_ACCRUE",
           "FacilityLevel" : 2,
-          "LevelMax" : 10,
+          "LevelMax" : 12,
           "BonusType" : "ACCRUE_BONUS_REWARD_01",
           "BonusValue" : 1000,
           "FacilityReqItem" : 
@@ -42,7 +42,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "FacilityType" : "FACILITY_ACCRUE",
           "FacilityLevel" : 3,
-          "LevelMax" : 10,
+          "LevelMax" : 12,
           "BonusType" : "ACCRUE_BONUS_REWARD_02",
           "BonusValue" : 1000,
           "FacilityReqItem" : 
@@ -57,7 +57,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "FacilityType" : "FACILITY_ACCRUE",
           "FacilityLevel" : 4,
-          "LevelMax" : 10,
+          "LevelMax" : 12,
           "BonusType" : "ACCRUE_BONUS_REWARD_03",
           "BonusValue" : 1000,
           "FacilityReqItem" : 
@@ -72,7 +72,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "FacilityType" : "FACILITY_ACCRUE",
           "FacilityLevel" : 5,
-          "LevelMax" : 10,
+          "LevelMax" : 12,
           "BonusType" : "ACCRUE_BONUS_REWARD_01",
           "BonusValue" : 1000,
           "FacilityReqItem" : 
@@ -87,7 +87,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "FacilityType" : "FACILITY_ACCRUE",
           "FacilityLevel" : 6,
-          "LevelMax" : 10,
+          "LevelMax" : 12,
           "BonusType" : "ACCRUE_BONUS_REWARD_02",
           "BonusValue" : 1000,
           "FacilityReqItem" : 
@@ -102,7 +102,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "FacilityType" : "FACILITY_ACCRUE",
           "FacilityLevel" : 7,
-          "LevelMax" : 10,
+          "LevelMax" : 12,
           "BonusType" : "ACCRUE_BONUS_REWARD_03",
           "BonusValue" : 1000,
           "FacilityReqItem" : 
@@ -117,7 +117,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "FacilityType" : "FACILITY_ACCRUE",
           "FacilityLevel" : 8,
-          "LevelMax" : 10,
+          "LevelMax" : 12,
           "BonusType" : "ACCRUE_BONUS_REWARD_01",
           "BonusValue" : 1000,
           "FacilityReqItem" : 
@@ -132,7 +132,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "FacilityType" : "FACILITY_ACCRUE",
           "FacilityLevel" : 9,
-          "LevelMax" : 10,
+          "LevelMax" : 12,
           "BonusType" : "ACCRUE_BONUS_REWARD_02",
           "BonusValue" : 1000,
           "FacilityReqItem" : 
@@ -147,7 +147,52 @@
           "ContentsTag" : "MAIN_OPEN",
           "FacilityType" : "FACILITY_ACCRUE",
           "FacilityLevel" : 10,
-          "LevelMax" : 10,
+          "LevelMax" : 12,
+          "BonusType" : "ACCRUE_BONUS_REWARD_03",
+          "BonusValue" : 1000,
+          "FacilityReqItem" : 
+          [
+            {
+              "FacilityReqItemId" : 525,
+              "FacilityReqItemValue" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "FacilityType" : "FACILITY_ACCRUE",
+          "FacilityLevel" : 11,
+          "LevelMax" : 12,
+          "BonusType" : "ACCRUE_BONUS_REWARD_01",
+          "BonusValue" : 1000,
+          "FacilityReqItem" : 
+          [
+            {
+              "FacilityReqItemId" : 525,
+              "FacilityReqItemValue" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "FacilityType" : "FACILITY_ACCRUE",
+          "FacilityLevel" : 12,
+          "LevelMax" : 12,
+          "BonusType" : "ACCRUE_BONUS_REWARD_02",
+          "BonusValue" : 1000,
+          "FacilityReqItem" : 
+          [
+            {
+              "FacilityReqItemId" : 525,
+              "FacilityReqItemValue" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "FacilityType" : "FACILITY_ACCRUE",
+          "FacilityLevel" : 13,
+          "LevelMax" : 12,
           "BonusType" : "ACCRUE_BONUS_REWARD_03",
           "BonusValue" : 1000,
           "FacilityReqItem" : 
@@ -300,6 +345,36 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "FacilityType" : "FACILITY_CRAFT",
+          "FacilityLevel" : 6,
+          "LevelMax" : 5,
+          "BonusType" : "ADVANCED_CRAFT_LIST_LEVEL",
+          "BonusValue" : 1,
+          "FacilityReqItem" : 
+          [
+            {
+              "FacilityReqItemId" : 524,
+              "FacilityReqItemValue" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "FacilityType" : "FACILITY_CRAFT",
+          "FacilityLevel" : 7,
+          "LevelMax" : 5,
+          "BonusType" : "ADVANCED_CRAFT_LIST_LEVEL",
+          "BonusValue" : 2,
+          "FacilityReqItem" : 
+          [
+            {
+              "FacilityReqItemId" : 524,
+              "FacilityReqItemValue" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "FacilityType" : "FACILITY_TACTICS",
           "FacilityName" : "SI_FACILITY_TACTICS",
           "FacilityDesc" : "SI_FACILITY_TACTICS_DESC",
@@ -376,7 +451,7 @@
           "FacilityIcon" : "UI_SAVIOR_CENTRAL_ICON_DISPATCH.png",
           "ContentsTargetType" : "CT_DISPATCH",
           "FacilityLevel" : 1,
-          "LevelMax" : 5,
+          "LevelMax" : 7,
           "BonusType" : "DISPATCH_LIST_LEVEL",
           "BonusValue" : 1
         },
@@ -384,7 +459,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "FacilityType" : "FACILITY_DISPATCH",
           "FacilityLevel" : 2,
-          "LevelMax" : 5,
+          "LevelMax" : 7,
           "BonusType" : "DISPATCH_LIST_LEVEL",
           "BonusValue" : 2,
           "FacilityReqItem" : 
@@ -399,7 +474,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "FacilityType" : "FACILITY_DISPATCH",
           "FacilityLevel" : 3,
-          "LevelMax" : 5,
+          "LevelMax" : 7,
           "BonusType" : "DISPATCH_TASK_LIMIT_ADD",
           "BonusValue" : 1,
           "FacilityReqItem" : 
@@ -414,7 +489,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "FacilityType" : "FACILITY_DISPATCH",
           "FacilityLevel" : 4,
-          "LevelMax" : 5,
+          "LevelMax" : 7,
           "BonusType" : "DISPATCH_LIST_LEVEL",
           "BonusValue" : 4,
           "FacilityReqItem" : 
@@ -429,9 +504,114 @@
           "ContentsTag" : "MAIN_OPEN",
           "FacilityType" : "FACILITY_DISPATCH",
           "FacilityLevel" : 5,
-          "LevelMax" : 5,
+          "LevelMax" : 7,
           "BonusType" : "DISPATCH_LIST_LEVEL",
           "BonusValue" : 5,
+          "FacilityReqItem" : 
+          [
+            {
+              "FacilityReqItemId" : 523,
+              "FacilityReqItemValue" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "FacilityType" : "FACILITY_DISPATCH",
+          "FacilityLevel" : 6,
+          "LevelMax" : 7,
+          "BonusType" : "DISPATCH_TASK_LIMIT_ADD",
+          "BonusValue" : 1,
+          "FacilityReqItem" : 
+          [
+            {
+              "FacilityReqItemId" : 523,
+              "FacilityReqItemValue" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "FacilityType" : "FACILITY_DISPATCH",
+          "FacilityLevel" : 7,
+          "LevelMax" : 7,
+          "BonusType" : "DISPATCH_LIST_LEVEL",
+          "BonusValue" : 7,
+          "FacilityReqItem" : 
+          [
+            {
+              "FacilityReqItemId" : 523,
+              "FacilityReqItemValue" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "FacilityType" : "FACILITY_DISPATCH",
+          "FacilityLevel" : 8,
+          "LevelMax" : 7,
+          "BonusType" : "DISPATCH_LIST_LEVEL",
+          "BonusValue" : 8,
+          "FacilityReqItem" : 
+          [
+            {
+              "FacilityReqItemId" : 523,
+              "FacilityReqItemValue" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "FacilityType" : "FACILITY_DISPATCH",
+          "FacilityLevel" : 9,
+          "LevelMax" : 7,
+          "BonusType" : "DISPATCH_TASK_LIMIT_ADD",
+          "BonusValue" : 1,
+          "FacilityReqItem" : 
+          [
+            {
+              "FacilityReqItemId" : 523,
+              "FacilityReqItemValue" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "FacilityType" : "FACILITY_DISPATCH",
+          "FacilityLevel" : 10,
+          "LevelMax" : 7,
+          "BonusType" : "DISPATCH_LIST_LEVEL",
+          "BonusValue" : 10,
+          "FacilityReqItem" : 
+          [
+            {
+              "FacilityReqItemId" : 523,
+              "FacilityReqItemValue" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "FacilityType" : "FACILITY_DISPATCH",
+          "FacilityLevel" : 11,
+          "LevelMax" : 7,
+          "BonusType" : "DISPATCH_LIST_LEVEL",
+          "BonusValue" : 11,
+          "FacilityReqItem" : 
+          [
+            {
+              "FacilityReqItemId" : 523,
+              "FacilityReqItemValue" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "FacilityType" : "FACILITY_DISPATCH",
+          "FacilityLevel" : 12,
+          "LevelMax" : 7,
+          "BonusType" : "DISPATCH_TASK_LIMIT_ADD",
+          "BonusValue" : 1,
           "FacilityReqItem" : 
           [
             {

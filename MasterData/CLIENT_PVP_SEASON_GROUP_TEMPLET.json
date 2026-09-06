@@ -11,9 +11,11 @@
           "SeasonBannerId" : 1,
           "PvpSeasonType" : "PT_ASYNC_FREE",
           "SeasonTitle" : "SI_SEASON_FREE",
-          "SeasonIcon" : "UI_PVP_ASYNC_SYMBOL_SEASON.png",
+          "SeasonIcon" : "ICON_PVP_SEASON_FREE.png",
+          "SeasonOpenPrefab" : "PVP_SEASON_NEW_ASYNC.prefab",
           "PvpAsyncTierGroupId" : 101,
-          "SuddenDeathId" : 101
+          "SuddenDeathId" : 101,
+          "PvpStatScaleId" : 1000
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -23,9 +25,11 @@
           "SeasonBannerId" : 1,
           "PvpSeasonType" : "PT_ASYNC_FREE",
           "SeasonTitle" : "SI_SEASON_FREE",
-          "SeasonIcon" : "UI_PVP_ASYNC_SYMBOL_SEASON.png",
+          "SeasonIcon" : "ICON_PVP_SEASON_FREE.png",
+          "SeasonOpenPrefab" : "PVP_SEASON_NEW_ASYNC.prefab",
           "PvpAsyncTierGroupId" : 101,
-          "SuddenDeathId" : 101
+          "SuddenDeathId" : 101,
+          "PvpStatScaleId" : 1000
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -35,9 +39,11 @@
           "SeasonBannerId" : 1,
           "PvpSeasonType" : "PT_ASYNC_FREE",
           "SeasonTitle" : "SI_SEASON_FREE",
-          "SeasonIcon" : "UI_PVP_ASYNC_SYMBOL_SEASON.png",
+          "SeasonIcon" : "ICON_PVP_SEASON_FREE.png",
+          "SeasonOpenPrefab" : "PVP_SEASON_NEW_ASYNC.prefab",
           "PvpAsyncTierGroupId" : 101,
-          "SuddenDeathId" : 101
+          "SuddenDeathId" : 101,
+          "PvpStatScaleId" : 1000
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -47,9 +53,11 @@
           "SeasonBannerId" : 1,
           "PvpSeasonType" : "PT_ASYNC_MAIN",
           "SeasonTitle" : "SI_SEASON_NUMBER_FRONT@@SI_THALES",
-          "SeasonIcon" : "UI_PVP_ASYNC_SYMBOL_SEASON.png",
-          "PvpAsyncTierGroupId" : 999,
-          "SuddenDeathId" : 101
+          "SeasonIcon" : "ICON_PVP_SEASON_THALES.png",
+          "SeasonOpenPrefab" : "PVP_SEASON_NEW_ASYNC_THALES.prefab",
+          "PvpAsyncTierGroupId" : 102,
+          "SuddenDeathId" : 101,
+          "PvpStatScaleId" : 1000
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -59,21 +67,27 @@
           "SeasonBannerId" : 1,
           "PvpSeasonType" : "PT_ASYNC_FREE",
           "SeasonTitle" : "SI_SEASON_FREE",
-          "SeasonIcon" : "UI_PVP_ASYNC_SYMBOL_SEASON.png",
-          "PvpAsyncTierGroupId" : 999,
-          "SuddenDeathId" : 101
+          "SeasonIcon" : "ICON_PVP_SEASON_FREE.png",
+          "SeasonOpenPrefab" : "PVP_SEASON_NEW_ASYNC.prefab",
+          "PvpAsyncTierGroupId" : 900,
+          "PvpBanEffectGroupId" : 1,
+          "SuddenDeathId" : 101,
+          "PvpStatScaleId" : 1000
         },
         {
           "ContentsTag" : "MAIN_OPEN",
-          "IntervalId" : "DATE_PVP_ASYNC_KEPLER_SEASON_2025",
+          "IntervalId" : "DATE_PVP_ASYNC_GAUSS_SEASON_2026",
           "PvpType" : "PT_ASYNC",
           "SeasonId" : 1005,
           "SeasonBannerId" : 1,
           "PvpSeasonType" : "PT_ASYNC_MAIN",
-          "SeasonTitle" : "SI_SEASON_NUMBER_FRONT@@SI_KEPLER",
-          "SeasonIcon" : "UI_PVP_ASYNC_SYMBOL_SEASON.png",
-          "PvpAsyncTierGroupId" : 999,
-          "SuddenDeathId" : 101
+          "SeasonTitle" : "SI_SEASON_NUMBER_FRONT@@SI_GAUSS",
+          "SeasonIcon" : "ICON_PVP_SEASON_GAUSS.png",
+          "SeasonOpenPrefab" : "PVP_SEASON_NEW_ASYNC_GAUSS.prefab",
+          "PvpAsyncTierGroupId" : 103,
+          "PvpBanEffectGroupId" : 1,
+          "SuddenDeathId" : 101,
+          "PvpStatScaleId" : 1000
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -83,21 +97,27 @@
           "SeasonBannerId" : 1,
           "PvpSeasonType" : "PT_ASYNC_FREE",
           "SeasonTitle" : "SI_SEASON_FREE",
-          "SeasonIcon" : "UI_PVP_ASYNC_SYMBOL_SEASON.png",
-          "PvpAsyncTierGroupId" : 999,
-          "SuddenDeathId" : 101
+          "SeasonIcon" : "ICON_PVP_SEASON_FREE.png",
+          "SeasonOpenPrefab" : "PVP_SEASON_NEW_ASYNC.prefab",
+          "PvpAsyncTierGroupId" : 900,
+          "PvpBanEffectGroupId" : 1,
+          "SuddenDeathId" : 101,
+          "PvpStatScaleId" : 1000
         },
         {
           "ContentsTag" : "MAIN_OPEN",
-          "IntervalId" : "DATE_PVP_ASYNC_LAPLACE_SEASON_2025",
+          "IntervalId" : "DATE_PVP_ASYNC_LAPLACE_SEASON_2027",
           "PvpType" : "PT_ASYNC",
           "SeasonId" : 1007,
           "SeasonBannerId" : 1,
           "PvpSeasonType" : "PT_ASYNC_MAIN",
           "SeasonTitle" : "SI_SEASON_NUMBER_FRONT@@SI_LAPLACE",
-          "SeasonIcon" : "UI_PVP_ASYNC_SYMBOL_SEASON.png",
-          "PvpAsyncTierGroupId" : 999,
-          "SuddenDeathId" : 101
+          "SeasonIcon" : "ICON_PVP_SEASON_LAPLACE.png",
+          "SeasonOpenPrefab" : "PVP_SEASON_NEW_ASYNC_LAPLACE.prefab",
+          "PvpAsyncTierGroupId" : 900,
+          "PvpBanEffectGroupId" : 1,
+          "SuddenDeathId" : 101,
+          "PvpStatScaleId" : 1000
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -107,21 +127,27 @@
           "SeasonBannerId" : 1,
           "PvpSeasonType" : "PT_ASYNC_FREE",
           "SeasonTitle" : "SI_SEASON_FREE",
-          "SeasonIcon" : "UI_PVP_ASYNC_SYMBOL_SEASON.png",
-          "PvpAsyncTierGroupId" : 999,
-          "SuddenDeathId" : 101
+          "SeasonIcon" : "ICON_PVP_SEASON_FREE.png",
+          "SeasonOpenPrefab" : "PVP_SEASON_NEW_ASYNC.prefab",
+          "PvpAsyncTierGroupId" : 900,
+          "PvpBanEffectGroupId" : 1,
+          "SuddenDeathId" : 101,
+          "PvpStatScaleId" : 1000
         },
         {
           "ContentsTag" : "MAIN_OPEN",
-          "IntervalId" : "DATE_PVP_ASYNC_GAUSS_SEASON_2025",
+          "IntervalId" : "DATE_PVP_ASYNC_KEPLER_SEASON_2027",
           "PvpType" : "PT_ASYNC",
           "SeasonId" : 1009,
           "SeasonBannerId" : 1,
           "PvpSeasonType" : "PT_ASYNC_MAIN",
-          "SeasonTitle" : "SI_SEASON_NUMBER_FRONT@@SI_GAUSS",
-          "SeasonIcon" : "UI_PVP_ASYNC_SYMBOL_SEASON.png",
-          "PvpAsyncTierGroupId" : 999,
-          "SuddenDeathId" : 101
+          "SeasonTitle" : "SI_SEASON_NUMBER_FRONT@@SI_KEPLER",
+          "SeasonIcon" : "ICON_PVP_SEASON_KEPLER.png",
+          "SeasonOpenPrefab" : "PVP_SEASON_NEW_ASYNC_KEPLER.prefab",
+          "PvpAsyncTierGroupId" : 900,
+          "PvpBanEffectGroupId" : 1,
+          "SuddenDeathId" : 101,
+          "PvpStatScaleId" : 1000
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -131,9 +157,12 @@
           "SeasonBannerId" : 1,
           "PvpSeasonType" : "PT_ASYNC_FREE",
           "SeasonTitle" : "SI_SEASON_FREE",
-          "SeasonIcon" : "UI_PVP_ASYNC_SYMBOL_SEASON.png",
-          "PvpAsyncTierGroupId" : 999,
-          "SuddenDeathId" : 101
+          "SeasonIcon" : "ICON_PVP_SEASON_FREE.png",
+          "SeasonOpenPrefab" : "PVP_SEASON_NEW_ASYNC.prefab",
+          "PvpAsyncTierGroupId" : 900,
+          "PvpBanEffectGroupId" : 1,
+          "SuddenDeathId" : 101,
+          "PvpStatScaleId" : 1000
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -143,9 +172,11 @@
           "SeasonBannerId" : 1,
           "PvpSeasonType" : "PT_RANK_FREE",
           "SeasonTitle" : "SI_SEASON_FREE",
-          "SeasonIcon" : "UI_PVP_ASYNC_SYMBOL_SEASON.png",
+          "SeasonIcon" : "ICON_PVP_SEASON_FREE.png",
+          "SeasonOpenPrefab" : "PVP_SEASON_NEW_RANK.prefab",
           "PvpRankTierGroupId" : 201,
-          "SuddenDeathId" : 201
+          "SuddenDeathId" : 201,
+          "PvpStatScaleId" : 2000
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -155,9 +186,11 @@
           "SeasonBannerId" : 1,
           "PvpSeasonType" : "PT_RANK_FREE",
           "SeasonTitle" : "SI_SEASON_FREE",
-          "SeasonIcon" : "UI_PVP_ASYNC_SYMBOL_SEASON.png",
+          "SeasonIcon" : "ICON_PVP_SEASON_FREE.png",
+          "SeasonOpenPrefab" : "PVP_SEASON_NEW_RANK.prefab",
           "PvpRankTierGroupId" : 201,
-          "SuddenDeathId" : 201
+          "SuddenDeathId" : 201,
+          "PvpStatScaleId" : 2000
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -167,9 +200,13 @@
           "SeasonBannerId" : 1,
           "PvpSeasonType" : "PT_RANK_FREE",
           "SeasonTitle" : "SI_SEASON_FREE",
-          "SeasonIcon" : "UI_PVP_ASYNC_SYMBOL_SEASON.png",
+          "SeasonIcon" : "ICON_PVP_SEASON_FREE.png",
+          "SeasonOpenPrefab" : "PVP_SEASON_NEW_RANK.prefab",
           "PvpRankTierGroupId" : 201,
-          "SuddenDeathId" : 201
+          "SuddenDeathId" : 201,
+          "PvpStatScaleId" : 2001,
+          "FixedLevel" : 200,
+          "FixedResonance" : 10
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -178,10 +215,14 @@
           "SeasonId" : 2003,
           "SeasonBannerId" : 1,
           "PvpSeasonType" : "PT_RANK_MAIN",
-          "SeasonTitle" : "SI_SEASON_NUMBER@@1",
-          "SeasonIcon" : "UI_PVP_ASYNC_SYMBOL_SEASON.png",
-          "PvpRankTierGroupId" : 999,
-          "SuddenDeathId" : 201
+          "SeasonTitle" : "SI_PVP_RANK_SEASON_TITLE_1",
+          "SeasonIcon" : "ICON_PVP_SEASON_FREE.png",
+          "SeasonOpenPrefab" : "PVP_SEASON_NEW_RANK.prefab",
+          "PvpRankTierGroupId" : 202,
+          "SuddenDeathId" : 201,
+          "PvpStatScaleId" : 2001,
+          "FixedLevel" : 200,
+          "FixedResonance" : 10
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -191,9 +232,14 @@
           "SeasonBannerId" : 1,
           "PvpSeasonType" : "PT_RANK_FREE",
           "SeasonTitle" : "SI_SEASON_FREE",
-          "SeasonIcon" : "UI_PVP_ASYNC_SYMBOL_SEASON.png",
-          "PvpRankTierGroupId" : 999,
-          "SuddenDeathId" : 201
+          "SeasonIcon" : "ICON_PVP_SEASON_FREE.png",
+          "SeasonOpenPrefab" : "PVP_SEASON_NEW_RANK.prefab",
+          "PvpRankTierGroupId" : 900,
+          "PvpBanEffectGroupId" : 1,
+          "SuddenDeathId" : 201,
+          "PvpStatScaleId" : 2001,
+          "FixedLevel" : 200,
+          "FixedResonance" : 10
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -202,10 +248,15 @@
           "SeasonId" : 2005,
           "SeasonBannerId" : 1,
           "PvpSeasonType" : "PT_RANK_MAIN",
-          "SeasonTitle" : "SI_SEASON_NUMBER@@2",
-          "SeasonIcon" : "UI_PVP_ASYNC_SYMBOL_SEASON.png",
-          "PvpRankTierGroupId" : 999,
-          "SuddenDeathId" : 201
+          "SeasonTitle" : "SI_PVP_RANK_SEASON_TITLE_2",
+          "SeasonIcon" : "ICON_PVP_SEASON_FREE.png",
+          "SeasonOpenPrefab" : "PVP_SEASON_NEW_RANK.prefab",
+          "PvpRankTierGroupId" : 203,
+          "PvpBanEffectGroupId" : 1,
+          "SuddenDeathId" : 201,
+          "PvpStatScaleId" : 2001,
+          "FixedLevel" : 200,
+          "FixedResonance" : 10
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -215,9 +266,14 @@
           "SeasonBannerId" : 1,
           "PvpSeasonType" : "PT_RANK_FREE",
           "SeasonTitle" : "SI_SEASON_FREE",
-          "SeasonIcon" : "UI_PVP_ASYNC_SYMBOL_SEASON.png",
-          "PvpRankTierGroupId" : 999,
-          "SuddenDeathId" : 201
+          "SeasonIcon" : "ICON_PVP_SEASON_FREE.png",
+          "SeasonOpenPrefab" : "PVP_SEASON_NEW_RANK.prefab",
+          "PvpRankTierGroupId" : 900,
+          "PvpBanEffectGroupId" : 1,
+          "SuddenDeathId" : 201,
+          "PvpStatScaleId" : 2001,
+          "FixedLevel" : 200,
+          "FixedResonance" : 10
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -227,9 +283,14 @@
           "SeasonBannerId" : 1,
           "PvpSeasonType" : "PT_RANK_MAIN",
           "SeasonTitle" : "SI_SEASON_NUMBER@@3",
-          "SeasonIcon" : "UI_PVP_ASYNC_SYMBOL_SEASON.png",
-          "PvpRankTierGroupId" : 999,
-          "SuddenDeathId" : 201
+          "SeasonIcon" : "ICON_PVP_SEASON_FREE.png",
+          "SeasonOpenPrefab" : "PVP_SEASON_NEW_RANK.prefab",
+          "PvpRankTierGroupId" : 900,
+          "PvpBanEffectGroupId" : 1,
+          "SuddenDeathId" : 201,
+          "PvpStatScaleId" : 2001,
+          "FixedLevel" : 200,
+          "FixedResonance" : 10
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -239,21 +300,48 @@
           "SeasonBannerId" : 1,
           "PvpSeasonType" : "PT_RANK_FREE",
           "SeasonTitle" : "SI_SEASON_FREE",
-          "SeasonIcon" : "UI_PVP_ASYNC_SYMBOL_SEASON.png",
-          "PvpRankTierGroupId" : 999,
-          "SuddenDeathId" : 201
+          "SeasonIcon" : "ICON_PVP_SEASON_FREE.png",
+          "SeasonOpenPrefab" : "PVP_SEASON_NEW_RANK.prefab",
+          "PvpRankTierGroupId" : 900,
+          "PvpBanEffectGroupId" : 1,
+          "SuddenDeathId" : 201,
+          "PvpStatScaleId" : 2001,
+          "FixedLevel" : 200,
+          "FixedResonance" : 10
         },
         {
           "ContentsTag" : "MAIN_OPEN",
-          "IntervalId" : "DATE_PVP_RANK_FREE_SEASON_MAX",
+          "IntervalId" : "DATE_PVP_ASYNC_MAIN_SEASON_04",
           "PvpType" : "PT_RANK",
           "SeasonId" : 2009,
           "SeasonBannerId" : 1,
           "PvpSeasonType" : "PT_RANK_MAIN",
           "SeasonTitle" : "SI_SEASON_NUMBER@@4",
-          "SeasonIcon" : "UI_PVP_ASYNC_SYMBOL_SEASON.png",
-          "PvpRankTierGroupId" : 999,
-          "SuddenDeathId" : 201
+          "SeasonIcon" : "ICON_PVP_SEASON_FREE.png",
+          "SeasonOpenPrefab" : "PVP_SEASON_NEW_RANK.prefab",
+          "PvpRankTierGroupId" : 900,
+          "PvpBanEffectGroupId" : 1,
+          "SuddenDeathId" : 201,
+          "PvpStatScaleId" : 2001,
+          "FixedLevel" : 200,
+          "FixedResonance" : 10
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "IntervalId" : "DATE_PVP_RANK_FREE_SEASON_MAX",
+          "PvpType" : "PT_RANK",
+          "SeasonId" : 2010,
+          "SeasonBannerId" : 1,
+          "PvpSeasonType" : "PT_RANK_MAIN",
+          "SeasonTitle" : "SI_SEASON_FREE",
+          "SeasonIcon" : "ICON_PVP_SEASON_FREE.png",
+          "SeasonOpenPrefab" : "PVP_SEASON_NEW_RANK.prefab",
+          "PvpRankTierGroupId" : 900,
+          "PvpBanEffectGroupId" : 1,
+          "SuddenDeathId" : 201,
+          "PvpStatScaleId" : 2001,
+          "FixedLevel" : 200,
+          "FixedResonance" : 10
         }
     ]
 }

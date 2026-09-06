@@ -33,14 +33,46 @@
           }
         },
         {
-          "m_SEID" : 104011,
-          "SEGroupID" : 1041,
-          "SEOrderList" : 0,
-          "m_SEStrID" : "COND_ORBITAL_ARRAY_ALICIA_01_01",
-          "m_BuffTargetType" : "NSETT_ENEMY_ALL",
-          "m_BuffStrID" : "BI_DEFENSE_DECREASE",
+          "m_SEID" : 501011,
+          "SEGroupID" : 5011,
+          "SEOrderList" : 1,
+          "m_SEStrID" : "COND_ORBITAL_ARRAY_UNKNOWN_BOSS_MAINSTORY_07_01_01",
+          "m_BuffTargetType" : "NSETT_AUTO_ALLY_ONE",
+          "AutoTargetId" : 50,
+          "m_BuffStrID" : "BI_DELETEDEBUFF",
+          "m_BuffLifeTurn" : 0,
+          "BuffDeleteCount" : 0,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 501012,
+          "SEGroupID" : 5012,
+          "SEOrderList" : 1,
+          "m_SEStrID" : "COND_ORBITAL_ARRAY_UNKNOWN_BOSS_MAINSTORY_07_01_02",
+          "m_BuffTargetType" : "NSETT_AUTO_ENEMY_ONE",
+          "AutoTargetId" : 4,
+          "m_BuffStrID" : "BI_NOVA_FORCE_UP",
+          "m_BuffLifeTurn" : 0,
+          "NovaForceValue" : 12,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 501013,
+          "SEGroupID" : 5013,
+          "SEOrderList" : 1,
+          "m_SEStrID" : "COND_ORBITAL_ARRAY_UNKNOWN_BOSS_MAINSTORY_07_01_03",
+          "m_BuffTargetType" : "NSETT_AUTO_ALLY_ONE",
+          "AutoTargetId" : 50,
+          "m_BuffStrID" : "BI_DOMAIN_UNKNOWN_BOSS_MAINSTORY_07_1",
           "m_BuffLifeTurn" : 1,
-          "EffectHitCheck" : false,
           "m_Condition" : 
           {
             "m_ActiveType" : "NSEAT_SKILL_END",

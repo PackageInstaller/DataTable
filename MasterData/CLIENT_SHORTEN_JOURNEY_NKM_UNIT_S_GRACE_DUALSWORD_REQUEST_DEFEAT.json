@@ -10,7 +10,7 @@
       "WaitClick": false,
       "WaitTime": 0.0,
       "BgFileName": "CURRENT_TOWN_CANDLE",
-      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "UnitStrId": "CURRENT_CHARACTER",
       "UnitMotion": "SAD"
     },
     {
@@ -20,7 +20,18 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "의뢰에 실패한 <color=#F7BE45>[CHARACTER_NAME]</color>(에)게 시간이 필요한 것 같다…",
+      "UnitTalk_ENG": "<color=#F7BE45>[CHARACTER_NAME]</color> seems to need some time to herself after failing the quest.",
       "UnitTalk_JPN": "依頼に失敗した<color=#F7BE45>[CHARACTER_NAME]</color>には、時間が必要そうだ…",
+      "UnitTalk_CHN": "未能完成委托的<color=#F7BE45>[CHARACTER_NAME]</color>似乎需要一点时间…",
+      "UnitTalk_TWN": "未能完成委託的<color=#F7BE45>[CHARACTER_NAME]</color>似乎需要一點時間…",
+      "UnitTalk_FRA": "Il semble que <color=#F7BE45>[CHARACTER_NAME]</color> ait besoin de temps après avoir échoué à la quête…",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color> scheint nach dem Scheitern der Mission etwas Zeit für sich zu brauchen …",
+      "UnitTalk_ESP": "Parece que <color=#F7BE45>[CHARACTER_NAME]</color> necesita algo de tiempo a solas después de fallar la misión…",
+      "UnitTalk_PRT": "O <color=#F7BE45>[CHARACTER_NAME]</color> que falhou na missão parece precisar de tempo…",
+      "UnitTalk_THA": "ดูเหมือนว่า <color=#F7BE45>[CHARACTER_NAME]</color> ต้องการเวลาอยู่กับตัวเองสักพักหลังจากทำภารกิจล้มเหลว…",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> sepertinya butuh waktu sendiri setelah gagal dalam misi…",
+      "UnitTalk_VIE": "Có vẻ như <color=#F7BE45>[CHARACTER_NAME]</color> cần một chút thời gian sau khi thất bại trong nhiệm vụ…",
+      "UnitTalk_HIN": "लगता है कि <color=#F7BE45>[CHARACTER_NAME]</color> को खोज में असफल होने के बाद कुछ समय चाहिए…",
       "TalkTime": 0.03
     },
     {
@@ -33,13 +44,35 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "시간을 주고, 함께 돌아간다",
+          "JumpAnchorStringId_ENG": "Give her some time and walk back with her.",
           "JumpAnchorStringId_JPN": "時間をあげるから、一緒に帰ろう。",
+          "JumpAnchorStringId_CHN": "给她时间，并一起回去。",
+          "JumpAnchorStringId_TWN": "給她時間，並一起回去。",
+          "JumpAnchorStringId_FRA": "Le temps s'écoule, et nous revenons.",
+          "JumpAnchorStringId_DEU": "Wir reisen und kehren zurück",
+          "JumpAnchorStringId_ESP": "Regresando en el tiempo",
+          "JumpAnchorStringId_PRT": "Avançando no tempo, voltamos.",
+          "JumpAnchorStringId_THA": "เวลาผ่านไป เราก็กลับมา",
+          "JumpAnchorStringId_IND": "Waktu berlalu, kembali bersama",
+          "JumpAnchorStringId_VIE": "Thời gian trôi, cùng quay về",
+          "JumpAnchorStringId_HIN": "उसे कुछ समय दें और उसके साथ वापस चलें।",
           "JumpAnchorId": "REWARD_ANCHOR_1"
         },
         {
           "Uid": 2,
           "JumpAnchorStringId_KOR": "활력 포션을 건넨다",
+          "JumpAnchorStringId_ENG": "Hand out a Vitality Potion.",
           "JumpAnchorStringId_JPN": "活力ポーションを渡す",
+          "JumpAnchorStringId_CHN": "递给她活力药水。",
+          "JumpAnchorStringId_TWN": "遞給她活力藥水。",
+          "JumpAnchorStringId_FRA": "Je donne le potion de vitalité.",
+          "JumpAnchorStringId_DEU": "Wir geben den Heiltrank ab",
+          "JumpAnchorStringId_ESP": "Te doy una poción de vitalidad",
+          "JumpAnchorStringId_PRT": "Entregando a poção de vitalidade.",
+          "JumpAnchorStringId_THA": "ส่งต่อพลัง",
+          "JumpAnchorStringId_IND": "Mengalirkan energi kekuatan",
+          "JumpAnchorStringId_VIE": "Truyền viên hồi phục",
+          "JumpAnchorStringId_HIN": "एक जीवन शक्ति औषधि दें।",
           "JumpAnchorId": "REWARD_ANCHOR_2"
         }
       ]
@@ -51,7 +84,7 @@
       "JumpAnchorInfo": "JUMPANCHOR_1_SUCCESS",
       "WaitClick": false,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "UnitStrId": "CURRENT_CHARACTER",
       "UnitMotion": "NORMAL"
     },
     {
@@ -61,7 +94,18 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 조금 여유를 되찾은 것 같다.",
+      "UnitTalk_ENG": "<color=#F7BE45>[CHARACTER_NAME]</color> seemed to have regained a bit of composure.",
       "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は、少し余裕を取り戻したようだ。",
+      "UnitTalk_CHN": "<color=#F7BE45>[CHARACTER_NAME]</color>似乎稍微恢复了从容。",
+      "UnitTalk_TWN": "<color=#F7BE45>[CHARACTER_NAME]</color>似乎稍微恢復了從容。",
+      "UnitTalk_FRA": "<color=#F7BE45>[CHARACTER_NAME]</color> semblait avoir retrouvé un peu de calme.",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color> schien etwas Fassung wiedergewonnen zu haben.",
+      "UnitTalk_ESP": "<color=#F7BE45>[CHARACTER_NAME]</color> parecía haber recuperado un poco la compostura.",
+      "UnitTalk_PRT": "<color=#F7BE45>[CHARACTER_NAME]</color> parece ter recuperado um pouco a compostura.",
+      "UnitTalk_THA": "ดูเหมือนว่า <color=#F7BE45>[CHARACTER_NAME]</color> จะกลับมามีสติขึ้นเล็กน้อยแล้ว",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> sepertinya sudah sedikit tenang.",
+      "UnitTalk_VIE": "Có vẻ như <color=#F7BE45>[CHARACTER_NAME]</color> đã lấy lại được một chút bình tĩnh.",
+      "UnitTalk_HIN": "लगता है कि <color=#F7BE45>[CHARACTER_NAME]</color> ने थोड़ा संयम वापस पा लिया है।",
       "TalkTime": 0.03
     },
     {
@@ -71,7 +115,7 @@
       "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
       "WaitClick": false,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "UnitStrId": "CURRENT_CHARACTER",
       "UnitMotion": "SERIOUS"
     },
     {
@@ -81,7 +125,18 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 홀로 남아 실패를 곱씹었다.",
+      "UnitTalk_ENG": "<color=#F7BE45>[CHARACTER_NAME]</color> stayed behind to dwell on her failure alone.",
       "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は、一人で失敗を噛み締めていた。",
+      "UnitTalk_CHN": "<color=#F7BE45>[CHARACTER_NAME]</color>独自留下，反复思索着失败。",
+      "UnitTalk_TWN": "<color=#F7BE45>[CHARACTER_NAME]</color>獨自留下，反覆思索著失敗。",
+      "UnitTalk_FRA": "<color=#F7BE45>[CHARACTER_NAME]</color> est restée seule pour ruminer son échec.",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color> blieb allein zurück, um über ihr Scheitern nachzudenken.",
+      "UnitTalk_ESP": "<color=#F7BE45>[CHARACTER_NAME]</color> se quedó atrás para reflexionar sola sobre su fracaso.",
+      "UnitTalk_PRT": "<color=#F7BE45>[CHARACTER_NAME]</color> ficou para trás para remoer seu fracasso sozinha.",
+      "UnitTalk_THA": "<color=#F7BE45>[CHARACTER_NAME]</color> ยังคงอยู่ข้างหลังเพื่อจมดิ่งกับความล้มเหลวของเธอเพียงลำพัง",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> tetap tinggal untuk merenungkan kegagalannya sendirian.",
+      "UnitTalk_VIE": "<color=#F7BE45>[CHARACTER_NAME]</color> ở lại một mình để suy ngẫm về thất bại của mình.",
+      "UnitTalk_HIN": "<color=#F7BE45>[CHARACTER_NAME]</color> अपनी असफलता पर अकेले मनन करने के लिए रुक गई।",
       "TalkTime": 0.03
     },
     {
@@ -91,7 +146,7 @@
       "JumpAnchorInfo": "JUMPANCHOR_2",
       "WaitClick": false,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "UnitStrId": "CURRENT_CHARACTER",
       "UnitMotion": "SMILE"
     },
     {
@@ -101,7 +156,18 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 포션을 받고 기뻐했다.",
+      "UnitTalk_ENG": "<color=#F7BE45>[CHARACTER_NAME]</color> brightened up after receiving the potion.",
       "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は、ポーションを受け取って喜んだ。",
+      "UnitTalk_CHN": "<color=#F7BE45>[CHARACTER_NAME]</color>收到药水后很开心。",
+      "UnitTalk_TWN": "<color=#F7BE45>[CHARACTER_NAME]</color>收到藥水後很開心。",
+      "UnitTalk_FRA": "<color=#F7BE45>[CHARACTER_NAME]</color> s'est égayée après avoir reçu la potion.",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color> hellte sich auf, nachdem sie den Trank erhalten hatte.",
+      "UnitTalk_ESP": "<color=#F7BE45>[CHARACTER_NAME]</color> se animó después de recibir la poción.",
+      "UnitTalk_PRT": "<color=#F7BE45>[CHARACTER_NAME]</color> se animou depois de receber a poção.",
+      "UnitTalk_THA": "<color=#F7BE45>[CHARACTER_NAME]</color> รู้สึกดีขึ้นหลังจากได้รับยา",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> menjadi ceria setelah menerima ramuan.",
+      "UnitTalk_VIE": "<color=#F7BE45>[CHARACTER_NAME]</color> đã vui vẻ trở lại sau khi nhận được bình thuốc.",
+      "UnitTalk_HIN": "<color=#F7BE45>[CHARACTER_NAME]</color> औषधि मिलने के बाद प्रसन्न हो गई।",
       "TalkTime": 0.03
     }
   ]

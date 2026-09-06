@@ -1,0 +1,39 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_COUNTERSIDE_HILDE_REQUEST_VICTORY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_BEAMSWORD_REQUEST_VICTORY",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_CANDLE",
+      "UnitStrId": "NKM_UNIT_NPC_COUNTERSIDE_HILDE",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_BEAMSWORD_REQUEST_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "의뢰 성공에 이어 새로운 의뢰를 가져오자, <color=#F7BE45>[CHARACTER_NAME]</color>(은)는 쉬엄쉬엄 하라는 잔소리를 했다.",
+      "UnitTalk_ENG": "After we successfully completed a quest, <color=#F7BE45>[CHARACTER_NAME]</color> nagged me not to overdo it when I accepted a new one.",
+      "UnitTalk_JPN": "次から次へと依頼を持ってくる私を見て、<color=#F7BE45>[CHARACTER_NAME]</color>は、根を詰めすぎるなと小言を言ってきた。",
+      "UnitTalk_CHN": "由于一完成委托后又带回了新的委托，<color=#F7BE45>[CHARACTER_NAME]</color>便开始唠叨着要我别太勉强自己。",
+      "UnitTalk_TWN": "由於一完成委託後又帶回了新的委託，<color=#F7BE45>[CHARACTER_NAME]</color>便開始嘮叨著要我別太勉強自己。",
+      "UnitTalk_FRA": "Après avoir réussi la commission et avoir apporté une nouvelle, <color=#F7BE45>[CHARACTER_NAME]</color> m'a dit de me reposer.",
+      "UnitTalk_DEU": "Nachdem der Auftrag erfolgreich abgeschlossen und ein neuer hereingebracht wurde, nörgelte <color=#F7BE45>[CHARACTER_NAME]</color>, ich solle es ruhig angehen lassen.",
+      "UnitTalk_ESP": "Después de completar el encargo y traer uno nuevo, <color=#F7BE45>[CHARACTER_NAME]</color> me regañó para que me lo tomara con calma.",
+      "UnitTalk_PRT": "Depois de concluir a missão e trazer uma nova, <color=#F7BE45>[CHARACTER_NAME]</color> me deu um puxão de orelha para pegar leve.",
+      "UnitTalk_THA": "หลังจากทำภารกิจสำเร็จแล้ว ให้นำภารกิจใหม่มา <color=#F7BE45>[CHARACTER_NAME]</color> ก็เริ่มบ่นว่าให้ฉันพักผ่อนบ้าง",
+      "UnitTalk_IND": "Setelah berhasil menyelesaikan misi dan membawa misi baru, <color=#F7BE45>[CHARACTER_NAME]</color> mengomeliku untuk santai saja.",
+      "UnitTalk_VIE": "Sau khi hoàn thành nhiệm vụ và nhận được một nhiệm vụ mới, <color=#F7BE45>[CHARACTER_NAME]</color> đã cằn nhằn tôi hãy nghỉ ngơi đi.",
+      "UnitTalk_HIN": "एक कमीशन सफलतापूर्वक पूरा करने और एक नया लाने के बाद, <color=#F7BE45>[CHARACTER_NAME]</color> ने मुझे आराम करने की ताकीद की।",
+      "TalkTime": 0.03
+    }
+  ]
+}

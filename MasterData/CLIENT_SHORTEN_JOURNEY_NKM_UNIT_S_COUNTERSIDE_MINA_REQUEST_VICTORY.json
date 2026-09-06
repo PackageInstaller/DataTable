@@ -1,0 +1,39 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_COUNTERSIDE_MINA_REQUEST_VICTORY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_KNUCKLE_REQUEST_VICTORY",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_CANDLE",
+      "UnitStrId": "NKM_UNIT_NPC_COUNTERSIDE_MINA",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_KNUCKLE_REQUEST_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 의뢰비를 받고 만족스러워했다.",
+      "UnitTalk_ENG": "<color=#F7BE45>[CHARACTER_NAME]</color> was satisfied after receiving the payment.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は、報酬を受け取って満足そうだ。",
+      "UnitTalk_CHN": "<color=#F7BE45>[CHARACTER_NAME]</color>收到了委托费，显得很满意。",
+      "UnitTalk_TWN": "<color=#F7BE45>[CHARACTER_NAME]</color>收到了委託費，顯得很滿意。",
+      "UnitTalk_FRA": "<color=#F7BE45>[CHARACTER_NAME]</color> a exprimé sa satisfaction avec la récompense de quête.",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color> war mit der Questgebühr zufrieden.",
+      "UnitTalk_ESP": "<color=#F7BE45>[CHARACTER_NAME]</color> estaba satisfecho con la recompensa de la misión.",
+      "UnitTalk_PRT": "<color=#F7BE45>[CHARACTER_NAME]</color> ficou satisfeito(a) com a recompensa da missão.",
+      "UnitTalk_THA": "<color=#F7BE45>[CHARACTER_NAME]</color> พึงพอใจกับค่าตอบแทนภารกิจ",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> merasa puas dengan Biaya Quest.",
+      "UnitTalk_VIE": "<color=#F7BE45>[CHARACTER_NAME]</color> đã hài lòng với phí nhiệm vụ.",
+      "UnitTalk_HIN": "<color=#F7BE45>[CHARACTER_NAME]</color> को क्वेस्ट शुल्क पाकर संतुष्टि हुई।",
+      "TalkTime": 0.03
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_STARPIERCER_OMEGA_02",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_OFFICE_01.png",
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "오메가의 집을 수리해주려던 마르실은, 오메가의 집이 검이라는 사실을 깨달았다.",
+      "UnitTalk_ENG": "When Marcille tried to repair Omega's house, she discovered that it wasn't a house at all—it was a sword.",
+      "UnitTalk_JPN": "オメガの家を修理してやろうとしたマルシルは、それが家ではなく剣であることに気づいた。",
+      "UnitTalk_CHN": "打算帮奥米嘉修房子的玛尔希，这才发现奥米嘉的家其实是一把剑。",
+      "UnitTalk_TWN": "打算幫奧米嘉修房子的瑪爾希，這才發現奧米嘉的家其實是一把劍。",
+      "UnitTalk_FRA": "Marcille, qui voulait réparer la maison d'Oméga, réalisa que c'était une épée.",
+      "UnitTalk_DEU": "Als Marcille Omegas Zuhause reparieren wollte, stellte sie fest, dass es kein Zuhause war – sondern ein Schwert.",
+      "UnitTalk_ESP": "Al intentar reparar la casa de Omega, Marcille se dio cuenta de que era una espada.",
+      "UnitTalk_PRT": "Marcille, que tentava consertar a casa de Ômega, percebeu que a casa de Ômega era, de fato, uma espada.",
+      "UnitTalk_THA": "มาร์ซิลที่ตั้งใจจะซ่อมบ้านของโอเมก้า ก็ได้รู้ว่าบ้านของโอเมก้าคือดาบ",
+      "UnitTalk_IND": "Ketika Marsil mencoba memperbaiki rumah Omega, ia menyadari bahwa itu bukanlah rumah, melainkan sebuah pedang.",
+      "UnitTalk_VIE": "Marcille định sửa chữa ngôi nhà của Omega, nhưng cô nhận ra rằng ngôi nhà thực chất là một thanh kiếm.",
+      "UnitTalk_HIN": "जब मार्सिल ओमेगा के घर की मरम्मत करने की कोशिश कर रही थी, तो उसे एहसास हुआ कि ओमेगा का घर असल में एक तलवार था।",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    }
+  ]
+}

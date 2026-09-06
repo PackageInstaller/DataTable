@@ -10,7 +10,7 @@
       "WaitClick": false,
       "WaitTime": 0.0,
       "BgFileName": "CURRENT_TOWN_CANDLE",
-      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitStrId": "CURRENT_CHARACTER",
       "UnitMotion": "SAD"
     },
     {
@@ -20,7 +20,18 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "의뢰를 실패한 <color=#F7BE45>[CHARACTER_NAME]</color>(은)는 점궤가 빗나가서 당황하고 있다.",
+      "UnitTalk_ENG": "<color=#F7BE45>[CHARACTER_NAME]</color> seems flustered that her reading was off after failing the quest.",
       "UnitTalk_JPN": "依頼に失敗した<color=#F7BE45>[CHARACTER_NAME]</color>は、占いが外れて戸惑っている。",
+      "UnitTalk_CHN": "未能完成委托的<color=#F7BE45>[CHARACTER_NAME]</color>因为占卜失准而不知所措。",
+      "UnitTalk_TWN": "未能完成委託的<color=#F7BE45>[CHARACTER_NAME]</color>因為占卜失準而不知所措。",
+      "UnitTalk_FRA": "Après avoir échoué la quête, <color=#F7BE45>[CHARACTER_NAME]</color> est déconcertée que sa prédiction ait été fausse.",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color> ist verwirrt, weil ihre Vorhersage nach dem Scheitern der Quest falsch war.",
+      "UnitTalk_ESP": "El personaje <color=#F7BE45>[CHARACTER_NAME]</color> está desconcertado porque su lectura falló al no completar la misión.",
+      "UnitTalk_PRT": "Após falhar na missão, <color=#F7BE45>[CHARACTER_NAME]</color> parece confusa, já que sua leitura estava errada.",
+      "UnitTalk_THA": "หลังจากทำภารกิจล้มเหลว <color=#F7BE45>[CHARACTER_NAME]</color> ก็ดูจะสับสนเพราะคำทำนายของเธอผิดพลาดไปค่ะ",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> tampak bingung karena ramalannya meleset setelah gagal dalam misi.",
+      "UnitTalk_VIE": "Sau khi nhiệm vụ thất bại, <color=#F7BE45>[CHARACTER_NAME]</color> dường như bối rối vì điểm giao thông của mình đã sai.",
+      "UnitTalk_HIN": "मिशन में असफल होने के बाद <color=#F7BE45>[CHARACTER_NAME]</color> अपनी भविष्यवाणियां गलत होने से असमंजस में है।",
       "TalkTime": 0.03
     },
     {
@@ -33,13 +44,35 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "밥 사줄 테니 돌아가자.",
+          "JumpAnchorStringId_ENG": "Let's go back for now. I'll treat you to a meal.",
           "JumpAnchorStringId_JPN": "ごはん奢ってあげるから帰ろう。",
+          "JumpAnchorStringId_CHN": "我请你吃饭，回去吧。",
+          "JumpAnchorStringId_TWN": "我請你吃飯，回去吧。",
+          "JumpAnchorStringId_FRA": "Je vais t'acheter à manger, on rentre.",
+          "JumpAnchorStringId_DEU": "Nacht-Retter, komm zurück.",
+          "JumpAnchorStringId_ESP": "Te daré comida, vuelve a casa.",
+          "JumpAnchorStringId_PRT": "Vou comprar comida, então vamos embora.",
+          "JumpAnchorStringId_THA": "พักสายสิญจน์เทนี่กลับมาแล้ว",
+          "JumpAnchorStringId_IND": "Malam, saya akan kembali.",
+          "JumpAnchorStringId_VIE": "Tôi sẽ mua cơm cho anh, hãy về đi.",
+          "JumpAnchorStringId_HIN": "चलो अभी वापस चलते हैं। मैं तुम्हें खाना खिलाऊँगा।",
           "JumpAnchorId": "REWARD_ANCHOR_1"
         },
         {
           "Uid": 2,
           "JumpAnchorStringId_KOR": "활력 포션이라도 먹을래?",
+          "JumpAnchorStringId_ENG": "You want a Vitality Potion?",
           "JumpAnchorStringId_JPN": "活力ポーションでも飲む？",
+          "JumpAnchorStringId_CHN": "要喝活力药水吗？",
+          "JumpAnchorStringId_TWN": "要喝活力藥水嗎？",
+          "JumpAnchorStringId_FRA": "Vous voulez que je mange ça ?",
+          "JumpAnchorStringId_DEU": "Du isst auch die Heiltränke?",
+          "JumpAnchorStringId_ESP": "¿Quieres tomar un elixir de vitalidad?",
+          "JumpAnchorStringId_PRT": "Você come a poção de cura?",
+          "JumpAnchorStringId_THA": "คุณอยากกินพลังงานเพิ่มไหม?",
+          "JumpAnchorStringId_IND": "Apakah mau memakan potion kehidupan juga?",
+          "JumpAnchorStringId_VIE": "Có muốn uống thuốc hồi sức không?",
+          "JumpAnchorStringId_HIN": "तुम्हें वाइटैलिटी पोशन चाहिए?",
           "JumpAnchorId": "REWARD_ANCHOR_2"
         }
       ]
@@ -51,7 +84,7 @@
       "JumpAnchorInfo": "JUMPANCHOR_1_SUCCESS",
       "WaitClick": false,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitStrId": "CURRENT_CHARACTER",
       "UnitMotion": "SMILE"
     },
     {
@@ -61,7 +94,18 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 저렴한 국수라도 괜찮으니 사달라고 메달렸다.",
+      "UnitTalk_ENG": "<color=#F7BE45>[CHARACTER_NAME]</color> begged me to treat her to a meal, willing to accept even a cheap bowl of noodles.",
       "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は、立ち食いそばでいいから奢ってほしいとせがんだ。",
+      "UnitTalk_CHN": "<color=#F7BE45>[CHARACTER_NAME]</color>缠着我说，就算是便宜的面也没关系，要我请客。",
+      "UnitTalk_TWN": "<color=#F7BE45>[CHARACTER_NAME]</color>纏著我說，就算是便宜的麵也沒關係，要我請客。",
+      "UnitTalk_FRA": "<color=#F7BE45>[CHARACTER_NAME]</color> m'a suppliée de lui offrir un repas, acceptant même un bol de nouilles bon marché.",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color> bettelte darum, zum Essen eingeladen zu werden, und sagte, dass sogar eine billige Nudelsuppe in Ordnung wäre.",
+      "UnitTalk_ESP": "<color=#F7BE45>[CHARACTER_NAME]</color> me pidió que lo invitaran a comer, incluso aceptando un tazón de fideos barato.",
+      "UnitTalk_PRT": "<color=#F7BE45>[CHARACTER_NAME]</color> implorou para que eu comprasse um macarrão barato.",
+      "UnitTalk_THA": "<color=#F7BE45>[CHARACTER_NAME]</color>อ้อนวอนให้ฉันเลี้ยงข้าวเธอ แม้จะเป็นบะหมี่ราคาถูกๆ ก็ตามค่ะ",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> memohon agar aku mentraktirnya makan, bahkan rela menerima semangkuk mi murah.",
+      "UnitTalk_VIE": "<color=#F7BE45>[CHARACTER_NAME]</color> nài nỉ tôi đãi cô ấy một bữa, dù chỉ là một bát mì rẻ tiền cũng được.",
+      "UnitTalk_HIN": "<color=#F7BE45>[CHARACTER_NAME]</color> ने मुझसे खाने के लिए मिन्नतें की, यहां तक कि एक सस्ते नूडल्स के कटोरे के लिए भी तैयार थी।",
       "TalkTime": 0.03
     },
     {
@@ -71,7 +115,7 @@
       "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
       "WaitClick": false,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitStrId": "CURRENT_CHARACTER",
       "UnitMotion": "SAD"
     },
     {
@@ -81,7 +125,18 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 급하게 밥을 먹다가 조금 체하고 말았다...",
+      "UnitTalk_ENG": "In her hurry to eat, <color=#F7BE45>[CHARACTER_NAME]</color> ended up with a stomachache...",
       "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は、急いで食べたせいで胃もたれしてしまった…",
+      "UnitTalk_CHN": "<color=#F7BE45>[CHARACTER_NAME]</color>因为吃得太急，有点消化不良了…",
+      "UnitTalk_TWN": "<color=#F7BE45>[CHARACTER_NAME]</color>因為吃得太急，有點消化不良了…",
+      "UnitTalk_FRA": "Pressée de manger, <color=#F7BE45>[CHARACTER_NAME]</color> a fini par avoir mal au ventre…",
+      "UnitTalk_DEU": "In ihrer Eile, zu essen, bekam <color=#F7BE45>[CHARACTER_NAME]</color> eine Magenverstimmung...",
+      "UnitTalk_ESP": "Por la prisa de comer, a <color=#F7BE45>[CHARACTER_NAME]</color> se le indigestó un poco...",
+      "UnitTalk_PRT": "<color=#F7BE45>[CHARACTER_NAME]</color> comi apressadamente e fiquei um pouco indisposto...",
+      "UnitTalk_THA": "ด้วยความรีบร้อนที่จะกิน <color=#F7BE45>[CHARACTER_NAME]</color> เลยปวดท้อง...",
+      "UnitTalk_IND": "Karena buru-buru makan, <color=#F7BE45>[CHARACTER_NAME]</color> malah kembung...",
+      "UnitTalk_VIE": "Vì ăn vội vàng, <color=#F7BE45>[CHARACTER_NAME]</color> đã bị khó tiêu…",
+      "UnitTalk_HIN": "जल्दी खाने के चक्कर में, <color=#F7BE45>[CHARACTER_NAME]</color> को अपच हो गया...",
       "TalkTime": 0.03
     },
     {
@@ -91,7 +146,7 @@
       "JumpAnchorInfo": "JUMPANCHOR_2",
       "WaitClick": false,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitStrId": "CURRENT_CHARACTER",
       "UnitMotion": "SMILE"
     },
     {
@@ -101,7 +156,18 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 포션을 받고 기뻐했다.",
+      "UnitTalk_ENG": "<color=#F7BE45>[CHARACTER_NAME]</color> brightened up after receiving the potion.",
       "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は、ポーションを受け取って喜んだ。",
+      "UnitTalk_CHN": "<color=#F7BE45>[CHARACTER_NAME]</color>收到药水后很开心。",
+      "UnitTalk_TWN": "<color=#F7BE45>[CHARACTER_NAME]</color>收到藥水後很開心。",
+      "UnitTalk_FRA": "<color=#F7BE45>[CHARACTER_NAME]</color> s'est illuminée après avoir reçu la potion.",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color> freute sich, nachdem er den Trank erhalten hatte.",
+      "UnitTalk_ESP": "<color=#F7BE45>[CHARACTER_NAME]</color> se animó después de recibir la poción.",
+      "UnitTalk_PRT": "<color=#F7BE45>[CHARACTER_NAME]</color> se animou depois de receber a poção.",
+      "UnitTalk_THA": "<color=#F7BE45>[CHARACTER_NAME]</color>ดูสดใสขึ้นหลังจากได้รับยาค่ะ",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> langsung ceria setelah menerima ramuan itu.",
+      "UnitTalk_VIE": "<color=#F7BE45>[CHARACTER_NAME]</color> tươi tỉnh hẳn lên sau khi nhận được bình thuốc.",
+      "UnitTalk_HIN": "पोशन मिलने के बाद <color=#F7BE45>[CHARACTER_NAME]</color> का चेहरा खिल उठा।",
       "TalkTime": 0.03
     }
   ]

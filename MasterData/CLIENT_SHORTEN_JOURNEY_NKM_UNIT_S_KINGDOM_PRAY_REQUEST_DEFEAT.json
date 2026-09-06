@@ -10,7 +10,7 @@
       "WaitClick": false,
       "WaitTime": 0.0,
       "BgFileName": "CURRENT_TOWN_CANDLE",
-      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitStrId": "CURRENT_CHARACTER",
       "UnitMotion": "SERIOUS"
     },
     {
@@ -20,7 +20,18 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "의뢰를 실패한 <color=#F7BE45>[CHARACTER_NAME]</color>(은)는 기운이 없어 보인다.",
+      "UnitTalk_ENG": "<color=#F7BE45>[CHARACTER_NAME]</color> looks downhearted after failing the quest.",
       "UnitTalk_JPN": "依頼に失敗した<color=#F7BE45>[CHARACTER_NAME]</color>は、元気がなさそうだ。",
+      "UnitTalk_CHN": "未能完成委托的<color=#F7BE45>[CHARACTER_NAME]</color>看起来没什么精神。",
+      "UnitTalk_TWN": "未能完成委託的<color=#F7BE45>[CHARACTER_NAME]</color>看起來沒什麼精神。",
+      "UnitTalk_FRA": "<color=#F7BE45>[CHARACTER_NAME]</color> semble abattu(e) après l'échec de la quête.",
+      "UnitTalk_DEU": "Nach dem Scheitern der Quest ist <color=#F7BE45>[CHARACTER_NAME]</color> niedergeschlagen.",
+      "UnitTalk_ESP": "<color=#F7BE45>[CHARACTER_NAME]</color> se ve desanimado después de fallar la misión.",
+      "UnitTalk_PRT": "<color=#F7BE45>[CHARACTER_NAME]</color> parece desanimado(a) após falhar na missão.",
+      "UnitTalk_THA": "<color=#F7BE45>[CHARACTER_NAME]</color> ดูหงอยเหงาหลังจากทำภารกิจล้มเหลว",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> terlihat murung setelah gagal dalam misi.",
+      "UnitTalk_VIE": "<color=#F7BE45>[CHARACTER_NAME]</color> trông ủ rũ sau khi thất bại trong nhiệm vụ.",
+      "UnitTalk_HIN": "<color=#F7BE45>[CHARACTER_NAME]</color> खोज में असफल होने के बाद उदास दिख रहा है।",
       "TalkTime": 0.03
     },
     {
@@ -33,13 +44,35 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "돌아가자.",
+          "JumpAnchorStringId_ENG": "Let's head back.",
           "JumpAnchorStringId_JPN": "戻ろう。",
+          "JumpAnchorStringId_CHN": "回去吧。",
+          "JumpAnchorStringId_TWN": "回去吧。",
+          "JumpAnchorStringId_FRA": "Retournons.",
+          "JumpAnchorStringId_DEU": "Zurück.",
+          "JumpAnchorStringId_ESP": "Volvamos.",
+          "JumpAnchorStringId_PRT": "Vamos voltar.",
+          "JumpAnchorStringId_THA": "กลับกันเถอะ",
+          "JumpAnchorStringId_IND": "Ayo kembali.",
+          "JumpAnchorStringId_VIE": "Về thôi.",
+          "JumpAnchorStringId_HIN": "चलो वापस चलते हैं।",
           "JumpAnchorId": "REWARD_ANCHOR_1"
         },
         {
           "Uid": 2,
           "JumpAnchorStringId_KOR": "아쉽지만, 이거라도 마시고 힘내자.",
+          "JumpAnchorStringId_ENG": "It's too bad that we failed, but you should drink this and cheer up.",
           "JumpAnchorStringId_JPN": "惜しかったね。これでも飲んで元気出して。",
+          "JumpAnchorStringId_CHN": "虽然可惜，但至少喝点这个打起精神吧。",
+          "JumpAnchorStringId_TWN": "雖然可惜，但至少喝點這個打起精神吧。",
+          "JumpAnchorStringId_FRA": "C'est dommage que nous ayons échoué, mais tu devrais boire ça et te remonter le moral.",
+          "JumpAnchorStringId_DEU": "Schade, dass wir versagt haben, aber trink das und muntere dich auf.",
+          "JumpAnchorStringId_ESP": "Qué lástima, pero bebe esto y anímate.",
+          "JumpAnchorStringId_PRT": "É uma pena, mas beba isso e se anime.",
+          "JumpAnchorStringId_THA": "น่าเสียดายที่พวกเราล้มเหลว แต่คุณควรดื่มนี่และให้กำลังใจตัวเองนะครับ",
+          "JumpAnchorStringId_IND": "Sayang sekali, minum ini dan semangat lagi.",
+          "JumpAnchorStringId_VIE": "Tiếc thật, nhưng hãy uống tạm cái này và vui lên.",
+          "JumpAnchorStringId_HIN": "अफ़सोस है, लेकिन इसे पीकर हिम्मत करो।",
           "JumpAnchorId": "REWARD_ANCHOR_2"
         }
       ]
@@ -51,7 +84,7 @@
       "JumpAnchorInfo": "JUMPANCHOR_1_SUCCESS",
       "WaitClick": false,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitStrId": "CURRENT_CHARACTER",
       "UnitMotion": "SPECIAL"
     },
     {
@@ -61,7 +94,18 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 어리석은 사람이 되지 않기 위해 실패 원인을 복기했다.",
+      "UnitTalk_ENG": "<color=#F7BE45>[CHARACTER_NAME]</color> reviewed the cause of the quest's failure to avoid becoming a fool.",
       "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は、愚者にならないよう失敗の原因を分析した。",
+      "UnitTalk_CHN": "<color=#F7BE45>[CHARACTER_NAME]</color>为了不成为愚蠢的人，正在检讨失败的原因。",
+      "UnitTalk_TWN": "<color=#F7BE45>[CHARACTER_NAME]</color>為了不成為愚蠢的人，正在檢討失敗的原因。",
+      "UnitTalk_FRA": "<color=#F7BE45>[CHARACTER_NAME]</color> a analysé la cause de l'échec de la quête pour ne pas devenir un(e) idiot(e).",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color> analysierte die Ursache des Scheiterns, um kein Narr zu werden.",
+      "UnitTalk_ESP": "<color=#F7BE45>[CHARACTER_NAME]</color> revisó la causa del fracaso de la misión para no convertirse en un tonto.",
+      "UnitTalk_PRT": "<color=#F7BE45>[CHARACTER_NAME]</color> revisou a causa da falha da missão para não se tornar um(a) tolo(a).",
+      "UnitTalk_THA": "<color=#F7BE45>[CHARACTER_NAME]</color> ทบทวนสาเหตุของความล้มเหลวในภารกิจเพื่อหลีกเลี่ยงการเป็นคนโง่ครับ",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> meninjau penyebab kegagalan misi untuk menghindari menjadi orang bodoh.",
+      "UnitTalk_VIE": "<color=#F7BE45>[CHARACTER_NAME]</color> đã xem xét nguyên nhân thất bại của nhiệm vụ để tránh trở thành kẻ ngốc.",
+      "UnitTalk_HIN": "<color=#F7BE45>[CHARACTER_NAME]</color> ने मूर्ख बनने से बचने के लिए खोज की विफलता के कारणों की समीक्षा की।",
       "TalkTime": 0.03
     },
     {
@@ -71,7 +115,7 @@
       "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
       "WaitClick": false,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitStrId": "CURRENT_CHARACTER",
       "UnitMotion": "ANGRY"
     },
     {
@@ -81,7 +125,18 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 돌아가는 길 내내 어두운 표정을 지었다.",
+      "UnitTalk_ENG": "Deep in thought, <color=#F7BE45>[CHARACTER_NAME]</color> wore a gloomy expression the entire way back.",
       "UnitTalk_JPN": "帰り道。<color=#F7BE45>[CHARACTER_NAME]</color>は、ずっと暗い顔をしていた。",
+      "UnitTalk_CHN": "<color=#F7BE45>[CHARACTER_NAME]</color>在回程时始终带着一副黯淡的表情。",
+      "UnitTalk_TWN": "<color=#F7BE45>[CHARACTER_NAME]</color>在回程時始終帶著一副黯淡的表情。",
+      "UnitTalk_FRA": "Plongé(e) dans ses pensées, <color=#F7BE45>[CHARACTER_NAME]</color> a gardé une expression sombre tout le long du chemin du retour.",
+      "UnitTalk_DEU": "Nachdenklich trug <color=#F7BE45>[CHARACTER_NAME]</color> den ganzen Rückweg einen düsteren Ausdruck.",
+      "UnitTalk_ESP": "Absorto en sus pensamientos, <color=#F7BE45>[CHARACTER_NAME]</color> mantuvo una expresión sombría durante todo el camino de regreso.",
+      "UnitTalk_PRT": "<color=#F7BE45>[CHARACTER_NAME]</color> manteve uma expressão sombria durante todo o caminho de volta.",
+      "UnitTalk_THA": "ระหว่างทางกลับ <color=#F7BE45>[CHARACTER_NAME]</color> ทำหน้าบึ้งตลอดทางครับ",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> memasang ekspresi muram sepanjang perjalanan pulang.",
+      "UnitTalk_VIE": "<color=#F7BE45>[CHARACTER_NAME]</color> mang vẻ mặt u sầu suốt đường về.",
+      "UnitTalk_HIN": "गहरी सोच में डूबा, <color=#F7BE45>[CHARACTER_NAME]</color> पूरे रास्ते उदास चेहरा बनाए रहा।",
       "TalkTime": 0.03
     },
     {
@@ -91,7 +146,7 @@
       "JumpAnchorInfo": "JUMPANCHOR_2",
       "WaitClick": false,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
+      "UnitStrId": "CURRENT_CHARACTER",
       "UnitMotion": "SMILE"
     },
     {
@@ -101,7 +156,18 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 포션을 받고 기뻐했다.",
+      "UnitTalk_ENG": "<color=#F7BE45>[CHARACTER_NAME]</color> brightened up after receiving the potion.",
       "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は、ポーションを受け取って喜んだ。",
+      "UnitTalk_CHN": "<color=#F7BE45>[CHARACTER_NAME]</color>收到药水后很开心。",
+      "UnitTalk_TWN": "<color=#F7BE45>[CHARACTER_NAME]</color>收到藥水後很開心。",
+      "UnitTalk_FRA": "<color=#F7BE45>[CHARACTER_NAME]</color> s'est égayé(e) après avoir reçu la potion.",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color> hellte sich auf, nachdem er den Trank erhalten hatte.",
+      "UnitTalk_ESP": "<color=#F7BE45>[CHARACTER_NAME]</color> se animó después de recibir la poción.",
+      "UnitTalk_PRT": "<color=#F7BE45>[CHARACTER_NAME]</color> se animou depois de receber a poção.",
+      "UnitTalk_THA": "<color=#F7BE45>[CHARACTER_NAME]</color> ดูสดใสขึ้นหลังจากได้รับยาครับ",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> menjadi ceria setelah menerima ramuan itu.",
+      "UnitTalk_VIE": "<color=#F7BE45>[CHARACTER_NAME]</color> vui vẻ hẳn lên sau khi nhận được bình thuốc.",
+      "UnitTalk_HIN": "पोशन मिलने के बाद <color=#F7BE45>[CHARACTER_NAME]</color> खुश हो गया।",
       "TalkTime": 0.03
     }
   ]

@@ -1,0 +1,40 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_APOSTLE_TYRIA_REST_GOOD",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_REST_NORMAL",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_REST",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_REST_NORMAL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "기다리던 연극이 상영한다는 소식에 <color=#F7BE45>[CHARACTER_NAME]</color>(은)는 평소보다 더 활기 넘쳐 보인다.",
+      "UnitTalk_ENG": "After hearing that a long-awaited play would finally be performing, <color=#F7BE45>[CHARACTER_NAME]</color> looked more energetic than usual.",
+      "UnitTalk_JPN": "待ちに待った演劇が上演されるという知らせに、\n<color=#F7BE45>[CHARACTER_NAME]</color>はいつもより元気そうだ。",
+      "UnitTalk_CHN": "听到期待的舞台剧即将上演的消息，<color=#F7BE45>[CHARACTER_NAME]</color>看起来比平常还要充满活力。",
+      "UnitTalk_TWN": "聽到期待的舞台劇即將上演的消息，<color=#F7BE45>[CHARACTER_NAME]</color>看起來比平常還要充滿活力。",
+      "UnitTalk_FRA": "En apprenant que la pièce tant attendue est jouée, <color=#F7BE45>[CHARACTER_NAME]</color> semble plus animé que d'habitude.",
+      "UnitTalk_DEU": "Die Nachricht, dass das lang erwartete Stück aufgeführt wird, ließ <color=#F7BE45>[CHARACTER_NAME]</color> lebhafter als sonst wirken.",
+      "UnitTalk_ESP": "Al enterarse de que la obra tan esperada se está representando, <color=#F7BE45>[CHARACTER_NAME]</color> parece más animado de lo normal.",
+      "UnitTalk_PRT": "Ao saber que a peça tão esperada está em cartaz, <color=#F7BE45>[CHARACTER_NAME]</color> parece mais animado(a) do que o normal.",
+      "UnitTalk_THA": "เมื่อได้ยินข่าวว่าละครที่รอคอยกำลังจะแสดง <color=#F7BE45>[CHARACTER_NAME]</color> ก็ดูมีชีวิตชีวามากกว่าปกติ",
+      "UnitTalk_IND": "Mendengar kabar bahwa drama yang ditunggu-tunggu akan diputar, <color=#F7BE45>[CHARACTER_NAME]</color> tampak lebih bersemangat dari biasanya.",
+      "UnitTalk_VIE": "Nghe tin vở kịch mong chờ sắp trình diễn, <color=#F7BE45>[CHARACTER_NAME]</color> có vẻ hoạt bát hơn bình thường.",
+      "UnitTalk_HIN": "जिस नाटक का इंतज़ार था, उसके मंचन की खबर सुनकर <color=#F7BE45>[CHARACTER_NAME]</color> हमेशा से ज़्यादा जीवंत लग रहा है।",
+      "TalkTime": 0.03
+    }
+  ]
+}

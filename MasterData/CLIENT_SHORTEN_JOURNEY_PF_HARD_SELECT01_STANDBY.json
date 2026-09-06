@@ -1,0 +1,130 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_HARD_SELECT01_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png",
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA"
+    },
+    {
+      "Uid": 2,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "리사가 단원의 훈련에 참고할만한 교본을 가져왔다. 어느쪽을 골라야 할까?",
+      "UnitTalk_ENG": "Lisa brought training manuals that could help me set a path for <color=#F7BE45>[CHARACTER_NAME]</color>'s training. Which one should I choose?",
+      "UnitTalk_JPN": "リサが団員のトレーニングの参考になりそうな教本を持ってきた。どれを選ぼうか？",
+      "UnitTalk_CHN": "丽莎带来了可供团员训练参考的教材，该选择哪一边呢？",
+      "UnitTalk_TWN": "麗莎帶來了可供團員訓練參考的教材，該選擇哪一邊呢？",
+      "UnitTalk_FRA": "Lisa a apporté des manuels pour l'entraînement des membres. Lequel devrais-je choisir ?",
+      "UnitTalk_DEU": "Lisa hat ein Trainingshandbuch für die Rekruten gebracht. Welches soll ich wählen?",
+      "UnitTalk_ESP": "Lisa trajo un manual para el entrenamiento de los miembros. ¿Cuál debería elegir?",
+      "UnitTalk_PRT": "A Lisa trouxe um manual para o treinamento dos membros. Qual devo escolher?",
+      "UnitTalk_THA": "ลิสาได้นำตำราสำหรับฝึกฝนมาให้แล้ว จะเลือกเล่มไหนดีนะ?",
+      "UnitTalk_IND": "Lisa membawakan buku panduan untuk latihan anggota. Mana yang harus dipilih?",
+      "UnitTalk_VIE": "Lisa đã mang đến một cuốn sách giáo trình để các thành viên tham khảo trong quá trình huấn luyện. Nên chọn cuốn nào đây?",
+      "UnitTalk_HIN": "लिसा मेरे लिए <color=#F7BE45>[CHARACTER_NAME]</color> के प्रशिक्षण हेतु मार्गदर्शक पुस्तिकाएँ लाई। मुझे कौन सी चुननी चाहिए?",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "공격에 도움이 되는 훈련 교본",
+          "JumpAnchorStringId_ENG": "A training manual that helps with offense",
+          "JumpAnchorStringId_JPN": "攻撃に役立つトレーニング教本",
+          "JumpAnchorStringId_CHN": "对攻击有帮助的训练教材",
+          "JumpAnchorStringId_TWN": "對攻擊有幫助的訓練教材",
+          "JumpAnchorStringId_FRA": "Un manuel d'entraînement qui aide à l'attaque",
+          "JumpAnchorStringId_DEU": "Ein Trainingshandbuch, das bei der Offensive hilft",
+          "JumpAnchorStringId_ESP": "Un manual de entrenamiento que ayuda con la ofensiva.",
+          "JumpAnchorStringId_PRT": "Um manual de treinamento que ajuda na ofensiva",
+          "JumpAnchorStringId_THA": "คู่มือการฝึกที่ช่วยในการโจมตี",
+          "JumpAnchorStringId_IND": "Panduan pelatihan yang membantu dalam penyerangan",
+          "JumpAnchorStringId_VIE": "Sổ tay huấn luyện giúp tăng cường khả năng tấn công",
+          "JumpAnchorStringId_HIN": "एक प्रशिक्षण पुस्तिका जो आक्रमण में मदद करती है",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "생존에 도움이 되는 훈련 교본",
+          "JumpAnchorStringId_ENG": "A training manual that helps with survival",
+          "JumpAnchorStringId_JPN": "生存力を高めるトレーニング教本",
+          "JumpAnchorStringId_CHN": "对生存有帮助的训练教材",
+          "JumpAnchorStringId_TWN": "對生存有幫助的訓練教材",
+          "JumpAnchorStringId_FRA": "Un manuel d'entraînement qui aide à la survie",
+          "JumpAnchorStringId_DEU": "Ein Trainingshandbuch, das beim Überleben hilft",
+          "JumpAnchorStringId_ESP": "Un manual de entrenamiento que ayuda con la supervivencia.",
+          "JumpAnchorStringId_PRT": "Um manual de treinamento que ajuda na sobrevivência",
+          "JumpAnchorStringId_THA": "คู่มือการฝึกที่ช่วยในการเอาชีวิตรอด",
+          "JumpAnchorStringId_IND": "Panduan pelatihan yang membantu dalam bertahan hidup",
+          "JumpAnchorStringId_VIE": "Sổ tay huấn luyện giúp tăng cường khả năng sinh tồn",
+          "JumpAnchorStringId_HIN": "एक प्रशिक्षण पुस्तिका जो उत्तरजीविता में मदद करती है",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        },
+        {
+          "Uid": 3,
+          "JumpAnchorStringId_KOR": "다양한 상황에 도움이 되는 훈련 교본",
+          "JumpAnchorStringId_ENG": "A training manual that helps in various situations",
+          "JumpAnchorStringId_JPN": "さまざまな状況に対応するためのトレーニング教本",
+          "JumpAnchorStringId_CHN": "有助于应对各种状况的训练教材",
+          "JumpAnchorStringId_TWN": "有助於應對各種狀況的訓練教材",
+          "JumpAnchorStringId_FRA": "Un manuel d'entraînement qui aide dans diverses situations",
+          "JumpAnchorStringId_DEU": "Ein Trainingshandbuch, das in verschiedenen Situationen hilft",
+          "JumpAnchorStringId_ESP": "Un manual de entrenamiento que ayuda en diversas situaciones.",
+          "JumpAnchorStringId_PRT": "Um manual de treinamento que ajuda em várias situações",
+          "JumpAnchorStringId_THA": "คู่มือการฝึกที่ช่วยในสถานการณ์ต่างๆ",
+          "JumpAnchorStringId_IND": "Panduan pelatihan yang membantu dalam berbagai situasi",
+          "JumpAnchorStringId_VIE": "Sổ tay huấn luyện giúp ích trong nhiều tình huống khác nhau",
+          "JumpAnchorStringId_HIN": "एक प्रशिक्षण पुस्तिका जो विभिन्न स्थितियों में मदद करती है",
+          "JumpAnchorId": "REWARD_ANCHOR_3"
+        }
+      ]
+    },
+    {
+      "Uid": 4,
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0
+    },
+    {
+      "Uid": 5,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0
+    },
+    {
+      "Uid": 6,
+      "JumpAnchorInfo": "JUMPANCHOR_3",
+      "WaitClick": false,
+      "WaitTime": 0.0
+    },
+    {
+      "Uid": 7,
+      "JumpAnchorInfo": "JUMPANCHOR_FINISH",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitTalk_KOR": "이후 훈련에는 해당 교본을 참고해보도록 하자. ",
+      "UnitTalk_ENG": "I decided to reference the selected manual for future training. ",
+      "UnitTalk_JPN": "これからのトレーニングでは、この教本を参考にしてみよう。 ",
+      "UnitTalk_CHN": "之后的训练就试着参考这本教材吧。 ",
+      "UnitTalk_TWN": "之後的訓練就試著參考這本教材吧。 ",
+      "UnitTalk_FRA": "J'ai décidé de me référer au manuel sélectionné pour les entraînements futurs.",
+      "UnitTalk_DEU": "Ich werde dieses Handbuch für zukünftige Trainings heranziehen. ",
+      "UnitTalk_ESP": "Consultaré el manual seleccionado para futuros entrenamientos.",
+      "UnitTalk_PRT": "Decidi usar o manual selecionado como referência para futuros treinamentos.",
+      "UnitTalk_THA": "สำหรับการฝึกในครั้งต่อไป ฉันจะใช้คู่มือเล่มนี้เป็นแนวทางนะคะ",
+      "UnitTalk_IND": "Aku memutuskan untuk menjadikan panduan yang terpilih sebagai referensi untuk pelatihan selanjutnya. ",
+      "UnitTalk_VIE": "Tôi quyết định tham khảo cuốn sổ tay đã chọn cho những buổi huấn luyện sau này.",
+      "UnitTalk_HIN": "आगे के प्रशिक्षण के लिए, इस पुस्तिका का संदर्भ लेंगे।",
+      "TalkTime": 0.03
+    }
+  ]
+}

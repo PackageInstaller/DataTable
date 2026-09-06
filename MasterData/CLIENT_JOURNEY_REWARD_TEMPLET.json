@@ -8,24 +8,48 @@
           "RewardGroupId" : 11,
           "RewardType" : "RT_JOURNEY_BUFF",
           "RewardId" : 11,
-          "QuantityMin" : 2,
-          "QuantityMax" : 2
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 12,
           "RewardType" : "RT_JOURNEY_BUFF",
           "RewardId" : 12,
-          "QuantityMin" : 2,
-          "QuantityMax" : 2
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 13,
           "RewardType" : "RT_JOURNEY_BUFF",
           "RewardId" : 13,
-          "QuantityMin" : 2,
-          "QuantityMax" : 2
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 14,
+          "RewardType" : "RT_JOURNEY_BUFF",
+          "RewardId" : 14,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 15,
+          "RewardType" : "RT_JOURNEY_BUFF",
+          "RewardId" : 15,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 16,
+          "RewardType" : "RT_JOURNEY_BUFF",
+          "RewardId" : 16,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -128,6 +152,54 @@
           "RewardGroupId" : 311,
           "RewardType" : "RT_JOURNEY_BUFF",
           "RewardId" : 311,
+          "QuantityMin" : 5,
+          "QuantityMax" : 5
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 321,
+          "RewardType" : "RT_JOURNEY_BUFF",
+          "RewardId" : 321,
+          "QuantityMin" : 3,
+          "QuantityMax" : 3
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 331,
+          "RewardType" : "RT_JOURNEY_BUFF",
+          "RewardId" : 331,
+          "QuantityMin" : 3,
+          "QuantityMax" : 3
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 341,
+          "RewardType" : "RT_JOURNEY_BUFF",
+          "RewardId" : 341,
+          "QuantityMin" : 3,
+          "QuantityMax" : 3
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 351,
+          "RewardType" : "RT_JOURNEY_BUFF",
+          "RewardId" : 351,
+          "QuantityMin" : 3,
+          "QuantityMax" : 3
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 361,
+          "RewardType" : "RT_JOURNEY_BUFF",
+          "RewardId" : 361,
+          "QuantityMin" : 3,
+          "QuantityMax" : 3
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 400011,
+          "RewardType" : "RT_JOURNEY_BUFF",
+          "RewardId" : 400011,
           "QuantityMin" : 5,
           "QuantityMax" : 5
         },
@@ -2004,6 +2076,13 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 110214,
+          "RewardType" : "RT_COIN",
+          "QuantityMin" : 50,
+          "QuantityMax" : 50
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 110311,
           "RewardType" : "RT_JOURNEY_ITEM",
           "RewardId" : 105019,
@@ -2031,16 +2110,16 @@
           "RewardGroupId" : 110314,
           "RewardType" : "RT_STAT",
           "RewardStrId" : "JST_PROTECT",
-          "StatMin" : 10,
-          "StatMax" : 10
+          "StatMin" : 15,
+          "StatMax" : 20
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 110315,
           "RewardType" : "RT_STAT",
           "RewardStrId" : "JST_FOCUS",
-          "StatMin" : 10,
-          "StatMax" : 10
+          "StatMin" : 15,
+          "StatMax" : 20
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -2057,6 +2136,14 @@
           "RewardStrId" : "JST_FOCUS",
           "StatMin" : 5,
           "StatMax" : 5
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 110318,
+          "RewardType" : "RT_JOURNEY_BUFF",
+          "RewardId" : 190,
+          "QuantityMin" : 8,
+          "QuantityMax" : 8
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -2103,22 +2190,29 @@
           "RewardGroupId" : 110416,
           "RewardType" : "RT_STAT",
           "RewardStrId" : "JST_FOCUS",
-          "StatMin" : 8,
-          "StatMax" : 8
+          "StatMin" : 10,
+          "StatMax" : 10
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 110417,
           "RewardType" : "RT_STAT",
           "RewardStrId" : "JST_PROTECT",
-          "StatMin" : 8,
-          "StatMax" : 8
+          "StatMin" : 10,
+          "StatMax" : 10
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 110418,
           "RewardType" : "RT_JOURNEY_BUFF",
           "RewardId" : 180,
+          "QuantityMin" : 5,
+          "QuantityMax" : 5
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 110419,
+          "RewardType" : "RT_STAMINA",
           "QuantityMin" : 5,
           "QuantityMax" : 5
         },
@@ -2134,8 +2228,8 @@
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 110512,
           "RewardType" : "RT_POTEN_POINT",
-          "QuantityMin" : 15,
-          "QuantityMax" : 15
+          "QuantityMin" : 20,
+          "QuantityMax" : 20
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -2171,8 +2265,8 @@
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 110711,
           "RewardType" : "RT_COIN",
-          "QuantityMin" : 100,
-          "QuantityMax" : 100
+          "QuantityMin" : 150,
+          "QuantityMax" : 150
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -2187,6 +2281,30 @@
           "RewardType" : "RT_STAMINA",
           "QuantityMin" : 10,
           "QuantityMax" : 10
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 201011,
+          "RewardType" : "RT_JOURNEY_ITEM",
+          "RewardId" : 5270001,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 201012,
+          "RewardType" : "RT_JOURNEY_ITEM",
+          "RewardId" : 5270002,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 201013,
+          "RewardType" : "RT_JOURNEY_ITEM",
+          "RewardId" : 5270003,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -2520,29 +2638,27 @@
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 120913,
           "RewardType" : "RT_JOURNEY_ITEM",
-          "RewardId" : 105024,
-          "QuantityMin" : 1,
-          "QuantityMax" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "RewardGroupId" : 120913,
-          "RewardType" : "RT_JOURNEY_ITEM",
-          "RewardId" : 105025,
-          "QuantityMin" : 1,
-          "QuantityMax" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "RewardGroupId" : 120913,
-          "RewardType" : "RT_JOURNEY_ITEM",
-          "RewardId" : 105026,
+          "RewardId" : 5170001,
           "QuantityMin" : 1,
           "QuantityMax" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 120914,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 20008
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 120915,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 20008,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 120916,
           "RewardType" : "RT_SE_POTEN",
           "RewardId" : 20008,
           "QuantityMin" : 2,
@@ -2802,6 +2918,157 @@
           "RewardType" : "RT_POTEN_POINT",
           "QuantityMin" : 10,
           "QuantityMax" : 10
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 86101,
+          "RewardType" : "RT_JOURNEY_ITEM",
+          "RewardId" : 5170002,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 86102,
+          "RewardType" : "RT_JOURNEY_BUFF",
+          "RewardId" : 102,
+          "QuantityMin" : 2,
+          "QuantityMax" : 2
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 86103,
+          "RewardType" : "RT_POTEN_POINT",
+          "QuantityMin" : 20,
+          "QuantityMax" : 20
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 86104,
+          "RewardType" : "RT_POTEN_POINT",
+          "QuantityMin" : 10,
+          "QuantityMax" : 10
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 86105,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 20005
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 86106,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 20005,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 86107,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 20005,
+          "QuantityMin" : 2,
+          "QuantityMax" : 2
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 86108,
+          "RewardType" : "RT_STAT",
+          "RewardStrId" : "JST_FOCUS",
+          "StatMin" : 15,
+          "StatMax" : 15
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 86108,
+          "RewardType" : "RT_STAT",
+          "RewardStrId" : "JST_PROTECT",
+          "StatMin" : 15,
+          "StatMax" : 15
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 87101,
+          "RewardType" : "RT_JOURNEY_ITEM",
+          "RewardId" : 5170003,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 87102,
+          "RewardType" : "RT_STAT",
+          "RewardStrId" : "JST_POWER",
+          "StatMin" : 20,
+          "StatMax" : 20
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 87102,
+          "RewardType" : "RT_STAT",
+          "RewardStrId" : "JST_HEALTH",
+          "StatMin" : 20,
+          "StatMax" : 20
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 87103,
+          "RewardType" : "RT_STAT",
+          "RewardStrId" : "JST_FOCUS",
+          "StatMin" : 20,
+          "StatMax" : 20
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 87103,
+          "RewardType" : "RT_STAT",
+          "RewardStrId" : "JST_PROTECT",
+          "StatMin" : 20,
+          "StatMax" : 20
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 87104,
+          "RewardType" : "RT_POTEN_POINT",
+          "QuantityMin" : 25,
+          "QuantityMax" : 25
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 87105,
+          "RewardType" : "RT_STAMINA",
+          "QuantityMin" : 10,
+          "QuantityMax" : 10
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 87106,
+          "RewardType" : "RT_POTEN_POINT",
+          "QuantityMin" : 10,
+          "QuantityMax" : 10
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 87107,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 20006
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 87108,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 20006,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 87109,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 20006,
+          "QuantityMin" : 2,
+          "QuantityMax" : 2
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -3084,15 +3351,15 @@
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 140121,
           "RewardType" : "RT_STAMINA",
-          "QuantityMin" : 5,
-          "QuantityMax" : 5
+          "QuantityMin" : 10,
+          "QuantityMax" : 10
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 140121,
           "RewardType" : "RT_STAMINA",
-          "QuantityMin" : 10,
-          "QuantityMax" : 10
+          "QuantityMin" : 15,
+          "QuantityMax" : 15
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -3151,15 +3418,15 @@
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 140131,
           "RewardType" : "RT_STAMINA",
-          "QuantityMin" : 5,
-          "QuantityMax" : 5
+          "QuantityMin" : 15,
+          "QuantityMax" : 15
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 140131,
           "RewardType" : "RT_STAMINA",
-          "QuantityMin" : 10,
-          "QuantityMax" : 10
+          "QuantityMin" : 20,
+          "QuantityMax" : 20
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -3196,22 +3463,22 @@
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 140141,
           "RewardType" : "RT_STAMINA",
-          "QuantityMin" : 15,
-          "QuantityMax" : 15
+          "QuantityMin" : 30,
+          "QuantityMax" : 30
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 140141,
           "RewardType" : "RT_STAMINA",
-          "QuantityMin" : 20,
-          "QuantityMax" : 20
+          "QuantityMin" : 40,
+          "QuantityMax" : 40
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 140142,
           "RewardType" : "RT_POTEN_POINT",
-          "QuantityMin" : 20,
-          "QuantityMax" : 20
+          "QuantityMin" : 10,
+          "QuantityMax" : 10
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -3246,22 +3513,22 @@
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 140151,
           "RewardType" : "RT_STAMINA",
-          "QuantityMin" : 15,
-          "QuantityMax" : 15
+          "QuantityMin" : 30,
+          "QuantityMax" : 30
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 140151,
           "RewardType" : "RT_STAMINA",
-          "QuantityMin" : 20,
-          "QuantityMax" : 20
+          "QuantityMin" : 40,
+          "QuantityMax" : 40
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 140152,
           "RewardType" : "RT_POTEN_POINT",
-          "QuantityMin" : 20,
-          "QuantityMax" : 20
+          "QuantityMin" : 10,
+          "QuantityMax" : 10
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -3514,15 +3781,15 @@
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 160112,
           "RewardType" : "RT_STAMINA",
-          "QuantityMin" : -5,
-          "QuantityMax" : -5
+          "QuantityMin" : 5,
+          "QuantityMax" : 5
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 160113,
           "RewardType" : "RT_STAMINA",
-          "QuantityMin" : -10,
-          "QuantityMax" : -10
+          "QuantityMin" : 10,
+          "QuantityMax" : 10
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -3549,8 +3816,8 @@
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 160214,
           "RewardType" : "RT_CONDITION",
-          "QuantityMin" : -1,
-          "QuantityMax" : -1
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -3570,24 +3837,24 @@
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 160313,
           "RewardType" : "RT_POTEN_POINT",
-          "QuantityMin" : 20,
-          "QuantityMax" : 20
+          "QuantityMin" : 30,
+          "QuantityMax" : 30
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 160314,
           "RewardType" : "RT_STAT",
           "RewardStrId" : "JST_FOCUS",
-          "StatMin" : 10,
-          "StatMax" : 10
+          "StatMin" : 20,
+          "StatMax" : 20
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 160315,
           "RewardType" : "RT_STAT",
           "RewardStrId" : "JST_PROTECT",
-          "StatMin" : 10,
-          "StatMax" : 10
+          "StatMin" : 20,
+          "StatMax" : 20
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -3600,24 +3867,47 @@
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 160317,
           "RewardType" : "RT_POTEN_POINT",
-          "QuantityMin" : 10,
-          "QuantityMax" : 10
+          "QuantityMin" : 15,
+          "QuantityMax" : 15
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 160318,
           "RewardType" : "RT_STAT",
           "RewardStrId" : "JST_FOCUS",
-          "StatMin" : 5,
-          "StatMax" : 5
+          "StatMin" : 10,
+          "StatMax" : 10
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 160319,
           "RewardType" : "RT_STAT",
           "RewardStrId" : "JST_PROTECT",
-          "StatMin" : 5,
-          "StatMax" : 5
+          "StatMin" : 10,
+          "StatMax" : 10
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 160320,
+          "RewardType" : "RT_POTEN_POINT",
+          "QuantityMin" : 10,
+          "QuantityMax" : 10
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 160321,
+          "RewardType" : "RT_STAT",
+          "RewardStrId" : "JST_FOCUS",
+          "StatMin" : 10,
+          "StatMax" : 10
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 160322,
+          "RewardType" : "RT_STAT",
+          "RewardStrId" : "JST_PROTECT",
+          "StatMin" : 10,
+          "StatMax" : 10
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -3706,39 +3996,39 @@
           "RewardGroupId" : 161011,
           "RewardType" : "RT_STAT",
           "RewardStrId" : "JST_FOCUS",
-          "StatMin" : 10,
-          "StatMax" : 10
+          "StatMin" : 30,
+          "StatMax" : 30
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 161012,
           "RewardType" : "RT_STAT",
           "RewardStrId" : "JST_PROTECT",
-          "StatMin" : 10,
-          "StatMax" : 10
+          "StatMin" : 30,
+          "StatMax" : 30
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 161013,
           "RewardType" : "RT_POTEN_POINT",
-          "QuantityMin" : 20,
-          "QuantityMax" : 20
+          "QuantityMin" : 30,
+          "QuantityMax" : 30
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 161014,
           "RewardType" : "RT_STAT",
           "RewardStrId" : "JST_FOCUS",
-          "StatMin" : 5,
-          "StatMax" : 5
+          "StatMin" : -10,
+          "StatMax" : -10
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 161015,
           "RewardType" : "RT_STAT",
           "RewardStrId" : "JST_PROTECT",
-          "StatMin" : 5,
-          "StatMax" : 5
+          "StatMin" : -10,
+          "StatMax" : -10
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -3765,8 +4055,8 @@
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 161112,
           "RewardType" : "RT_POTEN_POINT",
-          "QuantityMin" : 20,
-          "QuantityMax" : 20
+          "QuantityMin" : 30,
+          "QuantityMax" : 30
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -3802,24 +4092,24 @@
           "RewardGroupId" : 161311,
           "RewardType" : "RT_STAT",
           "RewardStrId" : "JST_POWER",
-          "QuantityMin" : 10,
-          "QuantityMax" : 10
+          "QuantityMin" : 20,
+          "QuantityMax" : 20
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 161311,
           "RewardType" : "RT_STAT",
           "RewardStrId" : "JST_HEALTH",
-          "QuantityMin" : 10,
-          "QuantityMax" : 10
+          "QuantityMin" : 20,
+          "QuantityMax" : 20
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 161311,
           "RewardType" : "RT_STAT",
           "RewardStrId" : "JST_ENDURANCE",
-          "QuantityMin" : 10,
-          "QuantityMax" : 10
+          "QuantityMin" : 20,
+          "QuantityMax" : 20
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -3833,24 +4123,24 @@
           "RewardGroupId" : 161313,
           "RewardType" : "RT_STAT",
           "RewardStrId" : "JST_POWER",
-          "QuantityMin" : -10,
-          "QuantityMax" : -10
+          "QuantityMin" : 10,
+          "QuantityMax" : 10
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 161313,
           "RewardType" : "RT_STAT",
           "RewardStrId" : "JST_HEALTH",
-          "QuantityMin" : -10,
-          "QuantityMax" : -10
+          "QuantityMin" : 10,
+          "QuantityMax" : 10
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 161313,
           "RewardType" : "RT_STAT",
           "RewardStrId" : "JST_ENDURANCE",
-          "QuantityMin" : -10,
-          "QuantityMax" : -10
+          "QuantityMin" : 10,
+          "QuantityMax" : 10
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -3871,16 +4161,16 @@
           "RewardGroupId" : 161411,
           "RewardType" : "RT_STAT",
           "RewardStrId" : "JST_FOCUS",
-          "QuantityMin" : 10,
-          "QuantityMax" : 10
+          "QuantityMin" : 20,
+          "QuantityMax" : 20
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 161411,
           "RewardType" : "RT_STAT",
           "RewardStrId" : "JST_PROTECT",
-          "QuantityMin" : 10,
-          "QuantityMax" : 10
+          "QuantityMin" : 20,
+          "QuantityMax" : 20
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -3894,16 +4184,16 @@
           "RewardGroupId" : 161413,
           "RewardType" : "RT_STAT",
           "RewardStrId" : "JST_FOCUS",
-          "QuantityMin" : -10,
-          "QuantityMax" : -10
+          "QuantityMin" : 10,
+          "QuantityMax" : 10
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 161413,
           "RewardType" : "RT_STAT",
           "RewardStrId" : "JST_PROTECT",
-          "QuantityMin" : -10,
-          "QuantityMax" : -10
+          "QuantityMin" : 10,
+          "QuantityMax" : 10
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -4159,6 +4449,78 @@
           "RewardType" : "RT_STAMINA",
           "QuantityMin" : 10,
           "QuantityMax" : 10
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 161811,
+          "RewardType" : "RT_JOURNEY_ITEM",
+          "RewardId" : 5170006,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 161911,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 21001,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 161911,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 21001,
+          "QuantityMin" : 2,
+          "QuantityMax" : 2
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 161912,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 21002,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 161912,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 21002,
+          "QuantityMin" : 2,
+          "QuantityMax" : 2
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 161913,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 21004,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 161913,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 21004,
+          "QuantityMin" : 2,
+          "QuantityMax" : 2
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 161914,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 21007,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 161914,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 21008,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -4475,24 +4837,24 @@
           "RewardGroupId" : 180712,
           "RewardType" : "RT_STAT",
           "RewardStrId" : "JST_POWER",
-          "QuantityMin" : 10,
-          "QuantityMax" : 10
+          "QuantityMin" : 15,
+          "QuantityMax" : 15
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 180713,
           "RewardType" : "RT_STAT",
           "RewardStrId" : "JST_HEALTH",
-          "QuantityMin" : 10,
-          "QuantityMax" : 10
+          "QuantityMin" : 15,
+          "QuantityMax" : 15
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 180714,
           "RewardType" : "RT_STAT",
           "RewardStrId" : "JST_ENDURANCE",
-          "QuantityMin" : 10,
-          "QuantityMax" : 10
+          "QuantityMin" : 15,
+          "QuantityMax" : 15
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -4555,6 +4917,13 @@
           "RewardId" : 5064006,
           "QuantityMin" : 1,
           "QuantityMax" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 180812,
+          "RewardType" : "RT_COIN",
+          "QuantityMin" : 50,
+          "QuantityMax" : 50
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -4663,6 +5032,22 @@
           "RewardType" : "RT_POTEN_POINT",
           "QuantityMin" : 10,
           "QuantityMax" : 10
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 185011,
+          "RewardType" : "RT_JOURNEY_ITEM",
+          "RewardId" : 5170004,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 185012,
+          "RewardType" : "RT_JOURNEY_ITEM",
+          "RewardId" : 5170005,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -5883,9 +6268,27 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 110030,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 11003
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 110110,
           "RewardType" : "RT_SE_POTEN",
           "RewardId" : 11011
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 110260,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 11026
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 110290,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 11029
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -5901,9 +6304,27 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 110460,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 11046
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 110510,
           "RewardType" : "RT_SE_POTEN",
           "RewardId" : 11051
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 110550,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 11055
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 130020,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 13002
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -6983,6 +7404,12 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 230500,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 23050
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 240010,
           "RewardType" : "RT_SE_POTEN",
           "RewardId" : 24001
@@ -7037,6 +7464,12 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 300060,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 30006
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 310010,
           "RewardType" : "RT_SE_POTEN",
           "RewardId" : 31001
@@ -7067,15 +7500,15 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
-          "RewardGroupId" : 320030,
-          "RewardType" : "RT_SE_POTEN",
-          "RewardId" : 32003
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 320040,
           "RewardType" : "RT_SE_POTEN",
           "RewardId" : 32004
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 320050,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 32005
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -7097,6 +7530,12 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 330040,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 33004
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 340010,
           "RewardType" : "RT_SE_POTEN",
           "RewardId" : 34001
@@ -7112,6 +7551,18 @@
           "RewardGroupId" : 340030,
           "RewardType" : "RT_SE_POTEN",
           "RewardId" : 34003
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 340040,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 34004
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 340050,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 34005
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -7133,11 +7584,421 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 230131,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 23013,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 320041,
           "RewardType" : "RT_SE_POTEN",
           "RewardId" : 32004,
           "QuantityMin" : 1,
           "QuantityMax" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 400010,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40001
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 400020,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40002
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 400030,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40003
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 400040,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40004
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 400050,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40005
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 400060,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40006
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 400070,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40007
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 400080,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40008
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 401010,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40101
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 401020,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40102
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 401030,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40103
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 401040,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40104
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 401050,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40105
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 401060,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40106
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 401070,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40107
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 401080,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40108
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 402010,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40201
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 402020,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40202
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 402030,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40203
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 402040,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40204
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 402050,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40205
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 402060,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40206
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 402070,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40207
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 402080,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40208
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 403010,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40301
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 403020,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40302
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 403030,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40303
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 403040,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40304
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 403050,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40305
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 403060,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40306
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 403070,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40307
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 403080,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40308
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 404010,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40401
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 404020,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40402
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 404030,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40403
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 404040,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40404
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 404050,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40405
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 404060,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40406
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 404070,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40407
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 404080,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40408
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 405010,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40501
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 405020,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40502
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 405030,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40503
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 405040,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40504
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 405050,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40505
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 405060,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40506
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 405070,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40507
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 405080,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40508
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 406010,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40601
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 406020,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40602
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 406030,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40603
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 406040,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40604
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 406050,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40605
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 406060,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40606
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 406070,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40607
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 406080,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40608
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 407010,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40701
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 407020,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40702
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 407030,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40703
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 407040,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40704
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 407050,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40705
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 407060,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40706
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 407070,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40707
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 407080,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 40708
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 410010,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 41001
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 410020,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 41002
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 410030,
+          "RewardType" : "RT_SE_POTEN",
+          "RewardId" : 41003
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -7908,6 +8769,30 @@
           "QuantityMax" : 1
         },
         {
+          "ContentsTag" : "DEV_OPEN",
+          "RewardGroupId" : 5011005,
+          "RewardType" : "RT_JOURNEY_ITEM",
+          "RewardId" : 5011005,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 5011008,
+          "RewardType" : "RT_JOURNEY_ITEM",
+          "RewardId" : 5011008,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 5011009,
+          "RewardType" : "RT_JOURNEY_ITEM",
+          "RewardId" : 5011009,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
+        },
+        {
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 5011010,
           "RewardType" : "RT_JOURNEY_ITEM",
@@ -7944,6 +8829,22 @@
           "RewardGroupId" : 5011015,
           "RewardType" : "RT_JOURNEY_ITEM",
           "RewardId" : 5011015,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 5011016,
+          "RewardType" : "RT_JOURNEY_ITEM",
+          "RewardId" : 5011016,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 5011017,
+          "RewardType" : "RT_JOURNEY_ITEM",
+          "RewardId" : 5011017,
           "QuantityMin" : 1,
           "QuantityMax" : 1
         },
@@ -7989,6 +8890,22 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 5011025,
+          "RewardType" : "RT_JOURNEY_ITEM",
+          "RewardId" : 5011025,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 5011026,
+          "RewardType" : "RT_JOURNEY_ITEM",
+          "RewardId" : 5011026,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 5011027,
           "RewardType" : "RT_JOURNEY_ITEM",
           "RewardId" : 5011027,
@@ -7997,9 +8914,41 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 5011029,
+          "RewardType" : "RT_JOURNEY_ITEM",
+          "RewardId" : 5011029,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 5011030,
           "RewardType" : "RT_JOURNEY_ITEM",
           "RewardId" : 5011030,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 5011031,
+          "RewardType" : "RT_JOURNEY_ITEM",
+          "RewardId" : 5011031,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 5011032,
+          "RewardType" : "RT_JOURNEY_ITEM",
+          "RewardId" : 5011032,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 5011033,
+          "RewardType" : "RT_JOURNEY_ITEM",
+          "RewardId" : 5011033,
           "QuantityMin" : 1,
           "QuantityMax" : 1
         },
@@ -8045,6 +8994,22 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 5011045,
+          "RewardType" : "RT_JOURNEY_ITEM",
+          "RewardId" : 5011045,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 5011046,
+          "RewardType" : "RT_JOURNEY_ITEM",
+          "RewardId" : 5011046,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 5011049,
           "RewardType" : "RT_JOURNEY_ITEM",
           "RewardId" : 5011049,
@@ -8072,6 +9037,46 @@
           "RewardGroupId" : 5011053,
           "RewardType" : "RT_JOURNEY_ITEM",
           "RewardId" : 5011053,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 5011054,
+          "RewardType" : "RT_JOURNEY_ITEM",
+          "RewardId" : 5011054,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 5011055,
+          "RewardType" : "RT_JOURNEY_ITEM",
+          "RewardId" : 5011055,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 5011056,
+          "RewardType" : "RT_JOURNEY_ITEM",
+          "RewardId" : 5011056,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 5011057,
+          "RewardType" : "RT_JOURNEY_ITEM",
+          "RewardId" : 5011057,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 5011058,
+          "RewardType" : "RT_JOURNEY_ITEM",
+          "RewardId" : 5011058,
           "QuantityMin" : 1,
           "QuantityMax" : 1
         },
@@ -8136,6 +9141,30 @@
           "RewardGroupId" : 5011511,
           "RewardType" : "RT_JOURNEY_ITEM",
           "RewardId" : 5011511,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 5013001,
+          "RewardType" : "RT_JOURNEY_ITEM",
+          "RewardId" : 5013001,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 5013002,
+          "RewardType" : "RT_JOURNEY_ITEM",
+          "RewardId" : 5013002,
+          "QuantityMin" : 1,
+          "QuantityMax" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 5013003,
+          "RewardType" : "RT_JOURNEY_ITEM",
+          "RewardId" : 5013003,
           "QuantityMin" : 1,
           "QuantityMax" : 1
         },
@@ -8304,12 +9333,26 @@
           "QuantityMax" : 30
         },
         {
+          "ContentsTag" : "DEV_OPEN",
+          "RewardGroupId" : 5111005,
+          "RewardType" : "RT_JOURNEY_BUFF",
+          "RewardId" : 25,
+          "QuantityMin" : 2,
+          "QuantityMax" : 2
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "RewardGroupId" : 5121005,
+          "RewardType" : "RT_POTEN_POINT",
+          "QuantityMin" : 30,
+          "QuantityMax" : 30
+        },
+        {
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 5111008,
-          "RewardType" : "RT_STAT",
-          "RewardStrId" : "JST_HEALTH",
-          "StatMin" : 5,
-          "StatMax" : 5
+          "RewardType" : "RT_STAMINA",
+          "QuantityMin" : 5,
+          "QuantityMax" : 5
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -8408,13 +9451,28 @@
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 5111016,
           "RewardType" : "RT_JOURNEY_BUFF",
-          "RewardId" : 27,
+          "RewardId" : 22,
           "QuantityMin" : 2,
           "QuantityMax" : 2
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 5121016,
+          "RewardType" : "RT_POTEN_POINT",
+          "QuantityMin" : 30,
+          "QuantityMax" : 30
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 5111017,
+          "RewardType" : "RT_JOURNEY_BUFF",
+          "RewardId" : 26,
+          "QuantityMin" : 2,
+          "QuantityMax" : 2
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 5121017,
           "RewardType" : "RT_POTEN_POINT",
           "QuantityMin" : 30,
           "QuantityMax" : 30
@@ -8496,6 +9554,21 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 5111025,
+          "RewardType" : "RT_JOURNEY_BUFF",
+          "RewardId" : 24,
+          "QuantityMin" : 2,
+          "QuantityMax" : 2
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 5121025,
+          "RewardType" : "RT_POTEN_POINT",
+          "QuantityMin" : 30,
+          "QuantityMax" : 30
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 5111026,
           "RewardType" : "RT_JOURNEY_BUFF",
           "RewardId" : 26,
@@ -8527,9 +9600,10 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 5111029,
-          "RewardType" : "RT_STAMINA",
-          "QuantityMin" : 5,
-          "QuantityMax" : 5
+          "RewardType" : "RT_JOURNEY_BUFF",
+          "RewardId" : 22,
+          "QuantityMin" : 2,
+          "QuantityMax" : 2
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -8549,6 +9623,21 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 5121030,
+          "RewardType" : "RT_POTEN_POINT",
+          "QuantityMin" : 30,
+          "QuantityMax" : 30
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 5111031,
+          "RewardType" : "RT_JOURNEY_BUFF",
+          "RewardId" : 26,
+          "QuantityMin" : 2,
+          "QuantityMax" : 2
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 5121031,
           "RewardType" : "RT_POTEN_POINT",
           "QuantityMin" : 30,
           "QuantityMax" : 30
@@ -8673,6 +9762,21 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 5111058,
+          "RewardType" : "RT_JOURNEY_BUFF",
+          "RewardId" : 25,
+          "QuantityMin" : 2,
+          "QuantityMax" : 2
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 5121058,
+          "RewardType" : "RT_POTEN_POINT",
+          "QuantityMin" : 30,
+          "QuantityMax" : 30
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 5111501,
           "RewardType" : "RT_STAT",
           "RewardStrId" : "JST_FOCUS",
@@ -8786,6 +9890,51 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "RewardGroupId" : 5121511,
+          "RewardType" : "RT_POTEN_POINT",
+          "QuantityMin" : 30,
+          "QuantityMax" : 30
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 5113001,
+          "RewardType" : "RT_JOURNEY_BUFF",
+          "RewardId" : 25,
+          "QuantityMin" : 2,
+          "QuantityMax" : 2
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 5123001,
+          "RewardType" : "RT_POTEN_POINT",
+          "QuantityMin" : 30,
+          "QuantityMax" : 30
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 5113002,
+          "RewardType" : "RT_JOURNEY_BUFF",
+          "RewardId" : 26,
+          "QuantityMin" : 2,
+          "QuantityMax" : 2
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 5123002,
+          "RewardType" : "RT_POTEN_POINT",
+          "QuantityMin" : 30,
+          "QuantityMax" : 30
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 5113003,
+          "RewardType" : "RT_JOURNEY_BUFF",
+          "RewardId" : 25,
+          "QuantityMin" : 2,
+          "QuantityMax" : 2
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RewardGroupId" : 5123003,
           "RewardType" : "RT_POTEN_POINT",
           "QuantityMin" : 30,
           "QuantityMax" : 30

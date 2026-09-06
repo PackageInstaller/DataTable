@@ -1,0 +1,38 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_07D_NOA_BT_VICTORY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_07B_NOA_BT_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "FUN"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_07B_NOA_BT_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "기초 평가전에서 승리했다!",
+      "UnitTalk_ENG": "We passed the basic trial!",
+      "UnitTalk_JPN": "基礎試験で勝利した！",
+      "UnitTalk_CHN": "在基础评鉴战中获胜了！",
+      "UnitTalk_TWN": "在基礎評鑑戰中獲勝了！",
+      "UnitTalk_FRA": "Victoire en match d'évaluation !",
+      "UnitTalk_DEU": "Du hast die Grundbewertung gewonnen!",
+      "UnitTalk_ESP": "¡Ganaste en la evaluación básica!",
+      "UnitTalk_PRT": "Venceu na avaliação básica!",
+      "UnitTalk_THA": "ชนะในการประเมินพื้นฐาน!",
+      "UnitTalk_IND": "Menang di laga uji coba!",
+      "UnitTalk_VIE": "Chiến thắng trong đánh giá cơ bản!",
+      "TalkTime": 0.03
+    }
+  ]
+}

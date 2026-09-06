@@ -1,0 +1,42 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: OPERATION_BUFF_TEMPLET",
+    "_Version": 0,
+    "Data": [
+        {
+          "OperationBuffId" : 101,
+          "ActiveDate" : 1,
+          "BattleEffectStrId" : "BATTLE_EFFECT_OPERATION_HANDICAP_70001",
+          "BuffIcon" : "BUFF_OPERATION.png",
+          "BuffTitle" : "SI_OPERATION_BUFF_STEP@@1"
+        },
+        {
+          "OperationBuffId" : 102,
+          "ActiveDate" : 3,
+          "BattleEffectStrId" : "BATTLE_EFFECT_OPERATION_HANDICAP_70002",
+          "BuffIcon" : "BUFF_OPERATION.png",
+          "BuffTitle" : "SI_OPERATION_BUFF_STEP@@2"
+        },
+        {
+          "OperationBuffId" : 103,
+          "ActiveDate" : 5,
+          "BattleEffectStrId" : "BATTLE_EFFECT_OPERATION_HANDICAP_70003",
+          "BuffIcon" : "BUFF_OPERATION.png",
+          "BuffTitle" : "SI_OPERATION_BUFF_STEP@@3"
+        },
+        {
+          "OperationBuffId" : 104,
+          "ActiveDate" : 9,
+          "BattleEffectStrId" : "BATTLE_EFFECT_OPERATION_HANDICAP_70004",
+          "BuffIcon" : "BUFF_OPERATION.png",
+          "BuffTitle" : "SI_OPERATION_BUFF_STEP@@4"
+        },
+        {
+          "OperationBuffId" : 105,
+          "ActiveDate" : 14,
+          "BattleEffectStrId" : "BATTLE_EFFECT_OPERATION_HANDICAP_70005",
+          "BuffIcon" : "BUFF_OPERATION.png",
+          "BuffTitle" : "SI_OPERATION_BUFF_STEP@@5"
+        }
+    ]
+}

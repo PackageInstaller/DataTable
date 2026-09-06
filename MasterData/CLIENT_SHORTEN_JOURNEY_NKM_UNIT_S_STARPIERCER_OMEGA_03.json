@@ -1,0 +1,50 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_STARPIERCER_OMEGA_03",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_01",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_DOWNTOWN_DESTROYED.png",
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_CUBE",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "오메가는 큐브 팰리스가 일으킨 소동을 제압했다.",
+      "UnitTalk_ENG": "Omega quelled the chaos caused by Cube Palace.",
+      "UnitTalk_JPN": "オメガはキューブパレスが引き起こした騒動を制圧した。",
+      "UnitTalk_CHN": "奥米嘉压制住了帕莱斯立方引起的骚动。",
+      "UnitTalk_TWN": "奧米嘉壓制住了帕萊斯立方引起的騷動。",
+      "UnitTalk_FRA": "Omega a maîtrisé le chaos provoqué par le Cube Palace.",
+      "UnitTalk_DEU": "Omega hat das Chaos des Cube-Palastes unterdrückt.",
+      "UnitTalk_ESP": "Omega sofocó el caos causado por Cube Palace.",
+      "UnitTalk_PRT": "Ômega suprimiu o caos causado pelo Cube Palace.",
+      "UnitTalk_THA": "โอเมก้าปราบปรามความวุ่นวายที่เกิดจากคิวบ์พาเลซ",
+      "UnitTalk_IND": "Omega meredakan kekacauan yang disebabkan oleh Cube Palace.",
+      "UnitTalk_VIE": "Omega đã dập tắt sự hỗn loạn do Cube Palace gây ra.",
+      "UnitTalk_HIN": "ओमेगा ने क्यूब पैलेस द्वारा मचाई गई गड़बड़ी को शांत किया।",
+      "TalkTime": 0.03
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_HARD_FUTURE_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 6,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_BACK_STREET.png",
+      "UnitStrId": "NPC_MODULE_BULLY1_FEMALE_1"
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "인상이 험악한 여자가 <color=#F7BE45>미래를 위해 현재의 위험을 감수할 만한 유물</color>을 맡아주겠냐고 묻는다. ",
+      "UnitTalk_ENG": "A fierce-looking woman asked if I would <color=#F7BE45>safeguard a relic that risked the present for the future</color>. ",
+      "UnitTalk_JPN": "険しい顔つきの女が、<color=#F7BE45>「未来のために、現在のリスクを冒す価値のある遺物」</color>を預かってくれないかと尋ねてきた。",
+      "UnitTalk_CHN": "长相凶狠的女子询问是否愿意收下<color=#F7BE45>为未来而承受目前风险的文物</color>。 ",
+      "UnitTalk_TWN": "長相兇狠的女子詢問是否願意收下<color=#F7BE45>為未來而承受目前風險的文物</color>。 ",
+      "UnitTalk_FRA": "Une femme à l'air féroce m'a demandé si je pouvais <color=#F7BE45>garder une relique qui vaut de risquer le présent pour l'avenir</color>.",
+      "UnitTalk_DEU": "Eine grimmig aussehende Frau fragte, ob ich <color=#F7BE45>ein Relikt verwahren würde, das es wert ist, die Gegenwart für die Zukunft zu riskieren</color>.",
+      "UnitTalk_ESP": "Una mujer de aspecto feroz me preguntó si <color=#F7BE45>protegería una reliquia que arriesga el presente por el futuro</color>. ",
+      "UnitTalk_PRT": "Uma mulher com uma expressão feroz me perguntou se eu <color=#F7BE45>guardaria uma relíquia pela qual vale a pena arriscar o presente pelo futuro</color>.",
+      "UnitTalk_THA": "ผู้หญิงหน้าตาถมึงทึงถามว่าฉันจะช่วย <color=#F7BE45>เก็บรักษาวัตถุโบราณที่คุ้มค่าแก่การเสี่ยงอันตรายในปัจจุบันเพื่ออนาคต</color> ได้ไหม",
+      "UnitTalk_IND": "Seorang wanita berwajah garang bertanya apakah aku mau <color=#F7BE45>menjaga relik yang mempertaruhkan masa kini demi masa depan</color>.",
+      "UnitTalk_VIE": "Một người phụ nữ với vẻ ngoài hung dữ tiến đến và hỏi liệu tôi có thể <color=#F7BE45>giữ một di vật đáng để mạo hiểm hiện tại vì tương lai</color> không.",
+      "UnitTalk_HIN": "एक कठोर दिखने वाली महिला ने पूछा कि क्या मैं <color=#F7BE45>एक ऐसे अवशेष को सुरक्षित रखूँगा जो भविष्य के लिए वर्तमान को जोखिम में डालने लायक है</color>।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "갖고 있어 보기로 한다.",
+          "JumpAnchorStringId_ENG": "I'll hold onto it.",
+          "JumpAnchorStringId_JPN": "受け取る。",
+          "JumpAnchorStringId_CHN": "决定收下。",
+          "JumpAnchorStringId_TWN": "決定收下。",
+          "JumpAnchorStringId_FRA": "Je vais la garder.",
+          "JumpAnchorStringId_DEU": "Ich werde es behalten.",
+          "JumpAnchorStringId_ESP": "Lo conservaré para verlo.",
+          "JumpAnchorStringId_PRT": "Decido ficar com ela.",
+          "JumpAnchorStringId_THA": "ฉันจะเก็บมันไว้ดูค่ะ",
+          "JumpAnchorStringId_IND": "Aku akan menyimpannya.",
+          "JumpAnchorStringId_VIE": "Tôi sẽ giữ nó.",
+          "JumpAnchorStringId_HIN": "मैं इसे अपने पास रख कर देखूँगा।",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "거절한다.",
+          "JumpAnchorStringId_ENG": "I'll pass.",
+          "JumpAnchorStringId_JPN": "断る。",
+          "JumpAnchorStringId_CHN": "拒绝。",
+          "JumpAnchorStringId_TWN": "拒絕。",
+          "JumpAnchorStringId_FRA": "Je refuse.",
+          "JumpAnchorStringId_DEU": "Ablehnen.",
+          "JumpAnchorStringId_ESP": "Rechazo.",
+          "JumpAnchorStringId_PRT": "Recuso.",
+          "JumpAnchorStringId_THA": "ปฏิเสธ",
+          "JumpAnchorStringId_IND": "Menolak.",
+          "JumpAnchorStringId_VIE": "Từ chối.",
+          "JumpAnchorStringId_HIN": "मैं मना करूँगा।",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 2,
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_FEMALE_1"
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "자신도 나와 같은 선택을 했다면 달라졌을까, 자문하던 여자는 곁에 세워두었던 바이크 호그를 타고 길을 떠났다.",
+      "UnitTalk_ENG": "Wondering if things would've changed had she chosen the same, the woman rode off on her bike hog.",
+      "UnitTalk_JPN": "「あたしも同じ選択をしてたら、何か変わってたのかな…」そう自問するように呟くと、傍らに止めてあったバイクホッグにまたがり去って行った。",
+      "UnitTalk_CHN": "女子自问着，若自己也做出和你一样的选择，是否会有所不同，随后便骑上停在旁边的摩托野猪离开了。",
+      "UnitTalk_TWN": "女子自問著，若自己也做出和你一樣的選擇，是否會有所不同，隨後便騎上停在旁邊的摩托野豬離開了。",
+      "UnitTalk_FRA": "Bike Hog",
+      "UnitTalk_DEU": "Die Frau, die sich fragte, ob sich etwas geändert hätte, wenn sie dieselbe Wahl getroffen hätte, ritt auf ihrem Bike Hog davon.",
+      "UnitTalk_ESP": "Preguntándose si hubiera sido diferente si ella hubiera elegido lo mismo, la mujer se marchó en su moto.",
+      "UnitTalk_PRT": "Perguntando-se se as coisas teriam mudado se ela tivesse feito a mesma escolha que eu, a mulher partiu em sua moto.",
+      "UnitTalk_THA": "สงสัยว่าถ้าเธอเลือกทางเดียวกันกับฉันแล้วอะไร ๆ จะเปลี่ยนไปไหม ผู้หญิงคนนั้นก็ขี่มอเตอร์ไซค์ฮอกออกไป",
+      "UnitTalk_IND": "Sambil bertanya-tanya apakah keadaan akan berbeda jika dia memilih hal yang sama, wanita itu pergi menunggangi Bike Hog-nya.",
+      "UnitTalk_VIE": "Tự hỏi liệu mọi thứ có thay đổi nếu cô ấy cũng chọn như vậy, người phụ nữ cưỡi con Bike Hog mà cô ấy đã đậu sẵn và rời đi.",
+      "UnitTalk_HIN": "यह सोचकर कि क्या चीजें बदल जातीं अगर उसने भी वही चुनाव किया होता, तो वह महिला अपने बाइक हॉग पर सवार होकर चली गई।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 13,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER"
+    },
+    {
+      "Uid": 3,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_FEMALE_1"
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "내 심정을 이해한다고 말한 여자는 후회 따윈 없는 듯한 후련한 얼굴로 곁에 세워두었던 바이크 호그를 타고 길을 떠났다.",
+      "UnitTalk_ENG": "Saying she understood my choice, the woman left without regret, riding away on her bike hog.",
+      "UnitTalk_JPN": "「あんたの気持ちが分かる」と後悔など微塵もないと言わんばかりの晴れやかな表情で、傍らに止めてあったバイクホッグにまたがり去って行った。",
+      "UnitTalk_CHN": "女子说她能理解你的心情，带着一副毫不后悔、如释重负的表情，骑上停在旁边的摩托野猪离开了。",
+      "UnitTalk_TWN": "女子說她能理解你的心情，帶著一副毫不後悔、如釋重負的表情，騎上停在旁邊的摩托野豬離開了。",
+      "UnitTalk_FRA": "La femme, disant comprendre mon cœur, est partie sur son Bike Hog, laissant derrière elle un visage apaisé sans regret.",
+      "UnitTalk_DEU": "Die Frau, die sagte, sie verstehe meine Gefühle, ritt ohne Reue auf ihrem Bike davon.",
+      "UnitTalk_ESP": "La mujer, diciendo que entendía mi sentir, partió en su moto sin remordimientos.",
+      "UnitTalk_PRT": "A mulher, dizendo que entendia meus sentimentos, partiu em sua moto-javali com um rosto aliviado, como se não houvesse arrependimento.",
+      "UnitTalk_THA": "ผู้หญิงคนนั้นบอกว่าเธอเข้าใจการตัดสินใจของฉัน แล้วก็จากไปโดยไม่เสียใจ ขี่มอเตอร์ไซค์ฮอกออกไป",
+      "UnitTalk_IND": "Wanita itu pergi tanpa rasa penyesalan, menaiki Bike Hog-nya yang ditinggal di sampingnya setelah berkata dia memahami perasaanku.",
+      "UnitTalk_VIE": "Người phụ nữ đó rời đi trên chiếc Bike Hog, gương mặt nhẹ nhõm, không chút hối tiếc.",
+      "UnitTalk_HIN": "यह कहते हुए कि वह मेरी पसंद को समझती है, महिला बिना किसी पछतावे के चली गई, अपने बाइक हॉग पर सवार होकर दूर चली गई।",
+      "TalkTime": 0.03
+    }
+  ]
+}

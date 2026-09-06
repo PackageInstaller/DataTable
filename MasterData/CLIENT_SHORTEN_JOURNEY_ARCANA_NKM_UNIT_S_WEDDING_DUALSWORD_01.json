@@ -1,0 +1,50 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_WEDDING_DUALSWORD_01",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_HOTEL_3.png",
+      "UnitStrId": "NKM_UNIT_NPC_WEDDING_DUALSWORD",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 2,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>만능약</color>의 부작용으로 정신연령이 어려진 에핀델과 <color=#F7BE45>신랑신부 놀이</color>를 즐겼다.",
+      "UnitTalk_ENG": "After Epindel's mental age regressed as a side effect of a shady <color=#F7BE45>elixir</color>, I kept her company by playing <color=#F7BE45>pretend marriage</color> with her.",
+      "UnitTalk_JPN": "<color=#F7BE45>万能薬</color>の副作用で精神年齢が幼くなったエピンデルと、<color=#F7BE45>花婿花嫁ごっこ</color>を楽しんだ。",
+      "UnitTalk_CHN": "和受到<color=#F7BE45>万能药</color>副作用而心智年龄变小的艾芬黛尔，一起玩了<color=#F7BE45>新郎新娘家家酒</color>。",
+      "UnitTalk_TWN": "和受到<color=#F7BE45>萬能藥</color>副作用而心智年齡變小的艾芬黛爾，一起玩了<color=#F7BE45>新郎新娘家家酒</color>。",
+      "UnitTalk_FRA": "Les effets secondaires de la <color=#F7BE45>Panacée</color> ont réduit l'âge mental d'Épindel, et elle a apprécié de jouer aux <color=#F7BE45>jeunes mariés</color>.",
+      "UnitTalk_DEU": "Aufgrund der Nebenwirkungen des <color=#F7BE45>Universalmedikaments</color> wurde Epindels geistiges Alter jünger, und wir genossen zusammen das <color=#F7BE45>Braut- und Bräutigamspiel</color>.",
+      "UnitTalk_ESP": "Disfrutaste jugando al <color=#F7BE45>juego de novios</color> con Epindel, cuya mente se volvió infantil como efecto secundario de la <color=#F7BE45>Panacea</color>.",
+      "UnitTalk_PRT": "<color=#F7BE45>Elixir</color> de efeitos colaterais tornou Epindel mais jovem e brincamos de <color=#F7BE45>casamento</color>.",
+      "UnitTalk_THA": "เนื่องจากผลข้างเคียงของ<color=#F7BE45>ยาครอบจักรวาล</color> เอฟินเดลจึงมีสภาพจิตใจเหมือนเด็ก และได้สนุกสนานกับ<color=#F7BE45>การแต่งงาน</color>",
+      "UnitTalk_IND": "<color=#F7BE45>Obat Segala Penyakit</color> membuat Epindel memiliki usia mental yang lebih muda, dan kami bermain <color=#F7BE45>pura-pura jadi pengantin</color>.",
+      "UnitTalk_VIE": "<color=#F7BE45>Thuốc thần kỳ</color> có tác dụng phụ làm tuổi tâm thần của Epindel trở nên trẻ thơ, và tôi đã cùng cô ấy chơi trò <color=#F7BE45>cô dâu chú rể</color> một cách vui vẻ.",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_GRACE_DUALSWORD_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_GRACE_DUALSWORD_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER"
+    }
+  ]
+}

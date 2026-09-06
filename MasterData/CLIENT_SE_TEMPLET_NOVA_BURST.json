@@ -35,6 +35,32 @@
           }
         },
         {
+          "m_SEID" : 111041,
+          "m_SEStrID" : "COND_COMMON_NOVA_BURST_04_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_NOVA_BURST_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_INSTANT",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 111042,
+          "m_SEStrID" : "COND_COMMON_NOVA_BURST_04_02",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_DELETE_SPECIFIC_BUFF",
+          "m_BuffLifeTurn" : 0,
+          "BuffDeleteCount" : 0,
+          "DeleteSpecificBuffStrId" : "BI_NOVA_BURST_DAMAGE_UP",
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
           "m_SEID" : 40010001,
           "m_SEStrID" : "COND_VOYAGER_GUNBLADE_MAINSTREAM_NOVA_BURST_01_01",
           "m_BuffTargetType" : "NSETT_SELF",
@@ -121,6 +147,51 @@
           }
         },
         {
+          "m_SEID" : 10050001,
+          "m_SEStrID" : "COND_MAID_LANTERN_NOVA_BURST_01_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_VAMPIRISM",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1500
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10080001,
+          "m_SEStrID" : "COND_MAID_BELL_NOVA_BURST_01_01",
+          "m_BuffTargetType" : "NSETT_TARGET",
+          "m_BuffStrID" : "BI_RATE_HIT_DECREASE",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10090001,
+          "m_SEStrID" : "COND_MAID_TWOHANDER_NOVA_BURST_01_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_BARRIER",
+          "m_BuffLifeTurn" : 1,
+          "BarrierTargetType" : "NSETT_SELF",
+          "BarrierStatType" : "NST_HP",
+          "BarrierRate" : 1800,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
           "m_SEID" : 10100001,
           "m_SEStrID" : "COND_KINGDOM_KNIGHT_NOVA_BURST_01_01",
           "m_BuffTargetType" : "NSETT_SELF",
@@ -140,11 +211,9 @@
         },
         {
           "m_SEID" : 10110001,
-          "SEGroupID" : 101121,
-          "SEOrderList" : 11,
           "m_SEStrID" : "COND_KINGDOM_SHIELDER_NOVA_BURST_01_01",
-          "m_BuffTargetType" : "NSETT_TARGET",
-          "m_BuffStrID" : "BI_AGGRO",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_KINGDOM_SHIELDER_1",
           "m_BuffLifeTurn" : 1,
           "m_Condition" : 
           {
@@ -155,18 +224,16 @@
         {
           "m_SEID" : 10130001,
           "m_SEStrID" : "COND_KINGDOM_PRAY_NOVA_BURST_01_01",
-          "m_BuffTargetType" : "NSETT_SELF",
-          "m_BuffStrID" : "BI_STAT_NST_RATE_HEAL_GIVE",
-          "m_BuffLifeTurn" : 0,
-          "Stats" : 
-          [
-            {
-              "NKM_STAT_TYPE_RATE" : 1500
-            }
-          ],
+          "m_BuffTargetType" : "NSETT_AUTO_ALLY_ONE",
+          "AutoTargetId" : 2,
+          "m_BuffStrID" : "BI_BARRIER",
+          "m_BuffLifeTurn" : 1,
+          "BarrierTargetType" : "NSETT_SELF",
+          "BarrierStatType" : "NST_HP",
+          "BarrierRate" : 1800,
           "m_Condition" : 
           {
-            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_ActiveType" : "NSEAT_SKILL_END",
             "m_fActiveRate" : 10000
           }
         },
@@ -204,13 +271,39 @@
           }
         },
         {
+          "m_SEID" : 10160001,
+          "m_SEStrID" : "COND_EASTERN_SWORDMASTER_NOVA_BURST_01_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_SPEED_INCREASE",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10170001,
+          "m_SEStrID" : "COND_INCOGNITA_LANDGRAVE_NOVA_BURST_01_01",
+          "m_BuffTargetType" : "NSETT_TARGET",
+          "m_BuffStrID" : "BI_BURN",
+          "m_BuffLifeTurn" : 2,
+          "EffectHitCheck" : false,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
           "m_SEID" : 10180001,
-          "SEGroupID" : 101822,
-          "SEOrderList" : 11,
           "m_SEStrID" : "COND_INCOGNITA_FLOWER_NOVA_BURST_01_01",
           "m_BuffTargetType" : "NSETT_SELF",
-          "m_BuffStrID" : "BI_DEFENSE_INCREASE",
-          "m_BuffLifeTurn" : 3,
+          "m_BuffStrID" : "BI_BARRIER",
+          "m_BuffLifeTurn" : 1,
+          "BarrierTargetType" : "NSETT_SELF",
+          "BarrierStatType" : "NST_DEF",
+          "BarrierRate" : 28800,
           "m_Condition" : 
           {
             "m_ActiveType" : "NSEAT_SKILL_END",
@@ -220,18 +313,16 @@
         {
           "m_SEID" : 10190001,
           "m_SEStrID" : "COND_EASTERN_OWL_NOVA_BURST_01_01",
-          "m_BuffTargetType" : "NSETT_SELF",
-          "m_BuffStrID" : "BI_STAT_NST_RATE_HEAL_GIVE",
+          "m_BuffTargetType" : "NSETT_AUTO_ALLY_ONE",
+          "AutoTargetId" : 2,
+          "m_BuffStrID" : "BI_HEAL",
           "m_BuffLifeTurn" : 0,
-          "Stats" : 
-          [
-            {
-              "NKM_STAT_TYPE_RATE" : 1500
-            }
-          ],
+          "HealTargetType" : "NSETT_SELF",
+          "HealStatType" : "NST_HP",
+          "HealRate" : 1900,
           "m_Condition" : 
           {
-            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_ActiveType" : "NSEAT_SKILL_END",
             "m_fActiveRate" : 10000
           }
         },
@@ -261,7 +352,7 @@
           "m_fBuffActiveRate" : 10000,
           "m_BuffTargetType" : "NSETT_ENEMY_ALL",
           "m_BuffStrID" : "BI_ATTACK_DECREASE",
-          "m_BuffLifeTurn" : 1,
+          "m_BuffLifeTurn" : 2,
           "m_Condition" : 
           {
             "m_ActiveType" : "NSEAT_SKILL_END"
@@ -270,18 +361,38 @@
         {
           "m_SEID" : 10240001,
           "m_SEStrID" : "COND_SAINTESS_ELF_NOVA_BURST_01_01",
-          "m_BuffTargetType" : "NSETT_SELF",
-          "m_BuffStrID" : "BI_STAT_NST_RATE_HEAL_GIVE",
-          "m_BuffLifeTurn" : 0,
-          "Stats" : 
-          [
-            {
-              "NKM_STAT_TYPE_RATE" : 1500
-            }
-          ],
+          "m_BuffTargetType" : "NSETT_AUTO_ALLY_ONE",
+          "AutoTargetId" : 2,
+          "m_BuffStrID" : "BI_SAINTESS_ELF_1",
+          "m_BuffLifeTurn" : 1,
           "m_Condition" : 
           {
-            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10250001,
+          "m_SEStrID" : "COND_APOSTLE_TYRIA_NOVA_BURST_01_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_EXTRA_TURN",
+          "m_BuffLifeTurn" : 0,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10260001,
+          "m_SEStrID" : "COND_RECON_KNUCKLE_NOVA_BURST_01_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_SPEED_GAUGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "SpeedGaugeRate" : 2000,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
             "m_fActiveRate" : 10000
           }
         },
@@ -293,6 +404,18 @@
           "m_BuffTargetType" : "NSETT_SELF",
           "m_BuffStrID" : "BI_SPEED_INCREASE",
           "m_BuffLifeTurn" : 2,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10290001,
+          "m_SEStrID" : "COND_INDEPENDENT_VAGABOND_NOVA_BURST_01_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_ATTACK_INCREASE",
+          "m_BuffLifeTurn" : 1,
           "m_Condition" : 
           {
             "m_ActiveType" : "NSEAT_SKILL_END",
@@ -314,6 +437,55 @@
           "m_Condition" : 
           {
             "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10310001,
+          "m_SEStrID" : "COND_STARPIERCER_OMEGA_NOVA_BURST_01_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 2000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10320001,
+          "m_SEStrID" : "COND_BUNNY_KNIGHT_NOVA_BURST_01_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_VAMPIRISM",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 3000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10330001,
+          "m_SEStrID" : "COND_WEST_BEAMSWORD_NOVA_BURST_01_01",
+          "m_BuffTargetType" : "NSETT_TARGET",
+          "m_BuffStrID" : "BI_SPEED_GAUGE_DOWN",
+          "m_BuffLifeTurn" : 0,
+          "SpeedGaugeRate" : 1500,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
             "m_fActiveRate" : 10000
           }
         },
@@ -392,6 +564,59 @@
           }
         },
         {
+          "m_SEID" : 10450001,
+          "m_SEStrID" : "COND_SUMMER_ORACLE_NOVA_BURST_01_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_BARRIER",
+          "m_BuffLifeTurn" : 1,
+          "BarrierTargetType" : "NSETT_SELF",
+          "BarrierStatType" : "NST_HP",
+          "BarrierRate" : 1500,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10450002,
+          "m_SEStrID" : "COND_SUMMER_ORACLE_NOVA_BURST_01_02",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_ADJUSTTYPE_RESOURCE_SUN",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10460001,
+          "m_SEStrID" : "COND_SUMMER_SMILE_NOVA_BURST_01_01",
+          "RepeatBuffCount" : 2,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_ADJUSTTYPE_RESOURCE_STAR",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10460002,
+          "m_SEStrID" : "COND_SUMMER_SMILE_NOVA_BURST_01_02",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_SPEED_GAUGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "SpeedGaugeRate" : 1000,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
           "m_SEID" : 10490001,
           "m_SEStrID" : "COND_INDEPENDENT_DRAGON_NOVA_BURST_01_01",
           "m_BuffTargetType" : "NSETT_SELF",
@@ -447,6 +672,84 @@
           "m_BuffTargetType" : "NSETT_SELF",
           "m_BuffStrID" : "BI_HIDE",
           "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10540001,
+          "m_SEStrID" : "COND_DRESS_STRANIS_NOVA_BURST_01_01",
+          "m_BuffTargetType" : "NSETT_MYTEAM_ALL",
+          "m_BuffStrID" : "BI_DELETEDEBUFF",
+          "m_BuffLifeTurn" : 0,
+          "BuffDeleteCount" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10550001,
+          "m_SEStrID" : "COND_WEDDING_SHIELDER_NOVA_BURST_01_01",
+          "m_BuffTargetType" : "NSETT_AUTO_ALLY_ONE",
+          "AutoTargetId" : 2,
+          "m_BuffStrID" : "BI_HEAL",
+          "m_BuffLifeTurn" : 0,
+          "HealTargetType" : "NSETT_SELF",
+          "HealStatType" : "NST_HP",
+          "HealRate" : 1200,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10560001,
+          "m_SEStrID" : "COND_WEDDING_DUALSWORD_NOVA_BURST_01_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 2000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10570001,
+          "m_SEStrID" : "COND_BUNNY_PRAY_NOVA_BURST_01_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 2000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10580001,
+          "m_SEStrID" : "COND_STRANISEARL_ROSEBLADE_NOVA_BURST_01_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_SPEED_GAUGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "SpeedGaugeRate" : 2000,
           "m_Condition" : 
           {
             "m_ActiveType" : "NSEAT_SKILL_END",
@@ -558,6 +861,164 @@
           "m_Condition" : 
           {
             "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 16010001,
+          "m_SEStrID" : "COND_WEST_LANCER_SSR_NOVA_BURST_01_01",
+          "m_BuffTargetType" : "NSETT_TARGET",
+          "m_BuffStrID" : "BI_ATTACK_DECREASE",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 16020001,
+          "m_SEStrID" : "COND_OFFICER_POLICE_SSR_NOVA_BURST_01_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_EXTRA_TURN",
+          "m_BuffLifeTurn" : 0,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 16060001,
+          "m_SEStrID" : "COND_CONSTRUCT_WRENCH_SSR_NOVA_BURST_01_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_SPECIAL_COOL_TURN_DOWN",
+          "m_BuffLifeTurn" : 0,
+          "SkillCoolturnDownValue" : 2,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 16070001,
+          "SEGroupID" : 160732,
+          "SEOrderList" : 11,
+          "m_SEStrID" : "COND_LPU_POST_SSR_NOVA_BURST_01_01",
+          "m_BuffTargetType" : "NSETT_MYTEAM_ALL",
+          "RandomBuffStrId" : "RBI_LPU_POST_1",
+          "m_BuffLifeTurn" : 3,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 16080001,
+          "m_SEStrID" : "COND_NOA_OBSERVER_SSR_NOVA_BURST_01_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_EXTRA_TURN",
+          "m_BuffLifeTurn" : 0,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 16090001,
+          "m_SEStrID" : "COND_MAID_SPEAR_SSR_NOVA_BURST_01_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 2000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 16100001,
+          "m_SEStrID" : "COND_MAID_SCISSORS_SSR_NOVA_BURST_01_01",
+          "m_BuffTargetType" : "NSETT_TARGET",
+          "m_BuffStrID" : "BI_BURN",
+          "m_BuffLifeTurn" : 2,
+          "EffectHitCheck" : false,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 16110001,
+          "m_SEStrID" : "COND_MAGICIAN_SNIPER_SSR_NOVA_BURST_01_01",
+          "m_BuffTargetType" : "NSETT_TARGET",
+          "m_BuffStrID" : "BI_SPEED_GAUGE_DOWN",
+          "m_BuffLifeTurn" : 0,
+          "SpeedGaugeRate" : 1500,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 30010001,
+          "m_SEStrID" : "COND_COUNTERSIDE_HILDE_NOVA_BURST_01_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_BARRIER",
+          "m_BuffLifeTurn" : 1,
+          "BarrierTargetType" : "NSETT_SELF",
+          "BarrierStatType" : "NST_HP",
+          "BarrierRate" : 1800,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 30020001,
+          "m_SEStrID" : "COND_COUNTERSIDE_MINA_NOVA_BURST_01_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 2000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 30030001,
+          "m_SEStrID" : "COND_COUNTERSIDE_ROSARIA_NOVA_BURST_01_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_CRITICAL",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 3000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
             "m_fActiveRate" : 10000
           }
         }

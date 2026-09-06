@@ -1,0 +1,56 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_COUNTERSIDE_ROSARIA_03",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_BAND_GUITAR_01",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_OPFIELD.png",
+      "UnitStrId": "NKM_UNIT_NPC_COUNTERSIDE_ROSARIA",
+      "UnitMotion": "ANGRY"
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "로자리아는 퀴즈 대결을 패배했다는 이유로 한동안 임시 시종직을 박탈했다…",
+      "UnitTalk_ENG": "After losing a quiz, Rosaria stripped me of my acting servant position.",
+      "UnitTalk_JPN": "ロザリアはクイズ対決に負けたという理由で、しばらくの間、私を「臨時の僕」から解任した…",
+      "UnitTalk_CHN": "罗莎莉亚因为我在谜题对决中落败，暂时剥夺了我一段时间的临时侍从职务…",
+      "UnitTalk_TWN": "羅莎莉亞因為我在謎題對決中落敗，暫時剝奪了我一段時間的臨時侍從職務…",
+      "UnitTalk_FRA": "Rosaria m'a temporairement privé de mes fonctions de serviteur provisoire, sous prétexte que j'avais perdu le concours de quiz…",
+      "UnitTalk_DEU": "Rosaria entzog mir vorübergehend den Posten des provisorischen Dieners, weil sie das Quizduell verloren hatte…",
+      "UnitTalk_ESP": "Rosaria me despojó temporalmente de mis deberes de asistente provisional porque perdí el concurso de preguntas…",
+      "UnitTalk_PRT": "Rosaria me destituiu temporariamente do cargo de atendente provisório por ter perdido a batalha de perguntas e respostas…",
+      "UnitTalk_THA": "โรซาเรียได้ถอดถอนตำแหน่งผู้ติดตามชั่วคราวของฉันเป็นการชั่วคราว ด้วยเหตุผลที่ว่าเธอแพ้การแข่งขันตอบคำถาม…",
+      "UnitTalk_IND": "Rosaria mencopot jabatan pelayan sementaraku untuk sementara waktu karena dia kalah dalam pertandingan kuis…",
+      "UnitTalk_VIE": "Rosaria đã tạm thời bị mất chức thị đồng vì đã thua trong cuộc thi đố vui…",
+      "UnitTalk_HIN": "रोसारिया ने क्विज़ प्रतियोगिता हारने के कारण मुझे कुछ समय के लिए अस्थायी सेवक के पद से हटा दिया…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    }
+  ]
+}

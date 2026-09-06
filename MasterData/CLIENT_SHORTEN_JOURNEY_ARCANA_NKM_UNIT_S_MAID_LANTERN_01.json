@@ -1,0 +1,140 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_MAID_LANTERN_01",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR"
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "카넬리아의 도움으로 서류 작업을 완료했지만, 클레어에게 걸려버렸다...",
+      "UnitTalk_ENG": "With Carnelia's help, the paperwork was finally done... and then Claire found out.",
+      "UnitTalk_JPN": "カネリアのおかげで書類作業を終えたが、クレアにバレてしまった…",
+      "UnitTalk_CHN": "在卡奈莉亚的帮助下总算完成了文书工作，但还是被克莱儿发现了…",
+      "UnitTalk_TWN": "在卡奈莉亞的幫助下總算完成了文書工作，但還是被克萊兒發現了…",
+      "TalkTime": 0.03,
+      "UnitTalk_FRA": "J'ai terminé les formalités administratives avec l'aide de Camélia, mais je me suis fait attraper par Claire…",
+      "UnitTalk_DEU": "Mit Kanelias Hilfe habe ich die Papierkram erledigt, aber bin ich Claires Falle getappt…",
+      "UnitTalk_ESP": "Con la ayuda de Canelia completé los trámites, pero fui descubierto por Claire...",
+      "UnitTalk_PRT": "Com a ajuda de Carnelia, completei a documentação, mas fui descoberto por Clair...",
+      "UnitTalk_THA": "ฉันจบงานที่ได้รับความช่วยเหลือจากคาเนลเรีย แต่ติดเรื่องกับเคลียร์...",
+      "UnitTalk_IND": "Dengan bantuan Karnelia, aku menyelesaikan pekerjaan administratif, tapi aku ketahuan oleh Klear...",
+      "UnitTalk_VIE": "Với sự giúp đỡ của Casneuria, tôi hoàn thành công việc giấy tờ, nhưng lại bị phát hiện bởi Clair..."
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "잘못했다고 얘기하고 반성하자!",
+          "JumpAnchorStringId_ENG": "Just own up to it and apologize!",
+          "JumpAnchorStringId_JPN": "謝って反省しよう！",
+          "JumpAnchorStringId_CHN": "还是老实认错反省吧！",
+          "JumpAnchorStringId_TWN": "還是老實認錯反省吧！",
+          "JumpAnchorId": "REWARD_ANCHOR_1",
+          "JumpAnchorStringId_FRA": "Admets ton erreur et repens-toi !",
+          "JumpAnchorStringId_DEU": "Sag, dass ich einen Fehler gemacht habe, und lass uns bereuen!",
+          "JumpAnchorStringId_ESP": "¡Admitamos que cometimos un error y reflexionemos!",
+          "JumpAnchorStringId_PRT": "Admita o erro e reflita sobre isso!",
+          "JumpAnchorStringId_THA": "ยอมรับความผิดพลาดและสะท้อนตัวเอง!",
+          "JumpAnchorStringId_IND": "Aku salah, aku harus mengakuinya dan berbenah diri!",
+          "JumpAnchorStringId_VIE": "Hãy thừa nhận lỗi lầm và suy ngẫm!"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "이렇게 된 거 불쌍한 척이라도 하자!",
+          "JumpAnchorStringId_ENG": "Playing the victim might be worth a shot!",
+          "JumpAnchorStringId_JPN": "こうなったら、同情でも買ってみよう！",
+          "JumpAnchorStringId_CHN": "既然这样，也只能试着装可怜蒙混过去了！",
+          "JumpAnchorStringId_TWN": "既然這樣，也只能試著裝可憐蒙混過去了！",
+          "JumpAnchorId": "REWARD_ANCHOR_2",
+          "JumpAnchorStringId_FRA": "Puisqu'on en est là, faisons au moins semblant de compatir !",
+          "JumpAnchorStringId_DEU": "Jetzt, wo es so weit gekommen ist, lass mich wenigstens so tun, als würde es mir leidtun!",
+          "JumpAnchorStringId_ESP": "¡Hagamos como si sintiéramos lástima, al menos en esta situación!",
+          "JumpAnchorStringId_PRT": "Já que chegou a isso, pelo menos vamos fingir piedade!",
+          "JumpAnchorStringId_THA": "ถึงแม้จะเป็นเช่นนี้ ก็ต้องแกล้งเห็นใจสักหน่อย!",
+          "JumpAnchorStringId_IND": "Sudah begini, mari kita pura-pura kasihan saja!",
+          "JumpAnchorStringId_VIE": "Được rồi, chúng ta hãy giả vờ đáng thương đi!"
+        }
+      ]
+    },
+    {
+      "Uid": 3,
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "ANGRY"
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이해해 주는 듯싶었으나, 클레어에게 혼나고 말았다...",
+      "UnitTalk_ENG": "It seemed like Claire was willing to let it slide, but I still got scolded.",
+      "UnitTalk_JPN": "理解してくれたと思ったが、クレアに怒られてしまった。",
+      "UnitTalk_CHN": "原以为克莱儿会网开一面，结果还是被训了一顿…",
+      "UnitTalk_TWN": "原以為克萊兒會網開一面，結果還是被訓了一頓…",
+      "TalkTime": 0.03,
+      "UnitTalk_FRA": "Il semblait comprendre, mais j'ai quand même été grondé par Claire...",
+      "UnitTalk_DEU": "Es schien, als würde er/sie verstehen, aber dann wurde ich von Claire zurechtgewiesen...",
+      "UnitTalk_ESP": "Parecía que lo entendería, pero terminé siendo regañado por Claire...",
+      "UnitTalk_PRT": "Parecia que ela entendia, mas acabei sendo repreendida por Claire...",
+      "UnitTalk_THA": "ดูเหมือนว่าเธอจะเข้าใจ แต่ในที่สุดฉันก็ถูกตำหนิโดยแคลร์...",
+      "UnitTalk_IND": "Dia seperti mengerti, tapi akhirnya aku dimarahi oleh Klear...",
+      "UnitTalk_VIE": "Tôi tưởng cô ấy hiểu, nhưng cuối cùng tôi bị Claire mắng..."
+    },
+    {
+      "Uid": 4,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SPECIAL"
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "불쌍한 척이 통하는 듯했지만, 결국 클레어의 허락을 받을 순 없었다.",
+      "UnitTalk_ENG": "My act seemed to be working, but I still couldn't get Claire's approval in the end.",
+      "UnitTalk_JPN": "同情を買うことには成功したようだが、結局クレアは許してくれなかった。",
+      "UnitTalk_CHN": "虽然装可怜似乎有点效果，但最终还是没能得到克莱儿的允许。",
+      "UnitTalk_TWN": "雖然裝可憐似乎有點效果，但最終還是沒能得到克萊兒的允許。",
+      "TalkTime": 0.03,
+      "UnitTalk_FRA": "Faire semblant de plaindre semblait fonctionner, mais finalement, je n'ai pas pu obtenir la permission de Clair.",
+      "UnitTalk_DEU": "Es sah aus, als würde ein bedauernswürdiger Anschein funktionieren, aber letztendlich konnte ich Clears Erlaubnis nicht erhalten.",
+      "UnitTalk_ESP": "Parecía que fingir lástima funcionaría, pero al final no pude obtener el permiso de Claire.",
+      "UnitTalk_PRT": "Parecia que fingir ser digno de pena funcionaria, mas no final não consegui obter a permissão de Clair.",
+      "UnitTalk_THA": "ดูเหมือนว่าการแสดงเป็นคนน่าสงสารจะได้ผล แต่ในที่สุดฉันก็ไม่สามารถได้รับอนุญาตจากแคลร์ได้",
+      "UnitTalk_IND": "Pura-pura menyedihkan tampaknya berhasil, tapi pada akhirnya aku tidak bisa mendapatkan persetujuan dari Claire.",
+      "UnitTalk_VIE": "Có vẻ như việc giả vờ đáng thương đã có tác dụng, nhưng cuối cùng tôi vẫn không thể nhận được sự cho phép của Clair."
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_02",
+      "JumpAnchorInfo": "JUMPANCHOR_FINISH",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER"
+    }
+  ]
+}

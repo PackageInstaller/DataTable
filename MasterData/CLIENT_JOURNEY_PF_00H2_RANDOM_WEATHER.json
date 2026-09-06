@@ -1,0 +1,367 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_00H2_RANDOM_WEATHER",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_00A_RANDOM_WEATHER",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_HOTEL_2_NIGHT.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_05.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_WIND_BLOW.wav"
+    },
+    {
+      "Uid": 3,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "별안간 기온이 뚝 떨어지더니 폭설이 쏟아지기 시작했다.",
+      "UnitTalk_ENG": "The temperature suddenly plummeted, and a heavy snowfall began.",
+      "UnitTalk_JPN": "突然気温が急降下し、大雪が降り始めた。",
+      "UnitTalk_CHN": "气温骤降，忽然下起了大雪。",
+      "UnitTalk_TWN": "氣溫驟降，忽然下起了大雪。",
+      "UnitTalk_FRA": "Soudain, la température a chuté et une tempête de neige a éclaté.",
+      "UnitTalk_DEU": "Plötzlich sank die Temperatur schlagartig und es begann stark zu schneien.",
+      "UnitTalk_ESP": "De repente, la temperatura bajó y empezó a nevar mucho.",
+      "UnitTalk_PRT": "De repente, a temperatura caiu e uma nevasca começou.",
+      "UnitTalk_THA": "จู่ๆ อุณหภูมิก็ลดฮวบลง และหิมะก็เริ่มตกหนัก",
+      "UnitTalk_IND": "Tiba-tiba suhu turun drastis dan salju lebat mulai turun.",
+      "UnitTalk_VIE": "Nhiệt độ đột ngột giảm mạnh và tuyết bắt đầu rơi dày đặc.",
+      "UnitTalk_HIN": "अचानक तापमान गिर गया और भारी बर्फबारी शुरू हो गई।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "창문 틈 사이로 찬바람이 스며들어 두꺼운 이불을 덮어도 한기가 좀처럼 가시지 않았다.",
+      "UnitTalk_ENG": "Cold wind seeped through the window cracks, and even under a thick blanket, the chill wouldn't fade.",
+      "UnitTalk_JPN": "窓の隙間から冷たい風が吹き込み、厚い布団をかぶっても寒気は消えなかった。",
+      "UnitTalk_CHN": "冷风从窗缝中灌入，即使盖上厚厚的被子，寒气仍久久不散。",
+      "UnitTalk_TWN": "冷風從窗縫中灌入，即使蓋上厚厚的被子，寒氣仍久久不散。",
+      "UnitTalk_FRA": "Le vent froid s'infiltrait par les interstices de la fenêtre, et même sous une épaisse couverture, le froid persistait.",
+      "UnitTalk_DEU": "Kalte Luft drang durch die Fensterritzen, und selbst unter einer dicken Decke wollte die Kälte nicht weichen.",
+      "UnitTalk_ESP": "El viento frío se colaba por las rendijas de la ventana, y el frío no se iba, ni siquiera con una manta gruesa.",
+      "UnitTalk_PRT": "O vento frio entrava pelas frestas da janela, e mesmo com um cobertor grosso, o frio não passava.",
+      "UnitTalk_THA": "ลมหนาวพัดผ่านรอยแยกของหน้าต่าง แม้จะห่มผ้าห่มหนาๆ ก็ยังรู้สึกหนาว",
+      "UnitTalk_IND": "Angin dingin menyusup melalui celah jendela, dan meskipun selimut tebal menutupi, hawa dingin tidak kunjung hilang.",
+      "UnitTalk_VIE": "Gió lạnh lùa qua khe cửa sổ, dù đắp chăn dày nhưng cái lạnh vẫn không tan đi.",
+      "UnitTalk_HIN": "खिड़की के दरारों से ठंडी हवा अंदर आ रही थी, और मोटे कंबल के बावजूद ठंड कम नहीं हो रही थी।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 6,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_REST"
+    },
+    {
+      "Uid": 7,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 8,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 9,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "EmotionEffect": "STRESS"
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitTalk_KOR": "[EVENT_RANDOM_WEATHER_08_01]",
+      "UnitTalk_ENG": "[EVENT_RANDOM_WEATHER_08_01]",
+      "UnitTalk_JPN": "[EVENT_RANDOM_WEATHER_08_01]",
+      "UnitTalk_CHN": "[EVENT_RANDOM_WEATHER_08_01]",
+      "UnitTalk_TWN": "[EVENT_RANDOM_WEATHER_08_01]",
+      "UnitTalk_FRA": "[EVENT_RANDOM_WEATHER_08_01]",
+      "UnitTalk_DEU": "[EVENT_RANDOM_WEATHER_08_01]",
+      "UnitTalk_ESP": "[EVENT_RANDOM_WEATHER_08_01]",
+      "UnitTalk_PRT": "[EVENT_RANDOM_WEATHER_08_01]",
+      "UnitTalk_THA": "[EVENT_RANDOM_WEATHER_08_01]",
+      "UnitTalk_IND": "[EVENT_RANDOM_WEATHER_08_01]",
+      "UnitTalk_VIE": "[EVENT_RANDOM_WEATHER_08_01]",
+      "UnitTalk_HIN": "[EVENT_RANDOM_WEATHER_08_01]",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitTalk_KOR": "[EVENT_RANDOM_WEATHER_08_02]",
+      "UnitTalk_ENG": "[EVENT_RANDOM_WEATHER_08_02]",
+      "UnitTalk_JPN": "[EVENT_RANDOM_WEATHER_08_02]",
+      "UnitTalk_CHN": "[EVENT_RANDOM_WEATHER_08_02]",
+      "UnitTalk_TWN": "[EVENT_RANDOM_WEATHER_08_02]",
+      "UnitTalk_FRA": "[EVENT_RANDOM_WEATHER_08_02]",
+      "UnitTalk_DEU": "[EVENT_RANDOM_WEATHER_08_02]",
+      "UnitTalk_ESP": "[EVENT_RANDOM_WEATHER_08_02]",
+      "UnitTalk_PRT": "[EVENT_RANDOM_WEATHER_08_02]",
+      "UnitTalk_THA": "[EVENT_RANDOM_WEATHER_08_02]",
+      "UnitTalk_IND": "[EVENT_RANDOM_WEATHER_08_02]",
+      "UnitTalk_VIE": "[EVENT_RANDOM_WEATHER_08_02]",
+      "UnitTalk_HIN": "[EVENT_RANDOM_WEATHER_08_02]",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이럴 때는…",
+      "UnitTalk_ENG": "At times like this...",
+      "UnitTalk_JPN": "こういう時は…",
+      "UnitTalk_CHN": "这种时候…",
+      "UnitTalk_TWN": "這種時候…",
+      "UnitTalk_FRA": "Dans ce cas…",
+      "UnitTalk_DEU": "In solchen Momenten …",
+      "UnitTalk_ESP": "En estos casos…",
+      "UnitTalk_PRT": "Nessas horas…",
+      "UnitTalk_THA": "แบบนี้ต้อง…",
+      "UnitTalk_IND": "Dalam situasi seperti ini…",
+      "UnitTalk_VIE": "Những lúc như thế này…",
+      "UnitTalk_HIN": "ऐसे में…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "손난로를 사용하자.",
+          "JumpAnchorStringId_ENG": "Let's use a hand warmer.",
+          "JumpAnchorStringId_JPN": "カイロを使おう。",
+          "JumpAnchorStringId_CHN": "使用怀炉吧。",
+          "JumpAnchorStringId_TWN": "使用懷爐吧。",
+          "JumpAnchorStringId_FRA": "Utilisons une chauffe-mains.",
+          "JumpAnchorStringId_DEU": "Nutzen wir Handwärmer.",
+          "JumpAnchorStringId_ESP": "Usemos calentador.",
+          "JumpAnchorStringId_PRT": "Vamos usar aquecedor.",
+          "JumpAnchorStringId_THA": "มาใช้ถุงร้อนกันเถอะ",
+          "JumpAnchorStringId_IND": "Mari gunakan penghangat tangan.",
+          "JumpAnchorStringId_VIE": "Hãy dùng túi sưởi.",
+          "JumpAnchorStringId_HIN": "हैंड वार्मर का इस्तेमाल करते हैं।",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "추위를 참는 것도 훈련…이 될지도!",
+          "JumpAnchorStringId_ENG": "Enduring the cold... could be its own kind of training!",
+          "JumpAnchorStringId_JPN": "寒さに耐えるのも、トレーニングになるかも…！",
+          "JumpAnchorStringId_CHN": "忍耐寒冷…或许也算是训练！",
+          "JumpAnchorStringId_TWN": "忍耐寒冷…或許也算是訓練！",
+          "JumpAnchorStringId_FRA": "Endurer le froid est aussi un entraînement… peut-être !",
+          "JumpAnchorStringId_DEU": "Die Kälte zu ertragen ist auch Training... vielleicht!",
+          "JumpAnchorStringId_ESP": "¡Soportar el frío también es un entrenamiento!",
+          "JumpAnchorStringId_PRT": "Aturar o frio também pode ser treino… quem sabe!",
+          "JumpAnchorStringId_THA": "การทนความหนาวก็เป็นการฝึกฝนอย่างหนึ่งนะคะ!",
+          "JumpAnchorStringId_IND": "Mungkin menahan dingin juga bisa jadi latihan…!",
+          "JumpAnchorStringId_VIE": "Chịu đựng cái lạnh cũng là một cách rèn luyện… có thể đấy!",
+          "JumpAnchorStringId_HIN": "ठंड सहना भी एक तरह की ट्रेनिंग है… शायद!",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 14,
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "따뜻한 열기가 손끝을 타고 퍼졌다.",
+      "UnitTalk_ENG": "Warmth spread from my fingertips, gently thawing the chill.",
+      "UnitTalk_JPN": "温かい熱が、指先から広がった。",
+      "UnitTalk_CHN": "温暖的热度从指尖蔓延开来。",
+      "UnitTalk_TWN": "溫暖的熱度從指尖蔓延開來。",
+      "UnitTalk_FRA": "Une chaleur réconfortante s'est répandue au bout de mes doigts.",
+      "UnitTalk_DEU": "Eine angenehme Wärme breitete sich in meinen Fingerspitzen aus.",
+      "UnitTalk_ESP": "Un calor agradable se extendió por las yemas de mis dedos.",
+      "UnitTalk_PRT": "O calor se espalhou pelas pontas dos dedos.",
+      "UnitTalk_THA": "ความอบอุ่นแผ่ซ่านไปทั่วปลายนิ้ว",
+      "UnitTalk_IND": "Panas hangat menyebar melalui ujung jari.",
+      "UnitTalk_VIE": "Hơi ấm lan tỏa từ đầu ngón tay.",
+      "UnitTalk_HIN": "गरमाहट उसकी उंगलियों से होकर फैल गई।",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 16,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 17,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "다행히 <color=#F7BE45>[CHARACTER_NAME]</color>의 표정도 조금은 누그러졌다.",
+      "UnitTalk_ENG": "Thankfully, <color=#F7BE45>[CHARACTER_NAME]</color>'s look seems to ease slightly.",
+      "UnitTalk_JPN": "幸いにも、<color=#F7BE45>[CHARACTER_NAME]</color>の表情も少し良くなった。",
+      "UnitTalk_CHN": "幸好，<color=#F7BE45>[CHARACTER_NAME]</color>的表情也稍微缓和了。",
+      "UnitTalk_TWN": "幸好，<color=#F7BE45>[CHARACTER_NAME]</color>的表情也稍微緩和了。",
+      "UnitTalk_FRA": "Heureusement, l'expression de <color=#F7BE45>[CHARACTER_NAME]</color> s'est un peu adoucie.",
+      "UnitTalk_DEU": "Zum Glück entspannte sich <color=#F7BE45>[CHARACTER_NAME]</color>s Gesichtsausdruck ein wenig.",
+      "UnitTalk_ESP": "Afortunadamente, la expresión de <color=#F7BE45>[CHARACTER_NAME]</color> se suavizó un poco.",
+      "UnitTalk_PRT": "Felizmente, a expressão de <color=#F7BE45>[CHARACTER_NAME]</color> suavizou um pouco.",
+      "UnitTalk_THA": "โชคดีที่สีหน้าของ <color=#F7BE45>[CHARACTER_NAME]</color> ดูผ่อนคลายลงเล็กน้อย",
+      "UnitTalk_IND": "Untungnya, ekspresi <color=#F7BE45>[CHARACTER_NAME]</color> sedikit melunak.",
+      "UnitTalk_VIE": "May mắn thay, biểu cảm của <color=#F7BE45>[CHARACTER_NAME]</color> đã dịu đi một chút.",
+      "UnitTalk_HIN": "सौभाग्य से, <color=#F7BE45>[CHARACTER_NAME]</color> के चेहरे के भाव भी थोड़े नरम पड़ गए।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.5
+    },
+    {
+      "Uid": 20,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 21,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 지금의 환경이 어딘가 불편한 듯하다.",
+      "UnitTalk_ENG": "<color=#F7BE45>[CHARACTER_NAME]</color> seems uncomfortable in the current environment.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は今の天気にどこか落ち着かないようだ。",
+      "UnitTalk_CHN": "<color=#F7BE45>[CHARACTER_NAME]</color>似乎对当前的环境有些不自在。",
+      "UnitTalk_TWN": "<color=#F7BE45>[CHARACTER_NAME]</color>似乎對當前的環境有些不自在。",
+      "UnitTalk_FRA": "<color=#F7BE45>[CHARACTER_NAME]</color> semble mal à l'aise dans cet environnement.",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color> scheint sich in dieser Umgebung unwohl zu fühlen.",
+      "UnitTalk_ESP": "<color=#F7BE45>[CHARACTER_NAME]</color> parece sentirse incómodo en este entorno.",
+      "UnitTalk_PRT": "<color=#F7BE45>[CHARACTER_NAME]</color> parece estar um pouco desconfortável com o ambiente atual.",
+      "UnitTalk_THA": "<color=#F7BE45>[CHARACTER_NAME]</color> ดูเหมือนจะไม่ค่อยสบายตัวกับสภาพแวดล้อมตอนนี้",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> tampaknya merasa tidak nyaman dengan lingkungan saat ini.",
+      "UnitTalk_VIE": "<color=#F7BE45>[CHARACTER_NAME]</color> dường như không thoải mái với môi trường hiện tại.",
+      "UnitTalk_HIN": "<color=#F7BE45>[CHARACTER_NAME]</color> को वर्तमान वातावरण कहीं न कहीं असहज लग रहा है।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 24,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.5
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "결국, 다음 날이 되어서도 불편한 기색을 감추지 못했다…",
+      "UnitTalk_ENG": "In the end, even the next day, she still couldn’t hide her frustration…",
+      "UnitTalk_JPN": "結局、翌日になってもどこか気分が晴れない様子だった…",
+      "UnitTalk_CHN": "结果，即使到了隔天，仍无法掩饰那份不适…",
+      "UnitTalk_TWN": "結果，即使到了隔天，仍無法掩飾那份不適…",
+      "UnitTalk_FRA": "Finalement, même le lendemain, il/elle n'a pas pu cacher son malaise…",
+      "UnitTalk_DEU": "Schließlich konnte ich auch am nächsten Tag meine Unbehaglichkeit nicht verbergen…",
+      "UnitTalk_ESP": "Al final, no pudo ocultar su incomodidad ni siquiera al día siguiente…",
+      "UnitTalk_PRT": "No fim, mesmo no dia seguinte, não conseguiu esconder o desconforto…",
+      "UnitTalk_THA": "สุดท้ายแล้ว แม้จะถึงวันรุ่งขึ้นก็ยังคงซ่อนความไม่สบายใจไว้ไม่ได้…",
+      "UnitTalk_IND": "Akhirnya, bahkan keesokan harinya, dia tidak bisa menyembunyikan ketidaknyamanannya…",
+      "UnitTalk_VIE": "Cuối cùng, ngay cả ngày hôm sau, cậu ấy vẫn không thể che giấu sự khó chịu…",
+      "UnitTalk_HIN": "आखिरकार, अगले दिन भी वह अपनी बेचैनी छिपा नहीं पाया…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 26,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

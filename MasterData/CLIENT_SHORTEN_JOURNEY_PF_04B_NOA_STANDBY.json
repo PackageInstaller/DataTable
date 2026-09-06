@@ -1,0 +1,38 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_04B_NOA_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_04_NOA_STANDBY",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_LANTERN",
+      "UnitMotion": "SPECIAL"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_PF_04_NOA_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "카넬리아에게 부적에 얽힌 이야기를 들었다.\n여정 진행중에만 효과가 있는 신비한 힘이 깃든 물건이라고 한다.",
+      "UnitTalk_ENG": "Carnelia told me the story behind the charms. They are objects imbued with mysterious powers that only take affect during a Journey.",
+      "UnitTalk_JPN": "カネリアから呪物にまつわる話を聞いた。旅の途中でのみ効果を発揮する神秘的な力が宿った品だという。",
+      "UnitTalk_CHN": "听卡奈莉亚讲述了关于护符的故事。\n据说那是只在旅程期间有效，寄宿着神秘力量的物品。",
+      "UnitTalk_TWN": "聽卡奈莉亞講述了關於護符的故事。\n據說那是只在旅程期間有效，寄宿著神祕力量的物品。",
+      "UnitTalk_FRA": "J'ai entendu l'histoire du talisman de Canelia.\nC'est un objet imprégné d'une force mystérieuse qui n'agit que pendant le voyage.",
+      "UnitTalk_DEU": "Ich hörte von Kanelia die Geschichte des Talismans.\nEin mystisches Objekt mit Kraft, die nur während der Reise wirkt.",
+      "UnitTalk_ESP": "Escuché de Canelia una historia sobre el amuleto.\nUn objeto con un poder místico que solo funciona durante el viaje.",
+      "UnitTalk_PRT": "Ouvi de Canélia a história ligada ao amuleto.\nUm objeto com poder místico que funciona apenas durante a jornada.",
+      "UnitTalk_THA": "ได้ยินเรื่องราวเกี่ยวกับเครื่องรางจากคาเนเลีย\nเป็นสิ่งของที่มีพลังลึกลับซึ่งมีประสิทธิภาพเฉพาะในระหว่างการเดินทาง",
+      "UnitTalk_IND": "Mendengar cerita tentang jimat dari Canelia.\nKatanya benda mistis yang hanya bekerja saat perjalanan berlangsung.",
+      "UnitTalk_VIE": "Tôi đã nghe Canelia kể về câu chuyện liên quan đến bùa chú.\nNó là một vật phẩm có sức mạnh bí ẩn chỉ có hiệu lực khi đang trong hành trình.",
+      "TalkTime": 0.03
+    }
+  ]
+}

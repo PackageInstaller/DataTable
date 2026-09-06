@@ -1,0 +1,57 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_INCOGNITA_LANDGRAVE_03",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 4,
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_STORE_GENERAL.png",
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_LANDGRAVE",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS7",
+      "EmotionEffect": "SWEAT2"
+    },
+    {
+      "Uid": 5,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 1,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "리세트 이 무서운 아이. 크리스텔은 오해했다!",
+      "UnitTalk_ENG": "Lisette was a force to be reckoned with. Cristelle had completely misunderstood her intentions!",
+      "UnitTalk_JPN": "リセット…恐ろしい子…！クリステルは勘違いしてしまった！",
+      "UnitTalk_CHN": "莉赛特这可怕的孩子，让克莉丝特误会了！",
+      "UnitTalk_TWN": "莉賽特這可怕的孩子，讓克莉絲特誤會了！",
+      "UnitTalk_FRA": "Lisette est terrifiante. Cristelle a mal compris !",
+      "UnitTalk_DEU": "Lisette ist ein furchteinflößendes Kind. Kristel hat sich geirrt!",
+      "UnitTalk_ESP": "Lisette es terrible. Cristel se equivocó.",
+      "UnitTalk_PRT": "Lisette, que criança assustadora. Cristel enganou-se!",
+      "UnitTalk_THA": "ลิเซ็ต เด็กน่ากลัว คริสเทลเข้าใจผิด!",
+      "UnitTalk_IND": "Lisette, anak yang mengerikan. Kristel salah paham!",
+      "UnitTalk_VIE": "Lisette thật đáng sợ. Cristel đã hiểu lầm!",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 2,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 3,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

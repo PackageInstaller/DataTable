@@ -1,0 +1,328 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: DIFFICULTY/DIFFICULTY_LEVEL_GROUP",
+    "_Version": 0,
+    "Data": [
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "DifficultyGroupId" : 1001,
+          "DifficultySetId" : 100101,
+          "Level" : 1,
+          "ScaleFactorAttack" : 2000,
+          "ScaleFactorHp" : 1000,
+          "ScaleFactorDefence" : 1000,
+          "DifficultyValue" : 4000
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "DifficultyGroupId" : 1001,
+          "DifficultySetId" : 100102,
+          "Level" : 2,
+          "ScaleFactorAttack" : 3000,
+          "ScaleFactorHp" : 1500,
+          "ScaleFactorDefence" : 1500,
+          "DifficultyValue" : 8000
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "DifficultyGroupId" : 1001,
+          "DifficultySetId" : 100103,
+          "Level" : 3,
+          "ScaleFactorAttack" : 4000,
+          "ScaleFactorHp" : 2000,
+          "ScaleFactorDefence" : 2000,
+          "IsEffectUi" : true,
+          "DifficultyValue" : 12000,
+          "ChallengeEffect" : 
+          [
+            {
+              "BattleEffectId" : "940001"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "DifficultyGroupId" : 1001,
+          "DifficultySetId" : 100104,
+          "Level" : 4,
+          "ScaleFactorAttack" : 5000,
+          "ScaleFactorHp" : 2500,
+          "ScaleFactorDefence" : 2500,
+          "DifficultyValue" : 15000,
+          "ChallengeEffect" : 
+          [
+            {
+              "BattleEffectId" : "940001"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "DifficultyGroupId" : 1001,
+          "DifficultySetId" : 100105,
+          "Level" : 5,
+          "ScaleFactorAttack" : 6000,
+          "ScaleFactorHp" : 3000,
+          "ScaleFactorDefence" : 3000,
+          "DifficultyValue" : 18000,
+          "ChallengeEffect" : 
+          [
+            {
+              "BattleEffectId" : "940001"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "DifficultyGroupId" : 1001,
+          "DifficultySetId" : 100106,
+          "Level" : 6,
+          "ScaleFactorAttack" : 7000,
+          "ScaleFactorHp" : 3500,
+          "ScaleFactorDefence" : 3500,
+          "IsEffectUi" : true,
+          "DifficultyValue" : 21000,
+          "ChallengeEffect" : 
+          [
+            {
+              "BattleEffectId" : "940001"
+            },
+
+            {
+              "BattleEffectId" : "940011"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "DifficultyGroupId" : 1001,
+          "DifficultySetId" : 100107,
+          "Level" : 7,
+          "ScaleFactorAttack" : 8000,
+          "ScaleFactorHp" : 4000,
+          "ScaleFactorDefence" : 4000,
+          "DifficultyValue" : 23000,
+          "ChallengeEffect" : 
+          [
+            {
+              "BattleEffectId" : "940001"
+            },
+
+            {
+              "BattleEffectId" : "940011"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "DifficultyGroupId" : 1001,
+          "DifficultySetId" : 100108,
+          "Level" : 8,
+          "ScaleFactorAttack" : 9000,
+          "ScaleFactorHp" : 4500,
+          "ScaleFactorDefence" : 4500,
+          "DifficultyValue" : 25000,
+          "ChallengeEffect" : 
+          [
+            {
+              "BattleEffectId" : "940001"
+            },
+
+            {
+              "BattleEffectId" : "940011"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "DifficultyGroupId" : 1001,
+          "DifficultySetId" : 100109,
+          "Level" : 9,
+          "ScaleFactorAttack" : 10000,
+          "ScaleFactorHp" : 5000,
+          "ScaleFactorDefence" : 5000,
+          "IsEffectUi" : true,
+          "DifficultyValue" : 27000,
+          "ChallengeEffect" : 
+          [
+            {
+              "BattleEffectId" : "940001"
+            },
+
+            {
+              "BattleEffectId" : "940011"
+            },
+
+            {
+              "BattleEffectId" : "940021"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "DifficultyGroupId" : 1001,
+          "DifficultySetId" : 100110,
+          "Level" : 10,
+          "ScaleFactorAttack" : 11000,
+          "ScaleFactorHp" : 5500,
+          "ScaleFactorDefence" : 5500,
+          "DifficultyValue" : 28500,
+          "ChallengeEffect" : 
+          [
+            {
+              "BattleEffectId" : "940001"
+            },
+
+            {
+              "BattleEffectId" : "940011"
+            },
+
+            {
+              "BattleEffectId" : "940021"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "DifficultyGroupId" : 1001,
+          "DifficultySetId" : 100111,
+          "Level" : 11,
+          "ScaleFactorAttack" : 12000,
+          "ScaleFactorHp" : 6000,
+          "ScaleFactorDefence" : 6000,
+          "DifficultyValue" : 30000,
+          "ChallengeEffect" : 
+          [
+            {
+              "BattleEffectId" : "940001"
+            },
+
+            {
+              "BattleEffectId" : "940011"
+            },
+
+            {
+              "BattleEffectId" : "940021"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "DifficultyGroupId" : 1001,
+          "DifficultySetId" : 100112,
+          "Level" : 12,
+          "ScaleFactorAttack" : 13000,
+          "ScaleFactorHp" : 6500,
+          "ScaleFactorDefence" : 6500,
+          "IsEffectUi" : true,
+          "DifficultyValue" : 31500,
+          "ChallengeEffect" : 
+          [
+            {
+              "BattleEffectId" : "940001"
+            },
+
+            {
+              "BattleEffectId" : "940011"
+            },
+
+            {
+              "BattleEffectId" : "940021"
+            },
+
+            {
+              "BattleEffectId" : "940031"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "DifficultyGroupId" : 1001,
+          "DifficultySetId" : 100113,
+          "Level" : 13,
+          "ScaleFactorAttack" : 14000,
+          "ScaleFactorHp" : 7000,
+          "ScaleFactorDefence" : 7000,
+          "DifficultyValue" : 32500,
+          "ChallengeEffect" : 
+          [
+            {
+              "BattleEffectId" : "940001"
+            },
+
+            {
+              "BattleEffectId" : "940011"
+            },
+
+            {
+              "BattleEffectId" : "940021"
+            },
+
+            {
+              "BattleEffectId" : "940031"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "DifficultyGroupId" : 1001,
+          "DifficultySetId" : 100114,
+          "Level" : 14,
+          "ScaleFactorAttack" : 15000,
+          "ScaleFactorHp" : 7500,
+          "ScaleFactorDefence" : 7500,
+          "DifficultyValue" : 33500,
+          "ChallengeEffect" : 
+          [
+            {
+              "BattleEffectId" : "940001"
+            },
+
+            {
+              "BattleEffectId" : "940011"
+            },
+
+            {
+              "BattleEffectId" : "940021"
+            },
+
+            {
+              "BattleEffectId" : "940031"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "DifficultyGroupId" : 1001,
+          "DifficultySetId" : 100115,
+          "Level" : 15,
+          "ScaleFactorAttack" : 16000,
+          "ScaleFactorHp" : 8000,
+          "ScaleFactorDefence" : 8000,
+          "IsEffectUi" : true,
+          "DifficultyValue" : 34500,
+          "ChallengeEffect" : 
+          [
+            {
+              "BattleEffectId" : "940001"
+            },
+
+            {
+              "BattleEffectId" : "940011"
+            },
+
+            {
+              "BattleEffectId" : "940021"
+            },
+
+            {
+              "BattleEffectId" : "940031"
+            },
+
+            {
+              "BattleEffectId" : "940051"
+            }
+          ]
+        }
+    ]
+}

@@ -1,0 +1,51 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_STRANISEARL_ROSEBLADE_03",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_PARK_PUBLIC.png",
+      "UnitStrId": "NKM_UNIT_NPC_STRANISEARL_ROSEBLADE",
+      "UnitMotion": "ANGRY"
+    },
+    {
+      "Uid": 2,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아모라의 살벌한 기색에 필사적으로 도망쳤다...!",
+      "UnitTalk_ENG": "I ran for my life from the terrifying look on Amora's face...!",
+      "UnitTalk_JPN": "アモラの凄まじい気迫に、必死になって逃げ出した…！",
+      "UnitTalk_CHN": "在阿莫拉杀气腾腾的气势下，拼命逃跑了…！",
+      "UnitTalk_TWN": "在阿莫拉殺氣騰騰的氣勢下，拼命逃跑了…！",
+      "TalkTime": 0.03,
+      "UnitTalk_FRA": "Je me suis enfui désespérément de l'air menaçant d'Amora...!",
+      "UnitTalk_DEU": "Ich floh verzweifelt vor Amoras bedrohlichem Blick...!",
+      "UnitTalk_ESP": "¡Escapé desesperadamente de la mirada asesina de Amora...!",
+      "UnitTalk_PRT": "Fugi desesperadamente da aura sinistra de Amora...!",
+      "UnitTalk_THA": "หนีตายสุดชีวิตเมื่อเจอออร่าสังหารของอามอร่า...!",
+      "UnitTalk_IND": "Dengan panik kabur dari tatapan Amora yang ganas...!",
+      "UnitTalk_VIE": "Chạy trốn tuyệt vọng trước vẻ mặt đáng sợ của Amora...!"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

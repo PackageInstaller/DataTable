@@ -1,0 +1,68 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_STARPIERCER_OMEGA_01",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_STREET.png",
+      "UnitStrId": "NKM_UNIT_NPC_STARPIERCER_OMEGA",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "오메가와 루그는 스텔라 레인저 놀이를 하며 놀았다!",
+      "UnitTalk_ENG": "Omega and Lugh played Stellar Rangers together!",
+      "UnitTalk_JPN": "オメガとルーは、「ステラレンジャーごっこ」をして遊んだ！",
+      "UnitTalk_CHN": "奥米嘉和卢格一起玩起了星光战队的游戏！",
+      "UnitTalk_TWN": "奧米嘉和盧格一起玩起了星光戰隊的遊戲！",
+      "UnitTalk_FRA": "Omega et Lugh ont joué aux Stella Rangers !",
+      "UnitTalk_DEU": "Omega und Lugh spielten Stellar Ranger!",
+      "UnitTalk_ESP": "¡Omega y Lugh jugaron al juego de los Stellar Rangers!",
+      "UnitTalk_PRT": "Ômega e Lugh brincaram de Stella Ranger!",
+      "UnitTalk_THA": "โอเมก้ากับลูห์เล่นเป็นสเตลล่าเรนเจอร์ด้วยกัน!",
+      "UnitTalk_IND": "Omega dan Lugh bermain Stella Ranger-an bersama!",
+      "UnitTalk_VIE": "Omega và Lugh đã chơi trò chơi của Stella Ranger cùng nhau!",
+      "UnitTalk_HIN": "ओमेगा और लूग ने स्टेला रेंजर का खेल खेला!",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_VOYAGER_ORACLE_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    }
+  ]
+}

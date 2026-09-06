@@ -1,0 +1,56 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_DRESS_STRANIS_01",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_BALLROOM.png",
+      "UnitStrId": "NKM_UNIT_NPC_DRESS_STRANIS",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "파티 문화에 서툰 아세라는 크리스텔에게 도움을 받았다.",
+      "UnitTalk_ENG": "Unfamiliar with party etiquette, Asherah turned to Cristelle for help.",
+      "UnitTalk_JPN": "パーティー文化に不慣れなアセラは、クリステルに助けてもらった。",
+      "UnitTalk_CHN": "对派对文化不熟悉的亚瑟菈，得到了克莉丝特的帮助。",
+      "UnitTalk_TWN": "對派對文化不熟悉的亞瑟菈，得到了克莉絲特的幫助。",
+      "UnitTalk_FRA": "Ashera, peu habituée aux mondanités, a demandé de l'aide à Cristel.",
+      "UnitTalk_DEU": "Ashera, die mit der Partykultur nicht vertraut war, erhielt Hilfe von Cristel.",
+      "UnitTalk_ESP": "Ashera, inexperta en la cultura de las fiestas, recibió ayuda de Cristel.",
+      "UnitTalk_PRT": "Inexperiente na cultura de festas, Ashera pediu ajuda a Cristel.",
+      "UnitTalk_THA": "อาเชราผู้ไม่คุ้นเคยกับวัฒนธรรมงานเลี้ยง ได้รับความช่วยเหลือจากคริสเทล",
+      "UnitTalk_IND": "Asherah, yang tidak terbiasa dengan budaya pesta, menerima bantuan dari Kristel.",
+      "UnitTalk_VIE": "Ashera, người không quen với văn hóa tiệc tùng, đã nhận được sự giúp đỡ từ Cristel.",
+      "UnitTalk_HIN": "पार्टी के तौर-तरीकों से अनजान असेरा को क्रिस्टेल से मदद मिली।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAGICIAN_DRUID_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    }
+  ]
+}

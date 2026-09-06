@@ -81,7 +81,7 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "BuffEffectStrID" : "BE_IMMORTAL",
-          "BuffVfxHeight" : "BVH_BODY",
+          "BuffVfxHeight" : "BVH_ZERO",
           "BuffStartPrefab" : "VFX_BUFF_IMMORTAL_START.prefab",
           "BuffBasePrefab" : "VFX_BUFF_IMMORTAL.prefab"
         },
@@ -167,6 +167,27 @@
           "BuffEffectStrID" : "BE_EXTRA_TURN",
           "BuffVfxHeight" : "BVH_BODY",
           "BuffStartPrefab" : "VFX_EXTRA_TURN.prefab"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BuffEffectStrID" : "BE_WEDDING_DUALSWORD_FLOWER",
+          "BuffVfxHeight" : "BVH_BODY",
+          "BuffHitPrefab" : "VFX_BUFF_WEDDING_DUALSWORD_FLOWER_HIT.prefab",
+          "BuffHitTiming" : "BHT_DAMAGE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BuffEffectStrID" : "BE_VOYAGER_ORACLE_STARLIGHT",
+          "BuffVfxHeight" : "BVH_ZERO",
+          "BuffHitPrefab" : "VFX_BUFF_VOYAGER_ORACLE_STARLIGHT_HIT.prefab",
+          "BuffHitTiming" : "BHT_DAMAGE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BuffEffectStrID" : "BE_INCOGNITA_LANDGRAVE_DOOM",
+          "BuffVfxHeight" : "BVH_BODY",
+          "BuffHitPrefab" : "VFX_BUFF_INCOGNITA_LANDGRAVE_DOOM_HIT.prefab",
+          "BuffHitTiming" : "BHT_DAMAGE"
         }
     ]
 }

@@ -1,0 +1,55 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_APOSTLE_TYRIA_03",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_HOTEL_2.png",
+      "UnitStrId": "NKM_UNIT_NPC_APOSTLE_TYRIA"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "티리아와 함께 연극 연습을 했다.",
+      "UnitTalk_ENG": "I rehearsed a play with Tyria.",
+      "UnitTalk_JPN": "ティリアと共に演劇の練習をした。",
+      "UnitTalk_CHN": "和缇莉雅一起进行了舞台剧的练习。",
+      "UnitTalk_TWN": "和緹莉雅一起進行了舞台劇的練習。",
+      "UnitTalk_FRA": "J'ai répété la pièce avec Tiria.",
+      "UnitTalk_DEU": "Ich habe mit Tiria Theaterübungen gemacht.",
+      "UnitTalk_ESP": "Practiqué teatro con Tiria.",
+      "UnitTalk_PRT": "Fiz ensaio de peça com Tiria.",
+      "UnitTalk_THA": "ฉันได้ซ้อมละครกับทีเรียแล้ว",
+      "UnitTalk_IND": "Berlatih drama bersama Tiria.",
+      "UnitTalk_VIE": "Tập luyện kịch cùng Tiria.",
+      "UnitTalk_HIN": "टीरिया के साथ नाटक का अभ्यास किया।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_DETECTIVE_WATSON_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SURPRISE"
+    }
+  ]
+}

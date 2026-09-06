@@ -41,7 +41,7 @@
           "ResonanceGrade" : 2,
           "UnlockLevel" : 40,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 30,
+          "JourneyStatValue" : 45,
           "StatData" : 
           [
             {
@@ -136,7 +136,7 @@
           "ResonanceGrade" : 5,
           "UnlockLevel" : 100,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 40,
+          "JourneyStatValue" : 60,
           "StatData" : 
           [
             {
@@ -273,7 +273,7 @@
           "ResonanceGrade" : 9,
           "UnlockLevel" : 180,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 50,
+          "JourneyStatValue" : 75,
           "StatData" : 
           [
             {
@@ -373,7 +373,7 @@
           "ResonanceGrade" : 2,
           "UnlockLevel" : 40,
           "JourneyStatType" : "JST_PROTECT",
-          "JourneyStatValue" : 30,
+          "JourneyStatValue" : 45,
           "StatData" : 
           [
             {
@@ -468,7 +468,7 @@
           "ResonanceGrade" : 5,
           "UnlockLevel" : 100,
           "JourneyStatType" : "JST_PROTECT",
-          "JourneyStatValue" : 40,
+          "JourneyStatValue" : 60,
           "StatData" : 
           [
             {
@@ -605,7 +605,7 @@
           "ResonanceGrade" : 9,
           "UnlockLevel" : 180,
           "JourneyStatType" : "JST_PROTECT",
-          "JourneyStatValue" : 50,
+          "JourneyStatValue" : 75,
           "StatData" : 
           [
             {
@@ -1037,7 +1037,7 @@
           "ResonanceGrade" : 2,
           "UnlockLevel" : 40,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 30,
+          "JourneyStatValue" : 45,
           "StatData" : 
           [
             {
@@ -1132,7 +1132,7 @@
           "ResonanceGrade" : 5,
           "UnlockLevel" : 100,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 40,
+          "JourneyStatValue" : 60,
           "StatData" : 
           [
             {
@@ -1269,7 +1269,7 @@
           "ResonanceGrade" : 9,
           "UnlockLevel" : 180,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 50,
+          "JourneyStatValue" : 75,
           "StatData" : 
           [
             {
@@ -1333,6 +1333,1002 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1005,
+          "ResonanceGrade" : 1,
+          "UnlockLevel" : 20,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 30,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 100
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 720
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1005,
+          "ResonanceGrade" : 2,
+          "UnlockLevel" : 40,
+          "JourneyStatType" : "JST_FOCUS",
+          "JourneyStatValue" : 45,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_ATK",
+              "StatValue" : 200
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 16
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1005,
+          "ResonanceGrade" : 3,
+          "UnlockLevel" : 60,
+          "GetPotenId" : "POTEN_PASSIVE_0001",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 125
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 50
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 905,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 904,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1005,
+          "ResonanceGrade" : 4,
+          "UnlockLevel" : 80,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_RATE_CRITICAL",
+              "StatValue" : 300
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 905,
+              "ReqItemCount" : 12
+            },
+
+            {
+              "ReqItemId" : 904,
+              "ReqItemCount" : 6
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1005,
+          "ResonanceGrade" : 5,
+          "UnlockLevel" : 100,
+          "JourneyStatType" : "JST_FOCUS",
+          "JourneyStatValue" : 60,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 900
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 60
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 905,
+              "ReqItemCount" : 16
+            },
+
+            {
+              "ReqItemId" : 904,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1005,
+          "ResonanceGrade" : 6,
+          "UnlockLevel" : 120,
+          "GetPotenId" : "POTEN_PASSIVE_0005",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_ATK",
+              "StatValue" : 400
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 905,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 904,
+              "ReqItemCount" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1005,
+          "ResonanceGrade" : 7,
+          "UnlockLevel" : 140,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 175
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 1080
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 954,
+              "ReqItemCount" : 4
+            },
+
+            {
+              "ReqItemId" : 953,
+              "ReqItemCount" : 2
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1005,
+          "ResonanceGrade" : 8,
+          "UnlockLevel" : 160,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_RATE_CRITICAL",
+              "StatValue" : 600
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 954,
+              "ReqItemCount" : 6
+            },
+
+            {
+              "ReqItemId" : 953,
+              "ReqItemCount" : 3
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1005,
+          "ResonanceGrade" : 9,
+          "UnlockLevel" : 180,
+          "JourneyStatType" : "JST_FOCUS",
+          "JourneyStatValue" : 75,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 200
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 70
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 954,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 953,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1005,
+          "ResonanceGrade" : 10,
+          "UnlockLevel" : 200,
+          "GetPotenId" : "POTEN_PASSIVE_1001",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_ATK",
+              "StatValue" : 600
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 954,
+              "ReqItemCount" : 10
+            },
+
+            {
+              "ReqItemId" : 953,
+              "ReqItemCount" : 5
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1008,
+          "ResonanceGrade" : 1,
+          "UnlockLevel" : 20,
+          "JourneyStatType" : "JST_FOCUS",
+          "JourneyStatValue" : 45,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 100
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 720
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1008,
+          "ResonanceGrade" : 2,
+          "UnlockLevel" : 40,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 30,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_TURN_SPEED",
+              "StatValue" : 2
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 16
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1008,
+          "ResonanceGrade" : 3,
+          "UnlockLevel" : 60,
+          "GetPotenId" : "POTEN_PASSIVE_0004",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 125
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 50
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 904,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 903,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1008,
+          "ResonanceGrade" : 4,
+          "UnlockLevel" : 80,
+          "JourneyStatType" : "JST_FOCUS",
+          "JourneyStatValue" : 60,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_RATE_EFFECT_HIT",
+              "StatValue" : 400
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 904,
+              "ReqItemCount" : 12
+            },
+
+            {
+              "ReqItemId" : 903,
+              "ReqItemCount" : 6
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1008,
+          "ResonanceGrade" : 5,
+          "UnlockLevel" : 100,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 900
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 60
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 904,
+              "ReqItemCount" : 16
+            },
+
+            {
+              "ReqItemId" : 903,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1008,
+          "ResonanceGrade" : 6,
+          "UnlockLevel" : 120,
+          "GetPotenId" : "POTEN_PASSIVE_0007",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_TURN_SPEED",
+              "StatValue" : 4
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 904,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 903,
+              "ReqItemCount" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1008,
+          "ResonanceGrade" : 7,
+          "UnlockLevel" : 140,
+          "JourneyStatType" : "JST_FOCUS",
+          "JourneyStatValue" : 60,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 175
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 1080
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 953,
+              "ReqItemCount" : 4
+            },
+
+            {
+              "ReqItemId" : 952,
+              "ReqItemCount" : 2
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1008,
+          "ResonanceGrade" : 8,
+          "UnlockLevel" : 160,
+          "JourneyStatType" : "JST_FOCUS",
+          "JourneyStatValue" : 60,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_RATE_EFFECT_HIT",
+              "StatValue" : 800
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 953,
+              "ReqItemCount" : 6
+            },
+
+            {
+              "ReqItemId" : 952,
+              "ReqItemCount" : 3
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1008,
+          "ResonanceGrade" : 9,
+          "UnlockLevel" : 180,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 50,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 200
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 70
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 953,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 952,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1008,
+          "ResonanceGrade" : 10,
+          "UnlockLevel" : 200,
+          "GetPotenId" : "POTEN_PASSIVE_1004",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_TURN_SPEED",
+              "StatValue" : 6
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 953,
+              "ReqItemCount" : 10
+            },
+
+            {
+              "ReqItemId" : 952,
+              "ReqItemCount" : 5
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1009,
+          "ResonanceGrade" : 1,
+          "UnlockLevel" : 20,
+          "JourneyStatType" : "JST_HEALTH",
+          "JourneyStatValue" : 30,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 75
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 720
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1009,
+          "ResonanceGrade" : 2,
+          "UnlockLevel" : 40,
+          "JourneyStatType" : "JST_ENDURANCE",
+          "JourneyStatValue" : 30,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_HP",
+              "StatValue" : 200
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 16
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1009,
+          "ResonanceGrade" : 3,
+          "UnlockLevel" : 60,
+          "GetPotenId" : "POTEN_PASSIVE_0002",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 100
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 60
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 902,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 907,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1009,
+          "ResonanceGrade" : 4,
+          "UnlockLevel" : 80,
+          "JourneyStatType" : "JST_HEALTH",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_RATE_CRITICAL",
+              "StatValue" : 300
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 902,
+              "ReqItemCount" : 12
+            },
+
+            {
+              "ReqItemId" : 907,
+              "ReqItemCount" : 6
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1009,
+          "ResonanceGrade" : 5,
+          "UnlockLevel" : 100,
+          "JourneyStatType" : "JST_ENDURANCE",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 900
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 75
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 902,
+              "ReqItemCount" : 16
+            },
+
+            {
+              "ReqItemId" : 907,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1009,
+          "ResonanceGrade" : 6,
+          "UnlockLevel" : 120,
+          "GetPotenId" : "POTEN_PASSIVE_0005",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_HP",
+              "StatValue" : 400
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 902,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 907,
+              "ReqItemCount" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1009,
+          "ResonanceGrade" : 7,
+          "UnlockLevel" : 140,
+          "JourneyStatType" : "JST_HEALTH",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 125
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 1080
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 951,
+              "ReqItemCount" : 4
+            },
+
+            {
+              "ReqItemId" : 956,
+              "ReqItemCount" : 2
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1009,
+          "ResonanceGrade" : 8,
+          "UnlockLevel" : 160,
+          "JourneyStatType" : "JST_HEALTH",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_RATE_CRITICAL",
+              "StatValue" : 600
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 951,
+              "ReqItemCount" : 6
+            },
+
+            {
+              "ReqItemId" : 956,
+              "ReqItemCount" : 3
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1009,
+          "ResonanceGrade" : 9,
+          "UnlockLevel" : 180,
+          "JourneyStatType" : "JST_ENDURANCE",
+          "JourneyStatValue" : 50,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 150
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 90
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 951,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 956,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1009,
+          "ResonanceGrade" : 10,
+          "UnlockLevel" : 200,
+          "GetPotenId" : "POTEN_PASSIVE_1006",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_RATE_CRITICAL_DAMAGE",
+              "StatValue" : 1800
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 951,
+              "ReqItemCount" : 10
+            },
+
+            {
+              "ReqItemId" : 956,
+              "ReqItemCount" : 5
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "UnitId" : 1010,
           "ResonanceGrade" : 1,
           "UnlockLevel" : 20,
@@ -2665,7 +3661,7 @@
           "ResonanceGrade" : 1,
           "UnlockLevel" : 20,
           "JourneyStatType" : "JST_PROTECT",
-          "JourneyStatValue" : 30,
+          "JourneyStatValue" : 45,
           "StatData" : 
           [
             {
@@ -2760,7 +3756,7 @@
           "ResonanceGrade" : 4,
           "UnlockLevel" : 80,
           "JourneyStatType" : "JST_PROTECT",
-          "JourneyStatValue" : 40,
+          "JourneyStatValue" : 60,
           "StatData" : 
           [
             {
@@ -2860,7 +3856,7 @@
           "ResonanceGrade" : 7,
           "UnlockLevel" : 140,
           "JourneyStatType" : "JST_PROTECT",
-          "JourneyStatValue" : 40,
+          "JourneyStatValue" : 60,
           "StatData" : 
           [
             {
@@ -2897,7 +3893,7 @@
           "ResonanceGrade" : 8,
           "UnlockLevel" : 160,
           "JourneyStatType" : "JST_PROTECT",
-          "JourneyStatValue" : 40,
+          "JourneyStatValue" : 60,
           "StatData" : 
           [
             {
@@ -2993,6 +3989,670 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1016,
+          "ResonanceGrade" : 1,
+          "UnlockLevel" : 20,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 30,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 100
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 720
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1016,
+          "ResonanceGrade" : 2,
+          "UnlockLevel" : 40,
+          "JourneyStatType" : "JST_HEALTH",
+          "JourneyStatValue" : 30,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_ATK",
+              "StatValue" : 200
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 16
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1016,
+          "ResonanceGrade" : 3,
+          "UnlockLevel" : 60,
+          "GetPotenId" : "POTEN_PASSIVE_0001",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 125
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 50
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 903,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 902,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1016,
+          "ResonanceGrade" : 4,
+          "UnlockLevel" : 80,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_HP",
+              "StatValue" : 200
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 903,
+              "ReqItemCount" : 12
+            },
+
+            {
+              "ReqItemId" : 902,
+              "ReqItemCount" : 6
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1016,
+          "ResonanceGrade" : 5,
+          "UnlockLevel" : 100,
+          "JourneyStatType" : "JST_HEALTH",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 900
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 60
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 903,
+              "ReqItemCount" : 16
+            },
+
+            {
+              "ReqItemId" : 902,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1016,
+          "ResonanceGrade" : 6,
+          "UnlockLevel" : 120,
+          "GetPotenId" : "POTEN_PASSIVE_0002",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_ATK",
+              "StatValue" : 400
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 903,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 902,
+              "ReqItemCount" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1016,
+          "ResonanceGrade" : 7,
+          "UnlockLevel" : 140,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 175
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 1080
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 952,
+              "ReqItemCount" : 4
+            },
+
+            {
+              "ReqItemId" : 951,
+              "ReqItemCount" : 2
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1016,
+          "ResonanceGrade" : 8,
+          "UnlockLevel" : 160,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_HP",
+              "StatValue" : 400
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 952,
+              "ReqItemCount" : 6
+            },
+
+            {
+              "ReqItemId" : 951,
+              "ReqItemCount" : 3
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1016,
+          "ResonanceGrade" : 9,
+          "UnlockLevel" : 180,
+          "JourneyStatType" : "JST_HEALTH",
+          "JourneyStatValue" : 50,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 200
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 70
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 952,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 951,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1016,
+          "ResonanceGrade" : 10,
+          "UnlockLevel" : 200,
+          "GetPotenId" : "POTEN_PASSIVE_1004",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_TURN_SPEED",
+              "StatValue" : 6
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 952,
+              "ReqItemCount" : 10
+            },
+
+            {
+              "ReqItemId" : 951,
+              "ReqItemCount" : 5
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1017,
+          "ResonanceGrade" : 1,
+          "UnlockLevel" : 20,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 30,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 100
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 720
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1017,
+          "ResonanceGrade" : 2,
+          "UnlockLevel" : 40,
+          "JourneyStatType" : "JST_FOCUS",
+          "JourneyStatValue" : 45,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_ATK",
+              "StatValue" : 200
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 16
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1017,
+          "ResonanceGrade" : 3,
+          "UnlockLevel" : 60,
+          "GetPotenId" : "POTEN_PASSIVE_0001",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 125
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 50
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 904,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 903,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1017,
+          "ResonanceGrade" : 4,
+          "UnlockLevel" : 80,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_RATE_EFFECT_HIT",
+              "StatValue" : 400
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 904,
+              "ReqItemCount" : 12
+            },
+
+            {
+              "ReqItemId" : 903,
+              "ReqItemCount" : 6
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1017,
+          "ResonanceGrade" : 5,
+          "UnlockLevel" : 100,
+          "JourneyStatType" : "JST_FOCUS",
+          "JourneyStatValue" : 60,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 900
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 60
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 904,
+              "ReqItemCount" : 16
+            },
+
+            {
+              "ReqItemId" : 903,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1017,
+          "ResonanceGrade" : 6,
+          "UnlockLevel" : 120,
+          "GetPotenId" : "POTEN_PASSIVE_0007",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_RATE_CRITICAL",
+              "StatValue" : 600
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 904,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 903,
+              "ReqItemCount" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1017,
+          "ResonanceGrade" : 7,
+          "UnlockLevel" : 140,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 175
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 1080
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 953,
+              "ReqItemCount" : 4
+            },
+
+            {
+              "ReqItemId" : 952,
+              "ReqItemCount" : 2
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1017,
+          "ResonanceGrade" : 8,
+          "UnlockLevel" : 160,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_RATE_EFFECT_HIT",
+              "StatValue" : 800
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 953,
+              "ReqItemCount" : 6
+            },
+
+            {
+              "ReqItemId" : 952,
+              "ReqItemCount" : 3
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1017,
+          "ResonanceGrade" : 9,
+          "UnlockLevel" : 180,
+          "JourneyStatType" : "JST_FOCUS",
+          "JourneyStatValue" : 75,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 200
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 70
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 953,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 952,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1017,
+          "ResonanceGrade" : 10,
+          "UnlockLevel" : 200,
+          "GetPotenId" : "POTEN_PASSIVE_1001",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_ATK",
+              "StatValue" : 600
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 953,
+              "ReqItemCount" : 10
+            },
+
+            {
+              "ReqItemId" : 952,
+              "ReqItemCount" : 5
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "UnitId" : 1018,
           "ResonanceGrade" : 1,
           "UnlockLevel" : 20,
@@ -3029,7 +4689,7 @@
           "ResonanceGrade" : 2,
           "UnlockLevel" : 40,
           "JourneyStatType" : "JST_PROTECT",
-          "JourneyStatValue" : 30,
+          "JourneyStatValue" : 45,
           "StatData" : 
           [
             {
@@ -3124,7 +4784,7 @@
           "ResonanceGrade" : 5,
           "UnlockLevel" : 100,
           "JourneyStatType" : "JST_PROTECT",
-          "JourneyStatValue" : 40,
+          "JourneyStatValue" : 60,
           "StatData" : 
           [
             {
@@ -3261,7 +4921,7 @@
           "ResonanceGrade" : 9,
           "UnlockLevel" : 180,
           "JourneyStatType" : "JST_PROTECT",
-          "JourneyStatValue" : 50,
+          "JourneyStatValue" : 75,
           "StatData" : 
           [
             {
@@ -3361,7 +5021,7 @@
           "ResonanceGrade" : 2,
           "UnlockLevel" : 40,
           "JourneyStatType" : "JST_PROTECT",
-          "JourneyStatValue" : 30,
+          "JourneyStatValue" : 45,
           "StatData" : 
           [
             {
@@ -3456,7 +5116,7 @@
           "ResonanceGrade" : 5,
           "UnlockLevel" : 100,
           "JourneyStatType" : "JST_PROTECT",
-          "JourneyStatValue" : 40,
+          "JourneyStatValue" : 60,
           "StatData" : 
           [
             {
@@ -3593,7 +5253,7 @@
           "ResonanceGrade" : 9,
           "UnlockLevel" : 180,
           "JourneyStatType" : "JST_PROTECT",
-          "JourneyStatValue" : 50,
+          "JourneyStatValue" : 75,
           "StatData" : 
           [
             {
@@ -3693,7 +5353,7 @@
           "ResonanceGrade" : 2,
           "UnlockLevel" : 40,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 30,
+          "JourneyStatValue" : 45,
           "StatData" : 
           [
             {
@@ -3788,7 +5448,7 @@
           "ResonanceGrade" : 5,
           "UnlockLevel" : 100,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 40,
+          "JourneyStatValue" : 60,
           "StatData" : 
           [
             {
@@ -3925,7 +5585,7 @@
           "ResonanceGrade" : 9,
           "UnlockLevel" : 180,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 50,
+          "JourneyStatValue" : 75,
           "StatData" : 
           [
             {
@@ -3993,7 +5653,7 @@
           "ResonanceGrade" : 1,
           "UnlockLevel" : 20,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 30,
+          "JourneyStatValue" : 45,
           "StatData" : 
           [
             {
@@ -4088,7 +5748,7 @@
           "ResonanceGrade" : 4,
           "UnlockLevel" : 80,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 40,
+          "JourneyStatValue" : 60,
           "StatData" : 
           [
             {
@@ -4188,7 +5848,7 @@
           "ResonanceGrade" : 7,
           "UnlockLevel" : 140,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 40,
+          "JourneyStatValue" : 60,
           "StatData" : 
           [
             {
@@ -4225,7 +5885,7 @@
           "ResonanceGrade" : 8,
           "UnlockLevel" : 160,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 40,
+          "JourneyStatValue" : 60,
           "StatData" : 
           [
             {
@@ -4653,11 +6313,675 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1025,
+          "ResonanceGrade" : 1,
+          "UnlockLevel" : 20,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 30,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 100
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 720
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1025,
+          "ResonanceGrade" : 2,
+          "UnlockLevel" : 40,
+          "JourneyStatType" : "JST_HEALTH",
+          "JourneyStatValue" : 30,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_ATK",
+              "StatValue" : 200
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 16
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1025,
+          "ResonanceGrade" : 3,
+          "UnlockLevel" : 60,
+          "GetPotenId" : "POTEN_PASSIVE_0001",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 125
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 50
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 903,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 902,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1025,
+          "ResonanceGrade" : 4,
+          "UnlockLevel" : 80,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_HP",
+              "StatValue" : 200
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 903,
+              "ReqItemCount" : 12
+            },
+
+            {
+              "ReqItemId" : 902,
+              "ReqItemCount" : 6
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1025,
+          "ResonanceGrade" : 5,
+          "UnlockLevel" : 100,
+          "JourneyStatType" : "JST_HEALTH",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 900
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 60
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 903,
+              "ReqItemCount" : 16
+            },
+
+            {
+              "ReqItemId" : 902,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1025,
+          "ResonanceGrade" : 6,
+          "UnlockLevel" : 120,
+          "GetPotenId" : "POTEN_PASSIVE_0002",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_ATK",
+              "StatValue" : 400
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 903,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 902,
+              "ReqItemCount" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1025,
+          "ResonanceGrade" : 7,
+          "UnlockLevel" : 140,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 175
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 1080
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 952,
+              "ReqItemCount" : 4
+            },
+
+            {
+              "ReqItemId" : 951,
+              "ReqItemCount" : 2
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1025,
+          "ResonanceGrade" : 8,
+          "UnlockLevel" : 160,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_HP",
+              "StatValue" : 400
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 952,
+              "ReqItemCount" : 6
+            },
+
+            {
+              "ReqItemId" : 951,
+              "ReqItemCount" : 3
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1025,
+          "ResonanceGrade" : 9,
+          "UnlockLevel" : 180,
+          "JourneyStatType" : "JST_HEALTH",
+          "JourneyStatValue" : 50,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 200
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 70
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 952,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 951,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1025,
+          "ResonanceGrade" : 10,
+          "UnlockLevel" : 200,
+          "GetPotenId" : "POTEN_PASSIVE_1001",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_ATK",
+              "StatValue" : 600
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 952,
+              "ReqItemCount" : 10
+            },
+
+            {
+              "ReqItemId" : 951,
+              "ReqItemCount" : 5
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1026,
+          "ResonanceGrade" : 1,
+          "UnlockLevel" : 20,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 30,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 100
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 720
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1026,
+          "ResonanceGrade" : 2,
+          "UnlockLevel" : 40,
+          "JourneyStatType" : "JST_HEALTH",
+          "JourneyStatValue" : 30,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_ATK",
+              "StatValue" : 200
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 16
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1026,
+          "ResonanceGrade" : 3,
+          "UnlockLevel" : 60,
+          "GetPotenId" : "POTEN_PASSIVE_0001",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 125
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 50
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 903,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 902,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1026,
+          "ResonanceGrade" : 4,
+          "UnlockLevel" : 80,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_HP",
+              "StatValue" : 200
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 903,
+              "ReqItemCount" : 12
+            },
+
+            {
+              "ReqItemId" : 902,
+              "ReqItemCount" : 6
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1026,
+          "ResonanceGrade" : 5,
+          "UnlockLevel" : 100,
+          "JourneyStatType" : "JST_HEALTH",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 900
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 60
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 903,
+              "ReqItemCount" : 16
+            },
+
+            {
+              "ReqItemId" : 902,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1026,
+          "ResonanceGrade" : 6,
+          "UnlockLevel" : 120,
+          "GetPotenId" : "POTEN_PASSIVE_0002",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_ATK",
+              "StatValue" : 400
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 903,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 902,
+              "ReqItemCount" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1026,
+          "ResonanceGrade" : 7,
+          "UnlockLevel" : 140,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 175
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 1080
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 952,
+              "ReqItemCount" : 4
+            },
+
+            {
+              "ReqItemId" : 951,
+              "ReqItemCount" : 2
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1026,
+          "ResonanceGrade" : 8,
+          "UnlockLevel" : 160,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_HP",
+              "StatValue" : 400
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 952,
+              "ReqItemCount" : 6
+            },
+
+            {
+              "ReqItemId" : 951,
+              "ReqItemCount" : 3
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1026,
+          "ResonanceGrade" : 9,
+          "UnlockLevel" : 180,
+          "JourneyStatType" : "JST_HEALTH",
+          "JourneyStatValue" : 50,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 200
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 70
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 952,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 951,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1026,
+          "ResonanceGrade" : 10,
+          "UnlockLevel" : 200,
+          "GetPotenId" : "POTEN_PASSIVE_1001",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_ATK",
+              "StatValue" : 600
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 952,
+              "ReqItemCount" : 10
+            },
+
+            {
+              "ReqItemId" : 951,
+              "ReqItemCount" : 5
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "UnitId" : 1027,
           "ResonanceGrade" : 1,
           "UnlockLevel" : 20,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 30,
+          "JourneyStatValue" : 45,
           "StatData" : 
           [
             {
@@ -4752,7 +7076,7 @@
           "ResonanceGrade" : 4,
           "UnlockLevel" : 80,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 40,
+          "JourneyStatValue" : 60,
           "StatData" : 
           [
             {
@@ -4852,7 +7176,7 @@
           "ResonanceGrade" : 7,
           "UnlockLevel" : 140,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 40,
+          "JourneyStatValue" : 60,
           "StatData" : 
           [
             {
@@ -4889,7 +7213,7 @@
           "ResonanceGrade" : 8,
           "UnlockLevel" : 160,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 40,
+          "JourneyStatValue" : 60,
           "StatData" : 
           [
             {
@@ -4985,11 +7309,343 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1029,
+          "ResonanceGrade" : 1,
+          "UnlockLevel" : 20,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 30,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 100
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 720
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1029,
+          "ResonanceGrade" : 2,
+          "UnlockLevel" : 40,
+          "JourneyStatType" : "JST_PROTECT",
+          "JourneyStatValue" : 45,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_ATK",
+              "StatValue" : 200
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 16
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1029,
+          "ResonanceGrade" : 3,
+          "UnlockLevel" : 60,
+          "GetPotenId" : "POTEN_PASSIVE_0001",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 125
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 50
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 906,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 905,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1029,
+          "ResonanceGrade" : 4,
+          "UnlockLevel" : 80,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_RATE_EFFECT_EVADE",
+              "StatValue" : 400
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 906,
+              "ReqItemCount" : 12
+            },
+
+            {
+              "ReqItemId" : 905,
+              "ReqItemCount" : 6
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1029,
+          "ResonanceGrade" : 5,
+          "UnlockLevel" : 100,
+          "JourneyStatType" : "JST_PROTECT",
+          "JourneyStatValue" : 60,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 900
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 60
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 906,
+              "ReqItemCount" : 16
+            },
+
+            {
+              "ReqItemId" : 905,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1029,
+          "ResonanceGrade" : 6,
+          "UnlockLevel" : 120,
+          "GetPotenId" : "POTEN_PASSIVE_0008",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_ATK",
+              "StatValue" : 400
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 906,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 905,
+              "ReqItemCount" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1029,
+          "ResonanceGrade" : 7,
+          "UnlockLevel" : 140,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 175
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 1080
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 955,
+              "ReqItemCount" : 4
+            },
+
+            {
+              "ReqItemId" : 954,
+              "ReqItemCount" : 2
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1029,
+          "ResonanceGrade" : 8,
+          "UnlockLevel" : 160,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_RATE_EFFECT_EVADE",
+              "StatValue" : 800
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 955,
+              "ReqItemCount" : 6
+            },
+
+            {
+              "ReqItemId" : 954,
+              "ReqItemCount" : 3
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1029,
+          "ResonanceGrade" : 9,
+          "UnlockLevel" : 180,
+          "JourneyStatType" : "JST_PROTECT",
+          "JourneyStatValue" : 75,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 200
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 70
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 955,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 954,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1029,
+          "ResonanceGrade" : 10,
+          "UnlockLevel" : 200,
+          "GetPotenId" : "POTEN_PASSIVE_1001",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_ATK",
+              "StatValue" : 600
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 955,
+              "ReqItemCount" : 10
+            },
+
+            {
+              "ReqItemId" : 954,
+              "ReqItemCount" : 5
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "UnitId" : 1030,
           "ResonanceGrade" : 1,
           "UnlockLevel" : 20,
           "JourneyStatType" : "JST_PROTECT",
-          "JourneyStatValue" : 30,
+          "JourneyStatValue" : 45,
           "StatData" : 
           [
             {
@@ -5084,7 +7740,7 @@
           "ResonanceGrade" : 4,
           "UnlockLevel" : 80,
           "JourneyStatType" : "JST_PROTECT",
-          "JourneyStatValue" : 40,
+          "JourneyStatValue" : 60,
           "StatData" : 
           [
             {
@@ -5184,7 +7840,7 @@
           "ResonanceGrade" : 7,
           "UnlockLevel" : 140,
           "JourneyStatType" : "JST_PROTECT",
-          "JourneyStatValue" : 40,
+          "JourneyStatValue" : 60,
           "StatData" : 
           [
             {
@@ -5221,7 +7877,7 @@
           "ResonanceGrade" : 8,
           "UnlockLevel" : 160,
           "JourneyStatType" : "JST_PROTECT",
-          "JourneyStatValue" : 40,
+          "JourneyStatValue" : 60,
           "StatData" : 
           [
             {
@@ -5317,11 +7973,1007 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1031,
+          "ResonanceGrade" : 1,
+          "UnlockLevel" : 20,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 30,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 100
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 720
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1031,
+          "ResonanceGrade" : 2,
+          "UnlockLevel" : 40,
+          "JourneyStatType" : "JST_HEALTH",
+          "JourneyStatValue" : 30,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_ATK",
+              "StatValue" : 200
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 16
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1031,
+          "ResonanceGrade" : 3,
+          "UnlockLevel" : 60,
+          "GetPotenId" : "POTEN_PASSIVE_0001",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 125
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 50
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 905,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 904,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1031,
+          "ResonanceGrade" : 4,
+          "UnlockLevel" : 80,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_HP",
+              "StatValue" : 200
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 905,
+              "ReqItemCount" : 12
+            },
+
+            {
+              "ReqItemId" : 904,
+              "ReqItemCount" : 6
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1031,
+          "ResonanceGrade" : 5,
+          "UnlockLevel" : 100,
+          "JourneyStatType" : "JST_HEALTH",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 900
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 60
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 905,
+              "ReqItemCount" : 16
+            },
+
+            {
+              "ReqItemId" : 904,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1031,
+          "ResonanceGrade" : 6,
+          "UnlockLevel" : 120,
+          "GetPotenId" : "POTEN_PASSIVE_0002",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_ATK",
+              "StatValue" : 400
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 905,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 904,
+              "ReqItemCount" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1031,
+          "ResonanceGrade" : 7,
+          "UnlockLevel" : 140,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 175
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 1080
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 954,
+              "ReqItemCount" : 4
+            },
+
+            {
+              "ReqItemId" : 953,
+              "ReqItemCount" : 2
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1031,
+          "ResonanceGrade" : 8,
+          "UnlockLevel" : 160,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_HP",
+              "StatValue" : 400
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 954,
+              "ReqItemCount" : 6
+            },
+
+            {
+              "ReqItemId" : 953,
+              "ReqItemCount" : 3
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1031,
+          "ResonanceGrade" : 9,
+          "UnlockLevel" : 180,
+          "JourneyStatType" : "JST_HEALTH",
+          "JourneyStatValue" : 50,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 200
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 70
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 954,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 953,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1031,
+          "ResonanceGrade" : 10,
+          "UnlockLevel" : 200,
+          "GetPotenId" : "POTEN_PASSIVE_1004",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_TURN_SPEED",
+              "StatValue" : 6
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 954,
+              "ReqItemCount" : 10
+            },
+
+            {
+              "ReqItemId" : 953,
+              "ReqItemCount" : 5
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1032,
+          "ResonanceGrade" : 1,
+          "UnlockLevel" : 20,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 30,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 100
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 720
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1032,
+          "ResonanceGrade" : 2,
+          "UnlockLevel" : 40,
+          "JourneyStatType" : "JST_PROTECT",
+          "JourneyStatValue" : 45,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_RATE_CRITICAL",
+              "StatValue" : 300
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 16
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1032,
+          "ResonanceGrade" : 3,
+          "UnlockLevel" : 60,
+          "GetPotenId" : "POTEN_PASSIVE_0005",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 125
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 50
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 906,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 905,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1032,
+          "ResonanceGrade" : 4,
+          "UnlockLevel" : 80,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_ATK",
+              "StatValue" : 200
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 906,
+              "ReqItemCount" : 12
+            },
+
+            {
+              "ReqItemId" : 905,
+              "ReqItemCount" : 6
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1032,
+          "ResonanceGrade" : 5,
+          "UnlockLevel" : 100,
+          "JourneyStatType" : "JST_PROTECT",
+          "JourneyStatValue" : 60,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 900
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 60
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 906,
+              "ReqItemCount" : 16
+            },
+
+            {
+              "ReqItemId" : 905,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1032,
+          "ResonanceGrade" : 6,
+          "UnlockLevel" : 120,
+          "GetPotenId" : "POTEN_PASSIVE_0001",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_RATE_CRITICAL_DAMAGE",
+              "StatValue" : 1200
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 906,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 905,
+              "ReqItemCount" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1032,
+          "ResonanceGrade" : 7,
+          "UnlockLevel" : 140,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 175
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 1080
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 955,
+              "ReqItemCount" : 4
+            },
+
+            {
+              "ReqItemId" : 954,
+              "ReqItemCount" : 2
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1032,
+          "ResonanceGrade" : 8,
+          "UnlockLevel" : 160,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_ATK",
+              "StatValue" : 400
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 955,
+              "ReqItemCount" : 6
+            },
+
+            {
+              "ReqItemId" : 954,
+              "ReqItemCount" : 3
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1032,
+          "ResonanceGrade" : 9,
+          "UnlockLevel" : 180,
+          "JourneyStatType" : "JST_PROTECT",
+          "JourneyStatValue" : 75,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 200
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 70
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 955,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 954,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1032,
+          "ResonanceGrade" : 10,
+          "UnlockLevel" : 200,
+          "GetPotenId" : "POTEN_PASSIVE_1005",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_RATE_CRITICAL",
+              "StatValue" : 900
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 955,
+              "ReqItemCount" : 10
+            },
+
+            {
+              "ReqItemId" : 954,
+              "ReqItemCount" : 5
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1033,
+          "ResonanceGrade" : 1,
+          "UnlockLevel" : 20,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 30,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 100
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 720
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1033,
+          "ResonanceGrade" : 2,
+          "UnlockLevel" : 40,
+          "JourneyStatType" : "JST_FOCUS",
+          "JourneyStatValue" : 45,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_ATK",
+              "StatValue" : 200
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 16
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1033,
+          "ResonanceGrade" : 3,
+          "UnlockLevel" : 60,
+          "GetPotenId" : "POTEN_PASSIVE_0001",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 125
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 50
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 903,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 902,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1033,
+          "ResonanceGrade" : 4,
+          "UnlockLevel" : 80,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_TURN_SPEED",
+              "StatValue" : 2
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 903,
+              "ReqItemCount" : 12
+            },
+
+            {
+              "ReqItemId" : 902,
+              "ReqItemCount" : 6
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1033,
+          "ResonanceGrade" : 5,
+          "UnlockLevel" : 100,
+          "JourneyStatType" : "JST_FOCUS",
+          "JourneyStatValue" : 60,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 900
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 60
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 903,
+              "ReqItemCount" : 16
+            },
+
+            {
+              "ReqItemId" : 902,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1033,
+          "ResonanceGrade" : 6,
+          "UnlockLevel" : 120,
+          "GetPotenId" : "POTEN_PASSIVE_0004",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_RATE_EFFECT_HIT",
+              "StatValue" : 800
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 903,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 902,
+              "ReqItemCount" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1033,
+          "ResonanceGrade" : 7,
+          "UnlockLevel" : 140,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 175
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 1080
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 952,
+              "ReqItemCount" : 4
+            },
+
+            {
+              "ReqItemId" : 951,
+              "ReqItemCount" : 2
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1033,
+          "ResonanceGrade" : 8,
+          "UnlockLevel" : 160,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_TURN_SPEED",
+              "StatValue" : 4
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 952,
+              "ReqItemCount" : 6
+            },
+
+            {
+              "ReqItemId" : 951,
+              "ReqItemCount" : 3
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1033,
+          "ResonanceGrade" : 9,
+          "UnlockLevel" : 180,
+          "JourneyStatType" : "JST_FOCUS",
+          "JourneyStatValue" : 75,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 200
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 70
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 952,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 951,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1033,
+          "ResonanceGrade" : 10,
+          "UnlockLevel" : 200,
+          "GetPotenId" : "POTEN_PASSIVE_1001",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_ATK",
+              "StatValue" : 600
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 952,
+              "ReqItemCount" : 10
+            },
+
+            {
+              "ReqItemId" : 951,
+              "ReqItemCount" : 5
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "UnitId" : 1034,
           "ResonanceGrade" : 1,
           "UnlockLevel" : 20,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 30,
+          "JourneyStatValue" : 45,
           "StatData" : 
           [
             {
@@ -5416,7 +9068,7 @@
           "ResonanceGrade" : 4,
           "UnlockLevel" : 80,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 40,
+          "JourneyStatValue" : 60,
           "StatData" : 
           [
             {
@@ -5516,7 +9168,7 @@
           "ResonanceGrade" : 7,
           "UnlockLevel" : 140,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 40,
+          "JourneyStatValue" : 60,
           "StatData" : 
           [
             {
@@ -5553,7 +9205,7 @@
           "ResonanceGrade" : 8,
           "UnlockLevel" : 160,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 40,
+          "JourneyStatValue" : 60,
           "StatData" : 
           [
             {
@@ -5685,7 +9337,7 @@
           "ResonanceGrade" : 2,
           "UnlockLevel" : 40,
           "JourneyStatType" : "JST_PROTECT",
-          "JourneyStatValue" : 30,
+          "JourneyStatValue" : 45,
           "StatData" : 
           [
             {
@@ -5780,7 +9432,7 @@
           "ResonanceGrade" : 5,
           "UnlockLevel" : 100,
           "JourneyStatType" : "JST_PROTECT",
-          "JourneyStatValue" : 40,
+          "JourneyStatValue" : 60,
           "StatData" : 
           [
             {
@@ -5917,7 +9569,7 @@
           "ResonanceGrade" : 9,
           "UnlockLevel" : 180,
           "JourneyStatType" : "JST_PROTECT",
-          "JourneyStatValue" : 50,
+          "JourneyStatValue" : 75,
           "StatData" : 
           [
             {
@@ -5985,7 +9637,7 @@
           "ResonanceGrade" : 1,
           "UnlockLevel" : 20,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 30,
+          "JourneyStatValue" : 45,
           "StatData" : 
           [
             {
@@ -6080,7 +9732,7 @@
           "ResonanceGrade" : 4,
           "UnlockLevel" : 80,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 40,
+          "JourneyStatValue" : 60,
           "StatData" : 
           [
             {
@@ -6180,7 +9832,7 @@
           "ResonanceGrade" : 7,
           "UnlockLevel" : 140,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 40,
+          "JourneyStatValue" : 60,
           "StatData" : 
           [
             {
@@ -6217,7 +9869,7 @@
           "ResonanceGrade" : 8,
           "UnlockLevel" : 160,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 40,
+          "JourneyStatValue" : 60,
           "StatData" : 
           [
             {
@@ -6977,11 +10629,675 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1045,
+          "ResonanceGrade" : 1,
+          "UnlockLevel" : 20,
+          "JourneyStatType" : "JST_HEALTH",
+          "JourneyStatValue" : 30,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 75
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 720
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1045,
+          "ResonanceGrade" : 2,
+          "UnlockLevel" : 40,
+          "JourneyStatType" : "JST_FOCUS",
+          "JourneyStatValue" : 45,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_HP",
+              "StatValue" : 200
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 16
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1045,
+          "ResonanceGrade" : 3,
+          "UnlockLevel" : 60,
+          "GetPotenId" : "POTEN_PASSIVE_0002",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 100
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 60
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 902,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 907,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1045,
+          "ResonanceGrade" : 4,
+          "UnlockLevel" : 80,
+          "JourneyStatType" : "JST_HEALTH",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_RATE_EFFECT_HIT",
+              "StatValue" : 400
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 902,
+              "ReqItemCount" : 12
+            },
+
+            {
+              "ReqItemId" : 907,
+              "ReqItemCount" : 6
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1045,
+          "ResonanceGrade" : 5,
+          "UnlockLevel" : 100,
+          "JourneyStatType" : "JST_FOCUS",
+          "JourneyStatValue" : 60,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 900
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 75
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 902,
+              "ReqItemCount" : 16
+            },
+
+            {
+              "ReqItemId" : 907,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1045,
+          "ResonanceGrade" : 6,
+          "UnlockLevel" : 120,
+          "GetPotenId" : "POTEN_PASSIVE_0007",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_DEF",
+              "StatValue" : 400
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 902,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 907,
+              "ReqItemCount" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1045,
+          "ResonanceGrade" : 7,
+          "UnlockLevel" : 140,
+          "JourneyStatType" : "JST_HEALTH",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 125
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 1080
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 951,
+              "ReqItemCount" : 4
+            },
+
+            {
+              "ReqItemId" : 956,
+              "ReqItemCount" : 2
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1045,
+          "ResonanceGrade" : 8,
+          "UnlockLevel" : 160,
+          "JourneyStatType" : "JST_HEALTH",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_RATE_EFFECT_HIT",
+              "StatValue" : 800
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 951,
+              "ReqItemCount" : 6
+            },
+
+            {
+              "ReqItemId" : 956,
+              "ReqItemCount" : 3
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1045,
+          "ResonanceGrade" : 9,
+          "UnlockLevel" : 180,
+          "JourneyStatType" : "JST_FOCUS",
+          "JourneyStatValue" : 75,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 150
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 90
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 951,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 956,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1045,
+          "ResonanceGrade" : 10,
+          "UnlockLevel" : 200,
+          "GetPotenId" : "POTEN_PASSIVE_1002",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_HP",
+              "StatValue" : 600
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 951,
+              "ReqItemCount" : 10
+            },
+
+            {
+              "ReqItemId" : 956,
+              "ReqItemCount" : 5
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1046,
+          "ResonanceGrade" : 1,
+          "UnlockLevel" : 20,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 30,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 100
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 720
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1046,
+          "ResonanceGrade" : 2,
+          "UnlockLevel" : 40,
+          "JourneyStatType" : "JST_FOCUS",
+          "JourneyStatValue" : 45,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_ATK",
+              "StatValue" : 200
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 16
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1046,
+          "ResonanceGrade" : 3,
+          "UnlockLevel" : 60,
+          "GetPotenId" : "POTEN_PASSIVE_0001",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 125
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 50
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 906,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 905,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1046,
+          "ResonanceGrade" : 4,
+          "UnlockLevel" : 80,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_TURN_SPEED",
+              "StatValue" : 2
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 906,
+              "ReqItemCount" : 12
+            },
+
+            {
+              "ReqItemId" : 905,
+              "ReqItemCount" : 6
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1046,
+          "ResonanceGrade" : 5,
+          "UnlockLevel" : 100,
+          "JourneyStatType" : "JST_FOCUS",
+          "JourneyStatValue" : 60,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 900
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 60
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 906,
+              "ReqItemCount" : 16
+            },
+
+            {
+              "ReqItemId" : 905,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1046,
+          "ResonanceGrade" : 6,
+          "UnlockLevel" : 120,
+          "GetPotenId" : "POTEN_PASSIVE_0004",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_ATK",
+              "StatValue" : 400
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 906,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 905,
+              "ReqItemCount" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1046,
+          "ResonanceGrade" : 7,
+          "UnlockLevel" : 140,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 175
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 1080
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 955,
+              "ReqItemCount" : 4
+            },
+
+            {
+              "ReqItemId" : 954,
+              "ReqItemCount" : 2
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1046,
+          "ResonanceGrade" : 8,
+          "UnlockLevel" : 160,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_TURN_SPEED",
+              "StatValue" : 4
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 955,
+              "ReqItemCount" : 6
+            },
+
+            {
+              "ReqItemId" : 954,
+              "ReqItemCount" : 3
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1046,
+          "ResonanceGrade" : 9,
+          "UnlockLevel" : 180,
+          "JourneyStatType" : "JST_FOCUS",
+          "JourneyStatValue" : 75,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 200
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 70
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 955,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 954,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1046,
+          "ResonanceGrade" : 10,
+          "UnlockLevel" : 200,
+          "GetPotenId" : "POTEN_PASSIVE_1007",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_RATE_EFFECT_HIT",
+              "StatValue" : 1200
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 955,
+              "ReqItemCount" : 10
+            },
+
+            {
+              "ReqItemId" : 954,
+              "ReqItemCount" : 5
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "UnitId" : 1049,
           "ResonanceGrade" : 1,
           "UnlockLevel" : 20,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 30,
+          "JourneyStatValue" : 45,
           "StatData" : 
           [
             {
@@ -7076,7 +11392,7 @@
           "ResonanceGrade" : 4,
           "UnlockLevel" : 80,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 40,
+          "JourneyStatValue" : 60,
           "StatData" : 
           [
             {
@@ -7176,7 +11492,7 @@
           "ResonanceGrade" : 7,
           "UnlockLevel" : 140,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 40,
+          "JourneyStatValue" : 60,
           "StatData" : 
           [
             {
@@ -7213,7 +11529,7 @@
           "ResonanceGrade" : 8,
           "UnlockLevel" : 160,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 40,
+          "JourneyStatValue" : 60,
           "StatData" : 
           [
             {
@@ -7645,7 +11961,7 @@
           "ResonanceGrade" : 1,
           "UnlockLevel" : 20,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 30,
+          "JourneyStatValue" : 45,
           "StatData" : 
           [
             {
@@ -7740,7 +12056,7 @@
           "ResonanceGrade" : 4,
           "UnlockLevel" : 80,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 40,
+          "JourneyStatValue" : 60,
           "StatData" : 
           [
             {
@@ -7877,7 +12193,7 @@
           "ResonanceGrade" : 8,
           "UnlockLevel" : 160,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 40,
+          "JourneyStatValue" : 60,
           "StatData" : 
           [
             {
@@ -8009,7 +12325,7 @@
           "ResonanceGrade" : 2,
           "UnlockLevel" : 40,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 30,
+          "JourneyStatValue" : 45,
           "StatData" : 
           [
             {
@@ -8104,7 +12420,7 @@
           "ResonanceGrade" : 5,
           "UnlockLevel" : 100,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 40,
+          "JourneyStatValue" : 60,
           "StatData" : 
           [
             {
@@ -8241,7 +12557,7 @@
           "ResonanceGrade" : 9,
           "UnlockLevel" : 180,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 50,
+          "JourneyStatValue" : 75,
           "StatData" : 
           [
             {
@@ -8283,6 +12599,1666 @@
             {
               "StatType" : "NST_NV_RATE_ATK",
               "StatValue" : 600
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 955,
+              "ReqItemCount" : 10
+            },
+
+            {
+              "ReqItemId" : 954,
+              "ReqItemCount" : 5
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1054,
+          "ResonanceGrade" : 1,
+          "UnlockLevel" : 20,
+          "JourneyStatType" : "JST_HEALTH",
+          "JourneyStatValue" : 30,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 75
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 720
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1054,
+          "ResonanceGrade" : 2,
+          "UnlockLevel" : 40,
+          "JourneyStatType" : "JST_ENDURANCE",
+          "JourneyStatValue" : 30,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_HP",
+              "StatValue" : 200
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 16
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1054,
+          "ResonanceGrade" : 3,
+          "UnlockLevel" : 60,
+          "GetPotenId" : "POTEN_PASSIVE_0002",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 100
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 60
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 907,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 906,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1054,
+          "ResonanceGrade" : 4,
+          "UnlockLevel" : 80,
+          "JourneyStatType" : "JST_HEALTH",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_DEF",
+              "StatValue" : 200
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 907,
+              "ReqItemCount" : 12
+            },
+
+            {
+              "ReqItemId" : 906,
+              "ReqItemCount" : 6
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1054,
+          "ResonanceGrade" : 5,
+          "UnlockLevel" : 100,
+          "JourneyStatType" : "JST_ENDURANCE",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 900
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 75
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 907,
+              "ReqItemCount" : 16
+            },
+
+            {
+              "ReqItemId" : 906,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1054,
+          "ResonanceGrade" : 6,
+          "UnlockLevel" : 120,
+          "GetPotenId" : "POTEN_PASSIVE_0003",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_HP",
+              "StatValue" : 400
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 907,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 906,
+              "ReqItemCount" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1054,
+          "ResonanceGrade" : 7,
+          "UnlockLevel" : 140,
+          "JourneyStatType" : "JST_HEALTH",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 125
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 1080
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 956,
+              "ReqItemCount" : 4
+            },
+
+            {
+              "ReqItemId" : 955,
+              "ReqItemCount" : 2
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1054,
+          "ResonanceGrade" : 8,
+          "UnlockLevel" : 160,
+          "JourneyStatType" : "JST_HEALTH",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_DEF",
+              "StatValue" : 400
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 956,
+              "ReqItemCount" : 6
+            },
+
+            {
+              "ReqItemId" : 955,
+              "ReqItemCount" : 3
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1054,
+          "ResonanceGrade" : 9,
+          "UnlockLevel" : 180,
+          "JourneyStatType" : "JST_ENDURANCE",
+          "JourneyStatValue" : 50,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 150
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 90
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 956,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 955,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1054,
+          "ResonanceGrade" : 10,
+          "UnlockLevel" : 200,
+          "GetPotenId" : "POTEN_PASSIVE_1004",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_TURN_SPEED",
+              "StatValue" : 6
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 956,
+              "ReqItemCount" : 10
+            },
+
+            {
+              "ReqItemId" : 955,
+              "ReqItemCount" : 5
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1055,
+          "ResonanceGrade" : 1,
+          "UnlockLevel" : 20,
+          "JourneyStatType" : "JST_HEALTH",
+          "JourneyStatValue" : 30,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 75
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 720
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1055,
+          "ResonanceGrade" : 2,
+          "UnlockLevel" : 40,
+          "JourneyStatType" : "JST_ENDURANCE",
+          "JourneyStatValue" : 30,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_HP",
+              "StatValue" : 200
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 16
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1055,
+          "ResonanceGrade" : 3,
+          "UnlockLevel" : 60,
+          "GetPotenId" : "POTEN_PASSIVE_0002",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 100
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 60
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 907,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 906,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1055,
+          "ResonanceGrade" : 4,
+          "UnlockLevel" : 80,
+          "JourneyStatType" : "JST_HEALTH",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_DEF",
+              "StatValue" : 200
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 907,
+              "ReqItemCount" : 12
+            },
+
+            {
+              "ReqItemId" : 906,
+              "ReqItemCount" : 6
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1055,
+          "ResonanceGrade" : 5,
+          "UnlockLevel" : 100,
+          "JourneyStatType" : "JST_ENDURANCE",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 900
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 75
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 907,
+              "ReqItemCount" : 16
+            },
+
+            {
+              "ReqItemId" : 906,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1055,
+          "ResonanceGrade" : 6,
+          "UnlockLevel" : 120,
+          "GetPotenId" : "POTEN_PASSIVE_0003",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_RATE_EFFECT_EVADE",
+              "StatValue" : 800
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 907,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 906,
+              "ReqItemCount" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1055,
+          "ResonanceGrade" : 7,
+          "UnlockLevel" : 140,
+          "JourneyStatType" : "JST_HEALTH",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 125
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 1080
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 956,
+              "ReqItemCount" : 4
+            },
+
+            {
+              "ReqItemId" : 955,
+              "ReqItemCount" : 2
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1055,
+          "ResonanceGrade" : 8,
+          "UnlockLevel" : 160,
+          "JourneyStatType" : "JST_HEALTH",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_DEF",
+              "StatValue" : 400
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 956,
+              "ReqItemCount" : 6
+            },
+
+            {
+              "ReqItemId" : 955,
+              "ReqItemCount" : 3
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1055,
+          "ResonanceGrade" : 9,
+          "UnlockLevel" : 180,
+          "JourneyStatType" : "JST_ENDURANCE",
+          "JourneyStatValue" : 50,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 150
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 90
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 956,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 955,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1055,
+          "ResonanceGrade" : 10,
+          "UnlockLevel" : 200,
+          "GetPotenId" : "POTEN_PASSIVE_1002",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_HP",
+              "StatValue" : 600
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 956,
+              "ReqItemCount" : 10
+            },
+
+            {
+              "ReqItemId" : 955,
+              "ReqItemCount" : 5
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1056,
+          "ResonanceGrade" : 1,
+          "UnlockLevel" : 20,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 30,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 100
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 720
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1056,
+          "ResonanceGrade" : 2,
+          "UnlockLevel" : 40,
+          "JourneyStatType" : "JST_HEALTH",
+          "JourneyStatValue" : 30,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_ATK",
+              "StatValue" : 200
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 16
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1056,
+          "ResonanceGrade" : 3,
+          "UnlockLevel" : 60,
+          "GetPotenId" : "POTEN_PASSIVE_0001",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 125
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 50
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 905,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 904,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1056,
+          "ResonanceGrade" : 4,
+          "UnlockLevel" : 80,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_RATE_CRITICAL",
+              "StatValue" : 300
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 905,
+              "ReqItemCount" : 12
+            },
+
+            {
+              "ReqItemId" : 904,
+              "ReqItemCount" : 6
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1056,
+          "ResonanceGrade" : 5,
+          "UnlockLevel" : 100,
+          "JourneyStatType" : "JST_HEALTH",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 900
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 60
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 905,
+              "ReqItemCount" : 16
+            },
+
+            {
+              "ReqItemId" : 904,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1056,
+          "ResonanceGrade" : 6,
+          "UnlockLevel" : 120,
+          "GetPotenId" : "POTEN_PASSIVE_0005",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_HP",
+              "StatValue" : 400
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 905,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 904,
+              "ReqItemCount" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1056,
+          "ResonanceGrade" : 7,
+          "UnlockLevel" : 140,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 175
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 1080
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 954,
+              "ReqItemCount" : 4
+            },
+
+            {
+              "ReqItemId" : 953,
+              "ReqItemCount" : 2
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1056,
+          "ResonanceGrade" : 8,
+          "UnlockLevel" : 160,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_RATE_CRITICAL",
+              "StatValue" : 600
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 954,
+              "ReqItemCount" : 6
+            },
+
+            {
+              "ReqItemId" : 953,
+              "ReqItemCount" : 3
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1056,
+          "ResonanceGrade" : 9,
+          "UnlockLevel" : 180,
+          "JourneyStatType" : "JST_HEALTH",
+          "JourneyStatValue" : 50,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 200
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 70
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 954,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 953,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1056,
+          "ResonanceGrade" : 10,
+          "UnlockLevel" : 200,
+          "GetPotenId" : "POTEN_PASSIVE_1001",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_ATK",
+              "StatValue" : 600
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 954,
+              "ReqItemCount" : 10
+            },
+
+            {
+              "ReqItemId" : 953,
+              "ReqItemCount" : 5
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1057,
+          "ResonanceGrade" : 1,
+          "UnlockLevel" : 20,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 30,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 100
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 720
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1057,
+          "ResonanceGrade" : 2,
+          "UnlockLevel" : 40,
+          "JourneyStatType" : "JST_HEALTH",
+          "JourneyStatValue" : 30,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_ATK",
+              "StatValue" : 200
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 16
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1057,
+          "ResonanceGrade" : 3,
+          "UnlockLevel" : 60,
+          "GetPotenId" : "POTEN_PASSIVE_0001",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 125
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 50
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 905,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 904,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1057,
+          "ResonanceGrade" : 4,
+          "UnlockLevel" : 80,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_RATE_CRITICAL_DAMAGE",
+              "StatValue" : 600
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 905,
+              "ReqItemCount" : 12
+            },
+
+            {
+              "ReqItemId" : 904,
+              "ReqItemCount" : 6
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1057,
+          "ResonanceGrade" : 5,
+          "UnlockLevel" : 100,
+          "JourneyStatType" : "JST_HEALTH",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 900
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 60
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 905,
+              "ReqItemCount" : 16
+            },
+
+            {
+              "ReqItemId" : 904,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1057,
+          "ResonanceGrade" : 6,
+          "UnlockLevel" : 120,
+          "GetPotenId" : "POTEN_PASSIVE_0006",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_ATK",
+              "StatValue" : 400
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 905,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 904,
+              "ReqItemCount" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1057,
+          "ResonanceGrade" : 7,
+          "UnlockLevel" : 140,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 175
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 1080
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 954,
+              "ReqItemCount" : 4
+            },
+
+            {
+              "ReqItemId" : 953,
+              "ReqItemCount" : 2
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1057,
+          "ResonanceGrade" : 8,
+          "UnlockLevel" : 160,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_RATE_CRITICAL_DAMAGE",
+              "StatValue" : 1200
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 954,
+              "ReqItemCount" : 6
+            },
+
+            {
+              "ReqItemId" : 953,
+              "ReqItemCount" : 3
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1057,
+          "ResonanceGrade" : 9,
+          "UnlockLevel" : 180,
+          "JourneyStatType" : "JST_HEALTH",
+          "JourneyStatValue" : 50,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 200
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 70
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 954,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 953,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1057,
+          "ResonanceGrade" : 10,
+          "UnlockLevel" : 200,
+          "GetPotenId" : "POTEN_PASSIVE_1001",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_ATK",
+              "StatValue" : 600
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 954,
+              "ReqItemCount" : 10
+            },
+
+            {
+              "ReqItemId" : 953,
+              "ReqItemCount" : 5
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1058,
+          "ResonanceGrade" : 1,
+          "UnlockLevel" : 20,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 30,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 100
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 720
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1058,
+          "ResonanceGrade" : 2,
+          "UnlockLevel" : 40,
+          "JourneyStatType" : "JST_FOCUS",
+          "JourneyStatValue" : 45,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_RATE_CRITICAL",
+              "StatValue" : 300
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 16
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1058,
+          "ResonanceGrade" : 3,
+          "UnlockLevel" : 60,
+          "GetPotenId" : "POTEN_PASSIVE_0005",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 125
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 50
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 906,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 905,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1058,
+          "ResonanceGrade" : 4,
+          "UnlockLevel" : 80,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_ATK",
+              "StatValue" : 200
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 906,
+              "ReqItemCount" : 12
+            },
+
+            {
+              "ReqItemId" : 905,
+              "ReqItemCount" : 6
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1058,
+          "ResonanceGrade" : 5,
+          "UnlockLevel" : 100,
+          "JourneyStatType" : "JST_FOCUS",
+          "JourneyStatValue" : 60,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 900
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 60
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 906,
+              "ReqItemCount" : 16
+            },
+
+            {
+              "ReqItemId" : 905,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1058,
+          "ResonanceGrade" : 6,
+          "UnlockLevel" : 120,
+          "GetPotenId" : "POTEN_PASSIVE_0001",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_TURN_SPEED",
+              "StatValue" : 4
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 906,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 905,
+              "ReqItemCount" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1058,
+          "ResonanceGrade" : 7,
+          "UnlockLevel" : 140,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 175
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 1080
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 955,
+              "ReqItemCount" : 4
+            },
+
+            {
+              "ReqItemId" : 954,
+              "ReqItemCount" : 2
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1058,
+          "ResonanceGrade" : 8,
+          "UnlockLevel" : 160,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_ATK",
+              "StatValue" : 400
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 955,
+              "ReqItemCount" : 6
+            },
+
+            {
+              "ReqItemId" : 954,
+              "ReqItemCount" : 3
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1058,
+          "ResonanceGrade" : 9,
+          "UnlockLevel" : 180,
+          "JourneyStatType" : "JST_FOCUS",
+          "JourneyStatValue" : 75,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 200
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 70
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 955,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 954,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 1058,
+          "ResonanceGrade" : 10,
+          "UnlockLevel" : 200,
+          "GetPotenId" : "POTEN_PASSIVE_1005",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_RATE_CRITICAL",
+              "StatValue" : 900
             }
           ],
           "ReqItemData" : 
@@ -9005,7 +14981,7 @@
           "ResonanceGrade" : 2,
           "UnlockLevel" : 40,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 30,
+          "JourneyStatValue" : 45,
           "StatData" : 
           [
             {
@@ -9100,7 +15076,7 @@
           "ResonanceGrade" : 5,
           "UnlockLevel" : 100,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 40,
+          "JourneyStatValue" : 60,
           "StatData" : 
           [
             {
@@ -9237,7 +15213,7 @@
           "ResonanceGrade" : 9,
           "UnlockLevel" : 180,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 50,
+          "JourneyStatValue" : 75,
           "StatData" : 
           [
             {
@@ -9305,7 +15281,7 @@
           "ResonanceGrade" : 1,
           "UnlockLevel" : 20,
           "JourneyStatType" : "JST_PROTECT",
-          "JourneyStatValue" : 30,
+          "JourneyStatValue" : 45,
           "StatData" : 
           [
             {
@@ -9400,7 +15376,7 @@
           "ResonanceGrade" : 4,
           "UnlockLevel" : 80,
           "JourneyStatType" : "JST_PROTECT",
-          "JourneyStatValue" : 40,
+          "JourneyStatValue" : 60,
           "StatData" : 
           [
             {
@@ -9500,7 +15476,7 @@
           "ResonanceGrade" : 7,
           "UnlockLevel" : 140,
           "JourneyStatType" : "JST_PROTECT",
-          "JourneyStatValue" : 40,
+          "JourneyStatValue" : 60,
           "StatData" : 
           [
             {
@@ -9537,7 +15513,7 @@
           "ResonanceGrade" : 8,
           "UnlockLevel" : 160,
           "JourneyStatType" : "JST_PROTECT",
-          "JourneyStatValue" : 40,
+          "JourneyStatValue" : 60,
           "StatData" : 
           [
             {
@@ -10001,7 +15977,7 @@
           "ResonanceGrade" : 2,
           "UnlockLevel" : 40,
           "JourneyStatType" : "JST_PROTECT",
-          "JourneyStatValue" : 30,
+          "JourneyStatValue" : 45,
           "StatData" : 
           [
             {
@@ -10096,7 +16072,7 @@
           "ResonanceGrade" : 5,
           "UnlockLevel" : 100,
           "JourneyStatType" : "JST_PROTECT",
-          "JourneyStatValue" : 40,
+          "JourneyStatValue" : 60,
           "StatData" : 
           [
             {
@@ -10233,7 +16209,7 @@
           "ResonanceGrade" : 9,
           "UnlockLevel" : 180,
           "JourneyStatType" : "JST_PROTECT",
-          "JourneyStatValue" : 50,
+          "JourneyStatValue" : 75,
           "StatData" : 
           [
             {
@@ -10665,7 +16641,7 @@
           "ResonanceGrade" : 2,
           "UnlockLevel" : 40,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 30,
+          "JourneyStatValue" : 45,
           "StatData" : 
           [
             {
@@ -10760,7 +16736,7 @@
           "ResonanceGrade" : 5,
           "UnlockLevel" : 100,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 40,
+          "JourneyStatValue" : 60,
           "StatData" : 
           [
             {
@@ -10897,7 +16873,7 @@
           "ResonanceGrade" : 9,
           "UnlockLevel" : 180,
           "JourneyStatType" : "JST_FOCUS",
-          "JourneyStatValue" : 50,
+          "JourneyStatValue" : 75,
           "StatData" : 
           [
             {
@@ -10939,6 +16915,1002 @@
             {
               "StatType" : "NST_RATE_CRITICAL_DAMAGE",
               "StatValue" : 1800
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 953,
+              "ReqItemCount" : 10
+            },
+
+            {
+              "ReqItemId" : 952,
+              "ReqItemCount" : 5
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 3001,
+          "ResonanceGrade" : 1,
+          "UnlockLevel" : 20,
+          "JourneyStatType" : "JST_HEALTH",
+          "JourneyStatValue" : 30,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 75
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 720
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 3001,
+          "ResonanceGrade" : 2,
+          "UnlockLevel" : 40,
+          "JourneyStatType" : "JST_ENDURANCE",
+          "JourneyStatValue" : 30,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_HP",
+              "StatValue" : 200
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 16
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 3001,
+          "ResonanceGrade" : 3,
+          "UnlockLevel" : 60,
+          "GetPotenId" : "POTEN_PASSIVE_0002",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 100
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 60
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 902,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 907,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 3001,
+          "ResonanceGrade" : 4,
+          "UnlockLevel" : 80,
+          "JourneyStatType" : "JST_HEALTH",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_DEF",
+              "StatValue" : 200
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 902,
+              "ReqItemCount" : 12
+            },
+
+            {
+              "ReqItemId" : 907,
+              "ReqItemCount" : 6
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 3001,
+          "ResonanceGrade" : 5,
+          "UnlockLevel" : 100,
+          "JourneyStatType" : "JST_ENDURANCE",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 900
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 75
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 902,
+              "ReqItemCount" : 16
+            },
+
+            {
+              "ReqItemId" : 907,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 3001,
+          "ResonanceGrade" : 6,
+          "UnlockLevel" : 120,
+          "GetPotenId" : "POTEN_PASSIVE_0003",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_RATE_EFFECT_EVADE",
+              "StatValue" : 800
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 902,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 907,
+              "ReqItemCount" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 3001,
+          "ResonanceGrade" : 7,
+          "UnlockLevel" : 140,
+          "JourneyStatType" : "JST_HEALTH",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 125
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 1080
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 951,
+              "ReqItemCount" : 4
+            },
+
+            {
+              "ReqItemId" : 956,
+              "ReqItemCount" : 2
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 3001,
+          "ResonanceGrade" : 8,
+          "UnlockLevel" : 160,
+          "JourneyStatType" : "JST_HEALTH",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_DEF",
+              "StatValue" : 400
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 951,
+              "ReqItemCount" : 6
+            },
+
+            {
+              "ReqItemId" : 956,
+              "ReqItemCount" : 3
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 3001,
+          "ResonanceGrade" : 9,
+          "UnlockLevel" : 180,
+          "JourneyStatType" : "JST_ENDURANCE",
+          "JourneyStatValue" : 50,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 150
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 90
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 951,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 956,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 3001,
+          "ResonanceGrade" : 10,
+          "UnlockLevel" : 200,
+          "GetPotenId" : "POTEN_PASSIVE_1002",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_HP",
+              "StatValue" : 600
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 951,
+              "ReqItemCount" : 10
+            },
+
+            {
+              "ReqItemId" : 956,
+              "ReqItemCount" : 5
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 3002,
+          "ResonanceGrade" : 1,
+          "UnlockLevel" : 20,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 30,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 100
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 720
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 3002,
+          "ResonanceGrade" : 2,
+          "UnlockLevel" : 40,
+          "JourneyStatType" : "JST_FOCUS",
+          "JourneyStatValue" : 45,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_ATK",
+              "StatValue" : 200
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 16
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 3002,
+          "ResonanceGrade" : 3,
+          "UnlockLevel" : 60,
+          "GetPotenId" : "POTEN_PASSIVE_0001",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 125
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 50
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 904,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 903,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 3002,
+          "ResonanceGrade" : 4,
+          "UnlockLevel" : 80,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_RATE_EFFECT_HIT",
+              "StatValue" : 400
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 904,
+              "ReqItemCount" : 12
+            },
+
+            {
+              "ReqItemId" : 903,
+              "ReqItemCount" : 6
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 3002,
+          "ResonanceGrade" : 5,
+          "UnlockLevel" : 100,
+          "JourneyStatType" : "JST_FOCUS",
+          "JourneyStatValue" : 60,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 900
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 60
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 904,
+              "ReqItemCount" : 16
+            },
+
+            {
+              "ReqItemId" : 903,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 3002,
+          "ResonanceGrade" : 6,
+          "UnlockLevel" : 120,
+          "GetPotenId" : "POTEN_PASSIVE_0007",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_RATE_CRITICAL",
+              "StatValue" : 600
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 904,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 903,
+              "ReqItemCount" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 3002,
+          "ResonanceGrade" : 7,
+          "UnlockLevel" : 140,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 175
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 1080
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 953,
+              "ReqItemCount" : 4
+            },
+
+            {
+              "ReqItemId" : 952,
+              "ReqItemCount" : 2
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 3002,
+          "ResonanceGrade" : 8,
+          "UnlockLevel" : 160,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_RATE_EFFECT_HIT",
+              "StatValue" : 800
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 953,
+              "ReqItemCount" : 6
+            },
+
+            {
+              "ReqItemId" : 952,
+              "ReqItemCount" : 3
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 3002,
+          "ResonanceGrade" : 9,
+          "UnlockLevel" : 180,
+          "JourneyStatType" : "JST_FOCUS",
+          "JourneyStatValue" : 75,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 200
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 70
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 953,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 952,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 3002,
+          "ResonanceGrade" : 10,
+          "UnlockLevel" : 200,
+          "GetPotenId" : "POTEN_PASSIVE_1001",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_ATK",
+              "StatValue" : 600
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 953,
+              "ReqItemCount" : 10
+            },
+
+            {
+              "ReqItemId" : 952,
+              "ReqItemCount" : 5
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 3003,
+          "ResonanceGrade" : 1,
+          "UnlockLevel" : 20,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 30,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 100
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 720
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 3003,
+          "ResonanceGrade" : 2,
+          "UnlockLevel" : 40,
+          "JourneyStatType" : "JST_FOCUS",
+          "JourneyStatValue" : 45,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_ATK",
+              "StatValue" : 200
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 901,
+              "ReqItemCount" : 16
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 3003,
+          "ResonanceGrade" : 3,
+          "UnlockLevel" : 60,
+          "GetPotenId" : "POTEN_PASSIVE_0001",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 125
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 50
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 904,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 903,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 3003,
+          "ResonanceGrade" : 4,
+          "UnlockLevel" : 80,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_TURN_SPEED",
+              "StatValue" : 2
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 30
+            },
+
+            {
+              "ReqItemId" : 904,
+              "ReqItemCount" : 12
+            },
+
+            {
+              "ReqItemId" : 903,
+              "ReqItemCount" : 6
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 3003,
+          "ResonanceGrade" : 5,
+          "UnlockLevel" : 100,
+          "JourneyStatType" : "JST_FOCUS",
+          "JourneyStatValue" : 60,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 900
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 60
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 904,
+              "ReqItemCount" : 16
+            },
+
+            {
+              "ReqItemId" : 903,
+              "ReqItemCount" : 8
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 3003,
+          "ResonanceGrade" : 6,
+          "UnlockLevel" : 120,
+          "GetPotenId" : "POTEN_PASSIVE_0004",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_RATE_CRITICAL",
+              "StatValue" : 600
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 40
+            },
+
+            {
+              "ReqItemId" : 904,
+              "ReqItemCount" : 20
+            },
+
+            {
+              "ReqItemId" : 903,
+              "ReqItemCount" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 3003,
+          "ResonanceGrade" : 7,
+          "UnlockLevel" : 140,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 175
+            },
+
+            {
+              "StatType" : "NST_HP",
+              "StatValue" : 1080
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 953,
+              "ReqItemCount" : 4
+            },
+
+            {
+              "ReqItemId" : 952,
+              "ReqItemCount" : 2
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 3003,
+          "ResonanceGrade" : 8,
+          "UnlockLevel" : 160,
+          "JourneyStatType" : "JST_POWER",
+          "JourneyStatValue" : 40,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_TURN_SPEED",
+              "StatValue" : 4
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 50
+            },
+
+            {
+              "ReqItemId" : 953,
+              "ReqItemCount" : 6
+            },
+
+            {
+              "ReqItemId" : 952,
+              "ReqItemCount" : 3
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 3003,
+          "ResonanceGrade" : 9,
+          "UnlockLevel" : 180,
+          "JourneyStatType" : "JST_FOCUS",
+          "JourneyStatValue" : 75,
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_ATK",
+              "StatValue" : 200
+            },
+
+            {
+              "StatType" : "NST_DEF",
+              "StatValue" : 70
+            }
+          ],
+          "ReqItemData" : 
+          [
+            {
+              "ReqItemId" : 200,
+              "ReqItemCount" : 60
+            },
+
+            {
+              "ReqItemId" : 953,
+              "ReqItemCount" : 8
+            },
+
+            {
+              "ReqItemId" : 952,
+              "ReqItemCount" : 4
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "UnitId" : 3003,
+          "ResonanceGrade" : 10,
+          "UnlockLevel" : 200,
+          "GetPotenId" : "POTEN_PASSIVE_1001",
+          "StatData" : 
+          [
+            {
+              "StatType" : "NST_NV_RATE_ATK",
+              "StatValue" : 600
             }
           ],
           "ReqItemData" : 

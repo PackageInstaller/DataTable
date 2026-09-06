@@ -1,0 +1,40 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_APOSTLE_TYRIA_REQUEST_VICTORY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_REQUEST_VICTORY",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_CANDLE",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_REQUEST_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "의뢰에서 성과를 낸 <color=#F7BE45>[CHARACTER_NAME]</color>(은)는 기분이 좋아 보인다.",
+      "UnitTalk_ENG": "After doing well on the quest, <color=#F7BE45>[CHARACTER_NAME]</color> seemed to be in a good mood.",
+      "UnitTalk_JPN": "依頼で成果を上げた<color=#F7BE45>[CHARACTER_NAME]</color>は、気分がよさそうだ。",
+      "UnitTalk_CHN": "在委托中取得成果的<color=#F7BE45>[CHARACTER_NAME]</color>看起来心情不错！",
+      "UnitTalk_TWN": "在委託中取得成果的<color=#F7BE45>[CHARACTER_NAME]</color>看起來心情不錯！",
+      "UnitTalk_FRA": "Il semble que <color=#F7BE45>[CHARACTER_NAME]</color> soit de bonne humeur après avoir accompli la mission.",
+      "UnitTalk_DEU": "„<color=#F7BE45>[CHARACTER_NAME]</color> scheint gute Laune zu haben, nachdem der Auftrag erfolgreich abgeschlossen wurde.“",
+      "UnitTalk_ESP": "Parece que <color=#F7BE45>[CHARACTER_NAME]</color> está de buen humor después de completar la misión.",
+      "UnitTalk_PRT": "<color=#F7BE45>[CHARACTER_NAME]</color> parece de bom humor após ter sucesso na missão.",
+      "UnitTalk_THA": "ดูเหมือนว่า <color=#F7BE45>[CHARACTER_NAME]</color> จะอารมณ์ดีหลังจากทำภารกิจสำเร็จ",
+      "UnitTalk_IND": "Sepertinya <color=#F7BE45>[CHARACTER_NAME]</color> sedang dalam suasana hati yang baik setelah berhasil menyelesaikan misi.",
+      "UnitTalk_VIE": "<color=#F7BE45>[CHARACTER_NAME]</color> có vẻ đang rất vui sau khi thành công trong nhiệm vụ.",
+      "UnitTalk_HIN": "लगता है कि <color=#F7BE45>[CHARACTER_NAME]</color> मिशन पूरा करने के बाद अच्छे मूड में है।",
+      "TalkTime": 0.03
+    }
+  ]
+}

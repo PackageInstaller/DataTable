@@ -1,0 +1,102 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: FAN_VOTE_REWARD_GROUP_TEMPLET",
+    "_Version": 0,
+    "Data": [
+        {
+          "VoteRewardGroupId" : 1,
+          "EventItemId" : 414,
+          "ReqVoteValue" : 10,
+          "FanVoteRewardData" : 
+          [
+            {
+              "RewardType" : "RT_NORMAL_ITEM",
+              "RewardItem" : 103,
+              "RewardValue" : 20
+            },
+
+            {
+              "RewardType" : "RT_NORMAL_ITEM",
+              "RewardItem" : 101,
+              "RewardValue" : 2000
+            }
+          ]
+        },
+        {
+          "VoteRewardGroupId" : 1,
+          "EventItemId" : 414,
+          "ReqVoteValue" : 20,
+          "FanVoteRewardData" : 
+          [
+            {
+              "RewardType" : "RT_NORMAL_ITEM",
+              "RewardItem" : 103,
+              "RewardValue" : 20
+            },
+
+            {
+              "RewardType" : "RT_NORMAL_ITEM",
+              "RewardItem" : 101,
+              "RewardValue" : 2000
+            }
+          ]
+        },
+        {
+          "VoteRewardGroupId" : 1,
+          "EventItemId" : 414,
+          "ReqVoteValue" : 30,
+          "FanVoteRewardData" : 
+          [
+            {
+              "RewardType" : "RT_NORMAL_ITEM",
+              "RewardItem" : 103,
+              "RewardValue" : 20
+            },
+
+            {
+              "RewardType" : "RT_NORMAL_ITEM",
+              "RewardItem" : 101,
+              "RewardValue" : 2000
+            }
+          ]
+        },
+        {
+          "VoteRewardGroupId" : 1,
+          "EventItemId" : 414,
+          "ReqVoteValue" : 40,
+          "FanVoteRewardData" : 
+          [
+            {
+              "RewardType" : "RT_NORMAL_ITEM",
+              "RewardItem" : 103,
+              "RewardValue" : 20
+            },
+
+            {
+              "RewardType" : "RT_NORMAL_ITEM",
+              "RewardItem" : 101,
+              "RewardValue" : 2000
+            }
+          ]
+        },
+        {
+          "VoteRewardGroupId" : 1,
+          "EventItemId" : 414,
+          "ReqVoteValue" : 50,
+          "FanVoteRewardData" : 
+          [
+            {
+              "RewardType" : "RT_NORMAL_ITEM",
+              "RewardItem" : 103,
+              "RewardValue" : 20
+            },
+
+            {
+              "RewardType" : "RT_NORMAL_ITEM",
+              "RewardItem" : 101,
+              "RewardValue" : 2000
+            }
+          ]
+        }
+    ]
+}

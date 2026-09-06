@@ -1,0 +1,35 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_STRANISEARL_ROSEBLADE_REQUEST_VICTORY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_CANDLE",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN"
+    },
+    {
+      "Uid": 2,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "의뢰를 마친 <color=#F7BE45>[CHARACTER_NAME]</color>(은)는 홀가분한 얼굴로 술통을 들었다.",
+      "UnitTalk_ENG": "With the quest complete, <color=#F7BE45>[CHARACTER_NAME]</color> raised her flask with a carefree smile.",
+      "UnitTalk_JPN": "依頼を終えた<color=#F7BE45>[CHARACTER_NAME]</color>は晴れやかな表情でスキットルを手にした。",
+      "UnitTalk_CHN": "完成委托的<color=#F7BE45>[CHARACTER_NAME]</color>带着轻松的表情举起了酒壶。",
+      "UnitTalk_TWN": "完成委託的<color=#F7BE45>[CHARACTER_NAME]</color>帶著輕鬆的表情舉起了酒壺。",
+      "UnitTalk_FRA": "<color=#F7BE45>[CHARACTER_NAME]</color>, sa mission terminée, souleva la chope avec un air soulagé.",
+      "UnitTalk_DEU": "Mit erleichtertem Gesicht hob <color=#F7BE45>[CHARACTER_NAME]</color> den Krug.",
+      "UnitTalk_ESP": "Con el encargo terminado, <color=#F7BE45>[CHARACTER_NAME]</color> cogió el barril con rostro aliviado.",
+      "UnitTalk_PRT": "Com o pedido concluído, <color=#F7BE45>[CHARACTER_NAME]</color> pegou o barril com um rosto aliviado.",
+      "UnitTalk_THA": "<color=#F7BE45>[CHARACTER_NAME]</color> ที่ทำภารกิจเสร็จแล้ว หยิบถังเหล้าขึ้นมาด้วยสีหน้าโล่งใจ",
+      "UnitTalk_IND": "Selesai menjalankan misi, <color=#F7BE45>[CHARACTER_NAME]</color> mengangkat tong arak dengan wajah lega.",
+      "UnitTalk_VIE": "Sau khi hoàn thành nhiệm vụ, <color=#F7BE45>[CHARACTER_NAME]</color> với vẻ mặt nhẹ nhõm đã nâng thùng rượu lên.",
+      "TalkTime": 0.03
+    }
+  ]
+}

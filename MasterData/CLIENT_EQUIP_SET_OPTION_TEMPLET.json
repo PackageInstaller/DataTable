@@ -9,7 +9,7 @@
           "NeedParts" : 4,
           "SetIconImg" : "ICON_SET_4P_TURN_SPD.png",
           "SetName" : "SI_EQUIP_SET_NAME_1",
-          "SetDesc" : "SI_EQUIP_SET_DESC_1",
+          "SetDesc" : "SI_EQUIP_SET_DESC_1@@15@@4",
           "SetStat" : 
           [
             {
@@ -24,12 +24,12 @@
           "NeedParts" : 2,
           "SetIconImg" : "ICON_SET_2P_DEF_RATE.png",
           "SetName" : "SI_EQUIP_SET_NAME_2",
-          "SetDesc" : "SI_EQUIP_SET_DESC_2",
+          "SetDesc" : "SI_EQUIP_SET_DESC_2@@15@@2",
           "SetStat" : 
           [
             {
               "SetStatType" : "NST_NV_RATE_DEF",
-              "SetStatValue" : 1000
+              "SetStatValue" : 1500
             }
           ]
         },
@@ -39,7 +39,7 @@
           "NeedParts" : 2,
           "SetIconImg" : "ICON_SET_2P_EFFECT_RATE.png",
           "SetName" : "SI_EQUIP_SET_NAME_3",
-          "SetDesc" : "SI_EQUIP_SET_DESC_3",
+          "SetDesc" : "SI_EQUIP_SET_DESC_3@@20@@2",
           "SetStat" : 
           [
             {
@@ -54,7 +54,7 @@
           "NeedParts" : 2,
           "SetIconImg" : "ICON_SET_2P_EFFECT_EVADE.png",
           "SetName" : "SI_EQUIP_SET_NAME_4",
-          "SetDesc" : "SI_EQUIP_SET_DESC_4",
+          "SetDesc" : "SI_EQUIP_SET_DESC_4@@20@@2",
           "SetStat" : 
           [
             {
@@ -69,7 +69,7 @@
           "NeedParts" : 4,
           "SetIconImg" : "ICON_SET_4P_ATK_RATE.png",
           "SetName" : "SI_EQUIP_SET_NAME_5",
-          "SetDesc" : "SI_EQUIP_SET_DESC_5",
+          "SetDesc" : "SI_EQUIP_SET_DESC_5@@20@@4",
           "SetStat" : 
           [
             {
@@ -84,12 +84,12 @@
           "NeedParts" : 4,
           "SetIconImg" : "ICON_SET_2P_CRI_RATE.png",
           "SetName" : "SI_EQUIP_SET_NAME_6",
-          "SetDesc" : "SI_EQUIP_SET_DESC_6",
+          "SetDesc" : "SI_EQUIP_SET_DESC_6@@30@@4",
           "SetStat" : 
           [
             {
               "SetStatType" : "NST_RATE_CRITICAL",
-              "SetStatValue" : 2000
+              "SetStatValue" : 3000
             }
           ]
         },
@@ -99,7 +99,7 @@
           "NeedParts" : 2,
           "SetIconImg" : "ICON_SET_2P_ATK_RATE_EFFECT_EVADE.png",
           "SetName" : "SI_EQUIP_SET_NAME_7",
-          "SetDesc" : "SI_EQUIP_SET_DESC_7",
+          "SetDesc" : "SI_EQUIP_SET_DESC_7@@5@@5@@2",
           "SetStat" : 
           [
             {
@@ -119,12 +119,12 @@
           "NeedParts" : 4,
           "SetIconImg" : "ICON_SET_2P_CRI_RATE_EFFECT_RATE.png",
           "SetName" : "SI_EQUIP_SET_NAME_8",
-          "SetDesc" : "SI_EQUIP_SET_DESC_8",
+          "SetDesc" : "SI_EQUIP_SET_DESC_8@@15@@20@@4",
           "SetStat" : 
           [
             {
               "SetStatType" : "NST_RATE_CRITICAL",
-              "SetStatValue" : 1000
+              "SetStatValue" : 1500
             },
 
             {
@@ -139,12 +139,12 @@
           "NeedParts" : 4,
           "SetIconImg" : "ICON_SET_4P_HP_RATE.png",
           "SetName" : "SI_EQUIP_SET_NAME_9",
-          "SetDesc" : "SI_EQUIP_SET_DESC_9",
+          "SetDesc" : "SI_EQUIP_SET_DESC_9@@30@@4",
           "SetStat" : 
           [
             {
               "SetStatType" : "NST_NV_RATE_HP",
-              "SetStatValue" : 2000
+              "SetStatValue" : 3000
             }
           ]
         },
@@ -154,12 +154,12 @@
           "NeedParts" : 4,
           "SetIconImg" : "ICON_SET_4P_CRI_DMG.png",
           "SetName" : "SI_EQUIP_SET_NAME_10",
-          "SetDesc" : "SI_EQUIP_SET_DESC_10",
+          "SetDesc" : "SI_EQUIP_SET_DESC_10@@40@@4",
           "SetStat" : 
           [
             {
               "SetStatType" : "NST_RATE_CRITICAL_DAMAGE",
-              "SetStatValue" : 3000
+              "SetStatValue" : 4000
             }
           ]
         },
@@ -169,12 +169,12 @@
           "NeedParts" : 2,
           "SetIconImg" : "ICON_SET_4P_HP_RATE_EFFECT_EVADE.png",
           "SetName" : "SI_EQUIP_SET_NAME_11",
-          "SetDesc" : "SI_EQUIP_SET_DESC_11",
+          "SetDesc" : "SI_EQUIP_SET_DESC_11@@10@@5@@2",
           "SetStat" : 
           [
             {
               "SetStatType" : "NST_NV_RATE_HP",
-              "SetStatValue" : 500
+              "SetStatValue" : 1000
             },
 
             {
@@ -189,12 +189,12 @@
           "NeedParts" : 4,
           "SetIconImg" : "ICON_SET_4P_CRI_DMG_EFFECT_RATE.png",
           "SetName" : "SI_EQUIP_SET_NAME_12",
-          "SetDesc" : "SI_EQUIP_SET_DESC_12",
+          "SetDesc" : "SI_EQUIP_SET_DESC_12@@20@@20@@4",
           "SetStat" : 
           [
             {
               "SetStatType" : "NST_RATE_CRITICAL_DAMAGE",
-              "SetStatValue" : 1500
+              "SetStatValue" : 2000
             },
 
             {

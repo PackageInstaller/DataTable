@@ -1,0 +1,39 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_MAID_BELL_REQUEST_VICTORY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_BELL_REQUEST_VICTORY",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_CANDLE",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_BELL_REQUEST_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "의뢰를 성공적으로 끝낸 <color=#F7BE45>[CHARACTER_NAME]</color>(은)는 조금 건방지게 굴었다.",
+      "UnitTalk_ENG": "After a successful quest, <color=#F7BE45>[CHARACTER_NAME]</color> acted a little full of herself.",
+      "UnitTalk_JPN": "依頼を無事に終えた<color=#F7BE45>[CHARACTER_NAME]</color>は少し生意気な態度を見せた。",
+      "UnitTalk_CHN": "顺利完成委托的<color=#F7BE45>[CHARACTER_NAME]</color>态度变得有点傲慢起来了。",
+      "UnitTalk_TWN": "順利完成委託的<color=#F7BE45>[CHARACTER_NAME]</color>態度變得有點傲慢起來了。",
+      "UnitTalk_FRA": "Après avoir terminé la quête avec succès, <color=#F7BE45>[CHARACTER_NAME]</color> a fait preuve d'un peu de suffisance.",
+      "UnitTalk_DEU": "Nachdem <color=#F7BE45>[CHARACTER_NAME]</color> den Auftrag erfolgreich abgeschlossen hatte, wurde sie etwas überheblich.",
+      "UnitTalk_ESP": "Tras completar la misión con éxito, <color=#F7BE45>[CHARACTER_NAME]</color> se dio un poco de aires.",
+      "UnitTalk_PRT": "Após concluir a missão com sucesso, <color=#F7BE45>[CHARACTER_NAME]</color> agiu um pouco convencido(a).",
+      "UnitTalk_THA": "<color=#F7BE45>[CHARACTER_NAME]</color> ที่ทำภารกิจสำเร็จแล้ว ก็ทำตัวอวดดีเล็กน้อย",
+      "UnitTalk_IND": "Setelah berhasil menyelesaikan misi, <color=#F7BE45>[CHARACTER_NAME]</color> sedikit bertingkah sombong.",
+      "UnitTalk_VIE": "Sau khi hoàn thành nhiệm vụ, <color=#F7BE45>[CHARACTER_NAME]</color> tỏ ra hơi tự mãn.",
+      "UnitTalk_HIN": "कार्य सफलतापूर्वक पूरा करने के बाद, <color=#F7BE45>[CHARACTER_NAME]</color> ने थोड़ा घमंडी व्यवहार किया।",
+      "TalkTime": 0.03
+    }
+  ]
+}

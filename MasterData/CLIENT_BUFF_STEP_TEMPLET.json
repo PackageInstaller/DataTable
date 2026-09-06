@@ -1,0 +1,80 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: BUFF_STEP_TEMPLET",
+    "_Version": 0,
+    "Data": [
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BuffStepGroupId" : 3,
+          "BuffStep1" : "BI_ATTACK_INCREASE",
+          "BuffStep2" : "BI_ATTACK_AMPLIFICATION"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BuffStepGroupId" : 4,
+          "BuffStep1" : "BI_DEFENSE_INCREASE",
+          "BuffStep2" : "BI_DEFENSE_AMPLIFICATION"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BuffStepGroupId" : 5,
+          "BuffStep1" : "BI_CRITICAL_CHANCE_INCREASE",
+          "BuffStep2" : "BI_CRITICAL_CHANCE_AMPLIFICATION"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BuffStepGroupId" : 6,
+          "BuffStep1" : "BI_CRITICAL_DAMAGE_INCREASE",
+          "BuffStep2" : "BI_CRITICAL_DAMAGE_AMPLIFICATION"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BuffStepGroupId" : 7,
+          "BuffStep1" : "BI_EFFECT_HIT_INCREASE",
+          "BuffStep2" : "BI_EFFECT_HIT_AMPLIFICATION"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BuffStepGroupId" : 8,
+          "BuffStep1" : "BI_EFFECT_EVADE_INCREASE",
+          "BuffStep2" : "BI_EFFECT_EVADE_AMPLIFICATION"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BuffStepGroupId" : 9,
+          "BuffStep1" : "BI_HEAL_RECEIVE_INCREASE",
+          "BuffStep2" : "BI_HEAL_RECEIVE_AMPLIFICATION"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BuffStepGroupId" : 11,
+          "BuffStep1" : "BI_ATTACK_DECREASE",
+          "BuffStep2" : "BI_ATTACK_ABBREVIATE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BuffStepGroupId" : 12,
+          "BuffStep1" : "BI_DEFENSE_DECREASE",
+          "BuffStep2" : "BI_DEFENSE_ABBREVIATE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BuffStepGroupId" : 13,
+          "BuffStep1" : "BI_EFFECT_EVADE_DECREASE",
+          "BuffStep2" : "BI_EFFECT_EVADE_ABBREVIATE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BuffStepGroupId" : 14,
+          "BuffStep1" : "BI_HEAL_RECEIVE_DECREASE",
+          "BuffStep2" : "BI_HEAL_RECEIVE_ABBREVIATE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BuffStepGroupId" : 10001,
+          "BuffStep1" : "BI_DISPARITY_WINGS_WHITE_BOSS_COSMO_1",
+          "BuffStep2" : "BI_DISPARITY_WINGS_WHITE_BOSS_COSMO_2",
+          "BuffStep3" : "BI_DISPARITY_WINGS_WHITE_BOSS_COSMO_3"
+        }
+    ]
+}

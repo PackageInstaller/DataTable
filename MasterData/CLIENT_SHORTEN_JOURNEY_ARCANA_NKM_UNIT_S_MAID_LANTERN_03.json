@@ -1,0 +1,57 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_MAID_LANTERN_03",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_GRAVEYARD.png",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_LANTERN",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 5,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "벨과 카넬리아는 아련한 추억을 떠올렸다.",
+      "UnitTalk_ENG": "Bell and Carnelia found themselves recalling old memories.",
+      "UnitTalk_JPN": "ベルとカネリアは懐かしい思い出を振り返った。",
+      "UnitTalk_CHN": "贝尔与卡奈莉亚回想起了朦胧而遥远的回忆。",
+      "UnitTalk_TWN": "貝爾與卡奈莉亞回想起了朦朧而遙遠的回憶。",
+      "TalkTime": 0.03,
+      "UnitTalk_FRA": "Belle et Canelia se souvenaient de doux souvenirs lointains.",
+      "UnitTalk_DEU": "Bell und Kanelia erinnerten sich an verschwommene Erinnerungen.",
+      "UnitTalk_ESP": "Bell y Canelia evocaron recuerdos nostálgicos.",
+      "UnitTalk_PRT": "Bell e Canélia lembraram de doces memórias.",
+      "UnitTalk_THA": "เบลและคาเนเลียนึกถึงความทรงจำที่เศร้าหวาด",
+      "UnitTalk_IND": "Bell dan Canelia teringat akan kenangan yang sayu dan jauh.",
+      "UnitTalk_VIE": "Bell và Canelia nhớ lại những kỷ niệm mơ hồ."
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_AMULET_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER"
+    }
+  ]
+}

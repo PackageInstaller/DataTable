@@ -1,0 +1,153 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_INCOGNITA_LANDGRAVE_REQUEST_DEFEAT",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 8,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_CANDLE",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS"
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 의뢰에 실패하고 말았다.",
+      "UnitTalk_ENG": "<color=#F7BE45>[CHARACTER_NAME]</color> ended up failing the quest.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は、依頼に失敗してしまった。",
+      "UnitTalk_CHN": "<color=#F7BE45>[CHARACTER_NAME]</color>在委托中失败了。",
+      "UnitTalk_TWN": "<color=#F7BE45>[CHARACTER_NAME]</color>在委託中失敗了。",
+      "UnitTalk_FRA": "<color=#F7BE45>[CHARACTER_NAME]</color> a échoué à la mission.",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color> scheiterte am Auftrag.",
+      "UnitTalk_ESP": "<color=#F7BE45>[CHARACTER_NAME]</color> fracasó en la misión.",
+      "UnitTalk_PRT": "<color=#F7BE45>[CHARACTER_NAME]</color> falhou em sua busca.",
+      "UnitTalk_THA": "<color=#F7BE45>[CHARACTER_NAME]</color> ล้มเหลวในการรับจ้าง",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> gagal dalam misi dan berkata.",
+      "UnitTalk_VIE": "<color=#F7BE45>[CHARACTER_NAME]</color> đã thất bại trong nhiệm vụ.",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 2,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "다음엔 괜찮은 의뢰를 고를게.",
+          "JumpAnchorStringId_ENG": "Next time, I'll pick a better quest.",
+          "JumpAnchorStringId_JPN": "次はいい依頼を受けてくるよ。",
+          "JumpAnchorStringId_CHN": "下次我会挑个好一点的委托。",
+          "JumpAnchorStringId_TWN": "下次我會挑個好一點的委託。",
+          "JumpAnchorStringId_FRA": "Ensuite, je choisirai une bonne mission.",
+          "JumpAnchorStringId_DEU": "Im nächsten Schritt wird eine gute Aufgabe ausgewählt.",
+          "JumpAnchorStringId_ESP": "La siguiente misión será elegida.",
+          "JumpAnchorStringId_PRT": "Vou escolher uma boa missão na próxima vez.",
+          "JumpAnchorStringId_THA": "ต่อไปนี้ฉันจะเลือกงานที่ดีๆ นะ",
+          "JumpAnchorStringId_IND": "Berikutnya akan memilih tugas yang baik.",
+          "JumpAnchorStringId_VIE": "Tiếp theo, hãy chọn một nhiệm vụ tốt hơn.",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "활력 포션을 건넨다.",
+          "JumpAnchorStringId_ENG": "Hand out a Vitality Potion.",
+          "JumpAnchorStringId_JPN": "活力ポーションを渡す。",
+          "JumpAnchorStringId_CHN": "递给她活力药水。",
+          "JumpAnchorStringId_TWN": "遞給她活力藥水。",
+          "JumpAnchorStringId_FRA": "Je transmets la potion.",
+          "JumpAnchorStringId_DEU": "Ein Heiltrank wird übergeben.",
+          "JumpAnchorStringId_ESP": "Te doy una poción de vitalidad.",
+          "JumpAnchorStringId_PRT": "Entrega um elixir de vitalidade.",
+          "JumpAnchorStringId_THA": "ให้ยาชีวิต",
+          "JumpAnchorStringId_IND": "Berikan ramuan vitalitas.",
+          "JumpAnchorStringId_VIE": "Tôi đang trao một pha hồi sức.",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 9,
+      "JumpAnchorInfo": "JUMPANCHOR_1_SUCCESS",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 심기일전 했다.",
+      "UnitTalk_ENG": "With renewed determination, <color=#F7BE45>[CHARACTER_NAME]</color> was ready to press on.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は気持ちを切り替えた。",
+      "UnitTalk_CHN": "<color=#F7BE45>[CHARACTER_NAME]</color>重新振作了起来。",
+      "UnitTalk_TWN": "<color=#F7BE45>[CHARACTER_NAME]</color>重新振作了起來。",
+      "UnitTalk_FRA": "<color=#F7BE45>[CHARACTER_NAME]</color> est devenu un moine.",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color> ist ein Heiliger.",
+      "UnitTalk_ESP": "<color=#F7BE45>[CHARACTER_NAME]</color> se volvió sigiloso.",
+      "UnitTalk_PRT": "<color=#F7BE45>[CHARACTER_NAME]</color> decidiu mudar sua postura.",
+      "UnitTalk_THA": "<color=#F7BE45>[CHARACTER_NAME]</color> ตัดสินใจเปลี่ยนแปลงตนเอง",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> telah menjadi pertapa.",
+      "UnitTalk_VIE": "<color=#F7BE45>[CHARACTER_NAME]</color> đã giả dạng.",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "EmotionEffect": "DESPAIR"
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 상심했다.",
+      "UnitTalk_ENG": "<color=#F7BE45>[CHARACTER_NAME]</color> was disheartened.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は落ち込んだ。",
+      "UnitTalk_CHN": "<color=#F7BE45>[CHARACTER_NAME]</color>感到沮丧。",
+      "UnitTalk_TWN": "<color=#F7BE45>[CHARACTER_NAME]</color>感到沮喪。",
+      "UnitTalk_FRA": "<color=#F7BE45>[CHARACTER_NAME]</color> est devenu un moine.",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color> ist ein Heiliger.",
+      "UnitTalk_ESP": "<color=#F7BE45>[CHARACTER_NAME]</color> se desmayó.",
+      "UnitTalk_PRT": "<color=#F7BE45>[CHARACTER_NAME]</color> está triste.",
+      "UnitTalk_THA": "<color=#F7BE45>[CHARACTER_NAME]</color> รู้สึกเสียใจ",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> telah memudar.",
+      "UnitTalk_VIE": "<color=#F7BE45>[CHARACTER_NAME]</color> đã buồn bã.",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "FUN"
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 활력 포션 덕에 기운을 되찾았다.",
+      "UnitTalk_ENG": "The Vitality Potion restored <color=#F7BE45>[CHARACTER_NAME]</color>'s energy.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は活力ポーションのおかげで元気を取り戻した。",
+      "UnitTalk_CHN": "<color=#F7BE45>[CHARACTER_NAME]</color>托活力药水的福，重新找回了元气。",
+      "UnitTalk_TWN": "<color=#F7BE45>[CHARACTER_NAME]</color>託活力藥水的福，重新找回了元氣。",
+      "UnitTalk_FRA": "<color=#F7BE45>[CHARACTER_NAME]</color> a récupéré ses forces grâce à la potion de vitalité.",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color> hat die Heilkraft des Heiltranks gefunden.",
+      "UnitTalk_ESP": "<color=#F7BE45>[CHARACTER_NAME]</color> recuperó su energía gracias a la poción de vitalidad.",
+      "UnitTalk_PRT": "<color=#F7BE45>[CHARACTER_NAME]</color> recuperou a energia com a poção de vitalidade.",
+      "UnitTalk_THA": "<color=#F7BE45>[CHARACTER_NAME]</color> ได้รับพลังชีวิตจากยาฟื้นฟู",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> telah memulihkan energi berkat elixir kekuatan.",
+      "UnitTalk_VIE": "<color=#F7BE45>[CHARACTER_NAME]</color> đã hồi phục sức lực nhờ viên thuốc hồi sức.",
+      "TalkTime": 0.03
+    }
+  ]
+}

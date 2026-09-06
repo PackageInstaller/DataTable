@@ -1,0 +1,421 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: CENTRAL/ADVANCED_CRAFT_TEMPLET",
+    "_Version": 0,
+    "Data": [
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 1,
+          "CraftPartType" : "CPT_EQUIP_TYPE",
+          "AdvanceCraftObjectIcon" : "EQUIP_COSMO_TIER_2_WEAPON.png",
+          "AdvanceCraftObjectStrId" : "ET_WEAPON",
+          "CraftPartEnum" : "ET_WEAPON",
+          "ReqFuelPoint" : 200,
+          "SearchEquipId" : 510020900
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 2,
+          "CraftPartType" : "CPT_EQUIP_TYPE",
+          "AdvanceCraftObjectIcon" : "EQUIP_COSMO_TIER_2_GLOVES.png",
+          "AdvanceCraftObjectStrId" : "ET_GLOVES",
+          "CraftPartEnum" : "ET_GLOVES",
+          "ReqFuelPoint" : 200,
+          "SearchEquipId" : 520020900
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 3,
+          "CraftPartType" : "CPT_EQUIP_TYPE",
+          "AdvanceCraftObjectIcon" : "EQUIP_COSMO_TIER_2_ARMOR.png",
+          "AdvanceCraftObjectStrId" : "ET_ARMOR",
+          "CraftPartEnum" : "ET_ARMOR",
+          "ReqFuelPoint" : 200,
+          "SearchEquipId" : 530020900
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 4,
+          "CraftPartType" : "CPT_EQUIP_TYPE",
+          "AdvanceCraftObjectIcon" : "EQUIP_COSMO_TIER_2_SHOES.png",
+          "AdvanceCraftObjectStrId" : "ET_SHOES",
+          "CraftPartEnum" : "ET_SHOES",
+          "ReqFuelPoint" : 400,
+          "AdvancedCraftUnlockType" : "ADVANCED_CRAFT_LIST_LEVEL",
+          "AdvancedCraftUnlockValue" : 1,
+          "SearchEquipId" : 540020900
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 5,
+          "CraftPartType" : "CPT_EQUIP_TYPE",
+          "AdvanceCraftObjectIcon" : "EQUIP_COSMO_TIER_2_NECKLACE.png",
+          "AdvanceCraftObjectStrId" : "ET_NECKLACE",
+          "CraftPartEnum" : "ET_NECKLACE",
+          "ReqFuelPoint" : 400,
+          "AdvancedCraftUnlockType" : "ADVANCED_CRAFT_LIST_LEVEL",
+          "AdvancedCraftUnlockValue" : 2,
+          "SearchEquipId" : 550020900
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 6,
+          "CraftPartType" : "CPT_EQUIP_TYPE",
+          "AdvanceCraftObjectIcon" : "EQUIP_COSMO_TIER_2_RING.png",
+          "AdvanceCraftObjectStrId" : "ET_RING",
+          "CraftPartEnum" : "ET_RING",
+          "ReqFuelPoint" : 400,
+          "AdvancedCraftUnlockType" : "ADVANCED_CRAFT_LIST_LEVEL",
+          "AdvancedCraftUnlockValue" : 2,
+          "SearchEquipId" : 560020900
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 7,
+          "CraftPartType" : "CPT_EQUIP_SET_OPTION",
+          "AdvanceCraftObjectIcon" : "ICON_SET_4P_TURN_SPD.png",
+          "AdvanceCraftObjectStrId" : "SI_EQUIP_SET_NAME_1",
+          "CraftPartValue" : 1,
+          "ReqFuelPoint" : 400,
+          "SearchEquipId" : 100000
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 8,
+          "CraftPartType" : "CPT_EQUIP_SET_OPTION",
+          "AdvanceCraftObjectIcon" : "ICON_SET_2P_DEF_RATE.png",
+          "AdvanceCraftObjectStrId" : "SI_EQUIP_SET_NAME_2",
+          "CraftPartValue" : 2,
+          "ReqFuelPoint" : 200,
+          "SearchEquipId" : 200000
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 9,
+          "CraftPartType" : "CPT_EQUIP_SET_OPTION",
+          "AdvanceCraftObjectIcon" : "ICON_SET_2P_EFFECT_RATE.png",
+          "AdvanceCraftObjectStrId" : "SI_EQUIP_SET_NAME_3",
+          "CraftPartValue" : 3,
+          "ReqFuelPoint" : 200,
+          "SearchEquipId" : 300000
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 10,
+          "CraftPartType" : "CPT_EQUIP_SET_OPTION",
+          "AdvanceCraftObjectIcon" : "ICON_SET_2P_EFFECT_EVADE.png",
+          "AdvanceCraftObjectStrId" : "SI_EQUIP_SET_NAME_4",
+          "CraftPartValue" : 4,
+          "ReqFuelPoint" : 200,
+          "SearchEquipId" : 400000
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 11,
+          "CraftPartType" : "CPT_EQUIP_SET_OPTION",
+          "AdvanceCraftObjectIcon" : "ICON_SET_4P_ATK_RATE.png",
+          "AdvanceCraftObjectStrId" : "SI_EQUIP_SET_NAME_5",
+          "CraftPartValue" : 5,
+          "ReqFuelPoint" : 400,
+          "SearchEquipId" : 500000
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 12,
+          "CraftPartType" : "CPT_EQUIP_SET_OPTION",
+          "AdvanceCraftObjectIcon" : "ICON_SET_2P_CRI_RATE.png",
+          "AdvanceCraftObjectStrId" : "SI_EQUIP_SET_NAME_6",
+          "CraftPartValue" : 6,
+          "ReqFuelPoint" : 400,
+          "SearchEquipId" : 600000
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 13,
+          "CraftPartType" : "CPT_EQUIP_SET_OPTION",
+          "AdvanceCraftObjectIcon" : "ICON_SET_2P_ATK_RATE_EFFECT_EVADE.png",
+          "AdvanceCraftObjectStrId" : "SI_EQUIP_SET_NAME_7",
+          "CraftPartValue" : 7,
+          "ReqFuelPoint" : 200,
+          "SearchEquipId" : 700000
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 14,
+          "CraftPartType" : "CPT_EQUIP_SET_OPTION",
+          "AdvanceCraftObjectIcon" : "ICON_SET_2P_CRI_RATE_EFFECT_RATE.png",
+          "AdvanceCraftObjectStrId" : "SI_EQUIP_SET_NAME_8",
+          "CraftPartValue" : 8,
+          "ReqFuelPoint" : 400,
+          "SearchEquipId" : 800000
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 15,
+          "CraftPartType" : "CPT_EQUIP_SET_OPTION",
+          "AdvanceCraftObjectIcon" : "ICON_SET_4P_HP_RATE.png",
+          "AdvanceCraftObjectStrId" : "SI_EQUIP_SET_NAME_9",
+          "CraftPartValue" : 9,
+          "ReqFuelPoint" : 400,
+          "SearchEquipId" : 900000
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 16,
+          "CraftPartType" : "CPT_EQUIP_SET_OPTION",
+          "AdvanceCraftObjectIcon" : "ICON_SET_4P_CRI_DMG.png",
+          "AdvanceCraftObjectStrId" : "SI_EQUIP_SET_NAME_10",
+          "CraftPartValue" : 10,
+          "ReqFuelPoint" : 400,
+          "SearchEquipId" : 1000000
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 17,
+          "CraftPartType" : "CPT_EQUIP_SET_OPTION",
+          "AdvanceCraftObjectIcon" : "ICON_SET_4P_HP_RATE_EFFECT_EVADE.png",
+          "AdvanceCraftObjectStrId" : "SI_EQUIP_SET_NAME_11",
+          "CraftPartValue" : 11,
+          "ReqFuelPoint" : 200,
+          "SearchEquipId" : 1100000
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 18,
+          "CraftPartType" : "CPT_EQUIP_SET_OPTION",
+          "AdvanceCraftObjectIcon" : "ICON_SET_4P_CRI_DMG_EFFECT_RATE.png",
+          "AdvanceCraftObjectStrId" : "SI_EQUIP_SET_NAME_12",
+          "CraftPartValue" : 12,
+          "ReqFuelPoint" : 400,
+          "SearchEquipId" : 1200000
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 19,
+          "CraftPartType" : "CPT_EQUIP_MAIN_STAT",
+          "AdvanceCraftObjectIcon" : "ICON_NST_ATK.png",
+          "AdvanceCraftObjectStrId" : "NST_ATK",
+          "CraftPartEnum" : "NST_ATK",
+          "CraftMainStatCondtion" : ["ET_WEAPON"],
+          "ReqFuelPoint" : 200,
+          "SearchEquipId" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 20,
+          "CraftPartType" : "CPT_EQUIP_MAIN_STAT",
+          "AdvanceCraftObjectIcon" : "ICON_NST_HP.png",
+          "AdvanceCraftObjectStrId" : "NST_HP",
+          "CraftPartEnum" : "NST_HP",
+          "CraftMainStatCondtion" : ["ET_GLOVES"],
+          "ReqFuelPoint" : 200,
+          "SearchEquipId" : 2
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 21,
+          "CraftPartType" : "CPT_EQUIP_MAIN_STAT",
+          "AdvanceCraftObjectIcon" : "ICON_NST_DEF.png",
+          "AdvanceCraftObjectStrId" : "NST_DEF",
+          "CraftPartEnum" : "NST_DEF",
+          "CraftMainStatCondtion" : ["ET_ARMOR"],
+          "ReqFuelPoint" : 200,
+          "SearchEquipId" : 3
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 22,
+          "CraftPartType" : "CPT_EQUIP_MAIN_STAT",
+          "AdvanceCraftObjectIcon" : "ICON_NST_NV_RATE_ATK.png",
+          "AdvanceCraftObjectStrId" : "SI_FILTER_NST_NV_RATE_ATK",
+          "CraftPartEnum" : "NST_NV_RATE_ATK",
+          "CraftMainStatCondtion" : ["ET_NECKLACE", "ET_RING"],
+          "ReqFuelPoint" : 200,
+          "SearchEquipId" : 5
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 23,
+          "CraftPartType" : "CPT_EQUIP_MAIN_STAT",
+          "AdvanceCraftObjectIcon" : "ICON_NST_NV_RATE_HP.png",
+          "AdvanceCraftObjectStrId" : "SI_FILTER_NST_NV_RATE_HP",
+          "CraftPartEnum" : "NST_NV_RATE_HP",
+          "CraftMainStatCondtion" : ["ET_NECKLACE", "ET_RING"],
+          "ReqFuelPoint" : 200,
+          "SearchEquipId" : 6
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 24,
+          "CraftPartType" : "CPT_EQUIP_MAIN_STAT",
+          "AdvanceCraftObjectIcon" : "ICON_NST_NV_RATE_DEF.png",
+          "AdvanceCraftObjectStrId" : "SI_FILTER_NST_NV_RATE_DEF",
+          "CraftPartEnum" : "NST_NV_RATE_DEF",
+          "CraftMainStatCondtion" : ["ET_NECKLACE", "ET_RING"],
+          "ReqFuelPoint" : 200,
+          "SearchEquipId" : 7
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 25,
+          "CraftPartType" : "CPT_EQUIP_MAIN_STAT",
+          "AdvanceCraftObjectIcon" : "ICON_NST_TURN_SPEED.png",
+          "AdvanceCraftObjectStrId" : "NST_TURN_SPEED",
+          "CraftPartEnum" : "NST_TURN_SPEED",
+          "CraftMainStatCondtion" : ["ET_SHOES", "ET_NECKLACE"],
+          "ReqFuelPoint" : 200,
+          "SearchEquipId" : 4
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 26,
+          "CraftPartType" : "CPT_EQUIP_MAIN_STAT",
+          "AdvanceCraftObjectIcon" : "ICON_NST_RATE_CRITICAL.png",
+          "AdvanceCraftObjectStrId" : "NST_RATE_CRITICAL",
+          "CraftPartEnum" : "NST_RATE_CRITICAL",
+          "CraftMainStatCondtion" : ["ET_NECKLACE"],
+          "ReqFuelPoint" : 200,
+          "SearchEquipId" : 8
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 27,
+          "CraftPartType" : "CPT_EQUIP_MAIN_STAT",
+          "AdvanceCraftObjectIcon" : "ICON_NST_RATE_CRITICAL_DAMAGE.png",
+          "AdvanceCraftObjectStrId" : "NST_RATE_CRITICAL_DAMAGE",
+          "CraftPartEnum" : "NST_RATE_CRITICAL_DAMAGE",
+          "CraftMainStatCondtion" : ["ET_NECKLACE"],
+          "ReqFuelPoint" : 200,
+          "SearchEquipId" : 9
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 28,
+          "CraftPartType" : "CPT_EQUIP_MAIN_STAT",
+          "AdvanceCraftObjectIcon" : "ICON_NST_RATE_EFFECT_HIT.png",
+          "AdvanceCraftObjectStrId" : "NST_RATE_EFFECT_HIT",
+          "CraftPartEnum" : "NST_RATE_EFFECT_HIT",
+          "CraftMainStatCondtion" : ["ET_RING"],
+          "ReqFuelPoint" : 200,
+          "SearchEquipId" : 10
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 29,
+          "CraftPartType" : "CPT_EQUIP_MAIN_STAT",
+          "AdvanceCraftObjectIcon" : "ICON_NST_RATE_EFFECT_EVADE.png",
+          "AdvanceCraftObjectStrId" : "NST_RATE_EFFECT_EVADE",
+          "CraftPartEnum" : "NST_RATE_EFFECT_EVADE",
+          "CraftMainStatCondtion" : ["ET_RING"],
+          "ReqFuelPoint" : 200,
+          "SearchEquipId" : 11
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 30,
+          "CraftPartType" : "CPT_EQUIP_SUB_STAT",
+          "AdvanceCraftObjectIcon" : "ICON_NST_RANDOM.png",
+          "AdvanceCraftObjectStrId" : "SI_RANDOM",
+          "ReqFuelPoint" : 0
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 31,
+          "CraftPartType" : "CPT_EQUIP_SUB_STAT",
+          "AdvanceCraftObjectIcon" : "ICON_NST_ATK.png",
+          "AdvanceCraftObjectStrId" : "NST_ATK",
+          "CraftPartEnum" : "NST_ATK",
+          "ReqFuelPoint" : 200
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 32,
+          "CraftPartType" : "CPT_EQUIP_SUB_STAT",
+          "AdvanceCraftObjectIcon" : "ICON_NST_HP.png",
+          "AdvanceCraftObjectStrId" : "NST_HP",
+          "CraftPartEnum" : "NST_HP",
+          "ReqFuelPoint" : 200
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 33,
+          "CraftPartType" : "CPT_EQUIP_SUB_STAT",
+          "AdvanceCraftObjectIcon" : "ICON_NST_DEF.png",
+          "AdvanceCraftObjectStrId" : "NST_DEF",
+          "CraftPartEnum" : "NST_DEF",
+          "ReqFuelPoint" : 200
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 34,
+          "CraftPartType" : "CPT_EQUIP_SUB_STAT",
+          "AdvanceCraftObjectIcon" : "ICON_NST_NV_RATE_ATK.png",
+          "AdvanceCraftObjectStrId" : "SI_FILTER_NST_NV_RATE_ATK",
+          "CraftPartEnum" : "NST_NV_RATE_ATK",
+          "ReqFuelPoint" : 200
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 35,
+          "CraftPartType" : "CPT_EQUIP_SUB_STAT",
+          "AdvanceCraftObjectIcon" : "ICON_NST_NV_RATE_HP.png",
+          "AdvanceCraftObjectStrId" : "SI_FILTER_NST_NV_RATE_HP",
+          "CraftPartEnum" : "NST_NV_RATE_HP",
+          "ReqFuelPoint" : 200
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 36,
+          "CraftPartType" : "CPT_EQUIP_SUB_STAT",
+          "AdvanceCraftObjectIcon" : "ICON_NST_NV_RATE_DEF.png",
+          "AdvanceCraftObjectStrId" : "SI_FILTER_NST_NV_RATE_DEF",
+          "CraftPartEnum" : "NST_NV_RATE_DEF",
+          "ReqFuelPoint" : 200
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 37,
+          "CraftPartType" : "CPT_EQUIP_SUB_STAT",
+          "AdvanceCraftObjectIcon" : "ICON_NST_TURN_SPEED.png",
+          "AdvanceCraftObjectStrId" : "NST_TURN_SPEED",
+          "CraftPartEnum" : "NST_TURN_SPEED",
+          "ReqFuelPoint" : 200
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 38,
+          "CraftPartType" : "CPT_EQUIP_SUB_STAT",
+          "AdvanceCraftObjectIcon" : "ICON_NST_RATE_CRITICAL.png",
+          "AdvanceCraftObjectStrId" : "NST_RATE_CRITICAL",
+          "CraftPartEnum" : "NST_RATE_CRITICAL",
+          "ReqFuelPoint" : 200
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 39,
+          "CraftPartType" : "CPT_EQUIP_SUB_STAT",
+          "AdvanceCraftObjectIcon" : "ICON_NST_RATE_CRITICAL_DAMAGE.png",
+          "AdvanceCraftObjectStrId" : "NST_RATE_CRITICAL_DAMAGE",
+          "CraftPartEnum" : "NST_RATE_CRITICAL_DAMAGE",
+          "ReqFuelPoint" : 200
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 40,
+          "CraftPartType" : "CPT_EQUIP_SUB_STAT",
+          "AdvanceCraftObjectIcon" : "ICON_NST_RATE_EFFECT_HIT.png",
+          "AdvanceCraftObjectStrId" : "NST_RATE_EFFECT_HIT",
+          "CraftPartEnum" : "NST_RATE_EFFECT_HIT",
+          "ReqFuelPoint" : 200
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "AdvanceCraftObjectId" : 41,
+          "CraftPartType" : "CPT_EQUIP_SUB_STAT",
+          "AdvanceCraftObjectIcon" : "ICON_NST_RATE_EFFECT_EVADE.png",
+          "AdvanceCraftObjectStrId" : "NST_RATE_EFFECT_EVADE",
+          "CraftPartEnum" : "NST_RATE_EFFECT_EVADE",
+          "ReqFuelPoint" : 200
+        }
+    ]
+}

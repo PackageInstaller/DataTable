@@ -1,0 +1,35 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_STRANISEARL_ROSEBLADE_REST_BAD",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 3,
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_REST",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "DESPAIR"
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "일 생각에 잠을 설쳤다는 <color=#F7BE45>[CHARACTER_NAME]</color>(은)는 조금 피곤해 보였다.",
+      "UnitTalk_ENG": "<color=#F7BE45>[CHARACTER_NAME]</color> looked a little tired after losing sleep thinking about work.",
+      "UnitTalk_JPN": "考え事でよく眠れなかった<color=#F7BE45>[CHARACTER_NAME]</color>は、少し疲れているようだ。",
+      "UnitTalk_CHN": "因为烦恼工作而没睡好的<color=#F7BE45>[CHARACTER_NAME]</color>看起来有点疲倦。",
+      "UnitTalk_TWN": "因為煩惱工作而沒睡好的<color=#F7BE45>[CHARACTER_NAME]</color>看起來有點疲倦。",
+      "UnitTalk_FRA": "<color=#F7BE45>[CHARACTER_NAME]</color> semblait un peu fatigué, n'ayant pas beaucoup dormi à cause de ses pensées.",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color> schien ein wenig müde zu sein, da er wegen der Arbeit nicht schlafen konnte.",
+      "UnitTalk_ESP": "<color=#F7BE45>[CHARACTER_NAME]</color> parecía un poco cansado por haber pasado la noche en vela pensando en ello.",
+      "UnitTalk_PRT": "<color=#F7BE45>[CHARACTER_NAME]</color> parecia um pouco cansado, pois não conseguiu dormir pensando nisso.",
+      "UnitTalk_THA": "<color=#F7BE45>[CHARACTER_NAME]</color> ดูเหนื่อยเล็กน้อย เพราะมัวแต่คิดเรื่องงานจนนอนไม่หลับ",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> yang tidak bisa tidur karena memikirkan pekerjaan itu terlihat sedikit lelah.",
+      "UnitTalk_VIE": "<color=#F7BE45>[CHARACTER_NAME]</color> trông hơi mệt mỏi vì đã trằn trọc suy nghĩ cả đêm.",
+      "TalkTime": 0.03
+    }
+  ]
+}

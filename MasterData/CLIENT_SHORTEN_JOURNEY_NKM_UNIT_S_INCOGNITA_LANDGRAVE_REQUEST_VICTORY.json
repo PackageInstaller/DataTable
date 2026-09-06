@@ -1,0 +1,35 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_INCOGNITA_LANDGRAVE_REQUEST_VICTORY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_CANDLE",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN"
+    },
+    {
+      "Uid": 2,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 의뢰 성공을 자축했다.",
+      "UnitTalk_ENG": "<color=#F7BE45>[CHARACTER_NAME]</color> celebrated our success on the quest.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は依頼成功を喜んだ。",
+      "UnitTalk_CHN": "<color=#F7BE45>[CHARACTER_NAME]</color>为委托成功而感到高兴。",
+      "UnitTalk_TWN": "<color=#F7BE45>[CHARACTER_NAME]</color>為委託成功而感到高興。",
+      "UnitTalk_FRA": "<color=#F7BE45>[CHARACTER_NAME]</color> a célébré le succès de la mission.",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color> feierte den Erfolg des Auftrags.",
+      "UnitTalk_ESP": "<color=#F7BE45>[CHARACTER_NAME]</color> celebró el éxito del encargo.",
+      "UnitTalk_PRT": "<color=#F7BE45>[CHARACTER_NAME]</color> celebrou o sucesso da missão.",
+      "UnitTalk_THA": "<color=#F7BE45>[CHARACTER_NAME]</color> ฉลองความสำเร็จของภารกิจ",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> merayakan keberhasilan misi.",
+      "UnitTalk_VIE": "<color=#F7BE45>[CHARACTER_NAME]</color> đã ăn mừng nhiệm vụ thành công.",
+      "TalkTime": 0.03
+    }
+  ]
+}

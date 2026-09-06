@@ -1,0 +1,39 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_COUNTERSIDE_ROSARIA_REST_BAD",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_REST_BAD",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_REST",
+      "UnitStrId": "NKM_UNIT_NPC_COUNTERSIDE_ROSARIA",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 숙소가 마음에 들지 않은 모양이다…",
+      "UnitTalk_ENG": "<color=#F7BE45>[CHARACTER_NAME]</color> doesn't seem pleased with the accommodations...",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は、どうやら宿が気に入らないようだ…",
+      "UnitTalk_CHN": "<color=#F7BE45>[CHARACTER_NAME]</color>似乎对住处不太满意…",
+      "UnitTalk_TWN": "<color=#F7BE45>[CHARACTER_NAME]</color>似乎對住處不太滿意…",
+      "UnitTalk_FRA": "<color=#F7BE45>[CHARACTER_NAME]</color> ne semble pas apprécier l'hébergement…",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color> scheint die Unterkunft nicht zu mögen …",
+      "UnitTalk_ESP": "<color=#F7BE45>[CHARACTER_NAME]</color> no parece estar a gusto con el alojamiento…",
+      "UnitTalk_PRT": "<color=#F7BE45>[CHARACTER_NAME]</color> não parece ter gostado da acomodação…",
+      "UnitTalk_THA": "<color=#F7BE45>[CHARACTER_NAME]</color> ดูเหมือนจะไม่พอใจที่พักเลย…",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> sepertinya tidak menyukai akomodasi ini…",
+      "UnitTalk_VIE": "<color=#F7BE45>[CHARACTER_NAME]</color> có vẻ không hài lòng với chỗ ở…",
+      "UnitTalk_HIN": "<color=#F7BE45>[CHARACTER_NAME]</color> को लगता है कि उसे आवास पसंद नहीं है…",
+      "TalkTime": 0.03
+    }
+  ]
+}

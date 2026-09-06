@@ -10,7 +10,7 @@
       "WaitClick": false,
       "WaitTime": 0.0,
       "BgFileName": "CURRENT_TOWN_CANDLE",
-      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitStrId": "CURRENT_CHARACTER",
       "UnitMotion": "SERIOUS"
     },
     {
@@ -20,7 +20,18 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "의뢰를 실패한 <color=#F7BE45>[CHARACTER_NAME]</color>(은)는 기운이 없어 보였다.",
+      "UnitTalk_ENG": "<color=#F7BE45>[CHARACTER_NAME]</color> looks drained after failing the quest.",
       "UnitTalk_JPN": "依頼に失敗した<color=#F7BE45>[CHARACTER_NAME]</color>は、元気がなさそうだ。",
+      "UnitTalk_CHN": "未能完成委托的<color=#F7BE45>[CHARACTER_NAME]</color>看起来没什么精神。",
+      "UnitTalk_TWN": "未能完成委託的<color=#F7BE45>[CHARACTER_NAME]</color>看起來沒什麼精神。",
+      "UnitTalk_FRA": "<color=#F7BE45>[CHARACTER_NAME]</color> semble épuisé après l'échec de la quête.",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color> sah nach dem Scheitern der Mission erschöpft aus.",
+      "UnitTalk_ESP": "Después de fallar la misión, <color=#F7BE45>[CHARACTER_NAME]</color> parecía sin ánimo.",
+      "UnitTalk_PRT": "Após falhar na missão, <color=#F7BE45>[CHARACTER_NAME]</color> parecia desanimada.",
+      "UnitTalk_THA": "ดูเหมือนว่า <color=#F7BE45>[CHARACTER_NAME]</color> จะดูไม่มีเรี่ยวแรงหลังจากทำภารกิจล้มเหลว",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> terlihat lesu setelah gagal dalam misi.",
+      "UnitTalk_VIE": "<color=#F7BE45>[CHARACTER_NAME]</color> trông có vẻ kiệt sức sau khi thất bại trong nhiệm vụ.",
+      "UnitTalk_HIN": "अनुरोध में विफल होने के बाद <color=#F7BE45>[CHARACTER_NAME]</color> हतोत्साहित दिख रही थी।",
       "TalkTime": 0.03
     },
     {
@@ -33,13 +44,35 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "다음을 기약해보자.",
+          "JumpAnchorStringId_ENG": "We'll have another chance.",
           "JumpAnchorStringId_JPN": "また次があるよ。",
+          "JumpAnchorStringId_CHN": "期待下次机会吧。",
+          "JumpAnchorStringId_TWN": "期待下次機會吧。",
+          "JumpAnchorStringId_FRA": "Nous aurons une autre chance.",
+          "JumpAnchorStringId_DEU": "Wir werden eine weitere Chance haben.",
+          "JumpAnchorStringId_ESP": "Tendremos otra oportunidad.",
+          "JumpAnchorStringId_PRT": "Teremos outra chance.",
+          "JumpAnchorStringId_THA": "ไว้คราวหน้าก็แล้วกันนะคะ",
+          "JumpAnchorStringId_IND": "Mari kita coba lagi lain kali.",
+          "JumpAnchorStringId_VIE": "Chúng ta sẽ có cơ hội khác.",
+          "JumpAnchorStringId_HIN": "हमें एक और मौका मिलेगा।",
           "JumpAnchorId": "REWARD_ANCHOR_1"
         },
         {
           "Uid": 2,
           "JumpAnchorStringId_KOR": "그래도 수고했어. 이거 마시고 다음엔 더 힘내자.",
+          "JumpAnchorStringId_ENG": "You still did well. Drink this, and let's do better next time.",
           "JumpAnchorStringId_JPN": "とにかく、お疲れ様。これ飲んで次はもっと頑張ろう。",
+          "JumpAnchorStringId_CHN": "你已经很努力了。喝了这个，下次我们一起加油。",
+          "JumpAnchorStringId_TWN": "你已經很努力了。喝了這個，下次我們一起加油。",
+          "JumpAnchorStringId_FRA": "Tu as quand même bien travaillé. Bois ceci, et faisons mieux la prochaine fois.",
+          "JumpAnchorStringId_DEU": "Du hast es trotzdem gut gemacht. Trink das, und beim nächsten Mal geben wir mehr Gas.",
+          "JumpAnchorStringId_ESP": "Aun así, lo hiciste bien. Bebe esto y esforcémonos más la próxima vez.",
+          "JumpAnchorStringId_PRT": "Você ainda se saiu bem. Beba isto e vamos nos esforçar mais da próxima vez.",
+          "JumpAnchorStringId_THA": "แต่ก็ยังทำได้ดีอยู่ดีค่ะ ดื่มนี่ซะ แล้วคราวหน้าเรามาพยายามให้มากกว่านี้กันนะคะ",
+          "JumpAnchorStringId_IND": "Kau sudah melakukan yang terbaik. Minumlah ini, dan mari kita lakukan lebih baik lain kali.",
+          "JumpAnchorStringId_VIE": "Dù sao thì cô cũng đã làm tốt rồi. Uống cái này đi, lần sau chúng ta sẽ làm tốt hơn.",
+          "JumpAnchorStringId_HIN": "फिर भी तुमने अच्छा किया। इसे पियो, और अगली बार और बेहतर करते हैं।",
           "JumpAnchorId": "REWARD_ANCHOR_2"
         }
       ]
@@ -51,7 +84,7 @@
       "JumpAnchorInfo": "JUMPANCHOR_1_SUCCESS",
       "WaitClick": false,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitStrId": "CURRENT_CHARACTER",
       "UnitMotion": "SMILE"
     },
     {
@@ -61,7 +94,18 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 더욱 빈틈없이 아군을 지키리라 다짐했다.",
+      "UnitTalk_ENG": "<color=#F7BE45>[CHARACTER_NAME]</color> swore to protect her allies even more resolutely next time.",
       "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は、隙を見せずに仲間を守りきると、固く心に誓った",
+      "UnitTalk_CHN": "<color=#F7BE45>[CHARACTER_NAME]</color>下定决心要更严密地保护同伴。",
+      "UnitTalk_TWN": "<color=#F7BE45>[CHARACTER_NAME]</color>下定決心要更嚴密地保護同伴。",
+      "UnitTalk_FRA": "<color=#F7BE45>[CHARACTER_NAME]</color> a juré de protéger ses alliés sans laisser la moindre faille la prochaine fois.",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color> schwor, ihre Verbündeten beim nächsten Mal noch lückenloser zu beschützen.",
+      "UnitTalk_ESP": "<color=#F7BE45>[CHARACTER_NAME]</color> juró proteger a sus aliados con aún más resolución la próxima vez.",
+      "UnitTalk_PRT": "<color=#F7BE45>[CHARACTER_NAME]</color> jurou proteger seus aliados sem deixar brechas da próxima vez.",
+      "UnitTalk_THA": "<color=#F7BE45>[CHARACTER_NAME]</color> สาบานว่าจะปกป้องพันธมิตรของเธออย่างรัดกุมยิ่งขึ้นในครั้งต่อไป",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> bersumpah untuk melindungi sekutunya dengan lebih gigih lain kali.",
+      "UnitTalk_VIE": "<color=#F7BE45>[CHARACTER_NAME]</color> thề sẽ bảo vệ đồng minh của mình kiên quyết hơn nữa vào lần tới.",
+      "UnitTalk_HIN": "<color=#F7BE45>[CHARACTER_NAME]</color> ने अगली बार अपने सहयोगियों की बिना कोई चूक किए रक्षा करने की शपथ ली।",
       "TalkTime": 0.03
     },
     {
@@ -71,7 +115,7 @@
       "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
       "WaitClick": false,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitStrId": "CURRENT_CHARACTER",
       "UnitMotion": "SAD"
     },
     {
@@ -81,7 +125,18 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>의 얼굴에 순간 어두운 그림자가 드리웠다.",
+      "UnitTalk_ENG": "A fleeting shadow passed over <color=#F7BE45>[CHARACTER_NAME]</color>'s face.",
       "UnitTalk_JPN": "一瞬、<color=#F7BE45>[CHARACTER_NAME]</color>の顔に暗い影が差した。",
+      "UnitTalk_CHN": "<color=#F7BE45>[CHARACTER_NAME]</color>的脸上瞬间掠过一丝阴影。",
+      "UnitTalk_TWN": "<color=#F7BE45>[CHARACTER_NAME]</color>的臉上瞬間掠過一絲陰影。",
+      "UnitTalk_FRA": "Une ombre fugace passa sur le visage de <color=#F7BE45>[CHARACTER_NAME]</color>.",
+      "UnitTalk_DEU": "Ein flüchtiger Schatten huschte über <color=#F7BE45>[CHARACTER_NAME]</color>s Gesicht.",
+      "UnitTalk_ESP": "Una sombra fugaz pasó por el rostro de <color=#F7BE45>[CHARACTER_NAME]</color>.",
+      "UnitTalk_PRT": "Uma sombra passageira cruzou o rosto de <color=#F7BE45>[CHARACTER_NAME]</color>.",
+      "UnitTalk_THA": "เงามืด ๆ พาดผ่านใบหน้าของ <color=#F7BE45>[CHARACTER_NAME]</color> แวบหนึ่ง",
+      "UnitTalk_IND": "Bayangan gelap sesaat melintas di wajah <color=#F7BE45>[CHARACTER_NAME]</color>.",
+      "UnitTalk_VIE": "Một bóng tối thoáng qua trên khuôn mặt của <color=#F7BE45>[CHARACTER_NAME]</color>.",
+      "UnitTalk_HIN": "<color=#F7BE45>[CHARACTER_NAME]</color> के चेहरे पर एक क्षण के लिए अंधेरी छाया छा गई।",
       "TalkTime": 0.03
     },
     {
@@ -91,7 +146,7 @@
       "JumpAnchorInfo": "JUMPANCHOR_2",
       "WaitClick": false,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
+      "UnitStrId": "CURRENT_CHARACTER",
       "UnitMotion": "SMILE"
     },
     {
@@ -101,7 +156,18 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 포션을 받고 기뻐했다.",
+      "UnitTalk_ENG": "<color=#F7BE45>[CHARACTER_NAME]</color> brightened up after receiving the potion.",
       "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は、ポーションを受け取って喜んだ。",
+      "UnitTalk_CHN": "<color=#F7BE45>[CHARACTER_NAME]</color>收到药水后很开心。",
+      "UnitTalk_TWN": "<color=#F7BE45>[CHARACTER_NAME]</color>收到藥水後很開心。",
+      "UnitTalk_FRA": "<color=#F7BE45>[CHARACTER_NAME]</color> était ravi(e) de recevoir la potion.",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color> hellte sich auf, nachdem sie den Trank erhalten hatte.",
+      "UnitTalk_ESP": "<color=#F7BE45>[CHARACTER_NAME]</color> se alegró al recibir la poción.",
+      "UnitTalk_PRT": "<color=#F7BE45>[CHARACTER_NAME]</color> se animou após receber a poção.",
+      "UnitTalk_THA": "<color=#F7BE45>[CHARACTER_NAME]</color> รู้สึกดีขึ้นหลังจากได้รับยา",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> senang menerima ramuan itu.",
+      "UnitTalk_VIE": "<color=#F7BE45>[CHARACTER_NAME]</color> tươi tỉnh hẳn lên sau khi nhận được thuốc.",
+      "UnitTalk_HIN": "पोशन मिलने के बाद <color=#F7BE45>[CHARACTER_NAME]</color> का चेहरा खिल उठा।",
       "TalkTime": 0.03
     }
   ]

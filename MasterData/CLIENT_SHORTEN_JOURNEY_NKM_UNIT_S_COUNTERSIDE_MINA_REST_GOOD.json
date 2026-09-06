@@ -1,0 +1,39 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_COUNTERSIDE_MINA_REST_GOOD",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_REST_GOOD",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_REST",
+      "UnitStrId": "NKM_UNIT_NPC_COUNTERSIDE_MINA",
+      "UnitMotion": "USN_UI_TOUCH"
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_ORACLE_REST_GOOD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 어느 때보다 기운이 넘쳐 보인다!",
+      "UnitTalk_ENG": "<color=#F7BE45>[CHARACTER_NAME]</color> looks more energetic than ever!",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は、いつもより元気そうだ！",
+      "UnitTalk_CHN": "<color=#F7BE45>[CHARACTER_NAME]</color>看起来比任何时候都还要精力充沛！",
+      "UnitTalk_TWN": "<color=#F7BE45>[CHARACTER_NAME]</color>看起來比任何時候都還要精力充沛！",
+      "UnitTalk_FRA": "<color=#F7BE45>[CHARACTER_NAME]</color> a l'air plus énergique que d'habitude !",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color> sieht energiegeladener aus als sonst!",
+      "UnitTalk_ESP": "<color=#F7BE45>[CHARACTER_NAME]</color> se ve más enérgico de lo normal.",
+      "UnitTalk_PRT": "<color=#F7BE45>[CHARACTER_NAME]</color> parece mais enérgico do que o normal!",
+      "UnitTalk_THA": "<color=#F7BE45>[CHARACTER_NAME]</color> ดูมีชีวิตชีวามากกว่าปกติ!",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> terlihat lebih bersemangat dari biasanya!",
+      "UnitTalk_VIE": "<color=#F7BE45>[CHARACTER_NAME]</color> trông tràn đầy năng lượng hơn mọi khi!",
+      "UnitTalk_HIN": "<color=#F7BE45>[CHARACTER_NAME]</color> हमेशा से ज़्यादा ऊर्जावान लग रहा है!",
+      "TalkTime": 0.03
+    }
+  ]
+}

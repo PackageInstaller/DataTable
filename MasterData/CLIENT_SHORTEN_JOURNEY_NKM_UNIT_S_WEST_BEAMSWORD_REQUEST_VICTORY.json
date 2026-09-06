@@ -1,0 +1,39 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_WEST_BEAMSWORD_REQUEST_VICTORY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_BEAMSWORD_REQUEST_VICTORY",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_CANDLE",
+      "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_WEST_BEAMSWORD_REQUEST_VICTORY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "의뢰를 완수한 <color=#F7BE45>[CHARACTER_NAME]</color>(은)는 바로 다음 훈련을 제안했다.",
+      "UnitTalk_ENG": "After a successful quest, <color=#F7BE45>[CHARACTER_NAME]</color> immediately suggested starting the next training session.",
+      "UnitTalk_JPN": "依頼をやり遂げた<color=#F7BE45>[CHARACTER_NAME]</color>は、\nすぐに次のトレーニングを提案してきた。",
+      "UnitTalk_CHN": "完成委托的<color=#F7BE45>[CHARACTER_NAME]</color>立刻提议进行下一次训练。",
+      "UnitTalk_TWN": "完成委託的<color=#F7BE45>[CHARACTER_NAME]</color>立刻提議進行下一次訓練。",
+      "UnitTalk_FRA": "Après avoir accompli la mission, <color=#F7BE45>[CHARACTER_NAME]</color> a immédiatement proposé la prochaine séance d'entraînement.",
+      "UnitTalk_DEU": "Nach erfolgreichem Abschluss der Quest schlug <color=#F7BE45>[CHARACTER_NAME]</color> sofort das nächste Training vor.",
+      "UnitTalk_ESP": "Tras completar la misión, <color=#F7BE45>[CHARACTER_NAME]</color> propuso inmediatamente la siguiente sesión de entrenamiento.",
+      "UnitTalk_PRT": "Após concluir a missão, <color=#F7BE45>[CHARACTER_NAME]</color> imediatamente sugeriu o próximo treinamento.",
+      "UnitTalk_THA": "<color=#F7BE45>[CHARACTER_NAME]</color> ที่ทำภารกิจสำเร็จแล้ว ได้เสนอการฝึกครั้งต่อไปทันที",
+      "UnitTalk_IND": "Setelah menyelesaikan misi, <color=#F7BE45>[CHARACTER_NAME]</color> segera mengusulkan sesi latihan berikutnya.",
+      "UnitTalk_VIE": "Sau khi hoàn thành nhiệm vụ, <color=#F7BE45>[CHARACTER_NAME]</color> đã đề xuất ngay buổi huấn luyện tiếp theo.",
+      "UnitTalk_HIN": "अनुरोध पूरा करने के बाद, <color=#F7BE45>[CHARACTER_NAME]</color> ने तुरंत अगले प्रशिक्षण का सुझाव दिया।",
+      "TalkTime": 0.03
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_INCOGNITA_LANDGRAVE_REST_GOOD",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_REST",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN"
+    },
+    {
+      "Uid": 2,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 푹 쉰 덕분에 기운이 넘친다.",
+      "UnitTalk_ENG": "After getting plenty of rest, <color=#F7BE45>[CHARACTER_NAME]</color> was full of energy.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は、ぐっすり休めたおかげで元気いっぱいだ。",
+      "UnitTalk_CHN": "<color=#F7BE45>[CHARACTER_NAME]</color>多亏了充分的休息，现在干劲十足。",
+      "UnitTalk_TWN": "<color=#F7BE45>[CHARACTER_NAME]</color>多虧了充分的休息，現在幹勁十足。",
+      "UnitTalk_FRA": "<color=#F7BE45>[CHARACTER_NAME]</color> est plein d'énergie grâce à son bon repos.",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color> fühlt sich nach der Erholung voller Energie.",
+      "UnitTalk_ESP": "<color=#F7BE45>[CHARACTER_NAME]</color> Me siento lleno de energía tras un buen descanso.",
+      "UnitTalk_PRT": "<color=#F7BE45>[CHARACTER_NAME]</color> está cheio de energia graças ao bom descanso.",
+      "UnitTalk_THA": "<color=#F7BE45>[CHARACTER_NAME]</color> ฟื้นฟูพลังเต็มที่จากการพักผ่อน",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> Berkat istirahat yang cukup, aku penuh energi.",
+      "UnitTalk_VIE": "<color=#F7BE45>[CHARACTER_NAME]</color> đã nghỉ ngơi đầy đủ và tràn đầy năng lượng.",
+      "TalkTime": 0.03
+    }
+  ]
+}

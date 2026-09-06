@@ -6,6 +6,7 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "ChargeItemId" : 102,
+          "RechargeTargetType" : "NONE",
           "ChargeItemCount" : 60,
           "ChargeStep" : 1,
           "ReqItemId" : 103,
@@ -14,6 +15,7 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "ChargeItemId" : 102,
+          "RechargeTargetType" : "NONE",
           "ChargeItemCount" : 60,
           "ChargeStep" : 2,
           "ReqItemId" : 103,
@@ -22,6 +24,7 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "ChargeItemId" : 102,
+          "RechargeTargetType" : "NONE",
           "ChargeItemCount" : 60,
           "ChargeStep" : 3,
           "ReqItemId" : 103,
@@ -30,6 +33,7 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "ChargeItemId" : 102,
+          "RechargeTargetType" : "NONE",
           "ChargeItemCount" : 60,
           "ChargeStep" : 4,
           "ReqItemId" : 103,
@@ -38,6 +42,7 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "ChargeItemId" : 102,
+          "RechargeTargetType" : "NONE",
           "ChargeItemCount" : 60,
           "ChargeStep" : 5,
           "ReqItemId" : 103,
@@ -46,10 +51,20 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "ChargeItemId" : 102,
+          "RechargeTargetType" : "NONE",
           "ChargeItemCount" : 60,
           "ChargeStep" : 6,
           "ReqItemId" : 103,
           "ReqItemCount" : 150
+        },
+        {
+          "ContentsTag" : "TAG_GUILD_DUNGEON",
+          "ChargeItemId" : 409,
+          "RechargeTargetType" : "GUILD_DUNGEON",
+          "ChargeItemCount" : 1,
+          "ChargeStep" : 1,
+          "ReqItemId" : 103,
+          "ReqItemCount" : 30
         }
     ]
 }

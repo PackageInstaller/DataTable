@@ -44,6 +44,45 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "JourneyBuffGroup" : 1,
+          "JourneyBuffId" : 14,
+          "JourneyBuffStrId" : "FEEL_CONFUSION",
+          "JourneyBuffName" : "SI_JOURNEY_BUFFE_NAME_14",
+          "JourneyBuffDesc" : "SI_JOURNEY_BUFFE_DESC_14",
+          "JourneyBuffIcon" : "ICON_JOURNEY_BUFF_ENDURANCE_TRAINING_HOLD.png",
+          "JourneyBuffType" : "JBT_TS_DOWN",
+          "JourneyBuffValue" : 200,
+          "TurnCount" : 2,
+          "JourneyBuffPositive" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "JourneyBuffGroup" : 1,
+          "JourneyBuffId" : 15,
+          "JourneyBuffStrId" : "FEEL_LONELINESS",
+          "JourneyBuffName" : "SI_JOURNEY_BUFFE_NAME_15",
+          "JourneyBuffDesc" : "SI_JOURNEY_BUFFE_DESC_15",
+          "JourneyBuffIcon" : "ICON_JOURNEY_BUFF_HEALTH_TRAINING_HOLD.png",
+          "JourneyBuffType" : "JBT_TS_DOWN",
+          "JourneyBuffValue" : 200,
+          "TurnCount" : 2,
+          "JourneyBuffPositive" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "JourneyBuffGroup" : 1,
+          "JourneyBuffId" : 16,
+          "JourneyBuffStrId" : "FEEL_SPREE",
+          "JourneyBuffName" : "SI_JOURNEY_BUFFE_NAME_16",
+          "JourneyBuffDesc" : "SI_JOURNEY_BUFFE_DESC_16",
+          "JourneyBuffIcon" : "ICON_JOURNEY_BUFF_HEALTH_TRAINING_HOLD.png",
+          "JourneyBuffType" : "JBT_TS_DOWN",
+          "JourneyBuffValue" : 200,
+          "TurnCount" : 2,
+          "JourneyBuffPositive" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "JourneyBuffGroup" : 2,
           "JourneyBuffId" : 21,
           "JourneyBuffStrId" : "FEEL_CONFIDENT",
@@ -143,6 +182,19 @@
           "JourneyBuffIcon" : "ICON_JOURNEY_BUFF_RECRUIT_DISCOUNT.png",
           "JourneyBuffType" : "JBT_TRADE_DISCOUNT",
           "JourneyBuffValue" : 2000,
+          "TurnCount" : 1,
+          "JourneyBuffPositive" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "JourneyBuffGroup" : 10,
+          "JourneyBuffId" : 102,
+          "JourneyBuffStrId" : "APOCALYPSE_BARON_KILLER",
+          "JourneyBuffName" : "SI_JOURNEY_BUFFE_NAME_102",
+          "JourneyBuffDesc" : "SI_JOURNEY_BUFFE_DESC_102",
+          "JourneyBuffIcon" : "ICON_JOURNEY_BUFF_RECRUIT_DISCOUNT.png",
+          "JourneyBuffType" : "JBT_TRADE_DISCOUNT",
+          "JourneyBuffValue" : 3000,
           "TurnCount" : 1,
           "JourneyBuffPositive" : true
         },
@@ -399,11 +451,24 @@
           "JourneyBuffId" : 180,
           "JourneyBuffStrId" : "SWEET_TASTE",
           "JourneyBuffName" : "SI_JOURNEY_BUFFE_NAME_180",
-          "JourneyBuffDesc" : "SI_JOURNEY_BUFFE_DESC_181",
+          "JourneyBuffDesc" : "SI_JOURNEY_BUFFE_DESC_180",
           "JourneyBuffIcon" : "ICON_JOURNEY_BUFF_ARCANAPOINT_BONUS.png",
           "JourneyBuffType" : "JBT_TS_UP",
           "JourneyBuffValue" : 3000,
           "TurnCount" : 5,
+          "JourneyBuffPositive" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "JourneyBuffGroup" : 19,
+          "JourneyBuffId" : 190,
+          "JourneyBuffStrId" : "TREND_FOLLOWER",
+          "JourneyBuffName" : "SI_JOURNEY_BUFFE_NAME_190",
+          "JourneyBuffDesc" : "SI_JOURNEY_BUFFE_DESC_190",
+          "JourneyBuffIcon" : "ICON_JOURNEY_BUFF_TRADE_DISCOUNT.png",
+          "JourneyBuffType" : "JBT_TS_UP",
+          "JourneyBuffValue" : 1000,
+          "TurnCount" : 8,
           "JourneyBuffPositive" : true
         },
         {
@@ -485,6 +550,84 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "JourneyBuffGroup" : 32,
+          "JourneyBuffId" : 321,
+          "JourneyBuffStrId" : "UNIQUE_WASTED",
+          "JourneyBuffName" : "SI_JOURNEY_BUFFE_NAME_321",
+          "JourneyBuffDesc" : "SI_JOURNEY_BUFFE_DESC_321",
+          "JourneyBuffIcon" : "ICON_JOURNEY_BUFF_POWER_TRAINING_DOWN.png",
+          "JourneyBuffType" : "JBT_POWER_TRAINING_DOWN",
+          "JourneyBuffValue" : 2000,
+          "TurnCount" : 3,
+          "JourneyBuffPositive" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "JourneyBuffGroup" : 33,
+          "JourneyBuffId" : 331,
+          "JourneyBuffStrId" : "UNIQUE_OPERATION",
+          "JourneyBuffName" : "SI_JOURNEY_BUFFE_NAME_331",
+          "JourneyBuffDesc" : "SI_JOURNEY_BUFFE_DESC_331",
+          "JourneyBuffIcon" : "ICON_JOURNEY_BUFF_TRAINING_SUCCESS_UP.png",
+          "JourneyBuffType" : "JBT_TS_UP",
+          "JourneyBuffValue" : 1000,
+          "TurnCount" : 3,
+          "JourneyBuffPositive" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "JourneyBuffGroup" : 34,
+          "JourneyBuffId" : 341,
+          "JourneyBuffStrId" : "UNIQUE_RESPONSIBILITY",
+          "JourneyBuffName" : "SI_JOURNEY_BUFFE_NAME_341",
+          "JourneyBuffDesc" : "SI_JOURNEY_BUFFE_DESC_341",
+          "JourneyBuffIcon" : "ICON_JOURNEY_BUFF_TRAINING_SUCCESS_UP.png",
+          "JourneyBuffType" : "JBT_TS_UP",
+          "JourneyBuffValue" : 3000,
+          "TurnCount" : 3,
+          "JourneyBuffPositive" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "JourneyBuffGroup" : 35,
+          "JourneyBuffId" : 351,
+          "JourneyBuffStrId" : "UNIQUE_SUGARHIGH",
+          "JourneyBuffName" : "SI_JOURNEY_BUFFE_NAME_351",
+          "JourneyBuffDesc" : "SI_JOURNEY_BUFFE_DESC_351",
+          "JourneyBuffIcon" : "ICON_JOURNEY_BUFF_POTENPOINT_BONUS.png",
+          "JourneyBuffType" : "JBT_TRAINING_PP_RATE_BONUS",
+          "JourneyBuffValue" : 3000,
+          "TurnCount" : 3,
+          "JourneyBuffPositive" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "JourneyBuffGroup" : 36,
+          "JourneyBuffId" : 361,
+          "JourneyBuffStrId" : "UNIQUE_SURVIVOR",
+          "JourneyBuffName" : "SI_JOURNEY_BUFFE_NAME_361",
+          "JourneyBuffDesc" : "SI_JOURNEY_BUFFE_DESC_361",
+          "JourneyBuffIcon" : "ICON_JOURNEY_BUFF_POWER_TRAINING_UP.png",
+          "JourneyBuffType" : "JBT_POWER_TRAINING_EXP_UP",
+          "JourneyBuffValue" : 3000,
+          "TurnCount" : 3,
+          "JourneyBuffPositive" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "JourneyBuffGroup" : 40001,
+          "JourneyBuffId" : 400011,
+          "JourneyBuffStrId" : "UNIQUE_APRIL_FOOL",
+          "JourneyBuffName" : "SI_JOURNEY_BUFFE_NAME_400011",
+          "JourneyBuffDesc" : "SI_JOURNEY_BUFFE_DESC_400011",
+          "JourneyBuffIcon" : "ICON_JOURNEY_BUFF_FOCUS_TRAINING_DOWN.png",
+          "JourneyBuffType" : "JBT_FOCUS_TRAINING_DOWN",
+          "JourneyBuffValue" : 1000,
+          "TurnCount" : 1,
+          "JourneyBuffPositive" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "JourneyBuffGroup" : 1001,
           "JourneyBuffId" : 1001,
           "JourneyBuffStrId" : "ITEM_SWEET",
@@ -492,7 +635,7 @@
           "JourneyBuffDesc" : "SI_JOURNEY_BUFFE_DESC_1001",
           "JourneyBuffIcon" : "ICON_JOURNEY_BUFF_FOCUS_TRAINING_UP.png",
           "JourneyBuffType" : "JBT_FOCUS_TRAINING_UP",
-          "JourneyBuffValue" : 1000,
+          "JourneyBuffValue" : 2000,
           "JourneyBuffPositive" : true
         },
         {
@@ -504,7 +647,7 @@
           "JourneyBuffDesc" : "SI_JOURNEY_BUFFE_DESC_1002",
           "JourneyBuffIcon" : "ICON_JOURNEY_BUFF_PROTECT_TRAINING_UP.png",
           "JourneyBuffType" : "JBT_PROTECT_TRAINING_UP",
-          "JourneyBuffValue" : 1000,
+          "JourneyBuffValue" : 2000,
           "JourneyBuffPositive" : true
         },
         {
@@ -516,7 +659,7 @@
           "JourneyBuffDesc" : "SI_JOURNEY_BUFFE_DESC_1003",
           "JourneyBuffIcon" : "ICON_JOURNEY_BUFF_ENDURANCE_TRAINING_UP.png",
           "JourneyBuffType" : "JBT_ENDURANCE_TRAINING_UP",
-          "JourneyBuffValue" : 1000,
+          "JourneyBuffValue" : 2000,
           "JourneyBuffPositive" : true
         },
         {

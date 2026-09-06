@@ -4,14 +4,16 @@
     "_Version": 0,
     "Data": [
         {
+          "ServiceRegion" : "Korea, Japan",
           "ContentsTag" : "MAIN_OPEN",
           "BattleID" : 1050301,
           "BattleStrID" : "RANKING_RAID_03_BATTLE_01",
           "RaidGroupId" : 10503,
           "Step" : 1,
           "BasePoint" : 0,
-          "MaxDamagePoint" : 10000,
-          "RemainTurnPoint" : 200,
+          "MaxDamagePoint" : 100000,
+          "RemainTurnPoint" : 1000,
+          "RemainingSaviorPoint" : 2000,
           "StatScale" : 10000,
           "TacticsScale" : 10000,
           "StarLinkScale" : 0,
@@ -26,21 +28,10 @@
           "Difficulty" : "BOSS",
           "SafePartyCount" : 4,
           "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
           "LimitTurn" : 50,
           "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
-          "BattlePower" : 57200,
-          "RankingRaindBuff" : 
-          [
-            {
-              "BuffId" : 8001,
-              "BuffTarget" : "BCT_MOON"
-            },
-
-            {
-              "BuffId" : 8002,
-              "BuffTarget" : "BCT_STRIKER"
-            }
-          ],
+          "BattlePower" : 33450,
           "RankingRaidBuff" : 
           [
             {
@@ -55,14 +46,16 @@
           ]
         },
         {
+          "ServiceRegion" : "Korea, Japan",
           "ContentsTag" : "MAIN_OPEN",
           "BattleID" : 1050302,
           "BattleStrID" : "RANKING_RAID_03_BATTLE_02",
           "RaidGroupId" : 10503,
           "Step" : 2,
-          "BasePoint" : 20000,
-          "MaxDamagePoint" : 10000,
-          "RemainTurnPoint" : 200,
+          "BasePoint" : 158000,
+          "MaxDamagePoint" : 250000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 5000,
           "StatScale" : 10000,
           "TacticsScale" : 10000,
           "StarLinkScale" : 0,
@@ -77,21 +70,10 @@
           "Difficulty" : "BOSS",
           "SafePartyCount" : 4,
           "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
           "LimitTurn" : 50,
           "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
-          "BattlePower" : 57200,
-          "RankingRaindBuff" : 
-          [
-            {
-              "BuffId" : 8001,
-              "BuffTarget" : "BCT_MOON"
-            },
-
-            {
-              "BuffId" : 8002,
-              "BuffTarget" : "BCT_STRIKER"
-            }
-          ],
+          "BattlePower" : 48950,
           "RankingRaidBuff" : 
           [
             {
@@ -106,14 +88,16 @@
           ]
         },
         {
+          "ServiceRegion" : "Korea, Japan",
           "ContentsTag" : "MAIN_OPEN",
           "BattleID" : 1050303,
           "BattleStrID" : "RANKING_RAID_03_BATTLE_03",
           "RaidGroupId" : 10503,
           "Step" : 3,
-          "BasePoint" : 40000,
-          "MaxDamagePoint" : 10000,
-          "RemainTurnPoint" : 200,
+          "BasePoint" : 553000,
+          "MaxDamagePoint" : 2500000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 50000,
           "StatScale" : 10000,
           "TacticsScale" : 10000,
           "StarLinkScale" : 0,
@@ -128,21 +112,11 @@
           "Difficulty" : "BOSS",
           "SafePartyCount" : 4,
           "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
           "LimitTurn" : 50,
           "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
-          "BattlePower" : 57200,
-          "RankingRaindBuff" : 
-          [
-            {
-              "BuffId" : 8001,
-              "BuffTarget" : "BCT_MOON"
-            },
-
-            {
-              "BuffId" : 8002,
-              "BuffTarget" : "BCT_STRIKER"
-            }
-          ],
+          "BattlePower" : 64450,
+          "DifficultyGroupId" : 1001,
           "RankingRaidBuff" : 
           [
             {
@@ -157,14 +131,16 @@
           ]
         },
         {
+          "ServiceRegion" : "Korea, Japan",
           "ContentsTag" : "MAIN_OPEN",
           "BattleID" : 1050401,
           "BattleStrID" : "RANKING_RAID_04_BATTLE_01",
           "RaidGroupId" : 10504,
           "Step" : 1,
           "BasePoint" : 0,
-          "MaxDamagePoint" : 10000,
-          "RemainTurnPoint" : 200,
+          "MaxDamagePoint" : 100000,
+          "RemainTurnPoint" : 1000,
+          "RemainingSaviorPoint" : 2000,
           "StatScale" : 10000,
           "TacticsScale" : 10000,
           "StarLinkScale" : 0,
@@ -179,21 +155,10 @@
           "Difficulty" : "BOSS",
           "SafePartyCount" : 4,
           "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
           "LimitTurn" : 50,
           "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
-          "BattlePower" : 57200,
-          "RankingRaindBuff" : 
-          [
-            {
-              "BuffId" : 8003,
-              "BuffTarget" : "BCT_STAR"
-            },
-
-            {
-              "BuffId" : 8004,
-              "BuffTarget" : "BCT_ASSASSIN"
-            }
-          ],
+          "BattlePower" : 33450,
           "RankingRaidBuff" : 
           [
             {
@@ -208,14 +173,16 @@
           ]
         },
         {
+          "ServiceRegion" : "Korea, Japan",
           "ContentsTag" : "MAIN_OPEN",
           "BattleID" : 1050402,
           "BattleStrID" : "RANKING_RAID_04_BATTLE_02",
           "RaidGroupId" : 10504,
           "Step" : 2,
-          "BasePoint" : 20000,
-          "MaxDamagePoint" : 10000,
-          "RemainTurnPoint" : 200,
+          "BasePoint" : 158000,
+          "MaxDamagePoint" : 250000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 5000,
           "StatScale" : 10000,
           "TacticsScale" : 10000,
           "StarLinkScale" : 0,
@@ -230,21 +197,10 @@
           "Difficulty" : "BOSS",
           "SafePartyCount" : 4,
           "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
           "LimitTurn" : 50,
           "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
-          "BattlePower" : 57200,
-          "RankingRaindBuff" : 
-          [
-            {
-              "BuffId" : 8003,
-              "BuffTarget" : "BCT_STAR"
-            },
-
-            {
-              "BuffId" : 8004,
-              "BuffTarget" : "BCT_ASSASSIN"
-            }
-          ],
+          "BattlePower" : 48950,
           "RankingRaidBuff" : 
           [
             {
@@ -259,14 +215,16 @@
           ]
         },
         {
+          "ServiceRegion" : "Korea, Japan",
           "ContentsTag" : "MAIN_OPEN",
           "BattleID" : 1050403,
           "BattleStrID" : "RANKING_RAID_04_BATTLE_03",
           "RaidGroupId" : 10504,
           "Step" : 3,
-          "BasePoint" : 40000,
-          "MaxDamagePoint" : 10000,
-          "RemainTurnPoint" : 200,
+          "BasePoint" : 553000,
+          "MaxDamagePoint" : 2500000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 50000,
           "StatScale" : 10000,
           "TacticsScale" : 10000,
           "StarLinkScale" : 0,
@@ -281,21 +239,11 @@
           "Difficulty" : "BOSS",
           "SafePartyCount" : 4,
           "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
           "LimitTurn" : 50,
           "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
-          "BattlePower" : 57200,
-          "RankingRaindBuff" : 
-          [
-            {
-              "BuffId" : 8003,
-              "BuffTarget" : "BCT_STAR"
-            },
-
-            {
-              "BuffId" : 8004,
-              "BuffTarget" : "BCT_ASSASSIN"
-            }
-          ],
+          "BattlePower" : 64450,
+          "DifficultyGroupId" : 1001,
           "RankingRaidBuff" : 
           [
             {
@@ -310,14 +258,16 @@
           ]
         },
         {
+          "ServiceRegion" : "Korea, Japan",
           "ContentsTag" : "MAIN_OPEN",
           "BattleID" : 1050501,
           "BattleStrID" : "RANKING_RAID_05_BATTLE_01",
           "RaidGroupId" : 10505,
           "Step" : 1,
           "BasePoint" : 0,
-          "MaxDamagePoint" : 10000,
-          "RemainTurnPoint" : 200,
+          "MaxDamagePoint" : 100000,
+          "RemainTurnPoint" : 1000,
+          "RemainingSaviorPoint" : 2000,
           "StatScale" : 10000,
           "TacticsScale" : 10000,
           "StarLinkScale" : 0,
@@ -332,43 +282,34 @@
           "Difficulty" : "BOSS",
           "SafePartyCount" : 4,
           "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
           "LimitTurn" : 50,
           "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
-          "BattlePower" : 57200,
-          "RankingRaindBuff" : 
-          [
-            {
-              "BuffId" : 8001,
-              "BuffTarget" : "BCT_MOON"
-            },
-
-            {
-              "BuffId" : 8002,
-              "BuffTarget" : "BCT_STRIKER"
-            }
-          ],
+          "BattlePower" : 33450,
           "RankingRaidBuff" : 
           [
             {
-              "BuffId" : 8001,
-              "BuffTarget" : "BCT_MOON"
+              "BuffId" : 8005,
+              "BuffTarget" : "BCT_STAR"
             },
 
             {
-              "BuffId" : 8002,
-              "BuffTarget" : "BCT_STRIKER"
+              "BuffId" : 8006,
+              "BuffTarget" : "BCT_ASSASSIN"
             }
           ]
         },
         {
+          "ServiceRegion" : "Korea, Japan",
           "ContentsTag" : "MAIN_OPEN",
           "BattleID" : 1050502,
           "BattleStrID" : "RANKING_RAID_05_BATTLE_02",
           "RaidGroupId" : 10505,
           "Step" : 2,
-          "BasePoint" : 20000,
-          "MaxDamagePoint" : 10000,
-          "RemainTurnPoint" : 200,
+          "BasePoint" : 158000,
+          "MaxDamagePoint" : 250000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 5000,
           "StatScale" : 10000,
           "TacticsScale" : 10000,
           "StarLinkScale" : 0,
@@ -383,43 +324,34 @@
           "Difficulty" : "BOSS",
           "SafePartyCount" : 4,
           "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
           "LimitTurn" : 50,
           "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
-          "BattlePower" : 57200,
-          "RankingRaindBuff" : 
-          [
-            {
-              "BuffId" : 8001,
-              "BuffTarget" : "BCT_MOON"
-            },
-
-            {
-              "BuffId" : 8002,
-              "BuffTarget" : "BCT_STRIKER"
-            }
-          ],
+          "BattlePower" : 48950,
           "RankingRaidBuff" : 
           [
             {
-              "BuffId" : 8001,
-              "BuffTarget" : "BCT_MOON"
+              "BuffId" : 8005,
+              "BuffTarget" : "BCT_STAR"
             },
 
             {
-              "BuffId" : 8002,
-              "BuffTarget" : "BCT_STRIKER"
+              "BuffId" : 8006,
+              "BuffTarget" : "BCT_ASSASSIN"
             }
           ]
         },
         {
+          "ServiceRegion" : "Korea, Japan",
           "ContentsTag" : "MAIN_OPEN",
           "BattleID" : 1050503,
           "BattleStrID" : "RANKING_RAID_05_BATTLE_03",
           "RaidGroupId" : 10505,
           "Step" : 3,
-          "BasePoint" : 40000,
-          "MaxDamagePoint" : 10000,
-          "RemainTurnPoint" : 200,
+          "BasePoint" : 553000,
+          "MaxDamagePoint" : 2500000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 50000,
           "StatScale" : 10000,
           "TacticsScale" : 10000,
           "StarLinkScale" : 0,
@@ -434,43 +366,35 @@
           "Difficulty" : "BOSS",
           "SafePartyCount" : 4,
           "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
           "LimitTurn" : 50,
           "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
-          "BattlePower" : 57200,
-          "RankingRaindBuff" : 
-          [
-            {
-              "BuffId" : 8001,
-              "BuffTarget" : "BCT_MOON"
-            },
-
-            {
-              "BuffId" : 8002,
-              "BuffTarget" : "BCT_STRIKER"
-            }
-          ],
+          "BattlePower" : 64450,
+          "DifficultyGroupId" : 1001,
           "RankingRaidBuff" : 
           [
             {
-              "BuffId" : 8001,
-              "BuffTarget" : "BCT_MOON"
+              "BuffId" : 8005,
+              "BuffTarget" : "BCT_STAR"
             },
 
             {
-              "BuffId" : 8002,
-              "BuffTarget" : "BCT_STRIKER"
+              "BuffId" : 8006,
+              "BuffTarget" : "BCT_ASSASSIN"
             }
           ]
         },
         {
+          "ServiceRegion" : "Korea, Japan",
           "ContentsTag" : "MAIN_OPEN",
           "BattleID" : 1050601,
           "BattleStrID" : "RANKING_RAID_06_BATTLE_01",
           "RaidGroupId" : 10506,
           "Step" : 1,
           "BasePoint" : 0,
-          "MaxDamagePoint" : 10000,
-          "RemainTurnPoint" : 200,
+          "MaxDamagePoint" : 100000,
+          "RemainTurnPoint" : 1000,
+          "RemainingSaviorPoint" : 2000,
           "StatScale" : 10000,
           "TacticsScale" : 10000,
           "StarLinkScale" : 0,
@@ -485,43 +409,34 @@
           "Difficulty" : "BOSS",
           "SafePartyCount" : 4,
           "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
           "LimitTurn" : 50,
           "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
-          "BattlePower" : 57200,
-          "RankingRaindBuff" : 
-          [
-            {
-              "BuffId" : 8003,
-              "BuffTarget" : "BCT_STAR"
-            },
-
-            {
-              "BuffId" : 8004,
-              "BuffTarget" : "BCT_ASSASSIN"
-            }
-          ],
+          "BattlePower" : 33450,
           "RankingRaidBuff" : 
           [
             {
-              "BuffId" : 8003,
-              "BuffTarget" : "BCT_STAR"
+              "BuffId" : 8007,
+              "BuffTarget" : "BCT_SUN"
             },
 
             {
-              "BuffId" : 8004,
-              "BuffTarget" : "BCT_ASSASSIN"
+              "BuffId" : 8008,
+              "BuffTarget" : "BCT_SUPPORTER"
             }
           ]
         },
         {
+          "ServiceRegion" : "Korea, Japan",
           "ContentsTag" : "MAIN_OPEN",
           "BattleID" : 1050602,
           "BattleStrID" : "RANKING_RAID_06_BATTLE_02",
           "RaidGroupId" : 10506,
           "Step" : 2,
-          "BasePoint" : 20000,
-          "MaxDamagePoint" : 10000,
-          "RemainTurnPoint" : 200,
+          "BasePoint" : 158000,
+          "MaxDamagePoint" : 250000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 5000,
           "StatScale" : 10000,
           "TacticsScale" : 10000,
           "StarLinkScale" : 0,
@@ -536,43 +451,34 @@
           "Difficulty" : "BOSS",
           "SafePartyCount" : 4,
           "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
           "LimitTurn" : 50,
           "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
-          "BattlePower" : 57200,
-          "RankingRaindBuff" : 
-          [
-            {
-              "BuffId" : 8003,
-              "BuffTarget" : "BCT_STAR"
-            },
-
-            {
-              "BuffId" : 8004,
-              "BuffTarget" : "BCT_ASSASSIN"
-            }
-          ],
+          "BattlePower" : 48950,
           "RankingRaidBuff" : 
           [
             {
-              "BuffId" : 8003,
-              "BuffTarget" : "BCT_STAR"
+              "BuffId" : 8007,
+              "BuffTarget" : "BCT_SUN"
             },
 
             {
-              "BuffId" : 8004,
-              "BuffTarget" : "BCT_ASSASSIN"
+              "BuffId" : 8008,
+              "BuffTarget" : "BCT_SUPPORTER"
             }
           ]
         },
         {
+          "ServiceRegion" : "Korea, Japan",
           "ContentsTag" : "MAIN_OPEN",
           "BattleID" : 1050603,
           "BattleStrID" : "RANKING_RAID_06_BATTLE_03",
           "RaidGroupId" : 10506,
           "Step" : 3,
-          "BasePoint" : 40000,
-          "MaxDamagePoint" : 10000,
-          "RemainTurnPoint" : 200,
+          "BasePoint" : 553000,
+          "MaxDamagePoint" : 2500000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 50000,
           "StatScale" : 10000,
           "TacticsScale" : 10000,
           "StarLinkScale" : 0,
@@ -587,31 +493,4555 @@
           "Difficulty" : "BOSS",
           "SafePartyCount" : 4,
           "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
           "LimitTurn" : 50,
           "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
-          "BattlePower" : 57200,
-          "RankingRaindBuff" : 
-          [
-            {
-              "BuffId" : 8003,
-              "BuffTarget" : "BCT_STAR"
-            },
-
-            {
-              "BuffId" : 8004,
-              "BuffTarget" : "BCT_ASSASSIN"
-            }
-          ],
+          "BattlePower" : 64450,
+          "DifficultyGroupId" : 1001,
           "RankingRaidBuff" : 
           [
             {
-              "BuffId" : 8003,
+              "BuffId" : 8007,
+              "BuffTarget" : "BCT_SUN"
+            },
+
+            {
+              "BuffId" : 8008,
+              "BuffTarget" : "BCT_SUPPORTER"
+            }
+          ]
+        },
+        {
+          "ServiceRegion" : "Korea, Japan",
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1050701,
+          "BattleStrID" : "RANKING_RAID_07_BATTLE_01",
+          "RaidGroupId" : 10507,
+          "Step" : 1,
+          "BasePoint" : 0,
+          "MaxDamagePoint" : 100000,
+          "RemainTurnPoint" : 1000,
+          "RemainingSaviorPoint" : 2000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DEMORAIGIS_02_BATTLE_01.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STELLAR_ARCHIVE_2_TYPE_A",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DEMORAIGIS_BETA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 33450,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8009,
+              "BuffTarget" : "BCT_ORDER"
+            },
+
+            {
+              "BuffId" : 8010,
+              "BuffTarget" : "BCT_ASSASSIN"
+            }
+          ]
+        },
+        {
+          "ServiceRegion" : "Korea, Japan",
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1050702,
+          "BattleStrID" : "RANKING_RAID_07_BATTLE_02",
+          "RaidGroupId" : 10507,
+          "Step" : 2,
+          "BasePoint" : 158000,
+          "MaxDamagePoint" : 250000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 5000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DEMORAIGIS_02_BATTLE_02.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STELLAR_ARCHIVE_2_TYPE_A",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DEMORAIGIS_BETA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 48950,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8009,
+              "BuffTarget" : "BCT_ORDER"
+            },
+
+            {
+              "BuffId" : 8010,
+              "BuffTarget" : "BCT_ASSASSIN"
+            }
+          ]
+        },
+        {
+          "ServiceRegion" : "Korea, Japan",
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1050703,
+          "BattleStrID" : "RANKING_RAID_07_BATTLE_03",
+          "RaidGroupId" : 10507,
+          "Step" : 3,
+          "BasePoint" : 553000,
+          "MaxDamagePoint" : 2500000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 50000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DEMORAIGIS_02_BATTLE_03.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STELLAR_ARCHIVE_2_TYPE_A",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DEMORAIGIS_BETA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 64450,
+          "DifficultyGroupId" : 1001,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8009,
+              "BuffTarget" : "BCT_ORDER"
+            },
+
+            {
+              "BuffId" : 8010,
+              "BuffTarget" : "BCT_ASSASSIN"
+            }
+          ]
+        },
+        {
+          "ServiceRegion" : "Korea, Japan",
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1050801,
+          "BattleStrID" : "RANKING_RAID_08_BATTLE_01",
+          "RaidGroupId" : 10508,
+          "Step" : 1,
+          "BasePoint" : 0,
+          "MaxDamagePoint" : 100000,
+          "RemainTurnPoint" : 1000,
+          "RemainingSaviorPoint" : 2000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_MOGULUS_01_BATTLE_01.txt",
+          "BattleMapStrID" : "MAP_BATTLE_ANCIENT_SITE_RAID_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_MOGULUS",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_MOGULUS.mp3",
+          "BattlePower" : 33450,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8011,
               "BuffTarget" : "BCT_STAR"
             },
 
             {
-              "BuffId" : 8004,
+              "BuffId" : 8012,
+              "BuffTarget" : "BCT_DEFENDER"
+            }
+          ]
+        },
+        {
+          "ServiceRegion" : "Korea, Japan",
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1050802,
+          "BattleStrID" : "RANKING_RAID_08_BATTLE_02",
+          "RaidGroupId" : 10508,
+          "Step" : 2,
+          "BasePoint" : 158000,
+          "MaxDamagePoint" : 250000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 5000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_MOGULUS_01_BATTLE_02.txt",
+          "BattleMapStrID" : "MAP_BATTLE_ANCIENT_SITE_RAID_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_MOGULUS",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_MOGULUS.mp3",
+          "BattlePower" : 48950,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8011,
+              "BuffTarget" : "BCT_STAR"
+            },
+
+            {
+              "BuffId" : 8012,
+              "BuffTarget" : "BCT_DEFENDER"
+            }
+          ]
+        },
+        {
+          "ServiceRegion" : "Korea, Japan",
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1050803,
+          "BattleStrID" : "RANKING_RAID_08_BATTLE_03",
+          "RaidGroupId" : 10508,
+          "Step" : 3,
+          "BasePoint" : 553000,
+          "MaxDamagePoint" : 2500000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 50000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_MOGULUS_01_BATTLE_03.txt",
+          "BattleMapStrID" : "MAP_BATTLE_ANCIENT_SITE_RAID_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_MOGULUS",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_MOGULUS.mp3",
+          "BattlePower" : 64450,
+          "DifficultyGroupId" : 1001,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8011,
+              "BuffTarget" : "BCT_STAR"
+            },
+
+            {
+              "BuffId" : 8012,
+              "BuffTarget" : "BCT_DEFENDER"
+            }
+          ]
+        },
+        {
+          "ServiceRegion" : "Korea, Japan",
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1050901,
+          "BattleStrID" : "RANKING_RAID_09_BATTLE_01",
+          "RaidGroupId" : 10509,
+          "Step" : 1,
+          "BasePoint" : 0,
+          "MaxDamagePoint" : 100000,
+          "RemainTurnPoint" : 1000,
+          "RemainingSaviorPoint" : 2000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DEMORAIGIS_01_BATTLE_01.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STELLAR_ARCHIVE_2_TYPE_A",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DEMORAIGIS_ALPHA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 33450,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8013,
+              "BuffTarget" : "BCT_MOON"
+            },
+
+            {
+              "BuffId" : 8014,
+              "BuffTarget" : "BCT_RANGER"
+            }
+          ]
+        },
+        {
+          "ServiceRegion" : "Korea, Japan",
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1050902,
+          "BattleStrID" : "RANKING_RAID_09_BATTLE_02",
+          "RaidGroupId" : 10509,
+          "Step" : 2,
+          "BasePoint" : 158000,
+          "MaxDamagePoint" : 250000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 5000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DEMORAIGIS_01_BATTLE_02.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STELLAR_ARCHIVE_2_TYPE_A",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DEMORAIGIS_ALPHA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 48950,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8013,
+              "BuffTarget" : "BCT_MOON"
+            },
+
+            {
+              "BuffId" : 8014,
+              "BuffTarget" : "BCT_RANGER"
+            }
+          ]
+        },
+        {
+          "ServiceRegion" : "Korea, Japan",
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1050903,
+          "BattleStrID" : "RANKING_RAID_09_BATTLE_03",
+          "RaidGroupId" : 10509,
+          "Step" : 3,
+          "BasePoint" : 553000,
+          "MaxDamagePoint" : 2500000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 50000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DEMORAIGIS_01_BATTLE_03.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STELLAR_ARCHIVE_2_TYPE_A",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DEMORAIGIS_ALPHA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 64450,
+          "DifficultyGroupId" : 1001,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8013,
+              "BuffTarget" : "BCT_MOON"
+            },
+
+            {
+              "BuffId" : 8014,
+              "BuffTarget" : "BCT_RANGER"
+            }
+          ]
+        },
+        {
+          "ServiceRegion" : "Korea, Japan",
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1051001,
+          "BattleStrID" : "RANKING_RAID_10_BATTLE_01",
+          "RaidGroupId" : 10510,
+          "Step" : 1,
+          "BasePoint" : 0,
+          "MaxDamagePoint" : 100000,
+          "RemainTurnPoint" : 1000,
+          "RemainingSaviorPoint" : 2000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_HATCHLING_GUARD_01_BATTLE_01.txt",
+          "BattleMapStrID" : "MAP_BATTLE_KALAID_SQUARE_NIGHT",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_HATCHLING",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_WINTER_BATTLE.mp3",
+          "BattlePower" : 33450,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8015,
+              "BuffTarget" : "BCT_STAR"
+            },
+
+            {
+              "BuffId" : 8016,
+              "BuffTarget" : "BCT_DEFENDER"
+            }
+          ]
+        },
+        {
+          "ServiceRegion" : "Korea, Japan",
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1051002,
+          "BattleStrID" : "RANKING_RAID_10_BATTLE_02",
+          "RaidGroupId" : 10510,
+          "Step" : 2,
+          "BasePoint" : 158000,
+          "MaxDamagePoint" : 250000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 5000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_HATCHLING_GUARD_01_BATTLE_02.txt",
+          "BattleMapStrID" : "MAP_BATTLE_KALAID_SQUARE_NIGHT",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_HATCHLING",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_WINTER_BATTLE.mp3",
+          "BattlePower" : 48950,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8015,
+              "BuffTarget" : "BCT_STAR"
+            },
+
+            {
+              "BuffId" : 8016,
+              "BuffTarget" : "BCT_DEFENDER"
+            }
+          ]
+        },
+        {
+          "ServiceRegion" : "Korea, Japan",
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1051003,
+          "BattleStrID" : "RANKING_RAID_10_BATTLE_03",
+          "RaidGroupId" : 10510,
+          "Step" : 3,
+          "BasePoint" : 553000,
+          "MaxDamagePoint" : 2500000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 50000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_HATCHLING_GUARD_01_BATTLE_03.txt",
+          "BattleMapStrID" : "MAP_BATTLE_KALAID_SQUARE_NIGHT",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_HATCHLING",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_WINTER_BATTLE.mp3",
+          "BattlePower" : 64450,
+          "DifficultyGroupId" : 1001,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8015,
+              "BuffTarget" : "BCT_STAR"
+            },
+
+            {
+              "BuffId" : 8016,
+              "BuffTarget" : "BCT_DEFENDER"
+            }
+          ]
+        },
+        {
+          "ServiceRegion" : "Korea, Japan",
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1051101,
+          "BattleStrID" : "RANKING_RAID_11_BATTLE_01",
+          "RaidGroupId" : 10511,
+          "Step" : 1,
+          "BasePoint" : 0,
+          "MaxDamagePoint" : 100000,
+          "RemainTurnPoint" : 1000,
+          "RemainingSaviorPoint" : 2000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_MOGULUS_01_BATTLE_01.txt",
+          "BattleMapStrID" : "MAP_BATTLE_ANCIENT_SITE_RAID_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_MOGULUS",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_MOGULUS.mp3",
+          "BattlePower" : 33450,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8017,
+              "BuffTarget" : "BCT_SUN"
+            },
+
+            {
+              "BuffId" : 8020,
               "BuffTarget" : "BCT_ASSASSIN"
+            }
+          ]
+        },
+        {
+          "ServiceRegion" : "Korea, Japan",
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1051102,
+          "BattleStrID" : "RANKING_RAID_11_BATTLE_02",
+          "RaidGroupId" : 10511,
+          "Step" : 2,
+          "BasePoint" : 158000,
+          "MaxDamagePoint" : 250000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 5000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_MOGULUS_01_BATTLE_02.txt",
+          "BattleMapStrID" : "MAP_BATTLE_ANCIENT_SITE_RAID_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_MOGULUS",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_MOGULUS.mp3",
+          "BattlePower" : 48950,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8017,
+              "BuffTarget" : "BCT_SUN"
+            },
+
+            {
+              "BuffId" : 8020,
+              "BuffTarget" : "BCT_ASSASSIN"
+            }
+          ]
+        },
+        {
+          "ServiceRegion" : "Korea, Japan",
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1051103,
+          "BattleStrID" : "RANKING_RAID_11_BATTLE_03",
+          "RaidGroupId" : 10511,
+          "Step" : 3,
+          "BasePoint" : 553000,
+          "MaxDamagePoint" : 2500000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 50000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_MOGULUS_01_BATTLE_03.txt",
+          "BattleMapStrID" : "MAP_BATTLE_ANCIENT_SITE_RAID_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_MOGULUS",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_MOGULUS.mp3",
+          "BattlePower" : 64450,
+          "DifficultyGroupId" : 1001,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8017,
+              "BuffTarget" : "BCT_SUN"
+            },
+
+            {
+              "BuffId" : 8020,
+              "BuffTarget" : "BCT_ASSASSIN"
+            }
+          ]
+        },
+        {
+          "ServiceRegion" : "Korea, Japan",
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1051201,
+          "BattleStrID" : "RANKING_RAID_12_BATTLE_01",
+          "RaidGroupId" : 10512,
+          "Step" : 1,
+          "BasePoint" : 0,
+          "MaxDamagePoint" : 100000,
+          "RemainTurnPoint" : 1000,
+          "RemainingSaviorPoint" : 2000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DEMORAIGIS_01_BATTLE_01.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STELLAR_ARCHIVE_2_TYPE_A",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DEMORAIGIS_ALPHA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 33450,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8019,
+              "BuffTarget" : "BCT_MOON"
+            },
+
+            {
+              "BuffId" : 8018,
+              "BuffTarget" : "BCT_DEFENDER"
+            }
+          ]
+        },
+        {
+          "ServiceRegion" : "Korea, Japan",
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1051202,
+          "BattleStrID" : "RANKING_RAID_12_BATTLE_02",
+          "RaidGroupId" : 10512,
+          "Step" : 2,
+          "BasePoint" : 158000,
+          "MaxDamagePoint" : 250000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 5000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DEMORAIGIS_01_BATTLE_02.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STELLAR_ARCHIVE_2_TYPE_A",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DEMORAIGIS_ALPHA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 48950,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8019,
+              "BuffTarget" : "BCT_MOON"
+            },
+
+            {
+              "BuffId" : 8018,
+              "BuffTarget" : "BCT_DEFENDER"
+            }
+          ]
+        },
+        {
+          "ServiceRegion" : "Korea, Japan",
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1051203,
+          "BattleStrID" : "RANKING_RAID_12_BATTLE_03",
+          "RaidGroupId" : 10512,
+          "Step" : 3,
+          "BasePoint" : 553000,
+          "MaxDamagePoint" : 2500000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 50000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DEMORAIGIS_01_BATTLE_03.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STELLAR_ARCHIVE_2_TYPE_A",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DEMORAIGIS_ALPHA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 64450,
+          "DifficultyGroupId" : 1001,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8019,
+              "BuffTarget" : "BCT_MOON"
+            },
+
+            {
+              "BuffId" : 8018,
+              "BuffTarget" : "BCT_DEFENDER"
+            }
+          ]
+        },
+        {
+          "ServiceRegion" : "Korea, Japan",
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1051301,
+          "BattleStrID" : "RANKING_RAID_13_BATTLE_01",
+          "RaidGroupId" : 10513,
+          "Step" : 1,
+          "BasePoint" : 0,
+          "MaxDamagePoint" : 100000,
+          "RemainTurnPoint" : 1000,
+          "RemainingSaviorPoint" : 2000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_HATCHLING_GUARD_01_BATTLE_01.txt",
+          "BattleMapStrID" : "MAP_BATTLE_KALAID_SQUARE_NIGHT",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_HATCHLING",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 33450,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8021,
+              "BuffTarget" : "BCT_MOON"
+            },
+
+            {
+              "BuffId" : 8022,
+              "BuffTarget" : "BCT_STRIKER"
+            }
+          ]
+        },
+        {
+          "ServiceRegion" : "Korea, Japan",
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1051302,
+          "BattleStrID" : "RANKING_RAID_13_BATTLE_02",
+          "RaidGroupId" : 10513,
+          "Step" : 2,
+          "BasePoint" : 158000,
+          "MaxDamagePoint" : 250000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 5000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_HATCHLING_GUARD_01_BATTLE_02.txt",
+          "BattleMapStrID" : "MAP_BATTLE_KALAID_SQUARE_NIGHT",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_HATCHLING",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 48950,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8021,
+              "BuffTarget" : "BCT_MOON"
+            },
+
+            {
+              "BuffId" : 8022,
+              "BuffTarget" : "BCT_STRIKER"
+            }
+          ]
+        },
+        {
+          "ServiceRegion" : "Korea, Japan",
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1051303,
+          "BattleStrID" : "RANKING_RAID_13_BATTLE_03",
+          "RaidGroupId" : 10513,
+          "Step" : 3,
+          "BasePoint" : 553000,
+          "MaxDamagePoint" : 2500000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 50000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_HATCHLING_GUARD_01_BATTLE_03.txt",
+          "BattleMapStrID" : "MAP_BATTLE_KALAID_SQUARE_NIGHT",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_HATCHLING",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 64450,
+          "DifficultyGroupId" : 1001,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8021,
+              "BuffTarget" : "BCT_MOON"
+            },
+
+            {
+              "BuffId" : 8022,
+              "BuffTarget" : "BCT_STRIKER"
+            }
+          ]
+        },
+        {
+          "ServiceRegion" : "Korea, Japan",
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1051401,
+          "BattleStrID" : "RANKING_RAID_14_BATTLE_01",
+          "RaidGroupId" : 10514,
+          "Step" : 1,
+          "BasePoint" : 0,
+          "MaxDamagePoint" : 100000,
+          "RemainTurnPoint" : 1000,
+          "RemainingSaviorPoint" : 2000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DEMORAIGIS_02_BATTLE_01.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STELLAR_ARCHIVE_2_TYPE_A",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DEMORAIGIS_BETA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 33450,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8023,
+              "BuffTarget" : "BCT_SUN"
+            },
+
+            {
+              "BuffId" : 8024,
+              "BuffTarget" : "BCT_SUPPORTER"
+            }
+          ]
+        },
+        {
+          "ServiceRegion" : "Korea, Japan",
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1051402,
+          "BattleStrID" : "RANKING_RAID_14_BATTLE_02",
+          "RaidGroupId" : 10514,
+          "Step" : 2,
+          "BasePoint" : 158000,
+          "MaxDamagePoint" : 250000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 5000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DEMORAIGIS_02_BATTLE_02.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STELLAR_ARCHIVE_2_TYPE_A",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DEMORAIGIS_BETA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 48950,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8023,
+              "BuffTarget" : "BCT_SUN"
+            },
+
+            {
+              "BuffId" : 8024,
+              "BuffTarget" : "BCT_SUPPORTER"
+            }
+          ]
+        },
+        {
+          "ServiceRegion" : "Korea, Japan",
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1051403,
+          "BattleStrID" : "RANKING_RAID_14_BATTLE_03",
+          "RaidGroupId" : 10514,
+          "Step" : 3,
+          "BasePoint" : 553000,
+          "MaxDamagePoint" : 2500000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 50000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DEMORAIGIS_02_BATTLE_03.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STELLAR_ARCHIVE_2_TYPE_A",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DEMORAIGIS_BETA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 64450,
+          "DifficultyGroupId" : 1001,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8023,
+              "BuffTarget" : "BCT_SUN"
+            },
+
+            {
+              "BuffId" : 8024,
+              "BuffTarget" : "BCT_SUPPORTER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1051501,
+          "BattleStrID" : "RANKING_RAID_15_BATTLE_01",
+          "RaidGroupId" : 10515,
+          "Step" : 1,
+          "BasePoint" : 0,
+          "MaxDamagePoint" : 100000,
+          "RemainTurnPoint" : 1000,
+          "RemainingSaviorPoint" : 2000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_MOGULUS_01_BATTLE_01.txt",
+          "BattleMapStrID" : "MAP_BATTLE_ANCIENT_SITE_RAID_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_MOGULUS",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_MOGULUS.mp3",
+          "BattlePower" : 33450,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8025,
+              "BuffTarget" : "BCT_MOON"
+            },
+
+            {
+              "BuffId" : 8026,
+              "BuffTarget" : "BCT_CASTER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1051502,
+          "BattleStrID" : "RANKING_RAID_15_BATTLE_02",
+          "RaidGroupId" : 10515,
+          "Step" : 2,
+          "BasePoint" : 158000,
+          "MaxDamagePoint" : 250000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 5000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_MOGULUS_01_BATTLE_02.txt",
+          "BattleMapStrID" : "MAP_BATTLE_ANCIENT_SITE_RAID_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_MOGULUS",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_MOGULUS.mp3",
+          "BattlePower" : 48950,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8025,
+              "BuffTarget" : "BCT_MOON"
+            },
+
+            {
+              "BuffId" : 8026,
+              "BuffTarget" : "BCT_CASTER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1051503,
+          "BattleStrID" : "RANKING_RAID_15_BATTLE_03",
+          "RaidGroupId" : 10515,
+          "Step" : 3,
+          "BasePoint" : 553000,
+          "MaxDamagePoint" : 2500000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 50000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_MOGULUS_01_BATTLE_03.txt",
+          "BattleMapStrID" : "MAP_BATTLE_ANCIENT_SITE_RAID_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_MOGULUS",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_MOGULUS.mp3",
+          "BattlePower" : 64450,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8025,
+              "BuffTarget" : "BCT_MOON"
+            },
+
+            {
+              "BuffId" : 8026,
+              "BuffTarget" : "BCT_CASTER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1051601,
+          "BattleStrID" : "RANKING_RAID_16_BATTLE_01",
+          "RaidGroupId" : 10516,
+          "Step" : 1,
+          "BasePoint" : 0,
+          "MaxDamagePoint" : 100000,
+          "RemainTurnPoint" : 1000,
+          "RemainingSaviorPoint" : 2000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DEMORAIGIS_02_BATTLE_01.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STELLAR_ARCHIVE_2_TYPE_A",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DEMORAIGIS_BETA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 33450,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8027,
+              "BuffTarget" : "BCT_STAR"
+            },
+
+            {
+              "BuffId" : 8028,
+              "BuffTarget" : "BCT_RANGER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1051602,
+          "BattleStrID" : "RANKING_RAID_16_BATTLE_02",
+          "RaidGroupId" : 10516,
+          "Step" : 2,
+          "BasePoint" : 158000,
+          "MaxDamagePoint" : 250000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 5000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DEMORAIGIS_02_BATTLE_02.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STELLAR_ARCHIVE_2_TYPE_A",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DEMORAIGIS_BETA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 48950,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8027,
+              "BuffTarget" : "BCT_STAR"
+            },
+
+            {
+              "BuffId" : 8028,
+              "BuffTarget" : "BCT_RANGER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1051603,
+          "BattleStrID" : "RANKING_RAID_16_BATTLE_03",
+          "RaidGroupId" : 10516,
+          "Step" : 3,
+          "BasePoint" : 553000,
+          "MaxDamagePoint" : 2500000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 50000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DEMORAIGIS_02_BATTLE_03.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STELLAR_ARCHIVE_2_TYPE_A",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DEMORAIGIS_BETA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 64450,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8027,
+              "BuffTarget" : "BCT_STAR"
+            },
+
+            {
+              "BuffId" : 8028,
+              "BuffTarget" : "BCT_RANGER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1051701,
+          "BattleStrID" : "RANKING_RAID_17_BATTLE_01",
+          "RaidGroupId" : 10517,
+          "Step" : 1,
+          "BasePoint" : 0,
+          "MaxDamagePoint" : 100000,
+          "RemainTurnPoint" : 1000,
+          "RemainingSaviorPoint" : 2000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_HILDE_01_BATTLE_01.txt",
+          "BattleMapStrID" : "MAP_BATTLE_COUNTERSIDE_ASH",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_HILDE",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_03.mp3",
+          "BattlePower" : 33450,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8027,
+              "BuffTarget" : "BCT_SUN"
+            },
+
+            {
+              "BuffId" : 8005,
+              "BuffTarget" : "BCT_DEFENDER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1051702,
+          "BattleStrID" : "RANKING_RAID_17_BATTLE_02",
+          "RaidGroupId" : 10517,
+          "Step" : 2,
+          "BasePoint" : 158000,
+          "MaxDamagePoint" : 250000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 5000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_HILDE_01_BATTLE_02.txt",
+          "BattleMapStrID" : "MAP_BATTLE_COUNTERSIDE_ASH",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_HILDE",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_03.mp3",
+          "BattlePower" : 48950,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8027,
+              "BuffTarget" : "BCT_SUN"
+            },
+
+            {
+              "BuffId" : 8005,
+              "BuffTarget" : "BCT_DEFENDER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1051703,
+          "BattleStrID" : "RANKING_RAID_17_BATTLE_03",
+          "RaidGroupId" : 10517,
+          "Step" : 3,
+          "BasePoint" : 553000,
+          "MaxDamagePoint" : 2500000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 50000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_HILDE_01_BATTLE_03.txt",
+          "BattleMapStrID" : "MAP_BATTLE_COUNTERSIDE_ASH",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_HILDE",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_03.mp3",
+          "BattlePower" : 64450,
+          "DifficultyGroupId" : 1001,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8027,
+              "BuffTarget" : "BCT_SUN"
+            },
+
+            {
+              "BuffId" : 8005,
+              "BuffTarget" : "BCT_DEFENDER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1051801,
+          "BattleStrID" : "RANKING_RAID_18_BATTLE_01",
+          "RaidGroupId" : 10518,
+          "Step" : 1,
+          "BasePoint" : 0,
+          "MaxDamagePoint" : 100000,
+          "RemainTurnPoint" : 1000,
+          "RemainingSaviorPoint" : 2000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_ROSARIA_01_BATTLE_01.txt",
+          "BattleMapStrID" : "MAP_BATTLE_COUNTERSIDE_ASH",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_ROSARIA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_03.mp3",
+          "BattlePower" : 33450,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8023,
+              "BuffTarget" : "BCT_STAR"
+            },
+
+            {
+              "BuffId" : 8032,
+              "BuffTarget" : "BCT_RANGER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1051802,
+          "BattleStrID" : "RANKING_RAID_18_BATTLE_02",
+          "RaidGroupId" : 10518,
+          "Step" : 2,
+          "BasePoint" : 158000,
+          "MaxDamagePoint" : 250000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 5000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_ROSARIA_01_BATTLE_02.txt",
+          "BattleMapStrID" : "MAP_BATTLE_COUNTERSIDE_ASH",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_ROSARIA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_03.mp3",
+          "BattlePower" : 48950,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8023,
+              "BuffTarget" : "BCT_STAR"
+            },
+
+            {
+              "BuffId" : 8032,
+              "BuffTarget" : "BCT_RANGER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1051803,
+          "BattleStrID" : "RANKING_RAID_18_BATTLE_03",
+          "RaidGroupId" : 10518,
+          "Step" : 3,
+          "BasePoint" : 553000,
+          "MaxDamagePoint" : 2500000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 50000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_ROSARIA_01_BATTLE_03.txt",
+          "BattleMapStrID" : "MAP_BATTLE_COUNTERSIDE_ASH",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_ROSARIA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_03.mp3",
+          "BattlePower" : 64450,
+          "DifficultyGroupId" : 1001,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8023,
+              "BuffTarget" : "BCT_STAR"
+            },
+
+            {
+              "BuffId" : 8032,
+              "BuffTarget" : "BCT_RANGER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1051901,
+          "BattleStrID" : "RANKING_RAID_19_BATTLE_01",
+          "RaidGroupId" : 10519,
+          "Step" : 1,
+          "BasePoint" : 0,
+          "MaxDamagePoint" : 100000,
+          "RemainTurnPoint" : 1000,
+          "RemainingSaviorPoint" : 2000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DEMORAIGIS_01_BATTLE_01.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STELLAR_ARCHIVE_2_TYPE_A",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DEMORAIGIS_ALPHA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 33450,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8033,
+              "BuffTarget" : "BCT_CHAOS"
+            },
+
+            {
+              "BuffId" : 8034,
+              "BuffTarget" : "BCT_RANGER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1051902,
+          "BattleStrID" : "RANKING_RAID_19_BATTLE_02",
+          "RaidGroupId" : 10519,
+          "Step" : 2,
+          "BasePoint" : 158000,
+          "MaxDamagePoint" : 250000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 5000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DEMORAIGIS_01_BATTLE_02.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STELLAR_ARCHIVE_2_TYPE_A",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DEMORAIGIS_ALPHA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 48950,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8033,
+              "BuffTarget" : "BCT_CHAOS"
+            },
+
+            {
+              "BuffId" : 8034,
+              "BuffTarget" : "BCT_RANGER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1051903,
+          "BattleStrID" : "RANKING_RAID_19_BATTLE_03",
+          "RaidGroupId" : 10519,
+          "Step" : 3,
+          "BasePoint" : 553000,
+          "MaxDamagePoint" : 2500000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 50000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DEMORAIGIS_01_BATTLE_03.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STELLAR_ARCHIVE_2_TYPE_A",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DEMORAIGIS_ALPHA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 64450,
+          "DifficultyGroupId" : 1001,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8033,
+              "BuffTarget" : "BCT_CHAOS"
+            },
+
+            {
+              "BuffId" : 8034,
+              "BuffTarget" : "BCT_RANGER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1052001,
+          "BattleStrID" : "RANKING_RAID_20_BATTLE_01",
+          "RaidGroupId" : 10520,
+          "Step" : 1,
+          "BasePoint" : 0,
+          "MaxDamagePoint" : 100000,
+          "RemainTurnPoint" : 1000,
+          "RemainingSaviorPoint" : 2000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DEMORAIGIS_02_BATTLE_01.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STELLAR_ARCHIVE_2_TYPE_A",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DEMORAIGIS_BETA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 33450,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8035,
+              "BuffTarget" : "BCT_SUN"
+            },
+
+            {
+              "BuffId" : 8036,
+              "BuffTarget" : "BCT_STRIKER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1052002,
+          "BattleStrID" : "RANKING_RAID_20_BATTLE_02",
+          "RaidGroupId" : 10520,
+          "Step" : 2,
+          "BasePoint" : 158000,
+          "MaxDamagePoint" : 250000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 5000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DEMORAIGIS_02_BATTLE_02.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STELLAR_ARCHIVE_2_TYPE_A",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DEMORAIGIS_BETA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 48950,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8035,
+              "BuffTarget" : "BCT_SUN"
+            },
+
+            {
+              "BuffId" : 8036,
+              "BuffTarget" : "BCT_STRIKER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1052003,
+          "BattleStrID" : "RANKING_RAID_20_BATTLE_03",
+          "RaidGroupId" : 10520,
+          "Step" : 3,
+          "BasePoint" : 553000,
+          "MaxDamagePoint" : 2500000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 50000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DEMORAIGIS_02_BATTLE_03.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STELLAR_ARCHIVE_2_TYPE_A",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DEMORAIGIS_BETA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 64450,
+          "DifficultyGroupId" : 1001,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8035,
+              "BuffTarget" : "BCT_SUN"
+            },
+
+            {
+              "BuffId" : 8036,
+              "BuffTarget" : "BCT_STRIKER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1052101,
+          "BattleStrID" : "RANKING_RAID_21_BATTLE_01",
+          "RaidGroupId" : 10521,
+          "Step" : 1,
+          "BasePoint" : 0,
+          "MaxDamagePoint" : 100000,
+          "RemainTurnPoint" : 1000,
+          "RemainingSaviorPoint" : 2000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_MOGULUS_01_BATTLE_01.txt",
+          "BattleMapStrID" : "MAP_BATTLE_ANCIENT_SITE_RAID_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_MOGULUS",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_MOGULUS.mp3",
+          "BattlePower" : 33450,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8037,
+              "BuffTarget" : "BCT_MOON"
+            },
+
+            {
+              "BuffId" : 8038,
+              "BuffTarget" : "BCT_DEFENDER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1052102,
+          "BattleStrID" : "RANKING_RAID_21_BATTLE_02",
+          "RaidGroupId" : 10521,
+          "Step" : 2,
+          "BasePoint" : 158000,
+          "MaxDamagePoint" : 250000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 5000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_MOGULUS_01_BATTLE_02.txt",
+          "BattleMapStrID" : "MAP_BATTLE_ANCIENT_SITE_RAID_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_MOGULUS",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_MOGULUS.mp3",
+          "BattlePower" : 48950,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8037,
+              "BuffTarget" : "BCT_MOON"
+            },
+
+            {
+              "BuffId" : 8038,
+              "BuffTarget" : "BCT_DEFENDER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1052103,
+          "BattleStrID" : "RANKING_RAID_21_BATTLE_03",
+          "RaidGroupId" : 10521,
+          "Step" : 3,
+          "BasePoint" : 553000,
+          "MaxDamagePoint" : 2500000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 50000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_MOGULUS_01_BATTLE_03.txt",
+          "BattleMapStrID" : "MAP_BATTLE_ANCIENT_SITE_RAID_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_MOGULUS",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_MOGULUS.mp3",
+          "BattlePower" : 64450,
+          "DifficultyGroupId" : 1001,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8037,
+              "BuffTarget" : "BCT_MOON"
+            },
+
+            {
+              "BuffId" : 8038,
+              "BuffTarget" : "BCT_DEFENDER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1052201,
+          "BattleStrID" : "RANKING_RAID_22_BATTLE_01",
+          "RaidGroupId" : 10522,
+          "Step" : 1,
+          "BasePoint" : 0,
+          "MaxDamagePoint" : 100000,
+          "RemainTurnPoint" : 1000,
+          "RemainingSaviorPoint" : 2000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_HATCHLING_GUARD_01_BATTLE_01.txt",
+          "BattleMapStrID" : "MAP_BATTLE_KALAID_SQUARE_NIGHT",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_HATCHLING",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_WINTER_BATTLE.mp3",
+          "BattlePower" : 33450,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8039,
+              "BuffTarget" : "BCT_STAR"
+            },
+
+            {
+              "BuffId" : 8040,
+              "BuffTarget" : "BCT_STRIKER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1052202,
+          "BattleStrID" : "RANKING_RAID_22_BATTLE_02",
+          "RaidGroupId" : 10522,
+          "Step" : 2,
+          "BasePoint" : 158000,
+          "MaxDamagePoint" : 250000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 5000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_HATCHLING_GUARD_01_BATTLE_02.txt",
+          "BattleMapStrID" : "MAP_BATTLE_KALAID_SQUARE_NIGHT",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_HATCHLING",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_WINTER_BATTLE.mp3",
+          "BattlePower" : 48950,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8039,
+              "BuffTarget" : "BCT_STAR"
+            },
+
+            {
+              "BuffId" : 8040,
+              "BuffTarget" : "BCT_STRIKER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1052203,
+          "BattleStrID" : "RANKING_RAID_22_BATTLE_03",
+          "RaidGroupId" : 10522,
+          "Step" : 3,
+          "BasePoint" : 553000,
+          "MaxDamagePoint" : 2500000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 50000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_HATCHLING_GUARD_01_BATTLE_03.txt",
+          "BattleMapStrID" : "MAP_BATTLE_KALAID_SQUARE_NIGHT",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_HATCHLING",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_WINTER_BATTLE.mp3",
+          "BattlePower" : 64450,
+          "DifficultyGroupId" : 1001,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8039,
+              "BuffTarget" : "BCT_STAR"
+            },
+
+            {
+              "BuffId" : 8040,
+              "BuffTarget" : "BCT_STRIKER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1052301,
+          "BattleStrID" : "RANKING_RAID_23_BATTLE_01",
+          "RaidGroupId" : 10523,
+          "Step" : 1,
+          "BasePoint" : 0,
+          "MaxDamagePoint" : 100000,
+          "RemainTurnPoint" : 1000,
+          "RemainingSaviorPoint" : 2000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DEMORAIGIS_02_BATTLE_01.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STELLAR_ARCHIVE_2_TYPE_A",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DEMORAIGIS_BETA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 33450,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8041,
+              "BuffTarget" : "BCT_MOON"
+            },
+
+            {
+              "BuffId" : 8042,
+              "BuffTarget" : "BCT_ASSASSIN"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1052302,
+          "BattleStrID" : "RANKING_RAID_23_BATTLE_02",
+          "RaidGroupId" : 10523,
+          "Step" : 2,
+          "BasePoint" : 158000,
+          "MaxDamagePoint" : 250000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 5000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DEMORAIGIS_02_BATTLE_02.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STELLAR_ARCHIVE_2_TYPE_A",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DEMORAIGIS_BETA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 48950,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8041,
+              "BuffTarget" : "BCT_MOON"
+            },
+
+            {
+              "BuffId" : 8042,
+              "BuffTarget" : "BCT_ASSASSIN"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1052303,
+          "BattleStrID" : "RANKING_RAID_23_BATTLE_03",
+          "RaidGroupId" : 10523,
+          "Step" : 3,
+          "BasePoint" : 553000,
+          "MaxDamagePoint" : 2500000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 50000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DEMORAIGIS_02_BATTLE_03.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STELLAR_ARCHIVE_2_TYPE_A",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DEMORAIGIS_BETA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 64450,
+          "DifficultyGroupId" : 1001,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8041,
+              "BuffTarget" : "BCT_MOON"
+            },
+
+            {
+              "BuffId" : 8042,
+              "BuffTarget" : "BCT_ASSASSIN"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1052401,
+          "BattleStrID" : "RANKING_RAID_24_BATTLE_01",
+          "RaidGroupId" : 10524,
+          "Step" : 1,
+          "BasePoint" : 0,
+          "MaxDamagePoint" : 100000,
+          "RemainTurnPoint" : 1000,
+          "RemainingSaviorPoint" : 2000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_HATCHLING_GUARD_01_BATTLE_01.txt",
+          "BattleMapStrID" : "MAP_BATTLE_KALAID_SQUARE_NIGHT",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_HATCHLING",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_WINTER_BATTLE.mp3",
+          "BattlePower" : 33450,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8043,
+              "BuffTarget" : "BCT_STAR"
+            },
+
+            {
+              "BuffId" : 8044,
+              "BuffTarget" : "BCT_RANGER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1052402,
+          "BattleStrID" : "RANKING_RAID_24_BATTLE_02",
+          "RaidGroupId" : 10524,
+          "Step" : 2,
+          "BasePoint" : 158000,
+          "MaxDamagePoint" : 250000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 5000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_HATCHLING_GUARD_01_BATTLE_02.txt",
+          "BattleMapStrID" : "MAP_BATTLE_KALAID_SQUARE_NIGHT",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_HATCHLING",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_WINTER_BATTLE.mp3",
+          "BattlePower" : 48950,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8043,
+              "BuffTarget" : "BCT_STAR"
+            },
+
+            {
+              "BuffId" : 8044,
+              "BuffTarget" : "BCT_RANGER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1052403,
+          "BattleStrID" : "RANKING_RAID_24_BATTLE_03",
+          "RaidGroupId" : 10524,
+          "Step" : 3,
+          "BasePoint" : 553000,
+          "MaxDamagePoint" : 2500000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 50000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_HATCHLING_GUARD_01_BATTLE_03.txt",
+          "BattleMapStrID" : "MAP_BATTLE_KALAID_SQUARE_NIGHT",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_HATCHLING",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_WINTER_BATTLE.mp3",
+          "BattlePower" : 64450,
+          "DifficultyGroupId" : 1001,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8043,
+              "BuffTarget" : "BCT_STAR"
+            },
+
+            {
+              "BuffId" : 8044,
+              "BuffTarget" : "BCT_RANGER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1052501,
+          "BattleStrID" : "RANKING_RAID_25_BATTLE_01",
+          "RaidGroupId" : 10525,
+          "Step" : 1,
+          "BasePoint" : 0,
+          "MaxDamagePoint" : 100000,
+          "RemainTurnPoint" : 1000,
+          "RemainingSaviorPoint" : 2000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_GILLE_01_BATTLE_01.txt",
+          "BattleMapStrID" : "MAP_BATTLE_MONASTIR_DOWNTOWN_TYPE_B_DESTROY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_GILLE",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_03.mp3",
+          "BattlePower" : 33450,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8045,
+              "BuffTarget" : "BCT_SUN"
+            },
+
+            {
+              "BuffId" : 8046,
+              "BuffTarget" : "BCT_STRIKER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1052502,
+          "BattleStrID" : "RANKING_RAID_25_BATTLE_02",
+          "RaidGroupId" : 10525,
+          "Step" : 2,
+          "BasePoint" : 158000,
+          "MaxDamagePoint" : 250000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 5000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_GILLE_01_BATTLE_02.txt",
+          "BattleMapStrID" : "MAP_BATTLE_MONASTIR_DOWNTOWN_TYPE_B_DESTROY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_GILLE",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_03.mp3",
+          "BattlePower" : 48950,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8045,
+              "BuffTarget" : "BCT_SUN"
+            },
+
+            {
+              "BuffId" : 8046,
+              "BuffTarget" : "BCT_STRIKER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1052503,
+          "BattleStrID" : "RANKING_RAID_25_BATTLE_03",
+          "RaidGroupId" : 10525,
+          "Step" : 3,
+          "BasePoint" : 553000,
+          "MaxDamagePoint" : 2500000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 50000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_GILLE_01_BATTLE_03.txt",
+          "BattleMapStrID" : "MAP_BATTLE_MONASTIR_DOWNTOWN_TYPE_B_DESTROY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_GILLE",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_03.mp3",
+          "BattlePower" : 64450,
+          "DifficultyGroupId" : 1001,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8045,
+              "BuffTarget" : "BCT_SUN"
+            },
+
+            {
+              "BuffId" : 8046,
+              "BuffTarget" : "BCT_STRIKER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1052601,
+          "BattleStrID" : "RANKING_RAID_26_BATTLE_01",
+          "RaidGroupId" : 10526,
+          "Step" : 1,
+          "BasePoint" : 0,
+          "MaxDamagePoint" : 100000,
+          "RemainTurnPoint" : 1000,
+          "RemainingSaviorPoint" : 2000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_TYRIA_01_BATTLE_01.txt",
+          "BattleMapStrID" : "MAP_BATTLE_MONASTIR_KINGDOM_RUINS",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_TYRIA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_03.mp3",
+          "BattlePower" : 33450,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8047,
+              "BuffTarget" : "BCT_MOON"
+            },
+
+            {
+              "BuffId" : 8048,
+              "BuffTarget" : "BCT_CASTER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1052602,
+          "BattleStrID" : "RANKING_RAID_26_BATTLE_02",
+          "RaidGroupId" : 10526,
+          "Step" : 2,
+          "BasePoint" : 158000,
+          "MaxDamagePoint" : 250000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 5000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_TYRIA_01_BATTLE_02.txt",
+          "BattleMapStrID" : "MAP_BATTLE_MONASTIR_KINGDOM_RUINS",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_TYRIA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_03.mp3",
+          "BattlePower" : 48950,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8047,
+              "BuffTarget" : "BCT_MOON"
+            },
+
+            {
+              "BuffId" : 8048,
+              "BuffTarget" : "BCT_CASTER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1052603,
+          "BattleStrID" : "RANKING_RAID_26_BATTLE_03",
+          "RaidGroupId" : 10526,
+          "Step" : 3,
+          "BasePoint" : 553000,
+          "MaxDamagePoint" : 2500000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 50000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_TYRIA_01_BATTLE_03.txt",
+          "BattleMapStrID" : "MAP_BATTLE_MONASTIR_KINGDOM_RUINS",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_TYRIA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_03.mp3",
+          "BattlePower" : 64450,
+          "DifficultyGroupId" : 1001,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8047,
+              "BuffTarget" : "BCT_MOON"
+            },
+
+            {
+              "BuffId" : 8048,
+              "BuffTarget" : "BCT_CASTER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1052701,
+          "BattleStrID" : "RANKING_RAID_27_BATTLE_01",
+          "RaidGroupId" : 10527,
+          "Step" : 1,
+          "BasePoint" : 0,
+          "MaxDamagePoint" : 100000,
+          "RemainTurnPoint" : 1000,
+          "RemainingSaviorPoint" : 2000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DEMORAIGIS_01_BATTLE_01.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STELLAR_ARCHIVE_2_TYPE_A",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DEMORAIGIS_ALPHA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 33450,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8049,
+              "BuffTarget" : "BCT_MOON"
+            },
+
+            {
+              "BuffId" : 8050,
+              "BuffTarget" : "BCT_SUPPORTER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1052702,
+          "BattleStrID" : "RANKING_RAID_27_BATTLE_02",
+          "RaidGroupId" : 10527,
+          "Step" : 2,
+          "BasePoint" : 158000,
+          "MaxDamagePoint" : 250000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 5000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DEMORAIGIS_01_BATTLE_02.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STELLAR_ARCHIVE_2_TYPE_A",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DEMORAIGIS_ALPHA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 48950,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8049,
+              "BuffTarget" : "BCT_MOON"
+            },
+
+            {
+              "BuffId" : 8050,
+              "BuffTarget" : "BCT_SUPPORTER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1052703,
+          "BattleStrID" : "RANKING_RAID_27_BATTLE_03",
+          "RaidGroupId" : 10527,
+          "Step" : 3,
+          "BasePoint" : 553000,
+          "MaxDamagePoint" : 2500000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 50000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DEMORAIGIS_01_BATTLE_03.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STELLAR_ARCHIVE_2_TYPE_A",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DEMORAIGIS_ALPHA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 64450,
+          "DifficultyGroupId" : 1001,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8049,
+              "BuffTarget" : "BCT_MOON"
+            },
+
+            {
+              "BuffId" : 8050,
+              "BuffTarget" : "BCT_SUPPORTER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1052801,
+          "BattleStrID" : "RANKING_RAID_28_BATTLE_01",
+          "RaidGroupId" : 10528,
+          "Step" : 1,
+          "BasePoint" : 0,
+          "MaxDamagePoint" : 100000,
+          "RemainTurnPoint" : 1000,
+          "RemainingSaviorPoint" : 2000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_HATCHLING_GUARD_01_BATTLE_01.txt",
+          "BattleMapStrID" : "MAP_BATTLE_KALAID_SQUARE_NIGHT",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_HATCHLING",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_WINTER_BATTLE.mp3",
+          "BattlePower" : 33450,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8051,
+              "BuffTarget" : "BCT_STAR"
+            },
+
+            {
+              "BuffId" : 8052,
+              "BuffTarget" : "BCT_ASSASSIN"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1052802,
+          "BattleStrID" : "RANKING_RAID_28_BATTLE_02",
+          "RaidGroupId" : 10528,
+          "Step" : 2,
+          "BasePoint" : 158000,
+          "MaxDamagePoint" : 250000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 5000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_HATCHLING_GUARD_01_BATTLE_02.txt",
+          "BattleMapStrID" : "MAP_BATTLE_KALAID_SQUARE_NIGHT",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_HATCHLING",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_WINTER_BATTLE.mp3",
+          "BattlePower" : 48950,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8051,
+              "BuffTarget" : "BCT_STAR"
+            },
+
+            {
+              "BuffId" : 8052,
+              "BuffTarget" : "BCT_ASSASSIN"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1052803,
+          "BattleStrID" : "RANKING_RAID_28_BATTLE_03",
+          "RaidGroupId" : 10528,
+          "Step" : 3,
+          "BasePoint" : 553000,
+          "MaxDamagePoint" : 2500000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 50000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_HATCHLING_GUARD_01_BATTLE_03.txt",
+          "BattleMapStrID" : "MAP_BATTLE_KALAID_SQUARE_NIGHT",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_HATCHLING",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_WINTER_BATTLE.mp3",
+          "BattlePower" : 64450,
+          "DifficultyGroupId" : 1001,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8051,
+              "BuffTarget" : "BCT_STAR"
+            },
+
+            {
+              "BuffId" : 8052,
+              "BuffTarget" : "BCT_ASSASSIN"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1052901,
+          "BattleStrID" : "RANKING_RAID_29_BATTLE_01",
+          "RaidGroupId" : 10529,
+          "Step" : 1,
+          "BasePoint" : 0,
+          "MaxDamagePoint" : 100000,
+          "RemainTurnPoint" : 1000,
+          "RemainingSaviorPoint" : 2000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DEMORAIGIS_02_BATTLE_01.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STELLAR_ARCHIVE_2_TYPE_A",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DEMORAIGIS_BETA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 33450,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8053,
+              "BuffTarget" : "BCT_STAR"
+            },
+
+            {
+              "BuffId" : 8054,
+              "BuffTarget" : "BCT_STRIKER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1052902,
+          "BattleStrID" : "RANKING_RAID_29_BATTLE_02",
+          "RaidGroupId" : 10529,
+          "Step" : 2,
+          "BasePoint" : 158000,
+          "MaxDamagePoint" : 250000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 5000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DEMORAIGIS_02_BATTLE_02.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STELLAR_ARCHIVE_2_TYPE_A",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DEMORAIGIS_BETA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 48950,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8053,
+              "BuffTarget" : "BCT_STAR"
+            },
+
+            {
+              "BuffId" : 8054,
+              "BuffTarget" : "BCT_STRIKER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1052903,
+          "BattleStrID" : "RANKING_RAID_29_BATTLE_03",
+          "RaidGroupId" : 10529,
+          "Step" : 3,
+          "BasePoint" : 553000,
+          "MaxDamagePoint" : 2500000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 50000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DEMORAIGIS_02_BATTLE_03.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STELLAR_ARCHIVE_2_TYPE_A",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DEMORAIGIS_BETA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 64450,
+          "DifficultyGroupId" : 1001,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8053,
+              "BuffTarget" : "BCT_STAR"
+            },
+
+            {
+              "BuffId" : 8054,
+              "BuffTarget" : "BCT_STRIKER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1053001,
+          "BattleStrID" : "RANKING_RAID_30_BATTLE_01",
+          "RaidGroupId" : 10530,
+          "Step" : 1,
+          "BasePoint" : 0,
+          "MaxDamagePoint" : 100000,
+          "RemainTurnPoint" : 1000,
+          "RemainingSaviorPoint" : 2000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_MOGULUS_01_BATTLE_01.txt",
+          "BattleMapStrID" : "MAP_BATTLE_ANCIENT_SITE_RAID_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_MOGULUS",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_MOGULUS.mp3",
+          "BattlePower" : 33450,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8055,
+              "BuffTarget" : "BCT_SUN"
+            },
+
+            {
+              "BuffId" : 8056,
+              "BuffTarget" : "BCT_CASTER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1053002,
+          "BattleStrID" : "RANKING_RAID_30_BATTLE_02",
+          "RaidGroupId" : 10530,
+          "Step" : 2,
+          "BasePoint" : 158000,
+          "MaxDamagePoint" : 250000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 5000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_MOGULUS_01_BATTLE_02.txt",
+          "BattleMapStrID" : "MAP_BATTLE_ANCIENT_SITE_RAID_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_MOGULUS",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_MOGULUS.mp3",
+          "BattlePower" : 48950,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8055,
+              "BuffTarget" : "BCT_SUN"
+            },
+
+            {
+              "BuffId" : 8056,
+              "BuffTarget" : "BCT_CASTER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1053003,
+          "BattleStrID" : "RANKING_RAID_30_BATTLE_03",
+          "RaidGroupId" : 10530,
+          "Step" : 3,
+          "BasePoint" : 553000,
+          "MaxDamagePoint" : 2500000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 50000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_MOGULUS_01_BATTLE_03.txt",
+          "BattleMapStrID" : "MAP_BATTLE_ANCIENT_SITE_RAID_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_MOGULUS",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_MOGULUS.mp3",
+          "BattlePower" : 64450,
+          "DifficultyGroupId" : 1001,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8055,
+              "BuffTarget" : "BCT_SUN"
+            },
+
+            {
+              "BuffId" : 8056,
+              "BuffTarget" : "BCT_CASTER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1053101,
+          "BattleStrID" : "RANKING_RAID_31_BATTLE_01",
+          "RaidGroupId" : 10531,
+          "Step" : 1,
+          "BasePoint" : 0,
+          "MaxDamagePoint" : 100000,
+          "RemainTurnPoint" : 1000,
+          "RemainingSaviorPoint" : 2000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DISPARITY_OF_REPRESENTATION_01_BATTLE_01.txt",
+          "BattleMapStrID" : "MAP_BATTLE_LANTERN_VOID_SPACE_CLIFF",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DISPARITY_OF_REPRESENTATION",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_LANTERN_BATTLE.mp3",
+          "BattlePower" : 33450,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8067,
+              "BuffTarget" : "BCT_CHAOS"
+            },
+
+            {
+              "BuffId" : 8061,
+              "BuffTarget" : "BCT_CASTER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1053102,
+          "BattleStrID" : "RANKING_RAID_31_BATTLE_02",
+          "RaidGroupId" : 10531,
+          "Step" : 2,
+          "BasePoint" : 158000,
+          "MaxDamagePoint" : 250000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 5000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DISPARITY_OF_REPRESENTATION_01_BATTLE_02.txt",
+          "BattleMapStrID" : "MAP_BATTLE_LANTERN_VOID_SPACE_CLIFF",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DISPARITY_OF_REPRESENTATION",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_LANTERN_BATTLE.mp3",
+          "BattlePower" : 48950,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8067,
+              "BuffTarget" : "BCT_CHAOS"
+            },
+
+            {
+              "BuffId" : 8061,
+              "BuffTarget" : "BCT_CASTER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1053103,
+          "BattleStrID" : "RANKING_RAID_31_BATTLE_03",
+          "RaidGroupId" : 10531,
+          "Step" : 3,
+          "BasePoint" : 553000,
+          "MaxDamagePoint" : 2500000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 50000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DISPARITY_OF_REPRESENTATION_01_BATTLE_03.txt",
+          "BattleMapStrID" : "MAP_BATTLE_LANTERN_VOID_SPACE_CLIFF",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DISPARITY_OF_REPRESENTATION",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_LANTERN_BATTLE.mp3",
+          "BattlePower" : 64450,
+          "DifficultyGroupId" : 1001,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8067,
+              "BuffTarget" : "BCT_CHAOS"
+            },
+
+            {
+              "BuffId" : 8061,
+              "BuffTarget" : "BCT_CASTER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1053201,
+          "BattleStrID" : "RANKING_RAID_32_BATTLE_01",
+          "RaidGroupId" : 10532,
+          "Step" : 1,
+          "BasePoint" : 0,
+          "MaxDamagePoint" : 100000,
+          "RemainTurnPoint" : 1000,
+          "RemainingSaviorPoint" : 2000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_GILLE_01_BATTLE_01.txt",
+          "BattleMapStrID" : "MAP_BATTLE_MONASTIR_DOWNTOWN_TYPE_B_DESTROY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_GILLE",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 33450,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8063,
+              "BuffTarget" : "BCT_SUN"
+            },
+
+            {
+              "BuffId" : 8059,
+              "BuffTarget" : "BCT_ASSASSIN"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1053202,
+          "BattleStrID" : "RANKING_RAID_32_BATTLE_02",
+          "RaidGroupId" : 10532,
+          "Step" : 2,
+          "BasePoint" : 158000,
+          "MaxDamagePoint" : 250000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 5000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_GILLE_01_BATTLE_02.txt",
+          "BattleMapStrID" : "MAP_BATTLE_MONASTIR_DOWNTOWN_TYPE_B_DESTROY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_GILLE",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 48950,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8063,
+              "BuffTarget" : "BCT_SUN"
+            },
+
+            {
+              "BuffId" : 8059,
+              "BuffTarget" : "BCT_ASSASSIN"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1053203,
+          "BattleStrID" : "RANKING_RAID_32_BATTLE_03",
+          "RaidGroupId" : 10532,
+          "Step" : 3,
+          "BasePoint" : 553000,
+          "MaxDamagePoint" : 2500000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 50000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_GILLE_01_BATTLE_03.txt",
+          "BattleMapStrID" : "MAP_BATTLE_MONASTIR_DOWNTOWN_TYPE_B_DESTROY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_GILLE",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 64450,
+          "DifficultyGroupId" : 1001,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8063,
+              "BuffTarget" : "BCT_SUN"
+            },
+
+            {
+              "BuffId" : 8059,
+              "BuffTarget" : "BCT_ASSASSIN"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1053301,
+          "BattleStrID" : "RANKING_RAID_33_BATTLE_01",
+          "RaidGroupId" : 10533,
+          "Step" : 1,
+          "BasePoint" : 0,
+          "MaxDamagePoint" : 100000,
+          "RemainTurnPoint" : 1000,
+          "RemainingSaviorPoint" : 2000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_OLBERS_01_BATTLE_01.txt",
+          "BattleMapStrID" : "MAP_BATTLE_WEST_BLOODSTREET_DEEP",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_OLBERS",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_EPISODE6_BATTLE.mp3",
+          "BattlePower" : 33450,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8066,
+              "BuffTarget" : "BCT_MOON"
+            },
+
+            {
+              "BuffId" : 8061,
+              "BuffTarget" : "BCT_STRIKER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1053302,
+          "BattleStrID" : "RANKING_RAID_33_BATTLE_02",
+          "RaidGroupId" : 10533,
+          "Step" : 2,
+          "BasePoint" : 158000,
+          "MaxDamagePoint" : 250000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 5000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_OLBERS_01_BATTLE_02.txt",
+          "BattleMapStrID" : "MAP_BATTLE_WEST_BLOODSTREET_DEEP",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_OLBERS",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_EPISODE6_BATTLE.mp3",
+          "BattlePower" : 48950,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8066,
+              "BuffTarget" : "BCT_MOON"
+            },
+
+            {
+              "BuffId" : 8061,
+              "BuffTarget" : "BCT_STRIKER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1053303,
+          "BattleStrID" : "RANKING_RAID_33_BATTLE_03",
+          "RaidGroupId" : 10533,
+          "Step" : 3,
+          "BasePoint" : 553000,
+          "MaxDamagePoint" : 2500000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 50000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_OLBERS_01_BATTLE_03.txt",
+          "BattleMapStrID" : "MAP_BATTLE_WEST_BLOODSTREET_DEEP",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_OLBERS",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_EPISODE6_BATTLE.mp3",
+          "BattlePower" : 64450,
+          "DifficultyGroupId" : 1001,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8066,
+              "BuffTarget" : "BCT_MOON"
+            },
+
+            {
+              "BuffId" : 8061,
+              "BuffTarget" : "BCT_STRIKER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1053401,
+          "BattleStrID" : "RANKING_RAID_34_BATTLE_01",
+          "RaidGroupId" : 10534,
+          "Step" : 1,
+          "BasePoint" : 0,
+          "MaxDamagePoint" : 100000,
+          "RemainTurnPoint" : 1000,
+          "RemainingSaviorPoint" : 2000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_TYRIA_01_BATTLE_01.txt",
+          "BattleMapStrID" : "MAP_BATTLE_MONASTIR_KINGDOM_RUINS",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_TYRIA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 33450,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8059,
+              "BuffTarget" : "BCT_ORDER"
+            },
+
+            {
+              "BuffId" : 8058,
+              "BuffTarget" : "BCT_RANGER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1053402,
+          "BattleStrID" : "RANKING_RAID_34_BATTLE_02",
+          "RaidGroupId" : 10534,
+          "Step" : 2,
+          "BasePoint" : 158000,
+          "MaxDamagePoint" : 250000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 5000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_TYRIA_01_BATTLE_02.txt",
+          "BattleMapStrID" : "MAP_BATTLE_MONASTIR_KINGDOM_RUINS",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_TYRIA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 48950,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8059,
+              "BuffTarget" : "BCT_ORDER"
+            },
+
+            {
+              "BuffId" : 8058,
+              "BuffTarget" : "BCT_RANGER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1053403,
+          "BattleStrID" : "RANKING_RAID_34_BATTLE_03",
+          "RaidGroupId" : 10534,
+          "Step" : 3,
+          "BasePoint" : 553000,
+          "MaxDamagePoint" : 2500000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 50000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_TYRIA_01_BATTLE_03.txt",
+          "BattleMapStrID" : "MAP_BATTLE_MONASTIR_KINGDOM_RUINS",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_TYRIA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 64450,
+          "DifficultyGroupId" : 1001,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8059,
+              "BuffTarget" : "BCT_ORDER"
+            },
+
+            {
+              "BuffId" : 8058,
+              "BuffTarget" : "BCT_RANGER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1053501,
+          "BattleStrID" : "RANKING_RAID_35_BATTLE_01",
+          "RaidGroupId" : 10535,
+          "Step" : 1,
+          "BasePoint" : 0,
+          "MaxDamagePoint" : 100000,
+          "RemainTurnPoint" : 1000,
+          "RemainingSaviorPoint" : 2000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DEMORAIGIS_01_BATTLE_01.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STELLAR_ARCHIVE_2_TYPE_A",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DEMORAIGIS_ALPHA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 33450,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8058,
+              "BuffTarget" : "BCT_SUN"
+            },
+
+            {
+              "BuffId" : 8064,
+              "BuffTarget" : "BCT_DEFENDER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1053502,
+          "BattleStrID" : "RANKING_RAID_35_BATTLE_02",
+          "RaidGroupId" : 10535,
+          "Step" : 2,
+          "BasePoint" : 158000,
+          "MaxDamagePoint" : 250000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 5000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DEMORAIGIS_01_BATTLE_02.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STELLAR_ARCHIVE_2_TYPE_A",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DEMORAIGIS_ALPHA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 48950,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8058,
+              "BuffTarget" : "BCT_SUN"
+            },
+
+            {
+              "BuffId" : 8064,
+              "BuffTarget" : "BCT_DEFENDER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1053503,
+          "BattleStrID" : "RANKING_RAID_35_BATTLE_03",
+          "RaidGroupId" : 10535,
+          "Step" : 3,
+          "BasePoint" : 553000,
+          "MaxDamagePoint" : 2500000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 50000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DEMORAIGIS_01_BATTLE_03.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STELLAR_ARCHIVE_2_TYPE_A",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DEMORAIGIS_ALPHA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 64450,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "DifficultyGroupId" : 1001,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8058,
+              "BuffTarget" : "BCT_SUN"
+            },
+
+            {
+              "BuffId" : 8064,
+              "BuffTarget" : "BCT_DEFENDER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1053601,
+          "BattleStrID" : "RANKING_RAID_36_BATTLE_01",
+          "RaidGroupId" : 10536,
+          "Step" : 1,
+          "BasePoint" : 0,
+          "MaxDamagePoint" : 100000,
+          "RemainTurnPoint" : 1000,
+          "RemainingSaviorPoint" : 2000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DEMORAIGIS_02_BATTLE_01.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STELLAR_ARCHIVE_2_TYPE_A",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DEMORAIGIS_BETA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 33450,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8057,
+              "BuffTarget" : "BCT_STAR"
+            },
+
+            {
+              "BuffId" : 8065,
+              "BuffTarget" : "BCT_SUPPORTER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1053602,
+          "BattleStrID" : "RANKING_RAID_36_BATTLE_02",
+          "RaidGroupId" : 10536,
+          "Step" : 2,
+          "BasePoint" : 158000,
+          "MaxDamagePoint" : 250000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 5000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DEMORAIGIS_02_BATTLE_02.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STELLAR_ARCHIVE_2_TYPE_A",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DEMORAIGIS_BETA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 48950,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8057,
+              "BuffTarget" : "BCT_STAR"
+            },
+
+            {
+              "BuffId" : 8065,
+              "BuffTarget" : "BCT_SUPPORTER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1053603,
+          "BattleStrID" : "RANKING_RAID_36_BATTLE_03",
+          "RaidGroupId" : 10536,
+          "Step" : 3,
+          "BasePoint" : 553000,
+          "MaxDamagePoint" : 2500000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 50000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DEMORAIGIS_02_BATTLE_03.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STELLAR_ARCHIVE_2_TYPE_A",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DEMORAIGIS_BETA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 64450,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "DifficultyGroupId" : 1001,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8057,
+              "BuffTarget" : "BCT_STAR"
+            },
+
+            {
+              "BuffId" : 8065,
+              "BuffTarget" : "BCT_SUPPORTER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1053701,
+          "BattleStrID" : "RANKING_RAID_37_BATTLE_01",
+          "RaidGroupId" : 10537,
+          "Step" : 1,
+          "BasePoint" : 0,
+          "MaxDamagePoint" : 100000,
+          "RemainTurnPoint" : 1000,
+          "RemainingSaviorPoint" : 2000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DISPARITY_OF_REPRESENTATION_01_BATTLE_01.txt",
+          "BattleMapStrID" : "MAP_BATTLE_LANTERN_VOID_SPACE_CLIFF",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DISPARITY_OF_REPRESENTATION",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_LANTERN_BATTLE.mp3",
+          "BattlePower" : 33450,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8058,
+              "BuffTarget" : "BCT_STAR"
+            },
+
+            {
+              "BuffId" : 8067,
+              "BuffTarget" : "BCT_ASSASSIN"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1053702,
+          "BattleStrID" : "RANKING_RAID_37_BATTLE_02",
+          "RaidGroupId" : 10537,
+          "Step" : 2,
+          "BasePoint" : 158000,
+          "MaxDamagePoint" : 250000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 5000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DISPARITY_OF_REPRESENTATION_01_BATTLE_02.txt",
+          "BattleMapStrID" : "MAP_BATTLE_LANTERN_VOID_SPACE_CLIFF",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DISPARITY_OF_REPRESENTATION",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_LANTERN_BATTLE.mp3",
+          "BattlePower" : 48950,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8058,
+              "BuffTarget" : "BCT_STAR"
+            },
+
+            {
+              "BuffId" : 8067,
+              "BuffTarget" : "BCT_ASSASSIN"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1053703,
+          "BattleStrID" : "RANKING_RAID_37_BATTLE_03",
+          "RaidGroupId" : 10537,
+          "Step" : 3,
+          "BasePoint" : 553000,
+          "MaxDamagePoint" : 2500000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 50000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DISPARITY_OF_REPRESENTATION_01_BATTLE_03.txt",
+          "BattleMapStrID" : "MAP_BATTLE_LANTERN_VOID_SPACE_CLIFF",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DISPARITY_OF_REPRESENTATION",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_LANTERN_BATTLE.mp3",
+          "BattlePower" : 64450,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "DifficultyGroupId" : 1001,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8058,
+              "BuffTarget" : "BCT_STAR"
+            },
+
+            {
+              "BuffId" : 8067,
+              "BuffTarget" : "BCT_ASSASSIN"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1053801,
+          "BattleStrID" : "RANKING_RAID_38_BATTLE_01",
+          "RaidGroupId" : 10538,
+          "Step" : 1,
+          "BasePoint" : 0,
+          "MaxDamagePoint" : 100000,
+          "RemainTurnPoint" : 1000,
+          "RemainingSaviorPoint" : 2000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_HATCHLING_GUARD_01_BATTLE_01.txt",
+          "BattleMapStrID" : "MAP_BATTLE_KALAID_SQUARE_NIGHT",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_HATCHLING",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_WINTER_BATTLE.mp3",
+          "BattlePower" : 33450,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8062,
+              "BuffTarget" : "BCT_SUN"
+            },
+
+            {
+              "BuffId" : 8057,
+              "BuffTarget" : "BCT_CASTER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1053802,
+          "BattleStrID" : "RANKING_RAID_38_BATTLE_02",
+          "RaidGroupId" : 10538,
+          "Step" : 2,
+          "BasePoint" : 158000,
+          "MaxDamagePoint" : 250000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 5000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_HATCHLING_GUARD_01_BATTLE_02.txt",
+          "BattleMapStrID" : "MAP_BATTLE_KALAID_SQUARE_NIGHT",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_HATCHLING",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_WINTER_BATTLE.mp3",
+          "BattlePower" : 48950,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8062,
+              "BuffTarget" : "BCT_SUN"
+            },
+
+            {
+              "BuffId" : 8057,
+              "BuffTarget" : "BCT_CASTER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1053803,
+          "BattleStrID" : "RANKING_RAID_38_BATTLE_03",
+          "RaidGroupId" : 10538,
+          "Step" : 3,
+          "BasePoint" : 553000,
+          "MaxDamagePoint" : 2500000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 50000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_HATCHLING_GUARD_01_BATTLE_03.txt",
+          "BattleMapStrID" : "MAP_BATTLE_KALAID_SQUARE_NIGHT",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_HATCHLING",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_WINTER_BATTLE.mp3",
+          "BattlePower" : 64450,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "DifficultyGroupId" : 1001,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8062,
+              "BuffTarget" : "BCT_SUN"
+            },
+
+            {
+              "BuffId" : 8057,
+              "BuffTarget" : "BCT_CASTER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1053901,
+          "BattleStrID" : "RANKING_RAID_39_BATTLE_01",
+          "RaidGroupId" : 10539,
+          "Step" : 1,
+          "BasePoint" : 0,
+          "MaxDamagePoint" : 100000,
+          "RemainTurnPoint" : 1000,
+          "RemainingSaviorPoint" : 2000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_GILLE_01_BATTLE_01.txt",
+          "BattleMapStrID" : "MAP_BATTLE_MONASTIR_DOWNTOWN_TYPE_B_DESTROY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_GILLE",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 33450,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8061,
+              "BuffTarget" : "BCT_MOON"
+            },
+
+            {
+              "BuffId" : 8064,
+              "BuffTarget" : "BCT_SUPPORTER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1053902,
+          "BattleStrID" : "RANKING_RAID_39_BATTLE_02",
+          "RaidGroupId" : 10539,
+          "Step" : 2,
+          "BasePoint" : 158000,
+          "MaxDamagePoint" : 250000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 5000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_GILLE_01_BATTLE_02.txt",
+          "BattleMapStrID" : "MAP_BATTLE_MONASTIR_DOWNTOWN_TYPE_B_DESTROY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_GILLE",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 48950,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8061,
+              "BuffTarget" : "BCT_MOON"
+            },
+
+            {
+              "BuffId" : 8064,
+              "BuffTarget" : "BCT_SUPPORTER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1053903,
+          "BattleStrID" : "RANKING_RAID_39_BATTLE_03",
+          "RaidGroupId" : 10539,
+          "Step" : 3,
+          "BasePoint" : 553000,
+          "MaxDamagePoint" : 2500000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 50000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_GILLE_01_BATTLE_03.txt",
+          "BattleMapStrID" : "MAP_BATTLE_MONASTIR_DOWNTOWN_TYPE_B_DESTROY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_GILLE",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 64450,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "DifficultyGroupId" : 1001,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8061,
+              "BuffTarget" : "BCT_MOON"
+            },
+
+            {
+              "BuffId" : 8064,
+              "BuffTarget" : "BCT_SUPPORTER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1054001,
+          "BattleStrID" : "RANKING_RAID_40_BATTLE_01",
+          "RaidGroupId" : 10540,
+          "Step" : 1,
+          "BasePoint" : 0,
+          "MaxDamagePoint" : 100000,
+          "RemainTurnPoint" : 1000,
+          "RemainingSaviorPoint" : 2000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DEMORAIGIS_01_BATTLE_01.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STELLAR_ARCHIVE_2_TYPE_A",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DEMORAIGIS_ALPHA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 33450,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8067,
+              "BuffTarget" : "BCT_SUN"
+            },
+
+            {
+              "BuffId" : 8057,
+              "BuffTarget" : "BCT_RANGER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1054002,
+          "BattleStrID" : "RANKING_RAID_40_BATTLE_02",
+          "RaidGroupId" : 10540,
+          "Step" : 2,
+          "BasePoint" : 158000,
+          "MaxDamagePoint" : 250000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 5000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DEMORAIGIS_01_BATTLE_02.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STELLAR_ARCHIVE_2_TYPE_A",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DEMORAIGIS_ALPHA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 48950,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8067,
+              "BuffTarget" : "BCT_SUN"
+            },
+
+            {
+              "BuffId" : 8057,
+              "BuffTarget" : "BCT_RANGER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1054003,
+          "BattleStrID" : "RANKING_RAID_40_BATTLE_03",
+          "RaidGroupId" : 10540,
+          "Step" : 3,
+          "BasePoint" : 553000,
+          "MaxDamagePoint" : 2500000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 50000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_DEMORAIGIS_01_BATTLE_03.txt",
+          "BattleMapStrID" : "MAP_BATTLE_STELLAR_ARCHIVE_2_TYPE_A",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_DEMORAIGIS_ALPHA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 64450,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "DifficultyGroupId" : 1001,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8067,
+              "BuffTarget" : "BCT_SUN"
+            },
+
+            {
+              "BuffId" : 8057,
+              "BuffTarget" : "BCT_RANGER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1054101,
+          "BattleStrID" : "RANKING_RAID_41_BATTLE_01",
+          "RaidGroupId" : 10541,
+          "Step" : 1,
+          "BasePoint" : 0,
+          "MaxDamagePoint" : 100000,
+          "RemainTurnPoint" : 1000,
+          "RemainingSaviorPoint" : 2000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_MOGULUS_01_BATTLE_01.txt",
+          "BattleMapStrID" : "MAP_BATTLE_ANCIENT_SITE_RAID_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_MOGULUS",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_MOGULUS.mp3",
+          "BattlePower" : 33450,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8058,
+              "BuffTarget" : "BCT_STAR"
+            },
+
+            {
+              "BuffId" : 8063,
+              "BuffTarget" : "BCT_DEFENDER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1054102,
+          "BattleStrID" : "RANKING_RAID_41_BATTLE_02",
+          "RaidGroupId" : 10541,
+          "Step" : 2,
+          "BasePoint" : 158000,
+          "MaxDamagePoint" : 250000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 5000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_MOGULUS_01_BATTLE_02.txt",
+          "BattleMapStrID" : "MAP_BATTLE_ANCIENT_SITE_RAID_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_MOGULUS",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_MOGULUS.mp3",
+          "BattlePower" : 48950,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8058,
+              "BuffTarget" : "BCT_STAR"
+            },
+
+            {
+              "BuffId" : 8063,
+              "BuffTarget" : "BCT_DEFENDER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1054103,
+          "BattleStrID" : "RANKING_RAID_41_BATTLE_03",
+          "RaidGroupId" : 10541,
+          "Step" : 3,
+          "BasePoint" : 553000,
+          "MaxDamagePoint" : 2500000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 50000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_MOGULUS_01_BATTLE_03.txt",
+          "BattleMapStrID" : "MAP_BATTLE_ANCIENT_SITE_RAID_DAY",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_MOGULUS",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_MOGULUS.mp3",
+          "BattlePower" : 64450,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "DifficultyGroupId" : 1001,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8058,
+              "BuffTarget" : "BCT_STAR"
+            },
+
+            {
+              "BuffId" : 8063,
+              "BuffTarget" : "BCT_DEFENDER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1054201,
+          "BattleStrID" : "RANKING_RAID_42_BATTLE_01",
+          "RaidGroupId" : 10542,
+          "Step" : 1,
+          "BasePoint" : 0,
+          "MaxDamagePoint" : 100000,
+          "RemainTurnPoint" : 1000,
+          "RemainingSaviorPoint" : 2000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_TYRIA_01_BATTLE_01.txt",
+          "BattleMapStrID" : "MAP_BATTLE_MONASTIR_KINGDOM_RUINS",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_TYRIA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 33450,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8064,
+              "BuffTarget" : "BCT_MOON"
+            },
+
+            {
+              "BuffId" : 8060,
+              "BuffTarget" : "BCT_STRIKER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1054202,
+          "BattleStrID" : "RANKING_RAID_42_BATTLE_02",
+          "RaidGroupId" : 10542,
+          "Step" : 2,
+          "BasePoint" : 158000,
+          "MaxDamagePoint" : 250000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 5000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_TYRIA_01_BATTLE_02.txt",
+          "BattleMapStrID" : "MAP_BATTLE_MONASTIR_KINGDOM_RUINS",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_TYRIA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 48950,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8064,
+              "BuffTarget" : "BCT_MOON"
+            },
+
+            {
+              "BuffId" : 8060,
+              "BuffTarget" : "BCT_STRIKER"
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "BattleID" : 1054203,
+          "BattleStrID" : "RANKING_RAID_42_BATTLE_03",
+          "RaidGroupId" : 10542,
+          "Step" : 3,
+          "BasePoint" : 553000,
+          "MaxDamagePoint" : 2500000,
+          "RemainTurnPoint" : 2500,
+          "RemainingSaviorPoint" : 50000,
+          "StatScale" : 10000,
+          "TacticsScale" : 10000,
+          "StarLinkScale" : 0,
+          "BattleTempletFileName" : "JSON_RANKING_RAID_TYRIA_01_BATTLE_03.txt",
+          "BattleMapStrID" : "MAP_BATTLE_MONASTIR_KINGDOM_RUINS",
+          "BattleType" : "NBCT_PVE_NORMAL",
+          "BattleMode" : "BM_BOSS_KILL",
+          "BattleTitleName" : "SI_COSMO_GATE",
+          "BattleName" : "SI_TYRIA",
+          "AdviceDesc" : "SI_NORMAL_BATTLE_LOSE_GUIDE_TEXT",
+          "BattleIcon" : "UF_NKM_UNIT_S_NIEL_ENEMY.png",
+          "Difficulty" : "BOSS",
+          "SafePartyCount" : 4,
+          "BattleLevel" : 1,
+          "CountEnemyTurnOnly" : false,
+          "LimitTurn" : 50,
+          "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
+          "BattlePower" : 64450,
+          "FixUnitLevel" : 200,
+          "FixUnitResonance" : 10,
+          "DifficultyGroupId" : 1001,
+          "RankingRaidBuff" : 
+          [
+            {
+              "BuffId" : 8064,
+              "BuffTarget" : "BCT_MOON"
+            },
+
+            {
+              "BuffId" : 8060,
+              "BuffTarget" : "BCT_STRIKER"
             }
           ]
         }

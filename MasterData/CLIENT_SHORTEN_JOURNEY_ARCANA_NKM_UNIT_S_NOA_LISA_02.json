@@ -1,0 +1,56 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_NOA_LISA_02",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_NOA_LISA_02",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_DOWNTOWN.png",
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "ANGRY"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_NOA_LISA_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "영수증을 정리하지 않아 리사에게 된통 혼이 났다.",
+      "UnitTalk_ENG": "Lisa scolded me harshly for not organizing my receipts.",
+      "UnitTalk_JPN": "領収書を整理していなかったため、リサにひどく叱られた。",
+      "UnitTalk_CHN": "因未整理收据而被丽莎狠狠训了一顿。",
+      "UnitTalk_TWN": "因未整理收據而被麗莎狠狠訓了一頓。",
+      "UnitTalk_FRA": "Je me suis fait vertement réprimander par Lisa pour ne pas avoir rangé les reçus.",
+      "UnitTalk_DEU": "Lisa hat mich übel ausgeschimpft, weil ich die Quittungen nicht sortiert habe.",
+      "UnitTalk_ESP": "Lisa me regañó duramente por no organizar los recibos.",
+      "UnitTalk_PRT": "Lisa me deu uma bronca e tanto por não organizar os recibos.",
+      "UnitTalk_THA": "ลิซ่าโกรธมากเพราะไม่ได้จัดเรียงใบเสร็จ",
+      "UnitTalk_IND": "Aku kena omel habis-habisan oleh Lisa karena tidak merapikan struk.",
+      "UnitTalk_VIE": "Tôi bị Lisa mắng té tát vì không sắp xếp hóa đơn.",
+      "UnitTalk_HIN": "रसीदें व्यवस्थित न करने पर लीसा ने मुझे बुरी तरह डाँटा।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_NOA_LISA_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_NOA_LISA_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    }
+  ]
+}

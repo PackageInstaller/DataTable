@@ -1,0 +1,37 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_PF_HARD_REWARD03_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 2,
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN",
+      "UnitStrId": "NKM_UNIT_NPC_OBSERVER_MALE_1",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "전리품 교환의 때가 왔다. 다시 한번 원하는 걸 골라보자. ",
+      "UnitTalk_ENG": "It's time to exchange items. Which one should I choose? ",
+      "UnitTalk_JPN": "戦利品を交換する時が来た。もう一度、欲しいものを選んでみよう。",
+      "UnitTalk_CHN": "交换战利品的时刻来临，再次挑选想要的物品吧。 ",
+      "UnitTalk_TWN": "交換戰利品的時刻來臨，再次挑選想要的物品吧。 ",
+      "UnitTalk_FRA": "Le moment est venu d'échanger les butins. Choisissons à nouveau ce que nous voulons.",
+      "UnitTalk_DEU": "Die Zeit für den Beutetausch ist gekommen. Wähle noch einmal, was du möchtest.",
+      "UnitTalk_ESP": "Es hora de intercambiar el botín. Vuelve a elegir lo que quieras.",
+      "UnitTalk_PRT": "Chegou a hora de trocar os espólios. Vamos escolher de novo.",
+      "UnitTalk_THA": "ได้เวลาแลกของรางวัลแล้ว มาเลือกของที่ต้องการกันอีกครั้ง",
+      "UnitTalk_IND": "Waktunya menukar rampasan. Mari pilih yang kamu inginkan sekali lagi.",
+      "UnitTalk_VIE": "Đã đến lúc đổi chiến lợi phẩm. Hãy chọn lại thứ bạn muốn.",
+      "UnitTalk_HIN": "लूट के आदान-प्रदान का समय आ गया है। एक बार फिर अपनी पसंद चुनते हैं।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER"
+    }
+  ]
+}

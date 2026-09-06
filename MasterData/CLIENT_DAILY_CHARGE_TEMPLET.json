@@ -1,0 +1,92 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: DAILY_CHARGE_TEMPLET",
+    "_Version": 0,
+    "Data": [
+        {
+          "ItemId" : 401,
+          "MaxCount" : 1,
+          "ChargeType" : "FILL_TO_MAX"
+        },
+        {
+          "ItemId" : 403,
+          "MaxCount" : 3,
+          "ChargeType" : "FILL_TO_MAX"
+        },
+        {
+          "ItemId" : 404,
+          "MaxCount" : 3,
+          "ChargeType" : "FILL_TO_MAX"
+        },
+        {
+          "ItemId" : 405,
+          "MaxCount" : 3,
+          "ChargeType" : "FILL_TO_MAX"
+        },
+        {
+          "ItemId" : 409,
+          "MaxCount" : 2,
+          "ChargeType" : "FILL_TO_MAX"
+        },
+        {
+          "ItemId" : 410,
+          "MaxCount" : 3,
+          "ChargeType" : "FILL_TO_MAX"
+        },
+        {
+          "ItemId" : 411,
+          "MaxCount" : 3,
+          "ChargeType" : "FILL_TO_MAX"
+        },
+        {
+          "ItemId" : 412,
+          "MaxCount" : 3,
+          "ChargeType" : "FILL_TO_MAX"
+        },
+        {
+          "ItemId" : 413,
+          "MaxCount" : 3,
+          "ChargeType" : "FILL_TO_MAX"
+        },
+        {
+          "ItemId" : 415,
+          "MaxCount" : 5,
+          "ChargeType" : "FILL_TO_MAX"
+        },
+        {
+          "ItemId" : 108,
+          "MaxCount" : 5,
+          "ChargeType" : "FILL_TO_MAX"
+        },
+        {
+          "IntervalID" : "DATE_STORY_EVENT_LANTERN_01",
+          "ItemId" : 2140203,
+          "MaxCount" : 3,
+          "ChargeType" : "FILL_TO_MAX"
+        },
+        {
+          "IntervalID" : "DATE_STORY_EVENT_EPISODE_6_01",
+          "ItemId" : 2150203,
+          "MaxCount" : 3,
+          "ChargeType" : "FILL_TO_MAX"
+        },
+        {
+          "IntervalID" : "DATE_STORY_EVENT_SUMMER_01",
+          "ItemId" : 2160203,
+          "MaxCount" : 3,
+          "ChargeType" : "FILL_TO_MAX"
+        },
+        {
+          "IntervalID" : "DATE_STORY_EVENT_MORREL_01",
+          "ItemId" : 2170203,
+          "MaxCount" : 3,
+          "ChargeType" : "FILL_TO_MAX"
+        },
+        {
+          "IntervalID" : "DATE_STORY_EVENT_EPISODE_7_01",
+          "ItemId" : 2210203,
+          "MaxCount" : 3,
+          "ChargeType" : "FILL_TO_MAX"
+        }
+    ]
+}

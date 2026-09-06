@@ -1,0 +1,167 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_COUNTERSIDE_HILDE_03",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_GRACE_DUALSWORD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png",
+      "UnitStrId": "NKM_UNIT_NPC_COUNTERSIDE_HILDE",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_GRACE_DUALSWORD_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "세레스와 합심한 힐데는 실전 같은 훈련을 개시했다…",
+      "UnitTalk_ENG": "Joining forces with Ceres, Hilde put me through training that was indistinguishable from real combat...",
+      "UnitTalk_JPN": "セレスと結託したヒルデは、実戦さながらのトレーニングを開始した…",
+      "UnitTalk_CHN": "希尔德与瑟莱丝齐心协力，开始了如同实战般的训练…",
+      "UnitTalk_TWN": "希爾德與瑟萊絲齊心協力，開始了如同實戰般的訓練…",
+      "UnitTalk_FRA": "Hilde et Ceres ont commencé une séance d'entraînement réaliste…",
+      "UnitTalk_DEU": "Ceres und Hilde begannen ein realistisches Training …",
+      "UnitTalk_ESP": "Hilde, en colaboración con Ceres, comenzó un entrenamiento de combate realista…",
+      "UnitTalk_PRT": "Ceres e Hilde uniram forças e iniciaram uma sessão de treinamento realista…",
+      "UnitTalk_THA": "เซเรสและฮิลเดร่วมมือกันเริ่มการฝึกซ้อมที่สมจริง…",
+      "UnitTalk_IND": "Ceres dan Hilde memulai sesi latihan yang realistis bersama-sama…",
+      "UnitTalk_VIE": "Hilde và Ceres đã bắt đầu một buổi huấn luyện thực chiến…",
+      "UnitTalk_HIN": "सेरेस और हिल्डे ने मिलकर एक यथार्थवादी प्रशिक्षण सत्र शुरू किया…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아픈 척 연기한다!",
+          "JumpAnchorStringId_ENG": "Pretend to be hurt!",
+          "JumpAnchorStringId_JPN": "病気のフリをする！",
+          "JumpAnchorStringId_CHN": "装作受伤！",
+          "JumpAnchorStringId_TWN": "裝作受傷！",
+          "JumpAnchorStringId_FRA": "Fait semblant d'être malade !",
+          "JumpAnchorStringId_DEU": "**German (DEU):** \"Ich tue so, als wäre ich krank!\"",
+          "JumpAnchorStringId_ESP": "¡Finge estar enfermo!",
+          "JumpAnchorStringId_PRT": "Finge estar doente!",
+          "JumpAnchorStringId_THA": "แกล้งทำเป็นป่วย!",
+          "JumpAnchorStringId_IND": "Berpura-pura sakit!",
+          "JumpAnchorStringId_VIE": "Giả vờ ốm!",
+          "JumpAnchorStringId_HIN": "मैं दर्द का नाटक करूँगा!",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "궤변으로 넘어간다!",
+          "JumpAnchorStringId_ENG": "Bluff my way through it!",
+          "JumpAnchorStringId_JPN": "適当にごまかす！",
+          "JumpAnchorStringId_CHN": "用歪理糊弄过去！",
+          "JumpAnchorStringId_TWN": "用歪理糊弄過去！",
+          "JumpAnchorStringId_FRA": "Je vais le balayer d'un mensonge !",
+          "JumpAnchorStringId_DEU": "Ich werde es einfach wegreden!",
+          "JumpAnchorStringId_ESP": "¡Lo sortearé con mentiras!",
+          "JumpAnchorStringId_PRT": "Vou me safar com sofismas!",
+          "JumpAnchorStringId_THA": "จะปัดป้องด้วยเหตุผลวิบัติ!",
+          "JumpAnchorStringId_IND": "Mengakali dengan tipu muslihat!",
+          "JumpAnchorStringId_VIE": "Tôi sẽ dùng lời lẽ ngụy biện để vượt qua!",
+          "JumpAnchorStringId_HIN": "मैं इसे कुतर्क से टाल दूँगा!",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 8,
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_COUNTERSIDE_HILDE",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "부상을 봐줄 생각은 없는지, 쓰러질 때까지 훈련장을 열심히 굴러야 했다…",
+      "UnitTalk_ENG": "Since she had no intention of tending to my injuries, I had to push through training until I passed out...",
+      "UnitTalk_JPN": "怪我などお構いなしに、倒れるまで訓練場を必死に転がる羽目になった…",
+      "UnitTalk_CHN": "似乎完全没有打算查看伤势，结果只能在训练场里翻滚直到倒下…",
+      "UnitTalk_TWN": "似乎完全沒有打算查看傷勢，結果只能在訓練場裡翻滾直到倒下…",
+      "UnitTalk_FRA": "Sans penser aux blessures, ils ont été forcés de s'entraîner assidûment jusqu'à l'épuisement…",
+      "UnitTalk_DEU": "Ohne an Verletzungen zu denken, mussten sie fleißig trainieren, bis sie zusammenbrachen …",
+      "UnitTalk_ESP": "¿No pensaban en las heridas? Tuvieron que entrenar diligentemente hasta el agotamiento…",
+      "UnitTalk_PRT": "Sem pensar em lesões, eles foram forçados a treinar diligentemente até caírem…",
+      "UnitTalk_THA": "ไม่สนใจอาการบาดเจ็บ พวกเขาต้องฝึกอย่างหนักในสนามฝึกจนกว่าจะล้มลง…",
+      "UnitTalk_IND": "Tanpa memikirkan cedera, mereka dipaksa berlatih keras sampai ambruk…",
+      "UnitTalk_VIE": "Không nghĩ đến chấn thương, họ bị buộc phải luyện tập chăm chỉ cho đến khi gục ngã…",
+      "UnitTalk_HIN": "चोट की परवाह किए बिना, उन्हें प्रशिक्षण मैदान में तब तक कड़ी मेहनत करनी पड़ी जब तक वे गिर न गए…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_GRACE_DUALSWORD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_GRACE_DUALSWORD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 9,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_COUNTERSIDE_HILDE",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "세레스가 속아준 덕에, 간신히 힐데로부터 벗어났다…",
+      "UnitTalk_ENG": "Ceres took the bait, and I barely managed to get away from Hilde...",
+      "UnitTalk_JPN": "セレスが引っかかったおかげで、なんとかヒルデから逃げられた…",
+      "UnitTalk_CHN": "多亏瑟莱丝上当，总算勉强从希尔德那里脱身了…",
+      "UnitTalk_TWN": "多虧瑟萊絲上當，總算勉強從希爾德那裡脫身了…",
+      "UnitTalk_FRA": "Grâce à la ruse de Ceres, j'ai à peine échappé à Hilde…",
+      "UnitTalk_DEU": "Dank Ceres, die sich täuschen ließ, entkam ich Hilde nur knapp …",
+      "UnitTalk_ESP": "Gracias al truco de Ceres, apenas pude escapar de Hilde…",
+      "UnitTalk_PRT": "Graças a Ceres ter se deixado enganar, mal consegui escapar de Hilde…",
+      "UnitTalk_THA": "ต้องขอบคุณอุบายของเซเรส ฉันจึงรอดจากฮิลเดมาได้อย่างหวุดหวิด…",
+      "UnitTalk_IND": "Berkat tipu daya Ceres, aku berhasil lolos dari Hilde…",
+      "UnitTalk_VIE": "Nhờ Ceres lừa tôi, tôi suýt thoát khỏi Hilde…",
+      "UnitTalk_HIN": "सेरेस के जानबूझकर अनजान बनने की वजह से, मैं मुश्किल से हिल्डे से बच पाया…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_GRACE_DUALSWORD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_GRACE_DUALSWORD_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    }
+  ]
+}

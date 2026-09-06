@@ -6,353 +6,4106 @@
         {
           "BattleEffectId" : 10101,
           "BattleEffectStrId" : "BATTLE_EFFECT_PVP_ASYNC_A_LEVEL1_01",
-          "BattleEffectTarget" : "BCT_ATEAM_HOST_BATTLE_EFFECT",
+          "AteamEffectTarget" : "ALL",
           "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_PVP_ASYNC_A_LEVEL1_01_01"]
         },
         {
           "BattleEffectId" : 10102,
           "BattleEffectStrId" : "BATTLE_EFFECT_PVP_ASYNC_A_LEVEL2_01",
-          "BattleEffectTarget" : "BCT_ATEAM_HOST_BATTLE_EFFECT",
+          "AteamEffectTarget" : "ALL",
           "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_PVP_ASYNC_A_LEVEL2_01_01"]
         },
         {
           "BattleEffectId" : 10103,
           "BattleEffectStrId" : "BATTLE_EFFECT_PVP_ASYNC_A_LEVEL3_01",
-          "BattleEffectTarget" : "BCT_ATEAM_HOST_BATTLE_EFFECT",
+          "AteamEffectTarget" : "ALL",
           "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_PVP_ASYNC_A_LEVEL3_01_01"]
         },
         {
           "BattleEffectId" : 10104,
           "BattleEffectStrId" : "BATTLE_EFFECT_PVP_ASYNC_A_LEVEL4_01",
-          "BattleEffectTarget" : "BCT_ATEAM_HOST_BATTLE_EFFECT",
+          "AteamEffectTarget" : "ALL",
           "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_PVP_ASYNC_A_LEVEL4_01_01"]
         },
         {
           "BattleEffectId" : 10105,
           "BattleEffectStrId" : "BATTLE_EFFECT_PVP_ASYNC_A_LEVEL5_01",
-          "BattleEffectTarget" : "BCT_ATEAM_HOST_BATTLE_EFFECT",
+          "AteamEffectTarget" : "ALL",
           "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_PVP_ASYNC_A_LEVEL5_01_01"]
         },
         {
           "BattleEffectId" : 10106,
           "BattleEffectStrId" : "BATTLE_EFFECT_PVP_ASYNC_A_LEVEL6_01",
-          "BattleEffectTarget" : "BCT_ATEAM_HOST_BATTLE_EFFECT",
+          "AteamEffectTarget" : "ALL",
           "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_PVP_ASYNC_A_LEVEL6_01_01"]
+        },
+        {
+          "BattleEffectId" : 10107,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_ASYNC_A_LEVEL7_01",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_PVP_ASYNC_A_LEVEL7_01_01"]
+        },
+        {
+          "BattleEffectId" : 10108,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_ASYNC_A_LEVEL8_01",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_PVP_ASYNC_A_LEVEL8_01_01"]
+        },
+        {
+          "BattleEffectId" : 10109,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_ASYNC_A_LEVEL9_01",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_PVP_ASYNC_A_LEVEL9_01_01"]
         },
         {
           "BattleEffectId" : 20101,
           "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL2_01",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
           "BattleEffectStatType" : "NST_RATE_DAMAGE_UP",
           "BattleEffectStatValue" : 1000
         },
         {
           "BattleEffectId" : 20102,
           "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL3_01",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
           "BattleEffectStatType" : "NST_RATE_DAMAGE_UP",
           "BattleEffectStatValue" : 2000
         },
         {
           "BattleEffectId" : 20103,
           "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL4_01",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
-          "BattleEffectStatType" : "NST_RATE_DAMAGE_UP",
-          "BattleEffectStatValue" : 3000
-        },
-        {
-          "BattleEffectId" : 20104,
-          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL5_01",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
           "BattleEffectStatType" : "NST_RATE_DAMAGE_UP",
           "BattleEffectStatValue" : 4000
         },
         {
+          "BattleEffectId" : 20104,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL5_01",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_DAMAGE_UP",
+          "BattleEffectStatValue" : 8000
+        },
+        {
           "BattleEffectId" : 20105,
           "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL6_01",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
           "BattleEffectStatType" : "NST_RATE_DAMAGE_UP",
-          "BattleEffectStatValue" : 5000
+          "BattleEffectStatValue" : 16000
         },
         {
           "BattleEffectId" : 20111,
           "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL2_02",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
           "BattleEffectStatType" : "NST_RATE_EFFECT_HIT",
           "BattleEffectStatValue" : 1000
         },
         {
           "BattleEffectId" : 20112,
           "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL3_02",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
           "BattleEffectStatType" : "NST_RATE_EFFECT_HIT",
           "BattleEffectStatValue" : 2500
         },
         {
           "BattleEffectId" : 20113,
           "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL4_02",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
           "BattleEffectStatType" : "NST_RATE_EFFECT_HIT",
           "BattleEffectStatValue" : 5000
         },
         {
           "BattleEffectId" : 20114,
           "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL5_02",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
           "BattleEffectStatType" : "NST_RATE_EFFECT_HIT",
           "BattleEffectStatValue" : 7500
         },
         {
           "BattleEffectId" : 20115,
           "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL6_02",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
           "BattleEffectStatType" : "NST_RATE_EFFECT_HIT",
           "BattleEffectStatValue" : 10000
         },
         {
           "BattleEffectId" : 20121,
           "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL2_03",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
           "BattleEffectStatType" : "NST_NV_RATE_HP",
           "BattleEffectStatValue" : -1000
         },
         {
           "BattleEffectId" : 20122,
           "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL3_03",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
           "BattleEffectStatType" : "NST_NV_RATE_HP",
           "BattleEffectStatValue" : -2000
         },
         {
           "BattleEffectId" : 20123,
           "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL4_03",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
-          "BattleEffectStatType" : "NST_NV_RATE_HP",
-          "BattleEffectStatValue" : -3000
-        },
-        {
-          "BattleEffectId" : 20124,
-          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL5_03",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
           "BattleEffectStatType" : "NST_NV_RATE_HP",
           "BattleEffectStatValue" : -4000
         },
         {
+          "BattleEffectId" : 20124,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL5_03",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_HP",
+          "BattleEffectStatValue" : -6000
+        },
+        {
           "BattleEffectId" : 20125,
           "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL6_03",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
           "BattleEffectStatType" : "NST_NV_RATE_HP",
-          "BattleEffectStatValue" : -5000
+          "BattleEffectStatValue" : -8000
         },
         {
           "BattleEffectId" : 20131,
           "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL2_04",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
-          "BattleEffectStatType" : "NST_RATE_HEAL_GIVE",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_DEF",
           "BattleEffectStatValue" : -1000
         },
         {
           "BattleEffectId" : 20132,
           "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL3_04",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
-          "BattleEffectStatType" : "NST_RATE_HEAL_GIVE",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_DEF",
           "BattleEffectStatValue" : -2000
         },
         {
           "BattleEffectId" : 20133,
           "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL4_04",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
-          "BattleEffectStatType" : "NST_RATE_HEAL_GIVE",
-          "BattleEffectStatValue" : -4000
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_DEF",
+          "BattleEffectStatValue" : -3000
         },
         {
           "BattleEffectId" : 20134,
           "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL5_04",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
-          "BattleEffectStatType" : "NST_RATE_HEAL_GIVE",
-          "BattleEffectStatValue" : -6000
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_DEF",
+          "BattleEffectStatValue" : -4000
         },
         {
           "BattleEffectId" : 20135,
           "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL6_04",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_DEF",
+          "BattleEffectStatValue" : -5000
+        },
+        {
+          "BattleEffectId" : 20141,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL2_05",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_HEAL_GIVE",
+          "BattleEffectStatValue" : -1000
+        },
+        {
+          "BattleEffectId" : 20142,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL3_05",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_HEAL_GIVE",
+          "BattleEffectStatValue" : -2000
+        },
+        {
+          "BattleEffectId" : 20143,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL4_05",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_HEAL_GIVE",
+          "BattleEffectStatValue" : -4000
+        },
+        {
+          "BattleEffectId" : 20144,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL5_05",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_HEAL_GIVE",
+          "BattleEffectStatValue" : -6000
+        },
+        {
+          "BattleEffectId" : 20145,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL6_05",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
           "BattleEffectStatType" : "NST_RATE_HEAL_GIVE",
           "BattleEffectStatValue" : -8000
         },
         {
+          "BattleEffectId" : 20151,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL2_06",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_BARRIER_GIVE",
+          "BattleEffectStatValue" : -1000
+        },
+        {
+          "BattleEffectId" : 20152,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL3_06",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_BARRIER_GIVE",
+          "BattleEffectStatValue" : -2000
+        },
+        {
+          "BattleEffectId" : 20153,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL4_06",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_BARRIER_GIVE",
+          "BattleEffectStatValue" : -4000
+        },
+        {
+          "BattleEffectId" : 20154,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL5_06",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_BARRIER_GIVE",
+          "BattleEffectStatValue" : -6000
+        },
+        {
+          "BattleEffectId" : 20155,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL6_06",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_BARRIER_GIVE",
+          "BattleEffectStatValue" : -8000
+        },
+        {
+          "BattleEffectId" : 22101,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL2_01",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_HP",
+          "BattleEffectStatValue" : -500
+        },
+        {
+          "BattleEffectId" : 22102,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL3_01",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_HP",
+          "BattleEffectStatValue" : -1000
+        },
+        {
+          "BattleEffectId" : 22103,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL4_01",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_HP",
+          "BattleEffectStatValue" : -2000
+        },
+        {
+          "BattleEffectId" : 22104,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL5_01",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_HP",
+          "BattleEffectStatValue" : -3000
+        },
+        {
+          "BattleEffectId" : 22105,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL6_01",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_HP",
+          "BattleEffectStatValue" : -4000
+        },
+        {
+          "BattleEffectId" : 22106,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL7_01",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_HP",
+          "BattleEffectStatValue" : -5000
+        },
+        {
+          "BattleEffectId" : 22111,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL2_02",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_DEF",
+          "BattleEffectStatValue" : -500
+        },
+        {
+          "BattleEffectId" : 22112,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL3_02",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_DEF",
+          "BattleEffectStatValue" : -1000
+        },
+        {
+          "BattleEffectId" : 22113,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL4_02",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_DEF",
+          "BattleEffectStatValue" : -1500
+        },
+        {
+          "BattleEffectId" : 22114,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL5_02",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_DEF",
+          "BattleEffectStatValue" : -2000
+        },
+        {
+          "BattleEffectId" : 22115,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL6_02",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_DEF",
+          "BattleEffectStatValue" : -2500
+        },
+        {
+          "BattleEffectId" : 22116,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL7_02",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_DEF",
+          "BattleEffectStatValue" : -3000
+        },
+        {
+          "BattleEffectId" : 22121,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL2_03",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_HEAL_GIVE",
+          "BattleEffectStatValue" : -500
+        },
+        {
+          "BattleEffectId" : 22122,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL3_03",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_HEAL_GIVE",
+          "BattleEffectStatValue" : -1000
+        },
+        {
+          "BattleEffectId" : 22123,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL4_03",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_HEAL_GIVE",
+          "BattleEffectStatValue" : -2000
+        },
+        {
+          "BattleEffectId" : 22124,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL5_03",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_HEAL_GIVE",
+          "BattleEffectStatValue" : -3000
+        },
+        {
+          "BattleEffectId" : 22125,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL6_03",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_HEAL_GIVE",
+          "BattleEffectStatValue" : -4000
+        },
+        {
+          "BattleEffectId" : 22126,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL7_03",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_HEAL_GIVE",
+          "BattleEffectStatValue" : -5000
+        },
+        {
+          "BattleEffectId" : 22131,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL2_04",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_BARRIER_GIVE",
+          "BattleEffectStatValue" : -500
+        },
+        {
+          "BattleEffectId" : 22132,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL3_04",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_BARRIER_GIVE",
+          "BattleEffectStatValue" : -1000
+        },
+        {
+          "BattleEffectId" : 22133,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL4_04",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_BARRIER_GIVE",
+          "BattleEffectStatValue" : -2000
+        },
+        {
+          "BattleEffectId" : 22134,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL5_04",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_BARRIER_GIVE",
+          "BattleEffectStatValue" : -3000
+        },
+        {
+          "BattleEffectId" : 22135,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL6_04",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_BARRIER_GIVE",
+          "BattleEffectStatValue" : -4000
+        },
+        {
+          "BattleEffectId" : 22136,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP1_LEVEL7_04",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_BARRIER_GIVE",
+          "BattleEffectStatValue" : -5000
+        },
+        {
+          "BattleEffectId" : 23101,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL2_01",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_HP",
+          "BattleEffectStatValue" : -1000
+        },
+        {
+          "BattleEffectId" : 23102,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL3_01",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_HP",
+          "BattleEffectStatValue" : -2000
+        },
+        {
+          "BattleEffectId" : 23103,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL4_01",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_HP",
+          "BattleEffectStatValue" : -3000
+        },
+        {
+          "BattleEffectId" : 23104,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL5_01",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_HP",
+          "BattleEffectStatValue" : -5000
+        },
+        {
+          "BattleEffectId" : 23105,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL6_01",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_HP",
+          "BattleEffectStatValue" : -7000
+        },
+        {
+          "BattleEffectId" : 23106,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL7_01",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_HP",
+          "BattleEffectStatValue" : -9000
+        },
+        {
+          "BattleEffectId" : 23111,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL2_02",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_DEF",
+          "BattleEffectStatValue" : -500
+        },
+        {
+          "BattleEffectId" : 23112,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL3_02",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_DEF",
+          "BattleEffectStatValue" : -1000
+        },
+        {
+          "BattleEffectId" : 23113,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL4_02",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_DEF",
+          "BattleEffectStatValue" : -2000
+        },
+        {
+          "BattleEffectId" : 23114,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL5_02",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_DEF",
+          "BattleEffectStatValue" : -3000
+        },
+        {
+          "BattleEffectId" : 23115,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL6_02",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_DEF",
+          "BattleEffectStatValue" : -4000
+        },
+        {
+          "BattleEffectId" : 23116,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL7_02",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_DEF",
+          "BattleEffectStatValue" : -5000
+        },
+        {
+          "BattleEffectId" : 23121,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL2_03",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_HEAL_GIVE",
+          "BattleEffectStatValue" : -1000
+        },
+        {
+          "BattleEffectId" : 23122,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL3_03",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_HEAL_GIVE",
+          "BattleEffectStatValue" : -2000
+        },
+        {
+          "BattleEffectId" : 23123,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL4_03",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_HEAL_GIVE",
+          "BattleEffectStatValue" : -3000
+        },
+        {
+          "BattleEffectId" : 23124,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL5_03",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_HEAL_GIVE",
+          "BattleEffectStatValue" : -5000
+        },
+        {
+          "BattleEffectId" : 23125,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL6_03",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_HEAL_GIVE",
+          "BattleEffectStatValue" : -7000
+        },
+        {
+          "BattleEffectId" : 23126,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL7_03",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_HEAL_GIVE",
+          "BattleEffectStatValue" : -9000
+        },
+        {
+          "BattleEffectId" : 23131,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL2_04",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_BARRIER_GIVE",
+          "BattleEffectStatValue" : -1000
+        },
+        {
+          "BattleEffectId" : 23132,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL3_04",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_BARRIER_GIVE",
+          "BattleEffectStatValue" : -2000
+        },
+        {
+          "BattleEffectId" : 23133,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL4_04",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_BARRIER_GIVE",
+          "BattleEffectStatValue" : -3000
+        },
+        {
+          "BattleEffectId" : 23134,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL5_04",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_BARRIER_GIVE",
+          "BattleEffectStatValue" : -5000
+        },
+        {
+          "BattleEffectId" : 23135,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL6_04",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_BARRIER_GIVE",
+          "BattleEffectStatValue" : -7000
+        },
+        {
+          "BattleEffectId" : 23136,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVE_ATEAM_STEP2_LEVEL7_04",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_BARRIER_GIVE",
+          "BattleEffectStatValue" : -9000
+        },
+        {
+          "BattleEffectId" : 99041,
+          "BattleEffectStrId" : "BATTLE_EFFECT_TEST4_A_LEVEL1",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_CRITICAL",
+          "BattleEffectStatValue" : -500
+        },
+        {
+          "BattleEffectId" : 99042,
+          "BattleEffectStrId" : "BATTLE_EFFECT_TEST4_A_LEVEL2",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_CRITICAL",
+          "BattleEffectStatValue" : -1500
+        },
+        {
+          "BattleEffectId" : 99043,
+          "BattleEffectStrId" : "BATTLE_EFFECT_TEST4_A_LEVEL3",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_CRITICAL",
+          "BattleEffectStatValue" : -5000
+        },
+        {
+          "BattleEffectId" : 99044,
+          "BattleEffectStrId" : "BATTLE_EFFECT_TEST4_A_LEVEL4",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_CRITICAL",
+          "BattleEffectStatValue" : -10000
+        },
+        {
+          "BattleEffectId" : 99045,
+          "BattleEffectStrId" : "BATTLE_EFFECT_TEST4_B_LEVEL1",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_TURN_SPEED",
+          "BattleEffectStatValue" : -1000
+        },
+        {
+          "BattleEffectId" : 99046,
+          "BattleEffectStrId" : "BATTLE_EFFECT_TEST4_B_LEVEL2",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_TURN_SPEED",
+          "BattleEffectStatValue" : -2000
+        },
+        {
+          "BattleEffectId" : 99047,
+          "BattleEffectStrId" : "BATTLE_EFFECT_TEST4_B_LEVEL3",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_TURN_SPEED",
+          "BattleEffectStatValue" : -3000
+        },
+        {
+          "BattleEffectId" : 99048,
+          "BattleEffectStrId" : "BATTLE_EFFECT_TEST4_B_LEVEL4",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_TURN_SPEED",
+          "BattleEffectStatValue" : -4000
+        },
+        {
+          "BattleEffectId" : 99049,
+          "BattleEffectStrId" : "BATTLE_EFFECT_TEST4_ALL_LEVEL1",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_TEST4_A_LEVEL1_01", "COND_BATTLE_EFFECT_TEST4_A_LEVEL1_02"]
+        },
+        {
+          "BattleEffectId" : 99050,
+          "BattleEffectStrId" : "BATTLE_EFFECT_TEST4_ALL_LEVEL2",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_TEST4_A_LEVEL2_01", "COND_BATTLE_EFFECT_TEST4_A_LEVEL2_02", "COND_BATTLE_EFFECT_TEST4_A_LEVEL2_03"]
+        },
+        {
+          "BattleEffectId" : 99051,
+          "BattleEffectStrId" : "BATTLE_EFFECT_TEST4_ALL_LEVEL3",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_TEST4_A_LEVEL3_01", "COND_BATTLE_EFFECT_TEST4_A_LEVEL3_02", "COND_BATTLE_EFFECT_TEST4_A_LEVEL3_03", "COND_BATTLE_EFFECT_TEST4_A_LEVEL3_04"]
+        },
+        {
+          "BattleEffectId" : 99052,
+          "BattleEffectStrId" : "BATTLE_EFFECT_TEST4_ALL_LEVEL4",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_TEST4_A_LEVEL4_01", "COND_BATTLE_EFFECT_TEST4_A_LEVEL4_02", "COND_BATTLE_EFFECT_TEST4_A_LEVEL4_03", "COND_BATTLE_EFFECT_TEST4_A_LEVEL4_04", "COND_BATTLE_EFFECT_TEST4_A_LEVEL4_05"]
+        },
+        {
           "BattleEffectId" : 30101,
           "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE1_01",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectName" : "SI_CUBE_SKILL_NAME_1001",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "CUBE_ITEM_RETRO_100TON_HAMMER.png",
           "ShowSELog" : true,
           "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE1_01_01"]
         },
         {
           "BattleEffectId" : 30102,
           "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE1_02",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectName" : "SI_CUBE_SKILL_NAME_1002",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "CUBE_ITEM_RUBBER_DUCK.png",
           "ShowSELog" : true,
           "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE1_02_01"]
         },
         {
           "BattleEffectId" : 30103,
           "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE1_03",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectName" : "SI_CUBE_SKILL_NAME_1003",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "CUBE_ITEM_BIG_GIANT_DRILL_DRIVER.png",
           "ShowSELog" : true,
           "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE1_03_01"]
         },
         {
           "BattleEffectId" : 30104,
           "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE1_04",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectName" : "SI_CUBE_SKILL_NAME_1004",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "CUBE_ITEM_BUBBLE_BUBBLE_WHISTLE.png",
           "ShowSELog" : true,
           "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE1_04_01"]
         },
         {
           "BattleEffectId" : 30105,
           "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE1_05",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectName" : "SI_CUBE_SKILL_NAME_1005",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "CUBE_ITEM_NUCLEAR_PUNCH.png",
           "ShowSELog" : true,
           "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE1_05_01"]
         },
         {
           "BattleEffectId" : 30201,
           "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE2_01",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectName" : "SI_CUBE_SKILL_NAME_2001",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "CUBE_ITEM_DARK_FLAME_PUNCH.png",
           "ShowSELog" : true,
           "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE2_01_01"]
         },
         {
           "BattleEffectId" : 30202,
           "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE2_02",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectName" : "SI_CUBE_SKILL_NAME_2002",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "CUBE_ITEM_SPECIAL_ULTRA_ROLLER_SKATES.png",
           "ShowSELog" : true,
           "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE2_02_01"]
         },
         {
           "BattleEffectId" : 30203,
           "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE2_03",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectName" : "SI_CUBE_SKILL_NAME_2003",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "CUBE_ITEM_SLAM_ICE_SHIELD.png",
           "ShowSELog" : true,
           "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE2_03_01"]
         },
         {
           "BattleEffectId" : 30204,
           "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE2_04",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectName" : "SI_CUBE_SKILL_NAME_2004",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "CUBE_ITEM_DESSERT_MUFFIN.png",
           "ShowSELog" : true,
           "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE2_04_01"]
         },
         {
           "BattleEffectId" : 30205,
           "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE2_05",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectName" : "SI_CUBE_SKILL_NAME_2005",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "CUBE_ITEM_GRAND_MIRACLE_ELIXIR.png",
           "ShowSELog" : true,
           "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE2_05_01"]
         },
         {
           "BattleEffectId" : 30301,
           "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE3_01",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectName" : "SI_CUBE_SKILL_NAME_3001",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "CUBE_ITEM_ROCKET_BOARD.png",
           "ShowSELog" : true,
           "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE3_01_01"]
         },
         {
           "BattleEffectId" : 30302,
           "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE3_02",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectName" : "SI_CUBE_SKILL_NAME_3002",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "CUBE_ITEM_SAFETY_GLOVES.png",
           "ShowSELog" : true,
           "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE3_02_01"]
         },
         {
           "BattleEffectId" : 30303,
           "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE3_03",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectName" : "SI_CUBE_SKILL_NAME_3003",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "CUBE_ITEM_STYLISH_CAPE.png",
           "ShowSELog" : true,
           "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE3_03_01"]
         },
         {
           "BattleEffectId" : 30304,
           "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE3_04",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectName" : "SI_CUBE_SKILL_NAME_3004",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "CUBE_ITEM_BEST_FRIEND.png",
           "ShowSELog" : true,
           "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE3_04_01"]
         },
         {
           "BattleEffectId" : 30305,
           "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE3_05",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectName" : "SI_CUBE_SKILL_NAME_3005",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "CUBE_ITEM_TINGLING_RED_CAN.png",
           "ShowSELog" : true,
           "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE3_05_01"]
         },
         {
           "BattleEffectId" : 30401,
           "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE4_01",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectName" : "SI_CUBE_SKILL_NAME_4001",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "CUBE_ITEM_LEGEND_ARMOR.png",
           "ShowSELog" : true,
           "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE4_01_01"]
         },
         {
           "BattleEffectId" : 30402,
           "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE4_02",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectName" : "SI_CUBE_SKILL_NAME_4002",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "CUBE_ITEM_TURTLE_BACKPACK.png",
           "ShowSELog" : true,
           "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE4_02_01"]
         },
         {
           "BattleEffectId" : 30403,
           "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE4_03",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectName" : "SI_CUBE_SKILL_NAME_4003",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "CUBE_ITEM_RESCUE_WALKIE_TALKIE.png",
           "ShowSELog" : true,
           "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE4_03_01"]
         },
         {
           "BattleEffectId" : 30404,
           "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE4_04",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectName" : "SI_CUBE_SKILL_NAME_4004",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "CUBE_ITEM_HYPER_MAGNET.png",
           "ShowSELog" : true,
           "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE4_04_01"]
         },
         {
           "BattleEffectId" : 30405,
           "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE4_05",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectName" : "SI_CUBE_SKILL_NAME_4005",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "CUBE_ITEM_FLUFFY_SHEEP_HAT.png",
           "ShowSELog" : true,
           "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE4_05_01"]
         },
         {
           "BattleEffectId" : 30501,
           "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE5_01",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectName" : "SI_CUBE_SKILL_NAME_5001",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "CUBE_ITEM_ULTRA_SPINNER.png",
           "ShowSELog" : true,
           "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE5_01_01"]
         },
         {
           "BattleEffectId" : 30502,
           "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE5_02",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectName" : "SI_CUBE_SKILL_NAME_5002",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "CUBE_ITEM_BOUNCY_BALL.png",
           "ShowSELog" : true,
           "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE5_02_01"]
         },
         {
           "BattleEffectId" : 30503,
           "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE5_03",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectName" : "SI_CUBE_SKILL_NAME_5003",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "CUBE_ITEM_MAGIC_ERASER.png",
           "ShowSELog" : true,
           "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE5_03_01"]
         },
         {
           "BattleEffectId" : 30504,
           "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE5_04",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectName" : "SI_CUBE_SKILL_NAME_5004",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "CUBE_ITEM_RACER_HELMET.png",
           "ShowSELog" : true,
           "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE5_04_01"]
         },
         {
           "BattleEffectId" : 30505,
           "BattleEffectStrId" : "BATTLE_EFFECT_CUBE_PALACE_STAGE5_05",
-          "BattleEffectTarget" : "BCT_TEAM_ALL",
+          "BattleEffectName" : "SI_CUBE_SKILL_NAME_5005",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "CUBE_ITEM_LASER_GUN.png",
           "ShowSELog" : true,
           "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CUBE_PALACE_STAGE5_05_01"]
+        },
+        {
+          "BattleEffectId" : 40011,
+          "BattleEffectStrId" : "BATTLE_EFFECT_GUILD_RAID_STRIKER_BUFF_ITEM_01_01",
+          "BattleEffectName" : "SI_GUILD_DUNGEON_BUFF_STRIKER",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_STRIKER",
+          "BattleEffectIconImg" : "GUILD_BATTLE_DG_BUFF_STRIKER.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_GUILD_RAID_STRIKER_BUFF_ITEM_01_01", "COND_BATTLE_EFFECT_GUILD_RAID_STRIKER_BUFF_ITEM_01_02"]
+        },
+        {
+          "BattleEffectId" : 40021,
+          "BattleEffectStrId" : "BATTLE_EFFECT_GUILD_RAID_RANGER_BUFF_ITEM_01_01",
+          "BattleEffectName" : "SI_GUILD_DUNGEON_BUFF_RANGER",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_RANGER",
+          "BattleEffectIconImg" : "GUILD_BATTLE_DG_BUFF_RANGER.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_GUILD_RAID_RANGER_BUFF_ITEM_01_01", "COND_BATTLE_EFFECT_GUILD_RAID_RANGER_BUFF_ITEM_01_02"]
+        },
+        {
+          "BattleEffectId" : 40031,
+          "BattleEffectStrId" : "BATTLE_EFFECT_GUILD_RAID_CASTER_BUFF_ITEM_01_01",
+          "BattleEffectName" : "SI_GUILD_DUNGEON_BUFF_CASTER",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_CASTER",
+          "BattleEffectIconImg" : "GUILD_BATTLE_DG_BUFF_CASTER.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_GUILD_RAID_CASTER_BUFF_ITEM_01_01", "COND_BATTLE_EFFECT_GUILD_RAID_CASTER_BUFF_ITEM_01_02"]
+        },
+        {
+          "BattleEffectId" : 40041,
+          "BattleEffectStrId" : "BATTLE_EFFECT_GUILD_RAID_ASSASSIN_BUFF_ITEM_01_01",
+          "BattleEffectName" : "SI_GUILD_DUNGEON_BUFF_ASSASSIN",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_ASSASSIN",
+          "BattleEffectIconImg" : "GUILD_BATTLE_DG_BUFF_ASSASSIN.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_GUILD_RAID_ASSASSIN_BUFF_ITEM_01_01", "COND_BATTLE_EFFECT_GUILD_RAID_ASSASSIN_BUFF_ITEM_01_02"]
+        },
+        {
+          "BattleEffectId" : 40051,
+          "BattleEffectStrId" : "BATTLE_EFFECT_GUILD_RAID_SUPPORTER_BUFF_ITEM_01_01",
+          "BattleEffectName" : "SI_GUILD_DUNGEON_BUFF_SUPPORTER",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_SUPPORTER",
+          "BattleEffectIconImg" : "GUILD_BATTLE_DG_BUFF_SUPPORTER.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_GUILD_RAID_SUPPORTER_BUFF_ITEM_01_01", "COND_BATTLE_EFFECT_GUILD_RAID_SUPPORTER_BUFF_ITEM_01_02"]
+        },
+        {
+          "BattleEffectId" : 40061,
+          "BattleEffectStrId" : "BATTLE_EFFECT_GUILD_RAID_DEFENDER_BUFF_ITEM_01_01",
+          "BattleEffectName" : "SI_GUILD_DUNGEON_BUFF_DEFFENDER",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_DEFENDER",
+          "BattleEffectIconImg" : "GUILD_BATTLE_DG_BUFF_DEFENDER.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_GUILD_RAID_DEFENDER_BUFF_ITEM_01_01", "COND_BATTLE_EFFECT_GUILD_RAID_DEFENDER_BUFF_ITEM_01_02"]
+        },
+        {
+          "BattleEffectId" : 40111,
+          "BattleEffectStrId" : "BATTLE_EFFECT_GUILD_RAID_STRIKER_BUFF_ITEM_01_02",
+          "BattleEffectName" : "SI_GUILD_DUNGEON_BUFF_STRIKER_01",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_STRIKER",
+          "BattleEffectIconImg" : "GUILD_BATTLE_DG_BUFF_STRIKER.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_GUILD_RAID_STRIKER_BUFF_ITEM_02_01", "COND_BATTLE_EFFECT_GUILD_RAID_STRIKER_BUFF_ITEM_02_02"]
+        },
+        {
+          "BattleEffectId" : 40121,
+          "BattleEffectStrId" : "BATTLE_EFFECT_GUILD_RAID_RANGER_BUFF_ITEM_01_02",
+          "BattleEffectName" : "SI_GUILD_DUNGEON_BUFF_RANGER_01",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_RANGER",
+          "BattleEffectIconImg" : "GUILD_BATTLE_DG_BUFF_RANGER.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_GUILD_RAID_RANGER_BUFF_ITEM_02_01", "COND_BATTLE_EFFECT_GUILD_RAID_RANGER_BUFF_ITEM_02_02"]
+        },
+        {
+          "BattleEffectId" : 40131,
+          "BattleEffectStrId" : "BATTLE_EFFECT_GUILD_RAID_CASTER_BUFF_ITEM_01_02",
+          "BattleEffectName" : "SI_GUILD_DUNGEON_BUFF_CASTER_01",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_CASTER",
+          "BattleEffectIconImg" : "GUILD_BATTLE_DG_BUFF_CASTER.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_GUILD_RAID_CASTER_BUFF_ITEM_02_01", "COND_BATTLE_EFFECT_GUILD_RAID_CASTER_BUFF_ITEM_02_02"]
+        },
+        {
+          "BattleEffectId" : 40141,
+          "BattleEffectStrId" : "BATTLE_EFFECT_GUILD_RAID_ASSASSIN_BUFF_ITEM_01_02",
+          "BattleEffectName" : "SI_GUILD_DUNGEON_BUFF_ASSASSIN_01",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_ASSASSIN",
+          "BattleEffectIconImg" : "GUILD_BATTLE_DG_BUFF_ASSASSIN.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_GUILD_RAID_ASSASSIN_BUFF_ITEM_02_01", "COND_BATTLE_EFFECT_GUILD_RAID_ASSASSIN_BUFF_ITEM_02_02"]
+        },
+        {
+          "BattleEffectId" : 40151,
+          "BattleEffectStrId" : "BATTLE_EFFECT_GUILD_RAID_SUPPORTER_BUFF_ITEM_01_02",
+          "BattleEffectName" : "SI_GUILD_DUNGEON_BUFF_SUPPORTER_01",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_SUPPORTER",
+          "BattleEffectIconImg" : "GUILD_BATTLE_DG_BUFF_SUPPORTER.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_GUILD_RAID_SUPPORTER_BUFF_ITEM_02_01", "COND_BATTLE_EFFECT_GUILD_RAID_SUPPORTER_BUFF_ITEM_02_02"]
+        },
+        {
+          "BattleEffectId" : 40161,
+          "BattleEffectStrId" : "BATTLE_EFFECT_GUILD_RAID_DEFENDER_BUFF_ITEM_01_02",
+          "BattleEffectName" : "SI_GUILD_DUNGEON_BUFF_DEFFENDER_01",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_DEFENDER",
+          "BattleEffectIconImg" : "GUILD_BATTLE_DG_BUFF_DEFENDER.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_GUILD_RAID_DEFENDER_BUFF_ITEM_02_01", "COND_BATTLE_EFFECT_GUILD_RAID_DEFENDER_BUFF_ITEM_02_02"]
+        },
+        {
+          "BattleEffectId" : 40241,
+          "BattleEffectStrId" : "BATTLE_EFFECT_GUILD_RAID_ASSASSIN_BUFF_ITEM_01_03",
+          "BattleEffectName" : "SI_GUILD_DUNGEON_BUFF_ASSASSIN_02",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_ASSASSIN",
+          "BattleEffectIconImg" : "GUILD_BATTLE_DG_BUFF_ASSASSIN.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_GUILD_RAID_ASSASSIN_BUFF_ITEM_03_01", "COND_BATTLE_EFFECT_GUILD_RAID_ASSASSIN_BUFF_ITEM_03_02"]
+        },
+        {
+          "BattleEffectId" : 45011,
+          "BattleEffectStrId" : "BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_01_01",
+          "BattleEffectName" : "SI_GUILD_DUNGEON_BUFF_PARTY_FIRE",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "GUILD_BATTLE_DG_BUFF_PARTY_FIRE.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_01_01", "COND_BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_01_02"]
+        },
+        {
+          "BattleEffectId" : 45021,
+          "BattleEffectStrId" : "BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_02_01",
+          "BattleEffectName" : "SI_GUILD_DUNGEON_BUFF_PARTY_FOREST",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "GUILD_BATTLE_DG_BUFF_PARTY_FOREST.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_02_01", "COND_BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_02_02"]
+        },
+        {
+          "BattleEffectId" : 45031,
+          "BattleEffectStrId" : "BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_03_01",
+          "BattleEffectName" : "SI_GUILD_DUNGEON_BUFF_PARTY_WIND",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "GUILD_BATTLE_DG_BUFF_PARTY_WIND.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_03_01", "COND_BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_03_02"]
+        },
+        {
+          "BattleEffectId" : 45041,
+          "BattleEffectStrId" : "BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_04_01",
+          "BattleEffectName" : "SI_GUILD_DUNGEON_BUFF_PARTY_MOUNTAIN",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "GUILD_BATTLE_DG_BUFF_PARTY_MOUNTAIN.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_04_01", "COND_BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_04_02"]
+        },
+        {
+          "BattleEffectId" : 40012,
+          "BattleEffectStrId" : "BATTLE_EFFECT_GUILD_RAID_STRIKER_BUFF_ITEM_PROMOTION_01_01",
+          "BattleEffectName" : "SI_GUILD_DUNGEON_BUFF_STRIKER_S",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_STRIKER",
+          "BattleEffectIconImg" : "GUILD_BATTLE_DG_BUFF_STRIKER_S.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_GUILD_RAID_STRIKER_BUFF_ITEM_PROMOTION_01_01", "COND_BATTLE_EFFECT_GUILD_RAID_STRIKER_BUFF_ITEM_PROMOTION_01_02"]
+        },
+        {
+          "BattleEffectId" : 40022,
+          "BattleEffectStrId" : "BATTLE_EFFECT_GUILD_RAID_RANGER_BUFF_ITEM_PROMOTION_01_01",
+          "BattleEffectName" : "SI_GUILD_DUNGEON_BUFF_RANGER_S",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_RANGER",
+          "BattleEffectIconImg" : "GUILD_BATTLE_DG_BUFF_RANGER_S.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_GUILD_RAID_RANGER_BUFF_ITEM_PROMOTION_01_01", "COND_BATTLE_EFFECT_GUILD_RAID_RANGER_BUFF_ITEM_PROMOTION_01_02"]
+        },
+        {
+          "BattleEffectId" : 40032,
+          "BattleEffectStrId" : "BATTLE_EFFECT_GUILD_RAID_CASTER_BUFF_ITEM_PROMOTION_01_01",
+          "BattleEffectName" : "SI_GUILD_DUNGEON_BUFF_CASTER_S",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_CASTER",
+          "BattleEffectIconImg" : "GUILD_BATTLE_DG_BUFF_CASTER_S.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_GUILD_RAID_CASTER_BUFF_ITEM_PROMOTION_01_01", "COND_BATTLE_EFFECT_GUILD_RAID_CASTER_BUFF_ITEM_PROMOTION_01_02"]
+        },
+        {
+          "BattleEffectId" : 40042,
+          "BattleEffectStrId" : "BATTLE_EFFECT_GUILD_RAID_ASSASSIN_BUFF_ITEM_PROMOTION_01_01",
+          "BattleEffectName" : "SI_GUILD_DUNGEON_BUFF_ASSASSIN_S",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_ASSASSIN",
+          "BattleEffectIconImg" : "GUILD_BATTLE_DG_BUFF_ASSASSIN_S.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_GUILD_RAID_ASSASSIN_BUFF_ITEM_PROMOTION_01_01", "COND_BATTLE_EFFECT_GUILD_RAID_ASSASSIN_BUFF_ITEM_PROMOTION_01_02"]
+        },
+        {
+          "BattleEffectId" : 40052,
+          "BattleEffectStrId" : "BATTLE_EFFECT_GUILD_RAID_SUPPORTER_BUFF_ITEM_PROMOTION_01_01",
+          "BattleEffectName" : "SI_GUILD_DUNGEON_BUFF_SUPPORTER_S",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_SUPPORTER",
+          "BattleEffectIconImg" : "GUILD_BATTLE_DG_BUFF_SUPPORTER_S.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_GUILD_RAID_SUPPORTER_BUFF_ITEM_PROMOTION_01_01", "COND_BATTLE_EFFECT_GUILD_RAID_SUPPORTER_BUFF_ITEM_PROMOTION_01_02"]
+        },
+        {
+          "BattleEffectId" : 40062,
+          "BattleEffectStrId" : "BATTLE_EFFECT_GUILD_RAID_DEFENDER_BUFF_ITEM_PROMOTION_01_01",
+          "BattleEffectName" : "SI_GUILD_DUNGEON_BUFF_DEFFENDER_S",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_DEFENDER",
+          "BattleEffectIconImg" : "GUILD_BATTLE_DG_BUFF_DEFENDER_S.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_GUILD_RAID_DEFENDER_BUFF_ITEM_PROMOTION_01_01", "COND_BATTLE_EFFECT_GUILD_RAID_DEFENDER_BUFF_ITEM_PROMOTION_01_02"]
+        },
+        {
+          "BattleEffectId" : 40112,
+          "BattleEffectStrId" : "BATTLE_EFFECT_GUILD_RAID_STRIKER_BUFF_ITEM_PROMOTION_01_02",
+          "BattleEffectName" : "SI_GUILD_DUNGEON_BUFF_STRIKER_S_01",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_STRIKER",
+          "BattleEffectIconImg" : "GUILD_BATTLE_DG_BUFF_STRIKER_S.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_GUILD_RAID_STRIKER_BUFF_ITEM_PROMOTION_02_01", "COND_BATTLE_EFFECT_GUILD_RAID_STRIKER_BUFF_ITEM_PROMOTION_02_02"]
+        },
+        {
+          "BattleEffectId" : 40122,
+          "BattleEffectStrId" : "BATTLE_EFFECT_GUILD_RAID_RANGER_BUFF_ITEM_PROMOTION_01_02",
+          "BattleEffectName" : "SI_GUILD_DUNGEON_BUFF_RANGER_S_01",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_RANGER",
+          "BattleEffectIconImg" : "GUILD_BATTLE_DG_BUFF_RANGER_S.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_GUILD_RAID_RANGER_BUFF_ITEM_PROMOTION_02_01", "COND_BATTLE_EFFECT_GUILD_RAID_RANGER_BUFF_ITEM_PROMOTION_02_02"]
+        },
+        {
+          "BattleEffectId" : 40132,
+          "BattleEffectStrId" : "BATTLE_EFFECT_GUILD_RAID_CASTER_BUFF_ITEM_PROMOTION_01_02",
+          "BattleEffectName" : "SI_GUILD_DUNGEON_BUFF_CASTER_S_01",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_CASTER",
+          "BattleEffectIconImg" : "GUILD_BATTLE_DG_BUFF_CASTER_S.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_GUILD_RAID_CASTER_BUFF_ITEM_PROMOTION_02_01", "COND_BATTLE_EFFECT_GUILD_RAID_CASTER_BUFF_ITEM_PROMOTION_02_02"]
+        },
+        {
+          "BattleEffectId" : 40142,
+          "BattleEffectStrId" : "BATTLE_EFFECT_GUILD_RAID_ASSASSIN_BUFF_ITEM_PROMOTION_01_02",
+          "BattleEffectName" : "SI_GUILD_DUNGEON_BUFF_ASSASSIN_S_01",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_ASSASSIN",
+          "BattleEffectIconImg" : "GUILD_BATTLE_DG_BUFF_ASSASSIN_S.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_GUILD_RAID_ASSASSIN_BUFF_ITEM_PROMOTION_02_01", "COND_BATTLE_EFFECT_GUILD_RAID_ASSASSIN_BUFF_ITEM_PROMOTION_02_02"]
+        },
+        {
+          "BattleEffectId" : 40152,
+          "BattleEffectStrId" : "BATTLE_EFFECT_GUILD_RAID_SUPPORTER_BUFF_ITEM_PROMOTION_01_02",
+          "BattleEffectName" : "SI_GUILD_DUNGEON_BUFF_SUPPORTER_S_01",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_SUPPORTER",
+          "BattleEffectIconImg" : "GUILD_BATTLE_DG_BUFF_SUPPORTER_S.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_GUILD_RAID_SUPPORTER_BUFF_ITEM_PROMOTION_02_01", "COND_BATTLE_EFFECT_GUILD_RAID_SUPPORTER_BUFF_ITEM_PROMOTION_02_02"]
+        },
+        {
+          "BattleEffectId" : 40162,
+          "BattleEffectStrId" : "BATTLE_EFFECT_GUILD_RAID_DEFENDER_BUFF_ITEM_PROMOTION_01_02",
+          "BattleEffectName" : "SI_GUILD_DUNGEON_BUFF_DEFFENDER_S_01",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_DEFENDER",
+          "BattleEffectIconImg" : "GUILD_BATTLE_DG_BUFF_DEFENDER_S.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_GUILD_RAID_DEFENDER_BUFF_ITEM_PROMOTION_02_01", "COND_BATTLE_EFFECT_GUILD_RAID_DEFENDER_BUFF_ITEM_PROMOTION_02_02"]
+        },
+        {
+          "BattleEffectId" : 40242,
+          "BattleEffectStrId" : "BATTLE_EFFECT_GUILD_RAID_ASSASSIN_BUFF_ITEM_PROMOTION_01_03",
+          "BattleEffectName" : "SI_GUILD_DUNGEON_BUFF_ASSASSIN_S_02",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_ASSASSIN",
+          "BattleEffectIconImg" : "GUILD_BATTLE_DG_BUFF_ASSASSIN_S.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_GUILD_RAID_ASSASSIN_BUFF_ITEM_PROMOTION_03_01", "COND_BATTLE_EFFECT_GUILD_RAID_ASSASSIN_BUFF_ITEM_PROMOTION_03_02"]
+        },
+        {
+          "BattleEffectId" : 45012,
+          "BattleEffectStrId" : "BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_PROMOTION_01_01",
+          "BattleEffectName" : "SI_GUILD_DUNGEON_BUFF_PARTY_FIRE_S",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "GUILD_BATTLE_DG_BUFF_PARTY_FIRE_S.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_PROMOTION_01_01", "COND_BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_PROMOTION_01_02"]
+        },
+        {
+          "BattleEffectId" : 45022,
+          "BattleEffectStrId" : "BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_PROMOTION_02_01",
+          "BattleEffectName" : "SI_GUILD_DUNGEON_BUFF_PARTY_FOREST_S",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "GUILD_BATTLE_DG_BUFF_PARTY_FOREST_S.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_PROMOTION_02_01", "COND_BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_PROMOTION_02_02"]
+        },
+        {
+          "BattleEffectId" : 45032,
+          "BattleEffectStrId" : "BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_PROMOTION_03_01",
+          "BattleEffectName" : "SI_GUILD_DUNGEON_BUFF_PARTY_WIND_S",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "GUILD_BATTLE_DG_BUFF_PARTY_WIND_S.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_PROMOTION_03_01", "COND_BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_PROMOTION_03_02"]
+        },
+        {
+          "BattleEffectId" : 45042,
+          "BattleEffectStrId" : "BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_PROMOTION_04_01",
+          "BattleEffectName" : "SI_GUILD_DUNGEON_BUFF_PARTY_MOUNTAIN_S",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "GUILD_BATTLE_DG_BUFF_PARTY_MOUNTAIN_S.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_PROMOTION_04_01", "COND_BATTLE_EFFECT_GUILD_RAID_PARTY_BUFF_ITEM_PROMOTION_04_02"]
+        },
+        {
+          "BattleEffectId" : 9000001,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_9000001",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_9000001",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectStatType" : "NST_TURN_SPEED",
+          "BattleEffectStatValue" : 10
+        },
+        {
+          "BattleEffectId" : 51001,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51001",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011001",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1001,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_STARGAZER_TRIP.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5100101", "COND_BATTLE_EFFECT_CHARM_5100102", "COND_BATTLE_EFFECT_CHARM_5100103", "COND_BATTLE_EFFECT_CHARM_5100104", "COND_BATTLE_EFFECT_CHARM_5100105"]
+        },
+        {
+          "BattleEffectId" : 51002,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51002",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011002",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1002,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_RUGGED_CALIPERS.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5100201", "COND_BATTLE_EFFECT_CHARM_5100202", "COND_BATTLE_EFFECT_CHARM_5100203", "COND_BATTLE_EFFECT_CHARM_5100204", "COND_BATTLE_EFFECT_CHARM_5100205"]
+        },
+        {
+          "BattleEffectId" : 51003,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51003",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011003",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1003,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_COSMIC_VIEW.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5100301", "COND_BATTLE_EFFECT_CHARM_5100302"]
+        },
+        {
+          "BattleEffectId" : 51005,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51005",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011005",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1005,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_MAID_LANTERN_CHARM.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5100501", "COND_BATTLE_EFFECT_CHARM_5100502"]
+        },
+        {
+          "BattleEffectId" : 51008,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51008",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011008",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1008,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_HORSE_FIGURE.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5100801", "COND_BATTLE_EFFECT_CHARM_5100802", "COND_BATTLE_EFFECT_CHARM_5100803", "COND_BATTLE_EFFECT_CHARM_5100804"]
+        },
+        {
+          "BattleEffectId" : 51009,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51009",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011009",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1009,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_GLITTER_SPLAYER.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5100901"]
+        },
+        {
+          "BattleEffectId" : 51010,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51010",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011010",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1010,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_CHILDREN_HERO.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5101001"]
+        },
+        {
+          "BattleEffectId" : 51011,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51011",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011011",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1011,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_OVERFLOWING_LOVE.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5101101", "COND_BATTLE_EFFECT_CHARM_5101102"]
+        },
+        {
+          "BattleEffectId" : 51013,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51013",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011013",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1013,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_PRAY_INVESTMENT_FLYER.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5101301"]
+        },
+        {
+          "BattleEffectId" : 51014,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51014",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011014",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1014,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_DREAMING_BUTTERFLY.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5101401"]
+        },
+        {
+          "BattleEffectId" : 51015,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51015",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011015",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1015,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_TRISH_VUVUZELA.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5101501", "COND_BATTLE_EFFECT_CHARM_5101502", "COND_BATTLE_EFFECT_CHARM_5101503", "COND_BATTLE_EFFECT_CHARM_5101504", "COND_BATTLE_EFFECT_CHARM_5101505"]
+        },
+        {
+          "BattleEffectId" : 51016,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51016",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011016",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1016,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_SPECIAL_TONIC.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5101601", "COND_BATTLE_EFFECT_CHARM_5101602"]
+        },
+        {
+          "BattleEffectId" : 51017,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51017",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011017",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1017,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_INCOGNITA_LANDGRAVE_CHARM.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5101701", "COND_BATTLE_EFFECT_CHARM_5101702"]
+        },
+        {
+          "BattleEffectId" : 51018,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51018",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011018",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1018,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_TRAIN_MINIATURE.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5101801"]
+        },
+        {
+          "BattleEffectId" : 51019,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51019",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011019",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1019,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_DREAM_NIGHTMARE_EX.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5101901", "COND_BATTLE_EFFECT_CHARM_5101902"]
+        },
+        {
+          "BattleEffectId" : 51021,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51021",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011021",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1021,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_LOLOKA_BAG.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5102101"]
+        },
+        {
+          "BattleEffectId" : 51023,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51023",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011023",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1023,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_BREATHE_CHARCOAL.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5102301", "COND_BATTLE_EFFECT_CHARM_5102302", "COND_BATTLE_EFFECT_CHARM_5102303", "COND_BATTLE_EFFECT_CHARM_5102304"]
+        },
+        {
+          "BattleEffectId" : 51024,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51024",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011024",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1024,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_STUDY_HELPER.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5102401"]
+        },
+        {
+          "BattleEffectId" : 51025,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51025",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011025",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1025,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_MORTEBLOOM_FLOWER.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5102501", "COND_BATTLE_EFFECT_CHARM_5102502", "COND_BATTLE_EFFECT_CHARM_5102503"]
+        },
+        {
+          "BattleEffectId" : 51026,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51026",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011026",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1026,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_ORBITAL_RECON.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5102601"]
+        },
+        {
+          "BattleEffectId" : 51027,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51027",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011027",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1027,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_STELLA_MASK.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5102701", "COND_BATTLE_EFFECT_CHARM_5102702", "COND_BATTLE_EFFECT_CHARM_5102703"]
+        },
+        {
+          "BattleEffectId" : 51029,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51029",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011029",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1029,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_MOON_SECRET_SCRIPTURE.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5102901", "COND_BATTLE_EFFECT_CHARM_5102902"]
+        },
+        {
+          "BattleEffectId" : 51030,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51030",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011030",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1030,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_PRIDE_MONUMENT.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5103001", "COND_BATTLE_EFFECT_CHARM_5103002", "COND_BATTLE_EFFECT_CHARM_5103003", "COND_BATTLE_EFFECT_CHARM_5103004"]
+        },
+        {
+          "BattleEffectId" : 51031,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51031",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011031",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1031,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_ENERGY_CONTROLLER.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5103101"]
+        },
+        {
+          "BattleEffectId" : 51032,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51032",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011032",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1032,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_LUCKY_WOOD_DICES.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5103201", "COND_BATTLE_EFFECT_CHARM_5103202", "COND_BATTLE_EFFECT_CHARM_5103203", "COND_BATTLE_EFFECT_CHARM_5103204"]
+        },
+        {
+          "BattleEffectId" : 51033,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51033",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011033",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1033,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_BLITZ_PLAN.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5103301", "COND_BATTLE_EFFECT_CHARM_5103302"]
+        },
+        {
+          "BattleEffectId" : 51034,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51034",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011034",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1034,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_SUSPICIOUS_VIAL.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5103401", "COND_BATTLE_EFFECT_CHARM_5103402", "COND_BATTLE_EFFECT_CHARM_5103403", "COND_BATTLE_EFFECT_CHARM_5103404", "COND_BATTLE_EFFECT_CHARM_5103405"]
+        },
+        {
+          "BattleEffectId" : 51041,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51041",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011041",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1041,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_HOT_GAZE.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5104101", "COND_BATTLE_EFFECT_CHARM_5104102", "COND_BATTLE_EFFECT_CHARM_5104103"]
+        },
+        {
+          "BattleEffectId" : 51042,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51042",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011042",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1042,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_PETRA_TOOLS.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5104201"]
+        },
+        {
+          "BattleEffectId" : 51043,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51043",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011043",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1043,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_BUNNY_HEADBAND.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5104301"]
+        },
+        {
+          "BattleEffectId" : 51044,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51044",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011044",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1044,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_DEFECTIVE_TRUMP.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5104401"]
+        },
+        {
+          "BattleEffectId" : 51045,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51045",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011045",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1045,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_SUMMER_ORACLE_CHARM.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5104501", "COND_BATTLE_EFFECT_CHARM_5104502"]
+        },
+        {
+          "BattleEffectId" : 51046,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51046",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011046",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1046,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_SUMMER_SMILE_CHARM.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5104601", "COND_BATTLE_EFFECT_CHARM_5104602", "COND_BATTLE_EFFECT_CHARM_5104603"]
+        },
+        {
+          "BattleEffectId" : 51049,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51049",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011049",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1049,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_CLEAR_OUTLOOK_BREATH.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5104901"]
+        },
+        {
+          "BattleEffectId" : 51051,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51051",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011051",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1051,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_SAFETY_BELT.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5105101"]
+        },
+        {
+          "BattleEffectId" : 51052,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51052",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011052",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1052,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_STUFFED_DOLL_MAKING_KIT.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5105201"]
+        },
+        {
+          "BattleEffectId" : 51053,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51053",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011053",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1053,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_KITTY_KEYCHAIN.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5105301"]
+        },
+        {
+          "BattleEffectId" : 51054,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51054",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011054",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1054,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_MAISON_BROOCH.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5105401"]
+        },
+        {
+          "BattleEffectId" : 51055,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51055",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011055",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1055,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_ELEGANT_TIARA.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5105501", "COND_BATTLE_EFFECT_CHARM_5105502", "COND_BATTLE_EFFECT_CHARM_5105503"]
+        },
+        {
+          "BattleEffectId" : 51056,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51056",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011056",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1056,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_PEONY_BOUQUET.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5105601", "COND_BATTLE_EFFECT_CHARM_5105602", "COND_BATTLE_EFFECT_CHARM_5105603", "COND_BATTLE_EFFECT_CHARM_5105604", "COND_BATTLE_EFFECT_CHARM_5105605", "COND_BATTLE_EFFECT_CHARM_5105606", "COND_BATTLE_EFFECT_CHARM_5105607"]
+        },
+        {
+          "BattleEffectId" : 51057,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51057",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011057",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1057,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_BUNNY_JENTLEMAN.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5105701", "COND_BATTLE_EFFECT_CHARM_5105702"]
+        },
+        {
+          "BattleEffectId" : 51058,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51058",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011058",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1058,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_STRANISEARL_ROSEBLADE.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5105801", "COND_BATTLE_EFFECT_CHARM_5105802", "COND_BATTLE_EFFECT_CHARM_5105803"]
+        },
+        {
+          "BattleEffectId" : 51501,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51501",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011501",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1501,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_PRECIOUS_DIARY.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5150101", "COND_BATTLE_EFFECT_CHARM_5150102", "COND_BATTLE_EFFECT_CHARM_5150103"]
+        },
+        {
+          "BattleEffectId" : 51502,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51502",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011502",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1502,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_TOWNGUARD_HANDCUFFS.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5150201", "COND_BATTLE_EFFECT_CHARM_5150202"]
+        },
+        {
+          "BattleEffectId" : 51506,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51506",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011506",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1506,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_EMPLOYEE_TROPHY.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5150601", "COND_BATTLE_EFFECT_CHARM_5150602", "COND_BATTLE_EFFECT_CHARM_5150603"]
+        },
+        {
+          "BattleEffectId" : 51507,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51507",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011507",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1507,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_DELIVERY_TRUMPET.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5150701", "COND_BATTLE_EFFECT_CHARM_5150702", "COND_BATTLE_EFFECT_CHARM_5150703", "COND_BATTLE_EFFECT_CHARM_5150704"]
+        },
+        {
+          "BattleEffectId" : 51508,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51508",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011508",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1508,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_MAGNETO_PHONE.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5150801", "COND_BATTLE_EFFECT_CHARM_5150802", "COND_BATTLE_EFFECT_CHARM_5150803", "COND_BATTLE_EFFECT_CHARM_5150804", "COND_BATTLE_EFFECT_CHARM_5150805", "COND_BATTLE_EFFECT_CHARM_5150806"]
+        },
+        {
+          "BattleEffectId" : 51509,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51509",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011509",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1509,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_MAID_GUIDEBOOK.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5150901", "COND_BATTLE_EFFECT_CHARM_5150902", "COND_BATTLE_EFFECT_CHARM_5150903", "COND_BATTLE_EFFECT_CHARM_5150904", "COND_BATTLE_EFFECT_CHARM_5150905", "COND_BATTLE_EFFECT_CHARM_5150906", "COND_BATTLE_EFFECT_CHARM_5150907", "COND_BATTLE_EFFECT_CHARM_5150908", "COND_BATTLE_EFFECT_CHARM_5150909", "COND_BATTLE_EFFECT_CHARM_5150910", "COND_BATTLE_EFFECT_CHARM_5150911", "COND_BATTLE_EFFECT_CHARM_5150912"]
+        },
+        {
+          "BattleEffectId" : 51510,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51510",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011510",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1510,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_CERBERON_FIGURE.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5151001", "COND_BATTLE_EFFECT_CHARM_5151002", "COND_BATTLE_EFFECT_CHARM_5151003"]
+        },
+        {
+          "BattleEffectId" : 51511,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_51511",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5011511",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 1511,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_LAST_BULLET.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5151101", "COND_BATTLE_EFFECT_CHARM_5151102", "COND_BATTLE_EFFECT_CHARM_5151103"]
+        },
+        {
+          "BattleEffectId" : 53001,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_53001",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5013001",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 3001,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_HILDE_MODULE.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5300101"]
+        },
+        {
+          "BattleEffectId" : 53002,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_53002",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5013002",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 3002,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_MINA_BELT.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5300201", "COND_BATTLE_EFFECT_CHARM_5300202"]
+        },
+        {
+          "BattleEffectId" : 53003,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_53003",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5013003",
+          "AteamEffectTarget" : "ALL",
+          "TargetUnitId" : 3003,
+          "BattleEffectIconImg" : "JOURNEY_ITEM_THRONE_ASHES.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_5300301", "COND_BATTLE_EFFECT_CHARM_5300302"]
+        },
+        {
+          "BattleEffectId" : 60001,
+          "BattleEffectStrId" : "BATTLE_EFFECT_BOSS_RUSH_SUN_BUFF_01",
+          "BattleEffectName" : "SI_BOSS_RUSH_BUFF_SUN",
+          "AteamEffectTarget" : "ALL",
+          "TargetAdjustType" : "NUAT_SUN",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_BOSS_RUSH_SUN_BUFF_01"]
+        },
+        {
+          "BattleEffectId" : 60002,
+          "BattleEffectStrId" : "BATTLE_EFFECT_BOSS_RUSH_MOON_BUFF_01",
+          "BattleEffectName" : "SI_BOSS_RUSH_BUFF_MOON",
+          "AteamEffectTarget" : "ALL",
+          "TargetAdjustType" : "NUAT_MOON",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_BOSS_RUSH_MOON_BUFF_01"]
+        },
+        {
+          "BattleEffectId" : 60003,
+          "BattleEffectStrId" : "BATTLE_EFFECT_BOSS_RUSH_STAR_BUFF_01",
+          "BattleEffectName" : "SI_BOSS_RUSH_BUFF_STAR",
+          "AteamEffectTarget" : "ALL",
+          "TargetAdjustType" : "NUAT_STAR",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_BOSS_RUSH_STAR_BUFF_01"]
+        },
+        {
+          "BattleEffectId" : 60004,
+          "BattleEffectStrId" : "BATTLE_EFFECT_BOSS_RUSH_STRIKER_BUFF_01",
+          "BattleEffectName" : "SI_BOSS_RUSH_BUFF_STRIKER",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_STRIKER",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_BOSS_RUSH_STRIKER_BUFF_01"]
+        },
+        {
+          "BattleEffectId" : 60005,
+          "BattleEffectStrId" : "BATTLE_EFFECT_BOSS_RUSH_CASTER_BUFF_01",
+          "BattleEffectName" : "SI_BOSS_RUSH_BUFF_CASTER",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_CASTER",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_BOSS_RUSH_CASTER_BUFF_01"]
+        },
+        {
+          "BattleEffectId" : 60006,
+          "BattleEffectStrId" : "BATTLE_EFFECT_BOSS_RUSH_DEFENDER_BUFF_01",
+          "BattleEffectName" : "SI_BOSS_RUSH_BUFF_SUPPORTER",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_DEFENDER",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_BOSS_RUSH_DEFENDER_BUFF_01"]
+        },
+        {
+          "BattleEffectId" : 60007,
+          "BattleEffectStrId" : "BATTLE_EFFECT_BOSS_RUSH_SUN_BUFF_02",
+          "BattleEffectName" : "SI_BOSS_RUSH_BUFF_SUN_2",
+          "AteamEffectTarget" : "ALL",
+          "TargetAdjustType" : "NUAT_SUN",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_BOSS_RUSH_SUN_BUFF_02"]
+        },
+        {
+          "BattleEffectId" : 60008,
+          "BattleEffectStrId" : "BATTLE_EFFECT_BOSS_RUSH_MOON_BUFF_02",
+          "BattleEffectName" : "SI_BOSS_RUSH_BUFF_MOON_2",
+          "AteamEffectTarget" : "ALL",
+          "TargetAdjustType" : "NUAT_MOON",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_BOSS_RUSH_MOON_BUFF_02"]
+        },
+        {
+          "BattleEffectId" : 60009,
+          "BattleEffectStrId" : "BATTLE_EFFECT_BOSS_RUSH_DEFENDER_BUFF_02",
+          "BattleEffectName" : "SI_BOSS_RUSH_BUFF_DEFENDER_2",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_DEFENDER",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_BOSS_RUSH_DEFENDER_BUFF_02"]
+        },
+        {
+          "BattleEffectId" : 60010,
+          "BattleEffectStrId" : "BATTLE_EFFECT_BOSS_RUSH_RANGER_BUFF_01",
+          "BattleEffectName" : "SI_BOSS_RUSH_BUFF_RANGER",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_RANGER",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_BOSS_RUSH_RANGER_BUFF_01"]
+        },
+        {
+          "BattleEffectId" : 60011,
+          "BattleEffectStrId" : "BATTLE_EFFECT_BOSS_RUSH_STAR_BUFF_02",
+          "BattleEffectName" : "SI_BOSS_RUSH_BUFF_STAR_2",
+          "AteamEffectTarget" : "ALL",
+          "TargetAdjustType" : "NUAT_STAR",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_BOSS_RUSH_STAR_BUFF_02"]
+        },
+        {
+          "BattleEffectId" : 60012,
+          "BattleEffectStrId" : "BATTLE_EFFECT_BOSS_RUSH_RANGER_BUFF_02",
+          "BattleEffectName" : "SI_BOSS_RUSH_BUFF_RANGER_2",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_RANGER",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_BOSS_RUSH_RANGER_BUFF_02"]
+        },
+        {
+          "BattleEffectId" : 60013,
+          "BattleEffectStrId" : "BATTLE_EFFECT_BOSS_RUSH_SUN_BUFF_03",
+          "BattleEffectName" : "SI_BOSS_RUSH_BUFF_SUN_3",
+          "AteamEffectTarget" : "ALL",
+          "TargetAdjustType" : "NUAT_SUN",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_BOSS_RUSH_SUN_BUFF_03"]
+        },
+        {
+          "BattleEffectId" : 60014,
+          "BattleEffectStrId" : "BATTLE_EFFECT_BOSS_RUSH_STRIKER_BUFF_02",
+          "BattleEffectName" : "SI_BOSS_RUSH_STRIKER_BUFF_2",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_STRIKER",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_BOSS_RUSH_STRIKER_BUFF_02"]
+        },
+        {
+          "BattleEffectId" : 60015,
+          "BattleEffectStrId" : "BATTLE_EFFECT_BOSS_RUSH_MOON_BUFF_03",
+          "BattleEffectName" : "SI_BOSS_RUSH_BUFF_MOON_3",
+          "AteamEffectTarget" : "ALL",
+          "TargetAdjustType" : "NUAT_MOON",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_BOSS_RUSH_MOON_BUFF_03"]
+        },
+        {
+          "BattleEffectId" : 60016,
+          "BattleEffectStrId" : "BATTLE_EFFECT_BOSS_RUSH_CASTER_BUFF_02",
+          "BattleEffectName" : "SI_BOSS_RUSH_BUFF_CASTER_2",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_CASTER",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_BOSS_RUSH_CASTER_BUFF_02"]
+        },
+        {
+          "BattleEffectId" : 60017,
+          "BattleEffectStrId" : "BATTLE_EFFECT_BOSS_RUSH_DEFENDER_BUFF_03",
+          "BattleEffectName" : "SI_BOSS_RUSH_BUFF_DEFENDER_3",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_DEFENDER",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_BOSS_RUSH_DEFENDER_BUFF_03"]
+        },
+        {
+          "BattleEffectId" : 60018,
+          "BattleEffectStrId" : "BATTLE_EFFECT_BOSS_RUSH_CASTER_BUFF_03",
+          "BattleEffectName" : "SI_BOSS_RUSH_BUFF_CASTER_3",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_CASTER",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_BOSS_RUSH_CASTER_BUFF_03"]
+        },
+        {
+          "BattleEffectId" : 60019,
+          "BattleEffectStrId" : "BATTLE_EFFECT_BOSS_RUSH_ASSASSIN_BUFF_01",
+          "BattleEffectName" : "SI_BOSS_RUSH_ASSASSIN_BUFF_01",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_ASSASSIN",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_BOSS_RUSH_ASSASSIN_BUFF_01"]
+        },
+        {
+          "BattleEffectId" : 60020,
+          "BattleEffectStrId" : "BATTLE_EFFECT_BOSS_RUSH_SUN_BUFF_04",
+          "BattleEffectName" : "SI_BOSS_RUSH_BUFF_SUN_4",
+          "AteamEffectTarget" : "ALL",
+          "TargetAdjustType" : "NUAT_SUN",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_BOSS_RUSH_SUN_BUFF_04"]
+        },
+        {
+          "BattleEffectId" : 70001,
+          "BattleEffectStrId" : "BATTLE_EFFECT_OPERATION_HANDICAP_70001",
+          "BattleEffectName" : "SI_OPERATION_HANDICAP_NAME_70001",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_OPERATION_HANDICAP_700011"]
+        },
+        {
+          "BattleEffectId" : 70002,
+          "BattleEffectStrId" : "BATTLE_EFFECT_OPERATION_HANDICAP_70002",
+          "BattleEffectName" : "SI_OPERATION_HANDICAP_NAME_70002",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_OPERATION_HANDICAP_700021"]
+        },
+        {
+          "BattleEffectId" : 70003,
+          "BattleEffectStrId" : "BATTLE_EFFECT_OPERATION_HANDICAP_70003",
+          "BattleEffectName" : "SI_OPERATION_HANDICAP_NAME_70003",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_OPERATION_HANDICAP_700031"]
+        },
+        {
+          "BattleEffectId" : 70004,
+          "BattleEffectStrId" : "BATTLE_EFFECT_OPERATION_HANDICAP_70004",
+          "BattleEffectName" : "SI_OPERATION_HANDICAP_NAME_70004",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_OPERATION_HANDICAP_700041"]
+        },
+        {
+          "BattleEffectId" : 70005,
+          "BattleEffectStrId" : "BATTLE_EFFECT_OPERATION_HANDICAP_70005",
+          "BattleEffectName" : "SI_OPERATION_HANDICAP_NAME_70005",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_OPERATION_HANDICAP_700051"]
+        },
+        {
+          "BattleEffectId" : 80001,
+          "BattleEffectStrId" : "BATTLE_EFFECT_DAMAGE_BREAK_MAID_LANTERN_01",
+          "BattleEffectName" : "SI_DAMAGE_BREAK",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "ShowSELog" : false,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_DAMAGE_BREAK_MAID_LANTERN_01_01", "COND_BATTLE_EFFECT_DAMAGE_BREAK_MAID_LANTERN_01_02", "COND_BATTLE_EFFECT_DAMAGE_BREAK_MAID_LANTERN_01_03"]
+        },
+        {
+          "BattleEffectId" : 80002,
+          "BattleEffectStrId" : "BATTLE_EFFECT_DAMAGE_BREAK_MAID_LANTERN_BOSS_MAINSTORY_04_01",
+          "BattleEffectName" : "SI_DAMAGE_BREAK",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "ShowSELog" : false,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_DAMAGE_BREAK_MAID_LANTERN_BOSS_MAINSTORY_04_01_01", "COND_BATTLE_EFFECT_DAMAGE_BREAK_MAID_LANTERN_BOSS_MAINSTORY_04_01_02"]
+        },
+        {
+          "BattleEffectId" : 80003,
+          "BattleEffectStrId" : "BATTLE_EFFECT_DAMAGE_BREAK_MAID_CHARM_5064015_01",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5064015",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_WOLF_CONTRACT.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_DAMAGE_BREAK_CHARM_5064015_01_01", "COND_BATTLE_EFFECT_DAMAGE_BREAK_CHARM_5064015_01_02"]
+        },
+        {
+          "BattleEffectId" : 80004,
+          "BattleEffectStrId" : "BATTLE_EFFECT_DAMAGE_BREAK_COMMON_PASSIVE5_01",
+          "BattleEffectName" : "SI_DAMAGE_BREAK",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "ShowSELog" : false,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_DAMAGE_BREAK_COMMON_PASSIVE5_01_01"]
+        },
+        {
+          "BattleEffectId" : 91011,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_01_01",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_COSMOGATE_SET_01@@1",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_EXTINCTION_1.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_01_01"]
+        },
+        {
+          "BattleEffectId" : 91012,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_01_02",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_COSMOGATE_SET_01@@2",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_EXTINCTION_2.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_01_02"]
+        },
+        {
+          "BattleEffectId" : 91013,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_01_03",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_COSMOGATE_SET_01@@3",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_EXTINCTION_3.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_01_03"]
+        },
+        {
+          "BattleEffectId" : 91021,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_02_01",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_COSMOGATE_SET_02@@1",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_SPACE_1.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_02_01"]
+        },
+        {
+          "BattleEffectId" : 91022,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_02_02",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_COSMOGATE_SET_02@@2",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_SPACE_2.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_02_02"]
+        },
+        {
+          "BattleEffectId" : 91023,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_02_03",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_COSMOGATE_SET_02@@3",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_SPACE_3.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_02_03"]
+        },
+        {
+          "BattleEffectId" : 91031,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_03_01",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_COSMOGATE_SET_03@@1",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_EROSION_1.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_03_01"]
+        },
+        {
+          "BattleEffectId" : 91032,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_03_02",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_COSMOGATE_SET_03@@2",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_EROSION_2.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_03_02"]
+        },
+        {
+          "BattleEffectId" : 91033,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_03_03",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_COSMOGATE_SET_03@@3",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_EROSION_3.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_03_03"]
+        },
+        {
+          "BattleEffectId" : 91041,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_04_01",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_COSMOGATE_SET_04@@1",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_VAIN_1.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_04_01"]
+        },
+        {
+          "BattleEffectId" : 91042,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_04_02",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_COSMOGATE_SET_04@@2",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_VAIN_2.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_04_02"]
+        },
+        {
+          "BattleEffectId" : 91043,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_04_03",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_COSMOGATE_SET_04@@3",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_VAIN_3.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_04_03"]
+        },
+        {
+          "BattleEffectId" : 91051,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_05_01",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_COSMOGATE_SET_05@@1",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_BOOST_1.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_05_01"]
+        },
+        {
+          "BattleEffectId" : 91052,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_05_02",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_COSMOGATE_SET_05@@2",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_BOOST_2.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_05_02"]
+        },
+        {
+          "BattleEffectId" : 91053,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_05_03",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_COSMOGATE_SET_05@@3",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_BOOST_3.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_05_03"]
+        },
+        {
+          "BattleEffectId" : 91061,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_06_01",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_COSMOGATE_SET_06@@1",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_HARMONY_1.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_06_01"]
+        },
+        {
+          "BattleEffectId" : 91062,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_06_02",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_COSMOGATE_SET_06@@2",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_HARMONY_2.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_06_02"]
+        },
+        {
+          "BattleEffectId" : 91063,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_06_03",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_COSMOGATE_SET_06@@3",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_HARMONY_3.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_06_03"]
+        },
+        {
+          "BattleEffectId" : 91071,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_07_01",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_COSMOGATE_SET_07@@1",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_SURVIVAL_1.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_07_01"]
+        },
+        {
+          "BattleEffectId" : 91072,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_07_02",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_COSMOGATE_SET_07@@2",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_SURVIVAL_2.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_07_02"]
+        },
+        {
+          "BattleEffectId" : 91073,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_07_03",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_COSMOGATE_SET_07@@3",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_SURVIVAL_3.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_07_03"]
+        },
+        {
+          "BattleEffectId" : 91081,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_08_01",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_COSMOGATE_SET_08@@1",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_MOVEMENT_1.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_08_01"]
+        },
+        {
+          "BattleEffectId" : 91082,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_08_02",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_COSMOGATE_SET_08@@2",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_MOVEMENT_2.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_08_02"]
+        },
+        {
+          "BattleEffectId" : 91083,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_08_03",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_COSMOGATE_SET_08@@3",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_MOVEMENT_3.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_COSMOGATE_SET_08_03"]
+        },
+        {
+          "BattleEffectId" : 92011,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_GUILDBATTLE_SET_01_01",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_GUILDBATTLE_SET_01@@1",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_EXTINCTION_1.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_GUILDCOND_BATTLE_SET_01_01"]
+        },
+        {
+          "BattleEffectId" : 92012,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_GUILDBATTLE_SET_01_02",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_GUILDBATTLE_SET_01@@2",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_EXTINCTION_2.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_GUILDCOND_BATTLE_SET_01_02"]
+        },
+        {
+          "BattleEffectId" : 92013,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_GUILDBATTLE_SET_01_03",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_GUILDBATTLE_SET_01@@3",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_EXTINCTION_3.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_GUILDCOND_BATTLE_SET_01_03"]
+        },
+        {
+          "BattleEffectId" : 92021,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_GUILDBATTLE_SET_02_01",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_GUILDBATTLE_SET_02@@1",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_IMMORTAL_1.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_GUILDCOND_BATTLE_SET_02_01"]
+        },
+        {
+          "BattleEffectId" : 92022,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_GUILDBATTLE_SET_02_02",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_GUILDBATTLE_SET_02@@2",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_IMMORTAL_2.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_GUILDCOND_BATTLE_SET_02_02"]
+        },
+        {
+          "BattleEffectId" : 92023,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_GUILDBATTLE_SET_02_03",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_GUILDBATTLE_SET_02@@3",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_IMMORTAL_3.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_GUILDCOND_BATTLE_SET_02_03"]
+        },
+        {
+          "BattleEffectId" : 92031,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_GUILDBATTLE_SET_03_01",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_GUILDBATTLE_SET_03@@1",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_SPACE_1.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_GUILDCOND_BATTLE_SET_03_01"]
+        },
+        {
+          "BattleEffectId" : 92032,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_GUILDBATTLE_SET_03_02",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_GUILDBATTLE_SET_03@@2",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_SPACE_2.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_GUILDCOND_BATTLE_SET_03_02"]
+        },
+        {
+          "BattleEffectId" : 92033,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_GUILDBATTLE_SET_03_03",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_GUILDBATTLE_SET_03@@3",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_SPACE_3.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_GUILDCOND_BATTLE_SET_03_03"]
+        },
+        {
+          "BattleEffectId" : 92041,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_GUILDBATTLE_SET_04_01",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_GUILDBATTLE_SET_04@@1",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_VAIN_1.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_GUILDCOND_BATTLE_SET_04_01"]
+        },
+        {
+          "BattleEffectId" : 92042,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_GUILDBATTLE_SET_04_02",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_GUILDBATTLE_SET_04@@2",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_VAIN_2.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_GUILDCOND_BATTLE_SET_04_02"]
+        },
+        {
+          "BattleEffectId" : 92043,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_GUILDBATTLE_SET_04_03",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_GUILDBATTLE_SET_04@@3",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_VAIN_3.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_GUILDCOND_BATTLE_SET_04_03"]
+        },
+        {
+          "BattleEffectId" : 92051,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_GUILDBATTLE_SET_05_01",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_GUILDBATTLE_SET_05@@1",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_EX_DECLINE.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_GUILDCOND_BATTLE_SET_05_01"]
+        },
+        {
+          "BattleEffectId" : 92052,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_GUILDBATTLE_SET_05_02",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_GUILDBATTLE_SET_05@@2",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_EX_DECLINE.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_GUILDCOND_BATTLE_SET_05_02"]
+        },
+        {
+          "BattleEffectId" : 92053,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_GUILDBATTLE_SET_05_03",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_GUILDBATTLE_SET_05@@3",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_EX_DECLINE.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_GUILDCOND_BATTLE_SET_05_03"]
+        },
+        {
+          "BattleEffectId" : 93011,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_FLASHPOINT_SET_01_01",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_FLASHPOINT_SET_01@@1",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_EXTINCTION_1.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_FLASHPOINT_SET_01_01"]
+        },
+        {
+          "BattleEffectId" : 93012,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_FLASHPOINT_SET_01_02",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_FLASHPOINT_SET_01@@2",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_EXTINCTION_2.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_FLASHPOINT_SET_01_02"]
+        },
+        {
+          "BattleEffectId" : 93013,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_FLASHPOINT_SET_01_03",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_FLASHPOINT_SET_01@@3",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_EXTINCTION_3.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_FLASHPOINT_SET_01_03"]
+        },
+        {
+          "BattleEffectId" : 93021,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_FLASHPOINT_SET_02_01",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_FLASHPOINT_SET_02@@1",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_VAIN_1.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_FLASHPOINT_SET_02_01"]
+        },
+        {
+          "BattleEffectId" : 93022,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_FLASHPOINT_SET_02_02",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_FLASHPOINT_SET_02@@2",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_VAIN_2.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_FLASHPOINT_SET_02_02"]
+        },
+        {
+          "BattleEffectId" : 93023,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_FLASHPOINT_SET_02_03",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_FLASHPOINT_SET_02@@3",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_VAIN_3.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_FLASHPOINT_SET_02_03"]
+        },
+        {
+          "BattleEffectId" : 93031,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_FLASHPOINT_SET_03_01",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_FLASHPOINT_SET_03@@1",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_HARMONY_1.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_FLASHPOINT_SET_03_01"]
+        },
+        {
+          "BattleEffectId" : 93032,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_FLASHPOINT_SET_03_02",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_FLASHPOINT_SET_03@@2",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_HARMONY_2.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_FLASHPOINT_SET_03_02"]
+        },
+        {
+          "BattleEffectId" : 93033,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_FLASHPOINT_SET_03_03",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_FLASHPOINT_SET_03@@3",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_HARMONY_3.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_FLASHPOINT_SET_03_03"]
+        },
+        {
+          "BattleEffectId" : 93041,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_FLASHPOINT_SET_04_01",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_FLASHPOINT_SET_04@@1",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_CHAIN_1.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_FLASHPOINT_SET_04_01"]
+        },
+        {
+          "BattleEffectId" : 93042,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_FLASHPOINT_SET_04_02",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_FLASHPOINT_SET_04@@2",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_CHAIN_1.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_FLASHPOINT_SET_04_02"]
+        },
+        {
+          "BattleEffectId" : 93043,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_CHALLENGE_FLASHPOINT_SET_04_03",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_FLASHPOINT_SET_04@@3",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_CHAIN_1.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_CHALLENGE_FLASHPOINT_SET_04_03"]
+        },
+        {
+          "BattleEffectId" : 940001,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_EX_CHALLENGE_COSMOGATE_SET_01",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_EX_COSMOGATE_SET_01",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_EROSION_1.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_EX_CHALLENGE_COSMOGATE_SET_01"]
+        },
+        {
+          "BattleEffectId" : 940011,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_EX_CHALLENGE_COSMOGATE_SET_02",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_EX_COSMOGATE_SET_02",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_EX_DECLINE.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_EX_CHALLENGE_COSMOGATE_SET_02"]
+        },
+        {
+          "BattleEffectId" : 940021,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_EX_CHALLENGE_COSMOGATE_SET_03",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_EX_COSMOGATE_SET_03",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_SPACE_2.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_EX_CHALLENGE_COSMOGATE_SET_03"]
+        },
+        {
+          "BattleEffectId" : 940031,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_EX_CHALLENGE_COSMOGATE_SET_04",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_EX_COSMOGATE_SET_04",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_EX_INDOMITABLE.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_EX_CHALLENGE_COSMOGATE_SET_04"]
+        },
+        {
+          "BattleEffectId" : 940041,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_EX_CHALLENGE_COSMOGATE_SET_05",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_EX_COSMOGATE_SET_05",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_EX_ACCELERATE.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_EX_CHALLENGE_COSMOGATE_SET_05"]
+        },
+        {
+          "BattleEffectId" : 940051,
+          "BattleEffectStrId" : "BATTLE_EFFECT_STAR_EX_CHALLENGE_COSMOGATE_SET_06",
+          "BattleEffectName" : "SI_STAR_CHALLENGE_EX_COSMOGATE_SET_06",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "UI_STAR_CHALLENGE_VAIN_1.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_STAR_EX_CHALLENGE_COSMOGATE_SET_06"]
+        },
+        {
+          "BattleEffectId" : 7001001,
+          "BattleEffectStrId" : "BATTLE_EFFECT_DOMAIN_7001001",
+          "BattleEffectName" : "SI_DOMAIN_ITEM_NAME_GUNBLADE",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_VALOR_TOKEN.png",
+          "BattleEffectStatType" : "NST_NV_RATE_ATK",
+          "BattleEffectStatValue" : 1500
+        },
+        {
+          "BattleEffectId" : 7001002,
+          "BattleEffectStrId" : "BATTLE_EFFECT_DOMAIN_7001002",
+          "BattleEffectName" : "SI_DOMAIN_ITEM_NAME_GUNBLADE",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_VALOR_TOKEN.png",
+          "BattleEffectStatType" : "NST_RATE_DAMAGE_VAMPIRISM",
+          "BattleEffectStatValue" : 1500
+        },
+        {
+          "BattleEffectId" : 7101001,
+          "BattleEffectStrId" : "BATTLE_EFFECT_DOMAIN_7101001",
+          "BattleEffectName" : "SI_DOMAIN_ITEM_NAME_GUNBLADE",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_VALOR_TOKEN.png",
+          "BattleEffectStatType" : "NST_NV_RATE_ATK",
+          "BattleEffectStatValue" : 1500
+        },
+        {
+          "BattleEffectId" : 7101002,
+          "BattleEffectStrId" : "BATTLE_EFFECT_DOMAIN_7101002",
+          "BattleEffectName" : "SI_DOMAIN_ITEM_NAME_GUNBLADE",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_VALOR_TOKEN.png",
+          "BattleEffectStatType" : "NST_RATE_DAMAGE_VAMPIRISM",
+          "BattleEffectStatValue" : 1500
+        },
+        {
+          "BattleEffectId" : 7201001,
+          "BattleEffectStrId" : "BATTLE_EFFECT_DOMAIN_7201001",
+          "BattleEffectName" : "SI_DOMAIN_ITEM_NAME_LISA",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_VALOR_TOKEN.png",
+          "BattleEffectStatType" : "NST_NV_RATE_ATK",
+          "BattleEffectStatValue" : 2000
+        },
+        {
+          "BattleEffectId" : 7201002,
+          "BattleEffectStrId" : "BATTLE_EFFECT_DOMAIN_7201002",
+          "BattleEffectName" : "SI_DOMAIN_ITEM_NAME_LISA",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_VALOR_TOKEN.png",
+          "BattleEffectStatType" : "NST_NV_RATE_DEF",
+          "BattleEffectStatValue" : 2000
+        },
+        {
+          "BattleEffectId" : 7202001,
+          "BattleEffectStrId" : "BATTLE_EFFECT_DOMAIN_7202001",
+          "BattleEffectName" : "SI_DOMAIN_ITEM_NAME_VOYAGER_GUNBLADE",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_VALOR_TOKEN.png",
+          "BattleEffectStatType" : "NST_RATE_CRITICAL",
+          "BattleEffectStatValue" : 1000
+        },
+        {
+          "BattleEffectId" : 7202002,
+          "BattleEffectStrId" : "BATTLE_EFFECT_DOMAIN_7202002",
+          "BattleEffectName" : "SI_DOMAIN_ITEM_NAME_VOYAGER_GUNBLADE",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_STRIKER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_VALOR_TOKEN.png",
+          "BattleEffectStatType" : "NST_RATE_CRITICAL",
+          "BattleEffectStatValue" : 1000
+        },
+        {
+          "BattleEffectId" : 7202003,
+          "BattleEffectStrId" : "BATTLE_EFFECT_DOMAIN_7202003",
+          "BattleEffectName" : "SI_DOMAIN_ITEM_NAME_VOYAGER_GUNBLADE",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_RANGER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_VALOR_TOKEN.png",
+          "BattleEffectStatType" : "NST_RATE_CRITICAL",
+          "BattleEffectStatValue" : 1000
+        },
+        {
+          "BattleEffectId" : 7202004,
+          "BattleEffectStrId" : "BATTLE_EFFECT_DOMAIN_7202004",
+          "BattleEffectName" : "SI_DOMAIN_ITEM_NAME_VOYAGER_GUNBLADE",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_VALOR_TOKEN.png",
+          "BattleEffectStatType" : "NST_RATE_CRITICAL_DAMAGE",
+          "BattleEffectStatValue" : 1000
+        },
+        {
+          "BattleEffectId" : 7202005,
+          "BattleEffectStrId" : "BATTLE_EFFECT_DOMAIN_7202005",
+          "BattleEffectName" : "SI_DOMAIN_ITEM_NAME_VOYAGER_GUNBLADE",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_STRIKER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_VALOR_TOKEN.png",
+          "BattleEffectStatType" : "NST_RATE_CRITICAL_DAMAGE",
+          "BattleEffectStatValue" : 1000
+        },
+        {
+          "BattleEffectId" : 7202006,
+          "BattleEffectStrId" : "BATTLE_EFFECT_DOMAIN_7202006",
+          "BattleEffectName" : "SI_DOMAIN_ITEM_NAME_VOYAGER_GUNBLADE",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_RANGER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_VALOR_TOKEN.png",
+          "BattleEffectStatType" : "NST_RATE_CRITICAL_DAMAGE",
+          "BattleEffectStatValue" : 1000
+        },
+        {
+          "BattleEffectId" : 7203001,
+          "BattleEffectStrId" : "BATTLE_EFFECT_DOMAIN_7203001",
+          "BattleEffectName" : "SI_DOMAIN_ITEM_NAME_ALICIA",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_VALOR_TOKEN.png",
+          "BattleEffectStatType" : "NST_SUPER_ARMOR_DAMAGE",
+          "BattleEffectStatValue" : 1
+        },
+        {
+          "BattleEffectId" : 7203002,
+          "BattleEffectStrId" : "BATTLE_EFFECT_DOMAIN_7203002",
+          "BattleEffectName" : "SI_DOMAIN_ITEM_NAME_ALICIA",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_VALOR_TOKEN.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_DOMAIN_ALICIA_01_1"]
+        },
+        {
+          "BattleEffectId" : 7204001,
+          "BattleEffectStrId" : "BATTLE_EFFECT_DOMAIN_7204001",
+          "BattleEffectName" : "SI_DOMAIN_ITEM_NAME_OMEGA",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_VALOR_TOKEN.png",
+          "BattleEffectStatType" : "NST_NV_RATE_TURN_SPEED",
+          "BattleEffectStatValue" : 1000
+        },
+        {
+          "BattleEffectId" : 7204002,
+          "BattleEffectStrId" : "BATTLE_EFFECT_DOMAIN_7204002",
+          "BattleEffectName" : "SI_DOMAIN_ITEM_NAME_OMEGA",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_DEFENDER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_VALOR_TOKEN.png",
+          "BattleEffectStatType" : "NST_NV_RATE_TURN_SPEED",
+          "BattleEffectStatValue" : 1000
+        },
+        {
+          "BattleEffectId" : 7204003,
+          "BattleEffectStrId" : "BATTLE_EFFECT_DOMAIN_7204003",
+          "BattleEffectName" : "SI_DOMAIN_ITEM_NAME_OMEGA",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_SUPPORTER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_VALOR_TOKEN.png",
+          "BattleEffectStatType" : "NST_NV_RATE_TURN_SPEED",
+          "BattleEffectStatValue" : 1000
+        },
+        {
+          "BattleEffectId" : 7205001,
+          "BattleEffectStrId" : "BATTLE_EFFECT_DOMAIN_7205001",
+          "BattleEffectName" : "SI_DOMAIN_ITEM_NAME_GLEIPNIRE",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_VALOR_TOKEN.png",
+          "BattleEffectStatType" : "NST_NV_RATE_ATK",
+          "BattleEffectStatValue" : 1500
+        },
+        {
+          "BattleEffectId" : 7205002,
+          "BattleEffectStrId" : "BATTLE_EFFECT_DOMAIN_7205002",
+          "BattleEffectName" : "SI_DOMAIN_ITEM_NAME_GLEIPNIRE",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_VALOR_TOKEN.png",
+          "BattleEffectStatType" : "NST_SUPER_ARMOR_DAMAGE",
+          "BattleEffectStatValue" : 1
+        },
+        {
+          "BattleEffectId" : 7301001,
+          "BattleEffectStrId" : "BATTLE_EFFECT_DOMAIN_7301001",
+          "BattleEffectName" : "SI_DOMAIN_ITEM_NAME_UNKNOWN_BOSS_COSMO",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_VALOR_TOKEN.png",
+          "BattleEffectStatType" : "NST_SUPER_ARMOR_DAMAGE",
+          "BattleEffectStatValue" : 2
+        },
+        {
+          "BattleEffectId" : 7301002,
+          "BattleEffectStrId" : "BATTLE_EFFECT_DOMAIN_7301002",
+          "BattleEffectName" : "SI_DOMAIN_ITEM_NAME_UNKNOWN_BOSS_COSMO",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_VALOR_TOKEN.png",
+          "BattleEffectStatType" : "NST_SUPER_ARMOR_DAMAGE_REDUCE",
+          "BattleEffectStatValue" : 1
+        },
+        {
+          "BattleEffectId" : 7302001,
+          "BattleEffectStrId" : "BATTLE_EFFECT_DOMAIN_7302001",
+          "BattleEffectName" : "SI_DOMAIN_ITEM_NAME_UNKNOWN_BOSS_MAINSTORY_07",
+          "BteamEffectTarget" : "MONSTER_BOSS",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_VALOR_TOKEN.png",
+          "BattleEffectStatType" : "NST_TURN_SPEED",
+          "BattleEffectStatValue" : 10
+        },
+        {
+          "BattleEffectId" : 101003,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_101003",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_101003",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_WOOD_ORGEL.png",
+          "BattleEffectStatType" : "NST_TURN_SPEED",
+          "BattleEffectStatValue" : 10
+        },
+        {
+          "BattleEffectId" : 105016,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_105016",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_105016",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_STREGA_COUPON.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_1050161"]
+        },
+        {
+          "BattleEffectId" : 105019,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_105019",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_105019",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_MOON_LIGHT_PERFUME.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_1050191"]
+        },
+        {
+          "BattleEffectId" : 105020,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_105020",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_105020",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_MOON_LIGHT_LIP_BALM.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_1050201"]
+        },
+        {
+          "BattleEffectId" : 105021,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_105021",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_105021",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_MOON_LIGHT_ESSENCE.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_1050211", "COND_BATTLE_EFFECT_CHARM_1050212"]
+        },
+        {
+          "BattleEffectId" : 105022,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_105022",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_105022",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_OLD_FAHIONED_KEY.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_1050221"]
+        },
+        {
+          "BattleEffectId" : 105023,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_105023",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_105023",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_SHOP_GIRL_COIN_BANK.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_1050231"]
+        },
+        {
+          "BattleEffectId" : 105024,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_105024",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_105024",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_MASCOT_NORMAL.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_1050241"]
+        },
+        {
+          "BattleEffectId" : 105025,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_105025",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_105025",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_MASCOT_LMITED.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_1050251"]
+        },
+        {
+          "BattleEffectId" : 105026,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_105026",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_105026",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_MASCOT_FIRST_EDITION.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_1050261"]
+        },
+        {
+          "BattleEffectId" : 105027,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_105027",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_105027",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_MEDAL_MONASTIR_SILVER.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_1050271"]
+        },
+        {
+          "BattleEffectId" : 105028,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_105028",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_105028",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_MEDAL_MONASTIR_GOLD.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_1050281"]
+        },
+        {
+          "BattleEffectId" : 105029,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_105029",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_105029",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_MEDAL_MONASTIR_STAR_LIGHT.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_1050291"]
+        },
+        {
+          "BattleEffectId" : 105030,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_105030",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_105030",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_BEACH_VOLLEYBALL_WINNING_TROPHY.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_1050301"]
+        },
+        {
+          "BattleEffectId" : 105031,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_105031",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_105031",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_BEACH_VOLLEYBALL_SECOND_CERTIFICATE.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_1050311", "COND_BATTLE_EFFECT_CHARM_1050312"]
+        },
+        {
+          "BattleEffectId" : 105032,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_105032",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_105032",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_KALRAID_SPA_MEMEBERSHIP_VIP_CARD.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_1050321"]
+        },
+        {
+          "BattleEffectId" : 105033,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_105033",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_105033",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_KALRAID_SPA_LUXURY_TOWEL.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_1050331", "COND_BATTLE_EFFECT_CHARM_1050332"]
+        },
+        {
+          "BattleEffectId" : 105034,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_105034",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_105034",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_LEGEND_SWORD_REPLICA.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_1050341"]
+        },
+        {
+          "BattleEffectId" : 105035,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_105035",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_105035",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_UNIDENTIFIED_ARTIFACT.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_1050351"]
+        },
+        {
+          "BattleEffectId" : 105036,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_105036",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_105036",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_LOTTERY_TICKET.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_1050361"]
+        },
+        {
+          "BattleEffectId" : 105037,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_105037",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_105037",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_PORTABLE_FAN.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_1050371"]
+        },
+        {
+          "BattleEffectId" : 105038,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_105038",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_105038",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_PORTABLE_HEATPACK.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_1050381"]
+        },
+        {
+          "BattleEffectId" : 105039,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_105039",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_105039",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_SURVEY_PAPER.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_1050391"]
+        },
+        {
+          "BattleEffectId" : 105040,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_105040",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_105040",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_STATUE_SWORD.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_1050401", "COND_BATTLE_EFFECT_CHARM_1050402"]
+        },
+        {
+          "BattleEffectId" : 105041,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_105041",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_105041",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_STATUE_FLOWER.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_1050411", "COND_BATTLE_EFFECT_CHARM_1050412"]
+        },
+        {
+          "BattleEffectId" : 105042,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_105042",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_105042",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_EMPTY_BOTTLE.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_1050421"]
+        },
+        {
+          "BattleEffectId" : 105043,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_105043",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_105043",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_FIRST_POSTER.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_1050431"]
+        },
+        {
+          "BattleEffectId" : 105044,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_105044",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_105044",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_STRANGE_BOX.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_1050441"]
+        },
+        {
+          "BattleEffectId" : 105045,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_105045",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_105045",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_TRAINING_PARTICIPATION_POWER.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_1050451"]
+        },
+        {
+          "BattleEffectId" : 105046,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_105046",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_105046",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_TRAINING_PARTICIPATION_HEALTH.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_1050461"]
+        },
+        {
+          "BattleEffectId" : 105047,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_105047",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_105047",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_TRAINING_PLAQUE_POWER.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_1050471"]
+        },
+        {
+          "BattleEffectId" : 105048,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_105048",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_105048",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_TRAINING_PLAQUE_HEALTH.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_1050481"]
+        },
+        {
+          "BattleEffectId" : 5000001,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5000001",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5000001",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_VALOR_TOKEN.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50000011"]
+        },
+        {
+          "BattleEffectId" : 5000002,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5000002",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5000002",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_CALM_TOKEN.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50000021"]
+        },
+        {
+          "BattleEffectId" : 5000003,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5000003",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5000003",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_PATIENCE_TOKEN.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50000031"]
+        },
+        {
+          "BattleEffectId" : 5000004,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5000004",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5000004",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_QUICK_TOKEN.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50000041"]
+        },
+        {
+          "BattleEffectId" : 5000005,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5000005",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5000005",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_TECHNIQUE_TOKEN.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50000051"]
+        },
+        {
+          "BattleEffectId" : 5000006,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5000006",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5000006",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_POWER_TOKEN.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50000061"]
+        },
+        {
+          "BattleEffectId" : 5000007,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5000007",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5000007",
+          "AteamEffectTarget" : "UNIT_NOT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_VALOR_MEDAL.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50000071"]
+        },
+        {
+          "BattleEffectId" : 5000008,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5000008",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5000008",
+          "AteamEffectTarget" : "UNIT_NOT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_CALM_MEDAL.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50000081"]
+        },
+        {
+          "BattleEffectId" : 5000009,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5000009",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5000009",
+          "AteamEffectTarget" : "UNIT_NOT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_DETECTION_MEDAL.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50000091"]
+        },
+        {
+          "BattleEffectId" : 5000010,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5000010",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5000010",
+          "AteamEffectTarget" : "UNIT_NOT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_WISDOM_MEDAL.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50000101"]
+        },
+        {
+          "BattleEffectId" : 5000011,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5000011",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5000011",
+          "AteamEffectTarget" : "UNIT_NOT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_TECHNIQUE_MEDAL.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50000111"]
+        },
+        {
+          "BattleEffectId" : 5000012,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5000012",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5000012",
+          "AteamEffectTarget" : "UNIT_NOT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_POWER_MEDAL.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50000121"]
+        },
+        {
+          "BattleEffectId" : 5021001,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5021001",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5021001",
+          "AteamEffectTarget" : "UNIT_NOT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_GLASS_SWORD.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50210011"]
+        },
+        {
+          "BattleEffectId" : 5021002,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5021002",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5021002",
+          "AteamEffectTarget" : "UNIT_NOT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_THORN_CLUB.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50210021"]
+        },
+        {
+          "BattleEffectId" : 5021003,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5021003",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5021003",
+          "AteamEffectTarget" : "UNIT_NOT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_OLD_RIFLE.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50210031"]
+        },
+        {
+          "BattleEffectId" : 5022001,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5022001",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5022001",
+          "AteamEffectTarget" : "UNIT_NOT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_DRUID_HARP.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50220011"]
+        },
+        {
+          "BattleEffectId" : 5022002,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5022002",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5022002",
+          "AteamEffectTarget" : "UNIT_NOT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_AUTOMATIC_DOLL.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50220021"]
+        },
+        {
+          "BattleEffectId" : 5022003,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5022003",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5022003",
+          "AteamEffectTarget" : "UNIT_NOT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_RED_SHOES.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50220031"]
+        },
+        {
+          "BattleEffectId" : 5023001,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5023001",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5023001",
+          "AteamEffectTarget" : "UNIT_NOT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_WIDE_EYED.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50230011"]
+        },
+        {
+          "BattleEffectId" : 5023002,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5023002",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5023002",
+          "AteamEffectTarget" : "UNIT_NOT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_SHY_PERSON.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50230021"]
+        },
+        {
+          "BattleEffectId" : 5023003,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5023003",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5023003",
+          "AteamEffectTarget" : "UNIT_NOT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_ROTATING_DEVICE.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50230031"]
+        },
+        {
+          "BattleEffectId" : 5061001,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5061001",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5061001",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_DOLL_FRIEND.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50610011"]
+        },
+        {
+          "BattleEffectId" : 5061002,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5061002",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5061002",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_ORNAMENTAL_DRAIN_PLANT.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50610021"]
+        },
+        {
+          "BattleEffectId" : 5061003,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5061003",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5061003",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_FIRST_AID_KIT.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50610031"]
+        },
+        {
+          "BattleEffectId" : 5061004,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5061004",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5061004",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_KNIGHT_HONOR.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50610041"]
+        },
+        {
+          "BattleEffectId" : 5061005,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5061005",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5061005",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_DANCING_SAW.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50610051"]
+        },
+        {
+          "BattleEffectId" : 5062001,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5062001",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5062001",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_CUCKOO_CLOCK.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50620011"]
+        },
+        {
+          "BattleEffectId" : 5062002,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5062002",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5062002",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_ECHO_BLESS.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50620021"]
+        },
+        {
+          "BattleEffectId" : 5062003,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5062003",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5062003",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_DOUBLE_HORN.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50620031"]
+        },
+        {
+          "BattleEffectId" : 5062004,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5062004",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5062004",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_POISONOUS_GUARD.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50620041", "COND_BATTLE_EFFECT_CHARM_50620042"]
+        },
+        {
+          "BattleEffectId" : 5062005,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5062005",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5062005",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_EMPTY_CAGE.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50620051", "COND_BATTLE_EFFECT_CHARM_50620052"]
+        },
+        {
+          "BattleEffectId" : 5062006,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5062006",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5062006",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_STEEL_FLOWER.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50620061", "COND_BATTLE_EFFECT_CHARM_50620062", "COND_BATTLE_EFFECT_CHARM_50620063"]
+        },
+        {
+          "BattleEffectId" : 5062007,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5062007",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5062007",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_KNIGHT_GLORY.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50620071", "COND_BATTLE_EFFECT_CHARM_50620072"]
+        },
+        {
+          "BattleEffectId" : 5062008,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5062008",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5062008",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_LETTER_PRESS.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50620081"]
+        },
+        {
+          "BattleEffectId" : 5063001,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5063001",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5063001",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_BALANCE_SCALE.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50630011", "COND_BATTLE_EFFECT_CHARM_50630012"]
+        },
+        {
+          "BattleEffectId" : 5063002,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5063002",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5063002",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_GOING_DOWN_SWINGING.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50630021"]
+        },
+        {
+          "BattleEffectId" : 5063003,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5063003",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5063003",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_SERIES_OF_PEN.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50630031", "COND_BATTLE_EFFECT_CHARM_50630032", "COND_BATTLE_EFFECT_CHARM_50630033", "COND_BATTLE_EFFECT_CHARM_50630034"]
+        },
+        {
+          "BattleEffectId" : 5063004,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5063004",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5063004",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_DUEL_GLOVE.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50630041", "COND_BATTLE_EFFECT_CHARM_50630042"]
+        },
+        {
+          "BattleEffectId" : 5063005,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5063005",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5063005",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_CREDITOR_STRATEGY.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50630051"]
+        },
+        {
+          "BattleEffectId" : 5064001,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5064001",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5064001",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_CREDITOR_STRATEGY.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50640011", "COND_BATTLE_EFFECT_CHARM_50640012", "COND_BATTLE_EFFECT_CHARM_50640013"]
+        },
+        {
+          "BattleEffectId" : 5064002,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5064002",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5064002",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_EXPLORE_CROWBAR.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50640021"]
+        },
+        {
+          "BattleEffectId" : 5064003,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5064003",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5064003",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_MAGIC_BOTTLE.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50640031", "COND_BATTLE_EFFECT_CHARM_50640032"]
+        },
+        {
+          "BattleEffectId" : 5064004,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5064004",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5064004",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_CHANCE_KATANA.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50640041", "COND_BATTLE_EFFECT_CHARM_50640042"]
+        },
+        {
+          "BattleEffectId" : 5064005,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5064005",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5064005",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_PIERROT_MASK.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50640051"]
+        },
+        {
+          "BattleEffectId" : 5064006,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5064006",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5064006",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_UTILITY_JACKET.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50640061", "COND_BATTLE_EFFECT_CHARM_50640062", "COND_BATTLE_EFFECT_CHARM_50640063"]
+        },
+        {
+          "BattleEffectId" : 5064007,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5064007",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5064007",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_CREDITOR_STRATEGY.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50640071", "COND_BATTLE_EFFECT_CHARM_50640072"]
+        },
+        {
+          "BattleEffectId" : 5064008,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5064008",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5064008",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_TRIPLE_BULLET.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50640081"]
+        },
+        {
+          "BattleEffectId" : 5064009,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5064009",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5064009",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_FROZEN_PENDANT.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50640091", "COND_BATTLE_EFFECT_CHARM_50640092"]
+        },
+        {
+          "BattleEffectId" : 5064010,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5064010",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5064010",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_FUGITIVE_CLOAK.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50640101", "COND_BATTLE_EFFECT_CHARM_50640102"]
+        },
+        {
+          "BattleEffectId" : 5064011,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5064011",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5064011",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_TOXIC_SCALE.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50640111", "COND_BATTLE_EFFECT_CHARM_50640112"]
+        },
+        {
+          "BattleEffectId" : 5064012,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5064012",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5064012",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_CURSED_CENSER.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50640121", "COND_BATTLE_EFFECT_CHARM_50640122", "COND_BATTLE_EFFECT_CHARM_50640123"]
+        },
+        {
+          "BattleEffectId" : 5064013,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5064013",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5064013",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_EMBER_BOTTLE.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50640131", "COND_BATTLE_EFFECT_CHARM_50640132"]
+        },
+        {
+          "BattleEffectId" : 5064014,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5064014",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5064014",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_SCAR_SCYTHE.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50640141", "COND_BATTLE_EFFECT_CHARM_50640142", "COND_BATTLE_EFFECT_CHARM_50640143"]
+        },
+        {
+          "BattleEffectId" : 5064015,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5064015",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5064015",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_WOLF_CONTRACT.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50640151", "COND_BATTLE_EFFECT_CHARM_50640152"]
+        },
+        {
+          "BattleEffectId" : 5064016,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5064016",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5064016",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_ESCAPE_TOY.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50640161", "COND_BATTLE_EFFECT_CHARM_50640162"]
+        },
+        {
+          "BattleEffectId" : 5065001,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5065001",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5065001",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_DEFENDER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_SUMMER_ORACLE_CHARM_EVENT_CUBE.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50650011"]
+        },
+        {
+          "BattleEffectId" : 5065002,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5065002",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5065002",
+          "AteamEffectTarget" : "ALL",
+          "TargetRoleType" : "NURT_ASSASSIN",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_SUMMER_SMILE_CHARM_EVENT_CUBE.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50650021"]
+        },
+        {
+          "BattleEffectId" : 5070001,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5070001",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5070001",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_SLIME_GLOVE.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50700011"]
+        },
+        {
+          "BattleEffectId" : 5070002,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5070002",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5070002",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_SLIME_ARMOR.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50700021"]
+        },
+        {
+          "BattleEffectId" : 5070003,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5070003",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5070003",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_SLIME_PANTS.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50700031"]
+        },
+        {
+          "BattleEffectId" : 5070004,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5070004",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5070004",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_SLIME_SHOES.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50700041"]
+        },
+        {
+          "BattleEffectId" : 5070005,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5070005",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5070005",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_SLIME_HAT.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50700051"]
+        },
+        {
+          "BattleEffectId" : 5070006,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5070006",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5070006",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_SLIME_NECKLACE.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50700061"]
+        },
+        {
+          "BattleEffectId" : 5070007,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5070007",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5070007",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_SLIME_GLASSES.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50700071"]
+        },
+        {
+          "BattleEffectId" : 5070008,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5070008",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5070008",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_SLIME_CLOAK.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50700081"]
+        },
+        {
+          "BattleEffectId" : 5070009,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5070009",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5070009",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_SLIME_GUARD.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50700091"]
+        },
+        {
+          "BattleEffectId" : 5071001,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5071001",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5071001",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_VETERAN_BARON_GLOVE.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50700011"]
+        },
+        {
+          "BattleEffectId" : 5071002,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5071002",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5071002",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_VETERAN_BARON_ARMOR.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50700021"]
+        },
+        {
+          "BattleEffectId" : 5071003,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5071003",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5071003",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_VETERAN_BARON_PANTS.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50700031"]
+        },
+        {
+          "BattleEffectId" : 5071004,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5071004",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5071004",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_VETERAN_BARON_SHOES.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50700041"]
+        },
+        {
+          "BattleEffectId" : 5071005,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5071005",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5071005",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_VETERAN_BARON_HAT.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50700051"]
+        },
+        {
+          "BattleEffectId" : 5071006,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5071006",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5071006",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_VETERAN_BARON_NECKLACE.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50700061"]
+        },
+        {
+          "BattleEffectId" : 5071007,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5071007",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5071007",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_VETERAN_BARON_GLASSES.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50700071"]
+        },
+        {
+          "BattleEffectId" : 5071008,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5071008",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5071008",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_VETERAN_BARON_CLOAK.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50700081"]
+        },
+        {
+          "BattleEffectId" : 5071009,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5071009",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5071009",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_VETERAN_BARON_GUARD.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50700091"]
+        },
+        {
+          "BattleEffectId" : 5072001,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5072001",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5072001",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_DOLL_GLOVE.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50700011"]
+        },
+        {
+          "BattleEffectId" : 5072002,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5072002",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5072002",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_DOLL_ARMOR.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50700021"]
+        },
+        {
+          "BattleEffectId" : 5072003,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5072003",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5072003",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_DOLL_PANTS.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50700031"]
+        },
+        {
+          "BattleEffectId" : 5072004,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5072004",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5072004",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_DOLL_SHOES.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50700041"]
+        },
+        {
+          "BattleEffectId" : 5072005,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5072005",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5072005",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_DOLL_HAT.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50700051"]
+        },
+        {
+          "BattleEffectId" : 5072006,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5072006",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5072006",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_DOLL_NECKLACE.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50700061"]
+        },
+        {
+          "BattleEffectId" : 5072007,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5072007",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5072007",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_DOLL_GLASSES.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50700071"]
+        },
+        {
+          "BattleEffectId" : 5072008,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5072008",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5072008",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_DOLL_CLOAK.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50700081"]
+        },
+        {
+          "BattleEffectId" : 5072009,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5072009",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5072009",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_DOLL_GUARD.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50700091"]
+        },
+        {
+          "BattleEffectId" : 5072010,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5072010",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5072010",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_DOLL_GAUNTLET.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50720101"]
+        },
+        {
+          "BattleEffectId" : 5072011,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5072011",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5072011",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_DOLL_TOTEM.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_50720111"]
+        },
+        {
+          "BattleEffectId" : 5170001,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5170001",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5170001",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_SLIME_TOKEN.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_51700011"]
+        },
+        {
+          "BattleEffectId" : 5170002,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5170002",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5170002",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_VETERAN_BARON_TOKEN.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_51700021"]
+        },
+        {
+          "BattleEffectId" : 5170003,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5170003",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5170003",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_DOLL_TOKEN.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_51700031"]
+        },
+        {
+          "BattleEffectId" : 5170004,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5170004",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5170004",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_SLIME_PROMISSORY_NOTE.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_51700041"]
+        },
+        {
+          "BattleEffectId" : 5170005,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5170005",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5170005",
+          "AteamEffectTarget" : "UNIT_LEADER",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_VETERAN_BARON_PROMISSORY_NOTE.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_51700051"]
+        },
+        {
+          "BattleEffectId" : 5170006,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5170006",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5170006",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_VALOR_TOKEN.png",
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_51700061"]
+        },
+        {
+          "BattleEffectId" : 5270001,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5270001",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5270001",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_TRAINING_GUIDE_ATTACK.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_52700011"]
+        },
+        {
+          "BattleEffectId" : 5270002,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5270002",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5270002",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_TRAINING_GUIDE_SURVIVE.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_52700021"]
+        },
+        {
+          "BattleEffectId" : 5270003,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5270003",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5270003",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_TRAINING_GUIDE_TACTICS.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_52700031"]
+        },
+        {
+          "BattleEffectId" : 5370001,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5370001",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5370001",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_SAVIOR_GLOVE.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_53700011"]
+        },
+        {
+          "BattleEffectId" : 5370002,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5370002",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5370002",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_SAVIOR_ARMOR.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_53700021"]
+        },
+        {
+          "BattleEffectId" : 5370003,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5370003",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5370003",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_SAVIOR_PANTS.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_53700031"]
+        },
+        {
+          "BattleEffectId" : 5370004,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5370004",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5370004",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_SAVIOR_SHOES.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_53700041"]
+        },
+        {
+          "BattleEffectId" : 5370005,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5370005",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5370005",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_SAVIOR_HAT.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_53700051"]
+        },
+        {
+          "BattleEffectId" : 5370006,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5370006",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5370006",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_SAVIOR_NECKLACE.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_53700061"]
+        },
+        {
+          "BattleEffectId" : 5370007,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5370007",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5370007",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_SAVIOR_GLASSES.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_53700071"]
+        },
+        {
+          "BattleEffectId" : 5370008,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5370008",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5370008",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_SAVIOR_CLOAK.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_53700081"]
+        },
+        {
+          "BattleEffectId" : 5370009,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5370009",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5370009",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_SAVIOR_GUARD.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_53700091"]
+        },
+        {
+          "BattleEffectId" : 5370010,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5370010",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5370010",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_SAVIOR_GAUNTLET.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_53700101"]
+        },
+        {
+          "BattleEffectId" : 5370011,
+          "BattleEffectStrId" : "BATTLE_EFFECT_JOURNEY_CHARM_5370011",
+          "BattleEffectName" : "SI_JOURNEY_ITEM_NAME_5370011",
+          "AteamEffectTarget" : "ALL",
+          "BattleEffectIconImg" : "JOURNEY_ITEM_SAVIOR_TOTEM.png",
+          "ShowSELog" : true,
+          "BattleEffectSeStrId" : ["COND_BATTLE_EFFECT_CHARM_53700111"]
+        },
+        {
+          "BattleEffectId" : 21101,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_UNIT_PENALTY_ATT_LEVEL1_01",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_ATK",
+          "BattleEffectStatValue" : -1000
+        },
+        {
+          "BattleEffectId" : 21102,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_UNIT_PENALTY_ATT_LEVEL2_01",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_ATK",
+          "BattleEffectStatValue" : -2000
+        },
+        {
+          "BattleEffectId" : 21103,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_UNIT_PENALTY_ATT_LEVEL3_01",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_ATK",
+          "BattleEffectStatValue" : -3000
+        },
+        {
+          "BattleEffectId" : 21104,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_UNIT_PENALTY_ATT_LEVEL4_01",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_ATK",
+          "BattleEffectStatValue" : -4000
+        },
+        {
+          "BattleEffectId" : 21111,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_UNIT_PENALTY_HP_LEVEL1_01",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_HP",
+          "BattleEffectStatValue" : -1000
+        },
+        {
+          "BattleEffectId" : 21112,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_UNIT_PENALTY_HP_LEVEL2_01",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_HP",
+          "BattleEffectStatValue" : -2000
+        },
+        {
+          "BattleEffectId" : 21113,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_UNIT_PENALTY_HP_LEVEL3_01",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_HP",
+          "BattleEffectStatValue" : -3000
+        },
+        {
+          "BattleEffectId" : 21114,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_UNIT_PENALTY_HP_LEVEL4_01",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_HP",
+          "BattleEffectStatValue" : -4000
+        },
+        {
+          "BattleEffectId" : 21121,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_UNIT_PENALTY_DEF_LEVEL1_01",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_DEF",
+          "BattleEffectStatValue" : -1000
+        },
+        {
+          "BattleEffectId" : 21122,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_UNIT_PENALTY_DEF_LEVEL2_01",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_DEF",
+          "BattleEffectStatValue" : -2000
+        },
+        {
+          "BattleEffectId" : 21123,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_UNIT_PENALTY_DEF_LEVEL3_01",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_DEF",
+          "BattleEffectStatValue" : -3000
+        },
+        {
+          "BattleEffectId" : 21124,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_UNIT_PENALTY_DEF_LEVEL4_01",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_DEF",
+          "BattleEffectStatValue" : -4000
+        },
+        {
+          "BattleEffectId" : 21131,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_UNIT_PENALTY_SPD_LEVEL1_01",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_TURN_SPEED",
+          "BattleEffectStatValue" : -1000
+        },
+        {
+          "BattleEffectId" : 21132,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_UNIT_PENALTY_SPD_LEVEL2_01",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_TURN_SPEED",
+          "BattleEffectStatValue" : -2000
+        },
+        {
+          "BattleEffectId" : 21133,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_UNIT_PENALTY_SPD_LEVEL3_01",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_TURN_SPEED",
+          "BattleEffectStatValue" : -3000
+        },
+        {
+          "BattleEffectId" : 21134,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_UNIT_PENALTY_SPD_LEVEL4_01",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_NV_RATE_TURN_SPEED",
+          "BattleEffectStatValue" : -4000
+        },
+        {
+          "BattleEffectId" : 21141,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_UNIT_PENALTY_EFFECT_HIT_LEVEL1_01",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_EFFECT_HIT",
+          "BattleEffectStatValue" : -1000
+        },
+        {
+          "BattleEffectId" : 21142,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_UNIT_PENALTY_EFFECT_HIT_LEVEL2_01",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_EFFECT_HIT",
+          "BattleEffectStatValue" : -2000
+        },
+        {
+          "BattleEffectId" : 21143,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_UNIT_PENALTY_EFFECT_HIT_LEVEL3_01",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_EFFECT_HIT",
+          "BattleEffectStatValue" : -3000
+        },
+        {
+          "BattleEffectId" : 21144,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_UNIT_PENALTY_EFFECT_HIT_LEVEL4_01",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_EFFECT_HIT",
+          "BattleEffectStatValue" : -4000
+        },
+        {
+          "BattleEffectId" : 21151,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_UNIT_PENALTY_EFFECT_EVADE_LEVEL1_01",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_EFFECT_EVADE",
+          "BattleEffectStatValue" : -1000
+        },
+        {
+          "BattleEffectId" : 21152,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_UNIT_PENALTY_EFFECT_EVADE_LEVEL2_01",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_EFFECT_EVADE",
+          "BattleEffectStatValue" : -2000
+        },
+        {
+          "BattleEffectId" : 21153,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_UNIT_PENALTY_EFFECT_EVADE_LEVEL3_01",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_EFFECT_EVADE",
+          "BattleEffectStatValue" : -3000
+        },
+        {
+          "BattleEffectId" : 21154,
+          "BattleEffectStrId" : "BATTLE_EFFECT_PVP_UNIT_PENALTY_EFFECT_EVADE_LEVEL4_01",
+          "AteamEffectTarget" : "ALL",
+          "BteamEffectTarget" : "ALL",
+          "BattleEffectStatType" : "NST_RATE_EFFECT_EVADE",
+          "BattleEffectStatValue" : -4000
         }
     ]
 }

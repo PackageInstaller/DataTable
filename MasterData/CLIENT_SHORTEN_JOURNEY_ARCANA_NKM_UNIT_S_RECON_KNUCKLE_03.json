@@ -1,0 +1,153 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_RECON_KNUCKLE_03",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_KNUCKLE_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_STREET.png",
+      "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_KNUCKLE_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "할리에게 새로운 취미를 배운 로베르타는 어째서인지 부상을 당한 듯 하다. ",
+      "UnitTalk_ENG": "Roberta picked up a new hobby from Harley!",
+      "UnitTalk_JPN": "ハーレーに新しい趣味を教わったロベルタだが、どういう訳か怪我をしてしまったようだ。",
+      "UnitTalk_CHN": "萝贝塔向哈莉学会了新嗜好！",
+      "UnitTalk_TWN": "蘿貝塔向哈莉學會了新嗜好！",
+      "UnitTalk_FRA": "Roberta, qui a appris un nouveau passe-temps à Harley, semble inexplicablement blessée.",
+      "UnitTalk_DEU": "Roberta hat von Harley ein neues Hobby gelernt und sich dabei irgendwie verletzt. ",
+      "UnitTalk_ESP": "Roberta, que aprendió un nuevo pasatiempo de Harley, parece haberse lesionado de alguna manera.",
+      "UnitTalk_PRT": "Roberta aprendeu um novo hobby com a Harley! Mas parece que ela se machucou de alguma forma estranha.",
+      "UnitTalk_THA": "โรเบอร์ตาที่ได้งานอดิเรกใหม่จากฮาร์ลีย์ ดูเหมือนจะได้รับบาดเจ็บไม่ว่าจะด้วยเหตุผลใดก็ตาม",
+      "UnitTalk_IND": "Roberta, yang mempelajari hobi baru dari Harley, sepertinya terluka entah bagaimana.",
+      "UnitTalk_VIE": "Roberta đã học được một sở thích mới từ Harley, nhưng có vẻ như cô ấy đã bị thương vì một lý do nào đó.",
+      "UnitTalk_HIN": "हार्ले से एक नया शौक सीखने के बाद, रॉबर्टा को किसी तरह चोट लगी हुई लगती है।",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "무슨 일인지 말을 걸어볼까?",
+          "JumpAnchorStringId_ENG": "Should I ask what happened?",
+          "JumpAnchorStringId_JPN": "何があったのか、声をかけてみようか？",
+          "JumpAnchorStringId_CHN": "要不要问问看发生什么事了？",
+          "JumpAnchorStringId_TWN": "要不要問問看發生什麼事了？",
+          "JumpAnchorStringId_FRA": "Devrais-je lui demander ce qui ne va pas ?",
+          "JumpAnchorStringId_DEU": "Soll ich fragen, was los ist?",
+          "JumpAnchorStringId_ESP": "¿Debería preguntar qué le pasa?",
+          "JumpAnchorStringId_PRT": "Devo perguntar o que aconteceu?",
+          "JumpAnchorStringId_THA": "ฉันควรจะถามไหมว่าเกิดอะไรขึ้น?",
+          "JumpAnchorStringId_IND": "Haruskah aku bertanya ada apa?",
+          "JumpAnchorStringId_VIE": "Mình có nên hỏi xem có chuyện gì không?",
+          "JumpAnchorStringId_HIN": "क्या मुझे पूछना चाहिए कि क्या हुआ?",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "바빠 보이니까 방해하지 말까…",
+          "JumpAnchorStringId_ENG": "She looks busy, so I should leave her be...",
+          "JumpAnchorStringId_JPN": "忙しそうだし、邪魔しないでおこう…",
+          "JumpAnchorStringId_CHN": "她看起来很忙，还是别打扰了…",
+          "JumpAnchorStringId_TWN": "她看起來很忙，還是別打擾了…",
+          "JumpAnchorStringId_FRA": "Elle a l'air occupée, je ne devrais peut-être pas la déranger…",
+          "JumpAnchorStringId_DEU": "Sieht beschäftigt aus, sollte ich nicht stören…?",
+          "JumpAnchorStringId_ESP": "Parece ocupada, ¿será mejor no molestarla…?",
+          "JumpAnchorStringId_PRT": "Parece ocupada, talvez seja melhor não incomodar…?",
+          "JumpAnchorStringId_THA": "ดูเหมือนเธอกำลังยุ่งอยู่ ฉันไม่ควรรบกวนดีกว่า…",
+          "JumpAnchorStringId_IND": "Sepertinya sibuk, sebaiknya jangan mengganggu…?",
+          "JumpAnchorStringId_VIE": "Có vẻ bận rộn, mình không nên làm phiền thì hơn…",
+          "JumpAnchorStringId_HIN": "वह व्यस्त लग रही है, क्या मुझे परेशान नहीं करना चाहिए…?",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 6,
+      "JumpAnchorInfo": "JUMPANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0
+    },
+    {
+      "Uid": 9,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "호그 바이크를 타게 될 일이 있다면, 안전에 유의하도록 하자…",
+      "UnitTalk_ENG": "If you ever end up riding a hog, make sure to be careful...",
+      "UnitTalk_JPN": "もしバイクホッグに乗ることがあれば、安全運転を心がけよう…",
+      "UnitTalk_CHN": "如果有机会骑上摩托野猪，务必注意安全…",
+      "UnitTalk_TWN": "如果有機會騎上摩托野豬，務必注意安全…",
+      "UnitTalk_FRA": "Si je dois monter un Hog Bike, autant le faire en toute sécurité…",
+      "UnitTalk_DEU": "Wenn ich einen Bike Hog fahren muss, sollte ich auf Sicherheit achten…",
+      "UnitTalk_ESP": "Si hay que montar una Hog Bike, hagámoslo con precaución…",
+      "UnitTalk_PRT": "Se houver algo que exija que eu pilote uma Bike Hog, devo ter cuidado com a segurança…",
+      "UnitTalk_THA": "ถ้ามีเรื่องที่ต้องขี่ไบค์ฮอก ก็ระมัดระวังเรื่องความปลอดภัยด้วยนะ…",
+      "UnitTalk_IND": "Jika ada urusan yang mengharuskan naik Bike Hog, mari kita pastikan untuk berhati-hati dalam keselamatan…",
+      "UnitTalk_VIE": "Nếu có việc phải đi xe Hog Bike, thì hãy cẩn thận về an toàn nhé…",
+      "UnitTalk_HIN": "अगर हॉग बाइक चलाने का मौका मिले, तो सुरक्षा का ध्यान रखें...",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 7,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0
+    },
+    {
+      "Uid": 10,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "불편한 기색으로 몸 이곳저곳을 주무르며 멀어져가는 로베르타가 보인다. 괜찮겠지…?",
+      "UnitTalk_ENG": "Roberta walks away kneading herself here and there, clearly uncomfortable. She'll be fine, right...?",
+      "UnitTalk_JPN": "体のあちこちをさすりながら、遠ざかっていくロベルタが見える。大丈夫だよな…？",
+      "UnitTalk_CHN": "可以看到带着不适神情、揉着身体各处逐渐远去的萝贝塔。应该没问题吧…？",
+      "UnitTalk_TWN": "可以看到帶著不適神情、揉著身體各處逐漸遠去的蘿貝塔。應該沒問題吧…？",
+      "UnitTalk_FRA": "Roberta s'éloigne en se frottant le corps avec une expression mal à l'aise. Ça va… ?",
+      "UnitTalk_DEU": "Roberta reibt sich unzufrieden hier und da am Körper und geht weg. Geht es ihr gut…?",
+      "UnitTalk_ESP": "Roberta se aleja, frotándose varias partes del cuerpo con una expresión incómoda. ¿Estará bien…?",
+      "UnitTalk_PRT": "Roberta se afasta, massageando o corpo com uma expressão desconfortável. Ela está bem…?",
+      "UnitTalk_THA": "โรเบอร์ตาที่นวดคลึงตามร่างกายหลายส่วนพร้อมสีหน้าไม่สู้ดีนักและเดินจากไป ดูเหมือนจะไม่เป็นไรใช่ไหม…?",
+      "UnitTalk_IND": "Roberta terlihat mengusap-usap tubuhnya dengan ekspresi tidak nyaman dan menjauh. Apa dia baik-baik saja…?",
+      "UnitTalk_VIE": "Roberta cau mày, xoa xoa khắp người rồi đi xa dần. Cô ấy có ổn không…?",
+      "UnitTalk_HIN": "रॉबर्ता असुविधाजनक भाव से अपने शरीर के अलग-अलग हिस्सों को सहलाते हुए दूर जाती दिख रही है। क्या वह ठीक है...?",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "JumpAnchorInfo": "JUMPANCHOR_FINISH",
+      "WaitClick": false,
+      "WaitTime": 0.0
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_KNUCKLE_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_KNUCKLE_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    }
+  ]
+}

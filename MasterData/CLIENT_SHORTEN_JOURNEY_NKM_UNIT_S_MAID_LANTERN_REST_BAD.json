@@ -1,0 +1,39 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_MAID_LANTERN_REST_BAD",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_REST_BAD",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_REST",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAGICIAN_DRUID_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "악몽을 꿨다는 <color=#F7BE45>[CHARACTER_NAME]</color>는 제대로 잠들지 못했던 것 같다...",
+      "UnitTalk_ENG": "<color=#F7BE45>[CHARACTER_NAME]</color> says she had a nightmare and doesn't seem to have slept well...",
+      "UnitTalk_JPN": "悪夢を見たという<color=#F7BE45>[CHARACTER_NAME]</color>は、どうやらよく眠れなかったようだ…",
+      "UnitTalk_CHN": "做了恶梦的<color=#F7BE45>[CHARACTER_NAME]</color>，似乎没能好好睡上一觉…",
+      "UnitTalk_TWN": "做了惡夢的<color=#F7BE45>[CHARACTER_NAME]</color>，似乎沒能好好睡上一覺…",
+      "UnitTalk_FRA": "<color=#F7BE45>[CHARACTER_NAME]</color> ayant fait un cauchemar, il semble qu'il n'ait pas bien dormi...",
+      "UnitTalk_DEU": "<color=#F7BE45>[CHARACTER_NAME]</color>, der einen Albtraum hatte, scheint nicht richtig geschlafen zu haben...",
+      "UnitTalk_ESP": "Parece que <color=#F7BE45>[CHARACTER_NAME]</color> tuvo una pesadilla y no pudo dormir bien...",
+      "UnitTalk_PRT": "Parece que <color=#F7BE45>[CHARACTER_NAME]</color>, que teve um pesadelo, não conseguiu dormir direito...",
+      "UnitTalk_THA": "ดูเหมือนว่า <color=#F7BE45>[CHARACTER_NAME]</color> ที่เห็นฝันร้ายนั้นไม่ได้นอนหลับสบายเลย...",
+      "UnitTalk_IND": "<color=#F7BE45>[CHARACTER_NAME]</color> yang mengalami mimpi buruk tampaknya tidak bisa tidur dengan baik...",
+      "UnitTalk_VIE": "Cái <color=#F7BE45>[CHARACTER_NAME]</color> mơ thấy ác mộng dường như đã không ngủ yên được...",
+      "TalkTime": 0.03
+    }
+  ]
+}

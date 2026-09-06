@@ -1712,16 +1712,16 @@
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 10041,
           "ProcessKey" : 4,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
+          "ProgressType" : "PROGRESS_SKIP_CHECK_POPUP",
+          "ProgressValue" : 100,
+          "StringId" : "SI_TUTORIAL_MESSAGE_SKIP_JOURNEY"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 10041,
           "ProcessKey" : 5,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_10041_01"
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 88
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -1729,36 +1729,36 @@
           "ProcessKey" : 6,
           "ProgressType" : "MESSAGE_BOX_RIGHT",
           "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_10041_02"
+          "StringId" : "SI_TUTORIAL_MESSAGE_10041_01"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 10041,
           "ProcessKey" : 7,
+          "ProgressType" : "MESSAGE_BOX_RIGHT",
+          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
+          "StringId" : "SI_TUTORIAL_MESSAGE_10041_02"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 10041,
+          "ProcessKey" : 8,
           "ProgressType" : "TOUCH_UI",
           "ProgressStringValue" : "MENU_TRAINING"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 10041,
-          "ProcessKey" : 8,
+          "ProcessKey" : 9,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 10041,
-          "ProcessKey" : 9,
+          "ProcessKey" : 10,
           "ProgressType" : "WAIT_SECONDS",
           "ProgressValue" : 1.5
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 10041,
-          "ProcessKey" : 10,
-          "ProgressType" : "MESSAGE_BOX_MID",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_10041_03"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -1766,7 +1766,7 @@
           "ProcessKey" : 11,
           "ProgressType" : "MESSAGE_BOX_MID",
           "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_10041_04"
+          "StringId" : "SI_TUTORIAL_MESSAGE_10041_03"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -1774,7 +1774,7 @@
           "ProcessKey" : 12,
           "ProgressType" : "MESSAGE_BOX_MID",
           "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_10041_05"
+          "StringId" : "SI_TUTORIAL_MESSAGE_10041_04"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -1782,33 +1782,41 @@
           "ProcessKey" : 13,
           "ProgressType" : "MESSAGE_BOX_MID",
           "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_10041_06"
+          "StringId" : "SI_TUTORIAL_MESSAGE_10041_05"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 10041,
           "ProcessKey" : 14,
+          "ProgressType" : "MESSAGE_BOX_MID",
+          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
+          "StringId" : "SI_TUTORIAL_MESSAGE_10041_06"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 10041,
+          "ProcessKey" : 15,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 88
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 10041,
-          "ProcessKey" : 15,
+          "ProcessKey" : 16,
           "ProgressType" : "HIGHLIGHT_UI",
           "ProgressStringValue" : "ArcanaList"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 10041,
-          "ProcessKey" : 16,
+          "ProcessKey" : 17,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 10041,
-          "ProcessKey" : 17,
+          "ProcessKey" : 18,
           "ProgressType" : "MESSAGE_BOX_MID",
           "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
           "StringId" : "SI_TUTORIAL_MESSAGE_10041_07"
@@ -1816,42 +1824,42 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 10041,
-          "ProcessKey" : 18,
+          "ProcessKey" : 19,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 88
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 10041,
-          "ProcessKey" : 19,
+          "ProcessKey" : 20,
           "ProgressType" : "HIGHLIGHT_UI",
           "ProgressStringValue" : "UI_JOURNEY_TRAINING_SLOT_1"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 10041,
-          "ProcessKey" : 20,
+          "ProcessKey" : 21,
           "ProgressType" : "WAIT_SECONDS",
           "ProgressValue" : 0.5
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 10041,
-          "ProcessKey" : 21,
+          "ProcessKey" : 22,
           "ProgressType" : "TOUCH_UI",
           "ProgressStringValue" : "UI_CMN_BTN"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 10041,
-          "ProcessKey" : 22,
+          "ProcessKey" : 23,
           "ProgressType" : "MARK_COMPLETE",
           "ProgressValue" : 10041
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 10041,
-          "ProcessKey" : 23,
+          "ProcessKey" : 24,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
@@ -3768,6 +3776,422 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110111,
+          "ProcessKey" : 1,
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110111,
+          "ProcessKey" : 2,
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110111,
+          "ProcessKey" : 3,
+          "ProgressType" : "PROGRESS_SKIP_CHECK_POPUP",
+          "ProgressValue" : 120,
+          "StringId" : "SI_TUTORIAL_MESSAGE_SKIP_MAIN_STORY"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110111,
+          "ProcessKey" : 3,
+          "ProgressType" : "MESSAGE_BOX_MID",
+          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
+          "StringId" : "SI_TUTORIAL_MESSAGE_11021_01"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110111,
+          "ProcessKey" : 4,
+          "ProgressType" : "MESSAGE_BOX_MID",
+          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
+          "StringId" : "SI_TUTORIAL_MESSAGE_11021_02"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110111,
+          "ProcessKey" : 5,
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 88
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110111,
+          "ProcessKey" : 6,
+          "ProgressType" : "TOUCH_UI",
+          "ProgressStringValue" : "UI_LOBBY_ACCUE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110111,
+          "ProcessKey" : 7,
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110111,
+          "ProcessKey" : 8,
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 1.5
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110111,
+          "ProcessKey" : 9,
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 88
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110111,
+          "ProcessKey" : 10,
+          "ProgressType" : "MESSAGE_BOX_RIGHT",
+          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
+          "StringId" : "SI_TUTORIAL_MESSAGE_11021_03"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110111,
+          "ProcessKey" : 11,
+          "ProgressType" : "HIGHLIGHT_UI",
+          "ProgressStringValue" : "ACCUE_POPUP"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110111,
+          "ProcessKey" : 12,
+          "ProgressType" : "MESSAGE_BOX_RIGHT",
+          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
+          "StringId" : "SI_TUTORIAL_MESSAGE_11021_04"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110111,
+          "ProcessKey" : 13,
+          "ProgressType" : "MESSAGE_BOX_RIGHT",
+          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
+          "StringId" : "SI_TUTORIAL_MESSAGE_11021_05"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110111,
+          "ProcessKey" : 14,
+          "ProgressType" : "HIGHLIGHT_UI",
+          "ProgressStringValue" : "Bottom"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110111,
+          "ProcessKey" : 15,
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110111,
+          "ProcessKey" : 16,
+          "ProgressType" : "MESSAGE_BOX_RIGHT",
+          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
+          "StringId" : "SI_TUTORIAL_MESSAGE_11021_06"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110111,
+          "ProcessKey" : 17,
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 88
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110111,
+          "ProcessKey" : 18,
+          "ProgressType" : "HIGHLIGHT_UI",
+          "ProgressStringValue" : "BTN_FAST_REWARD"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110111,
+          "ProcessKey" : 19,
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110111,
+          "ProcessKey" : 20,
+          "ProgressType" : "MESSAGE_BOX_RIGHT",
+          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
+          "StringId" : "SI_TUTORIAL_MESSAGE_11021_07"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110111,
+          "ProcessKey" : 21,
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 88
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110111,
+          "ProcessKey" : 22,
+          "ProgressType" : "TOUCH_UI",
+          "ProgressStringValue" : "BTN_REWARD"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110111,
+          "ProcessKey" : 23,
+          "ProgressType" : "MARK_COMPLETE",
+          "ProgressValue" : 110111
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110111,
+          "ProcessKey" : 24,
+          "ProgressType" : "WAIT_OPEN_UI",
+          "ProgressStringValue" : "UI_POPUP_COMMON_RESULT_GET"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110111,
+          "ProcessKey" : 25,
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110111,
+          "ProcessKey" : 26,
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110111,
+          "ProcessKey" : 27,
+          "ProgressType" : "TOUCH_CLOSE_UI",
+          "ProgressStringValue" : "TOUCH_TUTO",
+          "ProgressStringValue2" : "UI_POPUP_COMMON_RESULT_GET"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110111,
+          "ProcessKey" : 28,
+          "ProgressType" : "WAIT_OPEN_UI",
+          "ProgressStringValue" : "UI_POPUP_USER_LEVEL_UP"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110111,
+          "ProcessKey" : 29,
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 1.5
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110111,
+          "ProcessKey" : 30,
+          "ProgressType" : "TOUCH_CLOSE_UI",
+          "ProgressStringValue" : "TOUCH_TUTO",
+          "ProgressStringValue2" : "UI_POPUP_USER_LEVEL_UP"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110111,
+          "ProcessKey" : 31,
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 1.5
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110111,
+          "ProcessKey" : 32,
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 88
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110111,
+          "ProcessKey" : 33,
+          "ProgressType" : "TOUCH_CLOSE_UI",
+          "ProgressStringValue" : "BTN_X",
+          "ProgressStringValue2" : "ACCUE_POPUP"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110111,
+          "ProcessKey" : 34,
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110121,
+          "ProcessKey" : 1,
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110121,
+          "ProcessKey" : 2,
+          "ProgressType" : "MESSAGE_BOX_RIGHT",
+          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
+          "StringId" : "SI_TUTORIAL_MESSAGE_110121_01"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110121,
+          "ProcessKey" : 3,
+          "ProgressType" : "MESSAGE_BOX_RIGHT",
+          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
+          "StringId" : "SI_TUTORIAL_MESSAGE_110121_02"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110121,
+          "ProcessKey" : 4,
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 88
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110121,
+          "ProcessKey" : 5,
+          "ProgressType" : "TOUCH_OPEN_UI",
+          "ProgressStringValue" : "BUTTON_MAINSTREAM",
+          "ProgressStringValue2" : "UI_LOBBY_SHORTCUT_SLOT_OPERATION"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110121,
+          "ProcessKey" : 6,
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110121,
+          "ProcessKey" : 7,
+          "ProgressType" : "WAIT_OPEN_UI",
+          "ProgressStringValue" : "UI_LOBBY_SHORTCUT_SLOT_STORY"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110121,
+          "ProcessKey" : 8,
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110121,
+          "ProcessKey" : 9,
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110121,
+          "ProcessKey" : 10,
+          "ProgressType" : "MESSAGE_BOX_RIGHT",
+          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
+          "StringId" : "SI_TUTORIAL_MESSAGE_110121_03"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110121,
+          "ProcessKey" : 11,
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 88
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110121,
+          "ProcessKey" : 12,
+          "ProgressType" : "TOUCH_UI",
+          "ProgressStringValue" : "UI_LOBBY_SHORTCUT_SLOT_STORY"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110121,
+          "ProcessKey" : 13,
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110121,
+          "ProcessKey" : 14,
+          "ProgressType" : "INPUT_BLOCK"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110121,
+          "ProcessKey" : 15,
+          "ProgressType" : "MARK_COMPLETE",
+          "ProgressValue" : 110121
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110131,
+          "ProcessKey" : 1,
+          "ProgressType" : "MARK_COMPLETE",
+          "ProgressValue" : 110131
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110131,
+          "ProcessKey" : 2,
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110131,
+          "ProcessKey" : 3,
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110131,
+          "ProcessKey" : 4,
+          "ProgressType" : "MESSAGE_BOX_RIGHT",
+          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
+          "StringId" : "SI_TUTORIAL_MESSAGE_110131_01"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110131,
+          "ProcessKey" : 5,
+          "ProgressType" : "MESSAGE_BOX_RIGHT",
+          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
+          "StringId" : "SI_TUTORIAL_MESSAGE_110131_02"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110131,
+          "ProcessKey" : 6,
+          "ProgressType" : "MESSAGE_BOX_RIGHT",
+          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
+          "StringId" : "SI_TUTORIAL_MESSAGE_110131_03"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 110131,
+          "ProcessKey" : 7,
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11021,
           "ProcessKey" : 1,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
@@ -3777,233 +4201,14 @@
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11021,
           "ProcessKey" : 2,
-          "ProgressType" : "MESSAGE_BOX_MID",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11021_01"
+          "ProgressType" : "PROGRESS_SKIP_CHECK_POPUP",
+          "ProgressValue" : 110,
+          "StringId" : "SI_TUTORIAL_MESSAGE_SKIP_OPERATION"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11021,
           "ProcessKey" : 3,
-          "ProgressType" : "MESSAGE_BOX_MID",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11021_02"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11021,
-          "ProcessKey" : 4,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11021,
-          "ProcessKey" : 5,
-          "ProgressType" : "TOUCH_UI",
-          "ProgressStringValue" : "UI_LOBBY_ACCUE"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11021,
-          "ProcessKey" : 6,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11021,
-          "ProcessKey" : 7,
-          "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 1.5
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11021,
-          "ProcessKey" : 8,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11021,
-          "ProcessKey" : 9,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11021_03"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11021,
-          "ProcessKey" : 10,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "ACCUE_POPUP"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11021,
-          "ProcessKey" : 11,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11021_04"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11021,
-          "ProcessKey" : 12,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11021_05"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11021,
-          "ProcessKey" : 13,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "Bottom"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11021,
-          "ProcessKey" : 14,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11021,
-          "ProcessKey" : 15,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11021_06"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11021,
-          "ProcessKey" : 16,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11021,
-          "ProcessKey" : 17,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "BTN_FAST_REWARD"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11021,
-          "ProcessKey" : 18,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11021,
-          "ProcessKey" : 19,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11021_07"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11021,
-          "ProcessKey" : 20,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11021,
-          "ProcessKey" : 21,
-          "ProgressType" : "TOUCH_UI",
-          "ProgressStringValue" : "BTN_REWARD"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11021,
-          "ProcessKey" : 22,
-          "ProgressType" : "MARK_COMPLETE",
-          "ProgressValue" : 11021
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11021,
-          "ProcessKey" : 23,
-          "ProgressType" : "WAIT_OPEN_UI",
-          "ProgressStringValue" : "UI_POPUP_COMMON_RESULT_GET"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11021,
-          "ProcessKey" : 24,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11021,
-          "ProcessKey" : 25,
-          "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11021,
-          "ProcessKey" : 26,
-          "ProgressType" : "TOUCH_CLOSE_UI",
-          "ProgressStringValue" : "TOUCH_TUTO",
-          "ProgressStringValue2" : "UI_POPUP_COMMON_RESULT_GET"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11021,
-          "ProcessKey" : 27,
-          "ProgressType" : "WAIT_OPEN_UI",
-          "ProgressStringValue" : "UI_POPUP_USER_LEVEL_UP"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11021,
-          "ProcessKey" : 28,
-          "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 1.5
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11021,
-          "ProcessKey" : 29,
-          "ProgressType" : "TOUCH_CLOSE_UI",
-          "ProgressStringValue" : "TOUCH_TUTO",
-          "ProgressStringValue2" : "UI_POPUP_USER_LEVEL_UP"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11021,
-          "ProcessKey" : 30,
-          "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 1.5
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11021,
-          "ProcessKey" : 31,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11021,
-          "ProcessKey" : 32,
-          "ProgressType" : "TOUCH_CLOSE_UI",
-          "ProgressStringValue" : "BTN_X",
-          "ProgressStringValue2" : "ACCUE_POPUP"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11021,
-          "ProcessKey" : 33,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
@@ -4026,6 +4231,27 @@
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11022,
           "ProcessKey" : 3,
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 88
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 11022,
+          "ProcessKey" : 4,
+          "ProgressType" : "HIGHLIGHT_UI",
+          "ProgressStringValue" : "UI_LOBBY_ACCUE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 11022,
+          "ProcessKey" : 5,
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 11022,
+          "ProcessKey" : 6,
           "ProgressType" : "MESSAGE_BOX_RIGHT",
           "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
           "StringId" : "SI_TUTORIAL_MESSAGE_11022_02"
@@ -4033,14 +4259,14 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11022,
-          "ProcessKey" : 4,
+          "ProcessKey" : 7,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 88
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11022,
-          "ProcessKey" : 5,
+          "ProcessKey" : 8,
           "ProgressType" : "TOUCH_OPEN_UI",
           "ProgressStringValue" : "BUTTON_MAINSTREAM",
           "ProgressStringValue2" : "UI_LOBBY_SHORTCUT_SLOT_OPERATION"
@@ -4048,65 +4274,35 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11022,
-          "ProcessKey" : 6,
+          "ProcessKey" : 9,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11022,
-          "ProcessKey" : 7,
+          "ProcessKey" : 10,
           "ProgressType" : "WAIT_OPEN_UI",
           "ProgressStringValue" : "UI_LOBBY_SHORTCUT_SLOT_OPERATION"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11022,
-          "ProcessKey" : 8,
+          "ProcessKey" : 11,
           "ProgressType" : "WAIT_SECONDS",
           "ProgressValue" : 0.5
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11022,
-          "ProcessKey" : 9,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11022_03"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11022,
-          "ProcessKey" : 10,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11022_04"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11022,
-          "ProcessKey" : 11,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11022,
           "ProcessKey" : 12,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "UI_LOBBY_SHORTCUT_SLOT_STORY"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11022,
-          "ProcessKey" : 13,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11022,
-          "ProcessKey" : 14,
+          "ProcessKey" : 13,
           "ProgressType" : "MESSAGE_BOX_RIGHT",
           "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
           "StringId" : "SI_TUTORIAL_MESSAGE_11022_05"
@@ -4114,7 +4310,7 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11022,
-          "ProcessKey" : 15,
+          "ProcessKey" : 14,
           "ProgressType" : "MESSAGE_BOX_RIGHT",
           "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
           "StringId" : "SI_TUTORIAL_MESSAGE_11022_06"
@@ -4122,7 +4318,7 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11022,
-          "ProcessKey" : 16,
+          "ProcessKey" : 15,
           "ProgressType" : "MESSAGE_BOX_RIGHT",
           "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
           "StringId" : "SI_TUTORIAL_MESSAGE_11022_07"
@@ -4130,7 +4326,7 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11022,
-          "ProcessKey" : 17,
+          "ProcessKey" : 16,
           "ProgressType" : "MESSAGE_BOX_RIGHT",
           "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
           "StringId" : "SI_TUTORIAL_MESSAGE_11022_08"
@@ -4138,28 +4334,28 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11022,
-          "ProcessKey" : 18,
+          "ProcessKey" : 17,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 88
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11022,
-          "ProcessKey" : 19,
+          "ProcessKey" : 18,
           "ProgressType" : "TOUCH_UI",
           "ProgressStringValue" : "UI_LOBBY_SHORTCUT_SLOT_OPERATION"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11022,
-          "ProcessKey" : 20,
+          "ProcessKey" : 19,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11022,
-          "ProcessKey" : 21,
+          "ProcessKey" : 20,
           "ProgressType" : "INPUT_BLOCK"
         },
         {
@@ -4335,29 +4531,28 @@
           "ProgressId" : 11023,
           "ProcessKey" : 24,
           "ProgressType" : "MARK_COMPLETE",
-          "ProgressValue" : 11022
+          "ProgressValue" : 11021
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11023,
           "ProcessKey" : 25,
           "ProgressType" : "MARK_COMPLETE",
-          "ProgressValue" : 11023
+          "ProgressValue" : 11022
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11023,
           "ProcessKey" : 26,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
+          "ProgressType" : "MARK_COMPLETE",
+          "ProgressValue" : 11023
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11023,
           "ProcessKey" : 27,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11023_07"
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -4365,33 +4560,41 @@
           "ProcessKey" : 28,
           "ProgressType" : "MESSAGE_BOX_RIGHT",
           "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11023_08"
+          "StringId" : "SI_TUTORIAL_MESSAGE_11023_07"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11023,
           "ProcessKey" : 29,
+          "ProgressType" : "MESSAGE_BOX_RIGHT",
+          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
+          "StringId" : "SI_TUTORIAL_MESSAGE_11023_08"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 11023,
+          "ProcessKey" : 30,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 88
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11023,
-          "ProcessKey" : 30,
+          "ProcessKey" : 31,
           "ProgressType" : "HIGHLIGHT_UI",
           "ProgressStringValue" : "UI_COMMON_SLOT_ORBITAL_ARRAY"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11023,
-          "ProcessKey" : 31,
+          "ProcessKey" : 32,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11023,
-          "ProcessKey" : 32,
+          "ProcessKey" : 33,
           "ProgressType" : "MESSAGE_BOX_RIGHT",
           "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
           "StringId" : "SI_TUTORIAL_MESSAGE_11023_09"
@@ -4399,31 +4602,23 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11023,
-          "ProcessKey" : 33,
+          "ProcessKey" : 34,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 88
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11023,
-          "ProcessKey" : 34,
+          "ProcessKey" : 35,
           "ProgressType" : "HIGHLIGHT_UI",
           "ProgressStringValue" : "SLOT_LEADER_ICON_01"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11023,
-          "ProcessKey" : 35,
+          "ProcessKey" : 36,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11023,
-          "ProcessKey" : 36,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11023_10"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -4431,26 +4626,34 @@
           "ProcessKey" : 37,
           "ProgressType" : "MESSAGE_BOX_RIGHT",
           "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11023_11"
+          "StringId" : "SI_TUTORIAL_MESSAGE_11023_10"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11023,
           "ProcessKey" : 38,
+          "ProgressType" : "MESSAGE_BOX_RIGHT",
+          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
+          "StringId" : "SI_TUTORIAL_MESSAGE_11023_11"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 11023,
+          "ProcessKey" : 39,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11023,
-          "ProcessKey" : 39,
+          "ProcessKey" : 40,
           "ProgressType" : "WAIT_SECONDS",
           "ProgressValue" : 0.5
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11023,
-          "ProcessKey" : 40,
+          "ProcessKey" : 41,
           "ProgressType" : "MESSAGE_BOX_RIGHT",
           "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
           "StringId" : "SI_TUTORIAL_MESSAGE_11023_12"
@@ -4458,28 +4661,28 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11023,
-          "ProcessKey" : 41,
+          "ProcessKey" : 42,
           "ProgressType" : "WAIT_SECONDS",
           "ProgressValue" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11023,
-          "ProcessKey" : 42,
+          "ProcessKey" : 43,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 88
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11023,
-          "ProcessKey" : 43,
+          "ProcessKey" : 44,
           "ProgressType" : "HIGHLIGHT_UI",
           "ProgressStringValue" : "UI_DECK_BATTLE_START"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11023,
-          "ProcessKey" : 44,
+          "ProcessKey" : 45,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
@@ -4636,12 +4839,26 @@
           "ProgressId" : 11031,
           "ProcessKey" : 9,
           "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 1
+          "ProgressValue" : 0.5
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11031,
           "ProcessKey" : 10,
+          "ProgressType" : "GUIDE_VIEW",
+          "ProgressValue" : 60203
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 11031,
+          "ProcessKey" : 11,
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 11031,
+          "ProcessKey" : 12,
           "ProgressType" : "MESSAGE_BOX_RIGHT",
           "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
           "StringId" : "SI_TUTORIAL_MESSAGE_11031_02"
@@ -4649,96 +4866,14 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11031,
-          "ProcessKey" : 11,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11031,
-          "ProcessKey" : 12,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "BTN_NEXT"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11031,
           "ProcessKey" : 13,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11031,
-          "ProcessKey" : 14,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11031_03"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11031,
-          "ProcessKey" : 15,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11031,
-          "ProcessKey" : 16,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "AUTO_NEXT_Toggle"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11031,
-          "ProcessKey" : 17,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11031,
-          "ProcessKey" : 18,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11031_04"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11031,
-          "ProcessKey" : 19,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11031_05"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11031,
-          "ProcessKey" : 20,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11031_06"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11031,
-          "ProcessKey" : 21,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11031_07"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11031,
-          "ProcessKey" : 22,
           "ProgressType" : "WAIT_SECONDS",
           "ProgressValue" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11031,
-          "ProcessKey" : 23,
+          "ProcessKey" : 14,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
@@ -4841,9 +4976,8 @@
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11042,
           "ProcessKey" : 5,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11042_02"
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -4856,8 +4990,8 @@
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11042,
           "ProcessKey" : 7,
-          "ProgressType" : "TOUCH_UI",
-          "ProgressStringValue" : "UI_INVENTORY_UNIT_MENU_MAIN_REINFORCE"
+          "ProgressType" : "HIGHLIGHT_UI",
+          "ProgressStringValue" : "UI_LEVEL_RESONANCE_STAT_GROUP"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -4871,239 +5005,48 @@
           "ProgressId" : 11042,
           "ProcessKey" : 9,
           "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 1
+          "ProgressValue" : 0.5
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11042,
           "ProcessKey" : 10,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11042_03"
+          "ProgressType" : "GUIDE_VIEW",
+          "ProgressValue" : 10601
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11042,
           "ProcessKey" : 11,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11042_04"
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11042,
           "ProcessKey" : 12,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
+          "ProgressType" : "GUIDE_VIEW",
+          "ProgressValue" : 10701
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11042,
           "ProcessKey" : 13,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "Stat_Slot"
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11042,
           "ProcessKey" : 14,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
+          "ProgressType" : "MESSAGE_BOX_RIGHT",
+          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
+          "StringId" : "SI_TUTORIAL_MESSAGE_11042_02"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11042,
           "ProcessKey" : 15,
-          "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 0.5
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11042,
-          "ProcessKey" : 16,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11042_05"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11042,
-          "ProcessKey" : 17,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11042,
-          "ProcessKey" : 18,
-          "ProgressType" : "TOUCH_CLOSE_UI",
-          "ProgressStringValue" : "BTN_X",
-          "ProgressStringValue2" : "POPUP_UNIT_LEVEL_UP"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11042,
-          "ProcessKey" : 19,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11042,
-          "ProcessKey" : 20,
-          "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11042,
-          "ProcessKey" : 21,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11042_06"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11042,
-          "ProcessKey" : 22,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11042,
-          "ProcessKey" : 23,
-          "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 0.5
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11042,
-          "ProcessKey" : 24,
-          "ProgressType" : "TOUCH_UI",
-          "ProgressStringValue" : "UI_INVENTORY_UNIT_MENU_MAIN_RESONANCE"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11042,
-          "ProcessKey" : 25,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11042,
-          "ProcessKey" : 26,
-          "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11042,
-          "ProcessKey" : 27,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11042_07"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11042,
-          "ProcessKey" : 28,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11042,
-          "ProcessKey" : 29,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "BTN_Root"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11042,
-          "ProcessKey" : 30,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11042,
-          "ProcessKey" : 31,
-          "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11042,
-          "ProcessKey" : 32,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11042_08"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11042,
-          "ProcessKey" : 33,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11042_09"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11042,
-          "ProcessKey" : 34,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11042,
-          "ProcessKey" : 35,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "CONTENT"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11042,
-          "ProcessKey" : 36,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11042,
-          "ProcessKey" : 37,
-          "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11042,
-          "ProcessKey" : 38,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11042_10"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11042,
-          "ProcessKey" : 39,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11042,
-          "ProcessKey" : 40,
-          "ProgressType" : "TOUCH_CLOSE_UI",
-          "ProgressStringValue" : "BTN_X",
-          "ProgressStringValue2" : "POPUP_UNIT_RESONANCE"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11042,
-          "ProcessKey" : 41,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
@@ -5140,6 +5083,55 @@
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11051,
           "ProcessKey" : 5,
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 11051,
+          "ProcessKey" : 6,
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 88
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 11051,
+          "ProcessKey" : 7,
+          "ProgressType" : "HIGHLIGHT_UI",
+          "ProgressStringValue" : "UI_SKILL_LIST"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 11051,
+          "ProcessKey" : 8,
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 11051,
+          "ProcessKey" : 9,
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 11051,
+          "ProcessKey" : 10,
+          "ProgressType" : "GUIDE_VIEW",
+          "ProgressValue" : 10901
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 11051,
+          "ProcessKey" : 11,
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 11051,
+          "ProcessKey" : 12,
           "ProgressType" : "MESSAGE_BOX_RIGHT",
           "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
           "StringId" : "SI_TUTORIAL_MESSAGE_11051_02"
@@ -5147,124 +5139,7 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11051,
-          "ProcessKey" : 6,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11051_03"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11051,
-          "ProcessKey" : 7,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11051,
-          "ProcessKey" : 8,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "UI_INVENTORY_UNIT_MENU_SKILL_LIST"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11051,
-          "ProcessKey" : 9,
-          "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11051,
-          "ProcessKey" : 10,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11051,
-          "ProcessKey" : 11,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11051_04"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11051,
-          "ProcessKey" : 12,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11051,
           "ProcessKey" : 13,
-          "ProgressType" : "TOUCH_UI",
-          "ProgressStringValue" : "UI_INVENTORY_UNIT_MENU_SKILL_SLOT_01"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11051,
-          "ProcessKey" : 14,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11051,
-          "ProcessKey" : 15,
-          "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11051,
-          "ProcessKey" : 16,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11051_05"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11051,
-          "ProcessKey" : 17,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11051_06"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11051,
-          "ProcessKey" : 18,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11051,
-          "ProcessKey" : 19,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "UI_SKILL_UP_BUTTON"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11051,
-          "ProcessKey" : 20,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11051,
-          "ProcessKey" : 21,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11051_07"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11051,
-          "ProcessKey" : 22,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
@@ -5301,6 +5176,55 @@
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11061,
           "ProcessKey" : 5,
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 11061,
+          "ProcessKey" : 6,
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 88
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 11061,
+          "ProcessKey" : 7,
+          "ProgressType" : "HIGHLIGHT_UI",
+          "ProgressStringValue" : "Equipment"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 11061,
+          "ProcessKey" : 8,
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 11061,
+          "ProcessKey" : 9,
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 11061,
+          "ProcessKey" : 10,
+          "ProgressType" : "GUIDE_VIEW",
+          "ProgressValue" : 11301
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 11061,
+          "ProcessKey" : 11,
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 11061,
+          "ProcessKey" : 12,
           "ProgressType" : "MESSAGE_BOX_RIGHT",
           "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
           "StringId" : "SI_TUTORIAL_MESSAGE_11061_02"
@@ -5308,87 +5232,7 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11061,
-          "ProcessKey" : 6,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11061_03"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11061,
-          "ProcessKey" : 7,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11061,
-          "ProcessKey" : 8,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "Info_Equipment"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11061,
-          "ProcessKey" : 9,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11061,
-          "ProcessKey" : 10,
-          "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11061,
-          "ProcessKey" : 11,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11061_04"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11061,
-          "ProcessKey" : 12,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11061,
           "ProcessKey" : 13,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "Status"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11061,
-          "ProcessKey" : 14,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11061,
-          "ProcessKey" : 15,
-          "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11061,
-          "ProcessKey" : 16,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11061_05"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11061,
-          "ProcessKey" : 17,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
@@ -5425,53 +5269,50 @@
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11071,
           "ProcessKey" : 5,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11071_02"
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11071,
           "ProcessKey" : 6,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11071_03"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11071,
-          "ProcessKey" : 7,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11071_04"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11071,
-          "ProcessKey" : 8,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 88
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11071,
-          "ProcessKey" : 9,
-          "ProgressType" : "TOUCH_UI",
-          "ProgressStringValue" : "FAVOR_INFO_BUTTON"
+          "ProcessKey" : 7,
+          "ProgressType" : "HIGHLIGHT_UI",
+          "ProgressStringValue" : "Favor"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11071,
-          "ProcessKey" : 10,
+          "ProcessKey" : 8,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11071,
+          "ProcessKey" : 9,
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 11071,
+          "ProcessKey" : 10,
+          "ProgressType" : "GUIDE_VIEW",
+          "ProgressValue" : 11401
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 11071,
           "ProcessKey" : 11,
           "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 1
+          "ProgressValue" : 0.5
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -5479,93 +5320,12 @@
           "ProcessKey" : 12,
           "ProgressType" : "MESSAGE_BOX_RIGHT",
           "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11071_05"
+          "StringId" : "SI_TUTORIAL_MESSAGE_11071_02"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11071,
           "ProcessKey" : 13,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11071_06"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11071,
-          "ProcessKey" : 14,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11071,
-          "ProcessKey" : 15,
-          "ProgressType" : "TOUCH_UI",
-          "ProgressStringValue" : "BTN_X"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11071,
-          "ProcessKey" : 16,
-          "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11071,
-          "ProcessKey" : 17,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11071,
-          "ProcessKey" : 18,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11071_07"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11071,
-          "ProcessKey" : 19,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11071,
-          "ProcessKey" : 20,
-          "ProgressType" : "TOUCH_UI",
-          "ProgressStringValue" : "BTN_Present"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11071,
-          "ProcessKey" : 21,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11071,
-          "ProcessKey" : 22,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11071_08"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11071,
-          "ProcessKey" : 23,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_11071_09"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 11071,
-          "ProcessKey" : 24,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
@@ -6302,88 +6062,41 @@
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 21036,
           "ProcessKey" : 6,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_21036_03"
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 21036,
           "ProcessKey" : 7,
-          "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 0.5
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 21036,
-          "ProcessKey" : 8,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_21036_04"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 21036,
-          "ProcessKey" : 9,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_21036_05"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 21036,
-          "ProcessKey" : 10,
-          "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 0.5
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 21036,
-          "ProcessKey" : 11,
           "ProgressType" : "GUIDE_VIEW",
           "ProgressValue" : 90201
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 21036,
-          "ProcessKey" : 12,
+          "ProcessKey" : 8,
           "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 0.5
+          "ProgressValue" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 21036,
-          "ProcessKey" : 13,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_21036_06"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 21036,
-          "ProcessKey" : 14,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_21036_07"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 21036,
-          "ProcessKey" : 15,
+          "ProcessKey" : 9,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 88
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 21036,
-          "ProcessKey" : 16,
+          "ProcessKey" : 10,
           "ProgressType" : "TOUCH_UI",
           "ProgressStringValue" : "BTN_HOME"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 21036,
-          "ProcessKey" : 17,
+          "ProcessKey" : 11,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
@@ -6441,70 +6154,54 @@
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 21042,
           "ProcessKey" : 3,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_21042_02"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 21042,
-          "ProcessKey" : 4,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_21042_03"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 21042,
-          "ProcessKey" : 5,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 88
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 21042,
-          "ProcessKey" : 6,
+          "ProcessKey" : 4,
           "ProgressType" : "TOUCH_UI",
           "ProgressStringValue" : "UI_LOBBY_MENU_SLOT_0"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 21042,
-          "ProcessKey" : 7,
+          "ProcessKey" : 5,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 21042,
-          "ProcessKey" : 8,
+          "ProcessKey" : 6,
           "ProgressType" : "WAIT_SECONDS",
           "ProgressValue" : 0.5
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 21042,
-          "ProcessKey" : 9,
+          "ProcessKey" : 7,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 88
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 21042,
-          "ProcessKey" : 10,
+          "ProcessKey" : 8,
           "ProgressType" : "TOUCH_UI",
           "ProgressStringValue" : "UI_LOBBY_SHORTCUT_SLOT_CAMPAIGN"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 21042,
-          "ProcessKey" : 11,
+          "ProcessKey" : 9,
           "ProgressType" : "INPUT_BLOCK"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 21042,
-          "ProcessKey" : 12,
+          "ProcessKey" : 10,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
@@ -6548,274 +6245,99 @@
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 21043,
           "ProcessKey" : 6,
-          "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 21043,
-          "ProcessKey" : 7,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_SPEAR.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_21043_02"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 21043,
-          "ProcessKey" : 8,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_SPEAR.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_21043_03"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 21043,
-          "ProcessKey" : 9,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_SPEAR.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_21043_04"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 21043,
-          "ProcessKey" : 10,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 88
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 21043,
-          "ProcessKey" : 11,
+          "ProcessKey" : 7,
           "ProgressType" : "TOUCH_UI",
           "ProgressStringValue" : "UI_CAMPAIGN_MENU_1"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 21043,
-          "ProcessKey" : 12,
+          "ProcessKey" : 8,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 21043,
-          "ProcessKey" : 13,
+          "ProcessKey" : 9,
           "ProgressType" : "WAIT_OPEN_UI",
           "ProgressStringValue" : "UI_CAMPAIGN_SUB_SLOT_LIST"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 21043,
-          "ProcessKey" : 14,
+          "ProcessKey" : 10,
           "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 21043,
+          "ProcessKey" : 11,
+          "ProgressType" : "MESSAGE_BOX_RIGHT",
+          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
+          "StringId" : "SI_TUTORIAL_MESSAGE_21043_02"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 21043,
+          "ProcessKey" : 12,
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 88
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 21043,
+          "ProcessKey" : 13,
+          "ProgressType" : "HIGHLIGHT_UI",
+          "ProgressStringValue" : "UI_CAMPAIGN_SUB_SLOT_LIST"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 21043,
+          "ProcessKey" : 14,
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 21043,
           "ProcessKey" : 15,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_SPEAR.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_21043_05"
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 21043,
           "ProcessKey" : 16,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_SPEAR.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_21043_06"
+          "ProgressType" : "GUIDE_VIEW",
+          "ProgressValue" : 70201
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 21043,
           "ProcessKey" : 17,
           "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 1
+          "ProgressValue" : 0.5
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 21043,
           "ProcessKey" : 18,
           "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_BELL.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_21043_07"
+          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
+          "StringId" : "SI_TUTORIAL_MESSAGE_21043_03"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 21043,
           "ProcessKey" : 19,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_BELL.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_21043_08"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 21043,
-          "ProcessKey" : 20,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_BELL.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_21043_09"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 21043,
-          "ProcessKey" : 21,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 21043,
-          "ProcessKey" : 22,
-          "ProgressType" : "TOUCH_UI",
-          "ProgressStringValue" : "UI_CAMPAIGN_SUB_SLOT_0"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 21043,
-          "ProcessKey" : 23,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 21043,
-          "ProcessKey" : 24,
-          "ProgressType" : "WAIT_OPEN_UI",
-          "ProgressStringValue" : "UI_CAMPAIGN_BATTLE_STAGE_SLOT_0"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 21043,
-          "ProcessKey" : 25,
-          "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 21043,
-          "ProcessKey" : 26,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 21043,
-          "ProcessKey" : 27,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "UI_CAMPAIGN_BATTLE_STAGE_SLOT_0"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 21043,
-          "ProcessKey" : 28,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_BELL.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_21043_10"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 21043,
-          "ProcessKey" : 29,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "UI_CAMPAIGN_BATTLE_STAGE_INFO_RIGHT"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 21043,
-          "ProcessKey" : 30,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_BELL.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_21043_10_1"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 21043,
-          "ProcessKey" : 31,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_BELL.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_21043_10_2"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 21043,
-          "ProcessKey" : 32,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "UI_TOP_BAR_CMN_RES_SLOT"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 21043,
-          "ProcessKey" : 33,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_BELL.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_21043_10_3"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 21043,
-          "ProcessKey" : 34,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 21043,
-          "ProcessKey" : 35,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_BELL.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_21043_11"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 21043,
-          "ProcessKey" : 36,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_BELL.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_21043_12"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 21043,
-          "ProcessKey" : 37,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_BELL.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_21043_13"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 21043,
-          "ProcessKey" : 38,
-          "ProgressType" : "GUIDE_VIEW",
-          "ProgressValue" : 70401
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 21043,
-          "ProcessKey" : 39,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_BELL.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_21043_14"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 21043,
-          "ProcessKey" : 40,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 21043,
-          "ProcessKey" : 41,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "BTN"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 21043,
-          "ProcessKey" : 42,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
@@ -6859,21 +6381,13 @@
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 22001,
           "ProcessKey" : 6,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_22001_02"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 22001,
-          "ProcessKey" : 7,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 88
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 22001,
-          "ProcessKey" : 8,
+          "ProcessKey" : 7,
           "ProgressType" : "TOUCH_OPEN_UI",
           "ProgressStringValue" : "Content_Party",
           "ProgressStringValue2" : "UI_DECK_SLOT_2"
@@ -6881,45 +6395,51 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 22001,
-          "ProcessKey" : 9,
+          "ProcessKey" : 8,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 22001,
-          "ProcessKey" : 10,
+          "ProcessKey" : 9,
           "ProgressType" : "WAIT_SECONDS",
           "ProgressValue" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 22001,
-          "ProcessKey" : 11,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_22001_03"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 22001,
-          "ProcessKey" : 12,
+          "ProcessKey" : 10,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 88
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 22001,
-          "ProcessKey" : 13,
+          "ProcessKey" : 11,
           "ProgressType" : "HIGHLIGHT_UI",
           "ProgressStringValue" : "DeckList"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 22001,
-          "ProcessKey" : 14,
+          "ProcessKey" : 12,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 22001,
+          "ProcessKey" : 13,
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 22001,
+          "ProcessKey" : 14,
+          "ProgressType" : "GUIDE_VIEW",
+          "ProgressValue" : 20405
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -6934,150 +6454,12 @@
           "ProcessKey" : 16,
           "ProgressType" : "MESSAGE_BOX_RIGHT",
           "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_22001_05"
+          "StringId" : "SI_TUTORIAL_MESSAGE_22001_02"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 22001,
           "ProcessKey" : 17,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_22001_06"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 22001,
-          "ProcessKey" : 18,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 22001,
-          "ProcessKey" : 19,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "UI_DECK_SLOT_1"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 22001,
-          "ProcessKey" : 20,
-          "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 0.5
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 22001,
-          "ProcessKey" : 21,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "UI_DECK_SLOT_BATTLE_LINE_1"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 22001,
-          "ProcessKey" : 22,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_22001_07"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 22001,
-          "ProcessKey" : 23,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_22001_08"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 22001,
-          "ProcessKey" : 24,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 22001,
-          "ProcessKey" : 25,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "UI_DECK_SLOT_0"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 22001,
-          "ProcessKey" : 26,
-          "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 0.5
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 22001,
-          "ProcessKey" : 27,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "UI_DECK_SLOT_BATTLE_LINE_0"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 22001,
-          "ProcessKey" : 28,
-          "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 0.5
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 22001,
-          "ProcessKey" : 29,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "UI_DECK_SLOT_2"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 22001,
-          "ProcessKey" : 30,
-          "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 0.5
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 22001,
-          "ProcessKey" : 31,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "UI_DECK_SLOT_BATTLE_LINE_2"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 22001,
-          "ProcessKey" : 32,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 22001,
-          "ProcessKey" : 33,
-          "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 22001,
-          "ProcessKey" : 34,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_22001_09"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 22001,
-          "ProcessKey" : 35,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_22001_10"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 22001,
-          "ProcessKey" : 36,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
@@ -7137,12 +6519,54 @@
           "ProgressId" : 30021,
           "ProcessKey" : 6,
           "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 1
+          "ProgressValue" : 0.5
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30021,
           "ProcessKey" : 7,
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 88
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30021,
+          "ProcessKey" : 8,
+          "ProgressType" : "HIGHLIGHT_UI",
+          "ProgressStringValue" : "LIST"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30021,
+          "ProcessKey" : 9,
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30021,
+          "ProcessKey" : 10,
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30021,
+          "ProcessKey" : 11,
+          "ProgressType" : "GUIDE_VIEW",
+          "ProgressValue" : 100101
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30021,
+          "ProcessKey" : 12,
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30021,
+          "ProcessKey" : 13,
           "ProgressType" : "MESSAGE_BOX_RIGHT",
           "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
           "StringId" : "SI_TUTORIAL_MESSAGE_30021_03"
@@ -7150,46 +6574,7 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30021,
-          "ProcessKey" : 8,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30021_04"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30021,
-          "ProcessKey" : 9,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30021_05"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30021,
-          "ProcessKey" : 10,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30021_06"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30021,
-          "ProcessKey" : 11,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30021_07"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30021,
-          "ProcessKey" : 12,
-          "ProgressType" : "GUIDE_VIEW",
-          "ProgressValue" : 100101
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30021,
-          "ProcessKey" : 13,
+          "ProcessKey" : 14,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
@@ -7213,276 +6598,69 @@
           "ProcessKey" : 3,
           "ProgressType" : "MESSAGE_BOX_RIGHT",
           "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30141_01"
+          "StringId" : "SI_TUTORIAL_MESSAGE_30031_01"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30031,
           "ProcessKey" : 4,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30141_02"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30031,
-          "ProcessKey" : 5,
-          "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30031,
-          "ProcessKey" : 6,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_SCISSORS.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30141_03"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30031,
-          "ProcessKey" : 7,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_SCISSORS.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30141_04"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30031,
-          "ProcessKey" : 8,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_SCISSORS.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30141_05"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30031,
-          "ProcessKey" : 9,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30031,
-          "ProcessKey" : 10,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "DISPATCH_LIST"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30031,
-          "ProcessKey" : 11,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_SCISSORS.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30141_06"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30031,
-          "ProcessKey" : 12,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "UI_SAVIOR_CENTRAL_DISPATCH_LIST_SLOT_0"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30031,
-          "ProcessKey" : 13,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_SCISSORS.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30141_07"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30031,
-          "ProcessKey" : 14,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_SCISSORS.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30141_08"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30031,
-          "ProcessKey" : 15,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "COUNT"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30031,
-          "ProcessKey" : 16,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_SCISSORS.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30141_09"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30031,
-          "ProcessKey" : 17,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_SCISSORS.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30141_10"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30031,
-          "ProcessKey" : 18,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_SCISSORS.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30141_11"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30031,
-          "ProcessKey" : 19,
-          "ProgressType" : "TOUCH_UI",
-          "ProgressStringValue" : "BTN_DISPATCH"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30031,
-          "ProcessKey" : 20,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30031,
-          "ProcessKey" : 21,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_SCISSORS.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30141_12"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30031,
-          "ProcessKey" : 22,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_SCISSORS.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30141_13"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30031,
-          "ProcessKey" : 23,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30031,
-          "ProcessKey" : 24,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "RECOMMENDED_CLASS"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30031,
-          "ProcessKey" : 25,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_SCISSORS.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30141_14"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30031,
-          "ProcessKey" : 26,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_SCISSORS.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30141_15"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30031,
-          "ProcessKey" : 27,
-          "ProgressType" : "TOUCH_UI",
-          "ProgressStringValue" : "AUTOSELECT_BUTTON"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30031,
-          "ProcessKey" : 28,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30031,
-          "ProcessKey" : 29,
           "ProgressType" : "WAIT_SECONDS",
           "ProgressValue" : 0.5
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30031,
-          "ProcessKey" : 30,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_SCISSORS.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30141_16"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30031,
-          "ProcessKey" : 31,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_SCISSORS.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30141_17"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30031,
-          "ProcessKey" : 32,
+          "ProcessKey" : 5,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 88
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30031,
-          "ProcessKey" : 33,
+          "ProcessKey" : 6,
           "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "DISPATCH_START_BUTTON"
+          "ProgressStringValue" : "Bg"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30031,
-          "ProcessKey" : 34,
+          "ProcessKey" : 7,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30031,
-          "ProcessKey" : 35,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_SCISSORS.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30141_18"
+          "ProcessKey" : 8,
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30031,
-          "ProcessKey" : 36,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_SCISSORS.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30141_19"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30031,
-          "ProcessKey" : 37,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_SCISSORS.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30141_20"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30031,
-          "ProcessKey" : 38,
+          "ProcessKey" : 9,
           "ProgressType" : "GUIDE_VIEW",
           "ProgressValue" : 90401
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30031,
-          "ProcessKey" : 39,
+          "ProcessKey" : 10,
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30031,
+          "ProcessKey" : 11,
+          "ProgressType" : "MESSAGE_BOX_RIGHT",
+          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
+          "StringId" : "SI_TUTORIAL_MESSAGE_30031_02"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30031,
+          "ProcessKey" : 12,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
@@ -7513,270 +6691,69 @@
           "ProcessKey" : 4,
           "ProgressType" : "MESSAGE_BOX_RIGHT",
           "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30031_01"
+          "StringId" : "SI_TUTORIAL_MESSAGE_30041_01"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30041,
           "ProcessKey" : 5,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30031_02"
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30041,
           "ProcessKey" : 6,
-          "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 0.5
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 88
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30041,
           "ProcessKey" : 7,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30031_03"
+          "ProgressType" : "HIGHLIGHT_UI",
+          "ProgressStringValue" : "UI_PVP_LIST"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30041,
           "ProcessKey" : 8,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30031_04"
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30041,
           "ProcessKey" : 9,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30031_05"
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30041,
           "ProcessKey" : 10,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30041,
-          "ProcessKey" : 11,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "1_RANK"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30041,
-          "ProcessKey" : 12,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30041,
-          "ProcessKey" : 13,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30031_06"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30041,
-          "ProcessKey" : 14,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30031_07"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30041,
-          "ProcessKey" : 15,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30031_08"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30041,
-          "ProcessKey" : 16,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30031_09"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30041,
-          "ProcessKey" : 17,
-          "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 0.5
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30041,
-          "ProcessKey" : 18,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30031_10"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30041,
-          "ProcessKey" : 19,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30041,
-          "ProcessKey" : 20,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "2_ASYNC"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30041,
-          "ProcessKey" : 21,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30041,
-          "ProcessKey" : 22,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30031_11"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30041,
-          "ProcessKey" : 23,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30031_12"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30041,
-          "ProcessKey" : 24,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30031_13"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30041,
-          "ProcessKey" : 25,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30031_14"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30041,
-          "ProcessKey" : 26,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30031_15"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30041,
-          "ProcessKey" : 27,
-          "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 0.5
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30041,
-          "ProcessKey" : 28,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30031_16"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30041,
-          "ProcessKey" : 29,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30041,
-          "ProcessKey" : 30,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "3_PRIVATE"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30041,
-          "ProcessKey" : 31,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30041,
-          "ProcessKey" : 32,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30031_17"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30041,
-          "ProcessKey" : 33,
-          "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 0.5
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30041,
-          "ProcessKey" : 34,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30031_18"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30041,
-          "ProcessKey" : 35,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30031_19"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30041,
-          "ProcessKey" : 36,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30031_20"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30041,
-          "ProcessKey" : 37,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30031_21"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30041,
-          "ProcessKey" : 38,
           "ProgressType" : "GUIDE_VIEW",
           "ProgressValue" : 80101
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30041,
-          "ProcessKey" : 39,
+          "ProcessKey" : 11,
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30041,
+          "ProcessKey" : 12,
+          "ProgressType" : "MESSAGE_BOX_RIGHT",
+          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
+          "StringId" : "SI_TUTORIAL_MESSAGE_30041_02"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30041,
+          "ProcessKey" : 13,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
@@ -7992,35 +6969,27 @@
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30074,
           "ProcessKey" : 2,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30074_02"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30074,
-          "ProcessKey" : 3,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 88
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30074,
-          "ProcessKey" : 4,
+          "ProcessKey" : 3,
           "ProgressType" : "TOUCH_UI",
           "ProgressStringValue" : "UI_CAMPAIGN_MENU_3"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30074,
-          "ProcessKey" : 5,
+          "ProcessKey" : 4,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30074,
-          "ProcessKey" : 6,
+          "ProcessKey" : 5,
           "ProgressType" : "INPUT_BLOCK"
         },
         {
@@ -8085,22 +7054,22 @@
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30075,
           "ProcessKey" : 9,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30075,
           "ProcessKey" : 10,
-          "ProgressType" : "TOUCH_UI",
-          "ProgressStringValue" : "UI_CMN_BTN"
+          "ProgressType" : "GUIDE_VIEW",
+          "ProgressValue" : 70601
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30075,
           "ProcessKey" : 11,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -8114,73 +7083,6 @@
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30075,
           "ProcessKey" : 13,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30075_04"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30075,
-          "ProcessKey" : 14,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30075,
-          "ProcessKey" : 15,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "BTN_SKILL_POINT"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30075,
-          "ProcessKey" : 16,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30075,
-          "ProcessKey" : 17,
-          "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 0.5
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30075,
-          "ProcessKey" : 18,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30075_05"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30075,
-          "ProcessKey" : 19,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30075_06"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30075,
-          "ProcessKey" : 20,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30075_07"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30075,
-          "ProcessKey" : 21,
-          "ProgressType" : "GUIDE_VIEW",
-          "ProgressValue" : 70601
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30075,
-          "ProcessKey" : 22,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
@@ -8476,42 +7378,20 @@
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30084,
           "ProcessKey" : 5,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30084,
-          "ProcessKey" : 6,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30084_03"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30084,
-          "ProcessKey" : 7,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30084,
-          "ProcessKey" : 8,
           "ProgressType" : "TOUCH_UI",
           "ProgressStringValue" : "UI_CMM_BTN"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30084,
-          "ProcessKey" : 9,
+          "ProcessKey" : 6,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30084,
-          "ProcessKey" : 10,
+          "ProcessKey" : 7,
           "ProgressType" : "INPUT_BLOCK"
         },
         {
@@ -8576,53 +7456,50 @@
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30085,
           "ProcessKey" : 9,
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30085,
+          "ProcessKey" : 10,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 88
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30085,
-          "ProcessKey" : 10,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30085_03"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30085,
           "ProcessKey" : 11,
           "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "UNIT_LIST"
+          "ProgressStringValue" : "UI_STARLINK_GROUP"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30085,
           "ProcessKey" : 12,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30085_04"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30085,
-          "ProcessKey" : 13,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "UI_UNIT_STARLINK_NEW_SLOT_L (4)"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30085,
-          "ProcessKey" : 14,
-          "ProgressType" : "WAIT_SECONDS",
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30085,
+          "ProcessKey" : 13,
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30085,
+          "ProcessKey" : 14,
+          "ProgressType" : "GUIDE_VIEW",
+          "ProgressValue" : 90501
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30085,
           "ProcessKey" : 15,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30085_05"
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -8630,74 +7507,12 @@
           "ProcessKey" : 16,
           "ProgressType" : "MESSAGE_BOX_RIGHT",
           "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30085_06"
+          "StringId" : "SI_TUTORIAL_MESSAGE_30085_03"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30085,
           "ProcessKey" : 17,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "UI_STAR_LINK_LEVEL"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30085,
-          "ProcessKey" : 18,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30085_07"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30085,
-          "ProcessKey" : 19,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30085_08"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30085,
-          "ProcessKey" : 20,
-          "ProgressType" : "CIRCLE_HIGHLIGHT_UI",
-          "ProgressValue" : 1.2,
-          "ProgressStringValue" : "StarLinkSlot_00"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30085,
-          "ProcessKey" : 21,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30085_09"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30085,
-          "ProcessKey" : 22,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30085,
-          "ProcessKey" : 23,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30085_10"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30085,
-          "ProcessKey" : 24,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30085_11"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30085,
-          "ProcessKey" : 25,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
@@ -8728,7 +7543,7 @@
           "ProcessKey" : 4,
           "ProgressType" : "MESSAGE_BOX_RIGHT",
           "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30093_01"
+          "StringId" : "SI_TUTORIAL_MESSAGE_30091_01"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -8736,368 +7551,69 @@
           "ProcessKey" : 5,
           "ProgressType" : "MESSAGE_BOX_RIGHT",
           "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30093_02"
+          "StringId" : "SI_TUTORIAL_MESSAGE_30091_02"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30091,
           "ProcessKey" : 6,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30093_03"
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30091,
           "ProcessKey" : 7,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30093_04"
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 88
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30091,
           "ProcessKey" : 8,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30093_05"
+          "ProgressType" : "HIGHLIGHT_UI",
+          "ProgressStringValue" : "UI"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30091,
           "ProcessKey" : 9,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
+          "ProgressValue" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30091,
           "ProcessKey" : 10,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "UI_TACTICS_MAIN_TAB_LIST"
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30091,
           "ProcessKey" : 11,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 12,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30093_06"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 14,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 15,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "BOOK_SHADOW"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 16,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 17,
-          "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 0.5
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 18,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30093_07"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 19,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 20,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "UI_TACTICS_MAIN_TAB_0"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 21,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 23,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30093_08"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 24,
-          "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 0.5
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 25,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30093_09"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 26,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 27,
-          "ProgressType" : "TOUCH_UI",
-          "ProgressStringValue" : "UI_TACTICS_MAIN_TAB_1"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 28,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 29,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30093_10"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 30,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30093_11"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 31,
-          "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 0.5
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 32,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30093_12"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 33,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 34,
-          "ProgressType" : "TOUCH_UI",
-          "ProgressStringValue" : "UI_TACTICS_MAIN_TAB_2"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 35,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 36,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30093_13"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 37,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30093_14"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 38,
-          "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 0.5
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 39,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30093_15"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 40,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 41,
-          "ProgressType" : "TOUCH_UI",
-          "ProgressStringValue" : "UI_TACTICS_MAIN_TAB_3"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 42,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 43,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30093_16"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 44,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30093_17"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 45,
-          "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 0.5
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 46,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30093_18"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 47,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30093_19"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 48,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 49,
-          "ProgressType" : "TOUCH_UI",
-          "ProgressStringValue" : "UI_TACTICS_MAIN_TAB_4"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 50,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 51,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30093_20"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 52,
-          "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 0.5
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 53,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30093_21"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30091,
-          "ProcessKey" : 54,
           "ProgressType" : "GUIDE_VIEW",
           "ProgressValue" : 90701
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30091,
-          "ProcessKey" : 55,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30093_22"
+          "ProcessKey" : 12,
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30091,
-          "ProcessKey" : 56,
+          "ProcessKey" : 13,
+          "ProgressType" : "MESSAGE_BOX_RIGHT",
+          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
+          "StringId" : "SI_TUTORIAL_MESSAGE_30091_03"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30091,
+          "ProcessKey" : 14,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
@@ -9142,13 +7658,55 @@
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30101,
           "ProcessKey" : 6,
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30101,
+          "ProcessKey" : 7,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 88
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30101,
-          "ProcessKey" : 7,
+          "ProcessKey" : 8,
+          "ProgressType" : "HIGHLIGHT_UI",
+          "ProgressStringValue" : "UI_CLOISTER_SLOT_LIST_1"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30101,
+          "ProcessKey" : 9,
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30101,
+          "ProcessKey" : 10,
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30101,
+          "ProcessKey" : 11,
+          "ProgressType" : "GUIDE_VIEW",
+          "ProgressValue" : 70501
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30101,
+          "ProcessKey" : 12,
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30101,
+          "ProcessKey" : 13,
           "ProgressType" : "MESSAGE_BOX_RIGHT",
           "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
           "StringId" : "SI_TUTORIAL_MESSAGE_30101_03"
@@ -9156,77 +7714,7 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30101,
-          "ProcessKey" : 8,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "UI_CLOISTER_SLOT_LIST"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30101,
-          "ProcessKey" : 9,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "UI_CLOISTER_SLOT_LIST",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30101_04"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30101,
-          "ProcessKey" : 10,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "UI_CLOISTER_SLOT_0",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30101_05"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30101,
-          "ProcessKey" : 11,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "UI_CLOISTER_SLOT_0",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30101_06"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30101,
-          "ProcessKey" : 12,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "UI_CLOISTER_SLOT_LIST_ADJUST_1",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30101_07"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30101,
-          "ProcessKey" : 13,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "UI_CLOISTER_SLOT_LIST_ADJUST_1",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30101_08"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30101,
           "ProcessKey" : 14,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "UI_CLOISTER_SLOT_LIST_ADJUST_1",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30101_09"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30101,
-          "ProcessKey" : 15,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30101_10"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30101,
-          "ProcessKey" : 16,
-          "ProgressType" : "GUIDE_VIEW",
-          "ProgressValue" : 70501
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30101,
-          "ProcessKey" : 17,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
@@ -9271,42 +7759,20 @@
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30111,
           "ProcessKey" : 6,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30111,
-          "ProcessKey" : 7,
-          "ProgressType" : "MESSAGE_BOX_MID",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30111_04"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30111,
-          "ProcessKey" : 8,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30111,
-          "ProcessKey" : 9,
           "ProgressType" : "TOUCH_UI",
           "ProgressStringValue" : "UI_CMM_BTN"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30111,
-          "ProcessKey" : 10,
+          "ProcessKey" : 7,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30111,
-          "ProcessKey" : 11,
+          "ProcessKey" : 8,
           "ProgressType" : "INPUT_BLOCK"
         },
         {
@@ -9357,9 +7823,8 @@
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30112,
           "ProcessKey" : 7,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30112_03"
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -9373,37 +7838,35 @@
           "ProgressId" : 30112,
           "ProcessKey" : 9,
           "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "UI_CRAFT_MAIN_TAB_LIST"
+          "ProgressStringValue" : "UI_CRAFT_LIST_INFO"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30112,
           "ProcessKey" : 10,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30112_04"
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30112,
           "ProcessKey" : 11,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "UI_CRAFT_SLOT_LIST"
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30112,
           "ProcessKey" : 12,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30112_05"
+          "ProgressType" : "GUIDE_VIEW",
+          "ProgressValue" : 90601
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30112,
           "ProcessKey" : 13,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "CraftDetail"
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -9411,19 +7874,12 @@
           "ProcessKey" : 14,
           "ProgressType" : "MESSAGE_BOX_RIGHT",
           "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30112_06"
+          "StringId" : "SI_TUTORIAL_MESSAGE_30112_03"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30112,
           "ProcessKey" : 15,
-          "ProgressType" : "GUIDE_VIEW",
-          "ProgressValue" : 90601
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30112,
-          "ProcessKey" : 16,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
@@ -9460,43 +7916,27 @@
           "ProgressId" : 30121,
           "ProcessKey" : 5,
           "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_SPEAR.png",
+          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
           "StringId" : "SI_TUTORIAL_MESSAGE_30121_01"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30121,
           "ProcessKey" : 6,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_SPEAR.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30121_02"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30121,
-          "ProcessKey" : 7,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_SPEAR.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30121_03"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30121,
-          "ProcessKey" : 8,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 88
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30121,
-          "ProcessKey" : 9,
+          "ProcessKey" : 7,
           "ProgressType" : "TOUCH_UI",
           "ProgressStringValue" : "UI_CAMPAIGN_MENU_2"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30121,
-          "ProcessKey" : 10,
+          "ProcessKey" : 8,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
@@ -9526,16 +7966,15 @@
           "ProgressId" : 30122,
           "ProcessKey" : 4,
           "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_SPEAR.png",
+          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
           "StringId" : "SI_TUTORIAL_MESSAGE_30122_01"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30122,
           "ProcessKey" : 5,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_SPEAR.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30122_02"
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -9562,159 +8001,35 @@
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30122,
           "ProcessKey" : 9,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_SPEAR.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30122_03"
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30122,
           "ProcessKey" : 10,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_SCISSORS.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30122_04"
+          "ProgressType" : "GUIDE_VIEW",
+          "ProgressValue" : 70301
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30122,
           "ProcessKey" : 11,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_SCISSORS.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30122_05"
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30122,
           "ProcessKey" : 12,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
+          "ProgressType" : "MESSAGE_BOX_RIGHT",
+          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
+          "StringId" : "SI_TUTORIAL_MESSAGE_30122_02"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30122,
           "ProcessKey" : 13,
-          "ProgressType" : "TOUCH_OPEN_UI",
-          "ProgressStringValue" : "UI_CAMPAIGN_SUB_SLOT_0",
-          "ProgressStringValue2" : "UI_CAMPAIGN_BATTLE_STAGE_SLOT_0"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30122,
-          "ProcessKey" : 14,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30122,
-          "ProcessKey" : 15,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_SCISSORS.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30122_06"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30122,
-          "ProcessKey" : 16,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30122,
-          "ProcessKey" : 17,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "UI_CAMPAIGN_BATTLE_STAGE_SLOT_0"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30122,
-          "ProcessKey" : 18,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_SCISSORS.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30122_07"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30122,
-          "ProcessKey" : 19,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "UI_CAMPAIGN_BATTLE_STAGE_INFO_RIGHT"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30122,
-          "ProcessKey" : 20,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_SCISSORS.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30122_08"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30122,
-          "ProcessKey" : 21,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_SCISSORS.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30122_09"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30122,
-          "ProcessKey" : 22,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "REWARD"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30122,
-          "ProcessKey" : 23,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_SCISSORS.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30122_10"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30122,
-          "ProcessKey" : 24,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_SCISSORS.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30122_11"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30122,
-          "ProcessKey" : 25,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_SCISSORS.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30122_12"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30122,
-          "ProcessKey" : 26,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_SCISSORS.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30122_13"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30122,
-          "ProcessKey" : 27,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_MAID_SCISSORS.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30122_14"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30122,
-          "ProcessKey" : 28,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "BTN"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30122,
-          "ProcessKey" : 29,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
@@ -9759,54 +8074,50 @@
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30131,
           "ProcessKey" : 6,
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30131,
+          "ProcessKey" : 7,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 88
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30131,
-          "ProcessKey" : 7,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30131_03"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30131,
           "ProcessKey" : 8,
           "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "BOSS_SLOT"
+          "ProgressStringValue" : "Pos"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30131,
           "ProcessKey" : 9,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30131_04"
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30131,
           "ProcessKey" : 10,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30131_05"
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30131,
           "ProcessKey" : 11,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "TOP"
+          "ProgressType" : "GUIDE_VIEW",
+          "ProgressValue" : 70701
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30131,
           "ProcessKey" : 12,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30131_06"
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -9814,67 +8125,270 @@
           "ProcessKey" : 13,
           "ProgressType" : "MESSAGE_BOX_RIGHT",
           "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30131_07"
+          "StringId" : "SI_TUTORIAL_MESSAGE_30131_03"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 30131,
           "ProcessKey" : 14,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "UI_COSMO_OBJ_FIX_UNIT_SLOT"
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30131,
-          "ProcessKey" : 15,
+          "ProgressId" : 30141,
+          "ProcessKey" : 1,
+          "ProgressType" : "MARK_COMPLETE",
+          "ProgressValue" : 30141
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30141,
+          "ProcessKey" : 2,
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30141,
+          "ProcessKey" : 3,
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30141,
+          "ProcessKey" : 4,
           "ProgressType" : "MESSAGE_BOX_RIGHT",
           "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30131_10"
+          "StringId" : "SI_TUTORIAL_MESSAGE_30141_01"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30131,
+          "ProgressId" : 30141,
+          "ProcessKey" : 5,
+          "ProgressType" : "MESSAGE_BOX_RIGHT",
+          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
+          "StringId" : "SI_TUTORIAL_MESSAGE_30141_02"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30141,
+          "ProcessKey" : 6,
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30141,
+          "ProcessKey" : 7,
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 88
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30141,
+          "ProcessKey" : 8,
+          "ProgressType" : "HIGHLIGHT_UI",
+          "ProgressStringValue" : "UI_GUILD_DUNGEON_MAIN"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30141,
+          "ProcessKey" : 9,
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30141,
+          "ProcessKey" : 10,
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30141,
+          "ProcessKey" : 11,
+          "ProgressType" : "GUIDE_VIEW",
+          "ProgressValue" : 100401
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30141,
+          "ProcessKey" : 12,
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 0.5
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30141,
+          "ProcessKey" : 13,
+          "ProgressType" : "MESSAGE_BOX_RIGHT",
+          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
+          "StringId" : "SI_TUTORIAL_MESSAGE_30141_03"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30141,
+          "ProcessKey" : 14,
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30151,
+          "ProcessKey" : 1,
+          "ProgressType" : "MARK_COMPLETE",
+          "ProgressValue" : 30151
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30151,
+          "ProcessKey" : 2,
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30151,
+          "ProcessKey" : 3,
+          "ProgressType" : "WAIT_SECONDS",
+          "ProgressValue" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30151,
+          "ProcessKey" : 4,
+          "ProgressType" : "MESSAGE_BOX_RIGHT",
+          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
+          "StringId" : "SI_TUTORIAL_MESSAGE_30151_01"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30151,
+          "ProcessKey" : 5,
+          "ProgressType" : "MESSAGE_BOX_RIGHT",
+          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
+          "StringId" : "SI_TUTORIAL_MESSAGE_30151_02"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30151,
+          "ProcessKey" : 6,
+          "ProgressType" : "MESSAGE_BOX_RIGHT",
+          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
+          "StringId" : "SI_TUTORIAL_MESSAGE_30151_03"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30151,
+          "ProcessKey" : 7,
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 88
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30151,
+          "ProcessKey" : 8,
+          "ProgressType" : "HIGHLIGHT_UI",
+          "ProgressStringValue" : "2_RULE_PARTY"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30151,
+          "ProcessKey" : 9,
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30151,
+          "ProcessKey" : 10,
+          "ProgressType" : "MESSAGE_BOX_RIGHT",
+          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
+          "StringId" : "SI_TUTORIAL_MESSAGE_30151_04"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30151,
+          "ProcessKey" : 11,
+          "ProgressType" : "MESSAGE_BOX_RIGHT",
+          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
+          "StringId" : "SI_TUTORIAL_MESSAGE_30151_05"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30151,
+          "ProcessKey" : 12,
+          "ProgressType" : "MESSAGE_BOX_RIGHT",
+          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
+          "StringId" : "SI_TUTORIAL_MESSAGE_30151_06"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30151,
+          "ProcessKey" : 13,
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 88
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30151,
+          "ProcessKey" : 14,
+          "ProgressType" : "HIGHLIGHT_UI",
+          "ProgressStringValue" : "BTN_MISSION"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30151,
+          "ProcessKey" : 15,
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 30151,
           "ProcessKey" : 16,
           "ProgressType" : "MESSAGE_BOX_RIGHT",
           "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30131_11"
+          "StringId" : "SI_TUTORIAL_MESSAGE_30151_07"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30131,
+          "ProgressId" : 30151,
           "ProcessKey" : 17,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "POINT"
+          "ProgressType" : "MESSAGE_BOX_RIGHT",
+          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
+          "StringId" : "SI_TUTORIAL_MESSAGE_30151_08"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30131,
+          "ProgressId" : 30151,
           "ProcessKey" : 18,
           "ProgressType" : "MESSAGE_BOX_RIGHT",
           "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30131_12"
+          "StringId" : "SI_TUTORIAL_MESSAGE_30151_09"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30131,
+          "ProgressId" : 30151,
           "ProcessKey" : 19,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "02_MY_RAID_POINT"
+          "ProgressType" : "WAIT_POPUP_CLOSED"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30131,
+          "ProgressId" : 30151,
           "ProcessKey" : 20,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_30131_13"
+          "ProgressType" : "GUIDE_VIEW",
+          "ProgressValue" : 70901
         },
         {
           "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 30131,
+          "ProgressId" : 30151,
           "ProcessKey" : 21,
-          "ProgressType" : "GUIDE_VIEW",
-          "ProgressValue" : 70701
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -9903,20 +8417,12 @@
           "ProcessKey" : 4,
           "ProgressType" : "MESSAGE_BOX_RIGHT",
           "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_40011_01"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 40011,
-          "ProcessKey" : 5,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
           "StringId" : "SI_TUTORIAL_MESSAGE_40011_02"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 40011,
-          "ProcessKey" : 6,
+          "ProcessKey" : 5,
           "ProgressType" : "MESSAGE_BOX_RIGHT",
           "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
           "StringId" : "SI_TUTORIAL_MESSAGE_40011_03"
@@ -9932,60 +8438,12 @@
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 40011,
           "ProcessKey" : 7,
-          "ProgressType" : "TOUCH_OPEN_UI",
-          "ProgressStringValue" : "UI_MS_STORY_MAIN_SLOT_00",
-          "ProgressStringValue2" : "UI_MAIN_SLOT_ENTER_00"
+          "ProgressType" : "HIGHLIGHT_MAINSTORY_TAB"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 40011,
           "ProcessKey" : 8,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_40011_04"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 40011,
-          "ProcessKey" : 9,
-          "ProgressType" : "TOUCH_OPEN_UI",
-          "ProgressStringValue" : "UI_MAIN_SLOT_ENTER_00",
-          "ProgressStringValue2" : "MAINSTORY_POPUP"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 40011,
-          "ProcessKey" : 10,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_40011_05"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 40011,
-          "ProcessKey" : 11,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "MAINSTORY_POPUP"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 40011,
-          "ProcessKey" : 12,
-          "ProgressType" : "MESSAGE_BOX_RIGHT",
-          "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
-          "StringId" : "SI_TUTORIAL_MESSAGE_40011_06"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 40011,
-          "ProcessKey" : 13,
-          "ProgressType" : "HIGHLIGHT_UI",
-          "ProgressStringValue" : "UI_CMM_BTN"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 40011,
-          "ProcessKey" : 14,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
