@@ -1,0 +1,385 @@
+﻿pg = pg or {}
+pg.island_skin_colordiff_template = rawget(pg, "island_skin_colordiff_template") or setmetatable({
+	__name = "island_skin_colordiff_template"
+}, confNEO)
+pg.island_skin_colordiff_template.all = {
+	1011002,
+	1011702,
+	1020502,
+	1051702,
+	1070302,
+	1990302,
+	2012102,
+	2021202,
+	2060302,
+	2990302,
+	3031102,
+	3031202,
+	3040702,
+	3120102,
+	4030302,
+	4990202,
+	4990602,
+	5010702,
+	5010802,
+	5020102,
+	5060102,
+	9010702,
+	96000102
+}
+pg.island_skin_colordiff_template.get_id_list_by_skin_group = {
+	[1011001] = {
+		1011002
+	},
+	[1011701] = {
+		1011702
+	},
+	[1020501] = {
+		1020502
+	},
+	[1051701] = {
+		1051702
+	},
+	[1070301] = {
+		1070302
+	},
+	[29] = {
+		1990302
+	},
+	[2012101] = {
+		2012102
+	},
+	[2021201] = {
+		2021202
+	},
+	[13] = {
+		2060302
+	},
+	[2990301] = {
+		2990302
+	},
+	[3031101] = {
+		3031102
+	},
+	[3031201] = {
+		3031202
+	},
+	[3040701] = {
+		3040702
+	},
+	[3120101] = {
+		3120102
+	},
+	[4030301] = {
+		4030302
+	},
+	[4990201] = {
+		4990202
+	},
+	[9] = {
+		4990602
+	},
+	[13] = {
+		5010702
+	},
+	[5010801] = {
+		5010802
+	},
+	[5020101] = {
+		5020102
+	},
+	[5] = {
+		5060102
+	},
+	[13] = {
+		9010702
+	},
+	[96000101] = {
+		96000102
+	}
+}
+pg.base = pg.base or {}
+pg.base.island_skin_colordiff_template = {}
+
+;(function()
+	pg.base.island_skin_colordiff_template[1011002] = {
+		id = 1011002,
+		model = 1011002,
+		color_icon = "color_1011002",
+		skin_group = 1011001,
+		cost = {
+			{
+				3,
+				1
+			}
+		}
+	}
+	pg.base.island_skin_colordiff_template[1011702] = {
+		id = 1011702,
+		model = 1011702,
+		color_icon = "color_1011702",
+		skin_group = 1011701,
+		cost = {
+			{
+				3,
+				1
+			}
+		}
+	}
+	pg.base.island_skin_colordiff_template[1020502] = {
+		id = 1020502,
+		model = 1020502,
+		color_icon = "color_1020502",
+		skin_group = 1020501,
+		cost = {
+			{
+				3,
+				1
+			}
+		}
+	}
+	pg.base.island_skin_colordiff_template[1051702] = {
+		id = 1051702,
+		model = 1051702,
+		color_icon = "color_1051702",
+		skin_group = 1051701,
+		cost = {
+			{
+				3,
+				1
+			}
+		}
+	}
+	pg.base.island_skin_colordiff_template[1070302] = {
+		id = 1070302,
+		model = 1070302,
+		color_icon = "color_1070302",
+		skin_group = 1070301,
+		cost = {
+			{
+				3,
+				1
+			}
+		}
+	}
+	pg.base.island_skin_colordiff_template[30] = {
+		id = 1990302,
+		model = 1990302,
+		color_icon = "color_1990301",
+		skin_group = 1990301,
+		cost = {
+			{
+				3,
+				1
+			}
+		}
+	}
+	pg.base.island_skin_colordiff_template[2012102] = {
+		id = 2012102,
+		model = 2012102,
+		color_icon = "color_2012102",
+		skin_group = 2012101,
+		cost = {
+			{
+				3,
+				1
+			}
+		}
+	}
+	pg.base.island_skin_colordiff_template[2021202] = {
+		id = 2021202,
+		model = 2021202,
+		color_icon = "color_2021201",
+		skin_group = 2021201,
+		cost = {
+			{
+				3,
+				1
+			}
+		}
+	}
+	pg.base.island_skin_colordiff_template[14] = {
+		id = 2060302,
+		model = 2060302,
+		color_icon = "color_2060302",
+		skin_group = 2060301,
+		cost = {
+			{
+				3,
+				1
+			}
+		}
+	}
+	pg.base.island_skin_colordiff_template[2990302] = {
+		id = 2990302,
+		model = 2990302,
+		color_icon = "color_2990302",
+		skin_group = 2990301,
+		cost = {
+			{
+				3,
+				1
+			}
+		}
+	}
+	pg.base.island_skin_colordiff_template[3031102] = {
+		id = 3031102,
+		model = 3031102,
+		color_icon = "color_3031102",
+		skin_group = 3031101,
+		cost = {
+			{
+				3,
+				1
+			}
+		}
+	}
+	pg.base.island_skin_colordiff_template[3031202] = {
+		id = 3031202,
+		model = 3031202,
+		color_icon = "color_3031202",
+		skin_group = 3031201,
+		cost = {
+			{
+				3,
+				1
+			}
+		}
+	}
+	pg.base.island_skin_colordiff_template[3040702] = {
+		id = 3040702,
+		model = 3040702,
+		color_icon = "color_3040702",
+		skin_group = 3040701,
+		cost = {
+			{
+				3,
+				1
+			}
+		}
+	}
+	pg.base.island_skin_colordiff_template[3120102] = {
+		id = 3120102,
+		model = 3120102,
+		color_icon = "color_3120102",
+		skin_group = 3120101,
+		cost = {
+			{
+				3,
+				1
+			}
+		}
+	}
+	pg.base.island_skin_colordiff_template[4030302] = {
+		id = 4030302,
+		model = 4030302,
+		color_icon = "color_4030302",
+		skin_group = 4030301,
+		cost = {
+			{
+				3,
+				1
+			}
+		}
+	}
+	pg.base.island_skin_colordiff_template[4990202] = {
+		id = 4990202,
+		model = 4990202,
+		color_icon = "color_4990202",
+		skin_group = 4990201,
+		cost = {
+			{
+				3,
+				1
+			}
+		}
+	}
+	pg.base.island_skin_colordiff_template[10] = {
+		id = 4990602,
+		model = 4990602,
+		color_icon = "color_4990602",
+		skin_group = 4990601,
+		cost = {
+			{
+				3,
+				1
+			}
+		}
+	}
+	pg.base.island_skin_colordiff_template[14] = {
+		id = 5010702,
+		model = 5010702,
+		color_icon = "color_5010702",
+		skin_group = 5010701,
+		cost = {
+			{
+				3,
+				1
+			}
+		}
+	}
+	pg.base.island_skin_colordiff_template[5010802] = {
+		id = 5010802,
+		model = 5010802,
+		color_icon = "color_5010801",
+		skin_group = 5010801,
+		cost = {
+			{
+				3,
+				1
+			}
+		}
+	}
+	pg.base.island_skin_colordiff_template[5020102] = {
+		id = 5020102,
+		model = 5020102,
+		color_icon = "color_5020102",
+		skin_group = 5020101,
+		cost = {
+			{
+				3,
+				1
+			}
+		}
+	}
+	pg.base.island_skin_colordiff_template[6] = {
+		id = 5060102,
+		model = 5060102,
+		color_icon = "color_5060102",
+		skin_group = 5060101,
+		cost = {
+			{
+				3,
+				1
+			}
+		}
+	}
+	pg.base.island_skin_colordiff_template[14] = {
+		id = 9010702,
+		model = 9010702,
+		color_icon = "color_9010701",
+		skin_group = 9010701,
+		cost = {
+			{
+				3,
+				1
+			}
+		}
+	}
+	pg.base.island_skin_colordiff_template[96000102] = {
+		id = 96000102,
+		model = 96000102,
+		color_icon = "color_96000101",
+		skin_group = 96000101,
+		cost = {
+			{
+				3,
+				1
+			}
+		}
+	}
+
+	return
+end)()
+
+return

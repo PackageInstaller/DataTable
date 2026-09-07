@@ -1,0 +1,3 @@
+﻿return {
+	id = empty
+}

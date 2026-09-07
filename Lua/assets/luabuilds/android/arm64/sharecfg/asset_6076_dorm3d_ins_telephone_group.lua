@@ -1,0 +1,138 @@
+﻿pg = pg or {}
+pg.dorm3d_ins_telephone_group = rawget(pg, "dorm3d_ins_telephone_group") or setmetatable({
+	__name = "dorm3d_ins_telephone_group"
+}, confNEO)
+pg.dorm3d_ins_telephone_group.__namecode__ = true
+pg.dorm3d_ins_telephone_group.all = {
+	10517301,
+	10517302,
+	30707301,
+	30707302,
+	49905301,
+	49905302,
+	79902301,
+	79902302
+}
+pg.dorm3d_ins_telephone_group.get_id_list_by_ship_group = {
+	[10517] = {
+		10517301,
+		10517302
+	},
+	[30707] = {
+		30707301,
+		30707302
+	},
+	[49905] = {
+		49905301,
+		49905302
+	},
+	[30] = {
+		79902301,
+		79902302
+	}
+}
+pg.base = pg.base or {}
+pg.base.dorm3d_ins_telephone_group = {}
+
+;(function()
+	pg.base.dorm3d_ins_telephone_group[10517301] = {
+		ship_group = 10517,
+		name = "{namecode:199}视频通话",
+		background = "voice_placeholder",
+		type = 1,
+		id = 10517301,
+		unlock_desc = "进入{namecode:199}宿舍",
+		content = {
+			11,
+			110602
+		}
+	}
+	pg.base.dorm3d_ins_telephone_group[10517302] = {
+		ship_group = 10517,
+		name = "{namecode:199}视频通话",
+		background = "voice_placeholder",
+		type = 1,
+		id = 10517302,
+		unlock_desc = "{namecode:199}契合度12级",
+		content = {
+			11,
+			110603
+		}
+	}
+	pg.base.dorm3d_ins_telephone_group[30707301] = {
+		ship_group = 30707,
+		name = "{namecode:97}视频通话",
+		background = "voice_placeholder",
+		type = 1,
+		id = 30707301,
+		unlock_desc = "进入{namecode:97}宿舍",
+		content = {
+			12,
+			120601
+		}
+	}
+	pg.base.dorm3d_ins_telephone_group[30707302] = {
+		ship_group = 30707,
+		name = "{namecode:97}视频通话",
+		background = "voice_placeholder",
+		type = 1,
+		id = 30707302,
+		unlock_desc = "{namecode:97}契合度12级",
+		content = {
+			12,
+			120602
+		}
+	}
+	pg.base.dorm3d_ins_telephone_group[21] = {
+		ship_group = 49905,
+		name = "{namecode:480}视频通话",
+		background = "voice_placeholder",
+		type = 1,
+		id = 49905301,
+		unlock_desc = "进入{namecode:480}宿舍",
+		content = {
+			14,
+			140601
+		}
+	}
+	pg.base.dorm3d_ins_telephone_group[22] = {
+		ship_group = 49905,
+		name = "{namecode:480}视频通话",
+		background = "voice_placeholder",
+		type = 1,
+		id = 49905302,
+		unlock_desc = "{namecode:480}契合度12级",
+		content = {
+			14,
+			140602
+		}
+	}
+	pg.base.dorm3d_ins_telephone_group[79902301] = {
+		ship_group = 79902,
+		name = "纳希莫夫海军上将视频通话",
+		background = "voice_placeholder",
+		type = 1,
+		id = 79902301,
+		unlock_desc = "进入纳希莫夫海军上将宿舍",
+		content = {
+			21,
+			210601
+		}
+	}
+	pg.base.dorm3d_ins_telephone_group[79902302] = {
+		ship_group = 79902,
+		name = "纳希莫夫海军上将视频通话",
+		background = "voice_placeholder",
+		type = 1,
+		id = 79902302,
+		unlock_desc = "纳希莫夫海军上将契合度12级",
+		content = {
+			21,
+			210602
+		}
+	}
+
+	return
+end)()
+
+return

@@ -1,0 +1,18 @@
+﻿local CheaterTavernEvent = class("CheaterTavernEvent")
+
+CheaterTavernEvent.OPEN_SELECT_SHIP = "CheaterTavernEvent:OPEN_SELECT_SHIP"
+CheaterTavernEvent.PLAY_ROOM_LOAD_ROOM_SCENE = "CheaterTavernEvent:PLAY_ROOM_LOAD_ROOM_SCENE"
+CheaterTavernEvent.PLAYER_QUESTION_ANIMATION = "CheaterTavernEvent:PLAYER_QUESTION_ANIMATION"
+CheaterTavernEvent.SHOOT_AND_TURN_TABLE = "CheaterTavernEvent:SHOOT_AND_TURN_TABLE"
+CheaterTavernEvent.PLAYER_OUT_ANIMATION = "CheaterTavernEvent:PLAYER_OUT_ANIMATION"
+CheaterTavernEvent.FIRST_TAKE_SHOOT_TIPS = "CheaterTavernEvent:FIRST_TAKE_SHOOT_TIPS"
+CheaterTavernEvent.FIRST_TAKE_SHOOT_DONE = "CheaterTavernEvent:FIRST_TAKE_SHOOT_DONE"
+CheaterTavernEvent.AFTER_TAKE_SHOOT = "CheaterTavernEvent:AFTER_TAKE_SHOOT"
+CheaterTavernEvent.CLOSE_PREPARE_MAIN_PAGE = "CheaterTavernEvent:CLOSE_PREPARE_MAIN_PAGE"
+CheaterTavernEvent.PLAY_ROOM_EXIT_ROOM_DONE = "CheaterTavernEvent:PLAY_ROOM_EXIT_ROOM_DONE"
+CheaterTavernEvent.CLOSE_SHIP_SELECT_PAGE = "CheaterTavernEvent:CLOSE_SHIP_SELECT_PAGE"
+CheaterTavernEvent.FINSH_PAGE_QUIT = "CheaterTavernEvent:FINSH_PAGE_QUIT"
+CheaterTavernEvent.INITPLAYER_DATA_DONE = "CheaterTavernEvent:INITPLAYER_DATA_DONE"
+CheaterTavernEvent.PLAY_WIN_ANIMATION = "CheaterTavernEvent:PLAY_WIN_ANIMATION"
+
+return CheaterTavernEvent

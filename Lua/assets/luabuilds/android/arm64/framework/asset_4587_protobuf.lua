@@ -1,0 +1,11 @@
+﻿require("Framework.protobuf.containers")
+require("Framework.protobuf.wire_format")
+require("Framework.protobuf.encoder")
+require("Framework.protobuf.decoder")
+require("Framework.protobuf.descriptor")
+require("Framework.protobuf.listener")
+require("Framework.protobuf.text_format")
+require("Framework.protobuf.type_checkers")
+require("Framework.protobuf.protobuf")
+
+return

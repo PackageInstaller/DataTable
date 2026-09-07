@@ -1,0 +1,300 @@
+﻿local LiquorFloorMapMediator = class("LiquorFloorMapMediator", import("view.base.ContextMediator"))
+
+LiquorFloorMapMediator.ADD_WORKPLACE = "LiquorFloorMapMediator:ADD_WORKPLACE"
+LiquorFloorMapMediator.ALL_WORKPLACE = "LiquorFloorMapMediator:ALL_WORKPLACE"
+LiquorFloorMapMediator.OPEN_CHUANWU = "LiquorFloorMapMediator:OPEN_CHUANWU"
+LiquorFloorMapMediator.UPGRADE_WORKPLACE = "LiquorFloorMapMediator:UPGRADE_WORKPLACE"
+LiquorFloorMapMediator.CLICK_BUBBLE = "LiquorFloorMapMediator:CLICK_BUBBLE"
+LiquorFloorMapMediator.GO_FIGHT = "LiquorFloorMapMediator:GO_FIGHT"
+LiquorFloorMapMediator.OPEN_CLUE_BOOK = "LiquorFloorMapMediator.OPEN_CLUE_BOOK"
+LiquorFloorMapMediator.OPEN_LAYER = "LiquorFloorMapMediator:OPEN_LAYER"
+
+function LiquorFloorMapMediator:register()
+	self.upgradeplaceData = nil
+	self.indexplaceData = nil
+
+	self:bind(LiquorFloorMapMediator.OPEN_CHUANWU, function(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
+		self:OnSelShips(arg_2_1, arg_2_2, arg_2_3)
+
+		return
+	end)
+	self:bind(LiquorFloorMapMediator.ADD_WORKPLACE, function(arg_3_0, arg_3_1)
+		self:sendNotification(GAME.ACTIVITY_TOWN_OP, {
+			activity_id = self.activity.id,
+			arg1 = arg_3_1,
+			cmd = TownActivity2.OPERATION.SETTLE_GOLD
+		})
+
+		return
+	end)
+	self:bind(LiquorFloorMapMediator.ALL_WORKPLACE, function(arg_4_0)
+		self:sendNotification(GAME.ACTIVITY_TOWN_OP, {
+			activity_id = self.activity.id,
+			cmd = TownActivity2.OPERATION.ALL_GOLD
+		})
+
+		return
+	end)
+	self:bind(LiquorFloorMapMediator.UPGRADE_WORKPLACE, function(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
+		self.upgradeplaceData = arg_5_2
+		self.indexplaceData = arg_5_3
+
+		self:sendNotification(GAME.ACTIVITY_TOWN_OP, {
+			activity_id = self.activity.id,
+			cmd = TownActivity2.OPERATION.UPGRADE_PLACE,
+			arg1 = arg_5_1
+		})
+
+		return
+	end)
+	self:bind(LiquorFloorMapMediator.CLICK_BUBBLE, function(arg_6_0, arg_6_1)
+		self:sendNotification(GAME.ACTIVITY_TOWN_OP, {
+			activity_id = self.activity.id,
+			cmd = TownActivity2.OPERATION.CLICK_BUBBLE,
+			arg_list = arg_6_1
+		})
+
+		return
+	end)
+	self:bind(LiquorFloorMapMediator.OPEN_CLUE_BOOK, function(arg_7_0, arg_7_1)
+		self:addSubLayers(Context.New({
+			viewComponent = LiquorFloorBookLayer,
+			mediator = LiquorFloorBookMediator
+		}))
+
+		return
+	end)
+	self:bind(LiquorFloorMapMediator.GO_FIGHT, function(arg_8_0, arg_8_1)
+		local var_8_0 = getProxy(ChapterProxy)
+		local var_8_1, var_8_2 = var_8_0:getLastMapForActivity()
+
+		if var_8_1 then
+			if not var_8_0:getMapById(var_8_1):isUnlock() then
+				local var_8_3 = getProxy(ChapterProxy)
+				local var_8_4 = var_8_3:getActiveChapter()
+
+				var_8_1 = var_8_4 and var_8_4:getConfig("map")
+
+				if not var_8_4 then
+					var_8_1 = var_8_3:GetLastNormalMap()
+				end
+
+				pg.m02:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, {
+					chapterId = var_8_4 and var_8_4.id,
+					mapIdx = var_8_1
+				})
+
+				goto label_8_0
+			end
+		end
+
+		pg.m02:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, {
+			chapterId = var_8_2,
+			mapIdx = var_8_1
+		})
+
+		::label_8_0::
+
+		return
+	end)
+	self:bind(LiquorFloorMapMediator.OPEN_LAYER, function(arg_9_0, arg_9_1)
+		self:addSubLayers(arg_9_1)
+
+		return
+	end)
+
+	local var_1_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_TOWN2)
+
+	if not var_1_0 or var_1_0:isEnd() then
+		assert(nil, "not exist act")
+
+		return
+	end
+
+	self.activity = var_1_0
+
+	self.viewComponent:SetActivity(var_1_0)
+
+	return
+end
+
+function LiquorFloorMapMediator:ChangeShips(arg_10_1, arg_10_2)
+	self:sendNotification(GAME.ACTIVITY_TOWN_OP, {
+		activity_id = self.activity.id,
+		cmd = TownActivity.OPERATION.CHANGE_SHIPS,
+		kvargs1 = arg_10_1,
+		arg1 = arg_10_2
+	})
+
+	return
+end
+
+function LiquorFloorMapMediator:OnSelShips(arg_11_1, arg_11_2, arg_11_3)
+	local var_11_0 = self:GetSelectedShipIds(arg_11_2)
+	local var_11_1 = {
+		selectedMin = 0,
+		callbackQuit = true,
+		selectedMax = self.activity:GetUnlockSlotCnt(),
+		quitTeam = arg_11_2 ~= nil
+	}
+
+	var_11_1.ignoredIds = pg.ShipFlagMgr.GetInstance():FilterShips({
+		isActivityNpc = true
+	})
+	var_11_1.selectedIds = Clone(var_11_0)
+	var_11_1.preView = self.viewComponent.__cname
+	var_11_1.hideTagFlags = ShipStatus.TAG_HIDE_BACKYARD
+	var_11_1.blockTagFlags = ShipStatus.TAG_BLOCK_BACKYARD
+
+	function var_11_1.onSelected(arg_12_0, arg_12_1)
+		self:OnSelected(arg_11_1, arg_12_0, arg_12_1, arg_11_3)
+
+		return
+	end
+
+	var_11_1.priorEquipUpShipIDList = _.filter(self.activity:GetShipIds(), function(arg_13_0)
+		return arg_13_0 > 0
+	end)
+	var_11_1.leftTopWithFrameInfo = i18n("backyard_longpress_ship_tip")
+	var_11_1.isLayer = true
+	var_11_1.energyDisplay = true
+
+	self:addSubLayers(Context.New({
+		viewComponent = DockyardScene,
+		mediator = DockyardMediator,
+		data = var_11_1
+	}))
+
+	return
+end
+
+function LiquorFloorMapMediator:OnSelected(arg_14_1, arg_14_2, arg_14_3, arg_14_4)
+	local var_14_0 = Clone(self.activity:GetShipIds())
+	local var_14_2 = {}
+
+	if arg_14_2 == nil or #arg_14_2 == 0 then
+		for iter_14_0, iter_14_1 in ipairs(var_14_0) do
+			if iter_14_1 > 0 then
+				table.insert(var_14_2, {
+					value = 0,
+					key = iter_14_0
+				})
+			end
+		end
+	else
+		for iter_14_2, iter_14_3 in ipairs(var_14_0) do
+			if not arg_14_2[iter_14_2] then
+				table.insert(var_14_2, {
+					value = 0,
+					key = iter_14_2
+				})
+			elseif arg_14_2[iter_14_2] ~= iter_14_3 then
+				table.insert(var_14_2, {
+					key = iter_14_2,
+					value = arg_14_2[iter_14_2]
+				})
+			end
+		end
+	end
+
+	if #var_14_2 > 0 then
+		self:ChangeShips(var_14_2, arg_14_4)
+	end
+
+	existCall(arg_14_3)
+
+	return
+end
+
+function LiquorFloorMapMediator:GetSelectedShipIds(arg_15_1)
+	local var_15_0
+
+	if arg_15_1 then
+		var_15_0 = arg_15_1.id or -1
+	end
+
+	local var_15_1 = {}
+
+	for iter_15_0, iter_15_1 in ipairs(self.activity:GetShipIds()) do
+		local var_15_2 = iter_15_1 > 0 and getProxy(BayProxy):RawGetShipById(iter_15_1)
+
+		if var_15_2 and var_15_2.id ~= var_15_0 then
+			table.insert(var_15_1, var_15_2.id)
+		end
+	end
+
+	return var_15_1
+end
+
+function LiquorFloorMapMediator:listNotificationInterests()
+	return {
+		GAME.ACTIVITY_TOWN_OP_DONE,
+		ActivityProxy.ACTIVITY_UPDATED,
+		GAME.SUBMIT_TASK_AWARD_DOWN,
+		GAME.TOTAL_TASK_UPDATED
+	}
+end
+
+function LiquorFloorMapMediator:handleNotification(arg_17_1)
+	local var_17_0 = arg_17_1:getName()
+	local var_17_1 = arg_17_1:getBody()
+
+	if var_17_0 == GAME.ACTIVITY_TOWN_OP_DONE then
+		switch(var_17_1.cmd, {
+			[TownActivity2.OPERATION.UPGRADE_PLACE] = function()
+				self.viewComponent:InitData()
+
+				self.placeData = self.activity:GetPlaceList()
+
+				self.viewComponent:OnBox(self.placeData[self.indexplaceData], self.indexplaceData, self.activity)
+				self.viewComponent:OnBox(self.placeData[self.indexplaceData], self.indexplaceData, self.activity)
+
+				self.upgradeplaceData = nil
+				self.indexplaceData = nil
+
+				return
+			end,
+			[TownActivity2.OPERATION.CHANGE_SHIPS] = function()
+				self.viewComponent:InitData()
+				self.viewComponent:UpdateBubbles()
+				setActive(self.viewComponent.box, false)
+
+				return
+			end,
+			[TownActivity2.OPERATION.CLICK_BUBBLE] = function()
+				self.viewComponent:InitData()
+				self.viewComponent:UpdateBubbles()
+				self.viewComponent:emit(BaseUI.ON_ACHIEVE, var_17_1.awards)
+
+				return
+			end,
+			[TownActivity2.OPERATION.SETTLE_GOLD] = function()
+				self.viewComponent:InitData()
+				self.viewComponent:emit(BaseUI.ON_ACHIEVE, var_17_1.awards)
+
+				return
+			end,
+			[TownActivity2.OPERATION.ALL_GOLD] = function()
+				self.viewComponent:InitData()
+				self.viewComponent:emit(BaseUI.ON_ACHIEVE, var_17_1.awards)
+
+				return
+			end
+		})
+	elseif var_17_0 == ActivityProxy.ACTIVITY_UPDATED then
+		if var_17_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_TOWN2 then
+			self.activity = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_TOWN2)
+
+			self.viewComponent:SetActivity(self.activity)
+			self.viewComponent:InitData()
+		end
+	elseif var_17_0 == GAME.SUBMIT_TASK_AWARD_DOWN or var_17_0 == GAME.TOTAL_TASK_UPDATED then
+		self.viewComponent:RefreshRedPoint()
+	end
+
+	self.viewComponent:OnStoryList()
+
+	return
+end
+
+return LiquorFloorMapMediator

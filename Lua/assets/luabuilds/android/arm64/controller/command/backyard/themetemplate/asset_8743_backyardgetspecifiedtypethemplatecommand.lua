@@ -1,0 +1,7 @@
+﻿local BackYardGetSpecifiedTypeThemplateCommand = class("BackYardGetSpecifiedTypeThemplateCommand", pm.SimpleCommand)
+
+function BackYardGetSpecifiedTypeThemplateCommand:execute(arg_1_1)
+	return
+end
+
+return BackYardGetSpecifiedTypeThemplateCommand

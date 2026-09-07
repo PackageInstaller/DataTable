@@ -1,0 +1,240 @@
+﻿local IslandTradePriceTrendPage = class("IslandTradePriceTrendPage", import("view.base.BaseSubView"))
+
+function IslandTradePriceTrendPage:getUIName()
+	return "IslandTradePriceTrendUI"
+end
+
+function IslandTradePriceTrendPage:OnLoaded()
+	self.uiPriceList = UIItemList.New(self._tf:Find("frame/prices"), self._tf:Find("frame/prices/tpl"))
+	self.uiDateList = UIItemList.New(self._tf:Find("frame/date"), self._tf:Find("frame/date/tpl"))
+	self.tpl = self._tf:Find("frame/tpl")
+	self.dotContainer = self._tf:Find("frame/dots")
+	self.dots = {}
+
+	return
+end
+
+function IslandTradePriceTrendPage:Show(arg_3_1, arg_3_2)
+	IslandTradePriceTrendPage.super.Show(self)
+
+	self.mode = arg_3_2
+	self.island = arg_3_1
+
+	self:InitPrices()
+	self:InitDate()
+	onNextTick(function()
+		self:UpdateCurve()
+
+		return
+	end)
+
+	return
+end
+
+function IslandTradePriceTrendPage:InitPrices()
+	self.priceList = {}
+
+	local var_5_0 = pg.island_set.treasure_price_scale_y.key_value_varchar
+
+	self.uiPriceList:make(function(arg_6_0, arg_6_1, arg_6_2)
+		if arg_6_0 == UIItemList.EventUpdate then
+			setText(arg_6_2:Find("Text"), var_5_0[arg_6_1 + 1])
+			table.insert(self.priceList, {
+				var_5_0[arg_6_1 + 1],
+				arg_6_2
+			})
+		end
+
+		return
+	end)
+	self.uiPriceList:align(#pg.island_set.treasure_price_scale_y.key_value_varchar)
+	table.sort(self.priceList, function(arg_7_0, arg_7_1)
+		return arg_7_0[1] < arg_7_1[1]
+	end)
+
+	return
+end
+
+function IslandTradePriceTrendPage:CollectDate()
+	local var_8_0 = GetZeroTime()
+
+	if pg.TimeMgr.GetInstance():GetServerHour() <= 2 then
+		var_8_0 = var_8_0 - 0
+	end
+
+	local var_8_1 = var_8_0 - 0 + 10800
+	local var_8_2 = {}
+	local var_8_3 = 0
+
+	for iter_8_0 = 6, 1, -1 do
+		if self.island:GetTradeAgency():ExistTrade(var_8_1 - iter_8_0 * 0) then
+			var_8_3 = iter_8_0
+
+			break
+		end
+	end
+
+	for iter_8_1 = var_8_3, 1, -1 do
+		table.insert(var_8_2, var_8_1 - iter_8_1 * 0)
+	end
+
+	table.insert(var_8_2, var_8_1)
+
+	for iter_8_2 = 1, 7 - #var_8_2 do
+		table.insert(var_8_2, var_8_1 + iter_8_2 * 0)
+	end
+
+	return var_8_2
+end
+
+function IslandTradePriceTrendPage:InitDate()
+	self.dateList = {}
+
+	local var_9_0 = self:CollectDate()
+
+	assert(#var_9_0 == 7)
+	self.uiDateList:make(function(arg_10_0, arg_10_1, arg_10_2)
+		if arg_10_0 == UIItemList.EventUpdate then
+			setText(arg_10_2:Find("Text"), (pg.TimeMgr.GetInstance():STimeDescS(var_9_0[arg_10_1 + 1], "%m.%d")))
+
+			self.dateList[var_9_0[arg_10_1 + 1]] = arg_10_2
+		end
+
+		return
+	end)
+	self.uiDateList:align(#var_9_0)
+
+	return
+end
+
+function IslandTradePriceTrendPage:UpdateCurve()
+	eachChild(self.dotContainer, function(arg_12_0)
+		setActive(arg_12_0, false)
+
+		return
+	end)
+
+	local var_11_0 = self.island:GetTradeAgency()
+	local var_11_1
+
+	if self.mode == IslandTradePage.MODE_SELL then
+		var_11_1 = var_11_0:GetSellPriceTrend()
+	elseif self.mode == IslandTradePage.MODE_PURCHAS then
+		var_11_1 = var_11_0:GetPriceTrend()
+	end
+
+	local var_11_2 = {}
+
+	for iter_11_0, iter_11_1 in pairs(self.dateList) do
+		if var_11_1[iter_11_0] then
+			table.insert(var_11_2, {
+				iter_11_0,
+				(self:UpdateCurveItem(iter_11_0, iter_11_1, var_11_1[iter_11_0]))
+			})
+		end
+	end
+
+	table.sort(var_11_2, function(arg_13_0, arg_13_1)
+		return arg_13_0[1] < arg_13_1[1]
+	end)
+
+	for iter_11_2, iter_11_3 in ipairs(var_11_2) do
+		local var_11_3 = self.dots[iter_11_3[1]]:Find("line")
+
+		if var_11_3 and var_11_2[iter_11_2 + 1] and var_11_2[iter_11_2 + 1][1] - iter_11_3[1] == 0 then
+			var_11_3.sizeDelta = Vector2(4, (Vector2.Distance(iter_11_3[2].localPosition, var_11_2[iter_11_2 + 1][2].localPosition)))
+			var_11_3.up = (var_11_2[iter_11_2 + 1][2].position - iter_11_3[2].position).normalized
+
+			setActive(var_11_3, true)
+		elseif var_11_3 then
+			setActive(var_11_3, false)
+		end
+	end
+
+	self:PlayDotAnimations((_.map(var_11_2, function(arg_14_0)
+		return arg_14_0[2]
+	end)))
+
+	return
+end
+
+function IslandTradePriceTrendPage:PlayDotAnimations(arg_15_1)
+	local var_15_0 = {}
+
+	table.insert(var_15_0, function(arg_16_0)
+		onDelayTick(arg_16_0, 0.33)
+
+		return
+	end)
+
+	for iter_15_0, iter_15_1 in ipairs(arg_15_1) do
+		setActive(iter_15_1, false)
+		table.insert(var_15_0, function(arg_17_0)
+			if IsNil(iter_15_1) then
+				return
+			end
+
+			setActive(iter_15_1, true)
+
+			local var_17_0 = iter_15_1:GetComponent("Animation")
+
+			if not var_17_0 then
+				return
+			end
+
+			var_17_0:Play("anim_IslandTradePriceTrendUI_res_tpl_in")
+			onDelayTick(arg_17_0, 0.33)
+
+			return
+		end)
+	end
+
+	seriesAsync(var_15_0)
+
+	return
+end
+
+function IslandTradePriceTrendPage:UpdateCurveItem(arg_18_1, arg_18_2, arg_18_3)
+	local var_18_0 = self.dots[arg_18_1]
+
+	if not self.dots[arg_18_1] then
+		var_18_0 = cloneTplTo(self.tpl, self.dotContainer)
+		self.dots[arg_18_1] = var_18_0
+	end
+
+	setActive(var_18_0, true)
+	setLocalPosition(var_18_0, Vector3(self.dotContainer:InverseTransformPoint(arg_18_2:Find("Text").position).x, self:GetPriceYScale(arg_18_3), 0))
+	setActive(var_18_0:Find("dot/current"), pg.TimeMgr.GetInstance():IsSameDay(arg_18_1, pg.TimeMgr.GetInstance():GetServerTime()))
+
+	return var_18_0
+end
+
+function IslandTradePriceTrendPage:GetPriceYScale(arg_19_1)
+	local var_19_0 = self.priceList[2][2].localPosition.y - self.priceList[1][2].localPosition.y
+	local var_19_1
+
+	for iter_19_0, iter_19_1 in ipairs(self.priceList) do
+		if arg_19_1 >= iter_19_1[1] then
+			var_19_1 = iter_19_0
+		end
+	end
+
+	if not var_19_1 then
+		return
+	end
+
+	local var_19_2 = 0
+	local var_19_3 = 0
+
+	if var_19_1 == #self.priceList then
+		var_19_2 = self.priceList[var_19_1][1] + 1000
+		var_19_3 = self.priceList[var_19_1][1]
+	else
+		var_19_2 = self.priceList[var_19_1 + 1][1]
+		var_19_3 = self.priceList[var_19_1][1]
+	end
+
+	return self.dotContainer:InverseTransformPoint(self.priceList[var_19_1][2]:Find("Text").position).y + var_19_0 * ((arg_19_1 - var_19_3) / (var_19_2 - var_19_3))
+end
+
+return IslandTradePriceTrendPage

@@ -1,0 +1,26 @@
+﻿local Fushun3GameEvent = class("Fushun3GameEvent")
+
+Fushun3GameEvent.game_over_call = "game over call"
+Fushun3GameEvent.catch_item_call = "catch item call"
+Fushun3GameEvent.create_item_call = "create item call"
+Fushun3GameEvent.create_platform_item_call = "create platform item call"
+Fushun3GameEvent.item_follow_call = "item follow call"
+Fushun3GameEvent.create_monster_call = "create monster call"
+Fushun3GameEvent.player_attack_call = "player_attack_call"
+Fushun3GameEvent.check_player_damage = "check monster damage"
+Fushun3GameEvent.check_item_damage = "check item damage"
+Fushun3GameEvent.char_damaged_call = "char damaged call"
+Fushun3GameEvent.add_anim_effect_call = "add effect call"
+Fushun3GameEvent.add_effect_call = "add effect call"
+Fushun3GameEvent.power_speed_call = "power speed call"
+Fushun3GameEvent.add_monster_score_call = "add monster score call"
+Fushun3GameEvent.power_damage_monster_call = "power_damage_monster"
+Fushun3GameEvent.shot_damage_monster_call = "shot damage monster"
+Fushun3GameEvent.attack_damdage_monster_call = "attack damage monster"
+Fushun3GameEvent.kick_damage_monster_call = "kick damage monster"
+Fushun3GameEvent.script_jump_event = "fushun3 jump event "
+Fushun3GameEvent.script_attack_event = "fushun3 attake event"
+Fushun3GameEvent.script_power_event = "fushun3 power event"
+Fushun3GameEvent.day_night_change = "day night change"
+
+return Fushun3GameEvent

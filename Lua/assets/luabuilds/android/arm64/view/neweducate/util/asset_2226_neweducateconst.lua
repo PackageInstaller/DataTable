@@ -1,0 +1,76 @@
+﻿local NewEducateConst = class("NewEducateConst")
+
+NewEducateConst.NEW_EDUCATE_SELECT_ID = "NEW_EDUCATE_SELECT_ID"
+NewEducateConst.NEW_EDUCATE_SKIP_PLANS_ANIM = "NEW_EDUCATE_SKIP_PLANS_ANIM"
+NewEducateConst.NEW_EDUCATE_EVENT_TIP = "NEW_EDUCATE_EVENT_TIP"
+NewEducateConst.NEW_EDUCATE_NEW_CHILD_TIP = "NEW_EDUCATE_NEW_CHILD_TIP"
+NewEducateConst.NEW_EDUCATE_TAROT_DETAIL_DESC = "NEW_EDUCATE_TAROT_DETAIL_DESC"
+NewEducateConst.NEW_EDUCATE_BENEFIT_SHOW_MAX = "NEW_EDUCATE_BENEFIT_SHOW_MAX"
+NewEducateConst.DROP_TYPE = {
+	ATTR = 1,
+	RES = 2,
+	POLAROID = 3,
+	BUFF = 4,
+	UP_ENTRY = 6,
+	TEMP_ROUND = 7,
+	TAROT = 10000,
+	CHOOSE = 5
+}
+NewEducateConst.CONDITION_TYPE = {
+	ATTR_SUM = 2,
+	DROP = 1,
+	NORMAL_SITE_CNT = 5,
+	ROUND = 4,
+	EVENT_SITE_CNT = 3
+}
+NewEducateConst.PERFORM_TYPE = {
+	MINIGAME = 3,
+	WORD = 4,
+	STORY = 5,
+	PICTURE = 7,
+	OPTION = 2,
+	BUBBLE = 6,
+	CPK = 1
+}
+NewEducateConst.WORD_TYPE = {
+	HIDE_IMAGE = 6,
+	PLAYER = 2,
+	SITE_RIGHT = 5,
+	CHILD = 1,
+	SITE_ASIDE = 0,
+	ASIDE = 3,
+	SITE_LEFT = 4
+}
+NewEducateConst.SITE_TYPE = {
+	SHOP = 2,
+	EVENT = 5,
+	WORK = 3,
+	SHIP = 1,
+	TRAVEL = 4
+}
+NewEducateConst.SITE_NORMAL_TYPE = {
+	TRAVEL = 2,
+	WORK = 1
+}
+NewEducateConst.SITE_STATE_TYPE = {
+	SHIP = 3,
+	SHOP = 4,
+	NORMAL = 2,
+	EVENT = 1
+}
+NewEducateConst.EFFECT_TYPE = {
+	REDUCE_PLAN_COST = 22,
+	EXTRA_PLAN = 7,
+	MULT_PPT = 4,
+	REDUCE_GOODS_COST = 23,
+	ADD_PPT = 3
+}
+NewEducateConst.TRIGGER_TYPE = {
+	PERMANENT = 1
+}
+NewEducateConst.TYPEWRITE_SPEED = 0.04
+NewEducateConst.TYPEWRITE_SPEED_UP = 0.008
+NewEducateConst.LOCK_ENDING = false
+NewEducateConst.LOCK_GUIDE = false
+
+return NewEducateConst

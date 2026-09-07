@@ -1,0 +1,2140 @@
+﻿pg = pg or {}
+pg.dorm3d_camera_zone_template = rawget(pg, "dorm3d_camera_zone_template") or setmetatable({
+	__name = "dorm3d_camera_zone_template"
+}, confNEO)
+pg.dorm3d_camera_zone_template.all = {
+	1001,
+	1002,
+	1003,
+	2001,
+	2002,
+	2003,
+	3001,
+	3002,
+	3003,
+	4001,
+	4002,
+	4003,
+	11001,
+	11002,
+	11003,
+	12001,
+	12002,
+	12003,
+	14001,
+	14002,
+	14003,
+	16001,
+	16002,
+	16003,
+	16004,
+	21001,
+	21002,
+	21003,
+	26001,
+	26002,
+	26003
+}
+pg.dorm3d_camera_zone_template.get_id_list_by_room_id = {
+	{
+		1001,
+		1002,
+		1003
+	},
+	{
+		2001,
+		2002,
+		2003
+	},
+	{
+		3001,
+		3002,
+		3003
+	},
+	{
+		4001,
+		4002,
+		4003
+	},
+	[11] = {
+		11001,
+		11002,
+		11003
+	},
+	[12] = {
+		12001,
+		12002,
+		12003
+	},
+	[14] = {
+		14001,
+		14002,
+		14003
+	},
+	[16] = {
+		16001,
+		16002,
+		16003,
+		16004
+	},
+	[21] = {
+		21001,
+		21002,
+		21003
+	},
+	[26] = {
+		26001,
+		26002,
+		26003
+	}
+}
+pg.base = pg.base or {}
+pg.base.dorm3d_camera_zone_template = {}
+
+;(function()
+	pg.base.dorm3d_camera_zone_template[1001] = {
+		name = "卧室",
+		record_time = 60,
+		room_id = 1,
+		id = 1001,
+		watch_camera = "Bed",
+		regular_anim = {
+			{
+				20220,
+				{
+					1001,
+					1002,
+					1003,
+					1004,
+					1005,
+					1006,
+					1007,
+					1008,
+					1009,
+					1010,
+					1011,
+					1012
+				}
+			}
+		},
+		special_furniture = {
+			{
+				4,
+				100102
+			},
+			{
+				121,
+				100102
+			}
+		},
+		anim_speeds = {
+			0.2,
+			0.5,
+			1,
+			1.5,
+			2
+		},
+		focus_distance = {
+			0.1,
+			5
+		},
+		blur_strength = {
+			-2,
+			2
+		},
+		exposure = {
+			-3,
+			3
+		},
+		contrast = {
+			-100,
+			100
+		},
+		saturation = {
+			-100,
+			100
+		}
+	}
+	pg.base.dorm3d_camera_zone_template[1002] = {
+		name = "餐厅",
+		record_time = 60,
+		room_id = 1,
+		id = 1002,
+		watch_camera = "Table",
+		regular_anim = {
+			{
+				20220,
+				{
+					1001,
+					1002,
+					1003,
+					1004,
+					1005,
+					1006,
+					1007,
+					1008,
+					1009,
+					1010,
+					1011,
+					1012
+				}
+			}
+		},
+		special_furniture = {
+			{
+				1,
+				100202
+			}
+		},
+		anim_speeds = {
+			0.2,
+			0.5,
+			1,
+			1.5,
+			2
+		},
+		focus_distance = {
+			0.1,
+			5
+		},
+		blur_strength = {
+			-2,
+			2
+		},
+		exposure = {
+			-3,
+			3
+		},
+		contrast = {
+			-100,
+			100
+		},
+		saturation = {
+			-100,
+			100
+		}
+	}
+	pg.base.dorm3d_camera_zone_template[1003] = {
+		name = "客厅",
+		record_time = 60,
+		room_id = 1,
+		id = 1003,
+		watch_camera = "Chair",
+		regular_anim = {
+			{
+				20220,
+				{
+					1001,
+					1002,
+					1003,
+					1004,
+					1005,
+					1006,
+					1007,
+					1008,
+					1009,
+					1010,
+					1011,
+					1012
+				}
+			}
+		},
+		special_furniture = {
+			{
+				3,
+				100301
+			},
+			{
+				122,
+				100301
+			},
+			{
+				151,
+				100301
+			}
+		},
+		anim_speeds = {
+			0.2,
+			0.5,
+			1,
+			1.5,
+			2
+		},
+		focus_distance = {
+			0.1,
+			5
+		},
+		blur_strength = {
+			-2,
+			2
+		},
+		exposure = {
+			-3,
+			3
+		},
+		contrast = {
+			-100,
+			100
+		},
+		saturation = {
+			-100,
+			100
+		}
+	}
+	pg.base.dorm3d_camera_zone_template[2001] = {
+		name = "卧室",
+		record_time = 60,
+		room_id = 2,
+		id = 2001,
+		watch_camera = "Bed",
+		regular_anim = {
+			{
+				30221,
+				{
+					2001,
+					2002,
+					2003,
+					2004,
+					2005,
+					2006,
+					2007,
+					2008,
+					2009,
+					2010,
+					2011,
+					2012,
+					2013
+				}
+			}
+		},
+		special_furniture = {
+			{
+				201,
+				120103
+			},
+			{
+				221,
+				100102
+			}
+		},
+		anim_speeds = {
+			0.2,
+			0.5,
+			1,
+			1.5,
+			2
+		},
+		focus_distance = {
+			0.1,
+			5
+		},
+		blur_strength = {
+			-2,
+			2
+		},
+		exposure = {
+			-3,
+			3
+		},
+		contrast = {
+			-100,
+			100
+		},
+		saturation = {
+			-100,
+			100
+		}
+	}
+	pg.base.dorm3d_camera_zone_template[2002] = {
+		name = "餐厅",
+		record_time = 60,
+		room_id = 2,
+		id = 2002,
+		watch_camera = "Table",
+		regular_anim = {
+			{
+				30221,
+				{
+					2001,
+					2002,
+					2003,
+					2004,
+					2005,
+					2006,
+					2007,
+					2008,
+					2009,
+					2010,
+					2011,
+					2012,
+					2013
+				}
+			}
+		},
+		special_furniture = {
+			{
+				202,
+				120203
+			},
+			{
+				222,
+				120203
+			}
+		},
+		anim_speeds = {
+			0.2,
+			0.5,
+			1,
+			1.5,
+			2
+		},
+		focus_distance = {
+			0.1,
+			5
+		},
+		blur_strength = {
+			-2,
+			2
+		},
+		exposure = {
+			-3,
+			3
+		},
+		contrast = {
+			-100,
+			100
+		},
+		saturation = {
+			-100,
+			100
+		}
+	}
+	pg.base.dorm3d_camera_zone_template[2003] = {
+		name = "客厅",
+		record_time = 60,
+		room_id = 2,
+		id = 2003,
+		watch_camera = "Chair",
+		regular_anim = {
+			{
+				30221,
+				{
+					2001,
+					2002,
+					2003,
+					2004,
+					2005,
+					2006,
+					2007,
+					2008,
+					2009,
+					2010,
+					2011,
+					2012,
+					2013
+				}
+			}
+		},
+		special_furniture = {
+			{
+				203,
+				120303
+			},
+			{
+				251,
+				120303
+			},
+			{
+				223,
+				120303
+			}
+		},
+		anim_speeds = {
+			0.2,
+			0.5,
+			1,
+			1.5,
+			2
+		},
+		focus_distance = {
+			0.1,
+			5
+		},
+		blur_strength = {
+			-2,
+			2
+		},
+		exposure = {
+			-3,
+			3
+		},
+		contrast = {
+			-100,
+			100
+		},
+		saturation = {
+			-100,
+			100
+		}
+	}
+	pg.base.dorm3d_camera_zone_template[3001] = {
+		name = "卧室",
+		record_time = 60,
+		room_id = 3,
+		id = 3001,
+		watch_camera = "Bed",
+		regular_anim = {
+			{
+				19903,
+				{
+					3001,
+					3002,
+					3003,
+					3005,
+					3006,
+					3007,
+					3008,
+					3010,
+					3011,
+					3012,
+					3013,
+					3014,
+					3015,
+					3016,
+					3017,
+					3018
+				}
+			}
+		},
+		special_furniture = {
+			{
+				301,
+				120103
+			},
+			{
+				322,
+				120103
+			},
+			{
+				324,
+				120103
+			}
+		},
+		anim_speeds = {
+			0.2,
+			0.5,
+			1,
+			1.5,
+			2
+		},
+		focus_distance = {
+			0.1,
+			5
+		},
+		blur_strength = {
+			-2,
+			2
+		},
+		exposure = {
+			-3,
+			3
+		},
+		contrast = {
+			-100,
+			100
+		},
+		saturation = {
+			-100,
+			100
+		}
+	}
+	pg.base.dorm3d_camera_zone_template[3002] = {
+		name = "娱乐区",
+		record_time = 60,
+		room_id = 3,
+		id = 3002,
+		watch_camera = "Table",
+		regular_anim = {
+			{
+				19903,
+				{
+					3001,
+					3002,
+					3003,
+					3005,
+					3006,
+					3007,
+					3008,
+					3010,
+					3011,
+					3012,
+					3013,
+					3014,
+					3015,
+					3016,
+					3017,
+					3018
+				}
+			}
+		},
+		special_furniture = {
+			{
+				302,
+				120203
+			},
+			{
+				321,
+				120203
+			}
+		},
+		anim_speeds = {
+			0.2,
+			0.5,
+			1,
+			1.5,
+			2
+		},
+		focus_distance = {
+			0.1,
+			5
+		},
+		blur_strength = {
+			-2,
+			2
+		},
+		exposure = {
+			-3,
+			3
+		},
+		contrast = {
+			-100,
+			100
+		},
+		saturation = {
+			-100,
+			100
+		}
+	}
+	pg.base.dorm3d_camera_zone_template[3003] = {
+		name = "客厅",
+		record_time = 60,
+		room_id = 3,
+		id = 3003,
+		watch_camera = "Chair",
+		regular_anim = {
+			{
+				19903,
+				{
+					3001,
+					3002,
+					3003,
+					3005,
+					3006,
+					3007,
+					3008,
+					3010,
+					3011,
+					3012,
+					3013,
+					3014,
+					3015,
+					3016,
+					3017,
+					3018
+				}
+			}
+		},
+		special_furniture = {
+			{
+				303,
+				120303
+			},
+			{
+				323,
+				120303
+			}
+		},
+		anim_speeds = {
+			0.2,
+			0.5,
+			1,
+			1.5,
+			2
+		},
+		focus_distance = {
+			0.1,
+			5
+		},
+		blur_strength = {
+			-2,
+			2
+		},
+		exposure = {
+			-3,
+			3
+		},
+		contrast = {
+			-100,
+			100
+		},
+		saturation = {
+			-100,
+			100
+		}
+	}
+	pg.base.dorm3d_camera_zone_template[4001] = {
+		name = "沙滩椅",
+		record_time = 60,
+		room_id = 4,
+		id = 4001,
+		watch_camera = "Tianlangxing",
+		regular_anim = {
+			{
+				20220,
+				{
+					4001,
+					4002,
+					4003,
+					4004,
+					4005
+				}
+			},
+			{
+				30221,
+				{
+					4201,
+					4202,
+					4203,
+					4204,
+					4205
+				}
+			},
+			{
+				19903,
+				{
+					4401,
+					4402,
+					4403,
+					4404,
+					4405
+				}
+			}
+		},
+		special_furniture = {},
+		anim_speeds = {
+			0.2,
+			0.5,
+			1,
+			1.5,
+			2
+		},
+		focus_distance = {
+			0.1,
+			5
+		},
+		blur_strength = {
+			-2,
+			2
+		},
+		exposure = {
+			-3,
+			3
+		},
+		contrast = {
+			-100,
+			100
+		},
+		saturation = {
+			-100,
+			100
+		}
+	}
+	pg.base.dorm3d_camera_zone_template[4002] = {
+		name = "遮阳伞",
+		record_time = 60,
+		room_id = 4,
+		id = 4002,
+		watch_camera = "Nengdai",
+		regular_anim = {
+			{
+				20220,
+				{
+					4001,
+					4002,
+					4003,
+					4004,
+					4005
+				}
+			},
+			{
+				30221,
+				{
+					4201,
+					4202,
+					4203,
+					4204,
+					4205
+				}
+			},
+			{
+				19903,
+				{
+					4401,
+					4402,
+					4403,
+					4404,
+					4405
+				}
+			}
+		},
+		special_furniture = {},
+		anim_speeds = {
+			0.2,
+			0.5,
+			1,
+			1.5,
+			2
+		},
+		focus_distance = {
+			0.1,
+			5
+		},
+		blur_strength = {
+			-2,
+			2
+		},
+		exposure = {
+			-3,
+			3
+		},
+		contrast = {
+			-100,
+			100
+		},
+		saturation = {
+			-100,
+			100
+		}
+	}
+	pg.base.dorm3d_camera_zone_template[4003] = {
+		name = "海滩",
+		record_time = 60,
+		room_id = 4,
+		id = 4003,
+		watch_camera = "Ankeleiqi",
+		regular_anim = {
+			{
+				20220,
+				{
+					4001,
+					4002,
+					4003,
+					4004,
+					4005
+				}
+			},
+			{
+				30221,
+				{
+					4201,
+					4202,
+					4203,
+					4204,
+					4205
+				}
+			},
+			{
+				19903,
+				{
+					4401,
+					4402,
+					4403,
+					4404,
+					4405
+				}
+			}
+		},
+		special_furniture = {},
+		anim_speeds = {
+			0.2,
+			0.5,
+			1,
+			1.5,
+			2
+		},
+		focus_distance = {
+			0.1,
+			5
+		},
+		blur_strength = {
+			-2,
+			2
+		},
+		exposure = {
+			-3,
+			3
+		},
+		contrast = {
+			-100,
+			100
+		},
+		saturation = {
+			-100,
+			100
+		}
+	}
+	pg.base.dorm3d_camera_zone_template[11001] = {
+		name = "卧室",
+		record_time = 60,
+		room_id = 11,
+		id = 11001,
+		watch_camera = "Bed",
+		regular_anim = {
+			{
+				10517,
+				{
+					11001,
+					11002,
+					11003,
+					11004,
+					11005,
+					11006,
+					11007,
+					11008,
+					11009,
+					11010,
+					11011,
+					11012,
+					11013,
+					11014
+				}
+			}
+		},
+		special_furniture = {
+			{
+				1101,
+				1110102
+			},
+			{
+				1153,
+				1110102
+			}
+		},
+		anim_speeds = {
+			0.2,
+			0.5,
+			1,
+			1.5,
+			2
+		},
+		focus_distance = {
+			0.1,
+			5
+		},
+		blur_strength = {
+			-2,
+			2
+		},
+		exposure = {
+			-3,
+			3
+		},
+		contrast = {
+			-100,
+			100
+		},
+		saturation = {
+			-100,
+			100
+		}
+	}
+	pg.base.dorm3d_camera_zone_template[11002] = {
+		name = "餐厅",
+		record_time = 60,
+		room_id = 11,
+		id = 11002,
+		watch_camera = "Table",
+		regular_anim = {
+			{
+				10517,
+				{
+					11001,
+					11002,
+					11003,
+					11004,
+					11005,
+					11006,
+					11007,
+					11008,
+					11009,
+					11010,
+					11011,
+					11012,
+					11013,
+					11014
+				}
+			}
+		},
+		special_furniture = {
+			{
+				1102,
+				1110203
+			},
+			{
+				1154,
+				1110204
+			}
+		},
+		anim_speeds = {
+			0.2,
+			0.5,
+			1,
+			1.5,
+			2
+		},
+		focus_distance = {
+			0.1,
+			5
+		},
+		blur_strength = {
+			-2,
+			2
+		},
+		exposure = {
+			-3,
+			3
+		},
+		contrast = {
+			-100,
+			100
+		},
+		saturation = {
+			-100,
+			100
+		}
+	}
+	pg.base.dorm3d_camera_zone_template[11003] = {
+		name = "客厅",
+		record_time = 60,
+		room_id = 11,
+		id = 11003,
+		watch_camera = "Chair",
+		regular_anim = {
+			{
+				10517,
+				{
+					11001,
+					11002,
+					11003,
+					11004,
+					11005,
+					11006,
+					11007,
+					11008,
+					11009,
+					11010,
+					11011,
+					11012,
+					11013,
+					11014
+				}
+			}
+		},
+		special_furniture = {
+			{
+				1103,
+				1110303
+			},
+			{
+				1151,
+				1110303
+			},
+			{
+				1152,
+				1110303
+			}
+		},
+		anim_speeds = {
+			0.2,
+			0.5,
+			1,
+			1.5,
+			2
+		},
+		focus_distance = {
+			0.1,
+			5
+		},
+		blur_strength = {
+			-2,
+			2
+		},
+		exposure = {
+			-3,
+			3
+		},
+		contrast = {
+			-100,
+			100
+		},
+		saturation = {
+			-100,
+			100
+		}
+	}
+	pg.base.dorm3d_camera_zone_template[12001] = {
+		name = "卧室",
+		record_time = 60,
+		room_id = 12,
+		id = 12001,
+		watch_camera = "Bed",
+		regular_anim = {
+			{
+				30707,
+				{
+					12001,
+					12002,
+					12003,
+					12004,
+					12005,
+					12006,
+					12007,
+					12008,
+					12009,
+					12010,
+					12011,
+					12012,
+					12013,
+					12014,
+					12015,
+					12016,
+					12017,
+					12018,
+					12019
+				}
+			}
+		},
+		special_furniture = {
+			{
+				1201,
+				1120103
+			},
+			{
+				1221,
+				1120103
+			}
+		},
+		anim_speeds = {
+			0.2,
+			0.5,
+			1,
+			1.5,
+			2
+		},
+		focus_distance = {
+			0.1,
+			5
+		},
+		blur_strength = {
+			-2,
+			2
+		},
+		exposure = {
+			-3,
+			3
+		},
+		contrast = {
+			-100,
+			100
+		},
+		saturation = {
+			-100,
+			100
+		}
+	}
+	pg.base.dorm3d_camera_zone_template[12002] = {
+		name = "餐厅",
+		record_time = 60,
+		room_id = 12,
+		id = 12002,
+		watch_camera = "Table",
+		regular_anim = {
+			{
+				30707,
+				{
+					12001,
+					12002,
+					12003,
+					12004,
+					12005,
+					12006,
+					12007,
+					12008,
+					12009,
+					12010,
+					12011,
+					12012,
+					12013,
+					12014,
+					12015,
+					12016,
+					12017,
+					12018,
+					12019
+				}
+			}
+		},
+		special_furniture = {
+			{
+				1202,
+				1120203
+			}
+		},
+		anim_speeds = {
+			0.2,
+			0.5,
+			1,
+			1.5,
+			2
+		},
+		focus_distance = {
+			0.1,
+			5
+		},
+		blur_strength = {
+			-2,
+			2
+		},
+		exposure = {
+			-3,
+			3
+		},
+		contrast = {
+			-100,
+			100
+		},
+		saturation = {
+			-100,
+			100
+		}
+	}
+	pg.base.dorm3d_camera_zone_template[12003] = {
+		name = "客厅",
+		record_time = 60,
+		room_id = 12,
+		id = 12003,
+		watch_camera = "Chair",
+		regular_anim = {
+			{
+				30707,
+				{
+					12001,
+					12002,
+					12003,
+					12004,
+					12005,
+					12006,
+					12007,
+					12008,
+					12009,
+					12010,
+					12011,
+					12012,
+					12013,
+					12014,
+					12015,
+					12016,
+					12017,
+					12018,
+					12019
+				}
+			}
+		},
+		special_furniture = {
+			{
+				1203,
+				1120303
+			},
+			{
+				1222,
+				1120304
+			},
+			{
+				1223,
+				1120303
+			}
+		},
+		anim_speeds = {
+			0.2,
+			0.5,
+			1,
+			1.5,
+			2
+		},
+		focus_distance = {
+			0.1,
+			5
+		},
+		blur_strength = {
+			-2,
+			2
+		},
+		exposure = {
+			-3,
+			3
+		},
+		contrast = {
+			-100,
+			100
+		},
+		saturation = {
+			-100,
+			100
+		}
+	}
+	pg.base.dorm3d_camera_zone_template[14001] = {
+		name = "卧室",
+		record_time = 60,
+		room_id = 14,
+		id = 14001,
+		watch_camera = "Bed",
+		regular_anim = {
+			{
+				49905,
+				{
+					14001,
+					14002,
+					14003,
+					14004,
+					14005,
+					14006,
+					14007,
+					14008,
+					14009,
+					14010,
+					14011,
+					14012,
+					14013,
+					14014,
+					14015
+				}
+			}
+		},
+		special_furniture = {
+			{
+				1401,
+				1140101
+			},
+			{
+				1461,
+				1140101
+			},
+			{
+				1468,
+				1140104
+			}
+		},
+		anim_speeds = {
+			0.2,
+			0.5,
+			1,
+			1.5,
+			2
+		},
+		focus_distance = {
+			0.1,
+			5
+		},
+		blur_strength = {
+			-2,
+			2
+		},
+		exposure = {
+			-3,
+			3
+		},
+		contrast = {
+			-100,
+			100
+		},
+		saturation = {
+			-100,
+			100
+		}
+	}
+	pg.base.dorm3d_camera_zone_template[14002] = {
+		name = "书房",
+		record_time = 60,
+		room_id = 14,
+		id = 14002,
+		watch_camera = "Table",
+		regular_anim = {
+			{
+				49905,
+				{
+					14001,
+					14002,
+					14003,
+					14004,
+					14005,
+					14006,
+					14007,
+					14008,
+					14009,
+					14010,
+					14011,
+					14012,
+					14013,
+					14014,
+					14015
+				}
+			}
+		},
+		special_furniture = {
+			{
+				1402,
+				1140201
+			},
+			{
+				1462,
+				1140201
+			}
+		},
+		anim_speeds = {
+			0.2,
+			0.5,
+			1,
+			1.5,
+			2
+		},
+		focus_distance = {
+			0.1,
+			5
+		},
+		blur_strength = {
+			-2,
+			2
+		},
+		exposure = {
+			-3,
+			3
+		},
+		contrast = {
+			-100,
+			100
+		},
+		saturation = {
+			-100,
+			100
+		}
+	}
+	pg.base.dorm3d_camera_zone_template[14003] = {
+		name = "客厅",
+		record_time = 60,
+		room_id = 14,
+		id = 14003,
+		watch_camera = "Chair",
+		regular_anim = {
+			{
+				49905,
+				{
+					14001,
+					14002,
+					14003,
+					14004,
+					14005,
+					14006,
+					14007,
+					14008,
+					14009,
+					14010,
+					14011,
+					14012,
+					14013,
+					14014,
+					14015
+				}
+			}
+		},
+		special_furniture = {
+			{
+				1403,
+				1140301
+			},
+			{
+				1463,
+				1140301
+			}
+		},
+		anim_speeds = {
+			0.2,
+			0.5,
+			1,
+			1.5,
+			2
+		},
+		focus_distance = {
+			0.1,
+			5
+		},
+		blur_strength = {
+			-2,
+			2
+		},
+		exposure = {
+			-3,
+			3
+		},
+		contrast = {
+			-100,
+			100
+		},
+		saturation = {
+			-100,
+			100
+		}
+	}
+	pg.base.dorm3d_camera_zone_template[16001] = {
+		name = "舞池",
+		record_time = 60,
+		room_id = 16,
+		id = 16001,
+		watch_camera = "xinzexi",
+		regular_anim = {
+			{
+				10517,
+				{
+					16001,
+					16001,
+					16003,
+					16004,
+					16005
+				}
+			},
+			{
+				30707,
+				{
+					16006,
+					16007,
+					16008,
+					16009,
+					16010
+				}
+			},
+			{
+				49905,
+				{
+					16011,
+					16012,
+					16013,
+					16014,
+					16015
+				}
+			},
+			{
+				20220,
+				{
+					16016,
+					16017,
+					16018,
+					16019,
+					16020
+				}
+			}
+		},
+		special_furniture = {},
+		anim_speeds = {
+			0.2,
+			0.5,
+			1,
+			1.5,
+			2
+		},
+		focus_distance = {
+			0.1,
+			5
+		},
+		blur_strength = {
+			-2,
+			2
+		},
+		exposure = {
+			-3,
+			3
+		},
+		contrast = {
+			-100,
+			100
+		},
+		saturation = {
+			-100,
+			100
+		}
+	}
+	pg.base.dorm3d_camera_zone_template[16002] = {
+		name = "吧台",
+		record_time = 60,
+		room_id = 16,
+		id = 16002,
+		watch_camera = "dafeng",
+		regular_anim = {
+			{
+				10517,
+				{
+					16001,
+					16001,
+					16003,
+					16004,
+					16005
+				}
+			},
+			{
+				30707,
+				{
+					16006,
+					16007,
+					16008,
+					16009,
+					16010
+				}
+			},
+			{
+				49905,
+				{
+					16011,
+					16012,
+					16013,
+					16014,
+					16015
+				}
+			},
+			{
+				20220,
+				{
+					16016,
+					16017,
+					16018,
+					16019,
+					16020
+				}
+			}
+		},
+		special_furniture = {},
+		anim_speeds = {
+			0.2,
+			0.5,
+			1,
+			1.5,
+			2
+		},
+		focus_distance = {
+			0.1,
+			5
+		},
+		blur_strength = {
+			-2,
+			2
+		},
+		exposure = {
+			-3,
+			3
+		},
+		contrast = {
+			-100,
+			100
+		},
+		saturation = {
+			-100,
+			100
+		}
+	}
+	pg.base.dorm3d_camera_zone_template[16003] = {
+		name = "卡座",
+		record_time = 60,
+		room_id = 16,
+		id = 16003,
+		watch_camera = "aijier",
+		regular_anim = {
+			{
+				10517,
+				{
+					16001,
+					16001,
+					16003,
+					16004,
+					16005
+				}
+			},
+			{
+				30707,
+				{
+					16006,
+					16007,
+					16008,
+					16009,
+					16010
+				}
+			},
+			{
+				49905,
+				{
+					16011,
+					16012,
+					16013,
+					16014,
+					16015
+				}
+			},
+			{
+				20220,
+				{
+					16016,
+					16017,
+					16018,
+					16019,
+					16020
+				}
+			}
+		},
+		special_furniture = {},
+		anim_speeds = {
+			0.2,
+			0.5,
+			1,
+			1.5,
+			2
+		},
+		focus_distance = {
+			0.1,
+			5
+		},
+		blur_strength = {
+			-2,
+			2
+		},
+		exposure = {
+			-3,
+			3
+		},
+		contrast = {
+			-100,
+			100
+		},
+		saturation = {
+			-100,
+			100
+		}
+	}
+	pg.base.dorm3d_camera_zone_template[16004] = {
+		name = "休息区",
+		record_time = 60,
+		room_id = 16,
+		id = 16004,
+		watch_camera = "tianlangxing",
+		regular_anim = {
+			{
+				10517,
+				{
+					16001,
+					16001,
+					16003,
+					16004,
+					16005
+				}
+			},
+			{
+				30707,
+				{
+					16006,
+					16007,
+					16008,
+					16009,
+					16010
+				}
+			},
+			{
+				49905,
+				{
+					16011,
+					16012,
+					16013,
+					16014,
+					16015
+				}
+			},
+			{
+				20220,
+				{
+					16016,
+					16017,
+					16018,
+					16019,
+					16020
+				}
+			}
+		},
+		special_furniture = {},
+		anim_speeds = {
+			0.2,
+			0.5,
+			1,
+			1.5,
+			2
+		},
+		focus_distance = {
+			0.1,
+			5
+		},
+		blur_strength = {
+			-2,
+			2
+		},
+		exposure = {
+			-3,
+			3
+		},
+		contrast = {
+			-100,
+			100
+		},
+		saturation = {
+			-100,
+			100
+		}
+	}
+	pg.base.dorm3d_camera_zone_template[21001] = {
+		name = "卧室",
+		record_time = 60,
+		room_id = 21,
+		id = 21001,
+		watch_camera = "Bed",
+		regular_anim = {
+			{
+				79902,
+				{
+					21001,
+					21002,
+					21003,
+					21004,
+					21005,
+					21006,
+					21007,
+					21008,
+					21009,
+					21010,
+					21011,
+					21012,
+					21013,
+					21014,
+					21015
+				}
+			}
+		},
+		special_furniture = {
+			{
+				2101,
+				2210101
+			}
+		},
+		anim_speeds = {
+			0.2,
+			0.5,
+			1,
+			1.5,
+			2
+		},
+		focus_distance = {
+			0.1,
+			5
+		},
+		blur_strength = {
+			-2,
+			2
+		},
+		exposure = {
+			-3,
+			3
+		},
+		contrast = {
+			-100,
+			100
+		},
+		saturation = {
+			-100,
+			100
+		}
+	}
+	pg.base.dorm3d_camera_zone_template[21002] = {
+		name = "工房",
+		record_time = 60,
+		room_id = 21,
+		id = 21002,
+		watch_camera = "Table",
+		regular_anim = {
+			{
+				79902,
+				{
+					21001,
+					21002,
+					21003,
+					21004,
+					21005,
+					21006,
+					21007,
+					21008,
+					21009,
+					21010,
+					21011,
+					21012,
+					21013,
+					21014,
+					21015
+				}
+			}
+		},
+		special_furniture = {
+			{
+				2102,
+				2210201
+			},
+			{
+				2161,
+				2210201
+			}
+		},
+		anim_speeds = {
+			0.2,
+			0.5,
+			1,
+			1.5,
+			2
+		},
+		focus_distance = {
+			0.1,
+			5
+		},
+		blur_strength = {
+			-2,
+			2
+		},
+		exposure = {
+			-3,
+			3
+		},
+		contrast = {
+			-100,
+			100
+		},
+		saturation = {
+			-100,
+			100
+		}
+	}
+	pg.base.dorm3d_camera_zone_template[21003] = {
+		name = "客厅",
+		record_time = 60,
+		room_id = 21,
+		id = 21003,
+		watch_camera = "Chair",
+		regular_anim = {
+			{
+				79902,
+				{
+					21001,
+					21002,
+					21003,
+					21004,
+					21005,
+					21006,
+					21007,
+					21008,
+					21009,
+					21010,
+					21011,
+					21012,
+					21013,
+					21014,
+					21015
+				}
+			}
+		},
+		special_furniture = {
+			{
+				2103,
+				2210301
+			}
+		},
+		anim_speeds = {
+			0.2,
+			0.5,
+			1,
+			1.5,
+			2
+		},
+		focus_distance = {
+			0.1,
+			5
+		},
+		blur_strength = {
+			-2,
+			2
+		},
+		exposure = {
+			-3,
+			3
+		},
+		contrast = {
+			-100,
+			100
+		},
+		saturation = {
+			-100,
+			100
+		}
+	}
+	pg.base.dorm3d_camera_zone_template[26001] = {
+		name = "停车间",
+		record_time = 60,
+		room_id = 26,
+		id = 26001,
+		watch_camera = "Parking",
+		regular_anim = {
+			{
+				79902,
+				{
+					26001,
+					26002,
+					26003,
+					26004,
+					26005
+				}
+			}
+		},
+		special_furniture = {},
+		anim_speeds = {
+			0.2,
+			0.5,
+			1,
+			1.5,
+			2
+		},
+		focus_distance = {
+			0.1,
+			5
+		},
+		blur_strength = {
+			-2,
+			2
+		},
+		exposure = {
+			-3,
+			3
+		},
+		contrast = {
+			-100,
+			100
+		},
+		saturation = {
+			-100,
+			100
+		}
+	}
+	pg.base.dorm3d_camera_zone_template[26002] = {
+		name = "休息区",
+		record_time = 60,
+		room_id = 26,
+		id = 26002,
+		watch_camera = "Relax",
+		regular_anim = {
+			{
+				79902,
+				{
+					26001,
+					26002,
+					26003,
+					26004,
+					26005
+				}
+			}
+		},
+		special_furniture = {},
+		anim_speeds = {
+			0.2,
+			0.5,
+			1,
+			1.5,
+			2
+		},
+		focus_distance = {
+			0.1,
+			5
+		},
+		blur_strength = {
+			-2,
+			2
+		},
+		exposure = {
+			-3,
+			3
+		},
+		contrast = {
+			-100,
+			100
+		},
+		saturation = {
+			-100,
+			100
+		}
+	}
+	pg.base.dorm3d_camera_zone_template[26003] = {
+		name = "训练区",
+		record_time = 60,
+		room_id = 26,
+		id = 26003,
+		watch_camera = "Train",
+		regular_anim = {
+			{
+				79902,
+				{
+					26001,
+					26002,
+					26003,
+					26004,
+					26005
+				}
+			}
+		},
+		special_furniture = {},
+		anim_speeds = {
+			0.2,
+			0.5,
+			1,
+			1.5,
+			2
+		},
+		focus_distance = {
+			0.1,
+			5
+		},
+		blur_strength = {
+			-2,
+			2
+		},
+		exposure = {
+			-3,
+			3
+		},
+		contrast = {
+			-100,
+			100
+		},
+		saturation = {
+			-100,
+			100
+		}
+	}
+
+	return
+end)()
+
+return

@@ -1,0 +1,176 @@
+﻿ys = ys or {}
+
+local var_0_1 = ys.Battle.BattleConfig.AntiAirConfig
+
+ys.Battle.BattleAntiAirWeaponVO = class("BattleAntiAirWeaponVO", ys.Battle.BattlePlayerWeaponVO)
+ys.Battle.BattleAntiAirWeaponVO.__name = "BattleAntiAirWeaponVO"
+
+local var_0_2 = ys.Battle.BattleAntiAirWeaponVO
+
+function ys.Battle.BattleAntiAirWeaponVO:Ctor(arg_1_1)
+	var_0_2.super.Ctor(self, arg_1_1)
+
+	self._restoreDenominator = var_0_1.const_A
+
+	self:ResetCost()
+
+	self._restoreInterval = var_0_1.Restore_Interval
+
+	return
+end
+
+function ys.Battle.BattleAntiAirWeaponVO.SetBattleFleetVO(arg_2_0, arg_2_1)
+	arg_2_0._battleFleetVO = arg_2_1
+
+	return
+end
+
+function ys.Battle.BattleAntiAirWeaponVO.AppendWeapon(arg_3_0, arg_3_1)
+	var_0_2.super.AppendWeapon(arg_3_0, arg_3_1)
+	arg_3_1:SetTotalDurabilityInfo(arg_3_0)
+
+	return
+end
+
+function ys.Battle.BattleAntiAirWeaponVO:RemoveWeapon(arg_4_1)
+	self._total = self._total - 1
+	self._count = self._count - 1
+
+	return (self.deleteElementFromArray(arg_4_1, self._weaponList))
+end
+
+function ys.Battle.BattleAntiAirWeaponVO:SetMax(arg_5_1)
+	if arg_5_1 > self._max then
+		self._current = self._current + (arg_5_1 - self._max)
+	end
+
+	var_0_2.super.SetMax(self, arg_5_1)
+
+	if self._current > self._max then
+		self._current = self._max
+	end
+
+	return
+end
+
+function ys.Battle.BattleAntiAirWeaponVO.SetAverageReload(arg_6_0, arg_6_1)
+	arg_6_0._fleetReload = arg_6_1
+
+	return
+end
+
+function ys.Battle.BattleAntiAirWeaponVO:GetMaxRange()
+	local var_7_0 = self._battleFleetVO:GetScoutList()
+	local var_7_1 = 0
+
+	if #var_7_0 > 0 then
+		local var_7_2
+
+		for iter_7_0 = 1, #var_7_0 do
+			if #var_7_0[iter_7_0]:GetAntiAirWeapon() > 0 then
+				var_7_2 = var_7_0[iter_7_0]
+
+				break
+			end
+		end
+
+		if var_7_2 then
+			for iter_7_1, iter_7_2 in ipairs((var_7_2:GetAntiAirWeapon())) do
+				var_7_1 = math.max(var_7_1, iter_7_2:GetTemplateData().range)
+			end
+		end
+	end
+
+	return var_7_1
+end
+
+function ys.Battle.BattleAntiAirWeaponVO:SetActive(arg_8_1)
+	for iter_8_0, iter_8_1 in ipairs(self._weaponList) do
+		iter_8_1:SetActive(arg_8_1)
+	end
+
+	return
+end
+
+function ys.Battle.BattleAntiAirWeaponVO:Restore()
+	self._current = self._current + self._fleetReload / self._restoreDenominator
+
+	self:checkRestorState()
+
+	return
+end
+
+function ys.Battle.BattleAntiAirWeaponVO:RestoreRate(arg_10_1)
+	self._current = self._current + self._max * arg_10_1
+
+	self:checkRestorState()
+
+	return
+end
+
+function ys.Battle.BattleAntiAirWeaponVO:checkRestorState()
+	if self._current >= self._max then
+		self._current = self._max
+		self._restoreDenominator = var_0_1.const_A
+		self._isOverLoad = false
+
+		self:RemoveRestoreTimer()
+		self:DispatchOverLoadChange()
+	end
+
+	return
+end
+
+function ys.Battle.BattleAntiAirWeaponVO:Consume()
+	self:RemoveRestoreTimer()
+
+	self._current = self._current - self._consumeNormal
+
+	if self._current <= 0 then
+		self._current = 0
+		self._restoreDenominator = var_0_1.const_B
+		self._isOverLoad = true
+
+		self:DispatchOverLoadChange()
+	end
+
+	return
+end
+
+function ys.Battle.BattleAntiAirWeaponVO.ResetCost(arg_13_0, arg_13_1)
+	arg_13_0._consumeNormal = arg_13_1 or var_0_1.const_N
+
+	return
+end
+
+function ys.Battle.BattleAntiAirWeaponVO:AddRestoreTimer()
+	if self._restoreTimer or self._current >= self._max then
+		return
+	end
+
+	self._restoreTimer = pg.TimeMgr.GetInstance():AddBattleTimer("AARestoreTimer", -1, self._restoreInterval, function()
+		self:Restore()
+
+		return
+	end, true)
+
+	return
+end
+
+function ys.Battle.BattleAntiAirWeaponVO:RemoveRestoreTimer()
+	pg.TimeMgr.GetInstance():RemoveBattleTimer(self._restoreTimer)
+
+	self._restoreTimer = nil
+
+	return
+end
+
+function ys.Battle.BattleAntiAirWeaponVO.Dispose(arg_17_0)
+	arg_17_0._battleFleetVO = nil
+
+	var_0_2.super.Dispose(arg_17_0)
+
+	return
+end
+
+return

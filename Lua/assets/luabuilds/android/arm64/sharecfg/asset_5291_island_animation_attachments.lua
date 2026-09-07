@@ -1,0 +1,450 @@
+﻿pg = pg or {}
+pg.island_animation_attachments = rawget(pg, "island_animation_attachments") or setmetatable({
+	__name = "island_animation_attachments"
+}, confNEO)
+pg.island_animation_attachments.all = {
+	10004,
+	10006,
+	10007,
+	10008,
+	10009,
+	10010,
+	10011,
+	10012,
+	10013,
+	10014,
+	10015,
+	10027,
+	20001,
+	20002,
+	20003,
+	20004,
+	20005,
+	20006,
+	40005,
+	40006,
+	40008,
+	40009,
+	40010,
+	40011,
+	40012,
+	40013,
+	40014,
+	40015,
+	40016,
+	40017,
+	40018,
+	40019,
+	40020,
+	100011,
+	100012,
+	100013,
+	100041,
+	100042,
+	100051,
+	100052,
+	200000,
+	200001,
+	200002,
+	200003,
+	200004,
+	200005,
+	200006,
+	300001
+}
+pg.base = pg.base or {}
+pg.base.island_animation_attachments = {}
+
+;(function()
+	pg.base.island_animation_attachments[10004] = {
+		id = 10004,
+		override = "",
+		model = "island/item/01/10004/prefab/pre_item_01_10004",
+		attack = 0,
+		animator = "island/animator/ani_item_1_10004",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[10006] = {
+		id = 10006,
+		override = "",
+		model = "island/item/01/10006/prefab/pre_item_01_10006",
+		attack = 30,
+		animator = "island/animator/ani_item_1_10006",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[10007] = {
+		id = 10007,
+		override = "",
+		model = "island/item/01/10007/prefab/pre_item_01_10007",
+		attack = 30,
+		animator = "island/animator/ani_item_1_10007",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[10008] = {
+		id = 10008,
+		override = "",
+		model = "island/item/01/10008/prefab/pre_item_01_10008",
+		attack = 0,
+		animator = "island/animator/ani_item_1_10008",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[10009] = {
+		id = 10009,
+		override = "",
+		model = "island/item/01/10009/prefab/pre_item_01_10009",
+		attack = 0,
+		animator = "island/animator/ani_item_1_10009",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[10010] = {
+		id = 10010,
+		override = "",
+		model = "island/item/01/10010/prefab/pre_item_01_10010",
+		attack = 50,
+		animator = "island/animator/ani_item_1_10006",
+		unlock = 20002
+	}
+	pg.base.island_animation_attachments[10011] = {
+		id = 10011,
+		override = "",
+		model = "island/item/01/10011/prefab/pre_item_01_10011",
+		attack = 100,
+		animator = "island/animator/ani_item_1_10006",
+		unlock = 20003
+	}
+	pg.base.island_animation_attachments[10012] = {
+		id = 10012,
+		override = "",
+		model = "island/item/01/10012/prefab/pre_item_01_10012",
+		attack = 50,
+		animator = "island/animator/ani_item_1_10007",
+		unlock = 20004
+	}
+	pg.base.island_animation_attachments[10013] = {
+		id = 10013,
+		override = "",
+		model = "island/item/01/10013/prefab/pre_item_01_10013",
+		attack = 100,
+		animator = "island/animator/ani_item_1_10007",
+		unlock = 20005
+	}
+	pg.base.island_animation_attachments[10014] = {
+		id = 10014,
+		override = "",
+		model = "island/item/01/10029/prefab/pre_item_01_10029",
+		attack = 0,
+		animator = "island/animator/ani_item_1_10008",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[10015] = {
+		id = 10015,
+		override = "",
+		model = "island/item/01/10030/prefab/pre_item_01_10030",
+		attack = 0,
+		animator = "island/animator/ani_item_1_10008",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[10027] = {
+		id = 10027,
+		override = "",
+		model = "island/item/01/10027/prefab/pre_item_01_10027",
+		attack = 0,
+		animator = "island/animator/ani_item_1_10027",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[20001] = {
+		id = 20001,
+		override = "",
+		model = "island/item/01/10014/prefab/pre_item_01_10014",
+		attack = 0,
+		animator = "island/animator/ani_item_1_01_10014",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[20002] = {
+		id = 20002,
+		override = "",
+		model = "island/item/01/10014/prefab/pre_item_01_10014",
+		attack = 0,
+		animator = "island/animator/ani_item_1_01_10014",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[20003] = {
+		id = 20003,
+		override = "",
+		model = "island/item/01/10014/prefab/pre_item_01_10014",
+		attack = 0,
+		animator = "island/animator/ani_item_1_02_10014",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[20004] = {
+		id = 20004,
+		override = "",
+		model = "island/item/01/10014/prefab/pre_item_01_10014",
+		attack = 0,
+		animator = "island/animator/ani_item_1_02_10014",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[20005] = {
+		id = 20005,
+		override = "",
+		model = "island/item/01/10007/prefab/pre_item_01_10007",
+		attack = 0,
+		animator = "island/animator/ani_item_1_01_10007",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[20006] = {
+		id = 20006,
+		override = "",
+		model = "island/item/01/10006/prefab/pre_item_01_10006",
+		attack = 0,
+		animator = "island/animator/ani_item_1_01_10006",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[40005] = {
+		id = 40005,
+		model = "island/item/04/40005/prefab/pre_item_02_40005",
+		attack = 0,
+		animator = "island/animator/ani_item_4_40005",
+		unlock = 0,
+		override = {
+			"ani_role_9001_02_15_body",
+			40006
+		}
+	}
+	pg.base.island_animation_attachments[40006] = {
+		id = 40006,
+		override = "",
+		model = "island/effect/prefab/jiaohu/vfx_jjbs_sw",
+		attack = 0,
+		animator = "",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[40008] = {
+		id = 40008,
+		override = "",
+		model = "island/item/04/40008/prefab/pre_item_04_40008",
+		attack = 0,
+		animator = "island/animator/ani_item_4_40008",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[40009] = {
+		id = 40009,
+		override = "",
+		model = "island/item/04/40009/prefab/pre_item_04_40009",
+		attack = 0,
+		animator = "island/animator/ani_item_4_40009",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[40010] = {
+		id = 40010,
+		override = "",
+		model = "island/item/04/40010/prefab/pre_item_04_40010",
+		attack = 0,
+		animator = "island/animator/ani_item_4_40010",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[40011] = {
+		id = 40011,
+		override = "",
+		model = "island/item/04/40011/prefab/pre_item_04_40011",
+		attack = 0,
+		animator = "island/animator/ani_item_4_40011",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[40012] = {
+		id = 40012,
+		override = "",
+		model = "island/item/04/40012/prefab/pre_item_04_40012",
+		attack = 0,
+		animator = "island/animator/ani_item_4_40012",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[40013] = {
+		id = 40013,
+		override = "",
+		model = "island/item/04/40013/prefab/fbx_item_04_40013",
+		attack = 0,
+		animator = "island/animator/ani_item_4_40013",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[40014] = {
+		id = 40014,
+		override = "",
+		model = "island/item/04/40014/prefab/pre_item_04_40014",
+		attack = 0,
+		animator = "island/animator/ani_item_4_40014",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[40015] = {
+		id = 40015,
+		override = "",
+		model = "island/item/04/40015/prefab/pre_item_04_40015",
+		attack = 0,
+		animator = "island/animator/ani_item_4_40015",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[40016] = {
+		id = 40016,
+		override = "",
+		model = "island/item/04/40016/prefab/pre_item_04_40016",
+		attack = 0,
+		animator = "island/animator/ani_item_4_40016",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[40017] = {
+		id = 40017,
+		override = "",
+		model = "island/item/04/40017/prefab/pre_item_04_40017",
+		attack = 0,
+		animator = "island/animator/ani_item_4_40017",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[40018] = {
+		id = 40018,
+		override = "",
+		model = "island/item/04/40018/prefab/pre_item_04_40018",
+		attack = 0,
+		animator = "island/animator/ani_item_4_40018",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[40019] = {
+		id = 40019,
+		override = "",
+		model = "island/item/04/40019/prefab/pre_item_04_40019",
+		attack = 0,
+		animator = "island/animator/ani_item_4_40019",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[40020] = {
+		id = 40020,
+		override = "",
+		model = "island/item/04/40020/prefab/pre_item_04_40020",
+		attack = 0,
+		animator = "island/animator/ani_item_4_40020",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[100011] = {
+		id = 100011,
+		override = "",
+		model = "island/item/01/10001/prefab/pre_item_01_10001",
+		attack = 0,
+		animator = "island/animator/ani_item_1_01_10001_start",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[100012] = {
+		id = 100012,
+		override = "",
+		model = "island/item/01/10001/prefab/pre_item_01_10001",
+		attack = 0,
+		animator = "island/animator/ani_item_1_01_10001_loop",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[100013] = {
+		id = 100013,
+		override = "",
+		model = "island/item/01/10001/prefab/pre_item_01_10001",
+		attack = 0,
+		animator = "island/animator/ani_item_1_01_10001_end",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[100041] = {
+		id = 100041,
+		override = "",
+		model = "island/item/01/10004/prefab/pre_item_01_10004",
+		attack = 0,
+		animator = "island/animator/ani_item_1_01_10004",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[100042] = {
+		id = 100042,
+		override = "",
+		model = "island/item/01/10004/prefab/pre_item_01_10026",
+		attack = 0,
+		animator = "island/animator/ani_item_1_02_10004",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[100051] = {
+		id = 100051,
+		override = "",
+		model = "island/item/01/10005/prefab/pre_item_01_10005",
+		attack = 0,
+		animator = "island/animator/ani_item_1_01_10005",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[100052] = {
+		id = 100052,
+		override = "",
+		model = "island/item/01/10005/prefab/pre_item_01_10028",
+		attack = 0,
+		animator = "island/animator/ani_item_1_02_10005",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[200000] = {
+		id = 200000,
+		override = "",
+		model = "island/effect/prefab/timeline/juqing/vfx_chuchang01",
+		attack = 0,
+		animator = "",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[200001] = {
+		id = 200001,
+		override = "",
+		model = "island/effect/prefab/jiaohu/vfx_hanshui",
+		attack = 0,
+		animator = "",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[200002] = {
+		id = 200002,
+		override = "",
+		model = "island/effect/prefab/jiaohu/vfx_quanquan01",
+		attack = 0,
+		animator = "",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[200003] = {
+		id = 200003,
+		override = "",
+		model = "island/effect/prefab/jiaohu/vfx_jjbs",
+		attack = 0,
+		animator = "",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[200004] = {
+		id = 200004,
+		override = "",
+		model = "island/effect/prefab/jiaohu/vfx_jjbs_1",
+		attack = 0,
+		animator = "",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[200005] = {
+		id = 200005,
+		override = "",
+		model = "island/effect/prefab/jiaohu/vfx_jjbs01",
+		attack = 0,
+		animator = "",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[200006] = {
+		id = 200006,
+		override = "",
+		model = "island/effect/prefab/jiaohu/vfx_jjbs01_1",
+		attack = 0,
+		animator = "",
+		unlock = 0
+	}
+	pg.base.island_animation_attachments[300001] = {
+		id = 300001,
+		override = "",
+		model = "island/effect/prefab/jiaohu/vfx_char_30311_01",
+		attack = 0,
+		animator = "",
+		unlock = 0
+	}
+
+	return
+end)()
+
+return

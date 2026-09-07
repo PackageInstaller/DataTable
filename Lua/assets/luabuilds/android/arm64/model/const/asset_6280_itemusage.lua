@@ -1,0 +1,27 @@
+﻿local ItemUsage = class("ItemUsage")
+
+ItemUsage.UNDEFINED = "usage_undefined"
+ItemUsage.BOOK = "usage_book"
+ItemUsage.DROP = "usage_drop"
+ItemUsage.DROP_TEMPLATE = "usgae_drop_template"
+ItemUsage.FOOD = "usage_food"
+ItemUsage.ADD_EXP = "usage_add_exp"
+ItemUsage.ADD_RESOURCE = "usage_add_resource"
+ItemUsage.ADD_SHIP = "usage_add_ship"
+ItemUsage.DORM_LV_UP = "usage_dorm_lv_up"
+ItemUsage.DROP_APPOINTED = "usage_drop_appointed"
+ItemUsage.SOS = "usage_sos"
+ItemUsage.GUILD_DONATE = "usage_guild_donate"
+ItemUsage.GUILD_OPERATION = "usage_guild_operation"
+ItemUsage.REDUCE_COMMANDER_TIME = "usage_reduce_commander_time"
+ItemUsage.INVITATION = "usage_invitation"
+ItemUsage.SKIN_SELECT = "usage_drop_appointed_skinexchange"
+ItemUsage.SKIN_SHOP_DISCOUNT = "usage_skin_discount"
+ItemUsage.USAGE_SHOP_DISCOUNT = "usage_shop_discount"
+ItemUsage.RANDOM_SKIN = "usage_drop_random_skin"
+ItemUsage.USAGE_SKIN_EXP = "usage_skin_exp"
+ItemUsage.SHIP_GIFT = "usage_favorability"
+ItemUsage.REPAIR_LOVE_LETTER = "usage_loveitem_change_2018"
+ItemUsage.EX_RE_MAP = "usage_drop_re_map"
+
+return ItemUsage

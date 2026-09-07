@@ -1,0 +1,183 @@
+﻿pg = pg or {}
+pg.technology_catchup_template = rawget(pg, "technology_catchup_template") or setmetatable({
+	__name = "technology_catchup_template"
+}, confNEO)
+pg.technology_catchup_template.all = {
+	1,
+	2,
+	3,
+	4,
+	5,
+	6,
+	7
+}
+pg.base = pg.base or {}
+pg.base.technology_catchup_template = {}
+
+;(function()
+	pg.base.technology_catchup_template[1] = {
+		obtain_max = 300,
+		obtain_max_per_ur = 0,
+		id = 1,
+		char_choice = {
+			29901,
+			29902,
+			39901,
+			39902,
+			49901,
+			89901
+		},
+		blueprint_max = {
+			508,
+			508,
+			508,
+			508,
+			508,
+			508
+		},
+		ur_char = {}
+	}
+	pg.base.technology_catchup_template[2] = {
+		obtain_max = 300,
+		obtain_max_per_ur = 150,
+		id = 2,
+		char_choice = {
+			19901,
+			19902,
+			39903,
+			99901,
+			49902,
+			39904
+		},
+		blueprint_max = {
+			508,
+			508,
+			508,
+			508,
+			728,
+			728
+		},
+		ur_char = {
+			39904,
+			49902
+		}
+	}
+	pg.base.technology_catchup_template[3] = {
+		obtain_max = 300,
+		obtain_max_per_ur = 150,
+		id = 3,
+		char_choice = {
+			29903,
+			49903,
+			49904,
+			89902,
+			29904
+		},
+		blueprint_max = {
+			508,
+			508,
+			508,
+			508,
+			728
+		},
+		ur_char = {
+			29904
+		}
+	}
+	pg.base.technology_catchup_template[4] = {
+		obtain_max = 300,
+		obtain_max_per_ur = 150,
+		id = 4,
+		char_choice = {
+			19903,
+			49906,
+			69901,
+			39905,
+			49905
+		},
+		blueprint_max = {
+			508,
+			508,
+			508,
+			728,
+			728
+		},
+		ur_char = {
+			39905,
+			49905
+		}
+	}
+	pg.base.technology_catchup_template[5] = {
+		obtain_max = 300,
+		obtain_max_per_ur = 150,
+		id = 5,
+		char_choice = {
+			49907,
+			59901,
+			79901,
+			29905,
+			89903
+		},
+		blueprint_max = {
+			508,
+			508,
+			508,
+			728,
+			728
+		},
+		ur_char = {
+			29905,
+			89903
+		}
+	}
+	pg.base.technology_catchup_template[6] = {
+		obtain_max = 300,
+		obtain_max_per_ur = 150,
+		id = 6,
+		char_choice = {
+			39906,
+			49908,
+			99902,
+			19904,
+			49909
+		},
+		blueprint_max = {
+			508,
+			508,
+			508,
+			728,
+			728
+		},
+		ur_char = {
+			19904,
+			49909
+		}
+	}
+	pg.base.technology_catchup_template[7] = {
+		obtain_max = 300,
+		obtain_max_per_ur = 150,
+		id = 7,
+		char_choice = {
+			89904,
+			39907,
+			19905,
+			69902,
+			79902
+		},
+		blueprint_max = {
+			508,
+			508,
+			508,
+			728,
+			728
+		},
+		ur_char = {
+			69902,
+			79902
+		}
+	}
+
+	return
+end)()
+
+return
