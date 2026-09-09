@@ -1124,6 +1124,7 @@ class SpriteAtlasExtractor:
         self.output_dir = self.script_dir / "Painting"
         self.assets_json_path = self.script_dir / "catalog.json"
         self.master_data_path = self.script_dir / "MasterData.json"
+        self.master_etag_path = self.script_dir / "MasterData.etag"
         self.hash_file = self.script_dir / "catalog.hash"
         self.manifest_path = self.output_dir / MANIFEST_NAME
         self.threads = threads
@@ -1239,29 +1240,19 @@ class SpriteAtlasExtractor:
             raise RuntimeError(f"无法获取 catalog: {e}") from e
 
     def ensure_master_data(self):
-        """MasterData.json 不存在则按 DotAbyss 方式下载。"""
-        if self.master_data_path.exists():
+        """检测远程数据表（MasterData）是否有更新，有变化则下载并重建。"""
+        if self.downloader.update_master_data(
+            output_path=self.master_data_path,
+            etag_path=self.master_etag_path,
+        ):
             return
 
-        console.print("[*] MasterData.json 不存在，正在下载...")
-        info = self.downloader.get_version_info()
-        if not info:
-            raise RuntimeError("获取版本信息失败，无法下载 MasterData")
-        versions = info.get("versions", {})
-        self.downloader.master_ver = self.downloader._pick_version(
-            versions, "resource", "resource", default="4"
-        )
-        if not self.downloader.handle_master_data():
-            raise RuntimeError("MasterData 下载失败")
-
-        cwd_file = Path("MasterData.json")
-        if cwd_file.resolve() != self.master_data_path.resolve():
-            if not cwd_file.exists():
-                raise RuntimeError("MasterData 下载后未找到文件")
-            self.master_data_path.write_text(
-                cwd_file.read_text(encoding="utf-8"), encoding="utf-8"
+        if self.master_data_path.exists():
+            console.print(
+                "[yellow][!] 数据表在线检查失败，使用本地 MasterData.json[/yellow]"
             )
-        console.print(f"[green][+] MasterData 已保存至 {self.master_data_path}[/green]")
+            return
+        raise RuntimeError("MasterData 下载失败")
 
     def _safe_fs_name(self, name: str) -> str:
         name = _INVALID_FS.sub("_", (name or "").strip())
@@ -2554,31 +2545,77 @@ class AbyssDownloader:
                 restored_db[table_name] = raw_table
         return restored_db
 
-    def handle_master_data(self):
-        """处理数据表下载与反序列化字段填充"""
-        secure_url = create_secure_url(MASTER_BASE_URL, f"/{self.master_ver}", SECURE_LINK_KEY)
-
-        console.print(f"[*] 正在获取 Master Data: {secure_url}")
+    def update_master_data(
+        self,
+        output_path: Union[str, Path] = "MasterData.json",
+        etag_path: Optional[Union[str, Path]] = None,
+    ) -> bool:
+        """检查并更新数据表：通过版本信息 + 远程 ETag 判断是否需要重新下载。"""
         try:
-            resp = self.session.get(secure_url, timeout=30)
+            info = self.get_version_info()
+            if not info:
+                raise RuntimeError("获取版本信息失败，无法检查 MasterData")
+            versions = info.get("versions", {})
+            self.master_ver = self._pick_version(
+                versions, "resource", "resource", default="4"
+            )
+            secure_url = create_secure_url(
+                MASTER_BASE_URL, f"/{self.master_ver}", SECURE_LINK_KEY
+            )
+
+            output_path = Path(output_path)
+            old_etag = ""
+            if etag_path:
+                etag_path = Path(etag_path)
+                if etag_path.exists():
+                    old_etag = etag_path.read_text(encoding="utf-8").strip()
+
+            headers = {}
+            if old_etag and output_path.exists():
+                headers["If-None-Match"] = old_etag
+
+            console.print(f"[*] 检查数据表更新: {secure_url}")
+            resp = self.session.get(secure_url, headers=headers, timeout=30)
             resp.raise_for_status()
 
+            if resp.status_code == 304:
+                console.print("[yellow][*] 数据表已经是最新，跳过更新。[/yellow]")
+                return True
+
+            if resp.status_code != 200:
+                raise RuntimeError(f"数据表下载失败: HTTP {resp.status_code}")
+
+            etag = resp.headers.get("ETag", "").strip()
+            if etag.startswith("W/"):
+                etag = etag[2:]
+            etag = etag.strip().strip('"').strip()
             raw_data = resp.content
-            console.print(f"[blue][*] 成功下载数据表，大小: {len(raw_data)} 字节，正在解析并补全字段名...[/blue]")
-
+            console.print(
+                f"[blue][*] 数据表有更新 (v{self.master_ver}, ETag: {etag or '无'})，"
+                f"大小: {len(raw_data)} 字节，正在解析并补全字段名...[/blue]"
+            )
             master_raw_obj = msgpack.unpackb(raw_data)
-            
             master_json_obj = self._apply_database_schema(master_raw_obj)
-            
-            output_file = "MasterData.json"
-            with open(output_file, "w", encoding="utf-8") as f:
-                json.dump(master_json_obj, f, ensure_ascii=False, indent=2)
-
-            console.print(f"[green][+] 字段补全成功！Master Data 已保存至 {output_file}[/green]")
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+            output_path.write_text(
+                json.dumps(master_json_obj, ensure_ascii=False, indent=2),
+                encoding="utf-8",
+            )
+            if etag_path and etag:
+                etag_path.parent.mkdir(parents=True, exist_ok=True)
+                etag_path.write_text(etag, encoding="utf-8")
+            console.print(f"[green][+] MasterData 已保存至 {output_path}[/green]")
             return True
         except Exception as e:
             console.print(f"[red][-] 处理 Master Data 时发生错误: {e}[/red]")
             return False
+
+    def handle_master_data(self):
+        """兼容旧调用：下载/更新当前目录的 MasterData.json。"""
+        return self.update_master_data(
+            output_path="MasterData.json",
+            etag_path="MasterData.etag",
+        )
 
     def worker(self, task_id):
         while True:
