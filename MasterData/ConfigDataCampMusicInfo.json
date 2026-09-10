@@ -1,0 +1,288 @@
+[
+  {
+    "Type": "CampMusicType_HomeBGM",
+    "MusicIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/CollectionImage_ABS/NoTag/Diancang/Diancang_CD_02b.png@Diancang_CD_02b",
+    "NameStrKey": "ST:262822",
+    "UnlockErrorStrKey": "ST:262541"
+  },
+  {
+    "ID": 1001,
+    "Type": "CampMusicType_HomeBGM",
+    "MusicAssetPath": "BGM_Home_01",
+    "MusicIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/CollectionImage_ABS/NoTag/Diancang/Diancang_CD_02b.png@Diancang_CD_02b",
+    "NameStrKey": "ST:135183",
+    "UnlockErrorStrKey": "ST:262541"
+  },
+  {
+    "ID": 1002,
+    "UnlockCondition": [
+      {
+        "CondType": "ConditionType_HomeBGMUnlock",
+        "P1": 3
+      }
+    ],
+    "Type": "CampMusicType_HomeBGM",
+    "MusicAssetPath": "BGM_Home_03",
+    "MusicIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/CollectionImage_ABS/NoTag/Diancang/Diancang_CD_02b.png@Diancang_CD_02b",
+    "NameStrKey": "ST:122993",
+    "UnlockErrorStrKey": "ST:264051"
+  },
+  {
+    "ID": 1003,
+    "UnlockCondition": [
+      {
+        "CondType": "ConditionType_HomeBGMUnlock",
+        "P1": 4
+      }
+    ],
+    "Type": "CampMusicType_HomeBGM",
+    "MusicAssetPath": "BGM_Home_02",
+    "MusicIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/CollectionImage_ABS/NoTag/Diancang/Diancang_CD_02b.png@Diancang_CD_02b",
+    "NameStrKey": "ST:122991",
+    "UnlockErrorStrKey": "ST:264051"
+  },
+  {
+    "ID": 1004,
+    "UnlockCondition": [
+      {
+        "CondType": "ConditionType_HomeBGMUnlock",
+        "P1": 5
+      }
+    ],
+    "Type": "CampMusicType_HomeBGM",
+    "MusicAssetPath": "BGM_Home_04",
+    "MusicIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/CollectionImage_ABS/NoTag/Diancang/Diancang_CD_02b.png@Diancang_CD_02b",
+    "NameStrKey": "ST:148046",
+    "UnlockErrorStrKey": "ST:264051"
+  },
+  {
+    "ID": 1005,
+    "UnlockCondition": [
+      {
+        "CondType": "ConditionType_HomeBGMUnlock",
+        "P1": 6
+      }
+    ],
+    "Type": "CampMusicType_HomeBGM",
+    "MusicAssetPath": "BGM_Emotion_Silent_3",
+    "MusicIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/CollectionImage_ABS/NoTag/Diancang/Diancang_CD_02b.png@Diancang_CD_02b",
+    "NameStrKey": "ST:150571",
+    "UnlockErrorStrKey": "ST:264051"
+  },
+  {
+    "ID": 2001,
+    "Type": "CampMusicType_URLBoxMusic",
+    "MusicAssetPath": "BGM_Theme_UNEKO",
+    "MusicIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/CollectionImage_ABS/NoTag/Diancang/Diancang_CD_02b.png@Diancang_CD_02b",
+    "NameStrKey": "ST:261186",
+    "UnlockErrorStrKey": "ST:264052"
+  },
+  {
+    "ID": 2002,
+    "Type": "CampMusicType_URLBoxMusic",
+    "MusicAssetPath": "BGM_Theme_TianDiJie",
+    "MusicIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/CollectionImage_ABS/NoTag/Diancang/Diancang_CD_02b.png@Diancang_CD_02b",
+    "NameStrKey": "ST:261187",
+    "UnlockErrorStrKey": "ST:264052"
+  },
+  {
+    "ID": 2003,
+    "Type": "CampMusicType_URLBoxMusic",
+    "MusicAssetPath": "BGM_Theme_HuangSha",
+    "MusicIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/CollectionImage_ABS/NoTag/Diancang/Diancang_CD_02b.png@Diancang_CD_02b",
+    "NameStrKey": "ST:261188",
+    "UnlockErrorStrKey": "ST:264052"
+  },
+  {
+    "ID": 2004,
+    "Type": "CampMusicType_URLBoxMusic",
+    "MusicAssetPath": "BGM_Theme_ALiang",
+    "MusicIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/CollectionImage_ABS/NoTag/Diancang/Diancang_CD_02b.png@Diancang_CD_02b",
+    "NameStrKey": "ST:261189",
+    "UnlockErrorStrKey": "ST:264052"
+  },
+  {
+    "ID": 2005,
+    "Type": "CampMusicType_URLBoxMusic",
+    "MusicAssetPath": "BGM_Theme_YuXu",
+    "MusicIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/CollectionImage_ABS/NoTag/Diancang/Diancang_CD_02b.png@Diancang_CD_02b",
+    "NameStrKey": "ST:261190",
+    "UnlockErrorStrKey": "ST:264052"
+  },
+  {
+    "ID": 2006,
+    "Type": "CampMusicType_URLBoxMusic",
+    "MusicAssetPath": "BGM_Theme_LuShaoYi",
+    "MusicIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/CollectionImage_ABS/NoTag/Diancang/Diancang_CD_02b.png@Diancang_CD_02b",
+    "NameStrKey": "ST:261191",
+    "UnlockErrorStrKey": "ST:264052"
+  },
+  {
+    "ID": 2007,
+    "UnlockCondition": [
+      {
+        "CondType": "ConditionType_URLBoxVersionUnlock",
+        "P1": 4
+      }
+    ],
+    "Type": "CampMusicType_URLBoxMusic",
+    "MusicAssetPath": "BGM_Theme_TieShouXiaHouYi",
+    "MusicIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/CollectionImage_ABS/NoTag/Diancang/Diancang52_CD_01b.png@Diancang52_CD_01b",
+    "NameStrKey": "ST:261192",
+    "UnlockErrorStrKey": "ST:264053"
+  },
+  {
+    "ID": 2008,
+    "UnlockCondition": [
+      {
+        "CondType": "ConditionType_URLBoxVersionUnlock",
+        "P1": 4
+      }
+    ],
+    "Type": "CampMusicType_URLBoxMusic",
+    "MusicAssetPath": "BGM_Theme_BingLi",
+    "MusicIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/CollectionImage_ABS/NoTag/Diancang/Diancang52_CD_01b.png@Diancang52_CD_01b",
+    "NameStrKey": "ST:261193",
+    "UnlockErrorStrKey": "ST:264053"
+  },
+  {
+    "ID": 2009,
+    "UnlockCondition": [
+      {
+        "CondType": "ConditionType_URLBoxVersionUnlock",
+        "P1": 4
+      }
+    ],
+    "Type": "CampMusicType_URLBoxMusic",
+    "MusicAssetPath": "BGM_Theme_PanShaBao",
+    "MusicIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/CollectionImage_ABS/NoTag/Diancang/Diancang52_CD_01b.png@Diancang52_CD_01b",
+    "NameStrKey": "ST:261194",
+    "UnlockErrorStrKey": "ST:264053"
+  },
+  {
+    "ID": 2010,
+    "UnlockCondition": [
+      {
+        "CondType": "ConditionType_URLBoxVersionUnlock",
+        "P1": 4
+      }
+    ],
+    "Type": "CampMusicType_URLBoxMusic",
+    "MusicAssetPath": "BGM_Theme_QianNianZhiYou",
+    "MusicIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/CollectionImage_ABS/NoTag/Diancang/Diancang52_CD_01b.png@Diancang52_CD_01b",
+    "NameStrKey": "ST:261195",
+    "UnlockErrorStrKey": "ST:264053"
+  },
+  {
+    "ID": 2011,
+    "UnlockCondition": [
+      {
+        "CondType": "ConditionType_URLBoxVersionUnlock",
+        "P1": 4
+      }
+    ],
+    "Type": "CampMusicType_URLBoxMusic",
+    "MusicAssetPath": "BGM_Theme_LongJuDao",
+    "MusicIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/CollectionImage_ABS/NoTag/Diancang/Diancang52_CD_01b.png@Diancang52_CD_01b",
+    "NameStrKey": "ST:261196",
+    "UnlockErrorStrKey": "ST:264053"
+  },
+  {
+    "ID": 2012,
+    "UnlockCondition": [
+      {
+        "CondType": "ConditionType_URLBoxVersionUnlock",
+        "P1": 2
+      }
+    ],
+    "Type": "CampMusicType_URLBoxMusic",
+    "MusicAssetPath": "BGM_Theme_YaoYuXi",
+    "MusicIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/CollectionImage_ABS/NoTag/Diancang/Diancang_CD_01b.png@Diancang_CD_01b",
+    "NameStrKey": "ST:219442",
+    "UnlockErrorStrKey": "ST:264054"
+  },
+  {
+    "ID": 2013,
+    "UnlockCondition": [
+      {
+        "CondType": "ConditionType_URLBoxVersionUnlock",
+        "P1": 3
+      }
+    ],
+    "Type": "CampMusicType_URLBoxMusic",
+    "MusicAssetPath": "BGM_Theme_HanWuShaSP",
+    "MusicIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/CollectionImage_ABS/NoTag/Diancang/Diancang50_07.png@Diancang50_07",
+    "NameStrKey": "ST:229372",
+    "UnlockErrorStrKey": "ST:264055"
+  },
+  {
+    "ID": 2014,
+    "UnlockCondition": [
+      {
+        "CondType": "ConditionType_URLBoxVersionUnlock",
+        "P1": 5
+      }
+    ],
+    "Type": "CampMusicType_URLBoxMusic",
+    "MusicAssetPath": "BGM_Theme_YinChuanGongZhu",
+    "MusicIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/CollectionImage_ABS/NoTag/Diancang/Diancang53_07.png@Diancang53_07",
+    "NameStrKey": "ST:100572",
+    "UnlockErrorStrKey": "ST:264056"
+  },
+  {
+    "ID": 2015,
+    "UnlockCondition": [
+      {
+        "CondType": "ConditionType_URLBoxVersionUnlock",
+        "P1": 6
+      }
+    ],
+    "Type": "CampMusicType_URLBoxMusic",
+    "MusicAssetPath": "BGM_Theme_JianXinWuXie",
+    "MusicIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/CollectionImage_ABS/NoTag/Diancang/Diancang59_07.png@Diancang59_07",
+    "NameStrKey": "ST:242500",
+    "UnlockErrorStrKey": "ST:264057"
+  },
+  {
+    "ID": 2016,
+    "UnlockCondition": [
+      {
+        "CondType": "ConditionType_URLBoxVersionUnlock",
+        "P1": 7
+      }
+    ],
+    "Type": "CampMusicType_URLBoxMusic",
+    "MusicAssetPath": "BGM_Theme_NuMuXiaoQi",
+    "MusicIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/CollectionImage_ABS/NoTag/Diancang/Diancang63_07.png@Diancang63_07",
+    "NameStrKey": "ST:249911",
+    "UnlockErrorStrKey": "ST:264058"
+  },
+  {
+    "ID": 2017,
+    "UnlockCondition": [
+      {
+        "CondType": "ConditionType_URLBoxVersionUnlock",
+        "P1": 8
+      }
+    ],
+    "Type": "CampMusicType_URLBoxMusic",
+    "MusicAssetPath": "BGM_Theme_Yunjieyuedi",
+    "MusicIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/CollectionImage_ABS/NoTag/Diancang/Diancang66_07.png@Diancang66_07",
+    "NameStrKey": "ST:256049",
+    "UnlockErrorStrKey": "ST:264059"
+  },
+  {
+    "ID": 2018,
+    "UnlockCondition": [
+      {
+        "CondType": "ConditionType_URLBoxVersionUnlock",
+        "P1": 9
+      }
+    ],
+    "Type": "CampMusicType_URLBoxMusic",
+    "MusicAssetPath": "BGM_Theme_DuWanSanQing",
+    "MusicIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/CollectionImage_ABS/NoTag/Diancang/Diancang69_07.png@Diancang69_07",
+    "NameStrKey": "ST:261182",
+    "UnlockErrorStrKey": "ST:264060"
+  }
+]

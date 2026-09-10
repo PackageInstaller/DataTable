@@ -1,5 +1,122 @@
 [
   {
+    "ID": 60511017,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      800
+    ],
+    "Param3": [
+      {
+        "X": 11,
+        "Y": 5
+      }
+    ]
+  },
+  {
+    "ID": 60511018,
+    "ActionType": "BattleSceneActionType_SummonNear",
+    "Param1": [
+      4,
+      4,
+      4
+    ],
+    "Param2": [
+      23,
+      23,
+      23
+    ],
+    "Param3": [
+      {
+        "X": 11,
+        "Y": 4
+      },
+      {
+        "X": 11,
+        "Y": 6
+      },
+      {
+        "X": 12,
+        "Y": 5
+      }
+    ],
+    "Param4": [
+      122100151,
+      122110351,
+      122120131
+    ],
+    "Param6": [
+      -1,
+      -1,
+      -1
+    ],
+    "Param7": [
+      {
+        "X": 10,
+        "Y": 4
+      },
+      {
+        "X": 10,
+        "Y": 6
+      },
+      {
+        "X": 10,
+        "Y": 5
+      }
+    ],
+    "Param8": [
+      10000,
+      10000,
+      10000
+    ],
+    "Param9": [
+      1,
+      1,
+      1
+    ],
+    "Param10": [
+      205,
+      206,
+      207
+    ],
+    "Param11": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "ID": 60511019,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      0
+    ],
+    "Param2": [
+      10001
+    ],
+    "Param3": [
+      {
+        "X": 11,
+        "Y": 4
+      }
+    ]
+  },
+  {
+    "ID": 60511020,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      0
+    ],
+    "Param2": [
+      10002
+    ],
+    "Param3": [
+      {
+        "X": 11,
+        "Y": 6
+      }
+    ]
+  },
+  {
     "ID": 60511021,
     "ActionType": "BattleSceneActionType_TerrainEffect",
     "Param1": [
@@ -17441,47 +17558,6 @@
         "X": 20,
         "Y": 8
       }
-    ]
-  },
-  {
-    "ID": 65007042,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      200
-    ]
-  },
-  {
-    "ID": 65007101,
-    "ActionType": "BattleSceneActionType_CameraFocusActor",
-    "Param1": [
-      8
-    ],
-    "Param2": [
-      102
-    ]
-  },
-  {
-    "ID": 65007102,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      200
-    ]
-  },
-  {
-    "ID": 65007103,
-    "ActionType": "BattleSceneActionType_ActorAnimation",
-    "Param1": [
-      102
-    ],
-    "Param2": [
-      -1
-    ],
-    "Param4": [
-      1
-    ],
-    "Param5": "CastSkill01",
-    "Param6": [
-      0
     ]
   }
 ]

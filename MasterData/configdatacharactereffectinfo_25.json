@@ -1,5 +1,89 @@
 [
   {
+    "ID": 120400030,
+    "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Hero1204/Prefab/playEFx_0_Hero1204_YamaArmor_Add.prefab",
+    "CharacterSocketType": "CharacterSocketType_Foot"
+  },
+  {
+    "ID": 120400031,
+    "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Hero1204/Prefab/playEFx_0_Hero1204_YamaArmor_Keep.prefab",
+    "CharacterSocketType": "CharacterSocketType_Foot",
+    "IsFollow": true,
+    "IsLoop": true
+  },
+  {
+    "ID": 120400032,
+    "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Hero1204/Prefab/playEFx_0_Hero1204_YamaArmor_Remove.prefab",
+    "CharacterSocketType": "CharacterSocketType_Foot"
+  },
+  {
+    "ID": 120400040,
+    "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Hero1204/Prefab/playEFx_0_Hero1204_MontyArmor_Add.prefab",
+    "CharacterSocketType": "CharacterSocketType_Foot"
+  },
+  {
+    "ID": 120400041,
+    "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Hero1204/Prefab/playEFx_0_Hero1204_MontyArmor_Keep.prefab",
+    "CharacterSocketType": "CharacterSocketType_Foot",
+    "IsFollow": true,
+    "IsLoop": true
+  },
+  {
+    "ID": 120400050,
+    "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Hero1204/Prefab/playEFx_0_Hero1204_Yama_Keep.prefab",
+    "CharacterSocketType": "CharacterSocketType_Foot",
+    "IsFollow": true,
+    "IsLoop": true
+  },
+  {
+    "ID": 120400051,
+    "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Hero1204/Prefab/playEFx_0_Hero1204_Yama_Remove.prefab",
+    "CharacterSocketType": "CharacterSocketType_Foot"
+  },
+  {
+    "ID": 120400100,
+    "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Hero1204/Prefab/PlayEFx_0_Hero1204_Combat_CastSkill01.prefab",
+    "CharacterSocketType": "CharacterSocketType_Foot"
+  },
+  {
+    "ID": 120400101,
+    "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Hero1204/Prefab/PlayEFx_1_Hero1204_Combat_CastSkill01.prefab",
+    "CharacterSocketType": "CharacterSocketType_Foot"
+  },
+  {
+    "ID": 120400200,
+    "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Hero1204/Prefab/PlayEFx_0_Hero1204_Combat_CastSkill02.prefab",
+    "CharacterSocketType": "CharacterSocketType_Foot"
+  },
+  {
+    "ID": 120400201,
+    "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Hero1204/Prefab/PlayEFx_1_Hero1204_Combat_CastSkill02.prefab",
+    "CharacterSocketType": "CharacterSocketType_Foot"
+  },
+  {
+    "ID": 120400202,
+    "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Hero1204/Prefab/PlayEFx_2_Hero1204_Combat_CastSkill02.prefab",
+    "CharacterSocketType": "CharacterSocketType_Foot"
+  },
+  {
+    "ID": 120400203,
+    "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Hero1204/Prefab/PlayEFx_3_Hero1204_Combat_CastSkill02.prefab",
+    "CharacterSocketType": "CharacterSocketType_Foot"
+  },
+  {
+    "ID": 120400300,
+    "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Hero1204/Prefab/playEFx_0_Hero1204_CastSkill01.prefab",
+    "CharacterSocketType": "CharacterSocketType_Foot",
+    "HoldTime": 2.0
+  },
+  {
+    "ID": 120400400,
+    "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Hero1204/Prefab/playEFx_0_Hero1204_CastSkill02.prefab",
+    "CharacterSocketType": "CharacterSocketType_Foot",
+    "IsLockRotation": true,
+    "HoldTime": 2.0
+  },
+  {
     "ID": 120400500,
     "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Hero1204/Prefab/playEFx_0_Hero1204_CastSkill03.prefab",
     "CharacterSocketType": "CharacterSocketType_Foot",
@@ -446,95 +530,5 @@
     "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Hero1210/Prefab/PlayEFx_0_Hero1210_CastSkill06.prefab",
     "CharacterSocketType": "CharacterSocketType_Foot",
     "IsLockRotation": true
-  },
-  {
-    "ID": 121000810,
-    "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Hero1210/Prefab/PlayEFx_0_Hero1210_Field2_Open.prefab",
-    "CharacterSocketType": "CharacterSocketType_Foot",
-    "IsLockRotation": true
-  },
-  {
-    "ID": 121000811,
-    "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Hero1210/Prefab/PlayEFx_0_Hero1210_Field2_Keep.prefab",
-    "CharacterSocketType": "CharacterSocketType_Foot",
-    "IsFollow": true,
-    "IsLoop": true,
-    "IsLockRotation": true
-  },
-  {
-    "ID": 121000812,
-    "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Hero1210/Prefab/PlayEFx_0_Hero1210_Field2_Relese.prefab",
-    "CharacterSocketType": "CharacterSocketType_Foot",
-    "IsLockRotation": true
-  },
-  {
-    "ID": 121000820,
-    "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Hero1210/Prefab/PlayEFx_0_Hero1210_Field1_Open.prefab",
-    "CharacterSocketType": "CharacterSocketType_Foot",
-    "IsLockRotation": true
-  },
-  {
-    "ID": 121000821,
-    "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Hero1210/Prefab/PlayEFx_0_Hero1210_Field1_Keep.prefab",
-    "CharacterSocketType": "CharacterSocketType_Foot",
-    "IsFollow": true,
-    "IsLoop": true,
-    "IsLockRotation": true
-  },
-  {
-    "ID": 121000822,
-    "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Hero1210/Prefab/PlayEFx_0_Hero1210_Field1_Relese.prefab",
-    "CharacterSocketType": "CharacterSocketType_Foot",
-    "IsLockRotation": true
-  },
-  {
-    "ID": 121100010,
-    "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Hero1211/Prefab/playEFx_0_Hero1211_Combat_AttackRootMotion.prefab",
-    "CharacterSocketType": "CharacterSocketType_RightHand",
-    "IsFollow": true
-  },
-  {
-    "ID": 121100011,
-    "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Hero1211/Prefab/playEFx_1_Hero1211_Combat_AttackRootMotion.prefab",
-    "CharacterSocketType": "CharacterSocketType_Foot"
-  },
-  {
-    "ID": 121100012,
-    "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Hero1211/Prefab/playEFx_2_Hero1211_Combat_AttackRootMotion.prefab",
-    "CharacterSocketType": "CharacterSocketType_Foot",
-    "IsFollow": true
-  },
-  {
-    "ID": 121100013,
-    "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Hero1211/Prefab/playEFx_3_Hero1211_Combat_AttackRootMotion.prefab",
-    "CharacterSocketType": "CharacterSocketType_Foot"
-  },
-  {
-    "ID": 121100014,
-    "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Hero1211/Prefab/playEFx_4_Hero1211_Combat_AttackRootMotion.prefab",
-    "CharacterSocketType": "CharacterSocketType_Foot",
-    "IsFollow": true
-  },
-  {
-    "ID": 121100015,
-    "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Hero1211/Prefab/playEFx_5_Hero1211_Combat_AttackRootMotion.prefab",
-    "CharacterSocketType": "CharacterSocketType_Foot"
-  },
-  {
-    "ID": 121100020,
-    "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Hero1211/Prefab/playEFx_0_Hero1211_FightBackRootMotion.prefab",
-    "CharacterSocketType": "CharacterSocketType_RightHand",
-    "IsFollow": true
-  },
-  {
-    "ID": 121100021,
-    "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Hero1211/Prefab/playEFx_1_Hero1211_FightBackRootMotion.prefab",
-    "CharacterSocketType": "CharacterSocketType_Foot"
-  },
-  {
-    "ID": 121100022,
-    "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Hero1211/Prefab/playEFx_2_Hero1211_FightBackRootMotion.prefab",
-    "CharacterSocketType": "CharacterSocketType_Foot",
-    "IsFollow": true
   }
 ]

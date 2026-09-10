@@ -1,5 +1,59 @@
 [
   {
+    "ID": 40216061,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      201
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1000
+    ],
+    "Param5": "CastSkill01",
+    "Param6": [
+      0
+    ]
+  },
+  {
+    "ID": 40216062,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      201
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1000
+    ],
+    "Param5": "CastSkill02",
+    "Param6": [
+      0
+    ]
+  },
+  {
+    "ID": 40216071,
+    "ActionType": "BattleSceneActionType_ActorEffect",
+    "Param1": [
+      201
+    ],
+    "Param2": [
+      240400300
+    ]
+  },
+  {
+    "ID": 40216072,
+    "ActionType": "BattleSceneActionType_ActorEffect",
+    "Param1": [
+      201
+    ],
+    "Param2": [
+      800000001
+    ]
+  },
+  {
     "ID": 40216073,
     "ActionType": "BattleSceneActionType_Delay",
     "Param1": [
@@ -15712,79 +15766,6 @@
     "ActionType": "BattleSceneActionType_ActorRetreat",
     "Param1": [
       955
-    ]
-  },
-  {
-    "ID": 40504161,
-    "ActionType": "BattleSceneActionType_CameraFocusPosition",
-    "Param1": [
-      2
-    ],
-    "Param3": [
-      {
-        "X": 8,
-        "Y": 15
-      }
-    ]
-  },
-  {
-    "ID": 40504162,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      500
-    ]
-  },
-  {
-    "ID": 40504163,
-    "ActionType": "BattleSceneActionType_SummonNear",
-    "Param1": [
-      4
-    ],
-    "Param2": [
-      24
-    ],
-    "Param3": [
-      {
-        "X": 8,
-        "Y": 15
-      }
-    ],
-    "Param4": [
-      131031743
-    ],
-    "Param6": [
-      1
-    ],
-    "Param7": [
-      {
-        "X": 8,
-        "Y": 1
-      }
-    ],
-    "Param8": [
-      10000
-    ],
-    "Param9": [
-      1
-    ],
-    "Param10": [
-      234
-    ],
-    "Param11": [
-      2
-    ]
-  },
-  {
-    "ID": 40504164,
-    "ActionType": "BattleSceneActionType_CameraFocusPosition",
-    "Param1": [
-      2
-    ],
-    "Param3": [
-      {
-        "X": 14,
-        "Y": 9
-      }
     ]
   }
 ]

@@ -1,0 +1,566 @@
+[
+  {
+    "ID": 1001,
+    "BattleEffectList": [
+      {
+        "EffectType": "TalismanBattleEffectType_SingleAddDamageRate",
+        "P1": 1000
+      }
+    ],
+    "BattleEffectConditionList": [
+      {
+        "CondType": "TalismanBattleEffectConditionType_LastAction"
+      }
+    ]
+  },
+  {
+    "ID": 1002,
+    "BattleAssistId": 71002
+  },
+  {
+    "ID": 1003,
+    "BattleAssistId": 71003
+  },
+  {
+    "ID": 1004,
+    "BattleAssistId": 71004,
+    "BattleEffectList": [
+      {
+        "EffectType": "TalismanBattleEffectType_SingleAddDamageRate",
+        "P1": 2000
+      }
+    ],
+    "BattleEffectCoef": [
+      {
+        "EffectType": "TalismanBattleEffectCoefType_FormationCareer",
+        "P1": 2
+      }
+    ],
+    "BattleEffectConditionList": [
+      {
+        "CondType": "TalismanBattleEffectConditionType_Career",
+        "P1": 2
+      }
+    ]
+  },
+  {
+    "ID": 1005,
+    "TalismanEffectConditionList": [
+      {
+        "CondType": "TalismanEffectConditionType_FormationCareerCount",
+        "P1": 2,
+        "P2": 2
+      }
+    ],
+    "BattleEffectList": [
+      {
+        "EffectType": "TalismanBattleEffectType_SingleAddDamageRate",
+        "P1": 2000
+      }
+    ],
+    "BattleEffectConditionList": [
+      {
+        "CondType": "TalismanBattleEffectConditionType_ActionGreatAndEqual",
+        "P1": 4
+      }
+    ]
+  },
+  {
+    "ID": 1006,
+    "BattleEffectList": [
+      {
+        "EffectType": "TalismanBattleEffectType_SingleAddDamageRate",
+        "P1": 3000
+      }
+    ],
+    "BattleEffectConditionList": [
+      {
+        "CondType": "TalismanBattleEffectConditionType_Career"
+      },
+      {
+        "CondType": "TalismanBattleEffectConditionType_PreActionCareer"
+      },
+      {
+        "CondType": "TalismanBattleEffectConditionType_DamageFlag",
+        "P1": 384
+      }
+    ]
+  },
+  {
+    "ID": 1007,
+    "BattleAssistId": 71017
+  },
+  {
+    "ID": 1008,
+    "BattleEffectList": [
+      {
+        "EffectType": "TalismanBattleEffectType_SingleAddDamageRate",
+        "P1": 3000
+      }
+    ],
+    "BattleEffectConditionList": [
+      {
+        "CondType": "TalismanBattleEffectConditionType_Career",
+        "P1": 1
+      },
+      {
+        "CondType": "TalismanBattleEffectConditionType_LastAction"
+      }
+    ]
+  },
+  {
+    "ID": 1009,
+    "BattleEffectList": [
+      {
+        "EffectType": "TalismanBattleEffectType_SingleAddDamageRate",
+        "P1": 1000
+      }
+    ],
+    "BattleEffectCoef": [
+      {
+        "EffectType": "TalismanBattleEffectCoefType_TargetDistance",
+        "P1": 2,
+        "P2": 5
+      }
+    ]
+  },
+  {
+    "ID": 1010,
+    "BattleAssistId": 71005
+  },
+  {
+    "ID": 1011,
+    "BattleEffectList": [
+      {
+        "EffectType": "TalismanBattleEffectType_NextAddDamageRate",
+        "P1": 2000
+      }
+    ],
+    "BattleEffectConditionList": [
+      {
+        "CondType": "TalismanBattleEffectConditionType_Career",
+        "P1": 5
+      },
+      {
+        "CondType": "TalismanBattleEffectConditionType_DamageFlag",
+        "P1": 1
+      }
+    ],
+    "TriggerTiming": [
+      {
+        "TriggerTime": "TalismanTriggerTimeType_OnActorOnHit"
+      }
+    ]
+  },
+  {
+    "ID": 1012,
+    "BattleEffectList": [
+      {
+        "EffectType": "TalismanBattleEffectType_SingleAddDamageRate",
+        "P1": 1000
+      }
+    ],
+    "BattleEffectConditionList": [
+      {
+        "CondType": "TalismanBattleEffectConditionType_MoveDistanceGreatAndEqual",
+        "P1": 4
+      }
+    ]
+  },
+  {
+    "ID": 1013,
+    "BattleEffectList": [
+      {
+        "EffectType": "TalismanBattleEffectType_SingleAddDamageRate",
+        "P1": 1000
+      }
+    ],
+    "BattleEffectConditionList": [
+      {
+        "CondType": "TalismanBattleEffectConditionType_MoveDistanceGreatAndEqual",
+        "P1": 6
+      }
+    ]
+  },
+  {
+    "ID": 1014,
+    "BattleAssistId": 71006
+  },
+  {
+    "ID": 1015,
+    "BattleAssistId": 71007
+  },
+  {
+    "ID": 1016,
+    "BattleAssistId": 71008
+  },
+  {
+    "ID": 1017,
+    "TalismanEffectConditionList": [
+      {
+        "CondType": "TalismanEffectConditionType_FormationCareerCount",
+        "P1": 4,
+        "P2": 2
+      }
+    ],
+    "BattleAssistId": 71009
+  },
+  {
+    "ID": 1018,
+    "BattleEffectList": [
+      {
+        "EffectType": "TalismanBattleEffectType_SingleAddDamageRate",
+        "P1": 2000
+      }
+    ],
+    "BattleEffectConditionList": [
+      {
+        "CondType": "TalismanBattleEffectConditionType_FirstAction"
+      }
+    ]
+  },
+  {
+    "ID": 1019,
+    "BattleEffectList": [
+      {
+        "EffectType": "TalismanBattleEffectType_SingleAddDamageRate",
+        "P1": 2000
+      }
+    ],
+    "BattleEffectConditionList": [
+      {
+        "CondType": "TalismanBattleEffectConditionType_IsAngerSkill"
+      }
+    ]
+  },
+  {
+    "ID": 1020,
+    "BattleAssistId": 71021,
+    "BattleEffectList": [
+      {
+        "EffectType": "TalismanBattleEffectType_AttachBuf",
+        "TargetType": 1,
+        "P1": 763204529
+      }
+    ],
+    "TriggerTiming": [
+      {
+        "TriggerTime": "TalismanTriggerTimeType_AddDamageRateCount",
+        "P1": 1,
+        "P2": 3,
+        "P3": 3
+      }
+    ]
+  },
+  {
+    "ID": 1021,
+    "BattleEffectList": [
+      {
+        "EffectType": "TalismanBattleEffectType_NextTurnInitAddDamageRate",
+        "P1": 1000
+      }
+    ],
+    "TriggerTiming": [
+      {
+        "TriggerTime": "TalismanTriggerTimeType_AddDamageRateCount",
+        "P1": 6,
+        "P2": 1
+      }
+    ]
+  },
+  {
+    "ID": 1022,
+    "TriggerTiming": [
+      {
+        "TriggerTime": "TalismanTriggerTimeType_AddDamageRateCount",
+        "P1": 7,
+        "P2": 1
+      }
+    ]
+  },
+  {
+    "ID": 1023,
+    "BattleEffectList": [
+      {
+        "EffectType": "TalismanBattleEffectType_AddDamageCount",
+        "P1": 2
+      }
+    ],
+    "BattleEffectConditionList": [
+      {
+        "CondType": "TalismanBattleEffectConditionType_OneActionKillCount",
+        "P1": 3
+      }
+    ],
+    "TriggerTiming": [
+      {
+        "TriggerTime": "TalismanTriggerTimeType_EnemyDead"
+      }
+    ]
+  },
+  {
+    "ID": 1024,
+    "BattleAssistId": 71013
+  },
+  {
+    "ID": 1025,
+    "BattleAssistId": 71010
+  },
+  {
+    "ID": 1026,
+    "BattleAssistId": 71011
+  },
+  {
+    "ID": 1027,
+    "BattleEffectList": [
+      {
+        "EffectType": "TalismanBattleEffectType_BaseAddDamageRate",
+        "P1": 1000
+      }
+    ]
+  },
+  {
+    "ID": 1028,
+    "BattleAssistId": 71014
+  },
+  {
+    "ID": 1029,
+    "BattleAssistId": 71015
+  },
+  {
+    "ID": 1030,
+    "BattleEffectList": [
+      {
+        "EffectType": "TalismanBattleEffectType_SingleAddDamageRate",
+        "P1": 3000
+      }
+    ],
+    "BattleEffectConditionList": [
+      {
+        "CondType": "TalismanBattleEffectConditionType_OddAction"
+      }
+    ]
+  },
+  {
+    "ID": 1031,
+    "BattleEffectList": [
+      {
+        "EffectType": "TalismanBattleEffectType_SetDamageRate",
+        "P1": 10000
+      }
+    ],
+    "BattleEffectConditionList": [
+      {
+        "CondType": "TalismanBattleEffectConditionType_EvenAction"
+      }
+    ]
+  },
+  {
+    "ID": 1033,
+    "TalismanEffectConditionList": [
+      {
+        "CondType": "TalismanEffectConditionType_FormationSameSign",
+        "P1": 512
+      }
+    ],
+    "BattleAssistId": 71012,
+    "BattleEffectList": [
+      {
+        "EffectType": "TalismanBattleEffectType_BaseAddDamageRate",
+        "P1": 3000
+      }
+    ]
+  },
+  {
+    "ID": 1035,
+    "BattleEffectList": [
+      {
+        "EffectType": "TalismanBattleEffectType_SingleAddDamageRate",
+        "P1": 3000
+      }
+    ],
+    "BattleEffectConditionList": [
+      {
+        "CondType": "TalismanBattleEffectConditionType_EvenAction"
+      }
+    ]
+  },
+  {
+    "ID": 1036,
+    "BattleEffectList": [
+      {
+        "EffectType": "TalismanBattleEffectType_SetDamageRate",
+        "P1": 10000
+      }
+    ],
+    "BattleEffectConditionList": [
+      {
+        "CondType": "TalismanBattleEffectConditionType_OddAction"
+      }
+    ]
+  },
+  {
+    "ID": 2001,
+    "BattleEffectList": [
+      {
+        "EffectType": "TalismanBattleEffectType_SkipAddDamageRate"
+      }
+    ],
+    "BattleEffectConditionList": [
+      {
+        "CondType": "TalismanBattleEffectConditionType_NoDamage"
+      }
+    ],
+    "TriggerTiming": [
+      {
+        "TriggerTime": "TalismanTriggerTimeType_BeforeAddDamageRate"
+      }
+    ]
+  },
+  {
+    "ID": 2002,
+    "BattleEffectList": [
+      {
+        "EffectType": "TalismanBattleEffectType_SingleAddDamageRate",
+        "P1": -3000
+      }
+    ],
+    "BattleEffectConditionList": [
+      {
+        "CondType": "TalismanBattleEffectConditionType_ActionCompare",
+        "P1": 4,
+        "P2": 3
+      }
+    ]
+  },
+  {
+    "ID": 2003,
+    "BattleEffectList": [
+      {
+        "EffectType": "TalismanBattleEffectType_SkipAddDamageRate"
+      }
+    ],
+    "BattleEffectConditionList": [
+      {
+        "CondType": "TalismanBattleEffectConditionType_IsAngerSkill"
+      }
+    ],
+    "TriggerTiming": [
+      {
+        "TriggerTime": "TalismanTriggerTimeType_BeforeAddDamageRate"
+      }
+    ]
+  },
+  {
+    "ID": 2004,
+    "BattleAssistId": 71018
+  },
+  {
+    "ID": 2005,
+    "BattleAssistId": 71019
+  },
+  {
+    "ID": 2006,
+    "BattleAssistId": 71020,
+    "BattleEffectList": [
+      {
+        "EffectType": "TalismanBattleEffectType_SingleAddDamageRate",
+        "P1": 2000
+      }
+    ]
+  },
+  {
+    "ID": 2007,
+    "BattleEffectList": [
+      {
+        "EffectType": "TalismanBattleEffectType_InheritModifyDamageRate"
+      }
+    ],
+    "BattleEffectConditionList": [
+      {
+        "CondType": "TalismanBattleEffectConditionType_NoDamage"
+      }
+    ],
+    "TriggerTiming": [
+      {
+        "TriggerTime": "TalismanTriggerTimeType_BatchActionEnd"
+      }
+    ]
+  },
+  {
+    "ID": 2008,
+    "TalismanEffectConditionList": [
+      {
+        "CondType": "TalismanEffectConditionType_FormationCareerTypeCompare",
+        "P1": 2,
+        "P2": 3
+      }
+    ],
+    "BattleEffectList": [
+      {
+        "EffectType": "TalismanBattleEffectType_SingleAddDamageRate",
+        "P1": 1000
+      }
+    ]
+  },
+  {
+    "ID": 2009,
+    "TalismanEffectConditionList": [
+      {
+        "CondType": "TalismanEffectConditionType_FormationCareerTypeCompare",
+        "P1": 2,
+        "P2": 2
+      }
+    ],
+    "BattleEffectList": [
+      {
+        "EffectType": "TalismanBattleEffectType_SingleAddDamageRate",
+        "P1": 1000
+      }
+    ]
+  },
+  {
+    "ID": 2010,
+    "BattleEffectList": [
+      {
+        "EffectType": "TalismanBattleEffectType_SkipAddDamageRate"
+      }
+    ],
+    "BattleEffectConditionList": [
+      {
+        "CondType": "TalismanBattleEffectConditionType_IsSkillGroup",
+        "P1": 19
+      },
+      {
+        "CondType": "TalismanBattleEffectConditionType_IsSkillGroup"
+      }
+    ],
+    "TriggerTiming": [
+      {
+        "TriggerTime": "TalismanTriggerTimeType_BeforeAddDamageRate"
+      }
+    ]
+  },
+  {
+    "ID": 2011,
+    "BattleEffectList": [
+      {
+        "EffectType": "TalismanBattleEffectType_SkipAddDamageRate"
+      }
+    ],
+    "BattleEffectConditionList": [
+      {
+        "CondType": "TalismanBattleEffectConditionType_IsSkillGroup",
+        "P1": 18
+      },
+      {
+        "CondType": "TalismanBattleEffectConditionType_IsSkillGroup"
+      }
+    ],
+    "TriggerTiming": [
+      {
+        "TriggerTime": "TalismanTriggerTimeType_BeforeAddDamageRate"
+      }
+    ]
+  }
+]

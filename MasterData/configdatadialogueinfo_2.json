@@ -1,5 +1,37 @@
 [
   {
+    "ID": 10149619,
+    "NextID": 10149620,
+    "LeftCharImageId": 31090701,
+    "RightCharImageId": 31090801,
+    "Position": "PositionType_Right",
+    "MotionName": "idle_Dialog_Normal",
+    "EmotionName": "idle_Dialog_Normal",
+    "SpineType": 1,
+    "Background": 1001032,
+    "Voice": "VO_W_12_2_ZRCJ_76",
+    "SkipMessageID": 101,
+    "PlayMode": "DialogPlayMode_Semiautomatic",
+    "AutoPlayDelayTime": 1000,
+    "WordsStrKey": "ST:55723"
+  },
+  {
+    "ID": 10149620,
+    "NextID": 10149621,
+    "LeftCharImageId": 31090701,
+    "RightCharImageId": 31090801,
+    "Position": "PositionType_Right",
+    "MotionName": "idle_Dialog_Normal",
+    "EmotionName": "idle_Dialog_Normal",
+    "SpineType": 1,
+    "Background": 1001032,
+    "Voice": "VO_W_12_2_ZRCJ_77",
+    "SkipMessageID": 101,
+    "PlayMode": "DialogPlayMode_Semiautomatic",
+    "AutoPlayDelayTime": 1000,
+    "WordsStrKey": "ST:72153"
+  },
+  {
     "ID": 10149621,
     "NextID": 10149622,
     "LeftCharImageId": 31090701,
@@ -10130,36 +10162,5 @@
     "PlayMode": "DialogPlayMode_Semiautomatic",
     "AutoPlayDelayTime": 200,
     "WordsStrKey": "ST:40216"
-  },
-  {
-    "ID": 10263101,
-    "NextID": 10263102,
-    "SceneActorId": 202,
-    "RightCharImageId": 110302,
-    "Position": "PositionType_Right",
-    "MotionName": "idle_Dialog_Normal",
-    "EmotionName": "idle_Dialog_Normal",
-    "SpineType": 2,
-    "Voice": "VO_W_16_5_YCZJS_20",
-    "SkipMessageID": 101,
-    "PlayMode": "DialogPlayMode_Semiautomatic",
-    "AutoPlayDelayTime": 200,
-    "WordsStrKey": "ST:40218"
-  },
-  {
-    "ID": 10263102,
-    "NextID": 10263103,
-    "SceneActorId": 101,
-    "LeftCharImageId": 100001,
-    "RightCharImageId": 110302,
-    "Position": "PositionType_Left",
-    "MotionName": "idle_Dialog_Normal",
-    "EmotionName": "idle_Dialog_Shock",
-    "SpineType": 2,
-    "Voice": "VO_W_16_5_YCZJS_21",
-    "SkipMessageID": 101,
-    "PlayMode": "DialogPlayMode_Semiautomatic",
-    "AutoPlayDelayTime": 200,
-    "WordsStrKey": "ST:40219"
   }
 ]

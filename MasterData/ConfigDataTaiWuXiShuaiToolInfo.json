@@ -1,0 +1,25 @@
+[
+  {
+    "ID": 1,
+    "ToolName": "寻王香",
+    "ToolEffects": [
+      {
+        "ToolType": "TaiWuXiShuaiToolType_ShowBest",
+        "P1": 2
+      }
+    ],
+    "CostItemCount": 1000,
+    "LimitPerSession": 1
+  },
+  {
+    "ID": 2,
+    "ToolName": "听声辨色",
+    "ToolEffects": [
+      {
+        "ToolType": "TaiWuXiShuaiToolType_ShowColor"
+      }
+    ],
+    "CostItemCount": 1000,
+    "LimitPerSession": 1
+  }
+]

@@ -1,5 +1,33 @@
 [
   {
+    "ID": 46244301,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1
+    ]
+  },
+  {
+    "ID": 46244302,
+    "ActionType": "BattleSceneActionType_BattleEventTriggerFail",
+    "Param1": [
+      4624426
+    ]
+  },
+  {
+    "ID": 46244351,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1
+    ]
+  },
+  {
+    "ID": 46244361,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1
+    ]
+  },
+  {
     "ID": 46244401,
     "ActionType": "BattleSceneActionType_TeamAIStateSet",
     "Param1": [
@@ -15839,42 +15867,6 @@
     "ActionType": "BattleSceneActionType_Delay",
     "Param1": [
       500
-    ]
-  },
-  {
-    "ID": 46263416,
-    "VersionTag": 62,
-    "ActionType": "BattleSceneActionType_BattleEventTriggerFail",
-    "Param1": [
-      4626325,
-      4626345
-    ]
-  },
-  {
-    "ID": 46263417,
-    "VersionTag": 62,
-    "ActionType": "BattleSceneActionType_ActorRetreat",
-    "Param1": [
-      201
-    ],
-    "Param2": [
-      1
-    ]
-  },
-  {
-    "ID": 46263418,
-    "VersionTag": 62,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      1
-    ]
-  },
-  {
-    "ID": 46263419,
-    "VersionTag": 62,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      1
     ]
   }
 ]

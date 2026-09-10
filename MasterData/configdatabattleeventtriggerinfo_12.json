@@ -1,5 +1,53 @@
 [
   {
+    "ID": 4191231,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param1": [
+      101
+    ],
+    "Param3": [
+      {
+        "X": 2,
+        "Y": 3
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      4191231
+    ]
+  },
+  {
+    "ID": 4191232,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param1": [
+      101
+    ],
+    "Param3": [
+      {
+        "X": 1,
+        "Y": 8
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      4191232
+    ]
+  },
+  {
+    "ID": 4191233,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param1": [
+      101
+    ],
+    "Param3": [
+      {
+        "X": 9,
+        "Y": 15
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      4191233
+    ]
+  },
+  {
     "ID": 4191234,
     "TriggerType": "BattleEventTriggerType_ActorReachPosition",
     "Param1": [
@@ -4500,27 +4548,6 @@
     ],
     "SceneActionGroupIdLst": [
       4210715
-    ]
-  },
-  {
-    "ID": 4210716,
-    "TriggerType": "BattleEventTriggerType_Delay",
-    "SceneActionGroupIdLst": [
-      4210716
-    ]
-  },
-  {
-    "ID": 4210717,
-    "TriggerType": "BattleEventTriggerType_Delay",
-    "SceneActionGroupIdLst": [
-      4210717
-    ]
-  },
-  {
-    "ID": 4210718,
-    "TriggerType": "BattleEventTriggerType_Delay",
-    "SceneActionGroupIdLst": [
-      4210718
     ]
   }
 ]

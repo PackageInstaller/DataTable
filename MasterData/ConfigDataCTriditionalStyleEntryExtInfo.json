@@ -1,11 +1,24 @@
-{
-  "ID": 2,
-  "InitAssistIds": [
-    201,
-    202
-  ],
-  "CharGroupId": 201,
-  "RankRewardGroupId": 2,
-  "CharBufGroupLimit": 1,
-  "InitBufCount": 3
-}
+[
+  {
+    "ID": 2,
+    "InitAssistIds": [
+      201,
+      202
+    ],
+    "CharGroupId": 201,
+    "RankRewardGroupId": 2,
+    "CharBufGroupLimit": 1,
+    "InitBufCount": 3
+  },
+  {
+    "ID": 3,
+    "InitAssistIds": [
+      201,
+      202
+    ],
+    "CharGroupId": 301,
+    "RankRewardGroupId": 3,
+    "CharBufGroupLimit": 1,
+    "InitBufCount": 3
+  }
+]

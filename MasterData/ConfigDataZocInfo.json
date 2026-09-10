@@ -228,6 +228,12 @@
     "CostAddForValidTarget": -1000
   },
   {
+    "ID": 39,
+    "Type": "ZocType_CostNoMovePoint",
+    "Describe": "不消耗行动力,履霜专用",
+    "ValidTargetFilterId": 880120023
+  },
+  {
     "ID": 420,
     "Type": "ZocType_CostMoreMovePoint",
     "Describe": "少消耗1000点行动力,对友方胧妖生效",
@@ -302,9 +308,29 @@
     "ValidTargetFilterId": 742506001
   },
   {
+    "ID": 251001,
+    "Type": "ZocType_CostMoreMovePoint",
+    "Describe": "少消耗1000点行动力,仅妖佑宇韶容生效",
+    "ValidTargetFilterId": 251001,
+    "CostAddForValidTarget": -1000
+  },
+  {
+    "ID": 251002,
+    "Type": "ZocType_CostMoreMovePoint",
+    "Describe": "多消耗1000点行动力,对敌方-被ZOC影响-神兵-解锁标记角色生效",
+    "ValidTargetFilterId": 251002,
+    "CostAddForValidTarget": 1000
+  },
+  {
     "ID": 763160511,
     "Type": "ZocType_CostNoMovePoint",
     "Describe": "不消耗行动力,对所有带标记角色生效",
     "ValidTargetFilterId": 763160511
+  },
+  {
+    "ID": 763203526,
+    "Type": "ZocType_CostNoMovePoint",
+    "Describe": "不消耗行动力,对所有带标记角色生效",
+    "ValidTargetFilterId": 840000143
   }
 ]

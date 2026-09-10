@@ -174,22 +174,21 @@
       {
         "TId": 62101,
         "PassRecordNum": 1,
-        "DropID": 351624001
+        "DropID": 351698010
       },
       {
         "TId": 62102,
-        "EndWeeks": 2,
         "PassRecordNum": 2,
-        "DropID": 351624002
+        "DropID": 351698011
       },
       {
         "TId": 62103,
-        "EndWeeks": 2,
         "PassRecordNum": 3,
-        "DropID": 351624003
+        "DropID": 351698012
       }
     ],
     "MapDescResPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/ShenMoJieQiImage_ABS/Shenmojieqi_6210.png@Shenmojieqi_6210",
+    "CricleResPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Boss240100_HeadIcon_Basic.png@Boss240100_HeadIcon_Basic",
     "BattleRecordNum": 3,
     "DeforeDialogueId": 803101701,
     "SceneDescStrKey": "ST:242487"
@@ -214,24 +213,21 @@
       {
         "TId": 63101,
         "PassRecordNum": 1,
-        "DropID": 351634001
+        "DropID": 351699010
       },
       {
         "TId": 63102,
-        "StartWeeks": 4,
-        "EndWeeks": 6,
         "PassRecordNum": 2,
-        "DropID": 351634002
+        "DropID": 351699011
       },
       {
         "TId": 63103,
-        "StartWeeks": 4,
-        "EndWeeks": 6,
         "PassRecordNum": 3,
-        "DropID": 351634003
+        "DropID": 351699012
       }
     ],
     "MapDescResPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/ShenMoJieQiImage_ABS/Shenmojieqi_6310.png@Shenmojieqi_6310",
+    "CricleResPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Boss216003_HeadIcon_Basic.png@Boss216003_HeadIcon_Basic",
     "BattleRecordNum": 3,
     "SceneDescStrKey": "ST:242487"
   },
@@ -315,6 +311,84 @@
     ],
     "MapDescResPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/ShenMoJieQiImage_ABS/Shenmojieqi_6710.png@Shenmojieqi_6710",
     "BattleRecordNum": 3,
+    "SceneDescStrKey": "ST:242487"
+  },
+  {
+    "ID": 7010,
+    "BattleSceneIDS": [
+      {
+        "Diff": 1,
+        "BattleSceneId": 27001000
+      },
+      {
+        "Diff": 2,
+        "BattleSceneId": 27001100
+      },
+      {
+        "Diff": 3,
+        "BattleSceneId": 27001200
+      }
+    ],
+    "LimitTreasureInfo": [
+      {
+        "TId": 70101,
+        "PassRecordNum": 1,
+        "DropID": 351704001
+      },
+      {
+        "TId": 70102,
+        "PassRecordNum": 2,
+        "DropID": 351704002
+      },
+      {
+        "TId": 70103,
+        "PassRecordNum": 3,
+        "DropID": 351704003
+      }
+    ],
+    "MapDescResPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/ShenMoJieQiImage_ABS/Shenmojieqi_7010.png@Shenmojieqi_7010",
+    "CricleResPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Boss240706_HeadIcon_Basic.png@Boss240706_HeadIcon_Basic",
+    "BattleRecordNum": 3,
+    "AfterDialogueId": 700101901,
+    "SceneDescStrKey": "ST:242487"
+  },
+  {
+    "ID": 7110,
+    "BattleSceneIDS": [
+      {
+        "Diff": 1,
+        "BattleSceneId": 27101000
+      },
+      {
+        "Diff": 2,
+        "BattleSceneId": 27101100
+      },
+      {
+        "Diff": 3,
+        "BattleSceneId": 27101200
+      }
+    ],
+    "LimitTreasureInfo": [
+      {
+        "TId": 70101,
+        "PassRecordNum": 1,
+        "DropID": 351714001
+      },
+      {
+        "TId": 70102,
+        "PassRecordNum": 2,
+        "DropID": 351714002
+      },
+      {
+        "TId": 70103,
+        "PassRecordNum": 3,
+        "DropID": 351714003
+      }
+    ],
+    "MapDescResPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/ShenMoJieQiImage_ABS/Shenmojieqi_7110.png@Shenmojieqi_7110",
+    "CricleResPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Boss240708_HeadIcon_Basic.png@Boss240708_HeadIcon_Basic",
+    "BattleRecordNum": 3,
+    "DeforeDialogueId": 710101701,
     "SceneDescStrKey": "ST:242487"
   }
 ]

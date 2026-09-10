@@ -6498,6 +6498,64 @@
     ]
   },
   {
+    "ID": 27000101,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_AchievemntsComplete",
+    "Param1": 1,
+    "Param2": [
+      27000104
+    ]
+  },
+  {
+    "ID": 27000301,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 1,
+    "Param2": [
+      5
+    ]
+  },
+  {
+    "ID": 27000701,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 1,
+    "Param2": [
+      0
+    ],
+    "Param3": 1
+  },
+  {
+    "ID": 27000702,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 2,
+    "Param2": [
+      0
+    ],
+    "Param3": 1
+  },
+  {
+    "ID": 27000703,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 3,
+    "Param2": [
+      0
+    ],
+    "Param3": 1
+  },
+  {
+    "ID": 27001001,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_ActorDead",
+    "Param1": 420
+  },
+  {
+    "ID": 27001002,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_ActorDead",
+    "Param1": 421
+  },
+  {
+    "ID": 27001003,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_ActorDead",
+    "Param1": 422
+  },
+  {
     "ID": 27011801,
     "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_TriggerTotalTriggerTimes",
     "Param1": 1,
@@ -6891,6 +6949,324 @@
     "Param2": [
       27081492
     ]
+  },
+  {
+    "ID": 27100301,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_ActorDead",
+    "Param1": 499
+  },
+  {
+    "ID": 27100401,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 1,
+    "Param2": [
+      0
+    ],
+    "Param3": 1
+  },
+  {
+    "ID": 27100601,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_ActorDead",
+    "Param1": 491
+  },
+  {
+    "ID": 27100602,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_ActorDead",
+    "Param1": 492
+  },
+  {
+    "ID": 27100603,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_ActorDead",
+    "Param1": 493
+  },
+  {
+    "ID": 27100604,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_ActorDead",
+    "Param1": 494
+  },
+  {
+    "ID": 27100801,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 1,
+    "Param2": [
+      5
+    ]
+  },
+  {
+    "ID": 27100901,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_ActorDead",
+    "Param1": 451
+  },
+  {
+    "ID": 27100902,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_ActorDead",
+    "Param1": 452
+  },
+  {
+    "ID": 27100903,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_TriggerTotalTriggerTimes",
+    "Param1": 1,
+    "Param2": [
+      27100919
+    ]
+  },
+  {
+    "ID": 27101101,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_TriggerTotalTriggerTimes",
+    "Param1": 1,
+    "Param2": [
+      27101104
+    ]
+  },
+  {
+    "ID": 27101102,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_TriggerTotalTriggerTimes",
+    "Param1": 1,
+    "Param2": [
+      27101105
+    ]
+  },
+  {
+    "ID": 27101103,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_TriggerTotalTriggerTimes",
+    "Param1": 1,
+    "Param2": [
+      27101106
+    ]
+  },
+  {
+    "ID": 27101104,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_TriggerTotalTriggerTimes",
+    "Param1": 1,
+    "Param2": [
+      27101107
+    ]
+  },
+  {
+    "ID": 27101105,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_TriggerTotalTriggerTimes",
+    "Param1": 1,
+    "Param2": [
+      27101108
+    ]
+  },
+  {
+    "ID": 27101106,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_TriggerTotalTriggerTimes",
+    "Param1": 1,
+    "Param2": [
+      27101109
+    ]
+  },
+  {
+    "ID": 27101107,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_TriggerTotalTriggerTimes",
+    "Param1": 1,
+    "Param2": [
+      27101110
+    ]
+  },
+  {
+    "ID": 27101108,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_TriggerTotalTriggerTimes",
+    "Param1": 1,
+    "Param2": [
+      27101111
+    ]
+  },
+  {
+    "ID": 27101109,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_TriggerTotalTriggerTimes",
+    "Param1": 1,
+    "Param2": [
+      27101112
+    ]
+  },
+  {
+    "ID": 27101110,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 1,
+    "Param2": [
+      5
+    ]
+  },
+  {
+    "ID": 27101111,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 1,
+    "Param2": [
+      5
+    ],
+    "Param3": 1
+  },
+  {
+    "ID": 27101112,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 1,
+    "Param2": [
+      5
+    ],
+    "Param3": 2
+  },
+  {
+    "ID": 27101113,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 1,
+    "Param2": [
+      5
+    ],
+    "Param3": 3
+  },
+  {
+    "ID": 27101114,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 1,
+    "Param2": [
+      5
+    ],
+    "Param3": 4
+  },
+  {
+    "ID": 27101115,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 1,
+    "Param2": [
+      5
+    ],
+    "Param3": 5
+  },
+  {
+    "ID": 27101116,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 1,
+    "Param2": [
+      5
+    ],
+    "Param3": 6
+  },
+  {
+    "ID": 27101117,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 1,
+    "Param2": [
+      5
+    ],
+    "Param3": 7
+  },
+  {
+    "ID": 27101118,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 1,
+    "Param2": [
+      5
+    ],
+    "Param3": 8
+  },
+  {
+    "ID": 27101801,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 1,
+    "Param2": [
+      0
+    ],
+    "Param3": 1
+  },
+  {
+    "ID": 27101802,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 2,
+    "Param2": [
+      0
+    ],
+    "Param3": 1
+  },
+  {
+    "ID": 27101803,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 3,
+    "Param2": [
+      0
+    ],
+    "Param3": 1
+  },
+  {
+    "ID": 27101804,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 1,
+    "Param2": [
+      0
+    ]
+  },
+  {
+    "ID": 27101805,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 2,
+    "Param2": [
+      0
+    ]
+  },
+  {
+    "ID": 27101806,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 3,
+    "Param2": [
+      0
+    ]
+  },
+  {
+    "ID": 27104701,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_ActorDead",
+    "Param1": 421
+  },
+  {
+    "ID": 27104801,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_ActorDead",
+    "Param1": 421
+  },
+  {
+    "ID": 27104802,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_ActorDead",
+    "Param1": 422
+  },
+  {
+    "ID": 27104901,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_ActorDead",
+    "Param1": 421
+  },
+  {
+    "ID": 27104902,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_ActorDead",
+    "Param1": 422
+  },
+  {
+    "ID": 27104903,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_ActorDead",
+    "Param1": 423
+  },
+  {
+    "ID": 27104904,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_ActorDead",
+    "Param1": 424
+  },
+  {
+    "ID": 27104905,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_ActorDead",
+    "Param1": 411
+  },
+  {
+    "ID": 27104906,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_ActorDead",
+    "Param1": 412
+  },
+  {
+    "ID": 27104907,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_ActorDead",
+    "Param1": 413
+  },
+  {
+    "ID": 27104908,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_ActorDead",
+    "Param1": 414
   },
   {
     "ID": 28010201,
@@ -13535,6 +13911,217 @@
       5
     ],
     "Param3": 14
+  },
+  {
+    "ID": 68003001,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 1,
+    "Param2": [
+      5
+    ],
+    "Param3": 1
+  },
+  {
+    "ID": 68003002,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 1,
+    "Param2": [
+      5
+    ],
+    "Param3": 2
+  },
+  {
+    "ID": 68003003,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 1,
+    "Param2": [
+      5
+    ],
+    "Param3": 3
+  },
+  {
+    "ID": 68003011,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 2,
+    "Param2": [
+      5
+    ],
+    "Param3": 1
+  },
+  {
+    "ID": 68003012,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 2,
+    "Param2": [
+      5
+    ],
+    "Param3": 2
+  },
+  {
+    "ID": 68003013,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 2,
+    "Param2": [
+      5
+    ],
+    "Param3": 3
+  },
+  {
+    "ID": 68003021,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 3,
+    "Param2": [
+      5
+    ],
+    "Param3": 1
+  },
+  {
+    "ID": 68003022,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 3,
+    "Param2": [
+      5
+    ],
+    "Param3": 2
+  },
+  {
+    "ID": 68003023,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 3,
+    "Param2": [
+      5
+    ],
+    "Param3": 3
+  },
+  {
+    "ID": 68004001,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 1,
+    "Param2": [
+      5
+    ],
+    "Param3": 1
+  },
+  {
+    "ID": 68007501,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 1,
+    "Param2": [
+      5
+    ],
+    "Param3": 1
+  },
+  {
+    "ID": 68007502,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 1,
+    "Param2": [
+      5
+    ],
+    "Param3": 2
+  },
+  {
+    "ID": 68007503,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 1,
+    "Param2": [
+      5
+    ],
+    "Param3": 3
+  },
+  {
+    "ID": 68007504,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 1,
+    "Param2": [
+      5
+    ],
+    "Param3": 4
+  },
+  {
+    "ID": 68009001,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 1,
+    "Param2": [
+      5
+    ]
+  },
+  {
+    "ID": 68009002,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 1,
+    "Param2": [
+      3
+    ],
+    "Param3": 5
+  },
+  {
+    "ID": 68009003,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 1,
+    "Param2": [
+      2
+    ],
+    "Param3": 5
+  },
+  {
+    "ID": 68016407,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param2": [
+      0
+    ],
+    "Param3": 11
+  },
+  {
+    "ID": 68016512,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param2": [
+      0
+    ],
+    "Param3": 1
+  },
+  {
+    "ID": 68016513,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param2": [
+      5
+    ],
+    "Param3": 1
+  },
+  {
+    "ID": 68017353,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 1,
+    "Param2": [
+      2
+    ],
+    "Param3": 100
+  },
+  {
+    "ID": 68018001,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 1,
+    "Param2": [
+      0
+    ]
+  },
+  {
+    "ID": 68018002,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 2,
+    "Param2": [
+      0
+    ],
+    "Param3": 1
+  },
+  {
+    "ID": 69008001,
+    "BattleSceneActionSkipCondType": "BattleSceneActionSkipCondType_BattleCtxTempParamCompare",
+    "Param1": 5,
+    "Param2": [
+      0
+    ],
+    "Param3": 1
   },
   {
     "ID": 70110009,

@@ -1,5 +1,61 @@
 [
   {
+    "ID": 46143243,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      101
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      700
+    ],
+    "Param5": "SkillAnnounce",
+    "Param6": [
+      0
+    ]
+  },
+  {
+    "ID": 46143244,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      131400041
+    ],
+    "Param2": [
+      10011
+    ],
+    "Param3": [
+      {
+        "X": 9,
+        "Y": 7
+      }
+    ]
+  },
+  {
+    "ID": 46143245,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      131400041
+    ],
+    "Param2": [
+      10012
+    ],
+    "Param3": [
+      {
+        "X": 11,
+        "Y": 7
+      }
+    ]
+  },
+  {
+    "ID": 46143246,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1000
+    ]
+  },
+  {
     "ID": 46143247,
     "ActionType": "BattleSceneActionType_ActorEffect",
     "Param1": [
@@ -14479,34 +14535,6 @@
     "ActionType": "BattleSceneActionType_Delay",
     "Param1": [
       600
-    ]
-  },
-  {
-    "ID": 46150252,
-    "ActionType": "BattleSceneActionType_TimeLine",
-    "Param1": [
-      27910715
-    ]
-  },
-  {
-    "ID": 46150253,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      200
-    ]
-  },
-  {
-    "ID": 46150254,
-    "ActionType": "BattleSceneActionType_Dialog",
-    "Param1": [
-      461502105
-    ]
-  },
-  {
-    "ID": 46150255,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      200
     ]
   }
 ]

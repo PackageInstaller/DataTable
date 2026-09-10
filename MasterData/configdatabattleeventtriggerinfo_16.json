@@ -1,5 +1,35 @@
 [
   {
+    "ID": 4402603,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      2
+    ],
+    "SceneActionGroupIdLst": [
+      4402603
+    ]
+  },
+  {
+    "ID": 4402604,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      3
+    ],
+    "SceneActionGroupIdLst": [
+      4402604
+    ]
+  },
+  {
+    "ID": 4402605,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      5
+    ],
+    "SceneActionGroupIdLst": [
+      4402605
+    ]
+  },
+  {
     "ID": 4402606,
     "TriggerType": "BattleEventTriggerType_BattleTurnStart",
     "Param1": [
@@ -5469,51 +5499,6 @@
     ],
     "SceneActionGroupIdLst": [
       4470204
-    ]
-  },
-  {
-    "ID": 4470205,
-    "TriggerType": "BattleEventTriggerType_ActorHpLess",
-    "Param1": [
-      252
-    ],
-    "Param2": [
-      3000
-    ],
-    "SceneActionGroupIdLst": [
-      4470205
-    ]
-  },
-  {
-    "ID": 4470206,
-    "TriggerType": "BattleEventTriggerType_BattleCtxTempParamCompare",
-    "Param1": [
-      0
-    ],
-    "Param2": [
-      2
-    ],
-    "Param4": [
-      1
-    ],
-    "SceneActionGroupIdLst": [
-      4470206
-    ]
-  },
-  {
-    "ID": 4470207,
-    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
-    "Param2": [
-      1
-    ],
-    "Param3": [
-      {
-        "X": 7,
-        "Y": 10
-      }
-    ],
-    "SceneActionGroupIdLst": [
-      4470207
     ]
   }
 ]

@@ -1,5 +1,40 @@
 [
   {
+    "ID": 41617036,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1000
+    ]
+  },
+  {
+    "ID": 41617037,
+    "ActionType": "BattleSceneActionType_CameraShake",
+    "Param1": [
+      2000
+    ],
+    "Param2": [
+      1000
+    ],
+    "Param4": [
+      2000
+    ],
+    "ActionSoundName": "EFT_Camera_Vibration"
+  },
+  {
+    "ID": 41617038,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      800
+    ]
+  },
+  {
+    "ID": 41617039,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      416171107
+    ]
+  },
+  {
     "ID": 41617040,
     "ActionType": "BattleSceneActionType_Delay",
     "Param1": [
@@ -14277,68 +14312,6 @@
     ],
     "Param2": [
       1
-    ]
-  },
-  {
-    "ID": 41916044,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      800
-    ]
-  },
-  {
-    "ID": 41916045,
-    "ActionType": "BattleSceneActionType_CameraFollow",
-    "Param1": [
-      101
-    ]
-  },
-  {
-    "ID": 41916046,
-    "ActionType": "BattleSceneActionType_ActorTurnDir",
-    "Param1": [
-      102,
-      202,
-      203
-    ],
-    "Param3": [
-      {
-        "X": 9,
-        "Y": 1
-      },
-      {
-        "X": 9,
-        "Y": 1
-      },
-      {
-        "X": 9,
-        "Y": 1
-      }
-    ],
-    "Param4": [
-      2000,
-      2000,
-      2000
-    ],
-    "Param12": 1
-  },
-  {
-    "ID": 41916047,
-    "ActionType": "BattleSceneActionType_MultiActorMove",
-    "Param1": [
-      101
-    ],
-    "Param3": [
-      {
-        "X": 9,
-        "Y": 1
-      }
-    ],
-    "Param7": [
-      {
-        "X": 7,
-        "Y": 1
-      }
     ]
   }
 ]

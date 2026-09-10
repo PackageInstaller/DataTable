@@ -1,5 +1,72 @@
 [
   {
+    "ID": 67002336,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      500000071
+    ],
+    "Param2": [
+      10001
+    ],
+    "Param3": [
+      {
+        "X": 8,
+        "Y": 16
+      }
+    ]
+  },
+  {
+    "ID": 67002337,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      500000071
+    ],
+    "Param2": [
+      10002
+    ],
+    "Param3": [
+      {
+        "X": 7,
+        "Y": 15
+      }
+    ]
+  },
+  {
+    "ID": 67002338,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      500000071
+    ],
+    "Param2": [
+      10003
+    ],
+    "Param3": [
+      {
+        "X": 8,
+        "Y": 14
+      }
+    ]
+  },
+  {
+    "ID": 67002339,
+    "ActionType": "BattleSceneActionType_FadeOut",
+    "Param1": [
+      401,
+      402,
+      403
+    ],
+    "Param2": [
+      400,
+      400,
+      400
+    ],
+    "Param4": [
+      400,
+      400,
+      400
+    ]
+  },
+  {
     "ID": 67002340,
     "ActionType": "BattleSceneActionType_ActorRetreat",
     "Param1": [
@@ -12403,6 +12470,10 @@
     "ActionType": "BattleSceneActionType_NpcChangeTeamType",
     "Param1": [
       441,
+      451,
+      452,
+      453,
+      454,
       461,
       462,
       471,
@@ -15382,64 +15453,6 @@
     "ActionType": "BattleSceneActionType_Dialog",
     "Param1": [
       670101101
-    ]
-  },
-  {
-    "ID": 67010235,
-    "ActionType": "BattleSceneActionType_CameraFollow",
-    "Param1": [
-      101
-    ]
-  },
-  {
-    "ID": 67010236,
-    "ActionType": "BattleSceneActionType_MultiActorMoveV2",
-    "Param1": [
-      101
-    ],
-    "Param3": [
-      {
-        "X": 10,
-        "Y": 5
-      }
-    ],
-    "Param7": [
-      {
-        "X": 10,
-        "Y": 10
-      }
-    ]
-  },
-  {
-    "ID": 67010237,
-    "ActionType": "BattleSceneActionType_TerrainEffect",
-    "Param1": [
-      10000014
-    ],
-    "Param2": [
-      10001
-    ],
-    "Param3": [
-      {
-        "X": 9,
-        "Y": 6
-      }
-    ]
-  },
-  {
-    "ID": 67010238,
-    "ActionType": "BattleSceneActionType_TerrainEffect",
-    "Param1": [
-      10000014
-    ],
-    "Param2": [
-      10002
-    ],
-    "Param3": [
-      {
-        "X": 11,
-        "Y": 6
-      }
     ]
   }
 ]

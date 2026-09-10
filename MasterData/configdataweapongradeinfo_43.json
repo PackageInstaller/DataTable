@@ -1,5 +1,398 @@
 [
   {
+    "ID": 31200803,
+    "Rarity": "Rarity_SR",
+    "Next": 31200804,
+    "NeedRecipeId": 404520083,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403074006,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403011202,
+        "Count": 25
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403011200,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 1,
+        "Count": 8500
+      }
+    ],
+    "NeedCharLevel": 1,
+    "Porperties": [
+      {
+        "Id": "PropertiesId_HpMaxWeapon_S",
+        "Value": 58
+      },
+      {
+        "Id": "PropertiesId_SpiritWeapon_S",
+        "Value": 48
+      }
+    ],
+    "ActorBuffId1": 751116020,
+    "ActorBuffId2": 751116010,
+    "BattlePower": 450,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/weapon_zheguangbi.png@weapon_zheguangbi",
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/weapon_zheguangbi.png@weapon_zheguangbi",
+    "NameStrKey": "ST:123922",
+    "DescStrKey": "ST:123930",
+    "BuffId1DesStrKey": "ST:100724",
+    "BuffId2DesStrKey": "ST:100728",
+    "StoryStrKey": "ST:123939"
+  },
+  {
+    "ID": 31200804,
+    "Rarity": "Rarity_SSR",
+    "Next": 31200805,
+    "NeedRecipeId": 404520084,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022101,
+        "Count": 20
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403011200,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 1,
+        "Count": 15000
+      }
+    ],
+    "NeedCharLevel": 1,
+    "Porperties": [
+      {
+        "Id": "PropertiesId_HpMaxWeapon_S",
+        "Value": 73
+      },
+      {
+        "Id": "PropertiesId_SpiritWeapon_S",
+        "Value": 60
+      }
+    ],
+    "ActorBuffId1": 751116020,
+    "ActorBuffId2": 751116010,
+    "ActorBuffId3": 751100100,
+    "BattlePower": 700,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/weapon_liumohuaqiao.png@weapon_liumohuaqiao",
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/weapon_liumohuaqiao.png@weapon_liumohuaqiao",
+    "NameStrKey": "ST:123923",
+    "DescStrKey": "ST:123931",
+    "BuffId1DesStrKey": "ST:100724",
+    "BuffId2DesStrKey": "ST:100728",
+    "BuffId3DesStrKey": "ST:100732",
+    "StoryStrKey": "ST:123940"
+  },
+  {
+    "ID": 31200805,
+    "Rarity": "Rarity_SSR",
+    "Porperties": [
+      {
+        "Id": "PropertiesId_HpMaxWeapon_S",
+        "Value": 77
+      },
+      {
+        "Id": "PropertiesId_SpiritWeapon_S",
+        "Value": 63
+      }
+    ],
+    "ActorBuffId1": 751116020,
+    "ActorBuffId2": 751116010,
+    "ActorBuffId3": 751100100,
+    "BattlePower": 700,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/weapon_shenqizhuyou.png@weapon_shenqizhuyou",
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/weapon_shenqizhuyou.png@weapon_shenqizhuyou",
+    "NameStrKey": "ST:123654",
+    "DescStrKey": "ST:123932",
+    "BuffId1DesStrKey": "ST:100724",
+    "BuffId2DesStrKey": "ST:100728",
+    "BuffId3DesStrKey": "ST:100732",
+    "StoryStrKey": "ST:224134"
+  },
+  {
+    "ID": 31200901,
+    "Rarity": "Rarity_N",
+    "Next": 31200902,
+    "NeedRecipeId": 404520091,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403072003,
+        "Count": 2
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 1,
+        "Count": 1500
+      }
+    ],
+    "NeedCharLevel": 1,
+    "Porperties": [
+      {
+        "Id": "PropertiesId_HpMaxWeapon_S",
+        "Value": 36
+      },
+      {
+        "Id": "PropertiesId_SpiritWeapon_S",
+        "Value": 38
+      }
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/weapon_yangmuqing.png@weapon_yangmuqing",
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/weapon_yangmuqing.png@weapon_yangmuqing",
+    "NameStrKey": "ST:123924",
+    "DescStrKey": "ST:161462"
+  },
+  {
+    "ID": 31200902,
+    "Rarity": "Rarity_R",
+    "Next": 31200903,
+    "NeedRecipeId": 404520092,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403072005,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403011102,
+        "Count": 10
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 1,
+        "Count": 3500
+      }
+    ],
+    "NeedCharLevel": 1,
+    "Porperties": [
+      {
+        "Id": "PropertiesId_HpMaxWeapon_S",
+        "Value": 44
+      },
+      {
+        "Id": "PropertiesId_SpiritWeapon_S",
+        "Value": 47
+      }
+    ],
+    "ActorBuffId1": 751115010,
+    "BattlePower": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/weapon_ruanyuqing.png@weapon_ruanyuqing",
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/weapon_ruanyuqing.png@weapon_ruanyuqing",
+    "NameStrKey": "ST:123925",
+    "DescStrKey": "ST:161463",
+    "BuffId1DesStrKey": "ST:100723",
+    "StoryStrKey": "ST:161670"
+  },
+  {
+    "ID": 31200903,
+    "Rarity": "Rarity_SR",
+    "Next": 31200904,
+    "NeedRecipeId": 404520093,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403072006,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403011202,
+        "Count": 25
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403011200,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 1,
+        "Count": 8500
+      }
+    ],
+    "NeedCharLevel": 1,
+    "Porperties": [
+      {
+        "Id": "PropertiesId_HpMaxWeapon_S",
+        "Value": 54
+      },
+      {
+        "Id": "PropertiesId_SpiritWeapon_S",
+        "Value": 58
+      }
+    ],
+    "ActorBuffId1": 751115010,
+    "ActorBuffId2": 751115020,
+    "BattlePower": 450,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/weapon_binxuguqing.png@weapon_binxuguqing",
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/weapon_binxuguqing.png@weapon_binxuguqing",
+    "NameStrKey": "ST:123926",
+    "DescStrKey": "ST:161464",
+    "BuffId1DesStrKey": "ST:100723",
+    "BuffId2DesStrKey": "ST:100727",
+    "StoryStrKey": "ST:161671"
+  },
+  {
+    "ID": 31200904,
+    "Rarity": "Rarity_SSR",
+    "Next": 31200905,
+    "NeedRecipeId": 404520094,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 402022101,
+        "Count": 20
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403011200,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 1,
+        "Count": 15000
+      }
+    ],
+    "NeedCharLevel": 1,
+    "Porperties": [
+      {
+        "Id": "PropertiesId_HpMaxWeapon_S",
+        "Value": 68
+      },
+      {
+        "Id": "PropertiesId_SpiritWeapon_S",
+        "Value": 73
+      }
+    ],
+    "ActorBuffId1": 751115010,
+    "ActorBuffId2": 751115020,
+    "ActorBuffId3": 751100090,
+    "BattlePower": 700,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/weapon_youshuangluoqing.png@weapon_youshuangluoqing",
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/weapon_youshuangluoqing.png@weapon_youshuangluoqing",
+    "NameStrKey": "ST:123927",
+    "DescStrKey": "ST:123936",
+    "BuffId1DesStrKey": "ST:100723",
+    "BuffId2DesStrKey": "ST:100727",
+    "BuffId3DesStrKey": "ST:100731",
+    "StoryStrKey": "ST:123944"
+  },
+  {
+    "ID": 31200905,
+    "Rarity": "Rarity_SSR",
+    "Porperties": [
+      {
+        "Id": "PropertiesId_HpMaxWeapon_S",
+        "Value": 71
+      },
+      {
+        "Id": "PropertiesId_SpiritWeapon_S",
+        "Value": 77
+      }
+    ],
+    "ActorBuffId1": 751115010,
+    "ActorBuffId2": 751115020,
+    "ActorBuffId3": 751100090,
+    "BattlePower": 700,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/weapon_suohunwenxue.png@weapon_suohunwenxue",
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/weapon_suohunwenxue.png@weapon_suohunwenxue",
+    "NameStrKey": "ST:123658",
+    "DescStrKey": "ST:161465",
+    "BuffId1DesStrKey": "ST:100723",
+    "BuffId2DesStrKey": "ST:100727",
+    "BuffId3DesStrKey": "ST:100731",
+    "StoryStrKey": "ST:224135"
+  },
+  {
+    "ID": 31201001,
+    "Rarity": "Rarity_N",
+    "Next": 31201002,
+    "NeedRecipeId": 404520101,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403073003,
+        "Count": 2
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 1,
+        "Count": 1500
+      }
+    ],
+    "NeedCharLevel": 1,
+    "Porperties": [
+      {
+        "Id": "PropertiesId_HpMaxWeapon_S",
+        "Value": 43
+      },
+      {
+        "Id": "PropertiesId_AttackWeapon_S",
+        "Value": 40
+      }
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/weapon_taomujian.png@weapon_taomujian",
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/weapon_taomujian.png@weapon_taomujian",
+    "NameStrKey": "ST:123864",
+    "DescStrKey": "ST:123868",
+    "StoryStrKey": "ST:161673"
+  },
+  {
+    "ID": 31201002,
+    "Rarity": "Rarity_R",
+    "Next": 31201003,
+    "NeedRecipeId": 404520102,
+    "NeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403073005,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403011101,
+        "Count": 10
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 1,
+        "Count": 3500
+      }
+    ],
+    "NeedCharLevel": 1,
+    "Porperties": [
+      {
+        "Id": "PropertiesId_HpMaxWeapon_S",
+        "Value": 52
+      },
+      {
+        "Id": "PropertiesId_AttackWeapon_S",
+        "Value": 48
+      }
+    ],
+    "ActorBuffId1": 751112010,
+    "BattlePower": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/weapon_xuanyangjian.png@weapon_xuanyangjian",
+    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/weapon_xuanyangjian.png@weapon_xuanyangjian",
+    "NameStrKey": "ST:123865",
+    "DescStrKey": "ST:123869",
+    "BuffId1DesStrKey": "ST:100723",
+    "StoryStrKey": "ST:161674"
+  },
+  {
     "ID": 31201003,
     "Rarity": "Rarity_SR",
     "Next": 31201004,
@@ -390,396 +783,5 @@
     "DescStrKey": "ST:145464",
     "BuffId1DesStrKey": "ST:100726",
     "StoryStrKey": "ST:145468"
-  },
-  {
-    "ID": 31201303,
-    "Rarity": "Rarity_SR",
-    "Next": 31201304,
-    "NeedRecipeId": 404520133,
-    "NeedItems": [
-      {
-        "ItemType": "ItemType_Material",
-        "ItemId": 403072006,
-        "Count": 6
-      },
-      {
-        "ItemType": "ItemType_Material",
-        "ItemId": 403011203,
-        "Count": 25
-      },
-      {
-        "ItemType": "ItemType_Material",
-        "ItemId": 403011200,
-        "Count": 3
-      },
-      {
-        "ItemType": "ItemType_Currency",
-        "ItemId": 1,
-        "Count": 8500
-      }
-    ],
-    "NeedCharLevel": 1,
-    "Porperties": [
-      {
-        "Id": "PropertiesId_HpMaxWeapon_S",
-        "Value": 59
-      },
-      {
-        "Id": "PropertiesId_AttackWeapon_S",
-        "Value": 55
-      }
-    ],
-    "ActorBuffId1": 751113020,
-    "ActorBuffId2": 751113030,
-    "BattlePower": 450,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/Weapon_zhaneduandao.png@Weapon_zhaneduandao",
-    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/Weapon_zhaneduandao.png@Weapon_zhaneduandao",
-    "NameStrKey": "ST:145460",
-    "DescStrKey": "ST:145465",
-    "BuffId1DesStrKey": "ST:100726",
-    "BuffId2DesStrKey": "ST:100730",
-    "StoryStrKey": "ST:145469"
-  },
-  {
-    "ID": 31201304,
-    "Rarity": "Rarity_SSR",
-    "Next": 31201305,
-    "NeedRecipeId": 404520134,
-    "NeedItems": [
-      {
-        "ItemType": "ItemType_Material",
-        "ItemId": 402022101,
-        "Count": 20
-      },
-      {
-        "ItemType": "ItemType_Material",
-        "ItemId": 403011200,
-        "Count": 3
-      },
-      {
-        "ItemType": "ItemType_Currency",
-        "ItemId": 1,
-        "Count": 15000
-      }
-    ],
-    "Porperties": [
-      {
-        "Id": "PropertiesId_HpMaxWeapon_S",
-        "Value": 74
-      },
-      {
-        "Id": "PropertiesId_AttackWeapon_S",
-        "Value": 69
-      }
-    ],
-    "ActorBuffId1": 751113020,
-    "ActorBuffId2": 751113030,
-    "ActorBuffId3": 751100050,
-    "BattlePower": 700,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/Weapon_yunfeiminghong.png@Weapon_yunfeiminghong",
-    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/Weapon_yunfeiminghong.png@Weapon_yunfeiminghong",
-    "NameStrKey": "ST:145461",
-    "DescStrKey": "ST:145466",
-    "BuffId1DesStrKey": "ST:100726",
-    "BuffId2DesStrKey": "ST:100730",
-    "BuffId3DesStrKey": "ST:100731",
-    "StoryStrKey": "ST:145470"
-  },
-  {
-    "ID": 31201305,
-    "Rarity": "Rarity_SSR",
-    "Porperties": [
-      {
-        "Id": "PropertiesId_HpMaxWeapon_S",
-        "Value": 78
-      },
-      {
-        "Id": "PropertiesId_AttackWeapon_S",
-        "Value": 73
-      }
-    ],
-    "ActorBuffId1": 751113020,
-    "ActorBuffId2": 751113030,
-    "ActorBuffId3": 751100050,
-    "BattlePower": 700,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/Weapon_bailianlongque.png@Weapon_bailianlongque",
-    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/Weapon_bailianlongque.png@Weapon_bailianlongque",
-    "NameStrKey": "ST:145462",
-    "DescStrKey": "ST:145467",
-    "BuffId1DesStrKey": "ST:100726",
-    "BuffId2DesStrKey": "ST:100730",
-    "BuffId3DesStrKey": "ST:100731",
-    "StoryStrKey": "ST:224138"
-  },
-  {
-    "ID": 31201401,
-    "Rarity": "Rarity_N",
-    "Next": 31201402,
-    "NeedRecipeId": 404520141,
-    "NeedItems": [
-      {
-        "ItemType": "ItemType_Material",
-        "ItemId": 403074003,
-        "Count": 2
-      },
-      {
-        "ItemType": "ItemType_Currency",
-        "ItemId": 1,
-        "Count": 1500
-      }
-    ],
-    "NeedCharLevel": 1,
-    "Porperties": [
-      {
-        "Id": "PropertiesId_HpMaxWeapon_S",
-        "Value": 45
-      },
-      {
-        "Id": "PropertiesId_AttackWeapon_S",
-        "Value": 37
-      }
-    ],
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/Weapon_201401.png@Weapon_201401",
-    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/Weapon_201401.png@Weapon_201401",
-    "NameStrKey": "ST:156007",
-    "DescStrKey": "ST:156011"
-  },
-  {
-    "ID": 31201402,
-    "Rarity": "Rarity_R",
-    "Next": 31201403,
-    "NeedRecipeId": 404520142,
-    "NeedItems": [
-      {
-        "ItemType": "ItemType_Material",
-        "ItemId": 403074005,
-        "Count": 3
-      },
-      {
-        "ItemType": "ItemType_Material",
-        "ItemId": 403011101,
-        "Count": 10
-      },
-      {
-        "ItemType": "ItemType_Currency",
-        "ItemId": 1,
-        "Count": 3500
-      }
-    ],
-    "NeedCharLevel": 1,
-    "Porperties": [
-      {
-        "Id": "PropertiesId_HpMaxWeapon_S",
-        "Value": 55
-      },
-      {
-        "Id": "PropertiesId_AttackWeapon_S",
-        "Value": 46
-      }
-    ],
-    "ActorBuffId1": 751111020,
-    "BattlePower": 200,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/Weapon_201402.png@Weapon_201402",
-    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/Weapon_201402.png@Weapon_201402",
-    "NameStrKey": "ST:156008",
-    "DescStrKey": "ST:160177",
-    "BuffId1DesStrKey": "ST:100725",
-    "StoryStrKey": "ST:156016"
-  },
-  {
-    "ID": 31201403,
-    "Rarity": "Rarity_SR",
-    "Next": 31201404,
-    "NeedRecipeId": 404520143,
-    "NeedItems": [
-      {
-        "ItemType": "ItemType_Material",
-        "ItemId": 403074006,
-        "Count": 6
-      },
-      {
-        "ItemType": "ItemType_Material",
-        "ItemId": 403011201,
-        "Count": 25
-      },
-      {
-        "ItemType": "ItemType_Material",
-        "ItemId": 403011200,
-        "Count": 3
-      },
-      {
-        "ItemType": "ItemType_Currency",
-        "ItemId": 1,
-        "Count": 8500
-      }
-    ],
-    "NeedCharLevel": 1,
-    "Porperties": [
-      {
-        "Id": "PropertiesId_HpMaxWeapon_S",
-        "Value": 69
-      },
-      {
-        "Id": "PropertiesId_AttackWeapon_S",
-        "Value": 57
-      }
-    ],
-    "ActorBuffId1": 751111020,
-    "ActorBuffId2": 751111010,
-    "BattlePower": 450,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/Weapon_201403.png@Weapon_201403",
-    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/Weapon_201403.png@Weapon_201403",
-    "NameStrKey": "ST:156009",
-    "DescStrKey": "ST:156013",
-    "BuffId1DesStrKey": "ST:100725",
-    "BuffId2DesStrKey": "ST:100729",
-    "StoryStrKey": "ST:156017"
-  },
-  {
-    "ID": 31201404,
-    "Rarity": "Rarity_SSR",
-    "Next": 31201405,
-    "NeedRecipeId": 404520144,
-    "NeedItems": [
-      {
-        "ItemType": "ItemType_Material",
-        "ItemId": 402022101,
-        "Count": 20
-      },
-      {
-        "ItemType": "ItemType_Material",
-        "ItemId": 403011200,
-        "Count": 3
-      },
-      {
-        "ItemType": "ItemType_Currency",
-        "ItemId": 1,
-        "Count": 15000
-      }
-    ],
-    "NeedCharLevel": 1,
-    "Porperties": [
-      {
-        "Id": "PropertiesId_HpMaxWeapon_S",
-        "Value": 86
-      },
-      {
-        "Id": "PropertiesId_AttackWeapon_S",
-        "Value": 71
-      }
-    ],
-    "ActorBuffId1": 751111020,
-    "ActorBuffId2": 751111010,
-    "ActorBuffId3": 751100020,
-    "BattlePower": 700,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/Weapon_201404.png@Weapon_201404",
-    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/Weapon_201404.png@Weapon_201404",
-    "NameStrKey": "ST:156010",
-    "DescStrKey": "ST:156014",
-    "BuffId1DesStrKey": "ST:100725",
-    "BuffId2DesStrKey": "ST:100729",
-    "BuffId3DesStrKey": "ST:100731",
-    "StoryStrKey": "ST:156018"
-  },
-  {
-    "ID": 31201405,
-    "Rarity": "Rarity_SSR",
-    "Porperties": [
-      {
-        "Id": "PropertiesId_HpMaxWeapon_S",
-        "Value": 90
-      },
-      {
-        "Id": "PropertiesId_AttackWeapon_S",
-        "Value": 75
-      }
-    ],
-    "ActorBuffId1": 751111020,
-    "ActorBuffId2": 751111010,
-    "ActorBuffId3": 751100020,
-    "BattlePower": 700,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/Weapon_201405.png@Weapon_201405",
-    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/Weapon_201405.png@Weapon_201405",
-    "NameStrKey": "ST:156003",
-    "DescStrKey": "ST:156015",
-    "BuffId1DesStrKey": "ST:100725",
-    "BuffId2DesStrKey": "ST:100729",
-    "BuffId3DesStrKey": "ST:100731",
-    "StoryStrKey": "ST:224139"
-  },
-  {
-    "ID": 31201501,
-    "Rarity": "Rarity_N",
-    "Next": 31201502,
-    "NeedRecipeId": 404520151,
-    "NeedItems": [
-      {
-        "ItemType": "ItemType_Material",
-        "ItemId": 403075003,
-        "Count": 2
-      },
-      {
-        "ItemType": "ItemType_Currency",
-        "ItemId": 1,
-        "Count": 1500
-      }
-    ],
-    "NeedCharLevel": 1,
-    "Porperties": [
-      {
-        "Id": "PropertiesId_HpMaxWeapon_S",
-        "Value": 43
-      },
-      {
-        "Id": "PropertiesId_AttackWeapon_S",
-        "Value": 40
-      }
-    ],
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/Weapon_201501.png@Weapon_201501",
-    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/Weapon_201501.png@Weapon_201501",
-    "NameStrKey": "ST:156216",
-    "DescStrKey": "ST:156221"
-  },
-  {
-    "ID": 31201502,
-    "Rarity": "Rarity_R",
-    "Next": 31201503,
-    "NeedRecipeId": 404520152,
-    "NeedItems": [
-      {
-        "ItemType": "ItemType_Material",
-        "ItemId": 403075005,
-        "Count": 3
-      },
-      {
-        "ItemType": "ItemType_Material",
-        "ItemId": 403011101,
-        "Count": 10
-      },
-      {
-        "ItemType": "ItemType_Currency",
-        "ItemId": 1,
-        "Count": 3500
-      }
-    ],
-    "NeedCharLevel": 1,
-    "Porperties": [
-      {
-        "Id": "PropertiesId_HpMaxWeapon_S",
-        "Value": 52
-      },
-      {
-        "Id": "PropertiesId_AttackWeapon_S",
-        "Value": 48
-      }
-    ],
-    "ActorBuffId1": 751112010,
-    "BattlePower": 200,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/Weapon_201502.png@Weapon_201502",
-    "Image": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Equip_ABS/Weapon_201502.png@Weapon_201502",
-    "NameStrKey": "ST:156217",
-    "DescStrKey": "ST:156222",
-    "BuffId1DesStrKey": "ST:100723",
-    "StoryStrKey": "ST:156226"
   }
 ]

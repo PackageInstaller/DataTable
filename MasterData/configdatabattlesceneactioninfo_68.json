@@ -1,5 +1,68 @@
 [
   {
+    "ID": 46201011,
+    "VersionTag": 53,
+    "ActionType": "BattleSceneActionType_ActorTurnDir",
+    "Param1": [
+      103
+    ],
+    "Param3": [
+      {
+        "X": 9,
+        "Y": 7
+      }
+    ],
+    "Param4": [
+      600
+    ]
+  },
+  {
+    "ID": 46201012,
+    "VersionTag": 53,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      600
+    ]
+  },
+  {
+    "ID": 46201013,
+    "VersionTag": 53,
+    "ActionType": "BattleSceneActionType_ActorTurnDir",
+    "Param1": [
+      103
+    ],
+    "Param3": [
+      {
+        "X": 16,
+        "Y": 13
+      }
+    ],
+    "Param4": [
+      600
+    ]
+  },
+  {
+    "ID": 46201014,
+    "VersionTag": 53,
+    "ActionType": "BattleSceneActionType_MultiActorMove",
+    "Param1": [
+      101
+    ],
+    "Param3": [
+      {
+        "X": 11,
+        "Y": 7
+      }
+    ],
+    "Param7": [
+      {
+        "X": 17,
+        "Y": 19
+      }
+    ],
+    "Param12": 1
+  },
+  {
     "ID": 46201015,
     "VersionTag": 53,
     "ActionType": "BattleSceneActionType_ActorTurnDir",
@@ -19655,37 +19718,5 @@
       4621851
     ],
     "SkipCondId": 46219035
-  },
-  {
-    "ID": 46219436,
-    "ActionType": "BattleSceneActionType_CreateTriggerAndTriggerImm",
-    "Param1": [
-      4621861
-    ],
-    "SkipCondId": 46219036
-  },
-  {
-    "ID": 46219437,
-    "ActionType": "BattleSceneActionType_CreateTriggerAndTriggerImm",
-    "Param1": [
-      4621871
-    ],
-    "SkipCondId": 46219037
-  },
-  {
-    "ID": 46219438,
-    "ActionType": "BattleSceneActionType_CreateTriggerAndTriggerImm",
-    "Param1": [
-      4621881
-    ],
-    "SkipCondId": 46219038
-  },
-  {
-    "ID": 46219441,
-    "ActionType": "BattleSceneActionType_CreateTriggerAndTriggerImm",
-    "Param1": [
-      4621811
-    ],
-    "SkipCondId": 46219041
   }
 ]

@@ -256,6 +256,47 @@
     "DescStrKey": "ST:258634"
   },
   {
+    "ID": 10305,
+    "GameFunType": "GameFunctionType_GDTribulation",
+    "JumpGameFunType": [
+      {
+        "GameFuncType": "GameFunctionType_GDTribulation",
+        "P1": 3
+      }
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 35
+      }
+    ],
+    "FunParam": [
+      {
+        "Key": 3
+      }
+    ],
+    "ItemIds": [
+      400000003,
+      402022001,
+      402024901,
+      403062003
+    ],
+    "BGImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/HeroBookImageOB69_ABS/ShareBanner/SharePic_Shenyinloulan.png@SharePic_Shenyinloulan",
+    "SubSmallBGImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/SingleStoryRiftImage_ABS/Danji_33.png@Danji_33",
+    "AdjustPos": [
+      {
+        "posX": 158.0,
+        "posY": 1.0,
+        "scaleX": 1.2,
+        "scaleY": 1.0
+      }
+    ],
+    "TitleStrKey": "ST:263164",
+    "TitleTagStrKey": "ST:26365",
+    "SubTitleStrKey": "ST:263167",
+    "DescStrKey": "ST:263170"
+  },
+  {
     "ID": 20100,
     "GameFunType": "GameFunctionType_Rift",
     "JumpGameFunType": [
@@ -758,6 +799,49 @@
     "SubBottomTagStrKey": "ST:219455"
   },
   {
+    "ID": 40107,
+    "GameFunType": "GameFunctionType_UnrealSea",
+    "JumpGameFunType": [
+      {
+        "GameFuncType": "GameFunctionType_ULRBox",
+        "P1": 9
+      }
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 12
+      }
+    ],
+    "FunParam": [
+      {
+        "Key": 64,
+        "P1": 2
+      }
+    ],
+    "ItemIds": [
+      2,
+      400000003,
+      402022001,
+      402024901
+    ],
+    "BGImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/HeroBookImageOB69_ABS/ShareBanner/SharePic_Icon_102.png@SharePic_Icon_102",
+    "SubSmallBGImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/SingleStoryRiftImage_ABS/Danji_61.png@Danji_61",
+    "AdjustPos": [
+      {
+        "posX": -200.0,
+        "posY": 45.0,
+        "scaleX": 1.1,
+        "scaleY": 1.1
+      }
+    ],
+    "TitleStrKey": "ST:263165",
+    "TitleTagStrKey": "ST:254171",
+    "SubTitleStrKey": "ST:263168",
+    "DescStrKey": "ST:263171",
+    "SubBottomTagStrKey": "ST:219455"
+  },
+  {
     "ID": 40201,
     "GameFunType": "GameFunctionType_UnrealSea",
     "JumpGameFunType": [
@@ -919,6 +1003,88 @@
     "TitleTagStrKey": "ST:254171",
     "SubTitleStrKey": "ST:256160",
     "DescStrKey": "ST:256287",
+    "SubBottomTagStrKey": "ST:254225"
+  },
+  {
+    "ID": 40205,
+    "GameFunType": "GameFunctionType_UnrealSea",
+    "JumpGameFunType": [
+      {
+        "GameFuncType": "GameFunctionType_Xiyou",
+        "P1": 396
+      }
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 17
+      }
+    ],
+    "FunParam": [
+      {
+        "Key": 62,
+        "P1": 1
+      }
+    ],
+    "ItemIds": [
+      2
+    ],
+    "BGImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/HeroBookImageOB44_ABS/ShareBanner/SharePic_Icon_80.png@SharePic_Icon_80",
+    "SubSmallBGImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedBanner_ABS/Mystsries_046.png@Mystsries_046",
+    "SubBorderTag": "解\n锁\n开\n启\n国\n风\n卡\n池",
+    "AdjustPos": [
+      {
+        "posX": -313.0,
+        "posY": 5.0,
+        "scaleX": 1.2,
+        "scaleY": 1.1
+      }
+    ],
+    "TitleStrKey": "ST:260288",
+    "TitleTagStrKey": "ST:254171",
+    "SubTitleStrKey": "ST:260289",
+    "DescStrKey": "ST:260975",
+    "SubBottomTagStrKey": "ST:254225"
+  },
+  {
+    "ID": 40206,
+    "GameFunType": "GameFunctionType_UnrealSea",
+    "JumpGameFunType": [
+      {
+        "GameFuncType": "GameFunctionType_FengShen",
+        "P1": 1611
+      }
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 17
+      }
+    ],
+    "FunParam": [
+      {
+        "Key": 67,
+        "P1": 1
+      }
+    ],
+    "ItemIds": [
+      2
+    ],
+    "BGImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/HeroBookImageOB49_ABS/ShareBanner/SharePic_Icon_85.png@SharePic_Icon_85",
+    "SubSmallBGImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedBanner_ABS/Mystsries_060.png@Mystsries_060",
+    "SubBorderTag": "解\n锁\n开\n启\n国\n风\n卡\n池",
+    "AdjustPos": [
+      {
+        "posX": -148.0,
+        "posY": 78.0,
+        "scaleX": 1.05,
+        "scaleY": 1.05
+      }
+    ],
+    "TitleStrKey": "ST:265789",
+    "TitleTagStrKey": "ST:254171",
+    "SubTitleStrKey": "ST:265790",
+    "DescStrKey": "ST:265963",
     "SubBottomTagStrKey": "ST:254225"
   },
   {
@@ -1163,8 +1329,92 @@
     ],
     "TitleStrKey": "ST:258795",
     "TitleTagStrKey": "ST:254171",
-    "SubTitleStrKey": "ST:259052",
-    "DescStrKey": "ST:259053",
+    "SubTitleStrKey": "ST:259000",
+    "DescStrKey": "ST:259001",
+    "SubBottomTagStrKey": "ST:94052"
+  },
+  {
+    "ID": 40307,
+    "GameFunType": "GameFunctionType_UnrealSea",
+    "JumpGameFunType": [
+      {
+        "GameFuncType": "GameFunctionType_UnrealSea",
+        "P1": 63
+      }
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 17
+      }
+    ],
+    "FunParam": [
+      {
+        "Key": 63,
+        "P1": 1
+      }
+    ],
+    "ItemIds": [
+      2,
+      400000003,
+      402022001
+    ],
+    "BGImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/HeroBookImageOB13_ABS/ShareBanner/SharePic_Icon_49.png@SharePic_Icon_49",
+    "SubSmallBGImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedBanner_ABS/Mystsries_024.png@Mystsries_024",
+    "AdjustPos": [
+      {
+        "posX": -410.0,
+        "posY": -117.0,
+        "scaleX": 1.2,
+        "scaleY": 1.1
+      }
+    ],
+    "TitleStrKey": "ST:263166",
+    "TitleTagStrKey": "ST:254171",
+    "SubTitleStrKey": "ST:263169",
+    "DescStrKey": "ST:263172",
+    "SubBottomTagStrKey": "ST:94052"
+  },
+  {
+    "ID": 40308,
+    "GameFunType": "GameFunctionType_UnrealSea",
+    "JumpGameFunType": [
+      {
+        "GameFuncType": "GameFunctionType_UnrealSea",
+        "P1": 65
+      }
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 17
+      }
+    ],
+    "FunParam": [
+      {
+        "Key": 65,
+        "P1": 1
+      }
+    ],
+    "ItemIds": [
+      2,
+      400000003,
+      402022001
+    ],
+    "BGImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/HeroBookImageOB15_ABS/ShareBanner/SharePic_Icon_52.png@SharePic_Icon_52",
+    "SubSmallBGImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedBanner_ABS/Mystsries_025.png@Mystsries_025",
+    "AdjustPos": [
+      {
+        "posX": -421.0,
+        "posY": 9.0,
+        "scaleX": 1.3,
+        "scaleY": 1.2
+      }
+    ],
+    "TitleStrKey": "ST:263904",
+    "TitleTagStrKey": "ST:254171",
+    "SubTitleStrKey": "ST:264461",
+    "DescStrKey": "ST:264462",
     "SubBottomTagStrKey": "ST:94052"
   }
 ]

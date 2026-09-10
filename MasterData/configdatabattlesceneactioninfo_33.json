@@ -1,5 +1,45 @@
 [
   {
+    "ID": 40801018,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      200
+    ]
+  },
+  {
+    "ID": 40801019,
+    "ActionType": "BattleSceneActionType_ActorTurnDir",
+    "Param1": [
+      304
+    ],
+    "Param2": [
+      0
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 8
+      }
+    ],
+    "Param4": [
+      300
+    ]
+  },
+  {
+    "ID": 40801020,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      300
+    ]
+  },
+  {
+    "ID": 40801021,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      408011105
+    ]
+  },
+  {
     "ID": 40801022,
     "ActionType": "BattleSceneActionType_Delay",
     "Param1": [
@@ -15380,64 +15420,6 @@
     "Param5": "Combat_Idle",
     "Param6": [
       -1
-    ]
-  },
-  {
-    "ID": 40852332,
-    "ActionType": "BattleSceneActionType_ActorAnimation",
-    "Param1": [
-      402
-    ],
-    "Param2": [
-      -1
-    ],
-    "Param4": [
-      1
-    ],
-    "Param5": "Combat_Idle",
-    "Param6": [
-      -1
-    ]
-  },
-  {
-    "ID": 40852333,
-    "ActionType": "BattleSceneActionType_ActorAnimation",
-    "Param1": [
-      403
-    ],
-    "Param2": [
-      -1
-    ],
-    "Param4": [
-      1
-    ],
-    "Param5": "Combat_Idle",
-    "Param6": [
-      -1
-    ]
-  },
-  {
-    "ID": 40852334,
-    "ActionType": "BattleSceneActionType_ActorAnimation",
-    "Param1": [
-      404
-    ],
-    "Param2": [
-      -1
-    ],
-    "Param4": [
-      1
-    ],
-    "Param5": "Combat_Idle",
-    "Param6": [
-      -1
-    ]
-  },
-  {
-    "ID": 40852335,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      500
     ]
   }
 ]

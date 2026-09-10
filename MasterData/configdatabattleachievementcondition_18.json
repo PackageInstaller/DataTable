@@ -1,5 +1,347 @@
 [
   {
+    "ID": 9020301,
+    "ConditionType": "BattleAchievementConditionType_ActorAlive",
+    "ConditionParam1": [
+      101
+    ]
+  },
+  {
+    "ID": 9020302,
+    "ConditionType": "BattleAchievementConditionType_FormationActorsWithoutSign",
+    "ConditionParam1": [
+      1
+    ],
+    "ConditionParam2": [
+      1
+    ]
+  },
+  {
+    "ID": 9020303,
+    "ConditionType": "BattleAchievementConditionType_ActorDead",
+    "ConditionParam1": [
+      201,
+      202,
+      203,
+      204,
+      205,
+      211,
+      212,
+      213,
+      214,
+      215,
+      221,
+      222,
+      223,
+      224,
+      225,
+      227,
+      228,
+      231
+    ]
+  },
+  {
+    "ID": 9020501,
+    "ConditionType": "BattleAchievementConditionType_KillActorCountBeforeTurn",
+    "ConditionParam1": [
+      4
+    ],
+    "ConditionParam2": [
+      3
+    ],
+    "ConditionParam4": [
+      10
+    ]
+  },
+  {
+    "ID": 9020502,
+    "ConditionType": "BattleAchievementConditionType_ActorAlive",
+    "ConditionParam1": [
+      102,
+      103
+    ]
+  },
+  {
+    "ID": 9020503,
+    "ConditionType": "BattleAchievementConditionType_ActorsDeadInATurn",
+    "ConditionParam1": [
+      201,
+      204
+    ]
+  },
+  {
+    "ID": 9020601,
+    "ConditionType": "BattleAchievementConditionType_ActorDontBeHurt",
+    "ConditionParam1": [
+      101
+    ]
+  },
+  {
+    "ID": 9020602,
+    "ConditionType": "BattleAchievementConditionType_ActorDontReachZoneBeforeTurn",
+    "ConditionParam1": [
+      201
+    ],
+    "ConditionParam2": [
+      1
+    ],
+    "ConditionParam3": [
+      {
+        "X": 15,
+        "Y": 18
+      },
+      {
+        "X": 15,
+        "Y": 19
+      }
+    ]
+  },
+  {
+    "ID": 9020603,
+    "ConditionType": "BattleAchievementConditionType_ActorsDeadInATurn",
+    "ConditionParam1": [
+      221,
+      222,
+      223,
+      224
+    ]
+  },
+  {
+    "ID": 9022101,
+    "ConditionType": "BattleAchievementConditionType_ActorAlive",
+    "ConditionParam1": [
+      107
+    ]
+  },
+  {
+    "ID": 9022102,
+    "ConditionType": "BattleAchievementConditionType_ActorDontReachZoneBeforeTurn",
+    "ConditionParam1": [
+      210
+    ],
+    "ConditionParam2": [
+      15
+    ],
+    "ConditionParam3": [
+      {
+        "X": 18,
+        "Y": 1
+      }
+    ]
+  },
+  {
+    "ID": 9022103,
+    "ConditionType": "BattleAchievementConditionType_ActorKillActor",
+    "ConditionParam1": [
+      205
+    ],
+    "ConditionParam2": [
+      107
+    ]
+  },
+  {
+    "ID": 9022301,
+    "ConditionType": "BattleAchievementConditionType_KillActorCountBeforeTurn",
+    "ConditionParam1": [
+      4
+    ],
+    "ConditionParam2": [
+      0
+    ],
+    "ConditionParam4": [
+      2
+    ]
+  },
+  {
+    "ID": 9022302,
+    "ConditionType": "BattleAchievementConditionType_ActorAlive",
+    "ConditionParam1": [
+      102,
+      103,
+      104
+    ]
+  },
+  {
+    "ID": 9022303,
+    "ConditionType": "BattleAchievementConditionType_ActorKillCountBeforeTurn",
+    "ConditionParam1": [
+      101
+    ],
+    "ConditionParam2": [
+      2
+    ],
+    "ConditionParam4": [
+      15
+    ]
+  },
+  {
+    "ID": 9022601,
+    "ConditionType": "BattleAchievementConditionType_ActorDead",
+    "ConditionParam1": [
+      411,
+      412
+    ]
+  },
+  {
+    "ID": 9022602,
+    "ConditionType": "BattleAchievementConditionType_ActorDead",
+    "ConditionParam1": [
+      411,
+      413
+    ]
+  },
+  {
+    "ID": 9022603,
+    "ConditionType": "BattleAchievementConditionType_ActorDead",
+    "ConditionParam1": [
+      412,
+      413
+    ]
+  },
+  {
+    "ID": 9025401,
+    "ConditionType": "BattleAchievementConditionType_WinBeforeTurn",
+    "ConditionParam1": [
+      6
+    ]
+  },
+  {
+    "ID": 9025402,
+    "ConditionType": "BattleAchievementConditionType_KillActorCountBeforeTurn",
+    "ConditionParam1": [
+      4
+    ],
+    "ConditionParam2": [
+      14
+    ],
+    "ConditionParam4": [
+      8
+    ]
+  },
+  {
+    "ID": 9025403,
+    "ConditionType": "BattleAchievementConditionType_FormationActorsWithoutCareer",
+    "ConditionParam1": [
+      1
+    ],
+    "ConditionParam2": [
+      2
+    ]
+  },
+  {
+    "ID": 9027201,
+    "ConditionType": "BattleAchievementConditionType_KillActorCountByTeamIDBeforeTurn",
+    "ConditionParam1": [
+      23
+    ],
+    "ConditionParam2": [
+      1
+    ],
+    "ConditionParam4": [
+      2
+    ]
+  },
+  {
+    "ID": 9027202,
+    "ConditionType": "BattleAchievementConditionType_KillActorBeforeTurn",
+    "ConditionParam1": [
+      201
+    ],
+    "ConditionParam2": [
+      5
+    ]
+  },
+  {
+    "ID": 9027203,
+    "ConditionType": "BattleAchievementConditionType_ActorsDeadInATurn",
+    "ConditionParam1": [
+      203,
+      202
+    ]
+  },
+  {
+    "ID": 9900200,
+    "ConditionType": "BattleAchievementConditionType_MultiTriggerTotalTriggerTimes",
+    "ConditionParam1": [
+      9900201
+    ],
+    "ConditionParam2": [
+      1
+    ],
+    "ConditionParam4": [
+      0
+    ]
+  },
+  {
+    "ID": 9900201,
+    "ConditionType": "BattleAchievementConditionType_MultiTriggerTotalTriggerTimes",
+    "ConditionParam1": [
+      9900202
+    ],
+    "ConditionParam2": [
+      1
+    ],
+    "ConditionParam4": [
+      1
+    ]
+  },
+  {
+    "ID": 9900300,
+    "ConditionType": "BattleAchievementConditionType_MultiTriggerTotalTriggerTimesLessBeforeTurn",
+    "ConditionParam1": [
+      9900301
+    ],
+    "ConditionParam2": [
+      1
+    ],
+    "ConditionParam4": [
+      8
+    ]
+  },
+  {
+    "ID": 9900301,
+    "ConditionType": "BattleAchievementConditionType_ActorKillCountBeforeTurn",
+    "ConditionParam1": [
+      101
+    ],
+    "ConditionParam2": [
+      3
+    ],
+    "ConditionParam4": [
+      0
+    ]
+  },
+  {
+    "ID": 9900400,
+    "ConditionType": "BattleAchievementConditionType_ActorsDeadInATurn",
+    "ConditionParam1": [
+      421,
+      401,
+      402,
+      411
+    ],
+    "ConditionParam2": [
+      2
+    ]
+  },
+  {
+    "ID": 9900401,
+    "ConditionType": "BattleAchievementConditionType_KillActorBeforeTurn",
+    "ConditionParam1": [
+      411
+    ],
+    "ConditionParam2": [
+      2
+    ]
+  },
+  {
+    "ID": 9900500,
+    "ConditionType": "BattleAchievementConditionType_WinBeforeTurn",
+    "ConditionParam1": [
+      4
+    ]
+  },
+  {
     "ID": 9900501,
     "ConditionType": "BattleAchievementConditionType_ActorKillCountBeforeTurn",
     "ConditionParam1": [
@@ -795,26 +1137,856 @@
     ]
   },
   {
-    "ID": 29027801,
+    "ID": 27000101,
+    "ConditionType": "BattleAchievementConditionType_WinBeforeTurn",
+    "ConditionParam1": [
+      2
+    ]
+  },
+  {
+    "ID": 27000102,
+    "ConditionType": "BattleAchievementConditionType_DeadActorCountLessThan",
+    "ConditionParam1": [
+      0
+    ]
+  },
+  {
+    "ID": 27000103,
+    "ConditionType": "BattleAchievementConditionType_ActorAlive",
+    "ConditionParam1": [
+      401,
+      402,
+      403,
+      404
+    ]
+  },
+  {
+    "ID": 27000104,
     "ConditionType": "BattleAchievementConditionType_MultiTriggerTotalTriggerTimes",
     "ConditionParam1": [
-      9027810
+      27000104
     ],
     "ConditionParam2": [
+      1
+    ],
+    "ConditionParam4": [
+      15
+    ]
+  },
+  {
+    "ID": 27000200,
+    "ConditionType": "BattleAchievementConditionType_DeadActorCountLessThan",
+    "ConditionParam1": [
+      0
+    ]
+  },
+  {
+    "ID": 27000201,
+    "ConditionType": "BattleAchievementConditionType_WinBeforeTurn",
+    "ConditionParam1": [
+      3
+    ]
+  },
+  {
+    "ID": 27000202,
+    "ConditionType": "BattleAchievementConditionType_MultiTriggerTotalTriggerTimesLessBeforeTurn",
+    "ConditionParam1": [
+      27000206
+    ],
+    "ConditionParam2": [
+      1
+    ],
+    "ConditionParam4": [
+      15
+    ]
+  },
+  {
+    "ID": 27000301,
+    "ConditionType": "BattleAchievementConditionType_WinBeforeTurn",
+    "ConditionParam1": [
+      3
+    ]
+  },
+  {
+    "ID": 27000302,
+    "ConditionType": "BattleAchievementConditionType_FormationActorCountLessThan",
+    "ConditionParam1": [
+      1
+    ]
+  },
+  {
+    "ID": 27000303,
+    "ConditionType": "BattleAchievementConditionType_MultiTriggerTotalTriggerTimesLessBeforeTurn",
+    "ConditionParam1": [
+      27000306,
+      27000308,
+      27000310
+    ],
+    "ConditionParam2": [
+      1
+    ],
+    "ConditionParam4": [
+      15
+    ]
+  },
+  {
+    "ID": 27000401,
+    "ConditionType": "BattleAchievementConditionType_MultiTriggerTotalTriggerTimesLessBeforeTurn",
+    "ConditionParam1": [
+      27000404
+    ],
+    "ConditionParam2": [
+      1
+    ],
+    "ConditionParam4": [
+      15
+    ]
+  },
+  {
+    "ID": 27000402,
+    "ConditionType": "BattleAchievementConditionType_ActorDontBeHurt",
+    "ConditionParam1": [
+      201
+    ]
+  },
+  {
+    "ID": 27000403,
+    "ConditionType": "BattleAchievementConditionType_CampActorAliveCount",
+    "ConditionParam1": [
+      4
+    ],
+    "ConditionParam2": [
+      1
+    ],
+    "ConditionParam4": [
+      0
+    ]
+  },
+  {
+    "ID": 27000501,
+    "ConditionType": "BattleAchievementConditionType_DeadActorCountLessThan",
+    "ConditionParam1": [
+      0
+    ]
+  },
+  {
+    "ID": 27000502,
+    "ConditionType": "BattleAchievementConditionType_WinBeforeTurn",
+    "ConditionParam1": [
       2
+    ]
+  },
+  {
+    "ID": 27000503,
+    "ConditionType": "BattleAchievementConditionType_FormationActorCountLessThan",
+    "ConditionParam1": [
+      4
+    ]
+  },
+  {
+    "ID": 27000504,
+    "ConditionType": "BattleAchievementConditionType_KillActorBeforeTurn",
+    "ConditionParam1": [
+      421
+    ],
+    "ConditionParam2": [
+      14
+    ]
+  },
+  {
+    "ID": 27000600,
+    "ConditionType": "BattleAchievementConditionType_DeadActorCountLessThan",
+    "ConditionParam1": [
+      0
+    ]
+  },
+  {
+    "ID": 27000601,
+    "ConditionType": "BattleAchievementConditionType_KillActorCountBeforeTurn",
+    "ConditionParam1": [
+      4
+    ],
+    "ConditionParam2": [
+      0
+    ],
+    "ConditionParam4": [
+      3
+    ]
+  },
+  {
+    "ID": 27000602,
+    "ConditionType": "BattleAchievementConditionType_ActorHpPercentGreaterThanWhenBattleEnd",
+    "ConditionParam1": [
+      111
+    ],
+    "ConditionParam2": [
+      50
+    ]
+  },
+  {
+    "ID": 27000700,
+    "ConditionType": "BattleAchievementConditionType_WinBeforeTurn",
+    "ConditionParam1": [
+      4
+    ]
+  },
+  {
+    "ID": 27000701,
+    "ConditionType": "BattleAchievementConditionType_DeadActorCountLessThan",
+    "ConditionParam1": [
+      0
+    ]
+  },
+  {
+    "ID": 27000702,
+    "ConditionType": "BattleAchievementConditionType_ActorHpPercentGreaterThanWhenBattleEnd",
+    "ConditionParam1": [
+      112
+    ],
+    "ConditionParam2": [
+      80
+    ]
+  },
+  {
+    "ID": 27000703,
+    "ConditionType": "BattleAchievementConditionType_MultiTriggerTotalTriggerTimesLessBeforeTurn",
+    "ConditionParam1": [
+      27000731
+    ],
+    "ConditionParam2": [
+      1
+    ],
+    "ConditionParam4": [
+      15
+    ]
+  },
+  {
+    "ID": 27000800,
+    "ConditionType": "BattleAchievementConditionType_DeadActorCountLessThan",
+    "ConditionParam1": [
+      0
+    ]
+  },
+  {
+    "ID": 27000801,
+    "ConditionType": "BattleAchievementConditionType_KillActorCountBeforeTurn",
+    "ConditionParam1": [
+      4
+    ],
+    "ConditionParam2": [
+      0
     ],
     "ConditionParam4": [
       4
     ]
   },
   {
-    "ID": 29027802,
+    "ID": 27000802,
     "ConditionType": "BattleAchievementConditionType_KillActorBeforeTurn",
     "ConditionParam1": [
-      417
+      490
     ],
     "ConditionParam2": [
-      16
+      2
+    ]
+  },
+  {
+    "ID": 27000901,
+    "ConditionType": "BattleAchievementConditionType_DeadActorCountLessThan",
+    "ConditionParam1": [
+      0
+    ]
+  },
+  {
+    "ID": 27000902,
+    "ConditionType": "BattleAchievementConditionType_WinBeforeTurn",
+    "ConditionParam1": [
+      2
+    ]
+  },
+  {
+    "ID": 27000903,
+    "ConditionType": "BattleAchievementConditionType_FormationActorCountLessThan",
+    "ConditionParam1": [
+      3
+    ]
+  },
+  {
+    "ID": 27001301,
+    "ConditionType": "BattleAchievementConditionType_CharacterSingleDamageGreaterThan",
+    "ConditionParam1": [
+      0
+    ],
+    "ConditionParam2": [
+      100000
+    ]
+  },
+  {
+    "ID": 27001302,
+    "ConditionType": "BattleAchievementConditionType_SingleTurnTeamDamageGreaterThan",
+    "ConditionParam1": [
+      0
+    ],
+    "ConditionParam2": [
+      200000
+    ]
+  },
+  {
+    "ID": 27001303,
+    "ConditionType": "BattleAchievementConditionType_CharacterTotalDamageGreaterThan",
+    "ConditionParam1": [
+      0
+    ],
+    "ConditionParam2": [
+      500000
+    ]
+  },
+  {
+    "ID": 27001304,
+    "ConditionType": "BattleAchievementConditionType_MultiTurnTeamDamageGreaterThan",
+    "ConditionParam1": [
+      1
+    ],
+    "ConditionParam2": [
+      3
+    ],
+    "ConditionParam4": [
+      1000000
+    ]
+  },
+  {
+    "ID": 27001305,
+    "ConditionType": "BattleAchievementConditionType_MultiTurnTeamDamageGreaterThan",
+    "ConditionParam1": [
+      4
+    ],
+    "ConditionParam2": [
+      6
+    ],
+    "ConditionParam4": [
+      1000000
+    ]
+  },
+  {
+    "ID": 27001306,
+    "ConditionType": "BattleAchievementConditionType_MultiTurnTeamDamageGreaterThan",
+    "ConditionParam1": [
+      7
+    ],
+    "ConditionParam2": [
+      9
+    ],
+    "ConditionParam4": [
+      1000000
+    ]
+  },
+  {
+    "ID": 27001307,
+    "ConditionType": "BattleAchievementConditionType_MultiTurnTeamDamageGreaterThan",
+    "ConditionParam1": [
+      0
+    ],
+    "ConditionParam2": [
+      4
+    ],
+    "ConditionParam4": [
+      2000000
+    ]
+  },
+  {
+    "ID": 27001308,
+    "ConditionType": "BattleAchievementConditionType_MultiTurnTeamDamageGreaterThan",
+    "ConditionParam1": [
+      0
+    ],
+    "ConditionParam2": [
+      9
+    ],
+    "ConditionParam4": [
+      5000000
+    ]
+  },
+  {
+    "ID": 27003101,
+    "ConditionType": "BattleAchievementConditionType_WinBeforeTurn",
+    "ConditionParam1": [
+      4
+    ]
+  },
+  {
+    "ID": 27003102,
+    "ConditionType": "BattleAchievementConditionType_DeadActorCountLessThan",
+    "ConditionParam1": [
+      0
+    ]
+  },
+  {
+    "ID": 27003103,
+    "ConditionType": "BattleAchievementConditionType_MultiTriggerTotalTriggerTimesLessBeforeTurn",
+    "ConditionParam1": [
+      27003106
+    ],
+    "ConditionParam2": [
+      1
+    ],
+    "ConditionParam4": [
+      20
+    ]
+  },
+  {
+    "ID": 27100101,
+    "ConditionType": "BattleAchievementConditionType_KillActorCountBeforeTurn",
+    "ConditionParam1": [
+      4
+    ],
+    "ConditionParam2": [
+      0
+    ],
+    "ConditionParam4": [
+      2
+    ]
+  },
+  {
+    "ID": 27100102,
+    "ConditionType": "BattleAchievementConditionType_WinBeforeTurn",
+    "ConditionParam1": [
+      4
+    ]
+  },
+  {
+    "ID": 27100103,
+    "ConditionType": "BattleAchievementConditionType_ActorReachZoneBeforeTurn",
+    "ConditionParam1": [
+      211
+    ],
+    "ConditionParam2": [
+      4
+    ],
+    "ConditionParam3": [
+      {
+        "X": 4
+      },
+      {
+        "X": 5
+      },
+      {
+        "X": 6
+      }
+    ]
+  },
+  {
+    "ID": 27100201,
+    "ConditionType": "BattleAchievementConditionType_MultiTriggerTotalTriggerTimes",
+    "ConditionParam1": [
+      27100203,
+      27100204,
+      27100205
+    ],
+    "ConditionParam2": [
+      2
+    ],
+    "ConditionParam4": [
+      14
+    ]
+  },
+  {
+    "ID": 27100202,
+    "ConditionType": "BattleAchievementConditionType_ActorAlive",
+    "ConditionParam1": [
+      211,
+      212,
+      213
+    ]
+  },
+  {
+    "ID": 27100203,
+    "ConditionType": "BattleAchievementConditionType_WinBeforeTurn",
+    "ConditionParam1": [
+      1
+    ]
+  },
+  {
+    "ID": 27100301,
+    "ConditionType": "BattleAchievementConditionType_MultiTriggerTotalTriggerTimes",
+    "ConditionParam1": [
+      27100308
+    ],
+    "ConditionParam2": [
+      1
+    ],
+    "ConditionParam4": [
+      3
+    ]
+  },
+  {
+    "ID": 27100302,
+    "ConditionType": "BattleAchievementConditionType_ActorHpPercentGreaterThanWhenBattleEnd",
+    "ConditionParam1": [
+      211
+    ],
+    "ConditionParam2": [
+      50
+    ]
+  },
+  {
+    "ID": 27100303,
+    "ConditionType": "BattleAchievementConditionType_KillActorBeforeTurn",
+    "ConditionParam1": [
+      499
+    ],
+    "ConditionParam2": [
+      2
+    ]
+  },
+  {
+    "ID": 27100401,
+    "ConditionType": "BattleAchievementConditionType_MultiTriggerTotalTriggerTimesLessBeforeTurn",
+    "ConditionParam1": [
+      27100404
+    ],
+    "ConditionParam2": [
+      1
+    ],
+    "ConditionParam4": [
+      14
+    ]
+  },
+  {
+    "ID": 27100402,
+    "ConditionType": "BattleAchievementConditionType_MultiTriggerTotalTriggerTimesLessBeforeTurn",
+    "ConditionParam1": [
+      27100409
+    ],
+    "ConditionParam2": [
+      1
+    ],
+    "ConditionParam4": [
+      14
+    ]
+  },
+  {
+    "ID": 27100403,
+    "ConditionType": "BattleAchievementConditionType_MultiTriggerTotalTriggerTimesLessBeforeTurn",
+    "ConditionParam1": [
+      27100410
+    ],
+    "ConditionParam2": [
+      1
+    ],
+    "ConditionParam4": [
+      14
+    ]
+  },
+  {
+    "ID": 27100501,
+    "ConditionType": "BattleAchievementConditionType_WinBeforeTurn",
+    "ConditionParam1": [
+      4
+    ]
+  },
+  {
+    "ID": 27100502,
+    "ConditionType": "BattleAchievementConditionType_DeadActorCountLessThan",
+    "ConditionParam1": [
+      0
+    ]
+  },
+  {
+    "ID": 27100503,
+    "ConditionType": "BattleAchievementConditionType_KillActorCountBeforeTurn",
+    "ConditionParam1": [
+      4
+    ],
+    "ConditionParam2": [
+      0
+    ],
+    "ConditionParam4": [
+      2
+    ]
+  },
+  {
+    "ID": 27100601,
+    "ConditionType": "BattleAchievementConditionType_MultiTriggerTotalTriggerTimes",
+    "ConditionParam1": [
+      27100615,
+      27100616,
+      27100617,
+      27100618
+    ],
+    "ConditionParam2": [
+      4
+    ],
+    "ConditionParam4": [
+      15
+    ]
+  },
+  {
+    "ID": 27100602,
+    "ConditionType": "BattleAchievementConditionType_FormationActorCountLessThan",
+    "ConditionParam1": [
+      1
+    ]
+  },
+  {
+    "ID": 27100603,
+    "ConditionType": "BattleAchievementConditionType_ActorDontBeHurt",
+    "ConditionParam1": [
+      111,
+      112,
+      113,
+      114,
+      115
+    ]
+  },
+  {
+    "ID": 27100701,
+    "ConditionType": "BattleAchievementConditionType_WinBeforeTurn",
+    "ConditionParam1": [
+      3
+    ]
+  },
+  {
+    "ID": 27100702,
+    "ConditionType": "BattleAchievementConditionType_KillActorCountBeforeTurn",
+    "ConditionParam1": [
+      4
+    ],
+    "ConditionParam2": [
+      0
+    ],
+    "ConditionParam4": [
+      4
+    ]
+  },
+  {
+    "ID": 27100703,
+    "ConditionType": "BattleAchievementConditionType_ActorAlive",
+    "ConditionParam1": [
+      211,
+      212,
+      213,
+      214,
+      215
+    ]
+  },
+  {
+    "ID": 27100801,
+    "ConditionType": "BattleAchievementConditionType_ActorHpPercentGreaterThanWhenBattleEnd",
+    "ConditionParam1": [
+      111
+    ],
+    "ConditionParam2": [
+      90
+    ]
+  },
+  {
+    "ID": 27100802,
+    "ConditionType": "BattleAchievementConditionType_WinBeforeTurn",
+    "ConditionParam1": [
+      4
+    ]
+  },
+  {
+    "ID": 27100803,
+    "ConditionType": "BattleAchievementConditionType_MultiTriggerTotalTriggerTimes",
+    "ConditionParam1": [
+      27100809,
+      27100810,
+      27100811,
+      27100812,
+      27100813
+    ],
+    "ConditionParam2": [
+      5
+    ],
+    "ConditionParam4": [
+      20
+    ]
+  },
+  {
+    "ID": 27100901,
+    "ConditionType": "BattleAchievementConditionType_ActorHpPercentGreaterThanWhenBattleEnd",
+    "ConditionParam1": [
+      211
+    ],
+    "ConditionParam2": [
+      50
+    ]
+  },
+  {
+    "ID": 27100902,
+    "ConditionType": "BattleAchievementConditionType_ActorHpPercentGreaterThanWhenBattleEnd",
+    "ConditionParam1": [
+      212
+    ],
+    "ConditionParam2": [
+      50
+    ]
+  },
+  {
+    "ID": 27100903,
+    "ConditionType": "BattleAchievementConditionType_WinBeforeTurn",
+    "ConditionParam1": [
+      4
+    ]
+  },
+  {
+    "ID": 27101301,
+    "ConditionType": "BattleAchievementConditionType_CharacterSingleDamageGreaterThan",
+    "ConditionParam1": [
+      0
+    ],
+    "ConditionParam2": [
+      200000
+    ]
+  },
+  {
+    "ID": 27101302,
+    "ConditionType": "BattleAchievementConditionType_SingleTurnTeamDamageGreaterThan",
+    "ConditionParam1": [
+      0
+    ],
+    "ConditionParam2": [
+      400000
+    ]
+  },
+  {
+    "ID": 27101303,
+    "ConditionType": "BattleAchievementConditionType_CharacterTotalDamageGreaterThan",
+    "ConditionParam1": [
+      0
+    ],
+    "ConditionParam2": [
+      1000000
+    ]
+  },
+  {
+    "ID": 27101304,
+    "ConditionType": "BattleAchievementConditionType_MultiTurnTeamDamageGreaterThan",
+    "ConditionParam1": [
+      1
+    ],
+    "ConditionParam2": [
+      2
+    ],
+    "ConditionParam4": [
+      2000000
+    ]
+  },
+  {
+    "ID": 27101305,
+    "ConditionType": "BattleAchievementConditionType_MultiTurnTeamDamageGreaterThan",
+    "ConditionParam1": [
+      3
+    ],
+    "ConditionParam2": [
+      4
+    ],
+    "ConditionParam4": [
+      2000000
+    ]
+  },
+  {
+    "ID": 27101306,
+    "ConditionType": "BattleAchievementConditionType_MultiTurnTeamDamageGreaterThan",
+    "ConditionParam1": [
+      5
+    ],
+    "ConditionParam2": [
+      6
+    ],
+    "ConditionParam4": [
+      2000000
+    ]
+  },
+  {
+    "ID": 27101307,
+    "ConditionType": "BattleAchievementConditionType_MultiTurnTeamDamageGreaterThan",
+    "ConditionParam1": [
+      0
+    ],
+    "ConditionParam2": [
+      4
+    ],
+    "ConditionParam4": [
+      5000000
+    ]
+  },
+  {
+    "ID": 27101308,
+    "ConditionType": "BattleAchievementConditionType_MultiTurnTeamDamageGreaterThan",
+    "ConditionParam1": [
+      0
+    ],
+    "ConditionParam2": [
+      6
+    ],
+    "ConditionParam4": [
+      8000000
+    ]
+  },
+  {
+    "ID": 27101601,
+    "ConditionType": "BattleAchievementConditionType_WinBeforeTurn",
+    "ConditionParam1": [
+      14
+    ]
+  },
+  {
+    "ID": 27101602,
+    "ConditionType": "BattleAchievementConditionType_WinBeforeTurn",
+    "ConditionParam1": [
+      7
+    ]
+  },
+  {
+    "ID": 27101603,
+    "ConditionType": "BattleAchievementConditionType_KillActorCountBeforeTurn",
+    "ConditionParam1": [
+      4
+    ],
+    "ConditionParam2": [
+      0
+    ],
+    "ConditionParam4": [
+      4
+    ]
+  },
+  {
+    "ID": 27101701,
+    "ConditionType": "BattleAchievementConditionType_WinBeforeTurn",
+    "ConditionParam1": [
+      14
+    ]
+  },
+  {
+    "ID": 27101702,
+    "ConditionType": "BattleAchievementConditionType_WinBeforeTurn",
+    "ConditionParam1": [
+      6
+    ]
+  },
+  {
+    "ID": 27101703,
+    "ConditionType": "BattleAchievementConditionType_ActorAlive",
+    "ConditionParam1": [
+      211,
+      212,
+      213
+    ]
+  },
+  {
+    "ID": 27101801,
+    "ConditionType": "BattleAchievementConditionType_WinBeforeTurn",
+    "ConditionParam1": [
+      14
+    ]
+  },
+  {
+    "ID": 27101802,
+    "ConditionType": "BattleAchievementConditionType_WinBeforeTurn",
+    "ConditionParam1": [
+      6
     ]
   }
 ]

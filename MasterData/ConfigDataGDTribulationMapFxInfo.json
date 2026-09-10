@@ -8,11 +8,6 @@
         "CondType": "ConditionType_GDTribulationLevelCompleted",
         "P1": 3,
         "P2": 6210
-      },
-      {
-        "CondType": "ConditionType_GDTribulationTimeUnlock",
-        "P1": 3,
-        "P2": 4
       }
     ]
   },
@@ -566,11 +561,6 @@
         "CondType": "ConditionType_GDTribulationLevelCompleted",
         "P1": 3,
         "P2": 6310
-      },
-      {
-        "CondType": "ConditionType_GDTribulationTimeUnlock",
-        "P1": 3,
-        "P2": 8
       }
     ]
   },
@@ -679,6 +669,114 @@
         "CondType": "ConditionType_GDTribulationLevelCompleted",
         "P1": 3,
         "P2": 6402
+      }
+    ]
+  },
+  {
+    "ID": 7001,
+    "RootName": "FXMap/Cloud1",
+    "GroupId": 5,
+    "ShowCond": [
+      {
+        "CondType": "ConditionType_GDTribulationTimeUnlock",
+        "P1": 5
+      }
+    ],
+    "HideCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 5,
+        "P2": 7001
+      }
+    ]
+  },
+  {
+    "ID": 7002,
+    "RootName": "FXMap/Cloud2",
+    "GroupId": 5,
+    "ShowCond": [
+      {
+        "CondType": "ConditionType_GDTribulationTimeUnlock",
+        "P1": 5
+      }
+    ],
+    "HideCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 5,
+        "P2": 7002
+      }
+    ]
+  },
+  {
+    "ID": 7003,
+    "RootName": "FXMap/Cloud3",
+    "GroupId": 5,
+    "ShowCond": [
+      {
+        "CondType": "ConditionType_GDTribulationTimeUnlock",
+        "P1": 5
+      }
+    ],
+    "HideCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 5,
+        "P2": 7003
+      }
+    ]
+  },
+  {
+    "ID": 7004,
+    "RootName": "FXMap/Cloud4",
+    "GroupId": 5,
+    "ShowCond": [
+      {
+        "CondType": "ConditionType_GDTribulationTimeUnlock",
+        "P1": 5
+      }
+    ],
+    "HideCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 5,
+        "P2": 7004
+      }
+    ]
+  },
+  {
+    "ID": 7010,
+    "RootName": "Panel/Storm",
+    "GroupId": 5,
+    "ShowCond": [
+      {
+        "CondType": "ConditionType_GDTribulationTimeUnlock",
+        "P1": 5
+      }
+    ],
+    "HideCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 5,
+        "P2": 7010
+      }
+    ]
+  },
+  {
+    "ID": 7110,
+    "RootName": "Panel/Under",
+    "GroupId": 5,
+    "ShowCond": [
+      {
+        "CondType": "ConditionType_GDTribulationTimeUnlock",
+        "P1": 5
+      }
+    ],
+    "HideCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 5,
+        "P2": 7109
       }
     ]
   }

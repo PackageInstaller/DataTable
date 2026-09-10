@@ -1,5 +1,55 @@
 [
   {
+    "ID": 41416210,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      600
+    ]
+  },
+  {
+    "ID": 41416211,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      216003101
+    ],
+    "Param2": [
+      10022
+    ],
+    "Param3": [
+      {
+        "X": 7,
+        "Y": 16
+      }
+    ]
+  },
+  {
+    "ID": 41416212,
+    "ActionType": "BattleSceneActionType_HurtActorHpPercent",
+    "Param1": [
+      201
+    ],
+    "Param2": [
+      9000
+    ]
+  },
+  {
+    "ID": 41416213,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      201
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "Dead01",
+    "Param6": [
+      -1
+    ]
+  },
+  {
     "ID": 41416214,
     "ActionType": "BattleSceneActionType_TerrainEffect",
     "Param1": [
@@ -14514,41 +14564,6 @@
     "ActionType": "BattleSceneActionType_Dialog",
     "Param1": [
       416171104
-    ]
-  },
-  {
-    "ID": 41617036,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      1000
-    ]
-  },
-  {
-    "ID": 41617037,
-    "ActionType": "BattleSceneActionType_CameraShake",
-    "Param1": [
-      2000
-    ],
-    "Param2": [
-      1000
-    ],
-    "Param4": [
-      2000
-    ],
-    "ActionSoundName": "EFT_Camera_Vibration"
-  },
-  {
-    "ID": 41617038,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      800
-    ]
-  },
-  {
-    "ID": 41617039,
-    "ActionType": "BattleSceneActionType_Dialog",
-    "Param1": [
-      416171107
     ]
   }
 ]

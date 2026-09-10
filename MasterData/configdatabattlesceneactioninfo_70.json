@@ -1,5 +1,46 @@
 [
   {
+    "ID": 46227343,
+    "VersionTag": 56,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      300
+    ]
+  },
+  {
+    "ID": 46227344,
+    "VersionTag": 56,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      462271603
+    ]
+  },
+  {
+    "ID": 46227345,
+    "VersionTag": 56,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      300
+    ]
+  },
+  {
+    "ID": 46227346,
+    "VersionTag": 56,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      10000033
+    ],
+    "Param2": [
+      10001
+    ],
+    "Param3": [
+      {
+        "X": 4,
+        "Y": 12
+      }
+    ]
+  },
+  {
     "ID": 46227347,
     "VersionTag": 56,
     "ActionType": "BattleSceneActionType_Delay",
@@ -17591,34 +17632,6 @@
     "ActionType": "BattleSceneActionType_BattleEventTriggerFail",
     "Param1": [
       4624425
-    ]
-  },
-  {
-    "ID": 46244301,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      1
-    ]
-  },
-  {
-    "ID": 46244302,
-    "ActionType": "BattleSceneActionType_BattleEventTriggerFail",
-    "Param1": [
-      4624426
-    ]
-  },
-  {
-    "ID": 46244351,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      1
-    ]
-  },
-  {
-    "ID": 46244361,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      1
     ]
   }
 ]

@@ -17536,6 +17536,253 @@
     "NameStrKey": "ST:237841"
   },
   {
+    "ID": 109301,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "Index": 1,
+    "NameStrKey": "ST:116743"
+  },
+  {
+    "ID": 109302,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 109301,
+        "Level": 3
+      }
+    ],
+    "Index": 2,
+    "NameStrKey": "ST:116744"
+  },
+  {
+    "ID": 109303,
+    "UnitType": "DivineWeaponEnhanceUnitType_StarCrystalUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 109302,
+        "Level": 3
+      }
+    ],
+    "SlotType": "StarCrystalSlotType_AttackPhysic",
+    "Index": 3,
+    "SlotRecommend1": 10212,
+    "SlotRecommend2": 10705,
+    "SlotRecommend3": 10703,
+    "SlotRecommend4": 10708,
+    "NameStrKey": "ST:119544"
+  },
+  {
+    "ID": 109304,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 109303,
+        "Level": 1
+      }
+    ],
+    "Index": 4,
+    "NameStrKey": "ST:116746"
+  },
+  {
+    "ID": 109305,
+    "UnitType": "DivineWeaponEnhanceUnitType_StarCrystalUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 109304,
+        "Level": 3
+      }
+    ],
+    "SlotType": "StarCrystalSlotType_AttackPhysic",
+    "Index": 5,
+    "SlotRecommend1": 10212,
+    "SlotRecommend2": 10705,
+    "SlotRecommend3": 10703,
+    "SlotRecommend4": 10708,
+    "NameStrKey": "ST:119545"
+  },
+  {
+    "ID": 109306,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 109305,
+        "Level": 1
+      }
+    ],
+    "Index": 6,
+    "NameStrKey": "ST:116747"
+  },
+  {
+    "ID": 109311,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "Index": 1,
+    "NameStrKey": "ST:116748"
+  },
+  {
+    "ID": 109312,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 109311,
+        "Level": 3
+      }
+    ],
+    "Index": 2,
+    "NameStrKey": "ST:116749"
+  },
+  {
+    "ID": 109313,
+    "UnitType": "DivineWeaponEnhanceUnitType_StarCrystalUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 109312,
+        "Level": 3
+      }
+    ],
+    "SlotType": "StarCrystalSlotType_DefendPhysic",
+    "Index": 3,
+    "SlotRecommend1": 20712,
+    "SlotRecommend2": 20705,
+    "SlotRecommend3": 20703,
+    "SlotRecommend4": 20708,
+    "NameStrKey": "ST:119546"
+  },
+  {
+    "ID": 109314,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 109313,
+        "Level": 1
+      }
+    ],
+    "Index": 4,
+    "NameStrKey": "ST:116751"
+  },
+  {
+    "ID": 109315,
+    "UnitType": "DivineWeaponEnhanceUnitType_StarCrystalUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 109314,
+        "Level": 3
+      }
+    ],
+    "SlotType": "StarCrystalSlotType_DefendPhysic",
+    "Index": 5,
+    "SlotRecommend1": 21112,
+    "SlotRecommend2": 21105,
+    "SlotRecommend3": 21103,
+    "SlotRecommend4": 21108,
+    "NameStrKey": "ST:119547"
+  },
+  {
+    "ID": 109316,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 109315,
+        "Level": 1
+      }
+    ],
+    "Index": 6,
+    "NameStrKey": "ST:116752"
+  },
+  {
+    "ID": 109321,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "Index": 1,
+    "NameStrKey": "ST:116753"
+  },
+  {
+    "ID": 109322,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 109321,
+        "Level": 3
+      }
+    ],
+    "Index": 2,
+    "NameStrKey": "ST:116754"
+  },
+  {
+    "ID": 109323,
+    "UnitType": "DivineWeaponEnhanceUnitType_StarCrystalUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 109322,
+        "Level": 3
+      }
+    ],
+    "SlotType": "StarCrystalSlotType_HpPhysic",
+    "Index": 3,
+    "SlotRecommend1": 30112,
+    "SlotRecommend2": 30105,
+    "SlotRecommend3": 30103,
+    "SlotRecommend4": 30108,
+    "NameStrKey": "ST:119548"
+  },
+  {
+    "ID": 109324,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 109323,
+        "Level": 1
+      }
+    ],
+    "Index": 4,
+    "NameStrKey": "ST:116756"
+  },
+  {
+    "ID": 109325,
+    "UnitType": "DivineWeaponEnhanceUnitType_StarCrystalUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 109324,
+        "Level": 3
+      }
+    ],
+    "SlotType": "StarCrystalSlotType_HpPhysic",
+    "Index": 5,
+    "SlotRecommend1": 30112,
+    "SlotRecommend2": 30105,
+    "SlotRecommend3": 30103,
+    "SlotRecommend4": 30108,
+    "NameStrKey": "ST:119549"
+  },
+  {
+    "ID": 109326,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 109325,
+        "Level": 1
+      }
+    ],
+    "Index": 6,
+    "NameStrKey": "ST:116757"
+  },
+  {
+    "ID": 109331,
+    "UnitType": "DivineWeaponEnhanceUnitType_SkillUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 109303,
+        "Level": 1
+      },
+      {
+        "UnitId": 109313,
+        "Level": 1
+      },
+      {
+        "UnitId": 109323,
+        "Level": 1
+      }
+    ],
+    "NameStrKey": "ST:265337"
+  },
+  {
     "ID": 110001,
     "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
     "Index": 1,
@@ -30380,6 +30627,253 @@
     "NameStrKey": "ST:244237"
   },
   {
+    "ID": 122701,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "Index": 1,
+    "NameStrKey": "ST:116743"
+  },
+  {
+    "ID": 122702,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 122701,
+        "Level": 3
+      }
+    ],
+    "Index": 2,
+    "NameStrKey": "ST:116744"
+  },
+  {
+    "ID": 122703,
+    "UnitType": "DivineWeaponEnhanceUnitType_StarCrystalUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 122702,
+        "Level": 3
+      }
+    ],
+    "SlotType": "StarCrystalSlotType_AttackPhysic",
+    "Index": 3,
+    "SlotRecommend1": 10112,
+    "SlotRecommend2": 10105,
+    "SlotRecommend3": 10103,
+    "SlotRecommend4": 10108,
+    "NameStrKey": "ST:119544"
+  },
+  {
+    "ID": 122704,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 122703,
+        "Level": 1
+      }
+    ],
+    "Index": 4,
+    "NameStrKey": "ST:116746"
+  },
+  {
+    "ID": 122705,
+    "UnitType": "DivineWeaponEnhanceUnitType_StarCrystalUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 122704,
+        "Level": 3
+      }
+    ],
+    "SlotType": "StarCrystalSlotType_AttackPhysic",
+    "Index": 5,
+    "SlotRecommend1": 10112,
+    "SlotRecommend2": 10105,
+    "SlotRecommend3": 10103,
+    "SlotRecommend4": 10108,
+    "NameStrKey": "ST:119545"
+  },
+  {
+    "ID": 122706,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 122705,
+        "Level": 1
+      }
+    ],
+    "Index": 6,
+    "NameStrKey": "ST:116747"
+  },
+  {
+    "ID": 122711,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "Index": 1,
+    "NameStrKey": "ST:116748"
+  },
+  {
+    "ID": 122712,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 122711,
+        "Level": 3
+      }
+    ],
+    "Index": 2,
+    "NameStrKey": "ST:116749"
+  },
+  {
+    "ID": 122713,
+    "UnitType": "DivineWeaponEnhanceUnitType_StarCrystalUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 122712,
+        "Level": 3
+      }
+    ],
+    "SlotType": "StarCrystalSlotType_DefendPhysic",
+    "Index": 3,
+    "SlotRecommend1": 20412,
+    "SlotRecommend2": 20405,
+    "SlotRecommend3": 20403,
+    "SlotRecommend4": 20408,
+    "NameStrKey": "ST:119546"
+  },
+  {
+    "ID": 122714,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 122713,
+        "Level": 1
+      }
+    ],
+    "Index": 4,
+    "NameStrKey": "ST:116751"
+  },
+  {
+    "ID": 122715,
+    "UnitType": "DivineWeaponEnhanceUnitType_StarCrystalUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 122714,
+        "Level": 3
+      }
+    ],
+    "SlotType": "StarCrystalSlotType_DefendPhysic",
+    "Index": 5,
+    "SlotRecommend1": 20412,
+    "SlotRecommend2": 20405,
+    "SlotRecommend3": 20403,
+    "SlotRecommend4": 20408,
+    "NameStrKey": "ST:119547"
+  },
+  {
+    "ID": 122716,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 122715,
+        "Level": 1
+      }
+    ],
+    "Index": 6,
+    "NameStrKey": "ST:116752"
+  },
+  {
+    "ID": 122721,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "Index": 1,
+    "NameStrKey": "ST:116753"
+  },
+  {
+    "ID": 122722,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 122721,
+        "Level": 3
+      }
+    ],
+    "Index": 2,
+    "NameStrKey": "ST:116754"
+  },
+  {
+    "ID": 122723,
+    "UnitType": "DivineWeaponEnhanceUnitType_StarCrystalUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 122722,
+        "Level": 3
+      }
+    ],
+    "SlotType": "StarCrystalSlotType_HpPhysic",
+    "Index": 3,
+    "SlotRecommend1": 30212,
+    "SlotRecommend2": 30205,
+    "SlotRecommend3": 30203,
+    "SlotRecommend4": 30208,
+    "NameStrKey": "ST:119548"
+  },
+  {
+    "ID": 122724,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 122723,
+        "Level": 1
+      }
+    ],
+    "Index": 4,
+    "NameStrKey": "ST:116756"
+  },
+  {
+    "ID": 122725,
+    "UnitType": "DivineWeaponEnhanceUnitType_StarCrystalUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 122724,
+        "Level": 3
+      }
+    ],
+    "SlotType": "StarCrystalSlotType_HpPhysic",
+    "Index": 5,
+    "SlotRecommend1": 30212,
+    "SlotRecommend2": 30205,
+    "SlotRecommend3": 30203,
+    "SlotRecommend4": 30208,
+    "NameStrKey": "ST:119549"
+  },
+  {
+    "ID": 122726,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 122725,
+        "Level": 1
+      }
+    ],
+    "Index": 6,
+    "NameStrKey": "ST:116757"
+  },
+  {
+    "ID": 122731,
+    "UnitType": "DivineWeaponEnhanceUnitType_SkillUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 122703,
+        "Level": 1
+      },
+      {
+        "UnitId": 122713,
+        "Level": 1
+      },
+      {
+        "UnitId": 122723,
+        "Level": 1
+      }
+    ],
+    "NameStrKey": "ST:263769"
+  },
+  {
     "ID": 130101,
     "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
     "Index": 1,
@@ -41248,6 +41742,500 @@
     "NameStrKey": "ST:247953"
   },
   {
+    "ID": 202901,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "Index": 1,
+    "NameStrKey": "ST:116743"
+  },
+  {
+    "ID": 202902,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 202901,
+        "Level": 3
+      }
+    ],
+    "Index": 2,
+    "NameStrKey": "ST:116744"
+  },
+  {
+    "ID": 202903,
+    "UnitType": "DivineWeaponEnhanceUnitType_StarCrystalUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 202902,
+        "Level": 3
+      }
+    ],
+    "SlotType": "StarCrystalSlotType_AttackPhysic",
+    "Index": 3,
+    "SlotRecommend1": 10112,
+    "SlotRecommend2": 10105,
+    "SlotRecommend3": 10103,
+    "SlotRecommend4": 10108,
+    "NameStrKey": "ST:119544"
+  },
+  {
+    "ID": 202904,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 202903,
+        "Level": 1
+      }
+    ],
+    "Index": 4,
+    "NameStrKey": "ST:116746"
+  },
+  {
+    "ID": 202905,
+    "UnitType": "DivineWeaponEnhanceUnitType_StarCrystalUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 202904,
+        "Level": 3
+      }
+    ],
+    "SlotType": "StarCrystalSlotType_AttackPhysic",
+    "Index": 5,
+    "SlotRecommend1": 10112,
+    "SlotRecommend2": 10105,
+    "SlotRecommend3": 10103,
+    "SlotRecommend4": 10108,
+    "NameStrKey": "ST:119545"
+  },
+  {
+    "ID": 202906,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 202905,
+        "Level": 1
+      }
+    ],
+    "Index": 6,
+    "NameStrKey": "ST:116747"
+  },
+  {
+    "ID": 202911,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "Index": 1,
+    "NameStrKey": "ST:116748"
+  },
+  {
+    "ID": 202912,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 202911,
+        "Level": 3
+      }
+    ],
+    "Index": 2,
+    "NameStrKey": "ST:116749"
+  },
+  {
+    "ID": 202913,
+    "UnitType": "DivineWeaponEnhanceUnitType_StarCrystalUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 202912,
+        "Level": 3
+      }
+    ],
+    "SlotType": "StarCrystalSlotType_DefendPhysic",
+    "Index": 3,
+    "SlotRecommend1": 20412,
+    "SlotRecommend2": 20405,
+    "SlotRecommend3": 20403,
+    "SlotRecommend4": 20408,
+    "NameStrKey": "ST:119546"
+  },
+  {
+    "ID": 202914,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 202913,
+        "Level": 1
+      }
+    ],
+    "Index": 4,
+    "NameStrKey": "ST:116751"
+  },
+  {
+    "ID": 202915,
+    "UnitType": "DivineWeaponEnhanceUnitType_StarCrystalUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 202914,
+        "Level": 3
+      }
+    ],
+    "SlotType": "StarCrystalSlotType_DefendPhysic",
+    "Index": 5,
+    "SlotRecommend1": 20412,
+    "SlotRecommend2": 20405,
+    "SlotRecommend3": 20403,
+    "SlotRecommend4": 20408,
+    "NameStrKey": "ST:119547"
+  },
+  {
+    "ID": 202916,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 202915,
+        "Level": 1
+      }
+    ],
+    "Index": 6,
+    "NameStrKey": "ST:116752"
+  },
+  {
+    "ID": 202921,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "Index": 1,
+    "NameStrKey": "ST:116753"
+  },
+  {
+    "ID": 202922,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 202921,
+        "Level": 3
+      }
+    ],
+    "Index": 2,
+    "NameStrKey": "ST:116754"
+  },
+  {
+    "ID": 202923,
+    "UnitType": "DivineWeaponEnhanceUnitType_StarCrystalUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 202922,
+        "Level": 3
+      }
+    ],
+    "SlotType": "StarCrystalSlotType_HpPhysic",
+    "Index": 3,
+    "SlotRecommend1": 30212,
+    "SlotRecommend2": 30205,
+    "SlotRecommend3": 30203,
+    "SlotRecommend4": 30208,
+    "NameStrKey": "ST:119548"
+  },
+  {
+    "ID": 202924,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 202923,
+        "Level": 1
+      }
+    ],
+    "Index": 4,
+    "NameStrKey": "ST:116756"
+  },
+  {
+    "ID": 202925,
+    "UnitType": "DivineWeaponEnhanceUnitType_StarCrystalUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 202924,
+        "Level": 3
+      }
+    ],
+    "SlotType": "StarCrystalSlotType_HpPhysic",
+    "Index": 5,
+    "SlotRecommend1": 30212,
+    "SlotRecommend2": 30205,
+    "SlotRecommend3": 30203,
+    "SlotRecommend4": 30208,
+    "NameStrKey": "ST:119549"
+  },
+  {
+    "ID": 202926,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 202925,
+        "Level": 1
+      }
+    ],
+    "Index": 6,
+    "NameStrKey": "ST:116757"
+  },
+  {
+    "ID": 202931,
+    "UnitType": "DivineWeaponEnhanceUnitType_SkillUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 202903,
+        "Level": 1
+      },
+      {
+        "UnitId": 202913,
+        "Level": 1
+      },
+      {
+        "UnitId": 202923,
+        "Level": 1
+      }
+    ],
+    "NameStrKey": "ST:8922"
+  },
+  {
+    "ID": 203101,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "Index": 1,
+    "NameStrKey": "ST:116743"
+  },
+  {
+    "ID": 203102,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 203101,
+        "Level": 3
+      }
+    ],
+    "Index": 2,
+    "NameStrKey": "ST:116744"
+  },
+  {
+    "ID": 203103,
+    "UnitType": "DivineWeaponEnhanceUnitType_StarCrystalUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 203102,
+        "Level": 3
+      }
+    ],
+    "SlotType": "StarCrystalSlotType_AttackMagic",
+    "Index": 3,
+    "SlotRecommend1": 10212,
+    "SlotRecommend2": 10205,
+    "SlotRecommend3": 10203,
+    "SlotRecommend4": 10208,
+    "NameStrKey": "ST:119544"
+  },
+  {
+    "ID": 203104,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 203103,
+        "Level": 1
+      }
+    ],
+    "Index": 4,
+    "NameStrKey": "ST:116746"
+  },
+  {
+    "ID": 203105,
+    "UnitType": "DivineWeaponEnhanceUnitType_StarCrystalUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 203104,
+        "Level": 3
+      }
+    ],
+    "SlotType": "StarCrystalSlotType_AttackMagic",
+    "Index": 5,
+    "SlotRecommend1": 10212,
+    "SlotRecommend2": 10205,
+    "SlotRecommend3": 10203,
+    "SlotRecommend4": 10208,
+    "NameStrKey": "ST:119545"
+  },
+  {
+    "ID": 203106,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 203105,
+        "Level": 1
+      }
+    ],
+    "Index": 6,
+    "NameStrKey": "ST:116747"
+  },
+  {
+    "ID": 203111,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "Index": 1,
+    "NameStrKey": "ST:116748"
+  },
+  {
+    "ID": 203112,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 203111,
+        "Level": 3
+      }
+    ],
+    "Index": 2,
+    "NameStrKey": "ST:116749"
+  },
+  {
+    "ID": 203113,
+    "UnitType": "DivineWeaponEnhanceUnitType_StarCrystalUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 203112,
+        "Level": 3
+      }
+    ],
+    "SlotType": "StarCrystalSlotType_DefendMagic",
+    "Index": 3,
+    "SlotRecommend1": 20912,
+    "SlotRecommend2": 20905,
+    "SlotRecommend3": 20903,
+    "SlotRecommend4": 20908,
+    "NameStrKey": "ST:119546"
+  },
+  {
+    "ID": 203114,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 203113,
+        "Level": 1
+      }
+    ],
+    "Index": 4,
+    "NameStrKey": "ST:116751"
+  },
+  {
+    "ID": 203115,
+    "UnitType": "DivineWeaponEnhanceUnitType_StarCrystalUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 203114,
+        "Level": 3
+      }
+    ],
+    "SlotType": "StarCrystalSlotType_DefendMagic",
+    "Index": 5,
+    "SlotRecommend1": 20912,
+    "SlotRecommend2": 20905,
+    "SlotRecommend3": 20903,
+    "SlotRecommend4": 20908,
+    "NameStrKey": "ST:119547"
+  },
+  {
+    "ID": 203116,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 203115,
+        "Level": 1
+      }
+    ],
+    "Index": 6,
+    "NameStrKey": "ST:116752"
+  },
+  {
+    "ID": 203121,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "Index": 1,
+    "NameStrKey": "ST:116753"
+  },
+  {
+    "ID": 203122,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 203121,
+        "Level": 3
+      }
+    ],
+    "Index": 2,
+    "NameStrKey": "ST:116754"
+  },
+  {
+    "ID": 203123,
+    "UnitType": "DivineWeaponEnhanceUnitType_StarCrystalUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 203122,
+        "Level": 3
+      }
+    ],
+    "SlotType": "StarCrystalSlotType_HpMagic",
+    "Index": 3,
+    "SlotRecommend1": 30312,
+    "SlotRecommend2": 30305,
+    "SlotRecommend3": 30303,
+    "SlotRecommend4": 30308,
+    "NameStrKey": "ST:119548"
+  },
+  {
+    "ID": 203124,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 203123,
+        "Level": 1
+      }
+    ],
+    "Index": 4,
+    "NameStrKey": "ST:116756"
+  },
+  {
+    "ID": 203125,
+    "UnitType": "DivineWeaponEnhanceUnitType_StarCrystalUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 203124,
+        "Level": 3
+      }
+    ],
+    "SlotType": "StarCrystalSlotType_HpMagic",
+    "Index": 5,
+    "SlotRecommend1": 30312,
+    "SlotRecommend2": 30305,
+    "SlotRecommend3": 30303,
+    "SlotRecommend4": 30308,
+    "NameStrKey": "ST:119549"
+  },
+  {
+    "ID": 203126,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 203125,
+        "Level": 1
+      }
+    ],
+    "Index": 6,
+    "NameStrKey": "ST:116757"
+  },
+  {
+    "ID": 203131,
+    "UnitType": "DivineWeaponEnhanceUnitType_SkillUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 203103,
+        "Level": 1
+      },
+      {
+        "UnitId": 203113,
+        "Level": 1
+      },
+      {
+        "UnitId": 203123,
+        "Level": 1
+      }
+    ],
+    "NameStrKey": "ST:260055"
+  },
+  {
     "ID": 250001,
     "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
     "Index": 1,
@@ -42728,6 +43716,253 @@
       }
     ],
     "NameStrKey": "ST:256365"
+  },
+  {
+    "ID": 251001,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "Index": 1,
+    "NameStrKey": "ST:116743"
+  },
+  {
+    "ID": 251002,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 251001,
+        "Level": 3
+      }
+    ],
+    "Index": 2,
+    "NameStrKey": "ST:116744"
+  },
+  {
+    "ID": 251003,
+    "UnitType": "DivineWeaponEnhanceUnitType_StarCrystalUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 251002,
+        "Level": 3
+      }
+    ],
+    "SlotType": "StarCrystalSlotType_AttackMagic",
+    "Index": 3,
+    "SlotRecommend1": 10212,
+    "SlotRecommend2": 10205,
+    "SlotRecommend3": 10203,
+    "SlotRecommend4": 10208,
+    "NameStrKey": "ST:119544"
+  },
+  {
+    "ID": 251004,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 251003,
+        "Level": 1
+      }
+    ],
+    "Index": 4,
+    "NameStrKey": "ST:116746"
+  },
+  {
+    "ID": 251005,
+    "UnitType": "DivineWeaponEnhanceUnitType_StarCrystalUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 251004,
+        "Level": 3
+      }
+    ],
+    "SlotType": "StarCrystalSlotType_AttackMagic",
+    "Index": 5,
+    "SlotRecommend1": 10212,
+    "SlotRecommend2": 10205,
+    "SlotRecommend3": 10203,
+    "SlotRecommend4": 10208,
+    "NameStrKey": "ST:119545"
+  },
+  {
+    "ID": 251006,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 251005,
+        "Level": 1
+      }
+    ],
+    "Index": 6,
+    "NameStrKey": "ST:116747"
+  },
+  {
+    "ID": 251011,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "Index": 1,
+    "NameStrKey": "ST:116748"
+  },
+  {
+    "ID": 251012,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 251011,
+        "Level": 3
+      }
+    ],
+    "Index": 2,
+    "NameStrKey": "ST:116749"
+  },
+  {
+    "ID": 251013,
+    "UnitType": "DivineWeaponEnhanceUnitType_StarCrystalUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 251012,
+        "Level": 3
+      }
+    ],
+    "SlotType": "StarCrystalSlotType_DefendMagic",
+    "Index": 3,
+    "SlotRecommend1": 20712,
+    "SlotRecommend2": 20905,
+    "SlotRecommend3": 20903,
+    "SlotRecommend4": 20908,
+    "NameStrKey": "ST:119546"
+  },
+  {
+    "ID": 251014,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 251013,
+        "Level": 1
+      }
+    ],
+    "Index": 4,
+    "NameStrKey": "ST:116751"
+  },
+  {
+    "ID": 251015,
+    "UnitType": "DivineWeaponEnhanceUnitType_StarCrystalUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 251014,
+        "Level": 3
+      }
+    ],
+    "SlotType": "StarCrystalSlotType_DefendMagic",
+    "Index": 5,
+    "SlotRecommend1": 21112,
+    "SlotRecommend2": 20905,
+    "SlotRecommend3": 20903,
+    "SlotRecommend4": 20908,
+    "NameStrKey": "ST:119547"
+  },
+  {
+    "ID": 251016,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 251015,
+        "Level": 1
+      }
+    ],
+    "Index": 6,
+    "NameStrKey": "ST:116752"
+  },
+  {
+    "ID": 251021,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "Index": 1,
+    "NameStrKey": "ST:116753"
+  },
+  {
+    "ID": 251022,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 251021,
+        "Level": 3
+      }
+    ],
+    "Index": 2,
+    "NameStrKey": "ST:116754"
+  },
+  {
+    "ID": 251023,
+    "UnitType": "DivineWeaponEnhanceUnitType_StarCrystalUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 251022,
+        "Level": 3
+      }
+    ],
+    "SlotType": "StarCrystalSlotType_HpMagic",
+    "Index": 3,
+    "SlotRecommend1": 30112,
+    "SlotRecommend2": 30305,
+    "SlotRecommend3": 30303,
+    "SlotRecommend4": 30308,
+    "NameStrKey": "ST:119548"
+  },
+  {
+    "ID": 251024,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 251023,
+        "Level": 1
+      }
+    ],
+    "Index": 4,
+    "NameStrKey": "ST:116756"
+  },
+  {
+    "ID": 251025,
+    "UnitType": "DivineWeaponEnhanceUnitType_StarCrystalUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 251024,
+        "Level": 3
+      }
+    ],
+    "SlotType": "StarCrystalSlotType_HpMagic",
+    "Index": 5,
+    "SlotRecommend1": 30112,
+    "SlotRecommend2": 30305,
+    "SlotRecommend3": 30303,
+    "SlotRecommend4": 30308,
+    "NameStrKey": "ST:119549"
+  },
+  {
+    "ID": 251026,
+    "UnitType": "DivineWeaponEnhanceUnitType_PropertyUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 251025,
+        "Level": 1
+      }
+    ],
+    "Index": 6,
+    "NameStrKey": "ST:116757"
+  },
+  {
+    "ID": 251031,
+    "UnitType": "DivineWeaponEnhanceUnitType_SkillUnit",
+    "UnlockConditions": [
+      {
+        "UnitId": 251003,
+        "Level": 1
+      },
+      {
+        "UnitId": 251013,
+        "Level": 1
+      },
+      {
+        "UnitId": 251023,
+        "Level": 1
+      }
+    ],
+    "NameStrKey": "ST:261185"
   },
   {
     "ID": 31100005,

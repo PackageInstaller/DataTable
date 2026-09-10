@@ -1,5 +1,41 @@
 [
   {
+    "ID": 4541208,
+    "TriggerType": "BattleEventTriggerType_MultiTrigger",
+    "Param1": [
+      4541201,
+      4541202,
+      4541203,
+      4541204,
+      4541205,
+      4541206,
+      4541207
+    ]
+  },
+  {
+    "ID": 4541209,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      0
+    ],
+    "SceneActionGroupIdLst": [
+      4541201
+    ]
+  },
+  {
+    "ID": 4541210,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 2
+      }
+    ]
+  },
+  {
     "ID": 4541211,
     "TriggerType": "BattleEventTriggerType_ActorReachPosition",
     "Param2": [
@@ -5341,36 +5377,6 @@
     ],
     "SceneActionGroupIdLst": [
       4612813
-    ]
-  },
-  {
-    "ID": 4612814,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      4
-    ],
-    "SceneActionGroupIdLst": [
-      4612814
-    ]
-  },
-  {
-    "ID": 4612815,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      5
-    ],
-    "SceneActionGroupIdLst": [
-      4612815
-    ]
-  },
-  {
-    "ID": 4612816,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      6
-    ],
-    "SceneActionGroupIdLst": [
-      4612816
     ]
   }
 ]

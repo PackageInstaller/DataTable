@@ -1,5 +1,88 @@
 [
   {
+    "ID": 50813255,
+    "ActionType": "BattleSceneActionType_SummonNear",
+    "Param1": [
+      4,
+      4
+    ],
+    "Param2": [
+      21,
+      21
+    ],
+    "Param3": [
+      {
+        "X": 7,
+        "Y": 15
+      },
+      {
+        "X": 9,
+        "Y": 15
+      }
+    ],
+    "Param4": [
+      730013005,
+      730013005
+    ],
+    "Param6": [
+      0,
+      0
+    ],
+    "Param7": [
+      {
+        "X": 7,
+        "Y": 8
+      },
+      {
+        "X": 9,
+        "Y": 8
+      }
+    ],
+    "Param8": [
+      10000,
+      10000
+    ],
+    "Param9": [
+      1,
+      1
+    ],
+    "Param10": [
+      231,
+      232
+    ],
+    "Param11": [
+      1,
+      1
+    ]
+  },
+  {
+    "ID": 50813256,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      300
+    ]
+  },
+  {
+    "ID": 50813257,
+    "ActionType": "BattleSceneActionType_CameraFocusPosition",
+    "Param1": [
+      6
+    ],
+    "Param3": [
+      {
+        "X": 8,
+        "Y": 1
+      }
+    ]
+  },
+  {
+    "ID": 50813258,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      300
+    ]
+  },
+  {
     "ID": 50813259,
     "ActionType": "BattleSceneActionType_ActorRetreat",
     "Param1": [
@@ -21119,52 +21202,6 @@
       241,
       242,
       243
-    ],
-    "Param2": [
-      500,
-      500,
-      500
-    ],
-    "Param4": [
-      500,
-      500,
-      500
-    ]
-  },
-  {
-    "ID": 52080020,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      500
-    ]
-  },
-  {
-    "ID": 52080021,
-    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
-    "Param1": [
-      800
-    ],
-    "Param3": [
-      {
-        "X": 11,
-        "Y": 11
-      }
-    ]
-  },
-  {
-    "ID": 52080022,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      500
-    ]
-  },
-  {
-    "ID": 52080023,
-    "ActionType": "BattleSceneActionType_FadeIn",
-    "Param1": [
-      201,
-      202,
-      203
     ],
     "Param2": [
       500,

@@ -22,8 +22,8 @@
     "ExpiredTime": 259200,
     "ReadExpiredTime": 259200,
     "FuncType": "GameFunctionType_ShareActivity",
-    "TitleStrKey": "ST:103422",
-    "ContentStrKey": "ST:103458"
+    "TitleStrKey": "ST:262239",
+    "ContentStrKey": "ST:262243"
   },
   {
     "ID": 232,
@@ -293,7 +293,7 @@
     "GotDeleted": true,
     "FuncType": "GameFunctionType_NoviceLevelMission",
     "TitleStrKey": "ST:168380",
-    "ContentStrKey": "ST:260178"
+    "ContentStrKey": "ST:260213"
   },
   {
     "ID": 259,
@@ -303,7 +303,7 @@
     "GotDeleted": true,
     "FuncType": "GameFunctionType_ExchangeStore",
     "TitleStrKey": "ST:168680",
-    "ContentStrKey": "ST:260369"
+    "ContentStrKey": "ST:260626"
   },
   {
     "ID": 260,
@@ -686,6 +686,66 @@
     "ContentStrKey": "ST:258925"
   },
   {
+    "ID": 298,
+    "MailType": "MailType_GameFunc",
+    "ExpiredTime": 259200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_CatDiceTable",
+    "TitleStrKey": "ST:106458",
+    "ContentStrKey": "ST:123210"
+  },
+  {
+    "ID": 299,
+    "MailType": "MailType_GameFunc",
+    "ExpiredTime": 259200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_ExchangeStore",
+    "TitleStrKey": "ST:262240",
+    "ContentStrKey": "ST:262244"
+  },
+  {
+    "ID": 300,
+    "MailType": "MailType_GameFunc",
+    "ExpiredTime": 259200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_ExchangeStore",
+    "TitleStrKey": "ST:262241",
+    "ContentStrKey": "ST:262245"
+  },
+  {
+    "ID": 301,
+    "MailType": "MailType_GameFunc",
+    "ExpiredTime": 259200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_ExchangeStore",
+    "TitleStrKey": "ST:263569",
+    "ContentStrKey": "ST:263570"
+  },
+  {
+    "ID": 302,
+    "MailType": "MailType_GameFunc",
+    "ExpiredTime": 259200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_BotGame",
+    "TitleStrKey": "ST:265651",
+    "ContentStrKey": "ST:265653"
+  },
+  {
+    "ID": 303,
+    "MailType": "MailType_GameFunc",
+    "ExpiredTime": 259200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_ExchangeStore",
+    "TitleStrKey": "ST:210061",
+    "ContentStrKey": "ST:268134"
+  },
+  {
     "ID": 2001,
     "MailType": "MailType_GameFunc",
     "ExpiredTime": 259200,
@@ -783,7 +843,7 @@
     "FuncType": "GameFunctionType_MonthCard",
     "JumpFuncType": "GameFunctionType_MonthCard",
     "TitleStrKey": "ST:103415",
-    "ContentStrKey": "ST:259718"
+    "ContentStrKey": "ST:259608"
   },
   {
     "ID": 3005,
@@ -793,7 +853,7 @@
     "FuncType": "GameFunctionType_MonthCard",
     "JumpFuncType": "GameFunctionType_MonthCard",
     "TitleStrKey": "ST:103416",
-    "ContentStrKey": "ST:259719"
+    "ContentStrKey": "ST:259609"
   },
   {
     "ID": 3006,
@@ -7858,6 +7918,636 @@
     "ContentStrKey": "ST:126131"
   },
   {
+    "ID": 16631,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400010540,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 9000
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 33,
+        "Count": 1500
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5552015,
+        "Count": 24
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 590115498,
+        "Count": 1
+      }
+    ],
+    "ExpiredTime": 259200,
+    "ReadExpiredTime": 259200,
+    "FuncType": "GameFunctionType_PeakArenaPlayOffReward",
+    "TitleStrKey": "ST:126110",
+    "ContentStrKey": "ST:126122"
+  },
+  {
+    "ID": 16632,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400010539,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 8000
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 33,
+        "Count": 1250
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5552015,
+        "Count": 20
+      }
+    ],
+    "ExpiredTime": 259200,
+    "ReadExpiredTime": 259200,
+    "FuncType": "GameFunctionType_PeakArenaPlayOffReward",
+    "TitleStrKey": "ST:126111",
+    "ContentStrKey": "ST:126123"
+  },
+  {
+    "ID": 16633,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400010538,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 7000
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 33,
+        "Count": 1000
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5552015,
+        "Count": 18
+      }
+    ],
+    "ExpiredTime": 259200,
+    "ReadExpiredTime": 259200,
+    "FuncType": "GameFunctionType_PeakArenaPlayOffReward",
+    "TitleStrKey": "ST:126112",
+    "ContentStrKey": "ST:126124"
+  },
+  {
+    "ID": 16634,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400010537,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 6000
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 33,
+        "Count": 800
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5552015,
+        "Count": 16
+      }
+    ],
+    "ExpiredTime": 259200,
+    "ReadExpiredTime": 259200,
+    "FuncType": "GameFunctionType_PeakArenaPlayOffReward",
+    "TitleStrKey": "ST:126113",
+    "ContentStrKey": "ST:126125"
+  },
+  {
+    "ID": 16635,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400010536,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 5000
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 33,
+        "Count": 600
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5552015,
+        "Count": 14
+      }
+    ],
+    "ExpiredTime": 259200,
+    "ReadExpiredTime": 259200,
+    "FuncType": "GameFunctionType_PeakArenaPlayOffReward",
+    "TitleStrKey": "ST:126114",
+    "ContentStrKey": "ST:126126"
+  },
+  {
+    "ID": 16636,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400010535,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 4000
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 33,
+        "Count": 450
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5552015,
+        "Count": 14
+      }
+    ],
+    "ExpiredTime": 259200,
+    "ReadExpiredTime": 259200,
+    "FuncType": "GameFunctionType_PeakArenaPlayOffReward",
+    "TitleStrKey": "ST:126115",
+    "ContentStrKey": "ST:126127"
+  },
+  {
+    "ID": 16637,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400010534,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 3500
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 33,
+        "Count": 400
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5552015,
+        "Count": 12
+      }
+    ],
+    "ExpiredTime": 259200,
+    "ReadExpiredTime": 259200,
+    "FuncType": "GameFunctionType_PeakArenaPlayOffReward",
+    "TitleStrKey": "ST:126116",
+    "ContentStrKey": "ST:126128"
+  },
+  {
+    "ID": 16638,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400010533,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 3000
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 33,
+        "Count": 350
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5552015,
+        "Count": 12
+      }
+    ],
+    "ExpiredTime": 259200,
+    "ReadExpiredTime": 259200,
+    "FuncType": "GameFunctionType_PeakArenaPlayOffReward",
+    "TitleStrKey": "ST:126117",
+    "ContentStrKey": "ST:126129"
+  },
+  {
+    "ID": 16639,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400010532,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 2500
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 33,
+        "Count": 300
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5552015,
+        "Count": 9
+      }
+    ],
+    "ExpiredTime": 259200,
+    "ReadExpiredTime": 259200,
+    "FuncType": "GameFunctionType_PeakArenaPlayOffReward",
+    "TitleStrKey": "ST:126118",
+    "ContentStrKey": "ST:126130"
+  },
+  {
+    "ID": 16640,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400010531,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 2000
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 33,
+        "Count": 250
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5552015,
+        "Count": 9
+      }
+    ],
+    "ExpiredTime": 259200,
+    "ReadExpiredTime": 259200,
+    "FuncType": "GameFunctionType_PeakArenaPlayOffReward",
+    "TitleStrKey": "ST:126119",
+    "ContentStrKey": "ST:126131"
+  },
+  {
+    "ID": 16641,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400010561,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 9000
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 33,
+        "Count": 1500
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5552015,
+        "Count": 24
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 590250998,
+        "Count": 1
+      }
+    ],
+    "ExpiredTime": 259200,
+    "ReadExpiredTime": 259200,
+    "FuncType": "GameFunctionType_PeakArenaPlayOffReward",
+    "TitleStrKey": "ST:126110",
+    "ContentStrKey": "ST:126122"
+  },
+  {
+    "ID": 16642,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400010560,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 8000
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 33,
+        "Count": 1250
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5552015,
+        "Count": 20
+      }
+    ],
+    "ExpiredTime": 259200,
+    "ReadExpiredTime": 259200,
+    "FuncType": "GameFunctionType_PeakArenaPlayOffReward",
+    "TitleStrKey": "ST:126111",
+    "ContentStrKey": "ST:126123"
+  },
+  {
+    "ID": 16643,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400010559,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 7000
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 33,
+        "Count": 1000
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5552015,
+        "Count": 18
+      }
+    ],
+    "ExpiredTime": 259200,
+    "ReadExpiredTime": 259200,
+    "FuncType": "GameFunctionType_PeakArenaPlayOffReward",
+    "TitleStrKey": "ST:126112",
+    "ContentStrKey": "ST:126124"
+  },
+  {
+    "ID": 16644,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400010558,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 6000
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 33,
+        "Count": 800
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5552015,
+        "Count": 16
+      }
+    ],
+    "ExpiredTime": 259200,
+    "ReadExpiredTime": 259200,
+    "FuncType": "GameFunctionType_PeakArenaPlayOffReward",
+    "TitleStrKey": "ST:126113",
+    "ContentStrKey": "ST:126125"
+  },
+  {
+    "ID": 16645,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400010557,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 5000
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 33,
+        "Count": 600
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5552015,
+        "Count": 14
+      }
+    ],
+    "ExpiredTime": 259200,
+    "ReadExpiredTime": 259200,
+    "FuncType": "GameFunctionType_PeakArenaPlayOffReward",
+    "TitleStrKey": "ST:126114",
+    "ContentStrKey": "ST:126126"
+  },
+  {
+    "ID": 16646,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400010556,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 4000
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 33,
+        "Count": 450
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5552015,
+        "Count": 14
+      }
+    ],
+    "ExpiredTime": 259200,
+    "ReadExpiredTime": 259200,
+    "FuncType": "GameFunctionType_PeakArenaPlayOffReward",
+    "TitleStrKey": "ST:126115",
+    "ContentStrKey": "ST:126127"
+  },
+  {
+    "ID": 16647,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400010555,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 3500
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 33,
+        "Count": 400
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5552015,
+        "Count": 12
+      }
+    ],
+    "ExpiredTime": 259200,
+    "ReadExpiredTime": 259200,
+    "FuncType": "GameFunctionType_PeakArenaPlayOffReward",
+    "TitleStrKey": "ST:126116",
+    "ContentStrKey": "ST:126128"
+  },
+  {
+    "ID": 16648,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400010554,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 3000
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 33,
+        "Count": 350
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5552015,
+        "Count": 12
+      }
+    ],
+    "ExpiredTime": 259200,
+    "ReadExpiredTime": 259200,
+    "FuncType": "GameFunctionType_PeakArenaPlayOffReward",
+    "TitleStrKey": "ST:126117",
+    "ContentStrKey": "ST:126129"
+  },
+  {
+    "ID": 16649,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400010553,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 2500
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 33,
+        "Count": 300
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5552015,
+        "Count": 9
+      }
+    ],
+    "ExpiredTime": 259200,
+    "ReadExpiredTime": 259200,
+    "FuncType": "GameFunctionType_PeakArenaPlayOffReward",
+    "TitleStrKey": "ST:126118",
+    "ContentStrKey": "ST:126130"
+  },
+  {
+    "ID": 16650,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400010552,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 2000
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 33,
+        "Count": 250
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5552015,
+        "Count": 9
+      }
+    ],
+    "ExpiredTime": 259200,
+    "ReadExpiredTime": 259200,
+    "FuncType": "GameFunctionType_PeakArenaPlayOffReward",
+    "TitleStrKey": "ST:126119",
+    "ContentStrKey": "ST:126131"
+  },
+  {
     "ID": 17001,
     "MailType": "MailType_GameFunc",
     "ExpiredTime": 259200,
@@ -8547,6 +9237,91 @@
     "ContentStrKey": "ST:149030"
   },
   {
+    "ID": 18071,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400010547,
+        "Count": 1
+      }
+    ],
+    "ExpiredTime": 259200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_BossChallengeExBattle",
+    "TitleStrKey": "ST:149025",
+    "ContentStrKey": "ST:150599"
+  },
+  {
+    "ID": 18072,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400010546,
+        "Count": 1
+      }
+    ],
+    "ExpiredTime": 259200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_BossChallengeExBattle",
+    "TitleStrKey": "ST:149025",
+    "ContentStrKey": "ST:150600"
+  },
+  {
+    "ID": 18073,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400010545,
+        "Count": 1
+      }
+    ],
+    "ExpiredTime": 259200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_BossChallengeExBattle",
+    "TitleStrKey": "ST:149025",
+    "ContentStrKey": "ST:150601"
+  },
+  {
+    "ID": 18074,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400010544,
+        "Count": 1
+      }
+    ],
+    "ExpiredTime": 259200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_BossChallengeExBattle",
+    "TitleStrKey": "ST:149025",
+    "ContentStrKey": "ST:149029"
+  },
+  {
+    "ID": 18075,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400010543,
+        "Count": 1
+      }
+    ],
+    "ExpiredTime": 259200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_BossChallengeExBattle",
+    "TitleStrKey": "ST:149025",
+    "ContentStrKey": "ST:149030"
+  },
+  {
     "ID": 19001,
     "MailType": "MailType_GameFunc",
     "Attachments": [
@@ -9213,7 +9988,7 @@
     "ReadExpiredTime": 259200,
     "GotDeleted": true,
     "TitleStrKey": "ST:218796",
-    "ContentStrKey": "ST:241216"
+    "ContentStrKey": "ST:267646"
   },
   {
     "ID": 21006,
@@ -9222,7 +9997,7 @@
     "ReadExpiredTime": 259200,
     "GotDeleted": true,
     "TitleStrKey": "ST:218796",
-    "ContentStrKey": "ST:241217"
+    "ContentStrKey": "ST:267647"
   },
   {
     "ID": 21007,
@@ -9231,7 +10006,7 @@
     "ReadExpiredTime": 259200,
     "GotDeleted": true,
     "TitleStrKey": "ST:218796",
-    "ContentStrKey": "ST:241218"
+    "ContentStrKey": "ST:267648"
   },
   {
     "ID": 21008,
@@ -9345,7 +10120,7 @@
     "ExpiredTime": 8553600,
     "ReadExpiredTime": 8553600,
     "TitleStrKey": "ST:256785",
-    "ContentStrKey": "ST:259280"
+    "ContentStrKey": "ST:259610"
   },
   {
     "ID": 21020,
@@ -9353,7 +10128,7 @@
     "ExpiredTime": 8553600,
     "ReadExpiredTime": 8553600,
     "TitleStrKey": "ST:256786",
-    "ContentStrKey": "ST:259281"
+    "ContentStrKey": "ST:259611"
   },
   {
     "ID": 21021,
@@ -9361,7 +10136,7 @@
     "ExpiredTime": 8553600,
     "ReadExpiredTime": 8553600,
     "TitleStrKey": "ST:256787",
-    "ContentStrKey": "ST:259282"
+    "ContentStrKey": "ST:259612"
   },
   {
     "ID": 21022,
@@ -9369,7 +10144,7 @@
     "ExpiredTime": 8553600,
     "ReadExpiredTime": 8553600,
     "TitleStrKey": "ST:256788",
-    "ContentStrKey": "ST:259283"
+    "ContentStrKey": "ST:259613"
   },
   {
     "ID": 21023,
@@ -9377,7 +10152,7 @@
     "ExpiredTime": 8553600,
     "ReadExpiredTime": 8553600,
     "TitleStrKey": "ST:256789",
-    "ContentStrKey": "ST:259284"
+    "ContentStrKey": "ST:259614"
   },
   {
     "ID": 21024,
@@ -9385,7 +10160,7 @@
     "ExpiredTime": 8553600,
     "ReadExpiredTime": 8553600,
     "TitleStrKey": "ST:256790",
-    "ContentStrKey": "ST:259285"
+    "ContentStrKey": "ST:259615"
   },
   {
     "ID": 21025,
@@ -9393,7 +10168,7 @@
     "ExpiredTime": 8553600,
     "ReadExpiredTime": 8553600,
     "TitleStrKey": "ST:256791",
-    "ContentStrKey": "ST:259286"
+    "ContentStrKey": "ST:259616"
   },
   {
     "ID": 21026,
@@ -9401,7 +10176,7 @@
     "ExpiredTime": 8553600,
     "ReadExpiredTime": 8553600,
     "TitleStrKey": "ST:256792",
-    "ContentStrKey": "ST:259287"
+    "ContentStrKey": "ST:259617"
   },
   {
     "ID": 21027,
@@ -9409,7 +10184,7 @@
     "ExpiredTime": 8553600,
     "ReadExpiredTime": 8553600,
     "TitleStrKey": "ST:256793",
-    "ContentStrKey": "ST:259288"
+    "ContentStrKey": "ST:259618"
   },
   {
     "ID": 21028,
@@ -9417,7 +10192,7 @@
     "ExpiredTime": 8553600,
     "ReadExpiredTime": 8553600,
     "TitleStrKey": "ST:256794",
-    "ContentStrKey": "ST:259289"
+    "ContentStrKey": "ST:259619"
   },
   {
     "ID": 21029,
@@ -9425,7 +10200,7 @@
     "ExpiredTime": 8553600,
     "ReadExpiredTime": 8553600,
     "TitleStrKey": "ST:256795",
-    "ContentStrKey": "ST:259290"
+    "ContentStrKey": "ST:259620"
   },
   {
     "ID": 21030,
@@ -9433,7 +10208,7 @@
     "ExpiredTime": 8553600,
     "ReadExpiredTime": 8553600,
     "TitleStrKey": "ST:256796",
-    "ContentStrKey": "ST:259291"
+    "ContentStrKey": "ST:259621"
   },
   {
     "ID": 21031,
@@ -9441,7 +10216,7 @@
     "ExpiredTime": 8553600,
     "ReadExpiredTime": 8553600,
     "TitleStrKey": "ST:256797",
-    "ContentStrKey": "ST:259292"
+    "ContentStrKey": "ST:259622"
   },
   {
     "ID": 21032,
@@ -9455,8 +10230,25 @@
     ],
     "ExpiredTime": 8553600,
     "ReadExpiredTime": 8553600,
-    "TitleStrKey": "ST:259970",
-    "ContentStrKey": "ST:259971"
+    "TitleStrKey": "ST:259989",
+    "ContentStrKey": "ST:259990"
+  },
+  {
+    "ID": 21033,
+    "MailType": "MailType_GameFunc",
+    "ExpiredTime": 8553600,
+    "ReadExpiredTime": 8553600,
+    "TitleStrKey": "ST:262242",
+    "ContentStrKey": "ST:262246"
+  },
+  {
+    "ID": 21034,
+    "MailType": "MailType_GameFunc",
+    "ExpiredTime": 259200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "TitleStrKey": "ST:265154",
+    "ContentStrKey": "ST:265155"
   },
   {
     "ID": 22011,
@@ -11855,6 +12647,213 @@
     "ContentStrKey": "ST:245221"
   },
   {
+    "ID": 29011,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 168
+      },
+      {
+        "ItemType": "ItemType_KillEffectSkin",
+        "ItemId": 504011018,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Soul",
+        "ItemId": 5310107,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Soul",
+        "ItemId": 5320107,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Soul",
+        "ItemId": 5330107,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403089002,
+        "Count": 20
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_GDTribulation",
+    "TitleStrKey": "ST:238546",
+    "ContentStrKey": "ST:260304"
+  },
+  {
+    "ID": 29012,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 148
+      },
+      {
+        "ItemType": "ItemType_KillEffectSkin",
+        "ItemId": 504011018,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Soul",
+        "ItemId": 5310107,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Soul",
+        "ItemId": 5330107,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403089002,
+        "Count": 16
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_GDTribulation",
+    "TitleStrKey": "ST:238546",
+    "ContentStrKey": "ST:260305"
+  },
+  {
+    "ID": 29013,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 128
+      },
+      {
+        "ItemType": "ItemType_KillEffectSkin",
+        "ItemId": 504011018,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Soul",
+        "ItemId": 5310107,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Soul",
+        "ItemId": 5320107,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403089002,
+        "Count": 12
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_GDTribulation",
+    "TitleStrKey": "ST:238546",
+    "ContentStrKey": "ST:260306"
+  },
+  {
+    "ID": 29014,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 108
+      },
+      {
+        "ItemType": "ItemType_KillEffectSkin",
+        "ItemId": 504011018,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Soul",
+        "ItemId": 5320107,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Soul",
+        "ItemId": 5330107,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403089002,
+        "Count": 8
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_GDTribulation",
+    "TitleStrKey": "ST:238546",
+    "ContentStrKey": "ST:260307"
+  },
+  {
+    "ID": 29015,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 88
+      },
+      {
+        "ItemType": "ItemType_KillEffectSkin",
+        "ItemId": 504011018,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Soul",
+        "ItemId": 5330107,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403089002,
+        "Count": 6
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_GDTribulation",
+    "TitleStrKey": "ST:238546",
+    "ContentStrKey": "ST:260308"
+  },
+  {
+    "ID": 29016,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_KillEffectSkin",
+        "ItemId": 504011018,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403089002,
+        "Count": 6
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_GDTribulation",
+    "TitleStrKey": "ST:238546",
+    "ContentStrKey": "ST:260309"
+  },
+  {
     "ID": 30001,
     "MailType": "MailType_GameFunc",
     "Attachments": [
@@ -11870,6 +12869,1071 @@
     "FuncType": "GameFunctionType_PlayerLevelUp",
     "TitleStrKey": "ST:103421",
     "ContentStrKey": "ST:103457"
+  },
+  {
+    "ID": 30011,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 201200174,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 880
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5551844,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403089002,
+        "Count": 30
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000006,
+        "Count": 60
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_BotGame",
+    "TitleStrKey": "ST:245209",
+    "ContentStrKey": "ST:245212"
+  },
+  {
+    "ID": 30012,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 201200174,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 660
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5551844,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403089002,
+        "Count": 24
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000006,
+        "Count": 60
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_BotGame",
+    "TitleStrKey": "ST:245209",
+    "ContentStrKey": "ST:245213"
+  },
+  {
+    "ID": 30013,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 201200174,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 660
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5551844,
+        "Count": 5
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403089002,
+        "Count": 24
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000006,
+        "Count": 60
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_BotGame",
+    "TitleStrKey": "ST:245209",
+    "ContentStrKey": "ST:245214"
+  },
+  {
+    "ID": 30014,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 201200173,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 440
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5551844,
+        "Count": 5
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403089002,
+        "Count": 18
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000006,
+        "Count": 40
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_BotGame",
+    "TitleStrKey": "ST:245209",
+    "ContentStrKey": "ST:245215"
+  },
+  {
+    "ID": 30015,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 201200173,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 440
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5551844,
+        "Count": 4
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403089002,
+        "Count": 18
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000006,
+        "Count": 40
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_BotGame",
+    "TitleStrKey": "ST:245209",
+    "ContentStrKey": "ST:245216"
+  },
+  {
+    "ID": 30016,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 201200173,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 288
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5551844,
+        "Count": 4
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403089002,
+        "Count": 12
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000006,
+        "Count": 40
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_BotGame",
+    "TitleStrKey": "ST:245209",
+    "ContentStrKey": "ST:245217"
+  },
+  {
+    "ID": 30017,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 201200172,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 288
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5551844,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403089002,
+        "Count": 12
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000006,
+        "Count": 20
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_BotGame",
+    "TitleStrKey": "ST:245209",
+    "ContentStrKey": "ST:245218"
+  },
+  {
+    "ID": 30018,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 201200172,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 188
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5551844,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403089002,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000006,
+        "Count": 20
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_BotGame",
+    "TitleStrKey": "ST:245209",
+    "ContentStrKey": "ST:245219"
+  },
+  {
+    "ID": 30019,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 188
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5551844,
+        "Count": 2
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403089002,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000006,
+        "Count": 20
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_BotGame",
+    "TitleStrKey": "ST:245209",
+    "ContentStrKey": "ST:245220"
+  },
+  {
+    "ID": 30020,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 88
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5551844,
+        "Count": 2
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000006,
+        "Count": 20
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_BotGame",
+    "TitleStrKey": "ST:245209",
+    "ContentStrKey": "ST:245221"
+  },
+  {
+    "ID": 31011,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 201200179,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 880
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5551844,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403089002,
+        "Count": 30
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000101,
+        "Count": 60
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_BotGame",
+    "TitleStrKey": "ST:265652",
+    "ContentStrKey": "ST:265654"
+  },
+  {
+    "ID": 31012,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 201200179,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 660
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5551844,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403089002,
+        "Count": 24
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000101,
+        "Count": 60
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_BotGame",
+    "TitleStrKey": "ST:265652",
+    "ContentStrKey": "ST:265655"
+  },
+  {
+    "ID": 31013,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 201200179,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 660
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5551844,
+        "Count": 5
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403089002,
+        "Count": 24
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000101,
+        "Count": 60
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_BotGame",
+    "TitleStrKey": "ST:265652",
+    "ContentStrKey": "ST:265656"
+  },
+  {
+    "ID": 31014,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 201200178,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 440
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5551844,
+        "Count": 5
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403089002,
+        "Count": 18
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000101,
+        "Count": 40
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_BotGame",
+    "TitleStrKey": "ST:265652",
+    "ContentStrKey": "ST:265657"
+  },
+  {
+    "ID": 31015,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 201200178,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 440
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5551844,
+        "Count": 4
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403089002,
+        "Count": 18
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000101,
+        "Count": 40
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_BotGame",
+    "TitleStrKey": "ST:265652",
+    "ContentStrKey": "ST:265658"
+  },
+  {
+    "ID": 31016,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 201200178,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 288
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5551844,
+        "Count": 4
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403089002,
+        "Count": 12
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000101,
+        "Count": 40
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_BotGame",
+    "TitleStrKey": "ST:265652",
+    "ContentStrKey": "ST:265659"
+  },
+  {
+    "ID": 31017,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 201200177,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 288
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5551844,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403089002,
+        "Count": 12
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000101,
+        "Count": 20
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_BotGame",
+    "TitleStrKey": "ST:265652",
+    "ContentStrKey": "ST:265660"
+  },
+  {
+    "ID": 31018,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 201200177,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 188
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5551844,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403089002,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000101,
+        "Count": 20
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_BotGame",
+    "TitleStrKey": "ST:265652",
+    "ContentStrKey": "ST:265661"
+  },
+  {
+    "ID": 31019,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 188
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5551844,
+        "Count": 2
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403089002,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000101,
+        "Count": 20
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_BotGame",
+    "TitleStrKey": "ST:265652",
+    "ContentStrKey": "ST:265662"
+  },
+  {
+    "ID": 31020,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 88
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5551844,
+        "Count": 2
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000101,
+        "Count": 20
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_BotGame",
+    "TitleStrKey": "ST:265652",
+    "ContentStrKey": "ST:265663"
+  },
+  {
+    "ID": 32011,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 201200184,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 880
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5551844,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403089002,
+        "Count": 30
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000007,
+        "Count": 60
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_BotGame",
+    "TitleStrKey": "ST:245209",
+    "ContentStrKey": "ST:245212"
+  },
+  {
+    "ID": 32012,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 201200184,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 660
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5551844,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403089002,
+        "Count": 24
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000007,
+        "Count": 60
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_BotGame",
+    "TitleStrKey": "ST:245209",
+    "ContentStrKey": "ST:245213"
+  },
+  {
+    "ID": 32013,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 201200184,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 660
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5551844,
+        "Count": 5
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403089002,
+        "Count": 24
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000007,
+        "Count": 60
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_BotGame",
+    "TitleStrKey": "ST:245209",
+    "ContentStrKey": "ST:245214"
+  },
+  {
+    "ID": 32014,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 201200183,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 440
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5551844,
+        "Count": 5
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403089002,
+        "Count": 18
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000007,
+        "Count": 40
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_BotGame",
+    "TitleStrKey": "ST:245209",
+    "ContentStrKey": "ST:245215"
+  },
+  {
+    "ID": 32015,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 201200183,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 440
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5551844,
+        "Count": 4
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403089002,
+        "Count": 18
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000007,
+        "Count": 40
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_BotGame",
+    "TitleStrKey": "ST:245209",
+    "ContentStrKey": "ST:245216"
+  },
+  {
+    "ID": 32016,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 201200183,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 288
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5551844,
+        "Count": 4
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403089002,
+        "Count": 12
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000007,
+        "Count": 40
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_BotGame",
+    "TitleStrKey": "ST:245209",
+    "ContentStrKey": "ST:245217"
+  },
+  {
+    "ID": 32017,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 201200182,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 288
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5551844,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403089002,
+        "Count": 12
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000007,
+        "Count": 20
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_BotGame",
+    "TitleStrKey": "ST:245209",
+    "ContentStrKey": "ST:245218"
+  },
+  {
+    "ID": 32018,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 201200182,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 188
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5551844,
+        "Count": 3
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403089002,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000007,
+        "Count": 20
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_BotGame",
+    "TitleStrKey": "ST:245209",
+    "ContentStrKey": "ST:245219"
+  },
+  {
+    "ID": 32019,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 188
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5551844,
+        "Count": 2
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403089002,
+        "Count": 6
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000007,
+        "Count": 20
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_BotGame",
+    "TitleStrKey": "ST:245209",
+    "ContentStrKey": "ST:245220"
+  },
+  {
+    "ID": 32020,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 88
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 5551844,
+        "Count": 2
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000007,
+        "Count": 20
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "FuncType": "GameFunctionType_BotGame",
+    "TitleStrKey": "ST:245209",
+    "ContentStrKey": "ST:245221"
   },
   {
     "ID": 40000,
@@ -11995,7 +14059,7 @@
     "ReadExpiredTime": 259200,
     "GotDeleted": true,
     "TitleStrKey": "ST:255799",
-    "ContentStrKey": "ST:255801"
+    "ContentStrKey": "ST:265156"
   },
   {
     "ID": 51002,
@@ -12031,7 +14095,7 @@
     "ReadExpiredTime": 259200,
     "GotDeleted": true,
     "TitleStrKey": "ST:255799",
-    "ContentStrKey": "ST:255802"
+    "ContentStrKey": "ST:265157"
   },
   {
     "ID": 51003,
@@ -12067,7 +14131,7 @@
     "ReadExpiredTime": 259200,
     "GotDeleted": true,
     "TitleStrKey": "ST:255799",
-    "ContentStrKey": "ST:255803"
+    "ContentStrKey": "ST:265158"
   },
   {
     "ID": 51004,
@@ -12138,6 +14202,207 @@
   },
   {
     "ID": 51006,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 402011116,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403089002,
+        "Count": 6
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "TitleStrKey": "ST:255799",
+    "ContentStrKey": "ST:255806"
+  },
+  {
+    "ID": 51007,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 168
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 402011116,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Soul",
+        "ItemId": 5510124,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Soul",
+        "ItemId": 5520124,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Soul",
+        "ItemId": 5530124,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403089002,
+        "Count": 20
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "TitleStrKey": "ST:255799",
+    "ContentStrKey": "ST:265156"
+  },
+  {
+    "ID": 51008,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 148
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 402011116,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Soul",
+        "ItemId": 5510124,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Soul",
+        "ItemId": 5530124,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403089002,
+        "Count": 16
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "TitleStrKey": "ST:255799",
+    "ContentStrKey": "ST:265157"
+  },
+  {
+    "ID": 51009,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 128
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 402011116,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Soul",
+        "ItemId": 5510124,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Soul",
+        "ItemId": 5520124,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403089002,
+        "Count": 12
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "TitleStrKey": "ST:255799",
+    "ContentStrKey": "ST:265158"
+  },
+  {
+    "ID": 51010,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 108
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 402011116,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Soul",
+        "ItemId": 5520124,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Soul",
+        "ItemId": 5530124,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403089002,
+        "Count": 8
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "TitleStrKey": "ST:255799",
+    "ContentStrKey": "ST:255804"
+  },
+  {
+    "ID": 51011,
+    "MailType": "MailType_GameFunc",
+    "Attachments": [
+      {
+        "ItemType": "ItemType_Currency",
+        "ItemId": 2,
+        "Count": 88
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 402011116,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Soul",
+        "ItemId": 5530124,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 403089002,
+        "Count": 6
+      }
+    ],
+    "ExpiredTime": 2419200,
+    "ReadExpiredTime": 259200,
+    "GotDeleted": true,
+    "TitleStrKey": "ST:255799",
+    "ContentStrKey": "ST:255805"
+  },
+  {
+    "ID": 51012,
     "MailType": "MailType_GameFunc",
     "Attachments": [
       {

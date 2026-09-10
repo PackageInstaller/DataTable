@@ -1,5 +1,23 @@
 [
   {
+    "ID": 611020023,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill03_3C",
+    "CastEffect": [
+      102000050,
+      102000051
+    ],
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 611020023,
+    "SkillAnnounce3CTimelineId": 10200030
+  },
+  {
     "ID": 611021001,
     "ReturnToIdle": true,
     "Animation": "Combat_AttackRootMotion",
@@ -4046,19 +4064,5 @@
       100
     ],
     "SkillSound": 611038030
-  },
-  {
-    "ID": 611038031,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill01_3C",
-    "CastEffect": [
-      103800050
-    ],
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 611038031,
-    "SkillAnnounce3CTimelineId": 10380020
   }
 ]

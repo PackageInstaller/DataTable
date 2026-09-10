@@ -1,5 +1,46 @@
 [
   {
+    "ID": 45204331,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      452041652
+    ]
+  },
+  {
+    "ID": 45204332,
+    "ActionType": "BattleSceneActionType_CameraFocusActor",
+    "Param1": [
+      8
+    ],
+    "Param2": [
+      101
+    ]
+  },
+  {
+    "ID": 45204333,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      452041653
+    ]
+  },
+  {
+    "ID": 45204334,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      101
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1000
+    ],
+    "Param5": "SkillAnnounce",
+    "Param6": [
+      0
+    ]
+  },
+  {
     "ID": 45204335,
     "ActionType": "BattleSceneActionType_ActorEffect",
     "Param1": [
@@ -15952,48 +15993,6 @@
     ],
     "Param2": [
       763150272
-    ]
-  },
-  {
-    "ID": 45402401,
-    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
-    "Param1": [
-      800
-    ],
-    "Param3": [
-      {
-        "X": 1,
-        "Y": 11
-      }
-    ]
-  },
-  {
-    "ID": 45402402,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      500
-    ]
-  },
-  {
-    "ID": 45402403,
-    "ActionType": "BattleSceneActionType_ActorRetreat",
-    "Param1": [
-      911
-    ]
-  },
-  {
-    "ID": 45402404,
-    "ActionType": "BattleSceneActionType_TerrainEffect",
-    "Param1": [
-      0
-    ],
-    "Param2": [
-      10011
-    ],
-    "Param3": [
-      {
-        "Y": 11
-      }
     ]
   }
 ]

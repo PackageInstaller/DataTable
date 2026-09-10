@@ -17788,6 +17788,197 @@
     "Param1": 401
   },
   {
+    "ID": 26800100,
+    "WinConditionType": "BattleWinConditionType_Turn",
+    "Param1": 99
+  },
+  {
+    "ID": 26800101,
+    "WinConditionType": "BattleWinConditionType_CampActorDeadCountGreaterEqual",
+    "Param2": 1,
+    "Param4": [
+      0
+    ]
+  },
+  {
+    "ID": 26800200,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 499
+  },
+  {
+    "ID": 26800201,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 498
+  },
+  {
+    "ID": 26800202,
+    "WinConditionType": "BattleWinConditionType_CampActorDeadCountGreaterEqual",
+    "Param2": 1,
+    "Param4": [
+      0
+    ]
+  },
+  {
+    "ID": 26800400,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 101
+  },
+  {
+    "ID": 26800500,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 101
+  },
+  {
+    "ID": 26800600,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 491
+  },
+  {
+    "ID": 26800601,
+    "WinConditionType": "BattleWinConditionType_CampActorDeadCountGreaterEqual",
+    "Param2": 1,
+    "Param4": [
+      0
+    ]
+  },
+  {
+    "ID": 26800710,
+    "WinConditionType": "BattleWinConditionType_Turn",
+    "Param1": 4
+  },
+  {
+    "ID": 26800711,
+    "WinConditionType": "BattleWinConditionType_TeamActorReachZone",
+    "Param1": 4,
+    "Param2": 1,
+    "Param3": [
+      {
+        "X": 1,
+        "Y": 18
+      },
+      {
+        "X": 2,
+        "Y": 18
+      },
+      {
+        "X": 3,
+        "Y": 18
+      },
+      {
+        "X": 4,
+        "Y": 18
+      },
+      {
+        "X": 11,
+        "Y": 18
+      },
+      {
+        "X": 12,
+        "Y": 18
+      },
+      {
+        "X": 13,
+        "Y": 18
+      },
+      {
+        "X": 14,
+        "Y": 18
+      },
+      {
+        "X": 15,
+        "Y": 18
+      },
+      {
+        "X": 16,
+        "Y": 18
+      }
+    ]
+  },
+  {
+    "ID": 26800900,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 401
+  },
+  {
+    "ID": 26801110,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 250
+  },
+  {
+    "ID": 26801300,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 451
+  },
+  {
+    "ID": 26801400,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 401
+  },
+  {
+    "ID": 26801500,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 250
+  },
+  {
+    "ID": 26801600,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 401
+  },
+  {
+    "ID": 26801700,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 499
+  },
+  {
+    "ID": 26801800,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 401
+  },
+  {
+    "ID": 26900100,
+    "WinConditionType": "BattleWinConditionType_Turn",
+    "Param1": 99
+  },
+  {
+    "ID": 26900101,
+    "WinConditionType": "BattleWinConditionType_CampActorDeadCountGreaterEqual",
+    "Param2": 1,
+    "Param4": [
+      0
+    ]
+  },
+  {
+    "ID": 26900900,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 201
+  },
+  {
+    "ID": 26900902,
+    "WinConditionType": "BattleWinConditionType_ActorReachZone",
+    "Param1": 201,
+    "Param3": [
+      {
+        "X": 5
+      },
+      {
+        "X": 6
+      },
+      {
+        "X": 7
+      }
+    ]
+  },
+  {
+    "ID": 26900903,
+    "WinConditionType": "BattleWinConditionType_Turn",
+    "Param1": 5
+  },
+  {
+    "ID": 26900904,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 499
+  },
+  {
     "ID": 27010310,
     "WinConditionType": "BattleWinConditionType_TeamIDActorCountLessEqual",
     "Param1": 21
@@ -20528,6 +20719,104 @@
     "Param1": 111
   },
   {
+    "ID": 270001011,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 499
+  },
+  {
+    "ID": 270003011,
+    "WinConditionType": "BattleWinConditionType_Turn",
+    "Param1": 99
+  },
+  {
+    "ID": 270004011,
+    "WinConditionType": "BattleWinConditionType_ActorReachZone",
+    "Param1": 201,
+    "Param3": [
+      {
+        "X": 4,
+        "Y": 18
+      },
+      {
+        "X": 5,
+        "Y": 18
+      },
+      {
+        "X": 6,
+        "Y": 18
+      },
+      {
+        "X": 7,
+        "Y": 18
+      },
+      {
+        "X": 8,
+        "Y": 18
+      },
+      {
+        "X": 9,
+        "Y": 18
+      },
+      {
+        "X": 10,
+        "Y": 18
+      }
+    ]
+  },
+  {
+    "ID": 270004021,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 201
+  },
+  {
+    "ID": 270006001,
+    "WinConditionType": "BattleWinConditionType_Turn",
+    "Param1": 4
+  },
+  {
+    "ID": 270006002,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 111
+  },
+  {
+    "ID": 270007001,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 112
+  },
+  {
+    "ID": 270008011,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 211
+  },
+  {
+    "ID": 270010011,
+    "WinConditionType": "BattleWinConditionType_TeamIDActorCountLessEqual",
+    "Param1": 41
+  },
+  {
+    "ID": 270010012,
+    "WinConditionType": "BattleWinConditionType_TeamIDActorCountLessEqual",
+    "Param1": 45
+  },
+  {
+    "ID": 270013011,
+    "WinConditionType": "BattleWinConditionType_Turn",
+    "Param1": 9
+  },
+  {
+    "ID": 270013021,
+    "WinConditionType": "BattleWinConditionType_TeamActorCountLessEqual",
+    "Param1": 1,
+    "Param4": [
+      1
+    ]
+  },
+  {
+    "ID": 270031011,
+    "WinConditionType": "BattleWinConditionType_TeamIDActorCountLessEqual",
+    "Param1": 49
+  },
+  {
     "ID": 270113011,
     "WinConditionType": "BattleWinConditionType_TeamIDActorCountLessEqual",
     "Param1": 21,
@@ -21057,6 +21346,1137 @@
       27081445,
       27081446
     ]
+  },
+  {
+    "ID": 271001011,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 211
+  },
+  {
+    "ID": 271001021,
+    "WinConditionType": "BattleWinConditionType_SceneActionCompleteTime",
+    "Param1": 1,
+    "Param2": 1,
+    "Param4": [
+      27100104
+    ]
+  },
+  {
+    "ID": 271002011,
+    "WinConditionType": "BattleWinConditionType_TeamActorCountLessEqual",
+    "Param1": 2,
+    "Param2": 1
+  },
+  {
+    "ID": 271003011,
+    "WinConditionType": "BattleWinConditionType_ActorReachZone",
+    "Param1": 211,
+    "Param3": [
+      {
+        "X": 6
+      },
+      {
+        "X": 7
+      },
+      {
+        "X": 8
+      },
+      {
+        "X": 9
+      }
+    ]
+  },
+  {
+    "ID": 271003021,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 211
+  },
+  {
+    "ID": 271005011,
+    "WinConditionType": "BattleWinConditionType_CampActorCountLessEqual",
+    "Param1": 1,
+    "Param4": [
+      1
+    ]
+  },
+  {
+    "ID": 271006011,
+    "WinConditionType": "BattleWinConditionType_Turn",
+    "Param1": 4
+  },
+  {
+    "ID": 271006021,
+    "WinConditionType": "BattleWinConditionType_TeamActorCountLessEqual",
+    "Param1": 1,
+    "Param4": [
+      1
+    ]
+  },
+  {
+    "ID": 271006022,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 112
+  },
+  {
+    "ID": 271006023,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 113
+  },
+  {
+    "ID": 271006024,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 114
+  },
+  {
+    "ID": 271006025,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 115
+  },
+  {
+    "ID": 271006026,
+    "WinConditionType": "BattleWinConditionType_TeamActorCountLessEqual",
+    "Param1": 1,
+    "Param4": [
+      1
+    ]
+  },
+  {
+    "ID": 271007011,
+    "WinConditionType": "BattleWinConditionType_ActorReachZone",
+    "Param1": 111,
+    "Param3": [
+      {
+        "X": 18
+      },
+      {
+        "X": 19
+      },
+      {
+        "X": 20
+      }
+    ]
+  },
+  {
+    "ID": 271007021,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 111
+  },
+  {
+    "ID": 271007022,
+    "WinConditionType": "BattleWinConditionType_TeamActorCountLessEqual",
+    "Param1": 1,
+    "Param4": [
+      1
+    ]
+  },
+  {
+    "ID": 271008011,
+    "WinConditionType": "BattleWinConditionType_ActorReachZone",
+    "Param1": 111,
+    "Param3": [
+      {
+        "X": 7,
+        "Y": 18
+      }
+    ]
+  },
+  {
+    "ID": 271008021,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 111
+  },
+  {
+    "ID": 271009011,
+    "WinConditionType": "BattleWinConditionType_TeamActorCountLessEqual",
+    "Param1": 4
+  },
+  {
+    "ID": 271011011,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 499
+  },
+  {
+    "ID": 271012011,
+    "WinConditionType": "BattleWinConditionType_ActorReachZone",
+    "Param1": 401,
+    "Param3": [
+      {
+        "Y": 8
+      },
+      {
+        "Y": 9
+      },
+      {
+        "Y": 10
+      },
+      {
+        "X": 8,
+        "Y": 17
+      },
+      {
+        "X": 9,
+        "Y": 17
+      },
+      {
+        "X": 10,
+        "Y": 17
+      },
+      {
+        "X": 8
+      },
+      {
+        "X": 9
+      },
+      {
+        "X": 10
+      },
+      {
+        "X": 18,
+        "Y": 10
+      },
+      {
+        "X": 18,
+        "Y": 9
+      },
+      {
+        "X": 18,
+        "Y": 8
+      }
+    ]
+  },
+  {
+    "ID": 271012012,
+    "WinConditionType": "BattleWinConditionType_ActorReachZone",
+    "Param1": 402,
+    "Param3": [
+      {
+        "Y": 8
+      },
+      {
+        "Y": 9
+      },
+      {
+        "Y": 10
+      },
+      {
+        "X": 8,
+        "Y": 17
+      },
+      {
+        "X": 9,
+        "Y": 17
+      },
+      {
+        "X": 10,
+        "Y": 17
+      },
+      {
+        "X": 8
+      },
+      {
+        "X": 9
+      },
+      {
+        "X": 10
+      },
+      {
+        "X": 18,
+        "Y": 10
+      },
+      {
+        "X": 18,
+        "Y": 9
+      },
+      {
+        "X": 18,
+        "Y": 8
+      }
+    ]
+  },
+  {
+    "ID": 271012013,
+    "WinConditionType": "BattleWinConditionType_ActorReachZone",
+    "Param1": 403,
+    "Param3": [
+      {
+        "Y": 8
+      },
+      {
+        "Y": 9
+      },
+      {
+        "Y": 10
+      },
+      {
+        "X": 8,
+        "Y": 17
+      },
+      {
+        "X": 9,
+        "Y": 17
+      },
+      {
+        "X": 10,
+        "Y": 17
+      },
+      {
+        "X": 8
+      },
+      {
+        "X": 9
+      },
+      {
+        "X": 10
+      },
+      {
+        "X": 18,
+        "Y": 10
+      },
+      {
+        "X": 18,
+        "Y": 9
+      },
+      {
+        "X": 18,
+        "Y": 8
+      }
+    ]
+  },
+  {
+    "ID": 271012014,
+    "WinConditionType": "BattleWinConditionType_ActorReachZone",
+    "Param1": 404,
+    "Param3": [
+      {
+        "Y": 8
+      },
+      {
+        "Y": 9
+      },
+      {
+        "Y": 10
+      },
+      {
+        "X": 8,
+        "Y": 17
+      },
+      {
+        "X": 9,
+        "Y": 17
+      },
+      {
+        "X": 10,
+        "Y": 17
+      },
+      {
+        "X": 8
+      },
+      {
+        "X": 9
+      },
+      {
+        "X": 10
+      },
+      {
+        "X": 18,
+        "Y": 10
+      },
+      {
+        "X": 18,
+        "Y": 9
+      },
+      {
+        "X": 18,
+        "Y": 8
+      }
+    ]
+  },
+  {
+    "ID": 271012015,
+    "WinConditionType": "BattleWinConditionType_ActorReachZone",
+    "Param1": 405,
+    "Param3": [
+      {
+        "Y": 8
+      },
+      {
+        "Y": 9
+      },
+      {
+        "Y": 10
+      },
+      {
+        "X": 8,
+        "Y": 17
+      },
+      {
+        "X": 9,
+        "Y": 17
+      },
+      {
+        "X": 10,
+        "Y": 17
+      },
+      {
+        "X": 8
+      },
+      {
+        "X": 9
+      },
+      {
+        "X": 10
+      },
+      {
+        "X": 18,
+        "Y": 10
+      },
+      {
+        "X": 18,
+        "Y": 9
+      },
+      {
+        "X": 18,
+        "Y": 8
+      }
+    ]
+  },
+  {
+    "ID": 271012016,
+    "WinConditionType": "BattleWinConditionType_ActorReachZone",
+    "Param1": 406,
+    "Param3": [
+      {
+        "Y": 8
+      },
+      {
+        "Y": 9
+      },
+      {
+        "Y": 10
+      },
+      {
+        "X": 8,
+        "Y": 17
+      },
+      {
+        "X": 9,
+        "Y": 17
+      },
+      {
+        "X": 10,
+        "Y": 17
+      },
+      {
+        "X": 8
+      },
+      {
+        "X": 9
+      },
+      {
+        "X": 10
+      },
+      {
+        "X": 18,
+        "Y": 10
+      },
+      {
+        "X": 18,
+        "Y": 9
+      },
+      {
+        "X": 18,
+        "Y": 8
+      }
+    ]
+  },
+  {
+    "ID": 271012017,
+    "WinConditionType": "BattleWinConditionType_ActorReachZone",
+    "Param1": 407,
+    "Param3": [
+      {
+        "Y": 8
+      },
+      {
+        "Y": 9
+      },
+      {
+        "Y": 10
+      },
+      {
+        "X": 8,
+        "Y": 17
+      },
+      {
+        "X": 9,
+        "Y": 17
+      },
+      {
+        "X": 10,
+        "Y": 17
+      },
+      {
+        "X": 8
+      },
+      {
+        "X": 9
+      },
+      {
+        "X": 10
+      },
+      {
+        "X": 18,
+        "Y": 10
+      },
+      {
+        "X": 18,
+        "Y": 9
+      },
+      {
+        "X": 18,
+        "Y": 8
+      }
+    ]
+  },
+  {
+    "ID": 271012018,
+    "WinConditionType": "BattleWinConditionType_ActorReachZone",
+    "Param1": 408,
+    "Param3": [
+      {
+        "Y": 8
+      },
+      {
+        "Y": 9
+      },
+      {
+        "Y": 10
+      },
+      {
+        "X": 8,
+        "Y": 17
+      },
+      {
+        "X": 9,
+        "Y": 17
+      },
+      {
+        "X": 10,
+        "Y": 17
+      },
+      {
+        "X": 8
+      },
+      {
+        "X": 9
+      },
+      {
+        "X": 10
+      },
+      {
+        "X": 18,
+        "Y": 10
+      },
+      {
+        "X": 18,
+        "Y": 9
+      },
+      {
+        "X": 18,
+        "Y": 8
+      }
+    ]
+  },
+  {
+    "ID": 271012019,
+    "WinConditionType": "BattleWinConditionType_ActorReachZone",
+    "Param1": 409,
+    "Param3": [
+      {
+        "Y": 8
+      },
+      {
+        "Y": 9
+      },
+      {
+        "Y": 10
+      },
+      {
+        "X": 8,
+        "Y": 17
+      },
+      {
+        "X": 9,
+        "Y": 17
+      },
+      {
+        "X": 10,
+        "Y": 17
+      },
+      {
+        "X": 8
+      },
+      {
+        "X": 9
+      },
+      {
+        "X": 10
+      },
+      {
+        "X": 18,
+        "Y": 10
+      },
+      {
+        "X": 18,
+        "Y": 9
+      },
+      {
+        "X": 18,
+        "Y": 8
+      }
+    ]
+  },
+  {
+    "ID": 271012021,
+    "WinConditionType": "BattleWinConditionType_ActorReachZone",
+    "Param1": 402,
+    "Param3": [
+      {
+        "Y": 8
+      },
+      {
+        "Y": 9
+      },
+      {
+        "Y": 10
+      },
+      {
+        "X": 8,
+        "Y": 17
+      },
+      {
+        "X": 9,
+        "Y": 17
+      },
+      {
+        "X": 10,
+        "Y": 17
+      },
+      {
+        "X": 8
+      },
+      {
+        "X": 9
+      },
+      {
+        "X": 10
+      },
+      {
+        "X": 18,
+        "Y": 10
+      },
+      {
+        "X": 18,
+        "Y": 9
+      },
+      {
+        "X": 18,
+        "Y": 8
+      }
+    ]
+  },
+  {
+    "ID": 271012031,
+    "WinConditionType": "BattleWinConditionType_ActorReachZone",
+    "Param1": 403,
+    "Param3": [
+      {
+        "Y": 8
+      },
+      {
+        "Y": 9
+      },
+      {
+        "Y": 10
+      },
+      {
+        "X": 8,
+        "Y": 17
+      },
+      {
+        "X": 9,
+        "Y": 17
+      },
+      {
+        "X": 10,
+        "Y": 17
+      },
+      {
+        "X": 8
+      },
+      {
+        "X": 9
+      },
+      {
+        "X": 10
+      },
+      {
+        "X": 18,
+        "Y": 10
+      },
+      {
+        "X": 18,
+        "Y": 9
+      },
+      {
+        "X": 18,
+        "Y": 8
+      }
+    ]
+  },
+  {
+    "ID": 271012041,
+    "WinConditionType": "BattleWinConditionType_ActorReachZone",
+    "Param1": 404,
+    "Param3": [
+      {
+        "Y": 8
+      },
+      {
+        "Y": 9
+      },
+      {
+        "Y": 10
+      },
+      {
+        "X": 8,
+        "Y": 17
+      },
+      {
+        "X": 9,
+        "Y": 17
+      },
+      {
+        "X": 10,
+        "Y": 17
+      },
+      {
+        "X": 8
+      },
+      {
+        "X": 9
+      },
+      {
+        "X": 10
+      },
+      {
+        "X": 18,
+        "Y": 10
+      },
+      {
+        "X": 18,
+        "Y": 9
+      },
+      {
+        "X": 18,
+        "Y": 8
+      }
+    ]
+  },
+  {
+    "ID": 271012051,
+    "WinConditionType": "BattleWinConditionType_ActorReachZone",
+    "Param1": 405,
+    "Param3": [
+      {
+        "Y": 8
+      },
+      {
+        "Y": 9
+      },
+      {
+        "Y": 10
+      },
+      {
+        "X": 8,
+        "Y": 17
+      },
+      {
+        "X": 9,
+        "Y": 17
+      },
+      {
+        "X": 10,
+        "Y": 17
+      },
+      {
+        "X": 8
+      },
+      {
+        "X": 9
+      },
+      {
+        "X": 10
+      },
+      {
+        "X": 18,
+        "Y": 10
+      },
+      {
+        "X": 18,
+        "Y": 9
+      },
+      {
+        "X": 18,
+        "Y": 8
+      }
+    ]
+  },
+  {
+    "ID": 271012061,
+    "WinConditionType": "BattleWinConditionType_ActorReachZone",
+    "Param1": 406,
+    "Param3": [
+      {
+        "Y": 8
+      },
+      {
+        "Y": 9
+      },
+      {
+        "Y": 10
+      },
+      {
+        "X": 8,
+        "Y": 17
+      },
+      {
+        "X": 9,
+        "Y": 17
+      },
+      {
+        "X": 10,
+        "Y": 17
+      },
+      {
+        "X": 8
+      },
+      {
+        "X": 9
+      },
+      {
+        "X": 10
+      },
+      {
+        "X": 18,
+        "Y": 10
+      },
+      {
+        "X": 18,
+        "Y": 9
+      },
+      {
+        "X": 18,
+        "Y": 8
+      }
+    ]
+  },
+  {
+    "ID": 271012071,
+    "WinConditionType": "BattleWinConditionType_ActorReachZone",
+    "Param1": 407,
+    "Param3": [
+      {
+        "Y": 8
+      },
+      {
+        "Y": 9
+      },
+      {
+        "Y": 10
+      },
+      {
+        "X": 8,
+        "Y": 17
+      },
+      {
+        "X": 9,
+        "Y": 17
+      },
+      {
+        "X": 10,
+        "Y": 17
+      },
+      {
+        "X": 8
+      },
+      {
+        "X": 9
+      },
+      {
+        "X": 10
+      },
+      {
+        "X": 18,
+        "Y": 10
+      },
+      {
+        "X": 18,
+        "Y": 9
+      },
+      {
+        "X": 18,
+        "Y": 8
+      }
+    ]
+  },
+  {
+    "ID": 271012081,
+    "WinConditionType": "BattleWinConditionType_ActorReachZone",
+    "Param1": 408,
+    "Param3": [
+      {
+        "Y": 8
+      },
+      {
+        "Y": 9
+      },
+      {
+        "Y": 10
+      },
+      {
+        "X": 8,
+        "Y": 17
+      },
+      {
+        "X": 9,
+        "Y": 17
+      },
+      {
+        "X": 10,
+        "Y": 17
+      },
+      {
+        "X": 8
+      },
+      {
+        "X": 9
+      },
+      {
+        "X": 10
+      },
+      {
+        "X": 18,
+        "Y": 10
+      },
+      {
+        "X": 18,
+        "Y": 9
+      },
+      {
+        "X": 18,
+        "Y": 8
+      }
+    ]
+  },
+  {
+    "ID": 271012091,
+    "WinConditionType": "BattleWinConditionType_ActorReachZone",
+    "Param1": 409,
+    "Param3": [
+      {
+        "Y": 8
+      },
+      {
+        "Y": 9
+      },
+      {
+        "Y": 10
+      },
+      {
+        "X": 8,
+        "Y": 17
+      },
+      {
+        "X": 9,
+        "Y": 17
+      },
+      {
+        "X": 10,
+        "Y": 17
+      },
+      {
+        "X": 8
+      },
+      {
+        "X": 9
+      },
+      {
+        "X": 10
+      },
+      {
+        "X": 18,
+        "Y": 10
+      },
+      {
+        "X": 18,
+        "Y": 9
+      },
+      {
+        "X": 18,
+        "Y": 8
+      }
+    ]
+  },
+  {
+    "ID": 271013011,
+    "WinConditionType": "BattleWinConditionType_Turn",
+    "Param1": 6
+  },
+  {
+    "ID": 271013021,
+    "WinConditionType": "BattleWinConditionType_TeamActorCountLessEqual",
+    "Param1": 1,
+    "Param4": [
+      1
+    ]
+  },
+  {
+    "ID": 271017011,
+    "WinConditionType": "BattleWinConditionType_TeamActorDeadCountGreaterEqual",
+    "Param1": 2,
+    "Param2": 2
+  },
+  {
+    "ID": 271018011,
+    "WinConditionType": "BattleWinConditionType_TeamActorDeadCountGreaterEqual",
+    "Param1": 2,
+    "Param2": 2
+  },
+  {
+    "ID": 271019011,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 211
+  },
+  {
+    "ID": 271020011,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 211
+  },
+  {
+    "ID": 271021011,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 111
+  },
+  {
+    "ID": 271022001,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 451
+  },
+  {
+    "ID": 271022002,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 452
+  },
+  {
+    "ID": 271022003,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 453
+  },
+  {
+    "ID": 271022004,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 454
+  },
+  {
+    "ID": 271032011,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 211
+  },
+  {
+    "ID": 271033011,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 211
+  },
+  {
+    "ID": 271034011,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 211
+  },
+  {
+    "ID": 271034021,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 212
+  },
+  {
+    "ID": 271035011,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 401
+  },
+  {
+    "ID": 271036011,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 401
+  },
+  {
+    "ID": 271037011,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 401
+  },
+  {
+    "ID": 271038011,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 401
+  },
+  {
+    "ID": 271040011,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 401
+  },
+  {
+    "ID": 271042011,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 411
+  },
+  {
+    "ID": 271042012,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 421
+  },
+  {
+    "ID": 271043011,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 401
+  },
+  {
+    "ID": 271047011,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 421
+  },
+  {
+    "ID": 271048011,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 421
+  },
+  {
+    "ID": 271048012,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 422
+  },
+  {
+    "ID": 271049011,
+    "WinConditionType": "BattleWinConditionType_TeamIDActorCountLessEqual",
+    "Param1": 41
+  },
+  {
+    "ID": 271054011,
+    "WinConditionType": "BattleWinConditionType_TeamActorCountLessEqual",
+    "Param1": 1
+  },
+  {
+    "ID": 271054021,
+    "WinConditionType": "BattleWinConditionType_Turn",
+    "Param1": 5
   },
   {
     "ID": 280104011,

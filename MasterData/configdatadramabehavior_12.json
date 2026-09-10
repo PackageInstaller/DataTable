@@ -1,5 +1,880 @@
 [
   {
+    "ID": 612016600,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "Combat_CastSkill03",
+    "CastEffect": [
+      201600600,
+      201600601
+    ],
+    "OnHitEffect": [
+      26800004,
+      26800004,
+      26800004,
+      26800004
+    ],
+    "BloodDamageShow": [
+      20,
+      20,
+      20,
+      40
+    ],
+    "SkillSound": 612016600
+  },
+  {
+    "ID": 612016900,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "Cooperate_Skill01",
+    "CastEffect": [
+      201600900,
+      201600901,
+      201600902
+    ],
+    "OnHitEffect": [
+      10000002
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 612016900
+  },
+  {
+    "ID": 612016901,
+    "ReturnToIdle": true,
+    "Animation": "SkillAnnounce",
+    "CastEffect": [
+      201600950
+    ],
+    "OnHitEffect": [
+      10000002
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 600000011,
+    "SummonEffect": 104300904
+  },
+  {
+    "ID": 612017001,
+    "ReturnToIdle": true,
+    "Animation": "Combat_AttackRootMotion",
+    "CastEffect": [
+      201700001,
+      201700002
+    ],
+    "OnHitEffect": [
+      201700004,
+      201700004,
+      201700004
+    ],
+    "FlyObjetId": [
+      2017001,
+      2017001,
+      2017001
+    ],
+    "BloodDamageShow": [
+      30,
+      30,
+      40
+    ],
+    "SkillSound": 612017001,
+    "AttackWeapon": [
+      "WeaponType_Dagger",
+      "WeaponType_Dagger",
+      "WeaponType_Dagger",
+      "WeaponType_Dagger"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_Slash",
+      "AttackAngleType_Stab",
+      "AttackAngleType_Slash",
+      "AttackAngleType_Slash"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Lit",
+      "AttackStrengthType_Med",
+      "AttackStrengthType_Med",
+      "AttackStrengthType_Hvy"
+    ]
+  },
+  {
+    "ID": 612017002,
+    "ReturnToIdle": true,
+    "Animation": "Combat_FightBackRootMotion",
+    "CastEffect": [
+      201700011,
+      201700012
+    ],
+    "OnHitEffect": [
+      201700004,
+      201700004,
+      201700004
+    ],
+    "FlyObjetId": [
+      2017001,
+      2017001,
+      2017001
+    ],
+    "BloodDamageShow": [
+      30,
+      30,
+      40
+    ],
+    "SkillSound": 612017002,
+    "AttackWeapon": [
+      "WeaponType_Dagger",
+      "WeaponType_Dagger",
+      "WeaponType_Dagger"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_Slash",
+      "AttackAngleType_Slash",
+      "AttackAngleType_Slash"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med",
+      "AttackStrengthType_Med",
+      "AttackStrengthType_Hvy"
+    ]
+  },
+  {
+    "ID": 612017003,
+    "ReturnToIdle": true,
+    "Animation": "Combat_DoubleHitRootMotion",
+    "CastEffect": [
+      201700021
+    ],
+    "OnHitEffect": [
+      201700004
+    ],
+    "FlyObjetId": [
+      2017001
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 612017003,
+    "AttackWeapon": [
+      "WeaponType_Dagger",
+      "WeaponType_Dagger"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_Slash",
+      "AttackAngleType_Slash"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med",
+      "AttackStrengthType_Hvy"
+    ]
+  },
+  {
+    "ID": 612017100,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill01",
+    "CastEffect": [
+      201700100
+    ],
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 612017100
+  },
+  {
+    "ID": 612017200,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "Combat_CastSkill01",
+    "CastEffect": [
+      201700200,
+      201700201,
+      201700202
+    ],
+    "OnHitEffect": [
+      201700004,
+      201700004,
+      201700004
+    ],
+    "FlyObjetId": [
+      2017001,
+      2017001
+    ],
+    "BloodDamageShow": [
+      30,
+      30,
+      40
+    ],
+    "SkillSound": 612017200
+  },
+  {
+    "ID": 612017201,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Common_ABS/SkillAnnounceDrama.prefab",
+    "OnHitEffect": [
+      201700204
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 600000020,
+    "StartEffect": 201700203
+  },
+  {
+    "ID": 612017210,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "Combat_CastSkill01_3C",
+    "CastEffect": [
+      201700200,
+      201700201,
+      201700202
+    ],
+    "OnHitEffect": [
+      201700004,
+      201700004,
+      201700004
+    ],
+    "FlyObjetId": [
+      2017001,
+      2017001
+    ],
+    "BloodDamageShow": [
+      30,
+      30,
+      40
+    ],
+    "SkillSound": 612017210,
+    "SkillAnnounce3CTimelineId": 20170010
+  },
+  {
+    "ID": 612017300,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill02",
+    "CastEffect": [
+      201700300
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 612017300
+  },
+  {
+    "ID": 612017400,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill03",
+    "CastEffect": [
+      201700400
+    ],
+    "OnHitEffect": [
+      201700004
+    ],
+    "FlyObjetId": [
+      2017002
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 612017400
+  },
+  {
+    "ID": 612017410,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill03_3C",
+    "CastEffect": [
+      201700400
+    ],
+    "OnHitEffect": [
+      201700004
+    ],
+    "FlyObjetId": [
+      2017002
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 612017410,
+    "SkillAnnounce3CTimelineId": 20170020
+  },
+  {
+    "ID": 612017500,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill04",
+    "CastEffect": [
+      201700500,
+      201700501,
+      201700502
+    ],
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 612017500
+  },
+  {
+    "ID": 612017510,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill04_3C",
+    "CastEffect": [
+      201700500,
+      201700501,
+      201700502
+    ],
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 612017510,
+    "SkillAnnounce3CTimelineId": 20170030
+  },
+  {
+    "ID": 612017600,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "Combat_CastSkill02",
+    "CastEffect": [
+      201700600,
+      201700601
+    ],
+    "OnHitEffect": [
+      201700004,
+      201700004,
+      201700004,
+      201700004
+    ],
+    "FlyObjetId": [
+      2017001,
+      2017001,
+      2017001,
+      2017001
+    ],
+    "BloodDamageShow": [
+      20,
+      20,
+      20,
+      40
+    ],
+    "SkillSound": 612017600
+  },
+  {
+    "ID": 612017900,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill05",
+    "CastEffect": [
+      201700900,
+      201700901
+    ],
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 612017900
+  },
+  {
+    "ID": 612018001,
+    "ReturnToIdle": true,
+    "Animation": "Combat_AttackRootMotion",
+    "CastEffect": [
+      201800001,
+      201800002,
+      201800003,
+      201800004
+    ],
+    "OnHitEffect": [
+      26800004,
+      26800004,
+      26800004
+    ],
+    "BloodDamageShow": [
+      30,
+      30,
+      40
+    ],
+    "SkillSound": 612018001
+  },
+  {
+    "ID": 612018002,
+    "ReturnToIdle": true,
+    "Animation": "Combat_FightBackRootMotion",
+    "CastEffect": [
+      201800011,
+      201800012
+    ],
+    "OnHitEffect": [
+      26800004,
+      26800004
+    ],
+    "BloodDamageShow": [
+      40,
+      60
+    ],
+    "SkillSound": 612018002
+  },
+  {
+    "ID": 612018003,
+    "ReturnToIdle": true,
+    "Animation": "Combat_DoubleHitRootMotion",
+    "CastEffect": [
+      201800021,
+      201800022,
+      201800023,
+      201800024
+    ],
+    "OnHitEffect": [
+      26800004,
+      26800004
+    ],
+    "BloodDamageShow": [
+      40,
+      60
+    ],
+    "SkillSound": 612018003
+  },
+  {
+    "ID": 612018010,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "Combat_CastSkill01",
+    "CastEffect": [
+      201800031,
+      201800032,
+      201800033,
+      201800034,
+      201800035
+    ],
+    "OnHitEffect": [
+      26800004,
+      26800004,
+      26800004
+    ],
+    "BloodDamageShow": [
+      30,
+      30,
+      40
+    ],
+    "SkillSound": 612018010
+  },
+  {
+    "ID": 612018011,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "Combat_CastSkill01_3C",
+    "CastEffect": [
+      201800031,
+      201800032,
+      201800033,
+      201800034,
+      201800035
+    ],
+    "OnHitEffect": [
+      26800004,
+      26800004,
+      26800004
+    ],
+    "BloodDamageShow": [
+      30,
+      30,
+      40
+    ],
+    "SkillSound": 612018010,
+    "SkillAnnounce3CTimelineId": 20180020
+  },
+  {
+    "ID": 612018020,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill01",
+    "CastEffect": [
+      201800041,
+      201800042,
+      201800043
+    ],
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 612018020
+  },
+  {
+    "ID": 612018021,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill01_3C",
+    "CastEffect": [
+      201800041,
+      201800042,
+      201800043
+    ],
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 612018020,
+    "SkillAnnounce3CTimelineId": 20180010
+  },
+  {
+    "ID": 612018030,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill02",
+    "CastEffect": [
+      201800051,
+      201800052,
+      201800053
+    ],
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 612018030
+  },
+  {
+    "ID": 612018031,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill02_3C",
+    "CastEffect": [
+      201800051,
+      201800052,
+      201800053
+    ],
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 612018030,
+    "SkillAnnounce3CTimelineId": 20180030
+  },
+  {
+    "ID": 612018040,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill03",
+    "CastEffect": [
+      201800061,
+      201800062
+    ],
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 612018040
+  },
+  {
+    "ID": 612018050,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "Combat_CastSkill02",
+    "CastEffect": [
+      201800071,
+      201800072,
+      201800073,
+      201800074,
+      201800075
+    ],
+    "OnHitEffect": [
+      26800004,
+      26800004,
+      26800004,
+      26800004,
+      26800004
+    ],
+    "BloodDamageShow": [
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "SkillSound": 612018050
+  },
+  {
+    "ID": 612018060,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill04",
+    "CastEffect": [
+      201800091,
+      201800092
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 612018060
+  },
+  {
+    "ID": 612019001,
+    "ReturnToIdle": true,
+    "Animation": "Combat_AttackRootMotion",
+    "CastEffect": [
+      201900001,
+      201900002,
+      201900003,
+      201900004,
+      201900005,
+      201900006
+    ],
+    "OnHitEffect": [
+      26800004,
+      26800004,
+      26800004,
+      26800004
+    ],
+    "BloodDamageShow": [
+      20,
+      20,
+      20,
+      40
+    ],
+    "SkillSound": 612019001
+  },
+  {
+    "ID": 612019002,
+    "ReturnToIdle": true,
+    "Animation": "Combat_FightBackRootMotion",
+    "CastEffect": [
+      201900011,
+      201900012,
+      201900013,
+      201900014
+    ],
+    "OnHitEffect": [
+      26800004,
+      26800004,
+      26800004
+    ],
+    "BloodDamageShow": [
+      30,
+      30,
+      40
+    ],
+    "SkillSound": 612019002
+  },
+  {
+    "ID": 612019003,
+    "ReturnToIdle": true,
+    "Animation": "Combat_ChaseHitRootMotion",
+    "CastEffect": [
+      201900021,
+      201900022,
+      201900023
+    ],
+    "OnHitEffect": [
+      26800004,
+      26800004,
+      26800004,
+      26800004
+    ],
+    "BloodDamageShow": [
+      20,
+      20,
+      20,
+      40
+    ],
+    "SkillSound": 612019003
+  },
+  {
+    "ID": 612019010,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "Combat_CastSkill02",
+    "CastEffect": [
+      201900031,
+      201900032,
+      201900033
+    ],
+    "OnHitEffect": [
+      26800004,
+      26800004,
+      26800004
+    ],
+    "BloodDamageShow": [
+      30,
+      30,
+      40
+    ],
+    "SkillSound": 612019010
+  },
+  {
+    "ID": 612019020,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "Combat_CastSkill01",
+    "BloodDamageShow": [
+      20,
+      20,
+      20,
+      40
+    ],
+    "SkillSound": 612019020
+  },
+  {
+    "ID": 612019021,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "Combat_CastSkill01_3C",
+    "BloodDamageShow": [
+      20,
+      20,
+      20,
+      40
+    ],
+    "SkillSound": 612019020,
+    "SkillAnnounce3CTimelineId": 20190020
+  },
+  {
+    "ID": 612019030,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill01",
+    "CastEffect": [
+      201900040
+    ],
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 612019030
+  },
+  {
+    "ID": 612019031,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill01_3C",
+    "CastEffect": [
+      201900040
+    ],
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 612019030,
+    "SkillAnnounce3CTimelineId": 20190010
+  },
+  {
+    "ID": 612019040,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill02",
+    "CastEffect": [
+      201900050
+    ],
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 612019040
+  },
+  {
+    "ID": 612019041,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill02_3C",
+    "CastEffect": [
+      201900050
+    ],
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 612019040,
+    "SkillAnnounce3CTimelineId": 20190030
+  },
+  {
+    "ID": 612019050,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill03",
+    "CastEffect": [
+      201900060,
+      201900061
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 612019050
+  },
+  {
+    "ID": 612019060,
+    "ReturnToIdle": true,
+    "Animation": "ExchangeAnnounce",
+    "CastEffect": [
+      201900080
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 612019060,
+    "AttackWeapon": [
+      "WeaponType_Mag",
+      "WeaponType_Mag"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_None",
+      "AttackAngleType_None"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med",
+      "AttackStrengthType_Hvy"
+    ]
+  },
+  {
+    "ID": 612019070,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill04",
+    "CastEffect": [
+      201900070
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 612019070
+  },
+  {
+    "ID": 612021001,
+    "ReturnToIdle": true,
+    "Animation": "Combat_AttackRootMotion",
+    "SkillSound": 612021001
+  },
+  {
+    "ID": 612021002,
+    "ReturnToIdle": true,
+    "Animation": "Combat_FightBackRootMotion",
+    "SkillSound": 612021002
+  },
+  {
     "ID": 612021003,
     "ReturnToIdle": true,
     "Animation": "Combat_ChaseHitRootMotion",
@@ -941,682 +1816,215 @@
     "SkillSound": 612027011
   },
   {
-    "ID": 612500001,
+    "ID": 612029001,
     "ReturnToIdle": true,
     "Animation": "Combat_AttackRootMotion",
-    "SkillSound": 612500001
+    "SkillSound": 612029001
   },
   {
-    "ID": 612500002,
+    "ID": 612029002,
     "ReturnToIdle": true,
     "Animation": "Combat_FightBackRootMotion",
-    "SkillSound": 612500002
+    "SkillSound": 612029002
   },
   {
-    "ID": 612500010,
+    "ID": 612029010,
     "ShowFlash": true,
     "ReturnToIdle": true,
     "Animation": "Combat_CastSkill01",
-    "SkillSound": 612500010
+    "SkillSound": 612029010
   },
   {
-    "ID": 612500011,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "Combat_CastSkill01_3C",
-    "SkillSound": 612500010,
-    "SkillAnnounce3CTimelineId": 25000010
-  },
-  {
-    "ID": 612500020,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill01",
-    "SkillSound": 612500020
-  },
-  {
-    "ID": 612500021,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill01_3C",
-    "SkillSound": 612500020,
-    "SkillAnnounce3CTimelineId": 25000020
-  },
-  {
-    "ID": 612500030,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill02",
-    "SkillSound": 612500030
-  },
-  {
-    "ID": 612500040,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill03",
-    "SkillSound": 612500040
-  },
-  {
-    "ID": 612500050,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill04",
-    "SkillSound": 612500050
-  },
-  {
-    "ID": 612500051,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill04_3C",
-    "SkillSound": 612500050,
-    "SkillAnnounce3CTimelineId": 25000030
-  },
-  {
-    "ID": 612500060,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill05",
-    "SkillSound": 612500060
-  },
-  {
-    "ID": 612500070,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill06",
-    "CastEffect": [
-      810600700
-    ],
-    "OnHitEffect": [
-      810600790
-    ],
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 612500070
-  },
-  {
-    "ID": 612500080,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill07",
-    "CastEffect": [
-      250000080
-    ],
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 612500080
-  },
-  {
-    "ID": 612500090,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill09",
-    "SkillSound": 612500090
-  },
-  {
-    "ID": 612500100,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill08",
-    "CastEffect": [
-      250000030
-    ],
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 612500100
-  },
-  {
-    "ID": 612500110,
-    "ReturnToIdle": true,
-    "Path": "Assets/GameProject/RuntimeAssets/Characters/Common_ABS/SkillAnnounceDrama.prefab",
-    "OnHitEffect": [
-      250000051
-    ],
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 600000020
-  },
-  {
-    "ID": 612500120,
-    "ReturnToIdle": true,
-    "Animation": "SkillAnnounce",
-    "SkillSound": 600000021
-  },
-  {
-    "ID": 612501001,
-    "ReturnToIdle": true,
-    "Animation": "Combat_AttackRootMotion",
-    "SkillSound": 612501001
-  },
-  {
-    "ID": 612501002,
-    "ReturnToIdle": true,
-    "Animation": "Combat_FightBackRootMotion",
-    "SkillSound": 612501002
-  },
-  {
-    "ID": 612501010,
-    "ReturnToIdle": true,
-    "Animation": "Combat_CastSkill01",
-    "SkillSound": 612501010
-  },
-  {
-    "ID": 612501020,
+    "ID": 612029020,
     "ShowFlash": true,
     "ReturnToIdle": true,
     "Animation": "Combat_CastSkill02",
-    "SkillSound": 612501020
+    "SkillSound": 612029020
   },
   {
-    "ID": 612501030,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill01",
-    "SkillSound": 612501030
-  },
-  {
-    "ID": 612501040,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill02",
-    "SkillSound": 612501040
-  },
-  {
-    "ID": 612501050,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill08",
-    "CastEffect": [
-      250000031
-    ],
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 612501050
-  },
-  {
-    "ID": 612501060,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill09",
-    "SkillSound": 612501060
-  },
-  {
-    "ID": 612501070,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill03",
-    "OnHitEffect": [
-      250000130
-    ],
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 612501070
-  },
-  {
-    "ID": 612502090,
-    "ExtraDramaBehaviorIds": [
-      612502091
-    ],
-    "ReturnToIdle": true,
-    "Animation": "SkillAnnounce",
-    "OnHitEffect": [
-      250300005
-    ],
-    "FlyObjetId": [
-      2503001
-    ],
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 612502090,
-    "MultiPerformDramaBehaviorList": [
-      612502090,
-      612502091
-    ]
-  },
-  {
-    "ID": 612502091,
-    "ReturnToIdle": true,
-    "Path": "Assets/GameProject/RuntimeAssets/Characters/Common_ABS/SkillBounceDrama_02.prefab",
-    "OnHitEffect": [
-      250300005
-    ],
-    "FlyObjetId": [
-      2503001
-    ],
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 612502091
-  },
-  {
-    "ID": 612502092,
-    "ReturnToIdle": true,
-    "Path": "Assets/GameProject/RuntimeAssets/Characters/Common_ABS/RemoveCDAnnounceDrama.prefab",
-    "CastEffect": [
-      105000034
-    ],
-    "OnHitEffect": [
-      106600003
-    ],
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 612502092
-  },
-  {
-    "ID": 612503001,
-    "ReturnToIdle": true,
-    "Animation": "Combat_AttackRootMotion",
-    "SkillSound": 612503001
-  },
-  {
-    "ID": 612503002,
-    "ReturnToIdle": true,
-    "Animation": "Combat_FightBackRootMotion",
-    "SkillSound": 612503002
-  },
-  {
-    "ID": 612503010,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "Combat_CastSkill01",
-    "SkillSound": 612503010
-  },
-  {
-    "ID": 612503020,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "Combat_CastSkill02",
-    "SkillSound": 612503020
-  },
-  {
-    "ID": 612503030,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "Combat_CastSkill03",
-    "SkillSound": 612503030
-  },
-  {
-    "ID": 612503040,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill01",
-    "SkillSound": 612503040
-  },
-  {
-    "ID": 612503050,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill02",
-    "CastEffect": [
-      250300008
-    ],
-    "SkillSound": 612503050
-  },
-  {
-    "ID": 612503060,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill03",
-    "SkillSound": 612503060
-  },
-  {
-    "ID": 612503070,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill04",
-    "SkillSound": 612503070
-  },
-  {
-    "ID": 612503080,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill05",
-    "SkillSound": 612503080
-  },
-  {
-    "ID": 612503090,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill06",
-    "SkillSound": 612503090
-  },
-  {
-    "ID": 612503100,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill07",
-    "SkillSound": 612503100
-  },
-  {
-    "ID": 612503110,
+    "ID": 612029021,
     "ShowFlash": true,
     "ReturnToIdle": true,
     "Animation": "Combat_CastSkill02_3C",
-    "SkillSound": 612503110,
-    "SkillAnnounce3CTimelineId": 25030030
+    "SkillSound": 612029021,
+    "SkillAnnounce3CTimelineId": 20290030
   },
   {
-    "ID": 612503120,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill03_3C",
-    "SkillSound": 612503120,
-    "SkillAnnounce3CTimelineId": 25030010
-  },
-  {
-    "ID": 612503130,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill05_3C",
-    "SkillSound": 612503130,
-    "SkillAnnounce3CTimelineId": 25030020
-  },
-  {
-    "ID": 612504001,
-    "CharacterShowIds": [
-      250400
-    ],
-    "ReturnToIdle": true,
-    "Animation": "Combat_AttackRootMotion",
-    "SkillSound": 612504001
-  },
-  {
-    "ID": 612504002,
-    "CharacterShowIds": [
-      250400
-    ],
-    "ReturnToIdle": true,
-    "Animation": "Combat_FightBackRootMotion",
-    "SkillSound": 612504002
-  },
-  {
-    "ID": 612504003,
-    "CharacterShowIds": [
-      250400
-    ],
-    "ReturnToIdle": true,
-    "Animation": "Combat_DoubleHitRootMotion",
-    "SkillSound": 612504003
-  },
-  {
-    "ID": 612504010,
-    "CharacterShowIds": [
-      250400
-    ],
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "Combat_CastSkill01",
-    "SkillSound": 612504010
-  },
-  {
-    "ID": 612504020,
-    "CharacterShowIds": [
-      250400
-    ],
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "Combat_CastSkill02",
-    "SkillSound": 612504020
-  },
-  {
-    "ID": 612504030,
-    "CharacterShowIds": [
-      250400
-    ],
+    "ID": 612029030,
     "ShowFlash": true,
     "ReturnToIdle": true,
     "Animation": "CastSkill01",
-    "SkillSound": 612504030
+    "SkillSound": 612029030
   },
   {
-    "ID": 612504040,
-    "CharacterShowIds": [
-      250400
-    ],
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill02",
-    "SkillSound": 612504040
-  },
-  {
-    "ID": 612504041,
-    "CharacterMorphIds": 1,
-    "CharacterShowIds": [
-      250500
-    ],
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill02",
-    "SkillSound": 612504041
-  },
-  {
-    "ID": 612504050,
-    "CharacterShowIds": [
-      250400
-    ],
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill04",
-    "SkillSound": 612504050
-  },
-  {
-    "ID": 612504051,
-    "CharacterMorphIds": 1,
-    "CharacterShowIds": [
-      250500
-    ],
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill04",
-    "SkillSound": 612504051
-  },
-  {
-    "ID": 612504060,
-    "CharacterShowIds": [
-      250400
-    ],
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill05",
-    "SkillSound": 612504060
-  },
-  {
-    "ID": 612504070,
-    "CharacterShowIds": [
-      250400
-    ],
-    "ShowFlash": true,
-    "Animation": "CastSkill06",
-    "SkillSound": 612504070
-  },
-  {
-    "ID": 612504071,
-    "CharacterMorphIds": 1,
-    "CharacterShowIds": [
-      250500
-    ],
-    "ShowFlash": true,
-    "Animation": "CastSkill07",
-    "SkillSound": 612504071
-  },
-  {
-    "ID": 612504080,
-    "CharacterShowIds": [
-      250400
-    ],
-    "ReturnToIdle": true,
-    "Animation": "CastSkill08",
-    "FlyObjetId": [
-      2504001
-    ],
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 612504080
-  },
-  {
-    "ID": 612504081,
-    "CharacterMorphIds": 1,
-    "CharacterShowIds": [
-      250500
-    ],
-    "ReturnToIdle": true,
-    "Animation": "CastSkill08",
-    "FlyObjetId": [
-      2504001
-    ],
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 612504081
-  },
-  {
-    "ID": 612504090,
-    "CharacterShowIds": [
-      250400
-    ],
-    "ReturnToIdle": true,
-    "Animation": "CastSkill09",
-    "SkillSound": 612504090
-  },
-  {
-    "ID": 612504091,
-    "CharacterMorphIds": 1,
-    "CharacterShowIds": [
-      250500
-    ],
-    "ReturnToIdle": true,
-    "Animation": "CastSkill09",
-    "SkillSound": 612504091
-  },
-  {
-    "ID": 612504100,
-    "CharacterMorphIds": 1,
-    "CharacterShowIds": [
-      250500
-    ],
-    "ReturnToIdle": true,
-    "Animation": "CastSkill10",
-    "SkillSound": 612504100
-  },
-  {
-    "ID": 612504110,
-    "CharacterShowIds": [
-      250400
-    ],
+    "ID": 612029031,
     "ShowFlash": true,
     "ReturnToIdle": true,
     "Animation": "CastSkill01_3C",
-    "SkillSound": 612504110,
-    "SkillAnnounce3CTimelineId": 25040010
+    "SkillSound": 612029031,
+    "SkillAnnounce3CTimelineId": 20290010
   },
   {
-    "ID": 612504120,
-    "CharacterShowIds": [
-      250400
-    ],
+    "ID": 612029040,
     "ShowFlash": true,
     "ReturnToIdle": true,
-    "Animation": "CastSkill02_3C",
-    "SkillSound": 612504120,
-    "SkillAnnounce3CTimelineId": 25040020
+    "Animation": "CastSkill03",
+    "SkillSound": 612029040
   },
   {
-    "ID": 612504121,
-    "CharacterMorphIds": 1,
-    "CharacterShowIds": [
-      250500
-    ],
+    "ID": 612029041,
     "ShowFlash": true,
     "ReturnToIdle": true,
-    "Animation": "CastSkill02_3C",
-    "SkillSound": 612504121,
-    "SkillAnnounce3CTimelineId": 25040020
+    "Animation": "CastSkill03_3C",
+    "SkillSound": 612029041,
+    "SkillAnnounce3CTimelineId": 20290020
   },
   {
-    "ID": 612504122,
-    "CharacterShowIds": [
-      250400
-    ],
+    "ID": 612029050,
     "ShowFlash": true,
     "ReturnToIdle": true,
-    "Animation": "SkillAnnounce",
-    "CastEffect": [
-      201400101
-    ],
-    "SkillSound": 612504120,
-    "StartEffect": 201400101
+    "Animation": "CastSkill04",
+    "SkillSound": 612029050
   },
   {
-    "ID": 612504130,
-    "CharacterShowIds": [
-      250400
-    ],
+    "ID": 612029060,
     "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "Combat_CastSkill01_3C",
-    "SkillSound": 612504130,
-    "SkillAnnounce3CTimelineId": 25040030
-  },
-  {
-    "ID": 612506001,
-    "ReturnToIdle": true,
-    "Animation": "Combat_AttackRootMotion",
-    "SkillSound": 612506001
-  },
-  {
-    "ID": 612506002,
-    "ReturnToIdle": true,
-    "Animation": "Combat_FightBackRootMotion",
-    "SkillSound": 612506002
-  },
-  {
-    "ID": 612506008,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill06",
-    "OnHitEffect": [
-      250600009
-    ],
-    "FlyObjetId": [
-      2506001
-    ],
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 612506008
-  },
-  {
-    "ID": 612506009,
     "ReturnToIdle": true,
     "Animation": "CastSkill05",
-    "SkillSound": 612506009
+    "SkillSound": 612029060
   },
   {
-    "ID": 612506010,
-    "ShowFlash": true,
+    "ID": 612029070,
+    "Animation": "CastSkill06",
+    "SkillSound": 612029070
+  },
+  {
+    "ID": 612029080,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill07",
+    "SkillSound": 612029080
+  },
+  {
+    "ID": 612029090,
     "ReturnToIdle": true,
     "Animation": "CastSkill08",
-    "SkillSound": 612506010
+    "SkillSound": 612029090
   },
   {
-    "ID": 612506110,
+    "ID": 612029100,
     "ShowFlash": true,
-    "Animation": "CastSkill02_Start",
-    "SkillSound": 612506110,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill09",
+    "SkillSound": 612029100
+  },
+  {
+    "ID": 612030001,
+    "ReturnToIdle": true,
+    "Animation": "Combat_AttackRootMotion",
+    "SkillSound": 612030001
+  },
+  {
+    "ID": 612030002,
+    "ReturnToIdle": true,
+    "Animation": "Combat_FightBackRootMotion",
+    "SkillSound": 612030002
+  },
+  {
+    "ID": 612030010,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "Combat_CastSkill01",
+    "SkillSound": 612030010
+  },
+  {
+    "ID": 612030020,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill01",
+    "SkillSound": 612030020
+  },
+  {
+    "ID": 612030030,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill03",
+    "SkillSound": 612030030
+  },
+  {
+    "ID": 612030040,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill04",
+    "SkillSound": 612030040
+  },
+  {
+    "ID": 612031001,
+    "ReturnToIdle": true,
+    "Animation": "Combat_AttackRootMotion",
+    "SkillSound": 612031001
+  },
+  {
+    "ID": 612031002,
+    "ReturnToIdle": true,
+    "Animation": "Combat_FightBackRootMotion",
+    "SkillSound": 612031002
+  },
+  {
+    "ID": 612031010,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "Combat_CastSkill01",
+    "SkillSound": 612031010
+  },
+  {
+    "ID": 612031020,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "Combat_CastSkill02",
+    "SkillSound": 612031020
+  },
+  {
+    "ID": 612031030,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill01",
+    "SkillSound": 612031030
+  },
+  {
+    "ID": 612031031,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill01_3C",
+    "SkillSound": 612031031,
+    "SkillAnnounce3CTimelineId": 20310010
+  },
+  {
+    "ID": 612031040,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill02",
+    "SkillSound": 612031040
+  },
+  {
+    "ID": 612031041,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill02_3C",
+    "SkillSound": 612031041,
+    "SkillAnnounce3CTimelineId": 20310020
+  },
+  {
+    "ID": 612031050,
+    "ShowFlash": true,
+    "Animation": "CastSkill03_Start",
+    "SkillSound": 612031050,
     "MultiPerformDramaBehaviorList": [
-      612506110,
-      612506111
+      612031050,
+      612031051
     ]
   },
   {
-    "ID": 612506111,
-    "Animation": "CastSkill02_Loop",
-    "SkillSound": 612506111,
-    "DramaOnSkillStageEnd": "CastSkill02_End"
-  },
-  {
-    "ID": 612506112,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill02_End",
-    "SkillSound": 612506112
+    "ID": 612031051,
+    "Animation": "CastSkill03_Loop",
+    "SkillSound": 612031051,
+    "DramaOnSkillStageEnd": "CastSkill03_End"
   }
 ]

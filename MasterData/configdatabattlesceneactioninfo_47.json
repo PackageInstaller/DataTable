@@ -1,5 +1,47 @@
 [
   {
+    "ID": 42815601,
+    "ActionType": "BattleSceneActionType_AttachBuff",
+    "Param1": [
+      201,
+      202
+    ],
+    "Param2": [
+      756001330
+    ]
+  },
+  {
+    "ID": 42815602,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      428153110
+    ]
+  },
+  {
+    "ID": 42815603,
+    "ActionType": "BattleSceneActionType_DetachBuff",
+    "Param1": [
+      101,
+      102,
+      103,
+      104
+    ],
+    "Param2": [
+      743124003,
+      743124004
+    ]
+  },
+  {
+    "ID": 42815701,
+    "ActionType": "BattleSceneActionType_CameraFocusActor",
+    "Param1": [
+      800
+    ],
+    "Param2": [
+      201
+    ]
+  },
+  {
     "ID": 42815702,
     "ActionType": "BattleSceneActionType_FadeOut",
     "Param1": [
@@ -14571,17 +14613,5 @@
   },
   {
     "ID": 43204564
-  },
-  {
-    "ID": 43204565
-  },
-  {
-    "ID": 43204566
-  },
-  {
-    "ID": 43204567
-  },
-  {
-    "ID": 43204568
   }
 ]

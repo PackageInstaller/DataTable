@@ -1,5 +1,47 @@
 [
   {
+    "ID": 50301210,
+    "ActionType": "BattleSceneActionType_DetachBuff",
+    "Param1": [
+      243
+    ],
+    "Param2": [
+      700000010
+    ],
+    "Param4": [
+      1
+    ],
+    "SkipCondId": 50301709
+  },
+  {
+    "ID": 50301211,
+    "ActionType": "BattleSceneActionType_DetachBuff",
+    "Param1": [
+      246
+    ],
+    "Param2": [
+      700000010
+    ],
+    "Param4": [
+      1
+    ],
+    "SkipCondId": 50301712
+  },
+  {
+    "ID": 50301212,
+    "ActionType": "BattleSceneActionType_BattleEventTriggerFail",
+    "Param1": [
+      50301709
+    ]
+  },
+  {
+    "ID": 50301213,
+    "ActionType": "BattleSceneActionType_BattleEventTriggerFail",
+    "Param1": [
+      50301712
+    ]
+  },
+  {
     "ID": 50301214,
     "ActionType": "BattleSceneActionType_HurtActorHpPercent",
     "Param1": [
@@ -15707,89 +15749,6 @@
     "ActionType": "BattleSceneActionType_ActorRetreat",
     "Param1": [
       902
-    ]
-  },
-  {
-    "ID": 50813255,
-    "ActionType": "BattleSceneActionType_SummonNear",
-    "Param1": [
-      4,
-      4
-    ],
-    "Param2": [
-      21,
-      21
-    ],
-    "Param3": [
-      {
-        "X": 7,
-        "Y": 15
-      },
-      {
-        "X": 9,
-        "Y": 15
-      }
-    ],
-    "Param4": [
-      730013005,
-      730013005
-    ],
-    "Param6": [
-      0,
-      0
-    ],
-    "Param7": [
-      {
-        "X": 7,
-        "Y": 8
-      },
-      {
-        "X": 9,
-        "Y": 8
-      }
-    ],
-    "Param8": [
-      10000,
-      10000
-    ],
-    "Param9": [
-      1,
-      1
-    ],
-    "Param10": [
-      231,
-      232
-    ],
-    "Param11": [
-      1,
-      1
-    ]
-  },
-  {
-    "ID": 50813256,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      300
-    ]
-  },
-  {
-    "ID": 50813257,
-    "ActionType": "BattleSceneActionType_CameraFocusPosition",
-    "Param1": [
-      6
-    ],
-    "Param3": [
-      {
-        "X": 8,
-        "Y": 1
-      }
-    ]
-  },
-  {
-    "ID": 50813258,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      300
     ]
   }
 ]

@@ -1,5 +1,88 @@
 [
   {
+    "ID": 52124515,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1000
+    ]
+  },
+  {
+    "ID": 52124516,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      521241606
+    ]
+  },
+  {
+    "ID": 52124521,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      1000
+    ],
+    "Param3": [
+      {
+        "X": 3,
+        "Y": 8
+      }
+    ]
+  },
+  {
+    "ID": 52124522,
+    "ActionType": "BattleSceneActionType_SummonNear",
+    "Param1": [
+      4,
+      4
+    ],
+    "Param2": [
+      22,
+      22
+    ],
+    "Param3": [
+      {
+        "X": 2,
+        "Y": 6
+      },
+      {
+        "X": 5,
+        "Y": 9
+      }
+    ],
+    "Param4": [
+      152100251,
+      152100251
+    ],
+    "Param6": [
+      0,
+      0
+    ],
+    "Param7": [
+      {
+        "X": 6,
+        "Y": 8
+      },
+      {
+        "X": 6,
+        "Y": 8
+      }
+    ],
+    "Param8": [
+      10000,
+      10000
+    ],
+    "Param9": [
+      1,
+      1
+    ],
+    "Param10": [
+      292,
+      293
+    ],
+    "Param11": [
+      2,
+      2
+    ]
+  },
+  {
     "ID": 52124523,
     "ActionType": "BattleSceneActionType_AttachBuff",
     "Param1": [
@@ -18997,70 +19080,6 @@
       {
         "X": 9,
         "Y": 8
-      }
-    ]
-  },
-  {
-    "ID": 52163011,
-    "ActionType": "BattleSceneActionType_TerrainEffect",
-    "Param1": [
-      10000031
-    ],
-    "Param2": [
-      10006
-    ],
-    "Param3": [
-      {
-        "X": 10,
-        "Y": 8
-      }
-    ]
-  },
-  {
-    "ID": 52163012,
-    "ActionType": "BattleSceneActionType_TerrainEffect",
-    "Param1": [
-      10000031
-    ],
-    "Param2": [
-      10007
-    ],
-    "Param3": [
-      {
-        "X": 8,
-        "Y": 9
-      }
-    ]
-  },
-  {
-    "ID": 52163013,
-    "ActionType": "BattleSceneActionType_TerrainEffect",
-    "Param1": [
-      10000031
-    ],
-    "Param2": [
-      10008
-    ],
-    "Param3": [
-      {
-        "X": 9,
-        "Y": 9
-      }
-    ]
-  },
-  {
-    "ID": 52163014,
-    "ActionType": "BattleSceneActionType_TerrainEffect",
-    "Param1": [
-      10000031
-    ],
-    "Param2": [
-      10009
-    ],
-    "Param3": [
-      {
-        "X": 10,
-        "Y": 9
       }
     ]
   }

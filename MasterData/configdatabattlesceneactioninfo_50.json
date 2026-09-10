@@ -1,5 +1,43 @@
 [
   {
+    "ID": 43412175,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      800
+    ]
+  },
+  {
+    "ID": 43412176,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      101
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "Stun",
+    "Param6": [
+      -1
+    ]
+  },
+  {
+    "ID": 43412177,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      800
+    ]
+  },
+  {
+    "ID": 43412178,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      434121121
+    ]
+  },
+  {
     "ID": 43412179,
     "ActionType": "BattleSceneActionType_Delay",
     "Param1": [
@@ -19260,98 +19298,6 @@
     ],
     "Param4": [
       101
-    ],
-    "Param5": "1",
-    "Param6": [
-      1
-    ],
-    "Param8": [
-      0
-    ],
-    "Param9": [
-      0
-    ]
-  },
-  {
-    "ID": 43706006,
-    "ActionType": "BattleSceneActionType_ActorAISet",
-    "Param1": [
-      204
-    ],
-    "Param2": [
-      3
-    ],
-    "Param4": [
-      101
-    ],
-    "Param5": "1",
-    "Param6": [
-      1
-    ],
-    "Param8": [
-      0
-    ],
-    "Param9": [
-      0
-    ]
-  },
-  {
-    "ID": 43706007,
-    "ActionType": "BattleSceneActionType_ActorAISet",
-    "Param1": [
-      205
-    ],
-    "Param2": [
-      3
-    ],
-    "Param4": [
-      102
-    ],
-    "Param5": "1",
-    "Param6": [
-      1
-    ],
-    "Param8": [
-      0
-    ],
-    "Param9": [
-      0
-    ]
-  },
-  {
-    "ID": 43706008,
-    "ActionType": "BattleSceneActionType_ActorAISet",
-    "Param1": [
-      206
-    ],
-    "Param2": [
-      3
-    ],
-    "Param4": [
-      102
-    ],
-    "Param5": "1",
-    "Param6": [
-      1
-    ],
-    "Param8": [
-      0
-    ],
-    "Param9": [
-      0
-    ]
-  },
-  {
-    "ID": 43706009,
-    "ActionType": "BattleSceneActionType_ActorAISet",
-    "Param1": [
-      207
-    ],
-    "Param2": [
-      3
-    ],
-    "Param4": [
-      103
     ],
     "Param5": "1",
     "Param6": [

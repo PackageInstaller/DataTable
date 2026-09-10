@@ -1,5 +1,54 @@
 [
   {
+    "ID": 103803,
+    "Type": "CharacterAchievementType_DivineWeapon",
+    "CompleteType": "CharacterAchievementCompleteType_AccDelegateGruop",
+    "P1": 1,
+    "P2": 2910001,
+    "P3": 2910002,
+    "P4": 2910003,
+    "DropReward": 311103830,
+    "GoToFunction": "GameFunctionType_DelegateMission",
+    "GoToFunctionP1": 6,
+    "NameStrKey": "ST:116284",
+    "AchieveDescStrKey": "ST:119550"
+  },
+  {
+    "ID": 103804,
+    "Type": "CharacterAchievementType_DivineWeapon",
+    "CompleteType": "CharacterAchievementCompleteType_WeaponGrade",
+    "P1": 4,
+    "GoToFunction": "GameFunctionType_ItemCompose",
+    "GoToFunctionP1": 2,
+    "GoToFunctionP2": 4,
+    "NameStrKey": "ST:116285",
+    "AchieveDescStrKey": "ST:144362"
+  },
+  {
+    "ID": 103805,
+    "Type": "CharacterAchievementType_DivineWeapon",
+    "CompleteType": "CharacterAchievementCompleteType_WeaponGrade",
+    "P1": 6,
+    "NameStrKey": "ST:116286",
+    "AchieveDescStrKey": "ST:120419"
+  },
+  {
+    "ID": 103811,
+    "Type": "CharacterAchievementType_DivineWeapon",
+    "CompleteType": "CharacterAchievementCompleteType_WeaponGrade",
+    "P1": 3,
+    "NameStrKey": "ST:114789",
+    "AchieveDescStrKey": "ST:114789"
+  },
+  {
+    "ID": 103812,
+    "Type": "CharacterAchievementType_DivineWeapon",
+    "CompleteType": "CharacterAchievementCompleteType_Star",
+    "P1": 3,
+    "NameStrKey": "ST:258819",
+    "AchieveDescStrKey": "ST:258821"
+  },
+  {
     "ID": 103901,
     "Type": "CharacterAchievementType_DivineWeapon",
     "CompleteType": "CharacterAchievementCompleteType_AchievementComplete",
@@ -2776,52 +2825,5 @@
     "P1": 26016300,
     "NameStrKey": "ST:114787",
     "AchieveDescStrKey": "ST:124932"
-  },
-  {
-    "ID": 111611,
-    "Type": "CharacterAchievementType_DivineWeapon",
-    "CompleteType": "CharacterAchievementCompleteType_WeaponGrade",
-    "P1": 3,
-    "NameStrKey": "ST:114789",
-    "AchieveDescStrKey": "ST:114789"
-  },
-  {
-    "ID": 111612,
-    "Type": "CharacterAchievementType_DivineWeapon",
-    "CompleteType": "CharacterAchievementCompleteType_Star",
-    "P1": 3,
-    "NameStrKey": "ST:258819",
-    "AchieveDescStrKey": "ST:258821"
-  },
-  {
-    "ID": 111701,
-    "Type": "CharacterAchievementType_DivineWeapon",
-    "CompleteType": "CharacterAchievementCompleteType_AchievementComplete",
-    "P1": 111711,
-    "P2": 111712,
-    "NameStrKey": "ST:258818",
-    "AchieveDescStrKey": "ST:258822"
-  },
-  {
-    "ID": 111702,
-    "Type": "CharacterAchievementType_DivineWeapon",
-    "CompleteType": "CharacterAchievementCompleteType_DivineWeaponDialogComplete",
-    "P1": 93098841,
-    "NameStrKey": "ST:114786",
-    "AchieveDescStrKey": "ST:118518"
-  },
-  {
-    "ID": 111703,
-    "Type": "CharacterAchievementType_DivineWeapon",
-    "CompleteType": "CharacterAchievementCompleteType_AccDelegateGruop",
-    "P1": 1,
-    "P2": 2910001,
-    "P3": 2910002,
-    "P4": 2910003,
-    "DropReward": 311111730,
-    "GoToFunction": "GameFunctionType_DelegateMission",
-    "GoToFunctionP1": 6,
-    "NameStrKey": "ST:116284",
-    "AchieveDescStrKey": "ST:119550"
   }
 ]

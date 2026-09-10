@@ -1,5 +1,48 @@
 [
   {
+    "ID": 60092111,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      600920101
+    ]
+  },
+  {
+    "ID": 60092112,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      600920102
+    ]
+  },
+  {
+    "ID": 60092113,
+    "ActionType": "BattleSceneActionType_CameraShake",
+    "Param1": [
+      2000
+    ],
+    "Param2": [
+      1000
+    ],
+    "Param4": [
+      2000
+    ]
+  },
+  {
+    "ID": 60092114,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      800009054
+    ],
+    "Param2": [
+      10101
+    ],
+    "Param3": [
+      {
+        "X": 7,
+        "Y": 7
+      }
+    ]
+  },
+  {
     "ID": 60092115,
     "ActionType": "BattleSceneActionType_Delay",
     "Param1": [
@@ -15610,66 +15653,6 @@
     "ActionType": "BattleSceneActionType_Dialog",
     "Param1": [
       601613101
-    ]
-  },
-  {
-    "ID": 60161205,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      500
-    ]
-  },
-  {
-    "ID": 60161206,
-    "ActionType": "BattleSceneActionType_ActorTurnDir",
-    "Param1": [
-      201,
-      202,
-      203,
-      204
-    ],
-    "Param3": [
-      {
-        "X": 7
-      },
-      {
-        "X": 8
-      },
-      {
-        "X": 7
-      },
-      {
-        "X": 8
-      }
-    ],
-    "Param4": [
-      400,
-      400,
-      400,
-      400
-    ]
-  },
-  {
-    "ID": 60161207,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      500
-    ]
-  },
-  {
-    "ID": 60161208,
-    "ActionType": "BattleSceneActionType_ActorRetreat",
-    "Param1": [
-      201,
-      202,
-      203,
-      204
-    ],
-    "Param2": [
-      1,
-      1,
-      1,
-      1
     ]
   }
 ]

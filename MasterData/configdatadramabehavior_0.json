@@ -723,6 +723,23 @@
     "SkillSound": 600000010
   },
   {
+    "ID": 600000147,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Card_skill/Common/CardSkillDrama.prefab",
+    "Animation": "Card_Skill01",
+    "CastEffect": [
+      105500900,
+      105500901
+    ],
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 611055900
+  },
+  {
     "ID": 600000221,
     "ReturnToIdle": true,
     "Animation": "SkillAnnounce",
@@ -4323,23 +4340,5 @@
     "Animation": "CastSkill04_3C",
     "SkillSound": 611020022,
     "SkillAnnounce3CTimelineId": 10200020
-  },
-  {
-    "ID": 611020023,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill03_3C",
-    "CastEffect": [
-      102000050,
-      102000051
-    ],
-    "OnHitEffect": [
-      26800004
-    ],
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 611020023,
-    "SkillAnnounce3CTimelineId": 10200030
   }
 ]

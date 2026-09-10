@@ -1,5 +1,20 @@
 [
   {
+    "ID": 611072030,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill02",
+    "CastEffect": [
+      107200041,
+      107200042,
+      107200043
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 611072030
+  },
+  {
     "ID": 611072031,
     "ShowFlash": true,
     "ReturnToIdle": true,
@@ -1608,11 +1623,5 @@
     "ReturnToIdle": true,
     "Animation": "Combat_AttackRootMotion",
     "SkillSound": 611087001
-  },
-  {
-    "ID": 611087002,
-    "ReturnToIdle": true,
-    "Animation": "Combat_FightBackRootMotion",
-    "SkillSound": 611087002
   }
 ]

@@ -316,6 +316,58 @@
     "FlyObjetEffect": 122100021
   },
   {
+    "ID": 1227001,
+    "TrajectoryType": "TrajectoryType_Bezier",
+    "TrajectoryParams": [
+      -25,
+      10,
+      50
+    ],
+    "FlyObjetVelocity": 10.0,
+    "FlyObjetEffect": 122700005,
+    "ReplaceFlyId": 1227005
+  },
+  {
+    "ID": 1227002,
+    "TrajectoryType": "TrajectoryType_Bezier",
+    "TrajectoryParams": [
+      30,
+      15,
+      50
+    ],
+    "FlyObjetVelocity": 10.0,
+    "FlyObjetEffect": 122700007,
+    "ReplaceFlyId": 1227004
+  },
+  {
+    "ID": 1227003,
+    "TrajectoryType": "TrajectoryType_Straight",
+    "FlyObjetVelocity": 20.0,
+    "FlyObjetEffect": 122700005
+  },
+  {
+    "ID": 1227004,
+    "TrajectoryType": "TrajectoryType_Bezier",
+    "TrajectoryParams": [
+      -30,
+      15,
+      50
+    ],
+    "FlyObjetVelocity": 10.0,
+    "FlyObjetEffect": 122700007
+  },
+  {
+    "ID": 1227005,
+    "TrajectoryType": "TrajectoryType_Bezier",
+    "TrajectoryParams": [
+      25,
+      10,
+      50
+    ],
+    "FlyObjetVelocity": 10.0,
+    "FlyObjetEffect": 122700005
+  },
+  {
     "ID": 1504001,
     "TrajectoryType": "TrajectoryType_Straight",
     "FlyObjetVelocity": 5.0,
@@ -876,5 +928,11 @@
     "TrajectoryType": "TrajectoryType_Straight",
     "FlyObjetVelocity": 10.0,
     "FlyObjetEffect": 500000098
+  },
+  {
+    "ID": 624000032,
+    "TrajectoryType": "TrajectoryType_Straight",
+    "FlyObjetVelocity": 3.0,
+    "FlyObjetEffect": 800010225
   }
 ]

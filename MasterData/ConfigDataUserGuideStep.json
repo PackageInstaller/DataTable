@@ -3051,7 +3051,7 @@
       "GotoCampButton",
       "1"
     ],
-    "DescStrKey": "ST:260025"
+    "DescStrKey": "ST:259992"
   },
   {
     "ID": 2505,
@@ -3060,7 +3060,7 @@
       "OldWorldButton",
       "1"
     ],
-    "DescStrKey": "ST:260026"
+    "DescStrKey": "ST:259993"
   },
   {
     "ID": 2506,
@@ -3069,7 +3069,7 @@
       "HaiBuLingButton",
       "4"
     ],
-    "DescStrKey": "ST:260027"
+    "DescStrKey": "ST:259994"
   },
   {
     "ID": 2507,
@@ -5434,7 +5434,7 @@
       "GotoCampButton",
       "1"
     ],
-    "DescStrKey": "ST:260233"
+    "DescStrKey": "ST:260623"
   },
   {
     "ID": 6105,
@@ -5443,7 +5443,7 @@
       "OldWorldButton",
       "1"
     ],
-    "DescStrKey": "ST:260234"
+    "DescStrKey": "ST:260624"
   },
   {
     "ID": 6106,
@@ -5460,7 +5460,7 @@
       "SanTuChuanButton",
       "4"
     ],
-    "DescStrKey": "ST:260235"
+    "DescStrKey": "ST:260625"
   },
   {
     "ID": 6108,
@@ -6632,7 +6632,7 @@
       "GotoCampButton",
       "1"
     ],
-    "DescStrKey": "ST:260230"
+    "DescStrKey": "ST:260620"
   },
   {
     "ID": 8205,
@@ -6641,7 +6641,7 @@
       "OldWorldButton",
       "1"
     ],
-    "DescStrKey": "ST:260231"
+    "DescStrKey": "ST:260621"
   },
   {
     "ID": 8206,
@@ -6650,7 +6650,7 @@
       "JianLunButton",
       "4"
     ],
-    "DescStrKey": "ST:260232"
+    "DescStrKey": "ST:260622"
   },
   {
     "ID": 8301,
@@ -8698,7 +8698,7 @@
   {
     "ID": 12506,
     "TriggerActionType": "UserGuideTriggerActionType_SendEnd",
-    "DescStrKey": "ST:260048"
+    "DescStrKey": "ST:259995"
   },
   {
     "ID": 12507,
@@ -9034,7 +9034,7 @@
     "ID": 13401,
     "TriggerType": "UserGuideTriggerType_UIStateChanged",
     "TriggerParamList": [
-      "InsetUIPrefab",
+      "SoulIntensifyUIPrefabNew",
       "Show"
     ],
     "TriggerConditionList": [
@@ -19415,7 +19415,7 @@
     "TriggerConditionList": [
       {
         "Type": "UserGuideTriggerConditionType_PlayerLevel",
-        "Param1": "10",
+        "Param1": "99",
         "Param2": "0"
       }
     ],
@@ -21469,6 +21469,269 @@
       "4"
     ],
     "DescStrKey": "ST:185127"
+  },
+  {
+    "ID": 42601,
+    "TriggerType": "UserGuideTriggerType_UIStateChanged",
+    "TriggerParamList": [
+      "SanGuoGameOB68UIPrefab",
+      "Show"
+    ],
+    "TriggerActionType": "UserGuideTriggerActionType_WaitSeconds",
+    "TriggerActionParamList": [
+      "0"
+    ],
+    "DescStrKey": "ST:262272"
+  },
+  {
+    "ID": 42602,
+    "TriggerActionType": "UserGuideTriggerActionType_StartDialog",
+    "TriggerActionParamList": [
+      "680121801"
+    ],
+    "DescStrKey": "ST:262273"
+  },
+  {
+    "ID": 42603,
+    "TriggerActionType": "UserGuideTriggerActionType_StartDialog",
+    "TriggerActionParamList": [
+      "680121830"
+    ],
+    "DescStrKey": "ST:262273"
+  },
+  {
+    "ID": 42604,
+    "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
+    "TriggerActionParamList": [
+      "SanGuobutton3",
+      "2"
+    ],
+    "DescStrKey": "ST:262274"
+  },
+  {
+    "ID": 42701,
+    "TriggerType": "UserGuideTriggerType_UIStateChanged",
+    "TriggerParamList": [
+      "SanGuoGameArtistOB68UIPrefab",
+      "Show"
+    ],
+    "TriggerActionType": "UserGuideTriggerActionType_WaitSeconds",
+    "TriggerActionParamList": [
+      "0"
+    ],
+    "DescStrKey": "ST:262272"
+  },
+  {
+    "ID": 42702,
+    "TriggerActionType": "UserGuideTriggerActionType_StartDialog",
+    "TriggerActionParamList": [
+      "680121832"
+    ],
+    "DescStrKey": "ST:262273"
+  },
+  {
+    "ID": 42703,
+    "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
+    "TriggerActionParamList": [
+      "SanGuoButtonzm",
+      "4"
+    ],
+    "DescStrKey": "ST:262275"
+  },
+  {
+    "ID": 42704,
+    "TriggerActionType": "UserGuideTriggerActionType_EnableInput",
+    "TriggerActionParamList": [
+      "true"
+    ],
+    "DescStrKey": "ST:262276"
+  },
+  {
+    "ID": 42705,
+    "TriggerType": "UserGuideTriggerType_UIStateChanged",
+    "TriggerParamList": [
+      "SanGuoGet",
+      "Close"
+    ],
+    "TriggerActionType": "UserGuideTriggerActionType_WaitSeconds",
+    "TriggerActionParamList": [
+      "0"
+    ],
+    "DescStrKey": "ST:262277"
+  },
+  {
+    "ID": 42706,
+    "TriggerActionType": "UserGuideTriggerActionType_EnableInput",
+    "TriggerActionParamList": [
+      "false"
+    ],
+    "DescStrKey": "ST:262276"
+  },
+  {
+    "ID": 42707,
+    "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
+    "TriggerActionParamList": [
+      "zmCloseButton",
+      "2"
+    ],
+    "DescStrKey": "ST:262278"
+  },
+  {
+    "ID": 42708,
+    "TriggerActionType": "UserGuideTriggerActionType_StartDialog",
+    "TriggerActionParamList": [
+      "680121836"
+    ],
+    "DescStrKey": "ST:262273"
+  },
+  {
+    "ID": 42709,
+    "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
+    "TriggerActionParamList": [
+      "SanGuobutton1",
+      "4"
+    ],
+    "DescStrKey": "ST:262279"
+  },
+  {
+    "ID": 42801,
+    "TriggerType": "UserGuideTriggerType_UIStateChanged",
+    "TriggerParamList": [
+      "SanGuoGamePerformanceOB68UIPrefab",
+      "Show"
+    ],
+    "TriggerActionType": "UserGuideTriggerActionType_WaitSeconds",
+    "TriggerActionParamList": [
+      "0.8"
+    ],
+    "DescStrKey": "ST:262280"
+  },
+  {
+    "ID": 42802,
+    "TriggerActionType": "UserGuideTriggerActionType_StartDialog",
+    "TriggerActionParamList": [
+      "680121837"
+    ],
+    "DescStrKey": "ST:262273"
+  },
+  {
+    "ID": 42901,
+    "TriggerType": "UserGuideTriggerType_UIStateChanged",
+    "TriggerParamList": [
+      "SanGuoGamePerformanceOB68UIPrefab",
+      "Close"
+    ],
+    "TriggerActionType": "UserGuideTriggerActionType_WaitSeconds",
+    "TriggerActionParamList": [
+      "0"
+    ],
+    "DescStrKey": "ST:262272"
+  },
+  {
+    "ID": 42902,
+    "TriggerActionType": "UserGuideTriggerActionType_StartDialog",
+    "TriggerActionParamList": [
+      "680121838"
+    ],
+    "DescStrKey": "ST:262273"
+  },
+  {
+    "ID": 43001,
+    "TriggerType": "UserGuideTriggerType_ObjectActiveChanged",
+    "TriggerParamList": [
+      "SanGuobutton4",
+      "True"
+    ],
+    "TriggerActionType": "UserGuideTriggerActionType_WaitSeconds",
+    "TriggerActionParamList": [
+      "0"
+    ],
+    "DescStrKey": "ST:262281"
+  },
+  {
+    "ID": 43002,
+    "TriggerActionType": "UserGuideTriggerActionType_StartDialog",
+    "TriggerActionParamList": [
+      "680121841"
+    ],
+    "DescStrKey": "ST:262273"
+  },
+  {
+    "ID": 43003,
+    "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
+    "TriggerActionParamList": [
+      "SanGuobutton4",
+      "4"
+    ],
+    "DescStrKey": "ST:262282"
+  },
+  {
+    "ID": 43101,
+    "TriggerType": "UserGuideTriggerType_ObjectActiveChanged",
+    "TriggerParamList": [
+      "SanGuobutton2",
+      "True"
+    ],
+    "TriggerActionType": "UserGuideTriggerActionType_WaitSeconds",
+    "TriggerActionParamList": [
+      "0"
+    ],
+    "DescStrKey": "ST:262281"
+  },
+  {
+    "ID": 43102,
+    "TriggerActionType": "UserGuideTriggerActionType_StartDialog",
+    "TriggerActionParamList": [
+      "680121840"
+    ],
+    "DescStrKey": "ST:262273"
+  },
+  {
+    "ID": 43103,
+    "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
+    "TriggerActionParamList": [
+      "SanGuobutton2",
+      "4"
+    ],
+    "DescStrKey": "ST:262283"
+  },
+  {
+    "ID": 43201,
+    "TriggerType": "UserGuideTriggerType_UIStateChanged",
+    "TriggerParamList": [
+      "OB71LiuDaoXuanXuTaNeiUIPrefab",
+      "Show"
+    ],
+    "TriggerActionType": "UserGuideTriggerActionType_WaitSeconds",
+    "TriggerActionParamList": [
+      "0"
+    ],
+    "DescStrKey": "ST:267983"
+  },
+  {
+    "ID": 43202,
+    "TriggerActionType": "UserGuideTriggerActionType_StartDialog",
+    "TriggerActionParamList": [
+      "10003"
+    ],
+    "DescStrKey": "ST:267984"
+  },
+  {
+    "ID": 43203,
+    "TriggerActionType": "UserGuideTriggerActionType_ClickButton",
+    "TriggerActionParamList": [
+      "SwitchButton",
+      "2"
+    ],
+    "DescStrKey": "ST:267985"
+  },
+  {
+    "ID": 43204,
+    "TriggerActionType": "UserGuideTriggerActionType_StartDialog",
+    "TriggerActionParamList": [
+      "10004"
+    ],
+    "DescStrKey": "ST:267984"
   },
   {
     "ID": 999901,

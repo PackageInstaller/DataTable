@@ -1,5 +1,224 @@
 [
   {
+    "ID": 46124215,
+    "ActionType": "BattleSceneActionType_ChangeTerrain",
+    "Param1": [
+      0
+    ],
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 8,
+        "Y": 8
+      },
+      {
+        "X": 8,
+        "Y": 9
+      },
+      {
+        "X": 8,
+        "Y": 10
+      },
+      {
+        "X": 8,
+        "Y": 11
+      },
+      {
+        "X": 8,
+        "Y": 12
+      },
+      {
+        "X": 8,
+        "Y": 13
+      },
+      {
+        "X": 8,
+        "Y": 14
+      },
+      {
+        "X": 8,
+        "Y": 15
+      },
+      {
+        "X": 8,
+        "Y": 16
+      },
+      {
+        "X": 8,
+        "Y": 17
+      },
+      {
+        "X": 9,
+        "Y": 10
+      },
+      {
+        "X": 9,
+        "Y": 11
+      },
+      {
+        "X": 9,
+        "Y": 12
+      },
+      {
+        "X": 9,
+        "Y": 13
+      },
+      {
+        "X": 9,
+        "Y": 14
+      },
+      {
+        "X": 9,
+        "Y": 15
+      },
+      {
+        "X": 9,
+        "Y": 16
+      },
+      {
+        "X": 9,
+        "Y": 17
+      },
+      {
+        "X": 10,
+        "Y": 10
+      },
+      {
+        "X": 10,
+        "Y": 11
+      },
+      {
+        "X": 10,
+        "Y": 12
+      },
+      {
+        "X": 10,
+        "Y": 13
+      },
+      {
+        "X": 10,
+        "Y": 14
+      },
+      {
+        "X": 10,
+        "Y": 15
+      },
+      {
+        "X": 10,
+        "Y": 16
+      },
+      {
+        "X": 10,
+        "Y": 17
+      },
+      {
+        "X": 11,
+        "Y": 8
+      },
+      {
+        "X": 11,
+        "Y": 9
+      },
+      {
+        "X": 11,
+        "Y": 10
+      },
+      {
+        "X": 11,
+        "Y": 11
+      },
+      {
+        "X": 11,
+        "Y": 12
+      },
+      {
+        "X": 11,
+        "Y": 13
+      },
+      {
+        "X": 11,
+        "Y": 14
+      },
+      {
+        "X": 11,
+        "Y": 15
+      },
+      {
+        "X": 11,
+        "Y": 16
+      },
+      {
+        "X": 11,
+        "Y": 17
+      }
+    ]
+  },
+  {
+    "ID": 46124301,
+    "ActionType": "BattleSceneActionType_CameraFocusPosition",
+    "Param1": [
+      6
+    ],
+    "Param3": [
+      {
+        "X": 3,
+        "Y": 9
+      }
+    ],
+    "SkipCondId": 46124501
+  },
+  {
+    "ID": 46124302,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      300
+    ],
+    "SkipCondId": 46124501
+  },
+  {
+    "ID": 46124303,
+    "ActionType": "BattleSceneActionType_SummonNear",
+    "Param1": [
+      4
+    ],
+    "Param2": [
+      46
+    ],
+    "Param3": [
+      {
+        "X": 3,
+        "Y": 8
+      }
+    ],
+    "Param4": [
+      152110371
+    ],
+    "Param6": [
+      0
+    ],
+    "Param7": [
+      {
+        "X": 9,
+        "Y": 4
+      }
+    ],
+    "Param8": [
+      10000
+    ],
+    "Param9": [
+      1
+    ],
+    "Param10": [
+      0
+    ],
+    "Param11": [
+      2
+    ],
+    "SkipCondId": 46124501
+  },
+  {
     "ID": 46124304,
     "ActionType": "BattleSceneActionType_Delay",
     "Param1": [
@@ -15150,62 +15369,6 @@
     "ActionType": "BattleSceneActionType_Dialog",
     "Param1": [
       461436136
-    ]
-  },
-  {
-    "ID": 46143243,
-    "ActionType": "BattleSceneActionType_ActorAnimation",
-    "Param1": [
-      101
-    ],
-    "Param2": [
-      -1
-    ],
-    "Param4": [
-      700
-    ],
-    "Param5": "SkillAnnounce",
-    "Param6": [
-      0
-    ]
-  },
-  {
-    "ID": 46143244,
-    "ActionType": "BattleSceneActionType_TerrainEffect",
-    "Param1": [
-      131400041
-    ],
-    "Param2": [
-      10011
-    ],
-    "Param3": [
-      {
-        "X": 9,
-        "Y": 7
-      }
-    ]
-  },
-  {
-    "ID": 46143245,
-    "ActionType": "BattleSceneActionType_TerrainEffect",
-    "Param1": [
-      131400041
-    ],
-    "Param2": [
-      10012
-    ],
-    "Param3": [
-      {
-        "X": 11,
-        "Y": 7
-      }
-    ]
-  },
-  {
-    "ID": 46143246,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      1000
     ]
   }
 ]

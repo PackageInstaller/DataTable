@@ -4927,6 +4927,108 @@
     "AttackWinDescStrKey": "ST:3566"
   },
   {
+    "ID": 2052,
+    "Strategy": 1,
+    "TurnMax": 99,
+    "AttackWinCondGroupIds": [
+      4
+    ],
+    "DefendWinCondGroupIds": [
+      3
+    ],
+    "AttackTeamFormationMin": 1,
+    "AttackTeamFormationMax": 5,
+    "DefendTeamFormationMin": 1,
+    "DefendTeamFormationMax": 1,
+    "AttackTeamFormationGrids": [
+      {
+        "X": 7,
+        "Y": 17,
+        "DirX": 1,
+        "DirY": 17
+      },
+      {
+        "X": 7,
+        "Y": 16,
+        "DirX": 1,
+        "DirY": 16
+      },
+      {
+        "X": 7,
+        "Y": 15,
+        "DirX": 1,
+        "DirY": 15
+      },
+      {
+        "X": 7,
+        "Y": 14,
+        "DirX": 1,
+        "DirY": 14
+      },
+      {
+        "X": 7,
+        "Y": 13,
+        "DirX": 1,
+        "DirY": 13
+      }
+    ],
+    "CharActorSetups": [
+      {
+        "ActorId": 201,
+        "X": 11,
+        "Y": 14,
+        "DirX": 7,
+        "DirY": 17,
+        "TeamType": 4,
+        "TeamId": 21,
+        "CharacterId": 198000159,
+        "HpPercent": 10000,
+        "SetupFlags": 7
+      },
+      {
+        "ActorId": 221,
+        "X": 5,
+        "Y": 15,
+        "DirX": 7,
+        "DirY": 14,
+        "TeamType": 4,
+        "TeamId": 23,
+        "CharacterId": 198000164,
+        "HpPercent": 10000,
+        "SetupFlags": 7
+      }
+    ],
+    "RefreshGroup": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "BattleMapId": 1005,
+    "DefaultNpcLevel": 100,
+    "BattleMapResPath": "DemoDesert02Series/Maps/1005_ABS/",
+    "IsCanSkipSceneAction": true,
+    "SkipMessageID": 101,
+    "CameraVisions": [
+      0,
+      2
+    ],
+    "CameraDefaultPosition": [
+      7,
+      15
+    ],
+    "AttackTeamBGM": "BGM_Combat_Yang_1",
+    "DefendTeamBGM": "BGM_Combat_Yin_1",
+    "FormationBGM": "BGM_Combat_Preparation_2",
+    "MinMap": "Assets/GameProject/RuntimeAssets/UI/UIImage/MiniMap_ABS/MiniMap_1005.PNG@MiniMap_1005",
+    "CustomLoadingUI": [
+      6
+    ],
+    "IsFaBaoSkillOpen": true,
+    "SceneNameStrKey": "ST:264283",
+    "AttackWinDescStrKey": "ST:3566"
+  },
+  {
     "ID": 2100,
     "Strategy": 1,
     "TurnMax": 10,
@@ -8206,73 +8308,6 @@
       6
     ],
     "SceneNameStrKey": "ST:127193",
-    "AttackWinDescStrKey": "ST:3566",
-    "DefendLoseDescStrKey": "ST:3567"
-  },
-  {
-    "ID": 2602,
-    "Strategy": 1,
-    "TurnMax": 10,
-    "AttackWinCondGroupIds": [
-      4
-    ],
-    "DefendWinCondGroupIds": [
-      3
-    ],
-    "AttackTeamFormationMin": 1,
-    "AttackTeamFormationMax": 1,
-    "DefendTeamFormationMin": 1,
-    "DefendTeamFormationMax": 1,
-    "AttackTeamFormationGrids": [
-      {
-        "X": 5,
-        "Y": 9,
-        "DirX": 5,
-        "DirY": 10
-      }
-    ],
-    "CharActorSetups": [
-      {
-        "ActorId": 101,
-        "X": 7,
-        "Y": 12,
-        "DirX": 7,
-        "DirY": 16,
-        "TeamType": 4,
-        "TeamId": 21,
-        "CharacterId": 131010011,
-        "HpPercent": 10000,
-        "SetupFlags": 7
-      }
-    ],
-    "TeamAIInfo": [
-      {
-        "TeamId": 21,
-        "TeamAIType": "TeamAIType_Alert",
-        "Param1": 10
-      }
-    ],
-    "BattleMapId": 2602,
-    "DefaultNpcLevel": 60,
-    "BattleMapResPath": "TouMingSeries/Maps/2602_ABS/",
-    "IsCanSkipSceneAction": true,
-    "SkipMessageID": 101,
-    "CameraVisions": [
-      0,
-      2
-    ],
-    "CameraDefaultPosition": [
-      5,
-      9
-    ],
-    "AttackTeamBGM": "BGM_Combat_Yang_1",
-    "DefendTeamBGM": "BGM_Combat_Yin_1",
-    "FormationBGM": "BGM_Combat_Preparation_2",
-    "MinMap": "Assets/GameProject/RuntimeAssets/UI/UIImage/MiniMap05_ABS/MiniMap_1606.PNG@MiniMap_1606",
-    "CustomLoadingUI": [
-      6
-    ],
-    "SceneNameStrKey": "ST:127194",
     "AttackWinDescStrKey": "ST:3566",
     "DefendLoseDescStrKey": "ST:3567"
   }

@@ -1,0 +1,52 @@
+{
+  "ID": 1001,
+  "ActivityId": 267201,
+  "OpenCondition": [
+    {
+      "CondType": "ConditionType_PlayerLevel",
+      "P1": 10
+    }
+  ],
+  "MapIdList": [
+    1
+  ],
+  "HandbookRewards": [
+    {
+      "XiShuaiNum": 5,
+      "DropId": 352071069
+    },
+    {
+      "XiShuaiNum": 10,
+      "DropId": 352071070
+    },
+    {
+      "XiShuaiNum": 15,
+      "DropId": 352071071
+    }
+  ],
+  "CricketLuckMax": 1000,
+  "KingGridLuckStepList": [
+    {
+      "Luck": 300,
+      "KingGridCount": 1
+    },
+    {
+      "Luck": 600,
+      "KingGridCount": 2
+    },
+    {
+      "Luck": 900,
+      "KingGridCount": 3
+    }
+  ],
+  "KingGridMax": 4,
+  "KingPromoteMaxNumerator": 100,
+  "KingPromoteLuckFactor": 5000,
+  "ProbabilityDenominator": 1000,
+  "KingWeightInc": 300,
+  "NormalWeightInc": 300,
+  "CatchDurationSec": 30,
+  "AutoSellMaxGrade": 3,
+  "CricketJarCapacity": 200,
+  "CurrencyItemId": 400021226
+}

@@ -32,7 +32,8 @@
     "UnlockCondition": [
       {
         "CondType": "ConditionType_URLBoxVersionUnlock",
-        "P1": 2
+        "P1": 2,
+        "P2": 1
       }
     ],
     "CharacterID": 100907,
@@ -49,7 +50,8 @@
     "UnlockCondition": [
       {
         "CondType": "ConditionType_URLBoxVersionUnlock",
-        "P1": 3
+        "P1": 3,
+        "P2": 1
       }
     ],
     "CharacterID": 100908,
@@ -66,7 +68,8 @@
     "UnlockCondition": [
       {
         "CondType": "ConditionType_URLBoxVersionUnlock",
-        "P1": 5
+        "P1": 5,
+        "P2": 1
       }
     ],
     "CharacterID": 100909,
@@ -83,7 +86,8 @@
     "UnlockCondition": [
       {
         "CondType": "ConditionType_URLBoxVersionUnlock",
-        "P1": 6
+        "P1": 6,
+        "P2": 1
       }
     ],
     "CharacterID": 100910,
@@ -100,7 +104,8 @@
     "UnlockCondition": [
       {
         "CondType": "ConditionType_URLBoxVersionUnlock",
-        "P1": 7
+        "P1": 7,
+        "P2": 1
       }
     ],
     "CharacterID": 100911,
@@ -117,7 +122,8 @@
     "UnlockCondition": [
       {
         "CondType": "ConditionType_URLBoxVersionUnlock",
-        "P1": 8
+        "P1": 8,
+        "P2": 1
       }
     ],
     "CharacterID": 100912,
@@ -128,5 +134,23 @@
     ],
     "Layer": 27,
     "WordsStrKey": "ST:257478"
+  },
+  {
+    "ID": 9,
+    "UnlockCondition": [
+      {
+        "CondType": "ConditionType_URLBoxVersionUnlock",
+        "P1": 9,
+        "P2": 1
+      }
+    ],
+    "CharacterID": 100913,
+    "Transform": [
+      {
+        "Scale": 10
+      }
+    ],
+    "Layer": 27,
+    "WordsStrKey": "ST:263563"
   }
 ]

@@ -2961,6 +2961,258 @@
     "SweepId": 160
   },
   {
+    "ID": 161,
+    "StoreID": "StoreId_DiceTable",
+    "Type": "StoreType_Exchange",
+    "StoreName": "OB68 梦境摘星",
+    "ActivityID": 266820,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400021220,
+        "GoldRate": 1
+      }
+    ],
+    "ItemRecycleExchangeInfo": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400000001
+      }
+    ],
+    "ItemRecycleMail": 298,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400021221
+      },
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400021220
+      }
+    ]
+  },
+  {
+    "ID": 162,
+    "StoreID": "StoreId_DunHuangChangZhu",
+    "Type": "StoreType_Exchange",
+    "StoreName": "OB68西游常驻",
+    "ActivityID": 266817,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero2023_ABS/Hero2023_Graphic_Prefab.prefab",
+    "NpcCharId": 202300,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400068001
+      }
+    ]
+  },
+  {
+    "ID": 163,
+    "StoreID": "StoreId_UnrealSeaSanGuo",
+    "Type": "StoreType_Exchange",
+    "StoreName": "OB68三国",
+    "ActivityID": 266801,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400068002,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 299,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero2023_ABS/Hero2029_Graphic_Prefab.prefab",
+    "NpcCharId": 202900,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400068002
+      }
+    ],
+    "SweepId": 163
+  },
+  {
+    "ID": 164,
+    "StoreID": "StoreId_ChineseStyle",
+    "Type": "StoreType_Exchange",
+    "StoreName": "OB68三国boss挑战",
+    "ActivityID": 266801,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400068003,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 300,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero2023_ABS/Hero2029_Graphic_Prefab.prefab",
+    "NpcCharId": 202900,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400068003
+      }
+    ]
+  },
+  {
+    "ID": 165,
+    "StoreID": "StoreId_DianCangYuShaoRong",
+    "Type": "StoreType_Exchange",
+    "StoreName": "OB69 典藏宇韶容",
+    "ActivityID": 266920,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400021222,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 301,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero2510_ABS/Hero2510_Graphic_Prefab.prefab",
+    "NpcCharId": 251000,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400021222
+      }
+    ],
+    "SweepId": 148
+  },
+  {
+    "ID": 166,
+    "StoreID": "StoreId_BotGame",
+    "Type": "StoreType_Exchange",
+    "StoreName": "OB69 下注玩法",
+    "ActivityID": 266921,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000006,
+        "GoldRate": 1000
+      }
+    ],
+    "ItemRecycleMail": 287,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1038_ABS/Hero1038_Graphic_Prefab.prefab",
+    "NpcCharId": 103800,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000006
+      }
+    ],
+    "ShowStoreNameStrKey": "ST:245174"
+  },
+  {
+    "ID": 167,
+    "StoreID": "StoreId_BotGame",
+    "Type": "StoreType_Exchange",
+    "StoreName": "OB70 下注玩法（旧世）",
+    "ActivityID": 267002,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000101,
+        "GoldRate": 1000
+      }
+    ],
+    "ItemRecycleMail": 287,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1038_ABS/Hero1038_Graphic_Prefab.prefab",
+    "NpcCharId": 103800,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000101
+      }
+    ],
+    "ShowStoreNameStrKey": "ST:245174"
+  },
+  {
+    "ID": 168,
+    "StoreID": "StoreId_LiBai2",
+    "Type": "StoreType_Exchange",
+    "StoreName": "OB70 李白复刻",
+    "ActivityID": 267017,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400021223,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 293,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero2027_ABS/Hero2027_Graphic_Prefab.prefab",
+    "NpcCharId": 202700,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400021223
+      }
+    ],
+    "SweepId": 168
+  },
+  {
+    "ID": 169,
+    "StoreID": "StoreId_BotGame",
+    "Type": "StoreType_Exchange",
+    "StoreName": "OB71 下注玩法",
+    "ActivityID": 267121,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000007,
+        "GoldRate": 1000
+      }
+    ],
+    "ItemRecycleMail": 287,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1038_ABS/Hero1038_Graphic_Prefab.prefab",
+    "NpcCharId": 103800,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 591000007
+      }
+    ],
+    "ShowStoreNameStrKey": "ST:245174"
+  },
+  {
+    "ID": 170,
+    "StoreID": "StoreId_QuHaiJinGe2",
+    "Type": "StoreType_Exchange",
+    "StoreName": "曲海金戈（复刻）",
+    "ActivityID": 267122,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020503,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 303,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero1083_ABS/Hero1083_Graphic_Prefab.prefab",
+    "NpcCharId": 109300,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020503
+      }
+    ],
+    "SweepId": 170
+  },
+  {
+    "ID": 171,
+    "StoreID": "StoreId_FengShenStory2",
+    "Type": "StoreType_Exchange",
+    "StoreName": "封神常驻",
+    "ActivityID": 267118,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero2026_ABS/Hero2026_Graphic_Prefab.prefab",
+    "NpcCharId": 202600,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400021225
+      }
+    ]
+  },
+  {
     "ID": 9901,
     "StoreID": "StoreId_UniversalMaterialStore",
     "Type": "StoreType_Exchange",

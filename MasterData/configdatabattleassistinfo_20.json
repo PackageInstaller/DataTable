@@ -1,5 +1,90 @@
 [
   {
+    "ID": 51016,
+    "VersionTag": 51,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/BattleAsssit_030.png@BattleAsssit_030",
+    "AssistType": "BattleAssistType_PlayerAssist",
+    "EyeCharacter": 100114700,
+    "AssistActiveCondGroup": 27,
+    "AssistEffect": [
+      {
+        "BuffId": 745000300,
+        "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
+      }
+    ],
+    "EffectCareer": "CareerType_All",
+    "SceneNameStrKey": "ST:135121",
+    "AssistDescStrKey": "ST:229450"
+  },
+  {
+    "ID": 51017,
+    "VersionTag": 57,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/BattleAsssit_013.png@BattleAsssit_013",
+    "AssistType": "BattleAssistType_PlayerAssist",
+    "EyeCharacter": 100110000,
+    "AssistActiveCondGroup": 3,
+    "AssistEffect": [
+      {
+        "BuffId": 745900100,
+        "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
+      }
+    ],
+    "EffectCareer": "CareerType_All",
+    "SceneNameStrKey": "ST:67508",
+    "AssistDescStrKey": "ST:240590"
+  },
+  {
+    "ID": 51018,
+    "VersionTag": 57,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/BattleAsssit_018.png@BattleAsssit_018",
+    "AssistType": "BattleAssistType_PlayerAssist",
+    "EyeCharacter": 100100900,
+    "AssistActiveCondGroup": 12,
+    "AssistEffect": [
+      {
+        "BuffId": 745900110,
+        "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
+      }
+    ],
+    "EffectCareer": "CareerType_All",
+    "SceneNameStrKey": "ST:102073",
+    "AssistDescStrKey": "ST:241134"
+  },
+  {
+    "ID": 51019,
+    "VersionTag": 57,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/BattleAsssit_065.png@BattleAsssit_065",
+    "AssistType": "BattleAssistType_PlayerAssist",
+    "EyeCharacter": 100108500,
+    "AssistActiveCondGroup": 46,
+    "AssistEffect": [
+      {
+        "BuffId": 745900120,
+        "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
+      }
+    ],
+    "EffectCareer": "CareerType_All",
+    "SceneNameStrKey": "ST:215270",
+    "AssistDescStrKey": "ST:240592"
+  },
+  {
+    "ID": 51020,
+    "VersionTag": 57,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/BattleAsssit_056.png@BattleAsssit_056",
+    "AssistType": "BattleAssistType_PlayerAssist",
+    "EyeCharacter": 100107500,
+    "AssistActiveCondGroup": 41,
+    "AssistEffect": [
+      {
+        "BuffId": 745900130,
+        "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
+      }
+    ],
+    "EffectCareer": "CareerType_All",
+    "SceneNameStrKey": "ST:193681",
+    "AssistDescStrKey": "ST:240593"
+  },
+  {
     "ID": 51021,
     "VersionTag": 57,
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/BattleAsssit_024.png@BattleAsssit_024",
@@ -12,6 +97,7 @@
         "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:122659",
     "AssistDescStrKey": "ST:240594"
   },
@@ -28,6 +114,7 @@
         "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:180833",
     "AssistDescStrKey": "ST:240595"
   },
@@ -44,6 +131,7 @@
         "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:239948",
     "AssistDescStrKey": "ST:240596"
   },
@@ -60,8 +148,162 @@
         "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:161470",
     "AssistDescStrKey": "ST:241135"
+  },
+  {
+    "ID": 51025,
+    "VersionTag": 69,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/BattleAsssit_094.png@BattleAsssit_094",
+    "AssistType": "BattleAssistType_PlayerAssist",
+    "EyeCharacter": 100251000,
+    "AssistActiveCondGroup": 13,
+    "AssistEffect": [
+      {
+        "BuffId": 745900190,
+        "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
+      }
+    ],
+    "EffectCareer": "CareerType_All",
+    "SceneNameStrKey": "ST:262517",
+    "AssistDescStrKey": "ST:263814"
+  },
+  {
+    "ID": 51026,
+    "VersionTag": 69,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/BattleAsssit_086.png@BattleAsssit_086",
+    "AssistType": "BattleAssistType_PlayerAssist",
+    "EyeCharacter": 100250700,
+    "AssistActiveCondGroup": 45,
+    "AssistEffect": [
+      {
+        "BuffId": 745900200,
+        "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
+      }
+    ],
+    "EffectCareer": "CareerType_All",
+    "SceneNameStrKey": "ST:250155",
+    "AssistDescStrKey": "ST:263203"
+  },
+  {
+    "ID": 51027,
+    "VersionTag": 69,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/BattleAsssit_083.png@BattleAsssit_083",
+    "AssistType": "BattleAssistType_PlayerAssist",
+    "EyeCharacter": 100140200,
+    "AssistActiveCondGroup": 51,
+    "AssistEffect": [
+      {
+        "BuffId": 745900210,
+        "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
+      }
+    ],
+    "EffectCareer": "CareerType_All",
+    "SceneNameStrKey": "ST:244286",
+    "AssistDescStrKey": "ST:263204"
+  },
+  {
+    "ID": 51028,
+    "VersionTag": 69,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/BattleAsssit_064.png@BattleAsssit_064",
+    "AssistType": "BattleAssistType_PlayerAssist",
+    "EyeCharacter": 100202100,
+    "AssistActiveCondGroup": 45,
+    "AssistEffect": [
+      {
+        "BuffId": 745900220,
+        "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
+      }
+    ],
+    "EffectCareer": "CareerType_All",
+    "SceneNameStrKey": "ST:211344",
+    "AssistDescStrKey": "ST:263205"
+  },
+  {
+    "ID": 51029,
+    "VersionTag": 69,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/BattleAsssit_055.png@BattleAsssit_055",
+    "AssistType": "BattleAssistType_PlayerAssist",
+    "EyeCharacter": 100115000,
+    "AssistActiveCondGroup": 30,
+    "AssistEffect": [
+      {
+        "BuffId": 745900230,
+        "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
+      }
+    ],
+    "EffectCareer": "CareerType_All",
+    "SceneNameStrKey": "ST:191781",
+    "AssistDescStrKey": "ST:263206"
+  },
+  {
+    "ID": 51030,
+    "VersionTag": 69,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/BattleAsssit_037.png@BattleAsssit_037",
+    "AssistType": "BattleAssistType_PlayerAssist",
+    "EyeCharacter": 100104300,
+    "AssistActiveCondGroup": 33,
+    "AssistEffect": [
+      {
+        "BuffId": 745900240,
+        "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
+      }
+    ],
+    "EffectCareer": "CareerType_All",
+    "SceneNameStrKey": "ST:153819",
+    "AssistDescStrKey": "ST:263207"
+  },
+  {
+    "ID": 51031,
+    "VersionTag": 69,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/BattleAsssit_023.png@BattleAsssit_023",
+    "AssistType": "BattleAssistType_PlayerAssist",
+    "EyeCharacter": 100122400,
+    "AssistActiveCondGroup": 22,
+    "AssistEffect": [
+      {
+        "BuffId": 745900250,
+        "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
+      }
+    ],
+    "EffectCareer": "CareerType_All",
+    "SceneNameStrKey": "ST:120044",
+    "AssistDescStrKey": "ST:263208"
+  },
+  {
+    "ID": 51032,
+    "VersionTag": 69,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/BattleAsssit_021.png@BattleAsssit_021",
+    "AssistType": "BattleAssistType_PlayerAssist",
+    "EyeCharacter": 100120100,
+    "AssistActiveCondGroup": 19,
+    "AssistEffect": [
+      {
+        "BuffId": 745900260,
+        "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
+      }
+    ],
+    "EffectCareer": "CareerType_All",
+    "SceneNameStrKey": "ST:114838",
+    "AssistDescStrKey": "ST:263209"
+  },
+  {
+    "ID": 51033,
+    "VersionTag": 69,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/BattleAsssit_058.png@BattleAsssit_058",
+    "AssistType": "BattleAssistType_PlayerAssist",
+    "EyeCharacter": 100107300,
+    "AssistActiveCondGroup": 13,
+    "AssistEffect": [
+      {
+        "BuffId": 745900270,
+        "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
+      }
+    ],
+    "EffectCareer": "CareerType_All",
+    "SceneNameStrKey": "ST:195013",
+    "AssistDescStrKey": "ST:264042"
   },
   {
     "ID": 52001,
@@ -73,6 +315,7 @@
         "BuffId": 743149501
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:225982",
     "AssistDescStrKey": "ST:225988"
   },
@@ -86,6 +329,7 @@
         "BuffId": 743149502
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:225982",
     "AssistDescStrKey": "ST:225989"
   },
@@ -99,6 +343,7 @@
         "BuffId": 743149503
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:225982",
     "AssistDescStrKey": "ST:186873"
   },
@@ -112,6 +357,7 @@
         "BuffId": 743149504
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:225982",
     "AssistDescStrKey": "ST:225990"
   },
@@ -120,11 +366,7 @@
     "VersionTag": 49,
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1001.png@Skill_None_1001",
     "AssistType": "BattleAssistType_MountainAssist",
-    "AssistEffect": [
-      {
-        "BuffId": 743149511
-      }
-    ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:225983",
     "AssistDescStrKey": "ST:225991"
   },
@@ -138,6 +380,7 @@
         "BuffId": 743149512
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:225983",
     "AssistDescStrKey": "ST:225992"
   },
@@ -151,6 +394,7 @@
         "BuffId": 743149513
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:225983",
     "AssistDescStrKey": "ST:225993"
   },
@@ -164,6 +408,7 @@
         "BuffId": 743149514
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:225983",
     "AssistDescStrKey": "ST:225994"
   },
@@ -177,6 +422,7 @@
         "BuffId": 743149521
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:225984",
     "AssistDescStrKey": "ST:225995"
   },
@@ -190,6 +436,7 @@
         "BuffId": 743149522
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:225984",
     "AssistDescStrKey": "ST:225996"
   },
@@ -203,6 +450,7 @@
         "BuffId": 743149523
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:225984",
     "AssistDescStrKey": "ST:225997"
   },
@@ -216,6 +464,7 @@
         "BuffId": 743149524
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:225984",
     "AssistDescStrKey": "ST:225998"
   },
@@ -229,6 +478,7 @@
         "BuffId": 743149531
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:225985",
     "AssistDescStrKey": "ST:176225"
   },
@@ -242,6 +492,7 @@
         "BuffId": 743149532
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:225985",
     "AssistDescStrKey": "ST:176226"
   },
@@ -255,6 +506,7 @@
         "BuffId": 743149533
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:225985",
     "AssistDescStrKey": "ST:107189"
   },
@@ -268,6 +520,7 @@
         "BuffId": 743149534
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:225985",
     "AssistDescStrKey": "ST:103148"
   },
@@ -281,6 +534,7 @@
         "BuffId": 743149570
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:226575",
     "AssistDescStrKey": "ST:226576"
   },
@@ -294,6 +548,7 @@
         "BuffId": 743149565
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:225987",
     "AssistDescStrKey": "ST:226002"
   },
@@ -307,6 +562,7 @@
         "BuffId": 743149566
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:225987",
     "AssistDescStrKey": "ST:226002"
   },
@@ -320,6 +576,7 @@
         "BuffId": 743149575
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:226822",
     "AssistDescStrKey": "ST:226825"
   },
@@ -333,6 +590,7 @@
         "BuffId": 743149580
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:226823",
     "AssistDescStrKey": "ST:226826"
   },
@@ -346,6 +604,7 @@
         "BuffId": 743149585
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:226824",
     "AssistDescStrKey": "ST:226827"
   },
@@ -359,6 +618,7 @@
         "BuffId": 751400930
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:227069",
     "AssistDescStrKey": "ST:227071"
   },
@@ -372,6 +632,7 @@
         "BuffId": 751400932
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:227070",
     "AssistDescStrKey": "ST:227072"
   },
@@ -385,6 +646,7 @@
         "BuffId": 743149605
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:226117",
     "AssistDescStrKey": "ST:226118"
   },
@@ -398,6 +660,7 @@
         "BuffId": 743149610
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:226117",
     "AssistDescStrKey": "ST:186132"
   },
@@ -411,6 +674,7 @@
         "BuffId": 743149615
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:226117",
     "AssistDescStrKey": "ST:229068"
   },
@@ -424,6 +688,7 @@
         "BuffId": 743149620
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:226117",
     "AssistDescStrKey": "ST:226126"
   },
@@ -437,6 +702,7 @@
         "BuffId": 743149625
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:226117",
     "AssistDescStrKey": "ST:226122"
   },
@@ -450,6 +716,7 @@
         "BuffId": 743149410
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:227094",
     "AssistDescStrKey": "ST:227095"
   },
@@ -463,6 +730,7 @@
         "BuffId": 745000510
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:180833",
     "AssistDescStrKey": "ST:180834"
   },
@@ -476,6 +744,7 @@
         "BuffId": 745000630
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:211344",
     "AssistDescStrKey": "ST:211345"
   },
@@ -489,6 +758,7 @@
         "BuffId": 745000560
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:193681",
     "AssistDescStrKey": "ST:194532"
   },
@@ -502,6 +772,7 @@
         "BuffId": 742413201
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:229430",
     "AssistDescStrKey": "ST:229451"
   },
@@ -515,6 +786,7 @@
         "BuffId": 742413203
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:229431",
     "AssistDescStrKey": "ST:229451"
   },
@@ -528,6 +800,7 @@
         "BuffId": 742413205
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:229432",
     "AssistDescStrKey": "ST:229451"
   },
@@ -541,6 +814,7 @@
         "BuffId": 742413207
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:229433",
     "AssistDescStrKey": "ST:229451"
   },
@@ -554,6 +828,7 @@
         "BuffId": 742413209
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:229434",
     "AssistDescStrKey": "ST:229451"
   },
@@ -567,6 +842,7 @@
         "BuffId": 742413211
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:229435",
     "AssistDescStrKey": "ST:229451"
   },
@@ -580,6 +856,7 @@
         "BuffId": 742413213
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:231955",
     "AssistDescStrKey": "ST:229451"
   },
@@ -593,6 +870,7 @@
         "BuffId": 742413215
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:231956",
     "AssistDescStrKey": "ST:229451"
   },
@@ -606,6 +884,7 @@
         "BuffId": 742413217
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:229436",
     "AssistDescStrKey": "ST:229452"
   },
@@ -619,6 +898,7 @@
         "BuffId": 742413219
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:229437",
     "AssistDescStrKey": "ST:229451"
   },
@@ -632,6 +912,7 @@
         "BuffId": 763152019
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:229438",
     "AssistDescStrKey": "ST:229453"
   },
@@ -645,6 +926,7 @@
         "BuffId": 763152032
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:229439",
     "AssistDescStrKey": "ST:229454"
   },
@@ -658,6 +940,7 @@
         "BuffId": 763152021
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:229440",
     "AssistDescStrKey": "ST:229455"
   },
@@ -671,8 +954,9 @@
         "BuffId": 763154150
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:232144",
-    "AssistDescStrKey": "ST:232234"
+    "AssistDescStrKey": "ST:266731"
   },
   {
     "ID": 53031,
@@ -684,8 +968,9 @@
         "BuffId": 763154152
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:232145",
-    "AssistDescStrKey": "ST:232235"
+    "AssistDescStrKey": "ST:266732"
   },
   {
     "ID": 53032,
@@ -697,8 +982,9 @@
         "BuffId": 763154158
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:232146",
-    "AssistDescStrKey": "ST:232236"
+    "AssistDescStrKey": "ST:266733"
   },
   {
     "ID": 53033,
@@ -711,6 +997,7 @@
         "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:232138",
     "AssistDescStrKey": "ST:232237"
   },
@@ -727,6 +1014,7 @@
         "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:229428",
     "AssistDescStrKey": "ST:232238"
   },
@@ -743,6 +1031,7 @@
         "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:163035",
     "AssistDescStrKey": "ST:232239"
   },
@@ -759,6 +1048,7 @@
         "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:135121",
     "AssistDescStrKey": "ST:232240"
   },
@@ -775,6 +1065,7 @@
         "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:147715",
     "AssistDescStrKey": "ST:232241"
   },
@@ -791,6 +1082,7 @@
         "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:218838",
     "AssistDescStrKey": "ST:232242"
   },
@@ -807,6 +1099,7 @@
         "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:229429",
     "AssistDescStrKey": "ST:232243"
   },
@@ -823,6 +1116,7 @@
         "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:232137",
     "AssistDescStrKey": "ST:232244"
   },
@@ -839,6 +1133,7 @@
         "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:232138",
     "AssistDescStrKey": "ST:232245"
   },
@@ -852,8 +1147,9 @@
         "BuffId": 763154801
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:232147",
-    "AssistDescStrKey": "ST:232246"
+    "AssistDescStrKey": "ST:261367"
   },
   {
     "ID": 53051,
@@ -865,8 +1161,9 @@
         "BuffId": 763154802
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:232148",
-    "AssistDescStrKey": "ST:232247"
+    "AssistDescStrKey": "ST:261368"
   },
   {
     "ID": 53052,
@@ -878,8 +1175,9 @@
         "BuffId": 763154804
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:232149",
-    "AssistDescStrKey": "ST:232248"
+    "AssistDescStrKey": "ST:261369"
   },
   {
     "ID": 54001,
@@ -891,6 +1189,7 @@
         "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:232150",
     "AssistDescStrKey": "ST:236271"
   },
@@ -904,6 +1203,7 @@
         "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:232151",
     "AssistDescStrKey": "ST:236272"
   },
@@ -917,6 +1217,7 @@
         "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:232152",
     "AssistDescStrKey": "ST:236273"
   },
@@ -930,6 +1231,7 @@
         "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:232153",
     "AssistDescStrKey": "ST:236274"
   },
@@ -943,6 +1245,7 @@
         "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:232154",
     "AssistDescStrKey": "ST:236275"
   },
@@ -956,6 +1259,7 @@
         "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:232155",
     "AssistDescStrKey": "ST:236276"
   },
@@ -969,6 +1273,7 @@
         "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:232156",
     "AssistDescStrKey": "ST:236277"
   },
@@ -982,6 +1287,7 @@
         "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:232157",
     "AssistDescStrKey": "ST:236278"
   },
@@ -995,6 +1301,7 @@
         "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:232158",
     "AssistDescStrKey": "ST:236279"
   },
@@ -1008,6 +1315,7 @@
         "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:241133",
     "AssistDescStrKey": "ST:241136"
   },
@@ -1021,189 +1329,8 @@
         "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
       }
     ],
+    "EffectCareer": "CareerType_All",
     "SceneNameStrKey": "ST:241133",
     "AssistDescStrKey": "ST:241137"
-  },
-  {
-    "ID": 55003,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1001.png@Skill_None_1001",
-    "AssistType": "BattleAssistType_MountainAssist",
-    "AssistEffect": [
-      {
-        "BuffId": 763201600
-      }
-    ],
-    "SceneNameStrKey": "ST:253313",
-    "AssistDescStrKey": "ST:253315"
-  },
-  {
-    "ID": 56000,
-    "VersionTag": 56,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1001.png@Skill_None_1001",
-    "AssistType": "BattleAssistType_MountainAssist",
-    "AssistEffect": [
-      {
-        "BuffId": 763156904
-      }
-    ],
-    "SceneNameStrKey": "ST:238270",
-    "AssistDescStrKey": "ST:238784"
-  },
-  {
-    "ID": 56001,
-    "VersionTag": 56,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1001.png@Skill_None_1001",
-    "AssistType": "BattleAssistType_MountainAssist",
-    "AssistEffect": [
-      {
-        "BuffId": 763156906
-      }
-    ],
-    "SceneNameStrKey": "ST:238271",
-    "AssistDescStrKey": "ST:238785"
-  },
-  {
-    "ID": 56002,
-    "VersionTag": 56,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1001.png@Skill_None_1001",
-    "AssistType": "BattleAssistType_MountainAssist",
-    "AssistEffect": [
-      {
-        "BuffId": 763156908,
-        "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
-      }
-    ],
-    "SceneNameStrKey": "ST:238272",
-    "AssistDescStrKey": "ST:238786"
-  },
-  {
-    "ID": 56003,
-    "VersionTag": 56,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1001.png@Skill_None_1001",
-    "AssistType": "BattleAssistType_MountainAssist",
-    "AssistEffect": [
-      {
-        "BuffId": 763156910
-      }
-    ],
-    "SceneNameStrKey": "ST:238273",
-    "AssistDescStrKey": "ST:238787"
-  },
-  {
-    "ID": 56004,
-    "VersionTag": 56,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1001.png@Skill_None_1001",
-    "AssistType": "BattleAssistType_MountainAssist",
-    "AssistEffect": [
-      {
-        "BuffId": 763156912
-      }
-    ],
-    "SceneNameStrKey": "ST:238274",
-    "AssistDescStrKey": "ST:238788"
-  },
-  {
-    "ID": 56005,
-    "VersionTag": 56,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1001.png@Skill_None_1001",
-    "AssistType": "BattleAssistType_MountainAssist",
-    "AssistEffect": [
-      {
-        "BuffId": 763156914
-      }
-    ],
-    "SceneNameStrKey": "ST:238275",
-    "AssistDescStrKey": "ST:238789"
-  },
-  {
-    "ID": 56006,
-    "VersionTag": 56,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1001.png@Skill_None_1001",
-    "AssistType": "BattleAssistType_MountainAssist",
-    "AssistEffect": [
-      {
-        "BuffId": 763156916
-      }
-    ],
-    "SceneNameStrKey": "ST:238276",
-    "AssistDescStrKey": "ST:238790"
-  },
-  {
-    "ID": 56007,
-    "VersionTag": 56,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1001.png@Skill_None_1001",
-    "AssistType": "BattleAssistType_MountainAssist",
-    "AssistEffect": [
-      {
-        "BuffId": 763156918
-      }
-    ],
-    "SceneNameStrKey": "ST:238277",
-    "AssistDescStrKey": "ST:238791"
-  },
-  {
-    "ID": 56008,
-    "VersionTag": 56,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1001.png@Skill_None_1001",
-    "AssistType": "BattleAssistType_MountainAssist",
-    "AssistEffect": [
-      {
-        "BuffId": 763156920
-      }
-    ],
-    "SceneNameStrKey": "ST:238278",
-    "AssistDescStrKey": "ST:238792"
-  },
-  {
-    "ID": 56009,
-    "VersionTag": 56,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1001.png@Skill_None_1001",
-    "AssistType": "BattleAssistType_MountainAssist",
-    "AssistEffect": [
-      {
-        "BuffId": 763156922
-      }
-    ],
-    "SceneNameStrKey": "ST:238279",
-    "AssistDescStrKey": "ST:238793"
-  },
-  {
-    "ID": 56010,
-    "VersionTag": 56,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1001.png@Skill_None_1001",
-    "AssistType": "BattleAssistType_MountainAssist",
-    "AssistEffect": [
-      {
-        "BuffId": 763156924
-      }
-    ],
-    "SceneNameStrKey": "ST:238280",
-    "AssistDescStrKey": "ST:238794"
-  },
-  {
-    "ID": 56011,
-    "VersionTag": 56,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1001.png@Skill_None_1001",
-    "AssistType": "BattleAssistType_MountainAssist",
-    "AssistEffect": [
-      {
-        "BuffId": 763156926
-      }
-    ],
-    "SceneNameStrKey": "ST:238281",
-    "AssistDescStrKey": "ST:238795"
-  },
-  {
-    "ID": 56012,
-    "VersionTag": 56,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1001.png@Skill_None_1001",
-    "AssistType": "BattleAssistType_MountainAssist",
-    "AssistEffect": [
-      {
-        "BuffId": 763156736
-      }
-    ],
-    "SceneNameStrKey": "ST:238282",
-    "AssistDescStrKey": "ST:238796"
   }
 ]

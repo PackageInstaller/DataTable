@@ -661,8 +661,6 @@
     "ActivityID": 266719,
     "StartID": 5901,
     "EndID": 5908,
-    "RewardStartID": 5901,
-    "RewardEndID": 5905,
     "StoreID": 160,
     "NameStrKey": "ST:167178"
   },
@@ -675,5 +673,90 @@
     "StartID": 6001,
     "EndID": 6009,
     "NameStrKey": "ST:122128"
+  },
+  {
+    "ID": 61,
+    "VideoEnd": 306511,
+    "ActivityType": "OperationalActivityType_UnrealSea",
+    "ActivityID": 266801,
+    "StartID": 6101,
+    "EndID": 6112,
+    "RewardStartID": 6101,
+    "RewardEndID": 6105,
+    "StoreID": 163,
+    "UI": "UnrealSeaUI_SanGuoXHCM",
+    "NameStrKey": "ST:258981"
+  },
+  {
+    "ID": 62,
+    "ActivityType": "OperationalActivityType_UnrealSea",
+    "ActivityID": 266817,
+    "StartID": 6201,
+    "EndID": 6203,
+    "StoreID": 162,
+    "UI": "UnrealSeaUI_XiYou",
+    "NameStrKey": "ST:210577"
+  },
+  {
+    "ID": 63,
+    "Video": 10020,
+    "VideoEnd": 10019,
+    "ActivityType": "OperationalActivityType_UnrealSea",
+    "ActivityID": 266916,
+    "StartID": 6301,
+    "EndID": 6312,
+    "NameStrKey": "ST:127380"
+  },
+  {
+    "ID": 64,
+    "ActivityType": "OperationalActivityType_UnrealSea",
+    "ActivityID": 266920,
+    "StartID": 6401,
+    "EndID": 6404,
+    "StoreID": 165,
+    "UI": "UnrealSeaUI_DianCang",
+    "NameStrKey": "ST:263598"
+  },
+  {
+    "ID": 65,
+    "Video": 10025,
+    "ActivityType": "OperationalActivityType_UnrealSea",
+    "ActivityID": 267018,
+    "StartID": 6501,
+    "EndID": 6508,
+    "NameStrKey": "ST:134789"
+  },
+  {
+    "ID": 66,
+    "ActivityType": "OperationalActivityType_UnrealSea",
+    "ActivityID": 267017,
+    "StartID": 6601,
+    "EndID": 6610,
+    "StoreID": 168,
+    "UI": "UnrealSeaUI_LiBai",
+    "NameStrKey": "ST:249327"
+  },
+  {
+    "ID": 67,
+    "Video": 10077,
+    "ActivityType": "OperationalActivityType_UnrealSea",
+    "ActivityID": 267118,
+    "StartID": 6701,
+    "EndID": 6715,
+    "StoreID": 171,
+    "UI": "UnrealSeaUI_FengShenStore",
+    "NameStrKey": "ST:224886"
+  },
+  {
+    "ID": 68,
+    "ActivityType": "OperationalActivityType_UnrealSea",
+    "ActivityID": 267122,
+    "StartID": 6801,
+    "EndID": 6810,
+    "RewardStartID": 6801,
+    "RewardEndID": 6805,
+    "StoreID": 170,
+    "PrefabResPath": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/UnchartedPrefab_ABS/QuHaiJinGeUIPrefab.prefab",
+    "NameStrKey": "ST:209631"
   }
 ]

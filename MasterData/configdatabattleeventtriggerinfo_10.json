@@ -1,5 +1,39 @@
 [
   {
+    "ID": 4080312,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      0
+    ],
+    "SceneActionGroupIdLst": [
+      4080312
+    ]
+  },
+  {
+    "ID": 4080421,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "Y": 17
+      }
+    ]
+  },
+  {
+    "ID": 4080422,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "Y": 18
+      }
+    ]
+  },
+  {
     "ID": 4080423,
     "TriggerType": "BattleEventTriggerType_ActorReachPosition",
     "Param2": [
@@ -4878,54 +4912,6 @@
     ],
     "SceneActionGroupIdLst": [
       4133222
-    ]
-  },
-  {
-    "ID": 4133223,
-    "TriggerType": "BattleEventTriggerType_ActorHpPercentBetween",
-    "Param1": [
-      201
-    ],
-    "Param2": [
-      4000
-    ],
-    "Param4": [
-      7000
-    ],
-    "SceneActionGroupIdLst": [
-      4133223
-    ]
-  },
-  {
-    "ID": 4133224,
-    "TriggerType": "BattleEventTriggerType_ActorHpPercentBetween",
-    "Param1": [
-      201
-    ],
-    "Param2": [
-      4000
-    ],
-    "Param4": [
-      7000
-    ],
-    "SceneActionGroupIdLst": [
-      4133224
-    ]
-  },
-  {
-    "ID": 4133225,
-    "TriggerType": "BattleEventTriggerType_ActorHpPercentBetween",
-    "Param1": [
-      201
-    ],
-    "Param2": [
-      4000
-    ],
-    "Param4": [
-      7000
-    ],
-    "SceneActionGroupIdLst": [
-      4133225
     ]
   }
 ]

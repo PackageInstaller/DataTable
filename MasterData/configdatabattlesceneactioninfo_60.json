@@ -1,5 +1,36 @@
 [
   {
+    "ID": 45634114,
+    "ActionType": "BattleSceneActionType_ActorRetreat",
+    "Param1": [
+      905
+    ]
+  },
+  {
+    "ID": 45634115,
+    "ActionType": "BattleSceneActionType_ActorRetreat",
+    "Param1": [
+      906
+    ]
+  },
+  {
+    "ID": 45634116,
+    "ActionType": "BattleSceneActionType_ActorRetreat",
+    "Param1": [
+      907
+    ]
+  },
+  {
+    "ID": 45634117,
+    "ActionType": "BattleSceneActionType_BattleCtxTempParamSet",
+    "Param1": [
+      8
+    ],
+    "Param2": [
+      -1
+    ]
+  },
+  {
     "ID": 45701001,
     "ActionType": "BattleSceneActionType_CameraFocusPosition",
     "Param1": [
@@ -18642,51 +18673,5 @@
   {
     "ID": 45908003,
     "ActionType": "BattleSceneActionType_CloseLoadingUI"
-  },
-  {
-    "ID": 45908004,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      600
-    ]
-  },
-  {
-    "ID": 45908005,
-    "ActionType": "BattleSceneActionType_FadeIn",
-    "Param1": [
-      101,
-      111,
-      112,
-      113
-    ],
-    "Param2": [
-      600,
-      600,
-      600,
-      600
-    ],
-    "Param4": [
-      600,
-      600,
-      600,
-      600
-    ]
-  },
-  {
-    "ID": 45908006,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      300
-    ]
-  },
-  {
-    "ID": 45908007,
-    "ActionType": "BattleSceneActionType_ActorEffect",
-    "Param1": [
-      101
-    ],
-    "Param2": [
-      800009001
-    ]
   }
 ]

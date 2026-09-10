@@ -1,5 +1,50 @@
 [
   {
+    "ID": 41302001,
+    "ActionType": "BattleSceneActionType_FadeOut",
+    "Param1": [
+      401,
+      402,
+      403,
+      404
+    ],
+    "Param2": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "ID": 41302002,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      10000016
+    ],
+    "Param2": [
+      90001
+    ],
+    "Param3": [
+      {
+        "X": 3,
+        "Y": 14
+      }
+    ]
+  },
+  {
+    "ID": 41302003,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      800
+    ]
+  },
+  {
+    "ID": 41302004,
+    "ActionType": "BattleSceneActionType_CloseLoadingUI"
+  },
+  {
     "ID": 41302005,
     "ActionType": "BattleSceneActionType_Music",
     "Param5": "BGM_Emotion_Uncertain_2"
@@ -15089,56 +15134,6 @@
     "Param5": "SelectAnnounce",
     "Param6": [
       0
-    ]
-  },
-  {
-    "ID": 41416210,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      600
-    ]
-  },
-  {
-    "ID": 41416211,
-    "ActionType": "BattleSceneActionType_TerrainEffect",
-    "Param1": [
-      216003101
-    ],
-    "Param2": [
-      10022
-    ],
-    "Param3": [
-      {
-        "X": 7,
-        "Y": 16
-      }
-    ]
-  },
-  {
-    "ID": 41416212,
-    "ActionType": "BattleSceneActionType_HurtActorHpPercent",
-    "Param1": [
-      201
-    ],
-    "Param2": [
-      9000
-    ]
-  },
-  {
-    "ID": 41416213,
-    "ActionType": "BattleSceneActionType_ActorAnimation",
-    "Param1": [
-      201
-    ],
-    "Param2": [
-      -1
-    ],
-    "Param4": [
-      1
-    ],
-    "Param5": "Dead01",
-    "Param6": [
-      -1
     ]
   }
 ]

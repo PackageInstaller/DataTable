@@ -185,5 +185,75 @@
         "P2": 6314
       }
     ]
+  },
+  {
+    "ID": 7011,
+    "DialogId": 270001100,
+    "ShowCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 5,
+        "P2": 7003
+      }
+    ],
+    "HideCond": [
+      {
+        "CondType": "ConditionType_Achievement",
+        "P1": 27000504
+      }
+    ]
+  },
+  {
+    "ID": 7012,
+    "DialogId": 270001110,
+    "FirstPassDropId": 351703504,
+    "ShowCond": [
+      {
+        "CondType": "ConditionType_Achievement",
+        "P1": 27000504
+      }
+    ],
+    "HideCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 5,
+        "P2": 7012
+      }
+    ]
+  },
+  {
+    "ID": 7013,
+    "DialogId": 270001120,
+    "ShowCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 5,
+        "P2": 7006
+      }
+    ],
+    "HideCond": [
+      {
+        "CondType": "ConditionType_Achievement",
+        "P1": 27000703
+      }
+    ]
+  },
+  {
+    "ID": 7014,
+    "DialogId": 270001130,
+    "FirstPassDropId": 351703704,
+    "ShowCond": [
+      {
+        "CondType": "ConditionType_Achievement",
+        "P1": 27000703
+      }
+    ],
+    "HideCond": [
+      {
+        "CondType": "ConditionType_GDTribulationLevelCompleted",
+        "P1": 5,
+        "P2": 7014
+      }
+    ]
   }
 ]

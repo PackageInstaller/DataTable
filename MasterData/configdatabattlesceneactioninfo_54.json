@@ -1,5 +1,55 @@
 [
   {
+    "ID": 44211021,
+    "ActionType": "BattleSceneActionType_FadeOut",
+    "Param1": [
+      201
+    ],
+    "Param2": [
+      500
+    ],
+    "Param4": [
+      500
+    ]
+  },
+  {
+    "ID": 44211022,
+    "ActionType": "BattleSceneActionType_CameraFocusPosition",
+    "Param1": [
+      8
+    ],
+    "Param3": [
+      {
+        "X": 7,
+        "Y": 2
+      }
+    ]
+  },
+  {
+    "ID": 44211023,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      300
+    ]
+  },
+  {
+    "ID": 44211024,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      101
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      800
+    ],
+    "Param5": "Combat_CastSkill01",
+    "Param6": [
+      0
+    ]
+  },
+  {
     "ID": 44211025,
     "ActionType": "BattleSceneActionType_TerrainEffect",
     "Param1": [
@@ -16253,64 +16303,6 @@
     ],
     "Param4": [
       500
-    ]
-  },
-  {
-    "ID": 44445143,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      500
-    ]
-  },
-  {
-    "ID": 44445144,
-    "ActionType": "BattleSceneActionType_ActorAnimation",
-    "Param1": [
-      113
-    ],
-    "Param2": [
-      -1
-    ],
-    "Param4": [
-      700
-    ],
-    "Param5": "Story_Bow_Start",
-    "Param6": [
-      0
-    ]
-  },
-  {
-    "ID": 44445145,
-    "ActionType": "BattleSceneActionType_ActorAnimation",
-    "Param1": [
-      113
-    ],
-    "Param2": [
-      -1
-    ],
-    "Param4": [
-      1500
-    ],
-    "Param5": "Story_Bow_Loop",
-    "Param6": [
-      -1
-    ]
-  },
-  {
-    "ID": 44445146,
-    "ActionType": "BattleSceneActionType_ActorAnimation",
-    "Param1": [
-      113
-    ],
-    "Param2": [
-      -1
-    ],
-    "Param4": [
-      600
-    ],
-    "Param5": "Story_Bow_End",
-    "Param6": [
-      0
     ]
   }
 ]

@@ -1,6 +1,7 @@
 [
   {
     "ID": 1,
+    "DisplaySeasonId": 1,
     "StartTime": "2025/09/24 10:00:00",
     "StartExchangeTime": "2025/10/01 10:00:00",
     "EndTime": "2025/10/21 23:59:59",
@@ -161,6 +162,7 @@
   },
   {
     "ID": 2,
+    "DisplaySeasonId": 2,
     "StartTime": "2025/11/19 10:00:00",
     "StartExchangeTime": "2025/11/26 10:00:00",
     "EndTime": "2025/12/16 23:59:59",
@@ -322,6 +324,7 @@
   },
   {
     "ID": 3,
+    "DisplaySeasonId": 3,
     "StartTime": "2026/01/14 10:00:00",
     "StartExchangeTime": "2026/01/21 10:00:00",
     "EndTime": "2026/02/10 23:59:59",
@@ -484,6 +487,7 @@
   },
   {
     "ID": 4,
+    "DisplaySeasonId": 4,
     "StartTime": "2026/03/11 10:00:00",
     "StartExchangeTime": "2026/03/18 10:00:00",
     "EndTime": "2026/04/07 23:59:59",
@@ -646,6 +650,7 @@
   },
   {
     "ID": 5,
+    "DisplaySeasonId": 5,
     "StartTime": "2026/05/06 10:00:00",
     "StartExchangeTime": "2026/05/13 10:00:00",
     "EndTime": "2026/06/02 23:59:59",
@@ -811,5 +816,582 @@
       4
     ],
     "NameStrKey": "ST:244712"
+  },
+  {
+    "ID": 6,
+    "DisplaySeasonId": 6,
+    "StartTime": "2026/07/01 10:00:00",
+    "StartExchangeTime": "2026/07/08 10:00:00",
+    "EndTime": "2026/07/28 23:59:59",
+    "BotPointId": 591000006,
+    "InitBotPoints": 10,
+    "DemoLevelID": 26900820,
+    "BattleSceneId": 26900800,
+    "RewardBattleSceneId": 26900810,
+    "BattleRewardInfo": [
+      {
+        "Score": 50000,
+        "DropId": 351691101,
+        "Rarity": "Rarity_N"
+      },
+      {
+        "Score": 100000,
+        "DropId": 351691102,
+        "Rarity": "Rarity_N"
+      },
+      {
+        "Score": 150000,
+        "DropId": 351691103,
+        "Rarity": "Rarity_N"
+      },
+      {
+        "Score": 230000,
+        "DropId": 351691104,
+        "Rarity": "Rarity_N"
+      },
+      {
+        "Score": 320000,
+        "DropId": 351691105,
+        "Rarity": "Rarity_R"
+      },
+      {
+        "Score": 400000,
+        "DropId": 351691106,
+        "Rarity": "Rarity_R"
+      },
+      {
+        "Score": 530000,
+        "DropId": 351691107,
+        "Rarity": "Rarity_R"
+      },
+      {
+        "Score": 670000,
+        "DropId": 351691108,
+        "Rarity": "Rarity_R"
+      },
+      {
+        "Score": 800000,
+        "DropId": 351691109,
+        "Rarity": "Rarity_SR"
+      },
+      {
+        "Score": 1030000,
+        "DropId": 351691110,
+        "Rarity": "Rarity_SR"
+      },
+      {
+        "Score": 1270000,
+        "DropId": 351691111,
+        "Rarity": "Rarity_SR"
+      },
+      {
+        "Score": 1500000,
+        "DropId": 351691112,
+        "Rarity": "Rarity_SR"
+      },
+      {
+        "Score": 1830000,
+        "DropId": 351691113,
+        "Rarity": "Rarity_SSR"
+      },
+      {
+        "Score": 2170000,
+        "DropId": 351691114,
+        "Rarity": "Rarity_SSR"
+      },
+      {
+        "Score": 2500000,
+        "DropId": 351691115,
+        "Rarity": "Rarity_SSR"
+      },
+      {
+        "Score": 2900000,
+        "DropId": 351691116,
+        "Rarity": "Rarity_SSR"
+      },
+      {
+        "Score": 3300000,
+        "DropId": 351691117,
+        "Rarity": "Rarity_LLR"
+      },
+      {
+        "Score": 3700000,
+        "DropId": 351691118,
+        "Rarity": "Rarity_LLR"
+      },
+      {
+        "Score": 4100000,
+        "DropId": 351691119,
+        "Rarity": "Rarity_LLR"
+      },
+      {
+        "Score": 4500000,
+        "DropId": 351691120,
+        "Rarity": "Rarity_LLR"
+      }
+    ],
+    "MatchStageDays": 7,
+    "JoinConditions": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 70
+      }
+    ],
+    "AttackFomationNum": 8,
+    "JoinModes": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "MissionIds": [
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40
+    ],
+    "BattleStageDays": 14,
+    "BattleMissionIds": [
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48
+    ],
+    "BotDistributeGroupId": 6,
+    "RankRewardGroupId": 6,
+    "DistributeType": 1,
+    "ESType": "EquipSeparatorType_BotGame6",
+    "BossId": 152132340,
+    "TianDiJourneyZhanJiResPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/BadgeImage_ABS/NoTag/CourseActivityIcon_WenDingDuoKui_06.png@CourseActivityIcon_WenDingDuoKui_06",
+    "TianDiJourneyFenJinResPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/BadgeImage_ABS/NoTag/CourseActivityIcon_HuiyanshikuiJi1_02.png@CourseActivityIcon_HuiyanshikuiJi1_02",
+    "BossIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/XiaZhuImage_ABS/Kuixince_boss_06.png@Kuixince_boss_06",
+    "KillEffectId": 15,
+    "ResidentRewardInfo": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "NameStrKey": "ST:244712"
+  },
+  {
+    "ID": 7,
+    "DisplaySeasonId": 7,
+    "StartTime": "2026/08/26 10:00:00",
+    "StartExchangeTime": "2026/09/02 10:00:00",
+    "EndTime": "2026/09/22 23:59:59",
+    "BotPointId": 591000007,
+    "InitBotPoints": 10,
+    "DemoLevelID": 27101400,
+    "BattleSceneId": 27101300,
+    "RewardBattleSceneId": 27101500,
+    "BattleRewardInfo": [
+      {
+        "Score": 50000,
+        "DropId": 351711101,
+        "Rarity": "Rarity_N"
+      },
+      {
+        "Score": 100000,
+        "DropId": 351711102,
+        "Rarity": "Rarity_N"
+      },
+      {
+        "Score": 150000,
+        "DropId": 351711103,
+        "Rarity": "Rarity_N"
+      },
+      {
+        "Score": 230000,
+        "DropId": 351711104,
+        "Rarity": "Rarity_N"
+      },
+      {
+        "Score": 320000,
+        "DropId": 351711105,
+        "Rarity": "Rarity_R"
+      },
+      {
+        "Score": 400000,
+        "DropId": 351711106,
+        "Rarity": "Rarity_R"
+      },
+      {
+        "Score": 530000,
+        "DropId": 351711107,
+        "Rarity": "Rarity_R"
+      },
+      {
+        "Score": 670000,
+        "DropId": 351711108,
+        "Rarity": "Rarity_R"
+      },
+      {
+        "Score": 800000,
+        "DropId": 351711109,
+        "Rarity": "Rarity_SR"
+      },
+      {
+        "Score": 1030000,
+        "DropId": 351711110,
+        "Rarity": "Rarity_SR"
+      },
+      {
+        "Score": 1270000,
+        "DropId": 351711111,
+        "Rarity": "Rarity_SR"
+      },
+      {
+        "Score": 1500000,
+        "DropId": 351711112,
+        "Rarity": "Rarity_SR"
+      },
+      {
+        "Score": 1830000,
+        "DropId": 351711113,
+        "Rarity": "Rarity_SSR"
+      },
+      {
+        "Score": 2170000,
+        "DropId": 351711114,
+        "Rarity": "Rarity_SSR"
+      },
+      {
+        "Score": 2500000,
+        "DropId": 351711115,
+        "Rarity": "Rarity_SSR"
+      },
+      {
+        "Score": 2900000,
+        "DropId": 351711116,
+        "Rarity": "Rarity_SSR"
+      },
+      {
+        "Score": 3300000,
+        "DropId": 351711117,
+        "Rarity": "Rarity_LLR"
+      },
+      {
+        "Score": 3700000,
+        "DropId": 351711118,
+        "Rarity": "Rarity_LLR"
+      },
+      {
+        "Score": 4100000,
+        "DropId": 351711119,
+        "Rarity": "Rarity_LLR"
+      },
+      {
+        "Score": 4500000,
+        "DropId": 351711120,
+        "Rarity": "Rarity_LLR"
+      }
+    ],
+    "MatchStageDays": 7,
+    "JoinConditions": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 70
+      }
+    ],
+    "AttackFomationNum": 8,
+    "JoinModes": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "MissionIds": [
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48
+    ],
+    "BattleStageDays": 14,
+    "BattleMissionIds": [
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56
+    ],
+    "BotDistributeGroupId": 7,
+    "RankRewardGroupId": 7,
+    "DistributeType": 1,
+    "ESType": "EquipSeparatorType_BotGame7",
+    "BossId": 124051602,
+    "TianDiJourneyZhanJiResPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/BadgeImage_ABS/NoTag/CourseActivityIcon_WenDingDuoKui_07.png@CourseActivityIcon_WenDingDuoKui_07",
+    "TianDiJourneyFenJinResPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/BadgeImage_ABS/NoTag/CourseActivityIcon_HuiyanshikuiJi1_02.png@CourseActivityIcon_HuiyanshikuiJi1_02",
+    "BossIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/XiaZhuImage_ABS/Kuixince_boss_07.png@Kuixince_boss_07",
+    "KillEffectId": 19,
+    "ResidentRewardInfo": [
+      13,
+      14,
+      15,
+      16
+    ],
+    "NameStrKey": "ST:244712"
+  },
+  {
+    "ID": 101,
+    "DisplaySeasonId": 1,
+    "GameModeType": "BotGameGameModeType_OldWorld",
+    "StartTime": "2026/07/29 10:00:00",
+    "StartExchangeTime": "2026/08/05 10:00:00",
+    "EndTime": "2026/08/25 23:59:59",
+    "BotPointId": 591000101,
+    "InitBotPoints": 10,
+    "DemoLevelID": 27001400,
+    "BattleSceneId": 27001300,
+    "RewardBattleSceneId": 27001500,
+    "BattleRewardInfo": [
+      {
+        "Score": 50000,
+        "DropId": 351701101,
+        "Rarity": "Rarity_N"
+      },
+      {
+        "Score": 100000,
+        "DropId": 351701102,
+        "Rarity": "Rarity_N"
+      },
+      {
+        "Score": 150000,
+        "DropId": 351701103,
+        "Rarity": "Rarity_N"
+      },
+      {
+        "Score": 230000,
+        "DropId": 351701104,
+        "Rarity": "Rarity_N"
+      },
+      {
+        "Score": 320000,
+        "DropId": 351701105,
+        "Rarity": "Rarity_R"
+      },
+      {
+        "Score": 400000,
+        "DropId": 351701106,
+        "Rarity": "Rarity_R"
+      },
+      {
+        "Score": 530000,
+        "DropId": 351701107,
+        "Rarity": "Rarity_R"
+      },
+      {
+        "Score": 670000,
+        "DropId": 351701108,
+        "Rarity": "Rarity_R"
+      },
+      {
+        "Score": 800000,
+        "DropId": 351701109,
+        "Rarity": "Rarity_SR"
+      },
+      {
+        "Score": 1030000,
+        "DropId": 351701110,
+        "Rarity": "Rarity_SR"
+      },
+      {
+        "Score": 1270000,
+        "DropId": 351701111,
+        "Rarity": "Rarity_SR"
+      },
+      {
+        "Score": 1500000,
+        "DropId": 351701112,
+        "Rarity": "Rarity_SR"
+      },
+      {
+        "Score": 1830000,
+        "DropId": 351701113,
+        "Rarity": "Rarity_SSR"
+      },
+      {
+        "Score": 2170000,
+        "DropId": 351701114,
+        "Rarity": "Rarity_SSR"
+      },
+      {
+        "Score": 2500000,
+        "DropId": 351701115,
+        "Rarity": "Rarity_SSR"
+      },
+      {
+        "Score": 2900000,
+        "DropId": 351701116,
+        "Rarity": "Rarity_SSR"
+      },
+      {
+        "Score": 3300000,
+        "DropId": 351701117,
+        "Rarity": "Rarity_LLR"
+      },
+      {
+        "Score": 3700000,
+        "DropId": 351701118,
+        "Rarity": "Rarity_LLR"
+      },
+      {
+        "Score": 4100000,
+        "DropId": 351701119,
+        "Rarity": "Rarity_LLR"
+      },
+      {
+        "Score": 4500000,
+        "DropId": 351701120,
+        "Rarity": "Rarity_LLR"
+      }
+    ],
+    "MatchStageDays": 7,
+    "JoinConditions": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 70
+      }
+    ],
+    "AttackFomationNum": 8,
+    "JoinModes": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "MissionIds": [
+      10101,
+      10102,
+      10103,
+      10104,
+      10105,
+      10106,
+      10107,
+      10108
+    ],
+    "BattleStageDays": 14,
+    "BattleMissionIds": [
+      10101,
+      10102,
+      10103,
+      10104,
+      10105,
+      10106,
+      10107,
+      10108
+    ],
+    "BotDistributeGroupId": 101,
+    "RankRewardGroupId": 101,
+    "DistributeType": 1,
+    "ESType": "EquipSeparatorType_BotGame101",
+    "BossId": 153010450,
+    "TianDiJourneyZhanJiResPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/BadgeImage_ABS/NoTag/CourseActivityIcon_WenDingDuoKui_101.png@CourseActivityIcon_WenDingDuoKui_101",
+    "TianDiJourneyFenJinResPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/BadgeImage_ABS/NoTag/CourseActivityIcon_HuiyanshikuiJi1_02.png@CourseActivityIcon_HuiyanshikuiJi1_02",
+    "BossIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/XiaZhuImage_ABS/Kuixince_boss_101.png@Kuixince_boss_101",
+    "KillEffectId": 17,
+    "ResidentRewardInfo": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "AllowedCharIds": [
+      100110000,
+      100110100,
+      100110200,
+      100110300,
+      100110400,
+      100110500,
+      100113400,
+      100114300,
+      100112500,
+      100111300,
+      100111600,
+      100111800,
+      100113200,
+      100114400,
+      100114600,
+      100101900,
+      100102000,
+      100101600,
+      100102200,
+      100102300,
+      100102400,
+      100102500,
+      100102600,
+      100102700,
+      100102800,
+      100100900,
+      100101400,
+      100121200,
+      100120600,
+      100120000,
+      100120100,
+      100120400,
+      100122400,
+      100122500,
+      100131400,
+      100100100,
+      100122300,
+      100103100,
+      100103000,
+      100114800,
+      100114700,
+      100103300,
+      100103200,
+      100103800,
+      100103700,
+      100103600,
+      100114900,
+      100121000,
+      100104100,
+      100104200,
+      100103400,
+      100104400,
+      100104300,
+      100104600,
+      100105000,
+      100104700,
+      100104900,
+      100131900,
+      100130100,
+      100130200
+    ],
+    "BattleFaBaoIds": [
+      7001,
+      7002,
+      7003
+    ],
+    "BattleFaBaoRuleId": 10,
+    "BattleFaBaoCarryId": 7000,
+    "NameStrKey": "ST:265583"
   }
 ]

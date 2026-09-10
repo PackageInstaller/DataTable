@@ -1,5 +1,151 @@
 [
   {
+    "ID": 37441124,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      800
+    ],
+    "Param3": [
+      {
+        "X": 18,
+        "Y": 4
+      }
+    ]
+  },
+  {
+    "ID": 37441125,
+    "ActionType": "BattleSceneActionType_SummonNear",
+    "Param1": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "Param2": [
+      23,
+      23,
+      23,
+      23,
+      23
+    ],
+    "Param3": [
+      {
+        "X": 17,
+        "Y": 5
+      },
+      {
+        "X": 17,
+        "Y": 3
+      },
+      {
+        "X": 18,
+        "Y": 3
+      },
+      {
+        "X": 19,
+        "Y": 4
+      },
+      {
+        "X": 18,
+        "Y": 5
+      }
+    ],
+    "Param4": [
+      122000033,
+      122000033,
+      122140013,
+      122140013,
+      122140013
+    ],
+    "Param6": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "Param7": [
+      {
+        "X": 16,
+        "Y": 5
+      },
+      {
+        "X": 16,
+        "Y": 3
+      },
+      {
+        "X": 17,
+        "Y": 3
+      },
+      {
+        "X": 17,
+        "Y": 4
+      },
+      {
+        "X": 17,
+        "Y": 5
+      }
+    ],
+    "Param8": [
+      10000,
+      10000,
+      10000,
+      10000,
+      10000
+    ],
+    "Param9": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Param10": [
+      205,
+      206,
+      207,
+      208,
+      209
+    ],
+    "Param11": [
+      2,
+      2,
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "ID": 37451101,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      800
+    ],
+    "Param3": [
+      {
+        "X": 8,
+        "Y": 15
+      }
+    ]
+  },
+  {
+    "ID": 37451102,
+    "ActionType": "BattleSceneActionType_ActorTurnDir",
+    "Param1": [
+      230
+    ],
+    "Param3": [
+      {
+        "X": 7,
+        "Y": 14
+      }
+    ],
+    "Param4": [
+      500
+    ]
+  },
+  {
     "ID": 37451103,
     "ActionType": "BattleSceneActionType_ActorTurnDir",
     "Param1": [
@@ -16147,60 +16293,6 @@
     ],
     "Param2": [
       742406031
-    ]
-  },
-  {
-    "ID": 40216061,
-    "ActionType": "BattleSceneActionType_ActorAnimation",
-    "Param1": [
-      201
-    ],
-    "Param2": [
-      -1
-    ],
-    "Param4": [
-      1000
-    ],
-    "Param5": "CastSkill01",
-    "Param6": [
-      0
-    ]
-  },
-  {
-    "ID": 40216062,
-    "ActionType": "BattleSceneActionType_ActorAnimation",
-    "Param1": [
-      201
-    ],
-    "Param2": [
-      -1
-    ],
-    "Param4": [
-      1000
-    ],
-    "Param5": "CastSkill02",
-    "Param6": [
-      0
-    ]
-  },
-  {
-    "ID": 40216071,
-    "ActionType": "BattleSceneActionType_ActorEffect",
-    "Param1": [
-      201
-    ],
-    "Param2": [
-      240400300
-    ]
-  },
-  {
-    "ID": 40216072,
-    "ActionType": "BattleSceneActionType_ActorEffect",
-    "Param1": [
-      201
-    ],
-    "Param2": [
-      800000001
     ]
   }
 ]

@@ -1,5 +1,46 @@
 [
   {
+    "ID": 42715057,
+    "ActionType": "BattleSceneActionType_ActorEffect",
+    "Param1": [
+      210
+    ],
+    "Param2": [
+      800009079
+    ]
+  },
+  {
+    "ID": 42715058,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      800
+    ]
+  },
+  {
+    "ID": 42715059,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      210
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      800
+    ],
+    "Param5": "Combat_CastSkill01",
+    "Param6": [
+      0
+    ]
+  },
+  {
+    "ID": 42715060,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      800
+    ]
+  },
+  {
     "ID": 42715061,
     "ActionType": "BattleSceneActionType_TerrainEffect",
     "Param1": [
@@ -16750,48 +16791,6 @@
     ],
     "Param2": [
       104
-    ]
-  },
-  {
-    "ID": 42815601,
-    "ActionType": "BattleSceneActionType_AttachBuff",
-    "Param1": [
-      201,
-      202
-    ],
-    "Param2": [
-      756001330
-    ]
-  },
-  {
-    "ID": 42815602,
-    "ActionType": "BattleSceneActionType_Dialog",
-    "Param1": [
-      428153110
-    ]
-  },
-  {
-    "ID": 42815603,
-    "ActionType": "BattleSceneActionType_DetachBuff",
-    "Param1": [
-      101,
-      102,
-      103,
-      104
-    ],
-    "Param2": [
-      743124003,
-      743124004
-    ]
-  },
-  {
-    "ID": 42815701,
-    "ActionType": "BattleSceneActionType_CameraFocusActor",
-    "Param1": [
-      800
-    ],
-    "Param2": [
-      201
     ]
   }
 ]

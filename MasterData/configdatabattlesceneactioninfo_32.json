@@ -1,5 +1,40 @@
 [
   {
+    "ID": 40719009,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      407191105
+    ]
+  },
+  {
+    "ID": 40719010,
+    "ActionType": "BattleSceneActionType_CameraFocusPosition",
+    "Param1": [
+      6
+    ],
+    "Param3": [
+      {
+        "X": 11,
+        "Y": 16
+      }
+    ],
+    "Param12": 1
+  },
+  {
+    "ID": 40719011,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      600
+    ]
+  },
+  {
+    "ID": 40719012,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      407191101
+    ]
+  },
+  {
     "ID": 40719013,
     "ActionType": "BattleSceneActionType_Delay",
     "Param1": [
@@ -17949,46 +17984,6 @@
     "ActionType": "BattleSceneActionType_Dialog",
     "Param1": [
       408011104
-    ]
-  },
-  {
-    "ID": 40801018,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      200
-    ]
-  },
-  {
-    "ID": 40801019,
-    "ActionType": "BattleSceneActionType_ActorTurnDir",
-    "Param1": [
-      304
-    ],
-    "Param2": [
-      0
-    ],
-    "Param3": [
-      {
-        "X": 10,
-        "Y": 8
-      }
-    ],
-    "Param4": [
-      300
-    ]
-  },
-  {
-    "ID": 40801020,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      300
-    ]
-  },
-  {
-    "ID": 40801021,
-    "ActionType": "BattleSceneActionType_Dialog",
-    "Param1": [
-      408011105
     ]
   }
 ]

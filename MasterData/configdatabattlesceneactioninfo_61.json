@@ -1,5 +1,51 @@
 [
   {
+    "ID": 45908004,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      600
+    ]
+  },
+  {
+    "ID": 45908005,
+    "ActionType": "BattleSceneActionType_FadeIn",
+    "Param1": [
+      101,
+      111,
+      112,
+      113
+    ],
+    "Param2": [
+      600,
+      600,
+      600,
+      600
+    ],
+    "Param4": [
+      600,
+      600,
+      600,
+      600
+    ]
+  },
+  {
+    "ID": 45908006,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      300
+    ]
+  },
+  {
+    "ID": 45908007,
+    "ActionType": "BattleSceneActionType_ActorEffect",
+    "Param1": [
+      101
+    ],
+    "Param2": [
+      800009001
+    ]
+  },
+  {
     "ID": 45908008,
     "ActionType": "BattleSceneActionType_Delay",
     "Param1": [
@@ -15218,58 +15264,6 @@
   },
   {
     "ID": 46006007,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      300
-    ]
-  },
-  {
-    "ID": 46006008,
-    "ActionType": "BattleSceneActionType_ActorTurnDir",
-    "Param1": [
-      201
-    ],
-    "Param2": [
-      1
-    ],
-    "Param3": [
-      {
-        "X": 2,
-        "Y": 8
-      }
-    ],
-    "Param4": [
-      300
-    ]
-  },
-  {
-    "ID": 46006009,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      300
-    ]
-  },
-  {
-    "ID": 46006010,
-    "ActionType": "BattleSceneActionType_ActorTurnDir",
-    "Param1": [
-      201
-    ],
-    "Param2": [
-      1
-    ],
-    "Param3": [
-      {
-        "X": 4,
-        "Y": 8
-      }
-    ],
-    "Param4": [
-      300
-    ]
-  },
-  {
-    "ID": 46006011,
     "ActionType": "BattleSceneActionType_Delay",
     "Param1": [
       300

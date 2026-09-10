@@ -1,0 +1,755 @@
+[
+  {
+    "ID": 2000,
+    "UnlockConds": [
+      {
+        "Type": "SimulationGameUnlockCondType_FameLevel",
+        "P1": 2
+      }
+    ],
+    "Sort": 2,
+    "FamePointsBase": 120,
+    "Voice": "VO_A_SGSHP_XYX_LNSSF_1_1",
+    "ShowConds": [
+      {
+        "Type": "SimulationGameShowType_ActorTags",
+        "P1": 2,
+        "P2": 1
+      },
+      {
+        "Type": "SimulationGameShowType_ActorNeedNum",
+        "P1": 2
+      }
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/SanGuoOB68_ABS/Icon_qupai_bai.png@Icon_qupai_bai",
+    "TotalTime": 18,
+    "WordSpeed": 6,
+    "NameStrKey": "ST:260376",
+    "WordStrKey": "ST:261270",
+    "ShowCond1MsgStrKey": "ST:260440",
+    "IntroductionStrKey": "ST:261274"
+  },
+  {
+    "ID": 2001,
+    "UnlockConds": [
+      {
+        "Type": "SimulationGameUnlockCondType_FameLevel",
+        "P1": 6
+      }
+    ],
+    "Sort": 6,
+    "FamePointsBase": 200,
+    "Voice": "VO_A_SGSHP_XYX_LNSSF_1_2",
+    "ShowConds": [
+      {
+        "Type": "SimulationGameShowType_ActorTags",
+        "P1": 2,
+        "P2": 1
+      },
+      {
+        "Type": "SimulationGameShowType_ActorTags",
+        "P1": 3,
+        "P2": 1
+      },
+      {
+        "Type": "SimulationGameShowType_ActorNeedNum",
+        "P1": 2
+      }
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/SanGuoOB68_ABS/Icon_qupai_bai.png@Icon_qupai_bai",
+    "TotalTime": 19,
+    "WordSpeed": 6,
+    "NameStrKey": "ST:260377",
+    "WordStrKey": "ST:260417",
+    "ShowCond1MsgStrKey": "ST:260440",
+    "ShowCond2MsgStrKey": "ST:260441",
+    "IntroductionStrKey": "ST:261275"
+  },
+  {
+    "ID": 2002,
+    "UnlockConds": [
+      {
+        "Type": "SimulationGameUnlockCondType_FameLevel",
+        "P1": 11
+      }
+    ],
+    "Sort": 11,
+    "FamePointsBase": 400,
+    "Voice": "VO_A_SGSHP_XYX_LNSSF_1_3",
+    "ShowConds": [
+      {
+        "Type": "SimulationGameShowType_ActorTags",
+        "P1": 3,
+        "P2": 1
+      },
+      {
+        "Type": "SimulationGameShowType_ActorTags",
+        "P1": 4,
+        "P2": 1
+      },
+      {
+        "Type": "SimulationGameShowType_ActorNeedNum",
+        "P1": 2
+      }
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/SanGuoOB68_ABS/Icon_qupai_bai.png@Icon_qupai_bai",
+    "TotalTime": 20,
+    "WordSpeed": 6,
+    "NameStrKey": "ST:260378",
+    "WordStrKey": "ST:260418",
+    "ShowCond1MsgStrKey": "ST:260441",
+    "ShowCond2MsgStrKey": "ST:260439",
+    "IntroductionStrKey": "ST:261276"
+  },
+  {
+    "ID": 2003,
+    "UnlockConds": [
+      {
+        "Type": "SimulationGameUnlockCondType_FameLevel",
+        "P1": 7
+      }
+    ],
+    "Sort": 7,
+    "FamePointsBase": 240,
+    "Voice": "VO_A_SGSHP_XYX_LNSSF_1_4",
+    "ShowConds": [
+      {
+        "Type": "SimulationGameShowType_ActorTags",
+        "P1": 2,
+        "P2": 1
+      },
+      {
+        "Type": "SimulationGameShowType_ActorTags",
+        "P1": 3,
+        "P2": 1
+      },
+      {
+        "Type": "SimulationGameShowType_ActorNeedNum",
+        "P1": 2
+      }
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/SanGuoOB68_ABS/Icon_qupai_bai.png@Icon_qupai_bai",
+    "TotalTime": 19,
+    "WordSpeed": 6,
+    "NameStrKey": "ST:260379",
+    "WordStrKey": "ST:260419",
+    "ShowCond1MsgStrKey": "ST:260440",
+    "ShowCond2MsgStrKey": "ST:260441",
+    "IntroductionStrKey": "ST:261277"
+  },
+  {
+    "ID": 2004,
+    "UnlockConds": [
+      {
+        "Type": "SimulationGameUnlockCondType_FameLevel",
+        "P1": 10
+      }
+    ],
+    "Sort": 10,
+    "FamePointsBase": 360,
+    "Voice": "VO_A_SGSHP_XYX_LNSSF_1_5",
+    "ShowConds": [
+      {
+        "Type": "SimulationGameShowType_SpecialActor",
+        "P1": 3001
+      },
+      {
+        "Type": "SimulationGameShowType_ActorTags",
+        "P1": 1,
+        "P2": 1
+      },
+      {
+        "Type": "SimulationGameShowType_ActorNeedNum",
+        "P1": 2
+      }
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/SanGuoOB68_ABS/Icon_qupai_bai.png@Icon_qupai_bai",
+    "TotalTime": 20,
+    "WordSpeed": 6,
+    "NameStrKey": "ST:260380",
+    "WordStrKey": "ST:260420",
+    "ShowCond1MsgStrKey": "ST:260442",
+    "ShowCond2MsgStrKey": "ST:260445",
+    "IntroductionStrKey": "ST:261278"
+  },
+  {
+    "ID": 2005,
+    "UnlockConds": [
+      {
+        "Type": "SimulationGameUnlockCondType_FameLevel",
+        "P1": 15
+      }
+    ],
+    "Sort": 15,
+    "FamePointsBase": 600,
+    "Voice": "VO_A_SGSHP_XYX_LNSSF_1_6",
+    "ShowConds": [
+      {
+        "Type": "SimulationGameShowType_SpecialActor",
+        "P1": 3002
+      },
+      {
+        "Type": "SimulationGameShowType_ActorTags",
+        "P1": 3,
+        "P2": 2
+      },
+      {
+        "Type": "SimulationGameShowType_ActorNeedNum",
+        "P1": 2
+      }
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/SanGuoOB68_ABS/Icon_qupai_bai.png@Icon_qupai_bai",
+    "TotalTime": 20,
+    "WordSpeed": 6,
+    "NameStrKey": "ST:260381",
+    "WordStrKey": "ST:260421",
+    "ShowCond1MsgStrKey": "ST:260443",
+    "ShowCond2MsgStrKey": "ST:261273",
+    "IntroductionStrKey": "ST:261279"
+  },
+  {
+    "ID": 2006,
+    "UnlockConds": [
+      {
+        "Type": "SimulationGameUnlockCondType_FameLevel",
+        "P1": 8
+      }
+    ],
+    "Sort": 8,
+    "FamePointsBase": 280,
+    "Voice": "VO_A_SGSHP_XYX_LNSSF_1_7",
+    "ShowConds": [
+      {
+        "Type": "SimulationGameShowType_SpecialActor",
+        "P1": 3007
+      },
+      {
+        "Type": "SimulationGameShowType_ActorTags",
+        "P1": 1,
+        "P2": 1
+      },
+      {
+        "Type": "SimulationGameShowType_ActorNeedNum",
+        "P1": 2
+      }
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/SanGuoOB68_ABS/Icon_qupai_bai.png@Icon_qupai_bai",
+    "TotalTime": 19,
+    "WordSpeed": 6,
+    "NameStrKey": "ST:260382",
+    "WordStrKey": "ST:260422",
+    "ShowCond1MsgStrKey": "ST:260444",
+    "ShowCond2MsgStrKey": "ST:260445",
+    "IntroductionStrKey": "ST:261280"
+  },
+  {
+    "ID": 2007,
+    "UnlockConds": [
+      {
+        "Type": "SimulationGameUnlockCondType_FameLevel",
+        "P1": 3
+      }
+    ],
+    "Sort": 3,
+    "FamePointsBase": 140,
+    "Voice": "VO_A_SGSHP_XYX_LNSSF_1_8",
+    "ShowConds": [
+      {
+        "Type": "SimulationGameShowType_ActorTags",
+        "P1": 3,
+        "P2": 1
+      },
+      {
+        "Type": "SimulationGameShowType_ActorNeedNum",
+        "P1": 2
+      }
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/SanGuoOB68_ABS/Icon_qupai_bai.png@Icon_qupai_bai",
+    "TotalTime": 18,
+    "WordSpeed": 6,
+    "NameStrKey": "ST:260383",
+    "WordStrKey": "ST:260423",
+    "ShowCond1MsgStrKey": "ST:260441",
+    "IntroductionStrKey": "ST:261281"
+  },
+  {
+    "ID": 2008,
+    "UnlockConds": [
+      {
+        "Type": "SimulationGameUnlockCondType_FameLevel",
+        "P1": 14
+      }
+    ],
+    "Sort": 14,
+    "FamePointsBase": 550,
+    "Voice": "VO_A_SGSHP_XYX_LNSSF_1_9",
+    "ShowConds": [
+      {
+        "Type": "SimulationGameShowType_ActorTags",
+        "P1": 3,
+        "P2": 1
+      },
+      {
+        "Type": "SimulationGameShowType_ActorGenderNum",
+        "P1": 1,
+        "P2": 1
+      },
+      {
+        "Type": "SimulationGameShowType_ActorNeedNum",
+        "P1": 2
+      }
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/SanGuoOB68_ABS/Icon_qupai_bai.png@Icon_qupai_bai",
+    "TotalTime": 20,
+    "WordSpeed": 6,
+    "NameStrKey": "ST:260384",
+    "WordStrKey": "ST:260424",
+    "ShowCond1MsgStrKey": "ST:260441",
+    "ShowCond2MsgStrKey": "ST:260532",
+    "IntroductionStrKey": "ST:261282"
+  },
+  {
+    "ID": 2009,
+    "UnlockConds": [
+      {
+        "Type": "SimulationGameUnlockCondType_FameLevel",
+        "P1": 5
+      }
+    ],
+    "Sort": 5,
+    "FamePointsBase": 180,
+    "Voice": "VO_A_SGSHP_XYX_LNSSF_1_10",
+    "ShowConds": [
+      {
+        "Type": "SimulationGameShowType_ActorTags",
+        "P1": 1,
+        "P2": 1
+      },
+      {
+        "Type": "SimulationGameShowType_ActorNeedNum",
+        "P1": 2
+      }
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/SanGuoOB68_ABS/Icon_qupai_bai.png@Icon_qupai_bai",
+    "TotalTime": 18,
+    "WordSpeed": 6,
+    "NameStrKey": "ST:260385",
+    "WordStrKey": "ST:260425",
+    "ShowCond1MsgStrKey": "ST:260445",
+    "IntroductionStrKey": "ST:261283"
+  },
+  {
+    "ID": 2010,
+    "UnlockConds": [
+      {
+        "Type": "SimulationGameUnlockCondType_FameLevel",
+        "P1": 4
+      }
+    ],
+    "Sort": 4,
+    "FamePointsBase": 160,
+    "Voice": "VO_A_SGSHP_XYX_LNSSF_1_11",
+    "ShowConds": [
+      {
+        "Type": "SimulationGameShowType_ActorTags",
+        "P1": 4,
+        "P2": 1
+      },
+      {
+        "Type": "SimulationGameShowType_ActorNeedNum",
+        "P1": 2
+      }
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/SanGuoOB68_ABS/Icon_qupai_bai.png@Icon_qupai_bai",
+    "TotalTime": 18,
+    "WordSpeed": 6,
+    "NameStrKey": "ST:260386",
+    "WordStrKey": "ST:260426",
+    "ShowCond1MsgStrKey": "ST:260439",
+    "IntroductionStrKey": "ST:261284"
+  },
+  {
+    "ID": 2011,
+    "UnlockConds": [
+      {
+        "Type": "SimulationGameUnlockCondType_FameLevel",
+        "P1": 12
+      }
+    ],
+    "Sort": 12,
+    "FamePointsBase": 450,
+    "Voice": "VO_A_SGSHP_XYX_LNSSF_1_12",
+    "ShowConds": [
+      {
+        "Type": "SimulationGameShowType_ActorTags",
+        "P1": 4,
+        "P2": 1
+      },
+      {
+        "Type": "SimulationGameShowType_ActorGenderNum",
+        "P1": 2,
+        "P2": 1
+      },
+      {
+        "Type": "SimulationGameShowType_ActorNeedNum",
+        "P1": 2
+      }
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/SanGuoOB68_ABS/Icon_qupai_bai.png@Icon_qupai_bai",
+    "TotalTime": 20,
+    "WordSpeed": 6,
+    "NameStrKey": "ST:260387",
+    "WordStrKey": "ST:260427",
+    "ShowCond1MsgStrKey": "ST:260439",
+    "ShowCond2MsgStrKey": "ST:260447",
+    "IntroductionStrKey": "ST:261285"
+  },
+  {
+    "ID": 2012,
+    "UnlockConds": [
+      {
+        "Type": "SimulationGameUnlockCondType_FameLevel",
+        "P1": 12
+      }
+    ],
+    "Sort": 12,
+    "FamePointsBase": 450,
+    "Voice": "VO_A_SGSHP_XYX_LNSSF_1_13",
+    "ShowConds": [
+      {
+        "Type": "SimulationGameShowType_ActorTags",
+        "P1": 1,
+        "P2": 1
+      },
+      {
+        "Type": "SimulationGameShowType_ActorGenderNum",
+        "P1": 1,
+        "P2": 2
+      },
+      {
+        "Type": "SimulationGameShowType_ActorNeedNum",
+        "P1": 2
+      }
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/SanGuoOB68_ABS/Icon_qupai_bai.png@Icon_qupai_bai",
+    "TotalTime": 20,
+    "WordSpeed": 6,
+    "NameStrKey": "ST:260388",
+    "WordStrKey": "ST:260428",
+    "ShowCond1MsgStrKey": "ST:260445",
+    "ShowCond2MsgStrKey": "ST:260531",
+    "IntroductionStrKey": "ST:261286"
+  },
+  {
+    "ID": 2013,
+    "UnlockConds": [
+      {
+        "Type": "SimulationGameUnlockCondType_FameLevel",
+        "P1": 6
+      }
+    ],
+    "Sort": 6,
+    "FamePointsBase": 200,
+    "Voice": "VO_A_SGSHP_XYX_LNSSF_1_14",
+    "ShowConds": [
+      {
+        "Type": "SimulationGameShowType_ActorTags",
+        "P1": 1,
+        "P2": 1
+      },
+      {
+        "Type": "SimulationGameShowType_ActorGenderNum",
+        "P1": 1,
+        "P2": 1
+      },
+      {
+        "Type": "SimulationGameShowType_ActorNeedNum",
+        "P1": 2
+      }
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/SanGuoOB68_ABS/Icon_qupai_bai.png@Icon_qupai_bai",
+    "TotalTime": 19,
+    "WordSpeed": 6,
+    "NameStrKey": "ST:260389",
+    "WordStrKey": "ST:260429",
+    "ShowCond1MsgStrKey": "ST:260445",
+    "ShowCond2MsgStrKey": "ST:260532",
+    "IntroductionStrKey": "ST:261287"
+  },
+  {
+    "ID": 2014,
+    "UnlockConds": [
+      {
+        "Type": "SimulationGameUnlockCondType_FameLevel",
+        "P1": 14
+      }
+    ],
+    "Sort": 14,
+    "FamePointsBase": 550,
+    "Voice": "VO_A_SGSHP_XYX_LNSSF_1_15",
+    "ShowConds": [
+      {
+        "Type": "SimulationGameShowType_ActorTags",
+        "P1": 1,
+        "P2": 1
+      },
+      {
+        "Type": "SimulationGameShowType_ActorTags",
+        "P1": 4,
+        "P2": 1
+      },
+      {
+        "Type": "SimulationGameShowType_ActorNeedNum",
+        "P1": 2
+      }
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/SanGuoOB68_ABS/Icon_qupai_bai.png@Icon_qupai_bai",
+    "TotalTime": 20,
+    "WordSpeed": 6,
+    "NameStrKey": "ST:260390",
+    "WordStrKey": "ST:260430",
+    "ShowCond1MsgStrKey": "ST:260445",
+    "ShowCond2MsgStrKey": "ST:260439",
+    "IntroductionStrKey": "ST:261288"
+  },
+  {
+    "ID": 2015,
+    "UnlockConds": [
+      {
+        "Type": "SimulationGameUnlockCondType_FameLevel",
+        "P1": 8
+      }
+    ],
+    "Sort": 8,
+    "FamePointsBase": 280,
+    "Voice": "VO_A_SGSHP_XYX_LNSSF_1_16",
+    "ShowConds": [
+      {
+        "Type": "SimulationGameShowType_ActorTags",
+        "P1": 2,
+        "P2": 1
+      },
+      {
+        "Type": "SimulationGameShowType_ActorGenderNum",
+        "P1": 1,
+        "P2": 2
+      },
+      {
+        "Type": "SimulationGameShowType_ActorNeedNum",
+        "P1": 2
+      }
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/SanGuoOB68_ABS/Icon_qupai_bai.png@Icon_qupai_bai",
+    "TotalTime": 20,
+    "WordSpeed": 6,
+    "NameStrKey": "ST:260391",
+    "WordStrKey": "ST:260431",
+    "ShowCond1MsgStrKey": "ST:260440",
+    "ShowCond2MsgStrKey": "ST:260531",
+    "IntroductionStrKey": "ST:261289"
+  },
+  {
+    "ID": 2016,
+    "UnlockConds": [
+      {
+        "Type": "SimulationGameUnlockCondType_FameLevel",
+        "P1": 13
+      }
+    ],
+    "Sort": 13,
+    "FamePointsBase": 500,
+    "Voice": "VO_A_SGSHP_XYX_LNSSF_1_17",
+    "ShowConds": [
+      {
+        "Type": "SimulationGameShowType_ActorTags",
+        "P1": 2,
+        "P2": 1
+      },
+      {
+        "Type": "SimulationGameShowType_ActorTags",
+        "P1": 4,
+        "P2": 1
+      },
+      {
+        "Type": "SimulationGameShowType_ActorNeedNum",
+        "P1": 2
+      }
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/SanGuoOB68_ABS/Icon_qupai_bai.png@Icon_qupai_bai",
+    "TotalTime": 20,
+    "WordSpeed": 6,
+    "NameStrKey": "ST:260392",
+    "WordStrKey": "ST:262508",
+    "ShowCond1MsgStrKey": "ST:260440",
+    "ShowCond2MsgStrKey": "ST:260439",
+    "IntroductionStrKey": "ST:261290"
+  },
+  {
+    "ID": 2017,
+    "Sort": 1,
+    "FamePointsBase": 100,
+    "Voice": "VO_A_SGSHP_XYX_LNSSF_1_18",
+    "ShowConds": [
+      {
+        "Type": "SimulationGameShowType_ActorGenderNum",
+        "P1": 1,
+        "P2": 1
+      },
+      {
+        "Type": "SimulationGameShowType_ActorNeedNum",
+        "P1": 2
+      }
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/SanGuoOB68_ABS/Icon_qupai_bai.png@Icon_qupai_bai",
+    "TotalTime": 18,
+    "WordSpeed": 6,
+    "NameStrKey": "ST:260393",
+    "WordStrKey": "ST:260433",
+    "ShowCond1MsgStrKey": "ST:260532",
+    "IntroductionStrKey": "ST:261291"
+  },
+  {
+    "ID": 2018,
+    "UnlockConds": [
+      {
+        "Type": "SimulationGameUnlockCondType_FameLevel",
+        "P1": 9
+      }
+    ],
+    "Sort": 9,
+    "FamePointsBase": 320,
+    "Voice": "VO_A_SGSHP_XYX_LNSSF_1_19",
+    "ShowConds": [
+      {
+        "Type": "SimulationGameShowType_ActorTags",
+        "P1": 4,
+        "P2": 1
+      },
+      {
+        "Type": "SimulationGameShowType_ActorGenderNum",
+        "P1": 1,
+        "P2": 1
+      },
+      {
+        "Type": "SimulationGameShowType_ActorNeedNum",
+        "P1": 2
+      }
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/SanGuoOB68_ABS/Icon_qupai_bai.png@Icon_qupai_bai",
+    "TotalTime": 20,
+    "WordSpeed": 6,
+    "NameStrKey": "ST:260394",
+    "WordStrKey": "ST:260434",
+    "ShowCond1MsgStrKey": "ST:260439",
+    "ShowCond2MsgStrKey": "ST:260532",
+    "IntroductionStrKey": "ST:261292"
+  },
+  {
+    "ID": 2019,
+    "UnlockConds": [
+      {
+        "Type": "SimulationGameUnlockCondType_FameLevel",
+        "P1": 10
+      }
+    ],
+    "Sort": 10,
+    "FamePointsBase": 360,
+    "Voice": "VO_A_SGSHP_XYX_LNSSF_1_20",
+    "ShowConds": [
+      {
+        "Type": "SimulationGameShowType_ActorGenderNum",
+        "P1": 1,
+        "P2": 1
+      },
+      {
+        "Type": "SimulationGameShowType_ActorGenderNum",
+        "P1": 1,
+        "P2": 2
+      },
+      {
+        "Type": "SimulationGameShowType_ActorNeedNum",
+        "P1": 2
+      }
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/SanGuoOB68_ABS/Icon_qupai_bai.png@Icon_qupai_bai",
+    "TotalTime": 20,
+    "WordSpeed": 6,
+    "NameStrKey": "ST:260395",
+    "WordStrKey": "ST:260435",
+    "ShowCond1MsgStrKey": "ST:260448",
+    "ShowCond2MsgStrKey": "ST:260446",
+    "IntroductionStrKey": "ST:261293"
+  },
+  {
+    "ID": 2100,
+    "UnlockConds": [
+      {
+        "Type": "SimulationGameUnlockCondType_UnrealSeaLevelFinish",
+        "P1": 6102
+      }
+    ],
+    "Sort": 6101,
+    "FamePointsBase": 100,
+    "Voice": "VO_A_SGSHP_XYX_LNSSF_1_21",
+    "ShowConds": [
+      {
+        "Type": "SimulationGameShowType_ActorNeedNum"
+      }
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/SanGuoOB68_ABS/Icon_qupai_bai.png@Icon_qupai_bai",
+    "TotalTime": 20,
+    "WordSpeed": 6,
+    "NameStrKey": "ST:259811",
+    "WordStrKey": "ST:260488",
+    "ShowCond1MsgStrKey": "ST:262509",
+    "IntroductionStrKey": "ST:261294"
+  },
+  {
+    "ID": 2101,
+    "UnlockConds": [
+      {
+        "Type": "SimulationGameUnlockCondType_UnrealSeaLevelFinish",
+        "P1": 6105
+      }
+    ],
+    "Sort": 6102,
+    "FamePointsBase": 100,
+    "Voice": "VO_A_SGSHP_XYX_LNSSF_1_22",
+    "ShowConds": [
+      {
+        "Type": "SimulationGameShowType_ActorNeedNum"
+      }
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/SanGuoOB68_ABS/Icon_qupai_bai.png@Icon_qupai_bai",
+    "TotalTime": 20,
+    "WordSpeed": 6,
+    "NameStrKey": "ST:260486",
+    "WordStrKey": "ST:260489",
+    "ShowCond1MsgStrKey": "ST:262510",
+    "IntroductionStrKey": "ST:261295"
+  },
+  {
+    "ID": 2102,
+    "UnlockConds": [
+      {
+        "Type": "SimulationGameUnlockCondType_UnrealSeaLevelFinish",
+        "P1": 6109
+      }
+    ],
+    "Sort": 6103,
+    "FamePointsBase": 100,
+    "Voice": "VO_A_SGSHP_XYX_LNSSF_1_23",
+    "ShowConds": [
+      {
+        "Type": "SimulationGameShowType_ActorNeedNum"
+      }
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/SanGuoOB68_ABS/Icon_qupai_bai.png@Icon_qupai_bai",
+    "TotalTime": 20,
+    "WordSpeed": 6,
+    "NameStrKey": "ST:260487",
+    "WordStrKey": "ST:260490",
+    "ShowCond1MsgStrKey": "ST:262511",
+    "IntroductionStrKey": "ST:261296"
+  }
+]

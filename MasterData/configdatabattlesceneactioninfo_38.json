@@ -1,5 +1,42 @@
 [
   {
+    "ID": 41209086,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 41209087,
+    "ActionType": "BattleSceneActionType_Dialog",
+    "Param1": [
+      412091121
+    ]
+  },
+  {
+    "ID": 41209088,
+    "ActionType": "BattleSceneActionType_ActorTurnDir",
+    "Param1": [
+      104
+    ],
+    "Param3": [
+      {
+        "X": 13,
+        "Y": 14
+      }
+    ],
+    "Param4": [
+      300
+    ]
+  },
+  {
+    "ID": 41209089,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
     "ID": 41209090,
     "ActionType": "BattleSceneActionType_Dialog",
     "Param1": [
@@ -14691,50 +14728,5 @@
     "Param1": [
       413013101
     ]
-  },
-  {
-    "ID": 41302001,
-    "ActionType": "BattleSceneActionType_FadeOut",
-    "Param1": [
-      401,
-      402,
-      403,
-      404
-    ],
-    "Param2": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ]
-  },
-  {
-    "ID": 41302002,
-    "ActionType": "BattleSceneActionType_TerrainEffect",
-    "Param1": [
-      10000016
-    ],
-    "Param2": [
-      90001
-    ],
-    "Param3": [
-      {
-        "X": 3,
-        "Y": 14
-      }
-    ]
-  },
-  {
-    "ID": 41302003,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      800
-    ]
-  },
-  {
-    "ID": 41302004,
-    "ActionType": "BattleSceneActionType_CloseLoadingUI"
   }
 ]

@@ -2830,14 +2830,10 @@
       {
         "CondType": "ConditionType_PlayerLevel",
         "P1": 10
-      },
-      {
-        "CondType": "ConditionType_UnrealSeaLevelComplete",
-        "P1": 5001
       }
     ],
     "NameStrKey": "ST:246844",
-    "MessageStrKey": "ST:250711"
+    "MessageStrKey": "ST:265852"
   },
   {
     "ID": 468,
@@ -2917,11 +2913,11 @@
     "OpenCondition": [
       {
         "CondType": "ConditionType_PlayerLevel",
-        "P1": 99
+        "P1": 10
       }
     ],
-    "NameStrKey": "ST:259017",
-    "MessageStrKey": "ST:100018"
+    "NameStrKey": "ST:258979",
+    "MessageStrKey": "ST:100015"
   },
   {
     "ID": 477,
@@ -2944,7 +2940,7 @@
         "P1": 10201
       }
     ],
-    "NameStrKey": "ST:260171",
+    "NameStrKey": "ST:260153",
     "MessageStrKey": "ST:99991"
   },
   {
@@ -2958,5 +2954,74 @@
     ],
     "NameStrKey": "ST:256547",
     "MessageStrKey": "ST:100018"
+  },
+  {
+    "ID": 480,
+    "GameFunctionType": "GameFunctionType_UnrealSeaSanGuo",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "NameStrKey": "ST:262553",
+    "MessageStrKey": "ST:100015"
+  },
+  {
+    "ID": 491,
+    "GameFunctionType": "GameFunctionType_WuDaoCup",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 40
+      }
+    ],
+    "NameStrKey": "ST:265595",
+    "MessageStrKey": "ST:100018"
+  },
+  {
+    "ID": 492,
+    "GameFunctionType": "GameFunctionType_PeakArenaOldWorld",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 55
+      }
+    ],
+    "NameStrKey": "ST:262744"
+  },
+  {
+    "ID": 495,
+    "GameFunctionType": "GameFunctionType_TianYaoYiGe",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 99
+      }
+    ],
+    "NameStrKey": "ST:264573"
+  },
+  {
+    "ID": 496,
+    "GameFunctionType": "GameFunctionType_SixXuanXu",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 60
+      }
+    ],
+    "NameStrKey": "ST:264446",
+    "MessageStrKey": "ST:114040"
+  },
+  {
+    "ID": 497,
+    "GameFunctionType": "GameFunctionType_TaiWuXiShuai",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 99
+      }
+    ],
+    "NameStrKey": "ST:265500"
   }
 ]

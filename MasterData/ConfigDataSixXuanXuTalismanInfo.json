@@ -1,0 +1,577 @@
+[
+  {
+    "ID": 710001,
+    "GroupId": 710001,
+    "BattleEffectIdList": [
+      1001
+    ],
+    "Weight": 1,
+    "Rarity": "Rarity_R",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/FuTuCheng_ABS/FuTuChengAtk_011.png@FuTuChengAtk_011",
+    "NameStrKey": "ST:101999",
+    "DescStrKey": "ST:268136"
+  },
+  {
+    "ID": 710002,
+    "GroupId": 710001,
+    "BattleEffectIdList": [
+      1002
+    ],
+    "Weight": 2,
+    "Rarity": "Rarity_R",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/FuTuCheng_ABS/FuTuChengAll_001.png@FuTuChengAll_001",
+    "NameStrKey": "ST:204705",
+    "DescStrKey": "ST:267933"
+  },
+  {
+    "ID": 710003,
+    "GroupId": 710001,
+    "BattleEffectIdList": [
+      1003
+    ],
+    "Weight": 3,
+    "Rarity": "Rarity_R",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/FuTuCheng_ABS/FuTuChengSup_015.png@FuTuChengSup_015",
+    "NameStrKey": "ST:268026",
+    "DescStrKey": "ST:64276"
+  },
+  {
+    "ID": 710004,
+    "GroupId": 710001,
+    "UnlockConditions": [
+      {
+        "Type": "SixXuanXuUnlockType_LevelCompleted",
+        "P1": 7100303
+      }
+    ],
+    "BattleEffectIdList": [
+      1004
+    ],
+    "Weight": 31,
+    "Rarity": "Rarity_SR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OB71LiuDaoGuiXuImage_ABS/XuanJiFu_001.png@XuanJiFu_001",
+    "NameStrKey": "ST:265979",
+    "DescStrKey": "ST:267934",
+    "UnlockDescStrKey": "ST:267565"
+  },
+  {
+    "ID": 710005,
+    "GroupId": 710001,
+    "UnlockConditions": [
+      {
+        "Type": "SixXuanXuUnlockType_LevelCompleted",
+        "P1": 7100303
+      }
+    ],
+    "BattleEffectIdList": [
+      1005
+    ],
+    "Weight": 32,
+    "Rarity": "Rarity_SR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/FuTuCheng_ABS/FuTuChengDef_007.png@FuTuChengDef_007",
+    "NameStrKey": "ST:265980",
+    "DescStrKey": "ST:267935",
+    "UnlockDescStrKey": "ST:267565"
+  },
+  {
+    "ID": 710006,
+    "GroupId": 710001,
+    "UnlockConditions": [
+      {
+        "Type": "SixXuanXuUnlockType_LevelCompleted",
+        "P1": 7100703
+      }
+    ],
+    "BattleEffectIdList": [
+      1006
+    ],
+    "Weight": 71,
+    "Rarity": "Rarity_SR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/FuTuCheng_ABS/FuTuChengAtk_007.png@FuTuChengAtk_007",
+    "NameStrKey": "ST:265981",
+    "DescStrKey": "ST:267936",
+    "UnlockDescStrKey": "ST:267909"
+  },
+  {
+    "ID": 710007,
+    "GroupId": 710001,
+    "UnlockConditions": [
+      {
+        "Type": "SixXuanXuUnlockType_LevelCompleted",
+        "P1": 7100203
+      }
+    ],
+    "BattleEffectIdList": [
+      1007
+    ],
+    "Weight": 22,
+    "Rarity": "Rarity_SR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OB71LiuDaoGuiXuImage_ABS/XuanJiFu_005.png@XuanJiFu_005",
+    "NameStrKey": "ST:265982",
+    "DescStrKey": "ST:267937",
+    "UnlockDescStrKey": "ST:267564"
+  },
+  {
+    "ID": 710008,
+    "GroupId": 710001,
+    "UnlockConditions": [
+      {
+        "Type": "SixXuanXuUnlockType_LevelCompleted",
+        "P1": 7100503
+      }
+    ],
+    "BattleEffectIdList": [
+      1008
+    ],
+    "Weight": 51,
+    "Rarity": "Rarity_SR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/FuTuCheng_ABS/FuTuChengAtk_009.png@FuTuChengAtk_009",
+    "NameStrKey": "ST:265983",
+    "DescStrKey": "ST:267938",
+    "UnlockDescStrKey": "ST:267567"
+  },
+  {
+    "ID": 710009,
+    "GroupId": 710001,
+    "UnlockConditions": [
+      {
+        "Type": "SixXuanXuUnlockType_LevelCompleted",
+        "P1": 7100503
+      }
+    ],
+    "BattleEffectIdList": [
+      1009
+    ],
+    "Weight": 52,
+    "Rarity": "Rarity_SR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/FuTuCheng_ABS/FuTuChengSup_008.png@FuTuChengSup_008",
+    "NameStrKey": "ST:265984",
+    "DescStrKey": "ST:267939",
+    "UnlockDescStrKey": "ST:267567"
+  },
+  {
+    "ID": 710010,
+    "GroupId": 710001,
+    "UnlockConditions": [
+      {
+        "Type": "SixXuanXuUnlockType_LevelCompleted",
+        "P1": 7100203
+      }
+    ],
+    "BattleEffectIdList": [
+      1010
+    ],
+    "Weight": 21,
+    "Rarity": "Rarity_SR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/FuTuCheng_ABS/FuTuChengAtk_010.png@FuTuChengAtk_010",
+    "NameStrKey": "ST:265985",
+    "DescStrKey": "ST:267966",
+    "UnlockDescStrKey": "ST:267564"
+  },
+  {
+    "ID": 710011,
+    "GroupId": 710001,
+    "UnlockConditions": [
+      {
+        "Type": "SixXuanXuUnlockType_LevelCompleted",
+        "P1": 7100103
+      }
+    ],
+    "BattleEffectIdList": [
+      1011
+    ],
+    "Weight": 11,
+    "Rarity": "Rarity_SR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/FuTuCheng_ABS/FuTuChengAtk_008.png@FuTuChengAtk_008",
+    "NameStrKey": "ST:265986",
+    "DescStrKey": "ST:267941",
+    "UnlockDescStrKey": "ST:267563"
+  },
+  {
+    "ID": 710012,
+    "GroupId": 710001,
+    "UnlockConditions": [
+      {
+        "Type": "SixXuanXuUnlockType_LevelCompleted",
+        "P1": 7100103
+      }
+    ],
+    "BattleEffectIdList": [
+      1012,
+      1013
+    ],
+    "Weight": 12,
+    "Rarity": "Rarity_SR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OB71LiuDaoGuiXuImage_ABS/XuanJiFu_004.png@XuanJiFu_004",
+    "NameStrKey": "ST:265987",
+    "DescStrKey": "ST:268075",
+    "UnlockDescStrKey": "ST:267563"
+  },
+  {
+    "ID": 710013,
+    "GroupId": 710001,
+    "UnlockConditions": [
+      {
+        "Type": "SixXuanXuUnlockType_LevelCompleted",
+        "P1": 7100603
+      }
+    ],
+    "BattleEffectIdList": [
+      1014
+    ],
+    "Weight": 61,
+    "Rarity": "Rarity_SR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OB71LiuDaoGuiXuImage_ABS/XuanJiFu_003.png@XuanJiFu_003",
+    "NameStrKey": "ST:265988",
+    "DescStrKey": "ST:267943",
+    "UnlockDescStrKey": "ST:267568"
+  },
+  {
+    "ID": 710014,
+    "GroupId": 710001,
+    "UnlockConditions": [
+      {
+        "Type": "SixXuanXuUnlockType_LevelCompleted",
+        "P1": 7100603
+      }
+    ],
+    "BattleEffectIdList": [
+      1015
+    ],
+    "Weight": 163,
+    "Rarity": "Rarity_SSR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/FuTuCheng_ABS/FuTuChengSup_014.png@FuTuChengSup_014",
+    "NameStrKey": "ST:265989",
+    "DescStrKey": "ST:267944",
+    "UnlockDescStrKey": "ST:267568"
+  },
+  {
+    "ID": 710015,
+    "GroupId": 710001,
+    "UnlockConditions": [
+      {
+        "Type": "SixXuanXuUnlockType_LevelCompleted",
+        "P1": 7100403
+      }
+    ],
+    "BattleEffectIdList": [
+      1016
+    ],
+    "Weight": 41,
+    "Rarity": "Rarity_SR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/FuTuCheng_ABS/FuTuChengHp_001.png@FuTuChengHp_001",
+    "NameStrKey": "ST:265990",
+    "DescStrKey": "ST:268028",
+    "UnlockDescStrKey": "ST:267566"
+  },
+  {
+    "ID": 710016,
+    "GroupId": 710001,
+    "UnlockConditions": [
+      {
+        "Type": "SixXuanXuUnlockType_LevelCompleted",
+        "P1": 7100403
+      }
+    ],
+    "BattleEffectIdList": [
+      1017
+    ],
+    "Weight": 42,
+    "Rarity": "Rarity_SR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OB71LiuDaoGuiXuImage_ABS/XuanJiFu_002.png@XuanJiFu_002",
+    "NameStrKey": "ST:265991",
+    "DescStrKey": "ST:268029",
+    "UnlockDescStrKey": "ST:267566"
+  },
+  {
+    "ID": 710017,
+    "GroupId": 710001,
+    "UnlockConditions": [
+      {
+        "Type": "SixXuanXuUnlockType_LevelCompleted",
+        "P1": 7100203
+      }
+    ],
+    "BattleEffectIdList": [
+      1018
+    ],
+    "Weight": 23,
+    "Rarity": "Rarity_SR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/FuTuCheng_ABS/FuTuChengSup_019.png@FuTuChengSup_019",
+    "NameStrKey": "ST:265992",
+    "DescStrKey": "ST:267947",
+    "UnlockDescStrKey": "ST:267564"
+  },
+  {
+    "ID": 710018,
+    "GroupId": 710001,
+    "UnlockConditions": [
+      {
+        "Type": "SixXuanXuUnlockType_LevelCompleted",
+        "P1": 7100603
+      }
+    ],
+    "BattleEffectIdList": [
+      1029
+    ],
+    "Weight": 162,
+    "Rarity": "Rarity_SSR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/FuTuCheng_ABS/FuTuChengSup_020.png@FuTuChengSup_020",
+    "NameStrKey": "ST:21284",
+    "DescStrKey": "ST:268159",
+    "UnlockDescStrKey": "ST:267568"
+  },
+  {
+    "ID": 710019,
+    "GroupId": 710001,
+    "UnlockConditions": [
+      {
+        "Type": "SixXuanXuUnlockType_LevelCompleted",
+        "P1": 7100103
+      }
+    ],
+    "BattleEffectIdList": [
+      1028
+    ],
+    "Weight": 13,
+    "Rarity": "Rarity_SR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/FuTuCheng_ABS/FuTuChengAtk_014.png@FuTuChengAtk_014",
+    "NameStrKey": "ST:265993",
+    "DescStrKey": "ST:267949",
+    "UnlockDescStrKey": "ST:267563"
+  },
+  {
+    "ID": 710020,
+    "GroupId": 710001,
+    "UnlockConditions": [
+      {
+        "Type": "SixXuanXuUnlockType_LevelCompleted",
+        "P1": 7100303
+      }
+    ],
+    "BattleEffectIdList": [
+      2004,
+      2005
+    ],
+    "Weight": 33,
+    "Rarity": "Rarity_SR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/FuTuCheng_ABS/FuTuChengRole_015.png@FuTuChengRole_015",
+    "NameStrKey": "ST:265994",
+    "DescStrKey": "ST:268076",
+    "UnlockDescStrKey": "ST:267565"
+  },
+  {
+    "ID": 710021,
+    "GroupId": 710001,
+    "UnlockConditions": [
+      {
+        "Type": "SixXuanXuUnlockType_LevelCompleted",
+        "P1": 7100703
+      }
+    ],
+    "BattleEffectIdList": [
+      1020
+    ],
+    "Weight": 172,
+    "Rarity": "Rarity_SSR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/FuTuCheng_ABS/FuTuChengAttr_001.png@FuTuChengAttr_001",
+    "NameStrKey": "ST:265995",
+    "DescStrKey": "ST:268030",
+    "UnlockDescStrKey": "ST:267909"
+  },
+  {
+    "ID": 710022,
+    "GroupId": 710001,
+    "UnlockConditions": [
+      {
+        "Type": "SixXuanXuUnlockType_LevelCompleted",
+        "P1": 7100803
+      }
+    ],
+    "BattleEffectIdList": [
+      1021,
+      1022
+    ],
+    "Weight": 183,
+    "Rarity": "Rarity_SSR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/FuTuCheng_ABS/FuTuChengAtk_018.png@FuTuChengAtk_018",
+    "NameStrKey": "ST:62751",
+    "DescStrKey": "ST:268077",
+    "UnlockDescStrKey": "ST:267910"
+  },
+  {
+    "ID": 710023,
+    "GroupId": 710001,
+    "UnlockConditions": [
+      {
+        "Type": "SixXuanXuUnlockType_LevelCompleted",
+        "P1": 7100903
+      }
+    ],
+    "BattleEffectIdList": [
+      1023
+    ],
+    "Weight": 193,
+    "Rarity": "Rarity_SSR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/FuTuCheng_ABS/FuTuChengRole_016.png@FuTuChengRole_016",
+    "NameStrKey": "ST:265996",
+    "DescStrKey": "ST:268078",
+    "UnlockDescStrKey": "ST:267911"
+  },
+  {
+    "ID": 710024,
+    "GroupId": 710001,
+    "UnlockConditions": [
+      {
+        "Type": "SixXuanXuUnlockType_LevelCompleted",
+        "P1": 7100503
+      }
+    ],
+    "BattleEffectIdList": [
+      1024
+    ],
+    "Weight": 53,
+    "Rarity": "Rarity_SR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/FuTuCheng_ABS/FuTuChengSup_017.png@FuTuChengSup_017",
+    "NameStrKey": "ST:265997",
+    "DescStrKey": "ST:268079",
+    "UnlockDescStrKey": "ST:267567"
+  },
+  {
+    "ID": 710025,
+    "GroupId": 710001,
+    "UnlockConditions": [
+      {
+        "Type": "SixXuanXuUnlockType_LevelCompleted",
+        "P1": 7100703
+      }
+    ],
+    "BattleEffectIdList": [
+      1025
+    ],
+    "Weight": 173,
+    "Rarity": "Rarity_SSR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/OB71LiuDaoGuiXuImage_ABS/XuanJiFu_006.png@XuanJiFu_006",
+    "NameStrKey": "ST:265998",
+    "DescStrKey": "ST:267954",
+    "UnlockDescStrKey": "ST:267909"
+  },
+  {
+    "ID": 710026,
+    "GroupId": 710001,
+    "UnlockConditions": [
+      {
+        "Type": "SixXuanXuUnlockType_LevelCompleted",
+        "P1": 7100903
+      }
+    ],
+    "BattleEffectIdList": [
+      1026
+    ],
+    "Weight": 191,
+    "Rarity": "Rarity_SSR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/FuTuCheng_ABS/FuTuChengSup_010.png@FuTuChengSup_010",
+    "NameStrKey": "ST:265999",
+    "DescStrKey": "ST:268058",
+    "UnlockDescStrKey": "ST:267911"
+  },
+  {
+    "ID": 710027,
+    "GroupId": 710001,
+    "UnlockConditions": [
+      {
+        "Type": "SixXuanXuUnlockType_LevelCompleted",
+        "P1": 7100403
+      }
+    ],
+    "BattleEffectIdList": [
+      2007
+    ],
+    "Weight": 43,
+    "Rarity": "Rarity_SR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/FuTuCheng_ABS/FuTuChengEvent_001.png@FuTuChengEvent_001",
+    "NameStrKey": "ST:266000",
+    "DescStrKey": "ST:268033",
+    "UnlockDescStrKey": "ST:267566"
+  },
+  {
+    "ID": 710028,
+    "GroupId": 710001,
+    "UnlockConditions": [
+      {
+        "Type": "SixXuanXuUnlockType_LevelCompleted",
+        "P1": 7100803
+      }
+    ],
+    "BattleEffectIdList": [
+      1030,
+      1031
+    ],
+    "Weight": 181,
+    "Rarity": "Rarity_SSR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/FuTuCheng_ABS/FuTuChengSup_005.png@FuTuChengSup_005",
+    "NameStrKey": "ST:266001",
+    "DescStrKey": "ST:267957",
+    "UnlockDescStrKey": "ST:267910"
+  },
+  {
+    "ID": 710029,
+    "GroupId": 710001,
+    "UnlockConditions": [
+      {
+        "Type": "SixXuanXuUnlockType_LevelCompleted",
+        "P1": 7100803
+      }
+    ],
+    "BattleEffectIdList": [
+      1035,
+      1036
+    ],
+    "Weight": 182,
+    "Rarity": "Rarity_SSR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/FuTuCheng_ABS/FuTuChengSup_004.png@FuTuChengSup_004",
+    "NameStrKey": "ST:266002",
+    "DescStrKey": "ST:267958",
+    "UnlockDescStrKey": "ST:267910"
+  },
+  {
+    "ID": 710030,
+    "GroupId": 710001,
+    "UnlockConditions": [
+      {
+        "Type": "SixXuanXuUnlockType_LevelCompleted",
+        "P1": 7100903
+      }
+    ],
+    "BattleEffectIdList": [
+      2008,
+      2009
+    ],
+    "Weight": 192,
+    "Rarity": "Rarity_SSR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/FuTuCheng_ABS/FuTuChengSup_022.png@FuTuChengSup_022",
+    "NameStrKey": "ST:266003",
+    "DescStrKey": "ST:267959",
+    "UnlockDescStrKey": "ST:267911"
+  },
+  {
+    "ID": 710031,
+    "GroupId": 710001,
+    "UnlockConditions": [
+      {
+        "Type": "SixXuanXuUnlockType_LevelCompleted",
+        "P1": 7101003
+      }
+    ],
+    "BattleEffectIdList": [
+      2006
+    ],
+    "DisableOthers": true,
+    "Weight": 201,
+    "Rarity": "Rarity_SSR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/FuTuCheng_ABS/FuTuChengEvent_003.png@FuTuChengEvent_003",
+    "NameStrKey": "ST:266004",
+    "DescStrKey": "ST:267960",
+    "UnlockDescStrKey": "ST:267569"
+  }
+]

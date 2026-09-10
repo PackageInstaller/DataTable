@@ -238,5 +238,85 @@
       }
     ],
     "NameStrKey": "ST:234005"
+  },
+  {
+    "ID": 6901,
+    "FillGroups": [
+      69002
+    ],
+    "CoreGroupID": 69001,
+    "GuaranteeTimes": 25,
+    "TrackUpTimes": 3,
+    "SingleConsumeItems": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020460,
+        "Count": 1
+      }
+    ],
+    "NameStrKey": "ST:234004"
+  },
+  {
+    "ID": 6902,
+    "UnlockConditions": [
+      {
+        "PoolId": 6901,
+        "TrackNum": 1
+      }
+    ],
+    "FillGroups": [
+      69002
+    ],
+    "CoreGroupID": 69001,
+    "GuaranteeTimes": 25,
+    "TrackUpTimes": 3,
+    "SingleConsumeItems": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020460,
+        "Count": 1
+      }
+    ],
+    "NameStrKey": "ST:234005"
+  },
+  {
+    "ID": 7101,
+    "FillGroups": [
+      71002
+    ],
+    "CoreGroupID": 71001,
+    "GuaranteeTimes": 25,
+    "TrackUpTimes": 3,
+    "SingleConsumeItems": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020460,
+        "Count": 1
+      }
+    ],
+    "NameStrKey": "ST:234004"
+  },
+  {
+    "ID": 7102,
+    "UnlockConditions": [
+      {
+        "PoolId": 7101,
+        "TrackNum": 1
+      }
+    ],
+    "FillGroups": [
+      71002
+    ],
+    "CoreGroupID": 71001,
+    "GuaranteeTimes": 25,
+    "TrackUpTimes": 3,
+    "SingleConsumeItems": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020460,
+        "Count": 1
+      }
+    ],
+    "NameStrKey": "ST:234005"
   }
 ]

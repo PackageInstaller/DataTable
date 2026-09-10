@@ -783,7 +783,7 @@
   {
     "ID": 110,
     "PoolType": "StaticActorPoolType_EquipSeparator",
-    "Param1": 57
+    "Param1": 77
   },
   {
     "ID": 111,
@@ -947,5 +947,125 @@
       824100716,
       824100717
     ]
+  },
+  {
+    "ID": 130,
+    "PoolType": "StaticActorPoolType_SkillEffectMercenary",
+    "FilterParams": [
+      824100801,
+      824100802
+    ]
+  },
+  {
+    "ID": 131,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 75
+  },
+  {
+    "ID": 132,
+    "PoolType": "StaticActorPoolType_BotGame",
+    "Param1": 6
+  },
+  {
+    "ID": 133,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 78
+  },
+  {
+    "ID": 134,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 79
+  },
+  {
+    "ID": 135,
+    "PoolType": "StaticActorPoolType_Mercenary",
+    "FilterParams": [
+      824100300,
+      824100301,
+      824100302,
+      824100303,
+      824100304,
+      824100305,
+      824100306,
+      824100307,
+      824100308,
+      824100309,
+      824100310,
+      824100311,
+      824100312,
+      824100313,
+      824100332
+    ]
+  },
+  {
+    "ID": 136,
+    "PoolType": "StaticActorPoolType_Union",
+    "FilterParams": [
+      134,
+      135
+    ]
+  },
+  {
+    "ID": 137,
+    "PoolType": "StaticActorPoolType_Mercenary",
+    "FilterParams": [
+      824100701,
+      824100702,
+      824100703,
+      824100704,
+      824100705,
+      824100706,
+      824100707,
+      824100708,
+      824100709,
+      824100710,
+      824100711,
+      824100712,
+      824100713,
+      824100714,
+      824100715,
+      824100716,
+      824100717
+    ]
+  },
+  {
+    "ID": 138,
+    "PoolType": "StaticActorPoolType_BotGame",
+    "Param1": 101
+  },
+  {
+    "ID": 139,
+    "PoolType": "StaticActorPoolType_BotGameReward",
+    "Param1": 101
+  },
+  {
+    "ID": 140,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 82
+  },
+  {
+    "ID": 141,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 80
+  },
+  {
+    "ID": 142,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 84
+  },
+  {
+    "ID": 143,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 83
+  },
+  {
+    "ID": 144,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 86
+  },
+  {
+    "ID": 7101,
+    "PoolType": "StaticActorPoolType_BotGame",
+    "Param1": 7
   }
 ]

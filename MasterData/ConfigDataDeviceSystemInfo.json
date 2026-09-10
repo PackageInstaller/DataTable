@@ -743,5 +743,10 @@
     "ID": 245,
     "GpuNameMatchStr": "(?:MT6762)",
     "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 246,
+    "GpuNameMatchStr": "(?:Mali).*(?:G57\\b).*(?:MC2\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
   }
 ]

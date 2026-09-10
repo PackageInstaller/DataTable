@@ -1,5 +1,44 @@
 [
   {
+    "ID": 52100149,
+    "ActionType": "BattleSceneActionType_Replace",
+    "Param1": [
+      202
+    ],
+    "Param2": [
+      0,
+      0,
+      152060000,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "ID": 52100150,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 52100151,
+    "ActionType": "BattleSceneActionType_CameraFocusActor",
+    "Param1": [
+      6
+    ],
+    "Param2": [
+      203
+    ]
+  },
+  {
+    "ID": 52100152,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
     "ID": 52100153,
     "ActionType": "BattleSceneActionType_ActorEffect",
     "Param1": [
@@ -21570,89 +21609,6 @@
     "Param9": [
       0,
       0
-    ]
-  },
-  {
-    "ID": 52124515,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      1000
-    ]
-  },
-  {
-    "ID": 52124516,
-    "ActionType": "BattleSceneActionType_Dialog",
-    "Param1": [
-      521241606
-    ]
-  },
-  {
-    "ID": 52124521,
-    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
-    "Param1": [
-      1000
-    ],
-    "Param3": [
-      {
-        "X": 3,
-        "Y": 8
-      }
-    ]
-  },
-  {
-    "ID": 52124522,
-    "ActionType": "BattleSceneActionType_SummonNear",
-    "Param1": [
-      4,
-      4
-    ],
-    "Param2": [
-      22,
-      22
-    ],
-    "Param3": [
-      {
-        "X": 2,
-        "Y": 6
-      },
-      {
-        "X": 5,
-        "Y": 9
-      }
-    ],
-    "Param4": [
-      152100251,
-      152100251
-    ],
-    "Param6": [
-      0,
-      0
-    ],
-    "Param7": [
-      {
-        "X": 6,
-        "Y": 8
-      },
-      {
-        "X": 6,
-        "Y": 8
-      }
-    ],
-    "Param8": [
-      10000,
-      10000
-    ],
-    "Param9": [
-      1,
-      1
-    ],
-    "Param10": [
-      292,
-      293
-    ],
-    "Param11": [
-      2,
-      2
     ]
   }
 ]

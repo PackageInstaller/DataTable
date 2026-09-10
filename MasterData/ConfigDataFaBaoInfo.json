@@ -504,6 +504,18 @@
     "FaBaoDescStrKey": "ST:244464"
   },
   {
+    "ID": 2006,
+    "Type": "FaBaoType_Challenge",
+    "SmallIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/Icon/Artifact_1017.png@Artifact_1017",
+    "Spine": "Assets/GameProject/RuntimeAssets/Spine/Fabao/FX_Artifact1013_ABS/FX_Artifact1013_Graphic_Prefab.prefab",
+    "ActorSign": "ActorSign_None",
+    "DefaultBtName": "FaBao",
+    "CharacterID": 120010,
+    "NameStrKey": "ST:266311",
+    "RichNameStrKey": "ST:266311",
+    "FaBaoDescStrKey": "ST:266311"
+  },
+  {
     "ID": 5101,
     "Type": "FaBaoType_Challenge",
     "BattleIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/NoTag/Fight_27.png@Fight_27",
@@ -566,5 +578,54 @@
     "NameStrKey": "ST:182385",
     "RichNameStrKey": "ST:182385",
     "FaBaoDescStrKey": "ST:182385"
+  },
+  {
+    "ID": 5501,
+    "Type": "FaBaoType_Challenge",
+    "BattleIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/NoTag/Fight_28.png@Fight_28",
+    "SmallIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/Icon/Artifact_1003.png@Artifact_1003",
+    "Spine": "Assets/GameProject/RuntimeAssets/Spine/Fabao/FX_Artifact1003_ABS/FX_Artifact1003_Graphic_Prefab.prefab",
+    "ActorSign": "ActorSign_Light",
+    "DefaultBtName": "FaBao",
+    "SoulSlots": [
+      55011000
+    ],
+    "CharacterID": 120010,
+    "NameStrKey": "ST:182183",
+    "RichNameStrKey": "ST:182183",
+    "FaBaoDescStrKey": "ST:182183"
+  },
+  {
+    "ID": 7001,
+    "Type": "FaBaoType_Challenge",
+    "SmallIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/Icon/huiqi2_blue.png@huiqi2_blue",
+    "ActorSign": "ActorSign_None",
+    "DefaultBtName": "FaBao",
+    "CharacterID": 120010,
+    "NameStrKey": "ST:264582",
+    "RichNameStrKey": "ST:264582",
+    "FaBaoDescStrKey": "ST:264582"
+  },
+  {
+    "ID": 7002,
+    "Type": "FaBaoType_Challenge",
+    "SmallIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/Icon/huiqi2_red.png@huiqi2_red",
+    "ActorSign": "ActorSign_None",
+    "DefaultBtName": "FaBao",
+    "CharacterID": 120010,
+    "NameStrKey": "ST:264583",
+    "RichNameStrKey": "ST:264583",
+    "FaBaoDescStrKey": "ST:264583"
+  },
+  {
+    "ID": 7003,
+    "Type": "FaBaoType_Challenge",
+    "SmallIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/Icon/huiqi2_light.png@huiqi2_light",
+    "ActorSign": "ActorSign_None",
+    "DefaultBtName": "FaBao",
+    "CharacterID": 120010,
+    "NameStrKey": "ST:264584",
+    "RichNameStrKey": "ST:264584",
+    "FaBaoDescStrKey": "ST:264584"
   }
 ]

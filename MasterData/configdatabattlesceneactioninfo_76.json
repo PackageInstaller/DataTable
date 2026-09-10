@@ -1,5 +1,63 @@
 [
   {
+    "ID": 50202640,
+    "ActionType": "BattleSceneActionType_HurtActorHpPercentByGridPosition",
+    "Param1": [
+      8000
+    ],
+    "Param3": [
+      {
+        "X": 11,
+        "Y": 12
+      }
+    ]
+  },
+  {
+    "ID": 50202641,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      0
+    ],
+    "Param2": [
+      10224
+    ],
+    "Param3": [
+      {
+        "X": 12,
+        "Y": 11
+      }
+    ]
+  },
+  {
+    "ID": 50202642,
+    "ActionType": "BattleSceneActionType_HurtActorHpPercentByGridPosition",
+    "Param1": [
+      8000
+    ],
+    "Param3": [
+      {
+        "X": 12,
+        "Y": 11
+      }
+    ]
+  },
+  {
+    "ID": 50202643,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      0
+    ],
+    "Param2": [
+      10211
+    ],
+    "Param3": [
+      {
+        "X": 10,
+        "Y": 11
+      }
+    ]
+  },
+  {
     "ID": 50202644,
     "ActionType": "BattleSceneActionType_TerrainEffect",
     "Param1": [
@@ -17392,47 +17450,5 @@
       245
     ],
     "SkipCondId": 50301711
-  },
-  {
-    "ID": 50301210,
-    "ActionType": "BattleSceneActionType_DetachBuff",
-    "Param1": [
-      243
-    ],
-    "Param2": [
-      700000010
-    ],
-    "Param4": [
-      1
-    ],
-    "SkipCondId": 50301709
-  },
-  {
-    "ID": 50301211,
-    "ActionType": "BattleSceneActionType_DetachBuff",
-    "Param1": [
-      246
-    ],
-    "Param2": [
-      700000010
-    ],
-    "Param4": [
-      1
-    ],
-    "SkipCondId": 50301712
-  },
-  {
-    "ID": 50301212,
-    "ActionType": "BattleSceneActionType_BattleEventTriggerFail",
-    "Param1": [
-      50301709
-    ]
-  },
-  {
-    "ID": 50301213,
-    "ActionType": "BattleSceneActionType_BattleEventTriggerFail",
-    "Param1": [
-      50301712
-    ]
   }
 ]

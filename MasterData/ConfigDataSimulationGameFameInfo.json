@@ -1,0 +1,481 @@
+[
+  {
+    "ID": 1001,
+    "GroupId": 1,
+    "Level": 1,
+    "FamePoints": 100,
+    "InComeBase": 1000,
+    "GiftRateBase": 20,
+    "GiftTime": 1,
+    "GiftInComes": [
+      500,
+      600,
+      700
+    ],
+    "AudienceCount": 3,
+    "AudienceStartTime": 2,
+    "AudienceEndTime": 8,
+    "EmotionStartTime": 7,
+    "EmotionEndTime": 16,
+    "EmotionsWeigth": [
+      0,
+      2,
+      1,
+      2,
+      0,
+      0
+    ],
+    "EmotionsInComeWeigth": [
+      40,
+      60,
+      0
+    ]
+  },
+  {
+    "ID": 1002,
+    "GroupId": 1,
+    "Level": 2,
+    "FamePoints": 300,
+    "InComeBase": 2000,
+    "GiftRateBase": 20,
+    "GiftTime": 1,
+    "GiftInComes": [
+      1000,
+      1200,
+      1400
+    ],
+    "AudienceCount": 4,
+    "AudienceStartTime": 2,
+    "AudienceEndTime": 8,
+    "EmotionStartTime": 7,
+    "EmotionEndTime": 16,
+    "EmotionsWeigth": [
+      0,
+      2,
+      1,
+      3,
+      0,
+      0
+    ],
+    "EmotionsInComeWeigth": [
+      50,
+      50,
+      0
+    ]
+  },
+  {
+    "ID": 1003,
+    "GroupId": 1,
+    "Level": 3,
+    "FamePoints": 600,
+    "InComeBase": 4000,
+    "GiftRateBase": 20,
+    "GiftTime": 2,
+    "GiftInComes": [
+      1000,
+      1200,
+      1400
+    ],
+    "AudienceCount": 5,
+    "AudienceStartTime": 2,
+    "AudienceEndTime": 8,
+    "EmotionStartTime": 7,
+    "EmotionEndTime": 16,
+    "EmotionsWeigth": [
+      0,
+      1,
+      2,
+      5,
+      1,
+      1
+    ],
+    "EmotionsInComeWeigth": [
+      40,
+      40,
+      20
+    ]
+  },
+  {
+    "ID": 1004,
+    "GroupId": 1,
+    "Level": 4,
+    "FamePoints": 1000,
+    "InComeBase": 6000,
+    "GiftRateBase": 20,
+    "GiftTime": 2,
+    "GiftInComes": [
+      1400,
+      1600,
+      1800
+    ],
+    "AudienceCount": 6,
+    "AudienceStartTime": 1,
+    "AudienceEndTime": 10,
+    "EmotionStartTime": 7,
+    "EmotionEndTime": 16,
+    "EmotionsWeigth": [
+      0,
+      1,
+      2,
+      5,
+      1,
+      2
+    ],
+    "EmotionsInComeWeigth": [
+      30,
+      40,
+      30
+    ]
+  },
+  {
+    "ID": 1005,
+    "GroupId": 1,
+    "Level": 5,
+    "FamePoints": 1500,
+    "InComeBase": 8000,
+    "GiftRateBase": 20,
+    "GiftTime": 3,
+    "GiftInComes": [
+      1400,
+      1600,
+      1800
+    ],
+    "AudienceCount": 7,
+    "AudienceStartTime": 1,
+    "AudienceEndTime": 10,
+    "EmotionStartTime": 7,
+    "EmotionEndTime": 16,
+    "EmotionsWeigth": [
+      0,
+      1,
+      3,
+      5,
+      1,
+      4
+    ],
+    "EmotionsInComeWeigth": [
+      20,
+      50,
+      30
+    ]
+  },
+  {
+    "ID": 1006,
+    "GroupId": 1,
+    "Level": 6,
+    "FamePoints": 3000,
+    "InComeBase": 11000,
+    "GiftRateBase": 30,
+    "GiftTime": 4,
+    "GiftInComes": [
+      1400,
+      1600,
+      1800
+    ],
+    "AudienceCount": 8,
+    "AudienceStartTime": 1,
+    "AudienceEndTime": 10,
+    "EmotionStartTime": 6,
+    "EmotionEndTime": 16,
+    "EmotionsWeigth": [
+      0,
+      1,
+      3,
+      5,
+      2,
+      5
+    ],
+    "EmotionsInComeWeigth": [
+      10,
+      50,
+      40
+    ]
+  },
+  {
+    "ID": 1007,
+    "GroupId": 1,
+    "Level": 7,
+    "FamePoints": 5000,
+    "InComeBase": 14000,
+    "GiftRateBase": 30,
+    "GiftTime": 4,
+    "GiftInComes": [
+      1800,
+      2000,
+      2200
+    ],
+    "AudienceCount": 9,
+    "AudienceStartTime": 1,
+    "AudienceEndTime": 11,
+    "EmotionStartTime": 6,
+    "EmotionEndTime": 16,
+    "EmotionsWeigth": [
+      0,
+      1,
+      3,
+      5,
+      2,
+      6
+    ],
+    "EmotionsInComeWeigth": [
+      10,
+      50,
+      40
+    ]
+  },
+  {
+    "ID": 1008,
+    "GroupId": 1,
+    "Level": 8,
+    "FamePoints": 7500,
+    "InComeBase": 17000,
+    "GiftRateBase": 30,
+    "GiftTime": 5,
+    "GiftInComes": [
+      1800,
+      2000,
+      2200
+    ],
+    "AudienceCount": 10,
+    "AudienceStartTime": 1,
+    "AudienceEndTime": 11,
+    "EmotionStartTime": 6,
+    "EmotionEndTime": 16,
+    "EmotionsWeigth": [
+      0,
+      1,
+      3,
+      6,
+      3,
+      6
+    ],
+    "EmotionsInComeWeigth": [
+      10,
+      50,
+      40
+    ]
+  },
+  {
+    "ID": 1009,
+    "GroupId": 1,
+    "Level": 9,
+    "FamePoints": 10500,
+    "InComeBase": 20000,
+    "GiftRateBase": 30,
+    "GiftTime": 6,
+    "GiftInComes": [
+      1800,
+      2000,
+      2200
+    ],
+    "AudienceCount": 11,
+    "AudienceStartTime": 1,
+    "AudienceEndTime": 11,
+    "EmotionStartTime": 5,
+    "EmotionEndTime": 16,
+    "EmotionsWeigth": [
+      0,
+      0,
+      2,
+      5,
+      4,
+      7
+    ],
+    "EmotionsInComeWeigth": [
+      0,
+      60,
+      40
+    ]
+  },
+  {
+    "ID": 1010,
+    "GroupId": 1,
+    "Level": 10,
+    "FamePoints": 14000,
+    "InComeBase": 24000,
+    "GiftRateBase": 30,
+    "GiftTime": 6,
+    "GiftInComes": [
+      2200,
+      2400,
+      2600
+    ],
+    "AudienceCount": 12,
+    "AudienceStartTime": 1,
+    "AudienceEndTime": 13,
+    "EmotionStartTime": 5,
+    "EmotionEndTime": 16,
+    "EmotionsWeigth": [
+      0,
+      0,
+      2,
+      5,
+      5,
+      8
+    ],
+    "EmotionsInComeWeigth": [
+      0,
+      50,
+      50
+    ]
+  },
+  {
+    "ID": 1011,
+    "GroupId": 1,
+    "Level": 11,
+    "FamePoints": 21000,
+    "InComeBase": 28000,
+    "GiftRateBase": 40,
+    "GiftTime": 7,
+    "GiftInComes": [
+      2200,
+      2400,
+      2600
+    ],
+    "AudienceCount": 13,
+    "AudienceStartTime": 1,
+    "AudienceEndTime": 13,
+    "EmotionStartTime": 5,
+    "EmotionEndTime": 16,
+    "EmotionsWeigth": [
+      0,
+      0,
+      1,
+      5,
+      6,
+      10
+    ],
+    "EmotionsInComeWeigth": [
+      0,
+      40,
+      60
+    ]
+  },
+  {
+    "ID": 1012,
+    "GroupId": 1,
+    "Level": 12,
+    "FamePoints": 35000,
+    "InComeBase": 32000,
+    "GiftRateBase": 40,
+    "GiftTime": 7,
+    "GiftInComes": [
+      2200,
+      2400,
+      2600
+    ],
+    "AudienceCount": 15,
+    "AudienceStartTime": 1,
+    "AudienceEndTime": 13,
+    "EmotionStartTime": 5,
+    "EmotionEndTime": 16,
+    "EmotionsWeigth": [
+      0,
+      0,
+      1,
+      5,
+      7,
+      11
+    ],
+    "EmotionsInComeWeigth": [
+      0,
+      40,
+      60
+    ]
+  },
+  {
+    "ID": 1013,
+    "GroupId": 1,
+    "Level": 13,
+    "FamePoints": 50000,
+    "InComeBase": 36000,
+    "GiftRateBase": 40,
+    "GiftTime": 8,
+    "GiftInComes": [
+      2800,
+      3000,
+      3200
+    ],
+    "AudienceCount": 16,
+    "AudienceStartTime": 1,
+    "AudienceEndTime": 15,
+    "EmotionStartTime": 4,
+    "EmotionEndTime": 16,
+    "EmotionsWeigth": [
+      0,
+      0,
+      1,
+      4,
+      9,
+      12
+    ],
+    "EmotionsInComeWeigth": [
+      0,
+      30,
+      70
+    ]
+  },
+  {
+    "ID": 1014,
+    "GroupId": 1,
+    "Level": 14,
+    "FamePoints": 70000,
+    "InComeBase": 40000,
+    "GiftRateBase": 40,
+    "GiftTime": 8,
+    "GiftInComes": [
+      2800,
+      3000,
+      3200
+    ],
+    "AudienceCount": 17,
+    "AudienceStartTime": 1,
+    "AudienceEndTime": 15,
+    "EmotionStartTime": 4,
+    "EmotionEndTime": 16,
+    "EmotionsWeigth": [
+      0,
+      0,
+      0,
+      3,
+      10,
+      13
+    ],
+    "EmotionsInComeWeigth": [
+      0,
+      20,
+      80
+    ]
+  },
+  {
+    "ID": 1015,
+    "GroupId": 1,
+    "Level": 15,
+    "InComeBase": 45000,
+    "GiftRateBase": 40,
+    "GiftTime": 9,
+    "GiftInComes": [
+      2800,
+      3000,
+      3200
+    ],
+    "AudienceCount": 18,
+    "AudienceStartTime": 1,
+    "AudienceEndTime": 15,
+    "EmotionStartTime": 4,
+    "EmotionEndTime": 16,
+    "EmotionsWeigth": [
+      0,
+      0,
+      0,
+      2,
+      12,
+      16
+    ],
+    "EmotionsInComeWeigth": [
+      0,
+      10,
+      90
+    ]
+  }
+]

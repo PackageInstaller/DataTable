@@ -359,6 +359,23 @@
     "ShieldHpAddByHpMaxPercent": 900
   },
   {
+    "ID": 240735,
+    "RestoreInterval": 2,
+    "AttachBufIdOnRestore": [
+      763203302,
+      763203637
+    ],
+    "AttachBufIdOnBroken": [
+      600000050,
+      763203638,
+      763203306,
+      700000100,
+      763203328
+    ],
+    "ShieldHpAddByHpMaxPercent": 2000,
+    "HpWhenBattleBegin": 1
+  },
+  {
     "ID": 240800,
     "RestoreInterval": 2,
     "AttachBufIdOnRestore": [

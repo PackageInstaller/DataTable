@@ -1,5 +1,35 @@
 [
   {
+    "ID": 71823604,
+    "NextID": 71823605,
+    "LeftCharImageId": 110101,
+    "RightCharImageId": 31090101,
+    "Position": "PositionType_Left",
+    "MotionName": "idle_Dialog_Normal",
+    "EmotionName": "idle_Dialog_Shock",
+    "SpineType": 1,
+    "Background": 1011388,
+    "SkipMessageID": 101,
+    "PlayMode": "DialogPlayMode_Semiautomatic",
+    "AutoPlayDelayTime": 200,
+    "WordsStrKey": "ST:113534"
+  },
+  {
+    "ID": 71823605,
+    "NextID": 71823606,
+    "LeftCharImageId": 110101,
+    "RightCharImageId": 31090101,
+    "Position": "PositionType_Right",
+    "MotionName": "idle_Dialog_Normal",
+    "EmotionName": "idle_Dialog_Normal",
+    "SpineType": 1,
+    "Background": 1011388,
+    "SkipMessageID": 101,
+    "PlayMode": "DialogPlayMode_Semiautomatic",
+    "AutoPlayDelayTime": 200,
+    "WordsStrKey": "ST:113535"
+  },
+  {
     "ID": 71823606,
     "LeftCharImageId": 110101,
     "RightCharImageId": 31090101,
@@ -2282,7 +2312,7 @@
     "SkipMessageID": 101,
     "PlayMode": "DialogPlayMode_Semiautomatic",
     "AutoPlayDelayTime": 200,
-    "WordsStrKey": "ST:260045"
+    "WordsStrKey": "ST:259888"
   },
   {
     "ID": 86580901,
@@ -2296,7 +2326,7 @@
     "SkipMessageID": 101,
     "PlayMode": "DialogPlayMode_Semiautomatic",
     "AutoPlayDelayTime": 200,
-    "WordsStrKey": "ST:260046"
+    "WordsStrKey": "ST:259889"
   },
   {
     "ID": 86580902,
@@ -9781,34 +9811,5 @@
     "PlayMode": "DialogPlayMode_Semiautomatic",
     "AutoPlayDelayTime": 200,
     "WordsStrKey": "ST:129362"
-  },
-  {
-    "ID": 102800106,
-    "LeftCharImageId": 100202,
-    "RightCharImageId": 102802,
-    "Position": "PositionType_Left",
-    "MotionName": "idle_Dialog_Normal",
-    "EmotionName": "idle_Dialog_Normal",
-    "SpineType": 1,
-    "Voice": "HO_1028_Voice_Story_FirstMeet_6",
-    "SkipMessageID": 101,
-    "PlayMode": "DialogPlayMode_Semiautomatic",
-    "AutoPlayDelayTime": 200,
-    "WordsStrKey": "ST:129363"
-  },
-  {
-    "ID": 103000101,
-    "NextID": 103000102,
-    "LeftCharImageId": 103002,
-    "RightCharImageId": 100202,
-    "Position": "PositionType_Right",
-    "MotionName": "idle_Dialog_Normal",
-    "EmotionName": "idle_Dialog_Normal",
-    "SpineType": 1,
-    "Voice": "HO_1030_Voice_Story_FirstMeet_1",
-    "SkipMessageID": 101,
-    "PlayMode": "DialogPlayMode_Semiautomatic",
-    "AutoPlayDelayTime": 200,
-    "WordsStrKey": "ST:133256"
   }
 ]

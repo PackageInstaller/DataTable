@@ -1,5 +1,51 @@
 [
   {
+    "ID": 52080020,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 52080021,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      800
+    ],
+    "Param3": [
+      {
+        "X": 11,
+        "Y": 11
+      }
+    ]
+  },
+  {
+    "ID": 52080022,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 52080023,
+    "ActionType": "BattleSceneActionType_FadeIn",
+    "Param1": [
+      201,
+      202,
+      203
+    ],
+    "Param2": [
+      500,
+      500,
+      500
+    ],
+    "Param4": [
+      500,
+      500,
+      500
+    ]
+  },
+  {
     "ID": 52080024,
     "ActionType": "BattleSceneActionType_Delay",
     "Param1": [
@@ -25918,45 +25964,6 @@
     ],
     "Param2": [
       10000014
-    ]
-  },
-  {
-    "ID": 52100149,
-    "ActionType": "BattleSceneActionType_Replace",
-    "Param1": [
-      202
-    ],
-    "Param2": [
-      0,
-      0,
-      152060000,
-      0,
-      0,
-      0
-    ]
-  },
-  {
-    "ID": 52100150,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      500
-    ]
-  },
-  {
-    "ID": 52100151,
-    "ActionType": "BattleSceneActionType_CameraFocusActor",
-    "Param1": [
-      6
-    ],
-    "Param2": [
-      203
-    ]
-  },
-  {
-    "ID": 52100152,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      500
     ]
   }
 ]

@@ -1,5 +1,35 @@
 [
   {
+    "ID": 4625101,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      0
+    ],
+    "SceneActionGroupIdLst": [
+      4625101
+    ]
+  },
+  {
+    "ID": 4625102,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      0
+    ],
+    "SceneActionGroupIdLst": [
+      4625102
+    ]
+  },
+  {
+    "ID": 4625103,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      0
+    ],
+    "SceneActionGroupIdLst": [
+      4625103
+    ]
+  },
+  {
     "ID": 4625104,
     "TriggerType": "BattleEventTriggerType_Delay",
     "SceneActionGroupIdLst": [
@@ -6254,49 +6284,6 @@
     ],
     "SceneActionGroupIdLst": [
       5212411
-    ]
-  },
-  {
-    "ID": 5212411,
-    "TriggerType": "BattleEventTriggerType_ActorDieCount",
-    "Param1": [
-      210,
-      211
-    ],
-    "Param2": [
-      2
-    ],
-    "SceneActionGroupIdLst": [
-      5212412
-    ]
-  },
-  {
-    "ID": 5212412,
-    "TriggerType": "BattleEventTriggerType_ActorDieCount",
-    "Param1": [
-      246,
-      247
-    ],
-    "Param2": [
-      2
-    ],
-    "SceneActionGroupIdLst": [
-      5212413
-    ]
-  },
-  {
-    "ID": 5212413,
-    "TriggerType": "BattleEventTriggerType_ActorDieCount",
-    "Param1": [
-      219,
-      220,
-      221
-    ],
-    "Param2": [
-      3
-    ],
-    "SceneActionGroupIdLst": [
-      5212414
     ]
   }
 ]

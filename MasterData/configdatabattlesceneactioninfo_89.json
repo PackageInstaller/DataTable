@@ -1,5 +1,59 @@
 [
   {
+    "ID": 65010810,
+    "VersionTag": 65,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1100
+    ]
+  },
+  {
+    "ID": 65010811,
+    "VersionTag": 65,
+    "ActionType": "BattleSceneActionType_ActorEffect",
+    "Param1": [
+      103,
+      104,
+      105,
+      110,
+      111,
+      112
+    ],
+    "Param2": [
+      10000030,
+      10000030,
+      10000030,
+      10000030,
+      10000030,
+      10000030
+    ]
+  },
+  {
+    "ID": 65010812,
+    "VersionTag": 65,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1
+    ]
+  },
+  {
+    "ID": 65010813,
+    "VersionTag": 65,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      10000030
+    ],
+    "Param2": [
+      10920
+    ],
+    "Param3": [
+      {
+        "X": 9,
+        "Y": 10
+      }
+    ]
+  },
+  {
     "ID": 65010814,
     "VersionTag": 65,
     "ActionType": "BattleSceneActionType_TerrainEffect",
@@ -16066,40 +16120,6 @@
     ],
     "Param4": [
       600
-    ]
-  },
-  {
-    "ID": 65016726,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      1
-    ]
-  },
-  {
-    "ID": 65016727,
-    "ActionType": "BattleSceneActionType_BattleCtxTempParamSet",
-    "Param1": [
-      1
-    ],
-    "Param2": [
-      0
-    ]
-  },
-  {
-    "ID": 65016728,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      1
-    ]
-  },
-  {
-    "ID": 65016729,
-    "ActionType": "BattleSceneActionType_BattleCtxTempParamSet",
-    "Param1": [
-      11
-    ],
-    "Param2": [
-      0
     ]
   }
 ]

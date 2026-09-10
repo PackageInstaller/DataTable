@@ -1,5 +1,43 @@
 [
   {
+    "ID": 46267363,
+    "VersionTag": 62,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1200
+    ]
+  },
+  {
+    "ID": 46267601,
+    "VersionTag": 62,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      50
+    ]
+  },
+  {
+    "ID": 46267602,
+    "VersionTag": 62,
+    "ActionType": "BattleSceneActionType_BattleCtxTempParamSet",
+    "Param1": [
+      1
+    ],
+    "Param2": [
+      1
+    ]
+  },
+  {
+    "ID": 46267603,
+    "VersionTag": 62,
+    "ActionType": "BattleSceneActionType_CameraFocusActor",
+    "Param1": [
+      6
+    ],
+    "Param2": [
+      112
+    ]
+  },
+  {
     "ID": 46267604,
     "VersionTag": 62,
     "ActionType": "BattleSceneActionType_ActorAnimation",
@@ -16510,56 +16548,6 @@
     ],
     "Param4": [
       1
-    ]
-  },
-  {
-    "ID": 46271223,
-    "ActionType": "BattleSceneActionType_ActorAnimation",
-    "Param1": [
-      499
-    ],
-    "Param2": [
-      -1
-    ],
-    "Param4": [
-      -1
-    ],
-    "Param5": "CastSkill01",
-    "Param6": [
-      0
-    ]
-  },
-  {
-    "ID": 46271224,
-    "ActionType": "BattleSceneActionType_FadeIn",
-    "Param1": [
-      499
-    ],
-    "Param2": [
-      500
-    ],
-    "Param4": [
-      1
-    ]
-  },
-  {
-    "ID": 46271225,
-    "ActionType": "BattleSceneActionType_ActorEffect",
-    "Param1": [
-      499
-    ],
-    "Param2": [
-      132000301
-    ],
-    "Param4": [
-      10001
-    ]
-  },
-  {
-    "ID": 46271226,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      200
     ]
   }
 ]

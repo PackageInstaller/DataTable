@@ -1,5 +1,34 @@
 [
   {
+    "ID": 102800106,
+    "LeftCharImageId": 100202,
+    "RightCharImageId": 102802,
+    "Position": "PositionType_Left",
+    "MotionName": "idle_Dialog_Normal",
+    "EmotionName": "idle_Dialog_Normal",
+    "SpineType": 1,
+    "Voice": "HO_1028_Voice_Story_FirstMeet_6",
+    "SkipMessageID": 101,
+    "PlayMode": "DialogPlayMode_Semiautomatic",
+    "AutoPlayDelayTime": 200,
+    "WordsStrKey": "ST:129363"
+  },
+  {
+    "ID": 103000101,
+    "NextID": 103000102,
+    "LeftCharImageId": 103002,
+    "RightCharImageId": 100202,
+    "Position": "PositionType_Right",
+    "MotionName": "idle_Dialog_Normal",
+    "EmotionName": "idle_Dialog_Normal",
+    "SpineType": 1,
+    "Voice": "HO_1030_Voice_Story_FirstMeet_1",
+    "SkipMessageID": 101,
+    "PlayMode": "DialogPlayMode_Semiautomatic",
+    "AutoPlayDelayTime": 200,
+    "WordsStrKey": "ST:133256"
+  },
+  {
     "ID": 103000102,
     "NextID": 103000103,
     "LeftCharImageId": 103002,
@@ -10280,31 +10309,5 @@
     "PlayMode": "DialogPlayMode_Semiautomatic",
     "AutoPlayDelayTime": 200,
     "WordsStrKey": "ST:154755"
-  },
-  {
-    "ID": 107407001,
-    "NextID": 107407002,
-    "LeftCharImageId": 31097401,
-    "Position": "PositionType_Left",
-    "MotionName": "idle_Dialog_Normal",
-    "EmotionName": "idle_Dialog_Normal",
-    "SpineType": 1,
-    "SkipMessageID": 101,
-    "PlayMode": "DialogPlayMode_Semiautomatic",
-    "AutoPlayDelayTime": 200,
-    "WordsStrKey": "ST:154756"
-  },
-  {
-    "ID": 107407002,
-    "NextID": 107407003,
-    "LeftCharImageId": 31097401,
-    "Position": "PositionType_Left",
-    "MotionName": "idle_Dialog_Normal",
-    "EmotionName": "idle_Dialog_Normal",
-    "SpineType": 1,
-    "SkipMessageID": 101,
-    "PlayMode": "DialogPlayMode_Semiautomatic",
-    "AutoPlayDelayTime": 200,
-    "WordsStrKey": "ST:154757"
   }
 ]

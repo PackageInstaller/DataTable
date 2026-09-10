@@ -1,0 +1,41 @@
+[
+  {
+    "ID": 710001,
+    "GroupId": 710001,
+    "SlotNum": 1
+  },
+  {
+    "ID": 710002,
+    "GroupId": 710001,
+    "SlotNum": 1
+  },
+  {
+    "ID": 710003,
+    "GroupId": 710001,
+    "SlotNum": 1
+  },
+  {
+    "ID": 710004,
+    "GroupId": 710001,
+    "SlotNum": 1,
+    "UnlockConditions": [
+      {
+        "Type": "SixXuanXuUnlockType_LevelCompleted",
+        "P1": 7100303
+      }
+    ],
+    "UnlockDescStrKey": "ST:267565"
+  },
+  {
+    "ID": 710005,
+    "GroupId": 710001,
+    "SlotNum": 1,
+    "UnlockConditions": [
+      {
+        "Type": "SixXuanXuUnlockType_LevelCompleted",
+        "P1": 7100603
+      }
+    ],
+    "UnlockDescStrKey": "ST:267568"
+  }
+]

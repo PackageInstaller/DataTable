@@ -1,5 +1,81 @@
 [
   {
+    "ID": 41060518,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      300
+    ]
+  },
+  {
+    "ID": 41060519,
+    "ActionType": "BattleSceneActionType_TerrainEffect",
+    "Param1": [
+      200300180
+    ],
+    "Param2": [
+      10011
+    ],
+    "Param3": [
+      {
+        "X": 9,
+        "Y": 8
+      }
+    ]
+  },
+  {
+    "ID": 41060520,
+    "ActionType": "BattleSceneActionType_SummonNear",
+    "Param1": [
+      4
+    ],
+    "Param2": [
+      22
+    ],
+    "Param3": [
+      {
+        "X": 9,
+        "Y": 8
+      }
+    ],
+    "Param4": [
+      124100404
+    ],
+    "Param6": [
+      0
+    ],
+    "Param7": [
+      {
+        "X": 9,
+        "Y": 9
+      }
+    ],
+    "Param8": [
+      10000
+    ],
+    "Param9": [
+      1
+    ],
+    "Param10": [
+      210
+    ],
+    "Param11": [
+      1
+    ]
+  },
+  {
+    "ID": 41060521,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      600
+    ],
+    "Param3": [
+      {
+        "X": 11,
+        "Y": 8
+      }
+    ]
+  },
+  {
     "ID": 41060522,
     "ActionType": "BattleSceneActionType_Delay",
     "Param1": [
@@ -15261,69 +15337,6 @@
       {
         "X": 9,
         "Y": 6
-      }
-    ]
-  },
-  {
-    "ID": 41203017,
-    "ActionType": "BattleSceneActionType_CameraFocusPosition",
-    "Param1": [
-      5
-    ],
-    "Param3": [
-      {
-        "X": 11,
-        "Y": 7
-      }
-    ]
-  },
-  {
-    "ID": 41203018,
-    "ActionType": "BattleSceneActionType_TerrainEffect",
-    "Param1": [
-      110400100
-    ],
-    "Param2": [
-      10005
-    ],
-    "Param3": [
-      {
-        "X": 11,
-        "Y": 7
-      }
-    ]
-  },
-  {
-    "ID": 41203019,
-    "ActionType": "BattleSceneActionType_SummonFacilitie",
-    "Param1": [
-      91,
-      837,
-      10000,
-      914,
-      -1,
-      0
-    ],
-    "Param3": [
-      {
-        "X": 11,
-        "Y": 7
-      }
-    ]
-  },
-  {
-    "ID": 41203020,
-    "ActionType": "BattleSceneActionType_TerrainEffect",
-    "Param1": [
-      0
-    ],
-    "Param2": [
-      10011
-    ],
-    "Param3": [
-      {
-        "X": 10,
-        "Y": 7
       }
     ]
   }

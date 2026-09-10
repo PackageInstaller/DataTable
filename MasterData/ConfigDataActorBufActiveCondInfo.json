@@ -257,6 +257,11 @@
     "ConditionInverse": true
   },
   {
+    "ID": 600,
+    "ActiveCondType": "ActorBufActiveCondType_BufOwnerSkillGroup",
+    "CondParam1": 6
+  },
+  {
     "ID": 700,
     "ActiveCondType": "ActorBufActiveCondType_AttackSkillGroup",
     "CondParam1": 70
@@ -4737,10 +4742,11 @@
   },
   {
     "ID": 3130,
-    "ActiveCondType": "ActorBufActiveCondType_NearbyFriendlyCount",
+    "ActiveCondType": "ActorBufActiveCondType_NearTargetCount",
     "CondParam1": 11,
     "CondParam2": 3,
-    "CondParam3": 1
+    "CondParam3": 1,
+    "CondParam4": 2
   },
   {
     "ID": 3131,
@@ -4748,6 +4754,21 @@
     "CondParam1": 1,
     "CondParam2": 3,
     "CondParam3": 1
+  },
+  {
+    "ID": 3132,
+    "ActiveCondType": "ActorBufActiveCondType_NearTargetCount",
+    "CondParam1": 11,
+    "CondParam2": 3,
+    "CondParam3": 1,
+    "CondParam4": 286
+  },
+  {
+    "ID": 3133,
+    "ActiveCondType": "ActorBufActiveCondType_NearTargetCount",
+    "CondParam1": 11,
+    "CondParam3": 1,
+    "CondParam4": 141
   },
   {
     "ID": 3200,
@@ -4863,6 +4884,48 @@
     "CondParam3": 1
   },
   {
+    "ID": 3332,
+    "ActiveCondType": "ActorBufActiveCondType_NearbyFriendlyCount",
+    "CondParam1": 3,
+    "CondParam2": 3,
+    "CondParam3": 2
+  },
+  {
+    "ID": 3333,
+    "ActiveCondType": "ActorBufActiveCondType_NearbyFriendlyCount",
+    "CondParam1": 3,
+    "CondParam2": 3,
+    "CondParam3": 3
+  },
+  {
+    "ID": 3334,
+    "ActiveCondType": "ActorBufActiveCondType_NearbyFriendlyCount",
+    "CondParam1": 3,
+    "CondParam2": 3,
+    "CondParam3": 4
+  },
+  {
+    "ID": 3335,
+    "ActiveCondType": "ActorBufActiveCondType_NearbyFriendlyCount",
+    "CondParam1": 3,
+    "CondParam2": 3,
+    "CondParam3": 5
+  },
+  {
+    "ID": 3336,
+    "ActiveCondType": "ActorBufActiveCondType_NearbyFriendlyCount",
+    "CondParam1": 3,
+    "CondParam2": 3,
+    "CondParam3": 6
+  },
+  {
+    "ID": 3337,
+    "ActiveCondType": "ActorBufActiveCondType_NearbyFriendlyCount",
+    "CondParam1": 3,
+    "CondParam2": 3,
+    "CondParam3": 7
+  },
+  {
     "ID": 3401,
     "ActiveCondType": "ActorBufActiveCondType_NearbyFriendlyCount",
     "CondParam1": 4,
@@ -4891,12 +4954,6 @@
     "ActiveCondType": "ActorBufActiveCondType_NearbyFriendlyCount",
     "CondParam1": 5,
     "CondParam2": 3,
-    "CondParam3": 1
-  },
-  {
-    "ID": 3601,
-    "ActiveCondType": "ActorBufActiveCondType_NearbyFriendlyCount",
-    "CondParam1": 11,
     "CondParam3": 1
   },
   {
@@ -5180,6 +5237,14 @@
     "CondParam1": 5,
     "CondParam2": 3,
     "CondParam3": 3
+  },
+  {
+    "ID": 5000,
+    "ActiveCondType": "ActorBufActiveCondType_NearTargetCount",
+    "CondParam1": 12,
+    "CondParam2": 3,
+    "CondParam3": 1,
+    "CondParam4": 1
   },
   {
     "ID": 5001,
@@ -6715,6 +6780,7 @@
     "ActiveCondType": "ActorBufActiveCondType_ContainsBufCategory",
     "CondParam2": 55,
     "CondParam3": 1,
+    "CondParam5": 1,
     "ConditionInverse": true
   },
   {
@@ -13490,6 +13556,96 @@
     "CondParam2": 109230
   },
   {
+    "ID": 109301,
+    "ActiveCondType": "ActorBufActiveCondType_ContainsBufCategory",
+    "CondParam1": 3,
+    "CondParam2": 109302,
+    "CondParam3": 1
+  },
+  {
+    "ID": 109302,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 741093060,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 109303,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 741093061,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 109304,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 741093062,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 109305,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 741093063,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 109306,
+    "ActiveCondType": "ActorBufActiveCondType_ContainsBufCategory",
+    "CondParam2": 109301,
+    "CondParam3": 1
+  },
+  {
+    "ID": 109307,
+    "ActiveCondType": "ActorBufActiveCondType_NearTargetCount",
+    "CondParam1": 3,
+    "CondParam3": 1,
+    "CondParam4": 631
+  },
+  {
+    "ID": 109308,
+    "ActiveCondType": "ActorBufActiveCondType_NearTargetCount",
+    "CondParam1": 3,
+    "CondParam3": 1,
+    "CondParam4": 632
+  },
+  {
+    "ID": 109309,
+    "ActiveCondType": "ActorBufActiveCondType_ContainsBufCategory",
+    "CondParam2": 109301,
+    "CondParam3": 1,
+    "ConditionInverse": true
+  },
+  {
+    "ID": 109310,
+    "ActiveCondType": "ActorBufActiveCondType_ContainsBufCategory",
+    "CondParam2": 109303,
+    "CondParam3": 1,
+    "ConditionInverse": true
+  },
+  {
+    "ID": 109311,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 741093072,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 109312,
+    "ActiveCondType": "ActorBufActiveCondType_SkillID",
+    "CondParam1": 61109332,
+    "ConditionInverse": true
+  },
+  {
+    "ID": 109313,
+    "ActiveCondType": "ActorBufActiveCondType_SkillID",
+    "CondParam1": 61109320,
+    "CondParam2": 61109321,
+    "CondParam3": 61109322,
+    "ConditionInverse": true
+  },
+  {
     "ID": 110001,
     "ActiveCondType": "ActorBufActiveCondType_NearbyFriendlyCount",
     "CondParam1": -1,
@@ -15137,6 +15293,189 @@
     "CondParam2": 122632,
     "CondParam3": 122633,
     "CondParam4": 122634
+  },
+  {
+    "ID": 122701,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 741227020,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 122702,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 741227020,
+    "CondParam2": 4,
+    "CondParam3": 2
+  },
+  {
+    "ID": 122703,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 741227020,
+    "CondParam2": 4,
+    "CondParam3": 3
+  },
+  {
+    "ID": 122704,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 741227020,
+    "CondParam2": 4,
+    "CondParam3": 4
+  },
+  {
+    "ID": 122705,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 741227020,
+    "CondParam2": 4,
+    "CondParam3": 5
+  },
+  {
+    "ID": 122706,
+    "ActiveCondType": "ActorBufActiveCondType_SpecailBuffIsNotInCd",
+    "CondParam1": 741227067
+  },
+  {
+    "ID": 122707,
+    "ActiveCondType": "ActorBufActiveCondType_SpecailBuffIsNotInCd",
+    "CondParam1": 741227068
+  },
+  {
+    "ID": 122708,
+    "ActiveCondType": "ActorBufActiveCondType_SpecailBuffIsNotInCd",
+    "CondParam1": 741227069
+  },
+  {
+    "ID": 122709,
+    "ActiveCondType": "ActorBufActiveCondType_ContainsBufCategory",
+    "CondParam2": 122702,
+    "CondParam3": 1
+  },
+  {
+    "ID": 122710,
+    "ActiveCondType": "ActorBufActiveCondType_ContainsBufCategory",
+    "CondParam2": 122701,
+    "CondParam3": 1
+  },
+  {
+    "ID": 122711,
+    "ActiveCondType": "ActorBufActiveCondType_NearTargetCount",
+    "CondParam1": -1,
+    "CondParam3": 1,
+    "CondParam4": 742506004
+  },
+  {
+    "ID": 122712,
+    "ActiveCondType": "ActorBufActiveCondType_ContainsBufCategory",
+    "CondParam1": 1,
+    "CondParam2": 122704,
+    "CondParam3": 1
+  },
+  {
+    "ID": 122713,
+    "ActiveCondType": "ActorBufActiveCondType_ContainsBufCategory",
+    "CondParam1": 4,
+    "CondParam2": 122704,
+    "CondParam3": 1
+  },
+  {
+    "ID": 122714,
+    "ActiveCondType": "ActorBufActiveCondType_TargetIsSummon"
+  },
+  {
+    "ID": 122715,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 741227416,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 122716,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 741227416,
+    "CondParam2": 4,
+    "CondParam3": 2
+  },
+  {
+    "ID": 122717,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 741227416,
+    "CondParam2": 4,
+    "CondParam3": 3
+  },
+  {
+    "ID": 122718,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 741227416,
+    "CondParam2": 4,
+    "CondParam3": 4
+  },
+  {
+    "ID": 122719,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 741227416,
+    "CondParam2": 4,
+    "CondParam3": 5
+  },
+  {
+    "ID": 122720,
+    "ActiveCondType": "ActorBufActiveCondType_ContainsBufCategory",
+    "CondParam2": 122703,
+    "CondParam3": 1
+  },
+  {
+    "ID": 122721,
+    "ActiveCondType": "ActorBufActiveCondType_CondOrCombine",
+    "CondParam1": 1504013,
+    "CondParam2": 122720
+  },
+  {
+    "ID": 122722,
+    "ActiveCondType": "ActorBufActiveCondType_SkillID",
+    "CondParam1": 61122712,
+    "CondParam2": 61122713,
+    "CondParam3": 61122710
+  },
+  {
+    "ID": 122723,
+    "ActiveCondType": "ActorBufActiveCondType_ContainsBufCategory",
+    "CondParam2": 122706,
+    "CondParam3": 1
+  },
+  {
+    "ID": 122724,
+    "ActiveCondType": "ActorBufActiveCondType_ContainsBufCategory",
+    "CondParam2": 202107,
+    "CondParam3": 1,
+    "ConditionInverse": true
+  },
+  {
+    "ID": 122725,
+    "ActiveCondType": "ActorBufActiveCondType_ContainsBufCategory",
+    "CondParam2": 122708,
+    "CondParam3": 1,
+    "ConditionInverse": true
+  },
+  {
+    "ID": 122726,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 741227077,
+    "CondParam2": 4,
+    "CondParam3": 1,
+    "ConditionInverse": true
+  },
+  {
+    "ID": 122727,
+    "ActiveCondType": "ActorBufActiveCondType_SkillID",
+    "CondParam1": 61122790,
+    "CondParam2": 61122791
+  },
+  {
+    "ID": 122728,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 741227026,
+    "CondParam2": 4,
+    "CondParam3": 1,
+    "ConditionInverse": true
   },
   {
     "ID": 130101,
@@ -17412,6 +17751,224 @@
     "CondParam3": 10
   },
   {
+    "ID": 202901,
+    "ActiveCondType": "ActorBufActiveCondType_NearTargetCount",
+    "CondParam1": 11,
+    "CondParam3": 1,
+    "CondParam4": 5
+  },
+  {
+    "ID": 202902,
+    "ActiveCondType": "ActorBufActiveCondType_NearTargetCount",
+    "CondParam1": 11,
+    "CondParam2": 3,
+    "CondParam3": 2,
+    "CondParam4": 5
+  },
+  {
+    "ID": 202903,
+    "ActiveCondType": "ActorBufActiveCondType_MoveRoute",
+    "CondParam1": 1
+  },
+  {
+    "ID": 202904,
+    "ActiveCondType": "ActorBufActiveCondType_CondOrCombine",
+    "CondParam1": 202903,
+    "CondParam2": 2201
+  },
+  {
+    "ID": 202905,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 742507001,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 202906,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 742507001,
+    "CondParam2": 4,
+    "CondParam3": 2
+  },
+  {
+    "ID": 202907,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 742507001,
+    "CondParam2": 4,
+    "CondParam3": 3
+  },
+  {
+    "ID": 202908,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 742507001,
+    "CondParam2": 4,
+    "CondParam3": 4
+  },
+  {
+    "ID": 202909,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 742507001,
+    "CondParam2": 4,
+    "CondParam3": 5
+  },
+  {
+    "ID": 202910,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 742029354,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 202911,
+    "ActiveCondType": "ActorBufActiveCondType_CondOrCombine",
+    "CondParam1": 202712,
+    "CondParam2": 1300
+  },
+  {
+    "ID": 202912,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 742029144,
+    "CondParam2": 3,
+    "CondParam3": 2
+  },
+  {
+    "ID": 202913,
+    "ActiveCondType": "ActorBufActiveCondType_SpecailBuffIsNotInCd",
+    "CondParam1": 742029520
+  },
+  {
+    "ID": 202920,
+    "ActiveCondType": "ActorBufActiveCondType_NearTargetCountCompare",
+    "CondParam1": 11,
+    "CondParam2": 1,
+    "CondParam4": 5,
+    "CondParam5": 1
+  },
+  {
+    "ID": 202921,
+    "ActiveCondType": "ActorBufActiveCondType_NearTargetCountCompare",
+    "CondParam1": 11,
+    "CondParam2": 1,
+    "CondParam4": 5,
+    "CondParam5": 1,
+    "ConditionInverse": true
+  },
+  {
+    "ID": 202922,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 742029362,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 202923,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 742029362,
+    "CondParam2": 4,
+    "CondParam3": 2
+  },
+  {
+    "ID": 202924,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 742029362,
+    "CondParam2": 4,
+    "CondParam3": 3
+  },
+  {
+    "ID": 202925,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 742029362,
+    "CondParam2": 4,
+    "CondParam3": 4
+  },
+  {
+    "ID": 202926,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 742029362,
+    "CondParam2": 4,
+    "CondParam3": 5
+  },
+  {
+    "ID": 203101,
+    "ActiveCondType": "ActorBufActiveCondType_NearFacilitiesCount",
+    "CondParam1": 203101,
+    "CondParam4": 1,
+    "CondParam5": -1
+  },
+  {
+    "ID": 203102,
+    "ActiveCondType": "ActorBufActiveCondType_ContainsBufCategory",
+    "CondParam2": 203104,
+    "CondParam3": 1
+  },
+  {
+    "ID": 203103,
+    "ActiveCondType": "ActorBufActiveCondType_ContainsBufCategory",
+    "CondParam1": 1,
+    "CondParam2": 203102,
+    "CondParam3": 1
+  },
+  {
+    "ID": 203104,
+    "ActiveCondType": "ActorBufActiveCondType_Compare2TargetUseBeforeCastSkillValue",
+    "CondParam1": 4,
+    "CondParam2": 10000,
+    "CondParam3": 1,
+    "CondParam4": 3,
+    "CondParam5": 10000
+  },
+  {
+    "ID": 203105,
+    "ActiveCondType": "ActorBufActiveCondType_Compare2TargetUseBeforeCastSkillValue",
+    "CondParam1": 4,
+    "CondParam2": 10000,
+    "CondParam3": 1,
+    "CondParam4": 4,
+    "CondParam5": 10000
+  },
+  {
+    "ID": 203106,
+    "ActiveCondType": "ActorBufActiveCondType_ContainsBufCategory",
+    "CondParam2": 203106,
+    "CondParam3": 1
+  },
+  {
+    "ID": 203107,
+    "ActiveCondType": "ActorBufActiveCondType_ContainsBufCategory",
+    "CondParam2": 203107,
+    "CondParam3": 1,
+    "ConditionInverse": true
+  },
+  {
+    "ID": 203108,
+    "ActiveCondType": "ActorBufActiveCondType_TargetBufLevel",
+    "CondParam1": 742031136,
+    "CondParam2": 2
+  },
+  {
+    "ID": 203109,
+    "ActiveCondType": "ActorBufActiveCondType_ContainsBufCategory",
+    "CondParam2": 203101,
+    "CondParam3": 1
+  },
+  {
+    "ID": 203120,
+    "ActiveCondType": "ActorBufActiveCondType_MoveDirectionSameAsRecord"
+  },
+  {
+    "ID": 203121,
+    "ActiveCondType": "ActorBufActiveCondType_MoveDirectionSameAsRecord",
+    "ConditionInverse": true
+  },
+  {
+    "ID": 203122,
+    "ActiveCondType": "ActorBufActiveCondType_NearFacilitiesCount",
+    "CondParam1": 203101,
+    "CondParam3": 3,
+    "CondParam4": 1,
+    "CondParam5": -1
+  },
+  {
     "ID": 250001,
     "ActiveCondType": "ActorBufActiveCondType_BufLevel",
     "CondParam1": 742500079,
@@ -17984,6 +18541,13 @@
     "ConditionInverse": true
   },
   {
+    "ID": 250720,
+    "ActiveCondType": "ActorBufActiveCondType_ContainsBufCategory",
+    "CondParam2": 250704,
+    "CondParam3": 1,
+    "ConditionInverse": true
+  },
+  {
     "ID": 250901,
     "ActiveCondType": "ActorBufActiveCondType_FacilitieCount",
     "CondParam1": 250901,
@@ -18175,6 +18739,254 @@
     "ID": 250930,
     "ActiveCondType": "ActorBufActiveCondType_ContainsBufCategory",
     "CondParam2": 250901,
+    "CondParam3": 1,
+    "ConditionInverse": true
+  },
+  {
+    "ID": 251001,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 742510010,
+    "CondParam2": 4,
+    "CondParam3": 3
+  },
+  {
+    "ID": 251002,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 742510010,
+    "CondParam3": 1
+  },
+  {
+    "ID": 251003,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 742510010,
+    "CondParam2": 4,
+    "CondParam3": 2
+  },
+  {
+    "ID": 251004,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 742510010,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 251005,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 757251015,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 251026,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 742510211,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 251027,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 742510211,
+    "CondParam2": 4,
+    "CondParam3": 1,
+    "ConditionInverse": true
+  },
+  {
+    "ID": 251028,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 742510218,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 251029,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 742510043,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 251030,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 742510046,
+    "CondParam2": 4,
+    "CondParam3": 1,
+    "ConditionInverse": true
+  },
+  {
+    "ID": 251031,
+    "ActiveCondType": "ActorBufActiveCondType_IsSkillTarget",
+    "CondParam1": 1
+  },
+  {
+    "ID": 251032,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 742510811,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 251033,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 742510812,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 251034,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 742510813,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 251035,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 742510814,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 251036,
+    "ActiveCondType": "ActorBufActiveCondType_SpecailBuffIsNotInCd",
+    "CondParam1": 742510807
+  },
+  {
+    "ID": 251037,
+    "ActiveCondType": "ActorBufActiveCondType_SpecailBuffIsNotInCd",
+    "CondParam1": 742510808
+  },
+  {
+    "ID": 251038,
+    "ActiveCondType": "ActorBufActiveCondType_SpecailBuffIsNotInCd",
+    "CondParam1": 742510809
+  },
+  {
+    "ID": 251039,
+    "ActiveCondType": "ActorBufActiveCondType_SpecailBuffIsNotInCd",
+    "CondParam1": 742510810
+  },
+  {
+    "ID": 251040,
+    "ActiveCondType": "ActorBufActiveCondType_ContainsBufCategory",
+    "CondParam2": 251004,
+    "CondParam3": 1
+  },
+  {
+    "ID": 251041,
+    "ActiveCondType": "ActorBufActiveCondType_ContainsBufCategory",
+    "CondParam2": 251004,
+    "CondParam3": 2
+  },
+  {
+    "ID": 251042,
+    "ActiveCondType": "ActorBufActiveCondType_ContainsBufCategory",
+    "CondParam2": 251004,
+    "CondParam3": 3
+  },
+  {
+    "ID": 251043,
+    "ActiveCondType": "ActorBufActiveCondType_ContainsBufCategory",
+    "CondParam2": 251004,
+    "CondParam3": 4
+  },
+  {
+    "ID": 251044,
+    "ActiveCondType": "ActorBufActiveCondType_ContainsBufCategory",
+    "CondParam2": 251004,
+    "CondParam3": 5
+  },
+  {
+    "ID": 251045,
+    "ActiveCondType": "ActorBufActiveCondType_ContainsBufCategory",
+    "CondParam2": 251004,
+    "CondParam3": 6
+  },
+  {
+    "ID": 251046,
+    "ActiveCondType": "ActorBufActiveCondType_ContainsBufCategory",
+    "CondParam2": 251004,
+    "CondParam3": 7
+  },
+  {
+    "ID": 251047,
+    "ActiveCondType": "ActorBufActiveCondType_ContainsBufCategory",
+    "CondParam2": 251004,
+    "CondParam3": 8
+  },
+  {
+    "ID": 251048,
+    "ActiveCondType": "ActorBufActiveCondType_ContainsBufCategory",
+    "CondParam2": 251004,
+    "CondParam3": 9
+  },
+  {
+    "ID": 251049,
+    "ActiveCondType": "ActorBufActiveCondType_ContainsBufCategory",
+    "CondParam2": 251005,
+    "CondParam3": 1
+  },
+  {
+    "ID": 251050,
+    "ActiveCondType": "ActorBufActiveCondType_ContainsBufCategory",
+    "CondParam2": 251005,
+    "CondParam3": 2
+  },
+  {
+    "ID": 251051,
+    "ActiveCondType": "ActorBufActiveCondType_ContainsBufCategory",
+    "CondParam2": 251005,
+    "CondParam3": 3
+  },
+  {
+    "ID": 251052,
+    "ActiveCondType": "ActorBufActiveCondType_ContainsBufCategory",
+    "CondParam2": 251005,
+    "CondParam3": 4
+  },
+  {
+    "ID": 251053,
+    "ActiveCondType": "ActorBufActiveCondType_ContainsBufCategory",
+    "CondParam2": 251005,
+    "CondParam3": 5
+  },
+  {
+    "ID": 251054,
+    "ActiveCondType": "ActorBufActiveCondType_SpecailBuffIsNotInCd",
+    "CondParam1": 742510807,
+    "ConditionInverse": true
+  },
+  {
+    "ID": 251055,
+    "ActiveCondType": "ActorBufActiveCondType_SpecailBuffIsNotInCd",
+    "CondParam1": 742510808,
+    "ConditionInverse": true
+  },
+  {
+    "ID": 251056,
+    "ActiveCondType": "ActorBufActiveCondType_SpecailBuffIsNotInCd",
+    "CondParam1": 742510809,
+    "ConditionInverse": true
+  },
+  {
+    "ID": 251057,
+    "ActiveCondType": "ActorBufActiveCondType_SpecailBuffIsNotInCd",
+    "CondParam1": 742510810,
+    "ConditionInverse": true
+  },
+  {
+    "ID": 251058,
+    "ActiveCondType": "ActorBufActiveCondType_CondOrCombine",
+    "CondParam1": 251054,
+    "CondParam2": 251055,
+    "CondParam3": 251056,
+    "CondParam4": 251057
+  },
+  {
+    "ID": 251059,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 742510063,
+    "CondParam2": 4,
     "CondParam3": 1,
     "ConditionInverse": true
   },
@@ -19380,6 +20192,49 @@
     "ActiveCondType": "ActorBufActiveCondType_SkillID",
     "CondParam1": 61201310,
     "CondParam2": 61201311
+  },
+  {
+    "ID": 270000501,
+    "ActiveCondType": "ActorBufActiveCondType_OwnerSign",
+    "CondParam1": 16
+  },
+  {
+    "ID": 270000502,
+    "ActiveCondType": "ActorBufActiveCondType_OwnerSign",
+    "CondParam1": 8
+  },
+  {
+    "ID": 270000503,
+    "ActiveCondType": "ActorBufActiveCondType_OwnerSign",
+    "CondParam1": 4
+  },
+  {
+    "ID": 270000504,
+    "ActiveCondType": "ActorBufActiveCondType_OwnerSign",
+    "CondParam1": 2
+  },
+  {
+    "ID": 270000505,
+    "ActiveCondType": "ActorBufActiveCondType_OwnerSign",
+    "CondParam1": 1
+  },
+  {
+    "ID": 270000506,
+    "ActiveCondType": "ActorBufActiveCondType_OwnerSign",
+    "CondParam1": 32
+  },
+  {
+    "ID": 270000507,
+    "ActiveCondType": "ActorBufActiveCondType_NearTargetCount",
+    "CondParam1": -1,
+    "CondParam3": 1,
+    "CondParam4": 39
+  },
+  {
+    "ID": 270000508,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 759000511,
+    "CondParam3": 1
   },
   {
     "ID": 700004540,
@@ -21195,6 +22050,66 @@
     "ConditionInverse": true
   },
   {
+    "ID": 763155102,
+    "ActiveCondType": "ActorBufActiveCondType_ActiveSkillCastDistanceCenter",
+    "CondParam2": 6
+  },
+  {
+    "ID": 763155103,
+    "ActiveCondType": "ActorBufActiveCondType_NearTargetCount",
+    "CondParam1": -1,
+    "CondParam3": 1,
+    "CondParam4": 763155111
+  },
+  {
+    "ID": 763155104,
+    "ActiveCondType": "ActorBufActiveCondType_NearTargetCount",
+    "CondParam1": -1,
+    "CondParam3": 1,
+    "CondParam4": 763155112
+  },
+  {
+    "ID": 763155105,
+    "ActiveCondType": "ActorBufActiveCondType_CondOrCombine",
+    "CondParam1": 763155103,
+    "CondParam2": 763155104
+  },
+  {
+    "ID": 763155106,
+    "ActiveCondType": "ActorBufActiveCondType_NearTargetCount",
+    "CondParam1": -1,
+    "CondParam3": 1,
+    "CondParam4": 763155113
+  },
+  {
+    "ID": 763155107,
+    "ActiveCondType": "ActorBufActiveCondType_NearTargetCount",
+    "CondParam1": -1,
+    "CondParam3": 1,
+    "CondParam4": 763155114
+  },
+  {
+    "ID": 763155108,
+    "ActiveCondType": "ActorBufActiveCondType_NearTargetCount",
+    "CondParam1": 1,
+    "CondParam3": 1,
+    "CondParam4": 763155115
+  },
+  {
+    "ID": 763155109,
+    "ActiveCondType": "ActorBufActiveCondType_NearTargetCount",
+    "CondParam1": 1,
+    "CondParam3": 2,
+    "CondParam4": 763155115
+  },
+  {
+    "ID": 763155110,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763155119,
+    "CondParam2": 4,
+    "CondParam3": 2
+  },
+  {
     "ID": 763155472,
     "ActiveCondType": "ActorBufActiveCondType_BufLevel",
     "CondParam1": 763155472,
@@ -22933,6 +23848,629 @@
     "CondParam2": -30
   },
   {
+    "ID": 763202550,
+    "ActiveCondType": "ActorBufActiveCondType_ContainsBufCategory",
+    "CondParam1": 4,
+    "CondParam2": 763202550,
+    "CondParam3": 1,
+    "ConditionInverse": true
+  },
+  {
+    "ID": 763202551,
+    "ActiveCondType": "ActorBufActiveCondType_NearFacilitiesCount",
+    "CondParam1": 1161,
+    "CondParam4": 1,
+    "CondParam5": -1
+  },
+  {
+    "ID": 763202569,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 741059004,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 763202572,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763202610,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 763202573,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763202611,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 763202574,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763202612,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 763202575,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763202613,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 763202576,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763202614,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 763202577,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763202615,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 763202578,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763202616,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 763202579,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763202617,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 763202721,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763202721,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 763202726,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763202726,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 763202727,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763202759,
+    "CondParam2": 3,
+    "CondParam3": 3
+  },
+  {
+    "ID": 763202900,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763202900,
+    "CondParam2": 1,
+    "CondParam3": 4
+  },
+  {
+    "ID": 763202901,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763202900,
+    "CondParam2": 1,
+    "CondParam3": 3
+  },
+  {
+    "ID": 763203060,
+    "ActiveCondType": "ActorBufActiveCondType_ContainsBufCategory",
+    "CondParam1": 1,
+    "CondParam2": 115402,
+    "CondParam3": 1
+  },
+  {
+    "ID": 763203079,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763203079,
+    "CondParam2": 3,
+    "CondParam3": 2
+  },
+  {
+    "ID": 763203080,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763203082,
+    "CondParam2": 3,
+    "CondParam3": 2
+  },
+  {
+    "ID": 763203081,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763203082,
+    "CondParam2": 4,
+    "CondParam3": 2
+  },
+  {
+    "ID": 763203228,
+    "ActiveCondType": "ActorBufActiveCondType_ContainsBufCategory",
+    "CondParam2": 763203226,
+    "CondParam3": 1
+  },
+  {
+    "ID": 763203239,
+    "ActiveCondType": "ActorBufActiveCondType_NearFacilitiesCount",
+    "CondParam1": 1769,
+    "CondParam4": 1,
+    "CondParam5": -1
+  },
+  {
+    "ID": 763203240,
+    "ActiveCondType": "ActorBufActiveCondType_NearFacilitiesCount",
+    "CondParam1": 1769,
+    "CondParam4": 2,
+    "CondParam5": -1
+  },
+  {
+    "ID": 763203241,
+    "ActiveCondType": "ActorBufActiveCondType_NearFacilitiesCount",
+    "CondParam1": 1769,
+    "CondParam4": 3,
+    "CondParam5": -1
+  },
+  {
+    "ID": 763203242,
+    "ActiveCondType": "ActorBufActiveCondType_NearFacilitiesCount",
+    "CondParam1": 1769,
+    "CondParam4": 4,
+    "CondParam5": -1
+  },
+  {
+    "ID": 763203243,
+    "ActiveCondType": "ActorBufActiveCondType_NearFacilitiesCount",
+    "CondParam1": 1769,
+    "CondParam4": 5,
+    "CondParam5": -1
+  },
+  {
+    "ID": 763203244,
+    "ActiveCondType": "ActorBufActiveCondType_NearFacilitiesCount",
+    "CondParam1": 1769,
+    "CondParam4": 6,
+    "CondParam5": -1
+  },
+  {
+    "ID": 763203245,
+    "ActiveCondType": "ActorBufActiveCondType_NearFacilitiesCount",
+    "CondParam1": 1769,
+    "CondParam4": 7,
+    "CondParam5": -1
+  },
+  {
+    "ID": 763203246,
+    "ActiveCondType": "ActorBufActiveCondType_NearFacilitiesCount",
+    "CondParam1": 1769,
+    "CondParam4": 8,
+    "CondParam5": -1
+  },
+  {
+    "ID": 763203247,
+    "ActiveCondType": "ActorBufActiveCondType_NearFacilitiesCount",
+    "CondParam1": 1769,
+    "CondParam4": 9,
+    "CondParam5": -1
+  },
+  {
+    "ID": 763203248,
+    "ActiveCondType": "ActorBufActiveCondType_NearFacilitiesCount",
+    "CondParam1": 1769,
+    "CondParam4": 10,
+    "CondParam5": -1
+  },
+  {
+    "ID": 763203316,
+    "ActiveCondType": "ActorBufActiveCondType_NearTargetCount",
+    "CondParam1": 15,
+    "CondParam3": 6,
+    "CondParam4": 5,
+    "ConditionInverse": true
+  },
+  {
+    "ID": 763203317,
+    "ActiveCondType": "ActorBufActiveCondType_NearTargetCount",
+    "CondParam1": -1,
+    "CondParam3": 1,
+    "CondParam4": 39
+  },
+  {
+    "ID": 763203548,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 840000142,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 763203553,
+    "ActiveCondType": "ActorBufActiveCondType_NearTargetCount",
+    "CondParam1": -1,
+    "CondParam3": 1,
+    "CondParam4": 763203553
+  },
+  {
+    "ID": 763203554,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 741227050,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 763203555,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 741224000,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 763203556,
+    "ActiveCondType": "ActorBufActiveCondType_CondOrCombine",
+    "CondParam1": 763203554,
+    "CondParam2": 763203555,
+    "CondParam3": 763203639
+  },
+  {
+    "ID": 763203557,
+    "ActiveCondType": "ActorBufActiveCondType_CondOrCombine",
+    "CondParam1": 763203554,
+    "CondParam2": 763203555,
+    "CondParam3": 763203639,
+    "ConditionInverse": true
+  },
+  {
+    "ID": 763203590,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763203590,
+    "CondParam2": 4,
+    "CondParam3": 1,
+    "ConditionInverse": true
+  },
+  {
+    "ID": 763203591,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763203596,
+    "CondParam3": 1
+  },
+  {
+    "ID": 763203592,
+    "ActiveCondType": "ActorBufActiveCondType_CondOrCombine",
+    "CondParam1": 2212,
+    "CondParam2": 2211,
+    "CondParam3": 504
+  },
+  {
+    "ID": 763203593,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763203636,
+    "CondParam2": 4,
+    "CondParam3": 1,
+    "ConditionInverse": true
+  },
+  {
+    "ID": 763203594,
+    "ActiveCondType": "ActorBufActiveCondType_NearTargetCount",
+    "CondParam1": 1,
+    "CondParam3": 1,
+    "CondParam4": 763155116
+  },
+  {
+    "ID": 763203613,
+    "ActiveCondType": "ActorBufActiveCondType_HasActionChanceInGroup",
+    "ConditionInverse": true
+  },
+  {
+    "ID": 763203639,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763203639,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 763204310,
+    "ActiveCondType": "ActorBufActiveCondType_NearTargetCount",
+    "CondParam1": -1,
+    "CondParam3": 1,
+    "CondParam4": 763204310
+  },
+  {
+    "ID": 763204340,
+    "ActiveCondType": "ActorBufActiveCondType_LingMaiGuanZhuCompare",
+    "CondParam1": 2,
+    "CondParam2": 15000
+  },
+  {
+    "ID": 763204342,
+    "ActiveCondType": "ActorBufActiveCondType_LingMaiGuanZhuCompare",
+    "CondParam2": 15000
+  },
+  {
+    "ID": 763204343,
+    "ActiveCondType": "ActorBufActiveCondType_SixXuanXuActionCompare",
+    "CondParam1": 4,
+    "CondParam2": 2
+  },
+  {
+    "ID": 763204537,
+    "ActiveCondType": "ActorBufActiveCondType_IsAngerSkill",
+    "CondParam1": 1
+  },
+  {
+    "ID": 763204538,
+    "ActiveCondType": "ActorBufActiveCondType_HpPercent",
+    "CondParam1": 1,
+    "CondParam2": 5000
+  },
+  {
+    "ID": 763204539,
+    "ActiveCondType": "ActorBufActiveCondType_HpPercent",
+    "CondParam1": 2,
+    "CondParam2": 5000
+  },
+  {
+    "ID": 763205002,
+    "ActiveCondType": "ActorBufActiveCondType_NearTargetCount",
+    "CondParam1": -1,
+    "CondParam3": 1,
+    "CondParam4": 763205002
+  },
+  {
+    "ID": 763205003,
+    "ActiveCondType": "ActorBufActiveCondType_NearTargetCount",
+    "CondParam1": -1,
+    "CondParam3": 1,
+    "CondParam4": 763205003
+  },
+  {
+    "ID": 763205004,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763205001,
+    "CondParam3": 1
+  },
+  {
+    "ID": 763205005,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763205001,
+    "CondParam3": 1,
+    "ConditionInverse": true
+  },
+  {
+    "ID": 763205018,
+    "ActiveCondType": "ActorBufActiveCondType_SkillID",
+    "CondParam1": 758002003,
+    "CondParam2": 758002004,
+    "CondParam3": 758002005,
+    "CondParam4": 758002006
+  },
+  {
+    "ID": 763205025,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763205025,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 763205105,
+    "ActiveCondType": "ActorBufActiveCondType_StandOnSPLandform",
+    "CondParam2": 541
+  },
+  {
+    "ID": 763205163,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763205156,
+    "CondParam3": 8
+  },
+  {
+    "ID": 763205164,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763205156,
+    "CondParam3": 8,
+    "ConditionInverse": true
+  },
+  {
+    "ID": 763205165,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763205156,
+    "CondParam3": 5
+  },
+  {
+    "ID": 763205166,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763205156,
+    "CondParam3": 5,
+    "ConditionInverse": true
+  },
+  {
+    "ID": 763205167,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763205156,
+    "CondParam3": 1
+  },
+  {
+    "ID": 763205168,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763205172,
+    "CondParam3": 8
+  },
+  {
+    "ID": 763205169,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763205172,
+    "CondParam3": 8,
+    "ConditionInverse": true
+  },
+  {
+    "ID": 763205170,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763205172,
+    "CondParam3": 5
+  },
+  {
+    "ID": 763205171,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763205172,
+    "CondParam3": 5,
+    "ConditionInverse": true
+  },
+  {
+    "ID": 763205172,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763205172,
+    "CondParam3": 1
+  },
+  {
+    "ID": 763205271,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763205271,
+    "CondParam2": 4,
+    "CondParam3": 10
+  },
+  {
+    "ID": 763205300,
+    "ActiveCondType": "ActorBufActiveCondType_ContainsBufCategory",
+    "CondParam1": 1,
+    "CondParam2": 763205250,
+    "CondParam3": 1
+  },
+  {
+    "ID": 763205340,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763205341,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 763205341,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763205341,
+    "CondParam2": 4,
+    "CondParam3": 2
+  },
+  {
+    "ID": 763205342,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763205341,
+    "CondParam2": 4,
+    "CondParam3": 3
+  },
+  {
+    "ID": 763205343,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763205341,
+    "CondParam2": 4,
+    "CondParam3": 4
+  },
+  {
+    "ID": 763205344,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763205341,
+    "CondParam2": 4,
+    "CondParam3": 5
+  },
+  {
+    "ID": 763205360,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763205361,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 763205361,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763205361,
+    "CondParam2": 4,
+    "CondParam3": 2
+  },
+  {
+    "ID": 763205362,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763205361,
+    "CondParam2": 4,
+    "CondParam3": 3
+  },
+  {
+    "ID": 763205363,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763205361,
+    "CondParam2": 4,
+    "CondParam3": 4
+  },
+  {
+    "ID": 763205364,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763205361,
+    "CondParam2": 4,
+    "CondParam3": 5
+  },
+  {
+    "ID": 763205419,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763205433,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 763205420,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763205433,
+    "CondParam2": 4,
+    "CondParam3": 2
+  },
+  {
+    "ID": 763205421,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763205433,
+    "CondParam2": 4,
+    "CondParam3": 3
+  },
+  {
+    "ID": 763205422,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763205433,
+    "CondParam2": 4,
+    "CondParam3": 4
+  },
+  {
+    "ID": 763205423,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 763205433,
+    "CondParam2": 4,
+    "CondParam3": 5
+  },
+  {
+    "ID": 763206000,
+    "ActiveCondType": "ActorBufActiveCondType_NearTargetCount",
+    "CondParam1": 2,
+    "CondParam3": 1,
+    "CondParam4": 763206000
+  },
+  {
+    "ID": 763206004,
+    "ActiveCondType": "ActorBufActiveCondType_NearTargetCount",
+    "CondParam1": 2,
+    "CondParam3": 1,
+    "CondParam4": 763206004
+  },
+  {
+    "ID": 763206008,
+    "ActiveCondType": "ActorBufActiveCondType_NearTargetCount",
+    "CondParam1": 2,
+    "CondParam3": 1,
+    "CondParam4": 763206008
+  },
+  {
+    "ID": 763206037,
+    "ActiveCondType": "ActorBufActiveCondType_NearTargetCount",
+    "CondParam1": -1,
+    "CondParam3": 1,
+    "CondParam4": 763206037,
+    "ConditionInverse": true
+  },
+  {
     "ID": 840000082,
     "ActiveCondType": "ActorBufActiveCondType_ContainsBufCategory",
     "CondParam2": 840000082,
@@ -22965,6 +24503,79 @@
     "CondParam2": 4,
     "CondParam3": 1,
     "ConditionInverse": true
+  },
+  {
+    "ID": 840000126,
+    "ActiveCondType": "ActorBufActiveCondType_NearTargetCount",
+    "CondParam1": -1,
+    "CondParam3": 3,
+    "CondParam4": 17
+  },
+  {
+    "ID": 840000127,
+    "ActiveCondType": "ActorBufActiveCondType_NearTargetCount",
+    "CondParam1": -1,
+    "CondParam3": 3,
+    "CondParam4": 840000127
+  },
+  {
+    "ID": 840000130,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 840000130,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 840000131,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 840000131,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 840000132,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 840000132,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 840000133,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 840000130,
+    "CondParam2": 4,
+    "CondParam3": 1,
+    "ConditionInverse": true
+  },
+  {
+    "ID": 840000134,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 840000131,
+    "CondParam2": 4,
+    "CondParam3": 1,
+    "ConditionInverse": true
+  },
+  {
+    "ID": 840000135,
+    "ActiveCondType": "ActorBufActiveCondType_BufLevel",
+    "CondParam1": 840000132,
+    "CondParam2": 4,
+    "CondParam3": 1,
+    "ConditionInverse": true
+  },
+  {
+    "ID": 840000142,
+    "ActiveCondType": "ActorBufActiveCondType_TargetBufLevel",
+    "CondParam1": 763203524,
+    "CondParam2": 4,
+    "CondParam3": 1
+  },
+  {
+    "ID": 840000143,
+    "ActiveCondType": "ActorBufActiveCondType_TargetBufLevel",
+    "CondParam1": 763203537,
+    "CondParam2": 4,
+    "CondParam3": 1
   },
   {
     "ID": 880121222,

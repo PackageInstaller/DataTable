@@ -1,5 +1,41 @@
 [
   {
+    "ID": 4060703,
+    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
+    "Param2": [
+      1
+    ],
+    "Param3": [
+      {
+        "X": 11,
+        "Y": 17
+      }
+    ],
+    "SceneActionGroupIdLst": [
+      4060705
+    ]
+  },
+  {
+    "ID": 4060704,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      0
+    ],
+    "SceneActionGroupIdLst": [
+      4060706
+    ]
+  },
+  {
+    "ID": 4060705,
+    "TriggerType": "BattleEventTriggerType_TeamDie",
+    "Param1": [
+      21
+    ],
+    "SceneActionGroupIdLst": [
+      4060707
+    ]
+  },
+  {
     "ID": 4060706,
     "TriggerType": "BattleEventTriggerType_TeamDie",
     "Param1": [
@@ -4138,40 +4174,6 @@
     ],
     "SceneActionGroupIdLst": [
       4080227
-    ]
-  },
-  {
-    "ID": 4080312,
-    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
-    "Param1": [
-      0
-    ],
-    "SceneActionGroupIdLst": [
-      4080312
-    ]
-  },
-  {
-    "ID": 4080421,
-    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
-    "Param2": [
-      1
-    ],
-    "Param3": [
-      {
-        "Y": 17
-      }
-    ]
-  },
-  {
-    "ID": 4080422,
-    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
-    "Param2": [
-      1
-    ],
-    "Param3": [
-      {
-        "Y": 18
-      }
     ]
   }
 ]

@@ -1,5 +1,59 @@
 [
   {
+    "ID": 46285352,
+    "VersionTag": 63,
+    "ActionType": "BattleSceneActionType_ActorAnimation",
+    "Param1": [
+      499
+    ],
+    "Param2": [
+      -1
+    ],
+    "Param4": [
+      1
+    ],
+    "Param5": "CastSkill04",
+    "Param6": [
+      0
+    ]
+  },
+  {
+    "ID": 46285353,
+    "VersionTag": 63,
+    "ActionType": "BattleSceneActionType_CameraFocusPositionByTime",
+    "Param1": [
+      1000
+    ],
+    "Param3": [
+      {
+        "X": 6,
+        "Y": 6
+      }
+    ],
+    "Param12": 1
+  },
+  {
+    "ID": 46285354,
+    "VersionTag": 63,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      300
+    ]
+  },
+  {
+    "ID": 46285355,
+    "VersionTag": 63,
+    "ActionType": "BattleSceneActionType_ActorEffect",
+    "Param1": [
+      498,
+      497
+    ],
+    "Param2": [
+      10000080,
+      10000080
+    ]
+  },
+  {
     "ID": 46285356,
     "VersionTag": 63,
     "ActionType": "BattleSceneActionType_CameraShake",
@@ -17647,64 +17701,6 @@
       {
         "X": 11,
         "Y": 12
-      }
-    ]
-  },
-  {
-    "ID": 50202640,
-    "ActionType": "BattleSceneActionType_HurtActorHpPercentByGridPosition",
-    "Param1": [
-      8000
-    ],
-    "Param3": [
-      {
-        "X": 11,
-        "Y": 12
-      }
-    ]
-  },
-  {
-    "ID": 50202641,
-    "ActionType": "BattleSceneActionType_TerrainEffect",
-    "Param1": [
-      0
-    ],
-    "Param2": [
-      10224
-    ],
-    "Param3": [
-      {
-        "X": 12,
-        "Y": 11
-      }
-    ]
-  },
-  {
-    "ID": 50202642,
-    "ActionType": "BattleSceneActionType_HurtActorHpPercentByGridPosition",
-    "Param1": [
-      8000
-    ],
-    "Param3": [
-      {
-        "X": 12,
-        "Y": 11
-      }
-    ]
-  },
-  {
-    "ID": 50202643,
-    "ActionType": "BattleSceneActionType_TerrainEffect",
-    "Param1": [
-      0
-    ],
-    "Param2": [
-      10211
-    ],
-    "Param3": [
-      {
-        "X": 10,
-        "Y": 11
       }
     ]
   }

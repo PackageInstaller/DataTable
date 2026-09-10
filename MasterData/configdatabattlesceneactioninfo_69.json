@@ -1,5 +1,37 @@
 [
   {
+    "ID": 46219436,
+    "ActionType": "BattleSceneActionType_CreateTriggerAndTriggerImm",
+    "Param1": [
+      4621861
+    ],
+    "SkipCondId": 46219036
+  },
+  {
+    "ID": 46219437,
+    "ActionType": "BattleSceneActionType_CreateTriggerAndTriggerImm",
+    "Param1": [
+      4621871
+    ],
+    "SkipCondId": 46219037
+  },
+  {
+    "ID": 46219438,
+    "ActionType": "BattleSceneActionType_CreateTriggerAndTriggerImm",
+    "Param1": [
+      4621881
+    ],
+    "SkipCondId": 46219038
+  },
+  {
+    "ID": 46219441,
+    "ActionType": "BattleSceneActionType_CreateTriggerAndTriggerImm",
+    "Param1": [
+      4621811
+    ],
+    "SkipCondId": 46219041
+  },
+  {
     "ID": 46219442,
     "ActionType": "BattleSceneActionType_CreateTriggerAndTriggerImm",
     "Param1": [
@@ -16988,47 +17020,6 @@
     "Param5": "Story_Kneel_Loop",
     "Param6": [
       -1
-    ]
-  },
-  {
-    "ID": 46227343,
-    "VersionTag": 56,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      300
-    ]
-  },
-  {
-    "ID": 46227344,
-    "VersionTag": 56,
-    "ActionType": "BattleSceneActionType_Dialog",
-    "Param1": [
-      462271603
-    ]
-  },
-  {
-    "ID": 46227345,
-    "VersionTag": 56,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      300
-    ]
-  },
-  {
-    "ID": 46227346,
-    "VersionTag": 56,
-    "ActionType": "BattleSceneActionType_TerrainEffect",
-    "Param1": [
-      10000033
-    ],
-    "Param2": [
-      10001
-    ],
-    "Param3": [
-      {
-        "X": 4,
-        "Y": 12
-      }
     ]
   }
 ]

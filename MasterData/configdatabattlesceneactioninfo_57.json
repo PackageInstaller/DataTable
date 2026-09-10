@@ -1,5 +1,39 @@
 [
   {
+    "ID": 45013002,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      500
+    ]
+  },
+  {
+    "ID": 45013003,
+    "ActionType": "BattleSceneActionType_CloseLoadingUI"
+  },
+  {
+    "ID": 45013004,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1000
+    ]
+  },
+  {
+    "ID": 45013005,
+    "ActionType": "BattleSceneActionType_ActorTurnDir",
+    "Param1": [
+      201
+    ],
+    "Param3": [
+      {
+        "X": 5,
+        "Y": 1
+      }
+    ],
+    "Param4": [
+      500
+    ]
+  },
+  {
     "ID": 45013006,
     "ActionType": "BattleSceneActionType_Delay",
     "Param1": [
@@ -17140,47 +17174,6 @@
     "ActionType": "BattleSceneActionType_Dialog",
     "Param1": [
       452041651
-    ]
-  },
-  {
-    "ID": 45204331,
-    "ActionType": "BattleSceneActionType_Dialog",
-    "Param1": [
-      452041652
-    ]
-  },
-  {
-    "ID": 45204332,
-    "ActionType": "BattleSceneActionType_CameraFocusActor",
-    "Param1": [
-      8
-    ],
-    "Param2": [
-      101
-    ]
-  },
-  {
-    "ID": 45204333,
-    "ActionType": "BattleSceneActionType_Dialog",
-    "Param1": [
-      452041653
-    ]
-  },
-  {
-    "ID": 45204334,
-    "ActionType": "BattleSceneActionType_ActorAnimation",
-    "Param1": [
-      101
-    ],
-    "Param2": [
-      -1
-    ],
-    "Param4": [
-      1000
-    ],
-    "Param5": "SkillAnnounce",
-    "Param6": [
-      0
     ]
   }
 ]

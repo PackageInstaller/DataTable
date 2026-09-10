@@ -1,5 +1,38 @@
 [
   {
+    "ID": 6010011,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      0
+    ],
+    "SceneActionGroupIdLst": [
+      6010011
+    ]
+  },
+  {
+    "ID": 6010012,
+    "TriggerType": "BattleEventTriggerType_BattleTurnStart",
+    "Param1": [
+      0
+    ],
+    "SceneActionGroupIdLst": [
+      6010012
+    ]
+  },
+  {
+    "ID": 6010013,
+    "TriggerType": "BattleEventTriggerType_ActorHpLess",
+    "Param1": [
+      411
+    ],
+    "Param2": [
+      8000
+    ],
+    "SceneActionGroupIdLst": [
+      6010013
+    ]
+  },
+  {
     "ID": 6010014,
     "TriggerType": "BattleEventTriggerType_ActorHpLess",
     "Param1": [
@@ -4599,51 +4632,6 @@
     ],
     "SceneActionGroupIdLst": [
       6601405
-    ]
-  },
-  {
-    "ID": 6601406,
-    "TriggerType": "BattleEventTriggerType_ActorReachPosition",
-    "Param2": [
-      1
-    ],
-    "Param3": [
-      {
-        "X": 13,
-        "Y": 9
-      }
-    ],
-    "SceneActionGroupIdLst": [
-      6601406
-    ]
-  },
-  {
-    "ID": 6601501,
-    "TriggerType": "BattleEventTriggerType_ActorGetBuff",
-    "Param1": [
-      101
-    ],
-    "Param2": [
-      763162603
-    ],
-    "Param4": [
-      1
-    ],
-    "SceneActionGroupIdLst": [
-      6601501
-    ]
-  },
-  {
-    "ID": 6601502,
-    "TriggerType": "BattleEventTriggerType_ActorNeighbor",
-    "Param1": [
-      101
-    ],
-    "Param2": [
-      102
-    ],
-    "SceneActionGroupIdLst": [
-      6601503
     ]
   }
 ]

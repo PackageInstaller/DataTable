@@ -1,5 +1,46 @@
 [
   {
+    "ID": 42215107,
+    "ActionType": "BattleSceneActionType_ActorTurnDir",
+    "Param1": [
+      101,
+      102
+    ],
+    "Param3": [
+      {
+        "X": 6
+      },
+      {
+        "X": 8
+      }
+    ],
+    "Param4": [
+      300,
+      300
+    ],
+    "Param12": 1
+  },
+  {
+    "ID": 42215108,
+    "ActionType": "BattleSceneActionType_Delay",
+    "Param1": [
+      1600
+    ],
+    "SkipCondId": 24191100
+  },
+  {
+    "ID": 42215109,
+    "ActionType": "BattleSceneActionType_Music",
+    "Param5": "BGM_Emotion_Uncertain_2",
+    "SkipCondId": 24191100
+  },
+  {
+    "ID": 42215110,
+    "ActionType": "BattleSceneActionType_Music",
+    "Param5": "BGM_Emotion_Uncertain_3",
+    "SkipCondId": 24191100
+  },
+  {
     "ID": 42216001,
     "ActionType": "BattleSceneActionType_Delay",
     "Param1": [
@@ -16119,47 +16160,6 @@
   },
   {
     "ID": 42715056,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      800
-    ]
-  },
-  {
-    "ID": 42715057,
-    "ActionType": "BattleSceneActionType_ActorEffect",
-    "Param1": [
-      210
-    ],
-    "Param2": [
-      800009079
-    ]
-  },
-  {
-    "ID": 42715058,
-    "ActionType": "BattleSceneActionType_Delay",
-    "Param1": [
-      800
-    ]
-  },
-  {
-    "ID": 42715059,
-    "ActionType": "BattleSceneActionType_ActorAnimation",
-    "Param1": [
-      210
-    ],
-    "Param2": [
-      -1
-    ],
-    "Param4": [
-      800
-    ],
-    "Param5": "Combat_CastSkill01",
-    "Param6": [
-      0
-    ]
-  },
-  {
-    "ID": 42715060,
     "ActionType": "BattleSceneActionType_Delay",
     "Param1": [
       800

@@ -393,6 +393,22 @@
     "UnlockTipStrKey": "ST:258893"
   },
   {
+    "ID": 148,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 6401
+      }
+    ],
+    "GameFunType": "GameFunctionType_UnrealSea",
+    "UseEnergy": 20,
+    "DropId": 351693100,
+    "PlayerExp": 20,
+    "CharExp": 120,
+    "NameStrKey": "ST:263214",
+    "UnlockTipStrKey": "ST:263215"
+  },
+  {
     "ID": 160,
     "OpenCondition": [
       {
@@ -407,5 +423,53 @@
     "CharExp": 120,
     "NameStrKey": "ST:253650",
     "UnlockTipStrKey": "ST:258949"
+  },
+  {
+    "ID": 163,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 6102
+      }
+    ],
+    "GameFunType": "GameFunctionType_UnrealSea",
+    "UseEnergy": 20,
+    "DropId": 351680100,
+    "PlayerExp": 20,
+    "CharExp": 120,
+    "NameStrKey": "ST:260998",
+    "UnlockTipStrKey": "ST:260999"
+  },
+  {
+    "ID": 168,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 6601
+      }
+    ],
+    "GameFunType": "GameFunctionType_UnrealSea",
+    "UseEnergy": 20,
+    "DropId": 351700100,
+    "PlayerExp": 20,
+    "CharExp": 120,
+    "NameStrKey": "ST:264223",
+    "UnlockTipStrKey": "ST:249224"
+  },
+  {
+    "ID": 170,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 6802
+      }
+    ],
+    "GameFunType": "GameFunctionType_UnrealSea",
+    "UseEnergy": 20,
+    "DropId": 351715100,
+    "PlayerExp": 20,
+    "CharExp": 120,
+    "NameStrKey": "ST:268132",
+    "UnlockTipStrKey": "ST:268133"
   }
 ]

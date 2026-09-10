@@ -161,5 +161,23 @@
     "NormalUnlockStrKey": "ST:256390",
     "NameStrKey": "ST:256049",
     "DescStrKey": "ST:219876"
+  },
+  {
+    "ID": 12,
+    "UnlockConds": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 6407
+      }
+    ],
+    "CardAsset": "Assets/GameProject/RuntimeAssets/Characters/DianCang/DianCang_YaoYouYuShaoRong_ABS/Prefabs/DianCang_YaoYouYuShaoRong_KaPai.prefab",
+    "CharId": 100251000,
+    "SlotDummyName": "3",
+    "MinRaotate": 15,
+    "MaxScale": 200,
+    "MInScale": 50,
+    "NormalUnlockStrKey": "ST:263174",
+    "NameStrKey": "ST:261182",
+    "DescStrKey": "ST:219876"
   }
 ]
