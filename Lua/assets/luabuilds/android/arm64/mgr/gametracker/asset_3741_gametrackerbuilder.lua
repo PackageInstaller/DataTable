@@ -614,9 +614,11 @@ function GameTrackerBuilder:BuildIslandFishingCancel(arg_66_1)
 	}, {})
 end
 
-function GameTrackerBuilder:BuildJuusOfficialAccountsClick()
+function GameTrackerBuilder:BuildJuusOfficialAccountsClick(arg_67_1, arg_67_2)
 	return var_0_3(40002, {
-		self
+		self,
+		arg_67_1,
+		arg_67_2
 	}, {})
 end
 

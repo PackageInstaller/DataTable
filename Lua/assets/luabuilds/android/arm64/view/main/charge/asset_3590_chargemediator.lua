@@ -178,6 +178,8 @@ function ChargeMediator:handleNotification(arg_16_1)
 			self.viewComponent:setNormalGroupList(var_16_1.normalGroupList)
 		end
 
+		local var_16_2 = ShopConst.GetShopConfig(var_16_1.id)
+
 		self.viewComponent:checkBuyDone(var_16_1.id)
 		self.viewComponent:updateCurSubView()
 		self.viewComponent:checkFreeGiftTag()

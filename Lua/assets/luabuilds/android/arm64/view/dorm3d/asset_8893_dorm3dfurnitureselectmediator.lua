@@ -91,7 +91,7 @@ function Dorm3dFurnitureSelectMediator:handleNotification(arg_9_1)
 	elseif var_9_0 == GAME.SHOPPING_DONE then
 		if arg_9_1:getBody().awards and #arg_9_1:getBody().awards > 0 then
 			self.viewComponent:emit(Dorm3dFurnitureSelectMediator.OPEN_DROP_LAYER, arg_9_1:getBody().awards, function()
-				self.viewComponent.room:AddFurnitureByID(pg.shop_template[arg_9_1:getBody().id].effect_args[1])
+				self.viewComponent.room:AddFurnitureByID(ShopConst.GetShopConfig(arg_9_1:getBody().id).effect_args[1])
 				self.viewComponent:UpdateDataDisplayFurnitures()
 				self.viewComponent:UpdateView()
 

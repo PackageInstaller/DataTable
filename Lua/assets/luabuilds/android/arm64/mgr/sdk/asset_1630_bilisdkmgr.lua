@@ -8,7 +8,7 @@ PACKAGE_TYPE_UNION = 3
 PACKAGE_TYPE_YYX = 4
 
 function var_0_0.CheckPretest()
-	return NetConst.GATEWAY_HOST == "line1-test-login-ios-blhx.bilibiligame.net" and (NetConst.GATEWAY_PORT == 80 or NetConst.GATEWAY_PORT == 10080) or NetConst.GATEWAY_HOST == "line1-test-login-bili-blhx.bilibiligame.net" and (NetConst.GATEWAY_PORT == 80 or NetConst.GATEWAY_PORT == 10080) or IsUnityEditor
+	return NetConst.getwayType == 2 or IsUnityEditor
 end
 
 function var_0_0.CheckWorldTest()

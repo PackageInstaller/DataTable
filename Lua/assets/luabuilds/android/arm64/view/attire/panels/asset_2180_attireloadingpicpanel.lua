@@ -633,8 +633,10 @@ function AttireLoadingPicPanel:getCurPicInfoListForShow()
 			end
 		end
 	elseif self.curFilterMode == AttireLoadingPicPanel.FilterMode.Gallery then
+		local var_60_1 = AppreciatePicConst.getOldLoadingPicIDList()
+
 		for iter_60_2, iter_60_3 in ipairs(self.picInfoList) do
-			if self:isGalleryPic(iter_60_3) and not self:isDefaultPicInfo(iter_60_3) then
+			if self:isGalleryPic(iter_60_3) and not table.contains(var_60_1, iter_60_3.id) then
 				table.insert(var_60_0, iter_60_3)
 			end
 		end
@@ -645,14 +647,20 @@ function AttireLoadingPicPanel:getCurPicInfoListForShow()
 			end
 		end
 	elseif self.curFilterMode == AttireLoadingPicPanel.FilterMode.Default then
-		var_60_0 = self:getDefaultPicInfoList()
+		local var_60_2 = AppreciatePicConst.getOldLoadingPicIDList()
+
+		for iter_60_6, iter_60_7 in ipairs(self.picInfoList) do
+			if self:isGalleryPic(iter_60_7) and table.contains(var_60_2, iter_60_7.id) then
+				table.insert(var_60_0, iter_60_7)
+			end
+		end
 	end
 
-	local var_60_1 = self:sortPicInfoList(var_60_0)
+	local var_60_3 = self:sortPicInfoList(var_60_0)
 
-	self.curPicInfoListForShow = var_60_1
+	self.curPicInfoListForShow = var_60_3
 
-	return var_60_1
+	return var_60_3
 end
 
 function AttireLoadingPicPanel:getDefaultPicInfoList()

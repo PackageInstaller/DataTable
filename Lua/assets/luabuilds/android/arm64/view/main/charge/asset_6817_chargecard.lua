@@ -200,8 +200,11 @@ function ChargeCard:UpdateShipIcon(arg_7_1)
 	local var_7_1 = arg_7_1:getConfigTable().usage_arg[1][1]
 
 	assert(var_7_1)
-	assert(pg.shop_template[var_7_1].effect_args[1])
-	LoadSpriteAsync("qicon/" .. pg.ship_skin_template[pg.shop_template[var_7_1].effect_args[1]].prefab, function(arg_8_0)
+
+	local var_7_2 = ShopConst.GetShopConfig(var_7_1).effect_args[1]
+
+	assert(var_7_2)
+	LoadSpriteAsync("qicon/" .. pg.ship_skin_template[var_7_2].prefab, function(arg_8_0)
 		if arg_8_0 and not IsNil(self.shipIcon) then
 			var_7_0.sprite = arg_8_0
 		end

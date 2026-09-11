@@ -26,10 +26,11 @@ function ChargeConst.getGoodsLimitInfo(arg_3_0)
 	local var_3_0
 	local var_3_1
 	local var_3_2
+	local var_3_3 = ShopConst.GetShopConfig(arg_3_0)
 
-	if pg.shop_template[arg_3_0] then
-		if type(pg.shop_template[arg_3_0].limit_args[1]) == "table" then
-			for iter_3_0, iter_3_1 in ipairs(pg.shop_template[arg_3_0].limit_args) do
+	if var_3_3 then
+		if type(var_3_3.limit_args[1]) == "table" then
+			for iter_3_0, iter_3_1 in ipairs(var_3_3.limit_args) do
 				if iter_3_1[1] == "level" then
 					var_3_0 = iter_3_1[2]
 				elseif iter_3_1[1] == "count" then
@@ -37,12 +38,12 @@ function ChargeConst.getGoodsLimitInfo(arg_3_0)
 					var_3_2 = iter_3_1[3]
 				end
 			end
-		elseif type(pg.shop_template[arg_3_0].limit_args[1]) == "string" then
-			if pg.shop_template[arg_3_0].limit_args[1] == "level" then
-				var_3_0 = pg.shop_template[arg_3_0].limit_args[2]
-			elseif pg.shop_template[arg_3_0].limit_args[1] == "count" then
-				var_3_1 = pg.shop_template[arg_3_0].limit_args[2]
-				var_3_2 = pg.shop_template[arg_3_0].limit_args[3]
+		elseif type(var_3_3.limit_args[1]) == "string" then
+			if var_3_3.limit_args[1] == "level" then
+				var_3_0 = var_3_3.limit_args[2]
+			elseif var_3_3.limit_args[1] == "count" then
+				var_3_1 = var_3_3.limit_args[2]
+				var_3_2 = var_3_3.limit_args[3]
 			end
 		end
 	end

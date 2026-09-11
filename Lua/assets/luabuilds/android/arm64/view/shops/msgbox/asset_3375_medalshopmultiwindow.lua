@@ -58,7 +58,7 @@ function MedalShopMultiWindow:Hide()
 end
 
 function MedalShopMultiWindow:InitWindow(arg_8_1, arg_8_2)
-	local var_8_0 = arg_8_1:GetDropInfo()
+	local var_8_0 = arg_8_1:getDropInfo()
 	local var_8_1 = math.max(math.floor(getProxy(BagProxy):getItemCountById(ITEM_ID_SILVER_HOOK) / arg_8_1:getConfig("price")), 1)
 
 	if arg_8_1:GetLimit() ~= 0 then

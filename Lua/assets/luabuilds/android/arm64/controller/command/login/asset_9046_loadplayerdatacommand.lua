@@ -309,6 +309,10 @@ function LoadPlayerDataCommand:execute(arg_1_1)
 		{
 			AuctionGameProxy,
 			true
+		},
+		{
+			ReversePacmanDormProxy,
+			true
 		}
 	})
 	pg.ConnectionMgr.GetInstance():setPacketIdx(1)

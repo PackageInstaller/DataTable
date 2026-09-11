@@ -472,9 +472,10 @@ function GalleryView:filterPicInfoForShowBySet()
 
 	local var_42_0 = {}
 	local var_42_1 = getProxy(LoadingPicProxy):getDiyModeOpenFlag()
+	local var_42_2 = AppreciatePicConst.getOldLoadingPicIDList()
 
 	for iter_42_0, iter_42_1 in ipairs(self.picInfoListForShow) do
-		if var_42_1 and AppreciatePicConst.isUsedPicInfo(iter_42_1) or iter_42_1.id > 1000 then
+		if var_42_1 and AppreciatePicConst.isUsedPicInfo(iter_42_1) or table.contains(var_42_2, iter_42_1.id) then
 			var_42_0[#var_42_0 + 1] = iter_42_1
 		end
 	end

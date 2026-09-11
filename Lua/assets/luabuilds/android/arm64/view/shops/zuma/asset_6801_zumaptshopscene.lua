@@ -131,11 +131,7 @@ end
 function ZumaPTShopScene:updateTpl(arg_18_1, arg_18_2)
 	local var_18_0 = arg_18_2:Find("BuyCount")
 	local var_18_1 = self.goodVOListForShow[arg_18_1]
-	local var_18_2 = Drop.New({
-		type = self.goodVOListForShow[arg_18_1]:getConfig("commodity_type"),
-		id = self.goodVOListForShow[arg_18_1]:getConfig("commodity_id"),
-		count = self.goodVOListForShow[arg_18_1]:getConfig("num")
-	})
+	local var_18_2 = self.goodVOListForShow[arg_18_1]:getDropInfo()
 
 	updateDrop(arg_18_2:Find("Item"), var_18_2)
 	setScrollText(arg_18_2:Find("Name/Name"), var_18_2:getName())

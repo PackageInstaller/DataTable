@@ -879,6 +879,9 @@ function StoryPlayer:InitBranches(arg_63_1, arg_63_2, arg_63_3, arg_63_4)
 						var_63_5.blocksRaycasts = true
 
 						self:HideBranchesWithoutSelected(arg_63_2)
+						pg.m02:sendNotification(STORY_EVENT.OPTION_SELECTED, {
+							optionalFlag = var_64_2
+						})
 						arg_63_3(var_64_1)
 
 						return
@@ -886,6 +889,9 @@ function StoryPlayer:InitBranches(arg_63_1, arg_63_2, arg_63_3, arg_63_4)
 				else
 					setActive(self.optionsCg.gameObject, false)
 					self:HideBranchesWithoutSelected(arg_63_2)
+					pg.m02:sendNotification(STORY_EVENT.OPTION_SELECTED, {
+						optionalFlag = var_64_2
+					})
 					arg_63_3(var_64_1)
 				end
 
@@ -1618,6 +1624,7 @@ function StoryPlayer:Reset(arg_119_1, arg_119_2, arg_119_3)
 	setActive(self.spAnimPanel, false)
 	setActive(self.castPanel, false)
 	setActive(self.bgPanel, false)
+	setActive(self.frontTr, true)
 
 	if arg_119_1 and arg_119_1:IsDialogueMode() and arg_119_2 and arg_119_2:IsDialogueMode() then
 		-- block empty

@@ -61,7 +61,7 @@ function FulankelinMainPage:OnUpdateFlush()
 end
 
 function FulankelinMainPage:updateUI()
-	local var_9_0, var_9_1 = pg.TimeMgr.GetInstance():inTime(pg.shop_template[var_0_1].time)
+	local var_9_0, var_9_1 = pg.TimeMgr.GetInstance():inTime(ShopConst.GetShopConfig(var_0_1).time)
 	local var_9_2
 
 	if var_9_1 then

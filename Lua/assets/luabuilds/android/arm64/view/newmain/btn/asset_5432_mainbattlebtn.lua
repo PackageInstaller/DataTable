@@ -15,4 +15,16 @@ function MainBattleBtn:IsFixed()
 	return true
 end
 
+function MainBattleBtn:ShowOrHideBtnEffect(arg_3_1)
+	local var_3_0 = self._tf:Find("FX")
+
+	if IsNil(var_3_0) then
+		return
+	end
+
+	setActive(var_3_0, arg_3_1)
+
+	return
+end
+
 return MainBattleBtn

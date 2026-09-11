@@ -164,21 +164,22 @@ function SupplyShopView:initToggleList()
 			local var_11_0 = self.packageSortList[arg_11_1 + 1].type
 
 			if self.packageSortList[arg_11_1 + 1].type == ShopConst.TYPE_ACTIVITY then
-				if pg.activity_template[self.packageSortList[arg_11_1 + 1].shopData.activityId] and pg.activity_template[self.packageSortList[arg_11_1 + 1].shopData.activityId].config_client then
-					local var_11_2
+				local var_11_1
 
-					if not pg.activity_template[self.packageSortList[arg_11_1 + 1].shopData.activityId].config_client.shop_title then
-						var_11_2 = i18n(nil) or i18n(ShopConst.TYPE2NAME[var_11_0])
-					end
+				if pg.activity_template[self.packageSortList[arg_11_1 + 1].shopData.activityId] and pg.activity_template[self.packageSortList[arg_11_1 + 1].shopData.activityId].config_client then
+					var_11_1 = pg.activity_template[self.packageSortList[arg_11_1 + 1].shopData.activityId].config_client.shop_title or nil
 				end
 
+				local var_11_2 = var_11_1 and i18n(var_11_1) or i18n(ShopConst.TYPE2NAME[var_11_0])
+
 				setText(arg_11_2:Find("selected/Label"), var_11_2)
+				setText(arg_11_2:Find("unselected/Label"), var_11_2)
 			else
 				setText(arg_11_2:Find("selected/Label"), i18n(ShopConst.TYPE2NAME[var_11_0]))
+				setText(arg_11_2:Find("unselected/Label"), i18n(ShopConst.TYPE2NAME[var_11_0]))
 			end
 
 			setText(arg_11_2:Find("selected/enText"), i18n(ShopConst.TYPE2NAME[var_11_0] .. "en"))
-			setText(arg_11_2:Find("unselected/Label"), i18n(ShopConst.TYPE2NAME[var_11_0]))
 
 			local var_11_4, var_11_5 = self.pages[var_11_0]:CanOpen(self.allShopList[var_11_0][1], self.player)
 

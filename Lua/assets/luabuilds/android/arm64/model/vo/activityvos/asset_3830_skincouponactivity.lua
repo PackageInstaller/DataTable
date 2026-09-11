@@ -103,7 +103,7 @@ function SkinCouponActivity:GetItemName()
 end
 
 function SkinCouponActivity:ShopId2SkinId(arg_17_1)
-	return pg.shop_template[arg_17_1].effect_args[1]
+	return ShopConst.GetShopConfig(arg_17_1).effect_args[1]
 end
 
 function SkinCouponActivity:GetOwnCount()

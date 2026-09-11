@@ -667,6 +667,7 @@ function Dorm3dFurnitureSelectLayer:UpdateViewFurnitureItem(arg_66_1)
 			id = var_66_8:GetResType(),
 			count = var_66_9
 		})
+		local var_66_13 = ShopConst.GetShopConfig(var_66_7)
 
 		onButton(self, var_66_1:Find("GO"), function()
 			self:emit(Dorm3dFurnitureSelectMediator.SHOW_SHOPPING_CONFIRM_WINDOW, {

@@ -350,47 +350,20 @@ function MainPaintingView:Live2dIsDownload()
 end
 
 function MainPaintingView:Fold(arg_33_1, arg_33_2)
-	LeanTween.cancel(self._tf.gameObject)
-	LeanTween.cancel(self._bgTf.gameObject)
+	return
+end
 
-	if arg_33_1 and not self.silentFlag then
-		local var_33_0 = Vector3(0 - self.painting:GetOffset(), self.shift:GetMeshImageShift().y, 0)
-
-		LeanTween.moveLocal(self._tf.gameObject, var_33_0, arg_33_2):setEase(LeanTweenType.easeInOutExpo)
-		LeanTween.moveLocal(self._bgTf.gameObject, var_33_0 - (self._tf.localPosition - self._bgTf.localPosition), arg_33_2):setEase(LeanTweenType.easeInOutExpo):setOnComplete(System.Action(function()
-			self.painting:Fold(arg_33_1, arg_33_2)
-
-			return
-		end))
-	elseif self.ship then
-		local var_33_1 = self:GetPositionAndScale(self.ship)
-
-		LeanTween.moveLocal(self._tf.gameObject, var_33_1, arg_33_2):setEase(LeanTweenType.easeInOutExpo)
-		LeanTween.moveLocal(self._bgTf.gameObject, var_33_1, arg_33_2):setEase(LeanTweenType.easeInOutExpo):setOnComplete(System.Action(function()
-			if self.exited then
-				return
-			end
-
-			self.painting:Fold(arg_33_1, arg_33_2)
-
-			return
-		end))
-	end
+function MainPaintingView:EnableOrDisableScale(arg_34_1)
+	self.painting:EnableOrDisableMove(arg_34_1)
+	self.painting:OnEnablePartScale(arg_34_1)
 
 	return
 end
 
-function MainPaintingView:EnableOrDisableScale(arg_36_1)
-	self.painting:EnableOrDisableMove(arg_36_1)
-	self.painting:OnEnablePartScale(arg_36_1)
+function MainPaintingView:EnableOrDisableMove(arg_35_1)
+	self.painting:EnableOrDisableMove(arg_35_1)
 
-	return
-end
-
-function MainPaintingView:EnableOrDisableMove(arg_37_1)
-	self.painting:EnableOrDisableMove(arg_37_1)
-
-	if arg_37_1 then
+	if arg_35_1 then
 		self:EnableDragAndZoom()
 	else
 		self:DisableDragAndZoom()
@@ -399,8 +372,8 @@ function MainPaintingView:EnableOrDisableMove(arg_37_1)
 	return
 end
 
-function MainPaintingView:OnAsmrTurnning(arg_38_1)
-	self.painting:OnAsmrTurnning(arg_38_1)
+function MainPaintingView:OnAsmrTurnning(arg_36_1)
+	self.painting:OnAsmrTurnning(arg_36_1)
 
 	return
 end
@@ -408,36 +381,36 @@ end
 function MainPaintingView:EnableDragAndZoom()
 	self.isEnableDrag = true
 
-	local var_39_0 = self._tf.parent.gameObject
-	local var_39_1 = GetOrAddComponent(self._tf.parent.gameObject, typeof(PinchZoom))
-	local var_39_2 = GetOrAddComponent(self._tf.parent.gameObject, typeof(EventTriggerListener))
-	local var_39_3 = Vector3(0, 0, 0)
+	local var_37_0 = self._tf.parent.gameObject
+	local var_37_1 = GetOrAddComponent(self._tf.parent.gameObject, typeof(PinchZoom))
+	local var_37_2 = GetOrAddComponent(self._tf.parent.gameObject, typeof(EventTriggerListener))
+	local var_37_3 = Vector3(0, 0, 0)
 
-	var_39_2:AddBeginDragFunc(function(arg_40_0, arg_40_1)
+	var_37_2:AddBeginDragFunc(function(arg_38_0, arg_38_1)
 		if Application.isEditor and Input.GetMouseButton(2) then
 			return
 		end
 
-		if var_39_1.processing then
+		if var_37_1.processing then
 			return
 		end
 
-		setButtonEnabled(var_39_0, false)
+		setButtonEnabled(var_37_0, false)
 
 		if Input.touchCount > 1 then
 			return
 		end
 
-		var_39_3 = self._tf.localPosition - MainPaintingView.Screen2Local(var_39_0.transform.parent, arg_40_1.position)
+		var_37_3 = self._tf.localPosition - MainPaintingView.Screen2Local(var_37_0.transform.parent, arg_38_1.position)
 
 		return
 	end)
-	var_39_2:AddDragFunc(function(arg_41_0, arg_41_1)
+	var_37_2:AddDragFunc(function(arg_39_0, arg_39_1)
 		if Application.isEditor and Input.GetMouseButton(2) then
 			return
 		end
 
-		if var_39_1.processing then
+		if var_37_1.processing then
 			return
 		end
 
@@ -445,24 +418,24 @@ function MainPaintingView:EnableDragAndZoom()
 			return
 		end
 
-		local var_41_0 = MainPaintingView.Screen2Local(var_39_0.transform.parent, arg_41_1.position)
+		local var_39_0 = MainPaintingView.Screen2Local(var_37_0.transform.parent, arg_39_1.position)
 
-		self._tf.localPosition = self.painting:IslimitYPos() and Vector3(var_41_0.x, self._tf.localPosition.y, 0) + Vector3(var_39_3.x, 0, 0) or Vector3(var_41_0.x, var_41_0.y, 0) + var_39_3
+		self._tf.localPosition = self.painting:IslimitYPos() and Vector3(var_39_0.x, self._tf.localPosition.y, 0) + Vector3(var_37_3.x, 0, 0) or Vector3(var_39_0.x, var_39_0.y, 0) + var_37_3
 		self._bgTf.localPosition = self.bgOffset + self._tf.localPosition
 
 		return
 	end)
-	var_39_2:AddDragEndFunc(function()
-		setButtonEnabled(var_39_0, true)
+	var_37_2:AddDragEndFunc(function()
+		setButtonEnabled(var_37_0, true)
 
 		return
 	end)
 
 	if not self.painting:IslimitYPos() then
-		var_39_1.enabled = true
+		var_37_1.enabled = true
 	end
 
-	var_39_2.enabled = true
+	var_37_2.enabled = true
 	Input.multiTouchEnabled = true
 	self.cg.blocksRaycasts = false
 
@@ -473,11 +446,11 @@ end
 
 function MainPaintingView:DisableDragAndZoom()
 	if self.isEnableDrag then
-		local var_43_0 = self._tf.parent:GetComponent(typeof(EventTriggerListener))
+		local var_41_0 = self._tf.parent:GetComponent(typeof(EventTriggerListener))
 
-		ClearEventTrigger(var_43_0)
+		ClearEventTrigger(var_41_0)
 
-		var_43_0.enabled = false
+		var_41_0.enabled = false
 		self._tf.parent:GetComponent(typeof(PinchZoom)).enabled = false
 		self.cg.blocksRaycasts = true
 		self.isEnableDrag = false
@@ -498,8 +471,8 @@ function MainPaintingView:Dispose()
 
 	self.painting = nil
 
-	for iter_44_0, iter_44_1 in ipairs(self.paintings) do
-		iter_44_1:Dispose()
+	for iter_42_0, iter_42_1 in ipairs(self.paintings) do
+		iter_42_1:Dispose()
 	end
 
 	self.paintings = nil
@@ -507,10 +480,10 @@ function MainPaintingView:Dispose()
 	return
 end
 
-function MainPaintingView:Screen2Local(arg_45_1)
-	local var_45_0 = GameObject.Find("UICamera")
+function MainPaintingView:Screen2Local(arg_43_1)
+	local var_43_0 = GameObject.Find("UICamera")
 
-	return Vector3(var_45_0.x, LuaHelper.ScreenToLocal(self:GetComponent("RectTransform"), arg_45_1, (var_45_0:GetComponent("Camera"))).y, 0)
+	return Vector3(var_43_0.x, LuaHelper.ScreenToLocal(self:GetComponent("RectTransform"), arg_43_1, (var_43_0:GetComponent("Camera"))).y, 0)
 end
 
 return MainPaintingView

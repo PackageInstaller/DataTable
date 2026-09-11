@@ -86,8 +86,10 @@ function Dorm3dShopDetailWindow:didEnter()
 	local var_4_8 = 0
 
 	_.each(var_4_0:getConfig("shop_id"), function(arg_7_0)
-		if pg.shop_template[arg_7_0].group_type == 2 then
-			var_4_8 = math.max(pg.shop_template[arg_7_0].group_limit, var_4_8)
+		local var_7_0 = ShopConst.GetShopConfig(arg_7_0)
+
+		if var_7_0.group_type == 2 then
+			var_4_8 = math.max(var_7_0.group_limit, var_4_8)
 		end
 
 		return
@@ -180,22 +182,23 @@ function Dorm3dShopDetailWindow:didEnter()
 	end, SFX_PANEL)
 	onButton(self, self._tf:Find("Window/Confirm"), function()
 		local var_12_0 = getProxy(PlayerProxy):getData()
+		local var_12_1 = ShopConst.GetShopConfig(self.itemList[1])
 
-		if var_12_0[id2res(pg.shop_template[self.itemList[1]].resource_type)] < self.sumPrice then
-			if pg.shop_template[self.itemList[1]].resource_type == 1 then
+		if var_12_0[id2res(var_12_1.resource_type)] < self.sumPrice then
+			if var_12_1.resource_type == 1 then
 				GoShoppingMsgBox(i18n("switch_to_shop_tip_2", i18n("word_gold")), ChargeScene.TYPE_ITEM, {
 					{
 						59001,
-						self.sumPrice - var_12_0[id2res(pg.shop_template[self.itemList[1]].resource_type)],
+						self.sumPrice - var_12_0[id2res(var_12_1.resource_type)],
 						self.sumPrice
 					}
 				})
-			elseif pg.shop_template[self.itemList[1]].resource_type == 4 or pg.shop_template[self.itemList[1]].resource_type == 14 then
+			elseif var_12_1.resource_type == 4 or var_12_1.resource_type == 14 then
 				GoShoppingMsgBox(i18n("switch_to_shop_tip_3", i18n("word_gem")), ChargeScene.TYPE_DIAMOND)
-			elseif not ItemTipPanel.ShowItemTip(DROP_TYPE_RESOURCE, pg.shop_template[self.itemList[1]].resource_type) then
+			elseif not ItemTipPanel.ShowItemTip(DROP_TYPE_RESOURCE, var_12_1.resource_type) then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("buyProp_noResource_error", (Drop.New({
 					type = DROP_TYPE_RESOURCE,
-					id = pg.shop_template[self.itemList[1]].resource_type
+					id = var_12_1.resource_type
 				}):getName())))
 			end
 
@@ -280,14 +283,16 @@ end
 
 function Dorm3dShopDetailWindow:GetShopId(arg_18_1)
 	for iter_18_0 = 1, #self.shopCfg.shop_id - 1 do
-		if not pg.shop_template[self.shopCfg.shop_id[iter_18_0]].limit_args[1] and pg.shop_template[self.shopCfg.shop_id[iter_18_0]].group_type == 0 then
+		local var_18_0 = ShopConst.GetShopConfig(self.shopCfg.shop_id[iter_18_0])
+
+		if not var_18_0.limit_args[1] and var_18_0.group_type == 0 then
 			return self.shopCfg.shop_id[iter_18_0]
-		elseif pg.shop_template[self.shopCfg.shop_id[iter_18_0]].limit_args[1] and (pg.shop_template[self.shopCfg.shop_id[iter_18_0]].limit_args[1][1] == "dailycount" or pg.shop_template[self.shopCfg.shop_id[iter_18_0]].limit_args[1][1] == "count") then
-			if arg_18_1 < pg.shop_template[self.shopCfg.shop_id[iter_18_0]].limit_args[1][3] then
+		elseif var_18_0.limit_args[1] and (var_18_0.limit_args[1][1] == "dailycount" or var_18_0.limit_args[1][1] == "count") then
+			if arg_18_1 < var_18_0.limit_args[1][3] then
 				return self.shopCfg.shop_id[iter_18_0]
 			end
-		elseif pg.shop_template[self.shopCfg.shop_id[iter_18_0]].group_type == 2 then
-			if arg_18_1 < pg.shop_template[self.shopCfg.shop_id[iter_18_0]].group_limit then
+		elseif var_18_0.group_type == 2 then
+			if arg_18_1 < var_18_0.group_limit then
 				return self.shopCfg.shop_id[iter_18_0]
 			end
 		else

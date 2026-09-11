@@ -94,9 +94,11 @@ function MainOverDueSkinDiscountItemSequence:_CollectExpiredItems(arg_11_1)
 	local var_11_0 = {}
 
 	for iter_11_0, iter_11_1 in pairs(pg.shop_template.get_id_list_by_genre[ShopArgs.GiftPackage]) do
-		if self:InTime(pg.shop_template[iter_11_1].time) then
-			if pg.item_data_statistics[pg.shop_template[iter_11_1].effect_args[1] or 0] then
-				self:GetExpiredItemIdFromDropList(var_11_0, pg.item_data_statistics[pg.shop_template[iter_11_1].effect_args[1] or 0].display_icon, arg_11_1)
+		local var_11_1 = ShopConst.GetShopConfig(iter_11_1)
+
+		if self:InTime(var_11_1.time) then
+			if pg.item_data_statistics[var_11_1.effect_args[1] or 0] then
+				self:GetExpiredItemIdFromDropList(var_11_0, pg.item_data_statistics[var_11_1.effect_args[1] or 0].display_icon, arg_11_1)
 			end
 		end
 	end

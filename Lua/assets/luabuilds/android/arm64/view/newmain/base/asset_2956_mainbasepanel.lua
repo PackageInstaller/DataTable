@@ -42,11 +42,15 @@ function MainBasePanel:Refresh()
 	return
 end
 
+function MainBasePanel:ShowOrHideBtnEffect()
+	return
+end
+
 function MainBasePanel:Dispose()
 	MainBasePanel.super.Dispose(self)
 
-	for iter_7_0, iter_7_1 in ipairs(self.btns) do
-		iter_7_1:Dispose()
+	for iter_8_0, iter_8_1 in ipairs(self.btns) do
+		iter_8_1:Dispose()
 	end
 
 	self.btns = {}

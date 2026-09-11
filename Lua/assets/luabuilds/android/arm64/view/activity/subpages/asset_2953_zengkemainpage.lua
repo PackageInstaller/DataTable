@@ -51,7 +51,7 @@ function ZengKeMainPage:OnUpdateFlush()
 end
 
 function ZengKeMainPage:updateUI()
-	local var_7_0, var_7_1 = self.timeMgr:inTime(pg.shop_template[var_0_1].time)
+	local var_7_0, var_7_1 = self.timeMgr:inTime(ShopConst.GetShopConfig(var_0_1).time)
 	local var_7_2
 
 	if var_7_1 then

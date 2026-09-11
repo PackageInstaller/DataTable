@@ -4,6 +4,42 @@ pg.word_legal_template_9 = {}
 local var_0_0 = pg.word_legal_template_9
 
 function temp()
+	var_0_0.桎 = {
+		this = {
+			this = true
+		}
+	}
+
+	return
+end
+
+temp()
+
+function temp()
+	var_0_0.椋 = {
+		this = {
+			this = true
+		}
+	}
+
+	return
+end
+
+temp()
+
+function temp()
+	var_0_0.杪 = {
+		this = {
+			this = true
+		}
+	}
+
+	return
+end
+
+temp()
+
+function temp()
 	var_0_0.藤 = {
 		this = {
 			this = true
@@ -332,42 +368,6 @@ temp()
 
 function temp()
 	var_0_0.獌 = {
-		this = {
-			this = true
-		}
-	}
-
-	return
-end
-
-temp()
-
-function temp()
-	var_0_0.狏 = {
-		this = {
-			this = true
-		}
-	}
-
-	return
-end
-
-temp()
-
-function temp()
-	var_0_0.狳 = {
-		this = {
-			this = true
-		}
-	}
-
-	return
-end
-
-temp()
-
-function temp()
-	var_0_0.犰 = {
 		this = {
 			this = true
 		}

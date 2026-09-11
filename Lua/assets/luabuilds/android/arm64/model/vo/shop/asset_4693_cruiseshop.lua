@@ -17,7 +17,7 @@ function CruiseShop:Ctor(arg_1_1, arg_1_2)
 			local var_1_1 = pg.TimeMgr.GetInstance()
 
 			for iter_1_2, iter_1_3 in ipairs(pg.shop_template.get_id_list_by_genre[iter_1_1]) do
-				if var_1_1:inTime(pg.shop_template[iter_1_3].time) then
+				if var_1_1:inTime(ShopConst.GetShopConfig(iter_1_3).time) then
 					table.insert(var_1_0, iter_1_3)
 				end
 			end
@@ -40,7 +40,7 @@ function CruiseShop:Ctor(arg_1_1, arg_1_2)
 
 	for iter_1_8, iter_1_9 in ipairs(var_1_0) do
 		local var_1_4 = var_1_2[iter_1_9] or 0
-		local var_1_5 = var_1_3[pg.shop_template[iter_1_9].group] or 0
+		local var_1_5 = var_1_3[ShopConst.GetShopConfig(iter_1_9).group] or 0
 
 		self.goods[iter_1_9] = Goods.Create({
 			shop_id = iter_1_9,

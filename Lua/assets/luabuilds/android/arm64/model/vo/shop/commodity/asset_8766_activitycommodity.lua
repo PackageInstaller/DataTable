@@ -192,16 +192,26 @@ function ActivityCommodity:Selectable()
 	return false
 end
 
-function ActivityCommodity:GetDropList()
-	local var_14_0 = {}
+function ActivityCommodity:getDropInfo()
+	local var_14_0 = self:getConfig("commodity_id")
 
-	table.insert(var_14_0, Drop.New({
-		count = 1,
+	if not var_14_0 or var_14_0 == 0 then
+		var_14_0 = self:getConfig("commodity_id_list")[1]
+	end
+
+	return Drop.New({
 		type = self:getConfig("commodity_type"),
-		id = self:getConfig("commodity_id")
-	}))
+		id = var_14_0,
+		count = self:getConfig("num")
+	})
+end
 
-	return var_14_0
+function ActivityCommodity:GetDropList()
+	local var_15_0 = {}
+
+	table.insert(var_15_0, self:getDropInfo())
+
+	return var_15_0
 end
 
 return ActivityCommodity

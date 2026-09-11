@@ -86,8 +86,10 @@ function ApartmentProxy:InitGiftDaily()
 		callback = function()
 			for iter_8_0, iter_8_1 in ipairs(pg.dorm3d_gift.all) do
 				if #pg.dorm3d_gift[iter_8_1].shop_id > 0 then
-					if pg.shop_template[pg.dorm3d_gift[iter_8_1].shop_id[1]].group ~= 0 then
-						self.shopCount.dailyGift[pg.dorm3d_gift[iter_8_1].id] = getProxy(ShopsProxy):GetGroupPayCount(pg.shop_template[pg.dorm3d_gift[iter_8_1].shop_id[1]].group)
+					local var_8_0 = ShopConst.GetShopConfig(pg.dorm3d_gift[iter_8_1].shop_id[1]).group
+
+					if var_8_0 ~= 0 then
+						self.shopCount.dailyGift[pg.dorm3d_gift[iter_8_1].id] = getProxy(ShopsProxy):GetGroupPayCount(var_8_0)
 					end
 				end
 			end
@@ -498,7 +500,7 @@ end
 
 function ApartmentProxy.RefreshGiftDailyTip()
 	for iter_60_0, iter_60_1 in ipairs(pg.dorm3d_shop_template.all) do
-		if pg.shop_template[pg.dorm3d_shop_template[iter_60_1].shop_id[1]].group ~= 0 then
+		if ShopConst.GetShopConfig(pg.dorm3d_shop_template[iter_60_1].shop_id[1]).group ~= 0 then
 			local var_60_0 = getProxy(PlayerProxy):getRawData().id
 
 			PlayerPrefs.SetInt(var_60_0 .. "_dorm3dGiftWeekViewed_" .. pg.dorm3d_shop_template[iter_60_1].item_id, 0)

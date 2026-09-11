@@ -669,7 +669,7 @@ function ShopsProxy:GetAllShowGiftPackages(arg_73_1)
 	end
 
 	for iter_73_2, iter_73_3 in ipairs(pg.shop_template.get_id_list_by_genre[ShopArgs.GiftPackage] or {}) do
-		if (arg_73_1 == nil or pg.shop_template[iter_73_3].akashi_pick > 0 == arg_73_1) and not table.contains(var_73_1, iter_73_3) then
+		if (arg_73_1 == nil or ShopConst.GetShopConfig(iter_73_3).akashi_pick > 0 == arg_73_1) and not table.contains(var_73_1, iter_73_3) then
 			table.insert(var_73_0, (Goods.Create({
 				shop_id = iter_73_3
 			}, Goods.TYPE_GIFT_PACKAGE)))
@@ -677,7 +677,7 @@ function ShopsProxy:GetAllShowGiftPackages(arg_73_1)
 	end
 
 	for iter_73_4, iter_73_5 in ipairs(pg.shop_template.get_id_list_by_genre[ShopArgs.GiftActPackage] or {}) do
-		if (arg_73_1 == nil or pg.shop_template[iter_73_5].akashi_pick > 0 == arg_73_1) and not table.contains(var_73_1, iter_73_5) then
+		if (arg_73_1 == nil or ShopConst.GetShopConfig(iter_73_5).akashi_pick > 0 == arg_73_1) and not table.contains(var_73_1, iter_73_5) then
 			table.insert(var_73_0, (Goods.Create({
 				shop_id = iter_73_5
 			}, Goods.TYPE_GIFT_PACKAGE_ACT)))
@@ -710,6 +710,11 @@ function ShopsProxy:GetAllShowGiftPackages(arg_73_1)
 			end
 
 			local var_73_11, var_73_12 = pg.TimeMgr.GetInstance():inTime(iter_73_7:getConfig("time"))
+
+			if iter_73_7.id == 69999 then
+				warning(PrintTable(iter_73_7:getConfig("time")), iter_73_7.__cname)
+				warning(var_73_11, var_73_12, iter_73_7:canPurchase(), var_73_8)
+			end
 
 			if var_73_12 then
 				table.insert(var_73_6, iter_73_7)
@@ -771,6 +776,30 @@ function ShopsProxy:filterLimitTypeGoods(arg_74_1, arg_74_2)
 	}, function()
 		return true
 	end)
+end
+
+function ShopsProxy:CanPurchasedByCharge(arg_78_1)
+	for iter_78_0, iter_78_1 in ipairs(pg.pay_data_display.get_id_list_by_extra_service[Goods.NON_MAIL] or {}) do
+		for iter_78_2, iter_78_3 in ipairs((type(pg.pay_data_display[iter_78_1].extra_service_item) == "string" or nil) and {}) do
+			if iter_78_3[1] == DROP_TYPE_SKIN and iter_78_3[2] == arg_78_1 then
+				return true, iter_78_1
+			end
+		end
+	end
+
+	return false
+end
+
+function ShopsProxy:IsSkinTypeCharge(arg_79_1)
+	assert(pg.pay_data_display[arg_79_1], "pay_data_display" .. arg_79_1)
+
+	for iter_79_0, iter_79_1 in ipairs((type(pg.pay_data_display[arg_79_1].extra_service_item) == "string" or nil) and {}) do
+		if iter_79_1[1] == DROP_TYPE_SKIN then
+			return true, iter_79_1[2]
+		end
+	end
+
+	return false
 end
 
 return ShopsProxy

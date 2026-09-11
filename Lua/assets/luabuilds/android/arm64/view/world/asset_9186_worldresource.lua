@@ -49,10 +49,10 @@ function WorldResource:init()
 			return
 		end
 
-		local var_6_1 = pg.shop_template[var_6_0]
-		local var_6_2 = pg.shop_template[var_6_0].num
+		local var_6_1 = ShopConst.GetShopConfig(var_6_0)
+		local var_6_2 = var_6_1.num
 
-		if pg.shop_template[var_6_0].num == -1 and var_6_1.genre == ShopArgs.BuyOil then
+		if var_6_1.num == -1 and var_6_1.genre == ShopArgs.BuyOil then
 			var_6_2 = ShopArgs.getOilByLevel(self.player.level)
 		end
 

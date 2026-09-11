@@ -21,7 +21,7 @@ function NewMainClassicTheme:PlayEnterAnimation(arg_3_1, arg_3_2)
 	return
 end
 
-function NewMainClassicTheme:_FoldPanels(arg_4_1, arg_4_2)
+function NewMainClassicTheme:_FoldPanels(arg_4_1, arg_4_2, arg_4_3)
 	NewMainClassicTheme.super._FoldPanels(self, arg_4_1, arg_4_2)
 	self.adapterView:Fold(arg_4_1, arg_4_2)
 

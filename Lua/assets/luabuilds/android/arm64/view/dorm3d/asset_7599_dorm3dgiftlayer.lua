@@ -216,8 +216,10 @@ function Dorm3dGiftLayer:UpdateGift(arg_20_1, arg_20_2, arg_20_3)
 		local var_20_13 = 0
 
 		_.each(var_20_4:getConfig("shop_id"), function(arg_22_0)
-			if pg.shop_template[arg_22_0].group_type == 2 then
-				var_20_13 = math.max(pg.shop_template[arg_22_0].group_limit, var_20_13)
+			local var_22_0 = ShopConst.GetShopConfig(arg_22_0)
+
+			if var_22_0.group_type == 2 then
+				var_20_13 = math.max(var_22_0.group_limit, var_20_13)
 			end
 
 			return

@@ -1083,7 +1083,9 @@ function BattleWeaponUnit:setBulletOrb(arg_94_1)
 	arg_94_1:AppendAttachBuff({
 		buff_id = self._orbID,
 		rant = self._orbRant,
-		level = self._orbLevel
+		level = self._orbLevel,
+		buff_level = self._orbBuffLevel,
+		group_level = self._orbGroupLevel
 	})
 
 	return
@@ -1093,6 +1095,8 @@ function BattleWeaponUnit:SetBulletOrbData(arg_95_1)
 	self._orbID = arg_95_1.buffID
 	self._orbRant = arg_95_1.rant
 	self._orbLevel = arg_95_1.level
+	self._orbBuffLevel = arg_95_1.buff_level
+	self._orbGroupLevel = arg_95_1.group_level
 
 	return
 end
@@ -1166,9 +1170,15 @@ function BattleWeaponUnit:DispatchBulletEvent(arg_101_1, arg_101_2)
 	end
 
 	if type(self._tmpData.spawn_bound) == "table" and not var_101_0 then
-		local var_101_2 = self._dataProxy:GetStageInfo().mainUnitPosition
+		local var_101_2 = self._tmpData.spawn_bound[2] or {
+			0,
+			0,
+			0
+		}
+		local var_101_3 = self._dataProxy:GetStageInfo().mainUnitPosition
 
-		var_101_0 = var_101_2 and var_101_2[self._hostIFF] and Clone(var_101_2[self._hostIFF][self._tmpData.spawn_bound[1]]) or Clone(var_0_2.MAIN_UNIT_POS[self._hostIFF][self._tmpData.spawn_bound[1]])
+		var_101_0 = var_101_3 and var_101_3[self._hostIFF] and Clone(var_101_3[self._hostIFF][self._tmpData.spawn_bound[1]]) or Clone(var_0_2.MAIN_UNIT_POS[self._hostIFF][self._tmpData.spawn_bound[1]])
+		var_101_0 = Vector3.New(var_101_0.x + (var_101_2[1] or 0), var_101_0.y + (var_101_2[2] or 0), var_101_0.z + (var_101_2[3] or 0))
 	end
 
 	self:DispatchEvent((var_0_0.Event.New(var_0_0.Battle.BattleUnitEvent.CREATE_BULLET, {

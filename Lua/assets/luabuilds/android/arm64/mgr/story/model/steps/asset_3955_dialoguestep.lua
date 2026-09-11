@@ -64,6 +64,7 @@ function DialogueStep:Ctor(arg_2_1)
 		self.dir = 1
 	end
 
+	self.nextIcon = arg_2_1.NextIcon or 0
 	self.expression = arg_2_1.expression
 	self.typewriter = arg_2_1.typewriter
 	self.painting = arg_2_1.painting
@@ -144,6 +145,10 @@ function DialogueStep:Ctor(arg_2_1)
 	return
 end
 
+function DialogueStep:GetNextIcon()
+	return self.nextIcon
+end
+
 function DialogueStep:GetSpinePosition()
 	return BuildVector3(self.spinePos)
 end
@@ -168,37 +173,37 @@ end
 function DialogueStep:GetBgName()
 	if self.dynamicBgType and self.dynamicBgType == DialogueStep.ACTOR_TYPE_TB and getProxy(EducateProxy) and getProxy(NewEducateProxy) then
 		if not pg.NewStoryMgr.GetInstance():IsReView() then
-			local var_6_0 = ""
+			local var_7_0 = ""
 
 			if not getProxy(NewEducateProxy):GetCurChar() then
-				local var_6_1, var_6_2, var_6_3 = getProxy(EducateProxy):GetStoryInfo()
+				local var_7_1, var_7_2, var_7_3 = getProxy(EducateProxy):GetStoryInfo()
 
-				var_6_0 = var_6_3
+				var_7_0 = var_7_3
 			else
-				local var_6_4, var_6_5, var_6_6 = getProxy(NewEducateProxy):GetStoryInfo()
+				local var_7_4, var_7_5, var_7_6 = getProxy(NewEducateProxy):GetStoryInfo()
 
-				var_6_0 = var_6_6
+				var_7_0 = var_7_6
 			end
 
-			do return (self:Convert2StoryBg(var_6_0)) end
+			do return (self:Convert2StoryBg(var_7_0)) end
 
-			goto label_6_0
+			goto label_7_0
 		end
 	end
 
 	do return DialogueStep.super.GetBgName(self) end
 
-	::label_6_0::
+	::label_7_0::
 
 	return
 end
 
-function DialogueStep:Convert2StoryBg(arg_7_1)
+function DialogueStep:Convert2StoryBg(arg_8_1)
 	return ({
 		educate_tb_3 = "bg_project_tb_room3",
 		educate_tb_2 = "bg_project_tb_room2",
 		educate_tb_1 = "bg_project_tb_room1"
-	})[arg_7_1] or arg_7_1
+	})[arg_8_1] or arg_8_1
 end
 
 function DialogueStep:GetPaintingRwIndex()
@@ -261,10 +266,10 @@ function DialogueStep:GetExPression()
 	if self.expression then
 		return self.expression
 	else
-		local var_17_0 = self:GetPainting()
+		local var_18_0 = self:GetPainting()
 
-		if var_17_0 and ShipExpressionHelper.DefaultFaceless(var_17_0) then
-			return ShipExpressionHelper.GetDefaultFace(var_17_0)
+		if var_18_0 and ShipExpressionHelper.DefaultFaceless(var_18_0) then
+			return ShipExpressionHelper.GetDefaultFace(var_18_0)
 		end
 	end
 
@@ -287,12 +292,12 @@ function DialogueStep:ShouldAddHeadMaskWhenFade()
 	return true
 end
 
-function DialogueStep:ShouldGrayingPainting(arg_19_1)
-	return arg_19_1:GetPainting() ~= nil and not self:IsSameSide(arg_19_1)
+function DialogueStep:ShouldGrayingPainting(arg_20_1)
+	return arg_20_1:GetPainting() ~= nil and not self:IsSameSide(arg_20_1)
 end
 
-function DialogueStep:ShouldGrayingOutPainting(arg_20_1)
-	return self:GetPainting() ~= nil and not self:IsSameSide(arg_20_1)
+function DialogueStep:ShouldGrayingOutPainting(arg_21_1)
+	return self:GetPainting() ~= nil and not self:IsSameSide(arg_21_1)
 end
 
 function DialogueStep:ShouldFadeInPainting()
@@ -304,9 +309,9 @@ function DialogueStep:ShouldFadeInPainting()
 		return false
 	end
 
-	local var_21_0 = self:GetFadeInPaintingTime()
+	local var_22_0 = self:GetFadeInPaintingTime()
 
-	if not var_21_0 or var_21_0 <= 0 then
+	if not var_22_0 or var_22_0 <= 0 then
 		return false
 	end
 
@@ -322,13 +327,13 @@ function DialogueStep:ShouldFaceBlack()
 end
 
 function DialogueStep:GetPaintingData()
-	local var_24_0 = self.painting or {}
-	local var_24_1 = {}
+	local var_25_0 = self.painting or {}
+	local var_25_1 = {}
 
-	var_24_1.alpha = var_24_0.alpha or 0.3
-	var_24_1.time = var_24_0.time or 1
+	var_25_1.alpha = var_25_0.alpha or 0.3
+	var_25_1.time = var_25_0.time or 1
 
-	return var_24_1
+	return var_25_1
 end
 
 function DialogueStep:GetFadeInPaintingTime()
@@ -381,16 +386,16 @@ function DialogueStep:ShouldMoveToSide()
 	return self.moveSideData ~= nil
 end
 
-function DialogueStep:GetPaintingAction(arg_36_1)
-	local var_36_0 = {}
+function DialogueStep:GetPaintingAction(arg_37_1)
+	local var_37_0 = {}
 
-	for iter_36_0, iter_36_1 in ipairs((self:GetPaintingActions())) do
-		if iter_36_1.type == arg_36_1 then
-			table.insert(var_36_0, iter_36_1)
+	for iter_37_0, iter_37_1 in ipairs((self:GetPaintingActions())) do
+		if iter_37_1.type == arg_37_1 then
+			table.insert(var_37_0, iter_37_1)
 		end
 	end
 
-	return var_36_0
+	return var_37_0
 end
 
 function DialogueStep:GetSide()
@@ -402,27 +407,27 @@ function DialogueStep:GetContent()
 		return "..."
 	end
 
-	local var_38_0 = self.say
+	local var_39_0 = self.say
 
 	if self:ShouldReplacePlayer() then
-		var_38_0 = self:ReplacePlayerName(var_38_0)
+		var_39_0 = self:ReplacePlayerName(var_39_0)
 	end
 
 	if self:ShouldReplaceTb() then
-		var_38_0 = self:ReplaceTbName(var_38_0)
+		var_39_0 = self:ReplaceTbName(var_39_0)
 	end
 
 	if self:ShouldReplaceDorm() then
-		var_38_0 = self:ReplaceDormName(var_38_0)
+		var_39_0 = self:ReplaceDormName(var_39_0)
 	end
 
 	if self:ShouldReplaceCar2026() then
-		var_38_0 = self:ReplaceCar2026Name(var_38_0)
+		var_39_0 = self:ReplaceCar2026Name(var_39_0)
 	end
 
-	var_38_0 = PLATFORM_CODE ~= PLATFORM_US and SwitchSpecialChar(HXSet.hxLan(var_38_0), true) or HXSet.hxLan(var_38_0)
+	var_39_0 = PLATFORM_CODE ~= PLATFORM_US and SwitchSpecialChar(HXSet.hxLan(var_39_0), true) or HXSet.hxLan(var_39_0)
 
-	return var_38_0
+	return var_39_0
 end
 
 function DialogueStep:GetContentColor()
@@ -430,13 +435,13 @@ function DialogueStep:GetContentColor()
 end
 
 function DialogueStep:GetNameWithColor()
-	local var_40_0 = self:GetName()
+	local var_41_0 = self:GetName()
 
-	if not var_40_0 then
+	if not var_41_0 then
 		return nil
 	end
 
-	return setColorStr(var_40_0, (self:GetNameColor()))
+	return setColorStr(var_41_0, (self:GetNameColor()))
 end
 
 function DialogueStep:GetNameColor()
@@ -470,47 +475,47 @@ function DialogueStep:GetPortraitName()
 		return ""
 	end
 
-	local var_44_0 = var_0_1[self.portrait]
+	local var_45_0 = var_0_1[self.portrait]
 
 	if not var_0_1[self.portrait] then
 		return ""
 	end
 
-	local var_44_2 = ShipGroup.getDefaultShipConfig(var_44_0.ship_group)
+	local var_45_2 = ShipGroup.getDefaultShipConfig(var_45_0.ship_group)
 
-	return not var_44_2 and var_44_0.name or Ship.getShipName(var_44_2.id)
+	return not var_45_2 and var_45_0.name or Ship.getShipName(var_45_2.id)
 end
 
 function DialogueStep:GetName()
-	local var_45_0 = self.actorName and self:GetCustomActorName() or self:GetPaintingAndName() or ""
+	local var_46_0 = self.actorName and self:GetCustomActorName() or self:GetPaintingAndName() or ""
 
-	if not var_45_0 or var_45_0 == "" then
-		var_45_0 = self:GetPortraitName()
+	if not var_46_0 or var_46_0 == "" then
+		var_46_0 = self:GetPortraitName()
 	end
 
-	if not var_45_0 or var_45_0 == "" or self.withoutActorName then
+	if not var_46_0 or var_46_0 == "" or self.withoutActorName then
 		return nil
 	end
 
 	if self:ShouldReplacePlayer() then
-		var_45_0 = self:ReplacePlayerName(var_45_0)
+		var_46_0 = self:ReplacePlayerName(var_46_0)
 	end
 
 	if self:ShouldReplaceTb() then
-		var_45_0 = self:ReplaceTbName(var_45_0)
+		var_46_0 = self:ReplaceTbName(var_46_0)
 	end
 
 	if self:ShouldReplaceCar2026() then
-		var_45_0 = self:ReplaceCar2026Name(var_45_0)
+		var_46_0 = self:ReplaceCar2026Name(var_46_0)
 	end
 
-	return (HXSet.hxLan(var_45_0))
+	return (HXSet.hxLan(var_46_0))
 end
 
 function DialogueStep:GetPainting()
-	local var_46_0, var_46_1 = self:GetPaintingAndName()
+	local var_47_0, var_47_1 = self:GetPaintingAndName()
 
-	return var_46_1
+	return var_47_1
 end
 
 function DialogueStep:ExistPainting()
@@ -525,86 +530,86 @@ function DialogueStep:GetShakeDailogueData()
 	return self.dialogShake
 end
 
-function DialogueStep:IsSameSide(arg_50_1)
-	local var_50_0 = self:GetPrevSide(arg_50_1)
-	local var_50_1 = self:GetSide()
+function DialogueStep:IsSameSide(arg_51_1)
+	local var_51_0 = self:GetPrevSide(arg_51_1)
+	local var_51_1 = self:GetSide()
 
-	return var_50_0 ~= nil and var_50_1 ~= nil and var_50_0 == var_50_1
+	return var_51_0 ~= nil and var_51_1 ~= nil and var_51_0 == var_51_1
 end
 
-function DialogueStep:GetPrevSide(arg_51_1)
-	local var_51_0 = arg_51_1:GetSide()
+function DialogueStep:GetPrevSide(arg_52_1)
+	local var_52_0 = arg_52_1:GetSide()
 
 	return (self.moveSideData or nil) and self.moveSideData.side
 end
 
 function DialogueStep:GetPaintingIcon()
-	local var_52_0 = self.actor == DialogueStep.ACTOR_TYPE_FLAGSHIP and getProxy(BayProxy):getShipById(getProxy(PlayerProxy):getRawData().character):getPrefab() or (self.actor ~= DialogueStep.ACTOR_TYPE_PLAYER or nil) and (self.actor ~= DialogueStep.ACTOR_TYPE_TB or nil) and (self.actor or nil) and (not self.hideRecordIco or nil) and var_0_1[self.actor].prefab
+	local var_53_0 = self.actor == DialogueStep.ACTOR_TYPE_FLAGSHIP and getProxy(BayProxy):getShipById(getProxy(PlayerProxy):getRawData().character):getPrefab() or (self.actor ~= DialogueStep.ACTOR_TYPE_PLAYER or nil) and (self.actor ~= DialogueStep.ACTOR_TYPE_TB or nil) and (self.actor or nil) and (not self.hideRecordIco or nil) and var_0_1[self.actor].prefab
 
-	if var_52_0 == nil and self:ExistPortrait() and not self.hideRecordIco then
-		var_52_0 = self:GetPortrait()
+	if var_53_0 == nil and self:ExistPortrait() and not self.hideRecordIco then
+		var_53_0 = self:GetPortrait()
 	end
 
-	return var_52_0
+	return var_53_0
 end
 
 function DialogueStep:GetPaintingAndName()
-	local var_53_0
-	local var_53_1
+	local var_54_0
+	local var_54_1
 
 	if not UnGamePlayState and self.actor == DialogueStep.ACTOR_TYPE_FLAGSHIP then
-		local var_53_2 = getProxy(BayProxy):getShipById(getProxy(PlayerProxy):getRawData().character)
+		local var_54_2 = getProxy(BayProxy):getShipById(getProxy(PlayerProxy):getRawData().character)
 
-		var_53_0 = var_53_2:getName()
-		var_53_1 = var_53_2:getPainting()
+		var_54_0 = var_54_2:getName()
+		var_54_1 = var_54_2:getPainting()
 	elseif not UnGamePlayState and self.actor == DialogueStep.ACTOR_TYPE_PLAYER then
-		var_53_0 = getProxy(PlayerProxy) and getProxy(PlayerProxy):getRawData().name or ""
+		var_54_0 = getProxy(PlayerProxy) and getProxy(PlayerProxy):getRawData().name or ""
 	elseif not UnGamePlayState and self.actor == DialogueStep.ACTOR_TYPE_TB then
 		if pg.NewStoryMgr.GetInstance():IsReView() then
 			assert(self.defaultTb and self.defaultTb > 0, "<<< defaultTb is nil >>>")
 
-			var_53_0 = pg.secretary_special_ship[self.defaultTb].name or ""
-			var_53_1 = pg.secretary_special_ship[self.defaultTb].prefab
+			var_54_0 = pg.secretary_special_ship[self.defaultTb].name or ""
+			var_54_1 = pg.secretary_special_ship[self.defaultTb].prefab
 		elseif self.specialTbId then
 			assert(pg.secretary_special_ship[self.specialTbId])
 
-			var_53_0 = pg.secretary_special_ship[self.specialTbId].name or ""
-			var_53_1 = pg.secretary_special_ship[self.specialTbId].prefab
+			var_54_0 = pg.secretary_special_ship[self.specialTbId].name or ""
+			var_54_1 = pg.secretary_special_ship[self.specialTbId].prefab
 		else
 			if getProxy(NewEducateProxy) then
 				if getProxy(NewEducateProxy):GetCurChar() then
-					var_53_1, var_53_0 = getProxy(NewEducateProxy):GetStoryInfo()
+					var_54_1, var_54_0 = getProxy(NewEducateProxy):GetStoryInfo()
 
-					goto label_53_0
+					goto label_54_0
 				end
 			end
 
 			if EducateProxy and getProxy(EducateProxy) then
-				var_53_1, var_53_0 = getProxy(EducateProxy):GetStoryInfo()
+				var_54_1, var_54_0 = getProxy(EducateProxy):GetStoryInfo()
 			else
-				var_53_0 = ""
+				var_54_0 = ""
 			end
 		end
 	else
 		if self.actor then
 			if var_0_1[self.actor] == nil then
-				var_53_1 = nil
-				var_53_0 = nil
+				var_54_1 = nil
+				var_54_0 = nil
 
-				goto label_53_0
+				goto label_54_0
 			end
 		end
 
-		local var_53_4 = var_0_1[self.actor]
-		local var_53_5 = ShipGroup.getDefaultShipConfig(var_0_1[self.actor].ship_group)
+		local var_54_4 = var_0_1[self.actor]
+		local var_54_5 = ShipGroup.getDefaultShipConfig(var_0_1[self.actor].ship_group)
 
-		var_53_0 = not var_53_5 and var_53_4.name or Ship.getShipName(var_53_5.id)
-		var_53_1 = var_53_4.painting
+		var_54_0 = not var_54_5 and var_54_4.name or Ship.getShipName(var_54_5.id)
+		var_54_1 = var_54_4.painting
 	end
 
-	::label_53_0::
+	::label_54_0::
 
-	return HXSet.hxLan(var_53_0), var_53_1
+	return HXSet.hxLan(var_54_0), var_54_1
 end
 
 function DialogueStep:GetShipSkinId()
@@ -642,21 +647,21 @@ function DialogueStep:HideOtherPainting()
 end
 
 function DialogueStep:GetSubPaintings()
-	return _.map(self.subPaintings or {}, function(arg_61_0)
-		assert(pg.ship_skin_template[arg_61_0.actor])
+	return _.map(self.subPaintings or {}, function(arg_62_0)
+		assert(pg.ship_skin_template[arg_62_0.actor])
 
-		local var_61_0 = {
-			actor = arg_61_0.actor,
-			name = pg.ship_skin_template[arg_61_0.actor].painting,
-			expression = arg_61_0.expression,
-			pos = arg_61_0.pos
+		local var_62_0 = {
+			actor = arg_62_0.actor,
+			name = pg.ship_skin_template[arg_62_0.actor].painting,
+			expression = arg_62_0.expression,
+			pos = arg_62_0.pos
 		}
 
-		var_61_0.dir = arg_61_0.dir or 1
-		var_61_0.paintingNoise = arg_61_0.paintingNoise or false
-		var_61_0.showNPainting = arg_61_0.hidePaintObj or false
+		var_62_0.dir = arg_62_0.dir or 1
+		var_62_0.paintingNoise = arg_62_0.paintingNoise or false
+		var_62_0.showNPainting = arg_62_0.hidePaintObj or false
 
-		return var_61_0
+		return var_62_0
 	end)
 end
 
@@ -681,15 +686,15 @@ function DialogueStep:GetFontSize()
 end
 
 function DialogueStep:IsSpinePainting()
-	local var_67_0
+	local var_68_0
 
 	if PLATFORM_CODE == PLATFORM_CH and HXSet.isHx() then
 		do return false end
 
-		var_67_0 = tobool
+		var_68_0 = tobool
 	end
 
-	return var_67_0(self:GetPainting() ~= nil and self.spine)
+	return var_68_0(self:GetPainting() ~= nil and self.spine)
 end
 
 function DialogueStep:IsHideSpineBg()
@@ -707,15 +712,15 @@ function DialogueStep:GetSpineOrderIndex()
 end
 
 function DialogueStep:IsLive2dPainting()
-	local var_70_0
+	local var_71_0
 
 	if PLATFORM_CODE == PLATFORM_CH and HXSet.isHx() then
 		do return false end
 
-		var_70_0 = tobool
+		var_71_0 = tobool
 	end
 
-	return var_70_0(self:GetPainting() ~= nil and self.live2d)
+	return var_71_0(self:GetPainting() ~= nil and self.live2d)
 end
 
 function DialogueStep:GetLive2dPos()
@@ -727,10 +732,10 @@ function DialogueStep:GetLive2dPos()
 end
 
 function DialogueStep:GetVirtualShip()
-	local var_72_0 = self:GetShipSkinId()
+	local var_73_0 = self:GetShipSkinId()
 
 	return StoryShip.New({
-		skin_id = var_72_0
+		skin_id = var_73_0
 	})
 end
 
@@ -762,40 +767,40 @@ function DialogueStep:GetSubActorName()
 	return
 end
 
-function DialogueStep:IsSamePainting(arg_76_1)
+function DialogueStep:IsSamePainting(arg_77_1)
 	return (function()
-		return self:GetPainting() == arg_76_1:GetPainting() and self:IsShowNPainting() == arg_76_1:IsShowNPainting() and self:IsShowWJZPainting() == arg_76_1:IsShowWJZPainting()
-	end)() and self:IsLive2dPainting() == arg_76_1:IsLive2dPainting() and self:IsSpinePainting() == arg_76_1:IsSpinePainting() and not (function()
-		return arg_76_1:ShouldAddGlitchArtEffect() or self:ShouldAddGlitchArtEffect()
+		return self:GetPainting() == arg_77_1:GetPainting() and self:IsShowNPainting() == arg_77_1:IsShowNPainting() and self:IsShowWJZPainting() == arg_77_1:IsShowWJZPainting()
+	end)() and self:IsLive2dPainting() == arg_77_1:IsLive2dPainting() and self:IsSpinePainting() == arg_77_1:IsSpinePainting() and not (function()
+		return arg_77_1:ShouldAddGlitchArtEffect() or self:ShouldAddGlitchArtEffect()
 	end)()
 end
 
 function DialogueStep:ExistCanMarkNode()
-	local var_79_0
+	local var_80_0
 
 	if self.canMarkNode ~= nil and type(self.canMarkNode) == "table" then
-		var_79_0 = self.canMarkNode[1]
+		var_80_0 = self.canMarkNode[1]
 
 		if self.canMarkNode[1] then
 			if self.canMarkNode[1] ~= "" then
-				var_79_0 = self.canMarkNode[2] and type(self.canMarkNode[2]) == "table"
+				var_80_0 = self.canMarkNode[2] and type(self.canMarkNode[2]) == "table"
 			end
 		end
 	end
 
-	return var_79_0
+	return var_80_0
 end
 
 function DialogueStep:GetCanMarkNodeData()
-	local var_80_0 = {}
+	local var_81_0 = {}
 
-	for iter_80_0, iter_80_1 in ipairs(self.canMarkNode[2] or {}) do
-		table.insert(var_80_0, iter_80_1 .. "")
+	for iter_81_0, iter_81_1 in ipairs(self.canMarkNode[2] or {}) do
+		table.insert(var_81_0, iter_81_1 .. "")
 	end
 
 	return {
 		name = self.canMarkNode[1],
-		marks = var_80_0
+		marks = var_81_0
 	}
 end
 
@@ -804,18 +809,18 @@ function DialogueStep:OnClear()
 end
 
 function DialogueStep:GetUsingPaintingNames()
-	local var_82_0 = {}
-	local var_82_1 = self:GetPainting()
+	local var_83_0 = {}
+	local var_83_1 = self:GetPainting()
 
-	if var_82_1 ~= nil then
-		table.insert(var_82_0, var_82_1)
+	if var_83_1 ~= nil then
+		table.insert(var_83_0, var_83_1)
 	end
 
-	for iter_82_0, iter_82_1 in ipairs((self:GetSubPaintings())) do
-		table.insert(var_82_0, iter_82_1.name)
+	for iter_83_0, iter_83_1 in ipairs((self:GetSubPaintings())) do
+		table.insert(var_83_0, iter_83_1.name)
 	end
 
-	return var_82_0
+	return var_83_0
 end
 
 return DialogueStep

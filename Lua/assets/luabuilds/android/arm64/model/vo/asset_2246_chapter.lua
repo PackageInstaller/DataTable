@@ -493,7 +493,7 @@ function Chapter:IsEliteFleetLegal()
 
 	local var_50_11
 
-	if var_50_0 == 0 then
+	if defaultValue(var_50_0[FleetType.Normal], 0) == 0 then
 		local var_50_10 = i18n("elite_disable_no_fleet")
 
 		do return end

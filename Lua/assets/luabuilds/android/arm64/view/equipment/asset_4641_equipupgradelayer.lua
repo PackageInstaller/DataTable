@@ -7,7 +7,9 @@ function EquipUpgradeLayer:getUIName()
 end
 
 function EquipUpgradeLayer:init()
-	pg.UIMgr.GetInstance():BlurPanel(self._tf)
+	pg.UIMgr.GetInstance():BlurPanel(self._tf, {
+		staticBlur = true
+	})
 
 	self.mainPanel = self._tf:Find("main")
 	self.finishPanel = self._tf:Find("finish_panel")

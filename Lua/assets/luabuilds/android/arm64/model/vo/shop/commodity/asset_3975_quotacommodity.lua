@@ -13,20 +13,24 @@ function QuotaCommodity:GetPurchasableCnt()
 end
 
 function QuotaCommodity:GetOwnedGoodCount()
+	return self:getDropInfo():getOwnedCount()
+end
+
+function QuotaCommodity:getDropInfo()
 	return Drop.New({
-		id = self:getConfig("commodity_id"),
 		type = self:getConfig("commodity_type"),
+		id = self:getConfig("commodity_id"),
 		count = self:getConfig("num")
-	}):getOwnedCount()
+	})
 end
 
 function QuotaCommodity:GetLimitGoodCount()
-	local var_5_0 = self:getConfig("limit_args")
+	local var_6_0 = self:getConfig("limit_args")
 
-	if type(var_5_0) == "table" then
-		for iter_5_0, iter_5_1 in ipairs(var_5_0) do
-			if iter_5_1[1] == "quota" then
-				return iter_5_1[2]
+	if type(var_6_0) == "table" then
+		for iter_6_0, iter_6_1 in ipairs(var_6_0) do
+			if iter_6_1[1] == "quota" then
+				return iter_6_1[2]
 			end
 		end
 	end

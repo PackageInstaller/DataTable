@@ -4,6 +4,111 @@ pg.word_legal_template_12 = {}
 local var_0_0 = pg.word_legal_template_12
 
 function temp()
+	var_0_0.莉 = {
+		泽 = {
+			洛 = {
+				特 = {
+					this = true
+				}
+			}
+		},
+		普 = {
+			莎 = {
+				this = true
+			}
+		},
+		拉 = {
+			· = {
+				德 = {
+					西 = {
+						亚 = {
+							斯 = {
+								this = true
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	return
+end
+
+temp()
+
+function temp()
+	var_0_0.沃 = {
+		尔 = {
+			普 = {
+				加 = {
+					this = true
+				}
+			}
+		},
+		克 = {
+			兰 = {
+				this = true
+			}
+		},
+		登 = {
+			this = true
+		}
+	}
+
+	return
+end
+
+temp()
+
+function temp()
+	var_0_0.汉 = {
+		娜 = {
+			this = true
+		}
+	}
+
+	return
+end
+
+temp()
+
+function temp()
+	var_0_0.妮 = {
+		米 = {
+			this = true
+		},
+		丝 = {
+			this = true
+		},
+		可 = {
+			this = true
+		},
+		露 = {
+			this = true
+		},
+		娅 = {
+			this = true
+		},
+		娜 = {
+			· = {
+				弗 = {
+					里 = {
+						德 = {
+							this = true
+						}
+					}
+				}
+			}
+		}
+	}
+
+	return
+end
+
+temp()
+
+function temp()
 	var_0_0.咪 = {
 		菓 = {
 			this = true
@@ -850,90 +955,6 @@ function temp()
 			["."] = {
 				改 = {
 					this = true
-				}
-			}
-		}
-	}
-
-	return
-end
-
-temp()
-
-function temp()
-	var_0_0.抚 = {
-		顺 = {
-			this = true,
-			["."] = {
-				改 = {
-					this = true,
-					（ = {
-						后 = {
-							排 = {
-								） = {
-									this = true
-								}
-							}
-						},
-						前 = {
-							排 = {
-								） = {
-									this = true
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-
-	return
-end
-
-temp()
-
-function temp()
-	var_0_0.太 = {
-		原 = {
-			this = true,
-			["."] = {
-				改 = {
-					this = true
-				}
-			}
-		}
-	}
-
-	return
-end
-
-temp()
-
-function temp()
-	var_0_0.虎 = {
-		贲 = {
-			this = true
-		}
-	}
-
-	return
-end
-
-temp()
-
-function temp()
-	var_0_0.飞 = {
-		云 = {
-			this = true
-		},
-		鸟 = {
-			this = true,
-			川 = {
-				千 = {
-					濑 = {
-						this = true
-					}
 				}
 			}
 		}

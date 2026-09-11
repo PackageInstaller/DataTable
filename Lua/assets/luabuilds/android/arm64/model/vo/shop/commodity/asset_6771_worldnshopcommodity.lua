@@ -16,7 +16,7 @@ function WorldNShopCommodity:GetLimitGoodCount()
 	return self:getConfig("frequency")
 end
 
-function WorldNShopCommodity:GetDropInfo()
+function WorldNShopCommodity:getDropInfo()
 	return Drop.New({
 		type = self:getConfig("item_type"),
 		id = self:getConfig("item_id"),

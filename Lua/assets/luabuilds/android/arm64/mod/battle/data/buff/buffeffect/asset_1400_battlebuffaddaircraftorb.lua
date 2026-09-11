@@ -28,7 +28,8 @@ function ys.Battle.BattleBuffAddAircraftOrb:onAircraftCreate(arg_3_1, arg_3_2, a
 		buffID = self._buffID,
 		rant = self._rant,
 		level = self._level,
-		buff_level = self._buffLevel
+		buff_level = self._buffLevel,
+		group_level = self._level
 	}
 
 	for iter_3_0, iter_3_1 in ipairs((arg_3_3.aircraft:GetWeapon())) do

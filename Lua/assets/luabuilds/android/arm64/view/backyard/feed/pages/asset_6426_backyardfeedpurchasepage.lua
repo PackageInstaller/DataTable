@@ -56,13 +56,14 @@ function BackyardFeedPurchasePage:Show(arg_7_1)
 	local var_7_0 = underscore.detect(getGameset("food_shop_id")[2], function(arg_8_0)
 		return arg_8_0[1] == arg_7_1
 	end)[2]
-	local var_7_1 = pg.shop_template[var_7_0].resource_type
-	local var_7_2 = pg.shop_template[var_7_0].resource_num
-	local var_7_3 = 1
+	local var_7_1 = ShopConst.GetShopConfig(var_7_0)
+	local var_7_2 = var_7_1.resource_type
+	local var_7_3 = var_7_1.resource_num
+	local var_7_4 = 1
 
-	self.total.text = pg.shop_template[var_7_0].resource_num * 1
+	self.total.text = var_7_1.resource_num * 1
 
-	LoadSpriteAtlasAsync("props/" .. id2res(pg.shop_template[var_7_0].resource_type), "", function(arg_9_0)
+	LoadSpriteAtlasAsync("props/" .. id2res(var_7_1.resource_type), "", function(arg_9_0)
 		self.totalIcon.sprite = arg_9_0
 		tf(self.totalIcon.gameObject).sizeDelta = Vector2(50, 50)
 
@@ -72,47 +73,47 @@ function BackyardFeedPurchasePage:Show(arg_7_1)
 	self.countValue.text = 1
 
 	onButton(self, self.minusBtn, function()
-		if var_7_3 <= 1 then
+		if var_7_4 <= 1 then
 			return
 		end
 
-		var_7_3 = var_7_3 - 1
-		self.countValue.text = var_7_3
-		self.total.text = var_7_2 * var_7_3
+		var_7_4 = var_7_4 - 1
+		self.countValue.text = var_7_4
+		self.total.text = var_7_3 * var_7_4
 
 		return
 	end, SFX_PANEL)
 	onButton(self, self.addBtn, function()
-		if var_7_3 == 999 then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_backyardGranaryLayer_buyCountLimit", var_7_3))
+		if var_7_4 == 999 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_backyardGranaryLayer_buyCountLimit", var_7_4))
 
 			return
 		end
 
-		var_7_3 = var_7_3 > 999 and 999 or var_7_3 + 1
-		self.countValue.text = var_7_3
-		self.total.text = var_7_2 * var_7_3
+		var_7_4 = var_7_4 > 999 and 999 or var_7_4 + 1
+		self.countValue.text = var_7_4
+		self.total.text = var_7_3 * var_7_4
 
 		return
 	end, SFX_PANEL)
 	onButton(self, self.tenBtn, function()
-		if var_7_3 == 999 then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_backyardGranaryLayer_buyCountLimit", var_7_3))
+		if var_7_4 == 999 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_backyardGranaryLayer_buyCountLimit", var_7_4))
 
 			return
 		end
 
-		var_7_3 = var_7_3 + 10 >= 999 and 999 or var_7_3 + 10
-		self.countValue.text = var_7_3
-		self.total.text = var_7_2 * var_7_3
+		var_7_4 = var_7_4 + 10 >= 999 and 999 or var_7_4 + 10
+		self.countValue.text = var_7_4
+		self.total.text = var_7_3 * var_7_4
 
 		return
 	end, SFX_PANEL)
 	onButton(self, self.confirmBtn, function()
 		self:Purchase({
-			count = var_7_3,
-			resourceType = var_7_1,
-			resourceNum = var_7_2,
+			count = var_7_4,
+			resourceType = var_7_2,
+			resourceNum = var_7_3,
 			shopId = var_7_0
 		})
 

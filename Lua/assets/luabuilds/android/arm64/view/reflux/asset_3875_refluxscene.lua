@@ -49,6 +49,7 @@ function RefluxScene:didEnter()
 	end
 
 	self:updateDay()
+	self:OverlayPanel(self._tf)
 
 	return
 end
@@ -60,12 +61,24 @@ function RefluxScene:willExit()
 		end
 	end
 
+	if self.letterView then
+		self.letterView:Destroy()
+
+		self.letterView = nil
+
+		return
+	end
+
+	self:UnOverlayPanel(self._tf, self._parentTf)
+
 	return
 end
 
 function RefluxScene:onBackPressed()
 	if self.letterView and self.letterView:isShowing() then
-		self.letterView:OnBackPress()
+		self.letterView:Hide()
+
+		self.letterView = nil
 
 		return
 	end
@@ -109,7 +122,7 @@ end
 
 function RefluxScene:initData()
 	self.curViewIndex = 0
-	self.letterView = RefluxLetterView.New(self.letterContainer, self.event, self.contextData)
+	self.letterView = RefluxAnimationPlayer.New(pg.UIMgr.GetInstance().OverlayUITop)
 	self.signView = RefluxSignView.New(self.panelContainer, self.event, self.contextData)
 	self.taskView = RefluxTaskView.New(self.panelContainer, self.event, self.contextData)
 	self.ptView = RefluxPTView.New(self.panelContainer, self.event, self.contextData)
@@ -169,38 +182,21 @@ function RefluxScene:addListener()
 end
 
 function RefluxScene:tryOpenLetterView()
-	local var_17_0 = getProxy(PlayerProxy):getRawData().id .. "_" .. getProxy(RefluxProxy).returnTimestamp
-
-	if PlayerPrefs.GetInt(var_17_0, 0) ~= 1 then
-		PlayerPrefs.SetInt(var_17_0, 1)
-		PlayerPrefs.Save()
-		self.letterView:ActionInvoke("setCloseFunc", function()
-			triggerToggle(self.toggleList[RefluxScene.Sign], true)
-
-			return
-		end)
-		self:switchLetter()
-
-		return true
-	else
-		return false
-	end
-
-	return
+	return false
 end
 
-function RefluxScene:switchPage(arg_19_1)
-	if self.curViewIndex ~= arg_19_1 then
-		self.viewList[arg_19_1]:Load()
-		self.viewList[arg_19_1]:ActionInvoke("Show")
-		self.viewList[arg_19_1]:ActionInvoke("updateOutline")
+function RefluxScene:switchPage(arg_18_1)
+	if self.curViewIndex ~= arg_18_1 then
+		self.viewList[arg_18_1]:Load()
+		self.viewList[arg_18_1]:ActionInvoke("Show")
+		self.viewList[arg_18_1]:ActionInvoke("updateOutline")
 
 		if self.curViewIndex > 0 then
 			self.viewList[self.curViewIndex]:Hide()
 		end
 
-		self.curViewIndex = arg_19_1
-		self.contextData.lastViewIndex = arg_19_1
+		self.curViewIndex = arg_18_1
+		self.contextData.lastViewIndex = arg_18_1
 	end
 
 	return
@@ -217,8 +213,11 @@ function RefluxScene:tryAutoOpenLastView()
 end
 
 function RefluxScene:switchLetter()
-	self.letterView:Load()
-	self.letterView:ActionInvoke("Show")
+	self.letterView:ExecuteAction("Play4Review", getProxy(RefluxProxy):GetRefluxBgs(), function()
+		self.letterView:Hide()
+
+		return
+	end)
 
 	return
 end

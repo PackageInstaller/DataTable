@@ -10,6 +10,7 @@ Story.MODE_SPANIM = 7
 Story.MODE_BLINK = 8
 Story.MODE_TDDIALOGUE = 9
 Story.MODE_SUBPAGE = 10
+Story.MODE_CG = 11
 Story.STORY_AUTO_SPEED = {
 	-9,
 	0,
@@ -34,7 +35,8 @@ function Story:GetStoryStepCls()
 		SpAnimStep,
 		BlinkStep,
 		TDDialogueStep,
-		SubPageStep
+		SubPageStep,
+		CGStep
 	})[self]
 end
 

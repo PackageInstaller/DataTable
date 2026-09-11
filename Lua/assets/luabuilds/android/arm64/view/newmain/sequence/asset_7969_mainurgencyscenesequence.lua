@@ -3,7 +3,6 @@
 function MainUrgencySceneSequence:Execute(arg_1_1)
 	self:NextOne(1, {
 		"SkipToActivity",
-		"SkipToReFluxActivity",
 		"SkipToTechnology"
 	}, arg_1_1)
 
@@ -29,18 +28,6 @@ end
 function MainUrgencySceneSequence:SkipToActivity()
 	if getProxy(ActivityProxy):findNextAutoActivity() then
 		pg.m02:sendNotification(GAME.GO_SCENE, SCENE.ACTIVITY)
-
-		return false
-	end
-
-	return true
-end
-
-function MainUrgencySceneSequence:SkipToReFluxActivity()
-	local var_4_0 = getProxy(RefluxProxy)
-
-	if var_4_0:isCanSign() and var_4_0:isInRefluxTime() then
-		pg.m02:sendNotification(GAME.GO_SCENE, SCENE.REFLUX)
 
 		return false
 	end

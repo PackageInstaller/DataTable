@@ -21,4 +21,12 @@ function MainRightPanel4Mellow:SetEffectVisible(arg_3_1)
 	return
 end
 
+function MainRightPanel4Mellow:ShowOrHideBtnEffect(arg_4_1)
+	for iter_4_0, iter_4_1 in ipairs(self.btns) do
+		iter_4_1:ShowOrHideBtnEffect(arg_4_1)
+	end
+
+	return
+end
+
 return MainRightPanel4Mellow

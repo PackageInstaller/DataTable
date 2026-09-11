@@ -54,11 +54,7 @@ function ShopMultiWindow:Open(arg_6_1, arg_6_2)
 end
 
 function ShopMultiWindow:InitWindow(arg_7_1, arg_7_2)
-	local var_7_0 = {
-		id = arg_7_1:getConfig("commodity_id"),
-		type = arg_7_1:getConfig("commodity_type"),
-		count = arg_7_1:getConfig("num")
-	}
+	local var_7_0 = arg_7_1:getDropInfo()
 
 	if isa(arg_7_1, ActivityCommodity) then
 		local var_7_1, var_7_2, var_7_3 = arg_7_1:CheckTimeLimit()

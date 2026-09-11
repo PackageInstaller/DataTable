@@ -63,116 +63,135 @@ function AppreciatePicConst.getDefaultGalleryPicIDList()
 	return var_3_0
 end
 
-function AppreciatePicConst.createPicInfo(arg_4_0, arg_4_1)
-	local var_4_0 = {
-		type = arg_4_0,
-		id = arg_4_1
-	}
+function AppreciatePicConst.getOldLoadingPicIDList()
+	local var_4_0 = {}
 
-	if arg_4_0 == var_0_0.TYPE_GALLERY then
-		var_4_0.path = GalleryConst.GetGalleryPicPathByID(arg_4_1)
-	elseif arg_4_0 == var_0_0.TYPE_MANGA then
-		var_4_0.path = MangaConst.GetMangaPicPathByID(arg_4_1)
+	for iter_4_0, iter_4_1 in ipairs(pg.gallery_config.all) do
+		if iter_4_1 > 1000 then
+			table.insert(var_4_0, iter_4_1)
+		end
 	end
 
 	return var_4_0
 end
 
+function AppreciatePicConst.createPicInfo(arg_5_0, arg_5_1)
+	local var_5_0 = {
+		type = arg_5_0,
+		id = arg_5_1
+	}
+
+	if arg_5_0 == var_0_0.TYPE_GALLERY then
+		var_5_0.path = GalleryConst.GetGalleryPicPathByID(arg_5_1)
+	elseif arg_5_0 == var_0_0.TYPE_MANGA then
+		var_5_0.path = MangaConst.GetMangaPicPathByID(arg_5_1)
+	end
+
+	return var_5_0
+end
+
 function AppreciatePicConst.getRandomLoadingPic()
-	if not getProxy(LoadingPicProxy) then
+	local var_6_0 = getProxy(LoadingPicProxy)
+
+	if not var_6_0 then
 		return nil
 	end
 
-	local var_5_0 = getProxy(LoadingPicProxy)
-	local var_5_1 = getProxy(LoadingPicProxy)
-	local var_5_2 = AppreciatePicConst:filterExistGalleryPicIDList()
-	local var_5_3 = AppreciatePicConst.filterExistMangaPicIDList((var_5_1:getMangaPicIDList()))
-
-	if not getProxy(LoadingPicProxy).getDiyModeOpenFlag((var_5_0:getGalleryPicIDList())) or #var_5_0 + #var_5_1 == 0 then
-		var_5_2 = var_0_0.getDefaultGalleryPicIDList()
-		var_5_3 = {}
+	if not var_6_0:getDiyModeOpenFlag() then
+		return {
+			type = var_0_0.TYPE_GALLERY,
+			path = "loadingbg/bg_" .. math.random(1, var_0_0.MAX_COUNT)
+		}
 	end
 
-	local var_5_4 = #var_5_2 + #var_5_3
+	local var_6_1 = AppreciatePicConst.filterExistGalleryPicIDList((var_6_0:getGalleryPicIDList()))
+	local var_6_2 = AppreciatePicConst.filterExistMangaPicIDList((var_6_0:getMangaPicIDList()))
 
-	assert(#var_5_2 + #var_5_3 > 0, "loading pic count should be greater than 0")
+	if #var_6_1 + #var_6_2 == 0 then
+		var_6_1 = var_0_0.getDefaultGalleryPicIDList()
+		var_6_2 = {}
+	end
 
-	local var_5_6 = math.random(1, var_5_4)
+	local var_6_3 = #var_6_1 + #var_6_2
 
-	return var_5_6 <= #var_5_2 and var_0_0.createPicInfo(var_0_0.TYPE_GALLERY, var_5_2[var_5_6]) or var_0_0.createPicInfo(var_0_0.TYPE_MANGA, var_5_3[var_5_6 - #var_5_2])
+	assert(#var_6_1 + #var_6_2 > 0, "loading pic count should be greater than 0")
+
+	local var_6_5 = math.random(1, var_6_3)
+
+	return var_6_5 <= #var_6_1 and var_0_0.createPicInfo(var_0_0.TYPE_GALLERY, var_6_1[var_6_5]) or var_0_0.createPicInfo(var_0_0.TYPE_MANGA, var_6_2[var_6_5 - #var_6_1])
 end
 
-function AppreciatePicConst.checkDownloadMissingPic(arg_6_0)
-	local var_6_0 = {}
-	local var_6_1 = {}
+function AppreciatePicConst.checkDownloadMissingPic(arg_7_0)
+	local var_7_0 = {}
+	local var_7_1 = {}
 
 	if getProxy(LoadingPicProxy) then
-		var_6_0 = getProxy(LoadingPicProxy):getGalleryPicIDList()
-		var_6_1 = getProxy(LoadingPicProxy):getMangaPicIDList()
+		var_7_0 = getProxy(LoadingPicProxy):getGalleryPicIDList()
+		var_7_1 = getProxy(LoadingPicProxy):getMangaPicIDList()
 	end
 
-	local var_6_2 = {}
+	local var_7_2 = {}
 
-	for iter_6_0, iter_6_1 in ipairs((AppreciatePicConst.getDefaultGalleryPicIDList())) do
-		local var_6_3 = GalleryConst.GetGalleryPicPathByID(iter_6_1)
+	for iter_7_0, iter_7_1 in ipairs((AppreciatePicConst.getDefaultGalleryPicIDList())) do
+		local var_7_3 = GalleryConst.GetGalleryPicPathByID(iter_7_1)
 
-		if var_6_3 then
-			table.insert(var_6_2, var_6_3)
-			table.insert(var_6_2, var_6_3 .. "_hx")
+		if var_7_3 then
+			table.insert(var_7_2, var_7_3)
+			table.insert(var_7_2, var_7_3 .. "_hx")
 		end
 	end
 
-	for iter_6_2, iter_6_3 in ipairs(var_6_0) do
-		local var_6_4 = GalleryConst.GetGalleryPicPathByID(iter_6_3)
+	for iter_7_2, iter_7_3 in ipairs(var_7_0) do
+		local var_7_4 = GalleryConst.GetGalleryPicPathByID(iter_7_3)
 
-		if var_6_4 then
-			table.insert(var_6_2, var_6_4)
-			table.insert(var_6_2, var_6_4 .. "_hx")
+		if var_7_4 then
+			table.insert(var_7_2, var_7_4)
+			table.insert(var_7_2, var_7_4 .. "_hx")
 		end
 	end
 
-	for iter_6_4, iter_6_5 in ipairs(var_6_1) do
-		local var_6_5 = MangaConst.GetMangaPicPathByID(iter_6_5)
+	for iter_7_4, iter_7_5 in ipairs(var_7_1) do
+		local var_7_5 = MangaConst.GetMangaPicPathByID(iter_7_5)
 
-		if var_6_5 then
-			table.insert(var_6_2, var_6_5)
-			table.insert(var_6_2, var_6_5 .. "_hx")
+		if var_7_5 then
+			table.insert(var_7_2, var_7_5)
+			table.insert(var_7_2, var_7_5 .. "_hx")
 		end
 	end
 
-	if var_6_2 and #var_6_2 > 0 then
-		local var_6_6 = {}
+	if var_7_2 and #var_7_2 > 0 then
+		local var_7_6 = {}
 
-		var_6_6.isShowBox = false
-		var_6_6.fileList = var_6_2
-		var_6_6.finishFunc = arg_6_0
+		var_7_6.isShowBox = false
+		var_7_6.fileList = var_7_2
+		var_7_6.finishFunc = arg_7_0
 
-		function var_6_6.onNo()
+		function var_7_6.onNo()
 			return
 		end
 
-		function var_6_6.onClose()
+		function var_7_6.onClose()
 			return
 		end
 
-		DownloadConst.Download(var_6_6)
-	elseif arg_6_0 then
-		arg_6_0()
+		DownloadConst.Download(var_7_6)
+	elseif arg_7_0 then
+		arg_7_0()
 	end
 
 	return
 end
 
 function AppreciatePicConst:isUsedPicInfo()
-	local var_9_0 = false
+	local var_10_0 = false
 
 	if self.type == var_0_0.TYPE_GALLERY then
-		var_9_0 = table.contains(getProxy(LoadingPicProxy):getGalleryPicIDList(true), self.id)
+		var_10_0 = table.contains(getProxy(LoadingPicProxy):getGalleryPicIDList(true), self.id)
 	elseif self.type == var_0_0.TYPE_MANGA then
-		var_9_0 = table.contains(getProxy(LoadingPicProxy):getMangaPicIDList(true), self.id)
+		var_10_0 = table.contains(getProxy(LoadingPicProxy):getMangaPicIDList(true), self.id)
 	end
 
-	return var_9_0
+	return var_10_0
 end
 
 function AppreciatePicConst:isNewPicInfo()
@@ -196,35 +215,35 @@ function AppreciatePicConst:isNewPicInfo()
 end
 
 function AppreciatePicConst:isPicInfoLiked()
-	local var_11_0 = false
+	local var_12_0 = false
 
 	if self.type == var_0_0.TYPE_GALLERY then
-		var_11_0 = GalleryConst.isGalleryLikeByID(self.id)
+		var_12_0 = GalleryConst.isGalleryLikeByID(self.id)
 	elseif self.type == var_0_0.TYPE_MANGA then
-		var_11_0 = MangaConst.isMangaLikeByID(self.id)
-	end
-
-	return var_11_0
-end
-
-function AppreciatePicConst.getGalleryConfigNewIDList()
-	local var_12_0 = pg.gameset.new_gallery_id_list.description
-
-	if pg.gameset.new_gallery_id_list.description == nil or type(var_12_0) ~= "table" then
-		var_12_0 = {}
+		var_12_0 = MangaConst.isMangaLikeByID(self.id)
 	end
 
 	return var_12_0
 end
 
-function AppreciatePicConst.getMangaConfigNewIDList()
-	local var_13_0 = pg.gameset.new_manga_id_list.description
+function AppreciatePicConst.getGalleryConfigNewIDList()
+	local var_13_0 = pg.gameset.new_gallery_id_list.description
 
-	if pg.gameset.new_manga_id_list.description == nil or type(var_13_0) ~= "table" then
+	if pg.gameset.new_gallery_id_list.description == nil or type(var_13_0) ~= "table" then
 		var_13_0 = {}
 	end
 
 	return var_13_0
+end
+
+function AppreciatePicConst.getMangaConfigNewIDList()
+	local var_14_0 = pg.gameset.new_manga_id_list.description
+
+	if pg.gameset.new_manga_id_list.description == nil or type(var_14_0) ~= "table" then
+		var_14_0 = {}
+	end
+
+	return var_14_0
 end
 
 return AppreciatePicConst

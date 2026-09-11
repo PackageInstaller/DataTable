@@ -104,49 +104,55 @@ function pg.NewGuideMgr:Play(arg_8_1, arg_8_2, arg_8_3, arg_8_4, arg_8_5)
 	return
 end
 
-function pg.NewGuideMgr:PlayScript(arg_9_1, arg_9_2, arg_9_3, arg_9_4, arg_9_5)
-	if not arg_9_1 then
+function pg.NewGuideMgr:_Play(arg_9_1, arg_9_2, arg_9_3, arg_9_4)
+	self:PlayScript(Guide.New(arg_9_1), arg_9_2, arg_9_3, arg_9_4, onStep)
+
+	return
+end
+
+function pg.NewGuideMgr:PlayScript(arg_10_1, arg_10_2, arg_10_3, arg_10_4, arg_10_5)
+	if not arg_10_1 then
 		var_0_8("should exist guide file ")
-		arg_9_3()
+		arg_10_3()
 
 		return
 	end
 
-	self.OnFailed = arg_9_4
+	self.OnFailed = arg_10_4
 
 	self:OnStart()
 
-	local var_9_0 = {}
+	local var_10_0 = {}
 
-	for iter_9_0, iter_9_1 in ipairs(arg_9_1:GetStepsWithCode(arg_9_2)) do
-		local var_9_1 = iter_9_0
+	for iter_10_0, iter_10_1 in ipairs(arg_10_1:GetStepsWithCode(arg_10_2)) do
+		local var_10_1 = iter_10_0
 
-		table.insert(var_9_0, function(arg_10_0)
+		table.insert(var_10_0, function(arg_11_0)
 			if self:IsStop() then
 				return
 			end
 
-			local var_10_0 = self.players[iter_9_1:GetType()]
-			local var_10_1 = pg.TimeMgr.GetInstance():GetServerTime()
+			local var_11_0 = self.players[iter_10_1:GetType()]
+			local var_11_1 = pg.TimeMgr.GetInstance():GetServerTime()
 
-			var_10_0:Execute(iter_9_1, function()
-				if arg_9_5 then
-					arg_9_5(var_9_1, var_10_1)
+			var_11_0:Execute(iter_10_1, function()
+				if arg_10_5 then
+					arg_10_5(var_10_1, var_11_1)
 				end
 
-				arg_10_0()
+				arg_11_0()
 
 				return
 			end)
 
-			self.player = var_10_0
+			self.player = var_11_0
 
 			return
 		end)
 	end
 
-	seriesAsync(var_9_0, function()
-		self:OnEnd(arg_9_3)
+	seriesAsync(var_10_0, function()
+		self:OnEnd(arg_10_3)
 
 		return
 	end)
@@ -181,7 +187,7 @@ function pg.NewGuideMgr:OnStart()
 	return
 end
 
-function pg.NewGuideMgr:OnEnd(arg_16_1)
+function pg.NewGuideMgr:OnEnd(arg_17_1)
 	self.currentGuideName = nil
 
 	self.uiLongPress.onLongPressed:RemoveAllListeners()
@@ -191,8 +197,8 @@ function pg.NewGuideMgr:OnEnd(arg_16_1)
 
 	self:Clear()
 
-	if arg_16_1 then
-		arg_16_1()
+	if arg_17_1 then
+		arg_17_1()
 	end
 
 	return
@@ -250,8 +256,8 @@ function pg.NewGuideMgr:Clear()
 
 	self._go:SetActive(false)
 
-	for iter_21_0, iter_21_1 in ipairs(self.players) do
-		iter_21_1:Clear()
+	for iter_22_0, iter_22_1 in ipairs(self.players) do
+		iter_22_1:Clear()
 	end
 
 	if self.player then
@@ -279,13 +285,13 @@ function pg.NewGuideMgr:IsStop()
 	return self.state and self.state == var_0_5
 end
 
-function pg.NewGuideMgr:OnSceneEnter(arg_26_1)
+function pg.NewGuideMgr:OnSceneEnter(arg_27_1)
 	if not self:IsLoaded() then
 		return
 	end
 
-	if not table.contains(self.sceneRecords, arg_26_1.view) then
-		table.insert(self.sceneRecords, arg_26_1.view)
+	if not table.contains(self.sceneRecords, arg_27_1.view) then
+		table.insert(self.sceneRecords, arg_27_1.view)
 	end
 
 	if self.player then
@@ -295,20 +301,20 @@ function pg.NewGuideMgr:OnSceneEnter(arg_26_1)
 	return
 end
 
-function pg.NewGuideMgr:OnSceneExit(arg_27_1)
+function pg.NewGuideMgr:OnSceneExit(arg_28_1)
 	if not self:IsLoaded() then
 		return
 	end
 
-	if table.contains(self.sceneRecords, arg_27_1.view) then
-		table.removebyvalue(self.sceneRecords, arg_27_1.view)
+	if table.contains(self.sceneRecords, arg_28_1.view) then
+		table.removebyvalue(self.sceneRecords, arg_28_1.view)
 	end
 
 	return
 end
 
-function pg.NewGuideMgr:ExistScene(arg_28_1)
-	return table.contains(self.sceneRecords, arg_28_1)
+function pg.NewGuideMgr:ExistScene(arg_29_1)
+	return table.contains(self.sceneRecords, arg_29_1)
 end
 
 function pg.NewGuideMgr:GetCurrentGuideName()

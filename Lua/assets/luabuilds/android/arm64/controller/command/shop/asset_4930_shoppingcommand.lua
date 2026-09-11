@@ -4,7 +4,7 @@ function ShoppingCommand:execute(arg_1_1)
 	local var_1_0 = arg_1_1:getBody()
 	local var_1_1 = var_1_0.id
 	local var_1_2 = var_1_0.count
-	local var_1_3 = pg.shop_template[var_1_0.id]
+	local var_1_3 = ShopConst.GetShopConfig(var_1_0.id)
 
 	if not var_1_0.id then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_shopId_noFound"))

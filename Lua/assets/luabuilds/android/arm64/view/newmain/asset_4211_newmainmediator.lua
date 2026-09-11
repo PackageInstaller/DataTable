@@ -336,7 +336,9 @@ function NewMainMediator:initNotificationHandleDic()
 			return
 		end,
 		[NewMainMediator.HIDE_PANEL] = function(arg_41_0, arg_41_1)
-			arg_41_0.viewComponent:HidePanel(arg_41_1:getBody())
+			local var_41_0 = arg_41_1:getBody()
+
+			arg_41_0.viewComponent:HidePanel(var_41_0.flag, var_41_0.content)
 
 			return
 		end,
@@ -364,16 +366,24 @@ function NewMainMediator:initNotificationHandleDic()
 
 			return
 		end,
-		[ActivityProxy.UPDATED_TIP] = function(arg_47_0, arg_47_1)
-			arg_47_0.viewComponent:emit(MainBaseActivityBtn.UPDATED_TIP)
+		[GAME.END_REFLUX_CG] = function(arg_47_0, arg_47_1)
+			arg_47_0.viewComponent:ShowOrHideBtnEffect(true)
 
 			return
 		end,
-		[MiniGameProxy.ON_HUB_DATA_UPDATE] = function(arg_48_0, arg_48_1)
-			if arg_48_0.viewComponent.theme and arg_48_0.viewComponent.theme:IsLoaded() then
-				arg_48_0.viewComponent.theme:Refresh((arg_48_0.viewComponent:GetFlagShip()))
-			else
-				warning("界面没加载好，不进行刷新")
+		[GAME.START_REFLUX_CG] = function(arg_48_0, arg_48_1)
+			arg_48_0.viewComponent:ShowOrHideBtnEffect(false)
+
+			return
+		end,
+		[ActivityProxy.UPDATED_TIP] = function(arg_49_0, arg_49_1)
+			arg_49_0.viewComponent:emit(MainBaseActivityBtn.UPDATED_TIP)
+
+			return
+		end,
+		[MiniGameProxy.ON_HUB_DATA_UPDATE] = function(arg_50_0, arg_50_1)
+			if arg_50_0.viewComponent.theme and arg_50_0.viewComponent.theme:IsLoaded() then
+				arg_50_0.viewComponent.theme:Refresh((arg_50_0.viewComponent:GetFlagShip()))
 			end
 
 			return
@@ -383,20 +393,20 @@ function NewMainMediator:initNotificationHandleDic()
 	return
 end
 
-function NewMainMediator:BuildDebugBattleLoop(arg_49_1)
+function NewMainMediator:BuildDebugBattleLoop(arg_51_1)
 	if not IsUnityEditor then
 		return
 	end
 
-	local var_49_0 = {}
+	local var_51_0 = {}
 
-	for iter_49_0, iter_49_1 in arg_49_1:gmatch("%s+(%S+)") do
-		table.insert(var_49_0, iter_49_0)
+	for iter_51_0, iter_51_1 in arg_51_1:gmatch("%s+(%S+)") do
+		table.insert(var_51_0, iter_51_0)
 	end
 
 	_G.InDebugBattleLoop = {
-		loopCount = tonumber(var_49_0[2]),
-		loopStages = underscore.rest(var_49_0, 3),
+		loopCount = tonumber(var_51_0[2]),
+		loopStages = underscore.rest(var_51_0, 3),
 		tempList = {}
 	}
 

@@ -45,7 +45,7 @@ end
 
 function SpringFestival2026MainPage:updateUI()
 	if self.shop_id then
-		local var_5_0, var_5_1 = self.timeMgr:inTime(pg.shop_template[self.shop_id].time)
+		local var_5_0, var_5_1 = self.timeMgr:inTime(ShopConst.GetShopConfig(self.shop_id).time)
 		local var_5_2
 
 		if var_5_1 then

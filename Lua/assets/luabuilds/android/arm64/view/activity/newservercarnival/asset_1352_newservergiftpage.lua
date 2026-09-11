@@ -145,17 +145,17 @@ function NewServerGiftPage:updateGiftGoodsVOList()
 		}, Goods.TYPE_NEW_SERVER)))
 	end
 
-	local var_14_1 = {}
+	local var_14_0 = {}
 
 	for iter_14_2, iter_14_3 in ipairs(self.giftGoodsVOList) do
 		iter_14_3:updateBuyCount((ChargeConst.getBuyCount(self.normalList, iter_14_3.id)))
 
 		if iter_14_3:canPurchase() then
-			table.insert(var_14_1, iter_14_3)
+			table.insert(var_14_0, iter_14_3)
 		end
 	end
 
-	self.giftGoodsVOList = var_14_1
+	self.giftGoodsVOList = var_14_0
 
 	return
 end

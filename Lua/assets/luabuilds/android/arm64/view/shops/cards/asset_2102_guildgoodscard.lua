@@ -28,7 +28,7 @@ function GuildGoodsCard:update(arg_2_1)
 end
 
 function GuildGoodsCard:Init()
-	updateDrop(self.itemTF, (self.goodsVO:GetDropInfo()))
+	updateDrop(self.itemTF, (self.goodsVO:getDropInfo()))
 	setScrollText(self.nameTxt, (self.goodsVO:getConfig("goods_name")))
 	setText(self.countTF, self.goodsVO:getConfig("price"))
 	GetImageSpriteFromAtlasAsync("ui/share/msgbox_atlas", "res_guildicon", self.resIconTF)

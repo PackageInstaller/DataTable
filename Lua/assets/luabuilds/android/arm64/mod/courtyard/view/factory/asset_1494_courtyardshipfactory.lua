@@ -12,7 +12,8 @@ function CourtYardShipFactory:Make(arg_2_1)
 	local var_2_2 = arg_2_1:GetShipType() == CourtYardConst.SHIP_TYPE_OTHER and CourtYardOtherPlayerShipModule.New(arg_2_1, var_2_0, var_2_1) or ({
 		CourtYardShipModule,
 		CourtYardVisitorShipModule,
-		CourtYardFeastShipModule
+		CourtYardFeastShipModule,
+		CourtYardReversePacmanShipModule
 	})[arg_2_1:GetShipType()].New(arg_2_1, var_2_0, var_2_1)
 	local var_2_3 = arg_2_1:GetPrefab()
 
@@ -55,6 +56,18 @@ function CourtYardShipFactory:MakeAttachments(arg_6_1, arg_6_2, arg_6_3)
 			end
 
 			Object.Instantiate(arg_7_0, arg_6_1.transform).name = "feastAttachments"
+
+			arg_6_3()
+
+			return
+		end), true, true)
+	elseif arg_6_2:GetShipType() == CourtYardConst.SHIP_TYPE_REVERSE_PACMAN then
+		ResourceMgr.Inst:getAssetAsync("ui/CourtYardReversePacmanAttachments", "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_8_0)
+			if self.exited then
+				return
+			end
+
+			Object.Instantiate(arg_8_0, arg_6_1.transform).name = "reversePacmanAttachments"
 
 			arg_6_3()
 

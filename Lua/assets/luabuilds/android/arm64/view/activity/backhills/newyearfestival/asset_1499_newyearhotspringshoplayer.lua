@@ -149,11 +149,7 @@ function NewYearHotSpringShopLayer:UpdateGoods()
 		local var_18_0 = var_16_0[arg_18_1 + 1]
 
 		setActive(arg_18_2:Find("mask"), not var_16_0[arg_18_1 + 1]:canPurchase())
-		updateDrop(arg_18_2:Find("Icon"), {
-			type = var_18_0:getConfig("commodity_type"),
-			id = var_18_0:getConfig("commodity_id"),
-			count = var_18_0:getConfig("num")
-		})
+		updateDrop(arg_18_2:Find("Icon"), (var_18_0:getDropInfo()))
 		onButton(self, arg_18_2, function()
 			self:OnClickCommodity(var_18_0, function(arg_20_0, arg_20_1)
 				self:OnPurchase(var_18_0, arg_20_1)
@@ -213,10 +209,7 @@ function NewYearHotSpringShopLayer:OnClickCommodity(arg_24_1, arg_24_2)
 		return
 	end
 
-	self:Purchase(arg_24_1, 1, Drop.New({
-		id = arg_24_1:getConfig("commodity_id"),
-		type = arg_24_1:getConfig("commodity_type")
-	}):getConfig("name"), arg_24_2)
+	self:Purchase(arg_24_1, 1, arg_24_1:getDropInfo():getConfig("name"), arg_24_2)
 
 	return
 end

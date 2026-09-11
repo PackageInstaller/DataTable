@@ -195,15 +195,20 @@ ShipType.BundleList = {
 		ShipType.FengFanS,
 		ShipType.FengFanV,
 		ShipType.FengFanM
+	},
+	qianpaiquzhu = {
+		ShipType.QuZhu,
+		ShipType.DaoQuV
 	}
 }
 
 function ShipType:BundleType2CNLabel()
 	ShipType.bundleLabel = ShipType.bundleLabel or {
 		zhong = "label_13",
-		qian = "label_8",
+		qianpaiquzhu = "label_1",
 		zhan = "label_11",
 		fanqian = "label_55",
+		qian = "label_8",
 		hang = "label_12",
 		quzhu = "label_1"
 	}

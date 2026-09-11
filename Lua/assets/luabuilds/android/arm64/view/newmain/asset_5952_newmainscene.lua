@@ -448,14 +448,14 @@ function NewMainScene:RevertSleepTimeout()
 	return
 end
 
-function NewMainScene:FoldPanels(arg_53_1)
+function NewMainScene:FoldPanels(arg_53_1, arg_53_2)
 	if not self.theme then
 		return
 	end
 
 	self.foldFlag = arg_53_1
 
-	self.theme:OnFoldPanels(arg_53_1)
+	self.theme:OnFoldPanels(arg_53_1, arg_53_2)
 	self.paintingView:Fold(arg_53_1, 0.5)
 	pg.playerResUI:Fold(arg_53_1, 0.5)
 	self:SetEffectPanelVisible(not arg_53_1)
@@ -463,7 +463,7 @@ function NewMainScene:FoldPanels(arg_53_1)
 	return
 end
 
-function NewMainScene:HidePanel(arg_54_1)
+function NewMainScene:HidePanel(arg_54_1, arg_54_2)
 	if not self.theme then
 		return
 	end
@@ -472,9 +472,13 @@ function NewMainScene:HidePanel(arg_54_1)
 		return
 	end
 
+	if self.calibrationPage and self.calibrationPage:GetLoaded() and self.calibrationPage:isShowing() then
+		return
+	end
+
 	self.foldFlag = arg_54_1
 
-	self.theme:OnFoldPanels(arg_54_1)
+	self.theme:OnFoldPanels(arg_54_1, arg_54_2)
 
 	if self._asmrTurnning then
 		if self.foldFlag == true then
@@ -741,6 +745,14 @@ end
 function NewMainScene:OnPlayerUpdated()
 	if self.theme and self.theme:GetLoaded() then
 		self.theme:OnPlayerUpdated()
+	end
+
+	return
+end
+
+function NewMainScene:ShowOrHideBtnEffect(arg_76_1)
+	if self.theme then
+		self.theme:ShowOrHideBtnEffect(arg_76_1)
 	end
 
 	return

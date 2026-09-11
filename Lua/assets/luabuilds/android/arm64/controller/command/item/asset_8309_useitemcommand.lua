@@ -63,9 +63,11 @@ function UseItemCommand:execute(arg_1_1)
 			elseif var_1_6 == ItemUsage.DROP or var_1_6 == ItemUsage.DROP_TEMPLATE or var_1_6 == ItemUsage.DROP_APPOINTED or var_1_6 == ItemUsage.INVITATION or var_1_6 == ItemUsage.SKIN_SELECT or var_1_6 == ItemUsage.RANDOM_SKIN or var_1_6 == ItemUsage.SHIP_GIFT or var_1_6 == ItemUsage.REPAIR_LOVE_LETTER then
 				var_2_0 = PlayerConst.addTranDrop(arg_2_0.drop_list)
 			elseif var_1_6 == ItemUsage.USAGE_SKIN_EXP then
+				local var_2_1 = ShopConst.GetShopConfig(var_1_3[1])
+
 				getProxy(ShipSkinProxy):addSkin((ShipSkin.New({
-					id = pg.shop_template[var_1_3[1]].effect_args[1],
-					end_time = pg.TimeMgr.GetInstance():GetServerTime() + pg.shop_template[var_1_3[1]].time_second
+					id = var_2_1.effect_args[1],
+					end_time = pg.TimeMgr.GetInstance():GetServerTime() + var_2_1.time_second
 				})))
 				self:sendNotification(GAME.SKIN_SHOPPIGN_DONE, {
 					id = var_1_3[1]
@@ -73,15 +75,15 @@ function UseItemCommand:execute(arg_1_1)
 			elseif var_1_6 == ItemUsage.SKIN_SHOP_DISCOUNT or var_1_6 == ItemUsage.USAGE_SHOP_DISCOUNT then
 				var_2_0 = PlayerConst.addTranDrop(arg_2_0.drop_list)
 
-				local var_2_1, var_2_2 = var_1_5:GetConsumeForSkinShopDiscount(var_1_3[1])
+				local var_2_2, var_2_3 = var_1_5:GetConsumeForSkinShopDiscount(var_1_3[1])
 
-				if var_2_1 > 0 then
-					local var_2_3 = getProxy(PlayerProxy):getData()
+				if var_2_2 > 0 then
+					local var_2_4 = getProxy(PlayerProxy):getData()
 
-					var_2_3:consume({
-						[id2res(var_2_2)] = var_2_1
+					var_2_4:consume({
+						[id2res(var_2_3)] = var_2_2
 					})
-					getProxy(PlayerProxy):updatePlayer(var_2_3)
+					getProxy(PlayerProxy):updatePlayer(var_2_4)
 				end
 
 				self:sendNotification(GAME.SKIN_SHOPPIGN_DONE, {
@@ -90,17 +92,17 @@ function UseItemCommand:execute(arg_1_1)
 			elseif var_1_6 == ItemUsage.DORM_LV_UP then
 				self:sendNotification(GAME.EXTEND_BACKYARD_AREA)
 			elseif var_1_6 == ItemUsage.GUILD_DONATE then
-				local var_2_4 = getProxy(GuildProxy):getRawData()
-
-				if var_2_4 then
-					var_2_4:AddExtraDonateCnt(var_1_2)
-					pg.TipsMgr.GetInstance():ShowTips(i18n("guild_use_donateitem_success", var_1_2))
-				end
-			elseif var_1_6 == ItemUsage.GUILD_OPERATION then
 				local var_2_5 = getProxy(GuildProxy):getRawData()
 
 				if var_2_5 then
-					var_2_5:AddExtraBattleCnt(var_1_2)
+					var_2_5:AddExtraDonateCnt(var_1_2)
+					pg.TipsMgr.GetInstance():ShowTips(i18n("guild_use_donateitem_success", var_1_2))
+				end
+			elseif var_1_6 == ItemUsage.GUILD_OPERATION then
+				local var_2_6 = getProxy(GuildProxy):getRawData()
+
+				if var_2_6 then
+					var_2_6:AddExtraBattleCnt(var_1_2)
 					pg.TipsMgr.GetInstance():ShowTips(i18n("guild_use_battleitem_success", var_1_2))
 				end
 			elseif var_1_6 == ItemUsage.REDUCE_COMMANDER_TIME then
@@ -108,7 +110,7 @@ function UseItemCommand:execute(arg_1_1)
 			elseif var_1_6 == ItemUsage.EX_RE_MAP then
 				var_2_0 = PlayerConst.addTranDrop(arg_2_0.drop_list)
 
-				getProxy(ChapterProxy):addRemasterPassCount(var_1_3[1], ChapterConst.GetActivityIDByReChapterID(var_1_3[1]))
+				getProxy(ChapterProxy):addRemasterPassCount(var_1_3[1], ChapterConst.GetActivityIDByReChapterID(var_1_3[1]), var_1_2)
 			else
 				assert(false, "未处理类型" .. var_1_6)
 			end

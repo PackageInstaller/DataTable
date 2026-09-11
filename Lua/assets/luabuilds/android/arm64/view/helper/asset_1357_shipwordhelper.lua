@@ -525,4 +525,8 @@ function ShipWordHelper:GetCvDataForShip(arg_33_1)
 	return var_33_9, var_33_5, var_33_4, var_33_6, var_33_7, var_33_6 == -1
 end
 
+function ShipWordHelper:GetShipWord(arg_34_1, arg_34_2, arg_34_3)
+	return var_0_12(var_0_2[self][arg_34_1], arg_34_2)
+end
+
 return ShipWordHelper

@@ -63,7 +63,7 @@ function NewMainSceneBaseTheme:init(arg_4_1)
 	return
 end
 
-function NewMainSceneBaseTheme:_FoldPanels(arg_5_1, arg_5_2)
+function NewMainSceneBaseTheme:_FoldPanels(arg_5_1, arg_5_2, arg_5_3)
 	for iter_5_0, iter_5_1 in ipairs(self.panels) do
 		iter_5_1:Fold(arg_5_1, arg_5_2)
 	end
@@ -73,7 +73,11 @@ function NewMainSceneBaseTheme:_FoldPanels(arg_5_1, arg_5_2)
 	self.bannerView:Fold(arg_5_1, arg_5_2)
 	self.actBtnView:Fold(arg_5_1, arg_5_2)
 	self.buffView:Fold(arg_5_1, arg_5_2)
-	self.wordView:Fold(arg_5_1, arg_5_2)
+
+	if arg_5_3 and arg_5_3.chat and arg_5_1 then
+		self.wordView:Fold(arg_5_1, arg_5_2)
+	end
+
 	self.tagView:Fold(arg_5_1, arg_5_2)
 	self.changeView:Fold(arg_5_1, arg_5_2)
 	self.asmrChatView:Fold(arg_5_1, arg_5_2)
@@ -81,7 +85,7 @@ function NewMainSceneBaseTheme:_FoldPanels(arg_5_1, arg_5_2)
 	return
 end
 
-function NewMainSceneBaseTheme:OnFoldPanels(arg_6_1)
+function NewMainSceneBaseTheme:OnFoldPanels(arg_6_1, arg_6_2)
 	if arg_6_1 then
 		self.mainCG.blocksRaycasts = false
 	else
@@ -94,7 +98,7 @@ function NewMainSceneBaseTheme:OnFoldPanels(arg_6_1)
 		end, 0.5, 1):Start()
 	end
 
-	self:_FoldPanels(arg_6_1, 0.5)
+	self:_FoldPanels(arg_6_1, 0.5, arg_6_2)
 
 	return
 end
@@ -176,6 +180,10 @@ function NewMainSceneBaseTheme:Disable()
 	return
 end
 
+function NewMainSceneBaseTheme:ShowOrHideBtnEffect(arg_14_1)
+	return
+end
+
 function NewMainSceneBaseTheme:IsLoaded()
 	return self._loaded
 end
@@ -183,8 +191,8 @@ end
 function NewMainSceneBaseTheme:OnDestroy()
 	self:UnOverlayPanel(self._tf, self._parentTf)
 
-	for iter_15_0, iter_15_1 in ipairs(self.panels or {}) do
-		iter_15_1:Dispose()
+	for iter_16_0, iter_16_1 in ipairs(self.panels or {}) do
+		iter_16_1:Dispose()
 	end
 
 	self.panels = nil
@@ -243,10 +251,10 @@ function NewMainSceneBaseTheme:OnDestroy()
 		self.asmrChatView = nil
 	end
 
-	local var_15_0 = pg.EasyRedDotMgr.GetInstance()
+	local var_16_0 = pg.EasyRedDotMgr.GetInstance()
 
-	for iter_15_2, iter_15_3 in ipairs(self.redDotUIList or {}) do
-		var_15_0:UnRegisterRedDot(iter_15_3)
+	for iter_16_2, iter_16_3 in ipairs(self.redDotUIList or {}) do
+		var_16_0:UnRegisterRedDot(iter_16_3)
 	end
 
 	self.redDotUIList = nil
@@ -264,7 +272,7 @@ function NewMainSceneBaseTheme:GetCalibrationBG()
 	return
 end
 
-function NewMainSceneBaseTheme:GetPaintingOffset(arg_18_1)
+function NewMainSceneBaseTheme:GetPaintingOffset(arg_19_1)
 	return MainPaintingShift.New({
 		0,
 		-10,

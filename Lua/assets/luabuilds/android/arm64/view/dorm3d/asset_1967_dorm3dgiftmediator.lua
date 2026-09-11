@@ -98,7 +98,7 @@ function Dorm3dGiftMediator:initNotificationHandleDic()
 
 			if var_13_0 and #var_13_0 > 0 then
 				arg_13_0.viewComponent:emit(Dorm3dGiftMediator.OPEN_DROP_LAYER, var_13_0, function()
-					arg_13_0.viewComponent:SingleUpdateGift(pg.shop_template[arg_13_1:getBody().id].effect_args[1])
+					arg_13_0.viewComponent:SingleUpdateGift(ShopConst.GetShopConfig(arg_13_1:getBody().id).effect_args[1])
 
 					return
 				end)

@@ -54,6 +54,10 @@ function UpdateTaskProgressCommand:execute(arg_1_1)
 		var_1_2 = Task.TASK_PROGRESS_UPDATE
 		var_1_3 = var_1_0.progress
 		var_1_7 = true
+	elseif var_1_6 == TASK_SUB_TYPE_CLIENT_TRIGGER then
+		var_1_2 = Task.TASK_PROGRESS_UPDATE
+		var_1_3 = var_1_0.progress or 1
+		var_1_7 = true
 	end
 
 	local var_1_10

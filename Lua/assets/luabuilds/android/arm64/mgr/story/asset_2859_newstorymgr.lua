@@ -263,8 +263,8 @@ function var_0_0:_Init(arg_27_1, arg_27_2)
 		CastStoryPlayer.New(arg_27_1),
 		SpAnimStoryPlayer.New(arg_27_1),
 		BlinkStoryPlayer.New(arg_27_1),
-		DialogueStoryPlayer.New(arg_27_1),
-		SubPageStoryPlayer.New(arg_27_1)
+		SubPageStoryPlayer.New(arg_27_1),
+		CGStoryPlayer.New(arg_27_1)
 	}
 	self.setSpeedPanel = StorySetSpeedPanel.New(self._tf, function(arg_28_0)
 		self:UpdatePlaySpeed(arg_28_0)

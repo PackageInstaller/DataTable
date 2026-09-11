@@ -123,9 +123,9 @@ function NewSkinShopMediator:handleNotification(arg_14_1)
 	local var_14_1 = arg_14_1:getBody()
 
 	if var_14_0 == GAME.SKIN_SHOPPIGN_DONE or var_14_0 == GAME.SKIN_COUPON_SHOPPING_DONE then
-		local var_14_2 = pg.shop_template[var_14_1.id]
+		local var_14_2 = ShopConst.GetShopConfig(var_14_1.id)
 
-		if pg.shop_template[var_14_1.id] and (var_14_2.genre == ShopArgs.SkinShop or var_14_2.genre == ShopArgs.SkinShopTimeLimit) then
+		if var_14_2 and (var_14_2.genre == ShopArgs.SkinShop or var_14_2.genre == ShopArgs.SkinShopTimeLimit) then
 			local var_14_3 = var_14_2.effect_args[1]
 
 			if pg.ship_skin_template[var_14_2.effect_args[1]].skin_type == ShipSkin.SKIN_TYPE_TB then

@@ -262,31 +262,33 @@ function ChargeItemShopView:updateItemGoodsVOList()
 	}
 
 	for iter_17_0, iter_17_1 in pairs(pg.shop_template.all) do
-		if pg.shop_template[iter_17_1].genre == "gem_shop" then
-			local var_17_0, var_17_1, var_17_2 = ChargeConst.getGoodsLimitInfo(iter_17_1)
-			local var_17_3 = false
+		local var_17_0 = ShopConst.GetShopConfig(iter_17_1)
 
-			if pg.shop_template[iter_17_1].effect_args == "ship_bag_size" and var_17_1 and var_17_2 then
-				local var_17_4 = self.player:getMaxShipBagExcludeGuild()
+		if var_17_0.genre == "gem_shop" then
+			local var_17_1, var_17_2, var_17_3 = ChargeConst.getGoodsLimitInfo(iter_17_1)
+			local var_17_4 = false
 
-				if var_17_1 <= var_17_4 and var_17_4 <= var_17_2 then
-					var_17_3 = true
+			if var_17_0.effect_args == "ship_bag_size" and var_17_2 and var_17_3 then
+				local var_17_5 = self.player:getMaxShipBagExcludeGuild()
+
+				if var_17_2 <= var_17_5 and var_17_5 <= var_17_3 then
+					var_17_4 = true
 				end
-			elseif pg.shop_template[iter_17_1].effect_args == "equip_bag_max" and var_17_1 and var_17_2 then
-				local var_17_5 = self.player:getMaxEquipmentBag()
+			elseif var_17_0.effect_args == "equip_bag_max" and var_17_2 and var_17_3 then
+				local var_17_6 = self.player:getMaxEquipmentBag()
 
-				if var_17_1 <= var_17_5 and var_17_5 <= var_17_2 then
-					var_17_3 = true
+				if var_17_2 <= var_17_6 and var_17_6 <= var_17_3 then
+					var_17_4 = true
 				end
-			elseif pg.shop_template[iter_17_1].effect_args == "commander_bag_size" and var_17_1 and var_17_2 then
-				if var_17_1 <= self.player.commanderBagMax and self.player.commanderBagMax <= var_17_2 then
-					var_17_3 = true
+			elseif var_17_0.effect_args == "commander_bag_size" and var_17_2 and var_17_3 then
+				if var_17_2 <= self.player.commanderBagMax and self.player.commanderBagMax <= var_17_3 then
+					var_17_4 = true
 				end
 			else
-				var_17_3 = true
+				var_17_4 = true
 			end
 
-			if var_17_3 == true then
+			if var_17_4 == true then
 				table.insert(self.itemGoodsVOList, (Goods.Create({
 					count = 0,
 					shop_id = iter_17_1
@@ -302,8 +304,10 @@ function ChargeItemShopView:updateItemGoodsVOList()
 	end
 
 	for iter_17_3, iter_17_4 in ipairs(self.itemGoodsVOList) do
-		if not table.contains(self.packageSortList, pg.shop_template[iter_17_4.id].package_sort_id) then
-			table.insert(self.packageSortList, pg.shop_template[iter_17_4.id].package_sort_id)
+		local var_17_7 = ShopConst.GetShopConfig(iter_17_4.id).package_sort_id
+
+		if not table.contains(self.packageSortList, var_17_7) then
+			table.insert(self.packageSortList, var_17_7)
 		end
 	end
 

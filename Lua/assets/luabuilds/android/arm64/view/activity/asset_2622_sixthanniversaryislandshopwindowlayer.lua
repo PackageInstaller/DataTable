@@ -92,11 +92,7 @@ function SixthAnniversaryIslandShopWindowLayer:updateCount(arg_12_1)
 end
 
 function SixthAnniversaryIslandShopWindowLayer:didEnter()
-	local var_13_0 = {
-		type = self.goods:getConfig("commodity_type"),
-		id = self.goods:getConfig("commodity_id"),
-		count = self.goods:getConfig("num")
-	}
+	local var_13_0 = self.goods:getDropInfo()
 	local var_13_1 = self._tf:Find("content/main")
 
 	updateDrop(var_13_1:Find("icon/IconTpl"), var_13_0)

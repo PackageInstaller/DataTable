@@ -28,6 +28,7 @@ BackYardConst.TIME_TYPE_MONTH = 2
 BackYardConst.TIME_TYPE_YEAR = 3
 BackYardConst.MAX_MAP_SIZE = Vector2(23, 23)
 BackYardConst.MAX_FEAST_MAP_SIZE = Vector2(25, 25)
+BackYardConst.MAX_REVERSE_PACMAN_MAP_SIZE = Vector2(48, 24)
 
 function BackYardConst:ThemeSortIndex2ServerIndex(arg_1_1)
 	arg_1_1 = defaultValue(arg_1_1, true)

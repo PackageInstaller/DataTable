@@ -56,7 +56,7 @@ function MiniGameGoodsCard:update(arg_5_1)
 	setActive(self.mask, not self.goodsVO:CanPurchase())
 	setActive(self.stars, false)
 
-	local var_5_0 = arg_5_1:GetDropInfo()
+	local var_5_0 = arg_5_1:getDropInfo()
 
 	updateDrop(self.itemTF, var_5_0)
 	setScrollText(self.nameTxt, var_5_0:getConfig("name") or "")

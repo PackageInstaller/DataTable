@@ -4,6 +4,107 @@ pg.word_legal_template_16 = {}
 local var_0_0 = pg.word_legal_template_16
 
 function temp()
+	var_0_0.猫 = {
+		音 = {
+			this = true
+		}
+	}
+
+	return
+end
+
+temp()
+
+function temp()
+	var_0_0.绊 = {
+		爱 = {
+			this = true,
+			· = {
+				E = {
+					l = {
+						e = {
+							g = {
+								a = {
+									n = {
+										t = {
+											this = true
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				A = {
+					n = {
+						n = {
+							i = {
+								v = {
+									e = {
+										r = {
+											s = {
+												a = {
+													r = {
+														y = {
+															this = true
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				S = {
+					u = {
+						p = {
+							e = {
+								r = {
+									G = {
+										a = {
+											m = {
+												e = {
+													r = {
+														this = true
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	return
+end
+
+temp()
+
+function temp()
+	var_0_0.白 = {
+		上 = {
+			吹 = {
+				雪 = {
+					this = true
+				}
+			}
+		}
+	}
+
+	return
+end
+
+temp()
+
+function temp()
 	var_0_0.时 = {
 		乃 = {
 			空 = {

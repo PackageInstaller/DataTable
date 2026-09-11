@@ -61,7 +61,7 @@ function Dorm3dSkinSelectMediator:initNotificationHandleDic()
 		self.viewComponent:FlushSkinList()
 		pg.NewStyleMsgboxMgr.GetInstance():Show(pg.NewStyleMsgboxMgr.TYPE_MSGBOX, {
 			title = i18n("title_info"),
-			contentText = i18n("dorm3d_skin_equip", ShipGroup.getDefaultShipNameByGroupID(self.contextData.groupId), pg.dorm3d_resource[pg.shop_template[arg_8_0].effect_args[1]].name),
+			contentText = i18n("dorm3d_skin_equip", ShipGroup.getDefaultShipNameByGroupID(self.contextData.groupId), pg.dorm3d_resource[ShopConst.GetShopConfig(arg_8_0).effect_args[1]].name),
 			onConfirm = function()
 				self.viewComponent:ConfirmCurrentSkin()
 

@@ -5,10 +5,12 @@ CourtYardConst.SYSTEM_VISIT = 2
 CourtYardConst.SYSTEM_FEAST = 3
 CourtYardConst.SYSTEM_OUTSIDE = 4
 CourtYardConst.SYSTEM_EDIT_FEAST = 5
+CourtYardConst.SYSTEM_REVERSE_PACMAN = 6
 CourtYardConst.STYLE_INNER = 1
 CourtYardConst.STYLE_OUTSIDE = 2
 CourtYardConst.STYLE_FEAST = 3
 CourtYardConst.STYLE_PREVIEW = 4
+CourtYardConst.STYLE_REVERSE_PACMAN = 6
 CourtYardConst.DEPTH_TYPE_MAT = 0
 CourtYardConst.DEPTH_TYPE_SHIP = 1
 CourtYardConst.DEPTH_TYPE_FURNITURE = 2
@@ -26,10 +28,16 @@ CourtYardConst.SHIP_SCALE = 0.5
 CourtYardConst.SHIP_TYPE_SELF = 1
 CourtYardConst.SHIP_TYPE_OTHER = 2
 CourtYardConst.SHIP_TYPE_FEAST = 3
+CourtYardConst.SHIP_TYPE_REVERSE_PACMAN = 4
 CourtYardConst.FEAST_EFFECT_TIME = 3
 CourtYardConst.FEAST_CHAT_TIME = 15
 CourtYardConst.FEAST_GIVE_TICKET_ANIM_TIME = 8
 CourtYardConst.FEAST_GIVE_GIFT_ANIM_TIME = 2
+CourtYardConst.REVERSE_PACMAN_CHAT_TIME = {
+	15,
+	20
+}
+CourtYardConst.REVERSE_PACMAN_CHAT_SHOW_TIME = 15
 CourtYardConst.DOUBLE_SKIN_ADD = 100000
 
 return CourtYardConst

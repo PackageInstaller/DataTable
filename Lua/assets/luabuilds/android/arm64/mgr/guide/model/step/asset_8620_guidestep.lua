@@ -22,6 +22,7 @@ function GuideStep:Ctor(arg_1_1)
 	self.alpha = arg_1_1.alpha
 	self.mask = defaultValue(arg_1_1.mask, false)
 	self.isWorld = defaultValue(arg_1_1.isWorld, true)
+	self.forceDormLine = defaultValue(arg_1_1.forceDormLine, false)
 	self.styleData = self:GenStyleData(arg_1_1.style)
 	self.highLightData = self:GenHighLightData(arg_1_1.style)
 	self.baseUI = self:GenSearchData(arg_1_1.baseui)
@@ -154,7 +155,7 @@ function GuideStep:GenStyleData(arg_16_1)
 end
 
 function GuideStep:GetHighlightName()
-	if self:GetDialogueType() == GuideStep.DIALOGUE_DORM then
+	if self:GetDialogueType() == GuideStep.DIALOGUE_DORM or self.forceDormLine then
 		return "wShowArea4"
 	elseif self.isWorld then
 		return "wShowArea"

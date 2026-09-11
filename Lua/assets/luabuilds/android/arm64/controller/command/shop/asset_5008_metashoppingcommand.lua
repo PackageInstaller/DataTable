@@ -25,18 +25,18 @@ function MetaShoppingCommand:execute(arg_1_1)
 		return
 	end
 
-	local var_1_5 = getProxy(PlayerProxy):getRawData()
-	local var_1_6 = var_1_3:getConfig("commodity_id")
-	local var_1_7 = var_1_3:getConfig("num")
+	local var_1_5 = getProxy(PlayerProxy)
+	local var_1_6 = var_1_5:getRawData()
+	local var_1_7 = var_1_3:getDropInfo()
 
-	if var_1_3:getConfig("commodity_type") == 1 then
-		if var_1_6 == 1 and var_1_5:GoldMax(var_1_7 * var_1_0.arg2) then
+	if var_1_5.type == DROP_TYPE_RESOURCE then
+		if var_1_7.id == PlayerConst.ResGold and var_1_6:GoldMax(var_1_7.count * var_1_0.arg2) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("gold_max_tip_title") .. i18n("resource_max_tip_shop"))
 
 			return
 		end
 
-		if var_1_6 == 2 and var_1_5:OilMax(var_1_7 * var_1_0.arg2) then
+		if var_1_7.id == PlayerConst.ResOil and var_1_6:OilMax(var_1_7.count * var_1_0.arg2) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("oil_max_tip_title") .. i18n("resource_max_tip_shop"))
 
 			return

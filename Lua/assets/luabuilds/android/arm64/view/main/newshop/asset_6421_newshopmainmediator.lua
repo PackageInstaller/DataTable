@@ -480,6 +480,8 @@ function NewShopMainMediator:initNotificationHandleDic()
 				arg_50_0.viewComponent:setNormalGroupList(var_50_0.normalGroupList)
 			end
 
+			local var_50_6 = ShopConst.GetShopConfig(var_50_0.id)
+
 			arg_50_0.viewComponent:checkBuyDone(var_50_0.id)
 			arg_50_0.viewComponent:updateCurSubView()
 			pg.EasyRedDotMgr.GetInstance():TriggerMarks("specialShop")

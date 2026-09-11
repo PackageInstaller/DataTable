@@ -4,6 +4,59 @@ pg.word_legal_template_6 = {}
 local var_0_0 = pg.word_legal_template_6
 
 function temp()
+	var_0_0.进 = {
+		取 = {
+			this = true
+		}
+	}
+
+	return
+end
+
+temp()
+
+function temp()
+	var_0_0.虎 = {
+		this = {
+			this = true
+		},
+		贲 = {
+			this = true
+		},
+		（ = {
+			后 = {
+				排 = {
+					） = {
+						this = true
+					}
+				}
+			}
+		}
+	}
+
+	return
+end
+
+temp()
+
+function temp()
+	var_0_0.伦 = {
+		敦 = {
+			this = true,
+			["."] = {
+				改 = {
+					this = true
+				}
+			}
+		}
+	}
+
+	return
+end
+
+temp()
+
+function temp()
 	var_0_0.什 = {
 		罗 = {
 			普 = {
@@ -488,7 +541,18 @@ temp()
 function temp()
 	var_0_0.胜 = {
 		利 = {
-			this = true
+			this = true,
+			· = {
+				M = {
+					E = {
+						T = {
+							A = {
+								this = true
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 
@@ -541,42 +605,6 @@ function temp()
 			this = true
 		},
 		屈 = {
-			this = true
-		}
-	}
-
-	return
-end
-
-temp()
-
-function temp()
-	var_0_0.恐 = {
-		怖 = {
-			this = true
-		}
-	}
-
-	return
-end
-
-temp()
-
-function temp()
-	var_0_0.桐 = {
-		this = {
-			this = true
-		}
-	}
-
-	return
-end
-
-temp()
-
-function temp()
-	var_0_0.杉 = {
-		this = {
 			this = true
 		}
 	}

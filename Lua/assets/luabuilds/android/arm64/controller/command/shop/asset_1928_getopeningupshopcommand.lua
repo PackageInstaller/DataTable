@@ -240,7 +240,9 @@ function GetOpeningUpShopCommand:GetActivityShops(arg_29_1)
 			self.shopList[ShopConst.TYPE_ACTIVITY] = {}
 
 			for iter_32_0, iter_32_1 in pairs(arg_32_1) do
-				table.insert(self.shopList[ShopConst.TYPE_ACTIVITY], iter_32_1)
+				if not iter_32_1:IsHide() then
+					table.insert(self.shopList[ShopConst.TYPE_ACTIVITY], iter_32_1)
+				end
 			end
 
 			local var_32_0 = getProxy(ActivityProxy):getRawData()

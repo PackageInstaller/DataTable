@@ -28,7 +28,6 @@ function Dorm:Ctor(arg_1_1)
 		50012,
 		50013
 	}
-	self.shopCfg = pg.shop_template
 
 	return
 end
@@ -39,7 +38,7 @@ end
 
 function Dorm:GetExpandId()
 	for iter_3_0, iter_3_1 in ipairs(self.expandIds) do
-		if self.shopCfg[iter_3_1].limit_args[1][2] == self.level - 1 then
+		if ShopConst.GetShopConfig(iter_3_1).limit_args[1][2] == self.level - 1 then
 			return iter_3_1
 		end
 	end
@@ -88,7 +87,9 @@ function Dorm:getExtendTrainPosShopId()
 		18,
 		26
 	}) do
-		if pg.shop_template[iter_11_1].effect_args == ShopArgs.EffectDromExpPos and self.exp_pos >= pg.shop_template[iter_11_1].limit_args[1][2] and self.exp_pos <= pg.shop_template[iter_11_1].limit_args[1][3] then
+		local var_11_0 = ShopConst.GetShopConfig(iter_11_1)
+
+		if var_11_0.effect_args == ShopArgs.EffectDromExpPos and self.exp_pos >= var_11_0.limit_args[1][2] and self.exp_pos <= var_11_0.limit_args[1][3] then
 			return iter_11_1
 		end
 	end

@@ -45,7 +45,7 @@ function MedalGoods:GetLimit()
 	return self:getConfig("goods_purchase_limit")
 end
 
-function MedalGoods:GetDropInfo()
+function MedalGoods:getDropInfo()
 	return Drop.New({
 		type = self:getConfig("type"),
 		id = self:getConfig("goods")[1],

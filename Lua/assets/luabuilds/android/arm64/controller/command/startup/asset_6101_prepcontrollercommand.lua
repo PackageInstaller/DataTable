@@ -344,6 +344,7 @@ function PrepControllerCommand:execute(arg_1_1)
 	self.facade:registerCommand(GAME.ACT_CARD_PUZZLE, ActivityCardPuzzleCombatCommand)
 	self.facade:registerCommand(GAME.CASTLE_ACT_OP, CastleActivityCommand)
 	self.facade:registerCommand(GAME.ACT_MANUAL_SIGN, ActivityManualSignCommand)
+	self.facade:registerCommand(GAME.ACT_MANUAL_SIGN_DONE, ManualSignDoneCommand)
 	self.facade:registerCommand(GAME.SENRANKAGURA_TRAIN_ACT_OP, SenrankaguraTrainCommand)
 	self.facade:registerCommand(GAME.ACT_RANDOM_DAILY_TASK, ActivityRandomDailyTaskCommand)
 	self.facade:registerCommand(GAME.ACTIVITY_STORE_DATE, ActivityStoreDataCommand)
@@ -728,6 +729,10 @@ function PrepControllerCommand:execute(arg_1_1)
 	self.facade:registerCommand(GAME.AUCTION_GAME_PREORDER_BOX, AuctionGamePreorderBoxCommand)
 	self.facade:registerCommand(GAME.AUCTION_GAME_OPEN_BOX, AuctionGameOpenBoxCommand)
 	self.facade:registerCommand(GAME.AUCTION_GAME_GET_RELIEF, AuctionGameGetReliefCommand)
+	self.facade:registerCommand(GAME.REVERSE_PACMAN_HIRE_ROLE, ReversePacmanHireRoleCommand)
+	self.facade:registerCommand(GAME.REVERSE_PACMAN_GIFT_ROLE, ReversePacmanGiftRoleCommand)
+	self.facade:registerCommand(GAME.REVERSE_PACMAN_ADD_FAVORABILITY, ReversePacmanAddFavorabilityCommand)
+	self.facade:registerCommand(GAME.REVERSE_PACMAN_PASS_LEVEL, ReversePacmanPassLevelCommand)
 
 	return
 end

@@ -91,7 +91,7 @@ function SixAnniversaryPage:initData()
 	if self.displayDatas and #self.displayDatas then
 		for iter_3_0 = 1, #self.displayDatas do
 			if self.displayDatas[iter_3_0][2] and self.displayDatas[iter_3_0][2] ~= 0 then
-				local var_3_1, var_3_2 = pg.TimeMgr.GetInstance():inTime(pg.shop_template[self.displayDatas[iter_3_0][2]].time)
+				local var_3_1, var_3_2 = pg.TimeMgr.GetInstance():inTime(ShopConst.GetShopConfig(self.displayDatas[iter_3_0][2]).time)
 
 				if not var_3_1 then
 					table.insert(var_3_0, self.displayDatas[iter_3_0][1])

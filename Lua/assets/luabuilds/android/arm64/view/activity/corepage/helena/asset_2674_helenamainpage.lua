@@ -41,7 +41,7 @@ function HelenaMainPage:updateUI()
 		return
 	end
 
-	local var_4_0, var_4_1 = self.timeMgr:inTime(pg.shop_template[self.shop_id].time)
+	local var_4_0, var_4_1 = self.timeMgr:inTime(ShopConst.GetShopConfig(self.shop_id).time)
 	local var_4_2
 
 	if var_4_1 then

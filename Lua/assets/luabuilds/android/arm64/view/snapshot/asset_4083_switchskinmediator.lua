@@ -64,9 +64,9 @@ function SwitchSkinMediator:handleNotification(arg_7_1)
 	local var_7_0 = arg_7_1:getName()
 
 	if var_7_0 == GAME.SKIN_SHOPPIGN_DONE or var_7_0 == GAME.SKIN_COUPON_SHOPPING_DONE then
-		local var_7_1 = pg.shop_template[arg_7_1:getBody().id]
+		local var_7_1 = ShopConst.GetShopConfig(arg_7_1:getBody().id)
 
-		if pg.shop_template[arg_7_1:getBody().id] and var_7_1.genre == ShopArgs.SkinShop then
+		if var_7_1 and var_7_1.genre == ShopArgs.SkinShop then
 			self:addSubLayers(Context.New({
 				mediator = NewSkinMediator,
 				viewComponent = NewSkinLayer,

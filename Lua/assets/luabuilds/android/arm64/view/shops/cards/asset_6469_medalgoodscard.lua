@@ -28,7 +28,7 @@ function MedalGoodsCard:update(arg_2_1)
 end
 
 function MedalGoodsCard:Init()
-	updateDrop(self.itemTF, (self.goods:GetDropInfo()))
+	updateDrop(self.itemTF, (self.goods:getDropInfo()))
 	setScrollText(self.nameTxt, (self.goods:getConfig("goods_name")))
 	setText(self.countTF, self.goods:getConfig("price"))
 	GetImageSpriteFromAtlasAsync("props/medal", "", self.resIconTF)

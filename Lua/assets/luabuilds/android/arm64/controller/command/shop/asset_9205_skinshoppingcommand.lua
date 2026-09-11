@@ -4,7 +4,7 @@ function SkinShoppingCommand:execute(arg_1_1)
 	local var_1_0 = arg_1_1:getBody()
 	local var_1_1 = var_1_0.id
 	local var_1_2 = var_1_0.count
-	local var_1_3 = pg.shop_template[var_1_0.id]
+	local var_1_3 = ShopConst.GetShopConfig(var_1_0.id)
 
 	if not var_1_0.id then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_shopId_noFound"))
@@ -18,12 +18,12 @@ function SkinShoppingCommand:execute(arg_1_1)
 
 	local var_1_4 = getProxy(ShopsProxy)
 	local var_1_5 = var_1_4:getShopStreet()
-	local var_1_7 = pg.shop_template[var_1_0.id].resource_num * var_1_0.count
+	local var_1_7 = var_1_3.resource_num * var_1_0.count
 	local var_1_8 = getProxy(PlayerProxy)
 	local var_1_9 = var_1_8:getData()
 
-	if pg.shop_template[var_1_0.id].limit_args then
-		for iter_1_0, iter_1_1 in ipairs(pg.shop_template[var_1_0.id].limit_args) do
+	if var_1_3.limit_args then
+		for iter_1_0, iter_1_1 in ipairs(var_1_3.limit_args) do
 			if type(iter_1_1) == "table" and iter_1_1[1] == "level" and iter_1_1[2] > var_1_9.level then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("common_limit_level", iter_1_1[2]))
 
@@ -32,26 +32,26 @@ function SkinShoppingCommand:execute(arg_1_1)
 		end
 	end
 
-	if pg.shop_template[var_1_0.id].discount ~= 0 and CommonCommodity.InCommodityDiscountTime(pg.shop_template[var_1_0.id].id) then
-		var_1_7 = var_1_7 * ((100 - pg.shop_template[var_1_0.id].discount) / 100)
+	if var_1_3.discount ~= 0 and CommonCommodity.InCommodityDiscountTime(var_1_3.id) then
+		var_1_7 = var_1_7 * ((100 - var_1_3.discount) / 100)
 	end
 
-	if var_1_7 > var_1_9[id2res(pg.shop_template[var_1_0.id].resource_type)] then
-		if pg.shop_template[var_1_0.id].resource_type == 1 then
+	if var_1_7 > var_1_9[id2res(var_1_3.resource_type)] then
+		if var_1_3.resource_type == 1 then
 			GoShoppingMsgBox(i18n("switch_to_shop_tip_2", i18n("word_gold")), ChargeScene.TYPE_ITEM, {
 				{
 					59001,
-					var_1_7 - var_1_9[id2res(pg.shop_template[var_1_0.id].resource_type)],
+					var_1_7 - var_1_9[id2res(var_1_3.resource_type)],
 					var_1_7
 				}
 			})
-		elseif pg.shop_template[var_1_0.id].resource_type == 4 or pg.shop_template[var_1_0.id].resource_type == 14 then
+		elseif var_1_3.resource_type == 4 or var_1_3.resource_type == 14 then
 			GoShoppingMsgBox(i18n("switch_to_shop_tip_3", i18n("word_gem")), ChargeScene.TYPE_DIAMOND)
 			pg.TrackerMgr.GetInstance():Tracking(TRACKING_BUILD_OR_SKIN_FAILD)
-		elseif not ItemTipPanel.ShowItemTip(DROP_TYPE_RESOURCE, pg.shop_template[var_1_0.id].resource_type) then
+		elseif not ItemTipPanel.ShowItemTip(DROP_TYPE_RESOURCE, var_1_3.resource_type) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("buyProp_noResource_error", (Drop.New({
 				type = DROP_TYPE_RESOURCE,
-				id = pg.shop_template[var_1_0.id].resource_type
+				id = var_1_3.resource_type
 			}):getName())))
 		end
 

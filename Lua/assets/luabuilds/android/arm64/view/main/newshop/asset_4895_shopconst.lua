@@ -118,4 +118,45 @@ var_0_0.TYPE2NAME = {
 var_0_0.NEW_SKIN_SHOP_ID = 1
 var_0_0.PERMANANT_SKIN_SHOP_ID = 2
 
+function var_0_0.GetShopConfig(arg_1_0)
+	local var_1_0 = pg.shop_template[arg_1_0]
+
+	if not pg.shop_template[arg_1_0] then
+		return nil
+	end
+
+	return setmetatable({}, {
+		__index = function(self, arg_2_1)
+			if arg_2_1 == "time" then
+				if var_1_0[arg_2_1] == "always" or var_1_0[arg_2_1] == "stop" or #var_1_0.time_new == 0 then
+					self[arg_2_1] = var_1_0[arg_2_1]
+
+					return self[arg_2_1]
+				end
+
+				for iter_2_0, iter_2_1 in ipairs({
+					var_1_0.time,
+					unpack(var_1_0.time_new)
+				}) do
+					if pg.TimeMgr.GetInstance():inTime(iter_2_1) then
+						return iter_2_1
+					end
+				end
+
+				return var_1_0.time
+			else
+				if var_1_0[arg_2_1] == nil then
+					warning(arg_2_1)
+				end
+
+				self[arg_2_1] = var_1_0[arg_2_1]
+
+				return var_1_0[arg_2_1]
+			end
+
+			return
+		end
+	})
+end
+
 return var_0_0

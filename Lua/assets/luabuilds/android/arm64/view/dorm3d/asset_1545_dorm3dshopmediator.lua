@@ -87,9 +87,7 @@ function Dorm3dShopMediator:handleNotification(arg_8_1)
 		end
 
 		if var_8_2 and #var_8_2 > 0 then
-			self.viewComponent:emit(Dorm3dShopMediator.OPEN_DROP_LAYER, var_8_2, function()
-				return
-			end)
+			self.viewComponent:emit(Dorm3dShopMediator.OPEN_DROP_LAYER, var_8_2)
 		end
 
 		self.viewComponent:SetPageBtns()

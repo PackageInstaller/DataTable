@@ -486,9 +486,9 @@ function ChargeScene:checkBuyDone(arg_36_1)
 	if type(arg_36_1) == "string" then
 		var_36_0 = arg_36_1 == "damonds" and "diamond" or arg_36_1
 	else
-		local var_36_1 = pg.shop_template[arg_36_1]
+		local var_36_1 = ShopConst.GetShopConfig(arg_36_1)
 
-		if pg.shop_template[arg_36_1] and var_36_1.effect_args and type(var_36_1.effect_args) == "table" then
+		if var_36_1 and var_36_1.effect_args and type(var_36_1.effect_args) == "table" then
 			for iter_36_0, iter_36_1 in ipairs(var_36_1.effect_args) do
 				if iter_36_1 == 1 then
 					var_36_0 = "gold"

@@ -849,7 +849,6 @@ function ActivityMediator:initNotificationHandleDic()
 			return
 		end,
 		[GAME.SHOPPING_DONE] = function(arg_92_0, arg_92_1)
-			warning("yzh")
 			arg_92_0.viewComponent:emit(BaseUI.ON_ACHIEVE, arg_92_1:getBody().awards, function()
 				arg_92_0.viewComponent:updateTaskLayers()
 

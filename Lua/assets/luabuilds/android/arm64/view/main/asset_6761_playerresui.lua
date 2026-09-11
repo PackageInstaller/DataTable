@@ -250,19 +250,19 @@ end
 
 function PlayerResUI:ClickOil()
 	local var_22_0 = self:GetPlayer()
-	local var_22_2 = ShoppingStreet.getRiseShopId(ShopArgs.BuyOil, var_22_0.buyOilCount)
+	local var_22_1 = ShoppingStreet.getRiseShopId(ShopArgs.BuyOil, var_22_0.buyOilCount)
 
-	if not var_22_2 then
+	if not var_22_1 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_today_buy_limit"))
 
 		return
 	end
 
-	local var_22_3 = pg.shop_template[var_22_2]
-	local var_22_4 = pg.shop_template[var_22_2].num
+	local var_22_2 = ShopConst.GetShopConfig(var_22_1)
+	local var_22_3 = var_22_2.num
 
-	if pg.shop_template[var_22_2].num == -1 and var_22_3.genre == ShopArgs.BuyOil then
-		var_22_4 = ShopArgs.getOilByLevel(var_22_0.level)
+	if var_22_2.num == -1 and var_22_2.genre == ShopArgs.BuyOil then
+		var_22_3 = ShopArgs.getOilByLevel(var_22_0.level)
 	end
 
 	if pg.gameset.buy_oil_limit.key_value > var_22_0.buyOilCount then
@@ -271,17 +271,17 @@ function PlayerResUI:ClickOil()
 			windowSize = {
 				y = 570
 			},
-			content = i18n("oil_buy_tip", var_22_3.resource_num, var_22_4, var_22_0.buyOilCount),
+			content = i18n("oil_buy_tip", var_22_2.resource_num, var_22_3, var_22_0.buyOilCount),
 			drop = {
 				id = 2,
 				type = DROP_TYPE_RESOURCE,
-				count = var_22_4
+				count = var_22_3
 			},
 			onYes = function()
 				pg.m02:sendNotification(GAME.SHOPPING, {
 					isQuickShopping = true,
 					count = 1,
-					id = var_22_2
+					id = var_22_1
 				})
 				pg.TrackerMgr.GetInstance():Tracking(TRACKING_PAY_OIL)
 

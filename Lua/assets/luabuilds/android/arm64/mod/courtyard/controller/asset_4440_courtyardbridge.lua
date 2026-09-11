@@ -87,6 +87,8 @@ end
 function CourtYardBridge:System2Controller(arg_10_1, arg_10_2)
 	if arg_10_1 == CourtYardConst.SYSTEM_FEAST then
 		return CourtYardFeastController.New(self, arg_10_2)
+	elseif arg_10_1 == CourtYardConst.SYSTEM_REVERSE_PACMAN then
+		return CourtYardReversePacmanController.New(self, arg_10_2)
 	else
 		return CourtYardController.New(self, arg_10_2)
 	end

@@ -4,6 +4,84 @@ pg.word_legal_template_14 = {}
 local var_0_0 = pg.word_legal_template_14
 
 function temp()
+	var_0_0.水 = {
+		星 = {
+			纪 = {
+				念 = {
+					this = true,
+					["."] = {
+						改 = {
+							this = true
+						}
+					},
+					· = {
+						M = {
+							E = {
+								T = {
+									A = {
+										this = true
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		濑 = {
+			伊 = {
+				织 = {
+					this = true
+				}
+			}
+		}
+	}
+
+	return
+end
+
+temp()
+
+function temp()
+	var_0_0.恰 = {
+		巴 = {
+			耶 = {
+				夫 = {
+					this = true
+				}
+			}
+		}
+	}
+
+	return
+end
+
+temp()
+
+function temp()
+	var_0_0.古 = {
+		比 = {
+			雪 = {
+				夫 = {
+					this = true
+				}
+			}
+		},
+		手 = {
+			川 = {
+				唯 = {
+					this = true
+				}
+			}
+		}
+	}
+
+	return
+end
+
+temp()
+
+function temp()
 	var_0_0.摩 = {
 		尔 = {
 			曼 = {
@@ -500,66 +578,6 @@ function temp()
 			萝 = {
 				丝 = {
 					this = true
-				}
-			}
-		}
-	}
-
-	return
-end
-
-temp()
-
-function temp()
-	var_0_0.冈 = {
-		依 = {
-			沙 = {
-				瓦 = {
-					号 = {
-						this = true
-					}
-				}
-			}
-		}
-	}
-
-	return
-end
-
-temp()
-
-function temp()
-	var_0_0.君 = {
-		主 = {
-			this = true
-		}
-	}
-
-	return
-end
-
-temp()
-
-function temp()
-	var_0_0.菈 = {
-		菈 = {
-			· = {
-				撒 = {
-					塔 = {
-						琳 = {
-							· = {
-								戴 = {
-									比 = {
-										路 = {
-											克 = {
-												this = true
-											}
-										}
-									}
-								}
-							}
-						}
-					}
 				}
 			}
 		}

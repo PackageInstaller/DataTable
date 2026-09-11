@@ -4,6 +4,78 @@ pg.word_legal_template_13 = {}
 local var_0_0 = pg.word_legal_template_13
 
 function temp()
+	var_0_0.抚 = {
+		顺 = {
+			this = true,
+			["."] = {
+				改 = {
+					this = true,
+					（ = {
+						后 = {
+							排 = {
+								） = {
+									this = true
+								}
+							}
+						},
+						前 = {
+							排 = {
+								） = {
+									this = true
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	return
+end
+
+temp()
+
+function temp()
+	var_0_0.太 = {
+		原 = {
+			this = true,
+			["."] = {
+				改 = {
+					this = true
+				}
+			}
+		}
+	}
+
+	return
+end
+
+temp()
+
+function temp()
+	var_0_0.飞 = {
+		云 = {
+			this = true
+		},
+		鸟 = {
+			this = true,
+			川 = {
+				千 = {
+					濑 = {
+						this = true
+					}
+				}
+			}
+		}
+	}
+
+	return
+end
+
+temp()
+
+function temp()
 	var_0_0.伏 = {
 		波 = {
 			this = true
@@ -476,84 +548,6 @@ function temp()
 	var_0_0.顽 = {
 		皮 = {
 			this = true
-		}
-	}
-
-	return
-end
-
-temp()
-
-function temp()
-	var_0_0.水 = {
-		星 = {
-			纪 = {
-				念 = {
-					this = true,
-					["."] = {
-						改 = {
-							this = true
-						}
-					},
-					· = {
-						M = {
-							E = {
-								T = {
-									A = {
-										this = true
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		},
-		濑 = {
-			伊 = {
-				织 = {
-					this = true
-				}
-			}
-		}
-	}
-
-	return
-end
-
-temp()
-
-function temp()
-	var_0_0.恰 = {
-		巴 = {
-			耶 = {
-				夫 = {
-					this = true
-				}
-			}
-		}
-	}
-
-	return
-end
-
-temp()
-
-function temp()
-	var_0_0.古 = {
-		比 = {
-			雪 = {
-				夫 = {
-					this = true
-				}
-			}
-		},
-		手 = {
-			川 = {
-				唯 = {
-					this = true
-				}
-			}
 		}
 	}
 

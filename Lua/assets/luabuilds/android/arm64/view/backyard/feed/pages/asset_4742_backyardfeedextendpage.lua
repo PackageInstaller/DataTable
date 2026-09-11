@@ -44,23 +44,24 @@ end
 function BackyardFeedExtendPage:Show(arg_7_1, arg_7_2)
 	BackyardFeedExtendPage.super.Show(self)
 
-	local var_7_0 = pg.shop_template[arg_7_1].resource_type
-	local var_7_1 = pg.shop_template[arg_7_1].resource_num
+	local var_7_0 = ShopConst.GetShopConfig(arg_7_1)
+	local var_7_1 = var_7_0.resource_type
+	local var_7_2 = var_7_0.resource_num
 
-	LoadSpriteAtlasAsync("props/" .. id2res(pg.shop_template[arg_7_1].resource_type), "", function(arg_8_0)
+	LoadSpriteAtlasAsync("props/" .. id2res(var_7_0.resource_type), "", function(arg_8_0)
 		self.icon.sprite = arg_8_0
 		tf(self.icon.gameObject).sizeDelta = Vector2(50, 50)
 
 		return
 	end)
 
-	self.consume.text = pg.shop_template[arg_7_1].resource_num
-	self.desc.text = i18n("backyard_backyardGranaryLayer_foodMaxIncreaseNotice", arg_7_2, arg_7_2 + pg.shop_template[arg_7_1].num)
+	self.consume.text = var_7_0.resource_num
+	self.desc.text = i18n("backyard_backyardGranaryLayer_foodMaxIncreaseNotice", arg_7_2, arg_7_2 + var_7_0.num)
 
 	onButton(self, self.addBtn, function()
 		self:Extend({
-			resType = var_7_0,
-			resCount = var_7_1,
+			resType = var_7_1,
+			resCount = var_7_2,
 			shopId = arg_7_1
 		})
 

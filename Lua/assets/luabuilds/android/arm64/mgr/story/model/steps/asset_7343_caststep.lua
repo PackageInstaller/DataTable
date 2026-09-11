@@ -22,7 +22,7 @@ function CastStep:DataToLayout(arg_3_1)
 	if arg_3_1[1] == var_0_1 then
 		return {
 			type = var_0_1,
-			text = arg_3_1[2]
+			text = HXSet.hxLan(arg_3_1[2])
 		}
 	elseif arg_3_1[1] == var_0_2 then
 		local var_3_1 = arg_3_1[4]

@@ -131,7 +131,7 @@ function BuildShipDetailLayer:didEnter()
 	end, SFX_UI_BUILDING_FASTBUILDING)
 	onButton(self, self.quickCount, function()
 		shoppingBatch(61009, {
-			id = pg.shop_template[61009].effect_args[1]
+			id = ShopConst.GetShopConfig(61009).effect_args[1]
 		}, 9, "build_ship_quickly_buy_tool")
 
 		return

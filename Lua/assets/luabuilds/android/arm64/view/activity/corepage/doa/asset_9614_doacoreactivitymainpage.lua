@@ -16,7 +16,7 @@ end
 
 function DOACoreActivityMainPage:updateUI()
 	if self.shop_id then
-		local var_3_0, var_3_1 = self.timeMgr:inTime(pg.shop_template[self.shop_id].time)
+		local var_3_0, var_3_1 = self.timeMgr:inTime(ShopConst.GetShopConfig(self.shop_id).time)
 		local var_3_2
 
 		if var_3_1 then

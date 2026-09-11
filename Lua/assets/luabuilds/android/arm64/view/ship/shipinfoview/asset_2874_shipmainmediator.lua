@@ -744,9 +744,9 @@ function ShipMainMediator:handleNotification(arg_57_1)
 			self.viewComponent:updateRecordEquipments(var_57_1.index)
 		end
 	elseif var_57_0 == GAME.SKIN_SHOPPIGN_DONE or var_57_0 == GAME.SKIN_COUPON_SHOPPING_DONE then
-		local var_57_6 = pg.shop_template[var_57_1.id]
+		local var_57_6 = ShopConst.GetShopConfig(var_57_1.id)
 
-		if pg.shop_template[var_57_1.id] and var_57_6.genre == ShopArgs.SkinShop then
+		if var_57_6 and var_57_6.genre == ShopArgs.SkinShop then
 			self.viewComponent:StopPreVoice()
 			self:addSubLayers(Context.New({
 				mediator = NewSkinMediator,

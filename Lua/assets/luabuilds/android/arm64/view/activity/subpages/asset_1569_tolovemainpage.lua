@@ -43,7 +43,7 @@ function ToLoveMainPage:OnFirstFlush()
 		setText(self.build:Find("time/Text"), i18n("tolovemainpage_build_countdown"))
 	end
 
-	local var_2_3, var_2_4 = pg.TimeMgr.GetInstance():inTime(pg.shop_template[self.skinLinkId].time)
+	local var_2_3, var_2_4 = pg.TimeMgr.GetInstance():inTime(ShopConst.GetShopConfig(self.skinLinkId).time)
 
 	if var_2_3 then
 		local var_2_5 = pg.TimeMgr.GetInstance():Table2ServerTime(var_2_4) - pg.TimeMgr.GetInstance():GetServerTime()

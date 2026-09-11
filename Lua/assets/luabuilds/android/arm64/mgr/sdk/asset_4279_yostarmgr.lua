@@ -19,7 +19,7 @@ var_0_0.SDK_TRANS_URL = "https://migration.yostar.co.jp?pid=JP-AZURLANE"
 
 function var_0_0.InitJP()
 	var_0_0.isAudit = NetConst.GATEWAY_PORT == 20001 and NetConst.GATEWAY_HOST == "blhxjpauditapi.azurlane.jp"
-	var_0_0.isPreAudit = NetConst.GATEWAY_PORT == 30001 and NetConst.GATEWAY_HOST == "blhxjpauditapi.azurlane.jp" or NetConst.GATEWAY_PORT == 21 and NetConst.GATEWAY_HOST == "blhxjpauditapi.azurlane.jp"
+	var_0_0.isPreAudit = NetConst.GATEWAY_PORT == 30001 and NetConst.GATEWAY_HOST == "blhxjpauditapi.azurlane.jp" or NetConst.GATEWAY_PORT == 21 and NetConst.GATEWAY_HOST == "blhxjpauditapi.azurlane.jp" or NetConst.GATEWAY_PORT == 30201 and NetConst.GATEWAY_HOST == "blhxjpauditapi.azurlane.jp"
 	var_0_0.isPretest = IsUnityEditor or var_0_0.isPreAudit
 	var_0_0.isGoogleSimulator = NetConst.GATEWAY_PORT == 4001 and NetConst.GATEWAY_HOST == "business.azurlane.jp"
 	var_0_0.isRelease = NetConst.GATEWAY_PORT == 80 and NetConst.GATEWAY_HOST == "blhxjploginapi.azurlane.jp"
@@ -34,7 +34,7 @@ end
 
 function var_0_0.InitUS()
 	var_0_0.isAudit = NetConst.GATEWAY_PORT == 20001 and NetConst.GATEWAY_HOST == "audit.us.yo-star.com"
-	var_0_0.isPreAudit = NetConst.GATEWAY_PORT == 30001 and NetConst.GATEWAY_HOST == "audit.us.yo-star.com"
+	var_0_0.isPreAudit = NetConst.GATEWAY_PORT == 30001 and NetConst.GATEWAY_HOST == "audit.us.yo-star.com" or NetConst.GATEWAY_PORT == 41001 and NetConst.GATEWAY_HOST == "audit.us.yo-star.com"
 	var_0_0.isPretest = IsUnityEditor or var_0_0.isPreAudit
 	var_0_0.isGoogleSimulator = NetConst.GATEWAY_PORT == 50001 and NetConst.GATEWAY_HOST == "audit.us.yo-star.com"
 	var_0_0.isRelease = NetConst.GATEWAY_PORT == 80 and NetConst.GATEWAY_HOST == "blhxusgate.yo-star.com"
@@ -56,7 +56,7 @@ function var_0_0.CheckPreAudit()
 end
 
 function var_0_0.CheckPretest()
-	return var_0_0.isPretest
+	return NetConst.getwayType == 2 or IsUnityEditor
 end
 
 function var_0_0.CheckGoogleSimulator()

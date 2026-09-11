@@ -989,9 +989,9 @@ function NewShopMainScene:checkBuyDone(arg_69_1)
 	if type(arg_69_1) == "string" then
 		var_69_0 = arg_69_1 == "damonds" and "diamond" or arg_69_1
 	else
-		local var_69_1 = pg.shop_template[arg_69_1]
+		local var_69_1 = ShopConst.GetShopConfig(arg_69_1)
 
-		if pg.shop_template[arg_69_1] and var_69_1.effect_args and type(var_69_1.effect_args) == "table" then
+		if var_69_1 and var_69_1.effect_args and type(var_69_1.effect_args) == "table" then
 			for iter_69_0, iter_69_1 in ipairs(var_69_1.effect_args) do
 				if iter_69_1 == 1 then
 					var_69_0 = "gold"

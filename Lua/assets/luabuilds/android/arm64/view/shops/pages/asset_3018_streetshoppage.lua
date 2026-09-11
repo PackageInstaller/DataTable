@@ -41,7 +41,7 @@ end
 
 function StreetShopPage:GenHelpContent(arg_7_1, arg_7_2)
 	for iter_7_0, iter_7_1 in ipairs((arg_7_2:getConfig("config_data"))) do
-		table.insert(arg_7_1, i18n("shop_street_Equipment_skin_box_help", Item.getConfigData(pg.shop_template[iter_7_1[1]].effect_args[1]).name, (arg_7_2:GetShopTime())))
+		table.insert(arg_7_1, i18n("shop_street_Equipment_skin_box_help", Item.getConfigData(ShopConst.GetShopConfig(iter_7_1[1]).effect_args[1]).name, (arg_7_2:GetShopTime())))
 	end
 
 	return
@@ -137,29 +137,26 @@ function StreetShopPage:RefreshUI()
 	end, SFX_PANEL)
 	onButton(self, self.refreshBtn, function()
 		local var_19_0 = ShoppingStreet.getRiseShopId(ShopArgs.ShoppingStreetUpgrade, self.shop.flashCount)
-		local var_19_1
 
 		if not var_19_0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("shopStreet_refresh_max_count"))
 
-			do return end
-
-			var_19_1 = {
-				yesText = "text_confirm",
-				hideNo = false,
-				noText = "text_cancel"
-			}
-		end
-
-		var_19_1.content = i18n("refresh_shopStreet_question", i18n("word_" .. id2res(pg.shop_template[var_19_0].resource_type) .. "_icon"), pg.shop_template[var_19_0].resource_num, self.shop.flashCount)
-
-		function var_19_1.onYes()
-			self:emit(NewShopMainMediator.REFRESH_STREET_SHOP, var_19_0)
-
 			return
 		end
 
-		pg.MsgboxMgr.GetInstance():ShowMsgBox(var_19_1)
+		local var_19_1 = ShopConst.GetShopConfig(var_19_0)
+
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			yesText = "text_confirm",
+			hideNo = false,
+			noText = "text_cancel",
+			content = i18n("refresh_shopStreet_question", i18n("word_" .. id2res(var_19_1.resource_type) .. "_icon"), var_19_1.resource_num, self.shop.flashCount),
+			onYes = function()
+				self:emit(NewShopMainMediator.REFRESH_STREET_SHOP, var_19_0)
+
+				return
+			end
+		})
 
 		return
 	end, SFX_PANEL)

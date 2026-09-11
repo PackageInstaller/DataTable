@@ -128,7 +128,9 @@ function EquipmentInfoLayer:didEnter()
 		self:updateOperation4()
 	end
 
-	pg.UIMgr.GetInstance():BlurPanel(self._tf)
+	pg.UIMgr.GetInstance():BlurPanel(self._tf, {
+		staticBlur = true
+	})
 
 	return
 end

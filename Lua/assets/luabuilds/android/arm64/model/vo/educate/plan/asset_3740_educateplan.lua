@@ -109,22 +109,6 @@ function EducatePlan:GetAttrResultValue(arg_19_1)
 	return (var_19_0 or nil) and (var_19_0[3] or 0)
 end
 
-function EducatePlan:GetDropInfo()
-	local var_21_0 = {}
-
-	underscore.each(self:GetResult(), function(arg_22_0)
-		table.insert(var_21_0, Drop.New({
-			type = arg_22_0[1],
-			id = arg_22_0[2],
-			number = arg_22_0[3]
-		}))
-
-		return
-	end)
-
-	return var_21_0
-end
-
 function EducatePlan:GetPerformance()
 	return self:getConfig("performance")
 end

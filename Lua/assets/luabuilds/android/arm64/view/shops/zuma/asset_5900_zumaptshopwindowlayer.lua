@@ -125,11 +125,7 @@ function ZumaPTShopWindowLayer:addListener()
 end
 
 function ZumaPTShopWindowLayer:updateGoodInfoPanel()
-	local var_12_0 = Drop.New({
-		type = self.goodVO:getConfig("commodity_type"),
-		id = self.goodVO:getConfig("commodity_id"),
-		count = self.goodVO:getConfig("num")
-	})
+	local var_12_0 = self.goodVO:getDropInfo()
 
 	updateDrop(self.itemTF, var_12_0)
 

@@ -5,6 +5,7 @@ function ChargeAwardPage:OnInit()
 	self.charge = self._tf:Find("charge")
 	self.take = self._tf:Find("take")
 	self.finish = self._tf:Find("finish")
+	self.tip = self.take:Find("tip")
 
 	return
 end
@@ -37,9 +38,14 @@ function ChargeAwardPage:OnUpdateFlush()
 	setActive(self.charge, self.activity.data2 == 0 and self.activity.data1 == 0)
 	setButtonEnabled(self.take, self.activity.data2 == 0)
 	setActive(self.take, self.activity.data1 > 0)
+	setActive(self.tip, ChargeAwardPage.IsShowTip(self.activity))
 	setActive(self.finish, self.activity.data2 == 1)
 
 	return
+end
+
+function ChargeAwardPage:IsShowTip()
+	return self.data1 > 0 and self.data2 == 0
 end
 
 function ChargeAwardPage:OnDestroy()

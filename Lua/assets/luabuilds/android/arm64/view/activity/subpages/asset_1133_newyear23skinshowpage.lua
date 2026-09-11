@@ -31,7 +31,7 @@ function NewYear23SkinShowPage:OnDataSetting()
 	self.showList = {}
 
 	for iter_5_0, iter_5_1 in ipairs(self.activity:getConfig("config_client").display_link) do
-		if iter_5_1[2] == 0 or var_5_0:inTime(pg.shop_template[iter_5_1[2]].time) then
+		if iter_5_1[2] == 0 or var_5_0:inTime(ShopConst.GetShopConfig(iter_5_1[2]).time) then
 			table.insert(self.showList, math.random(#self.showList + 1), iter_5_1[1])
 		end
 	end

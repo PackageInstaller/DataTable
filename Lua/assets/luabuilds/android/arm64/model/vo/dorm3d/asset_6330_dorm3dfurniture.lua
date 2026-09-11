@@ -103,7 +103,7 @@ function Dorm3dFurniture:InShopTime()
 		return true
 	end
 
-	return pg.TimeMgr.GetInstance():inTime(pg.shop_template[var_16_0].time)
+	return pg.TimeMgr.GetInstance():inTime(ShopConst.GetShopConfig(var_16_0).time)
 end
 
 function Dorm3dFurniture:GetEndTime()
@@ -113,9 +113,9 @@ function Dorm3dFurniture:GetEndTime()
 		return 0
 	end
 
-	local var_17_1 = pg.shop_template[var_17_0]
+	local var_17_1 = ShopConst.GetShopConfig(var_17_0)
 
-	assert(pg.shop_template[var_17_0], "Missing shopCfg " .. (var_17_0 or "NIL"))
+	assert(var_17_1, "Missing shopCfg " .. (var_17_0 or "NIL"))
 
 	if var_17_1.time == "always" or var_17_1.time == "stop" then
 		return 0

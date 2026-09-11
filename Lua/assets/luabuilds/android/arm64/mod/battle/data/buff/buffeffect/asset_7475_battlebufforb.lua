@@ -37,7 +37,8 @@ function BattleBuffOrb:attachOrb(arg_4_1)
 		buff_id = self._buffID,
 		rant = self._rant,
 		level = self._level,
-		buff_level = self._buffLevel
+		buff_level = self._buffLevel,
+		group_level = self._level
 	})
 
 	return

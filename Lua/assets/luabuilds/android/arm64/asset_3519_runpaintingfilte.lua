@@ -65,11 +65,18 @@ function PaintingfilteConst.IsBuildActMatch(arg_6_0)
 end
 
 function PaintingfilteConst.IsNormalShopMatch(arg_7_0)
-	if pg.shop_template[arg_7_0].genre == "skin_shop" then
+	if pg.shop_template[arg_7_0].genre == ShopArgs.SkinShop then
 		if type(pg.shop_template[arg_7_0].time) == "string" and pg.shop_template[arg_7_0].time == "always" then
 			return true
-		elseif type(pg.shop_template[arg_7_0].time) == "table" and var_0_0.IsTwoTimeCross(var_0_0.GetfilteTime(), (var_0_0.GetStandardTimeConfig(pg.shop_template[arg_7_0].time))) then
-			return true
+		elseif type(pg.shop_template[arg_7_0].time) == "table" then
+			for iter_7_0, iter_7_1 in ipairs({
+				pg.shop_template[arg_7_0].time,
+				unpack(pg.shop_template[arg_7_0].time_new)
+			}) do
+				if var_0_0.IsTwoTimeCross(var_0_0.GetfilteTime(), (var_0_0.GetStandardTimeConfig(iter_7_1))) then
+					return true
+				end
+			end
 		end
 	end
 
@@ -224,9 +231,9 @@ function PaintingfilteConst.GetNPCShipConfigIDList()
 end
 
 function PaintingfilteConst.GetSkinIDFromNormalShopID(arg_21_0)
-	local var_21_0 = pg.shop_template[arg_21_0].effect_args
+	local var_21_0 = ShopConst.GetShopConfig(arg_21_0).effect_args
 
-	assert(#pg.shop_template[arg_21_0].effect_args == 1, "shop_template的effect_args字段,元素个数大于1,ID:", arg_21_0)
+	assert(#var_21_0 == 1, "shop_template的effect_args字段,元素个数大于1,ID:", arg_21_0)
 
 	return var_21_0[1]
 end

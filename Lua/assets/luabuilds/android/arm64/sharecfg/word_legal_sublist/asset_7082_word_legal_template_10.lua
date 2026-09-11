@@ -4,6 +4,42 @@ pg.word_legal_template_10 = {}
 local var_0_0 = pg.word_legal_template_10
 
 function temp()
+	var_0_0.狏 = {
+		this = {
+			this = true
+		}
+	}
+
+	return
+end
+
+temp()
+
+function temp()
+	var_0_0.狳 = {
+		this = {
+			this = true
+		}
+	}
+
+	return
+end
+
+temp()
+
+function temp()
+	var_0_0.犰 = {
+		this = {
+			this = true
+		}
+	}
+
+	return
+end
+
+temp()
+
+function temp()
 	var_0_0.獒 = {
 		this = {
 			this = true
@@ -171,6 +207,18 @@ temp()
 
 function temp()
 	var_0_0.鳐 = {
+		this = {
+			this = true
+		}
+	}
+
+	return
+end
+
+temp()
+
+function temp()
+	var_0_0.鮟 = {
 		this = {
 			this = true
 		}
@@ -370,83 +418,6 @@ function temp()
 	var_0_0.鳂 = {
 		this = {
 			this = true
-		}
-	}
-
-	return
-end
-
-temp()
-
-function temp()
-	var_0_0.鲪 = {
-		this = {
-			this = true
-		}
-	}
-
-	return
-end
-
-temp()
-
-function temp()
-	var_0_0.鳉 = {
-		this = {
-			this = true
-		}
-	}
-
-	return
-end
-
-temp()
-
-function temp()
-	var_0_0.鸱 = {
-		this = {
-			this = true
-		},
-		· = {
-			M = {
-				E = {
-					T = {
-						A = {
-							this = true
-						}
-					}
-				}
-			}
-		}
-	}
-
-	return
-end
-
-temp()
-
-function temp()
-	var_0_0.鸢 = {
-		this = {
-			this = true
-		},
-		· = {
-			M = {
-				E = {
-					T = {
-						A = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		一 = {
-			折 = {
-				纸 = {
-					this = true
-				}
-			}
 		}
 	}
 

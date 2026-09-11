@@ -121,15 +121,12 @@ function SwitchSkinLayer:Flush(arg_14_1)
 		removeOnButton(var_14_2)
 
 		local var_14_5 = (self.shipVO:proposeSkinOwned(iter_14_3) or table.contains(self.skinList, iter_14_3.id) or self.shipVO:getRemouldSkinId() == iter_14_3.id and self.shipVO:isRemoulded()) and 1 or 0
+		local var_14_6 = iter_14_3.shop_id > 0 and ShopConst.GetShopConfig(iter_14_3.shop_id) or nil
 
-		if iter_14_3.shop_id > 0 then
-			local var_14_6 = pg.shop_template[iter_14_3.shop_id] or nil
+		if var_14_6 then
+			::label_14_0::
 
-			if var_14_6 then
-				::label_14_0::
-
-				local var_14_7 = not pg.TimeMgr.GetInstance():inTime(var_14_6.time)
-			end
+			local var_14_7 = not pg.TimeMgr.GetInstance():inTime(var_14_6.time)
 		end
 
 		local var_14_8 = iter_14_3.id == self.shipVO:getSkinId()

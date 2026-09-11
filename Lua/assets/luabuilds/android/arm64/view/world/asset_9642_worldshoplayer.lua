@@ -184,7 +184,9 @@ function WorldShopLayer:updateGoods(arg_17_1, arg_17_2, arg_17_3)
 	local var_17_3 = {}
 
 	for iter_17_0, iter_17_1 in pairs(arg_17_3) do
-		if not var_17_0:inTime(pg.shop_template[iter_17_0].time) or not var_17_0:inTime(pg.shop_template[iter_17_0].time, var_17_1.expiredTime - 1) then
+		local var_17_4 = ShopConst.GetShopConfig(iter_17_0)
+
+		if not var_17_0:inTime(var_17_4.time) or not var_17_0:inTime(var_17_4.time, var_17_1.expiredTime - 1) then
 			-- block empty
 		else
 			if iter_17_0 == 100000 then
@@ -193,7 +195,7 @@ function WorldShopLayer:updateGoods(arg_17_1, arg_17_2, arg_17_3)
 				end
 			end
 
-			if pg.shop_template[iter_17_0].genre == ShopArgs.WorldCollection and iter_17_1 == 0 and var_17_2:getRecycleTask(pg.shop_template[iter_17_0].effect_args[2]) then
+			if var_17_4.genre == ShopArgs.WorldCollection and iter_17_1 == 0 and var_17_2:getRecycleTask(var_17_4.effect_args[2]) then
 				-- block empty
 			else
 				table.insert(var_17_3, {
@@ -208,7 +210,7 @@ function WorldShopLayer:updateGoods(arg_17_1, arg_17_2, arg_17_3)
 
 	table.sort(var_17_3, CompareFuncs({
 		function(arg_18_0)
-			return pg.shop_template[arg_18_0.id].order
+			return ShopConst.GetShopConfig(arg_18_0.id).order
 		end,
 		function(arg_19_0)
 			return arg_19_0.id

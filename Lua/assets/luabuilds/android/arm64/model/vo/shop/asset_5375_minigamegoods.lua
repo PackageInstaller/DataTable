@@ -27,7 +27,7 @@ function MiniGameGoods:bindConfigTable()
 end
 
 function MiniGameGoods:CanPurchase()
-	local var_5_0 = self:GetDropInfo()
+	local var_5_0 = self:getDropInfo()
 	local var_5_1 = var_5_0:getOwnedLimit()
 
 	if var_5_1 > 0 and var_5_1 <= var_5_0:getOwnedCount() then
@@ -71,7 +71,7 @@ function MiniGameGoods:GetLimit()
 	return self:getConfig("goods_purchase_limit")
 end
 
-function MiniGameGoods:GetDropInfo()
+function MiniGameGoods:getDropInfo()
 	return Drop.New({
 		type = self:getConfig("drop_type"),
 		id = self:getConfig("goods")[1],

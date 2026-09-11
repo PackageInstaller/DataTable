@@ -224,6 +224,7 @@ function InstagramChatLayer:OnUpdateItem(arg_9_1, arg_9_2)
 
 			var_10_0:Stop()
 			var_10_0:Play("anim_newinstagram_chat_right_in")
+			pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildJuusOfficialAccountsClick(0, var_9_0.currentTopicId, 1))
 
 			return
 		end, SFX_PANEL)
@@ -919,6 +920,7 @@ function InstagramChatLayer:UpdateOptionPanel(arg_46_1, arg_46_2)
 				setText(arg_47_2:Find("Text"), HXSet.hxLan(var_46_0[arg_47_1 + 1][2]))
 				onButton(self, arg_47_2, function()
 					self:emit(InstagramChatMediator.REPLY, arg_46_1.topicId, arg_46_2[#arg_46_2].id, var_47_0[1])
+					pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildJuusOfficialAccountsClick(1, arg_46_1.topicId, 1))
 
 					return
 				end, SFX_PANEL)
@@ -1264,6 +1266,7 @@ function InstagramChatLayer:SetTopicPanel(arg_61_1)
 
 		var_67_0:Stop()
 		var_67_0:Play("anim_newinstagram_chat_right_in")
+		pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildJuusOfficialAccountsClick(0, self.currentTopic.topicId, 1))
 
 		return
 	end, SFX_PANEL)
@@ -1806,7 +1809,7 @@ function InstagramChatLayer:OfficialAccountsUpdateItem(arg_110_1, arg_110_2)
 	onButton(self, var_110_2, function()
 		self.currentOfficalID = var_110_1.id
 
-		pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildJuusOfficialAccountsClick(var_110_1.id))
+		pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildJuusOfficialAccountsClick(0, var_110_1.id, 2))
 		self:ShowOfficialAccountsInfo(var_110_1)
 		self:ReadOfficialAccountComment()
 
@@ -1993,6 +1996,7 @@ function InstagramChatLayer:OpenCommentPanel(arg_126_1)
 
 			setText(arg_127_2:Find("Text"), HXSet.hxLan(var_126_1[arg_127_1 + 1].text))
 			onButton(self, arg_127_2, function()
+				pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildJuusOfficialAccountsClick(1, arg_126_1, 2))
 				self:emit(InstagramChatMediator.ON_OFFICIAL_ACCOUNTS_OPERATE, ActivityConst.INSTAGRAM_OP_COMMENT, arg_126_1, var_127_0, var_127_1)
 				self:CloseCommentPanel()
 

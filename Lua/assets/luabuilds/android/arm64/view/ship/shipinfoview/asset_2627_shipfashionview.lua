@@ -330,18 +330,13 @@ function ShipFashionView:UpdateFashionDetail(arg_20_1)
 	end
 
 	local var_20_5 = (self:GetShipVO():proposeSkinOwned(arg_20_1) or table.contains(self.skinList, arg_20_1.id) or self:GetShipVO():getRemouldSkinId() == arg_20_1.id and self:GetShipVO():isRemoulded()) and 1 or 0
-	local var_20_6
+	local var_20_6 = arg_20_1.shop_id > 0 and ShopConst.GetShopConfig(arg_20_1.shop_id) or nil
+	local var_20_7
 
-	if arg_20_1.shop_id > 0 then
-		var_20_6 = pg.shop_template[arg_20_1.shop_id] or nil
+	if var_20_6 then
+		::label_20_0::
 
-		local var_20_7
-
-		if var_20_6 then
-			::label_20_0::
-
-			var_20_7 = not pg.TimeMgr.GetInstance():inTime(var_20_6.time)
-		end
+		var_20_7 = not pg.TimeMgr.GetInstance():inTime(var_20_6.time)
 	end
 
 	local var_20_8 = arg_20_1.id == self:GetShipVO():getSkinId()

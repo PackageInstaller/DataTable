@@ -30,4 +30,8 @@ function MainBaseBtn:Dispose()
 	return
 end
 
+function MainBaseBtn:ShowOrHideBtnEffect(arg_7_1)
+	return
+end
+
 return MainBaseBtn

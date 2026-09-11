@@ -47,7 +47,7 @@ function GuildGoods:GetLimit()
 	return self:getConfig("goods_purchase_limit")
 end
 
-function GuildGoods:GetDropInfo()
+function GuildGoods:getDropInfo()
 	return Drop.New({
 		type = self:getConfig("type"),
 		id = self:getConfig("goods")[1],

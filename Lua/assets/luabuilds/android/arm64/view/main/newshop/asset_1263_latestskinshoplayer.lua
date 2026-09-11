@@ -80,7 +80,10 @@ function LatestSkinShopLayer:init()
 	self.tagList = UIItemList.New(self.adapt:Find("right/functionsAndTags/tags"), self.adapt:Find("right/functionsAndTags/tags/tag"))
 	self.giftPackBtn = self.adapt:Find("right/giftPackBtn")
 	self.price = self.adapt:Find("right/price")
-	self.btns = self.price:Find("btns")
+	self.btnsList = {
+		self.price:Find("normal/btns"),
+		self.price:Find("charge/btns")
+	}
 	self.filterUI = self.adapt:Find("subPage/filterUI")
 	self.filterContent = self.filterUI:Find("panelMask/panel/filterScroll/Viewport/Content")
 	self.painting = self._tf:Find("painting")
@@ -113,18 +116,22 @@ function LatestSkinShopLayer:init()
 	self.purchaseView = NewSkinShopPurchaseView.New(self._tf, self.event)
 
 	self:RegisterEvent()
-	setGray(self.btns:Find("yigoumai_button"), true, true)
 	setText(self._tf:Find("bgs/empty/Text"), i18n("shop_new_unfound"))
 	setText(self.adapt:Find("top/mainTitle/Text"), i18n("shop_new_shop"))
 	setText(self.filterBtn:Find("Text"), i18n("shop_new_sort"))
 	setText(self.search:Find("holder"), i18n("shop_new_search"))
-	setText(self.btns:Find("yigoumai_button/Text"), i18n("shop_new_purchased"))
-	setText(self.btns:Find("goumai_button/Text"), i18n("shop_new_purchase"))
-	setText(self.btns:Find("qianwanghuoqu_button/Text"), i18n("shop_new_claim"))
-	setText(self.btns:Find("furniture_shop/Text"), i18n("shop_new_furniture"))
-	setText(self.btns:Find("item_buy/Text"), i18n("shop_new_discount"))
-	setText(self.btns:Find("tiyan_btn/Text"), i18n("shop_new_try"))
-	setText(self.btns:Find("buy_with_gift/Text"), i18n("shop_new_purchase"))
+
+	for iter_4_0, iter_4_1 in ipairs(self.btnsList) do
+		setText(iter_4_1:Find("yigoumai_button/Text"), i18n("shop_new_purchased"))
+		setText(iter_4_1:Find("goumai_button/Text"), i18n("shop_new_purchase"))
+		setText(iter_4_1:Find("qianwanghuoqu_button/Text"), i18n("shop_new_claim"))
+		setText(iter_4_1:Find("furniture_shop/Text"), i18n("shop_new_furniture"))
+		setText(iter_4_1:Find("item_buy/Text"), i18n("shop_new_discount"))
+		setText(iter_4_1:Find("tiyan_btn/Text"), i18n("shop_new_try"))
+		setText(iter_4_1:Find("buy_with_gift/Text"), i18n("shop_new_purchase"))
+	end
+
+	setText(self.btnsList[2]:Find("buy_charge/Text"), i18n("shop_new_purchase"))
 	setText(self.price:Find("btn/tag/Text"), i18n("shop_new_gift"))
 	setText(self.giftPack:Find("panel/desc"), i18n("shop_new_gem_transform"))
 	setText(self.giftPack:Find("price/btns/yigoumai_button/Text"), i18n("shop_new_purchased"))
@@ -183,7 +190,7 @@ function LatestSkinShopLayer:Overlay()
 			self.filterBtn,
 			self.search,
 			self.charContainer:Find("bg"),
-			self.price:Find("consume"),
+			self.price:Find("normal/consume"),
 			self.filterUI:Find("panelMask/panel")
 		}
 	})
@@ -838,6 +845,12 @@ function LatestSkinShopLayer:OnUpdateItem(arg_46_1, arg_46_2)
 
 	var_46_0:Update(var_46_1, self.selectedId == var_46_1.id, var_46_2)
 
+	if self.pendingSelectId and self.pendingSelectId == var_46_1.id then
+		self.pendingSelectId = nil
+
+		triggerButton(var_46_0._go)
+	end
+
 	if self.triggerFirstCard and arg_46_1 == 0 then
 		self.triggerFirstCard = false
 
@@ -1265,6 +1278,7 @@ function LatestSkinShopLayer:FlushTag()
 
 		return
 	end)
+	setActive(self.adapt:Find("right/functionsAndTags/tags"), #var_68_0 > 0)
 	self.tagList:align(#var_68_0)
 
 	return
@@ -1717,7 +1731,7 @@ function LatestSkinShopLayer:FlushPrice(arg_98_1)
 	local var_98_2 = arg_98_1.type == Goods.TYPE_SKIN
 
 	setActive(self.price:Find("timeLimit"), var_98_0 and not var_98_1)
-	setActive(self.price:Find("consume"), var_98_2 and not var_98_0 and not var_98_1)
+	setActive(self.price:Find("normal/consume"), var_98_2 and not var_98_0 and not var_98_1)
 
 	return
 end
@@ -1757,9 +1771,9 @@ function LatestSkinShopLayer:UpdateCommodityPrice(arg_102_1)
 	local var_102_0 = arg_102_1:GetPrice()
 	local var_102_1 = arg_102_1:getConfig("resource_num")
 
-	setText(self.price:Find("consume/Text"), var_102_0)
-	setText(self.price:Find("consume/originalprice/Text"), var_102_1)
-	setActive(self.price:Find("consume/originalprice"), var_102_0 ~= var_102_1)
+	setText(self.price:Find("normal/consume/Text"), var_102_0)
+	setText(self.price:Find("normal/consume/originalprice/Text"), var_102_1)
+	setActive(self.price:Find("normal/consume/originalprice"), var_102_0 ~= var_102_1)
 
 	return
 end
@@ -1770,71 +1784,133 @@ function LatestSkinShopLayer:UpdateFurniturePrice(arg_103_1)
 	})
 	local var_103_1 = var_103_0:getConfig("gem_price")
 
-	setText(self.price:Find("consume/originalprice/Text"), var_103_1)
+	setText(self.price:Find("normal/consume/originalprice/Text"), var_103_1)
 
 	local var_103_2 = var_103_0:getPrice(PlayerConst.ResDiamond)
 
-	setText(self.price:Find("consume/Text"), var_103_2)
-	setActive(self.price:Find("consume/originalprice"), var_103_1 ~= var_103_2)
+	setText(self.price:Find("normal/consume/Text"), var_103_2)
+	setActive(self.price:Find("normal/consume/originalprice"), var_103_1 ~= var_103_2)
 
 	return
 end
 
-function LatestSkinShopLayer:FlushObtainBtn(arg_104_1)
-	local var_104_0 = self:GetObtainBtnState(arg_104_1)
-	local var_104_1 = var_0_19(var_104_0)
-
-	for iter_104_0 = 0, self.btns.childCount - 1 do
-		local var_104_2 = self.btns:GetChild(iter_104_0)
-
-		setActive(var_104_2, var_104_2.name == var_104_1)
+local function var_0_21(arg_104_0, arg_104_1)
+	if arg_104_0 == var_0_6 or arg_104_0 == var_0_9 or arg_104_0 == var_0_8 then
+		return false
 	end
 
-	setActive(self.price:Find("btn/item"), var_104_0 == var_0_11)
-	setActive(self.price:Find("btn/tag"), var_104_0 == var_0_11)
+	return getProxy(ShopsProxy):CanPurchasedByCharge((arg_104_1:getSkinId()))
+end
 
-	if var_104_0 == var_0_11 then
-		self:FlushGift(arg_104_1)
+function LatestSkinShopLayer:UpdateChargeView(arg_105_1, arg_105_2, arg_105_3)
+	local var_105_0 = self.btnsList[2]
+
+	setActive(self.btnsList[2]:Find("buy_charge"), not (arg_105_1 == var_0_4))
+
+	local var_105_1 = pg.pay_data_display[arg_105_3]
+
+	assert(pg.pay_data_display[arg_105_3], "pay_data_display>>>>>>>>>>>>>" .. arg_105_3)
+
+	local var_105_2 = GetMoneySymbol() .. GetChargePrice(var_105_1.money)
+
+	setText(self.btnsList[2]:Find("buy_charge/value"), var_105_2)
+
+	local var_105_3 = var_105_0.parent:Find("consume")
+	local var_105_4 = var_105_0.parent:Find("rmb")
+
+	setText(var_105_4:Find("Text"), var_105_2)
+	setActive(var_105_4:Find("originalprice"), var_105_1.cash_show > var_105_1.money)
+	setText(var_105_4:Find("originalprice/Text"), GetChargePrice(var_105_1.cash_show))
+
+	local var_105_5 = arg_105_2:GetPrice()
+	local var_105_6 = arg_105_2:getConfig("resource_num")
+
+	setActive(var_105_3:Find("originalprice"), var_105_5 ~= var_105_6)
+	setText(var_105_3:Find("Text"), var_105_5)
+	setText(var_105_3:Find("originalprice/Text"), var_105_6)
+
+	return
+end
+
+function LatestSkinShopLayer:FlushObtainBtn(arg_106_1)
+	local var_106_0 = self:GetObtainBtnState(arg_106_1)
+	local var_106_1 = var_0_19(var_106_0)
+	local var_106_2, var_106_3 = var_0_21(var_106_0, arg_106_1)
+
+	setActive(self.btnsList[1].parent, not var_106_2)
+	setActive(self.btnsList[2].parent, var_106_2)
+
+	local var_106_4
+
+	if var_106_2 then
+		var_106_4 = self.btnsList[2] or self.btnsList[1]
 	end
 
+	for iter_106_0 = 0, var_106_4.childCount - 1 do
+		local var_106_5 = var_106_4:GetChild(iter_106_0)
+
+		setActive(var_106_5, var_106_5.name == var_106_1)
+	end
+
+	if var_106_2 then
+		self:UpdateChargeView(var_106_0, arg_106_1, var_106_3)
+	end
+
+	setActive(self.price:Find("btn_charge"), var_106_2 and var_106_0 ~= var_0_4)
+	setActive(self.price:Find("btn/item"), var_106_0 == var_0_11)
+	setActive(self.price:Find("btn/tag"), var_106_0 == var_0_11)
+
+	if var_106_0 == var_0_11 then
+		self:FlushGift(arg_106_1)
+	end
+
+	onButton(self, self.price:Find("btn_charge"), function()
+		if not var_106_2 then
+			return
+		end
+
+		self:OpenChargePanel(var_106_3)
+
+		return
+	end, SFX_PANEL)
 	onButton(self, self.price:Find("btn"), function()
-		local var_105_0 = {}
-		local var_105_1 = SkinCouponActivity.StaticEncoreActTip(arg_104_1.id)
+		local var_108_0 = {}
+		local var_108_1 = SkinCouponActivity.StaticEncoreActTip(arg_106_1.id)
 
-		if tobool(var_105_1) then
-			table.insert(var_105_0, function(arg_106_0)
+		if tobool(var_108_1) then
+			table.insert(var_108_0, function(arg_109_0)
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					content = i18n("SkinDiscount_Hint"),
 					onYes = function()
-						if var_105_1 and not var_105_1:isEnd() then
-							self:emit(LatestSkinShopMediator.OPEN_ACTIVITY, var_105_1.id)
+						if var_108_1 and not var_108_1:isEnd() then
+							self:emit(LatestSkinShopMediator.OPEN_ACTIVITY, var_108_1.id)
 						end
 
 						return
 					end,
-					onNo = arg_106_0
+					onNo = arg_109_0
 				})
 
 				return
 			end)
 		end
 
-		if arg_104_1:getConfig("genre") == ShopArgs.SkinShop and not arg_104_1:IsItemDiscountType() and #SkinCouponActivity.GetOvercountEncoreActs(arg_104_1.id) > 0 then
-			table.insert(var_105_0, function(arg_108_0)
+		if arg_106_1:getConfig("genre") == ShopArgs.SkinShop and not arg_106_1:IsItemDiscountType() and #SkinCouponActivity.GetOvercountEncoreActs(arg_106_1.id) > 0 then
+			table.insert(var_108_0, function(arg_111_0)
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					content = i18n("SkinDiscount_Last_Coupon"),
-					onYes = arg_108_0
+					onYes = arg_111_0
 				})
 
 				return
 			end)
 		end
 
-		seriesAsync(var_105_0, function()
-			if var_104_0 == var_0_5 or var_104_0 == var_0_7 or var_104_0 == var_0_11 then
-				self.purchaseView:ExecuteAction("Show", arg_104_1)
+		seriesAsync(var_108_0, function()
+			if var_106_0 == var_0_5 or var_106_0 == var_0_7 or var_106_0 == var_0_11 then
+				self.purchaseView:ExecuteAction("Show", arg_106_1)
 			else
-				self:OnClickBtn(var_104_0, arg_104_1)
+				self:OnClickBtn(var_106_0, arg_106_1)
 			end
 
 			return
@@ -1846,24 +1922,38 @@ function LatestSkinShopLayer:FlushObtainBtn(arg_104_1)
 	return
 end
 
-function LatestSkinShopLayer:GetObtainBtnState(arg_110_1)
-	if arg_110_1:getConfig("genre") == ShopArgs.SkinShopTimeLimit then
+function LatestSkinShopLayer:OpenChargePanel(arg_113_1)
+	if ChargeConst.isNeedSetBirth() then
+		self:emit(LatestSkinShopMediator.OPEN_CHARGE_BIRTHDAY)
+	else
+		pg.m02:sendNotification(GAME.CHARGE_OPERATION, {
+			shopId = Goods.Create({
+				shop_id = arg_113_1
+			}, Goods.TYPE_CHARGE).id
+		})
+	end
+
+	return
+end
+
+function LatestSkinShopLayer:GetObtainBtnState(arg_114_1)
+	if arg_114_1:getConfig("genre") == ShopArgs.SkinShopTimeLimit then
 		return var_0_9
 	elseif self.isPreviewFurniture then
-		if getProxy(DormProxy):getRawData():HasFurniture(Goods.Id2FurnitureId(arg_110_1.id)) then
+		if getProxy(DormProxy):getRawData():HasFurniture(Goods.Id2FurnitureId(arg_114_1.id)) then
 			return var_0_4
 		else
 			return var_0_8
 		end
-	elseif arg_110_1.type == Goods.TYPE_ACTIVITY or arg_110_1.type == Goods.TYPE_ACTIVITY_EXTRA then
+	elseif arg_114_1.type == Goods.TYPE_ACTIVITY or arg_114_1.type == Goods.TYPE_ACTIVITY_EXTRA then
 		return var_0_6
-	elseif arg_110_1.buyCount > 0 then
+	elseif arg_114_1.buyCount > 0 then
 		return var_0_4
-	elseif arg_110_1:isDisCount() and arg_110_1:IsItemDiscountType() then
+	elseif arg_114_1:isDisCount() and arg_114_1:IsItemDiscountType() then
 		return var_0_7
-	elseif arg_110_1:CanUseVoucherType() or arg_110_1:ExistExclusiveDiscountItem() then
+	elseif arg_114_1:CanUseVoucherType() or arg_114_1:ExistExclusiveDiscountItem() then
 		return var_0_10
-	elseif #arg_110_1:GetGiftList() > 0 then
+	elseif #arg_114_1:GetGiftList() > 0 then
 		return var_0_11
 	else
 		return var_0_5
@@ -1872,72 +1962,72 @@ function LatestSkinShopLayer:GetObtainBtnState(arg_110_1)
 	return
 end
 
-function LatestSkinShopLayer:FlushGift(arg_111_1)
-	local var_111_0 = arg_111_1:GetGiftList()[1]
+function LatestSkinShopLayer:FlushGift(arg_115_1)
+	local var_115_0 = arg_115_1:GetGiftList()[1]
 
 	updateDrop(self.price:Find("btn/item/mask/item"), {
-		type = var_111_0.type,
-		id = var_111_0.id,
-		count = var_111_0.count
+		type = var_115_0.type,
+		id = var_115_0.id,
+		count = var_115_0.count
 	})
 
 	return
 end
 
-function LatestSkinShopLayer:OnClickBtn(arg_112_1, arg_112_2)
-	if arg_112_1 == var_0_5 or arg_112_1 == var_0_7 or arg_112_1 == var_0_11 then
-		self:OnPurchase(arg_112_2)
-	elseif arg_112_1 == var_0_10 then
-		self:OnItemPurchase(arg_112_2)
-	elseif arg_112_1 == var_0_6 then
-		self:OnActivity(arg_112_2)
-	elseif arg_112_1 == var_0_8 then
-		self:OnBackyard(arg_112_2)
-	elseif arg_112_1 == var_0_9 then
+function LatestSkinShopLayer:OnClickBtn(arg_116_1, arg_116_2)
+	if arg_116_1 == var_0_5 or arg_116_1 == var_0_7 or arg_116_1 == var_0_11 then
+		self:OnPurchase(arg_116_2)
+	elseif arg_116_1 == var_0_10 then
+		self:OnItemPurchase(arg_116_2)
+	elseif arg_116_1 == var_0_6 then
+		self:OnActivity(arg_116_2)
+	elseif arg_116_1 == var_0_8 then
+		self:OnBackyard(arg_116_2)
+	elseif arg_116_1 == var_0_9 then
 		if self.mode == NewSkinShopScene.MODE_EXPERIENCE_FOR_ITEM then
-			self:OnExperience4Item(arg_112_2)
+			self:OnExperience4Item(arg_116_2)
 		else
-			self:OnExperience(arg_112_2)
+			self:OnExperience(arg_116_2)
 		end
 	end
 
 	return
 end
 
-function LatestSkinShopLayer:FlushGifgPackBtn(arg_113_1)
-	local var_113_0 = false
-	local var_113_1
-	local var_113_2
-	local var_113_3
+function LatestSkinShopLayer:FlushGifgPackBtn(arg_117_1)
+	local var_117_0 = false
+	local var_117_1
+	local var_117_2
+	local var_117_3
 
-	for iter_113_0, iter_113_1 in pairs(self.giftSkinCommodities) do
-		for iter_113_2, iter_113_3 in ipairs(iter_113_1) do
-			if iter_113_3.id == arg_113_1.id then
-				var_113_0 = true
+	for iter_117_0, iter_117_1 in pairs(self.giftSkinCommodities) do
+		for iter_117_2, iter_117_3 in ipairs(iter_117_1) do
+			if iter_117_3.id == arg_117_1.id then
+				var_117_0 = true
 
 				break
 			end
 		end
 
-		if var_113_0 then
-			var_113_1 = self.giftPackCommodities[iter_113_0]
-			var_113_2 = self.giftSkinCommodities[iter_113_0]
-			var_113_3 = self.giftSkinProbabilitys[iter_113_0]
+		if var_117_0 then
+			var_117_1 = self.giftPackCommodities[iter_117_0]
+			var_117_2 = self.giftSkinCommodities[iter_117_0]
+			var_117_3 = self.giftSkinProbabilitys[iter_117_0]
 
 			break
 		end
 	end
 
-	if var_113_0 then
+	if var_117_0 then
 		setText(self.giftPackBtn:Find("title"), i18n("skinshop_on_sale_tip_2"))
 		onButton(self, self.giftPackBtn, function()
-			if not var_113_1:isChargeType() then
+			if not var_117_1:isChargeType() then
 				return
 			end
 
-			local var_114_0 = var_113_1:GetSkinProbability()
+			local var_118_0 = var_117_1:GetSkinProbability()
 
-			if #var_114_0 <= 0 or #var_114_0 ~= #getProxy(ShipSkinProxy):GetProbabilitySkins(var_114_0) then
+			if #var_118_0 <= 0 or #var_118_0 ~= #getProxy(ShipSkinProxy):GetProbabilitySkins(var_118_0) then
 				self:emit(LatestSkinShopMediator.OPEN_SCENE, {
 					SCENE.CHARGE,
 					{
@@ -1945,25 +2035,25 @@ function LatestSkinShopLayer:FlushGifgPackBtn(arg_113_1)
 					}
 				})
 			else
-				self:emit(LatestSkinShopMediator.OPEN_GIFT_PACK_LAYER, var_113_1, var_113_2, var_113_3)
+				self:emit(LatestSkinShopMediator.OPEN_GIFT_PACK_LAYER, var_117_1, var_117_2, var_117_3)
 			end
 
 			return
 		end, SFX_PANEL)
 	else
-		var_113_0 = getProxy(ActivityProxy):GetFakeGiftPackActivity(arg_113_1)
+		var_117_0 = getProxy(ActivityProxy):GetFakeGiftPackActivity(arg_117_1)
 
-		if var_113_0 then
+		if var_117_0 then
 			setText(self.giftPackBtn:Find("title"), i18n("skinshop_on_sale_tip"))
 			onButton(self, self.giftPackBtn, function()
-				self:emit(LatestSkinShopMediator.OPEN_GIFT_ACT_LAYER, var_113_0.id)
+				self:emit(LatestSkinShopMediator.OPEN_GIFT_ACT_LAYER, var_117_0.id)
 
 				return
 			end, SFX_PANEL)
 		end
 	end
 
-	setActive(self.giftPackBtn, var_113_0)
+	setActive(self.giftPackBtn, var_117_0)
 
 	return
 end
@@ -1972,52 +2062,52 @@ function LatestSkinShopLayer:SetGiftPackLayer()
 	return
 end
 
-function LatestSkinShopLayer:OnPurchase(arg_117_1)
-	if arg_117_1.type ~= Goods.TYPE_SKIN then
+function LatestSkinShopLayer:OnPurchase(arg_121_1)
+	if arg_121_1.type ~= Goods.TYPE_SKIN then
 		return
 	end
 
-	if arg_117_1:isDisCount() and arg_117_1:IsItemDiscountType() then
-		self:emit(LatestSkinShopMediator.ON_SHOPPING_BY_ACT, arg_117_1.id, 1)
+	if arg_121_1:isDisCount() and arg_121_1:IsItemDiscountType() then
+		self:emit(LatestSkinShopMediator.ON_SHOPPING_BY_ACT, arg_121_1.id, 1)
 	else
-		self:emit(LatestSkinShopMediator.ON_SHOPPING, arg_117_1.id, 1)
+		self:emit(LatestSkinShopMediator.ON_SHOPPING, arg_121_1.id, 1)
 	end
 
 	return
 end
 
-function LatestSkinShopLayer:OnItemPurchase(arg_118_1)
-	if arg_118_1.type ~= Goods.TYPE_SKIN then
+function LatestSkinShopLayer:OnItemPurchase(arg_122_1)
+	if arg_122_1.type ~= Goods.TYPE_SKIN then
 		return
 	end
 
-	local var_118_0 = arg_118_1:GetVoucherIdList()
-	local var_118_1 = getProxy(BagProxy):GetExclusiveDiscountItem4Shop(arg_118_1.id)
+	local var_122_0 = arg_122_1:GetVoucherIdList()
+	local var_122_1 = getProxy(BagProxy):GetExclusiveDiscountItem4Shop(arg_122_1.id)
 
-	if #var_118_0 <= 0 and #var_118_1 <= 0 then
+	if #var_122_0 <= 0 and #var_122_1 <= 0 then
 		return
 	end
 
-	local var_118_2 = {}
+	local var_122_2 = {}
 
-	for iter_118_0, iter_118_1 in ipairs(var_118_0) do
-		table.insert(var_118_2, iter_118_1)
+	for iter_122_0, iter_122_1 in ipairs(var_122_0) do
+		table.insert(var_122_2, iter_122_1)
 	end
 
-	for iter_118_2, iter_118_3 in ipairs(var_118_1) do
-		table.insert(var_118_2, iter_118_3.id)
+	for iter_122_2, iter_122_3 in ipairs(var_122_1) do
+		table.insert(var_122_2, iter_122_3.id)
 	end
 
 	self.voucherMsgBox:ExecuteAction("Show", {
-		itemList = var_118_2,
+		itemList = var_122_2,
 		skinId = self.skinId,
 		skinName = SwitchSpecialChar(pg.ship_skin_template[self.skinId].name, true),
-		price = arg_118_1:GetPrice(),
-		onYes = function(arg_119_0)
-			if arg_119_0 then
-				self:emit(LatestSkinShopMediator.ON_ITEM_PURCHASE, arg_119_0, arg_118_1.id)
+		price = arg_122_1:GetPrice(),
+		onYes = function(arg_123_0)
+			if arg_123_0 then
+				self:emit(LatestSkinShopMediator.ON_ITEM_PURCHASE, arg_123_0, arg_122_1.id)
 			else
-				self:emit(LatestSkinShopMediator.ON_SHOPPING, arg_118_1.id, 1)
+				self:emit(LatestSkinShopMediator.ON_SHOPPING, arg_122_1.id, 1)
 			end
 
 			return
@@ -2027,38 +2117,38 @@ function LatestSkinShopLayer:OnItemPurchase(arg_118_1)
 	return
 end
 
-function LatestSkinShopLayer:OnActivity(arg_120_1)
-	local var_120_0 = arg_120_1:getConfig("activity")
-	local var_120_1 = getProxy(ActivityProxy):getActivityById(var_120_0)
+function LatestSkinShopLayer:OnActivity(arg_124_1)
+	local var_124_0 = arg_124_1:getConfig("activity")
+	local var_124_1 = getProxy(ActivityProxy):getActivityById(var_124_0)
 
-	if var_120_0 == 0 then
-		if not pg.TimeMgr.GetInstance():inTime((arg_120_1:getConfig("time"))) then
-			if var_120_1 and not var_120_1:isEnd() then
-				if arg_120_1.type == Goods.TYPE_ACTIVITY then
-					self:emit(LatestSkinShopMediator.GO_SHOPS_LAYER, arg_120_1:getConfig("activity"))
-				elseif arg_120_1.type == Goods.TYPE_ACTIVITY_EXTRA then
-					local var_120_2 = arg_120_1:getConfig("scene")
+	if var_124_0 == 0 then
+		if not pg.TimeMgr.GetInstance():inTime((arg_124_1:getConfig("time"))) then
+			if var_124_1 and not var_124_1:isEnd() then
+				if arg_124_1.type == Goods.TYPE_ACTIVITY then
+					self:emit(LatestSkinShopMediator.GO_SHOPS_LAYER, arg_124_1:getConfig("activity"))
+				elseif arg_124_1.type == Goods.TYPE_ACTIVITY_EXTRA then
+					local var_124_2 = arg_124_1:getConfig("scene")
 
-					if var_120_2 and #var_120_2 > 0 then
-						self:emit(LatestSkinShopMediator.OPEN_SCENE, var_120_2)
+					if var_124_2 and #var_124_2 > 0 then
+						self:emit(LatestSkinShopMediator.OPEN_SCENE, var_124_2)
 					else
-						self:emit(LatestSkinShopMediator.OPEN_ACTIVITY, var_120_0)
+						self:emit(LatestSkinShopMediator.OPEN_ACTIVITY, var_124_0)
 					end
 				end
 
-				goto label_120_0
+				goto label_124_0
 			end
 		end
 	end
 
 	pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_not_start"))
 
-	::label_120_0::
+	::label_124_0::
 
 	return
 end
 
-function LatestSkinShopLayer:OnBackyard(arg_121_1)
+function LatestSkinShopLayer:OnBackyard(arg_125_1)
 	if not pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getRawData().level, "BackYardMediator") then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("no_open_system_tip", pg.open_systems_limited[1].name, pg.open_systems_limited[1].level))
 
@@ -2070,28 +2160,28 @@ function LatestSkinShopLayer:OnBackyard(arg_121_1)
 	return
 end
 
-function LatestSkinShopLayer:OnExperience(arg_122_1)
-	local var_122_0 = getProxy(ShipSkinProxy):getSkinById(self.skinId)
+function LatestSkinShopLayer:OnExperience(arg_126_1)
+	local var_126_0 = getProxy(ShipSkinProxy):getSkinById(self.skinId)
 
-	if var_122_0 and not var_122_0:isExpireType() then
+	if var_126_0 and not var_126_0:isExpireType() then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("already_have_the_skin"))
 
 		return
 	end
 
-	local var_122_1 = arg_122_1:getConfig("resource_num")
-	local var_122_2, var_122_3, var_122_4, var_122_5 = pg.TimeMgr.GetInstance():parseTimeFrom(arg_122_1:getConfig("time_second") * var_122_1)
+	local var_126_1 = arg_126_1:getConfig("resource_num")
+	local var_126_2, var_126_3, var_126_4, var_126_5 = pg.TimeMgr.GetInstance():parseTimeFrom(arg_126_1:getConfig("time_second") * var_126_1)
 
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
-		content = i18n("exchange_limit_skin_tip", var_122_1, pg.ship_skin_template[self.skinId].name, var_122_2, var_122_3),
+		content = i18n("exchange_limit_skin_tip", var_126_1, pg.ship_skin_template[self.skinId].name, var_126_2, var_126_3),
 		onYes = function()
-			if getProxy(PlayerProxy):getRawData():getSkinTicket() < var_122_1 then
+			if getProxy(PlayerProxy):getRawData():getSkinTicket() < var_126_1 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_item_1"))
 
 				return
 			end
 
-			self:emit(LatestSkinShopMediator.ON_SHOPPING, arg_122_1.id, 1)
+			self:emit(LatestSkinShopMediator.ON_SHOPPING, arg_126_1.id, 1)
 
 			return
 		end
@@ -2100,31 +2190,31 @@ function LatestSkinShopLayer:OnExperience(arg_122_1)
 	return
 end
 
-function LatestSkinShopLayer:OnExperience4Item(arg_124_1)
-	local var_124_0 = getProxy(ShipSkinProxy):getSkinById(self.skinId)
+function LatestSkinShopLayer:OnExperience4Item(arg_128_1)
+	local var_128_0 = getProxy(ShipSkinProxy):getSkinById(self.skinId)
 
-	if var_124_0 and not var_124_0:isExpireType() then
+	if var_128_0 and not var_128_0:isExpireType() then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("already_have_the_skin"))
 
 		return
 	end
 
-	local var_124_1 = arg_124_1:getConfig("resource_num")
-	local var_124_2, var_124_3, var_124_4, var_124_5 = pg.TimeMgr.GetInstance():parseTimeFrom(arg_124_1:getConfig("time_second") * var_124_1)
-	local var_124_6 = _.detect(getProxy(BagProxy):GetSkinExperienceItems(), function(arg_125_0)
-		return arg_125_0:CanUseForShop(arg_124_1.id)
+	local var_128_1 = arg_128_1:getConfig("resource_num")
+	local var_128_2, var_128_3, var_128_4, var_128_5 = pg.TimeMgr.GetInstance():parseTimeFrom(arg_128_1:getConfig("time_second") * var_128_1)
+	local var_128_6 = _.detect(getProxy(BagProxy):GetSkinExperienceItems(), function(arg_129_0)
+		return arg_129_0:CanUseForShop(arg_128_1.id)
 	end)
 
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
-		content = i18n("exchange_limit_skin_tip", var_124_1, pg.ship_skin_template[self.skinId].name, var_124_2, var_124_3),
+		content = i18n("exchange_limit_skin_tip", var_128_1, pg.ship_skin_template[self.skinId].name, var_128_2, var_128_3),
 		onYes = function()
-			if not var_124_6 or var_124_6.count < var_124_1 then
+			if not var_128_6 or var_128_6.count < var_128_1 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_item_1"))
 
 				return
 			end
 
-			self:emit(LatestSkinShopMediator.ON_ITEM_EXPERIENCE, var_124_6.id, arg_124_1.id, 1)
+			self:emit(LatestSkinShopMediator.ON_ITEM_EXPERIENCE, var_128_6.id, arg_128_1.id, 1)
 
 			return
 		end
@@ -2134,27 +2224,27 @@ function LatestSkinShopLayer:OnExperience4Item(arg_124_1)
 end
 
 function LatestSkinShopLayer:SetFilterPanel()
-	local var_127_0 = self.filterContent:Find("camp/options")
-	local var_127_1 = self.filterContent:Find("rarity/options")
-	local var_127_2 = self.filterContent:Find("shipType/options")
-	local var_127_3 = self.filterContent:Find("themeType/options")
+	local var_131_0 = self.filterContent:Find("camp/options")
+	local var_131_1 = self.filterContent:Find("rarity/options")
+	local var_131_2 = self.filterContent:Find("shipType/options")
+	local var_131_3 = self.filterContent:Find("themeType/options")
 
-	self:SetOptionList(var_127_0, ShipIndexConst.CampNames, true)
-	self:SetOptionList(var_127_1, ShipIndexConst.RarityNames, true)
-	self:SetOptionList(var_127_2, ShipIndexConst.TypeNames, true)
-	self:SetOptionList(var_127_3, self.classifyNames)
+	self:SetOptionList(var_131_0, ShipIndexConst.CampNames, true)
+	self:SetOptionList(var_131_1, ShipIndexConst.RarityNames, true)
+	self:SetOptionList(var_131_2, ShipIndexConst.TypeNames, true)
+	self:SetOptionList(var_131_3, self.classifyNames)
 	self:SetSingleOptions(self.filterContent:Find("own/options"), "ownType")
 	self:SetMultiOptions(self.filterContent:Find("type/options"), "typeType")
 	self:SetSingleOptions(self.filterContent:Find("shipHave/options"), "shipHaveType")
-	self:SetMultiOptions(var_127_0, "campType")
-	self:SetMultiOptions(var_127_1, "rarityType")
-	self:SetMultiOptions(var_127_2, "shipType")
-	self:SetMultiOptions(var_127_3, "themeType")
+	self:SetMultiOptions(var_131_0, "campType")
+	self:SetMultiOptions(var_131_1, "rarityType")
+	self:SetMultiOptions(var_131_2, "shipType")
+	self:SetMultiOptions(var_131_3, "themeType")
 	self:SetMultiOptions(self.filterContent:Find("tag/options"), "tagType")
 	self:HideEmptyOptions()
 	onButton(self, self.filterUI:Find("bg"), function()
-		for iter_128_0, iter_128_1 in pairs(self.filterValues) do
-			self.filterValuesTemp[iter_128_0] = Clone(self.filterValues[iter_128_0])
+		for iter_132_0, iter_132_1 in pairs(self.filterValues) do
+			self.filterValuesTemp[iter_132_0] = Clone(self.filterValues[iter_132_0])
 		end
 
 		setActive(self.filterUI, false)
@@ -2162,8 +2252,8 @@ function LatestSkinShopLayer:SetFilterPanel()
 		return
 	end, SFX_PANEL)
 	onButton(self, self.filterUI:Find("panelMask/panel/closeBtn"), function()
-		for iter_129_0, iter_129_1 in pairs(self.filterValues) do
-			self.filterValuesTemp[iter_129_0] = Clone(self.filterValues[iter_129_0])
+		for iter_133_0, iter_133_1 in pairs(self.filterValues) do
+			self.filterValuesTemp[iter_133_0] = Clone(self.filterValues[iter_133_0])
 		end
 
 		setActive(self.filterUI, false)
@@ -2171,8 +2261,8 @@ function LatestSkinShopLayer:SetFilterPanel()
 		return
 	end, SFX_PANEL)
 	onButton(self, self.filterUI:Find("panelMask/panel/bottom/ok"), function()
-		for iter_130_0, iter_130_1 in pairs(self.filterValues) do
-			self.filterValues[iter_130_0] = Clone(self.filterValuesTemp[iter_130_0])
+		for iter_134_0, iter_134_1 in pairs(self.filterValues) do
+			self.filterValues[iter_134_0] = Clone(self.filterValuesTemp[iter_134_0])
 		end
 
 		setActive(self.filterUI, false)
@@ -2198,41 +2288,41 @@ function LatestSkinShopLayer:OpenFilterPanel()
 	return
 end
 
-function LatestSkinShopLayer:SetOptionList(arg_132_1, arg_132_2, arg_132_3)
-	local var_132_0 = UIItemList.New(arg_132_1, arg_132_1:GetChild(0))
+function LatestSkinShopLayer:SetOptionList(arg_136_1, arg_136_2, arg_136_3)
+	local var_136_0 = UIItemList.New(arg_136_1, arg_136_1:GetChild(0))
 
-	var_132_0:make(function(arg_133_0, arg_133_1, arg_133_2)
-		if arg_133_0 == UIItemList.EventUpdate then
-			local var_133_0 = arg_132_2[arg_133_1 + 1]
+	var_136_0:make(function(arg_137_0, arg_137_1, arg_137_2)
+		if arg_137_0 == UIItemList.EventUpdate then
+			local var_137_0 = arg_136_2[arg_137_1 + 1]
 
-			if arg_132_3 then
-				var_133_0 = i18n(var_133_0)
+			if arg_136_3 then
+				var_137_0 = i18n(var_137_0)
 			end
 
-			arg_133_2.name = arg_133_1
+			arg_137_2.name = arg_137_1
 
-			setScrollText(arg_133_2:Find("mask/Text"), var_133_0)
+			setScrollText(arg_137_2:Find("mask/Text"), var_137_0)
 		end
 
 		return
 	end)
-	var_132_0:align(#arg_132_2)
+	var_136_0:align(#arg_136_2)
 
 	return
 end
 
-function LatestSkinShopLayer:SetSingleOptions(arg_134_1, arg_134_2, arg_134_3)
-	for iter_134_0 = 0, arg_134_1.childCount - 1 do
-		local var_134_0 = arg_134_1:GetChild(iter_134_0)
+function LatestSkinShopLayer:SetSingleOptions(arg_138_1, arg_138_2, arg_138_3)
+	for iter_138_0 = 0, arg_138_1.childCount - 1 do
+		local var_138_0 = arg_138_1:GetChild(iter_138_0)
 
-		self:SetOptionSelect(arg_134_1:GetChild(iter_134_0), iter_134_0 == self.filterValuesTemp[arg_134_2])
+		self:SetOptionSelect(arg_138_1:GetChild(iter_138_0), iter_138_0 == self.filterValuesTemp[arg_138_2])
 
-		if not arg_134_3 then
-			onButton(self, var_134_0, function()
-				self.filterValuesTemp[arg_134_2] = iter_134_0
+		if not arg_138_3 then
+			onButton(self, var_138_0, function()
+				self.filterValuesTemp[arg_138_2] = iter_138_0
 
-				for iter_135_0 = 0, arg_134_1.childCount - 1 do
-					self:SetOptionSelect(arg_134_1:GetChild(iter_135_0), iter_135_0 == iter_134_0)
+				for iter_139_0 = 0, arg_138_1.childCount - 1 do
+					self:SetOptionSelect(arg_138_1:GetChild(iter_139_0), iter_139_0 == iter_138_0)
 				end
 
 				return
@@ -2243,49 +2333,49 @@ function LatestSkinShopLayer:SetSingleOptions(arg_134_1, arg_134_2, arg_134_3)
 	return
 end
 
-function LatestSkinShopLayer:SetMultiOptions(arg_136_1, arg_136_2, arg_136_3)
-	for iter_136_0 = 0, arg_136_1.childCount - 1 do
-		local var_136_0 = arg_136_1:GetChild(iter_136_0)
+function LatestSkinShopLayer:SetMultiOptions(arg_140_1, arg_140_2, arg_140_3)
+	for iter_140_0 = 0, arg_140_1.childCount - 1 do
+		local var_140_0 = arg_140_1:GetChild(iter_140_0)
 
-		self:SetOptionSelect(arg_136_1:GetChild(iter_136_0), table.contains(self.filterValuesTemp[arg_136_2], iter_136_0))
+		self:SetOptionSelect(arg_140_1:GetChild(iter_140_0), table.contains(self.filterValuesTemp[arg_140_2], iter_140_0))
 
-		if not arg_136_3 then
-			onButton(self, var_136_0, function()
-				if iter_136_0 == 0 then
-					self.filterValuesTemp[arg_136_2] = {
+		if not arg_140_3 then
+			onButton(self, var_140_0, function()
+				if iter_140_0 == 0 then
+					self.filterValuesTemp[arg_140_2] = {
 						0
 					}
 
-					for iter_137_0 = 0, arg_136_1.childCount - 1 do
-						self:SetOptionSelect(arg_136_1:GetChild(iter_137_0), iter_137_0 == 0)
+					for iter_141_0 = 0, arg_140_1.childCount - 1 do
+						self:SetOptionSelect(arg_140_1:GetChild(iter_141_0), iter_141_0 == 0)
 					end
 				else
-					table.removebyvalue(self.filterValuesTemp[arg_136_2], 0)
+					table.removebyvalue(self.filterValuesTemp[arg_140_2], 0)
 
-					if table.contains(self.filterValuesTemp[arg_136_2], iter_136_0) then
-						table.removebyvalue(self.filterValuesTemp[arg_136_2], iter_136_0)
+					if table.contains(self.filterValuesTemp[arg_140_2], iter_140_0) then
+						table.removebyvalue(self.filterValuesTemp[arg_140_2], iter_140_0)
 					else
-						table.insert(self.filterValuesTemp[arg_136_2], iter_136_0)
+						table.insert(self.filterValuesTemp[arg_140_2], iter_140_0)
 					end
 
-					local var_137_0 = true
+					local var_141_0 = true
 
-					for iter_137_1 = 1, arg_136_1.childCount - 1 do
-						if not table.contains(self.filterValuesTemp[arg_136_2], iter_137_1) and arg_136_1:GetChild(iter_137_1).gameObject.activeSelf then
-							var_137_0 = false
+					for iter_141_1 = 1, arg_140_1.childCount - 1 do
+						if not table.contains(self.filterValuesTemp[arg_140_2], iter_141_1) and arg_140_1:GetChild(iter_141_1).gameObject.activeSelf then
+							var_141_0 = false
 
 							break
 						end
 					end
 
-					if (#self.filterValuesTemp[arg_136_2] == 0 or nil) and true and arg_136_2 ~= "tagType" then
-						self.filterValuesTemp[arg_136_2] = {
+					if (#self.filterValuesTemp[arg_140_2] == 0 or nil) and true and arg_140_2 ~= "tagType" then
+						self.filterValuesTemp[arg_140_2] = {
 							0
 						}
 					end
 
-					for iter_137_2 = 0, arg_136_1.childCount - 1 do
-						self:SetOptionSelect(arg_136_1:GetChild(iter_137_2), table.contains(self.filterValuesTemp[arg_136_2], iter_137_2))
+					for iter_141_2 = 0, arg_140_1.childCount - 1 do
+						self:SetOptionSelect(arg_140_1:GetChild(iter_141_2), table.contains(self.filterValuesTemp[arg_140_2], iter_141_2))
 					end
 				end
 
@@ -2297,16 +2387,16 @@ function LatestSkinShopLayer:SetMultiOptions(arg_136_1, arg_136_2, arg_136_3)
 	return
 end
 
-function LatestSkinShopLayer:SetOptionSelect(arg_138_1, arg_138_2)
-	setActive(arg_138_1:Find("selectedFrame"), arg_138_2)
+function LatestSkinShopLayer:SetOptionSelect(arg_142_1, arg_142_2)
+	setActive(arg_142_1:Find("selectedFrame"), arg_142_2)
 
-	;(IsNil(arg_138_1:Find("Text")) and arg_138_1:Find("mask/Text"):GetComponent(typeof(Text)) or arg_138_1:Find("Text"):GetComponent(typeof(Text))).color = arg_138_2 and Color.New(1, 1, 1, 1) or Color.New(0, 0, 0, 0.5)
+	;(IsNil(arg_142_1:Find("Text")) and arg_142_1:Find("mask/Text"):GetComponent(typeof(Text)) or arg_142_1:Find("Text"):GetComponent(typeof(Text))).color = arg_142_2 and Color.New(1, 1, 1, 1) or Color.New(0, 0, 0, 0.5)
 
 	return
 end
 
-function LatestSkinShopLayer:HideEmptyOptions(arg_139_1, arg_139_2)
-	local var_139_0 = {
+function LatestSkinShopLayer:HideEmptyOptions(arg_143_1, arg_143_2)
+	local var_143_0 = {
 		typeType = {
 			0
 		},
@@ -2327,113 +2417,113 @@ function LatestSkinShopLayer:HideEmptyOptions(arg_139_1, arg_139_2)
 		}
 	}
 
-	for iter_139_0, iter_139_1 in ipairs(self.commodities) do
-		local var_139_1 = ShipSkin.New({
-			id = iter_139_1:getSkinId()
+	for iter_143_0, iter_143_1 in ipairs(self.commodities) do
+		local var_143_1 = ShipSkin.New({
+			id = iter_143_1:getSkinId()
 		})
 
-		for iter_139_2, iter_139_3 in ipairs((self:GetSkinType(var_139_1))) do
-			if not table.keyof(var_139_0.typeType, iter_139_3) then
-				table.insert(var_139_0.typeType, iter_139_3)
+		for iter_143_2, iter_143_3 in ipairs((self:GetSkinType(var_143_1))) do
+			if not table.keyof(var_143_0.typeType, iter_143_3) then
+				table.insert(var_143_0.typeType, iter_143_3)
 			end
 		end
 
-		local var_139_2 = self:GetShipHave(var_139_1)
+		local var_143_2 = self:GetShipHave(var_143_1)
 
-		if not table.keyof(var_139_0.shipHaveType, var_139_2) then
-			table.insert(var_139_0.shipHaveType, var_139_2)
+		if not table.keyof(var_143_0.shipHaveType, var_143_2) then
+			table.insert(var_143_0.shipHaveType, var_143_2)
 		end
 
-		local var_139_3 = self:GetCampType(var_139_1)
+		local var_143_3 = self:GetCampType(var_143_1)
 
-		if not table.keyof(var_139_0.campType, var_139_3) then
-			table.insert(var_139_0.campType, var_139_3)
+		if not table.keyof(var_143_0.campType, var_143_3) then
+			table.insert(var_143_0.campType, var_143_3)
 		end
 
-		local var_139_4 = self:GetRarityType(var_139_1)
+		local var_143_4 = self:GetRarityType(var_143_1)
 
-		if not table.keyof(var_139_0.rarityType, var_139_4) then
-			table.insert(var_139_0.rarityType, var_139_4)
+		if not table.keyof(var_143_0.rarityType, var_143_4) then
+			table.insert(var_143_0.rarityType, var_143_4)
 		end
 
-		local var_139_5 = self:GetShipType(var_139_1)
+		local var_143_5 = self:GetShipType(var_143_1)
 
-		if not table.keyof(var_139_0.shipType, var_139_5) then
-			table.insert(var_139_0.shipType, var_139_5)
+		if not table.keyof(var_143_0.shipType, var_143_5) then
+			table.insert(var_143_0.shipType, var_143_5)
 		end
 
-		local var_139_6 = self:GetTagType(iter_139_1)
+		local var_143_6 = self:GetTagType(iter_143_1)
 
-		if not table.keyof(var_139_0.tagType, var_139_6) then
-			table.insert(var_139_0.tagType, var_139_6)
+		if not table.keyof(var_143_0.tagType, var_143_6) then
+			table.insert(var_143_0.tagType, var_143_6)
 		end
 	end
 
-	for iter_139_4, iter_139_5 in pairs(var_139_0) do
-		table.sort(iter_139_5, function(arg_140_0, arg_140_1)
-			return arg_140_0 < arg_140_1
+	for iter_143_4, iter_143_5 in pairs(var_143_0) do
+		table.sort(iter_143_5, function(arg_144_0, arg_144_1)
+			return arg_144_0 < arg_144_1
 		end)
 	end
 
-	for iter_139_6 = 1, self.uiTypeOptions.childCount - 1 do
-		setActive(self.uiTypeOptions:GetChild(iter_139_6), table.contains(var_139_0.typeType, iter_139_6))
+	for iter_143_6 = 1, self.uiTypeOptions.childCount - 1 do
+		setActive(self.uiTypeOptions:GetChild(iter_143_6), table.contains(var_143_0.typeType, iter_143_6))
 	end
 
-	for iter_139_7 = 1, self.uiShipHaveOptions.childCount - 1 do
-		setActive(self.uiShipHaveOptions:GetChild(iter_139_7), table.contains(var_139_0.shipHaveType, iter_139_7))
+	for iter_143_7 = 1, self.uiShipHaveOptions.childCount - 1 do
+		setActive(self.uiShipHaveOptions:GetChild(iter_143_7), table.contains(var_143_0.shipHaveType, iter_143_7))
 	end
 
-	for iter_139_8 = 1, self.uiCampOptions.childCount - 1 do
-		setActive(self.uiCampOptions:GetChild(iter_139_8), table.contains(var_139_0.campType, iter_139_8))
+	for iter_143_8 = 1, self.uiCampOptions.childCount - 1 do
+		setActive(self.uiCampOptions:GetChild(iter_143_8), table.contains(var_143_0.campType, iter_143_8))
 	end
 
-	for iter_139_9 = 1, self.uiRrarityOptions.childCount - 1 do
-		setActive(self.uiRrarityOptions:GetChild(iter_139_9), table.contains(var_139_0.rarityType, iter_139_9))
+	for iter_143_9 = 1, self.uiRrarityOptions.childCount - 1 do
+		setActive(self.uiRrarityOptions:GetChild(iter_143_9), table.contains(var_143_0.rarityType, iter_143_9))
 	end
 
-	for iter_139_10 = 1, self.uiShipTypeOptions.childCount - 1 do
-		setActive(self.uiShipTypeOptions:GetChild(iter_139_10), table.contains(var_139_0.shipType, iter_139_10))
+	for iter_143_10 = 1, self.uiShipTypeOptions.childCount - 1 do
+		setActive(self.uiShipTypeOptions:GetChild(iter_143_10), table.contains(var_143_0.shipType, iter_143_10))
 	end
 
-	for iter_139_11 = 1, self.uiTagTypeOptions.childCount - 1 do
-		setActive(self.uiTagTypeOptions:GetChild(iter_139_11), table.contains(var_139_0.tagType, iter_139_11))
+	for iter_143_11 = 1, self.uiTagTypeOptions.childCount - 1 do
+		setActive(self.uiTagTypeOptions:GetChild(iter_143_11), table.contains(var_143_0.tagType, iter_143_11))
 	end
 
 	return
 end
 
-function LatestSkinShopLayer:GetSkinType(arg_141_1)
-	local var_141_0 = {}
+function LatestSkinShopLayer:GetSkinType(arg_145_1)
+	local var_145_0 = {}
 
-	if arg_141_1:IsLive2d() or arg_141_1:IsLive2dPlus() then
-		table.insert(var_141_0, 1)
+	if arg_145_1:IsLive2d() or arg_145_1:IsLive2dPlus() then
+		table.insert(var_145_0, 1)
 	end
 
-	if not arg_141_1:IsLive2d() and not arg_141_1:IsLive2dPlus() and not arg_141_1:IsSpine() and not arg_141_1:IsSpinePlus() then
-		table.insert(var_141_0, 2)
+	if not arg_145_1:IsLive2d() and not arg_145_1:IsLive2dPlus() and not arg_145_1:IsSpine() and not arg_145_1:IsSpinePlus() then
+		table.insert(var_145_0, 2)
 	end
 
-	if arg_141_1:IsSpine() or arg_141_1:IsSpinePlus() then
-		table.insert(var_141_0, 3)
+	if arg_145_1:IsSpine() or arg_145_1:IsSpinePlus() then
+		table.insert(var_145_0, 3)
 	end
 
-	if arg_141_1:IsBG() then
-		table.insert(var_141_0, 4)
+	if arg_145_1:IsBG() then
+		table.insert(var_145_0, 4)
 	end
 
-	if arg_141_1:IsDbg() then
-		table.insert(var_141_0, 5)
+	if arg_145_1:IsDbg() then
+		table.insert(var_145_0, 5)
 	end
 
-	if arg_141_1:isBgm() then
-		table.insert(var_141_0, 6)
+	if arg_145_1:isBgm() then
+		table.insert(var_145_0, 6)
 	end
 
-	return var_141_0
+	return var_145_0
 end
 
-function LatestSkinShopLayer:GetShipHave(arg_142_1)
-	if arg_142_1:CantUse() then
+function LatestSkinShopLayer:GetShipHave(arg_146_1)
+	if arg_146_1:CantUse() then
 		return 2
 	else
 		return 1
@@ -2442,23 +2532,23 @@ function LatestSkinShopLayer:GetShipHave(arg_142_1)
 	return
 end
 
-function LatestSkinShopLayer:GetCampType(arg_143_1)
-	local var_143_0 = arg_143_1:GetDefaultShipConfig()
+function LatestSkinShopLayer:GetCampType(arg_147_1)
+	local var_147_0 = arg_147_1:GetDefaultShipConfig()
 
-	if not var_143_0 then
+	if not var_147_0 then
 		return 0
 	end
 
-	local var_143_1 = self:ToVShip(var_143_0):getNation()
+	local var_147_1 = self:ToVShip(var_147_0):getNation()
 
-	for iter_143_0, iter_143_1 in ipairs(ShipIndexCfg.camp) do
-		for iter_143_2, iter_143_3 in ipairs(iter_143_1.types) do
-			if iter_143_3 == Nation.LINK then
-				if var_143_1 >= Nation.LINK then
-					return iter_143_0 - 1
+	for iter_147_0, iter_147_1 in ipairs(ShipIndexCfg.camp) do
+		for iter_147_2, iter_147_3 in ipairs(iter_147_1.types) do
+			if iter_147_3 == Nation.LINK then
+				if var_147_1 >= Nation.LINK then
+					return iter_147_0 - 1
 				end
-			elseif var_143_1 == iter_143_3 then
-				return iter_143_0 - 1
+			elseif var_147_1 == iter_147_3 then
+				return iter_147_0 - 1
 			end
 		end
 	end
@@ -2466,37 +2556,37 @@ function LatestSkinShopLayer:GetCampType(arg_143_1)
 	return 0
 end
 
-function LatestSkinShopLayer:GetRarityType(arg_144_1)
-	local var_144_0 = arg_144_1:GetDefaultShipConfig()
+function LatestSkinShopLayer:GetRarityType(arg_148_1)
+	local var_148_0 = arg_148_1:GetDefaultShipConfig()
 
-	if not var_144_0 then
+	if not var_148_0 then
 		return 0
 	end
 
-	local var_144_1 = self:ToVShip(var_144_0):getRarity()
+	local var_148_1 = self:ToVShip(var_148_0):getRarity()
 
-	for iter_144_0, iter_144_1 in ipairs(ShipIndexCfg.rarity) do
-		if table.contains(iter_144_1.types, var_144_1) then
-			return iter_144_0 - 1
+	for iter_148_0, iter_148_1 in ipairs(ShipIndexCfg.rarity) do
+		if table.contains(iter_148_1.types, var_148_1) then
+			return iter_148_0 - 1
 		end
 	end
 
 	return 0
 end
 
-function LatestSkinShopLayer:GetShipType(arg_145_1)
-	local var_145_0 = arg_145_1:GetDefaultShipConfig()
+function LatestSkinShopLayer:GetShipType(arg_149_1)
+	local var_149_0 = arg_149_1:GetDefaultShipConfig()
 
-	if not var_145_0 then
+	if not var_149_0 then
 		return 0
 	end
 
-	local var_145_1 = self:ToVShip(var_145_0):getShipType()
+	local var_149_1 = self:ToVShip(var_149_0):getShipType()
 
-	for iter_145_0, iter_145_1 in ipairs(ShipIndexCfg.type) do
-		for iter_145_2, iter_145_3 in pairs(iter_145_1) do
-			if table.keyof(iter_145_3, var_145_1) then
-				return iter_145_0 - 1
+	for iter_149_0, iter_149_1 in ipairs(ShipIndexCfg.type) do
+		for iter_149_2, iter_149_3 in pairs(iter_149_1) do
+			if table.keyof(iter_149_3, var_149_1) then
+				return iter_149_0 - 1
 			end
 		end
 	end
@@ -2504,11 +2594,11 @@ function LatestSkinShopLayer:GetShipType(arg_145_1)
 	return 0
 end
 
-function LatestSkinShopLayer:GetTagType(arg_146_1)
-	local var_146_0 = NewShopSkinCard.GetTagId(arg_146_1, (table.contains(self.returnSkins, arg_146_1.id)))
+function LatestSkinShopLayer:GetTagType(arg_150_1)
+	local var_150_0 = NewShopSkinCard.GetTagId(arg_150_1, (table.contains(self.returnSkins, arg_150_1.id)))
 
-	if var_146_0 > 0 then
-		return var_146_0
+	if var_150_0 > 0 then
+		return var_150_0
 	else
 		return 0
 	end
@@ -2520,80 +2610,80 @@ function LatestSkinShopLayer:GetSkinClassify()
 	self.classifyIds = {}
 	self.classifyNames = {}
 
-	local var_147_0 = {}
-	local var_147_1 = {}
+	local var_151_0 = {}
+	local var_151_1 = {}
 
-	for iter_147_0, iter_147_1 in ipairs(self.commodities) do
-		local var_147_2 = self:GetShopTypeIdBySkinId(iter_147_1:getSkinId())
-		local var_147_3
+	for iter_151_0, iter_151_1 in ipairs(self.commodities) do
+		local var_151_2 = self:GetShopTypeIdBySkinId(iter_151_1:getSkinId())
+		local var_151_3
 
-		if var_147_2 == 0 then
-			var_147_3 = var_0_16 or var_147_2
+		if var_151_2 == 0 then
+			var_151_3 = var_0_16 or var_151_2
 		end
 
-		var_147_1[var_147_3] = (var_147_1[var_147_3] or 0) + 1
+		var_151_1[var_151_3] = (var_151_1[var_151_3] or 0) + 1
 	end
 
-	local var_147_4 = {}
+	local var_151_4 = {}
 
-	for iter_147_2, iter_147_3 in ipairs(self.returnSkins) do
-		var_147_4[iter_147_3] = true
+	for iter_151_2, iter_151_3 in ipairs(self.returnSkins) do
+		var_151_4[iter_151_3] = true
 	end
 
-	if underscore.any(self.commodities, function(arg_148_0)
-		return var_147_4[arg_148_0.id]
+	if underscore.any(self.commodities, function(arg_152_0)
+		return var_151_4[arg_152_0.id]
 	end) then
-		table.insert(var_147_0, var_0_14)
+		table.insert(var_151_0, var_0_14)
 	end
 
-	for iter_147_4, iter_147_5 in ipairs(pg.skin_page_template.all) do
-		if iter_147_5 ~= var_0_17 and iter_147_5 ~= var_0_18 then
-			if (var_147_1[iter_147_5] or 0) > 0 then
-				table.insert(var_147_0, iter_147_5)
+	for iter_151_4, iter_151_5 in ipairs(pg.skin_page_template.all) do
+		if iter_151_5 ~= var_0_17 and iter_151_5 ~= var_0_18 then
+			if (var_151_1[iter_151_5] or 0) > 0 then
+				table.insert(var_151_0, iter_151_5)
 			end
 		end
 	end
 
 	if self.mode == LatestSkinShopLayer.MODE_EXPERIENCE then
-		table.insert(var_147_0, 1, var_0_13)
+		table.insert(var_151_0, 1, var_0_13)
 	end
 
 	if self.mode == LatestSkinShopLayer.MODE_EXPERIENCE_FOR_ITEM then
-		table.insert(var_147_0, 1, var_0_15)
+		table.insert(var_151_0, 1, var_0_15)
 	end
 
-	table.insert(var_147_0, 1, var_0_12)
+	table.insert(var_151_0, 1, var_0_12)
 
-	self.classifyIds = var_147_0
+	self.classifyIds = var_151_0
 
-	for iter_147_6, iter_147_7 in ipairs(self.classifyIds) do
-		if iter_147_7 == var_0_12 then
+	for iter_151_6, iter_151_7 in ipairs(self.classifyIds) do
+		if iter_151_7 == var_0_12 then
 			table.insert(self.classifyNames, i18n("shop_filter_all"))
-		elseif iter_147_7 == var_0_13 or iter_147_7 == var_0_15 then
+		elseif iter_151_7 == var_0_13 or iter_151_7 == var_0_15 then
 			table.insert(self.classifyNames, i18n("shop_filter_trial"))
-		elseif iter_147_7 == var_0_14 then
+		elseif iter_151_7 == var_0_14 then
 			table.insert(self.classifyNames, i18n("shop_filter_retro"))
 		else
-			table.insert(self.classifyNames, pg.skin_page_template[iter_147_7].name)
+			table.insert(self.classifyNames, pg.skin_page_template[iter_151_7].name)
 		end
 	end
 
 	return
 end
 
-function LatestSkinShopLayer:GetShopTypeIdBySkinId(arg_149_1)
+function LatestSkinShopLayer:GetShopTypeIdBySkinId(arg_153_1)
 	self.shopTypeIdList = self.shopTypeIdList or {}
 
-	if self.shopTypeIdList[arg_149_1] then
-		return self.shopTypeIdList[arg_149_1]
+	if self.shopTypeIdList[arg_153_1] then
+		return self.shopTypeIdList[arg_153_1]
 	end
 
-	for iter_149_0, iter_149_1 in pairs(pg.ship_skin_template.get_id_list_by_shop_type_id) do
-		for iter_149_2, iter_149_3 in ipairs(iter_149_1) do
-			self.shopTypeIdList[iter_149_3] = iter_149_0
+	for iter_153_0, iter_153_1 in pairs(pg.ship_skin_template.get_id_list_by_shop_type_id) do
+		for iter_153_2, iter_153_3 in ipairs(iter_153_1) do
+			self.shopTypeIdList[iter_153_3] = iter_153_0
 
-			if iter_149_3 == arg_149_1 then
-				return iter_149_0
+			if iter_153_3 == arg_153_1 then
+				return iter_153_0
 			end
 		end
 	end
@@ -2601,7 +2691,7 @@ function LatestSkinShopLayer:GetShopTypeIdBySkinId(arg_149_1)
 	return
 end
 
-function LatestSkinShopLayer:OnShopping(arg_150_1)
+function LatestSkinShopLayer:OnShopping(arg_154_1)
 	if not self.showingCommodity then
 		return
 	end
@@ -2610,20 +2700,22 @@ function LatestSkinShopLayer:OnShopping(arg_150_1)
 		self.purchaseView:Hide()
 	end
 
-	if self.showingCommodity.id == arg_150_1 then
+	if self.showingCommodity.id == arg_154_1 then
+		self.pendingSelectId = self:GetNextCommodityIndex(arg_154_1)
+
 		self:GetAllCommodities()
-		self:Refresh(true)
+		self:Refresh(false)
 	end
 
 	return
 end
 
-function LatestSkinShopLayer:OnFurnitureUpdate(arg_151_1)
+function LatestSkinShopLayer:OnFurnitureUpdate(arg_155_1)
 	if not self.showingCommodity then
 		return
 	end
 
-	if Goods.ExistFurniture(self.showingCommodity.id) and Goods.Id2FurnitureId(self.showingCommodity.id) == arg_151_1 then
+	if Goods.ExistFurniture(self.showingCommodity.id) and Goods.Id2FurnitureId(self.showingCommodity.id) == arg_155_1 then
 		self:GetAllCommodities()
 		self:Refresh(true)
 	end
@@ -2631,17 +2723,17 @@ function LatestSkinShopLayer:OnFurnitureUpdate(arg_151_1)
 	return
 end
 
-function LatestSkinShopLayer:CheckDownloadSkinList(arg_152_1)
-	local var_152_0 = {}
+function LatestSkinShopLayer:CheckDownloadSkinList(arg_156_1)
+	local var_156_0 = {}
 
-	for iter_152_0, iter_152_1 in ipairs(self.commodities) do
-		PaintingGroupConst.AddPaintingNameBySkinID(var_152_0, iter_152_1:getSkinId())
+	for iter_156_0, iter_156_1 in ipairs(self.commodities) do
+		PaintingGroupConst.AddPaintingNameBySkinID(var_156_0, iter_156_1:getSkinId())
 	end
 
 	PaintingGroupConst.PaintingDownload({
 		isShowBox = true,
-		paintingNameList = var_152_0,
-		finishFunc = arg_152_1
+		paintingNameList = var_156_0,
+		finishFunc = arg_156_1
 	})
 
 	return
@@ -2670,8 +2762,8 @@ function LatestSkinShopLayer:willExit()
 		self.purchaseView = nil
 	end
 
-	for iter_153_0, iter_153_1 in pairs(self.downloads) do
-		iter_153_1:Dispose()
+	for iter_157_0, iter_157_1 in pairs(self.downloads) do
+		iter_157_1:Dispose()
 	end
 
 	self.downloads = {}
@@ -2688,6 +2780,20 @@ function LatestSkinShopLayer:willExit()
 	self:ClearTimer()
 	self:ReturnChar()
 	self:UnOverlay()
+
+	return
+end
+
+function LatestSkinShopLayer:GetNextCommodityIndex(arg_158_1)
+	for iter_158_0, iter_158_1 in ipairs(self.displays) do
+		if iter_158_1.id == arg_158_1 then
+			if iter_158_0 == #self.displays then
+				return arg_158_1
+			end
+
+			return self.displays[iter_158_0 + 1].id
+		end
+	end
 
 	return
 end

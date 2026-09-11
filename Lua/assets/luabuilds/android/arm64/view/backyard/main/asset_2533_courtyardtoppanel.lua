@@ -66,7 +66,7 @@ function CourtYardTopPanel:UnLockTip()
 	local var_8_0 = ShopArgs.DORM_FLOOR_ID
 
 	_BackyardMsgBoxMgr:Show({
-		content = i18n("backyard_open_2floor", pg.shop_template[ShopArgs.DORM_FLOOR_ID].resource_num),
+		content = i18n("backyard_open_2floor", ShopConst.GetShopConfig(ShopArgs.DORM_FLOOR_ID).resource_num),
 		onYes = function()
 			self:emit(CourtYardMediator.UN_LOCK_2FLOOR, var_8_0, 1)
 

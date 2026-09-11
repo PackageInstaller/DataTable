@@ -11,6 +11,7 @@ function MainSequenceView:Ctor()
 		MainStroySequence.New(),
 		MainRequestActDataSequence.New(),
 		MainUrShipReFetchSequence.New(),
+		MainReFluxSequence.New(),
 		MainUrgencySceneSequence.New(),
 		MainEquipmentChangeSequence.New(),
 		MainServerNoticeSequence.New(),
@@ -36,6 +37,7 @@ function MainSequenceView:Ctor()
 		MainRequestFeastActDataSequence.New(),
 		MainActDataExpirationReminderSequence.New(),
 		MainRequestNewInstagramDataSequence.New(),
+		MainRequestReversePacmanActDataSequence.New(),
 		MainCalcHxSequence.New(),
 		MainGuideSequence.New(),
 		MainOpenSystemSequence.New()

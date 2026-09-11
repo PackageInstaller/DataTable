@@ -47,7 +47,7 @@ function SecretsAbyssMainPage:OnUpdateFlush()
 end
 
 function SecretsAbyssMainPage:updateUI()
-	local var_6_0, var_6_1 = self.timeMgr:inTime(pg.shop_template[var_0_1].time)
+	local var_6_0, var_6_1 = self.timeMgr:inTime(ShopConst.GetShopConfig(var_0_1).time)
 	local var_6_2
 
 	if var_6_1 then

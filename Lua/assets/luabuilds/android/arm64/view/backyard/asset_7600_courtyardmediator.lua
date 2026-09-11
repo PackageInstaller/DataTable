@@ -192,7 +192,9 @@ function CourtYardMediator:handleNotification(arg_17_1)
 	elseif var_17_0 == GAME.LOAD_LAYERS then
 		-- block empty
 	elseif var_17_0 == GAME.REMOVE_LAYERS then
-		self.viewComponent:OnRemoveLayer(var_17_1)
+		if self.viewComponent.OnRemoveLayer then
+			self.viewComponent:OnRemoveLayer(var_17_1)
+		end
 	elseif var_17_0 == CourtYardEvent._NO_POS_TO_ADD_SHIP then
 		self:sendNotification(GAME.EXIT_SHIP, {
 			shipId = var_17_1
@@ -331,11 +333,12 @@ function CourtYardMediator:OnExtend()
 	if getProxy(BagProxy):getItemCountById(ITEM_BACKYARD_AREA_EXTEND) <= 0 then
 		local var_21_0 = getProxy(DormProxy):getRawData()
 		local var_21_1 = var_21_0:GetExpandId()
+		local var_21_2 = ShopConst.GetShopConfig(var_21_1)
 
 		_BackyardMsgBoxMgr:Show({
-			content = i18n("backyard_buyExtendItem_question", pg.shop_template[var_21_1].resource_num .. Drop.New({
+			content = i18n("backyard_buyExtendItem_question", var_21_2.resource_num .. Drop.New({
 				type = DROP_TYPE_RESOURCE,
-				id = pg.shop_template[var_21_1].resource_type
+				id = var_21_2.resource_type
 			}).getName(var_21_0)),
 			onYes = function()
 				self:sendNotification(GAME.SHOPPING, {
@@ -387,6 +390,9 @@ function CourtYardMediator:GenCourtYardData(arg_24_1)
 	elseif var_24_0 == CourtYardConst.SYSTEM_EDIT_FEAST then
 		var_24_1 = getProxy(DormProxy):getRawData()
 		var_24_2 = CourtYardConst.STYLE_FEAST
+	elseif var_24_0 == CourtYardConst.SYSTEM_REVERSE_PACMAN then
+		var_24_1 = getProxy(ReversePacmanDormProxy):getRawData()
+		var_24_2 = CourtYardConst.STYLE_REVERSE_PACMAN
 	end
 
 	local var_24_3 = var_24_1:GetMapSize()

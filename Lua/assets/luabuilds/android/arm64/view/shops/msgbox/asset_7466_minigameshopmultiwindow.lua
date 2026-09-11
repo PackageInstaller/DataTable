@@ -58,7 +58,7 @@ function MiniGameShopMultiWindow:Hide()
 end
 
 function MiniGameShopMultiWindow:InitWindow(arg_8_1, arg_8_2)
-	local var_8_0 = arg_8_1:GetDropInfo()
+	local var_8_0 = arg_8_1:getDropInfo()
 	local var_8_1 = math.max(math.floor(getProxy(GameRoomProxy):getTicket() / arg_8_1:getConfig("price")), 1)
 
 	if arg_8_1:GetMaxCnt() ~= 0 then

@@ -195,10 +195,12 @@ function ActivityShopPage:TipPurchase(arg_23_1, arg_23_2, arg_23_3, arg_23_4)
 end
 
 function ActivityShopPage:OnPurchase(arg_24_1, arg_24_2)
-	if arg_24_1:getConfig("commodity_type") == DROP_TYPE_ITEM then
-		local var_24_0 = getProxy(BagProxy):RawGetItemById((arg_24_1:getConfig("commodity_id")))
+	local var_24_0 = arg_24_1:getDropInfo()
 
-		if var_24_0 and var_24_0:IsShipExpType() and var_24_0:IsMaxCnt() then
+	if var_24_0.type == DROP_TYPE_ITEM then
+		local var_24_1 = getProxy(BagProxy):RawGetItemById(var_24_0.id)
+
+		if var_24_1 and var_24_1:IsShipExpType() and var_24_1:IsMaxCnt() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("item_is_max_cnt"))
 
 			return

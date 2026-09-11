@@ -118,7 +118,7 @@ end
 function BuildShipPoolsPage:OnInit()
 	onButton(self, self.quickCount, function()
 		shoppingBatch(61008, {
-			id = pg.shop_template[61008].effect_args[1]
+			id = ShopConst.GetShopConfig(61008).effect_args[1]
 		}, 9, "build_ship_quickly_buy_stone")
 
 		return

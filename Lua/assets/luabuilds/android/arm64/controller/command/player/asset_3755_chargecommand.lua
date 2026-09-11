@@ -63,13 +63,17 @@ function ChargeCommand:execute(arg_1_1)
 
 				pg.TrackerMgr.GetInstance():Tracking(TRACKING_PURCHASE, var_1_0)
 				getProxy(ShopsProxy):addWaitTimer()
-				self:sendNotification(GAME.CHARGE_OPERATION_DONE)
+				self:sendNotification(GAME.CHARGE_OPERATION_DONE, {
+					shopId = var_1_0
+				})
 			else
 				pg.TipsMgr.GetInstance():ShowTips(i18n("charge_trade_no_error"))
 			end
 		else
 			if arg_2_0.result == 15 then
-				self:sendNotification(GAME.CHARGE_OPERATION_DONE)
+				self:sendNotification(GAME.CHARGE_OPERATION_DONE, {
+					shopId = var_1_0
+				})
 			end
 
 			if arg_2_0.result == 6 then

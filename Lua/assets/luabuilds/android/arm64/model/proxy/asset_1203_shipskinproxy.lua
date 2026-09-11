@@ -65,7 +65,7 @@ function ShipSkinProxy:register()
 		for iter_4_4, iter_4_5 in ipairs(arg_4_0.forbidden_list) do
 			if not pg.shop_template[iter_4_5.id] then
 				warning("without config in shop_template:" .. iter_4_5.id)
-			elseif pg.shop_template[iter_4_5.id].genre ~= "skin_shop" then
+			elseif pg.shop_template[iter_4_5.id].genre ~= ShopArgs.SkinShop then
 				warning("config genre error in shop_template:" .. iter_4_5.id)
 			else
 				warning(iter_4_5.id, iter_4_5.type, pg.TimeMgr.GetInstance():STimeDescS(iter_4_5.start_time), pg.TimeMgr.GetInstance():STimeDescS(iter_4_5.stop_time))
@@ -311,10 +311,11 @@ function ShipSkinProxy:GetAllSkins()
 
 		var_34_1(var_36_0)
 
-		local var_36_1 = pg.shop_template[arg_36_0].collaboration_skin_time == "" or pg.shop_template[arg_36_0].collaboration_skin_time == pg.shop_template[arg_36_0].time
-		local var_36_2, var_36_3 = pg.TimeMgr.GetInstance():inTime(pg.shop_template[arg_36_0].time)
+		local var_36_1 = ShopConst.GetShopConfig(arg_36_0)
+		local var_36_2 = var_36_1.collaboration_skin_time == "" or var_36_1.collaboration_skin_time == var_36_1.time
+		local var_36_3, var_36_4 = pg.TimeMgr.GetInstance():inTime(var_36_1.time)
 
-		if var_36_1 and var_36_2 then
+		if var_36_2 and var_36_3 then
 			table.insert(var_34_0, var_36_0)
 		end
 
@@ -754,7 +755,7 @@ function ShipSkinProxy:GetProbabilitySkins(arg_52_1)
 
 		var_52_1(var_54_0)
 
-		local var_54_1, var_54_2 = pg.TimeMgr.GetInstance():inTime(pg.shop_template[arg_54_0].time)
+		local var_54_1, var_54_2 = pg.TimeMgr.GetInstance():inTime(ShopConst.GetShopConfig(arg_54_0).time)
 
 		if var_54_1 then
 			table.insert(var_52_0, var_54_0)

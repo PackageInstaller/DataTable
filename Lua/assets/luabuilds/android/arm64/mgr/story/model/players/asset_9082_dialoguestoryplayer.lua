@@ -33,7 +33,7 @@ function DialogueStoryPlayer:Ctor(arg_1_1)
 end
 
 function DialogueStoryPlayer:OnStart(arg_2_1)
-	self.nextTr = self.dialogueWin:Find("next")
+	self.nextTr = self.dialogueWin:Find("next_container")
 	self.conentTr = self.dialogueWin:Find("content")
 	self.conentTxt = self.dialogueWin:Find("content"):GetComponent(typeof(Text))
 	self.typewriter = self.dialogueWin:Find("content"):GetComponent(typeof(Typewriter))
@@ -43,6 +43,10 @@ function DialogueStoryPlayer:OnStart(arg_2_1)
 	self.portraitTr = self.dialogueWin:Find("portrait")
 	self.conentLineTr = self.dialogueWin:Find("line")
 	self.portraitImg = self.portraitTr:GetComponent(typeof(Image))
+	self.nextSignList = {
+		self.dialogueWin:Find("next_container/0"),
+		self.dialogueWin:Find("next_container/1")
+	}
 	self.tags = {
 		self.nameTr:Find("tags/1"),
 		self.nameTr:Find("tags/2")
@@ -1487,6 +1491,10 @@ function DialogueStoryPlayer:UpdateContent(arg_102_1, arg_102_2)
 
 	if self.script:IsDialogueStyle2() then
 		setActive(self.tag4Dialog2, not var_102_3)
+	end
+
+	for iter_102_2, iter_102_3 in ipairs(self.nextSignList) do
+		setActive(iter_102_3, iter_102_2 - 1 == arg_102_1:GetNextIcon())
 	end
 
 	return

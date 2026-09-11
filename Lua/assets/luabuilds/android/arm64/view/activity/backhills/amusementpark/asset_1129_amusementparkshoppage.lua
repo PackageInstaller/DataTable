@@ -122,11 +122,7 @@ function AmusementParkShopPage:UpdateGoods()
 		local var_16_0 = var_14_0[arg_16_1 + 1]
 
 		setActive(arg_16_2:Find("mask"), not var_14_0[arg_16_1 + 1]:canPurchase())
-		updateDrop(arg_16_2, {
-			type = var_16_0:getConfig("commodity_type"),
-			id = var_16_0:getConfig("commodity_id"),
-			count = var_16_0:getConfig("num")
-		})
+		updateDrop(arg_16_2, (var_16_0:getDropInfo()))
 		setText(arg_16_2:Find("Price"), var_16_0:getConfig("resource_num"))
 		onButton(self, arg_16_2, function()
 			self:OnClickCommodity(var_16_0, function(arg_18_0, arg_18_1)
@@ -215,10 +211,7 @@ function AmusementParkShopPage:OnClickCommodity(arg_25_1, arg_25_2)
 		return
 	end
 
-	self:Purchase(arg_25_1, 1, Drop.New({
-		id = arg_25_1:getConfig("commodity_id"),
-		type = arg_25_1:getConfig("commodity_type")
-	}):getConfig("name"), arg_25_2)
+	self:Purchase(arg_25_1, 1, arg_25_1:getDropInfo():getConfig("name"), arg_25_2)
 
 	return
 end

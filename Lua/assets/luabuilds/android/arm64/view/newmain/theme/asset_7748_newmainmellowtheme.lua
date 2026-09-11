@@ -52,9 +52,13 @@ function NewMainMellowTheme:Refresh(arg_7_1)
 	return
 end
 
-function NewMainMellowTheme:OnFoldPanels(arg_8_1)
+function NewMainMellowTheme:OnFoldPanels(arg_8_1, arg_8_2)
 	if arg_8_1 then
-		self.animationPlayer:Play("anim_newmain_hide")
+		if arg_8_2 and arg_8_2.chat then
+			self.animationPlayer:Play("anim_newmain_hide_chat")
+		else
+			self.animationPlayer:Play("anim_newmain_hide")
+		end
 	else
 		self.animationPlayer:Play("anim_newmain_show")
 	end
@@ -499,6 +503,14 @@ function NewMainMellowTheme:RegisterRedDots()
 	end)
 
 	return var_31_1
+end
+
+function NewMainMellowTheme:ShowOrHideBtnEffect(arg_52_1)
+	for iter_52_0, iter_52_1 in ipairs(self.panels) do
+		iter_52_1:ShowOrHideBtnEffect(arg_52_1)
+	end
+
+	return
 end
 
 return NewMainMellowTheme

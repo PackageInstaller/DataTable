@@ -227,4 +227,12 @@ function ActivityShop:GetBGM()
 	return pg.activity_template[self.activityId].config_client.bgm or ""
 end
 
+function ActivityShop:IsHide()
+	if self.config.config_client == "" then
+		return false
+	end
+
+	return self.config.config_client.isHide
+end
+
 return ActivityShop
