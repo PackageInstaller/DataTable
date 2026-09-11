@@ -1,13 +1,3 @@
-#!/usr/bin/env bash
-#
-# snapshot-game.sh —— 把一个游戏数据文件夹发布成独立的孤儿快照分支
-#
-# 流程：
-#   1. 在 $TMPDIR 的临时目录里组装快照（只读文件夹，不动主工作区、不切分支）
-#   2. 用文件夹的内容建立 / 更新孤儿分支 game/<文件夹名>（内容放在分支根目录）并推送
-#   3. 回到 master，在 README.md 索引表里按字典序插入一行（英文名，中文名留空）并推送
-#   4. 删除本地文件夹
-#
 set -euo pipefail
 
 if [ -t 1 ]; then
@@ -51,14 +41,11 @@ usage() {
 EOF
 }
 
-# ---------------------------------------------------------------- 参数解析
 keep_folder=0
 params=()
 
 while [ $# -gt 0 ]; do
   case $1 in
-    -y | --yes) shift ;; # 默认就会删，保留这个参数只是兼容旧用法
-    -k | --keep) keep_folder=1; shift ;;
     -h | --help) usage; exit 0 ;;
     --) shift; while [ $# -gt 0 ]; do params+=("$1"); shift; done ;;
     -?*) usage >&2; die "未知选项: $1" ;;
@@ -75,7 +62,6 @@ folder_arg=${params[0]}
 english_name=${params[1]:-}
 chinese_name=${params[2]:-}
 
-# ---------------------------------------------------------------- 环境检查
 repo_root=$(git rev-parse --show-toplevel 2>/dev/null) || die "当前目录不在 git 仓库里"
 repo_root=$(cd "$repo_root" && pwd -P)
 cd "$repo_root"
@@ -114,7 +100,6 @@ if [ -n "$(git ls-files -- "$folder_rel")" ]; then
   die "$folder_rel 已被 master 跟踪，请先把这些文件从 master 移除"
 fi
 
-# ------------------------------------------------------------ 与远端同步
 info "更新 origin/master ..."
 git fetch --quiet origin master
 if git rev-parse -q --verify refs/remotes/origin/master >/dev/null; then
@@ -149,12 +134,10 @@ if grep -qF "| \`$branch\` |" README.md; then
   info "README.md 里已经有 $branch 的索引，稍后跳过索引更新"
 fi
 
-# ---------------------------------------------------------------- 生成快照
 work=$(mktemp -d "${TMPDIR:-/tmp}/snapshot-game.XXXXXX")
 trap 'rm -rf "$work"' EXIT
 
-# .gitattributes：把仓库根目录里 "<文件夹>/xxx" 的规则去掉前缀后带进分支，
-# 这样原来的 LFS 文件在新分支上依然是 LFS 指针；再补上文件夹自带的规则。
+
 attrs="$work/gitattributes"
 repo_attrs="$work/repo.gitattributes"
 if [ -f .gitattributes ]; then
@@ -167,8 +150,6 @@ fi
   if [ -f "$folder_abs/.gitattributes" ]; then cat "$folder_abs/.gitattributes"; fi
 } | awk '!seen[$0]++' >"$attrs"
 
-# .gitignore：沿用仓库的规则（仓库里没有就退回 master 的版本），
-# 这些规则同时用于挑文件，所以 Assets/*、Painting/ 之类不会进快照。
 ignore="$work/gitignore"
 if [ -f .gitignore ]; then
   cp .gitignore "$ignore"
@@ -201,8 +182,6 @@ if [ -n "$gitlinks" ]; then
   die "快照里有嵌套仓库（gitlink），请先处理: $gitlinks"
 fi
 
-# 双保险：快照顶层只允许出现文件夹里的东西 + 本脚本生成的两个文件，
-# 防止 master 上的 README.md、.github 之类被顺手带进分支。
 allowed=$(
   {
     (cd "$folder_abs" && ls -A)
@@ -227,7 +206,7 @@ git push origin "$commit:refs/heads/$branch"
 git update-ref "refs/heads/$branch" "$commit"
 git branch --quiet --set-upstream-to="origin/$branch" "$branch" || true
 
-# ------------------------------------------------------------ README 索引
+
 readme_updated=0
 if [ "$readme_has_row" = 0 ]; then
   row="| \`$branch\` | $english_name | $chinese_name |"
@@ -254,7 +233,7 @@ else
   info "README.md 已包含该分支的索引，跳过"
 fi
 
-# ---------------------------------------------------------------- 删除文件夹
+
 if [ "$keep_folder" = 1 ]; then
   info "按 --keep 保留本地文件夹: $folder_rel"
 else
@@ -273,10 +252,4 @@ fi
 echo
 if [ "$readme_updated" = 1 ]; then
   info "完成：分支 $branch 已推送，README.md 索引已更新"
-else
-  info "完成：分支 $branch 已推送（README.md 索引里本来就有）"
-fi
 echo "  拉取单个游戏: git clone -b $branch --single-branch --depth 1 https://github.com/PackageInstaller/DataTable.git"
-if [ -z "$chinese_name" ]; then
-  echo "  提示：索引行 | \`$branch\` | $english_name |  | 的中文名是空的，记得之后补上"
-fi
