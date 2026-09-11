@@ -119,9 +119,9 @@ python build_all.py
 
 ## 文档
 
-- [docs/updater.md](docs/updater.md) —— 下载更新器原理与参数
-- [docs/masterdata.md](docs/masterdata.md) —— 数据表提取/解析/字段映射
-- [docs/config-format.md](docs/config-format.md) —— Config 二进制格式
-- [docs/lua-bridge.md](docs/lua-bridge.md) —— Lua 脚本桥（ToLua）使用情况
-- [docs/reverse-engineering.md](docs/reverse-engineering.md) —— CDPH 容器、
+- [Docs/updater.md](Docs/updater.md) —— 下载更新器原理与参数
+- [Docs/masterdata.md](Docs/masterdata.md) —— 数据表提取/解析/字段映射
+- [Docs/config-format.md](Docs/config-format.md) —— Config 二进制格式
+- [Docs/lua-bridge.md](Docs/lua-bridge.md) —— Lua 脚本桥（ToLua）使用情况
+- [Docs/reverse-engineering.md](Docs/reverse-engineering.md) —— CDPH 容器、
   壳 VM、四流解密、DLL 重建与反编译全过程
