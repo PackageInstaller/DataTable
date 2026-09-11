@@ -1,0 +1,11 @@
+﻿local CoreVerificationChallengeSelectHeroProxy = class("CoreVerificationChallengeSelectHeroProxy", (import("game.views.sectionSelectHero.SelectHeroProxy.SelectHeroBaseProxy")))
+
+function CoreVerificationChallengeSelectHeroProxy:GetHeroTeamInfoRoute()
+	return "/heroTeamInfoCoreVerificationChallenge"
+end
+
+function CoreVerificationChallengeSelectHeroProxy:GetStageInfoClass()
+	return CoreVerificationChallengeSectionStageInfoView
+end
+
+return CoreVerificationChallengeSelectHeroProxy

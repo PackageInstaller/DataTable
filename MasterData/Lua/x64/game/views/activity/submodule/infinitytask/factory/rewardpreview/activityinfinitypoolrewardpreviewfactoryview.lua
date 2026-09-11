@@ -1,0 +1,13 @@
+﻿ActivityInfinityPoolRewardPreviewBaseView = import("game.views.activity.Submodule.infinityTask.base.rewardPreview.ActivityInfinityPoolRewardPreviewBaseView")
+
+local ActivityInfinityPoolRewardPreviewFactoryView = class("ActivityInfinityPoolRewardPreviewFactoryView", ActivityInfinityPoolRewardPreviewBaseView)
+
+function ActivityInfinityPoolRewardPreviewFactoryView:UIName()
+	return "UI/MardukUI/catMatch/MardukCatmatchPopUI"
+end
+
+function ActivityInfinityPoolRewardPreviewFactoryView:GetRewardPreviewItem()
+	return ActivityInfinityPoolRewardPreviewFactoryItem
+end
+
+return ActivityInfinityPoolRewardPreviewFactoryView

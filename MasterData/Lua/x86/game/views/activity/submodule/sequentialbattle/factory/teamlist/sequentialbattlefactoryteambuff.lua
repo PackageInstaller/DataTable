@@ -1,0 +1,28 @@
+﻿local SequentialBattleFactoryTeamBuff = class("SequentialBattleFactoryTeamBuff", ReduxView)
+
+function SequentialBattleFactoryTeamBuff:Ctor(arg_1_1, arg_1_2)
+	self.gameObject_ = Object.Instantiate(arg_1_1, arg_1_2.transform)
+	self.transform_ = self.gameObject_.transform
+
+	self:BindCfgUI()
+end
+
+function SequentialBattleFactoryTeamBuff:Dispose()
+	SequentialBattleFactoryTeamBuff.super.Dispose(self)
+	Object.Destroy(self.gameObject_)
+
+	self.transform_ = nil
+	self.gameObject_ = nil
+end
+
+function SequentialBattleFactoryTeamBuff:SetData(arg_3_1)
+	self.icon_.sprite = pureGetSpriteWithoutAtlas("TextureConfig/MaedukAffix/" .. PublicBuffCfg[AffixTypeCfg[arg_3_1].affix_buff_id].icon)
+
+	self:Show(true)
+end
+
+function SequentialBattleFactoryTeamBuff:Show(arg_4_1)
+	SetActive(self.gameObject_, arg_4_1)
+end
+
+return SequentialBattleFactoryTeamBuff

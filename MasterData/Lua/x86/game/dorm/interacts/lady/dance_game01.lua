@@ -1,0 +1,27 @@
+﻿local var_0_0 = {
+	sequence = {
+		[0] = {
+			{
+				referencePointName = "gua_start",
+				referenceTarget = 1,
+				action = "putAt",
+				entity = 0
+			},
+			{
+				animeActionSubName = "01",
+				crossFade = 0,
+				action = "play",
+				entity = 0,
+				animeActionName = "dance_game"
+			}
+		}
+	},
+	keys = {
+		0
+	}
+}
+
+var_0_0.duration = 1.5
+var_0_0.fps = 30
+
+return var_0_0

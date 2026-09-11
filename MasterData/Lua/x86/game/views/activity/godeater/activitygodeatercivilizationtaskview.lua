@@ -1,0 +1,9 @@
+﻿ActivityGodEaterMilestoneView = import("game.views.activity.GodEater.ActivityGodEaterMilestoneView")
+
+local ActivityGodEaterCivilizationTaskView = class("ActivityGodEaterCivilizationTaskView", ActivityGodEaterMilestoneView)
+
+function ActivityGodEaterCivilizationTaskView:UIName()
+	return "Widget/Version/V4_2_GodEaterUI/V4_2_GodEaterUI_Bounty/V4_2_GodEaterUI_Civilization_QuestPopUI"
+end
+
+return ActivityGodEaterCivilizationTaskView

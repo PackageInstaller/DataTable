@@ -1,0 +1,182 @@
+﻿local var_0_0 = singletonClass("SandplayIlluData")
+local var_0_1 = {}
+local var_0_2 = {}
+local var_0_3 = 0
+local var_0_4 = {
+	NOT_SEE = 0,
+	NOT_REWARD = 1,
+	REWARD = 2
+}
+
+function var_0_0.Init(arg_1_0)
+	var_0_1 = {}
+	var_0_2 = {}
+	var_0_3 = 0
+end
+
+function var_0_0.InitData(arg_2_0, arg_2_1)
+	var_0_1 = {}
+	var_0_2 = {}
+	var_0_3 = arg_2_1.activity_id
+
+	if not arg_2_1.data then
+		return
+	end
+
+	for iter_2_0, iter_2_1 in ipairs(arg_2_1.data.item_list) do
+		if SandplayIlluCfg[iter_2_1.id] == nil then
+			Debug.LogError("收藏品ID有误:" .. tostring(iter_2_1.id))
+
+			break
+		end
+
+		local var_2_0 = SandplayIlluCfg[iter_2_1.id].type
+
+		if not var_0_2[SandplayIlluCfg[iter_2_1.id].type] then
+			var_0_2[var_2_0] = {}
+		end
+
+		var_0_1[iter_2_1.id] = {
+			id = iter_2_1.id,
+			state = iter_2_1.state
+		}
+
+		table.insert(var_0_2[var_2_0], iter_2_1.id)
+	end
+end
+
+function var_0_0.GetActivityID(arg_3_0)
+	return var_0_3
+end
+
+function var_0_0.SetNewItem(arg_4_0, arg_4_1)
+	if SandplayIlluCfg[arg_4_1] == nil then
+		Debug.Log("收藏品ID有误:" .. tostring(arg_4_1))
+
+		return
+	end
+
+	local var_4_0 = SandplayIlluCfg[arg_4_1].type
+
+	if var_0_2[SandplayIlluCfg[arg_4_1].type] == nil then
+		var_0_2[var_4_0] = {}
+	end
+
+	if var_0_1[arg_4_1] == nil then
+		var_0_1[arg_4_1] = {
+			id = arg_4_1,
+			state = var_0_4.NOT_SEE
+		}
+
+		for iter_4_0, iter_4_1 in ipairs(var_0_2[var_4_0]) do
+			if iter_4_1 == arg_4_1 then
+				return
+			end
+		end
+
+		table.insert(var_0_2[var_4_0], arg_4_1)
+	end
+end
+
+function var_0_0.UpdateItemDataSaw(arg_5_0, arg_5_1, arg_5_2)
+	if var_0_1[arg_5_1] then
+		if arg_5_2 then
+			var_0_1[arg_5_1].state = var_0_4.NOT_REWARD or var_0_4.NOT_SEE
+		end
+	end
+end
+
+function var_0_0.UpdateItemDataReward(arg_6_0, arg_6_1, arg_6_2)
+	if var_0_1[arg_6_1] then
+		if arg_6_2 then
+			var_0_1[arg_6_1].state = var_0_4.REWARD or var_0_4.NOT_REWARD
+		end
+	end
+end
+
+function var_0_0:ModifyMainQuestID(arg_7_1)
+	if QWorldQuestTool.IsMainQuestFinish(arg_7_1) then
+		if SandplayIlluCfg.get_id_list_by_task_id[arg_7_1] then
+			for iter_7_0, iter_7_1 in ipairs(SandplayIlluCfg.get_id_list_by_task_id[arg_7_1]) do
+				self:SetNewItem(iter_7_1)
+				QWorldData:AddItemHint(iter_7_1)
+				Debug.Log("sandplayilluTest_____ Gain itemID:" .. tostring(iter_7_1))
+			end
+		end
+	end
+end
+
+function var_0_0.GetGroupNum(arg_8_0)
+	local var_8_0 = 0
+
+	for iter_8_0, iter_8_1 in pairs(var_0_2) do
+		if iter_8_1 and type(iter_8_1) == "table" and #iter_8_1 > 0 then
+			var_8_0 = var_8_0 + 1
+		end
+	end
+
+	return var_8_0
+end
+
+function var_0_0.GetGroupList(arg_9_0)
+	local var_9_0 = {}
+
+	for iter_9_0, iter_9_1 in pairs(var_0_2) do
+		if iter_9_1 and type(iter_9_1) == "table" and #iter_9_1 > 0 then
+			table.insert(var_9_0, iter_9_0)
+		end
+	end
+
+	table.sort(var_9_0)
+
+	return var_9_0
+end
+
+function var_0_0.GetItemNum(arg_10_0, arg_10_1)
+	if var_0_2[arg_10_1] then
+		return #var_0_2[arg_10_1]
+	end
+
+	return 0
+end
+
+function var_0_0.IsUnlock(arg_11_0, arg_11_1)
+	if var_0_1[arg_11_1] == nil then
+		return false
+	end
+
+	return true
+end
+
+function var_0_0.IsSaw(arg_12_0, arg_12_1)
+	if var_0_1[arg_12_1] and var_0_1[arg_12_1].state ~= var_0_4.NOT_SEE then
+		return true
+	end
+
+	return false
+end
+
+function var_0_0.IsReceive(arg_13_0, arg_13_1)
+	if var_0_1[arg_13_1] and var_0_1[arg_13_1].state == var_0_4.REWARD then
+		return true
+	end
+
+	return false
+end
+
+function var_0_0.GetAwardID(arg_14_0)
+	local var_14_0 = {}
+	local var_14_1 = {}
+
+	for iter_14_0, iter_14_1 in pairs(var_0_1) do
+		if iter_14_1.state ~= var_0_4.REWARD then
+			table.insert(var_14_0, iter_14_1.id)
+		else
+			table.insert(var_14_1, iter_14_1.id)
+		end
+	end
+
+	return var_14_0, var_14_1
+end
+
+return var_0_0

@@ -1,0 +1,9 @@
+﻿NewBattleChallengeFailedWithButtonView = import("game.views.battleFailed.newBattleFailed.NewBattleChallengeFailedWithButtonView")
+
+local NewBattleCoreVerificationFailedView = class("NewBattleCoreVerificationFailedView", NewBattleChallengeFailedWithButtonView)
+
+function NewBattleCoreVerificationFailedView:GetRecommendTeam()
+	return CoreVerificationInfoCfg[self.stageData_.infoID].recommend_team
+end
+
+return NewBattleCoreVerificationFailedView

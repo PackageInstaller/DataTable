@@ -1,0 +1,13 @@
+﻿return QWorldPrefab.New("QWSpriteRender", function(arg_1_0, arg_1_1)
+	local var_1_0 = QWorldMgr:GetQWorldEntityMgr()
+	local var_1_1 = var_1_0:CreateEntity(arg_1_0, arg_1_1, QWORLD_ENTITY_TYPE.DEFAULT)
+	local var_1_2 = QWorldLuaBridge.GetMapEntityData(arg_1_0)
+	local var_1_3 = Asset.Instantiate(string.isNullOrEmpty(var_1_0.spritePath) and "QWWorld/Game/Props_lattice_wall_1" or var_1_2.spritePath)
+
+	var_1_3.transform.parent = var_1_1:GetTransform()
+	var_1_3.transform.localPosition = Vector3.zero
+	var_1_3.transform.localRotation = Quaternion.identity
+	var_1_3:GetComponent("SpriteRenderer").size = var_1_2.size
+
+	return var_1_1
+end)

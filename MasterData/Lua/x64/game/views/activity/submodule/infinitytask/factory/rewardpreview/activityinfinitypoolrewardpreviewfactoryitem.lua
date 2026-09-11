@@ -1,0 +1,9 @@
+﻿ActivityInfinityPoolRewardPreviewBaseItem = import("game.views.activity.Submodule.infinityTask.base.rewardPreview.ActivityInfinityPoolRewardPreviewBaseItem")
+
+local ActivityInfinityPoolRewardPreviewItem = class("ActivityInfinityPoolRewardPreviewItem", ActivityInfinityPoolRewardPreviewBaseItem)
+
+function ActivityInfinityPoolRewardPreviewItem:GetRewardItem(arg_1_1)
+	return RewardPoolFactoryItem.New(self.commonParent_, arg_1_1, true)
+end
+
+return ActivityInfinityPoolRewardPreviewItem

@@ -11,25 +11,24 @@
 ## 目录结构
 
 ```text
-AetherGazer/
+DataTable/
 ├── README.md
-├── LICENSE
+├── AetherGazer.py              # 子命令入口：资产下载 / 数据表 / Lua / 立绘
+│                               # （原 updater/aethergazer_updater.py、scripts/fetch_*.py 已并入）
+├── Schema.json                 # 180 个 protobuf 消息字段映射（数据表解析用）
+├── MasterData/                 # 数据表 JSON、Lua/x64、Lua/x86、DLL 反编译源码
 ├── docs/
 │   ├── updater.md              # 下载更新器使用文档
 │   ├── masterdata.md           # 数据表解析文档
 │   ├── config-format.md        # Config 容器/行/字段格式说明
+│   ├── lua-bridge.md           # Lua 脚本桥（ToLua）与反编译
 │   └── reverse-engineering.md  # 热更 DLL 逆向还原全记录
-├── updater/
-│   └── aethergazer_updater.py  # 资源下载/增量更新器
-├── masterdata/
-│   ├── extract_config.py       # config.ys -> Config TextAsset
-│   ├── config_parser.py        # Config -> MasterData/*.json
-│   ├── extract_schema.py       # il2cpp.cs -> config_schema.json
-│   └── config_schema.json      # 180 个 protobuf 消息字段映射
 ├── scripts/
-│   ├── fetch_masterdata.py     # 一键下载+提取+解析数据表
-│   └── fetch_lua.py            # 下载 scripts64/scripts32 并拆出 x64/x86 Lua
-└── dll_reverse/
+│   ├── decrypt_metadata.py     # global-metadata.dat 解密（CDPH）
+│   ├── fetch_masterdata.py     # 旧脚本：数据表一键下载+解析（已并入 masterdata 子命令）
+│   ├── fetch_lua.py            # 旧脚本：Lua 下载/提取/反编译（已并入 lua 子命令）
+│   └── extract_schema.py       # 旧脚本：il2cpp.cs -> Schema.json（已并入 schema 子命令）
+└── research/
     ├── cdph_vm.py              # CDPH 壳 VM 解释器
     ├── decrypt_il.py           # IL 方法体解密
     ├── rebuild_dll.py          # 完整 DLL 重建
@@ -40,10 +39,14 @@ AetherGazer/
 
 ## 快速开始
 
-### 1. 下载全部资源（约 59 GiB，含中日语音）
+```bash
+python AetherGazer.py --help
+```
+
+### 1. 资产全量下载 / 增量更新
 
 ```bash
-python updater/aethergazer_updater.py --output ./aethergazer --jobs 8
+python AetherGazer.py assets --output ./AetherGazer --jobs 8
 ```
 
 首次运行全量下载到 `Assets/`；之后再次运行只下载差异到 `Updates/`。
@@ -51,51 +54,55 @@ python updater/aethergazer_updater.py --output ./aethergazer --jobs 8
 
 ```bash
 # 只下载数据表与配置
-python updater/aethergazer_updater.py --output ./aethergazer --only all --voice-lang ''
+python AetherGazer.py assets --output ./AetherGazer --only all --voice-lang ''
+
+# 只下载 Lua 相关资源
+python AetherGazer.py assets --output ./AetherGazer --only lua
 
 # 只下载立绘（portrait / portraitdlc）
-python updater/aethergazer_updater.py --output ./aethergazer --illustration
+python AetherGazer.py painting --output ./AetherGazer
 
 # 只生成清单与下载链接，不下载
-python updater/aethergazer_updater.py --output ./aethergazer --list-only
-
-# 下载完成后自动解析数据表
-python updater/aethergazer_updater.py --output ./aethergazer --masterdata
+python AetherGazer.py assets --output ./AetherGazer --list-only
 ```
 
-### 2. 一键解析数据表
+### 2. 数据表模式（只下载数据表资产 + Lua，解析到 MasterData/）
 
 ```bash
-python scripts/fetch_masterdata.py
+python AetherGazer.py masterdata
 ```
 
-脚本会自动下载 `config.ys`、提取 Config TextAsset、按字段映射反序列化
-全部 89 张表到 `MasterData/`（每表一个 JSON 文件）。
-
-### 2.5 下载并提取 Lua 脚本
-
-只下载 Lua 相关资源：
+数据表模式只拉取数据表资产 `config.ys` 与 Lua bundle（`scripts64` /
+`scripts32`），不会下载整包资源：按字段映射反序列化全部 89 张表到
+`MasterData/*.json`，并把 Lua 反编译到 `MasterData/Lua/x64`、
+`MasterData/Lua/x86`。
 
 ```bash
-python updater/aethergazer_updater.py --output ./aethergazer --only lua
+# 只解析数据表，不下载 Lua
+python AetherGazer.py masterdata --no-lua
+
+# 只要 LuaJIT 字节码，不调用 luajit-decompiler
+python AetherGazer.py masterdata --no-decompile
+
+# 只处理单个架构
+python AetherGazer.py lua --arch 64
 ```
 
-或者一键下载并解出两个架构的全部 Lua 到 `Lua/x64` 与 `Lua/x86`：
+### 2.5 只下载并提取 Lua 脚本
 
 ```bash
-python scripts/fetch_lua.py
+python AetherGazer.py lua                       # Lua/x64 + Lua/x86（默认反编译）
+python AetherGazer.py lua --arch 64 --force     # 强制重新下载/反编译
+python AetherGazer.py lua --keep-bytecode       # 额外保留字节码到 LuaBytecode/
 ```
 
-下载后调用系统命令 `luajit-decompiler` 反编译（结果在 `LuaDecomp/`）：
-
-```bash
-python scripts/fetch_lua.py --decompile
-```
+反编译依赖系统命令 `luajit-decompiler`；没有该命令时保留 LuaJIT
+字节码（`*.lua.bytes`）。
 
 ### 3. 反编译HybridCLR DLL
 
 ```bash
-cd dll_reverse
+cd research
 python rebuild_dll.py                       # 重建 P08.FlipCardGame.rebuilt.dll
 python patch_system_refs.py                 # 生成引用修补版
 cp P08.FlipCardGame.decompile.dll <游戏 Managed 目录>/   # 与引用程序集同目录
@@ -106,7 +113,7 @@ ilspycmd P08.FlipCardGame.decompile.dll -p -o DLL   # 1025 个 .cs，0 警告
 ### 4. 批量重建并反编译全部HybridCLR DLL
 
 ```bash
-cd dll_reverse
+cd research
 python build_all.py
 ```
 
