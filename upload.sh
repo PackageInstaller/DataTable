@@ -1,255 +1,409 @@
+#!/usr/bin/env bash
+# 把某个游戏文件夹做成 DataTable 的独立快照并推送。
+# 大文件（默认 >= 50MB）自动走 Git LFS。
+#
+# 用法:
+#   ./snapshot-game.sh Echocalypse
+#   ./snapshot-game.sh /path/to/SomeGame --name SomeGame
+#
+# 已有 game/<名> 分支时默认更新该分支（保留历史），不会重建孤儿快照。
+# 游戏自己的更新脚本只负责刷新本地数据，跑完再执行本脚本上传。
+#
+# 常用选项:
+#   --name NAME        分支名，默认用文件夹名
+#   --threshold 90M    走 LFS 的大小阈值
+#   --new              仅当分支不存在时新建孤儿快照
+#   --no-lfs           不启用 LFS；单个文件超过 100MB 会失败
+#   --no-push          只提交不推送
+#   --no-index         不改 master README
+#   --dry-run          只打印将要做的事
+#   --message MSG      提交说明
+
 set -euo pipefail
 
-if [ -t 1 ]; then
-  BOLD=$'\033[1m'; CYAN=$'\033[36m'; YELLOW=$'\033[33m'; RED=$'\033[31m'; RESET=$'\033[0m'
-else
-  BOLD=; CYAN=; YELLOW=; RED=; RESET=
-fi
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+BRANCH_PREFIX="game/"
+DEFAULT_THRESHOLD="50M"
+GITHUB_HARD="100M"
 
-info() { printf '%s==>%s %s\n' "$CYAN$BOLD" "$RESET" "$*"; }
-warn() { printf '%s警告:%s %s\n' "$YELLOW$BOLD" "$RESET" "$*" >&2; }
-die()  { printf '%s错误:%s %s\n' "$RED$BOLD" "$RESET" "$*" >&2; exit 1; }
+GAME_NAME=""
+SRC_DIR=""
+THRESHOLD="$DEFAULT_THRESHOLD"
+FORCE_NEW=0
+NO_LFS=0
+NO_PUSH=0
+NO_INDEX=0
+DRY_RUN=0
+COMMIT_MSG=""
 
 usage() {
-  cat <<'EOF'
-把游戏数据文件夹发布成独立的孤儿快照分支。
-
-用法:
-  snapshot-game.sh [选项] <文件夹> [英文名] [中文名]
-
-流程:
-  1. 在 $TMPDIR 的临时目录里组装快照（只读文件夹，不动主工作区、不切分支）
-  2. 用文件夹内容建立/更新孤儿分支 game/<文件夹名>（内容放在分支根目录）并推送
-  3. 回到 master，在 README.md 索引表里按字典序插入一行（中文名留空）并推送
-  4. 删除本地文件夹
-
-选项:
-  -k, --keep   保留本地文件夹（默认会删掉）
-  -y, --yes    兼容旧用法，默认就是删，不需要这个参数
-  -h, --help   显示本帮助
-
-说明:
-  - <文件夹> 相对仓库根目录解析，文件夹里被 .gitignore 排除的内容
-    （例如 Assets/*、Painting/、__pycache__/）不会进快照。
-  - 快照在 $TMPDIR 的临时目录里组装，README.md、.github 之类不会被带进分支。
-  - 已经在 README.md 里的分支不会被重复插入索引，直接原地更新快照。
-  - 推送成功之后默认删除本地文件夹，想留着就加 -k。
-
-示例:
-  snapshot-game.sh AzurLane                  # 分支 game/AzurLane，英文名 AzurLane，中文名留空
-  snapshot-game.sh AzurLane AzurLane 碧蓝航线  # 顺便填上中文名
-EOF
+    sed -n '2,20p' "$0" | sed 's/^# \?//'
+    exit "${1:-0}"
 }
 
-keep_folder=0
-params=()
+log() { printf '[snapshot] %s\n' "$*"; }
+die() { printf '[snapshot] 错误: %s\n' "$*" >&2; exit 1; }
 
-while [ $# -gt 0 ]; do
-  case $1 in
-    -h | --help) usage; exit 0 ;;
-    --) shift; while [ $# -gt 0 ]; do params+=("$1"); shift; done ;;
-    -?*) usage >&2; die "未知选项: $1" ;;
-    *) params+=("$1"); shift ;;
-  esac
+parse_size() {
+    local raw="${1^^}"
+    if [[ "$raw" =~ ^([0-9]+)([KMG]?)$ ]]; then
+        local n="${BASH_REMATCH[1]}"
+        local u="${BASH_REMATCH[2]}"
+        case "$u" in
+            K) echo $((n * 1024)) ;;
+            M) echo $((n * 1024 * 1024)) ;;
+            G) echo $((n * 1024 * 1024 * 1024)) ;;
+            *) echo "$n" ;;
+        esac
+        return
+    fi
+    die "无法解析大小: $1"
+}
+
+human_size() {
+    local n="$1"
+    if ((n >= 1073741824)); then
+        awk -v n="$n" 'BEGIN { printf "%.1fGB", n/1073741824 }'
+    elif ((n >= 1048576)); then
+        awk -v n="$n" 'BEGIN { printf "%.1fMB", n/1048576 }'
+    elif ((n >= 1024)); then
+        awk -v n="$n" 'BEGIN { printf "%.1fKB", n/1024 }'
+    else
+        echo "${n}B"
+    fi
+}
+
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        -h | --help) usage 0 ;;
+        --name)
+            GAME_NAME="${2:-}"
+            shift 2
+            ;;
+        --threshold)
+            THRESHOLD="${2:-}"
+            shift 2
+            ;;
+        --new)
+            FORCE_NEW=1
+            shift
+            ;;
+        --no-lfs)
+            NO_LFS=1
+            shift
+            ;;
+        --no-push)
+            NO_PUSH=1
+            shift
+            ;;
+        --no-index)
+            NO_INDEX=1
+            shift
+            ;;
+        --dry-run)
+            DRY_RUN=1
+            shift
+            ;;
+        --message)
+            COMMIT_MSG="${2:-}"
+            shift 2
+            ;;
+        --)
+            shift
+            break
+            ;;
+        -*)
+            die "未知选项: $1"
+            ;;
+        *)
+            if [[ -n "$SRC_DIR" ]]; then
+                die "只能传入一个文件夹"
+            fi
+            SRC_DIR="$1"
+            shift
+            ;;
+    esac
 done
 
-if [ "${#params[@]}" -lt 1 ] || [ "${#params[@]}" -gt 3 ]; then
-  usage >&2
-  exit 2
-fi
+[[ -n "$SRC_DIR" ]] || usage 1
 
-folder_arg=${params[0]}
-english_name=${params[1]:-}
-chinese_name=${params[2]:-}
+cd "$REPO_ROOT"
+git rev-parse --is-inside-work-tree >/dev/null 2>&1 || die "请在 DataTable 仓库里运行"
+[[ "$(git rev-parse --show-toplevel)" == "$REPO_ROOT" ]] || die "脚本必须放在仓库根目录"
 
-repo_root=$(git rev-parse --show-toplevel 2>/dev/null) || die "当前目录不在 git 仓库里"
-repo_root=$(cd "$repo_root" && pwd -P)
-cd "$repo_root"
+SRC_DIR="$(cd "$SRC_DIR" && pwd)"
+[[ -d "$SRC_DIR" ]] || die "不是文件夹: $SRC_DIR"
+GAME_NAME="${GAME_NAME:-$(basename "$SRC_DIR")}"
+[[ "$GAME_NAME" =~ ^[A-Za-z0-9._⁄/-]+$ ]] || die "游戏名不合法: $GAME_NAME"
+BRANCH="${BRANCH_PREFIX}${GAME_NAME}"
+THRESHOLD_BYTES="$(parse_size "$THRESHOLD")"
+HARD_BYTES="$(parse_size "$GITHUB_HARD")"
 
-[ -d "$folder_arg" ] || die "找不到文件夹: $folder_arg（相对仓库根目录）"
-folder_abs=$(cd "$folder_arg" && pwd -P)
-
-[ "$folder_abs" != "$repo_root" ] || die "不能把仓库根目录当成游戏文件夹"
-case $folder_abs in
-  "$repo_root"/*) ;;
-  *) die "文件夹必须在仓库 $repo_root 里面: $folder_abs" ;;
-esac
-
-folder_rel=${folder_abs#"$repo_root"/}
-folder_name=${folder_rel##*/}
-branch="game/$folder_name"
-[ -n "$english_name" ] || english_name=$folder_name
-
-[ -n "$(ls -A "$folder_abs")" ] || die "$folder_rel 是空文件夹"
-
-current_branch=$(git symbolic-ref -q --short HEAD || true)
-[ "$current_branch" = master ] || die "请先切回 master 再执行（当前分支: ${current_branch:-detached HEAD}）"
-
-if ! git diff --quiet -- README.md || ! git diff --cached --quiet -- README.md; then
-  die "README.md 有未提交的改动，请先处理"
-fi
-if ! git diff --quiet; then
-  warn "工作区还有其他未提交的改动，本脚本只提交 README.md，不管其他文件"
-fi
-
-if [ -e "$folder_abs/.git" ]; then
-  die "$folder_rel 里有嵌套的 .git，git 会把它记成 gitlink，请先处理"
-fi
-
-if [ -n "$(git ls-files -- "$folder_rel")" ]; then
-  die "$folder_rel 已被 master 跟踪，请先把这些文件从 master 移除"
-fi
-
-info "更新 origin/master ..."
-git fetch --quiet origin master
-if git rev-parse -q --verify refs/remotes/origin/master >/dev/null; then
-  git merge-base --is-ancestor refs/remotes/origin/master master ||
-    die "本地 master 落后于 origin/master，请先 git pull --ff-only"
-fi
-
-remote_has_branch=0
-if git ls-remote --exit-code --heads origin "refs/heads/$branch" >/dev/null 2>&1; then
-  remote_has_branch=1
-  info "分支 $branch 已存在，这次是更新快照"
-  git fetch --quiet origin "refs/heads/$branch:refs/remotes/origin/$branch"
-fi
-
-parent=
-if [ "$remote_has_branch" = 1 ]; then
-  parent=$(git rev-parse "refs/remotes/origin/$branch")
-fi
-
-if git show-ref --verify --quiet "refs/heads/$branch"; then
-  local_tip=$(git rev-parse "refs/heads/$branch")
-  if [ -n "$parent" ] && [ "$local_tip" != "$parent" ] &&
-     ! git merge-base --is-ancestor "$local_tip" "$parent"; then
-    die "本地分支 $branch 有未推送的提交，先确认一下（要丢弃就 git branch -D $branch）"
-  fi
-  [ -n "$parent" ] || parent=$local_tip
-fi
-
-readme_has_row=0
-if grep -qF "| \`$branch\` |" README.md; then
-  readme_has_row=1
-  info "README.md 里已经有 $branch 的索引，稍后跳过索引更新"
-fi
-
-work=$(mktemp -d "${TMPDIR:-/tmp}/snapshot-game.XXXXXX")
-trap 'rm -rf "$work"' EXIT
-
-
-attrs="$work/gitattributes"
-repo_attrs="$work/repo.gitattributes"
-if [ -f .gitattributes ]; then
-  cp .gitattributes "$repo_attrs"
-else
-  git show master:.gitattributes >"$repo_attrs" 2>/dev/null || : >"$repo_attrs"
-fi
-{
-  awk -v prefix="$folder_name/" 'index($0, prefix) == 1 { print substr($0, length(prefix) + 1) }' "$repo_attrs"
-  if [ -f "$folder_abs/.gitattributes" ]; then cat "$folder_abs/.gitattributes"; fi
-} | awk '!seen[$0]++' >"$attrs"
-
-ignore="$work/gitignore"
-if [ -f .gitignore ]; then
-  cp .gitignore "$ignore"
-else
-  git show master:.gitignore >"$ignore" 2>/dev/null || : >"$ignore"
-fi
-
-idx="$work/index"
-info "在临时目录里组装快照（只读 $folder_rel）"
-(
-  cd "$folder_abs"
-  GIT_INDEX_FILE="$idx" git \
-    -c core.attributesFile="$attrs" \
-    -c core.excludesFile="$ignore" \
-    --work-tree="$folder_abs" \
-    add -A -- .
+RSYNC_EXCLUDES=(
+    --exclude ".git"
+    --exclude ".git/"
+    --exclude "__pycache__/"
+    --exclude "*.py[cod]"
+    --exclude "snapshot-game.sh"
+    --exclude "Assets/"
+    --exclude "Painting/"
+    --exclude "Paintings/"
+    --exclude "Zips/"
+    --exclude "ZipsSilent/"
+    --exclude "ZipsLang/"
+    --exclude "Usms/"
+    --exclude "Bytecode/"
 )
 
-attrs_blob=$(git hash-object -w --stdin <"$attrs")
-ignore_blob=$(git hash-object -w --stdin <"$ignore")
-GIT_INDEX_FILE="$idx" git update-index --add --cacheinfo "100644,$attrs_blob,.gitattributes"
-GIT_INDEX_FILE="$idx" git update-index --add --cacheinfo "100644,$ignore_blob,.gitignore"
+require_cmd() {
+    command -v "$1" >/dev/null 2>&1 || die "缺少命令: $1"
+}
 
-tree=$(GIT_INDEX_FILE="$idx" git write-tree)
+fetch_branch() {
+    if git show-ref --verify --quiet "refs/heads/$BRANCH"; then
+        return
+    fi
+    if git ls-remote --exit-code origin "refs/heads/$BRANCH" >/dev/null 2>&1; then
+        git fetch origin "$BRANCH:$BRANCH"
+    fi
+}
 
-files=$(git ls-tree -r --name-only "$tree" | wc -l)
-[ "$files" -gt 0 ] || die "快照里没有任何文件，检查一下 $folder_rel 是不是被 .gitignore 排除了"
-gitlinks=$(git ls-tree -r "$tree" | awk '$1 == "160000" { print $4 }')
-if [ -n "$gitlinks" ]; then
-  die "快照里有嵌套仓库（gitlink），请先处理: $gitlinks"
+list_large_files() {
+    local root="$1"
+    find "$root" -type f -print0 | while IFS= read -r -d '' f; do
+        local rel="${f#"$root"/}"
+        case "$rel" in
+            .git/* | __pycache__/* | Assets/* | Painting/* | Paintings/* | Zips/* | ZipsSilent/* | ZipsLang/* | Usms/* | Bytecode/*)
+                continue
+                ;;
+        esac
+        [[ "$(basename "$f")" == "snapshot-game.sh" ]] && continue
+        local sz
+        sz="$(stat -c '%s' "$f")"
+        if ((sz >= THRESHOLD_BYTES)); then
+            printf '%s\t%s\n' "$sz" "$rel"
+        fi
+    done
+}
+
+track_large_files() {
+    local dest="$1"
+    local list="$2"
+
+    if [[ ! -s "$list" ]]; then
+        log "没有超过 ${THRESHOLD} 的文件，跳过 LFS"
+        return
+    fi
+
+    if [[ "$NO_LFS" -eq 1 ]]; then
+        while IFS=$'\t' read -r sz rel; do
+            [[ -n "$rel" ]] || continue
+            if ((sz >= HARD_BYTES)); then
+                die "$rel 有 $(human_size "$sz")，超过 GitHub 100MB 限制，不能加 --no-lfs"
+            fi
+        done <"$list"
+        log "已指定 --no-lfs，大文件将按普通 blob 提交"
+        return
+    fi
+
+    require_cmd git-lfs
+    if [[ "$DRY_RUN" -eq 1 ]]; then
+        log "dry-run: git lfs track 下列文件"
+        return
+    fi
+
+    git -C "$dest" lfs install --local >/dev/null
+    while IFS=$'\t' read -r sz rel; do
+        [[ -n "$rel" ]] || continue
+        log "  LFS  $(human_size "$sz")  $rel"
+        git -C "$dest" lfs track --filename -- "$rel" >/dev/null
+    done <"$list"
+}
+
+insert_readme_row() {
+    local name="$1"
+    python3 - "$REPO_ROOT/README.md" "$name" <<'PY'
+import pathlib
+import sys
+
+readme = pathlib.Path(sys.argv[1])
+name = sys.argv[2]
+row = f"| `game/{name}` | {name} |\n"
+text = readme.read_text(encoding="utf-8")
+if row in text:
+    raise SystemExit(0)
+lines = text.splitlines(True)
+out = []
+inserted = False
+for line in lines:
+    if (
+        not inserted
+        and line.startswith("| `game/")
+        and line[len("| `game/") :].split("`", 1)[0] > name
+    ):
+        out.append(row)
+        inserted = True
+    out.append(line)
+if not inserted:
+    for i in range(len(out) - 1, -1, -1):
+        if out[i].startswith("| `game/"):
+            out.insert(i + 1, row)
+            inserted = True
+            break
+if not inserted:
+    raise SystemExit("README 里找不到分支表格")
+readme.write_text("".join(out), encoding="utf-8")
+raise SystemExit(2)
+PY
+}
+
+sync_tree() {
+    local src="$1"
+    local dest="$2"
+    local saved_attr=""
+    require_cmd rsync
+    if [[ -f "$dest/.gitattributes" ]]; then
+        saved_attr="$(mktemp)"
+        cp -a "$dest/.gitattributes" "$saved_attr"
+    fi
+    rsync -a --delete "${RSYNC_EXCLUDES[@]}" "$src/" "$dest/"
+    cp -a "$REPO_ROOT/.gitignore" "$dest/.gitignore"
+    if [[ -n "$saved_attr" ]]; then
+        cp -a "$saved_attr" "$dest/.gitattributes"
+        rm -f "$saved_attr"
+    elif [[ ! -f "$dest/.gitattributes" ]]; then
+        : >"$dest/.gitattributes"
+    fi
+    rm -f "$dest/README.md"
+}
+
+commit_tree() {
+    local dest="$1"
+    local msg="$2"
+    git -C "$dest" add -A
+    if git -C "$dest" diff --cached --quiet; then
+        log "分支 ${BRANCH} 没有变更"
+        return 1
+    fi
+    if [[ "$DRY_RUN" -eq 1 ]]; then
+        log "dry-run: 提交 ${msg}"
+        git -C "$dest" reset -q
+        return 0
+    fi
+    git -C "$dest" commit -m "$msg"
+}
+
+push_branch() {
+    local dest="$1"
+    local ref="$2"
+    [[ "$NO_PUSH" -eq 1 ]] && return
+    if [[ "$DRY_RUN" -eq 1 ]]; then
+        log "dry-run: 推送 ${ref}"
+        return
+    fi
+    git -C "$dest" push -u origin "$ref"
+}
+
+update_index() {
+    [[ "$NO_INDEX" -eq 1 ]] && return
+    local code=0
+    insert_readme_row "$GAME_NAME" || code=$?
+    if [[ "$code" -eq 0 ]]; then
+        log "README 已有 ${GAME_NAME}"
+        return
+    fi
+    [[ "$code" -eq 2 ]] || die "更新 README 失败"
+    if [[ "$DRY_RUN" -eq 1 ]]; then
+        git -C "$REPO_ROOT" checkout -- README.md
+        log "dry-run: 写入 README 索引 ${GAME_NAME}"
+        return
+    fi
+    git -C "$REPO_ROOT" add README.md
+    if git -C "$REPO_ROOT" diff --cached --quiet; then
+        return
+    fi
+    git -C "$REPO_ROOT" commit -m "在索引里加上 ${GAME_NAME} 的独立快照分支。"
+    [[ "$NO_PUSH" -eq 1 ]] || git -C "$REPO_ROOT" push origin HEAD
+}
+
+current="$(git -C "$REPO_ROOT" branch --show-current)"
+[[ "$current" == "master" || "$current" == "main" ]] || die "请先切到 master 再发布（当前: ${current}）"
+
+require_cmd git
+require_cmd python3
+require_cmd find
+[[ "$NO_LFS" -eq 1 ]] || require_cmd git-lfs
+
+EXISTS=0
+git show-ref --verify --quiet "refs/heads/$BRANCH" && EXISTS=1
+git show-ref --verify --quiet "refs/remotes/origin/$BRANCH" && EXISTS=1
+if [[ "$EXISTS" -eq 0 ]]; then
+    git ls-remote --exit-code origin "refs/heads/$BRANCH" >/dev/null 2>&1 && EXISTS=1 || true
 fi
 
-allowed=$(
-  {
-    (cd "$folder_abs" && ls -A)
-    printf '%s\n' .gitattributes .gitignore
-  } | LC_ALL=C sort -u
-)
-stray=$(comm -23 <(git ls-tree --name-only "$tree" | LC_ALL=C sort) <(printf '%s\n' "$allowed"))
-if [ -n "$stray" ]; then
-  die "快照里出现了 $folder_rel 之外的条目: $stray"
+if [[ "$EXISTS" -eq 1 && "$FORCE_NEW" -eq 1 ]]; then
+    die "分支 ${BRANCH} 已存在。已有分支请直接更新；重建孤儿快照需要先手动删掉该分支。"
 fi
 
-if [ -n "$parent" ]; then
-  message="Update $folder_name snapshot"
-  commit=$(git commit-tree "$tree" -p "$parent" -m "$message")
+MODE="create"
+[[ "$EXISTS" -eq 1 ]] && MODE="update"
+if [[ "$FORCE_NEW" -eq 1 ]]; then
+    MODE="create"
+fi
+
+if [[ -z "$COMMIT_MSG" ]]; then
+    if [[ "$MODE" == "create" ]]; then
+        COMMIT_MSG="Snapshot of ${GAME_NAME}"
+    else
+        COMMIT_MSG="Update ${GAME_NAME} snapshot"
+    fi
+fi
+
+log "游戏 ${GAME_NAME}"
+log "来源 ${SRC_DIR}"
+log "模式 ${MODE} -> ${BRANCH}"
+log "LFS 阈值 ${THRESHOLD} ($(human_size "$THRESHOLD_BYTES"))"
+
+LARGE_LIST="$(mktemp)"
+list_large_files "$SRC_DIR" | sort -t $'\t' -k2 >"$LARGE_LIST"
+if [[ -s "$LARGE_LIST" ]]; then
+    log "将走 Git LFS 的文件:"
+    while IFS=$'\t' read -r sz rel; do
+        log "  $(human_size "$sz")  $rel"
+    done <"$LARGE_LIST"
+fi
+
+WT="$(mktemp -d "${TMPDIR:-/tmp}/datatable-${GAME_NAME}.XXXXXX")"
+cleanup() {
+    if git -C "$REPO_ROOT" worktree list --porcelain 2>/dev/null | grep -Fq "worktree $WT"; then
+        git -C "$REPO_ROOT" worktree remove --force "$WT" >/dev/null 2>&1 || true
+    fi
+    rm -rf "$WT"
+    rm -f "$LARGE_LIST"
+}
+trap cleanup EXIT
+
+if [[ "$MODE" == "create" ]]; then
+    git -C "$REPO_ROOT" worktree add --orphan -b "$BRANCH" "$WT"
 else
-  message="Snapshot of $folder_name"
-  commit=$(git commit-tree "$tree" -m "$message")
+    fetch_branch
+    git -C "$REPO_ROOT" worktree add "$WT" "$BRANCH"
 fi
 
-info "推送 $branch（$files 个文件，$message）"
-git push origin "$commit:refs/heads/$branch"
-git update-ref "refs/heads/$branch" "$commit"
-git branch --quiet --set-upstream-to="origin/$branch" "$branch" || true
-
-
-readme_updated=0
-if [ "$readme_has_row" = 0 ]; then
-  row="| \`$branch\` | $english_name | $chinese_name |"
-
-  first=$(grep -n '^| `game/' README.md | head -n1 | cut -d: -f1 || true)
-  last=$(grep -n '^| `game/' README.md | tail -n1 | cut -d: -f1 || true)
-  if [ -z "$first" ]; then
-    printf '\n| 分支 | 游戏 | 中文名 |\n|---|---|---|\n%s\n' "$row" >>README.md
-  else
-    {
-      head -n "$((first - 1))" README.md
-      { sed -n "${first},${last}p" README.md; printf '%s\n' "$row"; } | LC_ALL=C sort
-      tail -n "+$((last + 1))" README.md
-    } >"$work/README.md"
-    cp "$work/README.md" README.md
-  fi
-
-  info "更新索引: $row"
-  git commit --quiet -m "在索引里加上 $english_name 的独立快照分支。" -- README.md
-  info "推送 master"
-  git push --quiet origin master
-  readme_updated=1
+if [[ "$DRY_RUN" -eq 1 ]]; then
+    log "dry-run: 同步 ${SRC_DIR} -> ${WT}"
+    track_large_files "$WT" "$LARGE_LIST"
 else
-  info "README.md 已包含该分支的索引，跳过"
+    sync_tree "$SRC_DIR" "$WT"
+    track_large_files "$WT" "$LARGE_LIST"
 fi
 
+commit_tree "$WT" "$COMMIT_MSG" || true
+push_branch "$WT" "$BRANCH"
+update_index
 
-if [ "$keep_folder" = 1 ]; then
-  info "按 --keep 保留本地文件夹: $folder_rel"
-else
-  case $folder_abs in
-    "" | / | "$repo_root" | "$repo_root"/) die "拒绝删除可疑路径: $folder_abs" ;;
-  esac
-  case $folder_abs in
-    "$repo_root"/*) ;;
-    *) die "拒绝删除仓库外的路径: $folder_abs" ;;
-  esac
-  [ -d "$folder_abs" ] || die "要删除的文件夹不见了: $folder_abs"
-  info "删除本地文件夹: $folder_rel"
-  rm -rf -- "$folder_abs"
+log "完成。克隆:"
+log "  git clone -b ${BRANCH} --single-branch --depth 1 https://github.com/PackageInstaller/DataTable.git"
+if [[ -s "$LARGE_LIST" && "$NO_LFS" -eq 0 ]]; then
+    log "大文件由 Git LFS 拉取，请先安装 git-lfs。"
 fi
-
-echo
-if [ "$readme_updated" = 1 ]; then
-  info "完成：分支 $branch 已推送，README.md 索引已更新"
-echo "  拉取单个游戏: git clone -b $branch --single-branch --depth 1 https://github.com/PackageInstaller/DataTable.git"
