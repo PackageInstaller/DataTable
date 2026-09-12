@@ -69,6 +69,7 @@ git clone -b game/xxxxx --single-branch --depth 1 https://github.com/PackageInst
 | `game/SoulOfDragon` | SoulOfDragon | 龙魂旅人 |
 | `game/SoulTide` | SoulTide | 灵魂潮汐 |
 | `game/SphereSeven` | SphereSeven | 七星传 |
+| `game/StarHealer` | StarHealer |
 | `game/StarResonance` | StarResonance | 我去星批 |
 | `game/StarSavior` | StarSavior | 你也是救援者？ |
 | `game/StarseedAsniaTrigger` | StarseedAsniaTrigger | 星链计划：未来少女 |
