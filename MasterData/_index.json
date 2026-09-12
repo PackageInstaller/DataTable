@@ -1,0 +1,1527 @@
+{
+  "generatedAt": "2026-09-12 16:30:27",
+  "revision": "672148908de8ca3ac1da9152459889b1",
+  "tables": [
+    {
+      "method": "getBannerMstList",
+      "name": "Banner",
+      "file": "Banner.json",
+      "hash": "9d1e05f564e988867ffb444d311e32f5",
+      "size": 1183564,
+      "count": 4391,
+      "shape": "map"
+    },
+    {
+      "method": "getBattleAuraMstList",
+      "name": "BattleAura",
+      "file": "BattleAura.json",
+      "hash": "9b33a9c993dec912a37451ee4164de29",
+      "size": 20238,
+      "count": 96,
+      "shape": "map"
+    },
+    {
+      "method": "getBattleThemeEffectMstList",
+      "name": "BattleThemeEffect",
+      "file": "BattleThemeEffect.json",
+      "hash": "08061d665d035ed5cf669417f295f69c",
+      "size": 8685,
+      "count": 49,
+      "shape": "map"
+    },
+    {
+      "method": "getCardAwakeningMstList",
+      "name": "CardAwakening",
+      "file": "CardAwakening.json",
+      "hash": "ffd27b204a978f3b2a413f59ed60060e",
+      "size": 107034,
+      "count": 505,
+      "shape": "map"
+    },
+    {
+      "method": "getCardEvolveEventMstList",
+      "name": "CardEvolveEvent",
+      "file": "CardEvolveEvent.json",
+      "hash": "3b01de30bd39f2b28c692929ee2e7d69",
+      "size": 9257,
+      "count": 108,
+      "shape": "map"
+    },
+    {
+      "method": "getCardLevelUpMstList",
+      "name": "CardLevelUp",
+      "file": "CardLevelUp.json",
+      "hash": "b4b66de1347b6d26bb6db9612dacbd83",
+      "size": 4304,
+      "count": 160,
+      "shape": "map"
+    },
+    {
+      "method": "getCardMstList",
+      "name": "Card",
+      "file": "Card.json",
+      "hash": "2c14f8bddd7925e57596b281878e32c3",
+      "size": 4339024,
+      "count": 4074,
+      "shape": "map"
+    },
+    {
+      "method": "getCardStoryMstList",
+      "name": "CardStory",
+      "file": "CardStory.json",
+      "hash": "2648d8ee4b04d0ac7c0974cca1f413cf",
+      "size": 22270,
+      "count": 170,
+      "shape": "map"
+    },
+    {
+      "method": "getCardSuperAwakeningCardTypeMstList",
+      "name": "CardSuperAwakeningCardType",
+      "file": "CardSuperAwakeningCardType.json",
+      "hash": "19f2aa32d50651c782bfff185ee59c26",
+      "size": 1422521,
+      "count": 4124,
+      "shape": "map"
+    },
+    {
+      "method": "getCardSuperAwakeningMstList",
+      "name": "CardSuperAwakening",
+      "file": "CardSuperAwakening.json",
+      "hash": "094320b38d808d50ae4f44377b449f11",
+      "size": 166620,
+      "count": 627,
+      "shape": "map"
+    },
+    {
+      "method": "getCharacterFrameMstList",
+      "name": "CharacterFrame",
+      "file": "CharacterFrame.json",
+      "hash": "21146efd75d37c0666c05d6e3bc2de9c",
+      "size": 13341,
+      "count": 57,
+      "shape": "map"
+    },
+    {
+      "method": "getCharacterIndividualResourceDirectionMstList",
+      "name": "CharacterIndividualResourceDirection",
+      "file": "CharacterIndividualResourceDirection.json",
+      "hash": "568925adb1ffcbbbacce509b22e1bc16",
+      "size": 6331,
+      "count": 118,
+      "shape": "map"
+    },
+    {
+      "method": "getCharacterJobAwakeningMstList",
+      "name": "CharacterJobAwakening",
+      "file": "CharacterJobAwakening.json",
+      "hash": "380dd017a52f547d5aee5b0496f7a529",
+      "size": 157850,
+      "count": 811,
+      "shape": "map"
+    },
+    {
+      "method": "getCharacterJobLevelUpMstList",
+      "name": "CharacterJobLevelUp",
+      "file": "CharacterJobLevelUp.json",
+      "hash": "81abce78faca2456968afadfe8eb6ee8",
+      "size": 413,
+      "count": 16,
+      "shape": "map"
+    },
+    {
+      "method": "getCharacterJobMstList",
+      "name": "CharacterJob",
+      "file": "CharacterJob.json",
+      "hash": "a6569a1d4ae948034eef4c8d3cb97cc9",
+      "size": 1118636,
+      "count": 1262,
+      "shape": "map"
+    },
+    {
+      "method": "getCharacterJobResourceMappingMstList",
+      "name": "CharacterJobResourceMapping",
+      "file": "CharacterJobResourceMapping.json",
+      "hash": "af7565508531abc000490999755df1fa",
+      "size": 64851,
+      "count": 242,
+      "shape": "map"
+    },
+    {
+      "method": "getCharacterJobSkillDirectionMstList",
+      "name": "CharacterJobSkillDirection",
+      "file": "CharacterJobSkillDirection.json",
+      "hash": "18cee3aaef7cc147decc332a488cdedc",
+      "size": 126707,
+      "count": 1263,
+      "shape": "map"
+    },
+    {
+      "method": "getCharacterJobSkillMstList",
+      "name": "CharacterJobSkill",
+      "file": "CharacterJobSkill.json",
+      "hash": "734982c503aee8a58872c89a32bfd59c",
+      "size": 1517266,
+      "count": 10010,
+      "shape": "map"
+    },
+    {
+      "method": "getCharacterJobSpecialSkillEffectMstList",
+      "name": "CharacterJobSpecialSkillEffect",
+      "file": "CharacterJobSpecialSkillEffect.json",
+      "hash": "64d970f3a03e0128168aad39b15e037b",
+      "size": 24670,
+      "count": 76,
+      "shape": "map"
+    },
+    {
+      "method": "getCharacterJobSpecialSkillMstList",
+      "name": "CharacterJobSpecialSkill",
+      "file": "CharacterJobSpecialSkill.json",
+      "hash": "dd5d101582637d9f9b9149f699c9fe50",
+      "size": 934025,
+      "count": 6079,
+      "shape": "map"
+    },
+    {
+      "method": "getCharacterMstList",
+      "name": "Character",
+      "file": "Character.json",
+      "hash": "42c20473af56d331eff62bc38d049c81",
+      "size": 116091,
+      "count": 118,
+      "shape": "map"
+    },
+    {
+      "method": "getChatBotMstList",
+      "name": "ChatBot",
+      "file": "ChatBot.json",
+      "hash": "411e0fdddacdca14d68d7222303ea04f",
+      "size": 8795,
+      "count": 39,
+      "shape": "map"
+    },
+    {
+      "method": "getChatFixedMessageMstList",
+      "name": "ChatFixedMessage",
+      "file": "ChatFixedMessage.json",
+      "hash": "f366e88c01da8b17bb090d9189411af1",
+      "size": 1056,
+      "count": 18,
+      "shape": "map"
+    },
+    {
+      "method": "getChatMessageReactionMstList",
+      "name": "ChatMessageReaction",
+      "file": "ChatMessageReaction.json",
+      "hash": "ec6beb385509f98e230b073d603db5c9",
+      "size": 2719,
+      "count": 38,
+      "shape": "map"
+    },
+    {
+      "method": "getChatStampMstList",
+      "name": "ChatStamp",
+      "file": "ChatStamp.json",
+      "hash": "74b5a73e52c1724298ae78a96df1ee37",
+      "size": 89742,
+      "count": 323,
+      "shape": "map"
+    },
+    {
+      "method": "getCollectionPublicationRestrictionsMstList",
+      "name": "CollectionPublicationRestrictions",
+      "file": "CollectionPublicationRestrictions.json",
+      "hash": "efaad1f069c02ab9e17419e213b15252",
+      "size": 828406,
+      "count": 6125,
+      "shape": "map"
+    },
+    {
+      "method": "getCopyrightMstList",
+      "name": "Copyright",
+      "file": "Copyright.json",
+      "hash": "e481e5e6cffd1ae1bced6487d79e1100",
+      "size": 1703,
+      "count": 9,
+      "shape": "map"
+    },
+    {
+      "method": "getCopyrightObjectMstList",
+      "name": "CopyrightObject",
+      "file": "CopyrightObject.json",
+      "hash": "29155781a7bf27fe5a31feae986eafcf",
+      "size": 38301,
+      "count": 524,
+      "shape": "map"
+    },
+    {
+      "method": "getDeckSupportExtensionConditionMstList",
+      "name": "DeckSupportExtensionCondition",
+      "file": "DeckSupportExtensionCondition.json",
+      "hash": "bbcf0dbbbf924660b6da51e3070d245d",
+      "size": 211795,
+      "count": 1518,
+      "shape": "map"
+    },
+    {
+      "method": "getEmblemMstList",
+      "name": "Emblem",
+      "file": "Emblem.json",
+      "hash": "053af056afdaf62280cd460d706f8c4c",
+      "size": 6894,
+      "count": 45,
+      "shape": "map"
+    },
+    {
+      "method": "getEventStoryMstList",
+      "name": "EventStory",
+      "file": "EventStory.json",
+      "hash": "f3885cbbb340e8afe268d7637318a823",
+      "size": 543870,
+      "count": 2532,
+      "shape": "map"
+    },
+    {
+      "method": "getGardenMstList",
+      "name": "Garden",
+      "file": "Garden.json",
+      "hash": "a7aaf155c22224d1e5ee20c8454bd64b",
+      "size": 2330,
+      "count": 43,
+      "shape": "map"
+    },
+    {
+      "method": "getGigantHugeCardBonusRateMstModelList",
+      "name": "GigantHugeCardBonusRateMstModel",
+      "file": "GigantHugeCardBonusRateMstModel.json",
+      "hash": "948300c5ecf542bbe9b76c4c818cc33b",
+      "size": 21948,
+      "count": 97,
+      "shape": "map"
+    },
+    {
+      "method": "getGigantHugeEnemyEnhanceMstList",
+      "name": "GigantHugeEnemyEnhance",
+      "file": "GigantHugeEnemyEnhance.json",
+      "hash": "1a5be4eefc5cc1f23a425f1d57074ab6",
+      "size": 12003,
+      "count": 83,
+      "shape": "map"
+    },
+    {
+      "method": "getGigantHugeEnemySkillEffectFileMstList",
+      "name": "GigantHugeEnemySkillEffectFile",
+      "file": "GigantHugeEnemySkillEffectFile.json",
+      "hash": "5d9fbee3712d680b1c1911da9b160765",
+      "size": 8618,
+      "count": 113,
+      "shape": "map"
+    },
+    {
+      "method": "getGigantHugeEnemySkillEffectMstList",
+      "name": "GigantHugeEnemySkillEffect",
+      "file": "GigantHugeEnemySkillEffect.json",
+      "hash": "e9c4961049202454bd2af2a1de87c806",
+      "size": 83287,
+      "count": 464,
+      "shape": "map"
+    },
+    {
+      "method": "getGigantHugeMapMstList",
+      "name": "GigantHugeMap",
+      "file": "GigantHugeMap.json",
+      "hash": "15cb040e584551f4514bedf031172075",
+      "size": 31890,
+      "count": 66,
+      "shape": "map"
+    },
+    {
+      "method": "getGigantHugeMissionMstModelList",
+      "name": "GigantHugeMissionMstModel",
+      "file": "GigantHugeMissionMstModel.json",
+      "hash": "6da3262abd8456ed323892365d5c05e0",
+      "size": 722,
+      "count": 6,
+      "shape": "map"
+    },
+    {
+      "method": "getGigantHugeRankingRewardGroupMstList",
+      "name": "GigantHugeRankingRewardGroup",
+      "file": "GigantHugeRankingRewardGroup.json",
+      "hash": "671d4568f20c4f87ff7072b603cb5c88",
+      "size": 43856,
+      "count": 424,
+      "shape": "map"
+    },
+    {
+      "method": "getGigantHugeRankingRewardMstList",
+      "name": "GigantHugeRankingReward",
+      "file": "GigantHugeRankingReward.json",
+      "hash": "e05c7773f442436edf7d56bb13183c53",
+      "size": 12031,
+      "count": 107,
+      "shape": "map"
+    },
+    {
+      "method": "getGigantHugeRewardGroupMstModelList",
+      "name": "GigantHugeRewardGroupMstModel",
+      "file": "GigantHugeRewardGroupMstModel.json",
+      "hash": "07c05439da18929a6c17926263ba7821",
+      "size": 162873,
+      "count": 1296,
+      "shape": "map"
+    },
+    {
+      "method": "getGigantHugeScheduleMstList",
+      "name": "GigantHugeSchedule",
+      "file": "GigantHugeSchedule.json",
+      "hash": "d893d705ae8824176522a489a774e361",
+      "size": 20636,
+      "count": 81,
+      "shape": "map"
+    },
+    {
+      "method": "getGigantHugeStageMstModelList",
+      "name": "GigantHugeStageMstModel",
+      "file": "GigantHugeStageMstModel.json",
+      "hash": "aceae4aad2a8200e7a31abdd95e32446",
+      "size": 144630,
+      "count": 210,
+      "shape": "map"
+    },
+    {
+      "method": "getGigantHugeStoryMstModelList",
+      "name": "GigantHugeStoryMstModel",
+      "file": "GigantHugeStoryMstModel.json",
+      "hash": "e6b58e028d55b5902a934f647a077cc8",
+      "size": 17143,
+      "count": 77,
+      "shape": "map"
+    },
+    {
+      "method": "getGigantHugeTipsMstList",
+      "name": "GigantHugeTips",
+      "file": "GigantHugeTips.json",
+      "hash": "fa01c9f5968539dfb8f9a8414895b09e",
+      "size": 2762,
+      "count": 15,
+      "shape": "map"
+    },
+    {
+      "method": "getGigantHugeWaveMstList",
+      "name": "GigantHugeWave",
+      "file": "GigantHugeWave.json",
+      "hash": "033664d3e320e04d6539105051f3a76a",
+      "size": 25368,
+      "count": 210,
+      "shape": "map"
+    },
+    {
+      "method": "getGrandGvgMstList",
+      "name": "GrandGvg",
+      "file": "GrandGvg.json",
+      "hash": "a0a29d60f639edda97f7cdb026fe9b75",
+      "size": 23707,
+      "count": 77,
+      "shape": "map"
+    },
+    {
+      "method": "getGuildBenefitGuildMstList",
+      "name": "GuildBenefitGuild",
+      "file": "GuildBenefitGuild.json",
+      "hash": "eeb98f4aa0038e9c3bc0c40aa34a8b55",
+      "size": 683,
+      "count": 3,
+      "shape": "map"
+    },
+    {
+      "method": "getGuildBenefitGvgLevelUpMstList",
+      "name": "GuildBenefitGvgLevelUp",
+      "file": "GuildBenefitGvgLevelUp.json",
+      "hash": "8f9e1d2014fd92638f53d717c2aceed0",
+      "size": 6405,
+      "count": 60,
+      "shape": "map"
+    },
+    {
+      "method": "getGuildBenefitGvgMstList",
+      "name": "GuildBenefitGvg",
+      "file": "GuildBenefitGvg.json",
+      "hash": "256e812fc0921115cad1b2ab356e487b",
+      "size": 1613,
+      "count": 6,
+      "shape": "map"
+    },
+    {
+      "method": "getGuildBenefitQuestLevelUpMstList",
+      "name": "GuildBenefitQuestLevelUp",
+      "file": "GuildBenefitQuestLevelUp.json",
+      "hash": "7a7b957a82741eda50758db320a2c232",
+      "size": 98619,
+      "count": 860,
+      "shape": "map"
+    },
+    {
+      "method": "getGuildBenefitQuestMstList",
+      "name": "GuildBenefitQuest",
+      "file": "GuildBenefitQuest.json",
+      "hash": "9f39283fabe42ad1c226f0c389eeeab2",
+      "size": 27676,
+      "count": 86,
+      "shape": "map"
+    },
+    {
+      "method": "getGuildLevelUpMstList",
+      "name": "GuildLevelUp",
+      "file": "GuildLevelUp.json",
+      "hash": "9b864d6b2b3a100976516656c8da775e",
+      "size": 3787,
+      "count": 155,
+      "shape": "map"
+    },
+    {
+      "method": "getGuildTitleMstList",
+      "name": "GuildTitle",
+      "file": "GuildTitle.json",
+      "hash": "599916f5a00e4d39145e5080d02149b3",
+      "size": 2904101,
+      "count": 10551,
+      "shape": "map"
+    },
+    {
+      "method": "getGveAreaMstList",
+      "name": "GveArea",
+      "file": "GveArea.json",
+      "hash": "6b59d9845936d74145fb1e3217f94583",
+      "size": 10254,
+      "count": 73,
+      "shape": "map"
+    },
+    {
+      "method": "getGveEnemyEnhanceMstList",
+      "name": "GveEnemyEnhance",
+      "file": "GveEnemyEnhance.json",
+      "hash": "988fb1095192fd9ae8e6bb0ad908f769",
+      "size": 15289,
+      "count": 161,
+      "shape": "map"
+    },
+    {
+      "method": "getGveEnemySkillEffectFileMstList",
+      "name": "GveEnemySkillEffectFile",
+      "file": "GveEnemySkillEffectFile.json",
+      "hash": "adeba037cebf6f1951818b4f04fc7e35",
+      "size": 5663,
+      "count": 76,
+      "shape": "map"
+    },
+    {
+      "method": "getGveEnemySkillEffectMstList",
+      "name": "GveEnemySkillEffect",
+      "file": "GveEnemySkillEffect.json",
+      "hash": "76eb0416dc0251e6fcd3b98dcedfbc08",
+      "size": 142258,
+      "count": 1098,
+      "shape": "map"
+    },
+    {
+      "method": "getGveMapMstList",
+      "name": "GveMap",
+      "file": "GveMap.json",
+      "hash": "eadc1d4bf551f2271ff7948fd07e9939",
+      "size": 23106,
+      "count": 72,
+      "shape": "map"
+    },
+    {
+      "method": "getGveScheduleMstList",
+      "name": "GveSchedule",
+      "file": "GveSchedule.json",
+      "hash": "a453b15d09b279138eac2bd2be2136a7",
+      "size": 16559,
+      "count": 82,
+      "shape": "map"
+    },
+    {
+      "method": "getGveStageConditionMstList",
+      "name": "GveStageCondition",
+      "file": "GveStageCondition.json",
+      "hash": "32708b1ef8ea5e2843811559ba2dff12",
+      "size": 1997,
+      "count": 10,
+      "shape": "map"
+    },
+    {
+      "method": "getGveStageMstList",
+      "name": "GveStage",
+      "file": "GveStage.json",
+      "hash": "4ce9f479f4fc2e21e30058bb77035c1d",
+      "size": 134364,
+      "count": 361,
+      "shape": "map"
+    },
+    {
+      "method": "getGveTipsMstList",
+      "name": "GveTips",
+      "file": "GveTips.json",
+      "hash": "339bb3895a3ab14e6020b9622d92a915",
+      "size": 7790,
+      "count": 23,
+      "shape": "map"
+    },
+    {
+      "method": "getGveWaveMstList",
+      "name": "GveWave",
+      "file": "GveWave.json",
+      "hash": "36d81c60d2bede81896ffed8f8a9e75e",
+      "size": 55918,
+      "count": 361,
+      "shape": "map"
+    },
+    {
+      "method": "getGvgLoginBonusMstList",
+      "name": "GvgLoginBonus",
+      "file": "GvgLoginBonus.json",
+      "hash": "959ea31ab1e94f6667253574de5e9526",
+      "size": 1455,
+      "count": 9,
+      "shape": "map"
+    },
+    {
+      "method": "getGvgLoginBonusRewardMstList",
+      "name": "GvgLoginBonusReward",
+      "file": "GvgLoginBonusReward.json",
+      "hash": "037fc1f64ffea25e7523e061069ada7d",
+      "size": 7288,
+      "count": 75,
+      "shape": "map"
+    },
+    {
+      "method": "getGvgRewardMstList",
+      "name": "GvgReward",
+      "file": "GvgReward.json",
+      "hash": "cad6cdfc1edc4a298c55e3797e729c3c",
+      "size": 13653,
+      "count": 125,
+      "shape": "map"
+    },
+    {
+      "method": "getGvgTutorialMstList",
+      "name": "GvgTutorial",
+      "file": "GvgTutorial.json",
+      "hash": "6e6f9485d54e60aaf5de6007045df409",
+      "size": 2310,
+      "count": 9,
+      "shape": "map"
+    },
+    {
+      "method": "getHelpCategoryMstList",
+      "name": "HelpCategory",
+      "file": "HelpCategory.json",
+      "hash": "7a4b71ebc7f00cce14b89cf4ff5d71de",
+      "size": 1164,
+      "count": 21,
+      "shape": "map"
+    },
+    {
+      "method": "getHelpHeaderMstList",
+      "name": "HelpHeader",
+      "file": "HelpHeader.json",
+      "hash": "d4af13fd2a6e3f2d56a2ec4a0ae9d26a",
+      "size": 3480,
+      "count": 86,
+      "shape": "map"
+    },
+    {
+      "method": "getHelpMstList",
+      "name": "Help",
+      "file": "Help.json",
+      "hash": "089eb88012dd891e77275d9a5c2de364",
+      "size": 209456,
+      "count": 180,
+      "shape": "map"
+    },
+    {
+      "method": "getHomeCharacterActionMstList",
+      "name": "HomeCharacterAction",
+      "file": "HomeCharacterAction.json",
+      "hash": "3e19e30a84bcb7c5f432c2b4e99c1766",
+      "size": 1023971,
+      "count": 3682,
+      "shape": "map"
+    },
+    {
+      "method": "getIngameVoiceMstList",
+      "name": "IngameVoice",
+      "file": "IngameVoice.json",
+      "hash": "06e5698706f21949561f0ef2b74b9c04",
+      "size": 1038006,
+      "count": 7238,
+      "shape": "map"
+    },
+    {
+      "method": "getItemMstList",
+      "name": "Item",
+      "file": "Item.json",
+      "hash": "f690dde5ee8ad16b2281f073804f1fc5",
+      "size": 2571654,
+      "count": 5992,
+      "shape": "map"
+    },
+    {
+      "method": "getLegendarySkillGroupMstList",
+      "name": "LegendarySkillGroup",
+      "file": "LegendarySkillGroup.json",
+      "hash": "ae9c80b6bcc2c224e049b408303c3759",
+      "size": 98187,
+      "count": 360,
+      "shape": "map"
+    },
+    {
+      "method": "getLegionMstList",
+      "name": "Legion",
+      "file": "Legion.json",
+      "hash": "b45e0a6e6ee8b741da5ba847d9d60969",
+      "size": 6997,
+      "count": 60,
+      "shape": "map"
+    },
+    {
+      "method": "getLegionStoryMstList",
+      "name": "LegionStory",
+      "file": "LegionStory.json",
+      "hash": "b582d10ce5ff292389c555000e282772",
+      "size": 9686,
+      "count": 66,
+      "shape": "map"
+    },
+    {
+      "method": "getLimitBreakBonusMstList",
+      "name": "LimitBreakBonus",
+      "file": "LimitBreakBonus.json",
+      "hash": "cee740b4c78d8fab772936df9366a827",
+      "size": 173379,
+      "count": 502,
+      "shape": "map"
+    },
+    {
+      "method": "getLiveMstList",
+      "name": "Live",
+      "file": "Live.json",
+      "hash": "d6d485d36ab3732caea81b1443cca786",
+      "size": 143,
+      "count": 2,
+      "shape": "map"
+    },
+    {
+      "method": "getLoadingMemoriaMstList",
+      "name": "LoadingMemoria",
+      "file": "LoadingMemoria.json",
+      "hash": "6bf644fa1e2eb084f0cfe9e1fef185aa",
+      "size": 19545,
+      "count": 143,
+      "shape": "map"
+    },
+    {
+      "method": "getLoginBonusCharacterActionMstList",
+      "name": "LoginBonusCharacterAction",
+      "file": "LoginBonusCharacterAction.json",
+      "hash": "b0b2e31154caa5c2ac8b16c40cc2fcb0",
+      "size": 50278,
+      "count": 207,
+      "shape": "map"
+    },
+    {
+      "method": "getLoginBonusMstList",
+      "name": "LoginBonus",
+      "file": "LoginBonus.json",
+      "hash": "d2d3cad28b3bc52d3edebbeadc806d8b",
+      "size": 73186,
+      "count": 274,
+      "shape": "map"
+    },
+    {
+      "method": "getLoginBonusRewardMstList",
+      "name": "LoginBonusReward",
+      "file": "LoginBonusReward.json",
+      "hash": "33d4e3f7cc2e736246576382747d126b",
+      "size": 230420,
+      "count": 2292,
+      "shape": "map"
+    },
+    {
+      "method": "getMapLinkMstList",
+      "name": "MapLink",
+      "file": "MapLink.json",
+      "hash": "7932814902092f0c5f943599a639f3a3",
+      "size": 1135,
+      "count": 13,
+      "shape": "map"
+    },
+    {
+      "method": "getMedalTradeAddMstList",
+      "name": "MedalTradeAdd",
+      "file": "MedalTradeAdd.json",
+      "hash": "69a201cb2c9082cba907b7d1bb67714b",
+      "size": 318461,
+      "count": 3466,
+      "shape": "map"
+    },
+    {
+      "method": "getMedalTradeMstList",
+      "name": "MedalTrade",
+      "file": "MedalTrade.json",
+      "hash": "79c39d45cfe4ec5b81d63c347835e815",
+      "size": 16983779,
+      "count": 61794,
+      "shape": "map"
+    },
+    {
+      "method": "getMedalTradeSeriesMstList",
+      "name": "MedalTradeSeries",
+      "file": "MedalTradeSeries.json",
+      "hash": "3f6f88e2bde0b4c5dfbf725fdf14864e",
+      "size": 578782,
+      "count": 1462,
+      "shape": "map"
+    },
+    {
+      "method": "getMiniTutorialMaterialMstList",
+      "name": "MiniTutorialMaterial",
+      "file": "MiniTutorialMaterial.json",
+      "hash": "ea2776ef53d6354b8c54ca0192bf75ed",
+      "size": 1173,
+      "count": 14,
+      "shape": "map"
+    },
+    {
+      "method": "getMiniTutorialPopupMstList",
+      "name": "MiniTutorialPopup",
+      "file": "MiniTutorialPopup.json",
+      "hash": "354d92d99882c82ced7f0bd1f4604fd1",
+      "size": 4730,
+      "count": 67,
+      "shape": "map"
+    },
+    {
+      "method": "getMissionEffectRewardMstList",
+      "name": "MissionEffectReward",
+      "file": "MissionEffectReward.json",
+      "hash": "be6e1e1168985139a97dac1493d7cd67",
+      "size": 75481,
+      "count": 571,
+      "shape": "map"
+    },
+    {
+      "method": "getMissionMstList",
+      "name": "Mission",
+      "file": "Mission.json",
+      "hash": "616a8d764b66d46bb0e0b1878108e825",
+      "size": 6139387,
+      "count": 11147,
+      "shape": "map"
+    },
+    {
+      "method": "getMissionTitleMstList",
+      "name": "MissionTitle",
+      "file": "MissionTitle.json",
+      "hash": "24e5c08cd46f694fcac99e52f76f76d4",
+      "size": 206443,
+      "count": 1185,
+      "shape": "map"
+    },
+    {
+      "method": "getMissionTransitionMstList",
+      "name": "MissionTransition",
+      "file": "MissionTransition.json",
+      "hash": "46a54872ea94ac894b0e8757eb2cc118",
+      "size": 4566,
+      "count": 35,
+      "shape": "map"
+    },
+    {
+      "method": "getMovieMstList",
+      "name": "Movie",
+      "file": "Movie.json",
+      "hash": "653a622d768521cd0070cb9a3876ea76",
+      "size": 84384,
+      "count": 420,
+      "shape": "map"
+    },
+    {
+      "method": "getMusicCopyrightMstList",
+      "name": "MusicCopyright",
+      "file": "MusicCopyright.json",
+      "hash": "6649d683415077ca117300b6a31aab9a",
+      "size": 3777,
+      "count": 25,
+      "shape": "map"
+    },
+    {
+      "method": "getNicknameMstList",
+      "name": "Nickname",
+      "file": "Nickname.json",
+      "hash": "3bf6ad1aa32dcd80214440be00c6a460",
+      "size": 72354,
+      "count": 429,
+      "shape": "map"
+    },
+    {
+      "method": "getOptionBgmMstList",
+      "name": "OptionBgm",
+      "file": "OptionBgm.json",
+      "hash": "cce3abc488b63f5ff1675a850a6132a4",
+      "size": 36516,
+      "count": 111,
+      "shape": "map"
+    },
+    {
+      "method": "getPlotRubyDirectionMstList",
+      "name": "PlotRubyDirection",
+      "file": "PlotRubyDirection.json",
+      "hash": "c5d60f67ceae6a71774b492bd2673121",
+      "size": 11475,
+      "count": 204,
+      "shape": "map"
+    },
+    {
+      "method": "getPveMapMstList",
+      "name": "PveMap",
+      "file": "PveMap.json",
+      "hash": "18a6de1e4c5f29f577d6a2fe9b118d97",
+      "size": 3119,
+      "count": 21,
+      "shape": "map"
+    },
+    {
+      "method": "getPvePlayRewardMstList",
+      "name": "PvePlayReward",
+      "file": "PvePlayReward.json",
+      "hash": "ecd3158dd921e37e1ef0980967003b41",
+      "size": 8088,
+      "count": 105,
+      "shape": "map"
+    },
+    {
+      "method": "getPveRankingRewardMstList",
+      "name": "PveRankingReward",
+      "file": "PveRankingReward.json",
+      "hash": "491908d856c12cb27f54d81205a5478d",
+      "size": 55653,
+      "count": 525,
+      "shape": "map"
+    },
+    {
+      "method": "getPveRewardGroupMstList",
+      "name": "PveRewardGroup",
+      "file": "PveRewardGroup.json",
+      "hash": "90ac1cdd6a3b2843dced69ebb6ed5ea2",
+      "size": 148271,
+      "count": 1870,
+      "shape": "map"
+    },
+    {
+      "method": "getPveScoreRewardMstList",
+      "name": "PveScoreReward",
+      "file": "PveScoreReward.json",
+      "hash": "1aa23c3b87ac37c1ee3d368fa8e405be",
+      "size": 263611,
+      "count": 2276,
+      "shape": "map"
+    },
+    {
+      "method": "getPveStageMstList",
+      "name": "PveStage",
+      "file": "PveStage.json",
+      "hash": "068f9c4226f20a515d6d52e9867f3e90",
+      "size": 76520,
+      "count": 105,
+      "shape": "map"
+    },
+    {
+      "method": "getPveTipsMstList",
+      "name": "PveTips",
+      "file": "PveTips.json",
+      "hash": "8f40ccbdcaaa54f4b4ce263e260d638c",
+      "size": 27393,
+      "count": 105,
+      "shape": "map"
+    },
+    {
+      "method": "getPveWaveMstList",
+      "name": "PveWave",
+      "file": "PveWave.json",
+      "hash": "2a0d73beac1f2e85b899c5d9637b5b75",
+      "size": 203829,
+      "count": 1253,
+      "shape": "map"
+    },
+    {
+      "method": "getQuestAreaMstList",
+      "name": "QuestArea",
+      "file": "QuestArea.json",
+      "hash": "4a60b3f0be411864f939874b9b0cc497",
+      "size": 98933,
+      "count": 753,
+      "shape": "map"
+    },
+    {
+      "method": "getQuestCampaignMstList",
+      "name": "QuestCampaign",
+      "file": "QuestCampaign.json",
+      "hash": "edeaf478c20f1ce679bde627177add0e",
+      "size": 58131,
+      "count": 250,
+      "shape": "map"
+    },
+    {
+      "method": "getQuestCardBonusRateMstList",
+      "name": "QuestCardBonusRate",
+      "file": "QuestCardBonusRate.json",
+      "hash": "ecbbc980401ce8d5e3c35c4767acf48d",
+      "size": 252447,
+      "count": 1086,
+      "shape": "map"
+    },
+    {
+      "method": "getQuestEnemyEnhanceMstList",
+      "name": "QuestEnemyEnhance",
+      "file": "QuestEnemyEnhance.json",
+      "hash": "ed6344ffcf7b3a846d988e273d76ce50",
+      "size": 84067,
+      "count": 839,
+      "shape": "map"
+    },
+    {
+      "method": "getQuestEnemySkillEffectFileMstList",
+      "name": "QuestEnemySkillEffectFile",
+      "file": "QuestEnemySkillEffectFile.json",
+      "hash": "e9fb2ee497d3530701961946baafb1f5",
+      "size": 6462,
+      "count": 86,
+      "shape": "map"
+    },
+    {
+      "method": "getQuestEnemySkillEffectMstList",
+      "name": "QuestEnemySkillEffect",
+      "file": "QuestEnemySkillEffect.json",
+      "hash": "474a1186ea5eccab0f94696eaf81801a",
+      "size": 331613,
+      "count": 2565,
+      "shape": "map"
+    },
+    {
+      "method": "getQuestEventMedalMstList",
+      "name": "QuestEventMedal",
+      "file": "QuestEventMedal.json",
+      "hash": "753667404215be619b18240670fa44fc",
+      "size": 36371,
+      "count": 267,
+      "shape": "map"
+    },
+    {
+      "method": "getQuestEventMedalRewardMstList",
+      "name": "QuestEventMedalReward",
+      "file": "QuestEventMedalReward.json",
+      "hash": "1b1d4b5a63d056a2fbfc21055a0e2fe4",
+      "size": 1707305,
+      "count": 12245,
+      "shape": "map"
+    },
+    {
+      "method": "getQuestMapMstList",
+      "name": "QuestMap",
+      "file": "QuestMap.json",
+      "hash": "6016d56c2e4ce91c7008ae148d611367",
+      "size": 195917,
+      "count": 412,
+      "shape": "map"
+    },
+    {
+      "method": "getQuestMissionMstList",
+      "name": "QuestMission",
+      "file": "QuestMission.json",
+      "hash": "47ac4a792d66b656a943b7e1d35ed4a9",
+      "size": 2343,
+      "count": 17,
+      "shape": "map"
+    },
+    {
+      "method": "getQuestReprintMainStoryMapGroupMst",
+      "name": "QuestReprintMainStoryMapGroupMst",
+      "file": "QuestReprintMainStoryMapGroupMst.json",
+      "hash": "507be08d541a313e4f3788ef04159082",
+      "size": 3546,
+      "count": 16,
+      "shape": "map"
+    },
+    {
+      "method": "getQuestReprintMainStoryNameMst",
+      "name": "QuestReprintMainStoryNameMst",
+      "file": "QuestReprintMainStoryNameMst.json",
+      "hash": "dd405dbac32afd3d702c513e8053cc1c",
+      "size": 965,
+      "count": 5,
+      "shape": "map"
+    },
+    {
+      "method": "getQuestRewardGroupMstList",
+      "name": "QuestRewardGroup",
+      "file": "QuestRewardGroup.json",
+      "hash": "6c186392a32d2940c473a96bea0320a2",
+      "size": 239,
+      "count": 3,
+      "shape": "map"
+    },
+    {
+      "method": "getQuestScheduleMstList",
+      "name": "QuestSchedule",
+      "file": "QuestSchedule.json",
+      "hash": "566d761d9fdc9e98e72a1cf0d1f86043",
+      "size": 110721,
+      "count": 474,
+      "shape": "map"
+    },
+    {
+      "method": "getQuestStageConditionMstList",
+      "name": "QuestStageCondition",
+      "file": "QuestStageCondition.json",
+      "hash": "96a3df6d915798e2c6d85beff4bda459",
+      "size": 275639,
+      "count": 1287,
+      "shape": "map"
+    },
+    {
+      "method": "getQuestStageMstList",
+      "name": "QuestStage",
+      "file": "QuestStage.json",
+      "hash": "bd5b04177a6a9945a9a2c37e8fdf1b87",
+      "size": 6551877,
+      "count": 9145,
+      "shape": "map"
+    },
+    {
+      "method": "getQuestStoryMstList",
+      "name": "QuestStory",
+      "file": "QuestStory.json",
+      "hash": "b6f3a3907964a313c53371b8850c6e7e",
+      "size": 47882,
+      "count": 359,
+      "shape": "map"
+    },
+    {
+      "method": "getQuestSupportNpcMstList",
+      "name": "QuestSupportNpc",
+      "file": "QuestSupportNpc.json",
+      "hash": "def52b4d2c5a30a71c514b7b82767fbb",
+      "size": 11242,
+      "count": 74,
+      "shape": "map"
+    },
+    {
+      "method": "getQuestTipsMstList",
+      "name": "QuestTips",
+      "file": "QuestTips.json",
+      "hash": "fe24f8c7bd36f549f508e21fe33ea358",
+      "size": 15604,
+      "count": 45,
+      "shape": "map"
+    },
+    {
+      "method": "getQuestTowerStageSettingMstList",
+      "name": "QuestTowerStageSetting",
+      "file": "QuestTowerStageSetting.json",
+      "hash": "d40a8fea55b68142a1aef2e9d2d48888",
+      "size": 151193,
+      "count": 650,
+      "shape": "map"
+    },
+    {
+      "method": "getQuestWaveMstList",
+      "name": "QuestWave",
+      "file": "QuestWave.json",
+      "hash": "c65e54220cbd984c907df26b8fe380eb",
+      "size": 2627383,
+      "count": 16540,
+      "shape": "map"
+    },
+    {
+      "method": "getRareSkillDetailDirectionMstList",
+      "name": "RareSkillDetailDirection",
+      "file": "RareSkillDetailDirection.json",
+      "hash": "a3422cfa3f49ddf9212d2fb176f3df25",
+      "size": 16534,
+      "count": 221,
+      "shape": "map"
+    },
+    {
+      "method": "getRareSkillResourceDirectionMstList",
+      "name": "RareSkillResourceDirection",
+      "file": "RareSkillResourceDirection.json",
+      "hash": "deeeb38c72d5723d4d287e11067f5a28",
+      "size": 11439,
+      "count": 110,
+      "shape": "map"
+    },
+    {
+      "method": "getRecycleMedalCardMstList",
+      "name": "RecycleMedalCard",
+      "file": "RecycleMedalCard.json",
+      "hash": "e25d36bd18f78df3b4f5fbfe96a67781",
+      "size": 13575,
+      "count": 116,
+      "shape": "map"
+    },
+    {
+      "method": "getSentryFilterMstList",
+      "name": "SentryFilter",
+      "file": "SentryFilter.json",
+      "hash": "dd522aa14e9f9a16723fad9a98d6aba5",
+      "size": 2584,
+      "count": 41,
+      "shape": "map"
+    },
+    {
+      "method": "getShopDetailMstList",
+      "name": "ShopDetail",
+      "file": "ShopDetail.json",
+      "hash": "f152106e2602955755c830f3fa72ff3d",
+      "size": 52798,
+      "count": 741,
+      "shape": "map"
+    },
+    {
+      "method": "getShopMstList",
+      "name": "Shop",
+      "file": "Shop.json",
+      "hash": "709d1e9ac2232f8137b2bcd2e173cee5",
+      "size": 109283,
+      "count": 79,
+      "shape": "map"
+    },
+    {
+      "method": "getSkillEffectMstList",
+      "name": "SkillEffect",
+      "file": "SkillEffect.json",
+      "hash": "c41753fc8755855f2748e74b2865ac1b",
+      "size": 75859,
+      "count": 360,
+      "shape": "map"
+    },
+    {
+      "method": "getSkillLevelUpMstList",
+      "name": "SkillLevelUp",
+      "file": "SkillLevelUp.json",
+      "hash": "19ce1859e897211d2b54caadc9a861e9",
+      "size": 519,
+      "count": 20,
+      "shape": "map"
+    },
+    {
+      "method": "getSkillMstList",
+      "name": "Skill",
+      "file": "Skill.json",
+      "hash": "115726f77837c8533a796ad175aa3dd9",
+      "size": 4474196,
+      "count": 8033,
+      "shape": "map"
+    },
+    {
+      "method": "getSnsPostsMstList",
+      "name": "SnsPosts",
+      "file": "SnsPosts.json",
+      "hash": "3363ddffa17bd3408b847cb4be3feca4",
+      "size": 8388,
+      "count": 39,
+      "shape": "map"
+    },
+    {
+      "method": "getTacticsEffectMstList",
+      "name": "TacticsEffect",
+      "file": "TacticsEffect.json",
+      "hash": "8e129e618e330052dd6dfca58bac45bc",
+      "size": 531681,
+      "count": 676,
+      "shape": "map"
+    },
+    {
+      "method": "getTacticsEvolveEventMstList",
+      "name": "TacticsEvolveEvent",
+      "file": "TacticsEvolveEvent.json",
+      "hash": "bc9abf1be59ffce180251d4cce755fe2",
+      "size": 1,
+      "count": 0,
+      "shape": "scalar"
+    },
+    {
+      "method": "getTacticsLevelUpMstList",
+      "name": "TacticsLevelUp",
+      "file": "TacticsLevelUp.json",
+      "hash": "c4be53bb39fcfec2becd67256e7f0585",
+      "size": 3109,
+      "count": 120,
+      "shape": "map"
+    },
+    {
+      "method": "getTacticsMstList",
+      "name": "Tactics",
+      "file": "Tactics.json",
+      "hash": "9f88fd350793b7fcedc2a934c5aebbbe",
+      "size": 181949,
+      "count": 390,
+      "shape": "map"
+    },
+    {
+      "method": "getTeamFestEventMstList",
+      "name": "TeamFestEvent",
+      "file": "TeamFestEvent.json",
+      "hash": "660e3fc29241fe130e9b4cc5ce89be42",
+      "size": 607,
+      "count": 2,
+      "shape": "map"
+    },
+    {
+      "method": "getTeamFestEventRoundMstList",
+      "name": "TeamFestEventRound",
+      "file": "TeamFestEventRound.json",
+      "hash": "25fd2b0eb75a16059ad5cefd748e484d",
+      "size": 2886,
+      "count": 20,
+      "shape": "map"
+    },
+    {
+      "method": "getTeamFestEventRoundStageMstList",
+      "name": "TeamFestEventRoundStage",
+      "file": "TeamFestEventRoundStage.json",
+      "hash": "77ff5e9da393785a7a0134b7c583cef8",
+      "size": 87087,
+      "count": 504,
+      "shape": "map"
+    },
+    {
+      "method": "getTeamFestRankingRewardMstList",
+      "name": "TeamFestRankingReward",
+      "file": "TeamFestRankingReward.json",
+      "hash": "acd764719353efd2188cbdf7e43873ed",
+      "size": 565,
+      "count": 6,
+      "shape": "map"
+    },
+    {
+      "method": "getTeamFestRewardGroupMstList",
+      "name": "TeamFestRewardGroup",
+      "file": "TeamFestRewardGroup.json",
+      "hash": "30d0549a04f8e3041f113063400b80c1",
+      "size": 3469,
+      "count": 38,
+      "shape": "map"
+    },
+    {
+      "method": "getTeamFestRoundRewardForPersonalRoundPointMstList",
+      "name": "TeamFestRoundRewardForPersonalRoundPoint",
+      "file": "TeamFestRoundRewardForPersonalRoundPoint.json",
+      "hash": "cf11a689a4682a961983256e4675287a",
+      "size": 5317,
+      "count": 29,
+      "shape": "map"
+    },
+    {
+      "method": "getTeamFestRoundRewardForQuestClearCountMstList",
+      "name": "TeamFestRoundRewardForQuestClearCount",
+      "file": "TeamFestRoundRewardForQuestClearCount.json",
+      "hash": "c006fc93b5d875e7093a31c0ca59a8c6",
+      "size": 4269,
+      "count": 24,
+      "shape": "map"
+    },
+    {
+      "method": "getTeamFestRoundRewardForTeamRankMstList",
+      "name": "TeamFestRoundRewardForTeamRank",
+      "file": "TeamFestRoundRewardForTeamRank.json",
+      "hash": "38dd80d45028a32506ef1087ae042d87",
+      "size": 907,
+      "count": 6,
+      "shape": "map"
+    },
+    {
+      "method": "getTeamFestRoundRewardForTeamTotalPointMstList",
+      "name": "TeamFestRoundRewardForTeamTotalPoint",
+      "file": "TeamFestRoundRewardForTeamTotalPoint.json",
+      "hash": "37e6a9f59b785a3dd4709b3e71e3e5cc",
+      "size": 4547,
+      "count": 25,
+      "shape": "map"
+    },
+    {
+      "method": "getTeamFestTeamMstList",
+      "name": "TeamFestTeam",
+      "file": "TeamFestTeam.json",
+      "hash": "30984a6c4da69192e19113c7de4da9eb",
+      "size": 1162,
+      "count": 6,
+      "shape": "map"
+    },
+    {
+      "method": "getTeamFestTotalPointRewardMstList",
+      "name": "TeamFestTotalPointReward",
+      "file": "TeamFestTotalPointReward.json",
+      "hash": "a9c61c8b432107e96c3ffd52b8b78a9f",
+      "size": 23427,
+      "count": 151,
+      "shape": "map"
+    },
+    {
+      "method": "getUltimateCardMstList",
+      "name": "UltimateCard",
+      "file": "UltimateCard.json",
+      "hash": "89c2dd242006de929104bf34c2e0f1e8",
+      "size": 42244,
+      "count": 93,
+      "shape": "map"
+    },
+    {
+      "method": "getUltimateGvgFinalRoundMstList",
+      "name": "UltimateGvgFinalRound",
+      "file": "UltimateGvgFinalRound.json",
+      "hash": "efe0acd54714f9e3f567b0e26b19bb87",
+      "size": 10125,
+      "count": 96,
+      "shape": "map"
+    },
+    {
+      "method": "getUltimateGvgMstList",
+      "name": "UltimateGvg",
+      "file": "UltimateGvg.json",
+      "hash": "1fb29e8a00be5ba6218d9ad0608adbc3",
+      "size": 6070,
+      "count": 16,
+      "shape": "map"
+    },
+    {
+      "method": "getUltimateGvgPreliminaryMstList",
+      "name": "UltimateGvgPreliminary",
+      "file": "UltimateGvgPreliminary.json",
+      "hash": "b772d71ddeb63d0f31461631d4cf535e",
+      "size": 4030,
+      "count": 42,
+      "shape": "map"
+    },
+    {
+      "method": "getUserLevelUpMstList",
+      "name": "UserLevelUp",
+      "file": "UserLevelUp.json",
+      "hash": "2ca95de704fd941e3a599eecffc7e0f9",
+      "size": 31425,
+      "count": 230,
+      "shape": "map"
+    },
+    {
+      "method": "getWeaponAbilityEffectMstList",
+      "name": "WeaponAbilityEffect",
+      "file": "WeaponAbilityEffect.json",
+      "hash": "e225428a06747dc24c24ff85c09ae819",
+      "size": 1161950,
+      "count": 3970,
+      "shape": "map"
+    },
+    {
+      "method": "getWeaponAbilityLevelUpMstList",
+      "name": "WeaponAbilityLevelUp",
+      "file": "WeaponAbilityLevelUp.json",
+      "hash": "3734231004f80111f218a5ff7225f45a",
+      "size": 588,
+      "count": 9,
+      "shape": "map"
+    },
+    {
+      "method": "getWeaponAbilityMstList",
+      "name": "WeaponAbility",
+      "file": "WeaponAbility.json",
+      "hash": "24a8b4469a394c6dc09e24cc7cd4477a",
+      "size": 61496,
+      "count": 397,
+      "shape": "map"
+    },
+    {
+      "method": "getWeaponColoringMstList",
+      "name": "WeaponColoring",
+      "file": "WeaponColoring.json",
+      "hash": "6eec995ac4ca4a80730c63489a51d7ca",
+      "size": 98181,
+      "count": 1404,
+      "shape": "map"
+    },
+    {
+      "method": "getWeaponCreationMstList",
+      "name": "WeaponCreation",
+      "file": "WeaponCreation.json",
+      "hash": "500dd39b0a500623b7523216824b7efe",
+      "size": 2370,
+      "count": 27,
+      "shape": "map"
+    },
+    {
+      "method": "getWeaponEvolveEventMstList",
+      "name": "WeaponEvolveEvent",
+      "file": "WeaponEvolveEvent.json",
+      "hash": "5b5fd0e0b4d9cf25c2c71479f378dfc3",
+      "size": 22108,
+      "count": 135,
+      "shape": "map"
+    },
+    {
+      "method": "getWeaponExclusiveCharacterJobMstList",
+      "name": "WeaponExclusiveCharacterJob",
+      "file": "WeaponExclusiveCharacterJob.json",
+      "hash": "0c90fc025a3a9988e2554cb214272565",
+      "size": 28455,
+      "count": 641,
+      "shape": "map"
+    },
+    {
+      "method": "getWeaponLegendaryLevelUpMstList",
+      "name": "WeaponLegendaryLevelUp",
+      "file": "WeaponLegendaryLevelUp.json",
+      "hash": "9ed1f92f839e76e74a693d86d4b2e74f",
+      "size": 240519,
+      "count": 3240,
+      "shape": "map"
+    },
+    {
+      "method": "getWeaponLevelUpMstList",
+      "name": "WeaponLevelUp",
+      "file": "WeaponLevelUp.json",
+      "hash": "bd4366bd9aaaee93ffc3c98056ba33c9",
+      "size": 3158,
+      "count": 120,
+      "shape": "map"
+    },
+    {
+      "method": "getWeaponMstList",
+      "name": "Weapon",
+      "file": "Weapon.json",
+      "hash": "310ebda4b07c2253ecb2f57de6bd1cab",
+      "size": 628211,
+      "count": 972,
+      "shape": "map"
+    },
+    {
+      "method": "getWeaponPlusLevelUpMstList",
+      "name": "WeaponPlusLevelUp",
+      "file": "WeaponPlusLevelUp.json",
+      "hash": "29015b47f232cf7d5be206a0818e17be",
+      "size": 2427,
+      "count": 30,
+      "shape": "map"
+    },
+    {
+      "method": "gigantHugeMultiScoreRankingGroupMstList",
+      "name": "GigantHugeMultiScoreRankingGroup",
+      "file": "GigantHugeMultiScoreRankingGroup.json",
+      "hash": "b3eafa7198797d07e7134fe8f32d9369",
+      "size": 435,
+      "count": 4,
+      "shape": "map"
+    }
+  ]
+}
