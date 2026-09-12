@@ -16,7 +16,7 @@ git clone -b game/xxxxx --single-branch --depth 1 https://github.com/PackageInst
 | `game/AlchemyStars` | AlchemyStars | 白鸡 |
 | `game/AnchorPanic` | AnchorPanic | 锚点降临 |
 | `game/AngelicaAsterR` | AngelicaAsterR | 当归紫苑 |
-| `game/AssaultLilyLastBullet` | AssaultLilyLastBullet |
+| `game/AssaultLilyLastBullet` | AssaultLilyLastBullet | 突击莉莉 |
 | `game/AzurLane` | AzurLane | 碧蓝航线 |
 | `game/BlackBeacon` | BlackBeacon | 黑色信标 |
 | `game/CatFantasy` | CatFantasy | 猫之城 |
