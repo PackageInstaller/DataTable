@@ -1,0 +1,53 @@
+{
+  "RichDesc": [
+    {
+      "cellType": 0,
+      "mPrefab": "Rich_Map_cell_1",
+      "mImg": "Rich_Map_icon_0",
+      "cellName": "起点",
+      "cellDesc": "经过起点会获得一定数量的金币，停留在最后一关的起点会获得大量金币"
+    },
+    {
+      "cellType": 1,
+      "mPrefab": "Rich_Map_cell_0",
+      "mImg": "Rich_Map_icon_1",
+      "cellName": "普通格子",
+      "cellDesc": "停留在该地块会获得一定数量的金币"
+    },
+    {
+      "cellType": 2,
+      "mPrefab": "Rich_Map_cell_0",
+      "mImg": "Rich_Map_icon_2",
+      "cellName": "命运",
+      "cellDesc": "获得一个祝福"
+    },
+    {
+      "cellType": 3,
+      "mPrefab": "Rich_Map_cell_0",
+      "mImg": "Rich_Map_icon_3",
+      "cellName": "机会",
+      "cellDesc": "触发一个事件，你可能会收获满满，也可能会无事发生"
+    },
+    {
+      "cellType": 5,
+      "mPrefab": "Rich_Map_cell_1",
+      "mImg": "Rich_Map_icon_5",
+      "cellName": "遭遇",
+      "cellDesc": "经过时触发一场战斗"
+    },
+    {
+      "cellType": 6,
+      "mPrefab": "Rich_Map_cell_1",
+      "mImg": "Rich_Map_icon_6",
+      "cellName": "战斗",
+      "cellDesc": "停留在该地块时触发一场战斗"
+    },
+    {
+      "cellType": 7,
+      "mPrefab": "Rich_Map_cell_1",
+      "mImg": "Rich_Map_icon_7",
+      "cellName": "领袖战",
+      "cellDesc": "停留在该地块时触发一场战斗，战斗胜利后可以深入下一层"
+    }
+  ]
+}

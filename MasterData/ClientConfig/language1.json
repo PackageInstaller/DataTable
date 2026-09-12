@@ -1,0 +1,7800 @@
+{
+  "Error_ConnectFail": {
+    "id": "Error_ConnectFail",
+    "cn": "建立连接失败: {0}",
+    "en": "Fail to connect: {0}",
+    "jp": "",
+    "tw": "建立連接失敗: {0}"
+  },
+  "Dialog_ExitGameConfirm": {
+    "id": "Dialog_ExitGameConfirm",
+    "cn": "真的要退出游戏嘛！",
+    "en": "Are you sure to leave?(ㆀ˘･з･˘)",
+    "jp": "",
+    "tw": "真的要退出遊戲嘛！"
+  },
+  "LoadingPage_DownloadStaticData": {
+    "id": "LoadingPage_DownloadStaticData",
+    "cn": "下载静态数据...",
+    "en": "Static data downloading...",
+    "jp": "",
+    "tw": "下載靜態資料..."
+  },
+  "ExceptionManager_Error": {
+    "id": "ExceptionManager_Error",
+    "cn": "啊啊 出错了\n<color=#FF0071>{0}</color>",
+    "en": "Oops. There's something wrong\n<color=#FF0071>{0}</color>",
+    "jp": "",
+    "tw": "啊啊 出錯了\n<color=#FF0071>{0}</color>"
+  },
+  "ExceptionManager_Fatal": {
+    "id": "ExceptionManager_Fatal",
+    "cn": "出现了致命错误!\n<color=#FF0071>{0}</color>",
+    "en": "Fatal mistake!\n<color=#FF0071>{0}</color>",
+    "jp": "",
+    "tw": "出現了致命錯誤!\n<color=#FF0071>{0}</color>"
+  },
+  "ServerCode_PlayTimeMaxError": {
+    "id": "ServerCode_PlayTimeMaxError",
+    "cn": "今天的游戏时间已满 \n <color=#FF92A2>[-1#关于防止未成年人沉迷网络游戏的通知(www.sapprft.gov.cn/sapprft/contents/6588/407807.shtml)]</color>",
+    "en": "",
+    "jp": "",
+    "tw": "今天的遊戲時間已滿 \n <color=#FF92A2>[-1#關於防止未成年人沉迷網路遊戲的通知(www.sapprft.gov.cn/sapprft/contents/6588/407807.shtml)]</color>"
+  },
+  "ServerCode_TimeLimitError": {
+    "id": "ServerCode_TimeLimitError",
+    "cn": "每日22时至次日8时 未成年不能玩哦\n<color=#FF92A2>[-1#关于防止未成年人沉迷网络游戏的通知(www.sapprft.gov.cn/sapprft/contents/6588/407807.shtml)]</color>",
+    "en": "",
+    "jp": "",
+    "tw": "每日22時至次日8時 未成年不能玩哦\n<color=#FF92A2>[-1#關於防止未成年人沉迷網路遊戲的通知(www.sapprft.gov.cn/sapprft/contents/6588/407807.shtml)]</color>"
+  },
+  "ServerCode_CheckError": {
+    "id": "ServerCode_CheckError",
+    "cn": "账号数据异常，请联系客服处理",
+    "en": " Account Data Exception, please contact Support",
+    "jp": "",
+    "tw": "帳號資料異常，請聯繫客服處理"
+  },
+  "ServerCode_AccountAuthError": {
+    "id": "ServerCode_AccountAuthError",
+    "cn": "账号信息过期惹，重新输一遍账号和密码吧！",
+    "en": "Account info expired，Please re-enter the account and password!",
+    "jp": "",
+    "tw": "帳號資訊過期惹，重新輸一遍帳號和密碼吧！"
+  },
+  "ServerCode_RepeatedCall": {
+    "id": "ServerCode_RepeatedCall",
+    "cn": "致命错误：重复的请求，请重启游戏。",
+    "en": "Fatal mistake：duplicated requests, please restart the game.",
+    "jp": "",
+    "tw": "致命錯誤：重複的請求，請重啟遊戲。"
+  },
+  "ServerCode_InclusionSensitiveWords": {
+    "id": "ServerCode_InclusionSensitiveWords",
+    "cn": "包含敏感词汇",
+    "en": "Sensitive terms detected",
+    "jp": "",
+    "tw": "包含敏感詞彙"
+  },
+  "ServerCode_CommentBanned": {
+    "id": "ServerCode_CommentBanned",
+    "cn": "你已被禁言",
+    "en": "",
+    "jp": "",
+    "tw": ""
+  },
+  "ServerCode_default": {
+    "id": "ServerCode_default",
+    "cn": "执行 {0} 时服务器拒绝, 代码: {1}",
+    "en": "Server rejected when executing {0} , code: {1}",
+    "jp": "",
+    "tw": "執行 {0} 時伺服器拒絕, 代碼: {1}"
+  },
+  "Tip_JellyNotEnouph": {
+    "id": "Tip_JellyNotEnouph",
+    "cn": "哎呀，<color=#FB5B00>【果冻币】</color>不足",
+    "en": "Oops. Insufficient <color=#FB5B00>[Jelly Coin]</color>",
+    "jp": "",
+    "tw": "哎呀，<color=#FB5B00>【果凍幣】</color>不足"
+  },
+  "PopTip_WashSuccess": {
+    "id": "PopTip_WashSuccess",
+    "cn": "变形成功啦！快看看",
+    "en": "Transform successfully! Go and check it",
+    "jp": "",
+    "tw": "變形成功啦！快看看"
+  },
+  "PopTip_Equiped": {
+    "id": "PopTip_Equiped",
+    "cn": "介个已装备",
+    "en": "Already equipped",
+    "jp": "",
+    "tw": "介個已裝備"
+  },
+  "PopTip_CanStarUp": {
+    "id": "PopTip_CanStarUp",
+    "cn": "可升{0}阶啦",
+    "en": "Can tier up to T{0}",
+    "jp": "",
+    "tw": "可升{0}階啦"
+  },
+  "PopTip_YellowStarNotEnouph": {
+    "id": "PopTip_YellowStarNotEnouph",
+    "cn": "升{0}阶{1}不足",
+    "en": "Not enough {1} to tier up to T{0}",
+    "jp": "",
+    "tw": "升{0}階{1}不足"
+  },
+  "PopTip_FuelNotEnouph": {
+    "id": "PopTip_FuelNotEnouph",
+    "cn": "燃料不足呐，那个4分钟恢复一点",
+    "en": "Insufficient fuel. Restore 1 point each 4 mins",
+    "jp": "",
+    "tw": "燃料不足呐，那個4分鐘恢復一點"
+  },
+  "StarPage_PleaseWaitNewStar": {
+    "id": "StarPage_PleaseWaitNewStar",
+    "cn": "敬请期待探索新星球",
+    "en": "New planet is coming",
+    "jp": "",
+    "tw": "敬請期待探索新星球"
+  },
+  "StarPage_DailyWarCompleted": {
+    "id": "StarPage_DailyWarCompleted",
+    "cn": "今日星联战<color=#FF5C01>已完成</color>",
+    "en": "Today's SA battle<color=#FF5C01>completed</color>",
+    "jp": "",
+    "tw": "今日星聯戰<color=#FF5C01>已完成</color>"
+  },
+  "StarPage_RewardDes": {
+    "id": "StarPage_RewardDes",
+    "cn": "3关卡全部通关（随机奖励其中1个<color=#FF5C01>五连抽兑换卷</color>）",
+    "en": "Cleared 3 levels(Get<color=#FF5C01>Coupon x5 Ticket Randomly</color>)",
+    "jp": "",
+    "tw": "3關卡全部通關（隨機獎勵其中1個<color=#FF5C01>五連抽兌換卷</color>）"
+  },
+  "PopTip_StageNotOpen": {
+    "id": "PopTip_StageNotOpen",
+    "cn": "关卡未开启…（⊙＿⊙；）",
+    "en": "The level is not opened yet…（⊙＿⊙；）",
+    "jp": "",
+    "tw": "關卡未開啟…（⊙＿⊙；）"
+  },
+  "PopTip_StarLocked": {
+    "id": "PopTip_StarLocked",
+    "cn": "星球未解锁…（⊙＿⊙；）",
+    "en": "The planet is locked…（⊙＿⊙；）",
+    "jp": "",
+    "tw": "星球未解鎖…（⊙＿⊙；）"
+  },
+  "SpaceRolePage_AskRemove": {
+    "id": "SpaceRolePage_AskRemove",
+    "cn": "是否下阵",
+    "en": "Sure to remove",
+    "jp": "",
+    "tw": "是否下陣"
+  },
+  "SpaceRolePage_AskKeepTeam": {
+    "id": "SpaceRolePage_AskKeepTeam",
+    "cn": "是否保留阵容？",
+    "en": "Sure to save the lineup",
+    "jp": "",
+    "tw": "是否保留陣容？"
+  },
+  "LoginPage_AppleLogin": {
+    "id": "LoginPage_AppleLogin",
+    "cn": "Apple 登录",
+    "en": "Apple Log in",
+    "jp": "",
+    "tw": "Apple 登錄"
+  },
+  "LoginPage_WechatLogin": {
+    "id": "LoginPage_WechatLogin",
+    "cn": "微信登录",
+    "en": "WeChat Log In",
+    "jp": "",
+    "tw": "微信登錄"
+  },
+  "LoginPage_BilibiliLogin": {
+    "id": "LoginPage_BilibiliLogin",
+    "cn": "bilibili 登录",
+    "en": "bilibili Log In",
+    "jp": "",
+    "tw": "bilibili 登錄"
+  },
+  "LoginPage_DevLogin": {
+    "id": "LoginPage_DevLogin",
+    "cn": "开发者登录",
+    "en": "Develper Log In",
+    "jp": "",
+    "tw": "開發者登錄"
+  },
+  "LoginPage_UidLogin": {
+    "id": "LoginPage_UidLogin",
+    "cn": "UID 登录",
+    "en": "UID Log In",
+    "jp": "",
+    "tw": "UID 登錄"
+  },
+  "LoginPage_4399Login": {
+    "id": "LoginPage_4399Login",
+    "cn": "4399 登录",
+    "en": "4399 Log In",
+    "jp": "",
+    "tw": "4399 登錄"
+  },
+  "LoginPage_HuaweiLogin": {
+    "id": "LoginPage_HuaweiLogin",
+    "cn": "华为登录",
+    "en": "Huawei Log In",
+    "jp": "",
+    "tw": "華為登錄"
+  },
+  "LoginPage_PhoneNunberLogin": {
+    "id": "LoginPage_PhoneNunberLogin",
+    "cn": "手机号登录",
+    "en": "Phone Number Log In",
+    "jp": "",
+    "tw": "手機號登錄"
+  },
+  "LoginPage_QQLogin": {
+    "id": "LoginPage_QQLogin",
+    "cn": "QQ登录",
+    "en": "QQ Log In",
+    "jp": "",
+    "tw": "QQ登錄"
+  },
+  "LoginPage_Back": {
+    "id": "LoginPage_Back",
+    "cn": "返回",
+    "en": "Back",
+    "jp": "",
+    "tw": "返回"
+  },
+  "LoginPage_Maintance": {
+    "id": "LoginPage_Maintance",
+    "cn": "服务器维护中...",
+    "en": "Server maintenance in progress",
+    "jp": "",
+    "tw": "伺服器維護中..."
+  },
+  "SelectServer_BaoMan": {
+    "id": "SelectServer_BaoMan",
+    "cn": "爆满",
+    "en": "Full",
+    "jp": "",
+    "tw": "爆滿"
+  },
+  "SelectServer_WeiHu": {
+    "id": "SelectServer_WeiHu",
+    "cn": "维护",
+    "en": "Maintain",
+    "jp": "",
+    "tw": "維護"
+  },
+  "SelectServer_ZhengChang": {
+    "id": "SelectServer_ZhengChang",
+    "cn": "正常",
+    "en": "Normal",
+    "jp": "",
+    "tw": "正常"
+  },
+  "SelectServer_Error": {
+    "id": "SelectServer_Error",
+    "cn": "获取信息失败",
+    "en": "Failed to get information",
+    "jp": "",
+    "tw": "獲取資訊失敗"
+  },
+  "Server_AsiaPacific": {
+    "id": "Server_AsiaPacific",
+    "cn": "亚太",
+    "en": "APEC",
+    "jp": "",
+    "tw": "亞太"
+  },
+  "Server_NorthAmerica": {
+    "id": "Server_NorthAmerica",
+    "cn": "北美",
+    "en": "NAM",
+    "jp": "",
+    "tw": "北美"
+  },
+  "Server_EuropeAndAfrica": {
+    "id": "Server_EuropeAndAfrica",
+    "cn": "欧非",
+    "en": "EU-Africa",
+    "jp": "",
+    "tw": "歐非"
+  },
+  "ShopPage_Snack": {
+    "id": "ShopPage_Snack",
+    "cn": "零食包",
+    "en": "Snack Pack",
+    "jp": "",
+    "tw": "零食包"
+  },
+  "ShopPage_Pack": {
+    "id": "ShopPage_Pack",
+    "cn": "礼包",
+    "en": "Gift",
+    "jp": "",
+    "tw": "禮包"
+  },
+  "ShopPage_GachaJelly": {
+    "id": "ShopPage_GachaJelly",
+    "cn": "果冻池",
+    "en": "Jelly Pool",
+    "jp": "",
+    "tw": "果凍池"
+  },
+  "ShopPage_GachaWeek": {
+    "id": "ShopPage_GachaWeek",
+    "cn": "星联池",
+    "en": "SA Pool",
+    "jp": "",
+    "tw": "星聯池"
+  },
+  "ShopPage_GachaFT": {
+    "id": "ShopPage_GachaFT",
+    "cn": "方糖池",
+    "en": "Sugar Cube Pool",
+    "jp": "",
+    "tw": "方糖池"
+  },
+  "ShopPage_BuyJelly": {
+    "id": "ShopPage_BuyJelly",
+    "cn": "换果冻",
+    "en": "Buy Jelly",
+    "jp": "",
+    "tw": "換果凍"
+  },
+  "ShopPage_Month": {
+    "id": "ShopPage_Month",
+    "cn": "果冻特权",
+    "en": "Jelly Privilege",
+    "jp": "",
+    "tw": "果凍特權"
+  },
+  "ShopPage_Skin": {
+    "id": "ShopPage_Skin",
+    "cn": "皮肤",
+    "en": "Skin",
+    "jp": "",
+    "tw": "皮膚"
+  },
+  "ShopPage_Snack_Tip1": {
+    "id": "ShopPage_Snack_Tip1",
+    "cn": "每日随机零食包",
+    "en": "Daily Random Snack Pack",
+    "jp": "",
+    "tw": "每日隨機零食包"
+  },
+  "ShopPage_Snack_Tip2": {
+    "id": "ShopPage_Snack_Tip2",
+    "cn": "刷新倒计时：",
+    "en": "Time remaining for refresh：",
+    "jp": "",
+    "tw": "刷新倒計時："
+  },
+  "ShopPage_Snack_Tip3": {
+    "id": "ShopPage_Snack_Tip3",
+    "cn": "预约奖励十连武器包",
+    "en": "Reserve reward: Weapon Pack x10",
+    "jp": "",
+    "tw": "預約獎勵十連武器包"
+  },
+  "ShopPage_GachaJelly_Detail": {
+    "id": "ShopPage_GachaJelly_Detail",
+    "cn": "果冻池概率详情",
+    "en": "Jelly Pool Chance",
+    "jp": "",
+    "tw": "果凍池概率詳情"
+  },
+  "ShopPage_GachaJelly_Histroy": {
+    "id": "ShopPage_GachaJelly_Histroy",
+    "cn": "获得详情",
+    "en": "Details",
+    "jp": "",
+    "tw": "獲得詳情"
+  },
+  "ShopPage_GachaJelly_Cost": {
+    "id": "ShopPage_GachaJelly_Cost",
+    "cn": "需要消耗",
+    "en": "Consumed",
+    "jp": "",
+    "tw": "需要消耗"
+  },
+  "ShopPage_Snack_BuyAsk": {
+    "id": "ShopPage_Snack_BuyAsk",
+    "cn": "是否购买-<color=#FB5B00>{0}</color>",
+    "en": "Sure to buy <color=#FB5B00>{0}</color>",
+    "jp": "",
+    "tw": "是否購買-<color=#FB5B00>{0}</color>"
+  },
+  "WeaponPreferItemView_buffDes": {
+    "id": "WeaponPreferItemView_buffDes",
+    "cn": "使用{0}武器攻击力增加",
+    "en": "Use {0} Weapon ATK↑",
+    "jp": "",
+    "tw": "使用{0}武器攻擊力增加"
+  },
+  "WeaponPreferItemView_debuffDes": {
+    "id": "WeaponPreferItemView_debuffDes",
+    "cn": "使用{0}武器攻击力减少",
+    "en": "Use {0} Weapon ATK↓",
+    "jp": "",
+    "tw": "使用{0}武器攻擊力減少"
+  },
+  "WeaponPreferItemView_noEffectDes": {
+    "id": "WeaponPreferItemView_noEffectDes",
+    "cn": "使用{0}武器攻击力没有变化",
+    "en": "Use {0} Weapon ATK remains",
+    "jp": "",
+    "tw": "使用{0}武器攻擊力沒有變化"
+  },
+  "ServerCode_AccountBanned": {
+    "id": "ServerCode_AccountBanned",
+    "cn": "账号已被封禁",
+    "en": "Account has been blocked",
+    "jp": "",
+    "tw": "帳號已被封禁"
+  },
+  "UnitBloodPage_hero_a": {
+    "id": "UnitBloodPage_hero_a",
+    "cn": "生命 1～150%",
+    "en": "HP 1～150%",
+    "jp": "",
+    "tw": "生命 1～150%"
+  },
+  "UnitBloodPage_hero_b": {
+    "id": "UnitBloodPage_hero_b",
+    "cn": "护甲 1～50%",
+    "en": "Armor 1～50%",
+    "jp": "",
+    "tw": "護甲 1～50%"
+  },
+  "UnitBloodPage_hero_ab": {
+    "id": "UnitBloodPage_hero_ab",
+    "cn": "生命 1～60%\n护盾 1～60%",
+    "en": "HP 1～60%\nShield 1～60%",
+    "jp": "",
+    "tw": "生命 1～60%\n護盾 1～60%"
+  },
+  "UnitBloodPage_hero_o": {
+    "id": "UnitBloodPage_hero_o",
+    "cn": "护甲 1～20%\n生命 1～50%\n护盾 1～30%",
+    "en": "Armor 1～20%\nHP 1～50%\nShield 1～30%",
+    "jp": "",
+    "tw": "護甲 1～20%\n生命 1～50%\n護盾 1～30%"
+  },
+  "UnitBloodPage_hero_rh": {
+    "id": "UnitBloodPage_hero_rh",
+    "cn": "护甲 1～15%\n移动 1～50%\n护盾 1～30%\n生命 1～40%\n",
+    "en": "Armor 1～15%\nMove 1～50%\nShield 1～30%\nHP 1～40%",
+    "jp": "",
+    "tw": "護甲 1～15%\n移動 1～50%\n護盾 1～30%\n生命 1～40%\n"
+  },
+  "UnitBloodPage_pet_a": {
+    "id": "UnitBloodPage_pet_a",
+    "cn": "攻击 1～100%",
+    "en": "ATK 1～100%",
+    "jp": "",
+    "tw": "攻擊 1～100%"
+  },
+  "UnitBloodPage_pet_b": {
+    "id": "UnitBloodPage_pet_b",
+    "cn": "护甲 1～50%",
+    "en": "Armor 1～50%",
+    "jp": "",
+    "tw": "護甲 1～50%"
+  },
+  "UnitBloodPage_pet_ab": {
+    "id": "UnitBloodPage_pet_ab",
+    "cn": "生命 1～200% ",
+    "en": "HP 1～200%",
+    "jp": "",
+    "tw": "生命 1～200%"
+  },
+  "UnitBloodPage_pet_o": {
+    "id": "UnitBloodPage_pet_o",
+    "cn": "护甲 1～20%\n生命 1～80%\n攻击 1～40%",
+    "en": "Armor 1～20%\nHP 1～80%\nATK 1～40%",
+    "jp": "",
+    "tw": "護甲 1～20%\n生命 1～80%\n攻擊 1～40%"
+  },
+  "UnitBloodPage_pet_rh": {
+    "id": "UnitBloodPage_pet_rh",
+    "cn": "护甲 1～15%\n攻速 1～40%\n攻击 1～30%\n生命 1～60%\n护盾 1～30%\n",
+    "en": "Armor 1～15%\nATK SPD 1～40%\nATK 1～30%\nHP 1～60%\nShield 1～30%",
+    "jp": "",
+    "tw": "護甲 1～15%\n攻速 1～40%\n攻擊 1～30%\n生命 1～60%\n護盾 1～30%\n"
+  },
+  "UnitBloodPage_weapon_a": {
+    "id": "UnitBloodPage_weapon_a",
+    "cn": "容量 1～80%\n攻速 1～40%",
+    "en": "Capacity 1～80%\nATK SPD 1～40%",
+    "jp": "",
+    "tw": "容量 1～80%\n攻速 1～40%"
+  },
+  "UnitBloodPage_weapon_b": {
+    "id": "UnitBloodPage_weapon_b",
+    "cn": "攻击 1～100%",
+    "en": "ATK 1～100%",
+    "jp": "",
+    "tw": "攻擊 1～100%"
+  },
+  "UnitBloodPage_weapon_ab": {
+    "id": "UnitBloodPage_weapon_ab",
+    "cn": "攻速 1～60% \n子弹回复 1～150%",
+    "en": "ATK SPD 1～60% \nReload 1～150%",
+    "jp": "",
+    "tw": "攻速 1～60% \n子彈回復 1～150%"
+  },
+  "UnitBloodPage_weapon_o": {
+    "id": "UnitBloodPage_weapon_o",
+    "cn": "攻击 1～40%\n容量 1～40%\n子弹回复 1～80%",
+    "en": "ATK 1～40%\nCapacity 1～40%\nReload 1～80%",
+    "jp": "",
+    "tw": "攻擊 1～40%\n容量 1～40%\n子彈回復 1～80%"
+  },
+  "UnitBloodPage_weapon_rh": {
+    "id": "UnitBloodPage_weapon_rh",
+    "cn": "攻击 1～20%\n攻速 1～20%\n容量 1～30%\n暴击伤害 1～50%\n",
+    "en": "ATK 1～20%\nATK SPD 1～20%\nCapacity 1～30%\nCrit. DMG 1～50%",
+    "jp": "",
+    "tw": "攻擊 1～20%\n攻速 1～20%\n容量 1～30%\n暴擊傷害 1～50%\n"
+  },
+  "MixPage_1": {
+    "id": "MixPage_1",
+    "cn": "不能对物品进行血型搅拌",
+    "en": "Cannot stir Blood Types for items",
+    "jp": "",
+    "tw": "不能對物品進行血型攪拌"
+  },
+  "ShopPage_RuanTang": {
+    "id": "ShopPage_RuanTang",
+    "cn": "氪软糖",
+    "en": "Gumdrop Top-up",
+    "jp": "",
+    "tw": "氪軟糖"
+  },
+  "SpaceCraftPage_Upgrade": {
+    "id": "SpaceCraftPage_Upgrade",
+    "cn": "升级",
+    "en": "Upgrade",
+    "jp": "",
+    "tw": "升級"
+  },
+  "dateUtil_11": {
+    "id": "dateUtil_11",
+    "cn": "{0} 天 {1} 小时 {2} 分",
+    "en": "{0} D {1} H {2} M ",
+    "jp": "",
+    "tw": "{0} 天 {1} 小時 {2} 分 "
+  },
+  "dateUtil_1": {
+    "id": "dateUtil_1",
+    "cn": "{0} 天 {1} 小时 {2} 分 {3} 秒",
+    "en": "{0} D {1} H {2} M {3} S",
+    "jp": "",
+    "tw": "{0} 天 {1} 小時 {2} 分 {3} 秒"
+  },
+  "dateUtil_2": {
+    "id": "dateUtil_2",
+    "cn": "{0} 小时 {1} 分 {2} 秒",
+    "en": "{0} H {1} M {2} S",
+    "jp": "",
+    "tw": "{0} 小時 {1} 分 {2} 秒"
+  },
+  "dateUtil_3": {
+    "id": "dateUtil_3",
+    "cn": "{0} 分 {1} 秒",
+    "en": "{0} M {1} S",
+    "jp": "",
+    "tw": "{0} 分 {1} 秒"
+  },
+  "dateUtil_4": {
+    "id": "dateUtil_4",
+    "cn": "{0} 秒",
+    "en": "{0} S",
+    "jp": "",
+    "tw": "{0} 秒"
+  },
+  "dateUtil_5": {
+    "id": "dateUtil_5",
+    "cn": "{0} 天",
+    "en": "{0} D",
+    "jp": "",
+    "tw": "{0} 天"
+  },
+  "dateUtil_6": {
+    "id": "dateUtil_6",
+    "cn": "{0} 小时",
+    "en": "{0} H",
+    "jp": "",
+    "tw": "{0} 小時"
+  },
+  "dateUtil_7": {
+    "id": "dateUtil_7",
+    "cn": "{0} 分",
+    "en": "{0} M",
+    "jp": "",
+    "tw": "{0} 分"
+  },
+  "dateUtil_8": {
+    "id": "dateUtil_8",
+    "cn": "{0} 秒",
+    "en": "{0} S",
+    "jp": "",
+    "tw": "{0} 秒"
+  },
+  "dateUtil_9": {
+    "id": "dateUtil_9",
+    "cn": "{0} 年",
+    "en": "{0} Y",
+    "jp": "",
+    "tw": "{0} 年"
+  },
+  "dateUtil_10": {
+    "id": "dateUtil_10",
+    "cn": "{0} 月",
+    "en": "{0} M",
+    "jp": "",
+    "tw": "{0} 月"
+  },
+  "LastLogin": {
+    "id": "LastLogin",
+    "cn": "前登录",
+    "en": "Login before",
+    "jp": "",
+    "tw": "前登錄"
+  },
+  "above": {
+    "id": "above",
+    "cn": "以上",
+    "en": "",
+    "jp": "",
+    "tw": "以上"
+  },
+  "online": {
+    "id": "online",
+    "cn": "在线",
+    "en": "Online",
+    "jp": "",
+    "tw": "線上"
+  },
+  "ActiveGachaSubPage_tip": {
+    "id": "ActiveGachaSubPage_tip",
+    "cn": "活动已结束",
+    "en": "Event expired",
+    "jp": "",
+    "tw": "活動已結束"
+  },
+  "SevenDaysSignInPage_normal": {
+    "id": "SevenDaysSignInPage_normal",
+    "cn": "普通",
+    "en": "Normal",
+    "jp": "",
+    "tw": "普通"
+  },
+  "SevenDaysSignInPage_7dayssignin": {
+    "id": "SevenDaysSignInPage_7dayssignin",
+    "cn": "新手7日登录奖励",
+    "en": "Newcomer log-in rewards",
+    "jp": "",
+    "tw": "新手7日登錄獎勵"
+  },
+  "SevenDaysSignInPage_7dayssigninintroduce": {
+    "id": "SevenDaysSignInPage_7dayssigninintroduce",
+    "cn": "连续7日签到即可获得【超罕见】角色绯夜",
+    "en": "Sign in for consecutive 7 days to get [Legendary] Hero Mangues",
+    "jp": "",
+    "tw": "連續7日簽到即可獲得【超罕見】角色曼吉斯"
+  },
+  "SevenDaysSignInPage_di{0}day": {
+    "id": "SevenDaysSignInPage_di{0}day",
+    "cn": "第{0}天",
+    "en": "Day {0}",
+    "jp": "",
+    "tw": "第{0}天"
+  },
+  "SevenDaysSignInPage_dianliang": {
+    "id": "SevenDaysSignInPage_dianliang",
+    "cn": "电量",
+    "en": "Battery",
+    "jp": "",
+    "tw": "電量"
+  },
+  "SevenDaysSignInPage_yellowstar": {
+    "id": "SevenDaysSignInPage_yellowstar",
+    "cn": "黄星",
+    "en": "Yellow Star",
+    "jp": "",
+    "tw": "黃星"
+  },
+  "SevenDaysSignInPage_RainbowGun": {
+    "id": "SevenDaysSignInPage_RainbowGun",
+    "cn": "彩虹枪",
+    "en": "Rainbow Gun",
+    "jp": "",
+    "tw": "彩虹槍"
+  },
+  "SevenDaysSignInPage_fangfanghe": {
+    "id": "SevenDaysSignInPage_fangfanghe",
+    "cn": "方方盒",
+    "en": "Square Box",
+    "jp": "",
+    "tw": "方方盒"
+  },
+  "SevenDaysSignInPage_10lianchou": {
+    "id": "SevenDaysSignInPage_10lianchou",
+    "cn": "10连抽",
+    "en": "Common Draw x10",
+    "jp": "",
+    "tw": "10連抽"
+  },
+  "SevenDaysSignInPage_fangtang": {
+    "id": "SevenDaysSignInPage_fangtang",
+    "cn": "方糖",
+    "en": "Sugar Cube Draw x10",
+    "jp": "",
+    "tw": "方糖"
+  },
+  "SevenDaysSignInPage_meibi": {
+    "id": "SevenDaysSignInPage_meibi",
+    "cn": "煤币",
+    "en": "Briquet coin",
+    "jp": "",
+    "tw": "煤幣"
+  },
+  "SevenDaysSignInPage_manjisi": {
+    "id": "SevenDaysSignInPage_manjisi",
+    "cn": "曼吉斯",
+    "en": "Mangues",
+    "jp": "",
+    "tw": "曼吉斯"
+  },
+  "SevenDaysSignInPage_lingqugift": {
+    "id": "SevenDaysSignInPage_lingqugift",
+    "cn": "┗|｀O′|┛ 嗷！领取奖励啦！",
+    "en": "Ow! Get the reward!",
+    "jp": "",
+    "tw": "┗|｀O′|┛ 嗷！領取獎勵啦！"
+  },
+  "DailySignInCore_10daysingin": {
+    "id": "DailySignInCore_10daysingin",
+    "cn": "10日签到",
+    "en": "10-day sign in",
+    "jp": "",
+    "tw": "10日簽到"
+  },
+  "DailySignInCore_monthsingin": {
+    "id": "DailySignInCore_monthsingin",
+    "cn": "月登录奖励",
+    "en": "Monthly Login Reward",
+    "jp": "",
+    "tw": "月登錄獎勵"
+  },
+  "DailySignInCore_singingiveProps": {
+    "id": "DailySignInCore_singingiveProps",
+    "cn": "签到送随机道具！",
+    "en": "Sign in to get a random item!",
+    "jp": "",
+    "tw": "簽到送隨機道具！"
+  },
+  "DailySignInCore_alreadysingin": {
+    "id": "DailySignInCore_alreadysingin",
+    "cn": "已签到",
+    "en": "Signed in",
+    "jp": "",
+    "tw": "已簽到"
+  },
+  "DailySignInCore_daysingin": {
+    "id": "DailySignInCore_daysingin",
+    "cn": "每日签到",
+    "en": "Daily Check-in",
+    "jp": "",
+    "tw": "每日簽到"
+  },
+  "SettingPage_Users": {
+    "id": "SettingPage_Users",
+    "cn": "用户ID:",
+    "en": "UID:",
+    "jp": "",
+    "tw": "用戶ID:"
+  },
+  "SettingPage_yaoganandshiju": {
+    "id": "SettingPage_yaoganandshiju",
+    "cn": "摇杆与视距",
+    "en": "Ctrl & View",
+    "jp": "",
+    "tw": "搖杆與視距"
+  },
+  "SettingPage_low": {
+    "id": "SettingPage_low",
+    "cn": "低画质",
+    "en": "Low quality",
+    "jp": "",
+    "tw": "低畫質"
+  },
+  "SettingPage_lowtext": {
+    "id": "SettingPage_lowtext",
+    "cn": "掉落物品显示-\n隐藏植被\n",
+    "en": "Drops display Hide plants & particle DMG",
+    "jp": "",
+    "tw": "掉落物品顯示-\n隱藏植被&傷害數字\n"
+  },
+  "SettingPage_mieddle": {
+    "id": "SettingPage_mieddle",
+    "cn": "中画质",
+    "en": "Middle quality",
+    "jp": "",
+    "tw": "中畫質"
+  },
+  "SettingPage_mieddletext": {
+    "id": "SettingPage_mieddletext",
+    "cn": "隐藏场景粒子-",
+    "en": "Hide particles",
+    "jp": "",
+    "tw": "隱藏場景粒子-"
+  },
+  "SettingPage_high": {
+    "id": "SettingPage_high",
+    "cn": "高画质",
+    "en": "High quality",
+    "jp": "",
+    "tw": "高畫質"
+  },
+  "SettingPage_hightext": {
+    "id": "SettingPage_hightext",
+    "cn": "效果全开-",
+    "en": "All on",
+    "jp": "",
+    "tw": "效果全開-"
+  },
+  "SettingPage_label": {
+    "id": "SettingPage_label",
+    "cn": "顺滑模式（推荐开启）",
+    "en": "Smooth mode (Recommended)",
+    "jp": "",
+    "tw": "順滑模式（推薦開啟）"
+  },
+  "SettingPage_label1": {
+    "id": "SettingPage_label1",
+    "cn": "开启丝般顺滑模式可能会更耗电",
+    "en": "May be more power consuming",
+    "jp": "",
+    "tw": "開啟絲般順滑模式可能會更耗電"
+  },
+  "SettingPage_label2": {
+    "id": "SettingPage_label2",
+    "cn": "荧幕震动效果（推荐开启）",
+    "en": "Screen vibration (Recommended)",
+    "jp": "",
+    "tw": "螢幕震動效果（推薦開啟）"
+  },
+  "SettingPage_label3": {
+    "id": "SettingPage_label3",
+    "cn": "HDR效果",
+    "en": "",
+    "jp": "",
+    "tw": ""
+  },
+  "SettingPage_label4": {
+    "id": "SettingPage_label4",
+    "cn": "开启会提高表现效果，但是可能会产生卡顿，是否继续？",
+    "en": "Turning it on will improve performance, but it may cause lag. Do you want to continue?",
+    "jp": "オンにするとパフォーマンスは向上しますが、遅延が発生する可能性があります。 確認しますか？",
+    "tw": "開啟會提升表現效果，但是可能會產生卡頓，是否繼續？"
+  },
+  "SettingPage_label5": {
+    "id": "SettingPage_label5",
+    "cn": "你的手机不支持HDR色彩",
+    "en": "",
+    "jp": "",
+    "tw": ""
+  },
+  "SettingPage_maker": {
+    "id": "SettingPage_maker",
+    "cn": "制作组",
+    "en": "Production team",
+    "jp": "",
+    "tw": "製作組"
+  },
+  "SettingPage_changelanguage": {
+    "id": "SettingPage_changelanguage",
+    "cn": "切换语言",
+    "en": "Language",
+    "jp": "",
+    "tw": "切換語言"
+  },
+  "SettingPage_code": {
+    "id": "SettingPage_code",
+    "cn": "兑换码",
+    "en": "Exchange code",
+    "jp": "",
+    "tw": "兌換碼"
+  },
+  "SettingPage_bindaccount": {
+    "id": "SettingPage_bindaccount",
+    "cn": "绑定账号",
+    "en": "Bind Account",
+    "jp": "",
+    "tw": "綁定帳號"
+  },
+  "SettingPage_changeaccount": {
+    "id": "SettingPage_changeaccount",
+    "cn": "切换账号",
+    "en": "Switch Account",
+    "jp": "",
+    "tw": "切換帳號"
+  },
+  "SolarStarPage_singleplanet": {
+    "id": "SolarStarPage_singleplanet",
+    "cn": "独立星球",
+    "en": "Independent Planet",
+    "jp": "",
+    "tw": "獨立星球"
+  },
+  "SolarStarPage_outside": {
+    "id": "SolarStarPage_outside",
+    "cn": "番外",
+    "en": "Extra",
+    "jp": "",
+    "tw": "番外"
+  },
+  "SolarStarPage_mainlineplanet": {
+    "id": "SolarStarPage_mainlineplanet",
+    "cn": "主线星球",
+    "en": "Main Planet",
+    "jp": "",
+    "tw": "主線星球"
+  },
+  "SolarStarPage_mainline": {
+    "id": "SolarStarPage_mainline",
+    "cn": "主线",
+    "en": "Main",
+    "jp": "",
+    "tw": "主線"
+  },
+  "SolarStarPage_currentprogress": {
+    "id": "SolarStarPage_currentprogress",
+    "cn": "当前进度",
+    "en": "Current Progress",
+    "jp": "",
+    "tw": "當前進度"
+  },
+  "SolarStarPage_dailytask": {
+    "id": "SolarStarPage_dailytask",
+    "cn": "星联任务",
+    "en": "Mission",
+    "jp": "",
+    "tw": "星聯任務"
+  },
+  "SolarStarPage_plot": {
+    "id": "SolarStarPage_plot",
+    "cn": "剧情",
+    "en": "Plot",
+    "jp": "",
+    "tw": "劇情"
+  },
+  "SolarStarPage_planetpurify": {
+    "id": "SolarStarPage_planetpurify",
+    "cn": "星球净化",
+    "en": "Planet",
+    "jp": "",
+    "tw": "星球淨化"
+  },
+  "TeamPreparePage_capskill": {
+    "id": "TeamPreparePage_capskill",
+    "cn": "队长技能",
+    "en": "Team Leader Skill",
+    "jp": "",
+    "tw": "隊長技能"
+  },
+  "AssistChoosePage_help": {
+    "id": "AssistChoosePage_help",
+    "cn": "助战",
+    "en": "Assist",
+    "jp": "",
+    "tw": "助戰"
+  },
+  "AssistChoosePage_gethelp": {
+    "id": "AssistChoosePage_gethelp",
+    "cn": "找个支援吧！",
+    "en": "Find support!",
+    "jp": "",
+    "tw": "找個支援吧！"
+  },
+  "AssistChoosePage_no": {
+    "id": "AssistChoosePage_no",
+    "cn": "不好",
+    "en": "Nope",
+    "jp": "",
+    "tw": "不好"
+  },
+  "AssistChoosePage_ok": {
+    "id": "AssistChoosePage_ok",
+    "cn": "好耶",
+    "en": "Yep",
+    "jp": "",
+    "tw": "好耶"
+  },
+  "LevelRewardPage_back": {
+    "id": "LevelRewardPage_back",
+    "cn": "回舱",
+    "en": "Back",
+    "jp": "",
+    "tw": "回艙"
+  },
+  "LevelRewardPage_continue": {
+    "id": "LevelRewardPage_continue",
+    "cn": "继续",
+    "en": "Cont.",
+    "jp": "",
+    "tw": "繼續"
+  },
+  "LevelRewardPage_next": {
+    "id": "LevelRewardPage_next",
+    "cn": "下一关",
+    "en": "NEXT",
+    "jp": "",
+    "tw": "下一關"
+  },
+  "LevelRewardPage_again": {
+    "id": "LevelRewardPage_again",
+    "cn": "再战！",
+    "en": "Again",
+    "jp": "",
+    "tw": "再戰！"
+  },
+  "ShipTelevisionPage_fuelstation": {
+    "id": "ShipTelevisionPage_fuelstation",
+    "cn": "燃料站",
+    "en": "Fuel Station",
+    "jp": "",
+    "tw": "燃料站"
+  },
+  "HBPage_mainline": {
+    "id": "HBPage_mainline",
+    "cn": "主线",
+    "en": "Main",
+    "jp": "",
+    "tw": "主線"
+  },
+  "HBPage_dialogue": {
+    "id": "HBPage_dialogue",
+    "cn": "对白",
+    "en": "Dialogue",
+    "jp": "",
+    "tw": "對白"
+  },
+  "HBPage_activity": {
+    "id": "HBPage_activity",
+    "cn": "活动",
+    "en": "Event",
+    "jp": "",
+    "tw": "活動"
+  },
+  "selectRolePage_onekeyreadnew": {
+    "id": "selectRolePage_onekeyreadnew",
+    "cn": "一键读新",
+    "en": "Quick to read new",
+    "jp": "",
+    "tw": "一鍵讀新"
+  },
+  "selectRolePage_people": {
+    "id": "selectRolePage_people",
+    "cn": "人物",
+    "en": "Role",
+    "jp": "",
+    "tw": "人物"
+  },
+  "selectRolePage_pet": {
+    "id": "selectRolePage_pet",
+    "cn": "宠物",
+    "en": "Pet",
+    "jp": "",
+    "tw": "寵物"
+  },
+  "selectRolePage_arms": {
+    "id": "selectRolePage_arms",
+    "cn": "武器",
+    "en": "Weapon",
+    "jp": "",
+    "tw": "武器"
+  },
+  "selectRolePage_default": {
+    "id": "selectRolePage_default",
+    "cn": "默认",
+    "en": "Default",
+    "jp": "",
+    "tw": "默認"
+  },
+  "selectRolePage_level": {
+    "id": "selectRolePage_level",
+    "cn": "等级",
+    "en": "Level",
+    "jp": "",
+    "tw": "等級"
+  },
+  "selectRolePage_unit": {
+    "id": "selectRolePage_unit",
+    "cn": "单位",
+    "en": "Unit",
+    "jp": "",
+    "tw": "單位"
+  },
+  "selectRolePage_nongdu": {
+    "id": "selectRolePage_nongdu",
+    "cn": "浓度",
+    "en": "Concentration",
+    "jp": "",
+    "tw": "濃度"
+  },
+  "selectRolePage_armtypes": {
+    "id": "selectRolePage_armtypes",
+    "cn": "武器类型",
+    "en": "Weapon Type",
+    "jp": "",
+    "tw": "武器類型"
+  },
+  "selectRolePage_raity": {
+    "id": "selectRolePage_raity",
+    "cn": "稀有度",
+    "en": "Rarity",
+    "jp": "",
+    "tw": "稀有度"
+  },
+  "selectRolePage_blood": {
+    "id": "selectRolePage_blood",
+    "cn": "血型",
+    "en": "Blood Type",
+    "jp": "",
+    "tw": "血型"
+  },
+  "selectRolePage_all": {
+    "id": "selectRolePage_all",
+    "cn": "全部",
+    "en": "All",
+    "jp": "",
+    "tw": "全部"
+  },
+  "selectRolePage_scissors": {
+    "id": "selectRolePage_scissors",
+    "cn": "剪刀",
+    "en": "Scissors",
+    "jp": "",
+    "tw": "剪刀"
+  },
+  "selectRolePage_stone": {
+    "id": "selectRolePage_stone",
+    "cn": "石头",
+    "en": "Stone",
+    "jp": "",
+    "tw": "石頭"
+  },
+  "selectRolePage_cloth": {
+    "id": "selectRolePage_cloth",
+    "cn": "布",
+    "en": "Cloth",
+    "jp": "",
+    "tw": "布"
+  },
+  "selectRolePage_create": {
+    "id": "selectRolePage_create",
+    "cn": "创造",
+    "en": "Create",
+    "jp": "",
+    "tw": "創造"
+  },
+  "selectRolePage_destory": {
+    "id": "selectRolePage_destory",
+    "cn": "毁灭",
+    "en": "Destory",
+    "jp": "",
+    "tw": "毀滅"
+  },
+  "selectRolePage_texing": {
+    "id": "selectRolePage_texing",
+    "cn": "特性",
+    "en": "Feature",
+    "jp": "",
+    "tw": "特性"
+  },
+  "GardenMapPage_cook": {
+    "id": "GardenMapPage_cook",
+    "cn": "烹饪食材",
+    "en": "Ingredient",
+    "jp": "",
+    "tw": "烹飪食材"
+  },
+  "GardenMapPage_room": {
+    "id": "GardenMapPage_room",
+    "cn": "房间",
+    "en": "Room",
+    "jp": "",
+    "tw": "房間"
+  },
+  "GardenMapPage_elves": {
+    "id": "GardenMapPage_elves",
+    "cn": "精灵",
+    "en": "Elf",
+    "jp": "",
+    "tw": "精靈"
+  },
+  "GardenMapPage_getall": {
+    "id": "GardenMapPage_getall",
+    "cn": "收获全部",
+    "en": "Harvest all",
+    "jp": "",
+    "tw": "收穫全部"
+  },
+  "GardenMapPage_unlocknewland": {
+    "id": "GardenMapPage_unlocknewland",
+    "cn": "可解锁新地块",
+    "en": "The new block can be unlocked now",
+    "jp": "",
+    "tw": "可解鎖新地塊"
+  },
+  "GardenMapPage_farmlevel": {
+    "id": "GardenMapPage_farmlevel",
+    "cn": "菜地等级",
+    "en": "Vegetable field level",
+    "jp": "",
+    "tw": "菜地等級"
+  },
+  "GardenMapPage_shop": {
+    "id": "GardenMapPage_shop",
+    "cn": "商店",
+    "en": "Shop",
+    "jp": "",
+    "tw": "商店"
+  },
+  "GardenMapPage_bag": {
+    "id": "GardenMapPage_bag",
+    "cn": "背包袋子",
+    "en": "Bag",
+    "jp": "",
+    "tw": "背包袋子"
+  },
+  "GardenMapPage_keepit": {
+    "id": "GardenMapPage_keepit",
+    "cn": "收起",
+    "en": "Hide",
+    "jp": "",
+    "tw": "收起"
+  },
+  "GardenMapPage_plant": {
+    "id": "GardenMapPage_plant",
+    "cn": "种植",
+    "en": "Plant",
+    "jp": "",
+    "tw": "種植"
+  },
+  "FBIcon_0": {
+    "id": "FBIcon_0",
+    "cn": "虚空幻界",
+    "en": "Coming soon",
+    "jp": "",
+    "tw": "虛空幻界"
+  },
+  "FBIcon_1": {
+    "id": "FBIcon_1",
+    "cn": "迷雾马戏团",
+    "en": "Coming soon",
+    "jp": "",
+    "tw": "迷霧馬戲團"
+  },
+  "FBIcon_2": {
+    "id": "FBIcon_2",
+    "cn": "自选礼包",
+    "en": "Coming soon",
+    "jp": "",
+    "tw": "自選禮包"
+  },
+  "FBIcon_3": {
+    "id": "FBIcon_3",
+    "cn": "蜜汁活动",
+    "en": "Coming soon",
+    "jp": "",
+    "tw": "蜜汁活動"
+  },
+  "FBIcon_4": {
+    "id": "FBIcon_4",
+    "cn": "野菌围剿",
+    "en": "Field Army",
+    "jp": "",
+    "tw": "野菌圍剿"
+  },
+  "FBIcon_5": {
+    "id": "FBIcon_5",
+    "cn": "神秘方阵",
+    "en": "Coming soon",
+    "jp": "",
+    "tw": "神秘方陣"
+  },
+  "FBIcon_6": {
+    "id": "FBIcon_6",
+    "cn": "晴空裂变",
+    "en": "Coming soon",
+    "jp": "",
+    "tw": "晴空裂變"
+  },
+  "FBIcon_7": {
+    "id": "FBIcon_7",
+    "cn": "复刻时间",
+    "en": "Coming soon",
+    "jp": "",
+    "tw": "複刻時間"
+  },
+  "FBIcon_8": {
+    "id": "FBIcon_8",
+    "cn": "萌新浪",
+    "en": "Coming soon",
+    "jp": "",
+    "tw": "萌新浪"
+  },
+  "FBIcon_9": {
+    "id": "FBIcon_9",
+    "cn": "神金盆地",
+    "en": "Coming soon",
+    "jp": "",
+    "tw": "神金盆地"
+  },
+  "FBIcon_10": {
+    "id": "FBIcon_10",
+    "cn": "好鸽友",
+    "en": "Coming soon",
+    "jp": "",
+    "tw": "好鴿友"
+  },
+  "FBIcon_11": {
+    "id": "FBIcon_11",
+    "cn": "深海之恋",
+    "en": "Coming soon",
+    "jp": "",
+    "tw": "深海之戀"
+  },
+  "FBIcon_12": {
+    "id": "FBIcon_12",
+    "cn": "揽月潜影",
+    "en": "Coming soon",
+    "jp": "",
+    "tw": "攬月潛影"
+  },
+  "FBIcon_13": {
+    "id": "FBIcon_13",
+    "cn": "月影镜像",
+    "en": "Coming soon",
+    "jp": "",
+    "tw": "月影鏡像"
+  },
+  "FBIcon_14": {
+    "id": "FBIcon_14",
+    "cn": "万圣再临",
+    "en": "Coming soon",
+    "jp": "",
+    "tw": "萬聖再臨"
+  },
+  "FBIcon_15": {
+    "id": "FBIcon_15",
+    "cn": "樱味魔菇",
+    "en": "Coming soon",
+    "jp": "",
+    "tw": "櫻味魔菇"
+  },
+  "FBIcon_16": {
+    "id": "FBIcon_16",
+    "cn": "七日奖励",
+    "en": "7-day Reward",
+    "jp": "",
+    "tw": "七日獎勵"
+  },
+  "FBIcon_17": {
+    "id": "FBIcon_17",
+    "cn": "任务奖励",
+    "en": "Mission Reward",
+    "jp": "",
+    "tw": "任務獎勵"
+  },
+  "FBIcon_18": {
+    "id": "FBIcon_18",
+    "cn": "凛冬之寒",
+    "en": "Coming soon",
+    "jp": "",
+    "tw": "凜冬之寒"
+  },
+  "FBIcon_19": {
+    "id": "FBIcon_19",
+    "cn": "冰芯糖林",
+    "en": "Coming soon",
+    "jp": "",
+    "tw": "冰芯糖林"
+  },
+  "FBIcon_20": {
+    "id": "FBIcon_20",
+    "cn": "溯夜之星",
+    "en": "Coming soon",
+    "jp": "",
+    "tw": "溯夜之星"
+  },
+  "FBIcon_21": {
+    "id": "FBIcon_21",
+    "cn": "门票领取",
+    "en": "Coming soon",
+    "jp": "",
+    "tw": "門票領取"
+  },
+  "FBIcon_22": {
+    "id": "FBIcon_22",
+    "cn": "浮海之歌",
+    "en": "Coming soon",
+    "jp": "",
+    "tw": "浮海之歌"
+  },
+  "FBIcon_23": {
+    "id": "FBIcon_23",
+    "cn": "甜酒情书",
+    "en": "Coming soon",
+    "jp": "",
+    "tw": "甜酒情書"
+  },
+  "FBIcon_24": {
+    "id": "FBIcon_24",
+    "cn": "食色佳人",
+    "en": "Coming soon",
+    "jp": "",
+    "tw": "食色佳人"
+  },
+  "FBIcon_25": {
+    "id": "FBIcon_25",
+    "cn": "蓝月疾影",
+    "en": "Coming soon",
+    "jp": "",
+    "tw": "藍月疾影"
+  },
+  "FBIcon_26": {
+    "id": "FBIcon_26",
+    "cn": "我必抽卡",
+    "en": "Card Pool",
+    "jp": "",
+    "tw": "我必抽卡"
+  },
+  "FBIcon_27": {
+    "id": "FBIcon_27",
+    "cn": "煤球游戏厅",
+    "en": "Briquet Game Room",
+    "jp": "",
+    "tw": "煤球遊戲廳"
+  },
+  "FBIcon_28": {
+    "id": "FBIcon_28",
+    "cn": "暗海之渊",
+    "en": "Coming soon",
+    "jp": "",
+    "tw": "暗海之淵"
+  },
+  "FBIcon_29": {
+    "id": "FBIcon_29",
+    "cn": "七日奖励",
+    "en": "7-day Reward",
+    "jp": "",
+    "tw": "七日獎勵"
+  },
+  "FBIcon_30": {
+    "id": "FBIcon_30",
+    "cn": "繁星之夜",
+    "en": "Coming soon",
+    "jp": "",
+    "tw": "繁星之夜"
+  },
+  "FBIcon_31": {
+    "id": "FBIcon_31",
+    "cn": "浮世异界",
+    "en": "Coming soon",
+    "jp": "",
+    "tw": "浮世異界"
+  },
+  "FBIcon_32": {
+    "id": "FBIcon_32",
+    "cn": "百战萌宠",
+    "en": "Coming soon",
+    "jp": "",
+    "tw": "百戰萌寵"
+  },
+  "FBIcon_33": {
+    "id": "FBIcon_33",
+    "cn": "门票领取",
+    "en": "Coming soon",
+    "jp": "",
+    "tw": "門票領取"
+  },
+  "FBIcon_34": {
+    "id": "FBIcon_34",
+    "cn": "盛夏漂流",
+    "en": "Coming soon",
+    "jp": "",
+    "tw": "盛夏漂流"
+  },
+  "FBIcon_35": {
+    "id": "FBIcon_35",
+    "cn": "定向掉落",
+    "en": "Corresponding drops",
+    "jp": "",
+    "tw": "定向掉落"
+  },
+  "FBIcon_36": {
+    "id": "FBIcon_36",
+    "cn": "无尽森林",
+    "en": "Infinite Forest",
+    "jp": "",
+    "tw": "無盡森林"
+  },
+  "FBIcon_37": {
+    "id": "FBIcon_37",
+    "cn": "限时卡池",
+    "en": "Time-limited Card Pool",
+    "jp": "",
+    "tw": "限時卡池"
+  },
+  "FBIcon_42": {
+    "id": "FBIcon_42",
+    "cn": "运营活动",
+    "en": "Operating Activities",
+    "jp": "",
+    "tw": "運營活動"
+  },
+  "FBIcon_43": {
+    "id": "FBIcon_43",
+    "cn": "首充奖励",
+    "en": "First Recharge Reward",
+    "jp": "",
+    "tw": "首充獎勵"
+  },
+  "FBIcon_Recharge": {
+    "id": "FBIcon_Recharge",
+    "cn": "巨灵的祈愿",
+    "en": "",
+    "jp": "",
+    "tw": ""
+  },
+  "Button_1": {
+    "id": "Button_1",
+    "cn": "无尽森林",
+    "en": "Infinite Forest",
+    "jp": "",
+    "tw": "無盡森林"
+  },
+  "Button_2": {
+    "id": "Button_2",
+    "cn": "立即召唤",
+    "en": "Summon Now",
+    "jp": "",
+    "tw": "立即召喚"
+  },
+  "Button_3": {
+    "id": "Button_3",
+    "cn": "每日礼包",
+    "en": "Daily Gift",
+    "jp": "",
+    "tw": "每日禮包"
+  },
+  "Button_4": {
+    "id": "Button_4",
+    "cn": "密钥",
+    "en": "Key",
+    "jp": "",
+    "tw": "金鑰"
+  },
+  "Button_5": {
+    "id": "Button_5",
+    "cn": "开始",
+    "en": "Start",
+    "jp": "",
+    "tw": "開始"
+  },
+  "Button_6": {
+    "id": "Button_6",
+    "cn": "公告",
+    "en": "Notice",
+    "jp": "",
+    "tw": "公告"
+  },
+  "Button_7": {
+    "id": "Button_7",
+    "cn": "开启方糖格",
+    "en": "Opened Sugar Cube Slot",
+    "jp": "",
+    "tw": "開啟方糖格"
+  },
+  "Button_8": {
+    "id": "Button_8",
+    "cn": "刷新一次",
+    "en": "Refresh once",
+    "jp": "",
+    "tw": "刷新一次"
+  },
+  "Button_9": {
+    "id": "Button_9",
+    "cn": "编队",
+    "en": "Lineup",
+    "jp": "",
+    "tw": "編隊"
+  },
+  "Button_10": {
+    "id": "Button_10",
+    "cn": "升格",
+    "en": "Promote",
+    "jp": "",
+    "tw": "升格"
+  },
+  "Button_11": {
+    "id": "Button_11",
+    "cn": "背包",
+    "en": "Bag",
+    "jp": "",
+    "tw": "背包"
+  },
+  "Button_12": {
+    "id": "Button_12",
+    "cn": "关卡名",
+    "en": "Stage Name",
+    "jp": "",
+    "tw": "關卡名"
+  },
+  "Button_13": {
+    "id": "Button_13",
+    "cn": "当前进度",
+    "en": "Current Progress",
+    "jp": "",
+    "tw": "當前進度"
+  },
+  "Button_14": {
+    "id": "Button_14",
+    "cn": "前往下一个星球",
+    "en": "Go to the next star",
+    "jp": "",
+    "tw": "前往下一個星球"
+  },
+  "Button_15": {
+    "id": "Button_15",
+    "cn": "下一星球",
+    "en": "Next Star",
+    "jp": "",
+    "tw": "下一星球"
+  },
+  "UIRelation1_qingbaoku": {
+    "id": "UIRelation1_qingbaoku",
+    "cn": "情报库",
+    "en": "Info Base",
+    "jp": "",
+    "tw": "情報庫"
+  },
+  "UIRelation1_shenghuadui": {
+    "id": "UIRelation1_shenghuadui",
+    "cn": "生化特遣队",
+    "en": "Biochemical task force",
+    "jp": "",
+    "tw": "生化特遣隊"
+  },
+  "UIRelation1_scpshourongsuo": {
+    "id": "UIRelation1_scpshourongsuo",
+    "cn": "特殊生物收容所",
+    "en": "Special Creature Shelter",
+    "jp": "",
+    "tw": "特殊生物收容所"
+  },
+  "UIRelation1_zhuxingbu": {
+    "id": "UIRelation1_zhuxingbu",
+    "cn": "执行部",
+    "en": "Executive department",
+    "jp": "",
+    "tw": "執行部"
+  },
+  "UIRelation1_gouyingruhuo": {
+    "id": "UIRelation1_gouyingruhuo",
+    "cn": "勾引入伙",
+    "en": "Seduce to join",
+    "jp": "",
+    "tw": "勾引入夥"
+  },
+  "UIRelation1_yubeisheng": {
+    "id": "UIRelation1_yubeisheng",
+    "cn": "预备生",
+    "en": "Preparatory student",
+    "jp": "",
+    "tw": "預備生"
+  },
+  "UIRelation1_shiyanshi": {
+    "id": "UIRelation1_shiyanshi",
+    "cn": "海胆实验室",
+    "en": "Sea Urchin Lab",
+    "jp": "",
+    "tw": "海膽實驗室"
+  },
+  "UIRelation1_bandong": {
+    "id": "UIRelation1_bandong",
+    "cn": "斑 鸠",
+    "en": "Benjamin",
+    "jp": "",
+    "tw": "斑 鳩"
+  },
+  "UIRelation1_kuke": {
+    "id": "UIRelation1_kuke",
+    "cn": "库 克",
+    "en": "Cook",
+    "jp": "",
+    "tw": "庫 克"
+  },
+  "UIRelation1_wang": {
+    "id": "UIRelation1_wang",
+    "cn": "旺",
+    "en": "Wendell",
+    "jp": "",
+    "tw": "旺"
+  },
+  "UIRelation1_haidanwan": {
+    "id": "UIRelation1_haidanwan",
+    "cn": "海胆丸",
+    "en": "Sea Urchin Ball",
+    "jp": "",
+    "tw": "海膽丸"
+  },
+  "UIRelation1_nana": {
+    "id": "UIRelation1_nana",
+    "cn": "拿 拿",
+    "en": "Nana",
+    "jp": "",
+    "tw": "拿 拿"
+  },
+  "UIRelation1_lijun": {
+    "id": "UIRelation1_lijun",
+    "cn": "栗 君",
+    "en": "Roc",
+    "jp": "",
+    "tw": "栗 君"
+  },
+  "UIRelation1_jujiu": {
+    "id": "UIRelation1_jujiu",
+    "cn": "橘 九",
+    "en": "Citrus",
+    "jp": "",
+    "tw": "橘 九"
+  },
+  "UIRelation1_mogu": {
+    "id": "UIRelation1_mogu",
+    "cn": "魔 菇",
+    "en": "Mushroom Maid",
+    "jp": "",
+    "tw": "魔 菇"
+  },
+  "UIRelation1_aiwei": {
+    "id": "UIRelation1_aiwei",
+    "cn": "艾 维",
+    "en": "Ivey",
+    "jp": "",
+    "tw": "艾 維"
+  },
+  "UIRelation1_wucheng": {
+    "id": "UIRelation1_wucheng",
+    "cn": "巫 辰",
+    "en": "Vincent",
+    "jp": "",
+    "tw": "巫 辰"
+  },
+  "UIRelation2_qingbaoku": {
+    "id": "UIRelation2_qingbaoku",
+    "cn": "情报库",
+    "en": "Info Base",
+    "jp": "",
+    "tw": "情報庫"
+  },
+  "UIRelation2_jiyou": {
+    "id": "UIRelation2_jiyou",
+    "cn": "姬友",
+    "en": "Best friend",
+    "jp": "",
+    "tw": "姬友"
+  },
+  "UIRelation2_xishang": {
+    "id": "UIRelation2_xishang",
+    "cn": "欣赏",
+    "en": "appreciate",
+    "jp": "",
+    "tw": "欣賞"
+  },
+  "UIRelation2_shiyou": {
+    "id": "UIRelation2_shiyou",
+    "cn": "室友",
+    "en": "Roommate",
+    "jp": "",
+    "tw": "室友"
+  },
+  "UIRelation2_xiongmei": {
+    "id": "UIRelation2_xiongmei",
+    "cn": "姐弟",
+    "en": "Brother and sister",
+    "jp": "",
+    "tw": "姐弟"
+  },
+  "UIRelation2_xihuan": {
+    "id": "UIRelation2_xihuan",
+    "cn": "喜欢",
+    "en": "Like",
+    "jp": "",
+    "tw": "喜歡"
+  },
+  "UIRelation2_zuichou": {
+    "id": "UIRelation2_zuichou",
+    "cn": "互相嘴臭",
+    "en": "Mutual scolder",
+    "jp": "",
+    "tw": "互相嘴臭"
+  },
+  "UIRelation2_haopengyou": {
+    "id": "UIRelation2_haopengyou",
+    "cn": "好朋友",
+    "en": "Good friends",
+    "jp": "",
+    "tw": "好朋友"
+  },
+  "UIRelation2_didui": {
+    "id": "UIRelation2_didui",
+    "cn": "敌对",
+    "en": "Hostile",
+    "jp": "",
+    "tw": "敵對"
+  },
+  "UIRelation2_luoying": {
+    "id": "UIRelation2_luoying",
+    "cn": "落 樱",
+    "en": "Sakura",
+    "jp": "",
+    "tw": "落 櫻"
+  },
+  "UIRelation2_xiaoai": {
+    "id": "UIRelation2_xiaoai",
+    "cn": "小 艾",
+    "en": "Iris",
+    "jp": "",
+    "tw": "小 艾"
+  },
+  "UIRelation2_xiaoying": {
+    "id": "UIRelation2_xiaoying",
+    "cn": "小 樱",
+    "en": "Cherry",
+    "jp": "",
+    "tw": "小 櫻"
+  },
+  "UIRelation2_feiye": {
+    "id": "UIRelation2_feiye",
+    "cn": "绯 夜",
+    "en": "Violet Guard",
+    "jp": "",
+    "tw": "緋 夜"
+  },
+  "UIRelation2_humi": {
+    "id": "UIRelation2_humi",
+    "cn": "狐 祢",
+    "en": "Rose Fox",
+    "jp": "",
+    "tw": "狐 禰"
+  },
+  "UIRelation2_huqu": {
+    "id": "UIRelation2_huqu",
+    "cn": "狐 渠",
+    "en": "Snow Fox",
+    "jp": "",
+    "tw": "狐 渠"
+  },
+  "UIRelation2_yaochi": {
+    "id": "UIRelation2_yaochi",
+    "cn": "妖 炽",
+    "en": "Siren",
+    "jp": "",
+    "tw": "妖 熾"
+  },
+  "UIRelation2_jujiu": {
+    "id": "UIRelation2_jujiu",
+    "cn": "橘 九",
+    "en": "Citrus",
+    "jp": "",
+    "tw": "橘 九"
+  },
+  "UIRelation2_mogu": {
+    "id": "UIRelation2_mogu",
+    "cn": "魔 菇",
+    "en": "Mushroom Maid",
+    "jp": "",
+    "tw": "魔 菇"
+  },
+  "UIRelation2_manjisi": {
+    "id": "UIRelation2_manjisi",
+    "cn": "曼吉斯",
+    "en": "Mangues",
+    "jp": "",
+    "tw": "曼吉斯"
+  },
+  "UIRelation2_wucheng": {
+    "id": "UIRelation2_wucheng",
+    "cn": "巫 辰",
+    "en": "Vincent",
+    "jp": "",
+    "tw": "巫 辰"
+  },
+  "UIRelation3_qingbaoku": {
+    "id": "UIRelation3_qingbaoku",
+    "cn": "情报库",
+    "en": "Info Base",
+    "jp": "",
+    "tw": "情報庫"
+  },
+  "UIRelation3_qianbei": {
+    "id": "UIRelation3_qianbei",
+    "cn": "前辈",
+    "en": "Senior",
+    "jp": "",
+    "tw": "前輩"
+  },
+  "UIRelation3_zhiyou": {
+    "id": "UIRelation3_zhiyou",
+    "cn": "挚友",
+    "en": "Friend",
+    "jp": "",
+    "tw": "摯友"
+  },
+  "UIRelation3_zhiying": {
+    "id": "UIRelation3_zhiying",
+    "cn": "知音",
+    "en": "Soul mate",
+    "jp": "",
+    "tw": "知音"
+  },
+  "UIRelation3_aimu": {
+    "id": "UIRelation3_aimu",
+    "cn": "爱慕",
+    "en": "Adore",
+    "jp": "",
+    "tw": "愛慕"
+  },
+  "UIRelation3_yangmu": {
+    "id": "UIRelation3_yangmu",
+    "cn": "仰慕",
+    "en": "Admire",
+    "jp": "",
+    "tw": "仰慕"
+  },
+  "UIRelation3_zunjing": {
+    "id": "UIRelation3_zunjing",
+    "cn": "尊敬",
+    "en": "Respect",
+    "jp": "",
+    "tw": "尊敬"
+  },
+  "UIRelation3_kongju": {
+    "id": "UIRelation3_kongju",
+    "cn": "恐惧",
+    "en": "Fear",
+    "jp": "",
+    "tw": "恐懼"
+  },
+  "UIRelation3_tiaoxi": {
+    "id": "UIRelation3_tiaoxi",
+    "cn": "调戏",
+    "en": "Tease",
+    "jp": "",
+    "tw": "調戲"
+  },
+  "UIRelation3_qifu": {
+    "id": "UIRelation3_qifu",
+    "cn": "欺负",
+    "en": "Bully",
+    "jp": "",
+    "tw": "欺負"
+  },
+  "UIRelation3_weizhi": {
+    "id": "UIRelation3_weizhi",
+    "cn": "未知",
+    "en": "Unknown",
+    "jp": "",
+    "tw": "未知"
+  },
+  "UIRelation3_fujiu": {
+    "id": "UIRelation3_fujiu",
+    "cn": "负疚",
+    "en": "Sorry",
+    "jp": "",
+    "tw": "負疚"
+  },
+  "UIRelation3_chongai": {
+    "id": "UIRelation3_chongai",
+    "cn": "宠爱",
+    "en": "Spoil",
+    "jp": "",
+    "tw": "寵愛"
+  },
+  "UIRelation3_bairongrong": {
+    "id": "UIRelation3_bairongrong",
+    "cn": "白绒绒",
+    "en": "White",
+    "jp": "",
+    "tw": "白絨絨"
+  },
+  "UIRelation3_qingtian": {
+    "id": "UIRelation3_qingtian",
+    "cn": "晴 天",
+    "en": "Weather Dominator",
+    "jp": "",
+    "tw": "晴 天"
+  },
+  "UIRelation3_xiaoai": {
+    "id": "UIRelation3_xiaoai",
+    "cn": "小 艾",
+    "en": "Iris",
+    "jp": "",
+    "tw": "小 艾"
+  },
+  "UIRelation3_huqu": {
+    "id": "UIRelation3_huqu",
+    "cn": "狐 渠",
+    "en": "Snow Fox",
+    "jp": "",
+    "tw": "狐 渠"
+  },
+  "UIRelation3_mingjing": {
+    "id": "UIRelation3_mingjing",
+    "cn": "明 烬",
+    "en": "Scarlet",
+    "jp": "",
+    "tw": "明 燼"
+  },
+  "UIRelation3_daihao": {
+    "id": "UIRelation3_daihao",
+    "cn": "代号-XH",
+    "en": "XH5",
+    "jp": "",
+    "tw": "代號-XH"
+  },
+  "UIRelation3_waijie": {
+    "id": "UIRelation3_waijie",
+    "cn": "外 界",
+    "en": "Boundary",
+    "jp": "",
+    "tw": "外 界"
+  },
+  "UIRelation3_shuangjiang": {
+    "id": "UIRelation3_shuangjiang",
+    "cn": "霜 降",
+    "en": "Frost",
+    "jp": "",
+    "tw": "霜 降"
+  },
+  "UIRelation3_ranchun": {
+    "id": "UIRelation3_ranchun",
+    "cn": "燃 春",
+    "en": "Spring",
+    "jp": "",
+    "tw": "燃 春"
+  },
+  "UIRelation3_ming": {
+    "id": "UIRelation3_ming",
+    "cn": "鸣",
+    "en": "Thunder",
+    "jp": "",
+    "tw": "鳴"
+  },
+  "UIRelation3_dongzhi": {
+    "id": "UIRelation3_dongzhi",
+    "cn": "冬 至",
+    "en": "Winter",
+    "jp": "",
+    "tw": "鼕 至"
+  },
+  "UIRelation3_jixia": {
+    "id": "UIRelation3_jixia",
+    "cn": "寄 夏",
+    "en": "Late Summer",
+    "jp": "",
+    "tw": "寄 夏"
+  },
+  "UIRelation3_lixia": {
+    "id": "UIRelation3_lixia",
+    "cn": "立   夏",
+    "en": "Summer",
+    "jp": "",
+    "tw": "立 夏"
+  },
+  "UIRelation4_qingbaoku": {
+    "id": "UIRelation4_qingbaoku",
+    "cn": "情报库",
+    "en": "Info Base",
+    "jp": "",
+    "tw": "情報庫"
+  },
+  "UIRelation4_jiyou": {
+    "id": "UIRelation4_jiyou",
+    "cn": "好姬友",
+    "en": "Bosom friend",
+    "jp": "",
+    "tw": "好姬友"
+  },
+  "UIRelation4_zhiyou": {
+    "id": "UIRelation4_zhiyou",
+    "cn": "挚友",
+    "en": "Friend",
+    "jp": "",
+    "tw": "摯友"
+  },
+  "UIRelation4_qianbei": {
+    "id": "UIRelation4_qianbei",
+    "cn": "前辈",
+    "en": "Senior",
+    "jp": "",
+    "tw": "前輩"
+  },
+  "UIRelation4_anlian": {
+    "id": "UIRelation4_anlian",
+    "cn": "暗恋",
+    "en": "Secret love",
+    "jp": "",
+    "tw": "暗戀"
+  },
+  "UIRelation4_jiemei": {
+    "id": "UIRelation4_jiemei",
+    "cn": "姐妹",
+    "en": "Sisters",
+    "jp": "",
+    "tw": "姐妹"
+  },
+  "UIRelation4_sidi": {
+    "id": "UIRelation4_sidi",
+    "cn": "死敌",
+    "en": "Sworn enemy",
+    "jp": "",
+    "tw": "死敵"
+  },
+  "UIRelation4_ganen": {
+    "id": "UIRelation4_ganen",
+    "cn": "感恩",
+    "en": "Appreciate",
+    "jp": "",
+    "tw": "感恩"
+  },
+  "UIRelation4_yaochi": {
+    "id": "UIRelation4_yaochi",
+    "cn": "妖 炽",
+    "en": "Siren",
+    "jp": "",
+    "tw": "妖 熾"
+  },
+  "UIRelation4_youyuzi": {
+    "id": "UIRelation4_youyuzi",
+    "cn": "鱿鱼子",
+    "en": "Squidy",
+    "jp": "",
+    "tw": "魷魚子"
+  },
+  "UIRelation4_sanchaji": {
+    "id": "UIRelation4_sanchaji",
+    "cn": "三叉姬",
+    "en": "Trident Maid",
+    "jp": "",
+    "tw": "三叉姬"
+  },
+  "UIRelation4_luoying": {
+    "id": "UIRelation4_luoying",
+    "cn": "落 樱",
+    "en": "Sakura",
+    "jp": "",
+    "tw": "落 櫻"
+  },
+  "UIRelation4_jujiu": {
+    "id": "UIRelation4_jujiu",
+    "cn": "橘 九",
+    "en": "Citrus",
+    "jp": "",
+    "tw": "橘 九"
+  },
+  "UIRelation4_yuexi": {
+    "id": "UIRelation4_yuexi",
+    "cn": "月 汐",
+    "en": "Moontide",
+    "jp": "",
+    "tw": "月 汐"
+  },
+  "UIRelation4_baili": {
+    "id": "UIRelation4_baili",
+    "cn": "白 漓",
+    "en": "Azure",
+    "jp": "",
+    "tw": "白 漓"
+  },
+  "UIRelation4_wandong": {
+    "id": "UIRelation4_wandong",
+    "cn": "晚 冬",
+    "en": "Chione",
+    "jp": "",
+    "tw": "晚 冬"
+  },
+  "UIRelation5_qingbaoku": {
+    "id": "UIRelation5_qingbaoku",
+    "cn": "情报库",
+    "en": "Info Base",
+    "jp": "",
+    "tw": "情報庫"
+  },
+  "UIRelation5_xihuanqifu": {
+    "id": "UIRelation5_xihuanqifu",
+    "cn": "喜欢欺负",
+    "en": "Love to bully",
+    "jp": "",
+    "tw": "喜歡欺負"
+  },
+  "UIRelation5_zhiyou": {
+    "id": "UIRelation5_zhiyou",
+    "cn": "挚友",
+    "en": "Friend",
+    "jp": "",
+    "tw": "摯友"
+  },
+  "UIRelation5_duishou": {
+    "id": "UIRelation5_duishou",
+    "cn": "对手",
+    "en": "Opponent",
+    "jp": "",
+    "tw": "對手"
+  },
+  "UIRelation5_yijianfenqi": {
+    "id": "UIRelation5_yijianfenqi",
+    "cn": "意见分歧",
+    "en": "Disagreement",
+    "jp": "",
+    "tw": "意見分歧"
+  },
+  "UIRelation5_feichangtaoyan": {
+    "id": "UIRelation5_feichangtaoyan",
+    "cn": "非常讨厌",
+    "en": "Hate",
+    "jp": "",
+    "tw": "非常討厭"
+  },
+  "UIRelation5_ciyuanlvxing": {
+    "id": "UIRelation5_ciyuanlvxing",
+    "cn": "一起打游戏\n\n次元旅行",
+    "en": "Enjoy games together\n\nDimension Travel",
+    "jp": "",
+    "tw": "一起打遊戲\n\n次元旅行"
+  },
+  "UIRelation5_xiechengxubug": {
+    "id": "UIRelation5_xiechengxubug",
+    "cn": "一起打游戏\n\n写程序Bug",
+    "en": "Enjoy games together\n\nWrite a bug",
+    "jp": "",
+    "tw": "一起打遊戲\n\n寫程式Bug"
+  },
+  "UIRelation5_chaofengtudou": {
+    "id": "UIRelation5_chaofengtudou",
+    "cn": "一起打游戏\n顺便嘲讽土豆",
+    "en": "Enjoy games together\n\nSneer at the potato",
+    "jp": "",
+    "tw": "一起打遊戲\n順便嘲諷土豆"
+  },
+  "UIRelation5_yangmu": {
+    "id": "UIRelation5_yangmu",
+    "cn": "仰慕",
+    "en": "Adore",
+    "jp": "",
+    "tw": "仰慕"
+  },
+  "UIRelation5_dachenggongshi": {
+    "id": "UIRelation5_dachenggongshi",
+    "cn": "达成共识",
+    "en": "Achieving consensus",
+    "jp": "",
+    "tw": "達成共識"
+  },
+  "UIRelation5_chongai": {
+    "id": "UIRelation5_chongai",
+    "cn": "宠爱",
+    "en": "Spoil",
+    "jp": "",
+    "tw": "寵愛"
+  },
+  "UIRelation5_mingjing": {
+    "id": "UIRelation5_mingjing",
+    "cn": "明 烬",
+    "en": "Scarlet",
+    "jp": "",
+    "tw": "明 燼"
+  },
+  "UIRelation5_daihao": {
+    "id": "UIRelation5_daihao",
+    "cn": "代号-XH5",
+    "en": "XH5",
+    "jp": "",
+    "tw": "代號-XH5"
+  },
+  "UIRelation5_bairongrong": {
+    "id": "UIRelation5_bairongrong",
+    "cn": "白绒绒",
+    "en": "White",
+    "jp": "",
+    "tw": "白絨絨"
+  },
+  "UIRelation5_qingtian": {
+    "id": "UIRelation5_qingtian",
+    "cn": "晴 天",
+    "en": "Weather Dominator",
+    "jp": "",
+    "tw": "晴 天"
+  },
+  "UIRelation5_fangfanghe": {
+    "id": "UIRelation5_fangfanghe",
+    "cn": "方方盒",
+    "en": "Square Box",
+    "jp": "",
+    "tw": "方方盒"
+  },
+  "UIRelation5_xiaoling": {
+    "id": "UIRelation5_xiaoling",
+    "cn": "小 林",
+    "en": "Lim",
+    "jp": "",
+    "tw": "小 林"
+  },
+  "UIRelation5_kuke": {
+    "id": "UIRelation5_kuke",
+    "cn": "库克",
+    "en": "Cook",
+    "jp": "",
+    "tw": "庫克"
+  },
+  "UIRelation5_wang": {
+    "id": "UIRelation5_wang",
+    "cn": "旺",
+    "en": "Wendell",
+    "jp": "",
+    "tw": "旺"
+  },
+  "UIRelation5_luoying": {
+    "id": "UIRelation5_luoying",
+    "cn": "落 樱",
+    "en": "Sakura",
+    "jp": "",
+    "tw": "落 櫻"
+  },
+  "UIRelation6_qingbaoku": {
+    "id": "UIRelation6_qingbaoku",
+    "cn": "情报库",
+    "en": "Info Base",
+    "jp": "",
+    "tw": "情報庫"
+  },
+  "UIRelation6_milian": {
+    "id": "UIRelation6_milian",
+    "cn": "迷恋",
+    "en": "Infatuated",
+    "jp": "",
+    "tw": "迷戀"
+  },
+  "UIRelation6_qinglv": {
+    "id": "UIRelation6_qinglv",
+    "cn": "情侣",
+    "en": "Lovers",
+    "jp": "",
+    "tw": "情侶"
+  },
+  "UIRelation6_duishou": {
+    "id": "UIRelation6_duishou",
+    "cn": "对手",
+    "en": "Opponent",
+    "jp": "",
+    "tw": "對手"
+  },
+  "UIRelation6_zhiying": {
+    "id": "UIRelation6_zhiying",
+    "cn": "知音",
+    "en": "Soul mate",
+    "jp": "",
+    "tw": "知音"
+  },
+  "UIRelation6_linianbuhe": {
+    "id": "UIRelation6_linianbuhe",
+    "cn": "理念不合",
+    "en": "Distinguished ideas",
+    "jp": "",
+    "tw": "理念不合"
+  },
+  "UIRelation6_xiaofensi": {
+    "id": "UIRelation6_xiaofensi",
+    "cn": "小粉丝",
+    "en": "Fan",
+    "jp": "",
+    "tw": "小粉絲"
+  },
+  "UIRelation6_daoshi": {
+    "id": "UIRelation6_daoshi",
+    "cn": "导师",
+    "en": "Mentor",
+    "jp": "",
+    "tw": "導師"
+  },
+  "UIRelation6_muyunjie": {
+    "id": "UIRelation6_muyunjie",
+    "cn": "暮云羯",
+    "en": "Twi-twi",
+    "jp": "",
+    "tw": "暮雲羯"
+  },
+  "UIRelation6_aierliang": {
+    "id": "UIRelation6_aierliang",
+    "cn": "艾尔良",
+    "en": "Iris",
+    "jp": "",
+    "tw": "艾爾良"
+  },
+  "UIRelation6_wang": {
+    "id": "UIRelation6_wang",
+    "cn": "旺",
+    "en": "Wendell",
+    "jp": "",
+    "tw": "旺"
+  },
+  "UIRelation6_kuke": {
+    "id": "UIRelation6_kuke",
+    "cn": "库 克",
+    "en": "Cook",
+    "jp": "",
+    "tw": "庫 克"
+  },
+  "UIRelation6_duoduo": {
+    "id": "UIRelation6_duoduo",
+    "cn": "朵 朵",
+    "en": "Cotton",
+    "jp": "",
+    "tw": "朵 朵"
+  },
+  "UIRelation6_kongkong": {
+    "id": "UIRelation6_kongkong",
+    "cn": "空 空",
+    "en": "Sky",
+    "jp": "",
+    "tw": "空 空"
+  },
+  "UIRelation6_aibo": {
+    "id": "UIRelation6_aibo",
+    "cn": "艾 波",
+    "en": "Ebbo",
+    "jp": "",
+    "tw": "艾 波"
+  },
+  "UIRelation6_mogu": {
+    "id": "UIRelation6_mogu",
+    "cn": "魔 菇",
+    "en": "Mushroom Maid",
+    "jp": "",
+    "tw": "魔 菇"
+  },
+  "UIRelation6_labi&boer": {
+    "id": "UIRelation6_labi&boer",
+    "cn": "拉比&波尔",
+    "en": "Rabbi & Boll",
+    "jp": "",
+    "tw": "拉比&波爾"
+  },
+  "UIRelation6_pengyou": {
+    "id": "UIRelation6_pengyou",
+    "cn": "朋友",
+    "en": "Friend",
+    "jp": "",
+    "tw": "朋友"
+  },
+  "UIRelation6_dddd": {
+    "id": "UIRelation6_dddd",
+    "cn": "懂的都懂",
+    "en": "You Know",
+    "jp": "",
+    "tw": "懂的都懂"
+  },
+  "UIRelation7_qingbaoku": {
+    "id": "UIRelation7_qingbaoku",
+    "cn": "情报库",
+    "en": "Info Base",
+    "jp": "",
+    "tw": "情報庫"
+  },
+  "UIRelation7_huli": {
+    "id": "UIRelation7_huli",
+    "cn": "互利",
+    "en": "Mutually beneficial",
+    "jp": "",
+    "tw": "互利"
+  },
+  "UIRelation7_jiedi": {
+    "id": "UIRelation7_jiedi",
+    "cn": "姐弟",
+    "en": "Brother and sister",
+    "jp": "",
+    "tw": "姐弟"
+  },
+  "UIRelation7_tongzu": {
+    "id": "UIRelation7_tongzu",
+    "cn": "同族",
+    "en": "Homologous",
+    "jp": "",
+    "tw": "同族"
+  },
+  "UIRelation7_cengjingdehaoyou": {
+    "id": "UIRelation7_cengjingdehaoyou",
+    "cn": "曾经的好友",
+    "en": "Former friends",
+    "jp": "",
+    "tw": "曾經的好友"
+  },
+  "UIRelation7_jiemei": {
+    "id": "UIRelation7_jiemei",
+    "cn": "姐妹",
+    "en": "Sisters",
+    "jp": "",
+    "tw": "姐妹"
+  },
+  "UIRelation7_jingti": {
+    "id": "UIRelation7_jingti",
+    "cn": "警惕",
+    "en": "Vigilant",
+    "jp": "",
+    "tw": "警惕"
+  },
+  "UIRelation7_jiyou": {
+    "id": "UIRelation7_jiyou",
+    "cn": "好姬友",
+    "en": "Bosom friend",
+    "jp": "",
+    "tw": "好姬友"
+  },
+  "UIRelation7_xiongmei": {
+    "id": "UIRelation7_xiongmei",
+    "cn": "兄妹",
+    "en": "Brother and sister",
+    "jp": "",
+    "tw": "兄妹"
+  },
+  "UIRelation7_nieyuan": {
+    "id": "UIRelation7_nieyuan",
+    "cn": "孽缘",
+    "en": "Evil fate",
+    "jp": "",
+    "tw": "孽緣"
+  },
+  "UIRelation7_beiliyong": {
+    "id": "UIRelation7_beiliyong",
+    "cn": "被利用",
+    "en": "Be used",
+    "jp": "",
+    "tw": "被利用"
+  },
+  "UIRelation7_yuexi": {
+    "id": "UIRelation7_yuexi",
+    "cn": "月 汐",
+    "en": "Moontide",
+    "jp": "",
+    "tw": "月 汐"
+  },
+  "UIRelation7_yaochi": {
+    "id": "UIRelation7_yaochi",
+    "cn": "妖 炽",
+    "en": "Siren",
+    "jp": "",
+    "tw": "妖 熾"
+  },
+  "UIRelation7_baili": {
+    "id": "UIRelation7_baili",
+    "cn": "白 漓",
+    "en": "Azure",
+    "jp": "",
+    "tw": "白 漓"
+  },
+  "UIRelation7_yeli": {
+    "id": "UIRelation7_yeli",
+    "cn": "夜 离",
+    "en": "Night Elf",
+    "jp": "",
+    "tw": "夜 離"
+  },
+  "UIRelation7_heiji": {
+    "id": "UIRelation7_heiji",
+    "cn": "黑 翊",
+    "en": "Dark Guard",
+    "jp": "",
+    "tw": "黑 翊"
+  },
+  "UIRelation7_luoying": {
+    "id": "UIRelation7_luoying",
+    "cn": "落 樱",
+    "en": "Sakura",
+    "jp": "",
+    "tw": "落 櫻"
+  },
+  "UIRelation7_jujiu": {
+    "id": "UIRelation7_jujiu",
+    "cn": "橘 九",
+    "en": "Citrus",
+    "jp": "",
+    "tw": "橘 九"
+  },
+  "UIRelation7_manjisi": {
+    "id": "UIRelation7_manjisi",
+    "cn": "曼吉斯",
+    "en": "Mangues",
+    "jp": "",
+    "tw": "曼吉斯"
+  },
+  "UIRelation7_feiye": {
+    "id": "UIRelation7_feiye",
+    "cn": "绯 夜",
+    "en": "Violet Guard",
+    "jp": "",
+    "tw": "緋 夜"
+  },
+  "UIRelation7_sansha": {
+    "id": "UIRelation7_sansha",
+    "cn": "三 杀",
+    "en": "Shadow",
+    "jp": "",
+    "tw": "三 殺"
+  },
+  "UIRelation7_jihua": {
+    "id": "UIRelation7_jihua",
+    "cn": "霁 华",
+    "en": "Genevieve",
+    "jp": "",
+    "tw": "霽 華"
+  },
+  "UIRelation7_wucheng": {
+    "id": "UIRelation7_wucheng",
+    "cn": "巫 辰",
+    "en": "Vincent",
+    "jp": "",
+    "tw": "巫 辰"
+  },
+  "UIRelation8_qingbaoku": {
+    "id": "UIRelation8_qingbaoku",
+    "cn": "情报库",
+    "en": "Info Base",
+    "jp": "",
+    "tw": "情報庫"
+  },
+  "UIRelation8_shangji": {
+    "id": "UIRelation8_shangji",
+    "cn": "上级",
+    "en": "Superior",
+    "jp": "",
+    "tw": "上級"
+  },
+  "UIRelation8_jingdi": {
+    "id": "UIRelation8_jingdi",
+    "cn": "劲敌",
+    "en": "Strong enemy",
+    "jp": "",
+    "tw": "勁敵"
+  },
+  "UIRelation8_renwumubiao": {
+    "id": "UIRelation8_renwumubiao",
+    "cn": "任务目标",
+    "en": "Target",
+    "jp": "",
+    "tw": "任務目標"
+  },
+  "UIRelation8_jingyang": {
+    "id": "UIRelation8_jingyang",
+    "cn": "敬仰",
+    "en": "Admire",
+    "jp": "",
+    "tw": "敬仰"
+  },
+  "UIRelation9_qingbaoku": {
+    "id": "UIRelation9_qingbaoku",
+    "cn": "情报库",
+    "en": "Info Base",
+    "jp": "",
+    "tw": "情報庫"
+  },
+  "UIRelation9_jingdi": {
+    "id": "UIRelation9_jingdi",
+    "cn": "劲敌",
+    "en": "Strong enemy",
+    "jp": "",
+    "tw": "勁敵"
+  },
+  "UIRelation9_yanzhongding": {
+    "id": "UIRelation9_yanzhongding",
+    "cn": "眼中钉",
+    "en": "Eyesore",
+    "jp": "",
+    "tw": "眼中釘"
+  },
+  "UIRelation9_yanwu": {
+    "id": "UIRelation9_yanwu",
+    "cn": "厌恶",
+    "en": "Hate",
+    "jp": "",
+    "tw": "厭惡"
+  },
+  "UIRelation9_meimei": {
+    "id": "UIRelation9_meimei",
+    "cn": "煤 梅",
+    "en": "Mei",
+    "jp": "",
+    "tw": "煤 梅"
+  },
+  "UIRelation9_tongliao": {
+    "id": "UIRelation9_tongliao",
+    "cn": "同僚",
+    "en": "Colleague",
+    "jp": "",
+    "tw": "同僚"
+  },
+  "UIRelation10_qingbaoku": {
+    "id": "UIRelation10_qingbaoku",
+    "cn": "情报库",
+    "en": "Info Base",
+    "jp": "",
+    "tw": "情報庫"
+  },
+  "UIRelation10_qingmeizhuma": {
+    "id": "UIRelation10_qingmeizhuma",
+    "cn": "青梅竹马",
+    "en": "Childhood Sweetheart",
+    "jp": "",
+    "tw": "青梅竹馬"
+  },
+  "UIRelation10_zhanchangjiyou": {
+    "id": "UIRelation10_zhanchangjiyou",
+    "cn": "战场好姬友",
+    "en": "Comrade",
+    "jp": "",
+    "tw": "戰場好姬友"
+  },
+  "UIRelation10_jiyou": {
+    "id": "UIRelation10_jiyou",
+    "cn": "机油",
+    "en": "Bosom Friend",
+    "jp": "",
+    "tw": "機油"
+  },
+  "UIRelation10_shijie": {
+    "id": "UIRelation10_shijie",
+    "cn": "师姐",
+    "en": "Elder Sister",
+    "jp": "",
+    "tw": "師姐"
+  },
+  "UIRelation10_qifuduixiang": {
+    "id": "UIRelation10_qifuduixiang",
+    "cn": "欺负对象",
+    "en": "The Bullied",
+    "jp": "",
+    "tw": "欺負對象"
+  },
+  "UIRelation10_lele": {
+    "id": "UIRelation10_lele",
+    "cn": "乐 乐 酱",
+    "en": "Joey",
+    "jp": "",
+    "tw": "樂 樂 醬"
+  },
+  "UIRelation10_xingyao": {
+    "id": "UIRelation10_xingyao",
+    "cn": "星 耀",
+    "en": "Starlight",
+    "jp": "",
+    "tw": "星 耀"
+  },
+  "UIRelation10_luoran": {
+    "id": "UIRelation10_luoran",
+    "cn": "洛 燃",
+    "en": "Roland",
+    "jp": "",
+    "tw": "洛 燃"
+  },
+  "UIRelation10_lansansan": {
+    "id": "UIRelation10_lansansan",
+    "cn": "蓝散散",
+    "en": "Sapphire",
+    "jp": "",
+    "tw": "藍散散"
+  },
+  "UIRelation10_yueguangjifeng": {
+    "id": "UIRelation10_yueguangjifeng",
+    "cn": "月光疾风",
+    "en": "Moonlight Gale",
+    "jp": "",
+    "tw": "月光疾風"
+  },
+  "UIRelation10_zeta": {
+    "id": "UIRelation10_zeta",
+    "cn": "泽 塔",
+    "en": "Zeta",
+    "jp": "",
+    "tw": "澤 塔"
+  },
+  "UIRelation10_shiluozhizi": {
+    "id": "UIRelation10_shiluozhizi",
+    "cn": "失落之子",
+    "en": "Lost son",
+    "jp": "",
+    "tw": "失落之子"
+  },
+  "UIRelation11_qingbaoku": {
+    "id": "UIRelation11_qingbaoku",
+    "cn": "情报库",
+    "en": "Info Base",
+    "jp": "",
+    "tw": "情報庫"
+  },
+  "LoginPageContent_708_start": {
+    "id": "LoginPageContent_708_start",
+    "cn": "点击任意处开始游戏",
+    "en": "Tap anywhere to start the game",
+    "jp": "",
+    "tw": "點擊任意處開始遊戲"
+  },
+  "MainPage_shouqi": {
+    "id": "MainPage_shouqi",
+    "cn": "收起",
+    "en": "Hide",
+    "jp": "",
+    "tw": "收起"
+  },
+  "MainPage_richang": {
+    "id": "MainPage_richang",
+    "cn": "日常",
+    "en": "Daily",
+    "jp": "",
+    "tw": "日常"
+  },
+  "MainPage_zhankai": {
+    "id": "MainPage_zhankai",
+    "cn": "展开",
+    "en": "More",
+    "jp": "",
+    "tw": "展開"
+  },
+  "MainPage_huodong": {
+    "id": "MainPage_huodong",
+    "cn": "活动",
+    "en": "Event",
+    "jp": "",
+    "tw": "活動"
+  },
+  "MainPage_new": {
+    "id": "MainPage_new",
+    "cn": "新",
+    "en": "New",
+    "jp": "",
+    "tw": "新"
+  },
+  "MainPage_bbji": {
+    "id": "MainPage_bbji",
+    "cn": "导航BB机",
+    "en": "Palm Pilot",
+    "jp": "",
+    "tw": "導航BB機"
+  },
+  "selectRolePage_hanjian": {
+    "id": "selectRolePage_hanjian",
+    "cn": "稀有度(罕见)",
+    "en": "Rarity (Rare)",
+    "jp": "",
+    "tw": "稀有度(罕見)"
+  },
+  "SolarStarTaskPage_lingqu": {
+    "id": "SolarStarTaskPage_lingqu",
+    "cn": "可领取",
+    "en": "Claimable",
+    "jp": "",
+    "tw": "可領取"
+  },
+  "SolarStarTaskPage_meirirenwu": {
+    "id": "SolarStarTaskPage_meirirenwu",
+    "cn": "每日任务",
+    "en": "Daily Mission",
+    "jp": "",
+    "tw": "每日任務"
+  },
+  "SolarStarTaskPage_meirishuaxing": {
+    "id": "SolarStarTaskPage_meirishuaxing",
+    "cn": "（每日00：00刷新）",
+    "en": "(Refresh 00:00 every day)",
+    "jp": "",
+    "tw": "（每日00：00刷新）"
+  },
+  "SolarStarTaskPage_lingqutiaojian": {
+    "id": "SolarStarTaskPage_lingqutiaojian",
+    "cn": "领取条件：完成右侧任务以领取对应档位奖励！",
+    "en": "Requirement: Complete the missions listed on the right to claim the corresponding reward!",
+    "jp": "",
+    "tw": "領取條件：完成右側任務以領取對應檔位獎勵！"
+  },
+  "SolarStarTaskPage_jieduanrenwu": {
+    "id": "SolarStarTaskPage_jieduanrenwu",
+    "cn": "阶段任务:",
+    "en": "Mission:",
+    "jp": "",
+    "tw": "階段任務:"
+  },
+  "SolarStarTaskPage_yilingqu": {
+    "id": "SolarStarTaskPage_yilingqu",
+    "cn": "已领取",
+    "en": "Claimed",
+    "jp": "",
+    "tw": "已領取"
+  },
+  "SolarStarTaskPage_lingquall": {
+    "id": "SolarStarTaskPage_lingquall",
+    "cn": "领取全部",
+    "en": "Claim all",
+    "jp": "",
+    "tw": "領取全部"
+  },
+  "SolarStarTaskPage_xinglianrenwu": {
+    "id": "SolarStarTaskPage_xinglianrenwu",
+    "cn": "星联任务",
+    "en": "Mission",
+    "jp": "",
+    "tw": "星聯任務"
+  },
+  "SolarStarTaskPage_juqing": {
+    "id": "SolarStarTaskPage_juqing",
+    "cn": "剧情",
+    "en": "Plot",
+    "jp": "",
+    "tw": "劇情"
+  },
+  "SolarStarTaskPage_xingqiujinhua": {
+    "id": "SolarStarTaskPage_xingqiujinhua",
+    "cn": "星球净化",
+    "en": "Planet",
+    "jp": "",
+    "tw": "星球淨化"
+  },
+  "FriendPage_zhuzhan": {
+    "id": "FriendPage_zhuzhan",
+    "cn": "助战角色",
+    "en": "Assistance",
+    "jp": "",
+    "tw": "助戰角色"
+  },
+  "SetFramePage_head": {
+    "id": "SetFramePage_head",
+    "cn": "头 像",
+    "en": "Image",
+    "jp": "",
+    "tw": "頭 像"
+  },
+  "SetFramePage_headkuang": {
+    "id": "SetFramePage_headkuang",
+    "cn": "头 像 框",
+    "en": "Avatar",
+    "jp": "",
+    "tw": "頭 像 框"
+  },
+  "SetFramePage_jiaju": {
+    "id": "SetFramePage_jiaju",
+    "cn": "家 具",
+    "en": "Furniture",
+    "jp": "",
+    "tw": "家 具"
+  },
+  "SetFramePage_dianjitexiao": {
+    "id": "SetFramePage_dianjitexiao",
+    "cn": "点击特效",
+    "en": "Tap the effect",
+    "jp": "",
+    "tw": "點擊特效"
+  },
+  "SetFramePage_baocun": {
+    "id": "SetFramePage_baocun",
+    "cn": "保  存",
+    "en": "Save",
+    "jp": "",
+    "tw": "保  存"
+  },
+  "MakingPage_cook": {
+    "id": "MakingPage_cook",
+    "cn": "烹饪食材",
+    "en": "Ingredient",
+    "jp": "",
+    "tw": "烹飪食材"
+  },
+  "MakingPage_making": {
+    "id": "MakingPage_making",
+    "cn": "制造家具",
+    "en": "Make furniture",
+    "jp": "",
+    "tw": "製造傢俱"
+  },
+  "MakingPage_zidingyi": {
+    "id": "MakingPage_zidingyi",
+    "cn": "自定义",
+    "en": "Custom",
+    "jp": "",
+    "tw": "自訂"
+  },
+  "MakingPage_peifang": {
+    "id": "MakingPage_peifang",
+    "cn": "配方",
+    "en": "Recipe",
+    "jp": "",
+    "tw": "配方"
+  },
+  "MakingPage_make": {
+    "id": "MakingPage_make",
+    "cn": "制作",
+    "en": "Create",
+    "jp": "",
+    "tw": "製作"
+  },
+  "MakingPage_caibi": {
+    "id": "MakingPage_caibi",
+    "cn": "菜币",
+    "en": "Green Coin",
+    "jp": "",
+    "tw": "菜幣"
+  },
+  "MakingPage_tiaojianbuzu": {
+    "id": "MakingPage_tiaojianbuzu",
+    "cn": "条件不足",
+    "en": "The requirement has not been fulfilled",
+    "jp": "",
+    "tw": "條件不足"
+  },
+  "MakingPage_xuyao2cai": {
+    "id": "MakingPage_xuyao2cai",
+    "cn": "需要2个菜",
+    "en": "2 cuisines required",
+    "jp": "",
+    "tw": "需要2個菜"
+  },
+  "MakingPage_cookcount": {
+    "id": "MakingPage_cookcount",
+    "cn": "烹饪数量\n调整！",
+    "en": "Cooking times\nadjustment!",
+    "jp": "",
+    "tw": "烹飪數量\n調整！"
+  },
+  "MakingPage_cancookwhat": {
+    "id": "MakingPage_cancookwhat",
+    "cn": "会烹饪出什么咧！",
+    "en": "What will I get?",
+    "jp": "",
+    "tw": "會烹飪出什麼咧！"
+  },
+  "MakingPage_makingwuhu": {
+    "id": "MakingPage_makingwuhu",
+    "cn": "制造家具！",
+    "en": "Create furniture!",
+    "jp": "",
+    "tw": "製造傢俱！"
+  },
+  "RoomPage_zhuangxiu": {
+    "id": "RoomPage_zhuangxiu",
+    "cn": "装修",
+    "en": "Decorate",
+    "jp": "",
+    "tw": "裝修"
+  },
+  "RoomPage_zuoyou": {
+    "id": "RoomPage_zuoyou",
+    "cn": "左\n右\n视\n野",
+    "en": "M\nO\nR\nE",
+    "jp": "",
+    "tw": "左\n右\n視\n野"
+  },
+  "RoomPage_shouqi": {
+    "id": "RoomPage_shouqi",
+    "cn": "收\n起\n视\n野",
+    "en": "L\nE\nS\nS",
+    "jp": "",
+    "tw": "收\n起\n視\n野"
+  },
+  "RoomPage_kanyou": {
+    "id": "RoomPage_kanyou",
+    "cn": "康康右边",
+    "en": "View the right",
+    "jp": "",
+    "tw": "康康右邊"
+  },
+  "RoomPage_kanzuo": {
+    "id": "RoomPage_kanzuo",
+    "cn": "康康左边",
+    "en": "View the left",
+    "jp": "",
+    "tw": "康康左邊"
+  },
+  "RoomPage_fangru": {
+    "id": "RoomPage_fangru",
+    "cn": "将挑选的样式放入",
+    "en": "Place the selected style",
+    "jp": "",
+    "tw": "將挑選的樣式放入"
+  },
+  "RoomPage_qiangmian": {
+    "id": "RoomPage_qiangmian",
+    "cn": "墙面",
+    "en": "Wall",
+    "jp": "",
+    "tw": "牆面"
+  },
+  "RoomPage_diban": {
+    "id": "RoomPage_diban",
+    "cn": "地板",
+    "en": "Floor",
+    "jp": "",
+    "tw": "地板"
+  },
+  "RoomPage_quanbufanghui": {
+    "id": "RoomPage_quanbufanghui",
+    "cn": "全部放回",
+    "en": "Withdraw all",
+    "jp": "",
+    "tw": "全部放回"
+  },
+  "RoomPage_fanghui": {
+    "id": "RoomPage_fanghui",
+    "cn": "放回",
+    "en": "Withdraw",
+    "jp": "",
+    "tw": "放回"
+  },
+  "RoomPage_yingcang": {
+    "id": "RoomPage_yingcang",
+    "cn": "隐\n藏",
+    "en": "Hi-\nde",
+    "jp": "",
+    "tw": "隱\n藏"
+  },
+  "RoomPage_jiaju": {
+    "id": "RoomPage_jiaju",
+    "cn": "家具",
+    "en": "Furniture",
+    "jp": "",
+    "tw": "傢俱"
+  },
+  "RoomPage_fanhui": {
+    "id": "RoomPage_fanhui",
+    "cn": "返回主飞船",
+    "en": "Return to the spaceship",
+    "jp": "",
+    "tw": "返回主飛船"
+  },
+  "RoomPage_jiajumake": {
+    "id": "RoomPage_jiajumake",
+    "cn": "家具制作",
+    "en": "Furniture production",
+    "jp": "",
+    "tw": "傢俱製作"
+  },
+  "RoomPage_baocun": {
+    "id": "RoomPage_baocun",
+    "cn": "保存修改",
+    "en": "Save",
+    "jp": "",
+    "tw": "保存修改"
+  },
+  "RoomPage_quxiao": {
+    "id": "RoomPage_quxiao",
+    "cn": "取消修改",
+    "en": "Cancel",
+    "jp": "",
+    "tw": "取消修改"
+  },
+  "DailySignInCore_kelingqu": {
+    "id": "DailySignInCore_kelingqu",
+    "cn": "可领取",
+    "en": "Claimable",
+    "jp": "",
+    "tw": "可領取"
+  },
+  "DailySignInCore_qiandaosong": {
+    "id": "DailySignInCore_qiandaosong",
+    "cn": "签到送随机道具！",
+    "en": "Sign in to get a random item!",
+    "jp": "",
+    "tw": "簽到送隨機道具！"
+  },
+  "DailySignInCore_meiriqiandao": {
+    "id": "DailySignInCore_meiriqiandao",
+    "cn": "每日签到",
+    "en": "Daily Check-in",
+    "jp": "",
+    "tw": "每日簽到"
+  },
+  "SettingPage_fuzhiid": {
+    "id": "SettingPage_fuzhiid",
+    "cn": "长按可复制ID哦~",
+    "en": "Long press to copy the ID.",
+    "jp": "",
+    "tw": "長按可複製ID哦~"
+  },
+  "ShopPage_meirilibao": {
+    "id": "ShopPage_meirilibao",
+    "cn": "每日礼包",
+    "en": "Daily Gift",
+    "jp": "",
+    "tw": "每日禮包"
+  },
+  "DailyGiftPage_buybuy": {
+    "id": "DailyGiftPage_buybuy",
+    "cn": "买 买 买>>",
+    "en": "Buy",
+    "jp": "",
+    "tw": "買 買 買>>"
+  },
+  "DailyGiftPage_jinengxiangqing": {
+    "id": "DailyGiftPage_jinengxiangqing",
+    "cn": "技能详情",
+    "en": "Skill details",
+    "jp": "",
+    "tw": "技能詳情"
+  },
+  "ShopSkinPage_skinstory": {
+    "id": "ShopSkinPage_skinstory",
+    "cn": "皮肤故事",
+    "en": "Story",
+    "jp": "",
+    "tw": "皮膚故事"
+  },
+  "ShopSkinPage_shop": {
+    "id": "ShopSkinPage_shop",
+    "cn": "商店",
+    "en": "Shop",
+    "jp": "",
+    "tw": "商店"
+  },
+  "ShopSkinPage_buy": {
+    "id": "ShopSkinPage_buy",
+    "cn": "购买",
+    "en": "Buy",
+    "jp": "",
+    "tw": "購買"
+  },
+  "ShopSkinPage_buyit": {
+    "id": "ShopSkinPage_buyit",
+    "cn": "购买！",
+    "en": "Buy",
+    "jp": "",
+    "tw": "購買！"
+  },
+  "ShopSkinPage_chuangshang": {
+    "id": "ShopSkinPage_chuangshang",
+    "cn": "穿上它!",
+    "en": "Put it on!",
+    "jp": "",
+    "tw": "穿上它!"
+  },
+  "ShopSkinPage_yijingchuanshang": {
+    "id": "ShopSkinPage_yijingchuanshang",
+    "cn": "已穿戴!",
+    "en": "Equipped",
+    "jp": "",
+    "tw": "已穿戴!"
+  },
+  "ShopSkinPage_genghuandeskin": {
+    "id": "ShopSkinPage_genghuandeskin",
+    "cn": "更换的皮肤仅显示于当前使用的角色模型！",
+    "en": "The swtiched skin can only display on the current hero!",
+    "jp": "",
+    "tw": "更換的皮膚僅顯示於當前使用的角色模型！"
+  },
+  "SkinPage_skinstory": {
+    "id": "SkinPage_skinstory",
+    "cn": "皮肤故事",
+    "en": "Story",
+    "jp": "",
+    "tw": "皮膚故事"
+  },
+  "SkinPage_buy": {
+    "id": "SkinPage_buy",
+    "cn": "购买",
+    "en": "Buy",
+    "jp": "",
+    "tw": "購買"
+  },
+  "SkinPage_buyit": {
+    "id": "SkinPage_buyit",
+    "cn": "购买！",
+    "en": "Buy",
+    "jp": "",
+    "tw": "購買！"
+  },
+  "SkinPage_chuangshang": {
+    "id": "SkinPage_chuangshang",
+    "cn": "穿上它!",
+    "en": "Put it on!",
+    "jp": "",
+    "tw": "穿上它!"
+  },
+  "SkinPage_yijingchuanshang": {
+    "id": "SkinPage_yijingchuanshang",
+    "cn": "已穿戴!",
+    "en": "Equipped",
+    "jp": "",
+    "tw": "已穿戴!"
+  },
+  "SkinPage_genghuandeskin": {
+    "id": "SkinPage_genghuandeskin",
+    "cn": "更换的皮肤仅显示于当前使用的角色模型！",
+    "en": "The swtiched skin can only display on the current hero!",
+    "jp": "",
+    "tw": "更換的皮膚僅顯示於當前使用的角色模型！"
+  },
+  "SkinPage_cantbuy": {
+    "id": "SkinPage_cantbuy",
+    "cn": "无法购买",
+    "en": "Cannot buy now",
+    "jp": "",
+    "tw": "無法購買"
+  },
+  "DevelopmentPage_shengge": {
+    "id": "DevelopmentPage_shengge",
+    "cn": "升格",
+    "en": "Promote",
+    "jp": "",
+    "tw": "升格"
+  },
+  "DevelopmentPage_chakan": {
+    "id": "DevelopmentPage_chakan",
+    "cn": "详情",
+    "en": "Details",
+    "jp": "",
+    "tw": "詳情"
+  },
+  "DevelopmentPage_jie": {
+    "id": "DevelopmentPage_jie",
+    "cn": "阶",
+    "en": "R",
+    "jp": "",
+    "tw": "階"
+  },
+  "DevelopmentPage_skin": {
+    "id": "DevelopmentPage_skin",
+    "cn": "皮肤",
+    "en": "Skin",
+    "jp": "",
+    "tw": "皮膚"
+  },
+  "AskToBuySkinFloating_buy": {
+    "id": "AskToBuySkinFloating_buy",
+    "cn": "OvO买买买",
+    "en": "Buy",
+    "jp": "",
+    "tw": "OvO買買買"
+  },
+  "AskToBuySkinFloating_no": {
+    "id": "AskToBuySkinFloating_no",
+    "cn": "-^-不不不",
+    "en": "No",
+    "jp": "",
+    "tw": "-^-不不不"
+  },
+  "AskToBuySkinFloating_surebuy": {
+    "id": "AskToBuySkinFloating_surebuy",
+    "cn": "确定支付爆汁软糖购买皮肤嘛>v<!",
+    "en": "Sure to consume Gumdrop to purchase skin?",
+    "jp": "",
+    "tw": "確定支付爆汁軟糖購買皮膚嘛>v<!"
+  },
+  "shopPageSub_skin_goumai": {
+    "id": "shopPageSub_skin_goumai",
+    "cn": "已购买>v<",
+    "en": "Purchased",
+    "jp": "",
+    "tw": "已購買>v<"
+  },
+  "MailboxPage_see": {
+    "id": "MailboxPage_see",
+    "cn": "看惹",
+    "en": "Read",
+    "jp": "",
+    "tw": "看惹"
+  },
+  "MailboxPage_nosee": {
+    "id": "MailboxPage_nosee",
+    "cn": "米看",
+    "en": "Unread",
+    "jp": "",
+    "tw": "米看"
+  },
+  "ItemInfoPopFloating_tujing": {
+    "id": "ItemInfoPopFloating_tujing",
+    "cn": "获得途径+_+",
+    "en": "Acquisition",
+    "jp": "",
+    "tw": "獲得途徑+_+"
+  },
+  "MixPage_xuexing": {
+    "id": "MixPage_xuexing",
+    "cn": "血型\n详情",
+    "en": "Blood Type\nDetails",
+    "jp": "",
+    "tw": "血型\n詳情"
+  },
+  "MixPage_blackhole": {
+    "id": "MixPage_blackhole",
+    "cn": "煤球黑洞",
+    "en": "Briquet black hole",
+    "jp": "",
+    "tw": "煤球黑洞"
+  },
+  "HandbookStoryTypeBtn_zhuxian": {
+    "id": "HandbookStoryTypeBtn_zhuxian",
+    "cn": "主 线",
+    "en": "Main",
+    "jp": "",
+    "tw": "主 線"
+  },
+  "HandbookStoryTypeBtn_zhixian": {
+    "id": "HandbookStoryTypeBtn_zhixian",
+    "cn": "支 线",
+    "en": "Sub",
+    "jp": "",
+    "tw": "支 線"
+  },
+  "HandbookStoryTypeBtn_duibai": {
+    "id": "HandbookStoryTypeBtn_duibai",
+    "cn": "对 白",
+    "en": "Dialogue",
+    "jp": "",
+    "tw": "對 白"
+  },
+  "HandbookStoryTypeBtn_huodong": {
+    "id": "HandbookStoryTypeBtn_huodong",
+    "cn": "活 动",
+    "en": "Event",
+    "jp": "",
+    "tw": "活 動"
+  },
+  "RoutePage_jiangli": {
+    "id": "RoutePage_jiangli",
+    "cn": "通关每一章节都会有奖励",
+    "en": "Get reward for each chapter clearance",
+    "jp": "",
+    "tw": "通關每一章節都會有獎勵"
+  },
+  "TeamPreparePage_duiyuan": {
+    "id": "TeamPreparePage_duiyuan",
+    "cn": "队员",
+    "en": "Member",
+    "jp": "",
+    "tw": "隊員"
+  },
+  "TeamPreparePage_duizhang": {
+    "id": "TeamPreparePage_duizhang",
+    "cn": "队长",
+    "en": "Leader",
+    "jp": "",
+    "tw": "隊長"
+  },
+  "TeamPreparePage_jie": {
+    "id": "TeamPreparePage_jie",
+    "cn": "阶",
+    "en": "R",
+    "jp": "",
+    "tw": "階"
+  },
+  "TeamPreparePage_chufa": {
+    "id": "TeamPreparePage_chufa",
+    "cn": "出发>>",
+    "en": "Go>>",
+    "jp": "",
+    "tw": "出發>>"
+  },
+  "TeamPreparePage_zhuzhan": {
+    "id": "TeamPreparePage_zhuzhan",
+    "cn": "助战",
+    "en": "Assist",
+    "jp": "",
+    "tw": "助戰"
+  },
+  "TeamPreparePage_zhanli": {
+    "id": "TeamPreparePage_zhanli",
+    "cn": "小队总战力",
+    "en": "Team CP",
+    "jp": "",
+    "tw": "小隊總戰力"
+  },
+  "TeamContent_duiyuan": {
+    "id": "TeamContent_duiyuan",
+    "cn": "队员",
+    "en": "Member",
+    "jp": "",
+    "tw": "隊員"
+  },
+  "TeamContent_duizhang": {
+    "id": "TeamContent_duizhang",
+    "cn": "队长",
+    "en": "Leader",
+    "jp": "",
+    "tw": "隊長"
+  },
+  "TeamContent_jie": {
+    "id": "TeamContent_jie",
+    "cn": "阶",
+    "en": "R",
+    "jp": "",
+    "tw": "階"
+  },
+  "TeamContent_chufa": {
+    "id": "TeamContent_chufa",
+    "cn": "出发>>",
+    "en": "Go>>",
+    "jp": "",
+    "tw": "出發>>"
+  },
+  "TeamContent_zhuzhan": {
+    "id": "TeamContent_zhuzhan",
+    "cn": "助战",
+    "en": "Assist",
+    "jp": "",
+    "tw": "助戰"
+  },
+  "TeamContent_zhanli": {
+    "id": "TeamContent_zhanli",
+    "cn": "小队总战力",
+    "en": "Team CP",
+    "jp": "",
+    "tw": "小隊總戰力"
+  },
+  "ShipShopPage_shuaxingdaojishi": {
+    "id": "ShipShopPage_shuaxingdaojishi",
+    "cn": "刷新倒计时：",
+    "en": "Refresh Countdown:",
+    "jp": "",
+    "tw": "刷新倒計時："
+  },
+  "MiniGamePage_hetiba": {
+    "id": "MiniGamePage_hetiba",
+    "cn": "合体叭，煤球！",
+    "en": "Merge, Briquets!",
+    "jp": "",
+    "tw": "合體叭，煤球！"
+  },
+  "MiniGamePage_kuaipaoba": {
+    "id": "MiniGamePage_kuaipaoba",
+    "cn": "快跑叭，落樱！",
+    "en": "Run, Sakura!",
+    "jp": "",
+    "tw": "快跑叭，落櫻！"
+  },
+  "DaxiguaPage_hetiba": {
+    "id": "DaxiguaPage_hetiba",
+    "cn": "合体叭！\n煤球GOGOGO！",
+    "en": "Merge!Briquet! GO!",
+    "jp": "",
+    "tw": "合體叭！\n煤球GOGOGO！"
+  },
+  "DaxiguaPage_bukepeng": {
+    "id": "DaxiguaPage_bukepeng",
+    "cn": "不可触碰之线",
+    "en": "Untouchable line",
+    "jp": "",
+    "tw": "不可觸碰之線"
+  },
+  "DaxiguaPage_zuigaofen": {
+    "id": "DaxiguaPage_zuigaofen",
+    "cn": "最高分：",
+    "en": "Best Score",
+    "jp": "",
+    "tw": "最高分："
+  },
+  "DaxiguaPage_dangqianfenshu": {
+    "id": "DaxiguaPage_dangqianfenshu",
+    "cn": "当前分数：",
+    "en": "Current score",
+    "jp": "",
+    "tw": "當前分數："
+  },
+  "DaxiguaPage_shoucidaoliangqian": {
+    "id": "DaxiguaPage_shoucidaoliangqian",
+    "cn": "首次达到2000分可获得神秘奖励？！\n快和小伙伴比比谁的分高~",
+    "en": "Get a mysterious reward for the first time reaching 2000 pts?!",
+    "jp": "",
+    "tw": "首次達到2000分可獲得神秘獎勵？！\n快和小夥伴比比誰的分高~"
+  },
+  "DaxiguaPage_2000": {
+    "id": "DaxiguaPage_2000",
+    "cn": "2000分奖励",
+    "en": "2000 points reward",
+    "jp": "",
+    "tw": "2000分獎勵"
+  },
+  "DaxiguaPage_2500": {
+    "id": "DaxiguaPage_2500",
+    "cn": "2500分奖励",
+    "en": "2500 points reward",
+    "jp": "",
+    "tw": "2500分獎勵"
+  },
+  "DaxiguaPage_3000": {
+    "id": "DaxiguaPage_3000",
+    "cn": "3000分奖励",
+    "en": "3000 points reward",
+    "jp": "",
+    "tw": "3000分獎勵"
+  },
+  "DaxiguaPage_dianjichongxinkaishi": {
+    "id": "DaxiguaPage_dianjichongxinkaishi",
+    "cn": "点击重新开始",
+    "en": "Click restart",
+    "jp": "",
+    "tw": "點擊重新開始"
+  },
+  "DaxiguaPage_nidefenshu": {
+    "id": "DaxiguaPage_nidefenshu",
+    "cn": "你的分数：",
+    "en": "Your score:",
+    "jp": "",
+    "tw": "你的分數："
+  },
+  "DaxiguaPage_xinjilu": {
+    "id": "DaxiguaPage_xinjilu",
+    "cn": "新纪录!!!",
+    "en": "New record!",
+    "jp": "",
+    "tw": "新紀錄!!!"
+  },
+  "FlappyPage_dangqiandefeng": {
+    "id": "FlappyPage_dangqiandefeng",
+    "cn": "当前得分",
+    "en": "Current score",
+    "jp": "",
+    "tw": "當前得分"
+  },
+  "FlappyPage_zuigao": {
+    "id": "FlappyPage_zuigao",
+    "cn": "最高",
+    "en": "Best Score",
+    "jp": "",
+    "tw": "最高"
+  },
+  "FlappyPage_zailaiyiju": {
+    "id": "FlappyPage_zailaiyiju",
+    "cn": "再来一局",
+    "en": "One more game",
+    "jp": "",
+    "tw": "再來一局"
+  },
+  "FlappyPage_kaishiyouxi": {
+    "id": "FlappyPage_kaishiyouxi",
+    "cn": "开始游戏",
+    "en": "Start",
+    "jp": "",
+    "tw": "開始遊戲"
+  },
+  "FlappyPage_nidefengshu": {
+    "id": "FlappyPage_nidefengshu",
+    "cn": "你的分数：",
+    "en": "Your score:",
+    "jp": "",
+    "tw": "你的分數："
+  },
+  "JellyCodePage_wuqi": {
+    "id": "JellyCodePage_wuqi",
+    "cn": "武器详情",
+    "en": "Weapon details",
+    "jp": "",
+    "tw": "武器詳情"
+  },
+  "JellyCodePage_zixuanhe": {
+    "id": "JellyCodePage_zixuanhe",
+    "cn": "自选盒",
+    "en": "Optional Box",
+    "jp": "",
+    "tw": "自選盒"
+  },
+  "JellyCodePage_yijianlingqu": {
+    "id": "JellyCodePage_yijianlingqu",
+    "cn": "一键领取",
+    "en": "Quick claim",
+    "jp": "",
+    "tw": "一鍵領取"
+  },
+  "JellyCodePage_juesexiangqing": {
+    "id": "JellyCodePage_juesexiangqing",
+    "cn": "单位详情",
+    "en": "Unit details",
+    "jp": "",
+    "tw": "單位詳情"
+  },
+  "SolarStarPage_dangqianjindu": {
+    "id": "SolarStarPage_dangqianjindu",
+    "cn": "当前进度",
+    "en": "Current Progress",
+    "jp": "",
+    "tw": "當前進度"
+  },
+  "SolarStageInfoFloating_guanqiatexing": {
+    "id": "SolarStageInfoFloating_guanqiatexing",
+    "cn": "关卡特性",
+    "en": "Level features",
+    "jp": "",
+    "tw": "關卡特性"
+  },
+  "SolarStageInfoFloating_gailvdiaoluo": {
+    "id": "SolarStageInfoFloating_gailvdiaoluo",
+    "cn": "概率掉落",
+    "en": "Probability",
+    "jp": "",
+    "tw": "概率掉落"
+  },
+  "SolarStageInfoFloating_chufa": {
+    "id": "SolarStageInfoFloating_chufa",
+    "cn": "出 发  >>",
+    "en": "Go>>",
+    "jp": "",
+    "tw": "出 發  >>"
+  },
+  "SolarStageInfoFloating_xiaohao": {
+    "id": "SolarStageInfoFloating_xiaohao",
+    "cn": "消耗",
+    "en": "Consume",
+    "jp": "",
+    "tw": "消耗"
+  },
+  "SolarStageInfoFloating_kaiqishuangbei": {
+    "id": "SolarStageInfoFloating_kaiqishuangbei",
+    "cn": "开启双倍",
+    "en": "Activate double",
+    "jp": "",
+    "tw": "開啟雙倍"
+  },
+  "SolarStageInfoFloating_shengyucishu": {
+    "id": "SolarStageInfoFloating_shengyucishu",
+    "cn": "剩余次数:",
+    "en": "Remaining times:",
+    "jp": "",
+    "tw": "剩餘次數:"
+  },
+  "ShopPageSub_Pack_day": {
+    "id": "ShopPageSub_Pack_day",
+    "cn": "每日只能购买一次哦！",
+    "en": "You can only buy it once today!",
+    "jp": "",
+    "tw": "每日只能購買一次哦！"
+  },
+  "ShopPageSub_Pack_week": {
+    "id": "ShopPageSub_Pack_week",
+    "cn": "每周只能购买一次哦！",
+    "en": "You can only buy it once a week!",
+    "jp": "",
+    "tw": "每週只能購買一次哦！"
+  },
+  "ShopPageSub_Pack_month": {
+    "id": "ShopPageSub_Pack_month",
+    "cn": "每月只能购买一次哦！",
+    "en": "You can only buy it once a month!",
+    "jp": "",
+    "tw": "每月只能購買一次哦！"
+  },
+  "ShopPageSub_Pack_jintianyigoumai": {
+    "id": "ShopPageSub_Pack_jintianyigoumai",
+    "cn": "今天已经买过了噢",
+    "en": "You already bought it today!",
+    "jp": "",
+    "tw": "今天已經買過了噢"
+  },
+  "ShopPageSub_Pack_once": {
+    "id": "ShopPageSub_Pack_once",
+    "cn": "活动期间只能购买一次哦",
+    "en": "You can only buy it once during the event",
+    "jp": "",
+    "tw": "活動期間只能購買一次哦"
+  },
+  "ShopPageSub_Pack_shhengyucishu": {
+    "id": "ShopPageSub_Pack_shhengyucishu",
+    "cn": "剩余次数:",
+    "en": "Remaining times:",
+    "jp": "",
+    "tw": "剩餘次數:"
+  },
+  "SettingPage_shezhi": {
+    "id": "SettingPage_shezhi",
+    "cn": "设置",
+    "en": "Settings",
+    "jp": "",
+    "tw": "設置"
+  },
+  "FriendPage_zhuzhandanwei": {
+    "id": "FriendPage_zhuzhandanwei",
+    "cn": "【助战单位】",
+    "en": "Assistance",
+    "jp": "",
+    "tw": "【助戰單位】"
+  },
+  "FriendPage_xiaoduizhanli": {
+    "id": "FriendPage_xiaoduizhanli",
+    "cn": "小队总战力",
+    "en": "Team CP",
+    "jp": "",
+    "tw": "小隊總戰力"
+  },
+  "SolarStoryPage_zhuxian": {
+    "id": "SolarStoryPage_zhuxian",
+    "cn": "主线",
+    "en": "Main",
+    "jp": "",
+    "tw": "主線"
+  },
+  "SolarStoryPage_zhuxianstory": {
+    "id": "SolarStoryPage_zhuxianstory",
+    "cn": "主线故事",
+    "en": "Main Story",
+    "jp": "",
+    "tw": "主線故事"
+  },
+  "SolarStoryPage_dulistoru": {
+    "id": "SolarStoryPage_dulistoru",
+    "cn": "独立故事",
+    "en": "Independent Story",
+    "jp": "",
+    "tw": "獨立故事"
+  },
+  "SolarStoryPage_fanwai": {
+    "id": "SolarStoryPage_fanwai",
+    "cn": "番外",
+    "en": "Extra",
+    "jp": "",
+    "tw": "番外"
+  },
+  "SolarStoryPage_xinglian": {
+    "id": "SolarStoryPage_xinglian",
+    "cn": "星联任务",
+    "en": "Mission",
+    "jp": "",
+    "tw": "星聯任務"
+  },
+  "SolarStoryPage_juqing": {
+    "id": "SolarStoryPage_juqing",
+    "cn": "剧情",
+    "en": "Plot",
+    "jp": "",
+    "tw": "劇情"
+  },
+  "SolarStoryPage_xingqiuinhua": {
+    "id": "SolarStoryPage_xingqiuinhua",
+    "cn": "星球净化",
+    "en": "Planet",
+    "jp": "",
+    "tw": "星球淨化"
+  },
+  "unitAttribute_name_Hp": {
+    "id": "unitAttribute_name_Hp",
+    "cn": "生命",
+    "en": "HP",
+    "jp": "",
+    "tw": "生命"
+  },
+  "unitAttribute_name_MoveSpeed": {
+    "id": "unitAttribute_name_MoveSpeed",
+    "cn": "移速",
+    "en": "Move",
+    "jp": "",
+    "tw": "移速"
+  },
+  "unitAttribute_name_CdShrink": {
+    "id": "unitAttribute_name_CdShrink",
+    "cn": "冷却缩减",
+    "en": "CD",
+    "jp": "",
+    "tw": "冷卻縮減"
+  },
+  "unitAttribute_name_SkillStrenth": {
+    "id": "unitAttribute_name_SkillStrenth",
+    "cn": "技能强度",
+    "en": "Strength",
+    "jp": "",
+    "tw": "技能強度"
+  },
+  "unitAttribute_name_ShieldRecoverSpeed": {
+    "id": "unitAttribute_name_ShieldRecoverSpeed",
+    "cn": "护盾恢复",
+    "en": "Shield Recovery SPD",
+    "jp": "",
+    "tw": "護盾恢復"
+  },
+  "unitAttribute_name_Shield": {
+    "id": "unitAttribute_name_Shield",
+    "cn": "护盾",
+    "en": "Shield",
+    "jp": "",
+    "tw": "護盾"
+  },
+  "unitAttribute_name_Defense": {
+    "id": "unitAttribute_name_Defense",
+    "cn": "护甲",
+    "en": "Armor",
+    "jp": "",
+    "tw": "護甲"
+  },
+  "unitAttribute_name_Crit": {
+    "id": "unitAttribute_name_Crit",
+    "cn": "暴击率",
+    "en": "Crit.",
+    "jp": "",
+    "tw": "暴擊率"
+  },
+  "unitAttribute_name_CritDamage": {
+    "id": "unitAttribute_name_CritDamage",
+    "cn": "暴击伤害",
+    "en": "Crit. DMG",
+    "jp": "",
+    "tw": "暴擊傷害"
+  },
+  "unitAttribute_name_AttackSpeed": {
+    "id": "unitAttribute_name_AttackSpeed",
+    "cn": "攻击速度",
+    "en": "ATK SPD",
+    "jp": "",
+    "tw": "攻擊速度"
+  },
+  "unitAttribute_name_Attack": {
+    "id": "unitAttribute_name_Attack",
+    "cn": "攻击力",
+    "en": "ATK ",
+    "jp": "",
+    "tw": "攻擊力"
+  },
+  "unitAttribute_name_DefBreak": {
+    "id": "unitAttribute_name_DefBreak",
+    "cn": "破甲",
+    "en": "PEN",
+    "jp": "",
+    "tw": "破甲"
+  },
+  "unitAttribute_name_Capacity": {
+    "id": "unitAttribute_name_Capacity",
+    "cn": "弹容量",
+    "en": "Capacity",
+    "jp": "",
+    "tw": "彈容量"
+  },
+  "unitAttribute_name_RelaodSpeed": {
+    "id": "unitAttribute_name_RelaodSpeed",
+    "cn": "填装速度",
+    "en": "Loading SPD",
+    "jp": "",
+    "tw": "填裝速度"
+  },
+  "unitAttribute_name_Range": {
+    "id": "unitAttribute_name_Range",
+    "cn": "射程",
+    "en": "Range",
+    "jp": "",
+    "tw": "射程"
+  },
+  "unitAttribute_name_Accuracy": {
+    "id": "unitAttribute_name_Accuracy",
+    "cn": "精准",
+    "en": "Accuracy",
+    "jp": "",
+    "tw": "精准"
+  },
+  "unitAttribute_aliasForShortWeapon_Range": {
+    "id": "unitAttribute_aliasForShortWeapon_Range",
+    "cn": "范围",
+    "en": "Range",
+    "jp": "",
+    "tw": "範圍"
+  },
+  "GumeShareFloating_Tip": {
+    "id": "GumeShareFloating_Tip",
+    "cn": "每天首次分享额外获得100果冻币",
+    "en": "Share for the first time every day and get an additional 100 jelly coins",
+    "jp": "",
+    "tw": "每天首次分享額外獲得100果凍幣"
+  },
+  "WashCubeSugerPage_UpgradeChip": {
+    "id": "WashCubeSugerPage_UpgradeChip",
+    "cn": "提升方糖属性",
+    "en": "Improve the sugar cube attribute",
+    "jp": "",
+    "tw": "提升方糖屬性"
+  },
+  "ALL_Attribute": {
+    "id": "ALL_Attribute",
+    "cn": "全属性",
+    "en": "All attribute",
+    "jp": "",
+    "tw": "全屬性"
+  },
+  "AssistchoosePage_yep": {
+    "id": "AssistchoosePage_yep",
+    "cn": "好耶",
+    "en": "Yep",
+    "jp": "",
+    "tw": "好耶"
+  },
+  "AssistchoosePage_nope": {
+    "id": "AssistchoosePage_nope",
+    "cn": "不好",
+    "en": "Nope",
+    "jp": "",
+    "tw": "不好"
+  },
+  "AssistchoosePage_findsupport": {
+    "id": "AssistchoosePage_findsupport",
+    "cn": "找个支援吧！",
+    "en": "Find support!",
+    "jp": "",
+    "tw": "找個支援吧！"
+  },
+  "AssistchoosePage_support": {
+    "id": "AssistchoosePage_support",
+    "cn": "助战",
+    "en": "Support",
+    "jp": "",
+    "tw": "助戰"
+  },
+  "AssistchoosePage_refresh": {
+    "id": "AssistchoosePage_refresh",
+    "cn": "刷新",
+    "en": "Refresh",
+    "jp": "",
+    "tw": "刷新"
+  },
+  "AssistchoosePage_fightpower": {
+    "id": "AssistchoosePage_fightpower",
+    "cn": "战斗力",
+    "en": "Fight power",
+    "jp": "",
+    "tw": "戰鬥力"
+  },
+  "AssistchoosePage_step": {
+    "id": "AssistchoosePage_step",
+    "cn": "阶",
+    "en": "step",
+    "jp": "",
+    "tw": "階"
+  },
+  "AssistchoosePage_loadind": {
+    "id": "AssistchoosePage_loadind",
+    "cn": "内容加载中...",
+    "en": "Loading",
+    "jp": "",
+    "tw": "內容載入中..."
+  },
+  "AssistchoosePage_friend": {
+    "id": "AssistchoosePage_friend",
+    "cn": "好友",
+    "en": "Friend",
+    "jp": "",
+    "tw": "好友"
+  },
+  "AssistchoosePage_addfriends": {
+    "id": "AssistchoosePage_addfriends",
+    "cn": "加好友",
+    "en": "Add friends",
+    "jp": "",
+    "tw": "加好友"
+  },
+  "NewObjectFloating_NewStarLevel": {
+    "id": "NewObjectFloating_NewStarLevel",
+    "cn": "新星级立绘解锁！",
+    "en": "New gallery!",
+    "jp": "",
+    "tw": "新階段立繪解鎖！"
+  },
+  "Second": {
+    "id": "Second",
+    "cn": "秒",
+    "en": "s",
+    "jp": "",
+    "tw": "秒"
+  },
+  "DevelopmentPage_cd": {
+    "id": "DevelopmentPage_cd",
+    "cn": "冷却时间:",
+    "en": "CD:",
+    "jp": "",
+    "tw": "冷卻時間:"
+  },
+  "DevelopmentPage_NotOpen": {
+    "id": "DevelopmentPage_NotOpen",
+    "cn": "未开启",
+    "en": "Not open",
+    "jp": "",
+    "tw": "未開啟"
+  },
+  "GachaAnimationPage_OpenAll": {
+    "id": "GachaAnimationPage_OpenAll",
+    "cn": "全 部 开 启",
+    "en": "Unlock all",
+    "jp": "",
+    "tw": "全 部 開 啟"
+  },
+  "GachaAnimationPage_Again": {
+    "id": "GachaAnimationPage_Again",
+    "cn": "再来一次",
+    "en": "Once again",
+    "jp": "",
+    "tw": "再來一次"
+  },
+  "default": {
+    "id": "default",
+    "cn": "默认",
+    "en": "default",
+    "jp": "",
+    "tw": "默認"
+  },
+  "ElfPageNormalStateFloating_foodeffect": {
+    "id": "ElfPageNormalStateFloating_foodeffect",
+    "cn": "食物效果",
+    "en": "Food\nEffect",
+    "jp": "",
+    "tw": "食物效果"
+  },
+  "ElfPageNormalStateFloating_suiteffect": {
+    "id": "ElfPageNormalStateFloating_suiteffect",
+    "cn": "套装效果",
+    "en": "Suit\nEffect",
+    "jp": "",
+    "tw": "套裝效果"
+  },
+  "ElfPageNormalStateFloating_satiety": {
+    "id": "ElfPageNormalStateFloating_satiety",
+    "cn": "饱食度",
+    "en": "Satiety",
+    "jp": "",
+    "tw": "飽食度"
+  },
+  "ElfPageNormalStateFloating_favorability": {
+    "id": "ElfPageNormalStateFloating_favorability",
+    "cn": "好感度",
+    "en": "Favorability",
+    "jp": "",
+    "tw": "好感度"
+  },
+  "ElfPageNormalStateFloating_switch": {
+    "id": "ElfPageNormalStateFloating_switch",
+    "cn": "切换",
+    "en": "Switch",
+    "jp": "",
+    "tw": "切換"
+  },
+  "ElfPageNormalStateFloating_changesuit": {
+    "id": "ElfPageNormalStateFloating_changesuit",
+    "cn": "换装",
+    "en": "Changesuit",
+    "jp": "",
+    "tw": "換裝"
+  },
+  "ElfPageNormalStateFloating_cooking": {
+    "id": "ElfPageNormalStateFloating_cooking",
+    "cn": "烹饪食材",
+    "en": "Cooking",
+    "jp": "",
+    "tw": "烹飪食材"
+  },
+  "ElfPageNormalStateFloating_food": {
+    "id": "ElfPageNormalStateFloating_food",
+    "cn": "食物",
+    "en": "Food",
+    "jp": "",
+    "tw": "食物"
+  },
+  "UnitSortingView_Filter": {
+    "id": "UnitSortingView_Filter",
+    "cn": "筛选",
+    "en": "Filter",
+    "jp": "",
+    "tw": "篩選"
+  },
+  "UnitSortingView_All": {
+    "id": "UnitSortingView_All",
+    "cn": "全部",
+    "en": "All",
+    "jp": "",
+    "tw": "全部"
+  },
+  "Race_Cloth": {
+    "id": "Race_Cloth",
+    "cn": "布",
+    "en": "Cloth",
+    "jp": "",
+    "tw": "布"
+  },
+  "Race_Rock": {
+    "id": "Race_Rock",
+    "cn": "石头",
+    "en": "Rock",
+    "jp": "",
+    "tw": "石頭"
+  },
+  "Race_Scissors": {
+    "id": "Race_Scissors",
+    "cn": "剪刀",
+    "en": "Scissors",
+    "jp": "",
+    "tw": "剪刀"
+  },
+  "Race_Create": {
+    "id": "Race_Create",
+    "cn": "创造",
+    "en": "Create",
+    "jp": "",
+    "tw": "創造"
+  },
+  "Race_Destroy": {
+    "id": "Race_Destroy",
+    "cn": "毁灭",
+    "en": "Destroy",
+    "jp": "",
+    "tw": "毀滅"
+  },
+  "Rarity_Normal": {
+    "id": "Rarity_Normal",
+    "cn": "普通",
+    "en": "Normal",
+    "jp": "",
+    "tw": "普通"
+  },
+  "Rarity_Rare": {
+    "id": "Rarity_Rare",
+    "cn": "罕见",
+    "en": "Rare",
+    "jp": "",
+    "tw": "罕見"
+  },
+  "Rarity_SuperRare": {
+    "id": "Rarity_SuperRare",
+    "cn": "超罕",
+    "en": "SuperRare",
+    "jp": "",
+    "tw": "超罕"
+  },
+  "Rarity_Limited": {
+    "id": "Rarity_Limited",
+    "cn": "限定",
+    "en": "Limited",
+    "jp": "",
+    "tw": "限定"
+  },
+  "MixPage_MixConfirm": {
+    "id": "MixPage_MixConfirm",
+    "cn": "确定要消耗素材吗?",
+    "en": "Are you sure to consume materials?",
+    "jp": "",
+    "tw": "確定要消耗素材嗎?"
+  },
+  "ActiveGachaSubPage_countdown": {
+    "id": "ActiveGachaSubPage_countdown",
+    "cn": "活动倒计时",
+    "en": "Activity countdown",
+    "jp": "",
+    "tw": "活動倒計時"
+  },
+  "ActiveGachaSubPage_probability": {
+    "id": "ActiveGachaSubPage_probability",
+    "cn": "概率详情",
+    "en": "Probability details",
+    "jp": "",
+    "tw": "概率詳情"
+  },
+  "ActiveGachaSubPage_pooltitle1": {
+    "id": "ActiveGachaSubPage_pooltitle1",
+    "cn": "枫林霜晚",
+    "en": "maple leaves",
+    "jp": "",
+    "tw": "楓林霜晚"
+  },
+  "ActiveGachaSubPage_pooltitle2": {
+    "id": "ActiveGachaSubPage_pooltitle2",
+    "cn": "暗影流樱",
+    "en": "shadow sakura",
+    "jp": "",
+    "tw": "暗影流櫻"
+  },
+  "ActiveGachaSubPage_pooldescribe1": {
+    "id": "ActiveGachaSubPage_pooldescribe1",
+    "cn": "霜降水返壑，风落木归山。\n<color=#FF8247>霜降&逐枫</color>限时复刻",
+    "en": "",
+    "jp": "",
+    "tw": ""
+  },
+  "ActiveGachaSubPage_pooldescribe2": {
+    "id": "ActiveGachaSubPage_pooldescribe2",
+    "cn": "充能就绪，跃迁一级准备\n<color=#FFFF00>柠檬·INF·裂空</color>拔锚起航",
+    "en": "",
+    "jp": "",
+    "tw": ""
+  },
+  "ActiveGachaSubPage_pooldescribe3": {
+    "id": "ActiveGachaSubPage_pooldescribe3",
+    "cn": "非黑非白，不明不灭\n白绒绒·LOST·暗雷 负重前行",
+    "en": "",
+    "jp": "",
+    "tw": ""
+  },
+  "ActiveGachaSubPage_pooldescribe4": {
+    "id": "ActiveGachaSubPage_pooldescribe4",
+    "cn": "众望所归！<color=#006AFF>折火</color>限时复刻",
+    "en": "",
+    "jp": "",
+    "tw": ""
+  },
+  "ActiveGachaSubPage_exchange": {
+    "id": "ActiveGachaSubPage_exchange",
+    "cn": "兑换",
+    "en": "Exchange",
+    "jp": "",
+    "tw": "兌換"
+  },
+  "CubeSugarGacha_sugarpool": {
+    "id": "CubeSugarGacha_sugarpool",
+    "cn": "方糖池",
+    "en": "Sugar pool",
+    "jp": "",
+    "tw": "方糖池"
+  },
+  "CubeSugarGacha_describe": {
+    "id": "CubeSugarGacha_describe",
+    "cn": "角色方糖/宠物方糖/武器方糖",
+    "en": "character cube/pet cube/weapon cube",
+    "jp": "",
+    "tw": "角色方糖/寵物方糖/武器方糖"
+  },
+  "CubeSugarGacha_once": {
+    "id": "CubeSugarGacha_once",
+    "cn": "抽一次",
+    "en": "Once",
+    "jp": "",
+    "tw": "抽一次"
+  },
+  "CubeSugarGacha_send": {
+    "id": "CubeSugarGacha_send",
+    "cn": "送",
+    "en": "send",
+    "jp": "",
+    "tw": "送"
+  },
+  "CubeSugarGacha_8%off": {
+    "id": "CubeSugarGacha_8%off",
+    "cn": "9.2折",
+    "en": "8% OFF",
+    "jp": "",
+    "tw": "9.2折"
+  },
+  "CubeSugarGacha_10%off": {
+    "id": "CubeSugarGacha_10%off",
+    "cn": "9折",
+    "en": "10% OFF",
+    "jp": "",
+    "tw": "9折"
+  },
+  "CubeSugarGacha_5times": {
+    "id": "CubeSugarGacha_5times",
+    "cn": "抽五次",
+    "en": "5 times",
+    "jp": "",
+    "tw": "抽五次"
+  },
+  "CubeSugarGacha_10times": {
+    "id": "CubeSugarGacha_10times",
+    "cn": "抽十次",
+    "en": "10 times",
+    "jp": "",
+    "tw": "抽十次"
+  },
+  "JellyGacha_normalpool_tips": {
+    "id": "JellyGacha_normalpool_tips",
+    "cn": "首次十连必得超罕角色！",
+    "en": "First 10 times must have SuperRare",
+    "jp": "",
+    "tw": "首次十連必得超罕角色！"
+  },
+  "JellyGacha_normalpool": {
+    "id": "JellyGacha_normalpool",
+    "cn": "好友池",
+    "en": "Jelly pool",
+    "jp": "",
+    "tw": "好友池"
+  },
+  "JellyGacha_describe": {
+    "id": "JellyGacha_describe",
+    "cn": "角色/宠物/武器/各种资源",
+    "en": "character/pet/weapon/resources",
+    "jp": "",
+    "tw": "角色/寵物/武器/各種資源"
+  },
+  "WeekGacha_weekgacha": {
+    "id": "WeekGacha_weekgacha",
+    "cn": "星联池",
+    "en": "Star union pool",
+    "jp": "",
+    "tw": "星聯池"
+  },
+  "WeekGacha_describe": {
+    "id": "WeekGacha_describe",
+    "cn": "仅在此获得魔眼",
+    "en": "You can Magic Eye only in this pool",
+    "jp": "",
+    "tw": "僅在此獲得魔眼"
+  },
+  "GachaPage_activitygacha": {
+    "id": "GachaPage_activitygacha",
+    "cn": "活动池",
+    "en": "Activity pool",
+    "jp": "",
+    "tw": "活動池"
+  },
+  "ActiveGachaPointPage_exchange": {
+    "id": "ActiveGachaPointPage_exchange",
+    "cn": "tips：模型展示为最高星级",
+    "en": "Unit display the highest star",
+    "jp": "",
+    "tw": "tips：模型展示為最高星級"
+  },
+  "ActiveGachaPointPage_describe": {
+    "id": "ActiveGachaPointPage_describe",
+    "cn": "消耗200点数，可选择一个单位直接获得，卡池到期后多余点数以1:250兑换成黄星，通过邮件发送",
+    "en": "If you consume 200 points, you can select a unit to obtain it directly. After the card pool expires, the excess points will be converted into yellow stars at 1:250 and sent by mail",
+    "jp": "",
+    "tw": "消耗200點數，可選擇一個單位直接獲得，卡池到期後多餘點數以1:250兌換成黃星，通過郵件發送"
+  },
+  "ActiveGachaPointPage_point": {
+    "id": "ActiveGachaPointPage_point",
+    "cn": "兑换点数",
+    "en": "Exchange points",
+    "jp": "",
+    "tw": "兌換點數"
+  },
+  "JellyCodePage_CanReceive": {
+    "id": "JellyCodePage_CanReceive",
+    "cn": "可领取",
+    "en": "Receive",
+    "jp": "",
+    "tw": "可領取"
+  },
+  "SolarStageInfoFloating_RewardTip": {
+    "id": "SolarStageInfoFloating_RewardTip",
+    "cn": "关卡奖励",
+    "en": "Reward",
+    "jp": "",
+    "tw": "關卡獎勵"
+  },
+  "SolarStageInfoFloating_FirstTimeRewardTip": {
+    "id": "SolarStageInfoFloating_FirstTimeRewardTip",
+    "cn": "首通奖励",
+    "en": "First pass reward",
+    "jp": "",
+    "tw": "首通獎勵"
+  },
+  "DevelopmentPage_blooddetails": {
+    "id": "DevelopmentPage_blooddetails",
+    "cn": "血型详情",
+    "en": "Dlood details",
+    "jp": "",
+    "tw": "血型詳情"
+  },
+  "DevelopmentPage_Weapon type": {
+    "id": "DevelopmentPage_Weapon type",
+    "cn": "武器类型",
+    "en": "Weapon type",
+    "jp": "",
+    "tw": "武器類型"
+  },
+  "DevelopmentPage_suitableWeapon": {
+    "id": "DevelopmentPage_suitableWeapon",
+    "cn": "适用武器",
+    "en": "Suitable weapon",
+    "jp": "",
+    "tw": "適用武器"
+  },
+  "ShopPageSub_Month_buy": {
+    "id": "ShopPageSub_Month_buy",
+    "cn": "买买买",
+    "en": "Buy",
+    "jp": "",
+    "tw": "買買買"
+  },
+  "ShopPageSub_Month_effective": {
+    "id": "ShopPageSub_Month_effective",
+    "cn": "购买后立即生效",
+    "en": "Effective immediately after purchase",
+    "jp": "",
+    "tw": "購買後立即生效"
+  },
+  "ShopPageSub_Month_30days": {
+    "id": "ShopPageSub_Month_30days",
+    "cn": "特权持续时间30天",
+    "en": "Privilege duration 30 days",
+    "jp": "",
+    "tw": "特權持續時間30天"
+  },
+  "JellyCodePage_name": {
+    "id": "JellyCodePage_name",
+    "cn": "艾波",
+    "en": "Ebbo",
+    "jp": "",
+    "tw": "艾波"
+  },
+  "JellyCodePage_buy_reconfirm": {
+    "id": "JellyCodePage_buy_reconfirm",
+    "cn": "确定要购买进阶密钥吗？",
+    "en": "",
+    "jp": "",
+    "tw": "確定要購買進階密鑰嗎？"
+  },
+  "Letter_receive": {
+    "id": "Letter_receive",
+    "cn": "领取",
+    "en": "Receive",
+    "jp": "",
+    "tw": "領取"
+  },
+  "Letter_OK": {
+    "id": "Letter_OK",
+    "cn": "好吧",
+    "en": "OK",
+    "jp": "",
+    "tw": "好吧"
+  },
+  "UpgradePage_owned": {
+    "id": "UpgradePage_owned",
+    "cn": "已拥有的",
+    "en": "Already owned",
+    "jp": "",
+    "tw": "已擁有的"
+  },
+  "UpgradePage_upgrade": {
+    "id": "UpgradePage_upgrade",
+    "cn": "升格",
+    "en": "UPG",
+    "jp": "",
+    "tw": "升格"
+  },
+  "UpgradePage_describe": {
+    "id": "UpgradePage_describe",
+    "cn": "升格后词条最大值上升 词条类型不变 数值比例不变",
+    "en": "After upgrading, the maximum value of the entry increases, the entry type remains unchanged, and the numerical proportion remains unchanged",
+    "jp": "",
+    "tw": "升格後詞條最大值上升 詞條類型不變 數值比例不變"
+  },
+  "UpgradePage_insufficientconditions": {
+    "id": "UpgradePage_insufficientconditions",
+    "cn": "条 件 不 足",
+    "en": "Insufficient conditions",
+    "jp": "",
+    "tw": "條 件 不 足"
+  },
+  "UpgradePage_Openentry": {
+    "id": "UpgradePage_Openentry",
+    "cn": "升格开启词条",
+    "en": "Open entry after upgrading",
+    "jp": "",
+    "tw": "升格開啟詞條"
+  },
+  "UpgradePage_reset": {
+    "id": "UpgradePage_reset",
+    "cn": "重 置 属 性",
+    "en": "Reset properties",
+    "jp": "",
+    "tw": "重 置 屬 性"
+  },
+  "MixPage_Mix": {
+    "id": "MixPage_Mix",
+    "cn": "合 体",
+    "en": "MIX",
+    "jp": "",
+    "tw": "合 體"
+  },
+  "SettingPage_yingyueyinxiaohuanjing": {
+    "id": "SettingPage_yingyueyinxiaohuanjing",
+    "cn": "音乐\n\n\n\n\n音效\n\n\n\n\n环境",
+    "en": "BGM\n\n\n\n\nSound\nEffect\n\n\n\nEnvironment",
+    "jp": "",
+    "tw": "音樂\n\n\n\n\n音效\n\n\n\n\n環境"
+  },
+  "JellyGacha_describe2": {
+    "id": "JellyGacha_describe2",
+    "cn": "常驻池",
+    "en": "Permanent pool",
+    "jp": "",
+    "tw": "常駐池"
+  },
+  "JellyGacha_normalpool2": {
+    "id": "JellyGacha_normalpool2",
+    "cn": "角色/宠物/武器",
+    "en": "Character/Pet/Weapon",
+    "jp": "",
+    "tw": "角色/寵物/武器"
+  },
+  "TeamChoosePage_yangcheng": {
+    "id": "TeamChoosePage_yangcheng",
+    "cn": "养成",
+    "en": "SIM",
+    "jp": "",
+    "tw": "養成"
+  },
+  "ActivityTotalPurchasePage_chongzhi": {
+    "id": "ActivityTotalPurchasePage_chongzhi",
+    "cn": "充值>",
+    "en": "Recharge>",
+    "jp": "",
+    "tw": "充值>"
+  },
+  "Facility_BlackHole": {
+    "id": "Facility_BlackHole",
+    "cn": "分解黑洞",
+    "en": "Dissolve black hole",
+    "jp": "",
+    "tw": "分解黑洞"
+  },
+  "ActivityTotalPurchasePage_leijixiaofei": {
+    "id": "ActivityTotalPurchasePage_leijixiaofei",
+    "cn": "累计消费",
+    "en": "Total Consumed",
+    "jp": "",
+    "tw": "累計消費"
+  },
+  "ActivityTotalPurchasePage_leijichongzhi": {
+    "id": "ActivityTotalPurchasePage_leijichongzhi",
+    "cn": "累计充值",
+    "en": "Total Recharged",
+    "jp": "",
+    "tw": "累計充值"
+  },
+  "ActivityTotalPurchasePage_go": {
+    "id": "ActivityTotalPurchasePage_go",
+    "cn": "前往",
+    "en": "Go",
+    "jp": "",
+    "tw": "前往"
+  },
+  "DevelopmentPage_huanxue": {
+    "id": "DevelopmentPage_huanxue",
+    "cn": "更换血型",
+    "en": "Change",
+    "jp": "",
+    "tw": "更換血型"
+  },
+  "JellyCodePage_xiaoyoushatan": {
+    "id": "JellyCodePage_xiaoyoushatan",
+    "cn": "小鱿X沙坦",
+    "en": "Yumi X Satan",
+    "jp": "",
+    "tw": "小魷X沙坦"
+  },
+  "ShipShopPage_qiujingshangdian": {
+    "id": "ShipShopPage_qiujingshangdian",
+    "cn": "秋烬商店",
+    "en": "Maple Shop",
+    "jp": "",
+    "tw": "秋燼商店"
+  },
+  "ShipShopPage_xiyouziyuanduihuan": {
+    "id": "ShipShopPage_xiyouziyuanduihuan",
+    "cn": "稀有资源兑换",
+    "en": "Rare Shop",
+    "jp": "",
+    "tw": "稀有資源兌換"
+  },
+  "ShipShopPage_jinhuocishu": {
+    "id": "ShipShopPage_jinhuocishu",
+    "cn": "进货剩余次数：",
+    "en": "Remaining times:",
+    "jp": "",
+    "tw": "進貨剩餘次數："
+  },
+  "ShipShopPage_xujyaohuafei": {
+    "id": "ShipShopPage_xujyaohuafei",
+    "cn": "需要花费",
+    "en": "Cost",
+    "jp": "",
+    "tw": "需要花費"
+  },
+  "ShipShopPage_jinhuo": {
+    "id": "ShipShopPage_jinhuo",
+    "cn": "进货",
+    "en": "Refresh",
+    "jp": "",
+    "tw": "進貨"
+  },
+  "ShipShopPage_jinhuotip": {
+    "id": "ShipShopPage_jinhuotip",
+    "cn": "进货不影响商店自然刷新时间！！次数每日刷新",
+    "en": "Refresh times per day!",
+    "jp": "",
+    "tw": "進貨不影響商店自然刷新時間！！次數每日刷新"
+  },
+  "ShipShopPage_heziduihuan": {
+    "id": "ShipShopPage_heziduihuan",
+    "cn": "盒子兑换",
+    "en": "Box Redeem",
+    "jp": "",
+    "tw": "盒子兌換"
+  },
+  "ShipShopPage_zhuanshucailiaoduihuan": {
+    "id": "ShipShopPage_zhuanshucailiaoduihuan",
+    "cn": "专属材料兑换",
+    "en": "Exclusive material redeem",
+    "jp": "",
+    "tw": "專屬材料兌換"
+  },
+  "FriendPage_juese": {
+    "id": "FriendPage_juese",
+    "cn": "角色",
+    "en": "Role",
+    "jp": "",
+    "tw": "角色"
+  },
+  "FriendPage_wuqi": {
+    "id": "FriendPage_wuqi",
+    "cn": "武器",
+    "en": "Weapon",
+    "jp": "",
+    "tw": "武器"
+  },
+  "DevelopmentPage_liuyan": {
+    "id": "DevelopmentPage_liuyan",
+    "cn": "留言",
+    "en": "message",
+    "jp": "",
+    "tw": "留言"
+  },
+  "TeamChoosePage_texing": {
+    "id": "TeamChoosePage_texing",
+    "cn": "特性",
+    "en": "Feature",
+    "jp": "",
+    "tw": "特性"
+  },
+  "TeamChoosePage_wuqileixing": {
+    "id": "TeamChoosePage_wuqileixing",
+    "cn": "武器类型",
+    "en": "Weapon Type",
+    "jp": "",
+    "tw": "武器類型"
+  },
+  "TeamChoosePage_xiyoudu": {
+    "id": "TeamChoosePage_xiyoudu",
+    "cn": "稀有度",
+    "en": "Rarity",
+    "jp": "",
+    "tw": "稀有度"
+  },
+  "TeamChoosePage_xuexing": {
+    "id": "TeamChoosePage_xuexing",
+    "cn": "血型",
+    "en": "Blood Type",
+    "jp": "",
+    "tw": "血型"
+  },
+  "TeamChoosePage_all": {
+    "id": "TeamChoosePage_all",
+    "cn": "全部",
+    "en": "All",
+    "jp": "",
+    "tw": "全部"
+  },
+  "TeamChoosePage_moren": {
+    "id": "TeamChoosePage_moren",
+    "cn": "默认",
+    "en": "Default",
+    "jp": "",
+    "tw": "默認"
+  },
+  "TeamChoosePage_level": {
+    "id": "TeamChoosePage_level",
+    "cn": "等级",
+    "en": "Level",
+    "jp": "",
+    "tw": "等級"
+  },
+  "TeamChoosePage_danwei": {
+    "id": "TeamChoosePage_danwei",
+    "cn": "单位",
+    "en": "Unit",
+    "jp": "",
+    "tw": "單位"
+  },
+  "TeamChoosePage_nongdu": {
+    "id": "TeamChoosePage_nongdu",
+    "cn": "浓度",
+    "en": "Concentration",
+    "jp": "",
+    "tw": "濃度"
+  },
+  "AutoSkillCaster": {
+    "id": "AutoSkillCaster",
+    "cn": "自动施法",
+    "en": "Auto-cast",
+    "jp": "",
+    "tw": "自動施法"
+  },
+  "CarSeperate": {
+    "id": "CarSeperate",
+    "cn": "队友分散",
+    "en": "Allies dispersed",
+    "jp": "",
+    "tw": "隊友分散"
+  },
+  "ClickToHeal": {
+    "id": "ClickToHeal",
+    "cn": "点我加30%血",
+    "en": "Add 30% Hp",
+    "jp": "",
+    "tw": "點我加30%血"
+  },
+  "BattleStarting": {
+    "id": "BattleStarting",
+    "cn": "开始净化",
+    "en": "Start to Purify",
+    "jp": "",
+    "tw": "開始淨化"
+  },
+  "BattleFail": {
+    "id": "BattleFail",
+    "cn": "净化失败",
+    "en": "Failed",
+    "jp": "",
+    "tw": "淨化失敗"
+  },
+  "BattleSuccess": {
+    "id": "BattleSuccess",
+    "cn": "净化成功",
+    "en": "Success",
+    "jp": "",
+    "tw": "淨化成功"
+  },
+  "CubeTemplatePage_dangqianpeizhi": {
+    "id": "CubeTemplatePage_dangqianpeizhi",
+    "cn": "当前配置",
+    "en": "Current Configuration",
+    "jp": "",
+    "tw": "當前配置"
+  },
+  "CubeTemplatePage_yingyong": {
+    "id": "CubeTemplatePage_yingyong",
+    "cn": "应用",
+    "en": "Apply",
+    "jp": "",
+    "tw": "應用"
+  },
+  "CubeTemplatePage_baocun": {
+    "id": "CubeTemplatePage_baocun",
+    "cn": "保存",
+    "en": "Save",
+    "jp": "",
+    "tw": "保存"
+  },
+  "shoppage_rilibao": {
+    "id": "shoppage_rilibao",
+    "cn": "日礼包",
+    "en": "Day Pack",
+    "jp": "",
+    "tw": "日禮包"
+  },
+  "shoppage_tuijianxinshoulibao": {
+    "id": "shoppage_tuijianxinshoulibao",
+    "cn": "煤球极力推荐的新手礼包！",
+    "en": "Boss recommended New Hand Pack",
+    "jp": "",
+    "tw": "煤球極力推薦的新手禮包！"
+  },
+  "shoppage_meirixiangou": {
+    "id": "shoppage_meirixiangou",
+    "cn": "每日限购",
+    "en": "Daily limit:",
+    "jp": "",
+    "tw": "每日限購"
+  },
+  "shoppage_ci": {
+    "id": "shoppage_ci",
+    "cn": "次",
+    "en": " ",
+    "jp": "",
+    "tw": "次"
+  },
+  "shoppage_zhoulibao": {
+    "id": "shoppage_zhoulibao",
+    "cn": "周礼包",
+    "en": "Week Pack",
+    "jp": "",
+    "tw": "周禮包"
+  },
+  "shoppage_lucklibao": {
+    "id": "shoppage_lucklibao",
+    "cn": "是带来一周lucky的超级礼包喔！！",
+    "en": "Super pack brings you good luck for a whole week!",
+    "jp": "",
+    "tw": "是帶來一周lucky的超級禮包喔！！"
+  },
+  "shoppage_meizhouxiangou": {
+    "id": "shoppage_meizhouxiangou",
+    "cn": "每周限购",
+    "en": "Weekly limit:",
+    "jp": "",
+    "tw": "每週限購"
+  },
+  "shoppage_yuelibao": {
+    "id": "shoppage_yuelibao",
+    "cn": "月礼包",
+    "en": "Month Pack",
+    "jp": "",
+    "tw": "月禮包"
+  },
+  "shoppage_zhegeyuejiukanta": {
+    "id": "shoppage_zhegeyuejiukanta",
+    "cn": "这个月就看他啦！",
+    "en": "Your fortune this week replies on it!",
+    "jp": "",
+    "tw": "這個月就看他啦！"
+  },
+  "shoppage_meiyuexiangou": {
+    "id": "shoppage_meiyuexiangou",
+    "cn": "每月限购",
+    "en": "Monthly limit:",
+    "jp": "",
+    "tw": "每月限購"
+  },
+  "shoppage_chaozhirichang": {
+    "id": "shoppage_chaozhirichang",
+    "cn": "超值日常",
+    "en": "Super bonus",
+    "jp": "",
+    "tw": "超值日常"
+  },
+  "shoppage_suijihuodeiyishangdaoju": {
+    "id": "shoppage_suijihuodeiyishangdaoju",
+    "cn": "（随机获得以上道具其一）",
+    "en": "(Get one of the items randomly)",
+    "jp": "",
+    "tw": "（隨機獲得以上道具其一）"
+  },
+  "shoppage_meigezhanghaoxiangou": {
+    "id": "shoppage_meigezhanghaoxiangou",
+    "cn": "每个账号限购",
+    "en": "Per account limit:",
+    "jp": "",
+    "tw": "每個帳號限購"
+  },
+  "shoppage_xiangshoutiyanbao": {
+    "id": "shoppage_xiangshoutiyanbao",
+    "cn": "享受体验包",
+    "en": "Trial Pack",
+    "jp": "",
+    "tw": "享受體驗包"
+  },
+  "shoppage_susutishengbao": {
+    "id": "shoppage_susutishengbao",
+    "cn": "速速提升包",
+    "en": "Super Up-up Pack",
+    "jp": "",
+    "tw": "速速提升包"
+  },
+  "shoppage_zuiduogoumai": {
+    "id": "shoppage_zuiduogoumai",
+    "cn": "最多购买",
+    "en": "Max purchase ",
+    "jp": "",
+    "tw": "最多購買"
+  },
+  "ServerView_tuijian": {
+    "id": "ServerView_tuijian",
+    "cn": "推荐",
+    "en": "REC",
+    "jp": "",
+    "tw": "推薦"
+  },
+  "RebornCountDown": {
+    "id": "RebornCountDown",
+    "cn": "倒计时",
+    "en": "Countdown",
+    "jp": "",
+    "tw": "倒計時"
+  },
+  "shoppage_today": {
+    "id": "shoppage_today",
+    "cn": "今日",
+    "en": "today",
+    "jp": "",
+    "tw": "今日"
+  },
+  "shoppage_sanxuanyi": {
+    "id": "shoppage_sanxuanyi",
+    "cn": "三 选 一",
+    "en": "One out of three",
+    "jp": "",
+    "tw": "三 選 一"
+  },
+  "shoppage_erxuanyi": {
+    "id": "shoppage_erxuanyi",
+    "cn": "二  选 一",
+    "en": "One out of two",
+    "jp": "",
+    "tw": "二  選 一"
+  },
+  "AssistchoosePage_yinbattle": {
+    "id": "AssistchoosePage_yinbattle",
+    "cn": "出战中",
+    "en": "Lineup",
+    "jp": "",
+    "tw": "出戰中"
+  },
+  "ActivityGumeSharePage_fenxiangyouli": {
+    "id": "ActivityGumeSharePage_fenxiangyouli",
+    "cn": "分享有礼",
+    "en": "Share with gifts",
+    "jp": "",
+    "tw": "分享有禮"
+  },
+  "ActivityGumeSharePage_dailyfenxiang": {
+    "id": "ActivityGumeSharePage_dailyfenxiang",
+    "cn": "每日分享",
+    "en": "Daily sharing",
+    "jp": "",
+    "tw": "每日分享"
+  },
+  "ActivityGumeSharePage_fenxiangchuqu": {
+    "id": "ActivityGumeSharePage_fenxiangchuqu",
+    "cn": "分享出去给大家!一起来玩吧！",
+    "en": "Share it with everyone! Let's play together!",
+    "jp": "",
+    "tw": "分享出去給大家!一起來玩吧！"
+  },
+  "ActivityGumeSharePage_leijifengxiang": {
+    "id": "ActivityGumeSharePage_leijifengxiang",
+    "cn": "累计分享             次",
+    "en": "",
+    "jp": "",
+    "tw": "累計分享             次"
+  },
+  "ActivityGumeSharePage_fengxiang": {
+    "id": "ActivityGumeSharePage_fengxiang",
+    "cn": "分 享",
+    "en": "Share",
+    "jp": "",
+    "tw": "分 享"
+  },
+  "ActivityFirstPurchasePage_fangfanghe": {
+    "id": "ActivityFirstPurchasePage_fangfanghe",
+    "cn": "泽塔",
+    "en": "Zeta",
+    "jp": "",
+    "tw": "澤塔"
+  },
+  "ActivityFirstPurchasePage_wuxianzidan": {
+    "id": "ActivityFirstPurchasePage_wuxianzidan",
+    "cn": "首充即送超稀罕见角色！",
+    "en": "First Top-up to get Legendary Hero!",
+    "jp": "",
+    "tw": "首次儲值即送超罕見角色！"
+  },
+  "ActivityFirstPurchasePage_juesezhanshi": {
+    "id": "ActivityFirstPurchasePage_juesezhanshi",
+    "cn": "角色展示",
+    "en": "Role display",
+    "jp": "",
+    "tw": "角色展示"
+  },
+  "ActivityFirstPurchasePage_shouchong": {
+    "id": "ActivityFirstPurchasePage_shouchong",
+    "cn": "首次充值奖励",
+    "en": "First Recharge Reward",
+    "jp": "",
+    "tw": "首次儲值獎勵"
+  },
+  "ActivityFirstPurchasePage_shouchongsong": {
+    "id": "ActivityFirstPurchasePage_shouchongsong",
+    "cn": "首次充值任意金额送：",
+    "en": "First recharge any amount to receive:",
+    "jp": "",
+    "tw": "首次儲值任意金額送："
+  },
+  "ActivityFirstPurchasePage_kelingqu": {
+    "id": "ActivityFirstPurchasePage_kelingqu",
+    "cn": "可领取",
+    "en": "Claimable",
+    "jp": "",
+    "tw": "可領取"
+  },
+  "ActivityFirstPurchasePage_chongzhi": {
+    "id": "ActivityFirstPurchasePage_chongzhi",
+    "cn": "充 值",
+    "en": "Recharge",
+    "jp": "",
+    "tw": "充 值"
+  },
+  "ActivityFirstPurchasePage_leichong30": {
+    "id": "ActivityFirstPurchasePage_leichong30",
+    "cn": "累积充值30软糖送：",
+    "en": "Accumulated recharge of 30 Gumdrop to receive:",
+    "jp": "",
+    "tw": "累積充值30軟糖送："
+  },
+  "ActivityFirstPurchasePage_leichong68": {
+    "id": "ActivityFirstPurchasePage_leichong68",
+    "cn": "累积充值68软糖送：",
+    "en": "Accumulated recharge of 68 Gumdrop to receive:",
+    "jp": "",
+    "tw": "累積儲值68軟糖送："
+  },
+  "ActivityFirstPurchasePage_leichong198": {
+    "id": "ActivityFirstPurchasePage_leichong198",
+    "cn": "累积充值198软糖送：",
+    "en": "Accumulated recharge of 198 Gumdrop to receive:",
+    "jp": "",
+    "tw": "累積儲值198軟糖送："
+  },
+  "ActivityFirstPurchasePage_leichong328": {
+    "id": "ActivityFirstPurchasePage_leichong328",
+    "cn": "累积充值328软糖送：",
+    "en": "Accumulated recharge of 328 Gumdrop to receive:",
+    "jp": "",
+    "tw": "累積儲值328軟糖送："
+  },
+  "ActivityFirstPurchasePage_leichong648": {
+    "id": "ActivityFirstPurchasePage_leichong648",
+    "cn": "累积充值648软糖送：",
+    "en": "Accumulated recharge of 648 Gumdrop to receive:",
+    "jp": "",
+    "tw": "累積儲值648軟糖送："
+  },
+  "ActivityFirstPurchasePage_leichong": {
+    "id": "ActivityFirstPurchasePage_leichong",
+    "cn": "累积充值{0}软糖送：",
+    "en": "Accumulated recharge of {0} Gumdrop to receive:",
+    "jp": "",
+    "tw": "累積儲值{0}軟糖送："
+  },
+  "ActivityFirstPurchasePage_jiazhi10586": {
+    "id": "ActivityFirstPurchasePage_jiazhi10586",
+    "cn": "足够升到6星的专属材料和三阶方糖！",
+    "en": "15 exclusive materials and 2 three-level sugar cubes!",
+    "jp": "",
+    "tw": "足夠升到6星的專屬材料和三階方糖！"
+  },
+  "dailymission_dianliang": {
+    "id": "dailymission_dianliang",
+    "cn": "电量",
+    "en": "Battery",
+    "jp": "",
+    "tw": "電量"
+  },
+  "dailymission_jiangli": {
+    "id": "dailymission_jiangli",
+    "cn": "奖励",
+    "en": "Reward",
+    "jp": "",
+    "tw": "獎勵"
+  },
+  "dailymission_jieduanrenwu": {
+    "id": "dailymission_jieduanrenwu",
+    "cn": "阶段任务：",
+    "en": "Stage Mission:",
+    "jp": "",
+    "tw": "階段任務："
+  },
+  "dailymission_huangxing": {
+    "id": "dailymission_huangxing",
+    "cn": "黄星",
+    "en": "Yellow Star",
+    "jp": "",
+    "tw": "黃星"
+  },
+  "dailymission_meibi": {
+    "id": "dailymission_meibi",
+    "cn": "煤球币",
+    "en": "Briquet Coin",
+    "jp": "",
+    "tw": "煤球幣"
+  },
+  "dailymission_tufayizhiji": {
+    "id": "dailymission_tufayizhiji",
+    "cn": "属性胶囊",
+    "en": "Attribute Capsule",
+    "jp": "",
+    "tw": "屬性膠囊"
+  },
+  "dailymission_shuaxing": {
+    "id": "dailymission_shuaxing",
+    "cn": "刷 新 词 条 必 备 道 具",
+    "en": "Used to refresh new entries",
+    "jp": "",
+    "tw": "刷 新 詞 條 必 備 道 具"
+  },
+  "dailymission_suijiyizhang": {
+    "id": "dailymission_suijiyizhang",
+    "cn": "【随机一张星联券】",
+    "en": "[A random SA Coupon]",
+    "jp": "",
+    "tw": "【隨機一張星聯券】"
+  },
+  "pack103_guodongtequan": {
+    "id": "pack103_guodongtequan",
+    "cn": "果冻特权",
+    "en": "Jelly Privileges",
+    "jp": "",
+    "tw": "果凍特權"
+  },
+  "pack103_meirizhuanshufuli": {
+    "id": "pack103_meirizhuanshufuli",
+    "cn": "【每日专属福利】",
+    "en": "[Daily Exclusive Bonus]",
+    "jp": "",
+    "tw": "【每日專屬福利】"
+  },
+  "pack103_tequanditan": {
+    "id": "pack103_tequanditan",
+    "cn": "特权地毯！！",
+    "en": "Exclusive carpet!!",
+    "jp": "",
+    "tw": "特權地毯！！"
+  },
+  "pack103_juhaokan": {
+    "id": "pack103_juhaokan",
+    "cn": "巨好看！",
+    "en": "Gorgeous!",
+    "jp": "",
+    "tw": "巨好看！"
+  },
+  "pack103_meiri": {
+    "id": "pack103_meiri",
+    "cn": "每日",
+    "en": "Daily",
+    "jp": "",
+    "tw": "每日"
+  },
+  "pack103_guajifangtangchi": {
+    "id": "pack103_guajifangtangchi",
+    "cn": "挂机方糖池",
+    "en": "AFK mode Sugar Cube Pool",
+    "jp": "",
+    "tw": "掛機方糖池"
+  },
+  "pack103_chaozhi": {
+    "id": "pack103_chaozhi",
+    "cn": "超值！",
+    "en": "Excellent value!",
+    "jp": "",
+    "tw": "超值！"
+  },
+  "pack104_diaoluotequan": {
+    "id": "pack104_diaoluotequan",
+    "cn": "掉落特权",
+    "en": "Drops Privileges",
+    "jp": "",
+    "tw": "掉落特權"
+  },
+  "pack104_chaozhi": {
+    "id": "pack104_chaozhi",
+    "cn": "超值！",
+    "en": "Excellent value!",
+    "jp": "",
+    "tw": "超值！"
+  },
+  "pack104_ziyuanguanshengjie": {
+    "id": "pack104_ziyuanguanshengjie",
+    "cn": "资源关升阶道具",
+    "en": "Resources level rank-up item",
+    "jp": "",
+    "tw": "資源關升階道具"
+  },
+  "pack104_huangxing": {
+    "id": "pack104_huangxing",
+    "cn": "黄星电量",
+    "en": "Yellow Star Battery",
+    "jp": "",
+    "tw": "黃星電量"
+  },
+  "pack104_diaoluojiacheng": {
+    "id": "pack104_diaoluojiacheng",
+    "cn": "掉落\n加成",
+    "en": "Drops\nBonus",
+    "jp": "",
+    "tw": "掉落\n加成"
+  },
+  "pack104_ziyuanguanzhuanshu": {
+    "id": "pack104_ziyuanguanzhuanshu",
+    "cn": "资源关专属",
+    "en": "Resources level exclusive",
+    "jp": "",
+    "tw": "資源關專屬"
+  },
+  "pack104_xiaohaoshuangbei": {
+    "id": "pack104_xiaohaoshuangbei",
+    "cn": "消耗双倍",
+    "en": "Consume double",
+    "jp": "",
+    "tw": "消耗雙倍"
+  },
+  "pack104_huodeishuangbeiziyuan": {
+    "id": "pack104_huodeishuangbeiziyuan",
+    "cn": "获得双倍资源",
+    "en": "and get double drops",
+    "jp": "",
+    "tw": "獲得雙倍資源"
+  },
+  "PackagePage_tiaoliaobao": {
+    "id": "PackagePage_tiaoliaobao",
+    "cn": "调料包",
+    "en": "Bag",
+    "jp": "",
+    "tw": "調料包"
+  },
+  "HeroReborn": {
+    "id": "HeroReborn",
+    "cn": "复活！",
+    "en": "Reborn!",
+    "jp": "",
+    "tw": "復活！"
+  },
+  "ProtectSuccess": {
+    "id": "ProtectSuccess",
+    "cn": "护送成功",
+    "en": "Protect Success",
+    "jp": "",
+    "tw": "護送成功"
+  },
+  "ShipShopPage_snack": {
+    "id": "ShipShopPage_snack",
+    "cn": "零食包",
+    "en": "Snack\nPack",
+    "jp": "",
+    "tw": "零食包"
+  },
+  "ShipShopPage_xiyoushangdian": {
+    "id": "ShipShopPage_xiyoushangdian",
+    "cn": "稀有商店",
+    "en": "Rare\nShop",
+    "jp": "",
+    "tw": "稀有商店"
+  },
+  "ShipShopPage_heidongshangdian": {
+    "id": "ShipShopPage_heidongshangdian",
+    "cn": "黑洞商店",
+    "en": "Black Hole\nShop",
+    "jp": "",
+    "tw": "黑洞商店"
+  },
+  "worldbosspage_duihuanshangdian": {
+    "id": "worldbosspage_duihuanshangdian",
+    "cn": "兑换商店",
+    "en": "Redeem Shop",
+    "jp": "",
+    "tw": "兌換商店"
+  },
+  "worldbosspage_baijinglingyu": {
+    "id": "worldbosspage_baijinglingyu",
+    "cn": "烈鬃红拳",
+    "en": "Red punch",
+    "jp": "",
+    "tw": "烈鬃紅拳"
+  },
+  "worldbosspage_shanghaipingdao": {
+    "id": "worldbosspage_shanghaipingdao",
+    "cn": "<<<伤害频道",
+    "en": "<< Damage Channel",
+    "jp": "",
+    "tw": "<<<傷害頻道"
+  },
+  "worldbosspage_lijiqianwang": {
+    "id": "worldbosspage_lijiqianwang",
+    "cn": "立 即 前 往 >",
+    "en": "Go now >>",
+    "jp": "",
+    "tw": "立 即 前 往 >"
+  },
+  "worldbosspage_shengyusanci": {
+    "id": "worldbosspage_shengyusanci",
+    "cn": "剩余3次挑战机会 无道具 不可复活",
+    "en": "3 challenge chances remain No items Cannot revive",
+    "jp": "",
+    "tw": "剩餘3次挑戰機會 無道具 不可復活"
+  },
+  "worldbosspage_saijidaojishi": {
+    "id": "worldbosspage_saijidaojishi",
+    "cn": "赛季倒计时：",
+    "en": "Season countdown:",
+    "jp": "",
+    "tw": "賽季倒計時："
+  },
+  "worldbosspage_tiaozhandaojishi": {
+    "id": "worldbosspage_tiaozhandaojishi",
+    "cn": "挑战倒计时：",
+    "en": "Challenge countdown:",
+    "jp": "",
+    "tw": "挑戰倒計時："
+  },
+  "worldbosspage_paihangbang": {
+    "id": "worldbosspage_paihangbang",
+    "cn": "排行榜",
+    "en": "Leaderboard",
+    "jp": "",
+    "tw": "排行榜"
+  },
+  "worldbosspage_rengwu": {
+    "id": "worldbosspage_rengwu",
+    "cn": "任务",
+    "en": "Mission",
+    "jp": "",
+    "tw": "任務"
+  },
+  "AbyssPage_SeasonReward": {
+    "id": "AbyssPage_SeasonReward",
+    "cn": "赛季奖励",
+    "en": "Season Reward",
+    "jp": "",
+    "tw": "賽季獎勵"
+  },
+  "AbyssPage_saijidaojishi": {
+    "id": "AbyssPage_saijidaojishi",
+    "cn": "赛季倒计时：",
+    "en": "Season countdown:",
+    "jp": "",
+    "tw": "賽季倒計時："
+  },
+  "AbyssPage_tiaozhandaojishi": {
+    "id": "AbyssPage_tiaozhandaojishi",
+    "cn": "挑战倒计时：",
+    "en": "Challenge countdown:",
+    "jp": "",
+    "tw": "挑戰倒計時："
+  },
+  "AbyssPage_wujingmoshi": {
+    "id": "AbyssPage_wujingmoshi",
+    "cn": "无尽模式",
+    "en": "Infinite Mode",
+    "jp": "",
+    "tw": "無盡模式"
+  },
+  "AbyssPage_wujingduihuan": {
+    "id": "AbyssPage_wujingduihuan",
+    "cn": "无尽兑换奖励：",
+    "en": "Infinite Reward Redeem:",
+    "jp": "",
+    "tw": "無盡兌換獎勵："
+  },
+  "AbyssPage_bushetiaozhan": {
+    "id": "AbyssPage_bushetiaozhan",
+    "cn": "不设挑战次数限制，24点强制结算，阵亡后选择不复活或暂停界面选择放弃后回到主菜单同时保存进度\n每10关能够选择1个BUFF，每20关为精英关，精英关后选择的BUFF效果翻倍，第50、100关为BOSS关，BOSS关后能选择1个强力的被动效果\n选择BUFF后全队复活，去除debuff，状态回满，CD刷新\n每关有120秒的挑战时间，超时后强制遣返\n当通过关卡所用时间小于5s/10s/15s时\n，将会跳过3/2/1关，不会跳过BUFF选择和BOSS关\n每层掉落100塔币，24点发放",
+    "en": "No limit for challenge times. The challenge will be closed at 24:00. Select not to revive when you've killed or select to exit at the pause interface and back to the main menu will save your progress.\nYou can choose one Buff for every 10 levels. There's one Boss level in every 20 levels. The effect will double when you choose the Buff after the Boss level clearance.\nAll allies will be revived with the Buff. At the same time, Debuff will be removed, HP will be recovered, and CD will be refreshed.\nThere are 120s for each level. You will be sent back once the time you spent exceeds the limit.\nWhen the time consumed is less than 5s/10s/15s, you can skip 3/2/1 level(s) respectively (Buff selecting and Boss level excluded). You will get Pagoda Coin x100 in each level, which will be sent to you 24:00 the day.",
+    "jp": "",
+    "tw": "不設挑戰次數限制，24點強制結算，陣亡後選擇不復活或暫停介面選擇放棄後回到主菜單同時保存進度\n每10關能夠選擇1個BUFF，每20關為精英關，精英關後選擇的BUFF效果翻倍，第50、100關為BOSS關，BOSS關後能選擇1個強力的被動效果\n選擇BUFF後全隊復活，去除debuff，狀態回滿，CD刷新\n每關有120秒的挑戰時間，超時後強制遣返\n當通過關卡所用時間小於5s/10s/15s時\n，將會跳過3/2/1關，不會跳過BUFF選擇和BOSS關\n每層掉落100塔幣，24點發放"
+  },
+  "AbyssPage_dangqiancengshu": {
+    "id": "AbyssPage_dangqiancengshu",
+    "cn": "当前层数",
+    "en": "Current level:",
+    "jp": "",
+    "tw": "當前層數"
+  },
+  "AbyssPage_chufa": {
+    "id": "AbyssPage_chufa",
+    "cn": "出 发  >>",
+    "en": "Go >>",
+    "jp": "",
+    "tw": "出 發  >>"
+  },
+  "AbyssPage_giveup": {
+    "id": "AbyssPage_giveup",
+    "cn": "放弃",
+    "en": "Give up",
+    "jp": "",
+    "tw": "放棄"
+  },
+  "AbyssPage_duihuanshangdian": {
+    "id": "AbyssPage_duihuanshangdian",
+    "cn": "兑换商店",
+    "en": "Redeem Shop",
+    "jp": "",
+    "tw": "兌換商店"
+  },
+  "AbyssPage_paihangbang": {
+    "id": "AbyssPage_paihangbang",
+    "cn": "排行榜",
+    "en": "Leaderboard",
+    "jp": "",
+    "tw": "排行榜"
+  },
+  "SureToSwitchAccount": {
+    "id": "SureToSwitchAccount",
+    "cn": "确认更换账号吗？\n<color=#FF0071>更换会导致游戏重启。</color>",
+    "en": "Confirm to switch the account? <color=#FF0071>The game will resume after that.</color>",
+    "jp": "",
+    "tw": "確認更換帳號嗎？\n<color=#FF0071>更換會導致遊戲重啟。</color>"
+  },
+  "FriendPage_liwuliebiao": {
+    "id": "FriendPage_liwuliebiao",
+    "cn": "礼物列表",
+    "en": "Gift List",
+    "jp": "",
+    "tw": "禮物列表"
+  },
+  "AbyssPage_goldgugu": {
+    "id": "AbyssPage_goldgugu",
+    "cn": "黄金菇菇虫",
+    "en": "goldgugu",
+    "jp": "",
+    "tw": "黃金菇菇蟲"
+  },
+  "AbyssPage_spacemarines": {
+    "id": "AbyssPage_spacemarines",
+    "cn": "星际战队",
+    "en": "Space Marines",
+    "jp": "",
+    "tw": "星際戰隊"
+  },
+  "WorldBossIcon_shijieboss": {
+    "id": "WorldBossIcon_shijieboss",
+    "cn": "世界BOSS",
+    "en": "World Boss",
+    "jp": "",
+    "tw": "世界BOSS"
+  },
+  "worldbosspage_shijieboss": {
+    "id": "worldbosspage_shijieboss",
+    "cn": "世界BOSS",
+    "en": "World Boss",
+    "jp": "",
+    "tw": "世界BOSS"
+  },
+  "ActWorldBossShopPage_daojishi": {
+    "id": "ActWorldBossShopPage_daojishi",
+    "cn": "活动倒计时：",
+    "en": "Countdown:",
+    "jp": "",
+    "tw": "活動倒計時："
+  },
+  "WBossRankPage_shijieboss": {
+    "id": "WBossRankPage_shijieboss",
+    "cn": "世界BOSS",
+    "en": "World Boss",
+    "jp": "",
+    "tw": "世界BOSS"
+  },
+  "WBossRankPage_shanghaipaihangbang": {
+    "id": "WBossRankPage_shanghaipaihangbang",
+    "cn": "伤害排行榜",
+    "en": "Damage Leaderboard",
+    "jp": "",
+    "tw": "傷害排行榜"
+  },
+  "WBossRankPage_dangqianjiangli": {
+    "id": "WBossRankPage_dangqianjiangli",
+    "cn": "当前结算奖励",
+    "en": "Current settlement reward",
+    "jp": "",
+    "tw": "當前結算獎勵"
+  },
+  "WBossRankPage_zongshanghai": {
+    "id": "WBossRankPage_zongshanghai",
+    "cn": "总伤害榜",
+    "en": "Total Damage",
+    "jp": "",
+    "tw": "總傷害榜"
+  },
+  "WBossRankPage_danjushanghai": {
+    "id": "WBossRankPage_danjushanghai",
+    "cn": "单局伤害榜",
+    "en": "Single-game",
+    "jp": "",
+    "tw": "單局傷害榜"
+  },
+  "WBossRankPage_saijixiangqing": {
+    "id": "WBossRankPage_saijixiangqing",
+    "cn": "赛季详情",
+    "en": "Season details",
+    "jp": "",
+    "tw": "賽季詳情"
+  },
+  "ActivityWBossMissionPage_huodongshengyushijian": {
+    "id": "ActivityWBossMissionPage_huodongshengyushijian",
+    "cn": "活动剩余时间 :",
+    "en": "Countdown:",
+    "jp": "",
+    "tw": "活動剩餘時間 :"
+  },
+  "Endless_S3_ShopPage_huodongdaojishi": {
+    "id": "Endless_S3_ShopPage_huodongdaojishi",
+    "cn": "活动倒计时：",
+    "en": "Countdown:",
+    "jp": "",
+    "tw": "活動倒計時："
+  },
+  "Endless_S3_ShopPage_goldfgugu": {
+    "id": "Endless_S3_ShopPage_goldfgugu",
+    "cn": "黄金菇菇虫",
+    "en": "Gold Mushworm",
+    "jp": "",
+    "tw": "黃金菇菇蟲"
+  },
+  "Endless_S3_ShopPage_wujing": {
+    "id": "Endless_S3_ShopPage_wujing",
+    "cn": "无尽兑换奖励：",
+    "en": "Redeemable Rewards",
+    "jp": "",
+    "tw": "無盡兌換獎勵："
+  },
+  "Lua_NoSugarToGet": {
+    "id": "Lua_NoSugarToGet",
+    "cn": "没有方糖可以领取",
+    "en": "There is no sugar cube to claim",
+    "jp": "",
+    "tw": "沒有方糖可以領取"
+  },
+  "Lua_NoSeasonProcessing": {
+    "id": "Lua_NoSeasonProcessing",
+    "cn": "没有正在进行的赛季",
+    "en": "There is no ongoing season",
+    "jp": "",
+    "tw": "沒有正在進行的賽季"
+  },
+  "Lua_SpaceIdel_NotOpen": {
+    "id": "Lua_SpaceIdel_NotOpen",
+    "cn": "没有达到开放条件",
+    "en": "Conditions not met",
+    "jp": "",
+    "tw": "沒有達到開放條件"
+  },
+  "UpgradeResetPage_dangqiancitiao": {
+    "id": "UpgradeResetPage_dangqiancitiao",
+    "cn": "当前词条",
+    "en": "property",
+    "jp": "",
+    "tw": "當前詞條"
+  },
+  "UpgradeResetPage_queren": {
+    "id": "UpgradeResetPage_queren",
+    "cn": "确 认 重 置",
+    "en": "reset property",
+    "jp": "",
+    "tw": "確 認 重 置"
+  },
+  "UpgradeResetPage_suoding": {
+    "id": "UpgradeResetPage_suoding",
+    "cn": "锁定后的属性条<color=#FF8484>不会再刷新</color>",
+    "en": "Locked property will <color=#FF8484>not change</color>",
+    "jp": "",
+    "tw": "鎖定後的屬性條<color=#FF8484>不會再刷新</color>"
+  },
+  "UpgradeResetPage_shifoubaoliu": {
+    "id": "UpgradeResetPage_shifoubaoliu",
+    "cn": "是否保留新词条",
+    "en": "Keep it？",
+    "jp": "",
+    "tw": "是否保留新詞條"
+  },
+  "UpgradeResetPage_yes": {
+    "id": "UpgradeResetPage_yes",
+    "cn": "保留哦",
+    "en": "Yes",
+    "jp": "",
+    "tw": "保留哦"
+  },
+  "UpgradeResetPage_no": {
+    "id": "UpgradeResetPage_no",
+    "cn": "不保留",
+    "en": "Nope",
+    "jp": "",
+    "tw": "不保留"
+  },
+  "UpgradeResetPage_see": {
+    "id": "UpgradeResetPage_see",
+    "cn": "看看以前",
+    "en": "looks before",
+    "jp": "",
+    "tw": "看看以前"
+  },
+  "UpgradeResetPage_again": {
+    "id": "UpgradeResetPage_again",
+    "cn": "再来一次",
+    "en": "Again",
+    "jp": "",
+    "tw": "再來一次"
+  },
+  "StarWarDispatch_Go": {
+    "id": "StarWarDispatch_Go",
+    "cn": "派遣",
+    "en": "",
+    "jp": "",
+    "tw": "派遣"
+  },
+  "StarWarDispatch_Back": {
+    "id": "StarWarDispatch_Back",
+    "cn": "回收",
+    "en": "",
+    "jp": "",
+    "tw": "回收"
+  },
+  "StarWarDispatch_TimerTip": {
+    "id": "StarWarDispatch_TimerTip",
+    "cn": "已派遣时间{0}",
+    "en": "",
+    "jp": "",
+    "tw": "已派遣時間{0}"
+  },
+  "StarWarDispatchPage_AlreadyOut": {
+    "id": "StarWarDispatchPage_AlreadyOut",
+    "cn": "已派遣",
+    "en": "",
+    "jp": "",
+    "tw": "已派遣"
+  },
+  "StarWarDispatch_CheckSureBack": {
+    "id": "StarWarDispatch_CheckSureBack",
+    "cn": "确认回收飞船吗？",
+    "en": "",
+    "jp": "",
+    "tw": "確認回收飛船嗎？"
+  },
+  "StageSweepFloating_button": {
+    "id": "StageSweepFloating_button",
+    "cn": "扫荡",
+    "en": "Sweep",
+    "jp": "",
+    "tw": "掃蕩"
+  },
+  "StageSweepFloating_setting": {
+    "id": "StageSweepFloating_setting",
+    "cn": "扫荡设置",
+    "en": "Sweep settings",
+    "jp": "",
+    "tw": "掃蕩設置"
+  },
+  "StageSweepFloating_times": {
+    "id": "StageSweepFloating_times",
+    "cn": "扫荡次数",
+    "en": "Sweep times",
+    "jp": "",
+    "tw": "掃蕩次數"
+  },
+  "StageSweepFloating_ticketnumber": {
+    "id": "StageSweepFloating_ticketnumber",
+    "cn": "扫荡券数量",
+    "en": "Ticket numbers",
+    "jp": "",
+    "tw": "掃蕩券數量"
+  },
+  "StageSweepFloating_fuelcost": {
+    "id": "StageSweepFloating_fuelcost",
+    "cn": "燃料消耗",
+    "en": "Fuel cost",
+    "jp": "",
+    "tw": "燃料消耗"
+  },
+  "StageSweepFloating_cancel": {
+    "id": "StageSweepFloating_cancel",
+    "cn": "取消",
+    "en": "Cancel",
+    "jp": "",
+    "tw": "取消"
+  },
+  "StageSweepFloating_sweep": {
+    "id": "StageSweepFloating_sweep",
+    "cn": "扫荡",
+    "en": "Sweep",
+    "jp": "",
+    "tw": "掃蕩"
+  },
+  "Report_Send": {
+    "id": "Report_Send",
+    "cn": "举报已发送",
+    "en": "",
+    "jp": "",
+    "tw": "舉報已發送"
+  },
+  "Report_Message": {
+    "id": "Report_Message",
+    "cn": "举报有{0}秒时间间隔",
+    "en": "",
+    "jp": "",
+    "tw": ""
+  },
+  "ShopPageSub_new1": {
+    "id": "ShopPageSub_new1",
+    "cn": "每日限购三次",
+    "en": "You can only buy it 3 times today!",
+    "jp": "",
+    "tw": "每日限購三次"
+  },
+  "ShopPageSub_new2": {
+    "id": "ShopPageSub_new2",
+    "cn": "每个账号限购一次",
+    "en": "You can only buy it once !",
+    "jp": "",
+    "tw": "每個帳號限購一次"
+  },
+  "ShopPageSub_new3": {
+    "id": "ShopPageSub_new3",
+    "cn": "每个账号限购三次",
+    "en": "You can only buy it 3 times !",
+    "jp": "",
+    "tw": "每個帳號限購三次"
+  },
+  "ShopPageSub_new4": {
+    "id": "ShopPageSub_new4",
+    "cn": "每个账号限购五次",
+    "en": "You can only buy it 5 times !",
+    "jp": "",
+    "tw": "每個帳號限購五次"
+  },
+  "Sweepticket": {
+    "id": "Sweepticket",
+    "cn": "扫荡券",
+    "en": "Sweep Tickets",
+    "jp": "",
+    "tw": "掃蕩券"
+  },
+  "ElfPageSkinStateFloating_unlock": {
+    "id": "ElfPageSkinStateFloating_unlock",
+    "cn": "解锁",
+    "en": "unlock",
+    "jp": "",
+    "tw": "解鎖"
+  },
+  "ElfPageSkinStateFloating_modifycolor": {
+    "id": "ElfPageSkinStateFloating_modifycolor",
+    "cn": "修改颜色",
+    "en": "Modify color",
+    "jp": "",
+    "tw": "修改顏色"
+  },
+  "TeamChoosePage_weikaiqi": {
+    "id": "TeamChoosePage_weikaiqi",
+    "cn": "未开启",
+    "en": "Unlock",
+    "jp": "",
+    "tw": "未開啟"
+  },
+  "SelectFirstPage_luoying": {
+    "id": "SelectFirstPage_luoying",
+    "cn": "落樱……",
+    "en": "Sakura…",
+    "jp": "",
+    "tw": "落櫻……"
+  },
+  "SelectFirstPage_callme": {
+    "id": "SelectFirstPage_callme",
+    "cn": "谁在……呼唤我？",
+    "en": "Who is calling me?",
+    "jp": "",
+    "tw": "誰在……呼喚我？"
+  },
+  "SelectFirstPage_but": {
+    "id": "SelectFirstPage_but",
+    "cn": "可是……",
+    "en": "But…",
+    "jp": "",
+    "tw": "可是……"
+  },
+  "SelectFirstPage_myfrienddie": {
+    "id": "SelectFirstPage_myfrienddie",
+    "cn": "我的伙伴……不是，都已经战死了吗？",
+    "en": "My partner... No, are they all dead?",
+    "jp": "",
+    "tw": "我的夥伴……不是，都已經戰死了嗎？"
+  },
+  "SelectFirstPage_bingdu": {
+    "id": "SelectFirstPage_bingdu",
+    "cn": "而海胆病毒……",
+    "en": "And sea urchin virus…",
+    "jp": "",
+    "tw": "而海膽病毒……"
+  },
+  "SelectFirstPage_siwanjidan": {
+    "id": "SelectFirstPage_siwanjidan",
+    "cn": "仍然肆无忌惮！",
+    "en": "Still unscrupulous!",
+    "jp": "",
+    "tw": "仍然肆無忌憚！"
+  },
+  "SelectFirstPage_imust": {
+    "id": "SelectFirstPage_imust",
+    "cn": "我必须……",
+    "en": "I must…",
+    "jp": "",
+    "tw": "我必須……"
+  },
+  "SelectFirstPage_fightlast": {
+    "id": "SelectFirstPage_fightlast",
+    "cn": "战斗到最后一刻！！",
+    "en": "Fight to the last minute!!",
+    "jp": "",
+    "tw": "戰鬥到最後一刻！！"
+  },
+  "SelectFirstPage_lasthope": {
+    "id": "SelectFirstPage_lasthope",
+    "cn": "落樱，你是最后的希望。",
+    "en": "Sakura, you are the last hope.",
+    "jp": "",
+    "tw": "落櫻，你是最後的希望。"
+  },
+  "SelectFirstPage_fighthelpyou": {
+    "id": "SelectFirstPage_fighthelpyou",
+    "cn": "战斗吧，以神的名义，祝福你净化这个世界！",
+    "en": "Fight, in the name of God, bless you to purify the world!",
+    "jp": "",
+    "tw": "戰鬥吧，以神的名義，祝福你淨化這個世界！"
+  },
+  "Url_FaceBook": {
+    "id": "Url_FaceBook",
+    "cn": "https://www.facebook.com/starhealer.cn/",
+    "en": "https://www.facebook.com/starhealer.en/",
+    "jp": "",
+    "tw": "https://www.facebook.com/starhealer.tw/"
+  },
+  "Url_Discord": {
+    "id": "Url_Discord",
+    "cn": " ",
+    "en": "https://discord.gg/fhM4Wvtt5P",
+    "jp": "",
+    "tw": " "
+  },
+  "SevenDaysSignInOverSeaPage_1_1": {
+    "id": "SevenDaysSignInOverSeaPage_1_1",
+    "cn": "电量",
+    "en": "Battery",
+    "jp": "",
+    "tw": "電量"
+  },
+  "SevenDaysSignInOverSeaPage_1_2": {
+    "id": "SevenDaysSignInOverSeaPage_1_2",
+    "cn": "黄星",
+    "en": "Yellow Star",
+    "jp": "",
+    "tw": "黃星"
+  },
+  "SevenDaysSignInOverSeaPage_2": {
+    "id": "SevenDaysSignInOverSeaPage_2",
+    "cn": "彩虹枪",
+    "en": "Rainbow Gun",
+    "jp": "",
+    "tw": "彩虹槍"
+  },
+  "SevenDaysSignInOverSeaPage_3_1": {
+    "id": "SevenDaysSignInOverSeaPage_3_1",
+    "cn": "方糖",
+    "en": "Sugar Cube",
+    "jp": "",
+    "tw": "方糖"
+  },
+  "SevenDaysSignInOverSeaPage_3_2": {
+    "id": "SevenDaysSignInOverSeaPage_3_2",
+    "cn": "10连抽",
+    "en": "Draw x10",
+    "jp": "",
+    "tw": "10連抽"
+  },
+  "SevenDaysSignInOverSeaPage_4": {
+    "id": "SevenDaysSignInOverSeaPage_4",
+    "cn": "煤球币",
+    "en": "Briquet coin",
+    "jp": "",
+    "tw": "煤球幣"
+  },
+  "SevenDaysSignInOverSeaPage_5_1": {
+    "id": "SevenDaysSignInOverSeaPage_5_1",
+    "cn": "方糖",
+    "en": "Sugar Cube",
+    "jp": "",
+    "tw": "方糖"
+  },
+  "SevenDaysSignInOverSeaPage_5_2": {
+    "id": "SevenDaysSignInOverSeaPage_5_2",
+    "cn": "10连抽",
+    "en": "Draw x10",
+    "jp": "",
+    "tw": "10連抽"
+  },
+  "SevenDaysSignInOverSeaPage_6": {
+    "id": "SevenDaysSignInOverSeaPage_6",
+    "cn": "果冻币",
+    "en": "Jelly",
+    "jp": "",
+    "tw": "果凍幣"
+  },
+  "SevenDaysSignInOverSeaPage_7": {
+    "id": "SevenDaysSignInOverSeaPage_7",
+    "cn": "绯夜",
+    "en": "Violet Guard",
+    "jp": "",
+    "tw": "緋夜"
+  },
+  "SevenDaysSignInOverSeaPage_7dayssigninintroduce": {
+    "id": "SevenDaysSignInOverSeaPage_7dayssigninintroduce",
+    "cn": "连续7日签到即可获得【超罕见】角色绯夜",
+    "en": "Sign in for consecutive 7 days to get [Legendary] Hero Violet Guard",
+    "jp": "",
+    "tw": "連續7日簽到即可獲得【超罕見】角色緋夜"
+  },
+  "GaChaPull_Jelly_Title": {
+    "id": "GaChaPull_Jelly_Title",
+    "cn": "血型浓度",
+    "en": "Blood Purity",
+    "jp": "",
+    "tw": "血型濃度"
+  },
+  "GaChaPull_Jelly_Probability": {
+    "id": "GaChaPull_Jelly_Probability",
+    "cn": "45%|30%|15%|10%",
+    "en": "45%|30%|15%|10%",
+    "jp": "",
+    "tw": "45%|30%|15%|10%"
+  },
+  "GaChaPull_Jelly_Info": {
+    "id": "GaChaPull_Jelly_Info",
+    "cn": "(10-20)%纯度|(20-50)%纯度|(50-90)%纯度|(90-100)%纯度",
+    "en": "(10-20)%Purity|(20-50)%Purity|(50-90)%Purity|(90-100)%Purity",
+    "jp": "",
+    "tw": "(10-20)%純度|(20-50)%純度|(50-90)%純度|(90-100)%純度"
+  },
+  "GaChaPull_Jelly_Blood_Title": {
+    "id": "GaChaPull_Jelly_Blood_Title",
+    "cn": "血型",
+    "en": "Blood Type",
+    "jp": "",
+    "tw": "血型"
+  },
+  "GaChaPull_Jelly_Blood_Info": {
+    "id": "GaChaPull_Jelly_Blood_Info",
+    "cn": "每种血型（B/A/AB/O/RH）出率为20%",
+    "en": "（B/A/AB/O/RH）20%",
+    "jp": "",
+    "tw": "每種血型（B/A/AB/O/RH）出率為20%"
+  },
+  "GaChaPull_FTW_Title": {
+    "id": "GaChaPull_FTW_Title",
+    "cn": "方糖阶级",
+    "en": "Suger Cube",
+    "jp": "",
+    "tw": "方糖階級"
+  },
+  "GaChaPull_FTW_Probability": {
+    "id": "GaChaPull_FTW_Probability",
+    "cn": "出率85%|出率10%|出率4%|出率1%",
+    "en": "85%|10%|4%|1%",
+    "jp": "",
+    "tw": "出率85%|出率10%|出率4%|出率1%"
+  },
+  "GaChaPull_FTW_Info": {
+    "id": "GaChaPull_FTW_Info",
+    "cn": "一阶方糖|二阶方糖|三阶方糖|四阶方糖",
+    "en": "R1|R2|R3|R4",
+    "jp": "",
+    "tw": "一階方糖|二階方糖|三階方糖|四階方糖"
+  },
+  "InitPack1Pro_Title": {
+    "id": "InitPack1Pro_Title",
+    "cn": "一元超值礼包",
+    "en": "SuperPack",
+    "jp": "",
+    "tw": "一元超值禮包"
+  },
+  "InitPack1Pro_Probability": {
+    "id": "InitPack1Pro_Probability",
+    "cn": "出率35%|出率25%|出率29%|出率10%|出率1%",
+    "en": "35%|25%|29%|10%|1%",
+    "jp": "",
+    "tw": "出率35%|出率25%|出率29%|出率10%|出率1%"
+  },
+  "InitPack1Pro_Info": {
+    "id": "InitPack1Pro_Info",
+    "cn": "电量*5000|果冻币*300|燃料*20|方糖单抽券*1|果冻十连抽*1",
+    "en": "Battery*5000|Jelly Coin*300|Fuel*20|Sugar Cube Draw*1|Jelly Coupon x10",
+    "jp": "",
+    "tw": "電量*5000|果凍幣*300|燃料*20|方糖單抽券*1|果凍十連抽*1"
+  },
+  "LoginPage_UserAgreement": {
+    "id": "LoginPage_UserAgreement",
+    "cn": "我已阅读并同意用户协议和隐私协议",
+    "en": "I have read and agree to the user agreement and privacy agreement",
+    "jp": "",
+    "tw": "我已閱讀並同意使用者協定和隱私協定"
+  },
+  "LoginPage_UserAgreementNew": {
+    "id": "LoginPage_UserAgreementNew",
+    "cn": "我已阅读并同意用户协议",
+    "en": "I have read and agree to the user agreement",
+    "jp": "",
+    "tw": "我已閱讀並同意使用者協定"
+  },
+  "LoginPage_PrivacyNew": {
+    "id": "LoginPage_PrivacyNew",
+    "cn": "我已阅读并同意隐私协议",
+    "en": "I have read and agree to the privacy agreement",
+    "jp": "",
+    "tw": "我已閱讀並同意隱私協定"
+  },
+  "Handbook7starUnitPage_all": {
+    "id": "Handbook7starUnitPage_all",
+    "cn": "全部",
+    "en": "All",
+    "jp": "",
+    "tw": "全部"
+  },
+  "Handbook8starUnitPage_unit": {
+    "id": "Handbook8starUnitPage_unit",
+    "cn": "人物",
+    "en": "Hero",
+    "jp": "",
+    "tw": "人物"
+  },
+  "Handbook9starUnitPage_weapon": {
+    "id": "Handbook9starUnitPage_weapon",
+    "cn": "武器",
+    "en": "Weapon",
+    "jp": "",
+    "tw": "武器"
+  },
+  "Handbook10starUnitPage_pet": {
+    "id": "Handbook10starUnitPage_pet",
+    "cn": "宠物",
+    "en": "Pet",
+    "jp": "",
+    "tw": "寵物"
+  },
+  "SettingPage_hdr": {
+    "id": "SettingPage_hdr",
+    "cn": "HDR设置",
+    "en": "HDR settings",
+    "jp": "HDR設定",
+    "tw": "HDR設置"
+  },
+  "FBIcon_52": {
+    "id": "FBIcon_52",
+    "cn": "煤头梅脑",
+    "en": "",
+    "jp": "",
+    "tw": ""
+  },
+  "FBIcon_53": {
+    "id": "FBIcon_53",
+    "cn": "艺术双星",
+    "en": "",
+    "jp": "",
+    "tw": ""
+  },
+  "FBIcon_54": {
+    "id": "FBIcon_54",
+    "cn": "满汉全席",
+    "en": "",
+    "jp": "",
+    "tw": ""
+  },
+  "SevenDaysSignInPage_feiye": {
+    "id": "SevenDaysSignInPage_feiye",
+    "cn": "绯夜",
+    "en": "Violet Guard",
+    "jp": "",
+    "tw": "緋夜"
+  },
+  "UIActXK_Title": {
+    "id": "UIActXK_Title",
+    "cn": "虚空幻界",
+    "en": "",
+    "jp": "",
+    "tw": ""
+  },
+  "SetFramePage_tuowei": {
+    "id": "SetFramePage_tuowei",
+    "cn": "拖尾特效",
+    "en": "Trailing",
+    "jp": "",
+    "tw": "拖尾特效"
+  },
+  "UIActXK_easy_title": {
+    "id": "UIActXK_easy_title",
+    "cn": "初炼",
+    "en": "Easy",
+    "jp": "",
+    "tw": "初煉"
+  },
+  "UIActXK_easy": {
+    "id": "UIActXK_easy",
+    "cn": "简单",
+    "en": "Easy",
+    "jp": "",
+    "tw": "簡單"
+  },
+  "UIActXK_normal_title": {
+    "id": "UIActXK_normal_title",
+    "cn": "幻境",
+    "en": "Normal",
+    "jp": "",
+    "tw": "幻境"
+  },
+  "UIActXK_normal": {
+    "id": "UIActXK_normal",
+    "cn": "普通",
+    "en": "Normal",
+    "jp": "",
+    "tw": "普通"
+  },
+  "UIActXK_hard_title": {
+    "id": "UIActXK_hard_title",
+    "cn": "虚空",
+    "en": "Hard",
+    "jp": "",
+    "tw": "虛空"
+  },
+  "UIActXK_hard": {
+    "id": "UIActXK_hard",
+    "cn": "困难",
+    "en": "Hard",
+    "jp": "",
+    "tw": "困難"
+  },
+  "exp100064": {
+    "id": "exp100064",
+    "cn": "体验关卡",
+    "en": "Candy Pirate",
+    "jp": "",
+    "tw": "體驗關卡"
+  },
+  "SettingPage_IDcopied": {
+    "id": "SettingPage_IDcopied",
+    "cn": "ID已复制",
+    "en": "ID Copied",
+    "jp": "",
+    "tw": "ID已複製"
+  },
+  "TryFetchFriendMSgFail": {
+    "id": "TryFetchFriendMSgFail",
+    "cn": "刷新好友消息失败:",
+    "en": "",
+    "jp": "",
+    "tw": ""
+  },
+  "excel_ActGaCha_title_31": {
+    "id": "excel_ActGaCha_title_31",
+    "cn": "煤梅UP",
+    "en": "MeiMei UP",
+    "jp": "",
+    "tw": "煤梅UP"
+  },
+  "DevelopmentPage_lihui": {
+    "id": "DevelopmentPage_lihui",
+    "cn": "立绘",
+    "en": "Picture",
+    "jp": "立ち絵",
+    "tw": "立繪"
+  },
+  "FBIcon_66": {
+    "id": "FBIcon_66",
+    "cn": "糖果海盗",
+    "en": "Operating Activities",
+    "jp": "",
+    "tw": "運營活動"
+  },
+  "UIActDirectionalDrop_xianli": {
+    "id": "UIActDirectionalDrop_xianli",
+    "cn": "专属者的献礼",
+    "en": "black obelisk",
+    "jp": "",
+    "tw": "黑方尖塔"
+  },
+  "UIActDirectionalDrop_jianta": {
+    "id": "UIActDirectionalDrop_jianta",
+    "cn": "黑方尖塔",
+    "en": "Exclusive Gift",
+    "jp": "",
+    "tw": "專屬者的獻禮"
+  },
+  "HL_Hard": {
+    "id": "HL_Hard",
+    "cn": "困难",
+    "en": "Hard",
+    "jp": "",
+    "tw": "困難"
+  },
+  "HL_Easy": {
+    "id": "HL_Easy",
+    "cn": "简单",
+    "en": "Easy",
+    "jp": "",
+    "tw": "簡單"
+  },
+  "gachapage_song": {
+    "id": "gachapage_song",
+    "cn": "送",
+    "en": "Give",
+    "jp": "",
+    "tw": "送"
+  },
+  "Act_shop": {
+    "id": "Act_shop",
+    "cn": "商店",
+    "en": "shop",
+    "jp": "",
+    "tw": "商店"
+  },
+  "Act_story": {
+    "id": "Act_story",
+    "cn": "剧情",
+    "en": "story",
+    "jp": "",
+    "tw": "劇情"
+  },
+  "Act_task": {
+    "id": "Act_task",
+    "cn": "任务",
+    "en": "task",
+    "jp": "",
+    "tw": "任務"
+  },
+  "HL_81": {
+    "id": "HL_81",
+    "cn": "一艘飞船",
+    "en": "A Spaceship",
+    "jp": "",
+    "tw": "一艘飛船"
+  },
+  "HL_82": {
+    "id": "HL_82",
+    "cn": "三个海盗",
+    "en": "Three Pirates",
+    "jp": "",
+    "tw": "三個海盜"
+  },
+  "HL_83": {
+    "id": "HL_83",
+    "cn": "宝藏猎人",
+    "en": "Treasure Hunter",
+    "jp": "",
+    "tw": "寶藏獵人"
+  },
+  "HL_84": {
+    "id": "HL_84",
+    "cn": "海胆危机",
+    "en": "Sea Urchin Crisis",
+    "jp": "",
+    "tw": "海膽危機"
+  },
+  "HL_85": {
+    "id": "HL_85",
+    "cn": "煤球冲击",
+    "en": "Briquet Impact",
+    "jp": "",
+    "tw": "煤球衝擊"
+  },
+  "HL_86": {
+    "id": "HL_86",
+    "cn": "糖果海盗",
+    "en": "Candy Pirate",
+    "jp": "",
+    "tw": "糖果海盜"
+  },
+  "HL_87": {
+    "id": "HL_87",
+    "cn": "一艘飞船",
+    "en": "A Spaceship",
+    "jp": "",
+    "tw": "一艘飛船"
+  },
+  "HL_88": {
+    "id": "HL_88",
+    "cn": "三个海盗",
+    "en": "Three Pirates",
+    "jp": "",
+    "tw": "三個海盜"
+  },
+  "HL_89": {
+    "id": "HL_89",
+    "cn": "宝藏猎人",
+    "en": "Treasure Hunter",
+    "jp": "",
+    "tw": "寶藏獵人"
+  },
+  "HL_90": {
+    "id": "HL_90",
+    "cn": "海胆危机",
+    "en": "Sea Urchin Crisis",
+    "jp": "",
+    "tw": "海膽危機"
+  },
+  "HL_91": {
+    "id": "HL_91",
+    "cn": "煤球冲击",
+    "en": "Briquet Impact",
+    "jp": "",
+    "tw": "煤球衝擊"
+  },
+  "HL_92": {
+    "id": "HL_92",
+    "cn": "糖果海盗",
+    "en": "Candy Pirate",
+    "jp": "",
+    "tw": "糖果海盜"
+  },
+  "excel_AbysspassiveSkill_Desc_810001": {
+    "id": "excel_AbysspassiveSkill_Desc_810001",
+    "cn": "角色释放主动技能时眩晕所有怪物并使其受到的伤害提高15%，持续3秒(持续时间可刷新)",
+    "en": "When the character releases an active skill, stun all monsters and increase their DMG taken by 15% for 3s (the duration can be refreshed).",
+    "jp": "",
+    "tw": "角色釋放主動技能時眩暈所有怪物並使其受到的傷害提高15%，持續3秒(持續時間可刷新)"
+  },
+  "excel_AbysspassiveSkill_Desc_810002": {
+    "id": "excel_AbysspassiveSkill_Desc_810002",
+    "cn": "召唤物每次攻击都会使目标受到的所有伤害提高1%，最多叠加到40%，持续5秒(持续时间可刷新)",
+    "en": "When the summon attacks, increase the targets' DMG taken by 1% (up to 80%), lasting for 5s (the duration can be refreshed).",
+    "jp": "",
+    "tw": "召喚物每次攻擊都會使目標受到的所有傷害提高1%，最多疊加到80%，持續5秒(持續時間可刷新)"
+  },
+  "excel_AbysspassiveSkill_Desc_810003": {
+    "id": "excel_AbysspassiveSkill_Desc_810003",
+    "cn": "每过15秒，会有50%的几率刷新所有技能cd",
+    "en": "Every 15s, there's a 50% chance to refresh all skill CDs.",
+    "jp": "",
+    "tw": "每過15秒，會有50%的幾率刷新所有技能cd"
+  },
+  "excel_AbysspassiveSkill_Desc_810004": {
+    "id": "excel_AbysspassiveSkill_Desc_810004",
+    "cn": "友方角色每次使用武器攻击时(除自动攻击类武器外)有1%的概率在目标位置产生黑洞，吸附周围敌人并使黑洞范围内敌人受到的伤害提高20%，持续3秒",
+    "en": "Each time an ally character attacks with a weapon (except for auto-attack weapons), there's a 1% chance to generate a black hole at the target's location, drawing surrounding enemies and increasing the DMG taken by enemies within by 20% for 3s.",
+    "jp": "",
+    "tw": "友方角色每次使用武器攻擊時(除自動攻擊類武器外)有1%的概率在目標位置產生黑洞，吸附周圍敵人並使黑洞範圍內敵人受到的傷害提高20%，持續3秒"
+  },
+  "excel_AbysspassiveSkill_Desc_810005": {
+    "id": "excel_AbysspassiveSkill_Desc_810005",
+    "cn": "站立不动5秒后，友方全体造成的伤害增加35%，移动后效果还会持续2秒",
+    "en": "After standing still for 5s, increase the DMG dealt by all allies by 35%, and the effect will last for 2s after you start moving.",
+    "jp": "",
+    "tw": "站立不動5秒後，友方全體造成的傷害增加35%，移動後效果還會持續2秒"
+  },
+  "excel_AbysspassiveSkill_Desc_810006": {
+    "id": "excel_AbysspassiveSkill_Desc_810006",
+    "cn": "宠物每次造成伤害都会使友方全体爆伤提高2%，最高提升到300%，持续5秒(持续时间可刷新)",
+    "en": "When the pet attacks, increase all allies' Crit. DMG dealt by 2% (up to 350%), lasting for 5s (the duration can be refreshed).",
+    "jp": "",
+    "tw": "寵物每次造成傷害都會使友方全體爆傷提高2%，最高提升到350%，持續5秒(持續時間可刷新)"
+  },
+  "excel_AbysspassiveSkill_Desc_810007": {
+    "id": "excel_AbysspassiveSkill_Desc_810007",
+    "cn": "使用武器攻击时(除自动攻击类武器外)，有5%的概率在敌人身上附加神圣结晶并碎裂，神圣结晶碎裂会造成8000%武器攻击力*技能强度的伤害",
+    "en": "When attacking with weapons (except for auto-attack weapons), there's a 5% chance of attaching a Sacred Crystal on enemies and shattering it, dealing DMG equal to 8,000% Weapon ATK * Strength.",
+    "jp": "",
+    "tw": "使用武器攻擊時(除自動攻擊類武器外)，有5%的概率在敵人身上附加神聖結晶並碎裂，神聖結晶碎裂會造成8000%武器攻擊力*技能強度的傷害。"
+  },
+  "excel_AbysspassiveSkill_Desc_810008": {
+    "id": "excel_AbysspassiveSkill_Desc_810008",
+    "cn": "角色每次释放技能时，会使自身攻击力提高5%，爆伤提高30%，最多可叠加6次，持续8秒",
+    "en": "Each time a character releases a skill, increase their ATK by 5% and Crit. DMG by 30%, which can stack up to 6 times, lasting for 8s.",
+    "jp": "",
+    "tw": "角色每次釋放技能時，會使自身攻擊力提高5%，爆傷提高30%，最多可疊加6次，持續8秒。"
+  },
+  "excel_AbysspassiveSkill_Desc_810009": {
+    "id": "excel_AbysspassiveSkill_Desc_810009",
+    "cn": "角色每次释放技能时，使所有宠物的技能伤害提高20%，最多可叠加5次，持续10秒",
+    "en": "Each time a character releases a skill, increase all pets' Skill DMG by 20%, which can stack up to 5 times, lasting for 10s.",
+    "jp": "",
+    "tw": "角色每次釋放技能時，使所有寵物的技能傷害提高20%，最多可疊加5次，持續10秒。"
+  },
+  "excel_AbysspassiveSkill_Desc_810010": {
+    "id": "excel_AbysspassiveSkill_Desc_810010",
+    "cn": "每10秒会随机扔出一个骰子，角色头顶会出现一个骰子，根据骰子投出的数量，骰子数字每高一点，所有召唤物造成的伤害提高8%，持续8秒",
+    "en": "A dice will be randomly thrown every 10 seconds, and a dice will appear above the character's head. According to the number of dice thrown, the damage caused by all summoned objects will increase by 8% for each higher dice number, which lasts for 8 seconds.",
+    "jp": "",
+    "tw": "每10秒會隨機扔出一個骰子，角色頭頂會出現一個骰子，根據骰子投出的數量，骰子數字每高一點，所有召喚物造成的傷害提高8%，持續8秒。"
+  },
+  "excel_AbysspassiveSkill_Desc_810011": {
+    "id": "excel_AbysspassiveSkill_Desc_810011",
+    "cn": "普攻造成伤害时有1%的几率将所有敌人变成煤球，持续5秒，敌人变成煤球后无法攻击，受到的伤害提高20%且移动速度降低50%，冷却时间10秒",
+    "en": "When the weapon deals damage, there is a 1% chance to turn all enemies into briquettes for 5 seconds. After the enemy turns into briquettes, they cannot attack, the damage received is increased by 10% and the movement speed is reduced by 50%. The cooldown  time is 10 seconds.",
+    "jp": "",
+    "tw": "武器造成傷害時有1%的幾率將所有敵人變成煤球，持續5秒，敵人變成煤球後無法攻擊，受到的傷害提高10%且移動速度降低50%，冷卻時間10秒。"
+  },
+  "excel_AbysspassiveSkill_Desc_810012": {
+    "id": "excel_AbysspassiveSkill_Desc_810012",
+    "cn": "所有单位每存活10秒，就会让伤害提高10%，最多叠加3层",
+    "en": "For every 20 seconds, every characters are still alive, damage will be increased by 5%. Stack up to 3 times",
+    "jp": "",
+    "tw": "所有單位每存活20秒，就會讓傷害提高5%，最多疊加3層。"
+  },
+  "excel_AbysspassiveSkill_Desc_810013": {
+    "id": "excel_AbysspassiveSkill_Desc_810013",
+    "cn": "角色复活后，该角色造成的伤害提高25%，持续5秒",
+    "en": "",
+    "jp": "",
+    "tw": ""
+  },
+  "excel_AbysspassiveSkill_Desc_810014": {
+    "id": "excel_AbysspassiveSkill_Desc_810014",
+    "cn": "当有角色死亡时，所有敌方怪物受到的伤害提高30%，持续10秒(效果不可叠加)",
+    "en": "",
+    "jp": "",
+    "tw": ""
+  },
+  "damageDisplayMode_CN_1": {
+    "id": "damageDisplayMode_CN_1",
+    "cn": "万",
+    "en": "萬",
+    "jp": "",
+    "tw": "萬"
+  },
+  "damageDisplayMode_CN_2": {
+    "id": "damageDisplayMode_CN_2",
+    "cn": "亿",
+    "en": "億",
+    "jp": "",
+    "tw": "億"
+  },
+  "damageDisplayMode_CN_3": {
+    "id": "damageDisplayMode_CN_3",
+    "cn": "兆",
+    "en": "兆",
+    "jp": "",
+    "tw": "兆"
+  },
+  "damageDisplayMode_CN_4": {
+    "id": "damageDisplayMode_CN_4",
+    "cn": "京",
+    "en": "京",
+    "jp": "",
+    "tw": "京"
+  },
+  "damageDisplayMode_oversea_1": {
+    "id": "damageDisplayMode_oversea_1",
+    "cn": "K",
+    "en": "K",
+    "jp": "",
+    "tw": "K"
+  },
+  "damageDisplayMode_oversea_2": {
+    "id": "damageDisplayMode_oversea_2",
+    "cn": "M",
+    "en": "M",
+    "jp": "",
+    "tw": "M"
+  },
+  "damageDisplayMode_oversea_3": {
+    "id": "damageDisplayMode_oversea_3",
+    "cn": "B",
+    "en": "B",
+    "jp": "",
+    "tw": "B"
+  },
+  "damageDisplayMode_oversea_4": {
+    "id": "damageDisplayMode_oversea_4",
+    "cn": "T",
+    "en": "T",
+    "jp": "",
+    "tw": "T"
+  },
+  "damageDisplayMode_oversea_5": {
+    "id": "damageDisplayMode_oversea_5",
+    "cn": "Q",
+    "en": "Q",
+    "jp": "",
+    "tw": "Q"
+  },
+  "ControllerSettingPage_damageDisplay": {
+    "id": "ControllerSettingPage_damageDisplay",
+    "cn": "数值显示",
+    "en": "Damage Display Mode",
+    "jp": "",
+    "tw": "數值顯示"
+  },
+  "ControllerSettingPage_damageDisplay_choose1": {
+    "id": "ControllerSettingPage_damageDisplay_choose1",
+    "cn": "详细数值",
+    "en": "Detailed",
+    "jp": "",
+    "tw": "詳細數值"
+  },
+  "ControllerSettingPage_damageDisplay_choose2": {
+    "id": "ControllerSettingPage_damageDisplay_choose2",
+    "cn": "精简数值",
+    "en": "Simplified",
+    "jp": "",
+    "tw": "精簡數值"
+  },
+  "UIActGuessPuzzle_daytime": {
+    "id": "UIActGuessPuzzle_daytime",
+    "cn": "第{0}天",
+    "en": "{0} day",
+    "jp": "",
+    "tw": "第{0}天"
+  },
+  "ActivityPlayerReturnMissionPage_lock": {
+    "id": "ActivityPlayerReturnMissionPage_lock",
+    "cn": "第{0}天解锁该页任务哦",
+    "en": "",
+    "jp": "",
+    "tw": "第{0}天解鎖該頁任務哦"
+  },
+  "Dungeon_cleanroom": {
+    "id": "Dungeon_cleanroom",
+    "cn": "净化成功",
+    "en": "Successful Purification",
+    "jp": "",
+    "tw": "淨化成功"
+  },
+  "Dungeon_MonsterRoom": {
+    "id": "Dungeon_MonsterRoom",
+    "cn": "小怪房",
+    "en": "MonsterRoom",
+    "jp": "",
+    "tw": "小怪房"
+  },
+  "Dungeon_SpMonsterRoom": {
+    "id": "Dungeon_SpMonsterRoom",
+    "cn": "精英房",
+    "en": "SpMonsterRoom",
+    "jp": "",
+    "tw": "精英房"
+  },
+  "Dungeon_DefenseRoom": {
+    "id": "Dungeon_DefenseRoom",
+    "cn": "防守房",
+    "en": "DefenseRoom",
+    "jp": "",
+    "tw": "防守房"
+  },
+  "Dungeon_Boss": {
+    "id": "Dungeon_Boss",
+    "cn": "首领房",
+    "en": "Boss",
+    "jp": "",
+    "tw": "首領房"
+  },
+  "Dungeon_ChestRoom": {
+    "id": "Dungeon_ChestRoom",
+    "cn": "奖励房",
+    "en": "ChestRoom",
+    "jp": "",
+    "tw": "獎勵房"
+  },
+  "FBIcon_twelve": {
+    "id": "FBIcon_twelve",
+    "cn": "十二之间",
+    "en": "Twelve Trials",
+    "jp": "",
+    "tw": "十二之間"
+  },
+  "Dungeon_UnlockPrompt": {
+    "id": "Dungeon_UnlockPrompt",
+    "cn": "通关漆夜星8-10后解锁",
+    "en": "Unlock after clearing Darknight-Land [8-10]",
+    "jp": "",
+    "tw": "通關漆夜星8-10後解鎖"
+  },
+  "Dungeon_talenttree_1": {
+    "id": "Dungeon_talenttree_1",
+    "cn": "已装备的天赋加成，在所有玩法中生效：",
+    "en": "Equipped talent bonuses take effect in all playstyles:",
+    "jp": "",
+    "tw": "已裝備的天賦加成，在所有玩法中生效："
+  },
+  "Dungeon_talenttree_2": {
+    "id": "Dungeon_talenttree_2",
+    "cn": "以下的加成只在十二之间玩法中生效: ",
+    "en": "The following bonuses only take effect in The Twelve Trials mode:",
+    "jp": "",
+    "tw": "以下的加成只在十二之間玩法中生效: "
+  },
+  "Dungeon_talenttree_3": {
+    "id": "Dungeon_talenttree_3",
+    "cn": "提示：装备后在所有玩法中生效",
+    "en": "Tips：Equipped talent bonuses take effect in all playstyles",
+    "jp": "",
+    "tw": "提示：裝備后在所有玩法中生效"
+  },
+  "Dungeon_talenttree_4": {
+    "id": "Dungeon_talenttree_4",
+    "cn": "加成预览",
+    "en": "Talent preview",
+    "jp": "",
+    "tw": "加成預覽"
+  },
+  "Dungeon_talenttree_5": {
+    "id": "Dungeon_talenttree_5",
+    "cn": "提升天赋",
+    "en": "Improve talent",
+    "jp": "",
+    "tw": "提升天賦"
+  },
+  "Dungeon_talenttree_6": {
+    "id": "Dungeon_talenttree_6",
+    "cn": "未解锁前置天赋",
+    "en": "Pre-talent is unactivated",
+    "jp": "",
+    "tw": "未解鎖前置天賦"
+  },
+  "Dungeon_talenttree_7": {
+    "id": "Dungeon_talenttree_7",
+    "cn": "装备",
+    "en": "Equip",
+    "jp": "",
+    "tw": "裝備"
+  },
+  "Dungeon_talenttree_8": {
+    "id": "Dungeon_talenttree_8",
+    "cn": "卸下",
+    "en": "Discharge",
+    "jp": "",
+    "tw": "卸下"
+  },
+  "DungeonPage_sweep": {
+    "id": "DungeonPage_sweep",
+    "cn": "扫荡",
+    "en": "Sweep",
+    "jp": "",
+    "tw": "扫荡"
+  },
+  "Dungeon_UnlockPrompt_2": {
+    "id": "Dungeon_UnlockPrompt_2",
+    "cn": "该玩法将在2022-10-22 14：00：00开放，敬请期待",
+    "en": "The gameplay will be available in       .  Stay tuned.",
+    "jp": "",
+    "tw": "該玩法將在2022-10-22 14：00：00開放，敬請期待"
+  },
+  "Dungeon_BattleEndTime": {
+    "id": "Dungeon_BattleEndTime",
+    "cn": "已结束",
+    "en": "Event has already ended.",
+    "jp": "",
+    "tw": "已結束"
+  },
+  "Help_Twelve_1_text3": {
+    "id": "Help_Twelve_1_text3",
+    "cn": "点击此处进入天赋树页面\n每层通关后可获得材料解锁新天赋",
+    "en": "Click here to go to talent tree page\nAfter clearing each level, you can get materials to unlock new talents",
+    "jp": "",
+    "tw": "點擊此處進入天賦樹頁面\n每層通關後可獲得材料解鎖新天賦"
+  },
+  "Help_Twelve_1_text4": {
+    "id": "Help_Twelve_1_text4",
+    "cn": "开始战斗后不能更换阵容\n游戏过程中如果出现意外退出的情况，可\n以重连回到上一个房间，记录不会丢失",
+    "en": "\nThe lineup cannot be changed after starting the battle\nIf there is an unexpected exit during the game, you can return to the previous room by reconnecting\nThe record will not be lost",
+    "jp": "",
+    "tw": "開始戰鬥後不能更換陣容\n遊戲過程中如果出現意外退出的情況，可\n以重連回到上一個房間，記錄不會丟失"
+  },
+  "Help_Twelve_1_text5": {
+    "id": "Help_Twelve_1_text5",
+    "cn": "智慧糖果",
+    "en": "Smart Candy",
+    "jp": "",
+    "tw": "智慧糖果"
+  },
+  "Help_Twelve_2_text3": {
+    "id": "Help_Twelve_2_text3",
+    "cn": "每一赛季，怪物都会拥有不同的效果加成",
+    "en": "Each season, monsters will have different effect bonuses",
+    "jp": "",
+    "tw": "每一賽季，怪物都會擁有不同的效果加成"
+  },
+  "Help_Twelve_2_text4": {
+    "id": "Help_Twelve_2_text4",
+    "cn": "每层具有初始的时间限制\n成功通关部分房间后会奖励延长时间",
+    "en": "Each layer has an initial time limit\nExtended time will be rewarded after successfully clearing some rooms",
+    "jp": "",
+    "tw": "每層具有初始的時間限制\n成功通關部分房間後會獎勵延長時間"
+  },
+  "Help_Twelve_2_text5": {
+    "id": "Help_Twelve_2_text5",
+    "cn": "(时间耗尽后会直接失败)",
+    "en": "(It will fail directly after the time runs out)",
+    "jp": "",
+    "tw": "(時間耗盡後會直接失敗)"
+  },
+  "Help_Twelve_3_text3": {
+    "id": "Help_Twelve_3_text3",
+    "cn": "最高十二层\n层数越高难度越高\n怪物的buff数量也会增加",
+    "en": "There are twelve floors in The Twelve Trials.\nThe higher the number of layers, the higher the difficulty\nThe number of monster buffs will also increase",
+    "jp": "",
+    "tw": "最高十二層\n層數越高難度越高\n怪物的buff數量也會增加"
+  },
+  "Help_Twelve_4_text3": {
+    "id": "Help_Twelve_4_text3",
+    "cn": "最多可携带一个主动的终极天赋，以及两个特殊天赋\n点击空框后可以看到所有可装备的天赋",
+    "en": "\nCan carry up to one active ultimate talent, and two special talents\nClick on the empty box to see all equipable talents",
+    "jp": "",
+    "tw": "最多可攜帶一個主動的終極天賦，以及兩個特殊天賦\n點擊空框後可以看到所有可裝備的天賦"
+  },
+  "Help_Twelve_4_text4": {
+    "id": "Help_Twelve_4_text4",
+    "cn": "当前选定天赋的详细效果",
+    "en": "Detailed effects of the currently selected talent",
+    "jp": "",
+    "tw": "當前選定天賦的詳細效果"
+  },
+  "Help_Twelve_5_text3": {
+    "id": "Help_Twelve_5_text3",
+    "cn": "点亮的天赋会在十二之间玩法内直接生效\n可以装备天赋从而在所有玩法中生效\n只有特殊的天赋可以携带",
+    "en": "The talent chosen will take effect instantly in the play of TheTwelve Trials\nTalents can be equipped to take effect in all playstyles\nOnly special talents can be taken",
+    "jp": "",
+    "tw": "點亮的天賦會在十二之間玩法內直接生效\n可以裝備天賦從而在所有玩法中生效\n只有特殊的天賦可以攜帶"
+  },
+  "Help_Twelve_5_text4": {
+    "id": "Help_Twelve_5_text4",
+    "cn": "点击加成预览\n可以看到目前生效的所有效果",
+    "en": "\nClick to preview\nYou can see all the effects currently in effect",
+    "jp": "",
+    "tw": "點擊加成預覽\n可以看到目前生效的所有效果"
+  },
+  "Help_Twelve_6_text3": {
+    "id": "Help_Twelve_6_text3",
+    "cn": "时间耗尽后游戏会直接失败",
+    "en": "The game will directly fail after the time runs out",
+    "jp": "",
+    "tw": "時間耗盡後遊戲會直接失敗"
+  },
+  "Help_Twelve_6_text4": {
+    "id": "Help_Twelve_6_text4",
+    "cn": "通关特殊房间会增加少量时间",
+    "en": "Clearing special rooms will add a small amount of time",
+    "jp": "",
+    "tw": "通關特殊房間會增加少量時間"
+  },
+  "Help_Twelve_6_text5": {
+    "id": "Help_Twelve_6_text5",
+    "cn": "小地图会展示周围的房间类型",
+    "en": "The minimap will show the surrounding room types",
+    "jp": "",
+    "tw": "小地圖會展示周圍的房間類型"
+  },
+  "Help_Twelve_6_text6": {
+    "id": "Help_Twelve_6_text6",
+    "cn": "终极天赋需要角色造成伤害进行充能后才能释放",
+    "en": "The ultimate talent needs to be released after the character deals damage to recharge cooldown",
+    "jp": "",
+    "tw": "終極天賦需要角色造成傷害進行充能後才能釋放"
+  },
+  "Help_Twelve_6_text7": {
+    "id": "Help_Twelve_6_text7",
+    "cn": "战斗内只能使用                   复活",
+    "en": "Can only be used in battle                  Revive",
+    "jp": "",
+    "tw": "戰鬥內只能使用                   復活"
+  },
+  "Help_Twelve_6_text8": {
+    "id": "Help_Twelve_6_text8",
+    "cn": "守护之心\n(专属复活币)",
+    "en": "Heart\n(Exclusive)",
+    "jp": "",
+    "tw": "守護之心\n(專屬復活幣)"
+  },
+  "Shop_SkinHave": {
+    "id": "Shop_SkinHave",
+    "cn": "皮肤已拥有",
+    "en": "皮膚已擁有",
+    "jp": "",
+    "tw": "皮膚已擁有"
+  },
+  "Dungeon_BattleContinue": {
+    "id": "Dungeon_BattleContinue",
+    "cn": "继续>>",
+    "en": "Continue>>",
+    "jp": "",
+    "tw": "繼續>>"
+  },
+  "SettingPage_simplemode": {
+    "id": "SettingPage_simplemode",
+    "cn": "极简模式",
+    "en": "Simplify mode",
+    "jp": "",
+    "tw": "極簡模式"
+  },
+  "SettingPage_simplemodehint": {
+    "id": "SettingPage_simplemodehint",
+    "cn": "开启后会隐藏友方所有单位产生的特效，大幅优化性能，是否继续？",
+    "en": "It will hide all effect,and optimize performance.continue ?",
+    "jp": "",
+    "tw": "開啟後會隱藏友方所有單位產生的特效，大幅優化性能，是否繼續？"
+  },
+  "UnLoginAccount": {
+    "id": "UnLoginAccount",
+    "cn": "未登录账号，请退出重新登录",
+    "en": "No account is logged in, please log out and log in again",
+    "jp": "",
+    "tw": "未登錄帳號，請退出重新登錄"
+  },
+  "ActVote_GuessAsk": {
+    "id": "ActVote_GuessAsk",
+    "cn": "请确认当前配置是否符合你的预测\n一旦确认，不可更改，请谨慎选择",
+    "en": "",
+    "jp": "",
+    "tw": ""
+  },
+  "ActVote_VoteSuccess": {
+    "id": "ActVote_VoteSuccess",
+    "cn": "投喂成功",
+    "en": "投喂成功",
+    "jp": "",
+    "tw": ""
+  },
+  "ActVote_VoteNotEnd": {
+    "id": "ActVote_VoteNotEnd",
+    "cn": "选举还未结束",
+    "en": "",
+    "jp": "",
+    "tw": "選舉還未結束"
+  },
+  "ActVote_VoteItemNotEnough": {
+    "id": "ActVote_VoteItemNotEnough",
+    "cn": "糖果不足",
+    "en": "",
+    "jp": "",
+    "tw": "糖果不足"
+  },
+  "FBIcon_ElasticSnake": {
+    "id": "FBIcon_ElasticSnake",
+    "cn": "小四GO！",
+    "en": "",
+    "jp": "",
+    "tw": ""
+  },
+  "FBIcon_221222_Xmas": {
+    "id": "FBIcon_221222_Xmas",
+    "cn": "纯白之愿",
+    "en": "",
+    "jp": "",
+    "tw": ""
+  },
+  "excel_ActFb_name_51": {
+    "id": "excel_ActFb_name_51",
+    "cn": "小四GOGOGO",
+    "en": "",
+    "jp": "",
+    "tw": ""
+  },
+  "excel_ActFb_name_snake": {
+    "id": "excel_ActFb_name_snake",
+    "cn": "勇敢小四，克服障碍向前冲！\n注意：3种道具分别可以获得无敌冲刺、增加吸收范围和奖励生命与积分翻倍的效果。",
+    "en": "",
+    "jp": "",
+    "tw": ""
+  },
+  "excel_221222_Xmas": {
+    "id": "excel_221222_Xmas",
+    "cn": "纯白之愿",
+    "en": "",
+    "jp": "",
+    "tw": ""
+  },
+  "Unable to connect server, please check your network.": {
+    "id": "Unable to connect server, please check your network.",
+    "cn": "无法连接服务器，请检查网络。",
+    "en": "Unable to connect server, please check your network.",
+    "jp": "Unable to connect server, please check your network.",
+    "tw": "Unable to connect server, please check your network."
+  },
+  "ActVote_Vote_NotOpen": {
+    "id": "ActVote_Vote_NotOpen",
+    "cn": "未开始",
+    "en": "",
+    "jp": "",
+    "tw": "未開始"
+  },
+  "ClearCacheAsk": {
+    "id": "ClearCacheAsk",
+    "cn": "清除缓存，将会退出游戏，是否继续？",
+    "en": "Clearing the cache will exit the game. Do you want to continue?",
+    "jp": "",
+    "tw": "清除緩存，將會退出遊戲，是否繼續？"
+  },
+  "ClearCacheAsk2": {
+    "id": "ClearCacheAsk2",
+    "cn": "清除缓存，将会重启游戏，是否继续？",
+    "en": "Clearing the cache will restart the game. Do you want to continue?",
+    "jp": "",
+    "tw": "清除緩存，將會重啓遊戲，是否繼續？"
+  },
+  "ClearCacheButton": {
+    "id": "ClearCacheButton",
+    "cn": "清除缓存",
+    "en": "Clear Cache",
+    "jp": "",
+    "tw": "清除緩存"
+  },
+  "Setting_Sound": {
+    "id": "Setting_Sound",
+    "cn": "音乐",
+    "en": "Sound",
+    "jp": "",
+    "tw": "音樂"
+  },
+  "Setting_Effect": {
+    "id": "Setting_Effect",
+    "cn": "音效",
+    "en": "Effect",
+    "jp": "",
+    "tw": "音效"
+  },
+  "Setting_Environment": {
+    "id": "Setting_Environment",
+    "cn": "环境",
+    "en": "Environment",
+    "jp": "",
+    "tw": "環境"
+  },
+  "Setting_Mute": {
+    "id": "Setting_Mute",
+    "cn": "静音",
+    "en": "Mute",
+    "jp": "",
+    "tw": "靜音"
+  },
+  "Setting_Performance": {
+    "id": "Setting_Performance",
+    "cn": "性能",
+    "en": "Performance",
+    "jp": "",
+    "tw": "效能"
+  },
+  "Setting_HDR": {
+    "id": "Setting_HDR",
+    "cn": "HDR模式",
+    "en": "HDR mode",
+    "jp": "",
+    "tw": "HDR模式"
+  },
+  "Setting_Shock": {
+    "id": "Setting_Shock",
+    "cn": "震动",
+    "en": "Shock",
+    "jp": "",
+    "tw": "震動"
+  },
+  "Setting_Open": {
+    "id": "Setting_Open",
+    "cn": "开",
+    "en": "Open",
+    "jp": "",
+    "tw": "開"
+  },
+  "Setting_Close": {
+    "id": "Setting_Close",
+    "cn": "关",
+    "en": "Close",
+    "jp": "",
+    "tw": "關"
+  },
+  "Setting_Quality": {
+    "id": "Setting_Quality",
+    "cn": "画质",
+    "en": "Quality",
+    "jp": "",
+    "tw": "畫質"
+  },
+  "Setting_Low": {
+    "id": "Setting_Low",
+    "cn": "低",
+    "en": "Low",
+    "jp": "",
+    "tw": "低"
+  },
+  "Setting_Mieddle": {
+    "id": "Setting_Mieddle",
+    "cn": "中",
+    "en": "Mieddle",
+    "jp": "",
+    "tw": "中"
+  },
+  "Setting_High": {
+    "id": "Setting_High",
+    "cn": "高",
+    "en": "High",
+    "jp": "",
+    "tw": "高"
+  },
+  "Setting_FPS": {
+    "id": "Setting_FPS",
+    "cn": "帧率",
+    "en": "FPS",
+    "jp": "",
+    "tw": "幀率"
+  },
+  "Setting_Modify": {
+    "id": "Setting_Modify",
+    "cn": "修改",
+    "en": "Modify",
+    "jp": "",
+    "tw": "修改"
+  },
+  "Setting_Bound": {
+    "id": "Setting_Bound",
+    "cn": "已绑定",
+    "en": "Bound",
+    "jp": "",
+    "tw": "已綁定"
+  },
+  "Setting_UnBound": {
+    "id": "Setting_UnBound",
+    "cn": "未绑定",
+    "en": "Unbound",
+    "jp": "",
+    "tw": "未綁定"
+  },
+  "Setting_BindMobilePhone": {
+    "id": "Setting_BindMobilePhone",
+    "cn": "绑定手机",
+    "en": "Bind mobile phone",
+    "jp": "",
+    "tw": "綁定手機"
+  },
+  "Setting_RealNameInformation": {
+    "id": "Setting_RealNameInformation",
+    "cn": "实名信息",
+    "en": "Real name information",
+    "jp": "",
+    "tw": "實名資訊"
+  },
+  "Setting_Name": {
+    "id": "Setting_Name",
+    "cn": "昵称",
+    "en": "Name",
+    "jp": "",
+    "tw": "昵稱"
+  },
+  "Setting_Certified": {
+    "id": "Setting_Certified",
+    "cn": "已实名",
+    "en": "Certified",
+    "jp": "",
+    "tw": "已實名"
+  },
+  "Setting_NotCertified": {
+    "id": "Setting_NotCertified",
+    "cn": "未实名",
+    "en": "Not certified",
+    "jp": "",
+    "tw": "未實名"
+  },
+  "Setting_QQCopy": {
+    "id": "Setting_QQCopy",
+    "cn": "企业QQ 已复制",
+    "en": "Enterprise QQ has been copied",
+    "jp": "",
+    "tw": "企業QQ已複製"
+  },
+  "Setting_Adaptation": {
+    "id": "Setting_Adaptation",
+    "cn": "适配",
+    "en": "Adaptation",
+    "jp": "",
+    "tw": "適配"
+  },
+  "Setting_Account_Security": {
+    "id": "Setting_Account_Security",
+    "cn": "账号安全",
+    "en": "Account security",
+    "jp": "",
+    "tw": "帳號安全"
+  },
+  "Setting_System_Setting": {
+    "id": "Setting_System_Setting",
+    "cn": "系统设置",
+    "en": "System settings",
+    "jp": "",
+    "tw": "系統設置"
+  },
+  "FBIcon_oversea_gacha": {
+    "id": "FBIcon_oversea_gacha",
+    "cn": "限时卡池",
+    "en": "TimeLimit Gacha",
+    "jp": "",
+    "tw": "限時卡池"
+  },
+  "Setting_CurrentState": {
+    "id": "Setting_CurrentState",
+    "cn": "当前状态",
+    "en": "Current State",
+    "jp": "",
+    "tw": "當前狀態"
+  },
+  "Seting_Details": {
+    "id": "Seting_Details",
+    "cn": "详情",
+    "en": "Details",
+    "jp": "",
+    "tw": "詳情"
+  },
+  "Seting_Operate": {
+    "id": "Seting_Operate",
+    "cn": "操作",
+    "en": "Operate",
+    "jp": "",
+    "tw": "操作"
+  },
+  "Seting_QATip": {
+    "id": "Seting_QATip",
+    "cn": "如需注销账号或遇到问题可联系企业客服3008694155(点击复制)",
+    "en": "If you need to cancel your account or encounter problems, please contact corporate customer service 3008694155 (click to copy)",
+    "jp": "",
+    "tw": "如需註銷帳號或遇到問題可聯系企業客服3008694155（點擊複製）"
+  },
+  "MiniGameNewPage_FriendRank": {
+    "id": "MiniGameNewPage_FriendRank",
+    "cn": "好友排行",
+    "en": "Friend Rank",
+    "jp": "",
+    "tw": "好友排行"
+  },
+  "Worldboss_tip": {
+    "id": "Worldboss_tip",
+    "cn": "对BOSS造成150次伤害以阻止全屏伤害！",
+    "en": "",
+    "jp": "",
+    "tw": ""
+  },
+  "handbook7_yuanhua": {
+    "id": "handbook7_yuanhua",
+    "cn": "源化形态",
+    "en": "ORI form",
+    "jp": "",
+    "tw": "源化形態"
+  },
+  "handbook7_shikong": {
+    "id": "handbook7_shikong",
+    "cn": "失控形态",
+    "en": "LOST form",
+    "jp": "",
+    "tw": "失控形態"
+  },
+  "handbook7_wuxian": {
+    "id": "handbook7_wuxian",
+    "cn": "无限形态",
+    "en": "INF form",
+    "jp": "",
+    "tw": "無限形態"
+  },
+  "Achievement_simulation": {
+    "id": "Achievement_simulation",
+    "cn": "养成",
+    "en": "simulation",
+    "jp": "",
+    "tw": "養成"
+  },
+  "DevelopmentPage_defeatlihui": {
+    "id": "DevelopmentPage_defeatlihui",
+    "cn": "战败立绘",
+    "en": "Defeat Picture",
+    "jp": "",
+    "tw": "戰敗立繪"
+  },
+  "DevelopmentPage_Chibi": {
+    "id": "DevelopmentPage_Chibi",
+    "cn": "Q版",
+    "en": "Q Picture",
+    "jp": "",
+    "tw": "Q版"
+  },
+  "DevelopmentPage_Voice": {
+    "id": "DevelopmentPage_Voice",
+    "cn": "人物语音",
+    "en": "",
+    "jp": "",
+    "tw": "人物語音"
+  },
+  "DevelopmentPage_attribute": {
+    "id": "DevelopmentPage_attribute",
+    "cn": "属性",
+    "en": "Attribute",
+    "jp": "",
+    "tw": "屬性"
+  },
+  "MiniGameNewPage_title": {
+    "id": "MiniGameNewPage_title",
+    "cn": "迷你小游戏",
+    "en": "MiniGame",
+    "jp": "",
+    "tw": "迷你小遊戲"
+  },
+  "DevelopmentPage_7update": {
+    "id": "DevelopmentPage_7update",
+    "cn": "终 极 进 化",
+    "en": "evolution to 7 star",
+    "jp": "",
+    "tw": "終 極 進 化"
+  },
+  "FBIcon_51": {
+    "id": "FBIcon_51",
+    "cn": "七星图鉴",
+    "en": "7star handbook",
+    "jp": "",
+    "tw": "七星圖鑒"
+  },
+  "UIActFieldArmy2022Remake_title": {
+    "id": "UIActFieldArmy2022Remake_title",
+    "cn": "野菌围剿",
+    "en": "",
+    "jp": "",
+    "tw": "野菌圍剿"
+  },
+  "UIActXK_veryhard": {
+    "id": "UIActXK_veryhard",
+    "cn": "极难",
+    "en": "Very Hard",
+    "jp": "",
+    "tw": "極難"
+  },
+  "excel_DungeonEffect_Desc_820001": {
+    "id": "excel_DungeonEffect_Desc_820001",
+    "cn": "所有角色和怪物的移动速度降低20%，暴击率降低20%。所有怪物的种族属性为布",
+    "en": "The movement speed of all characters and monsters is reduced by 20%, and the critical strike rate is reduced by 20%. The attribute of all monsters is cloth",
+    "jp": "",
+    "tw": "所有角色和怪物的移動速度降低20%，暴擊率降低20%。所有怪物的種族屬性為布"
+  },
+  "excel_DungeonEffect_Desc_820002": {
+    "id": "excel_DungeonEffect_Desc_820002",
+    "cn": "每秒对所有角色造成伤害，受到的治疗效果降低20%。所有怪物的种族属性为石头",
+    "en": "Deals damage to all characters every second, reducing healing received by 20%. The  attribute of all monsters is stone",
+    "jp": "",
+    "tw": "每秒對所有角色造成傷害，受到的治療效果降低20%。所有怪物的種族屬性為石頭"
+  },
+  "excel_DungeonEffect_Desc_820003": {
+    "id": "excel_DungeonEffect_Desc_820003",
+    "cn": "每隔一段时间随机位置会降下落雷造成3000点范围伤害，所有角色的技能冷却时间增加30%。所有怪物的种族属性为剪刀",
+    "en": "Every once in a while, lightning will drop from a random location, causing 3000 points of area damage, and the skill cooldown time of all characters will be increased by 30%. The attribute of all monsters is scissors",
+    "jp": "",
+    "tw": "每隔一段時間隨機位置會降下落雷造成3000點範圍傷害，所有角色的技能冷卻時間增加30%。所有怪物的種族屬性為剪刀"
+  },
+  "excel_DungeonEffect_Desc_820004": {
+    "id": "excel_DungeonEffect_Desc_820004",
+    "cn": "每隔一段时间随机位置会出现台风吸引周围所有角色和怪物。所有怪物的种族属性为创造",
+    "en": "Every once in a while a typhoon will appear at a random location to attract all the surrounding characters and monsters. The attribute of all monsters is creation",
+    "jp": "",
+    "tw": "每隔一段時間隨機位置會出現颱風吸引周圍所有角色和怪物。所有怪物的種族屬性為創造"
+  },
+  "excel_DungeonEffect_Desc_820005": {
+    "id": "excel_DungeonEffect_Desc_820005",
+    "cn": "怪物的移动速度提高，不会被减速，但受到减速效果时受到的伤害提高10%",
+    "en": "The monster's movement speed is increased and will not be slowed down, but the damage received by the slowed down effect is increased by 10%",
+    "jp": "",
+    "tw": "怪物的移動速度提高，不會被減速，但受到減速效果時受到的傷害提高10%"
+  },
+  "excel_DungeonEffect_Desc_820006": {
+    "id": "excel_DungeonEffect_Desc_820006",
+    "cn": "小怪死亡后会对周围范围内的角色造成5000点范围伤害",
+    "en": "After the mob dies, it will cause 5000 points of range damage to the characters in the surrounding range",
+    "jp": "",
+    "tw": "小怪死亡後會對周圍範圍內的角色造成5000點範圍傷害"
+  },
+  "excel_DungeonEffect_Desc_820007": {
+    "id": "excel_DungeonEffect_Desc_820007",
+    "cn": "怪物受到的技能伤害降低50%，受到武器伤害提高100%",
+    "en": "The skill damage received by monsters is reduced by 50%, and the damage received by weapons is increased by 100%",
+    "jp": "",
+    "tw": "怪物受到的技能傷害降低50%，受到武器傷害提高100%"
+  },
+  "excel_DungeonEffect_Desc_820008": {
+    "id": "excel_DungeonEffect_Desc_820008",
+    "cn": "怪物受到的前50次伤害减伤99%，气泡护盾碎裂后受到的伤害提高10%",
+    "en": "The first 50 times the monster receives damage is reduced by 99%, and the damage received after the bubble shield is broken increases by 10%",
+    "jp": "",
+    "tw": "怪物受到的前50次傷害減傷99%，氣泡護盾碎裂後受到的傷害提高10%"
+  },
+  "excel_DungeonEffect_Desc_820009": {
+    "id": "excel_DungeonEffect_Desc_820009",
+    "cn": "随机怪物会拥有偏离护罩，护罩会保护周围的怪物，角色在护罩外造成的伤害降低60%。",
+    "en": "Random monsters will have a deflection shield, which will protect the surrounding monsters, and the damage caused by the character outside the shield will be reduced by 60%.",
+    "jp": "",
+    "tw": "隨機怪物會擁有偏離護罩，護罩會保護周圍的怪物，角色在護罩外造成的傷害降低60%。"
+  },
+  "excel_DungeonEffect_Desc_820010": {
+    "id": "excel_DungeonEffect_Desc_820010",
+    "cn": "怪物被控制时(冰冻、晕眩、禁锢、无法攻击、变形)，受到的伤害降低30%",
+    "en": "When the monster is controlled (frozen, stunned, imprisoned, unable to attack, deformed), the damage received is reduced by 30%",
+    "jp": "",
+    "tw": "怪物被控制時(冰凍、暈眩、禁錮、無法攻擊、變形)，受到的傷害降低30%"
+  },
+  "excel_DungeonEffect_name_820001": {
+    "id": "excel_DungeonEffect_name_820001",
+    "cn": "回南天",
+    "en": "Humid Conditions",
+    "jp": "",
+    "tw": "回南天"
+  },
+  "excel_DungeonEffect_name_820002": {
+    "id": "excel_DungeonEffect_name_820002",
+    "cn": "酷暑",
+    "en": "Scorching Summer",
+    "jp": "",
+    "tw": "酷暑"
+  },
+  "excel_DungeonEffect_name_820003": {
+    "id": "excel_DungeonEffect_name_820003",
+    "cn": "滚地雷",
+    "en": "Rolling Landmine",
+    "jp": "",
+    "tw": "滾地雷"
+  },
+  "excel_DungeonEffect_name_820004": {
+    "id": "excel_DungeonEffect_name_820004",
+    "cn": "台风眼",
+    "en": "Eye of the Storm",
+    "jp": "",
+    "tw": "颱風眼"
+  },
+  "excel_DungeonEffect_name_820005": {
+    "id": "excel_DungeonEffect_name_820005",
+    "cn": "急急急",
+    "en": "Hurry!",
+    "jp": "",
+    "tw": "急急急"
+  },
+  "excel_DungeonEffect_name_820006": {
+    "id": "excel_DungeonEffect_name_820006",
+    "cn": "我裂开了",
+    "en": "Cracked",
+    "jp": "",
+    "tw": "我裂開了"
+  },
+  "excel_DungeonEffect_name_820007": {
+    "id": "excel_DungeonEffect_name_820007",
+    "cn": "精准抵抗",
+    "en": "Precision Resistance",
+    "jp": "",
+    "tw": "精准抵抗"
+  },
+  "excel_DungeonEffect_name_820008": {
+    "id": "excel_DungeonEffect_name_820008",
+    "cn": "泡泡护盾",
+    "en": "Bubble Shield",
+    "jp": "",
+    "tw": "泡泡護盾"
+  },
+  "excel_DungeonEffect_name_820009": {
+    "id": "excel_DungeonEffect_name_820009",
+    "cn": "你过来啊",
+    "en": "Come Here",
+    "jp": "",
+    "tw": "你過來啊"
+  },
+  "excel_DungeonEffect_name_820010": {
+    "id": "excel_DungeonEffect_name_820010",
+    "cn": "不倒翁",
+    "en": "Tumbler",
+    "jp": "",
+    "tw": "不倒翁"
+  },
+  "excel_DungeonSpEffect_desc_1630001": {
+    "id": "excel_DungeonSpEffect_desc_1630001",
+    "cn": "boss血量降低5%",
+    "en": "Boss's Health decreased by 5%",
+    "jp": "",
+    "tw": "boss血量降低5%"
+  },
+  "excel_DungeonSpEffect_desc_1630002": {
+    "id": "excel_DungeonSpEffect_desc_1630002",
+    "cn": "boss攻击力降低10%",
+    "en": "Boss's Attack decreased by 10%",
+    "jp": "",
+    "tw": "boss攻擊力降低10%"
+  },
+  "excel_DungeonSpEffect_desc_1630003": {
+    "id": "excel_DungeonSpEffect_desc_1630003",
+    "cn": "BOSS每30秒会无法行动5秒，且受到的伤害提高20%。",
+    "en": "Every 30s, BOSS will be unable to move for 5s and damage received increased by 20%",
+    "jp": "",
+    "tw": "BOSS每30秒會無法行動5秒，且受到的傷害提高20%。"
+  },
+  "excel_DungeonSpEffect_desc_1630004": {
+    "id": "excel_DungeonSpEffect_desc_1630004",
+    "cn": "BOSS血量高于50%时受到的伤害提高20%。",
+    "en": "When the BOSS's health is higher than 50%, damage received is increased by 20%",
+    "jp": "",
+    "tw": "BOSS血量高於50%時受到的傷害提高20%。"
+  },
+  "excel_DungeonSpEffect_desc_1630005": {
+    "id": "excel_DungeonSpEffect_desc_1630005",
+    "cn": "BOSS血量低于50%时受到的伤害提高20%。",
+    "en": "When the BOSS's health is lower than 50%, damage received is increased by 20%",
+    "jp": "",
+    "tw": "BOSS血量低於50%時受到的傷害提高20%。"
+  },
+  "excel_DungeonSpEffect_desc_1630006": {
+    "id": "excel_DungeonSpEffect_desc_1630006",
+    "cn": "BOSS开场1分钟内受到的伤害提高20%。",
+    "en": "The damage received by the boss in the first minute is increased by 20%.",
+    "jp": "",
+    "tw": "BOSS開場1分鐘內受到的傷害提高20%。"
+  },
+  "excel_DungeonSpEffect_desc_1630007": {
+    "id": "excel_DungeonSpEffect_desc_1630007",
+    "cn": "每当BOSS的血量被削减40%时，会无法行动5秒，且受到的伤害提高20%。",
+    "en": "Every time the BOSS's health is reduced by 40%, it will be unable to move for 5s, and damage received incrased by 20%",
+    "jp": "",
+    "tw": "每當BOSS的血量被削減40%時，會無法行動5秒，且受到的傷害提高20%。"
+  },
+  "excel_DungeonSpEffect_desc_1640001": {
+    "id": "excel_DungeonSpEffect_desc_1640001",
+    "cn": "造成的伤害提高x%",
+    "en": "Damage dealt incrased by x%",
+    "jp": "",
+    "tw": "造成的傷害提高x%"
+  },
+  "excel_DungeonSpEffect_desc_1640002": {
+    "id": "excel_DungeonSpEffect_desc_1640002",
+    "cn": "血量提高固定值，每秒回复x%的血量",
+    "en": "Increse the health by a fixed value, and restore x% of health every second",
+    "jp": "",
+    "tw": "血量提高固定值，每秒回復x%的血量"
+  },
+  "excel_DungeonSpEffect_desc_1640003": {
+    "id": "excel_DungeonSpEffect_desc_1640003",
+    "cn": "移速提高固定值，受到的伤害减少x%",
+    "en": "Movement speed increased by a fixed value, damage received reduced by x%",
+    "jp": "",
+    "tw": "移速提高固定值，受到的傷害減少x%"
+  },
+  "excel_DungeonSpEffect_desc_1640004": {
+    "id": "excel_DungeonSpEffect_desc_1640004",
+    "cn": "角色释放主动技能时眩晕所有怪物并使其受到的伤害提高10%，持续3秒(持续时间可刷新)",
+    "en": "When the character releases the active skill, stuns all monsters and increases the damage they receive by 10% for 3 seconds (the duration can be refreshed)",
+    "jp": "",
+    "tw": "角色釋放主動技能時眩暈所有怪物並使其受到的傷害提高10%，持續3秒(持續時間可刷新)"
+  },
+  "excel_DungeonSpEffect_desc_1640005": {
+    "id": "excel_DungeonSpEffect_desc_1640005",
+    "cn": "召唤物每次攻击都会使目标受到的所有伤害提高1%，最多叠加到20%，持续5秒(持续时间可刷新)",
+    "en": "Each attack of the summoned creature will increase all damage received by the target by 1%, up to a maximum of 20%, for 5 seconds (the duration can be refreshed)",
+    "jp": "",
+    "tw": "召喚物每次攻擊都會使目標受到的所有傷害提高1%，最多疊加到20%，持續5秒(持續時間可刷新)"
+  },
+  "excel_DungeonSpEffect_desc_1640006": {
+    "id": "excel_DungeonSpEffect_desc_1640006",
+    "cn": "每过20秒，会有50%的几率刷新所有技能cd",
+    "en": "Every 20 seconds, there will be a 50% chance to refresh all skill CDs",
+    "jp": "",
+    "tw": "每過20秒，會有50%的幾率刷新所有技能cd"
+  },
+  "excel_DungeonSpEffect_desc_1640007": {
+    "id": "excel_DungeonSpEffect_desc_1640007",
+    "cn": "友方角色每次使用武器攻击时(除自动攻击类武器外)有1%的概率在目标位置产生黑洞，吸附周围敌人并使黑洞范围内敌人受到的伤害提高10%，持续3秒，冷却时间10秒",
+    "en": "Every time a friendly character uses a weapon to attack (except automatic attack weapons), there is a 1% chance that a black hole will be generated at the target position, absorbing surrounding enemies and increasing the damage received by enemies within the black hole range by 10%, lasting for 3 seconds, cooldown time 10 seconds",
+    "jp": "",
+    "tw": "友方角色每次使用武器攻擊時(除自動攻擊類武器外)有1%的概率在目標位置產生黑洞，吸附周圍敵人並使黑洞範圍內敵人受到的傷害提高10%，持續3秒，冷卻時間10秒"
+  },
+  "excel_DungeonSpEffect_desc_1640008": {
+    "id": "excel_DungeonSpEffect_desc_1640008",
+    "cn": "站立不动5秒后，友方全体造成的伤害增加15%，移动后效果还会持续2秒",
+    "en": "After standing still for 5 seconds, the damage dealt by all allies increases by 15%, and the effect lasts for 2 seconds after moving",
+    "jp": "",
+    "tw": "站立不動5秒後，友方全體造成的傷害增加15%，移動後效果還會持續2秒"
+  },
+  "excel_DungeonSpEffect_desc_1640009": {
+    "id": "excel_DungeonSpEffect_desc_1640009",
+    "cn": "宠物每次造成伤害都会使友方全体爆伤提高0.5%，最高提升到100%，持续5秒(持续时间可刷新)",
+    "en": "Every time a pet inflicts damage, it will increase the critical damage of all allies by 0.5%, up to 100%, for 5 seconds (the duration can be refreshed)",
+    "jp": "",
+    "tw": "寵物每次造成傷害都會使友方全體爆傷提高0.5%，最高提升到100%，持續5秒(持續時間可刷新)"
+  },
+  "excel_DungeonSpEffect_desc_1640010": {
+    "id": "excel_DungeonSpEffect_desc_1640010",
+    "cn": "使用武器攻击时(除自动攻击类武器外)，有5%的概率在敌人身上附加神圣结晶并碎裂，神圣结晶碎裂会造成8000%武器攻击力*技能强度的伤害。",
+    "en": "When attacking with a weapon (except automatic attack weapons), there is a 5% chance to add a holy crystal to the enemy and shatter it. The shattering of the holy crystal will cause damage equal to 8000% weapon attack power * skill strength.",
+    "jp": "",
+    "tw": "使用武器攻擊時(除自動攻擊類武器外)，有5%的概率在敵人身上附加神聖結晶並碎裂，神聖結晶碎裂會造成8000%武器攻擊力*技能強度的傷害。"
+  },
+  "excel_DungeonSpEffect_desc_1640011": {
+    "id": "excel_DungeonSpEffect_desc_1640011",
+    "cn": "角色每次释放技能时，会使自身攻击力提高3%，爆伤提高10%，最多可叠加6次，持续8秒。",
+    "en": "Every time a character releases a skill, the character's attack  will increase by 3%, and critical damage will increase by 10%, which can be stacked up to 6 times and lasts for 8 seconds.",
+    "jp": "",
+    "tw": "角色每次釋放技能時，會使自身攻擊力提高3%，爆傷提高10%，最多可疊加6次，持續8秒。"
+  },
+  "excel_DungeonSpEffect_desc_1640012": {
+    "id": "excel_DungeonSpEffect_desc_1640012",
+    "cn": "角色每次释放技能时，使所有宠物的技能伤害提高20%，最多可叠加5次，持续10秒。",
+    "en": "Every time a character releases a skill, the skill damage of all pets is increased by 20%, which can be stacked up to 5 times and lasts for 10 seconds.",
+    "jp": "",
+    "tw": "角色每次釋放技能時，使所有寵物的技能傷害提高20%，最多可疊加5次，持續10秒。"
+  },
+  "excel_DungeonSpEffect_desc_1640013": {
+    "id": "excel_DungeonSpEffect_desc_1640013",
+    "cn": "每10秒会随机扔出一个骰子，角色头顶会出现一个骰子，根据骰子投出的数量，骰子数字每高一点，所有召唤物造成的伤害提高8%，持续8秒。",
+    "en": "A dice will be randomly thrown every 10 seconds, and a dice will appear above the character's head. According to the number of dice thrown, the damage caused by all summoned objects will increase by 8% for each higher dice number, which lasts for 8 seconds.",
+    "jp": "",
+    "tw": "每10秒會隨機扔出一個骰子，角色頭頂會出現一個骰子，根據骰子投出的數量，骰子數字每高一點，所有召喚物造成的傷害提高8%，持續8秒。"
+  },
+  "excel_DungeonSpEffect_desc_1640014": {
+    "id": "excel_DungeonSpEffect_desc_1640014",
+    "cn": "武器造成伤害时有1%的几率将所有敌人变成煤球，持续5秒，敌人变成煤球后无法攻击，受到的伤害提高10%且移动速度降低50%，冷却时间10秒。",
+    "en": "When the weapon deals damage, there is a 1% chance to turn all enemies into briquettes for 5 seconds. After the enemy turns into briquettes, they cannot attack, the damage received is increased by 10% and the movement speed is reduced by 50%. The cooldown  time is 10 seconds.",
+    "jp": "",
+    "tw": "武器造成傷害時有1%的幾率將所有敵人變成煤球，持續5秒，敵人變成煤球後無法攻擊，受到的傷害提高10%且移動速度降低50%，冷卻時間10秒。"
+  },
+  "excel_DungeonSpEffect_desc_1640015": {
+    "id": "excel_DungeonSpEffect_desc_1640015",
+    "cn": "所有单位每存活20秒，就会让伤害提高5%，最多叠加3层。",
+    "en": "For every 20 seconds, every characters are still alive, damage will be increased by 5%. Stack up to 3 times",
+    "jp": "",
+    "tw": "所有單位每存活20秒，就會讓傷害提高5%，最多疊加3層。"
+  },
+  "DungeonPage_1": {
+    "id": "DungeonPage_1",
+    "cn": "本层BUFF",
+    "en": "BUFF",
+    "jp": "",
+    "tw": "本層BUFF"
+  },
+  "DungeonPage_2": {
+    "id": "DungeonPage_2",
+    "cn": "[十二之间]",
+    "en": "[Twelve Trials]",
+    "jp": "",
+    "tw": "[十二之间]"
+  },
+  "DungeonPage_3": {
+    "id": "DungeonPage_3",
+    "cn": "推荐战力：",
+    "en": "Suggest:",
+    "jp": "",
+    "tw": "推薦戰力："
+  },
+  "DungeonPage_4": {
+    "id": "DungeonPage_4",
+    "cn": "时间限制：",
+    "en": "Time limit:",
+    "jp": "",
+    "tw": "時間限制："
+  },
+  "DungeonPage_5": {
+    "id": "DungeonPage_5",
+    "cn": "当前战力：",
+    "en": "Yours:",
+    "jp": "",
+    "tw": "當前戰力："
+  },
+  "DungeonPage_6": {
+    "id": "DungeonPage_6",
+    "cn": "赛季奖励",
+    "en": "Reward",
+    "jp": "",
+    "tw": "賽季獎勵"
+  },
+  "DungeonPage_7": {
+    "id": "DungeonPage_7",
+    "cn": "天赋树",
+    "en": "Talent tree",
+    "jp": "",
+    "tw": "天賦樹"
+  },
+  "DungeonPage_8": {
+    "id": "DungeonPage_8",
+    "cn": "已激活",
+    "en": "Unlocked",
+    "jp": "",
+    "tw": "已激活"
+  },
+  "Roach_esay_title": {
+    "id": "Roach_esay_title",
+    "cn": "虫巢外围",
+    "en": "",
+    "jp": "",
+    "tw": ""
+  },
+  "Roach_normal_title": {
+    "id": "Roach_normal_title",
+    "cn": "虫巢内部",
+    "en": "",
+    "jp": "",
+    "tw": ""
+  },
+  "Roach_hard_title": {
+    "id": "Roach_hard_title",
+    "cn": "虫巢之心",
+    "en": "",
+    "jp": "",
+    "tw": ""
+  },
+  "Roach_esay": {
+    "id": "Roach_esay",
+    "cn": "简单",
+    "en": "",
+    "jp": "",
+    "tw": ""
+  },
+  "Roach_normal": {
+    "id": "Roach_normal",
+    "cn": "普通",
+    "en": "",
+    "jp": "",
+    "tw": ""
+  },
+  "Roach_hard": {
+    "id": "Roach_hard",
+    "cn": "困难",
+    "en": "",
+    "jp": "",
+    "tw": ""
+  },
+  "UIActShopFieldArmy2022RemakePage_info": {
+    "id": "UIActShopFieldArmy2022RemakePage_info",
+    "cn": "Tip：点击商品图标，显示商品详情",
+    "en": "Tip:tap to show item info",
+    "jp": "",
+    "tw": "Tip：點擊商品圖示，顯示商品詳情"
+  },
+  "TeamContent_talentTree": {
+    "id": "TeamContent_talentTree",
+    "cn": "天赋树",
+    "en": "Talent Tree",
+    "jp": "",
+    "tw": "天賦樹"
+  },
+  "TeamContent_dischargeAll": {
+    "id": "TeamContent_dischargeAll",
+    "cn": "一键卸下",
+    "en": "Remove All",
+    "jp": "",
+    "tw": "一鍵卸下"
+  },
+  "TeamContent_dischargeAllReconfirm": {
+    "id": "TeamContent_dischargeAllReconfirm",
+    "cn": "确定清空编队，包括方糖？",
+    "en": "Do you want to remove all unit,including Sugar Cube",
+    "jp": "",
+    "tw": "確定清空編隊，包括方糖？"
+  },
+  "gacha_exchangeNotEnough": {
+    "id": "gacha_exchangeNotEnough",
+    "cn": "点数不足",
+    "en": "Point not enough",
+    "jp": "",
+    "tw": "點數不足"
+  },
+  "TeamContent_NetNotUse": {
+    "id": "TeamContent_NetNotUse",
+    "cn": "不可用",
+    "en": "",
+    "jp": "",
+    "tw": ""
+  },
+  "TeamContent_NetUse": {
+    "id": "TeamContent_NetUse",
+    "cn": "使用中",
+    "en": "",
+    "jp": "",
+    "tw": ""
+  },
+  "Evolve2_BigSKill_Tip": {
+    "id": "Evolve2_BigSKill_Tip",
+    "cn": "解锁{0}个天赋点即可自动激活该天赋",
+    "en": "",
+    "jp": "",
+    "tw": ""
+  },
+  "Evolve2_BigSKill_UnLock": {
+    "id": "Evolve2_BigSKill_UnLock",
+    "cn": "已激活",
+    "en": "",
+    "jp": "",
+    "tw": ""
+  },
+  "Evolve2_UnLock_NotEnough": {
+    "id": "Evolve2_UnLock_NotEnough",
+    "cn": "未满足解锁条件",
+    "en": "",
+    "jp": "",
+    "tw": ""
+  },
+  "BattleMatchActive_ChangedTimesNotEnough": {
+    "id": "BattleMatchActive_ChangedTimesNotEnough",
+    "cn": "剩余兑换次数不足",
+    "en": "",
+    "jp": "",
+    "tw": ""
+  },
+  "BattleMatchActive_ChangedTip": {
+    "id": "BattleMatchActive_ChangedTip",
+    "cn": "是否消耗{0}兑换一次奖励次数",
+    "en": "",
+    "jp": "",
+    "tw": ""
+  },
+  "BloodCritical": {
+    "id": "BloodCritical",
+    "cn": "暴击率",
+    "en": "",
+    "jp": "",
+    "tw": ""
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "env.list": "dev, qa, pts, preview, oversea, live, ios, dev_oversea, dev_oversea_test, gume_obt, Gume_ios_test, oversea-google-audit",
+  "build": "0",
+  "language.list": "cn, tw, en",
+  "language.default": "cn",
+  "useResPackageAssembly": "false",
+  "dev.remoteResCdn": "http://ginidev.ginicat.com",
+  "dev.remoteResOrigin": "http://gini-dev.oss-cn-hangzhou.aliyuncs.com",
+  "dev.server": {
+    "1": {
+      "dns": "http://123.57.191.4:1080",
+      "loginService": "http://123.57.191.4:7201",
+      "paymentService": "http://123.57.191.4:7200",
+      "manager": "http://123.57.191.4:5523"
+    }
+  },
+  "qa.remoteResCdn": "http://giniqa.ginicat.com",
+  "qa.remoteResOrigin": "http://gini-qa.oss-cn-hangzhou.aliyuncs.com",
+  "qa.server": {
+    "1": {
+      "dns": "http://123.56.226.107:1080",
+      "loginService": "http://123.56.226.107:7201",
+      "paymentService": "http://123.56.226.107:7200",
+      "manager": "http://123.56.226.107:5523"
+    }
+  },
+  "pts.remoteResCdn": "http://ginipts.ginicat.com",
+  "pts.remoteResOrigin": "http://gini-pts.oss-cn-hangzhou.aliyuncs.com",
+  "pts.server": {
+    "1": {
+      "dns": "http://39.107.123.19:1080",
+      "loginService": "http://39.107.123.19:7201",
+      "paymentService": "http://39.107.123.19:7200",
+      "manager": "http://39.107.123.19:5523"
+    }
+  },
+  "preview.remoteResCdn": "http://ginipreview.ginicat.com",
+  "preview.remoteResOrigin": "http://gini-preview.oss-cn-hangzhou.aliyuncs.com",
+  "preview.server": {
+    "1": {
+      "dns": "http://47.94.0.42:1080",
+      "loginService": "http://47.94.0.42:7201",
+      "paymentService": "http://47.94.0.42:7200",
+      "manager": "http://47.94.0.42:5523"
+    }
+  },
+  "oversea.remoteResCdn": "http://ginioversea.ginicat.com",
+  "oversea.remoteResOrigin": "http://gini-oversea.oss-cn-hongkong.aliyuncs.com",
+  "oversea.antiddiction": true,
+  "oversea.server": {
+    "1": {
+      "dns": "http://8.210.108.131:1080",
+      "loginService": "http://8.210.108.131:7201",
+      "paymentService": "http://8.210.108.131:7200",
+      "manager": "http://8.210.108.131:5523"
+    }
+  },
+  "live.remoteResCdn": "http://gamesource.ginicat.com",
+  "live.remoteResOrigin": "http://gini.oss-cn-hangzhou.aliyuncs.com",
+  "live.antiddiction": true,
+  "live.server": {
+    "1": {
+      "dns": "http://game.ginicat.com:8080",
+      "loginService": "http://account.ginicat.com",
+      "paymentService": "http://pay.ginicat.com",
+      "manager": "http://39.107.57.235:5523"
+    }
+  },
+  "ios.remoteResCdn": "http://giniios.ginicat.com",
+  "ios.remoteResOrigin": "http://gini-ios.oss-cn-hangzhou.aliyuncs.com",
+  "ios.antiddiction": true,
+  "ios.server": {
+    "1": {
+      "dns": "http://ios.ginicat.com:8080",
+      "loginService": "http://iosaccount.ginicat.com:7201",
+      "paymentService": "http://iospay.ginicat.com:7200",
+      "manager": "http://39.107.159.165:5523"
+    }
+  },
+  "custom.remoteResCdn": "http://ginidev.ginicat.com",
+  "custom.remoteResOrigin": "http://gini-dev.oss-cn-hangzhou.aliyuncs.com",
+  "custom.server": {
+    "1": {
+      "dns": "http://123.57.191.4:1080",
+      "loginService": "http://123.57.191.4:7201",
+      "paymentService": "http://123.57.191.4:7200",
+      "manager": "http://123.57.191.4:5523"
+    }
+  },
+  "dev_oversea.remoteResCdn": "http://cdn2.starhealer.richesgame.com",
+  "dev_oversea.remoteResOrigin": "http://test2.starhealer.richesgame.com/",
+  "dev_oversea.server": {
+    "1": {
+      "dns": "http://test2.starhealer.richesgame.com:1080",
+      "loginService": "http://test2.starhealer.richesgame.com:7201",
+      "paymentService": "http://test2.starhealer.richesgame.com:7200",
+      "manager": "http://test2.starhealer.richesgame.com:5523"
+    }
+  },
+  "dev_oversea_test.remoteResCdn": "http://test.starhealer.richesgame.com",
+  "dev_oversea_test.remoteResOrigin": "http://test.starhealer.richesgame.com/",
+  "dev_oversea_test.server": {
+    "1": {
+      "dns": "http://test.starhealer.richesgame.com:1080",
+      "loginService": "http://test.starhealer.richesgame.com:7201",
+      "paymentService": "http://test.starhealer.richesgame.com:7200",
+      "manager": "http://test.starhealer.richesgame.com:5523"
+    }
+  },
+  "gume_obt.remoteResCdn": "http://cdn2.starhealer.richesgame.com",
+  "gume_obt.remoteResOrigin": "http://47.242.134.159",
+  "gume_obt.antiddiction": false,
+  "gume_obt.server": {
+    "1": {
+      "name": "Server_AsiaPacific",
+      "recommandTimezone": "5~12",
+      "dns": "http://asia.starhealer.richesgame.com:1080",
+      "loginService": "http://asia.starhealer.richesgame.com:7201",
+      "paymentService": "http://asia.starhealer.richesgame.com:7200",
+      "manager": "http://asia.starhealer.richesgame.com:5523"
+    },
+    "2": {
+      "name": "Server_NorthAmerica",
+      "recommandTimezone": "-12~-1",
+      "dns": "http://america.starhealer.richesgame.com:1080",
+      "loginService": "http://america.starhealer.richesgame.com:7201",
+      "paymentService": "http://america.starhealer.richesgame.com:7200",
+      "manager": "http://america.starhealer.richesgame.com:5523"
+    },
+    "3": {
+      "name": "Server_EuropeAndAfrica",
+      "recommandTimezone": "0~4",
+      "dns": "http://europe.starhealer.richesgame.com:1080",
+      "loginService": "http://europe.starhealer.richesgame.com:7201",
+      "paymentService": "http://europe.starhealer.richesgame.com:7200",
+      "manager": "http://europe.starhealer.richesgame.com:5523"
+    }
+  },
+  "Gume_ios_test.remoteResCdn": "http://47.90.182.27",
+  "Gume_ios_test.remoteResOrigin": "http://47.90.182.27/",
+  "Gume_ios_test.server": {
+    "1": {
+      "dns": "http://47.90.182.27:1080",
+      "loginService": "http://47.90.182.27:7201",
+      "paymentService": "http://47.90.182.27:7200",
+      "manager": "http://47.90.182.27:5523"
+    }
+  },
+  "oversea-google-audit.remoteResCdn": "http://8.210.2.82",
+  "oversea-google-audit.remoteResOrigin": "http://8.210.2.82/",
+  "oversea-google-audit.server": {
+    "1": {
+      "dns": "http://8.210.2.82:1080",
+      "loginService": "http://8.210.2.82:7201",
+      "paymentService": "http://8.210.2.82:7200",
+      "manager": "http://8.210.2.82:5523"
+    }
+  },
+  "operation": "Taptap",
+  "env.default": "live",
+  "bundle.default": "remote",
+  "forceDeveloper": "false",
+  "needValidate": "true",
+  "validateUrl": "https://tangliguodong.oss-cn-beijing.aliyuncs.com"
+}

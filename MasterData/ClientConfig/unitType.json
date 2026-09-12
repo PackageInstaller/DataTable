@@ -1,0 +1,67 @@
+{
+  "Hero": {
+    "id": "Hero",
+    "name": "人物",
+    "mainAttributeList": [
+      "Hp",
+      "Defense",
+      "Shield",
+      "SkillStrenth",
+      "CdShrink",
+      "MoveSpeed"
+    ],
+    "sugarPageAttributeList": [
+      "Hp",
+      "Defense",
+      "Shield",
+      "ShieldRecoverSpeed",
+      "SkillStrenth",
+      "CdShrink",
+      "MoveSpeed"
+    ]
+  },
+  "Pet": {
+    "id": "Pet",
+    "name": "宠物",
+    "mainAttributeList": [
+      "Hp",
+      "Attack",
+      "Defense",
+      "AttackSpeed",
+      "Shield",
+      "MoveSpeed"
+    ],
+    "sugarPageAttributeList": [
+      "Attack",
+      "Hp",
+      "Defense",
+      "Crit",
+      "CritDamage",
+      "AttackSpeed",
+      "DefBreak",
+      "Shield",
+      "ShieldRecoverSpeed"
+    ]
+  },
+  "Weapon": {
+    "id": "Weapon",
+    "name": "武器",
+    "mainAttributeList": [
+      "Attack",
+      "AttackSpeed",
+      "Crit",
+      "CritDamage",
+      "DefBreak",
+      "Capacity"
+    ],
+    "sugarPageAttributeList": [
+      "Attack",
+      "Crit",
+      "CritDamage",
+      "AttackSpeed",
+      "Capacity",
+      "RelaodSpeed",
+      "DefBreak"
+    ]
+  }
+}

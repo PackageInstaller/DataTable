@@ -1,0 +1,94 @@
+{
+  "buffPool": [
+    {
+      "ID": 1,
+      "Condition": "battle",
+      "Type": "hero",
+      "attrType": 0,
+      "Rate": 10000,
+      "IfPercent": 1,
+      "Val": 500,
+      "Info": "excel_buffPool_Info_1"
+    },
+    {
+      "ID": 2,
+      "Condition": "battle",
+      "Type": "weapon",
+      "attrType": 10,
+      "Rate": 10000,
+      "IfPercent": 1,
+      "Val": 500,
+      "Info": "excel_buffPool_Info_2"
+    },
+    {
+      "ID": 3,
+      "Condition": "harvest",
+      "Type": "box",
+      "attrType": 0,
+      "Rate": 1000,
+      "IfPercent": 0,
+      "Val": 771001,
+      "Info": "excel_buffPool_Info_3"
+    },
+    {
+      "ID": 4,
+      "Condition": "battle",
+      "Type": "hero",
+      "attrType": 5,
+      "Rate": 10000,
+      "IfPercent": 1,
+      "Val": 500,
+      "Info": "excel_buffPool_Info_4"
+    },
+    {
+      "ID": 5,
+      "Condition": "battle",
+      "Type": "weapon",
+      "attrType": 11,
+      "Rate": 10000,
+      "IfPercent": 0,
+      "Val": 20,
+      "Info": "excel_buffPool_Info_5"
+    },
+    {
+      "ID": 100,
+      "Condition": "plant",
+      "Type": "timePersent",
+      "attrType": 0,
+      "Rate": 10000,
+      "IfPercent": 1,
+      "Val": 200,
+      "Info": "excel_buffPool_Info_100"
+    },
+    {
+      "ID": 101,
+      "Condition": "plant",
+      "Type": "timePersent",
+      "attrType": 0,
+      "Rate": 10000,
+      "IfPercent": 1,
+      "Val": 200,
+      "Info": "excel_buffPool_Info_101"
+    },
+    {
+      "ID": 110,
+      "Condition": "harvest",
+      "Type": "box",
+      "attrType": 0,
+      "Rate": 1000,
+      "IfPercent": 0,
+      "Val": 772001,
+      "Info": "excel_buffPool_Info_110"
+    },
+    {
+      "ID": 111,
+      "Condition": "harvest",
+      "Type": "box",
+      "attrType": 0,
+      "Rate": 1000,
+      "IfPercent": 0,
+      "Val": 772001,
+      "Info": "excel_buffPool_Info_111"
+    }
+  ]
+}

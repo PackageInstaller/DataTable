@@ -1,0 +1,27 @@
+{
+  "GuildBossBattle": [
+    {
+      "GameId": 20001,
+      "BossRace": 0,
+      "BossName": "龙神丸",
+      "BossStageID": 531001,
+      "BossInfo": "每天0点增加3次挑战机会\n暂停放弃挑战不扣除挑战次数，挑战模式和支援模式共享挑战次数\n不可复活，每次挑战时间为45秒，战斗内boss血量无上限\n结算时若boss当前血量值不足以扣除，则继续扣除下一级的血量\nboss等级越高，boss血量越高",
+      "BossInitialHP": 1000000000,
+      "BossGrowthHP": 500000000,
+      "MaxLv": 999,
+      "BossDamageDetection": 200000000000,
+      "BossItemBoxId": 680021,
+      "BossGuildBoxId": 10011,
+      "BossExp": 100,
+      "BossContribution": 10,
+      "HelpStageID": 531002,
+      "HelpDamage100Max": 0.5,
+      "BallDamage": 0.002,
+      "HelpInfo": "每天0点增加3次挑战机会\n暂停放弃挑战不扣除挑战次数，挑战模式和支援模式共享挑战次数\n通过触碰能量球的方式对boss造成血量上限百分比的伤害，每次挑战时间为1分钟\n每个能量球造成0.2%最大生命值的伤害，一场战斗至多造成10%最大生命值的伤害\n战斗内所有人物、武器、宠物及其方糖均失效，只有队长单人进入战斗\n队伍中三个人物同阵营时，会有额外加成，本次提供加成的阵营及其效果：\nSR科研组：移动速度提升1点，永久生效\n艺术家协会：能量球收集圈扩大100%，持续10秒，冷却30秒\n缤纷糖果星小伙伴：移动速度提升3点，持续10秒，冷却30秒",
+      "HelpItemBoxId": 680021,
+      "HelpGuildBoxId": 10011,
+      "HelpExp": 100,
+      "HelpContribution": 10
+    }
+  ]
+}

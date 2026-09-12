@@ -1,0 +1,242 @@
+{
+  "GameConsole": {
+    "id": "GameConsole",
+    "icon": "Icon_13",
+    "isVisible": true,
+    "name": "excel_beeperApp_name_GameConsole",
+    "index": 1,
+    "luaCode": "forward('SolarStarPage')"
+  },
+  "Portal": {
+    "id": "Portal",
+    "icon": "Icon_12",
+    "isVisible": true,
+    "name": "excel_beeperApp_name_Portal",
+    "index": 2,
+    "luaCode": "forward('PortalPage')"
+  },
+  "Resources": {
+    "id": "Resources",
+    "icon": "Icon_11",
+    "isVisible": true,
+    "name": "excel_beeperApp_name_Resources",
+    "index": 3,
+    "luaCode": "forward('ResourceBoxPage')"
+  },
+  "Development": {
+    "id": "Development",
+    "icon": "Icon_6",
+    "isVisible": true,
+    "name": "excel_beeperApp_name_Development",
+    "index": 4,
+    "luaCode": "forward('SelectRolePage')"
+  },
+  "CoalBossShop": {
+    "id": "CoalBossShop",
+    "icon": "Icon_5",
+    "isVisible": true,
+    "name": "excel_beeperApp_name_CoalBossShop",
+    "index": 5,
+    "luaCode": "forward('ShopPage')"
+  },
+  "Skin": {
+    "id": "Skin",
+    "icon": "Icon_26",
+    "isVisible": true,
+    "name": "excel_beeperApp_name_Skin",
+    "index": 6,
+    "luaCode": "enterSkinShop()"
+  },
+  "JellyCode": {
+    "id": "JellyCode",
+    "icon": "Icon_2",
+    "isVisible": true,
+    "name": "excel_beeperApp_name_JellyCode",
+    "index": 7,
+    "luaCode": "app_jellyCode.lua"
+  },
+  "GuideBook": {
+    "id": "GuideBook",
+    "icon": "FBIcon_GuideBook",
+    "isVisible": true,
+    "name": "新手手册",
+    "index": 8,
+    "luaCode": "forward('GuideBook_Main')"
+  },
+  "Friend": {
+    "id": "Friend",
+    "icon": "Icon_1",
+    "isVisible": true,
+    "name": "excel_beeperApp_name_Friend",
+    "index": 9,
+    "luaCode": "forward('FriendPage')"
+  },
+  "TvDog": {
+    "id": "TvDog",
+    "icon": "Icon_16",
+    "isVisible": true,
+    "name": "excel_beeperApp_name_TvDog",
+    "index": 10,
+    "luaCode": "forward('ShipTelevisionPage')"
+  },
+  "Task": {
+    "id": "Task",
+    "icon": "Icon_25",
+    "isVisible": true,
+    "name": "excel_beeperApp_name_Task",
+    "index": 11,
+    "luaCode": "forward('AchievementPage')"
+  },
+  "Mail": {
+    "id": "Mail",
+    "icon": "Icon_10",
+    "isVisible": true,
+    "name": "excel_beeperApp_name_Mail",
+    "index": 12,
+    "luaCode": "forward('MailboxPage')"
+  },
+  "Package": {
+    "id": "Package",
+    "icon": "Icon_4",
+    "isVisible": true,
+    "name": "excel_beeperApp_name_Package",
+    "index": 13,
+    "luaCode": "forwardPackagePage()"
+  },
+  "Compose": {
+    "id": "Compose",
+    "icon": "Icon_7",
+    "isVisible": true,
+    "name": "excel_beeperApp_name_Compose",
+    "index": 14,
+    "luaCode": "CS.LuaApi.EnterMix()"
+  },
+  "Decompose": {
+    "id": "Decompose",
+    "icon": "Icon_32",
+    "isVisible": true,
+    "name": "excel_beeperApp_name_Decompose",
+    "index": 15,
+    "luaCode": "CS.LuaApi.EnterBlackHole()"
+  },
+  "WashingMachine": {
+    "id": "WashingMachine",
+    "icon": "Icon_9",
+    "isVisible": true,
+    "name": "excel_beeperApp_name_WashingMachine",
+    "index": 16,
+    "luaCode": "forward('WashCubeSugerPage')"
+  },
+  "Bathtub": {
+    "id": "Bathtub",
+    "icon": "Icon_8",
+    "isVisible": true,
+    "name": "excel_beeperApp_name_Bathtub",
+    "index": 17,
+    "luaCode": "app_bathtub.lua"
+  },
+  "ComprehensiveSettings": {
+    "id": "ComprehensiveSettings",
+    "icon": "Icon_23",
+    "isVisible": true,
+    "name": "excel_beeperApp_name_ComprehensiveSettings",
+    "index": 18,
+    "luaCode": "forward('SetFramePage')"
+  },
+  "Gallery": {
+    "id": "Gallery",
+    "icon": "Icon_15",
+    "isVisible": true,
+    "name": "excel_beeperApp_name_Gallery",
+    "index": 19,
+    "luaCode": "forward('HandbookPage')"
+  },
+  "Story": {
+    "id": "Story",
+    "icon": "Icon_24",
+    "isVisible": true,
+    "name": "excel_beeperApp_name_Story",
+    "index": 20,
+    "luaCode": "CS.LuaApi.EnterStoryPage()"
+  },
+  "Lobby": {
+    "id": "Lobby",
+    "icon": "Icon_14",
+    "isVisible": true,
+    "name": "excel_beeperApp_name_Lobby",
+    "index": 21,
+    "luaCode": "removeFloating('BeeperFloating')\nenterLobbyMap()"
+  },
+  "Training": {
+    "id": "Training",
+    "icon": "Icon_18",
+    "isVisible": true,
+    "name": "excel_beeperApp_name_Training",
+    "index": 22,
+    "luaCode": "enterTranning()"
+  },
+  "EndlessForest": {
+    "id": "EndlessForest",
+    "icon": "Icon_20",
+    "isVisible": false,
+    "name": "excel_beeperApp_name_EndlessForest",
+    "index": 23,
+    "luaCode": ""
+  },
+  "EndlessForestRankingList": {
+    "id": "EndlessForestRankingList",
+    "icon": "Icon_27",
+    "isVisible": false,
+    "name": "excel_beeperApp_name_EndlessForestRankingList",
+    "index": 24,
+    "luaCode": "forward('RankPage')"
+  },
+  "Graden": {
+    "id": "Graden",
+    "icon": "Icon_17",
+    "isVisible": true,
+    "name": "excel_beeperApp_name_Graden",
+    "index": 27,
+    "luaCode": "forward('GardenMapPage')"
+  },
+  "Room": {
+    "id": "Room",
+    "icon": "Icon_21",
+    "isVisible": false,
+    "name": "excel_beeperApp_name_Room",
+    "index": 29,
+    "luaCode": "forward('RoomPage')"
+  },
+  "SmallGame": {
+    "id": "SmallGame",
+    "icon": "Icon_22",
+    "isVisible": true,
+    "name": "excel_beeperApp_name_SmallGame",
+    "index": 30,
+    "luaCode": "forward('MiniGamePage')"
+  },
+  "MainShip": {
+    "id": "MainShip",
+    "icon": "Icon_29",
+    "isVisible": true,
+    "name": "excel_beeperApp_name_MainShip",
+    "index": 31,
+    "luaCode": "removeFloating('BeeperFloating')\nenterShipMap()"
+  },
+  "TeamPrepare": {
+    "id": "TeamPrepare",
+    "icon": "Icon_31",
+    "isVisible": false,
+    "name": "excel_beeperApp_name_TeamPrepare",
+    "index": 32,
+    "luaCode": "forward('TeamPreparePage')"
+  },
+  "Guild": {
+    "id": "Guild",
+    "icon": "GuildHeadIcon",
+    "isVisible": true,
+    "name": "果冻联萌",
+    "index": 33,
+    "luaCode": "forward('Guild')"
+  }
+}

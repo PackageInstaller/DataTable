@@ -1,0 +1,81 @@
+{
+  "ElasticBallHero": [
+    {
+      "ID": 0,
+      "Name": "落樱",
+      "Head": "Head_Character_02_01",
+      "ShotPNG": "QH_02",
+      "BulletPrefab": "PlayerBall.Prefab",
+      "BulletDiscount": 100,
+      "Effect": "default",
+      "Info": "默认角色",
+      "Cost": "0"
+    },
+    {
+      "ID": 1,
+      "Name": "方方盒",
+      "Head": "Head_Character_21_01",
+      "ShotPNG": "QH_21",
+      "BulletPrefab": "FangBall.Prefab",
+      "BulletDiscount": 90,
+      "Effect": "FangBullet",
+      "Info": "子弹能在左边边界弹一次",
+      "Cost": "100"
+    },
+    {
+      "ID": 2,
+      "Name": "曼吉斯酱",
+      "Head": "Head_Character_01_01",
+      "ShotPNG": "QH_01",
+      "BulletPrefab": "MangyBall.Prefab",
+      "BulletDiscount": 80,
+      "Effect": "MangyBullet",
+      "Info": "第一次撞击后生成陨星，对小范围造成一次伤害",
+      "Cost": "200"
+    },
+    {
+      "ID": 3,
+      "Name": "拿拿",
+      "Head": "Head_Character_32_01",
+      "ShotPNG": "QH_32",
+      "BulletPrefab": "NanaBall.Prefab",
+      "BulletDiscount": 70,
+      "Effect": "NanaBullet",
+      "Info": "每次发射角度随机，子弹只会对墙壁发生碰撞 。",
+      "Cost": "300"
+    },
+    {
+      "ID": 4,
+      "Name": "Leo",
+      "Head": "Head_Character_06_01",
+      "ShotPNG": "QH_06",
+      "BulletPrefab": "LeoBall.Prefab",
+      "BulletDiscount": 60,
+      "Effect": "LeoBullet",
+      "Info": "发射激光，穿透单位",
+      "Cost": "400"
+    },
+    {
+      "ID": 5,
+      "Name": "月汐",
+      "Head": "Head_Character_22_01",
+      "ShotPNG": "QH_22",
+      "BulletPrefab": "XiBall.Prefab",
+      "BulletDiscount": 50,
+      "Effect": "XiBullet",
+      "Info": "第一次撞击后向周围发射冰锥。",
+      "Cost": "500"
+    },
+    {
+      "ID": 6,
+      "Name": "Maki",
+      "Head": "Head_Character_53_01",
+      "ShotPNG": "QH_53",
+      "BulletPrefab": "MakiBall.Prefab",
+      "BulletDiscount": 40,
+      "Effect": "MakiBullet",
+      "Info": "撞击后直接发生爆炸",
+      "Cost": "600"
+    }
+  ]
+}
