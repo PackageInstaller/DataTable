@@ -1,0 +1,1696 @@
+[
+  {
+    "category_id": 1,
+    "description": "",
+    "disable_duplicate_assign": false,
+    "effects": [
+      {
+        "id": 3000008,
+        "values": [
+          300,
+          600,
+          900,
+          1800,
+          3000
+        ]
+      }
+    ],
+    "filter_ids": [
+      1
+    ],
+    "id": 1,
+    "name": "剛力の祝福",
+    "quality_group_ids": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "stimulator_rarity_id": 1
+  },
+  {
+    "category_id": 1,
+    "description": "",
+    "disable_duplicate_assign": false,
+    "effects": [
+      {
+        "id": 3000374,
+        "values": [
+          1000,
+          2000,
+          3000,
+          6000,
+          10000
+        ]
+      }
+    ],
+    "filter_ids": [
+      1
+    ],
+    "id": 2,
+    "name": "斬の祝福",
+    "quality_group_ids": [
+      31,
+      32,
+      33,
+      34,
+      35
+    ],
+    "stimulator_rarity_id": 2
+  },
+  {
+    "category_id": 1,
+    "description": "",
+    "disable_duplicate_assign": false,
+    "effects": [
+      {
+        "id": 3000375,
+        "values": [
+          1000,
+          2000,
+          3000,
+          6000,
+          10000
+        ]
+      }
+    ],
+    "filter_ids": [
+      1
+    ],
+    "id": 3,
+    "name": "打の祝福",
+    "quality_group_ids": [
+      36,
+      37,
+      38,
+      39,
+      40
+    ],
+    "stimulator_rarity_id": 2
+  },
+  {
+    "category_id": 1,
+    "description": "",
+    "disable_duplicate_assign": false,
+    "effects": [
+      {
+        "id": 3000376,
+        "values": [
+          1000,
+          2000,
+          3000,
+          6000,
+          10000
+        ]
+      }
+    ],
+    "filter_ids": [
+      1
+    ],
+    "id": 4,
+    "name": "突の祝福",
+    "quality_group_ids": [
+      41,
+      42,
+      43,
+      44,
+      45
+    ],
+    "stimulator_rarity_id": 2
+  },
+  {
+    "category_id": 1,
+    "description": "",
+    "disable_duplicate_assign": false,
+    "effects": [
+      {
+        "id": 3000009,
+        "values": [
+          300,
+          600,
+          900,
+          1800,
+          3000
+        ]
+      }
+    ],
+    "filter_ids": [
+      1
+    ],
+    "id": 5,
+    "name": "魔力の祝福",
+    "quality_group_ids": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "stimulator_rarity_id": 1
+  },
+  {
+    "category_id": 1,
+    "description": "",
+    "disable_duplicate_assign": false,
+    "effects": [
+      {
+        "id": 3000377,
+        "values": [
+          1000,
+          2000,
+          3000,
+          6000,
+          10000
+        ]
+      }
+    ],
+    "filter_ids": [
+      1
+    ],
+    "id": 6,
+    "name": "火の祝福",
+    "quality_group_ids": [
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "stimulator_rarity_id": 2
+  },
+  {
+    "category_id": 1,
+    "description": "",
+    "disable_duplicate_assign": false,
+    "effects": [
+      {
+        "id": 3000379,
+        "values": [
+          1000,
+          2000,
+          3000,
+          6000,
+          10000
+        ]
+      }
+    ],
+    "filter_ids": [
+      1
+    ],
+    "id": 7,
+    "name": "氷の祝福",
+    "quality_group_ids": [
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "stimulator_rarity_id": 2
+  },
+  {
+    "category_id": 1,
+    "description": "",
+    "disable_duplicate_assign": false,
+    "effects": [
+      {
+        "id": 3000380,
+        "values": [
+          1000,
+          2000,
+          3000,
+          6000,
+          10000
+        ]
+      }
+    ],
+    "filter_ids": [
+      1
+    ],
+    "id": 8,
+    "name": "風の祝福",
+    "quality_group_ids": [
+      21,
+      22,
+      23,
+      24,
+      25
+    ],
+    "stimulator_rarity_id": 2
+  },
+  {
+    "category_id": 1,
+    "description": "",
+    "disable_duplicate_assign": false,
+    "effects": [
+      {
+        "id": 3000378,
+        "values": [
+          1000,
+          2000,
+          3000,
+          6000,
+          10000
+        ]
+      }
+    ],
+    "filter_ids": [
+      1
+    ],
+    "id": 9,
+    "name": "雷の祝福",
+    "quality_group_ids": [
+      26,
+      27,
+      28,
+      29,
+      30
+    ],
+    "stimulator_rarity_id": 2
+  },
+  {
+    "category_id": 2,
+    "description": "「物防{0}%アップ」と「魔防{1}%アップ」を1回攻撃されるまで付与",
+    "disable_duplicate_assign": false,
+    "effects": [
+      {
+        "id": 3000050,
+        "values": [
+          100,
+          200,
+          300,
+          400,
+          500
+        ]
+      },
+      {
+        "id": 3000051,
+        "values": [
+          100,
+          200,
+          300,
+          400,
+          500
+        ]
+      }
+    ],
+    "filter_ids": [
+      2,
+      4
+    ],
+    "id": 10,
+    "name": "守護の祝福",
+    "quality_group_ids": [
+      121,
+      122,
+      123,
+      124,
+      125
+    ],
+    "stimulator_rarity_id": 1
+  },
+  {
+    "category_id": 2,
+    "description": "",
+    "disable_duplicate_assign": false,
+    "effects": [
+      {
+        "id": 3000051,
+        "values": [
+          100,
+          200,
+          300,
+          500,
+          800
+        ]
+      }
+    ],
+    "filter_ids": [
+      2,
+      4
+    ],
+    "id": 11,
+    "name": "魔防の祝福",
+    "quality_group_ids": [
+      126,
+      127,
+      128,
+      129,
+      130
+    ],
+    "stimulator_rarity_id": 1
+  },
+  {
+    "category_id": 2,
+    "description": "",
+    "disable_duplicate_assign": false,
+    "effects": [
+      {
+        "id": 3000050,
+        "values": [
+          100,
+          200,
+          300,
+          500,
+          800
+        ]
+      }
+    ],
+    "filter_ids": [
+      2,
+      4
+    ],
+    "id": 12,
+    "name": "物防の祝福",
+    "quality_group_ids": [
+      126,
+      127,
+      128,
+      129,
+      130
+    ],
+    "stimulator_rarity_id": 1
+  },
+  {
+    "category_id": 3,
+    "description": "",
+    "disable_duplicate_assign": false,
+    "effects": [
+      {
+        "id": 3000047,
+        "values": [
+          100,
+          200,
+          300,
+          500,
+          800
+        ]
+      }
+    ],
+    "filter_ids": [
+      3,
+      1
+    ],
+    "id": 13,
+    "name": "剛力の呪詛",
+    "quality_group_ids": [
+      71,
+      72,
+      73,
+      74,
+      75
+    ],
+    "stimulator_rarity_id": 1
+  },
+  {
+    "category_id": 3,
+    "description": "",
+    "disable_duplicate_assign": false,
+    "effects": [
+      {
+        "id": 3000063,
+        "values": [
+          100,
+          200,
+          300,
+          600,
+          1000
+        ]
+      }
+    ],
+    "filter_ids": [
+      3,
+      1
+    ],
+    "id": 14,
+    "name": "斬の呪詛",
+    "quality_group_ids": [
+      101,
+      102,
+      103,
+      104,
+      105
+    ],
+    "stimulator_rarity_id": 2
+  },
+  {
+    "category_id": 3,
+    "description": "",
+    "disable_duplicate_assign": false,
+    "effects": [
+      {
+        "id": 3000064,
+        "values": [
+          100,
+          200,
+          300,
+          600,
+          1000
+        ]
+      }
+    ],
+    "filter_ids": [
+      3,
+      1
+    ],
+    "id": 15,
+    "name": "打の呪詛",
+    "quality_group_ids": [
+      106,
+      107,
+      108,
+      109,
+      110
+    ],
+    "stimulator_rarity_id": 2
+  },
+  {
+    "category_id": 3,
+    "description": "",
+    "disable_duplicate_assign": false,
+    "effects": [
+      {
+        "id": 3000065,
+        "values": [
+          100,
+          200,
+          300,
+          600,
+          1000
+        ]
+      }
+    ],
+    "filter_ids": [
+      3,
+      1
+    ],
+    "id": 16,
+    "name": "突の呪詛",
+    "quality_group_ids": [
+      111,
+      112,
+      113,
+      114,
+      115
+    ],
+    "stimulator_rarity_id": 2
+  },
+  {
+    "category_id": 3,
+    "description": "",
+    "disable_duplicate_assign": false,
+    "effects": [
+      {
+        "id": 3000049,
+        "values": [
+          100,
+          200,
+          300,
+          500,
+          800
+        ]
+      }
+    ],
+    "filter_ids": [
+      3,
+      1
+    ],
+    "id": 17,
+    "name": "魔力の呪詛",
+    "quality_group_ids": [
+      76,
+      77,
+      78,
+      79,
+      80
+    ],
+    "stimulator_rarity_id": 1
+  },
+  {
+    "category_id": 3,
+    "description": "",
+    "disable_duplicate_assign": false,
+    "effects": [
+      {
+        "id": 3000059,
+        "values": [
+          100,
+          200,
+          300,
+          600,
+          1000
+        ]
+      }
+    ],
+    "filter_ids": [
+      3,
+      1
+    ],
+    "id": 18,
+    "name": "火の呪詛",
+    "quality_group_ids": [
+      81,
+      82,
+      83,
+      84,
+      85
+    ],
+    "stimulator_rarity_id": 2
+  },
+  {
+    "category_id": 3,
+    "description": "",
+    "disable_duplicate_assign": false,
+    "effects": [
+      {
+        "id": 3000060,
+        "values": [
+          100,
+          200,
+          300,
+          600,
+          1000
+        ]
+      }
+    ],
+    "filter_ids": [
+      3,
+      1
+    ],
+    "id": 19,
+    "name": "氷の呪詛",
+    "quality_group_ids": [
+      86,
+      87,
+      88,
+      89,
+      90
+    ],
+    "stimulator_rarity_id": 2
+  },
+  {
+    "category_id": 3,
+    "description": "",
+    "disable_duplicate_assign": false,
+    "effects": [
+      {
+        "id": 3000062,
+        "values": [
+          100,
+          200,
+          300,
+          600,
+          1000
+        ]
+      }
+    ],
+    "filter_ids": [
+      3,
+      1
+    ],
+    "id": 20,
+    "name": "風の呪詛",
+    "quality_group_ids": [
+      91,
+      92,
+      93,
+      94,
+      95
+    ],
+    "stimulator_rarity_id": 2
+  },
+  {
+    "category_id": 3,
+    "description": "",
+    "disable_duplicate_assign": false,
+    "effects": [
+      {
+        "id": 3000061,
+        "values": [
+          100,
+          200,
+          300,
+          600,
+          1000
+        ]
+      }
+    ],
+    "filter_ids": [
+      3,
+      1
+    ],
+    "id": 21,
+    "name": "雷の呪詛",
+    "quality_group_ids": [
+      96,
+      97,
+      98,
+      99,
+      100
+    ],
+    "stimulator_rarity_id": 2
+  },
+  {
+    "category_id": 2,
+    "description": "",
+    "disable_duplicate_assign": false,
+    "effects": [
+      {
+        "id": 3000070,
+        "values": [
+          100,
+          200,
+          300,
+          500,
+          800
+        ]
+      }
+    ],
+    "filter_ids": [
+      2,
+      4
+    ],
+    "id": 22,
+    "name": "斬の盾",
+    "quality_group_ids": [
+      131,
+      132,
+      133,
+      134,
+      135
+    ],
+    "stimulator_rarity_id": 1
+  },
+  {
+    "category_id": 2,
+    "description": "",
+    "disable_duplicate_assign": false,
+    "effects": [
+      {
+        "id": 3000071,
+        "values": [
+          100,
+          200,
+          300,
+          500,
+          800
+        ]
+      }
+    ],
+    "filter_ids": [
+      2,
+      4
+    ],
+    "id": 23,
+    "name": "打の盾",
+    "quality_group_ids": [
+      131,
+      132,
+      133,
+      134,
+      135
+    ],
+    "stimulator_rarity_id": 1
+  },
+  {
+    "category_id": 2,
+    "description": "",
+    "disable_duplicate_assign": false,
+    "effects": [
+      {
+        "id": 3000072,
+        "values": [
+          100,
+          200,
+          300,
+          500,
+          800
+        ]
+      }
+    ],
+    "filter_ids": [
+      2,
+      4
+    ],
+    "id": 24,
+    "name": "突の盾",
+    "quality_group_ids": [
+      131,
+      132,
+      133,
+      134,
+      135
+    ],
+    "stimulator_rarity_id": 1
+  },
+  {
+    "category_id": 2,
+    "description": "",
+    "disable_duplicate_assign": false,
+    "effects": [
+      {
+        "id": 3000066,
+        "values": [
+          100,
+          200,
+          300,
+          500,
+          800
+        ]
+      }
+    ],
+    "filter_ids": [
+      2,
+      4
+    ],
+    "id": 25,
+    "name": "火の盾",
+    "quality_group_ids": [
+      131,
+      132,
+      133,
+      134,
+      135
+    ],
+    "stimulator_rarity_id": 1
+  },
+  {
+    "category_id": 2,
+    "description": "",
+    "disable_duplicate_assign": false,
+    "effects": [
+      {
+        "id": 3000067,
+        "values": [
+          100,
+          200,
+          300,
+          500,
+          800
+        ]
+      }
+    ],
+    "filter_ids": [
+      2,
+      4
+    ],
+    "id": 26,
+    "name": "氷の盾",
+    "quality_group_ids": [
+      131,
+      132,
+      133,
+      134,
+      135
+    ],
+    "stimulator_rarity_id": 1
+  },
+  {
+    "category_id": 2,
+    "description": "",
+    "disable_duplicate_assign": false,
+    "effects": [
+      {
+        "id": 3000069,
+        "values": [
+          100,
+          200,
+          300,
+          500,
+          800
+        ]
+      }
+    ],
+    "filter_ids": [
+      2,
+      4
+    ],
+    "id": 27,
+    "name": "風の盾",
+    "quality_group_ids": [
+      131,
+      132,
+      133,
+      134,
+      135
+    ],
+    "stimulator_rarity_id": 1
+  },
+  {
+    "category_id": 2,
+    "description": "",
+    "disable_duplicate_assign": false,
+    "effects": [
+      {
+        "id": 3000068,
+        "values": [
+          100,
+          200,
+          300,
+          500,
+          800
+        ]
+      }
+    ],
+    "filter_ids": [
+      2,
+      4
+    ],
+    "id": 28,
+    "name": "雷の盾",
+    "quality_group_ids": [
+      131,
+      132,
+      133,
+      134,
+      135
+    ],
+    "stimulator_rarity_id": 1
+  },
+  {
+    "category_id": 1,
+    "description": "",
+    "disable_duplicate_assign": true,
+    "effects": [
+      {
+        "id": 3000079,
+        "values": [
+          600,
+          1200,
+          1800,
+          3600,
+          6000
+        ]
+      }
+    ],
+    "filter_ids": [
+      1
+    ],
+    "id": 29,
+    "name": "ぷに特攻",
+    "quality_group_ids": [
+      46,
+      47,
+      48,
+      49,
+      50
+    ],
+    "stimulator_rarity_id": 1
+  },
+  {
+    "category_id": 1,
+    "description": "",
+    "disable_duplicate_assign": true,
+    "effects": [
+      {
+        "id": 3000082,
+        "values": [
+          600,
+          1200,
+          1800,
+          3600,
+          6000
+        ]
+      }
+    ],
+    "filter_ids": [
+      1
+    ],
+    "id": 30,
+    "name": "精霊特攻",
+    "quality_group_ids": [
+      46,
+      47,
+      48,
+      49,
+      50
+    ],
+    "stimulator_rarity_id": 1
+  },
+  {
+    "category_id": 1,
+    "description": "",
+    "disable_duplicate_assign": true,
+    "effects": [
+      {
+        "id": 3000080,
+        "values": [
+          600,
+          1200,
+          1800,
+          3600,
+          6000
+        ]
+      }
+    ],
+    "filter_ids": [
+      1
+    ],
+    "id": 31,
+    "name": "獣特攻",
+    "quality_group_ids": [
+      46,
+      47,
+      48,
+      49,
+      50
+    ],
+    "stimulator_rarity_id": 1
+  },
+  {
+    "category_id": 1,
+    "description": "",
+    "disable_duplicate_assign": true,
+    "effects": [
+      {
+        "id": 3000081,
+        "values": [
+          600,
+          1200,
+          1800,
+          3600,
+          6000
+        ]
+      }
+    ],
+    "filter_ids": [
+      1
+    ],
+    "id": 32,
+    "name": "鳥特攻",
+    "quality_group_ids": [
+      46,
+      47,
+      48,
+      49,
+      50
+    ],
+    "stimulator_rarity_id": 1
+  },
+  {
+    "category_id": 1,
+    "description": "",
+    "disable_duplicate_assign": true,
+    "effects": [
+      {
+        "id": 3000083,
+        "values": [
+          600,
+          1200,
+          1800,
+          3600,
+          6000
+        ]
+      }
+    ],
+    "filter_ids": [
+      1
+    ],
+    "id": 33,
+    "name": "水棲特攻",
+    "quality_group_ids": [
+      46,
+      47,
+      48,
+      49,
+      50
+    ],
+    "stimulator_rarity_id": 1
+  },
+  {
+    "category_id": 2,
+    "description": "",
+    "disable_duplicate_assign": true,
+    "effects": [
+      {
+        "id": 3000089,
+        "values": [
+          100,
+          200,
+          300,
+          500,
+          800
+        ]
+      }
+    ],
+    "filter_ids": [
+      2,
+      4
+    ],
+    "id": 34,
+    "name": "ぷに特防",
+    "quality_group_ids": [
+      131,
+      132,
+      133,
+      134,
+      135
+    ],
+    "stimulator_rarity_id": 1
+  },
+  {
+    "category_id": 2,
+    "description": "",
+    "disable_duplicate_assign": true,
+    "effects": [
+      {
+        "id": 3000092,
+        "values": [
+          100,
+          200,
+          300,
+          500,
+          800
+        ]
+      }
+    ],
+    "filter_ids": [
+      2,
+      4
+    ],
+    "id": 35,
+    "name": "精霊特防",
+    "quality_group_ids": [
+      131,
+      132,
+      133,
+      134,
+      135
+    ],
+    "stimulator_rarity_id": 1
+  },
+  {
+    "category_id": 2,
+    "description": "",
+    "disable_duplicate_assign": true,
+    "effects": [
+      {
+        "id": 3000090,
+        "values": [
+          100,
+          200,
+          300,
+          500,
+          800
+        ]
+      }
+    ],
+    "filter_ids": [
+      2,
+      4
+    ],
+    "id": 36,
+    "name": "獣特防",
+    "quality_group_ids": [
+      131,
+      132,
+      133,
+      134,
+      135
+    ],
+    "stimulator_rarity_id": 1
+  },
+  {
+    "category_id": 2,
+    "description": "",
+    "disable_duplicate_assign": true,
+    "effects": [
+      {
+        "id": 3000091,
+        "values": [
+          100,
+          200,
+          300,
+          500,
+          800
+        ]
+      }
+    ],
+    "filter_ids": [
+      2,
+      4
+    ],
+    "id": 37,
+    "name": "鳥特防",
+    "quality_group_ids": [
+      131,
+      132,
+      133,
+      134,
+      135
+    ],
+    "stimulator_rarity_id": 1
+  },
+  {
+    "category_id": 2,
+    "description": "",
+    "disable_duplicate_assign": true,
+    "effects": [
+      {
+        "id": 3000093,
+        "values": [
+          100,
+          200,
+          300,
+          500,
+          800
+        ]
+      }
+    ],
+    "filter_ids": [
+      2,
+      4
+    ],
+    "id": 38,
+    "name": "水棲特防",
+    "quality_group_ids": [
+      131,
+      132,
+      133,
+      134,
+      135
+    ],
+    "stimulator_rarity_id": 1
+  },
+  {
+    "category_id": 3,
+    "description": "",
+    "disable_duplicate_assign": true,
+    "effects": [
+      {
+        "id": 3000094,
+        "values": [
+          200,
+          400,
+          600,
+          1100,
+          1800
+        ]
+      }
+    ],
+    "filter_ids": [
+      3,
+      1
+    ],
+    "id": 39,
+    "name": "ぷに弱点サーチ",
+    "quality_group_ids": [
+      116,
+      117,
+      118,
+      119,
+      120
+    ],
+    "stimulator_rarity_id": 1
+  },
+  {
+    "category_id": 3,
+    "description": "",
+    "disable_duplicate_assign": true,
+    "effects": [
+      {
+        "id": 3000097,
+        "values": [
+          200,
+          400,
+          600,
+          1100,
+          1800
+        ]
+      }
+    ],
+    "filter_ids": [
+      3,
+      1
+    ],
+    "id": 40,
+    "name": "精霊弱点サーチ",
+    "quality_group_ids": [
+      116,
+      117,
+      118,
+      119,
+      120
+    ],
+    "stimulator_rarity_id": 1
+  },
+  {
+    "category_id": 3,
+    "description": "",
+    "disable_duplicate_assign": true,
+    "effects": [
+      {
+        "id": 3000095,
+        "values": [
+          200,
+          400,
+          600,
+          1100,
+          1800
+        ]
+      }
+    ],
+    "filter_ids": [
+      3,
+      1
+    ],
+    "id": 41,
+    "name": "獣弱点サーチ",
+    "quality_group_ids": [
+      116,
+      117,
+      118,
+      119,
+      120
+    ],
+    "stimulator_rarity_id": 1
+  },
+  {
+    "category_id": 3,
+    "description": "",
+    "disable_duplicate_assign": true,
+    "effects": [
+      {
+        "id": 3000096,
+        "values": [
+          200,
+          400,
+          600,
+          1100,
+          1800
+        ]
+      }
+    ],
+    "filter_ids": [
+      3,
+      1
+    ],
+    "id": 42,
+    "name": "鳥弱点サーチ",
+    "quality_group_ids": [
+      116,
+      117,
+      118,
+      119,
+      120
+    ],
+    "stimulator_rarity_id": 1
+  },
+  {
+    "category_id": 3,
+    "description": "",
+    "disable_duplicate_assign": true,
+    "effects": [
+      {
+        "id": 3000098,
+        "values": [
+          200,
+          400,
+          600,
+          1100,
+          1800
+        ]
+      }
+    ],
+    "filter_ids": [
+      3,
+      1
+    ],
+    "id": 43,
+    "name": "水棲弱点サーチ",
+    "quality_group_ids": [
+      116,
+      117,
+      118,
+      119,
+      120
+    ],
+    "stimulator_rarity_id": 1
+  },
+  {
+    "category_id": 4,
+    "description": "",
+    "disable_duplicate_assign": false,
+    "effects": [
+      {
+        "id": 3000075,
+        "values": [
+          100,
+          200,
+          300,
+          500,
+          800
+        ]
+      }
+    ],
+    "filter_ids": [
+      4
+    ],
+    "id": 44,
+    "name": "大きな回復量",
+    "quality_group_ids": [
+      56,
+      57,
+      58,
+      59,
+      60
+    ],
+    "stimulator_rarity_id": 1
+  },
+  {
+    "category_id": 4,
+    "description": "",
+    "disable_duplicate_assign": false,
+    "effects": [
+      {
+        "id": 3000073,
+        "values": [
+          200,
+          300,
+          500,
+          900,
+          1500
+        ]
+      }
+    ],
+    "filter_ids": [
+      4
+    ],
+    "id": 45,
+    "name": "単体回復ボーナス",
+    "quality_group_ids": [
+      61,
+      62,
+      63,
+      64,
+      65
+    ],
+    "stimulator_rarity_id": 2
+  },
+  {
+    "category_id": 4,
+    "description": "",
+    "disable_duplicate_assign": false,
+    "effects": [
+      {
+        "id": 3000074,
+        "values": [
+          100,
+          200,
+          300,
+          600,
+          1000
+        ]
+      }
+    ],
+    "filter_ids": [
+      4
+    ],
+    "id": 46,
+    "name": "全体回復ボーナス",
+    "quality_group_ids": [
+      66,
+      67,
+      68,
+      69,
+      70
+    ],
+    "stimulator_rarity_id": 2
+  },
+  {
+    "category_id": 4,
+    "description": "",
+    "disable_duplicate_assign": false,
+    "effects": [
+      {
+        "id": 3000109,
+        "values": [
+          200,
+          400,
+          600,
+          1100,
+          1800
+        ]
+      }
+    ],
+    "filter_ids": [
+      4
+    ],
+    "id": 47,
+    "name": "使い切り回復強化",
+    "quality_group_ids": [
+      56,
+      57,
+      58,
+      59,
+      60
+    ],
+    "stimulator_rarity_id": 2
+  },
+  {
+    "category_id": 1,
+    "description": "",
+    "disable_duplicate_assign": false,
+    "effects": [
+      {
+        "id": 3000108,
+        "values": [
+          500,
+          900,
+          1400,
+          2700,
+          4500
+        ]
+      }
+    ],
+    "filter_ids": [
+      1
+    ],
+    "id": 48,
+    "name": "使い切り攻撃強化",
+    "quality_group_ids": [
+      46,
+      47,
+      48,
+      49,
+      50
+    ],
+    "stimulator_rarity_id": 2
+  },
+  {
+    "category_id": 1,
+    "description": "",
+    "disable_duplicate_assign": false,
+    "effects": [
+      {
+        "id": 3000077,
+        "values": [
+          600,
+          1100,
+          1700,
+          3300,
+          5400
+        ]
+      }
+    ],
+    "filter_ids": [
+      1
+    ],
+    "id": 49,
+    "name": "追い打ち強化",
+    "quality_group_ids": [
+      46,
+      47,
+      48,
+      49,
+      50
+    ],
+    "stimulator_rarity_id": 1
+  },
+  {
+    "category_id": 2,
+    "description": "",
+    "disable_duplicate_assign": false,
+    "effects": [
+      {
+        "id": 3000045,
+        "values": [
+          100,
+          200,
+          300,
+          500,
+          800
+        ]
+      }
+    ],
+    "filter_ids": [
+      2,
+      4
+    ],
+    "id": 50,
+    "name": "会心の出来",
+    "quality_group_ids": [
+      126,
+      127,
+      128,
+      129,
+      130
+    ],
+    "stimulator_rarity_id": 2
+  },
+  {
+    "category_id": 1,
+    "description": "",
+    "disable_duplicate_assign": false,
+    "effects": [
+      {
+        "id": 3000078,
+        "values": [
+          600,
+          1100,
+          1700,
+          3300,
+          5400
+        ]
+      }
+    ],
+    "filter_ids": [
+      1
+    ],
+    "id": 51,
+    "name": "破壊力上昇",
+    "quality_group_ids": [
+      51,
+      52,
+      53,
+      54,
+      55
+    ],
+    "stimulator_rarity_id": 2
+  },
+  {
+    "category_id": 4,
+    "description": "",
+    "disable_duplicate_assign": false,
+    "effects": [
+      {
+        "id": 3000347,
+        "values": [
+          100,
+          200,
+          300,
+          400,
+          500
+        ]
+      }
+    ],
+    "filter_ids": [
+      4,
+      1,
+      2,
+      3
+    ],
+    "id": 52,
+    "name": "アイテムリチャージ",
+    "quality_group_ids": [
+      136,
+      137,
+      138,
+      139,
+      140
+    ],
+    "stimulator_rarity_id": 2
+  },
+  {
+    "category_id": 3,
+    "description": "",
+    "disable_duplicate_assign": false,
+    "effects": [
+      {
+        "id": 3000359,
+        "values": [
+          100,
+          200,
+          300,
+          600,
+          1000
+        ]
+      }
+    ],
+    "filter_ids": [
+      3,
+      1
+    ],
+    "id": 53,
+    "name": "攻撃ダウン",
+    "quality_group_ids": [
+      141,
+      142,
+      143,
+      144,
+      145
+    ],
+    "stimulator_rarity_id": 2
+  },
+  {
+    "category_id": 1,
+    "description": "",
+    "disable_duplicate_assign": false,
+    "effects": [
+      {
+        "id": 3000044,
+        "values": [
+          1000,
+          2000,
+          3000,
+          6000,
+          10000
+        ]
+      }
+    ],
+    "filter_ids": [
+      1
+    ],
+    "id": 54,
+    "name": "アイテム会心確率上昇",
+    "quality_group_ids": [
+      146,
+      147,
+      148,
+      149,
+      150
+    ],
+    "stimulator_rarity_id": 2
+  },
+  {
+    "category_id": 1,
+    "description": "",
+    "disable_duplicate_assign": false,
+    "effects": [
+      {
+        "id": 3000372,
+        "values": [
+          1000,
+          2000,
+          3000,
+          6000,
+          10000
+        ]
+      }
+    ],
+    "filter_ids": [
+      1
+    ],
+    "id": 55,
+    "name": "アイテム会心ダメージ上昇",
+    "quality_group_ids": [
+      151,
+      152,
+      153,
+      154,
+      155
+    ],
+    "stimulator_rarity_id": 2
+  }
+]

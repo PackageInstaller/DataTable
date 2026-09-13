@@ -1,0 +1,818 @@
+[
+  {
+    "costs": [
+      {
+        "id": 1,
+        "quantity": 1,
+        "resource_params": null,
+        "type": 9
+      },
+      {
+        "id": 1286,
+        "quantity": 3,
+        "resource_params": null,
+        "type": 5
+      }
+    ],
+    "description": "経験値＋{0}",
+    "enhance_target": 1,
+    "enhance_type": 1,
+    "id": 3,
+    "large_still_path_hash": 3826558364119031500,
+    "name": "ステラボード",
+    "priority": 1,
+    "start_at": "2026-02-21T03:00:00+00:00",
+    "still_path_hash": 5601379311405965887,
+    "support_character_ids": [
+      39,
+      58,
+      136,
+      40,
+      41
+    ],
+    "target_id": 1,
+    "value": 100
+  },
+  {
+    "costs": [
+      {
+        "id": 1,
+        "quantity": 1,
+        "resource_params": null,
+        "type": 9
+      },
+      {
+        "id": 1287,
+        "quantity": 2,
+        "resource_params": null,
+        "type": 5
+      }
+    ],
+    "description": "経験値＋{0}",
+    "enhance_target": 1,
+    "enhance_type": 1,
+    "id": 4,
+    "large_still_path_hash": 5921034379694896128,
+    "name": "ネビュラストーン",
+    "priority": 2,
+    "start_at": "2026-02-21T03:00:00+00:00",
+    "still_path_hash": 3066123573729464075,
+    "support_character_ids": [
+      32,
+      76,
+      31,
+      34,
+      25
+    ],
+    "target_id": 1,
+    "value": 300
+  },
+  {
+    "costs": [
+      {
+        "id": 1,
+        "quantity": 1,
+        "resource_params": null,
+        "type": 9
+      },
+      {
+        "id": 1288,
+        "quantity": 1,
+        "resource_params": null,
+        "type": 5
+      }
+    ],
+    "description": "経験値＋{0}",
+    "enhance_target": 1,
+    "enhance_type": 1,
+    "id": 5,
+    "large_still_path_hash": 8125813401783867156,
+    "name": "メテオーアアイゼン",
+    "priority": 3,
+    "start_at": "2026-02-21T03:00:00+00:00",
+    "still_path_hash": 604048031710571495,
+    "support_character_ids": [
+      30,
+      24,
+      46,
+      83,
+      159
+    ],
+    "target_id": 1,
+    "value": 500
+  },
+  {
+    "costs": [
+      {
+        "id": 1,
+        "quantity": 20,
+        "resource_params": null,
+        "type": 9
+      },
+      {
+        "id": 1289,
+        "quantity": 1,
+        "resource_params": null,
+        "type": 5
+      }
+    ],
+    "description": "上限解放（{0}回目）\n解放するとレベル上限を{1}上昇させます",
+    "enhance_target": 1,
+    "enhance_type": 2,
+    "id": 6,
+    "large_still_path_hash": 7185050432954062440,
+    "name": "スターコア",
+    "priority": 4,
+    "start_at": "2026-02-21T03:00:00+00:00",
+    "still_path_hash": 1950303883237534365,
+    "support_character_ids": [
+      33,
+      56,
+      53,
+      65,
+      66
+    ],
+    "target_id": 1,
+    "value": 1
+  },
+  {
+    "costs": [
+      {
+        "id": 1,
+        "quantity": 2,
+        "resource_params": null,
+        "type": 9
+      },
+      {
+        "id": 1326,
+        "quantity": 10,
+        "resource_params": null,
+        "type": 5
+      }
+    ],
+    "description": "{0}の経験値＋{1}",
+    "enhance_target": 2,
+    "enhance_type": 1,
+    "id": 7,
+    "large_still_path_hash": 1220932334470074775,
+    "name": "カノンシャード",
+    "priority": 1,
+    "start_at": "2026-03-19T03:00:00+00:00",
+    "still_path_hash": 8594571239292426318,
+    "support_character_ids": [
+      30,
+      27,
+      135,
+      57,
+      70
+    ],
+    "target_id": 2,
+    "value": 100
+  },
+  {
+    "costs": [
+      {
+        "id": 1,
+        "quantity": 2,
+        "resource_params": null,
+        "type": 9
+      },
+      {
+        "id": 1327,
+        "quantity": 10,
+        "resource_params": null,
+        "type": 5
+      }
+    ],
+    "description": "{0}の経験値＋{1}",
+    "enhance_target": 2,
+    "enhance_type": 1,
+    "id": 8,
+    "large_still_path_hash": 8781025387016328950,
+    "name": "アルケミットシャード",
+    "priority": 2,
+    "start_at": "2026-03-19T03:00:00+00:00",
+    "still_path_hash": 2192103393575264047,
+    "support_character_ids": [
+      24,
+      35,
+      36,
+      69,
+      71
+    ],
+    "target_id": 3,
+    "value": 100
+  },
+  {
+    "costs": [
+      {
+        "id": 1,
+        "quantity": 2,
+        "resource_params": null,
+        "type": 9
+      },
+      {
+        "id": 1328,
+        "quantity": 10,
+        "resource_params": null,
+        "type": 5
+      }
+    ],
+    "description": "{0}の経験値＋{1}",
+    "enhance_target": 2,
+    "enhance_type": 1,
+    "id": 9,
+    "large_still_path_hash": 6571725241820836378,
+    "name": "グラナートシャード",
+    "priority": 3,
+    "start_at": "2026-03-19T03:00:00+00:00",
+    "still_path_hash": 4360864554557782979,
+    "support_character_ids": [
+      46,
+      23,
+      74,
+      78,
+      85
+    ],
+    "target_id": 4,
+    "value": 100
+  },
+  {
+    "costs": [
+      {
+        "id": 1,
+        "quantity": 2,
+        "resource_params": null,
+        "type": 9
+      },
+      {
+        "id": 1329,
+        "quantity": 10,
+        "resource_params": null,
+        "type": 5
+      }
+    ],
+    "description": "{0}の経験値＋{1}",
+    "enhance_target": 2,
+    "enhance_type": 1,
+    "id": 10,
+    "large_still_path_hash": 2792839098879570003,
+    "name": "二六一式シャード",
+    "priority": 4,
+    "start_at": "2026-03-19T03:00:00+00:00",
+    "still_path_hash": 4716880839323498890,
+    "support_character_ids": [
+      31,
+      87,
+      95,
+      67,
+      166
+    ],
+    "target_id": 5,
+    "value": 100
+  },
+  {
+    "costs": [
+      {
+        "id": 1,
+        "quantity": 2,
+        "resource_params": null,
+        "type": 9
+      },
+      {
+        "id": 1330,
+        "quantity": 10,
+        "resource_params": null,
+        "type": 5
+      }
+    ],
+    "description": "{0}の経験値＋{1}",
+    "enhance_target": 2,
+    "enhance_type": 1,
+    "id": 11,
+    "large_still_path_hash": 300937450143913151,
+    "name": "シュテルンシャード",
+    "priority": 5,
+    "start_at": "2026-03-19T03:00:00+00:00",
+    "still_path_hash": 7177250686206238054,
+    "support_character_ids": [
+      34,
+      111,
+      115,
+      114,
+      93
+    ],
+    "target_id": 6,
+    "value": 100
+  },
+  {
+    "costs": [
+      {
+        "id": 1,
+        "quantity": 2,
+        "resource_params": null,
+        "type": 9
+      },
+      {
+        "id": 1331,
+        "quantity": 10,
+        "resource_params": null,
+        "type": 5
+      }
+    ],
+    "description": "{0}の経験値＋{1}",
+    "enhance_target": 2,
+    "enhance_type": 1,
+    "id": 12,
+    "large_still_path_hash": 7141639112967797131,
+    "name": "ブレイクシャード",
+    "priority": 6,
+    "start_at": "2026-03-19T03:00:00+00:00",
+    "still_path_hash": 336539153381191762,
+    "support_character_ids": [
+      33,
+      125,
+      126,
+      127,
+      128
+    ],
+    "target_id": 7,
+    "value": 100
+  },
+  {
+    "costs": [
+      {
+        "id": 1,
+        "quantity": 20,
+        "resource_params": null,
+        "type": 9
+      },
+      {
+        "id": 1332,
+        "quantity": 100,
+        "resource_params": null,
+        "type": 5
+      }
+    ],
+    "description": "{0}の上限解放（{1}回目）\n解放するとレベル上限を{2}上昇させます",
+    "enhance_target": 2,
+    "enhance_type": 2,
+    "id": 13,
+    "large_still_path_hash": 4752212084308204903,
+    "name": "カノンコア",
+    "priority": 1000,
+    "start_at": "2026-03-19T03:00:00+00:00",
+    "still_path_hash": 2757519957212435646,
+    "support_character_ids": [
+      53,
+      129,
+      130,
+      132,
+      140
+    ],
+    "target_id": 2,
+    "value": 1
+  },
+  {
+    "costs": [
+      {
+        "id": 1,
+        "quantity": 20,
+        "resource_params": null,
+        "type": 9
+      },
+      {
+        "id": 1333,
+        "quantity": 100,
+        "resource_params": null,
+        "type": 5
+      }
+    ],
+    "description": "{0}の上限解放（{1}回目）\n解放するとレベル上限を{2}上昇させます",
+    "enhance_target": 2,
+    "enhance_type": 2,
+    "id": 14,
+    "large_still_path_hash": 5945282323935370269,
+    "name": "アルケミットコア",
+    "priority": 1001,
+    "start_at": "2026-03-19T03:00:00+00:00",
+    "still_path_hash": 3834376081073460678,
+    "support_character_ids": [
+      65,
+      142,
+      170,
+      166,
+      167
+    ],
+    "target_id": 3,
+    "value": 1
+  },
+  {
+    "costs": [
+      {
+        "id": 1,
+        "quantity": 20,
+        "resource_params": null,
+        "type": 9
+      },
+      {
+        "id": 1334,
+        "quantity": 100,
+        "resource_params": null,
+        "type": 5
+      }
+    ],
+    "description": "{0}の上限解放（{1}回目）\n解放するとレベル上限を{2}上昇させます",
+    "enhance_target": 2,
+    "enhance_type": 2,
+    "id": 15,
+    "large_still_path_hash": 8101676246324934897,
+    "name": "グラナートコア",
+    "priority": 1002,
+    "start_at": "2026-03-19T03:00:00+00:00",
+    "still_path_hash": 1718543150007071018,
+    "support_character_ids": [
+      66,
+      168,
+      169,
+      171,
+      178
+    ],
+    "target_id": 4,
+    "value": 1
+  },
+  {
+    "costs": [
+      {
+        "id": 1,
+        "quantity": 20,
+        "resource_params": null,
+        "type": 9
+      },
+      {
+        "id": 1335,
+        "quantity": 100,
+        "resource_params": null,
+        "type": 5
+      }
+    ],
+    "description": "{0}の上限解放（{1}回目）\n解放するとレベル上限を{2}上昇させます",
+    "enhance_target": 2,
+    "enhance_type": 2,
+    "id": 16,
+    "large_still_path_hash": 1684337963940533701,
+    "name": "二六一式コア",
+    "priority": 1003,
+    "start_at": "2026-03-19T03:00:00+00:00",
+    "still_path_hash": 8135869312093232158,
+    "support_character_ids": [
+      38,
+      179,
+      188,
+      145,
+      146
+    ],
+    "target_id": 5,
+    "value": 1
+  },
+  {
+    "costs": [
+      {
+        "id": 1,
+        "quantity": 20,
+        "resource_params": null,
+        "type": 9
+      },
+      {
+        "id": 1336,
+        "quantity": 100,
+        "resource_params": null,
+        "type": 5
+      }
+    ],
+    "description": "{0}の上限解放（{1}回目）\n解放するとレベル上限を{2}上昇させます",
+    "enhance_target": 2,
+    "enhance_type": 2,
+    "id": 17,
+    "large_still_path_hash": 3868861655456166185,
+    "name": "シュテルンコア",
+    "priority": 1004,
+    "start_at": "2026-03-19T03:00:00+00:00",
+    "still_path_hash": 5910806636400277746,
+    "support_character_ids": [
+      54,
+      147,
+      148,
+      149,
+      150
+    ],
+    "target_id": 6,
+    "value": 1
+  },
+  {
+    "costs": [
+      {
+        "id": 1,
+        "quantity": 20,
+        "resource_params": null,
+        "type": 9
+      },
+      {
+        "id": 1337,
+        "quantity": 100,
+        "resource_params": null,
+        "type": 5
+      }
+    ],
+    "description": "{0}の上限解放（{1}回目）\n解放するとレベル上限を{2}上昇させます",
+    "enhance_target": 2,
+    "enhance_type": 2,
+    "id": 18,
+    "large_still_path_hash": 6673510293025535562,
+    "name": "ブレイクコア",
+    "priority": 1005,
+    "start_at": "2026-03-19T03:00:00+00:00",
+    "still_path_hash": 4263360993192837009,
+    "support_character_ids": [
+      141,
+      185,
+      186,
+      172,
+      174
+    ],
+    "target_id": 7,
+    "value": 1
+  },
+  {
+    "costs": [
+      {
+        "id": 1,
+        "quantity": 2,
+        "resource_params": null,
+        "type": 9
+      },
+      {
+        "id": 1384,
+        "quantity": 10,
+        "resource_params": null,
+        "type": 5
+      }
+    ],
+    "description": "{0}の経験値＋{1}",
+    "enhance_target": 2,
+    "enhance_type": 1,
+    "id": 19,
+    "large_still_path_hash": 2604987657942593770,
+    "name": "ゼーゲンシャード",
+    "priority": 7,
+    "start_at": "2026-04-24T03:00:00+00:00",
+    "still_path_hash": 4868765055900006705,
+    "support_character_ids": [
+      33,
+      56,
+      122,
+      203,
+      27
+    ],
+    "target_id": 8,
+    "value": 100
+  },
+  {
+    "costs": [
+      {
+        "id": 1,
+        "quantity": 20,
+        "resource_params": null,
+        "type": 9
+      },
+      {
+        "id": 1385,
+        "quantity": 100,
+        "resource_params": null,
+        "type": 5
+      }
+    ],
+    "description": "{0}の上限解放（{1}回目）\n解放するとレベル上限を{2}上昇させます",
+    "enhance_target": 2,
+    "enhance_type": 2,
+    "id": 20,
+    "large_still_path_hash": 489145373634892806,
+    "name": "ゼーゲンコア",
+    "priority": 1006,
+    "start_at": "2026-04-24T03:00:00+00:00",
+    "still_path_hash": 7025150724564082141,
+    "support_character_ids": [
+      24,
+      122,
+      203,
+      26,
+      52
+    ],
+    "target_id": 8,
+    "value": 1
+  },
+  {
+    "costs": [
+      {
+        "id": 1,
+        "quantity": 2,
+        "resource_params": null,
+        "type": 9
+      },
+      {
+        "id": 1407,
+        "quantity": 10,
+        "resource_params": null,
+        "type": 5
+      }
+    ],
+    "description": "{0}の経験値＋{1}",
+    "enhance_target": 2,
+    "enhance_type": 1,
+    "id": 21,
+    "large_still_path_hash": 4834563151191760350,
+    "name": "どくどくシャード",
+    "priority": 13,
+    "start_at": "2026-05-22T03:00:00+00:00",
+    "still_path_hash": 2639184073784464389,
+    "support_character_ids": [
+      206,
+      137,
+      204,
+      203,
+      205
+    ],
+    "target_id": 9,
+    "value": 100
+  },
+  {
+    "costs": [
+      {
+        "id": 1,
+        "quantity": 20,
+        "resource_params": null,
+        "type": 9
+      },
+      {
+        "id": 1408,
+        "quantity": 100,
+        "resource_params": null,
+        "type": 5
+      }
+    ],
+    "description": "{0}の上限解放（{1}回目）\n解放するとレベル上限を{2}上昇させます",
+    "enhance_target": 2,
+    "enhance_type": 2,
+    "id": 22,
+    "large_still_path_hash": 5793050661422341286,
+    "name": "どくどくコア",
+    "priority": 1007,
+    "start_at": "2026-05-22T03:00:00+00:00",
+    "still_path_hash": 4022451822661424511,
+    "support_character_ids": [
+      145,
+      160,
+      147,
+      148,
+      150
+    ],
+    "target_id": 9,
+    "value": 1
+  },
+  {
+    "costs": [
+      {
+        "id": 1,
+        "quantity": 2,
+        "resource_params": null,
+        "type": 9
+      },
+      {
+        "id": 1447,
+        "quantity": 10,
+        "resource_params": null,
+        "type": 5
+      }
+    ],
+    "description": "{0}の経験値＋{1}",
+    "enhance_target": 2,
+    "enhance_type": 1,
+    "id": 23,
+    "large_still_path_hash": 1565869829873292670,
+    "name": "デスウニシャード",
+    "priority": 14,
+    "start_at": "2026-07-03T03:00:00+00:00",
+    "still_path_hash": 8218088746808614055,
+    "support_character_ids": [
+      32,
+      76,
+      207,
+      208,
+      77
+    ],
+    "target_id": 10,
+    "value": 100
+  },
+  {
+    "costs": [
+      {
+        "id": 1,
+        "quantity": 20,
+        "resource_params": null,
+        "type": 9
+      },
+      {
+        "id": 1448,
+        "quantity": 100,
+        "resource_params": null,
+        "type": 5
+      }
+    ],
+    "description": "{0}の上限解放（{1}回目）\n解放するとレベル上限を{2}上昇させます",
+    "enhance_target": 2,
+    "enhance_type": 2,
+    "id": 24,
+    "large_still_path_hash": 3986841297391464850,
+    "name": "デスウニコア",
+    "priority": 1008,
+    "start_at": "2026-07-03T03:00:00+00:00",
+    "still_path_hash": 5828653481351772235,
+    "support_character_ids": [
+      139,
+      138,
+      70,
+      35,
+      69
+    ],
+    "target_id": 10,
+    "value": 1
+  },
+  {
+    "costs": [
+      {
+        "id": 1,
+        "quantity": 2,
+        "resource_params": null,
+        "type": 9
+      },
+      {
+        "id": 1467,
+        "quantity": 10,
+        "resource_params": null,
+        "type": 5
+      }
+    ],
+    "description": "{0}の経験値＋{1}",
+    "enhance_target": 2,
+    "enhance_type": 1,
+    "id": 25,
+    "large_still_path_hash": 8977628155132138015,
+    "name": "パインシャード",
+    "priority": 15,
+    "start_at": "2026-07-31T03:00:00+00:00",
+    "still_path_hash": 1954952844079700934,
+    "support_character_ids": [
+      163,
+      162,
+      164,
+      214,
+      165
+    ],
+    "target_id": 11,
+    "value": 100
+  },
+  {
+    "costs": [
+      {
+        "id": 1,
+        "quantity": 20,
+        "resource_params": null,
+        "type": 9
+      },
+      {
+        "id": 1468,
+        "quantity": 100,
+        "resource_params": null,
+        "type": 5
+      }
+    ],
+    "description": "{0}の上限解放（{1}回目）\n解放するとレベル上限を{2}上昇させます",
+    "enhance_target": 2,
+    "enhance_type": 2,
+    "id": 26,
+    "large_still_path_hash": 101238809328963670,
+    "name": "パインコア",
+    "priority": 1009,
+    "start_at": "2026-07-31T03:00:00+00:00",
+    "still_path_hash": 7408489926040852879,
+    "support_character_ids": [
+      162,
+      107,
+      214,
+      163,
+      164
+    ],
+    "target_id": 11,
+    "value": 1
+  }
+]

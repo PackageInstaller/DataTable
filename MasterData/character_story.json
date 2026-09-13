@@ -1,0 +1,1545 @@
+[
+  {
+    "category_id": 7,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 6801001,
+    "key_quest_id": null,
+    "key_stories": [],
+    "key_tasks": [],
+    "name": "装飾屋ミーケの一日",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2025-07-25T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 6801001
+  },
+  {
+    "category_id": 7,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 6801002,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": null,
+        "id": 6801001
+      }
+    ],
+    "key_tasks": [],
+    "name": "役人の誘い",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2025-07-25T03:00:00+00:00",
+    "subsequent_branch": true,
+    "talk_event_id": 6801002
+  },
+  {
+    "category_id": 7,
+    "continuous_playback": true,
+    "end_at": null,
+    "id": 6801003,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": 3,
+        "id": 6801002
+      }
+    ],
+    "key_tasks": [],
+    "name": "【IF】“ミーケ”",
+    "rewards": [],
+    "start_at": "2025-07-25T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 6801003
+  },
+  {
+    "category_id": 7,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 6801004,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": 2,
+        "id": 6801002
+      }
+    ],
+    "key_tasks": [],
+    "name": "嵐",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2025-07-25T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 6801004
+  },
+  {
+    "category_id": 7,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 6801005,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": null,
+        "id": 6801004
+      }
+    ],
+    "key_tasks": [],
+    "name": "賭け",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2025-07-25T03:00:00+00:00",
+    "subsequent_branch": true,
+    "talk_event_id": 6801005
+  },
+  {
+    "category_id": 7,
+    "continuous_playback": true,
+    "end_at": null,
+    "id": 6801006,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": 3,
+        "id": 6801005
+      }
+    ],
+    "key_tasks": [],
+    "name": "【IF】ありふれた日常",
+    "rewards": [],
+    "start_at": "2025-07-25T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 6801006
+  },
+  {
+    "category_id": 8,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 6801007,
+    "key_quest_id": null,
+    "key_stories": [],
+    "key_tasks": [],
+    "name": "歌姫ディオーナの一日",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2025-07-25T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 6801007
+  },
+  {
+    "category_id": 8,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 6801008,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": null,
+        "id": 6801007
+      }
+    ],
+    "key_tasks": [],
+    "name": "満たされない日々",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2025-07-25T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 6801008
+  },
+  {
+    "category_id": 8,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 6801009,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": null,
+        "id": 6801008
+      }
+    ],
+    "key_tasks": [],
+    "name": "芽吹いた薔薇",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2025-07-25T03:00:00+00:00",
+    "subsequent_branch": true,
+    "talk_event_id": 6801009
+  },
+  {
+    "category_id": 8,
+    "continuous_playback": true,
+    "end_at": null,
+    "id": 6801010,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": 3,
+        "id": 6801009
+      }
+    ],
+    "key_tasks": [],
+    "name": "【IF】明るい未来",
+    "rewards": [],
+    "start_at": "2025-07-25T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 6801010
+  },
+  {
+    "category_id": 8,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 6801011,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": 2,
+        "id": 6801009
+      }
+    ],
+    "key_tasks": [],
+    "name": "あの人の正体",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2025-07-25T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 6801011
+  },
+  {
+    "category_id": 8,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 6801012,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": null,
+        "id": 6801011
+      }
+    ],
+    "key_tasks": [],
+    "name": "決断の時",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2025-07-25T03:00:00+00:00",
+    "subsequent_branch": true,
+    "talk_event_id": 6801012
+  },
+  {
+    "category_id": 8,
+    "continuous_playback": true,
+    "end_at": null,
+    "id": 6801013,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": 3,
+        "id": 6801012
+      }
+    ],
+    "key_tasks": [],
+    "name": "【IF】ドライフラワー",
+    "rewards": [],
+    "start_at": "2025-07-25T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 6801013
+  },
+  {
+    "category_id": 9,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 6801014,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": 2,
+        "id": 6801005
+      },
+      {
+        "condition": 2,
+        "id": 6801012
+      }
+    ],
+    "key_tasks": [],
+    "name": "新たな日常",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2025-07-25T03:00:00+00:00",
+    "subsequent_branch": true,
+    "talk_event_id": 6801014
+  },
+  {
+    "category_id": 9,
+    "continuous_playback": true,
+    "end_at": null,
+    "id": 6801015,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": 3,
+        "id": 6801014
+      }
+    ],
+    "key_tasks": [],
+    "name": "【IF】まだまだこれから！",
+    "rewards": [],
+    "start_at": "2025-07-25T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 6801015
+  },
+  {
+    "category_id": 9,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 6801016,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": 2,
+        "id": 6801014
+      }
+    ],
+    "key_tasks": [],
+    "name": "渇きの中で咲く花たち",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 100,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2025-07-25T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 6801016
+  },
+  {
+    "category_id": 7,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 6801017,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": 2,
+        "id": 6801005
+      }
+    ],
+    "key_tasks": [],
+    "name": "【小話】ビーッグな両親",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2025-07-25T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 6801017
+  },
+  {
+    "category_id": 7,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 6801018,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": null,
+        "id": 6801017
+      }
+    ],
+    "key_tasks": [],
+    "name": "【小話】ある船乗りの話",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2025-07-25T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 6801018
+  },
+  {
+    "category_id": 8,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 6801019,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": 2,
+        "id": 6801012
+      }
+    ],
+    "key_tasks": [],
+    "name": "【小話】情熱派歌手",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2025-07-25T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 6801019
+  },
+  {
+    "category_id": 8,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 6801020,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": null,
+        "id": 6801019
+      }
+    ],
+    "key_tasks": [],
+    "name": "【小話】ある騎士の話",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2025-07-25T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 6801020
+  },
+  {
+    "category_id": 10,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 6901001,
+    "key_quest_id": null,
+    "key_stories": [],
+    "key_tasks": [],
+    "name": "喧嘩屋マクダの一日",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2024-11-15T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 6901001
+  },
+  {
+    "category_id": 10,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 6901002,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": null,
+        "id": 6901001
+      }
+    ],
+    "key_tasks": [],
+    "name": "オリバーの指令",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2024-11-15T03:00:00+00:00",
+    "subsequent_branch": true,
+    "talk_event_id": 6901002
+  },
+  {
+    "category_id": 10,
+    "continuous_playback": true,
+    "end_at": null,
+    "id": 6901003,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": 3,
+        "id": 6901002
+      }
+    ],
+    "key_tasks": [],
+    "name": "【IF】戦いたかったぜ！",
+    "rewards": [],
+    "start_at": "2024-11-15T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 6901003
+  },
+  {
+    "category_id": 10,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 6901004,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": 2,
+        "id": 6901002
+      }
+    ],
+    "key_tasks": [],
+    "name": "みんなはどこだ？",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2024-11-15T03:00:00+00:00",
+    "subsequent_branch": true,
+    "talk_event_id": 6901004
+  },
+  {
+    "category_id": 10,
+    "continuous_playback": true,
+    "end_at": null,
+    "id": 6901005,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": 3,
+        "id": 6901004
+      }
+    ],
+    "key_tasks": [],
+    "name": "【IF】懲らしめてやんよ！",
+    "rewards": [],
+    "start_at": "2024-11-15T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 6901005
+  },
+  {
+    "category_id": 10,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 6901006,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": 2,
+        "id": 6901004
+      }
+    ],
+    "key_tasks": [],
+    "name": "怪しげな気配",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2024-11-15T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 6901006
+  },
+  {
+    "category_id": 11,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 6901007,
+    "key_quest_id": null,
+    "key_stories": [],
+    "key_tasks": [],
+    "name": "錬金爵ブラッドの一日",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2024-11-15T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 6901007
+  },
+  {
+    "category_id": 11,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 6901008,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": null,
+        "id": 6901007
+      }
+    ],
+    "key_tasks": [],
+    "name": "夢物語",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2024-11-15T03:00:00+00:00",
+    "subsequent_branch": true,
+    "talk_event_id": 6901008
+  },
+  {
+    "category_id": 11,
+    "continuous_playback": true,
+    "end_at": null,
+    "id": 6901009,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": 3,
+        "id": 6901008
+      }
+    ],
+    "key_tasks": [],
+    "name": "【IF】“氷のブラッド”",
+    "rewards": [],
+    "start_at": "2024-11-15T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 6901009
+  },
+  {
+    "category_id": 11,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 6901010,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": 2,
+        "id": 6901008
+      }
+    ],
+    "key_tasks": [],
+    "name": "傷跡残る湾岸地区",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2024-11-15T03:00:00+00:00",
+    "subsequent_branch": true,
+    "talk_event_id": 6901010
+  },
+  {
+    "category_id": 11,
+    "continuous_playback": true,
+    "end_at": null,
+    "id": 6901011,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": 3,
+        "id": 6901010
+      }
+    ],
+    "key_tasks": [],
+    "name": "【IF】停滞",
+    "rewards": [],
+    "start_at": "2024-11-15T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 6901011
+  },
+  {
+    "category_id": 11,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 6901012,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": 2,
+        "id": 6901010
+      }
+    ],
+    "key_tasks": [],
+    "name": "貴重な人材",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2024-11-15T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 6901012
+  },
+  {
+    "category_id": 12,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 6901013,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": null,
+        "id": 6901006
+      },
+      {
+        "condition": null,
+        "id": 6901012
+      }
+    ],
+    "key_tasks": [],
+    "name": "共同戦線",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2024-11-15T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 6901013
+  },
+  {
+    "category_id": 12,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 6901014,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": null,
+        "id": 6901013
+      }
+    ],
+    "key_tasks": [],
+    "name": "身辺調査",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2024-11-15T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 6901014
+  },
+  {
+    "category_id": 12,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 6901015,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": null,
+        "id": 6901014
+      }
+    ],
+    "key_tasks": [],
+    "name": "食事のお誘い",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2024-11-15T03:00:00+00:00",
+    "subsequent_branch": true,
+    "talk_event_id": 6901015
+  },
+  {
+    "category_id": 12,
+    "continuous_playback": true,
+    "end_at": null,
+    "id": 6901016,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": 3,
+        "id": 6901015
+      }
+    ],
+    "key_tasks": [],
+    "name": "【IF】仕事上の付き合い",
+    "rewards": [],
+    "start_at": "2024-11-15T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 6901016
+  },
+  {
+    "category_id": 12,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 6901017,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": 2,
+        "id": 6901015
+      }
+    ],
+    "key_tasks": [],
+    "name": "混沌と規律の邂逅",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 100,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2024-11-15T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 6901017
+  },
+  {
+    "category_id": 10,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 6901018,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": null,
+        "id": 6901006
+      }
+    ],
+    "key_tasks": [],
+    "name": "【小話】音楽と人生",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2024-11-22T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 6901018
+  },
+  {
+    "category_id": 10,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 6901019,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": null,
+        "id": 6901018
+      }
+    ],
+    "key_tasks": [],
+    "name": "【小話】意外と家庭的？",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2024-11-22T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 6901019
+  },
+  {
+    "category_id": 11,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 6901020,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": null,
+        "id": 6901012
+      }
+    ],
+    "key_tasks": [],
+    "name": "【小話】負けず嫌い",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2024-11-22T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 6901020
+  },
+  {
+    "category_id": 11,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 6901021,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": null,
+        "id": 6901020
+      }
+    ],
+    "key_tasks": [],
+    "name": "【小話】一枚上手",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2024-11-22T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 6901021
+  },
+  {
+    "category_id": 11,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 6901022,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": null,
+        "id": 6901021
+      }
+    ],
+    "key_tasks": [],
+    "name": "【小話】後始末",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2024-11-22T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 6901022
+  },
+  {
+    "category_id": 13,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 12001001,
+    "key_quest_id": null,
+    "key_stories": [],
+    "key_tasks": [],
+    "name": "キカイ島",
+    "rewards": [
+      {
+        "id": 45402,
+        "quantity": 1,
+        "resource_params": null,
+        "type": 4
+      }
+    ],
+    "start_at": "2025-09-12T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 12001001
+  },
+  {
+    "category_id": 13,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 12001002,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": null,
+        "id": 12001001
+      }
+    ],
+    "key_tasks": [],
+    "name": "様子のおかしい島民たち",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2025-09-12T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 12001002
+  },
+  {
+    "category_id": 13,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 12001003,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": null,
+        "id": 12001002
+      }
+    ],
+    "key_tasks": [],
+    "name": "甘露に癒されて",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2025-09-12T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 12001003
+  },
+  {
+    "category_id": 13,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 12001004,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": null,
+        "id": 12001003
+      }
+    ],
+    "key_tasks": [
+      {
+        "condition_id": 1973,
+        "count": 200,
+        "name": "イベントポイントを200入手\n"
+      }
+    ],
+    "name": "おもてなし",
+    "rewards": [
+      {
+        "id": 1139,
+        "quantity": 1,
+        "resource_params": null,
+        "type": 5
+      }
+    ],
+    "start_at": "2025-09-12T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 12001004
+  },
+  {
+    "category_id": 14,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 12001005,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": null,
+        "id": 12001004
+      }
+    ],
+    "key_tasks": [],
+    "name": "仙人の実を探しに",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2025-09-12T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 12001005
+  },
+  {
+    "category_id": 14,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 12001006,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": null,
+        "id": 12001005
+      }
+    ],
+    "key_tasks": [],
+    "name": "イェルカの過去",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2025-09-12T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 12001006
+  },
+  {
+    "category_id": 14,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 12001007,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": null,
+        "id": 12001006
+      }
+    ],
+    "key_tasks": [],
+    "name": "管理対象",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2025-09-12T03:00:00+00:00",
+    "subsequent_branch": true,
+    "talk_event_id": 12001007
+  },
+  {
+    "category_id": 14,
+    "continuous_playback": true,
+    "end_at": null,
+    "id": 12001008,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": 3,
+        "id": 12001007
+      }
+    ],
+    "key_tasks": [],
+    "name": "親の仇",
+    "rewards": [],
+    "start_at": "2025-09-12T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 12001008
+  },
+  {
+    "category_id": 14,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 12001009,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": 2,
+        "id": 12001007
+      }
+    ],
+    "key_tasks": [
+      {
+        "condition_id": 1973,
+        "count": 600,
+        "name": "イベントポイントを600入手\n"
+      }
+    ],
+    "name": "小さい命",
+    "rewards": [
+      {
+        "id": 1140,
+        "quantity": 1,
+        "resource_params": null,
+        "type": 5
+      }
+    ],
+    "start_at": "2025-09-12T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 12001009
+  },
+  {
+    "category_id": 15,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 12001010,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": null,
+        "id": 12001004
+      }
+    ],
+    "key_tasks": [],
+    "name": "魔物を打ち倒しに",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2025-09-19T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 12001010
+  },
+  {
+    "category_id": 15,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 12001011,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": null,
+        "id": 12001010
+      }
+    ],
+    "key_tasks": [],
+    "name": "ゴゥの思い出",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2025-09-19T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 12001011
+  },
+  {
+    "category_id": 15,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 12001012,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": null,
+        "id": 12001011
+      }
+    ],
+    "key_tasks": [],
+    "name": "少年の好奇心",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2025-09-19T03:00:00+00:00",
+    "subsequent_branch": true,
+    "talk_event_id": 12001012
+  },
+  {
+    "category_id": 15,
+    "continuous_playback": true,
+    "end_at": null,
+    "id": 12001013,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": 3,
+        "id": 12001012
+      }
+    ],
+    "key_tasks": [],
+    "name": "助けてお兄ちゃん",
+    "rewards": [],
+    "start_at": "2025-09-19T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 12001013
+  },
+  {
+    "category_id": 15,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 12001014,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": 2,
+        "id": 12001012
+      }
+    ],
+    "key_tasks": [
+      {
+        "condition_id": 1973,
+        "count": 800,
+        "name": "イベントポイントを800入手"
+      }
+    ],
+    "name": "命の優先順位",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2025-09-19T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 12001014
+  },
+  {
+    "category_id": 13,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 12001015,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": null,
+        "id": 12001009
+      },
+      {
+        "condition": null,
+        "id": 12001014
+      }
+    ],
+    "key_tasks": [],
+    "name": "集落への襲撃",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2025-09-19T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 12001015
+  },
+  {
+    "category_id": 13,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 12001016,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": null,
+        "id": 12001015
+      }
+    ],
+    "key_tasks": [],
+    "name": "鬼界島",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2025-09-19T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 12001016
+  },
+  {
+    "category_id": 13,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 12001017,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": null,
+        "id": 12001016
+      }
+    ],
+    "key_tasks": [],
+    "name": "「粋」とは",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2025-09-19T03:00:00+00:00",
+    "subsequent_branch": true,
+    "talk_event_id": 12001017
+  },
+  {
+    "category_id": 13,
+    "continuous_playback": true,
+    "end_at": null,
+    "id": 12001018,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": 3,
+        "id": 12001017
+      }
+    ],
+    "key_tasks": [],
+    "name": "意地っ張り",
+    "rewards": [],
+    "start_at": "2025-09-19T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 12001018
+  },
+  {
+    "category_id": 13,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 12001019,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": 2,
+        "id": 12001017
+      }
+    ],
+    "key_tasks": [
+      {
+        "condition_id": 1973,
+        "count": 1000,
+        "name": "イベントポイントを1000入手"
+      }
+    ],
+    "name": "相容れない思想",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2025-09-19T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 12001019
+  },
+  {
+    "category_id": 13,
+    "continuous_playback": false,
+    "end_at": null,
+    "id": 12001020,
+    "key_quest_id": null,
+    "key_stories": [
+      {
+        "condition": null,
+        "id": 12001019
+      }
+    ],
+    "key_tasks": [
+      {
+        "condition_id": 1973,
+        "count": 1000,
+        "name": "イベントポイントを1000入手"
+      },
+      {
+        "condition_id": 1980,
+        "count": 1,
+        "name": "きょうだいゲンカをクリア"
+      }
+    ],
+    "name": "悔いはない",
+    "rewards": [
+      {
+        "id": 1,
+        "quantity": 50,
+        "resource_params": null,
+        "type": 1
+      }
+    ],
+    "start_at": "2025-09-19T03:00:00+00:00",
+    "subsequent_branch": false,
+    "talk_event_id": 12001020
+  }
+]

@@ -1,0 +1,215 @@
+[
+  {
+    "ally_max_max_hp": 9999999,
+    "atelier_research_navigation_character_id": 4,
+    "base_coef_for_main_memoria": 500,
+    "battle_tool_mix_minimum_skill_power": 40,
+    "battle_tool_mix_rank_threshold_all": 500,
+    "battle_tool_mix_rank_threshold_single": 600,
+    "battle_tool_mix_skill_power_coefficient": 200,
+    "battle_tool_trait_count": 3,
+    "bomb_gauge_recovery_amount": 100,
+    "bulk_synthesis_max_count": 100,
+    "burst_gauge_heal_active_skill": 15,
+    "burst_gauge_heal_additional_attack": 15,
+    "burst_gauge_heal_counter": 15,
+    "burst_gauge_heal_extra": 15,
+    "burst_gauge_heal_normal1": 10,
+    "burst_gauge_heal_normal2": 20,
+    "burst_gauge_required_for_one_burst_skill": 100,
+    "chapter_pack_shop_id": 20,
+    "chara_home_slot_max_count": 5,
+    "character_enhancement_cole_per_exp_rate": 10,
+    "character_enhancement_reset_item_id": 241,
+    "character_enhancement_reset_item_required_level": 41,
+    "character_level_limit_release_item_id": 724,
+    "combat_power_base": 70,
+    "combat_power_hp_coefficient_permyriad": 1500,
+    "combat_power_skill_level_sum_coefficients_permyriad": [
+      500,
+      541,
+      583,
+      625,
+      666,
+      708,
+      750,
+      791,
+      833,
+      875,
+      916,
+      958,
+      1000,
+      1041
+    ],
+    "combat_power_status_coefficient_permyriad": 5500,
+    "dead_allies_count_weight": 15,
+    "dish_charge_minutes": [
+      720,
+      1080
+    ],
+    "dish_threshold_idleness": 11,
+    "display_skill_wait_offset": 200,
+    "dying_hp_rate": 25,
+    "easy_synthesis_max_count": 100,
+    "enemy_weak_level_max": 2,
+    "episode_skip_start_at": "2025-09-12T03:00:00+00:00",
+    "equipment_preset_count": 30,
+    "equipment_preset_initial_name_i18n": {
+      "ja": "装備プリセット{}"
+    },
+    "equipment_preset_max_name_length": 11,
+    "equipment_tool_trait_count": 2,
+    "event_revival_cost_item_id": 389,
+    "excluded_character_in_mod_timelime": [
+      70101,
+      70201
+    ],
+    "expedition_interval_seconds": 60,
+    "expedition_max_hours": 24,
+    "gacha_medal_per_draw": 1,
+    "growboard_ex_max_page": 3,
+    "growboard_neo_unlock_condition_count": 3,
+    "id": 1,
+    "initial_bomb_gauge": 0,
+    "initial_character_level_limit": 10,
+    "initial_party_max_battle_tool_count": 2,
+    "kt_store_transition_url": "",
+    "mail_expiration_days": 90,
+    "mail_opened_keep_days": 30,
+    "main_character_ids": [
+      10,
+      11
+    ],
+    "main_memoria_multi_discount_coef": [
+      10000,
+      10000,
+      10000,
+      7000,
+      6000,
+      5000,
+      4000
+    ],
+    "mana_per_purchase": 1,
+    "mana_purchase_cost": 10,
+    "mana_recovery_interval_seconds": 3600,
+    "mana_recovery_limit": 20,
+    "max_battle_tool_count": 9999,
+    "max_bomb_gauge": 1000,
+    "max_character_piece": 9999999,
+    "max_coef_per_one_memoria": 1500,
+    "max_cole": 999999999,
+    "max_communication_story_number": 5,
+    "max_dealt_hp_damage_weight": 25,
+    "max_equipment_tool_count": 9999,
+    "max_exploration_repeat_count": 99,
+    "max_free_communication_story_number": 1,
+    "max_free_gem": 9999999,
+    "max_mana": 999,
+    "max_memoria_count": 9999,
+    "max_paid_gem": 9999999,
+    "max_party_gauge": 1000,
+    "max_spare_stamina": 3000,
+    "max_special_offer_days": 0,
+    "max_stamina": 1500,
+    "max_status": 99999,
+    "max_synthesis_rental_rank": 3,
+    "max_trait_stimulator": 9999999,
+    "memoria_enhancement_cole_per_exp_rate": 100,
+    "memoria_exp_return_rate": 100,
+    "memoria_match_bonus_coef": [
+      0,
+      200,
+      400
+    ],
+    "mission_pass_point_purchase_min_lot": 10,
+    "mission_pass_point_purchase_one_lot_cost": 10,
+    "mod_timelime_gender_height_offset": 20,
+    "number_of_keys_required_communication_release": 1,
+    "party_count_per_content": 10,
+    "party_params": [
+      {
+        "battle_tool_count_offset": 0,
+        "party_type": 1
+      },
+      {
+        "battle_tool_count_offset": 2,
+        "party_type": 2
+      },
+      {
+        "battle_tool_count_offset": 0,
+        "party_type": 6
+      }
+    ],
+    "piece_exchange_quantity_table": [
+      {
+        "purchase_count": 25,
+        "quantity": 1
+      },
+      {
+        "purchase_count": 50,
+        "quantity": 2
+      },
+      {
+        "purchase_count": 75,
+        "quantity": 3
+      },
+      {
+        "purchase_count": 100,
+        "quantity": 4
+      },
+      {
+        "purchase_count": null,
+        "quantity": 5
+      }
+    ],
+    "piece_exchange_unavailable_character_ids": [
+      43101,
+      43201,
+      29401,
+      33001,
+      25901
+    ],
+    "profile_initial_favorite_character_id": 43101,
+    "profile_max_memo_length": 60,
+    "profile_max_name_length": 11,
+    "random_shop_refresh_limit_seconds": 60,
+    "received_hp_damage_weight": 25,
+    "regular_login_bonus_display_days": 10,
+    "required_character_level_for_neo": 90,
+    "required_dev_research_level_for_neo": 40,
+    "resist_threshold": 25,
+    "resistance_state_change_ids": [
+      940005,
+      940004,
+      940007,
+      940002,
+      940006,
+      940001,
+      910059,
+      610052
+    ],
+    "shop_first_purchase_bonus_memoria_id": 30018,
+    "skill_evolve_enable_rarity": 8,
+    "skill_target_mode_suffix_random": "[ランダム]",
+    "skill_target_mode_suffix_sniping": "[狙い撃ち]",
+    "skippable_episode_priority_diff": 2,
+    "spare_stamina_recovery_interval_seconds": 900,
+    "stamina_per_purchase": 80,
+    "stamina_recovery_interval_seconds": 300,
+    "sub_memoria_limit_break_bonus_coef": [
+      100,
+      200,
+      300,
+      500,
+      700
+    ],
+    "synthesis_rental_count_daily_limit": 10,
+    "timeline_panel_count": 10,
+    "tool_coin_ids": [
+      134
+    ],
+    "total_turn_weight": 35,
+    "turn_max_battle_tool_count": 3,
+    "tutorial_gacha_id": 2
+  }
+]
