@@ -17,7 +17,7 @@ git clone -b game/xxxxx --single-branch --depth 1 https://github.com/PackageInst
 | `game/AnchorPanic` | AnchorPanic | 锚点降临 |
 | `game/AngelicaAsterR` | AngelicaAsterR | 当归紫苑 |
 | `game/AssaultLilyLastBullet` | AssaultLilyLastBullet | 突击莉莉 |
-| `game/AtelierResleriana` | AtelierResleriana |
+| `game/AtelierResleriana` | AtelierResleriana | 红色的炼金术士和白色的守护者 ～蕾斯莱莉娅娜的炼金工房 |
 | `game/AzurLane` | AzurLane | 碧蓝航线 |
 | `game/BlackBeacon` | BlackBeacon | 黑色信标 |
 | `game/CatFantasy` | CatFantasy | 猫之城 |
