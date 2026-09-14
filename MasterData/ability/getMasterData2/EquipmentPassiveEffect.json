@@ -812,6 +812,20 @@
   "iconName": "ab10001"
  },
  {
+  "skillId": 318701010,
+  "level": 6,
+  "name": "雷属性の味方のATK UP、コンボ加算を付与",
+  "text": "雷属性の味方のATKを10%UPし、アビリティダメージ上限を5%UPし、コンボ加算(+2)を付与する",
+  "effectGroupId": 7110186,
+  "successRates": "1:100,2:100,3:100",
+  "conditions": "1:1004,2:1004,3:1004",
+  "powerRates": "1:110,2:2,3:105",
+  "upValues": "1:0,2:0,3:0",
+  "turns": "1:0,2:0,3:0",
+  "effectCounts": "",
+  "iconName": "ab10001"
+ },
+ {
   "skillId": 318701020,
   "level": 1,
   "name": "",
@@ -878,6 +892,20 @@
   "powerRates": "1:110,2:2",
   "upValues": "1:0,2:0",
   "turns": "1:0,2:0",
+  "effectCounts": "",
+  "iconName": "ab10002"
+ },
+ {
+  "skillId": 318701020,
+  "level": 6,
+  "name": "雷属性の味方のMATK UP、コンボ加算を付与",
+  "text": "雷属性の味方のMATKを10%UPし、アビリティダメージ上限を5%UPし、コンボ加算(+2)を付与する",
+  "effectGroupId": 7110286,
+  "successRates": "1:100,2:100,3:100",
+  "conditions": "1:1004,2:1004,3:1004",
+  "powerRates": "1:110,2:2,3:105",
+  "upValues": "1:0,2:0,3:0",
+  "turns": "1:0,2:0,3:0",
   "effectCounts": "",
   "iconName": "ab10002"
  },
@@ -1170,6 +1198,20 @@
   "successRates": "1:100,2:100",
   "conditions": "1:1006,2:5021",
   "powerRates": "1:105,2:110",
+  "upValues": "1:0,2:0",
+  "turns": "1:0,2:0",
+  "effectCounts": "",
+  "iconName": "ab10001"
+ },
+ {
+  "skillId": 231701020,
+  "level": 2,
+  "name": "",
+  "text": "闇属性の味方の闇属性ダメージ上限を5%UPする。\r\n「セト」が装備している場合、追加で15%UPする",
+  "effectGroupId": 7102031,
+  "successRates": "1:100,2:100",
+  "conditions": "1:1006,2:5021",
+  "powerRates": "1:105,2:115",
   "upValues": "1:0,2:0",
   "turns": "1:0,2:0",
   "effectCounts": "",

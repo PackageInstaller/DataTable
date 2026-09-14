@@ -1,9 +1,11 @@
 from __future__ import annotations
 
+import argparse
 import base64
 import hashlib
 import json
 import os
+import re
 import shutil
 import sys
 import tempfile
@@ -36,7 +38,6 @@ try:
 except ImportError:
     fcntl = None
 
-
 VERSION_URL = (
     "https://minasigo-no-shigoto-app-g-server.orphans-order.com/mnsg/user/getVersion"
 )
@@ -46,6 +47,7 @@ RESOURCE_BASE = "https://minasigo-no-shigoto-pd-native-res.orphans-order.com"
 ROOT = Path(__file__).resolve().parent
 ASSET_DIR = ROOT / "Assets"
 MASTER_DATA_DIR = ROOT / "MasterData"
+PAINTING_DIR = ROOT / "Painting"
 LOCK_FILE = Path(tempfile.gettempdir()) / (
     "mnsg_" + hashlib.md5(str(ROOT).encode("utf-8")).hexdigest()[:12] + ".lock"
 )
@@ -54,7 +56,6 @@ THREADS = 16
 MAX_RETRIES = 5
 CHUNK_SIZE = 256 * 1024
 
-# index.518a3.js ApiConstants
 MASTER_ENDPOINTS: List[str] = [
     "myPage/getMasterData",
     "user/getMasterData",
@@ -105,6 +106,12 @@ MASTER_ENDPOINTS: List[str] = [
     "questionnaire/getMasterData",
     "event/getEventGroupMasterData",
 ]
+
+PAINTING_PATTERNS = [
+    "image/character/stand/",
+    "images/character/stand/",
+]
+
 console = Console()
 
 _THREAD_LOCAL = threading.local()
@@ -116,7 +123,6 @@ class DownloadError(Exception):
 
 
 def _thread_session() -> requests.Session:
-    """每个工作线程一个 Session, 避免 requests 线程安全问题."""
     session = getattr(_THREAD_LOCAL, "session", None)
     if session is None:
         session = requests.Session()
@@ -181,7 +187,6 @@ def md5_file(path: Path) -> str:
 
 
 def _clean_value(value: Any) -> Any:
-    """把 msgpack 特殊类型转成可 JSON 序列化的值."""
     if isinstance(value, bytes):
         return value.hex()
     if isinstance(value, msgpack.ExtType):
@@ -229,7 +234,6 @@ def decrypt_manifest(data: bytes) -> Dict[str, Any]:
     candidates = []
     try:
         from Crypto.Util.Padding import unpad
-
         candidates.append(unpad(decrypted, 16))
     except Exception:
         pass
@@ -282,7 +286,6 @@ def select_asset_entry(entry: Dict[str, Any]) -> Tuple[str, Dict[str, Any]]:
 
 
 def convert_md5_path(asset_path: str, stem: str) -> str:
-    """还原 Cocos 的 MD5 分目录路径."""
     e = hashlib.md5(asset_path.encode()).hexdigest()
     s = hashlib.md5(stem.encode()).hexdigest()
     first = s[0]
@@ -352,46 +355,26 @@ def _download_asset_worker(
                     resp.raise_for_status()
                     with tmp_path.open("wb") as f:
                         for chunk in resp.iter_content(CHUNK_SIZE):
-                            if not chunk:
-                                continue
-                            f.write(chunk)
-                            hasher.update(chunk)
-                            progress.update(bytes_task, advance=len(chunk))
-                if hasher.hexdigest() != item["md5"]:
-                    raise DownloadError(
-                        f"MD5 不匹配, 期望 {item['md5']}, 实际 {hasher.hexdigest()}"
-                    )
-                os.replace(tmp_path, local)
-                progress.update(files_task, advance=1)
-                return "ok", path
+                            if chunk:
+                                f.write(chunk)
+                                hasher.update(chunk)
+                                progress.update(bytes_task, advance=len(chunk))
+                if hasher.hexdigest() == item["md5"]:
+                    tmp_path.replace(local)
+                    progress.update(files_task, advance=1)
+                    return "ok", path
+                else:
+                    last_error = Exception("MD5 mismatch")
             except Exception as exc:
                 last_error = exc
-                tmp_path.unlink(missing_ok=True)
                 if attempt < MAX_RETRIES:
-                    time.sleep(min(2 ** (attempt - 1), 15))
-        raise DownloadError(f"{last_error}")
+                    time.sleep(min(2 ** (attempt - 1), 10))
+        raise DownloadError(f"{path}: {last_error}")
     except Exception as exc:
         with fail_lock:
             failures.append((path, str(exc)))
         progress.update(files_task, advance=1)
         return "fail", path
-
-
-def cleanup_temp_files() -> int:
-    """清理上次异常退出留下的临时文件."""
-    removed = 0
-    patterns = ["*.part", "*.tmp"]
-    for base in (ASSET_DIR, MASTER_DATA_DIR):
-        if not base.is_dir():
-            continue
-        for pattern in patterns:
-            for path in base.rglob(pattern):
-                try:
-                    path.unlink()
-                    removed += 1
-                except OSError:
-                    pass
-    return removed
 
 
 def _fetch_master_endpoint(
@@ -497,7 +480,18 @@ def _acquire_lock() -> Optional[Any]:
     return fd
 
 
-def main() -> int:
+def cleanup_temp_files() -> int:
+    count = 0
+    for tmp in ROOT.glob(".*.part"):
+        try:
+            tmp.unlink()
+            count += 1
+        except OSError:
+            pass
+    return count
+
+
+def cmd_all(args) -> int:
     lock_fd = _acquire_lock()
     if lock_fd is None:
         console.print("[red]已有下载器在运行, 本次退出。[/red]")
@@ -645,6 +639,521 @@ def main() -> int:
             except Exception:
                 pass
             lock_fd.close()
+
+
+def cmd_assets(args) -> int:
+    lock_fd = _acquire_lock()
+    if lock_fd is None:
+        console.print("[red]已有下载器在运行, 本次退出。[/red]")
+        return 1
+
+    try:
+        ASSET_DIR.mkdir(parents=True, exist_ok=True)
+        removed_tmp = cleanup_temp_files()
+        if removed_tmp:
+            console.print(f"清理上次残留临时文件: {removed_tmp} 个")
+
+        stats = {"ok": 0, "skip": 0, "fail": 0}
+        failures: List[Tuple[str, str]] = []
+        fail_lock = threading.Lock()
+
+        with Progress(
+            SpinnerColumn(),
+            TextColumn("[progress.description]{task.description}"),
+            BarColumn(),
+            MofNCompleteColumn(),
+            DownloadColumn(),
+            TransferSpeedColumn(),
+            TimeRemainingColumn(),
+            console=console,
+            transient=True,
+        ) as progress:
+            version_task = progress.add_task("检查版本", total=1)
+            manifest_task = progress.add_task("获取资源清单", total=1)
+
+            version = fetch_version(_thread_session())
+            set_app_version_headers(_thread_session(), version)
+            resource_version = version.get("resourceVersion") or version.get(
+                "requireResourceVersion", ""
+            )
+            progress.update(version_task, completed=1)
+            progress.remove_task(version_task)
+            console.print(f"resource={resource_version}")
+
+            manifest = fetch_manifest(_thread_session(), resource_version)
+            progress.update(manifest_task, completed=1)
+            progress.remove_task(manifest_task)
+
+            asset_count = len(manifest.get("assets", {}))
+            sizes = manifest.get("sizes", {})
+            total_bytes = int(sizes.get("0", 0)) + int(sizes.get("3", 0))
+
+            asset_bytes_task = progress.add_task(
+                "全资产字节", total=total_bytes if total_bytes else None
+            )
+            asset_files_task = progress.add_task("全资产文件", total=asset_count)
+            asset_items = [
+                build_asset_item(path, entry, resource_version)
+                for path, entry in manifest.get("assets", {}).items()
+            ]
+
+            with ThreadPoolExecutor(
+                max_workers=THREADS, thread_name_prefix="mnsg-assets"
+            ) as pool:
+                futures = []
+                for item in asset_items:
+                    futures.append(
+                        pool.submit(
+                            _download_asset_worker,
+                            item,
+                            progress,
+                            asset_bytes_task,
+                            asset_files_task,
+                            failures,
+                            fail_lock,
+                        )
+                    )
+
+                for future in as_completed(futures):
+                    try:
+                        result, _ = future.result()
+                    except Exception as exc:
+                        with fail_lock:
+                            failures.append(("资产线程", str(exc)))
+                        stats["fail"] += 1
+                        continue
+                    stats[f"{result}"] += 1
+            progress.remove_task(asset_bytes_task)
+            progress.remove_task(asset_files_task)
+
+        console.print(
+            f"[green]完成[/green]: 新增 {stats['ok']}, 跳过 {stats['skip']}, 失败 {stats['fail']}"
+        )
+        if failures:
+            console.print("[yellow]失败清单(前 50):[/yellow]")
+            for name, err in failures[:50]:
+                console.print(f"  [red]{name}[/red]: {err}")
+            return 1
+        return 0
+    finally:
+        if lock_fd is not None:
+            try:
+                fcntl.flock(lock_fd.fileno(), fcntl.LOCK_UN)
+            except Exception:
+                pass
+            lock_fd.close()
+
+
+def cmd_data(args) -> int:
+    lock_fd = _acquire_lock()
+    if lock_fd is None:
+        console.print("[red]已有下载器在运行, 本次退出。[/red]")
+        return 1
+
+    try:
+        MASTER_DATA_DIR.mkdir(parents=True, exist_ok=True)
+
+        stats = {"ok": 0, "fail": 0}
+        failures: List[Tuple[str, str]] = []
+        fail_lock = threading.Lock()
+
+        with Progress(
+            SpinnerColumn(),
+            TextColumn("[progress.description]{task.description}"),
+            BarColumn(),
+            MofNCompleteColumn(),
+            DownloadColumn(),
+            TransferSpeedColumn(),
+            TimeRemainingColumn(),
+            console=console,
+            transient=True,
+        ) as progress:
+            version_task = progress.add_task("检查版本", total=1)
+            version = fetch_version(_thread_session())
+            set_app_version_headers(_thread_session(), version)
+            progress.update(version_task, completed=1)
+            progress.remove_task(version_task)
+            console.print(
+                f"client={version.get('clientVersion')} "
+                f"master={version.get('masterVersion')}"
+            )
+
+            master_count_task = progress.add_task(
+                "数据表接口", total=len(MASTER_ENDPOINTS)
+            )
+            master_bytes_task = progress.add_task("数据表字节", total=None)
+
+            with ThreadPoolExecutor(
+                max_workers=THREADS, thread_name_prefix="mnsg-data"
+            ) as pool:
+                futures = []
+                for endpoint in MASTER_ENDPOINTS:
+                    futures.append(
+                        pool.submit(
+                            _master_endpoint_worker,
+                            endpoint,
+                            version,
+                            progress,
+                            master_count_task,
+                            master_bytes_task,
+                            failures,
+                            fail_lock,
+                        )
+                    )
+
+                for future in as_completed(futures):
+                    try:
+                        result, _ = future.result()
+                    except Exception as exc:
+                        with fail_lock:
+                            failures.append(("数据表线程", str(exc)))
+                        stats["fail"] += 1
+                        continue
+                    stats[f"{result}"] += 1
+            progress.remove_task(master_count_task)
+            progress.remove_task(master_bytes_task)
+
+        console.print(
+            f"[green]完成[/green]: 新增 {stats['ok']}, 失败 {stats['fail']}"
+        )
+        if failures:
+            console.print("[yellow]失败清单(前 50):[/yellow]")
+            for name, err in failures[:50]:
+                console.print(f"  [red]{name}[/red]: {err}")
+            return 1
+        return 0
+    finally:
+        if lock_fd is not None:
+            try:
+                fcntl.flock(lock_fd.fileno(), fcntl.LOCK_UN)
+            except Exception:
+                pass
+            lock_fd.close()
+
+
+GAME_TITLE = "孤儿的工作"
+CHARACTER_MAIN_TABLE = MASTER_DATA_DIR / "character" / "getMasterData1" / "CharacterMain.json"
+_BRACKET_NAME_RE = re.compile(r"^【([^】]+)】(.+)$")
+
+
+def _safe_fs_name(text: str) -> str:
+    table = str.maketrans(
+        {
+            "/": "／",
+            "\\": "＼",
+            ":": "：",
+            "*": "＊",
+            "?": "？",
+            '"': "'",
+            "<": "＜",
+            ">": "＞",
+            "|": "｜",
+            "\n": "",
+            "\r": "",
+            "\t": " ",
+        }
+    )
+    out = text.translate(table).strip()
+    return out or "未知"
+
+
+def _is_painting_asset(asset_path: str) -> bool:
+    normalized = asset_path.replace("\\", "/").lower()
+    for pattern in PAINTING_PATTERNS:
+        if normalized.startswith(pattern) and normalized.endswith("03.png"):
+            return True
+    return False
+
+
+def load_character_names() -> Dict[str, Dict[str, Any]]:
+    if not CHARACTER_MAIN_TABLE.is_file():
+        raise FileNotFoundError(f"缺角色表 {CHARACTER_MAIN_TABLE}，先跑 data/masterdata")
+    rows = json.loads(CHARACTER_MAIN_TABLE.read_text(encoding="utf-8"))
+    if not isinstance(rows, list):
+        raise ValueError(f"角色表格式异常: {CHARACTER_MAIN_TABLE}")
+    return {str(row.get("characterId", "")).strip(): row for row in rows}
+
+
+def split_character_name(name: str) -> Tuple[str, str]:
+    """【皮肤/变体】角色 -> (角色, 皮肤/变体)；无括号时皮肤为默认。"""
+    name = (name or "").strip()
+    match = _BRACKET_NAME_RE.match(name)
+    if match:
+        return match.group(2).strip(), match.group(1).strip()
+    return name, "默认"
+
+
+def resolve_painting_name(
+    asset_path: str,
+    characters: Dict[str, Dict[str, Any]],
+) -> Tuple[str, str, bool]:
+    stem = Path(asset_path.replace("\\", "/")).stem
+    character_id = stem[:6]
+    row = characters.get(character_id)
+    if row:
+        cha, skin = split_character_name(str(row.get("name") or ""))
+        return cha, skin, True
+
+    # 兜底：同 3 位前缀里找无皮肤前缀的基础角色
+    parent = character_id[:3]
+    for row in characters.values():
+        cid = str(row.get("characterId", ""))
+        name = str(row.get("name") or "")
+        if cid.startswith(parent) and not _BRACKET_NAME_RE.match(name):
+            cha, _ = split_character_name(name)
+            return cha, character_id, False
+    return character_id, character_id, False
+
+
+def painting_filename(cha: str, skin: str, used: set) -> str:
+    parts = [GAME_TITLE, _safe_fs_name(cha), _safe_fs_name(skin)]
+    base = "_".join(parts) + ".png"
+    if base not in used:
+        used.add(base)
+        return base
+    n = 2
+    while True:
+        name = "_".join(parts + [str(n)]) + ".png"
+        if name not in used:
+            used.add(name)
+            return name
+        n += 1
+
+
+def _download_painting_worker(
+    item: Dict[str, Any],
+    progress: Progress,
+    bytes_task: TaskID,
+    files_task: TaskID,
+    failures: List[Tuple[str, str]],
+    fail_lock: threading.Lock,
+    used_names: set,
+    name_lock: threading.Lock,
+) -> Tuple[str, str]:
+    path = item["path"]
+    cha, skin, _hit = resolve_painting_name(path, item["characters"])
+    with name_lock:
+        fname = painting_filename(cha, skin, used_names)
+    local = PAINTING_DIR / fname
+
+    try:
+        session = _thread_session()
+        local.parent.mkdir(parents=True, exist_ok=True)
+        if local.is_file():
+            try:
+                if md5_file(local) == item["md5"]:
+                    progress.update(files_task, advance=1)
+                    return "skip", fname
+            except OSError:
+                pass
+
+        tmp_path = local.with_name(
+            f".{local.name}.{os.getpid()}.{threading.get_ident()}.{uuid.uuid4().hex[:8]}.part"
+        )
+        last_error: Optional[Exception] = None
+        for attempt in range(1, MAX_RETRIES + 1):
+            tmp_path.unlink(missing_ok=True)
+            try:
+                hasher = hashlib.md5()
+                with session.get(item["url"], stream=True, timeout=(10, 120)) as resp:
+                    resp.raise_for_status()
+                    with tmp_path.open("wb") as f:
+                        for chunk in resp.iter_content(CHUNK_SIZE):
+                            if chunk:
+                                f.write(chunk)
+                                hasher.update(chunk)
+                                progress.update(bytes_task, advance=len(chunk))
+                if hasher.hexdigest() == item["md5"]:
+                    tmp_path.replace(local)
+                    progress.update(files_task, advance=1)
+                    return "ok", fname
+                else:
+                    last_error = Exception("MD5 mismatch")
+            except Exception as exc:
+                last_error = exc
+                if attempt < MAX_RETRIES:
+                    time.sleep(min(2 ** (attempt - 1), 10))
+        raise DownloadError(f"{fname}: {last_error}")
+    except Exception as exc:
+        with fail_lock:
+            failures.append((fname, str(exc)))
+        progress.update(files_task, advance=1)
+        return "fail", fname
+
+
+def cmd_painting(args) -> int:
+    characters = load_character_names()
+    lock_fd = _acquire_lock()
+    if lock_fd is None:
+        console.print("[red]已有下载器在运行, 本次退出。[/red]")
+        return 1
+
+    try:
+        PAINTING_DIR.mkdir(parents=True, exist_ok=True)
+        removed_tmp = cleanup_temp_files()
+        if removed_tmp:
+            console.print(f"清理上次残留临时文件: {removed_tmp} 个")
+
+        stats = {"ok": 0, "skip": 0, "fail": 0}
+        failures: List[Tuple[str, str]] = []
+        fail_lock = threading.Lock()
+        used_names: set = set()
+        name_lock = threading.Lock()
+
+        with Progress(
+            SpinnerColumn(),
+            TextColumn("[progress.description]{task.description}"),
+            BarColumn(),
+            MofNCompleteColumn(),
+            DownloadColumn(),
+            TransferSpeedColumn(),
+            TimeRemainingColumn(),
+            console=console,
+            transient=True,
+        ) as progress:
+            version_task = progress.add_task("检查版本", total=1)
+            manifest_task = progress.add_task("获取资源清单", total=1)
+
+            version = fetch_version(_thread_session())
+            set_app_version_headers(_thread_session(), version)
+            resource_version = version.get("resourceVersion") or version.get(
+                "requireResourceVersion", ""
+            )
+            progress.update(version_task, completed=1)
+            progress.remove_task(version_task)
+            console.print(f"resource={resource_version}")
+
+            manifest = fetch_manifest(_thread_session(), resource_version)
+            progress.update(manifest_task, completed=1)
+            progress.remove_task(manifest_task)
+
+            painting_assets = {
+                path: entry
+                for path, entry in manifest.get("assets", {}).items()
+                if _is_painting_asset(path)
+            }
+            console.print(f"匹配到 {len(painting_assets)} 个立绘文件")
+
+            if not painting_assets:
+                console.print("[yellow]未找到立绘资产[/yellow]")
+                return 0
+
+            total_bytes = sum(
+                int(select_asset_entry(entry)[1].get("size", 0))
+                for entry in painting_assets.values()
+            )
+            asset_bytes_task = progress.add_task(
+                "立绘字节", total=total_bytes if total_bytes else None
+            )
+            asset_files_task = progress.add_task("立绘文件", total=len(painting_assets))
+            asset_items = []
+            for path, entry in painting_assets.items():
+                item = build_asset_item(path, entry, resource_version)
+                item["characters"] = characters
+                asset_items.append(item)
+
+            with ThreadPoolExecutor(
+                max_workers=THREADS, thread_name_prefix="mnsg-paint"
+            ) as pool:
+                futures = []
+                for item in asset_items:
+                    futures.append(
+                        pool.submit(
+                            _download_painting_worker,
+                            item,
+                            progress,
+                            asset_bytes_task,
+                            asset_files_task,
+                            failures,
+                            fail_lock,
+                            used_names,
+                            name_lock,
+                        )
+                    )
+
+                for future in as_completed(futures):
+                    try:
+                        result, _ = future.result()
+                    except Exception as exc:
+                        with fail_lock:
+                            failures.append(("立绘线程", str(exc)))
+                        stats["fail"] += 1
+                        continue
+                    stats[f"{result}"] += 1
+            progress.remove_task(asset_bytes_task)
+            progress.remove_task(asset_files_task)
+
+        console.print(
+            f"[green]完成[/green]: 新增 {stats['ok']}, 跳过 {stats['skip']}, 失败 {stats['fail']} → {PAINTING_DIR}"
+        )
+        if failures:
+            console.print("[yellow]失败清单(前 50):[/yellow]")
+            for name, err in failures[:50]:
+                console.print(f"  [red]{name}[/red]: {err}")
+            return 1
+        return 0
+    finally:
+        if lock_fd is not None:
+            try:
+                fcntl.flock(lock_fd.fileno(), fcntl.LOCK_UN)
+            except Exception:
+                pass
+            lock_fd.close()
+
+
+def build_parser() -> argparse.ArgumentParser:
+    shared = argparse.ArgumentParser(add_help=False)
+    shared.add_argument("--jobs", type=int, default=THREADS, help="并发线程数")
+
+    p = argparse.ArgumentParser(
+        description="孤儿的工作 (Minasigo no Shigoto) 全资产/数据表/立绘下载器",
+        parents=[shared],
+    )
+    sub = p.add_subparsers(dest="command", required=False)
+
+    sub.add_parser(
+        "all",
+        parents=[shared],
+        help="全流程: 资产 + 数据表 (默认)",
+    )
+
+    sub.add_parser(
+        "assets",
+        parents=[shared],
+        help="仅下载全资产到 Assets/",
+    )
+
+    sub.add_parser(
+        "data",
+        aliases=["masterdata"],
+        parents=[shared],
+        help="仅下载数据表到 MasterData/",
+    )
+
+    sub.add_parser(
+        "painting",
+        parents=[shared],
+        help="仅下载立绘 (image/character/stand/*03.png) 到 Painting/",
+    )
+
+    return p
+
+
+def main() -> int:
+    parser = build_parser()
+    args = parser.parse_args()
+
+    if not args.command or args.command == "all":
+        return cmd_all(args)
+    elif args.command == "assets":
+        return cmd_assets(args)
+    elif args.command in ("data", "masterdata"):
+        return cmd_data(args)
+    elif args.command == "painting":
+        return cmd_painting(args)
+    else:
+        parser.print_help()
+        return 1
 
 
 if __name__ == "__main__":
