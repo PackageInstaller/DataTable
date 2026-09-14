@@ -2,23 +2,26 @@
   "_meta": {
     "version": 1,
     "flags": "0x10",
-    "record_count": 764,
+    "record_count": 791,
     "record_size": 8,
-    "custom_id": 1734571621
+    "tag": "evcg",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "_QuestID",
+      "alias": "クエストID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "_EventID",
+      "alias": "イベントID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     }
   ],
@@ -3078,6 +3081,114 @@
     {
       "_QuestID": 8913,
       "_EventID": 8913
+    },
+    {
+      "_QuestID": 8920,
+      "_EventID": 8920
+    },
+    {
+      "_QuestID": 8921,
+      "_EventID": 8921
+    },
+    {
+      "_QuestID": 908927,
+      "_EventID": 908927
+    },
+    {
+      "_QuestID": 8932,
+      "_EventID": 8932
+    },
+    {
+      "_QuestID": 8933,
+      "_EventID": 8933
+    },
+    {
+      "_QuestID": 9123,
+      "_EventID": 9123
+    },
+    {
+      "_QuestID": 908939,
+      "_EventID": 908939
+    },
+    {
+      "_QuestID": 8940,
+      "_EventID": 8940
+    },
+    {
+      "_QuestID": 8941,
+      "_EventID": 8941
+    },
+    {
+      "_QuestID": 8942,
+      "_EventID": 8942
+    },
+    {
+      "_QuestID": 908944,
+      "_EventID": 908944
+    },
+    {
+      "_QuestID": 8945,
+      "_EventID": 8945
+    },
+    {
+      "_QuestID": 8946,
+      "_EventID": 8946
+    },
+    {
+      "_QuestID": 908948,
+      "_EventID": 908948
+    },
+    {
+      "_QuestID": 8950,
+      "_EventID": 8950
+    },
+    {
+      "_QuestID": 8955,
+      "_EventID": 8955
+    },
+    {
+      "_QuestID": 8957,
+      "_EventID": 8957
+    },
+    {
+      "_QuestID": 908963,
+      "_EventID": 908963
+    },
+    {
+      "_QuestID": 8970,
+      "_EventID": 8970
+    },
+    {
+      "_QuestID": 8976,
+      "_EventID": 8976
+    },
+    {
+      "_QuestID": 8978,
+      "_EventID": 8978
+    },
+    {
+      "_QuestID": 8983,
+      "_EventID": 8983
+    },
+    {
+      "_QuestID": 8990,
+      "_EventID": 8990
+    },
+    {
+      "_QuestID": 8992,
+      "_EventID": 8992
+    },
+    {
+      "_QuestID": 20008,
+      "_EventID": 20008
+    },
+    {
+      "_QuestID": 30000,
+      "_EventID": 30000
+    },
+    {
+      "_QuestID": 920009,
+      "_EventID": 920009
     }
   ]
 }

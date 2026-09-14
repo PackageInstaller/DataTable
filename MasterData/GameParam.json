@@ -1,0 +1,185 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x00",
+    "record_size": 88
+  },
+  "_fields": [
+    {
+      "name": "Money",
+      "alias": "お金",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Experience",
+      "alias": "経験値",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Rank",
+      "alias": "ランク",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    },
+    {
+      "name": "NowCharisma",
+      "alias": "カリスマ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 12,
+      "size": 4
+    },
+    {
+      "name": "NowActionPoint",
+      "alias": "現在スタミナ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 16,
+      "size": 4
+    },
+    {
+      "name": "CharismaChangeDate",
+      "alias": "カリスマ変化日",
+      "type": "date",
+      "type_code": 7,
+      "offset": 20,
+      "size": 4
+    },
+    {
+      "name": "CharismaChangeTime",
+      "alias": "カリスマ変化時間",
+      "type": "time",
+      "type_code": 8,
+      "offset": 24,
+      "size": 4
+    },
+    {
+      "name": "ActionPointChangeDate",
+      "alias": "スタミナ変化日",
+      "type": "date",
+      "type_code": 7,
+      "offset": 28,
+      "size": 4
+    },
+    {
+      "name": "ActionPointChangeTime",
+      "alias": "スタミナ変化時間",
+      "type": "time",
+      "type_code": 8,
+      "offset": 32,
+      "size": 4
+    },
+    {
+      "name": "GiftItem1",
+      "alias": "贈り物花束",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 36,
+      "size": 4
+    },
+    {
+      "name": "GiftItem2",
+      "alias": "贈り物水晶",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 40,
+      "size": 4
+    },
+    {
+      "name": "GiftItem3",
+      "alias": "贈り物ルビー",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 44,
+      "size": 4
+    },
+    {
+      "name": "GiftItem4",
+      "alias": "贈り物ダイヤ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 48,
+      "size": 4
+    },
+    {
+      "name": "RedCrystal",
+      "alias": "赤魔水晶",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 52,
+      "size": 4
+    },
+    {
+      "name": "EventParam",
+      "alias": "イベント用変数",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 56,
+      "size": 4
+    },
+    {
+      "name": "GiftItem5",
+      "alias": "贈り物5",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 60,
+      "size": 4
+    },
+    {
+      "name": "GiftItem6",
+      "alias": "贈り物6",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 64,
+      "size": 4
+    },
+    {
+      "name": "_PointSystem",
+      "alias": "ポイントシステム用",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 68,
+      "size": 4
+    },
+    {
+      "name": "ExtendedMaxCharisma",
+      "alias": "カリスマ最大値の増加分",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 72,
+      "size": 4
+    },
+    {
+      "name": "ExtendedMaxStamina",
+      "alias": "スタミナ最大値の増加分",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 76,
+      "size": 4
+    },
+    {
+      "name": "ExtendedMaxCharismaNextMonth",
+      "alias": "翌月のカリスマ最大値の増加分",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 80,
+      "size": 4
+    },
+    {
+      "name": "ExtendedMaxStaminaNextMonth",
+      "alias": "翌月のスタミナ最大値の増加分",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 84,
+      "size": 4
+    }
+  ]
+}

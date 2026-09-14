@@ -2,79 +2,90 @@
   "_meta": {
     "version": 1,
     "flags": "0x14",
-    "record_count": 51,
+    "record_count": 53,
     "record_size": 40,
-    "custom_id": 1835234419
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "ID",
+      "alias": "定義ID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "TextID",
+      "alias": "テキストID[ラベル]",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "Category",
+      "alias": "項目ID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 8,
+      "type_code": 1,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "BackGround",
+      "alias": "背景画像",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 12,
+      "type_code": 1,
+      "offset": 12,
       "size": 4
     },
     {
       "name": "RoomID",
+      "alias": "個室ID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 16,
+      "type_code": 1,
+      "offset": 16,
       "size": 4
     },
     {
       "name": "BgmID",
+      "alias": "BGM",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 20,
+      "type_code": 1,
+      "offset": 20,
       "size": 4
     },
     {
       "name": "Begin",
+      "alias": "開始",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 24,
+      "type_code": 32,
+      "offset": 24,
       "size": 4
     },
     {
       "name": "End",
+      "alias": "終了",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 28,
+      "type_code": 32,
+      "offset": 28,
       "size": 4
     },
     {
       "name": "CardID",
+      "alias": "カード定義名",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 32,
+      "type_code": 1,
+      "offset": 32,
       "size": 4
     },
     {
       "name": "DefineName",
+      "alias": "定義名",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 36,
+      "type_code": 32,
+      "offset": 36,
       "size": 4
     }
   ],
@@ -206,8 +217,8 @@
       "BackGround": 0,
       "RoomID": 9908,
       "BgmID": -1034153710,
-      "Begin": "2025/06/12 11:30:00",
-      "End": "2025/06/26 11:30:00",
+      "Begin": "2026/06/11 11:30:00",
+      "End": "2026/06/25 11:30:00",
       "CardID": 0,
       "DefineName": "event_0006_02"
     },
@@ -254,8 +265,8 @@
       "BackGround": 0,
       "RoomID": 9717,
       "BgmID": -1546579725,
-      "Begin": "2025/06/26 11:30:00",
-      "End": "2025/07/17 11:30:00",
+      "Begin": "2026/07/02 11:30:00",
+      "End": "2026/07/23 11:30:00",
       "CardID": 0,
       "DefineName": "event_0007_04"
     },
@@ -374,8 +385,8 @@
       "BackGround": 0,
       "RoomID": 9713,
       "BgmID": 1151277232,
-      "Begin": "2025/08/19 12:30:00",
-      "End": "2025/08/28 11:30:00",
+      "Begin": "2026/08/06 11:30:00",
+      "End": "2026/08/20 11:30:00",
       "CardID": 0,
       "DefineName": "event_0017"
     },
@@ -426,6 +437,18 @@
       "End": "2025/12/04 11:30:00",
       "CardID": 0,
       "DefineName": "event_0021"
+    },
+    {
+      "ID": -815232137,
+      "TextID": -78370618,
+      "Category": -1777172756,
+      "BackGround": 0,
+      "RoomID": 9720,
+      "BgmID": 1659645438,
+      "Begin": "2026/07/23 11:30:00",
+      "End": "2026/08/06 11:30:00",
+      "CardID": 0,
+      "DefineName": "event_0022"
     },
     {
       "ID": -1807553093,
@@ -606,6 +629,18 @@
       "End": "",
       "CardID": 2456,
       "DefineName": "private_0014"
+    },
+    {
+      "ID": -181897982,
+      "TextID": 855789985,
+      "Category": -1224326894,
+      "BackGround": 0,
+      "RoomID": 15,
+      "BgmID": 758145173,
+      "Begin": "2026/09/03 15:00:00",
+      "End": "",
+      "CardID": 2621,
+      "DefineName": "private_0015"
     },
     {
       "ID": -1350359707,

@@ -2,82 +2,88 @@
   "_meta": {
     "version": 1,
     "flags": "0x14",
-    "record_count": 36,
+    "record_count": 37,
     "record_size": 20,
-    "custom_id": 1835234419
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "ID",
+      "alias": "定義名",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "DateOpen",
+      "alias": "開始日時",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 4,
+      "type_code": 32,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "DateClose",
+      "alias": "終了日時",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 8,
+      "type_code": 32,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "Expression",
+      "alias": "条件式",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 12,
+      "type_code": 32,
+      "offset": 12,
       "size": 4
     },
     {
       "name": "Cmnd",
+      "alias": "実行コマンド",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 16,
+      "type_code": 32,
+      "offset": 16,
       "size": 4
     }
   ],
   "records": [
     {
       "ID": -277798146,
-      "DateOpen": "2026/02/26 15:00:00",
-      "DateClose": "2026/03/13 04:00:00",
+      "DateOpen": "2026/08/27 15:00:00",
+      "DateClose": "2026/09/11 04:00:00",
       "Expression": "1d18437a3b135c00735d09157a480c",
-      "Cmnd": "1e126141290856441f0b52462e55156d2c18595c13390a4d2c2241406a4d07186b49150161"
+      "Cmnd": "1e126141290856441f0b52462e55156d2c18595c13390a4d2c2241406a4d07186b4b150161"
     },
     {
       "ID": 1470356929,
-      "DateOpen": "2026/03/01 15:00:00",
-      "DateClose": "2026/03/04 15:00:00",
+      "DateOpen": "2026/08/30 15:00:00",
+      "DateClose": "2026/09/02 15:00:00",
       "Expression": "1d18437a3b135c00735d09157a480c",
-      "Cmnd": "1e126141290856441f0b52462e55156d2c18595c13390a4d2c2241406a4d07186b49681878540c"
+      "Cmnd": "1e126141290856441f0b52462e55156d2c18595c13390a4d2c2241406a4d07186b4b681878540c"
     },
     {
       "ID": -827683717,
-      "DateOpen": "2026/03/04 15:00:00",
-      "DateClose": "2026/03/07 15:00:00",
+      "DateOpen": "2026/09/02 15:00:00",
+      "DateClose": "2026/09/05 15:00:00",
       "Expression": "1d18437a3b135c00735d09157a480c",
-      "Cmnd": "1e126141290856441f0b52462e55156d2c18595c13390a4d2c2241406a4d07186b49681978540c"
+      "Cmnd": "1e126141290856441f0b52462e55156d2c18595c13390a4d2c2241406a4d07186b4b681978540c"
     },
     {
       "ID": -1179796243,
-      "DateOpen": "2026/03/07 17:00:00",
-      "DateClose": "2026/03/13 04:00:00",
+      "DateOpen": "2026/09/05 17:00:00",
+      "DateClose": "2026/09/11 04:00:00",
       "Expression": "1d18437a3b135c00735d09157a480c",
-      "Cmnd": "1e126141290856441f0b52462e55156d2c18595c13390a4d2c2241406a4d07186b49681a78540c"
+      "Cmnd": "1e126141290856441f0b52462e55156d2c18595c13390a4d2c2241406a4d07186b4b681a78540c"
     },
     {
       "ID": 1081667651,
-      "DateOpen": "2026/03/13 15:00:00",
-      "DateClose": "2026/03/19 10:00:00",
+      "DateOpen": "2026/09/11 15:00:00",
+      "DateClose": "2026/09/18 10:00:00",
       "Expression": "1d18437a3b135c00735d09157a480c",
-      "Cmnd": "1e126141290856441f0b52462e55156d2c18595c13390a4d2c2241406a4d07186b49681b78540c"
+      "Cmnd": "1e126141290856441f0b52462e55156d2c18595c13390a4d2c2241406a4d07186b4b681b78540c"
     },
     {
       "ID": 907026069,
@@ -295,6 +301,13 @@
       "DateClose": "2026/4/13 12:00:00",
       "Expression": "1d18437a3b135c00735d09157a480c",
       "Cmnd": "1e126141290856441f0b52462e55156d2c18595c13390a4d2c22636c3c1844186d2207186a4d071878540c08"
+    },
+    {
+      "ID": 1868410940,
+      "DateOpen": "2026/06/04 15:00:00",
+      "DateClose": "",
+      "Expression": "1d18437a3b135c00735d09157a480c08130e74443f1c454c0b08525b2e550f116e491e13",
+      "Cmnd": "1e126141290856441f0b52462e55156d2c18595c13390a4d2c2272453f0f504d341e4e1a6c4d01186e5f1e137a"
     }
   ]
 }

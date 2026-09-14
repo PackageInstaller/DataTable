@@ -4,21 +4,24 @@
     "flags": "0x10",
     "record_count": 60,
     "record_size": 8,
-    "custom_id": 1835234419
+    "tag": "stcm",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "ConfigID",
+      "alias": "定義名[CRC32]",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "InfluenceId",
+      "alias": "値",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     }
   ],

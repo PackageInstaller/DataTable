@@ -1,0 +1,40 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 6,
+    "record_size": 4,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "Message",
+      "alias": "名前",
+      "type": "string",
+      "type_code": 32,
+      "offset": 0,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "Message": "賢者の石"
+    },
+    {
+      "Message": "魔の研究者"
+    },
+    {
+      "Message": "地中でうごめく影"
+    },
+    {
+      "Message": "心を支配する力"
+    },
+    {
+      "Message": "真理の代償"
+    },
+    {
+      "Message": "魔界の軍勢"
+    }
+  ]
+}

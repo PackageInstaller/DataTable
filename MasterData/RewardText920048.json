@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 4,
+    "record_size": 12,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "alias": "ID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Text",
+      "alias": "テキスト",
+      "type": "string",
+      "type_code": 32,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "alias": "タイプ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Text": "嵐に巻き込まれ漂着した提督リーンベル。\n彼女は王子に、散り散りになった仲間たちと船を\n探してほしいと頼み込む。\n王子たちは船を見つけるが、そこには\n亡霊になった仲間たちと、死霊術師の姿があった。\n\n初開催2015年8月13日",
+      "Type": 6
+    },
+    {
+      "ID": 1,
+      "Text": "",
+      "Type": 7
+    },
+    {
+      "ID": 2,
+      "Text": "特定のミッションで\n「提督リーンベル」が一定確率でドロップ",
+      "Type": 8
+    },
+    {
+      "ID": 3,
+      "Text": "『闇司祭と邪教の祭壇』獲得★数24以上で開放",
+      "Type": 9
+    }
+  ]
+}

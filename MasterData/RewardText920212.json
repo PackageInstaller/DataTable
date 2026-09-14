@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 4,
+    "record_size": 12,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "alias": "ID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Text",
+      "alias": "テキスト",
+      "type": "string",
+      "type_code": 32,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "alias": "タイプ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Text": "王国学園、文化祭が近付いてきた頃。\n思い思いに過ごす自習部の面々だったが、\n突如七色に輝くローパーが出現する。\n事件の真相を探るべく、ベル―フェたちは\n王子と共に学園の調査を開始する。\n\n初開催2024年4月11日",
+      "Type": 6
+    },
+    {
+      "ID": 1,
+      "Text": "",
+      "Type": 7
+    },
+    {
+      "ID": 2,
+      "Text": "獲得★が1以上で\n交換所に「居眠り魔神ベルーフェ」が追加",
+      "Type": 8
+    },
+    {
+      "ID": 3,
+      "Text": "『戦神コロシアム クロスランペイジ』獲得★数6以上で開放",
+      "Type": 9
+    }
+  ]
+}

@@ -4,42 +4,48 @@
     "flags": "0x14",
     "record_count": 18,
     "record_size": 20,
-    "custom_id": 2020895842
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "_ConfigID",
+      "alias": "定義名",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "_NameText",
+      "alias": "名称",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 4,
+      "type_code": 32,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "_InfluenceText",
+      "alias": "効果テキスト",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 8,
+      "type_code": 32,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "_TargetText",
+      "alias": "対象テキスト",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 12,
+      "type_code": 32,
+      "offset": 12,
       "size": 4
     },
     {
       "name": "_SacleText",
+      "alias": "表示スケール",
       "type": "float",
-      "mapped_type": 4,
-      "rec_offset": 16,
+      "type_code": 4,
+      "offset": 16,
       "size": 4
     }
   ],

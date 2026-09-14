@@ -2,72 +2,82 @@
   "_meta": {
     "version": 1,
     "flags": "0x14",
-    "record_count": 558,
+    "record_count": 576,
     "record_size": 36,
-    "custom_id": 1296450880
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "@ID",
+      "alias": "ID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "Caption",
+      "alias": "Caption",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 4,
+      "type_code": 32,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "@AssembleID0",
+      "alias": "AssembleID0",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 8,
+      "type_code": 1,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "@AssembleID1",
+      "alias": "AssembleID1",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 12,
+      "type_code": 1,
+      "offset": 12,
       "size": 4
     },
     {
       "name": "@SoundID0",
+      "alias": "SoundID0",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 16,
+      "type_code": 1,
+      "offset": 16,
       "size": 4
     },
     {
       "name": "@Scale",
+      "alias": "Scale",
       "type": "float",
-      "mapped_type": 4,
-      "rec_offset": 20,
+      "type_code": 4,
+      "offset": 20,
       "size": 4
     },
     {
       "name": "@XOffset",
+      "alias": "XOffset",
       "type": "float",
-      "mapped_type": 4,
-      "rec_offset": 24,
+      "type_code": 4,
+      "offset": 24,
       "size": 4
     },
     {
       "name": "@YOffset",
+      "alias": "YOffset",
       "type": "float",
-      "mapped_type": 4,
-      "rec_offset": 28,
+      "type_code": 4,
+      "offset": 28,
       "size": 4
     },
     {
       "name": "@Ground",
+      "alias": "Ground",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 32,
+      "type_code": 1,
+      "offset": 32,
       "size": 4
     }
   ],
@@ -386,7 +396,7 @@
       "@AssembleID0": 6291484,
       "@AssembleID1": 0,
       "@SoundID0": 0,
-      "@Scale": 2.0,
+      "@Scale": 1.2,
       "@XOffset": 0.0,
       "@YOffset": 0.0,
       "@Ground": 0
@@ -507,7 +517,7 @@
       "@AssembleID0": 6291495,
       "@AssembleID1": 0,
       "@SoundID0": 0,
-      "@Scale": 6.0,
+      "@Scale": 1.0,
       "@XOffset": 0.0,
       "@YOffset": 0.0,
       "@Ground": 0
@@ -3242,7 +3252,7 @@
     },
     {
       "@ID": 6292036,
-      "Caption": "WhiteOut",
+      "Caption": "RockFall5",
       "@AssembleID0": 6292036,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3253,7 +3263,7 @@
     },
     {
       "@ID": 6292037,
-      "Caption": "Rope",
+      "Caption": "WhiteOut",
       "@AssembleID0": 6292037,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3264,7 +3274,7 @@
     },
     {
       "@ID": 6292038,
-      "Caption": "InTheSea",
+      "Caption": "Rope",
       "@AssembleID0": 6292038,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3275,7 +3285,7 @@
     },
     {
       "@ID": 6292039,
-      "Caption": "Bubble1",
+      "Caption": "InTheSea",
       "@AssembleID0": 6292039,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3286,7 +3296,7 @@
     },
     {
       "@ID": 6292040,
-      "Caption": "Bubble2",
+      "Caption": "Bubble1",
       "@AssembleID0": 6292040,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3297,7 +3307,7 @@
     },
     {
       "@ID": 6292041,
-      "Caption": "Bubble3",
+      "Caption": "Bubble2",
       "@AssembleID0": 6292041,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3308,7 +3318,7 @@
     },
     {
       "@ID": 6292042,
-      "Caption": "Reef1",
+      "Caption": "Bubble3",
       "@AssembleID0": 6292042,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3319,7 +3329,7 @@
     },
     {
       "@ID": 6292043,
-      "Caption": "Reef2",
+      "Caption": "Reef1",
       "@AssembleID0": 6292043,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3330,7 +3340,7 @@
     },
     {
       "@ID": 6292044,
-      "Caption": "Reef3",
+      "Caption": "Reef2",
       "@AssembleID0": 6292044,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3341,7 +3351,7 @@
     },
     {
       "@ID": 6292045,
-      "Caption": "GuestUnitEntry",
+      "Caption": "Reef3",
       "@AssembleID0": 6292045,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3352,7 +3362,7 @@
     },
     {
       "@ID": 6292046,
-      "Caption": "GuestUnitEntry2",
+      "Caption": "GuestUnitEntry",
       "@AssembleID0": 6292046,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3363,7 +3373,7 @@
     },
     {
       "@ID": 6292047,
-      "Caption": "Cluoud2",
+      "Caption": "GuestUnitEntry2",
       "@AssembleID0": 6292047,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3374,7 +3384,7 @@
     },
     {
       "@ID": 6292048,
-      "Caption": "Rockhole",
+      "Caption": "Cluoud2",
       "@AssembleID0": 6292048,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3385,19 +3395,8 @@
     },
     {
       "@ID": 6292049,
-      "Caption": "HolyRiver",
+      "Caption": "Rockhole",
       "@AssembleID0": 6292049,
-      "@AssembleID1": 0,
-      "@SoundID0": 9961525,
-      "@Scale": 0.0,
-      "@XOffset": 0.0,
-      "@YOffset": 0.0,
-      "@Ground": 0
-    },
-    {
-      "@ID": 6292050,
-      "Caption": "NandiFlower",
-      "@AssembleID0": 6292050,
       "@AssembleID1": 0,
       "@SoundID0": 0,
       "@Scale": 0.0,
@@ -3406,8 +3405,19 @@
       "@Ground": 0
     },
     {
+      "@ID": 6292050,
+      "Caption": "HolyRiver",
+      "@AssembleID0": 6292050,
+      "@AssembleID1": 0,
+      "@SoundID0": 9961525,
+      "@Scale": 0.0,
+      "@XOffset": 0.0,
+      "@YOffset": 0.0,
+      "@Ground": 0
+    },
+    {
       "@ID": 6292051,
-      "Caption": "NandiGrass",
+      "Caption": "NandiFlower",
       "@AssembleID0": 6292051,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3418,7 +3428,7 @@
     },
     {
       "@ID": 6292052,
-      "Caption": "NandiRock1",
+      "Caption": "NandiGrass",
       "@AssembleID0": 6292052,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3429,7 +3439,7 @@
     },
     {
       "@ID": 6292053,
-      "Caption": "NandiRock1S",
+      "Caption": "NandiRock1",
       "@AssembleID0": 6292053,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3440,7 +3450,7 @@
     },
     {
       "@ID": 6292054,
-      "Caption": "NandiRock2",
+      "Caption": "NandiRock1S",
       "@AssembleID0": 6292054,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3451,7 +3461,7 @@
     },
     {
       "@ID": 6292055,
-      "Caption": "NandiRock2S",
+      "Caption": "NandiRock2",
       "@AssembleID0": 6292055,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3462,7 +3472,7 @@
     },
     {
       "@ID": 6292056,
-      "Caption": "NandiTree",
+      "Caption": "NandiRock2S",
       "@AssembleID0": 6292056,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3473,7 +3483,7 @@
     },
     {
       "@ID": 6292057,
-      "Caption": "NandiTreeS",
+      "Caption": "NandiTree",
       "@AssembleID0": 6292057,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3484,7 +3494,7 @@
     },
     {
       "@ID": 6292058,
-      "Caption": "chandelier",
+      "Caption": "NandiTreeS",
       "@AssembleID0": 6292058,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3495,7 +3505,7 @@
     },
     {
       "@ID": 6292059,
-      "Caption": "Candle",
+      "Caption": "chandelier",
       "@AssembleID0": 6292059,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3506,7 +3516,7 @@
     },
     {
       "@ID": 6292060,
-      "Caption": "vase_01_l",
+      "Caption": "Candle",
       "@AssembleID0": 6292060,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3517,7 +3527,7 @@
     },
     {
       "@ID": 6292061,
-      "Caption": "vase_02_c",
+      "Caption": "vase_01_l",
       "@AssembleID0": 6292061,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3528,7 +3538,7 @@
     },
     {
       "@ID": 6292062,
-      "Caption": "vase_03_r",
+      "Caption": "vase_02_c",
       "@AssembleID0": 6292062,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3539,7 +3549,7 @@
     },
     {
       "@ID": 6292063,
-      "Caption": "StageWormHoleWM",
+      "Caption": "vase_03_r",
       "@AssembleID0": 6292063,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3550,7 +3560,7 @@
     },
     {
       "@ID": 6292064,
-      "Caption": "StageWideAreaRangeUp",
+      "Caption": "StageWormHoleWM",
       "@AssembleID0": 6292064,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3561,7 +3571,7 @@
     },
     {
       "@ID": 6292065,
-      "Caption": "StageWideAreaRangeUp2",
+      "Caption": "StageWideAreaRangeUp",
       "@AssembleID0": 6292065,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3572,7 +3582,7 @@
     },
     {
       "@ID": 6292066,
-      "Caption": "StageOccupationFlag",
+      "Caption": "StageWideAreaRangeUp2",
       "@AssembleID0": 6292066,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3583,7 +3593,7 @@
     },
     {
       "@ID": 6292067,
-      "Caption": "StageFortGate",
+      "Caption": "StageOccupationFlag",
       "@AssembleID0": 6292067,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3594,7 +3604,7 @@
     },
     {
       "@ID": 6292068,
-      "Caption": "Bubble4",
+      "Caption": "StageFortGate",
       "@AssembleID0": 6292068,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3605,7 +3615,7 @@
     },
     {
       "@ID": 6292069,
-      "Caption": "Bubble5",
+      "Caption": "Bubble4",
       "@AssembleID0": 6292069,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3616,7 +3626,7 @@
     },
     {
       "@ID": 6292070,
-      "Caption": "Bubble6",
+      "Caption": "Bubble5",
       "@AssembleID0": 6292070,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3627,7 +3637,7 @@
     },
     {
       "@ID": 6292071,
-      "Caption": "BahamutSeal",
+      "Caption": "Bubble6",
       "@AssembleID0": 6292071,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3638,7 +3648,7 @@
     },
     {
       "@ID": 6292072,
-      "Caption": "BahamutSealRing",
+      "Caption": "BahamutSeal",
       "@AssembleID0": 6292072,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3649,7 +3659,7 @@
     },
     {
       "@ID": 6292073,
-      "Caption": "BahamutCliff",
+      "Caption": "BahamutSealRing",
       "@AssembleID0": 6292073,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3660,7 +3670,7 @@
     },
     {
       "@ID": 6292074,
-      "Caption": "BahamutSealCrack1",
+      "Caption": "BahamutCliff",
       "@AssembleID0": 6292074,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3671,7 +3681,7 @@
     },
     {
       "@ID": 6292075,
-      "Caption": "BahamutSealCrack2",
+      "Caption": "BahamutSealCrack1",
       "@AssembleID0": 6292075,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3682,7 +3692,7 @@
     },
     {
       "@ID": 6292076,
-      "Caption": "StoryMap1003_1",
+      "Caption": "BahamutSealCrack2",
       "@AssembleID0": 6292076,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3693,7 +3703,7 @@
     },
     {
       "@ID": 6292077,
-      "Caption": "StoryMap1003_2",
+      "Caption": "StoryMap1003_1",
       "@AssembleID0": 6292077,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3704,7 +3714,7 @@
     },
     {
       "@ID": 6292078,
-      "Caption": "WhiteOut2",
+      "Caption": "StoryMap1003_2",
       "@AssembleID0": 6292078,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3715,7 +3725,7 @@
     },
     {
       "@ID": 6292079,
-      "Caption": "WhiteOut3",
+      "Caption": "WhiteOut2",
       "@AssembleID0": 6292079,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3726,7 +3736,7 @@
     },
     {
       "@ID": 6292080,
-      "Caption": "WhiteOut4",
+      "Caption": "WhiteOut3",
       "@AssembleID0": 6292080,
       "@AssembleID1": 0,
       "@SoundID0": 0,
@@ -3737,8 +3747,19 @@
     },
     {
       "@ID": 6292081,
-      "Caption": "InTheSea2",
+      "Caption": "WhiteOut4",
       "@AssembleID0": 6292081,
+      "@AssembleID1": 0,
+      "@SoundID0": 0,
+      "@Scale": 0.0,
+      "@XOffset": 0.0,
+      "@YOffset": 0.0,
+      "@Ground": 0
+    },
+    {
+      "@ID": 6292082,
+      "Caption": "InTheSea2",
+      "@AssembleID0": 6292082,
       "@AssembleID1": 0,
       "@SoundID0": 0,
       "@Scale": 0.0,
@@ -5441,6 +5462,17 @@
       "@Ground": 0
     },
     {
+      "@ID": 6293293,
+      "Caption": "Tram_Blade",
+      "@AssembleID0": 6293293,
+      "@AssembleID1": 0,
+      "@SoundID0": 0,
+      "@Scale": 0.0,
+      "@XOffset": 0.0,
+      "@YOffset": 0.0,
+      "@Ground": 0
+    },
+    {
       "@ID": 6293504,
       "Caption": "WeatherSample2",
       "@AssembleID0": 6293504,
@@ -5510,6 +5542,28 @@
       "@ID": 6293510,
       "Caption": "StageMist5",
       "@AssembleID0": 6293510,
+      "@AssembleID1": 0,
+      "@SoundID0": 0,
+      "@Scale": 0.0,
+      "@XOffset": 0.0,
+      "@YOffset": 0.0,
+      "@Ground": 0
+    },
+    {
+      "@ID": 6293511,
+      "Caption": "StageIceLightning",
+      "@AssembleID0": 6293511,
+      "@AssembleID1": 0,
+      "@SoundID0": 0,
+      "@Scale": 0.0,
+      "@XOffset": 0.0,
+      "@YOffset": 0.0,
+      "@Ground": 0
+    },
+    {
+      "@ID": 6293512,
+      "Caption": "StageWelcomeRain",
+      "@AssembleID0": 6293512,
       "@AssembleID1": 0,
       "@SoundID0": 0,
       "@Scale": 0.0,
@@ -6068,6 +6122,72 @@
       "@Ground": 0
     },
     {
+      "@ID": 6293810,
+      "Caption": "DebuffEffectMagma_Blue",
+      "@AssembleID0": 6293810,
+      "@AssembleID1": 0,
+      "@SoundID0": 0,
+      "@Scale": 0.0,
+      "@XOffset": 0.0,
+      "@YOffset": 0.0,
+      "@Ground": 0
+    },
+    {
+      "@ID": 6293811,
+      "Caption": "HitEffectMagicBig9",
+      "@AssembleID0": 6293811,
+      "@AssembleID1": 0,
+      "@SoundID0": 0,
+      "@Scale": 0.0,
+      "@XOffset": 0.0,
+      "@YOffset": 0.0,
+      "@Ground": 0
+    },
+    {
+      "@ID": 6293812,
+      "Caption": "HitEffectSnowBall",
+      "@AssembleID0": 6293812,
+      "@AssembleID1": 0,
+      "@SoundID0": 9961493,
+      "@Scale": 0.0,
+      "@XOffset": 0.0,
+      "@YOffset": 0.0,
+      "@Ground": 0
+    },
+    {
+      "@ID": 6293813,
+      "Caption": "BattleHitEffectFireworkNew",
+      "@AssembleID0": 6293813,
+      "@AssembleID1": 0,
+      "@SoundID0": 9961494,
+      "@Scale": 0.0,
+      "@XOffset": 0.0,
+      "@YOffset": 0.0,
+      "@Ground": 0
+    },
+    {
+      "@ID": 6293814,
+      "Caption": "DebuffEffectParalysis_blue",
+      "@AssembleID0": 6293814,
+      "@AssembleID1": 0,
+      "@SoundID0": 0,
+      "@Scale": 0.0,
+      "@XOffset": 0.0,
+      "@YOffset": 0.0,
+      "@Ground": 0
+    },
+    {
+      "@ID": 6293815,
+      "Caption": "HitEffectDark",
+      "@AssembleID0": 6293815,
+      "@AssembleID1": 0,
+      "@SoundID0": 0,
+      "@Scale": 0.0,
+      "@XOffset": 0.0,
+      "@YOffset": 0.0,
+      "@Ground": 0
+    },
+    {
       "@ID": 6295552,
       "Caption": "TDFestival7_Event",
       "@AssembleID0": 6295552,
@@ -6082,6 +6202,94 @@
       "@ID": 6295553,
       "Caption": "TDFestival7_Event2",
       "@AssembleID0": 6295553,
+      "@AssembleID1": 0,
+      "@SoundID0": 0,
+      "@Scale": 0.0,
+      "@XOffset": 0.0,
+      "@YOffset": 0.0,
+      "@Ground": 0
+    },
+    {
+      "@ID": 6295554,
+      "Caption": "Tram",
+      "@AssembleID0": 6295554,
+      "@AssembleID1": 0,
+      "@SoundID0": 0,
+      "@Scale": 0.0,
+      "@XOffset": 0.0,
+      "@YOffset": 0.0,
+      "@Ground": 0
+    },
+    {
+      "@ID": 6295555,
+      "Caption": "Folding_Screen1",
+      "@AssembleID0": 6295555,
+      "@AssembleID1": 0,
+      "@SoundID0": 0,
+      "@Scale": 0.0,
+      "@XOffset": 0.0,
+      "@YOffset": 0.0,
+      "@Ground": 0
+    },
+    {
+      "@ID": 6295556,
+      "Caption": "Folding_Screen2",
+      "@AssembleID0": 6295556,
+      "@AssembleID1": 0,
+      "@SoundID0": 0,
+      "@Scale": 0.0,
+      "@XOffset": 0.0,
+      "@YOffset": 0.0,
+      "@Ground": 0
+    },
+    {
+      "@ID": 6295557,
+      "Caption": "Destroyed_Right_Base",
+      "@AssembleID0": 6295557,
+      "@AssembleID1": 0,
+      "@SoundID0": 0,
+      "@Scale": 0.0,
+      "@XOffset": 0.0,
+      "@YOffset": 0.0,
+      "@Ground": 0
+    },
+    {
+      "@ID": 6295558,
+      "Caption": "Destroyed_Central_Base",
+      "@AssembleID0": 6295558,
+      "@AssembleID1": 0,
+      "@SoundID0": 0,
+      "@Scale": 0.0,
+      "@XOffset": 0.0,
+      "@YOffset": 0.0,
+      "@Ground": 0
+    },
+    {
+      "@ID": 6295559,
+      "Caption": "Destroyed_Left_Base",
+      "@AssembleID0": 6295559,
+      "@AssembleID1": 0,
+      "@SoundID0": 0,
+      "@Scale": 0.0,
+      "@XOffset": 0.0,
+      "@YOffset": 0.0,
+      "@Ground": 0
+    },
+    {
+      "@ID": 6295560,
+      "Caption": "InTheSlimeSea",
+      "@AssembleID0": 6295560,
+      "@AssembleID1": 0,
+      "@SoundID0": 0,
+      "@Scale": 0.0,
+      "@XOffset": 0.0,
+      "@YOffset": 0.0,
+      "@Ground": 0
+    },
+    {
+      "@ID": 6295561,
+      "Caption": "Curtain",
+      "@AssembleID0": 6295561,
       "@AssembleID1": 0,
       "@SoundID0": 0,
       "@Scale": 0.0,

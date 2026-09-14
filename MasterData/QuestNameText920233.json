@@ -1,0 +1,40 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 6,
+    "record_size": 4,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "Message",
+      "alias": "名前",
+      "type": "string",
+      "type_code": 32,
+      "offset": 0,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "Message": "蟲王国"
+    },
+    {
+      "Message": "蟲の森の繭守"
+    },
+    {
+      "Message": "女王の正体"
+    },
+    {
+      "Message": "決勝Lv1"
+    },
+    {
+      "Message": "決勝Lv2"
+    },
+    {
+      "Message": "決勝Lv3"
+    }
+  ]
+}

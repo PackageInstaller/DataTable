@@ -1,0 +1,81 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x00",
+    "record_size": 48
+  },
+  "_fields": [
+    {
+      "name": "UniqueID",
+      "alias": "UniqueID",
+      "type": "string",
+      "type_code": 32,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "OpenDate",
+      "alias": "公開日時",
+      "type": "datetime",
+      "type_code": 9,
+      "offset": 8,
+      "size": 8
+    },
+    {
+      "name": "CloseDate",
+      "alias": "終了日時",
+      "type": "datetime",
+      "type_code": 9,
+      "offset": 16,
+      "size": 8
+    },
+    {
+      "name": "Platform",
+      "alias": "表示区分(CSV)",
+      "type": "string",
+      "type_code": 32,
+      "offset": 24,
+      "size": 4
+    },
+    {
+      "name": "Priority",
+      "alias": "優先度",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 28,
+      "size": 4
+    },
+    {
+      "name": "BatchType",
+      "alias": "バッチ種別",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 32,
+      "size": 4
+    },
+    {
+      "name": "ContensType",
+      "alias": "種別",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 36,
+      "size": 4
+    },
+    {
+      "name": "Title",
+      "alias": "タイトル",
+      "type": "string",
+      "type_code": 32,
+      "offset": 40,
+      "size": 4
+    },
+    {
+      "name": "Contents",
+      "alias": "内容",
+      "type": "string",
+      "type_code": 32,
+      "offset": 44,
+      "size": 4
+    }
+  ]
+}

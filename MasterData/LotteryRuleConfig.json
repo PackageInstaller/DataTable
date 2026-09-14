@@ -4,42 +4,48 @@
     "flags": "0x04",
     "record_count": 10,
     "record_size": 20,
-    "custom_id": null
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "RuleID",
+      "alias": "ルールID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "RarityIDList",
+      "alias": "レアレティIDリスト",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 4,
+      "type_code": 32,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "CardIDList",
+      "alias": "カードIDリスト",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 8,
+      "type_code": 32,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "RuleType",
+      "alias": "ルールタイプ",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 12,
+      "type_code": 1,
+      "offset": 12,
       "size": 4
     },
     {
       "name": "EnsuredCount",
+      "alias": "確定数",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 16,
+      "type_code": 1,
+      "offset": 16,
       "size": 4
     }
   ],
@@ -82,7 +88,7 @@
     {
       "RuleID": 5,
       "RarityIDList": "",
-      "CardIDList": "2619,",
+      "CardIDList": "2850,",
       "RuleType": 3,
       "EnsuredCount": 1
     },

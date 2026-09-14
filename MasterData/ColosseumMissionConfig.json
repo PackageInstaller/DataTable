@@ -4,101 +4,227 @@
     "flags": "0x14",
     "record_count": 6,
     "record_size": 56,
-    "custom_id": 2020897645
+    "tag": "",
+    "date_epoch": "0001-01-01"
   },
   "_fields": [
     {
       "name": "MissionID",
+      "alias": "ミッションID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "Name",
+      "alias": "ミッション名",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 4,
+      "type_code": 32,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "QuestIdList",
+      "alias": "クエストIDリスト",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 8,
+      "type_code": 32,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "Enable",
+      "alias": "有効フラグ",
       "type": "bool",
-      "mapped_type": 5,
-      "rec_offset": 12,
+      "type_code": 5,
+      "offset": 12,
       "size": 1
     },
     {
-      "name": "\b\r\fStartDateTime",
-      "type": "unknown",
-      "mapped_type": 0,
-      "rec_offset": 0,
+      "name": "StartDateTime",
+      "alias": "開始日時",
+      "type": "datetime",
+      "type_code": 9,
+      "offset": 16,
+      "size": 8
+    },
+    {
+      "name": "EndDateTime",
+      "alias": "終了日時",
+      "type": "datetime",
+      "type_code": 9,
+      "offset": 24,
+      "size": 8
+    },
+    {
+      "name": "TagID",
+      "alias": "タグID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 32,
       "size": 4
     },
     {
-      "name": "ime",
-      "type": "unknown",
-      "mapped_type": 97,
-      "rec_offset": 17508,
-      "size": 40738
+      "name": "TagIDRange",
+      "alias": "タグIDレンジ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 36,
+      "size": 4
     },
     {
-      "name": "field_6",
-      "type": "unknown",
-      "mapped_type": 131,
-      "rec_offset": 58246,
-      "size": 0
+      "name": "PointItemId",
+      "alias": "武勲アイテムID",
+      "type": "string",
+      "type_code": 32,
+      "offset": 40,
+      "size": 4
+    },
+    {
+      "name": "Colosseum1",
+      "alias": "決勝ミッション1",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 44,
+      "size": 4
+    },
+    {
+      "name": "Colosseum2",
+      "alias": "決勝ミッション2",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 48,
+      "size": 4
+    },
+    {
+      "name": "DiscloseQuestId",
+      "alias": "開示条件クエストID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 52,
+      "size": 4
     }
   ],
   "records": [
-    {
-      "MissionID": 930015,
-      "Name": "戦神コロシアム　ブレイブリージャーニー",
-      "QuestIdList": "",
-      "Enable": false,
-      "\b\r\fStartDateTime": "df300e00"
-    },
-    {
-      "MissionID": 930016,
-      "Name": "ブレイブリージャーニー 決勝",
-      "QuestIdList": "",
-      "Enable": false,
-      "\b\r\fStartDateTime": "e0300e00"
-    },
-    {
-      "MissionID": 930017,
-      "Name": "戦神コロシアム　バグズリベリオン",
-      "QuestIdList": "",
-      "Enable": false,
-      "\b\r\fStartDateTime": "e1300e00"
-    },
-    {
-      "MissionID": 930018,
-      "Name": "バグズリベリオン 決勝",
-      "QuestIdList": "",
-      "Enable": false,
-      "\b\r\fStartDateTime": "e2300e00"
-    },
     {
       "MissionID": 930019,
       "Name": "戦神コロシアム 豪傑タッグトーナメント",
       "QuestIdList": "",
       "Enable": false,
-      "\b\r\fStartDateTime": "e3300e00"
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "TagID": 601,
+      "TagIDRange": 10,
+      "PointItemId": "trade_item_006000_9",
+      "Colosseum1": 930020,
+      "Colosseum2": 0,
+      "DiscloseQuestId": 0
     },
     {
       "MissionID": 930020,
       "Name": "豪傑タッグトーナメント 決勝",
       "QuestIdList": "",
       "Enable": false,
-      "\b\r\fStartDateTime": "e4300e00"
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "TagID": 701,
+      "TagIDRange": 10,
+      "PointItemId": "trade_item_006000_9",
+      "Colosseum1": 0,
+      "Colosseum2": 0,
+      "DiscloseQuestId": 8792
+    },
+    {
+      "MissionID": 930021,
+      "Name": "戦神コロシアム 芸神例祭 奉納神楽",
+      "QuestIdList": "",
+      "Enable": false,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "TagID": 601,
+      "TagIDRange": 10,
+      "PointItemId": "trade_item_006000_10",
+      "Colosseum1": 930022,
+      "Colosseum2": 0,
+      "DiscloseQuestId": 0
+    },
+    {
+      "MissionID": 930022,
+      "Name": "芸神例祭 奉納神楽 本番",
+      "QuestIdList": "",
+      "Enable": false,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "TagID": 701,
+      "TagIDRange": 10,
+      "PointItemId": "trade_item_006000_10",
+      "Colosseum1": 0,
+      "Colosseum2": 0,
+      "DiscloseQuestId": 8929
+    },
+    {
+      "MissionID": 930023,
+      "Name": "戦神コロシアム 東国動乱・西京事変",
+      "QuestIdList": "",
+      "Enable": true,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "TagID": 601,
+      "TagIDRange": 10,
+      "PointItemId": "trade_item_006000_11",
+      "Colosseum1": 930024,
+      "Colosseum2": 0,
+      "DiscloseQuestId": 0
+    },
+    {
+      "MissionID": 930024,
+      "Name": "東国動乱・西京事変 決勝",
+      "QuestIdList": "",
+      "Enable": false,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "TagID": 701,
+      "TagIDRange": 10,
+      "PointItemId": "trade_item_006000_11",
+      "Colosseum1": 0,
+      "Colosseum2": 0,
+      "DiscloseQuestId": 20014
     }
   ]
 }

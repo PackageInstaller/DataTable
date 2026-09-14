@@ -1,0 +1,37 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 5,
+    "record_size": 4,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "Message",
+      "alias": "メッセージ",
+      "type": "string",
+      "type_code": 32,
+      "offset": 0,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "Message": "女神の神殿を覆う不浄な霧！\n霧の力が聖なる力を妨害する。\n＜回復ユニット出撃不可＞"
+    },
+    {
+      "Message": "一度は退けた魔女の攻撃だが\n強力な魔物を引き連れて現れる！\n＜回復ユニット出撃不可＞"
+    },
+    {
+      "Message": "森の奥の魔女の隠れ家に\nうごめく怪物とは！\n＜敵が大量に発生＞"
+    },
+    {
+      "Message": "魔女たちを操る魔物を倒せ！"
+    },
+    {
+      "Message": "さらに激化する魔女たちの\n襲撃を打ち破れ！"
+    }
+  ]
+}

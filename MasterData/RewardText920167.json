@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 4,
+    "record_size": 12,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "alias": "ID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Text",
+      "alias": "テキスト",
+      "type": "string",
+      "type_code": 32,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "alias": "タイプ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Text": "天界と物質界を繋ぐ橋、\nビフロストを求めて、世界樹を訪れる王国軍。\n世界樹の守護者と呼ばれる聖霊、ラタトスクを探すが、\n同時にこの地を襲撃してくる者たちがいた。\n\n初開催2021年11月11日",
+      "Type": 6
+    },
+    {
+      "ID": 1,
+      "Text": "",
+      "Type": 7
+    },
+    {
+      "ID": 2,
+      "Text": "特定のミッションで\n「聖樹の魔剣士マリレーヌ」が一定確率でドロップ",
+      "Type": 8
+    },
+    {
+      "ID": 3,
+      "Text": "『ハロウィン包囲戦線』獲得★数21以上で開放",
+      "Type": 9
+    }
+  ]
+}

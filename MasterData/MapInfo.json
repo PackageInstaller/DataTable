@@ -1,0 +1,25 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x00",
+    "record_size": 64
+  },
+  "_fields": [
+    {
+      "name": "Key",
+      "alias": "Key",
+      "type": "fixed_string",
+      "type_code": 33,
+      "offset": 0,
+      "size": 32
+    },
+    {
+      "name": "Value",
+      "alias": "Value",
+      "type": "fixed_string",
+      "type_code": 33,
+      "offset": 32,
+      "size": 32
+    }
+  ]
+}

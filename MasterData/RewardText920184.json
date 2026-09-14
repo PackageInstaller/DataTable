@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 4,
+    "record_size": 12,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "alias": "ID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Text",
+      "alias": "テキスト",
+      "type": "string",
+      "type_code": 32,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "alias": "タイプ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Text": "天界の軍勢の狙いは、魔王城にあった。\n英傑たる山ン本五郎左衛門、リヴンと共に\n王子たちは魔王城へ突入した。\n――そしてついに、オリュンポスの主、\n亜神ディアスがその力の一端を解放する。\n\n初開催2022年11月24日",
+      "Type": 6
+    },
+    {
+      "ID": 1,
+      "Text": "",
+      "Type": 7
+    },
+    {
+      "ID": 2,
+      "Text": "獲得★が1以上で\n交換所に「永夜の始祖たる者リヴン(白)」\n「山ン本五郎左衛門(白)」が追加",
+      "Type": 8
+    },
+    {
+      "ID": 3,
+      "Text": "『魔界動乱』獲得★数19以上で開放",
+      "Type": 9
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 2,
+    "record_size": 4,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "Message",
+      "alias": "メッセージ",
+      "type": "string",
+      "type_code": 32,
+      "offset": 0,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "Message": "復活した魔神フェネクスを撃破せよ！\n＜編成内での同ユニット禁止＞\n＜出撃時の初期ＨＰ減少：小＞\n＜ユニット、アイテムのドロップなし＞"
+    },
+    {
+      "Message": "復活した魔神フェネクスを撃破せよ！\n＜編成内での同ユニット禁止＞\n＜出撃時の初期ＨＰ減少：中＞\n＜ユニット、アイテムのドロップなし＞"
+    }
+  ]
+}

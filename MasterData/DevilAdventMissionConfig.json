@@ -4,84 +4,96 @@
     "flags": "0x14",
     "record_count": 35,
     "record_size": 56,
-    "custom_id": 2020897645
+    "tag": "",
+    "date_epoch": "0001-01-01"
   },
   "_fields": [
     {
       "name": "MissionID",
+      "alias": "ミッションID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "Name",
+      "alias": "ミッション名",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 4,
+      "type_code": 32,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "Enable",
+      "alias": "有効フラグ",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 8,
+      "type_code": 1,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "StartDateTime",
-      "type": "double",
-      "mapped_type": 9,
-      "rec_offset": 16,
+      "alias": "開始日時",
+      "type": "datetime",
+      "type_code": 9,
+      "offset": 16,
       "size": 8
     },
     {
       "name": "EndDateTime",
-      "type": "double",
-      "mapped_type": 9,
-      "rec_offset": 24,
+      "alias": "終了日時",
+      "type": "datetime",
+      "type_code": 9,
+      "offset": 24,
       "size": 8
     },
     {
       "name": "UseInformationButton",
+      "alias": "インフォメーション",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 32,
+      "type_code": 1,
+      "offset": 32,
       "size": 4
     },
     {
       "name": "DisplayOrder",
+      "alias": "表示順",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 36,
+      "type_code": 1,
+      "offset": 36,
       "size": 4
     },
     {
       "name": "TagID",
+      "alias": "タグID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 40,
+      "type_code": 1,
+      "offset": 40,
       "size": 4
     },
     {
       "name": "TagIDRange",
+      "alias": "タグIDレンジ",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 44,
+      "type_code": 1,
+      "offset": 44,
       "size": 4
     },
     {
       "name": "RequestQuestIds",
+      "alias": "開示要求クエストリスト",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 48,
+      "type_code": 32,
+      "offset": 48,
       "size": 4
     },
     {
       "name": "RequestClearRank",
+      "alias": "開示要求クリアランク",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 52,
+      "type_code": 1,
+      "offset": 52,
       "size": 4
     }
   ],
@@ -90,8 +102,14 @@
       "MissionID": 500090,
       "Name": "魔神降臨(フールフール)",
       "Enable": 2047,
-      "StartDateTime": 0.0,
-      "EndDateTime": 3.15747504559485e-310,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 3188001816,
+        "time": 14879
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 210,
       "TagID": 150,
@@ -103,8 +121,14 @@
       "MissionID": 500096,
       "Name": "魔神降臨(アモン)",
       "Enable": 2047,
-      "StartDateTime": 0.0,
-      "EndDateTime": 0.0,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 219,
       "TagID": 150,
@@ -116,8 +140,14 @@
       "MissionID": 500105,
       "Name": "魔神降臨(ウェパル)",
       "Enable": 2047,
-      "StartDateTime": 0.0,
-      "EndDateTime": 3.15747504559485e-310,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 3188001816,
+        "time": 14879
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 210,
       "TagID": 150,
@@ -129,8 +159,14 @@
       "MissionID": 500110,
       "Name": "魔神降臨(ビフロンス)",
       "Enable": 2047,
-      "StartDateTime": 0.0,
-      "EndDateTime": 3.15747504559485e-310,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 3188001816,
+        "time": 14879
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 210,
       "TagID": 150,
@@ -142,8 +178,14 @@
       "MissionID": 500119,
       "Name": "魔神降臨(アガレス)",
       "Enable": 2047,
-      "StartDateTime": 0.0,
-      "EndDateTime": 3.15747504559485e-310,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 3188001816,
+        "time": 14879
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 210,
       "TagID": 150,
@@ -155,8 +197,14 @@
       "MissionID": 500132,
       "Name": "魔神降臨(酒呑童子)",
       "Enable": 2047,
-      "StartDateTime": 0.0,
-      "EndDateTime": 3.15747504559485e-310,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 3188001816,
+        "time": 14879
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 210,
       "TagID": 150,
@@ -168,8 +216,14 @@
       "MissionID": 500147,
       "Name": "魔神降臨(フェネクス)",
       "Enable": 2047,
-      "StartDateTime": 0.0,
-      "EndDateTime": 3.15747504559485e-310,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 3188001816,
+        "time": 14879
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 210,
       "TagID": 150,
@@ -181,8 +235,14 @@
       "MissionID": 500155,
       "Name": "魔神降臨(キメリエス)",
       "Enable": 2047,
-      "StartDateTime": 0.0,
-      "EndDateTime": 0.0,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 220,
       "TagID": 150,
@@ -194,8 +254,14 @@
       "MissionID": 500161,
       "Name": "魔神降臨(バルバトス)",
       "Enable": 2047,
-      "StartDateTime": 3.15772956850236e-310,
-      "EndDateTime": 3.1577587380887e-310,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 3188001816,
+        "time": 14879
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 210,
       "TagID": 150,
@@ -207,8 +273,14 @@
       "MissionID": 500177,
       "Name": "魔神降臨(グラシャラボラス)",
       "Enable": 2047,
-      "StartDateTime": 0.0,
-      "EndDateTime": 3.15747504559485e-310,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 3188001816,
+        "time": 14879
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 210,
       "TagID": 150,
@@ -220,8 +292,14 @@
       "MissionID": 500190,
       "Name": "魔神降臨(通天教主)",
       "Enable": 2047,
-      "StartDateTime": 0.0,
-      "EndDateTime": 3.15747504559485e-310,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 3188001816,
+        "time": 14879
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 210,
       "TagID": 150,
@@ -233,8 +311,14 @@
       "MissionID": 500202,
       "Name": "魔神降臨(グシオン)",
       "Enable": 2047,
-      "StartDateTime": 0.0,
-      "EndDateTime": 3.15747504559485e-310,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 3188001816,
+        "time": 14879
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 210,
       "TagID": 150,
@@ -246,8 +330,14 @@
       "MissionID": 500215,
       "Name": "魔神降臨(アスタロト)",
       "Enable": 2047,
-      "StartDateTime": 3.15772956850236e-310,
-      "EndDateTime": 3.1577587380887e-310,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 3188001816,
+        "time": 14879
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 210,
       "TagID": 150,
@@ -259,8 +349,14 @@
       "MissionID": 500238,
       "Name": "魔神降臨(デウスエクスマキナ)",
       "Enable": 2047,
-      "StartDateTime": 0.0,
-      "EndDateTime": 3.15747504559485e-310,
+      "StartDateTime": {
+        "date": 2650933632,
+        "time": 14883
+      },
+      "EndDateTime": {
+        "date": 3327732632,
+        "time": 14883
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 210,
       "TagID": 150,
@@ -272,8 +368,14 @@
       "MissionID": 500288,
       "Name": "魔神降臨(大嶽丸)",
       "Enable": 2047,
-      "StartDateTime": 0.0,
-      "EndDateTime": 3.15747504559485e-310,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 3188001816,
+        "time": 14879
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 210,
       "TagID": 150,
@@ -285,8 +387,14 @@
       "MissionID": 500320,
       "Name": "武神降臨(前田利家)",
       "Enable": 2047,
-      "StartDateTime": 0.0,
-      "EndDateTime": 3.15747504559485e-310,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 3188001816,
+        "time": 14879
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 201,
       "TagID": 150,
@@ -298,8 +406,14 @@
       "MissionID": 500328,
       "Name": "魔神降臨(レラジェ)",
       "Enable": 2047,
-      "StartDateTime": 0.0,
-      "EndDateTime": 3.15747504559485e-310,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 3188001816,
+        "time": 14879
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 210,
       "TagID": 150,
@@ -311,8 +425,14 @@
       "MissionID": 500360,
       "Name": "魔神降臨(モラクス)",
       "Enable": 2047,
-      "StartDateTime": 0.0,
-      "EndDateTime": 3.15747504559485e-310,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 3188001816,
+        "time": 14879
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 210,
       "TagID": 150,
@@ -324,36 +444,54 @@
       "MissionID": 500401,
       "Name": "魔神最終決戦アモン＆キメリエス",
       "Enable": 2047,
-      "StartDateTime": 0.0,
-      "EndDateTime": 0.0,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 218,
       "TagID": 150,
       "TagIDRange": 0,
-      "RequestQuestIds": "4552,6179",
+      "RequestQuestIds": "4542,6169",
       "RequestClearRank": 0
     },
     {
       "MissionID": 500417,
       "Name": "魔神最終決戦ウェパル＆グラシャラボラス",
       "Enable": 2047,
-      "StartDateTime": 0.0,
-      "EndDateTime": 3.15747504559485e-310,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 3188001816,
+        "time": 14879
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 200,
       "TagID": 150,
       "TagIDRange": 0,
-      "RequestQuestIds": "4623,6366",
+      "RequestQuestIds": "4613,6356",
       "RequestClearRank": 0
     },
     {
       "MissionID": 500422,
       "Name": "大神降臨ディアス",
       "Enable": 2047,
-      "StartDateTime": 0.0,
-      "EndDateTime": 3.15747504559485e-310,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
       "UseInformationButton": 0,
-      "DisplayOrder": 200,
+      "DisplayOrder": 211,
       "TagID": 150,
       "TagIDRange": 0,
       "RequestQuestIds": "",
@@ -363,21 +501,33 @@
       "MissionID": 500434,
       "Name": "魔神最終決戦酒呑童子＆大嶽丸",
       "Enable": 2047,
-      "StartDateTime": 0.0,
-      "EndDateTime": 3.15747504559485e-310,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 3188001816,
+        "time": 14879
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 200,
       "TagID": 150,
       "TagIDRange": 0,
-      "RequestQuestIds": "4833,7153",
+      "RequestQuestIds": "4823,7143",
       "RequestClearRank": 0
     },
     {
       "MissionID": 500442,
       "Name": "雷竜クロコ降臨",
       "Enable": 2047,
-      "StartDateTime": 0.0,
-      "EndDateTime": 3.15747504559485e-310,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 3188001816,
+        "time": 14879
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 201,
       "TagID": 150,
@@ -389,23 +539,35 @@
       "MissionID": 500452,
       "Name": "魔神最終決戦ビフロンス＆フェネクス",
       "Enable": 2047,
-      "StartDateTime": 0.0,
-      "EndDateTime": 3.15747504559485e-310,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 3188001816,
+        "time": 14879
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 200,
       "TagID": 150,
       "TagIDRange": 0,
-      "RequestQuestIds": "4664,6114",
+      "RequestQuestIds": "4654,6104",
       "RequestClearRank": 0
     },
     {
       "MissionID": 500461,
       "Name": "大神降臨ポセイオス",
       "Enable": 2047,
-      "StartDateTime": 0.0,
-      "EndDateTime": 3.15747504559485e-310,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
       "UseInformationButton": 0,
-      "DisplayOrder": 200,
+      "DisplayOrder": 212,
       "TagID": 160,
       "TagIDRange": 0,
       "RequestQuestIds": "1937",
@@ -415,8 +577,14 @@
       "MissionID": 500465,
       "Name": "大神降臨ペルセポネ",
       "Enable": 2047,
-      "StartDateTime": 0.0,
-      "EndDateTime": 3.15747504559485e-310,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 3188001816,
+        "time": 14879
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 202,
       "TagID": 160,
@@ -428,21 +596,33 @@
       "MissionID": 500472,
       "Name": "魔神最終決戦バルバトス&アスタロト",
       "Enable": 2047,
-      "StartDateTime": 3.15772956850236e-310,
-      "EndDateTime": 3.1577587380887e-310,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 3188001816,
+        "time": 14879
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 200,
       "TagID": 150,
       "TagIDRange": 0,
-      "RequestQuestIds": "6250,6644",
+      "RequestQuestIds": "6240,6634",
       "RequestClearRank": 0
     },
     {
       "MissionID": 500476,
       "Name": "大神降臨真ディアス",
       "Enable": 2047,
-      "StartDateTime": 0.0,
-      "EndDateTime": 3.15747504559485e-310,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 3188001816,
+        "time": 14879
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 200,
       "TagID": 160,
@@ -454,21 +634,33 @@
       "MissionID": 500490,
       "Name": "魔神最終決戦グシオン&アガレス",
       "Enable": 2047,
-      "StartDateTime": 0.0,
-      "EndDateTime": 3.15747504559485e-310,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 3188001816,
+        "time": 14879
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 200,
       "TagID": 150,
       "TagIDRange": 0,
-      "RequestQuestIds": "4726,6551",
+      "RequestQuestIds": "4716,6541",
       "RequestClearRank": 0
     },
     {
       "MissionID": 500496,
       "Name": "大神降臨ハイドース",
       "Enable": 2047,
-      "StartDateTime": 0.0,
-      "EndDateTime": 3.15747504559485e-310,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 3188001816,
+        "time": 14879
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 203,
       "TagID": 160,
@@ -480,8 +672,14 @@
       "MissionID": 500510,
       "Name": "魔神降臨(デミウルゴス)",
       "Enable": 2047,
-      "StartDateTime": 0.0,
-      "EndDateTime": 3.15747504559485e-310,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 3188001816,
+        "time": 14879
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 200,
       "TagID": 150,
@@ -493,8 +691,14 @@
       "MissionID": 500527,
       "Name": "偉大なるベラート降臨",
       "Enable": 2047,
-      "StartDateTime": 0.0,
-      "EndDateTime": 3.15747504559485e-310,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 3188001816,
+        "time": 14879
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 204,
       "TagID": 150,
@@ -506,34 +710,52 @@
       "MissionID": 500531,
       "Name": "魔神最終決戦フールフール&モラクス",
       "Enable": 2047,
-      "StartDateTime": 0.0,
-      "EndDateTime": 3.15747504559485e-310,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 3188001816,
+        "time": 14879
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 200,
       "TagID": 150,
       "TagIDRange": 0,
-      "RequestQuestIds": "4507,7678",
+      "RequestQuestIds": "4497,7668",
       "RequestClearRank": 0
     },
     {
       "MissionID": 500534,
       "Name": "大神降臨ギルガメッシュ",
       "Enable": 2047,
-      "StartDateTime": 0.0,
-      "EndDateTime": 3.15747504559485e-310,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 3188001816,
+        "time": 14879
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 200,
       "TagID": 150,
       "TagIDRange": 0,
       "RequestQuestIds": "",
-      "RequestClearRank": 1
+      "RequestClearRank": 0
     },
     {
       "MissionID": 500551,
       "Name": "帝国史・歴戦の追憶",
       "Enable": 2047,
-      "StartDateTime": 0.0,
-      "EndDateTime": 3.1576093326374e-310,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 1611034520,
+        "time": 14880
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 200,
       "TagID": 150,

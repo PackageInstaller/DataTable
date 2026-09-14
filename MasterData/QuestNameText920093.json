@@ -1,0 +1,40 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 6,
+    "record_size": 4,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "Message",
+      "alias": "名前",
+      "type": "string",
+      "type_code": 32,
+      "offset": 0,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "Message": "フィリス隊の初陣"
+    },
+    {
+      "Message": "円舞大会準備"
+    },
+    {
+      "Message": "肝試し大会準備"
+    },
+    {
+      "Message": "水かけ大会準備"
+    },
+    {
+      "Message": "水鉄砲大会準備"
+    },
+    {
+      "Message": "フィリスたちの夏祭り"
+    }
+  ]
+}

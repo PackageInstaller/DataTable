@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 4,
+    "record_size": 12,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "alias": "ID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Text",
+      "alias": "テキスト",
+      "type": "string",
+      "type_code": 32,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "alias": "タイプ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Text": "何故か魔物と共に王国を襲う、白の帝国の神官戦士。\n帝国に確認したところ、その神官戦士は\n行方不明になったルチアという人物である可能性が浮上する。\n魔物を退けるため、そして真偽を確かめるため、\n王子たちは彼女を追うのだった。\n\n初開催2016年11月10日",
+      "Type": 6
+    },
+    {
+      "ID": 1,
+      "Text": "",
+      "Type": 7
+    },
+    {
+      "ID": 2,
+      "Text": "特定のミッションで\n「帝国神官戦士ルチア」が一定確率でドロップ",
+      "Type": 8
+    },
+    {
+      "ID": 3,
+      "Text": "『カボチャの魔導鎧兵』獲得★数21以上で開放",
+      "Type": 9
+    }
+  ]
+}

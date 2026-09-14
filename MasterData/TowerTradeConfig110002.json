@@ -4,119 +4,136 @@
     "flags": "0x10",
     "record_count": 0,
     "record_size": 76,
-    "custom_id": 2020897645
+    "tag": "mstx",
+    "date_epoch": "0001-01-01"
   },
   "_fields": [
     {
       "name": "ID",
+      "alias": "ID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "TradeCount",
+      "alias": "交換回数",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "Limitation",
+      "alias": "交換上限",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 8,
+      "type_code": 1,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "CardID",
+      "alias": "カードID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 12,
+      "type_code": 1,
+      "offset": 12,
       "size": 4
     },
     {
       "name": "DiscloseEmblemIDs",
+      "alias": "開示称号ID",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 16,
+      "type_code": 32,
+      "offset": 16,
       "size": 4
     },
     {
       "name": "DiscloseGeneralItemID",
+      "alias": "開示汎用アイテムID",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 20,
+      "type_code": 32,
+      "offset": 20,
       "size": 4
     },
     {
       "name": "GeneralItemID",
+      "alias": "汎用アイテムID",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 24,
+      "type_code": 32,
+      "offset": 24,
       "size": 4
     },
     {
       "name": "RequiredGeneralItemID",
+      "alias": "必要汎用アイテムID",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 28,
+      "type_code": 32,
+      "offset": 28,
       "size": 4
     },
     {
       "name": "RequiredValue",
+      "alias": "必要個数",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 32,
+      "type_code": 1,
+      "offset": 32,
       "size": 4
     },
     {
       "name": "StartDateTime",
-      "type": "double",
-      "mapped_type": 9,
-      "rec_offset": 40,
+      "alias": "開始日時",
+      "type": "datetime",
+      "type_code": 9,
+      "offset": 40,
       "size": 8
     },
     {
       "name": "EndDateTime",
-      "type": "double",
-      "mapped_type": 9,
-      "rec_offset": 48,
+      "alias": "終了日時",
+      "type": "datetime",
+      "type_code": 9,
+      "offset": 48,
       "size": 8
     },
     {
       "name": "GeneralTextID",
+      "alias": "汎用テキストID",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 56,
+      "type_code": 32,
+      "offset": 56,
       "size": 4
     },
     {
       "name": "ConfirmationTextID",
+      "alias": "確認テキストID",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 60,
+      "type_code": 32,
+      "offset": 60,
       "size": 4
     },
     {
       "name": "CompleteTextID",
+      "alias": "完了テキストID",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 64,
+      "type_code": 32,
+      "offset": 64,
       "size": 4
     },
     {
       "name": "CategoryType",
+      "alias": "タブカテゴリー",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 68,
+      "type_code": 1,
+      "offset": 68,
       "size": 4
     },
     {
       "name": "SingleBuyOnly",
+      "alias": "単品購入のみ",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 72,
+      "type_code": 1,
+      "offset": 72,
       "size": 4
     }
   ],

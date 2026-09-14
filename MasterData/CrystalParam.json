@@ -1,0 +1,33 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x00",
+    "record_size": 12
+  },
+  "_fields": [
+    {
+      "name": "FreeFlag",
+      "alias": "無料クリスタルフラグ",
+      "type": "bool",
+      "type_code": 5,
+      "offset": 0,
+      "size": 1
+    },
+    {
+      "name": "Num",
+      "alias": "個数",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Date",
+      "alias": "入手年月日",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    }
+  ]
+}

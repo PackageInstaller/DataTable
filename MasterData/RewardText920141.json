@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 4,
+    "record_size": 12,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "alias": "ID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Text",
+      "alias": "テキスト",
+      "type": "string",
+      "type_code": 32,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "alias": "タイプ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Text": "魔界に帰れなくなったデーモン、アイラは\n物質界でほそぼそと、どうにか生き延びていた。\nそんな彼女の前に魔神の教団員が現れ、\n魔界へ帰る方法を吹き込まんとする。\n騙されたアイラを救うべく、王子たちは奔走する。\n\n初開催2020年4月16日",
+      "Type": 6
+    },
+    {
+      "ID": 1,
+      "Text": "",
+      "Type": 7
+    },
+    {
+      "ID": 2,
+      "Text": "特定のミッションで\n「迷子の悪魔召喚士アイラ」が一定確率でドロップ",
+      "Type": 8
+    },
+    {
+      "ID": 3,
+      "Text": "『トップを狙うふたつ星』獲得★数21以上で開放",
+      "Type": 9
+    }
+  ]
+}

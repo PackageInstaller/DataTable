@@ -4,28 +4,32 @@
     "flags": "0x10",
     "record_count": 12,
     "record_size": 12,
-    "custom_id": 1885561443
+    "tag": "cbcp",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "_Rarity",
+      "alias": "レアリティ",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "_Male",
+      "alias": "男性倍率",
       "type": "float",
-      "mapped_type": 4,
-      "rec_offset": 4,
+      "type_code": 4,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "_Female",
+      "alias": "女性倍率",
       "type": "float",
-      "mapped_type": 4,
-      "rec_offset": 8,
+      "type_code": 4,
+      "offset": 8,
       "size": 4
     }
   ],

@@ -1,0 +1,37 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 5,
+    "record_size": 4,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "Message",
+      "alias": "メッセージ",
+      "type": "string",
+      "type_code": 32,
+      "offset": 0,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "Message": "聖戦士を仲間にするための\n試練が始まる。"
+    },
+    {
+      "Message": "飛来する鉄球に要注意\n強敵に立ち向かえ。"
+    },
+    {
+      "Message": "力尽きた戦士たちの亡霊が\nさまよう過酷な戦場を生き残れ。"
+    },
+    {
+      "Message": "聖戦士が率いる戦士たちを\n打ち破れ。"
+    },
+    {
+      "Message": "さらに強力になった鎧の戦列を\n打ち破れ。"
+    }
+  ]
+}

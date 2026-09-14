@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 4,
+    "record_size": 12,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "alias": "ID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Text",
+      "alias": "テキスト",
+      "type": "string",
+      "type_code": 32,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "alias": "タイプ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Text": "魔物と戦っていた王子たちの前に、鷲獅騎兵クゥイルが現れる。\n彼女は王国軍の力を測るべく、世界樹から送られたのだという。\n王子たちは模擬戦を通して、力を示すのだった。\n\n初開催2018年11月1日",
+      "Type": 6
+    },
+    {
+      "ID": 1,
+      "Text": "",
+      "Type": 7
+    },
+    {
+      "ID": 2,
+      "Text": "獲得★が1以上で\n交換所に「鷲獅騎兵クゥイル」が追加",
+      "Type": 8
+    },
+    {
+      "ID": 3,
+      "Text": "『カボチャの国の魔法使い』獲得★13数以上で開放",
+      "Type": 9
+    }
+  ]
+}

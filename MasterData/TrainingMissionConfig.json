@@ -4,49 +4,72 @@
     "flags": "0x14",
     "record_count": 2,
     "record_size": 44,
-    "custom_id": 2020897645
+    "tag": "",
+    "date_epoch": "0001-01-01"
   },
   "_fields": [
     {
       "name": "MissionID",
+      "alias": "ミッションID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "Name",
+      "alias": "ミッション名",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 4,
+      "type_code": 32,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "Enable",
+      "alias": "有効フラグ",
       "type": "bool",
-      "mapped_type": 5,
-      "rec_offset": 8,
+      "type_code": 5,
+      "offset": 8,
       "size": 1
     },
     {
-      "name": "\b\r\fStartDateTime",
-      "type": "unknown",
-      "mapped_type": 0,
-      "rec_offset": 0,
+      "name": "StartDateTime",
+      "alias": "開始日時",
+      "type": "datetime",
+      "type_code": 9,
+      "offset": 16,
+      "size": 8
+    },
+    {
+      "name": "EndDateTime",
+      "alias": "終了日時",
+      "type": "datetime",
+      "type_code": 9,
+      "offset": 24,
+      "size": 8
+    },
+    {
+      "name": "TagID",
+      "alias": "タグID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 32,
       "size": 4
     },
     {
-      "name": "ime",
-      "type": "unknown",
-      "mapped_type": 97,
-      "rec_offset": 17508,
-      "size": 0
+      "name": "TagIDRange",
+      "alias": "タグIDレンジ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 36,
+      "size": 4
     },
     {
-      "name": "field_5",
-      "type": "unknown",
-      "mapped_type": 0,
-      "rec_offset": 0,
+      "name": "DisplayOrder",
+      "alias": "表示順",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 40,
       "size": 4
     }
   ],
@@ -55,15 +78,33 @@
       "MissionID": 910001,
       "Name": "練習用ミッション1",
       "Enable": true,
-      "\b\r\fStartDateTime": "b1e20d00",
-      "field_5": "b1e20d00"
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "TagID": 302,
+      "TagIDRange": 0,
+      "DisplayOrder": 9900
     },
     {
       "MissionID": 910002,
       "Name": "エネミーテスト",
       "Enable": true,
-      "\b\r\fStartDateTime": "b2e20d00",
-      "field_5": "b2e20d00"
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 3188001816,
+        "time": 14879
+      },
+      "TagID": 303,
+      "TagIDRange": 0,
+      "DisplayOrder": 9900
     }
   ]
 }

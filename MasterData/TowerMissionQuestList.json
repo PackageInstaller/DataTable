@@ -2,30 +2,34 @@
   "_meta": {
     "version": 1,
     "flags": "0x14",
-    "record_count": 121,
+    "record_count": 123,
     "record_size": 12,
-    "custom_id": 2020897645
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "MissionID",
+      "alias": "ミッションID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "QuestID",
+      "alias": "クエストID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "QuestName",
+      "alias": "クエスト名",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 8,
+      "type_code": 32,
+      "offset": 8,
       "size": 4
     }
   ],
@@ -634,6 +638,16 @@
       "MissionID": 110003,
       "QuestID": 12031,
       "QuestName": "第31階層"
+    },
+    {
+      "MissionID": 110003,
+      "QuestID": 12032,
+      "QuestName": "第32階層"
+    },
+    {
+      "MissionID": 110003,
+      "QuestID": 12033,
+      "QuestName": "第33階層"
     }
   ]
 }

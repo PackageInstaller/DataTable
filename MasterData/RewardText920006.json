@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 4,
+    "record_size": 12,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "alias": "ID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Text",
+      "alias": "テキスト",
+      "type": "string",
+      "type_code": 32,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "alias": "タイプ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Text": "秘法の伝承者オデットは、魔物に狙われていた。\nそれは、彼女が持つ魔法の力を阻害する秘術が\n物質界の侵攻の妨げになるからなのだという。\n王子の魔物と戦う覚悟を聞いたオデットは\nその実力を確かめるべくいくつかの試練を告げるのだった。\n\n初開催2014年2月18日",
+      "Type": 6
+    },
+    {
+      "ID": 1,
+      "Text": "",
+      "Type": 7
+    },
+    {
+      "ID": 2,
+      "Text": "特定のミッションで\n「秘法の伝承者オデット」が一定確率でドロップ",
+      "Type": 8
+    },
+    {
+      "ID": 3,
+      "Text": "『竜姫の復活』獲得★数21以上で開放",
+      "Type": 9
+    }
+  ]
+}

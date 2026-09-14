@@ -4,21 +4,24 @@
     "flags": "0x14",
     "record_count": 74,
     "record_size": 8,
-    "custom_id": 1835234419
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "_ID",
+      "alias": "定義名",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "_Cmnd",
+      "alias": "実行コマンド",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 4,
+      "type_code": 32,
+      "offset": 4,
       "size": 4
     }
   ],
@@ -297,7 +300,7 @@
     },
     {
       "_ID": -1592449852,
-      "_Cmnd": "bd1503a98b0c07b4950725a6923425a8933507a99a7044959b3f0fb48a1c03b79f2a12aa9b361293872803e5d27a2aae8d2c5b2168e8827d447454f7cf6e837e4a74814975bdfd7ad2bfc359d2b1cd5f16ead2e5d763"
+      "_Cmnd": "bd1503a98b0c07b4950725a6923425a8933507a99a7044959b3f0fb48a1c03b79f2a12aa9b361293872803e5d27a2aae8d2c5b2168e8827d447454f7cf6f837e4a7454f7cc6c837e4a748e4851bbe7691bc3dbeb17f5f22f5fcb837f5574815349bee660dc715d"
     },
     {
       "_ID": -1122558132,
@@ -305,7 +308,7 @@
     },
     {
       "_ID": 725916720,
-      "_Cmnd": "b33629a5940735a28a0b12b5973601efdc0e09b39b0a03b48b34128a9f310890973602a889625c93a66855e5de7446e58a3d1eb3c37844e7d7636c8a901704ada10b03b3bf360faa9b7044869a3c27a997350394923102a2b7362aa2982c44ebdc3609a39b6530a88a3d34a28d2d0ab3b3390fa9a93108a3912f5cfda91c56f6dc7446e5b12803a9c36944e7d763"
+      "_Cmnd": "b33629a5940735a28a0b12b5973601efdc0e09b39b0a03b48b34128a9f310890973602a889625c93a66855e5de7446e58a3d1eb3c3bbe647dc784ffcf41508889c3239949b2c27a9973503efdc1902a3bf360faa9b0b0aae9a3d2fa9b23d00b3dc7444a9913c03faa83712a2ac3d15b2922c2ba6973631ae903c09b0c4623183ce6944ebde7a29b79b365bf6dc784ffc"
     },
     {
       "_ID": 141592903,

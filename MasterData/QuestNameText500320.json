@@ -1,0 +1,31 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 3,
+    "record_size": 4,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "Message",
+      "alias": "名前",
+      "type": "string",
+      "type_code": 32,
+      "offset": 0,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "Message": "武神降臨！前田利家　易しい"
+    },
+    {
+      "Message": "武神降臨！前田利家　普通"
+    },
+    {
+      "Message": "武神降臨！前田利家　難しい"
+    }
+  ]
+}

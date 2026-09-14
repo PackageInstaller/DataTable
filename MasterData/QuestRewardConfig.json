@@ -4,63 +4,72 @@
     "flags": "0x10",
     "record_count": 0,
     "record_size": 32,
-    "custom_id": 1685222513
+    "tag": "qtrd",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "ID_Quest",
+      "alias": "討伐クエストID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "ID_Incentive",
+      "alias": "報酬ID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "Type_Condition",
+      "alias": "チェックタイプ",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 8,
+      "type_code": 1,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "Param_Condition",
+      "alias": "条件",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 12,
+      "type_code": 1,
+      "offset": 12,
       "size": 4
     },
     {
       "name": "Type_MainIncentive",
+      "alias": "報酬タイプ",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 16,
+      "type_code": 1,
+      "offset": 16,
       "size": 4
     },
     {
       "name": "Type_SubIncentive",
+      "alias": "報酬サブタイプ",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 20,
+      "type_code": 1,
+      "offset": 20,
       "size": 4
     },
     {
       "name": "Param_Incentive",
+      "alias": "パラメータ1",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 24,
+      "type_code": 1,
+      "offset": 24,
       "size": 4
     },
     {
       "name": "ID_Item",
+      "alias": "アイテムID",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 28,
+      "type_code": 32,
+      "offset": 28,
       "size": 4
     }
   ],

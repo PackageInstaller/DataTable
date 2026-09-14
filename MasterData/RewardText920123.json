@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 4,
+    "record_size": 12,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "alias": "ID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Text",
+      "alias": "テキスト",
+      "type": "string",
+      "type_code": 32,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "alias": "タイプ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Text": "魔王軍がある『力』を求めていると知った王子たち。\n先手を打つべく、王国軍は魔神マンモンの居城たる\n『迷宮アヴァリティア』へと赴く。\nしかし、迷宮にはすでに魔王軍の手が伸びており、\n王国軍との激闘が始まるのだった。\n\n初開催2019年3月7日",
+      "Type": 6
+    },
+    {
+      "ID": 1,
+      "Text": "",
+      "Type": 7
+    },
+    {
+      "ID": 2,
+      "Text": "獲得★が1以上で\n交換所に「強欲の魔神マンモン」が追加",
+      "Type": 8
+    },
+    {
+      "ID": 3,
+      "Text": "『誘惑のバレンタイン戦線』獲得★数21以上で開放",
+      "Type": 9
+    }
+  ]
+}

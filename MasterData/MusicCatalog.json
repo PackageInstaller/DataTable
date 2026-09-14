@@ -1,0 +1,1030 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 121,
+    "record_size": 24,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "MusicId",
+      "alias": "楽曲ID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "DisplayId",
+      "alias": "表示順",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "TextHashId",
+      "alias": "楽曲名[CRC32]",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    },
+    {
+      "name": "MusicType",
+      "alias": "楽曲種別",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 12,
+      "size": 4
+    },
+    {
+      "name": "OpenDate",
+      "alias": "公開日時",
+      "type": "string",
+      "type_code": 32,
+      "offset": 16,
+      "size": 4
+    },
+    {
+      "name": "CloseDate",
+      "alias": "終了日時",
+      "type": "string",
+      "type_code": 32,
+      "offset": 20,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "MusicId": 95,
+      "DisplayId": 1,
+      "TextHashId": -1051687688,
+      "MusicType": 1,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 7,
+      "DisplayId": 2,
+      "TextHashId": 1482282306,
+      "MusicType": 1,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 64,
+      "DisplayId": 3,
+      "TextHashId": 794748372,
+      "MusicType": 1,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 73,
+      "DisplayId": 4,
+      "TextHashId": -1321570185,
+      "MusicType": 1,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 136,
+      "DisplayId": 5,
+      "TextHashId": -969064223,
+      "MusicType": 1,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 29,
+      "DisplayId": 6,
+      "TextHashId": 1597247835,
+      "MusicType": 1,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 77,
+      "DisplayId": 7,
+      "TextHashId": 674439629,
+      "MusicType": 1,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 79,
+      "DisplayId": 8,
+      "TextHashId": -1198769060,
+      "MusicType": 1,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 80,
+      "DisplayId": 9,
+      "TextHashId": -812970806,
+      "MusicType": 1,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 82,
+      "DisplayId": 10,
+      "TextHashId": -1353939665,
+      "MusicType": 1,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 33,
+      "DisplayId": 11,
+      "TextHashId": -666126919,
+      "MusicType": 1,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 63,
+      "DisplayId": 12,
+      "TextHashId": 1094902787,
+      "MusicType": 1,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 87,
+      "DisplayId": 13,
+      "TextHashId": 910546069,
+      "MusicType": 1,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 35,
+      "DisplayId": 14,
+      "TextHashId": -1474215626,
+      "MusicType": 1,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 67,
+      "DisplayId": 15,
+      "TextHashId": -551128672,
+      "MusicType": 1,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 88,
+      "DisplayId": 16,
+      "TextHashId": 1177493530,
+      "MusicType": 1,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 125,
+      "DisplayId": 17,
+      "TextHashId": 824709260,
+      "MusicType": 1,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 24,
+      "DisplayId": 18,
+      "TextHashId": -1583936227,
+      "MusicType": 1,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 72,
+      "DisplayId": 19,
+      "TextHashId": -695190133,
+      "MusicType": 1,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 59,
+      "DisplayId": 20,
+      "TextHashId": -2073962772,
+      "MusicType": 1,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 117,
+      "DisplayId": 21,
+      "TextHashId": -211360134,
+      "MusicType": 1,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 129,
+      "DisplayId": 22,
+      "TextHashId": 1785706432,
+      "MusicType": 1,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 28,
+      "DisplayId": 23,
+      "TextHashId": 493389654,
+      "MusicType": 1,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 76,
+      "DisplayId": 24,
+      "TextHashId": -2096360715,
+      "MusicType": 1,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 8,
+      "DisplayId": 25,
+      "TextHashId": -200596893,
+      "MusicType": 1,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 9,
+      "DisplayId": 26,
+      "TextHashId": 1828877273,
+      "MusicType": 1,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 4,
+      "DisplayId": 27,
+      "TextHashId": 436552527,
+      "MusicType": 1,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 5,
+      "DisplayId": 28,
+      "TextHashId": -1967497506,
+      "MusicType": 1,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 6,
+      "DisplayId": 29,
+      "TextHashId": -37917112,
+      "MusicType": 1,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 47,
+      "DisplayId": 30,
+      "TextHashId": -1652889683,
+      "MusicType": 1,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 2,
+      "DisplayId": 31,
+      "TextHashId": -360851653,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 11,
+      "DisplayId": 32,
+      "TextHashId": 1937016449,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 1,
+      "DisplayId": 33,
+      "TextHashId": 74692119,
+      "MusicType": 4,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 21,
+      "DisplayId": 34,
+      "TextHashId": -1709759564,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 18,
+      "DisplayId": 35,
+      "TextHashId": -317713630,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 22,
+      "DisplayId": 36,
+      "TextHashId": 1947812504,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 12,
+      "DisplayId": 37,
+      "TextHashId": 52326926,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 13,
+      "DisplayId": 38,
+      "TextHashId": -1818136673,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 15,
+      "DisplayId": 39,
+      "TextHashId": -458858743,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 14,
+      "DisplayId": 40,
+      "TextHashId": -767856278,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 16,
+      "DisplayId": 41,
+      "TextHashId": -1522777604,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 25,
+      "DisplayId": 42,
+      "TextHashId": 1010110534,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 39,
+      "DisplayId": 43,
+      "TextHashId": 1261576400,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 23,
+      "DisplayId": 44,
+      "TextHashId": -715737741,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 55,
+      "DisplayId": 45,
+      "TextHashId": -1571715611,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 56,
+      "DisplayId": 46,
+      "TextHashId": 995677279,
+      "MusicType": 4,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 99,
+      "DisplayId": 47,
+      "TextHashId": 1281352905,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 123,
+      "DisplayId": 48,
+      "TextHashId": -589235880,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 38,
+      "DisplayId": 49,
+      "TextHashId": -1410872882,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 58,
+      "DisplayId": 50,
+      "TextHashId": -887078869,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 60,
+      "DisplayId": 51,
+      "TextHashId": -1138265923,
+      "MusicType": 4,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 65,
+      "DisplayId": 52,
+      "TextHashId": 623780103,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 20,
+      "DisplayId": 53,
+      "TextHashId": 1378423185,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 111,
+      "DisplayId": 54,
+      "TextHashId": -867335118,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 71,
+      "DisplayId": 55,
+      "TextHashId": -1152731996,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 19,
+      "DisplayId": 56,
+      "TextHashId": 574874910,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 108,
+      "DisplayId": 57,
+      "TextHashId": 1430574472,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 112,
+      "DisplayId": 58,
+      "TextHashId": -973354983,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 113,
+      "DisplayId": 59,
+      "TextHashId": -1292044145,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 147,
+      "DisplayId": 60,
+      "TextHashId": -536013848,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 161,
+      "DisplayId": 61,
+      "TextHashId": -1760943234,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 49,
+      "DisplayId": 62,
+      "TextHashId": 235107012,
+      "MusicType": 4,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 66,
+      "DisplayId": 63,
+      "TextHashId": 2030322258,
+      "MusicType": 4,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 86,
+      "DisplayId": 64,
+      "TextHashId": -413083663,
+      "MusicType": 4,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 91,
+      "DisplayId": 65,
+      "TextHashId": -1872238745,
+      "MusicType": 4,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 100,
+      "DisplayId": 66,
+      "TextHashId": 158250717,
+      "MusicType": 4,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 150,
+      "DisplayId": 67,
+      "TextHashId": 2120844875,
+      "MusicType": 4,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 163,
+      "DisplayId": 68,
+      "TextHashId": -287925286,
+      "MusicType": 5,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 10,
+      "DisplayId": 69,
+      "TextHashId": -1714312372,
+      "MusicType": 5,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 48,
+      "DisplayId": 70,
+      "TextHashId": -115989847,
+      "MusicType": 5,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 105,
+      "DisplayId": 71,
+      "TextHashId": -1911483841,
+      "MusicType": 5,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 106,
+      "DisplayId": 72,
+      "TextHashId": 387466117,
+      "MusicType": 5,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 162,
+      "DisplayId": 73,
+      "TextHashId": 1612673811,
+      "MusicType": 4,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 26,
+      "DisplayId": 74,
+      "TextHashId": -25434448,
+      "MusicType": 5,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 78,
+      "DisplayId": 75,
+      "TextHashId": -1988307418,
+      "MusicType": 5,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 81,
+      "DisplayId": 76,
+      "TextHashId": 276137884,
+      "MusicType": 5,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 89,
+      "DisplayId": 77,
+      "TextHashId": 1735571210,
+      "MusicType": 5,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 93,
+      "DisplayId": 78,
+      "TextHashId": -137516389,
+      "MusicType": 5,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 107,
+      "DisplayId": 79,
+      "TextHashId": -2134205939,
+      "MusicType": 5,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 120,
+      "DisplayId": 80,
+      "TextHashId": 2123251302,
+      "MusicType": 5,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 124,
+      "DisplayId": 81,
+      "TextHashId": 159977200,
+      "MusicType": 5,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 131,
+      "DisplayId": 82,
+      "TextHashId": -1870635190,
+      "MusicType": 5,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 146,
+      "DisplayId": 83,
+      "TextHashId": -410554404,
+      "MusicType": 5,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 151,
+      "DisplayId": 84,
+      "TextHashId": 2044983935,
+      "MusicType": 5,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 46,
+      "DisplayId": 85,
+      "TextHashId": 249875177,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 74,
+      "DisplayId": 86,
+      "TextHashId": -1746035885,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 75,
+      "DisplayId": 87,
+      "TextHashId": -521491515,
+      "MusicType": 4,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 134,
+      "DisplayId": 88,
+      "TextHashId": 1884665428,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 135,
+      "DisplayId": 89,
+      "TextHashId": 122848962,
+      "MusicType": 4,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 57,
+      "DisplayId": 90,
+      "TextHashId": 1737821991,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 42,
+      "DisplayId": 91,
+      "TextHashId": 278020017,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 43,
+      "DisplayId": 92,
+      "TextHashId": -1986302453,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 17,
+      "DisplayId": 93,
+      "TextHashId": -23306595,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 94,
+      "DisplayId": 94,
+      "TextHashId": 1626917694,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 122,
+      "DisplayId": 95,
+      "TextHashId": 402652072,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 97,
+      "DisplayId": 96,
+      "TextHashId": -1896437230,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 101,
+      "DisplayId": 97,
+      "TextHashId": -101606780,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 133,
+      "DisplayId": 98,
+      "TextHashId": 1766754069,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 32,
+      "DisplayId": 99,
+      "TextHashId": 508147587,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 85,
+      "DisplayId": 100,
+      "TextHashId": -1214914983,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 96,
+      "DisplayId": 101,
+      "TextHashId": -1064112433,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 126,
+      "DisplayId": 102,
+      "TextHashId": 1503379317,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 130,
+      "DisplayId": 103,
+      "TextHashId": 782012387,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 132,
+      "DisplayId": 104,
+      "TextHashId": -1325917632,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 137,
+      "DisplayId": 105,
+      "TextHashId": -939578666,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 144,
+      "DisplayId": 106,
+      "TextHashId": 1593211756,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 148,
+      "DisplayId": 107,
+      "TextHashId": 703679482,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 149,
+      "DisplayId": 108,
+      "TextHashId": -1186048405,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 152,
+      "DisplayId": 109,
+      "TextHashId": -834050307,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 3,
+      "DisplayId": 110,
+      "TextHashId": -1366364392,
+      "MusicType": 3,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 158,
+      "DisplayId": 111,
+      "TextHashId": -645275762,
+      "MusicType": 2,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 157,
+      "DisplayId": 112,
+      "TextHashId": 1082166836,
+      "MusicType": 2,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 98,
+      "DisplayId": 113,
+      "TextHashId": 931643042,
+      "MusicType": 2,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 156,
+      "DisplayId": 114,
+      "TextHashId": -1444730111,
+      "MusicType": 2,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 114,
+      "DisplayId": 115,
+      "TextHashId": -555476073,
+      "MusicType": 2,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 159,
+      "DisplayId": 116,
+      "TextHashId": 1206733357,
+      "MusicType": 2,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 115,
+      "DisplayId": 117,
+      "TextHashId": 820673211,
+      "MusicType": 2,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 118,
+      "DisplayId": 118,
+      "TextHashId": -1605015766,
+      "MusicType": 2,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 160,
+      "DisplayId": 119,
+      "TextHashId": -682469444,
+      "MusicType": 2,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 116,
+      "DisplayId": 120,
+      "TextHashId": -2052866853,
+      "MusicType": 2,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    },
+    {
+      "MusicId": 119,
+      "DisplayId": 121,
+      "TextHashId": -224097203,
+      "MusicType": 2,
+      "OpenDate": "2026/05/01 00:00:00",
+      "CloseDate": ""
+    }
+  ]
+}

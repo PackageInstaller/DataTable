@@ -1,0 +1,40 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 6,
+    "record_size": 4,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "Message",
+      "alias": "名前",
+      "type": "string",
+      "type_code": 32,
+      "offset": 0,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "Message": "戦乙女の挑戦"
+    },
+    {
+      "Message": "騎兵の一矢"
+    },
+    {
+      "Message": "弓騎兵の戦列"
+    },
+    {
+      "Message": "重装騎兵"
+    },
+    {
+      "Message": "最後の戦い"
+    },
+    {
+      "Message": "騎兵の侵攻"
+    }
+  ]
+}

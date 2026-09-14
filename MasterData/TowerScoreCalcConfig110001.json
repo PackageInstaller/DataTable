@@ -4,147 +4,168 @@
     "flags": "0x14",
     "record_count": 45,
     "record_size": 80,
-    "custom_id": 2020897645
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "QuestID",
+      "alias": "クエストID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "StarCountPoint1",
+      "alias": "星数ポイント1",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "StarCountPoint2",
+      "alias": "星数ポイント2",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 8,
+      "type_code": 1,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "StarCountPoint3",
+      "alias": "星数ポイント3",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 12,
+      "type_code": 1,
+      "offset": 12,
       "size": 4
     },
     {
       "name": "ConsumedCostFactor1",
+      "alias": "消費コスト因子1",
       "type": "float",
-      "mapped_type": 4,
-      "rec_offset": 16,
+      "type_code": 4,
+      "offset": 16,
       "size": 4
     },
     {
       "name": "ConsumedCostFactor2",
+      "alias": "消費コスト因子2",
       "type": "float",
-      "mapped_type": 4,
-      "rec_offset": 20,
+      "type_code": 4,
+      "offset": 20,
       "size": 4
     },
     {
       "name": "MaxConsumedCostPoint",
+      "alias": "最大消費コストポイント",
       "type": "float",
-      "mapped_type": 4,
-      "rec_offset": 24,
+      "type_code": 4,
+      "offset": 24,
       "size": 4
     },
     {
       "name": "MinConsumedCostPoint",
+      "alias": "最小消費コストポイント",
       "type": "float",
-      "mapped_type": 4,
-      "rec_offset": 28,
+      "type_code": 4,
+      "offset": 28,
       "size": 4
     },
     {
       "name": "MemberCountFactor1",
+      "alias": "編成人数因子1",
       "type": "float",
-      "mapped_type": 4,
-      "rec_offset": 32,
+      "type_code": 4,
+      "offset": 32,
       "size": 4
     },
     {
       "name": "MemberCountFactor2",
+      "alias": "編成人数因子2",
       "type": "float",
-      "mapped_type": 4,
-      "rec_offset": 36,
+      "type_code": 4,
+      "offset": 36,
       "size": 4
     },
     {
       "name": "MemberCountFactorSupport",
+      "alias": "編成人数因子[サポ]",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 40,
+      "type_code": 32,
+      "offset": 40,
       "size": 4
     },
     {
       "name": "MaxMemberCountPoint",
+      "alias": "最大編成人数ポイント",
       "type": "float",
-      "mapped_type": 4,
-      "rec_offset": 44,
+      "type_code": 4,
+      "offset": 44,
       "size": 4
     },
     {
       "name": "MinMemberCountPoint",
+      "alias": "最小編成人数ポイント",
       "type": "float",
-      "mapped_type": 4,
-      "rec_offset": 48,
+      "type_code": 4,
+      "offset": 48,
       "size": 4
     },
     {
       "name": "MaxScore",
+      "alias": "最大スコア",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 52,
+      "type_code": 1,
+      "offset": 52,
       "size": 4
     },
     {
       "name": "MinScore",
+      "alias": "最小スコア",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 56,
+      "type_code": 1,
+      "offset": 56,
       "size": 4
     },
     {
       "name": "SallyCountFactor1",
+      "alias": "出撃数因子1",
       "type": "float",
-      "mapped_type": 4,
-      "rec_offset": 60,
+      "type_code": 4,
+      "offset": 60,
       "size": 4
     },
     {
       "name": "SallyCountFactor2",
+      "alias": "出撃数因子2",
       "type": "float",
-      "mapped_type": 4,
-      "rec_offset": 64,
+      "type_code": 4,
+      "offset": 64,
       "size": 4
     },
     {
       "name": "SallyCountFactorSupport",
+      "alias": "出撃数因子[サポ]",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 68,
+      "type_code": 32,
+      "offset": 68,
       "size": 4
     },
     {
       "name": "MaxSallyCountPoint",
+      "alias": "最大出撃数ポイント",
       "type": "float",
-      "mapped_type": 4,
-      "rec_offset": 72,
+      "type_code": 4,
+      "offset": 72,
       "size": 4
     },
     {
       "name": "MinSallyCountPoint",
+      "alias": "最小出撃数ポイント",
       "type": "float",
-      "mapped_type": 4,
-      "rec_offset": 76,
+      "type_code": 4,
+      "offset": 76,
       "size": 4
     }
   ],

@@ -1,0 +1,37 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 5,
+    "record_size": 4,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "Message",
+      "alias": "メッセージ",
+      "type": "string",
+      "type_code": 32,
+      "offset": 0,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "Message": "新たな魔物に立ち向かえ\n怪力から繰り出される\n一撃に要注意！"
+    },
+    {
+      "Message": "鬼たちを倒し、鬼を守るという\nオキテから巫女を解放せよ！"
+    },
+    {
+      "Message": "人々の生活の場を脅かす\n鬼たちを追い払え！"
+    },
+    {
+      "Message": "次々と現れる鬼の群れを\n撃退せよ！"
+    },
+    {
+      "Message": "鬼の怒りの矛先は女神の神殿に！\n女神の神殿を鬼から守れ！"
+    }
+  ]
+}

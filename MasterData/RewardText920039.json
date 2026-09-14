@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 4,
+    "record_size": 12,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "alias": "ID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Text",
+      "alias": "テキスト",
+      "type": "string",
+      "type_code": 32,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "alias": "タイプ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Text": "田園の住民がヴァンパイアに襲われた。\n現れた吸血鬼、エデンが言うには、住民を救いたければ\n彼女の父である吸血鬼の王を倒すしかないらしい。\nしかしそこで王子たちは、吸血鬼をめぐる決断を\n迫られることになる。\n\n初開催2015年3月26日",
+      "Type": 6
+    },
+    {
+      "ID": 1,
+      "Text": "",
+      "Type": 7
+    },
+    {
+      "ID": 2,
+      "Text": "獲得★が1以上で\n交換所に「吸血鬼エデン」が追加",
+      "Type": 8
+    },
+    {
+      "ID": 3,
+      "Text": "『錬金術士と賢者の石』獲得★数13以上で開放",
+      "Type": 9
+    }
+  ]
+}

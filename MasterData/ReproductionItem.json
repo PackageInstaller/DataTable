@@ -1,0 +1,49 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x00",
+    "record_size": 20
+  },
+  "_fields": [
+    {
+      "name": "I0",
+      "alias": "アイテム0",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "I1",
+      "alias": "アイテム1",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "F0",
+      "alias": "フラグ0",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    },
+    {
+      "name": "F0RT",
+      "alias": "F0リセットタイミング",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 12,
+      "size": 4
+    },
+    {
+      "name": "EI",
+      "alias": "イベントID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 16,
+      "size": 4
+    }
+  ]
+}

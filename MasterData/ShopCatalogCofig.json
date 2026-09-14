@@ -4,21 +4,24 @@
     "flags": "0x10",
     "record_count": 45,
     "record_size": 8,
-    "custom_id": 1668559475
+    "tag": "s2tc",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "ID_Config",
+      "alias": "定義名",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "ID_Class",
+      "alias": "クラスID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     }
   ],

@@ -2,37 +2,42 @@
   "_meta": {
     "version": 1,
     "flags": "0x14",
-    "record_count": 127,
+    "record_count": 131,
     "record_size": 16,
-    "custom_id": 1684234601
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "_EnemyTypeID",
+      "alias": "[種族]ID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "_EnemyTypeName",
+      "alias": "[種族]名称",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 4,
+      "type_code": 32,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "_EnemyTypeNote",
+      "alias": "[種族]NOTE",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 8,
+      "type_code": 32,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "_EnemyTypeDefine",
+      "alias": "[種族]DEFINE",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 12,
+      "type_code": 32,
+      "offset": 12,
       "size": 4
     }
   ],
@@ -180,6 +185,30 @@
       "_EnemyTypeName": "ゴブリンアンド巨人",
       "_EnemyTypeNote": "ゴブリンと巨人タイプ",
       "_EnemyTypeDefine": "GIANTGOBRIN"
+    },
+    {
+      "_EnemyTypeID": 24,
+      "_EnemyTypeName": "神像兵器",
+      "_EnemyTypeNote": "神像兵器タイプ",
+      "_EnemyTypeDefine": "DIVINESTATUEWEAPON"
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
+    },
+    {
+      "_EnemyTypeID": 0,
+      "_EnemyTypeName": "",
+      "_EnemyTypeNote": "",
+      "_EnemyTypeDefine": ""
     },
     {
       "_EnemyTypeID": 0,

@@ -2,30 +2,34 @@
   "_meta": {
     "version": 1,
     "flags": "0x14",
-    "record_count": 32,
+    "record_count": 34,
     "record_size": 12,
-    "custom_id": 1734763365
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "_CfgID",
+      "alias": "定義ID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "_ResID",
+      "alias": "リソースID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "CfgName",
+      "alias": "定義名",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 8,
+      "type_code": 32,
+      "offset": 8,
       "size": 4
     }
   ],
@@ -189,6 +193,16 @@
       "_CfgID": -304207078,
       "_ResID": 31,
       "CfgName": "PoisonMist7"
+    },
+    {
+      "_CfgID": -849984354,
+      "_ResID": 32,
+      "CfgName": "IceLightning"
+    },
+    {
+      "_CfgID": 1201488301,
+      "_ResID": 33,
+      "CfgName": "WelcomeRain"
     }
   ]
 }

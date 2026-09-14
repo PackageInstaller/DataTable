@@ -2,23 +2,26 @@
   "_meta": {
     "version": 1,
     "flags": "0x14",
-    "record_count": 2791,
+    "record_count": 2884,
     "record_size": 8,
-    "custom_id": 2020893799
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "Message",
+      "alias": "名前",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 0,
+      "type_code": 32,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "RealName",
+      "alias": "実名",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 4,
+      "type_code": 32,
+      "offset": 4,
       "size": 4
     }
   ],
@@ -11186,6 +11189,378 @@
     {
       "Message": "王子【双鴉】",
       "RealName": "王子【双鴉】"
+    },
+    {
+      "Message": "王立コロッセオ",
+      "RealName": "王立コロッセオ"
+    },
+    {
+      "Message": "ちびアトナテス",
+      "RealName": "ちびアトナテス"
+    },
+    {
+      "Message": "刀匠マサムネ",
+      "RealName": "マサムネ"
+    },
+    {
+      "Message": "虚ろの幻花ファルタリア",
+      "RealName": "ファルタリア"
+    },
+    {
+      "Message": "荒野の保安官ドミナ",
+      "RealName": "ドミナ"
+    },
+    {
+      "Message": "災夜の亜神ラシュマシュ(幻影)",
+      "RealName": "災夜の亜神ラシュマシュ(幻影)"
+    },
+    {
+      "Message": "大海神の娘 乙姫(幻影)",
+      "RealName": "大海神の娘 乙姫(幻影)"
+    },
+    {
+      "Message": "災夜の亜神ラシュマシュ(幻影)",
+      "RealName": "災夜の亜神ラシュマシュ(幻影)"
+    },
+    {
+      "Message": "大海神の娘 乙姫(幻影)",
+      "RealName": "大海神の娘 乙姫(幻影)"
+    },
+    {
+      "Message": "赤炉の亜神ヘスティス(幻影)",
+      "RealName": "赤炉の亜神ヘスティス(幻影)"
+    },
+    {
+      "Message": "災夜の亜神ラシュマシュ(幻影)",
+      "RealName": "災夜の亜神ラシュマシュ(幻影)"
+    },
+    {
+      "Message": "大海神の娘 乙姫(幻影)",
+      "RealName": "大海神の娘 乙姫(幻影)"
+    },
+    {
+      "Message": "赤炉の亜神ヘスティス(幻影)",
+      "RealName": "赤炉の亜神ヘスティス(幻影)"
+    },
+    {
+      "Message": "災夜の亜神ラシュマシュ(幻影)",
+      "RealName": "災夜の亜神ラシュマシュ(幻影)"
+    },
+    {
+      "Message": "大海神の娘 乙姫(幻影)",
+      "RealName": "大海神の娘 乙姫(幻影)"
+    },
+    {
+      "Message": "赤炉の亜神ヘスティス(幻影)",
+      "RealName": "赤炉の亜神ヘスティス(幻影)"
+    },
+    {
+      "Message": "遺物拾いのプリヤンカ",
+      "RealName": "プリヤンカ"
+    },
+    {
+      "Message": "天宇寿女命",
+      "RealName": "天宇寿女命"
+    },
+    {
+      "Message": "稀代の陰陽師セイメイ",
+      "RealName": "セイメイ"
+    },
+    {
+      "Message": "闘気の格闘家ダン",
+      "RealName": "ダン"
+    },
+    {
+      "Message": "流転の刻詠リンネ",
+      "RealName": "リンネ"
+    },
+    {
+      "Message": "ちびリンクス",
+      "RealName": "ちびリンクス"
+    },
+    {
+      "Message": "ちびシルヴァーナ",
+      "RealName": "ちびシルヴァーナ"
+    },
+    {
+      "Message": "冒険者パーティー",
+      "RealName": "冒険者パーティー"
+    },
+    {
+      "Message": "十二天将",
+      "RealName": "十二天将"
+    },
+    {
+      "Message": "十二天将",
+      "RealName": "十二天将"
+    },
+    {
+      "Message": "十二天将",
+      "RealName": "十二天将"
+    },
+    {
+      "Message": "十二天将",
+      "RealName": "十二天将"
+    },
+    {
+      "Message": "天宇寿女命トークン",
+      "RealName": "天宇寿女命トークン"
+    },
+    {
+      "Message": "天宇寿女命覚醒トークン",
+      "RealName": "天宇寿女命覚醒トークン"
+    },
+    {
+      "Message": "誓いの鍛冶師グラティア",
+      "RealName": "グラティア"
+    },
+    {
+      "Message": "贖罪の花嫁ラウラ",
+      "RealName": "ラウラ"
+    },
+    {
+      "Message": "番う嫁竜カルペム",
+      "RealName": "カルペム"
+    },
+    {
+      "Message": "王子【婚礼】",
+      "RealName": "王子【婚礼】"
+    },
+    {
+      "Message": "ちびベヒモス",
+      "RealName": "ちびベヒモス"
+    },
+    {
+      "Message": "華麗なる魔剣シャルロット",
+      "RealName": "シャルロット"
+    },
+    {
+      "Message": "紅玉の精鋭射手ポミエ",
+      "RealName": "ポミエ"
+    },
+    {
+      "Message": "メカジーラトス",
+      "RealName": "メカジーラトス"
+    },
+    {
+      "Message": "大天使長ミルノ",
+      "RealName": "ミルノ"
+    },
+    {
+      "Message": "厄災の悪魔少女エフネ",
+      "RealName": "エフネ"
+    },
+    {
+      "Message": "ちびヨユキ",
+      "RealName": "ちびヨユキ"
+    },
+    {
+      "Message": "ちびアクアマリー",
+      "RealName": "ちびアクアマリー"
+    },
+    {
+      "Message": "夏日の調べホルミース",
+      "RealName": "ホルミース"
+    },
+    {
+      "Message": "真夏の征服者ヴィラヘルム",
+      "RealName": "ヴィラヘルム"
+    },
+    {
+      "Message": "バカンスナイト ヘイズル",
+      "RealName": "ヘイズル"
+    },
+    {
+      "Message": "真夏の風雷クーコ&レミィ",
+      "RealName": "クーコ&レミィ"
+    },
+    {
+      "Message": "上善如水 太上老君",
+      "RealName": "太上老君"
+    },
+    {
+      "Message": "渚に響く号砲ハリンヘイム",
+      "RealName": "ハリンヘイム"
+    },
+    {
+      "Message": "溟海の魔将アブグルント",
+      "RealName": "アブグルント"
+    },
+    {
+      "Message": "千年後の海ヴィディア",
+      "RealName": "ヴィディア"
+    },
+    {
+      "Message": "浜辺の神託イムラウ",
+      "RealName": "イムラウ"
+    },
+    {
+      "Message": "海竜機兵ダグマール",
+      "RealName": "ダグマール"
+    },
+    {
+      "Message": "常夏の聖霊女王グラディス",
+      "RealName": "グラディス"
+    },
+    {
+      "Message": "バリアトークン",
+      "RealName": "バリアトークン(サマー)"
+    },
+    {
+      "Message": "上善如水 太上老君（分身）",
+      "RealName": "上善如水 太上老君（分身）"
+    },
+    {
+      "Message": "上善如水 太上老君（分身）",
+      "RealName": "上善如水 太上老君（分身）"
+    },
+    {
+      "Message": "上善如水 太上老君（分身）",
+      "RealName": "上善如水 太上老君（分身）"
+    },
+    {
+      "Message": "ちびストレイ",
+      "RealName": "ちびストレイ"
+    },
+    {
+      "Message": "大華の夏休み徐華",
+      "RealName": "徐華"
+    },
+    {
+      "Message": "ケツァルコアトル人形",
+      "RealName": "ケツァルコアトル人形"
+    },
+    {
+      "Message": "氷雪系アイドル ユキヒメ",
+      "RealName": "ユキヒメ"
+    },
+    {
+      "Message": "機甲偶像アージェ★アルタ",
+      "RealName": "アージェ★アルタ"
+    },
+    {
+      "Message": "idolenessラタ★キュウビ",
+      "RealName": "ラタ★キュウビ"
+    },
+    {
+      "Message": "雪姫親衛隊",
+      "RealName": "雪姫親衛隊"
+    },
+    {
+      "Message": "魔導ドローン（ファン）",
+      "RealName": "魔導ドローン（ファン）"
+    },
+    {
+      "Message": "idolenessラタ★キュウビ_射程指定トークン",
+      "RealName": "idolenessラタ★キュウビ_射程指定トークン"
+    },
+    {
+      "Message": "ＦＭ／ＤＨＭＺシャーク",
+      "RealName": "ＦＭ／ＤＨＭＺシャーク"
+    },
+    {
+      "Message": "ちびイヨ",
+      "RealName": "ちびイヨ"
+    },
+    {
+      "Message": "ちびサティン",
+      "RealName": "ちびサティン"
+    },
+    {
+      "Message": "ＦＭ／ＤＨＭＺシャーク移動用トークン",
+      "RealName": "ＦＭ／ＤＨＭＺシャーク移動用トークン"
+    },
+    {
+      "Message": "雪枝の夏マータン",
+      "RealName": "マータン"
+    },
+    {
+      "Message": "ダーク夏祭りリッチ",
+      "RealName": "リッチ"
+    },
+    {
+      "Message": "久遠の思い出エターナー",
+      "RealName": "エターナー"
+    },
+    {
+      "Message": "ソードスケルトン",
+      "RealName": "ソードスケルトン"
+    },
+    {
+      "Message": "刈リ取ル者タチ",
+      "RealName": "刈リ取ル者タチ"
+    },
+    {
+      "Message": "ちびリカルド",
+      "RealName": "ちびリカルド"
+    },
+    {
+      "Message": "創滅を舞う者ケルドラ",
+      "RealName": "ケルドラ"
+    },
+    {
+      "Message": "創滅を舞う者ケルドラ",
+      "RealName": "ケルドラ"
+    },
+    {
+      "Message": "遺宝狩りカーヴィヤ",
+      "RealName": "カーヴィヤ"
+    },
+    {
+      "Message": "狂風大祭ズィズィー",
+      "RealName": "ズィズィー"
+    },
+    {
+      "Message": "チェインソンガール",
+      "RealName": "チェインソンガール"
+    },
+    {
+      "Message": "天眼の呪い師アナーニャ",
+      "RealName": "アナーニャ"
+    },
+    {
+      "Message": "聖杯付喪神グリアル",
+      "RealName": "グリアル"
+    },
+    {
+      "Message": "四神の長 黄龍",
+      "RealName": "黄龍"
+    },
+    {
+      "Message": "ダミー９",
+      "RealName": "ダミー９"
+    },
+    {
+      "Message": "ダークダイオージ",
+      "RealName": "ダークダイオージ"
+    },
+    {
+      "Message": "ちびメルアビス",
+      "RealName": "ちびメルアビス"
+    },
+    {
+      "Message": "ちびファニュア",
+      "RealName": "ちびファニュア"
+    },
+    {
+      "Message": "ちびロゼルヌ",
+      "RealName": "ちびロゼルヌ"
+    },
+    {
+      "Message": "公家大名ノリモチ",
+      "RealName": "ノリモチ"
+    },
+    {
+      "Message": "ちび森の守護獣",
+      "RealName": "ちび森の守護獣"
+    },
+    {
+      "Message": "近衛大将カラスマル",
+      "RealName": "カラスマル"
+    },
+    {
+      "Message": "雨刀付喪神ムラサメ",
+      "RealName": "ムラサメ"
     }
   ]
 }

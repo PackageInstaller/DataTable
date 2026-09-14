@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 4,
+    "record_size": 12,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "alias": "ID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Text",
+      "alias": "テキスト",
+      "type": "string",
+      "type_code": 32,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "alias": "タイプ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Text": "あの天狗、グレンが先生になった？\nなんと、学園ではいくつもの派閥が\n激しく激突を繰り返し、勢力争いをしているらしい。\n道を外れた子供の思いを受け止めるのも大人の役目。\nグレン先生と共に、生徒の叫びを聞け！\n\n初開催2021年4月8日",
+      "Type": 6
+    },
+    {
+      "ID": 1,
+      "Text": "",
+      "Type": 7
+    },
+    {
+      "ID": 2,
+      "Text": "獲得★が1以上で\n交換所に「茜色の女番長ホムラ」\n「仮面の天狗教師グレン」が追加",
+      "Type": 8
+    },
+    {
+      "ID": 3,
+      "Text": "『背教の剣と信仰の騎士団』獲得★数21以上で開放",
+      "Type": 9
+    }
+  ]
+}

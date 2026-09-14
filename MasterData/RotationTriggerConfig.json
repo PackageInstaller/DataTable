@@ -2,23 +2,26 @@
   "_meta": {
     "version": 1,
     "flags": "0x14",
-    "record_count": 24,
+    "record_count": 25,
     "record_size": 8,
-    "custom_id": 1835234419
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "ID",
+      "alias": "定義名",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "Command",
+      "alias": "コマンド",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 4,
+      "type_code": 32,
+      "offset": 4,
       "size": 4
     }
   ],
@@ -118,6 +121,10 @@
     {
       "ID": -1601288273,
       "Command": "973e4ee7b6391582903904ab9b0b0dae900b0ea88e0807a4953901a2d67146ee855246e7ad3d12928e3c07b39b2a20b2903b4ee7dc1e13a99d0735ac973635af912844e7d7636cba9b3415a2855246e7ad3d12928e3c07b39b2a20b2903b4ee7dc1e13a99d0735af91282ba2902d32a88e7a46eec5521b"
+    },
+    {
+      "ID": 1621687273,
+      "Command": "ad3d12928e3c07b39b2a20b2903b4ee7dc1e13a99d0735a88b36028b973a14a68c2136ab9f212aae8d2c2ba2902d44e7d763"
     }
   ]
 }

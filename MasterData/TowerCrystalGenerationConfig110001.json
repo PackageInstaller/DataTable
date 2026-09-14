@@ -4,28 +4,32 @@
     "flags": "0x10",
     "record_count": 53,
     "record_size": 12,
-    "custom_id": 2020897645
+    "tag": "mstx",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "Score",
+      "alias": "スコア",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "GenerationCount",
+      "alias": "生成個数",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "PossessionLimit",
+      "alias": "所持上限",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 8,
+      "type_code": 1,
+      "offset": 8,
       "size": 4
     }
   ],

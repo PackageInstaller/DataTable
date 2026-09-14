@@ -4,63 +4,72 @@
     "flags": "0x14",
     "record_count": 19,
     "record_size": 32,
-    "custom_id": 1668559475
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "ConfigID",
+      "alias": "定義ID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "ShopType",
+      "alias": "ショップ種別",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "TradeType",
+      "alias": "交換種別",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 8,
+      "type_code": 1,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "ConsumeItemID",
+      "alias": "消費アイテムID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 12,
+      "type_code": 1,
+      "offset": 12,
       "size": 4
     },
     {
       "name": "IconTextureID",
+      "alias": "テクスチャID[アイコン]",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 16,
+      "type_code": 1,
+      "offset": 16,
       "size": 4
     },
     {
       "name": "CountTextNodeID",
+      "alias": "ノードID[数表示]",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 20,
+      "type_code": 32,
+      "offset": 20,
       "size": 4
     },
     {
       "name": "CountTextID",
+      "alias": "テキストID[数表示]",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 24,
+      "type_code": 1,
+      "offset": 24,
       "size": 4
     },
     {
       "name": "NotEnoughTextID",
+      "alias": "テキストID[不足時]",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 28,
+      "type_code": 1,
+      "offset": 28,
       "size": 4
     }
   ],
@@ -129,7 +138,7 @@
       "ConfigID": 1007,
       "ShopType": 0,
       "TradeType": 9,
-      "ConsumeItemID": 1888906405,
+      "ConsumeItemID": -305552204,
       "IconTextureID": -1338542428,
       "CountTextNodeID": "TX05",
       "CountTextID": 346720794,

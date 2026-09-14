@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 4,
+    "record_size": 12,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "alias": "ID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Text",
+      "alias": "テキスト",
+      "type": "string",
+      "type_code": 32,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "alias": "タイプ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Text": "楽しい夏祭り――だったはず。\nしかし今年は、鬼刃衆が何やら暗躍している様子。\n突如始まった暗黒ビフビフ盆踊りを前に\n困惑するヴィクトリアたちだったが、\n無事に今年の夏祭りを取り戻せるだろうか……？\n\n初開催2024年8月1日",
+      "Type": 6
+    },
+    {
+      "ID": 1,
+      "Text": "",
+      "Type": 7
+    },
+    {
+      "ID": 2,
+      "Text": "獲得★が1以上で\n交換所に「狩人浴衣ヴィクトリア」が追加",
+      "Type": 8
+    },
+    {
+      "ID": 3,
+      "Text": "『サマーオブバーバリアンズ』獲得★数19以上で開放",
+      "Type": 9
+    }
+  ]
+}

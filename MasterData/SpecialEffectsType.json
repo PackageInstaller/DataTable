@@ -4,77 +4,88 @@
     "flags": "0x14",
     "record_count": 18,
     "record_size": 40,
-    "custom_id": 1702126963
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "Type",
+      "alias": "Type",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "Name",
+      "alias": "名前",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 4,
+      "type_code": 32,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "Effect",
+      "alias": "効果",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 8,
+      "type_code": 32,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "Target",
+      "alias": "対象",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 12,
+      "type_code": 32,
+      "offset": 12,
       "size": 4
     },
     {
       "name": "TargetType",
+      "alias": "対象タイプ",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 16,
+      "type_code": 1,
+      "offset": 16,
       "size": 4
     },
     {
       "name": "Target1",
+      "alias": "対象１",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 20,
+      "type_code": 1,
+      "offset": 20,
       "size": 4
     },
     {
       "name": "Target2",
+      "alias": "対象２",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 24,
+      "type_code": 1,
+      "offset": 24,
       "size": 4
     },
     {
       "name": "Target3",
+      "alias": "対象３",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 28,
+      "type_code": 1,
+      "offset": 28,
       "size": 4
     },
     {
       "name": "Target4",
+      "alias": "対象４",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 32,
+      "type_code": 1,
+      "offset": 32,
       "size": 4
     },
     {
       "name": "TargetSize",
+      "alias": "対象サイズ",
       "type": "float",
-      "mapped_type": 4,
-      "rec_offset": 36,
+      "type_code": 4,
+      "offset": 36,
       "size": 4
     }
   ],

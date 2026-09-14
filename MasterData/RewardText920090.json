@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 4,
+    "record_size": 12,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "alias": "ID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Text",
+      "alias": "テキスト",
+      "type": "string",
+      "type_code": 32,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "alias": "タイプ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Text": "サイクロプスたちが群れを成し、城壁に囲まれた国へ\n侵攻していることを知った王子たち。\nそこで出会った兵長のエレーヌが言うには、\nこの国には巨人を封印した剣があるのだという。\n王子たちは国を守るために巨人を退けようとするのだったが……。\n\n初開催2017年5月18日",
+      "Type": 6
+    },
+    {
+      "ID": 1,
+      "Text": "",
+      "Type": 7
+    },
+    {
+      "ID": 2,
+      "Text": "獲得★が1以上で\n交換所に「封印剣の使い手エレーヌ」が追加",
+      "Type": 8
+    },
+    {
+      "ID": 3,
+      "Text": "『奪われたグリモワール』獲得★数19以上で開放",
+      "Type": 9
+    }
+  ]
+}

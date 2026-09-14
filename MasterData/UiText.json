@@ -2,51 +2,58 @@
   "_meta": {
     "version": 1,
     "flags": "0x14",
-    "record_count": 112,
+    "record_count": 119,
     "record_size": 24,
-    "custom_id": 2020895093
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "Caption",
+      "alias": "その他の項目",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 0,
+      "type_code": 32,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "Help",
+      "alias": "ヘルプの項目",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 4,
+      "type_code": 32,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "HelpMessage",
+      "alias": "ヘルプメッセージ",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 8,
+      "type_code": 32,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "Faq",
+      "alias": "FAQの項目",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 12,
+      "type_code": 32,
+      "offset": 12,
       "size": 4
     },
     {
       "name": "FaqDetail",
+      "alias": "FAQ詳細",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 16,
+      "type_code": 32,
+      "offset": 16,
       "size": 4
     },
     {
       "name": "FaqType",
+      "alias": "FAQのタイプ",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 20,
+      "type_code": 1,
+      "offset": 20,
       "size": 4
     }
   ],
@@ -92,7 +99,7 @@
       "FaqType": 0
     },
     {
-      "Caption": "背景切換え",
+      "Caption": "サウンド図鑑",
       "Help": "魔法耐性",
       "HelpMessage": "魔法によって受けるダメージが\n魔法耐性％だけ減少します。\n例えば魔法耐性が１０の場合、\n魔法ダメージが本来の値の\n９０％となります。",
       "Faq": "",
@@ -100,7 +107,7 @@
       "FaqType": 0
     },
     {
-      "Caption": "タイトルにもどる",
+      "Caption": "背景切換え",
       "Help": "貫通攻撃",
       "HelpMessage": "防御力と魔法耐性両方を\n無視してダメージを与えます。\n高防御、高魔法耐性の\n相手に有効です。",
       "Faq": "",
@@ -108,7 +115,7 @@
       "FaqType": 0
     },
     {
-      "Caption": "お問い合わせ",
+      "Caption": "タイトルにもどる",
       "Help": "回復魔法",
       "HelpMessage": "ヒーラーは敵ユニットを直接\n攻撃することはできません。\nその代りに射程の範囲内の\n味方ユニットの体力を回復\nさせることができます。\n回復量はヒーラーの攻撃力\nに比例します。",
       "Faq": "",
@@ -116,7 +123,7 @@
       "FaqType": 0
     },
     {
-      "Caption": "",
+      "Caption": "お問い合わせ",
       "Help": "ダメージ表示１",
       "HelpMessage": "ミッション中、画面右上の\n「ダメージON」ボタンを\nクリック（タップ）することで、\nダメージ数値の表示/非表示を\n切り替えることができます。",
       "Faq": "",
@@ -397,6 +404,38 @@
     },
     {
       "Caption": "",
+      "Help": "プレミアム召喚券",
+      "HelpMessage": "召喚メダルを獲得できる召喚で\n神聖結晶の代わりとして使用し\n10連召喚を行います\n最大値は９９９９９９枚です\n対象の召喚終了後も\n所持数はリセットされません。",
+      "Faq": "",
+      "FaqDetail": "",
+      "FaqType": 0
+    },
+    {
+      "Caption": "",
+      "Help": "英傑召喚券",
+      "HelpMessage": "英傑メダルを獲得できる召喚で\n神聖結晶の代わりとして使用し\n10連召喚を行います\n最大値は９９９９９９枚です\n対象の召喚終了後も\n所持数はリセットされません。",
+      "Faq": "",
+      "FaqDetail": "",
+      "FaqType": 0
+    },
+    {
+      "Caption": "",
+      "Help": "帝国召喚券",
+      "HelpMessage": "帝国メダルを獲得できる召喚で\n神聖結晶の代わりとして使用し\n10連召喚を行います\n最大値は９９９９９９枚です\n対象の召喚終了後も\n所持数はリセットされません。",
+      "Faq": "",
+      "FaqDetail": "",
+      "FaqType": 0
+    },
+    {
+      "Caption": "",
+      "Help": "コラボ召喚券",
+      "HelpMessage": "コラボメダルを獲得できる召喚で\n神聖結晶の代わりとして使用し\n10連召喚を行います\n最大値は９９９９９９枚です\n対象の召喚が終了すると、\n0枚にリセットされます。",
+      "Faq": "",
+      "FaqDetail": "",
+      "FaqType": 0
+    },
+    {
+      "Caption": "",
       "Help": "所持金（ゴールド）",
       "HelpMessage": "所持金はミッションやクエストの\nクリア時やユニットを引退させる\nことで入手することができます。\n所持金は最大で99,999,999G\nまで所持することができますが\n最大値を超えてしまった分は\n消失します。",
       "Faq": "",
@@ -607,6 +646,22 @@
       "Caption": "",
       "Help": "悪天候：激流",
       "HelpMessage": "・味方の『射程』減少\n・敵の『移動速度』上昇\n・悪天候の影響を受けない特性を\n　持つユニットは『射程減少』\n　の影響を受けません。\n※深海マップでのみ発生します。",
+      "Faq": "",
+      "FaqDetail": "",
+      "FaqType": 0
+    },
+    {
+      "Caption": "",
+      "Help": "天候：氷雷",
+      "HelpMessage": "・敵の『射程』減少\n・敵の『移動速度』減少\n・一定間隔ごとに天候を発生させた\n　ユニットの攻撃力に比例した\n　『魔法ダメージ』が発生\n・一部の味方の性能上昇\n※悪天候の時間を短縮する\n　効果の影響を受けません。",
+      "Faq": "",
+      "FaqDetail": "",
+      "FaqType": 0
+    },
+    {
+      "Caption": "",
+      "Help": "天候：慈雨",
+      "HelpMessage": "・敵の『射程』わずかに減少\n・出撃コストが徐々に増加\n・味方のHPが徐々に回復\n・一部の味方の性能上昇\n※悪天候の時間を短縮する\n　効果の影響を受けません。",
       "Faq": "",
       "FaqDetail": "",
       "FaqType": 0
@@ -887,6 +942,14 @@
       "Caption": "",
       "Help": "妖狸について４",
       "HelpMessage": "他のユニットに化けると、クラス、\n属性、スキル、アビリティなど、\n変化先のユニットの各能力を引き\n継ぎます。スキルはスキル終了直後\nの待ち時間からスタートします。\nトークンを持つユニットに化けても、\nトークンを所持することは\nできません。",
+      "Faq": "",
+      "FaqDetail": "",
+      "FaqType": 0
+    },
+    {
+      "Caption": "",
+      "Help": "妖狸について５",
+      "HelpMessage": "出撃メンバーに編成した際に\n発動する効果は、変化前の\nクラスや属性が一致している場合は\n効果を受けることが出来ますが、\n変化後にクラスや属性が一致しても\n効果を受けることができません。",
       "Faq": "",
       "FaqDetail": "",
       "FaqType": 0

@@ -1,0 +1,40 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 6,
+    "record_size": 4,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "Message",
+      "alias": "名前",
+      "type": "string",
+      "type_code": 32,
+      "offset": 0,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "Message": "影の狙撃手：凶手の矢"
+    },
+    {
+      "Message": "影の狙撃手：影からの奇襲"
+    },
+    {
+      "Message": "影の狙撃手：這い寄る影"
+    },
+    {
+      "Message": "影の狙撃手：天からの矢雨"
+    },
+    {
+      "Message": "影の狙撃手：覚悟の決戦"
+    },
+    {
+      "Message": "影の狙撃手：魔窟からの使者"
+    }
+  ]
+}

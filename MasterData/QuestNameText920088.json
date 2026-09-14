@@ -1,0 +1,40 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 6,
+    "record_size": 4,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "Message",
+      "alias": "名前",
+      "type": "string",
+      "type_code": 32,
+      "offset": 0,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "Message": "挑戦者現る"
+    },
+    {
+      "Message": "頂点を目指して"
+    },
+    {
+      "Message": "体の鍛錬"
+    },
+    {
+      "Message": "心の鍛錬"
+    },
+    {
+      "Message": "技の鍛錬"
+    },
+    {
+      "Message": "果てなき挑戦"
+    }
+  ]
+}

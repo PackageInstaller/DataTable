@@ -4,49 +4,56 @@
     "flags": "0x10",
     "record_count": 0,
     "record_size": 24,
-    "custom_id": 1718577507
+    "tag": "ciof",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "_CardNameID",
+      "alias": "ユニット名",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "_CardID",
+      "alias": "カード番号",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "_OfsX_01",
+      "alias": "イラスト1_X",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 8,
+      "type_code": 1,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "_OfsY_01",
+      "alias": "イラスト1_Y",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 12,
+      "type_code": 1,
+      "offset": 12,
       "size": 4
     },
     {
       "name": "_OfsX_02",
+      "alias": "イラスト2_X",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 16,
+      "type_code": 1,
+      "offset": 16,
       "size": 4
     },
     {
       "name": "_OfsY_02",
+      "alias": "イラスト2_Y",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 20,
+      "type_code": 1,
+      "offset": 20,
       "size": 4
     }
   ],

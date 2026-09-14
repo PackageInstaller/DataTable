@@ -1,0 +1,37 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 5,
+    "record_size": 4,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "Message",
+      "alias": "名前",
+      "type": "string",
+      "type_code": 32,
+      "offset": 0,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "Message": "南の世界のお祭り"
+    },
+    {
+      "Message": "雪枝の里との文化交流"
+    },
+    {
+      "Message": "北限では見慣れぬ魔物"
+    },
+    {
+      "Message": "仮面の魔女"
+    },
+    {
+      "Message": "カエルと仮面の騎士団"
+    }
+  ]
+}

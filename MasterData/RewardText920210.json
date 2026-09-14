@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 4,
+    "record_size": 12,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "alias": "ID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Text",
+      "alias": "テキスト",
+      "type": "string",
+      "type_code": 32,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "alias": "タイプ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Text": "王都周辺にて、多数の女性が昏睡状態に陥った。\n調査に乗り出す王子たちだったが、\nどうやら、暗躍しているのは災厄の魔女らしい。\n平和なバレンタインを取り戻すため、\n王子たちは魔女スィーテンに挑む……。\n\n初開催2024年2月1日",
+      "Type": 6
+    },
+    {
+      "ID": 1,
+      "Text": "",
+      "Type": 7
+    },
+    {
+      "ID": 2,
+      "Text": "獲得★が1以上で\n交換所に「恋情の踊り子ワルツ」が追加",
+      "Type": 8
+    },
+    {
+      "ID": 3,
+      "Text": "『遥かな空を目指すには？』獲得★数11以上で開放",
+      "Type": 9
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 5,
+    "record_size": 4,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "Message",
+      "alias": "名前",
+      "type": "string",
+      "type_code": 32,
+      "offset": 0,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "Message": "神獣ヘカトンケイル降臨　中級"
+    },
+    {
+      "Message": "神獣ヘカトンケイル降臨　上級"
+    },
+    {
+      "Message": "神獣ヘカトンケイル降臨　極級"
+    },
+    {
+      "Message": "神獣ヘカトンケイル降臨　神級"
+    },
+    {
+      "Message": "神獣ヘカトンケイル降臨　神級EX"
+    }
+  ]
+}

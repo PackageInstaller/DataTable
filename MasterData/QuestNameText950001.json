@@ -1,0 +1,37 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 5,
+    "record_size": 4,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "Message",
+      "alias": "名前",
+      "type": "string",
+      "type_code": 32,
+      "offset": 0,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "Message": "スズネの仁義"
+    },
+    {
+      "Message": "魔界アリの女王"
+    },
+    {
+      "Message": "都市防衛線"
+    },
+    {
+      "Message": "女王蜘蛛との激突"
+    },
+    {
+      "Message": "エキシビジョンマッチ"
+    }
+  ]
+}

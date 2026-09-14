@@ -2,51 +2,58 @@
   "_meta": {
     "version": 1,
     "flags": "0x1E",
-    "record_count": 2387,
+    "record_count": 2483,
     "record_size": 24,
-    "custom_id": 1953266017
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "AbilityName",
+      "alias": "名前",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 0,
+      "type_code": 32,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "AbilityPower",
+      "alias": "効果",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "AbilityType",
+      "alias": "タイプ",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 8,
+      "type_code": 1,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "AbilityTextID",
+      "alias": "テキスト",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 12,
+      "type_code": 1,
+      "offset": 12,
       "size": 4
     },
     {
       "name": "_ConfigID",
+      "alias": "効果定義",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 16,
+      "type_code": 1,
+      "offset": 16,
       "size": 4
     },
     {
       "name": "AbilityID",
+      "alias": "ID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 20,
+      "type_code": 1,
+      "offset": 20,
       "size": 4
     }
   ],
@@ -1632,7 +1639,7 @@
       "AbilityPower": 0,
       "AbilityType": 221,
       "AbilityTextID": 184,
-      "_ConfigID": 221,
+      "_ConfigID": 3535,
       "AbilityID": 197
     },
     {
@@ -19100,7 +19107,7 @@
       "AbilityID": 2380
     },
     {
-      "AbilityName": "",
+      "AbilityName": "目覚めし王の丘",
       "AbilityPower": 0,
       "AbilityType": 2547,
       "AbilityTextID": 2168,
@@ -19146,6 +19153,774 @@
       "AbilityTextID": 2173,
       "_ConfigID": 3488,
       "AbilityID": 2386
+    },
+    {
+      "AbilityName": "チャンプを目指せ！",
+      "AbilityPower": 0,
+      "AbilityType": 2554,
+      "AbilityTextID": 2174,
+      "_ConfigID": 3490,
+      "AbilityID": 2387
+    },
+    {
+      "AbilityName": "闇のヴァリトス",
+      "AbilityPower": 0,
+      "AbilityType": 2555,
+      "AbilityTextID": 2175,
+      "_ConfigID": 3491,
+      "AbilityID": 2388
+    },
+    {
+      "AbilityName": "四代目正宗",
+      "AbilityPower": 0,
+      "AbilityType": 2556,
+      "AbilityTextID": 2176,
+      "_ConfigID": 3492,
+      "AbilityID": 2389
+    },
+    {
+      "AbilityName": "東国伝正宗",
+      "AbilityPower": 0,
+      "AbilityType": 2557,
+      "AbilityTextID": 2177,
+      "_ConfigID": 3493,
+      "AbilityID": 2390
+    },
+    {
+      "AbilityName": "幻花の投影",
+      "AbilityPower": 0,
+      "AbilityType": 2558,
+      "AbilityTextID": 2178,
+      "_ConfigID": 0,
+      "AbilityID": 2391
+    },
+    {
+      "AbilityName": "咲き誇る虚ろ",
+      "AbilityPower": 0,
+      "AbilityType": 2559,
+      "AbilityTextID": 2179,
+      "_ConfigID": 0,
+      "AbilityID": 2392
+    },
+    {
+      "AbilityName": "取り締まる銃弾",
+      "AbilityPower": 0,
+      "AbilityType": 2560,
+      "AbilityTextID": 2180,
+      "_ConfigID": 3499,
+      "AbilityID": 2393
+    },
+    {
+      "AbilityName": "ガンナーパーミッション",
+      "AbilityPower": 0,
+      "AbilityType": 2561,
+      "AbilityTextID": 2181,
+      "_ConfigID": 3500,
+      "AbilityID": 2394
+    },
+    {
+      "AbilityName": "荒野の保安官ドミナ覚醒スキル",
+      "AbilityPower": 0,
+      "AbilityType": 2562,
+      "AbilityTextID": 0,
+      "_ConfigID": 3501,
+      "AbilityID": 2395
+    },
+    {
+      "AbilityName": "理紡ぐ森の隠者",
+      "AbilityPower": 0,
+      "AbilityType": 2563,
+      "AbilityTextID": 2182,
+      "_ConfigID": 3502,
+      "AbilityID": 2396
+    },
+    {
+      "AbilityName": "避禍定詠の鏡",
+      "AbilityPower": 0,
+      "AbilityType": 2564,
+      "AbilityTextID": 2183,
+      "_ConfigID": 3504,
+      "AbilityID": 2397
+    },
+    {
+      "AbilityName": "芸神一座の天女ちゃん",
+      "AbilityPower": 0,
+      "AbilityType": 2565,
+      "AbilityTextID": 2184,
+      "_ConfigID": 3509,
+      "AbilityID": 2398
+    },
+    {
+      "AbilityName": "笑ひえらぐ舞踊",
+      "AbilityPower": 0,
+      "AbilityType": 2566,
+      "AbilityTextID": 2185,
+      "_ConfigID": 3510,
+      "AbilityID": 2399
+    },
+    {
+      "AbilityName": "天宇寿女命トークン",
+      "AbilityPower": 0,
+      "AbilityType": 2567,
+      "AbilityTextID": 0,
+      "_ConfigID": 3511,
+      "AbilityID": 2400
+    },
+    {
+      "AbilityName": "天宇寿女命トークン覚醒",
+      "AbilityPower": 0,
+      "AbilityType": 2568,
+      "AbilityTextID": 0,
+      "_ConfigID": 3512,
+      "AbilityID": 2401
+    },
+    {
+      "AbilityName": "天将降臨",
+      "AbilityPower": 0,
+      "AbilityType": 2569,
+      "AbilityTextID": 2186,
+      "_ConfigID": 3517,
+      "AbilityID": 2402
+    },
+    {
+      "AbilityName": "天地五行の理",
+      "AbilityPower": 0,
+      "AbilityType": 2570,
+      "AbilityTextID": 2187,
+      "_ConfigID": 3518,
+      "AbilityID": 2403
+    },
+    {
+      "AbilityName": "稀代の陰陽師セイメイトークン",
+      "AbilityPower": 0,
+      "AbilityType": 2571,
+      "AbilityTextID": 0,
+      "_ConfigID": 3519,
+      "AbilityID": 2404
+    },
+    {
+      "AbilityName": "稀代の陰陽師セイメイトークン覚醒",
+      "AbilityPower": 0,
+      "AbilityType": 2572,
+      "AbilityTextID": 0,
+      "_ConfigID": 3520,
+      "AbilityID": 2405
+    },
+    {
+      "AbilityName": "歴戦の冒険者",
+      "AbilityPower": 0,
+      "AbilityType": 2573,
+      "AbilityTextID": 2188,
+      "_ConfigID": 3526,
+      "AbilityID": 2406
+    },
+    {
+      "AbilityName": "荒野の銃撃者",
+      "AbilityPower": 0,
+      "AbilityType": 2574,
+      "AbilityTextID": 2189,
+      "_ConfigID": 3527,
+      "AbilityID": 2407
+    },
+    {
+      "AbilityName": "荒天より狙う者",
+      "AbilityPower": 0,
+      "AbilityType": 2575,
+      "AbilityTextID": 2190,
+      "_ConfigID": 3528,
+      "AbilityID": 2408
+    },
+    {
+      "AbilityName": "奇跡の拳",
+      "AbilityPower": 0,
+      "AbilityType": 2576,
+      "AbilityTextID": 2191,
+      "_ConfigID": 3529,
+      "AbilityID": 2409
+    },
+    {
+      "AbilityName": "掴み取る奇跡",
+      "AbilityPower": 0,
+      "AbilityType": 2577,
+      "AbilityTextID": 2192,
+      "_ConfigID": 3530,
+      "AbilityID": 2410
+    },
+    {
+      "AbilityName": "戦意高揚【婚礼】",
+      "AbilityPower": 0,
+      "AbilityType": 2578,
+      "AbilityTextID": 2193,
+      "_ConfigID": 3543,
+      "AbilityID": 2411
+    },
+    {
+      "AbilityName": "ブライダルスミス",
+      "AbilityPower": 0,
+      "AbilityType": 2579,
+      "AbilityTextID": 2194,
+      "_ConfigID": 3544,
+      "AbilityID": 2412
+    },
+    {
+      "AbilityName": "純白の鍛冶",
+      "AbilityPower": 0,
+      "AbilityType": 2580,
+      "AbilityTextID": 2195,
+      "_ConfigID": 3545,
+      "AbilityID": 2413
+    },
+    {
+      "AbilityName": "不朽の契り",
+      "AbilityPower": 0,
+      "AbilityType": 2581,
+      "AbilityTextID": 2196,
+      "_ConfigID": 3546,
+      "AbilityID": 2414
+    },
+    {
+      "AbilityName": "永遠誓う聖堂",
+      "AbilityPower": 0,
+      "AbilityType": 2582,
+      "AbilityTextID": 2197,
+      "_ConfigID": 3547,
+      "AbilityID": 2415
+    },
+    {
+      "AbilityName": "三歩前の蛇竜",
+      "AbilityPower": 0,
+      "AbilityType": 2583,
+      "AbilityTextID": 2198,
+      "_ConfigID": 3549,
+      "AbilityID": 2416
+    },
+    {
+      "AbilityName": "番待つ蛇竜",
+      "AbilityPower": 0,
+      "AbilityType": 2584,
+      "AbilityTextID": 2199,
+      "_ConfigID": 3550,
+      "AbilityID": 2417
+    },
+    {
+      "AbilityName": "強靭なる爪牙",
+      "AbilityPower": 0,
+      "AbilityType": 2585,
+      "AbilityTextID": 2200,
+      "_ConfigID": 3551,
+      "AbilityID": 2418
+    },
+    {
+      "AbilityName": "突撃する魔法剣士",
+      "AbilityPower": 0,
+      "AbilityType": 2586,
+      "AbilityTextID": 2201,
+      "_ConfigID": 3552,
+      "AbilityID": 2419
+    },
+    {
+      "AbilityName": "剣舞う魔法",
+      "AbilityPower": 0,
+      "AbilityType": 2587,
+      "AbilityTextID": 2202,
+      "_ConfigID": 3553,
+      "AbilityID": 2420
+    },
+    {
+      "AbilityName": "実りし努力",
+      "AbilityPower": 0,
+      "AbilityType": 2588,
+      "AbilityTextID": 2203,
+      "_ConfigID": 3554,
+      "AbilityID": 2421
+    },
+    {
+      "AbilityName": "成熟の弓術",
+      "AbilityPower": 0,
+      "AbilityType": 2589,
+      "AbilityTextID": 2204,
+      "_ConfigID": 3555,
+      "AbilityID": 2422
+    },
+    {
+      "AbilityName": "再天の白翼",
+      "AbilityPower": 0,
+      "AbilityType": 2590,
+      "AbilityTextID": 2205,
+      "_ConfigID": 3556,
+      "AbilityID": 2423
+    },
+    {
+      "AbilityName": "純白天使の号令",
+      "AbilityPower": 0,
+      "AbilityType": 2591,
+      "AbilityTextID": 2206,
+      "_ConfigID": 3557,
+      "AbilityID": 2424
+    },
+    {
+      "AbilityName": "小悪魔転生",
+      "AbilityPower": 0,
+      "AbilityType": 2592,
+      "AbilityTextID": 2207,
+      "_ConfigID": 3558,
+      "AbilityID": 2425
+    },
+    {
+      "AbilityName": "廻る魔眼の娘",
+      "AbilityPower": 0,
+      "AbilityType": 2593,
+      "AbilityTextID": 2208,
+      "_ConfigID": 3559,
+      "AbilityID": 2426
+    },
+    {
+      "AbilityName": "完全防水耐圧機構",
+      "AbilityPower": 0,
+      "AbilityType": 2594,
+      "AbilityTextID": 2209,
+      "_ConfigID": 3561,
+      "AbilityID": 2427
+    },
+    {
+      "AbilityName": "浜辺の騎士道",
+      "AbilityPower": 0,
+      "AbilityType": 2595,
+      "AbilityTextID": 2210,
+      "_ConfigID": 3563,
+      "AbilityID": 2428
+    },
+    {
+      "AbilityName": "真夏巫女の守護結界",
+      "AbilityPower": 0,
+      "AbilityType": 2596,
+      "AbilityTextID": 2211,
+      "_ConfigID": 3564,
+      "AbilityID": 2429
+    },
+    {
+      "AbilityName": "",
+      "AbilityPower": 0,
+      "AbilityType": 2597,
+      "AbilityTextID": 0,
+      "_ConfigID": 3565,
+      "AbilityID": 2430
+    },
+    {
+      "AbilityName": "語るは夏と海の詩",
+      "AbilityPower": 0,
+      "AbilityType": 2598,
+      "AbilityTextID": 2212,
+      "_ConfigID": 3566,
+      "AbilityID": 2431
+    },
+    {
+      "AbilityName": "響き渡れ、真夏の詩",
+      "AbilityPower": 0,
+      "AbilityType": 2599,
+      "AbilityTextID": 2213,
+      "_ConfigID": 3567,
+      "AbilityID": 2432
+    },
+    {
+      "AbilityName": "砂浜の見張り番",
+      "AbilityPower": 0,
+      "AbilityType": 2600,
+      "AbilityTextID": 2214,
+      "_ConfigID": 3568,
+      "AbilityID": 2433
+    },
+    {
+      "AbilityName": "到来を告げる",
+      "AbilityPower": 0,
+      "AbilityType": 2601,
+      "AbilityTextID": 2215,
+      "_ConfigID": 3569,
+      "AbilityID": 2434
+    },
+    {
+      "AbilityName": "白と悪魔とワンピース",
+      "AbilityPower": 0,
+      "AbilityType": 2602,
+      "AbilityTextID": 2216,
+      "_ConfigID": 3571,
+      "AbilityID": 2435
+    },
+    {
+      "AbilityName": "邪悪にして楚々",
+      "AbilityPower": 0,
+      "AbilityType": 2603,
+      "AbilityTextID": 2217,
+      "_ConfigID": 3572,
+      "AbilityID": 2436
+    },
+    {
+      "AbilityName": "夏を導く女皇様",
+      "AbilityPower": 0,
+      "AbilityType": 2604,
+      "AbilityTextID": 2218,
+      "_ConfigID": 3574,
+      "AbilityID": 2437
+    },
+    {
+      "AbilityName": "真夏に輝く女皇様",
+      "AbilityPower": 0,
+      "AbilityType": 2605,
+      "AbilityTextID": 2219,
+      "_ConfigID": 3575,
+      "AbilityID": 2438
+    },
+    {
+      "AbilityName": "渚をひとりじめ",
+      "AbilityPower": 0,
+      "AbilityType": 2606,
+      "AbilityTextID": 2220,
+      "_ConfigID": 3576,
+      "AbilityID": 2439
+    },
+    {
+      "AbilityName": "白き騎士の夏休み",
+      "AbilityPower": 0,
+      "AbilityType": 2607,
+      "AbilityTextID": 2221,
+      "_ConfigID": 3577,
+      "AbilityID": 2440
+    },
+    {
+      "AbilityName": "水陸両用",
+      "AbilityPower": 0,
+      "AbilityType": 2608,
+      "AbilityTextID": 2222,
+      "_ConfigID": 3578,
+      "AbilityID": 2441
+    },
+    {
+      "AbilityName": "潜水機竜",
+      "AbilityPower": 0,
+      "AbilityType": 2609,
+      "AbilityTextID": 2223,
+      "_ConfigID": 3579,
+      "AbilityID": 2442
+    },
+    {
+      "AbilityName": "納涼天尊",
+      "AbilityPower": 0,
+      "AbilityType": 2610,
+      "AbilityTextID": 2224,
+      "_ConfigID": 3580,
+      "AbilityID": 2443
+    },
+    {
+      "AbilityName": "柔弱は剛強に勝る",
+      "AbilityPower": 0,
+      "AbilityType": 2611,
+      "AbilityTextID": 2225,
+      "_ConfigID": 3581,
+      "AbilityID": 2444
+    },
+    {
+      "AbilityName": "雷鼓と風袋",
+      "AbilityPower": 0,
+      "AbilityType": 2612,
+      "AbilityTextID": 2226,
+      "_ConfigID": 3583,
+      "AbilityID": 2445
+    },
+    {
+      "AbilityName": "",
+      "AbilityPower": 0,
+      "AbilityType": 2613,
+      "AbilityTextID": 0,
+      "_ConfigID": 3585,
+      "AbilityID": 2446
+    },
+    {
+      "AbilityName": "夏よ大華を知れ",
+      "AbilityPower": 0,
+      "AbilityType": 2614,
+      "AbilityTextID": 2227,
+      "_ConfigID": 3587,
+      "AbilityID": 2447
+    },
+    {
+      "AbilityName": "神獣の模型",
+      "AbilityPower": 0,
+      "AbilityType": 40,
+      "AbilityTextID": 2228,
+      "_ConfigID": 0,
+      "AbilityID": 2448
+    },
+    {
+      "AbilityName": "そして心は歌を知る",
+      "AbilityPower": 0,
+      "AbilityType": 2615,
+      "AbilityTextID": 2229,
+      "_ConfigID": 3588,
+      "AbilityID": 2449
+    },
+    {
+      "AbilityName": "氷原の歌姫",
+      "AbilityPower": 0,
+      "AbilityType": 2616,
+      "AbilityTextID": 2230,
+      "_ConfigID": 3593,
+      "AbilityID": 2450
+    },
+    {
+      "AbilityName": "守護霊獣オンステージ",
+      "AbilityPower": 0,
+      "AbilityType": 2617,
+      "AbilityTextID": 2231,
+      "_ConfigID": 3595,
+      "AbilityID": 2451
+    },
+    {
+      "AbilityName": "フルメタル鮫肌装甲",
+      "AbilityPower": 0,
+      "AbilityType": 2618,
+      "AbilityTextID": 2232,
+      "_ConfigID": 3598,
+      "AbilityID": 2452
+    },
+    {
+      "AbilityName": "バリアウェア",
+      "AbilityPower": 0,
+      "AbilityType": 2619,
+      "AbilityTextID": 2233,
+      "_ConfigID": 3599,
+      "AbilityID": 2453
+    },
+    {
+      "AbilityName": "夏のマータン、サマータン",
+      "AbilityPower": 0,
+      "AbilityType": 2620,
+      "AbilityTextID": 2234,
+      "_ConfigID": 3600,
+      "AbilityID": 2454
+    },
+    {
+      "AbilityName": "墓守の祭囃子",
+      "AbilityPower": 0,
+      "AbilityType": 2621,
+      "AbilityTextID": 2235,
+      "_ConfigID": 3601,
+      "AbilityID": 2455
+    },
+    {
+      "AbilityName": "黄泉還る祭囃子",
+      "AbilityPower": 0,
+      "AbilityType": 2622,
+      "AbilityTextID": 2236,
+      "_ConfigID": 3602,
+      "AbilityID": 2456
+    },
+    {
+      "AbilityName": "魔導の縁日",
+      "AbilityPower": 0,
+      "AbilityType": 2623,
+      "AbilityTextID": 2237,
+      "_ConfigID": 3603,
+      "AbilityID": 2457
+    },
+    {
+      "AbilityName": "涼気の波導",
+      "AbilityPower": 0,
+      "AbilityType": 2624,
+      "AbilityTextID": 2238,
+      "_ConfigID": 3604,
+      "AbilityID": 2458
+    },
+    {
+      "AbilityName": "やがて巡る天眼の神座",
+      "AbilityPower": 0,
+      "AbilityType": 2625,
+      "AbilityTextID": 2239,
+      "_ConfigID": 3606,
+      "AbilityID": 2459
+    },
+    {
+      "AbilityName": "魔砕の遺失兵器",
+      "AbilityPower": 0,
+      "AbilityType": 2626,
+      "AbilityTextID": 2240,
+      "_ConfigID": 3607,
+      "AbilityID": 2460
+    },
+    {
+      "AbilityName": "魔を穿つ遺失兵器",
+      "AbilityPower": 0,
+      "AbilityType": 2627,
+      "AbilityTextID": 2241,
+      "_ConfigID": 3608,
+      "AbilityID": 2461
+    },
+    {
+      "AbilityName": "気まぐれな風",
+      "AbilityPower": 0,
+      "AbilityType": 2628,
+      "AbilityTextID": 2242,
+      "_ConfigID": 3609,
+      "AbilityID": 2462
+    },
+    {
+      "AbilityName": "風に形なく、枷もなし",
+      "AbilityPower": 0,
+      "AbilityType": 2629,
+      "AbilityTextID": 2243,
+      "_ConfigID": 3610,
+      "AbilityID": 2463
+    },
+    {
+      "AbilityName": "キュートチェンソー",
+      "AbilityPower": 0,
+      "AbilityType": 2630,
+      "AbilityTextID": 2244,
+      "_ConfigID": 3615,
+      "AbilityID": 2464
+    },
+    {
+      "AbilityName": "デッドアミューズ",
+      "AbilityPower": 0,
+      "AbilityType": 2631,
+      "AbilityTextID": 2245,
+      "_ConfigID": 3616,
+      "AbilityID": 2465
+    },
+    {
+      "AbilityName": "貴様は…私だ…ッ！！",
+      "AbilityPower": 0,
+      "AbilityType": 2632,
+      "AbilityTextID": 2246,
+      "_ConfigID": 3618,
+      "AbilityID": 2466
+    },
+    {
+      "AbilityName": "聖者の庇護",
+      "AbilityPower": 0,
+      "AbilityType": 2633,
+      "AbilityTextID": 2247,
+      "_ConfigID": 3620,
+      "AbilityID": 2467
+    },
+    {
+      "AbilityName": "神の杯",
+      "AbilityPower": 0,
+      "AbilityType": 2634,
+      "AbilityTextID": 2248,
+      "_ConfigID": 3621,
+      "AbilityID": 2468
+    },
+    {
+      "AbilityName": "轟く龍雷",
+      "AbilityPower": 0,
+      "AbilityType": 2635,
+      "AbilityTextID": 2249,
+      "_ConfigID": 3626,
+      "AbilityID": 2469
+    },
+    {
+      "AbilityName": "黄雷神龍",
+      "AbilityPower": 0,
+      "AbilityType": 2636,
+      "AbilityTextID": 2250,
+      "_ConfigID": 3627,
+      "AbilityID": 2470
+    },
+    {
+      "AbilityName": "開眼【ニーラネートラ】",
+      "AbilityPower": 0,
+      "AbilityType": 2637,
+      "AbilityTextID": 2251,
+      "_ConfigID": 0,
+      "AbilityID": 2471
+    },
+    {
+      "AbilityName": "真眼【ニーラネートラ】",
+      "AbilityPower": 0,
+      "AbilityType": 2638,
+      "AbilityTextID": 2252,
+      "_ConfigID": 0,
+      "AbilityID": 2472
+    },
+    {
+      "AbilityName": "天眼の呪い師アナーニャダメージ軽減",
+      "AbilityPower": 0,
+      "AbilityType": 2639,
+      "AbilityTextID": 0,
+      "_ConfigID": 3629,
+      "AbilityID": 2473
+    },
+    {
+      "AbilityName": "天眼の呪い師アナーニャ覚醒ダメージ軽減",
+      "AbilityPower": 0,
+      "AbilityType": 2640,
+      "AbilityTextID": 0,
+      "_ConfigID": 3630,
+      "AbilityID": 2474
+    },
+    {
+      "AbilityName": "戦好きの麗刃",
+      "AbilityPower": 0,
+      "AbilityType": 2641,
+      "AbilityTextID": 2253,
+      "_ConfigID": 3633,
+      "AbilityID": 2475
+    },
+    {
+      "AbilityName": "五射六科",
+      "AbilityPower": 0,
+      "AbilityType": 2642,
+      "AbilityTextID": 2254,
+      "_ConfigID": 3638,
+      "AbilityID": 2476
+    },
+    {
+      "AbilityName": "礼記射義",
+      "AbilityPower": 0,
+      "AbilityType": 2643,
+      "AbilityTextID": 2255,
+      "_ConfigID": 3639,
+      "AbilityID": 2477
+    },
+    {
+      "AbilityName": "有職故実",
+      "AbilityPower": 0,
+      "AbilityType": 2644,
+      "AbilityTextID": 2256,
+      "_ConfigID": 3640,
+      "AbilityID": 2478
+    },
+    {
+      "AbilityName": "三十三間通し",
+      "AbilityPower": 0,
+      "AbilityType": 2645,
+      "AbilityTextID": 2257,
+      "_ConfigID": 3641,
+      "AbilityID": 2479
+    },
+    {
+      "AbilityName": "守るんだよ、森ッ！！",
+      "AbilityPower": 0,
+      "AbilityType": 2646,
+      "AbilityTextID": 2258,
+      "_ConfigID": 3643,
+      "AbilityID": 2480
+    },
+    {
+      "AbilityName": "降り注ぐ刀雨",
+      "AbilityPower": 0,
+      "AbilityType": 2647,
+      "AbilityTextID": 2259,
+      "_ConfigID": 3644,
+      "AbilityID": 2481
+    },
+    {
+      "AbilityName": "玉散る氷刃",
+      "AbilityPower": 0,
+      "AbilityType": 2648,
+      "AbilityTextID": 2260,
+      "_ConfigID": 3645,
+      "AbilityID": 2482
     }
   ]
 }

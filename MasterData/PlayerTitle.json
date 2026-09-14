@@ -2,93 +2,106 @@
   "_meta": {
     "version": 1,
     "flags": "0x14",
-    "record_count": 122,
+    "record_count": 123,
     "record_size": 48,
-    "custom_id": 2020897645
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "PlayerTitle",
+      "alias": "称号",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 0,
+      "type_code": 32,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "_ExpressionValue",
+      "alias": "条件式",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 4,
+      "type_code": 32,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "Explan",
+      "alias": "説明",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 8,
+      "type_code": 32,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "Effect",
+      "alias": "効果",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 12,
+      "type_code": 1,
+      "offset": 12,
       "size": 4
     },
     {
       "name": "EffectPower",
+      "alias": "効果値",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 16,
+      "type_code": 1,
+      "offset": 16,
       "size": 4
     },
     {
       "name": "GroupId",
+      "alias": "グループID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 20,
+      "type_code": 1,
+      "offset": 20,
       "size": 4
     },
     {
       "name": "EmblemLevel",
+      "alias": "称号レベル",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 24,
+      "type_code": 1,
+      "offset": 24,
       "size": 4
     },
     {
       "name": "ConditionTextId",
+      "alias": "テキストID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 28,
+      "type_code": 1,
+      "offset": 28,
       "size": 4
     },
     {
       "name": "ConditionPlayerRank",
+      "alias": "ランク",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 32,
+      "type_code": 1,
+      "offset": 32,
       "size": 4
     },
     {
       "name": "ConditionClearRank",
+      "alias": "クリアランク",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 36,
+      "type_code": 1,
+      "offset": 36,
       "size": 4
     },
     {
       "name": "ConditionQuestList",
+      "alias": "クエストリスト",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 40,
+      "type_code": 32,
+      "offset": 40,
       "size": 4
     },
     {
       "name": "ConditionItemId",
+      "alias": "汎用アイテムID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 44,
+      "type_code": 1,
+      "offset": 44,
       "size": 4
     }
   ],
@@ -1649,7 +1662,7 @@
     },
     {
       "PlayerTitle": "極北の神なる剣",
-      "_ExpressionValue": "0x441add5b(8761)",
+      "_ExpressionValue": "HasPossession(\"ItemId=get_emblem_10016\");",
       "Explan": "神剣コールブランドを継承する",
       "Effect": 5,
       "EffectPower": 2631,
@@ -1659,7 +1672,7 @@
       "ConditionPlayerRank": 0,
       "ConditionClearRank": 0,
       "ConditionQuestList": "8761",
-      "ConditionItemId": 0
+      "ConditionItemId": 237198075
     },
     {
       "PlayerTitle": "海神軍馬の騎手",
@@ -1800,6 +1813,20 @@
       "ConditionClearRank": 0,
       "ConditionQuestList": "",
       "ConditionItemId": -1758852287
+    },
+    {
+      "PlayerTitle": "婚礼祝祭の王子様",
+      "_ExpressionValue": "HasPossession(\"ItemId=get_emblem_10017\");",
+      "Explan": "婚礼の装いを纏う",
+      "Effect": 5,
+      "EffectPower": 2825,
+      "GroupId": 57,
+      "EmblemLevel": 1,
+      "ConditionTextId": 1770253353,
+      "ConditionPlayerRank": 0,
+      "ConditionClearRank": 0,
+      "ConditionQuestList": "",
+      "ConditionItemId": 2032429677
     }
   ]
 }

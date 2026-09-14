@@ -4,794 +4,801 @@
     "flags": "0x10",
     "record_count": 93,
     "record_size": 52,
-    "custom_id": 1886221427
+    "tag": "stmp",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "StampID",
+      "alias": "報酬アイテムID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "ItemType",
+      "alias": "入手アイテム種類",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "ItemID",
-      "type": "string",
-      "mapped_type": 33,
-      "rec_offset": 8,
-      "size": 4
+      "alias": "汎用アイテムID",
+      "type": "fixed_string",
+      "type_code": 33,
+      "offset": 8,
+      "size": 32
     },
     {
       "name": "ItemParam",
+      "alias": "入手パラメータ",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 40,
+      "type_code": 1,
+      "offset": 40,
       "size": 4
     },
     {
       "name": "_Param1",
+      "alias": "パラメータ1",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 44,
+      "type_code": 1,
+      "offset": 44,
       "size": 4
     },
     {
       "name": "EvolutionCount",
+      "alias": "クラスチェンジ",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 48,
+      "type_code": 1,
+      "offset": 48,
       "size": 4
     }
   ],
   "records": [
     {
-      "StampID": 401,
+      "StampID": 801,
       "ItemType": 16,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 1,
       "_Param1": 349,
       "EvolutionCount": 0
     },
     {
-      "StampID": 402,
+      "StampID": 802,
       "ItemType": 4,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 1,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 403,
+      "StampID": 803,
       "ItemType": 2,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 19000,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 404,
+      "StampID": 804,
       "ItemType": 7,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 29,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 405,
+      "StampID": 805,
       "ItemType": 0,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 1,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 406,
+      "StampID": 806,
       "ItemType": 14,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 11,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 407,
+      "StampID": 807,
       "ItemType": 5,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 2,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 408,
+      "StampID": 808,
       "ItemType": 2,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 25000,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 409,
+      "StampID": 809,
       "ItemType": 1,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 61,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 410,
+      "StampID": 810,
       "ItemType": 0,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 1,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 411,
+      "StampID": 811,
       "ItemType": 11,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 2,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 412,
+      "StampID": 812,
       "ItemType": 7,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 7,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 413,
+      "StampID": 813,
       "ItemType": 2,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 37500,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 414,
+      "StampID": 814,
       "ItemType": 16,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 1,
       "_Param1": 350,
       "EvolutionCount": 0
     },
     {
-      "StampID": 415,
+      "StampID": 815,
       "ItemType": 0,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 1,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 416,
+      "StampID": 816,
       "ItemType": 12,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 2,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 417,
+      "StampID": 817,
       "ItemType": 22,
-      "ItemID": "OFFSET_1952868711",
+      "ItemID": "gift_0105_ring",
       "ItemParam": 1,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 418,
+      "StampID": 818,
       "ItemType": 2,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 50000,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 419,
+      "StampID": 819,
       "ItemType": 1,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 61,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 420,
+      "StampID": 820,
       "ItemType": 0,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 1,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 421,
+      "StampID": 821,
       "ItemType": 12,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 1,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 422,
+      "StampID": 822,
       "ItemType": 5,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 2,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 423,
+      "StampID": 823,
       "ItemType": 14,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 10,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 424,
+      "StampID": 824,
       "ItemType": 1,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 512,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 425,
+      "StampID": 825,
       "ItemType": 0,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 1,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 426,
+      "StampID": 826,
       "ItemType": 13,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 1,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 427,
+      "StampID": 827,
       "ItemType": 22,
-      "ItemID": "OFFSET_1684107892",
+      "ItemID": "trade_item_005000",
       "ItemParam": 3,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 428,
+      "StampID": 828,
       "ItemType": 14,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 22,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 429,
+      "StampID": 829,
       "ItemType": 1,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 6,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 430,
+      "StampID": 830,
       "ItemType": 6,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 1,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 431,
-      "ItemType": -1,
-      "ItemID": "OFFSET_0",
-      "ItemParam": -1,
-      "_Param1": 0,
-      "EvolutionCount": 0
-    },
-    {
-      "StampID": 501,
-      "ItemType": 16,
-      "ItemID": "OFFSET_0",
-      "ItemParam": 1,
-      "_Param1": 349,
-      "EvolutionCount": 0
-    },
-    {
-      "StampID": 502,
-      "ItemType": 4,
-      "ItemID": "OFFSET_0",
-      "ItemParam": 1,
-      "_Param1": 0,
-      "EvolutionCount": 0
-    },
-    {
-      "StampID": 503,
+      "StampID": 831,
       "ItemType": 2,
-      "ItemID": "OFFSET_0",
-      "ItemParam": 19000,
-      "_Param1": 0,
-      "EvolutionCount": 0
-    },
-    {
-      "StampID": 504,
-      "ItemType": 7,
-      "ItemID": "OFFSET_0",
-      "ItemParam": 29,
-      "_Param1": 0,
-      "EvolutionCount": 0
-    },
-    {
-      "StampID": 505,
-      "ItemType": 0,
-      "ItemID": "OFFSET_0",
-      "ItemParam": 1,
-      "_Param1": 0,
-      "EvolutionCount": 0
-    },
-    {
-      "StampID": 506,
-      "ItemType": 14,
-      "ItemID": "OFFSET_0",
-      "ItemParam": 11,
-      "_Param1": 0,
-      "EvolutionCount": 0
-    },
-    {
-      "StampID": 507,
-      "ItemType": 5,
-      "ItemID": "OFFSET_0",
-      "ItemParam": 2,
-      "_Param1": 0,
-      "EvolutionCount": 0
-    },
-    {
-      "StampID": 508,
-      "ItemType": 2,
-      "ItemID": "OFFSET_0",
-      "ItemParam": 25000,
-      "_Param1": 0,
-      "EvolutionCount": 0
-    },
-    {
-      "StampID": 509,
-      "ItemType": 1,
-      "ItemID": "OFFSET_0",
-      "ItemParam": 61,
-      "_Param1": 0,
-      "EvolutionCount": 0
-    },
-    {
-      "StampID": 510,
-      "ItemType": 0,
-      "ItemID": "OFFSET_0",
-      "ItemParam": 1,
-      "_Param1": 0,
-      "EvolutionCount": 0
-    },
-    {
-      "StampID": 511,
-      "ItemType": 11,
-      "ItemID": "OFFSET_0",
-      "ItemParam": 2,
-      "_Param1": 0,
-      "EvolutionCount": 0
-    },
-    {
-      "StampID": 512,
-      "ItemType": 7,
-      "ItemID": "OFFSET_0",
-      "ItemParam": 7,
-      "_Param1": 0,
-      "EvolutionCount": 0
-    },
-    {
-      "StampID": 513,
-      "ItemType": 2,
-      "ItemID": "OFFSET_0",
-      "ItemParam": 37500,
-      "_Param1": 0,
-      "EvolutionCount": 0
-    },
-    {
-      "StampID": 514,
-      "ItemType": 16,
-      "ItemID": "OFFSET_0",
-      "ItemParam": 1,
-      "_Param1": 350,
-      "EvolutionCount": 0
-    },
-    {
-      "StampID": 515,
-      "ItemType": 0,
-      "ItemID": "OFFSET_0",
-      "ItemParam": 1,
-      "_Param1": 0,
-      "EvolutionCount": 0
-    },
-    {
-      "StampID": 516,
-      "ItemType": 12,
-      "ItemID": "OFFSET_0",
-      "ItemParam": 2,
-      "_Param1": 0,
-      "EvolutionCount": 0
-    },
-    {
-      "StampID": 517,
-      "ItemType": 22,
-      "ItemID": "OFFSET_1952868711",
-      "ItemParam": 1,
-      "_Param1": 0,
-      "EvolutionCount": 0
-    },
-    {
-      "StampID": 518,
-      "ItemType": 2,
-      "ItemID": "OFFSET_0",
-      "ItemParam": 50000,
-      "_Param1": 0,
-      "EvolutionCount": 0
-    },
-    {
-      "StampID": 519,
-      "ItemType": 1,
-      "ItemID": "OFFSET_0",
-      "ItemParam": 61,
-      "_Param1": 0,
-      "EvolutionCount": 0
-    },
-    {
-      "StampID": 520,
-      "ItemType": 0,
-      "ItemID": "OFFSET_0",
-      "ItemParam": 1,
-      "_Param1": 0,
-      "EvolutionCount": 0
-    },
-    {
-      "StampID": 521,
-      "ItemType": 12,
-      "ItemID": "OFFSET_0",
-      "ItemParam": 1,
-      "_Param1": 0,
-      "EvolutionCount": 0
-    },
-    {
-      "StampID": 522,
-      "ItemType": 5,
-      "ItemID": "OFFSET_0",
-      "ItemParam": 2,
-      "_Param1": 0,
-      "EvolutionCount": 0
-    },
-    {
-      "StampID": 523,
-      "ItemType": 14,
-      "ItemID": "OFFSET_0",
-      "ItemParam": 10,
-      "_Param1": 0,
-      "EvolutionCount": 0
-    },
-    {
-      "StampID": 524,
-      "ItemType": 1,
-      "ItemID": "OFFSET_0",
-      "ItemParam": 512,
-      "_Param1": 0,
-      "EvolutionCount": 0
-    },
-    {
-      "StampID": 525,
-      "ItemType": 0,
-      "ItemID": "OFFSET_0",
-      "ItemParam": 1,
-      "_Param1": 0,
-      "EvolutionCount": 0
-    },
-    {
-      "StampID": 526,
-      "ItemType": 13,
-      "ItemID": "OFFSET_0",
-      "ItemParam": 1,
-      "_Param1": 0,
-      "EvolutionCount": 0
-    },
-    {
-      "StampID": 527,
-      "ItemType": 22,
-      "ItemID": "OFFSET_1684107892",
-      "ItemParam": 3,
-      "_Param1": 0,
-      "EvolutionCount": 0
-    },
-    {
-      "StampID": 528,
-      "ItemType": 14,
-      "ItemID": "OFFSET_0",
-      "ItemParam": 22,
-      "_Param1": 0,
-      "EvolutionCount": 0
-    },
-    {
-      "StampID": 529,
-      "ItemType": 1,
-      "ItemID": "OFFSET_0",
-      "ItemParam": 6,
-      "_Param1": 0,
-      "EvolutionCount": 0
-    },
-    {
-      "StampID": 530,
-      "ItemType": 6,
-      "ItemID": "OFFSET_0",
-      "ItemParam": 1,
-      "_Param1": 0,
-      "EvolutionCount": 0
-    },
-    {
-      "StampID": 531,
-      "ItemType": 2,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 62500,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 601,
+      "StampID": 901,
       "ItemType": 16,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 1,
       "_Param1": 349,
       "EvolutionCount": 0
     },
     {
-      "StampID": 602,
+      "StampID": 902,
       "ItemType": 4,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 1,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 603,
+      "StampID": 903,
       "ItemType": 2,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 19000,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 604,
+      "StampID": 904,
       "ItemType": 7,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 29,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 605,
+      "StampID": 905,
       "ItemType": 0,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 1,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 606,
+      "StampID": 906,
       "ItemType": 14,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 11,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 607,
+      "StampID": 907,
       "ItemType": 5,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 2,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 608,
+      "StampID": 908,
       "ItemType": 2,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 25000,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 609,
+      "StampID": 909,
       "ItemType": 1,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 61,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 610,
+      "StampID": 910,
       "ItemType": 0,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 1,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 611,
+      "StampID": 911,
       "ItemType": 11,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 2,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 612,
+      "StampID": 912,
       "ItemType": 7,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 7,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 613,
+      "StampID": 913,
       "ItemType": 2,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 37500,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 614,
+      "StampID": 914,
       "ItemType": 16,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 1,
       "_Param1": 350,
       "EvolutionCount": 0
     },
     {
-      "StampID": 615,
+      "StampID": 915,
       "ItemType": 0,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 1,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 616,
+      "StampID": 916,
       "ItemType": 12,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 2,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 617,
+      "StampID": 917,
       "ItemType": 22,
-      "ItemID": "OFFSET_1952868711",
+      "ItemID": "gift_0105_ring",
       "ItemParam": 1,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 618,
+      "StampID": 918,
       "ItemType": 2,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 50000,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 619,
+      "StampID": 919,
       "ItemType": 1,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 61,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 620,
+      "StampID": 920,
       "ItemType": 0,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 1,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 621,
+      "StampID": 921,
       "ItemType": 12,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 1,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 622,
+      "StampID": 922,
       "ItemType": 5,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 2,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 623,
+      "StampID": 923,
       "ItemType": 14,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 10,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 624,
+      "StampID": 924,
       "ItemType": 1,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 512,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 625,
+      "StampID": 925,
       "ItemType": 0,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 1,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 626,
+      "StampID": 926,
       "ItemType": 13,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 1,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 627,
+      "StampID": 927,
       "ItemType": 22,
-      "ItemID": "OFFSET_1684107892",
+      "ItemID": "trade_item_005000",
       "ItemParam": 3,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 628,
+      "StampID": 928,
       "ItemType": 14,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 22,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 629,
+      "StampID": 929,
       "ItemType": 1,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 6,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 630,
+      "StampID": 930,
       "ItemType": 6,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": 1,
       "_Param1": 0,
       "EvolutionCount": 0
     },
     {
-      "StampID": 631,
+      "StampID": 931,
       "ItemType": -1,
-      "ItemID": "OFFSET_0",
+      "ItemID": "",
       "ItemParam": -1,
+      "_Param1": 0,
+      "EvolutionCount": 0
+    },
+    {
+      "StampID": 1001,
+      "ItemType": 16,
+      "ItemID": "",
+      "ItemParam": 1,
+      "_Param1": 349,
+      "EvolutionCount": 0
+    },
+    {
+      "StampID": 1002,
+      "ItemType": 4,
+      "ItemID": "",
+      "ItemParam": 1,
+      "_Param1": 0,
+      "EvolutionCount": 0
+    },
+    {
+      "StampID": 1003,
+      "ItemType": 2,
+      "ItemID": "",
+      "ItemParam": 19000,
+      "_Param1": 0,
+      "EvolutionCount": 0
+    },
+    {
+      "StampID": 1004,
+      "ItemType": 7,
+      "ItemID": "",
+      "ItemParam": 29,
+      "_Param1": 0,
+      "EvolutionCount": 0
+    },
+    {
+      "StampID": 1005,
+      "ItemType": 0,
+      "ItemID": "",
+      "ItemParam": 1,
+      "_Param1": 0,
+      "EvolutionCount": 0
+    },
+    {
+      "StampID": 1006,
+      "ItemType": 14,
+      "ItemID": "",
+      "ItemParam": 11,
+      "_Param1": 0,
+      "EvolutionCount": 0
+    },
+    {
+      "StampID": 1007,
+      "ItemType": 5,
+      "ItemID": "",
+      "ItemParam": 2,
+      "_Param1": 0,
+      "EvolutionCount": 0
+    },
+    {
+      "StampID": 1008,
+      "ItemType": 2,
+      "ItemID": "",
+      "ItemParam": 25000,
+      "_Param1": 0,
+      "EvolutionCount": 0
+    },
+    {
+      "StampID": 1009,
+      "ItemType": 1,
+      "ItemID": "",
+      "ItemParam": 61,
+      "_Param1": 0,
+      "EvolutionCount": 0
+    },
+    {
+      "StampID": 1010,
+      "ItemType": 0,
+      "ItemID": "",
+      "ItemParam": 1,
+      "_Param1": 0,
+      "EvolutionCount": 0
+    },
+    {
+      "StampID": 1011,
+      "ItemType": 11,
+      "ItemID": "",
+      "ItemParam": 2,
+      "_Param1": 0,
+      "EvolutionCount": 0
+    },
+    {
+      "StampID": 1012,
+      "ItemType": 7,
+      "ItemID": "",
+      "ItemParam": 7,
+      "_Param1": 0,
+      "EvolutionCount": 0
+    },
+    {
+      "StampID": 1013,
+      "ItemType": 2,
+      "ItemID": "",
+      "ItemParam": 37500,
+      "_Param1": 0,
+      "EvolutionCount": 0
+    },
+    {
+      "StampID": 1014,
+      "ItemType": 16,
+      "ItemID": "",
+      "ItemParam": 1,
+      "_Param1": 350,
+      "EvolutionCount": 0
+    },
+    {
+      "StampID": 1015,
+      "ItemType": 0,
+      "ItemID": "",
+      "ItemParam": 1,
+      "_Param1": 0,
+      "EvolutionCount": 0
+    },
+    {
+      "StampID": 1016,
+      "ItemType": 12,
+      "ItemID": "",
+      "ItemParam": 2,
+      "_Param1": 0,
+      "EvolutionCount": 0
+    },
+    {
+      "StampID": 1017,
+      "ItemType": 22,
+      "ItemID": "gift_0105_ring",
+      "ItemParam": 1,
+      "_Param1": 0,
+      "EvolutionCount": 0
+    },
+    {
+      "StampID": 1018,
+      "ItemType": 2,
+      "ItemID": "",
+      "ItemParam": 50000,
+      "_Param1": 0,
+      "EvolutionCount": 0
+    },
+    {
+      "StampID": 1019,
+      "ItemType": 1,
+      "ItemID": "",
+      "ItemParam": 61,
+      "_Param1": 0,
+      "EvolutionCount": 0
+    },
+    {
+      "StampID": 1020,
+      "ItemType": 0,
+      "ItemID": "",
+      "ItemParam": 1,
+      "_Param1": 0,
+      "EvolutionCount": 0
+    },
+    {
+      "StampID": 1021,
+      "ItemType": 12,
+      "ItemID": "",
+      "ItemParam": 1,
+      "_Param1": 0,
+      "EvolutionCount": 0
+    },
+    {
+      "StampID": 1022,
+      "ItemType": 5,
+      "ItemID": "",
+      "ItemParam": 2,
+      "_Param1": 0,
+      "EvolutionCount": 0
+    },
+    {
+      "StampID": 1023,
+      "ItemType": 14,
+      "ItemID": "",
+      "ItemParam": 10,
+      "_Param1": 0,
+      "EvolutionCount": 0
+    },
+    {
+      "StampID": 1024,
+      "ItemType": 1,
+      "ItemID": "",
+      "ItemParam": 512,
+      "_Param1": 0,
+      "EvolutionCount": 0
+    },
+    {
+      "StampID": 1025,
+      "ItemType": 0,
+      "ItemID": "",
+      "ItemParam": 1,
+      "_Param1": 0,
+      "EvolutionCount": 0
+    },
+    {
+      "StampID": 1026,
+      "ItemType": 13,
+      "ItemID": "",
+      "ItemParam": 1,
+      "_Param1": 0,
+      "EvolutionCount": 0
+    },
+    {
+      "StampID": 1027,
+      "ItemType": 22,
+      "ItemID": "trade_item_005000",
+      "ItemParam": 3,
+      "_Param1": 0,
+      "EvolutionCount": 0
+    },
+    {
+      "StampID": 1028,
+      "ItemType": 14,
+      "ItemID": "",
+      "ItemParam": 22,
+      "_Param1": 0,
+      "EvolutionCount": 0
+    },
+    {
+      "StampID": 1029,
+      "ItemType": 1,
+      "ItemID": "",
+      "ItemParam": 6,
+      "_Param1": 0,
+      "EvolutionCount": 0
+    },
+    {
+      "StampID": 1030,
+      "ItemType": 6,
+      "ItemID": "",
+      "ItemParam": 1,
+      "_Param1": 0,
+      "EvolutionCount": 0
+    },
+    {
+      "StampID": 1031,
+      "ItemType": 2,
+      "ItemID": "",
+      "ItemParam": 62500,
       "_Param1": 0,
       "EvolutionCount": 0
     }

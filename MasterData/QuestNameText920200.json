@@ -1,0 +1,37 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 5,
+    "record_size": 4,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "Message",
+      "alias": "名前",
+      "type": "string",
+      "type_code": 32,
+      "offset": 0,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "Message": "風流な歌や踊り"
+    },
+    {
+      "Message": "観客参加型の演目"
+    },
+    {
+      "Message": "色気のあるレディ"
+    },
+    {
+      "Message": "あたしの花火"
+    },
+    {
+      "Message": "真夏の花火大会"
+    }
+  ]
+}

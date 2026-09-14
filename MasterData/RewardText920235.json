@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 4,
+    "record_size": 12,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "alias": "ID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Text",
+      "alias": "テキスト",
+      "type": "string",
+      "type_code": 32,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "alias": "タイプ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Text": "去年に続いてデモシェフ商会からの招待状が届く。\nしかしそれは、闇の組織が仕組んだ罠だった。\n集められた王国軍、デモシェフ商会、オルカ科学ラボは、\n力を合わせ、自分たちをはめようとした闇の組織に立ち向かう。\n\n初開催2025年6月26日",
+      "Type": 6
+    },
+    {
+      "ID": 1,
+      "Text": "",
+      "Type": 7
+    },
+    {
+      "ID": 2,
+      "Text": "獲得★が1以上で\n交換所に「真夏の奇譚ペルセナス」が追加",
+      "Type": 8
+    },
+    {
+      "ID": 3,
+      "Text": "『異種婚礼狂騒曲』獲得★数19以上で開放",
+      "Type": 9
+    }
+  ]
+}

@@ -4,294 +4,336 @@
     "flags": "0x10",
     "record_count": 168,
     "record_size": 164,
-    "custom_id": 1734570087
+    "tag": "gpcg",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "ClassType_ExtraAwake",
+      "alias": "超覚醒",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "ClassType_IgnoreHealer",
+      "alias": "CLS_回復不可",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "ClassType_Magician",
+      "alias": "CLS_魔法系",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 8,
+      "type_code": 1,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "ClassType_RiderRace",
+      "alias": "CLS_ライダー族",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 12,
+      "type_code": 1,
+      "offset": 12,
       "size": 4
     },
     {
       "name": "ClassType_Doragner",
+      "alias": "CLS_竜人族",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 16,
+      "type_code": 1,
+      "offset": 16,
       "size": 4
     },
     {
       "name": "ClassType_OnlyMagician",
+      "alias": "CLS_魔法のみ",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 20,
+      "type_code": 1,
+      "offset": 20,
       "size": 4
     },
     {
       "name": "ClassType_Potential",
+      "alias": "CLS_新たなる力",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 24,
+      "type_code": 1,
+      "offset": 24,
       "size": 4
     },
     {
       "name": "ClassType_BlessingMace",
+      "alias": "CLS_祝福の鎚矛",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 28,
+      "type_code": 1,
+      "offset": 28,
       "size": 4
     },
     {
       "name": "ClassType_HollySpear",
+      "alias": "CLS_聖なる槍",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 32,
+      "type_code": 1,
+      "offset": 32,
       "size": 4
     },
     {
       "name": "ClassType_GaleKnife",
+      "alias": "CLS_疾風の短剣",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 36,
+      "type_code": 1,
+      "offset": 36,
       "size": 4
     },
     {
       "name": "ClassType_SamuraiEdgea",
+      "alias": "CLS_東方の刃",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 40,
+      "type_code": 1,
+      "offset": 40,
       "size": 4
     },
     {
       "name": "ClassType_FlashArrow",
+      "alias": "CLS_光の矢",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 44,
+      "type_code": 1,
+      "offset": 44,
       "size": 4
     },
     {
       "name": "ClassType_SilverBullet",
+      "alias": "CLS_銀の弾丸",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 48,
+      "type_code": 1,
+      "offset": 48,
       "size": 4
     },
     {
       "name": "ClassType_Exorcist",
+      "alias": "CLS_退魔の矢",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 52,
+      "type_code": 1,
+      "offset": 52,
       "size": 4
     },
     {
       "name": "ClassType_Healer",
+      "alias": "CLS_高速治癒",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 56,
+      "type_code": 1,
+      "offset": 56,
       "size": 4
     },
     {
       "name": "ClassType_Princess",
+      "alias": "CLS_聖なる剣",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 60,
+      "type_code": 1,
+      "offset": 60,
       "size": 4
     },
     {
       "name": "ClassType_EnhanceSword",
+      "alias": "CLS_魔法の刃",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 64,
+      "type_code": 1,
+      "offset": 64,
       "size": 4
     },
     {
       "name": "ClassType_ManaBurst",
+      "alias": "CLS_魔力増大",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 68,
+      "type_code": 1,
+      "offset": 68,
       "size": 4
     },
     {
       "name": "ClassType_DragonKiller",
+      "alias": "CLS_竜滅印章",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 72,
+      "type_code": 1,
+      "offset": 72,
       "size": 4
     },
     {
       "name": "ClassType_Bandit",
+      "alias": "CLS_山賊の加護",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 76,
+      "type_code": 1,
+      "offset": 76,
       "size": 4
     },
     {
       "name": "CardID_IgnoreDuplication",
+      "alias": "ID_重複出撃禁止",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 80,
+      "type_code": 1,
+      "offset": 80,
       "size": 4
     },
     {
       "name": "CardID_ElfRace",
+      "alias": "ID_エルフ族",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 84,
+      "type_code": 1,
+      "offset": 84,
       "size": 4
     },
     {
       "name": "MissileID_Reflection",
+      "alias": "ID_ヤカン",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 88,
+      "type_code": 1,
+      "offset": 88,
       "size": 4
     },
     {
       "name": "CardID_AtkUp",
+      "alias": "ID_攻撃上昇",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 92,
+      "type_code": 1,
+      "offset": 92,
       "size": 4
     },
     {
       "name": "CardID_IgnoreHealer",
+      "alias": "ID_回復不可",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 96,
+      "type_code": 1,
+      "offset": 96,
       "size": 4
     },
     {
       "name": "CardID_OnlyMagician",
+      "alias": "ID_魔法のみ",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 100,
+      "type_code": 1,
+      "offset": 100,
       "size": 4
     },
     {
       "name": "CardID_Elf_Dwarf",
+      "alias": "ID_エルフ_ドワーフ",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 104,
+      "type_code": 1,
+      "offset": 104,
       "size": 4
     },
     {
       "name": "CardID_Potential",
+      "alias": "ID_新たなる力",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 108,
+      "type_code": 1,
+      "offset": 108,
       "size": 4
     },
     {
       "name": "CardID_BlessingMace",
+      "alias": "ID_祝福の鎚矛",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 112,
+      "type_code": 1,
+      "offset": 112,
       "size": 4
     },
     {
       "name": "CardID_HollySpear",
+      "alias": "ID_聖なる槍",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 116,
+      "type_code": 1,
+      "offset": 116,
       "size": 4
     },
     {
       "name": "CardID_GaleKnife",
+      "alias": "ID_疾風の短剣",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 120,
+      "type_code": 1,
+      "offset": 120,
       "size": 4
     },
     {
       "name": "CardID_SamuraiEdgea",
+      "alias": "ID_東方の刃",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 124,
+      "type_code": 1,
+      "offset": 124,
       "size": 4
     },
     {
       "name": "CardID_FlashArrow",
+      "alias": "ID_光の矢",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 128,
+      "type_code": 1,
+      "offset": 128,
       "size": 4
     },
     {
       "name": "CardID_SilverBullet",
+      "alias": "ID_銀の弾丸",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 132,
+      "type_code": 1,
+      "offset": 132,
       "size": 4
     },
     {
       "name": "CardID_Exorcist",
+      "alias": "ID_退魔の矢",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 136,
+      "type_code": 1,
+      "offset": 136,
       "size": 4
     },
     {
       "name": "CardID_Healer",
+      "alias": "ID_高速治癒",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 140,
+      "type_code": 1,
+      "offset": 140,
       "size": 4
     },
     {
       "name": "CardID_Princess",
+      "alias": "ID_聖なる剣",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 144,
+      "type_code": 1,
+      "offset": 144,
       "size": 4
     },
     {
       "name": "CardID_EnhanceSword",
+      "alias": "ID_魔法の刃",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 148,
+      "type_code": 1,
+      "offset": 148,
       "size": 4
     },
     {
       "name": "CardID_ManaBurst",
+      "alias": "ID_魔力増大",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 152,
+      "type_code": 1,
+      "offset": 152,
       "size": 4
     },
     {
       "name": "CardID_DragonKiller",
+      "alias": "ID_竜滅印章",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 156,
+      "type_code": 1,
+      "offset": 156,
       "size": 4
     },
     {
       "name": "CardID_Bandit",
+      "alias": "ID_山賊の加護",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 160,
+      "type_code": 1,
+      "offset": 160,
       "size": 4
     }
   ],

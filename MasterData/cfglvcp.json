@@ -4,49 +4,56 @@
     "flags": "0x10",
     "record_count": 10,
     "record_size": 24,
-    "custom_id": 1885566572
+    "tag": "lvcp",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "_Rarity",
+      "alias": "レアリティ",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "_CC0",
+      "alias": "CC0",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "_CC1",
+      "alias": "CC1",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 8,
+      "type_code": 1,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "_CC2",
+      "alias": "CC2",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 12,
+      "type_code": 1,
+      "offset": 12,
       "size": 4
     },
     {
       "name": "_CC3",
+      "alias": "CC3",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 16,
+      "type_code": 1,
+      "offset": 16,
       "size": 4
     },
     {
       "name": "_CC4",
+      "alias": "CC4",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 20,
+      "type_code": 1,
+      "offset": 20,
       "size": 4
     }
   ],

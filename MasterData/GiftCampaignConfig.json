@@ -2,65 +2,74 @@
   "_meta": {
     "version": 1,
     "flags": "0x14",
-    "record_count": 25,
+    "record_count": 26,
     "record_size": 32,
-    "custom_id": 1734567780
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "ID",
+      "alias": "ID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "StartDate",
+      "alias": "配布開始日時",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 4,
+      "type_code": 32,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "EndDate",
+      "alias": "配布終了日時",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 8,
+      "type_code": 32,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "ItemType",
+      "alias": "アイテムタイプ",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 12,
+      "type_code": 1,
+      "offset": 12,
       "size": 4
     },
     {
       "name": "GeneralItemID",
+      "alias": "汎用アイテムID",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 16,
+      "type_code": 32,
+      "offset": 16,
       "size": 4
     },
     {
       "name": "CardID",
+      "alias": "カードID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 20,
+      "type_code": 1,
+      "offset": 20,
       "size": 4
     },
     {
       "name": "Count",
+      "alias": "配布数",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 24,
+      "type_code": 1,
+      "offset": 24,
       "size": 4
     },
     {
       "name": "SystemTextID",
+      "alias": "システムテキストID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 28,
+      "type_code": 1,
+      "offset": 28,
       "size": 4
     }
   ],
@@ -309,6 +318,16 @@
       "ID": 25,
       "StartDate": "2026/04/30 11:30:00",
       "EndDate": "2026/05/15 03:59:59",
+      "ItemType": 1,
+      "GeneralItemID": "tower_consume_item_110001",
+      "CardID": 0,
+      "Count": 3,
+      "SystemTextID": 0
+    },
+    {
+      "ID": 26,
+      "StartDate": "2026/05/29 04:00:00",
+      "EndDate": "2026/06/12 03:59:59",
       "ItemType": 1,
       "GeneralItemID": "tower_consume_item_110001",
       "CardID": 0,

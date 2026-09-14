@@ -2,23 +2,26 @@
   "_meta": {
     "version": 1,
     "flags": "0x10",
-    "record_count": 340,
+    "record_count": 348,
     "record_size": 8,
-    "custom_id": 1734763361
+    "tag": "acfg",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "ConfigId",
+      "alias": "[効果]名称",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "InfluenceId",
+      "alias": "[効果]ID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     }
   ],
@@ -1382,6 +1385,38 @@
     {
       "ConfigId": 1246564908,
       "InfluenceId": 339
+    },
+    {
+      "ConfigId": 1904917215,
+      "InfluenceId": 340
+    },
+    {
+      "ConfigId": -309609675,
+      "InfluenceId": 341
+    },
+    {
+      "ConfigId": 1846261640,
+      "InfluenceId": 342
+    },
+    {
+      "ConfigId": 1708676673,
+      "InfluenceId": 343
+    },
+    {
+      "ConfigId": -1781169207,
+      "InfluenceId": 344
+    },
+    {
+      "ConfigId": 1633741253,
+      "InfluenceId": 345
+    },
+    {
+      "ConfigId": -1969432922,
+      "InfluenceId": 346
+    },
+    {
+      "ConfigId": 1289228904,
+      "InfluenceId": 347
     }
   ]
 }

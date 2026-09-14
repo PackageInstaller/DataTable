@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 4,
+    "record_size": 12,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "alias": "ID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Text",
+      "alias": "テキスト",
+      "type": "string",
+      "type_code": 32,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "alias": "タイプ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Text": "ある日、人里を襲撃してきたのは妖狸たちだった。\nしかしたぬきの里の長によれば、襲撃犯である妖狸スズネは\n決して悪い妖怪ではないのだという。\nそうして原因を探る王子たちの前に姿を現したのは\n大嶽丸率いる鬼たちであった。\n\n初開催2019年12月12日",
+      "Type": 6
+    },
+    {
+      "ID": 1,
+      "Text": "",
+      "Type": 7
+    },
+    {
+      "ID": 2,
+      "Text": "獲得★が1以上で\n交換所に「妖狸スズネ」が追加",
+      "Type": 8
+    },
+    {
+      "ID": 3,
+      "Text": "『デーモンサンタのおもちゃ工場』獲得★数13以上で開放",
+      "Type": 9
+    }
+  ]
+}

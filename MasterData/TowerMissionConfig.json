@@ -4,84 +4,96 @@
     "flags": "0x14",
     "record_count": 3,
     "record_size": 52,
-    "custom_id": 2020897645
+    "tag": "",
+    "date_epoch": "0001-01-01"
   },
   "_fields": [
     {
       "name": "MissionID",
+      "alias": "ミッションID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "Name",
+      "alias": "ミッション名",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 4,
+      "type_code": 32,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "Enable",
+      "alias": "有効フラグ",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 8,
+      "type_code": 1,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "DisplayOrder",
+      "alias": "表示順",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 12,
+      "type_code": 1,
+      "offset": 12,
       "size": 4
     },
     {
       "name": "StartDateTime",
-      "type": "double",
-      "mapped_type": 9,
-      "rec_offset": 16,
+      "alias": "開始日時",
+      "type": "datetime",
+      "type_code": 9,
+      "offset": 16,
       "size": 8
     },
     {
       "name": "EndDateTime",
-      "type": "double",
-      "mapped_type": 9,
-      "rec_offset": 24,
+      "alias": "終了日時",
+      "type": "datetime",
+      "type_code": 9,
+      "offset": 24,
       "size": 8
     },
     {
       "name": "TowerCrystalID",
+      "alias": "英傑結晶ID",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 32,
+      "type_code": 32,
+      "offset": 32,
       "size": 4
     },
     {
       "name": "ConsumeItemID",
+      "alias": "消費汎用アイテムID",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 36,
+      "type_code": 32,
+      "offset": 36,
       "size": 4
     },
     {
       "name": "DailyAutoAddCount",
+      "alias": "デイリー追加数",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 40,
+      "type_code": 1,
+      "offset": 40,
       "size": 4
     },
     {
       "name": "TopFloor",
+      "alias": "最上階",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 44,
+      "type_code": 1,
+      "offset": 44,
       "size": 4
     },
     {
       "name": "DiscloseQuestID",
+      "alias": "開示クエストID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 48,
+      "type_code": 1,
+      "offset": 48,
       "size": 4
     }
   ],
@@ -91,8 +103,14 @@
       "Name": "英傑の塔",
       "Enable": 2047,
       "DisplayOrder": 2,
-      "StartDateTime": 0.0,
-      "EndDateTime": 0.0,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
       "TowerCrystalID": "tower_crystal_110001",
       "ConsumeItemID": "tower_consume_item_110001",
       "DailyAutoAddCount": 3,
@@ -104,8 +122,14 @@
       "Name": "統帥の塔",
       "Enable": 2047,
       "DisplayOrder": 2,
-      "StartDateTime": 0.0,
-      "EndDateTime": 0.0,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
       "TowerCrystalID": "tower_crystal_110002",
       "ConsumeItemID": "tower_consume_item_110001",
       "DailyAutoAddCount": 0,
@@ -117,8 +141,14 @@
       "Name": "悪霊の塔",
       "Enable": 2047,
       "DisplayOrder": 2,
-      "StartDateTime": 0.0,
-      "EndDateTime": 0.0,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
       "TowerCrystalID": "tower_crystal_110003",
       "ConsumeItemID": "tower_consume_item_110001",
       "DailyAutoAddCount": 0,

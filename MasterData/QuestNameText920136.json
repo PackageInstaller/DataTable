@@ -1,0 +1,40 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 6,
+    "record_size": 4,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "Message",
+      "alias": "名前",
+      "type": "string",
+      "type_code": 32,
+      "offset": 0,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "Message": "暴走するおもちゃ"
+    },
+    {
+      "Message": "雪国の異変"
+    },
+    {
+      "Message": "おもちゃの行進"
+    },
+    {
+      "Message": "おもちゃ工場の戦い"
+    },
+    {
+      "Message": "空飛ぶ機械竜"
+    },
+    {
+      "Message": "デーモンの贈り物"
+    }
+  ]
+}

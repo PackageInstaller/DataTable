@@ -4,84 +4,96 @@
     "flags": "0x10",
     "record_count": 45,
     "record_size": 44,
-    "custom_id": 1717791842
+    "tag": "blcf",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "_ConfigID",
+      "alias": "効果定義名",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "_TargetType",
+      "alias": "対象種別",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "_TargetUnit",
+      "alias": "対象ユニット",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 8,
+      "type_code": 1,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "_TargetClassType",
+      "alias": "対象クラスタイプ",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 12,
+      "type_code": 1,
+      "offset": 12,
       "size": 4
     },
     {
       "name": "_TargetEnemyType",
+      "alias": "対象敵種族",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 16,
+      "type_code": 1,
+      "offset": 16,
       "size": 4
     },
     {
       "name": "_TargetEnemyElement",
+      "alias": "対象敵属性",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 20,
+      "type_code": 1,
+      "offset": 20,
       "size": 4
     },
     {
       "name": "_InfluenceType",
+      "alias": "効果種別",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 24,
+      "type_code": 1,
+      "offset": 24,
       "size": 4
     },
     {
       "name": "_Param1",
+      "alias": "パラメータ1",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 28,
+      "type_code": 1,
+      "offset": 28,
       "size": 4
     },
     {
       "name": "_Param2",
+      "alias": "パラメータ2",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 32,
+      "type_code": 1,
+      "offset": 32,
       "size": 4
     },
     {
       "name": "_Param3",
+      "alias": "パラメータ3",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 36,
+      "type_code": 1,
+      "offset": 36,
       "size": 4
     },
     {
       "name": "_Param4",
+      "alias": "パラメータ4",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 40,
+      "type_code": 1,
+      "offset": 40,
       "size": 4
     }
   ],
@@ -102,7 +114,7 @@
     {
       "_ConfigID": 2,
       "_TargetType": 2,
-      "_TargetUnit": 2777,
+      "_TargetUnit": 2883,
       "_TargetClassType": 0,
       "_TargetEnemyType": 0,
       "_TargetEnemyElement": 0,
@@ -128,7 +140,7 @@
     {
       "_ConfigID": 0,
       "_TargetType": 0,
-      "_TargetUnit": 2779,
+      "_TargetUnit": 2884,
       "_TargetClassType": 0,
       "_TargetEnemyType": 0,
       "_TargetEnemyElement": 0,

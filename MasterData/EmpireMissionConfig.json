@@ -4,70 +4,96 @@
     "flags": "0x14",
     "record_count": 11,
     "record_size": 52,
-    "custom_id": 2020897645
+    "tag": "",
+    "date_epoch": "0001-01-01"
   },
   "_fields": [
     {
       "name": "MissionID",
+      "alias": "ミッションID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "Name",
+      "alias": "ミッション名",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 4,
+      "type_code": 32,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "QuestIdList",
+      "alias": "クエストIDリスト",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 8,
+      "type_code": 32,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "Enable",
+      "alias": "有効フラグ",
       "type": "bool",
-      "mapped_type": 5,
-      "rec_offset": 12,
+      "type_code": 5,
+      "offset": 12,
       "size": 1
     },
     {
-      "name": "\b\r\fStartDateTime",
-      "type": "unknown",
-      "mapped_type": 0,
-      "rec_offset": 0,
+      "name": "StartDateTime",
+      "alias": "開始日時",
+      "type": "datetime",
+      "type_code": 9,
+      "offset": 16,
+      "size": 8
+    },
+    {
+      "name": "EndDateTime",
+      "alias": "終了日時",
+      "type": "datetime",
+      "type_code": 9,
+      "offset": 24,
+      "size": 8
+    },
+    {
+      "name": "DisplayOrder",
+      "alias": "表示順",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 32,
       "size": 4
     },
     {
-      "name": "ime",
-      "type": "unknown",
-      "mapped_type": 97,
-      "rec_offset": 17508,
-      "size": 0
+      "name": "TagID",
+      "alias": "タグID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 36,
+      "size": 4
     },
     {
-      "name": "field_6",
-      "type": "unknown",
-      "mapped_type": 0,
-      "rec_offset": 0,
+      "name": "TagIDRange",
+      "alias": "タグIDレンジ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 40,
       "size": 4
     },
     {
       "name": "KeyQuestID",
+      "alias": "キークエストID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 44,
+      "type_code": 1,
+      "offset": 44,
       "size": 4
     },
     {
       "name": "DarkCrystalItemId",
+      "alias": "闇水晶アイテムID",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 48,
+      "type_code": 32,
+      "offset": 48,
       "size": 4
     }
   ],
@@ -77,8 +103,17 @@
       "Name": "帝国一陣",
       "QuestIdList": "",
       "Enable": false,
-      "\b\r\fStartDateTime": "e7570e00",
-      "field_6": "e7570e00",
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "DisplayOrder": 1100,
+      "TagID": 908,
+      "TagIDRange": 0,
       "KeyQuestID": 0,
       "DarkCrystalItemId": "trade_item_004000_10"
     },
@@ -87,8 +122,17 @@
       "Name": "帝国二陣",
       "QuestIdList": "",
       "Enable": false,
-      "\b\r\fStartDateTime": "e6570e00",
-      "field_6": "e6570e00",
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "DisplayOrder": 1000,
+      "TagID": 907,
+      "TagIDRange": 0,
       "KeyQuestID": 7325,
       "DarkCrystalItemId": "trade_item_004000_10"
     },
@@ -97,8 +141,17 @@
       "Name": "帝国三陣",
       "QuestIdList": "",
       "Enable": false,
-      "\b\r\fStartDateTime": "e5570e00",
-      "field_6": "e5570e00",
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "DisplayOrder": 900,
+      "TagID": 906,
+      "TagIDRange": 0,
       "KeyQuestID": 7431,
       "DarkCrystalItemId": "trade_item_004000_10"
     },
@@ -107,8 +160,17 @@
       "Name": "帝国四陣",
       "QuestIdList": "",
       "Enable": false,
-      "\b\r\fStartDateTime": "e4570e00",
-      "field_6": "e4570e00",
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "DisplayOrder": 800,
+      "TagID": 905,
+      "TagIDRange": 0,
       "KeyQuestID": 7544,
       "DarkCrystalItemId": "trade_item_004000_10"
     },
@@ -117,8 +179,17 @@
       "Name": "帝国五陣",
       "QuestIdList": "",
       "Enable": false,
-      "\b\r\fStartDateTime": "e3570e00",
-      "field_6": "e3570e00",
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "DisplayOrder": 700,
+      "TagID": 904,
+      "TagIDRange": 0,
       "KeyQuestID": 7694,
       "DarkCrystalItemId": "trade_item_004000_10"
     },
@@ -127,8 +198,17 @@
       "Name": "帝国六陣",
       "QuestIdList": "",
       "Enable": false,
-      "\b\r\fStartDateTime": "e2570e00",
-      "field_6": "e2570e00",
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "DisplayOrder": 600,
+      "TagID": 903,
+      "TagIDRange": 0,
       "KeyQuestID": 7860,
       "DarkCrystalItemId": "trade_item_004000_10"
     },
@@ -137,8 +217,17 @@
       "Name": "帝国七陣",
       "QuestIdList": "",
       "Enable": false,
-      "\b\r\fStartDateTime": "e1570e00",
-      "field_6": "e1570e00",
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "DisplayOrder": 500,
+      "TagID": 902,
+      "TagIDRange": 0,
       "KeyQuestID": 8039,
       "DarkCrystalItemId": "trade_item_004000_10"
     },
@@ -147,8 +236,17 @@
       "Name": "帝国八陣",
       "QuestIdList": "",
       "Enable": false,
-      "\b\r\fStartDateTime": "e8570e00",
-      "field_6": "e8570e00",
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "DisplayOrder": 400,
+      "TagID": 909,
+      "TagIDRange": 0,
       "KeyQuestID": 8197,
       "DarkCrystalItemId": "trade_item_004000_10"
     },
@@ -157,8 +255,17 @@
       "Name": "帝国九陣",
       "QuestIdList": "",
       "Enable": false,
-      "\b\r\fStartDateTime": "e9570e00",
-      "field_6": "e9570e00",
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "DisplayOrder": 300,
+      "TagID": 910,
+      "TagIDRange": 0,
       "KeyQuestID": 8350,
       "DarkCrystalItemId": "trade_item_004000_10"
     },
@@ -167,8 +274,17 @@
       "Name": "帝国十陣",
       "QuestIdList": "",
       "Enable": false,
-      "\b\r\fStartDateTime": "ea570e00",
-      "field_6": "ea570e00",
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "DisplayOrder": 200,
+      "TagID": 911,
+      "TagIDRange": 0,
       "KeyQuestID": 8521,
       "DarkCrystalItemId": "trade_item_004000_10"
     },
@@ -177,8 +293,17 @@
       "Name": "帝国タルタロス編",
       "QuestIdList": "",
       "Enable": false,
-      "\b\r\fStartDateTime": "eb570e00",
-      "field_6": "eb570e00",
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "DisplayOrder": 100,
+      "TagID": 801,
+      "TagIDRange": 10,
       "KeyQuestID": 0,
       "DarkCrystalItemId": "trade_item_004000_10"
     }

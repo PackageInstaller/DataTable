@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 4,
+    "record_size": 12,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "alias": "ID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Text",
+      "alias": "テキスト",
+      "type": "string",
+      "type_code": 32,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "alias": "タイプ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Text": "クリスマスプレゼントに紛れて運ばれる、\n正体不明の機械部品が発見された。\n暗躍する闇の組織を捕らえるべく、\n天才戦術家ヘレナは、一路雪の国へと向かう。\n\n初開催2021年12月16日",
+      "Type": 6
+    },
+    {
+      "ID": 1,
+      "Text": "",
+      "Type": 7
+    },
+    {
+      "ID": 2,
+      "Text": "獲得★が1以上で\n交換所に「聖夜の天才戦術家ヘレナ」が追加",
+      "Type": 8
+    },
+    {
+      "ID": 3,
+      "Text": "『グルメジャングルは夏のち鮫』獲得★数11以上で開放",
+      "Type": 9
+    }
+  ]
+}

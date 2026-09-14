@@ -2,30 +2,34 @@
   "_meta": {
     "version": 1,
     "flags": "0x10",
-    "record_count": 23,
+    "record_count": 24,
     "record_size": 12,
-    "custom_id": 1685353065
+    "tag": "irtd",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "_ResID",
+      "alias": "定義名",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "_TypeID",
+      "alias": "ID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "_SystemTextID",
+      "alias": "ID_SYSTXT",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 8,
+      "type_code": 1,
+      "offset": 8,
       "size": 4
     }
   ],
@@ -98,52 +102,57 @@
     {
       "_ResID": -758518211,
       "_TypeID": 101,
-      "_SystemTextID": 1019
+      "_SystemTextID": 1057
     },
     {
       "_ResID": -62567346,
       "_TypeID": 102,
-      "_SystemTextID": 1020
+      "_SystemTextID": 1058
     },
     {
       "_ResID": 2065699673,
       "_TypeID": 103,
-      "_SystemTextID": 1021
+      "_SystemTextID": 1059
     },
     {
       "_ResID": 746812685,
       "_TypeID": 104,
-      "_SystemTextID": 1022
+      "_SystemTextID": 1060
     },
     {
       "_ResID": -1003150321,
       "_TypeID": 105,
-      "_SystemTextID": 1023
+      "_SystemTextID": 1061
     },
     {
       "_ResID": -467318891,
       "_TypeID": 106,
-      "_SystemTextID": 1024
+      "_SystemTextID": 1062
     },
     {
       "_ResID": 2146552795,
       "_TypeID": 107,
-      "_SystemTextID": 1025
+      "_SystemTextID": 1063
     },
     {
       "_ResID": -2095642104,
       "_TypeID": 108,
-      "_SystemTextID": 1026
+      "_SystemTextID": 1064
     },
     {
       "_ResID": -1746393461,
       "_TypeID": 109,
-      "_SystemTextID": 1027
+      "_SystemTextID": 1065
     },
     {
       "_ResID": 1647554012,
       "_TypeID": 110,
-      "_SystemTextID": 1028
+      "_SystemTextID": 1066
+    },
+    {
+      "_ResID": 1802898687,
+      "_TypeID": 111,
+      "_SystemTextID": 1067
     }
   ]
 }

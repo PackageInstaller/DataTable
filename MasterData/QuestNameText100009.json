@@ -1,0 +1,40 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 6,
+    "record_size": 4,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "Message",
+      "alias": "名前",
+      "type": "string",
+      "type_code": 32,
+      "offset": 0,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "Message": "鋼の都への海路"
+    },
+    {
+      "Message": "怪光の都"
+    },
+    {
+      "Message": "奪われた巨大防衛機械"
+    },
+    {
+      "Message": "開発区"
+    },
+    {
+      "Message": "生体変異研究所"
+    },
+    {
+      "Message": "狂気の研究成果"
+    }
+  ]
+}

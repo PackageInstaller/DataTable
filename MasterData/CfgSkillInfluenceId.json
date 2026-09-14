@@ -2,30 +2,34 @@
   "_meta": {
     "version": 1,
     "flags": "0x14",
-    "record_count": 268,
+    "record_count": 277,
     "record_size": 12,
-    "custom_id": 2020899187
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "ConfigId",
+      "alias": "定義名CRC32",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "InfluenceTypeId",
+      "alias": "レコード番号",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "ConfigName",
+      "alias": "定義名",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 8,
+      "type_code": 32,
+      "offset": 8,
       "size": 4
     }
   ],
@@ -1369,6 +1373,51 @@
       "ConfigId": 1394709407,
       "InfluenceTypeId": 267,
       "ConfigName": "長押し溜め"
+    },
+    {
+      "ConfigId": -503732849,
+      "InfluenceTypeId": 268,
+      "ConfigName": "スキルコスト不足時切り替え戦闘スタイル"
+    },
+    {
+      "ConfigId": 1904917215,
+      "InfluenceTypeId": 269,
+      "ConfigName": "天候干渉(攻撃)(射程内味方)"
+    },
+    {
+      "ConfigId": -309609675,
+      "InfluenceTypeId": 270,
+      "ConfigName": "天候干渉(射程)(射程内味方)"
+    },
+    {
+      "ConfigId": -1781169207,
+      "InfluenceTypeId": 271,
+      "ConfigName": "オーバーヒール"
+    },
+    {
+      "ConfigId": -1668040358,
+      "InfluenceTypeId": 272,
+      "ConfigName": "オーバーヒール+"
+    },
+    {
+      "ConfigId": -1294535523,
+      "InfluenceTypeId": 273,
+      "ConfigName": "攻撃アップ(オーバーヒール対象のみ)"
+    },
+    {
+      "ConfigId": 1495976958,
+      "InfluenceTypeId": 274,
+      "ConfigName": "防御アップ(オーバーヒール対象のみ)"
+    },
+    {
+      "ConfigId": 2126756799,
+      "InfluenceTypeId": 275,
+      "ConfigName": "魔法耐性アップ(オーバーヒール対象のみ)"
+    },
+    {
+      "ConfigId": -1798532740,
+      "InfluenceTypeId": 276,
+      "ConfigName": "天候変化"
     }
   ]
 }

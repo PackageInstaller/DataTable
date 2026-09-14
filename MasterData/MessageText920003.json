@@ -1,0 +1,40 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 6,
+    "record_size": 4,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "Message",
+      "alias": "メッセージ",
+      "type": "string",
+      "type_code": 32,
+      "offset": 0,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "Message": "かつて魔女が倒された地、\n不吉な影が蘇る。"
+    },
+    {
+      "Message": "夜の闇に魔女が潜む。\n撃退せよ！"
+    },
+    {
+      "Message": "再び魔女が襲い来る。\n襲撃から守りきれ！"
+    },
+    {
+      "Message": "ここが魔女の隠れ家\nだというが…？"
+    },
+    {
+      "Message": "迫りくる魔物、\n撤退の時間を稼げ！"
+    },
+    {
+      "Message": "最後の戦い、\nすべての力を出し尽くせ！"
+    }
+  ]
+}

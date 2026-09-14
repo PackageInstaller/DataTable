@@ -1,0 +1,37 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 5,
+    "record_size": 4,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "Message",
+      "alias": "名前",
+      "type": "string",
+      "type_code": 32,
+      "offset": 0,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "Message": "新生ゴブリン軍団"
+    },
+    {
+      "Message": "大海原を泳ぐ巨龍"
+    },
+    {
+      "Message": "目覚めし巨神"
+    },
+    {
+      "Message": "各国合同軍事演習"
+    },
+    {
+      "Message": "シャークアンカー・怒りの咆哮"
+    }
+  ]
+}

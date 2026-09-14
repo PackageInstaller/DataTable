@@ -2,94 +2,155 @@
   "_meta": {
     "version": 1,
     "flags": "0x14",
-    "record_count": 32,
+    "record_count": 43,
     "record_size": 72,
-    "custom_id": 1717792115
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "ConfigId",
+      "alias": "定義名",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "IllustratorR18",
+      "alias": "イラストレータ名[R18]",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "IllustratorAll",
+      "alias": "イラストレータ名[一般]",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 8,
+      "type_code": 1,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "IllustrationId",
+      "alias": "イラストID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 12,
+      "type_code": 1,
+      "offset": 12,
       "size": 4
     },
     {
       "name": "MotionId",
+      "alias": "モーションID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 16,
+      "type_code": 1,
+      "offset": 16,
       "size": 4
     },
     {
       "name": "FaceId",
+      "alias": "フェイスID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 20,
+      "type_code": 1,
+      "offset": 20,
       "size": 4
     },
     {
       "name": "FameId",
+      "alias": "殿堂ID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 24,
+      "type_code": 1,
+      "offset": 24,
       "size": 4
     },
     {
       "name": "SmartPhoneDiff",
+      "alias": "SP差分",
       "type": "bool",
-      "mapped_type": 5,
-      "rec_offset": 28,
+      "type_code": 5,
+      "offset": 28,
       "size": 1
     },
     {
-      "name": "\b\r\u000fFreeCondition",
-      "type": "unknown",
-      "mapped_type": 0,
-      "rec_offset": 0,
+      "name": "FreeCondition",
+      "alias": "無条件解放",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 32,
       "size": 4
     },
     {
-      "name": "�件アイテムID",
-      "type": "unknown",
-      "mapped_type": 148,
-      "rec_offset": 59043,
-      "size": 0
+      "name": "ConditionItemId",
+      "alias": "解放条件アイテムID",
+      "type": "string",
+      "type_code": 32,
+      "offset": 36,
+      "size": 4
     },
     {
-      "name": "�]",
-      "type": "unknown",
-      "mapped_type": 68,
-      "rec_offset": 18873,
-      "size": 14890
+      "name": "Aggregate",
+      "alias": "任務集計",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 40,
+      "size": 4
     },
     {
-      "name": "イスID[白]",
-      "type": "unknown",
-      "mapped_type": 149,
-      "rec_offset": 33763,
-      "size": 25280
+      "name": "FaceId_RarityGroup01",
+      "alias": "フェイスID[鉄]",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 44,
+      "size": 4
+    },
+    {
+      "name": "FaceId_RarityGroup02",
+      "alias": "フェイスID[銅]",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 48,
+      "size": 4
+    },
+    {
+      "name": "FaceId_RarityGroup03",
+      "alias": "フェイスID[銀]",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 52,
+      "size": 4
+    },
+    {
+      "name": "FaceId_RarityGroup04",
+      "alias": "フェイスID[金]",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 56,
+      "size": 4
+    },
+    {
+      "name": "FaceId_RarityGroup05",
+      "alias": "フェイスID[白]",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 60,
+      "size": 4
+    },
+    {
+      "name": "FaceId_RarityGroup06",
+      "alias": "フェイスID[黒]",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 64,
+      "size": 4
+    },
+    {
+      "name": "FaceId_RarityGroup08",
+      "alias": "フェイスID[蒼]",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 68,
+      "size": 4
     }
   ],
   "records": [
@@ -102,7 +163,16 @@
       "FaceId": 1,
       "FameId": 0,
       "SmartPhoneDiff": false,
-      "\b\r\u000fFreeCondition": "ad43ed6e"
+      "FreeCondition": 0,
+      "ConditionItemId": "get_skin_00001",
+      "Aggregate": 1,
+      "FaceId_RarityGroup01": 1,
+      "FaceId_RarityGroup02": 1,
+      "FaceId_RarityGroup03": 1,
+      "FaceId_RarityGroup04": 1,
+      "FaceId_RarityGroup05": 1,
+      "FaceId_RarityGroup06": 1,
+      "FaceId_RarityGroup08": 1
     },
     {
       "ConfigId": -136048105,
@@ -113,7 +183,16 @@
       "FaceId": 2,
       "FameId": 0,
       "SmartPhoneDiff": false,
-      "\b\r\u000fFreeCondition": "1712e4f7"
+      "FreeCondition": 0,
+      "ConditionItemId": "get_skin_00002",
+      "Aggregate": 1,
+      "FaceId_RarityGroup01": 2,
+      "FaceId_RarityGroup02": 2,
+      "FaceId_RarityGroup03": 2,
+      "FaceId_RarityGroup04": 2,
+      "FaceId_RarityGroup05": 2,
+      "FaceId_RarityGroup06": 2,
+      "FaceId_RarityGroup08": 2
     },
     {
       "ConfigId": -2132598143,
@@ -124,7 +203,16 @@
       "FaceId": 3,
       "FameId": 0,
       "SmartPhoneDiff": false,
-      "\b\r\u000fFreeCondition": "8122e380"
+      "FreeCondition": 0,
+      "ConditionItemId": "get_skin_00003",
+      "Aggregate": 1,
+      "FaceId_RarityGroup01": 3,
+      "FaceId_RarityGroup02": 3,
+      "FaceId_RarityGroup03": 3,
+      "FaceId_RarityGroup04": 3,
+      "FaceId_RarityGroup05": 3,
+      "FaceId_RarityGroup06": 3,
+      "FaceId_RarityGroup08": 3
     },
     {
       "ConfigId": 512210722,
@@ -135,7 +223,16 @@
       "FaceId": 4,
       "FameId": 0,
       "SmartPhoneDiff": false,
-      "\b\r\u000fFreeCondition": "22b7871e"
+      "FreeCondition": 0,
+      "ConditionItemId": "get_skin_00004",
+      "Aggregate": 1,
+      "FaceId_RarityGroup01": 4,
+      "FaceId_RarityGroup02": 4,
+      "FaceId_RarityGroup03": 4,
+      "FaceId_RarityGroup04": 4,
+      "FaceId_RarityGroup05": 4,
+      "FaceId_RarityGroup06": 4,
+      "FaceId_RarityGroup08": 4
     },
     {
       "ConfigId": 1770031028,
@@ -146,7 +243,16 @@
       "FaceId": 5,
       "FameId": 0,
       "SmartPhoneDiff": false,
-      "\b\r\u000fFreeCondition": "b4878069"
+      "FreeCondition": 0,
+      "ConditionItemId": "get_skin_00005",
+      "Aggregate": 1,
+      "FaceId_RarityGroup01": 5,
+      "FaceId_RarityGroup02": 5,
+      "FaceId_RarityGroup03": 5,
+      "FaceId_RarityGroup04": 5,
+      "FaceId_RarityGroup05": 5,
+      "FaceId_RarityGroup06": 5,
+      "FaceId_RarityGroup08": 5
     },
     {
       "ConfigId": -259402226,
@@ -157,7 +263,16 @@
       "FaceId": 6,
       "FameId": 0,
       "SmartPhoneDiff": false,
-      "\b\r\u000fFreeCondition": "0ed689f0"
+      "FreeCondition": 0,
+      "ConditionItemId": "get_skin_00006",
+      "Aggregate": 1,
+      "FaceId_RarityGroup01": 6,
+      "FaceId_RarityGroup02": 6,
+      "FaceId_RarityGroup03": 6,
+      "FaceId_RarityGroup04": 6,
+      "FaceId_RarityGroup05": 6,
+      "FaceId_RarityGroup06": 6,
+      "FaceId_RarityGroup08": 6
     },
     {
       "ConfigId": -2020677992,
@@ -168,7 +283,16 @@
       "FaceId": 7,
       "FameId": 0,
       "SmartPhoneDiff": false,
-      "\b\r\u000fFreeCondition": "98e68e87"
+      "FreeCondition": 0,
+      "ConditionItemId": "get_skin_00007",
+      "Aggregate": 1,
+      "FaceId_RarityGroup01": 7,
+      "FaceId_RarityGroup02": 7,
+      "FaceId_RarityGroup03": 7,
+      "FaceId_RarityGroup04": 7,
+      "FaceId_RarityGroup05": 7,
+      "FaceId_RarityGroup06": 7,
+      "FaceId_RarityGroup08": 7
     },
     {
       "ConfigId": 389151497,
@@ -179,7 +303,16 @@
       "FaceId": 8,
       "FameId": 0,
       "SmartPhoneDiff": false,
-      "\b\r\u000fFreeCondition": "09fb3117"
+      "FreeCondition": 0,
+      "ConditionItemId": "get_skin_00008",
+      "Aggregate": 1,
+      "FaceId_RarityGroup01": 8,
+      "FaceId_RarityGroup02": 8,
+      "FaceId_RarityGroup03": 8,
+      "FaceId_RarityGroup04": 8,
+      "FaceId_RarityGroup05": 8,
+      "FaceId_RarityGroup06": 8,
+      "FaceId_RarityGroup08": 8
     },
     {
       "ConfigId": 1614203807,
@@ -190,7 +323,16 @@
       "FaceId": 9,
       "FameId": 0,
       "SmartPhoneDiff": false,
-      "\b\r\u000fFreeCondition": "9fcb3660"
+      "FreeCondition": 0,
+      "ConditionItemId": "get_skin_00009",
+      "Aggregate": 1,
+      "FaceId_RarityGroup01": 9,
+      "FaceId_RarityGroup02": 9,
+      "FaceId_RarityGroup03": 9,
+      "FaceId_RarityGroup04": 9,
+      "FaceId_RarityGroup05": 9,
+      "FaceId_RarityGroup06": 9,
+      "FaceId_RarityGroup08": 9
     },
     {
       "ConfigId": 15811194,
@@ -201,7 +343,16 @@
       "FaceId": 10,
       "FameId": 0,
       "SmartPhoneDiff": false,
-      "\b\r\u000fFreeCondition": "7a42f100"
+      "FreeCondition": 0,
+      "ConditionItemId": "get_skin_00010",
+      "Aggregate": 1,
+      "FaceId_RarityGroup01": 10,
+      "FaceId_RarityGroup02": 10,
+      "FaceId_RarityGroup03": 10,
+      "FaceId_RarityGroup04": 10,
+      "FaceId_RarityGroup05": 10,
+      "FaceId_RarityGroup06": 10,
+      "FaceId_RarityGroup08": 10
     },
     {
       "ConfigId": 2012639980,
@@ -212,7 +363,16 @@
       "FaceId": 11,
       "FameId": 0,
       "SmartPhoneDiff": false,
-      "\b\r\u000fFreeCondition": "ec72f677"
+      "FreeCondition": 0,
+      "ConditionItemId": "get_skin_00011",
+      "Aggregate": 1,
+      "FaceId_RarityGroup01": 11,
+      "FaceId_RarityGroup02": 11,
+      "FaceId_RarityGroup03": 11,
+      "FaceId_RarityGroup04": 11,
+      "FaceId_RarityGroup05": 11,
+      "FaceId_RarityGroup06": 11,
+      "FaceId_RarityGroup08": 11
     },
     {
       "ConfigId": -285269162,
@@ -223,7 +383,16 @@
       "FaceId": 12,
       "FameId": 0,
       "SmartPhoneDiff": false,
-      "\b\r\u000fFreeCondition": "5623ffee"
+      "FreeCondition": 0,
+      "ConditionItemId": "get_skin_00012",
+      "Aggregate": 1,
+      "FaceId_RarityGroup01": 12,
+      "FaceId_RarityGroup02": 12,
+      "FaceId_RarityGroup03": 12,
+      "FaceId_RarityGroup04": 12,
+      "FaceId_RarityGroup05": 12,
+      "FaceId_RarityGroup06": 12,
+      "FaceId_RarityGroup08": 12
     },
     {
       "ConfigId": -1711795264,
@@ -234,7 +403,16 @@
       "FaceId": 13,
       "FameId": 0,
       "SmartPhoneDiff": true,
-      "\b\r\u000fFreeCondition": "c013f899"
+      "FreeCondition": 1,
+      "ConditionItemId": "",
+      "Aggregate": 0,
+      "FaceId_RarityGroup01": 13,
+      "FaceId_RarityGroup02": 13,
+      "FaceId_RarityGroup03": 13,
+      "FaceId_RarityGroup04": 13,
+      "FaceId_RarityGroup05": 13,
+      "FaceId_RarityGroup06": 13,
+      "FaceId_RarityGroup08": 13
     },
     {
       "ConfigId": 127698531,
@@ -245,7 +423,16 @@
       "FaceId": 14,
       "FameId": 0,
       "SmartPhoneDiff": false,
-      "\b\r\u000fFreeCondition": "63869c07"
+      "FreeCondition": 0,
+      "ConditionItemId": "get_skin_00014",
+      "Aggregate": 1,
+      "FaceId_RarityGroup01": 14,
+      "FaceId_RarityGroup02": 14,
+      "FaceId_RarityGroup03": 14,
+      "FaceId_RarityGroup04": 15,
+      "FaceId_RarityGroup05": 16,
+      "FaceId_RarityGroup06": 14,
+      "FaceId_RarityGroup08": 14
     },
     {
       "ConfigId": 1889253109,
@@ -256,7 +443,16 @@
       "FaceId": 17,
       "FameId": 0,
       "SmartPhoneDiff": false,
-      "\b\r\u000fFreeCondition": "f5b69b70"
+      "FreeCondition": 0,
+      "ConditionItemId": "get_skin_00015",
+      "Aggregate": 1,
+      "FaceId_RarityGroup01": 17,
+      "FaceId_RarityGroup02": 17,
+      "FaceId_RarityGroup03": 17,
+      "FaceId_RarityGroup04": 17,
+      "FaceId_RarityGroup05": 17,
+      "FaceId_RarityGroup06": 17,
+      "FaceId_RarityGroup08": 17
     },
     {
       "ConfigId": -376248497,
@@ -267,7 +463,16 @@
       "FaceId": 18,
       "FameId": 0,
       "SmartPhoneDiff": false,
-      "\b\r\u000fFreeCondition": "4fe792e9"
+      "FreeCondition": 0,
+      "ConditionItemId": "get_skin_00016",
+      "Aggregate": 1,
+      "FaceId_RarityGroup01": 18,
+      "FaceId_RarityGroup02": 18,
+      "FaceId_RarityGroup03": 18,
+      "FaceId_RarityGroup04": 18,
+      "FaceId_RarityGroup05": 18,
+      "FaceId_RarityGroup06": 19,
+      "FaceId_RarityGroup08": 18
     },
     {
       "ConfigId": -1634347047,
@@ -278,7 +483,16 @@
       "FaceId": 20,
       "FameId": 0,
       "SmartPhoneDiff": false,
-      "\b\r\u000fFreeCondition": "d9d7959e"
+      "FreeCondition": 0,
+      "ConditionItemId": "get_skin_00017",
+      "Aggregate": 1,
+      "FaceId_RarityGroup01": 20,
+      "FaceId_RarityGroup02": 20,
+      "FaceId_RarityGroup03": 20,
+      "FaceId_RarityGroup04": 20,
+      "FaceId_RarityGroup05": 21,
+      "FaceId_RarityGroup06": 20,
+      "FaceId_RarityGroup08": 20
     },
     {
       "ConfigId": 237685320,
@@ -289,7 +503,16 @@
       "FaceId": 22,
       "FameId": 2,
       "SmartPhoneDiff": false,
-      "\b\r\u000fFreeCondition": "48ca2a0e"
+      "FreeCondition": 1,
+      "ConditionItemId": "",
+      "Aggregate": 0,
+      "FaceId_RarityGroup01": 22,
+      "FaceId_RarityGroup02": 22,
+      "FaceId_RarityGroup03": 22,
+      "FaceId_RarityGroup04": 22,
+      "FaceId_RarityGroup05": 22,
+      "FaceId_RarityGroup06": 22,
+      "FaceId_RarityGroup08": 22
     },
     {
       "ConfigId": 2033056478,
@@ -300,7 +523,16 @@
       "FaceId": 23,
       "FameId": 2,
       "SmartPhoneDiff": false,
-      "\b\r\u000fFreeCondition": "defa2d79"
+      "FreeCondition": 1,
+      "ConditionItemId": "",
+      "Aggregate": 0,
+      "FaceId_RarityGroup01": 23,
+      "FaceId_RarityGroup02": 23,
+      "FaceId_RarityGroup03": 23,
+      "FaceId_RarityGroup04": 23,
+      "FaceId_RarityGroup05": 23,
+      "FaceId_RarityGroup06": 23,
+      "FaceId_RarityGroup08": 23
     },
     {
       "ConfigId": 735842745,
@@ -311,7 +543,16 @@
       "FaceId": 24,
       "FameId": 0,
       "SmartPhoneDiff": false,
-      "\b\r\u000fFreeCondition": "b911dc2b"
+      "FreeCondition": 0,
+      "ConditionItemId": "get_skin_00020",
+      "Aggregate": 1,
+      "FaceId_RarityGroup01": 24,
+      "FaceId_RarityGroup02": 24,
+      "FaceId_RarityGroup03": 24,
+      "FaceId_RarityGroup04": 24,
+      "FaceId_RarityGroup05": 25,
+      "FaceId_RarityGroup06": 26,
+      "FaceId_RarityGroup08": 26
     },
     {
       "ConfigId": 1557864751,
@@ -322,7 +563,16 @@
       "FaceId": 27,
       "FameId": 0,
       "SmartPhoneDiff": false,
-      "\b\r\u000fFreeCondition": "2f21db5c"
+      "FreeCondition": 0,
+      "ConditionItemId": "get_skin_00021",
+      "Aggregate": 1,
+      "FaceId_RarityGroup01": 27,
+      "FaceId_RarityGroup02": 27,
+      "FaceId_RarityGroup03": 27,
+      "FaceId_RarityGroup04": 27,
+      "FaceId_RarityGroup05": 27,
+      "FaceId_RarityGroup06": 27,
+      "FaceId_RarityGroup08": 27
     },
     {
       "ConfigId": -976064363,
@@ -333,7 +583,16 @@
       "FaceId": 28,
       "FameId": 0,
       "SmartPhoneDiff": false,
-      "\b\r\u000fFreeCondition": "9570d2c5"
+      "FreeCondition": 0,
+      "ConditionItemId": "get_skin_00022",
+      "Aggregate": 1,
+      "FaceId_RarityGroup01": 28,
+      "FaceId_RarityGroup02": 28,
+      "FaceId_RarityGroup03": 28,
+      "FaceId_RarityGroup04": 28,
+      "FaceId_RarityGroup05": 28,
+      "FaceId_RarityGroup06": 28,
+      "FaceId_RarityGroup08": 28
     },
     {
       "ConfigId": -1294647293,
@@ -344,7 +603,16 @@
       "FaceId": 29,
       "FameId": 0,
       "SmartPhoneDiff": false,
-      "\b\r\u000fFreeCondition": "0340d5b2"
+      "FreeCondition": 0,
+      "ConditionItemId": "get_skin_00023",
+      "Aggregate": 1,
+      "FaceId_RarityGroup01": 29,
+      "FaceId_RarityGroup02": 29,
+      "FaceId_RarityGroup03": 29,
+      "FaceId_RarityGroup04": 29,
+      "FaceId_RarityGroup05": 29,
+      "FaceId_RarityGroup06": 29,
+      "FaceId_RarityGroup08": 29
     },
     {
       "ConfigId": 749852064,
@@ -355,7 +623,16 @@
       "FaceId": 30,
       "FameId": 0,
       "SmartPhoneDiff": false,
-      "\b\r\u000fFreeCondition": "a0d5b12c"
+      "FreeCondition": 0,
+      "ConditionItemId": "get_skin_00024",
+      "Aggregate": 1,
+      "FaceId_RarityGroup01": 30,
+      "FaceId_RarityGroup02": 30,
+      "FaceId_RarityGroup03": 30,
+      "FaceId_RarityGroup04": 30,
+      "FaceId_RarityGroup05": 30,
+      "FaceId_RarityGroup06": 30,
+      "FaceId_RarityGroup08": 30
     },
     {
       "ConfigId": 1538712886,
@@ -366,7 +643,16 @@
       "FaceId": 31,
       "FameId": 0,
       "SmartPhoneDiff": false,
-      "\b\r\u000fFreeCondition": "36e5b65b"
+      "FreeCondition": 0,
+      "ConditionItemId": "get_skin_00025",
+      "Aggregate": 1,
+      "FaceId_RarityGroup01": 31,
+      "FaceId_RarityGroup02": 31,
+      "FaceId_RarityGroup03": 31,
+      "FaceId_RarityGroup04": 31,
+      "FaceId_RarityGroup05": 31,
+      "FaceId_RarityGroup06": 31,
+      "FaceId_RarityGroup08": 31
     },
     {
       "ConfigId": -1027623796,
@@ -377,7 +663,16 @@
       "FaceId": 32,
       "FameId": 0,
       "SmartPhoneDiff": false,
-      "\b\r\u000fFreeCondition": "8cb4bfc2"
+      "FreeCondition": 0,
+      "ConditionItemId": "get_skin_00026",
+      "Aggregate": 1,
+      "FaceId_RarityGroup01": 32,
+      "FaceId_RarityGroup02": 32,
+      "FaceId_RarityGroup03": 32,
+      "FaceId_RarityGroup04": 32,
+      "FaceId_RarityGroup05": 32,
+      "FaceId_RarityGroup06": 32,
+      "FaceId_RarityGroup08": 32
     },
     {
       "ConfigId": -1246198758,
@@ -388,7 +683,16 @@
       "FaceId": 33,
       "FameId": 0,
       "SmartPhoneDiff": false,
-      "\b\r\u000fFreeCondition": "1a84b8b5"
+      "FreeCondition": 0,
+      "ConditionItemId": "get_skin_00027",
+      "Aggregate": 1,
+      "FaceId_RarityGroup01": 33,
+      "FaceId_RarityGroup02": 33,
+      "FaceId_RarityGroup03": 33,
+      "FaceId_RarityGroup04": 33,
+      "FaceId_RarityGroup05": 33,
+      "FaceId_RarityGroup06": 34,
+      "FaceId_RarityGroup08": 33
     },
     {
       "ConfigId": 621255051,
@@ -399,7 +703,16 @@
       "FaceId": 35,
       "FameId": 0,
       "SmartPhoneDiff": false,
-      "\b\r\u000fFreeCondition": "8b990725"
+      "FreeCondition": 0,
+      "ConditionItemId": "get_skin_00028",
+      "Aggregate": 1,
+      "FaceId_RarityGroup01": 35,
+      "FaceId_RarityGroup02": 35,
+      "FaceId_RarityGroup03": 35,
+      "FaceId_RarityGroup04": 35,
+      "FaceId_RarityGroup05": 35,
+      "FaceId_RarityGroup06": 35,
+      "FaceId_RarityGroup08": 35
     },
     {
       "ConfigId": 1375775005,
@@ -410,7 +723,16 @@
       "FaceId": 36,
       "FameId": 0,
       "SmartPhoneDiff": false,
-      "\b\r\u000fFreeCondition": "1da90052"
+      "FreeCondition": 0,
+      "ConditionItemId": "get_skin_00029",
+      "Aggregate": 1,
+      "FaceId_RarityGroup01": 36,
+      "FaceId_RarityGroup02": 36,
+      "FaceId_RarityGroup03": 36,
+      "FaceId_RarityGroup04": 36,
+      "FaceId_RarityGroup05": 36,
+      "FaceId_RarityGroup06": 36,
+      "FaceId_RarityGroup08": 36
     },
     {
       "ConfigId": 851910904,
@@ -421,7 +743,16 @@
       "FaceId": 37,
       "FameId": 0,
       "SmartPhoneDiff": false,
-      "\b\r\u000fFreeCondition": "f820c732"
+      "FreeCondition": 0,
+      "ConditionItemId": "get_skin_00030",
+      "Aggregate": 1,
+      "FaceId_RarityGroup01": 37,
+      "FaceId_RarityGroup02": 37,
+      "FaceId_RarityGroup03": 37,
+      "FaceId_RarityGroup04": 37,
+      "FaceId_RarityGroup05": 37,
+      "FaceId_RarityGroup06": 37,
+      "FaceId_RarityGroup08": 37
     },
     {
       "ConfigId": 1170215022,
@@ -432,7 +763,16 @@
       "FaceId": 38,
       "FameId": 0,
       "SmartPhoneDiff": false,
-      "\b\r\u000fFreeCondition": "6e10c045"
+      "FreeCondition": 0,
+      "ConditionItemId": "get_skin_00031",
+      "Aggregate": 1,
+      "FaceId_RarityGroup01": 38,
+      "FaceId_RarityGroup02": 38,
+      "FaceId_RarityGroup03": 38,
+      "FaceId_RarityGroup04": 38,
+      "FaceId_RarityGroup05": 38,
+      "FaceId_RarityGroup06": 38,
+      "FaceId_RarityGroup08": 38
     },
     {
       "ConfigId": -590790188,
@@ -443,7 +783,236 @@
       "FaceId": 39,
       "FameId": 2,
       "SmartPhoneDiff": false,
-      "\b\r\u000fFreeCondition": "d441c9dc"
+      "FreeCondition": 1,
+      "ConditionItemId": "",
+      "Aggregate": 0,
+      "FaceId_RarityGroup01": 39,
+      "FaceId_RarityGroup02": 39,
+      "FaceId_RarityGroup03": 39,
+      "FaceId_RarityGroup04": 39,
+      "FaceId_RarityGroup05": 39,
+      "FaceId_RarityGroup06": 39,
+      "FaceId_RarityGroup08": 39
+    },
+    {
+      "ConfigId": -1412533950,
+      "IllustratorR18": 2923,
+      "IllustratorAll": 2923,
+      "IllustrationId": 33,
+      "MotionId": 33,
+      "FaceId": 40,
+      "FameId": 0,
+      "SmartPhoneDiff": false,
+      "FreeCondition": 0,
+      "ConditionItemId": "get_skin_00033",
+      "Aggregate": 1,
+      "FaceId_RarityGroup01": 40,
+      "FaceId_RarityGroup02": 40,
+      "FaceId_RarityGroup03": 40,
+      "FaceId_RarityGroup04": 40,
+      "FaceId_RarityGroup05": 40,
+      "FaceId_RarityGroup06": 40,
+      "FaceId_RarityGroup08": 40
+    },
+    {
+      "ConfigId": 900392161,
+      "IllustratorR18": 1811,
+      "IllustratorAll": 1811,
+      "IllustrationId": 34,
+      "MotionId": 34,
+      "FaceId": 41,
+      "FameId": 0,
+      "SmartPhoneDiff": false,
+      "FreeCondition": 0,
+      "ConditionItemId": "get_skin_00034",
+      "Aggregate": 1,
+      "FaceId_RarityGroup01": 41,
+      "FaceId_RarityGroup02": 41,
+      "FaceId_RarityGroup03": 41,
+      "FaceId_RarityGroup04": 41,
+      "FaceId_RarityGroup05": 41,
+      "FaceId_RarityGroup06": 41,
+      "FaceId_RarityGroup08": 41
+    },
+    {
+      "ConfigId": 1118688375,
+      "IllustratorR18": 15009,
+      "IllustratorAll": 15009,
+      "IllustrationId": 35,
+      "MotionId": 35,
+      "FaceId": 42,
+      "FameId": 0,
+      "SmartPhoneDiff": false,
+      "FreeCondition": 1,
+      "ConditionItemId": "",
+      "Aggregate": 0,
+      "FaceId_RarityGroup01": 42,
+      "FaceId_RarityGroup02": 42,
+      "FaceId_RarityGroup03": 42,
+      "FaceId_RarityGroup04": 42,
+      "FaceId_RarityGroup05": 42,
+      "FaceId_RarityGroup06": 42,
+      "FaceId_RarityGroup08": 42
+    },
+    {
+      "ConfigId": -609974835,
+      "IllustratorR18": 3278,
+      "IllustratorAll": 3278,
+      "IllustrationId": 36,
+      "MotionId": 36,
+      "FaceId": 43,
+      "FameId": 0,
+      "SmartPhoneDiff": false,
+      "FreeCondition": 0,
+      "ConditionItemId": "get_skin_00036",
+      "Aggregate": 1,
+      "FaceId_RarityGroup01": 43,
+      "FaceId_RarityGroup02": 43,
+      "FaceId_RarityGroup03": 43,
+      "FaceId_RarityGroup04": 43,
+      "FaceId_RarityGroup05": 44,
+      "FaceId_RarityGroup06": 45,
+      "FaceId_RarityGroup08": 45
+    },
+    {
+      "ConfigId": -1398557349,
+      "IllustratorR18": 2256,
+      "IllustratorAll": 2256,
+      "IllustrationId": 37,
+      "MotionId": 37,
+      "FaceId": 46,
+      "FameId": 0,
+      "SmartPhoneDiff": false,
+      "FreeCondition": 0,
+      "ConditionItemId": "get_skin_00037",
+      "Aggregate": 1,
+      "FaceId_RarityGroup01": 46,
+      "FaceId_RarityGroup02": 46,
+      "FaceId_RarityGroup03": 46,
+      "FaceId_RarityGroup04": 46,
+      "FaceId_RarityGroup05": 46,
+      "FaceId_RarityGroup06": 46,
+      "FaceId_RarityGroup08": 46
+    },
+    {
+      "ConfigId": 1008511178,
+      "IllustratorR18": 2301,
+      "IllustratorAll": 2301,
+      "IllustrationId": 38,
+      "MotionId": 38,
+      "FaceId": 47,
+      "FameId": 0,
+      "SmartPhoneDiff": false,
+      "FreeCondition": 0,
+      "ConditionItemId": "get_skin_00038",
+      "Aggregate": 1,
+      "FaceId_RarityGroup01": 47,
+      "FaceId_RarityGroup02": 47,
+      "FaceId_RarityGroup03": 47,
+      "FaceId_RarityGroup04": 47,
+      "FaceId_RarityGroup05": 47,
+      "FaceId_RarityGroup06": 47,
+      "FaceId_RarityGroup08": 47
+    },
+    {
+      "ConfigId": 1260099676,
+      "IllustratorR18": 3064,
+      "IllustratorAll": 3064,
+      "IllustrationId": 39,
+      "MotionId": 39,
+      "FaceId": 48,
+      "FameId": 0,
+      "SmartPhoneDiff": false,
+      "FreeCondition": 0,
+      "ConditionItemId": "get_skin_00039",
+      "Aggregate": 1,
+      "FaceId_RarityGroup01": 48,
+      "FaceId_RarityGroup02": 48,
+      "FaceId_RarityGroup03": 48,
+      "FaceId_RarityGroup04": 48,
+      "FaceId_RarityGroup05": 48,
+      "FaceId_RarityGroup06": 48,
+      "FaceId_RarityGroup08": 48
+    },
+    {
+      "ConfigId": 2105980479,
+      "IllustratorR18": 3278,
+      "IllustratorAll": 3278,
+      "IllustrationId": 40,
+      "MotionId": 40,
+      "FaceId": 49,
+      "FameId": 0,
+      "SmartPhoneDiff": false,
+      "FreeCondition": 0,
+      "ConditionItemId": "get_skin_00040",
+      "Aggregate": 1,
+      "FaceId_RarityGroup01": 49,
+      "FaceId_RarityGroup02": 49,
+      "FaceId_RarityGroup03": 49,
+      "FaceId_RarityGroup04": 49,
+      "FaceId_RarityGroup05": 49,
+      "FaceId_RarityGroup06": 49,
+      "FaceId_RarityGroup08": 49
+    },
+    {
+      "ConfigId": 176260777,
+      "IllustratorR18": 3411,
+      "IllustratorAll": 3411,
+      "IllustrationId": 41,
+      "MotionId": 41,
+      "FaceId": 50,
+      "FameId": 0,
+      "SmartPhoneDiff": false,
+      "FreeCondition": 0,
+      "ConditionItemId": "get_skin_00041",
+      "Aggregate": 1,
+      "FaceId_RarityGroup01": 50,
+      "FaceId_RarityGroup02": 50,
+      "FaceId_RarityGroup03": 50,
+      "FaceId_RarityGroup04": 50,
+      "FaceId_RarityGroup05": 50,
+      "FaceId_RarityGroup06": 50,
+      "FaceId_RarityGroup08": 50
+    },
+    {
+      "ConfigId": -1819748589,
+      "IllustratorR18": 9588,
+      "IllustratorAll": 9588,
+      "IllustrationId": 42,
+      "MotionId": 42,
+      "FaceId": 51,
+      "FameId": 0,
+      "SmartPhoneDiff": false,
+      "FreeCondition": 1,
+      "ConditionItemId": "",
+      "Aggregate": 0,
+      "FaceId_RarityGroup01": 51,
+      "FaceId_RarityGroup02": 51,
+      "FaceId_RarityGroup03": 51,
+      "FaceId_RarityGroup04": 51,
+      "FaceId_RarityGroup05": 51,
+      "FaceId_RarityGroup06": 51,
+      "FaceId_RarityGroup08": 51
+    },
+    {
+      "ConfigId": -460331131,
+      "IllustratorR18": 11312,
+      "IllustratorAll": 11312,
+      "IllustrationId": 43,
+      "MotionId": 43,
+      "FaceId": 52,
+      "FameId": 0,
+      "SmartPhoneDiff": false,
+      "FreeCondition": 1,
+      "ConditionItemId": "",
+      "Aggregate": 0,
+      "FaceId_RarityGroup01": 52,
+      "FaceId_RarityGroup02": 52,
+      "FaceId_RarityGroup03": 52,
+      "FaceId_RarityGroup04": 52,
+      "FaceId_RarityGroup05": 52,
+      "FaceId_RarityGroup06": 52,
+      "FaceId_RarityGroup08": 52
     }
   ]
 }

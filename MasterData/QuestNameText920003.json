@@ -1,0 +1,40 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 6,
+    "record_size": 4,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "Message",
+      "alias": "名前",
+      "type": "string",
+      "type_code": 32,
+      "offset": 0,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "Message": "魔女の復活"
+    },
+    {
+      "Message": "魔女の夜"
+    },
+    {
+      "Message": "魔女の逆襲Ⅱ"
+    },
+    {
+      "Message": "魔女の隠れ家Ⅱ"
+    },
+    {
+      "Message": "魔女の追撃"
+    },
+    {
+      "Message": "魔女の宴Ⅱ"
+    }
+  ]
+}

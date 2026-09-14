@@ -4,28 +4,32 @@
     "flags": "0x10",
     "record_count": 9,
     "record_size": 12,
-    "custom_id": 1685353065
+    "tag": "irtd",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "_ResID",
+      "alias": "定義名",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "_TypeID",
+      "alias": "ID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "_SystemTextID",
+      "alias": "ID_SYSTXT",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 8,
+      "type_code": 1,
+      "offset": 8,
       "size": 4
     }
   ],
@@ -38,42 +42,42 @@
     {
       "_ResID": 104938491,
       "_TypeID": 1,
-      "_SystemTextID": 964
+      "_SystemTextID": 999
     },
     {
       "_ResID": 278585237,
       "_TypeID": 2,
-      "_SystemTextID": 965
+      "_SystemTextID": 1000
     },
     {
       "_ResID": -1645611965,
       "_TypeID": 1,
-      "_SystemTextID": 966
+      "_SystemTextID": 1001
     },
     {
       "_ResID": -920066715,
       "_TypeID": 1,
-      "_SystemTextID": 967
+      "_SystemTextID": 1002
     },
     {
       "_ResID": -1103264271,
       "_TypeID": 1,
-      "_SystemTextID": 968
+      "_SystemTextID": 1003
     },
     {
       "_ResID": 911965989,
       "_TypeID": 1,
-      "_SystemTextID": 969
+      "_SystemTextID": 1004
     },
     {
       "_ResID": 1569680107,
       "_TypeID": 1,
-      "_SystemTextID": 970
+      "_SystemTextID": 1005
     },
     {
       "_ResID": -1542710936,
       "_TypeID": 1,
-      "_SystemTextID": 971
+      "_SystemTextID": 1006
     }
   ]
 }

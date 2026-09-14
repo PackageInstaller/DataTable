@@ -1,0 +1,57 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x00",
+    "record_size": 24
+  },
+  "_fields": [
+    {
+      "name": "QuestID",
+      "alias": "クエストID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "MaxRank",
+      "alias": "最大ランク",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "AchieveFlag",
+      "alias": "達成フラグ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    },
+    {
+      "name": "RemainAssault",
+      "alias": "アサルト残数",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 12,
+      "size": 4
+    },
+    {
+      "name": "FirstDefeatDate",
+      "alias": "初討伐日",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 16,
+      "size": 4
+    },
+    {
+      "name": "Shown",
+      "alias": "表示済みフラグ",
+      "type": "bool",
+      "type_code": 5,
+      "offset": 20,
+      "size": 1
+    }
+  ]
+}

@@ -4,56 +4,64 @@
     "flags": "0x10",
     "record_count": 8,
     "record_size": 28,
-    "custom_id": 1685353065
+    "tag": "irtd",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "ConfigId",
+      "alias": "定義ID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "Lv0",
+      "alias": "Lv0",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "Lv1",
+      "alias": "Lv1",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 8,
+      "type_code": 1,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "Lv2",
+      "alias": "Lv2",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 12,
+      "type_code": 1,
+      "offset": 12,
       "size": 4
     },
     {
       "name": "Lv3",
+      "alias": "Lv3",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 16,
+      "type_code": 1,
+      "offset": 16,
       "size": 4
     },
     {
       "name": "Lv4",
+      "alias": "Lv4",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 20,
+      "type_code": 1,
+      "offset": 20,
       "size": 4
     },
     {
       "name": "Lv5",
+      "alias": "Lv5",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 24,
+      "type_code": 1,
+      "offset": 24,
       "size": 4
     }
   ],

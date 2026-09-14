@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 4,
+    "record_size": 12,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "alias": "ID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Text",
+      "alias": "テキスト",
+      "type": "string",
+      "type_code": 32,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "alias": "タイプ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Text": "時空の歪みを調査する王子たちは、\n洞窟の奥で倒れてた少女、フィノーラと出会う。\n彼女を襲った仮面の男を追うべく、一行は北の地を進む。\nそして判明する、仮面の男の目的とは――\n\n初開催2025年5月1日",
+      "Type": 6
+    },
+    {
+      "ID": 1,
+      "Text": "",
+      "Type": 7
+    },
+    {
+      "ID": 2,
+      "Text": "獲得★が1以上で\n交換所に「時の監視者フィノーラ」が追加",
+      "Type": 8
+    },
+    {
+      "ID": 3,
+      "Text": "『人気闘兵凱旋パレードVI』獲得★数13以上で開放",
+      "Type": 9
+    }
+  ]
+}

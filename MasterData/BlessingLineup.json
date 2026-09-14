@@ -4,49 +4,56 @@
     "flags": "0x10",
     "record_count": 45,
     "record_size": 24,
-    "custom_id": 1970039906
+    "tag": "bllu",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "_ConfigID",
+      "alias": "定義名",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "_TextID",
+      "alias": "テキストID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "_Price_R10",
+      "alias": "価格[R10]",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 8,
+      "type_code": 1,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "_Price_R30",
+      "alias": "価格[R30]",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 12,
+      "type_code": 1,
+      "offset": 12,
       "size": 4
     },
     {
       "name": "_Price_R50",
+      "alias": "価格[R50]",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 16,
+      "type_code": 1,
+      "offset": 16,
       "size": 4
     },
     {
       "name": "_Price",
+      "alias": "価格",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 20,
+      "type_code": 1,
+      "offset": 20,
       "size": 4
     }
   ],

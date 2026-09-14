@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 4,
+    "record_size": 12,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "alias": "ID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Text",
+      "alias": "テキスト",
+      "type": "string",
+      "type_code": 32,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "alias": "タイプ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Text": "天才錬金術士ニコルは、助手の行方を探していた。\n助手が心配なニコル、策謀をめぐらせるゴブリン軍団、\n家出中の助手ちゃんことデモンポーン。\n間一髪で駆けつけた王子たちは、\nゴブリン博士を止めるべく戦いを挑む。\n\n初開催2020年4月23日",
+      "Type": 6
+    },
+    {
+      "ID": 1,
+      "Text": "",
+      "Type": 7
+    },
+    {
+      "ID": 2,
+      "Text": "獲得★が1以上で\n交換所に「錬金調合師ニコル」が追加",
+      "Type": 8
+    },
+    {
+      "ID": 3,
+      "Text": "『迷子の悪魔召喚士』獲得★数13以上で開放",
+      "Type": 9
+    }
+  ]
+}

@@ -2,23 +2,26 @@
   "_meta": {
     "version": 1,
     "flags": "0x14",
-    "record_count": 130,
+    "record_count": 131,
     "record_size": 8,
-    "custom_id": 1835234419
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "_ID",
+      "alias": "定義名",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "_Cmnd",
+      "alias": "実行コマンド",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 4,
+      "type_code": 32,
+      "offset": 4,
       "size": 4
     }
   ],
@@ -413,6 +416,10 @@
     },
     {
       "_ID": 938698247,
+      "_Cmnd": "bd3007a9993d33b49b2a25a8903e0fa0bc3f4eeec5"
+    },
+    {
+      "_ID": -88495378,
       "_Cmnd": "bd3007a9993d33b49b2a25a8903e0fa0bc3f4eeec5"
     },
     {

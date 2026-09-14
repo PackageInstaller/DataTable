@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 4,
+    "record_size": 12,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "alias": "ID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Text",
+      "alias": "テキスト",
+      "type": "string",
+      "type_code": 32,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "alias": "タイプ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Text": "ついに東の国への進軍を始めた華の国の邪仙たち。\n風詠みの少女メイファからそのことを知った王子たちは、\n進攻を止めるべく救援に駆けつける。\nかくして王子たちは東の国を巡り、十天君と対峙するのだった。\n\n初開催2018年4月26日",
+      "Type": 6
+    },
+    {
+      "ID": 1,
+      "Text": "",
+      "Type": 7
+    },
+    {
+      "ID": 2,
+      "Text": "獲得★が1以上で\n交換所に「風詠みの少女メイファ」が追加",
+      "Type": 8
+    },
+    {
+      "ID": 3,
+      "Text": "『アルケミスト・ドクトリン』獲得★数21以上で開放",
+      "Type": 9
+    }
+  ]
+}

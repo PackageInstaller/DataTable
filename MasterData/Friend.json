@@ -1,0 +1,81 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x00",
+    "record_size": 72
+  },
+  "_fields": [
+    {
+      "name": "FriendUserID",
+      "alias": "ユーザーID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "UserName",
+      "alias": "ユーザー名",
+      "type": "fixed_string",
+      "type_code": 33,
+      "offset": 4,
+      "size": 32
+    },
+    {
+      "name": "NowFriend",
+      "alias": "フレンドか？",
+      "type": "bool",
+      "type_code": 5,
+      "offset": 44,
+      "size": 1
+    },
+    {
+      "name": "LeaderCardID",
+      "alias": "リーダーカードID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 48,
+      "size": 4
+    },
+    {
+      "name": "LeaderCardLevel",
+      "alias": "リーダーカードレベル",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 52,
+      "size": 4
+    },
+    {
+      "name": "LeaderUniqueID",
+      "alias": "リーダーユニークID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 56,
+      "size": 4
+    },
+    {
+      "name": "LastLoginDate",
+      "alias": "最終ログイン日",
+      "type": "date",
+      "type_code": 7,
+      "offset": 60,
+      "size": 4
+    },
+    {
+      "name": "UserTitleIndex",
+      "alias": "称号インデックス",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 64,
+      "size": 4
+    },
+    {
+      "name": "Rank",
+      "alias": "ランク",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 68,
+      "size": 4
+    }
+  ]
+}

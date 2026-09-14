@@ -2,23 +2,26 @@
   "_meta": {
     "version": 1,
     "flags": "0x14",
-    "record_count": 464,
+    "record_count": 478,
     "record_size": 8,
-    "custom_id": 1835234419
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "_ID",
+      "alias": "定義名",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "_Cmnd",
+      "alias": "実行コマンド",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 4,
+      "type_code": 32,
+      "offset": 4,
       "size": 4
     }
   ],
@@ -1213,6 +1216,62 @@
     },
     {
       "_ID": 922535862,
+      "_Cmnd": "cf63"
+    },
+    {
+      "_ID": 1491125857,
+      "_Cmnd": "cf63"
+    },
+    {
+      "_ID": -1687876780,
+      "_Cmnd": "cf63"
+    },
+    {
+      "_ID": 83992311,
+      "_Cmnd": "cf63"
+    },
+    {
+      "_ID": -1071469544,
+      "_Cmnd": "cf63"
+    },
+    {
+      "_ID": -564897472,
+      "_Cmnd": "cf63"
+    },
+    {
+      "_ID": -1454151210,
+      "_Cmnd": "cf63"
+    },
+    {
+      "_ID": 113710607,
+      "_Cmnd": "cf63"
+    },
+    {
+      "_ID": 534521678,
+      "_Cmnd": "cf63"
+    },
+    {
+      "_ID": 1294847017,
+      "_Cmnd": "cf63"
+    },
+    {
+      "_ID": -750167670,
+      "_Cmnd": "cf63"
+    },
+    {
+      "_ID": 1525511514,
+      "_Cmnd": "cf63"
+    },
+    {
+      "_ID": 770328012,
+      "_Cmnd": "cf63"
+    },
+    {
+      "_ID": -743513689,
+      "_Cmnd": "cf63"
+    },
+    {
+      "_ID": 1033928843,
       "_Cmnd": "cf63"
     },
     {

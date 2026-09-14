@@ -2,52 +2,75 @@
   "_meta": {
     "version": 1,
     "flags": "0x14",
-    "record_count": 4,
+    "record_count": 5,
     "record_size": 40,
-    "custom_id": 2020897645
+    "tag": "",
+    "date_epoch": "0001-01-01"
   },
   "_fields": [
     {
       "name": "MissionID",
+      "alias": "ミッションID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "Name",
+      "alias": "ミッション名",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 4,
+      "type_code": 32,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "QuestIdList",
+      "alias": "クエストIDリスト",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 8,
+      "type_code": 32,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "Enable",
+      "alias": "有効フラグ",
       "type": "bool",
-      "mapped_type": 5,
-      "rec_offset": 12,
+      "type_code": 5,
+      "offset": 12,
       "size": 1
     },
     {
-      "name": "\b\r\fStartDateTime",
-      "type": "unknown",
-      "mapped_type": 0,
-      "rec_offset": 0,
+      "name": "StartDateTime",
+      "alias": "開始日時",
+      "type": "datetime",
+      "type_code": 9,
+      "offset": 16,
+      "size": 8
+    },
+    {
+      "name": "EndDateTime",
+      "alias": "終了日時",
+      "type": "datetime",
+      "type_code": 9,
+      "offset": 24,
+      "size": 8
+    },
+    {
+      "name": "TagID",
+      "alias": "タグID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 32,
       "size": 4
     },
     {
-      "name": "ime",
-      "type": "unknown",
-      "mapped_type": 97,
-      "rec_offset": 17508,
-      "size": 0
+      "name": "TagIDRange",
+      "alias": "タグIDレンジ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 36,
+      "size": 4
     }
   ],
   "records": [
@@ -56,28 +79,80 @@
       "Name": "ミッショントップバナー用",
       "QuestIdList": "16000,",
       "Enable": true,
-      "\b\r\fStartDateTime": "f07e0e00"
+      "StartDateTime": {
+        "date": 1009835520,
+        "time": 14880
+      },
+      "EndDateTime": {
+        "date": 2539371008,
+        "time": 22027
+      },
+      "TagID": 302,
+      "TagIDRange": 0
     },
     {
       "MissionID": 950001,
       "Name": "力の偉業",
       "QuestIdList": "16001,16002,16003,16004,16005",
       "Enable": true,
-      "\b\r\fStartDateTime": "f17e0e00"
+      "StartDateTime": {
+        "date": 1009835520,
+        "time": 14880
+      },
+      "EndDateTime": {
+        "date": 2539371008,
+        "time": 22027
+      },
+      "TagID": 302,
+      "TagIDRange": 0
     },
     {
       "MissionID": 950002,
       "Name": "出撃数の偉業",
       "QuestIdList": "16101,16102,16103,16104,16105",
       "Enable": true,
-      "\b\r\fStartDateTime": "f27e0e00"
+      "StartDateTime": {
+        "date": 1009835520,
+        "time": 14880
+      },
+      "EndDateTime": {
+        "date": 2539371008,
+        "time": 22027
+      },
+      "TagID": 302,
+      "TagIDRange": 0
     },
     {
       "MissionID": 950003,
       "Name": "編成の偉業",
       "QuestIdList": "16201,16202,16203,16204,16205",
       "Enable": true,
-      "\b\r\fStartDateTime": "f37e0e00"
+      "StartDateTime": {
+        "date": 1009835520,
+        "time": 14880
+      },
+      "EndDateTime": {
+        "date": 2539371008,
+        "time": 22027
+      },
+      "TagID": 302,
+      "TagIDRange": 0
+    },
+    {
+      "MissionID": 950004,
+      "Name": "三女神の加護の偉業",
+      "QuestIdList": "16301,16302,16303,16304,16305",
+      "Enable": true,
+      "StartDateTime": {
+        "date": 1009835520,
+        "time": 14880
+      },
+      "EndDateTime": {
+        "date": 2539371008,
+        "time": 22027
+      },
+      "TagID": 302,
+      "TagIDRange": 0
     }
   ]
 }

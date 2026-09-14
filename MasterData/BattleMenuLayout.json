@@ -4,141 +4,201 @@
     "flags": "0x04",
     "record_count": 1,
     "record_size": 96,
-    "custom_id": null
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "ID",
+      "alias": "ID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "MenuID",
+      "alias": "MenuID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "NodeID",
+      "alias": "NodeID",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 8,
+      "type_code": 32,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "ParentNodeID",
+      "alias": "ParentNodeID",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 12,
+      "type_code": 32,
+      "offset": 12,
       "size": 4
     },
     {
       "name": "EnabledStrechFrame",
+      "alias": "EnabledStrechFrame",
       "type": "bool",
-      "mapped_type": 5,
-      "rec_offset": 16,
+      "type_code": 5,
+      "offset": 16,
       "size": 1
     },
     {
-      "name": "\b\u0012\u0012BeginFrameSpriteID",
-      "type": "unknown",
-      "mapped_type": 0,
-      "rec_offset": 0,
+      "name": "BeginFrameSpriteID",
+      "alias": "BeginFrameSpriteID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 20,
       "size": 4
     },
     {
-      "name": "teID",
-      "type": "unknown",
-      "mapped_type": 83,
-      "rec_offset": 25965,
-      "size": 2828
+      "name": "EndFrameSpriteID",
+      "alias": "EndFrameSpriteID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 24,
+      "size": 4
     },
     {
-      "name": "nelType",
-      "type": "unknown",
-      "mapped_type": 101,
-      "rec_offset": 28793,
-      "size": 0
+      "name": "FrameTextureID",
+      "alias": "FrameTextureID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 28,
+      "size": 4
     },
     {
-      "name": "field_8",
-      "type": "unknown",
-      "mapped_type": 0,
-      "rec_offset": 0,
+      "name": "FrameSliceCount",
+      "alias": "FrameSliceCount",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 32,
+      "size": 4
+    },
+    {
+      "name": "PanelType",
+      "alias": "PanelType",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 36,
       "size": 4
     },
     {
       "name": "ContentScaleType",
+      "alias": "ContentScaleType",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 40,
+      "type_code": 1,
+      "offset": 40,
       "size": 4
     },
     {
       "name": "Index",
+      "alias": "Index",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 44,
+      "type_code": 1,
+      "offset": 44,
       "size": 4
     },
     {
       "name": "HorizontalAlignment",
+      "alias": "HorizontalAlignment",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 48,
+      "type_code": 1,
+      "offset": 48,
       "size": 4
     },
     {
       "name": "VerticalAlignment",
+      "alias": "VerticalAlignment",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 52,
+      "type_code": 1,
+      "offset": 52,
       "size": 4
     },
     {
       "name": "Margin",
+      "alias": "Margin",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 56,
+      "type_code": 32,
+      "offset": 56,
       "size": 4
     },
     {
       "name": "ItemsMargin",
+      "alias": "ItemsMargin",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 60,
+      "type_code": 32,
+      "offset": 60,
       "size": 4
     },
     {
       "name": "ItemsSourceType",
+      "alias": "ItemsSourceType",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 64,
+      "type_code": 1,
+      "offset": 64,
       "size": 4
     },
     {
       "name": "UseSize",
+      "alias": "UseSize",
       "type": "bool",
-      "mapped_type": 5,
-      "rec_offset": 68,
+      "type_code": 5,
+      "offset": 68,
       "size": 1
     },
     {
-      "name": "\b\u0005\u0005Width",
-      "type": "unknown",
-      "mapped_type": 0,
-      "rec_offset": 0,
+      "name": "Width",
+      "alias": "Width",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 72,
       "size": 4
     },
     {
-      "name": "eight",
-      "type": "unknown",
-      "mapped_type": 77,
-      "rec_offset": 2313,
-      "size": 23652
+      "name": "Height",
+      "alias": "Height",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 76,
+      "size": 4
+    },
+    {
+      "name": "MaxWidth",
+      "alias": "MaxWidth",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 80,
+      "size": 4
+    },
+    {
+      "name": "MaxHeight",
+      "alias": "MaxHeight",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 84,
+      "size": 4
+    },
+    {
+      "name": "CommandName",
+      "alias": "CommandName",
+      "type": "string",
+      "type_code": 32,
+      "offset": 88,
+      "size": 4
+    },
+    {
+      "name": "Command",
+      "alias": "Command",
+      "type": "string",
+      "type_code": 32,
+      "offset": 92,
+      "size": 4
     }
   ],
   "records": [
@@ -148,8 +208,11 @@
       "NodeID": "WD01",
       "ParentNodeID": "",
       "EnabledStrechFrame": false,
-      "\b\u0012\u0012BeginFrameSpriteID": "01000000",
-      "field_8": "01000000",
+      "BeginFrameSpriteID": 0,
+      "EndFrameSpriteID": 0,
+      "FrameTextureID": 0,
+      "FrameSliceCount": 0,
+      "PanelType": 0,
       "ContentScaleType": 0,
       "Index": 0,
       "HorizontalAlignment": 0,
@@ -158,7 +221,12 @@
       "ItemsMargin": "",
       "ItemsSourceType": 0,
       "UseSize": false,
-      "\b\u0005\u0005Width": "01000000"
+      "Width": 0,
+      "Height": 0,
+      "MaxWidth": 0,
+      "MaxHeight": 0,
+      "CommandName": "OnAssembled",
+      "Command": "FillRect(\"target_handle=$target_handle\", \"atx=Battle.atx\", \"img=zmtx0031_window\", \"slice=true\", \"margin=3\");"
     }
   ]
 }

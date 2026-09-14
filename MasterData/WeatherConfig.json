@@ -2,58 +2,66 @@
   "_meta": {
     "version": 1,
     "flags": "0x10",
-    "record_count": 103,
+    "record_count": 106,
     "record_size": 28,
-    "custom_id": 1717793911
+    "tag": "wtcf",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "Type_Weather",
+      "alias": "ID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "Type_Specialty",
+      "alias": "対応技能",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "ID_Effect",
+      "alias": "エフェクトID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 8,
+      "type_code": 1,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "Type_Target",
+      "alias": "対象",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 12,
+      "type_code": 1,
+      "offset": 12,
       "size": 4
     },
     {
       "name": "Type_Effect",
+      "alias": "効果種別",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 16,
+      "type_code": 1,
+      "offset": 16,
       "size": 4
     },
     {
       "name": "Param_Effect",
+      "alias": "効果乗算",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 20,
+      "type_code": 1,
+      "offset": 20,
       "size": 4
     },
     {
       "name": "Param_EffectAdd",
+      "alias": "効果加算",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 24,
+      "type_code": 1,
+      "offset": 24,
       "size": 4
     }
   ],
@@ -983,6 +991,33 @@
       "Type_Target": 1,
       "Type_Effect": 2,
       "Param_Effect": 100,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 32,
+      "Type_Specialty": 0,
+      "ID_Effect": 6293511,
+      "Type_Target": 1,
+      "Type_Effect": 2,
+      "Param_Effect": 50,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 0,
+      "Type_Specialty": 0,
+      "ID_Effect": 0,
+      "Type_Target": 1,
+      "Type_Effect": 1,
+      "Param_Effect": 40,
+      "Param_EffectAdd": 0
+    },
+    {
+      "Type_Weather": 33,
+      "Type_Specialty": 0,
+      "ID_Effect": 6293512,
+      "Type_Target": 1,
+      "Type_Effect": 2,
+      "Param_Effect": 80,
       "Param_EffectAdd": 0
     }
   ]

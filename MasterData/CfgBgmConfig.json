@@ -2,23 +2,26 @@
   "_meta": {
     "version": 1,
     "flags": "0x10",
-    "record_count": 156,
+    "record_count": 167,
     "record_size": 8,
-    "custom_id": 1734763365
+    "tag": "ecfg",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "_CfgID",
+      "alias": "定義ID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "_ResID",
+      "alias": "リソースID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     }
   ],
@@ -646,6 +649,50 @@
     {
       "_CfgID": 2041935559,
       "_ResID": 9437339
+    },
+    {
+      "_CfgID": 2146420292,
+      "_ResID": 9437340
+    },
+    {
+      "_CfgID": 1659645438,
+      "_ResID": 9437341
+    },
+    {
+      "_CfgID": 1575153654,
+      "_ResID": 9437342
+    },
+    {
+      "_CfgID": -986152209,
+      "_ResID": 9437343
+    },
+    {
+      "_CfgID": -2047991186,
+      "_ResID": 9437344
+    },
+    {
+      "_CfgID": 1052422159,
+      "_ResID": 9437345
+    },
+    {
+      "_CfgID": 131831940,
+      "_ResID": 9437346
+    },
+    {
+      "_CfgID": -2003549801,
+      "_ResID": 9437347
+    },
+    {
+      "_CfgID": -437265852,
+      "_ResID": 9437348
+    },
+    {
+      "_CfgID": -1069386321,
+      "_ResID": 9437349
+    },
+    {
+      "_CfgID": -1671309335,
+      "_ResID": 9437350
     }
   ]
 }

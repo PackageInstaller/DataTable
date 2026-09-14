@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 4,
+    "record_size": 12,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "alias": "ID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Text",
+      "alias": "テキスト",
+      "type": "string",
+      "type_code": 32,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "alias": "タイプ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Text": "竜人たちとの戦いからしばらく経った頃。\n王子たちは竜人の巫女エキドナと邂逅する。\n大長老配下の竜人たちは人間に憎しみを抱いているが、\n中にはエキドナのように共存を望む者もいるらしい。\n共存と平和のため、王子は助力を約束するのだった。\n\n初開催2014年1月29日",
+      "Type": 6
+    },
+    {
+      "ID": 1,
+      "Text": "",
+      "Type": 7
+    },
+    {
+      "ID": 2,
+      "Text": "獲得★が1以上で\n交換所に「竜巫女エキドナ」が追加",
+      "Type": 8
+    },
+    {
+      "ID": 3,
+      "Text": "『聖戦士の挑戦』獲得★数11以上で開放",
+      "Type": 9
+    }
+  ]
+}

@@ -4,70 +4,80 @@
     "flags": "0x14",
     "record_count": 16,
     "record_size": 36,
-    "custom_id": 1835234419
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "ConfigID",
+      "alias": "定義名[CRC32]",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "RegistID",
+      "alias": "登録ID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "DisplayText",
+      "alias": "表示項目[Encode]",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 8,
+      "type_code": 32,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "CompleteExpression",
+      "alias": "完了条件[Encode]",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 12,
+      "type_code": 32,
+      "offset": 12,
       "size": 4
     },
     {
       "name": "AfterCommand",
+      "alias": "実行後コマンド[Encode]",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 16,
+      "type_code": 32,
+      "offset": 16,
       "size": 4
     },
     {
       "name": "DateOpen",
+      "alias": "公開開始",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 20,
+      "type_code": 32,
+      "offset": 20,
       "size": 4
     },
     {
       "name": "DateClose",
+      "alias": "公開終了",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 24,
+      "type_code": 32,
+      "offset": 24,
       "size": 4
     },
     {
       "name": "TriggerGroup",
+      "alias": "トリガーグループ[Encode]",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 28,
+      "type_code": 32,
+      "offset": 28,
       "size": 4
     },
     {
       "name": "UniversalFlag",
+      "alias": "既読フラグ[Encode]",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 32,
+      "type_code": 32,
+      "offset": 32,
       "size": 4
     }
   ],

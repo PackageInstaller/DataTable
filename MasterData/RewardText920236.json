@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 4,
+    "record_size": 12,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "alias": "ID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Text",
+      "alias": "テキスト",
+      "type": "string",
+      "type_code": 32,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "alias": "タイプ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Text": "雪原の調査中、拠点に訪れたのは獣人のファオルだった。\n彼女に各地を案内する王子たちだったが、\n困ったことに、他の獣人から誘拐犯だと誤解されてしまって！？\n\n初開催2025年7月17日",
+      "Type": 6
+    },
+    {
+      "ID": 1,
+      "Text": "",
+      "Type": 7
+    },
+    {
+      "ID": 2,
+      "Text": "獲得★が1以上で\n交換所に「無頼の白狼ファオル」が追加",
+      "Type": 8
+    },
+    {
+      "ID": 3,
+      "Text": "『真夏のカオスリゾート』獲得★数19以上で開放",
+      "Type": 9
+    }
+  ]
+}

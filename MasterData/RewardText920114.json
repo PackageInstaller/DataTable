@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 4,
+    "record_size": 12,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "alias": "ID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Text",
+      "alias": "テキスト",
+      "type": "string",
+      "type_code": 32,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "alias": "タイプ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Text": "『浮遊石』の鉱脈が見つかったということで、王子たちは\nドワーフの王国を訪れる。\n技工兵マインに歓迎され、採掘場へ向かう王子たち。\nしかしそこには、浮遊石を盗掘するゴブリンたちの姿があった。\n\n初開催2018年9月27日",
+      "Type": 6
+    },
+    {
+      "ID": 1,
+      "Text": "",
+      "Type": 7
+    },
+    {
+      "ID": 2,
+      "Text": "獲得★が1以上で\n交換所に「技工兵マイン」が追加",
+      "Type": 8
+    },
+    {
+      "ID": 3,
+      "Text": "『東方のかぶき姫』獲得★数21以上で開放",
+      "Type": 9
+    }
+  ]
+}

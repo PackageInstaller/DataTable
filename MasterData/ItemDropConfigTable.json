@@ -4,112 +4,128 @@
     "flags": "0x14",
     "record_count": 133,
     "record_size": 60,
-    "custom_id": 1835234419
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "ID",
+      "alias": "定義名[CRC32]",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "DropID",
+      "alias": "ドロップID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "DropRange",
+      "alias": "範囲",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 8,
+      "type_code": 1,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "Category",
+      "alias": "カテゴリー[CRC32]",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 12,
+      "type_code": 1,
+      "offset": 12,
       "size": 4
     },
     {
       "name": "DropType",
+      "alias": "ドロップ種別",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 16,
+      "type_code": 1,
+      "offset": 16,
       "size": 4
     },
     {
       "name": "ItemID",
+      "alias": "アイテムID[CRC32]",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 20,
+      "type_code": 1,
+      "offset": 20,
       "size": 4
     },
     {
       "name": "DropCount",
+      "alias": "入手数",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 24,
+      "type_code": 1,
+      "offset": 24,
       "size": 4
     },
     {
       "name": "RareType",
+      "alias": "レア種別",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 28,
+      "type_code": 1,
+      "offset": 28,
       "size": 4
     },
     {
       "name": "TextureID_Result",
+      "alias": "テクスチャID[CRC32][リザルト]",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 32,
+      "type_code": 1,
+      "offset": 32,
       "size": 4
     },
     {
       "name": "TextureID_Menu",
+      "alias": "テクスチャID[CRC32][メニュー]",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 36,
+      "type_code": 1,
+      "offset": 36,
       "size": 4
     },
     {
       "name": "TextureID_Drop",
+      "alias": "テクスチャID[CRC32][ドロップ]",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 40,
+      "type_code": 1,
+      "offset": 40,
       "size": 4
     },
     {
       "name": "TextureName_Result",
+      "alias": "テクスチャID[リザルト]",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 44,
+      "type_code": 32,
+      "offset": 44,
       "size": 4
     },
     {
       "name": "TextureName_Menu",
+      "alias": "テクスチャID[メニュー]",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 48,
+      "type_code": 32,
+      "offset": 48,
       "size": 4
     },
     {
       "name": "TextureName_Drop",
+      "alias": "テクスチャID[ドロップ]",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 52,
+      "type_code": 32,
+      "offset": 52,
       "size": 4
     },
     {
       "name": "TexturePattern",
+      "alias": "テクスチャパターン",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 56,
+      "type_code": 1,
+      "offset": 56,
       "size": 4
     }
   ],
@@ -2143,7 +2159,7 @@
       "DropRange": 0,
       "Category": -2096023546,
       "DropType": 8,
-      "ItemID": 1888906405,
+      "ItemID": -305552204,
       "DropCount": 1,
       "RareType": 2,
       "TextureID_Result": -868797332,
@@ -2211,7 +2227,7 @@
       "DropRange": 0,
       "Category": -2096023546,
       "DropType": 8,
-      "ItemID": 1888906405,
+      "ItemID": -305552204,
       "DropCount": 3,
       "RareType": 2,
       "TextureID_Result": 1320228125,
@@ -2228,7 +2244,7 @@
       "DropRange": 0,
       "Category": -2096023546,
       "DropType": 8,
-      "ItemID": 1888906405,
+      "ItemID": -305552204,
       "DropCount": 5,
       "RareType": 2,
       "TextureID_Result": 142343650,
@@ -2245,7 +2261,7 @@
       "DropRange": 0,
       "Category": -2096023546,
       "DropType": 8,
-      "ItemID": 1888906405,
+      "ItemID": -305552204,
       "DropCount": 7,
       "RareType": 2,
       "TextureID_Result": -2095929464,

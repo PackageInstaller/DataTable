@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 4,
+    "record_size": 12,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "alias": "ID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Text",
+      "alias": "テキスト",
+      "type": "string",
+      "type_code": 32,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "alias": "タイプ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Text": "今年もバレンタインの季節がやってきた。\nしかし、甘いチョコレートに魔界アリの魔手が迫る。\n料理人キホルを味方に付けた魔界アリの女王に対し、\nエレットたちが立ち上がる。\n\n初開催2021年2月10日",
+      "Type": 6
+    },
+    {
+      "ID": 1,
+      "Text": "",
+      "Type": 7
+    },
+    {
+      "ID": 2,
+      "Text": "獲得★が1以上で\n交換所に「内緒の告白エレット」が追加",
+      "Type": 8
+    },
+    {
+      "ID": 3,
+      "Text": "『戸惑いの戦乙女』獲得★数21以上で開放",
+      "Type": 9
+    }
+  ]
+}

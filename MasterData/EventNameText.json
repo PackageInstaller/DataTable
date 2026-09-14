@@ -2,37 +2,42 @@
   "_meta": {
     "version": 1,
     "flags": "0x14",
-    "record_count": 561,
+    "record_count": 576,
     "record_size": 16,
-    "custom_id": 2020896357
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "Recode_Index",
+      "alias": "レコード番号",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "Data_Text",
+      "alias": "テキスト",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 4,
+      "type_code": 32,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "Data_ItemName",
+      "alias": "収集アイテム名",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 8,
+      "type_code": 32,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "Data_DropCardList",
+      "alias": "ドロップカードリスト",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 12,
+      "type_code": 32,
+      "offset": 12,
       "size": 4
     }
   ],
@@ -3400,6 +3405,96 @@
     {
       "Recode_Index": 560,
       "Data_Text": "銀なる軍神の帰還",
+      "Data_ItemName": "",
+      "Data_DropCardList": ""
+    },
+    {
+      "Recode_Index": 561,
+      "Data_Text": "ケイティの大演習(再復刻2)",
+      "Data_ItemName": "",
+      "Data_DropCardList": ""
+    },
+    {
+      "Recode_Index": 562,
+      "Data_Text": "戦神コロシアム 芸神例祭 奉納神楽",
+      "Data_ItemName": "",
+      "Data_DropCardList": ""
+    },
+    {
+      "Recode_Index": 563,
+      "Data_Text": "テラーケイブアドベンチャー",
+      "Data_ItemName": "",
+      "Data_DropCardList": ""
+    },
+    {
+      "Recode_Index": 564,
+      "Data_Text": "永劫なる輪廻の果て",
+      "Data_ItemName": "",
+      "Data_DropCardList": ""
+    },
+    {
+      "Recode_Index": 565,
+      "Data_Text": "花嫁たちの幸福論",
+      "Data_ItemName": "",
+      "Data_DropCardList": ""
+    },
+    {
+      "Recode_Index": 566,
+      "Data_Text": "キラキラ★オルカサマー　リベンジ(復刻)",
+      "Data_ItemName": "",
+      "Data_DropCardList": ""
+    },
+    {
+      "Recode_Index": 567,
+      "Data_Text": "人気闘兵凱旋パレードⅧ",
+      "Data_ItemName": "",
+      "Data_DropCardList": ""
+    },
+    {
+      "Recode_Index": 568,
+      "Data_Text": "真夏のぷるぷるビーチ",
+      "Data_ItemName": "",
+      "Data_DropCardList": ""
+    },
+    {
+      "Recode_Index": 569,
+      "Data_Text": "白き砂浜のラプソディー",
+      "Data_ItemName": "",
+      "Data_DropCardList": ""
+    },
+    {
+      "Recode_Index": 570,
+      "Data_Text": "新星たちのトリニティライブ",
+      "Data_ItemName": "",
+      "Data_DropCardList": ""
+    },
+    {
+      "Recode_Index": 571,
+      "Data_Text": "サブマリンレイダース(復刻)",
+      "Data_ItemName": "",
+      "Data_DropCardList": ""
+    },
+    {
+      "Recode_Index": 572,
+      "Data_Text": "雪の枝に花火が咲く",
+      "Data_ItemName": "",
+      "Data_DropCardList": ""
+    },
+    {
+      "Recode_Index": 573,
+      "Data_Text": "トリニティタワーブレイク",
+      "Data_ItemName": "",
+      "Data_DropCardList": ""
+    },
+    {
+      "Recode_Index": 574,
+      "Data_Text": "第１6回人気闘兵（強襲）",
+      "Data_ItemName": "",
+      "Data_DropCardList": ""
+    },
+    {
+      "Recode_Index": 575,
+      "Data_Text": "戦神コロシアム 東国動乱・西京事変",
       "Data_ItemName": "",
       "Data_DropCardList": ""
     }

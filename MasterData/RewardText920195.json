@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 4,
+    "record_size": 12,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "alias": "ID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Text",
+      "alias": "テキスト",
+      "type": "string",
+      "type_code": 32,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "alias": "タイプ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Text": "王国学園、七不思議。\nその真相を追うべく、サクヤたちは調査を開始する。\n正体を知れば大したことのない七不思議だが、\nその最後に待ち受けていたのは……。\n\n初開催2023年5月4日",
+      "Type": 6
+    },
+    {
+      "ID": 1,
+      "Text": "",
+      "Type": 7
+    },
+    {
+      "ID": 2,
+      "Text": "獲得★が1以上で\n交換所に「薙刀茶道部サクヤ」が追加",
+      "Type": 8
+    },
+    {
+      "ID": 3,
+      "Text": "『戦神コロシアム デザートストーム』獲得★数6以上で開放",
+      "Type": 9
+    }
+  ]
+}

@@ -2,93 +2,105 @@
   "_meta": {
     "version": 1,
     "flags": "0x14",
-    "record_count": 312,
+    "record_count": 319,
     "record_size": 44,
-    "custom_id": 1734567780
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "ID_DailyGift",
+      "alias": "ID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "ID_SystemText",
+      "alias": "SystemTextRecordID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "Days_Begin",
+      "alias": "配布開始日",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 8,
+      "type_code": 1,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "Days_End",
+      "alias": "配布終了日",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 12,
+      "type_code": 1,
+      "offset": 12,
       "size": 4
     },
     {
       "name": "ID_Gift",
+      "alias": "ギフトID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 16,
+      "type_code": 1,
+      "offset": 16,
       "size": 4
     },
     {
       "name": "Type_Gift",
+      "alias": "ギフトタイプ",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 20,
+      "type_code": 1,
+      "offset": 20,
       "size": 4
     },
     {
       "name": "Type_Item",
+      "alias": "アイテムタイプ",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 24,
+      "type_code": 1,
+      "offset": 24,
       "size": 4
     },
     {
       "name": "Param_Gift",
+      "alias": "パラメータ1",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 28,
+      "type_code": 1,
+      "offset": 28,
       "size": 4
     },
     {
       "name": "TypeCondition",
+      "alias": "条件種別",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 32,
+      "type_code": 1,
+      "offset": 32,
       "size": 4
     },
     {
       "name": "ParamCondition",
+      "alias": "条件値",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 36,
+      "type_code": 1,
+      "offset": 36,
       "size": 4
     },
     {
       "name": "ID_Item",
+      "alias": "アイテムID",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 40,
+      "type_code": 32,
+      "offset": 40,
       "size": 4
     }
   ],
   "records": [
     {
       "ID_DailyGift": 1,
-      "ID_SystemText": 416,
+      "ID_SystemText": 423,
       "Days_Begin": 20140531,
       "Days_End": 20140604,
       "ID_Gift": 1,
@@ -101,7 +113,7 @@
     },
     {
       "ID_DailyGift": 2,
-      "ID_SystemText": 417,
+      "ID_SystemText": 424,
       "Days_Begin": 20140801,
       "Days_End": 20140805,
       "ID_Gift": 1,
@@ -114,7 +126,7 @@
     },
     {
       "ID_DailyGift": 3,
-      "ID_SystemText": 418,
+      "ID_SystemText": 425,
       "Days_Begin": 20140919,
       "Days_End": 20140925,
       "ID_Gift": 1,
@@ -127,7 +139,7 @@
     },
     {
       "ID_DailyGift": 4,
-      "ID_SystemText": 443,
+      "ID_SystemText": 450,
       "Days_Begin": 20141121,
       "Days_End": 20141127,
       "ID_Gift": 1,
@@ -140,7 +152,7 @@
     },
     {
       "ID_DailyGift": 5,
-      "ID_SystemText": 419,
+      "ID_SystemText": 426,
       "Days_Begin": 20150123,
       "Days_End": 20150127,
       "ID_Gift": 1,
@@ -153,7 +165,7 @@
     },
     {
       "ID_DailyGift": 6,
-      "ID_SystemText": 420,
+      "ID_SystemText": 427,
       "Days_Begin": 20150410,
       "Days_End": 20150414,
       "ID_Gift": 1,
@@ -166,7 +178,7 @@
     },
     {
       "ID_DailyGift": 7,
-      "ID_SystemText": 421,
+      "ID_SystemText": 428,
       "Days_Begin": 20150626,
       "Days_End": 20150630,
       "ID_Gift": 1,
@@ -192,7 +204,7 @@
     },
     {
       "ID_DailyGift": 9,
-      "ID_SystemText": 435,
+      "ID_SystemText": 442,
       "Days_Begin": 20150917,
       "Days_End": 20150923,
       "ID_Gift": 1,
@@ -205,7 +217,7 @@
     },
     {
       "ID_DailyGift": 10,
-      "ID_SystemText": 444,
+      "ID_SystemText": 451,
       "Days_Begin": 20151127,
       "Days_End": 20151203,
       "ID_Gift": 1,
@@ -218,7 +230,7 @@
     },
     {
       "ID_DailyGift": 11,
-      "ID_SystemText": 422,
+      "ID_SystemText": 429,
       "Days_Begin": 20160226,
       "Days_End": 20160309,
       "ID_Gift": 1,
@@ -231,7 +243,7 @@
     },
     {
       "ID_DailyGift": 12,
-      "ID_SystemText": 436,
+      "ID_SystemText": 443,
       "Days_Begin": 20160408,
       "Days_End": 20160413,
       "ID_Gift": 1,
@@ -244,7 +256,7 @@
     },
     {
       "ID_DailyGift": 13,
-      "ID_SystemText": 423,
+      "ID_SystemText": 430,
       "Days_Begin": 20160513,
       "Days_End": 20160519,
       "ID_Gift": 1,
@@ -257,7 +269,7 @@
     },
     {
       "ID_DailyGift": 14,
-      "ID_SystemText": 424,
+      "ID_SystemText": 431,
       "Days_Begin": 20160729,
       "Days_End": 20160804,
       "ID_Gift": 1,
@@ -270,7 +282,7 @@
     },
     {
       "ID_DailyGift": 15,
-      "ID_SystemText": 424,
+      "ID_SystemText": 431,
       "Days_Begin": 20160729,
       "Days_End": 20160804,
       "ID_Gift": 1,
@@ -283,7 +295,7 @@
     },
     {
       "ID_DailyGift": 16,
-      "ID_SystemText": 437,
+      "ID_SystemText": 444,
       "Days_Begin": 20160922,
       "Days_End": 20160929,
       "ID_Gift": 1,
@@ -296,7 +308,7 @@
     },
     {
       "ID_DailyGift": 17,
-      "ID_SystemText": 437,
+      "ID_SystemText": 444,
       "Days_Begin": 20160930,
       "Days_End": 20161006,
       "ID_Gift": 1,
@@ -309,7 +321,7 @@
     },
     {
       "ID_DailyGift": 18,
-      "ID_SystemText": 445,
+      "ID_SystemText": 452,
       "Days_Begin": 20161125,
       "Days_End": 20161201,
       "ID_Gift": 1,
@@ -322,7 +334,7 @@
     },
     {
       "ID_DailyGift": 19,
-      "ID_SystemText": 445,
+      "ID_SystemText": 452,
       "Days_Begin": 20161202,
       "Days_End": 20161208,
       "ID_Gift": 1,
@@ -335,7 +347,7 @@
     },
     {
       "ID_DailyGift": 20,
-      "ID_SystemText": 425,
+      "ID_SystemText": 432,
       "Days_Begin": 20170120,
       "Days_End": 20170126,
       "ID_Gift": 1,
@@ -348,7 +360,7 @@
     },
     {
       "ID_DailyGift": 21,
-      "ID_SystemText": 425,
+      "ID_SystemText": 432,
       "Days_Begin": 20170120,
       "Days_End": 20170126,
       "ID_Gift": 1,
@@ -361,7 +373,7 @@
     },
     {
       "ID_DailyGift": 22,
-      "ID_SystemText": 425,
+      "ID_SystemText": 432,
       "Days_Begin": 20170127,
       "Days_End": 20170202,
       "ID_Gift": 1,
@@ -374,7 +386,7 @@
     },
     {
       "ID_DailyGift": 23,
-      "ID_SystemText": 425,
+      "ID_SystemText": 432,
       "Days_Begin": 20170127,
       "Days_End": 20170202,
       "ID_Gift": 1,
@@ -387,7 +399,7 @@
     },
     {
       "ID_DailyGift": 24,
-      "ID_SystemText": 439,
+      "ID_SystemText": 446,
       "Days_Begin": 20170224,
       "Days_End": 20170302,
       "ID_Gift": 1,
@@ -400,7 +412,7 @@
     },
     {
       "ID_DailyGift": 25,
-      "ID_SystemText": 439,
+      "ID_SystemText": 446,
       "Days_Begin": 20170303,
       "Days_End": 20170309,
       "ID_Gift": 1,
@@ -413,7 +425,7 @@
     },
     {
       "ID_DailyGift": 26,
-      "ID_SystemText": 426,
+      "ID_SystemText": 433,
       "Days_Begin": 20170324,
       "Days_End": 20170330,
       "ID_Gift": 1,
@@ -426,7 +438,7 @@
     },
     {
       "ID_DailyGift": 27,
-      "ID_SystemText": 426,
+      "ID_SystemText": 433,
       "Days_Begin": 20170331,
       "Days_End": 20170406,
       "ID_Gift": 1,
@@ -439,7 +451,7 @@
     },
     {
       "ID_DailyGift": 28,
-      "ID_SystemText": 440,
+      "ID_SystemText": 447,
       "Days_Begin": 20170428,
       "Days_End": 20170511,
       "ID_Gift": 1,
@@ -452,7 +464,7 @@
     },
     {
       "ID_DailyGift": 29,
-      "ID_SystemText": 427,
+      "ID_SystemText": 434,
       "Days_Begin": 20170526,
       "Days_End": 20170601,
       "ID_Gift": 1,
@@ -465,7 +477,7 @@
     },
     {
       "ID_DailyGift": 30,
-      "ID_SystemText": 427,
+      "ID_SystemText": 434,
       "Days_Begin": 20170602,
       "Days_End": 20170608,
       "ID_Gift": 1,
@@ -478,7 +490,7 @@
     },
     {
       "ID_DailyGift": 31,
-      "ID_SystemText": 427,
+      "ID_SystemText": 434,
       "Days_Begin": 20170609,
       "Days_End": 20170615,
       "ID_Gift": 1,
@@ -491,7 +503,7 @@
     },
     {
       "ID_DailyGift": 32,
-      "ID_SystemText": 438,
+      "ID_SystemText": 445,
       "Days_Begin": 20170707,
       "Days_End": 20170720,
       "ID_Gift": 1,
@@ -504,7 +516,7 @@
     },
     {
       "ID_DailyGift": 33,
-      "ID_SystemText": 434,
+      "ID_SystemText": 441,
       "Days_Begin": 20170714,
       "Days_End": 20170720,
       "ID_Gift": 1,
@@ -517,7 +529,7 @@
     },
     {
       "ID_DailyGift": 34,
-      "ID_SystemText": 428,
+      "ID_SystemText": 435,
       "Days_Begin": 20170811,
       "Days_End": 20170817,
       "ID_Gift": 1,
@@ -530,7 +542,7 @@
     },
     {
       "ID_DailyGift": 35,
-      "ID_SystemText": 428,
+      "ID_SystemText": 435,
       "Days_Begin": 20170818,
       "Days_End": 20170824,
       "ID_Gift": 1,
@@ -543,7 +555,7 @@
     },
     {
       "ID_DailyGift": 36,
-      "ID_SystemText": 415,
+      "ID_SystemText": 422,
       "Days_Begin": 20170922,
       "Days_End": 20170928,
       "ID_Gift": 1,
@@ -556,7 +568,7 @@
     },
     {
       "ID_DailyGift": 37,
-      "ID_SystemText": 415,
+      "ID_SystemText": 422,
       "Days_Begin": 20170929,
       "Days_End": 20171005,
       "ID_Gift": 1,
@@ -569,7 +581,7 @@
     },
     {
       "ID_DailyGift": 38,
-      "ID_SystemText": 441,
+      "ID_SystemText": 448,
       "Days_Begin": 20171013,
       "Days_End": 20171019,
       "ID_Gift": 1,
@@ -582,7 +594,7 @@
     },
     {
       "ID_DailyGift": 39,
-      "ID_SystemText": 441,
+      "ID_SystemText": 448,
       "Days_Begin": 20171020,
       "Days_End": 20171026,
       "ID_Gift": 1,
@@ -595,7 +607,7 @@
     },
     {
       "ID_DailyGift": 40,
-      "ID_SystemText": 442,
+      "ID_SystemText": 449,
       "Days_Begin": 20171027,
       "Days_End": 20171102,
       "ID_Gift": 1,
@@ -608,7 +620,7 @@
     },
     {
       "ID_DailyGift": 41,
-      "ID_SystemText": 442,
+      "ID_SystemText": 449,
       "Days_Begin": 20171103,
       "Days_End": 20171109,
       "ID_Gift": 1,
@@ -621,7 +633,7 @@
     },
     {
       "ID_DailyGift": 42,
-      "ID_SystemText": 446,
+      "ID_SystemText": 453,
       "Days_Begin": 20171123,
       "Days_End": 20171129,
       "ID_Gift": 1,
@@ -634,7 +646,7 @@
     },
     {
       "ID_DailyGift": 43,
-      "ID_SystemText": 446,
+      "ID_SystemText": 453,
       "Days_Begin": 20171201,
       "Days_End": 20171207,
       "ID_Gift": 1,
@@ -647,7 +659,7 @@
     },
     {
       "ID_DailyGift": 44,
-      "ID_SystemText": 447,
+      "ID_SystemText": 454,
       "Days_Begin": 20171215,
       "Days_End": 20171221,
       "ID_Gift": 1,
@@ -660,7 +672,7 @@
     },
     {
       "ID_DailyGift": 45,
-      "ID_SystemText": 439,
+      "ID_SystemText": 446,
       "Days_Begin": 20171215,
       "Days_End": 20171221,
       "ID_Gift": 1,
@@ -673,7 +685,7 @@
     },
     {
       "ID_DailyGift": 46,
-      "ID_SystemText": 439,
+      "ID_SystemText": 446,
       "Days_Begin": 20171222,
       "Days_End": 20171228,
       "ID_Gift": 1,
@@ -686,7 +698,7 @@
     },
     {
       "ID_DailyGift": 47,
-      "ID_SystemText": 448,
+      "ID_SystemText": 455,
       "Days_Begin": 20180209,
       "Days_End": 20180215,
       "ID_Gift": 1,
@@ -699,7 +711,7 @@
     },
     {
       "ID_DailyGift": 48,
-      "ID_SystemText": 448,
+      "ID_SystemText": 455,
       "Days_Begin": 20180216,
       "Days_End": 20180222,
       "ID_Gift": 1,
@@ -712,7 +724,7 @@
     },
     {
       "ID_DailyGift": 49,
-      "ID_SystemText": 450,
+      "ID_SystemText": 457,
       "Days_Begin": 20180216,
       "Days_End": 20180222,
       "ID_Gift": 1,
@@ -725,7 +737,7 @@
     },
     {
       "ID_DailyGift": 50,
-      "ID_SystemText": 429,
+      "ID_SystemText": 436,
       "Days_Begin": 20180223,
       "Days_End": 20180301,
       "ID_Gift": 1,
@@ -738,7 +750,7 @@
     },
     {
       "ID_DailyGift": 51,
-      "ID_SystemText": 429,
+      "ID_SystemText": 436,
       "Days_Begin": 20180302,
       "Days_End": 20180308,
       "ID_Gift": 1,
@@ -751,7 +763,7 @@
     },
     {
       "ID_DailyGift": 52,
-      "ID_SystemText": 449,
+      "ID_SystemText": 456,
       "Days_Begin": 20180323,
       "Days_End": 20180329,
       "ID_Gift": 1,
@@ -764,7 +776,7 @@
     },
     {
       "ID_DailyGift": 53,
-      "ID_SystemText": 449,
+      "ID_SystemText": 456,
       "Days_Begin": 20180330,
       "Days_End": 20180405,
       "ID_Gift": 1,
@@ -777,7 +789,7 @@
     },
     {
       "ID_DailyGift": 54,
-      "ID_SystemText": 451,
+      "ID_SystemText": 458,
       "Days_Begin": 20180427,
       "Days_End": 20180502,
       "ID_Gift": 1,
@@ -790,7 +802,7 @@
     },
     {
       "ID_DailyGift": 55,
-      "ID_SystemText": 451,
+      "ID_SystemText": 458,
       "Days_Begin": 20180503,
       "Days_End": 20180509,
       "ID_Gift": 1,
@@ -803,7 +815,7 @@
     },
     {
       "ID_DailyGift": 56,
-      "ID_SystemText": 430,
+      "ID_SystemText": 437,
       "Days_Begin": 20180511,
       "Days_End": 20180524,
       "ID_Gift": 1,
@@ -816,7 +828,7 @@
     },
     {
       "ID_DailyGift": 57,
-      "ID_SystemText": 430,
+      "ID_SystemText": 437,
       "Days_Begin": 20180511,
       "Days_End": 20180520,
       "ID_Gift": 1,
@@ -829,7 +841,7 @@
     },
     {
       "ID_DailyGift": 58,
-      "ID_SystemText": 430,
+      "ID_SystemText": 437,
       "Days_Begin": 20180521,
       "Days_End": 20180524,
       "ID_Gift": 1,
@@ -842,7 +854,7 @@
     },
     {
       "ID_DailyGift": 59,
-      "ID_SystemText": 452,
+      "ID_SystemText": 459,
       "Days_Begin": 20180629,
       "Days_End": 20180705,
       "ID_Gift": 1,
@@ -855,7 +867,7 @@
     },
     {
       "ID_DailyGift": 60,
-      "ID_SystemText": 452,
+      "ID_SystemText": 459,
       "Days_Begin": 20180706,
       "Days_End": 20180712,
       "ID_Gift": 1,
@@ -868,7 +880,7 @@
     },
     {
       "ID_DailyGift": 61,
-      "ID_SystemText": 453,
+      "ID_SystemText": 460,
       "Days_Begin": 20180727,
       "Days_End": 20180809,
       "ID_Gift": 1,
@@ -881,7 +893,7 @@
     },
     {
       "ID_DailyGift": 62,
-      "ID_SystemText": 454,
+      "ID_SystemText": 461,
       "Days_Begin": 20180810,
       "Days_End": 20180816,
       "ID_Gift": 1,
@@ -894,7 +906,7 @@
     },
     {
       "ID_DailyGift": 63,
-      "ID_SystemText": 454,
+      "ID_SystemText": 461,
       "Days_Begin": 20180817,
       "Days_End": 20180823,
       "ID_Gift": 1,
@@ -907,7 +919,7 @@
     },
     {
       "ID_DailyGift": 64,
-      "ID_SystemText": 449,
+      "ID_SystemText": 456,
       "Days_Begin": 20180914,
       "Days_End": 20180920,
       "ID_Gift": 1,
@@ -920,7 +932,7 @@
     },
     {
       "ID_DailyGift": 65,
-      "ID_SystemText": 449,
+      "ID_SystemText": 456,
       "Days_Begin": 20180921,
       "Days_End": 20180927,
       "ID_Gift": 1,
@@ -933,7 +945,7 @@
     },
     {
       "ID_DailyGift": 66,
-      "ID_SystemText": 449,
+      "ID_SystemText": 456,
       "Days_Begin": 20180921,
       "Days_End": 20180927,
       "ID_Gift": 1,
@@ -946,7 +958,7 @@
     },
     {
       "ID_DailyGift": 67,
-      "ID_SystemText": 455,
+      "ID_SystemText": 462,
       "Days_Begin": 20181026,
       "Days_End": 20181108,
       "ID_Gift": 1,
@@ -959,7 +971,7 @@
     },
     {
       "ID_DailyGift": 68,
-      "ID_SystemText": 431,
+      "ID_SystemText": 438,
       "Days_Begin": 20181026,
       "Days_End": 20181101,
       "ID_Gift": 1,
@@ -972,7 +984,7 @@
     },
     {
       "ID_DailyGift": 69,
-      "ID_SystemText": 431,
+      "ID_SystemText": 438,
       "Days_Begin": 20181102,
       "Days_End": 20181108,
       "ID_Gift": 1,
@@ -985,7 +997,7 @@
     },
     {
       "ID_DailyGift": 70,
-      "ID_SystemText": 456,
+      "ID_SystemText": 463,
       "Days_Begin": 20181109,
       "Days_End": 20181115,
       "ID_Gift": 1,
@@ -998,7 +1010,7 @@
     },
     {
       "ID_DailyGift": 71,
-      "ID_SystemText": 434,
+      "ID_SystemText": 441,
       "Days_Begin": 20181123,
       "Days_End": 20181129,
       "ID_Gift": 1,
@@ -1011,7 +1023,7 @@
     },
     {
       "ID_DailyGift": 72,
-      "ID_SystemText": 457,
+      "ID_SystemText": 464,
       "Days_Begin": 20181207,
       "Days_End": 20181220,
       "ID_Gift": 1,
@@ -1024,7 +1036,7 @@
     },
     {
       "ID_DailyGift": 73,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20181207,
       "Days_End": 20181207,
       "ID_Gift": 1,
@@ -1037,7 +1049,7 @@
     },
     {
       "ID_DailyGift": 74,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20181208,
       "Days_End": 20181208,
       "ID_Gift": 1,
@@ -1050,7 +1062,7 @@
     },
     {
       "ID_DailyGift": 75,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20181209,
       "Days_End": 20181209,
       "ID_Gift": 1,
@@ -1063,7 +1075,7 @@
     },
     {
       "ID_DailyGift": 76,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20181210,
       "Days_End": 20181210,
       "ID_Gift": 1,
@@ -1076,7 +1088,7 @@
     },
     {
       "ID_DailyGift": 77,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20181211,
       "Days_End": 20181211,
       "ID_Gift": 1,
@@ -1089,7 +1101,7 @@
     },
     {
       "ID_DailyGift": 78,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20181212,
       "Days_End": 20181212,
       "ID_Gift": 1,
@@ -1102,7 +1114,7 @@
     },
     {
       "ID_DailyGift": 79,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20181213,
       "Days_End": 20181213,
       "ID_Gift": 1,
@@ -1115,7 +1127,7 @@
     },
     {
       "ID_DailyGift": 80,
-      "ID_SystemText": 459,
+      "ID_SystemText": 466,
       "Days_Begin": 20181221,
       "Days_End": 20181227,
       "ID_Gift": 1,
@@ -1128,7 +1140,7 @@
     },
     {
       "ID_DailyGift": 81,
-      "ID_SystemText": 460,
+      "ID_SystemText": 467,
       "Days_Begin": 20181228,
       "Days_End": 20190104,
       "ID_Gift": 1,
@@ -1141,7 +1153,7 @@
     },
     {
       "ID_DailyGift": 82,
-      "ID_SystemText": 460,
+      "ID_SystemText": 467,
       "Days_Begin": 20190105,
       "Days_End": 20190110,
       "ID_Gift": 1,
@@ -1154,7 +1166,7 @@
     },
     {
       "ID_DailyGift": 83,
-      "ID_SystemText": 449,
+      "ID_SystemText": 456,
       "Days_Begin": 20190125,
       "Days_End": 20190131,
       "ID_Gift": 1,
@@ -1167,7 +1179,7 @@
     },
     {
       "ID_DailyGift": 84,
-      "ID_SystemText": 449,
+      "ID_SystemText": 456,
       "Days_Begin": 20190201,
       "Days_End": 20190207,
       "ID_Gift": 1,
@@ -1180,7 +1192,7 @@
     },
     {
       "ID_DailyGift": 85,
-      "ID_SystemText": 450,
+      "ID_SystemText": 457,
       "Days_Begin": 20190215,
       "Days_End": 20190221,
       "ID_Gift": 1,
@@ -1193,7 +1205,7 @@
     },
     {
       "ID_DailyGift": 86,
-      "ID_SystemText": 461,
+      "ID_SystemText": 468,
       "Days_Begin": 20190301,
       "Days_End": 20190307,
       "ID_Gift": 1,
@@ -1206,7 +1218,7 @@
     },
     {
       "ID_DailyGift": 87,
-      "ID_SystemText": 462,
+      "ID_SystemText": 469,
       "Days_Begin": 20190329,
       "Days_End": 20190411,
       "ID_Gift": 1,
@@ -1219,7 +1231,7 @@
     },
     {
       "ID_DailyGift": 88,
-      "ID_SystemText": 463,
+      "ID_SystemText": 470,
       "Days_Begin": 20190419,
       "Days_End": 20190425,
       "ID_Gift": 1,
@@ -1232,7 +1244,7 @@
     },
     {
       "ID_DailyGift": 89,
-      "ID_SystemText": 464,
+      "ID_SystemText": 471,
       "Days_Begin": 20190426,
       "Days_End": 20190502,
       "ID_Gift": 1,
@@ -1245,7 +1257,7 @@
     },
     {
       "ID_DailyGift": 90,
-      "ID_SystemText": 464,
+      "ID_SystemText": 471,
       "Days_Begin": 20190503,
       "Days_End": 20190509,
       "ID_Gift": 1,
@@ -1258,7 +1270,7 @@
     },
     {
       "ID_DailyGift": 91,
-      "ID_SystemText": 415,
+      "ID_SystemText": 422,
       "Days_Begin": 20190517,
       "Days_End": 20190523,
       "ID_Gift": 1,
@@ -1271,7 +1283,7 @@
     },
     {
       "ID_DailyGift": 92,
-      "ID_SystemText": 415,
+      "ID_SystemText": 422,
       "Days_Begin": 20190517,
       "Days_End": 20190523,
       "ID_Gift": 1,
@@ -1284,7 +1296,7 @@
     },
     {
       "ID_DailyGift": 93,
-      "ID_SystemText": 415,
+      "ID_SystemText": 422,
       "Days_Begin": 20190524,
       "Days_End": 20190530,
       "ID_Gift": 1,
@@ -1297,7 +1309,7 @@
     },
     {
       "ID_DailyGift": 94,
-      "ID_SystemText": 415,
+      "ID_SystemText": 422,
       "Days_Begin": 20190524,
       "Days_End": 20190530,
       "ID_Gift": 1,
@@ -1310,7 +1322,7 @@
     },
     {
       "ID_DailyGift": 95,
-      "ID_SystemText": 465,
+      "ID_SystemText": 472,
       "Days_Begin": 20190607,
       "Days_End": 20190620,
       "ID_Gift": 1,
@@ -1323,7 +1335,7 @@
     },
     {
       "ID_DailyGift": 96,
-      "ID_SystemText": 452,
+      "ID_SystemText": 459,
       "Days_Begin": 20190621,
       "Days_End": 20190627,
       "ID_Gift": 1,
@@ -1336,7 +1348,7 @@
     },
     {
       "ID_DailyGift": 97,
-      "ID_SystemText": 452,
+      "ID_SystemText": 459,
       "Days_Begin": 20190628,
       "Days_End": 20190704,
       "ID_Gift": 1,
@@ -1349,7 +1361,7 @@
     },
     {
       "ID_DailyGift": 98,
-      "ID_SystemText": 466,
+      "ID_SystemText": 473,
       "Days_Begin": 20190712,
       "Days_End": 20190718,
       "ID_Gift": 1,
@@ -1362,7 +1374,7 @@
     },
     {
       "ID_DailyGift": 99,
-      "ID_SystemText": 466,
+      "ID_SystemText": 473,
       "Days_Begin": 20190719,
       "Days_End": 20190725,
       "ID_Gift": 1,
@@ -1375,7 +1387,7 @@
     },
     {
       "ID_DailyGift": 100,
-      "ID_SystemText": 466,
+      "ID_SystemText": 473,
       "Days_Begin": 20190719,
       "Days_End": 20190725,
       "ID_Gift": 1,
@@ -1388,7 +1400,7 @@
     },
     {
       "ID_DailyGift": 101,
-      "ID_SystemText": 453,
+      "ID_SystemText": 460,
       "Days_Begin": 20190802,
       "Days_End": 20190815,
       "ID_Gift": 1,
@@ -1401,7 +1413,7 @@
     },
     {
       "ID_DailyGift": 102,
-      "ID_SystemText": 432,
+      "ID_SystemText": 439,
       "Days_Begin": 20190816,
       "Days_End": 20190829,
       "ID_Gift": 1,
@@ -1414,7 +1426,7 @@
     },
     {
       "ID_DailyGift": 103,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20190823,
       "Days_End": 20190823,
       "ID_Gift": 1,
@@ -1427,7 +1439,7 @@
     },
     {
       "ID_DailyGift": 104,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20190824,
       "Days_End": 20190824,
       "ID_Gift": 1,
@@ -1440,7 +1452,7 @@
     },
     {
       "ID_DailyGift": 105,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20190825,
       "Days_End": 20190825,
       "ID_Gift": 1,
@@ -1453,7 +1465,7 @@
     },
     {
       "ID_DailyGift": 106,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20190826,
       "Days_End": 20190826,
       "ID_Gift": 1,
@@ -1466,7 +1478,7 @@
     },
     {
       "ID_DailyGift": 107,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20190827,
       "Days_End": 20190827,
       "ID_Gift": 1,
@@ -1479,7 +1491,7 @@
     },
     {
       "ID_DailyGift": 108,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20190828,
       "Days_End": 20190828,
       "ID_Gift": 1,
@@ -1492,7 +1504,7 @@
     },
     {
       "ID_DailyGift": 109,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20190829,
       "Days_End": 20190829,
       "ID_Gift": 1,
@@ -1505,7 +1517,7 @@
     },
     {
       "ID_DailyGift": 110,
-      "ID_SystemText": 467,
+      "ID_SystemText": 474,
       "Days_Begin": 20190920,
       "Days_End": 20190926,
       "ID_Gift": 1,
@@ -1518,7 +1530,7 @@
     },
     {
       "ID_DailyGift": 111,
-      "ID_SystemText": 468,
+      "ID_SystemText": 475,
       "Days_Begin": 20191011,
       "Days_End": 20191017,
       "ID_Gift": 1,
@@ -1531,7 +1543,7 @@
     },
     {
       "ID_DailyGift": 112,
-      "ID_SystemText": 468,
+      "ID_SystemText": 475,
       "Days_Begin": 20191018,
       "Days_End": 20191024,
       "ID_Gift": 1,
@@ -1544,7 +1556,7 @@
     },
     {
       "ID_DailyGift": 113,
-      "ID_SystemText": 469,
+      "ID_SystemText": 476,
       "Days_Begin": 20191025,
       "Days_End": 20191107,
       "ID_Gift": 1,
@@ -1557,7 +1569,7 @@
     },
     {
       "ID_DailyGift": 114,
-      "ID_SystemText": 470,
+      "ID_SystemText": 477,
       "Days_Begin": 20191115,
       "Days_End": 20191121,
       "ID_Gift": 1,
@@ -1570,7 +1582,7 @@
     },
     {
       "ID_DailyGift": 115,
-      "ID_SystemText": 471,
+      "ID_SystemText": 478,
       "Days_Begin": 20191122,
       "Days_End": 20191128,
       "ID_Gift": 1,
@@ -1583,7 +1595,7 @@
     },
     {
       "ID_DailyGift": 116,
-      "ID_SystemText": 471,
+      "ID_SystemText": 478,
       "Days_Begin": 20191122,
       "Days_End": 20191127,
       "ID_Gift": 1,
@@ -1596,7 +1608,7 @@
     },
     {
       "ID_DailyGift": 117,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20191129,
       "Days_End": 20191129,
       "ID_Gift": 1,
@@ -1609,7 +1621,7 @@
     },
     {
       "ID_DailyGift": 118,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20191130,
       "Days_End": 20191130,
       "ID_Gift": 1,
@@ -1622,7 +1634,7 @@
     },
     {
       "ID_DailyGift": 119,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20191201,
       "Days_End": 20191201,
       "ID_Gift": 1,
@@ -1635,7 +1647,7 @@
     },
     {
       "ID_DailyGift": 120,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20191202,
       "Days_End": 20191202,
       "ID_Gift": 1,
@@ -1648,7 +1660,7 @@
     },
     {
       "ID_DailyGift": 121,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20191203,
       "Days_End": 20191203,
       "ID_Gift": 1,
@@ -1661,7 +1673,7 @@
     },
     {
       "ID_DailyGift": 122,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20191204,
       "Days_End": 20191204,
       "ID_Gift": 1,
@@ -1674,7 +1686,7 @@
     },
     {
       "ID_DailyGift": 123,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20191205,
       "Days_End": 20191205,
       "ID_Gift": 1,
@@ -1687,7 +1699,7 @@
     },
     {
       "ID_DailyGift": 124,
-      "ID_SystemText": 459,
+      "ID_SystemText": 466,
       "Days_Begin": 20191213,
       "Days_End": 20191219,
       "ID_Gift": 1,
@@ -1700,7 +1712,7 @@
     },
     {
       "ID_DailyGift": 125,
-      "ID_SystemText": 460,
+      "ID_SystemText": 467,
       "Days_Begin": 20191227,
       "Days_End": 20200106,
       "ID_Gift": 1,
@@ -1713,7 +1725,7 @@
     },
     {
       "ID_DailyGift": 126,
-      "ID_SystemText": 460,
+      "ID_SystemText": 467,
       "Days_Begin": 20200107,
       "Days_End": 20200109,
       "ID_Gift": 1,
@@ -1726,7 +1738,7 @@
     },
     {
       "ID_DailyGift": 127,
-      "ID_SystemText": 474,
+      "ID_SystemText": 481,
       "Days_Begin": 20200117,
       "Days_End": 20200130,
       "ID_Gift": 1,
@@ -1739,7 +1751,7 @@
     },
     {
       "ID_DailyGift": 128,
-      "ID_SystemText": 474,
+      "ID_SystemText": 481,
       "Days_Begin": 20200124,
       "Days_End": 20200130,
       "ID_Gift": 1,
@@ -1752,7 +1764,7 @@
     },
     {
       "ID_DailyGift": 129,
-      "ID_SystemText": 450,
+      "ID_SystemText": 457,
       "Days_Begin": 20200214,
       "Days_End": 20200220,
       "ID_Gift": 1,
@@ -1765,7 +1777,7 @@
     },
     {
       "ID_DailyGift": 130,
-      "ID_SystemText": 461,
+      "ID_SystemText": 468,
       "Days_Begin": 20200221,
       "Days_End": 20200227,
       "ID_Gift": 1,
@@ -1778,7 +1790,7 @@
     },
     {
       "ID_DailyGift": 131,
-      "ID_SystemText": 461,
+      "ID_SystemText": 468,
       "Days_Begin": 20200228,
       "Days_End": 20200305,
       "ID_Gift": 1,
@@ -1791,7 +1803,7 @@
     },
     {
       "ID_DailyGift": 132,
-      "ID_SystemText": 472,
+      "ID_SystemText": 479,
       "Days_Begin": 20200313,
       "Days_End": 20200319,
       "ID_Gift": 1,
@@ -1804,7 +1816,7 @@
     },
     {
       "ID_DailyGift": 133,
-      "ID_SystemText": 472,
+      "ID_SystemText": 479,
       "Days_Begin": 20200320,
       "Days_End": 20200326,
       "ID_Gift": 1,
@@ -1817,7 +1829,7 @@
     },
     {
       "ID_DailyGift": 134,
-      "ID_SystemText": 449,
+      "ID_SystemText": 456,
       "Days_Begin": 20200403,
       "Days_End": 20200409,
       "ID_Gift": 1,
@@ -1830,7 +1842,7 @@
     },
     {
       "ID_DailyGift": 135,
-      "ID_SystemText": 449,
+      "ID_SystemText": 456,
       "Days_Begin": 20200403,
       "Days_End": 20200409,
       "ID_Gift": 1,
@@ -1843,7 +1855,7 @@
     },
     {
       "ID_DailyGift": 136,
-      "ID_SystemText": 449,
+      "ID_SystemText": 456,
       "Days_Begin": 20200410,
       "Days_End": 20200416,
       "ID_Gift": 1,
@@ -1856,7 +1868,7 @@
     },
     {
       "ID_DailyGift": 137,
-      "ID_SystemText": 473,
+      "ID_SystemText": 480,
       "Days_Begin": 20200424,
       "Days_End": 20200507,
       "ID_Gift": 1,
@@ -1869,7 +1881,7 @@
     },
     {
       "ID_DailyGift": 138,
-      "ID_SystemText": 433,
+      "ID_SystemText": 440,
       "Days_Begin": 20200515,
       "Days_End": 20200528,
       "ID_Gift": 1,
@@ -1882,7 +1894,7 @@
     },
     {
       "ID_DailyGift": 139,
-      "ID_SystemText": 452,
+      "ID_SystemText": 459,
       "Days_Begin": 20200605,
       "Days_End": 20200611,
       "ID_Gift": 1,
@@ -1895,7 +1907,7 @@
     },
     {
       "ID_DailyGift": 140,
-      "ID_SystemText": 452,
+      "ID_SystemText": 459,
       "Days_Begin": 20200605,
       "Days_End": 20200611,
       "ID_Gift": 1,
@@ -1908,7 +1920,7 @@
     },
     {
       "ID_DailyGift": 141,
-      "ID_SystemText": 452,
+      "ID_SystemText": 459,
       "Days_Begin": 20200612,
       "Days_End": 20200618,
       "ID_Gift": 1,
@@ -1921,7 +1933,7 @@
     },
     {
       "ID_DailyGift": 142,
-      "ID_SystemText": 452,
+      "ID_SystemText": 459,
       "Days_Begin": 20200612,
       "Days_End": 20200618,
       "ID_Gift": 1,
@@ -1934,7 +1946,7 @@
     },
     {
       "ID_DailyGift": 143,
-      "ID_SystemText": 465,
+      "ID_SystemText": 472,
       "Days_Begin": 20200619,
       "Days_End": 20200702,
       "ID_Gift": 1,
@@ -1947,7 +1959,7 @@
     },
     {
       "ID_DailyGift": 144,
-      "ID_SystemText": 466,
+      "ID_SystemText": 473,
       "Days_Begin": 20200703,
       "Days_End": 20200709,
       "ID_Gift": 1,
@@ -1960,7 +1972,7 @@
     },
     {
       "ID_DailyGift": 145,
-      "ID_SystemText": 466,
+      "ID_SystemText": 473,
       "Days_Begin": 20200723,
       "Days_End": 20200730,
       "ID_Gift": 1,
@@ -1973,7 +1985,7 @@
     },
     {
       "ID_DailyGift": 146,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20200918,
       "Days_End": 20200918,
       "ID_Gift": 1,
@@ -1986,7 +1998,7 @@
     },
     {
       "ID_DailyGift": 147,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20200919,
       "Days_End": 20200919,
       "ID_Gift": 1,
@@ -1999,7 +2011,7 @@
     },
     {
       "ID_DailyGift": 148,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20200920,
       "Days_End": 20200920,
       "ID_Gift": 1,
@@ -2012,7 +2024,7 @@
     },
     {
       "ID_DailyGift": 149,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20200921,
       "Days_End": 20200921,
       "ID_Gift": 1,
@@ -2025,7 +2037,7 @@
     },
     {
       "ID_DailyGift": 150,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20200922,
       "Days_End": 20200922,
       "ID_Gift": 1,
@@ -2038,7 +2050,7 @@
     },
     {
       "ID_DailyGift": 151,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20200923,
       "Days_End": 20200923,
       "ID_Gift": 1,
@@ -2051,7 +2063,7 @@
     },
     {
       "ID_DailyGift": 152,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20200924,
       "Days_End": 20200924,
       "ID_Gift": 1,
@@ -2064,7 +2076,7 @@
     },
     {
       "ID_DailyGift": 153,
-      "ID_SystemText": 467,
+      "ID_SystemText": 474,
       "Days_Begin": 20200918,
       "Days_End": 20200924,
       "ID_Gift": 1,
@@ -2077,7 +2089,7 @@
     },
     {
       "ID_DailyGift": 154,
-      "ID_SystemText": 439,
+      "ID_SystemText": 446,
       "Days_Begin": 20201002,
       "Days_End": 20201008,
       "ID_Gift": 1,
@@ -2090,7 +2102,7 @@
     },
     {
       "ID_DailyGift": 155,
-      "ID_SystemText": 468,
+      "ID_SystemText": 475,
       "Days_Begin": 20201016,
       "Days_End": 20201022,
       "ID_Gift": 1,
@@ -2103,7 +2115,7 @@
     },
     {
       "ID_DailyGift": 156,
-      "ID_SystemText": 468,
+      "ID_SystemText": 475,
       "Days_Begin": 20201023,
       "Days_End": 20201029,
       "ID_Gift": 1,
@@ -2116,7 +2128,7 @@
     },
     {
       "ID_DailyGift": 157,
-      "ID_SystemText": 475,
+      "ID_SystemText": 482,
       "Days_Begin": 20201113,
       "Days_End": 20201119,
       "ID_Gift": 1,
@@ -2129,7 +2141,7 @@
     },
     {
       "ID_DailyGift": 158,
-      "ID_SystemText": 475,
+      "ID_SystemText": 482,
       "Days_Begin": 20201113,
       "Days_End": 20201119,
       "ID_Gift": 1,
@@ -2142,7 +2154,7 @@
     },
     {
       "ID_DailyGift": 159,
-      "ID_SystemText": 475,
+      "ID_SystemText": 482,
       "Days_Begin": 20201120,
       "Days_End": 20201126,
       "ID_Gift": 1,
@@ -2155,7 +2167,7 @@
     },
     {
       "ID_DailyGift": 160,
-      "ID_SystemText": 475,
+      "ID_SystemText": 482,
       "Days_Begin": 20201120,
       "Days_End": 20201126,
       "ID_Gift": 1,
@@ -2168,7 +2180,7 @@
     },
     {
       "ID_DailyGift": 161,
-      "ID_SystemText": 475,
+      "ID_SystemText": 482,
       "Days_Begin": 20201120,
       "Days_End": 20201126,
       "ID_Gift": 1,
@@ -2181,7 +2193,7 @@
     },
     {
       "ID_DailyGift": 162,
-      "ID_SystemText": 476,
+      "ID_SystemText": 483,
       "Days_Begin": 20201127,
       "Days_End": 20201203,
       "ID_Gift": 1,
@@ -2194,7 +2206,7 @@
     },
     {
       "ID_DailyGift": 163,
-      "ID_SystemText": 476,
+      "ID_SystemText": 483,
       "Days_Begin": 20201127,
       "Days_End": 20201202,
       "ID_Gift": 1,
@@ -2207,7 +2219,7 @@
     },
     {
       "ID_DailyGift": 164,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20201204,
       "Days_End": 20201204,
       "ID_Gift": 1,
@@ -2220,7 +2232,7 @@
     },
     {
       "ID_DailyGift": 165,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20201205,
       "Days_End": 20201205,
       "ID_Gift": 1,
@@ -2233,7 +2245,7 @@
     },
     {
       "ID_DailyGift": 166,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20201206,
       "Days_End": 20201206,
       "ID_Gift": 1,
@@ -2246,7 +2258,7 @@
     },
     {
       "ID_DailyGift": 167,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20201207,
       "Days_End": 20201207,
       "ID_Gift": 1,
@@ -2259,7 +2271,7 @@
     },
     {
       "ID_DailyGift": 168,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20201208,
       "Days_End": 20201208,
       "ID_Gift": 1,
@@ -2272,7 +2284,7 @@
     },
     {
       "ID_DailyGift": 169,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20201209,
       "Days_End": 20201209,
       "ID_Gift": 1,
@@ -2285,7 +2297,7 @@
     },
     {
       "ID_DailyGift": 170,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20201210,
       "Days_End": 20201210,
       "ID_Gift": 1,
@@ -2298,7 +2310,7 @@
     },
     {
       "ID_DailyGift": 171,
-      "ID_SystemText": 459,
+      "ID_SystemText": 466,
       "Days_Begin": 20201211,
       "Days_End": 20201217,
       "ID_Gift": 1,
@@ -2311,7 +2323,7 @@
     },
     {
       "ID_DailyGift": 172,
-      "ID_SystemText": 459,
+      "ID_SystemText": 466,
       "Days_Begin": 20201218,
       "Days_End": 20201224,
       "ID_Gift": 1,
@@ -2324,7 +2336,7 @@
     },
     {
       "ID_DailyGift": 173,
-      "ID_SystemText": 460,
+      "ID_SystemText": 467,
       "Days_Begin": 20201231,
       "Days_End": 20210107,
       "ID_Gift": 1,
@@ -2337,7 +2349,7 @@
     },
     {
       "ID_DailyGift": 174,
-      "ID_SystemText": 477,
+      "ID_SystemText": 484,
       "Days_Begin": 20210122,
       "Days_End": 20210128,
       "ID_Gift": 1,
@@ -2350,7 +2362,7 @@
     },
     {
       "ID_DailyGift": 175,
-      "ID_SystemText": 450,
+      "ID_SystemText": 457,
       "Days_Begin": 20210211,
       "Days_End": 20210218,
       "ID_Gift": 1,
@@ -2363,7 +2375,7 @@
     },
     {
       "ID_DailyGift": 176,
-      "ID_SystemText": 461,
+      "ID_SystemText": 468,
       "Days_Begin": 20210305,
       "Days_End": 20210311,
       "ID_Gift": 1,
@@ -2376,7 +2388,7 @@
     },
     {
       "ID_DailyGift": 177,
-      "ID_SystemText": 478,
+      "ID_SystemText": 485,
       "Days_Begin": 20210402,
       "Days_End": 20210408,
       "ID_Gift": 1,
@@ -2389,7 +2401,7 @@
     },
     {
       "ID_DailyGift": 178,
-      "ID_SystemText": 478,
+      "ID_SystemText": 485,
       "Days_Begin": 20210402,
       "Days_End": 20210408,
       "ID_Gift": 1,
@@ -2402,7 +2414,7 @@
     },
     {
       "ID_DailyGift": 179,
-      "ID_SystemText": 479,
+      "ID_SystemText": 486,
       "Days_Begin": 20210416,
       "Days_End": 20210422,
       "ID_Gift": 1,
@@ -2415,7 +2427,7 @@
     },
     {
       "ID_DailyGift": 180,
-      "ID_SystemText": 480,
+      "ID_SystemText": 487,
       "Days_Begin": 20210423,
       "Days_End": 20210428,
       "ID_Gift": 1,
@@ -2428,7 +2440,7 @@
     },
     {
       "ID_DailyGift": 181,
-      "ID_SystemText": 481,
+      "ID_SystemText": 488,
       "Days_Begin": 20210429,
       "Days_End": 20210506,
       "ID_Gift": 1,
@@ -2441,7 +2453,7 @@
     },
     {
       "ID_DailyGift": 182,
-      "ID_SystemText": 481,
+      "ID_SystemText": 488,
       "Days_Begin": 20210507,
       "Days_End": 20210513,
       "ID_Gift": 1,
@@ -2454,7 +2466,7 @@
     },
     {
       "ID_DailyGift": 183,
-      "ID_SystemText": 482,
+      "ID_SystemText": 489,
       "Days_Begin": 20210514,
       "Days_End": 20210527,
       "ID_Gift": 1,
@@ -2467,7 +2479,7 @@
     },
     {
       "ID_DailyGift": 184,
-      "ID_SystemText": 452,
+      "ID_SystemText": 459,
       "Days_Begin": 20210528,
       "Days_End": 20210610,
       "ID_Gift": 1,
@@ -2480,7 +2492,7 @@
     },
     {
       "ID_DailyGift": 185,
-      "ID_SystemText": 452,
+      "ID_SystemText": 459,
       "Days_Begin": 20210528,
       "Days_End": 20210610,
       "ID_Gift": 1,
@@ -2493,7 +2505,7 @@
     },
     {
       "ID_DailyGift": 186,
-      "ID_SystemText": 466,
+      "ID_SystemText": 473,
       "Days_Begin": 20210709,
       "Days_End": 20210715,
       "ID_Gift": 1,
@@ -2506,7 +2518,7 @@
     },
     {
       "ID_DailyGift": 187,
-      "ID_SystemText": 483,
+      "ID_SystemText": 490,
       "Days_Begin": 20210716,
       "Days_End": 20210721,
       "ID_Gift": 1,
@@ -2519,7 +2531,7 @@
     },
     {
       "ID_DailyGift": 188,
-      "ID_SystemText": 484,
+      "ID_SystemText": 491,
       "Days_Begin": 20210730,
       "Days_End": 20210805,
       "ID_Gift": 1,
@@ -2532,7 +2544,7 @@
     },
     {
       "ID_DailyGift": 189,
-      "ID_SystemText": 484,
+      "ID_SystemText": 491,
       "Days_Begin": 20210730,
       "Days_End": 20210805,
       "ID_Gift": 1,
@@ -2545,7 +2557,7 @@
     },
     {
       "ID_DailyGift": 190,
-      "ID_SystemText": 439,
+      "ID_SystemText": 446,
       "Days_Begin": 20210827,
       "Days_End": 20210909,
       "ID_Gift": 1,
@@ -2558,7 +2570,7 @@
     },
     {
       "ID_DailyGift": 191,
-      "ID_SystemText": 467,
+      "ID_SystemText": 474,
       "Days_Begin": 20211001,
       "Days_End": 20211007,
       "ID_Gift": 1,
@@ -2571,7 +2583,7 @@
     },
     {
       "ID_DailyGift": 192,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20211001,
       "Days_End": 20211001,
       "ID_Gift": 1,
@@ -2584,7 +2596,7 @@
     },
     {
       "ID_DailyGift": 193,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20211002,
       "Days_End": 20211002,
       "ID_Gift": 1,
@@ -2597,7 +2609,7 @@
     },
     {
       "ID_DailyGift": 194,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20211003,
       "Days_End": 20211003,
       "ID_Gift": 1,
@@ -2610,7 +2622,7 @@
     },
     {
       "ID_DailyGift": 195,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20211004,
       "Days_End": 20211004,
       "ID_Gift": 1,
@@ -2623,7 +2635,7 @@
     },
     {
       "ID_DailyGift": 196,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20211005,
       "Days_End": 20211005,
       "ID_Gift": 1,
@@ -2636,7 +2648,7 @@
     },
     {
       "ID_DailyGift": 197,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20211006,
       "Days_End": 20211006,
       "ID_Gift": 1,
@@ -2649,7 +2661,7 @@
     },
     {
       "ID_DailyGift": 198,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20211007,
       "Days_End": 20211007,
       "ID_Gift": 1,
@@ -2662,7 +2674,7 @@
     },
     {
       "ID_DailyGift": 199,
-      "ID_SystemText": 468,
+      "ID_SystemText": 475,
       "Days_Begin": 20211015,
       "Days_End": 20211021,
       "ID_Gift": 1,
@@ -2675,7 +2687,7 @@
     },
     {
       "ID_DailyGift": 200,
-      "ID_SystemText": 468,
+      "ID_SystemText": 475,
       "Days_Begin": 20211022,
       "Days_End": 20211028,
       "ID_Gift": 1,
@@ -2688,7 +2700,7 @@
     },
     {
       "ID_DailyGift": 201,
-      "ID_SystemText": 449,
+      "ID_SystemText": 456,
       "Days_Begin": 20211119,
       "Days_End": 20211125,
       "ID_Gift": 1,
@@ -2701,7 +2713,7 @@
     },
     {
       "ID_DailyGift": 202,
-      "ID_SystemText": 449,
+      "ID_SystemText": 456,
       "Days_Begin": 20211119,
       "Days_End": 20211125,
       "ID_Gift": 1,
@@ -2714,7 +2726,7 @@
     },
     {
       "ID_DailyGift": 203,
-      "ID_SystemText": 485,
+      "ID_SystemText": 492,
       "Days_Begin": 20211126,
       "Days_End": 20211209,
       "ID_Gift": 1,
@@ -2727,7 +2739,7 @@
     },
     {
       "ID_DailyGift": 204,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20211203,
       "Days_End": 20211203,
       "ID_Gift": 1,
@@ -2740,7 +2752,7 @@
     },
     {
       "ID_DailyGift": 205,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20211204,
       "Days_End": 20211204,
       "ID_Gift": 1,
@@ -2753,7 +2765,7 @@
     },
     {
       "ID_DailyGift": 206,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20211205,
       "Days_End": 20211205,
       "ID_Gift": 1,
@@ -2766,7 +2778,7 @@
     },
     {
       "ID_DailyGift": 207,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20211206,
       "Days_End": 20211206,
       "ID_Gift": 1,
@@ -2779,7 +2791,7 @@
     },
     {
       "ID_DailyGift": 208,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20211207,
       "Days_End": 20211207,
       "ID_Gift": 1,
@@ -2792,7 +2804,7 @@
     },
     {
       "ID_DailyGift": 209,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20211208,
       "Days_End": 20211208,
       "ID_Gift": 1,
@@ -2805,7 +2817,7 @@
     },
     {
       "ID_DailyGift": 210,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20211209,
       "Days_End": 20211209,
       "ID_Gift": 1,
@@ -2818,7 +2830,7 @@
     },
     {
       "ID_DailyGift": 211,
-      "ID_SystemText": 486,
+      "ID_SystemText": 493,
       "Days_Begin": 20211210,
       "Days_End": 20211216,
       "ID_Gift": 1,
@@ -2831,7 +2843,7 @@
     },
     {
       "ID_DailyGift": 212,
-      "ID_SystemText": 459,
+      "ID_SystemText": 466,
       "Days_Begin": 20211217,
       "Days_End": 20211223,
       "ID_Gift": 1,
@@ -2844,7 +2856,7 @@
     },
     {
       "ID_DailyGift": 213,
-      "ID_SystemText": 459,
+      "ID_SystemText": 466,
       "Days_Begin": 20211224,
       "Days_End": 20211229,
       "ID_Gift": 1,
@@ -2857,7 +2869,7 @@
     },
     {
       "ID_DailyGift": 214,
-      "ID_SystemText": 460,
+      "ID_SystemText": 467,
       "Days_Begin": 20211230,
       "Days_End": 20220106,
       "ID_Gift": 1,
@@ -2870,7 +2882,7 @@
     },
     {
       "ID_DailyGift": 215,
-      "ID_SystemText": 477,
+      "ID_SystemText": 484,
       "Days_Begin": 20220114,
       "Days_End": 20220120,
       "ID_Gift": 1,
@@ -2883,7 +2895,7 @@
     },
     {
       "ID_DailyGift": 216,
-      "ID_SystemText": 477,
+      "ID_SystemText": 484,
       "Days_Begin": 20220121,
       "Days_End": 20220127,
       "ID_Gift": 1,
@@ -2896,7 +2908,7 @@
     },
     {
       "ID_DailyGift": 217,
-      "ID_SystemText": 450,
+      "ID_SystemText": 457,
       "Days_Begin": 20220204,
       "Days_End": 20220210,
       "ID_Gift": 1,
@@ -2909,7 +2921,7 @@
     },
     {
       "ID_DailyGift": 218,
-      "ID_SystemText": 461,
+      "ID_SystemText": 468,
       "Days_Begin": 20220225,
       "Days_End": 20220303,
       "ID_Gift": 1,
@@ -2922,7 +2934,7 @@
     },
     {
       "ID_DailyGift": 219,
-      "ID_SystemText": 478,
+      "ID_SystemText": 485,
       "Days_Begin": 20220318,
       "Days_End": 20220324,
       "ID_Gift": 1,
@@ -2935,7 +2947,7 @@
     },
     {
       "ID_DailyGift": 220,
-      "ID_SystemText": 478,
+      "ID_SystemText": 485,
       "Days_Begin": 20220318,
       "Days_End": 20220324,
       "ID_Gift": 1,
@@ -2948,7 +2960,7 @@
     },
     {
       "ID_DailyGift": 221,
-      "ID_SystemText": 478,
+      "ID_SystemText": 485,
       "Days_Begin": 20220325,
       "Days_End": 20220331,
       "ID_Gift": 1,
@@ -2961,7 +2973,7 @@
     },
     {
       "ID_DailyGift": 222,
-      "ID_SystemText": 487,
+      "ID_SystemText": 494,
       "Days_Begin": 20220415,
       "Days_End": 20220421,
       "ID_Gift": 1,
@@ -2974,7 +2986,7 @@
     },
     {
       "ID_DailyGift": 223,
-      "ID_SystemText": 488,
+      "ID_SystemText": 495,
       "Days_Begin": 20220429,
       "Days_End": 20220512,
       "ID_Gift": 1,
@@ -2987,7 +2999,7 @@
     },
     {
       "ID_DailyGift": 224,
-      "ID_SystemText": 489,
+      "ID_SystemText": 496,
       "Days_Begin": 20220527,
       "Days_End": 20220602,
       "ID_Gift": 1,
@@ -3000,7 +3012,7 @@
     },
     {
       "ID_DailyGift": 225,
-      "ID_SystemText": 489,
+      "ID_SystemText": 496,
       "Days_Begin": 20220603,
       "Days_End": 20220609,
       "ID_Gift": 1,
@@ -3013,7 +3025,7 @@
     },
     {
       "ID_DailyGift": 226,
-      "ID_SystemText": 452,
+      "ID_SystemText": 459,
       "Days_Begin": 20220610,
       "Days_End": 20220623,
       "ID_Gift": 1,
@@ -3026,7 +3038,7 @@
     },
     {
       "ID_DailyGift": 227,
-      "ID_SystemText": 452,
+      "ID_SystemText": 459,
       "Days_Begin": 20220610,
       "Days_End": 20220623,
       "ID_Gift": 1,
@@ -3039,7 +3051,7 @@
     },
     {
       "ID_DailyGift": 228,
-      "ID_SystemText": 490,
+      "ID_SystemText": 497,
       "Days_Begin": 20220624,
       "Days_End": 20220630,
       "ID_Gift": 1,
@@ -3052,7 +3064,7 @@
     },
     {
       "ID_DailyGift": 229,
-      "ID_SystemText": 490,
+      "ID_SystemText": 497,
       "Days_Begin": 20220701,
       "Days_End": 20220707,
       "ID_Gift": 1,
@@ -3065,7 +3077,7 @@
     },
     {
       "ID_DailyGift": 230,
-      "ID_SystemText": 466,
+      "ID_SystemText": 473,
       "Days_Begin": 20220715,
       "Days_End": 20220721,
       "ID_Gift": 1,
@@ -3078,7 +3090,7 @@
     },
     {
       "ID_DailyGift": 231,
-      "ID_SystemText": 466,
+      "ID_SystemText": 473,
       "Days_Begin": 20220715,
       "Days_End": 20220721,
       "ID_Gift": 1,
@@ -3091,7 +3103,7 @@
     },
     {
       "ID_DailyGift": 232,
-      "ID_SystemText": 466,
+      "ID_SystemText": 473,
       "Days_Begin": 20220722,
       "Days_End": 20220728,
       "ID_Gift": 1,
@@ -3104,7 +3116,7 @@
     },
     {
       "ID_DailyGift": 233,
-      "ID_SystemText": 491,
+      "ID_SystemText": 498,
       "Days_Begin": 20220811,
       "Days_End": 20220825,
       "ID_Gift": 1,
@@ -3117,7 +3129,7 @@
     },
     {
       "ID_DailyGift": 234,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20220916,
       "Days_End": 20220916,
       "ID_Gift": 1,
@@ -3130,7 +3142,7 @@
     },
     {
       "ID_DailyGift": 235,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20220917,
       "Days_End": 20220917,
       "ID_Gift": 1,
@@ -3143,7 +3155,7 @@
     },
     {
       "ID_DailyGift": 236,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20220918,
       "Days_End": 20220918,
       "ID_Gift": 1,
@@ -3156,7 +3168,7 @@
     },
     {
       "ID_DailyGift": 237,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20220919,
       "Days_End": 20220919,
       "ID_Gift": 1,
@@ -3169,7 +3181,7 @@
     },
     {
       "ID_DailyGift": 238,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20220920,
       "Days_End": 20220920,
       "ID_Gift": 1,
@@ -3182,7 +3194,7 @@
     },
     {
       "ID_DailyGift": 239,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20220921,
       "Days_End": 20220921,
       "ID_Gift": 1,
@@ -3195,7 +3207,7 @@
     },
     {
       "ID_DailyGift": 240,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20220922,
       "Days_End": 20220922,
       "ID_Gift": 1,
@@ -3208,7 +3220,7 @@
     },
     {
       "ID_DailyGift": 241,
-      "ID_SystemText": 467,
+      "ID_SystemText": 474,
       "Days_Begin": 20220923,
       "Days_End": 20220929,
       "ID_Gift": 1,
@@ -3221,7 +3233,7 @@
     },
     {
       "ID_DailyGift": 242,
-      "ID_SystemText": 468,
+      "ID_SystemText": 475,
       "Days_Begin": 20220930,
       "Days_End": 20221006,
       "ID_Gift": 1,
@@ -3234,7 +3246,7 @@
     },
     {
       "ID_DailyGift": 243,
-      "ID_SystemText": 468,
+      "ID_SystemText": 475,
       "Days_Begin": 20221007,
       "Days_End": 20221013,
       "ID_Gift": 1,
@@ -3247,7 +3259,7 @@
     },
     {
       "ID_DailyGift": 244,
-      "ID_SystemText": 453,
+      "ID_SystemText": 460,
       "Days_Begin": 20221014,
       "Days_End": 20221027,
       "ID_Gift": 1,
@@ -3260,7 +3272,7 @@
     },
     {
       "ID_DailyGift": 245,
-      "ID_SystemText": 449,
+      "ID_SystemText": 456,
       "Days_Begin": 20221118,
       "Days_End": 20221124,
       "ID_Gift": 1,
@@ -3273,7 +3285,7 @@
     },
     {
       "ID_DailyGift": 246,
-      "ID_SystemText": 449,
+      "ID_SystemText": 456,
       "Days_Begin": 20221118,
       "Days_End": 20221124,
       "ID_Gift": 1,
@@ -3286,7 +3298,7 @@
     },
     {
       "ID_DailyGift": 247,
-      "ID_SystemText": 459,
+      "ID_SystemText": 466,
       "Days_Begin": 20221209,
       "Days_End": 20221215,
       "ID_Gift": 1,
@@ -3299,7 +3311,7 @@
     },
     {
       "ID_DailyGift": 248,
-      "ID_SystemText": 459,
+      "ID_SystemText": 466,
       "Days_Begin": 20221216,
       "Days_End": 20221221,
       "ID_Gift": 1,
@@ -3312,7 +3324,7 @@
     },
     {
       "ID_DailyGift": 249,
-      "ID_SystemText": 493,
+      "ID_SystemText": 500,
       "Days_Begin": 20221216,
       "Days_End": 20221220,
       "ID_Gift": 1,
@@ -3325,7 +3337,7 @@
     },
     {
       "ID_DailyGift": 250,
-      "ID_SystemText": 477,
+      "ID_SystemText": 484,
       "Days_Begin": 20230113,
       "Days_End": 20230119,
       "ID_Gift": 1,
@@ -3338,7 +3350,7 @@
     },
     {
       "ID_DailyGift": 251,
-      "ID_SystemText": 450,
+      "ID_SystemText": 457,
       "Days_Begin": 20230210,
       "Days_End": 20230216,
       "ID_Gift": 1,
@@ -3351,7 +3363,7 @@
     },
     {
       "ID_DailyGift": 252,
-      "ID_SystemText": 487,
+      "ID_SystemText": 494,
       "Days_Begin": 20230310,
       "Days_End": 20230316,
       "ID_Gift": 1,
@@ -3364,7 +3376,7 @@
     },
     {
       "ID_DailyGift": 253,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20230407,
       "Days_End": 20230407,
       "ID_Gift": 1,
@@ -3377,7 +3389,7 @@
     },
     {
       "ID_DailyGift": 254,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20230408,
       "Days_End": 20230408,
       "ID_Gift": 1,
@@ -3390,7 +3402,7 @@
     },
     {
       "ID_DailyGift": 255,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20230409,
       "Days_End": 20230409,
       "ID_Gift": 1,
@@ -3403,7 +3415,7 @@
     },
     {
       "ID_DailyGift": 256,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20230410,
       "Days_End": 20230410,
       "ID_Gift": 1,
@@ -3416,7 +3428,7 @@
     },
     {
       "ID_DailyGift": 257,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20230411,
       "Days_End": 20230411,
       "ID_Gift": 1,
@@ -3429,7 +3441,7 @@
     },
     {
       "ID_DailyGift": 258,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20230412,
       "Days_End": 20230412,
       "ID_Gift": 1,
@@ -3442,7 +3454,7 @@
     },
     {
       "ID_DailyGift": 259,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20230413,
       "Days_End": 20230413,
       "ID_Gift": 1,
@@ -3455,7 +3467,7 @@
     },
     {
       "ID_DailyGift": 260,
-      "ID_SystemText": 448,
+      "ID_SystemText": 455,
       "Days_Begin": 20230414,
       "Days_End": 20230420,
       "ID_Gift": 1,
@@ -3468,7 +3480,7 @@
     },
     {
       "ID_DailyGift": 261,
-      "ID_SystemText": 448,
+      "ID_SystemText": 455,
       "Days_Begin": 20230421,
       "Days_End": 20230427,
       "ID_Gift": 1,
@@ -3507,7 +3519,7 @@
     },
     {
       "ID_DailyGift": 264,
-      "ID_SystemText": 452,
+      "ID_SystemText": 459,
       "Days_Begin": 20230526,
       "Days_End": 20230601,
       "ID_Gift": 1,
@@ -3520,7 +3532,7 @@
     },
     {
       "ID_DailyGift": 265,
-      "ID_SystemText": 452,
+      "ID_SystemText": 459,
       "Days_Begin": 20230526,
       "Days_End": 20230601,
       "ID_Gift": 1,
@@ -3533,7 +3545,7 @@
     },
     {
       "ID_DailyGift": 266,
-      "ID_SystemText": 466,
+      "ID_SystemText": 473,
       "Days_Begin": 20230707,
       "Days_End": 20230713,
       "ID_Gift": 1,
@@ -3546,7 +3558,7 @@
     },
     {
       "ID_DailyGift": 267,
-      "ID_SystemText": 494,
+      "ID_SystemText": 501,
       "Days_Begin": 20230714,
       "Days_End": 20230812,
       "ID_Gift": 1,
@@ -3559,7 +3571,7 @@
     },
     {
       "ID_DailyGift": 268,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20231208,
       "Days_End": 20231208,
       "ID_Gift": 1,
@@ -3572,7 +3584,7 @@
     },
     {
       "ID_DailyGift": 269,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20231209,
       "Days_End": 20231209,
       "ID_Gift": 1,
@@ -3585,7 +3597,7 @@
     },
     {
       "ID_DailyGift": 270,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20231210,
       "Days_End": 20231210,
       "ID_Gift": 1,
@@ -3598,7 +3610,7 @@
     },
     {
       "ID_DailyGift": 271,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20231211,
       "Days_End": 20231211,
       "ID_Gift": 1,
@@ -3611,7 +3623,7 @@
     },
     {
       "ID_DailyGift": 272,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20231212,
       "Days_End": 20231212,
       "ID_Gift": 1,
@@ -3624,7 +3636,7 @@
     },
     {
       "ID_DailyGift": 273,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20231213,
       "Days_End": 20231213,
       "ID_Gift": 1,
@@ -3637,7 +3649,7 @@
     },
     {
       "ID_DailyGift": 274,
-      "ID_SystemText": 4673,
+      "ID_SystemText": 4990,
       "Days_Begin": 20240126,
       "Days_End": 20240201,
       "ID_Gift": 1,
@@ -3650,7 +3662,7 @@
     },
     {
       "ID_DailyGift": 275,
-      "ID_SystemText": 450,
+      "ID_SystemText": 457,
       "Days_Begin": 20240202,
       "Days_End": 20240208,
       "ID_Gift": 1,
@@ -3663,7 +3675,7 @@
     },
     {
       "ID_DailyGift": 276,
-      "ID_SystemText": 4676,
+      "ID_SystemText": 4993,
       "Days_Begin": 20240223,
       "Days_End": 20240229,
       "ID_Gift": 1,
@@ -3676,7 +3688,7 @@
     },
     {
       "ID_DailyGift": 277,
-      "ID_SystemText": 495,
+      "ID_SystemText": 502,
       "Days_Begin": 20240405,
       "Days_End": 20240411,
       "ID_Gift": 1,
@@ -3689,7 +3701,7 @@
     },
     {
       "ID_DailyGift": 278,
-      "ID_SystemText": 496,
+      "ID_SystemText": 503,
       "Days_Begin": 20240503,
       "Days_End": 20240509,
       "ID_Gift": 1,
@@ -3702,7 +3714,7 @@
     },
     {
       "ID_DailyGift": 279,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20240823,
       "Days_End": 20240823,
       "ID_Gift": 1,
@@ -3715,7 +3727,7 @@
     },
     {
       "ID_DailyGift": 280,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20240824,
       "Days_End": 20240824,
       "ID_Gift": 1,
@@ -3728,7 +3740,7 @@
     },
     {
       "ID_DailyGift": 281,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20240825,
       "Days_End": 20240825,
       "ID_Gift": 1,
@@ -3741,7 +3753,7 @@
     },
     {
       "ID_DailyGift": 282,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20240826,
       "Days_End": 20240826,
       "ID_Gift": 1,
@@ -3754,7 +3766,7 @@
     },
     {
       "ID_DailyGift": 283,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20240827,
       "Days_End": 20240827,
       "ID_Gift": 1,
@@ -3767,7 +3779,7 @@
     },
     {
       "ID_DailyGift": 284,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20240828,
       "Days_End": 20240828,
       "ID_Gift": 1,
@@ -3780,7 +3792,7 @@
     },
     {
       "ID_DailyGift": 285,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20240829,
       "Days_End": 20240829,
       "ID_Gift": 1,
@@ -3793,7 +3805,7 @@
     },
     {
       "ID_DailyGift": 286,
-      "ID_SystemText": 505,
+      "ID_SystemText": 512,
       "Days_Begin": 20250131,
       "Days_End": 20250206,
       "ID_Gift": 1,
@@ -3806,7 +3818,7 @@
     },
     {
       "ID_DailyGift": 287,
-      "ID_SystemText": 450,
+      "ID_SystemText": 457,
       "Days_Begin": 20250207,
       "Days_End": 20250213,
       "ID_Gift": 1,
@@ -3819,7 +3831,7 @@
     },
     {
       "ID_DailyGift": 288,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20250228,
       "Days_End": 20250228,
       "ID_Gift": 1,
@@ -3832,7 +3844,7 @@
     },
     {
       "ID_DailyGift": 289,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20250301,
       "Days_End": 20250301,
       "ID_Gift": 1,
@@ -3845,7 +3857,7 @@
     },
     {
       "ID_DailyGift": 290,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20250302,
       "Days_End": 20250302,
       "ID_Gift": 1,
@@ -3858,7 +3870,7 @@
     },
     {
       "ID_DailyGift": 291,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20250303,
       "Days_End": 20250303,
       "ID_Gift": 1,
@@ -3871,7 +3883,7 @@
     },
     {
       "ID_DailyGift": 292,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20250304,
       "Days_End": 20250304,
       "ID_Gift": 1,
@@ -3884,7 +3896,7 @@
     },
     {
       "ID_DailyGift": 293,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20250305,
       "Days_End": 20250305,
       "ID_Gift": 1,
@@ -3897,7 +3909,7 @@
     },
     {
       "ID_DailyGift": 294,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20250306,
       "Days_End": 20250306,
       "ID_Gift": 1,
@@ -3910,7 +3922,7 @@
     },
     {
       "ID_DailyGift": 295,
-      "ID_SystemText": 487,
+      "ID_SystemText": 494,
       "Days_Begin": 20250411,
       "Days_End": 20250417,
       "ID_Gift": 1,
@@ -3923,7 +3935,7 @@
     },
     {
       "ID_DailyGift": 296,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20250829,
       "Days_End": 20250829,
       "ID_Gift": 1,
@@ -3936,7 +3948,7 @@
     },
     {
       "ID_DailyGift": 297,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20250830,
       "Days_End": 20250830,
       "ID_Gift": 1,
@@ -3949,7 +3961,7 @@
     },
     {
       "ID_DailyGift": 298,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20250831,
       "Days_End": 20250831,
       "ID_Gift": 1,
@@ -3962,7 +3974,7 @@
     },
     {
       "ID_DailyGift": 299,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20250901,
       "Days_End": 20250901,
       "ID_Gift": 1,
@@ -3975,7 +3987,7 @@
     },
     {
       "ID_DailyGift": 300,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20250902,
       "Days_End": 20250902,
       "ID_Gift": 1,
@@ -3988,7 +4000,7 @@
     },
     {
       "ID_DailyGift": 301,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20250903,
       "Days_End": 20250903,
       "ID_Gift": 1,
@@ -4001,7 +4013,7 @@
     },
     {
       "ID_DailyGift": 302,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20250904,
       "Days_End": 20250904,
       "ID_Gift": 1,
@@ -4014,7 +4026,7 @@
     },
     {
       "ID_DailyGift": 303,
-      "ID_SystemText": 509,
+      "ID_SystemText": 516,
       "Days_Begin": 20260130,
       "Days_End": 20260205,
       "ID_Gift": 1,
@@ -4027,7 +4039,7 @@
     },
     {
       "ID_DailyGift": 304,
-      "ID_SystemText": 450,
+      "ID_SystemText": 457,
       "Days_Begin": 20260220,
       "Days_End": 20260226,
       "ID_Gift": 1,
@@ -4040,7 +4052,7 @@
     },
     {
       "ID_DailyGift": 305,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20260227,
       "Days_End": 20260227,
       "ID_Gift": 1,
@@ -4053,7 +4065,7 @@
     },
     {
       "ID_DailyGift": 306,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20260228,
       "Days_End": 20260228,
       "ID_Gift": 1,
@@ -4066,7 +4078,7 @@
     },
     {
       "ID_DailyGift": 307,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20260301,
       "Days_End": 20260301,
       "ID_Gift": 1,
@@ -4079,7 +4091,7 @@
     },
     {
       "ID_DailyGift": 308,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20260302,
       "Days_End": 20260302,
       "ID_Gift": 1,
@@ -4092,7 +4104,7 @@
     },
     {
       "ID_DailyGift": 309,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20260303,
       "Days_End": 20260303,
       "ID_Gift": 1,
@@ -4105,7 +4117,7 @@
     },
     {
       "ID_DailyGift": 310,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20260304,
       "Days_End": 20260304,
       "ID_Gift": 1,
@@ -4118,7 +4130,7 @@
     },
     {
       "ID_DailyGift": 311,
-      "ID_SystemText": 458,
+      "ID_SystemText": 465,
       "Days_Begin": 20260305,
       "Days_End": 20260305,
       "ID_Gift": 1,
@@ -4131,7 +4143,7 @@
     },
     {
       "ID_DailyGift": 312,
-      "ID_SystemText": 4704,
+      "ID_SystemText": 5021,
       "Days_Begin": 20260424,
       "Days_End": 20260430,
       "ID_Gift": 1,
@@ -4141,6 +4153,97 @@
       "TypeCondition": 0,
       "ParamCondition": 0,
       "ID_Item": ""
+    },
+    {
+      "ID_DailyGift": 313,
+      "ID_SystemText": 465,
+      "Days_Begin": 20260828,
+      "Days_End": 20260828,
+      "ID_Gift": 1,
+      "Type_Gift": 5,
+      "Type_Item": 22,
+      "Param_Gift": 0,
+      "TypeCondition": 0,
+      "ParamCondition": 0,
+      "ID_Item": "item_cook_150004"
+    },
+    {
+      "ID_DailyGift": 314,
+      "ID_SystemText": 465,
+      "Days_Begin": 20260829,
+      "Days_End": 20260829,
+      "ID_Gift": 1,
+      "Type_Gift": 5,
+      "Type_Item": 22,
+      "Param_Gift": 0,
+      "TypeCondition": 0,
+      "ParamCondition": 0,
+      "ID_Item": "item_cook_150005"
+    },
+    {
+      "ID_DailyGift": 315,
+      "ID_SystemText": 465,
+      "Days_Begin": 20260830,
+      "Days_End": 20260830,
+      "ID_Gift": 1,
+      "Type_Gift": 5,
+      "Type_Item": 22,
+      "Param_Gift": 0,
+      "TypeCondition": 0,
+      "ParamCondition": 0,
+      "ID_Item": "item_cook_150006"
+    },
+    {
+      "ID_DailyGift": 316,
+      "ID_SystemText": 465,
+      "Days_Begin": 20260831,
+      "Days_End": 20260831,
+      "ID_Gift": 1,
+      "Type_Gift": 5,
+      "Type_Item": 22,
+      "Param_Gift": 0,
+      "TypeCondition": 0,
+      "ParamCondition": 0,
+      "ID_Item": "item_cook_150007"
+    },
+    {
+      "ID_DailyGift": 317,
+      "ID_SystemText": 465,
+      "Days_Begin": 20260901,
+      "Days_End": 20260901,
+      "ID_Gift": 1,
+      "Type_Gift": 5,
+      "Type_Item": 22,
+      "Param_Gift": 0,
+      "TypeCondition": 0,
+      "ParamCondition": 0,
+      "ID_Item": "item_cook_150008"
+    },
+    {
+      "ID_DailyGift": 318,
+      "ID_SystemText": 465,
+      "Days_Begin": 20260902,
+      "Days_End": 20260902,
+      "ID_Gift": 1,
+      "Type_Gift": 5,
+      "Type_Item": 22,
+      "Param_Gift": 0,
+      "TypeCondition": 0,
+      "ParamCondition": 0,
+      "ID_Item": "item_cook_150009"
+    },
+    {
+      "ID_DailyGift": 319,
+      "ID_SystemText": 465,
+      "Days_Begin": 20260903,
+      "Days_End": 20260903,
+      "ID_Gift": 1,
+      "Type_Gift": 5,
+      "Type_Item": 22,
+      "Param_Gift": 0,
+      "TypeCondition": 0,
+      "ParamCondition": 0,
+      "ID_Item": "item_cook_150010"
     }
   ]
 }

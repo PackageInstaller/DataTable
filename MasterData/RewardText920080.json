@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 4,
+    "record_size": 12,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "alias": "ID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Text",
+      "alias": "テキスト",
+      "type": "string",
+      "type_code": 32,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "alias": "タイプ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Text": "女神アダマスの封印があるという『悪霊の迷宮』。\nそこで消息を絶ってしまった白の皇帝を救うべく\n王子たちは迷宮に足を踏み入れる。\n立ち塞がる魔物たちに、女神ケラウノス、\nそして魔王復活の兆しを前に、王子と皇帝は手を組むのだった。\n\n初開催2016年11月24日",
+      "Type": 6
+    },
+    {
+      "ID": 1,
+      "Text": "",
+      "Type": 7
+    },
+    {
+      "ID": 2,
+      "Text": "",
+      "Type": 8
+    },
+    {
+      "ID": 3,
+      "Text": "『帝国神官の帰還』獲得★数13以上で開放",
+      "Type": 9
+    }
+  ]
+}

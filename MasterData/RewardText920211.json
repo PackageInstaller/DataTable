@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 4,
+    "record_size": 12,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "alias": "ID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Text",
+      "alias": "テキスト",
+      "type": "string",
+      "type_code": 32,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "alias": "タイプ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Text": "今回の戦神コロッセウムはグルメジャングル？\n突飛なことを言い出すマレスだったが、\nその上、なんと戦いはもう始まってしまっているらしい。\n暴走する魔物、数多の戦士たち、カウリオ海賊団、\nそして姿を現すジャングルの王者……。\n今、ジャングル最強を決める戦いが幕を開ける！\n\n初開催2024年3月14日",
+      "Type": 6
+    },
+    {
+      "ID": 1,
+      "Text": "",
+      "Type": 7
+    },
+    {
+      "ID": 2,
+      "Text": "獲得★が1以上で\n交換所に「逆戟の勇士カウリオ」が追加",
+      "Type": 8
+    },
+    {
+      "ID": 3,
+      "Text": "『ビタースイートアイヴィワルツ』獲得★数19以上で開放",
+      "Type": 9
+    }
+  ]
+}

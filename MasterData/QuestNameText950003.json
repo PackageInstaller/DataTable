@@ -1,0 +1,37 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 5,
+    "record_size": 4,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "Message",
+      "alias": "名前",
+      "type": "string",
+      "type_code": 32,
+      "offset": 0,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "Message": "円舞大会準備"
+    },
+    {
+      "Message": "偽りの英雄"
+    },
+    {
+      "Message": "さまよえる落ち武者たち"
+    },
+    {
+      "Message": "虹色サーキット"
+    },
+    {
+      "Message": "黒鎧の魔神"
+    }
+  ]
+}

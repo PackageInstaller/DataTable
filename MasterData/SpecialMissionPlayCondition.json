@@ -2,44 +2,50 @@
   "_meta": {
     "version": 1,
     "flags": "0x10",
-    "record_count": 326,
+    "record_count": 330,
     "record_size": 20,
-    "custom_id": 1668312435
+    "tag": "smpc",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "ID_Quest",
+      "alias": "クエストID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "Type_Condition",
+      "alias": "条件タイプ",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "Param_Condition",
+      "alias": "条件値",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 8,
+      "type_code": 1,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "ID_QuestBegin",
+      "alias": "開始",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 12,
+      "type_code": 1,
+      "offset": 12,
       "size": 4
     },
     {
       "name": "ID_QuestEnd",
+      "alias": "終了",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 16,
+      "type_code": 1,
+      "offset": 16,
       "size": 4
     }
   ],
@@ -2325,6 +2331,34 @@
       "Param_Condition": 3,
       "ID_QuestBegin": 8865,
       "ID_QuestEnd": 8865
+    },
+    {
+      "ID_Quest": 8931,
+      "Type_Condition": 3,
+      "Param_Condition": 3,
+      "ID_QuestBegin": 8930,
+      "ID_QuestEnd": 8930
+    },
+    {
+      "ID_Quest": 8932,
+      "Type_Condition": 3,
+      "Param_Condition": 3,
+      "ID_QuestBegin": 8931,
+      "ID_QuestEnd": 8931
+    },
+    {
+      "ID_Quest": 20016,
+      "Type_Condition": 3,
+      "Param_Condition": 3,
+      "ID_QuestBegin": 20015,
+      "ID_QuestEnd": 20015
+    },
+    {
+      "ID_Quest": 20017,
+      "Type_Condition": 3,
+      "Param_Condition": 3,
+      "ID_QuestBegin": 20016,
+      "ID_QuestEnd": 20016
     }
   ]
 }

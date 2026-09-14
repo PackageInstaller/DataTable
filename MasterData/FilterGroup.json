@@ -2,79 +2,90 @@
   "_meta": {
     "version": 1,
     "flags": "0x14",
-    "record_count": 98,
+    "record_count": 100,
     "record_size": 40,
-    "custom_id": 1835234419
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "ConfigId",
+      "alias": "ID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "GroupHashId",
+      "alias": "定義グループ",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "CategoryHashId",
+      "alias": "カテゴリー",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 8,
+      "type_code": 1,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "CategoryTermination",
+      "alias": "カテゴリー終端",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 12,
+      "type_code": 1,
+      "offset": 12,
       "size": 4
     },
     {
       "name": "LabelTextureHashId",
+      "alias": "ラベルテクスチャ",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 16,
+      "type_code": 1,
+      "offset": 16,
       "size": 4
     },
     {
       "name": "FilterTextHashId",
+      "alias": "フィルタテキストID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 20,
+      "type_code": 1,
+      "offset": 20,
       "size": 4
     },
     {
       "name": "FilterCommandConfigHashId",
+      "alias": "判定定義",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 24,
+      "type_code": 1,
+      "offset": 24,
       "size": 4
     },
     {
       "name": "OrGroupId",
+      "alias": "OR判定グループ",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 28,
+      "type_code": 1,
+      "offset": 28,
       "size": 4
     },
     {
       "name": "DisplayExpression",
+      "alias": "表示条件",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 32,
+      "type_code": 32,
+      "offset": 32,
       "size": 4
     },
     {
       "name": "ExecuteExpression",
+      "alias": "処理条件",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 36,
+      "type_code": 32,
+      "offset": 36,
       "size": 4
     }
   ],
@@ -371,7 +382,7 @@
       "ConfigId": 25,
       "GroupHashId": 812850033,
       "CategoryHashId": -744668096,
-      "CategoryTermination": 1,
+      "CategoryTermination": 0,
       "LabelTextureHashId": 1875324590,
       "FilterTextHashId": -1305764251,
       "FilterCommandConfigHashId": -1287091141,
@@ -381,6 +392,18 @@
     },
     {
       "ConfigId": 26,
+      "GroupHashId": 812850033,
+      "CategoryHashId": -744668096,
+      "CategoryTermination": 1,
+      "LabelTextureHashId": 1875324590,
+      "FilterTextHashId": -480730705,
+      "FilterCommandConfigHashId": 1314402413,
+      "OrGroupId": 10000,
+      "DisplayExpression": "2eb9",
+      "ExecuteExpression": "2eb9"
+    },
+    {
+      "ConfigId": 27,
       "GroupHashId": 812850033,
       "CategoryHashId": 262493395,
       "CategoryTermination": 0,
@@ -392,7 +415,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 27,
+      "ConfigId": 28,
       "GroupHashId": 812850033,
       "CategoryHashId": 262493395,
       "CategoryTermination": 0,
@@ -404,7 +427,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 28,
+      "ConfigId": 29,
       "GroupHashId": 812850033,
       "CategoryHashId": 262493395,
       "CategoryTermination": 0,
@@ -416,7 +439,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 29,
+      "ConfigId": 30,
       "GroupHashId": 812850033,
       "CategoryHashId": 262493395,
       "CategoryTermination": 0,
@@ -428,7 +451,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 30,
+      "ConfigId": 31,
       "GroupHashId": 812850033,
       "CategoryHashId": 262493395,
       "CategoryTermination": 0,
@@ -440,7 +463,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 31,
+      "ConfigId": 32,
       "GroupHashId": 812850033,
       "CategoryHashId": 262493395,
       "CategoryTermination": 0,
@@ -452,7 +475,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 32,
+      "ConfigId": 33,
       "GroupHashId": 812850033,
       "CategoryHashId": 262493395,
       "CategoryTermination": 0,
@@ -464,7 +487,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 33,
+      "ConfigId": 34,
       "GroupHashId": 812850033,
       "CategoryHashId": 262493395,
       "CategoryTermination": 0,
@@ -476,7 +499,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 34,
+      "ConfigId": 35,
       "GroupHashId": 812850033,
       "CategoryHashId": 262493395,
       "CategoryTermination": 0,
@@ -488,7 +511,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 35,
+      "ConfigId": 36,
       "GroupHashId": 812850033,
       "CategoryHashId": 262493395,
       "CategoryTermination": 0,
@@ -500,7 +523,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 36,
+      "ConfigId": 37,
       "GroupHashId": 812850033,
       "CategoryHashId": 262493395,
       "CategoryTermination": 0,
@@ -512,7 +535,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 37,
+      "ConfigId": 38,
       "GroupHashId": 812850033,
       "CategoryHashId": 262493395,
       "CategoryTermination": 0,
@@ -524,7 +547,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 38,
+      "ConfigId": 39,
       "GroupHashId": 812850033,
       "CategoryHashId": 262493395,
       "CategoryTermination": 0,
@@ -536,7 +559,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 39,
+      "ConfigId": 40,
       "GroupHashId": 812850033,
       "CategoryHashId": 262493395,
       "CategoryTermination": 0,
@@ -548,7 +571,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 40,
+      "ConfigId": 41,
       "GroupHashId": 812850033,
       "CategoryHashId": 262493395,
       "CategoryTermination": 0,
@@ -560,7 +583,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 41,
+      "ConfigId": 42,
       "GroupHashId": 812850033,
       "CategoryHashId": 262493395,
       "CategoryTermination": 0,
@@ -572,7 +595,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 42,
+      "ConfigId": 43,
       "GroupHashId": 812850033,
       "CategoryHashId": 262493395,
       "CategoryTermination": 0,
@@ -584,7 +607,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 43,
+      "ConfigId": 44,
       "GroupHashId": 812850033,
       "CategoryHashId": 262493395,
       "CategoryTermination": 0,
@@ -596,7 +619,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 44,
+      "ConfigId": 45,
       "GroupHashId": 812850033,
       "CategoryHashId": 262493395,
       "CategoryTermination": 0,
@@ -608,7 +631,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 45,
+      "ConfigId": 46,
       "GroupHashId": 812850033,
       "CategoryHashId": 262493395,
       "CategoryTermination": 0,
@@ -620,7 +643,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 46,
+      "ConfigId": 47,
       "GroupHashId": 812850033,
       "CategoryHashId": 262493395,
       "CategoryTermination": 0,
@@ -632,7 +655,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 47,
+      "ConfigId": 48,
       "GroupHashId": 812850033,
       "CategoryHashId": 262493395,
       "CategoryTermination": 0,
@@ -644,7 +667,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 48,
+      "ConfigId": 49,
       "GroupHashId": 812850033,
       "CategoryHashId": 262493395,
       "CategoryTermination": 0,
@@ -656,7 +679,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 49,
+      "ConfigId": 50,
       "GroupHashId": 812850033,
       "CategoryHashId": 262493395,
       "CategoryTermination": 1,
@@ -668,7 +691,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 50,
+      "ConfigId": 51,
       "GroupHashId": 812850033,
       "CategoryHashId": 251400493,
       "CategoryTermination": 0,
@@ -680,7 +703,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 51,
+      "ConfigId": 52,
       "GroupHashId": 812850033,
       "CategoryHashId": 251400493,
       "CategoryTermination": 0,
@@ -692,7 +715,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 52,
+      "ConfigId": 53,
       "GroupHashId": 812850033,
       "CategoryHashId": 251400493,
       "CategoryTermination": 0,
@@ -704,7 +727,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 53,
+      "ConfigId": 54,
       "GroupHashId": 812850033,
       "CategoryHashId": 251400493,
       "CategoryTermination": 0,
@@ -716,7 +739,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 54,
+      "ConfigId": 55,
       "GroupHashId": 812850033,
       "CategoryHashId": 251400493,
       "CategoryTermination": 0,
@@ -728,7 +751,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 55,
+      "ConfigId": 56,
       "GroupHashId": 812850033,
       "CategoryHashId": 251400493,
       "CategoryTermination": 0,
@@ -740,7 +763,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 56,
+      "ConfigId": 57,
       "GroupHashId": 812850033,
       "CategoryHashId": 251400493,
       "CategoryTermination": 0,
@@ -752,7 +775,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 57,
+      "ConfigId": 58,
       "GroupHashId": 812850033,
       "CategoryHashId": 251400493,
       "CategoryTermination": 0,
@@ -764,7 +787,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 58,
+      "ConfigId": 59,
       "GroupHashId": 812850033,
       "CategoryHashId": 251400493,
       "CategoryTermination": 0,
@@ -776,7 +799,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 59,
+      "ConfigId": 60,
       "GroupHashId": 812850033,
       "CategoryHashId": 251400493,
       "CategoryTermination": 0,
@@ -788,7 +811,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 60,
+      "ConfigId": 61,
       "GroupHashId": 812850033,
       "CategoryHashId": 251400493,
       "CategoryTermination": 0,
@@ -800,7 +823,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 61,
+      "ConfigId": 62,
       "GroupHashId": 812850033,
       "CategoryHashId": 251400493,
       "CategoryTermination": 0,
@@ -812,7 +835,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 62,
+      "ConfigId": 63,
       "GroupHashId": 812850033,
       "CategoryHashId": 251400493,
       "CategoryTermination": 0,
@@ -824,7 +847,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 63,
+      "ConfigId": 64,
       "GroupHashId": 812850033,
       "CategoryHashId": 251400493,
       "CategoryTermination": 0,
@@ -836,7 +859,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 64,
+      "ConfigId": 65,
       "GroupHashId": 812850033,
       "CategoryHashId": 251400493,
       "CategoryTermination": 0,
@@ -848,7 +871,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 65,
+      "ConfigId": 66,
       "GroupHashId": 812850033,
       "CategoryHashId": 251400493,
       "CategoryTermination": 0,
@@ -860,7 +883,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 66,
+      "ConfigId": 67,
       "GroupHashId": 812850033,
       "CategoryHashId": 251400493,
       "CategoryTermination": 0,
@@ -872,7 +895,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 67,
+      "ConfigId": 68,
       "GroupHashId": 812850033,
       "CategoryHashId": 251400493,
       "CategoryTermination": 0,
@@ -884,7 +907,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 68,
+      "ConfigId": 69,
       "GroupHashId": 812850033,
       "CategoryHashId": 251400493,
       "CategoryTermination": 0,
@@ -896,7 +919,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 69,
+      "ConfigId": 70,
       "GroupHashId": 812850033,
       "CategoryHashId": 251400493,
       "CategoryTermination": 1,
@@ -908,7 +931,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 70,
+      "ConfigId": 71,
       "GroupHashId": 812850033,
       "CategoryHashId": -33199832,
       "CategoryTermination": 0,
@@ -920,7 +943,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 71,
+      "ConfigId": 72,
       "GroupHashId": 812850033,
       "CategoryHashId": -33199832,
       "CategoryTermination": 0,
@@ -932,7 +955,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 72,
+      "ConfigId": 73,
       "GroupHashId": 812850033,
       "CategoryHashId": -33199832,
       "CategoryTermination": 0,
@@ -944,7 +967,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 73,
+      "ConfigId": 74,
       "GroupHashId": 812850033,
       "CategoryHashId": -33199832,
       "CategoryTermination": 0,
@@ -956,7 +979,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 74,
+      "ConfigId": 75,
       "GroupHashId": 812850033,
       "CategoryHashId": -33199832,
       "CategoryTermination": 0,
@@ -968,7 +991,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 75,
+      "ConfigId": 76,
       "GroupHashId": 812850033,
       "CategoryHashId": -33199832,
       "CategoryTermination": 0,
@@ -980,7 +1003,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 76,
+      "ConfigId": 77,
       "GroupHashId": 812850033,
       "CategoryHashId": -33199832,
       "CategoryTermination": 0,
@@ -992,7 +1015,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 77,
+      "ConfigId": 78,
       "GroupHashId": 812850033,
       "CategoryHashId": -33199832,
       "CategoryTermination": 0,
@@ -1004,10 +1027,10 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 78,
+      "ConfigId": 79,
       "GroupHashId": 812850033,
       "CategoryHashId": -33199832,
-      "CategoryTermination": 1,
+      "CategoryTermination": 0,
       "LabelTextureHashId": -390559156,
       "FilterTextHashId": -1290717144,
       "FilterCommandConfigHashId": -707848281,
@@ -1016,7 +1039,19 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 79,
+      "ConfigId": 80,
+      "GroupHashId": 812850033,
+      "CategoryHashId": -33199832,
+      "CategoryTermination": 1,
+      "LabelTextureHashId": -390559156,
+      "FilterTextHashId": 1206784806,
+      "FilterCommandConfigHashId": 1174344551,
+      "OrGroupId": 13000,
+      "DisplayExpression": "2eb9",
+      "ExecuteExpression": "2eb9"
+    },
+    {
+      "ConfigId": 81,
       "GroupHashId": 812850033,
       "CategoryHashId": -2003660870,
       "CategoryTermination": 0,
@@ -1028,7 +1063,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 80,
+      "ConfigId": 82,
       "GroupHashId": 812850033,
       "CategoryHashId": -2003660870,
       "CategoryTermination": 0,
@@ -1040,7 +1075,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 81,
+      "ConfigId": 83,
       "GroupHashId": 812850033,
       "CategoryHashId": -2003660870,
       "CategoryTermination": 1,
@@ -1052,7 +1087,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 82,
+      "ConfigId": 84,
       "GroupHashId": 812850033,
       "CategoryHashId": 1651958282,
       "CategoryTermination": 0,
@@ -1064,7 +1099,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 83,
+      "ConfigId": 85,
       "GroupHashId": 812850033,
       "CategoryHashId": 1651958282,
       "CategoryTermination": 0,
@@ -1076,7 +1111,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 84,
+      "ConfigId": 86,
       "GroupHashId": 812850033,
       "CategoryHashId": 1651958282,
       "CategoryTermination": 0,
@@ -1088,7 +1123,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 85,
+      "ConfigId": 87,
       "GroupHashId": 812850033,
       "CategoryHashId": 1651958282,
       "CategoryTermination": 0,
@@ -1100,7 +1135,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 86,
+      "ConfigId": 88,
       "GroupHashId": 812850033,
       "CategoryHashId": 1651958282,
       "CategoryTermination": 0,
@@ -1112,7 +1147,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 87,
+      "ConfigId": 89,
       "GroupHashId": 812850033,
       "CategoryHashId": 1651958282,
       "CategoryTermination": 0,
@@ -1124,7 +1159,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 88,
+      "ConfigId": 90,
       "GroupHashId": 812850033,
       "CategoryHashId": 1651958282,
       "CategoryTermination": 0,
@@ -1136,7 +1171,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 89,
+      "ConfigId": 91,
       "GroupHashId": 812850033,
       "CategoryHashId": 1651958282,
       "CategoryTermination": 0,
@@ -1148,7 +1183,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 90,
+      "ConfigId": 92,
       "GroupHashId": 812850033,
       "CategoryHashId": 1651958282,
       "CategoryTermination": 0,
@@ -1160,7 +1195,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 91,
+      "ConfigId": 93,
       "GroupHashId": 812850033,
       "CategoryHashId": 1651958282,
       "CategoryTermination": 0,
@@ -1172,7 +1207,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 92,
+      "ConfigId": 94,
       "GroupHashId": 812850033,
       "CategoryHashId": 1651958282,
       "CategoryTermination": 0,
@@ -1184,7 +1219,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 93,
+      "ConfigId": 95,
       "GroupHashId": 812850033,
       "CategoryHashId": 1651958282,
       "CategoryTermination": 0,
@@ -1196,7 +1231,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 94,
+      "ConfigId": 96,
       "GroupHashId": 812850033,
       "CategoryHashId": 1651958282,
       "CategoryTermination": 0,
@@ -1208,7 +1243,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 95,
+      "ConfigId": 97,
       "GroupHashId": 812850033,
       "CategoryHashId": 1651958282,
       "CategoryTermination": 1,
@@ -1220,7 +1255,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 96,
+      "ConfigId": 98,
       "GroupHashId": 812850033,
       "CategoryHashId": -177693570,
       "CategoryTermination": 1,
@@ -1232,7 +1267,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 97,
+      "ConfigId": 99,
       "GroupHashId": 812850033,
       "CategoryHashId": -113153367,
       "CategoryTermination": 0,
@@ -1244,7 +1279,7 @@
       "ExecuteExpression": "2eb9"
     },
     {
-      "ConfigId": 98,
+      "ConfigId": 100,
       "GroupHashId": 812850033,
       "CategoryHashId": -113153367,
       "CategoryTermination": 1,

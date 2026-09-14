@@ -4,63 +4,72 @@
     "flags": "0x04",
     "record_count": 24,
     "record_size": 32,
-    "custom_id": null
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "RewardID",
+      "alias": "報酬ID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "RewardType",
+      "alias": "報酬種別",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "RequiredPoint",
+      "alias": "必要ポイント",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 8,
+      "type_code": 1,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "CardID",
+      "alias": "カードID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 12,
+      "type_code": 1,
+      "offset": 12,
       "size": 4
     },
     {
       "name": "SummonConfigID",
+      "alias": "召喚設定ID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 16,
+      "type_code": 1,
+      "offset": 16,
       "size": 4
     },
     {
       "name": "SummonTexturePatternNum",
+      "alias": "召喚画像パターン番号",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 20,
+      "type_code": 1,
+      "offset": 20,
       "size": 4
     },
     {
       "name": "SummonDetailTextID",
+      "alias": "召喚内容テキストID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 24,
+      "type_code": 1,
+      "offset": 24,
       "size": 4
     },
     {
       "name": "SummonAdditionalUnitIDs",
+      "alias": "召喚追加ユニットIDリスト",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 28,
+      "type_code": 32,
+      "offset": 28,
       "size": 4
     }
   ],
@@ -262,7 +271,7 @@
       "CardID": 0,
       "SummonConfigID": 20001,
       "SummonTexturePatternNum": 0,
-      "SummonDetailTextID": 1112,
+      "SummonDetailTextID": 1151,
       "SummonAdditionalUnitIDs": ""
     },
     {
@@ -272,7 +281,7 @@
       "CardID": 0,
       "SummonConfigID": 20002,
       "SummonTexturePatternNum": 1,
-      "SummonDetailTextID": 1113,
+      "SummonDetailTextID": 1152,
       "SummonAdditionalUnitIDs": "1612"
     },
     {
@@ -282,7 +291,7 @@
       "CardID": 0,
       "SummonConfigID": 20003,
       "SummonTexturePatternNum": 2,
-      "SummonDetailTextID": 1114,
+      "SummonDetailTextID": 1153,
       "SummonAdditionalUnitIDs": "1612"
     },
     {
@@ -292,7 +301,7 @@
       "CardID": 0,
       "SummonConfigID": 20004,
       "SummonTexturePatternNum": 3,
-      "SummonDetailTextID": 1115,
+      "SummonDetailTextID": 1154,
       "SummonAdditionalUnitIDs": "1612,1611"
     },
     {
@@ -302,7 +311,7 @@
       "CardID": 0,
       "SummonConfigID": 20005,
       "SummonTexturePatternNum": 4,
-      "SummonDetailTextID": 1116,
+      "SummonDetailTextID": 1155,
       "SummonAdditionalUnitIDs": "1612,1611,194"
     }
   ]

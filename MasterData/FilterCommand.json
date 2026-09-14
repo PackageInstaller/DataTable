@@ -2,30 +2,34 @@
   "_meta": {
     "version": 1,
     "flags": "0x14",
-    "record_count": 98,
+    "record_count": 100,
     "record_size": 12,
-    "custom_id": 1835234419
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "FilterCommandConfigHashId",
+      "alias": "定義名",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "SaveId",
+      "alias": "セーブID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "Expression",
+      "alias": "判定式",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 8,
+      "type_code": 32,
+      "offset": 8,
       "size": 4
     }
   ],
@@ -253,7 +257,7 @@
     {
       "FilterCommandConfigHashId": 589503674,
       "SaveId": 44,
-      "Expression": "6f62732145740962ce90b7a9ba9b0369066d5d606f626625487544320e230d730a2508"
+      "Expression": "6f62732145740962ce90b7a9ba9b0369066d5d606f626625487544320e230d730a2508605a6d010955584525486548344f680962ce90b7a9ba9b0369"
     },
     {
       "FilterCommandConfigHashId": -462493689,
@@ -519,6 +523,16 @@
       "FilterCommandConfigHashId": 1657139680,
       "SaveId": 97,
       "Expression": "6f62682d567d442d437f552152784e2e7f7440320e33782547631c72162317620f"
+    },
+    {
+      "FilterCommandConfigHashId": 1174344551,
+      "SaveId": 98,
+      "Expression": "6f6266254864526804f2a3e2c59385a3a598c2c38d3308"
+    },
+    {
+      "FilterCommandConfigHashId": 1314402413,
+      "SaveId": 99,
+      "Expression": "6f6260335578462e0e33c4e48ff6bdfcc592afa5bdac0369"
     }
   ]
 }

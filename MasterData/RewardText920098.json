@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 4,
+    "record_size": 12,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "alias": "ID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Text",
+      "alias": "テキスト",
+      "type": "string",
+      "type_code": 32,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "alias": "タイプ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Text": "王子たちは砂漠の神「バステト」を信仰する民たちが\n何かを企んでいることを知り、ピラミッドを訪れる。\nそこにはバステト復活を目論む者たちと、\nそのために必要な『呪われた宝石』を盗む怪盗サバルがいた。\n彼女と協力し、王子たちは復活を阻止しようとする。\n\n初開催2017年10月5日",
+      "Type": 6
+    },
+    {
+      "ID": 1,
+      "Text": "",
+      "Type": 7
+    },
+    {
+      "ID": 2,
+      "Text": "獲得★が1以上で\n交換所に「黒猫大怪盗サバル」が追加",
+      "Type": 8
+    },
+    {
+      "ID": 3,
+      "Text": "『帝国騎士と叛逆の戦火』獲得★数21以上で開放",
+      "Type": 9
+    }
+  ]
+}

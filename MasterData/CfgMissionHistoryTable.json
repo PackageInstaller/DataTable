@@ -2,72 +2,82 @@
   "_meta": {
     "version": 1,
     "flags": "0x14",
-    "record_count": 223,
+    "record_count": 241,
     "record_size": 36,
-    "custom_id": 1853190768
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "RecordIndex",
+      "alias": "レコード",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "GroupId",
+      "alias": "グループID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "EventIndex",
+      "alias": "イベント番号",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 8,
+      "type_code": 1,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "MissionId",
+      "alias": "ミッションID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 12,
+      "type_code": 1,
+      "offset": 12,
       "size": 4
     },
     {
       "name": "BannerTextureId",
+      "alias": "バナーテクスチャID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 16,
+      "type_code": 1,
+      "offset": 16,
       "size": 4
     },
     {
       "name": "Title",
+      "alias": "タイトル",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 20,
+      "type_code": 32,
+      "offset": 20,
       "size": 4
     },
     {
       "name": "DisclosureConditionDays",
+      "alias": "開示条件日数",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 24,
+      "type_code": 1,
+      "offset": 24,
       "size": 4
     },
     {
       "name": "DisclosureConditionMissionId",
+      "alias": "開示条件ミッションID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 28,
+      "type_code": 1,
+      "offset": 28,
       "size": 4
     },
     {
       "name": "DisclosureConditionRank",
+      "alias": "開示条件進捗率",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 32,
+      "type_code": 1,
+      "offset": 32,
       "size": 4
     }
   ],
@@ -2523,6 +2533,204 @@
       "Title": "11年目の戦い",
       "DisclosureConditionDays": 300,
       "DisclosureConditionMissionId": 920221,
+      "DisclosureConditionRank": 70
+    },
+    {
+      "RecordIndex": 224,
+      "GroupId": 12,
+      "EventIndex": 224,
+      "MissionId": 920223,
+      "BannerTextureId": 920223,
+      "Title": "12年目の戦い",
+      "DisclosureConditionDays": 330,
+      "DisclosureConditionMissionId": 920222,
+      "DisclosureConditionRank": 70
+    },
+    {
+      "RecordIndex": 225,
+      "GroupId": 12,
+      "EventIndex": 225,
+      "MissionId": 920224,
+      "BannerTextureId": 920223,
+      "Title": "12年目の戦い",
+      "DisclosureConditionDays": 330,
+      "DisclosureConditionMissionId": 920223,
+      "DisclosureConditionRank": 70
+    },
+    {
+      "RecordIndex": 226,
+      "GroupId": 12,
+      "EventIndex": 226,
+      "MissionId": 920225,
+      "BannerTextureId": 920223,
+      "Title": "12年目の戦い",
+      "DisclosureConditionDays": 330,
+      "DisclosureConditionMissionId": 920224,
+      "DisclosureConditionRank": 70
+    },
+    {
+      "RecordIndex": 227,
+      "GroupId": 12,
+      "EventIndex": 227,
+      "MissionId": 920226,
+      "BannerTextureId": 920223,
+      "Title": "12年目の戦い",
+      "DisclosureConditionDays": 330,
+      "DisclosureConditionMissionId": 920225,
+      "DisclosureConditionRank": 70
+    },
+    {
+      "RecordIndex": 228,
+      "GroupId": 12,
+      "EventIndex": 228,
+      "MissionId": 920227,
+      "BannerTextureId": 920223,
+      "Title": "12年目の戦い",
+      "DisclosureConditionDays": 330,
+      "DisclosureConditionMissionId": 920226,
+      "DisclosureConditionRank": 70
+    },
+    {
+      "RecordIndex": 229,
+      "GroupId": 12,
+      "EventIndex": 229,
+      "MissionId": 920228,
+      "BannerTextureId": 920223,
+      "Title": "12年目の戦い",
+      "DisclosureConditionDays": 330,
+      "DisclosureConditionMissionId": 920227,
+      "DisclosureConditionRank": 29
+    },
+    {
+      "RecordIndex": 230,
+      "GroupId": 12,
+      "EventIndex": 230,
+      "MissionId": 920229,
+      "BannerTextureId": 920223,
+      "Title": "12年目の戦い",
+      "DisclosureConditionDays": 330,
+      "DisclosureConditionMissionId": 920228,
+      "DisclosureConditionRank": 70
+    },
+    {
+      "RecordIndex": 231,
+      "GroupId": 12,
+      "EventIndex": 231,
+      "MissionId": 920230,
+      "BannerTextureId": 920223,
+      "Title": "12年目の戦い",
+      "DisclosureConditionDays": 330,
+      "DisclosureConditionMissionId": 920229,
+      "DisclosureConditionRank": 70
+    },
+    {
+      "RecordIndex": 232,
+      "GroupId": 12,
+      "EventIndex": 232,
+      "MissionId": 920231,
+      "BannerTextureId": 920223,
+      "Title": "12年目の戦い",
+      "DisclosureConditionDays": 330,
+      "DisclosureConditionMissionId": 920230,
+      "DisclosureConditionRank": 70
+    },
+    {
+      "RecordIndex": 233,
+      "GroupId": 12,
+      "EventIndex": 233,
+      "MissionId": 920232,
+      "BannerTextureId": 920223,
+      "Title": "12年目の戦い",
+      "DisclosureConditionDays": 330,
+      "DisclosureConditionMissionId": 920231,
+      "DisclosureConditionRank": 70
+    },
+    {
+      "RecordIndex": 234,
+      "GroupId": 12,
+      "EventIndex": 234,
+      "MissionId": 920233,
+      "BannerTextureId": 920223,
+      "Title": "12年目の戦い",
+      "DisclosureConditionDays": 330,
+      "DisclosureConditionMissionId": 920232,
+      "DisclosureConditionRank": 70
+    },
+    {
+      "RecordIndex": 235,
+      "GroupId": 12,
+      "EventIndex": 235,
+      "MissionId": 920234,
+      "BannerTextureId": 920223,
+      "Title": "12年目の戦い",
+      "DisclosureConditionDays": 330,
+      "DisclosureConditionMissionId": 920233,
+      "DisclosureConditionRank": 29
+    },
+    {
+      "RecordIndex": 236,
+      "GroupId": 12,
+      "EventIndex": 236,
+      "MissionId": 920235,
+      "BannerTextureId": 920223,
+      "Title": "12年目の戦い",
+      "DisclosureConditionDays": 330,
+      "DisclosureConditionMissionId": 920234,
+      "DisclosureConditionRank": 70
+    },
+    {
+      "RecordIndex": 237,
+      "GroupId": 12,
+      "EventIndex": 237,
+      "MissionId": 920236,
+      "BannerTextureId": 920223,
+      "Title": "12年目の戦い",
+      "DisclosureConditionDays": 330,
+      "DisclosureConditionMissionId": 920235,
+      "DisclosureConditionRank": 70
+    },
+    {
+      "RecordIndex": 238,
+      "GroupId": 12,
+      "EventIndex": 238,
+      "MissionId": 920237,
+      "BannerTextureId": 920223,
+      "Title": "12年目の戦い",
+      "DisclosureConditionDays": 330,
+      "DisclosureConditionMissionId": 920236,
+      "DisclosureConditionRank": 70
+    },
+    {
+      "RecordIndex": 239,
+      "GroupId": 12,
+      "EventIndex": 239,
+      "MissionId": 920238,
+      "BannerTextureId": 920223,
+      "Title": "12年目の戦い",
+      "DisclosureConditionDays": 330,
+      "DisclosureConditionMissionId": 920237,
+      "DisclosureConditionRank": 70
+    },
+    {
+      "RecordIndex": 240,
+      "GroupId": 12,
+      "EventIndex": 240,
+      "MissionId": 920239,
+      "BannerTextureId": 920223,
+      "Title": "12年目の戦い",
+      "DisclosureConditionDays": 330,
+      "DisclosureConditionMissionId": 920238,
+      "DisclosureConditionRank": 70
+    },
+    {
+      "RecordIndex": 241,
+      "GroupId": 12,
+      "EventIndex": 241,
+      "MissionId": 920240,
+      "BannerTextureId": 920223,
+      "Title": "12年目の戦い",
+      "DisclosureConditionDays": 330,
+      "DisclosureConditionMissionId": 920239,
       "DisclosureConditionRank": 70
     }
   ]

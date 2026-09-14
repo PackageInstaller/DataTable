@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 4,
+    "record_size": 12,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "alias": "ID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Text",
+      "alias": "テキスト",
+      "type": "string",
+      "type_code": 32,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "alias": "タイプ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Text": "ゴブリンに追われていた付与魔術師メレディス。\n彼女を助け、事情を聞くと、研究していた付与魔術を\n狙うゴブリンたちに襲われてしまったらしい。\n彼女の研究資料を取り返すため、\n一行は魔法都市へ向かうのだった。\n\n初開催2016年9月15日",
+      "Type": 6
+    },
+    {
+      "ID": 1,
+      "Text": "",
+      "Type": 7
+    },
+    {
+      "ID": 2,
+      "Text": "獲得★が1以上で\n交換所に「付与魔術師メレディス」が追加",
+      "Type": 8
+    },
+    {
+      "ID": 3,
+      "Text": "『失われた竜の島』獲得★数13以上で開放",
+      "Type": 9
+    }
+  ]
+}

@@ -2,30 +2,34 @@
   "_meta": {
     "version": 1,
     "flags": "0x14",
-    "record_count": 38,
+    "record_count": 39,
     "record_size": 12,
-    "custom_id": 1835234419
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "CardId",
+      "alias": "カード定義名",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "ProhibitList",
+      "alias": "重複禁止カードIDリスト",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 4,
+      "type_code": 32,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "ProhibitClone",
+      "alias": "同キャラ禁止時リスト",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 8,
+      "type_code": 32,
+      "offset": 8,
       "size": 4
     }
   ],
@@ -218,6 +222,11 @@
     {
       "CardId": 2749,
       "ProhibitList": "2749,",
+      "ProhibitClone": ""
+    },
+    {
+      "CardId": 2874,
+      "ProhibitList": "2874,",
       "ProhibitClone": ""
     }
   ]

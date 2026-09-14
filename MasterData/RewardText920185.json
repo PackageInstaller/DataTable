@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 4,
+    "record_size": 12,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "alias": "ID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Text",
+      "alias": "テキスト",
+      "type": "string",
+      "type_code": 32,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "alias": "タイプ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Text": "デシウスからもたらされた情報。\nそれは神すら討つという聖槍グングニルの在り処だった。\n神殺しの力を求めて砂漠のピラミッドへ向かう一行は\nついに女神ケラウノスと対峙する。\n\n初開催2017年11月22日",
+      "Type": 6
+    },
+    {
+      "ID": 1,
+      "Text": "",
+      "Type": 7
+    },
+    {
+      "ID": 2,
+      "Text": "獲得★が1以上で\n交換所に「聖槍の守護者ネフティ」が追加",
+      "Type": 8
+    },
+    {
+      "ID": 3,
+      "Text": "『傾国の妖狐と誘惑されし王子』獲得★数19以上で開放",
+      "Type": 9
+    }
+  ]
+}

@@ -2,65 +2,74 @@
   "_meta": {
     "version": 1,
     "flags": "0x14",
-    "record_count": 7538,
+    "record_count": 7887,
     "record_size": 32,
-    "custom_id": 1818848115
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "ID_Config",
+      "alias": "定義名",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "Type_Influence",
+      "alias": "効果種別",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "Param_1",
+      "alias": "パラメータ1",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 8,
+      "type_code": 1,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "Param_2",
+      "alias": "パラメータ2",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 12,
+      "type_code": 1,
+      "offset": 12,
       "size": 4
     },
     {
       "name": "Param_3",
+      "alias": "パラメータ3",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 16,
+      "type_code": 1,
+      "offset": 16,
       "size": 4
     },
     {
       "name": "Param_4",
+      "alias": "パラメータ4",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 20,
+      "type_code": 1,
+      "offset": 20,
       "size": 4
     },
     {
       "name": "_Expression",
+      "alias": "条件式",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 24,
+      "type_code": 32,
+      "offset": 24,
       "size": 4
     },
     {
       "name": "_ExtParam",
+      "alias": "拡張パラメータ",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 28,
+      "type_code": 32,
+      "offset": 28,
       "size": 4
     }
   ],
@@ -40096,6 +40105,16 @@
       "_ExtParam": ""
     },
     {
+      "ID_Config": 0,
+      "Type_Influence": 10,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
       "ID_Config": 1331,
       "Type_Influence": 18,
       "Param_1": 1,
@@ -40119,6 +40138,16 @@
       "ID_Config": 0,
       "Type_Influence": 37,
       "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 10,
+      "Param_1": 0,
       "Param_2": 0,
       "Param_3": 0,
       "Param_4": 0,
@@ -40156,6 +40185,16 @@
       "_ExtParam": ""
     },
     {
+      "ID_Config": 0,
+      "Type_Influence": 10,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
       "ID_Config": 1333,
       "Type_Influence": 18,
       "Param_1": 1,
@@ -40179,6 +40218,16 @@
       "ID_Config": 0,
       "Type_Influence": 37,
       "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 10,
+      "Param_1": 0,
       "Param_2": 0,
       "Param_3": 0,
       "Param_4": 0,
@@ -40216,6 +40265,16 @@
       "_ExtParam": ""
     },
     {
+      "ID_Config": 0,
+      "Type_Influence": 10,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
       "ID_Config": 1335,
       "Type_Influence": 18,
       "Param_1": 1,
@@ -40239,6 +40298,16 @@
       "ID_Config": 0,
       "Type_Influence": 37,
       "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 10,
+      "Param_1": 0,
       "Param_2": 0,
       "Param_3": 0,
       "Param_4": 0,
@@ -40276,6 +40345,16 @@
       "_ExtParam": ""
     },
     {
+      "ID_Config": 0,
+      "Type_Influence": 10,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
       "ID_Config": 1337,
       "Type_Influence": 18,
       "Param_1": 1,
@@ -40306,6 +40385,16 @@
       "_ExtParam": ""
     },
     {
+      "ID_Config": 0,
+      "Type_Influence": 10,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
       "ID_Config": 1338,
       "Type_Influence": 18,
       "Param_1": 1,
@@ -40329,6 +40418,16 @@
       "ID_Config": 0,
       "Type_Influence": 37,
       "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 10,
+      "Param_1": 0,
       "Param_2": 0,
       "Param_3": 0,
       "Param_4": 0,
@@ -40416,6 +40515,16 @@
       "_ExtParam": ""
     },
     {
+      "ID_Config": 0,
+      "Type_Influence": 10,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
       "ID_Config": 1342,
       "Type_Influence": 18,
       "Param_1": 1,
@@ -40439,6 +40548,16 @@
       "ID_Config": 0,
       "Type_Influence": 37,
       "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 10,
+      "Param_1": 0,
       "Param_2": 0,
       "Param_3": 0,
       "Param_4": 0,
@@ -40476,6 +40595,16 @@
       "_ExtParam": ""
     },
     {
+      "ID_Config": 0,
+      "Type_Influence": 10,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
       "ID_Config": 1344,
       "Type_Influence": 18,
       "Param_1": 1,
@@ -40499,6 +40628,16 @@
       "ID_Config": 0,
       "Type_Influence": 37,
       "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 10,
+      "Param_1": 0,
       "Param_2": 0,
       "Param_3": 0,
       "Param_4": 0,
@@ -40536,6 +40675,16 @@
       "_ExtParam": ""
     },
     {
+      "ID_Config": 0,
+      "Type_Influence": 10,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
       "ID_Config": 1346,
       "Type_Influence": 18,
       "Param_1": 1,
@@ -40559,6 +40708,16 @@
       "ID_Config": 0,
       "Type_Influence": 37,
       "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 10,
+      "Param_1": 0,
       "Param_2": 0,
       "Param_3": 0,
       "Param_4": 0,
@@ -40596,6 +40755,16 @@
       "_ExtParam": ""
     },
     {
+      "ID_Config": 0,
+      "Type_Influence": 10,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
       "ID_Config": 1348,
       "Type_Influence": 18,
       "Param_1": 1,
@@ -40619,6 +40788,16 @@
       "ID_Config": 0,
       "Type_Influence": 37,
       "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 10,
+      "Param_1": 0,
       "Param_2": 0,
       "Param_3": 0,
       "Param_4": 0,
@@ -40656,6 +40835,16 @@
       "_ExtParam": ""
     },
     {
+      "ID_Config": 0,
+      "Type_Influence": 10,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
       "ID_Config": 1350,
       "Type_Influence": 18,
       "Param_1": 1,
@@ -40686,6 +40875,16 @@
       "_ExtParam": ""
     },
     {
+      "ID_Config": 0,
+      "Type_Influence": 10,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
       "ID_Config": 1351,
       "Type_Influence": 18,
       "Param_1": 1,
@@ -40709,6 +40908,16 @@
       "ID_Config": 0,
       "Type_Influence": 37,
       "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 10,
+      "Param_1": 0,
       "Param_2": 0,
       "Param_3": 0,
       "Param_4": 0,
@@ -75444,6 +75653,3296 @@
       "Param_4": 0,
       "_Expression": "IsEnemyElementAny( \"三つ目の種族\") == 1",
       "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2405,
+      "Type_Influence": 40,
+      "Param_1": 50,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "IsEnemyElementAny( \"三つ目の種族\") == 1",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 15,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2406,
+      "Type_Influence": 7,
+      "Param_1": 2,
+      "Param_2": 12,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 40,
+      "Param_1": 50,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "IsEnemyElementAny( \"三つ目の種族\") == 1",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 1,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2407,
+      "Type_Influence": 40,
+      "Param_1": 50,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "IsEnemyElementAny( \"三つ目の種族\") == 1",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 1,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2408,
+      "Type_Influence": 8,
+      "Param_1": 4,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 59,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "症状緩和=0,演出ループ=1,\n攻撃力低下=100,防御力低下=100,\n魔法耐性低下=70,効果時間=180,\n効果時間のみで消滅=1"
+    },
+    {
+      "ID_Config": 2409,
+      "Type_Influence": 40,
+      "Param_1": 10,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "IsEnemyElementAny( \"公家\") == 1",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 51,
+      "Param_1": 2,
+      "Param_2": 12,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2410,
+      "Type_Influence": 40,
+      "Param_1": 10,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "IsEnemyElementAny( \"公家\") == 1",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 7,
+      "Param_1": 2,
+      "Param_2": 12,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2411,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 120,
+      "Param_3": 2,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 20,
+      "Param_1": 50,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 21,
+      "Param_1": 50,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 31,
+      "Param_1": 6292800,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "Effect=HitEffectBeruzebutte3"
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 46,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "種別=DOT,効果時間=2700,演出=DebuffEffectPoison,演出ループ=1,割合ダメージ=0,固定ダメージ=70,攻撃力を使う=0,インターバル=12, 症状緩和=1, 効果時間のみで消滅=1"
+    },
+    {
+      "ID_Config": 2412,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 35,
+      "Param_3": 6,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 19,
+      "Param_1": 0,
+      "Param_2": 8,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 13,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "Flag=0"
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 64,
+      "Param_1": 30,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2413,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 35,
+      "Param_3": 6,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 19,
+      "Param_1": 0,
+      "Param_2": 45,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 13,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "Flag=0"
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 64,
+      "Param_1": 30,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2414,
+      "Type_Influence": 32,
+      "Param_1": 0,
+      "Param_2": 80,
+      "Param_3": 12,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 8,
+      "Param_1": 2,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 1,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2415,
+      "Type_Influence": 40,
+      "Param_1": 80,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "IsEnemyElementAny( \"式神\") == 1",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 8,
+      "Param_1": 5,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 46,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "種別=DOT,効果時間=1200,演出=DebuffEffectPoison,演出ループ=1,割合ダメージ=0,固定ダメージ=60,攻撃力を使う=0,インターバル=12, 症状緩和=1, 効果時間のみで消滅=1"
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 59,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "症状緩和=0,演出ループ=1,\n攻撃力低下=100,防御力低下=50,\n魔法耐性低下=100,効果時間=180,\n効果時間のみで消滅=1"
+    },
+    {
+      "ID_Config": 2416,
+      "Type_Influence": 40,
+      "Param_1": 80,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 1,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2417,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 250,
+      "Param_3": 10,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 19,
+      "Param_1": 0,
+      "Param_2": 200,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 31,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "Effect=HitEffectAmon5"
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 8,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 16,
+      "Param_1": 0,
+      "Param_2": 100,
+      "Param_3": 30,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 37,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 64,
+      "Param_1": 50,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2418,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 2000,
+      "Param_3": 10,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 19,
+      "Param_1": 0,
+      "Param_2": 400,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 35,
+      "Param_1": 300,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "IsEnemyElementAny( \"アモン\") == 1",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 31,
+      "Param_1": 6292400,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "Effect=HitEffectAmon9"
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 8,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 16,
+      "Param_1": 0,
+      "Param_2": 100,
+      "Param_3": 30,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 37,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 64,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 9999,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2419,
+      "Type_Influence": 16,
+      "Param_1": 0,
+      "Param_2": 100,
+      "Param_3": 30,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 37,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 64,
+      "Param_1": 50,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2420,
+      "Type_Influence": 16,
+      "Param_1": 0,
+      "Param_2": 100,
+      "Param_3": 30,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 37,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 64,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 9999,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2421,
+      "Type_Influence": 37,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 64,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 100,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 8,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 31,
+      "Param_1": 6292768,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "Effect=Aura"
+    },
+    {
+      "ID_Config": 2422,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 60,
+      "Param_3": 2,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 41,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "!IsOwnerUnit();",
+      "_ExtParam": "近接物理=100000,近接魔法=100000,近接貫通=100000,\n遠隔物理=100000,遠隔魔法=100000,遠隔貫通=100000,\n演出物理=HitEffectShield2,演出魔法=HitEffectShield2,\n演出貫通=HitEffectShield2"
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 37,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2423,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 2000,
+      "Param_3": 15,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 19,
+      "Param_1": 0,
+      "Param_2": 50,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 13,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "Flag=0"
+    },
+    {
+      "ID_Config": 2424,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 1,
+      "Param_3": 2,
+      "Param_4": 1,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 35,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 13,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "Flag=0"
+    },
+    {
+      "ID_Config": 2425,
+      "Type_Influence": 31,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "Effect=BackShine3"
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 140,
+      "Param_3": 2,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 23,
+      "Param_1": 100,
+      "Param_2": 200,
+      "Param_3": 104,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "反射=1"
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 17,
+      "Param_1": 0,
+      "Param_2": 30,
+      "Param_3": 6,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 8,
+      "Param_1": 3,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2426,
+      "Type_Influence": 37,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 53,
+      "Param_1": 100,
+      "Param_2": 100,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 8,
+      "Param_1": 3,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 9,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 40,
+      "Param_1": 30,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "IsEnemyElementAny( \"未確認\") == 1",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2427,
+      "Type_Influence": 37,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 53,
+      "Param_1": 100,
+      "Param_2": 100,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 8,
+      "Param_1": 5,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 40,
+      "Param_1": 50,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "IsEnemyElementAny( \"未確認\") == 1",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2428,
+      "Type_Influence": 37,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 53,
+      "Param_1": 100,
+      "Param_2": 100,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 40,
+      "Param_1": 50,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "IsEnemyElementAny( \"未確認\") == 1",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 2,
+      "Param_1": 0,
+      "Param_2": 1000,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 62,
+      "Param_1": 1,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 51,
+      "Param_1": 2,
+      "Param_2": 24,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2429,
+      "Type_Influence": 51,
+      "Param_1": 3,
+      "Param_2": 24,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 62,
+      "Param_1": 1,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2430,
+      "Type_Influence": 64,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 10,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 37,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 8,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2431,
+      "Type_Influence": 64,
+      "Param_1": 20,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 37,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 8,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2432,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 20,
+      "Param_3": 5,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 19,
+      "Param_1": 0,
+      "Param_2": 20,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 64,
+      "Param_1": 30,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 13,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "Flag=0"
+    },
+    {
+      "ID_Config": 2433,
+      "Type_Influence": 64,
+      "Param_1": 30,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 13,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "Flag=0"
+    },
+    {
+      "ID_Config": 2434,
+      "Type_Influence": 17,
+      "Param_1": 0,
+      "Param_2": 240,
+      "Param_3": 12,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 2,
+      "Param_1": 0,
+      "Param_2": 1200,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 7,
+      "Param_1": 3,
+      "Param_2": 7,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 8,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 40,
+      "Param_1": 80,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2435,
+      "Type_Influence": 62,
+      "Param_1": 3,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "Effect=HitEffectHeal"
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 51,
+      "Param_1": 3,
+      "Param_2": 7,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2436,
+      "Type_Influence": 62,
+      "Param_1": 5,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "Effect=HitEffectHeal"
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 51,
+      "Param_1": 5,
+      "Param_2": 7,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2437,
+      "Type_Influence": 49,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 50,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 9,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "Flag=1"
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 8,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 7,
+      "Param_1": 3,
+      "Param_2": 12,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 37,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2438,
+      "Type_Influence": 17,
+      "Param_1": 0,
+      "Param_2": 120,
+      "Param_3": 12,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 2,
+      "Param_1": 0,
+      "Param_2": 1200,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 51,
+      "Param_1": 3,
+      "Param_2": 8,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 40,
+      "Param_1": 50,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2439,
+      "Type_Influence": 17,
+      "Param_1": 0,
+      "Param_2": 240,
+      "Param_3": 12,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 2,
+      "Param_1": 0,
+      "Param_2": 1200,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 51,
+      "Param_1": 6,
+      "Param_2": 8,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 40,
+      "Param_1": 80,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2440,
+      "Type_Influence": 7,
+      "Param_1": 2,
+      "Param_2": 24,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 37,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 9,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "Flag=0"
+    },
+    {
+      "ID_Config": 2441,
+      "Type_Influence": 28,
+      "Param_1": 50,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 29,
+      "Param_1": 50,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 52,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "計算種別=1"
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 8,
+      "Param_1": 3,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2442,
+      "Type_Influence": 52,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "計算種別=1"
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 31,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "Effect=BackShine3"
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 8,
+      "Param_1": 3,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 32,
+      "Param_1": 0,
+      "Param_2": 40,
+      "Param_3": 6,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2443,
+      "Type_Influence": 52,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "計算種別=1"
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 31,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "Effect=BackShine3"
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 8,
+      "Param_1": 3,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2444,
+      "Type_Influence": 49,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 50,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 8,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 37,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2445,
+      "Type_Influence": 31,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "Effect=BackShine3"
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 8,
+      "Param_1": 2,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 7,
+      "Param_1": 2,
+      "Param_2": 7,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 17,
+      "Param_1": 0,
+      "Param_2": 80,
+      "Param_3": 12,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2446,
+      "Type_Influence": 8,
+      "Param_1": 3,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 7,
+      "Param_1": 3,
+      "Param_2": 12,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 16,
+      "Param_1": 0,
+      "Param_2": 120,
+      "Param_3": 30,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 31,
+      "Param_1": 6292944,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "Effect=Aura2"
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 2,
+      "Param_1": 0,
+      "Param_2": 1200,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2447,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 2000,
+      "Param_3": 2,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 36,
+      "Param_1": 100,
+      "Param_2": 200,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 28,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 29,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 1,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2448,
+      "Type_Influence": 52,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "計算種別=1"
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 8,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 50,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 10,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2449,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 1,
+      "Param_3": 2,
+      "Param_4": 1,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 35,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "IsEnemyElementAny( \"ヘスティス\") == 1",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 37,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 10,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2450,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 2000,
+      "Param_3": 2,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 35,
+      "Param_1": 120,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "IsEnemyElementAny( \"ヘスティス\") == 1",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 37,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 10,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2451,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 2000,
+      "Param_3": 2,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 35,
+      "Param_1": 140,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "IsEnemyElementAny( \"ヘスティス\") == 1",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 37,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 10,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2452,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 2000,
+      "Param_3": 2,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 35,
+      "Param_1": 160,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "IsEnemyElementAny( \"ヘスティス\") == 1",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 37,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 10,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2453,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 2000,
+      "Param_3": 2,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 35,
+      "Param_1": 180,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "IsEnemyElementAny( \"ヘスティス\") == 1",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 37,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 10,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2454,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 2000,
+      "Param_3": 2,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 35,
+      "Param_1": 200,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "IsEnemyElementAny( \"ヘスティス\") == 1",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 37,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 10,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2455,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 2000,
+      "Param_3": 2,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 35,
+      "Param_1": 220,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "IsEnemyElementAny( \"ヘスティス\") == 1",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 37,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 10,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2456,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 2000,
+      "Param_3": 2,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 35,
+      "Param_1": 240,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "IsEnemyElementAny( \"ヘスティス\") == 1",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 37,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 10,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2457,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 2000,
+      "Param_3": 2,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 35,
+      "Param_1": 260,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "IsEnemyElementAny( \"ヘスティス\") == 1",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 37,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 10,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2458,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 2000,
+      "Param_3": 2,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 35,
+      "Param_1": 280,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "IsEnemyElementAny( \"ヘスティス\") == 1",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 37,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 10,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2459,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 2000,
+      "Param_3": 2,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 35,
+      "Param_1": 300,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "IsEnemyElementAny( \"ヘスティス\") == 1",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 37,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 10,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2460,
+      "Type_Influence": 28,
+      "Param_1": 50,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 29,
+      "Param_1": 50,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 7,
+      "Param_1": 2,
+      "Param_2": 7,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 1,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2461,
+      "Type_Influence": 31,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "Effect=BackShine3"
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 37,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 53,
+      "Param_1": 100,
+      "Param_2": 100,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2462,
+      "Type_Influence": 37,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 53,
+      "Param_1": 100,
+      "Param_2": 100,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2463,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 200,
+      "Param_3": 30,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 19,
+      "Param_1": 0,
+      "Param_2": 300,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 20,
+      "Param_1": 70,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 21,
+      "Param_1": 70,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 13,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 31,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "Effect=HitEffectWatch4"
+    },
+    {
+      "ID_Config": 2464,
+      "Type_Influence": 14,
+      "Param_1": 1639,
+      "Param_2": 120,
+      "Param_3": 300,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 13,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2465,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 60,
+      "Param_3": 15,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 19,
+      "Param_1": 0,
+      "Param_2": 75,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 16,
+      "Param_1": 0,
+      "Param_2": 40,
+      "Param_3": 12,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 37,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2466,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 2000,
+      "Param_3": 2,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 63,
+      "Param_1": 150,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 40,
+      "Param_1": 50,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "IsEnemyElementAny( \"スライム\") == 1",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2467,
+      "Type_Influence": 32,
+      "Param_1": 0,
+      "Param_2": 20,
+      "Param_3": 12,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 13,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "Flag=0"
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 37,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2468,
+      "Type_Influence": 31,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "Effect=BackShine3"
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 100,
+      "Param_3": 2,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 23,
+      "Param_1": 100,
+      "Param_2": 100,
+      "Param_3": 104,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "反射=1,反応=魔法,物理"
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 8,
+      "Param_1": 2,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2469,
+      "Type_Influence": 7,
+      "Param_1": 5,
+      "Param_2": 32,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2470,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 2000,
+      "Param_3": 2,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 23,
+      "Param_1": 100,
+      "Param_2": 50,
+      "Param_3": 620,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "反射=1"
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 20,
+      "Param_1": 150,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 35,
+      "Param_1": 200,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 13,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "Flag=0"
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 37,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2471,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 1,
+      "Param_3": 2,
+      "Param_4": 1,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 20,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 35,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 13,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "Flag=0"
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 37,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2472,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 2000,
+      "Param_3": 2,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 35,
+      "Param_1": 120,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "IsEnemyRace(\"魚人\");",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 37,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2473,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 2000,
+      "Param_3": 2,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 35,
+      "Param_1": 140,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "IsEnemyRace(\"魚人\");",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 37,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2474,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 2000,
+      "Param_3": 2,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 35,
+      "Param_1": 160,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "IsEnemyRace(\"魚人\");",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 37,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2475,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 2000,
+      "Param_3": 2,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 35,
+      "Param_1": 180,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "IsEnemyRace(\"魚人\");",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 37,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2476,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 2000,
+      "Param_3": 2,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 35,
+      "Param_1": 200,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "IsEnemyRace(\"魚人\");",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 37,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2477,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 1,
+      "Param_3": 2,
+      "Param_4": 1,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 63,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 40,
+      "Param_1": 50,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 13,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "Flag=0"
+    },
+    {
+      "ID_Config": 2478,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 2000,
+      "Param_3": 2,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 63,
+      "Param_1": 200,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 54,
+      "Param_1": 100,
+      "Param_2": 100,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 41,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "IsOwnerUnit();",
+      "_ExtParam": "近接物理=1000000,近接魔法=1000000,近接貫通=1000000,\n遠隔物理=1000000,遠隔魔法=1000000,遠隔貫通=1000000,\n演出物理=HitEffectShield2,演出魔法=HitEffectShield2,\n演出貫通=HitEffectShield2"
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 43,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 40,
+      "Param_1": 50,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 13,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "Flag=0"
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 1,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2479,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 2000,
+      "Param_3": 2,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 23,
+      "Param_1": 100,
+      "Param_2": 50,
+      "Param_3": 620,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "反射=1"
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 20,
+      "Param_1": 150,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 35,
+      "Param_1": 200,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2480,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 2000,
+      "Param_3": 2,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 23,
+      "Param_1": 100,
+      "Param_2": 50,
+      "Param_3": 620,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "反射=1"
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 20,
+      "Param_1": 150,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 35,
+      "Param_1": 200,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 31,
+      "Param_1": 6291481,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "Effect=Aura13"
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 43,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2481,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 2000,
+      "Param_3": 2,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 20,
+      "Param_1": 150,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 35,
+      "Param_1": 200,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2482,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 1,
+      "Param_3": 2,
+      "Param_4": 1,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 20,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 35,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2483,
+      "Type_Influence": 8,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 2,
+      "Param_1": 0,
+      "Param_2": 1200,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2484,
+      "Type_Influence": 7,
+      "Param_1": 2,
+      "Param_2": 24,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 8,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2485,
+      "Type_Influence": 7,
+      "Param_1": 2,
+      "Param_2": 6,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 15,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2486,
+      "Type_Influence": 51,
+      "Param_1": 2,
+      "Param_2": 6,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 15,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2487,
+      "Type_Influence": 40,
+      "Param_1": 50,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "IsEnemyElementAny( \"アンデッド\") == 1",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 37,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 1,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2488,
+      "Type_Influence": 39,
+      "Param_1": 100,
+      "Param_2": 180,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "IsIdentitiy(\"アンデッド\")",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 8,
+      "Param_1": 2,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 1,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2489,
+      "Type_Influence": 52,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "計算種別=1"
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 8,
+      "Param_1": 2,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 1,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2490,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 2000,
+      "Param_3": 2,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 23,
+      "Param_1": 100,
+      "Param_2": 150,
+      "Param_3": 149,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "反射=0,反応=物理"
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 37,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 53,
+      "Param_1": 100,
+      "Param_2": 100,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2491,
+      "Type_Influence": 18,
+      "Param_1": 1,
+      "Param_2": 2000,
+      "Param_3": 2,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 23,
+      "Param_1": 100,
+      "Param_2": 150,
+      "Param_3": 149,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "反射=0,反応=魔法"
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 37,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 53,
+      "Param_1": 100,
+      "Param_2": 100,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 8,
+      "Param_1": 2,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2492,
+      "Type_Influence": 64,
+      "Param_1": 50,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 37,
+      "Param_1": 100,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 53,
+      "Param_1": 100,
+      "Param_2": 100,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 8,
+      "Param_1": 3,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2493,
+      "Type_Influence": 59,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "症状緩和=0,演出ループ=1,\n攻撃力低下=15,防御力低下=15,\n魔法耐性低下=100,効果時間=300,\n効果時間のみで消滅=1"
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 31,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "Effect=BackShine3"
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 8,
+      "Param_1": 2,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 2494,
+      "Type_Influence": 10,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": ""
+    },
+    {
+      "ID_Config": 0,
+      "Type_Influence": 59,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "症状緩和=0,演出ループ=1,\n攻撃力低下=15,防御力低下=15,\n魔法耐性低下=100,効果時間=300,\n効果時間のみで消滅=1"
+    },
+    {
+      "ID_Config": 2495,
+      "Type_Influence": 46,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "種別=DOT,効果時間=1200,演出=HitEffectDark,演出ループ=1,割合ダメージ=0,固定ダメージ=25,攻撃力を使う=0,インターバル=30, 症状緩和=1, 効果時間のみで消滅=1"
+    },
+    {
+      "ID_Config": 2496,
+      "Type_Influence": 46,
+      "Param_1": 0,
+      "Param_2": 0,
+      "Param_3": 0,
+      "Param_4": 0,
+      "_Expression": "",
+      "_ExtParam": "種別=DOT,効果時間=1200,演出=HitEffectDark,演出ループ=1,割合ダメージ=0,固定ダメージ=50,攻撃力を使う=0,インターバル=30, 症状緩和=1, 効果時間のみで消滅=1"
     }
   ]
 }

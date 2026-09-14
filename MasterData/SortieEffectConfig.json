@@ -4,35 +4,40 @@
     "flags": "0x10",
     "record_count": 9,
     "record_size": 16,
-    "custom_id": 1667593072
+    "tag": "psec",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "ID_AbilityType",
+      "alias": "覚醒アビリティタイプ",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "Param_Delay",
+      "alias": "効果ディレイ",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "Param_CCBonus",
+      "alias": "CCボーナス",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 8,
+      "type_code": 1,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "Param_Conditon",
+      "alias": "適応条件",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 12,
+      "type_code": 1,
+      "offset": 12,
       "size": 4
     }
   ],

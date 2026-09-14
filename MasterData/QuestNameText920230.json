@@ -1,0 +1,40 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 6,
+    "record_size": 4,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "Message",
+      "alias": "名前",
+      "type": "string",
+      "type_code": 32,
+      "offset": 0,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "Message": "プリンセス流のお茶会"
+    },
+    {
+      "Message": "開拓地の銃士たち"
+    },
+    {
+      "Message": "ドラゴンたちの噂と憧れ"
+    },
+    {
+      "Message": "英傑たちの歓迎会"
+    },
+    {
+      "Message": "帝国流の凱旋パレード"
+    },
+    {
+      "Message": "武を競う者たち"
+    }
+  ]
+}

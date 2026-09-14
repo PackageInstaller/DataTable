@@ -4,50 +4,89 @@
     "flags": "0x14",
     "record_count": 12,
     "record_size": 52,
-    "custom_id": 2020897645
+    "tag": "",
+    "date_epoch": "0001-01-01"
   },
   "_fields": [
     {
       "name": "MissionID",
+      "alias": "ミッションID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "Name",
+      "alias": "ミッション名",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 4,
+      "type_code": 32,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "Enable",
+      "alias": "有効フラグ",
       "type": "bool",
-      "mapped_type": 5,
-      "rec_offset": 8,
+      "type_code": 5,
+      "offset": 8,
       "size": 1
     },
     {
-      "name": "\b\r\fStartDateTime",
-      "type": "unknown",
-      "mapped_type": 0,
-      "rec_offset": 0,
+      "name": "StartDateTime",
+      "alias": "開始日時",
+      "type": "datetime",
+      "type_code": 9,
+      "offset": 16,
+      "size": 8
+    },
+    {
+      "name": "EndDateTime",
+      "alias": "終了日時",
+      "type": "datetime",
+      "type_code": 9,
+      "offset": 24,
+      "size": 8
+    },
+    {
+      "name": "ButtonTextureID",
+      "alias": "ボタン画像ID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 32,
       "size": 4
     },
     {
-      "name": "ime",
-      "type": "unknown",
-      "mapped_type": 97,
-      "rec_offset": 17508,
-      "size": 15999
+      "name": "KeyQuestID",
+      "alias": "キークエストID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 36,
+      "size": 4
     },
     {
-      "name": "ID",
-      "type": "unknown",
-      "mapped_type": 191,
-      "rec_offset": 33507,
-      "size": 0
+      "name": "TagID",
+      "alias": "タグID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 40,
+      "size": 4
+    },
+    {
+      "name": "TagIDRange",
+      "alias": "タグIDレンジ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 44,
+      "size": 4
+    },
+    {
+      "name": "PhaseName",
+      "alias": "フェーズ名",
+      "type": "string",
+      "type_code": 32,
+      "offset": 48,
+      "size": 4
     }
   ],
   "records": [
@@ -55,73 +94,217 @@
       "MissionID": 100001,
       "Name": "ストーリーミッション1",
       "Enable": true,
-      "\b\r\fStartDateTime": "a1860100"
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "ButtonTextureID": 9494569,
+      "KeyQuestID": 0,
+      "TagID": 0,
+      "TagIDRange": 0,
+      "PhaseName": "第一章"
     },
     {
       "MissionID": 100002,
       "Name": "ストーリーミッション2",
       "Enable": true,
-      "\b\r\fStartDateTime": "a2860100"
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "ButtonTextureID": 9494570,
+      "KeyQuestID": 1003,
+      "TagID": 0,
+      "TagIDRange": 0,
+      "PhaseName": "第二章"
     },
     {
       "MissionID": 100003,
       "Name": "ストーリーミッション3",
       "Enable": true,
-      "\b\r\fStartDateTime": "a3860100"
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "ButtonTextureID": 9494571,
+      "KeyQuestID": 1208,
+      "TagID": 0,
+      "TagIDRange": 0,
+      "PhaseName": "第三章"
     },
     {
       "MissionID": 100004,
       "Name": "ストーリーミッション4",
       "Enable": true,
-      "\b\r\fStartDateTime": "a4860100"
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "ButtonTextureID": 9494572,
+      "KeyQuestID": 1306,
+      "TagID": 0,
+      "TagIDRange": 0,
+      "PhaseName": "第四章"
     },
     {
       "MissionID": 100005,
       "Name": "ストーリーミッション5",
       "Enable": true,
-      "\b\r\fStartDateTime": "a5860100"
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "ButtonTextureID": 9494573,
+      "KeyQuestID": 1405,
+      "TagID": 0,
+      "TagIDRange": 0,
+      "PhaseName": "第五章"
     },
     {
       "MissionID": 100006,
       "Name": "ストーリーミッション6",
       "Enable": true,
-      "\b\r\fStartDateTime": "a6860100"
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "ButtonTextureID": 9494574,
+      "KeyQuestID": 1505,
+      "TagID": 0,
+      "TagIDRange": 0,
+      "PhaseName": "第六章"
     },
     {
       "MissionID": 100007,
       "Name": "ストーリーミッション7",
       "Enable": true,
-      "\b\r\fStartDateTime": "a7860100"
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "ButtonTextureID": 9494575,
+      "KeyQuestID": 1605,
+      "TagID": 0,
+      "TagIDRange": 0,
+      "PhaseName": "第七章"
     },
     {
       "MissionID": 100008,
       "Name": "ストーリーミッション8",
       "Enable": true,
-      "\b\r\fStartDateTime": "a8860100"
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "ButtonTextureID": 9494576,
+      "KeyQuestID": 1706,
+      "TagID": 0,
+      "TagIDRange": 0,
+      "PhaseName": "第八章"
     },
     {
       "MissionID": 100009,
       "Name": "ストーリーミッション9",
       "Enable": true,
-      "\b\r\fStartDateTime": "a9860100"
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "ButtonTextureID": 9494577,
+      "KeyQuestID": 1806,
+      "TagID": 0,
+      "TagIDRange": 0,
+      "PhaseName": "第九章"
     },
     {
       "MissionID": 100010,
       "Name": "ストーリーミッション10",
       "Enable": true,
-      "\b\r\fStartDateTime": "aa860100"
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "ButtonTextureID": 9494578,
+      "KeyQuestID": 1906,
+      "TagID": 0,
+      "TagIDRange": 0,
+      "PhaseName": "第十章"
     },
     {
       "MissionID": 100011,
       "Name": "ストーリーミッション11",
       "Enable": true,
-      "\b\r\fStartDateTime": "ab860100"
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "ButtonTextureID": 9494579,
+      "KeyQuestID": 1918,
+      "TagID": 0,
+      "TagIDRange": 0,
+      "PhaseName": "第十一章"
     },
     {
       "MissionID": 100101,
       "Name": "ストーリーミッション外伝",
       "Enable": true,
-      "\b\r\fStartDateTime": "05870100"
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "ButtonTextureID": 9494580,
+      "KeyQuestID": 1004,
+      "TagID": 0,
+      "TagIDRange": 0,
+      "PhaseName": "外伝"
     }
   ]
 }

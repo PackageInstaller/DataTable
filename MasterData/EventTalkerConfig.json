@@ -4,28 +4,32 @@
     "flags": "0x14",
     "record_count": 9,
     "record_size": 12,
-    "custom_id": 1802794597
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "EventID",
+      "alias": "イベントID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "TalkerName",
+      "alias": "話者名",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 4,
+      "type_code": 32,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "Type_GuidCharaType",
+      "alias": "ガイドキャラタイプ",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 8,
+      "type_code": 1,
+      "offset": 8,
       "size": 4
     }
   ],

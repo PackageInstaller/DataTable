@@ -1,0 +1,249 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x00",
+    "record_size": 1152
+  },
+  "_fields": [
+    {
+      "name": "LookHarlemFlag00",
+      "alias": "ハーレム閲覧フラグ00",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "LookHarlemFlag01",
+      "alias": "ハーレム閲覧フラグ01",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "LookHarlemFlag10",
+      "alias": "ハーレム閲覧フラグ10",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    },
+    {
+      "name": "LookHarlemFlag11",
+      "alias": "ハーレム閲覧フラグ11",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 12,
+      "size": 4
+    },
+    {
+      "name": "LastLoginDate",
+      "alias": "最終ログイン日",
+      "type": "date",
+      "type_code": 7,
+      "offset": 16,
+      "size": 4
+    },
+    {
+      "name": "LogInStampCount",
+      "alias": "現在のログインスタンプ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 20,
+      "size": 4
+    },
+    {
+      "name": "NormalGachaFree",
+      "alias": "ノーマルガチャ無料フラグ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 24,
+      "size": 4
+    },
+    {
+      "name": "MaintenanceCheckDateTime",
+      "alias": "メンテナンスのチェック日時",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 28,
+      "size": 4
+    },
+    {
+      "name": "LookHarlemFlag02",
+      "alias": "ハーレム閲覧フラグ02",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 32,
+      "size": 4
+    },
+    {
+      "name": "LookHarlemFlag12",
+      "alias": "ハーレム閲覧フラグ12",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 36,
+      "size": 4
+    },
+    {
+      "name": "LookHarlemFlag03",
+      "alias": "ハーレム閲覧フラグ03",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 40,
+      "size": 4
+    },
+    {
+      "name": "LookHarlemFlag13",
+      "alias": "ハーレム閲覧フラグ13",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 44,
+      "size": 4
+    },
+    {
+      "name": "WatchEventFlag0",
+      "alias": "イベント視聴フラグ0",
+      "type": "fixed_string",
+      "type_code": 33,
+      "offset": 48,
+      "size": 32
+    },
+    {
+      "name": "WatchEventFlag1",
+      "alias": "イベント視聴フラグ1",
+      "type": "fixed_string",
+      "type_code": 33,
+      "offset": 304,
+      "size": 32
+    },
+    {
+      "name": "WatchEventFlag0_2",
+      "alias": "イベント視聴フラグ0_2",
+      "type": "fixed_string",
+      "type_code": 33,
+      "offset": 560,
+      "size": 32
+    },
+    {
+      "name": "WatchEventFlag1_2",
+      "alias": "イベント視聴フラグ1_2",
+      "type": "fixed_string",
+      "type_code": 33,
+      "offset": 816,
+      "size": 32
+    },
+    {
+      "name": "StampCardGrade",
+      "alias": "グレード",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 1072,
+      "size": 4
+    },
+    {
+      "name": "_EvCmb",
+      "alias": "イベント閲覧コンバートフラグ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 1076,
+      "size": 4
+    },
+    {
+      "name": "GloryPoint",
+      "alias": "名声ポイント",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 1080,
+      "size": 4
+    },
+    {
+      "name": "HomeCookingReceivedAmount",
+      "alias": "手料理受取数",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 1084,
+      "size": 4
+    },
+    {
+      "name": "HomeCookingReceivedDate",
+      "alias": "手料理受取日",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 1088,
+      "size": 4
+    },
+    {
+      "name": "BonusPremiumSummonCount",
+      "alias": "無料プレミアム召喚回数",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 1092,
+      "size": 4
+    },
+    {
+      "name": "BonusPremiumSummonDate",
+      "alias": "無料プレミアム召喚日",
+      "type": "date",
+      "type_code": 7,
+      "offset": 1096,
+      "size": 4
+    },
+    {
+      "name": "GameStartDateTime",
+      "alias": "ゲーム開始日時",
+      "type": "datetime",
+      "type_code": 9,
+      "offset": 1104,
+      "size": 8
+    },
+    {
+      "name": "ComebackLoginDateTime",
+      "alias": "カムバック日時",
+      "type": "datetime",
+      "type_code": 9,
+      "offset": 1112,
+      "size": 8
+    },
+    {
+      "name": "LatestComebackLoginBonusDateTime",
+      "alias": "カムバックログボ日時",
+      "type": "datetime",
+      "type_code": 9,
+      "offset": 1120,
+      "size": 8
+    },
+    {
+      "name": "LatestComebackLoginBonusDays",
+      "alias": "カムバックログボ日数",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 1128,
+      "size": 4
+    },
+    {
+      "name": "LatestComebackSummonBonusDateTime",
+      "alias": "カムバック召喚日時",
+      "type": "datetime",
+      "type_code": 9,
+      "offset": 1136,
+      "size": 8
+    },
+    {
+      "name": "LatestComebackSummonBonusDays",
+      "alias": "カムバック召喚日数",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 1144,
+      "size": 4
+    },
+    {
+      "name": "GoddessRevivalTotalStarCount",
+      "alias": "女神の復活クエストの獲得☆合計",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 1148,
+      "size": 4
+    }
+  ]
+}

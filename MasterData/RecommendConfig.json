@@ -2,58 +2,66 @@
   "_meta": {
     "version": 1,
     "flags": "0x14",
-    "record_count": 50,
+    "record_count": 55,
     "record_size": 28,
-    "custom_id": 1734567780
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "PackageID",
+      "alias": "パッケージID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "ConditionRank",
+      "alias": "達成ランク",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "SalesTime",
+      "alias": "販売時間(H)",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 8,
+      "type_code": 1,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "BannerID",
+      "alias": "バナーID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 12,
+      "type_code": 1,
+      "offset": 12,
       "size": 4
     },
     {
       "name": "ResaleStartDateTime",
+      "alias": "再販開始日時",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 16,
+      "type_code": 32,
+      "offset": 16,
       "size": 4
     },
     {
       "name": "ResaleEndDateTime",
+      "alias": "再販終了日時",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 20,
+      "type_code": 32,
+      "offset": 20,
       "size": 4
     },
     {
       "name": "ResaleTime",
+      "alias": "再販時間(H)",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 24,
+      "type_code": 1,
+      "offset": 24,
       "size": 4
     }
   ],
@@ -506,6 +514,51 @@
       "BannerID": 15,
       "ResaleStartDateTime": "2026/01/29 11:30:00",
       "ResaleEndDateTime": "2026/02/05 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 600,
+      "ConditionRank": 210,
+      "SalesTime": 48,
+      "BannerID": 18,
+      "ResaleStartDateTime": "2026/05/14 11:30:00",
+      "ResaleEndDateTime": "2026/05/21 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 618,
+      "ConditionRank": 220,
+      "SalesTime": 48,
+      "BannerID": 19,
+      "ResaleStartDateTime": "2026/06/25 11:30:00",
+      "ResaleEndDateTime": "2026/07/02 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 637,
+      "ConditionRank": 230,
+      "SalesTime": 48,
+      "BannerID": 20,
+      "ResaleStartDateTime": "2026/07/23 11:30:00",
+      "ResaleEndDateTime": "2026/07/30 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 648,
+      "ConditionRank": 240,
+      "SalesTime": 48,
+      "BannerID": 21,
+      "ResaleStartDateTime": "2026/08/12 11:30:00",
+      "ResaleEndDateTime": "2026/08/20 11:30:00",
+      "ResaleTime": 0
+    },
+    {
+      "PackageID": 663,
+      "ConditionRank": 250,
+      "SalesTime": 48,
+      "BannerID": 22,
+      "ResaleStartDateTime": "2026/09/10 11:30:00",
+      "ResaleEndDateTime": "2026/09/18 11:30:00",
       "ResaleTime": 0
     }
   ]

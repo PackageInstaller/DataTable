@@ -1,0 +1,37 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 5,
+    "record_size": 4,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "Message",
+      "alias": "メッセージ",
+      "type": "string",
+      "type_code": 32,
+      "offset": 0,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "Message": "旅の武闘家からの挑戦！"
+    },
+    {
+      "Message": "砂浜での足腰の鍛錬\n修行相手を務めよう。"
+    },
+    {
+      "Message": "狼との脚力修行\n修行相手を務めよう。"
+    },
+    {
+      "Message": "打撃の実践演習\n修行相手を務めよう。\n＜遠距離型ユニット出撃不可＞"
+    },
+    {
+      "Message": "最終訓練\n修行相手を務めよう。\n＜猛毒：HPに継続ダメージ＞"
+    }
+  ]
+}

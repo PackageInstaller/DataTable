@@ -1,0 +1,65 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x00",
+    "record_size": 372
+  },
+  "_fields": [
+    {
+      "name": "Type",
+      "alias": "種類",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Content",
+      "alias": "内容詳細",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Description",
+      "alias": "入手理由説明",
+      "type": "fixed_string",
+      "type_code": 33,
+      "offset": 8,
+      "size": 32
+    },
+    {
+      "name": "_Param1",
+      "alias": "パラメータ1",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 108,
+      "size": 4
+    },
+    {
+      "name": "_Param2",
+      "alias": "パラメータ2",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 112,
+      "size": 4
+    },
+    {
+      "name": "ID_Item",
+      "alias": "汎用アイテムID",
+      "type": "fixed_string",
+      "type_code": 33,
+      "offset": 116,
+      "size": 32
+    },
+    {
+      "name": "ID_Event",
+      "alias": "汎用イベントID",
+      "type": "fixed_string",
+      "type_code": 33,
+      "offset": 244,
+      "size": 32
+    }
+  ]
+}

@@ -4,28 +4,32 @@
     "flags": "0x10",
     "record_count": 3,
     "record_size": 12,
-    "custom_id": 1685353065
+    "tag": "irtd",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "_ResID",
+      "alias": "定義名",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "_TypeID",
+      "alias": "ID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "_SystemTextID",
+      "alias": "ID_SYSTXT",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 8,
+      "type_code": 1,
+      "offset": 8,
       "size": 4
     }
   ],
@@ -38,12 +42,12 @@
     {
       "_ResID": -964662456,
       "_TypeID": 10001,
-      "_SystemTextID": 4606
+      "_SystemTextID": 4923
     },
     {
       "_ResID": -730535869,
       "_TypeID": 20001,
-      "_SystemTextID": 4607
+      "_SystemTextID": 4924
     }
   ]
 }

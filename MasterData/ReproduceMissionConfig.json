@@ -4,77 +4,88 @@
     "flags": "0x14",
     "record_count": 49,
     "record_size": 52,
-    "custom_id": 2020897645
+    "tag": "",
+    "date_epoch": "0001-01-01"
   },
   "_fields": [
     {
       "name": "MissionID",
+      "alias": "ミッションID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "Name",
+      "alias": "ミッション名",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 4,
+      "type_code": 32,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "Enable",
+      "alias": "有効フラグ",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 8,
+      "type_code": 1,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "StartDateTime",
-      "type": "double",
-      "mapped_type": 9,
-      "rec_offset": 16,
+      "alias": "開始日時",
+      "type": "datetime",
+      "type_code": 9,
+      "offset": 16,
       "size": 8
     },
     {
       "name": "EndDateTime",
-      "type": "double",
-      "mapped_type": 9,
-      "rec_offset": 24,
+      "alias": "終了日時",
+      "type": "datetime",
+      "type_code": 9,
+      "offset": 24,
       "size": 8
     },
     {
       "name": "UseInformationButton",
+      "alias": "インフォメーション",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 32,
+      "type_code": 1,
+      "offset": 32,
       "size": 4
     },
     {
       "name": "DisplayOrder",
+      "alias": "表示順",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 36,
+      "type_code": 1,
+      "offset": 36,
       "size": 4
     },
     {
       "name": "UseEndText",
+      "alias": "終了日時テキスト",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 40,
+      "type_code": 1,
+      "offset": 40,
       "size": 4
     },
     {
       "name": "TagID",
+      "alias": "タグID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 44,
+      "type_code": 1,
+      "offset": 44,
       "size": 4
     },
     {
       "name": "TagIDRange",
+      "alias": "タグIDレンジ",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 48,
+      "type_code": 1,
+      "offset": 48,
       "size": 4
     }
   ],
@@ -83,8 +94,14 @@
       "MissionID": 300084,
       "Name": "ゴールドラッシュ9(2016)",
       "Enable": 2047,
-      "StartDateTime": 3.1572087837864e-310,
-      "EndDateTime": 3.15725075960367e-310,
+      "StartDateTime": {
+        "date": 2093770112,
+        "time": 14878
+      },
+      "EndDateTime": {
+        "date": 2943370112,
+        "time": 14878
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 578,
       "UseEndText": 0,
@@ -95,8 +112,14 @@
       "MissionID": 300100,
       "Name": "ゴールドラッシュ10(2016)",
       "Enable": 2047,
-      "StartDateTime": 3.1572087837864e-310,
-      "EndDateTime": 3.15725075960367e-310,
+      "StartDateTime": {
+        "date": 2093770112,
+        "time": 14878
+      },
+      "EndDateTime": {
+        "date": 2943370112,
+        "time": 14878
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 579,
       "UseEndText": 0,
@@ -107,8 +130,14 @@
       "MissionID": 300111,
       "Name": "ゴールドラッシュ11(2016)",
       "Enable": 2047,
-      "StartDateTime": 3.1572087837864e-310,
-      "EndDateTime": 3.15725075960367e-310,
+      "StartDateTime": {
+        "date": 2093770112,
+        "time": 14878
+      },
+      "EndDateTime": {
+        "date": 2943370112,
+        "time": 14878
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 580,
       "UseEndText": 0,
@@ -119,8 +148,14 @@
       "MissionID": 300122,
       "Name": "ゴールドラッシュ12(2016)",
       "Enable": 2047,
-      "StartDateTime": 3.1572087837864e-310,
-      "EndDateTime": 3.15725075960367e-310,
+      "StartDateTime": {
+        "date": 2093770112,
+        "time": 14878
+      },
+      "EndDateTime": {
+        "date": 2943370112,
+        "time": 14878
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 581,
       "UseEndText": 0,
@@ -131,8 +166,14 @@
       "MissionID": 300130,
       "Name": "ゴールドラッシュ13(2016)",
       "Enable": 2047,
-      "StartDateTime": 3.1572087837864e-310,
-      "EndDateTime": 3.15725075960367e-310,
+      "StartDateTime": {
+        "date": 2093770112,
+        "time": 14878
+      },
+      "EndDateTime": {
+        "date": 2943370112,
+        "time": 14878
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 582,
       "UseEndText": 0,
@@ -143,8 +184,14 @@
       "MissionID": 300141,
       "Name": "ゴールドラッシュ14(2017)",
       "Enable": 2047,
-      "StartDateTime": 3.1572087837864e-310,
-      "EndDateTime": 3.15725075960367e-310,
+      "StartDateTime": {
+        "date": 2093770112,
+        "time": 14878
+      },
+      "EndDateTime": {
+        "date": 2943370112,
+        "time": 14878
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 583,
       "UseEndText": 0,
@@ -155,8 +202,14 @@
       "MissionID": 300150,
       "Name": "ゴールドラッシュ15(2017)",
       "Enable": 2047,
-      "StartDateTime": 3.1572087837864e-310,
-      "EndDateTime": 3.15725075960367e-310,
+      "StartDateTime": {
+        "date": 2093770112,
+        "time": 14878
+      },
+      "EndDateTime": {
+        "date": 2943370112,
+        "time": 14878
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 584,
       "UseEndText": 0,
@@ -167,8 +220,14 @@
       "MissionID": 300158,
       "Name": "ゴールドラッシュ16(2017)",
       "Enable": 2047,
-      "StartDateTime": 3.1572087837864e-310,
-      "EndDateTime": 3.15725075960367e-310,
+      "StartDateTime": {
+        "date": 2093770112,
+        "time": 14878
+      },
+      "EndDateTime": {
+        "date": 2943370112,
+        "time": 14878
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 585,
       "UseEndText": 0,
@@ -179,8 +238,14 @@
       "MissionID": 300165,
       "Name": "ゴールドラッシュ17(2017)",
       "Enable": 2047,
-      "StartDateTime": 3.1572087837864e-310,
-      "EndDateTime": 3.15725075960367e-310,
+      "StartDateTime": {
+        "date": 2093770112,
+        "time": 14878
+      },
+      "EndDateTime": {
+        "date": 2943370112,
+        "time": 14878
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 586,
       "UseEndText": 0,
@@ -191,8 +256,14 @@
       "MissionID": 300175,
       "Name": "ゴールドラッシュ18(2017)",
       "Enable": 2047,
-      "StartDateTime": 3.1572087837864e-310,
-      "EndDateTime": 3.15725075960367e-310,
+      "StartDateTime": {
+        "date": 2093770112,
+        "time": 14878
+      },
+      "EndDateTime": {
+        "date": 2943370112,
+        "time": 14878
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 587,
       "UseEndText": 0,
@@ -203,8 +274,14 @@
       "MissionID": 300182,
       "Name": "ゴールドラッシュ19(2018)",
       "Enable": 2047,
-      "StartDateTime": 3.1572087837864e-310,
-      "EndDateTime": 3.15725075960367e-310,
+      "StartDateTime": {
+        "date": 2093770112,
+        "time": 14878
+      },
+      "EndDateTime": {
+        "date": 2943370112,
+        "time": 14878
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 588,
       "UseEndText": 0,
@@ -215,8 +292,14 @@
       "MissionID": 300193,
       "Name": "ゴールドラッシュ20(2018)",
       "Enable": 2047,
-      "StartDateTime": 3.1572087837864e-310,
-      "EndDateTime": 3.15725075960367e-310,
+      "StartDateTime": {
+        "date": 2093770112,
+        "time": 14878
+      },
+      "EndDateTime": {
+        "date": 2943370112,
+        "time": 14878
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 589,
       "UseEndText": 0,
@@ -227,8 +310,14 @@
       "MissionID": 300204,
       "Name": "ゴールドラッシュ21(2018)",
       "Enable": 2047,
-      "StartDateTime": 3.1572087837864e-310,
-      "EndDateTime": 3.15725075960367e-310,
+      "StartDateTime": {
+        "date": 2093770112,
+        "time": 14878
+      },
+      "EndDateTime": {
+        "date": 2943370112,
+        "time": 14878
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 590,
       "UseEndText": 0,
@@ -239,8 +328,14 @@
       "MissionID": 300217,
       "Name": "ゴールドラッシュ22(2018)",
       "Enable": 2047,
-      "StartDateTime": 3.1572514710582e-310,
-      "EndDateTime": 3.1572806406445e-310,
+      "StartDateTime": {
+        "date": 2957770112,
+        "time": 14878
+      },
+      "EndDateTime": {
+        "date": 3548169112,
+        "time": 14878
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 591,
       "UseEndText": 0,
@@ -251,8 +346,14 @@
       "MissionID": 300232,
       "Name": "ゴールドラッシュ23(2019)",
       "Enable": 2047,
-      "StartDateTime": 3.1572514710582e-310,
-      "EndDateTime": 3.1572806406445e-310,
+      "StartDateTime": {
+        "date": 2957770112,
+        "time": 14878
+      },
+      "EndDateTime": {
+        "date": 3548169112,
+        "time": 14878
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 592,
       "UseEndText": 0,
@@ -263,8 +364,14 @@
       "MissionID": 300243,
       "Name": "ゴールドラッシュ24(2019)",
       "Enable": 2047,
-      "StartDateTime": 3.1572514710582e-310,
-      "EndDateTime": 3.1572806406445e-310,
+      "StartDateTime": {
+        "date": 2957770112,
+        "time": 14878
+      },
+      "EndDateTime": {
+        "date": 3548169112,
+        "time": 14878
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 593,
       "UseEndText": 0,
@@ -275,8 +382,14 @@
       "MissionID": 300251,
       "Name": "ゴールドラッシュ25(2019)",
       "Enable": 2047,
-      "StartDateTime": 3.1572514710582e-310,
-      "EndDateTime": 3.1572806406445e-310,
+      "StartDateTime": {
+        "date": 2957770112,
+        "time": 14878
+      },
+      "EndDateTime": {
+        "date": 3548169112,
+        "time": 14878
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 594,
       "UseEndText": 0,
@@ -287,8 +400,14 @@
       "MissionID": 300257,
       "Name": "ゴールドラッシュ26(2019)",
       "Enable": 2047,
-      "StartDateTime": 3.1572514710582e-310,
-      "EndDateTime": 3.1572806406445e-310,
+      "StartDateTime": {
+        "date": 2957770112,
+        "time": 14878
+      },
+      "EndDateTime": {
+        "date": 3548169112,
+        "time": 14878
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 595,
       "UseEndText": 0,
@@ -299,8 +418,14 @@
       "MissionID": 300277,
       "Name": "ゴールドラッシュ27(2020)",
       "Enable": 2047,
-      "StartDateTime": 3.1572514710582e-310,
-      "EndDateTime": 3.1572806406445e-310,
+      "StartDateTime": {
+        "date": 2957770112,
+        "time": 14878
+      },
+      "EndDateTime": {
+        "date": 3548169112,
+        "time": 14878
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 596,
       "UseEndText": 0,
@@ -311,8 +436,14 @@
       "MissionID": 300293,
       "Name": "ゴールドラッシュ28(2020)",
       "Enable": 2047,
-      "StartDateTime": 3.1572514710582e-310,
-      "EndDateTime": 3.1572806406445e-310,
+      "StartDateTime": {
+        "date": 2957770112,
+        "time": 14878
+      },
+      "EndDateTime": {
+        "date": 3548169112,
+        "time": 14878
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 597,
       "UseEndText": 0,
@@ -323,8 +454,14 @@
       "MissionID": 300307,
       "Name": "ゴールドラッシュ29(2021)",
       "Enable": 2047,
-      "StartDateTime": 3.1572514710582e-310,
-      "EndDateTime": 3.1572806406445e-310,
+      "StartDateTime": {
+        "date": 2957770112,
+        "time": 14878
+      },
+      "EndDateTime": {
+        "date": 3548169112,
+        "time": 14878
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 598,
       "UseEndText": 0,
@@ -335,8 +472,14 @@
       "MissionID": 300333,
       "Name": "ゴールドラッシュ30(2021)",
       "Enable": 2047,
-      "StartDateTime": 3.1572514710582e-310,
-      "EndDateTime": 3.1572806406445e-310,
+      "StartDateTime": {
+        "date": 2957770112,
+        "time": 14878
+      },
+      "EndDateTime": {
+        "date": 3548169112,
+        "time": 14878
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 599,
       "UseEndText": 0,
@@ -347,8 +490,14 @@
       "MissionID": 300377,
       "Name": "ゴールドラッシュ31(2022)",
       "Enable": 2047,
-      "StartDateTime": 3.1572514710582e-310,
-      "EndDateTime": 3.1572806406445e-310,
+      "StartDateTime": {
+        "date": 2957770112,
+        "time": 14878
+      },
+      "EndDateTime": {
+        "date": 3548169112,
+        "time": 14878
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 600,
       "UseEndText": 0,
@@ -359,8 +508,14 @@
       "MissionID": 300416,
       "Name": "ゴールドラッシュ32(2023)",
       "Enable": 2047,
-      "StartDateTime": 3.1572514710582e-310,
-      "EndDateTime": 3.1572806406445e-310,
+      "StartDateTime": {
+        "date": 2957770112,
+        "time": 14878
+      },
+      "EndDateTime": {
+        "date": 3548169112,
+        "time": 14878
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 601,
       "UseEndText": 0,
@@ -371,8 +526,14 @@
       "MissionID": 300481,
       "Name": "ゴールドラッシュ33(2024)",
       "Enable": 2047,
-      "StartDateTime": 3.1572514710582e-310,
-      "EndDateTime": 3.1572806406445e-310,
+      "StartDateTime": {
+        "date": 2957770112,
+        "time": 14878
+      },
+      "EndDateTime": {
+        "date": 3548169112,
+        "time": 14878
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 602,
       "UseEndText": 0,
@@ -383,8 +544,14 @@
       "MissionID": 320118,
       "Name": "流星の剣士",
       "Enable": 0,
-      "StartDateTime": 0.0,
-      "EndDateTime": 0.0,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 400,
       "UseEndText": 0,
@@ -395,8 +562,14 @@
       "MissionID": 320174,
       "Name": "第三回お城コラボミッション",
       "Enable": 0,
-      "StartDateTime": 3.1576100441413e-310,
-      "EndDateTime": 3.15763494500047e-310,
+      "StartDateTime": {
+        "date": 1625435520,
+        "time": 14880
+      },
+      "EndDateTime": {
+        "date": 2129434520,
+        "time": 14880
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 405,
       "UseEndText": 0,
@@ -407,8 +580,14 @@
       "MissionID": 320180,
       "Name": "ランスコラボミッション",
       "Enable": 0,
-      "StartDateTime": 3.1547414594763e-310,
-      "EndDateTime": 3.1548005101529e-310,
+      "StartDateTime": {
+        "date": 3694177664,
+        "time": 14866
+      },
+      "EndDateTime": {
+        "date": 594409368,
+        "time": 14867
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 401,
       "UseEndText": 0,
@@ -419,8 +598,14 @@
       "MissionID": 320209,
       "Name": "七つの大罪コラボ",
       "Enable": 0,
-      "StartDateTime": 0.0,
-      "EndDateTime": 0.0,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 400,
       "UseEndText": 0,
@@ -431,8 +616,14 @@
       "MissionID": 320227,
       "Name": "エイプリルフール４",
       "Enable": 0,
-      "StartDateTime": 3.15760310745965e-310,
-      "EndDateTime": 3.1576564665e-310,
+      "StartDateTime": {
+        "date": 1485035520,
+        "time": 14880
+      },
+      "EndDateTime": {
+        "date": 2565034520,
+        "time": 14880
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 416,
       "UseEndText": 0,
@@ -443,8 +634,14 @@
       "MissionID": 320228,
       "Name": "復刻エイプリルフール",
       "Enable": 0,
-      "StartDateTime": 3.15760310745965e-310,
-      "EndDateTime": 3.1576564665e-310,
+      "StartDateTime": {
+        "date": 1485035520,
+        "time": 14880
+      },
+      "EndDateTime": {
+        "date": 2565034520,
+        "time": 14880
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 415,
       "UseEndText": 0,
@@ -455,8 +652,14 @@
       "MissionID": 320266,
       "Name": "エイプリルフール2020",
       "Enable": 0,
-      "StartDateTime": 3.15760310745965e-310,
-      "EndDateTime": 3.1576564665e-310,
+      "StartDateTime": {
+        "date": 1485035520,
+        "time": 14880
+      },
+      "EndDateTime": {
+        "date": 2565034520,
+        "time": 14880
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 414,
       "UseEndText": 0,
@@ -467,8 +670,14 @@
       "MissionID": 300235,
       "Name": "異世界の司書",
       "Enable": 0,
-      "StartDateTime": 0.0,
-      "EndDateTime": 0.0,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 0,
+        "time": 0
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 507,
       "UseEndText": 0,
@@ -479,8 +688,14 @@
       "MissionID": 320304,
       "Name": "エイプリルフール2021",
       "Enable": 0,
-      "StartDateTime": 3.15760310745965e-310,
-      "EndDateTime": 3.1576564665e-310,
+      "StartDateTime": {
+        "date": 1485035520,
+        "time": 14880
+      },
+      "EndDateTime": {
+        "date": 2565034520,
+        "time": 14880
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 413,
       "UseEndText": 0,
@@ -491,8 +706,14 @@
       "MissionID": 300133,
       "Name": "悪霊の迷宮Ⅲ",
       "Enable": 0,
-      "StartDateTime": 0.0,
-      "EndDateTime": 3.15031834661383e-310,
+      "StartDateTime": {
+        "date": 0,
+        "time": 0
+      },
+      "EndDateTime": {
+        "date": 68722584,
+        "time": 14846
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 460,
       "UseEndText": 0,
@@ -503,8 +724,14 @@
       "MissionID": 300283,
       "Name": "異界百妖夜行",
       "Enable": 0,
-      "StartDateTime": 3.1576356565044e-310,
-      "EndDateTime": 3.1576564665e-310,
+      "StartDateTime": {
+        "date": 2143835520,
+        "time": 14880
+      },
+      "EndDateTime": {
+        "date": 2565034520,
+        "time": 14880
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 404,
       "UseEndText": 0,
@@ -515,8 +742,14 @@
       "MissionID": 300317,
       "Name": "異界地獄行",
       "Enable": 0,
-      "StartDateTime": 3.1576356565044e-310,
-      "EndDateTime": 3.1576564665e-310,
+      "StartDateTime": {
+        "date": 2143835520,
+        "time": 14880
+      },
+      "EndDateTime": {
+        "date": 2565034520,
+        "time": 14880
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 403,
       "UseEndText": 0,
@@ -527,8 +760,14 @@
       "MissionID": 300241,
       "Name": "異世界の恋姫と邪仙の企み",
       "Enable": 0,
-      "StartDateTime": 3.15674349252377e-310,
-      "EndDateTime": 3.15680254320035e-310,
+      "StartDateTime": {
+        "date": 1266104704,
+        "time": 14876
+      },
+      "EndDateTime": {
+        "date": 2461303704,
+        "time": 14876
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 545,
       "UseEndText": 0,
@@ -539,8 +778,14 @@
       "MissionID": 300348,
       "Name": "繋がる世界と時空を渡る戦士",
       "Enable": 0,
-      "StartDateTime": 3.1576100441413e-310,
-      "EndDateTime": 3.15763494500047e-310,
+      "StartDateTime": {
+        "date": 1625435520,
+        "time": 14880
+      },
+      "EndDateTime": {
+        "date": 2129434520,
+        "time": 14880
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 403,
       "UseEndText": 0,
@@ -551,8 +796,14 @@
       "MissionID": 300367,
       "Name": "異世界の恋姫と悪魔商会の陰謀",
       "Enable": 0,
-      "StartDateTime": 3.15674349252377e-310,
-      "EndDateTime": 3.15680254320035e-310,
+      "StartDateTime": {
+        "date": 1266104704,
+        "time": 14876
+      },
+      "EndDateTime": {
+        "date": 2461303704,
+        "time": 14876
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 549,
       "UseEndText": 0,
@@ -563,8 +814,14 @@
       "MissionID": 300399,
       "Name": "ダークネスキングダム　紡がれた絆",
       "Enable": 0,
-      "StartDateTime": 3.1576100441413e-310,
-      "EndDateTime": 3.15763494500047e-310,
+      "StartDateTime": {
+        "date": 1625435520,
+        "time": 14880
+      },
+      "EndDateTime": {
+        "date": 2129434520,
+        "time": 14880
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 402,
       "UseEndText": 0,
@@ -575,8 +832,14 @@
       "MissionID": 330000,
       "Name": "最強王子決定戦",
       "Enable": 0,
-      "StartDateTime": 3.15760310745965e-310,
-      "EndDateTime": 3.1576564665e-310,
+      "StartDateTime": {
+        "date": 1485035520,
+        "time": 14880
+      },
+      "EndDateTime": {
+        "date": 2565034520,
+        "time": 14880
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 412,
       "UseEndText": 0,
@@ -587,8 +850,14 @@
       "MissionID": 320441,
       "Name": "機甲戦争AIGIS",
       "Enable": 0,
-      "StartDateTime": 3.15760310745965e-310,
-      "EndDateTime": 3.1576564665e-310,
+      "StartDateTime": {
+        "date": 1485035520,
+        "time": 14880
+      },
+      "EndDateTime": {
+        "date": 2565034520,
+        "time": 14880
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 411,
       "UseEndText": 0,
@@ -599,8 +868,14 @@
       "MissionID": 320390,
       "Name": "ランス１０００　交わる世界",
       "Enable": 0,
-      "StartDateTime": 3.1547414594763e-310,
-      "EndDateTime": 3.1548005101529e-310,
+      "StartDateTime": {
+        "date": 3694177664,
+        "time": 14866
+      },
+      "EndDateTime": {
+        "date": 594409368,
+        "time": 14867
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 400,
       "UseEndText": 0,
@@ -611,8 +886,14 @@
       "MissionID": 300413,
       "Name": "１０周年直前記念・再臨のウェパル",
       "Enable": 0,
-      "StartDateTime": 3.1576356565044e-310,
-      "EndDateTime": 3.1576564665e-310,
+      "StartDateTime": {
+        "date": 2143835520,
+        "time": 14880
+      },
+      "EndDateTime": {
+        "date": 2565034520,
+        "time": 14880
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 402,
       "UseEndText": 0,
@@ -623,8 +904,14 @@
       "MissionID": 300420,
       "Name": "歌声は時空を超えて",
       "Enable": 0,
-      "StartDateTime": 3.1576356565044e-310,
-      "EndDateTime": 3.1576564665e-310,
+      "StartDateTime": {
+        "date": 2143835520,
+        "time": 14880
+      },
+      "EndDateTime": {
+        "date": 2565034520,
+        "time": 14880
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 401,
       "UseEndText": 0,
@@ -635,8 +922,14 @@
       "MissionID": 320493,
       "Name": "あいぎす拳士伝　逆襲の木人",
       "Enable": 0,
-      "StartDateTime": 3.15760310745965e-310,
-      "EndDateTime": 3.1576564665e-310,
+      "StartDateTime": {
+        "date": 1485035520,
+        "time": 14880
+      },
+      "EndDateTime": {
+        "date": 2565034520,
+        "time": 14880
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 410,
       "UseEndText": 0,
@@ -647,8 +940,14 @@
       "MissionID": 300515,
       "Name": "異世界ヒーローズ",
       "Enable": 0,
-      "StartDateTime": 3.1576100441413e-310,
-      "EndDateTime": 3.15763494500047e-310,
+      "StartDateTime": {
+        "date": 1625435520,
+        "time": 14880
+      },
+      "EndDateTime": {
+        "date": 2129434520,
+        "time": 14880
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 400,
       "UseEndText": 0,
@@ -659,8 +958,14 @@
       "MissionID": 300523,
       "Name": "異世界ヒーローズ・レジェンド",
       "Enable": 0,
-      "StartDateTime": 3.1576356565044e-310,
-      "EndDateTime": 3.1576564665e-310,
+      "StartDateTime": {
+        "date": 2143835520,
+        "time": 14880
+      },
+      "EndDateTime": {
+        "date": 2565034520,
+        "time": 14880
+      },
       "UseInformationButton": 0,
       "DisplayOrder": 400,
       "UseEndText": 0,

@@ -4,21 +4,24 @@
     "flags": "0x10",
     "record_count": 28,
     "record_size": 8,
-    "custom_id": 2020897645
+    "tag": "mstx",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "MissionID",
+      "alias": "ミッションID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "QuestID",
+      "alias": "クエストID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     }
   ],

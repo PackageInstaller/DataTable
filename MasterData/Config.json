@@ -1,0 +1,249 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x00",
+    "record_size": 832
+  },
+  "_fields": [
+    {
+      "name": "UserName",
+      "alias": "プレイヤー名",
+      "type": "fixed_string",
+      "type_code": 33,
+      "offset": 0,
+      "size": 32
+    },
+    {
+      "name": "UseBgm",
+      "alias": "曲再生",
+      "type": "bool",
+      "type_code": 5,
+      "offset": 40,
+      "size": 1
+    },
+    {
+      "name": "UseSe",
+      "alias": "効果音再生",
+      "type": "bool",
+      "type_code": 5,
+      "offset": 41,
+      "size": 1
+    },
+    {
+      "name": "MenuTutorialFlags",
+      "alias": "メニューチュートリアルフラグ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 44,
+      "size": 4
+    },
+    {
+      "name": "HaveUnitMaxSizeBuy",
+      "alias": "所持ユニット枠購入回数",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 48,
+      "size": 4
+    },
+    {
+      "name": "ExperienceUpCloseDateTime",
+      "alias": "経験値アップ完了日時",
+      "type": "datetime",
+      "type_code": 9,
+      "offset": 56,
+      "size": 8
+    },
+    {
+      "name": "MoneyUpCloseDateTime",
+      "alias": "お金アップ完了日時",
+      "type": "datetime",
+      "type_code": 9,
+      "offset": 64,
+      "size": 8
+    },
+    {
+      "name": "CostUpCloseDateTime",
+      "alias": "出撃コストアップ完了日時",
+      "type": "datetime",
+      "type_code": 9,
+      "offset": 72,
+      "size": 8
+    },
+    {
+      "name": "SpecialEffectsFlags",
+      "alias": "特殊効果フラグ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 80,
+      "size": 4
+    },
+    {
+      "name": "SpecialEffectsFlags2",
+      "alias": "特殊効果フラグ2",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 84,
+      "size": 4
+    },
+    {
+      "name": "MissionRewardFlags2",
+      "alias": "ミッション報酬フラグ2",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 88,
+      "size": 4
+    },
+    {
+      "name": "PurposeSettingFlags",
+      "alias": "汎用セッティングフラグ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 92,
+      "size": 4
+    },
+    {
+      "name": "_BlsDT_DamageCut",
+      "alias": "ダメージ減少",
+      "type": "datetime",
+      "type_code": 9,
+      "offset": 96,
+      "size": 8
+    },
+    {
+      "name": "_BlsDT_BoostAtk_F",
+      "alias": "前衛攻撃アップ",
+      "type": "datetime",
+      "type_code": 9,
+      "offset": 104,
+      "size": 8
+    },
+    {
+      "name": "_BlsDT_BoostAtk_R",
+      "alias": "後衛攻撃アップ",
+      "type": "datetime",
+      "type_code": 9,
+      "offset": 112,
+      "size": 8
+    },
+    {
+      "name": "_GuideUnitIndex",
+      "alias": "ガイドユニット",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 120,
+      "size": 4
+    },
+    {
+      "name": "_VolumeBgm",
+      "alias": "VolumeBgm",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 124,
+      "size": 4
+    },
+    {
+      "name": "_VolumeSe",
+      "alias": "VolumeSe",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 128,
+      "size": 4
+    },
+    {
+      "name": "_FlagSort",
+      "alias": "ソートデータ",
+      "type": "fixed_string",
+      "type_code": 33,
+      "offset": 132,
+      "size": 32
+    },
+    {
+      "name": "_FlagFilter",
+      "alias": "フィルタデータ",
+      "type": "fixed_string",
+      "type_code": 33,
+      "offset": 260,
+      "size": 32
+    },
+    {
+      "name": "_FlagMissionFilter",
+      "alias": "ミッションフィルタ",
+      "type": "fixed_string",
+      "type_code": 33,
+      "offset": 388,
+      "size": 32
+    },
+    {
+      "name": "TypeOfSortOrder",
+      "alias": "ソート昇降種別",
+      "type": "fixed_string",
+      "type_code": 33,
+      "offset": 420,
+      "size": 32
+    },
+    {
+      "name": "AutoSelectConfig",
+      "alias": "自動選択設定",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 548,
+      "size": 4
+    },
+    {
+      "name": "DamageDispEnable",
+      "alias": "ダメージ表示有効",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 552,
+      "size": 4
+    },
+    {
+      "name": "EventViewRequest",
+      "alias": "イベントの閲覧リクエスト",
+      "type": "fixed_string",
+      "type_code": 33,
+      "offset": 556,
+      "size": 32
+    },
+    {
+      "name": "BattlePlaceMagnetFlag",
+      "alias": "配置マグネット機能フラグ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 812,
+      "size": 4
+    },
+    {
+      "name": "BattleAcceleratorFlag",
+      "alias": "加速ボタン挙動フラグ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 816,
+      "size": 4
+    },
+    {
+      "name": "IntegrationAutoSelectConfig",
+      "alias": "合成継承自動選択設定",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 820,
+      "size": 4
+    },
+    {
+      "name": "BattleDClickSkillDisableFlag",
+      "alias": "ダブルクリックでスキル発動フラグ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 824,
+      "size": 4
+    },
+    {
+      "name": "_BattleGodBlessFilter",
+      "alias": "戦神の加護フィルター",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 828,
+      "size": 4
+    }
+  ]
+}

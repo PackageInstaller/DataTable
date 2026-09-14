@@ -4,28 +4,32 @@
     "flags": "0x10",
     "record_count": 30,
     "record_size": 12,
-    "custom_id": 1667527522
+    "tag": "bsdc",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "ID_Quest",
+      "alias": "クエストID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "Days_Begin",
+      "alias": "開始",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "Days_End",
+      "alias": "終了",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 8,
+      "type_code": 1,
+      "offset": 8,
       "size": 4
     }
   ],

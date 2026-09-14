@@ -1,0 +1,40 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 6,
+    "record_size": 4,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "Message",
+      "alias": "名前",
+      "type": "string",
+      "type_code": 32,
+      "offset": 0,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "Message": "冠雪の大地"
+    },
+    {
+      "Message": "白雪の凶手"
+    },
+    {
+      "Message": "雪嶺の魔女"
+    },
+    {
+      "Message": "破られた封印"
+    },
+    {
+      "Message": "太古の魔物"
+    },
+    {
+      "Message": "凶魔の大侵攻"
+    }
+  ]
+}

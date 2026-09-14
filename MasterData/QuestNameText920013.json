@@ -1,0 +1,37 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 5,
+    "record_size": 4,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "Message",
+      "alias": "名前",
+      "type": "string",
+      "type_code": 32,
+      "offset": 0,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "Message": "囚われの魔法剣士：侵攻"
+    },
+    {
+      "Message": "囚われの魔法剣士：不死の戦士"
+    },
+    {
+      "Message": "囚われの魔法剣士：激戦"
+    },
+    {
+      "Message": "囚われの魔法剣士：死者の王"
+    },
+    {
+      "Message": "囚われの魔法剣士：決戦　極級"
+    }
+  ]
+}

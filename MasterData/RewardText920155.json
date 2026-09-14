@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 4,
+    "record_size": 12,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "alias": "ID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Text",
+      "alias": "テキスト",
+      "type": "string",
+      "type_code": 32,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "alias": "タイプ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Text": "名高き天槍騎兵団は、今は天界の尖兵となっていた。\n物質界を襲撃する天槍騎兵団を、\n王国軍は苦戦しつつもどうにか迎撃する。\nそして、敵の中には支配に抗い、\n今も迷い続けている者、スルーズがいた。\n\n初開催2021年1月28日",
+      "Type": 6
+    },
+    {
+      "ID": 1,
+      "Text": "",
+      "Type": 7
+    },
+    {
+      "ID": 2,
+      "Text": "獲得★が1以上で\n交換所に「天槍騎士団スルーズ」が追加",
+      "Type": 8
+    },
+    {
+      "ID": 3,
+      "Text": "『王国おんせん繁盛記』獲得★数21以上で開放",
+      "Type": 9
+    }
+  ]
+}

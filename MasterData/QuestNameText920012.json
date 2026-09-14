@@ -1,0 +1,49 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 9,
+    "record_size": 4,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "Message",
+      "alias": "名前",
+      "type": "string",
+      "type_code": 32,
+      "offset": 0,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "Message": "遭遇"
+    },
+    {
+      "Message": "陽動"
+    },
+    {
+      "Message": "伏兵"
+    },
+    {
+      "Message": "攻城"
+    },
+    {
+      "Message": "消耗戦"
+    },
+    {
+      "Message": "機動戦"
+    },
+    {
+      "Message": "遠戦"
+    },
+    {
+      "Message": "総力戦　極級"
+    },
+    {
+      "Message": "妖魔軍団の襲来"
+    }
+  ]
+}

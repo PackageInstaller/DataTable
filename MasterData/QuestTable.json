@@ -4,385 +4,440 @@
     "flags": "0x10",
     "record_count": 0,
     "record_size": 452,
-    "custom_id": 1953719665
+    "tag": "qest",
+    "date_epoch": "0001-01-01"
   },
   "_fields": [
     {
       "name": "QuestID",
+      "alias": "クエストID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "Idx",
+      "alias": "インデックス",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "QuestTitle",
+      "alias": "タイトル",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 8,
+      "type_code": 1,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "Text",
+      "alias": "説明テキスト",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 12,
+      "type_code": 1,
+      "offset": 12,
       "size": 4
     },
     {
       "name": "Type",
+      "alias": "種別",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 16,
+      "type_code": 1,
+      "offset": 16,
       "size": 4
     },
     {
       "name": "Charisma",
+      "alias": "消費カリスマ",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 20,
+      "type_code": 1,
+      "offset": 20,
       "size": 4
     },
     {
       "name": "ActionPoint",
+      "alias": "消費行動力",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 24,
+      "type_code": 1,
+      "offset": 24,
       "size": 4
     },
     {
       "name": "Rank",
+      "alias": "必要ランク",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 28,
+      "type_code": 1,
+      "offset": 28,
       "size": 4
     },
     {
       "name": "Level",
+      "alias": "レベル",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 32,
+      "type_code": 1,
+      "offset": 32,
       "size": 4
     },
     {
       "name": "Capacity",
+      "alias": "出撃人数",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 36,
+      "type_code": 1,
+      "offset": 36,
       "size": 4
     },
     {
       "name": "defHP",
+      "alias": "初期ライフ",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 40,
+      "type_code": 1,
+      "offset": 40,
       "size": 4
     },
     {
       "name": "defAP",
+      "alias": "初期AP",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 44,
+      "type_code": 1,
+      "offset": 44,
       "size": 4
     },
     {
       "name": "AppearCondition",
+      "alias": "出現条件",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 48,
+      "type_code": 1,
+      "offset": 48,
       "size": 4
     },
     {
       "name": "RankExp",
+      "alias": "ランク経験点",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 52,
+      "type_code": 1,
+      "offset": 52,
       "size": 4
     },
     {
       "name": "Gold",
+      "alias": "入手G",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 56,
+      "type_code": 1,
+      "offset": 56,
       "size": 4
     },
     {
       "name": "MapNo",
+      "alias": "マップNo",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 60,
+      "type_code": 1,
+      "offset": 60,
       "size": 4
     },
     {
       "name": "EntryNo",
+      "alias": "エントリーNo",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 64,
+      "type_code": 1,
+      "offset": 64,
       "size": 4
     },
     {
       "name": "Treasure1",
+      "alias": "宝1",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 68,
+      "type_code": 1,
+      "offset": 68,
       "size": 4
     },
     {
       "name": "Treasure2",
+      "alias": "宝2",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 72,
+      "type_code": 1,
+      "offset": 72,
       "size": 4
     },
     {
       "name": "Treasure3",
+      "alias": "宝3",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 76,
+      "type_code": 1,
+      "offset": 76,
       "size": 4
     },
     {
       "name": "Treasure4",
+      "alias": "宝4",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 80,
+      "type_code": 1,
+      "offset": 80,
       "size": 4
     },
     {
       "name": "Treasure5",
+      "alias": "宝5",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 84,
+      "type_code": 1,
+      "offset": 84,
       "size": 4
     },
     {
       "name": "R1",
+      "alias": "確率1",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 88,
+      "type_code": 1,
+      "offset": 88,
       "size": 4
     },
     {
       "name": "R2",
+      "alias": "確率2",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 92,
+      "type_code": 1,
+      "offset": 92,
       "size": 4
     },
     {
       "name": "R3",
+      "alias": "確率3",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 96,
+      "type_code": 1,
+      "offset": 96,
       "size": 4
     },
     {
       "name": "R4",
+      "alias": "確率4",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 100,
+      "type_code": 1,
+      "offset": 100,
       "size": 4
     },
     {
       "name": "R5",
+      "alias": "確率5",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 104,
+      "type_code": 1,
+      "offset": 104,
       "size": 4
     },
     {
       "name": "UnitLevel",
+      "alias": "入手ユニットレベル",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 108,
+      "type_code": 1,
+      "offset": 108,
       "size": 4
     },
     {
       "name": "QuestTerms",
+      "alias": "修行条件",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 112,
+      "type_code": 1,
+      "offset": 112,
       "size": 4
     },
     {
       "name": "LocationNo",
+      "alias": "ロケーションNo",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 116,
+      "type_code": 1,
+      "offset": 116,
       "size": 4
     },
     {
       "name": "StartOpenDay",
-      "type": "int32",
-      "mapped_type": 7,
-      "rec_offset": 120,
+      "alias": "公開開始日",
+      "type": "date",
+      "type_code": 7,
+      "offset": 120,
       "size": 4
     },
     {
       "name": "EndOpenDay",
-      "type": "int32",
-      "mapped_type": 7,
-      "rec_offset": 124,
+      "alias": "公開終了日",
+      "type": "date",
+      "type_code": 7,
+      "offset": 124,
       "size": 4
     },
     {
       "name": "OpenWeek",
+      "alias": "公開曜日",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 128,
+      "type_code": 1,
+      "offset": 128,
       "size": 4
     },
     {
       "name": "_HoldingParam",
+      "alias": "開催曜日",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 132,
+      "type_code": 1,
+      "offset": 132,
       "size": 4
     },
     {
       "name": "BonusType",
+      "alias": "報酬の種類",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 136,
+      "type_code": 1,
+      "offset": 136,
       "size": 4
     },
     {
       "name": "BonusNum",
+      "alias": "報酬の数",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 140,
+      "type_code": 1,
+      "offset": 140,
       "size": 4
     },
     {
       "name": "ClearRewardItemID",
-      "type": "string",
-      "mapped_type": 33,
-      "rec_offset": 144,
-      "size": 4
+      "alias": "クリア報酬ID",
+      "type": "fixed_string",
+      "type_code": 33,
+      "offset": 144,
+      "size": 32
     },
     {
       "name": "ClearRewardCount",
+      "alias": "クリア報酬数",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 272,
+      "type_code": 1,
+      "offset": 272,
       "size": 4
     },
     {
       "name": "UnitList",
+      "alias": "ユニットリスト",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 276,
+      "type_code": 1,
+      "offset": 276,
       "size": 4
     },
     {
       "name": "_HardLevel",
+      "alias": "[Hard]レベル",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 280,
+      "type_code": 1,
+      "offset": 280,
       "size": 4
     },
     {
       "name": "_HardCondition",
+      "alias": "[Hard]修行条件",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 284,
+      "type_code": 1,
+      "offset": 284,
       "size": 4
     },
     {
       "name": "_HardInfomation",
+      "alias": "[Hard]説明文",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 288,
+      "type_code": 1,
+      "offset": 288,
       "size": 4
     },
     {
       "name": "_DispIndex",
+      "alias": "表示番号",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 292,
+      "type_code": 1,
+      "offset": 292,
       "size": 4
     },
     {
       "name": "DangerArea",
+      "alias": "危険領域",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 296,
+      "type_code": 1,
+      "offset": 296,
       "size": 4
     },
     {
       "name": "NormalMode_RewardItemID",
-      "type": "string",
-      "mapped_type": 33,
-      "rec_offset": 300,
-      "size": 4
+      "alias": "[Normal]★3報酬アイテムID",
+      "type": "fixed_string",
+      "type_code": 33,
+      "offset": 300,
+      "size": 32
     },
     {
       "name": "HardMode_RewardType",
+      "alias": "[Hard]★3報酬種別",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 332,
+      "type_code": 1,
+      "offset": 332,
       "size": 4
     },
     {
       "name": "HardMode_RewardCount",
+      "alias": "[Hard]★3報酬獲得数",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 336,
+      "type_code": 1,
+      "offset": 336,
       "size": 4
     },
     {
       "name": "HardMode_RewardCardID",
+      "alias": "[Hard]★3報酬カードID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 340,
+      "type_code": 1,
+      "offset": 340,
       "size": 4
     },
     {
       "name": "HardMode_RewardItemID",
-      "type": "string",
-      "mapped_type": 33,
-      "rec_offset": 344,
-      "size": 4
+      "alias": "[Hard]★3報酬アイテムID",
+      "type": "fixed_string",
+      "type_code": 33,
+      "offset": 344,
+      "size": 32
     },
     {
       "name": "SkinName",
-      "type": "string",
-      "mapped_type": 33,
-      "rec_offset": 376,
-      "size": 4
+      "alias": "スキン名",
+      "type": "fixed_string",
+      "type_code": 33,
+      "offset": 376,
+      "size": 32
     },
     {
       "name": "ConsignmentTicketConsumptionCount",
+      "alias": "委任チケット消費数",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 408,
+      "type_code": 1,
+      "offset": 408,
       "size": 4
     },
     {
       "name": "ConsignmentTicketID",
-      "type": "string",
-      "mapped_type": 33,
-      "rec_offset": 412,
-      "size": 4
+      "alias": "委任チケットID",
+      "type": "fixed_string",
+      "type_code": 33,
+      "offset": 412,
+      "size": 32
     },
     {
       "name": "IsUseRaidTeam",
+      "alias": "大総力戦チーム使用",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 444,
+      "type_code": 1,
+      "offset": 444,
       "size": 4
     },
     {
       "name": "DisableEntrust",
+      "alias": "委任無効",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 448,
+      "type_code": 1,
+      "offset": 448,
       "size": 4
     }
   ],

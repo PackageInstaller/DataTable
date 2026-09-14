@@ -2,30 +2,34 @@
   "_meta": {
     "version": 1,
     "flags": "0x10",
-    "record_count": 21,
+    "record_count": 22,
     "record_size": 12,
-    "custom_id": 1685353065
+    "tag": "irtd",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "_ResID",
+      "alias": "定義名",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "_TypeID",
+      "alias": "ID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "_SystemTextID",
+      "alias": "ID_SYSTXT",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 8,
+      "type_code": 1,
+      "offset": 8,
       "size": 4
     }
   ],
@@ -38,52 +42,52 @@
     {
       "_ResID": 1243697593,
       "_TypeID": 1,
-      "_SystemTextID": 1000
+      "_SystemTextID": 1037
     },
     {
       "_ResID": 334795996,
       "_TypeID": 2,
-      "_SystemTextID": 1001
+      "_SystemTextID": 1038
     },
     {
       "_ResID": -2134397324,
       "_TypeID": 3,
-      "_SystemTextID": 1002
+      "_SystemTextID": 1039
     },
     {
       "_ResID": -547374709,
       "_TypeID": 4,
-      "_SystemTextID": 1003
+      "_SystemTextID": 1040
     },
     {
       "_ResID": -1618032656,
       "_TypeID": 5,
-      "_SystemTextID": 1004
+      "_SystemTextID": 1041
     },
     {
       "_ResID": 594931728,
       "_TypeID": 6,
-      "_SystemTextID": 1005
+      "_SystemTextID": 1042
     },
     {
       "_ResID": -2095642104,
       "_TypeID": 7,
-      "_SystemTextID": 1026
+      "_SystemTextID": 1064
     },
     {
       "_ResID": -2080708339,
       "_TypeID": 8,
-      "_SystemTextID": 1006
+      "_SystemTextID": 1043
     },
     {
       "_ResID": 2122953036,
       "_TypeID": 9,
-      "_SystemTextID": 1007
+      "_SystemTextID": 1044
     },
     {
       "_ResID": -1669997604,
       "_TypeID": 10,
-      "_SystemTextID": 1008
+      "_SystemTextID": 1045
     },
     {
       "_ResID": 167246086,
@@ -93,27 +97,27 @@
     {
       "_ResID": 789162584,
       "_TypeID": 12,
-      "_SystemTextID": 1009
+      "_SystemTextID": 1046
     },
     {
       "_ResID": -281748210,
       "_TypeID": 13,
-      "_SystemTextID": 1010
+      "_SystemTextID": 1047
     },
     {
       "_ResID": 699182001,
       "_TypeID": 14,
-      "_SystemTextID": 1011
+      "_SystemTextID": 1048
     },
     {
       "_ResID": 388920327,
       "_TypeID": 15,
-      "_SystemTextID": 1012
+      "_SystemTextID": 1049
     },
     {
       "_ResID": 1115993746,
       "_TypeID": 16,
-      "_SystemTextID": 1013
+      "_SystemTextID": 1050
     },
     {
       "_ResID": -2069494310,
@@ -123,17 +127,22 @@
     {
       "_ResID": 4000704,
       "_TypeID": 18,
-      "_SystemTextID": 1014
+      "_SystemTextID": 1051
     },
     {
       "_ResID": 2079302119,
       "_TypeID": 19,
-      "_SystemTextID": 1015
+      "_SystemTextID": 1052
     },
     {
       "_ResID": 845132403,
       "_TypeID": 20,
-      "_SystemTextID": 1016
+      "_SystemTextID": 1053
+    },
+    {
+      "_ResID": 701651729,
+      "_TypeID": 21,
+      "_SystemTextID": 1054
     }
   ]
 }

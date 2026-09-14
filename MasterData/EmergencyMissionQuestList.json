@@ -2,23 +2,26 @@
   "_meta": {
     "version": 1,
     "flags": "0x10",
-    "record_count": 320,
+    "record_count": 253,
     "record_size": 8,
-    "custom_id": 2020897645
+    "tag": "mstx",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "MissionID",
+      "alias": "ミッションID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "QuestID",
+      "alias": "クエストID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     }
   ],
@@ -468,418 +471,6 @@
       "QuestID": 8419
     },
     {
-      "MissionID": 200480,
-      "QuestID": 8420
-    },
-    {
-      "MissionID": 200480,
-      "QuestID": 8421
-    },
-    {
-      "MissionID": 200480,
-      "QuestID": 8422
-    },
-    {
-      "MissionID": 200480,
-      "QuestID": 8423
-    },
-    {
-      "MissionID": 200480,
-      "QuestID": 8424
-    },
-    {
-      "MissionID": 200480,
-      "QuestID": 8425
-    },
-    {
-      "MissionID": 200480,
-      "QuestID": 8426
-    },
-    {
-      "MissionID": 200480,
-      "QuestID": 8427
-    },
-    {
-      "MissionID": 200480,
-      "QuestID": 8428
-    },
-    {
-      "MissionID": 200485,
-      "QuestID": 8452
-    },
-    {
-      "MissionID": 200485,
-      "QuestID": 8453
-    },
-    {
-      "MissionID": 200485,
-      "QuestID": 8454
-    },
-    {
-      "MissionID": 200485,
-      "QuestID": 8455
-    },
-    {
-      "MissionID": 200485,
-      "QuestID": 8456
-    },
-    {
-      "MissionID": 200485,
-      "QuestID": 8457
-    },
-    {
-      "MissionID": 200486,
-      "QuestID": 8458
-    },
-    {
-      "MissionID": 200486,
-      "QuestID": 8459
-    },
-    {
-      "MissionID": 200486,
-      "QuestID": 8460
-    },
-    {
-      "MissionID": 200486,
-      "QuestID": 8461
-    },
-    {
-      "MissionID": 200486,
-      "QuestID": 8462
-    },
-    {
-      "MissionID": 200486,
-      "QuestID": 8463
-    },
-    {
-      "MissionID": 200486,
-      "QuestID": 8464
-    },
-    {
-      "MissionID": 200486,
-      "QuestID": 8465
-    },
-    {
-      "MissionID": 200486,
-      "QuestID": 8466
-    },
-    {
-      "MissionID": 200488,
-      "QuestID": 8473
-    },
-    {
-      "MissionID": 200488,
-      "QuestID": 8474
-    },
-    {
-      "MissionID": 200488,
-      "QuestID": 8475
-    },
-    {
-      "MissionID": 200488,
-      "QuestID": 8476
-    },
-    {
-      "MissionID": 200488,
-      "QuestID": 8477
-    },
-    {
-      "MissionID": 200488,
-      "QuestID": 8478
-    },
-    {
-      "MissionID": 200488,
-      "QuestID": 8479
-    },
-    {
-      "MissionID": 200488,
-      "QuestID": 8480
-    },
-    {
-      "MissionID": 200488,
-      "QuestID": 8481
-    },
-    {
-      "MissionID": 200493,
-      "QuestID": 8498
-    },
-    {
-      "MissionID": 200493,
-      "QuestID": 8499
-    },
-    {
-      "MissionID": 200493,
-      "QuestID": 8500
-    },
-    {
-      "MissionID": 200493,
-      "QuestID": 8501
-    },
-    {
-      "MissionID": 200493,
-      "QuestID": 8502
-    },
-    {
-      "MissionID": 200493,
-      "QuestID": 8503
-    },
-    {
-      "MissionID": 200493,
-      "QuestID": 8504
-    },
-    {
-      "MissionID": 200493,
-      "QuestID": 8505
-    },
-    {
-      "MissionID": 200493,
-      "QuestID": 8506
-    },
-    {
-      "MissionID": 200499,
-      "QuestID": 8531
-    },
-    {
-      "MissionID": 200499,
-      "QuestID": 8532
-    },
-    {
-      "MissionID": 200499,
-      "QuestID": 8533
-    },
-    {
-      "MissionID": 200499,
-      "QuestID": 8534
-    },
-    {
-      "MissionID": 200499,
-      "QuestID": 8535
-    },
-    {
-      "MissionID": 200502,
-      "QuestID": 8547
-    },
-    {
-      "MissionID": 200502,
-      "QuestID": 8548
-    },
-    {
-      "MissionID": 200502,
-      "QuestID": 8549
-    },
-    {
-      "MissionID": 200502,
-      "QuestID": 8550
-    },
-    {
-      "MissionID": 200502,
-      "QuestID": 8551
-    },
-    {
-      "MissionID": 200502,
-      "QuestID": 8552
-    },
-    {
-      "MissionID": 200503,
-      "QuestID": 8553
-    },
-    {
-      "MissionID": 200503,
-      "QuestID": 8554
-    },
-    {
-      "MissionID": 200503,
-      "QuestID": 8555
-    },
-    {
-      "MissionID": 200503,
-      "QuestID": 8556
-    },
-    {
-      "MissionID": 200503,
-      "QuestID": 8557
-    },
-    {
-      "MissionID": 200503,
-      "QuestID": 8558
-    },
-    {
-      "MissionID": 200503,
-      "QuestID": 8559
-    },
-    {
-      "MissionID": 200503,
-      "QuestID": 8560
-    },
-    {
-      "MissionID": 200503,
-      "QuestID": 8561
-    },
-    {
-      "MissionID": 200505,
-      "QuestID": 8568
-    },
-    {
-      "MissionID": 200505,
-      "QuestID": 8569
-    },
-    {
-      "MissionID": 200505,
-      "QuestID": 8570
-    },
-    {
-      "MissionID": 200505,
-      "QuestID": 8571
-    },
-    {
-      "MissionID": 200505,
-      "QuestID": 8572
-    },
-    {
-      "MissionID": 200505,
-      "QuestID": 8573
-    },
-    {
-      "MissionID": 200505,
-      "QuestID": 8574
-    },
-    {
-      "MissionID": 200505,
-      "QuestID": 8575
-    },
-    {
-      "MissionID": 200505,
-      "QuestID": 8576
-    },
-    {
-      "MissionID": 200508,
-      "QuestID": 8589
-    },
-    {
-      "MissionID": 200508,
-      "QuestID": 8590
-    },
-    {
-      "MissionID": 200508,
-      "QuestID": 8591
-    },
-    {
-      "MissionID": 200508,
-      "QuestID": 8592
-    },
-    {
-      "MissionID": 200508,
-      "QuestID": 8593
-    },
-    {
-      "MissionID": 200508,
-      "QuestID": 8594
-    },
-    {
-      "MissionID": 200508,
-      "QuestID": 8595
-    },
-    {
-      "MissionID": 200508,
-      "QuestID": 8596
-    },
-    {
-      "MissionID": 200508,
-      "QuestID": 8597
-    },
-    {
-      "MissionID": 200510,
-      "QuestID": 8604
-    },
-    {
-      "MissionID": 200510,
-      "QuestID": 8605
-    },
-    {
-      "MissionID": 200510,
-      "QuestID": 8606
-    },
-    {
-      "MissionID": 200510,
-      "QuestID": 8607
-    },
-    {
-      "MissionID": 200510,
-      "QuestID": 8608
-    },
-    {
-      "MissionID": 200510,
-      "QuestID": 8609
-    },
-    {
-      "MissionID": 200510,
-      "QuestID": 8610
-    },
-    {
-      "MissionID": 200510,
-      "QuestID": 8611
-    },
-    {
-      "MissionID": 200510,
-      "QuestID": 8612
-    },
-    {
-      "MissionID": 200513,
-      "QuestID": 8634
-    },
-    {
-      "MissionID": 200513,
-      "QuestID": 8635
-    },
-    {
-      "MissionID": 200513,
-      "QuestID": 8636
-    },
-    {
-      "MissionID": 200513,
-      "QuestID": 8637
-    },
-    {
-      "MissionID": 200513,
-      "QuestID": 8638
-    },
-    {
-      "MissionID": 200513,
-      "QuestID": 8639
-    },
-    {
-      "MissionID": 200513,
-      "QuestID": 8640
-    },
-    {
-      "MissionID": 200513,
-      "QuestID": 8641
-    },
-    {
-      "MissionID": 200513,
-      "QuestID": 8642
-    },
-    {
-      "MissionID": 200518,
-      "QuestID": 8668
-    },
-    {
-      "MissionID": 200518,
-      "QuestID": 8669
-    },
-    {
-      "MissionID": 200518,
-      "QuestID": 8670
-    },
-    {
-      "MissionID": 200518,
-      "QuestID": 8671
-    },
-    {
-      "MissionID": 200518,
-      "QuestID": 8672
-    },
-    {
       "MissionID": 200521,
       "QuestID": 8680
     },
@@ -914,82 +505,6 @@
     {
       "MissionID": 200521,
       "QuestID": 8688
-    },
-    {
-      "MissionID": 200526,
-      "QuestID": 8714
-    },
-    {
-      "MissionID": 200526,
-      "QuestID": 8715
-    },
-    {
-      "MissionID": 200526,
-      "QuestID": 8716
-    },
-    {
-      "MissionID": 200526,
-      "QuestID": 8717
-    },
-    {
-      "MissionID": 200526,
-      "QuestID": 8718
-    },
-    {
-      "MissionID": 200531,
-      "QuestID": 8738
-    },
-    {
-      "MissionID": 200531,
-      "QuestID": 8739
-    },
-    {
-      "MissionID": 200531,
-      "QuestID": 8740
-    },
-    {
-      "MissionID": 200531,
-      "QuestID": 8741
-    },
-    {
-      "MissionID": 200531,
-      "QuestID": 8742
-    },
-    {
-      "MissionID": 200535,
-      "QuestID": 8757
-    },
-    {
-      "MissionID": 200535,
-      "QuestID": 8758
-    },
-    {
-      "MissionID": 200535,
-      "QuestID": 8759
-    },
-    {
-      "MissionID": 200535,
-      "QuestID": 8760
-    },
-    {
-      "MissionID": 200535,
-      "QuestID": 8761
-    },
-    {
-      "MissionID": 200535,
-      "QuestID": 8762
-    },
-    {
-      "MissionID": 200535,
-      "QuestID": 8763
-    },
-    {
-      "MissionID": 200535,
-      "QuestID": 8764
-    },
-    {
-      "MissionID": 200535,
-      "QuestID": 8765
     },
     {
       "MissionID": 200537,
@@ -1302,6 +817,226 @@
     {
       "MissionID": 200562,
       "QuestID": 8916
+    },
+    {
+      "MissionID": 200562,
+      "QuestID": 8917
+    },
+    {
+      "MissionID": 200562,
+      "QuestID": 8918
+    },
+    {
+      "MissionID": 200562,
+      "QuestID": 8919
+    },
+    {
+      "MissionID": 200562,
+      "QuestID": 8920
+    },
+    {
+      "MissionID": 200566,
+      "QuestID": 8939
+    },
+    {
+      "MissionID": 200566,
+      "QuestID": 8940
+    },
+    {
+      "MissionID": 200566,
+      "QuestID": 8941
+    },
+    {
+      "MissionID": 200566,
+      "QuestID": 8942
+    },
+    {
+      "MissionID": 200566,
+      "QuestID": 8943
+    },
+    {
+      "MissionID": 200566,
+      "QuestID": 8944
+    },
+    {
+      "MissionID": 200566,
+      "QuestID": 8945
+    },
+    {
+      "MissionID": 200566,
+      "QuestID": 8946
+    },
+    {
+      "MissionID": 200566,
+      "QuestID": 8947
+    },
+    {
+      "MissionID": 200567,
+      "QuestID": 8948
+    },
+    {
+      "MissionID": 200567,
+      "QuestID": 8949
+    },
+    {
+      "MissionID": 200567,
+      "QuestID": 8950
+    },
+    {
+      "MissionID": 200567,
+      "QuestID": 8951
+    },
+    {
+      "MissionID": 200567,
+      "QuestID": 8952
+    },
+    {
+      "MissionID": 200567,
+      "QuestID": 8953
+    },
+    {
+      "MissionID": 200567,
+      "QuestID": 8954
+    },
+    {
+      "MissionID": 200567,
+      "QuestID": 8955
+    },
+    {
+      "MissionID": 200567,
+      "QuestID": 8956
+    },
+    {
+      "MissionID": 200569,
+      "QuestID": 8963
+    },
+    {
+      "MissionID": 200569,
+      "QuestID": 8964
+    },
+    {
+      "MissionID": 200569,
+      "QuestID": 8965
+    },
+    {
+      "MissionID": 200569,
+      "QuestID": 8966
+    },
+    {
+      "MissionID": 200569,
+      "QuestID": 8967
+    },
+    {
+      "MissionID": 200569,
+      "QuestID": 8968
+    },
+    {
+      "MissionID": 200570,
+      "QuestID": 8969
+    },
+    {
+      "MissionID": 200570,
+      "QuestID": 8970
+    },
+    {
+      "MissionID": 200570,
+      "QuestID": 8971
+    },
+    {
+      "MissionID": 200570,
+      "QuestID": 8972
+    },
+    {
+      "MissionID": 200570,
+      "QuestID": 8973
+    },
+    {
+      "MissionID": 200570,
+      "QuestID": 8974
+    },
+    {
+      "MissionID": 200570,
+      "QuestID": 8975
+    },
+    {
+      "MissionID": 200570,
+      "QuestID": 8976
+    },
+    {
+      "MissionID": 200570,
+      "QuestID": 8977
+    },
+    {
+      "MissionID": 200572,
+      "QuestID": 8983
+    },
+    {
+      "MissionID": 200572,
+      "QuestID": 8984
+    },
+    {
+      "MissionID": 200572,
+      "QuestID": 8985
+    },
+    {
+      "MissionID": 200572,
+      "QuestID": 8986
+    },
+    {
+      "MissionID": 200572,
+      "QuestID": 8987
+    },
+    {
+      "MissionID": 200572,
+      "QuestID": 8988
+    },
+    {
+      "MissionID": 200572,
+      "QuestID": 8989
+    },
+    {
+      "MissionID": 200572,
+      "QuestID": 8990
+    },
+    {
+      "MissionID": 200572,
+      "QuestID": 8991
+    },
+    {
+      "MissionID": 200574,
+      "QuestID": 20000
+    },
+    {
+      "MissionID": 200574,
+      "QuestID": 20001
+    },
+    {
+      "MissionID": 200574,
+      "QuestID": 20002
+    },
+    {
+      "MissionID": 200574,
+      "QuestID": 20003
+    },
+    {
+      "MissionID": 200574,
+      "QuestID": 20004
+    },
+    {
+      "MissionID": 200574,
+      "QuestID": 20005
+    },
+    {
+      "MissionID": 200574,
+      "QuestID": 20006
+    },
+    {
+      "MissionID": 200574,
+      "QuestID": 20007
+    },
+    {
+      "MissionID": 200574,
+      "QuestID": 20008
     }
   ]
 }

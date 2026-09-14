@@ -4,385 +4,440 @@
     "flags": "0x14",
     "record_count": 15,
     "record_size": 216,
-    "custom_id": 1835234419
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "ConfigID",
+      "alias": "定義ID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "ConfigGroupID",
+      "alias": "定義グループ",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "ConfigNameHash",
+      "alias": "定義名[CRC32]",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 8,
+      "type_code": 1,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "SortID",
+      "alias": "ソートID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 12,
+      "type_code": 1,
+      "offset": 12,
       "size": 4
     },
     {
       "name": "RarityGroupID",
+      "alias": "レアグループID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 16,
+      "type_code": 1,
+      "offset": 16,
       "size": 4
     },
     {
       "name": "StarsCount",
+      "alias": "星数",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 20,
+      "type_code": 1,
+      "offset": 20,
       "size": 4
     },
     {
       "name": "RequireExpRatio",
+      "alias": "必要経験値の補正率",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 24,
+      "type_code": 1,
+      "offset": 24,
       "size": 4
     },
     {
       "name": "ClassMatchBonus",
+      "alias": "合成ボーナス[同クラス]",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 28,
+      "type_code": 1,
+      "offset": 28,
       "size": 4
     },
     {
       "name": "TypeOfTreasure",
+      "alias": "宝箱種別",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 32,
+      "type_code": 1,
+      "offset": 32,
       "size": 4
     },
     {
       "name": "HighRarity",
+      "alias": "高レア",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 36,
+      "type_code": 1,
+      "offset": 36,
       "size": 4
     },
     {
       "name": "ClassChangeLevel",
+      "alias": "進化レベル",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 40,
+      "type_code": 1,
+      "offset": 40,
       "size": 4
     },
     {
       "name": "ClassChangeMaterial",
+      "alias": "進化[聖霊]",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 44,
+      "type_code": 32,
+      "offset": 44,
       "size": 4
     },
     {
       "name": "ClassChangePerformanceType",
+      "alias": "進化演出種別",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 48,
+      "type_code": 1,
+      "offset": 48,
       "size": 4
     },
     {
       "name": "ClassChangePerformanceBlendType",
+      "alias": "進化演出加算",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 52,
+      "type_code": 1,
+      "offset": 52,
       "size": 4
     },
     {
       "name": "ClassChangeRequireRarity00",
+      "alias": "進化素材要求レア1",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 56,
+      "type_code": 1,
+      "offset": 56,
       "size": 4
     },
     {
       "name": "ClassChangeRequireRarity01",
+      "alias": "進化素材要求レア2",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 60,
+      "type_code": 1,
+      "offset": 60,
       "size": 4
     },
     {
       "name": "ClassChangeRequireRarity02",
+      "alias": "進化素材要求レア3",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 64,
+      "type_code": 1,
+      "offset": 64,
       "size": 4
     },
     {
       "name": "EvolutionConfig",
+      "alias": "覚醒の有無",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 68,
+      "type_code": 1,
+      "offset": 68,
       "size": 4
     },
     {
       "name": "EvolutionPrice",
+      "alias": "覚醒費用",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 72,
+      "type_code": 1,
+      "offset": 72,
       "size": 4
     },
     {
       "name": "EvolutionRequireRarity00",
+      "alias": "覚醒素材要求レア1",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 76,
+      "type_code": 1,
+      "offset": 76,
       "size": 4
     },
     {
       "name": "EvolutionRequireRarity01",
+      "alias": "覚醒素材要求レア2",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 80,
+      "type_code": 1,
+      "offset": 80,
       "size": 4
     },
     {
       "name": "EvolutionRequireRarity02",
+      "alias": "覚醒素材要求レア3",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 84,
+      "type_code": 1,
+      "offset": 84,
       "size": 4
     },
     {
       "name": "EvolutionRequireCC00",
+      "alias": "覚醒素材1要求CC",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 88,
+      "type_code": 1,
+      "offset": 88,
       "size": 4
     },
     {
       "name": "EvolutionRequireCC01",
+      "alias": "覚醒素材2要求CC",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 92,
+      "type_code": 1,
+      "offset": 92,
       "size": 4
     },
     {
       "name": "EvolutionRequireCC02",
+      "alias": "覚醒素材3要求CC",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 96,
+      "type_code": 1,
+      "offset": 96,
       "size": 4
     },
     {
       "name": "EvolutionRequireLV00",
+      "alias": "覚醒素材1要求LV",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 100,
+      "type_code": 1,
+      "offset": 100,
       "size": 4
     },
     {
       "name": "EvolutionRequireLV01",
+      "alias": "覚醒素材2要求LV",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 104,
+      "type_code": 1,
+      "offset": 104,
       "size": 4
     },
     {
       "name": "EvolutionRequireLV02",
+      "alias": "覚醒素材3要求LV",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 108,
+      "type_code": 1,
+      "offset": 108,
       "size": 4
     },
     {
       "name": "EvolutionRequireGeneralCardId00",
+      "alias": "覚醒汎用素材1カードID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 112,
+      "type_code": 1,
+      "offset": 112,
       "size": 4
     },
     {
       "name": "EvolutionRequireGeneralCardId01",
+      "alias": "覚醒汎用素材2カードID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 116,
+      "type_code": 1,
+      "offset": 116,
       "size": 4
     },
     {
       "name": "EvolutionRequireGeneralCardId02",
+      "alias": "覚醒汎用素材3カードID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 120,
+      "type_code": 1,
+      "offset": 120,
       "size": 4
     },
     {
       "name": "RequireFairyCardIdOfEvolve1",
+      "alias": "第一覚醒聖霊",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 124,
+      "type_code": 1,
+      "offset": 124,
       "size": 4
     },
     {
       "name": "RequireFairyCardIdOfEvolve2",
+      "alias": "第二覚醒聖霊",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 128,
+      "type_code": 1,
+      "offset": 128,
       "size": 4
     },
     {
       "name": "RequireFairyCardIdOfSkillEvolve",
+      "alias": "スキル覚醒聖霊",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 132,
+      "type_code": 1,
+      "offset": 132,
       "size": 4
     },
     {
       "name": "EvolutionRequireOrb",
+      "alias": "必要オーブ数",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 136,
+      "type_code": 1,
+      "offset": 136,
       "size": 4
     },
     {
       "name": "LevelCap00",
+      "alias": "LC[00]",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 140,
+      "type_code": 1,
+      "offset": 140,
       "size": 4
     },
     {
       "name": "LevelCap01",
+      "alias": "LC[01]",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 144,
+      "type_code": 1,
+      "offset": 144,
       "size": 4
     },
     {
       "name": "LevelCap02",
+      "alias": "LC[02]",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 148,
+      "type_code": 1,
+      "offset": 148,
       "size": 4
     },
     {
       "name": "LevelCap03",
+      "alias": "LC[03]",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 152,
+      "type_code": 1,
+      "offset": 152,
       "size": 4
     },
     {
       "name": "LevelCap04",
+      "alias": "LC[04]",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 156,
+      "type_code": 1,
+      "offset": 156,
       "size": 4
     },
     {
       "name": "WarmupRatio",
+      "alias": "初動",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 160,
+      "type_code": 1,
+      "offset": 160,
       "size": 4
     },
     {
       "name": "WarmupSecond",
+      "alias": "初動[Frm]",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 164,
+      "type_code": 1,
+      "offset": 164,
       "size": 4
     },
     {
       "name": "EvolvedWarmupRatio",
+      "alias": "覚醒初動",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 168,
+      "type_code": 1,
+      "offset": 168,
       "size": 4
     },
     {
       "name": "EvolvedWarmupSecond",
+      "alias": "覚醒初動[Frm]",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 172,
+      "type_code": 1,
+      "offset": 172,
       "size": 4
     },
     {
       "name": "RainbowCrystalCount",
+      "alias": "獲得虹水晶[召喚]",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 176,
+      "type_code": 1,
+      "offset": 176,
       "size": 4
     },
     {
       "name": "TextHashIdOfName",
+      "alias": "テキストID[名称][CRC32]",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 180,
+      "type_code": 1,
+      "offset": 180,
       "size": 4
     },
     {
       "name": "TextHashIdOfSummonInfo",
+      "alias": "テキストID[召喚内容][CRC32]",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 184,
+      "type_code": 1,
+      "offset": 184,
       "size": 4
     },
     {
       "name": "SublimationOfSummoning",
+      "alias": "昇華演出",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 188,
+      "type_code": 1,
+      "offset": 188,
       "size": 4
     },
     {
       "name": "MotionIndexOfSummonCrystal",
+      "alias": "召喚モーション[結晶]",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 192,
+      "type_code": 1,
+      "offset": 192,
       "size": 4
     },
     {
       "name": "MotionIndexOfAppearedSummon",
+      "alias": "召喚モーション[召喚]",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 196,
+      "type_code": 1,
+      "offset": 196,
       "size": 4
     },
     {
       "name": "MotionIndexOfSummonFlavor",
+      "alias": "召喚モーション[会話]",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 200,
+      "type_code": 1,
+      "offset": 200,
       "size": 4
     },
     {
       "name": "BgmFadeOfSummoning",
+      "alias": "BGMフェード[召喚]",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 204,
+      "type_code": 1,
+      "offset": 204,
       "size": 4
     },
     {
       "name": "JingleName",
+      "alias": "ジングル[召喚]",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 208,
+      "type_code": 32,
+      "offset": 208,
       "size": 4
     },
     {
       "name": "ReviewFlag",
+      "alias": "iOS評価誘導",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 212,
+      "type_code": 1,
+      "offset": 212,
       "size": 4
     }
   ],

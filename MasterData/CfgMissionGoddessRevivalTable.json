@@ -2,37 +2,42 @@
   "_meta": {
     "version": 1,
     "flags": "0x10",
-    "record_count": 16,
+    "record_count": 21,
     "record_size": 16,
-    "custom_id": 1853190768
+    "tag": "prun",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "MissionGroupId",
+      "alias": "ミッショングループID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "QuestId",
+      "alias": "クエストID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "NeedQuestTitle",
+      "alias": "必要クエストタイトル",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 8,
+      "type_code": 32,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "NeedStarNum",
+      "alias": "必要星数",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 12,
+      "type_code": 1,
+      "offset": 12,
       "size": 4
     }
   ],
@@ -40,97 +45,127 @@
     {
       "MissionGroupId": 950000,
       "QuestId": 16000,
-      "NeedQuestTitle": "OFFSET_0",
+      "NeedQuestTitle": "",
       "NeedStarNum": 0
     },
     {
       "MissionGroupId": 950001,
       "QuestId": 16001,
-      "NeedQuestTitle": "OFFSET_0",
+      "NeedQuestTitle": "",
       "NeedStarNum": 0
     },
     {
       "MissionGroupId": 950001,
       "QuestId": 16002,
-      "NeedQuestTitle": "OFFSET_0",
+      "NeedQuestTitle": "",
       "NeedStarNum": 0
     },
     {
       "MissionGroupId": 950001,
       "QuestId": 16003,
-      "NeedQuestTitle": "OFFSET_0",
+      "NeedQuestTitle": "",
       "NeedStarNum": 0
     },
     {
       "MissionGroupId": 950001,
       "QuestId": 16004,
-      "NeedQuestTitle": "OFFSET_0",
+      "NeedQuestTitle": "",
       "NeedStarNum": 0
     },
     {
       "MissionGroupId": 950001,
       "QuestId": 16005,
-      "NeedQuestTitle": "OFFSET_0",
+      "NeedQuestTitle": "",
       "NeedStarNum": 0
     },
     {
       "MissionGroupId": 950002,
       "QuestId": 16101,
-      "NeedQuestTitle": "OFFSET_0",
+      "NeedQuestTitle": "",
       "NeedStarNum": 0
     },
     {
       "MissionGroupId": 950002,
       "QuestId": 16102,
-      "NeedQuestTitle": "OFFSET_0",
+      "NeedQuestTitle": "",
       "NeedStarNum": 0
     },
     {
       "MissionGroupId": 950002,
       "QuestId": 16103,
-      "NeedQuestTitle": "OFFSET_0",
+      "NeedQuestTitle": "",
       "NeedStarNum": 0
     },
     {
       "MissionGroupId": 950002,
       "QuestId": 16104,
-      "NeedQuestTitle": "OFFSET_0",
+      "NeedQuestTitle": "",
       "NeedStarNum": 0
     },
     {
       "MissionGroupId": 950002,
       "QuestId": 16105,
-      "NeedQuestTitle": "OFFSET_0",
+      "NeedQuestTitle": "",
       "NeedStarNum": 0
     },
     {
       "MissionGroupId": 950003,
       "QuestId": 16201,
-      "NeedQuestTitle": "OFFSET_0",
+      "NeedQuestTitle": "",
       "NeedStarNum": 0
     },
     {
       "MissionGroupId": 950003,
       "QuestId": 16202,
-      "NeedQuestTitle": "OFFSET_0",
+      "NeedQuestTitle": "",
       "NeedStarNum": 0
     },
     {
       "MissionGroupId": 950003,
       "QuestId": 16203,
-      "NeedQuestTitle": "OFFSET_0",
+      "NeedQuestTitle": "",
       "NeedStarNum": 0
     },
     {
       "MissionGroupId": 950003,
       "QuestId": 16204,
-      "NeedQuestTitle": "OFFSET_0",
+      "NeedQuestTitle": "",
       "NeedStarNum": 0
     },
     {
       "MissionGroupId": 950003,
       "QuestId": 16205,
-      "NeedQuestTitle": "OFFSET_0",
+      "NeedQuestTitle": "",
+      "NeedStarNum": 0
+    },
+    {
+      "MissionGroupId": 950004,
+      "QuestId": 16301,
+      "NeedQuestTitle": "",
+      "NeedStarNum": 0
+    },
+    {
+      "MissionGroupId": 950004,
+      "QuestId": 16302,
+      "NeedQuestTitle": "",
+      "NeedStarNum": 0
+    },
+    {
+      "MissionGroupId": 950004,
+      "QuestId": 16303,
+      "NeedQuestTitle": "",
+      "NeedStarNum": 0
+    },
+    {
+      "MissionGroupId": 950004,
+      "QuestId": 16304,
+      "NeedQuestTitle": "",
+      "NeedStarNum": 0
+    },
+    {
+      "MissionGroupId": 950004,
+      "QuestId": 16305,
+      "NeedQuestTitle": "",
       "NeedStarNum": 0
     }
   ]

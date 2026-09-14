@@ -2,30 +2,34 @@
   "_meta": {
     "version": 1,
     "flags": "0x14",
-    "record_count": 20,
+    "record_count": 21,
     "record_size": 12,
-    "custom_id": 1835234419
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "ID",
+      "alias": "定義名",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "Expression",
+      "alias": "表示条件",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 4,
+      "type_code": 32,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "Trigger",
+      "alias": "トリガー",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 8,
+      "type_code": 32,
+      "offset": 8,
       "size": 4
     }
   ],
@@ -64,6 +68,11 @@
       "ID": -620665495,
       "Expression": "1;",
       "Trigger": "JumpSound"
+    },
+    {
+      "ID": 1621687273,
+      "Expression": "1;",
+      "Trigger": "JumpSoundLibrary"
     },
     {
       "ID": -1023676601,

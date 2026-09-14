@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 4,
+    "record_size": 12,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "alias": "ID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Text",
+      "alias": "テキスト",
+      "type": "string",
+      "type_code": 32,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "alias": "タイプ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Text": "ポミエたちの前に姿を現した謎の武装集団。\n彼らは無限のモテたい心より生まれた、\nチョコレートの騎士たち、チョコ騎士団だった。\nバレンタインの祝祭を守るべく、\n王子たちは大いなる陰謀に立ち向かう。\n\n初開催2022年2月3日",
+      "Type": 6
+    },
+    {
+      "ID": 1,
+      "Text": "",
+      "Type": 7
+    },
+    {
+      "ID": 2,
+      "Text": "獲得★が1以上で\n交換所に「恋心の射手ポミエ」が追加",
+      "Type": 8
+    },
+    {
+      "ID": 3,
+      "Text": "『温泉街決戦～悪魔の卵と命のお湯～』獲得★数21以上で開放",
+      "Type": 9
+    }
+  ]
+}

@@ -2,23 +2,26 @@
   "_meta": {
     "version": 1,
     "flags": "0x10",
-    "record_count": 3681,
+    "record_count": 3873,
     "record_size": 8,
-    "custom_id": 2037672819
+    "tag": "skty",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "SkillTypeID",
+      "alias": "ID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "ID_Influence",
+      "alias": "効果定義",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     }
   ],
@@ -14746,6 +14749,774 @@
     {
       "SkillTypeID": 4568,
       "ID_Influence": 3643
+    },
+    {
+      "SkillTypeID": 4569,
+      "ID_Influence": 3644
+    },
+    {
+      "SkillTypeID": 4570,
+      "ID_Influence": 3645
+    },
+    {
+      "SkillTypeID": 4571,
+      "ID_Influence": 3646
+    },
+    {
+      "SkillTypeID": 4572,
+      "ID_Influence": 3647
+    },
+    {
+      "SkillTypeID": 4573,
+      "ID_Influence": 3648
+    },
+    {
+      "SkillTypeID": 4574,
+      "ID_Influence": 3649
+    },
+    {
+      "SkillTypeID": 4575,
+      "ID_Influence": 3650
+    },
+    {
+      "SkillTypeID": 4576,
+      "ID_Influence": 3651
+    },
+    {
+      "SkillTypeID": 4577,
+      "ID_Influence": 3652
+    },
+    {
+      "SkillTypeID": 4578,
+      "ID_Influence": 3653
+    },
+    {
+      "SkillTypeID": 4579,
+      "ID_Influence": 3654
+    },
+    {
+      "SkillTypeID": 4580,
+      "ID_Influence": 3655
+    },
+    {
+      "SkillTypeID": 4581,
+      "ID_Influence": 3656
+    },
+    {
+      "SkillTypeID": 4582,
+      "ID_Influence": 3657
+    },
+    {
+      "SkillTypeID": 4583,
+      "ID_Influence": 3658
+    },
+    {
+      "SkillTypeID": 4584,
+      "ID_Influence": 3659
+    },
+    {
+      "SkillTypeID": 4585,
+      "ID_Influence": 3660
+    },
+    {
+      "SkillTypeID": 4586,
+      "ID_Influence": 3661
+    },
+    {
+      "SkillTypeID": 4587,
+      "ID_Influence": 3662
+    },
+    {
+      "SkillTypeID": 4588,
+      "ID_Influence": 3663
+    },
+    {
+      "SkillTypeID": 4589,
+      "ID_Influence": 3664
+    },
+    {
+      "SkillTypeID": 4590,
+      "ID_Influence": 3665
+    },
+    {
+      "SkillTypeID": 4591,
+      "ID_Influence": 3666
+    },
+    {
+      "SkillTypeID": 4592,
+      "ID_Influence": 3667
+    },
+    {
+      "SkillTypeID": 4593,
+      "ID_Influence": 3668
+    },
+    {
+      "SkillTypeID": 4594,
+      "ID_Influence": 3669
+    },
+    {
+      "SkillTypeID": 4595,
+      "ID_Influence": 3670
+    },
+    {
+      "SkillTypeID": 4596,
+      "ID_Influence": 3671
+    },
+    {
+      "SkillTypeID": 4597,
+      "ID_Influence": 3672
+    },
+    {
+      "SkillTypeID": 4598,
+      "ID_Influence": 3673
+    },
+    {
+      "SkillTypeID": 4599,
+      "ID_Influence": 3674
+    },
+    {
+      "SkillTypeID": 4600,
+      "ID_Influence": 3675
+    },
+    {
+      "SkillTypeID": 4601,
+      "ID_Influence": 3676
+    },
+    {
+      "SkillTypeID": 4602,
+      "ID_Influence": 3677
+    },
+    {
+      "SkillTypeID": 4603,
+      "ID_Influence": 3678
+    },
+    {
+      "SkillTypeID": 4604,
+      "ID_Influence": 3679
+    },
+    {
+      "SkillTypeID": 4605,
+      "ID_Influence": 3680
+    },
+    {
+      "SkillTypeID": 4606,
+      "ID_Influence": 3681
+    },
+    {
+      "SkillTypeID": 4607,
+      "ID_Influence": 3682
+    },
+    {
+      "SkillTypeID": 4608,
+      "ID_Influence": 3683
+    },
+    {
+      "SkillTypeID": 4609,
+      "ID_Influence": 3684
+    },
+    {
+      "SkillTypeID": 4610,
+      "ID_Influence": 3685
+    },
+    {
+      "SkillTypeID": 4611,
+      "ID_Influence": 3686
+    },
+    {
+      "SkillTypeID": 4612,
+      "ID_Influence": 3687
+    },
+    {
+      "SkillTypeID": 4613,
+      "ID_Influence": 3688
+    },
+    {
+      "SkillTypeID": 4614,
+      "ID_Influence": 3689
+    },
+    {
+      "SkillTypeID": 4615,
+      "ID_Influence": 3690
+    },
+    {
+      "SkillTypeID": 4616,
+      "ID_Influence": 3691
+    },
+    {
+      "SkillTypeID": 4617,
+      "ID_Influence": 3692
+    },
+    {
+      "SkillTypeID": 4618,
+      "ID_Influence": 3693
+    },
+    {
+      "SkillTypeID": 4619,
+      "ID_Influence": 3694
+    },
+    {
+      "SkillTypeID": 4620,
+      "ID_Influence": 3695
+    },
+    {
+      "SkillTypeID": 4621,
+      "ID_Influence": 3696
+    },
+    {
+      "SkillTypeID": 4622,
+      "ID_Influence": 3697
+    },
+    {
+      "SkillTypeID": 4623,
+      "ID_Influence": 3698
+    },
+    {
+      "SkillTypeID": 4624,
+      "ID_Influence": 3699
+    },
+    {
+      "SkillTypeID": 4625,
+      "ID_Influence": 3700
+    },
+    {
+      "SkillTypeID": 4626,
+      "ID_Influence": 3701
+    },
+    {
+      "SkillTypeID": 4627,
+      "ID_Influence": 3702
+    },
+    {
+      "SkillTypeID": 4628,
+      "ID_Influence": 3703
+    },
+    {
+      "SkillTypeID": 4629,
+      "ID_Influence": 3704
+    },
+    {
+      "SkillTypeID": 4630,
+      "ID_Influence": 3705
+    },
+    {
+      "SkillTypeID": 4631,
+      "ID_Influence": 3706
+    },
+    {
+      "SkillTypeID": 4632,
+      "ID_Influence": 3707
+    },
+    {
+      "SkillTypeID": 4633,
+      "ID_Influence": 3708
+    },
+    {
+      "SkillTypeID": 4634,
+      "ID_Influence": 3709
+    },
+    {
+      "SkillTypeID": 4635,
+      "ID_Influence": 3710
+    },
+    {
+      "SkillTypeID": 4636,
+      "ID_Influence": 3711
+    },
+    {
+      "SkillTypeID": 4637,
+      "ID_Influence": 3712
+    },
+    {
+      "SkillTypeID": 4638,
+      "ID_Influence": 3713
+    },
+    {
+      "SkillTypeID": 4639,
+      "ID_Influence": 3714
+    },
+    {
+      "SkillTypeID": 4640,
+      "ID_Influence": 3715
+    },
+    {
+      "SkillTypeID": 4641,
+      "ID_Influence": 3716
+    },
+    {
+      "SkillTypeID": 4642,
+      "ID_Influence": 3717
+    },
+    {
+      "SkillTypeID": 4643,
+      "ID_Influence": 3718
+    },
+    {
+      "SkillTypeID": 4644,
+      "ID_Influence": 3719
+    },
+    {
+      "SkillTypeID": 4645,
+      "ID_Influence": 3720
+    },
+    {
+      "SkillTypeID": 4646,
+      "ID_Influence": 3721
+    },
+    {
+      "SkillTypeID": 4647,
+      "ID_Influence": 3722
+    },
+    {
+      "SkillTypeID": 4648,
+      "ID_Influence": 3723
+    },
+    {
+      "SkillTypeID": 4649,
+      "ID_Influence": 3724
+    },
+    {
+      "SkillTypeID": 4650,
+      "ID_Influence": 3725
+    },
+    {
+      "SkillTypeID": 4651,
+      "ID_Influence": 3726
+    },
+    {
+      "SkillTypeID": 4652,
+      "ID_Influence": 3727
+    },
+    {
+      "SkillTypeID": 4653,
+      "ID_Influence": 3728
+    },
+    {
+      "SkillTypeID": 4654,
+      "ID_Influence": 3729
+    },
+    {
+      "SkillTypeID": 4655,
+      "ID_Influence": 3730
+    },
+    {
+      "SkillTypeID": 4656,
+      "ID_Influence": 3731
+    },
+    {
+      "SkillTypeID": 4657,
+      "ID_Influence": 3732
+    },
+    {
+      "SkillTypeID": 4658,
+      "ID_Influence": 3733
+    },
+    {
+      "SkillTypeID": 4659,
+      "ID_Influence": 3734
+    },
+    {
+      "SkillTypeID": 4660,
+      "ID_Influence": 3735
+    },
+    {
+      "SkillTypeID": 4661,
+      "ID_Influence": 3736
+    },
+    {
+      "SkillTypeID": 4662,
+      "ID_Influence": 3737
+    },
+    {
+      "SkillTypeID": 4663,
+      "ID_Influence": 3738
+    },
+    {
+      "SkillTypeID": 4664,
+      "ID_Influence": 3739
+    },
+    {
+      "SkillTypeID": 4665,
+      "ID_Influence": 3740
+    },
+    {
+      "SkillTypeID": 4666,
+      "ID_Influence": 3741
+    },
+    {
+      "SkillTypeID": 4667,
+      "ID_Influence": 3742
+    },
+    {
+      "SkillTypeID": 4668,
+      "ID_Influence": 3743
+    },
+    {
+      "SkillTypeID": 4669,
+      "ID_Influence": 3744
+    },
+    {
+      "SkillTypeID": 4670,
+      "ID_Influence": 3745
+    },
+    {
+      "SkillTypeID": 4671,
+      "ID_Influence": 3746
+    },
+    {
+      "SkillTypeID": 4672,
+      "ID_Influence": 3747
+    },
+    {
+      "SkillTypeID": 4673,
+      "ID_Influence": 3748
+    },
+    {
+      "SkillTypeID": 4674,
+      "ID_Influence": 3749
+    },
+    {
+      "SkillTypeID": 4675,
+      "ID_Influence": 3750
+    },
+    {
+      "SkillTypeID": 4676,
+      "ID_Influence": 3751
+    },
+    {
+      "SkillTypeID": 4677,
+      "ID_Influence": 3752
+    },
+    {
+      "SkillTypeID": 4678,
+      "ID_Influence": 3753
+    },
+    {
+      "SkillTypeID": 4679,
+      "ID_Influence": 3754
+    },
+    {
+      "SkillTypeID": 4680,
+      "ID_Influence": 3755
+    },
+    {
+      "SkillTypeID": 4681,
+      "ID_Influence": 3756
+    },
+    {
+      "SkillTypeID": 4682,
+      "ID_Influence": 3757
+    },
+    {
+      "SkillTypeID": 4683,
+      "ID_Influence": 3758
+    },
+    {
+      "SkillTypeID": 4684,
+      "ID_Influence": 3759
+    },
+    {
+      "SkillTypeID": 4685,
+      "ID_Influence": 3760
+    },
+    {
+      "SkillTypeID": 4686,
+      "ID_Influence": 3761
+    },
+    {
+      "SkillTypeID": 4687,
+      "ID_Influence": 3762
+    },
+    {
+      "SkillTypeID": 4688,
+      "ID_Influence": 3763
+    },
+    {
+      "SkillTypeID": 4689,
+      "ID_Influence": 3764
+    },
+    {
+      "SkillTypeID": 4690,
+      "ID_Influence": 3765
+    },
+    {
+      "SkillTypeID": 4691,
+      "ID_Influence": 3766
+    },
+    {
+      "SkillTypeID": 4692,
+      "ID_Influence": 3767
+    },
+    {
+      "SkillTypeID": 4693,
+      "ID_Influence": 3768
+    },
+    {
+      "SkillTypeID": 4694,
+      "ID_Influence": 3769
+    },
+    {
+      "SkillTypeID": 4695,
+      "ID_Influence": 3770
+    },
+    {
+      "SkillTypeID": 4696,
+      "ID_Influence": 3771
+    },
+    {
+      "SkillTypeID": 4697,
+      "ID_Influence": 3772
+    },
+    {
+      "SkillTypeID": 4698,
+      "ID_Influence": 3773
+    },
+    {
+      "SkillTypeID": 4699,
+      "ID_Influence": 3774
+    },
+    {
+      "SkillTypeID": 4700,
+      "ID_Influence": 3775
+    },
+    {
+      "SkillTypeID": 4701,
+      "ID_Influence": 3776
+    },
+    {
+      "SkillTypeID": 4702,
+      "ID_Influence": 3777
+    },
+    {
+      "SkillTypeID": 4703,
+      "ID_Influence": 3778
+    },
+    {
+      "SkillTypeID": 4704,
+      "ID_Influence": 3779
+    },
+    {
+      "SkillTypeID": 4705,
+      "ID_Influence": 3780
+    },
+    {
+      "SkillTypeID": 4706,
+      "ID_Influence": 3781
+    },
+    {
+      "SkillTypeID": 4707,
+      "ID_Influence": 3782
+    },
+    {
+      "SkillTypeID": 4708,
+      "ID_Influence": 3783
+    },
+    {
+      "SkillTypeID": 4709,
+      "ID_Influence": 3784
+    },
+    {
+      "SkillTypeID": 4710,
+      "ID_Influence": 3785
+    },
+    {
+      "SkillTypeID": 4711,
+      "ID_Influence": 3786
+    },
+    {
+      "SkillTypeID": 4712,
+      "ID_Influence": 3787
+    },
+    {
+      "SkillTypeID": 4713,
+      "ID_Influence": 3788
+    },
+    {
+      "SkillTypeID": 4714,
+      "ID_Influence": 3789
+    },
+    {
+      "SkillTypeID": 4715,
+      "ID_Influence": 3790
+    },
+    {
+      "SkillTypeID": 4716,
+      "ID_Influence": 3791
+    },
+    {
+      "SkillTypeID": 4717,
+      "ID_Influence": 3792
+    },
+    {
+      "SkillTypeID": 4718,
+      "ID_Influence": 3793
+    },
+    {
+      "SkillTypeID": 4719,
+      "ID_Influence": 3794
+    },
+    {
+      "SkillTypeID": 4720,
+      "ID_Influence": 3795
+    },
+    {
+      "SkillTypeID": 4721,
+      "ID_Influence": 3796
+    },
+    {
+      "SkillTypeID": 4722,
+      "ID_Influence": 3797
+    },
+    {
+      "SkillTypeID": 4723,
+      "ID_Influence": 3798
+    },
+    {
+      "SkillTypeID": 4724,
+      "ID_Influence": 3799
+    },
+    {
+      "SkillTypeID": 4725,
+      "ID_Influence": 3800
+    },
+    {
+      "SkillTypeID": 4726,
+      "ID_Influence": 3801
+    },
+    {
+      "SkillTypeID": 4727,
+      "ID_Influence": 3802
+    },
+    {
+      "SkillTypeID": 4728,
+      "ID_Influence": 3803
+    },
+    {
+      "SkillTypeID": 4729,
+      "ID_Influence": 3804
+    },
+    {
+      "SkillTypeID": 4730,
+      "ID_Influence": 3805
+    },
+    {
+      "SkillTypeID": 4731,
+      "ID_Influence": 3806
+    },
+    {
+      "SkillTypeID": 4732,
+      "ID_Influence": 3807
+    },
+    {
+      "SkillTypeID": 4733,
+      "ID_Influence": 3808
+    },
+    {
+      "SkillTypeID": 4734,
+      "ID_Influence": 3809
+    },
+    {
+      "SkillTypeID": 4735,
+      "ID_Influence": 3810
+    },
+    {
+      "SkillTypeID": 4736,
+      "ID_Influence": 3811
+    },
+    {
+      "SkillTypeID": 4737,
+      "ID_Influence": 3812
+    },
+    {
+      "SkillTypeID": 4738,
+      "ID_Influence": 3813
+    },
+    {
+      "SkillTypeID": 4739,
+      "ID_Influence": 3814
+    },
+    {
+      "SkillTypeID": 4740,
+      "ID_Influence": 3815
+    },
+    {
+      "SkillTypeID": 4741,
+      "ID_Influence": 3816
+    },
+    {
+      "SkillTypeID": 4742,
+      "ID_Influence": 3817
+    },
+    {
+      "SkillTypeID": 4743,
+      "ID_Influence": 3818
+    },
+    {
+      "SkillTypeID": 4744,
+      "ID_Influence": 3819
+    },
+    {
+      "SkillTypeID": 4745,
+      "ID_Influence": 3820
+    },
+    {
+      "SkillTypeID": 4746,
+      "ID_Influence": 3821
+    },
+    {
+      "SkillTypeID": 4747,
+      "ID_Influence": 3822
+    },
+    {
+      "SkillTypeID": 4748,
+      "ID_Influence": 3823
+    },
+    {
+      "SkillTypeID": 4749,
+      "ID_Influence": 3824
+    },
+    {
+      "SkillTypeID": 4750,
+      "ID_Influence": 3825
+    },
+    {
+      "SkillTypeID": 4751,
+      "ID_Influence": 3826
+    },
+    {
+      "SkillTypeID": 4752,
+      "ID_Influence": 3827
+    },
+    {
+      "SkillTypeID": 4753,
+      "ID_Influence": 3828
+    },
+    {
+      "SkillTypeID": 4754,
+      "ID_Influence": 3829
+    },
+    {
+      "SkillTypeID": 4755,
+      "ID_Influence": 3830
+    },
+    {
+      "SkillTypeID": 4756,
+      "ID_Influence": 3831
+    },
+    {
+      "SkillTypeID": 4757,
+      "ID_Influence": 3832
+    },
+    {
+      "SkillTypeID": 4758,
+      "ID_Influence": 3833
+    },
+    {
+      "SkillTypeID": 4759,
+      "ID_Influence": 3834
+    },
+    {
+      "SkillTypeID": 4760,
+      "ID_Influence": 3835
     }
   ]
 }

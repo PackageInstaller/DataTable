@@ -1,0 +1,52 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 10,
+    "record_size": 4,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "Message",
+      "alias": "名前",
+      "type": "string",
+      "type_code": 32,
+      "offset": 0,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "Message": "魔界からの招待状"
+    },
+    {
+      "Message": "第一回戦"
+    },
+    {
+      "Message": "第二回戦"
+    },
+    {
+      "Message": "第三回戦"
+    },
+    {
+      "Message": "グレーターデーモンの罠"
+    },
+    {
+      "Message": "ドゥーラの鍛錬"
+    },
+    {
+      "Message": "準決勝"
+    },
+    {
+      "Message": "決勝戦"
+    },
+    {
+      "Message": "エキシビジョンマッチ"
+    },
+    {
+      "Message": "更なるオークの猛攻"
+    }
+  ]
+}

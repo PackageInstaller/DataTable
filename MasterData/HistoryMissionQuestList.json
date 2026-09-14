@@ -2,23 +2,26 @@
   "_meta": {
     "version": 1,
     "flags": "0x10",
-    "record_count": 1902,
+    "record_count": 2036,
     "record_size": 8,
-    "custom_id": 2020897645
+    "tag": "mstx",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "MissionID",
+      "alias": "ミッションID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "QuestID",
+      "alias": "クエストID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     }
   ],
@@ -7630,6 +7633,542 @@
     {
       "MissionID": 920222,
       "QuestID": 8407
+    },
+    {
+      "MissionID": 920223,
+      "QuestID": 8420
+    },
+    {
+      "MissionID": 920223,
+      "QuestID": 8421
+    },
+    {
+      "MissionID": 920223,
+      "QuestID": 8422
+    },
+    {
+      "MissionID": 920223,
+      "QuestID": 8423
+    },
+    {
+      "MissionID": 920223,
+      "QuestID": 8424
+    },
+    {
+      "MissionID": 920223,
+      "QuestID": 8425
+    },
+    {
+      "MissionID": 920223,
+      "QuestID": 8426
+    },
+    {
+      "MissionID": 920223,
+      "QuestID": 8427
+    },
+    {
+      "MissionID": 920223,
+      "QuestID": 8428
+    },
+    {
+      "MissionID": 920224,
+      "QuestID": 8452
+    },
+    {
+      "MissionID": 920224,
+      "QuestID": 8453
+    },
+    {
+      "MissionID": 920224,
+      "QuestID": 8454
+    },
+    {
+      "MissionID": 920224,
+      "QuestID": 8455
+    },
+    {
+      "MissionID": 920224,
+      "QuestID": 8456
+    },
+    {
+      "MissionID": 920224,
+      "QuestID": 8457
+    },
+    {
+      "MissionID": 920225,
+      "QuestID": 8458
+    },
+    {
+      "MissionID": 920225,
+      "QuestID": 8459
+    },
+    {
+      "MissionID": 920225,
+      "QuestID": 8460
+    },
+    {
+      "MissionID": 920225,
+      "QuestID": 8461
+    },
+    {
+      "MissionID": 920225,
+      "QuestID": 8462
+    },
+    {
+      "MissionID": 920225,
+      "QuestID": 8463
+    },
+    {
+      "MissionID": 920225,
+      "QuestID": 8464
+    },
+    {
+      "MissionID": 920225,
+      "QuestID": 8465
+    },
+    {
+      "MissionID": 920225,
+      "QuestID": 8466
+    },
+    {
+      "MissionID": 920226,
+      "QuestID": 8473
+    },
+    {
+      "MissionID": 920226,
+      "QuestID": 8474
+    },
+    {
+      "MissionID": 920226,
+      "QuestID": 8475
+    },
+    {
+      "MissionID": 920226,
+      "QuestID": 8476
+    },
+    {
+      "MissionID": 920226,
+      "QuestID": 8477
+    },
+    {
+      "MissionID": 920226,
+      "QuestID": 8478
+    },
+    {
+      "MissionID": 920226,
+      "QuestID": 8479
+    },
+    {
+      "MissionID": 920226,
+      "QuestID": 8480
+    },
+    {
+      "MissionID": 920226,
+      "QuestID": 8481
+    },
+    {
+      "MissionID": 920227,
+      "QuestID": 8482
+    },
+    {
+      "MissionID": 920227,
+      "QuestID": 8483
+    },
+    {
+      "MissionID": 920227,
+      "QuestID": 8484
+    },
+    {
+      "MissionID": 920227,
+      "QuestID": 9124
+    },
+    {
+      "MissionID": 920227,
+      "QuestID": 9125
+    },
+    {
+      "MissionID": 920227,
+      "QuestID": 9126
+    },
+    {
+      "MissionID": 920228,
+      "QuestID": 8498
+    },
+    {
+      "MissionID": 920228,
+      "QuestID": 8499
+    },
+    {
+      "MissionID": 920228,
+      "QuestID": 8500
+    },
+    {
+      "MissionID": 920228,
+      "QuestID": 8501
+    },
+    {
+      "MissionID": 920228,
+      "QuestID": 8502
+    },
+    {
+      "MissionID": 920228,
+      "QuestID": 8503
+    },
+    {
+      "MissionID": 920228,
+      "QuestID": 8504
+    },
+    {
+      "MissionID": 920228,
+      "QuestID": 8505
+    },
+    {
+      "MissionID": 920228,
+      "QuestID": 8506
+    },
+    {
+      "MissionID": 920229,
+      "QuestID": 8531
+    },
+    {
+      "MissionID": 920229,
+      "QuestID": 8532
+    },
+    {
+      "MissionID": 920229,
+      "QuestID": 8533
+    },
+    {
+      "MissionID": 920229,
+      "QuestID": 8534
+    },
+    {
+      "MissionID": 920229,
+      "QuestID": 8535
+    },
+    {
+      "MissionID": 920230,
+      "QuestID": 8547
+    },
+    {
+      "MissionID": 920230,
+      "QuestID": 8548
+    },
+    {
+      "MissionID": 920230,
+      "QuestID": 8549
+    },
+    {
+      "MissionID": 920230,
+      "QuestID": 8550
+    },
+    {
+      "MissionID": 920230,
+      "QuestID": 8551
+    },
+    {
+      "MissionID": 920230,
+      "QuestID": 8552
+    },
+    {
+      "MissionID": 920231,
+      "QuestID": 8553
+    },
+    {
+      "MissionID": 920231,
+      "QuestID": 8554
+    },
+    {
+      "MissionID": 920231,
+      "QuestID": 8555
+    },
+    {
+      "MissionID": 920231,
+      "QuestID": 8556
+    },
+    {
+      "MissionID": 920231,
+      "QuestID": 8557
+    },
+    {
+      "MissionID": 920231,
+      "QuestID": 8558
+    },
+    {
+      "MissionID": 920231,
+      "QuestID": 8559
+    },
+    {
+      "MissionID": 920231,
+      "QuestID": 8560
+    },
+    {
+      "MissionID": 920231,
+      "QuestID": 8561
+    },
+    {
+      "MissionID": 920232,
+      "QuestID": 8568
+    },
+    {
+      "MissionID": 920232,
+      "QuestID": 8569
+    },
+    {
+      "MissionID": 920232,
+      "QuestID": 8570
+    },
+    {
+      "MissionID": 920232,
+      "QuestID": 8571
+    },
+    {
+      "MissionID": 920232,
+      "QuestID": 8572
+    },
+    {
+      "MissionID": 920232,
+      "QuestID": 8573
+    },
+    {
+      "MissionID": 920232,
+      "QuestID": 8574
+    },
+    {
+      "MissionID": 920232,
+      "QuestID": 8575
+    },
+    {
+      "MissionID": 920232,
+      "QuestID": 8576
+    },
+    {
+      "MissionID": 920233,
+      "QuestID": 8577
+    },
+    {
+      "MissionID": 920233,
+      "QuestID": 8578
+    },
+    {
+      "MissionID": 920233,
+      "QuestID": 8579
+    },
+    {
+      "MissionID": 920233,
+      "QuestID": 9127
+    },
+    {
+      "MissionID": 920233,
+      "QuestID": 9128
+    },
+    {
+      "MissionID": 920233,
+      "QuestID": 9129
+    },
+    {
+      "MissionID": 920234,
+      "QuestID": 8589
+    },
+    {
+      "MissionID": 920234,
+      "QuestID": 8590
+    },
+    {
+      "MissionID": 920234,
+      "QuestID": 8591
+    },
+    {
+      "MissionID": 920234,
+      "QuestID": 8592
+    },
+    {
+      "MissionID": 920234,
+      "QuestID": 8593
+    },
+    {
+      "MissionID": 920234,
+      "QuestID": 8594
+    },
+    {
+      "MissionID": 920234,
+      "QuestID": 8595
+    },
+    {
+      "MissionID": 920234,
+      "QuestID": 8596
+    },
+    {
+      "MissionID": 920234,
+      "QuestID": 8597
+    },
+    {
+      "MissionID": 920235,
+      "QuestID": 8604
+    },
+    {
+      "MissionID": 920235,
+      "QuestID": 8605
+    },
+    {
+      "MissionID": 920235,
+      "QuestID": 8606
+    },
+    {
+      "MissionID": 920235,
+      "QuestID": 8607
+    },
+    {
+      "MissionID": 920235,
+      "QuestID": 8608
+    },
+    {
+      "MissionID": 920235,
+      "QuestID": 8609
+    },
+    {
+      "MissionID": 920235,
+      "QuestID": 8610
+    },
+    {
+      "MissionID": 920235,
+      "QuestID": 8611
+    },
+    {
+      "MissionID": 920235,
+      "QuestID": 8612
+    },
+    {
+      "MissionID": 920236,
+      "QuestID": 8634
+    },
+    {
+      "MissionID": 920236,
+      "QuestID": 8635
+    },
+    {
+      "MissionID": 920236,
+      "QuestID": 8636
+    },
+    {
+      "MissionID": 920236,
+      "QuestID": 8637
+    },
+    {
+      "MissionID": 920236,
+      "QuestID": 8638
+    },
+    {
+      "MissionID": 920236,
+      "QuestID": 8639
+    },
+    {
+      "MissionID": 920236,
+      "QuestID": 8640
+    },
+    {
+      "MissionID": 920236,
+      "QuestID": 8641
+    },
+    {
+      "MissionID": 920236,
+      "QuestID": 8642
+    },
+    {
+      "MissionID": 920237,
+      "QuestID": 8668
+    },
+    {
+      "MissionID": 920237,
+      "QuestID": 8669
+    },
+    {
+      "MissionID": 920237,
+      "QuestID": 8670
+    },
+    {
+      "MissionID": 920237,
+      "QuestID": 8671
+    },
+    {
+      "MissionID": 920237,
+      "QuestID": 8672
+    },
+    {
+      "MissionID": 920238,
+      "QuestID": 8714
+    },
+    {
+      "MissionID": 920238,
+      "QuestID": 8715
+    },
+    {
+      "MissionID": 920238,
+      "QuestID": 8716
+    },
+    {
+      "MissionID": 920238,
+      "QuestID": 8717
+    },
+    {
+      "MissionID": 920238,
+      "QuestID": 8718
+    },
+    {
+      "MissionID": 920239,
+      "QuestID": 8738
+    },
+    {
+      "MissionID": 920239,
+      "QuestID": 8739
+    },
+    {
+      "MissionID": 920239,
+      "QuestID": 8740
+    },
+    {
+      "MissionID": 920239,
+      "QuestID": 8741
+    },
+    {
+      "MissionID": 920239,
+      "QuestID": 8742
+    },
+    {
+      "MissionID": 920240,
+      "QuestID": 8757
+    },
+    {
+      "MissionID": 920240,
+      "QuestID": 8758
+    },
+    {
+      "MissionID": 920240,
+      "QuestID": 8759
+    },
+    {
+      "MissionID": 920240,
+      "QuestID": 8760
+    },
+    {
+      "MissionID": 920240,
+      "QuestID": 8761
+    },
+    {
+      "MissionID": 920240,
+      "QuestID": 8762
+    },
+    {
+      "MissionID": 920240,
+      "QuestID": 8763
+    },
+    {
+      "MissionID": 920240,
+      "QuestID": 8764
+    },
+    {
+      "MissionID": 920240,
+      "QuestID": 8765
     }
   ]
 }

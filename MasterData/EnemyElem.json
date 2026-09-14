@@ -2,37 +2,42 @@
   "_meta": {
     "version": 1,
     "flags": "0x14",
-    "record_count": 127,
+    "record_count": 131,
     "record_size": 16,
-    "custom_id": 1684234601
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "_EnemyElementID",
+      "alias": "[属性]ID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "_EnemyElementName",
+      "alias": "[属性]名称",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 4,
+      "type_code": 32,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "_EnemyElementNote",
+      "alias": "[属性]NOTE",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 8,
+      "type_code": 32,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "_EnemyElementDefine",
+      "alias": "[属性]DEFINE",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 12,
+      "type_code": 32,
+      "offset": 12,
       "size": 4
     }
   ],
@@ -798,6 +803,30 @@
       "_EnemyElementName": "三つ目の種族",
       "_EnemyElementNote": "三つ目の種族用",
       "_EnemyElementDefine": "THIRD_EYE_RACE"
+    },
+    {
+      "_EnemyElementID": 127,
+      "_EnemyElementName": "式神",
+      "_EnemyElementNote": "式神系用",
+      "_EnemyElementDefine": "SHIKIGAMI"
+    },
+    {
+      "_EnemyElementID": 128,
+      "_EnemyElementName": "公家",
+      "_EnemyElementNote": "公家関係者用",
+      "_EnemyElementDefine": "COURT_NOBLE"
+    },
+    {
+      "_EnemyElementID": 129,
+      "_EnemyElementName": "ヘスティス",
+      "_EnemyElementNote": "ヘスティス強化用",
+      "_EnemyElementDefine": "HESTIA"
+    },
+    {
+      "_EnemyElementID": 130,
+      "_EnemyElementName": "スライム",
+      "_EnemyElementNote": "スライム系の強化用",
+      "_EnemyElementDefine": "SLIME"
     }
   ]
 }

@@ -2,58 +2,66 @@
   "_meta": {
     "version": 1,
     "flags": "0x14",
-    "record_count": 2,
+    "record_count": 3,
     "record_size": 28,
-    "custom_id": 1734567780
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "ConfigId",
+      "alias": "特典ID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "OpenDate",
+      "alias": "開始日時",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 4,
+      "type_code": 32,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "CloseDate",
+      "alias": "終了日時",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 8,
+      "type_code": 32,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "RequiredAmount",
+      "alias": "必要金額",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 12,
+      "type_code": 1,
+      "offset": 12,
       "size": 4
     },
     {
       "name": "CardId",
+      "alias": "特典カード定義名",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 16,
+      "type_code": 1,
+      "offset": 16,
       "size": 4
     },
     {
       "name": "ResourceID",
+      "alias": "リソースID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 20,
+      "type_code": 1,
+      "offset": 20,
       "size": 4
     },
     {
       "name": "PresentTextID",
+      "alias": "プレゼントテキストID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 24,
+      "type_code": 1,
+      "offset": 24,
       "size": 4
     }
   ],
@@ -65,16 +73,25 @@
       "RequiredAmount": 500,
       "CardId": 2178,
       "ResourceID": 0,
-      "PresentTextID": 4812
+      "PresentTextID": 5155
     },
     {
       "ConfigId": 2,
       "OpenDate": "2025/05/22 11:30:00",
-      "CloseDate": "",
+      "CloseDate": "2026/06/25 11:29:59",
       "RequiredAmount": 500,
       "CardId": 2458,
       "ResourceID": 1,
-      "PresentTextID": 4812
+      "PresentTextID": 5155
+    },
+    {
+      "ConfigId": 3,
+      "OpenDate": "2026/06/25 11:30:00",
+      "CloseDate": "",
+      "RequiredAmount": 500,
+      "CardId": 2828,
+      "ResourceID": 2,
+      "PresentTextID": 5155
     }
   ]
 }

@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 4,
+    "record_size": 12,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "alias": "ID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Text",
+      "alias": "テキスト",
+      "type": "string",
+      "type_code": 32,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "alias": "タイプ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Text": "学園で食料の盗難事件が発生！？\n腹ペコ探偵ナシートは、仲間と共に犯人の捜査を開始。\n生徒たちへの聞き込みを進める中、\n明らかになった犯人の正体とは――\n\n初開催2025年3月13日",
+      "Type": 6
+    },
+    {
+      "ID": 1,
+      "Text": "",
+      "Type": 7
+    },
+    {
+      "ID": 2,
+      "Text": "獲得★が1以上で\n交換所に「早弁傭兵ナシート」が追加",
+      "Type": 8
+    },
+    {
+      "ID": 3,
+      "Text": "『ブレイブリージャーニー』獲得★数6以上で開放",
+      "Type": 9
+    }
+  ]
+}

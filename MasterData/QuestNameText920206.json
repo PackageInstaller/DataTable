@@ -1,0 +1,40 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 6,
+    "record_size": 4,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "Message",
+      "alias": "名前",
+      "type": "string",
+      "type_code": 32,
+      "offset": 0,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "Message": "武王の弟子たち"
+    },
+    {
+      "Message": "華の国の挑戦者"
+    },
+    {
+      "Message": "赤と白の新星"
+    },
+    {
+      "Message": "決勝Lv.1"
+    },
+    {
+      "Message": "決勝Lv.2"
+    },
+    {
+      "Message": "決勝Lv.3"
+    }
+  ]
+}

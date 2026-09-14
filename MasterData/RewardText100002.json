@@ -1,0 +1,43 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 1,
+    "record_size": 12,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "alias": "ID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Text",
+      "alias": "テキスト",
+      "type": "string",
+      "type_code": 32,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "alias": "タイプ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Text": "■第二章『王城奪還』    \n    \n＜これまでのお話＞    \n女神の神殿へとたどり着いた王子たちは、    \n神殿に奉られし女神『アイギス』の加護を得る。    \n女神の導きにより王子の許へと集う仲間と共に、    \n王都を奪還するべく王子たちは攻勢へと打って出る。    \n    \n    \n▼要注意エネミー    \n黒ヘビーアーマー　＜属性：アーマー＞    \n　攻撃力、防御力が高い。    \n    \n赤ガーゴイル　＜属性：飛行＞    \n　防御力が高い。\n    \nリッチ　＜属性：アンデッド＞    \n　長射程の単体魔法攻撃を行う。    \n",
+      "Type": 6
+    }
+  ]
+}

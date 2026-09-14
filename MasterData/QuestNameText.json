@@ -4,14 +4,16 @@
     "flags": "0x14",
     "record_count": 1168,
     "record_size": 4,
-    "custom_id": 2020893799
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "Message",
+      "alias": "名前",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 0,
+      "type_code": 32,
+      "offset": 0,
       "size": 4
     }
   ],

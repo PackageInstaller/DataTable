@@ -4,70 +4,80 @@
     "flags": "0x14",
     "record_count": 127,
     "record_size": 36,
-    "custom_id": 1835234419
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "ConfigID",
+      "alias": "定義名[CRC32]",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "CardID",
+      "alias": "カード定義名",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "EventID",
+      "alias": "イベントID",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 8,
+      "type_code": 32,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "Exp",
+      "alias": "経験値",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 12,
+      "type_code": 1,
+      "offset": 12,
       "size": 4
     },
     {
       "name": "EpisodeIndex",
+      "alias": "エピソード番号",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 16,
+      "type_code": 1,
+      "offset": 16,
       "size": 4
     },
     {
       "name": "TextIDEventTitle",
+      "alias": "テキストID[イベント名][CRC32]",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 20,
+      "type_code": 1,
+      "offset": 20,
       "size": 4
     },
     {
       "name": "TextIDWinningTitle",
+      "alias": "テキストID[受賞名][CRC32]",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 24,
+      "type_code": 1,
+      "offset": 24,
       "size": 4
     },
     {
       "name": "ConfigIDName",
+      "alias": "定義名",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 28,
+      "type_code": 32,
+      "offset": 28,
       "size": 4
     },
     {
       "name": "DisplayExpression",
+      "alias": "公開条件式[ENCODE]",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 32,
+      "type_code": 32,
+      "offset": 32,
       "size": 4
     }
   ],

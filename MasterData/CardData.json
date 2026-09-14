@@ -1,537 +1,833 @@
 {
   "_meta": {
     "version": 1,
-    "flags": "0x10",
-    "record_count": 0,
-    "record_size": 1128,
-    "custom_id": 1952735587
+    "flags": "0x00",
+    "record_size": 1128
   },
   "_fields": [
     {
       "name": "CardID",
+      "alias": "ＩＤ",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "InitClassID",
+      "alias": "初期クラス",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "ClassLV0SkillID",
+      "alias": "クラスLV0スキル",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 8,
+      "type_code": 1,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "ClassLV1SkillID",
+      "alias": "クラスLV1スキル",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 12,
+      "type_code": 1,
+      "offset": 12,
       "size": 4
     },
     {
       "name": "EvoSkillID",
+      "alias": "進化スキル",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 16,
+      "type_code": 1,
+      "offset": 16,
       "size": 4
     },
     {
       "name": "Kind",
+      "alias": "種別",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 20,
+      "type_code": 1,
+      "offset": 20,
       "size": 4
     },
     {
       "name": "Rare",
+      "alias": "レアリティー",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 24,
+      "type_code": 1,
+      "offset": 24,
       "size": 4
     },
     {
       "name": "DotID0",
+      "alias": "外観０",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 28,
+      "type_code": 1,
+      "offset": 28,
       "size": 4
     },
     {
       "name": "DotID1",
+      "alias": "外観１",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 32,
+      "type_code": 1,
+      "offset": 32,
       "size": 4
     },
     {
       "name": "DotID2",
+      "alias": "外観２",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 36,
+      "type_code": 1,
+      "offset": 36,
       "size": 4
     },
     {
       "name": "SellPrice",
+      "alias": "売却価格",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 40,
+      "type_code": 1,
+      "offset": 40,
       "size": 4
     },
     {
       "name": "FreePrize",
+      "alias": "無料ガチャ",
       "type": "float",
-      "mapped_type": 4,
-      "rec_offset": 44,
+      "type_code": 4,
+      "offset": 44,
       "size": 4
     },
     {
       "name": "RarePrize",
+      "alias": "レアガチャ",
       "type": "float",
-      "mapped_type": 4,
-      "rec_offset": 48,
+      "type_code": 4,
+      "offset": 48,
       "size": 4
     },
     {
       "name": "PremiumPrize",
+      "alias": "プレミアムガチャ",
       "type": "float",
-      "mapped_type": 4,
-      "rec_offset": 52,
+      "type_code": 4,
+      "offset": 52,
       "size": 4
     },
     {
       "name": "TicketPrize",
+      "alias": "チケットガチャ",
       "type": "float",
-      "mapped_type": 4,
-      "rec_offset": 56,
+      "type_code": 4,
+      "offset": 56,
       "size": 4
     },
     {
       "name": "PremiumPrize2",
+      "alias": "プレミアムガチャ2",
       "type": "float",
-      "mapped_type": 4,
-      "rec_offset": 60,
+      "type_code": 4,
+      "offset": 60,
       "size": 4
     },
     {
       "name": "BuildExp",
+      "alias": "合成経験点",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 64,
+      "type_code": 1,
+      "offset": 64,
       "size": 4
     },
     {
       "name": "LoveEv1",
+      "alias": "必要好感度Ev1",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 68,
+      "type_code": 1,
+      "offset": 68,
       "size": 4
     },
     {
       "name": "BonusType",
+      "alias": "ボーナスパラメータ",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 72,
+      "type_code": 1,
+      "offset": 72,
       "size": 4
     },
     {
       "name": "BonusNum",
+      "alias": "ボーナス数値",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 76,
+      "type_code": 1,
+      "offset": 76,
       "size": 4
     },
     {
       "name": "BonusType2",
+      "alias": "ボーナスパラメータ2",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 80,
+      "type_code": 1,
+      "offset": 80,
       "size": 4
     },
     {
       "name": "BonusNum2",
+      "alias": "ボーナス数値2",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 84,
+      "type_code": 1,
+      "offset": 84,
       "size": 4
     },
     {
       "name": "BonusType3",
+      "alias": "ボーナスパラメータ3",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 88,
+      "type_code": 1,
+      "offset": 88,
       "size": 4
     },
     {
       "name": "BonusNum3",
+      "alias": "ボーナス数値3",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 92,
+      "type_code": 1,
+      "offset": 92,
       "size": 4
     },
     {
       "name": "DeadVoice",
+      "alias": "死亡ボイス",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 96,
+      "type_code": 1,
+      "offset": 96,
       "size": 4
     },
     {
       "name": "DotScale",
+      "alias": "ドット倍率",
       "type": "float",
-      "mapped_type": 4,
-      "rec_offset": 100,
+      "type_code": 4,
+      "offset": 100,
       "size": 4
     },
     {
       "name": "EffectHeight",
+      "alias": "エフェクト高さ",
       "type": "float",
-      "mapped_type": 4,
-      "rec_offset": 104,
+      "type_code": 4,
+      "offset": 104,
       "size": 4
     },
     {
       "name": "CostModValue",
+      "alias": "配置コスト修正",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 108,
+      "type_code": 1,
+      "offset": 108,
       "size": 4
     },
     {
       "name": "CostDecValue",
+      "alias": "配置コスト減少量",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 112,
+      "type_code": 1,
+      "offset": 112,
       "size": 4
     },
     {
       "name": "MaxHPMod",
+      "alias": "能力補正HP",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 116,
+      "type_code": 1,
+      "offset": 116,
       "size": 4
     },
     {
       "name": "AtkMod",
+      "alias": "能力補正攻撃",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 120,
+      "type_code": 1,
+      "offset": 120,
       "size": 4
     },
     {
       "name": "DefMod",
+      "alias": "能力補正防御",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 124,
+      "type_code": 1,
+      "offset": 124,
       "size": 4
     },
     {
       "name": "GachaPicture",
+      "alias": "ガチャ使用画像",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 128,
+      "type_code": 1,
+      "offset": 128,
       "size": 4
     },
     {
       "name": "GachaStartX",
+      "alias": "ガチャ画像開始X",
       "type": "float",
-      "mapped_type": 4,
-      "rec_offset": 132,
+      "type_code": 4,
+      "offset": 132,
       "size": 4
     },
     {
       "name": "GachaStartY",
+      "alias": "ガチャ画像開始Y",
       "type": "float",
-      "mapped_type": 4,
-      "rec_offset": 136,
+      "type_code": 4,
+      "offset": 136,
       "size": 4
     },
     {
       "name": "GachaEndX",
+      "alias": "ガチャ画像終了X",
       "type": "float",
-      "mapped_type": 4,
-      "rec_offset": 140,
+      "type_code": 4,
+      "offset": 140,
       "size": 4
     },
     {
       "name": "GachaEndY",
+      "alias": "ガチャ画像終了Y",
       "type": "float",
-      "mapped_type": 4,
-      "rec_offset": 144,
+      "type_code": 4,
+      "offset": 144,
       "size": 4
     },
     {
       "name": "GachaScale",
+      "alias": "ガチャ画像スケール",
       "type": "float",
-      "mapped_type": 4,
-      "rec_offset": 148,
+      "type_code": 4,
+      "offset": 148,
       "size": 4
     },
     {
       "name": "Event1BGM",
+      "alias": "イベント１BGM",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 152,
+      "type_code": 1,
+      "offset": 152,
       "size": 4
     },
     {
       "name": "Event2BGM",
+      "alias": "イベント２BGM",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 156,
+      "type_code": 1,
+      "offset": 156,
       "size": 4
     },
     {
       "name": "Flavor",
+      "alias": "フレーバー",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 160,
+      "type_code": 1,
+      "offset": 160,
       "size": 4
     },
     {
       "name": "Illust",
+      "alias": "イラスト",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 164,
+      "type_code": 1,
+      "offset": 164,
       "size": 4
     },
     {
       "name": "MagicResistance",
+      "alias": "魔耐",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 168,
+      "type_code": 1,
+      "offset": 168,
       "size": 4
     },
     {
       "name": "Ability_Default",
+      "alias": "覚醒前アビリティ",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 172,
+      "type_code": 1,
+      "offset": 172,
       "size": 4
     },
     {
       "name": "Ability",
+      "alias": "アビリティ",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 176,
+      "type_code": 1,
+      "offset": 176,
       "size": 4
     },
     {
       "name": "FullShot1",
+      "alias": "立ち絵１",
       "type": "bool",
-      "mapped_type": 5,
-      "rec_offset": 180,
+      "type_code": 5,
+      "offset": 180,
       "size": 1
     },
     {
-      "name": "\u0001\u0005\u000fFace1",
-      "type": "unknown",
-      "mapped_type": 0,
-      "rec_offset": 0,
+      "name": "Face1",
+      "alias": "フェイス１",
+      "type": "bool",
+      "type_code": 5,
+      "offset": 181,
+      "size": 1
+    },
+    {
+      "name": "PlatformType",
+      "alias": "プラットフォーム",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 184,
       "size": 4
     },
     {
-      "name": "ル覚醒",
-      "type": "unknown",
-      "mapped_type": 185,
-      "rec_offset": 33507,
-      "size": 1446
-    },
-    {
-      "name": "��",
-      "type": "unknown",
-      "mapped_type": 227,
-      "rec_offset": 49026,
-      "size": 0
-    },
-    {
-      "name": "field_49",
-      "type": "unknown",
-      "mapped_type": 185,
-      "rec_offset": 33507,
-      "size": 1446
-    },
-    {
-      "name": "\u0001\b\t\u0007Identity2",
-      "type": "unknown",
-      "mapped_type": 0,
-      "rec_offset": 0,
+      "name": "PlatformTypeAwakening",
+      "alias": "プラットフォーム覚醒",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 188,
       "size": 4
     },
     {
-      "name": "2",
-      "type": "unknown",
-      "mapped_type": 185,
-      "rec_offset": 35303,
-      "size": 13723
-    },
-    {
-      "name": "\u0014\u0001!\u0004\u000b\bChildCardID",
-      "type": "unknown",
-      "mapped_type": 0,
-      "rec_offset": 0,
+      "name": "PlatformTypeSkillAwakening",
+      "alias": "プラットフォームスキル覚醒",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 192,
       "size": 4
     },
     {
-      "name": "\u0001\b\b\u0011OriginID",
-      "type": "unknown",
-      "mapped_type": 0,
-      "rec_offset": 256,
-      "size": 280
+      "name": "_TypeRace",
+      "alias": "種族",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 196,
+      "size": 4
     },
     {
-      "name": "field_54",
-      "type": "unknown",
-      "mapped_type": 0,
-      "rec_offset": 0,
+      "name": "_TypeBigRace",
+      "alias": "大種族",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 200,
+      "size": 4
+    },
+    {
+      "name": "_TradePoint",
+      "alias": "売却価格[虹]",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 204,
+      "size": 4
+    },
+    {
+      "name": "_AppearAbilityLevel",
+      "alias": "覚醒後アビリティ開放レベル",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 208,
+      "size": 4
+    },
+    {
+      "name": "_AwakePattern",
+      "alias": "覚醒タイプ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 212,
+      "size": 4
+    },
+    {
+      "name": "DotID3",
+      "alias": "外観３",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 216,
+      "size": 4
+    },
+    {
+      "name": "DotID4",
+      "alias": "外観４",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 220,
+      "size": 4
+    },
+    {
+      "name": "CharaImage3",
+      "alias": "立ち絵３",
+      "type": "bool",
+      "type_code": 5,
+      "offset": 224,
+      "size": 1
+    },
+    {
+      "name": "CharaFace3",
+      "alias": "フェイス３",
+      "type": "bool",
+      "type_code": 5,
+      "offset": 225,
+      "size": 1
+    },
+    {
+      "name": "CharaImage4",
+      "alias": "立ち絵４",
+      "type": "bool",
+      "type_code": 5,
+      "offset": 226,
+      "size": 1
+    },
+    {
+      "name": "CharaFace4",
+      "alias": "フェイス４",
+      "type": "bool",
+      "type_code": 5,
+      "offset": 227,
+      "size": 1
+    },
+    {
+      "name": "PlatformTypeAwakening2",
+      "alias": "プラットフォーム第２覚醒",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 228,
+      "size": 4
+    },
+    {
+      "name": "Assign",
+      "alias": "所属",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 232,
+      "size": 4
+    },
+    {
+      "name": "Genus",
+      "alias": "属名",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 236,
+      "size": 4
+    },
+    {
+      "name": "Identity",
+      "alias": "特性",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 240,
+      "size": 4
+    },
+    {
+      "name": "Identity2",
+      "alias": "特性2",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 244,
+      "size": 4
+    },
+    {
+      "name": "Identity3",
+      "alias": "特性3",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 248,
+      "size": 4
+    },
+    {
+      "name": "Identity4",
+      "alias": "特性4",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 252,
+      "size": 4
+    },
+    {
+      "name": "Identity5",
+      "alias": "特性5",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 256,
+      "size": 4
+    },
+    {
+      "name": "Identity6",
+      "alias": "特性6",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 260,
+      "size": 4
+    },
+    {
+      "name": "IdentityEVT",
+      "alias": "EVT",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 264,
+      "size": 4
+    },
+    {
+      "name": "Blood",
+      "alias": "血筋",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 268,
+      "size": 4
+    },
+    {
+      "name": "HomeCooking",
+      "alias": "手料理番号",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 272,
+      "size": 4
+    },
+    {
+      "name": "ChildCardID",
+      "alias": "ちびID",
+      "type": "fixed_string",
+      "type_code": 33,
+      "offset": 276,
+      "size": 32
+    },
+    {
+      "name": "OriginID",
+      "alias": "根源カードID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 532,
       "size": 4
     },
     {
       "name": "RootsID",
+      "alias": "ルーツ",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 536,
+      "type_code": 1,
+      "offset": 536,
       "size": 4
     },
     {
       "name": "Flavor2",
+      "alias": "フレーバー2",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 540,
+      "type_code": 1,
+      "offset": 540,
       "size": 4
     },
     {
       "name": "CharaImage0",
+      "alias": "立ち絵0",
       "type": "bool",
-      "mapped_type": 5,
-      "rec_offset": 544,
+      "type_code": 5,
+      "offset": 544,
       "size": 1
     },
     {
-      "name": "\u0001\n\rCharaFace0",
-      "type": "unknown",
-      "mapped_type": 0,
-      "rec_offset": 0,
+      "name": "CharaFace0",
+      "alias": "フェイス0",
+      "type": "bool",
+      "type_code": 5,
+      "offset": 545,
+      "size": 1
+    },
+    {
+      "name": "GeneralIllustID",
+      "alias": "一般版イラスト",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 548,
       "size": 4
     },
     {
-      "name": "��スト",
-      "type": "unknown",
-      "mapped_type": 227,
-      "rec_offset": 34953,
-      "size": 350
+      "name": "VoteGroupID",
+      "alias": "投票部門グループID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 552,
+      "size": 4
     },
     {
-      "name": "ImageEvolve0",
-      "type": "unknown",
-      "mapped_type": 104,
-      "rec_offset": 20596,
-      "size": 5376
+      "name": "DateOfImplementation",
+      "alias": "実装された年月日",
+      "type": "datetime",
+      "type_code": 9,
+      "offset": 560,
+      "size": 8
     },
     {
-      "name": "mageEvolve4",
-      "type": "unknown",
-      "mapped_type": 111,
-      "rec_offset": 26704,
-      "size": 6803
+      "name": "SmartPhoneImageEvolve0",
+      "alias": "SP絵進化0",
+      "type": "bool",
+      "type_code": 5,
+      "offset": 568,
+      "size": 1
     },
     {
-      "name": "field_62",
-      "type": "unknown",
-      "mapped_type": 0,
-      "rec_offset": 0,
+      "name": "SmartPhoneImageEvolve2",
+      "alias": "SP絵進化2",
+      "type": "bool",
+      "type_code": 5,
+      "offset": 569,
+      "size": 1
+    },
+    {
+      "name": "SmartPhoneImageEvolve3",
+      "alias": "SP絵進化3",
+      "type": "bool",
+      "type_code": 5,
+      "offset": 570,
+      "size": 1
+    },
+    {
+      "name": "SmartPhoneImageEvolve4",
+      "alias": "SP絵進化4",
+      "type": "bool",
+      "type_code": 5,
+      "offset": 571,
+      "size": 1
+    },
+    {
+      "name": "BuildSkillExperience",
+      "alias": "合成スキル経験点",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 572,
+      "size": 4
+    },
+    {
+      "name": "BuildSkillLevel",
+      "alias": "合成スキルレベル",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 576,
       "size": 4
     },
     {
       "name": "ChildSkillExperience",
+      "alias": "ちび合成スキル経験点",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 580,
+      "type_code": 1,
+      "offset": 580,
       "size": 4
     },
     {
       "name": "ChildSkillLevel",
+      "alias": "ちび合成スキルレベル",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 584,
+      "type_code": 1,
+      "offset": 584,
       "size": 4
     },
     {
       "name": "SkillExperienceTableReferenceId",
+      "alias": "参照スキル経験値テーブル",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 588,
+      "type_code": 1,
+      "offset": 588,
       "size": 4
     },
     {
       "name": "BuildCostExperience",
+      "alias": "合成コスト経験点",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 592,
+      "type_code": 1,
+      "offset": 592,
       "size": 4
     },
     {
       "name": "BuildCostLevel",
+      "alias": "合成コストレベル",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 596,
+      "type_code": 1,
+      "offset": 596,
       "size": 4
     },
     {
       "name": "ChildCostExperience",
+      "alias": "ちび合成コスト経験点",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 600,
+      "type_code": 1,
+      "offset": 600,
       "size": 4
     },
     {
       "name": "ChildCostLevel",
+      "alias": "ちび合成コストレベル",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 604,
+      "type_code": 1,
+      "offset": 604,
       "size": 4
     },
     {
       "name": "CostExperienceTableReferenceId",
+      "alias": "参照コスト経験値テーブル",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 608,
+      "type_code": 1,
+      "offset": 608,
       "size": 4
     },
     {
       "name": "InLibrary",
+      "alias": "名鑑表示",
       "type": "bool",
-      "mapped_type": 5,
-      "rec_offset": 612,
+      "type_code": 5,
+      "offset": 612,
       "size": 1
     },
     {
-      "name": "\u0001\r\fInHallOfFamer",
-      "type": "unknown",
-      "mapped_type": 0,
-      "rec_offset": 0,
-      "size": 4
+      "name": "InHallOfFamer",
+      "alias": "殿堂入り",
+      "type": "bool",
+      "type_code": 5,
+      "offset": 613,
+      "size": 1
     },
     {
-      "name": "xtendSkin02",
-      "type": "float",
-      "mapped_type": 4,
-      "rec_offset": 8450,
-      "size": 4
+      "name": "ExcludeFameDisplayFirstClass",
+      "alias": "名鑑未CC除外",
+      "type": "bool",
+      "type_code": 5,
+      "offset": 614,
+      "size": 1
     },
     {
-      "name": "in03",
-      "type": "unknown",
-      "mapped_type": 110,
-      "rec_offset": 25972,
-      "size": 732
+      "name": "ExtendSkin01",
+      "alias": "スキン1",
+      "type": "fixed_string",
+      "type_code": 33,
+      "offset": 615,
+      "size": 32
+    },
+    {
+      "name": "ExtendSkin02",
+      "alias": "スキン2",
+      "type": "fixed_string",
+      "type_code": 33,
+      "offset": 743,
+      "size": 32
+    },
+    {
+      "name": "ExtendSkin03",
+      "alias": "スキン3",
+      "type": "fixed_string",
+      "type_code": 33,
+      "offset": 871,
+      "size": 32
+    },
+    {
+      "name": "ExtendSkin04",
+      "alias": "スキン4",
+      "type": "fixed_string",
+      "type_code": 33,
+      "offset": 999,
+      "size": 32
     }
-  ],
-  "records": []
+  ]
 }

@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 4,
+    "record_size": 12,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "alias": "ID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Text",
+      "alias": "テキスト",
+      "type": "string",
+      "type_code": 32,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "alias": "タイプ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Text": "誰とも手を組まず戦ってきた凶鳥の射手ヒューナ。\n彼女は相棒のクロスボウに言われ、王子たちと共に試練に挑む。\nその中でヒューナは王子たちと打ち解けていき、\n王国の新たな仲間となるのだった。\n\n初開催2018年5月24日",
+      "Type": 6
+    },
+    {
+      "ID": 1,
+      "Text": "",
+      "Type": 7
+    },
+    {
+      "ID": 2,
+      "Text": "獲得★が1以上で\n交換所に「凶鳥の射手ヒューナ」が追加",
+      "Type": 8
+    },
+    {
+      "ID": 3,
+      "Text": "『龍穴の風水士』獲得★数19以上で開放",
+      "Type": 9
+    }
+  ]
+}

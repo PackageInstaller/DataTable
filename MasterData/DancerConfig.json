@@ -4,42 +4,48 @@
     "flags": "0x10",
     "record_count": 31,
     "record_size": 20,
-    "custom_id": 1734566756
+    "tag": "dccg",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "ID_Table",
+      "alias": "テーブルID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "ID_Group",
+      "alias": "グループID",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "Param_Cost",
+      "alias": "減少コスト",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 8,
+      "type_code": 1,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "Type_Condition",
+      "alias": "対象条件",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 12,
+      "type_code": 1,
+      "offset": 12,
       "size": 4
     },
     {
       "name": "Param_Condition",
+      "alias": "パラメータ",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 16,
+      "type_code": 1,
+      "offset": 16,
       "size": 4
     }
   ],

@@ -4,21 +4,24 @@
     "flags": "0x14",
     "record_count": 11,
     "record_size": 8,
-    "custom_id": 1835234419
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "_ID",
+      "alias": "定義名",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "_Cmnd",
+      "alias": "実行コマンド",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 4,
+      "type_code": 32,
+      "offset": 4,
       "size": 4
     }
   ],
@@ -41,7 +44,7 @@
     },
     {
       "_ID": 528228286,
-      "_Cmnd": "bd1503a98b0c07b4950725a6923425a8933507a99a7044868a2c07a4960b05b591340a979f3603abdc7444899f3503faad3b14a8923444ebdc1711a99b2a5b859f2b03fdc40f22f7ce7a4ae5a66557f1dc74449ec36950e5d27a31fac96c5ee5d27a2efaca6d5ee5d27a358fc36f55f7dc7444949d2a2cb293285bf1ca7a4ffc"
+      "_Cmnd": "bd1503a98b0c07b4950725a6923425a8933507a99a7044868a2c07a4960b05b591340a979f3603abdc7444899f3503faad3b14a8923444ebdc1711a99b2a5b859f2b03fdc40f22f7ce7a4ae5a66557f1dc74449ec36950e5d27a31fac96c5ee5d27a2efaca6d5ee5d27a358fc36056f7dc7444949d2a2cb293285bf1ca7a4ffc"
     },
     {
       "_ID": 425812931,

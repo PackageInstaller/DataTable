@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 4,
+    "record_size": 12,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "alias": "ID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Text",
+      "alias": "テキスト",
+      "type": "string",
+      "type_code": 32,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "alias": "タイプ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Text": "亜神たちとの戦いに備え、\n王国と白の帝国は、合同軍事演習を開催する。\nそこに姿を現したのは闇の組織幹部、スリー。\n王子たちはスリーとの戦いと、\n激しい嵐を乗り越え、ある伝説の島へとたどり着く。\n\n初開催2022年7月7日",
+      "Type": 6
+    },
+    {
+      "ID": 1,
+      "Text": "",
+      "Type": 7
+    },
+    {
+      "ID": 2,
+      "Text": "獲得★が1以上で\n交換所に「真夏の覇者レオーネ」が追加\nM１クリアで称号「真夏の主役」を入手",
+      "Type": 8
+    },
+    {
+      "ID": 3,
+      "Text": "『オリュンポス開門作戦』獲得★数19以上で開放",
+      "Type": 9
+    }
+  ]
+}

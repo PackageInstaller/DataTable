@@ -1,0 +1,40 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 6,
+    "record_size": 4,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "Message",
+      "alias": "名前",
+      "type": "string",
+      "type_code": 32,
+      "offset": 0,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "Message": "狙われた屋台ごはん"
+    },
+    {
+      "Message": "いざグルメジャングルへ！"
+    },
+    {
+      "Message": "グルメジャングルは実在した！"
+    },
+    {
+      "Message": "チョコレート畑でつかまえて"
+    },
+    {
+      "Message": "幻のドラゴン肉を追え！"
+    },
+    {
+      "Message": "響く祝砲、轟く咆哮"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 2,
+    "record_size": 12,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "alias": "ID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Text",
+      "alias": "テキスト",
+      "type": "string",
+      "type_code": 32,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "alias": "タイプ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Text": "【曜日ミッション開催スケジュール】\n\n・強者の集う戦場\n英傑属性以外でレアリティ：ゴールド以上の\nユニットのスキル覚醒に使用する技覚醒の聖霊を\n手に入れる事ができます。\n\n--------------------------------------------------\n＜月曜日～日曜日＞\n　・強者の集う戦場\n　　技覚醒の聖霊がドロップ\n",
+      "Type": 6
+    },
+    {
+      "ID": 1,
+      "Text": "現在開催していないためプレイできません。",
+      "Type": 11
+    }
+  ]
+}

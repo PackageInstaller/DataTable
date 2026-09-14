@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 4,
+    "record_size": 12,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "ID",
+      "alias": "ID",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 0,
+      "size": 4
+    },
+    {
+      "name": "Text",
+      "alias": "テキスト",
+      "type": "string",
+      "type_code": 32,
+      "offset": 4,
+      "size": 4
+    },
+    {
+      "name": "Type",
+      "alias": "タイプ",
+      "type": "int32",
+      "type_code": 1,
+      "offset": 8,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "ID": 0,
+      "Text": "合同訓練のために白の帝国を訪れた王子たち。\nしかしそこでは、小規模な騒乱が同時多発していた。\n王子たちは、首謀者に脅され騒乱に協力させられていた\n重装砲兵フリーデと何度も戦いながら、事態の収束を目指す。\n\n初開催2017年12月14日",
+      "Type": 6
+    },
+    {
+      "ID": 1,
+      "Text": "",
+      "Type": 7
+    },
+    {
+      "ID": 2,
+      "Text": "獲得★が1以上で\n交換所に「帝国重装砲兵フリーデ」が追加",
+      "Type": 8
+    },
+    {
+      "ID": 3,
+      "Text": "『夢現のダークプリースト』獲得★数13以上で開放",
+      "Type": 9
+    }
+  ]
+}

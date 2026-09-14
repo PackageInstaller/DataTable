@@ -2,72 +2,82 @@
   "_meta": {
     "version": 1,
     "flags": "0x10",
-    "record_count": 931,
+    "record_count": 961,
     "record_size": 36,
-    "custom_id": 1668639604
+    "tag": "tkuc",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "ID_Class",
+      "alias": "クラス定義名",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 0,
+      "type_code": 1,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "Param_SummonMax",
+      "alias": "最大召喚数",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 4,
+      "type_code": 1,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "Param_SummonUnit",
+      "alias": "召喚ユニット名",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 8,
+      "type_code": 1,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "Param_SummonRecast",
+      "alias": "リキャスト",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 12,
+      "type_code": 1,
+      "offset": 12,
       "size": 4
     },
     {
       "name": "Param_SummonCost",
+      "alias": "コスト",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 16,
+      "type_code": 1,
+      "offset": 16,
       "size": 4
     },
     {
       "name": "Param_SummonLimit",
+      "alias": "召喚限度数",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 20,
+      "type_code": 1,
+      "offset": 20,
       "size": 4
     },
     {
       "name": "Param_CardID",
+      "alias": "カード定義名",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 24,
+      "type_code": 1,
+      "offset": 24,
       "size": 4
     },
     {
       "name": "Param_SetIndex",
+      "alias": "セット番号",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 28,
+      "type_code": 1,
+      "offset": 28,
       "size": 4
     },
     {
       "name": "Param_SummonTotalMax",
+      "alias": "召喚全体限度数",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 32,
+      "type_code": 1,
+      "offset": 32,
       "size": 4
     }
   ],
@@ -1045,8 +1055,8 @@
       "Param_SummonMax": 3,
       "Param_SummonUnit": 167,
       "Param_SummonRecast": 2,
-      "Param_SummonCost": 5,
-      "Param_SummonLimit": 5,
+      "Param_SummonCost": 2,
+      "Param_SummonLimit": 10,
       "Param_CardID": 0,
       "Param_SetIndex": 0,
       "Param_SummonTotalMax": 3
@@ -1056,8 +1066,8 @@
       "Param_SummonMax": 3,
       "Param_SummonUnit": 220,
       "Param_SummonRecast": 2,
-      "Param_SummonCost": 8,
-      "Param_SummonLimit": 5,
+      "Param_SummonCost": 3,
+      "Param_SummonLimit": 10,
       "Param_CardID": 0,
       "Param_SetIndex": 0,
       "Param_SummonTotalMax": 3
@@ -1067,8 +1077,8 @@
       "Param_SummonMax": 3,
       "Param_SummonUnit": 220,
       "Param_SummonRecast": 2,
-      "Param_SummonCost": 8,
-      "Param_SummonLimit": 5,
+      "Param_SummonCost": 3,
+      "Param_SummonLimit": 10,
       "Param_CardID": 0,
       "Param_SetIndex": 0,
       "Param_SummonTotalMax": 3
@@ -1078,8 +1088,8 @@
       "Param_SummonMax": 3,
       "Param_SummonUnit": 655,
       "Param_SummonRecast": 2,
-      "Param_SummonCost": 8,
-      "Param_SummonLimit": 5,
+      "Param_SummonCost": 3,
+      "Param_SummonLimit": 10,
       "Param_CardID": 0,
       "Param_SetIndex": 0,
       "Param_SummonTotalMax": 3
@@ -2233,8 +2243,8 @@
       "Param_SummonMax": 3,
       "Param_SummonUnit": 167,
       "Param_SummonRecast": 2,
-      "Param_SummonCost": 5,
-      "Param_SummonLimit": 5,
+      "Param_SummonCost": 2,
+      "Param_SummonLimit": 10,
       "Param_CardID": 0,
       "Param_SetIndex": 0,
       "Param_SummonTotalMax": 3
@@ -10312,6 +10322,336 @@
       "Param_CardID": 2767,
       "Param_SetIndex": 0,
       "Param_SummonTotalMax": 3
+    },
+    {
+      "ID_Class": 19500,
+      "Param_SummonMax": 1,
+      "Param_SummonUnit": 2797,
+      "Param_SummonRecast": 2,
+      "Param_SummonCost": 17,
+      "Param_SummonLimit": 2,
+      "Param_CardID": 2795,
+      "Param_SetIndex": 0,
+      "Param_SummonTotalMax": 2
+    },
+    {
+      "ID_Class": 19500,
+      "Param_SummonMax": 1,
+      "Param_SummonUnit": 2798,
+      "Param_SummonRecast": 2,
+      "Param_SummonCost": 16,
+      "Param_SummonLimit": 2,
+      "Param_CardID": 2795,
+      "Param_SetIndex": 1,
+      "Param_SummonTotalMax": 2
+    },
+    {
+      "ID_Class": 19530,
+      "Param_SummonMax": 1,
+      "Param_SummonUnit": 2799,
+      "Param_SummonRecast": 2,
+      "Param_SummonCost": 17,
+      "Param_SummonLimit": 3,
+      "Param_CardID": 2795,
+      "Param_SetIndex": 0,
+      "Param_SummonTotalMax": 3
+    },
+    {
+      "ID_Class": 19530,
+      "Param_SummonMax": 1,
+      "Param_SummonUnit": 2800,
+      "Param_SummonRecast": 2,
+      "Param_SummonCost": 16,
+      "Param_SummonLimit": 3,
+      "Param_CardID": 2795,
+      "Param_SetIndex": 1,
+      "Param_SummonTotalMax": 3
+    },
+    {
+      "ID_Class": 19530,
+      "Param_SummonMax": 1,
+      "Param_SummonUnit": 2801,
+      "Param_SummonRecast": 2,
+      "Param_SummonCost": 11,
+      "Param_SummonLimit": 3,
+      "Param_CardID": 2795,
+      "Param_SetIndex": 2,
+      "Param_SummonTotalMax": 3
+    },
+    {
+      "ID_Class": 19570,
+      "Param_SummonMax": 1,
+      "Param_SummonUnit": 2802,
+      "Param_SummonRecast": 2,
+      "Param_SummonCost": 17,
+      "Param_SummonLimit": 3,
+      "Param_CardID": 2795,
+      "Param_SetIndex": 0,
+      "Param_SummonTotalMax": 3
+    },
+    {
+      "ID_Class": 19570,
+      "Param_SummonMax": 1,
+      "Param_SummonUnit": 2803,
+      "Param_SummonRecast": 2,
+      "Param_SummonCost": 16,
+      "Param_SummonLimit": 3,
+      "Param_CardID": 2795,
+      "Param_SetIndex": 1,
+      "Param_SummonTotalMax": 3
+    },
+    {
+      "ID_Class": 19570,
+      "Param_SummonMax": 1,
+      "Param_SummonUnit": 2804,
+      "Param_SummonRecast": 2,
+      "Param_SummonCost": 11,
+      "Param_SummonLimit": 3,
+      "Param_CardID": 2795,
+      "Param_SetIndex": 2,
+      "Param_SummonTotalMax": 3
+    },
+    {
+      "ID_Class": 19580,
+      "Param_SummonMax": 1,
+      "Param_SummonUnit": 2805,
+      "Param_SummonRecast": 2,
+      "Param_SummonCost": 17,
+      "Param_SummonLimit": 3,
+      "Param_CardID": 2795,
+      "Param_SetIndex": 0,
+      "Param_SummonTotalMax": 3
+    },
+    {
+      "ID_Class": 19580,
+      "Param_SummonMax": 1,
+      "Param_SummonUnit": 2806,
+      "Param_SummonRecast": 2,
+      "Param_SummonCost": 16,
+      "Param_SummonLimit": 3,
+      "Param_CardID": 2795,
+      "Param_SetIndex": 1,
+      "Param_SummonTotalMax": 3
+    },
+    {
+      "ID_Class": 19580,
+      "Param_SummonMax": 1,
+      "Param_SummonUnit": 2807,
+      "Param_SummonRecast": 2,
+      "Param_SummonCost": 11,
+      "Param_SummonLimit": 3,
+      "Param_CardID": 2795,
+      "Param_SetIndex": 2,
+      "Param_SummonTotalMax": 3
+    },
+    {
+      "ID_Class": 167700,
+      "Param_SummonMax": 5,
+      "Param_SummonUnit": 2820,
+      "Param_SummonRecast": 2,
+      "Param_SummonCost": 10,
+      "Param_SummonLimit": 5,
+      "Param_CardID": 2809,
+      "Param_SetIndex": 0,
+      "Param_SummonTotalMax": 5
+    },
+    {
+      "ID_Class": 167720,
+      "Param_SummonMax": 5,
+      "Param_SummonUnit": 2821,
+      "Param_SummonRecast": 2,
+      "Param_SummonCost": 10,
+      "Param_SummonLimit": 5,
+      "Param_CardID": 2809,
+      "Param_SetIndex": 0,
+      "Param_SummonTotalMax": 5
+    },
+    {
+      "ID_Class": 167770,
+      "Param_SummonMax": 5,
+      "Param_SummonUnit": 2821,
+      "Param_SummonRecast": 2,
+      "Param_SummonCost": 10,
+      "Param_SummonLimit": 5,
+      "Param_CardID": 2809,
+      "Param_SetIndex": 0,
+      "Param_SummonTotalMax": 5
+    },
+    {
+      "ID_Class": 167780,
+      "Param_SummonMax": 5,
+      "Param_SummonUnit": 2821,
+      "Param_SummonRecast": 2,
+      "Param_SummonCost": 10,
+      "Param_SummonLimit": 5,
+      "Param_CardID": 2809,
+      "Param_SetIndex": 0,
+      "Param_SummonTotalMax": 5
+    },
+    {
+      "ID_Class": 167500,
+      "Param_SummonMax": 12,
+      "Param_SummonUnit": 2816,
+      "Param_SummonRecast": 2,
+      "Param_SummonCost": 3,
+      "Param_SummonLimit": 12,
+      "Param_CardID": 2810,
+      "Param_SetIndex": 0,
+      "Param_SummonTotalMax": 12
+    },
+    {
+      "ID_Class": 167520,
+      "Param_SummonMax": 12,
+      "Param_SummonUnit": 2817,
+      "Param_SummonRecast": 2,
+      "Param_SummonCost": 3,
+      "Param_SummonLimit": 12,
+      "Param_CardID": 2810,
+      "Param_SetIndex": 0,
+      "Param_SummonTotalMax": 12
+    },
+    {
+      "ID_Class": 167570,
+      "Param_SummonMax": 12,
+      "Param_SummonUnit": 2818,
+      "Param_SummonRecast": 2,
+      "Param_SummonCost": 3,
+      "Param_SummonLimit": 12,
+      "Param_CardID": 2810,
+      "Param_SetIndex": 0,
+      "Param_SummonTotalMax": 12
+    },
+    {
+      "ID_Class": 167580,
+      "Param_SummonMax": 12,
+      "Param_SummonUnit": 2819,
+      "Param_SummonRecast": 2,
+      "Param_SummonCost": 3,
+      "Param_SummonLimit": 12,
+      "Param_CardID": 2810,
+      "Param_SetIndex": 0,
+      "Param_SummonTotalMax": 12
+    },
+    {
+      "ID_Class": 151020,
+      "Param_SummonMax": 1,
+      "Param_SummonUnit": 2845,
+      "Param_SummonRecast": 10,
+      "Param_SummonCost": 0,
+      "Param_SummonLimit": 3,
+      "Param_CardID": 2842,
+      "Param_SetIndex": 0,
+      "Param_SummonTotalMax": 1
+    },
+    {
+      "ID_Class": 136930,
+      "Param_SummonMax": 5,
+      "Param_SummonUnit": 2846,
+      "Param_SummonRecast": 3,
+      "Param_SummonCost": 0,
+      "Param_SummonLimit": 0,
+      "Param_CardID": 2838,
+      "Param_SetIndex": 0,
+      "Param_SummonTotalMax": 5
+    },
+    {
+      "ID_Class": 136970,
+      "Param_SummonMax": 5,
+      "Param_SummonUnit": 2847,
+      "Param_SummonRecast": 3,
+      "Param_SummonCost": 0,
+      "Param_SummonLimit": 0,
+      "Param_CardID": 2838,
+      "Param_SetIndex": 0,
+      "Param_SummonTotalMax": 5
+    },
+    {
+      "ID_Class": 136980,
+      "Param_SummonMax": 5,
+      "Param_SummonUnit": 2848,
+      "Param_SummonRecast": 3,
+      "Param_SummonCost": 0,
+      "Param_SummonLimit": 0,
+      "Param_CardID": 2838,
+      "Param_SetIndex": 0,
+      "Param_SummonTotalMax": 5
+    },
+    {
+      "ID_Class": 304720,
+      "Param_SummonMax": 5,
+      "Param_SummonUnit": 2856,
+      "Param_SummonRecast": 5,
+      "Param_SummonCost": 5,
+      "Param_SummonLimit": 5,
+      "Param_CardID": 2853,
+      "Param_SetIndex": 0,
+      "Param_SummonTotalMax": 5
+    },
+    {
+      "ID_Class": 167920,
+      "Param_SummonMax": 5,
+      "Param_SummonUnit": 2855,
+      "Param_SummonRecast": 3,
+      "Param_SummonCost": 0,
+      "Param_SummonLimit": 0,
+      "Param_CardID": 2852,
+      "Param_SetIndex": 0,
+      "Param_SummonTotalMax": 5
+    },
+    {
+      "ID_Class": 304920,
+      "Param_SummonMax": 2,
+      "Param_SummonUnit": 2857,
+      "Param_SummonRecast": 5,
+      "Param_SummonCost": 3,
+      "Param_SummonLimit": 15,
+      "Param_CardID": 2854,
+      "Param_SetIndex": 0,
+      "Param_SummonTotalMax": 4
+    },
+    {
+      "ID_Class": 168100,
+      "Param_SummonMax": 1,
+      "Param_SummonUnit": 2861,
+      "Param_SummonRecast": 5,
+      "Param_SummonCost": 1,
+      "Param_SummonLimit": 8,
+      "Param_CardID": 2858,
+      "Param_SetIndex": 0,
+      "Param_SummonTotalMax": 1
+    },
+    {
+      "ID_Class": 154400,
+      "Param_SummonMax": 3,
+      "Param_SummonUnit": 2865,
+      "Param_SummonRecast": 2,
+      "Param_SummonCost": 0,
+      "Param_SummonLimit": 0,
+      "Param_CardID": 2863,
+      "Param_SetIndex": 0,
+      "Param_SummonTotalMax": 3
+    },
+    {
+      "ID_Class": 154430,
+      "Param_SummonMax": 4,
+      "Param_SummonUnit": 2865,
+      "Param_SummonRecast": 2,
+      "Param_SummonCost": 0,
+      "Param_SummonLimit": 0,
+      "Param_CardID": 2863,
+      "Param_SetIndex": 0,
+      "Param_SummonTotalMax": 4
+    },
+    {
+      "ID_Class": 154430,
+      "Param_SummonMax": 4,
+      "Param_SummonUnit": 2866,
+      "Param_SummonRecast": 2,
+      "Param_SummonCost": 0,
+      "Param_SummonLimit": 0,
+      "Param_CardID": 2863,
+      "Param_SetIndex": 1,
+      "Param_SummonTotalMax": 4
     }
   ]
 }

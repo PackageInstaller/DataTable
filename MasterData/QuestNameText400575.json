@@ -1,0 +1,40 @@
+{
+  "_meta": {
+    "version": 1,
+    "flags": "0x14",
+    "record_count": 6,
+    "record_size": 4,
+    "tag": "",
+    "date_epoch": ""
+  },
+  "_fields": [
+    {
+      "name": "Message",
+      "alias": "名前",
+      "type": "string",
+      "type_code": 32,
+      "offset": 0,
+      "size": 4
+    }
+  ],
+  "records": [
+    {
+      "Message": "トリニティタワーブレイク"
+    },
+    {
+      "Message": "トリニティタワーブレイク 初級"
+    },
+    {
+      "Message": "トリニティタワーブレイク 上級"
+    },
+    {
+      "Message": "トリニティタワーブレイク 極級"
+    },
+    {
+      "Message": "トリニティタワーブレイク 神級"
+    },
+    {
+      "Message": "トリニティタワーブレイク 神級EX"
+    }
+  ]
+}

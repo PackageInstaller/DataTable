@@ -2,37 +2,42 @@
   "_meta": {
     "version": 1,
     "flags": "0x04",
-    "record_count": 206,
+    "record_count": 240,
     "record_size": 16,
-    "custom_id": null
+    "tag": "",
+    "date_epoch": ""
   },
   "_fields": [
     {
       "name": "ItemID",
+      "alias": "アイテムID",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 0,
+      "type_code": 32,
+      "offset": 0,
       "size": 4
     },
     {
       "name": "Name",
+      "alias": "名称",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 4,
+      "type_code": 32,
+      "offset": 4,
       "size": 4
     },
     {
       "name": "Category",
+      "alias": "カテゴリー",
       "type": "int32",
-      "mapped_type": 1,
-      "rec_offset": 8,
+      "type_code": 1,
+      "offset": 8,
       "size": 4
     },
     {
       "name": "Description",
+      "alias": "説明テキスト",
       "type": "string",
-      "mapped_type": 32,
-      "rec_offset": 12,
+      "type_code": 32,
+      "offset": 12,
       "size": 4
     }
   ],
@@ -294,6 +299,54 @@
       "Name": "レンジャーズハント",
       "Category": 1,
       "Description": "現在HPが90％以上の\nレンジャー系クラスの攻撃力+4％"
+    },
+    {
+      "ItemID": "battle_god_bless_001046",
+      "Name": "メイドの忠義",
+      "Category": 1,
+      "Description": "メイド系クラスを配置中、\n王子の攻撃力と防御力+3％"
+    },
+    {
+      "ItemID": "battle_god_bless_001047",
+      "Name": "血夜の支配者",
+      "Category": 1,
+      "Description": "ヴァンパイアロード系クラスを配置中、\nヴァンパイア属性の攻撃力+7%"
+    },
+    {
+      "ItemID": "battle_god_bless_001048",
+      "Name": "秘剣のその先へ",
+      "Category": 1,
+      "Description": "ソードマスター系クラスがスキル中、\n全ての敵に対して攻撃力1.03倍"
+    },
+    {
+      "ItemID": "battle_god_bless_001049",
+      "Name": "蝕みの呪術",
+      "Category": 1,
+      "Description": "呪術使い系クラスの\n攻撃がヒットした敵の攻撃力を\n永続的に5％減少させる"
+    },
+    {
+      "ItemID": "battle_god_bless_001050",
+      "Name": "モンスターマスター",
+      "Category": 1,
+      "Description": "魔物使い系クラスを配置中、\n魔物使い系トークンの攻撃後の\n待ち時間をわずかに短縮"
+    },
+    {
+      "ItemID": "battle_god_bless_001051",
+      "Name": "ダークプリーストの裁き",
+      "Category": 1,
+      "Description": "現在HPが90％以上の\nダークプリースト系クラスが\n12％の確率で防御力と魔法耐性を無視"
+    },
+    {
+      "ItemID": "battle_god_bless_001052",
+      "Name": "付与術師の戦闘計画",
+      "Category": 1,
+      "Description": "エンチャンター系クラスを配置中、\n味方全体が魔法を使う敵に対して\n攻撃力+4％"
+    },
+    {
+      "ItemID": "battle_god_bless_001053",
+      "Name": "近衛騎士の誓い",
+      "Category": 1,
+      "Description": "ロイヤルガード系クラスが\nブロック中、攻撃力+2％、防御力+4％"
     },
     {
       "ItemID": "battle_god_bless_002001",
@@ -884,6 +937,114 @@
       "Description": "対象属性ユニットの防御力+5％"
     },
     {
+      "ItemID": "battle_god_bless_002099",
+      "Name": "『アンデッド』最大HP強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの最大HP+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002100",
+      "Name": "『アンデッド』攻撃力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの攻撃力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002101",
+      "Name": "『アンデッド』防御力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの防御力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002102",
+      "Name": "『聖職者』最大HP強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの最大HP+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002103",
+      "Name": "『聖職者』攻撃力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの攻撃力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002104",
+      "Name": "『聖職者』防御力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの防御力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002105",
+      "Name": "『高貴』最大HP強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの最大HP+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002106",
+      "Name": "『高貴』攻撃力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの攻撃力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002107",
+      "Name": "『高貴』防御力強化",
+      "Category": 2,
+      "Description": "対象属性ユニットの防御力+5％"
+    },
+    {
+      "ItemID": "battle_god_bless_002108",
+      "Name": "「人間」最大HP強化",
+      "Category": 2,
+      "Description": "人間ユニットの最大HP＋2％※重複可"
+    },
+    {
+      "ItemID": "battle_god_bless_002109",
+      "Name": "「人間」攻撃力強化",
+      "Category": 2,
+      "Description": "人間ユニットの攻撃力＋2％※重複可"
+    },
+    {
+      "ItemID": "battle_god_bless_002110",
+      "Name": "「人間」防御力強化",
+      "Category": 2,
+      "Description": "人間ユニットの防御力＋2％※重複可"
+    },
+    {
+      "ItemID": "battle_god_bless_002111",
+      "Name": "「獣人」最大HP強化",
+      "Category": 2,
+      "Description": "獣人ユニットの最大HP＋2％※重複可"
+    },
+    {
+      "ItemID": "battle_god_bless_002112",
+      "Name": "「獣人」攻撃力強化",
+      "Category": 2,
+      "Description": "獣人ユニットの攻撃力＋2％※重複可"
+    },
+    {
+      "ItemID": "battle_god_bless_002113",
+      "Name": "「獣人」防御力強化",
+      "Category": 2,
+      "Description": "獣人ユニットの防御力＋2％※重複可"
+    },
+    {
+      "ItemID": "battle_god_bless_002114",
+      "Name": "「弓兵」最大HP強化",
+      "Category": 2,
+      "Description": "弓兵ユニットの最大HP＋2％※重複可"
+    },
+    {
+      "ItemID": "battle_god_bless_002115",
+      "Name": "「弓兵」攻撃力強化",
+      "Category": 2,
+      "Description": "弓兵ユニットの攻撃力＋2％※重複可"
+    },
+    {
+      "ItemID": "battle_god_bless_002116",
+      "Name": "「弓兵」防御力強化",
+      "Category": 2,
+      "Description": "弓兵ユニットの防御力＋2％※重複可"
+    },
+    {
       "ItemID": "battle_god_bless_003001",
       "Name": "竜の猛攻",
       "Category": 3,
@@ -1272,6 +1433,54 @@
       "Name": "ちびっこぶりっつくりーく",
       "Category": 3,
       "Description": "出撃メンバーにちび属性ユニットを\n6体以上含む場合、 ちび属性ユニットの\nスキル再使用時間を10％短縮"
+    },
+    {
+      "ItemID": "battle_god_bless_003066",
+      "Name": "神の加護あれ！",
+      "Category": 3,
+      "Description": "出撃メンバーに神属性ユニットを\n6体以上含む場合、\n神属性ユニットの攻撃力、防御力+3%"
+    },
+    {
+      "ItemID": "battle_god_bless_003067",
+      "Name": "東のもののふたち",
+      "Category": 3,
+      "Description": "出撃メンバーに東の国出身ユニットを\n6体以上含む場合、\n東の国出身ユニットの最大HP+3％"
+    },
+    {
+      "ItemID": "battle_god_bless_003068",
+      "Name": "鮮血の宴",
+      "Category": 3,
+      "Description": "出撃メンバーにヴァンパイア属性ユニッ\nトを3体以上含む場合、該当ユニット\nの攻撃後の待ち時間を僅かに短縮"
+    },
+    {
+      "ItemID": "battle_god_bless_003069",
+      "Name": "超越の証『剛炎と黒鎧』",
+      "Category": 3,
+      "Description": "出撃メンバーに王子を含む場合、\n味方ユニットのHP1%上昇"
+    },
+    {
+      "ItemID": "battle_god_bless_003070",
+      "Name": "極東同盟",
+      "Category": 3,
+      "Description": "出撃メンバーに王国、東の国、\n華の国出身を各3体以上含む場合、\n該当ユニットの最大HP、攻撃力+2％"
+    },
+    {
+      "ItemID": "battle_god_bless_003071",
+      "Name": "ドラゴンハッスル",
+      "Category": 3,
+      "Description": "出撃メンバーにドラゴン属性\nユニットを5体以上含む場合、\nドラゴン属性ユニットのHP+2％"
+    },
+    {
+      "ItemID": "battle_god_bless_003072",
+      "Name": "専属ガンスミス",
+      "Category": 3,
+      "Description": "出撃メンバーに銃士属性\nユニットを4体以上含む場合、\n銃士属性ユニットの出撃コスト-2"
+    },
+    {
+      "ItemID": "battle_god_bless_003073",
+      "Name": "戦場の男たち",
+      "Category": 3,
+      "Description": "男性ユニットを10体以上含む場合、\n男性ユニットの攻撃力と防御力＋8％"
     }
   ]
 }
