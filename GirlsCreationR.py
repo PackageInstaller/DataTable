@@ -1,272 +1,457 @@
-import requests
-import hashlib
+from __future__ import annotations
+
+import argparse
 import base64
-import UnityPy
-import zlib
+import hashlib
 import json
-import time
 import os
-from urllib.parse import urlparse
-from concurrent.futures import ThreadPoolExecutor
+import sys
+import time
+import zlib
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from pathlib import Path
 from threading import Lock
-from rich.progress import (
-    Progress,
-    BarColumn,
-    DownloadColumn,
-    TextColumn,
-    TransferSpeedColumn,
-    TimeRemainingColumn,
-)
-from rich import print
+from typing import Any, Optional
+from urllib.parse import urlparse
+
+import requests
+import UnityPy
 from Crypto.Cipher import DES3
 from Crypto.Util.Padding import unpad
-from typing import Optional
+from rich.console import Console
+from rich.progress import (
+    BarColumn,
+    DownloadColumn,
+    MofNCompleteColumn,
+    Progress,
+    SpinnerColumn,
+    TextColumn,
+    TimeRemainingColumn,
+    TransferSpeedColumn,
+)
 
+ROOT = Path(__file__).resolve().parent
+ASSETS_DIR = ROOT / "Assets"
+MASTER_DATA_DIR = ROOT / "MasterData"
+PAINTING_DIR = ROOT / "Painting"
+UNITS_TABLE = MASTER_DATA_DIR / "mUnits.json"
+LAYERS_TABLE = MASTER_DATA_DIR / "mLayers.json"
 
-class Config:
-    APP_KEY = "amvBZLfOUWwAXoVu8xxGwibrwqGsneLR"
-    PLATFORM = "webgl"  # 还有 android, ios可选,这里就用网页端好点
-    REGION = "r18"
-    INITIAL_MANIFEST_URL = (
-        f"https://www-r18.gc.dmmgames.com/manifest/{PLATFORM}/{REGION}"
-    )
-    ASSET_JSON_FILES = [
-        "master.json", "advvoice.json", "assetbundle.json"
-    ]  # 这里去掉了 "assetbundle.json" "advvoice.json"，有需要可以自己加上
-    DOWNLOAD_DIR = "downloads"
-    MASTER_DATA_DIR = "MasterData"
-    MAX_WORKERS = 32  # 线程
-    MAX_RETRIES = 3  # 重试次数
-    CHUNK_SIZE = 8192
+GAME_TITLE = "草画"
 
+APP_KEY = "amvBZLfOUWwAXoVu8xxGwibrwqGsneLR"
+PLATFORM = "webgl"
+REGION = "r18"
+INITIAL_MANIFEST_URL = f"https://www-r18.gc.dmmgames.com/manifest/{PLATFORM}/{REGION}"
+MANIFEST_JSON_FILES = ("master.json", "assetbundle.json")
+DECRYPTION_KEY_HEX = "c53f2d9bd457d4a9985294b5e51fef04"
 
-DECRYPTION_KEY_HEX = "c53f2d9bd457d4a9985294b5e51fef04"  # 由 DMM::OLG::Unity::Engine::MasterLoader字符串生成
+DEFAULT_JOBS = 32
+MAX_RETRIES = 3
+CHUNK_SIZE = 64 * 1024
 
-
-def triple_des(encrypted_data: bytes) -> Optional[str]:
-    key_bytes = bytes.fromhex(DECRYPTION_KEY_HEX)
-    full_key = key_bytes + key_bytes[:8]
-
-    encrypted_bytes = base64.b64decode(encrypted_data.strip())
-
-    cipher = DES3.new(full_key, DES3.MODE_ECB)
-    decrypted_padded_bytes = cipher.decrypt(encrypted_bytes)
-    decrypted_bytes = unpad(decrypted_padded_bytes, DES3.block_size)
-
-    intermediate_string = decrypted_bytes.decode("utf-8")
-    compressed_bytes = base64.b64decode(intermediate_string.strip())
-
-    decompressed_data = zlib.decompress(compressed_bytes, -zlib.MAX_WBITS)
-    json_text = decompressed_data.decode("utf-8")
-
-    json_data = json.loads(json_text)
-    return json.dumps(json_data, ensure_ascii=False, indent=4)
-
-
-def decrypt_master(master_dmm_bytes: bytes):
-    os.makedirs(Config.MASTER_DATA_DIR, exist_ok=True)
-
-    bundle = UnityPy.load(master_dmm_bytes)
-
-    decrypted_count = 0
-    for obj in bundle.objects:
-        if obj.type.name == "TextAsset":
-            data = obj.read()
-            asset_name = data.m_Name
-            text_content = data.m_Script
-
-            decrypted_json = triple_des(text_content)
-
-            if decrypted_json:
-                output_path = os.path.join(Config.MASTER_DATA_DIR, f"{asset_name}.json")
-                with open(output_path, "w", encoding="utf-8") as f:
-                    f.write(decrypted_json)
-                decrypted_count += 1
-            else:
-                print(f"[red]解密失败: {asset_name}[/red]")
-
-    print(f"[green]成功解密 {decrypted_count} 个数据表文件[/green]")
+console = Console()
 
 
 def generate_secure_link(url: str, app_key: str, timestamp: int) -> str:
     parsed_url = urlparse(url)
-    url_path = parsed_url.path
-    md5_input = f"{app_key}{url_path}{timestamp}"
+    md5_input = f"{app_key}{parsed_url.path}{timestamp}"
     md5_hash = hashlib.md5(md5_input.encode("utf-8")).digest()
     s_value = base64.urlsafe_b64encode(md5_hash).decode("utf-8").rstrip("=")
-
     return f"{url}?s={s_value}&t={timestamp}"
 
 
+def triple_des_text(encrypted_data: bytes | str) -> str:
+    key_bytes = bytes.fromhex(DECRYPTION_KEY_HEX)
+    full_key = key_bytes + key_bytes[:8]
+    encrypted_bytes = base64.b64decode(
+        encrypted_data.strip()
+        if isinstance(encrypted_data, bytes)
+        else encrypted_data.strip().encode("utf-8")
+    )
+    cipher = DES3.new(full_key, DES3.MODE_ECB)
+    decrypted_bytes = unpad(cipher.decrypt(encrypted_bytes), DES3.block_size)
+    intermediate_string = decrypted_bytes.decode("utf-8")
+    compressed_bytes = base64.b64decode(intermediate_string.strip())
+    decompressed_data = zlib.decompress(compressed_bytes, -zlib.MAX_WBITS)
+    return decompressed_data.decode("utf-8")
+
+
+def decrypt_master(master_dmm_bytes: bytes) -> int:
+    MASTER_DATA_DIR.mkdir(parents=True, exist_ok=True)
+    bundle = UnityPy.load(master_dmm_bytes)
+    decrypted_count = 0
+    for obj in bundle.objects:
+        if obj.type.name != "TextAsset":
+            continue
+        data = obj.read()
+        try:
+            json_text = triple_des_text(data.m_Script)
+            obj_data = json.loads(json_text)
+        except Exception as exc:
+            console.print(f"[red]解密失败[/red] {data.m_Name}: {exc}")
+            continue
+        output_path = MASTER_DATA_DIR / f"{data.m_Name}.json"
+        output_path.write_text(
+            json.dumps(obj_data, ensure_ascii=False, indent=1), encoding="utf-8"
+        )
+        decrypted_count += 1
+    return decrypted_count
+
+
 class Downloader:
-    def __init__(self):
+    def __init__(self, jobs: int = DEFAULT_JOBS, asset_filter=None):
         self.session = requests.Session()
-        self.files_to_download = []
+        self.jobs = jobs
+        self.asset_filter = asset_filter
+        self.files_to_download: list[dict[str, Any]] = []
         self.total_download_size = 0
         self.completed_files_count = 0
         self.lock = Lock()
         self.secure_timestamp = int(time.time()) + 3600
-        self.master_dmm_bytes = None
+        self.master_dmm_bytes: Optional[bytes] = None
+        self.base_resource_url = ""
+        self.failures: list[tuple[str, str]] = []
 
-    def _get_json(self, url: str) -> dict:
-        response = self.session.get(url)
+    def _get_json(self, url: str) -> dict[str, Any]:
+        response = self.session.get(url, timeout=(10, 60))
         response.raise_for_status()
         return response.json()
 
-    def fetch_asset_lists(self):
-        initial_data = self._get_json(Config.INITIAL_MANIFEST_URL)
+    def fetch_asset_lists(self) -> bool:
+        initial_data = self._get_json(INITIAL_MANIFEST_URL)
         manifest_url = initial_data["contents"]["path"]
         manifest_data = self._get_json(manifest_url)
-
         self.base_resource_url = manifest_data["url"]["resource"]
         base_manifest_path = manifest_url.rsplit("/", 1)[0]
 
-        print("[cyan]正在获取资源文件列表...[/cyan]")
-        all_assets = []
-        for json_file in Config.ASSET_JSON_FILES:
-            asset_list_url = f"{base_manifest_path}/{json_file}"
-            asset_data = self._get_json(asset_list_url)
-            if asset_data and "d" in asset_data:
-                print(f"{json_file} (包含 {len(asset_data['d'])} 个资源)")
-                all_assets.extend(asset_data["d"])
-
-        print(
-            f"\n[cyan]准备处理 {len(all_assets)} 个总资源，开始检查本地文件...[/cyan]"
-        )
+        console.print("[cyan]获取资源清单...[/cyan]")
+        all_assets: list[dict[str, Any]] = []
+        for json_file in MANIFEST_JSON_FILES:
+            asset_data = self._get_json(f"{base_manifest_path}/{json_file}")
+            rows = asset_data.get("d", []) if isinstance(asset_data, dict) else []
+            console.print(f"{json_file}: {len(rows)} 条")
+            all_assets.extend(rows)
 
         for asset in all_assets:
             if "n" not in asset or "s" not in asset:
                 continue
-
             file_name = asset["n"]
+            if self.asset_filter and not self.asset_filter(file_name):
+                continue
             server_size = int(asset["s"])
-
             if file_name == "master.dmm":
-                self.files_to_download.append(asset)
-                self.total_download_size += server_size
+                local_path = ROOT / MASTER_DATA_DIR.parent / MASTER_DATA_DIR.name / "master.dmm"
+                local_path = MASTER_DATA_DIR / "master.dmm"
             else:
-                local_path = os.path.join(Config.DOWNLOAD_DIR, file_name)
-                if (
-                    os.path.exists(local_path)
-                    and os.path.getsize(local_path) == server_size
-                ):
-                    continue
-                self.files_to_download.append(asset)
-                self.total_download_size += server_size
+                local_path = ASSETS_DIR / file_name
+            if local_path.is_file() and local_path.stat().st_size == server_size:
+                if file_name == "master.dmm":
+                    self.master_dmm_bytes = local_path.read_bytes()
+                continue
+            self.files_to_download.append(asset)
+            self.total_download_size += server_size
 
         if not self.files_to_download:
-            print("[green]所有文件都已是最新，无需下载。[/green]")
-            master_dmm_path = os.path.join(Config.DOWNLOAD_DIR, "master.dmm")
-            if os.path.exists(master_dmm_path):
-                with open(master_dmm_path, "rb") as f:
-                    self.master_dmm_bytes = f.read()
+            console.print("[green]所有目标文件都已是最新。[/green]")
             return False
 
-        print(
-            f"[yellow]需要下载/更新 {len(self.files_to_download)} 个文件。总计: {self.total_download_size / 1024 / 1024:.2f} MB[/yellow]"
+        console.print(
+            f"[yellow]待下载/更新[/yellow] {len(self.files_to_download)} 个，"
+            f"共 {self.total_download_size / 1024 / 1024:.2f} MB"
         )
         return True
 
-    def download_file(self, asset_info: dict, progress: Progress, task_id):
+    def download_file(self, asset_info: dict[str, Any], progress: Progress, task_id) -> str:
         file_name = asset_info["n"]
         server_size = int(asset_info["s"])
-
         full_url = f"{self.base_resource_url}/{file_name}"
-        secure_url = generate_secure_link(
-            full_url, Config.APP_KEY, self.secure_timestamp
-        )
+        secure_url = generate_secure_link(full_url, APP_KEY, self.secure_timestamp)
+        local_path = MASTER_DATA_DIR / "master.dmm" if file_name == "master.dmm" else ASSETS_DIR / file_name
+        local_path.parent.mkdir(parents=True, exist_ok=True)
 
-        local_path = os.path.join(Config.DOWNLOAD_DIR, file_name)
-        os.makedirs(os.path.dirname(local_path), exist_ok=True)
-
-        download_successful = False
-        for attempt in range(Config.MAX_RETRIES):
+        last_error: Optional[Exception] = None
+        for attempt in range(1, MAX_RETRIES + 1):
             try:
-                headers = {}
-                mode = "wb"
-                downloaded_size = 0
-
-                if os.path.exists(local_path) and file_name != "master.dmm":
-                    downloaded_size = os.path.getsize(local_path)
-                    if downloaded_size < server_size:
-                        headers["Range"] = f"bytes={downloaded_size}-"
-                        mode = "ab"
-                        progress.update(task_id, advance=downloaded_size, refresh=True)
-                    else:
-                        download_successful = True
-                        break
-
-                if not download_successful:
-                    with self.session.get(
-                        secure_url, headers=headers, stream=True, timeout=30
-                    ) as r:
-                        r.raise_for_status()
-
-                        bytes_data = bytearray()
-                        for chunk in r.iter_content(chunk_size=Config.CHUNK_SIZE):
-                            bytes_data.extend(chunk)
+                with self.session.get(secure_url, stream=True, timeout=(10, 120)) as resp:
+                    resp.raise_for_status()
+                    data = bytearray()
+                    with local_path.open("wb") as f:
+                        for chunk in resp.iter_content(CHUNK_SIZE):
+                            if not chunk:
+                                continue
+                            f.write(chunk)
+                            data.extend(chunk)
                             progress.update(task_id, advance=len(chunk))
-
-                        if file_name == "master.dmm":
-                            with self.lock:
-                                self.master_dmm_bytes = bytes(bytes_data)
-                            with open(local_path, "wb") as f:
-                                f.write(bytes_data)
-                        else:
-                            with open(local_path, mode) as f:
-                                f.write(bytes_data)
-
-                download_successful = True
-                break
-            except requests.RequestException:
-                print(
-                    f"[yellow]下载 {file_name} 失败 (第 {attempt + 1} 次尝试)[/yellow]"
-                )
-                time.sleep(2)
-
-        if not download_successful:
-            print(
-                f"[bold red]文件 {file_name} 在 {Config.MAX_RETRIES} 次尝试后依然下载失败。[/bold red]"
-            )
-
+                if local_path.stat().st_size != server_size:
+                    raise RuntimeError(f"大小不符: {local_path.stat().st_size()} != {server_size}")
+                if file_name == "master.dmm":
+                    self.master_dmm_bytes = bytes(data)
+                return "ok"
+            except Exception as exc:
+                last_error = exc
+                if attempt < MAX_RETRIES:
+                    time.sleep(2)
         with self.lock:
-            self.completed_files_count += 1
-            new_description = f"下载中... ({self.completed_files_count}/{len(self.files_to_download)})"
-            progress.update(task_id, description=new_description)
+            self.failures.append((file_name, str(last_error)))
+        return "fail"
 
-    def run(self):
-        has_files_to_download = self.fetch_asset_lists()
-
-        if has_files_to_download and self.files_to_download:
+    def run(self) -> bool:
+        has_files = self.fetch_asset_lists()
+        if has_files and self.files_to_download:
             with Progress(
-                TextColumn("[cyan]{task.description}[/cyan]"),
+                SpinnerColumn(),
+                TextColumn("[progress.description]{task.description}"),
                 BarColumn(),
-                "[progress.percentage]{task.percentage:>3.1f}%",
-                "•",
+                MofNCompleteColumn(),
                 DownloadColumn(),
-                "•",
                 TransferSpeedColumn(),
-                "•",
                 TimeRemainingColumn(),
+                console=console,
+                transient=True,
             ) as progress:
-
-                initial_description = f"下载中... (0/{len(self.files_to_download)})"
                 task_id = progress.add_task(
-                    description=initial_description, total=self.total_download_size
+                    "下载资源", total=self.total_download_size or None
                 )
+                with ThreadPoolExecutor(max_workers=self.jobs) as pool:
+                    futures = [pool.submit(self.download_file, x, progress, task_id) for x in self.files_to_download]
+                    for future in as_completed(futures):
+                        future.result()
+                progress.remove_task(task_id)
+        if self.failures:
+            console.print("[yellow]失败清单(前 50):[/yellow]")
+            for name, err in self.failures[:50]:
+                console.print(f"  [red]{name}[/red]: {err}")
+            return False
+        return True
 
-                with ThreadPoolExecutor(max_workers=Config.MAX_WORKERS) as executor:
-                    for asset in self.files_to_download:
-                        executor.submit(self.download_file, asset, progress, task_id)
 
-            print(f"\n[bold green]下载完成！[/bold green]")
-        if self.master_dmm_bytes:
-            decrypt_master(self.master_dmm_bytes)
-        else:
-            print("[red]未能获取master.dmm数据[/red]")
+def should_download_painting(file_name: str) -> bool:
+    return file_name.startswith("image_unit_full/")
+
+
+def ml_name(value: Any, fallback: str = "") -> str:
+    if isinstance(value, (list, tuple)):
+        return str(value[0]).strip() if value and str(value[0]).strip() else fallback
+    if isinstance(value, str):
+        return value.strip() or fallback
+    return fallback
+
+
+def load_painting_tables() -> tuple[dict[str, dict[str, Any]], dict[str, dict[str, Any]]]:
+    if not UNITS_TABLE.is_file() or not LAYERS_TABLE.is_file():
+        raise FileNotFoundError(f"缺数据表 {UNITS_TABLE} / {LAYERS_TABLE}，先跑 data")
+    units = json.loads(UNITS_TABLE.read_text(encoding="utf-8"))
+    layers = json.loads(LAYERS_TABLE.read_text(encoding="utf-8"))
+    unit_by_id = {str(x.get("id", "")): x for x in units}
+    layer_by_image = {}
+    for row in layers:
+        image_index = str(row.get("image_index", ""))
+        if image_index and image_index not in layer_by_image:
+            layer_by_image[image_index] = row
+    return unit_by_id, layer_by_image
+
+
+def safe_fs_name(text: str) -> str:
+    table = str.maketrans(
+        {
+            "/": "／", "\\": "＼", ":": "：", "*": "＊", "?": "？",
+            '"': "'", "<": "＜", ">": "＞", "|": "｜",
+            "\n": "", "\r": "", "\t": " ",
+        }
+    )
+    out = text.translate(table).strip()
+    return out or "未知"
+
+
+def painting_filename(unit_name: str, layer_name: str, used: set[str]) -> str:
+    parts = [GAME_TITLE, safe_fs_name(unit_name), safe_fs_name(layer_name)]
+    base = "_".join(parts) + ".png"
+    if base not in used:
+        used.add(base)
+        return base
+    n = 2
+    while True:
+        name = "_".join(parts + [str(n)]) + ".png"
+        if name not in used:
+            used.add(name)
+            return name
+        n += 1
+
+
+def resolve_painting_name(file_name: str, units: dict[str, dict[str, Any]], layers: dict[str, dict[str, Any]]) -> tuple[str, str, bool]:
+    stem = Path(file_name).stem
+    if not stem.startswith("uf"):
+        return stem, stem, False
+    image_index = stem[2:]
+    layer = layers.get(image_index)
+    if not layer:
+        return image_index, image_index, False
+    unit = units.get(str(layer.get("unit_id", "")))
+    unit_name = ml_name(unit.get("ml_name"), image_index) if unit else image_index
+    layer_name = ml_name(layer.get("ml_name"), image_index)
+    return unit_name, layer_name, True
+
+
+def export_painting_bundle(bundle_path: Path, dest: Path) -> str:
+    env = UnityPy.load(str(bundle_path))
+    textures = []
+    for obj in env.objects:
+        if obj.type.name not in ("Texture2D", "Sprite"):
+            continue
+        try:
+            data = obj.read()
+            image = data.image
+            if image is not None:
+                textures.append(image)
+        except Exception:
+            continue
+    if not textures:
+        return "skip"
+    picked = max(textures, key=lambda x: x.width * x.height)
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    picked.save(dest, "PNG")
+    return "ok"
+
+
+def cmd_assets(args) -> int:
+    ASSETS_DIR.mkdir(parents=True, exist_ok=True)
+    downloader = Downloader(jobs=args.jobs)
+    if not downloader.run():
+        return 1
+    master = MASTER_DATA_DIR / "master.dmm"
+    if master.is_file():
+        count = decrypt_master(master.read_bytes())
+        console.print(f"[green]数据表[/green] 解密 {count} 个 → {MASTER_DATA_DIR}")
+    return 0
+
+
+def cmd_data(args) -> int:
+    MASTER_DATA_DIR.mkdir(parents=True, exist_ok=True)
+    downloader = Downloader(jobs=args.jobs, asset_filter=lambda n: n == "master.dmm")
+    if not downloader.run():
+        return 1
+    master = MASTER_DATA_DIR / "master.dmm"
+    if not master.is_file():
+        console.print(f"[red]缺文件[/red] {master}")
+        return 1
+    count = decrypt_master(master.read_bytes())
+    console.print(f"[green]数据表[/green] 解密 {count} 个 → {MASTER_DATA_DIR}")
+    return 0
+
+
+def cmd_painting(args) -> int:
+    units, layers = load_painting_tables()
+    PAINTING_DIR.mkdir(parents=True, exist_ok=True)
+    downloader = Downloader(
+        jobs=args.jobs,
+        asset_filter=should_download_painting,
+    )
+    # Painting bundles do not decrypt master data.
+    downloader.run()
+    source_dir = ASSETS_DIR / "image_unit_full"
+    if not source_dir.is_dir():
+        console.print(f"[red]缺立绘目录[/red] {source_dir}，先跑 painting/assets")
+        return 1
+    files = sorted(source_dir.glob("*.dmm"))
+    if args.limit > 0:
+        files = files[: args.limit]
+    used_names: set[str] = set()
+    jobs: list[tuple[Path, Path]] = []
+    named = 0
+    for bundle in files:
+        unit_name, layer_name, hit = resolve_painting_name(bundle.name, units, layers)
+        named += int(hit)
+        dest = PAINTING_DIR / painting_filename(unit_name, layer_name, used_names)
+        jobs.append((bundle, dest))
+    console.print(
+        f"[cyan]立绘名称[/cyan] mUnits/mLayers 命中 {named}/{len(jobs)} → {PAINTING_DIR}"
+    )
+    if not jobs:
+        console.print("[yellow]没有 image_unit_full/*.dmm 可导出[/yellow]")
+        return 0
+
+    written = skipped = failed = 0
+    with Progress(
+        SpinnerColumn(),
+        TextColumn("[progress.description]{task.description}"),
+        BarColumn(),
+        MofNCompleteColumn(),
+        TimeRemainingColumn(compact=True),
+        console=console,
+    ) as progress:
+        task = progress.add_task("导出立绘", total=len(jobs))
+
+        def work(item: tuple[Path, Path]) -> tuple[str, str, Optional[str]]:
+            bundle, dest = item
+            if dest.is_file() and not args.force:
+                return "skip", bundle.name, None
+            try:
+                return export_painting_bundle(bundle, dest), bundle.name, None
+            except Exception as exc:
+                dest.unlink(missing_ok=True)
+                return "fail", bundle.name, str(exc)
+
+        with ThreadPoolExecutor(max_workers=max(1, args.jobs)) as pool:
+            futures = [pool.submit(work, x) for x in jobs]
+            for future in as_completed(futures):
+                status, name, err = future.result()
+                if status == "ok":
+                    written += 1
+                elif status == "skip":
+                    skipped += 1
+                else:
+                    failed += 1
+                    if err:
+                        console.print(f"[red]立绘失败[/red] {name}: {err}")
+                progress.advance(task)
+    console.print(
+        f"[bold green]Painting[/bold green] 写出 {written} 跳过 {skipped} 失败 {failed} → {PAINTING_DIR}"
+    )
+    return 0 if failed == 0 else 1
+
+
+def cmd_all(args) -> int:
+    if cmd_assets(args) != 0:
+        return 1
+    return cmd_painting(args)
+
+
+def build_parser() -> argparse.ArgumentParser:
+    shared = argparse.ArgumentParser(add_help=False)
+    shared.add_argument("--jobs", type=int, default=DEFAULT_JOBS, help="并发线程数")
+
+    parser = argparse.ArgumentParser(
+        description=f"{GAME_TITLE} 资产 / 数据表 / 立绘下载导出",
+        parents=[shared],
+    )
+    sub = parser.add_subparsers(dest="command")
+
+    sub.add_parser("all", parents=[shared], help="全资产 + 数据表 + 立绘")
+    sub.add_parser("assets", parents=[shared], help="全资产到 Assets/，master.dmm 解密到 MasterData/")
+    sub.add_parser("data", aliases=["masterdata"], parents=[shared], help="仅下载并解密 master.dmm 到 MasterData/")
+    p_painting = sub.add_parser("painting", parents=[shared], help="下载/导出角色立绘到 Painting/")
+    p_painting.add_argument("--limit", type=int, default=0, help="只导出前 N 张，调试用")
+    p_painting.add_argument("--force", action="store_true", help="覆盖已有 PNG")
+    return parser
+
+
+def main() -> int:
+    parser = build_parser()
+    args = parser.parse_args()
+    if not args.command:
+        parser.print_help()
+        return 1
+    if args.command == "all":
+        return cmd_all(args)
+    if args.command == "assets":
+        return cmd_assets(args)
+    if args.command in ("data", "masterdata"):
+        return cmd_data(args)
+    if args.command == "painting":
+        return cmd_painting(args)
+    return 1
 
 
 if __name__ == "__main__":
-
-    downloader = Downloader()
-    downloader.run()
+    sys.exit(main())
