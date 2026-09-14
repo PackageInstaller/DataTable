@@ -36,6 +36,9 @@ MASTER_DATA_DIR = ROOT / "MasterData"
 PAINTING_DIR = ROOT / "Painting"
 UNITS_TABLE = MASTER_DATA_DIR / "mUnits.json"
 LAYERS_TABLE = MASTER_DATA_DIR / "mLayers.json"
+SUBUNITS_TABLE = MASTER_DATA_DIR / "mSubunits.json"
+NAVI_ID = 1
+NAVI_NAME = "ナビキャラクター"
 
 GAME_TITLE = "草画"
 
@@ -227,7 +230,7 @@ class Downloader:
 
 
 def should_download_painting(file_name: str) -> bool:
-    return file_name.startswith("image_unit_full/")
+    return file_name.startswith(("image_unit_full/", "image_sub_unit_full/", "image_navi_chara_full/"))
 
 
 def ml_name(value: Any, fallback: str = "") -> str:
@@ -238,18 +241,31 @@ def ml_name(value: Any, fallback: str = "") -> str:
     return fallback
 
 
-def load_painting_tables() -> tuple[dict[str, dict[str, Any]], dict[str, dict[str, Any]]]:
-    if not UNITS_TABLE.is_file() or not LAYERS_TABLE.is_file():
-        raise FileNotFoundError(f"缺数据表 {UNITS_TABLE} / {LAYERS_TABLE}，先跑 data")
+def load_painting_tables():
+    required = (UNITS_TABLE, LAYERS_TABLE, SUBUNITS_TABLE)
+    missing = [str(x) for x in required if not x.is_file()]
+    if missing:
+        raise FileNotFoundError(f"缺数据表 {' / '.join(missing)}，先跑 data")
+
     units = json.loads(UNITS_TABLE.read_text(encoding="utf-8"))
     layers = json.loads(LAYERS_TABLE.read_text(encoding="utf-8"))
+    subunits = json.loads(SUBUNITS_TABLE.read_text(encoding="utf-8"))
+
     unit_by_id = {str(x.get("id", "")): x for x in units}
     layer_by_image = {}
     for row in layers:
         image_index = str(row.get("image_index", ""))
         if image_index and image_index not in layer_by_image:
             layer_by_image[image_index] = row
-    return unit_by_id, layer_by_image
+
+    subunit_by_image = {}
+    for row in subunits:
+        image_index = str(row.get("image_index", ""))
+        rid = str(row.get("id", ""))
+        if image_index and image_index not in subunit_by_image:
+            subunit_by_image[image_index] = row
+
+    return unit_by_id, layer_by_image, subunit_by_image
 
 
 def safe_fs_name(text: str) -> str:
@@ -279,11 +295,32 @@ def painting_filename(unit_name: str, layer_name: str, used: set[str]) -> str:
         n += 1
 
 
-def resolve_painting_name(file_name: str, units: dict[str, dict[str, Any]], layers: dict[str, dict[str, Any]]) -> tuple[str, str, bool]:
+def resolve_painting_name(
+    file_name: str,
+    units: dict[str, dict[str, Any]],
+    layers: dict[str, dict[str, Any]],
+    subunits: dict[str, dict[str, Any]],
+) -> tuple[str, str, bool]:
     stem = Path(file_name).stem
-    if not stem.startswith("uf"):
+    prefix, image_index = stem[:1], stem[1:]
+    if prefix == "u" and stem.startswith("uf"):
+        image_index = stem[2:]
+    elif prefix == "s" and stem.startswith("sf"):
+        image_index = stem[2:]
+        subunit = subunits.get(image_index)
+        if subunit:
+            unit = units.get(str(subunit.get("unit_id", "")))
+            unit_name = ml_name(unit.get("ml_name"), image_index) if unit else image_index
+            subunit_name = ml_name(subunit.get("ml_name"), image_index)
+            return unit_name, subunit_name, True
+        return image_index, image_index, False
+    elif stem.isdigit():
+        if int(stem) == NAVI_ID:
+            return NAVI_NAME, "默认", True
+        return stem, "默认", False
+    else:
         return stem, stem, False
-    image_index = stem[2:]
+
     layer = layers.get(image_index)
     if not layer:
         return image_index, image_index, False
@@ -341,7 +378,7 @@ def cmd_data(args) -> int:
 
 
 def cmd_painting(args) -> int:
-    units, layers = load_painting_tables()
+    units, layers, subunits = load_painting_tables()
     PAINTING_DIR.mkdir(parents=True, exist_ok=True)
     downloader = Downloader(
         jobs=args.jobs,
@@ -349,26 +386,33 @@ def cmd_painting(args) -> int:
     )
     # Painting bundles do not decrypt master data.
     downloader.run()
-    source_dir = ASSETS_DIR / "image_unit_full"
-    if not source_dir.is_dir():
-        console.print(f"[red]缺立绘目录[/red] {source_dir}，先跑 painting/assets")
+    source_dirs = (
+        ASSETS_DIR / "image_unit_full",
+        ASSETS_DIR / "image_sub_unit_full",
+        ASSETS_DIR / "image_navi_chara_full",
+    )
+    existing = [x for x in source_dirs if x.is_dir()]
+    if not existing:
+        console.print(f"[red]缺立绘目录[/red] {source_dirs[0]}，先跑 painting/assets")
         return 1
-    files = sorted(source_dir.glob("*.dmm"))
+    files = sorted(p for d in existing for p in d.glob("*.dmm"))
     if args.limit > 0:
         files = files[: args.limit]
     used_names: set[str] = set()
     jobs: list[tuple[Path, Path]] = []
     named = 0
     for bundle in files:
-        unit_name, layer_name, hit = resolve_painting_name(bundle.name, units, layers)
+        unit_name, layer_name, hit = resolve_painting_name(
+            bundle.name, units, layers, subunits
+        )
         named += int(hit)
         dest = PAINTING_DIR / painting_filename(unit_name, layer_name, used_names)
         jobs.append((bundle, dest))
     console.print(
-        f"[cyan]立绘名称[/cyan] mUnits/mLayers 命中 {named}/{len(jobs)} → {PAINTING_DIR}"
+        f"[cyan]立绘名称[/cyan] mUnits/mLayers/mSubunits 命中 {named}/{len(jobs)} → {PAINTING_DIR}"
     )
     if not jobs:
-        console.print("[yellow]没有 image_unit_full/*.dmm 可导出[/yellow]")
+        console.print("[yellow]没有 *_full/*.dmm 可导出[/yellow]")
         return 0
 
     written = skipped = failed = 0
