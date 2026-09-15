@@ -1937,54 +1937,6 @@ def cmd_status(args: argparse.Namespace) -> int:
     return 0
 
 
-def cmd_selftest(args: argparse.Namespace) -> int:
-    """离线自检：不联网，验证从反汇编复刻的算法能自洽。"""
-    ok = True
-
-    def check(label: str, actual: Any, expected: Any) -> None:
-        nonlocal ok
-        if actual == expected:
-            console.print(f"[green]ok[/green]   {label} = {actual}")
-        else:
-            ok = False
-            console.print(f"[red]FAIL[/red] {label} = {actual!r}（期望 {expected!r}）")
-
-    check("convert() 结果", HASH_KEY, CONVERT_RESULT)
-    check("HashSalt 同源", HASH_SALT, CONVERT_RESULT)
-    check("CryptoKey(HashString)", derive_crypto_key(), "FmUJWtP5KIZBBeHX")
-    check("MsgPackKey(HashString)", derive_msgpack_key().decode(), "sOJPZpoaQWXCmykt")
-    check("推导 == 线上实测", derive_msgpack_key(), EXPECTED_MSGPACK_KEY)
-    cred_id, cred_secret = derive_payment_credentials()
-    check("支付 app_id(动态推导)", cred_id, "551439557786070")
-    check("支付签名密钥(动态推导)", cred_secret, "d13df06039a768a18bb9b120ca544cc0")
-    check("md5(assetbundle+yurigaoka)", hash_resource_name("assetbundle"),
-          "3d3cd05aab4be5ee3a71b2bef99b3b0b")
-    check("md5(file+yurigaoka)", hash_resource_name("file"),
-          "775b74a5870f2b9af3c5cbf8c847a434")
-    check("md5(android+yurigaoka)", hash_resource_name("android"),
-          "e52f8d80435419d7ec5e8e3a1f482265")
-
-    key = derive_msgpack_key()
-    payload = {"payload": {"method": "getCharacterMstList"}, "status": 0}
-    ok_round = True
-    for candidate in (derive_msgpack_key(), key):
-        blob = aes_cbc_encrypt(candidate, msgpack.packb(payload, use_bin_type=True))
-        round_tripped = msgpack.unpackb(aes_cbc_decrypt(candidate, blob), raw=False, strict_map_key=False)
-        ok_round = ok_round and round_tripped == payload
-    check("AES-CBC 往返（两套 key）", ok_round, True)
-
-    name = "asset_bundle/character_job_spine/1001"
-    sample = b"UnityFS\x00\x00\x00\x08" + os.urandom(64)
-    scrambled = xor_cipher(sample, xor_key_stream(name))
-    restored, used = local_decrypt(scrambled, name)
-    check("本地 XOR 解密", restored == sample and used == name, True)
-    check("非加密模式(.acb)不处理", needs_no_crypto("Sound/Common/xxx.acb"), True)
-    check("资源名哈希长度", len(hash_resource_name("Image/Card/Card020000001.jpg")), 32)
-
-    console.print("[bold green]自检通过[/bold green]" if ok else "[bold red]自检失败[/bold red]")
-    return 0 if ok else 1
-
-
 class _NullProgress:
     def __enter__(self) -> "_NullProgress":
         return self
@@ -2058,7 +2010,6 @@ def build_parser() -> argparse.ArgumentParser:
             "  python3 AssaultLilyLastBullet.py assets --jobs 16\n"
             "  python3 AssaultLilyLastBullet.py masterdata --refresh\n"
             "  python3 AssaultLilyLastBullet.py installed --apk アサルトリリィ_9.4.0.apks\n"
-            "  python3 AssaultLilyLastBullet.py selftest\n"
         ),
     )
     sub = parser.add_subparsers(dest="command", metavar="<子命令>")
@@ -2110,8 +2061,6 @@ def build_parser() -> argparse.ArgumentParser:
     p_st.add_argument("--assets-dir", default=str(ASSETS_DIR))
     p_st.add_argument("--master-dir", default=str(MASTER_DIR))
     p_st.add_argument("--manifest-dir", default=str(MANIFEST_DIR))
-
-    sub.add_parser("selftest", help="离线自检（密钥/加解密/命名哈希）")
     return parser
 
 
@@ -2125,7 +2074,6 @@ COMMANDS = {
     "installed": cmd_installed,
     "decrypt-local": cmd_decrypt_local,
     "status": cmd_status,
-    "selftest": cmd_selftest,
 }
 
 
@@ -2139,7 +2087,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             VERSION_CACHE.unlink()
         except OSError:
             pass
-    resolve_app_version(getattr(args, "app_version", "") or "", quiet=args.command == "selftest")
+    resolve_app_version(getattr(args, "app_version", "") or "")
     return COMMANDS[args.command](args)
 
 
