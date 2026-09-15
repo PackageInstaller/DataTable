@@ -1,0 +1,66 @@
+{
+  "1001": {
+    "StageUid": 1001,
+    "ModeName": "TeaParty_Normal",
+    "UnlockType": 0,
+    "UnlockValue": 0,
+    "InitialIngredient": [
+      1,
+      2
+    ],
+    "InitialIngredientCount": [
+      6,
+      6
+    ],
+    "RoundLimitNum": 5,
+    "IngredientSuggestion": 3,
+    "NumberOfTurns": 4,
+    "DefaultGoal": 10,
+    "TargetRound": [
+      1,
+      5,
+      0,
+      0
+    ],
+    "TargetRoundValue": [
+      5,
+      -30,
+      0,
+      0
+    ],
+    "NumberOfTurnsLimit": 10,
+    "BonusStandard": 1.5
+  },
+  "2001": {
+    "StageUid": 2001,
+    "ModeName": "TeaParty_Challenge",
+    "UnlockType": 1,
+    "UnlockValue": 1001,
+    "InitialIngredient": [
+      1,
+      2
+    ],
+    "InitialIngredientCount": [
+      6,
+      6
+    ],
+    "RoundLimitNum": 0,
+    "IngredientSuggestion": 3,
+    "NumberOfTurns": 4,
+    "DefaultGoal": 10,
+    "TargetRound": [
+      1,
+      5,
+      10,
+      15
+    ],
+    "TargetRoundValue": [
+      5,
+      20,
+      50,
+      100
+    ],
+    "NumberOfTurnsLimit": 10,
+    "BonusStandard": 1.5
+  }
+}

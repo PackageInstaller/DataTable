@@ -1,0 +1,125 @@
+{
+  "1": {
+    "Uid": 1,
+    "UnitUid": 10085,
+    "ResourceBefore": "Before_Joanne",
+    "ResourceAfter": "After_Joanne",
+    "OpenDelayHour": 0,
+    "QuizOpeningSpine": "Sorry_2",
+    "DefaultSpine": "Sorry_4",
+    "QuizOpeningText": "ThemeEvent_Skea_Opening1",
+    "SkeaQuizClipName": "SkeaQuiz_Joanne",
+    "SkeaWaitClipName": "SkeaQuiz_Idle",
+    "OptionText": [
+      "ThemeEvent_Skea_Joanne_Option1",
+      "ThemeEvent_Skea_Joanne_Option2",
+      "ThemeEvent_Skea_Joanne_Option3"
+    ],
+    "OptionReaction": [
+      "ThemeEvent_Skea_Joanne_CharacterReaction1",
+      "ThemeEvent_Skea_Joanne_CharacterReaction2",
+      "ThemeEvent_Skea_Joanne_CharacterReaction3"
+    ],
+    "OptionSpine": [
+      "Tired_2",
+      "Happy_6",
+      "Blank_2"
+    ],
+    "OptionSkea": [
+      "ThemeEvent_Skea_Joanne_SkeaReaction1",
+      "ThemeEvent_Skea_Joanne_SkeaReaction2",
+      "ThemeEvent_Skea_Joanne_SkeaReaction3"
+    ],
+    "Answer": 2,
+    "LobbyInteraction": 1,
+    "SkeaCorrectCg": "Theme_Event_Skea_ClearCG1",
+    "OptionSkeaReaction": [
+      "SkeaQuiz_X",
+      "SkeaQuiz_O",
+      "SkeaQuiz_X"
+    ],
+    "SkeaCorrectCgdesc": "ThemeEvent_Skea_ClearCGdesc1"
+  },
+  "2": {
+    "Uid": 2,
+    "UnitUid": 10123,
+    "ResourceBefore": "Before_Erpin",
+    "ResourceAfter": "After_Erpin",
+    "OpenDelayHour": 41,
+    "QuizOpeningSpine": "Blank_4",
+    "DefaultSpine": "Blank_1",
+    "QuizOpeningText": "ThemeEvent_Skea_Opening2",
+    "SkeaQuizClipName": "SkeaQuiz_Erpin",
+    "SkeaWaitClipName": "SkeaQuiz_Idle",
+    "OptionText": [
+      "ThemeEvent_Skea_Erpin_Option1",
+      "ThemeEvent_Skea_Erpin_Option2",
+      "ThemeEvent_Skea_Erpin_Option3"
+    ],
+    "OptionReaction": [
+      "ThemeEvent_Skea_Erpin_CharacterReaction1",
+      "ThemeEvent_Skea_Erpin_CharacterReaction2",
+      "ThemeEvent_Skea_Erpin_CharacterReaction3"
+    ],
+    "OptionSpine": [
+      "Surprise_2",
+      "Dance_1",
+      "Angry_2"
+    ],
+    "OptionSkea": [
+      "ThemeEvent_Skea_Erpin_SkeaReaction1",
+      "ThemeEvent_Skea_Erpin_SkeaReaction2",
+      "ThemeEvent_Skea_Erpin_SkeaReaction3"
+    ],
+    "Answer": 1,
+    "LobbyInteraction": 2,
+    "SkeaCorrectCg": "Theme_Event_Skea_ClearCG2",
+    "OptionSkeaReaction": [
+      "SkeaQuiz_O",
+      "SkeaQuiz_X",
+      "SkeaQuiz_X"
+    ],
+    "SkeaCorrectCgdesc": "ThemeEvent_Skea_ClearCGdesc2"
+  },
+  "3": {
+    "Uid": 3,
+    "UnitUid": 10006,
+    "ResourceBefore": "Before_Ner",
+    "ResourceAfter": "After_Ner",
+    "OpenDelayHour": 89,
+    "QuizOpeningSpine": "Tired_2",
+    "DefaultSpine": "Blank_2",
+    "QuizOpeningText": "ThemeEvent_Skea_Opening3",
+    "SkeaQuizClipName": "SkeaQuiz_Ner",
+    "SkeaWaitClipName": "SkeaQuiz_Idle",
+    "OptionText": [
+      "ThemeEvent_Skea_Ner_Option1",
+      "ThemeEvent_Skea_Ner_Option2",
+      "ThemeEvent_Skea_Ner_Option3"
+    ],
+    "OptionReaction": [
+      "ThemeEvent_Skea_Ner_CharacterReaction1",
+      "ThemeEvent_Skea_Ner_CharacterReaction2",
+      "ThemeEvent_Skea_Ner_CharacterReaction3"
+    ],
+    "OptionSpine": [
+      "Notmyfault_1",
+      "Sulky_2",
+      "Happy_5"
+    ],
+    "OptionSkea": [
+      "ThemeEvent_Skea_Ner_SkeaReaction1",
+      "ThemeEvent_Skea_Ner_SkeaReaction2",
+      "ThemeEvent_Skea_Ner_SkeaReaction3"
+    ],
+    "Answer": 3,
+    "LobbyInteraction": 3,
+    "SkeaCorrectCg": "Theme_Event_Skea_ClearCG3",
+    "OptionSkeaReaction": [
+      "SkeaQuiz_X",
+      "SkeaQuiz_X",
+      "SkeaQuiz_O"
+    ],
+    "SkeaCorrectCgdesc": "ThemeEvent_Skea_ClearCGdesc3"
+  }
+}

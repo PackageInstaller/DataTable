@@ -1,0 +1,138 @@
+{
+  "1002": {
+    "1001": {
+      "MiniGameUid": 1002,
+      "MiniGameStageUid": 1001,
+      "2": null,
+      "ModeName": "MiniGameEd_Normal",
+      "ModeDesc": "MiniGameEd_Normal_Desc",
+      "Interaction": 0,
+      "UnlockType": 0,
+      "UnlockValue": [
+        0,
+        0
+      ],
+      "TowerGroupUid": 0,
+      "TimeBonusApply": false,
+      "Repeat": false,
+      "RepeatNormalAddHp": 0,
+      "RepeatBossAddHp": 0,
+      "RepeatNormalAddMoveSpeed": 0.0,
+      "RepeatBossAddMoveSpeed": 0.0,
+      "RepeatNormalAddDamageReceiveDownPercent": 0.0,
+      "RepeatBossAddDamageReceiveDownPercent": 0.0,
+      "UnitCountMax": 12,
+      "UnitGachaNeedValue01": 30,
+      "MonsterCountMax": 40,
+      "RepeatNormalAddRewardValue": [
+        0,
+        0
+      ],
+      "RepeatBossAddRewardValue": [
+        0,
+        0
+      ]
+    }
+  },
+  "2002": {
+    "2001": {
+      "MiniGameUid": 2002,
+      "MiniGameStageUid": 2001,
+      "2": null,
+      "ModeName": "MiniGameEd_Easy",
+      "ModeDesc": "MiniGameEd_Easy_Desc",
+      "Interaction": 161008,
+      "UnlockType": 0,
+      "UnlockValue": [
+        0,
+        0
+      ],
+      "TowerGroupUid": 0,
+      "TimeBonusApply": false,
+      "Repeat": false,
+      "RepeatNormalAddHp": 0,
+      "RepeatBossAddHp": 0,
+      "RepeatNormalAddMoveSpeed": 0.0,
+      "RepeatBossAddMoveSpeed": 0.0,
+      "RepeatNormalAddDamageReceiveDownPercent": 0.0,
+      "RepeatBossAddDamageReceiveDownPercent": 0.0,
+      "UnitCountMax": 16,
+      "UnitGachaNeedValue01": 30,
+      "MonsterCountMax": 40,
+      "RepeatNormalAddRewardValue": [
+        0,
+        0
+      ],
+      "RepeatBossAddRewardValue": [
+        0,
+        0
+      ]
+    },
+    "2002": {
+      "MiniGameUid": 2002,
+      "MiniGameStageUid": 2002,
+      "2": null,
+      "ModeName": "MiniGameEd_Normal",
+      "ModeDesc": "MiniGameEd_Normal_Desc",
+      "Interaction": 161008,
+      "UnlockType": 2,
+      "UnlockValue": [
+        2001,
+        31
+      ],
+      "TowerGroupUid": 0,
+      "TimeBonusApply": false,
+      "Repeat": false,
+      "RepeatNormalAddHp": 0,
+      "RepeatBossAddHp": 0,
+      "RepeatNormalAddMoveSpeed": 0.0,
+      "RepeatBossAddMoveSpeed": 0.0,
+      "RepeatNormalAddDamageReceiveDownPercent": 0.0,
+      "RepeatBossAddDamageReceiveDownPercent": 0.0,
+      "UnitCountMax": 16,
+      "UnitGachaNeedValue01": 30,
+      "MonsterCountMax": 40,
+      "RepeatNormalAddRewardValue": [
+        0,
+        0
+      ],
+      "RepeatBossAddRewardValue": [
+        0,
+        0
+      ]
+    },
+    "2003": {
+      "MiniGameUid": 2002,
+      "MiniGameStageUid": 2003,
+      "2": null,
+      "ModeName": "MiniGameEd_Challenge",
+      "ModeDesc": "MiniGameEd_Challenge_Desc",
+      "Interaction": 161008,
+      "UnlockType": 2,
+      "UnlockValue": [
+        2002,
+        51
+      ],
+      "TowerGroupUid": 0,
+      "TimeBonusApply": false,
+      "Repeat": true,
+      "RepeatNormalAddHp": 2000,
+      "RepeatBossAddHp": 27500,
+      "RepeatNormalAddMoveSpeed": 20.0,
+      "RepeatBossAddMoveSpeed": 20.0,
+      "RepeatNormalAddDamageReceiveDownPercent": 200.0,
+      "RepeatBossAddDamageReceiveDownPercent": 200.0,
+      "UnitCountMax": 16,
+      "UnitGachaNeedValue01": 30,
+      "MonsterCountMax": 40,
+      "RepeatNormalAddRewardValue": [
+        0,
+        0
+      ],
+      "RepeatBossAddRewardValue": [
+        30,
+        50
+      ]
+    }
+  }
+}

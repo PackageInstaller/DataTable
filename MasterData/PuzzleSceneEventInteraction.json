@@ -1,0 +1,892 @@
+[
+  {
+    "StageUid": 1,
+    "FromStateUid": "",
+    "ToolUid": 0,
+    "DropTarget": "",
+    "ConditionType": "OnEnter",
+    "NextStateUid": "TrioDirty",
+    "ResultType": 1,
+    "AnimationName": "1_Nomal"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirty",
+    "ToolUid": 102,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyDryTrioFail",
+    "ResultType": 4,
+    "AnimationName": "1_3_Fail_Dry_Boom"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirty",
+    "ToolUid": 104,
+    "DropTarget": "NameTag",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtySignTag",
+    "ResultType": 2,
+    "AnimationName": "1_Nomal_Sign"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirty",
+    "ToolUid": 104,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtySignFaceFail",
+    "ResultType": 4,
+    "AnimationName": "1_8_Fail_Dirty_Drawing"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirty",
+    "ToolUid": 103,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyPoseTrio",
+    "ResultType": 2,
+    "AnimationName": "1_9_Fail_Dirty_Pose"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirty",
+    "ToolUid": 101,
+    "DropTarget": "Camera",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyCameraPoppedFail",
+    "ResultType": 4,
+    "AnimationName": "1_2_Fail_Water_Boom"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirty",
+    "ToolUid": 101,
+    "DropTarget": "Light",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyLightPoppedFail",
+    "ResultType": 4,
+    "AnimationName": "1_2_Fail_Water_Boom"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirty",
+    "ToolUid": 101,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyWashTrio",
+    "ResultType": 2,
+    "AnimationName": "1_1_Susscess_Wet"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtyPoseTrio",
+    "ToolUid": 102,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyPoseTrioDryTrioFail",
+    "ResultType": 4,
+    "AnimationName": "1_3_Fail_Dry_Boom"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtyPoseTrio",
+    "ToolUid": 104,
+    "DropTarget": "NameTag",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyPoseTrioSignTag",
+    "ResultType": 2,
+    "AnimationName": "1_9_Fail_Dirty_Pose_Sign"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtyPoseTrio",
+    "ToolUid": 104,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyPoseTrioSignFaceFail",
+    "ResultType": 4,
+    "AnimationName": "1_9_Fail_Dirty_Pose_Drawing"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtyPoseTrio",
+    "ToolUid": 101,
+    "DropTarget": "Camera",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyPoseTrioCameraPoppedFail",
+    "ResultType": 4,
+    "AnimationName": "1_2_Fail_Water_Boom"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtyPoseTrio",
+    "ToolUid": 101,
+    "DropTarget": "Light",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyPoseTrioLightPoppedFail",
+    "ResultType": 4,
+    "AnimationName": "1_2_Fail_Water_Boom"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtyPoseTrio",
+    "ToolUid": 101,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyPoseTrioWashTrio",
+    "ResultType": 2,
+    "AnimationName": "1_4_Fail_Wet_Pose"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtyPoseTrioSignTag",
+    "ToolUid": 102,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyPoseTrioSignTagDryTrioFail",
+    "ResultType": 4,
+    "AnimationName": "1_3_Fail_Dry_Boom_Sign"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtyPoseTrioSignTag",
+    "ToolUid": 101,
+    "DropTarget": "Camera",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyPoseTrioSignTagCameraPoppedFail",
+    "ResultType": 4,
+    "AnimationName": "1_2_Fail_Water_Boom_Sign"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtyPoseTrioSignTag",
+    "ToolUid": 101,
+    "DropTarget": "Light",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyPoseTrioSignTagLightPoppedFail",
+    "ResultType": 4,
+    "AnimationName": "1_2_Fail_Water_Boom_Sign"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtyPoseTrioSignTag",
+    "ToolUid": 101,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyPoseTrioSignTagWashTrio",
+    "ResultType": 2,
+    "AnimationName": "1_4_Fail_Wet_Pose_Sign"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtyPoseTrioSignTagWashTrio",
+    "ToolUid": 102,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyPoseTrioSignTagWashTrioDryTrioClear",
+    "ResultType": 3,
+    "AnimationName": "1_1_Susscess_End"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtyPoseTrioWashTrio",
+    "ToolUid": 102,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyPoseTrioWashTrioDryTrio",
+    "ResultType": 2,
+    "AnimationName": "1_1_Susscess_Clean_Pose"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtyPoseTrioWashTrio",
+    "ToolUid": 104,
+    "DropTarget": "NameTag",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyPoseTrioWashTrioSignTag",
+    "ResultType": 2,
+    "AnimationName": "1_4_Fail_Wet_Pose_Sign"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtyPoseTrioWashTrio",
+    "ToolUid": 104,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyPoseTrioWashTrioSignFaceFail",
+    "ResultType": 4,
+    "AnimationName": "1_4_Fail_Wet_Pose_Drawing"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtyPoseTrioWashTrioDryTrio",
+    "ToolUid": 104,
+    "DropTarget": "NameTag",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyPoseTrioWashTrioDryTrioSignTagClear",
+    "ResultType": 3,
+    "AnimationName": "1_1_Susscess_End"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtyPoseTrioWashTrioDryTrio",
+    "ToolUid": 104,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyPoseTrioWashTrioDryTrioSignFaceFail",
+    "ResultType": 4,
+    "AnimationName": "1_7_Fail_Pose_Drawing"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtyPoseTrioWashTrioSignTag",
+    "ToolUid": 102,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyPoseTrioWashTrioSignTagDryTrioClear",
+    "ResultType": 3,
+    "AnimationName": "1_1_Susscess_End"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtySignTag",
+    "ToolUid": 102,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtySignTagDryTrioFail",
+    "ResultType": 4,
+    "AnimationName": "1_3_Fail_Dry_Boom_Sign"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtySignTag",
+    "ToolUid": 103,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtySignTagPoseTrio",
+    "ResultType": 2,
+    "AnimationName": "1_9_Fail_Dirty_Pose_Sign"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtySignTag",
+    "ToolUid": 101,
+    "DropTarget": "Camera",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtySignTagCameraPoppedFail",
+    "ResultType": 4,
+    "AnimationName": "1_2_Fail_Water_Boom_Sign"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtySignTag",
+    "ToolUid": 101,
+    "DropTarget": "Light",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtySignTagLightPoppedFail",
+    "ResultType": 4,
+    "AnimationName": "1_2_Fail_Water_Boom_Sign"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtySignTag",
+    "ToolUid": 101,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtySignTagWashTrio",
+    "ResultType": 2,
+    "AnimationName": "1_5_Fail_Wet_Sign"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtySignTagPoseTrio",
+    "ToolUid": 102,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtySignTagPoseTrioDryTrioFail",
+    "ResultType": 4,
+    "AnimationName": "1_3_Fail_Dry_Boom_Sign"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtySignTagPoseTrio",
+    "ToolUid": 101,
+    "DropTarget": "Camera",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtySignTagPoseTrioCameraPoppedFail",
+    "ResultType": 4,
+    "AnimationName": "1_2_Fail_Water_Boom_Sign"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtySignTagPoseTrio",
+    "ToolUid": 101,
+    "DropTarget": "Light",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtySignTagPoseTrioLightPoppedFail",
+    "ResultType": 4,
+    "AnimationName": "1_2_Fail_Water_Boom_Sign"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtySignTagPoseTrio",
+    "ToolUid": 101,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtySignTagPoseTrioWashTrio",
+    "ResultType": 2,
+    "AnimationName": "1_4_Fail_Wet_Pose_Sign"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtySignTagPoseTrioWashTrio",
+    "ToolUid": 102,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtySignTagPoseTrioWashTrioDryTrioClear",
+    "ResultType": 3,
+    "AnimationName": "1_1_Susscess_End"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtySignTagWashTrio",
+    "ToolUid": 102,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtySignTagWashTrioDryTrio",
+    "ResultType": 2,
+    "AnimationName": "1_1_Susscess_Clean_Name"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtySignTagWashTrio",
+    "ToolUid": 103,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtySignTagWashTrioPoseTrio",
+    "ResultType": 2,
+    "AnimationName": "1_4_Fail_Wet_Pose_Sign"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtySignTagWashTrioDryTrio",
+    "ToolUid": 103,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtySignTagWashTrioDryTrioPoseTrioClear",
+    "ResultType": 3,
+    "AnimationName": "1_1_Susscess_End"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtySignTagWashTrioPoseTrio",
+    "ToolUid": 102,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtySignTagWashTrioPoseTrioDryTrioClear",
+    "ResultType": 3,
+    "AnimationName": "1_1_Susscess_End"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtyWashTrio",
+    "ToolUid": 102,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyWashTrioDryTrio",
+    "ResultType": 2,
+    "AnimationName": "1_1_Susscess_Clean"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtyWashTrio",
+    "ToolUid": 104,
+    "DropTarget": "NameTag",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyWashTrioSignTag",
+    "ResultType": 2,
+    "AnimationName": "1_5_Fail_Wet_Sign"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtyWashTrio",
+    "ToolUid": 104,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyWashTrioSignFaceFail",
+    "ResultType": 4,
+    "AnimationName": "1_5_Fail_Wet_Drawing"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtyWashTrio",
+    "ToolUid": 103,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyWashTrioPoseTrio",
+    "ResultType": 2,
+    "AnimationName": "1_4_Fail_Wet_Pose"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtyWashTrioDryTrio",
+    "ToolUid": 104,
+    "DropTarget": "NameTag",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyWashTrioDryTrioSignTag",
+    "ResultType": 2,
+    "AnimationName": "1_1_Susscess_Clean_Name"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtyWashTrioDryTrio",
+    "ToolUid": 104,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyWashTrioDryTrioSignFaceFail",
+    "ResultType": 4,
+    "AnimationName": "1_6_Fail_Clean_Drawing"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtyWashTrioDryTrio",
+    "ToolUid": 103,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyWashTrioDryTrioPoseTrio",
+    "ResultType": 2,
+    "AnimationName": "1_1_Susscess_Clean_Pose"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtyWashTrioDryTrioPoseTrio",
+    "ToolUid": 104,
+    "DropTarget": "NameTag",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyWashTrioDryTrioPoseTrioSignTagClear",
+    "ResultType": 3,
+    "AnimationName": "1_1_Susscess_End"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtyWashTrioDryTrioPoseTrio",
+    "ToolUid": 104,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyWashTrioDryTrioPoseTrioSignFaceFail",
+    "ResultType": 4,
+    "AnimationName": "1_7_Fail_Pose_Drawing"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtyWashTrioDryTrioSignTag",
+    "ToolUid": 103,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyWashTrioDryTrioSignTagPoseTrioClear",
+    "ResultType": 3,
+    "AnimationName": "1_1_Susscess_End"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtyWashTrioPoseTrio",
+    "ToolUid": 102,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyWashTrioPoseTrioDryTrio",
+    "ResultType": 2,
+    "AnimationName": "1_1_Susscess_Clean_Pose"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtyWashTrioPoseTrio",
+    "ToolUid": 104,
+    "DropTarget": "NameTag",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyWashTrioPoseTrioSignTag",
+    "ResultType": 2,
+    "AnimationName": "1_4_Fail_Wet_Pose_Sign"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtyWashTrioPoseTrio",
+    "ToolUid": 104,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyWashTrioPoseTrioSignFaceFail",
+    "ResultType": 4,
+    "AnimationName": "1_4_Fail_Wet_Pose_Drawing"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtyWashTrioPoseTrioDryTrio",
+    "ToolUid": 104,
+    "DropTarget": "NameTag",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyWashTrioPoseTrioDryTrioSignTagClear",
+    "ResultType": 3,
+    "AnimationName": "1_1_Susscess_End"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtyWashTrioPoseTrioDryTrio",
+    "ToolUid": 104,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyWashTrioPoseTrioDryTrioSignFaceFail",
+    "ResultType": 4,
+    "AnimationName": "1_7_Fail_Pose_Drawing"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtyWashTrioPoseTrioSignTag",
+    "ToolUid": 102,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyWashTrioPoseTrioSignTagDryTrioClear",
+    "ResultType": 3,
+    "AnimationName": "1_1_Susscess_End"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtyWashTrioSignTag",
+    "ToolUid": 102,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyWashTrioSignTagDryTrio",
+    "ResultType": 2,
+    "AnimationName": "1_1_Susscess_Clean_Name"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtyWashTrioSignTag",
+    "ToolUid": 103,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyWashTrioSignTagPoseTrio",
+    "ResultType": 2,
+    "AnimationName": "1_4_Fail_Wet_Pose_Sign"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtyWashTrioSignTagDryTrio",
+    "ToolUid": 103,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyWashTrioSignTagDryTrioPoseTrioClear",
+    "ResultType": 3,
+    "AnimationName": "1_1_Susscess_End"
+  },
+  {
+    "StageUid": 1,
+    "FromStateUid": "TrioDirtyWashTrioSignTagPoseTrio",
+    "ToolUid": 102,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "TrioDirtyWashTrioSignTagPoseTrioDryTrioClear",
+    "ResultType": 3,
+    "AnimationName": "1_1_Susscess_End"
+  },
+  {
+    "StageUid": 2,
+    "FromStateUid": "",
+    "ToolUid": 0,
+    "DropTarget": "",
+    "ConditionType": "OnEnter",
+    "NextStateUid": "FeederStart",
+    "ResultType": 1,
+    "AnimationName": "2_Nomal"
+  },
+  {
+    "StageUid": 2,
+    "FromStateUid": "FeederStart",
+    "ToolUid": 202,
+    "DropTarget": "Feeder",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "FeederStartBowlSet",
+    "ResultType": 2,
+    "AnimationName": "2_1_Susscess_Eat"
+  },
+  {
+    "StageUid": 2,
+    "FromStateUid": "FeederStart",
+    "ToolUid": 204,
+    "DropTarget": "Feeder",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "FeederStartEmergencyPopFail",
+    "ResultType": 4,
+    "AnimationName": "2_2_Fail_No_Basket_Er_Boom"
+  },
+  {
+    "StageUid": 2,
+    "FromStateUid": "FeederStart",
+    "ToolUid": 203,
+    "DropTarget": "PrintedCode",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "FeederStartRunOnCodeFail",
+    "ResultType": 4,
+    "AnimationName": "2_3_Fail_2_Eat_Button"
+  },
+  {
+    "StageUid": 2,
+    "FromStateUid": "FeederStart",
+    "ToolUid": 201,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "FeederStartHelmetOn",
+    "ResultType": 2,
+    "AnimationName": "2_1_Susscess_Fix"
+  },
+  {
+    "StageUid": 2,
+    "FromStateUid": "FeederStartBowlSet",
+    "ToolUid": 204,
+    "DropTarget": "Feeder",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "FeederStartBowlSetEmergencyPopFail",
+    "ResultType": 4,
+    "AnimationName": "2_2_Fail_Er_Boom"
+  },
+  {
+    "StageUid": 2,
+    "FromStateUid": "FeederStartBowlSet",
+    "ToolUid": 203,
+    "DropTarget": "PrintedCode",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "FeederStartBowlSetRunOnCodeFail",
+    "ResultType": 4,
+    "AnimationName": "2_3_Fail_2_Basket_Button"
+  },
+  {
+    "StageUid": 2,
+    "FromStateUid": "FeederStartBowlSet",
+    "ToolUid": 201,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "FeederStartBowlSetHelmetOn",
+    "ResultType": 2,
+    "AnimationName": "2_1_Susscess_Eat_Fix"
+  },
+  {
+    "StageUid": 2,
+    "FromStateUid": "FeederStartBowlSetHelmetOn",
+    "ToolUid": 204,
+    "DropTarget": "Feeder",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "FeederStartBowlSetHelmetOnEmergencyPopFail",
+    "ResultType": 4,
+    "AnimationName": "2_2_Fail_Fix_Er_Boom"
+  },
+  {
+    "StageUid": 2,
+    "FromStateUid": "FeederStartBowlSetHelmetOn",
+    "ToolUid": 203,
+    "DropTarget": "PrintedCode",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "FeederStartBowlSetHelmetOnRunOnCodeClear",
+    "ResultType": 3,
+    "AnimationName": "2_1_Susscess_End"
+  },
+  {
+    "StageUid": 2,
+    "FromStateUid": "FeederStartHelmetOn",
+    "ToolUid": 202,
+    "DropTarget": "Feeder",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "FeederStartHelmetOnBowlSet",
+    "ResultType": 2,
+    "AnimationName": "2_1_Susscess_Eat_Fix"
+  },
+  {
+    "StageUid": 2,
+    "FromStateUid": "FeederStartHelmetOn",
+    "ToolUid": 204,
+    "DropTarget": "Feeder",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "FeederStartHelmetOnEmergencyPopFail",
+    "ResultType": 4,
+    "AnimationName": "2_2_Fail_No_Basket_Fix_Er_Boom"
+  },
+  {
+    "StageUid": 2,
+    "FromStateUid": "FeederStartHelmetOn",
+    "ToolUid": 203,
+    "DropTarget": "PrintedCode",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "FeederStartHelmetOnRunOnCodeFail",
+    "ResultType": 4,
+    "AnimationName": "2_4_Fail_3_Fix_Eat"
+  },
+  {
+    "StageUid": 2,
+    "FromStateUid": "FeederStartHelmetOnBowlSet",
+    "ToolUid": 204,
+    "DropTarget": "Feeder",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "FeederStartHelmetOnBowlSetEmergencyPopFail",
+    "ResultType": 4,
+    "AnimationName": "2_2_Fail_Fix_Er_Boom"
+  },
+  {
+    "StageUid": 2,
+    "FromStateUid": "FeederStartHelmetOnBowlSet",
+    "ToolUid": 203,
+    "DropTarget": "PrintedCode",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "FeederStartHelmetOnBowlSetRunOnCodeClear",
+    "ResultType": 3,
+    "AnimationName": "2_1_Susscess_End"
+  },
+  {
+    "StageUid": 3,
+    "FromStateUid": "",
+    "ToolUid": 0,
+    "DropTarget": "",
+    "ConditionType": "OnEnter",
+    "NextStateUid": "DianaSleepFeedPile",
+    "ResultType": 1,
+    "AnimationName": "3_Nomal"
+  },
+  {
+    "StageUid": 3,
+    "FromStateUid": "DianaSleepFeedPile",
+    "ToolUid": 301,
+    "DropTarget": "Cabinet",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "DianaSleepFeedPile_SackCabinet",
+    "ResultType": 2,
+    "AnimationName": "3_1_Susscess_Podae"
+  },
+  {
+    "StageUid": 3,
+    "FromStateUid": "DianaSleepFeedPile",
+    "ToolUid": 301,
+    "DropTarget": "Diana",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "DianaSleepFeedPile_SackOnDiana_Fail",
+    "ResultType": 4,
+    "AnimationName": "3_6_Fail_5_Podae_Diana"
+  },
+  {
+    "StageUid": 3,
+    "FromStateUid": "DianaSleepFeedPile",
+    "ToolUid": 302,
+    "DropTarget": "Cabinet",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "DianaSleepFeedPile_CoverCabinet_Fail",
+    "ResultType": 4,
+    "AnimationName": "3_4_Fail_3_Door"
+  },
+  {
+    "StageUid": 3,
+    "FromStateUid": "DianaSleepFeedPile",
+    "ToolUid": 302,
+    "DropTarget": "Diana",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "DianaSleepFeedPile_CoverOnDiana_Fail",
+    "ResultType": 4,
+    "AnimationName": "3_7_Fail_6_Door_Diana"
+  },
+  {
+    "StageUid": 3,
+    "FromStateUid": "DianaSleepFeedPile",
+    "ToolUid": 303,
+    "DropTarget": "Cabinet",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "DianaSleepFeedPile_BlanketCabinet_Fail",
+    "ResultType": 4,
+    "AnimationName": "3_5_Fail_4_Camo"
+  },
+  {
+    "StageUid": 3,
+    "FromStateUid": "DianaSleepFeedPile",
+    "ToolUid": 303,
+    "DropTarget": "Diana",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "DianaSleepFeedPile_BlanketOnDiana_Fail",
+    "ResultType": 4,
+    "AnimationName": "3_8_Fail_7_Camo_Diana"
+  },
+  {
+    "StageUid": 3,
+    "FromStateUid": "DianaSleepFeedPile",
+    "ToolUid": 304,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "DianaSleepFeedPile_QuickMode_Fail",
+    "ResultType": 4,
+    "AnimationName": "3_2_Fail_1_Cat"
+  },
+  {
+    "StageUid": 3,
+    "FromStateUid": "DianaSleepFeedPile_SackCabinet",
+    "ToolUid": 302,
+    "DropTarget": "Cabinet",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "DianaSleepFeedPile_SackCabinet_CoverCabinet",
+    "ResultType": 2,
+    "AnimationName": "3_1_Susscess_Podae_Door"
+  },
+  {
+    "StageUid": 3,
+    "FromStateUid": "DianaSleepFeedPile_SackCabinet",
+    "ToolUid": 302,
+    "DropTarget": "Diana",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "DianaSleepFeedPile_SackCabinet_CoverOnDiana_Fail",
+    "ResultType": 4,
+    "AnimationName": "3_7_Fail_6_Door_Diana_Podae"
+  },
+  {
+    "StageUid": 3,
+    "FromStateUid": "DianaSleepFeedPile_SackCabinet",
+    "ToolUid": 303,
+    "DropTarget": "Diana",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "DianaSleepFeedPile_SackCabinet_BlanketOnDiana_Fail",
+    "ResultType": 4,
+    "AnimationName": "3_8_Fail_7_Camo_Diana_Podae"
+  },
+  {
+    "StageUid": 3,
+    "FromStateUid": "DianaSleepFeedPile_SackCabinet",
+    "ToolUid": 304,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "DianaSleepFeedPile_SackCabinet_QuickMode_Fail",
+    "ResultType": 4,
+    "AnimationName": "3_2_Fail_1_Cat_Podae"
+  },
+  {
+    "StageUid": 3,
+    "FromStateUid": "DianaSleepFeedPile_SackCabinet_CoverCabinet",
+    "ToolUid": 303,
+    "DropTarget": "Cabinet",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "DianaSleepFeedPile_SackCabinet_CoverCabinet_BlanketCabinet_Clear",
+    "ResultType": 3,
+    "AnimationName": "3_1_Susscess"
+  },
+  {
+    "StageUid": 3,
+    "FromStateUid": "DianaSleepFeedPile_SackCabinet_CoverCabinet",
+    "ToolUid": 303,
+    "DropTarget": "Diana",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "DianaSleepFeedPile_SackCabinet_CoverCabinet_BlanketOnDiana_Fail",
+    "ResultType": 4,
+    "AnimationName": "3_8_Fail_7_Camo_Diana_Podae_Door"
+  },
+  {
+    "StageUid": 3,
+    "FromStateUid": "DianaSleepFeedPile_SackCabinet_CoverCabinet",
+    "ToolUid": 304,
+    "DropTarget": "Trio",
+    "ConditionType": "DropFromState",
+    "NextStateUid": "DianaSleepFeedPile_SackCabinet_CoverCabinet_QuickMode_Fail",
+    "ResultType": 4,
+    "AnimationName": "3_2_Fail_1_Cat_Podae_Door"
+  }
+]

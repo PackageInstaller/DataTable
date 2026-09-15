@@ -1,0 +1,48 @@
+{
+  "1": {
+    "1": {
+      "GroupUid": 1,
+      "Order": 1,
+      "Name": "DailyTime_Group1_1",
+      "RewardType": [
+        1,
+        0
+      ],
+      "RewardUid": [
+        1100000,
+        0
+      ],
+      "RewardValue": [
+        50,
+        0
+      ],
+      "StartTime": 480,
+      "EndTime": 1440,
+      "PushEnabled": true,
+      "PushTitle": "DailyTime_PushTitle1",
+      "PushMessage": "DailyTime_PushMessage1"
+    },
+    "2": {
+      "GroupUid": 1,
+      "Order": 2,
+      "Name": "DailyTime_Group1_2",
+      "RewardType": [
+        1,
+        1
+      ],
+      "RewardUid": [
+        1100000,
+        3600000
+      ],
+      "RewardValue": [
+        50,
+        50
+      ],
+      "StartTime": 840,
+      "EndTime": 1440,
+      "PushEnabled": true,
+      "PushTitle": "DailyTime_PushTitle2",
+      "PushMessage": "DailyTime_PushMessage2"
+    }
+  }
+}

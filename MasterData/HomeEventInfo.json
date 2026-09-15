@@ -1,0 +1,59 @@
+{
+  "1001": {
+    "Uid": 1001,
+    "Sort": 1,
+    "StartConditionType": [
+      2,
+      3
+    ],
+    "StartConditionValue": [
+      100,
+      107069001
+    ],
+    "HomeEventGroup": 1,
+    "HomeEventGroupType": 0,
+    "DailyMax": 1,
+    "StartTriggerType": 1,
+    "StartTriggerValue": 100,
+    "IsResetDaily": true,
+    "MixedEventUid": 0
+  },
+  "1002": {
+    "Uid": 1002,
+    "Sort": 1,
+    "StartConditionType": [
+      2,
+      0
+    ],
+    "StartConditionValue": [
+      100,
+      0
+    ],
+    "HomeEventGroup": 2,
+    "HomeEventGroupType": 0,
+    "DailyMax": 1,
+    "StartTriggerType": 1,
+    "StartTriggerValue": 100,
+    "IsResetDaily": true,
+    "MixedEventUid": 0
+  },
+  "1003": {
+    "Uid": 1003,
+    "Sort": 1,
+    "StartConditionType": [
+      2,
+      4
+    ],
+    "StartConditionValue": [
+      100,
+      4
+    ],
+    "HomeEventGroup": 3,
+    "HomeEventGroupType": 2,
+    "DailyMax": 1,
+    "StartTriggerType": 1,
+    "StartTriggerValue": 262,
+    "IsResetDaily": false,
+    "MixedEventUid": 40
+  }
+}

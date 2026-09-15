@@ -1,0 +1,302 @@
+{
+  "1001": {
+    "Uid": 1001,
+    "LayoutGroup": 1,
+    "InteractionGroup": 50001,
+    "Default": true,
+    "SetUid": 1001,
+    "MyHomeSkin": "Level_3",
+    "InviteFloor": [
+      3,
+      0,
+      0
+    ],
+    "WallSizeFloor": [
+      4,
+      0,
+      0
+    ],
+    "AddLoveHero": 0,
+    "Name": "Layout_Name1",
+    "Desc": "Layout_Desc1",
+    "AniNamePrefix": "3",
+    "GetMaid": false,
+    "Banner": "",
+    "RewardType": 0,
+    "RewardUid": 0,
+    "RewardValue": 0,
+    "MyHomeSkeleton": "MyHomeLobby_Home_1",
+    "AddInteractionGroup": 0,
+    "GetPetGather": false
+  },
+  "1002": {
+    "Uid": 1002,
+    "LayoutGroup": 2,
+    "InteractionGroup": 50002,
+    "Default": false,
+    "SetUid": 1001,
+    "MyHomeSkin": "Second_floor",
+    "InviteFloor": [
+      3,
+      3,
+      0
+    ],
+    "WallSizeFloor": [
+      4,
+      4,
+      0
+    ],
+    "AddLoveHero": 1,
+    "Name": "Layout_Name2",
+    "Desc": "Layout_Desc2",
+    "AniNamePrefix": "Second_floor",
+    "GetMaid": false,
+    "Banner": "",
+    "RewardType": 0,
+    "RewardUid": 0,
+    "RewardValue": 0,
+    "MyHomeSkeleton": "MyHomeLobby_Home_2",
+    "AddInteractionGroup": 0,
+    "GetPetGather": false
+  },
+  "1003": {
+    "Uid": 1003,
+    "LayoutGroup": 3,
+    "InteractionGroup": 50003,
+    "Default": false,
+    "SetUid": 1001,
+    "MyHomeSkin": "Platform_large",
+    "InviteFloor": [
+      5,
+      0,
+      0
+    ],
+    "WallSizeFloor": [
+      6,
+      0,
+      0
+    ],
+    "AddLoveHero": 1,
+    "Name": "Layout_Name3",
+    "Desc": "Layout_Desc3",
+    "AniNamePrefix": "Platform_large",
+    "GetMaid": false,
+    "Banner": "",
+    "RewardType": 0,
+    "RewardUid": 0,
+    "RewardValue": 0,
+    "MyHomeSkeleton": "MyHomeLobby_Home_2",
+    "AddInteractionGroup": 0,
+    "GetPetGather": false
+  },
+  "1004": {
+    "Uid": 1004,
+    "LayoutGroup": 4,
+    "InteractionGroup": 50004,
+    "Default": false,
+    "SetUid": 1001,
+    "MyHomeSkin": "Platform_Crepe",
+    "InviteFloor": [
+      5,
+      5,
+      0
+    ],
+    "WallSizeFloor": [
+      6,
+      6,
+      0
+    ],
+    "AddLoveHero": 1,
+    "Name": "Layout_Name4",
+    "Desc": "Layout_Desc4",
+    "AniNamePrefix": "Platform_Crepe",
+    "GetMaid": true,
+    "Banner": "LayoutBanner_Maid",
+    "RewardType": 0,
+    "RewardUid": 0,
+    "RewardValue": 0,
+    "MyHomeSkeleton": "MyHomeLobby_Home_1",
+    "AddInteractionGroup": 50101,
+    "GetPetGather": false
+  },
+  "1005": {
+    "Uid": 1005,
+    "LayoutGroup": 5,
+    "InteractionGroup": 50005,
+    "Default": false,
+    "SetUid": 1001,
+    "MyHomeSkin": "Platform_Gallery",
+    "InviteFloor": [
+      5,
+      5,
+      0
+    ],
+    "WallSizeFloor": [
+      6,
+      6,
+      0
+    ],
+    "AddLoveHero": 2,
+    "Name": "Layout_Name5",
+    "Desc": "Layout_Desc5",
+    "AniNamePrefix": "Platform_Gallery",
+    "GetMaid": false,
+    "Banner": "LayoutBanner_BigFrame",
+    "RewardType": 1,
+    "RewardUid": 1804061,
+    "RewardValue": 1,
+    "MyHomeSkeleton": "MyHomeLobby_Home_2",
+    "AddInteractionGroup": 0,
+    "GetPetGather": false
+  },
+  "1006": {
+    "Uid": 1006,
+    "LayoutGroup": 6,
+    "InteractionGroup": 50006,
+    "Default": false,
+    "SetUid": 1001,
+    "MyHomeSkin": "Figures_House",
+    "InviteFloor": [
+      7,
+      7,
+      0
+    ],
+    "WallSizeFloor": [
+      8,
+      8,
+      0
+    ],
+    "AddLoveHero": 1,
+    "Name": "Layout_Name6",
+    "Desc": "Layout_Desc6",
+    "AniNamePrefix": "Figures_House",
+    "GetMaid": false,
+    "Banner": "",
+    "RewardType": 0,
+    "RewardUid": 0,
+    "RewardValue": 0,
+    "MyHomeSkeleton": "MyHomeLobby_Home_3",
+    "AddInteractionGroup": 0,
+    "GetPetGather": false
+  },
+  "1007": {
+    "Uid": 1007,
+    "LayoutGroup": 7,
+    "InteractionGroup": 50007,
+    "Default": false,
+    "SetUid": 1001,
+    "MyHomeSkin": "Fream_House",
+    "InviteFloor": [
+      7,
+      7,
+      0
+    ],
+    "WallSizeFloor": [
+      8,
+      8,
+      0
+    ],
+    "AddLoveHero": 1,
+    "Name": "Layout_Name7",
+    "Desc": "Layout_Desc7",
+    "AniNamePrefix": "Fream_House",
+    "GetMaid": false,
+    "Banner": "LayoutBanner_CrepeSkin2",
+    "RewardType": 1,
+    "RewardUid": 6120403,
+    "RewardValue": 1,
+    "MyHomeSkeleton": "MyHomeLobby_Home_3",
+    "AddInteractionGroup": 50102,
+    "GetPetGather": false
+  },
+  "1008": {
+    "Uid": 1008,
+    "LayoutGroup": 8,
+    "InteractionGroup": 50008,
+    "Default": false,
+    "SetUid": 1001,
+    "MyHomeSkin": "Pet_House",
+    "InviteFloor": [
+      7,
+      7,
+      0
+    ],
+    "WallSizeFloor": [
+      8,
+      8,
+      0
+    ],
+    "AddLoveHero": 1,
+    "Name": "Layout_Name8",
+    "Desc": "Layout_Desc8",
+    "AniNamePrefix": "Pet_House",
+    "GetMaid": false,
+    "Banner": "LayoutBanner_Pet",
+    "RewardType": 1,
+    "RewardUid": 6120203,
+    "RewardValue": 1,
+    "MyHomeSkeleton": "MyHomeLobby_Home_4",
+    "AddInteractionGroup": 50103,
+    "GetPetGather": true
+  },
+  "1009": {
+    "Uid": 1009,
+    "LayoutGroup": 9,
+    "InteractionGroup": 50009,
+    "Default": false,
+    "SetUid": 1001,
+    "MyHomeSkin": "Third_floor",
+    "InviteFloor": [
+      7,
+      7,
+      7
+    ],
+    "WallSizeFloor": [
+      8,
+      8,
+      8
+    ],
+    "AddLoveHero": 3,
+    "Name": "Layout_Name9",
+    "Desc": "Layout_Desc9",
+    "AniNamePrefix": "Third_floor",
+    "GetMaid": false,
+    "Banner": "LayoutBanner_CrepeBattleBtn",
+    "RewardType": 1,
+    "RewardUid": 6900035,
+    "RewardValue": 1,
+    "MyHomeSkeleton": "MyHomeLobby_Home_5",
+    "AddInteractionGroup": 0,
+    "GetPetGather": false
+  },
+  "1010": {
+    "Uid": 1010,
+    "LayoutGroup": 10,
+    "InteractionGroup": 50010,
+    "Default": false,
+    "SetUid": 1001,
+    "MyHomeSkin": "Third_floor_Circle",
+    "InviteFloor": [
+      7,
+      7,
+      7
+    ],
+    "WallSizeFloor": [
+      8,
+      8,
+      8
+    ],
+    "AddLoveHero": 3,
+    "Name": "Layout_Name10",
+    "Desc": "Layout_Desc10",
+    "AniNamePrefix": "Third_floor_Circle",
+    "GetMaid": false,
+    "Banner": "LayoutBanner_YoungchunSkin4",
+    "RewardType": 1,
+    "RewardUid": 6120205,
+    "RewardValue": 1,
+    "MyHomeSkeleton": "MyHomeLobby_Home_6",
+    "AddInteractionGroup": 50104,
+    "GetPetGather": false
+  }
+}

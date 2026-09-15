@@ -1,0 +1,236 @@
+{
+  "1001": {
+    "Uid": 1001,
+    "Stage": 1,
+    "ClearScore": 2000,
+    "Time": 90,
+    "Diagnosis": 12,
+    "Enhance": 0,
+    "Fake": 1,
+    "Tool": [
+      false,
+      false,
+      false
+    ],
+    "ToolTime": [
+      1.0,
+      1.5,
+      2.0
+    ],
+    "ToolTimeEnhance": [
+      0.5,
+      0.800000011920929,
+      1.0
+    ],
+    "Cold": 50,
+    "Less": 0,
+    "Over": 0,
+    "Metal": 0,
+    "Back": 50,
+    "Desc": "Mini_Theme4_Desc1",
+    "Rule": [
+      "Mini_Rule2",
+      "Mini_Rule_Fake",
+      "Mini_Rule1",
+      null,
+      null,
+      null
+    ],
+    "NextStageUid": 1002
+  },
+  "1002": {
+    "Uid": 1002,
+    "Stage": 2,
+    "ClearScore": 2000,
+    "Time": 90,
+    "Diagnosis": 11,
+    "Enhance": 1,
+    "Fake": 1,
+    "Tool": [
+      true,
+      false,
+      false
+    ],
+    "ToolTime": [
+      1.0,
+      1.5,
+      2.0
+    ],
+    "ToolTimeEnhance": [
+      0.5,
+      0.800000011920929,
+      1.0
+    ],
+    "Cold": 50,
+    "Less": 0,
+    "Over": 0,
+    "Metal": 0,
+    "Back": 50,
+    "Desc": "Mini_Theme4_Desc2",
+    "Rule": [
+      "Mini_Rule2",
+      "Mini_Rule_Fake",
+      "Mini_Rule3",
+      null,
+      null,
+      null
+    ],
+    "NextStageUid": 1003
+  },
+  "1003": {
+    "Uid": 1003,
+    "Stage": 3,
+    "ClearScore": 3000,
+    "Time": 90,
+    "Diagnosis": 13,
+    "Enhance": 1,
+    "Fake": 1,
+    "Tool": [
+      true,
+      false,
+      false
+    ],
+    "ToolTime": [
+      1.0,
+      1.5,
+      2.0
+    ],
+    "ToolTimeEnhance": [
+      0.5,
+      0.800000011920929,
+      1.0
+    ],
+    "Cold": 20,
+    "Less": 40,
+    "Over": 0,
+    "Metal": 0,
+    "Back": 40,
+    "Desc": "Mini_Theme4_Desc3",
+    "Rule": [
+      "Mini_Rule2",
+      "Mini_Rule_Fake",
+      "Mini_Rule3",
+      "Mini_Rule4",
+      null,
+      null
+    ],
+    "NextStageUid": 1004
+  },
+  "1004": {
+    "Uid": 1004,
+    "Stage": 4,
+    "ClearScore": 3000,
+    "Time": 90,
+    "Diagnosis": 12,
+    "Enhance": 1,
+    "Fake": 1,
+    "Tool": [
+      true,
+      true,
+      false
+    ],
+    "ToolTime": [
+      1.0,
+      1.5,
+      2.0
+    ],
+    "ToolTimeEnhance": [
+      0.5,
+      0.800000011920929,
+      1.0
+    ],
+    "Cold": 10,
+    "Less": 35,
+    "Over": 35,
+    "Metal": 0,
+    "Back": 20,
+    "Desc": "Mini_Theme4_Desc4",
+    "Rule": [
+      "Mini_Rule2",
+      "Mini_Rule_Fake",
+      "Mini_Rule3",
+      "Mini_Rule5",
+      "Mini_Rule6",
+      null
+    ],
+    "NextStageUid": 1005
+  },
+  "1005": {
+    "Uid": 1005,
+    "Stage": 5,
+    "ClearScore": 4000,
+    "Time": 100,
+    "Diagnosis": 15,
+    "Enhance": 1,
+    "Fake": 1,
+    "Tool": [
+      true,
+      true,
+      true
+    ],
+    "ToolTime": [
+      1.0,
+      1.5,
+      2.0
+    ],
+    "ToolTimeEnhance": [
+      0.5,
+      0.800000011920929,
+      1.0
+    ],
+    "Cold": 20,
+    "Less": 20,
+    "Over": 0,
+    "Metal": 30,
+    "Back": 30,
+    "Desc": "Mini_Theme4_Desc5",
+    "Rule": [
+      "Mini_Rule2",
+      "Mini_Rule_Fake",
+      "Mini_Rule3",
+      "Mini_Rule5",
+      "Mini_Rule7",
+      "Mini_Rule8"
+    ],
+    "NextStageUid": 1006
+  },
+  "1006": {
+    "Uid": 1006,
+    "Stage": 6,
+    "ClearScore": 4000,
+    "Time": 100,
+    "Diagnosis": 16,
+    "Enhance": 0,
+    "Fake": 1,
+    "Tool": [
+      true,
+      true,
+      true
+    ],
+    "ToolTime": [
+      1.0,
+      1.5,
+      2.0
+    ],
+    "ToolTimeEnhance": [
+      0.5,
+      0.800000011920929,
+      1.0
+    ],
+    "Cold": 25,
+    "Less": 0,
+    "Over": 25,
+    "Metal": 25,
+    "Back": 25,
+    "Desc": "Mini_Theme4_Desc6",
+    "Rule": [
+      "Mini_Rule2",
+      "Mini_Rule_Fake",
+      "Mini_Rule3",
+      "Mini_Rule6",
+      "Mini_Rule7",
+      "Mini_Rule8"
+    ],
+    "NextStageUid": 0
+  }
+}

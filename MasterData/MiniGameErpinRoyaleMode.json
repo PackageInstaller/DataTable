@@ -1,0 +1,28 @@
+{
+  "101": {
+    "0": null,
+    "StageUid": 101,
+    "ModeName": "MiniGameErpinRoyale_Normal",
+    "UnlockType": 0,
+    "UnlockValue": [
+      0,
+      0
+    ],
+    "RefreshInteraction": 161009,
+    "Interaction": 161010,
+    "Difficulty": 1
+  },
+  "201": {
+    "0": null,
+    "StageUid": 201,
+    "ModeName": "MiniGameErpinRoyale_Challenge",
+    "UnlockType": 1,
+    "UnlockValue": [
+      101,
+      30000
+    ],
+    "RefreshInteraction": 161009,
+    "Interaction": 161010,
+    "Difficulty": 3
+  }
+}
