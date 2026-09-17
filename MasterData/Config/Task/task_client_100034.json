@@ -1,0 +1,224 @@
+{
+  "conditionDic": 1,
+  "taskId": 100034,
+  "mainTaskName": "",
+  "mainTaskDesc": "",
+  "endNodeId": 4,
+  "isNPCOperate": 0,
+  "nodes": [
+    {
+      "__type_TaskBaseNodeData": {
+        "nodeText": 0,
+        "id": 1,
+        "nodeType": 10,
+        "nextNodeIdList": 2,
+        "infoTaskId": 0,
+        "infoNodeId": 0,
+        "showActWait": 0,
+        "actWaitEnd": 0
+      },
+      "nodeMember": 0
+    },
+    {
+      "__type_TaskBaseNodeData": {
+        "__type_TaskConditionNodeData": {
+          "conditionList": {
+            "__type_TaskConditionBaseData": {
+              "__type_TaskCondCompletePlayableData": {
+                "playableId": 62039,
+                "posX": 0.0,
+                "posY": 0.0,
+                "posZ": 0.0,
+                "count": 1,
+                "playableData": {
+                  "__type_TaskPlayableOverrideData": "",
+                  "npcId": 0,
+                  "posX": 0,
+                  "posY": 0,
+                  "posZ": 0,
+                  "isOverride": 0,
+                  "sceneId": 100,
+                  "createNpcId": 62039,
+                  "spawnerId": 1,
+                  "isFloor": 0,
+                  "isNowDelete": 0,
+                  "entityType": 0,
+                  "rotX": 0,
+                  "rotY": 0,
+                  "rotZ": 0,
+                  "objType": 0,
+                  "overrideBP": 0,
+                  "overrideAI": 0,
+                  "uniqueKey": 0,
+                  "npcDeletType": 0,
+                  "isAllTask": 0,
+                  "isFront": 0,
+                  "hideInBattle": 0,
+                  "needGhostFade": 0
+                },
+                "isHidePalyableTrace": 0
+              },
+              "dataType": 0,
+              "mapData": {
+                "birthId": 10054,
+                "sceneId": 100,
+                "triggerType": 1,
+                "isGuide": 0,
+                "targetId": 0,
+                "targetPos": {
+                  "x": -91.0759,
+                  "y": 104.1331,
+                  "z": 601.647
+                },
+                "isNeedShowRange": 1,
+                "showRange": 100.0,
+                "triggerRange": 100.0,
+                "inRangeShowGuide": 0,
+                "isNeedMerge": 0,
+                "mergeId": 0,
+                "isClientCreate": 1
+              },
+              "conditionInfoId": 10003401,
+              "unneedCompleted": 0,
+              "hideOptional": 0,
+              "useMultiData": 0
+            },
+            "conditionId": 2525,
+            "contentType": 16200,
+            "index": 0
+          },
+          "beforActionList": [
+            {
+              "dataType": {
+                "__type_TaskOpenPageData": {
+                  "pageName": {
+                    "attrButeInfos": 97
+                  },
+                  "second": 0
+                },
+                "dataType": 0
+              },
+              "conditionId": 2710,
+              "contentType": 2100,
+              "index": 0
+            },
+            {
+              "dataType": {
+                "__type_TaskClearWorldData": "",
+                "dataType": 0
+              },
+              "conditionId": 2716,
+              "contentType": 2510,
+              "index": 1
+            }
+          ],
+          "afterActionList": [
+            {
+              "dataType": {
+                "__type_TaskOpenStoryData": {
+                  "storyId": 101408,
+                  "isContinuous": 1,
+                  "isPlayEndCb": 0,
+                  "storyRange": 0.0,
+                  "storyBirthId": 0,
+                  "storySceneId": 0,
+                  "storyPosition": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                  }
+                },
+                "dataType": 0
+              },
+              "conditionId": 0,
+              "contentType": 2200,
+              "index": 0
+            },
+            {
+              "dataType": {
+                "__type_TaskOpenStoryData": {
+                  "storyId": 101409,
+                  "isContinuous": 0,
+                  "isPlayEndCb": 0,
+                  "storyRange": 0.0,
+                  "storyBirthId": 0,
+                  "storySceneId": 0,
+                  "storyPosition": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                  }
+                },
+                "dataType": 0
+              },
+              "conditionId": 0,
+              "contentType": 2200,
+              "index": 1
+            }
+          ],
+          "isKeyPoint": 0
+        },
+        "nodeText": 0,
+        "id": 2,
+        "nodeType": 30,
+        "prevNodeIdList": 1,
+        "nextNodeIdList": 4,
+        "infoTaskId": 100034,
+        "infoNodeId": 2,
+        "showActWait": 0,
+        "actWaitEnd": 0
+      },
+      "nodeMember": 0
+    },
+    {
+      "__type_TaskBaseNodeData": {
+        "__type_TaskEndExportData": {
+          "isHasAfterTask": 0,
+          "isOpenPage": 1
+        },
+        "nodeText": 0,
+        "id": 4,
+        "nodeType": 50,
+        "prevNodeIdList": 2,
+        "infoTaskId": 0,
+        "infoNodeId": 0,
+        "showActWait": 0,
+        "actWaitEnd": 0
+      },
+      "nodeMember": 0
+    }
+  ],
+  "commonControllerData": {
+    "__type_TaskClearWorldController": {
+      "selectType": 0,
+      "worldMapId": 100,
+      "selectPosition": {
+        "x": -91.0759,
+        "y": 104.1331,
+        "z": 601.647
+      },
+      "selectNpcId": 0,
+      "radius": 120.0,
+      "field_530076": [
+        1,
+        2,
+        13,
+        50,
+        51,
+        101,
+        161,
+        162
+      ],
+      "isAllTask": 0,
+      "rangeType": 0,
+      "rangeSize": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    "taskId": 100034,
+    "nodeId": 2,
+    "field_530003": 2
+  }
+}

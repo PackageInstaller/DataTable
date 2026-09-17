@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1001,
+    "dropID": "600023",
+    "triggerProbability": 100,
+    "failAddProbability": 20,
+    "overtime": 100,
+    "randomStartStep": "",
+    "triggerParam": "1|30000",
+    "condition": "",
+    "filterRules": "1;0.000;0.000;0.000;0.000;0.000;0.000;1|10000#1;300071#1;2",
+    "positionList": "-3.000#0.000#0.000|3.000#0.000#0.000|0.000#0.000#0.000",
+    "stepMax": 2,
+    "jumpStep": 2
+  },
+  {
+    "id": 1002,
+    "dropID": "",
+    "triggerProbability": 50,
+    "failAddProbability": 0,
+    "overtime": 100,
+    "randomStartStep": "",
+    "triggerParam": "1|30000",
+    "condition": "",
+    "filterRules": "1;0.000;0.000;0.000;0.000;0.000;0.000;1|10000#3#2$1;0.000;0.000;0.000;0.000;0.000;0.000;1|10000#3#2",
+    "positionList": "",
+    "stepMax": 1,
+    "jumpStep": 0
+  },
+  {
+    "id": 1003,
+    "dropID": "",
+    "triggerProbability": 100,
+    "failAddProbability": 0,
+    "overtime": 100,
+    "randomStartStep": "",
+    "triggerParam": "1|30000",
+    "condition": "",
+    "filterRules": "1;0.000;0.000;0.000;0.000;0.000;0.000;1|10000#1;310012#1;2",
+    "positionList": "-3.000#0.000#0.000|3.000#0.000#0.000",
+    "stepMax": 1,
+    "jumpStep": 0
+  },
+  {
+    "id": 1004,
+    "dropID": "",
+    "triggerProbability": 100,
+    "failAddProbability": 0,
+    "overtime": 100,
+    "randomStartStep": "",
+    "triggerParam": "1|40000",
+    "condition": "",
+    "filterRules": "1;0.000;0.000;0.000;0.000;0.000;0.000;1|10000#1;310004#1;1$1;0.000;0.000;0.000;0.000;0.000;0.000;1|10000#1;310003#2$1;0.000;0.000;0.000;0.000;0.000;0.000;1|10000#1;310292#2",
+    "positionList": "0.000#0.000#0.000|0.000#0.000#10.000",
+    "stepMax": 1,
+    "jumpStep": 0
+  },
+  {
+    "id": 1005,
+    "dropID": "",
+    "triggerProbability": 100,
+    "failAddProbability": 0,
+    "overtime": 100,
+    "randomStartStep": "",
+    "triggerParam": "1|40000",
+    "condition": "",
+    "filterRules": "1;0.000;0.000;0.000;0.000;0.000;0.000;1|10000#1;310091#1;1$1;0.000;0.000;0.000;0.000;0.000;0.000;1|10000#4;11548#1;1",
+    "positionList": "",
+    "stepMax": 1,
+    "jumpStep": 0
+  }
+]

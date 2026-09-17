@@ -1,0 +1,232 @@
+{
+  "conditionDic": 2,
+  "taskId": 202014,
+  "mainTaskName": "",
+  "mainTaskDesc": "",
+  "endNodeId": 3,
+  "isNPCOperate": 0,
+  "openReqContent": {
+    "__type_TaskConditionBaseData": {
+      "__type_TaskCondCompleteTaskData": {
+        "taskId": 202013
+      },
+      "dataType": 0,
+      "mapData": {
+        "birthId": 0,
+        "sceneId": 0,
+        "triggerType": 0,
+        "isGuide": 0,
+        "targetId": 0,
+        "targetPos": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "isNeedShowRange": 0,
+        "showRange": 0.0,
+        "triggerRange": 0.0,
+        "inRangeShowGuide": 0,
+        "isNeedMerge": 0,
+        "mergeId": 0,
+        "isClientCreate": 0
+      },
+      "conditionInfoId": 0,
+      "unneedCompleted": 0,
+      "hideOptional": 0,
+      "useMultiData": 0
+    },
+    "conditionId": 2007,
+    "contentType": 14300,
+    "index": 0
+  },
+  "nodes": [
+    {
+      "__type_TaskBaseNodeData": {
+        "__type_TaskConditionNodeData": {
+          "conditionList": {
+            "__type_TaskConditionBaseData": {
+              "__type_TaskCondTimeTriggerData": {
+                "checkNameType": 2,
+                "startTime": 1,
+                "endTime": 23,
+                "isJumpDay": 1,
+                "jumpDay": 2,
+                "delayTime": 0
+              },
+              "dataType": 0,
+              "mapData": {
+                "birthId": 10101,
+                "sceneId": 101,
+                "triggerType": 0,
+                "isGuide": 0,
+                "targetId": 0,
+                "targetPos": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "isNeedShowRange": 0,
+                "showRange": 0.0,
+                "triggerRange": 0.0,
+                "inRangeShowGuide": 0,
+                "isNeedMerge": 0,
+                "mergeId": 0,
+                "isClientCreate": 0
+              },
+              "conditionInfoId": 20201401,
+              "unneedCompleted": 0,
+              "hideOptional": 0,
+              "useMultiData": 0
+            },
+            "conditionId": 1100,
+            "contentType": 15600,
+            "index": 0
+          },
+          "isKeyPoint": 0
+        },
+        "nodeText": 0,
+        "id": 1,
+        "nodeType": 30,
+        "prevNodeIdList": 2,
+        "nextNodeIdList": 5,
+        "infoTaskId": 202014,
+        "infoNodeId": 1,
+        "showActWait": 0,
+        "actWaitEnd": 0
+      },
+      "nodeMember": 0
+    },
+    {
+      "__type_TaskBaseNodeData": {
+        "nodeText": 0,
+        "id": 2,
+        "nodeType": 10,
+        "prevNodeIdList": 4,
+        "nextNodeIdList": 1,
+        "infoTaskId": 0,
+        "infoNodeId": 0,
+        "showActWait": 0,
+        "actWaitEnd": 0
+      },
+      "nodeMember": 0
+    },
+    {
+      "__type_TaskBaseNodeData": {
+        "__type_TaskEndExportData": {
+          "isHasAfterTask": 0,
+          "isOpenPage": 1
+        },
+        "nodeText": 0,
+        "id": 3,
+        "nodeType": 50,
+        "prevNodeIdList": 5,
+        "infoTaskId": 0,
+        "infoNodeId": 0,
+        "showActWait": 0,
+        "actWaitEnd": 0
+      },
+      "nodeMember": 0
+    },
+    {
+      "__type_TaskBaseNodeData": {
+        "__type_TaskConditionNodeData": {
+          "conditionList": {
+            "__type_TaskConditionBaseData": {
+              "__type_TaskCondNPCTriggerData": {
+                "npcId": 400131,
+                "checkNameType": 0,
+                "count": 1,
+                "isGuild": 0,
+                "rangeCheck": 1,
+                "rangeLength": 3,
+                "storyId": 0,
+                "storyTag": 18446744073709551615,
+                "hasTime": 0,
+                "startTime": 0,
+                "endTime": 0
+              },
+              "dataType": 0,
+              "mapData": {
+                "birthId": 10101,
+                "sceneId": 101,
+                "triggerType": 0,
+                "isGuide": 0,
+                "targetId": 400131,
+                "targetPos": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "isNeedShowRange": 0,
+                "showRange": 0.0,
+                "triggerRange": 0.0,
+                "inRangeShowGuide": 0,
+                "isNeedMerge": 0,
+                "mergeId": 0,
+                "isClientCreate": 0
+              },
+              "conditionInfoId": 20201402,
+              "unneedCompleted": 0,
+              "hideOptional": 0,
+              "useMultiData": 0
+            },
+            "conditionId": 1001,
+            "contentType": 14800,
+            "index": 0
+          },
+          "afterActionList": {
+            "dataType": {
+              "__type_TaskBlackDialogData": {
+                "fadeInTime": 0.0,
+                "fadeOutTime": 0.0,
+                "writerInterval": 0.05,
+                "isSkip": 1,
+                "isClick": 1,
+                "dialogData": [
+                  {
+                    "content": {
+                      "field_127360611927030436101928815575073771319569746333969788107866214323189077954334723203705132": -2.3552398410065818e+22,
+                      "field_3826123473672049828240277573063623495": 46
+                    },
+                    "speaker": "",
+                    "duration": 0.0,
+                    "readId": 0
+                  },
+                  {
+                    "content": "查看明信片图片，图片上奶奶和伊露涅在镜花洲",
+                    "speaker": "",
+                    "duration": 0.0,
+                    "readId": 0
+                  },
+                  {
+                    "content": "星临者：这不是索菲亚奶奶和伊露涅吗！ 奶奶这背挺得比薰风木还直。 等一下…蔓音花这是坐在奶奶肩上？竟然扛的动… 旅游对人的改变有这么大吗…？",
+                    "speaker": "",
+                    "duration": 0.0,
+                    "readId": 0
+                  }
+                ],
+                "dialogType": 0,
+                "isWhite": 0
+              },
+              "dataType": 0
+            },
+            "conditionId": 0,
+            "contentType": 2530,
+            "index": 0
+          },
+          "isKeyPoint": 0
+        },
+        "nodeText": 0,
+        "id": 5,
+        "nodeType": 30,
+        "prevNodeIdList": 1,
+        "nextNodeIdList": 3,
+        "infoTaskId": 202014,
+        "infoNodeId": 5,
+        "showActWait": 0,
+        "actWaitEnd": 0
+      },
+      "nodeMember": 0
+    }
+  ]
+}

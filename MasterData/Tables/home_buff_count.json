@@ -1,0 +1,213 @@
+[
+  {
+    "id": 10001,
+    "buffId": 2011,
+    "condition": "2021",
+    "desc": "{name}中,所有物品加工时间减少{value}。",
+    "type": 10,
+    "desc_id": "42953967928064"
+  },
+  {
+    "id": 10002,
+    "buffId": 2012,
+    "condition": "2021",
+    "desc": "42958262895360",
+    "type": 10
+  },
+  {
+    "id": 10003,
+    "buffId": 2013,
+    "condition": "2021",
+    "desc": "{name}中,{value}概率加工完成后返还原材料。",
+    "type": 10,
+    "desc_id": "42962557862656"
+  },
+  {
+    "id": 10004,
+    "buffId": 2014,
+    "condition": "2021",
+    "desc": "{name}中,生产有{value}概率产出翻倍。",
+    "type": 11,
+    "desc_id": "42966852829952"
+  },
+  {
+    "id": 10005,
+    "buffId": 2014,
+    "condition": "2021|2026",
+    "desc": "{name2021}中,{name2026}元素类型生产翻倍概率+{value}。",
+    "type": 12,
+    "desc_id": "42971147797248"
+  },
+  {
+    "id": 10006,
+    "buffId": 5007,
+    "condition": "2021",
+    "desc": "{name}中，所有生产配方消耗时间降低为{value}。",
+    "type": 10,
+    "desc_id": "42975442764544"
+  },
+  {
+    "id": 20001,
+    "buffId": 1011,
+    "condition": "1021",
+    "desc": "{name}类作物有{value}概率不消耗种子。",
+    "type": 20,
+    "desc_id": "85903640888064"
+  },
+  {
+    "id": 20002,
+    "buffId": 1012,
+    "condition": "1021",
+    "desc": "{name}类作物有{value}概率升级种子等级。",
+    "type": 20,
+    "desc_id": "85907935855360"
+  },
+  {
+    "id": 20003,
+    "buffId": 1013,
+    "condition": "1021",
+    "desc": "{name}类作物产出所需时间减少{value}。",
+    "type": 20,
+    "desc_id": "85912230822656"
+  },
+  {
+    "id": 20004,
+    "buffId": 1022,
+    "condition": "",
+    "desc": "田的储水上限增加{value}。",
+    "type": 21,
+    "desc_id": "85916525789952"
+  },
+  {
+    "id": 20005,
+    "buffId": 1031,
+    "condition": "",
+    "desc": "收获作物时，{value}概率获得双倍产物。",
+    "type": 22,
+    "desc_id": "85920820757248"
+  },
+  {
+    "id": 20006,
+    "buffId": 1036,
+    "condition": "1021",
+    "desc": "85925115724544",
+    "type": 22
+  },
+  {
+    "id": 20007,
+    "buffId": 1037,
+    "condition": "",
+    "desc": "85929410691840",
+    "type": 22
+  },
+  {
+    "id": 20008,
+    "buffId": 1038,
+    "condition": "",
+    "desc": "85933705659136",
+    "type": 22
+  },
+  {
+    "id": 30001,
+    "buffId": 3001,
+    "condition": "",
+    "desc": "牧场产出时间-{value}。",
+    "type": 30,
+    "desc_id": "128853313848064"
+  },
+  {
+    "id": 30002,
+    "buffId": 3002,
+    "condition": "",
+    "desc": "牧场获得双倍产物的概率+{value}。",
+    "type": 30,
+    "desc_id": "128857608815360"
+  },
+  {
+    "id": 30003,
+    "buffId": 5005,
+    "condition": "2025",
+    "desc": "牧场中{name}类型额外掉落概率+{value}。",
+    "type": 30,
+    "desc_id": "128861903782656"
+  },
+  {
+    "id": 40001,
+    "buffId": 2001,
+    "condition": "2011",
+    "desc": "{name}中,所有物品生产一轮的时间减少{value}。",
+    "type": 40,
+    "desc_id": "171802986808064"
+  },
+  {
+    "id": 40002,
+    "buffId": 2002,
+    "condition": "2011",
+    "desc": "{name}中,所有物品生产一轮的时间减少{value}。",
+    "type": 40,
+    "desc_id": "171807281775360"
+  },
+  {
+    "id": 40003,
+    "buffId": 2003,
+    "condition": "2011",
+    "desc": "171811576742656",
+    "type": 40
+  },
+  {
+    "id": 40004,
+    "buffId": 2004,
+    "condition": "2011",
+    "desc": "{name}中,所有物品在生产后，产量翻倍概率+{value}。",
+    "type": 41,
+    "desc_id": "171815871709952"
+  },
+  {
+    "id": 40005,
+    "buffId": 5003,
+    "condition": "2011",
+    "desc": "{name}中,特殊采集物翻倍概率+{value}。",
+    "type": 40,
+    "desc_id": "171820166677248"
+  },
+  {
+    "id": 40006,
+    "buffId": 2004,
+    "condition": "2011|2024",
+    "desc": "{name2011}中,{name2024}元素类型产量翻倍概率+{value}。",
+    "type": 42,
+    "desc_id": "171824461644544"
+  },
+  {
+    "id": 50001,
+    "buffId": 4001,
+    "condition": "2023",
+    "desc": "{name}属性蛋孵化时间减少-{value}秒。",
+    "type": 50,
+    "desc_id": "214752659768064"
+  },
+  {
+    "id": 50002,
+    "buffId": 4002,
+    "condition": "2023",
+    "desc": "{name}属性蛋孵化时间-{value}。",
+    "type": 50,
+    "desc_id": "214756954735360"
+  },
+  {
+    "id": 50003,
+    "buffId": 4003,
+    "condition": "2023",
+    "desc": "{name}属性蛋孵化出的奇波携带【Y品质因子】概率+{value}。",
+    "type": 50,
+    "desc_id": "214761249702656"
+  },
+  {
+    "id": 50004,
+    "buffId": 4004,
+    "condition": "2023",
+    "desc": "{name}属性蛋孵化出的奇波携带更多因子。",
+    "type": 50,
+    "desc_id": "214765544669952"
+  }
+]

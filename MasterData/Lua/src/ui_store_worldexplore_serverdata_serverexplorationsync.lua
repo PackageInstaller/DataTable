@@ -1,0 +1,17 @@
+local serverData = {}
+serverData.map_info = {}
+serverData.mission_info = {}
+local explorationMissionInfo = {}
+explorationMissionInfo.exploration_id = 0
+explorationMissionInfo.num = 0
+explorationMissionInfo.complete = false
+local explorationMapInfo = {}
+explorationMapInfo.map_id = 0
+explorationMapInfo.lv = 0
+explorationMapInfo.exp = 0
+explorationMapInfo.time = 0
+explorationMapInfo.rewards = {}
+local flyUnlockData = {}
+flyUnlockData.fly_icon = ""
+flyUnlockData.subtitle = ""
+flyUnlockData.title = ""

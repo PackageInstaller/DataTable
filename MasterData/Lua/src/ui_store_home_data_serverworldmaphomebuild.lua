@@ -1,0 +1,12 @@
+local worldMapHomeItem = {}
+worldMapHomeItem.guid = 1
+worldMapHomeItem.build_id = 2
+worldMapHomeItem.locate = 3
+worldMapHomeItem.status = 5
+worldMapHomeItem.start_time = 6
+worldMapHomeItem.product = 7
+worldMapHomeItem.canteen = 8
+worldMapHomeItem.station_pet_guid = 9
+worldMapHomeItem.hatch = 12
+worldMapHomeItem.specials = 13
+worldMapHomeItem.collect_build_data = 15

@@ -1,0 +1,525 @@
+{
+  "conditionDic": 1,
+  "taskId": 816012,
+  "mainTaskName": "",
+  "mainTaskDesc": "",
+  "endNodeId": 12,
+  "isNPCOperate": 0,
+  "openReqContent": [
+    {
+      "__type_TaskConditionBaseData": {
+        "__type_TaskCondLevelData": {
+          "level": 1
+        },
+        "dataType": 0,
+        "mapData": {
+          "birthId": 0,
+          "sceneId": 0,
+          "triggerType": 18446744073709551615,
+          "isGuide": 0,
+          "targetId": 0,
+          "isNeedShowRange": 0,
+          "showRange": 0.0,
+          "triggerRange": 0.0,
+          "inRangeShowGuide": 0,
+          "isNeedMerge": 0,
+          "mergeId": 0,
+          "isClientCreate": 0
+        },
+        "conditionInfoId": 0
+      },
+      "conditionId": 2004,
+      "contentType": 14700,
+      "index": 0
+    },
+    {
+      "__type_TaskConditionBaseData": {
+        "__type_TaskCondStoryOpenTaskData": {
+          "npcId": 600096,
+          "storyId": 802901,
+          "storyTag": 0,
+          "isNowCreate": 1,
+          "npcData": {
+            "__type_TaskNpcOverrideData": "",
+            "npcId": 100520002,
+            "posX": 18446744073709544775,
+            "posY": 11955,
+            "posZ": 18446744073709503731,
+            "isOverride": 0,
+            "sceneId": 100,
+            "createNpcId": 81601201,
+            "spawnerId": 70109,
+            "isFloor": 0,
+            "isNowDelete": 0,
+            "field_520412": 30,
+            "entityType": 200,
+            "rotX": 0,
+            "rotY": 15612,
+            "rotZ": 0,
+            "objType": 1,
+            "overrideBP": 0,
+            "overrideAI": 0,
+            "uniqueKey": 0,
+            "npcDeletType": 0
+          },
+          "isRangeCheck": 0,
+          "rangeLength": 0,
+          "hasTime": 0,
+          "startTime": 1,
+          "endTime": 21,
+          "isJumpDay": 0,
+          "jumpDay": 0
+        },
+        "dataType": 0,
+        "mapData": {
+          "birthId": 10005,
+          "sceneId": 100,
+          "triggerType": 1,
+          "isGuide": 0,
+          "targetId": 0,
+          "targetPos": {
+            "x": -68.414,
+            "y": 119.542,
+            "z": -478.858
+          },
+          "isNeedShowRange": 0,
+          "showRange": 0.0,
+          "triggerRange": 0.0,
+          "inRangeShowGuide": 0,
+          "isNeedMerge": 0,
+          "mergeId": 0,
+          "isClientCreate": 0
+        },
+        "conditionInfoId": 8160120
+      },
+      "conditionId": 2507,
+      "contentType": 15200,
+      "index": 0
+    }
+  ],
+  "nodes": [
+    {
+      "__type_TaskBaseNodeData": {
+        "nodeText": 0,
+        "id": 1,
+        "nodeType": 10,
+        "prevNodeIdList": [
+          15,
+          16
+        ],
+        "nextNodeIdList": 17,
+        "infoTaskId": 0,
+        "infoNodeId": 0
+      },
+      "nodeMember": 0
+    },
+    {
+      "__type_TaskBaseNodeData": {
+        "__type_TaskConditionNodeData": {
+          "conditionList": {
+            "__type_TaskConditionBaseData": {
+              "__type_TaskCondEnemiesGroupData": {
+                "enemiesDatas": {
+                  "__type_TaskEnemiesOverrideData": {
+                    "enemiesGroupId": 403,
+                    "isForcedBattle": 1,
+                    "battleLength": 20,
+                    "posAssetId": 810600121,
+                    "invisibleLength": 130
+                  },
+                  "npcId": 0,
+                  "posX": 18446744073709536720,
+                  "posY": 12057,
+                  "posZ": 18446744073709503848,
+                  "isOverride": 0,
+                  "sceneId": 100,
+                  "createNpcId": 81601205,
+                  "spawnerId": 40005,
+                  "isFloor": 0,
+                  "isNowDelete": 0,
+                  "field_520412": 0,
+                  "entityType": 0,
+                  "rotX": 0,
+                  "rotY": 0,
+                  "rotZ": 0,
+                  "objType": 0,
+                  "overrideBP": 0,
+                  "overrideAI": 0,
+                  "uniqueKey": 81601205,
+                  "npcDeletType": 0
+                },
+                "allEnter": 0,
+                "isAllForce": 0,
+                "findLength": 50,
+                "isOverrideFinde": 0
+              },
+              "dataType": 0,
+              "mapData": {
+                "birthId": 10005,
+                "sceneId": 100,
+                "triggerType": 0,
+                "isGuide": 0,
+                "targetId": 81601205,
+                "targetPos": {
+                  "x": -148.96,
+                  "y": 120.57,
+                  "z": -477.68
+                },
+                "isNeedShowRange": 0,
+                "showRange": 0.0,
+                "triggerRange": 0.0,
+                "inRangeShowGuide": 0,
+                "isNeedMerge": 0,
+                "mergeId": 0,
+                "isClientCreate": 1
+              },
+              "conditionInfoId": 8160122
+            },
+            "conditionId": 2520,
+            "contentType": 16000,
+            "index": 0
+          },
+          "isKeyPoint": 0
+        },
+        "nodeText": 81060012002,
+        "id": 7,
+        "nodeType": 30,
+        "prevNodeIdList": 17,
+        "nextNodeIdList": 10,
+        "infoTaskId": 816012,
+        "infoNodeId": 7
+      },
+      "nodeMember": 0
+    },
+    {
+      "__type_TaskBaseNodeData": {
+        "__type_TaskConditionNodeData": {
+          "conditionList": {
+            "__type_TaskConditionBaseData": {
+              "__type_TaskCondSubItemData": {
+                "npcId": 600096,
+                "field_15402": 450055,
+                "field_15403": 1,
+                "npcType": 2,
+                "createNpcData": {
+                  "__type_TaskNpcOverrideData": "",
+                  "npcId": 100520002,
+                  "posX": 18446744073709544775,
+                  "posY": 11955,
+                  "posZ": 18446744073709503731,
+                  "isOverride": 0,
+                  "sceneId": 100,
+                  "field_520407": 10,
+                  "createNpcId": 81601206,
+                  "spawnerId": 70109,
+                  "isFloor": 0,
+                  "isNowDelete": 0,
+                  "field_520412": 30,
+                  "entityType": 200,
+                  "rotX": 0,
+                  "rotY": 15612,
+                  "rotZ": 0,
+                  "objType": 1,
+                  "overrideBP": 0,
+                  "overrideAI": 0,
+                  "uniqueKey": 0,
+                  "npcDeletType": 0
+                }
+              },
+              "dataType": 0,
+              "mapData": {
+                "birthId": 10005,
+                "sceneId": 100,
+                "triggerType": 0,
+                "isGuide": 0,
+                "targetId": 81601206,
+                "targetPos": {
+                  "x": -68.414,
+                  "y": 119.542,
+                  "z": -478.858
+                },
+                "isNeedShowRange": 0,
+                "showRange": 0.0,
+                "triggerRange": 0.0,
+                "inRangeShowGuide": 0,
+                "isNeedMerge": 0,
+                "mergeId": 0,
+                "isClientCreate": 1
+              },
+              "conditionInfoId": 8160123
+            },
+            "conditionId": 2515,
+            "contentType": 15400,
+            "index": 0
+          },
+          "beforActionList": [
+            {
+              "dataType": {
+                "__type_TaskOpenStoryData": {
+                  "storyId": 802902,
+                  "field_2202": 0.0,
+                  "field_2203": 0
+                },
+                "dataType": 0
+              },
+              "conditionId": 0,
+              "contentType": 2200,
+              "index": 0
+            },
+            {
+              "dataType": {
+                "bagType": {
+                  "bagType": 0,
+                  "itemId": 450055,
+                  "itemCount": 1
+                },
+                "dataType": 0
+              },
+              "conditionId": 0,
+              "contentType": 1300,
+              "index": 1
+            }
+          ],
+          "isKeyPoint": 0
+        },
+        "nodeText": 81060012003,
+        "id": 10,
+        "nodeType": 30,
+        "prevNodeIdList": 7,
+        "nextNodeIdList": 12,
+        "infoTaskId": 816012,
+        "infoNodeId": 10
+      },
+      "nodeMember": 0
+    },
+    {
+      "__type_TaskBaseNodeData": {
+        "__type_TaskEndExportData": {
+          "isHasAfterTask": 0,
+          "isOpenPage": 1,
+          "beforActionList": {
+            "dataType": {
+              "__type_TaskOpenStoryData": {
+                "storyId": 802903,
+                "field_2202": 0.0,
+                "field_2203": 0
+              },
+              "dataType": 0
+            },
+            "conditionId": 0,
+            "contentType": 2200,
+            "index": 0
+          }
+        },
+        "nodeText": 0,
+        "id": 12,
+        "nodeType": 50,
+        "prevNodeIdList": 10,
+        "infoTaskId": 0,
+        "infoNodeId": 0
+      },
+      "nodeMember": 0
+    },
+    {
+      "__type_TaskBaseNodeData": {
+        "__type_TaskConditionNodeData": {
+          "conditionList": {
+            "__type_TaskConditionBaseData": {
+              "__type_TaskCondActiveNPCTriggerData": {
+                "createNpcId": 81601204,
+                "npcData": {
+                  "__type_TaskNpcOverrideData": "",
+                  "npcId": 100480088,
+                  "posX": 18446744073709536740,
+                  "posY": 12057,
+                  "posZ": 18446744073709503836,
+                  "isOverride": 0,
+                  "sceneId": 100,
+                  "field_520407": 17,
+                  "createNpcId": 81601204,
+                  "spawnerId": 40001,
+                  "isFloor": 0,
+                  "isNowDelete": 1,
+                  "field_520412": 0,
+                  "entityType": 211,
+                  "rotX": 0,
+                  "rotY": 0,
+                  "rotZ": 0,
+                  "objType": 3,
+                  "overrideBP": 0,
+                  "overrideAI": 0,
+                  "uniqueKey": 0,
+                  "npcDeletType": 0
+                },
+                "isNowCreate": 1,
+                "interactNpcData": 10,
+                "targetNpcData": 1
+              },
+              "dataType": 0,
+              "mapData": {
+                "birthId": 10066,
+                "sceneId": 100,
+                "triggerType": 0,
+                "isGuide": 0,
+                "targetId": 81601204,
+                "targetPos": {
+                  "x": -148.766,
+                  "y": 120.568,
+                  "z": -477.809
+                },
+                "isNeedShowRange": 0,
+                "showRange": 0.0,
+                "triggerRange": 0.0,
+                "inRangeShowGuide": 0,
+                "isNeedMerge": 0,
+                "mergeId": 0,
+                "isClientCreate": 1
+              },
+              "conditionInfoId": 8160121
+            },
+            "conditionId": 2519,
+            "contentType": 15950,
+            "index": 0
+          },
+          "beforActionList": [
+            {
+              "dataType": {
+                "__type_TaskOpenPageData": {
+                  "pageName": {
+                    "attrButeInfos": 97
+                  },
+                  "second": 0
+                },
+                "dataType": 0
+              },
+              "conditionId": 2508,
+              "contentType": 2100,
+              "index": 0
+            },
+            {
+              "dataType": {
+                "__type_TaskClearWorldData": "",
+                "dataType": 0
+              },
+              "conditionId": 2716,
+              "contentType": 2510,
+              "index": 1
+            },
+            {
+              "dataType": {
+                "__type_TaskCreatNPCExportData": {
+                  "checkNameType": 0,
+                  "isList": 1,
+                  "npcSceneId": 0
+                },
+                "dataType": 0
+              },
+              "conditionId": 0,
+              "contentType": 1400,
+              "index": 2
+            }
+          ],
+          "isKeyPoint": 0
+        },
+        "nodeText": 0,
+        "id": 17,
+        "nodeType": 30,
+        "prevNodeIdList": 1,
+        "nextNodeIdList": 7,
+        "infoTaskId": 816012,
+        "infoNodeId": 17
+      },
+      "nodeMember": 0
+    }
+  ],
+  "createNpcData": [
+    {
+      "__type_TaskNpcOverrideData": "",
+      "npcId": 100520035,
+      "posX": 18446744073709536924,
+      "posY": 12054,
+      "posZ": 18446744073709503646,
+      "isOverride": 0,
+      "sceneId": 100,
+      "field_520407": 17,
+      "createNpcId": 81601202,
+      "spawnerId": 111,
+      "isFloor": 0,
+      "isNowDelete": 1,
+      "field_520412": 0,
+      "entityType": 200,
+      "rotX": 0,
+      "rotY": 0,
+      "rotZ": 0,
+      "objType": 1,
+      "overrideBP": 0,
+      "overrideAI": 0,
+      "uniqueKey": 0,
+      "npcDeletType": 0
+    },
+    {
+      "__type_TaskNpcOverrideData": "",
+      "npcId": 100520036,
+      "posX": 18446744073709536880,
+      "posY": 12092,
+      "posZ": 18446744073709504058,
+      "isOverride": 0,
+      "sceneId": 100,
+      "field_520407": 17,
+      "createNpcId": 81601203,
+      "spawnerId": 111,
+      "isFloor": 0,
+      "isNowDelete": 1,
+      "field_520412": 0,
+      "entityType": 200,
+      "rotX": 0,
+      "rotY": 0,
+      "rotZ": 0,
+      "objType": 1,
+      "overrideBP": 0,
+      "overrideAI": 0,
+      "uniqueKey": 0,
+      "npcDeletType": 0
+    },
+    {
+      "__type_TaskNpcOverrideData": "",
+      "npcId": 100520037,
+      "posX": 18446744073709536634,
+      "posY": 12044,
+      "posZ": 18446744073709503689,
+      "isOverride": 0,
+      "sceneId": 100,
+      "field_520407": 17,
+      "createNpcId": 81601203,
+      "spawnerId": 111,
+      "isFloor": 0,
+      "isNowDelete": 1,
+      "field_520412": 0,
+      "entityType": 200,
+      "rotX": 0,
+      "rotY": 0,
+      "rotZ": 0,
+      "objType": 1,
+      "overrideBP": 0,
+      "overrideAI": 0,
+      "uniqueKey": 0,
+      "npcDeletType": 0
+    }
+  ],
+  "commonControllerData": {
+    "__type_TaskClearWorldController": {
+      "selectType": 0,
+      "worldMapId": 0,
+      "selectPosition": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "selectNpcId": 0,
+      "radius": 20.0
+    },
+    "taskId": 816012,
+    "nodeId": 17,
+    "field_530003": 17
+  }
+}

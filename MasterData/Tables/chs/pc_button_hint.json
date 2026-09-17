@@ -1,0 +1,426 @@
+[
+  {
+    "id": 4294967552,
+    "value": "布置 <actionkey>PagePlayerEditInput/HomePlayerBuilding</actionkey>"
+  },
+  {
+    "id": 8589934848,
+    "value": "改变朝向 <actionkey>GamepadUI/PagePlayerEditInput_RotateCCW</actionkey><actionkey>PagePlayerEditInput/HomePlayerRotate</actionkey>"
+  },
+  {
+    "id": 12884902144,
+    "value": "取消布置 <actionkey>UI/Cancel</actionkey>"
+  },
+  {
+    "id": 17179869440,
+    "value": "收入仓库 <actionkey>PagePlayerEditInput/HomeBuildingGarbage</actionkey>"
+  },
+  {
+    "id": 21474836736,
+    "value": "开始耕作 <actionkey>MainInput/MainSkill</actionkey>"
+  },
+  {
+    "id": 25769804032,
+    "value": "铲除 <actionkey>MainInput/MainUltimateSkill</actionkey>"
+  },
+  {
+    "id": 30064771328,
+    "value": "离开家园 <actionkey>MainInput/MainOpenHome</actionkey>"
+  },
+  {
+    "id": 34359738624,
+    "value": "耕作 <actionkey>PageHomeCropEditor/HomeEditorPlace</actionkey>"
+  },
+  {
+    "id": 38654705920,
+    "value": "复原 <actionkey>PageHomeCropEditor/HomeEditorReturn</actionkey>"
+  },
+  {
+    "id": 42949673216,
+    "value": "退出耕作 <actionkey>UI/Cancel</actionkey>"
+  },
+  {
+    "id": 47244640512,
+    "value": "召出奇波 <actionkey>MainInput/MainHideShowPet</actionkey>"
+  },
+  {
+    "id": 51539607808,
+    "value": "唤回奇波 <actionkey>MainInput/MainHideShowPet</actionkey>"
+  },
+  {
+    "id": 55834575104,
+    "value": "起飞 双击<actionkeydouble>MainInput/MainFlyUp</actionkeydouble>"
+  },
+  {
+    "id": 60129542400,
+    "value": "提升高度 <actionkey>MainInput/MainFlyUp</actionkey>"
+  },
+  {
+    "id": 64424509696,
+    "value": "降低高度 <actionkey>MainInput/MainFlyFall</actionkey>"
+  },
+  {
+    "id": 68719476992,
+    "value": "骑乘奇波 <actionkey>MainInput/MainCallMount</actionkey>"
+  },
+  {
+    "id": 73014444288,
+    "value": "退出骑乘 <actionkey>MainInput/MainCallMount</actionkey>"
+  },
+  {
+    "id": 77309411584,
+    "value": "开启骑乘轮盘 长按<actionkeyhold>MainInput/MainMountRoulette</actionkeyhold>"
+  },
+  {
+    "id": 81604378880,
+    "value": "星结奇波 <actionkey>MainInput/MainPetCatch</actionkey>"
+  },
+  {
+    "id": 85899346176,
+    "value": "社交轮盘 <actionkey>MainInput/MainSocialRoulette</actionkey>"
+  },
+  {
+    "id": 90194313472,
+    "value": "<color=#96F9FF>点击</color><actionkey>MainInput/MainPetSkill</actionkey>使用奇波技能进行解谜"
+  },
+  {
+    "id": 94489280768,
+    "value": "<color=#96F9FF>长按</color><actionkeyhold>MainInput/MainPetSkillRouletteHold</actionkeyhold>打开奇波轮盘可快捷使用更多奇波技能"
+  },
+  {
+    "id": 98784248064,
+    "value": "<color=#96F9FF>长按</color>种子可拖拽种子，<actionkey>PageBag/PageBagShift</actionkey>+<actionkey>UI/Click</actionkey> 取一半种子"
+  },
+  {
+    "id": 107374182656,
+    "value": "<color=#96F9FF>长按</color>料理可拖拽加入或取出零食袋，<actionkey>PageBag/PageBagShift</actionkey>+<actionkey>UI/Click</actionkey> 取一半料理"
+  },
+  {
+    "id": 115964117248,
+    "value": "召唤 <actionkey>KiBoSummon/ConfirmKiBo</actionkey>"
+  },
+  {
+    "id": 120259084544,
+    "value": "取消选择 <actionkey>KiBoSummon/CancelKiBo</actionkey>"
+  },
+  {
+    "id": 124554051840,
+    "value": "技能释放 <actionkey>KiBoDuelSkill/ConfirmKiBoSkill</actionkey>"
+  },
+  {
+    "id": 128849019136,
+    "value": "取消技能释放 <actionkey>KiBoDuelSkill/CancelKiBoSkill</actionkey>"
+  },
+  {
+    "id": 133143986432,
+    "value": "星结 <actionkey>RealTimePetCatch/MainKiboCatchShoot</actionkey>"
+  },
+  {
+    "id": 137438953728,
+    "value": "快速切换 <actionkey>PageBattlePetCath/MainPetCatchLeft</actionkey>/<actionkey>PageBattlePetCath/MainPetCatchRight</actionkey>"
+  },
+  {
+    "id": 141733921024,
+    "value": "退出星结模式 <actionkey>UI/Cancel</actionkey>"
+  },
+  {
+    "id": 146028888320,
+    "value": "<color=#96F9FF>长按</color>奇波可拖拽改变位置"
+  },
+  {
+    "id": 150323855616,
+    "value": "<color=#96F9FF>长按</color>角色/奇波可拖动进行编队"
+  },
+  {
+    "id": 154618822912,
+    "value": "离开宿舍 <actionkey>MainInput/MainOpenHome</actionkey>"
+  },
+  {
+    "id": 158913790208,
+    "value": "切换透镜 长按<actionkey>PageBattlePetCath/MainPetCatchUseBuffItem4</actionkey>"
+  },
+  {
+    "id": 163208757504,
+    "value": "退出星巢 <actionkey>UI/Cancel</actionkey>"
+  },
+  {
+    "id": 167503724800,
+    "value": "观战模式中，点击<actionkey>UI/Cancel</actionkey>退出可结算奖励"
+  },
+  {
+    "id": 171798692096,
+    "value": "观战模式中，点击退出可结算奖励"
+  },
+  {
+    "id": 176093659392,
+    "value": "显示土壤效果 <actionkey>PageHomeCropEditor/HomeEditorFarmlandEffectTip</actionkey>"
+  },
+  {
+    "id": 180388626688,
+    "value": "关闭土壤效果 <actionkey>PageHomeCropEditor/HomeEditorFarmlandEffectTip</actionkey>"
+  },
+  {
+    "id": 193273528576,
+    "value": "家园中枢 <actionkey>MainInput/PageHomeCenter</actionkey>"
+  },
+  {
+    "id": 197568495872,
+    "value": "<color=#96F9FF>长按</color><actionkey>PageHomeExchangeSell/PageHomeExchangeSellShift</actionkey>+<actionkey>UI/Click</actionkey> 取一半，<color=#96F9FF>长按</color><actionkey>PageHomeExchangeSell/PageHomeExchangeSellCtrl</actionkey>+<actionkey>UI/Click</actionkey> 取全部"
+  },
+  {
+    "id": 201863463168,
+    "value": "离开家园 长按<actionkeyhold>GamepadUI/MainInput_LeaveHome</actionkeyhold>"
+  },
+  {
+    "id": 206158430464,
+    "value": "<color=#96F9FF>点击</color><actionkey>MainInput/MainPetSkillRouletteHold</actionkey>打开奇波轮盘可快捷使用更多奇波技能"
+  },
+  {
+    "id": 863288426752,
+    "value": "切换星结卡组<actionkey>D-Pad/UpDown</actionkey>"
+  },
+  {
+    "id": 867583394048,
+    "value": "切换星结卡 <actionkey>D-Pad/LeftRight</actionkey>"
+  },
+  {
+    "id": 871878361344,
+    "value": "退出星结模式 长按<actionkeyhold>GamepadUI/PageBattlePetCatch_LongPressQuit</actionkeyhold>"
+  },
+  {
+    "id": 876173328640,
+    "value": "地图<actionkey>MainInput/MainOpenMap</actionkey>"
+  },
+  {
+    "id": 880468295936,
+    "value": "快捷轮盘<actionkey>GamepadUI/MainInput_ControllerQuickRoulette</actionkey>"
+  },
+  {
+    "id": 884763263232,
+    "value": "普通攻击<actionkey>MainInput/MainAttack</actionkey>"
+  },
+  {
+    "id": 889058230528,
+    "value": "重攻击 长按<actionkeyhold>MainInput/MainAttack</actionkeyhold>"
+  },
+  {
+    "id": 893353197824,
+    "value": "旋转镜头<actionkey>KiBoDuel/ArenaRotateCamera</actionkey>"
+  },
+  {
+    "id": 897648165120,
+    "value": "推拉镜头<actionkey>KiBoDuel/MainMouseScroll</actionkey>"
+  },
+  {
+    "id": 4775876416220709214,
+    "value": ""
+  },
+  {
+    "id": 4756645631466930176,
+    "value": ""
+  },
+  {
+    "id": 1080863910770245632,
+    "value": ""
+  },
+  {
+    "id": 3991143869281478388,
+    "value": ""
+  },
+  {
+    "id": 7220222801460224568,
+    "value": ""
+  },
+  {
+    "id": 3617290331612144945,
+    "value": ""
+  },
+  {
+    "id": -7573359030672227818,
+    "value": ""
+  },
+  {
+    "id": 1599963641319851286,
+    "value": ""
+  },
+  {
+    "id": 1613530024192208489,
+    "value": ""
+  },
+  {
+    "id": 1871245645173253493,
+    "value": ""
+  },
+  {
+    "id": 1008806349299056640,
+    "value": ""
+  },
+  {
+    "id": -6836182758499287033,
+    "value": ""
+  },
+  {
+    "id": 1008806349299122176,
+    "value": ""
+  },
+  {
+    "id": -6835901283640016889,
+    "value": ""
+  },
+  {
+    "id": 72057626806059008,
+    "value": ""
+  },
+  {
+    "id": -6835619809183399929,
+    "value": ""
+  },
+  {
+    "id": 3746994922740449280,
+    "value": ""
+  },
+  {
+    "id": -6835338334424793081,
+    "value": ""
+  },
+  {
+    "id": 3242591764475019264,
+    "value": ""
+  },
+  {
+    "id": -6835338333569155065,
+    "value": ""
+  },
+  {
+    "id": 1008806349299318784,
+    "value": ""
+  },
+  {
+    "id": -6835056858592444409,
+    "value": ""
+  },
+  {
+    "id": 1008806349299384320,
+    "value": ""
+  },
+  {
+    "id": -6834775383615733753,
+    "value": ""
+  },
+  {
+    "id": 1008806349299449856,
+    "value": ""
+  },
+  {
+    "id": -6834493908639023097,
+    "value": ""
+  },
+  {
+    "id": 1008806349300301824,
+    "value": ""
+  },
+  {
+    "id": -6830834733941784569,
+    "value": ""
+  },
+  {
+    "id": 1008806349300367360,
+    "value": ""
+  },
+  {
+    "id": -6830553258965073913,
+    "value": ""
+  },
+  {
+    "id": 1008806349300432896,
+    "value": ""
+  },
+  {
+    "id": -6830271783988363257,
+    "value": ""
+  },
+  {
+    "id": 1008806349300498432,
+    "value": ""
+  },
+  {
+    "id": -6829990309129093113,
+    "value": ""
+  },
+  {
+    "id": 72057626807435264,
+    "value": ""
+  },
+  {
+    "id": -6829708834672476153,
+    "value": ""
+  },
+  {
+    "id": 3746994922741825536,
+    "value": ""
+  },
+  {
+    "id": -6829427359913869305,
+    "value": ""
+  },
+  {
+    "id": 3242591764476395520,
+    "value": ""
+  },
+  {
+    "id": -6829427359058231289,
+    "value": ""
+  },
+  {
+    "id": 1008806349300695040,
+    "value": ""
+  },
+  {
+    "id": -6829145884081520633,
+    "value": ""
+  },
+  {
+    "id": 1008806349301284864,
+    "value": ""
+  },
+  {
+    "id": -6826612609408565241,
+    "value": ""
+  },
+  {
+    "id": 72057626808221696,
+    "value": ""
+  },
+  {
+    "id": -6826049659975237625,
+    "value": ""
+  },
+  {
+    "id": 3746994922742677504,
+    "value": ""
+  },
+  {
+    "id": -6825768185216630777,
+    "value": ""
+  },
+  {
+    "id": 3242591764477247488,
+    "value": ""
+  },
+  {
+    "id": -6825768184360992761,
+    "value": ""
+  },
+  {
+    "id": 1008806349301547008,
+    "value": ""
+  },
+  {
+    "id": -6825486709501722617,
+    "value": ""
+  },
+  {
+    "id": 72057626808483840,
+    "value": ""
+  }
+]

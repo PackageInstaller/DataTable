@@ -1,0 +1,56 @@
+
+æ
+
+
+Shop.protocsCommonMsg.protoExOptions.proto"Å
+ShopItem
+slot_id (RslotId
+goods_id (RgoodsId$
+shop_store_num (RshopStoreNum
+	buy_times (RbuyTimes
+	dead_time (RdeadTime'
+unlock_progress (RunlockProgress
+
+begin_time (R	beginTime
+end_time (RendTime"ä
+ShopInfo
+shop_id (RshopId+
+
+shop_items (2.cs.ShopItemR	shopItems
+
+begin_time (R	beginTime
+end_time (RendTime"(
+CSShopInfoReq
+shop_id (RshopId"T
+SCShopInfoSync
+shop_id (RshopId)
+	shop_info (2.cs.ShopInfoRshopInfo"W
+ShopBuyItem
+slot_id (RslotId
+times (Rtimes
+goods_id (RgoodsId"d
+CSShopBuyItems
+shop_id (RshopId%
+items (2.cs.ShopBuyItemRitems
+sign (Rsign"P
+SCShopBuyItems
+shop_id (RshopId%
+rewards (2.cs.RewardsRrewards"1
+CSListShopItemsArray
+shop_ids (RshopIds":
+SCListShopItemsArray"
+infos (2.cs.ShopInfoRinfos"R
+CSBuyShopItem
+slot_id (RslotId
+times (Rtimes
+sign (Rsign"X
+SCBuyShopItem 
+info (2.cs.ShopItemRinfo%
+rewards (2.cs.RewardsRrewards"`
+CSShopGoodsTipReq
+shop_id (RshopId
+slot_id (RslotId
+goods_id (RgoodsId"F
+SCShopGoodsTipSync
+tipInfos (RtipInfos
+isAll (RisAllB!ZGmServer/bridge/csproto;csproto

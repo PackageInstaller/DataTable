@@ -1,0 +1,373 @@
+[
+  {
+    "id": 1,
+    "text": "布置 <actionkey>PagePlayerEditInput/HomePlayerBuilding</actionkey>",
+    "type": 1,
+    "order": 1,
+    "text_id": "4294967552"
+  },
+  {
+    "id": 2,
+    "text": "改变朝向 <actionkey>GamepadUI/PagePlayerEditInput_RotateCCW</actionkey><actionkey>PagePlayerEditInput/HomePlayerRotate</actionkey>",
+    "type": 1,
+    "order": 2,
+    "text_id": "8589934848"
+  },
+  {
+    "id": 3,
+    "text": "取消布置 <actionkey>UI/Cancel</actionkey>",
+    "type": 1,
+    "order": 4,
+    "text_id": "12884902144"
+  },
+  {
+    "id": 4,
+    "text": "收入仓库 <actionkey>PagePlayerEditInput/HomeBuildingGarbage</actionkey>",
+    "type": 1,
+    "order": 3,
+    "text_id": "17179869440"
+  },
+  {
+    "id": 5,
+    "text": "开始耕作 <actionkey>MainInput/MainSkill</actionkey>",
+    "type": 1,
+    "order": 5,
+    "text_id": "21474836736"
+  },
+  {
+    "id": 6,
+    "text": "铲除 <actionkey>MainInput/MainUltimateSkill</actionkey>",
+    "type": 1,
+    "order": 6,
+    "text_id": "25769804032"
+  },
+  {
+    "id": 7,
+    "text": "离开家园 <actionkey>MainInput/MainOpenHome</actionkey>",
+    "type": 1,
+    "order": 99,
+    "text_id": "30064771328"
+  },
+  {
+    "id": 8,
+    "text": "耕作 <actionkey>PageHomeCropEditor/HomeEditorPlace</actionkey>",
+    "type": 1,
+    "order": 8,
+    "text_id": "34359738624"
+  },
+  {
+    "id": 9,
+    "text": "复原 <actionkey>PageHomeCropEditor/HomeEditorReturn</actionkey>",
+    "type": 1,
+    "order": 9,
+    "text_id": "38654705920"
+  },
+  {
+    "id": 10,
+    "text": "退出耕作 <actionkey>UI/Cancel</actionkey>",
+    "type": 1,
+    "order": 96,
+    "text_id": "42949673216"
+  },
+  {
+    "id": 11,
+    "text": "召出奇波 <actionkey>MainInput/MainHideShowPet</actionkey>",
+    "type": 1,
+    "order": 98,
+    "text_id": "47244640512"
+  },
+  {
+    "id": 12,
+    "text": "唤回奇波 <actionkey>MainInput/MainHideShowPet</actionkey>",
+    "type": 1,
+    "order": 97,
+    "text_id": "51539607808"
+  },
+  {
+    "id": 13,
+    "text": "起飞 双击<actionkeydouble>MainInput/MainFlyUp</actionkeydouble>",
+    "type": 1,
+    "order": 13,
+    "text_id": "55834575104"
+  },
+  {
+    "id": 14,
+    "text": "提升高度 <actionkey>MainInput/MainFlyUp</actionkey>",
+    "type": 1,
+    "order": 14,
+    "text_id": "60129542400"
+  },
+  {
+    "id": 15,
+    "text": "降低高度 <actionkey>MainInput/MainFlyFall</actionkey>",
+    "type": 1,
+    "order": 15,
+    "text_id": "64424509696"
+  },
+  {
+    "id": 16,
+    "text": "骑乘奇波 <actionkey>MainInput/MainCallMount</actionkey>",
+    "type": 1,
+    "order": 16,
+    "text_id": "68719476992"
+  },
+  {
+    "id": 17,
+    "text": "退出骑乘 <actionkey>MainInput/MainCallMount</actionkey>",
+    "type": 1,
+    "order": 17,
+    "text_id": "73014444288"
+  },
+  {
+    "id": 18,
+    "text": "开启骑乘轮盘 长按<actionkeyhold>MainInput/MainMountRoulette</actionkeyhold>",
+    "type": 1,
+    "order": 18,
+    "text_id": "77309411584"
+  },
+  {
+    "id": 19,
+    "text": "星结奇波 <actionkey>MainInput/MainPetCatch</actionkey>",
+    "type": 1,
+    "order": 19,
+    "text_id": "81604378880"
+  },
+  {
+    "id": 20,
+    "text": "社交轮盘 <actionkey>MainInput/MainSocialRoulette</actionkey>",
+    "type": 1,
+    "order": 20,
+    "text_id": "85899346176"
+  },
+  {
+    "id": 21,
+    "text": "<color=#96F9FF>点击</color><actionkey>MainInput/MainPetSkill</actionkey>使用奇波技能进行解谜",
+    "type": 2,
+    "order": 100,
+    "text_id": "90194313472"
+  },
+  {
+    "id": 22,
+    "text": "<color=#96F9FF>长按</color><actionkeyhold>MainInput/MainPetSkillRouletteHold</actionkeyhold>打开奇波轮盘可快捷使用更多奇波技能",
+    "type": 2,
+    "order": 101,
+    "text_id": "94489280768"
+  },
+  {
+    "id": 23,
+    "text": "<color=#96F9FF>长按</color>种子可拖拽种子，<actionkey>PageBag/PageBagShift</actionkey>+<actionkey>UI/Click</actionkey> 取一半种子",
+    "type": 0,
+    "order": 100,
+    "text_id": "98784248064"
+  },
+  {
+    "id": 25,
+    "text": "<color=#96F9FF>长按</color>料理可拖拽加入或取出零食袋，<actionkey>PageBag/PageBagShift</actionkey>+<actionkey>UI/Click</actionkey> 取一半料理",
+    "type": 0,
+    "order": 100,
+    "text_id": "107374182656"
+  },
+  {
+    "id": 27,
+    "text": "召唤 <actionkey>KiBoSummon/ConfirmKiBo</actionkey>",
+    "type": 1,
+    "order": 27,
+    "text_id": "115964117248"
+  },
+  {
+    "id": 28,
+    "text": "取消选择 <actionkey>KiBoSummon/CancelKiBo</actionkey>",
+    "type": 1,
+    "order": 28,
+    "text_id": "120259084544"
+  },
+  {
+    "id": 29,
+    "text": "技能释放 <actionkey>KiBoDuelSkill/ConfirmKiBoSkill</actionkey>",
+    "type": 1,
+    "order": 29,
+    "text_id": "124554051840"
+  },
+  {
+    "id": 30,
+    "text": "取消技能释放 <actionkey>KiBoDuelSkill/CancelKiBoSkill</actionkey>",
+    "type": 1,
+    "order": 30,
+    "text_id": "128849019136"
+  },
+  {
+    "id": 31,
+    "text": "星结 <actionkey>RealTimePetCatch/MainKiboCatchShoot</actionkey>",
+    "type": 1,
+    "order": 31,
+    "text_id": "133143986432"
+  },
+  {
+    "id": 32,
+    "text": "快速切换 <actionkey>PageBattlePetCath/MainPetCatchLeft</actionkey>/<actionkey>PageBattlePetCath/MainPetCatchRight</actionkey>",
+    "type": 1,
+    "order": 32,
+    "text_id": "137438953728"
+  },
+  {
+    "id": 33,
+    "text": "退出星结模式 <actionkey>UI/Cancel</actionkey>",
+    "type": 1,
+    "order": 33,
+    "text_id": "141733921024"
+  },
+  {
+    "id": 34,
+    "text": "<color=#96F9FF>长按</color>奇波可拖拽改变位置",
+    "type": 0,
+    "order": 100,
+    "text_id": "146028888320"
+  },
+  {
+    "id": 35,
+    "text": "<color=#96F9FF>长按</color>角色/奇波可拖动进行编队",
+    "type": 0,
+    "order": 100,
+    "text_id": "150323855616"
+  },
+  {
+    "id": 36,
+    "text": "离开宿舍 <actionkey>MainInput/MainOpenHome</actionkey>",
+    "type": 1,
+    "order": 99,
+    "text_id": "154618822912"
+  },
+  {
+    "id": 37,
+    "text": "切换透镜 长按<actionkey>PageBattlePetCath/MainPetCatchUseBuffItem4</actionkey>",
+    "type": 1,
+    "order": 100,
+    "text_id": "158913790208"
+  },
+  {
+    "id": 38,
+    "text": "退出星巢 <actionkey>UI/Cancel</actionkey>",
+    "type": 1,
+    "order": 96,
+    "text_id": "163208757504"
+  },
+  {
+    "id": 39,
+    "text": "观战模式中，点击<actionkey>UI/Cancel</actionkey>退出可结算奖励",
+    "type": 2,
+    "order": 100,
+    "text_id": "167503724800"
+  },
+  {
+    "id": 40,
+    "text": "观战模式中，点击退出可结算奖励",
+    "type": 2,
+    "order": 100,
+    "text_id": "171798692096"
+  },
+  {
+    "id": 41,
+    "text": "显示土壤效果 <actionkey>PageHomeCropEditor/HomeEditorFarmlandEffectTip</actionkey>",
+    "type": 1,
+    "order": 4,
+    "text_id": "176093659392"
+  },
+  {
+    "id": 42,
+    "text": "关闭土壤效果 <actionkey>PageHomeCropEditor/HomeEditorFarmlandEffectTip</actionkey>",
+    "type": 1,
+    "order": 4,
+    "text_id": "180388626688"
+  },
+  {
+    "id": 45,
+    "text": "家园中枢 <actionkey>MainInput/PageHomeCenter</actionkey>",
+    "type": 1,
+    "order": 3,
+    "text_id": "193273528576"
+  },
+  {
+    "id": 46,
+    "text": "<color=#96F9FF>长按</color><actionkey>PageHomeExchangeSell/PageHomeExchangeSellShift</actionkey>+<actionkey>UI/Click</actionkey> 取一半，<color=#96F9FF>长按</color><actionkey>PageHomeExchangeSell/PageHomeExchangeSellCtrl</actionkey>+<actionkey>UI/Click</actionkey> 取全部",
+    "type": 0,
+    "order": 100,
+    "text_id": "197568495872"
+  },
+  {
+    "id": 47,
+    "text": "离开家园 长按<actionkeyhold>GamepadUI/MainInput_LeaveHome</actionkeyhold>",
+    "type": 1,
+    "order": 99,
+    "text_id": "201863463168"
+  },
+  {
+    "id": 48,
+    "text": "<color=#96F9FF>点击</color><actionkey>MainInput/MainPetSkillRouletteHold</actionkey>打开奇波轮盘可快捷使用更多奇波技能",
+    "type": 2,
+    "order": 101,
+    "text_id": "206158430464"
+  },
+  {
+    "id": 201,
+    "text": "切换星结卡组<actionkey>D-Pad/UpDown</actionkey>",
+    "type": 1,
+    "order": 30,
+    "text_id": "863288426752"
+  },
+  {
+    "id": 202,
+    "text": "切换星结卡 <actionkey>D-Pad/LeftRight</actionkey>",
+    "type": 1,
+    "order": 31,
+    "text_id": "867583394048"
+  },
+  {
+    "id": 203,
+    "text": "退出星结模式 长按<actionkeyhold>GamepadUI/PageBattlePetCatch_LongPressQuit</actionkeyhold>",
+    "type": 1,
+    "order": 33,
+    "text_id": "871878361344"
+  },
+  {
+    "id": 204,
+    "text": "地图<actionkey>MainInput/MainOpenMap</actionkey>",
+    "type": 1,
+    "order": 110,
+    "text_id": "876173328640"
+  },
+  {
+    "id": 205,
+    "text": "快捷轮盘<actionkey>GamepadUI/MainInput_ControllerQuickRoulette</actionkey>",
+    "type": 1,
+    "order": 1,
+    "text_id": "880468295936"
+  },
+  {
+    "id": 206,
+    "text": "普通攻击<actionkey>MainInput/MainAttack</actionkey>",
+    "type": 1,
+    "order": 105,
+    "text_id": "884763263232"
+  },
+  {
+    "id": 207,
+    "text": "重攻击 长按<actionkeyhold>MainInput/MainAttack</actionkeyhold>",
+    "type": 1,
+    "order": 106,
+    "text_id": "889058230528"
+  },
+  {
+    "id": 208,
+    "text": "旋转镜头<actionkey>KiBoDuel/ArenaRotateCamera</actionkey>",
+    "type": 1,
+    "order": 34,
+    "text_id": "893353197824"
+  },
+  {
+    "id": 209,
+    "text": "推拉镜头<actionkey>KiBoDuel/MainMouseScroll</actionkey>",
+    "type": 1,
+    "order": 35,
+    "text_id": "897648165120"
+  }
+]

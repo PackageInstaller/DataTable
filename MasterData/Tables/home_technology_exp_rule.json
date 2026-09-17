@@ -1,0 +1,1418 @@
+[
+  {
+    "id": 1,
+    "rule": 1,
+    "lvmin": 1,
+    "lvmax": 50,
+    "value": 4,
+    "_note": "经验1阶段"
+  },
+  {
+    "id": 2,
+    "rule": 1,
+    "lvmin": 51,
+    "lvmax": 100,
+    "value": 3,
+    "_note": "经验2阶段"
+  },
+  {
+    "id": 3,
+    "rule": 1,
+    "lvmin": 101,
+    "lvmax": 150,
+    "value": 2,
+    "_note": "经验3阶段"
+  },
+  {
+    "id": 4,
+    "rule": 1,
+    "lvmin": 150,
+    "lvmax": 170,
+    "value": 1,
+    "_note": "经验4阶段"
+  },
+  {
+    "id": 5,
+    "rule": 10001,
+    "lvmin": 1,
+    "lvmax": 100,
+    "value": 8,
+    "_note": "匠人加工-品质1"
+  },
+  {
+    "id": 6,
+    "rule": 10001,
+    "lvmin": 101,
+    "lvmax": 200,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 7,
+    "rule": 10001,
+    "lvmin": 201,
+    "lvmax": 300,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 8,
+    "rule": 10001,
+    "lvmin": 301,
+    "lvmax": 420,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 9,
+    "rule": 10002,
+    "lvmin": 1,
+    "lvmax": 100,
+    "value": 24,
+    "_note": "匠人加工-品质2"
+  },
+  {
+    "id": 10,
+    "rule": 10002,
+    "lvmin": 101,
+    "lvmax": 200,
+    "value": 16,
+    "_note": ""
+  },
+  {
+    "id": 11,
+    "rule": 10002,
+    "lvmin": 201,
+    "lvmax": 300,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 12,
+    "rule": 10002,
+    "lvmin": 301,
+    "lvmax": 420,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 13,
+    "rule": 10003,
+    "lvmin": 1,
+    "lvmax": 100,
+    "value": 32,
+    "_note": "匠人加工-品质3"
+  },
+  {
+    "id": 14,
+    "rule": 10003,
+    "lvmin": 101,
+    "lvmax": 200,
+    "value": 32,
+    "_note": ""
+  },
+  {
+    "id": 15,
+    "rule": 10003,
+    "lvmin": 201,
+    "lvmax": 300,
+    "value": 32,
+    "_note": ""
+  },
+  {
+    "id": 16,
+    "rule": 10003,
+    "lvmin": 301,
+    "lvmax": 420,
+    "value": 24,
+    "_note": ""
+  },
+  {
+    "id": 17,
+    "rule": 10004,
+    "lvmin": 1,
+    "lvmax": 100,
+    "value": 40,
+    "_note": "匠人加工-品质4"
+  },
+  {
+    "id": 18,
+    "rule": 10004,
+    "lvmin": 101,
+    "lvmax": 200,
+    "value": 40,
+    "_note": ""
+  },
+  {
+    "id": 19,
+    "rule": 10004,
+    "lvmin": 201,
+    "lvmax": 300,
+    "value": 40,
+    "_note": ""
+  },
+  {
+    "id": 20,
+    "rule": 10004,
+    "lvmin": 301,
+    "lvmax": 420,
+    "value": 32,
+    "_note": ""
+  },
+  {
+    "id": 21,
+    "rule": 10005,
+    "lvmin": 1,
+    "lvmax": 100,
+    "value": 48,
+    "_note": "匠人加工-品质5"
+  },
+  {
+    "id": 22,
+    "rule": 10005,
+    "lvmin": 101,
+    "lvmax": 200,
+    "value": 48,
+    "_note": ""
+  },
+  {
+    "id": 23,
+    "rule": 10005,
+    "lvmin": 201,
+    "lvmax": 300,
+    "value": 48,
+    "_note": ""
+  },
+  {
+    "id": 24,
+    "rule": 10005,
+    "lvmin": 301,
+    "lvmax": 420,
+    "value": 40,
+    "_note": ""
+  },
+  {
+    "id": 25,
+    "rule": 11001,
+    "lvmin": 1,
+    "lvmax": 100,
+    "value": 1,
+    "_note": "匠人制造-品质1"
+  },
+  {
+    "id": 26,
+    "rule": 11001,
+    "lvmin": 101,
+    "lvmax": 200,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 27,
+    "rule": 11001,
+    "lvmin": 201,
+    "lvmax": 300,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 28,
+    "rule": 11001,
+    "lvmin": 301,
+    "lvmax": 420,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 29,
+    "rule": 11002,
+    "lvmin": 1,
+    "lvmax": 100,
+    "value": 3,
+    "_note": "匠人制造-品质2"
+  },
+  {
+    "id": 30,
+    "rule": 11002,
+    "lvmin": 101,
+    "lvmax": 200,
+    "value": 2,
+    "_note": ""
+  },
+  {
+    "id": 31,
+    "rule": 11002,
+    "lvmin": 201,
+    "lvmax": 300,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 32,
+    "rule": 11002,
+    "lvmin": 301,
+    "lvmax": 420,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 33,
+    "rule": 11003,
+    "lvmin": 1,
+    "lvmax": 100,
+    "value": 4,
+    "_note": "匠人制造-品质3"
+  },
+  {
+    "id": 34,
+    "rule": 11003,
+    "lvmin": 101,
+    "lvmax": 200,
+    "value": 4,
+    "_note": ""
+  },
+  {
+    "id": 35,
+    "rule": 11003,
+    "lvmin": 201,
+    "lvmax": 300,
+    "value": 4,
+    "_note": ""
+  },
+  {
+    "id": 36,
+    "rule": 11003,
+    "lvmin": 301,
+    "lvmax": 420,
+    "value": 3,
+    "_note": ""
+  },
+  {
+    "id": 37,
+    "rule": 11004,
+    "lvmin": 1,
+    "lvmax": 100,
+    "value": 5,
+    "_note": "匠人制造-品质4"
+  },
+  {
+    "id": 38,
+    "rule": 11004,
+    "lvmin": 101,
+    "lvmax": 200,
+    "value": 5,
+    "_note": ""
+  },
+  {
+    "id": 39,
+    "rule": 11004,
+    "lvmin": 201,
+    "lvmax": 300,
+    "value": 5,
+    "_note": ""
+  },
+  {
+    "id": 40,
+    "rule": 11004,
+    "lvmin": 301,
+    "lvmax": 420,
+    "value": 4,
+    "_note": ""
+  },
+  {
+    "id": 41,
+    "rule": 11005,
+    "lvmin": 1,
+    "lvmax": 100,
+    "value": 6,
+    "_note": "匠人制造-品质5"
+  },
+  {
+    "id": 42,
+    "rule": 11005,
+    "lvmin": 101,
+    "lvmax": 200,
+    "value": 6,
+    "_note": ""
+  },
+  {
+    "id": 43,
+    "rule": 11005,
+    "lvmin": 201,
+    "lvmax": 300,
+    "value": 6,
+    "_note": ""
+  },
+  {
+    "id": 44,
+    "rule": 11005,
+    "lvmin": 301,
+    "lvmax": 420,
+    "value": 5,
+    "_note": ""
+  },
+  {
+    "id": 45,
+    "rule": 10201,
+    "lvmin": 1,
+    "lvmax": 100,
+    "value": 20,
+    "_note": "武器制造-品质1"
+  },
+  {
+    "id": 46,
+    "rule": 10201,
+    "lvmin": 101,
+    "lvmax": 200,
+    "value": 10,
+    "_note": ""
+  },
+  {
+    "id": 47,
+    "rule": 10201,
+    "lvmin": 201,
+    "lvmax": 300,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 48,
+    "rule": 10201,
+    "lvmin": 301,
+    "lvmax": 420,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 49,
+    "rule": 10202,
+    "lvmin": 1,
+    "lvmax": 100,
+    "value": 50,
+    "_note": "武器制造-品质2"
+  },
+  {
+    "id": 50,
+    "rule": 10202,
+    "lvmin": 101,
+    "lvmax": 200,
+    "value": 50,
+    "_note": ""
+  },
+  {
+    "id": 51,
+    "rule": 10202,
+    "lvmin": 201,
+    "lvmax": 300,
+    "value": 25,
+    "_note": ""
+  },
+  {
+    "id": 52,
+    "rule": 10202,
+    "lvmin": 301,
+    "lvmax": 420,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 53,
+    "rule": 10203,
+    "lvmin": 1,
+    "lvmax": 100,
+    "value": 75,
+    "_note": "武器制造-品质3"
+  },
+  {
+    "id": 54,
+    "rule": 10203,
+    "lvmin": 101,
+    "lvmax": 200,
+    "value": 75,
+    "_note": ""
+  },
+  {
+    "id": 55,
+    "rule": 10203,
+    "lvmin": 201,
+    "lvmax": 300,
+    "value": 75,
+    "_note": ""
+  },
+  {
+    "id": 56,
+    "rule": 10203,
+    "lvmin": 301,
+    "lvmax": 420,
+    "value": 35,
+    "_note": ""
+  },
+  {
+    "id": 57,
+    "rule": 10204,
+    "lvmin": 1,
+    "lvmax": 100,
+    "value": 100,
+    "_note": "武器制造-品质4"
+  },
+  {
+    "id": 58,
+    "rule": 10204,
+    "lvmin": 101,
+    "lvmax": 200,
+    "value": 90,
+    "_note": ""
+  },
+  {
+    "id": 59,
+    "rule": 10204,
+    "lvmin": 201,
+    "lvmax": 300,
+    "value": 80,
+    "_note": ""
+  },
+  {
+    "id": 60,
+    "rule": 10204,
+    "lvmin": 301,
+    "lvmax": 420,
+    "value": 40,
+    "_note": ""
+  },
+  {
+    "id": 61,
+    "rule": 10205,
+    "lvmin": 1,
+    "lvmax": 100,
+    "value": 150,
+    "_note": "武器制造-品质5"
+  },
+  {
+    "id": 62,
+    "rule": 10205,
+    "lvmin": 101,
+    "lvmax": 200,
+    "value": 150,
+    "_note": ""
+  },
+  {
+    "id": 63,
+    "rule": 10205,
+    "lvmin": 201,
+    "lvmax": 300,
+    "value": 150,
+    "_note": ""
+  },
+  {
+    "id": 64,
+    "rule": 10205,
+    "lvmin": 301,
+    "lvmax": 420,
+    "value": 75,
+    "_note": ""
+  },
+  {
+    "id": 65,
+    "rule": 20010,
+    "lvmin": 1,
+    "lvmax": 25,
+    "value": 3,
+    "_note": "种植-时间10"
+  },
+  {
+    "id": 66,
+    "rule": 20010,
+    "lvmin": 26,
+    "lvmax": 50,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 67,
+    "rule": 20010,
+    "lvmin": 51,
+    "lvmax": 75,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 68,
+    "rule": 20010,
+    "lvmin": 76,
+    "lvmax": 100,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 69,
+    "rule": 20010,
+    "lvmin": 101,
+    "lvmax": 125,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 70,
+    "rule": 20010,
+    "lvmin": 126,
+    "lvmax": 150,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 71,
+    "rule": 20010,
+    "lvmin": 151,
+    "lvmax": 170,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 72,
+    "rule": 20015,
+    "lvmin": 1,
+    "lvmax": 25,
+    "value": 3,
+    "_note": "种植-时间15"
+  },
+  {
+    "id": 73,
+    "rule": 20015,
+    "lvmin": 26,
+    "lvmax": 50,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 74,
+    "rule": 20015,
+    "lvmin": 51,
+    "lvmax": 75,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 75,
+    "rule": 20015,
+    "lvmin": 76,
+    "lvmax": 100,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 76,
+    "rule": 20015,
+    "lvmin": 101,
+    "lvmax": 125,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 77,
+    "rule": 20015,
+    "lvmin": 126,
+    "lvmax": 150,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 78,
+    "rule": 20015,
+    "lvmin": 151,
+    "lvmax": 170,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 79,
+    "rule": 20030,
+    "lvmin": 1,
+    "lvmax": 25,
+    "value": 3,
+    "_note": "种植-时间30"
+  },
+  {
+    "id": 80,
+    "rule": 20030,
+    "lvmin": 26,
+    "lvmax": 50,
+    "value": 3,
+    "_note": ""
+  },
+  {
+    "id": 81,
+    "rule": 20030,
+    "lvmin": 51,
+    "lvmax": 75,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 82,
+    "rule": 20030,
+    "lvmin": 76,
+    "lvmax": 100,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 83,
+    "rule": 20030,
+    "lvmin": 101,
+    "lvmax": 125,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 84,
+    "rule": 20030,
+    "lvmin": 126,
+    "lvmax": 150,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 85,
+    "rule": 20030,
+    "lvmin": 151,
+    "lvmax": 170,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 86,
+    "rule": 20060,
+    "lvmin": 1,
+    "lvmax": 25,
+    "value": 3,
+    "_note": "种植-时间60"
+  },
+  {
+    "id": 87,
+    "rule": 20060,
+    "lvmin": 26,
+    "lvmax": 50,
+    "value": 3,
+    "_note": ""
+  },
+  {
+    "id": 88,
+    "rule": 20060,
+    "lvmin": 51,
+    "lvmax": 75,
+    "value": 3,
+    "_note": ""
+  },
+  {
+    "id": 89,
+    "rule": 20060,
+    "lvmin": 76,
+    "lvmax": 100,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 90,
+    "rule": 20060,
+    "lvmin": 101,
+    "lvmax": 125,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 91,
+    "rule": 20060,
+    "lvmin": 126,
+    "lvmax": 150,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 92,
+    "rule": 20060,
+    "lvmin": 151,
+    "lvmax": 170,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 93,
+    "rule": 20120,
+    "lvmin": 1,
+    "lvmax": 25,
+    "value": 6,
+    "_note": "种植-时间120"
+  },
+  {
+    "id": 94,
+    "rule": 20120,
+    "lvmin": 26,
+    "lvmax": 50,
+    "value": 6,
+    "_note": ""
+  },
+  {
+    "id": 95,
+    "rule": 20120,
+    "lvmin": 51,
+    "lvmax": 75,
+    "value": 3,
+    "_note": ""
+  },
+  {
+    "id": 96,
+    "rule": 20120,
+    "lvmin": 76,
+    "lvmax": 100,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 97,
+    "rule": 20120,
+    "lvmin": 101,
+    "lvmax": 125,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 98,
+    "rule": 20120,
+    "lvmin": 126,
+    "lvmax": 150,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 99,
+    "rule": 20120,
+    "lvmin": 151,
+    "lvmax": 170,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 100,
+    "rule": 20180,
+    "lvmin": 1,
+    "lvmax": 25,
+    "value": 9,
+    "_note": "种植-时间180"
+  },
+  {
+    "id": 101,
+    "rule": 20180,
+    "lvmin": 26,
+    "lvmax": 50,
+    "value": 9,
+    "_note": ""
+  },
+  {
+    "id": 102,
+    "rule": 20180,
+    "lvmin": 51,
+    "lvmax": 75,
+    "value": 6,
+    "_note": ""
+  },
+  {
+    "id": 103,
+    "rule": 20180,
+    "lvmin": 76,
+    "lvmax": 100,
+    "value": 6,
+    "_note": ""
+  },
+  {
+    "id": 104,
+    "rule": 20180,
+    "lvmin": 101,
+    "lvmax": 125,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 105,
+    "rule": 20180,
+    "lvmin": 126,
+    "lvmax": 150,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 106,
+    "rule": 20180,
+    "lvmin": 151,
+    "lvmax": 170,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 107,
+    "rule": 20240,
+    "lvmin": 1,
+    "lvmax": 25,
+    "value": 15,
+    "_note": "种植-时间240"
+  },
+  {
+    "id": 108,
+    "rule": 20240,
+    "lvmin": 26,
+    "lvmax": 50,
+    "value": 15,
+    "_note": ""
+  },
+  {
+    "id": 109,
+    "rule": 20240,
+    "lvmin": 51,
+    "lvmax": 75,
+    "value": 9,
+    "_note": ""
+  },
+  {
+    "id": 110,
+    "rule": 20240,
+    "lvmin": 76,
+    "lvmax": 100,
+    "value": 9,
+    "_note": ""
+  },
+  {
+    "id": 111,
+    "rule": 20240,
+    "lvmin": 101,
+    "lvmax": 125,
+    "value": 9,
+    "_note": ""
+  },
+  {
+    "id": 112,
+    "rule": 20240,
+    "lvmin": 126,
+    "lvmax": 150,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 113,
+    "rule": 20240,
+    "lvmin": 151,
+    "lvmax": 170,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 114,
+    "rule": 20300,
+    "lvmin": 1,
+    "lvmax": 25,
+    "value": 18,
+    "_note": "种植-时间300"
+  },
+  {
+    "id": 115,
+    "rule": 20300,
+    "lvmin": 26,
+    "lvmax": 50,
+    "value": 18,
+    "_note": ""
+  },
+  {
+    "id": 116,
+    "rule": 20300,
+    "lvmin": 51,
+    "lvmax": 75,
+    "value": 15,
+    "_note": ""
+  },
+  {
+    "id": 117,
+    "rule": 20300,
+    "lvmin": 76,
+    "lvmax": 100,
+    "value": 15,
+    "_note": ""
+  },
+  {
+    "id": 118,
+    "rule": 20300,
+    "lvmin": 101,
+    "lvmax": 125,
+    "value": 12,
+    "_note": ""
+  },
+  {
+    "id": 119,
+    "rule": 20300,
+    "lvmin": 126,
+    "lvmax": 150,
+    "value": 12,
+    "_note": ""
+  },
+  {
+    "id": 120,
+    "rule": 20300,
+    "lvmin": 151,
+    "lvmax": 170,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 121,
+    "rule": 20360,
+    "lvmin": 1,
+    "lvmax": 25,
+    "value": 21,
+    "_note": "种植-时间360"
+  },
+  {
+    "id": 122,
+    "rule": 20360,
+    "lvmin": 26,
+    "lvmax": 50,
+    "value": 21,
+    "_note": ""
+  },
+  {
+    "id": 123,
+    "rule": 20360,
+    "lvmin": 51,
+    "lvmax": 75,
+    "value": 18,
+    "_note": ""
+  },
+  {
+    "id": 124,
+    "rule": 20360,
+    "lvmin": 76,
+    "lvmax": 100,
+    "value": 18,
+    "_note": ""
+  },
+  {
+    "id": 125,
+    "rule": 20360,
+    "lvmin": 101,
+    "lvmax": 125,
+    "value": 15,
+    "_note": ""
+  },
+  {
+    "id": 126,
+    "rule": 20360,
+    "lvmin": 126,
+    "lvmax": 150,
+    "value": 15,
+    "_note": ""
+  },
+  {
+    "id": 127,
+    "rule": 20360,
+    "lvmin": 151,
+    "lvmax": 170,
+    "value": 15,
+    "_note": ""
+  },
+  {
+    "id": 128,
+    "rule": 20420,
+    "lvmin": 1,
+    "lvmax": 25,
+    "value": 24,
+    "_note": "种植-时间420"
+  },
+  {
+    "id": 129,
+    "rule": 20420,
+    "lvmin": 26,
+    "lvmax": 50,
+    "value": 24,
+    "_note": ""
+  },
+  {
+    "id": 130,
+    "rule": 20420,
+    "lvmin": 51,
+    "lvmax": 75,
+    "value": 21,
+    "_note": ""
+  },
+  {
+    "id": 131,
+    "rule": 20420,
+    "lvmin": 76,
+    "lvmax": 100,
+    "value": 21,
+    "_note": ""
+  },
+  {
+    "id": 132,
+    "rule": 20420,
+    "lvmin": 101,
+    "lvmax": 125,
+    "value": 18,
+    "_note": ""
+  },
+  {
+    "id": 133,
+    "rule": 20420,
+    "lvmin": 126,
+    "lvmax": 150,
+    "value": 18,
+    "_note": ""
+  },
+  {
+    "id": 134,
+    "rule": 20420,
+    "lvmin": 151,
+    "lvmax": 170,
+    "value": 18,
+    "_note": ""
+  },
+  {
+    "id": 135,
+    "rule": 20480,
+    "lvmin": 1,
+    "lvmax": 25,
+    "value": 27,
+    "_note": "种植-时间480"
+  },
+  {
+    "id": 136,
+    "rule": 20480,
+    "lvmin": 26,
+    "lvmax": 50,
+    "value": 27,
+    "_note": ""
+  },
+  {
+    "id": 137,
+    "rule": 20480,
+    "lvmin": 51,
+    "lvmax": 75,
+    "value": 24,
+    "_note": ""
+  },
+  {
+    "id": 138,
+    "rule": 20480,
+    "lvmin": 76,
+    "lvmax": 100,
+    "value": 24,
+    "_note": ""
+  },
+  {
+    "id": 139,
+    "rule": 20480,
+    "lvmin": 101,
+    "lvmax": 125,
+    "value": 21,
+    "_note": ""
+  },
+  {
+    "id": 140,
+    "rule": 20480,
+    "lvmin": 126,
+    "lvmax": 150,
+    "value": 21,
+    "_note": ""
+  },
+  {
+    "id": 141,
+    "rule": 20480,
+    "lvmin": 151,
+    "lvmax": 170,
+    "value": 21,
+    "_note": ""
+  },
+  {
+    "id": 142,
+    "rule": 30001,
+    "lvmin": 1,
+    "lvmax": 15,
+    "value": 1,
+    "_note": "采集-品质1"
+  },
+  {
+    "id": 143,
+    "rule": 30001,
+    "lvmin": 16,
+    "lvmax": 30,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 144,
+    "rule": 30001,
+    "lvmin": 31,
+    "lvmax": 50,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 145,
+    "rule": 30002,
+    "lvmin": 1,
+    "lvmax": 15,
+    "value": 2,
+    "_note": "采集-品质2"
+  },
+  {
+    "id": 146,
+    "rule": 30002,
+    "lvmin": 16,
+    "lvmax": 30,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 147,
+    "rule": 30002,
+    "lvmin": 31,
+    "lvmax": 50,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 148,
+    "rule": 30003,
+    "lvmin": 1,
+    "lvmax": 15,
+    "value": 3,
+    "_note": "采集-品质3"
+  },
+  {
+    "id": 149,
+    "rule": 30003,
+    "lvmin": 16,
+    "lvmax": 30,
+    "value": 2,
+    "_note": ""
+  },
+  {
+    "id": 150,
+    "rule": 30003,
+    "lvmin": 31,
+    "lvmax": 50,
+    "value": 1,
+    "_note": ""
+  },
+  {
+    "id": 151,
+    "rule": 30004,
+    "lvmin": 1,
+    "lvmax": 15,
+    "value": 4,
+    "_note": "采集-品质4"
+  },
+  {
+    "id": 152,
+    "rule": 30004,
+    "lvmin": 16,
+    "lvmax": 30,
+    "value": 3,
+    "_note": ""
+  },
+  {
+    "id": 153,
+    "rule": 30004,
+    "lvmin": 31,
+    "lvmax": 50,
+    "value": 2,
+    "_note": ""
+  },
+  {
+    "id": 154,
+    "rule": 30005,
+    "lvmin": 1,
+    "lvmax": 15,
+    "value": 5,
+    "_note": "采集-品质5"
+  },
+  {
+    "id": 155,
+    "rule": 30005,
+    "lvmin": 16,
+    "lvmax": 30,
+    "value": 4,
+    "_note": ""
+  },
+  {
+    "id": 156,
+    "rule": 30005,
+    "lvmin": 31,
+    "lvmax": 50,
+    "value": 3,
+    "_note": ""
+  },
+  {
+    "id": 157,
+    "rule": 30006,
+    "lvmin": 1,
+    "lvmax": 15,
+    "value": 1,
+    "_note": "采集-工具使用1"
+  },
+  {
+    "id": 158,
+    "rule": 30006,
+    "lvmin": 16,
+    "lvmax": 30,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 159,
+    "rule": 30006,
+    "lvmin": 31,
+    "lvmax": 50,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 160,
+    "rule": 30007,
+    "lvmin": 1,
+    "lvmax": 15,
+    "value": 1,
+    "_note": "采集-工具使用2"
+  },
+  {
+    "id": 161,
+    "rule": 30007,
+    "lvmin": 16,
+    "lvmax": 30,
+    "value": 1,
+    "_note": ""
+  },
+  {
+    "id": 162,
+    "rule": 30007,
+    "lvmin": 31,
+    "lvmax": 50,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 163,
+    "rule": 30008,
+    "lvmin": 1,
+    "lvmax": 15,
+    "value": 1,
+    "_note": "采集-工具使用3"
+  },
+  {
+    "id": 164,
+    "rule": 30008,
+    "lvmin": 16,
+    "lvmax": 30,
+    "value": 1,
+    "_note": ""
+  },
+  {
+    "id": 165,
+    "rule": 30008,
+    "lvmin": 31,
+    "lvmax": 50,
+    "value": 1,
+    "_note": ""
+  },
+  {
+    "id": 166,
+    "rule": 40001,
+    "lvmin": 1,
+    "lvmax": 100,
+    "value": 9,
+    "_note": "牧场-生物食材"
+  },
+  {
+    "id": 167,
+    "rule": 40001,
+    "lvmin": 101,
+    "lvmax": 200,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 168,
+    "rule": 40001,
+    "lvmin": 201,
+    "lvmax": 300,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 169,
+    "rule": 40002,
+    "lvmin": 1,
+    "lvmax": 100,
+    "value": 9,
+    "_note": "牧场-元素微粒"
+  },
+  {
+    "id": 170,
+    "rule": 40002,
+    "lvmin": 101,
+    "lvmax": 200,
+    "value": 9,
+    "_note": ""
+  },
+  {
+    "id": 171,
+    "rule": 40002,
+    "lvmin": 201,
+    "lvmax": 300,
+    "value": 0,
+    "_note": ""
+  },
+  {
+    "id": 172,
+    "rule": 40003,
+    "lvmin": 1,
+    "lvmax": 100,
+    "value": 24,
+    "_note": "牧场-低阶生物素材"
+  },
+  {
+    "id": 173,
+    "rule": 40003,
+    "lvmin": 101,
+    "lvmax": 200,
+    "value": 18,
+    "_note": ""
+  },
+  {
+    "id": 174,
+    "rule": 40003,
+    "lvmin": 201,
+    "lvmax": 300,
+    "value": 18,
+    "_note": ""
+  },
+  {
+    "id": 175,
+    "rule": 40004,
+    "lvmin": 1,
+    "lvmax": 100,
+    "value": 42,
+    "_note": "牧场-高阶生物素材"
+  },
+  {
+    "id": 176,
+    "rule": 40004,
+    "lvmin": 101,
+    "lvmax": 200,
+    "value": 36,
+    "_note": ""
+  },
+  {
+    "id": 177,
+    "rule": 40004,
+    "lvmin": 201,
+    "lvmax": 300,
+    "value": 36,
+    "_note": ""
+  }
+]

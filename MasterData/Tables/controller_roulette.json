@@ -1,0 +1,178 @@
+[
+  {
+    "id": 1,
+    "type": 1,
+    "name": "角色",
+    "icon": "UI/Icon/MainUIIcon/tex_mainui_icon_herolist01.png",
+    "shortcut_key": "EMainOpenHero",
+    "target_page": "pageHero",
+    "default_wheel_slot": 1,
+    "system_enum": 3,
+    "name_id": "4294967808"
+  },
+  {
+    "id": 2,
+    "type": 1,
+    "name": "奇波",
+    "icon": "UI/Icon/MainUIIcon/tex_mainui_icon_pet01.png",
+    "shortcut_key": "EMainOpenPet",
+    "target_page": "pagePetBox",
+    "default_wheel_slot": 2,
+    "system_enum": 5,
+    "name_id": "8589935104"
+  },
+  {
+    "id": 3,
+    "type": 1,
+    "name": "背包",
+    "icon": "UI/Icon/MainUIIcon/tex_mainui_icon_bag01.png",
+    "shortcut_key": "EMainOpenBag",
+    "target_page": "pageBag",
+    "default_wheel_slot": 3,
+    "system_enum": 13,
+    "name_id": "12884902400"
+  },
+  {
+    "id": 4,
+    "type": 1,
+    "name": "家园",
+    "icon": "UI/Icon/MainUIIcon/tex_mainui_icon_home01.png",
+    "shortcut_key": "EMainOpenHome",
+    "target_page": "",
+    "default_wheel_slot": 4,
+    "system_enum": 7,
+    "name_id": "17179869696"
+  },
+  {
+    "id": 5,
+    "type": 1,
+    "name": "帕米邮局",
+    "icon": "UI/Icon/MainUIIcon/tex_mainui_icon_pamiletter01.png",
+    "shortcut_key": "",
+    "target_page": "pagePamiMailbox",
+    "default_wheel_slot": 5,
+    "system_enum": 15,
+    "name_id": "21474836992"
+  },
+  {
+    "id": 6,
+    "type": 1,
+    "name": "星识",
+    "icon": "UI/Icon/MainUIIcon/tex_mainui_icon_homeexperience01.png",
+    "shortcut_key": "EMainHomeTechnology",
+    "target_page": "pageHomeScienceMain",
+    "default_wheel_slot": 6,
+    "system_enum": 702,
+    "name_id": "25769804288"
+  },
+  {
+    "id": 7,
+    "type": 1,
+    "name": "任务",
+    "icon": "UI/Icon/MainUIIcon/tex_mainui_icon_task01.png",
+    "shortcut_key": "EMainOpenTasks",
+    "target_page": "pageTask",
+    "default_wheel_slot": 7,
+    "system_enum": 14,
+    "name_id": "30064771584"
+  },
+  {
+    "id": 8,
+    "type": 1,
+    "name": "编队",
+    "icon": "UI/Icon/MainUIIcon/tex_mainui_icon_team01.png",
+    "shortcut_key": "EMainOpenTeam",
+    "target_page": "pageFormationMain",
+    "default_wheel_slot": 8,
+    "system_enum": 4,
+    "name_id": "34359738880"
+  },
+  {
+    "id": 9,
+    "type": 2,
+    "name": "活跃",
+    "icon": "UI/Icon/MainUIIcon/tex_mainui_icon_activity01.png",
+    "shortcut_key": "EMainOpenActivity",
+    "target_page": "pageActivityTask",
+    "default_wheel_slot": 1,
+    "system_enum": 11,
+    "name_id": "38654706176"
+  },
+  {
+    "id": 10,
+    "type": 2,
+    "name": "快捷生产",
+    "icon": "UI/Icon/MainUIIcon/tex_mainui_icon_bagmake.png",
+    "shortcut_key": "EMainProductQuick",
+    "target_page": "pageProduct_Quick",
+    "default_wheel_slot": 2,
+    "system_enum": 164,
+    "name_id": "42949673472"
+  },
+  {
+    "id": 11,
+    "type": 2,
+    "name": "快捷背包",
+    "icon": "UI/Icon/MainUIIcon/tex_mainui_icon_quickitembar.png",
+    "shortcut_key": "EMainQuickItemBar",
+    "target_page": "PageQuickItemBar",
+    "default_wheel_slot": 3,
+    "system_enum": 1019,
+    "name_id": "47244640768"
+  },
+  {
+    "id": 12,
+    "type": 2,
+    "name": "旅途",
+    "icon": "UI/Icon/MainUIIcon/tex_mainui_icon_novice01.png",
+    "shortcut_key": "EMainOpenNoviceTask",
+    "target_page": "pageJourney",
+    "default_wheel_slot": 4,
+    "system_enum": 57,
+    "name_id": "51539608064"
+  },
+  {
+    "id": 13,
+    "type": 3,
+    "name": "观测",
+    "icon": "UI/Icon/MainUIIcon/tex_mainui_icon_gameevents01.png",
+    "shortcut_key": "",
+    "target_page": "pageGacha",
+    "default_wheel_slot": 1,
+    "system_enum": 2,
+    "name_id": "55834575360"
+  },
+  {
+    "id": 14,
+    "type": 3,
+    "name": "战令",
+    "icon": "UI/Icon/MainUIIcon/tex_mainui_icon_battlepass01.png",
+    "shortcut_key": "",
+    "target_page": "pageBattlePassMain",
+    "default_wheel_slot": 2,
+    "system_enum": 65,
+    "name_id": "60129542656"
+  },
+  {
+    "id": 15,
+    "type": 3,
+    "name": "活动",
+    "icon": "UI/Icon/MainUIIcon/tex_mainui_icon_gameevents01.png",
+    "shortcut_key": "EMainOpenGameAct",
+    "target_page": "pageGameAct",
+    "default_wheel_slot": 3,
+    "system_enum": 34,
+    "name_id": "64424509952"
+  },
+  {
+    "id": 16,
+    "type": 3,
+    "name": "商城",
+    "icon": "UI/Icon/MainUIIcon/tex_mainui_icon_activity01.png",
+    "shortcut_key": "",
+    "target_page": "PageShopUI",
+    "default_wheel_slot": 4,
+    "system_enum": 6,
+    "name_id": "68719477248"
+  }
+]

@@ -1,0 +1,6 @@
+require("define")
+require = require("require")
+G_Launcher = require("launcher")
+G_Launcher:requireBasic()
+L_UI:initialize()
+L_UI:initialize()

@@ -1,0 +1,282 @@
+[
+  {
+    "id": 1,
+    "propertySkillName": "火焰足迹",
+    "propertySkillDescribe": "在地面留下持续燃烧的火焰，造成<color=#dd6f67>火属性伤害</color>。",
+    "propertySkillIcon": "tex_icon_EnemyPassiveSkill_550001",
+    "elementId": 55000100
+  },
+  {
+    "id": 2,
+    "propertySkillName": "火球爆发",
+    "propertySkillDescribe": "每15秒，在目标位置施放悬空火球，随后爆炸，造成<color=#dd6f67>火属性伤害</color>。",
+    "propertySkillIcon": "tex_icon_EnemyPassiveSkill_550002",
+    "elementId": 55000200
+  },
+  {
+    "id": 4,
+    "propertySkillName": "毒液轨迹",
+    "propertySkillDescribe": "在身后施放毒沼。毒沼每秒对被命中的目标持续造成<color=#1696b1>水属性伤害</color>伤害，持续5秒。",
+    "propertySkillIcon": "tex_icon_EnemyPassiveSkill_550102",
+    "elementId": 55010200
+  },
+  {
+    "id": 6,
+    "propertySkillName": "冰刺射击",
+    "propertySkillDescribe": "自身每次施放技能时，在周围生成冰刺并向目标发射，造成<color=#48749d>冰属性伤害</color>，并使被命中的目标移动速度降低。",
+    "propertySkillIcon": "tex_icon_EnemyPassiveSkill_550201",
+    "elementId": 55020100
+  },
+  {
+    "id": 7,
+    "propertySkillName": "冰封护盾",
+    "propertySkillDescribe": "自身获得护盾，护盾量为自身生命值上限10%。",
+    "propertySkillIcon": "tex_icon_EnemyPassiveSkill_550202",
+    "elementId": 55020200
+  },
+  {
+    "id": 9,
+    "propertySkillName": "三重风暴",
+    "propertySkillDescribe": "每10秒，在自身周围出现3股旋风围绕自身旋转，每股旋风造成<color=#dc8d48>风属性伤害</color>。",
+    "propertySkillIcon": "tex_icon_EnemyPassiveSkill_550301",
+    "elementId": 55030100
+  },
+  {
+    "id": 10,
+    "propertySkillName": "狂暴",
+    "propertySkillDescribe": "自身攻击力提高，防御力降低，同时获得「吸血」效果。\n「吸血」：对目标造成伤害后，恢复生命值。",
+    "propertySkillIcon": "tex_icon_EnemyPassiveSkill_550302",
+    "elementId": 55030200
+  },
+  {
+    "id": 11,
+    "propertySkillName": "旋风球",
+    "propertySkillDescribe": "每20秒，在目标位置施放旋风球，并在大范围内形成风场牵引目标滑向旋风球，造成<color=#dc8d48>风属性伤害 </color>。",
+    "propertySkillIcon": "tex_icon_EnemyPassiveSkill_550303",
+    "elementId": 55030300
+  },
+  {
+    "id": 13,
+    "propertySkillName": "荆棘地带",
+    "propertySkillDescribe": "在目标附近召唤4道荆棘，对目标造成伤害。赋予被命中的目标「裂伤」效果。\n「裂伤」：持有者每秒受到<color=#617983>无属性伤害</color>。",
+    "propertySkillIcon": "tex_icon_EnemyPassiveSkill_550402",
+    "elementId": 55040200
+  },
+  {
+    "id": 15,
+    "propertySkillName": "地刺密布",
+    "propertySkillDescribe": "每施放2次技能后，在目标周围依次施放5根地刺，连续攻击目标，造成<color=#ad7d14>地属性伤害</color>。",
+    "propertySkillIcon": "tex_icon_EnemyPassiveSkill_550501",
+    "elementId": 55050100
+  },
+  {
+    "id": 16,
+    "propertySkillName": "大地护盾",
+    "propertySkillDescribe": "携带当前生命值10%的护盾。",
+    "propertySkillIcon": "tex_icon_EnemyPassiveSkill_550502",
+    "elementId": 55050200
+  },
+  {
+    "id": 18,
+    "propertySkillName": "三重电球",
+    "propertySkillDescribe": "每15秒，施放3颗电球环绕自身，每颗命中目标后消失，造成<color=#9665ab>雷属性伤害</color>。",
+    "propertySkillIcon": "tex_icon_EnemyPassiveSkill_550601",
+    "elementId": 55060100
+  },
+  {
+    "id": 19,
+    "propertySkillName": "连锁闪电",
+    "propertySkillDescribe": "造成伤害时，被命中的目标与自身间形成闪电链，闪电在临近目标间弹射并造成<color=#9665ab>雷属性伤害</color>，每存在1个目标多弹射1次，至多可弹射5次。",
+    "propertySkillIcon": "tex_icon_EnemyPassiveSkill_550602",
+    "elementId": 55060200
+  },
+  {
+    "id": 21,
+    "propertySkillName": "光矛",
+    "propertySkillDescribe": "每10秒，在目标上方召唤依次光矛，随后下砸光矛，造成<color=#f4c542>光属性伤害</color>。",
+    "propertySkillIcon": "tex_icon_EnemyPassiveSkill_550701",
+    "elementId": 55070100
+  },
+  {
+    "id": 22,
+    "propertySkillName": "免疫控制",
+    "propertySkillDescribe": "自身免疫所有控制效果。",
+    "propertySkillIcon": "tex_icon_EnemyPassiveSkill_550702",
+    "elementId": 55070200
+  },
+  {
+    "id": 23,
+    "propertySkillName": "潜力",
+    "propertySkillDescribe": "自身获得负面效果防御力降低。20秒后，清除该负面效果，自身攻击力提高，韧性效果提升。",
+    "propertySkillIcon": "tex_icon_EnemyPassiveSkill_550703",
+    "elementId": 55070300
+  },
+  {
+    "id": 24,
+    "propertySkillName": "诅咒暗球",
+    "propertySkillDescribe": "施放技能时，在自身周围施放漂浮暗球并追击目标，并赋予目标「诅咒」效果。「诅咒」：对持有者持续造成<color=#6b4373>暗属性伤害</color>。",
+    "propertySkillIcon": "tex_icon_EnemyPassiveSkill_550801",
+    "elementId": 55080100
+  },
+  {
+    "id": 25,
+    "propertySkillName": "黑暗牵引",
+    "propertySkillDescribe": "每30秒，在自身位置形成黑暗漩涡，每0.5秒造成<color=#6b4373>暗属性伤害</color>，并牵引目标滑向黑暗漩涡。",
+    "propertySkillIcon": "tex_icon_EnemyPassiveSkill_550802",
+    "elementId": 55080200
+  },
+  {
+    "id": 27,
+    "propertySkillName": "耐性",
+    "propertySkillDescribe": "自身受到的全属性伤害降低15%。",
+    "propertySkillIcon": "tex_icon_EnemyPassiveSkill_550901",
+    "elementId": 55090101
+  },
+  {
+    "id": 28,
+    "propertySkillName": "耐火",
+    "propertySkillDescribe": "自身受到的火属性伤害降低20%。",
+    "propertySkillIcon": "tex_icon_EnemyPassiveSkill_550902",
+    "elementId": 55090201
+  },
+  {
+    "id": 29,
+    "propertySkillName": "耐水",
+    "propertySkillDescribe": "自身受到的水属性伤害降低20%。",
+    "propertySkillIcon": "tex_icon_EnemyPassiveSkill_550903",
+    "elementId": 55090301
+  },
+  {
+    "id": 30,
+    "propertySkillName": "耐冰",
+    "propertySkillDescribe": "自身受到的冰属性伤害降低20%。",
+    "propertySkillIcon": "tex_icon_EnemyPassiveSkill_550904",
+    "elementId": 55090401
+  },
+  {
+    "id": 31,
+    "propertySkillName": "耐木",
+    "propertySkillDescribe": "自身受到的木属性伤害降低20%。",
+    "propertySkillIcon": "tex_icon_EnemyPassiveSkill_550905",
+    "elementId": 55090501
+  },
+  {
+    "id": 32,
+    "propertySkillName": "耐地",
+    "propertySkillDescribe": "自身受到的地属性伤害降低20%。",
+    "propertySkillIcon": "tex_icon_EnemyPassiveSkill_550906",
+    "elementId": 55090601
+  },
+  {
+    "id": 33,
+    "propertySkillName": "耐风",
+    "propertySkillDescribe": "自身受到的风属性伤害降低20%。",
+    "propertySkillIcon": "tex_icon_EnemyPassiveSkill_550907",
+    "elementId": 55090701
+  },
+  {
+    "id": 34,
+    "propertySkillName": "耐雷",
+    "propertySkillDescribe": "自身受到的雷属性伤害降低20%。",
+    "propertySkillIcon": "tex_icon_EnemyPassiveSkill_550908",
+    "elementId": 55090801
+  },
+  {
+    "id": 35,
+    "propertySkillName": "耐光",
+    "propertySkillDescribe": "自身受到的光属性伤害降低20%。",
+    "propertySkillIcon": "tex_icon_EnemyPassiveSkill_550909",
+    "elementId": 55090901
+  },
+  {
+    "id": 36,
+    "propertySkillName": "耐暗",
+    "propertySkillDescribe": "自身受到的暗属性伤害降低20%。",
+    "propertySkillIcon": "tex_icon_EnemyPassiveSkill_550910",
+    "elementId": 55091001
+  },
+  {
+    "id": 37,
+    "propertySkillName": "火之怒",
+    "propertySkillDescribe": "自身受到的火属性伤害提高25%。",
+    "propertySkillIcon": "tex_icon_EnemyPassiveSkill_550911",
+    "elementId": 55091101
+  },
+  {
+    "id": 38,
+    "propertySkillName": "水之怒",
+    "propertySkillDescribe": "自身受到的水属性伤害提高25%。",
+    "propertySkillIcon": "tex_icon_EnemyPassiveSkill_550912",
+    "elementId": 55091201
+  },
+  {
+    "id": 39,
+    "propertySkillName": "冰之怒",
+    "propertySkillDescribe": "自身受到的冰属性伤害提高25%。",
+    "propertySkillIcon": "tex_icon_EnemyPassiveSkill_550913",
+    "elementId": 55091301
+  },
+  {
+    "id": 40,
+    "propertySkillName": "木之怒",
+    "propertySkillDescribe": "自身受到的木属性伤害提高25%。",
+    "propertySkillIcon": "tex_icon_EnemyPassiveSkill_550914",
+    "elementId": 55091401
+  },
+  {
+    "id": 41,
+    "propertySkillName": "地之怒",
+    "propertySkillDescribe": "自身受到的地属性伤害提高25%。",
+    "propertySkillIcon": "tex_icon_EnemyPassiveSkill_550915",
+    "elementId": 55091501
+  },
+  {
+    "id": 42,
+    "propertySkillName": "风之怒",
+    "propertySkillDescribe": "自身受到的风属性伤害提高25%。",
+    "propertySkillIcon": "tex_icon_EnemyPassiveSkill_550916",
+    "elementId": 55091601
+  },
+  {
+    "id": 43,
+    "propertySkillName": "雷之怒",
+    "propertySkillDescribe": "自身受到的雷属性伤害提高25%。",
+    "propertySkillIcon": "tex_icon_EnemyPassiveSkill_550917",
+    "elementId": 55091701
+  },
+  {
+    "id": 44,
+    "propertySkillName": "光之怒",
+    "propertySkillDescribe": "自身受到的光属性伤害提高25%。",
+    "propertySkillIcon": "tex_icon_EnemyPassiveSkill_550918",
+    "elementId": 55091801
+  },
+  {
+    "id": 45,
+    "propertySkillName": "暗之怒",
+    "propertySkillDescribe": "自身受到的暗属性伤害提高25%。",
+    "propertySkillIcon": "tex_icon_EnemyPassiveSkill_550919",
+    "elementId": 55091901
+  },
+  {
+    "id": 49,
+    "propertySkillName": "攻击姿态",
+    "propertySkillDescribe": "自身攻击力提高。",
+    "propertySkillIcon": "tex_icon_EnemyPassiveSkill_550923",
+    "elementId": 55092300
+  },
+  {
+    "id": 50,
+    "propertySkillName": "防御破坏",
+    "propertySkillDescribe": "每次对目标造成伤害时，使其防御力降低5%，至多可叠加6层，每层持续15秒。",
+    "propertySkillIcon": "tex_icon_EnemyPassiveSkill_550924",
+    "elementId": 55092400
+  },
+  {
+    "id": 51,
+    "propertySkillName": "净化",
+    "propertySkillDescribe": "自身被赋予负面效果时，清除该效果。",
+    "propertySkillIcon": "tex_icon_EnemyPassiveSkill_550925",
+    "elementId": 55092500
+  }
+]

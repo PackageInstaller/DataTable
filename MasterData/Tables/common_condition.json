@@ -1,0 +1,3745 @@
+[
+  {
+    "id": 1001,
+    "name": "ClientNpcAction",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "4299262265344"
+  },
+  {
+    "id": 1002,
+    "name": "ClientItemAction",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "4303557232640"
+  },
+  {
+    "id": 1003,
+    "name": "ClientTriggerStory",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "4307852199936"
+  },
+  {
+    "id": 1004,
+    "name": "ClientPlayStory",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "4312147167232"
+  },
+  {
+    "id": 1100,
+    "name": "ClientTriggerTime",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "4724464027648"
+  },
+  {
+    "id": 2000,
+    "name": "ClientDoStepEntityInteraction",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "8589934594048"
+  },
+  {
+    "id": 2001,
+    "name": "CountEventStep",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "8594229561344"
+  },
+  {
+    "id": 2002,
+    "name": "FinishDungeonItemCount",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "8598524528640"
+  },
+  {
+    "id": 2003,
+    "name": "EnterDungeonCount",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "8602819495936"
+  },
+  {
+    "id": 2004,
+    "name": "Level",
+    "type": 0,
+    "system_unlock": 1,
+    "descShow": "星识等级需达到{playerlevel}级",
+    "descShow_id": "8607114463232"
+  },
+  {
+    "id": 2005,
+    "name": "GetWeapn",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "8611409430528"
+  },
+  {
+    "id": 2006,
+    "name": "Rank",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "8615704397824"
+  },
+  {
+    "id": 2007,
+    "name": "CompleteTask",
+    "type": 0,
+    "system_unlock": 1,
+    "descShow": "完成任务「{name}」",
+    "descShow_id": "8619999365120"
+  },
+  {
+    "id": 2008,
+    "name": "GetTask",
+    "type": 0,
+    "system_unlock": 1,
+    "descShow": "8624294332416"
+  },
+  {
+    "id": 2009,
+    "name": "WorldDifficulty",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "已到达最大等级",
+    "descShow_id": "8628589299712"
+  },
+  {
+    "id": 2010,
+    "name": "CheckTimeRange",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "8632884267008"
+  },
+  {
+    "id": 2011,
+    "name": "ClientCheckTimePeriod",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "8637179234304"
+  },
+  {
+    "id": 2012,
+    "name": "TaskStepInRange",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "8641474201600"
+  },
+  {
+    "id": 2500,
+    "name": "TaskEventAction",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "10737418242048"
+  },
+  {
+    "id": 2501,
+    "name": "TaskSubmitItem",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "10741713209344"
+  },
+  {
+    "id": 2502,
+    "name": "TaskTriggerItemState",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "10746008176640"
+  },
+  {
+    "id": 2503,
+    "name": "TaskUseItem",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "10750303143936"
+  },
+  {
+    "id": 2504,
+    "name": "TaskGuide",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "10754598111232"
+  },
+  {
+    "id": 2505,
+    "name": "TaskCreatPlayer",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "10758893078528"
+  },
+  {
+    "id": 2506,
+    "name": "TaskStoryTagCheck",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "10763188045824"
+  },
+  {
+    "id": 2507,
+    "name": "TaskStartStoryTag",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "10767483013120"
+  },
+  {
+    "id": 2508,
+    "name": "TaskOpenPage",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "10771777980416"
+  },
+  {
+    "id": 2509,
+    "name": "TaskDungeonStartTrigger",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "10776072947712"
+  },
+  {
+    "id": 2510,
+    "name": "TaskDungeonOverTrigger",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "10780367915008"
+  },
+  {
+    "id": 2511,
+    "name": "TaskInterimToBattle",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "10784662882304"
+  },
+  {
+    "id": 2512,
+    "name": "TaskPhotoSceneCheck",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "10788957849600"
+  },
+  {
+    "id": 2513,
+    "name": "TaskSubTypeItem",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "10793252816896"
+  },
+  {
+    "id": 2514,
+    "name": "TaskSubChooseItem",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "10797547784192"
+  },
+  {
+    "id": 2515,
+    "name": "TaskSubTaskItem",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "10801842751488"
+  },
+  {
+    "id": 2516,
+    "name": "TaskBagItemCheck",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "10806137718784"
+  },
+  {
+    "id": 2517,
+    "name": "TaskPetLevelUp",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "10810432686080"
+  },
+  {
+    "id": 2518,
+    "name": "TaskGuidedAchievementFinish",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "10814727653376"
+  },
+  {
+    "id": 2519,
+    "name": "TaskAliveNpcInteractive",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "10819022620672"
+  },
+  {
+    "id": 2520,
+    "name": "TaskEnemiesGroupCreateBattle",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "10823317587968"
+  },
+  {
+    "id": 2521,
+    "name": "TaskCheckEntityStatus",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "10827612555264"
+  },
+  {
+    "id": 2522,
+    "name": "TaskReceiveSignal",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "10831907522560"
+  },
+  {
+    "id": 2523,
+    "name": "TaskPetHaveCheck",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "10836202489856"
+  },
+  {
+    "id": 2524,
+    "name": "TaskDungeonQuitTrigger",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "10840497457152"
+  },
+  {
+    "id": 2525,
+    "name": "TaskCheckGameStatus",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "10844792424448"
+  },
+  {
+    "id": 2526,
+    "name": "TaskFractalShowEnd",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "10849087391744"
+  },
+  {
+    "id": 2527,
+    "name": "TaskPetHaveCheckBefore",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "10853382359040"
+  },
+  {
+    "id": 2701,
+    "name": "TaskActionCreateItem",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "11600706668544"
+  },
+  {
+    "id": 2702,
+    "name": "TaskActionUseItem",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "11605001635840"
+  },
+  {
+    "id": 2703,
+    "name": "TaskActionCreateMonster",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "11609296603136"
+  },
+  {
+    "id": 2704,
+    "name": "TaskActionCreateNPC",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "11613591570432"
+  },
+  {
+    "id": 2705,
+    "name": "TaskActionDeleteNPC",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "11617886537728"
+  },
+  {
+    "id": 2706,
+    "name": "TaskActionMarkNPC",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "11622181505024"
+  },
+  {
+    "id": 2707,
+    "name": "TaskActionPlayStory",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "11626476472320"
+  },
+  {
+    "id": 2708,
+    "name": "TaskActionSceneTransport",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "11630771439616"
+  },
+  {
+    "id": 2709,
+    "name": "TaskActionReward",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "11635066406912"
+  },
+  {
+    "id": 2710,
+    "name": "TaskActionOpenPage",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "11639361374208"
+  },
+  {
+    "id": 2711,
+    "name": "TaskActionKeepActiveNPC",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "11643656341504"
+  },
+  {
+    "id": 2712,
+    "name": "TaskActionKeepInactiveNPC",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "11647951308800"
+  },
+  {
+    "id": 2713,
+    "name": "TaskActionKeepPlayTalkPlot",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "11652246276096"
+  },
+  {
+    "id": 2714,
+    "name": "TaskActionTimeLock",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "11656541243392"
+  },
+  {
+    "id": 2715,
+    "name": "TaskActionTeamChange",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "11660836210688"
+  },
+  {
+    "id": 2716,
+    "name": "TaskAcionClearWorldObj",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "11665131177984"
+  },
+  {
+    "id": 2717,
+    "name": "TaskDisableTransfer",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "11669426145280"
+  },
+  {
+    "id": 2718,
+    "name": "TaskDisableSystemFunction",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "11673721112576"
+  },
+  {
+    "id": 2719,
+    "name": "TaskSetEntityStatus",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "11678016079872"
+  },
+  {
+    "id": 2720,
+    "name": "TaskBlackDialog",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "11682311047168"
+  },
+  {
+    "id": 2722,
+    "name": "TaskKiboTransfer",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "11690900981760"
+  },
+  {
+    "id": 2723,
+    "name": "TaskCreateBattleUnit",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "11695195949056"
+  },
+  {
+    "id": 2724,
+    "name": "TaskSetLookAt",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "11699490916352"
+  },
+  {
+    "id": 2725,
+    "name": "TaskEquipPetToTeam",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "11703785883648"
+  },
+  {
+    "id": 2727,
+    "name": "TaskWorldUnitStaetChangeData",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "11712375818240"
+  },
+  {
+    "id": 2789,
+    "name": "TaskSetCommonAction",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "11978663790592"
+  },
+  {
+    "id": 2899,
+    "name": "TaskActionEmpty",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "12451110193152"
+  },
+  {
+    "id": 2900,
+    "name": "KillPointCount",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "12455405160448"
+  },
+  {
+    "id": 2901,
+    "name": "PlayableClearTime",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "12459700127744"
+  },
+  {
+    "id": 2902,
+    "name": "KillEnemyCount",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "12463995095040"
+  },
+  {
+    "id": 2903,
+    "name": "EnemyHPRatio",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "12468290062336"
+  },
+  {
+    "id": 2904,
+    "name": "PlayableClearTimeScore",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "12472585029632"
+  },
+  {
+    "id": 2905,
+    "name": "EnemyGroupDeath",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "12476879996928"
+  },
+  {
+    "id": 3006,
+    "name": "DungeonTargetClearTime",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "12910671693824"
+  },
+  {
+    "id": 3007,
+    "name": "DungeonTargetBattleCount",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "12914966661120"
+  },
+  {
+    "id": 3008,
+    "name": "DungeonWithTargetHero",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "12919261628416"
+  },
+  {
+    "id": 3009,
+    "name": "DungeonGroupAllDie",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "12923556595712"
+  },
+  {
+    "id": 4000,
+    "name": "EnemyWave",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "17179869186048"
+  },
+  {
+    "id": 4001,
+    "name": "CleanSunya",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "17184164153344"
+  },
+  {
+    "id": 5002,
+    "name": "FishSpecialTotalTime",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "21483426416640"
+  },
+  {
+    "id": 5004,
+    "name": "FishTotalFailTime",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "21492016351232"
+  },
+  {
+    "id": 7001,
+    "name": "ShopPrecondition",
+    "type": 0,
+    "system_unlock": 1,
+    "descShow": "30069066041344"
+  },
+  {
+    "id": 9000,
+    "name": "RoleSwitchGSFinish",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "38654705666048"
+  },
+  {
+    "id": 10243,
+    "name": "PetSpecialCatch",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "43993350014976"
+  },
+  {
+    "id": 10244,
+    "name": "PetSpecialEgg",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "43997644982272"
+  },
+  {
+    "id": 11002,
+    "name": "IncubatePet",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "47253230192640"
+  },
+  {
+    "id": 11003,
+    "name": "UpgradeHero",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "47257525159936"
+  },
+  {
+    "id": 11004,
+    "name": "UpgradeSkill",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "47261820127232"
+  },
+  {
+    "id": 11005,
+    "name": "UpgradePet",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "47266115094528"
+  },
+  {
+    "id": 11006,
+    "name": "StaminaCost",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "47270410061824"
+  },
+  {
+    "id": 11008,
+    "name": "ScienceComplete",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "完成{sciencename}的研究",
+    "descShow_id": "47278999996416"
+  },
+  {
+    "id": 11009,
+    "name": "HomeLevel",
+    "type": 0,
+    "system_unlock": 1,
+    "descShow": "家园扩建等级{value}级后解锁",
+    "descShow_id": "47283294963712"
+  },
+  {
+    "id": 11010,
+    "name": "ScienceLevel",
+    "type": 0,
+    "system_unlock": 1,
+    "descShow": "{techName}心得等级达到{level}级后解锁",
+    "descShow_id": "47287589931008"
+  },
+  {
+    "id": 11011,
+    "name": "TechnologyLevel",
+    "type": 0,
+    "system_unlock": 1,
+    "descShow": "{techType}等级达到{level}级后解锁",
+    "descShow_id": "47291884898304"
+  },
+  {
+    "id": 11012,
+    "name": "TechnologySubLevel",
+    "type": 0,
+    "system_unlock": 1,
+    "descShow": "激活节点「{techType}」",
+    "descShow_id": "47296179865600"
+  },
+  {
+    "id": 11013,
+    "name": "HomeLandscapeTreeUpgrade",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "47300474832896"
+  },
+  {
+    "id": 12001,
+    "name": "LoadGameDay",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51543902521344"
+  },
+  {
+    "id": 12002,
+    "name": "BigWorldKill",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51548197488640"
+  },
+  {
+    "id": 12003,
+    "name": "BigWorldCollect",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51552492455936"
+  },
+  {
+    "id": 12004,
+    "name": "OpenDungeonBox",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51556787423232"
+  },
+  {
+    "id": 12005,
+    "name": "HomeHarvest",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51561082390528"
+  },
+  {
+    "id": 12007,
+    "name": "PetEgg",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51569672325120"
+  },
+  {
+    "id": 12008,
+    "name": "PetMating",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51573967292416"
+  },
+  {
+    "id": 12009,
+    "name": "LingziLevelUpTime",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51578262259712"
+  },
+  {
+    "id": 12010,
+    "name": "PetRelease",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51582557227008"
+  },
+  {
+    "id": 12011,
+    "name": "FishSuccessTime",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51586852194304"
+  },
+  {
+    "id": 12013,
+    "name": "ShopPurchase",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51595442128896"
+  },
+  {
+    "id": 12014,
+    "name": "CatchPetGroup",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51599737096192"
+  },
+  {
+    "id": 12015,
+    "name": "KillMonsterGroup",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51604032063488"
+  },
+  {
+    "id": 12016,
+    "name": "UnlockResourceBuilding",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51608327030784"
+  },
+  {
+    "id": 12017,
+    "name": "DungeonClear",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51612621998080"
+  },
+  {
+    "id": 12018,
+    "name": "HomeProducts",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51616916965376"
+  },
+  {
+    "id": 12019,
+    "name": "HomeFeedPets",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51621211932672"
+  },
+  {
+    "id": 12020,
+    "name": "HomeBuilding",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51625506899968"
+  },
+  {
+    "id": 12022,
+    "name": "ShopPurchaseGroup",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51634096834560"
+  },
+  {
+    "id": 12023,
+    "name": "HeroLevel",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51638391801856"
+  },
+  {
+    "id": 12024,
+    "name": "HeroStarLevel",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51642686769152"
+  },
+  {
+    "id": 12025,
+    "name": "HomeGrowVegetables",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51646981736448"
+  },
+  {
+    "id": 12026,
+    "name": "PetEvo",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51651276703744"
+  },
+  {
+    "id": 12027,
+    "name": "PutBuilding",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51655571671040"
+  },
+  {
+    "id": 12028,
+    "name": "AccumulateItem",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51659866638336"
+  },
+  {
+    "id": 12029,
+    "name": "CollectItem",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51664161605632"
+  },
+  {
+    "id": 12030,
+    "name": "ActivationPoint",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51668456572928"
+  },
+  {
+    "id": 12031,
+    "name": "HomeReclamation",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51672751540224"
+  },
+  {
+    "id": 12032,
+    "name": "HomePetStation",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51677046507520"
+  },
+  {
+    "id": 12033,
+    "name": "ShopPurchaseGoods",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51681341474816"
+  },
+  {
+    "id": 12034,
+    "name": "CreateTeam",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51685636442112"
+  },
+  {
+    "id": 12035,
+    "name": "CollectPetMonut",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51689931409408"
+  },
+  {
+    "id": 12036,
+    "name": "HaveHero",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51694226376704"
+  },
+  {
+    "id": 12038,
+    "name": "HomeMakeEquip",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51702816311296"
+  },
+  {
+    "id": 12039,
+    "name": "BuildingLevelUp",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "家园【{name}】达到{level}级",
+    "descShow_id": "51707111278592"
+  },
+  {
+    "id": 12040,
+    "name": "HavePet",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51711406245888"
+  },
+  {
+    "id": 12041,
+    "name": "HaveCommonItem",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51715701213184"
+  },
+  {
+    "id": 12042,
+    "name": "SystemUnlock",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51719996180480"
+  },
+  {
+    "id": 12045,
+    "name": "CompleteTaskStep",
+    "type": 0,
+    "system_unlock": 1,
+    "descShow": "完成任务{0}",
+    "descShow_id": "51732881082368"
+  },
+  {
+    "id": 12046,
+    "name": "CatchPetVariety",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51737176049664"
+  },
+  {
+    "id": 12047,
+    "name": "CollectNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51741471016960"
+  },
+  {
+    "id": 12048,
+    "name": "PetRidding",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51745765984256"
+  },
+  {
+    "id": 12049,
+    "name": "PetPvpAddUp",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51750060951552"
+  },
+  {
+    "id": 12050,
+    "name": "PetPvp",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51754355918848"
+  },
+  {
+    "id": 12051,
+    "name": "CompleteTaskType",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51758650886144"
+  },
+  {
+    "id": 12052,
+    "name": "StartHomeProducts",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51762945853440"
+  },
+  {
+    "id": 12053,
+    "name": "CompleteGuide",
+    "type": 0,
+    "system_unlock": 1,
+    "descShow": "51767240820736"
+  },
+  {
+    "id": 12054,
+    "name": "HomeMakeEquipType",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51771535788032"
+  },
+  {
+    "id": 12055,
+    "name": "HeroTalentRankNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51775830755328"
+  },
+  {
+    "id": 12056,
+    "name": "HeroWearEquipmentParts",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51780125722624"
+  },
+  {
+    "id": 12057,
+    "name": "HomeRanchPets",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51784420689920"
+  },
+  {
+    "id": 12058,
+    "name": "HomeFarm",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51788715657216"
+  },
+  {
+    "id": 12059,
+    "name": "HomeWater",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51793010624512"
+  },
+  {
+    "id": 12060,
+    "name": "SupplementFood",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51797305591808"
+  },
+  {
+    "id": 12061,
+    "name": "ShopPurchaseCommonItem",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51801600559104"
+  },
+  {
+    "id": 12062,
+    "name": "HomeFarmHarvest",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51805895526400"
+  },
+  {
+    "id": 12063,
+    "name": "EatFood",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51810190493696"
+  },
+  {
+    "id": 12065,
+    "name": "QiboAttributeFruit",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51818780428288"
+  },
+  {
+    "id": 12066,
+    "name": "HomeCultivatedLand",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51823075395584"
+  },
+  {
+    "id": 12067,
+    "name": "PortableProduction",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51827370362880"
+  },
+  {
+    "id": 12068,
+    "name": "AddPortableProduction",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51831665330176"
+  },
+  {
+    "id": 12069,
+    "name": "KiboIllustratedHandbook",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51835960297472"
+  },
+  {
+    "id": 12070,
+    "name": "HomeHubKibo",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51840255264768"
+  },
+  {
+    "id": 12071,
+    "name": "WorldFieldAcquisitionNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51844550232064"
+  },
+  {
+    "id": 12072,
+    "name": "BigWorldOpenBox",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51848845199360"
+  },
+  {
+    "id": 12073,
+    "name": "CumulativeBigWorldOpenBox",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51853140166656"
+  },
+  {
+    "id": 12074,
+    "name": "GameEventsKiboDuelComplete",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51857435133952"
+  },
+  {
+    "id": 12075,
+    "name": "GameEventsKiboDuelStar",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51861730101248"
+  },
+  {
+    "id": 12080,
+    "name": "BigWorldPlayable",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51883204937728"
+  },
+  {
+    "id": 12081,
+    "name": "HaveItem",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "已拥有",
+    "descShow_id": "51887499905024"
+  },
+  {
+    "id": 12082,
+    "name": "PamiLetterFinish",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51891794872320"
+  },
+  {
+    "id": 12090,
+    "name": "OpenBagBox",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51926154610688"
+  },
+  {
+    "id": 12091,
+    "name": "MapFlightPermission",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51930449577984"
+  },
+  {
+    "id": 12092,
+    "name": "DormHero",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51934744545280"
+  },
+  {
+    "id": 12093,
+    "name": "GotoDormHero",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51939039512576"
+  },
+  {
+    "id": 12094,
+    "name": "TrainingEquipment",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51943334479872"
+  },
+  {
+    "id": 12095,
+    "name": "HomeTowerPoint",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51947629447168"
+  },
+  {
+    "id": 12096,
+    "name": "FinishJourney",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51951924414464"
+  },
+  {
+    "id": 12097,
+    "name": "FinishTabJourney",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51956219381760"
+  },
+  {
+    "id": 12098,
+    "name": "FinishJourneyReward",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51960514349056"
+  },
+  {
+    "id": 12099,
+    "name": "JourneyTaskTargetUnlock",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51964809316352"
+  },
+  {
+    "id": 12100,
+    "name": "KiboDuelAreaLevel",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "{0}地区等级达到{1}级后解锁",
+    "descShow_id": "51969104283648"
+  },
+  {
+    "id": 12101,
+    "name": "KiboDuelAreaLevelReward",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51973399250944"
+  },
+  {
+    "id": 12102,
+    "name": "AccumulateMultipleItem",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51977694218240"
+  },
+  {
+    "id": 12103,
+    "name": "BossFirstChestCreate",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51981989185536"
+  },
+  {
+    "id": 12104,
+    "name": "BossFirstChestFinish",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "51986284152832"
+  },
+  {
+    "id": 12201,
+    "name": "CollectionInteract",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52402895980544"
+  },
+  {
+    "id": 12202,
+    "name": "KiboHPHalf",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52407190947840"
+  },
+  {
+    "id": 12203,
+    "name": "UseKiboCard",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52411485915136"
+  },
+  {
+    "id": 12204,
+    "name": "CreateEquipTab",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52415780882432"
+  },
+  {
+    "id": 12205,
+    "name": "HeroEquipParts",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52420075849728"
+  },
+  {
+    "id": 12206,
+    "name": "ReturnFarmland",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52424370817024"
+  },
+  {
+    "id": 12207,
+    "name": "SeedStorage",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52428665784320"
+  },
+  {
+    "id": 12208,
+    "name": "HarvestCropsType",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52432960751616"
+  },
+  {
+    "id": 12209,
+    "name": "KiboBoardFood",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52437255718912"
+  },
+  {
+    "id": 12210,
+    "name": "CookFoodType",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52441550686208"
+  },
+  {
+    "id": 12211,
+    "name": "KiboBoardFoodType",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52445845653504"
+  },
+  {
+    "id": 12212,
+    "name": "EnhanceTypeEquipment",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52450140620800"
+  },
+  {
+    "id": 12213,
+    "name": "HeroDormChat",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "52454435588096"
+  },
+  {
+    "id": 12216,
+    "name": "GetCollectionType",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52467320489984"
+  },
+  {
+    "id": 12217,
+    "name": "OpenPage",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52471615457280"
+  },
+  {
+    "id": 12218,
+    "name": "FishingTime",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52475910424576"
+  },
+  {
+    "id": 12219,
+    "name": "BuyFishingRod",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52480205391872"
+  },
+  {
+    "id": 12220,
+    "name": "CatchDifferentFish",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52484500359168"
+  },
+  {
+    "id": 12221,
+    "name": "DistrictAreaBuildingKibo",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52488795326464"
+  },
+  {
+    "id": 12222,
+    "name": "RepairMapBuilding",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52493090293760"
+  },
+  {
+    "id": 12223,
+    "name": "UseItemHeroLevelUp",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52497385261056"
+  },
+  {
+    "id": 12224,
+    "name": "HeroTalentNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52501680228352"
+  },
+  {
+    "id": 12225,
+    "name": "HeroOneTalentNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52505975195648"
+  },
+  {
+    "id": 12226,
+    "name": "HeroTalentBreak",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52510270162944"
+  },
+  {
+    "id": 12227,
+    "name": "HeroGift",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52514565130240"
+  },
+  {
+    "id": 12228,
+    "name": "HeroGiftNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52518860097536"
+  },
+  {
+    "id": 12229,
+    "name": "HeroFavorNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52523155064832"
+  },
+  {
+    "id": 12230,
+    "name": "HeroFavorTaskNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52527450032128"
+  },
+  {
+    "id": 12231,
+    "name": "EquipScoreTime",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52531744999424"
+  },
+  {
+    "id": 12232,
+    "name": "HeroEquipSuitEffect",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52536039966720"
+  },
+  {
+    "id": 12233,
+    "name": "UseItemSoulessenceLevelUp",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52540334934016"
+  },
+  {
+    "id": 12234,
+    "name": "SoulessenceTypeNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52544629901312"
+  },
+  {
+    "id": 12235,
+    "name": "HeroWearSoulessence",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52548924868608"
+  },
+  {
+    "id": 12236,
+    "name": "SoulessenceBreak",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52553219835904"
+  },
+  {
+    "id": 12237,
+    "name": "HeroElement",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52557514803200"
+  },
+  {
+    "id": 12238,
+    "name": "HeroJob",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52561809770496"
+  },
+  {
+    "id": 12239,
+    "name": "UseItemKiboLevelUp",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52566104737792"
+  },
+  {
+    "id": 12240,
+    "name": "KiboGene",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52570399705088"
+  },
+  {
+    "id": 12241,
+    "name": "SpecialKiboLevel",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52574694672384"
+  },
+  {
+    "id": 12242,
+    "name": "SpecialKiboRank",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52578989639680"
+  },
+  {
+    "id": 12243,
+    "name": "KiboFavorLevel",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52583284606976"
+  },
+  {
+    "id": 12244,
+    "name": "KiboPuzzleElement",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52587579574272"
+  },
+  {
+    "id": 12245,
+    "name": "KiboPuzzleEquip",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52591874541568"
+  },
+  {
+    "id": 12246,
+    "name": "KiboJob",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52596169508864"
+  },
+  {
+    "id": 12247,
+    "name": "KiboJobStation",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52600464476160"
+  },
+  {
+    "id": 12248,
+    "name": "KiboDuelTag",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52604759443456"
+  },
+  {
+    "id": 12249,
+    "name": "KiboDuelSkill",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52609054410752"
+  },
+  {
+    "id": 12250,
+    "name": "KiboDuelCrazyWin",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52613349378048"
+  },
+  {
+    "id": 12251,
+    "name": "DungeonEntrustTag",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52617644345344"
+  },
+  {
+    "id": 12252,
+    "name": "DungeonEntrustTagStar",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52621939312640"
+  },
+  {
+    "id": 12253,
+    "name": "DungeonEntrustMultipleStar",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52626234279936"
+  },
+  {
+    "id": 12254,
+    "name": "DungeonEntrustMultipleFriend",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52630529247232"
+  },
+  {
+    "id": 12255,
+    "name": "DungeonEntrustMultipleTeamStar",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52634824214528"
+  },
+  {
+    "id": 12256,
+    "name": "WinFightHP",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52639119181824"
+  },
+  {
+    "id": 12257,
+    "name": "FightHPUP",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52643414149120"
+  },
+  {
+    "id": 12260,
+    "name": "FightHarmonious",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52656299051008"
+  },
+  {
+    "id": 12262,
+    "name": "FightKiboSkill",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52664888985600"
+  },
+  {
+    "id": 12263,
+    "name": "ProduceElement",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52669183952896"
+  },
+  {
+    "id": 12264,
+    "name": "MountEquipment",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52673478920192"
+  },
+  {
+    "id": 12265,
+    "name": "HaveDifferentMount",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52677773887488"
+  },
+  {
+    "id": 12266,
+    "name": "ChangeMount",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52682068854784"
+  },
+  {
+    "id": 12267,
+    "name": "RougePattern",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52686363822080"
+  },
+  {
+    "id": 12268,
+    "name": "RougePatternWin",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52690658789376"
+  },
+  {
+    "id": 12269,
+    "name": "RougeEvent",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52694953756672"
+  },
+  {
+    "id": 12270,
+    "name": "RougeEventWin",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52699248723968"
+  },
+  {
+    "id": 12271,
+    "name": "RougeItem",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52703543691264"
+  },
+  {
+    "id": 12272,
+    "name": "RougeItemWin",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52707838658560"
+  },
+  {
+    "id": 12273,
+    "name": "CollectionBuildingLVUp",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52712133625856"
+  },
+  {
+    "id": 12274,
+    "name": "FinishFavorTask",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52716428593152"
+  },
+  {
+    "id": 12275,
+    "name": "HeroEquipQuality",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52720723560448"
+  },
+  {
+    "id": 12276,
+    "name": "MakeSoulEssenceBreakItem",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52725018527744"
+  },
+  {
+    "id": 12277,
+    "name": "ActivationPointNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52729313495040"
+  },
+  {
+    "id": 12278,
+    "name": "HaveDifferentTypeKibo",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52733608462336"
+  },
+  {
+    "id": 12279,
+    "name": "SpecialKiboRankStage",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52737903429632"
+  },
+  {
+    "id": 12280,
+    "name": "ShopGoodsSoldOut",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52742198396928"
+  },
+  {
+    "id": 12281,
+    "name": "MallBuyPayShopGoods",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52746493364224"
+  },
+  {
+    "id": 12282,
+    "name": "MallBuyDiamondShopGoods",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52750788331520"
+  },
+  {
+    "id": 12283,
+    "name": "MallPayPurchaseSdk",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52755083298816"
+  },
+  {
+    "id": 12284,
+    "name": "GetHeroClothes",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52759378266112"
+  },
+  {
+    "id": 12285,
+    "name": "GetSoulEssence",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52763673233408"
+  },
+  {
+    "id": 12286,
+    "name": "ExploreRewardPetStarLinkProb",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52767968200704"
+  },
+  {
+    "id": 12287,
+    "name": "ExploreRewardPetColorProb",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52772263168000"
+  },
+  {
+    "id": 12288,
+    "name": "ExploreRewardPetSpecialProb",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "52776558135296"
+  },
+  {
+    "id": 13000,
+    "name": "HeroFavorability",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "55834574850048"
+  },
+  {
+    "id": 13001,
+    "name": "CharacterNumBreaks",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "55838869817344"
+  },
+  {
+    "id": 13002,
+    "name": "CharacterNumLevels",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "55843164784640"
+  },
+  {
+    "id": 13004,
+    "name": "SoulEssenceNumBreaks",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "55851754719232"
+  },
+  {
+    "id": 13005,
+    "name": "EquipmentNumRarityLevel",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "55856049686528"
+  },
+  {
+    "id": 13006,
+    "name": "SoulEssenceNumRarityLevel",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "55860344653824"
+  },
+  {
+    "id": 13007,
+    "name": "CharacterNumFavorabilityLevel",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "55864639621120"
+  },
+  {
+    "id": 13008,
+    "name": "PetEggNumObtainedInCertainArea",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "55868934588416"
+  },
+  {
+    "id": 13009,
+    "name": "PetIdNumDiffElem",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "55873229555712"
+  },
+  {
+    "id": 13010,
+    "name": "PetIdNumDiffPetGroup",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "55877524523008"
+  },
+  {
+    "id": 13011,
+    "name": "PetNumObtainedInCertainArea",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "55881819490304"
+  },
+  {
+    "id": 13012,
+    "name": "PetNumObtainedDiffStage",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "55886114457600"
+  },
+  {
+    "id": 13013,
+    "name": "PetNumOverall",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "55890409424896"
+  },
+  {
+    "id": 13014,
+    "name": "PetNumCertainTalentRating",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "55894704392192"
+  },
+  {
+    "id": 13015,
+    "name": "PetNumTalentRatingNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "55898999359488"
+  },
+  {
+    "id": 13016,
+    "name": "EvolvePetNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "55903294326784"
+  },
+  {
+    "id": 13017,
+    "name": "PetNumHaveCertainStage",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "55907589294080"
+  },
+  {
+    "id": 13018,
+    "name": "PetNumContainGoldFactor",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "55911884261376"
+  },
+  {
+    "id": 13019,
+    "name": "PetNumContainRareFactor",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "55916179228672"
+  },
+  {
+    "id": 13020,
+    "name": "WateringFrequency",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "55920474195968"
+  },
+  {
+    "id": 13021,
+    "name": "CropHarvestNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "55924769163264"
+  },
+  {
+    "id": 13022,
+    "name": "CropCancelNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "55929064130560"
+  },
+  {
+    "id": 13023,
+    "name": "SupplyFullnessValue",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "55933359097856"
+  },
+  {
+    "id": 13024,
+    "name": "HomeBuildingCollectionSituation",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "55937654065152"
+  },
+  {
+    "id": 13025,
+    "name": "BuildingCollectionSituation",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "55941949032448"
+  },
+  {
+    "id": 13026,
+    "name": "HatchEggNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "55946243999744"
+  },
+  {
+    "id": 13027,
+    "name": "CounterKillNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "55950538967040"
+  },
+  {
+    "id": 13028,
+    "name": "NirvanaTimesQuickly",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "55954833934336"
+  },
+  {
+    "id": 13029,
+    "name": "SalvageEventTimes",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "55959128901632"
+  },
+  {
+    "id": 13030,
+    "name": "ItemExChangeNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "55963423868928"
+  },
+  {
+    "id": 13031,
+    "name": "GetDiffLengthFishNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "55967718836224"
+  },
+  {
+    "id": 13032,
+    "name": "AdjustWorldDifficultyTimes",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "55972013803520"
+  },
+  {
+    "id": 13033,
+    "name": "RegionPhotoTimes",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "55976308770816"
+  },
+  {
+    "id": 13034,
+    "name": "RegionPuzzleTimes",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "55980603738112"
+  },
+  {
+    "id": 13035,
+    "name": "QiboLevelNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "55984898705408"
+  },
+  {
+    "id": 13036,
+    "name": "HeroWearEquipNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "55989193672704"
+  },
+  {
+    "id": 13037,
+    "name": "HeroSkillLevelNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "55993488640000"
+  },
+  {
+    "id": 13038,
+    "name": "FindSpawner",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "55997783607296"
+  },
+  {
+    "id": 13039,
+    "name": "BuildResourceBuilding",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56002078574592"
+  },
+  {
+    "id": 13040,
+    "name": "ActivationSpawner",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56006373541888"
+  },
+  {
+    "id": 13041,
+    "name": "CompleteWumiPuzzle",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56010668509184"
+  },
+  {
+    "id": 13042,
+    "name": "OpenBox",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56014963476480"
+  },
+  {
+    "id": 13043,
+    "name": "OpenStoreUI",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56019258443776"
+  },
+  {
+    "id": 13044,
+    "name": "DungeonEntrustFinish",
+    "type": 0,
+    "system_unlock": 1,
+    "descShow": "完成主线委托「{0} {1}」后解锁",
+    "descShow_id": "56023553411072"
+  },
+  {
+    "id": 13045,
+    "name": "DungeonEntrustDiffFinish",
+    "type": 0,
+    "system_unlock": 1,
+    "descShow": "完成全部主线委托任务后解锁",
+    "descShow_id": "56027848378368"
+  },
+  {
+    "id": 13046,
+    "name": "DungeonEntrustDiffStar",
+    "type": 0,
+    "system_unlock": 1,
+    "descShow": "收集主线委托{index}星级后解锁",
+    "descShow_id": "56032143345664"
+  },
+  {
+    "id": 13047,
+    "name": "TrainTask",
+    "type": 0,
+    "system_unlock": 1,
+    "descShow": "56036438312960"
+  },
+  {
+    "id": 13048,
+    "name": "DungeonEntrustDiffNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56040733280256"
+  },
+  {
+    "id": 13049,
+    "name": "MapCanMount",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "56045028247552"
+  },
+  {
+    "id": 13050,
+    "name": "GetPet",
+    "type": 0,
+    "system_unlock": 1,
+    "descShow": "56049323214848"
+  },
+  {
+    "id": 13051,
+    "name": "GetPetLevel",
+    "type": 0,
+    "system_unlock": 1,
+    "descShow": "56053618182144"
+  },
+  {
+    "id": 13052,
+    "name": "GetPetTalent",
+    "type": 0,
+    "system_unlock": 1,
+    "descShow": "56057913149440"
+  },
+  {
+    "id": 13053,
+    "name": "PetDuelAreaTypeVictory",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56062208116736"
+  },
+  {
+    "id": 13054,
+    "name": "PetDuelElementSuppressionVictory",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "56066503084032"
+  },
+  {
+    "id": 13055,
+    "name": "PetDuelTagVictory",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "56070798051328"
+  },
+  {
+    "id": 13056,
+    "name": "PetDuelSkillVictory",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "56075093018624"
+  },
+  {
+    "id": 13057,
+    "name": "PetDuelDifferentNumVictory",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56079387985920"
+  },
+  {
+    "id": 13058,
+    "name": "PetDuelFeverModeVictory",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56083682953216"
+  },
+  {
+    "id": 13059,
+    "name": "CertainPhotoTimes",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "56087977920512"
+  },
+  {
+    "id": 13060,
+    "name": "CompleteGameplayInCertainArea",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56092272887808"
+  },
+  {
+    "id": 13061,
+    "name": "ExploreRatingInCertainMap",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56096567855104"
+  },
+  {
+    "id": 13062,
+    "name": "RestoreBuildingInCertainArea",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56100862822400"
+  },
+  {
+    "id": 13063,
+    "name": "OpenBoxInCertainArea",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56105157789696"
+  },
+  {
+    "id": 13064,
+    "name": "CollectBookInCertainArea",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56109452756992"
+  },
+  {
+    "id": 13065,
+    "name": "DefeatEnemyInCertainType",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56113747724288"
+  },
+  {
+    "id": 13066,
+    "name": "DefeatEnemyInCertainID",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56118042691584"
+  },
+  {
+    "id": 13067,
+    "name": "CompleteAchievementIdGroup",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56122337658880"
+  },
+  {
+    "id": 13068,
+    "name": "DefeatEnemyWithNoDamage",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56126632626176"
+  },
+  {
+    "id": 13069,
+    "name": "DefeatEnemyWithNoSKILL",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56130927593472"
+  },
+  {
+    "id": 13070,
+    "name": "DefeatedByEnemyInCertainType",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56135222560768"
+  },
+  {
+    "id": 13071,
+    "name": "PetDuelVictoryNoAccumulate",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56139517528064"
+  },
+  {
+    "id": 13072,
+    "name": "PetDuelVictoryAccumulate",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56143812495360"
+  },
+  {
+    "id": 13073,
+    "name": "PetDuelOccupyEnemyCenterArea",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "56148107462656"
+  },
+  {
+    "id": 13074,
+    "name": "PetDuelDestroyTower",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "56152402429952"
+  },
+  {
+    "id": 13075,
+    "name": "PetDuelVictoryNoDamage",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "56156697397248"
+  },
+  {
+    "id": 13076,
+    "name": "PetDuelVictoryNoHeroSkill",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "56160992364544"
+  },
+  {
+    "id": 13077,
+    "name": "PetDuelVictoryLowHp",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "56165287331840"
+  },
+  {
+    "id": 13078,
+    "name": "PetDuelVictoryNoHeroSkillTimes",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "56169582299136"
+  },
+  {
+    "id": 13079,
+    "name": "PetDuelVictoryInTime",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "在60秒内获得奇波对决的胜利",
+    "descShow_id": "56173877266432"
+  },
+  {
+    "id": 13080,
+    "name": "PetDuelVictoryDeathNum",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "56178172233728"
+  },
+  {
+    "id": 13081,
+    "name": "PetBattleSkill",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56182467201024"
+  },
+  {
+    "id": 13082,
+    "name": "PetBattleSkillInTime",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56186762168320"
+  },
+  {
+    "id": 13083,
+    "name": "PetKill",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56191057135616"
+  },
+  {
+    "id": 13084,
+    "name": "PetBattleType",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "在战斗内全部使用浮游炮类的奇波宠物",
+    "descShow_id": "56195352102912"
+  },
+  {
+    "id": 13085,
+    "name": "PetDie",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56199647070208"
+  },
+  {
+    "id": 13086,
+    "name": "EnemyBreak",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56203942037504"
+  },
+  {
+    "id": 13087,
+    "name": "DamageOnce",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56208237004800"
+  },
+  {
+    "id": 13088,
+    "name": "DamageAll",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56212531972096"
+  },
+  {
+    "id": 13089,
+    "name": "SpecialMiss",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "56216826939392"
+  },
+  {
+    "id": 13090,
+    "name": "HeroSkill",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "累积使用XX次星鸣技",
+    "descShow_id": "56221121906688"
+  },
+  {
+    "id": 13091,
+    "name": "HeroSkillKillEnemy",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56225416873984"
+  },
+  {
+    "id": 13092,
+    "name": "OwnPlayerTitle",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56229711841280"
+  },
+  {
+    "id": 13093,
+    "name": "PetFavorability",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56234006808576"
+  },
+  {
+    "id": 13094,
+    "name": "PetOwnNoAccumulate",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56238301775872"
+  },
+  {
+    "id": 13095,
+    "name": "UnlockHomeStage",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56242596743168"
+  },
+  {
+    "id": 13096,
+    "name": "DormConstructNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "建造一间双人宿舍",
+    "descShow_id": "56246891710464"
+  },
+  {
+    "id": 13097,
+    "name": "DormFurnitureUnlock",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "解锁一间宿舍内全部的家具（氪金专属，待定）",
+    "descShow_id": "56251186677760"
+  },
+  {
+    "id": 13098,
+    "name": "DormHeroInteraction",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "在宿舍内与一名角色互动",
+    "descShow_id": "56255481645056"
+  },
+  {
+    "id": 13099,
+    "name": "HomeOrder",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "完成300个订单",
+    "descShow_id": "56259776612352"
+  },
+  {
+    "id": 13100,
+    "name": "HomeTechnologyLevel",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56264071579648"
+  },
+  {
+    "id": 13101,
+    "name": "PetInRanch",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56268366546944"
+  },
+  {
+    "id": 13102,
+    "name": "ProduceEquipmentRank",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56272661514240"
+  },
+  {
+    "id": 13103,
+    "name": "DormHeroInteractionTakeTwo",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "56276956481536"
+  },
+  {
+    "id": 13104,
+    "name": "ExploreLevelInCertainMap",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56281251448832"
+  },
+  {
+    "id": 13105,
+    "name": "HomeGlobalBonus",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56285546416128"
+  },
+  {
+    "id": 13106,
+    "name": "RestoreBuildingTypeInCertain",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56289841383424"
+  },
+  {
+    "id": 13107,
+    "name": "CompleteWumiPuzzleAount",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56294136350720"
+  },
+  {
+    "id": 13108,
+    "name": "CharacterFavorabilityLevel",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56298431318016"
+  },
+  {
+    "id": 13109,
+    "name": "CatchPetGroupAdd",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56302726285312"
+  },
+  {
+    "id": 13110,
+    "name": "PetRiddingAdd",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56307021252608"
+  },
+  {
+    "id": 13111,
+    "name": "AbbysLevelPass",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56311316219904"
+  },
+  {
+    "id": 13112,
+    "name": "MaterialStarFinish",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "{0}星完成{1}难度{2}",
+    "descShow_id": "56315611187200"
+  },
+  {
+    "id": 13113,
+    "name": "MaterialFinishNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "完成{0}难度{1}{2}次",
+    "descShow_id": "56319906154496"
+  },
+  {
+    "id": 13114,
+    "name": "MaterialTypeFinishNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "完成指定日常委托{0}次",
+    "descShow_id": "56324201121792"
+  },
+  {
+    "id": 13115,
+    "name": "MaterialTypeStarNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "完成指定日常委托{0}星{1}次",
+    "descShow_id": "56328496089088"
+  },
+  {
+    "id": 13116,
+    "name": "MaterialDiffAll",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "完成难度{0}所有日常委托",
+    "descShow_id": "56332791056384"
+  },
+  {
+    "id": 13117,
+    "name": "DungeonWeeklyStarFinish",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "{0}星完成{1}难度{2}",
+    "descShow_id": "56337086023680"
+  },
+  {
+    "id": 13118,
+    "name": "KiboDuelCompetitionTime",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56341380990976"
+  },
+  {
+    "id": 13119,
+    "name": "KiboDuelCompetitionRank",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56345675958272"
+  },
+  {
+    "id": 13120,
+    "name": "MallPayOrder",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56349970925568"
+  },
+  {
+    "id": 13121,
+    "name": "MallRefundOrder",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56354265892864"
+  },
+  {
+    "id": 13122,
+    "name": "GameConfVersion",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "暂未开放",
+    "descShow_id": "56358560860160"
+  },
+  {
+    "id": 13123,
+    "name": "AbbysLevelPassStar",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56362855827456"
+  },
+  {
+    "id": 13124,
+    "name": "AbbysLevelmodelPass",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56367150794752"
+  },
+  {
+    "id": 13125,
+    "name": "RegionAreaPuzzleTimes",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56371445762048"
+  },
+  {
+    "id": 13126,
+    "name": "RegionAreaPlayAbleTimes",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "56375740729344"
+  },
+  {
+    "id": 14000,
+    "name": "PlayableMount",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "60129542146048"
+  },
+  {
+    "id": 14001,
+    "name": "PlayableFly",
+    "type": 1,
+    "system_unlock": 0,
+    "descShow": "60133837113344"
+  },
+  {
+    "id": 15000,
+    "name": "HeroLevelUp",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64424509442048"
+  },
+  {
+    "id": 15001,
+    "name": "SoulessenceLevelUp",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64428804409344"
+  },
+  {
+    "id": 15002,
+    "name": "KiboLevelUp",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64433099376640"
+  },
+  {
+    "id": 15003,
+    "name": "HomeOrderComplete",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64437394343936"
+  },
+  {
+    "id": 15004,
+    "name": "DungeonWeeklyStarFinishNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64441689311232"
+  },
+  {
+    "id": 15005,
+    "name": "GachaNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64445984278528"
+  },
+  {
+    "id": 15006,
+    "name": "CumulativeGachaNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64450279245824"
+  },
+  {
+    "id": 15007,
+    "name": "DungeonCrisiscrusadeDifNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64454574213120"
+  },
+  {
+    "id": 15008,
+    "name": "DailyActivity",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64458869180416"
+  },
+  {
+    "id": 15009,
+    "name": "WeeklyActivity",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64463164147712"
+  },
+  {
+    "id": 15010,
+    "name": "DungeonMaterialDifNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64467459115008"
+  },
+  {
+    "id": 15011,
+    "name": "BuildingMakingOrCookingNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64471754082304"
+  },
+  {
+    "id": 15012,
+    "name": "UseItem",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64476049049600"
+  },
+  {
+    "id": 15013,
+    "name": "KiboBoardFoodNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64480344016896"
+  },
+  {
+    "id": 15014,
+    "name": "DefeatEnemyInEliteOrBossType",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64484638984192"
+  },
+  {
+    "id": 15015,
+    "name": "PetDuelVictoryNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64488933951488"
+  },
+  {
+    "id": 15016,
+    "name": "TrainTaskInCertainType",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64493228918784"
+  },
+  {
+    "id": 15017,
+    "name": "HomeLevelup",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64497523886080"
+  },
+  {
+    "id": 15018,
+    "name": "ShopClear",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64501818853376"
+  },
+  {
+    "id": 15019,
+    "name": "BeKillByEnemy",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64506113820672"
+  },
+  {
+    "id": 15020,
+    "name": "HomebuildingTypeGroupNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64510408787968"
+  },
+  {
+    "id": 15021,
+    "name": "HomeProductsItemType",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64514703755264"
+  },
+  {
+    "id": 15022,
+    "name": "HaveCommonItemType",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64518998722560"
+  },
+  {
+    "id": 15023,
+    "name": "HomeOrderMaxValue",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64523293689856"
+  },
+  {
+    "id": 15024,
+    "name": "HomeShopCost",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64527588657152"
+  },
+  {
+    "id": 15025,
+    "name": "HomePetStationFit",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64531883624448"
+  },
+  {
+    "id": 15026,
+    "name": "KiboJobScore",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64536178591744"
+  },
+  {
+    "id": 15027,
+    "name": "HomeHubKiboReward",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64540473559040"
+  },
+  {
+    "id": 15028,
+    "name": "SceneExploration",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64544768526336"
+  },
+  {
+    "id": 15029,
+    "name": "SceneActivationPoint",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64549063493632"
+  },
+  {
+    "id": 15030,
+    "name": "BigWorldPlayAbleStar",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64553358460928"
+  },
+  {
+    "id": 15031,
+    "name": "SceneBigWorldPlayable",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64557653428224"
+  },
+  {
+    "id": 15032,
+    "name": "BookCollection",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64561948395520"
+  },
+  {
+    "id": 15033,
+    "name": "EquipRarityStar",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64566243362816"
+  },
+  {
+    "id": 15034,
+    "name": "HeroEquipStarMax",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64570538330112"
+  },
+  {
+    "id": 15035,
+    "name": "UnlockHomeCollectionWorld",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64574833297408"
+  },
+  {
+    "id": 15036,
+    "name": "HighorLowCatch",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64579128264704"
+  },
+  {
+    "id": 15037,
+    "name": "InitialKiboRank",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64583423232000"
+  },
+  {
+    "id": 15038,
+    "name": "TeamWishSoulnessence",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64587718199296"
+  },
+  {
+    "id": 15039,
+    "name": "EatFoodByHand",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64592013166592"
+  },
+  {
+    "id": 15040,
+    "name": "LinkKiboTalentLevel",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64596308133888"
+  },
+  {
+    "id": 15041,
+    "name": "TeamWithKiboTalentLevel",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64600603101184"
+  },
+  {
+    "id": 15042,
+    "name": "TeamWithKiboLevel",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64604898068480"
+  },
+  {
+    "id": 15043,
+    "name": "CatchKiboStage",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64609193035776"
+  },
+  {
+    "id": 15044,
+    "name": "CatchKiboGene",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64613488003072"
+  },
+  {
+    "id": 15045,
+    "name": "KiboStarSoulLevel",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64617782970368"
+  },
+  {
+    "id": 15046,
+    "name": "PetSpecialKill",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64622077937664"
+  },
+  {
+    "id": 15047,
+    "name": "FightWithPet",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64626372904960"
+  },
+  {
+    "id": 15048,
+    "name": "LoginContinuo",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64630667872256"
+  },
+  {
+    "id": 15049,
+    "name": "BigWorldDifKill",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64634962839552"
+  },
+  {
+    "id": 15050,
+    "name": "BossBreakKill",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64639257806848"
+  },
+  {
+    "id": 15051,
+    "name": "SpecialkParry",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64643552774144"
+  },
+  {
+    "id": 15052,
+    "name": "ElementDamage",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64647847741440"
+  },
+  {
+    "id": 15053,
+    "name": "ComboNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64652142708736"
+  },
+  {
+    "id": 15054,
+    "name": "ComboDamage",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64656437676032"
+  },
+  {
+    "id": 15055,
+    "name": "AbbysTypeStarPass",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64660732643328"
+  },
+  {
+    "id": 15056,
+    "name": "AbbysTypeStarNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64665027610624"
+  },
+  {
+    "id": 15057,
+    "name": "DungeonCrisiscrusadeHP",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64669322577920"
+  },
+  {
+    "id": 15058,
+    "name": "DungeonCrisiscrusadeTimeDif",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64673617545216"
+  },
+  {
+    "id": 15059,
+    "name": "StarJourneyGetCost",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64677912512512"
+  },
+  {
+    "id": 15060,
+    "name": "KiboDuelTeamElement",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64682207479808"
+  },
+  {
+    "id": 15061,
+    "name": "KiboDuelWeather",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64686502447104"
+  },
+  {
+    "id": 15062,
+    "name": "KiboDuelElementFirst",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64690797414400"
+  },
+  {
+    "id": 15063,
+    "name": "KiboDuelEndWithAlive",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64695092381696"
+  },
+  {
+    "id": 15064,
+    "name": "KiboDuelCost",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64699387348992"
+  },
+  {
+    "id": 15065,
+    "name": "KiboDuelKillAllInOne",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64703682316288"
+  },
+  {
+    "id": 15066,
+    "name": "KiboDuelHold",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64707977283584"
+  },
+  {
+    "id": 15067,
+    "name": "KiboDuelFastKill",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64712272250880"
+  },
+  {
+    "id": 15068,
+    "name": "KiboDuelWinLessKibo",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64716567218176"
+  },
+  {
+    "id": 15069,
+    "name": "KiboDuelWinLowHP",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64720862185472"
+  },
+  {
+    "id": 15070,
+    "name": "KiboDuelTrain",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64725157152768"
+  },
+  {
+    "id": 15071,
+    "name": "KiboDuelJoinNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64729452120064"
+  },
+  {
+    "id": 15072,
+    "name": "HomeEquipMade",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64733747087360"
+  },
+  {
+    "id": 15093,
+    "name": "PlayerUsedEquip",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64823941400576"
+  },
+  {
+    "id": 15094,
+    "name": "PlayerUsedSoulEssence",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64828236367872"
+  },
+  {
+    "id": 15095,
+    "name": "PlayerOpenedHomeBuffUI",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "64832531335168"
+  },
+  {
+    "id": 20001,
+    "name": "MailReceiveLoginTime",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "85903640889344"
+  },
+  {
+    "id": 20002,
+    "name": "MailReceiveRegisterTime",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "85907935856640"
+  },
+  {
+    "id": 20003,
+    "name": "CumulativeLoginDays",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "85912230823936"
+  },
+  {
+    "id": 30001,
+    "name": "RogueCompleteTime",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "128853313849344"
+  },
+  {
+    "id": 30002,
+    "name": "RogueWinBattleSingle",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "128857608816640"
+  },
+  {
+    "id": 30003,
+    "name": "RogueWinBattleAccumulate",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "128861903783936"
+  },
+  {
+    "id": 32001,
+    "name": "SevenDayGroupFinsih",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "137443248441344"
+  },
+  {
+    "id": 40001,
+    "name": "CheckGroupEventState",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "171802986809344"
+  },
+  {
+    "id": 40002,
+    "name": "CheckSingleEventState",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "171807281776640"
+  },
+  {
+    "id": 40003,
+    "name": "CheckWorldObj",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "171811576743936"
+  },
+  {
+    "id": 50001,
+    "name": "KiboDuelFinTime",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "对决时间剩余至少{time}秒",
+    "descShow_id": "214752659769344"
+  },
+  {
+    "id": 50002,
+    "name": "KiboDuelPass",
+    "type": 0,
+    "system_unlock": 1,
+    "descShow": "通过{mode}-第{index}章-{name}关卡后解锁",
+    "descShow_id": "214756954736640"
+  },
+  {
+    "id": 60001,
+    "name": "BattleReleaseSkillCount",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "257702332729344"
+  },
+  {
+    "id": 60002,
+    "name": "BattleAttackHitCount",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "257706627696640"
+  },
+  {
+    "id": 60003,
+    "name": "BattlePileUpDisorderCount",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "257710922663936"
+  },
+  {
+    "id": 60004,
+    "name": "BattleDepleteDisorderCount",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "257715217631232"
+  },
+  {
+    "id": 60005,
+    "name": "BattleExceedDisorderCount",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "257719512598528"
+  },
+  {
+    "id": 60006,
+    "name": "BattleReleaseSkillKindCount",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "257723807565824"
+  },
+  {
+    "id": 60007,
+    "name": "HeroDeathCount",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "257728102533120"
+  },
+  {
+    "id": 60008,
+    "name": "UnityHealthCount",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "257732397500416"
+  },
+  {
+    "id": 60009,
+    "name": "GainElement",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "257736692467712"
+  },
+  {
+    "id": 61001,
+    "name": "ReputationLevelUnlock",
+    "type": 0,
+    "system_unlock": 1,
+    "descShow": "{name}的声望达到{lv}级",
+    "descShow_id": "261997300025344"
+  },
+  {
+    "id": 61002,
+    "name": "OrderUnlock",
+    "type": 0,
+    "system_unlock": 1,
+    "descShow": "完成剧情订单{name}",
+    "descShow_id": "262001594992640"
+  },
+  {
+    "id": 61003,
+    "name": "AvatarBattleDifficulty",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "通关{num}次{difficulty}难度以上的关卡",
+    "descShow_id": "262005889959936"
+  },
+  {
+    "id": 61004,
+    "name": "PlayTypeNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "【未知】",
+    "descShow_id": "262010184927232"
+  },
+  {
+    "id": 61005,
+    "name": "PlayTypeScore",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "获取{num}积分",
+    "descShow_id": "262014479894528"
+  },
+  {
+    "id": 61006,
+    "name": "TotalTaskProgress",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "完成所有活动任务",
+    "descShow_id": "262018774861824"
+  },
+  {
+    "id": 61007,
+    "name": "LevelRange",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "星识等级大于等于 {min}级，小于等于 {max}级",
+    "descShow_id": "262023069829120"
+  },
+  {
+    "id": 61008,
+    "name": "PlayerDead",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "角色死亡",
+    "descShow_id": "262027364796416"
+  },
+  {
+    "id": 61009,
+    "name": "BattleMessageCondition",
+    "type": 1,
+    "system_unlock": 1,
+    "descShow": "战场状态达成",
+    "descShow_id": "262031659763712"
+  },
+  {
+    "id": 61010,
+    "name": "ActivityP1",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "262035954731008"
+  },
+  {
+    "id": 61011,
+    "name": "EnemyStatesSwitch",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "262040249698304"
+  },
+  {
+    "id": 61012,
+    "name": "DefeatEnemyCount",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "262044544665600"
+  },
+  {
+    "id": 61013,
+    "name": "RogueSkillLearnJudge",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "262048839632896"
+  },
+  {
+    "id": 61014,
+    "name": "kTeachingUpHero",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "262053134600192"
+  },
+  {
+    "id": 70001,
+    "name": "DungeonEnter",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "300652005689344"
+  },
+  {
+    "id": 70002,
+    "name": "MultiDungeonEnter",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "300656300656640"
+  },
+  {
+    "id": 70003,
+    "name": "MultiDungeonReady",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "300660595623936"
+  },
+  {
+    "id": 80001,
+    "name": "GrowUpTraning",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "343601678649344"
+  },
+  {
+    "id": 80002,
+    "name": "GrowUpFinishEvent",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "343605973616640"
+  },
+  {
+    "id": 80003,
+    "name": "GrowUpEndNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "343610268583936"
+  },
+  {
+    "id": 80004,
+    "name": "GrowUpFishEndOne",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "343614563551232"
+  },
+  {
+    "id": 80005,
+    "name": "GrowUpAsst",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "343618858518528"
+  },
+  {
+    "id": 80006,
+    "name": "GrowUpNormalScore",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "343623153485824"
+  },
+  {
+    "id": 80007,
+    "name": "GrowUpEndlessScore",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "343627448453120"
+  },
+  {
+    "id": 80008,
+    "name": "GrowUpRankPercent",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "343631743420416"
+  },
+  {
+    "id": 80009,
+    "name": "GrowUpTraningrRank",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "343636038387712"
+  },
+  {
+    "id": 80010,
+    "name": "GrowUpAsstOut",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "343640333355008"
+  },
+  {
+    "id": 80011,
+    "name": "kGrowUpAsstNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "343644628322304"
+  },
+  {
+    "id": 80012,
+    "name": "kGrowUpAsstOutNum",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "343648923289600"
+  },
+  {
+    "id": 80101,
+    "name": "WorldStackTotalScore",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "344031175378944"
+  },
+  {
+    "id": 81000,
+    "name": "RepeatEventOneLevelFinishCount",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "347892350978048"
+  },
+  {
+    "id": 81001,
+    "name": "RepeatEventOneLevelFinishStar",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "347896645945344"
+  },
+  {
+    "id": 81002,
+    "name": "RepeatEventMultiLevelFinishStar",
+    "type": 0,
+    "system_unlock": 0,
+    "descShow": "347900940912640"
+  }
+]

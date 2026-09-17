@@ -1,0 +1,711 @@
+
+âƒ
+CSCore.protocsCommonMsg.proto
+Core.proto	Pet.protoExOptions.proto"o
+CSHeartBeat/
+client_time (2.cs.CommonTimeR
+clientTime/
+server_time (2.cs.CommonTimeR
+serverTime"Ý
+CSLogin
+open_id (	RopenId
+token (	Rtoken
+app_version (	R
+appVersion
+	device_id (	RdeviceId
+job_name (	RjobName
+
+build_pipe (	R	buildPipe
+zone_id (RzoneId!
+server_token (	RserverToken
+	reconnect	 (R	reconnect
+game_id
+ (	RgameId!
+channel_code (	RchannelCode
+app_id (	RappId"
+SCLogin
+open_id (	RopenId
+pid (Rpid!
+server_token (	RserverToken
+guid (Rguid
+sign (Rsign"ž
+CSEnterGame
+open_id (	RopenId
+token (	Rtoken!
+channel_code (	RchannelCode
+app_id (	RappId!
+server_token (	RserverToken
+	reconnect (R	reconnect2
+switch_info (2.cs.SwitchSvrInfoR
+switchInfo
+platform (Rplatform
+
+queue_time	 (R	queueTime
+	device_id
+ (	RdeviceId
+model (	Rmodel
+
+os_version (	R	osVersion
+network (	Rnetwork
+mac (	Rmac%
+tour_indicator (RtourIndicator
+
+channel_id (R	channelId
+app_version (	R
+appVersion
+ip (	Rip!
+platform_str (	RplatformStr
+game_id (	RgameId
+device_type (R
+deviceType
+new_role (RnewRole
+ntf_seq (RntfSeq"
+init_trace_id (	RinitTraceId*
+previous_trace_id (	RpreviousTraceId(
+current_trace_id (	RcurrentTraceId!
+device_grade (RdeviceGrade
+job_name (	RjobName
+zone_id (RzoneId
+os_type (RosType
+
+build_pipe (	R	buildPipe
+sub_channel  (	R
+subChannel
+
+session_id! (	R	sessionId'
+created_players" (RcreatedPlayers"÷
+SCEnterGame"
+data (2.cs.PlayerDataRdata
+	reconnect (R	reconnect
+	time_zone (RtimeZone
+time (Rtime
+	time_msec (RtimeMsec
+	player_id (RplayerId!
+server_token (	RserverToken
+rc4_key (Rrc4Key
+ntf_seq	 (RntfSeq
+req_seq
+ (RreqSeq
+line_id (RlineId
+	server_id (	RserverId
+node_id (	RnodeId"u
+SCEnterGameToken#
+server_param1 (	RserverParam1
+rc4_key (Rrc4Key#
+server_param2 (	RserverParam2"½
+SCEnterGameCallbackStart
+	reconnect (R	reconnect
+	player_id (RplayerId$
+crc_rand_index (RcrcRandIndex
+server_time (R
+serverTime
+time_offset (R
+timeOffset"0
+SCEnterGameType
+
+enter_type (R	enterType"_
+CSPlayerCustomData
+name (Rname5
+wardrobe_info (2.cs.WardrobeInfoRwardrobeInfo"+
+SCDesKeyNtf
+	encrptKey (R	encrptKey"[
+CSCreatePlayer
+name (Rname5
+wardrobe_info (2.cs.WardrobeInfoRwardrobeInfo"4
+SCCreatePlayer"
+data (2.cs.PlayerDataRdata"@
+CSMoveSoulEssence
+hero_id (RheroId
+guid (Rguid"€
+CSComposeSoulEssence
+guid (Rguid
+costs (BèðÐRcosts7
+
+cost_items (2.cs.SoulEssenceAddLvCostR	costItems"¶
+CSRisingStarSoulEssence
+guid (Rguid
+item_num (RitemNum
+guids (Rguids7
+
+cost_items (2.cs.SoulEssenceAddLvCostR	costItems
+
+use_unlock (R	useUnlock"[
+CSSetLockSoulEssence
+guid (Rguid
+lock (Rlock
+guids (BèðÐRguids")
+CSRankUpSoulEssence
+guid (Rguid"E
+CSMoveWeaponApp
+hero_id (RheroId
+app_guid (RappGuid"<
+CSSetLockWeaponApp
+guid (Rguid
+lock (Rlock"`
+SCGetAllEquipOrnament*
+	ornaments (2.cs.OrnamentR	ornaments
+	smelt_num (RsmeltNum"o
+SCUpdateOrnament*
+	ornaments (2.cs.OrnamentR	ornaments
+guid (Rguid
+	smelt_num (RsmeltNum"N
+CSMoveOrnament
+hero_id (RheroId#
+ornament_guid (RornamentGuid"[
+CSOrnamentGradeUp
+target_guid (R
+targetGuid%
+material_guids (RmaterialGuids"s
+CSOrnamentInherit.
+target_quality_guid (RtargetQualityGuid.
+source_quality_guid (RsourceQualityGuid"5
+CSDecomposeSoulEssence
+guids (BèðôRguids"4
+CSOrnamentRecommendList
+hero_ids (RheroIds"à
+SCOrnamentRecommendListSyncR
+	data_list (25.cs.SCOrnamentRecommendListSync.OrnamentRecommendListRdataListm
+OrnamentRecommendList
+hero_id (RheroId;
+recommend_list (2.cs.CSRepeatedUint32RrecommendList"^
+CSRemoveOrnament
+hero_id (RheroId
+type (Rtype
+
+remove_all (R	removeAll";
+CSSetLockOrnament
+guid (Rguid
+lock (Rlock"7
+CSEnhanceOrnament
+guid (Rguid
+op (Rop"%
+SCEnhanceOrnament
+suc (Rsuc"|
+CSQuickWear
+	hero_guid (RheroGuid)
+soulessence_guid (RsoulessenceGuid%
+ornament_guids (RornamentGuids"I
+	CSUseItem
+itemid (Ritemid
+num (Rnum
+args (Rargs"
+	SCUseItem
+ret (Rret"5
+CSBatchUseItem#
+items (2.cs.CSUseItemRitems"9
+CSPing
+ping (Rping
+	client_ts (RclientTs"s
+SCPing
+	time_zone (RtimeZone
+time (Rtime
+	time_msec (RtimeMsec
+	client_ts (RclientTs"9
+SCQuestSync*
+groups (2.cs.QuestGroupInfoRgroups"
+
+CSMailList"0
+
+SCMailList"
+mails (2.cs.MailInfoRmails"i
+
+SCMailSync"
+mails (2.cs.MailInfoRmails#
+collect_count (RcollectCount
+dels (Rdels"d
+SCMailFetch
+guids (Rguids%
+rewards (2.cs.RewardsRrewards
+errcode (Rerrcode"5
+SCFriendIdList#
+info (2.cs.FriendAllIdRinfo"S
+FriendChangeOne,
+
+friendItem (2.cs.FriendIdR
+friendItem
+type (Rtype"D
+SCFriendIncChange/
+datalist (2.cs.FriendChangeOneRdatalist"D
+
+CSOpFriend
+optype (Roptype
+op (Rop
+id (Rid">
+CSChangeFriendRemark
+id (Rid
+remark (Rremark"A
+CSChangeFriendRemarkRsp
+id (Rid
+remark (Rremark"d
+CSReportOnPlayer
+pid (Rpid
+name (Rname
+text (	Rtext
+reason (	Rreason"#
+SCDelChatShield
+del (Rdel"(
+SCChatShieldInfo
+infos (Rinfos"
+CSChatGetIsolateList"]
+SCChatGetIsolateList
+isolates (Risolates)
+lists (2.cs.ChatIsolateItemRlists"5
+ChatIsolateItem
+id (Rid
+lang (	Rlang"7
+CSChatShieldOp
+tar_id (RtarId
+op (Rop"L
+SCChatShieldOp
+err (Rerr(
+items (2.cs.ChatShieldItemRitems"
+CSChatGetShieldList"Q
+SCChatGetShieldList
+err (Rerr(
+items (2.cs.ChatShieldItemRitems"6
+ChatShieldItem
+pid (Rpid
+time (Rtime"!
+CSAddChatShield
+id (Rid"!
+CSDelChatShield
+id (Rid"4
+SCChatListInfo"
+info (2.cs.FriendChatRinfo"r
+SCChatMsgCnt4
+msg_list (2.cs.SCChatMsgCnt.MsgIDCntRmsgList,
+MsgIDCnt
+id (Rid
+cnt (Rcnt"S
+
+ChatTarget
+tid (Rtid
+	chat_type (RchatType
+shield (Rshield"\
+SCChatInfoChange&
+target (2.cs.ChatTargetRtarget 
+chat (2.cs.ChatInfoRchat"Ä
+	CSAddChat&
+target (2.cs.ChatTargetRtarget
+msg (Rmsg
+type (Rtype
+time (Rtime
+
+extra_info (R	extraInfo
+bubbleId (RbubbleId
+language (Rlanguage")
+SCAddChatRsp
+ban_time (RbanTime"!
+CSDelFriendChat
+id (Rid"$
+CSQueryChatInfoReq
+id (Rid"8
+CSReadFriendChat
+id (Rid
+order (Rorder"$
+CSCreateFriendChat
+id (Rid".
+SCCreateFriendChat
+upgrade (Rupgrade",
+CSPlayerSimpleListInfo
+type (Rtype"*
+CSPlayerMiniListInfo
+type (Rtype"#
+CSQueryPlayerInfo
+id (Rid"<
+SCQueryPlayerInfo'
+info (2.cs.PlayerBasicInfoRinfo"H
+CSChangeName
+name (Rname
+cr (Rcr
+check (Rcheck"3
+CSChangeTitle
+type (Rtype
+id (Rid""
+CSChangeSign
+sign (Rsign"9
+ShowHeroInfo
+hero_id (RheroId
+pos (Rpos"8
+CSChangeShowHero$
+hero (2.cs.ShowHeroInfoRhero":
+ShowPetInfo
+pet_guid (RpetGuid
+pos (Rpos"4
+CSChangeShowPet!
+pet (2.cs.ShowPetInfoRpet"I
+	SCInQueue
+	queue_pos (RqueuePos
+queue_speed (R
+queueSpeed"6
+SCMainBuildInfo#
+infos (2.cs.MainBuildRinfos"2
+SCBuildInfo#
+infos (2.cs.BuildBaseRinfos"@
+SCProsperityInfo,
+reward (2.cs.ProsperityRewardRreward"
+CSUint32
+u32 (Ru32"&
+CSRepeatedUint32
+u32s (Ru32s"
+CSUint64
+u64 (Ru64"&
+CSRepeatedUint64
+u64s (Ru64s"K
+
+CSLvUpHero
+hero_id (RheroId$
+items (2.cs.SimpleItemRitems"D
+CSHeroRankReward
+hero_id (RheroId
+rank_id (RrankId"A
+CSLvUpSkill
+hero_id (RheroId
+skill_id (RskillId"6
+CSGuideUpdate
+id (Rid
+sub_id (RsubId"R
+SCGuideUpdate
+id (Rid
+sub_id (RsubId
+complete (Rcomplete"9
+SCRedPointSync'
+infos (2.cs.RedPointInfosRinfos"M
+CSRedPointSetReq
+id (Rid
+sub_id (RsubId
+flag (Rflag"3
+SCStorySync$
+infos (2.cs.StoryInfosRinfos">
+CSSwitchGroup
+type (Rtype
+group_id (RgroupId"›
+CSSwitchGroupControl
+type (Rtype
+control (Rcontrol
+pos (2.cs.PositionRpos
+angle (Rangle
+switch_type (R
+switchType"I
+CSChangeGroupIndex
+type (Rtype
+group (2	.cs.GroupRgroup"V
+CSChangeGroupName
+type (Rtype
+group_id (RgroupId
+name (Rname"]
+CSQuickChangeGroup
+type (Rtype
+id (Rid#
+infos (2.cs.CSWearPetRinfos"¬
+CSTrialGroupChange
+open (Ropen
+force (Rforce>
+trial_heros (2.cs.CSTrialGroupChange.trialsR
+trialHeros<
+
+trial_pets (2.cs.CSTrialGroupChange.trialsR	trialPetsB
+trial_control (2.cs.CSTrialGroupChange.trialsRtrialControl*
+trials
+pos (Rpos
+id (Rid"q
+CSTrialDatas1
+trial_heros (2.cs.HeroItemInfoR
+trialHeros.
+
+trial_pets (2.cs.PetbaseInfoR	trialPets"ü
+SCAchievementSync,
+groups (2.cs.AchievementGroupRgroups3
+achievements (2.cs.AchievementRachievements?
+last_achievement_award_point (RlastAchievementAwardPointC
+achievement_medals (2.cs.AchievementMedalRachievementMedals"+
+SCAchievementFinishNotice
+id (Rid"?
+CSClientBehaviourRecord
+key (Rkey
+args (Rargs"L
+CSPetGetCharKibo
+	hero_guid (RheroGuid
+	config_id (RconfigId"_
+SCCharDataSync
+hero_id (RheroId
+type_id (RtypeId
+	record_id (RrecordId"(
+CSCharDataGet
+hero_id (RheroId"F
+CharDataSingle
+type_id (RtypeId
+	record_id (RrecordId"R
+SCCharDataRsp
+hero_id (RheroId(
+infos (2.cs.CharDataSingleRinfos"J
+SCCharDataAll9
+heros_char_data (2.cs.SCCharDataRspRherosCharData"0
+CSGetComplexReq
+
+friend_pid (R	friendPid"I
+SCGetComplexRsp6
+complex_info (2.cs.ComplexShowInfoRcomplexInfo"°
+
+SCFishSync.
+	handbooks (2.cs.FishHandbookR	handbooks
+cur_rod (RcurRod
+cur_bait (RcurBait>
+event_handbooks (2.cs.FishEventHandbookReventHandbooks"4
+SCFishPondSync"
+ponds (2.cs.FishPondRponds";
+	CSFishSet
+bait_id (RbaitId
+rod_id (RrodId"(
+CSFishFinish
+success (Rsuccess"«
+SCFishFinish
+fish_id (RfishId
+fish_weight (R
+fishWeight
+fish_status (R
+fishStatus%
+rewards (2.cs.RewardsRrewards
+event_id (ReventId"h
+CSGetActiveReward
+reward_type (R
+rewardType
+is_all (RisAll
+	reward_id (RrewardId"O
+SCActiveTaskComplete7
+
+task_infos (2.cs.PlayerActiveTaskInfoR	taskInfos"E
+CSStarGiftEquip
+star_ids (RstarIds
+hero_id (RheroId"`
+SCStarGiftDataSync-
+
+star_gifts (2.cs.SimpleItemR	starGifts
+	del_items (RdelItems"C
+	CSWearPet
+pet_guid (RpetGuid
+	hero_guid (RheroGuid"+
+SCUnLockSync
+	unlock_id (RunlockId"'
+CSActGetDetail
+act_id (RactId"F
+CSPamiMailChoose
+text_id (RtextId
+reply_id (RreplyId"Þ
+PamiMailLetterContent
+mail_id (RmailId
+hero_id (RheroId;
+reply (2%.cs.PamiMailLetterContent.LetterReplyRreply
+latest_read (R
+latestRead
+	timestamp (R	timestamp
+reward (Rreward!
+args (2.cs.ExtraInfoRargs\
+LetterReply
+text_id (RtextId
+record (Rrecord
+	timestamp (R	timestamp"a
+PamiMailTab
+	mail_type (RmailType5
+contents (2.cs.PamiMailLetterContentRcontents"<
+SCPamiMailSync*
+mail_tab (2.cs.PamiMailTabRmailTab"x
+CSExchangeItemReq
+item_id (RitemId
+	item_type (RitemType
+item_num (RitemNum
+args (Rargs"w
+SCAnnounceSync*
+notics (2.cs.AnnounceNoticeRnotics9
+	scrolling (2.cs.AnnounceNoticeScrollingR	scrolling"@
+SCPaomaLightSync,
+notics (2.cs.PaomaLightNoticeRnotics"\
+CSChangePlayerStatus
+status (Rstatus
+arg (Rarg
+doRecord (RdoRecord"F
+CSCookItemCollect
+item_id (RitemId
+collect (Rcollect"‡
+
+CSSetStory
+story_id (RstoryId
+is_skip (RisSkip
+
+story_type (R	storyType
+param (Rparam
+tag (Rtag"C
+CSChangePhotoGraphTempletName
+id (Rid
+name (Rname"_
+AllPhotoGraphTempletInfo/
+infos (2.cs.PhotoGraphTempletInfoRinfos
+dels (Rdels"¡
+AllChatEmojiInfo%
+bags (2.cs.ChatEmojiInfoRbags
+collects (Rcollects!
+collect_dels (RcollectDels'
+lately_collects (RlatelyCollects"'
+CSGetQuestionLink
+link (	Rlink"D
+AllNoviceTaskInfo/
+groups (2.cs.NoviceTaskGroupInfoRgroups"E
+AllRechargeOrderInfo-
+orders (2.cs.RechargeOrderInfoRorders"
+ProtoNullRsp"Q
+AllCollectToolInfo'
+bags (2.cs.CollectToolItemRbags
+dels (Rdels"“
+CSHeroRuneEquip
+hero_id (RheroId
+slot_ids (RslotIds*
+	costItems (2.cs.TypeItemR	costItems 
+useGiftItem (RuseGiftItem",
+CSHeroRuneLevelUp
+hero_id (RheroId"D
+RuneAttrChange
+attr_id (RattrId
+attr_val (RattrVal"N
+RuneSkillLevelChange
+skill_id (RskillId
+	add_level (RaddLevel"r
+SCHeroRuneAttrChange(
+atrrs (2.cs.RuneAttrChangeRatrrs0
+skills (2.cs.RuneSkillLevelChangeRskills"H
+SCProtoGMSystemCloseSync,
+syslist (2.cs.GameSystemInfoRsyslist"ê
+CSOperateSnackBag
+
+source_bag (R	sourceBag
+
+target_bag (R	targetBag!
+operate_type (RoperateType
+item_id (RitemId
+item_num (RitemNum
+source_slot (R
+sourceSlot
+target_slot (R
+targetSlot"„
+CSSetSnackBagNum4
+info (2 .cs.CSSetSnackBagNum.SnackBagNumRinfo:
+SnackBagNum
+bag_type (RbagType
+num (Rnum"C
+AllStandPlatesBagInfo*
+bags (2.cs.StandPlatesBagInfoRbags"¶
+CSComposeRune
+item_id (RitemId
+num (Rnum
+equip (Requip
+oneKey (RoneKey*
+	costItems (2.cs.TypeItemR	costItems 
+useGiftItem (RuseGiftItem"O
+SCComposeRuneRsp%
+rewards (2.cs.RewardsRrewards
+equip (Requip"p
+CSSendHeroGift
+item_id (RitemId
+num (Rnum
+heroId (RheroId
+	item_type (RitemType"q
+SCSendHeroGift
+item_id (RitemId
+hero_id (RheroId
+	item_type (RitemType
+num (Rnum"
+CSFriendRecommend"K
+SCFriendRecommend6
+player_infos (2.cs.PlayerBasicInfoRplayerInfos"#
+CSChatSyncNew
+pids (Rpids">
+SCChatSyncNew-
+
+chat_infos (2.cs.FriendChatR	chatInfos"C
+SCChatRoomSync
+	chat_type (RchatType
+sysId (RsysId"'
+CSChatWorldJoin
+sysId (RsysId"
+SCChatWroldJoin",
+CSChatRoomNum
+	chat_type (RchatType"B
+SCChatRoomNum
+	chat_type (RchatType
+count (Rcount"G
+CSFriendShield
+	friend_id (RfriendId
+bShield (RbShield"G
+SCFriendShield
+	friend_id (RfriendId
+bShield (RbShield"J
+SCFriendShieldNtf
+	friend_id (RfriendId
+bShield (RbShield">
+CSChangeSceneShowcase%
+data (2.cs.SceneShowcaseRdata"
+CSBytes
+data (Rdata"V
+SCChatBubbleInfo
+
+use_bubble (R	useBubble#
+unlock_bubble (RunlockBubble"j
+SCChatBackgroundInfo%
+use_background (RuseBackground+
+unlock_background (RunlockBackground"(
+CSExchangeGiftCode
+code (	Rcode"5
+SCExchangeGiftCode
+status_code (R
+statusCode"U
+CSNDayRewardReq
+reward_type (R
+rewardType!
+reward_param (RrewardParam"D
+CSUpdateSkin
+	hero_guid (RheroGuid
+skin_id (RskinId"K
+SCHeroSkinMessageSync2
+hero_skin_info (2.cs.HeroSkinRheroSkinInfo"/
+SCHeroSkinUnlockSync
+skin_id (RskinId*c
+PlatformType
+
+PFT_PC 
+PFT_Andriod
+PFT_IOS
+PFT_PS5
+PFT_HARMONY
+PFT_Webd*C
+EnterGameType
+
+EGT_Normal
+EGT_Reconnect
+EGT_Refresh*½
+FriendChangeType
+FriendChangeTypeNone 
+Add2FriendList
+Add2BlackList
+Add2ApplyList
+DelFromFriendList
+DelFromBlackList
+DelFromApplyList 
+ClearApplyList@*H
+FriendOPType
+FOL_None 
+
+FOL_Friend
+	FOL_Apply
+FOL_Ban*W
+FriendOPVal
+FOT_None 
+FOT_Add
+FOT_Del
+FOT_AllAgree
+
+FOT_AllDel*Q
+ChatType
+CT_PersonType 
+CT_GroupType
+CT_WorldType
+
+CT_MapTypeB!ZGmServer/bridge/csproto;csproto

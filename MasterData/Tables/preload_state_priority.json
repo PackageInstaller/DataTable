@@ -1,0 +1,298 @@
+[
+  {
+    "id": 1,
+    "lod0States": "Idle|SwimingIdle",
+    "lod1States": "Jump_W|Jump|DoubleJump|Walk|Run|RunOverL|RunOverR|FastRun|FastRunOverL|FastRunOverR|WalkOverL|WalkOverR|FastRunTurnBack|RunStart|Jump_Loop|FallToRun|Evade_Back|Evade_Front",
+    "lod2States": "SwimingOn|SwimingStart|SwimingEnd|FastSwiming|SwimingTurnBack|Evade_FrontTurnFastRun|Evade_BackTurnFastRun|Evade_FrontEnd|Evade_BackEnd|Fall|FallHigh|FastRunJump|FastRunJump_Loop|FastRunJump_Fall|FastRunJump_ToFastRun",
+    "lod3States": "FastRunJump_FallHigh",
+    "lod4States": "Dead"
+  },
+  {
+    "id": 2,
+    "lod0States": "",
+    "lod1States": "",
+    "lod2States": "RideOn_W_W|RideIdle_W|RideRun_W",
+    "lod3States": "Sprint_W|RideOn_W_A|RideJump_W|RideJumpLoop_W|RideJumpLand_W",
+    "lod4States": ""
+  },
+  {
+    "id": 3,
+    "lod0States": "EngageToIdle",
+    "lod1States": "",
+    "lod2States": "RideIdle|RideRun|RideOn",
+    "lod3States": "Sprint_G|RideOff|RideJump|RideJumpLand|RideJumpLoop",
+    "lod4States": ""
+  },
+  {
+    "id": 4,
+    "lod0States": "",
+    "lod1States": "",
+    "lod2States": "FlyIdle|FlyMove",
+    "lod3States": "TakeOff_W|TakeOff|AirToLand|Sprint_F|Ascend_F|Descend_F|AirToWater",
+    "lod4States": ""
+  },
+  {
+    "id": 5,
+    "lod0States": "Run_Water|Idle_Water|Engage_Water|Run_Water_World|EngageToIdle_Water|IdleToEngage_Water",
+    "lod1States": "",
+    "lod2States": "",
+    "lod3States": "TakeOff_Ground",
+    "lod4States": ""
+  },
+  {
+    "id": 6,
+    "lod0States": "Idle|Run|EngageToIdle|Idle_Water|Run_World|IdleToEngage",
+    "lod1States": "",
+    "lod2States": "",
+    "lod3States": "",
+    "lod4States": ""
+  },
+  {
+    "id": 7,
+    "lod0States": "Idle_Air|Run_Air|Run_Air_World|EngageToIdle_Air|IdleToEngage_Air",
+    "lod1States": "",
+    "lod2States": "",
+    "lod3States": "Land_Ground",
+    "lod4States": ""
+  },
+  {
+    "id": 8,
+    "lod0States": "Engage_Water|EngageToIdle_Water|IdleToEngage_Water|Engage_Idle_Water|Engage_Air|Engage_B_Water|Engage_F_Water",
+    "lod1States": "",
+    "lod2States": "",
+    "lod3States": "",
+    "lod4States": "Dead_Water"
+  },
+  {
+    "id": 9,
+    "lod0States": "EngageToIdle|IdleToEngage|Locomotion|Engage_Idle|Engage|EngageB|EngageF",
+    "lod1States": "",
+    "lod2States": "Jump_Loop",
+    "lod3States": "",
+    "lod4States": "Dead"
+  },
+  {
+    "id": 10,
+    "lod0States": "EngageToIdle_Air|IdleToEngage_Air|Engage_Idle_Air|Engage_F_Air|Engage_B_Air",
+    "lod1States": "",
+    "lod2States": "",
+    "lod3States": "",
+    "lod4States": "Dead_Start_Air"
+  },
+  {
+    "id": 11,
+    "lod0States": "Idle_Mount_W",
+    "lod1States": "RideOn_W_W|Run_Mount_W|RideOff_W",
+    "lod2States": "Jump_W|Sprint_W|TakeOff_W|Fall_W|Jump_Loop_W|DoubleJump_W|AirToLand_W",
+    "lod3States": "",
+    "lod4States": ""
+  },
+  {
+    "id": 12,
+    "lod0States": "Idle_Mount",
+    "lod1States": "Run_Mount|RideOn_G|RideOff_G",
+    "lod2States": "Jump|DoubleJump|Fall|TakeOff|AirToLand|Sprint",
+    "lod3States": "",
+    "lod4States": ""
+  },
+  {
+    "id": 13,
+    "lod0States": "FlyIdle|IdleToEngage_Air|FlyIdle_P",
+    "lod1States": "RideOn_W_A|FlyMove|TakeOff_W|TakeOff|Ascend_F|Descend_F|RideOn_F|Rideoff_F|FlyMove_P|Ascend_P|Descend_P|RideOn_G_P|Rideoff_P|RideOn_W_P|RideOn_A_P|FlyMove_H|FlyIdle_H|Ascend_F_H|Descend_F_H|Sprint_F_H|RideOn_W_H|Rideoff_H|RideOn_G_H",
+    "lod2States": "Sprint_F|Sprint_P|Sprint_F 0",
+    "lod3States": "",
+    "lod4States": ""
+  },
+  {
+    "id": 14,
+    "lod0States": "Idle",
+    "lod1States": "Walk|Run",
+    "lod2States": "",
+    "lod3States": "",
+    "lod4States": ""
+  },
+  {
+    "id": 15,
+    "lod0States": "",
+    "lod1States": "Hit|Hit_H",
+    "lod2States": "KnockUp|KnockUp_Loop",
+    "lod3States": "Down",
+    "lod4States": ""
+  },
+  {
+    "id": 16,
+    "lod0States": "Hit_Water",
+    "lod1States": "Hit_H_Water",
+    "lod2States": "KnockUp_Water|Stand_Water|Down_Loop_Water|Down_Water|KnockUp_Loop_Water",
+    "lod3States": "Break_End_Water|Break_Loop_Water|Break_Start_Water",
+    "lod4States": ""
+  },
+  {
+    "id": 17,
+    "lod0States": "Hit",
+    "lod1States": "Hit_H",
+    "lod2States": "KnockUp|KnockUp_Loop|Down|Stand|Down_Loop",
+    "lod3States": "Break_End|Break_Loop|Break_Start",
+    "lod4States": ""
+  },
+  {
+    "id": 18,
+    "lod0States": "Hit_Air",
+    "lod1States": "Hit_H_Air",
+    "lod2States": "",
+    "lod3States": "Break_End_Air|Break_Loop_Air|Break_Start_Air|Break_Fall_Loop_Air",
+    "lod4States": "Dead_Air|Dead_Loop_Air"
+  },
+  {
+    "id": 19,
+    "lod0States": "CaressStartStand",
+    "lod1States": "Fondle_High_Start|Fondle_High_Loop|Fondle_High_End|Fondle_Low_Start|Fondle_Low_Loop|Fondle_Low_End",
+    "lod2States": "",
+    "lod3States": "",
+    "lod4States": ""
+  },
+  {
+    "id": 20,
+    "lod0States": "Fondle_Start",
+    "lod1States": "Fondle_Loop",
+    "lod2States": "Fondle_End",
+    "lod3States": "",
+    "lod4States": ""
+  },
+  {
+    "id": 21,
+    "lod0States": "Strike_Start|Slash_Start",
+    "lod1States": "Strike_Loop|Slash_Loop",
+    "lod2States": "Strike_End|Slash_End|story_turn",
+    "lod3States": "Fishing_Idle",
+    "lod4States": "Lift_Start|Lift_End"
+  },
+  {
+    "id": 22,
+    "lod0States": "",
+    "lod1States": "",
+    "lod2States": "",
+    "lod3States": "",
+    "lod4States": ""
+  },
+  {
+    "id": 23,
+    "lod0States": "",
+    "lod1States": "",
+    "lod2States": "",
+    "lod3States": "Rescue_Start|Rescue_Loop",
+    "lod4States": "Rescue_End"
+  },
+  {
+    "id": 24,
+    "lod0States": "FormationAdmission|FormationIdle",
+    "lod1States": "",
+    "lod2States": "",
+    "lod3States": "",
+    "lod4States": ""
+  },
+  {
+    "id": 25,
+    "lod0States": "Idle|Personal1|Wave01|Praise01|Love01|Bow01|Weep01|Laugh01|face_happy_start|face_happy_loop|face_angry_start|face_angry_loop|face_sad_start|face_sad_loop|face_shy_start|face_shy_loop|face_amazed_start|face_amazed_loop",
+    "lod1States": "",
+    "lod2States": "",
+    "lod3States": "",
+    "lod4States": ""
+  },
+  {
+    "id": 26,
+    "lod0States": "Idle|Run|Hit_H|Down|Stand",
+    "lod1States": "",
+    "lod2States": "",
+    "lod3States": "",
+    "lod4States": ""
+  },
+  {
+    "id": 27,
+    "lod0States": "",
+    "lod1States": "",
+    "lod2States": "",
+    "lod3States": "",
+    "lod4States": ""
+  },
+  {
+    "id": 28,
+    "lod0States": "",
+    "lod1States": "",
+    "lod2States": "",
+    "lod3States": "",
+    "lod4States": ""
+  },
+  {
+    "id": 29,
+    "lod0States": "",
+    "lod1States": "",
+    "lod2States": "",
+    "lod3States": "",
+    "lod4States": ""
+  },
+  {
+    "id": 30,
+    "lod0States": "",
+    "lod1States": "",
+    "lod2States": "",
+    "lod3States": "",
+    "lod4States": ""
+  },
+  {
+    "id": 31,
+    "lod0States": "FlyIdle_H",
+    "lod1States": "FlyMove_H|Ascend_F_H|Descend_F_H|RideOn_W_H|RideOn_G_H",
+    "lod2States": "Sprint_F_H",
+    "lod3States": "",
+    "lod4States": ""
+  },
+  {
+    "id": 32,
+    "lod0States": "",
+    "lod1States": "Rideoff_H",
+    "lod2States": "",
+    "lod3States": "",
+    "lod4States": ""
+  },
+  {
+    "id": 33,
+    "lod0States": "CoolRunningMove",
+    "lod1States": "CoolRunningFastMove",
+    "lod2States": "CoolRunningJump|CoolRunningDoubleJump|CoolRunningJumpLoop",
+    "lod3States": "",
+    "lod4States": ""
+  },
+  {
+    "id": 34,
+    "lod0States": "FlightTravelMove",
+    "lod1States": "",
+    "lod2States": "FlightTravelHit",
+    "lod3States": "",
+    "lod4States": ""
+  },
+  {
+    "id": 35,
+    "lod0States": "",
+    "lod1States": "",
+    "lod2States": "",
+    "lod3States": "",
+    "lod4States": ""
+  },
+  {
+    "id": 36,
+    "lod0States": "",
+    "lod1States": "",
+    "lod2States": "",
+    "lod3States": "",
+    "lod4States": ""
+  },
+  {
+    "id": 37,
+    "lod0States": "",
+    "lod1States": "",
+    "lod2States": "",
+    "lod3States": "",
+    "lod4States": ""
+  }
+]

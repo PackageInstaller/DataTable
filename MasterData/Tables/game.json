@@ -1,0 +1,5482 @@
+[
+  {
+    "title": "ENGAGE_SPEED",
+    "type": "int",
+    "value": "3000"
+  },
+  {
+    "title": "STAMINA_LIMIT",
+    "type": "int",
+    "value": "1000"
+  },
+  {
+    "title": "STAMINA_TIME",
+    "type": "int",
+    "value": "360"
+  },
+  {
+    "title": "STAMINA_EXP",
+    "type": "int",
+    "value": "10"
+  },
+  {
+    "title": "STAMINA_GOLD",
+    "type": "int",
+    "value": "0"
+  },
+  {
+    "title": "STAMINA_HEROEXP",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "STAMINA_SWITCH",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "HERO_MORALE_RATIO",
+    "type": "int",
+    "value": "10000"
+  },
+  {
+    "title": "FORMATION_MIN_WIDTH",
+    "type": "int",
+    "value": "7"
+  },
+  {
+    "title": "MAINCITY_GAZE_TIME",
+    "type": "string",
+    "value": "20,30"
+  },
+  {
+    "title": "WORLD_HERO_MOVE_SPEED",
+    "type": "float",
+    "value": "6"
+  },
+  {
+    "title": "WORLD_HERO_WALK_SPEED",
+    "type": "float",
+    "value": "1"
+  },
+  {
+    "title": "WORLD_HERO_JUMP_SPEED",
+    "type": "int",
+    "value": "15"
+  },
+  {
+    "title": "WORLD_HERO_JUMP_GRAVITY",
+    "type": "int",
+    "value": "30"
+  },
+  {
+    "title": "WORLD_HERO_JUMP_RESISTANCE",
+    "type": "int",
+    "value": "35"
+  },
+  {
+    "title": "WORLD_HERO_JUMP_MASS",
+    "type": "int",
+    "value": "50"
+  },
+  {
+    "title": "WORLD_BATTLE_PROTECT",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "WORLD_REBORN_TIME",
+    "type": "int",
+    "value": "0"
+  },
+  {
+    "title": "WORLD_HERO_REBORN_HP",
+    "type": "int",
+    "value": "1000"
+  },
+  {
+    "title": "SOLDIER_LEVELUP_GOLD",
+    "type": "int",
+    "value": "10000"
+  },
+  {
+    "title": "SOLDIER_STAMINA_TIME",
+    "type": "int",
+    "value": "60"
+  },
+  {
+    "title": "WEAPON_LEVELUP_GOLD",
+    "type": "int",
+    "value": "2000"
+  },
+  {
+    "title": "HERO_LEVELUP_GOLD",
+    "type": "int",
+    "value": "2000"
+  },
+  {
+    "title": "HERO_INFO_NUM_LIMIT",
+    "type": "int",
+    "value": "90"
+  },
+  {
+    "title": "HERO_PROB_RESET_RARE",
+    "type": "string",
+    "value": "1,2"
+  },
+  {
+    "title": "DAILY_REFRESH_TIME",
+    "type": "int",
+    "value": "4"
+  },
+  {
+    "title": "MAIL_LIMITS",
+    "type": "int",
+    "value": "1000"
+  },
+  {
+    "title": "CHAR_BORN_CITY",
+    "type": "int",
+    "value": "251"
+  },
+  {
+    "title": "WORLD_HERO_SIGHT",
+    "type": "int",
+    "value": "800"
+  },
+  {
+    "title": "DEVICE_NUMBERS",
+    "type": "int",
+    "value": ""
+  },
+  {
+    "title": "AVATAR_TYPE",
+    "type": "list<int>",
+    "value": "6|3|2|12"
+  },
+  {
+    "title": "AVATAR_HEIGHT_RANGE",
+    "type": "list<int>",
+    "value": "90|110"
+  },
+  {
+    "title": "AVATAR_VIRTURAL_HEROID",
+    "type": "int",
+    "value": "199000"
+  },
+  {
+    "title": "AVATAR_HERO_ID",
+    "type": "int",
+    "value": "199001"
+  },
+  {
+    "title": "AVATAR_UNIT_ID_MALE",
+    "type": "int",
+    "value": "112001"
+  },
+  {
+    "title": "AVATAR_UNIT_ID_FEMALE",
+    "type": "int",
+    "value": "104001"
+  },
+  {
+    "title": "AVATAR_HERO_ID_FEMALE",
+    "type": "int",
+    "value": "199001"
+  },
+  {
+    "title": "AVATAR_PREFAB_PATH_FEMALE",
+    "type": "string",
+    "value": "Character/Prefab/Player/pre_1_06_199001.prefab"
+  },
+  {
+    "title": "AVATAR_PLAYABLE_PATH_FEMALE",
+    "type": "string",
+    "value": "Config/PlayableConfig/Player/{module}/ast_1_06_199001.asset"
+  },
+  {
+    "title": "AVATAR_ANIM_TEMPLATE_PATH_FEMALE",
+    "type": "string",
+    "value": "Character/Animator/{module}/ast_1_06_199001.asset"
+  },
+  {
+    "title": "AVATAR_HERO_ID_MALE",
+    "type": "int",
+    "value": "199002"
+  },
+  {
+    "title": "AVATAR_PREFAB_PATH_MALE",
+    "type": "string",
+    "value": "Character/Prefab/Player/pre_1_15_199002.prefab"
+  },
+  {
+    "title": "AVATAR_PLAYABLE_PATH_MALE",
+    "type": "string",
+    "value": "Config/PlayableConfig/Player/{module}/ast_1_15_199002.asset"
+  },
+  {
+    "title": "AVATAR_ANIM_TEMPLATE_PATH_MALE",
+    "type": "string",
+    "value": "Character/Animator/{module}/ast_1_15_199002.asset"
+  },
+  {
+    "title": "AVATAR_MALE_MULTI_FORM_HERO_ID",
+    "type": "list<int>",
+    "value": "199011"
+  },
+  {
+    "title": "AVATAR_FEMALE_MULTI_FORM_HERO_ID",
+    "type": "list<int>",
+    "value": "199012"
+  },
+  {
+    "title": "TEST_CDK",
+    "type": "int",
+    "value": "1003"
+  },
+  {
+    "title": "HOME_TALOAN",
+    "type": "int",
+    "value": "10011"
+  },
+  {
+    "title": "WORLD_TIME",
+    "type": "int",
+    "value": "12"
+  },
+  {
+    "title": "ACCESSORY_LEVELUP_GOLD",
+    "type": "int",
+    "value": "1000"
+  },
+  {
+    "title": "SOLDIER_RECRUIT",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "GENIC_LIMIT",
+    "type": "string",
+    "value": "6|2"
+  },
+  {
+    "title": "GENIC_UNLOCK",
+    "type": "list<list<int>>",
+    "value": "1#0|2#0|3#20|4#40|5#60|6#80"
+  },
+  {
+    "title": "GENIC_MUTATION",
+    "type": "float",
+    "value": "0.7"
+  },
+  {
+    "title": "INCUBATION_RANGE",
+    "type": "string",
+    "value": "3|5"
+  },
+  {
+    "title": "ADVANCEDINCUBATION_POSITION",
+    "type": "int",
+    "value": "10"
+  },
+  {
+    "title": "INCUBATION_COST",
+    "type": "list<list<int>>",
+    "value": "400001#2"
+  },
+  {
+    "title": "INCUBATION_ENERGYCOST",
+    "type": "int",
+    "value": "40"
+  },
+  {
+    "title": "INCUBATION_COSTMONEY",
+    "type": "list<list<int>>",
+    "value": "2#100|101#1"
+  },
+  {
+    "title": "PET_FOODLIKE",
+    "type": "int",
+    "value": "50"
+  },
+  {
+    "title": "PET_FOODNORMAL",
+    "type": "int",
+    "value": "25"
+  },
+  {
+    "title": "PET_FOODDISLIKE",
+    "type": "int",
+    "value": "100"
+  },
+  {
+    "title": "FRIEND_LIMITS",
+    "type": "list<int>",
+    "value": "100|20|10"
+  },
+  {
+    "title": "PET_FREEREWARD",
+    "type": "list<int>",
+    "value": "402000|1"
+  },
+  {
+    "title": "PET_FREEEGGREWARD",
+    "type": "list<int>",
+    "value": "402000|1"
+  },
+  {
+    "title": "PET_FREE_DAYLY_TIME",
+    "type": "int",
+    "value": "30"
+  },
+  {
+    "title": "PET_FREEEGG_DAYLY_TIME",
+    "type": "int",
+    "value": "0"
+  },
+  {
+    "title": "PET_RETURN_RATIO",
+    "type": "int",
+    "value": "8000"
+  },
+  {
+    "title": "PET_RETURN_SOUL_RATIO",
+    "type": "int",
+    "value": "10000"
+  },
+  {
+    "title": "PET_RETURN_STARSOUL_SWITCH",
+    "type": "bool",
+    "value": "1"
+  },
+  {
+    "title": "PET_FREEREWARDLIMIT",
+    "type": "int",
+    "value": "500"
+  },
+  {
+    "title": "PET_ENERGYRECOVER",
+    "type": "int",
+    "value": "4"
+  },
+  {
+    "title": "PET_INITENERGY",
+    "type": "int",
+    "value": "0"
+  },
+  {
+    "title": "PET_MAXENERGY",
+    "type": "int",
+    "value": "200"
+  },
+  {
+    "title": "PET_ENERGYPERSEC",
+    "type": "int",
+    "value": "3600"
+  },
+  {
+    "title": "PET_ATTRIBUTE_SPECIALCOUNT",
+    "type": "list<int>",
+    "value": "4"
+  },
+  {
+    "title": "PET_DNAMAXLEVEL",
+    "type": "int",
+    "value": "4"
+  },
+  {
+    "title": "PET_ALLPURPOSEDNA",
+    "type": "float",
+    "value": "0.02"
+  },
+  {
+    "title": "PET_EXPITEMID",
+    "type": "list<int>",
+    "value": "402000|402001|402002|402003"
+  },
+  {
+    "title": "PET_POTENTIAL_ITEM_ID",
+    "type": "list<int>",
+    "value": "1700001|1700002|1700003|1700004|1700005|1700006"
+  },
+  {
+    "title": "PET_RENTLIMIT",
+    "type": "int",
+    "value": "50"
+  },
+  {
+    "title": "PET_RENTREWARD",
+    "type": "int",
+    "value": "10"
+  },
+  {
+    "title": "PET_RENTREWARDTEMP",
+    "type": "int",
+    "value": "50"
+  },
+  {
+    "title": "PET_DNAUNLOCK",
+    "type": "list<list<int>>",
+    "value": "1#0|2#0|3#20|4#40|5#60|6#80"
+  },
+  {
+    "title": "PET_TIMELINER_FRAME",
+    "type": "int",
+    "value": "265"
+  },
+  {
+    "title": "PET_TIMELINEF_FRAME",
+    "type": "int",
+    "value": "332"
+  },
+  {
+    "title": "PET_EGGHOUSE_EGGPOSITION",
+    "type": "list<list<float>>",
+    "value": "4314.25#36.18#4387.34|4314.58#36.18#4387.08|4315.13#36.18#4386.65|4314.11#35.58#4387.46|4314.75#35.58#4386.93|4315.08#35.58#4386.68"
+  },
+  {
+    "title": "PET_EGGHOUSE_DISPLAYEGGPOSITION",
+    "type": "list<list<float>>",
+    "value": "4312.12#36#4386.18|4312.754#36.1#4386.683|4313.031#36.1#4387.34|4312.85#35.63#4386.68|4313.12#35.63#4386.977|4315#36.1#4385.46|4314.72#36.1#4385.14|4314.99#35.62#4385.58|4314.71#35.62#4385.25|4314.32#36.05#4384.42"
+  },
+  {
+    "title": "PET_EGGHOUSE_EGGSCALE",
+    "type": "int",
+    "value": "9000"
+  },
+  {
+    "title": "PET_EGGHOUSE_TIMELINEEGGSCALE",
+    "type": "int",
+    "value": "22000"
+  },
+  {
+    "title": "PET_EGG_LIMITS",
+    "type": "int",
+    "value": "1000"
+  },
+  {
+    "title": "PET_RIDEREXTRASPEED",
+    "type": "list<list<int>>",
+    "value": "0#199|200#399|400#599|600#799|800#1099|1100#1499|1500#2000"
+  },
+  {
+    "title": "PET_SKILLDISPLAY",
+    "type": "list<int>",
+    "value": "1|206|301|302"
+  },
+  {
+    "title": "PET_KIBODUEL_SKILLDISPLAY",
+    "type": "list<int>",
+    "value": "206|1|2|351"
+  },
+  {
+    "title": "FORMATION_NUMBER",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "FORMATION_PARTY_NUMBER",
+    "type": "int",
+    "value": "10"
+  },
+  {
+    "title": "CHAT_LIMTIS",
+    "type": "int",
+    "value": "12"
+  },
+  {
+    "title": "PET_RENTOTHERSTAND",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "PET_RENTREFRESH",
+    "type": "int",
+    "value": "600"
+  },
+  {
+    "title": "PET_QUICKFEED",
+    "type": "float",
+    "value": "2"
+  },
+  {
+    "title": "PET_RIDERSPEEDMULT",
+    "type": "int",
+    "value": "100"
+  },
+  {
+    "title": "PHOTOGRAPH_CAMERA_HERO",
+    "type": "int",
+    "value": "2"
+  },
+  {
+    "title": "PHOTOGRAPH_CAMERA_MOUNT",
+    "type": "int",
+    "value": "4"
+  },
+  {
+    "title": "WORLD_DIFFICULT_CD",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "BAG_LIMIT_PET",
+    "type": "int",
+    "value": "300"
+  },
+  {
+    "title": "BAG_LIMIT_HERO",
+    "type": "int",
+    "value": "200"
+  },
+  {
+    "title": "BAG_LIMIT_COMMON_ITEM",
+    "type": "int",
+    "value": "9999"
+  },
+  {
+    "title": "BAG_LIMIT_SOULESSENCE",
+    "type": "int",
+    "value": "5000"
+  },
+  {
+    "title": "BAG_LIMIT_ACCESSORY",
+    "type": "int",
+    "value": "3000"
+  },
+  {
+    "title": "BAG_LIMIT_MOUNT",
+    "type": "int",
+    "value": "500"
+  },
+  {
+    "title": "HERO_MAXTIME",
+    "type": "int",
+    "value": "7"
+  },
+  {
+    "title": "PET_LEVELUP_GOLD",
+    "type": "int",
+    "value": "0"
+  },
+  {
+    "title": "FISH_TIME_PROTECT",
+    "type": "int",
+    "value": "0"
+  },
+  {
+    "title": "ACCESSORY_SUB_LEVEL",
+    "type": "list<int>",
+    "value": "2|5|8|12"
+  },
+  {
+    "title": "FISH_MAXLIFE",
+    "type": "int",
+    "value": "10000"
+  },
+  {
+    "title": "FISH_DEFEAT",
+    "type": "int",
+    "value": "1000"
+  },
+  {
+    "title": "PET_GENE_INIT",
+    "type": "int",
+    "value": "2"
+  },
+  {
+    "title": "FISH_CORRECT",
+    "type": "int",
+    "value": "100"
+  },
+  {
+    "title": "FOOD_TIMELIMT",
+    "type": "int",
+    "value": "3000"
+  },
+  {
+    "title": "FODD_INTERVALTIME",
+    "type": "int",
+    "value": "2000"
+  },
+  {
+    "title": "FODD_TOUCHTIME",
+    "type": "int",
+    "value": "1000"
+  },
+  {
+    "title": "FOOD_PERFERCT",
+    "type": "int",
+    "value": "2"
+  },
+  {
+    "title": "FOOD_NORMAL",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "FOOD_PROFICIENCY",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "CHARGE_UP",
+    "type": "list<int>",
+    "value": "4|10"
+  },
+  {
+    "title": "LOBBY_INVITE_TIME",
+    "type": "int",
+    "value": "8"
+  },
+  {
+    "title": "PLAYERTITLE_DEFAULT",
+    "type": "list<int>",
+    "value": "171000|172000"
+  },
+  {
+    "title": "PET_EGGINCUBATIONLIMIT",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "ROGUE_INFONEED",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "ROGUE_CHARLOGINUNIT",
+    "type": "int",
+    "value": "50401"
+  },
+  {
+    "title": "ROGUE_GOBLINUNIT",
+    "type": "int",
+    "value": "3100"
+  },
+  {
+    "title": "ROGUE_REWARDOBJ",
+    "type": "int",
+    "value": "10004"
+  },
+  {
+    "title": "ROGUE_REWARDDROP",
+    "type": "int",
+    "value": "16000"
+  },
+  {
+    "title": "ROGUE_REWARDCOST",
+    "type": "int",
+    "value": "30"
+  },
+  {
+    "title": "ROGUE_ACCOUNT_NORMALBATTLE",
+    "type": "int",
+    "value": "10"
+  },
+  {
+    "title": "ROGUE_ACCOUNT_ELITEBATTLE",
+    "type": "int",
+    "value": "20"
+  },
+  {
+    "title": "ROGUE_ACCOUNT_STABILIZELEVEL",
+    "type": "int",
+    "value": "30"
+  },
+  {
+    "title": "ROGUE_ACCOUNT_FANTASYITEM",
+    "type": "int",
+    "value": "20"
+  },
+  {
+    "title": "ROGUE_ACCOUNT_CLUE",
+    "type": "int",
+    "value": "20"
+  },
+  {
+    "title": "ROGUE_ACCOUNT_SUCCESS",
+    "type": "int",
+    "value": "200"
+  },
+  {
+    "title": "ROGUE_ACCOUNT_CHAOS",
+    "type": "int",
+    "value": "20"
+  },
+  {
+    "title": "ROGUE_ROOMREWARDSMALL",
+    "type": "int",
+    "value": "10000"
+  },
+  {
+    "title": "ROGUE_ROOMREWARDMID",
+    "type": "int",
+    "value": "10001"
+  },
+  {
+    "title": "ROGUE_ROOMREWARDBIG",
+    "type": "int",
+    "value": "10002"
+  },
+  {
+    "title": "ROGUE_SHOP_PERCEPTIONSUCCESS",
+    "type": "int",
+    "value": "7500"
+  },
+  {
+    "title": "ROGUE_SHOP_PERCEPTIONFAILURE",
+    "type": "int",
+    "value": "15000"
+  },
+  {
+    "title": "ROGUE_SHOP_APPERCEIVEFAILURE",
+    "type": "int",
+    "value": "2"
+  },
+  {
+    "title": "ROGUE_SHOP_PERCEPTIONNEED",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "ROGUE_SHOP_APPERCEIVENEED",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "ROGUE_ACCOUNT_RATIO",
+    "type": "int",
+    "value": "1000"
+  },
+  {
+    "title": "ROGUE_ACCOUNT_REWARD",
+    "type": "int",
+    "value": "10000"
+  },
+  {
+    "title": "ROGUE_ACCOUNT_INVESTIGATION",
+    "type": "int",
+    "value": "10000"
+  },
+  {
+    "title": "HOME_ID",
+    "type": "int",
+    "value": "701"
+  },
+  {
+    "title": "MAP_MARK_LIMIT",
+    "type": "int",
+    "value": "50"
+  },
+  {
+    "title": "HOME_RESIDENTEVENT_REFRESHTIME_MIN",
+    "type": "int",
+    "value": "60"
+  },
+  {
+    "title": "HOME_RESIDENTEVENT_REFRESHTIME_MAX",
+    "type": "int",
+    "value": "300"
+  },
+  {
+    "title": "HOME_RESIDENTEVENT_LOGMAX",
+    "type": "int",
+    "value": "10"
+  },
+  {
+    "title": "EQUIPMENT_LOCK_CONSUMPTION",
+    "type": "list<list<int>>",
+    "value": "1#1|2#3|3#6|4#10|5#15"
+  },
+  {
+    "title": "EQUIPMENT_LOCK_ITEM",
+    "type": "int",
+    "value": "430001"
+  },
+  {
+    "title": "GUIDE_UI_BLACKLIST",
+    "type": "list<string>",
+    "value": "pageReward|loading|pageSystemUnlock|pagePlayerLevelUp|pageMOD"
+  },
+  {
+    "title": "GUIDE_UI_HIDE_EFFECT",
+    "type": "list<string>",
+    "value": "pageNetworlkWaiting|interactive|pageFps|pageGuideSkip|pageGuideClickTips|pageGuideCombinedTip|pageGuideTipsPanel|dialogFreedomWindow_NewStory|pagePlayerExpUp|pageBlank|PageMultiTeamState|pageRollingDisplay|pageShortcutGuidePc|pageLeftMiddleReward|pageAcceptInvite|pageLeftMiddleReward|PageMultiSurprise|flymsgRoot|pagePetCatchScreenGuide|pageBottomGamepadCuts"
+  },
+  {
+    "title": "GUIDE_UI_SKIP_BUTTON_DISPLAY",
+    "type": "bool",
+    "value": "1"
+  },
+  {
+    "title": "GUIDE_SKIP_BUTTON_DISPLAY_TIME",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "GUIDE_SENDCHANGE_EVENT",
+    "type": "string",
+    "value": "|"
+  },
+  {
+    "title": "GUIDE_UI_TEXT_PRINT_TIME",
+    "type": "float",
+    "value": "0.0175"
+  },
+  {
+    "title": "GUIDE_UI_TEXT_SKIP_TIME",
+    "type": "float",
+    "value": "2"
+  },
+  {
+    "title": "HOME_PETWATERING_LENGTH_UNIT",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "HOME_CROPICON_SHOWDISTANCE",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "HOME_CANTEEN_BASIC_STORAGE",
+    "type": "int",
+    "value": "1000"
+  },
+  {
+    "title": "HOME_AUTOWATERING_TIME",
+    "type": "int",
+    "value": "30"
+  },
+  {
+    "title": "PET_ATTRIBUTEINHERITANCE_RATIO",
+    "type": "int",
+    "value": "3000"
+  },
+  {
+    "title": "HERO_FAVORABILITY_MAX",
+    "type": "int",
+    "value": "100"
+  },
+  {
+    "title": "HERO_FAVORABILITY_STRENGTH_NUM",
+    "type": "list<int>",
+    "value": "1|5"
+  },
+  {
+    "title": "FISH_SALVAGING",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "FISH_ENCOUNTER_GUARANTEE",
+    "type": "int",
+    "value": "15"
+  },
+  {
+    "title": "WEEKLY_REFRESH_TIME",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "HOME_DORM_LOBBY_SCENE_ID",
+    "type": "int",
+    "value": "805"
+  },
+  {
+    "title": "HOME_DORM_ENTRY_ID",
+    "type": "int",
+    "value": "110000504"
+  },
+  {
+    "title": "HOME_DORM_UNLOCK",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "HOME_DORM_STOCKING_TIME",
+    "type": "float",
+    "value": "1"
+  },
+  {
+    "title": "HOME_DORM_STOCKING_LENGTH",
+    "type": "float",
+    "value": "0.5"
+  },
+  {
+    "title": "HOME_DORM_STOCKING_COOLDOWN",
+    "type": "float",
+    "value": "8"
+  },
+  {
+    "title": "MAIL_COLLECTION_NUM",
+    "type": "int",
+    "value": "300"
+  },
+  {
+    "title": "HERO_FAVORABILITY_GIFT_NUM",
+    "type": "int",
+    "value": "10"
+  },
+  {
+    "title": "HERO_FAVORABILITY_ALL_GIFT_NUM",
+    "type": "int",
+    "value": "20"
+  },
+  {
+    "title": "BATTLE_SNEAKATTACK_BUFFID",
+    "type": "int",
+    "value": "45"
+  },
+  {
+    "title": "HOME_BUILD_ADJUST_DEFAULT",
+    "type": "int",
+    "value": "2"
+  },
+  {
+    "title": "HOME_BUILD_ADJUST_FOWARD",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "HOME_BUILD_ADJUST_BACK",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "HOME_BUILD_ADJUST_LEFT",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "HOME_BUILD_ADJUST_RIGHT",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "HOME_AUTOWATER_ID",
+    "type": "int",
+    "value": "70000002"
+  },
+  {
+    "title": "TASK_TRACED_DELAYTIME",
+    "type": "int",
+    "value": "12"
+  },
+  {
+    "title": "HOME_WEAPON_ID_HOE",
+    "type": "int",
+    "value": "120001"
+  },
+  {
+    "title": "HOME_WEAPON_ID_WATERINGPOT",
+    "type": "int",
+    "value": "120002"
+  },
+  {
+    "title": "HOME_ACTION_ID_SOW",
+    "type": "int",
+    "value": "400"
+  },
+  {
+    "title": "HOME_ACTION_ID_HOE",
+    "type": "int",
+    "value": "401"
+  },
+  {
+    "title": "HOME_ACTION_ID_WATER",
+    "type": "int",
+    "value": "402"
+  },
+  {
+    "title": "TASK_ZOOMLENS_MAX_DIS",
+    "type": "float",
+    "value": "3.5"
+  },
+  {
+    "title": "TASK_ZOOMLENS_MIN_DIS",
+    "type": "float",
+    "value": "1"
+  },
+  {
+    "title": "TASK_ZOOMLENS_MIN_FOV",
+    "type": "float",
+    "value": "35"
+  },
+  {
+    "title": "TASK_ZOOMLENS_MAXH_OFFEST",
+    "type": "float",
+    "value": "17"
+  },
+  {
+    "title": "TASK_ZOOMLENS_MINH_OFFEST",
+    "type": "float",
+    "value": "7"
+  },
+  {
+    "title": "TASK_ZOOMLENS_ROTATETIME",
+    "type": "float",
+    "value": "0.25"
+  },
+  {
+    "title": "TASK_ZOOMLENS_REVERTTIME",
+    "type": "float",
+    "value": "0.3"
+  },
+  {
+    "title": "PLAYER_NAME_MIN",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "PLAYER_NAME_MAX",
+    "type": "int",
+    "value": "14"
+  },
+  {
+    "title": "HOME_GRASSLAND_NUM_TOTAL",
+    "type": "int",
+    "value": "30"
+  },
+  {
+    "title": "HOME_COLLECTION_BUILD_TIME",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "HOME_COLLECTION_BUILDING_ITEM",
+    "type": "string",
+    "value": "Item/Home/Build/pre_home_build_pre10x10"
+  },
+  {
+    "title": "HOME_COLLECTION_BUILDING_TIP_TIME",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "HOME_HARVEST_BUFFER_TIME",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "INDICATOR_TYPE_DISTANCE_1",
+    "type": "int",
+    "value": "8"
+  },
+  {
+    "title": "INDICATOR_TYPE_DISTANCE_2",
+    "type": "int",
+    "value": "15"
+  },
+  {
+    "title": "INDICATOR_TYPE_DISTANCE_3",
+    "type": "int",
+    "value": "25"
+  },
+  {
+    "title": "TASK_PAGE_AUTO_CLOSE_TIME",
+    "type": "float",
+    "value": "5"
+  },
+  {
+    "title": "SOULESSENCE_EXP_RATIO",
+    "type": "int",
+    "value": "8000"
+  },
+  {
+    "title": "STAMINA_CHEST_DROPTIME",
+    "type": "int",
+    "value": "2"
+  },
+  {
+    "title": "DUNGEON_BOSSTIME",
+    "type": "int",
+    "value": "2"
+  },
+  {
+    "title": "DUNGEON_BOSSUPTIME",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "HOME_PET_AUTOSOW_LABORTYPE",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "HOME_PET_AUTOWATER__LABORTYPE",
+    "type": "int",
+    "value": "6"
+  },
+  {
+    "title": "HOME_PET_AUTOHARVEST__LABORTYPE",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "HOME_PET_AUTOSOW_ATTRIBUTE",
+    "type": "int",
+    "value": "1001"
+  },
+  {
+    "title": "HOME_PET_AUTOWATER_ATTRIBUTE",
+    "type": "int",
+    "value": "1002"
+  },
+  {
+    "title": "HOME_PET_AUTOHARVEST_ATTRIBUTE",
+    "type": "int",
+    "value": "1003"
+  },
+  {
+    "title": "HOME_PET_AUTOSOW_COOLDOWN",
+    "type": "int",
+    "value": "10"
+  },
+  {
+    "title": "HOME_PET_AUTOWATER_COOLDOWN_SHORT",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "HOME_PET_AUTOWATER_COOLDOWN",
+    "type": "int",
+    "value": "20"
+  },
+  {
+    "title": "HOME_PET_AUTOHARVEST_COOLDOWN",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "INIT_SWITCHSCENE_ID",
+    "type": "int",
+    "value": "102"
+  },
+  {
+    "title": "PET_CATCH_CD",
+    "type": "int",
+    "value": "0"
+  },
+  {
+    "title": "SOULESSENCE_EXP_ITEM",
+    "type": "list<int>",
+    "value": "400000|400001|400002|400003"
+  },
+  {
+    "title": "PET_SIGNATURESKILLLIST",
+    "type": "int",
+    "value": "206"
+  },
+  {
+    "title": "PET_SKILLLIST",
+    "type": "list<int>",
+    "value": "1|50"
+  },
+  {
+    "title": "PET_RPROPERTYSKILLLIST",
+    "type": "list<int>",
+    "value": "51|100"
+  },
+  {
+    "title": "PET_FPROPERTYSKILLLIST",
+    "type": "list<int>",
+    "value": "101|150"
+  },
+  {
+    "title": "PET_BREAKSKILLLIST",
+    "type": "int",
+    "value": "601"
+  },
+  {
+    "title": "LOADING_DAYTIME",
+    "type": "string",
+    "value": "6,18"
+  },
+  {
+    "title": "TIPS_REFRESH",
+    "type": "int",
+    "value": "10"
+  },
+  {
+    "title": "HOME_PET_AUTOSOW_COST",
+    "type": "int",
+    "value": "2"
+  },
+  {
+    "title": "HOME_PET_AUTOWATER_COST",
+    "type": "int",
+    "value": "2"
+  },
+  {
+    "title": "HOME_PET_AUTOHARVEST_COST",
+    "type": "int",
+    "value": "2"
+  },
+  {
+    "title": "HOME_PET_RANCH_PRODUCE_ATTRIBUTE",
+    "type": "int",
+    "value": "6002"
+  },
+  {
+    "title": "HOME_PET_RANCH_HARVEST_LABORTYPE",
+    "type": "int",
+    "value": "9"
+  },
+  {
+    "title": "HOME_PET_RANCH_HARVEST_ATTRIBUTE",
+    "type": "int",
+    "value": "6001"
+  },
+  {
+    "title": "PET_LEVEL_LIMIT_SWITCH",
+    "type": "int",
+    "value": "0"
+  },
+  {
+    "title": "MONSTER_BIRTH_LOCATION",
+    "type": "list<string>",
+    "value": "3,2|-3,2|-6,1.5|6,1.5|-5,4.5|-1.5,4.5|2,4.5|6,5|-8,4|-7,7|-3.5,7|0,7|4,7|9,4.5|8,7|-5,9|-2,9|2,9|6,9"
+  },
+  {
+    "title": "HOME_RANCH_BORN_DISTANCE",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "HOME_RANCH_PRODUCE_DISTANCE",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "HOME_RANCH_PICK_DISTANCE",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "HOME_PET_SATIETY_RESTORE_BOUNDARY",
+    "type": "int",
+    "value": "0"
+  },
+  {
+    "title": "HOME_RANCH_PETEGG_LIMIT",
+    "type": "int",
+    "value": "10"
+  },
+  {
+    "title": "CHARGE_RECOVER_AMOUNT",
+    "type": "int",
+    "value": "10000"
+  },
+  {
+    "title": "WORLD_REBORN_HP",
+    "type": "int",
+    "value": "10000"
+  },
+  {
+    "title": "WORLD_DUNGEON_REBORN_HP",
+    "type": "int",
+    "value": "10000"
+  },
+  {
+    "title": "PET_CATCH_SHOW_VALUE_RANGE_SMALL",
+    "type": "list<int>",
+    "value": "5|10"
+  },
+  {
+    "title": "PET_CATCH_SHOW_VALUE_RANGE_MIDDLE",
+    "type": "list<int>",
+    "value": "15|20"
+  },
+  {
+    "title": "PET_CATCH_SHOW_VALUE_RANGE_LARGE",
+    "type": "list<int>",
+    "value": "25|30"
+  },
+  {
+    "title": "TIME_LOOP_BREAKPOINT",
+    "type": "string",
+    "value": "6,18"
+  },
+  {
+    "title": "PET_BOX_NUM",
+    "type": "int",
+    "value": "20"
+  },
+  {
+    "title": "PET_BOX_LIMIT",
+    "type": "int",
+    "value": "30"
+  },
+  {
+    "title": "CHARGE_ACCOUNT_INITAIL",
+    "type": "int",
+    "value": "7000"
+  },
+  {
+    "title": "STAMINA_ACCOUNT_INITAIL",
+    "type": "int",
+    "value": "10000"
+  },
+  {
+    "title": "KIBO_CAPTURE_COEFFICIENT_POINT",
+    "type": "list<int>",
+    "value": "2|3"
+  },
+  {
+    "title": "GAME_TIME_SWITCH_POINT",
+    "type": "int",
+    "value": "0"
+  },
+  {
+    "title": "HOME_BELT_NUM",
+    "type": "int",
+    "value": "32"
+  },
+  {
+    "title": "MAP_ENTER_SCALE",
+    "type": "float",
+    "value": "0.5"
+  },
+  {
+    "title": "HOME_SKILLID_HOE_HEROINE",
+    "type": "int",
+    "value": "19900150"
+  },
+  {
+    "title": "HOME_SKILLID_SOW_HEROINE",
+    "type": "int",
+    "value": "19900152"
+  },
+  {
+    "title": "HOME_SKILLID_WATER_HEROINE",
+    "type": "int",
+    "value": "19900151"
+  },
+  {
+    "title": "HOME_SKILLID_HOE_HERO",
+    "type": "int",
+    "value": "19900250"
+  },
+  {
+    "title": "HOME_SKILLID_SOW_HERO",
+    "type": "int",
+    "value": "19900252"
+  },
+  {
+    "title": "HOME_SKILLID_WATER_HERO",
+    "type": "int",
+    "value": "19900251"
+  },
+  {
+    "title": "CHAR_VOICE_TEAM_INTERVAL",
+    "type": "int",
+    "value": "1000"
+  },
+  {
+    "title": "BATTLE_WEAKBREAK_SAFETIME",
+    "type": "float",
+    "value": "1.5"
+  },
+  {
+    "title": "HOME_BUILDINGNAME_SHOWDISTANCE",
+    "type": "int",
+    "value": "10"
+  },
+  {
+    "title": "MAP_MARK_HEIGHT_DIFFERENCE",
+    "type": "float",
+    "value": "4.5"
+  },
+  {
+    "title": "HOME_TECHNOLOGY_PLANT_DIG_EXP",
+    "type": "dict<int,int>",
+    "value": "2#1"
+  },
+  {
+    "title": "HOME_TECHNOLOGY_PLANT_SEED_EXP",
+    "type": "dict<int,int>",
+    "value": "2#1"
+  },
+  {
+    "title": "HOME_SPECIALTABID_DECORATION",
+    "type": "int",
+    "value": "303"
+  },
+  {
+    "title": "HOME_WOEKTABLE_LOCATION",
+    "type": "list<int>",
+    "value": "0|2100001|101|10000"
+  },
+  {
+    "title": "HOME_PRODUCT_COLLECTION_BOTTOM_TIME",
+    "type": "int",
+    "value": "2"
+  },
+  {
+    "title": "HOME_HATCH_BOTTOM_TIME",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "HOME_PROCESS_PRODUCT_TIME",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "PET_SATIETY_BEGINNING_VALUE",
+    "type": "int",
+    "value": "60"
+  },
+  {
+    "title": "PET_SATIETY_MAX_VALUE",
+    "type": "int",
+    "value": "100"
+  },
+  {
+    "title": "TASK_CLEAROUT_LOCK",
+    "type": "list<int>",
+    "value": "106001"
+  },
+  {
+    "title": "HERO_DETAIL_LOD",
+    "type": "list<list<int>>",
+    "value": "108002#0|108001#0|107001#0"
+  },
+  {
+    "title": "ACCESSORY_LEVELUP_EXP_DISCOUNT",
+    "type": "int",
+    "value": "8000"
+  },
+  {
+    "title": "PET_GRADE_ATTR_SCORE",
+    "type": "dict<int,int>",
+    "value": "1#1613|3#3333|4#3333|5#269|7#48000000|8#24000000"
+  },
+  {
+    "title": "PET_GRADE_ATTR_ELE_SCORE",
+    "type": "int",
+    "value": "5405405"
+  },
+  {
+    "title": "PET_GRADE_ATTR_ELE_BATTLEINFO_ID",
+    "type": "list<int>",
+    "value": "51|52|53|54|55|56|57|58|59|60"
+  },
+  {
+    "title": "PET_GRADE_SCORE_MIN",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "PET_WILD_BUILDER_RULE_ID",
+    "type": "int",
+    "value": "1000"
+  },
+  {
+    "title": "PET_WILDEGG_BUILDER_RULE_ID",
+    "type": "int",
+    "value": "2000"
+  },
+  {
+    "title": "PET_DNA_MUTATION_ID",
+    "type": "int",
+    "value": "3000"
+  },
+  {
+    "title": "PET_WILD_DNA_POOL",
+    "type": "int",
+    "value": "1000"
+  },
+  {
+    "title": "PET_WILDEGG_DNA_POOL",
+    "type": "int",
+    "value": "2000"
+  },
+  {
+    "title": "PET_WILD_DNA_MUTATION",
+    "type": "int",
+    "value": "1000"
+  },
+  {
+    "title": "PET_WILDEGG_DNA_MUTATION",
+    "type": "int",
+    "value": "2000"
+  },
+  {
+    "title": "PET_DNA_MAX_NUM",
+    "type": "int",
+    "value": "8"
+  },
+  {
+    "title": "PET_DNAUNLOCK_NEW",
+    "type": "list<list<int>>",
+    "value": "1#0|2#0|3#0|4#0|5#0|6#0|7#0|8#0"
+  },
+  {
+    "title": "PET_SAME_DNA_NUM",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "PET_DNA_SYSTEM_GUARANTEED_NUM",
+    "type": "dict<int,int>",
+    "value": "1#1"
+  },
+  {
+    "title": "PET_DNA_SYSTEM_GUARANTEED_RARITY",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "PET_DNA_FLASH_NUM",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "PET_FLASH_EFFECT_PATH",
+    "type": "string",
+    "value": "pre_pet_speical_flashlight"
+  },
+  {
+    "title": "PET_FLASH_EFFECT_PATH_MUTE",
+    "type": "string",
+    "value": "pre_pet_speical_flashlight_mute"
+  },
+  {
+    "title": "PET_FLASH_EFFECT_PATH_PAGE",
+    "type": "string",
+    "value": "pre_pet_speical_flashlight_2"
+  },
+  {
+    "title": "HOME_PET_CANTEEN_BEHAVIOR_TREE_NUM_MAX",
+    "type": "int",
+    "value": "8"
+  },
+  {
+    "title": "HOME_RANGE_PLANT_TIME",
+    "type": "list<list<float>>",
+    "value": "2|1#2|1#1.5#2"
+  },
+  {
+    "title": "WORLD_REBORN_WIN_HP",
+    "type": "int",
+    "value": "1000"
+  },
+  {
+    "title": "PLAYER_CHANGE_NAME_CD",
+    "type": "int",
+    "value": "168"
+  },
+  {
+    "title": "PET_BATCH_MANAGEMENT",
+    "type": "list<int>",
+    "value": "6|5|4|3|2|1"
+  },
+  {
+    "title": "PET_FREE_MAXNUMBER",
+    "type": "int",
+    "value": "600"
+  },
+  {
+    "title": "PETEGG_FREE_MAXNUMBER",
+    "type": "int",
+    "value": "500"
+  },
+  {
+    "title": "PET_FREE_MINPROP",
+    "type": "list<int>",
+    "value": "100001|1"
+  },
+  {
+    "title": "PET_FREE_LIMINT",
+    "type": "int",
+    "value": "500"
+  },
+  {
+    "title": "PET_EVOLUTION_RETURNS",
+    "type": "bool",
+    "value": ""
+  },
+  {
+    "title": "PET_EXPERIENCE_RETURN",
+    "type": "bool",
+    "value": "1"
+  },
+  {
+    "title": "PET_BACKTRACE_EGG_CAN_USE",
+    "type": "bool",
+    "value": "0"
+  },
+  {
+    "title": "PET_BACKTRACE_USE_TIME",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "PET_BACKTRACE_UP_TIME",
+    "type": "int",
+    "value": "6"
+  },
+  {
+    "title": "PET_BACKTRACE_SAME_CAN_UP",
+    "type": "bool",
+    "value": "0"
+  },
+  {
+    "title": "PET_BACKTRACE_EXP_BACK_DISCOUNT",
+    "type": "int",
+    "value": "8000"
+  },
+  {
+    "title": "PET_BACKTRACE_EVOLUTION_ITEM_CAN_BACK",
+    "type": "bool",
+    "value": "1"
+  },
+  {
+    "title": "KIBO_DUEL_FOV",
+    "type": "int",
+    "value": "65"
+  },
+  {
+    "title": "KIBO_DUEL_SETFOV",
+    "type": "list<int>",
+    "value": "5|2"
+  },
+  {
+    "title": "KIBO_DUEL_VELOCITY",
+    "type": "int",
+    "value": "10"
+  },
+  {
+    "title": "KIBO_DUEL_CARDS",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "KIBO_DUEL_OCCUPYING_TIME",
+    "type": "int",
+    "value": "10"
+  },
+  {
+    "title": "KIBO_DUEL_SUMMONING_RANGE",
+    "type": "float",
+    "value": "30"
+  },
+  {
+    "title": "MULIT_DUNGEON_MATCHTIME",
+    "type": "int",
+    "value": "30"
+  },
+  {
+    "title": "MULIT_DUNGEON_FRIEND_READYTIME",
+    "type": "int",
+    "value": "30"
+  },
+  {
+    "title": "MULIT_DUNGEON_PLAYERNUM",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "KIBO_DUEL_SAME_ID_PET_ALLOW",
+    "type": "bool",
+    "value": "1"
+  },
+  {
+    "title": "KIBO_DUEL_FORMATION_NUM_LIMIT",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "KIBO_DUEL_FORMATION_MAX_NUM",
+    "type": "int",
+    "value": "8"
+  },
+  {
+    "title": "KIBO_DUEL_CUT_IN_PLAYER",
+    "type": "bool",
+    "value": "1"
+  },
+  {
+    "title": "KIBO_DUEL_CUT_IN_ENEMY",
+    "type": "bool",
+    "value": "1"
+  },
+  {
+    "title": "KIBO_DUEL_HP_DIVIDING_LINE_A",
+    "type": "int",
+    "value": "5000"
+  },
+  {
+    "title": "KIBO_DUEL_HP_DIVIDING_LINE_B",
+    "type": "int",
+    "value": "50000"
+  },
+  {
+    "title": "KIBO_DUEL_HP_DIVIDING_LINE_C",
+    "type": "int",
+    "value": "500000"
+  },
+  {
+    "title": "KIBO_DUEL_CONTINUITY_KO_NUM",
+    "type": "int",
+    "value": "2"
+  },
+  {
+    "title": "KIBO_DUEL_CONTINUITY_KO_TIME",
+    "type": "dict<int,int>",
+    "value": "2#10|3#10|4#20|5#20|6#20|7#30|8#30"
+  },
+  {
+    "title": "KIBO_DUEL_CONTINUITY_KO_BROADCAST",
+    "type": "dict<int,int>",
+    "value": "2#101|3#102|4#103|5#104|6#105|7#106|8#107"
+  },
+  {
+    "title": "KIBO_DUEL_ACCUMULATE_KO_NUM",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "KIBO_DUEL_ACCUMULATE_KO_BROADCAST",
+    "type": "dict<int,int>",
+    "value": "3#201|4#202|5#203|6#204|7#205|8#206"
+  },
+  {
+    "title": "KIBO_DUEL_ACCUMULATE_KO_REPEAT_NUM",
+    "type": "int",
+    "value": "206"
+  },
+  {
+    "title": "KIBO_DUEL_ACCUMULATE_KO_OVER_BROADCAST",
+    "type": "int",
+    "value": "301"
+  },
+  {
+    "title": "KIBO_DUEL_MVP",
+    "type": "list<float>",
+    "value": "200|120|100|10|30|50"
+  },
+  {
+    "title": "PHOTO_X_MAX",
+    "type": "float",
+    "value": "1.5"
+  },
+  {
+    "title": "PHOTO_Y_MAX",
+    "type": "float",
+    "value": "1.5"
+  },
+  {
+    "title": "PHOTO_MOVE",
+    "type": "float",
+    "value": "0.011"
+  },
+  {
+    "title": "PHOTO_MOVIE_TIME",
+    "type": "int",
+    "value": "60"
+  },
+  {
+    "title": "MULIT_DUNGEON_DIFFICULTY",
+    "type": "list<list<int>>",
+    "value": "1#40|2#60|3#80|4#90|5#100"
+  },
+  {
+    "title": "SKIP_FIRST_TASKID",
+    "type": "list<int>",
+    "value": "106001|106002"
+  },
+  {
+    "title": "SKIP_FIRST_TASKID_REWARD",
+    "type": "list<int>",
+    "value": "16003|16026"
+  },
+  {
+    "title": "SKIP_FIRST_TASKID_GUIDE",
+    "type": "list<int>",
+    "value": "30001|30003|30004|30005|30006|30018|30028|30021|30015|1020|30009|30010|30042|30045|30116"
+  },
+  {
+    "title": "SKIP_FIRST_CONDITIONID",
+    "type": "list<list<int>>",
+    "value": "61009#3003|61009#3002"
+  },
+  {
+    "title": "BATTLE_STATE_MACHINE_CONDITION_ID",
+    "type": "list<int>",
+    "value": "3003|3002"
+  },
+  {
+    "title": "OPEN_PRELUDE_TASK",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "DUNGEON_FALLDAMAGE_PERCENT",
+    "type": "int",
+    "value": "1000"
+  },
+  {
+    "title": "PHOTO_FORMWORK_TXT",
+    "type": "int",
+    "value": "16"
+  },
+  {
+    "title": "PHOTO_FORMWORK_MAX",
+    "type": "int",
+    "value": "20"
+  },
+  {
+    "title": "CHAT_EMOJI_COLLECT_NUM_MAX",
+    "type": "int",
+    "value": "15"
+  },
+  {
+    "title": "DAILY_EVENTS_MAX_NUM",
+    "type": "int",
+    "value": "4"
+  },
+  {
+    "title": "RANDOM_EVENTS_REVERT_TIME",
+    "type": "int",
+    "value": "4"
+  },
+  {
+    "title": "FRESHNESS_ASSURE_PARAM",
+    "type": "int",
+    "value": "5000"
+  },
+  {
+    "title": "HP_VALUE_UNIT_CHARGE_CONSUMPTION",
+    "type": "int",
+    "value": "400"
+  },
+  {
+    "title": "TIME_VALUE_UNIT_CHARGE_CONSUMPTION",
+    "type": "int",
+    "value": "9999"
+  },
+  {
+    "title": "NEWTASK_TIME",
+    "type": "int",
+    "value": "3000"
+  },
+  {
+    "title": "MAX_CHARGE_SATIETY_VALUE",
+    "type": "int",
+    "value": "100"
+  },
+  {
+    "title": "CHARGE_SATIETY_CHECK_DELAY",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "CHARGE_SATIETY_RECOVER_FREQUENCY",
+    "type": "int",
+    "value": "2"
+  },
+  {
+    "title": "KIBO_DUEL_CHAR_COMMONSKILL_POOL",
+    "type": "list<int>",
+    "value": "19999901|19999902|19999903|19999904|19999905"
+  },
+  {
+    "title": "KIBO_DUEL_FORMATION_CHAR_SKILL_NUM",
+    "type": "int",
+    "value": "2"
+  },
+  {
+    "title": "WORLD_REBORN_HP_CSD",
+    "type": "int",
+    "value": "10000"
+  },
+  {
+    "title": "GUIDE_KIBO_SPECIAL_DISTANCE",
+    "type": "float",
+    "value": "10"
+  },
+  {
+    "title": "GUIDE_KIBO_SPECIAL_GUIDE_GROUP_IDS",
+    "type": "list<int>",
+    "value": "30017|30129|30130"
+  },
+  {
+    "title": "COLLECTION_TOOL_LIMIT",
+    "type": "int",
+    "value": "100"
+  },
+  {
+    "title": "HOME_PET_RECOMMEND_MAX",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "PLOT_AUTOPLAY_TIME",
+    "type": "int",
+    "value": "1000"
+  },
+  {
+    "title": "NOVICE_TASK_SHOW_HERO",
+    "type": "int",
+    "value": "102001"
+  },
+  {
+    "title": "NOVICE_TASK_SHOW_HERO_ACTION",
+    "type": "string",
+    "value": "FormationIdle"
+  },
+  {
+    "title": "COLLECTION_LIMIT",
+    "type": "int",
+    "value": "50"
+  },
+  {
+    "title": "COLLECTION_CONSOLE_SATIETY_ID",
+    "type": "int",
+    "value": "5002"
+  },
+  {
+    "title": "COLLECTION_LATTICE_LIMIT",
+    "type": "int",
+    "value": "999"
+  },
+  {
+    "title": "COLLECTION_NPC_PROBABILITY",
+    "type": "int",
+    "value": "500"
+  },
+  {
+    "title": "PETGROW_ID",
+    "type": "int",
+    "value": "5001000"
+  },
+  {
+    "title": "HOME_PET_STRIKE_SKILL",
+    "type": "int",
+    "value": "609999"
+  },
+  {
+    "title": "HOME_PET_REST_SKILL",
+    "type": "list<int>",
+    "value": "600002|600003|600004"
+  },
+  {
+    "title": "PET_CATCH_VALID_RANGE",
+    "type": "float",
+    "value": "26"
+  },
+  {
+    "title": "PET_CATCH_VALID_ANGLE",
+    "type": "int",
+    "value": "120"
+  },
+  {
+    "title": "PET_CATCH_ICON_DISPALY",
+    "type": "bool",
+    "value": ""
+  },
+  {
+    "title": "WORLD_FIRST_DISCOVERED_ITEM",
+    "type": "list<int>",
+    "value": "302|301|308|50|51"
+  },
+  {
+    "title": "WORLD_FIRST_DISCOVERED_NOTIPS",
+    "type": "list<int>",
+    "value": "301|308"
+  },
+  {
+    "title": "WORLD_DEFAULT_TIME",
+    "type": "int",
+    "value": "1500"
+  },
+  {
+    "title": "PET_FAVORABILITY_MAX",
+    "type": "int",
+    "value": "500"
+  },
+  {
+    "title": "PET_FAVORABILITY_FONDLE_MAX",
+    "type": "int",
+    "value": "50"
+  },
+  {
+    "title": "BATTLE_DROP_PET_FAVORABILITY",
+    "type": "int",
+    "value": "10"
+  },
+  {
+    "title": "FOOD_PET_FAVORABILITY_ONCE",
+    "type": "int",
+    "value": "0"
+  },
+  {
+    "title": "FRUIT_PET_FAVORABILITY_ONCE",
+    "type": "list<int>",
+    "value": "0|0|5|8|10"
+  },
+  {
+    "title": "FONDLE_PET_FAVORABILITY_ONCE",
+    "type": "int",
+    "value": "50"
+  },
+  {
+    "title": "TASK_TRACKINGTAGS",
+    "type": "float",
+    "value": "1"
+  },
+  {
+    "title": "PUZZLE_COUNTDOWN",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "TASK_SUBMIT_ICON_DEFAULT",
+    "type": "string",
+    "value": "sucai"
+  },
+  {
+    "title": "THANKSPLAY_CONDITION",
+    "type": "int",
+    "value": "991035"
+  },
+  {
+    "title": "THANKSPLAY_TIME",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "CHANGETIME_NUM",
+    "type": "int",
+    "value": "48"
+  },
+  {
+    "title": "HOME_WATER_SPEED_HERO",
+    "type": "int",
+    "value": "60"
+  },
+  {
+    "title": "HOME_WATER_SPEED_KIBO",
+    "type": "int",
+    "value": "60"
+  },
+  {
+    "title": "GAME_ZOOM_DISTANCE",
+    "type": "list<float>",
+    "value": "2.15|6"
+  },
+  {
+    "title": "GAME_ZOOM_COEFFICIENT",
+    "type": "list<float>",
+    "value": "0.8|0.8"
+  },
+  {
+    "title": "HUD_FOV_COMPOSENTION",
+    "type": "float",
+    "value": "1"
+  },
+  {
+    "title": "PUZZLE_HUD_ROOT",
+    "type": "string",
+    "value": "EmojiHud"
+  },
+  {
+    "title": "EFFECT_TRANSFORM_KIBO_CHANGE",
+    "type": "string",
+    "value": "21_0035"
+  },
+  {
+    "title": "CHALLENGE_TIME_RED",
+    "type": "int",
+    "value": "100000"
+  },
+  {
+    "title": "AVARAT_NEED_ITEM",
+    "type": "list<list<int>>",
+    "value": "3#100001#1|10#2#20000"
+  },
+  {
+    "title": "AVARAT_RESOURCE_BAR",
+    "type": "int",
+    "value": "301"
+  },
+  {
+    "title": "KIBO_DUEL_VALID_SELECT_EFFECT",
+    "type": "string",
+    "value": "Effect/Scene/Kiboduel/pre_kibo_summon_mark_green.prefab"
+  },
+  {
+    "title": "KIBO_DUEL_INVALID_SELECT_EFFECT",
+    "type": "string",
+    "value": "Effect/Scene/Kiboduel/pre_kibo_summon_mark_red.prefab"
+  },
+  {
+    "title": "KIBO_DUEL_AIM_RANGE_EFFECT",
+    "type": "string",
+    "value": "Effect/Scene/Kiboduel/pre_warning_garrison_range.prefab"
+  },
+  {
+    "title": "KIBO_DUEL_SELECT_EFFECT_DIST",
+    "type": "float",
+    "value": "2.5"
+  },
+  {
+    "title": "KIBO_DUEL_SCENE_RANGE_EFFECT",
+    "type": "string",
+    "value": "Effect/Scene/Kiboduel/pre_level_qibobattle_range_white_grid.prefab"
+  },
+  {
+    "title": "KIBO_DUEL_NEUTRALITY_CAMP_EFFECT",
+    "type": "string",
+    "value": "Effect/Scene/Kiboduel/pre_level_qibobattle_range_yellow_grid.prefab"
+  },
+  {
+    "title": "KIBO_DUEL_BLUE_CAMP_EFFECT",
+    "type": "string",
+    "value": "Effect/Scene/Kiboduel/pre_level_qibobattle_range_blue_grid.prefab"
+  },
+  {
+    "title": "KIBO_DUEL_RED_CAMP_EFFECT",
+    "type": "string",
+    "value": "Effect/Scene/Kiboduel/pre_level_qibobattle_range_red_grid.prefab"
+  },
+  {
+    "title": "KIBO_DUEL_KIBO_SUMMON_EFFECT",
+    "type": "string",
+    "value": "pre_kibo_summon"
+  },
+  {
+    "title": "KIBO_DUEL_LINE_EFFECT",
+    "type": "string",
+    "value": "Effect/Scene/Kiboduel/pre_kibo_advance_line.prefab"
+  },
+  {
+    "title": "KIBO_DUEL_LINE_EFFECT_MOVE_TIME",
+    "type": "float",
+    "value": "2"
+  },
+  {
+    "title": "RECONNECT_TIMES",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "KIBO_DUEL_DEFENSE_KIBO_TAG",
+    "type": "int",
+    "value": "206"
+  },
+  {
+    "title": "KIBO_DUEL_ATTACK_KIBO_TAG",
+    "type": "int",
+    "value": "202"
+  },
+  {
+    "title": "SCAN_CD",
+    "type": "int",
+    "value": "30000"
+  },
+  {
+    "title": "SCAN_MARK_TIME",
+    "type": "int",
+    "value": "30000"
+  },
+  {
+    "title": "SCAN_RANGE",
+    "type": "float",
+    "value": "100"
+  },
+  {
+    "title": "SCAN_DEFAULT_TYPE",
+    "type": "list<int>",
+    "value": "30|21|80|81|82|83|84|85|86|87|71|19"
+  },
+  {
+    "title": "SCAN_DEFAULT_FILTER_SPAWNER",
+    "type": "list<int>",
+    "value": "6021230|6021320|6021330|6021340|6021350|6021360|6021280|6021490|6021500|6040720|6040740"
+  },
+  {
+    "title": "SCAN_SHOW_TIME",
+    "type": "int",
+    "value": "10000"
+  },
+  {
+    "title": "SCAN_DISAPPEAR_TIME",
+    "type": "int",
+    "value": "10000"
+  },
+  {
+    "title": "SCAN_ENTITY_UNSCAN_TIME",
+    "type": "int",
+    "value": "5000"
+  },
+  {
+    "title": "SCAN_DEFAULT_SELECT_SPAWNER",
+    "type": "list<int>",
+    "value": "11040|11050|11060|11061|11062|11063|11064|11065|11070|11130|11140|11141|11150|11151|11160|11170|30127"
+  },
+  {
+    "title": "SATIETY_AUTOMATIC_USE_ROLE",
+    "type": "int",
+    "value": "67"
+  },
+  {
+    "title": "SATIETY_AUTOMATIC_USE_MOUNT",
+    "type": "int",
+    "value": "31"
+  },
+  {
+    "title": "ALL_MAP_DEFAULT_HEIGHT_LIMIT",
+    "type": "int",
+    "value": "3000"
+  },
+  {
+    "title": "SCAN_MOUNT_CD",
+    "type": "int",
+    "value": "100"
+  },
+  {
+    "title": "HOME_HOE_BUILDING_ID",
+    "type": "int",
+    "value": "20161"
+  },
+  {
+    "title": "PET_SPECIAL_MAP",
+    "type": "list<int>",
+    "value": "100|101"
+  },
+  {
+    "title": "PET_SPECIAL_GUARANTEE",
+    "type": "dict<int,int>",
+    "value": "1#41|2#29|3#282|4#29|5#282"
+  },
+  {
+    "title": "PET_SPECIAL_GUARANTEE_MAIL",
+    "type": "dict<int,int>",
+    "value": "1#20101|2#20102|3#20103|4#20104|5#20105"
+  },
+  {
+    "title": "PET_SPECIAL_GUARANTEE_MAIL_CONGRATS",
+    "type": "dict<int,int>",
+    "value": "1#20106|2#20107|3#20108|4#20109|5#20110"
+  },
+  {
+    "title": "PET_SPECIAL_GUARANTEE_MAIL_FAIL",
+    "type": "dict<int,int>",
+    "value": "1#20111|2#20112|3#20113|4#20114|5#20115"
+  },
+  {
+    "title": "PET_SPECIAL_GUARANTEE_MAP",
+    "type": "dict<int,int>",
+    "value": "1#9901|2#9902|3#9903"
+  },
+  {
+    "title": "PET_SPECIAL_ORDER",
+    "type": "list<int>",
+    "value": "5|4|3|2|1"
+  },
+  {
+    "title": "SKILL_MIN_CD_PER",
+    "type": "list<int>",
+    "value": "2500|2500|2500"
+  },
+  {
+    "title": "SKILL_SEARCHSKILL_MAX_RANGE",
+    "type": "int",
+    "value": "100"
+  },
+  {
+    "title": "BOSS_AREA_INTO_TIPS_CD",
+    "type": "int",
+    "value": "10"
+  },
+  {
+    "title": "BOSS_ELITE_INTO_CD",
+    "type": "int",
+    "value": "60"
+  },
+  {
+    "title": "BOSS_GOD_BATTLE_COST_REFRESH",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "COMMON_BANNER_STAYTIME",
+    "type": "int",
+    "value": "5000"
+  },
+  {
+    "title": "RANDOM_EVT_REPORT_ID",
+    "type": "list<int>",
+    "value": "100|101|102|103|107|108|109|117|202|203|210|220|221|222|225|230|234|238|240|300|350|351|360|361|362|363"
+  },
+  {
+    "title": "PET_DNA_MUTATION_COUNT",
+    "type": "int",
+    "value": "40"
+  },
+  {
+    "title": "PET_DNA_MUTATION_PROBABILITY",
+    "type": "int",
+    "value": "2000"
+  },
+  {
+    "title": "PET_EXP_EFFECT_FRAME",
+    "type": "list<list<int>>",
+    "value": "3#4#11|3#4#11"
+  },
+  {
+    "title": "PET_EXP_EFFECT_RESOURCEFR",
+    "type": "string",
+    "value": "UI/Pages/PetFruitEffect/pet_pixel_front_exp.png"
+  },
+  {
+    "title": "PET_EXP_EFFECT_RESOURCEBK",
+    "type": "string",
+    "value": "UI/Pages/PetFruitEffect/pet_pixel_back_exp.png"
+  },
+  {
+    "title": "PET_ALL_EFFECT_FRAME",
+    "type": "list<list<int>>",
+    "value": "3#4#11|3#4#11"
+  },
+  {
+    "title": "PET_ALL_EFFECT_RESOURCEFR",
+    "type": "string",
+    "value": "UI/Pages/PetFruitEffect/buff_front_all.png"
+  },
+  {
+    "title": "PET_ALL_EFFECT_RESOURCEBK",
+    "type": "string",
+    "value": "UI/Pages/PetFruitEffect/buff_back_all.png"
+  },
+  {
+    "title": "ALL_MAP_DEFAULT_HEIGHT_LIMIT_TERRAIN_OFFSET",
+    "type": "int",
+    "value": "150"
+  },
+  {
+    "title": "SCAN_ENTITY_TIP_DURATION",
+    "type": "float",
+    "value": "5"
+  },
+  {
+    "title": "LENS_INFO_PARAM_FIRST",
+    "type": "list<int>",
+    "value": "100|100|0|100|0"
+  },
+  {
+    "title": "LENS_INFO_PARAM_SECOND",
+    "type": "list<int>",
+    "value": "100|100|100|100|50"
+  },
+  {
+    "title": "LENS_INFO_PARAM_THIRD",
+    "type": "list<int>",
+    "value": "100|100|100|100|100"
+  },
+  {
+    "title": "DUNGEON_ENTRUST_STAMINA_REWARD",
+    "type": "list<int>",
+    "value": "2|3"
+  },
+  {
+    "title": "WORLD_EVENT_CONFLICT_PER",
+    "type": "int",
+    "value": "2000"
+  },
+  {
+    "title": "DUNGEON_ENTRUST_FINISH",
+    "type": "int",
+    "value": "10000"
+  },
+  {
+    "title": "WORLD_KIBO_DISCOVERED_TIP_TIME",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "BIG_WORLD_BOX_TYPE",
+    "type": "list<int>",
+    "value": "32|33"
+  },
+  {
+    "title": "ICONOGRAPHYLEVEL_UNLOCK_HABITAT",
+    "type": "int",
+    "value": "2"
+  },
+  {
+    "title": "HOME_BUILDINGCHECK_TIME",
+    "type": "int",
+    "value": "30"
+  },
+  {
+    "title": "ICONOGRAPHYLEVEL_TALENT_UPGRADE",
+    "type": "list<int>",
+    "value": "1|3|5|7|230|229"
+  },
+  {
+    "title": "HOME_WARN_MAIL_ID",
+    "type": "int",
+    "value": "5001"
+  },
+  {
+    "title": "HOME_DEFAULT_PLACEMENT",
+    "type": "list<int>",
+    "value": "13|10000|101|8323091|0"
+  },
+  {
+    "title": "DUNGEON_ENTRUST_SETTLEMENT_CAM_SETTING",
+    "type": "list<float>",
+    "value": "0.5|-185.925|-0.45|-0.15|-1.72|30"
+  },
+  {
+    "title": "KIBO_DUEL_HERO_SKILL",
+    "type": "list<int>",
+    "value": "19999901|19999902|19999903|19999904|19999905|19999907"
+  },
+  {
+    "title": "HOME_DORM_OUTDOORHERO_LIMIT",
+    "type": "int",
+    "value": "4"
+  },
+  {
+    "title": "AOI_TASK_LOAD_OVER_TIME",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "DECOMPOSE_UPPERLIMIT",
+    "type": "int",
+    "value": "200"
+  },
+  {
+    "title": "DECOMPOSE_ITEM",
+    "type": "list<list<int>>",
+    "value": "10#2#10000"
+  },
+  {
+    "title": "DECOMPOSE_BUILDING_GROUP",
+    "type": "int",
+    "value": "2004"
+  },
+  {
+    "title": "WORLD_ITEM_DEFAULT_PROPERTY",
+    "type": "int",
+    "value": "900001"
+  },
+  {
+    "title": "WORLD_INTERACT_MAX_DISTANCE",
+    "type": "int",
+    "value": "30"
+  },
+  {
+    "title": "WORLD_INTERACT_MAX_DISTANCE_RATIO",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "WORLD_INTERACT_OBJECT_TYPE_MOVING",
+    "type": "list<int>",
+    "value": "1|2|4"
+  },
+  {
+    "title": "PUZZLE_CD",
+    "type": "int",
+    "value": "20000"
+  },
+  {
+    "title": "TASK_SUBMIT_ITEM_QUALITY_TIPS",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "KIBO_DUEL_TEMPLATE_PERCENT",
+    "type": "dict<int,float>",
+    "value": "1#1|2#1|3#3.105955137|4#3.105955137|5#2.470135603"
+  },
+  {
+    "title": "KIBO_DUEL_TEMPLATE_FIXED",
+    "type": "dict<int,float>",
+    "value": "1#1000|2#1000|3#398.0022121|4#398.0022121|5#-423.5467432"
+  },
+  {
+    "title": "KIBO_DUEL_TOWER_ATK_PERCENT",
+    "type": "float",
+    "value": "14.33303579"
+  },
+  {
+    "title": "KIBO_DUEL_TOWER_ATK_FIXED",
+    "type": "float",
+    "value": "-408.0669945"
+  },
+  {
+    "title": "MASTERY_CONSTANT",
+    "type": "float",
+    "value": "40"
+  },
+  {
+    "title": "FRIENDS_RECOMMENDED_RANGE",
+    "type": "list<list<int>>",
+    "value": "1#19|20#39|40#59|60#120"
+  },
+  {
+    "title": "FRIENDS_RECOMMENDED_RANGE_NUM",
+    "type": "int",
+    "value": "2"
+  },
+  {
+    "title": "ORDER_PERIOD_REFRESH",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "ORDER_HOME_COIN_LIMIT",
+    "type": "int",
+    "value": "22500"
+  },
+  {
+    "title": "CHAT_PLAYER_RECORDS_NUM_SERVER",
+    "type": "int",
+    "value": "30"
+  },
+  {
+    "title": "CHAT_PLAYER_RECORDS_NUM_LOCAL",
+    "type": "int",
+    "value": "100"
+  },
+  {
+    "title": "CHAT_FRIENDS_CD",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "CHAT_MAX",
+    "type": "int",
+    "value": "80"
+  },
+  {
+    "title": "CHAT_WROLD_CD",
+    "type": "int",
+    "value": "60"
+  },
+  {
+    "title": "CHAT_TEAM_CD",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "DECOMPOSE_STARTPOINT_0",
+    "type": "list<int>",
+    "value": "10|10"
+  },
+  {
+    "title": "DECOMPOSE_STARTPOINT_1",
+    "type": "list<int>",
+    "value": "20|20"
+  },
+  {
+    "title": "DECOMPOSE_STARTPOINT_2",
+    "type": "list<int>",
+    "value": "30|30"
+  },
+  {
+    "title": "DECOMPOSE_STARTPOINT_3",
+    "type": "list<int>",
+    "value": "40|40"
+  },
+  {
+    "title": "DECOMPOSE_STARTPOINT_4",
+    "type": "list<int>",
+    "value": "50|50"
+  },
+  {
+    "title": "ORDER_PERIOD_REFRESH_WEEK",
+    "type": "list<int>",
+    "value": "1|4"
+  },
+  {
+    "title": "ORDER_PERIOD_REFRESH_QUANTITY",
+    "type": "int",
+    "value": "6"
+  },
+  {
+    "title": "REPORT_USER_NUM",
+    "type": "int",
+    "value": "150"
+  },
+  {
+    "title": "PLAYRCARD_DRESS_INITIAL_1",
+    "type": "int",
+    "value": "10101"
+  },
+  {
+    "title": "PLAYRCARD_DRESS_INITIAL_2",
+    "type": "int",
+    "value": "10201"
+  },
+  {
+    "title": "PLAYRCARD_DRESS_INITIAL_3",
+    "type": "int",
+    "value": "20101"
+  },
+  {
+    "title": "PLAYRCARD_DRESS_INITIAL_4",
+    "type": "int",
+    "value": "20201"
+  },
+  {
+    "title": "PLAYRCARD_DRESS_INITIAL_5",
+    "type": "int",
+    "value": "20305"
+  },
+  {
+    "title": "PLAYRCARD_DRESS_INITIAL_6",
+    "type": "int",
+    "value": "20401"
+  },
+  {
+    "title": "TRACE_ITEM_PREFAB_PATH",
+    "type": "string",
+    "value": "Effect/Scene/pre_common_guide_yellow.prefab"
+  },
+  {
+    "title": "TRACE_ITEM_SPACE",
+    "type": "float",
+    "value": "1.5"
+  },
+  {
+    "title": "TRACE_SHOW_DISTANCE",
+    "type": "float",
+    "value": "50"
+  },
+  {
+    "title": "TRACE_HIDE_DISTANCE",
+    "type": "float",
+    "value": "50"
+  },
+  {
+    "title": "TRACE_ENABLE_DISTANCE",
+    "type": "float",
+    "value": "200"
+  },
+  {
+    "title": "TRACE_AGENT_RADIUS",
+    "type": "float",
+    "value": "1"
+  },
+  {
+    "title": "TRACE_CHECK_TIME",
+    "type": "float",
+    "value": "5"
+  },
+  {
+    "title": "TRACE_DELAY",
+    "type": "float",
+    "value": "1"
+  },
+  {
+    "title": "TRACE_RETRACE_DISTANCE",
+    "type": "float",
+    "value": "3"
+  },
+  {
+    "title": "TRACE_ITEM_FLOAT_Y",
+    "type": "float",
+    "value": "0.15"
+  },
+  {
+    "title": "TRACE_FOCUS_TIME",
+    "type": "float",
+    "value": "5"
+  },
+  {
+    "title": "EVENT_AMOUNT",
+    "type": "int",
+    "value": "6"
+  },
+  {
+    "title": "EVENT_AMOUNT_NEGATIVE",
+    "type": "int",
+    "value": "2"
+  },
+  {
+    "title": "HOME_TECHEXP_CRYSTAL_RESOURCE",
+    "type": "list<string>",
+    "value": "pre_home_crop_crystal_green"
+  },
+  {
+    "title": "ORDER_RECYCLE_AMOUNT",
+    "type": "int",
+    "value": "10"
+  },
+  {
+    "title": "RATE_OF_RECOVERY",
+    "type": "float",
+    "value": "5"
+  },
+  {
+    "title": "RECOVERY_SELF",
+    "type": "float",
+    "value": "2"
+  },
+  {
+    "title": "RECOVERY_CD",
+    "type": "float",
+    "value": "0.5"
+  },
+  {
+    "title": "RESCUE_DISTANCE",
+    "type": "float",
+    "value": "3"
+  },
+  {
+    "title": "RECOVERY",
+    "type": "float",
+    "value": "5"
+  },
+  {
+    "title": "HOME_DORM_OUTDOOR_BEHAVIOR",
+    "type": "list<list<int>>",
+    "value": "14#1002"
+  },
+  {
+    "title": "HOME_DORM_OUTDOOR_BEHAVIOR_TAG",
+    "type": "int",
+    "value": "710"
+  },
+  {
+    "title": "ROGUE_BASIC_WEIGHT",
+    "type": "int",
+    "value": "10"
+  },
+  {
+    "title": "ROGUE_BASIC_WEIGHT_DETAIL",
+    "type": "list<list<int>>",
+    "value": "0#70|1#0|2#0|3#0|4#0|5#0"
+  },
+  {
+    "title": "ROGUE_DRAGONOWNER_UP_WEIGHT",
+    "type": "int",
+    "value": "30"
+  },
+  {
+    "title": "ROGUE_DRAGONOWNER_GET_WEIGHTUP",
+    "type": "int",
+    "value": "30"
+  },
+  {
+    "title": "ROGUE_DRAGONOWNER_MAX_WEIGHTDOWN",
+    "type": "int",
+    "value": "10"
+  },
+  {
+    "title": "ROGUE_CARPCLEAR_DOWN_WEIGHT",
+    "type": "int",
+    "value": "0"
+  },
+  {
+    "title": "ROGUE_QUALITY_GUARANTEED_NUM",
+    "type": "list<list<int>>",
+    "value": "1#9999|2#6|3#30"
+  },
+  {
+    "title": "ORDER_ITEM_LIMIT_AMOUNT",
+    "type": "int",
+    "value": "500"
+  },
+  {
+    "title": "TIME_PAUSE_CHECK_DELAY_TIME",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "ROGUE_PORTAL_SPAWNER",
+    "type": "list<int>",
+    "value": "25001|25000|25020|25002|25003|25050"
+  },
+  {
+    "title": "MULTIPLEVOTESKIPSTORYCOUNTDOWNTIME",
+    "type": "int",
+    "value": "10"
+  },
+  {
+    "title": "MULTIPLEVOTESKIP2TRANSFERCOUNTDOWNTIME",
+    "type": "int",
+    "value": "10"
+  },
+  {
+    "title": "ROGUE_INTEGRAL_MONSTER_COMMON",
+    "type": "int",
+    "value": "250"
+  },
+  {
+    "title": "ROGUE_INTEGRAL_MONSTER_ELITE",
+    "type": "int",
+    "value": "1500"
+  },
+  {
+    "title": "ROGUE_INTEGRAL_MONSTER_BOSS",
+    "type": "int",
+    "value": "60"
+  },
+  {
+    "title": "ROGUE_INTEGRAL_MONSTER_CLEAR",
+    "type": "int",
+    "value": "0"
+  },
+  {
+    "title": "ROGUE_SKILL_COIN_ID",
+    "type": "int",
+    "value": "401"
+  },
+  {
+    "title": "ROGUE_INSIDE_SHOP_COIN_ID",
+    "type": "int",
+    "value": "402"
+  },
+  {
+    "title": "ROGUE_CARP_REFRESH_TIME",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "ROGUE_CARP_REFRESH_PRICE",
+    "type": "list<int>",
+    "value": "10"
+  },
+  {
+    "title": "ROGUE_SHOP_REFRESH_TIME",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "ROGUE_SHOP_REFRESH_PRICE",
+    "type": "list<int>",
+    "value": "20"
+  },
+  {
+    "title": "GUIDE_PLAYABLE",
+    "type": "list<int>",
+    "value": "2|3|4|5|6|7|8|9|10|11|13|14|19|20"
+  },
+  {
+    "title": "PETCATCH_DELTA_LEVEL",
+    "type": "list<int>",
+    "value": "9999|9999|9999"
+  },
+  {
+    "title": "PETCATCH_BOUNDARY_PARAM",
+    "type": "int",
+    "value": "50"
+  },
+  {
+    "title": "PETCATCH_MAX_OVERALL_DIFFICULTY",
+    "type": "int",
+    "value": "310"
+  },
+  {
+    "title": "PETCATCH_INCREASE_PARAM",
+    "type": "int",
+    "value": "0"
+  },
+  {
+    "title": "PETCATCH_REDUCE_PARAM",
+    "type": "int",
+    "value": "0"
+  },
+  {
+    "title": "PETCATCH_MAX_LEVEL_INFLUENCE_RANGE",
+    "type": "int",
+    "value": "12000"
+  },
+  {
+    "title": "CRISISCRUSADE_TIMELINE_TIME_MAX",
+    "type": "int",
+    "value": "20"
+  },
+  {
+    "title": "EQUIPMENT_SCORE_FORMULA_PARAM",
+    "type": "list<int>",
+    "value": "8500|6000|125|200000"
+  },
+  {
+    "title": "MULIT_DUNGEON_DEATH_PENALTY",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "MULIT_DUNGEON_GRADE_DISTRIBUTE",
+    "type": "list<int>",
+    "value": "50|30|20"
+  },
+  {
+    "title": "MULIT_DUNGEON_DEATH_GRADE",
+    "type": "list<list<int>>",
+    "value": "0#100|1#90|2#80|3#70|4#60"
+  },
+  {
+    "title": "MULIT_DUNGEON_GRADE",
+    "type": "list<list<int>>",
+    "value": "0#95|1#90|2#80|3#70|4#60"
+  },
+  {
+    "title": "PET_HOME_EMOJI_HIGHSATIETY_RATE",
+    "type": "int",
+    "value": "7000"
+  },
+  {
+    "title": "PET_HOME_EMOJI_HIGHSATIETY_PROBABILITY",
+    "type": "int",
+    "value": "8000"
+  },
+  {
+    "title": "PET_HOME_EMOJI_HIGHSATIETY_TIME",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "PET_HOME_EMOJI_LOWSATIETY_RATE",
+    "type": "int",
+    "value": "4000"
+  },
+  {
+    "title": "PET_HOME_EMOJI_LOWSATIETY_PROBABILITY",
+    "type": "int",
+    "value": "8000"
+  },
+  {
+    "title": "PET_HOME_EMOJI_LOWSATIETY_TIME",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "PET_HOME_EMOJI_STRIKE_RATE",
+    "type": "int",
+    "value": "5000"
+  },
+  {
+    "title": "PET_HOME_EMOJI_STRIKE_TIME",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "CRISISCRUSADE_SURPRISE_RANDOM",
+    "type": "int",
+    "value": "5000"
+  },
+  {
+    "title": "CRISISCRUSADE_SURPRISE_RANDOMLEVEL",
+    "type": "list<int>",
+    "value": "10201|10202|10203"
+  },
+  {
+    "title": "CRISISCRUSADE_SURPRISE_REMAINTIME",
+    "type": "int",
+    "value": "10080"
+  },
+  {
+    "title": "TIPS_NUM",
+    "type": "int",
+    "value": "40"
+  },
+  {
+    "title": "TIPS_TIME",
+    "type": "list<int>",
+    "value": "1000|1500"
+  },
+  {
+    "title": "PET_SCORE_PARAM_ATTACK",
+    "type": "int",
+    "value": "2500"
+  },
+  {
+    "title": "PET_SCORE_PARAM_PHYSICAL_DEFENSE",
+    "type": "int",
+    "value": "2500"
+  },
+  {
+    "title": "PET_SCORE_PARAM_MAGIC_DEFENSE",
+    "type": "int",
+    "value": "2500"
+  },
+  {
+    "title": "PET_SCORE_PARAM_HP",
+    "type": "int",
+    "value": "2500"
+  },
+  {
+    "title": "PET_SCORE_SPECIES_PARAM",
+    "type": "int",
+    "value": "4"
+  },
+  {
+    "title": "PET_SCORE_TALENT_PARAM",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "HOME_BELT_NUM_PC",
+    "type": "int",
+    "value": "32"
+  },
+  {
+    "title": "HOME_BELT_PAGE_PC",
+    "type": "int",
+    "value": "4"
+  },
+  {
+    "title": "HOME_BELT_NUM_MOBILE",
+    "type": "int",
+    "value": "30"
+  },
+  {
+    "title": "HOME_BELT_PAGE_MOBILE",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "PET_FONDLE_HEIGHT_DIFFERENCE",
+    "type": "int",
+    "value": "3000"
+  },
+  {
+    "title": "PET_FONDLE_DIRECTION_ANGLE",
+    "type": "int",
+    "value": "120"
+  },
+  {
+    "title": "DEFAULT_MONSTER_LEVEL",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "DUNGEON_ADMISSION_FEE_GRANT",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "SPECIAL_DUNGEON_ADMISSION_FEE_GRANT",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "DUNGEON_ADMISSION_FEE_LIMIT",
+    "type": "list<int>",
+    "value": "411|10"
+  },
+  {
+    "title": "SPECIAL_DUNGEON_ADMISSION_FEE_LIMIT",
+    "type": "list<int>",
+    "value": "412|5"
+  },
+  {
+    "title": "HOME_SOULCARD_PARAM",
+    "type": "int",
+    "value": "1344"
+  },
+  {
+    "title": "HOME_SOULCARD_POINT",
+    "type": "dict<int,int>",
+    "value": "930001#1|930002#2|930003#4"
+  },
+  {
+    "title": "HOME_SOULCARD_GUARANTEED",
+    "type": "reward",
+    "value": "9#10196#1|9#10218#1|9#10219#1|9#10220#1|9#10221#1"
+  },
+  {
+    "title": "MAIN_BOTTOM_BUTTONS_MORE_CONDITION",
+    "type": "list<condition>",
+    "value": "12045#106002#56"
+  },
+  {
+    "title": "FSM_FIGHT_TO_NORMAL_DEPARTURE_TIME",
+    "type": "int",
+    "value": "10"
+  },
+  {
+    "title": "FSM_FIGHT_TO_NORMAL_LIFE_REGENERATION",
+    "type": "int",
+    "value": "2000"
+  },
+  {
+    "title": "DUNGEON_SHOPGROUPID",
+    "type": "int",
+    "value": "10077"
+  },
+  {
+    "title": "CHALLENGE_TARGET_UI_HIEARCHY",
+    "type": "list<string>",
+    "value": "pageChat"
+  },
+  {
+    "title": "KIBO_ALL_BOX_FULL_MAIL",
+    "type": "int",
+    "value": "9901"
+  },
+  {
+    "title": "ENEMY_NUM_MAX_NORMAL",
+    "type": "int",
+    "value": "400"
+  },
+  {
+    "title": "ENEMY_NUM_MAX_ELITE",
+    "type": "int",
+    "value": "100"
+  },
+  {
+    "title": "ENEMY_LEVEL_STEP",
+    "type": "list<int>",
+    "value": "10|20|30|40|50|60|70|80|90|100|9999"
+  },
+  {
+    "title": "ENEMY_LEVEL_DROP_SPLIT",
+    "type": "list<int>",
+    "value": "5|6|7|8|9|10|11|12|12|12|12"
+  },
+  {
+    "title": "ENEMY_LEVEL_DROP_HEIGHT",
+    "type": "float",
+    "value": "0.3"
+  },
+  {
+    "title": "BIG_WORLD_BOX_TYPE_FOR_GET_ITEM",
+    "type": "list<int>",
+    "value": "30|32|33|34|35"
+  },
+  {
+    "title": "BIG_WORLD_GAMEPLAY_TYPE_FOR_GET_ITEM",
+    "type": "list<int>",
+    "value": "1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25"
+  },
+  {
+    "title": "PETCATCH_MIN_LEVEL_INFLUENCE",
+    "type": "int",
+    "value": "20"
+  },
+  {
+    "title": "WATER_MASK_IS_MASK_OPEN",
+    "type": "bool",
+    "value": "FALSE"
+  },
+  {
+    "title": "TASK_PRIORITY_ORDER",
+    "type": "list<int>",
+    "value": "1|3|2|7|6|9"
+  },
+  {
+    "title": "MULTIDUNGEON_BIRTHPOS_MOVEDISTANCE",
+    "type": "float",
+    "value": "3"
+  },
+  {
+    "title": "HOME_WISHLIST_LIMIT",
+    "type": "int",
+    "value": "30"
+  },
+  {
+    "title": "STARLINK_LENS_LV1_EFFECT",
+    "type": "list<int>",
+    "value": "4|5"
+  },
+  {
+    "title": "HOME_BUILDING_ORDER_NPC",
+    "type": "list<list<int>>",
+    "value": "6001#70002#1#1"
+  },
+  {
+    "title": "SOULESSENCE_STAR_ITEM",
+    "type": "dict<int,int>",
+    "value": "2#980001|3#980002|4#980003"
+  },
+  {
+    "title": "KIBO_FONDLE_END_EMOTION_PLAYTIME",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "basic_score_upper_limit",
+    "type": "int",
+    "value": "100"
+  },
+  {
+    "title": "extra_score_upper_limit",
+    "type": "list<list<int>>",
+    "value": "2#10|3#10|4#10"
+  },
+  {
+    "title": "labor_score_upper_limit_revise_num",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "labor_score_lower_limit_revise_num",
+    "type": "int",
+    "value": "15"
+  },
+  {
+    "title": "labor_limit_score_upper_limit_revise_num",
+    "type": "int",
+    "value": "10"
+  },
+  {
+    "title": "labor_limit_score_lower_limit_revise_num",
+    "type": "int",
+    "value": "15"
+  },
+  {
+    "title": "acc_score_lower_limit",
+    "type": "int",
+    "value": "10"
+  },
+  {
+    "title": "acc_score_upper_limit_revise_num",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "acc_score_lower_limit_revise_num",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "acc_limit_score_upper_limit_revise_num",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "acc_limit_score_lower_limit_revise_num",
+    "type": "int",
+    "value": "30"
+  },
+  {
+    "title": "option_graphic_memory_bar",
+    "type": "list<int>",
+    "value": "4000|8000"
+  },
+  {
+    "title": "dungeon_crisiscrusade_surprise_time",
+    "type": "int",
+    "value": "2"
+  },
+  {
+    "title": "dungeon_crisiscrusade_exit_time",
+    "type": "int",
+    "value": "10"
+  },
+  {
+    "title": "option_language",
+    "type": "list<string>",
+    "value": "chs|jp"
+  },
+  {
+    "title": "RECONNECT_TIMED",
+    "type": "int",
+    "value": "180"
+  },
+  {
+    "title": "FIRST_PARTNER_KIBO_ID",
+    "type": "list<int>",
+    "value": "500244|500245|500246|500258|500259|500260|500261|500262|500263"
+  },
+  {
+    "title": "SPECIAL_KIBO_NORMAL_NUM_MAX",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "SPECIAL_KIBO_BOSS_NUM_MAX",
+    "type": "int",
+    "value": "2"
+  },
+  {
+    "title": "UI_TRAVEL_COMPLETE_PLAYTIME",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "UI_TEAM_INVITATION_PLAYTIME",
+    "type": "int",
+    "value": "30"
+  },
+  {
+    "title": "UI_KIBO_STARLINK_GET_PLAYTIME",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "UI_KIBO_DNA_MUTATION_PLAYTIME",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "UI_BOOK_GET_PLAYTIME",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "UI_ACHIEVEMENT_COMPLETE_PLAYTIME",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "UI_DUNGEON_SURPRISE_PLAYTIME",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "FOOD_FORTUNE_VALUE",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "PET_STARLINK_STEP_REMAIN_HP",
+    "type": "int",
+    "value": "20"
+  },
+  {
+    "title": "PET_STARLINK_STEP_D",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "PET_STARLINK_STEP_Lpa",
+    "type": "int",
+    "value": "60"
+  },
+  {
+    "title": "PET_STARLINK_STEP_Lpb",
+    "type": "int",
+    "value": "10"
+  },
+  {
+    "title": "ELEMENT_CURRENCY_BASE",
+    "type": "int",
+    "value": "709"
+  },
+  {
+    "title": "ELEMENT_CURRENCY_SINGLE",
+    "type": "list<int>",
+    "value": "700|701|702|703|704|705|706|707|708"
+  },
+  {
+    "title": "STAR_LINK_UI_QUICK_USE_MEAL_LUCKY",
+    "type": "int",
+    "value": "9006401"
+  },
+  {
+    "title": "STAR_LINK_UI_QUICK_USE_MEAL_MERCY",
+    "type": "int",
+    "value": "9006301"
+  },
+  {
+    "title": "STEP_ON_STONE_POT_LEAF_SOUND",
+    "type": "string",
+    "value": "Play_SFX_World_GPO_Puzzle_SHNM_Shake"
+  },
+  {
+    "title": "PET_FONDLE_FOLLOWING_INTERACT_ANGLE",
+    "type": "int",
+    "value": "60"
+  },
+  {
+    "title": "UI_TRAVEL_UNLOCK_PLAYTIME",
+    "type": "int",
+    "value": "4"
+  },
+  {
+    "title": "PET_HABITAT_RANGE",
+    "type": "int",
+    "value": "100"
+  },
+  {
+    "title": "NESTCOOP_TUTORIAL_GUIDEID",
+    "type": "int",
+    "value": "30108"
+  },
+  {
+    "title": "NESTCOOP_TIER2_CONDITION",
+    "type": "list<condition>",
+    "value": "2004#23|31001#1#2"
+  },
+  {
+    "title": "NESTCOOP_TIER3_CONDITION",
+    "type": "list<condition>",
+    "value": "2004#27|31001#2#2"
+  },
+  {
+    "title": "NESTCOOP_SITE_AREA_NUM",
+    "type": "list<list<int>>",
+    "value": "1#5"
+  },
+  {
+    "title": "NESTCOOP_SHOP_BAR",
+    "type": "list<int>",
+    "value": "416"
+  },
+  {
+    "title": "NESTCOOP_CURRENY",
+    "type": "list<int>",
+    "value": "416|200"
+  },
+  {
+    "title": "NESTCOOP_CATCH_DAILY_LIMIT",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "NESTCOOP_LEVEL_MAPPING",
+    "type": "list<list<int>>",
+    "value": "15#29#1|30#55#2|56#999#3"
+  },
+  {
+    "title": "NESTCOOP_CD_URGE",
+    "type": "int",
+    "value": "30"
+  },
+  {
+    "title": "NESTCOOP_CD_PREPAREINVITE",
+    "type": "int",
+    "value": "30"
+  },
+  {
+    "title": "NESTCOOP_CD_RECRUIT",
+    "type": "int",
+    "value": "30"
+  },
+  {
+    "title": "NESTCOOP_WINDOW_TIME_URGE",
+    "type": "int",
+    "value": "10"
+  },
+  {
+    "title": "NESTCOOP_WINDOW_TIME_PREPAREINVITE",
+    "type": "int",
+    "value": "10"
+  },
+  {
+    "title": "NESTCOOP_WINDOW_TIME_TEAMINVITE",
+    "type": "int",
+    "value": "30"
+  },
+  {
+    "title": "NESTCOOP_TEMPLATE_PERCENT",
+    "type": "dict<int,float>",
+    "value": "1#0|2#1|3#3.105955137|4#3.105955137|5#5.901039277"
+  },
+  {
+    "title": "NESTCOOP_TEMPLATE_FIXED",
+    "type": "dict<int,float>",
+    "value": "1#10000|2#1000|3#398.0022121|4#398.0022121|5#3828.817151"
+  },
+  {
+    "title": "NESTCOOP_TOWER_ATK_PERCENT",
+    "type": "float",
+    "value": "41.08914848"
+  },
+  {
+    "title": "NESTCOOP_TOWER_ATK_FIXED",
+    "type": "float",
+    "value": "4448.788644"
+  },
+  {
+    "title": "TASK_TRACK_PRIORITY",
+    "type": "list<int>",
+    "value": "103|7|10|4|2"
+  },
+  {
+    "title": "SETTING_MEMORY_PC",
+    "type": "list<list<int>>",
+    "value": "2500#3500|5500#6500"
+  },
+  {
+    "title": "SETTING_MEMORY_MOBILE",
+    "type": "list<list<int>>",
+    "value": "236#286|482#542"
+  },
+  {
+    "title": "NESTCOOP_STARLINK_NPC_WAITTIME",
+    "type": "list<int>",
+    "value": "1|5"
+  },
+  {
+    "title": "NESTCOOP_STARLINK_HUD_WAITTIME",
+    "type": "int",
+    "value": "800"
+  },
+  {
+    "title": "NESTCOOP_SCAN_TIPS_DISTANCE",
+    "type": "int",
+    "value": "10"
+  },
+  {
+    "title": "NESTCOOP_DEVIANT_PETDNA_LIMIT",
+    "type": "int",
+    "value": "2"
+  },
+  {
+    "title": "MULTITEAMHUB_FILTER_NESTCOOP",
+    "type": "list<int>",
+    "value": "1|2"
+  },
+  {
+    "title": "WOLRD_INTERACT_TIMELIMT",
+    "type": "int",
+    "value": "2000"
+  },
+  {
+    "title": "NESTCOOP_STARLINK_COUNTDOWN",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "MULTITEAMHUB_NESTCOOP_CD_BUTTON",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "MULTITEAMHUB_NESTCOOP_WAITTIME",
+    "type": "int",
+    "value": "30"
+  },
+  {
+    "title": "MULTITEAMHUB_FILTER_NESTCOOP_TIPS_FEWTEAM",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "MULTITEAMHUB_NESTCOOP_SERVER_RECOMMENDTEAM",
+    "type": "int",
+    "value": "15"
+  },
+  {
+    "title": "MULTITEAMHUB_NESTCOOP_SERVER_RANDOMTEAM",
+    "type": "int",
+    "value": "25"
+  },
+  {
+    "title": "MULTITEAMHUB_NESTCOOP_CLIENT_SHOWNUM",
+    "type": "int",
+    "value": "15"
+  },
+  {
+    "title": "MULTITEAMHUB_NESTCOOP_SERVER_REFRESHCD",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "NESTCOOP_COMBAT_WAITTIME",
+    "type": "int",
+    "value": "50"
+  },
+  {
+    "title": "NESTCOOP_COMBAT_OVERTIME",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "NESTCOOP_COMBAT_SHOW_COUNTDOWN_TIME",
+    "type": "int",
+    "value": "11"
+  },
+  {
+    "title": "NESTCOOP_STARLINK_SHOW_COUNTDOWN_TIME",
+    "type": "int",
+    "value": "8792"
+  },
+  {
+    "title": "NESTCOOP_TIER3_GUARANTEE",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "KIBO_SKIN_EMOTION_PLAYTIME",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "ACCUMULATEMULTIPLEITEM_BEGINCONDITION",
+    "type": "list<condition>",
+    "value": "12042#7"
+  },
+  {
+    "title": "ELEMENTSTOREHOUSE_EFFECT_LOW",
+    "type": "int",
+    "value": "1000"
+  },
+  {
+    "title": "ELEMENTSTOREHOUSE_EFFECT_MID",
+    "type": "int",
+    "value": "5000"
+  },
+  {
+    "title": "ELEMENTSTOREHOUSE_EFFECT_HIGH",
+    "type": "int",
+    "value": "8000"
+  },
+  {
+    "title": "STARLINK_INTRO_KIBO_ID",
+    "type": "int",
+    "value": "500297"
+  },
+  {
+    "title": "PLAYABLE_STOP_AOI_IGNORE_DELAY",
+    "type": "float",
+    "value": "3"
+  },
+  {
+    "title": "TIPS_JPCV_EXHAUST_TIME",
+    "type": "list<condition>",
+    "value": "12045#106002#56"
+  },
+  {
+    "title": "NESTCOOP_STARLINK_EFFECT_PLAYTIME",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "NESTCOOP_SPECIAL_KIBO_MAX_NUM",
+    "type": "int",
+    "value": "2"
+  },
+  {
+    "title": "NESTCOOP_TEAMUP_SETTING_1",
+    "type": "int",
+    "value": "25"
+  },
+  {
+    "title": "NESTCOOP_TEAMUP_SETTING_2",
+    "type": "int",
+    "value": "30"
+  },
+  {
+    "title": "MULTITEAMHUB_NESTCOOP_SERVER_LEVELLOWER",
+    "type": "int",
+    "value": "10"
+  },
+  {
+    "title": "MULTITEAMHUB_NESTCOOP_SERVER_LEVELUPPER",
+    "type": "int",
+    "value": "15"
+  },
+  {
+    "title": "NESTCOOP_STARLINK_FAIL_AUDIO_PARAM",
+    "type": "int",
+    "value": "2"
+  },
+  {
+    "title": "NESTCOOP_TEAMUP_MEMBER_LIMIT",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "NESTCOOP_ENDING_TIME_LIMIT",
+    "type": "int",
+    "value": "10"
+  },
+  {
+    "title": "HOME_PERFORMANCE_FREE_KIBO_1_PC",
+    "type": "int",
+    "value": "10"
+  },
+  {
+    "title": "HOME_PERFORMANCE_FREE_KIBO_2_PC",
+    "type": "int",
+    "value": "20"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_LIMIT_1_PC",
+    "type": "list<int>",
+    "value": "120|250|375|500|750"
+  },
+  {
+    "title": "HOME_PERFORMANCE_FACILITY_1_PC",
+    "type": "int",
+    "value": "150"
+  },
+  {
+    "title": "HOME_KIBO_HUGCD_PERSONAL_1_PC",
+    "type": "int",
+    "value": "4800"
+  },
+  {
+    "title": "HOME_KIBO_HUGCD_GLOBAL_2_PC",
+    "type": "int",
+    "value": "60"
+  },
+  {
+    "title": "HOME_PERFORMANCE_ELIMINATE_1_PC",
+    "type": "int",
+    "value": "40"
+  },
+  {
+    "title": "HOME_PERFORMANCE_ELIMINATE_2_PC",
+    "type": "int",
+    "value": "40"
+  },
+  {
+    "title": "HOME_PERFORMANCE_ELIMINATE_3_PC",
+    "type": "int",
+    "value": "50"
+  },
+  {
+    "title": "HOME_PERFORMANCE_ELIMINATE_4_PC",
+    "type": "int",
+    "value": "2"
+  },
+  {
+    "title": "HOME_PERFORMANCE_ELIMINATE_5_PC",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "HOME_PERFORMANCE_ELIMINATE_6_PC",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "HOME_PERFORMANCE_ELIMINATE_7_PC",
+    "type": "int",
+    "value": "40"
+  },
+  {
+    "title": "HOME_PERFORMANCE_ELIMINATE_8_PC",
+    "type": "int",
+    "value": "20"
+  },
+  {
+    "title": "HOME_PERFORMANCE_ELIMINATE_GROUP_1_PC",
+    "type": "int",
+    "value": "60"
+  },
+  {
+    "title": "HOME_PERFORMANCE_ELIMINATE_GROUP_2_PC",
+    "type": "int",
+    "value": "50"
+  },
+  {
+    "title": "HOME_PERFORMANCE_ELIMINATE_GROUP_3_PC",
+    "type": "int",
+    "value": "4"
+  },
+  {
+    "title": "HOME_PERFORMANCE_ELIMINATE_GROUP_4_PC",
+    "type": "int",
+    "value": "40"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_1_PC",
+    "type": "float",
+    "value": "1.5"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_2_PC",
+    "type": "float",
+    "value": "1.5"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_3_PC",
+    "type": "float",
+    "value": "1.5"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_4_PC",
+    "type": "float",
+    "value": "25"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_5_PC",
+    "type": "float",
+    "value": "25"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_6_PC",
+    "type": "float",
+    "value": "25"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_7_PC",
+    "type": "float",
+    "value": "9"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_8_PC",
+    "type": "float",
+    "value": "9"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_GROUP_1_PC",
+    "type": "int",
+    "value": "90"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_GROUP_2_PC",
+    "type": "int",
+    "value": "75"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_GROUP_3_PC",
+    "type": "int",
+    "value": "100"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_GROUP_4_PC",
+    "type": "int",
+    "value": "360"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_PRIORITY_1_PC",
+    "type": "int",
+    "value": "0"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_PRIORITY_2_PC",
+    "type": "int",
+    "value": "0"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_PRIORITY_3_PC",
+    "type": "int",
+    "value": "0"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_PRIORITY_4_PC",
+    "type": "int",
+    "value": "0"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_PRIORITY_5_PC",
+    "type": "int",
+    "value": "0"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_PRIORITY_6_PC",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_PRIORITY_7_PC",
+    "type": "int",
+    "value": "0"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_PRIORITY_8_PC",
+    "type": "int",
+    "value": "2"
+  },
+  {
+    "title": "HOME_PERFORMANCE_AOI_1_PC",
+    "type": "int",
+    "value": "125"
+  },
+  {
+    "title": "HOME_PERFORMANCE_FREE_KIBO_1_MOBILE",
+    "type": "int",
+    "value": "10"
+  },
+  {
+    "title": "HOME_PERFORMANCE_FREE_KIBO_2_MOBILE",
+    "type": "int",
+    "value": "20"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_LIMIT_1_MOBILE",
+    "type": "list<int>",
+    "value": "120|250|375|500|750"
+  },
+  {
+    "title": "HOME_PERFORMANCE_FACILITY_1_MOBILE",
+    "type": "int",
+    "value": "150"
+  },
+  {
+    "title": "HOME_KIBO_HUGCD_PERSONAL_1_MOBILE",
+    "type": "int",
+    "value": "4800"
+  },
+  {
+    "title": "HOME_KIBO_HUGCD_GLOBAL_2_MOBILE",
+    "type": "int",
+    "value": "60"
+  },
+  {
+    "title": "HOME_PERFORMANCE_ELIMINATE_1_MOBILE",
+    "type": "int",
+    "value": "40"
+  },
+  {
+    "title": "HOME_PERFORMANCE_ELIMINATE_2_MOBILE",
+    "type": "int",
+    "value": "40"
+  },
+  {
+    "title": "HOME_PERFORMANCE_ELIMINATE_3_MOBILE",
+    "type": "int",
+    "value": "50"
+  },
+  {
+    "title": "HOME_PERFORMANCE_ELIMINATE_4_MOBILE",
+    "type": "int",
+    "value": "2"
+  },
+  {
+    "title": "HOME_PERFORMANCE_ELIMINATE_5_MOBILE",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "HOME_PERFORMANCE_ELIMINATE_6_MOBILE",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "HOME_PERFORMANCE_ELIMINATE_7_MOBILE",
+    "type": "int",
+    "value": "40"
+  },
+  {
+    "title": "HOME_PERFORMANCE_ELIMINATE_8_MOBILE",
+    "type": "int",
+    "value": "20"
+  },
+  {
+    "title": "HOME_PERFORMANCE_ELIMINATE_GROUP_1_MOBILE",
+    "type": "int",
+    "value": "60"
+  },
+  {
+    "title": "HOME_PERFORMANCE_ELIMINATE_GROUP_2_MOBILE",
+    "type": "int",
+    "value": "50"
+  },
+  {
+    "title": "HOME_PERFORMANCE_ELIMINATE_GROUP_3_MOBILE",
+    "type": "int",
+    "value": "4"
+  },
+  {
+    "title": "HOME_PERFORMANCE_ELIMINATE_GROUP_4_MOBILE",
+    "type": "int",
+    "value": "40"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_1_MOBILE",
+    "type": "float",
+    "value": "1.5"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_2_MOBILE",
+    "type": "float",
+    "value": "1.5"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_3_MOBILE",
+    "type": "float",
+    "value": "1.5"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_4_MOBILE",
+    "type": "float",
+    "value": "25"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_5_MOBILE",
+    "type": "float",
+    "value": "25"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_6_MOBILE",
+    "type": "float",
+    "value": "25"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_7_MOBILE",
+    "type": "float",
+    "value": "9"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_8_MOBILE",
+    "type": "float",
+    "value": "9"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_GROUP_1_MOBILE",
+    "type": "int",
+    "value": "90"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_GROUP_2_MOBILE",
+    "type": "int",
+    "value": "75"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_GROUP_3_MOBILE",
+    "type": "int",
+    "value": "100"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_GROUP_4_MOBILE",
+    "type": "int",
+    "value": "360"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_PRIORITY_1_MOBILE",
+    "type": "int",
+    "value": "0"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_PRIORITY_2_MOBILE",
+    "type": "int",
+    "value": "0"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_PRIORITY_3_MOBILE",
+    "type": "int",
+    "value": "0"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_PRIORITY_4_MOBILE",
+    "type": "int",
+    "value": "0"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_PRIORITY_5_MOBILE",
+    "type": "int",
+    "value": "0"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_PRIORITY_6_MOBILE",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_PRIORITY_7_MOBILE",
+    "type": "int",
+    "value": "0"
+  },
+  {
+    "title": "HOME_PERFORMANCE_SETPASS_PRIORITY_8_MOBILE",
+    "type": "int",
+    "value": "2"
+  },
+  {
+    "title": "HOME_PERFORMANCE_AOI_1_MOBILE",
+    "type": "int",
+    "value": "125"
+  },
+  {
+    "title": "NESTCOOP_LOADING_WAIT_TIME_SINGLE",
+    "type": "int",
+    "value": "2"
+  },
+  {
+    "title": "NESTCOOP_LOADING_WAIT_TIME_MULTI",
+    "type": "int",
+    "value": "2"
+  },
+  {
+    "title": "NESTCOOP_STARLINK_EFFECT_HEIGHT",
+    "type": "int",
+    "value": "30"
+  },
+  {
+    "title": "NESTCOOP_STARLINK_SUCCESS_EFFECT_HEIGHT",
+    "type": "int",
+    "value": "10"
+  },
+  {
+    "title": "NESTCOOP_NPC_STARLINK_KIBO",
+    "type": "int",
+    "value": "1111"
+  },
+  {
+    "title": "SPECIAL_KIBO_MEET_TIPS_COOLINGTIME",
+    "type": "int",
+    "value": "30"
+  },
+  {
+    "title": "SPECIAL_KIBO_MEET_TIPS_GAP",
+    "type": "int",
+    "value": "6"
+  },
+  {
+    "title": "SPECIAL_KIBO_MEET_AREA_ID",
+    "type": "int",
+    "value": "100"
+  },
+  {
+    "title": "HUD_SATIETY_WARNING_FLOOR_VALUE",
+    "type": "int",
+    "value": "9"
+  },
+  {
+    "title": "HUD_SCREEN_HEIGHT_RANGE_RATIO",
+    "type": "float",
+    "value": "0.65"
+  },
+  {
+    "title": "HUD_SCREEN_WIDTH_RANGE_RATIO",
+    "type": "float",
+    "value": "0.65"
+  },
+  {
+    "title": "CONDITION_FIRST_TASKID",
+    "type": "list<condition>",
+    "value": "2007#106002"
+  },
+  {
+    "title": "KIBO_GET_INTRO_CONDITION",
+    "type": "list<condition>",
+    "value": "12045#106002#65"
+  },
+  {
+    "title": "COMPLETED_SHOW_TIME",
+    "type": "float",
+    "value": "2"
+  },
+  {
+    "title": "WORLD_EFFECT_DISTANCE",
+    "type": "int",
+    "value": "45"
+  },
+  {
+    "title": "BIG_WORLD_AOI2D_HIGH_MOBILE",
+    "type": "list<int>",
+    "value": "60|60|60|60|60|45|30|-1|60|60|45|30|30|30|30"
+  },
+  {
+    "title": "BIG_WORLD_AOI2D_MIDDLE_MOBILE",
+    "type": "list<int>",
+    "value": "50|50|50|50|50|45|30|-1|50|50|45|30|30|30|30"
+  },
+  {
+    "title": "BIG_WORLD_AOI2D_LOW_MOBILE",
+    "type": "list<int>",
+    "value": "35|35|35|35|35|30|18|-1|35|35|30|18|18|18|18"
+  },
+  {
+    "title": "BIG_WORLD_AOI3D_HIGH_MOBILE",
+    "type": "list<int>",
+    "value": "100|100|100|100|100|100|100|-1|50|50|50|50|50|50|50"
+  },
+  {
+    "title": "BIG_WORLD_AOI3D_MIDDLE_MOBILE",
+    "type": "list<int>",
+    "value": "100|100|100|100|100|100|100|-1|50|50|50|50|50|50|50"
+  },
+  {
+    "title": "BIG_WORLD_AOI3D_LOW_MOBILE",
+    "type": "list<int>",
+    "value": "100|100|100|100|100|100|100|-1|50|50|50|50|50|50|50"
+  },
+  {
+    "title": "BIG_WORLD_LOD_HIGH_MOBILE",
+    "type": "list<int>",
+    "value": "2|2|3"
+  },
+  {
+    "title": "BIG_WORLD_LOD_MIDDLE_MOBILE",
+    "type": "list<int>",
+    "value": "2|2|3"
+  },
+  {
+    "title": "BIG_WORLD_LOD_LOW_MOBILE",
+    "type": "list<int>",
+    "value": "3|3|3"
+  },
+  {
+    "title": "BIG_WORLD_AOIDYN_HIGH_MOBILE",
+    "type": "list<int>",
+    "value": "30"
+  },
+  {
+    "title": "BIG_WORLD_AOIDYN_MIDDLE_MOBILE",
+    "type": "list<int>",
+    "value": "25"
+  },
+  {
+    "title": "BIG_WORLD_AOIDYN_LOW_MOBILE",
+    "type": "list<int>",
+    "value": "18"
+  },
+  {
+    "title": "BIG_WORLD_AOI2D_HIGH_PCFly",
+    "type": "list<int>",
+    "value": "200|200|200|200|200|0|0|-1|50|50|200|50|0|200|50"
+  },
+  {
+    "title": "BIG_WORLD_AOI2D_MIDDLE_PCFly",
+    "type": "list<int>",
+    "value": "150|150|150|150|150|0|0|-1|40|40|150|40|0|150|40"
+  },
+  {
+    "title": "BIG_WORLD_AOI2D_LOW_PCFly",
+    "type": "list<int>",
+    "value": "100|100|100|100|100|0|0|-1|30|30|100|30|0|100|30"
+  },
+  {
+    "title": "BIG_WORLD_AOI3D_HIGH_PCFly",
+    "type": "list<int>",
+    "value": "100|100|100|100|100|100|100|-1|50|50|50|50|50|50|50"
+  },
+  {
+    "title": "BIG_WORLD_AOI3D_MIDDLE_PCFly",
+    "type": "list<int>",
+    "value": "100|100|100|100|100|100|100|-1|50|50|50|50|50|50|50"
+  },
+  {
+    "title": "BIG_WORLD_AOI3D_LOW_PCFly",
+    "type": "list<int>",
+    "value": "100|100|100|100|100|100|100|-1|50|50|50|50|50|50|50"
+  },
+  {
+    "title": "BIG_WORLD_AOI3D_FlyEnterDelay",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "BIG_WORLD_AOI3D_FlyExitDelay",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "CONNECT_POWER",
+    "type": "int",
+    "value": "20"
+  },
+  {
+    "title": "FIGHT_LOSE_JUMP_LIST",
+    "type": "list<int>",
+    "value": "10001|10002|10004|10006|10007"
+  },
+  {
+    "title": "GS_LINE_NUM",
+    "type": "int",
+    "value": "100"
+  },
+  {
+    "title": "PLAYER_NUM_MAX",
+    "type": "int",
+    "value": "80"
+  },
+  {
+    "title": "PLAYER_NUM_LIMIT",
+    "type": "int",
+    "value": "100"
+  },
+  {
+    "title": "MULTIMAINCITY_MAXLINE",
+    "type": "int",
+    "value": "99999"
+  },
+  {
+    "title": "MULTIMAINCITY_LINEMEMORY",
+    "type": "int",
+    "value": "1800"
+  },
+  {
+    "title": "MULTIMAINCITY_SWITCHCD",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "MULTIMAINCITY_MAXSHOW",
+    "type": "list<int>",
+    "value": "20|10"
+  },
+  {
+    "title": "MULTIMAINCITY_MAXSHOWEXTRA",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "MULTIMAINCITY_RANGE_SHOWPLAYER",
+    "type": "list<int>",
+    "value": "30|50"
+  },
+  {
+    "title": "MULTIMAINCITY_RANGE_SHOWTAG",
+    "type": "list<int>",
+    "value": "20|40"
+  },
+  {
+    "title": "MULTIMAINCITY_INVITECD_KIBODUEL",
+    "type": "int",
+    "value": "30"
+  },
+  {
+    "title": "MULTIMAINCITY_DEFAULTSHOW",
+    "type": "list<int>",
+    "value": "4|8"
+  },
+  {
+    "title": "MULTIMAINCITY_MAXSHOW_SETTING",
+    "type": "list<int>",
+    "value": "6|12"
+  },
+  {
+    "title": "GAME_EVENT_KIBO_TOUR_TOTAL_NUM",
+    "type": "int",
+    "value": "21"
+  },
+  {
+    "title": "GAME_EVENT_KIBO_TOUR_SAME_TIME_NUM",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "GAME_EVENT_KIBO_TOUR_KIBO_EXP",
+    "type": "int",
+    "value": "50000"
+  },
+  {
+    "title": "GAME_EVENT_KIBO_TOUR_KIBO_EXP_INCREASE",
+    "type": "int",
+    "value": "12000"
+  },
+  {
+    "title": "COMMON_REWARD_ORDER",
+    "type": "string",
+    "value": "1#0,9#0,3#501,13#0,25#0,14#0,10#0,3#502,39#0,40#0,41#0,34#0,37#0,26#0,17#0,35#0,22#0,32#0,36#0,30#0,5#0,12#0,33#0,15#0,24#0,20#0,3#5|6|7|100|10|50|910|1000101|410|311|0,28#0"
+  },
+  {
+    "title": "CHARACTER_MATERIALCHOOSE_VOICE_CD",
+    "type": "int",
+    "value": "6"
+  },
+  {
+    "title": "CHARACTER_CHANGEEQUIP_VOICE_CD",
+    "type": "int",
+    "value": "6"
+  },
+  {
+    "title": "CHARACTER_CHANGEKIBO_VOICE_CD",
+    "type": "int",
+    "value": "6"
+  },
+  {
+    "title": "UI_QUICKBAR_HOTKEY_NUM",
+    "type": "int",
+    "value": "8"
+  },
+  {
+    "title": "HERO_MAX_GRADE",
+    "type": "int",
+    "value": "6"
+  },
+  {
+    "title": "KIBO_BOX_DISPLAY_WAITING_TIME",
+    "type": "list<int>",
+    "value": "5|10"
+  },
+  {
+    "title": "KIBO_BOX_HAPPY_PLAYTIME",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "KIBO_BOX_SLEEP_PLAYTIME",
+    "type": "int",
+    "value": "15"
+  },
+  {
+    "title": "Diminishing_Returns",
+    "type": "list<int>",
+    "value": "10000|5000|0"
+  },
+  {
+    "title": "Diminishing_Returns_Time",
+    "type": "float",
+    "value": "20"
+  },
+  {
+    "title": "KIBO_DUEL_ARENA_MODE_FORMATION_NUM",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "KIBO_DUEL_ARENA_MODE_COST_LIMIT",
+    "type": "int",
+    "value": "30"
+  },
+  {
+    "title": "KIBO_DUEL_ARENA_MODE_FIRST_KIBO_TIME",
+    "type": "int",
+    "value": "15"
+  },
+  {
+    "title": "KIBO_DUEL_ARENA_MODE_TARGET_SCORE",
+    "type": "int",
+    "value": "1000"
+  },
+  {
+    "title": "KIBO_DUEL_ARENA_MODE_SCORE_VELOCITY",
+    "type": "list<list<int>>",
+    "value": "0#25|60#50|150#75"
+  },
+  {
+    "title": "KIBO_DUEL_ARENA_MODE_SCORE_START",
+    "type": "int",
+    "value": "1000"
+  },
+  {
+    "title": "KIBO_DUEL_ARENA_MODE_GCD",
+    "type": "int",
+    "value": "1000"
+  },
+  {
+    "title": "KIBO_DUEL_ARENA_MODE_DEAD_SCORE",
+    "type": "int",
+    "value": "125"
+  },
+  {
+    "title": "KIBO_DUEL_ARENA_MODE_FIRST_TIME",
+    "type": "int",
+    "value": "15"
+  },
+  {
+    "title": "KIBO_DUEL_ARENA_MODE_SETTLEMENT_TIME",
+    "type": "int",
+    "value": "6"
+  },
+  {
+    "title": "KIBO_DUEL_ARENA_MODE_RECOMMEND_CARD_PVE_SWITCH",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "KIBO_DUEL_ARENA_MODE_RECOMMEND_CARD_PVP_SWITCH",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "KIBO_DUEL_PVP_SAME_CARD",
+    "type": "int",
+    "value": "0"
+  },
+  {
+    "title": "KIBO_DUEL_PVP_MATCH_TIME",
+    "type": "int",
+    "value": "120"
+  },
+  {
+    "title": "KIBO_DUEL_PVP_INVITE_PALY_COUNTDOWN",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "KIBO_DUEL_PVP_COMPETITION_TIME_PERIOD",
+    "type": "list<list<int>>",
+    "value": "18#30#00|22#00#00"
+  },
+  {
+    "title": "KIBO_DUEL_PVP_COMPETITION_UP_SORCE",
+    "type": "int",
+    "value": "200"
+  },
+  {
+    "title": "KIBO_DUEL_PVP_COMPETITION_DOWM_SORCE",
+    "type": "int",
+    "value": "200"
+  },
+  {
+    "title": "KIBO_DUEL_PVP_COMPETITION_UP_SORCE_ONETIME",
+    "type": "int",
+    "value": "50"
+  },
+  {
+    "title": "KIBO_DUEL_PVP_COMPETITION_DOWM_SORCE_ONETIME",
+    "type": "int",
+    "value": "50"
+  },
+  {
+    "title": "KIBO_DUEL_PVP_COMPETITION_UP_LIMIT",
+    "type": "int",
+    "value": "600"
+  },
+  {
+    "title": "KIBO_DUEL_PVP_COMPETITION_DOWM_LIMIT",
+    "type": "int",
+    "value": "600"
+  },
+  {
+    "title": "KIBO_DUEL_PVP_COMPETITION_MATCH_MAX_TIME",
+    "type": "int",
+    "value": "120"
+  },
+  {
+    "title": "KIBO_DUEL_PVP_COMPETITION_MATCH_RANGE_TIME",
+    "type": "int",
+    "value": "10"
+  },
+  {
+    "title": "KIBO_DUEL_PVP_PET_LEVEL",
+    "type": "int",
+    "value": "60"
+  },
+  {
+    "title": "KIBO_DUEL_PVP_PET_STRENGTHEN_LEVEL",
+    "type": "int",
+    "value": "10"
+  },
+  {
+    "title": "KIBO_DUEL_PVP_START_LOADING_TIME",
+    "type": "float",
+    "value": "3.1"
+  },
+  {
+    "title": "KIBO_DUEL_PVP_INVITE_CD",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "BATTLE_PASS_LEVEL_UP_EXP",
+    "type": "int",
+    "value": "1000"
+  },
+  {
+    "title": "BATTLE_PASS_LEVEL_UP_SHORTTERM_EXP",
+    "type": "int",
+    "value": "600"
+  },
+  {
+    "title": "BATTLE_PASS_SHORTTERM_OLDDAY",
+    "type": "int",
+    "value": "42"
+  },
+  {
+    "title": "BATTLE_PASS_SHORTTERM_NEWDAY",
+    "type": "int",
+    "value": "21"
+  },
+  {
+    "title": "BATTLE_PASS_INITIAL_LEVEL",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "BATTLE_PASS_BUY_LEVEL",
+    "type": "list<list<int>>",
+    "value": "10#1#100"
+  },
+  {
+    "title": "BATTLE_PASS_WEEKLY_LIMIT",
+    "type": "int",
+    "value": "12000"
+  },
+  {
+    "title": "BATTLE_PASS_CLOSE_TIME",
+    "type": "int",
+    "value": "0"
+  },
+  {
+    "title": "BATTLEPASS_PURCHASE_SDK_ID_ADV",
+    "type": "int",
+    "value": "4001"
+  },
+  {
+    "title": "BATTLEPASS_PURCHASE_SDK_ID_LUXURY",
+    "type": "int",
+    "value": "4002"
+  },
+  {
+    "title": "BATTLEPASS_PURCHASE_SDK_ID_UP",
+    "type": "int",
+    "value": "4003"
+  },
+  {
+    "title": "BATTLEPASS_PURCHASE_LUXURY_DISCOUNT",
+    "type": "float",
+    "value": "0.77"
+  },
+  {
+    "title": "MONTHLY_CARD_MAIL_TIME",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "MONTHLY_CADR_HOME_BUFF_ITEM",
+    "type": "list<list<int>>",
+    "value": "10#103"
+  },
+  {
+    "title": "MONTHLY_CADR_HOME_BUFF_VALUE",
+    "type": "list<int>",
+    "value": "500"
+  },
+  {
+    "title": "MONTHLY_CADR_PURCHASE_SDK_ID",
+    "type": "int",
+    "value": "5001"
+  },
+  {
+    "title": "KiBo_Passive_Sp_Regen",
+    "type": "float",
+    "value": "20"
+  },
+  {
+    "title": "KiBo_Behit_Sp",
+    "type": "float",
+    "value": "60"
+  },
+  {
+    "title": "KiBo_Behit_Sp_Percent",
+    "type": "list<int>",
+    "value": "933|1000"
+  },
+  {
+    "title": "KiBo_Behit_Sp_Value",
+    "type": "list<int>",
+    "value": "50000|1000000"
+  },
+  {
+    "title": "WORLD_PUZZLE_PLAYABLE_AIM",
+    "type": "list<list<int>>",
+    "value": "31005650#12"
+  },
+  {
+    "title": "RESONANCE_ELEMENT_ID",
+    "type": "list<int>",
+    "value": "150|250|350|450|550|650|750|850|950"
+  },
+  {
+    "title": "CHAT_EMOJI_COLLECT_RECENTLY_NUM_MAX",
+    "type": "int",
+    "value": "20"
+  },
+  {
+    "title": "BATTLEPASS_AUTO_TIME_1",
+    "type": "int",
+    "value": "60"
+  },
+  {
+    "title": "BATTLEPASS_AUTO_TIME_2",
+    "type": "int",
+    "value": "30"
+  },
+  {
+    "title": "WOLRD_INTERACT_HEIGHT",
+    "type": "int",
+    "value": "1800"
+  },
+  {
+    "title": "TASK_END_WAIT_TIME",
+    "type": "float",
+    "value": "0"
+  },
+  {
+    "title": "HOME_EXCHANGE_EVENT_INCREASE",
+    "type": "list<int>",
+    "value": "50|80"
+  },
+  {
+    "title": "HOME_EXCHANGE_EVENT_DROP_NUM",
+    "type": "int",
+    "value": "0"
+  },
+  {
+    "title": "GIFTPACK_LOGIN_INTRODUCTION_101",
+    "type": "int",
+    "value": "101"
+  },
+  {
+    "title": "COMMON_JUMP_BAN",
+    "type": "list<int>",
+    "value": "2|5|12|22"
+  },
+  {
+    "title": "HOME_EXCHANGE_SELL_LIMIT",
+    "type": "int",
+    "value": "5000000"
+  },
+  {
+    "title": "CHAT_SHIELD_LIMIT",
+    "type": "int",
+    "value": "100"
+  },
+  {
+    "title": "NON_PSUH_STARTTIME",
+    "type": "int",
+    "value": "000000"
+  },
+  {
+    "title": "NON_PSUH_ENDTIME",
+    "type": "int",
+    "value": "075959"
+  },
+  {
+    "title": "STARLINK_BOOM_TIMES_RULE",
+    "type": "string",
+    "value": "0-10|1|1#2,2#70,3#18;0-10|0|1#100;10-40|1|1#5,2#70,3#15;10-40|0|1#100;40-60|1|1#49,2#49,3#2;40-60|0|1#80,2#20;60-90|1|1#80,2#20;60-90|0|1#80,2#20;90-100|1|1#100;90-100|0|1#80,2#20;100|1|1#100"
+  },
+  {
+    "title": "CHAT_MAP_CD",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "Collection_Status",
+    "type": "float",
+    "value": "0.8"
+  },
+  {
+    "title": "HOME_LEVEL_PROPERTY_UP",
+    "type": "list<string>",
+    "value": "9#home_table_food#HomeLevelIcon/home_level_preview_iocn_06|10#home_dispatch_worker#HomeLevelIcon/home_level_preview_iocn_05|12#home_good_field#HomeLevelIcon/home_level_preview_iocn_08|13#home_pasture_woker#HomeLevelIcon/home_level_preview_iocn_07|11#home_field#HomeLevelIcon/home_level_preview_iocn_08|14#home_worker#HomeLevelIcon/home_level_preview_iocn_04|15#home_title#HomeLevelIcon/home_level_preview_iocn_09|16#home_task#HomeLevelIcon/home_level_preview_iocn_03|7#home_seed_quality#HomeLevelIcon/home_level_preview_iocn_08"
+  },
+  {
+    "title": "KIBO_EVOLUTION_TIPS_SHOWTIME",
+    "type": "float",
+    "value": "3.5"
+  },
+  {
+    "title": "KIBO_SKIN_DISPLAY_DELTA_X",
+    "type": "list<float>",
+    "value": "2|2|2.4|2.4|2.5|2.5"
+  },
+  {
+    "title": "TASK_LEVEL_UNLOCK_JUMP",
+    "type": "int",
+    "value": "9023"
+  },
+  {
+    "title": "XIAOYU_INTEGRAL_MONSTER_COMMON",
+    "type": "int",
+    "value": "250"
+  },
+  {
+    "title": "XIAOYU_INTEGRAL_MONSTER_COMMON_HEALTH",
+    "type": "int",
+    "value": "10"
+  },
+  {
+    "title": "XIAOYU_INTEGRAL_MONSTER_ELITE",
+    "type": "int",
+    "value": "1500"
+  },
+  {
+    "title": "XIAOYU_INTEGRAL_MONSTER_ELITE_HEALTH",
+    "type": "int",
+    "value": "30"
+  },
+  {
+    "title": "XIAOYU_INTEGRAL_MONSTER_BOSS_HEALTH",
+    "type": "int",
+    "value": "60"
+  },
+  {
+    "title": "STORY_D_MIN_TURNANGLE",
+    "type": "int",
+    "value": "100"
+  },
+  {
+    "title": "HOME_FIELD_BUFF_FERTILE_SEED",
+    "type": "int",
+    "value": "0"
+  },
+  {
+    "title": "HOME_FIELD_BUFF_FERTILE_STAR",
+    "type": "int",
+    "value": "0"
+  },
+  {
+    "title": "HOME_FIELD_BUFF_FERTILE_SURPRISE",
+    "type": "int",
+    "value": "15"
+  },
+  {
+    "title": "HOME_FIELD_BUFF_FERTILE_HARVESTNUM",
+    "type": "int",
+    "value": "2500"
+  },
+  {
+    "title": "HOME_FIELD_BUFF_FERTILE_HARVESTRATE",
+    "type": "int",
+    "value": "8000"
+  },
+  {
+    "title": "HOME_FIELD_BUFF_FERTILE_GROWSPEED",
+    "type": "int",
+    "value": "0"
+  },
+  {
+    "title": "Weeklychallengetimes",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "CLOTHING_DEFAULT_CONF",
+    "type": "list<list<int>>",
+    "value": "1#10001|5#50001"
+  },
+  {
+    "title": "KIBO_POTENTIAL_FRUIT_INTRO_ID",
+    "type": "int",
+    "value": "501"
+  },
+  {
+    "title": "KIBO_DNA_FRUIT_INTRO_ID",
+    "type": "int",
+    "value": "502"
+  },
+  {
+    "title": "XIAOYU_INTEGRAL_MONSTER_BOSS",
+    "type": "int",
+    "value": "60"
+  },
+  {
+    "title": "XIAOYU_INTEGRAL_MONSTER_CLEAR",
+    "type": "int",
+    "value": "0"
+  },
+  {
+    "title": "kibo_evolution_emotion_playtime",
+    "type": "int",
+    "value": "2"
+  },
+  {
+    "title": "CHAT_FREQUENCY",
+    "type": "list<int>",
+    "value": "4|10|15"
+  },
+  {
+    "title": "CHAT_SPAM",
+    "type": "list<list<int>>",
+    "value": "10#8000#3|10#5#3|24#60#2#86400"
+  },
+  {
+    "title": "CHAT_MULTICITY_CD",
+    "type": "int",
+    "value": "2"
+  },
+  {
+    "title": "ESC_MULTITEAM_SHOWCONDITION",
+    "type": "list<condition>",
+    "value": "2007#106002"
+  },
+  {
+    "title": "ESC_DUNGEON_SHOWCONDITION",
+    "type": "list<condition>",
+    "value": "2007#106002"
+  },
+  {
+    "title": "ESC_HEROSKIN_PIC_TIME",
+    "type": "int",
+    "value": "2"
+  },
+  {
+    "title": "ESC_STORY_PIC_TIME",
+    "type": "int",
+    "value": "2"
+  },
+  {
+    "title": "ESC_SPINE_TIME_GACHA__LONG",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "ESC_SPINE_TIME_GACHA_SHORT",
+    "type": "int",
+    "value": "2"
+  },
+  {
+    "title": "ESC_SPINE_TIME_SHORT",
+    "type": "int",
+    "value": "10"
+  },
+  {
+    "title": "ESC_SPINE_TIME_LONG",
+    "type": "int",
+    "value": "8"
+  },
+  {
+    "title": "ESC_PIC_TIME",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "MULIT_PREPARE_TIME",
+    "type": "int",
+    "value": "30"
+  },
+  {
+    "title": "MULIT_START_TIME",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "MULIT_PREPARE_TIME_DEFAULT",
+    "type": "int",
+    "value": "30"
+  },
+  {
+    "title": "MULIT_START_TIME_DEFAULT",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "MULIT_MATCH_MAX_TIME_DEFAULT",
+    "type": "int",
+    "value": "180"
+  },
+  {
+    "title": "STARLINK_CARD_COST",
+    "type": "list<int>",
+    "value": "3|17|32|105|200|260|260|260|260"
+  },
+  {
+    "title": "ITEM_NUM_CHANGE_SPEED_01",
+    "type": "float",
+    "value": "0.05"
+  },
+  {
+    "title": "ITEM_NUM_CHANGE_SPEED_02",
+    "type": "float",
+    "value": "0.025"
+  },
+  {
+    "title": "STARLINK_EVERY_PAGE_CARD_NUM",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "ITEM_TYPE_441_PET_ITEM_RELATION",
+    "type": "list<list<int>>",
+    "value": "2200050#5002441|2200054#5002611|2200053#5002581"
+  },
+  {
+    "title": "JOURNEY_REGULAR_STAGE_UNLOCK_CONDI",
+    "type": "list<condition>",
+    "value": "12042#57"
+  },
+  {
+    "title": "SOULESSENCE_DECOMPOSE_SELECT_COUNT_LIMIT",
+    "type": "int",
+    "value": "500"
+  },
+  {
+    "title": "ACCESSORY_POSITION_MATCH",
+    "type": "int",
+    "value": "1000"
+  },
+  {
+    "title": "ACCESSORY_INHERIT_CURRENCY_COST",
+    "type": "int",
+    "value": "10000"
+  },
+  {
+    "title": "KIBO_GET_PETROOT_SCALE_PARAM",
+    "type": "list<int>",
+    "value": "6000|6000|4500|4500|3200|3200"
+  },
+  {
+    "title": "KIBO_HANDBOOK_PETROOT_SCALE_PARAM",
+    "type": "list<int>",
+    "value": "8500|8000|5000|5000|4000|4000"
+  },
+  {
+    "title": "KIBO_DNA_MUTATION_TIMES_LIMIT",
+    "type": "int",
+    "value": "100"
+  },
+  {
+    "title": "PET_HOME_TIRED_SATIETY",
+    "type": "int",
+    "value": "10"
+  },
+  {
+    "title": "HOME_LABOR_PROCESS_DECREASE",
+    "type": "int",
+    "value": "4000"
+  },
+  {
+    "title": "HOME_LABOR_PLANT_DECREASE",
+    "type": "int",
+    "value": "4000"
+  },
+  {
+    "title": "HOME_LABOR_WATERING__DECREASE",
+    "type": "int",
+    "value": "4000"
+  },
+  {
+    "title": "HOME_LABOR_HARVEST_DECREASE",
+    "type": "int",
+    "value": "4000"
+  },
+  {
+    "title": "HOME_LABOR_EGG_DECREASE",
+    "type": "int",
+    "value": "4000"
+  },
+  {
+    "title": "HOME_LABOR_GATHER_DECREASE",
+    "type": "int",
+    "value": "4000"
+  },
+  {
+    "title": "HOME_LABOR_ACCESSORY_DECREASE",
+    "type": "int",
+    "value": "4000"
+  },
+  {
+    "title": "SHOP_PT_MAINGOODS_CAROUSEL",
+    "type": "int",
+    "value": "10"
+  },
+  {
+    "title": "HOME_LABOR_PASTURE_DECREASE",
+    "type": "int",
+    "value": "4000"
+  },
+  {
+    "title": "MULTI_CHANGE_TARGET_CD",
+    "type": "int",
+    "value": "30"
+  },
+  {
+    "title": "MULTI_TEAM_SET_LEVEL",
+    "type": "list<int>",
+    "value": "1|20|30|40"
+  },
+  {
+    "title": "ARRAY_KIBO_POTENTIAL_CROWN",
+    "type": "list<int>",
+    "value": "4|10|20|27"
+  },
+  {
+    "title": "KIBO_AVERAGE_POTENTIAL_LEVEL",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "ARRAY_MAIN_POTENTIAL_WEIGHT",
+    "type": "list<list<int>>",
+    "value": "1#3#7#9|5#4#3#4"
+  },
+  {
+    "title": "ARRAY_SECOND_POTENTIAL_WEIGHT",
+    "type": "list<list<int>>",
+    "value": "1#3#7#9|5#4#3#4"
+  },
+  {
+    "title": "ARRAY_ONLY_POTENTIAL_WEIGHT",
+    "type": "list<list<int>>",
+    "value": "1#3#7#9|5#4#5#5"
+  },
+  {
+    "title": "KIBO_MIN_POTENTIAL_LEVEL",
+    "type": "int",
+    "value": "-3"
+  },
+  {
+    "title": "DUNGEON_OPEN_CHEST_INTERVAL",
+    "type": "float",
+    "value": "2.5"
+  },
+  {
+    "title": "PET_SCORE_BASE_LEVEL",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "PET_SCORE_RATE_IMPACT",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "PET_SCORE_MIN_SUMLEVEL",
+    "type": "int",
+    "value": "24"
+  },
+  {
+    "title": "PET_SCORE_DNA_ARRAY",
+    "type": "list<int>",
+    "value": "-42|-26|257|384|512|639"
+  },
+  {
+    "title": "PET_SCORE_PARA1",
+    "type": "int",
+    "value": "4000"
+  },
+  {
+    "title": "PET_SCORE_PARA2",
+    "type": "int",
+    "value": "2400"
+  },
+  {
+    "title": "TASK_DUNGEON_UNLOCK",
+    "type": "list<int>",
+    "value": "1|3"
+  },
+  {
+    "title": "CUL_SKILLTREE_SPECIALBUFF",
+    "type": "list<list<int>>",
+    "value": "16001020#101010#1"
+  },
+  {
+    "title": "PET_LOCK_STARSOUL_STAGE",
+    "type": "int",
+    "value": "4"
+  },
+  {
+    "title": "PET_LOCK_RARE",
+    "type": "int",
+    "value": "7"
+  },
+  {
+    "title": "CONDITION_VERSION_COMPARE",
+    "type": "float",
+    "value": "100"
+  },
+  {
+    "title": "ITEM_STATUS_SAVE_DUNGEON",
+    "type": "list<int>",
+    "value": "6224|6228|6231|6232|6233"
+  },
+  {
+    "title": "CBT3_RECHARGE_REBATE_MAIL_ID_FOR_OB",
+    "type": "int",
+    "value": "1021"
+  },
+  {
+    "title": "PET_STARSOUL_ID_DEFAULT",
+    "type": "int",
+    "value": "1000"
+  },
+  {
+    "title": "HOME_PET_OFFLINE_WORK_INTERVAL",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "MOUNT_AUTO_SETTING_TASK_ID",
+    "type": "list<condition>",
+    "value": "12045#106002#63"
+  },
+  {
+    "title": "MOUNT_AUTO_SETTING_TASK_ID_UNUSED",
+    "type": "list<condition>",
+    "value": "12045#106004#62"
+  },
+  {
+    "title": "MOUNT_AUTO_SETTING_PET_ID",
+    "type": "int",
+    "value": "500297"
+  },
+  {
+    "title": "PET_BREAKSKILL_TIMER",
+    "type": "int",
+    "value": "10000"
+  },
+  {
+    "title": "CHEST_EXPLOSION_SPACE",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "CHEST_EXPLOSION_COUNT",
+    "type": "int",
+    "value": "30"
+  },
+  {
+    "title": "MULTIMAINCITY_MOUNT_DISMOUNT_DELAY",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "HOME_BUILD_PET_TABLE_ID",
+    "type": "int",
+    "value": "10011"
+  },
+  {
+    "title": "KIBO_DUEL_ARENA_MODE_SETTLEMENT_DELAY",
+    "type": "int",
+    "value": "4"
+  },
+  {
+    "title": "SPECIAL_KIBO_MEET_TIPS_SFX",
+    "type": "string",
+    "value": "Play_SFX_System_UI_CHAR_RareVariant_Alert"
+  },
+  {
+    "title": "PTSHOP_TRADE_NOTICE",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "MULTI_CHANGE_TARGET_TIME",
+    "type": "int",
+    "value": "30"
+  },
+  {
+    "title": "WORLDGAME_SANDBOX_STAY_DURATION",
+    "type": "int",
+    "value": "15"
+  },
+  {
+    "title": "WORLDGAME_SANDBOX_WAIT_DURATION",
+    "type": "int",
+    "value": "30"
+  },
+  {
+    "title": "WORLDGAME_SANDBOX_ERROR_COUNT",
+    "type": "int",
+    "value": "50"
+  },
+  {
+    "title": "HOME_PASTURE_EGG_MAX",
+    "type": "int",
+    "value": "30"
+  },
+  {
+    "title": "HOME_PASTURE_BASE_MAX",
+    "type": "int",
+    "value": "400"
+  },
+  {
+    "title": "HP_RECOVER_UNIT_NORMAL",
+    "type": "int",
+    "value": "500"
+  },
+  {
+    "title": "STARLINK_CARD_COOLING_TIME",
+    "type": "float",
+    "value": "0.5"
+  },
+  {
+    "title": "STARLINK_AIM_MAX_DISTANCE",
+    "type": "float",
+    "value": "30"
+  },
+  {
+    "title": "STARLINK_AIM_CYLINDER_RADIUS",
+    "type": "float",
+    "value": "0.5"
+  },
+  {
+    "title": "STARLINK_SCROLL_COOLDOWN",
+    "type": "float",
+    "value": "0.5"
+  },
+  {
+    "title": "STARLINK_POWER_KIBO_DELTA_LEVEL",
+    "type": "list<int>",
+    "value": "16|11|9"
+  },
+  {
+    "title": "AUTOFIGHT_RECOVER_TIME",
+    "type": "float",
+    "value": "5"
+  },
+  {
+    "title": "WEB_NEWER_FLAG_TASK",
+    "type": "int",
+    "value": "106002"
+  },
+  {
+    "title": "CUL_SKILLTREE_FULLGRADE_BUFF",
+    "type": "list<list<int>>",
+    "value": "105#101010#1#16001002"
+  },
+  {
+    "title": "SOULESSENCE_GACHA_GROUP",
+    "type": "int",
+    "value": "99"
+  },
+  {
+    "title": "KIBO_DUEL_TRAIN_TASK_ID",
+    "type": "list<int>",
+    "value": "501|502|503|504|505|506"
+  },
+  {
+    "title": "EFFECT_TO_TIP_INTERVAL_SEC",
+    "type": "float",
+    "value": "0.7"
+  },
+  {
+    "title": "JOURNEY_TASK_MAINUI_REWARD_GAIN_TYPE",
+    "type": "int",
+    "value": "1"
+  },
+  {
+    "title": "SOULESSENCE_MAX_GRADE",
+    "type": "int",
+    "value": "5"
+  },
+  {
+    "title": "STARLINK_PET_RARE_STANDARD_LEVEL",
+    "type": "dict<int,int>",
+    "value": "1#1|2#1|3#1|4#1|5#1|6#1|7#1|8#1|9#1"
+  },
+  {
+    "title": "KIBO_DUEL_ARENA_ENABLE_SHAKE",
+    "type": "bool",
+    "value": "1"
+  },
+  {
+    "title": "HOME_TECHNOLOGY_RESOURCE_RETURN",
+    "type": "list<int>",
+    "value": "300000|300001|301000|301001|303000|303001|303004|303007|302001|305901|305902"
+  },
+  {
+    "title": "SPECIAL_KIBO_NORMAL_NUM_MAX_01",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "SPECIAL_KIBO_NORMAL_NUM_MAX_02",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "SPECIAL_KIBO_NORMAL_NUM_MAX_03",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "SPECIAL_KIBO_NORMAL_NUM_MAX_04",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "SPECIAL_KIBO_NORMAL_NUM_MAX_05",
+    "type": "int",
+    "value": "3"
+  },
+  {
+    "title": "SPECIAL_KIBO_BOSS_NUM_MAX_01",
+    "type": "int",
+    "value": "2"
+  },
+  {
+    "title": "SPECIAL_KIBO_BOSS_NUM_MAX_02",
+    "type": "int",
+    "value": "2"
+  },
+  {
+    "title": "SPECIAL_KIBO_BOSS_NUM_MAX_03",
+    "type": "int",
+    "value": "2"
+  },
+  {
+    "title": "SPECIAL_KIBO_BOSS_NUM_MAX_04",
+    "type": "int",
+    "value": "2"
+  },
+  {
+    "title": "SPECIAL_KIBO_BOSS_NUM_MAX_05",
+    "type": "int",
+    "value": "2"
+  },
+  {
+    "title": "TASK_DEFAULT_GHOST_PREFAB_PATH",
+    "type": "string",
+    "value": "Effect/Common/pre_common_ghostfade_01.prefab"
+  },
+  {
+    "title": "TASK_NEW02_GHOST_PREFAB_PATH",
+    "type": "string",
+    "value": "Effect/Common/pre_common_ghostfade_02.prefab"
+  },
+  {
+    "title": "SNACKBAG_SLOT_FOOD_MAX_LIMIT",
+    "type": "int",
+    "value": "999"
+  },
+  {
+    "title": "GUIDE_JUMP_GACHA",
+    "type": "list<list<int>>",
+    "value": "30007#9001"
+  },
+  {
+    "title": "GACHA_SHOP_JUMP",
+    "type": "int",
+    "value": "10086"
+  },
+  {
+    "title": "CUL_RANK_START",
+    "type": "int",
+    "value": "100"
+  },
+  {
+    "title": "JOURNEY_STARTER_KIBO_TASKSTEP_ID",
+    "type": "int",
+    "value": "60001"
+  },
+  {
+    "title": "MOUNT_MAX_SPEED_LIMIT",
+    "type": "float",
+    "value": "3.5"
+  },
+  {
+    "title": "PET_CATCH_REAL_TIME_ENABLE",
+    "type": "bool",
+    "value": "1"
+  },
+  {
+    "title": "KIBO_DUEL_COUNTDOWN_TIME",
+    "type": "int",
+    "value": "10"
+  },
+  {
+    "title": "ACCESSORY_RECOMMEND_LV_HIDE",
+    "type": "int",
+    "value": "15"
+  },
+  {
+    "title": "STARLINK_CATCHPOWER_FACTOR_PARAM",
+    "type": "list<float>",
+    "value": "0|0.66|1|1.05|1.1|1.2"
+  },
+  {
+    "title": "STARLINK_GUARANTEE_FACTOR_PARAM",
+    "type": "list<float>",
+    "value": "0|0.1|0.3"
+  },
+  {
+    "title": "HOME_EXP_BLACKLIST",
+    "type": "list<float>",
+    "value": "1040|1300511450"
+  },
+  {
+    "title": "KIBO_FRUIT_CAMERA_FOV_PARAM",
+    "type": "list<float>",
+    "value": "0|0|60|60|120|120"
+  },
+  {
+    "title": "HOME_HARVEST_SHOW_TIME",
+    "type": "float",
+    "value": "2"
+  },
+  {
+    "title": "SPECIAL_PLAYABLE_ID",
+    "type": "list<int>",
+    "value": "60001"
+  },
+  {
+    "title": "MAIL_TITLE_MAX_LEN",
+    "type": "int",
+    "value": "999"
+  },
+  {
+    "title": "MAIL_CONTENT_MAX_LEN",
+    "type": "int",
+    "value": "999"
+  },
+  {
+    "title": "MAIL_SENDER_MAX_LEN",
+    "type": "int",
+    "value": "999"
+  },
+  {
+    "title": "BACKPACK_GENERAL_MAX_LIMIT",
+    "type": "int",
+    "value": "5100"
+  }
+]

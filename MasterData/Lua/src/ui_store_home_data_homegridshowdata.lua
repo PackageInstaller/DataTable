@@ -1,0 +1,9 @@
+local homeGridData = {}
+homeGridData.width = 0
+homeGridData.height = 0
+homeGridData.anchorPos = C_Vector2(0, 0)
+homeGridData.posIdList = {}
+homeGridData.petSizeWidth = 0
+homeGridData.petSizeHeight = 0
+homeGridData.petPos = C_Vector2(0, 0)
+homeGridData.petRot = 0

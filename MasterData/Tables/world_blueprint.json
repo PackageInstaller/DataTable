@@ -1,0 +1,4432 @@
+[
+  {
+    "id": 200237,
+    "path": "Config/World/Graph/Blueprint/ast_level_timeline_only.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300000,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_area.asset",
+    "param": "puzzleAttrs#1",
+    "stringParam": "words#puzzle_fire_thornyobstacle",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300001,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_area_pv.asset",
+    "param": "puzzleAttrs#1",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300002,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_area.asset",
+    "param": "puzzleAttrs#1|waitTime#2.5|DelayTime#0.5",
+    "stringParam": "spawnerId#6020270|words#puzzle_fire_thornyobstacle",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300003,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_area.asset",
+    "param": "puzzleAttrs#6|waitTime#2.7|DelayTime#0",
+    "stringParam": "spawnerId#6020280|words#puzzle_water_wishingpool",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300004,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_area.asset",
+    "param": "puzzleAttrs#4|waitTime#0.7|DelayTime#0.3",
+    "stringParam": "spawnerId#6020290|words#puzzle_wood_bud",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300005,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_area.asset",
+    "param": "puzzleAttrs#3|waitTime#0|DelayTime#0",
+    "stringParam": "spawnerId#6020300|words#puzzle_earth_stone",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300006,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_area.asset",
+    "param": "puzzleAttrs#1|waitTime#2.3",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300007,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_area.asset",
+    "param": "puzzleAttrs#1|waitTime#5.3",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300008,
+    "path": "Config/World/Graph/Blueprint/ast_playable_parkour.asset",
+    "param": "goalScore#5|startCount#2|endCount#6",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300009,
+    "path": "Config/World/Graph/Blueprint/ast_playable_parkour_collection.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300010,
+    "path": "Config/World/Graph/Blueprint/ast_playable_parkour_entrance.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300011,
+    "path": "Config/World/Graph/Blueprint/ast_playable_parkour.asset",
+    "param": "goalScore#11|startCount#2|endCount#12",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300012,
+    "path": "Config/World/Graph/Blueprint/ast_playable_parkour_collection.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300013,
+    "path": "Config/World/Graph/Blueprint/ast_playable_parkour_entrance.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300014,
+    "path": "Config/World/Graph/Blueprint/ast_playable_parkour.asset",
+    "param": "goalScore#1|startCount#2|endCount#2",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300015,
+    "path": "Config/World/Graph/Blueprint/ast_playable_parkour_entrance.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300016,
+    "path": "Config/World/Graph/Blueprint/ast_playable_puzzleStone.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300017,
+    "path": "Config/World/Graph/Blueprint/ast_playable_puzzleStone_interact.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300018,
+    "path": "Config/World/Graph/Blueprint/ast_playable_puzzle_common_reward.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300019,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_egg.asset",
+    "param": "",
+    "stringParam": "MediaPack#22_0001",
+    "intParam": "targetEggNest#500397",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300020,
+    "path": "Config/World/Graph/Blueprint/ast_playable_guide_common.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300021,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_area.asset",
+    "param": "puzzleAttrs#8|waitTime#2.5|DelayTime#0",
+    "stringParam": "spawnerId#6021010|words#puzzle_light_stele",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300022,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_spkibo.asset",
+    "param": "puzzleAttrs#3|DelayTime#0",
+    "stringParam": "spawnerId#6021160|words#puzzle_earth_triangleelf",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300023,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_egg_500058.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "targetEggNest#100400357",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300024,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_area.asset",
+    "param": "puzzleAttrs#6|waitTime#2.5|DelayTime#0",
+    "stringParam": "spawnerId#6021020|words#puzzle_water_shrine",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300025,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_common.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300026,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_common.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300027,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_spkibo_normal.asset",
+    "param": "puzzleAttrs#4|DelayTime#0",
+    "stringParam": "spawnerId#6021180|words#puzzle_wood_singingelf",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300028,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_spkibo.asset",
+    "param": "puzzleAttrs#3",
+    "stringParam": "spawnerId#6021170|words#puzzle_earth_rockpile",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300029,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_area.asset",
+    "param": "puzzleAttrs#7|DelayTime#0",
+    "stringParam": "spawnerId#6021130",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300030,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_area.asset",
+    "param": "puzzleAttrs#3|DelayTime#0",
+    "stringParam": "spawnerId#6021080|words#puzzle_earth_stake",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300031,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_area.asset",
+    "param": "puzzleAttrs#8|DelayTime#0",
+    "stringParam": "spawnerId#6021000|words#puzzle_light_stele",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300032,
+    "path": "Config/World/Graph/Blueprint/ast_playable_guide_common.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "guideId#1022",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300033,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_spkibo.asset",
+    "param": "puzzleAttrs#8|DelayTime#0",
+    "stringParam": "spawnerId#6021220|words#puzzle_light_firefly",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300034,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_chest_double_01.asset",
+    "param": "puzzleAttrs#2|DelayTime#0",
+    "stringParam": "spawnerId#6021050|words#puzzle_wind_shrub",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300035,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_egg_500058_2.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "targetEggNest#100400359",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300036,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_egge_2.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "targetEggNest#100400360",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300037,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_umi.asset",
+    "param": "DelayTime#2",
+    "stringParam": "spawnerId#6021230",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300038,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_area_spell.asset",
+    "param": "puzzleAttrs#2|DelayTime#0",
+    "stringParam": "spawnerId#6021040|words#puzzle_wind_mist",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300039,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_spkibo.asset",
+    "param": "puzzleAttrs#4|DelayTime#0",
+    "stringParam": "spawnerId#6021190|words#puzzle_wood_trunk",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300040,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_area.asset",
+    "param": "puzzleAttrs#4|DelayTime#0",
+    "stringParam": "spawnerId#6021060",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300041,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_spkibo.asset",
+    "param": "puzzleAttrs#6|DelayTime#0",
+    "stringParam": "spawnerId#6021200",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300042,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_common.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300043,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_spkibo.asset",
+    "param": "puzzleAttrs#1|DelayTime#0",
+    "stringParam": "spawnerId#6021250|words#puzzle_fire_flame",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300044,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_area.asset",
+    "param": "puzzleAttrs#8|DelayTime#0",
+    "stringParam": "spawnerId#6021030|words#puzzle_light_stele",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300045,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_area.asset",
+    "param": "puzzleAttrs#4|DelayTime#0",
+    "stringParam": "spawnerId#6021120|words#puzzle_wood_stonepot",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300046,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_area.asset",
+    "param": "puzzleAttrs#7|DelayTime#0",
+    "stringParam": "spawnerId#6021090|words#puzzle_thunder_statues",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300047,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_area.asset",
+    "param": "puzzleAttrs#8|DelayTime#0",
+    "stringParam": "spawnerId#6021290|words#|words#puzzle_light_stele",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300048,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_area.asset",
+    "param": "puzzleAttrs#6|DelayTime#0",
+    "stringParam": "spawnerId#6021100|words#puzzle_water_statues",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300049,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_sunya.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300050,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_area_deb.asset",
+    "param": "puzzleAttr#6|DelayTime#0",
+    "stringParam": "spawnerId#6021300",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300051,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_spkibo.asset",
+    "param": "puzzleAttrs#2|DelayTime#0",
+    "stringParam": "spawnerId#6021210|words#puzzle_wind_cyclone",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300052,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_spkibo.asset",
+    "param": "puzzleAttrs#7|DelayTime#0",
+    "stringParam": "spawnerId#6021240|words#puzzle_thunder_darkcloud",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300053,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_spkibo_waterdroplets_lost.asset",
+    "param": "puzzleAttrs#6|DelayTime#0",
+    "stringParam": "spawnerId#6021330",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300054,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_chest_double_01.asset",
+    "param": "puzzleAttrs#2|DelayTime#0",
+    "stringParam": "SpawnerId#6021050",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300055,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_chest.asset",
+    "param": "puzzleAttrs#3|DelayTime#0",
+    "stringParam": "SpawnerId#6020240",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300056,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_area_spell.asset",
+    "param": "puzzleAttrs#2|DelayTime#0",
+    "stringParam": "SpawnerId#6021040",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300057,
+    "path": "Config/World/Graph/Blueprint/ast_common_treasure_kiboloot.asset",
+    "param": "puzzleAttrs#2|DelayTime#0",
+    "stringParam": "SpawnerId#6021040",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300058,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_spkibo_waterdroplets_new.asset",
+    "param": "puzzleAttrs#2|DelayTime#0",
+    "stringParam": "SpawnerId#6021390",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300059,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_spkibo_waterdroplets_main.asset",
+    "param": "puzzleAttrs#2|DelayTime#0",
+    "stringParam": "SpawnerId#6021320",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300060,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_spkibo_waterdroplets_master.asset",
+    "param": "puzzleAttrs#2|DelayTime#0",
+    "stringParam": "SpawnerId#6021320",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300061,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_spkibo_waterdroplets_spline.asset",
+    "param": "puzzleAttrs#6|DelayTime#0",
+    "stringParam": "spawnerId#6021330",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300062,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_spkibo_waterdroplets_main_interactive.asset",
+    "param": "puzzleAttrs#6|DelayTime#0",
+    "stringParam": "spawnerId#6021330",
+    "intParam": "InteractiveNum#2",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300063,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_spkibo_waterdroplets_double_interactive.asset",
+    "param": "puzzleAttrs#2|DelayTime#0",
+    "stringParam": "SpawnerId#6021390",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300064,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_spkibo_waterdroplets_interactive.asset",
+    "param": "puzzleAttrs#3|DelayTime#0",
+    "stringParam": "SpawnerId#6021390",
+    "intParam": "InteractiveNum#2",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300065,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_bellflower.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300066,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_bellflower_main.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300067,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_bellflower_master.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300068,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_formation_replace.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300069,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_bellflower_main.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300070,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_bellflower_master.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300071,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_bellflower_main.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300072,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_bellflower_master.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300073,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_bellflower_master.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300074,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_bellflower_main.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300075,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_bellflower_master.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300076,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_bellflower_main.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300077,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_bellflower_master.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300078,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_bellflower_main.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300079,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_bellflower_master.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300080,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_bellflower_main.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300081,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_bellflower_master.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300082,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_switch.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300083,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_switch_streetlight.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300084,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_switch_crystal.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300085,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_spkibo_fire_lost.asset",
+    "param": "puzzleAttrs#6|DelayTime#0",
+    "stringParam": "spawnerId#6021330",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300086,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_spkibo_fire_master.asset",
+    "param": "puzzleAttrs#2|DelayTime#0",
+    "stringParam": "SpawnerId#6021320",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300087,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_spkibo_fire_main.asset",
+    "param": "puzzleAttrs#2|DelayTime#0",
+    "stringParam": "SpawnerId#6021320",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300088,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_forestfield_organ.asset",
+    "param": "puzzleAttrs#2|DelayTime#0",
+    "stringParam": "SpawnerId#6021320",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300089,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_area.asset",
+    "param": "puzzleAttrs#2|waitTime#2.7|DelayTime#0",
+    "stringParam": "spawnerId#6021210|words#puzzle_wind_task_shrub",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300090,
+    "path": "Config/World/Graph/Blueprint/ast_common_attach_spirit_effect.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300100,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_playable_500156.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "targetEggNest#100400358",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300101,
+    "path": "Config/World/Graph/Blueprint/ast_playable_gameplay01.asset",
+    "param": "goalScore#5|startCount#2|endCount#6",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300102,
+    "path": "Config/World/Graph/Blueprint/ast_playable_gameplay01_collection.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300103,
+    "path": "Config/World/Graph/Blueprint/ast_playable_gameplay01_interact.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300104,
+    "path": "Config/World/Graph/Blueprint/ast_playable_littlekibo_collection.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300105,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_eat_vegetable.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "searchTemplateId1#18|eventId#119|searchTemplateId2#19|minCount1#1",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300106,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_eat_vegechicken.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "searchTemplateId1#18|eventId#121|searchTemplateId2#63|minCount1#1|minCount2#1",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300107,
+    "path": "Config/World/Graph/Blueprint/ast_playable_connect_035_01.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300108,
+    "path": "Config/World/Graph/Blueprint/ast_playable_connect_036_01.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300109,
+    "path": "Config/World/Graph/Blueprint/ast_playable_connect_033_01.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300110,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_wumi_one_touch_draw.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300200,
+    "path": "Config/World/Graph/Blueprint/ast_common_treasure_chest.asset",
+    "param": "",
+    "stringParam": "MediaPack#pre_world_active_chest_wood|btnName#puzzle_interact_1",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300201,
+    "path": "Config/World/Graph/Blueprint/ast_common_treasure_chest.asset",
+    "param": "",
+    "stringParam": "MediaPack#pre_world_active_chest_wood|btnName#puzzle_interact_1",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300202,
+    "path": "Config/World/Graph/Blueprint/ast_common_treasure_chest.asset",
+    "param": "",
+    "stringParam": "MediaPack#pre_world_active_chest_iron|btnName#puzzle_interact_9",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300203,
+    "path": "Config/World/Graph/Blueprint/ast_common_treasure_chest.asset",
+    "param": "",
+    "stringParam": "MediaPack#pre_world_active_chest_iron|btnName#puzzle_interact_9",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300204,
+    "path": "Config/World/Graph/Blueprint/ast_common_treasure_chest.asset",
+    "param": "",
+    "stringParam": "MediaPack#pre_world_active_chest_silver|btnName#puzzle_interact_23",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300205,
+    "path": "Config/World/Graph/Blueprint/ast_common_treasure_chest.asset",
+    "param": "",
+    "stringParam": "MediaPack#pre_world_active_chest_silver|btnName#puzzle_interact_23",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300206,
+    "path": "Config/World/Graph/Blueprint/ast_common_treasure_chest.asset",
+    "param": "",
+    "stringParam": "MediaPack#pre_world_active_chest_gold|btnName#puzzle_interact_24",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300207,
+    "path": "Config/World/Graph/Blueprint/ast_common_treasure_chest.asset",
+    "param": "",
+    "stringParam": "MediaPack#pre_world_active_chest_gold|btnName#puzzle_interact_24",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300208,
+    "path": "Config/World/Graph/Blueprint/ast_common_treasure_chest.asset",
+    "param": "",
+    "stringParam": "MediaPack#pre_world_active_chest_holly|btnName#puzzle_interact_25",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300209,
+    "path": "Config/World/Graph/Blueprint/ast_common_treasure_chest.asset",
+    "param": "",
+    "stringParam": "MediaPack#pre_world_active_chest_holly|btnName#puzzle_interact_25",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300210,
+    "path": "Config/World/Graph/Blueprint/ast_common_treasure_chest.asset",
+    "param": "",
+    "stringParam": "MediaPack#pre_world_active_chest_drak|btnName#puzzle_interact_26",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300211,
+    "path": "Config/World/Graph/Blueprint/ast_common_treasure_chest.asset",
+    "param": "",
+    "stringParam": "MediaPack#pre_world_active_chest_drak|btnName#puzzle_interact_26",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300212,
+    "path": "Config/World/Graph/Blueprint/ast_common_treasure_puzzle_chest.asset",
+    "param": "",
+    "stringParam": "MediaPack#pre_world_active_chest_iron|btnName#puzzle_interact_9",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300213,
+    "path": "Config/World/Graph/Blueprint/ast_common_treasure_rogue.asset",
+    "param": "",
+    "stringParam": "MediaPack#pre_world_active_chest_wood|btnName#puzzle_interact_1",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300214,
+    "path": "Config/World/Graph/Blueprint/ast_common_treasure_rogue.asset",
+    "param": "",
+    "stringParam": "MediaPack#pre_world_active_chest_silver|btnName#puzzle_interact_9",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300215,
+    "path": "Config/World/Graph/Blueprint/ast_common_treasure_rogue.asset",
+    "param": "",
+    "stringParam": "MediaPack#pre_world_active_chest_gold|btnName#puzzle_interact_24",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300216,
+    "path": "Config/World/Graph/Blueprint/ast_common_treasure_chest_puzzleuse.asset",
+    "param": "",
+    "stringParam": "MediaPack#pre_world_active_chest_iron|btnName#puzzle_interact_9",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300217,
+    "path": "Config/World/Graph/Blueprint/ast_common_treasure_chest_boss_first_blood.asset",
+    "param": "",
+    "stringParam": "MediaPack#pre_world_active_chest_gold|btnName#puzzle_interact_24",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300300,
+    "path": "Config/World/Graph/Blueprint/ast_dungeon_common.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300301,
+    "path": "Config/World/Graph/Blueprint/ast_dungeon_ai_common.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300302,
+    "path": "Config/World/Graph/Blueprint/ast_teaching_dungeon_01.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300303,
+    "path": "Config/World/Graph/Blueprint/ast_teaching_dungeon_02.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300304,
+    "path": "Config/World/Graph/Blueprint/ast_teaching_dungeon_03.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300305,
+    "path": "Config/World/Graph/Blueprint/ast_multiplayer_dungeon/multiplayer_dungeon_common.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300306,
+    "path": "Config/World/Graph/Blueprint/ast_story_dungeon_ai_common.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300307,
+    "path": "Config/World/Graph/Blueprint/ast_abyss_ai_common.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300308,
+    "path": "Config/World/Graph/Blueprint/ast_abyss_guard_ai_common.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300309,
+    "path": "Config/World/Graph/Blueprint/ast_task_dungeon_ai_common.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300310,
+    "path": "Config/World/Graph/Blueprint/ast_xiaoyu_dungeon_ai_common.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300311,
+    "path": "Config/World/Graph/Blueprint/ast_xiaoyu_dungeon_infinity_ai_common.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300350,
+    "path": "Config/World/Graph/Blueprint/ast_rogue_ai_common.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300351,
+    "path": "Config/World/Graph/Blueprint/ast_multiplayer_dungeon/multiplayer_dungeon_common.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300352,
+    "path": "Config/World/Graph/Blueprint/ast_rogue_ai_point.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300353,
+    "path": "Config/World/Graph/Blueprint/ast_rogue_ai_event_room.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300354,
+    "path": "Config/World/Graph/Blueprint/ast_rogue_ai_shop_room.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300400,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_npc_interact.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "targetWorldmapId#500395",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300401,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_drink_water.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "targetWorldmapId#100240224",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300402,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_group_move.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300403,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_conflict.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300404,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_group_move_template.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "pathId#996003",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300405,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_conflict_template.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "minCount1#3|searchTemplateId1#10|minCount2#1|searchTemplateId2#11|fightTime#60|isFightResult#1",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300406,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_group_move_wolf.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300407,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_conflict_result_wolfchicken.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300408,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_conflict_goat.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "searchTemplateId#1|eventId#118",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300409,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_egg_template.asset",
+    "param": "minDis#0.5|maxDis#1.5",
+    "stringParam": "MediaPack#22_0001",
+    "intParam": "searchTemplateId#2|blueprintId#202",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300410,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_egg_template.asset",
+    "param": "minDis#1.5|maxDis#1.5",
+    "stringParam": "MediaPack#22_0001",
+    "intParam": "searchTemplateId#6|blueprintId#203",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300411,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_egg_template.asset",
+    "param": "minDis#0.5|maxDis#1.5",
+    "stringParam": "MediaPack#22_0001",
+    "intParam": "searchTemplateId#2|blueprintId#210",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300412,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_egg_template.asset",
+    "param": "minDis#0.5|maxDis#1.5",
+    "stringParam": "MediaPack#22_0001",
+    "intParam": "searchTemplateId#4|blueprintId#220",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300413,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_egg_template.asset",
+    "param": "minDis#0.5|maxDis#1.5",
+    "stringParam": "MediaPack#22_0001",
+    "intParam": "searchTemplateId#4|blueprintId#221",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300414,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_egg_template.asset",
+    "param": "minDis#0.5|maxDis#1.5",
+    "stringParam": "MediaPack#22_0001",
+    "intParam": "searchTemplateId#4|blueprintId#222",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300415,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_egg_template.asset",
+    "param": "minDis#2|maxDis#3",
+    "stringParam": "MediaPack#22_0001",
+    "intParam": "searchTemplateId#3|blueprintId#225",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300416,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_egg_template.asset",
+    "param": "minDis#0.5|maxDis#1.5",
+    "stringParam": "MediaPack#22_0001",
+    "intParam": "searchTemplateId#5|blueprintId#230",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300417,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_egg_template.asset",
+    "param": "minDis#0.5|maxDis#1.5",
+    "stringParam": "MediaPack#22_0001",
+    "intParam": "searchTemplateId#2|blueprintId#234",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300418,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_egg_template.asset",
+    "param": "minDis#2|maxDis#3",
+    "stringParam": "MediaPack#22_0001",
+    "intParam": "searchTemplateId#25|blueprintId#238",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300419,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_conflict_goat.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "searchTemplateId#7|eventId#280",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300420,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_conflict_goat.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "searchTemplateId#8|eventId#281",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300421,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_group_move_template.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "pathId#100108|searchTemplateId#15|minCount1#3",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300422,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_conflict_template.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "minCount1#3|searchTemplateId1#14|minCount2#1|searchTemplateId2#13|fightTime#60",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300423,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_play_dog.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "searchTemplateId#16|eventId#120",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300430,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_play_flower.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "searchTemplateId#17|eventId#292",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300431,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_eat_vegetable.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "searchTemplateId1#20|eventId#204|searchTemplateId2#21|minCount1#1",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300432,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_eat_vegetable.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "searchTemplateId1#22|eventId#205|searchTemplateId2#23|minCount1#1",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300433,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_egg_template.asset",
+    "param": "minDis#2|maxDis#3",
+    "stringParam": "MediaPack#22_0001",
+    "intParam": "searchTemplateId#24|blueprintId#240",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300450,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_egg_template.asset",
+    "param": "minDis#1.5|maxDis#1.5",
+    "stringParam": "MediaPack#22_0001",
+    "intParam": "searchTemplateId#26|blueprintId#300",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300451,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_conflict_template.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "minCount1#3|searchTemplateId1#35|minCount2#3|searchTemplateId2#34|fightTime#60",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300452,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_conflict_template.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "minCount1#3|searchTemplateId1#35|minCount2#3|searchTemplateId2#33|fightTime#60",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300453,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_conflict_template.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "minCount1#3|searchTemplateId1#34|minCount2#3|searchTemplateId2#33|fightTime#60",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300454,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_conflict_template.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "minCount1#3|searchTemplateId1#36|minCount2#3|searchTemplateId2#38|fightTime#60",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300455,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_conflict_template.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "minCount1#3|searchTemplateId1#36|minCount2#3|searchTemplateId2#37|fightTime#60",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300456,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_conflict_template.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "minCount1#3|searchTemplateId1#37|minCount2#3|searchTemplateId2#38|fightTime#60",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300457,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_conflict_template.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "minCount1#3|searchTemplateId1#39|minCount2#3|searchTemplateId2#40|fightTime#60",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300458,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_conflict_template.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "minCount1#3|searchTemplateId1#40|minCount2#3|searchTemplateId2#41|fightTime#60",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300459,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_conflict_template.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "minCount1#3|searchTemplateId1#41|minCount2#3|searchTemplateId2#39|fightTime#60",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300460,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_conflict_template.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "minCount1#3|searchTemplateId1#42|minCount2#3|searchTemplateId2#43|fightTime#60",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300461,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_conflict_template.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "minCount1#3|searchTemplateId1#44|minCount2#3|searchTemplateId2#45|fightTime#30",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300462,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_conflict_template.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "minCount1#3|searchTemplateId1#46|minCount2#3|searchTemplateId2#47|fightTime#30",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300463,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_conflict_template.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "minCount1#3|searchTemplateId1#48|minCount2#3|searchTemplateId2#49|fightTime#30",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300464,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_conflict_template.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "minCount1#3|searchTemplateId1#50|minCount2#3|searchTemplateId2#51|fightTime#30",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300465,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_conflict_template.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "minCount1#3|searchTemplateId1#52|minCount2#3|searchTemplateId2#53|fightTime#30",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300480,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_conflict_goat.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "searchTemplateId#54|eventId#330",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300481,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_conflict_goat.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "searchTemplateId#61|eventId#331",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300485,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_egg_template.asset",
+    "param": "minDis#1|maxDis#1.5",
+    "stringParam": "MediaPack#22_0001",
+    "intParam": "searchTemplateId#55|blueprintId#350",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300486,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_egg_template.asset",
+    "param": "minDis#1|maxDis#1.5",
+    "stringParam": "MediaPack#22_0001",
+    "intParam": "searchTemplateId#59|blueprintId#351",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300487,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_egg_template.asset",
+    "param": "minDis#0.5|maxDis#1.5",
+    "stringParam": "MediaPack#22_0001",
+    "intParam": "searchTemplateId#56|blueprintId#360",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300488,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_egg_template.asset",
+    "param": "minDis#0.5|maxDis#1.5",
+    "stringParam": "MediaPack#22_0001",
+    "intParam": "searchTemplateId#57|blueprintId#361",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300489,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_egg_template.asset",
+    "param": "minDis#0.5|maxDis#1.5",
+    "stringParam": "MediaPack#22_0001",
+    "intParam": "searchTemplateId#60|blueprintId#362",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300490,
+    "path": "Config/World/Graph/Blueprint/ast_worldEvent_egg_template.asset",
+    "param": "minDis#0.5|maxDis#1.5",
+    "stringParam": "MediaPack#22_0001",
+    "intParam": "searchTemplateId#62|blueprintId#363",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300500,
+    "path": "Config/World/Graph/Blueprint/ast_playable_speed_entrance.asset",
+    "param": "",
+    "stringParam": "btnName#puzzle_interact_14",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300501,
+    "path": "Config/World/Graph/Blueprint/ast_playable_speed.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "group#30",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300502,
+    "path": "Config/World/Graph/Blueprint/ast_playable_speed_circle.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "speedUp#30",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300503,
+    "path": "Config/World/Graph/Blueprint/ast_playable_speed_circle_accelerate.asset",
+    "param": "dissolveDelay#2.5",
+    "stringParam": "",
+    "intParam": "SpeedDown#30",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300504,
+    "path": "Config/World/Graph/Blueprint/ast_playable_speed.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "group#10",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300505,
+    "path": "Config/World/Graph/Blueprint/ast_playable_speed.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "group#10",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300506,
+    "path": "Config/World/Graph/Blueprint/ast_playable_speed.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "group#32|challengeTime#90|timeline#13",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300507,
+    "path": "Config/World/Graph/Blueprint/ast_playable_speed.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "group#10",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300508,
+    "path": "Config/World/Graph/Blueprint/ast_playable_speed.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "group#22|challengeTime#60|timeline#1",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300509,
+    "path": "Config/World/Graph/Blueprint/ast_playable_speed.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "group#26|challengeTime#60|timeline#2",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300510,
+    "path": "Config/World/Graph/Blueprint/ast_playable_speed.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "group#18|challengeTime#90|timeline#3",
+    "boolParam": "donotForbidMountFly#true",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300511,
+    "path": "Config/World/Graph/Blueprint/ast_playable_speed.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "group#20|challengeTime#90|timeline#6",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300512,
+    "path": "Config/World/Graph/Blueprint/ast_playable_speed.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "group#33|challengeTime#90|timeline#5",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300513,
+    "path": "Config/World/Graph/Blueprint/ast_playable_speed.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "group#18|challengeTime#90|timeline#12",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300514,
+    "path": "Config/World/Graph/Blueprint/ast_playable_speed.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "group#21|challengeTime#90|timeline#11",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300515,
+    "path": "Config/World/Graph/Blueprint/ast_playable_speed.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "group#16|challengeTime#60|timeline#10",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300516,
+    "path": "Config/World/Graph/Blueprint/ast_playable_speed.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "group#10|challengeTime#30|timeline#8",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300517,
+    "path": "Config/World/Graph/Blueprint/ast_playable_speed.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "group#18|challengeTime#60|timeline#7",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300518,
+    "path": "Config/World/Graph/Blueprint/ast_playable_speed.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "group#38|challengeTime#120|timeline#15",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300519,
+    "path": "Config/World/Graph/Blueprint/ast_playable_speed.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "group#12|challengeTime#60|timeline#14",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300520,
+    "path": "Config/World/Graph/Blueprint/ast_playable_speed.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "group#22|challengeTime#60|timeline#9",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300521,
+    "path": "Config/World/Graph/Blueprint/ast_playable_speed.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "group#15|challengeTime#60|timeline#4",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300522,
+    "path": "Config/World/Graph/Blueprint/ast_playable_speed.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "group#18|challengeTime#60|timeline#16",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300523,
+    "path": "Config/World/Graph/Blueprint/ast_playable_speed.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "group#30|challengeTime#90|timeline#17",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300524,
+    "path": "Config/World/Graph/Blueprint/ast_playable_speed.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "group#16|challengeTime#60|timeline#18",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300525,
+    "path": "Config/World/Graph/Blueprint/ast_playable_speed.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "group#29|challengeTime#90|timeline#19",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300526,
+    "path": "Config/World/Graph/Blueprint/ast_playable_speed.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "group#27|challengeTime#90|timeline#20",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300527,
+    "path": "Config/World/Graph/Blueprint/ast_playable_speed.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "group#25|challengeTime#90|timeline#21",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300528,
+    "path": "Config/World/Graph/Blueprint/ast_playable_speed.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "group#29|challengeTime#90",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300529,
+    "path": "Config/World/Graph/Blueprint/ast_playable_speed.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "group#27|challengeTime#90",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300530,
+    "path": "Config/World/Graph/Blueprint/ast_playable_speed.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "group#25|challengeTime#90",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300531,
+    "path": "Config/World/Graph/Blueprint/ast_playable_speed.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "group#29|challengeTime#90",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300600,
+    "path": "Config/World/Graph/Blueprint/ast_playable_kibo_3select1_entrance.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300601,
+    "path": "Config/World/Graph/Blueprint/ast_playable_kibo_3select1.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300602,
+    "path": "Config/World/Graph/Blueprint/ast_playable_kibo_3select1_kibo.asset",
+    "param": "",
+    "stringParam": "kiboName#task_3select1",
+    "intParam": "kiboId#1|storyId#10102301|storyIdOver1#10102401",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300603,
+    "path": "Config/World/Graph/Blueprint/ast_playable_kibo_3select1_kibo.asset",
+    "param": "",
+    "stringParam": "kiboName#task_3select1",
+    "intParam": "kiboId#2|storyId#10102302|storyIdOver1#10102402",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300604,
+    "path": "Config/World/Graph/Blueprint/ast_playable_kibo_3select1_kibo.asset",
+    "param": "",
+    "stringParam": "kiboName#task_3select1",
+    "intParam": "kiboId#3|storyId#10102303|storyIdOver1#10102403",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300605,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_sunya_new.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300606,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_sunya_task.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300607,
+    "path": "Config/World/Graph/Blueprint/ast_playable_fly_travel.asset",
+    "param": "",
+    "stringParam": "btnName#task_flytravel_start",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300608,
+    "path": "Config/World/Graph/Blueprint/ast_playable_fly_travel_circle.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300700,
+    "path": "Config/World/Graph/Blueprint/ast_playable_transform_into_kibo_entrance.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300701,
+    "path": "Config/World/Graph/Blueprint/ast_playable_transform_into_kibo.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300702,
+    "path": "Config/World/Graph/Blueprint/ast_playable_transform_into_kibo_collection.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300703,
+    "path": "Config/World/Graph/Blueprint/ast_playable_transform_into_kibo_camera.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300704,
+    "path": "Config/World/Graph/Blueprint/ast_playable_transform_into_kibo_show.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300705,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_area_new.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300706,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_spkibo_new.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300707,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_normal.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300708,
+    "path": "Config/World/Graph/Blueprint/ast_playable_take_pictures_entrance.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300709,
+    "path": "Config/World/Graph/Blueprint/ast_playable_task_pictures_playble.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "maxCircleIdx#30|maxGoals#30|treasure#31|group#30",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300710,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_organ_01.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300711,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_forestfield_organ_01.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300712,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_forestfield_organ_main.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300713,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_organ_02.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300715,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_earth_pedal_main.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300716,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_rotate_plate.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300717,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_rotate_plate_entrance.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300718,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_pushbox_main.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300719,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_pushbox_box.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300720,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_pushbox_trajectory.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300721,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_pushbox_obstacle.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300722,
+    "path": "Config/World/Graph/Blueprint/ast_task_escort.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300723,
+    "path": "Config/World/Graph/Blueprint/ast_task_escort_npc.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300724,
+    "path": "Config/World/Graph/Blueprint/ast_playable_task_bridge_repair.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300725,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_guard_chest.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300726,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_guard_main.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300729,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_altar_main.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300730,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_altar_master.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300731,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_altar_organ_01.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300732,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_altar_organ_02.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300733,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_altar_organ_03.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300734,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_limit_time_guard_main.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300735,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_limit_time_guard_switch.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300736,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_jenga_base.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300737,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_jenga_main.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300738,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_altar_forestfield.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300740,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_earth_pedal_main_altar.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300741,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_altar_organ_04.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300742,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_pushbox_main_altar.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300743,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_pushbox_box_altar.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300744,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_forestfield_organ_main_altar.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300745,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_forestfield_organ_altar.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300746,
+    "path": "Config/World/Graph/Blueprint/ast_playable_transform_into_kibo_entrance_01.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300747,
+    "path": "Config/World/Graph/Blueprint/ast_playable_transform_into_kibo_01.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300748,
+    "path": "Config/World/Graph/Blueprint/ast_playable_transform_into_kibo_collection_01.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300749,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_windmill_main.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300750,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_windmill_door.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300751,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_windmill_mill.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300752,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_windmill_npc_start.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300753,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_windmill_cage01.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300754,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_windmill_master.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300755,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_windmill_show_trigger.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300756,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_windmill_repaired.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300757,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_pushbox_umi_main.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300758,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_pushbox_umi_box.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300759,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_pushbox_umi_ori.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300760,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_pushbox_umi_des.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300761,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_whack_mole.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300762,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_whack_mole_mole.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300763,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_kibo_dulu_main.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300764,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_kibo_dulu_trigger.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300765,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_kibo_dulu_collection.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300766,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_kibo_dulu_master.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300767,
+    "path": "Config/World/Graph/Blueprint/ast_playable_transform_into_kibo_zone_01.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300768,
+    "path": "Config/World/Graph/Blueprint/ast_playable_transform_into_kibo_entrance_02.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300769,
+    "path": "Config/World/Graph/Blueprint/ast_playable_transform_into_kibo_02.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300770,
+    "path": "Config/World/Graph/Blueprint/ast_playable_transform_into_kibo_trigger_02.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300771,
+    "path": "Config/World/Graph/Blueprint/ast_playable_transform_into_kibo_ruby_02.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300772,
+    "path": "Config/World/Graph/Blueprint/ast_playable_transform_into_kibo_tipsarea_02.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300773,
+    "path": "Config/World/Graph/Blueprint/ast_playable_transform_into_kibo_move_02.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300774,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_fillingcube_main.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300775,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_fillingcube_master.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300776,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_fillingcube_sub.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300777,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_balloon_main.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300778,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_balloon_master.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300779,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_balloon_collection_01.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300780,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_balloon_collection_02.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300781,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_guard_rogue_main.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300782,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_limit_time_guard_rogue_switch.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300783,
+    "path": "Config/World/Graph/Blueprint/ast_playable_transform_into_kibo_entrance_rogue.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300784,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_smallstronghold_chest.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300785,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_smallstronghold_main.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300786,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_smallstronghold_npc.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300787,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_biglstronghold_main.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300788,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_bigstronghold_trigger.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300789,
+    "path": "Config/World/Graph/Blueprint/ast_playable_transform_into_kibo_rogue.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300790,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_saveqibo.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300791,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_stronghold_qibo.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300792,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_stronghold_qibo_multi_treasure.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300800,
+    "path": "Config/World/Graph/Blueprint/ast_playable_bridge_damage.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300801,
+    "path": "Config/World/Graph/Blueprint/ast_playable_bridge_repair.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300802,
+    "path": "Config/World/Graph/Blueprint/ast_playable_elevator_damage.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300803,
+    "path": "Config/World/Graph/Blueprint/ast_playable_elevator_repair.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300810,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_rotate_plate_main.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300811,
+    "path": "Config/World/Graph/Blueprint/ast_playable_flight_chase.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300820,
+    "path": "Config/World/Graph/Blueprint/ast_playable_cool_running.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300900,
+    "path": "Config/World/Graph/Blueprint/ast_playable_hide_and_seek_entrance.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300901,
+    "path": "Config/World/Graph/Blueprint/ast_playable_hide_and_seek.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300902,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_pillar_rune_entrance.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300903,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_guard_scarecrow_main.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300904,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_guard_scarecrow_target.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300905,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_guard_scarecrow_bird.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300906,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_guard_scarecrow_child.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300907,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_guard_scarecrow_child_target.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300908,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_drag_repair_entrance.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300909,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_drag_repair.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300910,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_pillar_rune.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300911,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_windmill_main.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300912,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_taiko.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300913,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_ufo_circle_core.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300914,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_ufo_circle_entrance.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300915,
+    "path": "Config/World/Graph/Blueprint/ast_playable_transform_into_kibo_entrance_03.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300916,
+    "path": "Config/World/Graph/Blueprint/ast_playable_transform_into_kibo_03.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300917,
+    "path": "Config/World/Graph/Blueprint/ast_playable_transform_into_kibo_endpoint_03.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300918,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_chest_qte.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300919,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_qte_line.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300920,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_chest_treasure.asset",
+    "param": "",
+    "stringParam": "MediaPack#pre_world_active_chest_silver",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300921,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_honey_comb_block.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300922,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_honey_comb_block_recover.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300923,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_honey_comb_block_multiple.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300924,
+    "path": "Config/World/Graph/Blueprint/ast_playable_stone_sequence.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300925,
+    "path": "Config/World/Graph/Blueprint/ast_playable_stone_sequence_altar.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 300926,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_Luruka_Dream_fire_wall.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 301701,
+    "path": "Config/World/Graph/Blueprint/ast_playable_transform_into_kibo_entrance_04.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 301704,
+    "path": "Config/World/Graph/Blueprint/ast_playable_transform_into_kibo_camera_01.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 301705,
+    "path": "Config/World/Graph/Blueprint/ast_playable_transform_into_kibo_camera_02.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 301706,
+    "path": "Config/World/Graph/Blueprint/ast_playable_transform_into_kibo_camera_03.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 301707,
+    "path": "Config/World/Graph/Blueprint/ast_playable_transform_into_kibo_camera_04.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 301708,
+    "path": "Config/World/Graph/Blueprint/ast_playable_transform_into_kibo_camera_05.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 301709,
+    "path": "Config/World/Graph/Blueprint/ast_playable_transform_into_kibo_camera_06.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 301710,
+    "path": "Config/World/Graph/Blueprint/ast_playable_transform_into_kibo_camera_07.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 301711,
+    "path": "Config/World/Graph/Blueprint/ast_playable_transform_into_kibo_camera_08.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 301712,
+    "path": "Config/World/Graph/Blueprint/ast_playable_transform_into_kibo_camera_09.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362001,
+    "path": "Config/World/Graph/Blueprint/ast_task_escort.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "1stdialogue#200210|2nddialogue#200211",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362002,
+    "path": "Config/World/Graph/Blueprint/ast_task_escort_npc.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362003,
+    "path": "Config/World/Graph/Blueprint/ast_task_sunya.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362004,
+    "path": "Config/World/Graph/Blueprint/ast_task_trace.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "Fardistance#25|Lostdistance#30|startdialogue#200319|1stalertdialogue#200320|2ndalertdialogue#200320|3rdalertdialogue#200320|founddialogue#200321|toofardialogue#200322",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362005,
+    "path": "Config/World/Graph/Blueprint/ast_task_trace.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "Fardistance#25|Lostdistance#30|startdialogue#200311|alertdialogue#200312|founddialogue#200313|toofardialogue#200314",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362006,
+    "path": "Config/World/Graph/Blueprint/ast_task_sunya2.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362007,
+    "path": "Config/World/Graph/Blueprint/ast_level_common_memory_space_main.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362008,
+    "path": "Config/World/Graph/Blueprint/ast_task_sunya_1_3.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "StoryId1#101083|StoryId2#101084",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362009,
+    "path": "Config/World/Graph/Blueprint/ast_level_common_memory_space_npc.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362010,
+    "path": "Config/World/Graph/Blueprint/ast_task_sunya1.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362011,
+    "path": "Config/World/Graph/Blueprint/ast_task_trace_01.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "Fardistance#25|Lostdistance#30|startdialogue#101214|1stalertdialogue#10121402|2ndalertdialogue#10121403|3rdalertdialogue#10121404|founddialogue#10121405|toofardialogue#10121406|1stcheckpointdialogue#101215|2ndcheckpointdialogue#101216",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362012,
+    "path": "Config/World/Graph/Blueprint/ast_task_212014_memory_main.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362013,
+    "path": "Config/World/Graph/Blueprint/ast_task_212014_memory_npc.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362014,
+    "path": "Config/World/Graph/Blueprint/ast_ast_task_sunya_1_8.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "StoryId1#101359",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362015,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_run_away_little_gal_core.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362016,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_run_away_little_gal_entrance.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362017,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_run_away_little_gal_exit.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362018,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_air_chase_core.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362019,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_air_chase_entrance.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362020,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_air_chase_exit.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362021,
+    "path": "Config/World/Graph/Blueprint/ast_task_Protect_main.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362022,
+    "path": "Config/World/Graph/Blueprint/ast_home_door_opcl.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362023,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_geyser.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362024,
+    "path": "Config/World/Graph/Blueprint/ast_common_puzzle_teleportgate_stone_1.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362025,
+    "path": "Config/World/Graph/Blueprint/ast_common_puzzle_teleportgate_stone_2.asset",
+    "param": "PuzzleAttrs#7|DelayTime#0",
+    "stringParam": "SpawnerId#6020240",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362026,
+    "path": "Config/World/Graph/Blueprint/ast_common_puzzle_teleportgate_stone_3.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362027,
+    "path": "Config/World/Graph/Blueprint/ast_task_trace.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "Fardistance#25|Lostdistance#35|startdialogue#200319|alertdialogue#200320|founddialogue#200321|toofardialogue#200322",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362028,
+    "path": "Config/World/Graph/Blueprint/ast_playable_speed.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "group#27|challengeTime#300|timeline#12",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362029,
+    "path": "Config/World/Graph/Blueprint/ast_common_treasure_chest_rogue_playable.asset",
+    "param": "",
+    "stringParam": "MediaPack#pre_world_active_chest_gold|btnName#puzzle_interact_24",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362030,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_memory_flip_entrance.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362031,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_memory_flip_main.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362032,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_memory_flip_base.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362033,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_bird_01.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362034,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_bird_02.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362035,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_bird_03.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362036,
+    "path": "Config/World/Graph/Blueprint/ast_task_trace.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "Fardistance#25|Lostdistance#30|startdialogue#805705|1stalertdialogue#805706|2ndalertdialogue#805706|3rdalertdialogue#805706|founddialogue#805707|toofardialogue#805708",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362037,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_count_sheep_entrance.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362038,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_count_sheep_main.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362039,
+    "path": "Config/World/Graph/Blueprint/ast_kiboduel/kiboduel_arena.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362040,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_chest_double_02.asset",
+    "param": "puzzleAttrs#3",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362041,
+    "path": "Config/World/Graph/Blueprint/ast_playable_pictures_point_entrance.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 1024,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362042,
+    "path": "Config/World/Graph/Blueprint/ast_playable_pictures_point_playble.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "maxCircleIdx#30|maxGoals#30|treasure#31|group#30",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362043,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_elemental_bird.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362044,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_chest_puzzleuse.asset",
+    "param": "puzzleAttrs#3|DelayTime#0",
+    "stringParam": "SpawnerId#6020240",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362045,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_blowleaf_01.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362046,
+    "path": "Config/World/Graph/Blueprint/ast_playable_blowleaf_01_main.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362047,
+    "path": "Config/World/Graph/Blueprint/ast_playable_blowleaf_02_main.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362048,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_blowleaf_02.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362049,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_farm_onetouch.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362050,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_jade_restore_main.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362051,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_shattered_platform_main.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362052,
+    "path": "Config/World/Graph/Blueprint/ast_playable_speed.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "group#17|challengeTime#999|timeline#12",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362053,
+    "path": "Config/World/Graph/Blueprint/ast_common_puzzle_teleportgate_stone_main.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362054,
+    "path": "Config/World/Graph/Blueprint/ast_common_puzzle_teleportgate_stone_gate.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362055,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_pushbox_new_main.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 362056,
+    "path": "Config/World/Graph/Blueprint/ast_playable_transform_into_kibo_main.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 363001,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_sunset_tower_imaging.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 363002,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_sunset_tower_turntable_controller.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 363003,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_sunset_tower_scape.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 363011,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_karmana_base_vine.asset",
+    "param": "puzzleAttrs#1|DelayTime#0",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 363012,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_karmana_base_rain_water_column.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 363013,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_karmana_base_stone_bridge.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 363014,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_karmana_base_underground_river_process.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 363015,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_karmana_base_ruin_open_process.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 363016,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_karmana_base_three_in_one_repair_process.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 363017,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_karmana_base_up_elevator_process.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 363018,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_karmana_base_energy_center_process.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 363019,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_karmana_base_escape_process.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 363031,
+    "path": "Config/World/Graph/Blueprint/ast_playable_rotate_light_test.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 363032,
+    "path": "Config/World/Graph/Blueprint/ast_task_106023_goto_square.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 363041,
+    "path": "Config/World/Graph/Blueprint/ast_playable_rotate_ring_test.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 363050,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_area.asset",
+    "param": "puzzleAttrs#4|waitTime#0.7|DelayTime#0.3",
+    "stringParam": "SpawnerId#8001300|words#puzzle_wood_bud",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 12,
+    "paramTemplate": 0
+  },
+  {
+    "id": 363051,
+    "path": "Config/World/Graph/Blueprint/ast_level_kibo_translate_mushroom_jump.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 363052,
+    "path": "Config/World/Graph/Blueprint/ast_task_treasure_chest.asset",
+    "param": "",
+    "stringParam": "MediaPack#pre_world_active_chest_iron",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 64,
+    "paramTemplate": 0
+  },
+  {
+    "id": 363053,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_chest_double_02.asset",
+    "param": "puzzleAttrs#2",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 363054,
+    "path": "Config/World/Graph/Blueprint/ast_playable_transform_into_kibo_v2.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 363060,
+    "path": "Config/World/Graph/Blueprint/ast_level_pet_puzzle_chest_ground.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 400001,
+    "path": "Config/World/Graph/Blueprint/ast_abyss/abyss_dungeon.asset",
+    "param": "",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  },
+  {
+    "id": 503011,
+    "path": "Config/World/Graph/Blueprint/ast_level_puzzle_karmana_base_vine_event.asset",
+    "param": "puzzleAttrs#1|DelayTime#0",
+    "stringParam": "",
+    "intParam": "",
+    "boolParam": "",
+    "collisionType": 0,
+    "paramTemplate": 0
+  }
+]

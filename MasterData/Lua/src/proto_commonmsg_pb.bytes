@@ -1,0 +1,1639 @@
+
+÷†
+CommonMsg.protocsExOptions.proto"k
+GameServerAddr
+	server_id (RserverId
+	server_ip (	RserverIp
+server_port (R
+serverPort"
+Uint32
+u32 (Ru32"
+StrMsg
+str (Rstr"<
+CommonNotice
+proto (Rproto
+notice (Rnotice"Z
+
+CommonTime
+	time_zone (RtimeZone
+time (Rtime
+	time_usec (RtimeUsec"%
+TeenInfo
+end_time (RendTime"}
+PlayerExtraPubInfo+
+achievement_point (RachievementPoint
+
+hero_count (R	heroCount
+	pet_count (RpetCount"ã
+PlayerBasicInfo
+id (Rid
+zone_id (RzoneId
+name (Rname
+sex (Rsex
+birth (Rbirth
+lv (Rlv
+	offlinetm (R	offlinetm
+onlinetm (Ronlinetm
+is_busy	 (RisBusy,
+wardrobe
+ (2.cs.WardrobeInfoRwardrobe
+sign (Rsign
+account (Raccount
+regtm (Rregtm
+gold (Rgold
+diamond (Rdiamond
+exp (Rexp
+home_lv (RhomeLv&
+info (2.cs.SimpleShowInfoRinfo4
+detail_info (2.cs.ComplexShowInfoR
+detailInfo1
+	lend_info (2.cs.PetlendBasicInfoRlendInfo
+language (Rlanguage
+lock_system (R
+lockSystem#
+preffix_title (RpreffixTitle!
+suffix_title (RsuffixTitle#
+little_avatar (RlittleAvatar1
+last_change_name_time (RlastChangeNameTime2
+birthday (2.cs.PlayerBirthdayInfoRbirthday
+
+world_time (R	worldTime6
+stand_plates (2.cs.StandPlatesInfoRstandPlates:
+hero_gift_info (2.cs.HeroSendGiftInfoRheroGiftInfo
+
+is_created (R	isCreated8
+scene_showcase  (2.cs.SceneShowcaseRsceneShowcase
+
+skip_guide! (R	skipGuide2
+apparel_info" (2.cs.ApparelInfoRapparelInfo
+	show_case# (RshowCase 
+show_case_id$ (R
+showCaseId
+team_id% (RteamId
+map_id& (RmapId
+	nest_star' (RnestStar*
+nest_guide_finish( (RnestGuideFinish2
+clothes_info) (2.cs.ClothesInfoRclothesInfo<
+last_sex_wardrobe* (2.cs.WardrobeInfoRlastSexWardrobeA
+dungeon_unlock_list+ (2.cs.DungeonUnlockRdungeonUnlockList
+skin_id, (RskinId"x
+DungeonUnlock#
+campaign_type (RcampaignType*
+dungeon_system_id (RdungeonSystemId
+unlock (Runlock"ä
+SpecialPetGuarantee'
+special_type (B¿RspecialType%
+guarantee_time (RguaranteeTime#
+guarantee_day (RguaranteeDay"]
+SpecialRefreshTime
+map_id (B¿RmapId*
+next_refresh_time (RnextRefreshTime"#
+CardDressListInfo
+id (Rid"D
+StandPlatesBagInfo
+config (B¿Rconfig
+url (	Rurl"l
+SceneShowcase
+id (B¿Rid
+name (	Rname
+Cover (	RCover
+	show_data (	RshowData"∆
+StandPlatesInfo
+	backboard (R	backboard
+	baseboard (R	baseboard#
+pet_accessory (RpetAccessory*
+role (2.cs.StandPlatesBagInfoRrole+
+achievement_point (RachievementPoint
+
+hero_count (R	heroCount
+	pet_count (RpetCount
+profile (Rprofile#
+profile_frame	 (RprofileFrame"°
+PlayerQueryReq
+types (Rtypes
+
+player_ids (R	playerIds
+qtype (RqtypeD
+dungeon_query_list (2.cs.QueryDungeonUnlockRdungeonQueryList"e
+QueryDungeonUnlock#
+campaign_type (RcampaignType*
+dungeon_system_id (RdungeonSystemId"J
+PlayerBasicInfos6
+player_infos (2.cs.PlayerBasicInfoRplayerInfos"9
+AllHomeBasicInfo%
+home (2.cs.HomeBasicInfoRhome"3
+HomeBasicInfo
+home (Rhome
+id (Rid"Z
+PetlendBasicInfo 
+can_lend_num (R
+canLendNum$
+last_lend_time (RlastLendTime"v
+PetRentInfo
+	rent_nums (RrentNums$
+today_rent_num (RtodayRentNum$
+last_rent_time (RlastRentTime"∏
+Comprehension
+attr_id (RattrId
+value (Rvalue
+level (Rlevel
+cur_exp (RcurExp
+
+init_level (R	initLevel$
+
+feed_fruit (:falseR	feedFruit:Ä≤"<
+PlayerBirthdayInfo
+month (Rmonth
+day (Rday"á
+SimpleShowInfo 
+achievement (Rachievement*
+hero (2.cs.SimpleHeroShowInfoRhero'
+pet (2.cs.SimplePetShowInfoRpet"Ü
+SimpleHeroShowInfo
+id (Rid
+config (Rconfig
+lv (Rlv
+pos (Rpos
+star (Rstar
+skin (Rskin"˜
+SimplePetShowInfo
+guid (Rguid
+id (Rid
+rank (Rrank
+lv (Rlv
+special (Rspecial
+color (Rcolor
+grade (Rgrade
+pos (Rpos
+colorful	 (Rcolorful&
+soul_link_level
+ (RsoulLinkLevel"Ñ
+BorrowPetInfo
+name (Rname
+
+avatar_url (R	avatarUrl.
+	show_pets (2.cs.PetSimpleInfoRshowPets
+pid (Rpid"L
+PlayerborrowPetInfos4
+borrow_infos (2.cs.BorrowPetInfoRborrowInfos"á
+AttrInfo
+attr_id (B¿RattrId
+attr_val (RattrVal
+deadtime (Rdeadtime
+extra_limit (R
+extraLimit:Ä≤"U
+ActivityAttrInfo
+event_id (B¿ReventId 
+attr (2.cs.AttrInfoRattr"g
+PlayerAttrInfo"
+attrs (2.cs.AttrInfoRattrs1
+	act_attrs (2.cs.ActivityAttrInfoRactAttrs"A
+HeroSkillInfos)
+skills (2.cs.HeroSkillInfoRskills:Ä≤"Q
+HeroSkillInfo
+skill_id (RskillId
+skill_level (R
+skillLevel:Ä≤"H
+furnitureInfo!
+furniture_id (RfurnitureId
+state (Rstate"H
+HeroSkin
+hero_id (B¿RheroId
+skin_id (RskinId:Ä≤"…
+HeroItemInfo
+guid (B¿Rguid
+hero_lv (RheroLv
+hero_exp (RheroExp
+	hero_rank (RheroRank
+wguid (Rwguid.
+system_skill_levels (RsystemSkillLevels
+	hero_star (RheroStar
+oguid	 (Roguid
+waguid
+ (Rwaguid
+pet_id (RpetId)
+favorability_exp (RfavorabilityExp'
+favorability_lv (RfavorabilityLv
+trail (Rtrail
+conf_id (RconfId.
+store_favor_rewards (RstoreFavorRewards
+rune_ids (RruneIds
+type (Rtype
+	trial_pet (RtrialPet(
+hero_rank_reward (RheroRankReward
+
+furnitures (R
+furnitures4
+fight_favorability_exp (RfightFavorabilityExp
+dorm_id (RdormId$
+daily_gift_num (RdailyGiftNum
+
+hero_grade (R	heroGrade
+	hero_skin (RheroSkin&
+char_kibo_state (RcharKiboState:Ä≤"h
+MountItemInfo
+conf_id (RconfId!
+mount_status (RmountStatus
+	mount_uid (RmountUid"=
+WearInfo
+pos (Rpos
+weapon_guid (R
+weaponGuid"C
+PGSkillInfo
+skill_id (RskillId
+skill_lv (RskillLv"9
+	PGProInfo
+pro_id (RproId
+pro_lv (RproLv"U
+	PGArmInfo
+pos (Rpos
+arm_lv (RarmLv
+weapon_guid (R
+weaponGuid":
+Position
+x (Rx
+y (Ry
+z (Rz:Ä≤"<
+
+Position3f
+x (Rx
+y (Ry
+z (Rz:Ä≤"N
+FightAttrOne
+attr_id (B¿RattrId
+attr_val (RattrVal:Ä≤"9
+	FightAttr&
+attrs (2.cs.FightAttrOneRattrs:Ä≤"B
+	ColorPair
+index (Rindex
+color_id (RcolorId:Ä≤"õ
+PartInfo
+type (Rtype
+id (Rid%
+colors (2.cs.ColorPairRcolors,
+color_formular_ids (RcolorFormularIds
+stocks (Rstocks"L
+
+AvatarPair
+avatar_type (	R
+avatarType
+
+avatar_url (	R	avatarUrl"¿
+WardrobeInfo"
+parts (2.cs.PartInfoRparts
+sex (Rsex
+height (Rheight(
+avatars (2.cs.AvatarPairRavatars
+
+complexion (R
+complexion
+present (Rpresent".
+ApparelInfo
+apparel_ids (R
+apparelIds"1
+ClothesInfo"
+parts (2.cs.PartInfoRparts"Ë
+MoveInfo
+pos (2.cs.PositionRpos
+move_status (R
+moveStatus
+angle (Rangle
+area_id (RareaId
+dir_x (RdirX
+dir_y (RdirY
+	is_ground (RisGround(
+velocity (2.cs.PositionRvelocity
+	timestamp	 (R	timestamp
+dir_z
+ (RdirZ
+pitch (Rpitch
+axis_x (RaxisX
+axis_y (RaxisY:Ä≤"F
+MoveItem 
+info (2.cs.MoveInfoRinfo
+uuid (Ruuid:Ä≤"H
+MoveMsg 
+move (2.cs.MoveItemRmove
+map_id (RmapId:Ä≤"Œ
+
+DetailInfo
+eid (Reid
+px (Rpx
+py (Rpy
+angle (Rangle
+maxa (Rmaxa
+maxb (Rmaxb
+mina (Rmina
+minb (Rminb
+type	 (Rtype
+scale
+ (Rscale"#
+ZonePlayerIDs
+pids (Rpids"⁄
+PlayerSimpleInfo
+id (Rid
+zone_id (RzoneId
+name (Rname
+lv (Rlv
+	offlinetm (R	offlinetm
+onlinetm (Ronlinetm
+is_busy (RisBusy
+head (Rhead
+sign	 (Rsign"a
+PlayerMiniInfo
+id (Rid
+zone_id (RzoneId
+name (Rname
+head (Rhead"V
+CommonPlayerSimpleInfo
+type (Rtype(
+info (2.cs.PlayerSimpleInfoRinfo"R
+CommonPlayerMiniInfo
+type (Rtype&
+info (2.cs.PlayerMiniInfoRinfo"N
+
+ExtContext
+arg1 (Rarg1
+arg2 (Rarg2
+arg3 (Rarg3:Ä≤"ˆ
+
+CommonItem
+itemid (Ritemid
+itemnum (Ritemnum
+deadtime (Rdeadtime
+exts (Rexts
+itemtype (Ritemtype*
+varitems (2.cs.CommonItemRvaritems
+guid (B¿Rguid/
+ext_context (2.cs.ExtContextR
+extContext!
+more_itemnum	 (RmoreItemnum
+	sort_arg1
+ (RsortArg1
+	sort_arg2 (RsortArg2
+src (Rsrc:Ä≤"∑
+PreCostItem
+id (Rid
+num (Rnum
+reason (Rreason,
+expire_revert_time (RexpireRevertTime
+inc_key (B¿RincKey
+	is_revert (RisRevert:Ä≤"U
+	ExtraInfo
+attr_id (RattrId
+val (Rval
+str_val (	RstrVal:Ä≤"Ö
+SoulEssence
+guid (B¿Rguid
+id (Rid
+lv (Rlv
+	wear_hero (RwearHero
+advance (Radvance
+exp (Rexp
+lock	 (Rlock
+rank
+ (Rrank
+nums (Rnums
+zombie (Rzombie
+get_time (RgetTime:Ä≤">
+SoulEssenceAddLvCost
+id (Rid
+num (Rnum:Ä≤"f
+OrnamentSecondAttr
+type (Rtype
+key (Rkey
+val (Rval
+sort (Rsort:Ä≤"g
+RewardItemInfo
+	item_type (RitemType
+item_id (RitemId
+item_num (RitemNum:Ä≤"O
+OrnamentAffixInfo
+type (Rtype
+id (Rid
+val (Rval:Ä≤"ô
+Ornament
+guid (B¿Rguid
+id (Rid
+lv (Rlv,
+infos (2.cs.OrnamentSecondAttrRinfos
+	wear_hero (RwearHero
+lock (Rlock
+group	 (Rgroup
+del
+ (Rdel2
+
+decomposes (2.cs.RewardItemInfoR
+decomposes
+score (Rscore/
+affixes (2.cs.OrnamentAffixInfoRaffixes
+	ele_group (ReleGroup
+grade (Rgrade
+quality (Rquality:Ä≤"R
+OrnamentPlan
+id (B¿Rid
+name (Rname
+guid (Rguid:Ä≤"2
+Ops
+proto_id (RprotoId
+msg (Rmsg"7
+PlayerOp
+pid (Rpid
+ops (2.cs.OpsRops"@
+
+TurnOpInfo
+turn (Rturn
+ops (2.cs.PlayerOpRops"c
+Rewards(
+rewards (2.cs.CommonItemRrewards
+src (Rsrc
+seq (B» Rseq:Ä≤"h
+ExpireChange1
+expire_items (2.cs.CommonItemRexpireItems%
+rewards (2.cs.RewardsRrewards"K
+PlayerFeverItemBase
+itemid (Ritemid
+	weargroup (R	weargroup"%
+	Condition
+args (Rargs:Ä≤"ª
+MailInfo
+createtm (Rcreatetm
+	sender_id (RsenderId
+template_id (R
+templateId!
+args (2.cs.ExtraInfoRargs
+title (Rtitle
+content (Rcontent#
+reward (2.cs.RewardsRreward#
+limit	 (2.cs.ConditionRlimit
+guid
+ (B¿Rguid
+fetch (Rfetch
+effecttm (Reffecttm
+read (Rread
+collect (Rcollect
+is_auto (RisAuto%
+condition_type (RconditionType
+
+black_pids (R	blackPids
+type (Rtype
+open (Ropen
+status (Rstatus
+	is_global (RisGlobal
+	is_unique (RisUnique
+	is_delete (RisDelete#
+delete_reason (RdeleteReason
+	global_id (RglobalId
+gm_id (RgmId*
+effect_start_time (ReffectStartTime&
+effect_end_time (ReffectEndTime
+is_mall (RisMall:Ä≤"H
+
+GlobalMail
+guid (B¿Rguid 
+mail (2.cs.MailInfoRmail"C
+SvrSendMail
+mail_id (RmailId
+	is_unique (RisUnique"I
+RankingInfo
+pid (Rpid
+score (Rscore
+rank (Rrank"U
+SvrListInfo
+id (Rid
+ip (Rip
+port (Rport
+desc (Rdesc"a
+MedalInfoBase
+kindid (Rkindid
+val (Rval
+rank (Rrank
+time (Rtime"Q
+PgMedalInfoBases
+pgid (Rpgid)
+infos	 (2.cs.PgMedalInfoBaseRinfos"c
+PgMedalInfoBase
+kindid (Rkindid
+val (Rval
+rank (Rrank
+time (Rtime"5
+	WearMedal
+pos (Rpos
+kindid (Rkindid"1
+
+WearMedals#
+infos (2.cs.WearMedalRinfos"ü
+HomeDecoration
+guid (Rguid
+item_id (RitemId
+px (Rpx
+py (Rpy
+pz (Rpz
+rotation (Rrotation
+fguid (Rfguid">
+HomeBuff
+buff_id (RbuffId
+buff_val (RbuffVal"~
+PlayerHomeInfoBase
+blocking_id (R
+blockingId(
+infos (2.cs.HomeDecorationRinfos
+
+del_dinfos (R	delDinfos"|
+HomeFloorInfo
+id (Rid
+
+scene_type (R	sceneType,
+infos (2.cs.PlayerHomeInfoBaseRinfos
+lv (Rlv"L
+HomeBlockingId
+floor_id (RfloorId
+blocking_id (R
+blockingId"4
+ItemPosition
+px (Rpx
+py (Rpy:Ä≤"}
+	MainBuild
+home (B¿Rhome
+id (Rid!
+upgrade_time (RupgradeTime
+
+need_dirty (R	needDirty:Ä≤"±
+	BuildBase
+guid (B¿Rguid
+id (Rid
+home_id (RhomeId!
+upgrade_time (RupgradeTime
+put_time (RputTime
+
+need_dirty (R	needDirty:Ä≤".
+ProsperityReward
+lv (B¿Rlv:Ä≤"N
+	GuideBase
+id (Rid
+sub_id (RsubId
+complete (Rcomplete"¨
+
+OfflineMsg
+	sender_id (RsenderId
+szone_id (RszoneId
+msg (Rmsg
+proto_id (RprotoId
+inner_op_id (R	innerOpId
+tzone_id (RtzoneId"=
+	PlayerBan
+zoneid (Rzoneid
+bantime (Rbantime"1
+
+PlayerBans#
+infos (2.cs.PlayerBanRinfos"Ì
+	OrderInfo
+cp_trade_no (R	cpTradeNo
+	player_id (RplayerId
+	total_fee (RtotalFee#
+currency_type (RcurrencyType
+
+product_id (R	productId
+create_time (R
+createTime
+
+trade_time (R	tradeTime"
+is_test_order (RisTestOrder!
+channel_type	 (RchannelType(
+channel_trade_no
+ (RchannelTradeNo
+channel (Rchannel
+diamonds (Rdiamonds%
+final_diamonds (RfinalDiamonds
+	is_double (RisDouble
+slot_id (RslotId"6
+PlayerActivity
+id (Rid
+param (Rparam"™
+ActivityList
+id (Rid
+
+begin_time (R	beginTime
+end_time (RendTime
+type_id (RtypeId
+
+type_param (R	typeParam
+content (Rcontent"S
+	TitleList#
+preffix_title (RpreffixTitle!
+suffix_title (RsuffixTitle"f
+	QuestInfo
+
+quest_vals (R	questVals
+quest_id (RquestId
+is_rewarded (R
+isRewarded"â
+QuestGroupInfo
+group_id (B¿RgroupId
+	is_finish (RisFinish
+step (Rstep%
+quests (2.cs.QuestInfoRquests"=
+QuestGroupInfos*
+groups (2.cs.QuestGroupInfoRgroups"g
+ProductRecord
+id (Rid
+time (Rtime
+count (Rcount
+unlock (Runlock:Ä≤"|
+ProductOrder
+id (Rid
+count (Rcount
+
+start_time (R	startTime!
+finish_count (RfinishCount:Ä≤"X
+ProductQueue
+type (Rtype.
+orders (2.cs.ProductOrderB» Rorders:Ä≤"j
+ProductInfo(
+queues (2.cs.ProductQueueRqueues+
+records (2.cs.ProductRecordRrecords:Ä≤"B
+BuffRandomInfo
+seed (Rseed
+random (Rrandom:Ä≤"Î
+AttributeEntry
+key (Rkey
+	i32_value (Ri32Value
+	i64_value (Ri64Value
+	f32_value (Rf32Value
+	f64_value (Rf64Value
+	str_value (	RstrValue
+
+bool_value (R	boolValue!
+binary_value (RbinaryValue
+ui32_values	 (R
+ui32Values
+ui64_values
+ (R
+ui64Values
+bool_values (R
+boolValues!
+float_values (RfloatValues&
+ui64_dic_values (Rui64DicValues
+si32_values (R
+si32Values
+si64_values (R
+si64Values:Ä≤"^
+BIHero
+guid (Rguid
+hero_id (RheroId
+lv (Rlv
+skin_id (RskinId"ü
+GroupCharge 
+lastdaytime (Rlastdaytime
+reduce_time (R
+reduceTime
+ban_time (RbanTime
+add_hp (RaddHp
+	cur_value (RcurValue"Q
+ChargeHp
+cur_hp (RcurHp
+add_hp (RaddHp
+hero_id (RheroId"D
+GroupHeroPos
+hero_id (RheroId
+pet_id (RpetId:Ä≤"≥
+Group
+id (Rid,
+heros (2.cs.GroupHeroPosB» Rheros
+
+group_name (R	groupName
+control (Rcontrol-
+pet_duel_group_info (RpetDuelGroupInfo:Ä≤"Æ
+GroupManager!
+groups (2	.cs.GroupRgroups
+	cur_group (RcurGroup
+type (Rtype
+
+last_group (R	lastGroup+
+src (2.cs.GroupManagerChangeSrcRsrc"-
+PlayerFaceInfo
+	face_data (RfaceData"Ì
+Achievement
+id (B¿Rid%
+achievement_id (RachievementId
+count (Rcount
+	is_reward (RisReward
+finish_time (R
+finishTime
+
+sub_ach_id (RsubAchId)
+sub_ach_fini_time (RsubAchFiniTime:Ä≤"4
+ConditionRecord!
+condition_id (RconditionId"K
+AchievementGroup
+id (B¿Rid
+	is_reward (RisReward:Ä≤"B
+AchievementMedalLvTime
+level (Rlevel
+time (Rtime"Ü
+AchievementMedal
+id (B¿Rid
+	cur_level (RcurLevel9
+
+level_time (2.cs.AchievementMedalLvTimeR	levelTime:Ä≤"B
+CharDataInfo
+data_id (RdataId
+data_val (RdataVal"7
+CharDataInfos&
+infos (2.cs.CharDataInfoRinfos"\
+HeroCharDataInfos
+hero_id (RheroId.
+	char_data (2.cs.CharDataInfosRcharData"l
+
+FriendData
+id (B¿Rid
+remark (Rremark
+time (Rtime
+status (Rstatus:Ä≤"E
+SvrFriendOp
+id (Rid
+opid (Ropid
+time (Rtime"à
+FriendId
+id (Rid
+remark (Rremark
+time (Rtime
+	is_shield (RisShield
+
+tar_shield (R	tarShield:Ä≤"3
+OtherId
+id (Rid
+time (Rtime:Ä≤"ú
+FriendAllId!
+apply (2.cs.OtherIdRapply
+ban (2.cs.OtherIdRban#
+recent (2.cs.OtherIdRrecent&
+friends (2.cs.FriendIdRfriends"k
+
+FriendChat
+id (B¿Rid"
+chats (2.cs.ChatInfoRchats
+
+read_order
+ (R	readOrder:Ä≤"Ç
+ChatInfo
+msg (Rmsg
+time (Rtime
+type (Rtype
+	player_id (RplayerId
+order (Rorder2
+
+basic_info (2.cs.PlayerBasicInfoR	basicInfo
+
+extra_info (R	extraInfo
+bubbleId (RbubbleId
+language	 (Rlanguage"â
+GeneSkillInfo
+gene_id (RgeneId
+gene_lv (RgeneLv
+is_ur (RisUr
+pos (Rpos
+list_pos (RlistPos:Ä≤"[
+GeneList0
+
+gene_infos (2.cs.GeneSkillInfoR	geneInfos
+is_lock (RisLock:Ä≤"+
+LendSuccInfo
+	lend_time (RlendTime"P
+BattleFormation
+id (Rid
+level (Rlevel
+item_id (RitemId"{
+PlayerActiveTaskInfo
+task_id (B¿RtaskId
+
+task_value (R	taskValue
+task_status (R
+taskStatus:Ä≤"v
+FishGuarantee
+	fail_time (RfailTime
+
+fail_count (R	failCount#
+success_count (RsuccessCount:Ä≤"™
+FishHandbook
+item_id (B¿RitemId
+
+min_weight (R	minWeight
+
+max_weight (R	maxWeight#
+history_count (RhistoryCount
+read (Rread:Ä≤"s
+FishEventHandbook
+event_id (B¿ReventId#
+history_count (RhistoryCount
+read (Rread:Ä≤"Ø
+ActiveGroupInfo7
+
+task_infos (2.cs.PlayerActiveTaskInfoR	taskInfos
+
+reward_ids (R	rewardIds!
+active_value (RactiveValue
+	task_type (RtaskType:Ä≤"H
+PlayerActiveInfo4
+group_infos (2.cs.ActiveGroupInfoR
+groupInfos"h
+FishPond
+pond_id (B¿RpondId
+count (Rcount!
+refresh_time (RrefreshTime:Ä≤"„
+SwitchSvrInfo
+map_id (RmapId
+
+creator_id (R	creatorId
+posX (RposX
+posY (RposY
+posZ (RposZ
+angle (Rangle
+seqNo (RseqNo
+area_id	 (RareaId
+	area_line
+ (RareaLine"W
+NewGeneInfo
+pos (Rpos
+gene_id (RgeneId
+gene_lv (RgeneLv:Ä≤"	
+PetAttr"‚
+PetSimpleInfo
+pet_name (RpetName
+	config_id (RconfigId
+lv (Rlv3
+comprehension (2.cs.FightAttrRcomprehension
+rank (Rrank
+guid (Rguid.
+
+gene_infos (2.cs.NewGeneInfoR	geneInfos
+
+gene_state	 (R	geneState
+ur_pos
+ (RurPos
+feature (Rfeature&
+soul_link_level (RsoulLinkLevel:Ä≤"i
+PetBIBaseInfo
+guid (Rguid
+	config_id (RconfigId
+lv (Rlv
+skin_id (RskinId"A
+ComplexShowInfo.
+	show_pets (2.cs.PetSimpleInfoRshowPets""
+
+StoryInfos
+infos (Rinfos"L
+
+SimpleItem
+item_id (B¿RitemId
+item_num (RitemNum:Ä≤"g
+TypeItem
+item_id (B¿RitemId
+item_num (RitemNum
+	item_type (RitemType:Ä≤"q
+Tower
+tower_id (RtowerId
+
+tower_time (R	towerTime.
+first_reward_record (RfirstRewardRecord"x
+
+TowerScore
+	cur_score (RcurScore
+
+score_time (R	scoreTime.
+score_reward_record (RscoreRewardRecord"Î
+PamiMailLetterText
+text_id (B¿RtextId
+record (Rrecord
+	timestamp (R	timestamp
+reward (Rreward
+is_read (RisRead!
+args (2.cs.ExtraInfoRargs&
+replytimestamp (Rreplytimestamp:Ä≤"A
+PlayerRedPointBase
+id (B¿Rid
+sub_id (RsubId"ç
+PlayerOnlineDataGetRsp
+pid (Rpid
+gsid (Rgsid
+isOnline (RisOnline
+zoneId (RzoneId
+ban_time (RbanTime"}
+PetSkillInfo
+skill_id (RskillId
+skill_lv (RskillLv
+
+skill_slot (R	skillSlot
+type (Rtype:Ä≤"X
+
+NoticeMeta
+title (	Rtitle
+content (	Rcontent
+language (	Rlanguage"p
+PaomaLightNotice"
+meta (2.cs.NoticeMetaRmeta
+
+begin_time (R	beginTime
+end_time (RendTime"¶
+AnnounceNotice"
+meta (2.cs.NoticeMetaRmeta!
+publish_time (RpublishTime
+order_id (RorderId
+tab_id (RtabId
+end_time (RendTime
+id (Rid
+type (Rtype
+jump_id (	RjumpId
+hide	 (Rhide"
+showPosition
+ (RshowPosition
+device_type (R
+deviceType
+priority (Rpriority4
+showPositionScrolling (RshowPositionScrolling
+channel (	Rchannel"Ø
+AnnounceNoticeScrolling"
+meta (2.cs.NoticeMetaRmeta!
+publish_time (RpublishTime
+order_id (RorderId
+tab_id (RtabId
+end_time (RendTime
+id (Rid
+type (Rtype
+jump_id (	RjumpId
+hide	 (Rhide"
+showPosition
+ (RshowPosition
+device_type (R
+deviceType
+priority (Rpriority4
+showPositionScrolling (RshowPositionScrolling
+channel (	Rchannel"b
+GameSystemInfo
+sysId (B¿RsysId
+status (Rstatus
+reason (	Rreason:Ä≤"Ñ
+
+PetEatInfo
+pet_guid (RpetGuid
+	last_time (RlastTime
+food_id (RfoodId
+finish_time (R
+finishTime:Ä≤"~
+UnitSkillInfo
+skill_id (RskillId
+skill_lv (RskillLv
+
+skill_slot (R	skillSlot
+type (Rtype:Ä≤";
+FightSkillInfo)
+skills (2.cs.UnitSkillInfoRskills"e
+PhotoGraphTempletInfo
+id (B¿Rid
+name (	Rname
+url (Rurl
+arg (	Rarg"%
+ChatEmojiInfo
+id (B¿Rid"A
+AllRouletteInfo.
+	roulettes (2.cs.RouletteInfoR	roulettes"N
+RouletteInfo
+type (B¿Rtype
+guid (Rguid
+pos (Rpos"u
+NoviceTaskInfo
+task_id (B¿RtaskId
+
+task_value (R	taskValue
+task_status (R
+taskStatus:Ä≤"Ç
+NoviceTaskGroupInfo
+group_id (B¿RgroupId(
+tasks (2.cs.NoviceTaskInfoRtasks
+finished (Rfinished:Ä≤"í
+RechargeOrderInfo(
+game_order_no (	B¿RgameOrderNo
+
+product_id (	R	productId
+amount (Ramount
+status (Rstatus:Ä≤"q
+CollectToolItem
+guid (B¿Rguid
+id (Rid
+	endurance (R	endurance
+select (Rselect"
+NullProtoMsg"3
+CSProtoChangeNameOpenRsp
+is_open (RisOpen"
+SCGMSystemCloseInfo"3
+AllSnackBagInfo 
+bags (2.cs.SnackBagRbags"[
+SnackBag
+type (B¿Rtype#
+items (2.cs.SnackSlotRitems
+num (Rnum"?
+	SnackSlot
+item_id (RitemId
+item_num (RitemNum"ù
+SCSnackBagCostNotify
+bag_type (RbagType
+satiety_val (R
+satietyVal,
+
+cost_items (2.cs.SnackSlotR	costItems
+	target_id (RtargetId"K
+AceData
+data (Rdata,
+game_client_enable (RgameClientEnable"x
+AceAccountInfo
+open_id (	RopenId
+plat_id (RplatId
+game_id (RgameId
+	player_id (RplayerId"Y
+AceAntiData15
+account_info (2.cs.AceAccountInfoRaccountInfo
+data (Rdata"Y
+AceAntiData25
+account_info (2.cs.AceAccountInfoRaccountInfo
+data (Rdata"Y
+AceAntiData45
+account_info (2.cs.AceAccountInfoRaccountInfo
+data (Rdata"^
+AceAntiData4Result
+open_id (	RopenId
+	player_id (RplayerId
+data (Rdata"[
+AceLightFeature
+open_id (	RopenId
+	player_id (RplayerId
+data (Rdata"-
+ReqAceAntiData
+	data_type (RdataType"A
+SpawnerInteractInfo
+id (B¿Rid
+count (Rcount"J
+HeroSendGiftInfo
+gift_num (RgiftNum
+	last_time (RlastTime"P
+ReadHandbookInfo
+book_id (B¿RbookId
+
+book_state (R	bookState"a
+SCReadHandbookInfoSync*
+infos (2.cs.ReadHandbookInfoRinfos
+	send_type (RsendType"E
+ReadHandbookGet
+book_id (RbookId
+get_type (RgetType")
+ReadHandbookId
+book_id (RbookId"c
+HomeGlobalBonusInfo
+type (B¿Rtype
+level (Rlevel
+	timestamp (R	timestamp".
+CSHomeGlobalBonusUpgrade
+type (Rtype"c
+SCHomeGlobalBonusInfo-
+infos (2.cs.HomeGlobalBonusInfoRinfos
+	send_type (RsendType"E
+MedicineInfo
+type (B¿Rtype
+	cd_expire (RcdExpire"Y
+SCMedicineInfoSync&
+infos (2.cs.MedicineInfoRinfos
+	send_type (RsendType"U
+WorldDifficultyRedPoint
+
+difficulty (R
+difficulty
+redpoint (Rredpoint"ñ
+WorldDifficultyInfo
+map_id (B¿RmapId
+
+difficulty (R
+difficultyB
+redpoints_info (2.cs.WorldDifficultyRedPointRredpointsInfo"g
+SCWorldDifficultyInfoSync-
+infos (2.cs.WorldDifficultyInfoRinfos
+	send_type (RsendType"Y
+ReputationInfo
+rep_id (B¿RrepId
+value (Rvalue
+level (Rlevel"Q
+Kickout
+uid (Ruid
+	timestamp (R	timestamp
+reason (	Rreason"]
+SCReputationInfoSync(
+infos (2.cs.ReputationInfoRinfos
+	send_type (RsendType"9
+SocialWheel
+index (B¿Rindex
+id (Rid"'
+SocialEmoticons
+id (B¿Rid"¶
+SCPlayerSocialEmoticonsSync)
+infos (2.cs.SocialEmoticonsRinfos2
+social_wheel (2.cs.SocialWheelRsocialWheel(
+cur_emoticons_id (RcurEmoticonsId"a
+CSUpdateEmoticonsWheel.
+
+wheel_data (2.cs.SocialWheelR	wheelData
+del_all (RdelAll"R
+SCNotifyEmoticon
+	player_id (RplayerId!
+emoticons_id (RemoticonsId"$
+CrossStringReq
+data (	Rdata"$
+CrossStringRsp
+data (	Rdata"4
+GeneralDirtyCheckInfo
+	data_info (	RdataInfo":
+ToastNotify
+key (	Rkey
+arg_list (	RargList"J
+ShortcutItemInfo
+slot_id (B¿RslotId
+item_id (RitemId"I
+SCShortcutBaseSync3
+
+item_infos (2.cs.ShortcutItemInfoR	itemInfos"x
+ExchangeShortcutItem/
+src_item (2.cs.ShortcutItemInfoRsrcItem/
+tar_item (2.cs.ShortcutItemInfoRtarItem"i
+CSShortcutKeySet'
+type (2.cs.ShortcutKeyTypeRtype,
+item (2.cs.ExchangeShortcutItemRitem"_
+PlayableSaveData
+play_id (RplayId
+sub_id (RsubId
+	save_data (RsaveData"è
+MonthlyCardInfo0
+monthly_card_endtime (RmonthlyCardEndtimeJ
+"monthly_card_client_reward_endtime (RmonthlyCardClientRewardEndtime"
+CSMonthlyCardReward"s
+SCMonthlyCardInfoSync?
+monthly_card_info (2.cs.MonthlyCardInfoRmonthlyCardInfo
+is_first (RisFirst"a
+CommonTimeId
+time_id (RtimeId
+
+start_time (R	startTime
+end_time (RendTime"?
+CommonTimeConf-
+	data_list (2.cs.CommonTimeIdRdataList"6
+SCClothesInfo%
+unlock_clothes (RunlockClothes"\
+NDayTargetActivity
+id (B¿Rid
+progress (Rprogress
+state (Rstate"A
+NDayTargetTotalInfo
+id (B¿Rid
+state (Rstate"≈
+SCNDayInfoSync
+
+unlock_day (R	unlockDay
+total_count (R
+totalCount9
+target_infos (2.cs.NDayTargetActivityRtargetInfos8
+total_infos (2.cs.NDayTargetTotalInfoR
+totalInfos"K
+WorldBossChestInfo
+chest_id (B¿RchestId
+state (Rstate"R
+SCWorldBossChestInfoNtf7
+chest_infos (2.cs.WorldBossChestInfoR
+chestInfos"ﬁ
+PlayerCatchWorldBossInfo(
+last_update_time (RlastUpdateTimeM
+catch_records (2(.cs.PlayerCatchWorldBossInfo.CatchRecordRcatchRecordsI
+CatchRecord
+pet_id (B¿RpetId
+
+catch_time (R	catchTime"∑
+LastMoveInfo$
+last_map_id (B¿R	lastMapId.
+last_move_id (2.cs.MoveInfoR
+lastMoveId
+	last_type (RlastType
+area_id (RareaId
+	area_line (RareaLine"¥
+CommonMatchRank
+mode (B¿Rmode
+points (Rpoints
+rank (Rrank
+season (Rseason(
+history_max_rank (RhistoryMaxRank
+streak (Rstreak#
+rewarded_rank (RrewardedRank
+total_point (R
+totalPoint
+extend	 (Rextend"#
+MatchRankMode
+KIBODUEL_ARENA"@
+MatchRankExtData,
+history_battle_num (RhistoryBattleNum"C
+SCMatchRankSync0
+	rank_data (2.cs.CommonMatchRankRrankData"C
+PresetWardrobeInfo-
+	info_list (2.cs.WardrobeInfoRinfoList"Ö
+GameClientSetting<
+entries (2".cs.GameClientSetting.SettingEntryRentries2
+SettingEntry
+key (	Rkey
+val (	Rval"Å
+ClientCustomOptions=
+entries (2.cs.ClientCustomOptions.EntryBËRentries+
+Entry
+key (	Rkey
+val (	Rval"G
+CSMatchRankGetReward
+mode (Rmode
+	reward_id (RrewardId"H
+
+PlayerText
+type (Rtype
+text (	Rtext
+args (Rargs":
+PlayerTextModify
+type (Rtype
+args (Rargs"p
+PlayerTextModifyNotify,
+modify (2.cs.PlayerTextModifyRmodify
+all (Rall
+reason (	Rreason"T
+ConfReloadEventEscBg
+removed_ids (R
+removedIds
+	opend_ids (RopendIds"H
+ConfReloadEventNotify/
+esc_bg (2.cs.ConfReloadEventEscBgRescBg"b
+MapRefreshProgress'
+condition_id (B¿RconditionId#
+condition_val (RconditionVal"¥
+RefreshProgress
+group_id (B¿RgroupIdC
+proposal_progress (2.cs.MapRefreshProgressRproposalProgress
+	is_unlock (RisUnlock
+
+unlockTime (R
+unlockTime*•
+IsolatedGamePlayDataType
+IsolatedGamePlayData_Common 
+IsolatedGamePlayData_Rogue!
+IsolatedGamePlayData_Nestcoop
+IsolatedGamePlayData_Abyss!
+IsolatedGamePlayData_Campaign&
+"IsolatedGamePlayData_MultiCampaign$
+ IsolatedGamePlayData_KiboduelPVP$
+ IsolatedGamePlayData_PopperParty&
+"IsolatedGamePlayData_KiboduelArena"
+IsolatedGamePlayData_CultTrial	"
+IsolatedGamePlayData_HomeStory
+*8
+CommonOrganizedDataType
+CommonOrganizedData_Abyss *Á
+PlayerBasicQueryType
+PBQT_ALL 
+	PBQT_NAME
+PBQT_OFFLINE_TIME
+PBQT_FACE_MINI
+PBQT_FACE_HALF
+PBQT_FACE_BATTLE
+PBQT_FACE_DIY
+	PBQT_SIGN
+PBQT_PET
+PBQT_SIMPLE_SHOW	
+PBQT_COMPLEX_SHOW
+
+
+PBQT_LEVEL
+
+PBQT_MONEY
+
+PBQT_TITLE
+
+PBQT_BIRTH
+PBQT_STAND_PLATES
+PBQT_APPAREL_INFO
+PBQT_SHOW_CASE*u
+PlayerLoginType
+	PLT_LOGIN 
+
+PLT_CREATE
+PLT_SHORT_RECONNECT
+PLT_LONG_RECONNECT
+PLT_SWITCH_SVR*T
+PlayerNoviceTaskStatus
+PNTS_ACCEPTED 
+PNTS_FINISHED
+PNTS_REWARD_SENT*ﬂ	
+SystemId
+SI_NONE 
+SI_GACHA
+SI_HERO_GRADE
+SI_HERO_FAVOR2
+SI_HERO_GIFT3
+SI_NOVICE_TASK:
+SI_PET_SPEICAL`
+SI_ACHIEVEMENT
+	SI_CHARGE
+SI_MONTHLY_CARD@
+SI_BATTLE_PASSA
+SI_RANDOM_TASKF
+SI_CHANGE_WARDROBEI
+SI_CHANGE_CLOTHES€
+SI_NDAY_ACTK
+SI_FIELD_UNPLANTú
+SI_FIELD_CLOSEù
+
+SI_PRODUCT§
+SI_HOME_WORK_BIBO™
+SI_HOME_RANCH_KIBO´
+SI_DUNGEON_ENTRUST≠
+SI_PET_TALENT_FOOD˚
+SI_PET_MUTATION˝
+SI_NPC_SHOPç
+
+SI_PET_BOXŒ
+SI_HOME_ORDERï
+
+SI_HERO_NEST_COOP—
+SI_ROGUE_LIKE_ENTRY˘
+
+SI_ABYSS§
+SI_KIBO_ARENA_MATCHˆ
+SI_KIBODUEL_ARENAÚ
+SI_KIBODUEL_ARENA_PVP˙
+	SI_WEEKLY«
+SI_DUNGEON_MATERIAL∆
+SI_CRISIS_CRUSADE≈
+SI_START_JOURNEY9!
+SI_MallRechargeDiamondSystem±"$
+SI_MallRechargeDiamondExchangeÎ◊
+SI_MallShopSwitch4402≤"
+SI_MallShopSwitch4403≥"
+SI_MallShopSwitch4404¥"
+SI_MallShopSwitch4405µ"
+SI_MallShopSwitch4406∂"
+SI_MallShopSwitch4407∑"
+SI_MallShopSwitch4408∏"
+SI_MallShopSwitch4409π"
+SI_MallShopSwitch4410∫"
+SI_MallShopSwitch4411ª"
+SI_HERO_SKIN‹
+SI_PET_EAT_FOODã'
+SI_PET_SOUL_LINKå'
+SI_WORLD_COLLECT\
+SI_WORLD_COLLECT_TOOL‚
+SI_Shortcut˚*Q
+
+MoveStatus
+MS_TRANSFER
+MS_JUMP
+MS_DODGE
+
+MS_RUN
+MS_WALK*6
+
+RHDGetType
+RHD_NONE 
+RHD_PICK
+RHD_TALK*m
+OrnamentEquipType
+OET_SUIT 
+
+OET_WEAPON
+	OET_CHEST
+OET_LEG
+OET_EARRINGS
+OET_RING*4
+HeroType
+	HT_NORMAL 
+HT_MAIN
+HT_TRIAL*0
+FurnitureType
+FT_TOBEGIVEN 
+	FT_ACCEPT*-
+PlayerSexType
+PST_MALE
+
+PST_FEMALE*µ
+
+OnlineMode
+ONLINE_MODE_DEFAULT 
+SINGLE_PLAYER
+MULTI_PLAYER_CITY
+MULTI_PLAYER_PVE
+MULTI_PLAYER_DUNGEON
+SINGLE_PLAYER_DUNGEON
+ONLINE_MODE_NEST_COOP
+ONLINE_MODE_NEST_COOP_PVE#
+ONLINE_MODE_KIBO_DUEL_ARENA_PVP#
+ONLINE_MODE_KIBO_DUEL_ARENA_PVE	
+ONLINE_MODE_ABYSS
+*6
+OrnamentAffixType
+OAT_NONE 
+OAT_GOLDEN_SIDE*L
+MailType
+
+PLAYER 
+
+SYSTEM
+
+REWARD
+GIFTCODE
+
+SHOPREWARD*@
+BuffFromType	
+SKILL	
+SCENE
+BEHAVIOR_TREE
+FSM*è
+GroupManagerType
+	GMT_WORLD
+	GMT_ROGUE
+	GMT_TOWER
+GMT_KIBODUEL_PVP
+GMT_KIBODUEL_ARENA
+	GMT_ABYSS
+GMT_CULTTRIAL*?
+AliveStateType
+	AST_Alive 
+AST_Dead
+AST_OverHurt*8
+GroupManagerChangeSrc
+GMS_DEAULFT 
+
+GMS_SWITCH*@
+ChatInfoType
+CHAT_NORMAL 
+CHAT_COMMON
+
+CHAT_EMOJI*Q
+FishWeightStatusType
+FWST_NORMAL 
+FWST_MAX
+FWST_MIN
+FWST_NEW*X
+CookFinishStatusType
+CFST_NORMAL 
+CFST_PERFECT
+	CFST_FAIL
+
+CFST_COUNT*R
+FoodType	
+FT_HP
+	FT_REVIVE
+	FT_DEFEND
+	FT_ATTACK
+
+FT_STAMINA*p
+FoodBuffType
+FBT_NO_COST_SATIETY
+FBT_SATIETY_RECOVER
+FBT_COLLECT_EFFICIENCY
+FBT_CATCH_RATE**
+UseFoodTarget
+UFT_HERO 
+UFT_PET*/
+HPRechargeType
+
+HPRT_VALUE
+	HPRT_RATE*Õ
+GMPGameSystemEnum
+GachaSystem
+GroupSystem
+
+ShopSystem
+ShopSpecial®
+
+HomeSystem
+HomeTechSystemæ
+HomeBuildBagø
+AchievementSystem
+
+MailSystem
+FriendSystem
+
+ChatSystem
+PersonalCardSystem
+
+ChangeNameø
+ChangePersonalSign¿
+PhotoSystem
+HeroCharDataSystem
+HeroCharDataStoryÖ
+HeroCharDataVoiceÜ
+HeroCharDataStorylineá
+DungeonGate#
+BaseMaterialDungeon$
+HeroFavorSystem2
+TaskRandomSystemF
+ChangeWardrobeI
+ChangeClothes€
+NDayActK
+WorldTimeSyncSystem_
+
+StaminaBuyc
+PetColorFulSystemü
+PetColorFulFlashSystem†
+PetColorSystem°
+PetFlashSystem¢
+PetColorFlashSystem£
+KiboDuelTypeNpcÚ
+KiboDuelTypeLevelsÛ
+ChangeHomeNameÃ
+ChangePetNameÕ
+ChangePetBagNameŒ
+ChangeGroupNameœ
+ChangeFriendNickName–
+ChangeMapSignName—
+ChangePhotoTemplateName“
+WaterMarkSystem≠M
+CVShowSystemÆM
+TestWaterMarkSystemØM
+OrderBuildSystemï
+
+StarSynthesisSystemâO
+GodTowerSystem›
+PamiMailSystem<
+MultiBattle≈
+
+AssignTask≠
+RogueSystem˘
+
+HomeDorm5
+	HomeRanch´
+
+HomeCenter•
+HomeBuildPackﬁ
+CommunitySystemJ
+
+BeginTrain√
+KiboDuelTaskƒ
+RechargeSystemŸ
+AbyssSystem§
+MONTHLY_CARD_SWITCH@
+BATTLE_PASS_SWITCHA
+TodoNoSense2B
+MallControlSwitch,
+MallRechargeDiamondSystem±"
+RECHARGE_ANDROIDÏ◊
+RECHARGE_IOSÌ◊
+RECHARGE_PCÓ◊
+RECHARGE_HARMONYÔ◊!
+MallRechargeDiamondExchangeÎ◊
+MallShopSwitch4402≤"
+MallShopSwitch4403≥"
+MallShopSwitch4404¥"
+MallShopSwitch4405µ"
+MallShopSwitch4406∂"
+MallShopSwitch4407∑"
+MallShopSwitch4408∏"
+MallShopSwitch4409π"
+MallShopSwitch4410∫"
+MallShopSwitch4411ª"
+KiboSoulSyså'
+KiboSkinSys˘
+KiboFree˙
+HeroGradeSys
+ESCBackgroundæ*(
+MedicineTargeType
+
+Single
+all*6
+MedicineType
+
+Damage
+
+Resistance
+
+Relive*
+ShortcutKeyType
+SKT_Item*
+SkillTreeType
+	STT_Rogue*
+EnumBanType
+CHAT*-
+TrialHeroType
+THT_MAIN
+
+THT_NORMAL*«
+
+TextGmType
+NICKNAME
+	SIGNATURE
+	HOME_NAME
+	KIBO_NAME
+KIBO_BOX_NAME
+DORMITORY_NAME
+
+GROUP_NAME
+FREIND_REMARK
+MAP_MARK	
+PHOTO_TEMPLATE
+
+SCENE_TEMPLATEB!ZGmServer/bridge/csproto;csproto

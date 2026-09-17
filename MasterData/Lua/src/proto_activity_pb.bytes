@@ -1,0 +1,581 @@
+
+s
+Activity.protocsExOptions.proto"D
+Sign
+count (Rcount
+time (Rtime
+show (Rshow"
+StaminaBoxUp"X
+	DailySign
+count (Rcount
+time (Rtime!
+reward_count (RrewardCount"@
+	DailyTask
+	cur_order (RcurOrder
+finish (Rfinish"u
+ActivityReward
+id (Rid
+val (Rval-
+state (2.cs.ActivityRewardStateRstate
+flag (Rflag"*
+ActKiBoDuel
+	duel_uids (RduelUids"G
+SubmitItemData
+id (Rid%
+state (2.cs.CommonStateRstate"v
+SubmitItemTask
+	cur_order (RcurOrder
+finish (Rfinish/
+	data_list (2.cs.SubmitItemDataRdataList"6
+DoubleDropData
+id (Rid
+times (Rtimes"S
+
+DoubleDrop&
+data (2.cs.DoubleDropDataRdata
+
+reset_time (R	resetTime"¦
+	TourGroup
+tour_id (RtourId
+
+start_time (R	startTime
+end_time (RendTime-
+state (2.cs.ActivityRewardStateRstate
+pet_ids (RpetIds"\
+KiboTourGroup
+total_times (R
+totalTimes*
+	tour_data (2.cs.TourGroupRtourData"1
+PlayerJadeGameData
+	task_list (RtaskList"K
+GrowUpStartingData
+starting_id (R
+startingId
+state (Rstate"¥
+GrowUpEventData
+event_id (ReventId
+cur_step (RcurStep
+finish (Rfinish(
+event_option_ids (ReventOptionIds
+duration (Rduration")
+GrowUpStamina
+stamina (Rstamina"+
+
+GrowUpMood
+
+mood_level (R	moodLevel"
+GrowUpStatus
+	status_id (RstatusId*
+cur_duration_time (RcurDurationTime&
+cur_enable_time (RcurEnableTime"…
+GrowUpTrainAttr8
+attr_id (2.cs.ActivityGrowUpTrainAttrTypeRattrId
+
+attr_value (R	attrValue
+cur_node (RcurNode"(
+GrowUpTrait
+trait_id (RtraitId"~
+GrowUpTrailData
+trail_id (RtrailId
+star (Rstar
+score (Rscore
+rate (Rrate
+guid (	Rguid"y
+GrowUpTrainAssistCharData$
+assist_char_id (RassistCharId
+bond (Rbond"
+is_bond_train (RisBondTrain"Ÿ
+GrowUpTrainOptionData&
+train_option_id (RtrainOptionId
+train_lv (RtrainLv&
+assist_char_ids (RassistCharIds
+	train_exp (RtrainExp"K
+GrowUpSelectEffectData
+type (Rtype
+
+effect_ids (R	effectIds"V
+SkillTreeChainData 
+head_node_id (R
+headNodeId
+cur_node_id (R	curNodeId"l
+GrowUpSkillTreeData.
+chains (2.cs.SkillTreeChainDataRchains%
+unlocked_nodes (RunlockedNodes"J
+GrowUpOutSideData
+progress_id (R
+progressId
+level (Rlevel"³
+GrowUpFinalWinStartList
+starting_id (R
+startingId
+score (Rscore@
+assist_chars (2.cs.GrowUpTrainAssistCharDataRassistChars
+finish_ends (R
+finishEnds"|
+GrowUpDayStartSnapshot4
+train_attrs (2.cs.GrowUpTrainAttrR
+trainAttrs,
+statuses (2.cs.GrowUpStatusRstatuses"x
+SCActivityGrowUpDayChangeSync
+activity_id (R
+activityId6
+snapshot (2.cs.GrowUpDayStartSnapshotRsnapshot"‘
+GrowUpEndlessInfo
+rank_id (RrankId
+	best_time (RbestTime
+
+best_score (R	bestScore'
+attr (2.cs.GrowUpTrainAttrRattr"ì
+GrowUpEndData
+id (Rid
+
+top_rating (R	topRating1
+chrs (2.cs.GrowUpTrainAssistCharDataRchrs)
+attrs (2.cs.GrowUpTrainAttrRattrs+
+trails (2.cs.GrowUpTrailDataRtrails!
+starting_ids (RstartingIds"I
+GrowUpEndBookData4
+complete_end (2.cs.GrowUpEndDataRcompleteEnd"F
+GrowUpEventRecord
+id (Rid!
+complete_cnt (RcompleteCnt"å
+GrowUp
+	cur_stage (RcurStage(
+cur_growup_stage (RcurGrowupStage3
+cur_growup_trail_stage (RcurGrowupTrailStage&
+cur_starting_id (RcurStartingId9
+cur_cost_expedition_count (RcurCostExpeditionCount4
+event_datas (2.cs.GrowUpEventDataR
+eventDatas!
+action_count (RactionCount8
+growup_stamina (2.cs.GrowUpStaminaRgrowupStamina/
+growup_mood	 (2.cs.GrowUpMoodR
+growupMood5
+growup_status
+ (2.cs.GrowUpStatusRgrowupStatus?
+growup_train_attr (2.cs.GrowUpTrainAttrRgrowupTrainAttr2
+growup_trait (2.cs.GrowUpTraitRgrowupTrait+
+trails (2.cs.GrowUpTrailDataRtrails>
+train_options (2.cs.GrowUpTrainOptionDataRtrainOptions@
+assist_chars (2.cs.GrowUpTrainAssistCharDataRassistChars(
+growup_train_exp (RgrowupTrainExpA
+select_effects (2.cs.GrowUpSelectEffectDataRselectEffects:
+
+final_wins (2.cs.GrowUpFinalWinStartListR	finalWins&
+select_trail_id (RselectTrailId?
+skill_tree_data (2.cs.GrowUpSkillTreeDataRskillTreeData:
+outside_datas (2.cs.GrowUpOutSideDataRoutsideDatas#
+outside_score (RoutsideScore8
+endless_info (2.cs.GrowUpEndlessInfoRendlessInfo0
+end_data (2.cs.GrowUpEndBookDataRendData#
+unlock_events (RunlockEvents
+final_score (R
+finalScore6
+evt_records (2.cs.GrowUpEventRecordR
+evtRecords7
+rest_interact_pending_id (RrestInteractPendingIdH
+day_start_snapshot (2.cs.GrowUpDayStartSnapshotRdayStartSnapshot
+guid (Rguid!
+archive_guid  (RarchiveGuidF
+cur_event_data! (2 .cs.SCActivityGrowUpEventInfoRspRcurEventData"9
+KiboGrabInfo
+kibo_id (RkiboId
+num (Rnum"0
+KiboGrab$
+data (2.cs.KiboGrabInfoRdata"Ö
+ActivityData
+sign (2.cs.SignRsign6
+stamina_box_up (2.cs.StaminaBoxUpRstaminaBoxUp,
+
+daily_sign (2.cs.DailySignR	dailySign,
+
+daily_task (2.cs.DailyTaskR	dailyTask3
+act_kibo_duel (2.cs.ActKiBoDuelRactKiboDuel<
+submit_item_task (2.cs.SubmitItemTaskRsubmitItemTask/
+double_drop (2.cs.DoubleDropR
+doubleDrop2
+popper_party (2.cs.PopperPartyRpopperParty0
+
+tour_group	 (2.cs.KiboTourGroupR	tourGroup:
+jade_web_game
+ (2.cs.PlayerJadeGameDataRjadeWebGame#
+grow_up (2
+.cs.GrowUpRgrowUp)
+	kibo_grab (2.cs.KiboGrabRkiboGrab"Œ
+PopperParty
+score (Rscore
+score_limit (R
+scoreLimit
+pt (Rpt
+pt_limit (RptLimit
+	last_time (RlastTime"ˆ
+Activity
+id (BÀðRid
+time (Rtime$
+data (2.cs.ActivityDataRdata,
+rewards (2.cs.ActivityRewardRrewards"i
+ActivityConf
+activity_id (R
+activityId
+
+start_time (R	startTime
+end_time (RendTime"‡
+ActivitySync*
+	activitys (2.cs.ActivityR	activitys&
+confs (2.cs.ActivityConfRconfs#
+del_activitys (RdelActivitys"7
+SCActivityGet&
+confs (2.cs.ActivityConfRconfs"Y
+CSActivityReward
+activity_id (R
+activityId$
+reward_id_list (RrewardIdList"T
+CSActivitySubmitItem
+activity_id (R
+activityId
+	submit_id (RsubmitId"k
+CSStartKiboTour
+activity_id (R
+activityId
+tour_id (RtourId
+pet_id_list (R	petIdList"L
+CSKiboTourReward
+activity_id (R
+activityId
+tour_id (RtourId"L
+CSKiboTourCancel
+activity_id (R
+activityId
+tour_id (RtourId"—
+CSActivityGrowUpStartSelectReq
+activity_id (R
+activityId
+starting_id (R
+startingId3
+select_assist_char_ids (RselectAssistCharIds"}
+CSActivityGrowUpEventSelectReq
+activity_id (R
+activityId
+event_id (ReventId
+optional_id (R
+optionalId"ã
+SCActivityGrowUpEventSelectRsp
+activity_id (R
+activityId
+event_id (ReventId
+optional_id (R
+optionalId.
+is_identify_success (RisIdentifySuccess4
+check_result (2.cs.ATCheckResultRcheckResult":
+CSActivityGrowUpRestReq
+activity_id (R
+activityId"S
+CSActivityGrowUpRestRsp
+activity_id (R
+activityId
+rest_id (RrestId"ƒ
+%CSActivityGrowUpRestInteractSubmitReq
+activity_id (R
+activityId
+rest_id (RrestId 
+add_mood_val (R
+addMoodVal"c
+CSActivityGrowUpTrainReq
+activity_id (R
+activityId&
+train_option_id (RtrainOptionId"
+SCActivityGrowUpTrainRsp
+activity_id (R
+activityId&
+train_option_id (RtrainOptionId*
+train_prob_result (RtrainProbResult";
+CSActivityGrowUpResetReq
+activity_id (R
+activityId"l
+CSActivityGrowUpSelectEffectReq
+activity_id (R
+activityId
+type (Rtype
+index (Rindex"í
+ATCheckResult
+roll (Rroll
+	attrBonus (R	attrBonus
+
+traitBonus (R
+traitBonus
+
+totalBonus (R
+totalBonus
+total (Rtotal
+optionId (RoptionId
+
+difficulty (R
+difficulty
+success (Rsuccess"Ì
+ATCheckPreview
+	attrBonus (R	attrBonus
+
+traitBonus (R
+traitBonus
+
+totalBonus (R
+totalBonus
+optionId (RoptionId
+
+difficulty (R
+difficulty 
+probability (Rprobability"^
+CSActivityGrowUpOutSideReq
+activity_id (R
+activityId
+progress_id (R
+progressId"k
+GrowUpAttrChange8
+attr_id (2.cs.ActivityGrowUpTrainAttrTypeRattrId
+
+attr_value (R	attrValue"Á
+ActivityGrowUpAttrChangeSync
+activity_id (R
+activityId<
+change_type (2.cs.GROWUP_ATTR_CHANGE_TYPER
+changeTypeB
+growup_attr_change (2.cs.GrowUpAttrChangeRgrowupAttrChange"d
+RankKey
+typ (2.cs.RANK_TYPERtyp
+activity_id (R
+activityId
+conf_id (RconfId":
+GetRankDetailReq&
+rank_key (2.cs.RankKeyRrankKey"‰
+GetRankDetailRsp&
+rank_key (2.cs.RankKeyRrankKey
+rank (Rrank
+	rank_size (RrankSize
+	permyriad (R	permyriad"]
+
+RankMember
+	player_id (RplayerId
+	timestamp (R	timestamp
+score (Rscore"
+	GrowUpEnd
+id (Rid
+state (Rstate,
+history_top_rating (RhistoryTopRating1
+chrs (2.cs.GrowUpTrainAssistCharDataRchrs)
+attrs (2.cs.GrowUpTrainAttrRattrs+
+trails (2.cs.GrowUpTrailDataRtrails!
+starting_ids (RstartingIds">
+CSActivityGrowUpEndQueryReq
+activity_id (R
+activityId"h
+SCActivityGrowUpEndQueryRsp
+activity_id (R
+activityId(
+end_data (2.cs.GrowUpEndRendData"O
+CultivateFloatEntry
+	entry_key (RentryKey
+	entry_val (RentryVal"M
+CultivateIntEntry
+	entry_key (RentryKey
+	entry_val (RentryVal"Æ
+CultivateCharacter
+
+mood_level (R	moodLevel
+result (Rresult
+traits (Rtraits-
+attrs (2.cs.CultivateFloatEntryRattrs>
+extra_bases (2.cs.GrowUpTrainAssistCharDataR
+extraBases=
+
+companions (2.cs.GrowUpTrainAssistCharDataR
+companions3
+bonds (2.cs.GrowUpTrainAssistCharDataRbonds"e
+CultivateContext4
+	character (2.cs.CultivateCharacterR	character
+	attr_type (RattrType"H
+CultivateModDetail
+mod_id (RmodId
+	mod_value (RmodValue"»
+
+AttrResult
+	attr_type (RattrType
+base (Rbase
+final_value (R
+finalValue)
+total_multiplier (RtotalMultiplier0
+details (2.cs.CultivateModDetailRdetails"C
+GrowUpExcultivationData
+type (Rtype
+level (Rlevel"o
+GrowUpExcultivation%
+activity_id (BÀðR
+activityId1
+datas (2.cs.GrowUpExcultivationDataRdatas"m
+GrowUpTrainAssistChar
+starting_id (R
+startingId3
+datas (2.cs.GrowUpTrainAssistCharDataRdatas"B
+GrowUpExcultivationAssistChar!
+assist_chars (RassistChars"Å
+GrowUpAssistChar%
+activity_id (BÀðR
+activityIdP
+excultivation_data (2!.cs.GrowUpExcultivationAssistCharRexcultivationData8
+
+train_data (2.cs.GrowUpTrainAssistCharR	trainData"k
+GrowUpTrainOption%
+activity_id (BÀðR
+activityId/
+datas (2.cs.GrowUpTrainOptionDataRdatas"J
+SyncGrowUpTrainOptionData-
+data (2.cs.GrowUpTrainOptionDataRdata"W
+ CSActivityGrowUpExcultivationReq
+activity_id (R
+activityId
+type (Rtype"J
+SyncGrowupExcultivationData+
+data (2.cs.GrowUpExcultivationRdata"¡
+SyncGrowupTrainAssistCharData
+activity_id (R
+activityId
+starting_id (R
+startingId>
+train_datas (2.cs.GrowUpTrainAssistCharDataR
+trainDatas"†
+%SyncGrowupExcultivationAssistCharData
+activity_id (R
+activityId<
+excultivation_assist_chars (RexcultivationAssistChars"\
+GetRankListReq&
+rank_key (2.cs.RankKeyRrankKey
+from (Rfrom
+to (Rto"A
+CSActivityGrowUpEventFinishReq
+activity_id (R
+activityId"i
+GetRankListRsp&
+rank_key (2.cs.RankKeyRrankKey/
+member_list (2.cs.RankMemberR
+memberList"?
+CSActivityGrowUpEventInfoReq
+activity_id (R
+activityId"˜
+GrowUpEventInfo
+optional_id (R
+optionalId.
+is_identify_success (RisIdentifySuccess4
+check_result (2.cs.ATCheckResultRcheckResult"¸
+SCActivityGrowUpEventInfoRsp
+activity_id (R
+activityId
+event_id (ReventId
+cur_step (RcurStepA
+event_option_infos (2.cs.GrowUpEventInfoReventOptionInfos*†
+ActivityType
+AT_SIGN
+AT_Main
+AT_DAILY_SIGN
+AT_Level
+AT_Kibo_Tour_Group
+AT_KIBO_DUEL
+AT_SUBMIT_ITEM_TASK
+AT_DOUBLE_DROP(
+AT_PARTY2
+	AT_GROWUP<
+AT_NDAYF
+AT_JADEGAME_WEBP
+AT_CompanionZ
+AT_REPEAT_EVENTd
+AT_TeachingUpn
+
+AT_JOURNEYx
+AT_KIBO_GRAB‚
+	AT_SUNSETƒ
+AT_APP_SHAREŒ
+AT_Only_Showæ
+AT_DAILY_TASKç*1
+ActivityTimeType
+
+ATT_NORAML 
+	ATT_CYCLE*=
+ActivityTaskState
+KDT_NONE 
+	KDT_GUIDE
+KDT_END*E
+ActivityRewardState
+ARS_NONE 
+
+ARS_FINISH
+ARS_REWARDED*8
+CommonState
+CS_NONE 
+	CS_ACCEPT
+	CS_FINISH*Q
+GrowUpStage
+GUS_Primary
+
+GUS_Middle
+GUS_Advanced
+GUS_Endless*a
+ActivityGrowUpTrainAttrType
+ATTR_STRENGTHe
+	ATTR_BODYf
+ATTR_REALIZEg
+
+ATTR_WAKANh*·
+GROWUP_EVENT_TYPE
+GROWUP_NONE 
+GROWUP_STAMINA_ADD
+GROWUP_STAMINA_REDUCE
+GROWUP_TRAINING_ADD
+GROWUP_TRAINING_REDUCE
+GROWUP_MOOD_LEVEL
+GROWUP_MOOD_DOWN
+GROWUP_GETONE_FEATURES
+GROWUP_RANDONE_FEATURES
+GROWUP_RANDOM_FEATURES	
+GROWUP_GETONE_STATUS
+
+GROWUP_RANDONE_STATUS
+GROWUP_RANDOM_STATUS
+GROWUP_BONDS_ADD
+GROWUP_ACTIVATE_HERO
+GROWUP_TRAINING_ADD_PER
+GROWUP_TOUZI_ADD
+GROWUP_TOUZI_REDUCE
+GROWUP_BUILD_UP
+GROWUP_EVENT_ATTR_ADD
+GROWUP_EVENT_ATTR_REDUCE
+GROWUP_TRIAL_ATTR_ADD
+GROWUP_TRIAL_ATTR_REDUCE
+GROWUP_FAIL_RATE_REDUDE
+GROWUP_STAMINA_USE_REDUCE
+GROWUP_BOND_ENHANCE
+GROWUP_EVENT_ENHANCE#
+GROWUP_STAMINA_RECOVER_INCREASE
+GROWUP_TRIAL_ENHANCE
+GROWUP_UNLOCK_EVENT
+
+GROWUP_MAX*¬
+GROWUP_ATTR_CHANGE_TYPE
+GROWUP_ATTR_CHANGE_NONE 
+GROWUP_ATTR_CHANGE_TRAIN
+GROWUP_ATTR_CHANGE_EVENT
+GROWUP_ATTR_CHANGE_TRIAL
+GROWUP_ATTR_CHANGE_MAX*Q
+	RANK_TYPE
+
+RT_INVALID 
+RT_ACTIVITY_ENDLESS
+RT_ACTIVITY_REPET_EVENT*w
+GrowUpEndStateType
+GROWUP_END_INVALID 
+GROWUP_END_COMPLETE
+GROWUP_END_UNCOMPLETE
+GROWUP_END_UNLOCK*¼
+GrowUpAssistChangeType 
+GROWUP_ASSIST_CHANGE_INVALID !
+GROWUP_ASSIST_CHANGE_STARTING
+GROWUP_ASSIST_CHANGE_EVENT
+GROWUP_ASSIST_CHANGE_TRAIN
+GROWUP_ASSIST_CHANGE_RESTB!ZGmServer/bridge/csproto;csproto

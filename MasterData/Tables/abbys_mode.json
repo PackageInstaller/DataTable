@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "type": 1,
+    "name": "塑流圜影",
+    "condition": "",
+    "level": "10001|10002|10003|10004|10005|10006|10007",
+    "reward": 10001,
+    "enterPerform": "Timeline/UI/PetEvo/SPStriyakR",
+    "icon": "UI/Atlas/MapNode/tex_icon_mapnode_abbys_mapmark.png",
+    "name_id": "4294968064"
+  },
+  {
+    "id": 2,
+    "type": 1,
+    "name": "恒溯圜影",
+    "condition": "13111#10007",
+    "level": "20001|20002|20003|20004|20005|20006|20007",
+    "reward": 20001,
+    "enterPerform": "Timeline/UI/PetEvo/FireR2",
+    "icon": "UI/Atlas/MapNode/tex_icon_mapnode_abbys_mapmark.png",
+    "name_id": "8589935360"
+  },
+  {
+    "id": 3,
+    "type": 2,
+    "name": "汐变圜影",
+    "condition": "13111#20007",
+    "level": "",
+    "reward": 0,
+    "enterPerform": "Timeline/UI/PetEvo/DarkR2",
+    "icon": "UI/Atlas/MapNode/tex_icon_mapnode_abbys_mapmark.png",
+    "name_id": "12884902656"
+  }
+]

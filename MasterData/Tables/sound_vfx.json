@@ -1,0 +1,6192 @@
+[
+  {
+    "id": 1,
+    "vfxPrefab": "pre_boss_attackhint",
+    "sfxName": "107001_Hit__107001_Hit"
+  },
+  {
+    "id": 2,
+    "vfxPrefab": "pre_common_crackboss_hit",
+    "sfxName": "107001_Hit__107001_Hit"
+  },
+  {
+    "id": 3,
+    "vfxPrefab": "pre_common_crackboss_loop",
+    "sfxName": ""
+  },
+  {
+    "id": 4,
+    "vfxPrefab": "pre_common_crack_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 5,
+    "vfxPrefab": "pre_common_crack_loop",
+    "sfxName": ""
+  },
+  {
+    "id": 6,
+    "vfxPrefab": "pre_common_dodge_success_vfx",
+    "sfxName": ""
+  },
+  {
+    "id": 7,
+    "vfxPrefab": "pre_common_element_dark_buff_1",
+    "sfxName": ""
+  },
+  {
+    "id": 8,
+    "vfxPrefab": "pre_common_element_dark_buff_1_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 9,
+    "vfxPrefab": "pre_common_element_dark_buff_2",
+    "sfxName": ""
+  },
+  {
+    "id": 10,
+    "vfxPrefab": "pre_common_element_dark_buff_2_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 11,
+    "vfxPrefab": "pre_common_element_dark_debuff_1",
+    "sfxName": ""
+  },
+  {
+    "id": 12,
+    "vfxPrefab": "pre_common_element_dark_debuff_1_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 13,
+    "vfxPrefab": "pre_common_element_dark_debuff_2",
+    "sfxName": ""
+  },
+  {
+    "id": 14,
+    "vfxPrefab": "pre_common_element_dark_debuff_2_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 15,
+    "vfxPrefab": "pre_common_element_dark_debuff_3",
+    "sfxName": ""
+  },
+  {
+    "id": 16,
+    "vfxPrefab": "pre_common_element_dark_debuff_3_effect",
+    "sfxName": ""
+  },
+  {
+    "id": 17,
+    "vfxPrefab": "pre_common_element_dark_debuff_3_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 18,
+    "vfxPrefab": "pre_common_element_earth_buff_1_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 19,
+    "vfxPrefab": "pre_common_element_earth_buff_1_start",
+    "sfxName": ""
+  },
+  {
+    "id": 20,
+    "vfxPrefab": "pre_common_element_earth_buff_2_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 21,
+    "vfxPrefab": "pre_common_element_earth_buff_2_start",
+    "sfxName": ""
+  },
+  {
+    "id": 22,
+    "vfxPrefab": "pre_common_element_earth_buff_3_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 23,
+    "vfxPrefab": "pre_common_element_earth_buff_3_start",
+    "sfxName": ""
+  },
+  {
+    "id": 24,
+    "vfxPrefab": "pre_common_element_earth_debuff_1_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 25,
+    "vfxPrefab": "pre_common_element_earth_debuff_2_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 26,
+    "vfxPrefab": "pre_common_element_fire_buff_1_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 27,
+    "vfxPrefab": "pre_common_element_fire_buff_1_start",
+    "sfxName": ""
+  },
+  {
+    "id": 28,
+    "vfxPrefab": "pre_common_element_fire_buff_2_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 29,
+    "vfxPrefab": "pre_common_element_fire_buff_2_start",
+    "sfxName": ""
+  },
+  {
+    "id": 30,
+    "vfxPrefab": "pre_common_element_fire_debuff_1",
+    "sfxName": ""
+  },
+  {
+    "id": 31,
+    "vfxPrefab": "pre_common_element_fire_debuff_2",
+    "sfxName": ""
+  },
+  {
+    "id": 32,
+    "vfxPrefab": "pre_common_element_fire_debuff_3",
+    "sfxName": ""
+  },
+  {
+    "id": 33,
+    "vfxPrefab": "pre_common_element_fire_debuff_3_effect",
+    "sfxName": ""
+  },
+  {
+    "id": 34,
+    "vfxPrefab": "pre_common_element_ice_buff_1_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 35,
+    "vfxPrefab": "pre_common_element_ice_buff_2_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 36,
+    "vfxPrefab": "pre_common_element_ice_debuff_1_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 37,
+    "vfxPrefab": "pre_common_element_ice_debuff_2_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 38,
+    "vfxPrefab": "pre_common_element_ice_debuff_3_effect",
+    "sfxName": ""
+  },
+  {
+    "id": 39,
+    "vfxPrefab": "pre_common_element_ice_debuff_3_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 40,
+    "vfxPrefab": "pre_common_element_light_buff_1_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 41,
+    "vfxPrefab": "pre_common_element_light_buff_1_start",
+    "sfxName": ""
+  },
+  {
+    "id": 42,
+    "vfxPrefab": "pre_common_element_light_buff_2_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 43,
+    "vfxPrefab": "pre_common_element_light_buff_2_start",
+    "sfxName": ""
+  },
+  {
+    "id": 44,
+    "vfxPrefab": "pre_common_element_light_buff_3_effect",
+    "sfxName": ""
+  },
+  {
+    "id": 45,
+    "vfxPrefab": "pre_common_element_light_buff_3_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 46,
+    "vfxPrefab": "pre_common_element_light_buff_3_start",
+    "sfxName": ""
+  },
+  {
+    "id": 47,
+    "vfxPrefab": "pre_common_element_light_debuff_1_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 48,
+    "vfxPrefab": "pre_common_element_light_debuff_2_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 49,
+    "vfxPrefab": "pre_common_element_thunder_buff_1_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 50,
+    "vfxPrefab": "pre_common_element_thunder_buff_1_start",
+    "sfxName": ""
+  },
+  {
+    "id": 51,
+    "vfxPrefab": "pre_common_element_thunder_buff_2_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 52,
+    "vfxPrefab": "pre_common_element_thunder_buff_2_start",
+    "sfxName": ""
+  },
+  {
+    "id": 53,
+    "vfxPrefab": "pre_common_element_thunder_debuff_1",
+    "sfxName": ""
+  },
+  {
+    "id": 54,
+    "vfxPrefab": "pre_common_element_thunder_debuff_2",
+    "sfxName": ""
+  },
+  {
+    "id": 55,
+    "vfxPrefab": "pre_common_element_thunder_debuff_3",
+    "sfxName": ""
+  },
+  {
+    "id": 56,
+    "vfxPrefab": "pre_common_element_thunder_debuff_3_effect",
+    "sfxName": ""
+  },
+  {
+    "id": 57,
+    "vfxPrefab": "pre_common_element_water_buff_1_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 58,
+    "vfxPrefab": "pre_common_element_water_buff_1_start",
+    "sfxName": ""
+  },
+  {
+    "id": 59,
+    "vfxPrefab": "pre_common_element_water_buff_2_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 60,
+    "vfxPrefab": "pre_common_element_water_buff_2_start",
+    "sfxName": ""
+  },
+  {
+    "id": 61,
+    "vfxPrefab": "pre_common_element_water_buff_3_effect",
+    "sfxName": ""
+  },
+  {
+    "id": 62,
+    "vfxPrefab": "pre_common_element_water_buff_3_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 63,
+    "vfxPrefab": "pre_common_element_water_buff_3_start",
+    "sfxName": ""
+  },
+  {
+    "id": 64,
+    "vfxPrefab": "pre_common_element_water_debuff_1_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 65,
+    "vfxPrefab": "pre_common_element_water_debuff_2_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 66,
+    "vfxPrefab": "pre_common_element_water_item",
+    "sfxName": ""
+  },
+  {
+    "id": 67,
+    "vfxPrefab": "pre_common_element_water_item_effect",
+    "sfxName": ""
+  },
+  {
+    "id": 68,
+    "vfxPrefab": "pre_common_element_water_item_trail",
+    "sfxName": ""
+  },
+  {
+    "id": 69,
+    "vfxPrefab": "pre_common_element_wind_buff_1_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 70,
+    "vfxPrefab": "pre_common_element_wind_buff_1_start",
+    "sfxName": ""
+  },
+  {
+    "id": 71,
+    "vfxPrefab": "pre_common_element_wind_buff_2_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 72,
+    "vfxPrefab": "pre_common_element_wind_buff_2_start",
+    "sfxName": ""
+  },
+  {
+    "id": 73,
+    "vfxPrefab": "pre_common_element_wind_buff_3_effect",
+    "sfxName": ""
+  },
+  {
+    "id": 74,
+    "vfxPrefab": "pre_common_element_wind_buff_3_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 75,
+    "vfxPrefab": "pre_common_element_wind_buff_3_start",
+    "sfxName": ""
+  },
+  {
+    "id": 76,
+    "vfxPrefab": "pre_common_element_wind_debuff_1",
+    "sfxName": ""
+  },
+  {
+    "id": 77,
+    "vfxPrefab": "pre_common_element_wind_debuff_2",
+    "sfxName": ""
+  },
+  {
+    "id": 78,
+    "vfxPrefab": "pre_common_element_wood_buff_1_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 79,
+    "vfxPrefab": "pre_common_element_wood_buff_2_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 80,
+    "vfxPrefab": "pre_common_element_wood_buff_3_effect",
+    "sfxName": ""
+  },
+  {
+    "id": 81,
+    "vfxPrefab": "pre_common_element_wood_buff_3_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 82,
+    "vfxPrefab": "pre_common_element_wood_debuff_1_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 83,
+    "vfxPrefab": "pre_common_element_wood_debuff_2_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 84,
+    "vfxPrefab": "pre_common_element_wood_debuff_3_effect",
+    "sfxName": ""
+  },
+  {
+    "id": 85,
+    "vfxPrefab": "pre_common_element_wood_debuff_3_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 86,
+    "vfxPrefab": "pre_debuff_fire_01",
+    "sfxName": ""
+  },
+  {
+    "id": 87,
+    "vfxPrefab": "pre_hero_attack_buff",
+    "sfxName": ""
+  },
+  {
+    "id": 88,
+    "vfxPrefab": "pre_hero_attack_buff_loop",
+    "sfxName": ""
+  },
+  {
+    "id": 89,
+    "vfxPrefab": "pre_hero_defense_loop",
+    "sfxName": ""
+  },
+  {
+    "id": 90,
+    "vfxPrefab": "pre_hero_dodge_01",
+    "sfxName": ""
+  },
+  {
+    "id": 91,
+    "vfxPrefab": "pre_hero_dodge_02",
+    "sfxName": ""
+  },
+  {
+    "id": 92,
+    "vfxPrefab": "pre_hero_highlight_red",
+    "sfxName": ""
+  },
+  {
+    "id": 93,
+    "vfxPrefab": "pre_hero_invincible",
+    "sfxName": ""
+  },
+  {
+    "id": 94,
+    "vfxPrefab": "pre_hero_recover",
+    "sfxName": ""
+  },
+  {
+    "id": 95,
+    "vfxPrefab": "pre_hero_shield_loop",
+    "sfxName": ""
+  },
+  {
+    "id": 96,
+    "vfxPrefab": "pre_hero_speed_up",
+    "sfxName": ""
+  },
+  {
+    "id": 97,
+    "vfxPrefab": "pre_hero_uniqueskill_hint",
+    "sfxName": ""
+  },
+  {
+    "id": 98,
+    "vfxPrefab": "pre_order_circle_green",
+    "sfxName": ""
+  },
+  {
+    "id": 99,
+    "vfxPrefab": "pre_order_circle_red",
+    "sfxName": ""
+  },
+  {
+    "id": 100,
+    "vfxPrefab": "pre_order_circle_white",
+    "sfxName": ""
+  },
+  {
+    "id": 101,
+    "vfxPrefab": "pre_soldier_attack_buff",
+    "sfxName": ""
+  },
+  {
+    "id": 102,
+    "vfxPrefab": "pre_soldier_attack_buff_loop",
+    "sfxName": ""
+  },
+  {
+    "id": 103,
+    "vfxPrefab": "pre_soldier_defense_loop",
+    "sfxName": ""
+  },
+  {
+    "id": 104,
+    "vfxPrefab": "pre_soldier_recover",
+    "sfxName": ""
+  },
+  {
+    "id": 105,
+    "vfxPrefab": "pre_soldier_shield_loop",
+    "sfxName": ""
+  },
+  {
+    "id": 106,
+    "vfxPrefab": "pre_bullet_test",
+    "sfxName": ""
+  },
+  {
+    "id": 107,
+    "vfxPrefab": "pre_chap_spray",
+    "sfxName": ""
+  },
+  {
+    "id": 108,
+    "vfxPrefab": "pre_chap_spray_loop",
+    "sfxName": ""
+  },
+  {
+    "id": 109,
+    "vfxPrefab": "pre_chap_terara_skill1_suishi",
+    "sfxName": ""
+  },
+  {
+    "id": 110,
+    "vfxPrefab": "pre_charge_001",
+    "sfxName": ""
+  },
+  {
+    "id": 111,
+    "vfxPrefab": "pre_charge_001_smoke",
+    "sfxName": ""
+  },
+  {
+    "id": 112,
+    "vfxPrefab": "pre_charge_002",
+    "sfxName": ""
+  },
+  {
+    "id": 113,
+    "vfxPrefab": "pre_command_attack_preview",
+    "sfxName": ""
+  },
+  {
+    "id": 114,
+    "vfxPrefab": "pre_command_charge_preview",
+    "sfxName": ""
+  },
+  {
+    "id": 115,
+    "vfxPrefab": "pre_command_defence_preview",
+    "sfxName": ""
+  },
+  {
+    "id": 116,
+    "vfxPrefab": "pre_commom_appear_1",
+    "sfxName": ""
+  },
+  {
+    "id": 117,
+    "vfxPrefab": "pre_commom_appear_2",
+    "sfxName": ""
+  },
+  {
+    "id": 118,
+    "vfxPrefab": "pre_commom_chest_lv04_01",
+    "sfxName": ""
+  },
+  {
+    "id": 119,
+    "vfxPrefab": "pre_commom_treasure_01",
+    "sfxName": ""
+  },
+  {
+    "id": 120,
+    "vfxPrefab": "pre_commom_treasure_02",
+    "sfxName": ""
+  },
+  {
+    "id": 121,
+    "vfxPrefab": "pre_commom_treasure_03",
+    "sfxName": ""
+  },
+  {
+    "id": 122,
+    "vfxPrefab": "pre_commom_treasure_04",
+    "sfxName": ""
+  },
+  {
+    "id": 123,
+    "vfxPrefab": "pre_common_arrow_01",
+    "sfxName": ""
+  },
+  {
+    "id": 124,
+    "vfxPrefab": "pre_common_arrow_02",
+    "sfxName": ""
+  },
+  {
+    "id": 125,
+    "vfxPrefab": "pre_common_blocking",
+    "sfxName": ""
+  },
+  {
+    "id": 126,
+    "vfxPrefab": "pre_common_enemy_charging",
+    "sfxName": ""
+  },
+  {
+    "id": 127,
+    "vfxPrefab": "pre_common_enemy_charging_end",
+    "sfxName": ""
+  },
+  {
+    "id": 128,
+    "vfxPrefab": "pre_common_fire",
+    "sfxName": ""
+  },
+  {
+    "id": 129,
+    "vfxPrefab": "pre_common_fire_hit_01_r",
+    "sfxName": ""
+  },
+  {
+    "id": 130,
+    "vfxPrefab": "pre_common_fire_hit_02_r",
+    "sfxName": ""
+  },
+  {
+    "id": 131,
+    "vfxPrefab": "pre_common_gantanhao",
+    "sfxName": ""
+  },
+  {
+    "id": 132,
+    "vfxPrefab": "pre_common_hit_01",
+    "sfxName": ""
+  },
+  {
+    "id": 133,
+    "vfxPrefab": "pre_common_hit_01_b",
+    "sfxName": ""
+  },
+  {
+    "id": 134,
+    "vfxPrefab": "pre_common_hit_01_r",
+    "sfxName": ""
+  },
+  {
+    "id": 135,
+    "vfxPrefab": "pre_common_hit_02",
+    "sfxName": ""
+  },
+  {
+    "id": 136,
+    "vfxPrefab": "pre_common_hit_02_b",
+    "sfxName": ""
+  },
+  {
+    "id": 137,
+    "vfxPrefab": "pre_common_hit_02_r",
+    "sfxName": ""
+  },
+  {
+    "id": 138,
+    "vfxPrefab": "pre_common_hit_03",
+    "sfxName": ""
+  },
+  {
+    "id": 139,
+    "vfxPrefab": "pre_common_hit_03_b",
+    "sfxName": ""
+  },
+  {
+    "id": 140,
+    "vfxPrefab": "pre_common_hit_03_r",
+    "sfxName": ""
+  },
+  {
+    "id": 141,
+    "vfxPrefab": "pre_common_jiaohushuihua",
+    "sfxName": ""
+  },
+  {
+    "id": 142,
+    "vfxPrefab": "pre_common_jiaohushuihua_01",
+    "sfxName": ""
+  },
+  {
+    "id": 143,
+    "vfxPrefab": "pre_common_shield_broken",
+    "sfxName": ""
+  },
+  {
+    "id": 144,
+    "vfxPrefab": "pre_common_shield_broken_loop",
+    "sfxName": ""
+  },
+  {
+    "id": 145,
+    "vfxPrefab": "pre_common_shield_end",
+    "sfxName": ""
+  },
+  {
+    "id": 146,
+    "vfxPrefab": "pre_common_shield_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 147,
+    "vfxPrefab": "pre_common_shield_loop",
+    "sfxName": ""
+  },
+  {
+    "id": 148,
+    "vfxPrefab": "pre_common_tishi",
+    "sfxName": ""
+  },
+  {
+    "id": 149,
+    "vfxPrefab": "pre_common_wenhao",
+    "sfxName": ""
+  },
+  {
+    "id": 150,
+    "vfxPrefab": "pre_common_wood_hit_01",
+    "sfxName": ""
+  },
+  {
+    "id": 151,
+    "vfxPrefab": "pre_common_zhiyin",
+    "sfxName": ""
+  },
+  {
+    "id": 152,
+    "vfxPrefab": "pre_element_bonfire",
+    "sfxName": ""
+  },
+  {
+    "id": 153,
+    "vfxPrefab": "pre_element_lightning",
+    "sfxName": ""
+  },
+  {
+    "id": 154,
+    "vfxPrefab": "pre_element_tornado",
+    "sfxName": ""
+  },
+  {
+    "id": 155,
+    "vfxPrefab": "pre_element_water",
+    "sfxName": ""
+  },
+  {
+    "id": 156,
+    "vfxPrefab": "pre_fireball_001",
+    "sfxName": ""
+  },
+  {
+    "id": 157,
+    "vfxPrefab": "pre_lighting",
+    "sfxName": ""
+  },
+  {
+    "id": 158,
+    "vfxPrefab": "pre_104001_hit_temporary",
+    "sfxName": ""
+  },
+  {
+    "id": 159,
+    "vfxPrefab": "pre_portal",
+    "sfxName": ""
+  },
+  {
+    "id": 160,
+    "vfxPrefab": "pre_portal_blue_level1",
+    "sfxName": ""
+  },
+  {
+    "id": 161,
+    "vfxPrefab": "pre_portal_red_level3",
+    "sfxName": ""
+  },
+  {
+    "id": 162,
+    "vfxPrefab": "pre_portal_yellow_level2",
+    "sfxName": ""
+  },
+  {
+    "id": 163,
+    "vfxPrefab": "pre_sunlight",
+    "sfxName": ""
+  },
+  {
+    "id": 164,
+    "vfxPrefab": "pre_unit_arrow_rain",
+    "sfxName": ""
+  },
+  {
+    "id": 165,
+    "vfxPrefab": "pre_unit_arrow_rain_circle",
+    "sfxName": ""
+  },
+  {
+    "id": 166,
+    "vfxPrefab": "pre_unit_fire_ball",
+    "sfxName": ""
+  },
+  {
+    "id": 167,
+    "vfxPrefab": "pre_unit_hitten",
+    "sfxName": ""
+  },
+  {
+    "id": 168,
+    "vfxPrefab": "pre_unit_magic_bullet",
+    "sfxName": ""
+  },
+  {
+    "id": 169,
+    "vfxPrefab": "pre_unit_thump",
+    "sfxName": ""
+  },
+  {
+    "id": 170,
+    "vfxPrefab": "pre_warning_circle_10m_green_decal",
+    "sfxName": ""
+  },
+  {
+    "id": 171,
+    "vfxPrefab": "pre_warning_circle_10m_red_decal",
+    "sfxName": ""
+  },
+  {
+    "id": 172,
+    "vfxPrefab": "pre_warning_cube_10m_red_decal",
+    "sfxName": ""
+  },
+  {
+    "id": 173,
+    "vfxPrefab": "pre_warning_degrees_120_red_decal",
+    "sfxName": ""
+  },
+  {
+    "id": 174,
+    "vfxPrefab": "pre_warning_degrees_180_red_decal",
+    "sfxName": ""
+  },
+  {
+    "id": 175,
+    "vfxPrefab": "pre_warning_degrees_60_red_decal",
+    "sfxName": ""
+  },
+  {
+    "id": 176,
+    "vfxPrefab": "pre_warning_degrees_90_red_decal",
+    "sfxName": ""
+  },
+  {
+    "id": 177,
+    "vfxPrefab": "pre_water_spray",
+    "sfxName": ""
+  },
+  {
+    "id": 178,
+    "vfxPrefab": "pre_common_blocking",
+    "sfxName": ""
+  },
+  {
+    "id": 179,
+    "vfxPrefab": "pre_common_enemy_charging",
+    "sfxName": ""
+  },
+  {
+    "id": 180,
+    "vfxPrefab": "pre_common_enemy_charging_end",
+    "sfxName": ""
+  },
+  {
+    "id": 181,
+    "vfxPrefab": "pre_common_hit_01_b",
+    "sfxName": ""
+  },
+  {
+    "id": 182,
+    "vfxPrefab": "pre_common_hit_01_r",
+    "sfxName": ""
+  },
+  {
+    "id": 183,
+    "vfxPrefab": "pre_common_hit_02_b",
+    "sfxName": ""
+  },
+  {
+    "id": 184,
+    "vfxPrefab": "pre_common_hit_02_r",
+    "sfxName": ""
+  },
+  {
+    "id": 185,
+    "vfxPrefab": "pre_common_hit_03_b",
+    "sfxName": ""
+  },
+  {
+    "id": 186,
+    "vfxPrefab": "pre_common_hit_03_r",
+    "sfxName": ""
+  },
+  {
+    "id": 187,
+    "vfxPrefab": "pre_common_shield_broken",
+    "sfxName": ""
+  },
+  {
+    "id": 188,
+    "vfxPrefab": "pre_common_shield_broken_loop",
+    "sfxName": ""
+  },
+  {
+    "id": 189,
+    "vfxPrefab": "pre_common_shield_end",
+    "sfxName": ""
+  },
+  {
+    "id": 190,
+    "vfxPrefab": "pre_common_shield_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 191,
+    "vfxPrefab": "pre_common_shield_loop",
+    "sfxName": ""
+  },
+  {
+    "id": 192,
+    "vfxPrefab": "pre_human_baishuang_evade_001",
+    "sfxName": ""
+  },
+  {
+    "id": 193,
+    "vfxPrefab": "pre_human_baishuang_evade_002",
+    "sfxName": ""
+  },
+  {
+    "id": 194,
+    "vfxPrefab": "pre_human_baishuang_skill0_10_bullet",
+    "sfxName": ""
+  },
+  {
+    "id": 195,
+    "vfxPrefab": "pre_human_baishuang_skill0_10_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 196,
+    "vfxPrefab": "pre_human_baishuang_skill0_10_shifa",
+    "sfxName": ""
+  },
+  {
+    "id": 197,
+    "vfxPrefab": "pre_human_baishuang_skill0_1_bullet",
+    "sfxName": ""
+  },
+  {
+    "id": 198,
+    "vfxPrefab": "pre_human_baishuang_skill0_1_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 199,
+    "vfxPrefab": "pre_human_baishuang_skill0_1_shifa",
+    "sfxName": ""
+  },
+  {
+    "id": 200,
+    "vfxPrefab": "pre_human_baishuang_skill0_2_bullet",
+    "sfxName": ""
+  },
+  {
+    "id": 201,
+    "vfxPrefab": "pre_human_baishuang_skill0_3_bullet",
+    "sfxName": ""
+  },
+  {
+    "id": 202,
+    "vfxPrefab": "pre_human_baishuang_skill0_3_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 203,
+    "vfxPrefab": "pre_human_baishuang_skill0_3_shifa",
+    "sfxName": ""
+  },
+  {
+    "id": 204,
+    "vfxPrefab": "pre_human_baishuang_skill0_4_01",
+    "sfxName": ""
+  },
+  {
+    "id": 205,
+    "vfxPrefab": "pre_human_baishuang_skill0_4_02",
+    "sfxName": ""
+  },
+  {
+    "id": 206,
+    "vfxPrefab": "pre_human_baishuang_skill0_4_shifa",
+    "sfxName": ""
+  },
+  {
+    "id": 207,
+    "vfxPrefab": "pre_human_baishuang_skill0_5_bullet",
+    "sfxName": ""
+  },
+  {
+    "id": 208,
+    "vfxPrefab": "pre_human_baishuang_skill0_5_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 209,
+    "vfxPrefab": "pre_human_baishuang_skill0_5_shifa",
+    "sfxName": ""
+  },
+  {
+    "id": 210,
+    "vfxPrefab": "pre_human_baishuang_skill0_6_bullet",
+    "sfxName": ""
+  },
+  {
+    "id": 211,
+    "vfxPrefab": "pre_human_baishuang_skill0_6_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 212,
+    "vfxPrefab": "pre_human_baishuang_skill0_6_shifa",
+    "sfxName": ""
+  },
+  {
+    "id": 213,
+    "vfxPrefab": "pre_human_baishuang_skill0_8_bullet",
+    "sfxName": ""
+  },
+  {
+    "id": 214,
+    "vfxPrefab": "pre_human_baishuang_skill0_8_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 215,
+    "vfxPrefab": "pre_human_baishuang_skill0_8_shifa",
+    "sfxName": ""
+  },
+  {
+    "id": 216,
+    "vfxPrefab": "pre_human_baishuang_skill0_9_01",
+    "sfxName": ""
+  },
+  {
+    "id": 217,
+    "vfxPrefab": "pre_human_baishuang_skill0_9_02",
+    "sfxName": ""
+  },
+  {
+    "id": 218,
+    "vfxPrefab": "pre_human_baishuang_skill0_9_shifa",
+    "sfxName": ""
+  },
+  {
+    "id": 219,
+    "vfxPrefab": "pre_human_baishuang_skill1_1",
+    "sfxName": ""
+  },
+  {
+    "id": 220,
+    "vfxPrefab": "pre_human_baishuang_skill1_1_shifa",
+    "sfxName": ""
+  },
+  {
+    "id": 221,
+    "vfxPrefab": "pre_human_baishuang_skill1_blackbox",
+    "sfxName": ""
+  },
+  {
+    "id": 222,
+    "vfxPrefab": "pre_human_baishuang_skill1_mirror_all",
+    "sfxName": ""
+  },
+  {
+    "id": 223,
+    "vfxPrefab": "pre_human_baishuang_skill1_mirror_vfx",
+    "sfxName": ""
+  },
+  {
+    "id": 224,
+    "vfxPrefab": "pre_human_baishuang_skill1_transition",
+    "sfxName": ""
+  },
+  {
+    "id": 225,
+    "vfxPrefab": "pre_human_baishuang_skill1_xuli",
+    "sfxName": ""
+  },
+  {
+    "id": 226,
+    "vfxPrefab": "pre_human_baishuang_skill1_zhankai",
+    "sfxName": ""
+  },
+  {
+    "id": 227,
+    "vfxPrefab": "pre_human_baishuang_skill2",
+    "sfxName": ""
+  },
+  {
+    "id": 228,
+    "vfxPrefab": "pre_human_baishuang_skill2_bullet_blue",
+    "sfxName": ""
+  },
+  {
+    "id": 229,
+    "vfxPrefab": "pre_human_baishuang_skill2_bullet_blue02",
+    "sfxName": ""
+  },
+  {
+    "id": 230,
+    "vfxPrefab": "pre_human_baishuang_skill2_bullet_center",
+    "sfxName": ""
+  },
+  {
+    "id": 231,
+    "vfxPrefab": "pre_human_baishuang_skill2_bullet_red01",
+    "sfxName": ""
+  },
+  {
+    "id": 232,
+    "vfxPrefab": "pre_human_baishuang_skill2_hit_blue01",
+    "sfxName": ""
+  },
+  {
+    "id": 233,
+    "vfxPrefab": "pre_human_baishuang_skill2_umbrella",
+    "sfxName": ""
+  },
+  {
+    "id": 234,
+    "vfxPrefab": "pre_human_baishuang_skill3_001",
+    "sfxName": ""
+  },
+  {
+    "id": 235,
+    "vfxPrefab": "pre_human_baishuang_skill3_002",
+    "sfxName": ""
+  },
+  {
+    "id": 236,
+    "vfxPrefab": "pre_human_baishuang_skill4_bullet_blue",
+    "sfxName": ""
+  },
+  {
+    "id": 237,
+    "vfxPrefab": "pre_human_baishuang_skill4_bullet_blue_cs",
+    "sfxName": ""
+  },
+  {
+    "id": 238,
+    "vfxPrefab": "pre_human_baishuang_skill4_bullet_red",
+    "sfxName": ""
+  },
+  {
+    "id": 239,
+    "vfxPrefab": "pre_human_baishuang_skill4_shifa",
+    "sfxName": ""
+  },
+  {
+    "id": 240,
+    "vfxPrefab": "pre_human_baishuang_skill4_start_blue",
+    "sfxName": ""
+  },
+  {
+    "id": 241,
+    "vfxPrefab": "pre_human_baishuang_skill4_start_red",
+    "sfxName": ""
+  },
+  {
+    "id": 242,
+    "vfxPrefab": "pre_human_baishuang_skill6_end",
+    "sfxName": ""
+  },
+  {
+    "id": 243,
+    "vfxPrefab": "pre_human_baishuang_skill6_loop",
+    "sfxName": ""
+  },
+  {
+    "id": 244,
+    "vfxPrefab": "pre_chap_hanyouyou_skill0_1_bullet",
+    "sfxName": ""
+  },
+  {
+    "id": 245,
+    "vfxPrefab": "pre_chap_hanyouyou_skill0_1_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 246,
+    "vfxPrefab": "pre_chap_hanyouyou_skill0_1_spell",
+    "sfxName": ""
+  },
+  {
+    "id": 247,
+    "vfxPrefab": "pre_chap_hanyouyou_skill0_4_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 248,
+    "vfxPrefab": "pre_chap_hanyouyou_skill0_4_spell",
+    "sfxName": ""
+  },
+  {
+    "id": 249,
+    "vfxPrefab": "pre_chap_hanyouyou_skill0_5_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 250,
+    "vfxPrefab": "pre_chap_hanyouyou_skill0_5_spell",
+    "sfxName": ""
+  },
+  {
+    "id": 251,
+    "vfxPrefab": "pre_chap_hanyouyou_skill1_01",
+    "sfxName": ""
+  },
+  {
+    "id": 252,
+    "vfxPrefab": "pre_chap_hanyouyou_skill1_02",
+    "sfxName": ""
+  },
+  {
+    "id": 253,
+    "vfxPrefab": "pre_chap_hanyouyou_skill1_03",
+    "sfxName": ""
+  },
+  {
+    "id": 254,
+    "vfxPrefab": "pre_chap_hanyouyou_skill1_04",
+    "sfxName": ""
+  },
+  {
+    "id": 255,
+    "vfxPrefab": "pre_chap_hanyouyou_skill1_05",
+    "sfxName": ""
+  },
+  {
+    "id": 256,
+    "vfxPrefab": "pre_chap_hanyouyou_skill1_06",
+    "sfxName": ""
+  },
+  {
+    "id": 257,
+    "vfxPrefab": "pre_chap_hanyouyou_skill1_07",
+    "sfxName": ""
+  },
+  {
+    "id": 258,
+    "vfxPrefab": "pre_chap_hanyouyou_skill1_08",
+    "sfxName": ""
+  },
+  {
+    "id": 259,
+    "vfxPrefab": "pre_chap_hanyouyou_skill1_09",
+    "sfxName": ""
+  },
+  {
+    "id": 260,
+    "vfxPrefab": "pre_chap_hanyouyou_skill1_10",
+    "sfxName": ""
+  },
+  {
+    "id": 261,
+    "vfxPrefab": "pre_chap_hanyouyou_skill1_11",
+    "sfxName": ""
+  },
+  {
+    "id": 262,
+    "vfxPrefab": "pre_chap_hanyouyou_skill1_12",
+    "sfxName": ""
+  },
+  {
+    "id": 263,
+    "vfxPrefab": "pre_chap_hanyouyou_skill1_13",
+    "sfxName": ""
+  },
+  {
+    "id": 264,
+    "vfxPrefab": "pre_chap_hanyouyou_skill1_14",
+    "sfxName": ""
+  },
+  {
+    "id": 265,
+    "vfxPrefab": "pre_chap_hanyouyou_skill1_15",
+    "sfxName": ""
+  },
+  {
+    "id": 266,
+    "vfxPrefab": "pre_chap_hanyouyou_skill1_16",
+    "sfxName": ""
+  },
+  {
+    "id": 267,
+    "vfxPrefab": "pre_chap_hanyouyou_skill1_17",
+    "sfxName": ""
+  },
+  {
+    "id": 268,
+    "vfxPrefab": "pre_hanyouyou_blackbox",
+    "sfxName": ""
+  },
+  {
+    "id": 269,
+    "vfxPrefab": "pre_hanyouyou_blackbox_1",
+    "sfxName": ""
+  },
+  {
+    "id": 270,
+    "vfxPrefab": "pre_hanyouyou_jian",
+    "sfxName": ""
+  },
+  {
+    "id": 271,
+    "vfxPrefab": "pre_hanyouyou_skill0_1",
+    "sfxName": ""
+  },
+  {
+    "id": 272,
+    "vfxPrefab": "pre_hanyouyou_skill0_2",
+    "sfxName": ""
+  },
+  {
+    "id": 273,
+    "vfxPrefab": "pre_hanyouyou_skill0_3",
+    "sfxName": ""
+  },
+  {
+    "id": 274,
+    "vfxPrefab": "pre_hanyouyou_skill0_big1_1",
+    "sfxName": ""
+  },
+  {
+    "id": 275,
+    "vfxPrefab": "pre_hanyouyou_skill0_hit_1",
+    "sfxName": ""
+  },
+  {
+    "id": 276,
+    "vfxPrefab": "pre_hanyouyou_skill1_01",
+    "sfxName": ""
+  },
+  {
+    "id": 277,
+    "vfxPrefab": "pre_hanyouyou_skill1_02",
+    "sfxName": ""
+  },
+  {
+    "id": 278,
+    "vfxPrefab": "pre_hanyouyou_skill1_03",
+    "sfxName": ""
+  },
+  {
+    "id": 279,
+    "vfxPrefab": "pre_hanyouyou_skill3_d1",
+    "sfxName": ""
+  },
+  {
+    "id": 280,
+    "vfxPrefab": "pre_hanyouyou_skill3_d2",
+    "sfxName": ""
+  },
+  {
+    "id": 281,
+    "vfxPrefab": "pre_hanyouyou_skill3_d3",
+    "sfxName": ""
+  },
+  {
+    "id": 282,
+    "vfxPrefab": "pre_hanyouyou_skill3_d4",
+    "sfxName": ""
+  },
+  {
+    "id": 283,
+    "vfxPrefab": "pre_hanyouyou_skill3_d4_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 284,
+    "vfxPrefab": "pre_hanyouyou_skill3_shifang_01",
+    "sfxName": ""
+  },
+  {
+    "id": 285,
+    "vfxPrefab": "pre_hanyouyou_skill3_wuqi_03",
+    "sfxName": ""
+  },
+  {
+    "id": 286,
+    "vfxPrefab": "pre_hanyouyou_skill3_xuli_01",
+    "sfxName": ""
+  },
+  {
+    "id": 287,
+    "vfxPrefab": "pre_hanyouyou_skill4_01",
+    "sfxName": ""
+  },
+  {
+    "id": 288,
+    "vfxPrefab": "pre_hanyouyou_skill4_02",
+    "sfxName": ""
+  },
+  {
+    "id": 289,
+    "vfxPrefab": "pre_hanyouyou_skill4_03",
+    "sfxName": ""
+  },
+  {
+    "id": 290,
+    "vfxPrefab": "pre_hanyouyou_skill4_04",
+    "sfxName": ""
+  },
+  {
+    "id": 291,
+    "vfxPrefab": "pre_human_hanyouyou_evade_001",
+    "sfxName": ""
+  },
+  {
+    "id": 292,
+    "vfxPrefab": "pre_human_hanyouyou_evade_002",
+    "sfxName": ""
+  },
+  {
+    "id": 293,
+    "vfxPrefab": "pre_human_hanyouyou_skill0_1",
+    "sfxName": ""
+  },
+  {
+    "id": 294,
+    "vfxPrefab": "pre_human_hanyouyou_skill0_1hit",
+    "sfxName": ""
+  },
+  {
+    "id": 295,
+    "vfxPrefab": "pre_human_hanyouyou_skill0_2",
+    "sfxName": ""
+  },
+  {
+    "id": 296,
+    "vfxPrefab": "pre_human_hanyouyou_skill0_3_bullet",
+    "sfxName": ""
+  },
+  {
+    "id": 297,
+    "vfxPrefab": "pre_human_hanyouyou_skill0_3_fire",
+    "sfxName": ""
+  },
+  {
+    "id": 298,
+    "vfxPrefab": "pre_human_hanyouyou_skill0_4_1_fire",
+    "sfxName": ""
+  },
+  {
+    "id": 299,
+    "vfxPrefab": "pre_human_hanyouyou_skill0_4_2_fire",
+    "sfxName": ""
+  },
+  {
+    "id": 300,
+    "vfxPrefab": "pre_human_hanyouyou_skill0_4_bullet",
+    "sfxName": ""
+  },
+  {
+    "id": 301,
+    "vfxPrefab": "pre_human_hanyouyou_skill0_4_smoke",
+    "sfxName": ""
+  },
+  {
+    "id": 302,
+    "vfxPrefab": "pre_human_hanyouyou_skill0_5",
+    "sfxName": ""
+  },
+  {
+    "id": 303,
+    "vfxPrefab": "pre_human_hanyouyou_skill0_5_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 304,
+    "vfxPrefab": "pre_human_hanyouyou_skill0_5_jump",
+    "sfxName": ""
+  },
+  {
+    "id": 305,
+    "vfxPrefab": "pre_human_hanyouyou_skill1_blackbox",
+    "sfxName": ""
+  },
+  {
+    "id": 306,
+    "vfxPrefab": "pre_human_hanyouyou_skill1_kaihuo",
+    "sfxName": ""
+  },
+  {
+    "id": 307,
+    "vfxPrefab": "pre_human_hanyouyou_skill1_xuli",
+    "sfxName": ""
+  },
+  {
+    "id": 308,
+    "vfxPrefab": "pre_human_hanyouyou_skill2_kaihuo",
+    "sfxName": ""
+  },
+  {
+    "id": 309,
+    "vfxPrefab": "pre_human_hanyouyou_skill2_xuli",
+    "sfxName": ""
+  },
+  {
+    "id": 310,
+    "vfxPrefab": "pre_human_hanyouyou_skill3_1",
+    "sfxName": ""
+  },
+  {
+    "id": 311,
+    "vfxPrefab": "pre_human_hanyouyou_skill3_1_fire",
+    "sfxName": ""
+  },
+  {
+    "id": 312,
+    "vfxPrefab": "pre_human_hanyouyou_skill3_2",
+    "sfxName": ""
+  },
+  {
+    "id": 313,
+    "vfxPrefab": "pre_human_hanyouyou_skill3_2_1",
+    "sfxName": ""
+  },
+  {
+    "id": 314,
+    "vfxPrefab": "pre_human_hanyouyou_skill3_2_boom",
+    "sfxName": ""
+  },
+  {
+    "id": 315,
+    "vfxPrefab": "pre_human_hanyouyou_skill3_2_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 316,
+    "vfxPrefab": "pre_human_hanyouyou_skill3_2_small",
+    "sfxName": ""
+  },
+  {
+    "id": 317,
+    "vfxPrefab": "pre_human_hanyouyou_skill4",
+    "sfxName": ""
+  },
+  {
+    "id": 318,
+    "vfxPrefab": "pre_human_hanyouyou_skill4_handbow",
+    "sfxName": ""
+  },
+  {
+    "id": 319,
+    "vfxPrefab": "pre_human_hanyouyou_skill4_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 320,
+    "vfxPrefab": "pre_human_hanyouyou_skill6_end",
+    "sfxName": ""
+  },
+  {
+    "id": 321,
+    "vfxPrefab": "pre_human_hanyouyou_skill6_loop",
+    "sfxName": ""
+  },
+  {
+    "id": 322,
+    "vfxPrefab": "pre_linerender",
+    "sfxName": ""
+  },
+  {
+    "id": 323,
+    "vfxPrefab": "pre_human_Inafial_evade_001",
+    "sfxName": ""
+  },
+  {
+    "id": 324,
+    "vfxPrefab": "pre_human_Inafial_evade_002",
+    "sfxName": ""
+  },
+  {
+    "id": 325,
+    "vfxPrefab": "pre_inafial_skill2_ci",
+    "sfxName": ""
+  },
+  {
+    "id": 326,
+    "vfxPrefab": "pre_inafial_skill2_ci02",
+    "sfxName": ""
+  },
+  {
+    "id": 327,
+    "vfxPrefab": "pre_inafial_skill2_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 328,
+    "vfxPrefab": "pre_inafial_skill2_up",
+    "sfxName": ""
+  },
+  {
+    "id": 329,
+    "vfxPrefab": "pre_inafial_skill2_xuli",
+    "sfxName": ""
+  },
+  {
+    "id": 330,
+    "vfxPrefab": "pre_inafial_skill6_end",
+    "sfxName": ""
+  },
+  {
+    "id": 331,
+    "vfxPrefab": "pre_inafial_skill6_loop",
+    "sfxName": ""
+  },
+  {
+    "id": 332,
+    "vfxPrefab": "pre_chap_kuimo_skill0_1_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 333,
+    "vfxPrefab": "pre_chap_kuimo_skill0_1_spell",
+    "sfxName": ""
+  },
+  {
+    "id": 334,
+    "vfxPrefab": "pre_chap_kuimo_skill0_4_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 335,
+    "vfxPrefab": "pre_chap_kuimo_skill0_4_spell",
+    "sfxName": ""
+  },
+  {
+    "id": 336,
+    "vfxPrefab": "pre_chap_kuimo_skill0_6_spell",
+    "sfxName": ""
+  },
+  {
+    "id": 337,
+    "vfxPrefab": "pre_chap_kuimo_skill0_8_spell",
+    "sfxName": ""
+  },
+  {
+    "id": 338,
+    "vfxPrefab": "pre_chap_kuimo_skill1_baozha",
+    "sfxName": ""
+  },
+  {
+    "id": 339,
+    "vfxPrefab": "pre_chap_kuimo_skill1_dimian",
+    "sfxName": ""
+  },
+  {
+    "id": 340,
+    "vfxPrefab": "pre_chap_kuimo_skill1_heibaishan",
+    "sfxName": ""
+  },
+  {
+    "id": 341,
+    "vfxPrefab": "pre_chap_kuimo_skill1_juanzhou",
+    "sfxName": ""
+  },
+  {
+    "id": 342,
+    "vfxPrefab": "pre_chap_kuimo_skill1_moqiu",
+    "sfxName": ""
+  },
+  {
+    "id": 343,
+    "vfxPrefab": "pre_chap_kuimo_skill1_sence",
+    "sfxName": ""
+  },
+  {
+    "id": 344,
+    "vfxPrefab": "pre_chap_kuimo_skill2_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 345,
+    "vfxPrefab": "pre_chap_kuimo_skill2_juanzhou",
+    "sfxName": ""
+  },
+  {
+    "id": 346,
+    "vfxPrefab": "pre_chap_kuimo_skill2_juanzhou_02",
+    "sfxName": ""
+  },
+  {
+    "id": 347,
+    "vfxPrefab": "pre_chap_kuimo_skill3_buff",
+    "sfxName": ""
+  },
+  {
+    "id": 348,
+    "vfxPrefab": "pre_chap_kuimo_skill3_spell_01",
+    "sfxName": ""
+  },
+  {
+    "id": 349,
+    "vfxPrefab": "pre_chap_kuimo_skill3_spell_02",
+    "sfxName": ""
+  },
+  {
+    "id": 350,
+    "vfxPrefab": "pre_chap_mage_1_1",
+    "sfxName": ""
+  },
+  {
+    "id": 351,
+    "vfxPrefab": "pre_chap_mage_1_1_spell",
+    "sfxName": ""
+  },
+  {
+    "id": 352,
+    "vfxPrefab": "pre_chap_mage_1_2",
+    "sfxName": ""
+  },
+  {
+    "id": 353,
+    "vfxPrefab": "pre_chap_mage_2_2",
+    "sfxName": ""
+  },
+  {
+    "id": 354,
+    "vfxPrefab": "pre_chap_mage_2_2_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 355,
+    "vfxPrefab": "pre_chap_mage_attack_1_bullet",
+    "sfxName": ""
+  },
+  {
+    "id": 356,
+    "vfxPrefab": "pre_chap_mage_attack_1_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 357,
+    "vfxPrefab": "pre_chap_mage_attack_1_spell",
+    "sfxName": ""
+  },
+  {
+    "id": 358,
+    "vfxPrefab": "pre_chap_mage_attack_2_bullet",
+    "sfxName": ""
+  },
+  {
+    "id": 359,
+    "vfxPrefab": "pre_chap_mage_attack_2_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 360,
+    "vfxPrefab": "pre_chap_mage_attack_2_spell",
+    "sfxName": ""
+  },
+  {
+    "id": 361,
+    "vfxPrefab": "pre_chap_mage_attack_3",
+    "sfxName": ""
+  },
+  {
+    "id": 362,
+    "vfxPrefab": "pre_anim",
+    "sfxName": ""
+  },
+  {
+    "id": 363,
+    "vfxPrefab": "pre_chap_metsa_skill1",
+    "sfxName": ""
+  },
+  {
+    "id": 364,
+    "vfxPrefab": "pre_chap_metsa_skill1_camera",
+    "sfxName": ""
+  },
+  {
+    "id": 365,
+    "vfxPrefab": "pre_chap_metsa_skill1_trail",
+    "sfxName": ""
+  },
+  {
+    "id": 366,
+    "vfxPrefab": "pre_chap_metsa_skill1_weapon",
+    "sfxName": ""
+  },
+  {
+    "id": 367,
+    "vfxPrefab": "pre_chap_metsa_skill2_heal",
+    "sfxName": ""
+  },
+  {
+    "id": 368,
+    "vfxPrefab": "pre_human_lady_metsa_skill0_1",
+    "sfxName": ""
+  },
+  {
+    "id": 369,
+    "vfxPrefab": "pre_human_lady_metsa_skill0_1_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 370,
+    "vfxPrefab": "pre_human_lady_metsa_skill0_2",
+    "sfxName": ""
+  },
+  {
+    "id": 371,
+    "vfxPrefab": "pre_human_lady_metsa_skill0_3_butterfly",
+    "sfxName": ""
+  },
+  {
+    "id": 372,
+    "vfxPrefab": "pre_human_lady_metsa_skill0_3_hit01",
+    "sfxName": ""
+  },
+  {
+    "id": 373,
+    "vfxPrefab": "pre_human_lady_metsa_skill0_3_hit02",
+    "sfxName": ""
+  },
+  {
+    "id": 374,
+    "vfxPrefab": "pre_human_lady_metsa_skill0_3_hit03",
+    "sfxName": ""
+  },
+  {
+    "id": 375,
+    "vfxPrefab": "pre_human_lady_metsa_skill0_4_bullet01",
+    "sfxName": ""
+  },
+  {
+    "id": 376,
+    "vfxPrefab": "pre_human_lady_metsa_skill0_4_bullet02",
+    "sfxName": ""
+  },
+  {
+    "id": 377,
+    "vfxPrefab": "pre_human_lady_metsa_skill0_4_bullet03",
+    "sfxName": ""
+  },
+  {
+    "id": 378,
+    "vfxPrefab": "pre_human_lady_metsa_skill0_4_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 379,
+    "vfxPrefab": "pre_human_lady_metsa_skill0_5",
+    "sfxName": ""
+  },
+  {
+    "id": 380,
+    "vfxPrefab": "pre_human_lady_metsa_skill0_5_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 381,
+    "vfxPrefab": "pre_human_lady_metsa_skill0_5_xuli",
+    "sfxName": ""
+  },
+  {
+    "id": 382,
+    "vfxPrefab": "pre_human_lady_metsa_skill2",
+    "sfxName": ""
+  },
+  {
+    "id": 383,
+    "vfxPrefab": "pre_human_lady_metsa_skill2_baozha",
+    "sfxName": ""
+  },
+  {
+    "id": 384,
+    "vfxPrefab": "pre_human_lady_metsa_skill2_fashe",
+    "sfxName": ""
+  },
+  {
+    "id": 385,
+    "vfxPrefab": "pre_human_lady_metsa_skill3_1",
+    "sfxName": ""
+  },
+  {
+    "id": 386,
+    "vfxPrefab": "pre_human_lady_metsa_skill3_1_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 387,
+    "vfxPrefab": "pre_human_lady_metsa_skill3_2_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 388,
+    "vfxPrefab": "pre_human_lady_metsa_skill3_bullet",
+    "sfxName": ""
+  },
+  {
+    "id": 389,
+    "vfxPrefab": "pre_human_lady_metsa_skill3_bullet_l1",
+    "sfxName": ""
+  },
+  {
+    "id": 390,
+    "vfxPrefab": "pre_human_lady_metsa_skill3_bullet_l2",
+    "sfxName": ""
+  },
+  {
+    "id": 391,
+    "vfxPrefab": "pre_human_lady_metsa_skill3_bullet_r1",
+    "sfxName": ""
+  },
+  {
+    "id": 392,
+    "vfxPrefab": "pre_human_lady_metsa_skill3_bullet_r2",
+    "sfxName": ""
+  },
+  {
+    "id": 393,
+    "vfxPrefab": "pre_human_lady_metsa_skill3_bullet_up",
+    "sfxName": ""
+  },
+  {
+    "id": 394,
+    "vfxPrefab": "pre_human_lady_metsa_skill3_weapon",
+    "sfxName": ""
+  },
+  {
+    "id": 395,
+    "vfxPrefab": "pre_human_lady_metsa_skill4_butterfly",
+    "sfxName": ""
+  },
+  {
+    "id": 396,
+    "vfxPrefab": "pre_human_lady_metsa_skill4_butterfly02",
+    "sfxName": ""
+  },
+  {
+    "id": 397,
+    "vfxPrefab": "pre_human_lady_metsa_skill4_butterfly02_fashe",
+    "sfxName": ""
+  },
+  {
+    "id": 398,
+    "vfxPrefab": "pre_human_lady_metsa_skill4_hit01",
+    "sfxName": ""
+  },
+  {
+    "id": 399,
+    "vfxPrefab": "pre_human_lady_metsa_skill6_end",
+    "sfxName": ""
+  },
+  {
+    "id": 400,
+    "vfxPrefab": "pre_human_lady_metsa_skill6_loop",
+    "sfxName": ""
+  },
+  {
+    "id": 401,
+    "vfxPrefab": "pre_human_lady_metsa_skill6_start",
+    "sfxName": ""
+  },
+  {
+    "id": 402,
+    "vfxPrefab": "pre_kaihua",
+    "sfxName": ""
+  },
+  {
+    "id": 403,
+    "vfxPrefab": "pre_mojianke_blackbox",
+    "sfxName": ""
+  },
+  {
+    "id": 404,
+    "vfxPrefab": "pre_mojianke_canying",
+    "sfxName": ""
+  },
+  {
+    "id": 405,
+    "vfxPrefab": "pre_mojianke_long_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 406,
+    "vfxPrefab": "pre_mojianke_short_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 407,
+    "vfxPrefab": "pre_mojianke_shoudao",
+    "sfxName": ""
+  },
+  {
+    "id": 408,
+    "vfxPrefab": "pre_mojianke_skill0_1",
+    "sfxName": ""
+  },
+  {
+    "id": 409,
+    "vfxPrefab": "pre_mojianke_skill0_1_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 410,
+    "vfxPrefab": "pre_mojianke_skill0_1_start",
+    "sfxName": ""
+  },
+  {
+    "id": 411,
+    "vfxPrefab": "pre_mojianke_skill0_2_1",
+    "sfxName": ""
+  },
+  {
+    "id": 412,
+    "vfxPrefab": "pre_mojianke_skill0_2_ci",
+    "sfxName": ""
+  },
+  {
+    "id": 413,
+    "vfxPrefab": "pre_mojianke_skill0_2_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 414,
+    "vfxPrefab": "pre_mojianke_skill0_2_hit_1",
+    "sfxName": ""
+  },
+  {
+    "id": 415,
+    "vfxPrefab": "pre_mojianke_skill0_3",
+    "sfxName": ""
+  },
+  {
+    "id": 416,
+    "vfxPrefab": "pre_mojianke_skill0_3_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 417,
+    "vfxPrefab": "pre_mojianke_skill0_4",
+    "sfxName": ""
+  },
+  {
+    "id": 418,
+    "vfxPrefab": "pre_mojianke_skill0_4_bullet_01",
+    "sfxName": ""
+  },
+  {
+    "id": 419,
+    "vfxPrefab": "pre_mojianke_skill0_4_bullet_02",
+    "sfxName": ""
+  },
+  {
+    "id": 420,
+    "vfxPrefab": "pre_mojianke_skill0_4_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 421,
+    "vfxPrefab": "pre_mojianke_skill0_4_hit_01",
+    "sfxName": ""
+  },
+  {
+    "id": 422,
+    "vfxPrefab": "pre_mojianke_skill0_4_shou",
+    "sfxName": ""
+  },
+  {
+    "id": 423,
+    "vfxPrefab": "pre_mojianke_skill0_5",
+    "sfxName": ""
+  },
+  {
+    "id": 424,
+    "vfxPrefab": "pre_mojianke_skill0_5_1",
+    "sfxName": ""
+  },
+  {
+    "id": 425,
+    "vfxPrefab": "pre_mojianke_skill0_5_2",
+    "sfxName": ""
+  },
+  {
+    "id": 426,
+    "vfxPrefab": "pre_mojianke_skill0_5_3",
+    "sfxName": ""
+  },
+  {
+    "id": 427,
+    "vfxPrefab": "pre_mojianke_skill0_5_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 428,
+    "vfxPrefab": "pre_mojianke_skill0_5_jump",
+    "sfxName": ""
+  },
+  {
+    "id": 429,
+    "vfxPrefab": "pre_mojianke_skill1_blade01",
+    "sfxName": ""
+  },
+  {
+    "id": 430,
+    "vfxPrefab": "pre_mojianke_skill1_camera",
+    "sfxName": ""
+  },
+  {
+    "id": 431,
+    "vfxPrefab": "pre_mojianke_skill1_dg",
+    "sfxName": ""
+  },
+  {
+    "id": 432,
+    "vfxPrefab": "pre_mojianke_skill1_eye",
+    "sfxName": ""
+  },
+  {
+    "id": 433,
+    "vfxPrefab": "pre_mojianke_skill1_fazhen",
+    "sfxName": ""
+  },
+  {
+    "id": 434,
+    "vfxPrefab": "pre_mojianke_skill1_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 435,
+    "vfxPrefab": "pre_mojianke_skill1_start",
+    "sfxName": ""
+  },
+  {
+    "id": 436,
+    "vfxPrefab": "pre_mojianke_skill1_weapon_l_01",
+    "sfxName": ""
+  },
+  {
+    "id": 437,
+    "vfxPrefab": "pre_mojianke_skill1_weapon_r_01",
+    "sfxName": ""
+  },
+  {
+    "id": 438,
+    "vfxPrefab": "pre_mojianke_skill1_zhongjie",
+    "sfxName": ""
+  },
+  {
+    "id": 439,
+    "vfxPrefab": "pre_mojianke_skill2_1",
+    "sfxName": ""
+  },
+  {
+    "id": 440,
+    "vfxPrefab": "pre_mojianke_skill2_1_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 441,
+    "vfxPrefab": "pre_mojianke_skill2_1_start",
+    "sfxName": ""
+  },
+  {
+    "id": 442,
+    "vfxPrefab": "pre_mojianke_skill2_2",
+    "sfxName": ""
+  },
+  {
+    "id": 443,
+    "vfxPrefab": "pre_mojianke_skill2_2_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 444,
+    "vfxPrefab": "pre_mojianke_skill2_3",
+    "sfxName": ""
+  },
+  {
+    "id": 445,
+    "vfxPrefab": "pre_mojianke_skill2_3_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 446,
+    "vfxPrefab": "pre_mojianke_skill3_1",
+    "sfxName": ""
+  },
+  {
+    "id": 447,
+    "vfxPrefab": "pre_mojianke_skill3_2",
+    "sfxName": ""
+  },
+  {
+    "id": 448,
+    "vfxPrefab": "pre_mojianke_skill3_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 449,
+    "vfxPrefab": "pre_mojianke_skill3_jump",
+    "sfxName": ""
+  },
+  {
+    "id": 450,
+    "vfxPrefab": "pre_mojianke_skill4",
+    "sfxName": ""
+  },
+  {
+    "id": 451,
+    "vfxPrefab": "pre_mojianke_skill4_1_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 452,
+    "vfxPrefab": "pre_mojianke_skill4_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 453,
+    "vfxPrefab": "pre_mojianke_skill6",
+    "sfxName": ""
+  },
+  {
+    "id": 454,
+    "vfxPrefab": "pre_mojianke_skill6_loop",
+    "sfxName": ""
+  },
+  {
+    "id": 455,
+    "vfxPrefab": "pre_molyln_skill0_1",
+    "sfxName": ""
+  },
+  {
+    "id": 456,
+    "vfxPrefab": "pre_molyln_skill0_1_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 457,
+    "vfxPrefab": "pre_molyln_skill0_2_1",
+    "sfxName": ""
+  },
+  {
+    "id": 458,
+    "vfxPrefab": "pre_molyln_skill0_2_1_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 459,
+    "vfxPrefab": "pre_molyln_skill0_2_2",
+    "sfxName": ""
+  },
+  {
+    "id": 460,
+    "vfxPrefab": "pre_molyln_skill0_2_2_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 461,
+    "vfxPrefab": "pre_molyln_skill0_3_1",
+    "sfxName": ""
+  },
+  {
+    "id": 462,
+    "vfxPrefab": "pre_molyln_skill0_3_1_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 463,
+    "vfxPrefab": "pre_molyln_skill0_3_2",
+    "sfxName": ""
+  },
+  {
+    "id": 464,
+    "vfxPrefab": "pre_molyln_skill0_3_2_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 465,
+    "vfxPrefab": "pre_molyln_skill0_3_3",
+    "sfxName": ""
+  },
+  {
+    "id": 466,
+    "vfxPrefab": "pre_molyln_skill0_3_3_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 467,
+    "vfxPrefab": "pre_molyln_skill0_3_bullet",
+    "sfxName": ""
+  },
+  {
+    "id": 468,
+    "vfxPrefab": "pre_molyln_skill0_3_bullet_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 469,
+    "vfxPrefab": "pre_molyln_skill0_3_bullet_hit01",
+    "sfxName": ""
+  },
+  {
+    "id": 470,
+    "vfxPrefab": "pre_molyln_skill0_3_short_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 471,
+    "vfxPrefab": "pre_molyln_skill0_4_1",
+    "sfxName": ""
+  },
+  {
+    "id": 472,
+    "vfxPrefab": "pre_molyln_skill0_4_1_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 473,
+    "vfxPrefab": "pre_molyln_skill0_4_short_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 474,
+    "vfxPrefab": "pre_molyln_skill0_5_1",
+    "sfxName": ""
+  },
+  {
+    "id": 475,
+    "vfxPrefab": "pre_molyln_skill0_5_1_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 476,
+    "vfxPrefab": "pre_molyln_skill0_5_ci",
+    "sfxName": ""
+  },
+  {
+    "id": 477,
+    "vfxPrefab": "pre_molyln_skill0_5_ci_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 478,
+    "vfxPrefab": "pre_molyln_skill0_5_xuli",
+    "sfxName": ""
+  },
+  {
+    "id": 479,
+    "vfxPrefab": "pre_molyln_skill1_blackbox",
+    "sfxName": ""
+  },
+  {
+    "id": 480,
+    "vfxPrefab": "pre_molyln_skill1_chongci",
+    "sfxName": ""
+  },
+  {
+    "id": 481,
+    "vfxPrefab": "pre_molyln_skill1_daoguang01",
+    "sfxName": ""
+  },
+  {
+    "id": 482,
+    "vfxPrefab": "pre_molyln_skill1_daoguang02",
+    "sfxName": ""
+  },
+  {
+    "id": 483,
+    "vfxPrefab": "pre_molyln_skill1_gem",
+    "sfxName": ""
+  },
+  {
+    "id": 484,
+    "vfxPrefab": "pre_molyln_skill1_jump",
+    "sfxName": ""
+  },
+  {
+    "id": 485,
+    "vfxPrefab": "pre_molyln_skill1_zhongjie",
+    "sfxName": ""
+  },
+  {
+    "id": 486,
+    "vfxPrefab": "pre_molyln_skill2_ci",
+    "sfxName": ""
+  },
+  {
+    "id": 487,
+    "vfxPrefab": "pre_molyln_skill2_ci_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 488,
+    "vfxPrefab": "pre_molyln_skill2_ti",
+    "sfxName": ""
+  },
+  {
+    "id": 489,
+    "vfxPrefab": "pre_molyln_skill2_xuli",
+    "sfxName": ""
+  },
+  {
+    "id": 490,
+    "vfxPrefab": "pre_molyln_skill3_1",
+    "sfxName": ""
+  },
+  {
+    "id": 491,
+    "vfxPrefab": "pre_molyln_skill3_1_1",
+    "sfxName": ""
+  },
+  {
+    "id": 492,
+    "vfxPrefab": "pre_molyln_skill3_1_2",
+    "sfxName": ""
+  },
+  {
+    "id": 493,
+    "vfxPrefab": "pre_molyln_skill3_1_3",
+    "sfxName": ""
+  },
+  {
+    "id": 494,
+    "vfxPrefab": "pre_molyln_skill3_2",
+    "sfxName": ""
+  },
+  {
+    "id": 495,
+    "vfxPrefab": "pre_molyln_skill3_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 496,
+    "vfxPrefab": "pre_molyln_skill6",
+    "sfxName": ""
+  },
+  {
+    "id": 497,
+    "vfxPrefab": "pre_molyln_skill6_loop",
+    "sfxName": ""
+  },
+  {
+    "id": 498,
+    "vfxPrefab": "pre_mytti_lightning",
+    "sfxName": ""
+  },
+  {
+    "id": 499,
+    "vfxPrefab": "pre_mytti_skill0_01",
+    "sfxName": ""
+  },
+  {
+    "id": 500,
+    "vfxPrefab": "pre_mytti_skill0_01_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 501,
+    "vfxPrefab": "pre_mytti_skill0_02",
+    "sfxName": ""
+  },
+  {
+    "id": 502,
+    "vfxPrefab": "pre_mytti_skill0_03",
+    "sfxName": ""
+  },
+  {
+    "id": 503,
+    "vfxPrefab": "pre_mytti_skill0_04",
+    "sfxName": ""
+  },
+  {
+    "id": 504,
+    "vfxPrefab": "pre_mytti_skill0_04_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 505,
+    "vfxPrefab": "pre_mytti_skill0_05",
+    "sfxName": ""
+  },
+  {
+    "id": 506,
+    "vfxPrefab": "pre_mytti_skill0_05_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 507,
+    "vfxPrefab": "pre_mytti_skill0_05_xuli",
+    "sfxName": ""
+  },
+  {
+    "id": 508,
+    "vfxPrefab": "pre_mytti_skill1_arrow",
+    "sfxName": ""
+  },
+  {
+    "id": 509,
+    "vfxPrefab": "pre_mytti_skill1_arrow_RightHandWeapon",
+    "sfxName": ""
+  },
+  {
+    "id": 510,
+    "vfxPrefab": "pre_mytti_skill1_arrow_shifa",
+    "sfxName": ""
+  },
+  {
+    "id": 511,
+    "vfxPrefab": "pre_mytti_skill1_blackbox",
+    "sfxName": ""
+  },
+  {
+    "id": 512,
+    "vfxPrefab": "pre_mytti_skill1_thunder",
+    "sfxName": ""
+  },
+  {
+    "id": 513,
+    "vfxPrefab": "pre_mytti_skill1_thunder_HipsAdjust",
+    "sfxName": ""
+  },
+  {
+    "id": 514,
+    "vfxPrefab": "pre_mytti_skill2_1_arow",
+    "sfxName": ""
+  },
+  {
+    "id": 515,
+    "vfxPrefab": "pre_mytti_skill2_1_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 516,
+    "vfxPrefab": "pre_mytti_skill2_1_start",
+    "sfxName": ""
+  },
+  {
+    "id": 517,
+    "vfxPrefab": "pre_mytti_skill2_1_xuli",
+    "sfxName": ""
+  },
+  {
+    "id": 518,
+    "vfxPrefab": "pre_mytti_skill2_2_arow",
+    "sfxName": ""
+  },
+  {
+    "id": 519,
+    "vfxPrefab": "pre_mytti_skill2_2_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 520,
+    "vfxPrefab": "pre_mytti_skill2_2_start",
+    "sfxName": ""
+  },
+  {
+    "id": 521,
+    "vfxPrefab": "pre_mytti_skill2_2_xuli",
+    "sfxName": ""
+  },
+  {
+    "id": 522,
+    "vfxPrefab": "pre_mytti_skill3_1",
+    "sfxName": ""
+  },
+  {
+    "id": 523,
+    "vfxPrefab": "pre_mytti_skill3_2",
+    "sfxName": ""
+  },
+  {
+    "id": 524,
+    "vfxPrefab": "pre_mytti_skill3_canying",
+    "sfxName": ""
+  },
+  {
+    "id": 525,
+    "vfxPrefab": "pre_mytti_skill3_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 526,
+    "vfxPrefab": "pre_mytti_skill4_1",
+    "sfxName": ""
+  },
+  {
+    "id": 527,
+    "vfxPrefab": "pre_mytti_skill4_2",
+    "sfxName": ""
+  },
+  {
+    "id": 528,
+    "vfxPrefab": "pre_mytti_skill4_3",
+    "sfxName": ""
+  },
+  {
+    "id": 529,
+    "vfxPrefab": "pre_mytti_skill6_end",
+    "sfxName": ""
+  },
+  {
+    "id": 530,
+    "vfxPrefab": "pre_mytti_skill6_loop",
+    "sfxName": ""
+  },
+  {
+    "id": 531,
+    "vfxPrefab": "pre_human_nono_evade_001",
+    "sfxName": ""
+  },
+  {
+    "id": 532,
+    "vfxPrefab": "pre_human_nono_evade_002",
+    "sfxName": ""
+  },
+  {
+    "id": 533,
+    "vfxPrefab": "pre_human_pami_nono_skill2",
+    "sfxName": ""
+  },
+  {
+    "id": 534,
+    "vfxPrefab": "pre_human_pami_nono_skill2_zadi",
+    "sfxName": ""
+  },
+  {
+    "id": 535,
+    "vfxPrefab": "pre_human_pami_nono_skill4",
+    "sfxName": ""
+  },
+  {
+    "id": 536,
+    "vfxPrefab": "pre_human_pami_nono_skill4_01",
+    "sfxName": ""
+  },
+  {
+    "id": 537,
+    "vfxPrefab": "pre_human_pami_nono_xuli01",
+    "sfxName": ""
+  },
+  {
+    "id": 538,
+    "vfxPrefab": "pre_human_pami_nono_xuli01_loop",
+    "sfxName": ""
+  },
+  {
+    "id": 539,
+    "vfxPrefab": "pre_human_pami_nono_xuli01_start",
+    "sfxName": ""
+  },
+  {
+    "id": 540,
+    "vfxPrefab": "pre_nono_blackbox",
+    "sfxName": ""
+  },
+  {
+    "id": 541,
+    "vfxPrefab": "pre_nono_skill0_1",
+    "sfxName": ""
+  },
+  {
+    "id": 542,
+    "vfxPrefab": "pre_nono_skill0_1_02",
+    "sfxName": ""
+  },
+  {
+    "id": 543,
+    "vfxPrefab": "pre_nono_skill0_1_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 544,
+    "vfxPrefab": "pre_nono_skill0_2_02",
+    "sfxName": ""
+  },
+  {
+    "id": 545,
+    "vfxPrefab": "pre_nono_skill0_3",
+    "sfxName": ""
+  },
+  {
+    "id": 546,
+    "vfxPrefab": "pre_nono_skill0_3_02",
+    "sfxName": ""
+  },
+  {
+    "id": 547,
+    "vfxPrefab": "pre_nono_skill0_3_luodi",
+    "sfxName": ""
+  },
+  {
+    "id": 548,
+    "vfxPrefab": "pre_nono_skill0_4",
+    "sfxName": ""
+  },
+  {
+    "id": 549,
+    "vfxPrefab": "pre_nono_skill0_4_hit_01",
+    "sfxName": ""
+  },
+  {
+    "id": 550,
+    "vfxPrefab": "pre_nono_skill0_5_jump",
+    "sfxName": ""
+  },
+  {
+    "id": 551,
+    "vfxPrefab": "pre_nono_skill1",
+    "sfxName": ""
+  },
+  {
+    "id": 552,
+    "vfxPrefab": "pre_nono_skill1_camera01",
+    "sfxName": ""
+  },
+  {
+    "id": 553,
+    "vfxPrefab": "pre_nono_skill1_camera02",
+    "sfxName": ""
+  },
+  {
+    "id": 554,
+    "vfxPrefab": "pre_nono_skill1_dg01",
+    "sfxName": ""
+  },
+  {
+    "id": 555,
+    "vfxPrefab": "pre_nono_skill1_smoke",
+    "sfxName": ""
+  },
+  {
+    "id": 556,
+    "vfxPrefab": "pre_nono_skill1_stage01",
+    "sfxName": ""
+  },
+  {
+    "id": 557,
+    "vfxPrefab": "pre_nono_skill1_stage02",
+    "sfxName": ""
+  },
+  {
+    "id": 558,
+    "vfxPrefab": "pre_nono_skill2_dilie01",
+    "sfxName": ""
+  },
+  {
+    "id": 559,
+    "vfxPrefab": "pre_nono_skill2_dilie02",
+    "sfxName": ""
+  },
+  {
+    "id": 560,
+    "vfxPrefab": "pre_nono_skill2_dilie03",
+    "sfxName": ""
+  },
+  {
+    "id": 561,
+    "vfxPrefab": "pre_nono_skill2_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 562,
+    "vfxPrefab": "pre_nono_skill3_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 563,
+    "vfxPrefab": "pre_nono_skill3_weapon",
+    "sfxName": ""
+  },
+  {
+    "id": 564,
+    "vfxPrefab": "pre_chap_104001_skill1_xianjie",
+    "sfxName": ""
+  },
+  {
+    "id": 565,
+    "vfxPrefab": "pre_chap_104001_skill2_ci",
+    "sfxName": ""
+  },
+  {
+    "id": 566,
+    "vfxPrefab": "pre_chap_104001_skill2_shoudao",
+    "sfxName": ""
+  },
+  {
+    "id": 567,
+    "vfxPrefab": "pre_chap_104001_skill2_trail",
+    "sfxName": ""
+  },
+  {
+    "id": 568,
+    "vfxPrefab": "pre_chap_104001_skill2_xuli",
+    "sfxName": ""
+  },
+  {
+    "id": 569,
+    "vfxPrefab": "pre_chap_104001_skill3_shou_01",
+    "sfxName": ""
+  },
+  {
+    "id": 570,
+    "vfxPrefab": "pre_chap_104001_skill3_shou_02",
+    "sfxName": ""
+  },
+  {
+    "id": 571,
+    "vfxPrefab": "pre_chap_104001_skill3_xuli",
+    "sfxName": ""
+  },
+  {
+    "id": 572,
+    "vfxPrefab": "pre_human_girl_104001_skill4",
+    "sfxName": ""
+  },
+  {
+    "id": 573,
+    "vfxPrefab": "pre_human_girl_104001_skill6_end",
+    "sfxName": ""
+  },
+  {
+    "id": 574,
+    "vfxPrefab": "pre_human_girl_104001_skill6_start",
+    "sfxName": ""
+  },
+  {
+    "id": 575,
+    "vfxPrefab": "pre_104001_guihuo_dandao",
+    "sfxName": ""
+  },
+  {
+    "id": 576,
+    "vfxPrefab": "pre_104001_guihuo_five",
+    "sfxName": ""
+  },
+  {
+    "id": 577,
+    "vfxPrefab": "pre_104001_guihuo_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 578,
+    "vfxPrefab": "pre_104001_guihuo_hui",
+    "sfxName": ""
+  },
+  {
+    "id": 579,
+    "vfxPrefab": "pre_104001_guihuo_one",
+    "sfxName": ""
+  },
+  {
+    "id": 580,
+    "vfxPrefab": "pre_104001_guihuo_xishou",
+    "sfxName": ""
+  },
+  {
+    "id": 581,
+    "vfxPrefab": "pre_104001_skill0_1",
+    "sfxName": ""
+  },
+  {
+    "id": 582,
+    "vfxPrefab": "pre_104001_skill0_1_g",
+    "sfxName": ""
+  },
+  {
+    "id": 583,
+    "vfxPrefab": "pre_104001_skill0_1_g_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 584,
+    "vfxPrefab": "pre_104001_skill0_1_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 585,
+    "vfxPrefab": "pre_104001_skill0_2_01",
+    "sfxName": ""
+  },
+  {
+    "id": 586,
+    "vfxPrefab": "pre_104001_skill0_2_01_g",
+    "sfxName": ""
+  },
+  {
+    "id": 587,
+    "vfxPrefab": "pre_104001_skill0_2_01_g_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 588,
+    "vfxPrefab": "pre_104001_skill0_2_02",
+    "sfxName": ""
+  },
+  {
+    "id": 589,
+    "vfxPrefab": "pre_104001_skill0_2_02_g",
+    "sfxName": ""
+  },
+  {
+    "id": 590,
+    "vfxPrefab": "pre_104001_skill0_2_02_g_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 591,
+    "vfxPrefab": "pre_104001_skill0_2_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 592,
+    "vfxPrefab": "pre_104001_skill0_3",
+    "sfxName": ""
+  },
+  {
+    "id": 593,
+    "vfxPrefab": "pre_104001_skill0_3_02_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 594,
+    "vfxPrefab": "pre_104001_skill0_3_1_g",
+    "sfxName": ""
+  },
+  {
+    "id": 595,
+    "vfxPrefab": "pre_104001_skill0_3_1_g_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 596,
+    "vfxPrefab": "pre_104001_skill0_3_2",
+    "sfxName": ""
+  },
+  {
+    "id": 597,
+    "vfxPrefab": "pre_104001_skill0_3_3",
+    "sfxName": ""
+  },
+  {
+    "id": 598,
+    "vfxPrefab": "pre_104001_skill0_3_g",
+    "sfxName": ""
+  },
+  {
+    "id": 599,
+    "vfxPrefab": "pre_104001_skill0_3_ghost",
+    "sfxName": ""
+  },
+  {
+    "id": 600,
+    "vfxPrefab": "pre_104001_skill0_3_g_ghost",
+    "sfxName": ""
+  },
+  {
+    "id": 601,
+    "vfxPrefab": "pre_104001_skill0_3_g_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 602,
+    "vfxPrefab": "pre_104001_skill0_3_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 603,
+    "vfxPrefab": "pre_104001_skill0_4",
+    "sfxName": ""
+  },
+  {
+    "id": 604,
+    "vfxPrefab": "pre_104001_skill0_4_01",
+    "sfxName": ""
+  },
+  {
+    "id": 605,
+    "vfxPrefab": "pre_104001_skill0_4_01_ghost",
+    "sfxName": ""
+  },
+  {
+    "id": 606,
+    "vfxPrefab": "pre_104001_skill0_4_02",
+    "sfxName": ""
+  },
+  {
+    "id": 607,
+    "vfxPrefab": "pre_104001_skill0_4_03",
+    "sfxName": ""
+  },
+  {
+    "id": 608,
+    "vfxPrefab": "pre_104001_skill0_4_05",
+    "sfxName": ""
+  },
+  {
+    "id": 609,
+    "vfxPrefab": "pre_104001_skill0_4_06",
+    "sfxName": ""
+  },
+  {
+    "id": 610,
+    "vfxPrefab": "pre_104001_skill0_4_07",
+    "sfxName": ""
+  },
+  {
+    "id": 611,
+    "vfxPrefab": "pre_104001_skill0_4_07_slash",
+    "sfxName": ""
+  },
+  {
+    "id": 612,
+    "vfxPrefab": "pre_104001_skill0_4_08",
+    "sfxName": ""
+  },
+  {
+    "id": 613,
+    "vfxPrefab": "pre_104001_skill0_4_1",
+    "sfxName": ""
+  },
+  {
+    "id": 614,
+    "vfxPrefab": "pre_104001_skill0_4_1_g",
+    "sfxName": ""
+  },
+  {
+    "id": 615,
+    "vfxPrefab": "pre_104001_skill0_4_1_g_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 616,
+    "vfxPrefab": "pre_104001_skill0_4_2_g",
+    "sfxName": ""
+  },
+  {
+    "id": 617,
+    "vfxPrefab": "pre_104001_skill0_4_3",
+    "sfxName": ""
+  },
+  {
+    "id": 618,
+    "vfxPrefab": "pre_104001_skill0_4_3_g",
+    "sfxName": ""
+  },
+  {
+    "id": 619,
+    "vfxPrefab": "pre_104001_skill0_4_g",
+    "sfxName": ""
+  },
+  {
+    "id": 620,
+    "vfxPrefab": "pre_104001_skill0_4_ghost02",
+    "sfxName": ""
+  },
+  {
+    "id": 621,
+    "vfxPrefab": "pre_104001_skill0_4_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 622,
+    "vfxPrefab": "pre_104001_skill0_5",
+    "sfxName": ""
+  },
+  {
+    "id": 623,
+    "vfxPrefab": "pre_104001_skill0_5_02",
+    "sfxName": ""
+  },
+  {
+    "id": 624,
+    "vfxPrefab": "pre_104001_skill0_5_02new",
+    "sfxName": ""
+  },
+  {
+    "id": 625,
+    "vfxPrefab": "pre_104001_skill0_5_1_g",
+    "sfxName": ""
+  },
+  {
+    "id": 626,
+    "vfxPrefab": "pre_104001_skill0_5_1_g_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 627,
+    "vfxPrefab": "pre_104001_skill0_5_g",
+    "sfxName": ""
+  },
+  {
+    "id": 628,
+    "vfxPrefab": "pre_104001_skill0_5_ghost",
+    "sfxName": ""
+  },
+  {
+    "id": 629,
+    "vfxPrefab": "pre_104001_skill0_5_g_ghost",
+    "sfxName": ""
+  },
+  {
+    "id": 630,
+    "vfxPrefab": "pre_104001_skill0_5_g_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 631,
+    "vfxPrefab": "pre_104001_skill0_5_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 632,
+    "vfxPrefab": "pre_104001_skill0_5_new",
+    "sfxName": ""
+  },
+  {
+    "id": 633,
+    "vfxPrefab": "pre_104001_skill0_5_slash",
+    "sfxName": ""
+  },
+  {
+    "id": 634,
+    "vfxPrefab": "pre_104001_skill0_5_smoke",
+    "sfxName": ""
+  },
+  {
+    "id": 635,
+    "vfxPrefab": "pre_104001_skill0_outlinefire",
+    "sfxName": ""
+  },
+  {
+    "id": 636,
+    "vfxPrefab": "pre_104001_skill1_01",
+    "sfxName": ""
+  },
+  {
+    "id": 637,
+    "vfxPrefab": "pre_104001_skill1_02",
+    "sfxName": ""
+  },
+  {
+    "id": 638,
+    "vfxPrefab": "pre_104001_skill1_03",
+    "sfxName": ""
+  },
+  {
+    "id": 639,
+    "vfxPrefab": "pre_104001_skill1_04",
+    "sfxName": ""
+  },
+  {
+    "id": 640,
+    "vfxPrefab": "pre_104001_skill1_blackbox",
+    "sfxName": ""
+  },
+  {
+    "id": 641,
+    "vfxPrefab": "pre_104001_skill1_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 642,
+    "vfxPrefab": "pre_104001_skill1_saoguang",
+    "sfxName": ""
+  },
+  {
+    "id": 643,
+    "vfxPrefab": "pre_104001_skill3_baozha",
+    "sfxName": ""
+  },
+  {
+    "id": 644,
+    "vfxPrefab": "pre_104001_skill3_dg01",
+    "sfxName": ""
+  },
+  {
+    "id": 645,
+    "vfxPrefab": "pre_104001_skill3_fire01",
+    "sfxName": ""
+  },
+  {
+    "id": 646,
+    "vfxPrefab": "pre_104001_skill3_focous",
+    "sfxName": ""
+  },
+  {
+    "id": 647,
+    "vfxPrefab": "pre_104001_skill3_zhakai",
+    "sfxName": ""
+  },
+  {
+    "id": 648,
+    "vfxPrefab": "pre_skill0_new",
+    "sfxName": ""
+  },
+  {
+    "id": 649,
+    "vfxPrefab": "pre_human_player_skill0_1_1",
+    "sfxName": ""
+  },
+  {
+    "id": 650,
+    "vfxPrefab": "pre_human_player_skill0_1_2",
+    "sfxName": ""
+  },
+  {
+    "id": 651,
+    "vfxPrefab": "pre_human_player_skill0_2_1",
+    "sfxName": ""
+  },
+  {
+    "id": 652,
+    "vfxPrefab": "pre_human_player_skill0_2_ci",
+    "sfxName": ""
+  },
+  {
+    "id": 653,
+    "vfxPrefab": "pre_human_player_skill0_3",
+    "sfxName": ""
+  },
+  {
+    "id": 654,
+    "vfxPrefab": "pre_human_player_skill0_3_1",
+    "sfxName": ""
+  },
+  {
+    "id": 655,
+    "vfxPrefab": "pre_human_player_skill0_3_2",
+    "sfxName": ""
+  },
+  {
+    "id": 656,
+    "vfxPrefab": "pre_human_player_skill0_3_3",
+    "sfxName": ""
+  },
+  {
+    "id": 657,
+    "vfxPrefab": "pre_human_player_skill0_4_1",
+    "sfxName": ""
+  },
+  {
+    "id": 658,
+    "vfxPrefab": "pre_human_player_skill0_4_2",
+    "sfxName": ""
+  },
+  {
+    "id": 659,
+    "vfxPrefab": "pre_human_player_skill0_5",
+    "sfxName": ""
+  },
+  {
+    "id": 660,
+    "vfxPrefab": "pre_human_player_skill1_blackbox",
+    "sfxName": ""
+  },
+  {
+    "id": 661,
+    "vfxPrefab": "pre_human_player_skill1_ci",
+    "sfxName": ""
+  },
+  {
+    "id": 662,
+    "vfxPrefab": "pre_human_player_skill1_dg",
+    "sfxName": ""
+  },
+  {
+    "id": 663,
+    "vfxPrefab": "pre_human_player_skill1_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 664,
+    "vfxPrefab": "pre_human_player_skill1_start",
+    "sfxName": ""
+  },
+  {
+    "id": 665,
+    "vfxPrefab": "pre_human_player_skill1_weapon",
+    "sfxName": ""
+  },
+  {
+    "id": 666,
+    "vfxPrefab": "pre_human_player_skill1_xuli",
+    "sfxName": ""
+  },
+  {
+    "id": 667,
+    "vfxPrefab": "pre_human_player_skill6_dimian",
+    "sfxName": ""
+  },
+  {
+    "id": 668,
+    "vfxPrefab": "pre_human_player_skill6_loop01",
+    "sfxName": ""
+  },
+  {
+    "id": 669,
+    "vfxPrefab": "pre_human_player_skill6_loop02",
+    "sfxName": ""
+  },
+  {
+    "id": 670,
+    "vfxPrefab": "pre_human_player_skill6_star",
+    "sfxName": ""
+  },
+  {
+    "id": 671,
+    "vfxPrefab": "pre_player_blackbox",
+    "sfxName": ""
+  },
+  {
+    "id": 672,
+    "vfxPrefab": "pre_player_skill01_04_hit_t",
+    "sfxName": ""
+  },
+  {
+    "id": 673,
+    "vfxPrefab": "pre_player_skill0_1",
+    "sfxName": ""
+  },
+  {
+    "id": 674,
+    "vfxPrefab": "pre_player_skill0_1_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 675,
+    "vfxPrefab": "pre_player_skill0_1_new",
+    "sfxName": ""
+  },
+  {
+    "id": 676,
+    "vfxPrefab": "pre_player_skill0_1_old",
+    "sfxName": ""
+  },
+  {
+    "id": 677,
+    "vfxPrefab": "pre_player_skill0_1_pv",
+    "sfxName": ""
+  },
+  {
+    "id": 678,
+    "vfxPrefab": "pre_player_skill0_2",
+    "sfxName": ""
+  },
+  {
+    "id": 679,
+    "vfxPrefab": "pre_player_skill0_2_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 680,
+    "vfxPrefab": "pre_player_skill0_2_new",
+    "sfxName": ""
+  },
+  {
+    "id": 681,
+    "vfxPrefab": "pre_player_skill0_2_old",
+    "sfxName": ""
+  },
+  {
+    "id": 682,
+    "vfxPrefab": "pre_player_skill0_2_pv",
+    "sfxName": ""
+  },
+  {
+    "id": 683,
+    "vfxPrefab": "pre_player_skill0_3",
+    "sfxName": ""
+  },
+  {
+    "id": 684,
+    "vfxPrefab": "pre_player_skill0_3_hit_01",
+    "sfxName": ""
+  },
+  {
+    "id": 685,
+    "vfxPrefab": "pre_player_skill0_3_hit_02",
+    "sfxName": ""
+  },
+  {
+    "id": 686,
+    "vfxPrefab": "pre_player_skill0_3_old",
+    "sfxName": ""
+  },
+  {
+    "id": 687,
+    "vfxPrefab": "pre_player_skill0_3_pv",
+    "sfxName": ""
+  },
+  {
+    "id": 688,
+    "vfxPrefab": "pre_player_skill0_4",
+    "sfxName": ""
+  },
+  {
+    "id": 689,
+    "vfxPrefab": "pre_player_skill0_4_1",
+    "sfxName": ""
+  },
+  {
+    "id": 690,
+    "vfxPrefab": "pre_player_skill0_4_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 691,
+    "vfxPrefab": "pre_player_skill0_4_old",
+    "sfxName": ""
+  },
+  {
+    "id": 692,
+    "vfxPrefab": "pre_player_skill0_4_pv",
+    "sfxName": ""
+  },
+  {
+    "id": 693,
+    "vfxPrefab": "pre_player_skill0_4_t",
+    "sfxName": ""
+  },
+  {
+    "id": 694,
+    "vfxPrefab": "pre_player_skill0_5",
+    "sfxName": ""
+  },
+  {
+    "id": 695,
+    "vfxPrefab": "pre_player_skill0_5_beifen",
+    "sfxName": ""
+  },
+  {
+    "id": 696,
+    "vfxPrefab": "pre_player_skill0_5_dg_t",
+    "sfxName": ""
+  },
+  {
+    "id": 697,
+    "vfxPrefab": "pre_player_skill0_5_dimian_t",
+    "sfxName": ""
+  },
+  {
+    "id": 698,
+    "vfxPrefab": "pre_player_skill0_5_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 699,
+    "vfxPrefab": "pre_player_skill0_5_hit_01",
+    "sfxName": ""
+  },
+  {
+    "id": 700,
+    "vfxPrefab": "pre_player_skill0_5_hit_02",
+    "sfxName": ""
+  },
+  {
+    "id": 701,
+    "vfxPrefab": "pre_player_skill0_5_new",
+    "sfxName": ""
+  },
+  {
+    "id": 702,
+    "vfxPrefab": "pre_player_skill0_5_old",
+    "sfxName": ""
+  },
+  {
+    "id": 703,
+    "vfxPrefab": "pre_player_skill0_5_p_beifen",
+    "sfxName": ""
+  },
+  {
+    "id": 704,
+    "vfxPrefab": "pre_player_skill0_5_tiao_t",
+    "sfxName": ""
+  },
+  {
+    "id": 705,
+    "vfxPrefab": "pre_player_skill0_5_xuli",
+    "sfxName": ""
+  },
+  {
+    "id": 706,
+    "vfxPrefab": "pre_player_skill0_5_zhuan_t",
+    "sfxName": ""
+  },
+  {
+    "id": 707,
+    "vfxPrefab": "pre_player_skill0_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 708,
+    "vfxPrefab": "pre_player_skill0_hit_t",
+    "sfxName": ""
+  },
+  {
+    "id": 709,
+    "vfxPrefab": "pre_player_skill1",
+    "sfxName": ""
+  },
+  {
+    "id": 710,
+    "vfxPrefab": "pre_player_skill1_beifen",
+    "sfxName": ""
+  },
+  {
+    "id": 711,
+    "vfxPrefab": "pre_player_skill1_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 712,
+    "vfxPrefab": "pre_player_skill1_star",
+    "sfxName": ""
+  },
+  {
+    "id": 713,
+    "vfxPrefab": "pre_player_skill1_weapon",
+    "sfxName": ""
+  },
+  {
+    "id": 714,
+    "vfxPrefab": "pre_player_skill1_xuli",
+    "sfxName": ""
+  },
+  {
+    "id": 715,
+    "vfxPrefab": "pre_player_skill1_xuli02",
+    "sfxName": ""
+  },
+  {
+    "id": 716,
+    "vfxPrefab": "pre_player_skill2",
+    "sfxName": ""
+  },
+  {
+    "id": 717,
+    "vfxPrefab": "pre_player_skill2_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 718,
+    "vfxPrefab": "pre_player_skill2_hit_01",
+    "sfxName": ""
+  },
+  {
+    "id": 719,
+    "vfxPrefab": "pre_player_skill2_hit_02",
+    "sfxName": ""
+  },
+  {
+    "id": 720,
+    "vfxPrefab": "pre_player_skill2_hit_03",
+    "sfxName": ""
+  },
+  {
+    "id": 721,
+    "vfxPrefab": "pre_player_skill2_new",
+    "sfxName": ""
+  },
+  {
+    "id": 722,
+    "vfxPrefab": "pre_player_skill2_old",
+    "sfxName": ""
+  },
+  {
+    "id": 723,
+    "vfxPrefab": "pre_player_skill2_smoke",
+    "sfxName": ""
+  },
+  {
+    "id": 724,
+    "vfxPrefab": "pre_player_skill2_start",
+    "sfxName": ""
+  },
+  {
+    "id": 725,
+    "vfxPrefab": "pre_player_skill2_t",
+    "sfxName": ""
+  },
+  {
+    "id": 726,
+    "vfxPrefab": "pre_player_skill2_xuli",
+    "sfxName": ""
+  },
+  {
+    "id": 727,
+    "vfxPrefab": "pre_player_skill3",
+    "sfxName": ""
+  },
+  {
+    "id": 728,
+    "vfxPrefab": "pre_player_skill3_1_new",
+    "sfxName": ""
+  },
+  {
+    "id": 729,
+    "vfxPrefab": "pre_player_skill3_buff01",
+    "sfxName": ""
+  },
+  {
+    "id": 730,
+    "vfxPrefab": "pre_player_skill3_buff02",
+    "sfxName": ""
+  },
+  {
+    "id": 731,
+    "vfxPrefab": "pre_player_skill3_buff02ceshi",
+    "sfxName": ""
+  },
+  {
+    "id": 732,
+    "vfxPrefab": "pre_player_skill3_d1",
+    "sfxName": ""
+  },
+  {
+    "id": 733,
+    "vfxPrefab": "pre_player_skill3_d2",
+    "sfxName": ""
+  },
+  {
+    "id": 734,
+    "vfxPrefab": "pre_player_skill3_d3",
+    "sfxName": ""
+  },
+  {
+    "id": 735,
+    "vfxPrefab": "pre_player_skill3_d3_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 736,
+    "vfxPrefab": "pre_player_skill3_dg01",
+    "sfxName": ""
+  },
+  {
+    "id": 737,
+    "vfxPrefab": "pre_player_skill3_dg02",
+    "sfxName": ""
+  },
+  {
+    "id": 738,
+    "vfxPrefab": "pre_player_skill3_dg03",
+    "sfxName": ""
+  },
+  {
+    "id": 739,
+    "vfxPrefab": "pre_player_skill3_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 740,
+    "vfxPrefab": "pre_player_skill3_scan",
+    "sfxName": ""
+  },
+  {
+    "id": 741,
+    "vfxPrefab": "pre_player_skill3_xuli",
+    "sfxName": ""
+  },
+  {
+    "id": 742,
+    "vfxPrefab": "pre_player_skill3_zadi",
+    "sfxName": ""
+  },
+  {
+    "id": 743,
+    "vfxPrefab": "pre_player_skill4_buff",
+    "sfxName": ""
+  },
+  {
+    "id": 744,
+    "vfxPrefab": "pre_player_skill4_start",
+    "sfxName": ""
+  },
+  {
+    "id": 745,
+    "vfxPrefab": "pre_human_loli_rorokha_skill0_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 746,
+    "vfxPrefab": "pre_human_loli_rorokha_skill4_dg",
+    "sfxName": ""
+  },
+  {
+    "id": 747,
+    "vfxPrefab": "pre_human_loli_rorokha_skill4_dimian",
+    "sfxName": ""
+  },
+  {
+    "id": 748,
+    "vfxPrefab": "pre_human_loli_rorokha_skill4_Owl",
+    "sfxName": ""
+  },
+  {
+    "id": 749,
+    "vfxPrefab": "pre_human_loli_rorokha_skill4_shifa",
+    "sfxName": ""
+  },
+  {
+    "id": 750,
+    "vfxPrefab": "pre_human_loli_rorokha_skill4_strike",
+    "sfxName": ""
+  },
+  {
+    "id": 751,
+    "vfxPrefab": "pre_rorokha_evade_001",
+    "sfxName": ""
+  },
+  {
+    "id": 752,
+    "vfxPrefab": "pre_rorokha_evade_002",
+    "sfxName": ""
+  },
+  {
+    "id": 753,
+    "vfxPrefab": "pre_rorokha_evade_003",
+    "sfxName": ""
+  },
+  {
+    "id": 754,
+    "vfxPrefab": "pre_rorokha_evade_003_end",
+    "sfxName": ""
+  },
+  {
+    "id": 755,
+    "vfxPrefab": "pre_rorokha_skill0_01",
+    "sfxName": ""
+  },
+  {
+    "id": 756,
+    "vfxPrefab": "pre_rorokha_skill0_01_water_hit_01",
+    "sfxName": ""
+  },
+  {
+    "id": 757,
+    "vfxPrefab": "pre_rorokha_skill0_01_weapon_trail",
+    "sfxName": ""
+  },
+  {
+    "id": 758,
+    "vfxPrefab": "pre_rorokha_skill0_02",
+    "sfxName": ""
+  },
+  {
+    "id": 759,
+    "vfxPrefab": "pre_rorokha_skill0_02_water_hit_01",
+    "sfxName": ""
+  },
+  {
+    "id": 760,
+    "vfxPrefab": "pre_rorokha_skill0_03-05_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 761,
+    "vfxPrefab": "pre_rorokha_skill0_03",
+    "sfxName": ""
+  },
+  {
+    "id": 762,
+    "vfxPrefab": "pre_rorokha_skill0_03_water_hit_01",
+    "sfxName": ""
+  },
+  {
+    "id": 763,
+    "vfxPrefab": "pre_rorokha_skill0_04",
+    "sfxName": ""
+  },
+  {
+    "id": 764,
+    "vfxPrefab": "pre_rorokha_skill0_04_water_hit_01",
+    "sfxName": ""
+  },
+  {
+    "id": 765,
+    "vfxPrefab": "pre_rorokha_skill0_05",
+    "sfxName": ""
+  },
+  {
+    "id": 766,
+    "vfxPrefab": "pre_rorokha_skill0_05_tiao",
+    "sfxName": ""
+  },
+  {
+    "id": 767,
+    "vfxPrefab": "pre_rorokha_skill0_05_water_hit_01",
+    "sfxName": ""
+  },
+  {
+    "id": 768,
+    "vfxPrefab": "pre_rorokha_skill1_2",
+    "sfxName": ""
+  },
+  {
+    "id": 769,
+    "vfxPrefab": "pre_rorokha_skill1_blackbox",
+    "sfxName": ""
+  },
+  {
+    "id": 770,
+    "vfxPrefab": "pre_rorokha_skill1_dun",
+    "sfxName": ""
+  },
+  {
+    "id": 771,
+    "vfxPrefab": "pre_rorokha_skill1_fazhen_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 772,
+    "vfxPrefab": "pre_rorokha_skill1_fazhen_start",
+    "sfxName": ""
+  },
+  {
+    "id": 773,
+    "vfxPrefab": "pre_rorokha_skill1_splinewater",
+    "sfxName": ""
+  },
+  {
+    "id": 774,
+    "vfxPrefab": "pre_rorokha_skill1_trail",
+    "sfxName": ""
+  },
+  {
+    "id": 775,
+    "vfxPrefab": "pre_rorokha_skill2_1",
+    "sfxName": ""
+  },
+  {
+    "id": 776,
+    "vfxPrefab": "pre_rorokha_skill3_01",
+    "sfxName": ""
+  },
+  {
+    "id": 777,
+    "vfxPrefab": "pre_rorokha_skill3_1",
+    "sfxName": ""
+  },
+  {
+    "id": 778,
+    "vfxPrefab": "pre_rorokha_skill3_1_rabbit",
+    "sfxName": ""
+  },
+  {
+    "id": 779,
+    "vfxPrefab": "pre_rorokha_skill3_1_zhiliao",
+    "sfxName": ""
+  },
+  {
+    "id": 780,
+    "vfxPrefab": "pre_rorokha_skill3_heal",
+    "sfxName": ""
+  },
+  {
+    "id": 781,
+    "vfxPrefab": "pre_rorokha_skill6_end",
+    "sfxName": ""
+  },
+  {
+    "id": 782,
+    "vfxPrefab": "pre_rorokha_skill6_loop",
+    "sfxName": ""
+  },
+  {
+    "id": 783,
+    "vfxPrefab": "pre_human_silver_skill2_1",
+    "sfxName": ""
+  },
+  {
+    "id": 784,
+    "vfxPrefab": "pre_human_silver_skill2_1_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 785,
+    "vfxPrefab": "pre_human_silver_skill2_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 786,
+    "vfxPrefab": "pre_human_silver_skill2_LeftHand",
+    "sfxName": ""
+  },
+  {
+    "id": 787,
+    "vfxPrefab": "pre_human_silver_skill2_RightHand",
+    "sfxName": ""
+  },
+  {
+    "id": 788,
+    "vfxPrefab": "pre_human_silver_skill2_xuli",
+    "sfxName": ""
+  },
+  {
+    "id": 789,
+    "vfxPrefab": "pre_human_silver_skill2_zhuaji",
+    "sfxName": ""
+  },
+  {
+    "id": 790,
+    "vfxPrefab": "pre_human_silver_skill3_01",
+    "sfxName": ""
+  },
+  {
+    "id": 791,
+    "vfxPrefab": "pre_human_silver_skill3_01_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 792,
+    "vfxPrefab": "pre_human_silver_skill3_02",
+    "sfxName": ""
+  },
+  {
+    "id": 793,
+    "vfxPrefab": "pre_human_silver_skill3_03",
+    "sfxName": ""
+  },
+  {
+    "id": 794,
+    "vfxPrefab": "pre_human_silver_skill3_04",
+    "sfxName": ""
+  },
+  {
+    "id": 795,
+    "vfxPrefab": "pre_human_silver_skill3_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 796,
+    "vfxPrefab": "pre_human_silver_skill4",
+    "sfxName": ""
+  },
+  {
+    "id": 797,
+    "vfxPrefab": "pre_human_silver_skill4_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 798,
+    "vfxPrefab": "pre_human_silver_skill4_RightHand",
+    "sfxName": ""
+  },
+  {
+    "id": 799,
+    "vfxPrefab": "pre_human_silver_skill4_xuli",
+    "sfxName": ""
+  },
+  {
+    "id": 800,
+    "vfxPrefab": "pre_human_silver_skill6_end",
+    "sfxName": ""
+  },
+  {
+    "id": 801,
+    "vfxPrefab": "pre_human_silver_skill6_loop",
+    "sfxName": ""
+  },
+  {
+    "id": 802,
+    "vfxPrefab": "pre_chap_symphoria_blackbox",
+    "sfxName": ""
+  },
+  {
+    "id": 803,
+    "vfxPrefab": "pre_chap_symphoria_blackbox_1",
+    "sfxName": ""
+  },
+  {
+    "id": 804,
+    "vfxPrefab": "pre_chap_symphoria_jian",
+    "sfxName": ""
+  },
+  {
+    "id": 805,
+    "vfxPrefab": "pre_chap_symphoria_jian_guiji_01",
+    "sfxName": ""
+  },
+  {
+    "id": 806,
+    "vfxPrefab": "pre_chap_symphoria_lingyu",
+    "sfxName": ""
+  },
+  {
+    "id": 807,
+    "vfxPrefab": "pre_chap_symphoria_liuchangshifa_1",
+    "sfxName": ""
+  },
+  {
+    "id": 808,
+    "vfxPrefab": "pre_chap_symphoria_liuchangshifa_2",
+    "sfxName": ""
+  },
+  {
+    "id": 809,
+    "vfxPrefab": "pre_chap_symphoria_liuchang_01",
+    "sfxName": ""
+  },
+  {
+    "id": 810,
+    "vfxPrefab": "pre_chap_symphoria_liuchang_02",
+    "sfxName": ""
+  },
+  {
+    "id": 811,
+    "vfxPrefab": "pre_chap_symphoria_skill0_1",
+    "sfxName": ""
+  },
+  {
+    "id": 812,
+    "vfxPrefab": "pre_chap_symphoria_skill0_2",
+    "sfxName": ""
+  },
+  {
+    "id": 813,
+    "vfxPrefab": "pre_chap_symphoria_skill0_3",
+    "sfxName": ""
+  },
+  {
+    "id": 814,
+    "vfxPrefab": "pre_chap_symphoria_skill0_4",
+    "sfxName": ""
+  },
+  {
+    "id": 815,
+    "vfxPrefab": "pre_chap_symphoria_skill0_big1_1",
+    "sfxName": ""
+  },
+  {
+    "id": 816,
+    "vfxPrefab": "pre_chap_symphoria_skill0_hit_1",
+    "sfxName": ""
+  },
+  {
+    "id": 817,
+    "vfxPrefab": "pre_chap_symphoria_skill1_01",
+    "sfxName": ""
+  },
+  {
+    "id": 818,
+    "vfxPrefab": "pre_chap_symphoria_skill1_02",
+    "sfxName": ""
+  },
+  {
+    "id": 819,
+    "vfxPrefab": "pre_chap_symphoria_skill1_03",
+    "sfxName": ""
+  },
+  {
+    "id": 820,
+    "vfxPrefab": "pre_chap_symphoria_skill1_3",
+    "sfxName": ""
+  },
+  {
+    "id": 821,
+    "vfxPrefab": "pre_chap_symphoria_skill1_4",
+    "sfxName": ""
+  },
+  {
+    "id": 822,
+    "vfxPrefab": "pre_chap_symphoria_skill1_5",
+    "sfxName": ""
+  },
+  {
+    "id": 823,
+    "vfxPrefab": "pre_chap_symphoria_skill1_hit_1",
+    "sfxName": ""
+  },
+  {
+    "id": 824,
+    "vfxPrefab": "pre_chap_symphoria_skill1_line",
+    "sfxName": ""
+  },
+  {
+    "id": 825,
+    "vfxPrefab": "pre_chap_symphoria_skill2",
+    "sfxName": ""
+  },
+  {
+    "id": 826,
+    "vfxPrefab": "pre_chap_symphoria_skill2_1",
+    "sfxName": ""
+  },
+  {
+    "id": 827,
+    "vfxPrefab": "pre_chap_symphoria_skill2_2",
+    "sfxName": ""
+  },
+  {
+    "id": 828,
+    "vfxPrefab": "pre_chap_symphoria_skill2_3",
+    "sfxName": ""
+  },
+  {
+    "id": 829,
+    "vfxPrefab": "pre_chap_symphoria_skill2_hit_1",
+    "sfxName": ""
+  },
+  {
+    "id": 830,
+    "vfxPrefab": "pre_chap_symphoria_skill3_hit_01",
+    "sfxName": ""
+  },
+  {
+    "id": 831,
+    "vfxPrefab": "pre_chap_symphoria_skill3_jian_01",
+    "sfxName": ""
+  },
+  {
+    "id": 832,
+    "vfxPrefab": "pre_chap_symphoria_skill3_new_01",
+    "sfxName": ""
+  },
+  {
+    "id": 833,
+    "vfxPrefab": "pre_chap_symphoria_skill3_new_02",
+    "sfxName": ""
+  },
+  {
+    "id": 834,
+    "vfxPrefab": "pre_chap_symphoria_skill3_shifang_01",
+    "sfxName": ""
+  },
+  {
+    "id": 835,
+    "vfxPrefab": "pre_chap_symphoria_skill3_wuqi_03",
+    "sfxName": ""
+  },
+  {
+    "id": 836,
+    "vfxPrefab": "pre_chap_symphoria_skill3_xuli_01",
+    "sfxName": ""
+  },
+  {
+    "id": 837,
+    "vfxPrefab": "pre_chap_symphoria_skill4_01",
+    "sfxName": ""
+  },
+  {
+    "id": 838,
+    "vfxPrefab": "pre_chap_symphoria_skill4_02",
+    "sfxName": ""
+  },
+  {
+    "id": 839,
+    "vfxPrefab": "pre_chap_symphoria_skill4_03",
+    "sfxName": ""
+  },
+  {
+    "id": 840,
+    "vfxPrefab": "pre_chap_symphoria_skill4_04",
+    "sfxName": ""
+  },
+  {
+    "id": 841,
+    "vfxPrefab": "pre_chap_symphoria_skill5",
+    "sfxName": ""
+  },
+  {
+    "id": 842,
+    "vfxPrefab": "pre_human_symphoria_evade",
+    "sfxName": ""
+  },
+  {
+    "id": 843,
+    "vfxPrefab": "pre_symphoria_skill3_d1",
+    "sfxName": ""
+  },
+  {
+    "id": 844,
+    "vfxPrefab": "pre_symphoria_skill3_d1_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 845,
+    "vfxPrefab": "pre_symphoria_skill3_d2",
+    "sfxName": ""
+  },
+  {
+    "id": 846,
+    "vfxPrefab": "pre_symphoria_skill3_d2_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 847,
+    "vfxPrefab": "pre_symphoria_skill3_d3",
+    "sfxName": ""
+  },
+  {
+    "id": 848,
+    "vfxPrefab": "pre_symphoria_skill3_d3_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 849,
+    "vfxPrefab": "pre_symphoria_skill3_d4",
+    "sfxName": ""
+  },
+  {
+    "id": 850,
+    "vfxPrefab": "pre_symphoria_skill3_d4_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 851,
+    "vfxPrefab": "pre_symphoria_skill3_d5",
+    "sfxName": ""
+  },
+  {
+    "id": 852,
+    "vfxPrefab": "pre_symphoria_skill6_end",
+    "sfxName": ""
+  },
+  {
+    "id": 853,
+    "vfxPrefab": "pre_symphoria_skill6_loop",
+    "sfxName": ""
+  },
+  {
+    "id": 854,
+    "vfxPrefab": "pre_symphoria_skill6_start",
+    "sfxName": ""
+  },
+  {
+    "id": 855,
+    "vfxPrefab": "pre_chap_symphoria_blackbox",
+    "sfxName": ""
+  },
+  {
+    "id": 856,
+    "vfxPrefab": "pre_chap_symphoria_blackbox_1",
+    "sfxName": ""
+  },
+  {
+    "id": 857,
+    "vfxPrefab": "pre_chap_symphoria_jian",
+    "sfxName": ""
+  },
+  {
+    "id": 858,
+    "vfxPrefab": "pre_chap_symphoria_jian_guiji_01",
+    "sfxName": ""
+  },
+  {
+    "id": 859,
+    "vfxPrefab": "pre_chap_symphoria_lingyu",
+    "sfxName": ""
+  },
+  {
+    "id": 860,
+    "vfxPrefab": "pre_chap_symphoria_liuchangshifa_1",
+    "sfxName": ""
+  },
+  {
+    "id": 861,
+    "vfxPrefab": "pre_chap_symphoria_liuchangshifa_2",
+    "sfxName": ""
+  },
+  {
+    "id": 862,
+    "vfxPrefab": "pre_chap_symphoria_liuchang_01",
+    "sfxName": ""
+  },
+  {
+    "id": 863,
+    "vfxPrefab": "pre_chap_symphoria_liuchang_02",
+    "sfxName": ""
+  },
+  {
+    "id": 864,
+    "vfxPrefab": "pre_chap_symphoria_skill0_1",
+    "sfxName": ""
+  },
+  {
+    "id": 865,
+    "vfxPrefab": "pre_chap_symphoria_skill0_2",
+    "sfxName": ""
+  },
+  {
+    "id": 866,
+    "vfxPrefab": "pre_chap_symphoria_skill0_3",
+    "sfxName": ""
+  },
+  {
+    "id": 867,
+    "vfxPrefab": "pre_chap_symphoria_skill0_4",
+    "sfxName": ""
+  },
+  {
+    "id": 868,
+    "vfxPrefab": "pre_chap_symphoria_skill0_big1_1",
+    "sfxName": ""
+  },
+  {
+    "id": 869,
+    "vfxPrefab": "pre_chap_symphoria_skill0_hit_1",
+    "sfxName": ""
+  },
+  {
+    "id": 870,
+    "vfxPrefab": "pre_chap_symphoria_skill1_01",
+    "sfxName": ""
+  },
+  {
+    "id": 871,
+    "vfxPrefab": "pre_chap_symphoria_skill1_02",
+    "sfxName": ""
+  },
+  {
+    "id": 872,
+    "vfxPrefab": "pre_chap_symphoria_skill1_03",
+    "sfxName": ""
+  },
+  {
+    "id": 873,
+    "vfxPrefab": "pre_chap_symphoria_skill1_3",
+    "sfxName": ""
+  },
+  {
+    "id": 874,
+    "vfxPrefab": "pre_chap_symphoria_skill1_4",
+    "sfxName": ""
+  },
+  {
+    "id": 875,
+    "vfxPrefab": "pre_chap_symphoria_skill1_hit_1",
+    "sfxName": ""
+  },
+  {
+    "id": 876,
+    "vfxPrefab": "pre_chap_symphoria_skill2_1",
+    "sfxName": ""
+  },
+  {
+    "id": 877,
+    "vfxPrefab": "pre_chap_symphoria_skill2_2",
+    "sfxName": ""
+  },
+  {
+    "id": 878,
+    "vfxPrefab": "pre_chap_symphoria_skill2_3",
+    "sfxName": ""
+  },
+  {
+    "id": 879,
+    "vfxPrefab": "pre_chap_symphoria_skill2_hit_1",
+    "sfxName": ""
+  },
+  {
+    "id": 880,
+    "vfxPrefab": "pre_chap_symphoria_skill3_hit_01",
+    "sfxName": ""
+  },
+  {
+    "id": 881,
+    "vfxPrefab": "pre_chap_symphoria_skill3_jian_01",
+    "sfxName": ""
+  },
+  {
+    "id": 882,
+    "vfxPrefab": "pre_chap_symphoria_skill3_new_01",
+    "sfxName": ""
+  },
+  {
+    "id": 883,
+    "vfxPrefab": "pre_chap_symphoria_skill3_new_02",
+    "sfxName": ""
+  },
+  {
+    "id": 884,
+    "vfxPrefab": "pre_chap_symphoria_skill3_shifang_01",
+    "sfxName": ""
+  },
+  {
+    "id": 885,
+    "vfxPrefab": "pre_chap_symphoria_skill3_wuqi_03",
+    "sfxName": ""
+  },
+  {
+    "id": 886,
+    "vfxPrefab": "pre_chap_symphoria_skill3_xuli_01",
+    "sfxName": ""
+  },
+  {
+    "id": 887,
+    "vfxPrefab": "pre_chap_symphoria_skill4_01",
+    "sfxName": ""
+  },
+  {
+    "id": 888,
+    "vfxPrefab": "pre_chap_symphoria_skill4_02",
+    "sfxName": ""
+  },
+  {
+    "id": 889,
+    "vfxPrefab": "pre_chap_symphoria_skill4_03",
+    "sfxName": ""
+  },
+  {
+    "id": 890,
+    "vfxPrefab": "pre_chap_symphoria_skill4_04",
+    "sfxName": ""
+  },
+  {
+    "id": 891,
+    "vfxPrefab": "pre_chap_symphoria_skill5",
+    "sfxName": ""
+  },
+  {
+    "id": 892,
+    "vfxPrefab": "pre_symphoria_skill3_d1",
+    "sfxName": ""
+  },
+  {
+    "id": 893,
+    "vfxPrefab": "pre_symphoria_skill3_d2",
+    "sfxName": ""
+  },
+  {
+    "id": 894,
+    "vfxPrefab": "pre_symphoria_skill3_d3",
+    "sfxName": ""
+  },
+  {
+    "id": 895,
+    "vfxPrefab": "pre_symphoria_skill3_d4",
+    "sfxName": ""
+  },
+  {
+    "id": 896,
+    "vfxPrefab": "pre_symphoria_skill3_d4_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 897,
+    "vfxPrefab": "pre_chap_terara_skill1_baozha",
+    "sfxName": ""
+  },
+  {
+    "id": 898,
+    "vfxPrefab": "pre_chap_terara_skill1_blackbox",
+    "sfxName": ""
+  },
+  {
+    "id": 899,
+    "vfxPrefab": "pre_chap_terara_skill1_fire",
+    "sfxName": ""
+  },
+  {
+    "id": 900,
+    "vfxPrefab": "pre_chap_terara_skill1_shanguang",
+    "sfxName": ""
+  },
+  {
+    "id": 901,
+    "vfxPrefab": "pre_chap_terara_skill1_tuowei",
+    "sfxName": ""
+  },
+  {
+    "id": 902,
+    "vfxPrefab": "pre_chap_terara_skill1_wuqi",
+    "sfxName": ""
+  },
+  {
+    "id": 903,
+    "vfxPrefab": "pre_chap_terara_skill1_zhuanqiang",
+    "sfxName": ""
+  },
+  {
+    "id": 904,
+    "vfxPrefab": "pre_human_girl_terara_skill0_10_a",
+    "sfxName": ""
+  },
+  {
+    "id": 905,
+    "vfxPrefab": "pre_human_girl_terara_skill0_6",
+    "sfxName": ""
+  },
+  {
+    "id": 906,
+    "vfxPrefab": "pre_human_girl_terara_skill0_7_a",
+    "sfxName": ""
+  },
+  {
+    "id": 907,
+    "vfxPrefab": "pre_human_girl_terara_skill0_7_b",
+    "sfxName": ""
+  },
+  {
+    "id": 908,
+    "vfxPrefab": "pre_human_girl_terara_skill0_8_a",
+    "sfxName": ""
+  },
+  {
+    "id": 909,
+    "vfxPrefab": "pre_human_girl_terara_skill0_8_b",
+    "sfxName": ""
+  },
+  {
+    "id": 910,
+    "vfxPrefab": "pre_human_girl_terara_skill0_9_a",
+    "sfxName": ""
+  },
+  {
+    "id": 911,
+    "vfxPrefab": "pre_human_girl_terara_skill0_9_b",
+    "sfxName": ""
+  },
+  {
+    "id": 912,
+    "vfxPrefab": "pre_human_girl_terara_skill0_9_c",
+    "sfxName": ""
+  },
+  {
+    "id": 913,
+    "vfxPrefab": "pre_human_girl_terara_skill0_hit01",
+    "sfxName": ""
+  },
+  {
+    "id": 914,
+    "vfxPrefab": "pre_human_girl_terara_skill0_hit02",
+    "sfxName": ""
+  },
+  {
+    "id": 915,
+    "vfxPrefab": "pre_human_girl_terara_skill0_hit03",
+    "sfxName": ""
+  },
+  {
+    "id": 916,
+    "vfxPrefab": "pre_human_girl_terara_skill0_hit04",
+    "sfxName": ""
+  },
+  {
+    "id": 917,
+    "vfxPrefab": "pre_human_girl_terara_skill2_ci",
+    "sfxName": ""
+  },
+  {
+    "id": 918,
+    "vfxPrefab": "pre_human_girl_terara_skill2_zhuan",
+    "sfxName": ""
+  },
+  {
+    "id": 919,
+    "vfxPrefab": "pre_human_girl_terara_skill3_canxiang",
+    "sfxName": ""
+  },
+  {
+    "id": 920,
+    "vfxPrefab": "pre_human_girl_terara_skill3_daoguang",
+    "sfxName": ""
+  },
+  {
+    "id": 921,
+    "vfxPrefab": "pre_human_girl_terara_skill3_daoguang01",
+    "sfxName": ""
+  },
+  {
+    "id": 922,
+    "vfxPrefab": "pre_human_girl_terara_skill3_dimian",
+    "sfxName": ""
+  },
+  {
+    "id": 923,
+    "vfxPrefab": "pre_human_girl_terara_skill3_huan",
+    "sfxName": ""
+  },
+  {
+    "id": 924,
+    "vfxPrefab": "pre_human_girl_terara_skill3_wuqi",
+    "sfxName": ""
+  },
+  {
+    "id": 925,
+    "vfxPrefab": "pre_human_girl_terara_skill4_01",
+    "sfxName": ""
+  },
+  {
+    "id": 926,
+    "vfxPrefab": "pre_human_girl_terara_skill4_02",
+    "sfxName": ""
+  },
+  {
+    "id": 927,
+    "vfxPrefab": "pre_human_girl_terara_skill4_03",
+    "sfxName": ""
+  },
+  {
+    "id": 928,
+    "vfxPrefab": "pre_human_girl_terara_skill4_04",
+    "sfxName": ""
+  },
+  {
+    "id": 929,
+    "vfxPrefab": "pre_human_girl_terara_skill6",
+    "sfxName": ""
+  },
+  {
+    "id": 930,
+    "vfxPrefab": "pre_monster_cannonlv01_skill0_1_boom",
+    "sfxName": ""
+  },
+  {
+    "id": 931,
+    "vfxPrefab": "pre_monster_cannonlv01_skill0_1_bullet",
+    "sfxName": ""
+  },
+  {
+    "id": 932,
+    "vfxPrefab": "pre_monster_cannonlv01_skill0_1_fire_front",
+    "sfxName": ""
+  },
+  {
+    "id": 933,
+    "vfxPrefab": "pre_monster_cannonlv01_skill0_1_fire_rear",
+    "sfxName": ""
+  },
+  {
+    "id": 934,
+    "vfxPrefab": "pre_monster_cannonlv01_skill0_1_xuli",
+    "sfxName": ""
+  },
+  {
+    "id": 935,
+    "vfxPrefab": "pre_monster_dark_bite_01",
+    "sfxName": ""
+  },
+  {
+    "id": 936,
+    "vfxPrefab": "pre_monster_dark_bite_02",
+    "sfxName": ""
+  },
+  {
+    "id": 937,
+    "vfxPrefab": "pre_monster_dark_bite_03",
+    "sfxName": ""
+  },
+  {
+    "id": 938,
+    "vfxPrefab": "pre_monster_dark_bite_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 939,
+    "vfxPrefab": "pre_monster_dark_bullet_01",
+    "sfxName": ""
+  },
+  {
+    "id": 940,
+    "vfxPrefab": "pre_monster_dark_bullet_02",
+    "sfxName": ""
+  },
+  {
+    "id": 941,
+    "vfxPrefab": "pre_monster_dark_bullet_03",
+    "sfxName": ""
+  },
+  {
+    "id": 942,
+    "vfxPrefab": "pre_monster_dark_bullet_04",
+    "sfxName": ""
+  },
+  {
+    "id": 943,
+    "vfxPrefab": "pre_monster_dark_bullet_05",
+    "sfxName": ""
+  },
+  {
+    "id": 944,
+    "vfxPrefab": "pre_monster_dark_explode_04",
+    "sfxName": ""
+  },
+  {
+    "id": 945,
+    "vfxPrefab": "pre_monster_dark_explode_04_boom",
+    "sfxName": ""
+  },
+  {
+    "id": 946,
+    "vfxPrefab": "pre_monster_dark_explode_05",
+    "sfxName": ""
+  },
+  {
+    "id": 947,
+    "vfxPrefab": "pre_monster_dark_explode_05_boom",
+    "sfxName": ""
+  },
+  {
+    "id": 948,
+    "vfxPrefab": "pre_monster_dark_fire_01",
+    "sfxName": ""
+  },
+  {
+    "id": 949,
+    "vfxPrefab": "pre_monster_dark_hit_01",
+    "sfxName": ""
+  },
+  {
+    "id": 950,
+    "vfxPrefab": "pre_monster_dark_hit_02",
+    "sfxName": ""
+  },
+  {
+    "id": 951,
+    "vfxPrefab": "pre_monster_dark_hit_03",
+    "sfxName": ""
+  },
+  {
+    "id": 952,
+    "vfxPrefab": "pre_monster_dark_rip_01",
+    "sfxName": ""
+  },
+  {
+    "id": 953,
+    "vfxPrefab": "pre_monster_dark_rip_02",
+    "sfxName": ""
+  },
+  {
+    "id": 954,
+    "vfxPrefab": "pre_monster_dark_rip_03",
+    "sfxName": ""
+  },
+  {
+    "id": 955,
+    "vfxPrefab": "pre_monster_dark_rip_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 956,
+    "vfxPrefab": "pre_monster_dark_strike_01",
+    "sfxName": ""
+  },
+  {
+    "id": 957,
+    "vfxPrefab": "pre_monster_dark_strike_02",
+    "sfxName": ""
+  },
+  {
+    "id": 958,
+    "vfxPrefab": "pre_monster_dark_strike_03",
+    "sfxName": ""
+  },
+  {
+    "id": 959,
+    "vfxPrefab": "pre_monster_strike_dark_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 960,
+    "vfxPrefab": "pre_pet_common_casting_dark",
+    "sfxName": ""
+  },
+  {
+    "id": 961,
+    "vfxPrefab": "pre_pet_common_charge_long_dark",
+    "sfxName": ""
+  },
+  {
+    "id": 962,
+    "vfxPrefab": "pre_pet_common_charge_short_dark",
+    "sfxName": ""
+  },
+  {
+    "id": 963,
+    "vfxPrefab": "pre_monster_earth_bite_01",
+    "sfxName": ""
+  },
+  {
+    "id": 964,
+    "vfxPrefab": "pre_monster_earth_bite_02",
+    "sfxName": ""
+  },
+  {
+    "id": 965,
+    "vfxPrefab": "pre_monster_earth_bite_03",
+    "sfxName": ""
+  },
+  {
+    "id": 966,
+    "vfxPrefab": "pre_monster_earth_effect_04",
+    "sfxName": ""
+  },
+  {
+    "id": 967,
+    "vfxPrefab": "pre_monster_earth_effect_05",
+    "sfxName": ""
+  },
+  {
+    "id": 968,
+    "vfxPrefab": "pre_monster_earth_effect_hit_05",
+    "sfxName": ""
+  },
+  {
+    "id": 969,
+    "vfxPrefab": "pre_monster_earth_hit_01",
+    "sfxName": ""
+  },
+  {
+    "id": 970,
+    "vfxPrefab": "pre_monster_earth_hit_02",
+    "sfxName": ""
+  },
+  {
+    "id": 971,
+    "vfxPrefab": "pre_monster_earth_hit_03",
+    "sfxName": ""
+  },
+  {
+    "id": 972,
+    "vfxPrefab": "pre_monster_earth_rip_01",
+    "sfxName": ""
+  },
+  {
+    "id": 973,
+    "vfxPrefab": "pre_monster_earth_rip_02",
+    "sfxName": ""
+  },
+  {
+    "id": 974,
+    "vfxPrefab": "pre_monster_earth_rip_03",
+    "sfxName": ""
+  },
+  {
+    "id": 975,
+    "vfxPrefab": "pre_monster_earth_rip_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 976,
+    "vfxPrefab": "pre_monster_earth_strike_01",
+    "sfxName": ""
+  },
+  {
+    "id": 977,
+    "vfxPrefab": "pre_monster_earth_strike_02",
+    "sfxName": ""
+  },
+  {
+    "id": 978,
+    "vfxPrefab": "pre_monster_earth_strike_03",
+    "sfxName": ""
+  },
+  {
+    "id": 979,
+    "vfxPrefab": "pre_monster_strike_earth_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 980,
+    "vfxPrefab": "pre_pet_common_casting_earth",
+    "sfxName": ""
+  },
+  {
+    "id": 981,
+    "vfxPrefab": "pre_pet_common_charge_long_earth",
+    "sfxName": ""
+  },
+  {
+    "id": 982,
+    "vfxPrefab": "pre_pet_common_charge_short_earth",
+    "sfxName": ""
+  },
+  {
+    "id": 983,
+    "vfxPrefab": "pre_monster_fire_bite_01",
+    "sfxName": ""
+  },
+  {
+    "id": 984,
+    "vfxPrefab": "pre_monster_fire_bite_02",
+    "sfxName": ""
+  },
+  {
+    "id": 985,
+    "vfxPrefab": "pre_monster_fire_bite_03",
+    "sfxName": ""
+  },
+  {
+    "id": 986,
+    "vfxPrefab": "pre_monster_fire_bite_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 987,
+    "vfxPrefab": "pre_monster_fire_bullet_01",
+    "sfxName": ""
+  },
+  {
+    "id": 988,
+    "vfxPrefab": "pre_monster_fire_bullet_02",
+    "sfxName": ""
+  },
+  {
+    "id": 989,
+    "vfxPrefab": "pre_monster_fire_bullet_03",
+    "sfxName": ""
+  },
+  {
+    "id": 990,
+    "vfxPrefab": "pre_monster_fire_bullet_04",
+    "sfxName": ""
+  },
+  {
+    "id": 991,
+    "vfxPrefab": "pre_monster_fire_bullet_05",
+    "sfxName": ""
+  },
+  {
+    "id": 992,
+    "vfxPrefab": "pre_monster_fire_hit_01",
+    "sfxName": ""
+  },
+  {
+    "id": 993,
+    "vfxPrefab": "pre_monster_fire_hit_02",
+    "sfxName": ""
+  },
+  {
+    "id": 994,
+    "vfxPrefab": "pre_monster_fire_hit_03",
+    "sfxName": ""
+  },
+  {
+    "id": 995,
+    "vfxPrefab": "pre_monster_fire_hit_04",
+    "sfxName": ""
+  },
+  {
+    "id": 996,
+    "vfxPrefab": "pre_monster_fire_hit_05",
+    "sfxName": ""
+  },
+  {
+    "id": 997,
+    "vfxPrefab": "pre_monster_fire_rip_01",
+    "sfxName": ""
+  },
+  {
+    "id": 998,
+    "vfxPrefab": "pre_monster_fire_rip_02",
+    "sfxName": ""
+  },
+  {
+    "id": 999,
+    "vfxPrefab": "pre_monster_fire_rip_03",
+    "sfxName": ""
+  },
+  {
+    "id": 1000,
+    "vfxPrefab": "pre_monster_fire_rip_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 1001,
+    "vfxPrefab": "pre_monster_fire_strike_01",
+    "sfxName": ""
+  },
+  {
+    "id": 1002,
+    "vfxPrefab": "pre_monster_fire_strike_02",
+    "sfxName": ""
+  },
+  {
+    "id": 1003,
+    "vfxPrefab": "pre_monster_fire_strike_03",
+    "sfxName": ""
+  },
+  {
+    "id": 1004,
+    "vfxPrefab": "pre_monster_strike_fire_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 1005,
+    "vfxPrefab": "pre_pet_common_casting_fire",
+    "sfxName": ""
+  },
+  {
+    "id": 1006,
+    "vfxPrefab": "pre_pet_common_charge_long_fire",
+    "sfxName": ""
+  },
+  {
+    "id": 1007,
+    "vfxPrefab": "pre_pet_common_charge_short_fire",
+    "sfxName": ""
+  },
+  {
+    "id": 1008,
+    "vfxPrefab": "pre_monster_boar_forestboralv2_skill0_1",
+    "sfxName": ""
+  },
+  {
+    "id": 1009,
+    "vfxPrefab": "pre_monster_boar_forestboralv2_skill0_1_xuli",
+    "sfxName": ""
+  },
+  {
+    "id": 1010,
+    "vfxPrefab": "pre_monster_boar_forestboralv2_skill0_3",
+    "sfxName": ""
+  },
+  {
+    "id": 1011,
+    "vfxPrefab": "pre_monster_boar_forestboralv2_skill0_3_run",
+    "sfxName": ""
+  },
+  {
+    "id": 1012,
+    "vfxPrefab": "pre_monster_boar_forestboralv2_skill0_4",
+    "sfxName": ""
+  },
+  {
+    "id": 1013,
+    "vfxPrefab": "pre_boss_break",
+    "sfxName": ""
+  },
+  {
+    "id": 1014,
+    "vfxPrefab": "pre_boss_forestolder_skill0_1",
+    "sfxName": ""
+  },
+  {
+    "id": 1015,
+    "vfxPrefab": "pre_boss_forestolder_skill0_2",
+    "sfxName": ""
+  },
+  {
+    "id": 1016,
+    "vfxPrefab": "pre_boss_forestolder_skill0_3",
+    "sfxName": ""
+  },
+  {
+    "id": 1017,
+    "vfxPrefab": "pre_boss_forestolder_skill0_3_charge",
+    "sfxName": ""
+  },
+  {
+    "id": 1018,
+    "vfxPrefab": "pre_boss_forestolder_skill0_3_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 1019,
+    "vfxPrefab": "pre_boss_forestolder_skill0_3_start",
+    "sfxName": ""
+  },
+  {
+    "id": 1020,
+    "vfxPrefab": "pre_boss_forestolder_skill0_4",
+    "sfxName": ""
+  },
+  {
+    "id": 1021,
+    "vfxPrefab": "pre_boss_forestolder_skill0_4_zhuang",
+    "sfxName": ""
+  },
+  {
+    "id": 1022,
+    "vfxPrefab": "pre_boss_forestolder_skill0_5",
+    "sfxName": ""
+  },
+  {
+    "id": 1023,
+    "vfxPrefab": "pre_boss_forestolder_skill11",
+    "sfxName": ""
+  },
+  {
+    "id": 1024,
+    "vfxPrefab": "pre_boss_forestolder_skill11_start",
+    "sfxName": ""
+  },
+  {
+    "id": 1025,
+    "vfxPrefab": "pre_boss_forestolder_skill12",
+    "sfxName": ""
+  },
+  {
+    "id": 1026,
+    "vfxPrefab": "pre_boss_forestolder_skill13",
+    "sfxName": ""
+  },
+  {
+    "id": 1027,
+    "vfxPrefab": "pre_boss_forestolder_skill14",
+    "sfxName": ""
+  },
+  {
+    "id": 1028,
+    "vfxPrefab": "pre_boss_forestolder_skill14_dimian",
+    "sfxName": ""
+  },
+  {
+    "id": 1029,
+    "vfxPrefab": "pre_boss_forestolder_skill15",
+    "sfxName": ""
+  },
+  {
+    "id": 1030,
+    "vfxPrefab": "pre_boss_forestolder_skill15_light",
+    "sfxName": ""
+  },
+  {
+    "id": 1031,
+    "vfxPrefab": "pre_boss_forestolder_skill15_wave_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 1032,
+    "vfxPrefab": "pre_boss_forestolder_skill15_xuli_01",
+    "sfxName": ""
+  },
+  {
+    "id": 1033,
+    "vfxPrefab": "pre_boss_forestolder_skill15_xuli_02",
+    "sfxName": ""
+  },
+  {
+    "id": 1034,
+    "vfxPrefab": "pre_boss_forestolder_skill15_xuli_03",
+    "sfxName": ""
+  },
+  {
+    "id": 1035,
+    "vfxPrefab": "pre_boss_forestolder_skill16",
+    "sfxName": ""
+  },
+  {
+    "id": 1036,
+    "vfxPrefab": "pre_boss_forestolder_skill16_eye",
+    "sfxName": ""
+  },
+  {
+    "id": 1037,
+    "vfxPrefab": "pre_boss_forestolder_skill16_trail",
+    "sfxName": ""
+  },
+  {
+    "id": 1038,
+    "vfxPrefab": "pre_boss_forestolder_skill17",
+    "sfxName": ""
+  },
+  {
+    "id": 1039,
+    "vfxPrefab": "pre_boss_forestolder_skill17_buff01",
+    "sfxName": ""
+  },
+  {
+    "id": 1040,
+    "vfxPrefab": "pre_boss_forestolder_skill17_buff02",
+    "sfxName": ""
+  },
+  {
+    "id": 1041,
+    "vfxPrefab": "pre_boss_forestolder_skill18",
+    "sfxName": ""
+  },
+  {
+    "id": 1042,
+    "vfxPrefab": "pre_boss_forestolder_skill19_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 1043,
+    "vfxPrefab": "pre_boss_forestolder_skill21",
+    "sfxName": ""
+  },
+  {
+    "id": 1044,
+    "vfxPrefab": "pre_boss_forestolder_skill2_1",
+    "sfxName": ""
+  },
+  {
+    "id": 1045,
+    "vfxPrefab": "pre_boss_forestolder_skill2_3",
+    "sfxName": ""
+  },
+  {
+    "id": 1046,
+    "vfxPrefab": "pre_boss_forestolder_skill2_3_arram",
+    "sfxName": ""
+  },
+  {
+    "id": 1047,
+    "vfxPrefab": "pre_boss_forestolder_skill3",
+    "sfxName": ""
+  },
+  {
+    "id": 1048,
+    "vfxPrefab": "pre_boss_forestolder_skill3_arram",
+    "sfxName": ""
+  },
+  {
+    "id": 1049,
+    "vfxPrefab": "pre_boss_forestolder_skill3_charge",
+    "sfxName": ""
+  },
+  {
+    "id": 1050,
+    "vfxPrefab": "pre_boss_forestolder_skill3_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 1051,
+    "vfxPrefab": "pre_boss_forestolder_skill3_start",
+    "sfxName": ""
+  },
+  {
+    "id": 1052,
+    "vfxPrefab": "pre_boss_forestolder_skill3_start_dimian",
+    "sfxName": ""
+  },
+  {
+    "id": 1053,
+    "vfxPrefab": "pre_boss_forestolder_skill3_yellow",
+    "sfxName": ""
+  },
+  {
+    "id": 1054,
+    "vfxPrefab": "pre_boss_forestolder_suya_skin_1",
+    "sfxName": ""
+  },
+  {
+    "id": 1055,
+    "vfxPrefab": "pre_boss_forestolder_suya_skin_2",
+    "sfxName": ""
+  },
+  {
+    "id": 1056,
+    "vfxPrefab": "pre_boss_forestolder_suya_skin_3",
+    "sfxName": ""
+  },
+  {
+    "id": 1057,
+    "vfxPrefab": "pre_forestcave_flowerlight_skill1_3m",
+    "sfxName": ""
+  },
+  {
+    "id": 1058,
+    "vfxPrefab": "pre_forestcave_flowerlight_skill1_6m",
+    "sfxName": ""
+  },
+  {
+    "id": 1059,
+    "vfxPrefab": "pre_forestcave_flowerlight_skill1_ball",
+    "sfxName": ""
+  },
+  {
+    "id": 1060,
+    "vfxPrefab": "pre_forestcave_hugeflower_dead",
+    "sfxName": ""
+  },
+  {
+    "id": 1061,
+    "vfxPrefab": "pre_forestcave_hugeflower_decal",
+    "sfxName": ""
+  },
+  {
+    "id": 1062,
+    "vfxPrefab": "pre_forestcave_hugeflower_idle",
+    "sfxName": ""
+  },
+  {
+    "id": 1063,
+    "vfxPrefab": "pre_forestcave_hugeflower_skill1",
+    "sfxName": ""
+  },
+  {
+    "id": 1064,
+    "vfxPrefab": "pre_forestcave_hugeflower_skill1_burst",
+    "sfxName": ""
+  },
+  {
+    "id": 1065,
+    "vfxPrefab": "pre_forestcave_hugeflower_skill1_dimian",
+    "sfxName": ""
+  },
+  {
+    "id": 1066,
+    "vfxPrefab": "pre_forestolder_suya",
+    "sfxName": ""
+  },
+  {
+    "id": 1067,
+    "vfxPrefab": "pre_monster_ice_bite_01",
+    "sfxName": ""
+  },
+  {
+    "id": 1068,
+    "vfxPrefab": "pre_monster_ice_bite_01_old",
+    "sfxName": ""
+  },
+  {
+    "id": 1069,
+    "vfxPrefab": "pre_monster_ice_bite_02",
+    "sfxName": ""
+  },
+  {
+    "id": 1070,
+    "vfxPrefab": "pre_monster_ice_bite_03",
+    "sfxName": ""
+  },
+  {
+    "id": 1071,
+    "vfxPrefab": "pre_monster_ice_bullet_01",
+    "sfxName": ""
+  },
+  {
+    "id": 1072,
+    "vfxPrefab": "pre_monster_ice_bullet_02",
+    "sfxName": ""
+  },
+  {
+    "id": 1073,
+    "vfxPrefab": "pre_monster_ice_bullet_03",
+    "sfxName": ""
+  },
+  {
+    "id": 1074,
+    "vfxPrefab": "pre_monster_ice_effect_04",
+    "sfxName": ""
+  },
+  {
+    "id": 1075,
+    "vfxPrefab": "pre_monster_ice_effect_05",
+    "sfxName": ""
+  },
+  {
+    "id": 1076,
+    "vfxPrefab": "pre_monster_ice_fire",
+    "sfxName": ""
+  },
+  {
+    "id": 1077,
+    "vfxPrefab": "pre_monster_ice_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 1078,
+    "vfxPrefab": "pre_monster_ice_hit_01",
+    "sfxName": ""
+  },
+  {
+    "id": 1079,
+    "vfxPrefab": "pre_monster_ice_hit_02",
+    "sfxName": ""
+  },
+  {
+    "id": 1080,
+    "vfxPrefab": "pre_monster_ice_hit_03",
+    "sfxName": ""
+  },
+  {
+    "id": 1081,
+    "vfxPrefab": "pre_monster_ice_rip_01",
+    "sfxName": ""
+  },
+  {
+    "id": 1082,
+    "vfxPrefab": "pre_monster_ice_rip_02",
+    "sfxName": ""
+  },
+  {
+    "id": 1083,
+    "vfxPrefab": "pre_monster_ice_rip_03",
+    "sfxName": ""
+  },
+  {
+    "id": 1084,
+    "vfxPrefab": "pre_monster_ice_rip_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 1085,
+    "vfxPrefab": "pre_monster_ice_strike_01",
+    "sfxName": ""
+  },
+  {
+    "id": 1086,
+    "vfxPrefab": "pre_monster_ice_strike_02",
+    "sfxName": ""
+  },
+  {
+    "id": 1087,
+    "vfxPrefab": "pre_monster_ice_strike_03",
+    "sfxName": ""
+  },
+  {
+    "id": 1088,
+    "vfxPrefab": "pre_monster_strike_ice_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 1089,
+    "vfxPrefab": "pre_pet_common_casting_ice",
+    "sfxName": ""
+  },
+  {
+    "id": 1090,
+    "vfxPrefab": "pre_pet_common_charge_long_ice",
+    "sfxName": ""
+  },
+  {
+    "id": 1091,
+    "vfxPrefab": "pre_pet_common_charge_short_ice",
+    "sfxName": ""
+  },
+  {
+    "id": 1092,
+    "vfxPrefab": "pre_monster_light_01",
+    "sfxName": ""
+  },
+  {
+    "id": 1093,
+    "vfxPrefab": "pre_monster_light_02",
+    "sfxName": ""
+  },
+  {
+    "id": 1094,
+    "vfxPrefab": "pre_monster_light_03",
+    "sfxName": ""
+  },
+  {
+    "id": 1095,
+    "vfxPrefab": "pre_monster_light_bite_01",
+    "sfxName": ""
+  },
+  {
+    "id": 1096,
+    "vfxPrefab": "pre_monster_light_bite_01_old",
+    "sfxName": ""
+  },
+  {
+    "id": 1097,
+    "vfxPrefab": "pre_monster_light_bite_02",
+    "sfxName": ""
+  },
+  {
+    "id": 1098,
+    "vfxPrefab": "pre_monster_light_bite_02_old",
+    "sfxName": ""
+  },
+  {
+    "id": 1099,
+    "vfxPrefab": "pre_monster_light_bite_03",
+    "sfxName": ""
+  },
+  {
+    "id": 1100,
+    "vfxPrefab": "pre_monster_light_bite_03_old",
+    "sfxName": ""
+  },
+  {
+    "id": 1101,
+    "vfxPrefab": "pre_monster_light_bite_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 1102,
+    "vfxPrefab": "pre_monster_light_bullet_01",
+    "sfxName": ""
+  },
+  {
+    "id": 1103,
+    "vfxPrefab": "pre_monster_light_bullet_02",
+    "sfxName": ""
+  },
+  {
+    "id": 1104,
+    "vfxPrefab": "pre_monster_light_bullet_03",
+    "sfxName": ""
+  },
+  {
+    "id": 1105,
+    "vfxPrefab": "pre_monster_light_effect_04",
+    "sfxName": ""
+  },
+  {
+    "id": 1106,
+    "vfxPrefab": "pre_monster_light_effect_05",
+    "sfxName": ""
+  },
+  {
+    "id": 1107,
+    "vfxPrefab": "pre_monster_light_fire",
+    "sfxName": ""
+  },
+  {
+    "id": 1108,
+    "vfxPrefab": "pre_monster_light_hit_03",
+    "sfxName": ""
+  },
+  {
+    "id": 1109,
+    "vfxPrefab": "pre_monster_light_rip_01",
+    "sfxName": ""
+  },
+  {
+    "id": 1110,
+    "vfxPrefab": "pre_monster_light_rip_02",
+    "sfxName": ""
+  },
+  {
+    "id": 1111,
+    "vfxPrefab": "pre_monster_light_rip_03",
+    "sfxName": ""
+  },
+  {
+    "id": 1112,
+    "vfxPrefab": "pre_monster_light_rip_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 1113,
+    "vfxPrefab": "pre_monster_light_strike_01",
+    "sfxName": ""
+  },
+  {
+    "id": 1114,
+    "vfxPrefab": "pre_monster_light_strike_02",
+    "sfxName": ""
+  },
+  {
+    "id": 1115,
+    "vfxPrefab": "pre_monster_light_strike_03",
+    "sfxName": ""
+  },
+  {
+    "id": 1116,
+    "vfxPrefab": "pre_monster_strike_light_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 1117,
+    "vfxPrefab": "pre_pet_common_casting_light",
+    "sfxName": ""
+  },
+  {
+    "id": 1118,
+    "vfxPrefab": "pre_pet_common_charge_long_light",
+    "sfxName": ""
+  },
+  {
+    "id": 1119,
+    "vfxPrefab": "pre_pet_common_charge_short_light",
+    "sfxName": ""
+  },
+  {
+    "id": 1120,
+    "vfxPrefab": "pre_monster_none_bite_01",
+    "sfxName": ""
+  },
+  {
+    "id": 1121,
+    "vfxPrefab": "pre_monster_none_bite_02",
+    "sfxName": ""
+  },
+  {
+    "id": 1122,
+    "vfxPrefab": "pre_monster_none_bite_03",
+    "sfxName": ""
+  },
+  {
+    "id": 1123,
+    "vfxPrefab": "pre_monster_none_bite_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 1124,
+    "vfxPrefab": "pre_monster_none_rip_01",
+    "sfxName": ""
+  },
+  {
+    "id": 1125,
+    "vfxPrefab": "pre_monster_none_rip_02",
+    "sfxName": ""
+  },
+  {
+    "id": 1126,
+    "vfxPrefab": "pre_monster_none_rip_03",
+    "sfxName": ""
+  },
+  {
+    "id": 1127,
+    "vfxPrefab": "pre_monster_none_rip_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 1128,
+    "vfxPrefab": "pre_monster_none_strike_01",
+    "sfxName": ""
+  },
+  {
+    "id": 1129,
+    "vfxPrefab": "pre_monster_none_strike_02",
+    "sfxName": ""
+  },
+  {
+    "id": 1130,
+    "vfxPrefab": "pre_monster_none_strike_03",
+    "sfxName": ""
+  },
+  {
+    "id": 1131,
+    "vfxPrefab": "pre_monster_strike_03_loop",
+    "sfxName": ""
+  },
+  {
+    "id": 1132,
+    "vfxPrefab": "pre_monster_strike_none_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 1133,
+    "vfxPrefab": "pre_monster_warcry_bullet_01",
+    "sfxName": ""
+  },
+  {
+    "id": 1134,
+    "vfxPrefab": "pre_monster_warcry_bullet_02",
+    "sfxName": ""
+  },
+  {
+    "id": 1135,
+    "vfxPrefab": "pre_pet_common_casting_none",
+    "sfxName": ""
+  },
+  {
+    "id": 1136,
+    "vfxPrefab": "pre_pet_common_charge_long_none",
+    "sfxName": ""
+  },
+  {
+    "id": 1137,
+    "vfxPrefab": "pre_pet_common_charge_short_none",
+    "sfxName": ""
+  },
+  {
+    "id": 1138,
+    "vfxPrefab": "pre_monster_strike_thunder_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 1139,
+    "vfxPrefab": "pre_monster_thunder_bite_01",
+    "sfxName": ""
+  },
+  {
+    "id": 1140,
+    "vfxPrefab": "pre_monster_thunder_bite_02",
+    "sfxName": ""
+  },
+  {
+    "id": 1141,
+    "vfxPrefab": "pre_monster_thunder_bite_03",
+    "sfxName": ""
+  },
+  {
+    "id": 1142,
+    "vfxPrefab": "pre_monster_thunder_rip_01",
+    "sfxName": ""
+  },
+  {
+    "id": 1143,
+    "vfxPrefab": "pre_monster_thunder_rip_02",
+    "sfxName": ""
+  },
+  {
+    "id": 1144,
+    "vfxPrefab": "pre_monster_thunder_rip_03",
+    "sfxName": ""
+  },
+  {
+    "id": 1145,
+    "vfxPrefab": "pre_monster_thunder_rip_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 1146,
+    "vfxPrefab": "pre_monster_thunder_strike_01",
+    "sfxName": ""
+  },
+  {
+    "id": 1147,
+    "vfxPrefab": "pre_monster_thunder_strike_02",
+    "sfxName": ""
+  },
+  {
+    "id": 1148,
+    "vfxPrefab": "pre_monster_thunder_strike_03",
+    "sfxName": ""
+  },
+  {
+    "id": 1149,
+    "vfxPrefab": "pre_monster_thunde_bullet_04",
+    "sfxName": ""
+  },
+  {
+    "id": 1150,
+    "vfxPrefab": "pre_monster_thunde_bullet_05",
+    "sfxName": ""
+  },
+  {
+    "id": 1151,
+    "vfxPrefab": "pre_monster_thunde_hit_04",
+    "sfxName": ""
+  },
+  {
+    "id": 1152,
+    "vfxPrefab": "pre_monster_thunde_hit_05",
+    "sfxName": ""
+  },
+  {
+    "id": 1153,
+    "vfxPrefab": "pre_pet_common_casting_thunder",
+    "sfxName": ""
+  },
+  {
+    "id": 1154,
+    "vfxPrefab": "pre_pet_common_charge_long_thunder",
+    "sfxName": ""
+  },
+  {
+    "id": 1155,
+    "vfxPrefab": "pre_pet_common_charge_short_thunder",
+    "sfxName": ""
+  },
+  {
+    "id": 1156,
+    "vfxPrefab": "pre_monster_strike_water_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 1157,
+    "vfxPrefab": "pre_monster_water_bite_01",
+    "sfxName": ""
+  },
+  {
+    "id": 1158,
+    "vfxPrefab": "pre_monster_water_bite_02",
+    "sfxName": ""
+  },
+  {
+    "id": 1159,
+    "vfxPrefab": "pre_monster_water_bite_03",
+    "sfxName": ""
+  },
+  {
+    "id": 1160,
+    "vfxPrefab": "pre_monster_water_bite_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 1161,
+    "vfxPrefab": "pre_monster_water_bullet_01",
+    "sfxName": ""
+  },
+  {
+    "id": 1162,
+    "vfxPrefab": "pre_monster_water_bullet_02",
+    "sfxName": ""
+  },
+  {
+    "id": 1163,
+    "vfxPrefab": "pre_monster_water_bullet_03",
+    "sfxName": ""
+  },
+  {
+    "id": 1164,
+    "vfxPrefab": "pre_monster_water_bullet_04",
+    "sfxName": ""
+  },
+  {
+    "id": 1165,
+    "vfxPrefab": "pre_monster_water_bullet_04_loop",
+    "sfxName": ""
+  },
+  {
+    "id": 1166,
+    "vfxPrefab": "pre_monster_water_bullet_04_old",
+    "sfxName": ""
+  },
+  {
+    "id": 1167,
+    "vfxPrefab": "pre_monster_water_bullet_04_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 1168,
+    "vfxPrefab": "pre_monster_water_bullet_05",
+    "sfxName": ""
+  },
+  {
+    "id": 1169,
+    "vfxPrefab": "pre_monster_water_bullet_05_sle",
+    "sfxName": ""
+  },
+  {
+    "id": 1170,
+    "vfxPrefab": "pre_monster_water_fire",
+    "sfxName": ""
+  },
+  {
+    "id": 1171,
+    "vfxPrefab": "pre_monster_water_hit_01",
+    "sfxName": ""
+  },
+  {
+    "id": 1172,
+    "vfxPrefab": "pre_monster_water_hit_02",
+    "sfxName": ""
+  },
+  {
+    "id": 1173,
+    "vfxPrefab": "pre_monster_water_hit_03",
+    "sfxName": ""
+  },
+  {
+    "id": 1174,
+    "vfxPrefab": "pre_monster_water_rip_01",
+    "sfxName": ""
+  },
+  {
+    "id": 1175,
+    "vfxPrefab": "pre_monster_water_rip_02",
+    "sfxName": ""
+  },
+  {
+    "id": 1176,
+    "vfxPrefab": "pre_monster_water_rip_03",
+    "sfxName": ""
+  },
+  {
+    "id": 1177,
+    "vfxPrefab": "pre_monster_water_rip_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 1178,
+    "vfxPrefab": "pre_monster_water_strike_01",
+    "sfxName": ""
+  },
+  {
+    "id": 1179,
+    "vfxPrefab": "pre_monster_water_strike_02",
+    "sfxName": ""
+  },
+  {
+    "id": 1180,
+    "vfxPrefab": "pre_monster_water_strike_03",
+    "sfxName": ""
+  },
+  {
+    "id": 1181,
+    "vfxPrefab": "pre_pet_common_casting_water",
+    "sfxName": ""
+  },
+  {
+    "id": 1182,
+    "vfxPrefab": "pre_pet_common_charge_long_water",
+    "sfxName": ""
+  },
+  {
+    "id": 1183,
+    "vfxPrefab": "pre_pet_common_charge_short_water",
+    "sfxName": ""
+  },
+  {
+    "id": 1184,
+    "vfxPrefab": "pre_monster_strike_wind_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 1185,
+    "vfxPrefab": "pre_monster_wind_bite_01",
+    "sfxName": ""
+  },
+  {
+    "id": 1186,
+    "vfxPrefab": "pre_monster_wind_bite_02",
+    "sfxName": ""
+  },
+  {
+    "id": 1187,
+    "vfxPrefab": "pre_monster_wind_bite_03",
+    "sfxName": ""
+  },
+  {
+    "id": 1188,
+    "vfxPrefab": "pre_monster_wind_effect_04",
+    "sfxName": ""
+  },
+  {
+    "id": 1189,
+    "vfxPrefab": "pre_monster_wind_effect_05",
+    "sfxName": ""
+  },
+  {
+    "id": 1190,
+    "vfxPrefab": "pre_monster_wind_hit_05",
+    "sfxName": ""
+  },
+  {
+    "id": 1191,
+    "vfxPrefab": "pre_monster_wind_rip_01",
+    "sfxName": ""
+  },
+  {
+    "id": 1192,
+    "vfxPrefab": "pre_monster_wind_rip_02",
+    "sfxName": ""
+  },
+  {
+    "id": 1193,
+    "vfxPrefab": "pre_monster_wind_rip_03",
+    "sfxName": ""
+  },
+  {
+    "id": 1194,
+    "vfxPrefab": "pre_monster_wind_rip_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 1195,
+    "vfxPrefab": "pre_monster_wind_strike_01",
+    "sfxName": ""
+  },
+  {
+    "id": 1196,
+    "vfxPrefab": "pre_monster_wind_strike_02",
+    "sfxName": ""
+  },
+  {
+    "id": 1197,
+    "vfxPrefab": "pre_monster_wind_strike_03",
+    "sfxName": ""
+  },
+  {
+    "id": 1198,
+    "vfxPrefab": "pre_monster_wind_strike_loop",
+    "sfxName": ""
+  },
+  {
+    "id": 1199,
+    "vfxPrefab": "pre_pet_common_casting_wind",
+    "sfxName": ""
+  },
+  {
+    "id": 1200,
+    "vfxPrefab": "pre_pet_common_charge_long_wind",
+    "sfxName": ""
+  },
+  {
+    "id": 1201,
+    "vfxPrefab": "pre_pet_common_charge_short_wind",
+    "sfxName": ""
+  },
+  {
+    "id": 1202,
+    "vfxPrefab": "pre_monster_strike_wood_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 1203,
+    "vfxPrefab": "pre_monster_wood_bite_01",
+    "sfxName": ""
+  },
+  {
+    "id": 1204,
+    "vfxPrefab": "pre_monster_wood_bite_02",
+    "sfxName": ""
+  },
+  {
+    "id": 1205,
+    "vfxPrefab": "pre_monster_wood_bite_03",
+    "sfxName": ""
+  },
+  {
+    "id": 1206,
+    "vfxPrefab": "pre_monster_wood_bullet_01",
+    "sfxName": ""
+  },
+  {
+    "id": 1207,
+    "vfxPrefab": "pre_monster_wood_bullet_02",
+    "sfxName": ""
+  },
+  {
+    "id": 1208,
+    "vfxPrefab": "pre_monster_wood_bullet_03",
+    "sfxName": ""
+  },
+  {
+    "id": 1209,
+    "vfxPrefab": "pre_monster_wood_bullet_04",
+    "sfxName": ""
+  },
+  {
+    "id": 1210,
+    "vfxPrefab": "pre_monster_wood_bullet_05",
+    "sfxName": ""
+  },
+  {
+    "id": 1211,
+    "vfxPrefab": "pre_monster_wood_hit_04",
+    "sfxName": ""
+  },
+  {
+    "id": 1212,
+    "vfxPrefab": "pre_monster_wood_hit_05",
+    "sfxName": ""
+  },
+  {
+    "id": 1213,
+    "vfxPrefab": "pre_monster_wood_rip_01",
+    "sfxName": ""
+  },
+  {
+    "id": 1214,
+    "vfxPrefab": "pre_monster_wood_rip_02",
+    "sfxName": ""
+  },
+  {
+    "id": 1215,
+    "vfxPrefab": "pre_monster_wood_rip_03",
+    "sfxName": ""
+  },
+  {
+    "id": 1216,
+    "vfxPrefab": "pre_monster_wood_rip_hit",
+    "sfxName": ""
+  },
+  {
+    "id": 1217,
+    "vfxPrefab": "pre_monster_wood_strike_01",
+    "sfxName": ""
+  },
+  {
+    "id": 1218,
+    "vfxPrefab": "pre_monster_wood_strike_02",
+    "sfxName": ""
+  },
+  {
+    "id": 1219,
+    "vfxPrefab": "pre_monster_wood_strike_03",
+    "sfxName": ""
+  },
+  {
+    "id": 1220,
+    "vfxPrefab": "pre_monster_wood_zhuaji_01",
+    "sfxName": ""
+  },
+  {
+    "id": 1221,
+    "vfxPrefab": "pre_monster_wood_zhuaji_hit_01",
+    "sfxName": ""
+  },
+  {
+    "id": 1222,
+    "vfxPrefab": "pre_pet_common_casting_wood",
+    "sfxName": ""
+  },
+  {
+    "id": 1223,
+    "vfxPrefab": "pre_pet_common_charge_long_wood",
+    "sfxName": ""
+  },
+  {
+    "id": 1224,
+    "vfxPrefab": "pre_pet_common_charge_short_wood",
+    "sfxName": ""
+  },
+  {
+    "id": 1225,
+    "vfxPrefab": "pre_pet_wood_hit_L",
+    "sfxName": ""
+  },
+  {
+    "id": 1226,
+    "vfxPrefab": "pre_pet_wood_hit_M",
+    "sfxName": ""
+  },
+  {
+    "id": 1227,
+    "vfxPrefab": "pre_boss_xijuyuan_skil0_1",
+    "sfxName": ""
+  },
+  {
+    "id": 1228,
+    "vfxPrefab": "pre_boss_xijuyuan_skil0_2",
+    "sfxName": ""
+  },
+  {
+    "id": 1229,
+    "vfxPrefab": "pre_boss_xijuyuan_skill1",
+    "sfxName": ""
+  },
+  {
+    "id": 1230,
+    "vfxPrefab": "pre_boss_xijuyuan_skill1_01",
+    "sfxName": ""
+  },
+  {
+    "id": 1231,
+    "vfxPrefab": "pre_boss_xijuyuan_skill2",
+    "sfxName": ""
+  },
+  {
+    "id": 1232,
+    "vfxPrefab": "pre_boss_xijuyuan_skill3",
+    "sfxName": ""
+  },
+  {
+    "id": 1233,
+    "vfxPrefab": "pre_boss_xijuyuan_skill4",
+    "sfxName": ""
+  },
+  {
+    "id": 1234,
+    "vfxPrefab": "pre_boss_xijuyuan_skill4_01",
+    "sfxName": ""
+  },
+  {
+    "id": 1235,
+    "vfxPrefab": "pre_boss_xijuyuan_skill4_02",
+    "sfxName": ""
+  },
+  {
+    "id": 1236,
+    "vfxPrefab": "pre_boss_xijuyuan_skill4_03",
+    "sfxName": ""
+  },
+  {
+    "id": 1237,
+    "vfxPrefab": "pre_boss_xijuyuan_skill4_04",
+    "sfxName": ""
+  },
+  {
+    "id": 1238,
+    "vfxPrefab": "pre_boss_xijuyuan_skill5",
+    "sfxName": ""
+  }
+]

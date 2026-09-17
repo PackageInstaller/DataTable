@@ -1,0 +1,732 @@
+
+íã
+Campaign.protocsCommonMsg.protoExOptions.protoWorldMap.protoActivity.proto"–
+CampaignSceneData
+scene_id (B¿RsceneId>
+scene_status (2.cs.CampaignSceneStatusTypeRsceneStatus
+
+win_values (R	winValues
+cur_step (RcurStep 
+objs (2.cs.WorldObjRobjs"…
+CampaignInfo
+
+start_time (R	startTime
+star_values (R
+starValues.
+status (2.cs.CampaignStatusTypeRstatus
+star (Rstar
+
+win_values (R	winValues
+lose_values (R
+loseValues 
+cur_scene_id (R
+curSceneId
+end_time (RendTime
+
+dungeon_id	 (R	dungeonId.
+dungeon_instance_id
+ (RdungeonInstanceId6
+scene_datas (2.cs.CampaignSceneDataR
+sceneDatas&
+real_start_time (RrealStartTime
+score (Rscore*
+total_elapse_time (RtotalElapseTime1
+cache_real_start_time (RcacheRealStartTime
+waves (Rwaves"?
+SequenceU32
+index (B¿Rindex
+value (Rvalue"Q
+CompaignStar
+index (B¿Rindex%
+value (2.cs.SequenceU32Rvalue"±
+InstanceInfo
+ins_id (B¿RinsId
+ins_star (RinsStar!
+success_time (RsuccessTime
+score (Rscore*
+auto_afk_unlocked (RautoAfkUnlocked:Ä≤"º
+
+StaminaBox
+box_id (B¿RboxId
+up_count (RupCount
+up_time (RupTime
+finish_time (R
+finishTime
+	box_count (RboxCount$
+box_count_time (RboxCountTime(
+total_pause_time (RtotalPauseTime
+map_id	 (RmapId
+
+stage_type
+ (R	stageType
+stage_id (RstageId"<
+SCInstanceInfoSync&
+infos (2.cs.InstanceInfoRinfos"8
+SCStaminaBoxSync$
+boxes (2.cs.StaminaBoxRboxes"j
+CSEnterDungeonScene
+scene_id (RsceneId
+
+creator_id (R	creatorId
+point_id (RpointId">
+CSStaminaBoxGet
+box_id (RboxId
+times (Rtimes"f
+SCStaminaReward#
+reward (2.cs.RewardsRreward.
+extra_reward (2.cs.RewardsRextraReward"+
+CSStaminaBoxGiveUp
+box_id (RboxId"Í
+MultiCampaignInfo#
+
+dungeon_id (B¿R	dungeonId/
+status (2.cs.MultiCampaignStatusRstatus
+
+start_time (R	startTime
+end_time (RendTime
+star (Rstar
+score (Rscore(
+dungeon_scene_id (RdungeonSceneId&
+enable_end_time	 (RenableEndTime
+map_id
+ (RmapId
+line_id (RlineId#
+timeline_time (RtimelineTime,
+dungeon_player_num (RdungeonPlayerNum
+stage_id (RstageId%
+clearance_time (RclearanceTime:Ä≤"ˆ
+MultiCampaignBaseInfo<
+player_list (2.cs.MultiCampaignPlayerInfoR
+playerListK
+team_option_list (2!.cs.MultiCampaignPlayerTeamOptionRteamOptionList<
+player_attr_list (2.cs.TeamMemberAttrRplayerAttrList
+
+dungeon_id (R	dungeonId(
+dungeon_scene_id (RdungeonSceneIdK
+player_status_list (2.cs.MultiCampaignPlayerStatusRplayerStatusList"s
+MultiCampaignPlayerStatus
+	player_id (RplayerId9
+status (2!.cs.MultiCampaignPlayerStatusTypeRstatus"†
+MultiCampaignPlayerInfo
+	player_id (RplayerId
+hero_id (RheroId
+name (	Rname
+lv (Rlv+
+heros (2.cs.MatchTeamHeroDataRheros"2
+CSSetMultiCampaignTeamOption
+stay (Rstay"P
+MultiCampaignPlayerTeamOption
+	player_id (RplayerId
+stay (Rstay"í
+CSMultiCampaignStart
+
+dungeon_id (R	dungeonId
+
+scene_type (R	sceneType!
+dungeon_site (RdungeonSite
+stage_id (RstageId"H
+SCMultiCampaignStartFailed*
+req (2.cs.CSMultiCampaignStartRreq"D
+SCMultiCampaignInfoSync)
+camp (2.cs.MultiCampaignInfoRcamp"¡
+MatchTeamHeroData
+hero_id (RheroId
+pet_id (RpetId(
+pet_special_type (RpetSpecialType
+color (Rcolor 
+hero_skin_id (R
+heroSkinId
+colorful (Rcolorful"µ
+TeamMemberAttr
+	player_id (RplayerId
+hp (Rhp
+max_hp (RmaxHp
+sp (Rsp
+max_sp (RmaxSp
+hero_id (RheroId
+alive_state (R
+aliveState"6
+TeamAttrSync&
+attr (2.cs.TeamMemberAttrRattr"U
+TeamMemberPetDuel
+id (Rid
+level (Rlevel
+speccial (Rspeccial"ê
+TeamMemberPetDuelGroup
+hero_id (RheroId2
+	pet_infos (2.cs.TeamMemberPetDuelRpetInfos)
+skills (2.cs.UnitSkillInfoRskills"µ
+MatchTeamMemberData
+pid (Rpid
+name (	Rname
+lv (Rlv!
+control_hero (RcontrolHero+
+heros (2.cs.MatchTeamHeroDataRheros
+	ui_status (RuiStatus
+ts (Rts&
+attr	 (2.cs.TeamMemberAttrRattr
+ping
+ (Rping7
+	pet_group (2.cs.TeamMemberPetDuelGroupRpetGroup
+
+scene_type (R	sceneType,
+wardrobe (2.cs.WardrobeInfoRwardrobe)
+clothes (2.cs.ClothesInfoRclothes"6
+MatchTeamLimitData
+src (Rsrc
+lv (Rlv"ö
+MatchTeamData
+team_id (RteamId
+
+dungeon_id (R	dungeonId
+captain (Rcaptain1
+members (2.cs.MatchTeamMemberDataRmembers(
+match_start_time (RmatchStartTime#
+ready_players (RreadyPlayers(
+dungeon_end_time (RdungeonEndTime
+
+scene_type (R	sceneType,
+limit	 (2.cs.MatchTeamLimitDataRlimit%
+online_players
+ (RonlinePlayers
+site_id (RsiteId"T
+CSSyncMatchTeamData%
+team (2.cs.MatchTeamDataRteam
+reason (Rreason"°
+
+InviteData
+pid (Rpid
+team_id (RteamId
+
+dungeon_id (R	dungeonId
+name (	Rname
+
+scene_type (R	sceneType
+cancel (Rcancel":
+CSSyncInviteData&
+invite (2.cs.InviteDataRinvite"§
+CSCreateMatchTeam
+
+dungeon_id (R	dungeonId
+
+scene_type (R	sceneType!
+dungeon_site (RdungeonSite
+random (Rrandom
+cancel (Rcancel"t
+CSInviteJoin
+pid (Rpid
+position (Rposition
+is_quit (RisQuit
+
+dungeon_id (R	dungeonId"l
+CSReplyInviteJoin
+	is_accept (RisAccept
+	invite_id (RinviteId
+
+dungeon_id (R	dungeonId":
+CSRejectInviteJoin
+pid (Rpid
+name (	Rname"&
+CSKickOutMatchTeam
+pid (Rpid"+
+CSMatchedReady
+is_ready (RisReady"?
+MatchedTeamMemberData
+pid (Rpid
+ready (Rready"l
+CSSyncMatchedReady3
+members (2.cs.MatchedTeamMemberDataRmembers!
+matched_time (RmatchedTime"œ
+SvrMatchTeamReq
+	option_id (RoptionId
+pid (Rpid&
+invite (2.cs.InviteDataRinvite
+time (Rtime
+ready (Rready8
+member_data (2.cs.MatchTeamMemberDataR
+memberData4
+	team_data (2.cs.CSSyncMatchTeamDataRteamData&
+transfer_msg_id (RtransferMsgId#
+transfer_data	 (	RtransferData"+
+SvrMatchTeamRsp
+errcode (Rerrcode"9
+SvrStartMatchReq%
+team (2.cs.MatchTeamDataRteam"I
+SvrStopMatchReq
+
+dungeon_id (R	dungeonId
+team_id (RteamId"N
+SvrWorldMapReq
+
+creator_id (R	creatorId
+
+dungeon_id (R	dungeonId"*
+SvrWorldMapRsp
+errcode (Rerrcode"@
+TeachingStart
+id (Rid
+activity_id (R
+activityId"F
+ChangeDungeonStatus
+result (Rresult
+obj_ids (RobjIds"‰
+EntrustInfo#
+
+entrust_id (B¿R	entrustId!
+entrust_star (RentrustStar!
+success_time (RsuccessTime
+group_id (RgroupId#
+difficulty_id (RdifficultyId*
+entrust_start_bit (RentrustStartBit"
+EntrustKiboInfo&
+kibo_dule_id (B¿R
+kiboDuleId!
+entrust_star (RentrustStar!
+success_time (RsuccessTime"W
+EntrustStarReward!
+	reward_id (B¿RrewardId
+reward_time (R
+rewardTime"/
+CSEnterEntrust
+
+entrust_id (R	entrustId"X
+CSEntrustStarReward
+	reward_id (RrewardId$
+reward_id_list (RrewardIdList"8
+SCEntrustInfoSync#
+data (2.cs.EntrustInfoRdata"@
+SCEntrustKiboInfoSync'
+data (2.cs.EntrustKiboInfoRdata"D
+SCEntrustStarRewardSync)
+data (2.cs.EntrustStarRewardRdata"K
+OverStarReward
+star (Rstar%
+rewards (2.cs.RewardsRrewards"<
+OverStarRewardSync&
+data (2.cs.OverStarRewardRdata"®
+CampaignChallengeTagsNtfB
+	tags_list (2%.cs.CampaignChallengeTagsNtf.CTagInfoRtagsListH
+CTagInfo
+tag_type (RtagType!
+tag_progress (RtagProgress""
+ CSRogueLikePlayableTimerStartReq"=
+ SCRogueLikePlayableTimerStartRsp
+err_code (RerrCode"F
+ReplyMatchedReady
+	player_id (RplayerId
+ready (Rready"V
+ChangeMatchTeamTargetRsp
+	player_id (RplayerId
+
+error_code (R	errorCode"H
+MatchTeamUIStatus
+	player_id (RplayerId
+status (Rstatus"3
+MatchTeamLike
+from (Rfrom
+to (Rto"e
+LeaveTeamSync
+	player_id (RplayerId
+new_captain (R
+newCaptain
+reason (Rreason"ë
+ChangeDungeonSync
+
+dungeon_id (R	dungeonId
+ask (Rask
+	player_id (RplayerId
+random (Rrandom
+cancel (Rcancel"M
+ReplyChangeDungeonSync
+	player_id (RplayerId
+accept (Raccept"K
+ReplyChangeDungeon
+
+dungeon_id (R	dungeonId
+accept (Raccept"E
+PlayerDmgInfo
+	player_id (RplayerId
+sum_dmg (RsumDmg"<
+SCPlayerDmgInfoSync%
+info (2.cs.PlayerDmgInfoRinfo":
+CSPlayerLikeList&
+like_player_ids (RlikePlayerIds"¢
+SCPlayerLikeList
+	player_id (RplayerId&
+like_player_ids (RlikePlayerIds0
+map_type (2.cs.WorldMapSceneTypeRmapType
+line_id (RlineId"’
+TeamPlayerSettlementItemInfo
+	player_id (RplayerId
+score (Rscore
+
+team_score (R	teamScore.
+pass_rewards (2.cs.RewardsRpassRewards4
+captain_rewards (2.cs.RewardsRcaptainRewards,
+mvp_rewards (2.cs.RewardsR
+mvpRewards,
+ext_rewards (2.cs.RewardsR
+extRewards!
+cur_currency (RcurCurrency"≤
+SCTeamPlayerSettlementInfo4
+info (2 .cs.TeamPlayerSettlementItemInfoRinfo"
+mvp_player_id (RmvpPlayerId
+	pass_time (RpassTime
+
+scene_type (R	sceneType"H
+MultiCampaignTransfer
+npc_id (RnpcId
+confirm (Rconfirm"l
+MultiCampaignTransferConfirm
+confirm (Rconfirm
+npc_id (RnpcId
+	player_id (RplayerId"k
+SCPlayerStoryStart
+story_id (RstoryId
+
+start_time (R	startTime
+	target_id (RtargetId">
+CSPlayerStoryStop
+story_id (RstoryId
+op (Rop"I
+SCPlayerStoryStop
+story_id (RstoryId
+stop_ops (RstopOps"ô
+MatchStatusSync
+status (Rstatus
+
+dungeon_id (R	dungeonId
+ts (Rts
+reason (Rreason
+data (Rdata
+ts_ms (RtsMs"J
+InviteSuccessDataSync
+
+dungeon_id (R	dungeonId
+data (Rdata" 
+CSPlayerLoad
+pid (Rpid"¥
+ApplyEnterTeamNtf
+	player_id (RplayerId
+name (	Rname
+level (Rlevel!
+prefix_title (RprefixTitle!
+suffix_title (RsuffixTitle
+icon (Ricon"A
+MultiCampaignDelayKickOut
+ts (Rts
+delay (Rdelay"H
+TimelinePlayReq
+start (Rstart
+timeline_id (	R
+timelineId"t
+TimelinePlayNtf
+start (Rstart
+timeline_id (R
+timelineId
+playerId (RplayerId
+ts (Rts"?
+TeamDismissNtf-
+reason (2.cs.TeamDismissReasonRreason"N
+S2CTeamUrgeSync
+	player_id (RplayerId
+urge_end_cd (R	urgeEndCd"Ñ
+C2SPlatformGetTeamList
+
+scene_type (R	sceneType
+filter_list (R
+filterList
+friends (Rfriends
+ban (Rban"]
+S2CPlatformTeamList
+
+scene_type (R	sceneType'
+teams (2.cs.MatchTeamDataRteams"M
+PlatformTeamCount
+
+dungeon_id (R	dungeonId
+team_num (RteamNum"f
+S2CPlatformTeamCountSync
+
+scene_type (R	sceneType+
+teams (2.cs.PlatformTeamCountRteams"Y
+S2CPlatformApplyHubNtf
+
+scene_type (R	sceneType 
+fail_team_id (R
+failTeamId"6
+CSTeamSettingLimit
+src (Rsrc
+lv (Rlv"=
+CSTeamApplyEnter
+team_id (RteamId
+src (Rsrc"K
+S2CTeamLoadingNtf
+
+scene_type (R	sceneType
+team_id (RteamId"
+S2CTeamMemOnlineNtf
+
+scene_type (R	sceneType
+	player_id (RplayerId,
+status (2.cs.CMemOnlineStatusRstatus"I
+PlayerUIStatusData
+	player_id (RplayerId
+status (Rstatus"è
+CampaignExtraInfo
+activity_id (R
+activityId
+id (Rid
+level (Rlevel
+stage (Rstage
+
+archive_id (R	archiveId"m
+CSEnterCultTrial
+activity_id (R
+activityId
+trial_id (RtrialId
+
+archive_id (R	archiveId"S
+CSCultTrialSwitchStep
+activity_id (R
+activityId
+trial_id (RtrialId"ã
+CultTrialArchive
+
+archive_id (R	archiveId?
+skill_tree_data (2.cs.GrowUpSkillTreeDataRskillTreeData?
+growup_train_attr (2.cs.GrowUpTrainAttrRgrowupTrainAttr
+final_score (R
+finalScore
+starting_id (R
+startingId!
+archive_time (RarchiveTime@
+assist_chars (2.cs.GrowUpTrainAssistCharDataRassistChars
+	ending_id (RendingId
+guid	 (	Rguid" 
+EndlessCultTrial%
+activity_id (B¿R
+activityId.
+history_trail_stage (RhistoryTrailStage.
+archive (2.cs.CultTrialArchiveRarchive*
+endless_max_score (RendlessMaxScore(
+endless_max_wave (RendlessMaxWave,
+rank_permyriad_max (RrankPermyriadMax+
+trails (2.cs.GrowUpTrailDataRtrails"2
+RankInfo
+rank (Rrank
+card (Rcard"f
+SyncArchiveGrowupData(
+data (2.cs.EndlessCultTrialRdata#
+del_activitys (RdelActivitys"v
+CSArchiveGrowupData
+activity_id (R
+activityId
+starting_id (R
+startingId
+
+archive_id (R	archiveId"c
+EndlessCultTrialWaves
+
+dungeon_id (R	dungeonId
+waves (Rwaves
+obj_id (RobjId"@
+CampaignPingSync,
+pings (2.cs.CampaignPlayerPingRpings"E
+CampaignPlayerPing
+	player_id (RplayerId
+ping (Rping"¥
+RepeatEventInitData
+event_id (ReventId
+
+chapter_id (R	chapterId
+level_id (RlevelId
+
+dungeon_id (R	dungeonId
+map_id (RmapId
+mode (Rmode"Ω
+%RepeatEventLevelFinishedModeSavedData
+mode (B¿Rmode
+
+star_count (R	starCount
+	pass_time (RpassTime7
+bonus_reward_daily_count (RbonusRewardDailyCount5
+bonus_reward_fetch_time (RbonusRewardFetchTime1
+free_stamina_used (:falseRfreeStaminaUsed
+	win_count (RwinCount"î
+"RepeatEventLevelFinishedPublicData
+date (Rdate
+daily_count (R
+dailyCount9
+frist_pass_reward_fetched (RfristPassRewardFetched"C
+RepeatEventTaskData,
+total_cost_stamina (RtotalCostStamina"˙
+RepeatEventLevelFinishedData
+level_id (B¿RlevelIdO
+mode_save_data (2).cs.RepeatEventLevelFinishedModeSavedDataRmodeSaveDataG
+public_data (2&.cs.RepeatEventLevelFinishedPublicDataR
+publicData
+event_id (B¿ReventId"d
+RepeatEventDetailTaskData
+id (Rid
+value (Rvalue!
+config_value (RconfigValue"Ä
+RepeatEventTaskFinishedData
+event_id (B¿ReventId(
+finished_task_id (RfinishedTaskId4
+	task_data (2.cs.RepeatEventTaskDataRtaskData 
+done_task_id (R
+doneTaskId>
+detail_data (2.cs.RepeatEventDetailTaskDataR
+detailData"ë
+!RepeatEventTaskFinishedDataClient
+event_id (B¿ReventId
+task_id (B¿RtaskId
+value (Rvalue
+status (Rstatus"c
+RepeatEventDataP
+finished_level_data (2 .cs.RepeatEventLevelFinishedDataRfinishedLevelData"e
+SCRepeatEventSyncP
+finished_level_data (2 .cs.RepeatEventLevelFinishedDataRfinishedLevelData"l
+SCRepeatEventTaskSyncS
+finished_task_data (2%.cs.RepeatEventTaskFinishedDataClientRfinishedTaskData"[
+SCRepeatEventLevelModify?
+
+level_data (2 .cs.RepeatEventLevelFinishedDataR	levelData"y
+RepeatEventFirstPassReward
+event_id (ReventId
+level_id (RlevelId%
+rewards (2.cs.RewardsRrewards"|
+CSRepeatEventEnterLevelReq
+activity (Ractivity
+chapter (Rchapter
+level (Rlevel
+mode (Rmode"6
+DungeonRecorder#
+
+dungeon_id (B¿R	dungeonId*ñ
+CampaignStatusType
+CST_NONE 
+CST_QUIT
+	CST_START
+CST_WIN
+CST_LOSE
+CST_FINISH_QUIT
+CST_LOSE_QUIT
+CST_PAUSE_QUIT*@
+ActType
+EAT_NONE 
+EAT_LOSE
+EAT_WIN
+EAT_QUIT*;
+CampaignSceneStatusType
+CSST_NORMAL 
+CSST_FINISH*∫
+CampaignType
+CT_SCENE
+	CT_BATTLE
+CT_STORY_COMPAIGN
+CT_REPEAT_EVENT
+
+CT_TEACHd
+CT_DUNGEON_MATERIALe
+CT_CULT_TRIALf
+CT_KIBODUEL_PVE»
+CT_KIBODUEL_PVP…
+CT_KIBODUEL_PVP_PVE 
+CT_NEST_COOP¨
+CT_KIBODUEL_ARENA_PVEê
+CT_KIBODUEL_ARENA_PVPë
+CT_DUNGEON_WEEKLYÙ*3
+CampaignChooseType
+	CCT_WORLD
+
+CCT_CHOOSE*Q
+TeamApplySrc
+TAS_NONE 
+
+TAS_Invite
+TAS_Chat
+TAS_Team_Platform*r
+StaminaBoxSystemType
+SBST_CAMPAIGN
+SBST_BATTLE_CAMPAIGN
+SBST_WORLD_ENEMY
+SBST_MULTI_CAMPAIGN*I
+StaminaBoxCountType
+SBCT_INFINITE
+
+SBCT_DAILY
+SBCT_WEEKLY*o
+BaseMaterialDungeonGroupId
+HeroExpDungeon
+SoulEssenceExpDungeon
+PetExpDungeon
+GoldDungeon*H
+EntrustType
+ET_NONE 
+
+ET_Dungeon
+ET_TEACHING
+ET_Kibo*Ü
+MultiCampaignStatus
+	MCST_NONE 
+	MCST_QUIT
+
+MCST_READY
+
+MCST_START
+MCST_WIN
+	MCST_LOSE
+MCST_FINISH_QUIT*c
+MultiCampaignPlayerStatusType
+	MCPS_INIT 
+
+MCPS_READY
+	MCPS_QUIT
+MCPS_MANUAL_QUIT*'
+CampaignExpandType
+CET_ROGUE_BOX*5
+CMemOnlineStatus
+CMOS_ONLINE 
+CMOS_OFFLINE*¢
+MatchTeamOptionType
+CREATE_TEAM
+
+LEAVE_TEAM
+KICKOUT_TEAM
+INVITE_TEAM
+CANCEL_INVITE_TEAM
+ACCEPT_INVITE
+REJECT_INVITE
+START_MATCH
+
+STOP_MATCH	
+READY_MATCH
+
+UNREADY_MATCH
+DESTROY_TEAM
+	SYNC_DATA
+TRANS_PROTO
+CHANGE_CAPTAIN*:
+MatchTeamDataSyncReason
+
+MTDSR_NONE 
+MTDSR_LOGIN*&
+PlayerStoryStopOp
+END
+SKIP*9
+MatchStatusSyncReason
+	MSSR_NONE 
+MSSR_OVERTIME*3
+TeamDismissReason
+TDR_NONE 
+TDR_OVERTIME*g
+RepeatEventTaskStatus
+RepeatEventTask_Running 
+RepeatEventTask_Done
+RepeatEventTask_End*,
+RepeatEventLevelMode
+
+Normal
+HardB!ZGmServer/bridge/csproto;csproto

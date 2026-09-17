@@ -1,0 +1,1041 @@
+
+ßŒ
+WorldMap.protocsCommonMsg.protoExOptions.proto
+Home.protoBattle.proto	Pet.proto"ã
+WorldMapGroup
+heros (Rheros
+control (Rcontrol
+hero_mid (RheroMid
+pets (Rpets
+	pet_cfgid (RpetCfgid"†
+WorldMapPlayer!
+	player_id (B¿RplayerId 
+move (2.cs.MoveInfoRmove
+status (Rstatus
+host (Rhost
+zone (Rzone$
+face (2.cs.WardrobeInfoRface
+name (Rname'
+group (2.cs.WorldMapGroupRgroup
+mount	 (Rmount!
+mount_status
+ (RmountStatus
+reason (Rreason+
+
+mount_move (2.cs.MoveInfoR	mountMove'
+pet_move (2.cs.MoveInfoRpetMove2
+apparel_info (2.cs.ApparelInfoRapparelInfo2
+clothes_info (2.cs.ClothesInfoRclothesInfo
+skin_id (RskinId"ù
+SCMultiPlayerSync
+map_id (RmapId
+
+creator_id (R	creatorId3
+add_players (2.cs.WorldMapPlayerR
+addPlayers
+
+rm_players (R	rmPlayers"e
+WorldMapChat
+	player_id (RplayerId
+time (Rtime
+msg (Rmsg
+type (Rtype"C
+WorldMapExtra2
+activity_attr (2.cs.FightAttrRactivityAttr"¯
+WorldObj
+obj_id (B¿RobjId
+active (Ractive
+complete (Rcomplete
+time (Rtime
+	next_time (RnextTime8
+expand_data (2.cs.WorldObj.ExpandDataR
+expandData5
+
+state_data (2.cs.WorldObj.StateDataR	stateData(
+last_reward_step (RlastRewardStep
+pos	 (2.cs.PositionRpos
+
+across_day
+ (R	acrossDay÷
+BattleGroup(
+monsters (2.cs.FObjInfoRmonsters#
+world_indexes (RworldIndexes#
+special_index (RspecialIndex!
+special_type (RspecialType
+color (Rcolor
+colorful (Rcolorfuló
+RandomBattleGroupQ
+random_groups (2,.cs.WorldObj.RandomBattleGroup.GroupWithTypeRrandomGroups&
+record_group_id (RrecordGroupId(
+monsters (2.cs.FObjInfoRmonsters#
+world_indexes (RworldIndexes#
+special_index (RspecialIndex!
+special_type (RspecialType
+color (Rcolor
+colorful (Rcolorful>
+GroupWithType
+type (Rtype
+group_id (RgroupIdÜ
+	StateData
+step (Rstep
+complete (Rcomplete2
+children (2.cs.WorldObj.StateDataRchildren
+cur_hp (RcurHpΩ
+BattleCampaignEntry6
+box (2$.cs.WorldObj.BattleCampaignEntry.BoxRbox
+open (RopenZ
+Box
+
+start_time (R	startTime
+
+dungeon_id (R	dungeonId
+box_id (RboxIdJ
+CollectBuild
+build_level (R
+buildLevel
+build_id (RbuildIdr
+DynamicObjInfo$
+refresh_pos_id (RrefreshPosId
+
+spawner_id (R	spawnerId
+	expand_id (RexpandIdì
+
+ExpandData;
+battle_group (2.cs.WorldObj.BattleGroupRbattleGroup5
+
+state_data (2.cs.WorldObj.StateDataR	stateDataN
+random_battle_group (2.cs.WorldObj.RandomBattleGroupRrandomBattleGroupC
+battle_entry (2 .cs.WorldObj.BattleCampaignEntryRbattleEntry>
+collect_build (2.cs.WorldObj.CollectBuildRcollectBuild<
+dynamic_obj (2.cs.WorldObj.DynamicObjInfoR
+dynamicObj"é
+WolrdMapElement@
+monster_ele (2.cs.WolrdMapElement.ElementInfoR
+monsterEle:
+hero_ele (2.cs.WolrdMapElement.ElementInfoRheroEle8
+pet_ele (2.cs.WolrdMapElement.ElementInfoRpetEleC
+ElementInfo
+all (Rall
+add (Radd
+del (Rdel"ñ
+WorldMap#
+
+creator_id (B¿R	creatorId
+map_id (B¿RmapId
+exist (Rexist2
+players (2.cs.WorldMapPlayerB–Rplayers 
+objs	 (2.cs.WorldObjRobjs!
+default_objs
+ (RdefaultObjs
+del_objs (RdelObjs
+area_id (RareaId
+	area_line (RareaLine:
+campaign_start (2.cs.CSCampaignStartRcampaignStart,
+map_ele (2.cs.WolrdMapElementRmapEle"L
+CSCampaignStart
+group_id (RgroupId
+
+difficulty (R
+difficulty"ê
+WorldMapNotify
+cmd (Rcmd
+
+creator_id (R	creatorId
+map_id (RmapId
+	notify_id (RnotifyId
+	player_id (RplayerId'
+map_info (2.cs.WorldMapRmapInfo&
+chats	 (2.cs.WorldMapChatRchats
+zone_id
+ (RzoneId*
+client_trans_data (RclientTransData
+area_id (RareaId
+	area_line (RareaLine0
+
+extra_data (2.cs.WorldMapExtraR	extraData"b
+WorldMapPoseInvite
+pose_id (RposeId3
+target_info (2.cs.WorldMapPlayerR
+targetInfo"T
+WorldMapPoseResult
+
+error_code (R	errorCode
+player_name (	R
+playerName"\
+WorldMapPose
+pose_id (RposeId3
+target_info (2.cs.WorldMapPlayerR
+targetInfo"ö
+CSEnterWorldMap
+map_id (RmapId
+
+creator_id (R	creatorId
+point_id (RpointId
+gate_id (RgateId
+
+trans_type (R	transType*
+client_trans_data (RclientTransData
+	reconnect (R	reconnect
+area_id (RareaId
+	area_line	 (RareaLine/
+action
+ (2.cs.EnterWorldMapActionRaction
+	bi_reason (RbiReason
+task_id (RtaskId
+node_id (RnodeId"Y
+CSSwitchLine
+line_id (RlineId
+map_id (RmapId
+point_id (RpointId"6
+CSWorldMapChat
+msg (Rmsg
+type (Rtype"`
+SCLevelSync
+	cur_level (RcurLevel
+free_set (RfreeSet
+set_time (RsetTime"s
+ExplorationMissionInfo+
+exploration_id (B¿RexplorationId
+num (Rnum
+complete (Rcomplete"Å
+ExplorationMapInfo
+map_id (B¿RmapId
+lv (Rlv
+exp (Rexp
+time (Rtime
+rewards (Rrewards"õ
+SCExplorationSync1
+map_info (2.cs.ExplorationMapInfoRmapInfo=
+mission_info (2.cs.ExplorationMissionInfoRmissionInfo
+login (Rlogin"à
+SCEnterWorldAreaLineResult
+
+error_code (R	errorCode
+map_id (RmapId
+area_id (RareaId
+	area_line (RareaLine"π
+WordBuffInfo
+guid (B¿Rguid
+buff_id (RbuffId
+add_time (RaddTime
+	last_time (RlastTime!
+trigger_time (RtriggerTime
+	target_id (RtargetId"â
+CSWordBuffSync3
+update_buffs (2.cs.WordBuffInfoRupdateBuffs
+	del_buffs (RdelBuffs%
+forece_refresh (RforeceRefresh"W
+MapPlayerWorldBuffSync=
+update_list (2.cs.MapPlayerWorldBuffUpdateR
+updateList"~
+MapPlayerWorldBuffUpdate
+	player_id (RplayerId
+delete_guid (R
+deleteGuid$
+info (2.cs.WordBuffInfoRinfo"W
+MapPlayerWorldBuff
+	player_id (RplayerId$
+info (2.cs.WordBuffInfoRinfo"é
+MapMarkInfo
+guid (B¿Rguid
+map_id (RmapId
+mark_id (RmarkId
+pos (	Rpos
+notes (	Rnotes
+pos_x (RposX
+pos_y (RposY
+state (Rstate
+pos_z	 (RposZ
+area_id
+ (RareaId
+is_set_pos_y (R	isSetPosY"'
+WorldMapMarkDel
+guids (Rguids";
+WorldMapMarkUpdate%
+infos (2.cs.MapMarkInfoRinfos"Q
+WorldObjDiscoveryMark
+map_id (B¿RmapId
+obj_id (B¿RobjId"ª
+WorldSpecialMonster
+map_id (B¿RmapId
+obj_id (B¿RobjId!
+special_type (RspecialType
+expire_time (R
+expireTime
+index (Rindex
+init (Rinit*
+is_random_monster (RisRandomMonster
+group_id (RgroupId
+pet_id	 (RpetId
+pos
+ (2.cs.PositionRpos"ú
+WorldMapArea
+map_id (B¿RmapId
+area_ids (RareaIds"
+pet_group_ids (RpetGroupIds0
+special_refresh_time (RspecialRefreshTime"≤
+CSWorldMapMark%
+marks (2.cs.MapMarkInfoRmarks
+trace (Rtrace-
+objs (2.cs.WorldObjDiscoveryMarkRobjsB
+special_monsters (2.cs.WorldSpecialMonsterRspecialMonsters
+collect_ids (R
+collectIds+
+map_area (2.cs.WorldMapAreaRmapArea"
+del_mark_list (RdelMarkList",
+CSWorldEventTrigger
+cfg_id (RcfgId"E
+CSWorldZoneStateChange
+cfg_id (RcfgId
+state (Rstate"@
+SCWorldEventInfo,
+infos (2.cs.WorldEventStepInfoRinfos"ü
+CSWorldEventStep
+cfg_id (RcfgId
+step (Rstep
+
+event_type (R	eventType 
+pos (2.cs.Position3fRpos
+reset_start (R
+resetStart"ê
+WorldEventStepInfo
+cfg_id (B¿RcfgId
+step (Rstep*
+next_trigger_time (RnextTriggerTime
+
+begin_time (R	beginTime"R
+WorldDungeonEventTriggerCD
+id (B¿Rid
+cd_end_time (R	cdEndTime"˙
+WorldDynamicObjInfo
+group_id (B¿RgroupId:
+objs (2&.cs.WorldDynamicObjInfo.RefreshObjItemRobjs!
+refresh_time (RrefreshTimec
+RefreshObjItem
+obj_id (RobjId
+
+spawner_id (R	spawnerId
+	expand_id (RexpandId"V
+SCWorldAllEventInfoNtf<
+all_event_info (2.cs.WorldEventStepInfoRallEventInfo"≈
+CSWorldMapPointTransport
+point_id (RpointId
+
+trans_type (R	transType
+is_stuck (RisStuck*
+client_trans_data (RclientTransData(
+is_keep_playable (RisKeepPlayable"=
+CSWorldMapPointTrackSet
+type (Rtype
+id (Rid"V
+WorldCheckpointArgsInfo'
+checkpoint_type (RcheckpointType
+args (Rargs"Ñ
+CSWorldCheckpointOpen#
+checkpoint_id (RcheckpointIdF
+checkpoint_infos (2.cs.WorldCheckpointArgsInfoRcheckpointInfos"É
+CSWorldCheckpointClose#
+checkpoint_id (RcheckpointIdD
+checkpoint_info (2.cs.WorldCheckpointArgsInfoRcheckpointInfo"Ü
+WorldCheckpointInfo)
+checkpoint_id (B¿RcheckpointIdD
+checkpoint_args (2.cs.WorldCheckpointArgsInfoRcheckpointArgs">
+SCWorldCheckpointSync%
+checkpoint_ids (RcheckpointIds"Z
+PuzzleMonster
+uuid (Ruuid
+index (Rindex
+enemy_group (R
+enemyGroup"A
+PuzzleBattleInfo-
+monsters (2.cs.PuzzleMonsterRmonsters"1
+DestructibleAttack
+	boss_uuid (RbossUuid"p
+ExtWorldContext 
+ext_uint32_1 (R
+extUint321 
+ext_uint64_1 (R
+extUint641
+ext_type (RextType" 
+CSWorldMapObjInteractH
+objs (2-.cs.CSWorldMapObjInteract.WorldMapObjInteractBË»RobjsÊ
+WorldMapObjInteract
+obj (2.cs.WorldObjRobj
+pos (2.cs.PositionRpos#
+interact_type (RinteractType
+interact_id (R
+interactId
+	tool_type (RtoolType7
+role_attack (2.cs.DestructibleAttackR
+roleAttack
+tool_cfg_id (R	toolCfgId4
+ext_context (2.cs.ExtWorldContextR
+extContext
+
+element_id	 (R	elementId"∂
+SCWorldMapObjInteractA
+objs (2-.cs.SCWorldMapObjInteract.WorldMapObjInteractRobjsŸ
+WorldMapObjInteract
+obj (2.cs.WorldObjRobj
+pos (2.cs.PositionRpos%
+rewards (2.cs.RewardsRrewards
+drop_ids (RdropIds#
+interact_type (RinteractType
+	tool_type (RtoolType"E
+CSWorldMapTakeElevator
+obj_id (RobjId
+floor (Rfloor"8
+SCWorldMapTakeElevator
+obj (2.cs.WorldObjRobj"L
+CSWorldMapCommonRepair
+	repair_id (RrepairId
+obj_id (RobjId"_
+SCWorldMapCommonRepair
+obj (2.cs.WorldObjRobj%
+rewards (2.cs.RewardsRrewards"&
+CSActiveBehavior
+type (Rtype"Ö
+WorldMapItem
+item_id (B¿RitemId
+	done_step (RdoneStep&
+done_step_index (RdoneStepIndex
+curStep (RcurStep
+count (Rcount
+status (Rstatus!
+trigger_time (RtriggerTime&
+next_reset_time (RnextResetTime"œ
+WorldMapPetItem
+item_id (B¿RitemId
+pet_id (RpetId
+
+start_time (R	startTime
+finish (Rfinish 
+move (2.cs.MoveInfoRmove
+like (Rlike
+hate (Rhate
+init (Rinit
+fast	 (Rfast
+
+hate_value
+ (R	hateValue
+
+like_value (R	likeValue
+key_node (RkeyNode:Ä≤",
+CSDayWeatherSync
+weather (Rweather",
+SCDayWeatherSync
+weather (Rweather"E
+CSWorldObjEnemyInfo
+play_id (RplayId
+obj_id (RobjId"g
+SCWorldObjEnemyInfo7
+monster_info (2.cs.PuzzleBattleInfoRmonsterInfo
+play_id (RplayId"=
+CSWorldObjAIHeroInfoReq"
+enemy_pack_id (RenemyPackId"Q
+SCWorldObjAIHeroInfoRsp"
+enemy_pack_id (RenemyPackId
+uuid (Ruuid"0
+CSWorldTimeSync
+
+world_time (R	worldTime"G
+CSGamePauseReq
+	game_time (RgameTime
+operate (Roperate"G
+CSGamePauseRsp
+	game_time (RgameTime
+operate (Roperate"e
+PlayableSubData
+sub_id (RsubId
+finish_step (R
+finishStep
+complete (Rcomplete"T
+CSPlayableScoreRewardReq
+play_id (RplayId
+reward_info (R
+rewardInfo"s
+SCPlayableScoreRewardRsp
+play_id (RplayId%
+rewards (2.cs.RewardsRrewards
+drop_id (RdropId"¨
+PlayableData
+play_id (B¿RplayId
+finish_step (R
+finishStep0
+	sub_datas (2.cs.PlayableSubDataRsubDatas
+status (Rstatus
+time (Rtime"f
+PlayableFinish
+play_id (B¿RplayId
+score (Rscore
+reward_info (R
+rewardInfo"E
+PlayableStepRewardFlag
+play_id (RplayId
+flag (Rflag"Ö
+PlayableSync!
+finish_plays (RfinishPlays(
+del_finish_plays (RdelFinishPlays&
+plays (2.cs.PlayableDataRplays
+all_sync (RallSync*
+finish (2.cs.PlayableFinishRfinish9
+
+step_flags (2.cs.PlayableStepRewardFlagR	stepFlags"*
+CSPlayableCancel
+playId (RplayId"¨
+CSPlayableFinish
+playId (RplayId
+index (Rindex
+score (Rscore4
+ext_context (2.cs.ExtWorldContextR
+extContext
+pos (2.cs.PositionRpos"à
+SCPlayableFinish
+playId (RplayId#
+reward (2.cs.RewardsRreward
+drop_id (RdropId
+pos (2.cs.PositionRpos"¥
+CSPlayableStep
+is_step (RisStep
+finish_step (R
+finishStep
+pos (2.cs.PositionRpos0
+	sub_datas (2.cs.PlayableSubDataRsubDatas
+playId (RplayId"ñ
+SCPlayableStep$
+play (2.cs.PlayableDataRplay
+pos (2.cs.PositionRpos%
+rewards (2.cs.RewardsRrewards
+drop_id (RdropId"g
+CSPlayableUploadSaveDataReq1
+	save_data (2.cs.PlayableSaveDataRsaveData
+key_id (RkeyId"4
+SCPlayableUploadSaveDataRsp
+key_id (RkeyId"5
+CSPlayableGetSaveDataReq
+play_ids (RplayIds"M
+SCPlayableGetSaveDataRsp1
+	save_data (2.cs.PlayableSaveDataRsaveData"Œ
+CSTransformSync
+cur_tran_id (R	curTranId
+	cur_level (RcurLevel.
+detail_data (2.cs.GroupHeroR
+detailData#
+attrs (2.cs.FightAttrRattrs)
+skills (2.cs.UnitSkillInfoRskills"+
+CSTransformStart
+tran_id (RtranId"
+CSTransformEnd"&
+SCRandomSeedSync
+seed (Rseed"O
+TimeScaleInfo
+entity_uuid (R
+entityUuid
+
+time_scale (R	timeScale"~
+CSTimeScaleSync!
+player_scale (RplayerScale4
+entity_scale (2.cs.TimeScaleInfoRentityScale
+time (Rtime"F
+CSSpawnerInteractSync-
+infos (2.cs.SpawnerInteractInfoRinfos"E
+CSSpawnerInteractNtf-
+infos (2.cs.SpawnerInteractInfoRinfos"O
+MapViewEnterInfo
+	player_id (RplayerId
+pos (2.cs.PositionRpos"a
+MapViewSync5
+enter_infos (2.cs.MapViewEnterInfoR
+enterInfos
+	leave_ids (RleaveIds"4
+MapViewPlayerIdList
+
+player_ids (R	playerIds"ﬂ
+MapViewOtherPlayerInfo
+	player_id (RplayerId3
+player_info (2.cs.WorldMapPlayerR
+playerInfo$
+hero (2.cs.HeroItemInfoRhero'
+mount (2.cs.MountItemInfoRmount-
+	hero_attr (2.cs.HeroAttrInfoRheroAttr+
+pet_attr (2.cs.HeroAttrInfoRpetAttr/
+
+mount_attr (2.cs.HeroAttrInfoR	mountAttr;
+hero_battle_info (2.cs.ObjBattleInfoRheroBattleInfo9
+pet_battle_info	 (2.cs.ObjBattleInfoRpetBattleInfo=
+mount_battle_info
+ (2.cs.ObjBattleInfoRmountBattleInfo3
+pet_full_attr (2.cs.PetAttrInfoRpetFullAttr7
+mount_full_attr (2.cs.PetAttrInfoRmountFullAttr@
+pet_battle_data (2.cs.BattleEntitySyncInfoRpetBattleDataB
+hero_battle_data (2.cs.BattleEntitySyncInfoRheroBattleData3
+pet_base_info (2.cs.PetbaseInfoRpetBaseInfo7
+mount_base_info (2.cs.PetbaseInfoRmountBaseInfo"M
+MapViewPlayerInfoList4
+players (2.cs.MapViewOtherPlayerInfoRplayers"
+MapViewStatusChange"1
+CSEnterMapMode
+single_mode (R
+singleMode"¸
+SwitchGroupControlBC
+type (Rtype
+
+leave_uuid (R	leaveUuid
+
+enter_uuid (R	enterUuid
+pos (2.cs.PositionRpos
+angle (Rangle;
+player_info (2.cs.MapViewOtherPlayerInfoR
+playerInfo
+switch_type (R
+switchType"M
+SwitchAppearBC;
+player_info (2.cs.MapViewOtherPlayerInfoR
+playerInfo"å
+PetChangeBC
+	player_id (RplayerId+
+pet_attr (2.cs.HeroAttrInfoRpetAttr3
+pet_full_attr (2.cs.PetAttrInfoRpetFullAttr"6
+OnlineModeChange"
+mode (2.cs.OnlineModeRmode"o
+SCWorldHatredSync)
+obj_info (2.cs.HatredDataRobjInfo/
+player_info (2.cs.HatredDataR
+playerInfo"„
+PlayerWorldStatusChangeBC
+	player_id (RplayerId
+status (Rstatus'
+mount (2.cs.MountItemInfoRmount/
+
+mount_attr (2.cs.HeroAttrInfoR	mountAttr7
+mount_full_attr (2.cs.PetAttrInfoRmountFullAttr"Y
+AttributeUpdate
+uuid (Ruuid2
+
+attributes (2.cs.AttributeEntryR
+attributes"@
+AttributeUpdateList)
+infos (2.cs.AttributeUpdateRinfos"]
+WorldObjCommonValueSync
+uuid (Ruuid.
+value (2.cs.WorldSyncCommonValueRvalue"N
+WorldObjCommonValueListSync/
+objs (2.cs.WorldObjCommonValueSyncRobjs"L
+
+ObjControl
+add_obj_ids (R	addObjIds
+del_obj_ids (R	delObjIds"+
+SwitchGroupControlEnd
+uuid (Ruuid"9
+SwitchPetAction
+uuid (Ruuid
+type (Rtype"s
+ObjAppearIndexData
+	obj_index (RobjIndex@
+cli_battle_data (2.cs.BattleEntitySyncInfoRcliBattleData"Ü
+ObjAppearData
+obj_id (RobjId+
+obj_type (2.cs.FightObjTypeRobjType1
+obj_data (2.cs.ObjAppearIndexDataRobjData"≤
+SCObjAppear
+	agent_uid (RagentUid
+
+agent_type (R	agentType#
+obj (2.cs.ObjAppearDataRobj2
+player (2.cs.MapViewOtherPlayerInfoRplayer
+lv (Rlv"-
+SCObjDisappear
+	agent_uid (RagentUid"5
+SCBatchObjAppear!
+obj (2.cs.SCObjAppearRobj";
+SCBatchObjDisappear$
+obj (2.cs.SCObjDisappearRobj"»
+SummonControlData3
+cli_data (2.cs.CliSummonControlDataRcliData5
+verify_info (2.cs.BattleVerifyInfoR
+verifyInfo
+op_time (RopTime.
+alive_duration_time (RaliveDurationTime"ú
+SkillControlData"
+curr_skill_id (RcurrSkillId3
+curr_skill_effect_done (RcurrSkillEffectDone/
+curr_skill_sub_index (RcurrSkillSubIndex"X
+MonsterControlDataB
+break_stage_begin_trigger_time (RbreakStageBeginTriggerTime"»
+ClientControlData
+uuid (Ruuid+
+values (2.cs.BlackboardValueRvalues 
+info (2.cs.HateInfoRinfo6
+summon_data (2.cs.SummonControlDataR
+summonData(
+	skill_cds (2.cs.SkillCDRskillCds3
+
+skill_data (2.cs.SkillControlDataR	skillData9
+monster_data (2.cs.MonsterControlDataRmonsterData"e
+SCControlChangeByAdd
+	agent_uid (RagentUid0
+cli_data (2.cs.ClientControlDataRcliData"3
+SCControlChangeByDel
+	agent_uid (RagentUid"Ö
+SCBatchControlOwnerChange3
+add_data (2.cs.SCControlChangeByAddRaddData3
+del_data (2.cs.SCControlChangeByDelRdelData"?
+CSWorldCheckAreaBuff
+obj_id (RobjId
+bIn (RbIn"Z
+EntityReviveInfo
+unit_id (RunitId
+hp (Rhp
+
+hp_percent (R	hpPercent"<
+CSEntityRevive*
+infos (2.cs.EntityReviveInfoRinfos"X
+CSWorldVotingStartReq'
+type (2.cs.WorldVotingTypeRtype
+params (Rparams"‰
+SCWorldVotingSync
+id (Rid'
+type (2.cs.WorldVotingTypeRtype
+
+voting_val (R	votingVal
+
+voting_num (R	votingNum
+	start_sec (RstartSec
+duration (Rduration
+curr_voting (R
+currVoting"H
+CSWorldVotingReq
+id (Rid$
+val (2.cs.WorldVotingValRval"(
+SCWorldVotingCloseSync
+id (Rid"6
+CSWorldMapPlayerPlayerAction
+action (Raction"Ç
+EcologyGroup
+map_id (B¿RmapId
+group_id (B¿RgroupId
+	next_time (RnextTime
+id_list (RidList"≥
+EcologyEvent
+id (B¿Rid
+template_id (R
+templateId
+step (Rstep
+status (Rstatus
+	timestamp (R	timestamp"
+triggertimes (Rtriggertimes"∞
+SCWorldEcologySync/
+
+group_data (2.cs.EcologyGroupR	groupData/
+
+event_data (2.cs.EcologyEventR	eventData
+	del_group (RdelGroup
+	del_event (RdelEvent"8
+CSWorldEcologyStep
+id (Rid
+step (Rstep")
+CSWorldEcologyGetReward
+id (Rid"ß
+CSWorldObjSearchReq
+search_type (R
+searchType)
+attribute_filter (RattributeFilter!
+search_count (RsearchCount!
+search_range (RsearchRange"æ
+WorldObjSearchResult
+obj_id (RobjId
+pos (2.cs.PositionRpos
+search_type (R
+searchType!
+special_type (RspecialType
+pet_id (RpetId
+color (Rcolor"Ü
+SCWorldObjSearchRsp2
+results (2.cs.WorldObjSearchResultRresults
+search_type (R
+searchType
+duration (Rduration"œ
+StateUpdate&
+move_msg (2.cs.MoveMsgRmoveMsg>
+attribute_list (2.cs.AttributeUpdateListRattributeList(
+fsm_info (2.cs.CSFsmInfoRfsmInfo.
+
+ace_data_4 (2.cs.AceAntiData4RaceData4"4
+CSFindUnCompletedWorldObj
+item_id (RitemId"2
+SCFindUnCompletedWorldObj
+obj_id (RobjId"B
+SCServerDamageModeSync(
+is_server_damage (RisServerDamage"3
+CSWorldGetMaxArealineReq
+area_id (RareaId"T
+CSWorldMaxArealineSync
+area_id (RareaId!
+max_arealine (RmaxArealine"6
+CSTrackPetReq
+pet_id (RpetId
+ts (Rts"m
+CSTrackPetRsp
+map_id (RmapId
+obj_id (RobjId
+ts (Rts
+pos (2.cs.PositionRpos"}
+OculusAreaInfo
+area_id (B¿RareaId'
+submitted_count (RsubmittedCount#
+claimed_stage (RclaimedStage"8
+SCOculusSync(
+areas (2.cs.OculusAreaInfoRareas"?
+CSOculusSubmit
+area_id (RareaId
+count (Rcount";
+SCOculusSubmitRsp&
+area (2.cs.OculusAreaInfoRarea")
+CSTryCreateWorldObj
+objs (Robjs"G
+TryCreateWorldObjRsp
+guid (Rguid
+	agent_uid (RagentUid"C
+SCTryCreateWorldObj,
+objs (2.cs.TryCreateWorldObjRspRobjs*I
+WorldLastMapType
+WLT_Watching
+WLT_BigWorld
+WLT_HomeScene*˝
+WorldMapSceneType
+
+WMST_WORLD
+WMST_CAMPAIGN
+	WMST_HOME
+WMST_PUBLIC_WORLD
+
+WMST_ROGUE
+WMST_PBULIC_DORM
+WMST_PRI_DORM
+
+WMST_OTAKU
+
+WMST_INTERIM
+WMST_MULTI_CAMPAIGN
+WMST_KIBODUEL
+WMST_PUBLIC_WORLD_SHADOW
+WMST_PHOTO_GRAPH
+WMST_HOME_DORM
+WMST_NEST_COOP
+WMST_KIBODUEL_PVP
+WMST_POPPER_PARTY
+WMST_KIBODUEL_ARENA
+
+WMST_ABYSS
+WMST_CULT_TRIAL
+WMST_HOME_STORY
+WMST_GROWUP_ACTIVITY
+WMST_WHITE_BOXd
+	WMST_INITe*K
+WorldMapItemState
+	WMIS_SHOW 
+	WMIS_HIDE
+WMIS_HOME_BUILD_LVUPn*ù
+WorldMapDefine
+WM_UPDATE_INTERVAL
+WM_SAVE_INTERVALà'
+WM_PLAYER_EXPIRE_TIME¨
+WM_EXPIRE_TIME¿¸
+WM_MAX_PLAYER_NUM
+WM_MAX_CMD_NUMÄ*S
+WorldMapInstanceStatusType
+WMIST_CREATE 
+WMIST_LOADING
+WMIST_LOADED*î
+WorldMapPlayerStatusType
+WMPST_NORMAL 
+WMPST_MOUNT
+
+WMPST_FISH
+WMPST_ACTION
+
+WMPST_HOME
+WMPST_SIGHTSEE
+WMPST_COUNT*¿
+WorldMapPlayerMountStatusType
+WMPMST_DEFAULT 
+WMPMST_GROUND
+
+WMPMST_FLY
+WMPMST_WATER_SURFACE
+WMPMST_WATER_UNDER
+WMPMST_GLIDE
+WMPMST_HOOKFLY
+WMPMST_COUNT*Ñ
+WorldMapTriggerType
+	WMTT_NONE 
+WMTT_BATTLE
+WMTT_QUEST_START
+WMTT_QUEST_FINISH
+WMTT_INTERACT
+	WMTT_STEP*Í
+WorldMapCmdType
+	WMCT_MOVE
+WMCT_INTERACT
+WMCT_BATTLE_START
+WMCT_BATTLE_FINISH
+
+WMCT_RESET
+	WMCT_QUIT
+WMCT_BUILD_LOCATE
+WMCT_BUILD_UNLOCATE
+WMCT_BUILD_CREATE	
+WMCT_BUILD_CREATE_FINISH
+
+WMCT_QUEST_START
+WMCT_QUEST_FINISH
+WMCT_UNLOCK_POINT
+WMCT_CROP_LOCATE
+WMCT_CROP_UNLOCATE
+WMCT_CROP_TAKE
+
+WMCT_MOUNT
+
+WMCT_GROUP
+WMCT_PLAYER
+	WMCT_NAME
+	WMCT_FACE
+WMCT_HOME_LEVEL
+	WMCT_CHAT
+	WMCT_KICK
+WMCT_PLAYER_STATUS
+WMCT_PRODUCT_START
+WMCT_PRODUCT_FINISH
+WMCT_PRODUCT_CANCEL
+WMCT_FIELD_OPEN
+WMCT_FIELD_CLOSE
+WMCT_FIELD_PLANT
+WMCT_FIELD_WATER 
+WMCT_FIELD_HARVEST!
+WMCT_FIELD_UNPLANT"
+WMCT_FIELD_AUTO_WATER#
+WMCT_HOUSE_REFRESH$
+WMCT_RECORD%
+
+WMCT_TIMER&
+WMCT_PET_CANTEEN_REFRESH'
+WMCT_HATCH_REFRESH(
+WMCT_COLLECT_BUILD)
+WMCT_SPECIAL*
+WMCT_RETRACT+
+WMCT_HOME_INIT,
+WMCT_HOME_REFRESH-
+	WMCT_ACED.
+WMCT_DYNAMIC_REFRESH/
+WMCT_BLUE_PRINT0
+WMCT_RELOAD_WORLD_FLOW1
+WMCT_MONSTER_INFO_CHANGE2
+WMCT_GM_RESET_ITEMˇ
+
+WMCT_ENTERÄ*L
+WorldMapQuestStatusType
+
+WMQST_NONE 
+WMQST_START
+WMQST_FINISH*å
+WorldMapPlayerDirtyType
+
+WMPDT_MOVE 
+WMPDT_STATUS
+	WMPDT_PET
+WMPDT_MOUNT
+WMPDT_GROUP
+
+WMPDT_NAME
+
+WMPDT_FACE*5
+WorldMapItemType
+WMIT_PRIVATE 
+WMIT_PUBLIC*-
+CatchPetType
+
+CPT_SINGLE
+	CPT_MUILT*=
+WorldMapChangeStatusReason
+WMCSR_NORMAL 
+	WMCSR_DIE*Ã
+WorldObjType
+WOT_NONE 
+WOT_NPC
+	WOT_ENEMY
+WOT_ITEM
+WOT_ENVIRONMENT
+WOT_DESTROY
+WOT_PUZZLE_ITEM
+WOT_PUZZLE_OBJECT
+WOT_TELEPORT_SMALL
+WOT_TELEPORT_BIG
+WOT_TELEPORT_EDGE
+WOT_TREASURE_CHEST
+WOT_PET_EGG
+WOT_MONSTER2
+WOT_RANDOM_MONSTER3
+WOT_CHEST_MONSTER4
+WOT_AFFIX_BOSS5
+WOT_INVISIBLE_WALLG
+WOT_TRIGGERI
+
+WOT_PUZZLEe
+WOT_PUZZLE_PROPERTY°
+WOT_PUZZLE_SKILL¢
+WOT_PUZZLE_WUMI£
+WOT_HOME_ITEM…
+WOT_BATTLE_CAMPAIGN≠
+WOT_WORLD_COLLET_BUILDÆ
+WOT_DUNGEON_TELEPORTØ
+WOT_DUNGEON_REWARD∞
+WOT_DUNGEON_DROP_AREA±
+WOT_DUNGEON_ACTIVE≤
+WOT_RANDOM_TASK_AREA≥
+WOT_WEEK_BOSS¥
+WOT_FISHµ*t
+WorldObjRefreshType
+WORT_FINISH
+
+WORT_DAILY
+WORT_GROUP_DAILY
+WORT_WEEKLY
+WORT_FINISH_DAILY*:
+WorldMonsterSettleType
+WMST_NORMAL 
+WMST_ROUNDS*=
+WorldMapTransportType
+WMTT_MINIMAP 
+WMTT_TRANSDOOR*A
+EnterWorldMapAction
+EWMA_INVALID 
+EWMA_LEAVE_AREA_LINE*]
+WorldObjInteractType
+INTERACT_NORMAL 
+INTERACT_COLLECT_TOOL
+INTERACT_ATTACKED*%
+ExtContextType
+ECT_QIBO_PUZZLE*Y
+PlayerActiveBehavior
+PAB_FALL
+PAB_REVIVE_LAST_POINT
+PAB_NEAR_TRANS_POINT*S
+PlayableStatusType
+PST_NONE 
+	PST_START
+PST_COMPLETE
+
+PST_FINISH*g
+WorldVotingType
+WorldVotingType_None 
+WorldVotingType_TimeLine
+WorldVotingType_Transfer*s
+WorldVotingVal
+WorldVotingVal_None 
+WorldVotingVal_Waiver
+WorldVotingVal_No
+WorldVotingVal_Yes*N
+WorldObjSearchType
+WOST_PET_EGG
+WOST_PET_SPECIAL
+WOST_PET_ALLB!ZGmServer/bridge/csproto;csproto
