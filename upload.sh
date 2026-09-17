@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # 把某个游戏文件夹做成 DataTable 的独立快照并推送。
 # 大文件（默认 >= 50MB）自动走 Git LFS。
+# 注意：全流程成功完成后，会自动删除传入的本地游戏文件夹。
 #
 # 用法:
 #   ./snapshot-game.sh Echocalypse
@@ -16,7 +17,7 @@
 #   --no-lfs           不启用 LFS；单个文件超过 100MB 会失败
 #   --no-push          只提交不推送
 #   --no-index         不改 master README
-#   --dry-run          只打印将要做的事
+#   --dry-run          只打印将要做的事（不会删除文件夹）
 #   --message MSG      提交说明
 
 set -euo pipefail
@@ -37,7 +38,7 @@ DRY_RUN=0
 COMMIT_MSG=""
 
 usage() {
-    sed -n '2,20p' "$0" | sed 's/^# \?//'
+    sed -n '2,22p' "$0" | sed 's/^# \?//'
     exit "${1:-0}"
 }
 
@@ -131,8 +132,14 @@ cd "$REPO_ROOT"
 git rev-parse --is-inside-work-tree >/dev/null 2>&1 || die "请在 DataTable 仓库里运行"
 [[ "$(git rev-parse --show-toplevel)" == "$REPO_ROOT" ]] || die "脚本必须放在仓库根目录"
 
+[[ -d "$SRC_DIR" ]] || die "不是文件夹或不存在: $SRC_DIR"
 SRC_DIR="$(cd "$SRC_DIR" && pwd)"
-[[ -d "$SRC_DIR" ]] || die "不是文件夹: $SRC_DIR"
+
+# 防误删硬性安全检查
+[[ "$SRC_DIR" != "/" ]] || die "安全保护: 来源目录不能为根目录 /"
+[[ "$SRC_DIR" != "$REPO_ROOT" ]] || die "安全保护: 来源目录不能是 DataTable 仓库根目录"
+[[ -n "${HOME:-}" && "$SRC_DIR" == "$HOME" ]] && die "安全保护: 来源目录不能是家目录 $HOME"
+
 GAME_NAME="${GAME_NAME:-$(basename "$SRC_DIR")}"
 [[ "$GAME_NAME" =~ ^[A-Za-z0-9._⁄/-]+$ ]] || die "游戏名不合法: $GAME_NAME"
 BRANCH="${BRANCH_PREFIX}${GAME_NAME}"
@@ -326,6 +333,23 @@ update_index() {
     [[ "$NO_PUSH" -eq 1 ]] || git -C "$REPO_ROOT" push origin HEAD
 }
 
+safe_remove_src_dir() {
+    local dir="$1"
+    [[ -z "$dir" ]] && return
+    [[ "$dir" == "/" ]] && die "安全保护: 不能删除根目录"
+    [[ "$dir" == "$REPO_ROOT" ]] && die "安全保护: 不能删除仓库根目录"
+    [[ -n "${HOME:-}" && "$dir" == "$HOME" ]] && die "安全保护: 不能删除家目录"
+    [[ ! -d "$dir" ]] && return
+
+    if [[ "$DRY_RUN" -eq 1 ]]; then
+        log "dry-run: 清理来源文件夹 ${dir}"
+        return
+    fi
+
+    log "已全部完成，正在清理本地来源文件夹: ${dir}"
+    rm -rf "$dir"
+}
+
 current="$(git -C "$REPO_ROOT" branch --show-current)"
 [[ "$current" == "master" || "$current" == "main" ]] || die "请先切到 master 再发布（当前: ${current}）"
 
@@ -407,3 +431,5 @@ log "  git clone -b ${BRANCH} --single-branch --depth 1 https://github.com/Packa
 if [[ -s "$LARGE_LIST" && "$NO_LFS" -eq 0 ]]; then
     log "大文件由 Git LFS 拉取，请先安装 git-lfs。"
 fi
+
+safe_remove_src_dir "$SRC_DIR"
