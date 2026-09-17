@@ -1,0 +1,81 @@
+return {
+	["806-1-1"] = {
+		item4 = 80636004,
+		item3 = 80636003,
+		num3 = 1,
+		num4 = 1,
+		item2 = 80636002,
+		limit_count = 1,
+		num2 = 1,
+		drop = "ACTCOLLECT_806_1_1",
+		collect_type = 1,
+		id = "806-1-1",
+		num1 = 1,
+		item1 = 80636001
+	},
+	["806-1-2"] = {
+		item4 = 80636008,
+		item3 = 80636007,
+		num3 = 1,
+		num4 = 1,
+		item2 = 80636006,
+		limit_count = 1,
+		num2 = 1,
+		drop = "ACTCOLLECT_806_1_2",
+		collect_type = 1,
+		id = "806-1-2",
+		num1 = 1,
+		item1 = 80636005
+	},
+	["806-1-3"] = {
+		item4 = 80636012,
+		item3 = 80636011,
+		num3 = 1,
+		num4 = 1,
+		item2 = 80636010,
+		limit_count = 1,
+		num2 = 1,
+		drop = "ACTCOLLECT_806_1_3",
+		collect_type = 1,
+		id = "806-1-3",
+		num1 = 1,
+		item1 = 80636009
+	},
+	["806-1-4"] = {
+		item4 = 80636016,
+		item3 = 80636015,
+		num3 = 1,
+		num4 = 1,
+		item2 = 80636014,
+		limit_count = 1,
+		num2 = 1,
+		drop = "ACTCOLLECT_806_1_4",
+		collect_type = 1,
+		id = "806-1-4",
+		num1 = 1,
+		item1 = 80636013
+	},
+	["806-1-5"] = {
+		drop = "ACTCOLLECTRE_806_1",
+		needcount = 3,
+		collect_type = 2,
+		starttime = "2025-05-16 00:00:00",
+		id = "806-1-5",
+		needitemtype = 211,
+		desc = "随机"
+	},
+	["806-1-6"] = {
+		item4 = 80636020,
+		item3 = 80636019,
+		num3 = 1,
+		num4 = 1,
+		item2 = 80636018,
+		limit_count = 1,
+		num2 = 1,
+		drop = "ACTCOLLECT_806_1_5",
+		collect_type = 1,
+		id = "806-1-6",
+		num1 = 1,
+		item1 = 80636017
+	}
+}

@@ -1,0 +1,1 @@
+return "    refresh_shop 5201 {\n        request {\n            shoptype 0 : integer\n            channelid 1 :string\n            isantihexie 2 : boolean\n        }\n        response {\n            result 0 : integer # 1 成功 2 物品不足\n            cost_diamond 1 : integer\n            consumes 2 : *consumeids\n        }\n    }\n"

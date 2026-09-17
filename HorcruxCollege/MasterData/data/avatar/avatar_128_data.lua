@@ -1,0 +1,13 @@
+return {
+	[92206720] = {
+		id = 92206720,
+		name = "秋蒂头像",
+		class_type = 1,
+		user_manual = "可在个人信息页面更换",
+		equip_quality = 5,
+		intro = "秋蒂头像。",
+		image_id = "206720",
+		bag_item_type = 92,
+		order = 100
+	}
+}

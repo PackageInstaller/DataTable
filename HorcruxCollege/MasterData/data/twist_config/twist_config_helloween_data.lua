@@ -1,0 +1,40 @@
+return {
+	[164] = {
+		antiburst_for_ten = "JPTW16403",
+		itemup = 75,
+		guarantee_for_mr = "JPTW16404",
+		role_antiburst_num = 6,
+		once_twist_ticket = 14201002,
+		stat = 2,
+		pos = -27,
+		tencost = 10,
+		img = 2204202,
+		antiburst_num = 3,
+		dropid = "JPTW16401",
+		supply_cost = 100,
+		into_shop = "15045",
+		role_antiburst_for_ten = "JPTW16403",
+		currency = 6800101,
+		onecost = 1,
+		twist_confirm_des = "學員招生",
+		guarantee_for_ten = "JPTW16402",
+		id = 164,
+		finishtime = "2020-11-10 23:59:59",
+		starttime = "2020-10-29 00:00:00"
+	},
+	[165] = {
+		finishtime = "2020-11-10 23:59:59",
+		is_limit_twist_pool = 1,
+		is_horcrux_show_in_dropdetails = 1,
+		currency = 6800601,
+		onecost = 1,
+		stat = 2,
+		pos = -26,
+		twist_confirm_des = "學員招生",
+		tencost = 10,
+		img = 165,
+		id = 165,
+		dropid = "WSJCK16501",
+		starttime = "2020-10-29 00:00:00"
+	}
+}

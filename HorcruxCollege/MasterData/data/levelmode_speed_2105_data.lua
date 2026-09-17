@@ -1,0 +1,62 @@
+return {
+	[21051] = {
+		description = "无尽竞速大挑战",
+		name = "隐秘飞镖",
+		modetype = 2105,
+		bossinfo = "高远程防御\n弱点：近战伤害",
+		modescore = 2,
+		image = "plot_bg109",
+		is_repeat_no_reward = 1,
+		fildinfo = "11001,11002",
+		mode = 21051,
+		show_boss = "48000",
+		totalchapter = 12,
+		levelperchapter = 1,
+		order = 1
+	},
+	[21052] = {
+		description = "无尽竞速大挑战",
+		name = "狂野藤鞭",
+		modetype = 2105,
+		bossinfo = "高强击抵抗\n弱点：量子学员",
+		modescore = 2,
+		image = "plot_bg109",
+		is_repeat_no_reward = 1,
+		fildinfo = "11003,11004",
+		mode = 21052,
+		show_boss = "45000",
+		totalchapter = 12,
+		levelperchapter = 1,
+		order = 2
+	},
+	[21053] = {
+		description = "无尽竞速大挑战",
+		name = "无畏长枪",
+		modetype = 2105,
+		bossinfo = "高强击抵抗\n弱点：暴击伤害",
+		modescore = 2,
+		image = "plot_bg109",
+		is_repeat_no_reward = 1,
+		fildinfo = "11005,11004",
+		mode = 21053,
+		show_boss = "20056",
+		totalchapter = 12,
+		levelperchapter = 1,
+		order = 3
+	},
+	[21054] = {
+		description = "无尽竞速大挑战",
+		name = "冷面双斧",
+		modetype = 2105,
+		bossinfo = "高机械防御\n弱点：能量伤害",
+		modescore = 2,
+		image = "plot_bg109",
+		is_repeat_no_reward = 1,
+		fildinfo = "11006,11007",
+		mode = 21054,
+		show_boss = "42000",
+		totalchapter = 12,
+		levelperchapter = 1,
+		order = 4
+	}
+}

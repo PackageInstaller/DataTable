@@ -1,0 +1,223 @@
+return {
+	["811mp-1"] = {
+		drop2 = "811MPT001",
+		proceed_id = "811mp-1",
+		drop1 = "811MPT001",
+		num3 = 500,
+		id = "811mp-1",
+		num1 = 500,
+		drop3 = "811MPT001",
+		num2 = 500
+	},
+	["811mp-2"] = {
+		drop2 = "811MPT003",
+		need1 = "1",
+		drop1 = "811MPT002",
+		proceed_id = "811mp-2",
+		id = "811mp-2",
+		num1 = 2000,
+		need2 = "2,3",
+		num2 = 4000
+	},
+	["811mp-3"] = {
+		need2 = "2",
+		need1 = "1",
+		proceed_id = "811mp-3",
+		drop2 = "811MPT005",
+		num3 = 1800,
+		need3 = "2",
+		drop3 = "811MPT006",
+		num2 = 1200,
+		drop1 = "811MPT004",
+		id = "811mp-3",
+		num1 = 600
+	},
+	["811mp-4"] = {
+		need2 = "2",
+		need1 = "1",
+		proceed_id = "811mp-4",
+		drop2 = "811MPT007",
+		num3 = 1500,
+		need3 = "3",
+		drop3 = "811MPT007",
+		num2 = 1500,
+		drop1 = "811MPT007",
+		id = "811mp-4",
+		num1 = 1500
+	},
+	["811mp-5"] = {
+		proceed_id = "811mp-5",
+		need1 = "1,2,3",
+		drop1 = "811MPT008",
+		id = "811mp-5",
+		num1 = 3000
+	},
+	["811mp-6"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "811mp-6",
+		drop2 = "811MPT009",
+		num3 = 500,
+		need3 = "1",
+		drop3 = "811MPT009",
+		num2 = 500,
+		drop1 = "811MPT009",
+		id = "811mp-6",
+		num1 = 500
+	},
+	["811mp-7"] = {
+		drop2 = "811MPT011",
+		need1 = "1",
+		drop1 = "811MPT010",
+		proceed_id = "811mp-7",
+		id = "811mp-7",
+		num1 = 2000,
+		need2 = "2,3",
+		num2 = 4000
+	},
+	["811mp-8"] = {
+		need2 = "2",
+		need1 = "1",
+		proceed_id = "811mp-8",
+		drop2 = "811MPT013",
+		num3 = 2000,
+		need3 = "2",
+		drop3 = "811MPT014",
+		num2 = 2000,
+		drop1 = "811MPT012",
+		id = "811mp-8",
+		num1 = 2000
+	},
+	["811mp-9"] = {
+		need2 = "2",
+		need1 = "1",
+		proceed_id = "811mp-9",
+		drop2 = "811MPT015",
+		num3 = 3000,
+		need3 = "3",
+		drop3 = "811MPT015",
+		num2 = 3000,
+		drop1 = "811MPT015",
+		id = "811mp-9",
+		num1 = 3000
+	},
+	["811mp-10"] = {
+		proceed_id = "811mp-10",
+		need1 = "1,2,3",
+		drop1 = "811MPT016",
+		id = "811mp-10",
+		num1 = 4000
+	},
+	["811mp-11"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "811mp-11",
+		drop2 = "811MPT001",
+		num3 = 500,
+		need3 = "1",
+		drop3 = "811MPT001",
+		num2 = 500,
+		drop1 = "811MPT001",
+		id = "811mp-11",
+		num1 = 500
+	},
+	["811mp-12"] = {
+		drop2 = "811MPT003",
+		need1 = "1",
+		drop1 = "811MPT002",
+		proceed_id = "811mp-12",
+		id = "811mp-12",
+		num1 = 2000,
+		need2 = "2,3",
+		num2 = 4000
+	},
+	["811mp-13"] = {
+		need2 = "2",
+		need1 = "1",
+		proceed_id = "811mp-13",
+		drop2 = "811MPT005",
+		num3 = 1800,
+		need3 = "2",
+		drop3 = "811MPT006",
+		num2 = 1200,
+		drop1 = "811MPT004",
+		id = "811mp-13",
+		num1 = 600
+	},
+	["811mp-14"] = {
+		need2 = "2",
+		need1 = "1",
+		proceed_id = "811mp-14",
+		drop2 = "811MPT007",
+		num3 = 1500,
+		need3 = "3",
+		drop3 = "811MPT007",
+		num2 = 1500,
+		drop1 = "811MPT007",
+		id = "811mp-14",
+		num1 = 1500
+	},
+	["811mp-15"] = {
+		proceed_id = "811mp-15",
+		need1 = "1,2,3",
+		drop1 = "811MPT008",
+		id = "811mp-15",
+		num1 = 3000
+	},
+	["811mp-16"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "811mp-16",
+		drop2 = "811MPT009",
+		num3 = 500,
+		need3 = "1",
+		drop3 = "811MPT009",
+		num2 = 500,
+		drop1 = "811MPT009",
+		id = "811mp-16",
+		num1 = 500
+	},
+	["811mp-17"] = {
+		drop2 = "811MPT011",
+		need1 = "1",
+		drop1 = "811MPT010",
+		proceed_id = "811mp-17",
+		id = "811mp-17",
+		num1 = 2000,
+		need2 = "2,3",
+		num2 = 4000
+	},
+	["811mp-18"] = {
+		need2 = "2",
+		need1 = "1",
+		proceed_id = "811mp-18",
+		drop2 = "811MPT013",
+		num3 = 2000,
+		need3 = "2",
+		drop3 = "811MPT014",
+		num2 = 2000,
+		drop1 = "811MPT012",
+		id = "811mp-18",
+		num1 = 2000
+	},
+	["811mp-19"] = {
+		need2 = "2",
+		need1 = "1",
+		proceed_id = "811mp-19",
+		drop2 = "811MPT015",
+		num3 = 3000,
+		need3 = "3",
+		drop3 = "811MPT015",
+		num2 = 3000,
+		drop1 = "811MPT015",
+		id = "811mp-19",
+		num1 = 3000
+	},
+	["811mp-20"] = {
+		proceed_id = "811mp-20",
+		need1 = "1,2,3",
+		drop1 = "811MPT017",
+		id = "811mp-20",
+		num1 = 8000
+	}
+}

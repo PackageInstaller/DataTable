@@ -1,0 +1,50 @@
+return {
+	[21031] = {
+		description = "无尽竞速大挑战",
+		name = "贪婪火炮",
+		modetype = 2103,
+		bossinfo = "高强击防御\n弱点：虚数学员",
+		modescore = 2,
+		image = "plot_bg109",
+		is_repeat_no_reward = 1,
+		fildinfo = "11022,5058,6008,6009,11004,8525",
+		ele_type = "water,imaginary,shiling,positive",
+		mode = 21031,
+		show_boss = "46000",
+		totalchapter = 4,
+		levelperchapter = 1,
+		order = 1
+	},
+	[21032] = {
+		description = "无尽竞速大挑战",
+		name = "鬼魅刀刃",
+		modetype = 2103,
+		bossinfo = "高近战防御\n弱点：远程伤害",
+		modescore = 2,
+		image = "plot_bg109",
+		is_repeat_no_reward = 1,
+		fildinfo = "5057,5055,11012,11011,5060,8526,8525",
+		ele_type = "wind,light,devil,zerosupperession,positive",
+		mode = 21032,
+		show_boss = "43000",
+		totalchapter = 4,
+		levelperchapter = 1,
+		order = 2
+	},
+	[21033] = {
+		description = "无尽竞速大挑战",
+		name = "无限恐惧",
+		modetype = 2103,
+		bossinfo = "高能量防御\n弱点：暴击伤害",
+		modescore = 2,
+		image = "plot_bg109",
+		is_repeat_no_reward = 1,
+		fildinfo = "11027,5059,5056,6010,11015,8525",
+		ele_type = "fire,dark,umaru,positive",
+		mode = 21033,
+		show_boss = "40000",
+		totalchapter = 4,
+		levelperchapter = 1,
+		order = 3
+	}
+}

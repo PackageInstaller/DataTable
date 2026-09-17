@@ -1,0 +1,80 @@
+return {
+	[1500946920] = {
+		sale_price_diamond = 440,
+		name = "【李】",
+		id = 1500946920,
+		max_stack = 999,
+		price_diamond = 880,
+		sale_price = 26400,
+		equip_quality = 6,
+		mode_id = "PF1500946920",
+		price = 88000,
+		intro = "【熹微晨光】李皮肤X1 李头像X1。",
+		model = "16920",
+		image_id = 1500946920,
+		bag_item_type = 94,
+		price_honor = 4400
+	},
+	[1500946930] = {
+		sale_price_diamond = 440,
+		name = "【李】",
+		id = 1500946930,
+		max_stack = 999,
+		price_diamond = 880,
+		sale_price = 26400,
+		equip_quality = 6,
+		mode_id = "PF1500946930",
+		price = 88000,
+		intro = "【熹微晨光】李皮肤X1 李头像X1。",
+		model = "16930",
+		image_id = 1500946930,
+		bag_item_type = 94,
+		price_honor = 4400
+	},
+	[1500946960] = {
+		sale_price_diamond = 440,
+		name = "【李】",
+		id = 1500946960,
+		max_stack = 999,
+		price_diamond = 880,
+		sale_price = 26400,
+		equip_quality = 6,
+		mode_id = "PF1500946960",
+		price = 88000,
+		intro = "【熹微晨光】李皮肤X1 李头像X1。",
+		model = "16960",
+		image_id = 1500946960,
+		bag_item_type = 94,
+		price_honor = 4400
+	},
+	[150180200] = {
+		id = 150180200,
+		name = "助力扭蛋",
+		equip_quality = 5,
+		max_stack = 999,
+		image_id = 150180200,
+		intro = "MRJYCJLB05。",
+		bag_item_type = 95,
+		mode_id = "MRJYCJLB05"
+	},
+	[150180201] = {
+		id = 150180201,
+		name = "大型扭蛋",
+		equip_quality = 5,
+		max_stack = 999,
+		image_id = 150180201,
+		intro = "MRJYCJLB06。",
+		bag_item_type = 95,
+		mode_id = "MRJYCJLB06"
+	},
+	[150180202] = {
+		id = 150180202,
+		name = "豪华扭蛋",
+		equip_quality = 5,
+		max_stack = 999,
+		image_id = 150180202,
+		intro = "MRJYCJLB07。",
+		bag_item_type = 95,
+		mode_id = "MRJYCJLB07"
+	}
+}

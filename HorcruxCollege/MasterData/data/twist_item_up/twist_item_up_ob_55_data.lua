@@ -1,0 +1,93 @@
+return {
+	[4281] = {
+		updrop = "OHT1308720",
+		guaranteedrop1 = "OHT1308720",
+		guaranteeshowprob1 = 0.02,
+		guarantee1 = 1,
+		up_drop_count1 = 50,
+		itemupid = 281,
+		img = 2287201,
+		id = 4281,
+		finishtime = "2022-09-25 23:59:59",
+		guaranteeconf = "twist_guarantee_100_3",
+		starttime = "2022-09-01 00:00:00"
+	},
+	[4282] = {
+		updrop = "OHT13002920",
+		guaranteedrop1 = "OHT13002920",
+		guaranteeshowprob1 = 0.02,
+		guarantee1 = 1,
+		up_drop_count1 = 50,
+		itemupid = 282,
+		img = 22029201,
+		id = 4282,
+		finishtime = "2022-09-25 23:59:59",
+		guaranteeconf = "twist_guarantee_100_3",
+		starttime = "2022-09-01 00:00:00"
+	},
+	[4283] = {
+		updrop = "OHT13001020",
+		guaranteedrop1 = "OHT13001020",
+		guaranteeshowprob1 = 0.02,
+		guarantee1 = 1,
+		up_drop_count1 = 50,
+		itemupid = 283,
+		img = 22010201,
+		id = 4283,
+		finishtime = "2022-09-25 23:59:59",
+		guaranteeconf = "twist_guarantee_100_3",
+		starttime = "2022-09-03 00:00:00"
+	},
+	[4284] = {
+		updrop = "OHT1306720",
+		guaranteedrop1 = "OHT1306720",
+		guaranteeshowprob1 = 0.02,
+		guarantee1 = 1,
+		up_drop_count1 = 50,
+		itemupid = 284,
+		img = 2267201,
+		id = 4284,
+		finishtime = "2022-09-25 23:59:59",
+		guaranteeconf = "twist_guarantee_100_3",
+		starttime = "2022-09-04 00:00:00"
+	},
+	[4285] = {
+		updrop = "OHT13002820",
+		guaranteedrop1 = "OHT13002820",
+		guaranteeshowprob1 = 0.02,
+		guarantee1 = 1,
+		up_drop_count1 = 50,
+		itemupid = 285,
+		img = 22028201,
+		id = 4285,
+		finishtime = "2022-09-25 23:59:59",
+		guaranteeconf = "twist_guarantee_100_3",
+		starttime = "2022-09-06 00:00:00"
+	},
+	[4497] = {
+		updrop = "OHT1309920",
+		guaranteedrop1 = "OHT1309920",
+		guaranteeshowprob1 = 0.02,
+		guarantee1 = 1,
+		up_drop_count1 = 50,
+		itemupid = 497,
+		img = 22049701,
+		id = 4497,
+		finishtime = "2023-09-11 23:59:59",
+		guaranteeconf = "twist_guarantee_100_3",
+		starttime = "2023-09-03 00:00:00"
+	},
+	[4499] = {
+		updrop = "OHT1306720",
+		guaranteedrop1 = "OHT1306720",
+		guaranteeshowprob1 = 0.02,
+		guarantee1 = 1,
+		up_drop_count1 = 50,
+		itemupid = 499,
+		img = 22049901,
+		id = 4499,
+		finishtime = "2023-09-22 23:59:59",
+		guaranteeconf = "twist_guarantee_100_3",
+		starttime = "2023-09-14 00:00:00"
+	}
+}

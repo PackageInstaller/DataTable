@@ -1,0 +1,113 @@
+return {
+	[45234001] = {
+		id = "45234001",
+		name = "茶具",
+		max_stack = 9999999,
+		user_manual = "活动支援点数",
+		equip_quality = 5,
+		intro = "活动支援点数。",
+		purpose = "BP点",
+		image_id = 1543,
+		bag_item_type = 101
+	},
+	[45234002] = {
+		id = "45234002",
+		name = "茶具",
+		max_stack = 9999999,
+		user_manual = "活动支援点数",
+		equip_quality = 5,
+		intro = "活动支援点数。",
+		purpose = "BPVIP检测道具",
+		image_id = 1543,
+		bag_item_type = 101
+	},
+	[45234003] = {
+		id = "45234003",
+		name = "茶具",
+		max_stack = 9999999,
+		user_manual = "活动支援点数",
+		equip_quality = 5,
+		intro = "活动支援点数。",
+		purpose = "BPSVIP检测道具",
+		image_id = 1543,
+		bag_item_type = 101
+	},
+	[45204001] = {
+		id = "45204001",
+		name = "联动折扣礼包",
+		max_stack = 9999999,
+		user_manual = "活动礼包",
+		equip_quality = 5,
+		mode_id = "llcy23fklb001",
+		intro = "活动礼包。",
+		purpose = "联动折扣礼包",
+		image_id = 45204001,
+		bag_item_type = 95
+	},
+	[45204002] = {
+		id = "45204002",
+		name = "联动精品礼包",
+		max_stack = 9999999,
+		user_manual = "活动礼包",
+		equip_quality = 5,
+		mode_id = "llcy23fklb002",
+		intro = "活动礼包。",
+		purpose = "联动精品礼包",
+		image_id = 45204002,
+		bag_item_type = 95
+	},
+	[45204003] = {
+		id = "45204003",
+		name = "联动特惠礼包",
+		max_stack = 9999999,
+		user_manual = "活动礼包",
+		equip_quality = 5,
+		mode_id = "llcy23fklb003",
+		intro = "活动礼包。",
+		purpose = "联动特惠礼包",
+		image_id = 45204003,
+		bag_item_type = 95
+	},
+	[45204004] = {
+		id = "45204004",
+		name = "联动典藏礼包",
+		max_stack = 9999999,
+		user_manual = "活动礼包",
+		equip_quality = 5,
+		mode_id = "llcy23fklb004",
+		intro = "活动礼包。",
+		purpose = "联动典藏礼包",
+		image_id = 45204004,
+		bag_item_type = 95
+	},
+	[45201001] = {
+		id = "45201001",
+		name = "芝麻汤圆",
+		targetdes2 = "「角色支援」获得",
+		max_stack = 9999999,
+		user_manual = "听说有商人正在收集它~",
+		targetlayer2 = "2500452",
+		equip_quality = 5,
+		targetlayer1 = "2000452",
+		intro = "派森街头经常售卖的美食。咬一口甜甜的，糊糊的~。",
+		purpose = "芝麻汤圆",
+		image_id = 1563,
+		bag_item_type = 90,
+		targetdes1 = "「联动签到」获得"
+	},
+	[45203001] = {
+		id = "45203001",
+		name = "料理次元扭蛋券",
+		targetdes2 = "「角色支援」获得",
+		max_stack = 99999,
+		user_manual = "料理次元活动专属扭蛋券~",
+		targetlayer2 = "2500452",
+		equip_quality = 5,
+		targetlayer1 = "2900452",
+		intro = "这是一张充满欧气的扩招券，一定能为班长带来好运！",
+		purpose = "料理次元扭蛋券",
+		image_id = 45203001,
+		bag_item_type = 68,
+		targetdes1 = "「料理次元」系列活动获得"
+	}
+}

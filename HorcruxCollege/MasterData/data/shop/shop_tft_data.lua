@@ -1,0 +1,550 @@
+return {
+	[600001] = {
+		currencytype = 10100003,
+		itemid = 6800101,
+		id = 600001,
+		pos = 1,
+		unique_id = "42948.88542",
+		shop_type = 50,
+		buy_limit = 3,
+		price = 300,
+		itemcount = 1
+	},
+	[600002] = {
+		currencytype = 10100003,
+		itemid = 2300001,
+		id = 600002,
+		pos = 2,
+		unique_id = "42948.88542",
+		shop_type = 50,
+		buy_limit = 5,
+		price = 300,
+		itemcount = 1
+	},
+	[600003] = {
+		itemid = 1000206,
+		unique_id = "42948.88542",
+		price = 500,
+		shop_type = 50,
+		id = 600003,
+		currencytype = 10100003,
+		pos = 3,
+		itemcount = 1
+	},
+	[600004] = {
+		itemid = 10100003,
+		unique_id = "42948.88542",
+		price = 1,
+		shop_type = 50,
+		id = 600004,
+		currencytype = 10100002,
+		pos = 4,
+		itemcount = 1
+	},
+	[600005] = {
+		itemid = 5101066,
+		unique_id = "42948.88542",
+		price = 2000,
+		shop_type = 50,
+		id = 600005,
+		currencytype = 10100003,
+		pos = 5,
+		itemcount = 1
+	},
+	[600006] = {
+		currencytype = 10100003,
+		itemid = 5101046,
+		id = 600006,
+		pos = 6,
+		unique_id = "42948.88542",
+		shop_type = 50,
+		buy_limit = 5,
+		price = 2000,
+		itemcount = 1
+	},
+	[600007] = {
+		currencytype = 10100003,
+		itemid = 5101086,
+		id = 600007,
+		pos = 7,
+		unique_id = "42948.88542",
+		shop_type = 50,
+		buy_limit = 5,
+		price = 2000,
+		itemcount = 1
+	},
+	[600008] = {
+		currencytype = 10100003,
+		itemid = 5101096,
+		id = 600008,
+		pos = 8,
+		unique_id = "42948.88542",
+		shop_type = 50,
+		buy_limit = 5,
+		price = 2000,
+		itemcount = 1
+	},
+	[600009] = {
+		currencytype = 10100003,
+		itemid = 5101056,
+		id = 600009,
+		pos = 9,
+		unique_id = "42948.88542",
+		shop_type = 50,
+		buy_limit = 5,
+		price = 2000,
+		itemcount = 1
+	},
+	[600010] = {
+		currencytype = 10100003,
+		itemid = 5102106,
+		id = 600010,
+		pos = 10,
+		unique_id = "42948.88542",
+		shop_type = 50,
+		buy_limit = 5,
+		price = 2000,
+		itemcount = 1
+	},
+	[600011] = {
+		currencytype = 10100003,
+		itemid = 5102076,
+		id = 600011,
+		pos = 11,
+		unique_id = "42948.88542",
+		shop_type = 50,
+		buy_limit = 5,
+		price = 2000,
+		itemcount = 1
+	},
+	[600012] = {
+		currencytype = 10100003,
+		itemid = 5102116,
+		id = 600012,
+		pos = 12,
+		unique_id = "42948.88542",
+		shop_type = 50,
+		buy_limit = 5,
+		price = 2000,
+		itemcount = 1
+	},
+	[600013] = {
+		currencytype = 10100003,
+		itemid = 5102096,
+		id = 600013,
+		pos = 13,
+		unique_id = "42948.88542",
+		shop_type = 50,
+		buy_limit = 5,
+		price = 2000,
+		itemcount = 1
+	},
+	[600014] = {
+		currencytype = 10100003,
+		itemid = 5103146,
+		id = 600014,
+		pos = 14,
+		unique_id = "42948.88542",
+		shop_type = 50,
+		buy_limit = 5,
+		price = 2000,
+		itemcount = 1
+	},
+	[600015] = {
+		currencytype = 10100003,
+		itemid = 5103126,
+		id = 600015,
+		pos = 15,
+		unique_id = "42948.88542",
+		shop_type = 50,
+		buy_limit = 5,
+		price = 2000,
+		itemcount = 1
+	},
+	[600016] = {
+		currencytype = 10100003,
+		itemid = 5103136,
+		id = 600016,
+		pos = 16,
+		unique_id = "42948.88542",
+		shop_type = 50,
+		buy_limit = 5,
+		price = 2000,
+		itemcount = 1
+	},
+	[600017] = {
+		currencytype = 10100003,
+		itemid = 5103036,
+		id = 600017,
+		pos = 17,
+		unique_id = "42948.88542",
+		shop_type = 50,
+		buy_limit = 5,
+		price = 2000,
+		itemcount = 1
+	},
+	[600016] = {
+		itemid = 5201066,
+		unique_id = "42948.88542",
+		price = 2000,
+		shop_type = 50,
+		id = 600016,
+		currencytype = 10100003,
+		pos = 18,
+		itemcount = 1
+	},
+	[600017] = {
+		itemid = 5201046,
+		unique_id = "42948.88542",
+		price = 2000,
+		shop_type = 50,
+		id = 600017,
+		currencytype = 10100003,
+		pos = 19,
+		itemcount = 1
+	},
+	[600018] = {
+		itemid = 5201086,
+		unique_id = "42948.88542",
+		price = 2000,
+		shop_type = 50,
+		id = 600018,
+		currencytype = 10100003,
+		pos = 20,
+		itemcount = 1
+	},
+	[600019] = {
+		itemid = 5201026,
+		unique_id = "42948.88542",
+		price = 2000,
+		shop_type = 50,
+		id = 600019,
+		currencytype = 10100003,
+		pos = 21,
+		itemcount = 1
+	},
+	[600020] = {
+		itemid = 5201056,
+		unique_id = "42948.88542",
+		price = 2000,
+		shop_type = 50,
+		id = 600020,
+		currencytype = 10100003,
+		pos = 22,
+		itemcount = 1
+	},
+	[600021] = {
+		itemid = 5202106,
+		unique_id = "42948.88542",
+		price = 2000,
+		shop_type = 50,
+		id = 600021,
+		currencytype = 10100003,
+		pos = 23,
+		itemcount = 1
+	},
+	[600022] = {
+		itemid = 5202076,
+		unique_id = "42948.88542",
+		price = 2000,
+		shop_type = 50,
+		id = 600022,
+		currencytype = 10100003,
+		pos = 24,
+		itemcount = 1
+	},
+	[600023] = {
+		itemid = 5202116,
+		unique_id = "42948.88542",
+		price = 2000,
+		shop_type = 50,
+		id = 600023,
+		currencytype = 10100003,
+		pos = 25,
+		itemcount = 1
+	},
+	[600024] = {
+		itemid = 5202026,
+		unique_id = "42948.88542",
+		price = 2000,
+		shop_type = 50,
+		id = 600024,
+		currencytype = 10100003,
+		pos = 26,
+		itemcount = 1
+	},
+	[600025] = {
+		itemid = 5203146,
+		unique_id = "42948.88542",
+		price = 2000,
+		shop_type = 50,
+		id = 600025,
+		currencytype = 10100003,
+		pos = 27,
+		itemcount = 1
+	},
+	[600026] = {
+		itemid = 5203126,
+		unique_id = "42948.88542",
+		price = 2000,
+		shop_type = 50,
+		id = 600026,
+		currencytype = 10100003,
+		pos = 28,
+		itemcount = 1
+	},
+	[600027] = {
+		itemid = 5203136,
+		unique_id = "42948.88542",
+		price = 2000,
+		shop_type = 50,
+		id = 600027,
+		currencytype = 10100003,
+		pos = 29,
+		itemcount = 1
+	},
+	[600028] = {
+		itemid = 5203036,
+		unique_id = "42948.88542",
+		price = 2000,
+		shop_type = 50,
+		id = 600028,
+		currencytype = 10100003,
+		pos = 30,
+		itemcount = 1
+	},
+	[600029] = {
+		itemid = 5301066,
+		unique_id = "42948.88542",
+		price = 2000,
+		shop_type = 50,
+		id = 600029,
+		currencytype = 10100003,
+		pos = 31,
+		itemcount = 1
+	},
+	[600030] = {
+		itemid = 5301046,
+		unique_id = "42948.88542",
+		price = 2000,
+		shop_type = 50,
+		id = 600030,
+		currencytype = 10100003,
+		pos = 32,
+		itemcount = 1
+	},
+	[600031] = {
+		itemid = 5301086,
+		unique_id = "42948.88542",
+		price = 2000,
+		shop_type = 50,
+		id = 600031,
+		currencytype = 10100003,
+		pos = 33,
+		itemcount = 1
+	},
+	[600032] = {
+		itemid = 5301026,
+		unique_id = "42948.88542",
+		price = 2000,
+		shop_type = 50,
+		id = 600032,
+		currencytype = 10100003,
+		pos = 34,
+		itemcount = 1
+	},
+	[600033] = {
+		itemid = 5301056,
+		unique_id = "42948.88542",
+		price = 2000,
+		shop_type = 50,
+		id = 600033,
+		currencytype = 10100003,
+		pos = 35,
+		itemcount = 1
+	},
+	[600034] = {
+		itemid = 5302106,
+		unique_id = "42948.88542",
+		price = 2000,
+		shop_type = 50,
+		id = 600034,
+		currencytype = 10100003,
+		pos = 36,
+		itemcount = 1
+	},
+	[600035] = {
+		itemid = 5302076,
+		unique_id = "42948.88542",
+		price = 2000,
+		shop_type = 50,
+		id = 600035,
+		currencytype = 10100003,
+		pos = 37,
+		itemcount = 1
+	},
+	[600036] = {
+		itemid = 5302116,
+		unique_id = "42948.88542",
+		price = 2000,
+		shop_type = 50,
+		id = 600036,
+		currencytype = 10100003,
+		pos = 38,
+		itemcount = 1
+	},
+	[600037] = {
+		itemid = 5302026,
+		unique_id = "42948.88542",
+		price = 2000,
+		shop_type = 50,
+		id = 600037,
+		currencytype = 10100003,
+		pos = 39,
+		itemcount = 1
+	},
+	[600038] = {
+		itemid = 5303146,
+		unique_id = "42948.88542",
+		price = 2000,
+		shop_type = 50,
+		id = 600038,
+		currencytype = 10100003,
+		pos = 40,
+		itemcount = 1
+	},
+	[600039] = {
+		itemid = 5303126,
+		unique_id = "42948.88542",
+		price = 2000,
+		shop_type = 50,
+		id = 600039,
+		currencytype = 10100003,
+		pos = 41,
+		itemcount = 1
+	},
+	[600040] = {
+		itemid = 5303136,
+		unique_id = "42948.88542",
+		price = 2000,
+		shop_type = 50,
+		id = 600040,
+		currencytype = 10100003,
+		pos = 42,
+		itemcount = 1
+	},
+	[600041] = {
+		itemid = 5303036,
+		unique_id = "42948.88542",
+		price = 2000,
+		shop_type = 50,
+		id = 600041,
+		currencytype = 10100003,
+		pos = 43,
+		itemcount = 1
+	},
+	[600042] = {
+		currencytype = 10100003,
+		itemid = 6800101,
+		id = 600042,
+		pos = 1,
+		unique_id = "42948.88542",
+		shop_type = 49,
+		buy_limit = 3,
+		price = 300,
+		itemcount = 1
+	},
+	[600043] = {
+		currencytype = 10100003,
+		itemid = 2300001,
+		id = 600043,
+		pos = 2,
+		unique_id = "42948.88542",
+		shop_type = 49,
+		buy_limit = 5,
+		price = 300,
+		itemcount = 1
+	},
+	[600044] = {
+		itemid = 1000206,
+		unique_id = "42948.88542",
+		price = 500,
+		shop_type = 49,
+		id = 600044,
+		currencytype = 10100003,
+		pos = 3,
+		itemcount = 1
+	},
+	[600045] = {
+		itemid = 10100003,
+		unique_id = "42948.88542",
+		price = 1,
+		shop_type = 49,
+		id = 600045,
+		currencytype = 10100002,
+		pos = 4,
+		itemcount = 1
+	},
+	[600046] = {
+		currencytype = 10100003,
+		itemid = 2010006,
+		id = 600046,
+		pos = 5,
+		unique_id = "42948.88542",
+		shop_type = 49,
+		buy_limit = 20,
+		price = 1800,
+		itemcount = 1
+	},
+	[600047] = {
+		currencytype = 10100003,
+		itemid = 2010011,
+		id = 600047,
+		pos = 5,
+		unique_id = "42948.88542",
+		shop_type = 49,
+		buy_limit = 20,
+		price = 2500,
+		itemcount = 1
+	},
+	[600048] = {
+		currencytype = 10100003,
+		itemid = 2010012,
+		id = 600048,
+		pos = 5,
+		unique_id = "42948.88542",
+		shop_type = 49,
+		buy_limit = 20,
+		price = 2500,
+		itemcount = 1
+	},
+	[600049] = {
+		currencytype = 10100003,
+		itemid = 2010013,
+		id = 600049,
+		pos = 5,
+		unique_id = "42948.88542",
+		shop_type = 49,
+		buy_limit = 20,
+		price = 2500,
+		itemcount = 1
+	},
+	[600050] = {
+		itemid = 19900001,
+		currencytype = 0,
+		price = 10,
+		shop_type = 49,
+		id = 600050,
+		pos = 9,
+		itemcount = 1
+	},
+	[600051] = {
+		itemid = 19900002,
+		currencytype = 0,
+		price = 10,
+		shop_type = 49,
+		id = 600051,
+		pos = 10,
+		itemcount = 1
+	}
+}

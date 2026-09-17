@@ -1,0 +1,101 @@
+return {
+	{
+		id = 1,
+		name = "学院训练室",
+		img = "country0",
+		cityconf = "Map0",
+		difficulty1 = 1,
+		show_in_levelmap = 1
+	},
+	{
+		difficulty3 = 16,
+		name = "奥杜因",
+		cityconf = "Map10",
+		difficulty1 = 2,
+		show_in_levelmap = 1,
+		difficulty2 = 9,
+		powerlimit = 200,
+		img = "country1",
+		id = 2,
+		difficulty4 = 23,
+		des = "全世界有三分之二的电力来自于此，这里充满了无数的发电厂和工厂，深陷于无休无止的现代化循环之中。"
+	},
+	{
+		difficulty3 = 17,
+		name = "库库尔坎",
+		cityconf = "Map10",
+		difficulty1 = 3,
+		show_in_levelmap = 1,
+		difficulty2 = 10,
+		powerlimit = 500,
+		img = "country3",
+		id = 3,
+		difficulty4 = 30,
+		des = "世界上最繁华的城区，商业心脏，极尽奢华。"
+	},
+	{
+		difficulty3 = 18,
+		name = "派森",
+		cityconf = "Map10",
+		difficulty1 = 4,
+		show_in_levelmap = 1,
+		difficulty2 = 11,
+		powerlimit = 1000,
+		img = "country4",
+		id = 4,
+		difficulty4 = 25,
+		des = "亚洲多元文化区域，人口居住最密集的地区，人口总数远超其它城区，并且在狭窄的小巷中隐藏着各种各样的交易市场。"
+	},
+	{
+		difficulty3 = 19,
+		name = "巴哈姆特",
+		cityconf = "Map10",
+		difficulty1 = 5,
+		show_in_levelmap = 1,
+		difficulty2 = 12,
+		powerlimit = 1500,
+		img = "country5",
+		id = 5,
+		difficulty4 = 26,
+		des = "无法地带，暴力犯罪层出不穷，这里每天都会发生无数起暴力事件，也是帮派斗争最为严重的地区。"
+	},
+	{
+		difficulty3 = 20,
+		name = "耶梦加得",
+		cityconf = "Map10",
+		difficulty1 = 6,
+		show_in_levelmap = 1,
+		difficulty2 = 13,
+		powerlimit = 2000,
+		img = "country6",
+		id = 6,
+		difficulty4 = 27,
+		des = "欧洲文化多元区，虽然已经迈向新时代，但城区建筑风格上却保留着欧式复古的风格。"
+	},
+	{
+		difficulty3 = 21,
+		name = "尼德霍格",
+		cityconf = "Map10",
+		difficulty1 = 7,
+		show_in_levelmap = 1,
+		difficulty2 = 14,
+		powerlimit = 2500,
+		img = "country7",
+		id = 7,
+		difficulty4 = 28,
+		des = "世界上巨头企业所在地，科技高度发达，在这里生活证明你已经成为了真正的上层社会阶层。"
+	},
+	{
+		difficulty3 = 22,
+		name = "洛加尔",
+		cityconf = "Map10",
+		difficulty1 = 8,
+		show_in_levelmap = 1,
+		difficulty2 = 15,
+		powerlimit = 3000,
+		img = "country2",
+		id = 8,
+		difficulty4 = 29,
+		des = "充满着各种日本元素的城区，建筑设计遵循着坚硬，工业化和机械感。"
+	}
+}

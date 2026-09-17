@@ -1,0 +1,122 @@
+return {
+	["23001-1"] = {
+		combat_limit = 1500,
+		name = "1层",
+		battlefieldstatus2 = 11071,
+		battlefieldstatus3 = 11072,
+		battlefieldstatus1 = 11070,
+		bigboss = "230010010100",
+		id = "23001-1",
+		level_num = 1,
+		boss_combat = 50000,
+		des = "叫策划去填表1"
+	},
+	["23001-2"] = {
+		combat_limit = 4000,
+		name = "2层",
+		battlefieldstatus2 = 11071,
+		battlefieldstatus3 = 11072,
+		battlefieldstatus1 = 11070,
+		bigboss = "230010020100",
+		id = "23001-2",
+		level_num = 1,
+		boss_combat = 100000,
+		des = "叫策划去填表1"
+	},
+	["23001-3"] = {
+		combat_limit = 10000,
+		name = "3层",
+		battlefieldstatus2 = 11071,
+		battlefieldstatus3 = 11072,
+		battlefieldstatus1 = 11070,
+		bigboss = "230010030100",
+		id = "23001-3",
+		level_num = 1,
+		boss_combat = 250000,
+		des = "叫策划去填表1"
+	},
+	["23001-4"] = {
+		combat_limit = 16000,
+		name = "4层",
+		battlefieldstatus2 = 11071,
+		battlefieldstatus3 = 11072,
+		battlefieldstatus1 = 11070,
+		bigboss = "230010040100",
+		id = "23001-4",
+		level_num = 1,
+		boss_combat = 500000,
+		des = "叫策划去填表1"
+	},
+	["23001-5"] = {
+		combat_limit = 22000,
+		name = "5层",
+		battlefieldstatus2 = 11071,
+		battlefieldstatus3 = 11072,
+		battlefieldstatus1 = 11070,
+		bigboss = "230010050100",
+		id = "23001-5",
+		level_num = 1,
+		boss_combat = 500000,
+		des = "叫策划去填表1"
+	},
+	["23001-6"] = {
+		combat_limit = 30000,
+		name = "6层",
+		battlefieldstatus2 = 11071,
+		battlefieldstatus3 = 11072,
+		battlefieldstatus1 = 11070,
+		bigboss = "230010060100",
+		id = "23001-6",
+		level_num = 1,
+		boss_combat = 500000,
+		des = "叫策划去填表1"
+	},
+	["23001-7"] = {
+		combat_limit = 40000,
+		name = "7层",
+		battlefieldstatus2 = 11071,
+		battlefieldstatus3 = 11072,
+		battlefieldstatus1 = 11070,
+		bigboss = "230010070100",
+		id = "23001-7",
+		level_num = 1,
+		boss_combat = 500000,
+		des = "叫策划去填表1"
+	},
+	["23001-8"] = {
+		combat_limit = 22000,
+		name = "8层",
+		battlefieldstatus2 = 11071,
+		battlefieldstatus3 = 11072,
+		battlefieldstatus1 = 11070,
+		bigboss = "230010080100",
+		id = "23001-8",
+		level_num = 1,
+		boss_combat = 500000,
+		des = "叫策划去填表1"
+	},
+	["23001-9"] = {
+		combat_limit = 30000,
+		name = "9层",
+		battlefieldstatus2 = 11071,
+		battlefieldstatus3 = 11072,
+		battlefieldstatus1 = 11070,
+		bigboss = "230010090100",
+		id = "23001-9",
+		level_num = 1,
+		boss_combat = 500000,
+		des = "叫策划去填表1"
+	},
+	["23001-10"] = {
+		combat_limit = 40000,
+		name = "10层",
+		battlefieldstatus2 = 11071,
+		battlefieldstatus3 = 11072,
+		battlefieldstatus1 = 11070,
+		bigboss = "230010100100",
+		id = "23001-10",
+		level_num = 1,
+		boss_combat = 500000,
+		des = "叫策划去填表1"
+	}
+}

@@ -1,0 +1,178 @@
+local var_0_0 = {}
+local var_0_1 = {
+	"data.activity_227.activity_explore_227_conf",
+	"data.activity_228.activity_explore_228_conf",
+	"data.activity_230.activity_explore_230_conf",
+	"data.activity_232.activity_explore_232_conf",
+	"data.activity_238.activity_explore_238_conf",
+	"data.activity_248.activity_explore_248_conf",
+	"data.activity_252.activity_explore_252_conf",
+	"data.activity_264.activity_explore_264_conf",
+	"data.activity_266.activity_explore_266_conf",
+	"data.activity_275.activity_explore_275_conf",
+	"data.activity_279.activity_explore_279_conf",
+	"data.activity_283.activity_explore_283_conf",
+	"data.activity_286.activity_explore_286_conf",
+	"data.activity_288.activity_explore_288_conf",
+	"data.activity_297.activity_explore_297_conf",
+	"data.activity_298.activity_explore_298_conf",
+	"data.activity_300.activity_explore_300_conf",
+	"data.activity_304.activity_explore_304_conf",
+	"data.activity_312.activity_explore_312_conf",
+	"data.activity_314.activity_explore_314_conf",
+	"data.activity_315.activity_explore_315_conf",
+	"data.activity_320.activity_explore_320_conf",
+	"data.activity_322.activity_explore_322_conf",
+	"data.activity_326.activity_explore_326_conf",
+	"data.activity_329.activity_explore_329_conf",
+	"data.activity_330.activity_explore_330_conf",
+	"data.activity_333.activity_explore_333_conf",
+	"data.activity_404.activity_explore_404_conf",
+	"data.activity_405.activity_explore_405_conf",
+	"data.activity_413.activity_explore_413_conf",
+	"data.activity_415.activity_explore_415_conf",
+	"data.activity_417.activity_explore_417_conf",
+	"data.activity_418.activity_explore_418_conf",
+	"data.activity_420.activity_explore_420_conf",
+	"data.activity_421.activity_explore_421_conf",
+	"data.activity_428.activity_explore_428_conf",
+	"data.activity_430.activity_explore_430_conf",
+	"data.activity_433.activity_explore_433_conf",
+	"data.activity_442.activity_explore_442_conf",
+	"data.activity_444.activity_explore_444_conf",
+	"data.activity_450.activity_explore_450_conf",
+	"data.activity_453.activity_explore_453_conf",
+	"data.activity_457.activity_explore_457_conf",
+	"data.activity_458.activity_explore_458_conf",
+	"data.activity_461.activity_explore_461_conf",
+	"data.activity_462.activity_explore_462_conf",
+	"data.activity_463.activity_explore_463_conf",
+	"data.activity_465.activity_explore_465_conf",
+	"data.activity_471.activity_explore_471_conf",
+	"data.activity_478.activity_explore_478_conf",
+	"data.activity_479.activity_explore_479_conf",
+	"data.activity_481.activity_explore_481_conf",
+	"data.activity_490.activity_explore_490_conf",
+	"data.activity_492.activity_explore_492_conf",
+	"data.activity_500.activity_explore_500_conf",
+	"data.activity_507.activity_explore_507_conf",
+	"data.activity_508.activity_explore_508_conf",
+	"data.activity_511.activity_explore_511_conf",
+	"data.activity_512.activity_explore_512_conf",
+	"data.activity_521.activity_explore_521_conf",
+	"data.activity_522.activity_explore_522_conf",
+	"data.activity_526.activity_explore_526_conf",
+	"data.activity_527.activity_explore_527_conf",
+	"data.activity_529.activity_explore_529_conf",
+	"data.activity_530.activity_explore_530_conf",
+	"data.activity_533.activity_explore_533_conf",
+	"data.activity_534.activity_explore_534_conf",
+	"data.activity_537.activity_explore_537_conf",
+	"data.activity_538.activity_explore_538_conf",
+	"data.activity_541.activity_explore_541_conf",
+	"data.activity_542.activity_explore_542_conf",
+	"data.activity_543.activity_explore_543_conf",
+	"data.activity_545.activity_explore_545_conf",
+	"data.activity_547.activity_explore_547_conf",
+	"data.activity_550.activity_explore_550_conf",
+	"data.activity_552.activity_explore_552_conf",
+	"data.activity_557.activity_explore_557_conf",
+	"data.activity_560.activity_explore_560_conf",
+	"data.activity_561.activity_explore_561_conf",
+	"data.activity_562.activity_explore_562_conf",
+	"data.activity_563.activity_explore_563_conf",
+	"data.activity_565.activity_explore_565_conf",
+	"data.activity_569.activity_explore_569_conf",
+	"data.activity_570.activity_explore_570_conf",
+	"data.activity_574.activity_explore_574_conf",
+	"data.activity_575.activity_explore_575_conf",
+	"data.activity_576.activity_explore_576_conf",
+	"data.activity_584.activity_explore_584_conf",
+	"data.activity_588.activity_explore_588_conf",
+	"data.activity_589.activity_explore_589_conf",
+	"data.activity_591.activity_explore_591_conf",
+	"data.activity_593.activity_explore_593_conf",
+	"data.activity_594.activity_explore_594_conf",
+	"data.activity_599.activity_explore_599_conf",
+	"data.activity_700.activity_explore_700_conf",
+	"data.activity_703.activity_explore_703_conf",
+	"data.activity_707.activity_explore_707_conf",
+	"data.activity_709.activity_explore_709_conf",
+	"data.activity_713.activity_explore_713_conf",
+	"data.activity_714.activity_explore_714_conf",
+	"data.activity_717.activity_explore_717_conf",
+	"data.activity_720.activity_explore_720_conf",
+	"data.activity_721.activity_explore_721_conf",
+	"data.activity_722.activity_explore_722_conf",
+	"data.activity_728.activity_explore_728_conf",
+	"data.activity_745.activity_explore_745_conf",
+	"data.activity_755.activity_explore_755_conf",
+	"data.activity_758.activity_explore_758_conf",
+	"data.activity_761.activity_explore_761_conf",
+	"data.activity_766.activity_explore_766_conf",
+	"data.activity_767.activity_explore_767_conf",
+	"data.activity_773.activity_explore_773_conf",
+	"data.activity_775.activity_explore_775_conf",
+	"data.activity_776.activity_explore_776_conf",
+	"data.activity_792.activity_explore_792_conf",
+	"data.activity_805.activity_explore_805_conf",
+	"data.activity_806.activity_explore_806_conf",
+	"data.activity_813.activity_explore_813_conf",
+	"data.activity_830.activity_explore_830_conf",
+	"data.activity_838.activity_explore_838_conf",
+	"data.activity_846.activity_explore_846_conf",
+	"data.activity_855.activity_explore_855_conf",
+	"data.activity_861.activity_explore_861_conf",
+	"data.activity_865.activity_explore_865_conf",
+	"data.activity_866.activity_explore_866_conf",
+	"data.activity_872.activity_explore_872_conf",
+	"data.activity_881.activity_explore_881_conf",
+	"data.activity_888.activity_explore_888_conf",
+	"data.activity_891.activity_explore_891_conf",
+	"data.activity_892.activity_explore_892_conf",
+	"data.activity_explore.activityconf.activity_explore_142_conf",
+	"data.activity_explore.activityconf.activity_explore_148_conf",
+	"data.activity_explore.activityconf.activity_explore_154_conf",
+	"data.activity_explore.activityconf.activity_explore_170_conf",
+	"data.activity_explore.activityconf.activity_explore_173_conf",
+	"data.activity_explore.activityconf.activity_explore_180_conf",
+	"data.activity_explore.activityconf.activity_explore_182_conf",
+	"data.activity_explore.activityconf.activity_explore_186_conf",
+	"data.activity_explore.activityconf.activity_explore_195_conf",
+	"data.activity_explore.activityconf.activity_explore_199_conf",
+	"data.activity_explore.activityconf.activity_explore_207_conf",
+	"data.activity_explore.activityconf.activity_explore_209_conf",
+	"data.activity_explore.activityconf.activity_explore_210_conf",
+	"data.activity_explore.activityconf.activity_explore_217_conf",
+	"data.activity_explore.activityconf.activity_explore_225_conf"
+}
+
+if DeviceManager.platform == "windows" then
+	local var_0_2 = {}
+
+	for iter_0_0, iter_0_1 in ipairs(var_0_1) do
+		for iter_0_2, iter_0_3 in pairs((require(iter_0_1))) do
+			if var_0_2[iter_0_2] then
+				error(iter_0_2 .. " is conflict between " .. var_0_2[iter_0_2] .. " and " .. iter_0_1 .. ", 快叫凯达去改表")
+			else
+				var_0_2[iter_0_2] = iter_0_1
+			end
+		end
+	end
+end
+
+for iter_0_4, iter_0_5 in pairs(var_0_1) do
+	table.merge(var_0_0, (require(iter_0_5)))
+end
+
+setmetatable(var_0_0, {
+	__index = function(arg_1_0, arg_1_1)
+		if arg_1_1 then
+			print("activity_explore_conf id is nil: " .. arg_1_1)
+		end
+
+		return nil
+	end
+})
+
+return var_0_0

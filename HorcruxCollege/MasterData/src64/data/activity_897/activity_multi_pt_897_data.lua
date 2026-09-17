@@ -1,0 +1,223 @@
+return {
+	["897mp-1"] = {
+		drop2 = "897dxpt001",
+		proceed_id = "897mp-1",
+		drop1 = "897dxpt001",
+		num3 = 500,
+		id = "897mp-1",
+		num1 = 500,
+		drop3 = "897dxpt001",
+		num2 = 500
+	},
+	["897mp-2"] = {
+		drop2 = "897dxpt003",
+		need1 = "1",
+		drop1 = "897dxpt002",
+		proceed_id = "897mp-2",
+		id = "897mp-2",
+		num1 = 2000,
+		need2 = "2,3",
+		num2 = 4000
+	},
+	["897mp-3"] = {
+		need2 = "2",
+		need1 = "1",
+		proceed_id = "897mp-3",
+		drop2 = "897dxpt005",
+		num3 = 1800,
+		need3 = "2",
+		drop3 = "897dxpt006",
+		num2 = 1200,
+		drop1 = "897dxpt004",
+		id = "897mp-3",
+		num1 = 600
+	},
+	["897mp-4"] = {
+		need2 = "2",
+		need1 = "1",
+		proceed_id = "897mp-4",
+		drop2 = "897dxpt007",
+		num3 = 1500,
+		need3 = "3",
+		drop3 = "897dxpt007",
+		num2 = 1500,
+		drop1 = "897dxpt007",
+		id = "897mp-4",
+		num1 = 1500
+	},
+	["897mp-5"] = {
+		proceed_id = "897mp-5",
+		need1 = "1,2,3",
+		drop1 = "897dxpt008",
+		id = "897mp-5",
+		num1 = 3000
+	},
+	["897mp-6"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "897mp-6",
+		drop2 = "897dxpt009",
+		num3 = 500,
+		need3 = "1",
+		drop3 = "897dxpt009",
+		num2 = 500,
+		drop1 = "897dxpt009",
+		id = "897mp-6",
+		num1 = 500
+	},
+	["897mp-7"] = {
+		drop2 = "897dxpt011",
+		need1 = "1",
+		drop1 = "897dxpt010",
+		proceed_id = "897mp-7",
+		id = "897mp-7",
+		num1 = 2000,
+		need2 = "2,3",
+		num2 = 4000
+	},
+	["897mp-8"] = {
+		need2 = "2",
+		need1 = "1",
+		proceed_id = "897mp-8",
+		drop2 = "897dxpt013",
+		num3 = 2000,
+		need3 = "2",
+		drop3 = "897dxpt014",
+		num2 = 2000,
+		drop1 = "897dxpt012",
+		id = "897mp-8",
+		num1 = 2000
+	},
+	["897mp-9"] = {
+		need2 = "2",
+		need1 = "1",
+		proceed_id = "897mp-9",
+		drop2 = "897dxpt015",
+		num3 = 3000,
+		need3 = "3",
+		drop3 = "897dxpt015",
+		num2 = 3000,
+		drop1 = "897dxpt015",
+		id = "897mp-9",
+		num1 = 3000
+	},
+	["897mp-10"] = {
+		proceed_id = "897mp-10",
+		need1 = "1,2,3",
+		drop1 = "897dxpt016",
+		id = "897mp-10",
+		num1 = 4000
+	},
+	["897mp-11"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "897mp-11",
+		drop2 = "897dxpt001",
+		num3 = 500,
+		need3 = "1",
+		drop3 = "897dxpt001",
+		num2 = 500,
+		drop1 = "897dxpt001",
+		id = "897mp-11",
+		num1 = 500
+	},
+	["897mp-12"] = {
+		drop2 = "897dxpt003",
+		need1 = "1",
+		drop1 = "897dxpt002",
+		proceed_id = "897mp-12",
+		id = "897mp-12",
+		num1 = 2000,
+		need2 = "2,3",
+		num2 = 4000
+	},
+	["897mp-13"] = {
+		need2 = "2",
+		need1 = "1",
+		proceed_id = "897mp-13",
+		drop2 = "897dxpt005",
+		num3 = 1800,
+		need3 = "2",
+		drop3 = "897dxpt006",
+		num2 = 1200,
+		drop1 = "897dxpt004",
+		id = "897mp-13",
+		num1 = 600
+	},
+	["897mp-14"] = {
+		need2 = "2",
+		need1 = "1",
+		proceed_id = "897mp-14",
+		drop2 = "897dxpt007",
+		num3 = 1500,
+		need3 = "3",
+		drop3 = "897dxpt007",
+		num2 = 1500,
+		drop1 = "897dxpt007",
+		id = "897mp-14",
+		num1 = 1500
+	},
+	["897mp-15"] = {
+		proceed_id = "897mp-15",
+		need1 = "1,2,3",
+		drop1 = "897dxpt008",
+		id = "897mp-15",
+		num1 = 3000
+	},
+	["897mp-16"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "897mp-16",
+		drop2 = "897dxpt017",
+		num3 = 500,
+		need3 = "1",
+		drop3 = "897dxpt017",
+		num2 = 500,
+		drop1 = "897dxpt017",
+		id = "897mp-16",
+		num1 = 500
+	},
+	["897mp-17"] = {
+		drop2 = "897dxpt011",
+		need1 = "1",
+		drop1 = "897dxpt010",
+		proceed_id = "897mp-17",
+		id = "897mp-17",
+		num1 = 2000,
+		need2 = "2,3",
+		num2 = 4000
+	},
+	["897mp-18"] = {
+		need2 = "2",
+		need1 = "1",
+		proceed_id = "897mp-18",
+		drop2 = "897dxpt013",
+		num3 = 2000,
+		need3 = "2",
+		drop3 = "897dxpt014",
+		num2 = 2000,
+		drop1 = "897dxpt012",
+		id = "897mp-18",
+		num1 = 2000
+	},
+	["897mp-19"] = {
+		need2 = "2",
+		need1 = "1",
+		proceed_id = "897mp-19",
+		drop2 = "897dxpt015",
+		num3 = 3000,
+		need3 = "3",
+		drop3 = "897dxpt015",
+		num2 = 3000,
+		drop1 = "897dxpt015",
+		id = "897mp-19",
+		num1 = 3000
+	},
+	["897mp-20"] = {
+		proceed_id = "897mp-20",
+		need1 = "1,2,3",
+		drop1 = "897dxpt018",
+		id = "897mp-20",
+		num1 = 8000
+	}
+}

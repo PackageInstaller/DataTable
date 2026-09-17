@@ -1,0 +1,15 @@
+return {
+	{
+		taskid = 19194001,
+		valid = 1,
+		task_type = 2,
+		id = 1,
+		usemodule = "daily_recharge"
+	},
+	{
+		taskid = 19194002,
+		valid = 1,
+		id = 2,
+		usemodule = "recharge_day"
+	}
+}

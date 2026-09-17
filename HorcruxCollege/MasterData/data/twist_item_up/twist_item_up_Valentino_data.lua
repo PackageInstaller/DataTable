@@ -1,0 +1,62 @@
+return {
+	[4125] = {
+		upitemdrop = "VAL1300220",
+		finishtime = "2021-03-10 23:59:59",
+		upsecretitemid4 = 1300220,
+		upitemshowpos2 = 1,
+		upmodel_1 = "TW01SSR001",
+		upitemweight_1 = 0,
+		upsecretdrop4 = "VAL1300220",
+		upitemid_1 = 1300220,
+		itemupid = 125,
+		img = 2202205,
+		id = 4125,
+		upitemdes = "次必出【绝云长剑】",
+		starttime = "2021-02-26 00:00:00"
+	},
+	[4126] = {
+		upitemdrop = "VAL1309120",
+		finishtime = "2021-02-20 23:59:59",
+		upsecretitemid4 = 1309120,
+		upitemshowpos2 = 1,
+		upmodel_1 = "TW01SSR001",
+		upitemweight_1 = 0,
+		upsecretdrop4 = "VAL1309120",
+		upitemid_1 = 1309120,
+		itemupid = 126,
+		img = 2291205,
+		id = 4126,
+		upitemdes = "次必出【绝云长剑】",
+		starttime = "2021-02-14 00:00:00"
+	},
+	[4127] = {
+		upitemdrop = "VAL13002820",
+		finishtime = "2021-03-14 23:59:59",
+		upsecretitemid4 = 13002820,
+		upitemshowpos2 = 1,
+		upmodel_1 = "TW01SSR001",
+		upitemweight_1 = 0,
+		upsecretdrop4 = "VAL13002820",
+		upitemid_1 = 13002820,
+		itemupid = 127,
+		img = 22028205,
+		id = 4127,
+		upitemdes = "次必出【绝云长剑】",
+		starttime = "2021-02-07 00:00:00"
+	},
+	[4128] = {
+		upitemdrop = "VAL13002920",
+		finishtime = "2021-03-14 23:59:59",
+		upsecretitemid4 = 13002920,
+		upitemshowpos2 = 1,
+		upmodel_1 = "TW01SSR001",
+		upitemweight_1 = 0,
+		upsecretdrop4 = "VAL13002920",
+		upitemid_1 = 13002920,
+		itemupid = 128,
+		img = 22029205,
+		id = 4128,
+		upitemdes = "次必出【绝云长剑】",
+		starttime = "2021-03-09 00:00:00"
+	}
+}

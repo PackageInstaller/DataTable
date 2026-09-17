@@ -1,0 +1,343 @@
+return {
+	["703mp-1"] = {
+		drop2 = "XLJHPT001",
+		proceed_id = "703mp-1",
+		drop1 = "XLJHPT001",
+		num3 = 300,
+		id = "703mp-1",
+		num1 = 300,
+		drop3 = "XLJHPT001",
+		num2 = 300
+	},
+	["703mp-2"] = {
+		drop2 = "XLJHPT003",
+		need1 = "1,2",
+		drop1 = "XLJHPT002",
+		proceed_id = "703mp-2",
+		id = "703mp-2",
+		num1 = 1000,
+		need2 = "3",
+		num2 = 1000
+	},
+	["703mp-3"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "703mp-3",
+		drop2 = "XLJHPT005",
+		num3 = 400,
+		need3 = "2",
+		drop3 = "XLJHPT006",
+		num2 = 800,
+		drop1 = "XLJHPT004",
+		id = "703mp-3",
+		num1 = 1600
+	},
+	["703mp-4"] = {
+		proceed_id = "703mp-4",
+		need1 = "1,2,3",
+		drop1 = "XLJHPT007",
+		id = "703mp-4",
+		num1 = 1000
+	},
+	["703mp-5"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "703mp-5",
+		drop2 = "XLJHPT008",
+		num3 = 300,
+		need3 = "1",
+		drop3 = "XLJHPT008",
+		num2 = 300,
+		drop1 = "XLJHPT008",
+		id = "703mp-5",
+		num1 = 300
+	},
+	["703mp-6"] = {
+		drop2 = "XLJHPT010",
+		need1 = "1",
+		drop1 = "XLJHPT009",
+		proceed_id = "703mp-6",
+		id = "703mp-6",
+		num1 = 500,
+		need2 = "2,3",
+		num2 = 1000
+	},
+	["703mp-7"] = {
+		need2 = "2",
+		need1 = "1",
+		proceed_id = "703mp-7",
+		drop2 = "XLJHPT011",
+		num3 = 1500,
+		need3 = "2",
+		drop3 = "XLJHPT011",
+		num2 = 1500,
+		drop1 = "XLJHPT011",
+		id = "703mp-7",
+		num1 = 1500
+	},
+	["703mp-8"] = {
+		proceed_id = "703mp-8",
+		need1 = "1,2,3",
+		drop1 = "XLJHPT012",
+		id = "703mp-8",
+		num1 = 3000
+	},
+	["703mp-9"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "703mp-9",
+		drop2 = "XLJHPT001",
+		num3 = 300,
+		need3 = "1",
+		drop3 = "XLJHPT001",
+		num2 = 300,
+		drop1 = "XLJHPT001",
+		id = "703mp-9",
+		num1 = 300
+	},
+	["703mp-10"] = {
+		drop2 = "XLJHPT003",
+		need1 = "1",
+		drop1 = "XLJHPT002",
+		proceed_id = "703mp-10",
+		id = "703mp-10",
+		num1 = 1000,
+		need2 = "2,3",
+		num2 = 1000
+	},
+	["703mp-11"] = {
+		need2 = "2",
+		need1 = "1",
+		proceed_id = "703mp-11",
+		drop2 = "XLJHPT005",
+		num3 = 400,
+		need3 = "2",
+		drop3 = "XLJHPT006",
+		num2 = 800,
+		drop1 = "XLJHPT004",
+		id = "703mp-11",
+		num1 = 1600
+	},
+	["703mp-12"] = {
+		proceed_id = "703mp-12",
+		need1 = "1,2,3",
+		drop1 = "XLJHPT007",
+		id = "703mp-12",
+		num1 = 1000
+	},
+	["703mp-13"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "703mp-13",
+		drop2 = "XLJHPT008",
+		num3 = 300,
+		need3 = "1",
+		drop3 = "XLJHPT008",
+		num2 = 300,
+		drop1 = "XLJHPT008",
+		id = "703mp-13",
+		num1 = 300
+	},
+	["703mp-14"] = {
+		drop2 = "XLJHPT010",
+		need1 = "1,2",
+		drop1 = "XLJHPT009",
+		proceed_id = "703mp-14",
+		id = "703mp-14",
+		num1 = 500,
+		need2 = "3",
+		num2 = 1000
+	},
+	["703mp-15"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "703mp-15",
+		drop2 = "XLJHPT011",
+		num3 = 1500,
+		need3 = "2",
+		drop3 = "XLJHPT011",
+		num2 = 1500,
+		drop1 = "XLJHPT011",
+		id = "703mp-15",
+		num1 = 1500
+	},
+	["703mp-16"] = {
+		proceed_id = "703mp-16",
+		need1 = "1,2,3",
+		drop1 = "XLJHPT012",
+		id = "703mp-16",
+		num1 = 3000
+	},
+	["703mp-17"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "703mp-17",
+		drop2 = "XLJHPT001",
+		num3 = 300,
+		need3 = "1",
+		drop3 = "XLJHPT001",
+		num2 = 300,
+		drop1 = "XLJHPT001",
+		id = "703mp-17",
+		num1 = 300
+	},
+	["703mp-18"] = {
+		drop2 = "XLJHPT003",
+		need1 = "1,2",
+		drop1 = "XLJHPT002",
+		proceed_id = "703mp-18",
+		id = "703mp-18",
+		num1 = 1000,
+		need2 = "3",
+		num2 = 1000
+	},
+	["703mp-19"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "703mp-19",
+		drop2 = "XLJHPT005",
+		num3 = 400,
+		need3 = "2",
+		drop3 = "XLJHPT006",
+		num2 = 800,
+		drop1 = "XLJHPT004",
+		id = "703mp-19",
+		num1 = 1600
+	},
+	["703mp-20"] = {
+		proceed_id = "703mp-20",
+		need1 = "1,2,3",
+		drop1 = "XLJHPT007",
+		id = "703mp-20",
+		num1 = 1000
+	},
+	["703mp-21"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "703mp-21",
+		drop2 = "XLJHPT008",
+		num3 = 300,
+		need3 = "1",
+		drop3 = "XLJHPT008",
+		num2 = 300,
+		drop1 = "XLJHPT008",
+		id = "703mp-21",
+		num1 = 300
+	},
+	["703mp-22"] = {
+		drop2 = "XLJHPT010",
+		need1 = "1,2",
+		drop1 = "XLJHPT009",
+		proceed_id = "703mp-22",
+		id = "703mp-22",
+		num1 = 500,
+		need2 = "3",
+		num2 = 1000
+	},
+	["703mp-23"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "703mp-23",
+		drop2 = "XLJHPT011",
+		num3 = 1500,
+		need3 = "2",
+		drop3 = "XLJHPT011",
+		num2 = 1500,
+		drop1 = "XLJHPT011",
+		id = "703mp-23",
+		num1 = 1500
+	},
+	["703mp-24"] = {
+		proceed_id = "703mp-24",
+		need1 = "1,2,3",
+		drop1 = "XLJHPT012",
+		id = "703mp-24",
+		num1 = 3000
+	},
+	["703mp-25"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "703mp-25",
+		drop2 = "XLJHPT001",
+		num3 = 300,
+		need3 = "1",
+		drop3 = "XLJHPT001",
+		num2 = 300,
+		drop1 = "XLJHPT001",
+		id = "703mp-25",
+		num1 = 300
+	},
+	["703mp-26"] = {
+		drop2 = "XLJHPT003",
+		need1 = "1",
+		drop1 = "XLJHPT002",
+		proceed_id = "703mp-26",
+		id = "703mp-26",
+		num1 = 1000,
+		need2 = "2,3",
+		num2 = 1000
+	},
+	["703mp-27"] = {
+		need2 = "2",
+		need1 = "1",
+		proceed_id = "703mp-27",
+		drop2 = "XLJHPT005",
+		num3 = 400,
+		need3 = "2",
+		drop3 = "XLJHPT006",
+		num2 = 800,
+		drop1 = "XLJHPT004",
+		id = "703mp-27",
+		num1 = 1600
+	},
+	["703mp-28"] = {
+		proceed_id = "703mp-28",
+		need1 = "1,2,3",
+		drop1 = "XLJHPT007",
+		id = "703mp-28",
+		num1 = 1000
+	},
+	["703mp-29"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "703mp-29",
+		drop2 = "XLJHPT008",
+		num3 = 300,
+		need3 = "1",
+		drop3 = "XLJHPT008",
+		num2 = 300,
+		drop1 = "XLJHPT008",
+		id = "703mp-29",
+		num1 = 300
+	},
+	["703mp-30"] = {
+		drop2 = "XLJHPT010",
+		need1 = "1",
+		drop1 = "XLJHPT009",
+		proceed_id = "703mp-30",
+		id = "703mp-30",
+		num1 = 500,
+		need2 = "2,3",
+		num2 = 1000
+	},
+	["703mp-31"] = {
+		need2 = "2",
+		need1 = "1",
+		proceed_id = "703mp-31",
+		drop2 = "XLJHPT011",
+		num3 = 1500,
+		need3 = "2",
+		drop3 = "XLJHPT011",
+		num2 = 1500,
+		drop1 = "XLJHPT011",
+		id = "703mp-31",
+		num1 = 1500
+	},
+	["703mp-32"] = {
+		proceed_id = "703mp-32",
+		need1 = "1,2,3",
+		drop1 = "XLJHPT013",
+		id = "703mp-32",
+		num1 = 5000
+	}
+}

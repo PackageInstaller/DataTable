@@ -1,0 +1,53 @@
+return {
+	[12073201] = {
+		appendable = 1,
+		name = "黏糊颜料",
+		buff_image = "2073600",
+		buff_or_debuff = 0,
+		cleanable = 1,
+		time = 3,
+		exe_type = 0,
+		status_prob1 = 1,
+		status_judge_type1 = "0",
+		add_type = 1,
+		id = 12073201,
+		status_add1 = 20732016,
+		status_target1 = 1,
+		detail = "增益状态时间缩短【25%】"
+	},
+	[12073202] = {
+		appendable = 1,
+		name = "腐蚀颜料",
+		buff_image = "2073500",
+		buff_or_debuff = 0,
+		cleanable = 1,
+		time = 3,
+		exe_type = 0,
+		status_prob1 = 1,
+		status_judge_type1 = "0",
+		add_type = 1,
+		id = 12073202,
+		status_add1 = 20732018,
+		status_target1 = 1,
+		detail = "受到的伤害提高【25%】"
+	},
+	[12073203] = {
+		exe_type = 0,
+		status_judge_type1 = "0",
+		buff_image = "2073000",
+		buff_or_debuff = 0,
+		cleanable = 1,
+		name = "荧光颜料",
+		status_add2 = 9204050,
+		appendable = 1,
+		status_add1 = 20732017,
+		status_prob1 = 1,
+		time = 4,
+		status_prob2 = 1,
+		add_type = 1,
+		id = 12073203,
+		status_target2 = 1,
+		status_target1 = 1,
+		detail = "增益状态时间缩短【50%】，受到的伤害提高【50%】"
+	}
+}

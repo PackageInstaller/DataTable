@@ -1,0 +1,30 @@
+return {
+	{
+		mark3_num = 1,
+		lock1_des = "击败叛变的黑金佣兵",
+		id = 1,
+		mark2_room = "23",
+		aim2_param1 = 1127901,
+		mark3_room = "23",
+		lock1_bridge = "1-11",
+		bridges = "1-11,11-12,12-22,22-23",
+		mark2_num = 1,
+		lock2_param1 = 1113101,
+		aim1_param1 = 1113301,
+		aim1_des = "击败【暴怒者】巴哈姆特",
+		lock1_param2 = 1,
+		mark1_num = 2,
+		lock1_param1 = 1113901,
+		mark1_tileid = 1113901,
+		aim1_param2 = 1,
+		aim2_des = "拯救被困的切尔茜",
+		lock2_des = "消灭危险感染者",
+		mark1_room = "1",
+		lock2_bridge = "11-12",
+		mark2_tileid = 1113301,
+		mapid = 1,
+		object_cad_id = 11,
+		mark3_tileid = 1127901,
+		aim2_param2 = 1
+	}
+}

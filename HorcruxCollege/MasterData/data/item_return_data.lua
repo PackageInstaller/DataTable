@@ -1,0 +1,91 @@
+return {
+	[200001001] = {
+		buff_id = 1,
+		name = "72小时紫色经验卡",
+		id = 200001001,
+		max_stack = 9999,
+		user_manual = "使用后，72小时内玩家经验额外增加50%。",
+		equip_quality = 4,
+		buff_time = 72,
+		intro = "能够提高玩家经验获取速度的高科技卡片。",
+		image_id = 200001001,
+		bag_item_type = 106
+	},
+	[200001002] = {
+		buff_id = 1,
+		name = "24小时紫色经验卡",
+		id = 200001002,
+		max_stack = 9999,
+		user_manual = "使用后，24小时内玩家经验额外增加50%。",
+		equip_quality = 4,
+		buff_time = 24,
+		intro = "能够提高玩家经验获取速度的高科技卡片。",
+		image_id = 200001002,
+		bag_item_type = 106,
+		targetdes1 = "老玩家回归获得"
+	},
+	[200001003] = {
+		buff_id = 2,
+		name = "24小时蓝色经验卡",
+		id = 200001003,
+		max_stack = 9999,
+		user_manual = "使用后，24小时内玩家经验额外增加20%。",
+		equip_quality = 3,
+		buff_time = 24,
+		intro = "能够提高玩家经验获取速度的高科技卡片。",
+		image_id = 200001003,
+		bag_item_type = 106
+	},
+	[200001004] = {
+		buff_id = 3,
+		name = "72小时金色经验卡",
+		id = 200001004,
+		max_stack = 9999,
+		user_manual = "使用后，72小时内玩家经验额外增加100%。",
+		equip_quality = 5,
+		buff_time = 72,
+		intro = "能够提高玩家经验获取速度的高科技卡片。",
+		image_id = 200001004,
+		bag_item_type = 106,
+		targetdes1 = "老玩家回归获得"
+	},
+	[200001005] = {
+		buff_id = 3,
+		name = "168小时经验加成",
+		id = 200001005,
+		max_stack = 9999,
+		user_manual = "使用后，168小时内玩家经验额外增加100%。",
+		equip_quality = 5,
+		buff_time = 168,
+		intro = "能够提高玩家经验获取速度的高科技卡片。",
+		image_id = 200001005,
+		bag_item_type = 106,
+		targetdes1 = "新玩家"
+	},
+	[200001006] = {
+		buff_id = 5,
+		name = "168小时科技点加成",
+		id = 200001006,
+		max_stack = 9999,
+		user_manual = "使用后，168小时内玩家科技点额外增加100%。",
+		equip_quality = 5,
+		buff_time = 168,
+		intro = "能够提高玩家科技点获取速度的高科技卡片。",
+		image_id = 200001006,
+		bag_item_type = 106,
+		targetdes1 = "新玩家"
+	},
+	[200001007] = {
+		buff_id = 4,
+		name = "168小时钞票加成",
+		id = 200001007,
+		max_stack = 9999,
+		user_manual = "使用后，168小时内玩家钞票额外增加100%。",
+		equip_quality = 5,
+		buff_time = 168,
+		intro = "能够提高玩家钞票获取速度的高科技卡片。",
+		image_id = 200001007,
+		bag_item_type = 106,
+		targetdes1 = "新玩家"
+	}
+}

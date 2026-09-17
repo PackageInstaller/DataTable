@@ -1,0 +1,53 @@
+return {
+	[1500947420] = {
+		sale_price_diamond = 440,
+		name = "【雅娜黛茜亚】",
+		id = 1500947420,
+		max_stack = 999,
+		price_diamond = 880,
+		sale_price = 26400,
+		equip_quality = 6,
+		mode_id = "PF1500947420",
+		price = 88000,
+		intro = "【熹微晨光】雅娜黛茜亚皮肤X1 雅娜黛茜亚头像X1。",
+		model = "17420",
+		user_manual = "打开它，你就能拥有一只睡衣雅娜黛茜亚~",
+		image_id = 1500947420,
+		bag_item_type = 94,
+		price_honor = 4400
+	},
+	[1500947430] = {
+		sale_price_diamond = 440,
+		name = "【雅娜黛茜亚】",
+		id = 1500947430,
+		max_stack = 999,
+		price_diamond = 880,
+		sale_price = 26400,
+		equip_quality = 6,
+		mode_id = "PF1500947430",
+		price = 88000,
+		intro = "【熹微晨光】雅娜黛茜亚皮肤X1 雅娜黛茜亚头像X1。",
+		model = "17430",
+		user_manual = "打开它，你就能拥有一只便服雅娜黛茜亚~",
+		image_id = 1500947430,
+		bag_item_type = 94,
+		price_honor = 4400
+	},
+	[1500947460] = {
+		sale_price_diamond = 440,
+		name = "【雅娜黛茜亚】",
+		id = 1500947460,
+		max_stack = 999,
+		price_diamond = 880,
+		sale_price = 26400,
+		equip_quality = 6,
+		mode_id = "PF1500947460",
+		price = 88000,
+		intro = "【熹微晨光】雅娜黛茜亚皮肤X1 雅娜黛茜亚头像X1。",
+		model = "17460",
+		user_manual = "打开它，你就能拥有一只泳装雅娜黛茜亚~",
+		image_id = 1500947460,
+		bag_item_type = 94,
+		price_honor = 4400
+	}
+}

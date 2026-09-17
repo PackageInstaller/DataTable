@@ -1,0 +1,72 @@
+return {
+	["464-1-1"] = {
+		item4 = 30519601,
+		item3 = 30520001,
+		num3 = 1,
+		num4 = 1,
+		item2 = 30530301,
+		limit_count = 1,
+		num2 = 1,
+		drop = "22YRJJZDH01",
+		collect_type = 1,
+		id = "464-1-1",
+		num1 = 1,
+		item1 = 30530201
+	},
+	["464-1-2"] = {
+		item4 = 30525301,
+		item3 = 30525201,
+		num3 = 1,
+		num4 = 1,
+		item2 = 30530501,
+		limit_count = 1,
+		num2 = 1,
+		drop = "22YRJJZDH02",
+		collect_type = 1,
+		id = "464-1-2",
+		num1 = 1,
+		item1 = 30530601
+	},
+	["464-1-3"] = {
+		item4 = 30520201,
+		item3 = 30519501,
+		num3 = 1,
+		num4 = 1,
+		item2 = 30530701,
+		limit_count = 1,
+		num2 = 1,
+		drop = "22YRJJZDH03",
+		collect_type = 1,
+		id = "464-1-3",
+		num1 = 1,
+		item1 = 30530401
+	},
+	["464-1-4"] = {
+		item4 = 30519401,
+		item3 = 30519701,
+		num3 = 1,
+		num4 = 1,
+		item2 = 30525501,
+		limit_count = 1,
+		num2 = 1,
+		drop = "22YRJJZDH04",
+		collect_type = 1,
+		id = "464-1-4",
+		num1 = 1,
+		item1 = 30524501
+	},
+	["464-1-5"] = {
+		item4 = 30519801,
+		item3 = 30524701,
+		num3 = 1,
+		num4 = 1,
+		item2 = 30525401,
+		limit_count = 1,
+		num2 = 1,
+		drop = "22YRJJZDH05",
+		collect_type = 1,
+		id = "464-1-5",
+		num1 = 1,
+		item1 = 30525001
+	}
+}

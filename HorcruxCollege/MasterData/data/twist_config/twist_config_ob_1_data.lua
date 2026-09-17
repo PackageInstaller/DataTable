@@ -1,0 +1,42 @@
+return {
+	[238] = {
+		antiburst_for_ten = "JPTW23803",
+		itemup = 138,
+		title = "布兰琪限定扩招",
+		stat = 2,
+		pos = -87,
+		tencost = 10,
+		antiburst_num = 3,
+		dropid = "JPTW23801",
+		supply_cost = 100,
+		ver = "2.0",
+		currency = 6800101,
+		onecost = 1,
+		unlocklevel = "2-10",
+		guarantee_for_ten = "JPTW23802",
+		id = 238,
+		finishtime = "2021-04-29 23:59:59",
+		starttime = "2021-04-21 00:00:00"
+	},
+	[568] = {
+		antiburst_for_ten = "JPTW56803",
+		itemup = 468,
+		title = "布兰琪限定扩招",
+		showtype = 3,
+		stat = 2,
+		pos = -87,
+		tencost = 10,
+		antiburst_num = 2,
+		dropid = "JPTW56801",
+		supply_cost = 100,
+		ver = "2.0",
+		currency = 6800101,
+		onecost = 1,
+		unlocklevel = "3-10",
+		guarantee_for_ten = "JPTW56802",
+		id = 568,
+		finishtime = "2023-08-17 23:59:59",
+		activity_task_group = 568,
+		starttime = "2023-08-09 00:00:00"
+	}
+}

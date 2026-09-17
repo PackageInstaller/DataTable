@@ -1,0 +1,161 @@
+return {
+	[29900010] = {
+		halo_target1 = 2,
+		status_judge_type1 = "1",
+		buff_add1 = 12992001,
+		status_judge_target1 = "1:2",
+		buff_prob2 = 0,
+		id = 29900010,
+		buff_target2 = 5,
+		insider_cd = 20,
+		skilltype = 0,
+		buff_add2 = 12992003,
+		status_add1 = 2992008,
+		buff_prob1 = 0,
+		status_prob1 = 1,
+		buff_target1 = 5,
+		exe_type = 23,
+		ishalo1 = 1,
+		status_target1 = 1,
+		status_judge_param1 = "1:0.6"
+	},
+	[29910010] = {
+		status_target1 = 5,
+		exe_target = 5,
+		skilltype = 1,
+		id = 29910010,
+		status_add1 = 9130001,
+		damagetype = 2,
+		status_prob1 = 1
+	},
+	[29920010] = {
+		addrage = 12,
+		effective_left_offset = 0,
+		status_target1 = 5,
+		effective_right_offset = 120,
+		exe_target = 7,
+		skilltype = 3,
+		id = 29920010,
+		status_add1 = 2992003,
+		damagetype = 2,
+		status_prob1 = 1
+	},
+	[29920011] = {
+		buff_prob1 = 0,
+		buff_add1 = 12992001,
+		buff_target1 = 5,
+		exe_target = 5,
+		skilltype = 3,
+		id = 29920011,
+		status_add1 = 2992008,
+		status_target1 = 1,
+		status_prob1 = 1
+	},
+	[29920012] = {
+		exe_target = 5,
+		skilltype = 3,
+		id = 29920012,
+		status_add1 = 2992008,
+		status_target1 = 5,
+		status_prob1 = 1
+	},
+	[29930010] = {
+		status_target1 = 5,
+		effective_left_offset = 0,
+		buff_add1 = 12992002,
+		buff_prob1 = 1,
+		effective_right_offset = 500,
+		buff_target1 = 5,
+		exe_target = 7,
+		skilltype = 2,
+		id = 29930010,
+		status_add1 = 2992004,
+		damagetype = 2,
+		status_prob1 = 1
+	},
+	[29930011] = {
+		buff_prob1 = 0,
+		buff_add1 = 12992001,
+		buff_target1 = 5,
+		exe_target = 1,
+		skilltype = 2,
+		id = 29930011,
+		status_add1 = 2992008,
+		status_target1 = 1,
+		status_prob1 = 1
+	},
+	[29930012] = {
+		exe_target = 2,
+		skilltype = 2,
+		id = 29930012,
+		status_add1 = 2992008,
+		status_target1 = 5,
+		status_prob1 = 1
+	},
+	[299501010] = {
+		id = 299501010,
+		skilltype = 0,
+		exe_type = 0,
+		status_add1 = 2992005,
+		status_target1 = 1,
+		status_prob1 = 1
+	},
+	[299501011] = {
+		halo_target1 = 2,
+		ishalo1 = 1,
+		buff_add1 = 12992003,
+		id = 299501011,
+		halo_influence1 = 0,
+		buff_prob1 = 0,
+		buff_target1 = 5,
+		skilltype = 0,
+		exe_type = 0,
+		status_add1 = 2992014,
+		status_target1 = 2,
+		status_prob1 = 1
+	},
+	[299502010] = {
+		id = 299502010,
+		skilltype = 0,
+		exe_type = 0,
+		status_add1 = 2992006,
+		status_target1 = 1,
+		status_prob1 = 1
+	},
+	[299502011] = {
+		halo_target1 = 2,
+		ishalo1 = 1,
+		buff_add1 = 12992003,
+		id = 299502011,
+		halo_influence1 = 0,
+		buff_prob1 = 0,
+		buff_target1 = 5,
+		skilltype = 0,
+		exe_type = 0,
+		status_add1 = 2992015,
+		status_target1 = 2,
+		status_prob1 = 1
+	},
+	[299503010] = {
+		id = 299503010,
+		skilltype = 0,
+		exe_type = 0,
+		status_add1 = 2992007,
+		status_target1 = 1,
+		status_prob1 = 1
+	},
+	[299503011] = {
+		halo_target1 = 2,
+		ishalo1 = 1,
+		buff_add1 = 12992003,
+		id = 299503011,
+		halo_influence1 = 0,
+		buff_prob1 = 0,
+		buff_target1 = 5,
+		skilltype = 0,
+		exe_type = 0,
+		status_add1 = 2992016,
+		status_target1 = 2,
+		status_prob1 = 1
+	}
+}

@@ -1,0 +1,42 @@
+return {
+	[81013001] = {
+		enter_map_talk = 8113001,
+		name = "监视之眼",
+		is_hide_array = 1,
+		object_cad_id = 1120011,
+		aim_finish_dropid = "KAYLATX001",
+		out_map_talk = 8113006,
+		bgm = "explorebgm",
+		fight_girl1 = 81013001,
+		pos_unlock3 = 1,
+		bridges = "1-11,11-21",
+		preview_img = "fightbg114",
+		aim1_param2 = 1,
+		pos_unlock2 = 1,
+		aim1_des = "追回逃跑的犯人",
+		pos_unlock4 = 1,
+		aim1_param1 = "81131005",
+		mapid = 81013001,
+		id = 81013001
+	},
+	[88874501] = {
+		enter_map_talk = 8745001,
+		name = "魅惑之眼",
+		is_hide_array = 1,
+		object_cad_id = 1122001,
+		aim_finish_dropid = "MINGMINGTX101",
+		out_map_talk = 8745006,
+		bgm = "explorebgm",
+		fight_girl1 = 81021095,
+		pos_unlock3 = 1,
+		bridges = "1-11,11-21",
+		preview_img = "fightbg114",
+		aim1_param2 = 1,
+		pos_unlock2 = 1,
+		aim1_des = "追回逃跑的犯人",
+		pos_unlock4 = 1,
+		aim1_param1 = "87451005",
+		mapid = 88874501,
+		id = 88874501
+	}
+}

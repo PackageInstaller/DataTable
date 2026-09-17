@@ -1,0 +1,43 @@
+return {
+	[12097201] = {
+		exe_type = 0,
+		status_judge_type1 = "0",
+		buff_image = "2097000",
+		buff_or_debuff = 1,
+		unionbufftime = 1,
+		name = "变废为宝",
+		cleanable = 1,
+		status_add2 = 9219010,
+		appendable = 5,
+		status_judge_type2 = "0",
+		status_add1 = 9223015,
+		status_prob1 = 1,
+		time = 20,
+		status_prob2 = 1,
+		add_type = 2,
+		id = 12097201,
+		status_target2 = 1,
+		status_target1 = 1,
+		detail = "每层提高【15%】的攻击和【10%】的强击伤害"
+	},
+	[12097202] = {
+		exe_type = 0,
+		status_judge_type1 = "0",
+		buff_image = "2097400",
+		buff_or_debuff = 0,
+		cleanable = 1,
+		name = "零件四散",
+		status_add2 = 20972010,
+		appendable = 1,
+		status_judge_type2 = "0",
+		status_add1 = 9224040,
+		status_prob1 = 1,
+		time = 3,
+		status_prob2 = 1,
+		add_type = 1,
+		id = 12097202,
+		status_target2 = 1,
+		status_target1 = 1,
+		detail = "攻击降低【40%】，机械防御降低【300】点"
+	}
+}

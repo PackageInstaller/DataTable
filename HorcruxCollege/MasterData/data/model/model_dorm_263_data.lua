@@ -1,0 +1,31 @@
+return {
+	["120230"] = {
+		expression = "120230_zhengchang",
+		name = "芭荼荼",
+		cute_Q = 120230,
+		portrait_image = 120230,
+		English_name = "Baatoto",
+		fanu = "120230_fanu",
+		spine_model = "120230",
+		kaixin = "120230_kaixin",
+		haixiu = "120230_haixiu",
+		modelscale = 1,
+		photofile_model = 283,
+		rolespine = "120230_1",
+		backgroundid = 6300007,
+		database_equip_offset_y = 0,
+		is_big_role_image = 1,
+		aichou = "120230_aichou",
+		talk_pos_offset = "0,0",
+		main_name = "白鸟之林",
+		name_Q = "芭荼荼",
+		major = 39,
+		itemid = 64120230,
+		broken_role = "broken_120230",
+		role_image = "120230",
+		database_equip_offset_x = 0,
+		id = "120230",
+		cute_role = "120230",
+		head_image = "120230"
+	}
+}

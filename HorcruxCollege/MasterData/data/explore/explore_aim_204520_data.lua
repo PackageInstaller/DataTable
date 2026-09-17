@@ -1,0 +1,33 @@
+return {
+	[88828301] = {
+		out_map_talk = 8283008,
+		name = "阿芙洛的休息日",
+		is_hide_array = 1,
+		object_cad_id = 1340011,
+		aim_finish_dropid = "TSZWTX101",
+		lock1_param1 = "82831001",
+		lock1_bridge = "1-11",
+		bgm = "explorebgm",
+		lock1_param2 = 1,
+		lock1_des = "掩护阿芙洛",
+		fight_girl1 = 81021009,
+		lock2_bridge = "11-21",
+		pos_unlock3 = 1,
+		bridges = "1-11,11-21",
+		preview_img = "fightbg114",
+		lock2_param1 = "82831010",
+		aim1_param2 = 1,
+		aim1_param1 = "82831005",
+		pos_unlock2 = 1,
+		lock2_des = "再次掩护阿芙洛",
+		aim1_des = "和阿芙洛一起喝饮料",
+		aim2_param1 = "82831014",
+		pos_unlock4 = 1,
+		aim2_des = "躲避疯狂的粉丝",
+		lock2_param2 = 1,
+		enter_map_talk = 8283001,
+		mapid = 88828301,
+		id = 88828301,
+		aim2_param2 = 1
+	}
+}

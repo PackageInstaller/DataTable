@@ -1,0 +1,50 @@
+return {
+	[1500945920] = {
+		sale_price_diamond = 440,
+		name = "【辛西娅】",
+		id = 1500945920,
+		max_stack = 999,
+		price_diamond = 880,
+		sale_price = 26400,
+		equip_quality = 6,
+		mode_id = "PF1500945920",
+		price = 88000,
+		intro = "【熹微晨光】辛西娅皮肤X1 辛西娅头像X1。",
+		model = "15920",
+		image_id = 1500945920,
+		bag_item_type = 94,
+		price_honor = 4400
+	},
+	[1500945930] = {
+		sale_price_diamond = 440,
+		name = "【辛西娅】",
+		id = 1500945930,
+		max_stack = 999,
+		price_diamond = 880,
+		sale_price = 26400,
+		equip_quality = 6,
+		mode_id = "PF1500945930",
+		price = 88000,
+		intro = "【熹微晨光】辛西娅皮肤X1 辛西娅头像X1。",
+		model = "15930",
+		image_id = 1500945930,
+		bag_item_type = 94,
+		price_honor = 4400
+	},
+	[1500945960] = {
+		sale_price_diamond = 440,
+		name = "【辛西娅】",
+		id = 1500945960,
+		max_stack = 999,
+		price_diamond = 880,
+		sale_price = 26400,
+		equip_quality = 6,
+		mode_id = "PF1500945960",
+		price = 88000,
+		intro = "【熹微晨光】辛西娅皮肤X1 辛西娅头像X1。",
+		model = "15960",
+		image_id = 1500945960,
+		bag_item_type = 94,
+		price_honor = 4400
+	}
+}

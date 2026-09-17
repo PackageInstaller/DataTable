@@ -1,0 +1,80 @@
+return {
+	[32234001] = {
+		id = "32234001",
+		name = "活动支援点数",
+		max_stack = 9999999,
+		user_manual = "影猎之爪活动支援点数",
+		equip_quality = 5,
+		intro = "影猎之爪活动支援点数。",
+		purpose = "BP点",
+		image_id = 17034001,
+		bag_item_type = 101
+	},
+	[32234002] = {
+		id = "32234002",
+		name = "BPVIP检测道具",
+		max_stack = 9999999,
+		user_manual = "活动支援点数",
+		equip_quality = 5,
+		intro = "活动支援点数。",
+		purpose = "BPVIP检测道具",
+		image_id = 17034001,
+		bag_item_type = 101
+	},
+	[32234003] = {
+		id = "32234003",
+		name = "BPSVIP检测道具",
+		max_stack = 9999999,
+		user_manual = "活动支援点数",
+		equip_quality = 5,
+		intro = "活动支援点数。",
+		purpose = "BPSVIP检测道具",
+		image_id = 17034001,
+		bag_item_type = 101
+	},
+	[32203001] = {
+		targetdes2 = "影猎之爪兑换商店",
+		name = "影猎之爪扭蛋券",
+		targetlayer_starttime_2 = "2022-08-30 00:00:00",
+		targetdes3 = "影猎之爪扩招奖励",
+		id = "32203001",
+		targetlayer_finishtime_3 = "2022-09-18 23:59:59",
+		equip_quality = 5,
+		user_manual = "月专属扭蛋券，仅能在影猎之爪扩招池使用哦~",
+		targetactivity1 = 322,
+		targetlayer3 = 1800367,
+		targetlayer_starttime_1 = "2022-08-30 00:00:00",
+		targetlayer_finishtime_1 = "2022-09-18 23:59:59",
+		targetdes1 = "影猎之爪活动支援",
+		max_stack = 99999,
+		targetlayer2 = 2400322,
+		targetlayer1 = 2500322,
+		targetlayer_starttime_3 = "2022-08-30 00:00:00",
+		intro = "这是一张充满欧气的扩招券，一定能为班长带来好运！",
+		purpose = "影猎之爪扭蛋券",
+		targetlayer_finishtime_2 = "2022-09-18 23:59:59",
+		image_id = 32203001,
+		bag_item_type = 68
+	},
+	[32202001] = {
+		id = "32202001",
+		name = "月影硬币",
+		max_stack = 99999,
+		user_manual = "可以在影猎之爪活动商城兑换道具",
+		equip_quality = 5,
+		intro = "可以在活动商城兑换道具。",
+		purpose = "月影硬币",
+		image_id = 32202001,
+		bag_item_type = 212
+	},
+	[32204001] = {
+		id = "32204001",
+		name = "学院精选礼包",
+		purpose = "影猎之爪礼包",
+		max_stack = 999,
+		image_id = 32204001,
+		equip_quality = 5,
+		bag_item_type = 95,
+		mode_id = "LYZZLB101"
+	}
+}

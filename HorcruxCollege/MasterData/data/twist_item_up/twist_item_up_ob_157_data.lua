@@ -1,0 +1,80 @@
+return {
+	[4435] = {
+		updrop = "OHT13008720",
+		guaranteedrop1 = "OHT13008720",
+		guaranteeshowprob1 = 0.04,
+		guarantee1 = 1,
+		up_drop_count1 = 50,
+		itemupid = 435,
+		img = 22087201,
+		id = 4435,
+		finishtime = "2023-09-17 23:59:59",
+		guaranteeconf = "twist_guarantee_100_3",
+		starttime = "2023-06-27 00:00:00"
+	},
+	[4543] = {
+		updrop = "OHT13008720",
+		guaranteedrop1 = "OHT13008720",
+		guaranteeshowprob1 = 0.02,
+		guarantee1 = 1,
+		up_drop_count1 = 50,
+		itemupid = 543,
+		img = 22087202,
+		id = 4543,
+		finishtime = "2023-11-19 23:59:59",
+		guaranteeconf = "twist_guarantee_100_2",
+		starttime = "2023-11-02 00:00:00"
+	},
+	[4643] = {
+		updrop = "OHT13008720",
+		guaranteedrop1 = "OHT13008720",
+		guaranteeshowprob1 = 0.02,
+		guarantee1 = 1,
+		up_drop_count1 = 50,
+		itemupid = 643,
+		img = 22087202,
+		id = 4643,
+		finishtime = "2024-03-14 23:59:59",
+		guaranteeconf = "twist_guarantee_100_2",
+		starttime = "2024-02-29 00:00:00"
+	},
+	[4696] = {
+		updrop = "JPTW79606",
+		guaranteedrop1 = "JPTW79606",
+		guaranteeshowprob1 = 0.02,
+		guarantee1 = 1,
+		up_drop_count1 = 50,
+		itemupid = 696,
+		img = 22087203,
+		id = 4696,
+		finishtime = "2024-07-04 23:59:59",
+		guaranteeconf = "twist_guarantee_100_2",
+		starttime = "2024-06-13 00:00:00"
+	},
+	[4735] = {
+		updrop = "JPTW83506",
+		guaranteedrop1 = "JPTW83506",
+		guaranteeshowprob1 = 0.02,
+		guarantee1 = 1,
+		up_drop_count1 = 50,
+		itemupid = 735,
+		img = 22087204,
+		id = 4735,
+		finishtime = "2024-08-12 23:59:60",
+		guaranteeconf = "twist_guarantee_100_2",
+		starttime = "2024-08-06 00:00:00"
+	},
+	[4810] = {
+		updrop = "JPTW91006",
+		guaranteedrop1 = "JPTW91006",
+		guaranteeshowprob1 = 0.02,
+		guarantee1 = 1,
+		up_drop_count1 = 50,
+		itemupid = 810,
+		img = 22087204,
+		id = 4810,
+		finishtime = "2024-12-14 23:59:60",
+		guaranteeconf = "twist_guarantee_100_2",
+		starttime = "2024-12-10 00:00:00"
+	}
+}

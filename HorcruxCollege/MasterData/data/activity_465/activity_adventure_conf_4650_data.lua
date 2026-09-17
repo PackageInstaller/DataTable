@@ -1,0 +1,33 @@
+return {
+	[46501] = {
+		upnum1_5 = 300,
+		upservant2 = 205620,
+		initial_times = 3,
+		upservant1 = 205520,
+		upnum2_3 = 200,
+		upnum1 = 100,
+		daily_times = 3,
+		upnum1_4 = 250,
+		upnum2_5 = 300,
+		upnum3_2 = 150,
+		upitem = 46502001,
+		upnum2 = 100,
+		upnum3_4 = 250,
+		initial_level = 1,
+		upnum1_2 = 150,
+		upnum3_3 = 200,
+		max_buy_num = 1,
+		upnum3 = 100,
+		upnum3_5 = 300,
+		upnum2_1 = 120,
+		upnum1_3 = 200,
+		upnum2_4 = 250,
+		upnum2_2 = 150,
+		upnum3_1 = 120,
+		upnum1_1 = 120,
+		time_increase_limit = 3,
+		id = 46501,
+		buy_cost = 30,
+		upservant3 = 205720
+	}
+}

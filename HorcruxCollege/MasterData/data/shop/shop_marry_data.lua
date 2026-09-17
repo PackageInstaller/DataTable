@@ -1,0 +1,83 @@
+return {
+	[1070101] = {
+		shop_type = 10701,
+		itemid = 107095001,
+		finish_time = "2020-04-12 23:59:59",
+		unique_id = "2018/8/8 0:00:64",
+		id = 1070101,
+		pos = 1,
+		start_time = "2020-03-09 00:00:00",
+		discount = 10,
+		currencytype = 6800601,
+		buy_limit = 1,
+		price = 20,
+		itemcount = 1
+	},
+	[1070102] = {
+		shop_type = 10701,
+		itemid = 107095002,
+		finish_time = "2020-04-12 23:59:59",
+		unique_id = "2018/8/8 0:00:64",
+		id = 1070102,
+		pos = 2,
+		start_time = "2020-03-09 00:00:00",
+		discount = 30,
+		currencytype = 6800601,
+		buy_limit = 3,
+		price = 60,
+		itemcount = 1
+	},
+	[1070103] = {
+		currencytype = 6800601,
+		itemid = 107103000,
+		unique_id = "2018/8/8 0:00:64",
+		pos = 3,
+		discount = 12,
+		shop_type = 10701,
+		id = 1070103,
+		price = 20,
+		itemcount = 1
+	},
+	[1120101] = {
+		shop_type = 10702,
+		itemid = 107095003,
+		finish_time = "2020-06-12 23:59:59",
+		unique_id = "2018/8/8 0:00:64",
+		id = 1120101,
+		pos = 1,
+		start_time = "2020-05-01 00:00:00",
+		discount = 10,
+		currencytype = 6800601,
+		buy_limit = 1,
+		price = 20,
+		itemcount = 1
+	},
+	[1120102] = {
+		shop_type = 10702,
+		itemid = 107095004,
+		finish_time = "2020-06-12 23:59:59",
+		unique_id = "2018/8/8 0:00:64",
+		id = 1120102,
+		pos = 2,
+		start_time = "2020-05-01 00:00:00",
+		discount = 25,
+		currencytype = 6800601,
+		buy_limit = 5,
+		price = 55,
+		itemcount = 1
+	},
+	[1120103] = {
+		shop_type = 10702,
+		itemid = 107095005,
+		finish_time = "2020-06-12 23:59:59",
+		unique_id = "2018/8/8 0:00:64",
+		id = 1120103,
+		pos = 3,
+		start_time = "2020-05-01 00:00:00",
+		discount = 50,
+		currencytype = 6800601,
+		buy_limit = 1,
+		price = 100,
+		itemcount = 1
+	}
+}

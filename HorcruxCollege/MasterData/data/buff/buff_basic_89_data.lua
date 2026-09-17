@@ -1,0 +1,52 @@
+return {
+	[12782001] = {
+		ani = "buff",
+		status_judge_type1 = "0",
+		buff_image = "278200",
+		cleanable = 0,
+		name = "盘旋侵扰",
+		exe_type = 0,
+		offsetZ = 1,
+		appendable = 2,
+		offsetY = 1.5,
+		status_add1 = 2782019,
+		status_prob1 = 0,
+		effect = "27820_effect",
+		time = 4,
+		offsetX = 0,
+		buff_or_debuff = 0,
+		id = 12782001,
+		status_target1 = 1,
+		detail = "急速等级下降0.5级"
+	},
+	[12782002] = {
+		buff_image = "278300",
+		name = "鸦群",
+		time = 3,
+		buff_or_debuff = 0,
+		cleanable = 0,
+		exe_type = 0,
+		status_prob1 = 0,
+		status_judge_type1 = "0",
+		appendable = 1,
+		id = 12782002,
+		status_add1 = 9212000,
+		status_target1 = 1,
+		detail = "受到伤害时额外受到游枭【攻击*100%】的能量伤害"
+	},
+	[12782003] = {
+		buff_image = "278300",
+		name = "飞行",
+		time = 6,
+		buff_or_debuff = 1,
+		cleanable = 0,
+		exe_type = 0,
+		status_prob1 = 1,
+		status_judge_type1 = "0",
+		appendable = 1,
+		id = 12782003,
+		status_add1 = 9140000,
+		status_target1 = 1,
+		detail = "切换飞行状态，不会受到近身攻击（即角色射程低于或等于180码）"
+	}
+}

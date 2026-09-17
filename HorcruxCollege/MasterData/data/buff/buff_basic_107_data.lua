@@ -1,0 +1,41 @@
+return {
+	[120382001] = {
+		appendable = 3,
+		name = "能量易伤",
+		buff_image = "440210",
+		buff_or_debuff = 0,
+		unionbufftime = 1,
+		time = 3,
+		exe_type = 0,
+		status_prob1 = 1,
+		status_judge_type1 = "0",
+		cleanable = 0,
+		add_type = 2,
+		id = 120382001,
+		status_add1 = 20382002,
+		status_target1 = 1,
+		detail = "受到的能量伤害增加5%"
+	},
+	[120382002] = {
+		exe_type = 0,
+		status_judge_type1 = "0",
+		buff_image = "20386010",
+		buff_or_debuff = 0,
+		unionbufftime = 1,
+		name = "沉静妖瞳",
+		cleanable = 2,
+		status_add2 = 20382084,
+		keep_on_revival = 1,
+		appendable = 5,
+		status_judge_type2 = "0",
+		status_add1 = 20382083,
+		status_prob1 = 1,
+		time = 5,
+		status_prob2 = 1,
+		add_type = 2,
+		id = 120382002,
+		status_target2 = 1,
+		status_target1 = 1,
+		detail = "能量值增长速率降低10%"
+	}
+}

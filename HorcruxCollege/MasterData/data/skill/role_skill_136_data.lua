@@ -1,0 +1,212 @@
+return {
+	[206800010] = {
+		id = 206800010,
+		status_target2 = 1,
+		buff_add1 = 12068201,
+		buff_prob1 = 0,
+		status_prob2 = 1,
+		status_add2 = 20682002,
+		buff_target1 = 5,
+		skilltype = 0,
+		exe_type = 30,
+		status_add1 = 20682001,
+		status_target1 = 1,
+		status_prob1 = 1
+	},
+	[206800011] = {
+		halo_target1 = 2,
+		status_judge_type1 = "1",
+		buff_add1 = 12068202,
+		status_judge_target1 = "1:2",
+		buff_prob2 = 0,
+		id = 206800011,
+		buff_target2 = 5,
+		insider_cd = 25,
+		skilltype = 0,
+		buff_add2 = 12068203,
+		status_add1 = 20682007,
+		buff_prob1 = 0,
+		status_prob1 = 1,
+		buff_target1 = 5,
+		exe_type = 18,
+		ishalo1 = 1,
+		status_target1 = 1,
+		status_judge_param1 = "1:0.3"
+	},
+	[206810010] = {
+		status_target1 = 5,
+		exe_target = 5,
+		skilltype = 1,
+		id = 206810010,
+		status_add1 = 20682010,
+		damagetype = 2,
+		status_prob1 = 1
+	},
+	[206820010] = {
+		addrage = 15,
+		exe_target = 5,
+		status_target1 = 5,
+		skilltype = 3,
+		id = 206820010,
+		status_add1 = 20682011,
+		damagetype = 2,
+		status_prob1 = 1
+	},
+	[206820011] = {
+		buff_prob1 = 0,
+		effective_left_offset = 0,
+		buff_add1 = 12068204,
+		effective_right_offset = 200,
+		buff_target1 = 5,
+		exe_target = 7,
+		skilltype = 3,
+		id = 206820011,
+		status_add1 = 20682012,
+		status_target1 = 5,
+		status_prob1 = 1
+	},
+	[206830010] = {
+		status_target1 = 5,
+		effective_left_offset = 0,
+		buff_add1 = 12068205,
+		status_target2 = 5,
+		effective_right_offset = 300,
+		status_prob2 = 1,
+		buff_prob1 = 0,
+		status_add2 = 20682026,
+		buff_target1 = 5,
+		exe_target = 7,
+		skilltype = 2,
+		id = 206830010,
+		status_add1 = 20682027,
+		damagetype = 2,
+		status_prob1 = 1
+	},
+	[206830011] = {
+		addrage = 12,
+		buff_prob1 = 0,
+		buff_add1 = 12068206,
+		buff_target1 = 5,
+		exe_target = 2,
+		skilltype = 2,
+		id = 206830011,
+		status_add1 = 20682014,
+		status_target1 = 5,
+		status_prob1 = 1
+	},
+	[2068501010] = {
+		id = 2068501010,
+		status_target2 = 1,
+		status_prob2 = 1,
+		status_add2 = 20682016,
+		skilltype = 0,
+		exe_type = 0,
+		status_add1 = 9225010,
+		status_target1 = 1,
+		status_prob1 = 1
+	},
+	[2068501011] = {
+		id = 2068501011,
+		skilltype = 0,
+		exe_type = 0,
+		status_add1 = 20682019,
+		status_target1 = 1,
+		status_prob1 = 1
+	},
+	[2068502010] = {
+		id = 2068502010,
+		status_target2 = 1,
+		status_prob2 = 1,
+		status_add2 = 20682017,
+		skilltype = 0,
+		exe_type = 0,
+		status_add1 = 9225015,
+		status_target1 = 1,
+		status_prob1 = 1
+	},
+	[2068502011] = {
+		id = 2068502011,
+		skilltype = 0,
+		exe_type = 0,
+		status_add1 = 20682020,
+		status_target1 = 1,
+		status_prob1 = 1
+	},
+	[2068503010] = {
+		id = 2068503010,
+		status_target2 = 1,
+		status_prob2 = 1,
+		status_add2 = 20682018,
+		skilltype = 0,
+		exe_type = 0,
+		status_add1 = 9225020,
+		status_target1 = 1,
+		status_prob1 = 1
+	},
+	[2068503011] = {
+		id = 2068503011,
+		skilltype = 0,
+		exe_type = 0,
+		status_add1 = 20682021,
+		status_target1 = 1,
+		status_prob1 = 1
+	},
+	[206807010] = {
+		id = 206807010,
+		status_target2 = 1,
+		status_prob2 = 1,
+		status_add2 = 20682022,
+		skilltype = 0,
+		exe_type = 0,
+		status_add1 = 20682023,
+		status_target1 = 1,
+		status_prob1 = 1
+	},
+	[206808010] = {
+		id = 206808010,
+		status_judge_type1 = "14",
+		status_judge_param1 = "14:2",
+		insider_cd = 1,
+		skilltype = 0,
+		exe_type = 18,
+		status_add1 = 20682024,
+		status_target1 = 5,
+		status_prob1 = 1
+	},
+	[206808011] = {
+		ishalo1 = 1,
+		id = 206808011,
+		halo_target1 = 2,
+		insider_cd = 1,
+		skilltype = 0,
+		exe_type = 0,
+		status_add1 = 20682025,
+		status_target1 = 1,
+		status_prob1 = 1
+	},
+	[2068601010] = {
+		id = 2068601010,
+		skilltype = 0,
+		exe_type = 0,
+		status_add1 = 9225025,
+		status_target1 = 1,
+		status_prob1 = 1
+	},
+	[2068601011] = {
+		id = 2068601011,
+		skilltype = 0,
+		exe_type = 0,
+		status_add1 = 20682028,
+		status_target1 = 1,
+		status_prob1 = 1
+	},
+	[2068601012] = {
+		id = 2068601012,
+		insider_cd = 2,
+		skilltype = 0,
+		exe_type = 10,
+		status_add1 = 20682029,
+		status_target1 = 2,
+		status_prob1 = 1
+	}
+}

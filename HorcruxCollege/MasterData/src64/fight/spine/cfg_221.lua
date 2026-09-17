@@ -1,0 +1,481 @@
+local var_0_0 = {
+	xpeffect = {},
+	attack = {
+		totalframe = 20,
+		animation = "attack",
+		exe_tbl = {
+			{
+				id = 22110001,
+				frame = 8,
+				effect = {
+					{
+						ani = "attack",
+						name = "22100_effect",
+						offsetZ = 1,
+						offsetY = 0.5,
+						offsetX = 0,
+						object = "target"
+					}
+				},
+				sound = {
+					"huiwu",
+					0.6
+				}
+			}
+		}
+	},
+	xp = {
+		{
+			{
+				method = "useSkill",
+				param = "usexp"
+			}
+		}
+	},
+	xp1 = {
+		{
+			{
+				method = "useSkill",
+				param = "usexp1"
+			}
+		}
+	},
+	skill1 = {
+		{
+			{
+				method = "useSkill",
+				param = "useskill1"
+			}
+		}
+	},
+	useskill1 = {
+		turnbacklimit = true,
+		totalframe = 48,
+		animation = "skill",
+		action_on_start = {
+			{
+				startframe = 10,
+				action = {
+					{
+						method = "rush_forward",
+						param = {
+							distance = 200,
+							time = 0.5
+						}
+					}
+				}
+			},
+			{
+				startframe = 26,
+				action = {
+					{
+						method = "rush_forward",
+						param = {
+							distance = -100,
+							time = 0.5
+						}
+					}
+				}
+			}
+		},
+		exe_tbl = {
+			{
+				id = 22120001,
+				frame = 10,
+				effect = {
+					{
+						ani = "attack",
+						name = "22100_effect",
+						offsetZ = 1,
+						offsetY = 0.5,
+						offsetX = 0,
+						object = "target"
+					}
+				},
+				shake = {
+					x = 4,
+					y = 0
+				},
+				sound = {
+					"huiwu",
+					0.6
+				}
+			},
+			{
+				id = 22120001,
+				frame = 20,
+				effect = {
+					{
+						ani = "attack",
+						name = "22100_effect",
+						offsetZ = 1,
+						offsetY = 0.5,
+						offsetX = 0,
+						object = "target"
+					}
+				},
+				shake = {
+					x = 4,
+					y = 0
+				},
+				sound = {
+					"huiwu",
+					0.6
+				}
+			},
+			{
+				id = 22120001,
+				frame = 30,
+				effect = {
+					{
+						ani = "attack",
+						name = "22100_effect",
+						offsetZ = 1,
+						offsetY = 0.5,
+						offsetX = 0,
+						object = "target"
+					}
+				},
+				shake = {
+					x = 4,
+					y = 0
+				},
+				sound = {
+					"huiwu",
+					0.6
+				}
+			},
+			{
+				id = 22120001,
+				frame = 40,
+				effect = {
+					{
+						ani = "attack",
+						name = "22100_effect",
+						offsetZ = 1,
+						offsetY = 0.5,
+						offsetX = 0,
+						object = "target"
+					}
+				},
+				shake = {
+					x = 4,
+					y = 0
+				},
+				sound = {
+					"huiwu",
+					0.6
+				}
+			}
+		}
+	},
+	usexp = {
+		totalframe = 51,
+		xpeffect = "xp_effect",
+		turnbacklimit = true,
+		animation = "xp",
+		exe_tbl = {
+			{
+				frame = 1,
+				sound = {
+					"xp",
+					0.6
+				}
+			},
+			{
+				id = 22150001,
+				frame = 34,
+				behitted = "hitdown",
+				effect = {
+					{
+						ani = "attack",
+						name = "22100_effect",
+						offsetZ = 1,
+						offsetY = 0.5,
+						offsetX = 0,
+						object = "target"
+					}
+				},
+				force = {
+					{
+						time = 0.2,
+						distance = -25,
+						object = "target"
+					}
+				},
+				forceY = {
+					{
+						speed = 500
+					}
+				},
+				shake = {
+					period = 2,
+					time = 0.2,
+					x = 4,
+					y = 80
+				},
+				sound = {
+					"huiwu",
+					0.6
+				}
+			}
+		}
+	}
+}
+
+var_0_0.xpeffect.xp_effect = {
+	totalframe = 50,
+	bgfile = "22100_bg",
+	locktarget = {
+		locktargetpool = "oponent"
+	},
+	bgani = {
+		{
+			isloop = true,
+			startframe = 0,
+			ani = "BG"
+		}
+	},
+	inserteffect = {
+		{
+			texture = "role/22120.png",
+			ani = "xp",
+			file = "xp2",
+			startframe = 0,
+			zorder = 200
+		}
+	},
+	lockframe = {
+		{
+			totalframe = 2,
+			startframe = 28,
+			timescale = 0.2
+		},
+		{
+			totalframe = 6,
+			startframe = 34.5,
+			timescale = 0.15
+		}
+	},
+	camera = {
+		zoom = {
+			{
+				scale = 1.2,
+				intime = 0.15,
+				anchory = 100,
+				outtime = 0.1,
+				totalframe = 10,
+				startframe = 0
+			},
+			{
+				scale = 0.8,
+				intime = 0.15,
+				anchory = 0,
+				outtime = 0.01,
+				totalframe = 17,
+				startframe = 16
+			},
+			{
+				scale = 1,
+				intime = 0.1,
+				anchory = 0,
+				totalframe = 10,
+				startframe = 33
+			}
+		},
+		move = {
+			{
+				distance = 70,
+				totalframe = 30,
+				startframe = 0,
+				time = 0.1
+			},
+			{
+				distanceY = 50,
+				totalframe = 17,
+				startframe = 10,
+				time = 0.3
+			},
+			{
+				pos = "target",
+				totalframe = 20,
+				startframe = 31,
+				time = 0.1
+			},
+			{
+				distanceY = -100,
+				totalframe = 10,
+				startframe = 33,
+				time = 0.1
+			},
+			{
+				distanceY = 50,
+				totalframe = 1,
+				startframe = 43,
+				time = 0.3
+			}
+		}
+	}
+}
+var_0_0.usexp1 = {
+	totalframe = 51,
+	xpeffect = "xp_effect1",
+	turnbacklimit = true,
+	animation = "xp",
+	action_on_start = {
+		{
+			startframe = 30,
+			action = {
+				{
+					method = "rush_to_target",
+					param = {
+						frame = 3,
+						posx = 100
+					}
+				}
+			}
+		}
+	},
+	exe_tbl = {
+		{
+			frame = 1,
+			sound = {
+				"xp",
+				0.6
+			}
+		},
+		{
+			id = 22150001,
+			frame = 34,
+			behitted = "hitdown",
+			effect = {
+				{
+					ani = "attack",
+					name = "22100_effect",
+					offsetZ = 1,
+					offsetY = 0.5,
+					offsetX = 0,
+					object = "target"
+				}
+			},
+			force = {
+				{
+					time = 0.2,
+					distance = -25,
+					object = "target"
+				}
+			},
+			forceY = {
+				{
+					speed = 500
+				}
+			},
+			shake = {
+				period = 2,
+				time = 0.2,
+				x = 4,
+				y = 80
+			},
+			sound = {
+				"huiwu",
+				0.6
+			}
+		}
+	}
+}
+var_0_0.xpeffect.xp_effect1 = {
+	totalframe = 50,
+	bgfile = "22100_bg",
+	locktarget = {
+		locktargetpool = "oponent"
+	},
+	bgani = {
+		{
+			isloop = true,
+			startframe = 0,
+			ani = "BG"
+		}
+	},
+	inserteffect = {
+		{
+			texture = "role/22120.png",
+			ani = "xp",
+			file = "xp2",
+			startframe = 0,
+			zorder = 200
+		}
+	},
+	lockframe = {
+		{
+			totalframe = 2,
+			startframe = 28,
+			timescale = 0.2
+		},
+		{
+			totalframe = 6,
+			startframe = 34.5,
+			timescale = 0.15
+		}
+	},
+	camera = {
+		zoom = {
+			{
+				scale = 1.2,
+				intime = 0.15,
+				anchory = 100,
+				outtime = 0.1,
+				totalframe = 10,
+				startframe = 0
+			},
+			{
+				scale = 0.8,
+				intime = 0.15,
+				anchory = 0,
+				outtime = 0.01,
+				totalframe = 17,
+				startframe = 16
+			},
+			{
+				scale = 1,
+				intime = 0.1,
+				anchory = 0,
+				totalframe = 10,
+				startframe = 33
+			}
+		},
+		move = {
+			{
+				distance = 70,
+				totalframe = 30,
+				startframe = 0,
+				time = 0.1
+			},
+			{
+				distanceY = 50,
+				totalframe = 17,
+				startframe = 10,
+				time = 0.3
+			},
+			{
+				pos = "target",
+				totalframe = 20,
+				startframe = 31,
+				time = 0.1
+			},
+			{
+				distanceY = -100,
+				totalframe = 10,
+				startframe = 33,
+				time = 0.1
+			},
+			{
+				distanceY = 50,
+				totalframe = 1,
+				startframe = 43,
+				time = 0.3
+			}
+		}
+	}
+}
+
+return var_0_0

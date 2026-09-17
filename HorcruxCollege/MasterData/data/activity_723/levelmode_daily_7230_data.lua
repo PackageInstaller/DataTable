@@ -1,0 +1,15 @@
+return {
+	[72301] = {
+		description = "！！！",
+		name = "？？？？",
+		modetype = 7230,
+		endtime = "2024-06-30 23:59:59",
+		starttime = "2024-05-30 00:00:00",
+		image = "plot_bg109",
+		mode = 72301,
+		totalchapter = 7,
+		levelperchapter = 1,
+		preset_level = 300,
+		order = 1
+	}
+}
