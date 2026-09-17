@@ -36,6 +36,7 @@ git clone -b game/xxxxx --single-branch --depth 1 https://github.com/PackageInst
 | `game/FyorasSouls` | FyorasSouls | 芙娅之魂 |
 | `game/GirlsCreationR` | GirlsCreationR | 草画 |
 | `game/GoddessOrder` | GoddessOrder | 最速关服二游 |
+| `game/HorcruxCollege` | HorcruxCollege |
 | `game/IMYSR` | IMYSR | 爱丽丝圣礼 |
 | `game/IllusionConnect` | IllusionConnect | 梦境链接 |
 | `game/IronSaga` | IronSaga | 机动战队大作战 |
