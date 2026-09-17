@@ -1,0 +1,33 @@
+return {
+	[81003001] = {
+		lock3_param2 = 1,
+		name = "黑暗黎明",
+		lock3_param1 = "81031032",
+		lock3_bridge = "22-32",
+		fight_girl2 = 81003002,
+		out_map_talk = 81031055,
+		lock1_bridge = "1-11",
+		bgm = "avalon_scene",
+		object_cad_id = 580011,
+		lock1_des = "接受终端机委托",
+		fight_girl1 = 81003001,
+		lock2_param1 = "81031012",
+		lock1_param2 = 1,
+		bridges = "1-11,11-12,12-22,22-32,22-21,16-26,26-36",
+		lock1_param1 = "81031001",
+		is_hide_array = 1,
+		aim1_param2 = 1,
+		preview_img = "heibang",
+		aim1_param1 = "81031005",
+		lock2_des = "了解委托内容",
+		lock3_des = "和暗影沟通",
+		aim_finish_dropid = "STABLEEXPLORE1",
+		lock2_bridge = "11-12",
+		aim1_des = "完成受到的神秘委托",
+		lock2_param2 = 1,
+		enter_map_talk = 81031001,
+		mapid = 81003001,
+		id = 81003001,
+		fight_girl3 = 81003003
+	}
+}

@@ -1,0 +1,380 @@
+return {
+	[148002001] = {
+		id = 148002001,
+		name = "圣诞心愿袜",
+		equip_quality = 5,
+		max_stack = 99999,
+		image_id = 148002001,
+		user_manual = "可在【圣诞心愿】活动中使用，每次使用都将获得一个圣诞惊喜礼物！（活动结束后，该道具将进行系统 回收，请尽快使用）",
+		bag_item_type = 90,
+		intro = "圣诞老人会把礼物放在袜子里哦！"
+	},
+	[148002002] = {
+		id = 148002002,
+		name = "圣诞心愿袜*1",
+		max_stack = 99999,
+		user_manual = "可在【圣诞心愿】活动中使用，每次使用都将获得一个圣诞惊喜礼物！（活动结束后，该道具将进行系统 回收，请尽快使用）",
+		equip_quality = 5,
+		mode_id = "SDFPDJ01",
+		intro = "圣诞老人会把礼物放在袜子里哦！",
+		image_id = 148002001,
+		bag_item_type = 68
+	},
+	[148002003] = {
+		id = 148002003,
+		name = "圣诞心愿袜*10",
+		max_stack = 99999,
+		user_manual = "可在【圣诞心愿】活动中使用，每次使用都将获得一个圣诞惊喜礼物！（活动结束后，该道具将进行系统 回收，请尽快使用）",
+		equip_quality = 5,
+		mode_id = "SDFPDJ02",
+		intro = "圣诞老人会把礼物放在袜子里哦！",
+		image_id = 148002001,
+		bag_item_type = 68
+	},
+	[148002004] = {
+		id = 148002004,
+		name = "圣诞心愿袜*10",
+		max_stack = 99999,
+		user_manual = "可在【圣诞心愿】活动中使用，每次使用都将获得一个圣诞惊喜礼物！（活动结束后，该道具将进行系统 回收，请尽快使用）",
+		equip_quality = 5,
+		mode_id = "SDFPDJ03",
+		intro = "圣诞老人会把礼物放在袜子里哦！",
+		image_id = 148002001,
+		bag_item_type = 68
+	},
+	[148001001] = {
+		id = 148001001,
+		name = "露缇专属扭蛋券",
+		max_stack = 9999,
+		user_manual = "可用于露缇的登场上新扩招  ",
+		equip_quality = 5,
+		intro = "这是一张充满欧气的扩招券！",
+		image_id = 148001001,
+		bag_item_type = 90,
+		order = 3
+	},
+	[148001002] = {
+		id = 148001002,
+		name = "佩特里夏扭蛋券",
+		equip_quality = 5,
+		max_stack = 9999,
+		image_id = 148001002,
+		user_manual = "可用于佩特里夏的登场上新扩招  ",
+		bag_item_type = 90,
+		intro = "这是一张充满欧气的扩招券！"
+	},
+	[1480670001] = {
+		gain_exp = 1,
+		name = "圣诞节姜饼",
+		id = 1480670001,
+		user_manual = "使用可增加120点好感度，不消耗每日送礼次数。  ",
+		is_free_send = 1,
+		equip_quality = 6,
+		price = 6000,
+		favor = 120,
+		sale_price_diamond = 50,
+		activity = 300,
+		gift_feedback = "看起来好好吃，谢谢班长！",
+		max_stack = 999,
+		price_diamond = 112,
+		sale_price = 10000,
+		intro = "送给宿舍的小姐姐们，她们都会喜欢的！",
+		image_id = 1480670001,
+		bag_item_type = 67,
+		price_honor = 150
+	},
+	[1480670002] = {
+		sale_price_diamond = 50,
+		name = "平安夜苹果",
+		id = 1480670002,
+		max_stack = 999,
+		price_diamond = 112,
+		sale_price = 10000,
+		equip_quality = 6,
+		price = 6000,
+		favor = 120,
+		intro = "送给宿舍的学员们，她们会喜欢的！",
+		user_manual = "平安夜吃苹果，平平安安",
+		is_free_send = 1,
+		image_id = 1480670002,
+		bag_item_type = 67,
+		price_honor = 150
+	},
+	[148003001] = {
+		id = 148003001,
+		name = "礼包1",
+		equip_quality = 5,
+		image_id = 148003001,
+		bag_item_type = 95,
+		mode_id = "SDLPKLB01"
+	},
+	[148003002] = {
+		id = 148003002,
+		name = "礼包2",
+		equip_quality = 5,
+		image_id = 148003002,
+		bag_item_type = 95,
+		mode_id = "SDLPKLB02"
+	},
+	[148003003] = {
+		id = 148003003,
+		name = "礼包3",
+		equip_quality = 5,
+		image_id = 148003003,
+		bag_item_type = 95,
+		mode_id = "SDLPKLB03"
+	},
+	[148003004] = {
+		id = 148003004,
+		name = "礼包4",
+		equip_quality = 5,
+		image_id = 148003004,
+		bag_item_type = 95,
+		mode_id = "SDLPKLB04"
+	},
+	[148003005] = {
+		id = 148003005,
+		name = "绮境漫游",
+		user_manual = "圣诞节限定皮肤",
+		equip_quality = 5,
+		mode_id = "SDPFLB01",
+		intro = "白兔先生，白兔先生，接下来我们要去哪里冒险呢~。",
+		model = "18780",
+		image_id = 1318780,
+		bag_item_type = 94
+	},
+	[148003006] = {
+		id = 148003006,
+		name = "猫魅茶会",
+		user_manual = "圣诞节限定皮肤",
+		equip_quality = 5,
+		mode_id = "SDPFLB02",
+		intro = "你想要我告诉你往哪走？哈哈，那得要先看你往哪里走呢~。",
+		model = "18880",
+		image_id = 1318880,
+		bag_item_type = 94
+	},
+	[148003011] = {
+		id = 148003011,
+		name = "【冬雪约定】",
+		user_manual = "圣诞节限定皮肤",
+		equip_quality = 5,
+		mode_id = "SDPF148003011",
+		intro = "汪汪，主人，快来一起堆雪人呀~。",
+		model = "12180",
+		image_id = 1312180,
+		bag_item_type = 94
+	},
+	[148003012] = {
+		id = 148003012,
+		name = "【圣诞绮礼】",
+		user_manual = "圣诞节限定皮肤",
+		equip_quality = 5,
+		mode_id = "SDPF148003012",
+		intro = "圣诞快乐，祝福和礼物我都有精心准备哦~。",
+		model = "13180",
+		image_id = 1313180,
+		bag_item_type = 94
+	},
+	[148003013] = {
+		id = 148003013,
+		name = "【圣夜驯卫】",
+		user_manual = "圣诞节限定皮肤",
+		equip_quality = 5,
+		mode_id = "SDPF148003013",
+		intro = "咦，圣诞了？要不要开个派对呢。",
+		model = "15580",
+		image_id = 1315580,
+		bag_item_type = 94
+	},
+	[148003014] = {
+		id = 148003014,
+		name = "【圣诞共饮】",
+		user_manual = "圣诞节限定皮肤",
+		equip_quality = 5,
+		mode_id = "SDPF148003014",
+		intro = "为了来年的平安，就让我们共饮吧~。",
+		model = "13880",
+		image_id = 1313880,
+		bag_item_type = 94
+	},
+	[148003015] = {
+		id = 148003015,
+		name = "【星夜雪橇】",
+		user_manual = "圣诞节限定皮肤",
+		equip_quality = 5,
+		mode_id = "SDPF148003015",
+		intro = "来吧，你可以和我一起在这月色下共乘遨游。",
+		model = "12780",
+		image_id = 1312780,
+		bag_item_type = 94
+	},
+	[148003016] = {
+		id = 148003016,
+		name = "【指尖圣夜】",
+		user_manual = "圣诞节限定皮肤",
+		equip_quality = 5,
+		mode_id = "SDPF148003016",
+		intro = "Merry Christmas~嗯，装扮完成，贺卡也写好了，可以开始庆祝派对了。",
+		model = "13481",
+		image_id = 1313481,
+		bag_item_type = 94
+	},
+	[148003017] = {
+		id = 148003017,
+		name = "【平安祈铃】",
+		user_manual = "圣诞节限定皮肤",
+		equip_quality = 5,
+		mode_id = "SDPF148003017",
+		intro = "叮叮当，叮叮当，想要和妾身一起去为平安祈愿吗？",
+		model = "12680",
+		image_id = 1312680,
+		bag_item_type = 94
+	},
+	[148003018] = {
+		id = 148003018,
+		name = "【冬夜星礼】",
+		user_manual = "圣诞节限定皮肤",
+		equip_quality = 5,
+		mode_id = "SDPF148003018",
+		intro = "按照传统，我该从壁炉进来给你送礼物呢，飞檐走壁，小事一桩。",
+		model = "12080",
+		image_id = 1312080,
+		bag_item_type = 94
+	},
+	[148003019] = {
+		id = 148003019,
+		name = "【圣夜萌鹿】",
+		user_manual = "圣诞节限定皮肤",
+		equip_quality = 5,
+		mode_id = "SDPF148003019",
+		intro = "呼，是圣诞老公公来送礼物了吗……。",
+		model = "13780",
+		image_id = 1313780,
+		bag_item_type = 94
+	},
+	[148003020] = {
+		id = 148003020,
+		name = "【雪夜祈愿】",
+		user_manual = "圣诞节限定皮肤",
+		equip_quality = 5,
+		mode_id = "SDPF148003020",
+		intro = "嘘，愿望，说出来就不灵验了。",
+		model = "12380",
+		image_id = 1312380,
+		bag_item_type = 94
+	},
+	[148003021] = {
+		id = 148003021,
+		name = "【雪夜惊喜】",
+		user_manual = "圣诞节限定皮肤",
+		equip_quality = 5,
+		mode_id = "SDPF148003021",
+		intro = "既然是该高兴的节日，嘛，我也大方地给你准备了一点礼物。",
+		model = "12980",
+		image_id = 1312980,
+		bag_item_type = 94
+	},
+	[148003022] = {
+		id = 148003022,
+		name = "【圣诞绮礼·苍】",
+		user_manual = "索菲亚圣诞节皮肤异格款",
+		equip_quality = 5,
+		mode_id = "SDPF148003022",
+		intro = "想要天边的星星？不行不行，圣诞老人送礼物可不接受预定喔～。",
+		model = "13181",
+		image_id = 1313181,
+		bag_item_type = 94
+	},
+	[148003023] = {
+		id = 148003023,
+		name = "【槲铃派对】",
+		user_manual = "圣诞节限定皮肤",
+		equip_quality = 5,
+		mode_id = "SDPF148003023",
+		intro = "咦，圣诞了？要不要开个派对呢。",
+		model = "13480",
+		image_id = 1313480,
+		bag_item_type = 94
+	},
+	[148003007] = {
+		id = 148003007,
+		name = "银铃欢响礼包",
+		equip_quality = 5,
+		image_id = 148003007,
+		bag_item_type = 95,
+		mode_id = "SDZGLB01"
+	},
+	[148003008] = {
+		id = 148003008,
+		name = "槲寄生下礼包",
+		equip_quality = 5,
+		image_id = 148003008,
+		bag_item_type = 95,
+		mode_id = "SDZGLB02"
+	},
+	[148003009] = {
+		id = 148003009,
+		name = "雪夜麋鹿礼包",
+		equip_quality = 5,
+		image_id = 148003009,
+		bag_item_type = 95,
+		mode_id = "SDZGLB03"
+	},
+	[148003010] = {
+		id = 148003010,
+		name = "圣诞祝福礼包",
+		equip_quality = 5,
+		image_id = 148003010,
+		bag_item_type = 95,
+		mode_id = "SDZGLB04"
+	},
+	[148003099] = {
+		id = 148003099,
+		name = "双皮肤礼包",
+		equip_quality = 5,
+		image_id = 148003099,
+		bag_item_type = 95,
+		mode_id = "SDPFLB01"
+	},
+	[148003030] = {
+		id = 148003030,
+		name = "疯帽匠",
+		equip_quality = 6,
+		intro = "疯帽匠。",
+		image_id = 148003030,
+		user_manual = "可以获得五星的双S资质疯帽匠一个哦~",
+		bag_item_type = 68,
+		mode_id = "SD2020HQDB01"
+	},
+	[148003031] = {
+		id = 148003031,
+		name = "苹果公主",
+		equip_quality = 6,
+		intro = "苹果公主。",
+		image_id = 148003031,
+		user_manual = "可以获得五星的双S资质苹果公主一个哦~",
+		bag_item_type = 68,
+		mode_id = "SD2020HQDB02"
+	},
+	[148003032] = {
+		id = 148003032,
+		name = "潘多拉",
+		equip_quality = 6,
+		intro = "潘多拉。",
+		image_id = 148003032,
+		user_manual = "可以获得五星的双S资质潘多拉一个哦~",
+		bag_item_type = 68,
+		mode_id = "SD2020HQDB03"
+	},
+	[148003033] = {
+		id = 148003033,
+		name = "神灯",
+		equip_quality = 6,
+		intro = "神灯。",
+		image_id = 148003033,
+		user_manual = "可以获得五星的双S资质神灯一个哦~",
+		bag_item_type = 68,
+		mode_id = "SD2020HQDB04"
+	}
+}

@@ -1,0 +1,343 @@
+return {
+	["588mp-1"] = {
+		drop2 = "YYMXPT033",
+		proceed_id = "588mp-1",
+		drop1 = "YYMXPT001",
+		num3 = 600,
+		id = "588mp-1",
+		num1 = 900,
+		drop3 = "YYMXPT065",
+		num2 = 500
+	},
+	["588mp-2"] = {
+		drop2 = "YYMXPT034",
+		need1 = "1",
+		drop1 = "YYMXPT002",
+		proceed_id = "588mp-2",
+		id = "588mp-2",
+		num1 = 900,
+		need2 = "2,3",
+		num2 = 600
+	},
+	["588mp-3"] = {
+		need2 = "2",
+		need1 = "1",
+		proceed_id = "588mp-3",
+		drop2 = "YYMXPT035",
+		num3 = 300,
+		need3 = "2",
+		drop3 = "YYMXPT067",
+		num2 = 900,
+		drop1 = "YYMXPT003",
+		id = "588mp-3",
+		num1 = 200
+	},
+	["588mp-4"] = {
+		proceed_id = "588mp-4",
+		need1 = "1,2,3",
+		drop1 = "YYMXPT004",
+		id = "588mp-4",
+		num1 = 500
+	},
+	["588mp-5"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "588mp-5",
+		drop2 = "YYMXPT037",
+		num3 = 600,
+		need3 = "1",
+		drop3 = "YYMXPT069",
+		num2 = 600,
+		drop1 = "YYMXPT005",
+		id = "588mp-5",
+		num1 = 900
+	},
+	["588mp-6"] = {
+		drop2 = "YYMXPT038",
+		need1 = "1,2",
+		drop1 = "YYMXPT006",
+		proceed_id = "588mp-6",
+		id = "588mp-6",
+		num1 = 900,
+		need2 = "3",
+		num2 = 500
+	},
+	["588mp-7"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "588mp-7",
+		drop2 = "YYMXPT039",
+		num3 = 200,
+		need3 = "2",
+		drop3 = "YYMXPT071",
+		num2 = 600,
+		drop1 = "YYMXPT007",
+		id = "588mp-7",
+		num1 = 400
+	},
+	["588mp-8"] = {
+		proceed_id = "588mp-8",
+		need1 = "1,2,3",
+		drop1 = "YYMXPT008",
+		id = "588mp-8",
+		num1 = 1000
+	},
+	["588mp-9"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "588mp-9",
+		drop2 = "YYMXPT041",
+		num3 = 600,
+		need3 = "1",
+		drop3 = "YYMXPT073",
+		num2 = 400,
+		drop1 = "YYMXPT009",
+		id = "588mp-9",
+		num1 = 900
+	},
+	["588mp-10"] = {
+		drop2 = "YYMXPT042",
+		need1 = "1",
+		drop1 = "YYMXPT010",
+		proceed_id = "588mp-10",
+		id = "588mp-10",
+		num1 = 900,
+		need2 = "2,3",
+		num2 = 600
+	},
+	["588mp-11"] = {
+		need2 = "2",
+		need1 = "1",
+		proceed_id = "588mp-11",
+		drop2 = "YYMXPT043",
+		num3 = 600,
+		need3 = "2",
+		drop3 = "YYMXPT075",
+		num2 = 300,
+		drop1 = "YYMXPT011",
+		id = "588mp-11",
+		num1 = 500
+	},
+	["588mp-12"] = {
+		proceed_id = "588mp-12",
+		need1 = "1,2,3",
+		drop1 = "YYMXPT012",
+		id = "588mp-12",
+		num1 = 900
+	},
+	["588mp-13"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "588mp-13",
+		drop2 = "YYMXPT045",
+		num3 = 500,
+		need3 = "1",
+		drop3 = "YYMXPT077",
+		num2 = 900,
+		drop1 = "YYMXPT013",
+		id = "588mp-13",
+		num1 = 200
+	},
+	["588mp-14"] = {
+		drop2 = "YYMXPT046",
+		need1 = "1",
+		drop1 = "YYMXPT014",
+		proceed_id = "588mp-14",
+		id = "588mp-14",
+		num1 = 400,
+		need2 = "2,3",
+		num2 = 600
+	},
+	["588mp-15"] = {
+		need2 = "2",
+		need1 = "1",
+		proceed_id = "588mp-15",
+		drop2 = "YYMXPT047",
+		num3 = 600,
+		need3 = "2",
+		drop3 = "YYMXPT079",
+		num2 = 500,
+		drop1 = "YYMXPT015",
+		id = "588mp-15",
+		num1 = 900
+	},
+	["588mp-16"] = {
+		proceed_id = "588mp-16",
+		need1 = "1,2,3",
+		drop1 = "YYMXPT016",
+		id = "588mp-16",
+		num1 = 2000
+	},
+	["588mp-17"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "588mp-17",
+		drop2 = "YYMXPT049",
+		num3 = 600,
+		need3 = "1",
+		drop3 = "YYMXPT081",
+		num2 = 300,
+		drop1 = "YYMXPT017",
+		id = "588mp-17",
+		num1 = 900
+	},
+	["588mp-18"] = {
+		drop2 = "YYMXPT050",
+		need1 = "1,2",
+		drop1 = "YYMXPT018",
+		proceed_id = "588mp-18",
+		id = "588mp-18",
+		num1 = 500,
+		need2 = "3",
+		num2 = 600
+	},
+	["588mp-19"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "588mp-19",
+		drop2 = "YYMXPT051",
+		num3 = 200,
+		need3 = "2",
+		drop3 = "YYMXPT083",
+		num2 = 400,
+		drop1 = "YYMXPT019",
+		id = "588mp-19",
+		num1 = 900
+	},
+	["588mp-20"] = {
+		proceed_id = "588mp-20",
+		need1 = "1,2,3",
+		drop1 = "YYMXPT020",
+		id = "588mp-20",
+		num1 = 400
+	},
+	["588mp-21"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "588mp-21",
+		drop2 = "YYMXPT053",
+		num3 = 600,
+		need3 = "1",
+		drop3 = "YYMXPT085",
+		num2 = 600,
+		drop1 = "YYMXPT021",
+		id = "588mp-21",
+		num1 = 900
+	},
+	["588mp-22"] = {
+		drop2 = "YYMXPT054",
+		need1 = "1",
+		drop1 = "YYMXPT022",
+		proceed_id = "588mp-22",
+		id = "588mp-22",
+		num1 = 300,
+		need2 = "2,3",
+		num2 = 900
+	},
+	["588mp-23"] = {
+		need2 = "2",
+		need1 = "1",
+		proceed_id = "588mp-23",
+		drop2 = "YYMXPT055",
+		num3 = 900,
+		need3 = "2",
+		drop3 = "YYMXPT087",
+		num2 = 500,
+		drop1 = "YYMXPT023",
+		id = "588mp-23",
+		num1 = 900
+	},
+	["588mp-24"] = {
+		proceed_id = "588mp-24",
+		need1 = "1,2,3",
+		drop1 = "YYMXPT024",
+		id = "588mp-24",
+		num1 = 5000
+	},
+	["588mp-25"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "588mp-25",
+		drop2 = "YYMXPT057",
+		num3 = 600,
+		need3 = "1",
+		drop3 = "YYMXPT089",
+		num2 = 600,
+		drop1 = "YYMXPT025",
+		id = "588mp-25",
+		num1 = 900
+	},
+	["588mp-26"] = {
+		drop2 = "YYMXPT058",
+		need1 = "1",
+		drop1 = "YYMXPT026",
+		proceed_id = "588mp-26",
+		id = "588mp-26",
+		num1 = 500,
+		need2 = "2,3",
+		num2 = 500
+	},
+	["588mp-27"] = {
+		need2 = "2",
+		need1 = "1",
+		proceed_id = "588mp-27",
+		drop2 = "YYMXPT059",
+		num3 = 300,
+		need3 = "2",
+		drop3 = "YYMXPT091",
+		num2 = 600,
+		drop1 = "YYMXPT027",
+		id = "588mp-27",
+		num1 = 900
+	},
+	["588mp-28"] = {
+		proceed_id = "588mp-28",
+		need1 = "1,2,3",
+		drop1 = "YYMXPT028",
+		id = "588mp-28",
+		num1 = 500
+	},
+	["588mp-29"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "588mp-29",
+		drop2 = "YYMXPT061",
+		num3 = 600,
+		need3 = "1",
+		drop3 = "YYMXPT093",
+		num2 = 200,
+		drop1 = "YYMXPT029",
+		id = "588mp-29",
+		num1 = 900
+	},
+	["588mp-30"] = {
+		drop2 = "YYMXPT062",
+		need1 = "1,2",
+		drop1 = "YYMXPT030",
+		proceed_id = "588mp-30",
+		id = "588mp-30",
+		num1 = 500,
+		need2 = "3",
+		num2 = 600
+	},
+	["588mp-31"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "588mp-31",
+		drop2 = "YYMXPT063",
+		num3 = 600,
+		need3 = "2",
+		drop3 = "YYMXPT095",
+		num2 = 500,
+		drop1 = "YYMXPT031",
+		id = "588mp-31",
+		num1 = 900
+	},
+	["588mp-32"] = {
+		proceed_id = "588mp-32",
+		need1 = "1,2,3",
+		drop1 = "YYMXPT032",
+		id = "588mp-32",
+		num1 = 500
+	}
+}

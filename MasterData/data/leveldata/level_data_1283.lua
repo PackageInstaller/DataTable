@@ -1,0 +1,72 @@
+return {
+	["1283-1-1"] = {
+		s_attribute3 = "回血",
+		sceneConfigure2 = "fightbg16_2",
+		sceneConfigure1 = "fightbg16_1",
+		s_model2 = 21204,
+		s_attribute2 = "移速",
+		s_model3 = 21104,
+		enemycount = 0,
+		id = "1283-1-1",
+		s_model1 = 20604,
+		boss_team = "12830000000",
+		s_attribute1 = "血百",
+		sceneConfigure3 = "fightbg16_3"
+	},
+	["1283-2-1"] = {
+		s_attribute3 = "回血",
+		sceneConfigure2 = "fightbg16_2",
+		sceneConfigure1 = "fightbg16_1",
+		s_model2 = 21204,
+		s_attribute2 = "移速",
+		s_model3 = 21104,
+		enemycount = 0,
+		id = "1283-2-1",
+		s_model1 = 20604,
+		boss_team = "12831000000",
+		s_attribute1 = "血百",
+		sceneConfigure3 = "fightbg16_3"
+	},
+	["1283-3-1"] = {
+		s_attribute3 = "回血",
+		sceneConfigure2 = "fightbg16_2",
+		sceneConfigure1 = "fightbg16_1",
+		s_model2 = 21204,
+		s_attribute2 = "移速",
+		s_model3 = 21104,
+		enemycount = 0,
+		id = "1283-3-1",
+		s_model1 = 20604,
+		boss_team = "12832000000",
+		s_attribute1 = "血百",
+		sceneConfigure3 = "fightbg16_3"
+	},
+	["1283-4-1"] = {
+		s_attribute3 = "回血",
+		sceneConfigure2 = "fightbg16_2",
+		sceneConfigure1 = "fightbg16_1",
+		s_model2 = 21204,
+		s_attribute2 = "移速",
+		s_model3 = 21104,
+		enemycount = 0,
+		id = "1283-4-1",
+		s_model1 = 20604,
+		boss_team = "12833000000",
+		s_attribute1 = "血百",
+		sceneConfigure3 = "fightbg16_3"
+	},
+	["1283-5-1"] = {
+		s_attribute3 = "回血",
+		sceneConfigure2 = "fightbg16_2",
+		sceneConfigure1 = "fightbg16_1",
+		s_model2 = 21204,
+		s_attribute2 = "移速",
+		s_model3 = 21104,
+		enemycount = 0,
+		id = "1283-5-1",
+		s_model1 = 20604,
+		boss_team = "12834000000",
+		s_attribute1 = "血百",
+		sceneConfigure3 = "fightbg16_3"
+	}
+}

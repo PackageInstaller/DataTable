@@ -1,0 +1,30 @@
+return {
+	[6426840] = {
+		intro = "？？？？？？",
+		name = "【暮光追迹】",
+		id = 6426840,
+		skin_hide = 1,
+		targetdes1 = "角色超频获得",
+		item_market_name = "【暮光追迹】",
+		equip_quality = 5,
+		group = 5,
+		servant = 26820,
+		label = "超频获得",
+		model = "26840",
+		bg = "bg1",
+		price_diamond = 688,
+		ele = 26840,
+		price = 68800,
+		favor = 200,
+		max_stack = 1,
+		major = 53,
+		user_manual = "换上新衣服，不仅可以变美还可以涨好感度哦~~",
+		targetlayer1 = "301",
+		needhexie = 1,
+		shop_image = 26840,
+		image_id = 1326840,
+		logo_str = "超频",
+		bag_item_type = 64,
+		price_honor = 3440
+	}
+}

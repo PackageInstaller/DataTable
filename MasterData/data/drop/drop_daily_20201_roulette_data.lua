@@ -1,0 +1,122 @@
+return {
+	["S20201-1"] = {
+		drop_num1 = 1,
+		dropmodel_id1 = "ZY0001",
+		dropmodel_rate1 = 1,
+		dropmodel_num1 = 1,
+		id = "S20201-1",
+		drop_id1 = 2100005,
+		drop_rate1 = 1
+	},
+	["S20201-2"] = {
+		drop_num1 = 1,
+		dropmodel_id1 = "ZY0002",
+		dropmodel_rate1 = 1,
+		dropmodel_num1 = 1,
+		id = "S20201-2",
+		drop_id1 = 1000205,
+		drop_rate1 = 1
+	},
+	["S20201-3"] = {
+		drop_num1 = 1,
+		dropmodel_id1 = "ZY0003",
+		dropmodel_rate1 = 1,
+		dropmodel_num1 = 1,
+		id = "S20201-3",
+		drop_id1 = 3050011,
+		drop_rate1 = 1
+	},
+	["S20201-4"] = {
+		drop_num1 = 1,
+		dropmodel_id1 = "ZY0004",
+		dropmodel_rate1 = 1,
+		dropmodel_num1 = 1,
+		id = "S20201-4",
+		drop_id1 = 1000102,
+		drop_rate1 = 1
+	},
+	["S20201-5"] = {
+		drop_num1 = 1,
+		dropmodel_id1 = "ZY0005",
+		dropmodel_rate1 = 1,
+		dropmodel_num1 = 1,
+		id = "S20201-5",
+		drop_id1 = 2300001,
+		drop_rate1 = 1
+	},
+	ZY0001 = {
+		rd_drop_id3 = 20200015,
+		rd_drop_id2 = 20200013,
+		rd_drop_num3 = 1,
+		rd_drop_weight3 = 200,
+		rd_drop_id4 = 20200017,
+		rd_drop_num4 = 1,
+		rd_drop_weight4 = 200,
+		rd_drop_num2 = 1,
+		rd_drop_weight2 = 300,
+		rd_drop_id1 = 20200011,
+		id = "ZY0001",
+		rd_drop_num1 = 1,
+		rd_drop_weight1 = 400
+	},
+	ZY0002 = {
+		rd_drop_id3 = 20200010,
+		rd_drop_id2 = 20200019,
+		rd_drop_num3 = 1,
+		rd_drop_weight3 = 200,
+		rd_drop_id4 = 20200012,
+		rd_drop_num4 = 1,
+		rd_drop_weight4 = 200,
+		rd_drop_num2 = 1,
+		rd_drop_weight2 = 300,
+		rd_drop_id1 = 20200018,
+		id = "ZY0002",
+		rd_drop_num1 = 1,
+		rd_drop_weight1 = 400
+	},
+	ZY0003 = {
+		rd_drop_id3 = 20200001,
+		rd_drop_id2 = 20200016,
+		rd_drop_num3 = 1,
+		rd_drop_weight3 = 200,
+		rd_drop_id4 = 20200003,
+		rd_drop_num4 = 1,
+		rd_drop_weight4 = 200,
+		rd_drop_num2 = 1,
+		rd_drop_weight2 = 300,
+		rd_drop_id1 = 20200014,
+		id = "ZY0003",
+		rd_drop_num1 = 1,
+		rd_drop_weight1 = 400
+	},
+	ZY0004 = {
+		rd_drop_id3 = 20200020,
+		rd_drop_id2 = 20200009,
+		rd_drop_num3 = 1,
+		rd_drop_weight3 = 200,
+		rd_drop_id4 = 20200021,
+		rd_drop_num4 = 1,
+		rd_drop_weight4 = 200,
+		rd_drop_num2 = 1,
+		rd_drop_weight2 = 300,
+		rd_drop_id1 = 20200007,
+		id = "ZY0004",
+		rd_drop_num1 = 1,
+		rd_drop_weight1 = 400
+	},
+	ZY0005 = {
+		rd_drop_id3 = 20200002,
+		rd_drop_id2 = 20200008,
+		rd_drop_num3 = 1,
+		rd_drop_weight3 = 200,
+		rd_drop_id4 = 20200003,
+		rd_drop_num4 = 1,
+		rd_drop_weight4 = 200,
+		rd_drop_num2 = 1,
+		rd_drop_weight2 = 300,
+		rd_drop_id1 = 20200006,
+		id = "ZY0005",
+		rd_drop_num1 = 1,
+		rd_drop_weight1 = 400
+	}
+}

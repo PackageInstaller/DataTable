@@ -1,0 +1,271 @@
+return {
+	[20200001] = {
+		id = 20200001,
+		name = "中",
+		activity_id = 202,
+		max_stack = 9999,
+		user_manual = "收集它，可以用来兑换活动奖励",
+		equip_quality = 5,
+		intro = "2021年派森地区出现的神秘火焰，听说只会在某种节日会出现。",
+		image_id = 20200001,
+		bag_item_type = 211
+	},
+	[20200002] = {
+		id = 20200002,
+		name = "元",
+		activity_id = 202,
+		max_stack = 9999,
+		user_manual = "收集它，可以用来兑换活动奖励",
+		equip_quality = 5,
+		intro = "2021年派森地区出现的神秘火焰，听说只会在某种节日会出现。",
+		image_id = 20200002,
+		bag_item_type = 211
+	},
+	[20200003] = {
+		id = 20200003,
+		name = "节",
+		activity_id = 202,
+		max_stack = 9999,
+		user_manual = "收集它，可以用来兑换活动奖励",
+		equip_quality = 5,
+		intro = "2021年派森地区出现的神秘火焰，听说只会在某种节日会出现。",
+		image_id = 20200003,
+		bag_item_type = 211
+	},
+	[20200004] = {
+		id = 20200004,
+		name = "魂",
+		activity_id = 202,
+		max_stack = 9999,
+		user_manual = "收集它，可以用来兑换活动奖励",
+		equip_quality = 5,
+		intro = "2021年派森地区出现的神秘火焰，听说只会在某种节日会出现。",
+		image_id = 20200004,
+		bag_item_type = 211
+	},
+	[20200005] = {
+		id = 20200005,
+		name = "火",
+		activity_id = 202,
+		max_stack = 9999,
+		user_manual = "收集它，可以用来兑换活动奖励",
+		equip_quality = 5,
+		intro = "2021年派森地区出现的神秘火焰，听说只会在某种节日会出现。",
+		image_id = 20200005,
+		bag_item_type = 211
+	},
+	[20200006] = {
+		id = 20200006,
+		name = "神",
+		activity_id = 202,
+		max_stack = 9999,
+		user_manual = "收集它，可以用来兑换活动奖励",
+		equip_quality = 5,
+		intro = "2021年派森地区出现的神秘火焰，听说只会在某种节日会出现。",
+		image_id = 20200006,
+		bag_item_type = 211
+	},
+	[20200007] = {
+		id = 20200007,
+		name = "出",
+		activity_id = 202,
+		max_stack = 9999,
+		user_manual = "收集它，可以用来兑换活动奖励",
+		equip_quality = 5,
+		intro = "2021年派森地区出现的神秘火焰，听说只会在某种节日会出现。",
+		image_id = 20200007,
+		bag_item_type = 211
+	},
+	[20200008] = {
+		id = 20200008,
+		name = "鬼",
+		activity_id = 202,
+		max_stack = 9999,
+		user_manual = "收集它，可以用来兑换活动奖励",
+		equip_quality = 5,
+		intro = "2021年派森地区出现的神秘火焰，听说只会在某种节日会出现。",
+		image_id = 20200008,
+		bag_item_type = 211
+	},
+	[20200009] = {
+		id = 20200009,
+		name = "没",
+		activity_id = 202,
+		max_stack = 9999,
+		user_manual = "收集它，可以用来兑换活动奖励",
+		equip_quality = 5,
+		intro = "2021年派森地区出现的神秘火焰，听说只会在某种节日会出现。",
+		image_id = 20200009,
+		bag_item_type = 211
+	},
+	[20200010] = {
+		id = 20200010,
+		name = "青",
+		activity_id = 202,
+		max_stack = 9999,
+		user_manual = "收集它，可以用来兑换活动奖励",
+		equip_quality = 5,
+		intro = "2021年派森地区出现的神秘火焰，听说只会在某种节日会出现。",
+		image_id = 20200010,
+		bag_item_type = 211
+	},
+	[20200011] = {
+		id = 20200011,
+		name = "面",
+		activity_id = 202,
+		max_stack = 9999,
+		user_manual = "收集它，可以用来兑换活动奖励",
+		equip_quality = 5,
+		intro = "2021年派森地区出现的神秘火焰，听说只会在某种节日会出现。",
+		image_id = 20200011,
+		bag_item_type = 211
+	},
+	[20200012] = {
+		id = 20200012,
+		name = "獠",
+		activity_id = 202,
+		max_stack = 9999,
+		user_manual = "收集它，可以用来兑换活动奖励",
+		equip_quality = 5,
+		intro = "2021年派森地区出现的神秘火焰，听说只会在某种节日会出现。",
+		image_id = 20200012,
+		bag_item_type = 211
+	},
+	[20200013] = {
+		id = 20200013,
+		name = "牙",
+		activity_id = 202,
+		max_stack = 9999,
+		user_manual = "收集它，可以用来兑换活动奖励",
+		equip_quality = 5,
+		intro = "2021年派森地区出现的神秘火焰，听说只会在某种节日会出现。",
+		image_id = 20200013,
+		bag_item_type = 211
+	},
+	[20200014] = {
+		id = 20200014,
+		name = "吞",
+		activity_id = 202,
+		max_stack = 9999,
+		user_manual = "收集它，可以用来兑换活动奖励",
+		equip_quality = 5,
+		intro = "2021年派森地区出现的神秘火焰，听说只会在某种节日会出现。",
+		image_id = 20200014,
+		bag_item_type = 211
+	},
+	[20200015] = {
+		id = 20200015,
+		name = "云",
+		activity_id = 202,
+		max_stack = 9999,
+		user_manual = "收集它，可以用来兑换活动奖励",
+		equip_quality = 5,
+		intro = "2021年派森地区出现的神秘火焰，听说只会在某种节日会出现。",
+		image_id = 20200015,
+		bag_item_type = 211
+	},
+	[20200016] = {
+		id = 20200016,
+		name = "吐",
+		activity_id = 202,
+		max_stack = 9999,
+		user_manual = "收集它，可以用来兑换活动奖励",
+		equip_quality = 5,
+		intro = "2021年派森地区出现的神秘火焰，听说只会在某种节日会出现。",
+		image_id = 20200016,
+		bag_item_type = 211
+	},
+	[20200017] = {
+		id = 20200017,
+		name = "雾",
+		activity_id = 202,
+		max_stack = 9999,
+		user_manual = "收集它，可以用来兑换活动奖励",
+		equip_quality = 5,
+		intro = "2021年派森地区出现的神秘火焰，听说只会在某种节日会出现。",
+		image_id = 20200017,
+		bag_item_type = 211
+	},
+	[20200018] = {
+		id = 20200018,
+		name = "河",
+		activity_id = 202,
+		max_stack = 9999,
+		user_manual = "收集它，可以用来兑换活动奖励",
+		equip_quality = 5,
+		intro = "2021年派森地区出现的神秘火焰，听说只会在某种节日会出现。",
+		image_id = 20200018,
+		bag_item_type = 211
+	},
+	[20200019] = {
+		id = 20200019,
+		name = "灯",
+		activity_id = 202,
+		max_stack = 9999,
+		user_manual = "收集它，可以用来兑换活动奖励",
+		equip_quality = 5,
+		intro = "2021年派森地区出现的神秘火焰，听说只会在某种节日会出现。",
+		image_id = 20200019,
+		bag_item_type = 211
+	},
+	[20200020] = {
+		id = 20200020,
+		name = "度",
+		activity_id = 202,
+		max_stack = 9999,
+		user_manual = "收集它，可以用来兑换活动奖励",
+		equip_quality = 5,
+		intro = "2021年派森地区出现的神秘火焰，听说只会在某种节日会出现。",
+		image_id = 20200020,
+		bag_item_type = 211
+	},
+	[20200021] = {
+		id = 20200021,
+		name = "孤",
+		activity_id = 202,
+		max_stack = 9999,
+		user_manual = "收集它，可以用来兑换活动奖励",
+		equip_quality = 5,
+		intro = "2021年派森地区出现的神秘火焰，听说只会在某种节日会出现。",
+		image_id = 20200021,
+		bag_item_type = 211
+	},
+	[20200022] = {
+		id = 20200022,
+		name = "蓝色魂火",
+		max_stack = 9999,
+		user_manual = "随机获得蓝色品质的火焰",
+		equip_quality = 5,
+		mode_id = "21sjhutf01",
+		intro = "2021年派森地区出现的神秘火焰，听说只会在某种节日会出现。",
+		image_id = 20200022,
+		bag_item_type = 95
+	},
+	[202001001] = {
+		id = 202001001,
+		name = "中元特惠礼包",
+		equip_quality = 5,
+		max_stack = 99999,
+		image_id = 202001001,
+		bag_item_type = 95,
+		mode_id = "21zyjlb01"
+	},
+	[202001002] = {
+		id = 202001002,
+		name = "中元礼品礼包",
+		equip_quality = 5,
+		max_stack = 99999,
+		image_id = 202001002,
+		bag_item_type = 95,
+		mode_id = "21zyjlb02"
+	},
+	[202001003] = {
+		id = 202001003,
+		name = "中元典藏礼包",
+		equip_quality = 5,
+		max_stack = 99999,
+		image_id = 202001003,
+		bag_item_type = 95,
+		mode_id = "21zyjlb03"
+	}
+}

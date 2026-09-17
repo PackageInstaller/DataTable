@@ -1,0 +1,42 @@
+return {
+	[12089201] = {
+		exe_type = 0,
+		status_judge_type1 = "0",
+		buff_image = "2089400",
+		buff_or_debuff = 0,
+		cleanable = 1,
+		name = "灵力印记",
+		status_add2 = 9203020,
+		appendable = 1,
+		status_judge_type2 = "0",
+		status_add1 = 9127683,
+		status_prob1 = 1,
+		time = 3,
+		status_prob2 = 1,
+		add_type = 1,
+		id = 12089201,
+		status_target2 = 1,
+		status_target1 = 1,
+		detail = "急速等级降低一级，造成的伤害降低【20%】"
+	},
+	[12089202] = {
+		exe_type = 0,
+		status_judge_type1 = "0",
+		buff_image = "2089300",
+		buff_or_debuff = 0,
+		cleanable = 1,
+		name = "灵力空间",
+		status_add2 = 20892017,
+		appendable = 1,
+		status_judge_type2 = "0",
+		status_add1 = 9599001,
+		status_prob1 = 1,
+		time = 1.5,
+		status_prob2 = 1,
+		add_type = 1,
+		id = 12089202,
+		status_target2 = 1,
+		status_target1 = 1,
+		detail = "禁止复活，造成的能量伤害降低【80%】"
+	}
+}

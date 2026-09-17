@@ -1,0 +1,51 @@
+return {
+	[155] = {
+		finishtime = "2020-10-26 23:59:59",
+		is_horcrux_show_in_dropdetails = 1,
+		twist_confirm_des = "魂器招生",
+		currency = 6800101,
+		onecost = 1,
+		stat = 2,
+		pos = 4,
+		tencost = 10,
+		img = 155,
+		id = 155,
+		dropid = "TWZNQHQ001",
+		supply_cost = 100,
+		starttime = "2020-09-26 00:00:00"
+	},
+	[156] = {
+		finishtime = "2020-10-26 23:59:59",
+		is_limit_twist_pool = 1,
+		is_horcrux_show_in_dropdetails = 1,
+		currency = 6800601,
+		onecost = 1,
+		stat = 2,
+		pos = 4,
+		tencost = 10,
+		img = 156,
+		id = 156,
+		dropid = "TWJSHQ001",
+		starttime = "2020-09-26 00:00:00"
+	},
+	[158] = {
+		antiburst_for_ten = "TWA158100",
+		onecost = 1,
+		guarantee_for_mr = "TW01SSR006",
+		itemup = 65,
+		stat = 2,
+		pos = 3,
+		tencost = 10,
+		img = 2219101,
+		antiburst_num = 3,
+		dropid = "TWA158001",
+		supply_cost = 100,
+		into_shop = 11023,
+		currency = 6800101,
+		head_for_ten = "9200000",
+		guarantee_for_ten = "TWA158099",
+		id = 158,
+		finishtime = "2020-10-26 23:59:59",
+		starttime = "2020-10-11 00:00:00"
+	}
+}

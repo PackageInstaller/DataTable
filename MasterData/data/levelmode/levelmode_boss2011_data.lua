@@ -1,0 +1,62 @@
+return {
+	[20111] = {
+		description = "Boss试炼大挑战！",
+		name = "蛮荒巨鳄",
+		modetype = 2011,
+		modescore = 2,
+		show_item1 = 20801001,
+		image = "plot_bg109",
+		is_repeat_no_reward = 1,
+		mode = 20111,
+		show_boss = "600520",
+		totalchapter = 3,
+		levelperchapter = 1,
+		show_item2 = 13802001,
+		order = 1
+	},
+	[20112] = {
+		description = "Boss试炼大挑战！",
+		name = "暗灭巨象",
+		modetype = 2011,
+		modescore = 2,
+		show_item1 = 20801001,
+		image = "plot_bg110",
+		is_repeat_no_reward = 1,
+		mode = 20112,
+		show_boss = "600510",
+		totalchapter = 3,
+		levelperchapter = 1,
+		show_item2 = 13802001,
+		order = 2
+	},
+	[20113] = {
+		description = "Boss试炼大挑战！",
+		name = "魔法巨狮",
+		modetype = 2011,
+		modescore = 2,
+		show_item1 = 20801001,
+		image = "plot_bg111",
+		is_repeat_no_reward = 1,
+		mode = 20113,
+		show_boss = "600500",
+		totalchapter = 3,
+		levelperchapter = 1,
+		show_item2 = 13802001,
+		order = 3
+	},
+	[20114] = {
+		description = "Boss试炼大挑战！",
+		name = "飞翔巨鹰",
+		modetype = 2011,
+		modescore = 2,
+		show_item1 = 20801001,
+		image = "plot_bg112",
+		is_repeat_no_reward = 1,
+		mode = 20114,
+		show_boss = "600560",
+		totalchapter = 3,
+		levelperchapter = 1,
+		show_item2 = 13802001,
+		order = 4
+	}
+}

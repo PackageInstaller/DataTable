@@ -1,0 +1,33 @@
+return {
+	[28820] = {
+		weight5 = 2000,
+		class8 = 5720014,
+		weight2 = 1000,
+		weight13 = 0,
+		class3 = 5720009,
+		weight10 = 2000,
+		class7 = 5720013,
+		class1 = 5720007,
+		weight9 = 2000,
+		class4 = 5720010,
+		class12 = 5720018,
+		class13 = 5720019,
+		weight3 = 1000,
+		class2 = 5720008,
+		class_move_in = 5720005,
+		weight11 = 0,
+		class_move_out = 5720006,
+		weight6 = 2000,
+		class11 = 5720017,
+		class6 = 5720012,
+		weight4 = 1000,
+		class9 = 5720015,
+		weight1 = 1000,
+		weight12 = 0,
+		weight7 = 2000,
+		id = 28820,
+		class10 = 5720016,
+		weight8 = 2000,
+		class5 = 5720022
+	}
+}

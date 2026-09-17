@@ -1,0 +1,80 @@
+return {
+	[1509401020] = {
+		sale_price_diamond = 440,
+		name = "【因果】",
+		id = 1509401020,
+		max_stack = 999,
+		price_diamond = 880,
+		sale_price = 26400,
+		equip_quality = 6,
+		mode_id = "PF1509401020",
+		price = 88000,
+		intro = "【熹微晨光】因果皮肤X1 因果头像X1。",
+		model = "101020",
+		image_id = 1509401020,
+		bag_item_type = 94,
+		price_honor = 4400
+	},
+	[1509401030] = {
+		sale_price_diamond = 440,
+		name = "【因果】",
+		id = 1509401030,
+		max_stack = 999,
+		price_diamond = 880,
+		sale_price = 26400,
+		equip_quality = 6,
+		mode_id = "PF1509401030",
+		price = 88000,
+		intro = "【熹微晨光】因果皮肤X1 因果头像X1。",
+		model = "101030",
+		image_id = 1509401030,
+		bag_item_type = 94,
+		price_honor = 4400
+	},
+	[1509401060] = {
+		sale_price_diamond = 440,
+		name = "【因果】",
+		id = 1509401060,
+		max_stack = 999,
+		price_diamond = 880,
+		sale_price = 26400,
+		equip_quality = 6,
+		mode_id = "PF1509401060",
+		price = 88000,
+		intro = "【熹微晨光】因果皮肤X1 因果头像X1。",
+		model = "101060",
+		image_id = 1509401060,
+		bag_item_type = 94,
+		price_honor = 4400
+	},
+	[150180107] = {
+		id = 150180107,
+		name = "助力扭蛋",
+		equip_quality = 5,
+		max_stack = 999,
+		image_id = 150180107,
+		intro = "MRYGLLB05。",
+		bag_item_type = 95,
+		mode_id = "MRYGLLB05"
+	},
+	[150180108] = {
+		id = 150180108,
+		name = "大型扭蛋",
+		equip_quality = 5,
+		max_stack = 999,
+		image_id = 150180108,
+		intro = "MRYGLLB06。",
+		bag_item_type = 95,
+		mode_id = "MRYGLLB06"
+	},
+	[150180109] = {
+		id = 150180109,
+		name = "豪华扭蛋",
+		equip_quality = 5,
+		max_stack = 999,
+		image_id = 150180109,
+		intro = "MRYGLLB07。",
+		bag_item_type = 95,
+		mode_id = "MRYGLLB07"
+	}
+}

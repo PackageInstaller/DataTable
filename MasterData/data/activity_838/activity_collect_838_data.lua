@@ -1,0 +1,93 @@
+return {
+	["838-1-1"] = {
+		item3 = 83836023,
+		num3 = 1,
+		item2 = 83836022,
+		limit_count = 1,
+		num2 = 1,
+		drop = "ACTCOLLECT_838_1_1",
+		collect_type = 1,
+		id = "838-1-1",
+		num1 = 1,
+		item1 = 83836021
+	},
+	["838-1-2"] = {
+		item4 = 83836004,
+		item3 = 83836003,
+		num3 = 1,
+		num4 = 1,
+		item2 = 83836002,
+		limit_count = 1,
+		num2 = 1,
+		drop = "ACTCOLLECT_838_1_2",
+		collect_type = 1,
+		id = "838-1-2",
+		num1 = 1,
+		item1 = 83836001
+	},
+	["838-1-3"] = {
+		item4 = 83836008,
+		item3 = 83836007,
+		num3 = 1,
+		num4 = 1,
+		item2 = 83836006,
+		limit_count = 1,
+		num2 = 1,
+		drop = "ACTCOLLECT_838_1_3",
+		collect_type = 1,
+		id = "838-1-3",
+		num1 = 1,
+		item1 = 83836005
+	},
+	["838-1-4"] = {
+		item4 = 83836012,
+		item3 = 83836011,
+		num3 = 1,
+		num4 = 1,
+		item2 = 83836010,
+		limit_count = 1,
+		num2 = 1,
+		drop = "ACTCOLLECT_838_1_4",
+		collect_type = 1,
+		id = "838-1-4",
+		num1 = 1,
+		item1 = 83836009
+	},
+	["838-1-5"] = {
+		drop = "ACTCOLLECTRE_838_1",
+		needcount = 3,
+		collect_type = 2,
+		starttime = "2025-11-03 00:00:00",
+		id = "838-1-5",
+		needitemtype = 211,
+		desc = "随机"
+	},
+	["838-1-6"] = {
+		item4 = 83836016,
+		item3 = 83836015,
+		num3 = 1,
+		num4 = 1,
+		item2 = 83836014,
+		limit_count = 1,
+		num2 = 1,
+		drop = "ACTCOLLECT_838_1_5",
+		collect_type = 1,
+		id = "838-1-6",
+		num1 = 1,
+		item1 = 83836013
+	},
+	["838-1-7"] = {
+		item4 = 83836020,
+		item3 = 83836019,
+		num3 = 1,
+		num4 = 1,
+		item2 = 83836018,
+		limit_count = 1,
+		num2 = 1,
+		drop = "ACTCOLLECT_838_1_6",
+		collect_type = 1,
+		id = "838-1-7",
+		num1 = 1,
+		item1 = 83836017
+	}
+}

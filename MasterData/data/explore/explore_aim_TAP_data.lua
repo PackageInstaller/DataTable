@@ -1,0 +1,42 @@
+return {
+	[88828601] = {
+		enter_map_talk = 8286001,
+		name = "“头号玩家”",
+		is_hide_array = 1,
+		object_cad_id = 1360011,
+		aim_finish_dropid = "ACTTX_286_2",
+		out_map_talk = 8286003,
+		bgm = "explorebgm",
+		fight_girl1 = 81021007,
+		pos_unlock3 = 1,
+		bridges = "1-2,2-3",
+		preview_img = "country9",
+		aim1_param2 = 3,
+		pos_unlock2 = 1,
+		aim1_des = "清除游戏路上的阻碍",
+		pos_unlock4 = 1,
+		aim1_param1 = "82861001",
+		mapid = 88828601,
+		id = 88828601
+	},
+	[88840501] = {
+		enter_map_talk = 8405001,
+		name = "样品收集",
+		is_hide_array = 1,
+		object_cad_id = 1362011,
+		aim_finish_dropid = "ACTTX_405_2",
+		out_map_talk = 8405003,
+		bgm = "explorebgm",
+		fight_girl1 = 81021023,
+		pos_unlock3 = 1,
+		bridges = "1-11,11-21",
+		preview_img = "fightbg111",
+		aim1_param2 = 3,
+		pos_unlock2 = 1,
+		aim1_des = "收集样品",
+		pos_unlock4 = 1,
+		aim1_param1 = "84051001",
+		mapid = 88840501,
+		id = 88840501
+	}
+}

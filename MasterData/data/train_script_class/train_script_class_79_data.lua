@@ -1,0 +1,33 @@
+return {
+	[202020] = {
+		weight5 = 2000,
+		class8 = 5790014,
+		weight2 = 1000,
+		weight13 = 0,
+		class3 = 5790009,
+		weight10 = 2000,
+		class7 = 5790013,
+		class1 = 5790007,
+		weight9 = 2000,
+		class4 = 5790010,
+		class12 = 5790018,
+		class13 = 5790019,
+		weight3 = 1000,
+		class2 = 5790008,
+		class_move_in = 5790005,
+		weight11 = 0,
+		class_move_out = 5790006,
+		weight6 = 2000,
+		class11 = 5790017,
+		class6 = 5790012,
+		weight4 = 1000,
+		class9 = 5790015,
+		weight1 = 1000,
+		weight12 = 0,
+		weight7 = 2000,
+		id = 202020,
+		class10 = 5790016,
+		weight8 = 2000,
+		class5 = 5790022
+	}
+}

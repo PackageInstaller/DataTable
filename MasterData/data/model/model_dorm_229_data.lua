@@ -1,0 +1,30 @@
+return {
+	["116930"] = {
+		expression = "116930_zhengchang",
+		name = "伦茨",
+		cute_Q = 116930,
+		portrait_image = 116930,
+		levelresult_scale = 1,
+		fanu = "116930_fanu",
+		spine_model = "116930",
+		kaixin = "116930_kaixin",
+		haixiu = "116930_haixiu",
+		modelscale = 1,
+		photofile_model = 249,
+		rolespine = "116930_1",
+		backgroundid = 6300007,
+		English_name = "lunze",
+		talk_pos_offset = "0,0",
+		aichou = "116930_aichou",
+		main_name = "暖阳书语",
+		name_Q = "伦茨",
+		major = 31,
+		itemid = 64116930,
+		broken_role = "broken_116930",
+		role_image = "116930",
+		is_big_role_image = 1,
+		id = "116930",
+		cute_role = "116930",
+		head_image = "116930"
+	}
+}

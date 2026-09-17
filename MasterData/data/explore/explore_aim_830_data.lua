@@ -1,0 +1,33 @@
+return {
+	[88883001] = {
+		lock3_param2 = 1,
+		name = "学院的新来客",
+		lock3_param1 = "883001011",
+		lock3_bridge = "21-22",
+		aim_finish_dropid = "830explore01",
+		object_cad_id = 1780011,
+		act_aim_first_dropid = "830explorefirst",
+		bgm = "explorebgm",
+		lock1_des = "和霓昂对话",
+		follow_hole = "22-70-1.4",
+		fight_girl1 = 81021116,
+		lock1_bridge = "1-11",
+		lock1_param2 = 1,
+		bridges = "1-11,11-21,21-22",
+		preview_img = "fightbg11",
+		aim_finish_talk = 8830111,
+		aim1_param2 = 1,
+		lock1_param1 = "883001001",
+		aim1_param1 = "883001002",
+		lock2_des = "找到洛犬",
+		lock3_des = "找到洛犬",
+		is_hide_array = 1,
+		lock2_bridge = "11-21",
+		aim1_des = "找回所有洛犬吧",
+		lock2_param1 = "883001005",
+		lock2_param2 = 1,
+		enter_map_talk = 8830101,
+		mapid = 88883001,
+		id = 88883001
+	}
+}

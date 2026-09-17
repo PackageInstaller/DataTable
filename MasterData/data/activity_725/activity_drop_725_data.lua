@@ -1,0 +1,153 @@
+return {
+	ACTSING_725_1 = {
+		drop_id2 = 20309103,
+		drop_rate2 = 1,
+		drop_id1 = 20309102,
+		drop_id3 = 20300025,
+		drop_num3 = 1,
+		drop_rate3 = 1,
+		purpose = "签到第1天掉落",
+		drop_num2 = 1,
+		id = "ACTSING_725_1",
+		drop_num1 = 1,
+		drop_rate1 = 1
+	},
+	ACTSING_725_2 = {
+		drop_id2 = 20309101,
+		drop_rate2 = 1,
+		drop_id1 = 20309102,
+		drop_id3 = 20400010,
+		drop_num3 = 1,
+		drop_rate3 = 1,
+		purpose = "签到第2天掉落",
+		drop_num2 = 1,
+		id = "ACTSING_725_2",
+		drop_num1 = 1,
+		drop_rate1 = 1
+	},
+	ACTSING_725_3 = {
+		drop_id2 = 20309103,
+		drop_rate2 = 1,
+		drop_id1 = 20309102,
+		drop_id3 = 1000103,
+		drop_num3 = 3,
+		drop_rate3 = 1,
+		purpose = "签到第3天掉落",
+		drop_num2 = 1,
+		id = "ACTSING_725_3",
+		drop_num1 = 1,
+		drop_rate1 = 1
+	},
+	ACTSING_725_4 = {
+		drop_id2 = 20309101,
+		drop_rate2 = 1,
+		drop_id1 = 20309102,
+		drop_id3 = 1000206,
+		drop_num3 = 3,
+		drop_rate3 = 1,
+		purpose = "签到第4天掉落",
+		drop_num2 = 1,
+		id = "ACTSING_725_4",
+		drop_num1 = 1,
+		drop_rate1 = 1
+	},
+	ACTSING_725_5 = {
+		drop_id2 = 20309103,
+		drop_rate2 = 1,
+		drop_id1 = 20309102,
+		drop_id3 = 9999998,
+		drop_num3 = 1,
+		drop_rate3 = 1,
+		purpose = "签到第5天掉落",
+		drop_num2 = 1,
+		id = "ACTSING_725_5",
+		drop_num1 = 1,
+		drop_rate1 = 1
+	},
+	ACTSING_725_6 = {
+		drop_id2 = 20309101,
+		drop_rate2 = 1,
+		drop_id1 = 20309102,
+		drop_id3 = 20300025,
+		drop_num3 = 1,
+		drop_rate3 = 1,
+		purpose = "签到第6天掉落",
+		drop_num2 = 1,
+		id = "ACTSING_725_6",
+		drop_num1 = 1,
+		drop_rate1 = 1
+	},
+	ACTSING_725_7 = {
+		drop_id2 = 20309103,
+		drop_rate2 = 1,
+		drop_id1 = 20309102,
+		drop_id3 = 20400010,
+		drop_num3 = 1,
+		drop_rate3 = 1,
+		purpose = "签到第7天掉落",
+		drop_num2 = 1,
+		id = "ACTSING_725_7",
+		drop_num1 = 1,
+		drop_rate1 = 1
+	},
+	ACTSING_725_8 = {
+		drop_id2 = 20309101,
+		drop_rate2 = 1,
+		drop_id1 = 20309102,
+		drop_id3 = 1000103,
+		drop_num3 = 3,
+		drop_rate3 = 1,
+		purpose = "签到第8天掉落",
+		drop_num2 = 1,
+		id = "ACTSING_725_8",
+		drop_num1 = 1,
+		drop_rate1 = 1
+	},
+	ACTSING_725_9 = {
+		drop_id2 = 20309103,
+		drop_rate2 = 1,
+		drop_id1 = 20309102,
+		drop_id3 = 1000206,
+		drop_num3 = 3,
+		drop_rate3 = 1,
+		purpose = "签到第9天掉落",
+		drop_num2 = 1,
+		id = "ACTSING_725_9",
+		drop_num1 = 1,
+		drop_rate1 = 1
+	},
+	ACTSING_725_10 = {
+		drop_id2 = 20309101,
+		drop_rate2 = 1,
+		drop_id1 = 20309102,
+		drop_id3 = 9999998,
+		drop_num3 = 1,
+		drop_rate3 = 1,
+		purpose = "签到第10天掉落",
+		drop_num2 = 1,
+		id = "ACTSING_725_10",
+		drop_num1 = 1,
+		drop_rate1 = 1
+	},
+	buy24061801 = {
+		drop_id1 = 72505001,
+		purpose = "转盘币*1",
+		id = "buy24061801",
+		drop_num1 = 1,
+		drop_rate1 = 1
+	},
+	buy24061802 = {
+		drop_id1 = 72505001,
+		purpose = "转盘币*5",
+		id = "buy24061802",
+		drop_num1 = 5,
+		drop_rate1 = 1
+	},
+	buy24061803 = {
+		drop_id1 = 72505001,
+		purpose = "转盘币*10",
+		id = "buy24061803",
+		drop_num1 = 10,
+		drop_rate1 = 1
+	}
+}

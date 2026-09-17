@@ -1,0 +1,1 @@
+IS_SHOW_ACTIVITY_STORY = true

@@ -1,0 +1,272 @@
+return {
+	["1-1"] = {
+		starttime = "2021-04-28 00:00:00",
+		name = "【雨与少女】第一节",
+		talkid = 2141901,
+		dropid = "StableJQ1001",
+		id = "1-1",
+		finishtime = "2021-05-30 23:59:59",
+		desc = "阴影中走出的少女，自称——黑暗狩猎者",
+		showtype = 1
+	},
+	["1-2"] = {
+		taskid = 17320001,
+		name = "【雨与少女】第二节",
+		talkid = 2141902,
+		starttime = "2021-04-28 00:00:00",
+		finishtime = "2021-05-30 23:59:59",
+		desc = "猛兽与流浪猫",
+		id = "1-2",
+		dropid = "StableJQ1001",
+		showtype = 1
+	},
+	["1-3"] = {
+		taskid = 17320002,
+		name = "【雨与少女】第三节",
+		talkid = 2141903,
+		starttime = "2021-04-28 00:00:00",
+		finishtime = "2021-05-30 23:59:59",
+		desc = "军方的幽灵",
+		id = "1-3",
+		dropid = "StableJQ1001",
+		showtype = 1
+	},
+	["1-4"] = {
+		taskid = 17320003,
+		name = "【雨与少女】第四节",
+		talkid = 2141904,
+		starttime = "2021-04-28 00:00:00",
+		finishtime = "2021-05-30 23:59:59",
+		desc = "在狩猎者之上",
+		id = "1-4",
+		dropid = "StableJQ1001",
+		showtype = 1
+	},
+	["2-1"] = {
+		taskid = 17320004,
+		name = "【拉弥亚中心区】第一节",
+		talkid = 2141905,
+		starttime = "2021-04-28 00:00:00",
+		finishtime = "2021-05-30 23:59:59",
+		desc = "新的任务",
+		id = "2-1",
+		dropid = "StableJQ1001",
+		showtype = 1
+	},
+	["2-2"] = {
+		taskid = 17320005,
+		name = "【拉弥亚中心区】第二节",
+		talkid = 2141906,
+		starttime = "2021-04-28 00:00:00",
+		finishtime = "2021-05-30 23:59:59",
+		desc = "前往核心区",
+		id = "2-2",
+		dropid = "StableJQ1001",
+		showtype = 1
+	},
+	["2-3"] = {
+		taskid = 17320006,
+		name = "【拉弥亚中心区】第三节",
+		talkid = 2141907,
+		starttime = "2021-04-28 00:00:00",
+		finishtime = "2021-05-30 23:59:59",
+		desc = "捕蝇草陷阱",
+		id = "2-3",
+		dropid = "StableJQ1001",
+		showtype = 1
+	},
+	["2-4"] = {
+		taskid = 17320007,
+		name = "【拉弥亚中心区】第四节",
+		talkid = 2141908,
+		starttime = "2021-04-28 00:00:00",
+		finishtime = "2021-05-30 23:59:59",
+		desc = "决战，拉弥亚",
+		id = "2-4",
+		dropid = "StableJQ1001",
+		showtype = 1
+	},
+	["3-1"] = {
+		taskid = 17320008,
+		name = "【天堂里的晚宴】第一节",
+		talkid = 2141909,
+		starttime = "2021-05-07 00:00:00",
+		finishtime = "2021-05-30 23:59:59",
+		desc = "前往 Seventh Heaven 之前",
+		id = "3-1",
+		dropid = "StableJQ1001",
+		showtype = 1
+	},
+	["3-2"] = {
+		taskid = 17320009,
+		name = "【天堂里的晚宴】第二节",
+		talkid = 2141910,
+		starttime = "2021-05-07 00:00:00",
+		finishtime = "2021-05-30 23:59:59",
+		desc = "黑羽的服务生",
+		id = "3-2",
+		dropid = "StableJQ1001",
+		showtype = 1
+	},
+	["3-3"] = {
+		taskid = 17320010,
+		name = "【天堂里的晚宴】第三节",
+		talkid = 2141911,
+		starttime = "2021-05-07 00:00:00",
+		finishtime = "2021-05-30 23:59:59",
+		desc = "行动开始",
+		id = "3-3",
+		dropid = "StableJQ1001",
+		showtype = 1
+	},
+	["3-4"] = {
+		taskid = 17320011,
+		name = "【天堂里的晚宴】第四节",
+		talkid = 2141912,
+		starttime = "2021-05-07 00:00:00",
+		finishtime = "2021-05-30 23:59:59",
+		desc = "与奥罗拉的对峙",
+		id = "3-4",
+		dropid = "StableJQ1001",
+		showtype = 1
+	},
+	["4-1"] = {
+		taskid = 17320012,
+		name = "【黎明之前】第一节",
+		talkid = 2141913,
+		starttime = "2021-05-14 00:00:00",
+		finishtime = "2021-05-30 23:59:59",
+		desc = "宛如地狱的梦境",
+		id = "4-1",
+		dropid = "StableJQ1001",
+		showtype = 1
+	},
+	["4-2"] = {
+		taskid = 17320013,
+		name = "【黎明之前】第二节",
+		talkid = 2141914,
+		starttime = "2021-05-14 00:00:00",
+		finishtime = "2021-05-30 23:59:59",
+		desc = "晚宴的散场",
+		id = "4-2",
+		dropid = "StableJQ1001",
+		showtype = 1
+	},
+	["4-3"] = {
+		taskid = 17320014,
+		name = "【黎明之前】第三节",
+		talkid = 2141915,
+		starttime = "2021-05-14 00:00:00",
+		finishtime = "2021-05-30 23:59:59",
+		desc = "蝰影的过去",
+		id = "4-3",
+		dropid = "StableJQ1001",
+		showtype = 1
+	},
+	["4-4"] = {
+		taskid = 17320015,
+		name = "【黎明之前】第四节",
+		talkid = 2141916,
+		starttime = "2021-05-14 00:00:00",
+		finishtime = "2021-05-30 23:59:59",
+		desc = "掌控黑暗狩猎者的“开关”",
+		id = "4-4",
+		dropid = "StableJQ1001",
+		showtype = 1
+	},
+	["5-1"] = {
+		taskid = 17320016,
+		name = "【天国与地狱】第一节",
+		talkid = 2141917,
+		starttime = "2021-05-21 00:00:00",
+		finishtime = "2021-05-30 23:59:59",
+		desc = "玛尔斯第四实验室，一切的开始，也是终点",
+		id = "5-1",
+		dropid = "StableJQ1001",
+		showtype = 1
+	},
+	["5-2"] = {
+		taskid = 17320017,
+		name = "【天国与地狱】第二节",
+		talkid = 2141918,
+		starttime = "2021-05-21 00:00:00",
+		finishtime = "2021-05-30 23:59:59",
+		desc = "第二代动物拟态外骨骼，危险的武器",
+		id = "5-2",
+		dropid = "StableJQ1001",
+		showtype = 1
+	},
+	["5-3"] = {
+		taskid = 17320018,
+		name = "【天国与地狱】第三节",
+		talkid = 2141919,
+		starttime = "2021-05-21 00:00:00",
+		finishtime = "2021-05-30 23:59:59",
+		desc = "急转直下——！",
+		id = "5-3",
+		dropid = "StableJQ1001",
+		showtype = 1
+	},
+	["5-4"] = {
+		taskid = 17320019,
+		name = "【天国与地狱】第四节",
+		talkid = 2141920,
+		starttime = "2021-05-21 00:00:00",
+		finishtime = "2021-05-30 23:59:59",
+		desc = "要如何，关闭“噬身之蛇”的开关",
+		id = "5-4",
+		dropid = "StableJQ1001",
+		showtype = 1
+	},
+	["5-5"] = {
+		taskid = 17320020,
+		name = "【天国与地狱】第五节",
+		talkid = 2141921,
+		starttime = "2021-05-21 00:00:00",
+		finishtime = "2021-05-30 23:59:59",
+		desc = "黑暗狩猎者，依然会遁入阴影之中",
+		id = "5-5",
+		dropid = "StableJQ1001",
+		showtype = 1
+	},
+	["6-1"] = {
+		taskid = 17320022,
+		name = "生命存续",
+		talkid = 2141924,
+		starttime = "2021-04-28 00:00:00",
+		id = "6-1",
+		finishtime = "2021-05-30 23:59:59",
+		dropid = "StableJQ1002",
+		showtype = 2
+	},
+	["7-1"] = {
+		taskid = 17320023,
+		name = "极限脱出",
+		talkid = 2141923,
+		starttime = "2021-04-28 00:00:00",
+		id = "7-1",
+		finishtime = "2021-05-30 23:59:59",
+		dropid = "StableJQ1002",
+		showtype = 2
+	},
+	["8-1"] = {
+		taskid = 17320024,
+		name = "飞跃业火",
+		talkid = 2141922,
+		starttime = "2021-04-28 00:00:00",
+		id = "8-1",
+		finishtime = "2021-05-30 23:59:59",
+		dropid = "StableJQ1002",
+		showtype = 2
+	},
+	["9-1"] = {
+		taskid = 17320025,
+		name = "与学院的第一次接触",
+		talkid = 2141925,
+		starttime = "2021-04-28 00:00:00",
+		id = "9-1",
+		finishtime = "2021-05-30 23:59:59",
+		dropid = "StableJQ1003",
+		showtype = 3
+	}
+}

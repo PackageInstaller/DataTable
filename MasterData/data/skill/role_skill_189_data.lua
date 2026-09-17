@@ -1,0 +1,231 @@
+return {
+	[212300010] = {
+		buff_prob1 = 0,
+		id = 212300010,
+		buff_add1 = 12123201,
+		buff_target1 = 5,
+		skilltype = 0,
+		exe_type = 30,
+		status_add1 = 21232001,
+		status_target1 = 1,
+		status_prob1 = 1
+	},
+	[212300011] = {
+		buff_prob1 = 0,
+		id = 212300011,
+		buff_add1 = 12125201,
+		buff_target1 = 5,
+		skilltype = 0,
+		exe_type = 30,
+		status_add1 = 21232015,
+		status_target1 = 2,
+		status_prob1 = 1
+	},
+	[212300012] = {
+		status_judge_type2 = "1",
+		status_judge_type1 = "1",
+		buff_add1 = 12123202,
+		status_judge_target1 = "1:2",
+		halo_target1 = 2,
+		id = 212300012,
+		status_judge_target2 = "1:2",
+		status_add2 = 21232006,
+		ishalo2 = 1,
+		halo_target2 = 2,
+		insider_cd = 12,
+		skilltype = 0,
+		ishalo1 = 1,
+		status_add1 = 21232004,
+		buff_prob1 = 0,
+		status_prob1 = 1,
+		status_prob2 = 1,
+		status_judge_param2 = "1:0.5",
+		buff_target1 = 5,
+		exe_type = 18,
+		status_target2 = 1,
+		status_target1 = 1,
+		status_judge_param1 = "1:0.5"
+	},
+	[212300013] = {
+		id = 212300013,
+		status_target2 = 1,
+		status_prob2 = 1,
+		status_add2 = 2670300,
+		skilltype = 0,
+		exe_type = 0,
+		status_add1 = 9227300,
+		status_target1 = 1,
+		status_prob1 = 1
+	},
+	[212300014] = {
+		id = 212300014,
+		status_area_offset_left1 = 0,
+		status_judge_type1 = "3",
+		status_area_offset_right1 = 200,
+		status_judge_param1 = "3:12125201=2",
+		status_judge_target1 = "3:1",
+		insider_cd = 0.5,
+		skilltype = 0,
+		exe_type = 25,
+		status_add1 = 21232007,
+		status_target1 = 7,
+		status_prob1 = 1
+	},
+	[212300015] = {
+		status_judge_param1 = "3:12125201=3",
+		status_judge_type1 = "3",
+		id = 212300015,
+		status_judge_target1 = "3:1",
+		skilltype = 0,
+		exe_type = 19,
+		status_add1 = 21232008,
+		status_target1 = 1,
+		status_prob1 = 0.25
+	},
+	[212310010] = {
+		status_target1 = 5,
+		exe_target = 5,
+		skilltype = 1,
+		id = 212310010,
+		status_add1 = 21232009,
+		damagetype = 1,
+		status_prob1 = 1
+	},
+	[212320010] = {
+		addrage = 15,
+		status_target1 = 5,
+		buff_add1 = 12123202,
+		buff_prob1 = 0,
+		buff_target1 = 5,
+		exe_target = 5,
+		skilltype = 3,
+		id = 212320010,
+		status_add1 = 21232010,
+		damagetype = 1,
+		status_prob1 = 1
+	},
+	[212320011] = {
+		exe_target = 2,
+		skilltype = 3,
+		id = 212320011,
+		status_add1 = 21232004,
+		status_target1 = 5,
+		status_prob1 = 1
+	},
+	[212330010] = {
+		addrage = 3,
+		status_target1 = 5,
+		buff_add1 = 12123203,
+		buff_prob1 = 0,
+		buff_target1 = 5,
+		exe_target = 5,
+		skilltype = 2,
+		id = 212330010,
+		status_add1 = 21232011,
+		damagetype = 1,
+		status_prob1 = 1
+	},
+	[212330011] = {
+		exe_target = 2,
+		skilltype = 2,
+		id = 212330011,
+		status_add1 = 21232008,
+		status_target1 = 5,
+		status_prob1 = 1
+	},
+	[212330012] = {
+		exe_target = 2,
+		skilltype = 2,
+		id = 212330012,
+		status_add1 = 21232012,
+		status_target1 = 5,
+		status_prob1 = 1
+	},
+	[2123501010] = {
+		id = 2123501010,
+		status_target2 = 1,
+		status_prob2 = 1,
+		status_add2 = 9243010,
+		skilltype = 0,
+		exe_type = 0,
+		status_add1 = 9225015,
+		status_target1 = 1,
+		status_prob1 = 1
+	},
+	[2123502010] = {
+		id = 2123502010,
+		status_target2 = 1,
+		status_prob2 = 1,
+		status_add2 = 9243020,
+		skilltype = 0,
+		exe_type = 0,
+		status_add1 = 9225020,
+		status_target1 = 1,
+		status_prob1 = 1
+	},
+	[2123503010] = {
+		id = 2123503010,
+		status_target2 = 1,
+		status_prob2 = 1,
+		status_add2 = 9243030,
+		skilltype = 0,
+		exe_type = 0,
+		status_add1 = 9225025,
+		status_target1 = 1,
+		status_prob1 = 1
+	},
+	[2123501011] = {
+		id = 2123501011,
+		insider_cd = 12,
+		skilltype = 0,
+		exe_type = 8,
+		status_add1 = 21232003,
+		status_target1 = 1,
+		status_prob1 = 1
+	},
+	[2123502011] = {
+		id = 2123502011,
+		insider_cd = 10,
+		skilltype = 0,
+		exe_type = 8,
+		status_add1 = 21232003,
+		status_target1 = 1,
+		status_prob1 = 1
+	},
+	[2123503011] = {
+		id = 2123503011,
+		insider_cd = 8,
+		skilltype = 0,
+		exe_type = 8,
+		status_add1 = 21232003,
+		status_target1 = 1,
+		status_prob1 = 1
+	},
+	[212370010] = {
+		id = 212370010,
+		skilltype = 0,
+		exe_type = 0,
+		status_add1 = 21232013,
+		status_target1 = 1,
+		status_prob1 = 1
+	},
+	[212370011] = {
+		id = 212370011,
+		skilltype = 0,
+		exe_type = 30,
+		status_add1 = 21232012,
+		status_target1 = 2,
+		status_prob1 = 1
+	},
+	[212380010] = {
+		ishalo1 = 1,
+		id = 212380010,
+		halo_target1 = 2,
+		insider_cd = 16,
+		skilltype = 0,
+		exe_type = 3,
+		status_add1 = 21232014,
+		status_target1 = 1,
+		status_prob1 = 1
+	}
+}

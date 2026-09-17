@@ -1,0 +1,93 @@
+return {
+	["865-1-1"] = {
+		item3 = 86536023,
+		num3 = 1,
+		item2 = 86536022,
+		limit_count = 1,
+		num2 = 1,
+		drop = "ACTCOLLECT_865_1_1",
+		collect_type = 1,
+		id = "865-1-1",
+		num1 = 1,
+		item1 = 86536021
+	},
+	["865-1-2"] = {
+		item4 = 86536004,
+		item3 = 86536003,
+		num3 = 1,
+		num4 = 1,
+		item2 = 86536002,
+		limit_count = 1,
+		num2 = 1,
+		drop = "ACTCOLLECT_865_1_2",
+		collect_type = 1,
+		id = "865-1-2",
+		num1 = 1,
+		item1 = 86536001
+	},
+	["865-1-3"] = {
+		item4 = 86536008,
+		item3 = 86536007,
+		num3 = 1,
+		num4 = 1,
+		item2 = 86536006,
+		limit_count = 1,
+		num2 = 1,
+		drop = "ACTCOLLECT_865_1_3",
+		collect_type = 1,
+		id = "865-1-3",
+		num1 = 1,
+		item1 = 86536005
+	},
+	["865-1-4"] = {
+		item4 = 86536012,
+		item3 = 86536011,
+		num3 = 1,
+		num4 = 1,
+		item2 = 86536010,
+		limit_count = 1,
+		num2 = 1,
+		drop = "ACTCOLLECT_865_1_4",
+		collect_type = 1,
+		id = "865-1-4",
+		num1 = 1,
+		item1 = 86536009
+	},
+	["865-1-5"] = {
+		drop = "ACTCOLLECTRE_865_1",
+		needcount = 3,
+		collect_type = 2,
+		starttime = "2026-03-08 00:00:00",
+		id = "865-1-5",
+		needitemtype = 211,
+		desc = "随机"
+	},
+	["865-1-6"] = {
+		item4 = 86536016,
+		item3 = 86536015,
+		num3 = 1,
+		num4 = 1,
+		item2 = 86536014,
+		limit_count = 1,
+		num2 = 1,
+		drop = "ACTCOLLECT_865_1_5",
+		collect_type = 1,
+		id = "865-1-6",
+		num1 = 1,
+		item1 = 86536013
+	},
+	["865-1-7"] = {
+		item4 = 86536020,
+		item3 = 86536019,
+		num3 = 1,
+		num4 = 1,
+		item2 = 86536018,
+		limit_count = 1,
+		num2 = 1,
+		drop = "ACTCOLLECT_865_1_6",
+		collect_type = 1,
+		id = "865-1-7",
+		num1 = 1,
+		item1 = 86536017
+	}
+}

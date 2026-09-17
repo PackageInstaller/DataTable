@@ -1,0 +1,53 @@
+return {
+	G8806612 = {
+		drop_id2 = 6700354,
+		drop_num3 = 1,
+		drop_rate3 = 1,
+		drop_num6 = 1,
+		drop_num4 = 1,
+		drop_id6 = 65126601,
+		drop_id5 = 65136601,
+		drop_num1 = 1,
+		drop_rate5 = 1,
+		drop_id4 = 65156601,
+		drop_rate6 = 1,
+		drop_id7 = 65146601,
+		drop_num7 = 1,
+		drop_id1 = 9226601,
+		drop_rate1 = 1,
+		drop_rate2 = 1,
+		drop_rate7 = 1,
+		drop_num5 = 1,
+		drop_id3 = 65106601,
+		drop_num2 = 6,
+		id = "G8806612",
+		drop_rate4 = 1
+	},
+	F8865116601 = {
+		drop_id2 = 65156601,
+		drop_rate2 = 1,
+		drop_num1 = 1,
+		drop_num3 = 1,
+		drop_rate3 = 1,
+		drop_num5 = 1,
+		drop_id5 = 65146601,
+		drop_rate4 = 1,
+		drop_rate5 = 1,
+		drop_id4 = 65126601,
+		drop_id3 = 65136601,
+		drop_num2 = 1,
+		id = "F8865116601",
+		drop_num4 = 1,
+		drop_id1 = 65106601,
+		drop_rate1 = 1
+	},
+	G8806116 = {
+		drop_id2 = 6800101,
+		drop_rate2 = 1,
+		drop_num1 = 1,
+		drop_num2 = 3,
+		id = "G8806116",
+		drop_id1 = 6416630,
+		drop_rate1 = 1
+	}
+}

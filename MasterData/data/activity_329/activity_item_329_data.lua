@@ -1,0 +1,80 @@
+return {
+	[32934001] = {
+		id = "32934001",
+		name = "活动支援点数",
+		max_stack = 9999999,
+		user_manual = "天驱之足活动支援点数",
+		equip_quality = 5,
+		intro = "天驱之足活动支援点数。",
+		purpose = "BP点",
+		image_id = 17034001,
+		bag_item_type = 101
+	},
+	[32934002] = {
+		id = "32934002",
+		name = "BPVIP检测道具",
+		max_stack = 9999999,
+		user_manual = "活动支援点数",
+		equip_quality = 5,
+		intro = "活动支援点数。",
+		purpose = "BPVIP检测道具",
+		image_id = 17034001,
+		bag_item_type = 101
+	},
+	[32934003] = {
+		id = "32934003",
+		name = "BPSVIP检测道具",
+		max_stack = 9999999,
+		user_manual = "活动支援点数",
+		equip_quality = 5,
+		intro = "活动支援点数。",
+		purpose = "BPSVIP检测道具",
+		image_id = 17034001,
+		bag_item_type = 101
+	},
+	[32903001] = {
+		targetdes2 = "天驱之足兑换商店",
+		name = "天驱之足扭蛋券",
+		targetlayer_starttime_2 = "2022-09-14 00:00:00",
+		targetdes3 = "天驱之足扩招奖励",
+		id = "32903001",
+		targetlayer_finishtime_3 = "2022-10-02 23:59:59",
+		equip_quality = 5,
+		user_manual = "枫专属扭蛋券，仅能在天驱之足扩招池使用哦~",
+		targetactivity1 = 329,
+		targetlayer3 = 1800367,
+		targetlayer_starttime_1 = "2022-09-14 00:00:00",
+		targetlayer_finishtime_1 = "2022-10-02 23:59:59",
+		targetdes1 = "天驱之足活动支援",
+		max_stack = 99999,
+		targetlayer2 = 2400329,
+		targetlayer1 = 2500329,
+		targetlayer_starttime_3 = "2022-09-14 00:00:00",
+		intro = "这是一张充满欧气的扩招券，一定能为班长带来好运！",
+		purpose = "天驱之足扭蛋券",
+		targetlayer_finishtime_2 = "2022-10-02 23:59:59",
+		image_id = 32903001,
+		bag_item_type = 68
+	},
+	[32902001] = {
+		id = "32902001",
+		name = "枫华硬币",
+		max_stack = 99999,
+		user_manual = "可以在天驱之足活动商城兑换道具",
+		equip_quality = 5,
+		intro = "可以在活动商城兑换道具。",
+		purpose = "枫华硬币",
+		image_id = 32902001,
+		bag_item_type = 212
+	},
+	[32904001] = {
+		id = "32904001",
+		name = "学院精选礼包",
+		purpose = "天驱之足礼包",
+		max_stack = 999,
+		image_id = 32904001,
+		equip_quality = 5,
+		bag_item_type = 95,
+		mode_id = "TQZZLB101"
+	}
+}

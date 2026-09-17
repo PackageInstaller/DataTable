@@ -1,0 +1,100 @@
+return {
+	[83801] = {
+		starttime = "2025-09-26 00:00:00",
+		name = "转盘、翻牌兑换商店",
+		exchangetype = 1,
+		shopstat = 2,
+		ui_type = 1,
+		showinmarket = 1,
+		shop_type = "1-83801",
+		id = 83801,
+		finishtime = "2025-12-07 23:59:59",
+		order = 4
+	},
+	[83802] = {
+		starttime = "2025-09-26 00:00:00",
+		name = "福袋商店",
+		exchangetype = 1,
+		shopstat = 2,
+		ui_type = 3,
+		shoptable_type = 4,
+		showinmarket = 1,
+		shop_type = "1-83802",
+		id = 83802,
+		finishtime = "2025-12-07 23:59:59",
+		order = 1
+	},
+	[83803] = {
+		starttime = "2025-09-26 00:00:00",
+		name = "活动商店",
+		exchangetype = 1,
+		shopstat = 2,
+		ui_type = 1,
+		showinmarket = 1,
+		shop_type = "1-83803",
+		id = 83803,
+		finishtime = "2025-12-07 23:59:59",
+		order = 3
+	},
+	[83804] = {
+		starttime = "2025-09-26 00:00:00",
+		name = "礼品卡商店",
+		exchangetype = 1,
+		shopstat = 2,
+		ui_type = 3,
+		shoptable_type = 4,
+		showinmarket = 1,
+		shop_type = "1-83804",
+		id = 83804,
+		finishtime = "2025-12-07 23:59:59",
+		order = 2
+	},
+	[83805] = {
+		starttime = "2025-09-26 00:00:00",
+		name = "钻石商店",
+		exchangetype = 1,
+		shopstat = 2,
+		ui_type = 1,
+		showinmarket = 1,
+		shop_type = "1-83805",
+		id = 83805,
+		finishtime = "2025-12-07 23:59:59",
+		order = 5
+	},
+	[83806] = {
+		starttime = "2025-09-26 00:00:00",
+		name = "小游戏商店",
+		exchangetype = 1,
+		shopstat = 2,
+		ui_type = 1,
+		showinmarket = 1,
+		shop_type = "1-83806",
+		id = 83806,
+		finishtime = "2025-12-07 23:59:59",
+		order = 6
+	},
+	[83901] = {
+		starttime = "2025-09-28 00:00:00",
+		name = "中秋活动代币商店",
+		exchangetype = 1,
+		shopstat = 2,
+		ui_type = 1,
+		showinmarket = 1,
+		shop_type = "1-83901",
+		id = 83901,
+		finishtime = "2025-10-15 23:59:59",
+		order = 1
+	},
+	[83902] = {
+		starttime = "2025-09-28 00:00:00",
+		name = "中秋翻牌积分商店",
+		exchangetype = 1,
+		shopstat = 2,
+		ui_type = 1,
+		showinmarket = 1,
+		shop_type = "1-83902",
+		id = 83902,
+		finishtime = "2025-10-15 23:59:59",
+		order = 2
+	}
+}

@@ -1,0 +1,93 @@
+return {
+	[19934001] = {
+		id = 19934001,
+		name = "支援点",
+		equip_quality = 5,
+		max_stack = 9999999,
+		image_id = 17034001,
+		user_manual = "活动支援点数",
+		bag_item_type = 101,
+		intro = "活动支援点数。"
+	},
+	[19934002] = {
+		id = 19934002,
+		name = "支援点标记",
+		max_stack = 9999999,
+		user_manual = "活动支援点数",
+		equip_quality = 5,
+		intro = "活动支援点数。",
+		unshowpur = 1,
+		image_id = 17034001,
+		bag_item_type = 101
+	},
+	[19934003] = {
+		id = 19934003,
+		name = "支援点标记",
+		max_stack = 9999999,
+		user_manual = "活动支援点数",
+		equip_quality = 5,
+		intro = "活动支援点数。",
+		unshowpur = 1,
+		image_id = 17034001,
+		bag_item_type = 101
+	},
+	[19903001] = {
+		targetactivity2 = "199",
+		name = "萨姬塔专属扭蛋券",
+		targetdes2 = "萨姬塔直购礼包",
+		targetdes3 = "萨姬塔累抽回礼",
+		user_manual = "萨姬塔专属扭蛋券，仅能在萨姬塔扩招池使用哦~",
+		id = 19903001,
+		equip_quality = 5,
+		targetactivity1 = "199",
+		targetlayer3 = "1800266",
+		targetdes1 = "萨姬塔支援",
+		max_stack = 99999,
+		targetlayer2 = "1719901",
+		targetlayer1 = "2500199",
+		intro = "这是一张充满欧气的扩招券，一定能为班长带来好运！",
+		image_id = 19903001,
+		targetactivity3 = "199",
+		bag_item_type = 68
+	},
+	[19903004] = {
+		id = 19903004,
+		name = "萨姬塔上新礼包",
+		equip_quality = 5,
+		max_stack = 999,
+		image_id = 19903004,
+		bag_item_type = 95,
+		mode_id = "SAGITHEA01"
+	},
+	[19902001] = {
+		targetactivity2 = "199",
+		name = "狩猎币",
+		targetdes2 = "萨姬塔支援",
+		targetdes3 = "每日探险获取",
+		user_manual = "可以在萨姬塔活动商城兑换道具",
+		id = 19902001,
+		equip_quality = 5,
+		targetactivity4 = "199",
+		targetlayer4 = "1800266",
+		targetactivity1 = "199",
+		targetdes4 = "萨姬塔累抽回礼",
+		targetlayer3 = "2900199",
+		targetdes1 = "每日挑战获取",
+		max_stack = 999999,
+		targetlayer2 = "2500199",
+		targetlayer1 = "2300199",
+		intro = "可以在萨姬塔活动商城兑换道具。",
+		image_id = 18002001,
+		targetactivity3 = "199",
+		bag_item_type = 212
+	},
+	[19903005] = {
+		id = 19903005,
+		name = "萨姬塔超值礼包",
+		equip_quality = 5,
+		max_stack = 999,
+		image_id = 19903005,
+		bag_item_type = 95,
+		mode_id = "SAGITHEA02"
+	}
+}

@@ -1,0 +1,42 @@
+return {
+	[12115201] = {
+		exe_type = 0,
+		name = "投币续命",
+		buff_image = "2115000",
+		buff_or_debuff = 1,
+		unionbufftime = 1,
+		status_target3 = 1,
+		cleanable = 0,
+		status_add2 = 9223050,
+		appendable = 1,
+		status_add1 = 9108000,
+		status_prob1 = 1,
+		status_add3 = 9237050,
+		time = 3,
+		status_prob2 = 1,
+		add_type = 2,
+		status_prob3 = 1,
+		id = 12115201,
+		status_target2 = 1,
+		status_target1 = 1,
+		detail = "获得不屈效果，攻击提高【50%】，攻速提高【50%】"
+	},
+	[12115202] = {
+		appendable = 1,
+		name = "钩爪缚",
+		buff_image = "2115000",
+		buff_or_debuff = 0,
+		cleanable = 1,
+		status_prob2 = 1,
+		exe_type = 0,
+		status_add2 = 9103000,
+		status_prob1 = 1,
+		time = 2,
+		add_type = 2,
+		status_target2 = 1,
+		id = 12115202,
+		status_add1 = 21152011,
+		status_target1 = 1,
+		detail = "无法进行任何行动，并且无法复活"
+	}
+}

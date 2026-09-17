@@ -1,0 +1,131 @@
+return {
+	["201-1-1"] = {
+		s_attribute3 = "回血",
+		equip_drop = "L201-1-1",
+		sceneConfigure1 = "fightbg23_1",
+		s_attribute1 = "血百",
+		s_model2 = 21204,
+		s_attribute2 = "移速",
+		enemycount = 0,
+		s_model3 = 21104,
+		s_model1 = 20604,
+		sceneConfigure2 = "fightbg23_2",
+		boss_team = "2010010100",
+		id = "201-1-1",
+		sceneConfigure3 = "fightbg23_3"
+	},
+	["201-2-1"] = {
+		s_attribute3 = "回血",
+		equip_drop = "L201-2-1",
+		sceneConfigure1 = "fightbg23_1",
+		s_attribute1 = "血百",
+		s_model2 = 21205,
+		s_attribute2 = "移速",
+		enemycount = 0,
+		s_model3 = 21105,
+		s_model1 = 20605,
+		sceneConfigure2 = "fightbg23_2",
+		boss_team = "2010010200",
+		id = "201-2-1",
+		sceneConfigure3 = "fightbg23_3"
+	},
+	["201-3-1"] = {
+		s_attribute3 = "回血",
+		equip_drop = "L201-3-1",
+		sceneConfigure1 = "fightbg23_1",
+		s_attribute1 = "血百",
+		s_model2 = 21206,
+		s_attribute2 = "移速",
+		enemycount = 0,
+		s_model3 = 21106,
+		s_model1 = 20606,
+		sceneConfigure2 = "fightbg23_2",
+		boss_team = "2010010300",
+		id = "201-3-1",
+		sceneConfigure3 = "fightbg23_3"
+	},
+	["201-4-1"] = {
+		s_attribute3 = "回血",
+		equip_drop = "L201-4-1",
+		sceneConfigure1 = "fightbg23_1",
+		s_attribute1 = "血百",
+		s_model2 = 21207,
+		s_attribute2 = "移速",
+		enemycount = 0,
+		s_model3 = 21107,
+		s_model1 = 20607,
+		sceneConfigure2 = "fightbg23_2",
+		boss_team = "2010010400",
+		id = "201-4-1",
+		sceneConfigure3 = "fightbg23_3"
+	},
+	["201-5-1"] = {
+		s_attribute3 = "回血",
+		equip_drop = "L201-5-1",
+		sceneConfigure1 = "fightbg23_1",
+		s_attribute1 = "血百",
+		s_model2 = 21208,
+		s_attribute2 = "移速",
+		enemycount = 0,
+		s_model3 = 21108,
+		s_model1 = 20608,
+		sceneConfigure2 = "fightbg23_2",
+		boss_team = "2010010500",
+		id = "201-5-1",
+		sceneConfigure3 = "fightbg23_3"
+	},
+	["201-6-1"] = {
+		equip_drop = "L201-6-1",
+		sceneConfigure1 = "fightbg23_1",
+		boss_team = "2010010600",
+		sceneConfigure2 = "fightbg23_2",
+		id = "201-6-1",
+		sceneConfigure3 = "fightbg23_3",
+		enemycount = 0
+	},
+	["201-7-1"] = {
+		equip_drop = "L201-7-1",
+		sceneConfigure1 = "fightbg23_1",
+		boss_team = "2010010700",
+		sceneConfigure2 = "fightbg23_2",
+		id = "201-7-1",
+		sceneConfigure3 = "fightbg23_3",
+		enemycount = 0
+	},
+	["201-8-1"] = {
+		equip_drop = "L201-8-1",
+		sceneConfigure1 = "fightbg23_1",
+		boss_team = "2010010800",
+		sceneConfigure2 = "fightbg23_2",
+		id = "201-8-1",
+		sceneConfigure3 = "fightbg23_3",
+		enemycount = 0
+	},
+	["201-9-1"] = {
+		equip_drop = "L201-9-1",
+		sceneConfigure1 = "fightbg23_1",
+		boss_team = "2010010900",
+		sceneConfigure2 = "fightbg23_2",
+		id = "201-9-1",
+		sceneConfigure3 = "fightbg23_3",
+		enemycount = 0
+	},
+	["201-10-1"] = {
+		equip_drop = "L201-10-1",
+		sceneConfigure1 = "fightbg23_1",
+		boss_team = "2010011000",
+		sceneConfigure2 = "fightbg23_2",
+		id = "201-10-1",
+		sceneConfigure3 = "fightbg23_3",
+		enemycount = 0
+	},
+	["201-11-1"] = {
+		equip_drop = "L201-11-1",
+		sceneConfigure1 = "fightbg1004_1",
+		boss_team = "2010011100",
+		sceneConfigure2 = "fightbg1004_2",
+		id = "201-11-1",
+		sceneConfigure3 = "fightbg1004_3",
+		enemycount = 0
+	}
+}

@@ -1,0 +1,303 @@
+return {
+	["521mp-1"] = {
+		drop2 = "DGNNPT002",
+		proceed_id = "521mp-1",
+		drop1 = "DGNNPT001",
+		num3 = 200,
+		id = "521mp-1",
+		num1 = 300,
+		drop3 = "DGNNPT003",
+		num2 = 200
+	},
+	["521mp-2"] = {
+		drop2 = "DGNNPT005",
+		need1 = "1",
+		drop1 = "DGNNPT004",
+		proceed_id = "521mp-2",
+		id = "521mp-2",
+		num1 = 1000,
+		need2 = "2,3",
+		num2 = 1000
+	},
+	["521mp-3"] = {
+		need2 = "2",
+		need1 = "1",
+		proceed_id = "521mp-3",
+		drop2 = "DGNNPT007",
+		num3 = 400,
+		need3 = "2",
+		drop3 = "DGNNPT008",
+		num2 = 800,
+		drop1 = "DGNNPT006",
+		id = "521mp-3",
+		num1 = 1600
+	},
+	["521mp-4"] = {
+		proceed_id = "521mp-4",
+		need1 = "1,2,3",
+		drop1 = "DGNNPT009",
+		id = "521mp-4",
+		num1 = 1000
+	},
+	["521mp-5"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "521mp-5",
+		drop2 = "DGNNPT010",
+		num3 = 1000,
+		need3 = "1",
+		drop3 = "DGNNPT010",
+		num2 = 1000,
+		drop1 = "DGNNPT010",
+		id = "521mp-5",
+		num1 = 1000
+	},
+	["521mp-6"] = {
+		drop2 = "DGNNPT011",
+		need1 = "1,2",
+		drop1 = "DGNNPT004",
+		proceed_id = "521mp-6",
+		id = "521mp-6",
+		num1 = 1000,
+		need2 = "3",
+		num2 = 400
+	},
+	["521mp-7"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "521mp-7",
+		drop2 = "DGNNPT012",
+		num3 = 1000,
+		need3 = "2",
+		drop3 = "DGNNPT012",
+		num2 = 1000,
+		drop1 = "DGNNPT012",
+		id = "521mp-7",
+		num1 = 1000
+	},
+	["521mp-8"] = {
+		proceed_id = "521mp-8",
+		need1 = "1,2,3",
+		drop1 = "DGNNPT013",
+		id = "521mp-8",
+		num1 = 2000
+	},
+	["521mp-9"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "521mp-9",
+		drop2 = "DGNNPT002",
+		num3 = 200,
+		need3 = "1",
+		drop3 = "DGNNPT003",
+		num2 = 200,
+		drop1 = "DGNNPT001",
+		id = "521mp-9",
+		num1 = 300
+	},
+	["521mp-10"] = {
+		drop2 = "DGNNPT005",
+		need1 = "1",
+		drop1 = "DGNNPT004",
+		proceed_id = "521mp-10",
+		id = "521mp-10",
+		num1 = 1000,
+		need2 = "2,3",
+		num2 = 1000
+	},
+	["521mp-11"] = {
+		need2 = "2",
+		need1 = "1",
+		proceed_id = "521mp-11",
+		drop2 = "DGNNPT007",
+		num3 = 1600,
+		need3 = "2",
+		drop3 = "DGNNPT006",
+		num2 = 800,
+		drop1 = "DGNNPT008",
+		id = "521mp-11",
+		num1 = 400
+	},
+	["521mp-12"] = {
+		proceed_id = "521mp-12",
+		need1 = "1,2,3",
+		drop1 = "DGNNPT009",
+		id = "521mp-12",
+		num1 = 1000
+	},
+	["521mp-13"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "521mp-13",
+		drop2 = "DGNNPT014",
+		num3 = 600,
+		need3 = "1",
+		drop3 = "DGNNPT014",
+		num2 = 600,
+		drop1 = "DGNNPT014",
+		id = "521mp-13",
+		num1 = 600
+	},
+	["521mp-14"] = {
+		need2 = "2",
+		need1 = "1",
+		proceed_id = "521mp-14",
+		drop2 = "DGNNPT011",
+		num3 = 200,
+		need3 = "3",
+		drop3 = "DGNNPT002",
+		num2 = 400,
+		drop1 = "DGNNPT004",
+		id = "521mp-14",
+		num1 = 1000
+	},
+	["521mp-15"] = {
+		need2 = "2",
+		need1 = "1",
+		proceed_id = "521mp-15",
+		drop2 = "DGNNPT012",
+		num3 = 1000,
+		need3 = "3",
+		drop3 = "DGNNPT012",
+		num2 = 1000,
+		drop1 = "DGNNPT012",
+		id = "521mp-15",
+		num1 = 1000
+	},
+	["521mp-16"] = {
+		proceed_id = "521mp-16",
+		need1 = "1,2,3",
+		drop1 = "DGNNPT015",
+		id = "521mp-16",
+		num1 = 4000
+	},
+	["521mp-17"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "521mp-17",
+		drop2 = "DGNNPT002",
+		num3 = 200,
+		need3 = "1",
+		drop3 = "DGNNPT003",
+		num2 = 200,
+		drop1 = "DGNNPT001",
+		id = "521mp-17",
+		num1 = 300
+	},
+	["521mp-18"] = {
+		drop2 = "DGNNPT005",
+		need1 = "1,2",
+		drop1 = "DGNNPT004",
+		proceed_id = "521mp-18",
+		id = "521mp-18",
+		num1 = 1000,
+		need2 = "3",
+		num2 = 1000
+	},
+	["521mp-19"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "521mp-19",
+		drop2 = "DGNNPT007",
+		num3 = 400,
+		need3 = "2",
+		drop3 = "DGNNPT008",
+		num2 = 800,
+		drop1 = "DGNNPT006",
+		id = "521mp-19",
+		num1 = 1600
+	},
+	["521mp-20"] = {
+		proceed_id = "521mp-20",
+		need1 = "1,2,3",
+		drop1 = "DGNNPT009",
+		id = "521mp-20",
+		num1 = 1000
+	},
+	["521mp-21"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "521mp-21",
+		drop2 = "DGNNPT010",
+		num3 = 1000,
+		need3 = "1",
+		drop3 = "DGNNPT010",
+		num2 = 1000,
+		drop1 = "DGNNPT010",
+		id = "521mp-21",
+		num1 = 1000
+	},
+	["521mp-22"] = {
+		drop2 = "DGNNPT011",
+		need1 = "1",
+		drop1 = "DGNNPT004",
+		proceed_id = "521mp-22",
+		id = "521mp-22",
+		num1 = 1000,
+		need2 = "2,3",
+		num2 = 400
+	},
+	["521mp-23"] = {
+		need2 = "2",
+		need1 = "1",
+		proceed_id = "521mp-23",
+		drop2 = "DGNNPT012",
+		num3 = 1000,
+		need3 = "2",
+		drop3 = "DGNNPT012",
+		num2 = 1000,
+		drop1 = "DGNNPT012",
+		id = "521mp-23",
+		num1 = 1000
+	},
+	["521mp-24"] = {
+		proceed_id = "521mp-24",
+		need1 = "1,2,3",
+		drop1 = "DGNNPT009",
+		id = "521mp-24",
+		num1 = 1000
+	},
+	["521mp-25"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "521mp-25",
+		drop2 = "DGNNPT002",
+		num3 = 200,
+		need3 = "1",
+		drop3 = "DGNNPT003",
+		num2 = 200,
+		drop1 = "DGNNPT001",
+		id = "521mp-25",
+		num1 = 300
+	},
+	["521mp-26"] = {
+		drop2 = "DGNNPT005",
+		need1 = "1",
+		drop1 = "DGNNPT004",
+		proceed_id = "521mp-26",
+		id = "521mp-26",
+		num1 = 1000,
+		need2 = "2,3",
+		num2 = 1000
+	},
+	["521mp-27"] = {
+		need2 = "2",
+		need1 = "1",
+		proceed_id = "521mp-27",
+		drop2 = "DGNNPT007",
+		num3 = 400,
+		need3 = "2",
+		drop3 = "DGNNPT008",
+		num2 = 800,
+		drop1 = "DGNNPT006",
+		id = "521mp-27",
+		num1 = 1600
+	},
+	["521mp-28"] = {
+		proceed_id = "521mp-28",
+		need1 = "1,2,3",
+		drop1 = "DGNNPT009",
+		id = "521mp-28",
+		num1 = 1000
+	}
+}

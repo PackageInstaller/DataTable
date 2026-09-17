@@ -1,0 +1,42 @@
+return {
+	[88822701] = {
+		enter_map_talk = 8114001,
+		name = "文明守护者",
+		is_hide_array = 1,
+		object_cad_id = 1160011,
+		aim_finish_dropid = "COCOTX001",
+		out_map_talk = 8114002,
+		bgm = "explorebgm",
+		fight_girl1 = 81015001,
+		pos_unlock3 = 1,
+		bridges = "1-11,11-21",
+		preview_img = "fightbg114",
+		aim1_param2 = 1,
+		pos_unlock2 = 1,
+		aim1_des = "击败挖掘遗迹的罪犯",
+		pos_unlock4 = 1,
+		aim1_param1 = "81141004",
+		mapid = 88822701,
+		id = 88822701
+	},
+	[88822702] = {
+		enter_map_talk = 8114006,
+		name = "烤鸡守护者",
+		is_hide_array = 1,
+		object_cad_id = 1162011,
+		aim_finish_dropid = "COCOTX001",
+		out_map_talk = 8114017,
+		bgm = "christmasexplore",
+		fight_girl1 = 81015001,
+		pos_unlock3 = 1,
+		bridges = "1-2,2-12",
+		preview_img = "fightbg1003",
+		aim1_param2 = 3,
+		pos_unlock2 = 1,
+		aim1_des = "赶跑抢夺烤鸡的不速之客",
+		pos_unlock4 = 1,
+		aim1_param1 = "81141014",
+		mapid = 88822702,
+		id = 88822702
+	}
+}

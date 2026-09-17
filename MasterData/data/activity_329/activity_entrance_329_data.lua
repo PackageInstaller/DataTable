@@ -1,0 +1,22 @@
+return {
+	[3290001] = {
+		isinflashwindow = 1,
+		isbigBanner = 1,
+		starttime = "2022-09-14 00:00:00",
+		init_type = 2,
+		jump = 2900329,
+		door_starttime = "2022-09-14 00:00:00",
+		isinactivitylayer = 329,
+		door_finishtime = "2022-10-02 23:59:59",
+		valid = 1,
+		door_img_path = "mainScenebg@activity@branch329@activity_entrance.png",
+		alert_activity_systemid = "@freeexplorer@bp@bp_proceed@total_twist_1",
+		order = -101,
+		configId = 329,
+		image = 3290001,
+		id = 3290001,
+		finishtime = "2022-10-02 23:59:59",
+		tab = 1,
+		isinactivitydoor = "1"
+	}
+}

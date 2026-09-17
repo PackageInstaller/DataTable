@@ -1,0 +1,13 @@
+return {
+	[304] = {
+		finishtime = "2022-10-31 00:00:00",
+		matrix_line = 4,
+		one_time_cost = 1,
+		champion_item = 16,
+		key_item = 30407001,
+		flop_limit_turns = 100,
+		id = 304,
+		champion_special_turns = 40,
+		starttime = "2022-07-19 00:00:00"
+	}
+}

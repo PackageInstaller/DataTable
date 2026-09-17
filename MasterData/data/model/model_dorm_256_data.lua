@@ -1,0 +1,30 @@
+return {
+	["119580"] = {
+		expression = "119580_zhengchang",
+		name = "诺诺妮娅",
+		cute_Q = 119580,
+		portrait_image = 119580,
+		English_name = "Nonokia",
+		fanu = "119580_fanu",
+		spine_model = "119580",
+		kaixin = "119580_kaixin",
+		haixiu = "119580_haixiu",
+		modelscale = 1,
+		photofile_model = 274,
+		rolespine = "119580_1",
+		backgroundid = 6300007,
+		breakout_scale = 1,
+		talk_pos_offset = "0,0",
+		aichou = "119580_aichou",
+		main_name = "许愿水晶",
+		name_Q = "诺诺妮娅",
+		major = 6,
+		itemid = 64119580,
+		broken_role = "119580",
+		role_image = "119580",
+		is_big_role_image = 1,
+		id = "119580",
+		cute_role = "119580",
+		head_image = "119580"
+	}
+}

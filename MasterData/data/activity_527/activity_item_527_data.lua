@@ -1,0 +1,80 @@
+return {
+	[52702001] = {
+		id = "52702001",
+		name = "纽带硬币",
+		max_stack = 9999999,
+		user_manual = "「菲凡发明家」联动活动专属活动币，仅能在该活动中使用哦。",
+		equip_quality = 5,
+		targetlayer1 = "2300527",
+		intro = "一枚神秘的硬币，可以用来兑换奖励。",
+		purpose = "纽带硬币",
+		image_id = 49202001,
+		bag_item_type = 212,
+		targetdes1 = "「每日挑战」获得"
+	},
+	[52734001] = {
+		id = "52734001",
+		name = "BP点",
+		max_stack = 9999999,
+		user_manual = "菲凡发明家活动支援点数。",
+		equip_quality = 5,
+		targetlayer1 = "2900527",
+		intro = "菲凡发明家活动支援点数。",
+		purpose = "BP点",
+		image_id = 49234001,
+		bag_item_type = 101,
+		targetdes1 = "「菲凡发明家」获得"
+	},
+	[52734002] = {
+		id = "52734002",
+		name = "BPVIP检测道具",
+		max_stack = 9999999,
+		user_manual = "活动支援点数。",
+		equip_quality = 5,
+		targetlayer1 = "2900527",
+		intro = "活动支援点数。",
+		purpose = "BPVIP检测道具",
+		image_id = 49234001,
+		bag_item_type = 101,
+		targetdes1 = "「菲凡发明家」获得"
+	},
+	[52734003] = {
+		id = "52734003",
+		name = "BPSVIP检测道具",
+		max_stack = 9999999,
+		user_manual = "活动支援点数。",
+		equip_quality = 5,
+		targetlayer1 = "2900527",
+		intro = "活动支援点数。",
+		purpose = "BPSVIP检测道具",
+		image_id = 49234001,
+		bag_item_type = 101,
+		targetdes1 = "「菲凡发明家」获得"
+	},
+	[52701001] = {
+		id = "52701001",
+		name = "原子聚变扭蛋券",
+		max_stack = 9999999,
+		user_manual = "「菲凡发明家」联动活动专属扭蛋券，仅能在活动扩招池使用哦。",
+		equip_quality = 5,
+		targetlayer1 = "2900527",
+		intro = "这是一张充满欧气的扩招券，一定能为班长带来好运！",
+		purpose = "原子聚变扭蛋券",
+		image_id = 49203001,
+		bag_item_type = 68,
+		targetdes1 = "「菲凡发明家」获得"
+	},
+	[52705001] = {
+		id = "52705001",
+		name = "菲凡转盘币",
+		max_stack = 9999999,
+		user_manual = "「菲凡发明家」联动活动专属转盘币，仅能在该活动中使用哦。",
+		equip_quality = 5,
+		targetlayer1 = "2900527",
+		intro = "神秘的道具，可以用来参与转盘。",
+		purpose = "菲凡转盘币",
+		image_id = 49205001,
+		bag_item_type = 90,
+		targetdes1 = "「菲凡发明家」获得"
+	}
+}

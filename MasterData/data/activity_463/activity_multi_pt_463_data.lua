@@ -1,0 +1,300 @@
+return {
+	["463mp-1"] = {
+		drop2 = "300DZZDEQPT02",
+		proceed_id = "463mp-1",
+		drop1 = "300DZZDEQPT01",
+		num3 = 200,
+		id = "463mp-1",
+		num1 = 300,
+		drop3 = "300DZZDEQPT03",
+		num2 = 200
+	},
+	["463mp-2"] = {
+		drop2 = "300DZZDEQPT05",
+		need1 = "1",
+		drop1 = "300DZZDEQPT04",
+		proceed_id = "463mp-2",
+		id = "463mp-2",
+		num1 = 1000,
+		need2 = "2,3",
+		num2 = 1000
+	},
+	["463mp-3"] = {
+		need2 = "2",
+		need1 = "1",
+		proceed_id = "463mp-3",
+		drop2 = "300DZZDEQPT07",
+		num3 = 400,
+		need3 = "2",
+		drop3 = "300DZZDEQPT08",
+		num2 = 800,
+		drop1 = "300DZZDEQPT06",
+		id = "463mp-3",
+		num1 = 1600
+	},
+	["463mp-4"] = {
+		proceed_id = "463mp-4",
+		need1 = "1,2,3",
+		drop1 = "300DZZDEQPT09",
+		id = "463mp-4",
+		num1 = 800
+	},
+	["463mp-5"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "463mp-5",
+		drop2 = "300DZZDEQPT10",
+		num3 = 1000,
+		need3 = "1",
+		drop3 = "300DZZDEQPT10",
+		num2 = 1000,
+		drop1 = "300DZZDEQPT10",
+		id = "463mp-5",
+		num1 = 1000
+	},
+	["463mp-6"] = {
+		drop2 = "300DZZDEQPT11",
+		need1 = "1",
+		drop1 = "300DZZDEQPT04",
+		proceed_id = "463mp-6",
+		id = "463mp-6",
+		num1 = 1000,
+		need2 = "2,3",
+		num2 = 1000
+	},
+	["463mp-7"] = {
+		need2 = "2",
+		need1 = "1",
+		proceed_id = "463mp-7",
+		drop2 = "300DZZDEQPT12",
+		num3 = 1000,
+		need3 = "2",
+		drop3 = "300DZZDEQPT12",
+		num2 = 1000,
+		drop1 = "300DZZDEQPT12",
+		id = "463mp-7",
+		num1 = 1000
+	},
+	["463mp-8"] = {
+		proceed_id = "463mp-8",
+		need1 = "1,2,3",
+		drop1 = "300DZZDEQPT13",
+		id = "463mp-8",
+		num1 = 2000
+	},
+	["463mp-9"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "463mp-9",
+		drop2 = "300DZZDEQPT02",
+		num3 = 200,
+		need3 = "1",
+		drop3 = "300DZZDEQPT03",
+		num2 = 200,
+		drop1 = "300DZZDEQPT01",
+		id = "463mp-9",
+		num1 = 300
+	},
+	["463mp-10"] = {
+		drop2 = "300DZZDEQPT05",
+		need1 = "1",
+		drop1 = "300DZZDEQPT04",
+		proceed_id = "463mp-10",
+		id = "463mp-10",
+		num1 = 1000,
+		need2 = "2,3",
+		num2 = 1000
+	},
+	["463mp-11"] = {
+		need2 = "2",
+		need1 = "1",
+		proceed_id = "463mp-11",
+		drop2 = "300DZZDEQPT07",
+		num3 = 1600,
+		need3 = "2",
+		drop3 = "300DZZDEQPT06",
+		num2 = 800,
+		drop1 = "300DZZDEQPT08",
+		id = "463mp-11",
+		num1 = 400
+	},
+	["463mp-12"] = {
+		proceed_id = "463mp-12",
+		need1 = "1,2,3",
+		drop1 = "300DZZDEQPT09",
+		id = "463mp-12",
+		num1 = 800
+	},
+	["463mp-13"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "463mp-13",
+		drop2 = "300DZZDEQPT14",
+		num3 = 600,
+		need3 = "1",
+		drop3 = "300DZZDEQPT14",
+		num2 = 600,
+		drop1 = "300DZZDEQPT14",
+		id = "463mp-13",
+		num1 = 600
+	},
+	["463mp-14"] = {
+		drop2 = "300DZZDEQPT11",
+		need1 = "1",
+		drop1 = "300DZZDEQPT04",
+		proceed_id = "463mp-14",
+		id = "463mp-14",
+		num1 = 1000,
+		need2 = "2,3",
+		num2 = 1000
+	},
+	["463mp-15"] = {
+		need2 = "2",
+		need1 = "1",
+		proceed_id = "463mp-15",
+		drop2 = "300DZZDEQPT12",
+		num3 = 1000,
+		need3 = "2",
+		drop3 = "300DZZDEQPT12",
+		num2 = 1000,
+		drop1 = "300DZZDEQPT12",
+		id = "463mp-15",
+		num1 = 1000
+	},
+	["463mp-16"] = {
+		proceed_id = "463mp-16",
+		need1 = "1,2,3",
+		drop1 = "300DZZDEQPT15",
+		id = "463mp-16",
+		num1 = 4000
+	},
+	["463mp-17"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "463mp-17",
+		drop2 = "300DZZDEQPT02",
+		num3 = 200,
+		need3 = "1",
+		drop3 = "300DZZDEQPT03",
+		num2 = 200,
+		drop1 = "300DZZDEQPT01",
+		id = "463mp-17",
+		num1 = 300
+	},
+	["463mp-18"] = {
+		drop2 = "300DZZDEQPT05",
+		need1 = "1",
+		drop1 = "300DZZDEQPT04",
+		proceed_id = "463mp-18",
+		id = "463mp-18",
+		num1 = 1000,
+		need2 = "2,3",
+		num2 = 1000
+	},
+	["463mp-19"] = {
+		need2 = "2",
+		need1 = "1",
+		proceed_id = "463mp-19",
+		drop2 = "300DZZDEQPT07",
+		num3 = 400,
+		need3 = "2",
+		drop3 = "300DZZDEQPT08",
+		num2 = 800,
+		drop1 = "300DZZDEQPT06",
+		id = "463mp-19",
+		num1 = 1600
+	},
+	["463mp-20"] = {
+		proceed_id = "463mp-20",
+		need1 = "1,2,3",
+		drop1 = "300DZZDEQPT09",
+		id = "463mp-20",
+		num1 = 800
+	},
+	["463mp-21"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "463mp-21",
+		drop2 = "300DZZDEQPT10",
+		num3 = 1000,
+		need3 = "1",
+		drop3 = "300DZZDEQPT10",
+		num2 = 1000,
+		drop1 = "300DZZDEQPT10",
+		id = "463mp-21",
+		num1 = 1000
+	},
+	["463mp-22"] = {
+		drop2 = "300DZZDEQPT11",
+		need1 = "1",
+		drop1 = "300DZZDEQPT04",
+		proceed_id = "463mp-22",
+		id = "463mp-22",
+		num1 = 1000,
+		need2 = "2,3",
+		num2 = 1000
+	},
+	["463mp-23"] = {
+		need2 = "2",
+		need1 = "1",
+		proceed_id = "463mp-23",
+		drop2 = "300DZZDEQPT12",
+		num3 = 1000,
+		need3 = "2",
+		drop3 = "300DZZDEQPT12",
+		num2 = 1000,
+		drop1 = "300DZZDEQPT12",
+		id = "463mp-23",
+		num1 = 1000
+	},
+	["463mp-24"] = {
+		proceed_id = "463mp-24",
+		need1 = "1,2,3",
+		drop1 = "300DZZDEQPT16",
+		id = "463mp-24",
+		num1 = 6000
+	},
+	["463mp-25"] = {
+		need2 = "1",
+		need1 = "1",
+		proceed_id = "463mp-25",
+		drop2 = "300DZZDEQPT02",
+		num3 = 200,
+		need3 = "1",
+		drop3 = "300DZZDEQPT03",
+		num2 = 200,
+		drop1 = "300DZZDEQPT01",
+		id = "463mp-25",
+		num1 = 300
+	},
+	["463mp-26"] = {
+		drop2 = "300DZZDEQPT05",
+		need1 = "1",
+		drop1 = "300DZZDEQPT04",
+		proceed_id = "463mp-26",
+		id = "463mp-26",
+		num1 = 1000,
+		need2 = "2,3",
+		num2 = 1000
+	},
+	["463mp-27"] = {
+		need2 = "2",
+		need1 = "1",
+		proceed_id = "463mp-27",
+		drop2 = "300DZZDEQPT07",
+		num3 = 400,
+		need3 = "2",
+		drop3 = "300DZZDEQPT08",
+		num2 = 800,
+		drop1 = "300DZZDEQPT06",
+		id = "463mp-27",
+		num1 = 1600
+	},
+	["463mp-28"] = {
+		proceed_id = "463mp-28",
+		need1 = "1,2,3",
+		drop1 = "300DZZDEQPT09",
+		id = "463mp-28",
+		num1 = 800
+	}
+}

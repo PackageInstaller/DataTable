@@ -1,0 +1,40 @@
+return {
+	[828610011] = {
+		monster_level = 100,
+		damage = 231.25,
+		weaponStars = 3,
+		hpcount = 1,
+		extra_attack = 0,
+		damage_point = 250,
+		dodge = 0,
+		critical = 0,
+		weaponLevel = 5,
+		showcaptainhp = 1,
+		level = 100,
+		healpoint = 0,
+		hp_percent = 0,
+		modelid = "600150",
+		hp = 11937.5,
+		spellpower = 0,
+		id = 828610011
+	},
+	[840510011] = {
+		monster_level = 100,
+		damage = 231.25,
+		weaponStars = 3,
+		hpcount = 1,
+		extra_attack = 0,
+		damage_point = 250,
+		dodge = 0,
+		critical = 0,
+		weaponLevel = 5,
+		showcaptainhp = 1,
+		level = 100,
+		healpoint = 0,
+		hp_percent = 0,
+		modelid = "421032",
+		hp = 11937.5,
+		spellpower = 0,
+		id = 840510011
+	}
+}

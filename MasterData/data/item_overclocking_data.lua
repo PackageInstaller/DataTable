@@ -1,0 +1,61 @@
+return {
+	[111001001] = {
+		targetdes2 = "电磁魂卡商店",
+		name = "超频处理器",
+		id = 111001001,
+		targetdes3 = "热能魂卡商店",
+		targetlayer6 = "1555",
+		user_manual = "超频学员时与角色卡同为消耗素材",
+		equip_quality = 5,
+		targetdes5 = "光能魂卡商店",
+		targetlayer4 = "1553",
+		targetlayer3 = "1552",
+		targetlayer_starttime_1 = "2021-06-20 00:00:00",
+		targetlayer_finishtime_1 = "2021-07-11 23:59:59",
+		targetdes1 = "超频直购礼包购买",
+		targetdes6 = "暗物质魂卡商店",
+		max_stack = 9999,
+		targetlayer2 = "1551",
+		targetlayer1 = "3800027",
+		intro = "学员超频的必要材料。",
+		image_id = 111001001,
+		targetdes4 = "量子魂卡商店",
+		bag_item_type = 12,
+		targetlayer5 = "1554"
+	},
+	[111001011] = {
+		id = 111001011,
+		name = "超凡跃迁许可",
+		max_stack = 9999,
+		user_manual = "可将精英学员跃迁为超凡",
+		equip_quality = 5,
+		targetlayer1 = "1500001",
+		intro = "由学院颁发的，让学员得以参与进阶的许可证明。",
+		modelid_dark = "精英学员晋升到超凡的必要材料。",
+		image_id = 111001011,
+		bag_item_type = 12,
+		targetdes1 = "补给商店"
+	},
+	[111001012] = {
+		id = 111001012,
+		name = "精英跃迁许可",
+		max_stack = 9999,
+		user_manual = "可将普通学员跃迁为精英",
+		equip_quality = 5,
+		targetlayer1 = "1500001",
+		intro = "由学院颁发的，让学员得以参与进阶的许可证明。",
+		modelid_dark = "普通学员晋升到精英的必要材料。",
+		image_id = 111001012,
+		bag_item_type = 12,
+		targetdes1 = "补给商店"
+	},
+	[111001013] = {
+		id = 111001013,
+		name = "进阶材料3",
+		equip_quality = 5,
+		max_stack = 9999,
+		image_id = 111001001,
+		intro = "学员进阶的必要材料。",
+		bag_item_type = 12
+	}
+}

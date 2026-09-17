@@ -1,0 +1,30 @@
+return {
+	[6422640] = {
+		intro = "？？？？？？",
+		name = "【花前月下】",
+		id = 6422640,
+		skin_hide = 1,
+		targetdes1 = "角色超频获得",
+		item_market_name = "【花前月下】",
+		equip_quality = 5,
+		group = 5,
+		servant = 22620,
+		label = "超频获得",
+		model = "22640",
+		bg = "bg1",
+		price_diamond = 688,
+		ele = 22640,
+		price = 68800,
+		favor = 200,
+		max_stack = 1,
+		major = 24,
+		user_manual = "换上新衣服，不仅可以变美还可以涨好感度哦~~",
+		targetlayer1 = "301",
+		needhexie = 1,
+		shop_image = 22640,
+		image_id = 1322640,
+		logo_str = "超频",
+		bag_item_type = 64,
+		price_honor = 3440
+	}
+}

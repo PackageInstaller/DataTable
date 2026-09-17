@@ -1,0 +1,72 @@
+return {
+	["210230000001"] = {
+		extra_attack = 0,
+		extra_defence = 0,
+		damage = 1402,
+		hpcount = 1,
+		strike = 0,
+		dodge = 0,
+		modelid = "600500",
+		hp = 125000,
+		spellpower = 0,
+		id = "210230000001",
+		showcaptainhp = 1,
+		level = 150
+	},
+	["210231000001"] = {
+		extra_attack = 0,
+		extra_defence = 0,
+		damage = 3829,
+		hpcount = 1,
+		strike = 0,
+		dodge = 0,
+		modelid = "600500",
+		hp = 460700,
+		spellpower = 0,
+		id = "210231000001",
+		showcaptainhp = 1,
+		level = 200
+	},
+	["210232000001"] = {
+		extra_attack = 0,
+		extra_defence = 0,
+		damage = 8585,
+		hpcount = 1,
+		strike = 0,
+		dodge = 0,
+		modelid = "600500",
+		hp = 1522540,
+		spellpower = 0,
+		id = "210232000001",
+		showcaptainhp = 1,
+		level = 250
+	},
+	["210233000001"] = {
+		extra_attack = 0,
+		extra_defence = 0,
+		damage = 13758,
+		hpcount = 1,
+		strike = 0,
+		dodge = 0,
+		modelid = "600500",
+		hp = 3700000,
+		spellpower = 0,
+		id = "210233000001",
+		showcaptainhp = 1,
+		level = 300
+	},
+	["210234000001"] = {
+		extra_attack = 0,
+		extra_defence = 0,
+		damage = 22000,
+		hpcount = 1,
+		strike = 0,
+		dodge = 0,
+		modelid = "600500",
+		hp = 6648480,
+		spellpower = 0,
+		id = "210234000001",
+		showcaptainhp = 1,
+		level = 350
+	}
+}

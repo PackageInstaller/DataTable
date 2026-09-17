@@ -1,0 +1,93 @@
+return {
+	[18234001] = {
+		id = 18234001,
+		name = "支援点",
+		equip_quality = 5,
+		max_stack = 9999999,
+		image_id = 17034001,
+		user_manual = "活动支援点数",
+		bag_item_type = 101,
+		intro = "活动支援点数。"
+	},
+	[18234002] = {
+		id = 18234002,
+		name = "支援点标记",
+		max_stack = 9999999,
+		user_manual = "活动支援点数",
+		equip_quality = 5,
+		intro = "活动支援点数。",
+		unshowpur = 1,
+		image_id = 17034001,
+		bag_item_type = 101
+	},
+	[18234003] = {
+		id = 18234003,
+		name = "支援点标记",
+		max_stack = 9999999,
+		user_manual = "活动支援点数",
+		equip_quality = 5,
+		intro = "活动支援点数。",
+		unshowpur = 1,
+		image_id = 17034001,
+		bag_item_type = 101
+	},
+	[18203001] = {
+		targetactivity2 = "182",
+		name = "铃兰专属扭蛋券",
+		targetdes2 = "刃隐铃兰直购礼包",
+		targetdes3 = "刃隐铃兰累抽回礼",
+		user_manual = "刃隐铃兰专属扭蛋券，仅能在刃隐铃兰扩招池使用哦~",
+		id = 18203001,
+		equip_quality = 5,
+		targetactivity1 = "182",
+		targetlayer3 = "1800248",
+		targetdes1 = "刃隐铃兰支援",
+		max_stack = 99999,
+		targetlayer2 = "1750004",
+		targetlayer1 = "2500182",
+		intro = "这是一张充满欧气的扩招券，一定能为班长带来好运！",
+		image_id = 18203001,
+		targetactivity3 = "182",
+		bag_item_type = 68
+	},
+	[18203004] = {
+		id = 18203004,
+		name = "刃隐铃兰上新礼包",
+		equip_quality = 5,
+		max_stack = 999,
+		image_id = 18203004,
+		bag_item_type = 95,
+		mode_id = "SUZURAN01"
+	},
+	[18202001] = {
+		targetactivity2 = "182",
+		name = "学院币",
+		targetdes2 = "活动支援获取",
+		targetdes3 = "每日探险获取",
+		user_manual = "可以在刃隐铃兰活动商城兑换道具",
+		id = 18202001,
+		equip_quality = 5,
+		targetactivity4 = "182",
+		targetlayer4 = "1800248",
+		targetactivity1 = "182",
+		targetdes4 = "刃隐铃兰累抽回礼",
+		targetlayer3 = "2900182",
+		targetdes1 = "每日挑战获取",
+		max_stack = 999999,
+		targetlayer2 = "2500182",
+		targetlayer1 = "2300182",
+		intro = "可以在刃隐铃兰活动商城兑换道具。",
+		image_id = 4010111,
+		targetactivity3 = "182",
+		bag_item_type = 212
+	},
+	[18203005] = {
+		id = 18203005,
+		name = "刃隐铃兰超值礼包",
+		equip_quality = 5,
+		max_stack = 999,
+		image_id = 18203005,
+		bag_item_type = 95,
+		mode_id = "SUZURAN02"
+	}
+}

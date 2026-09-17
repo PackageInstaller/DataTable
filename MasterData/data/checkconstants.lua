@@ -1,0 +1,2 @@
+OPEN_BROKEN_ROLE = true
+OPEN_REWARD_CODE = true

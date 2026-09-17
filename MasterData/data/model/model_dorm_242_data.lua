@@ -1,0 +1,30 @@
+return {
+	["118130"] = {
+		expression = "118130_zhengchang",
+		name = "佩特里夏",
+		cute_Q = 118130,
+		portrait_image = 118130,
+		levelresult_scale = 1,
+		fanu = "118130_fanu",
+		spine_model = "118130",
+		kaixin = "118130_kaixin",
+		haixiu = "118130_haixiu",
+		modelscale = 1,
+		photofile_model = 258,
+		rolespine = "118130_1",
+		backgroundid = 6300007,
+		English_name = "Patricia",
+		talk_pos_offset = "0,0",
+		aichou = "118130_aichou",
+		main_name = "心跳预约",
+		name_Q = "佩特里夏",
+		major = 84,
+		itemid = 64118130,
+		broken_role = "broken_118130",
+		role_image = "118130",
+		is_big_role_image = 1,
+		id = "118130",
+		cute_role = "118130",
+		head_image = "118130"
+	}
+}

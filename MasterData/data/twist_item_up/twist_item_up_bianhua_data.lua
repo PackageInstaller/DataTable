@@ -1,0 +1,62 @@
+return {
+	[4064] = {
+		upitemdrop = "BAH1305120",
+		finishtime = "2020-11-06 23:59:59",
+		upsecretitemid4 = 1305120,
+		upitemshowpos2 = 1,
+		upmodel_1 = "TW01SSR001",
+		upitemweight_1 = 0,
+		upsecretdrop4 = "BAH1305120",
+		upitemid_1 = 1305120,
+		itemupid = 71,
+		img = 2251201,
+		id = 4064,
+		upitemdes = "次必出【空导机兵】",
+		starttime = "2020-10-24 00:00:00"
+	},
+	[4065] = {
+		upitemdrop = "BAH1305320",
+		finishtime = "2020-11-06 23:59:59",
+		upsecretitemid4 = 1305320,
+		upitemshowpos2 = 1,
+		upmodel_1 = "TW01SSR001",
+		upitemweight_1 = 0,
+		upsecretdrop4 = "BAH1305320",
+		upitemid_1 = 1305320,
+		itemupid = 72,
+		img = 2253201,
+		id = 4065,
+		upitemdes = "次必出【空导机兵】",
+		starttime = "2020-10-24 00:00:00"
+	},
+	[4096] = {
+		upitemdrop = "BAH1305120",
+		finishtime = "2021-01-27 23:59:59",
+		upsecretitemid4 = 1305120,
+		upitemshowpos2 = 1,
+		upmodel_1 = "TW01SSR001",
+		upitemweight_1 = 0,
+		upsecretdrop4 = "BAH1305120",
+		upitemid_1 = 1305120,
+		itemupid = 96,
+		img = 2251201,
+		id = 4096,
+		upitemdes = "次必出【空导机兵】",
+		starttime = "2021-01-23 00:00:00"
+	},
+	[4097] = {
+		upitemdrop = "BAH1305320",
+		finishtime = "2021-01-27 23:59:59",
+		upsecretitemid4 = 1305320,
+		upitemshowpos2 = 1,
+		upmodel_1 = "TW01SSR001",
+		upitemweight_1 = 0,
+		upsecretdrop4 = "BAH1305320",
+		upitemid_1 = 1305320,
+		itemupid = 97,
+		img = 2253201,
+		id = 4097,
+		upitemdes = "次必出【空导机兵】",
+		starttime = "2021-01-23 00:00:00"
+	}
+}

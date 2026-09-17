@@ -1,0 +1,90 @@
+return {
+	YXJHG_258_1 = {
+		drop_id2 = 1000205,
+		drop_rate2 = 1,
+		drop_id1 = 6800101,
+		drop_id3 = 9999998,
+		drop_num3 = 1,
+		drop_rate3 = 1,
+		purpose = "元宵节回归额外签到第1天",
+		drop_num2 = 2,
+		id = "YXJHG_258_1",
+		drop_num1 = 2,
+		drop_rate1 = 1
+	},
+	YXJHG_258_2 = {
+		drop_id2 = 1000102,
+		drop_rate2 = 1,
+		drop_id1 = 6800101,
+		drop_id3 = 15405003,
+		drop_num3 = 10,
+		drop_rate3 = 1,
+		purpose = "元宵节回归额外签到第2天",
+		drop_num2 = 2,
+		id = "YXJHG_258_2",
+		drop_num1 = 2,
+		drop_rate1 = 1
+	},
+	YXJHG_258_3 = {
+		drop_id2 = 1000205,
+		drop_rate2 = 1,
+		drop_id1 = 6800101,
+		drop_id3 = 2300001,
+		drop_num3 = 5,
+		drop_rate3 = 1,
+		purpose = "元宵节回归额外签到第3天",
+		drop_num2 = 2,
+		id = "YXJHG_258_3",
+		drop_num1 = 2,
+		drop_rate1 = 1
+	},
+	YXJHG_258_4 = {
+		drop_id2 = 1000102,
+		drop_rate2 = 1,
+		purpose = "元宵节回归额外签到第4天",
+		drop_num2 = 2,
+		id = "YXJHG_258_4",
+		drop_id1 = 6800101,
+		drop_num1 = 7,
+		drop_rate1 = 1
+	},
+	YXJHG_258_5 = {
+		drop_id2 = 1000205,
+		drop_rate2 = 1,
+		drop_id1 = 6800101,
+		drop_id3 = 3150000,
+		drop_num3 = 10,
+		drop_rate3 = 1,
+		purpose = "元宵节回归额外签到第5天",
+		drop_num2 = 2,
+		id = "YXJHG_258_5",
+		drop_num1 = 2,
+		drop_rate1 = 1
+	},
+	YXJHG_258_6 = {
+		drop_id2 = 1000102,
+		drop_rate2 = 1,
+		drop_id1 = 6800101,
+		drop_id3 = 3050013,
+		drop_num3 = 1,
+		drop_rate3 = 1,
+		purpose = "元宵节回归额外签到第6天",
+		drop_num2 = 2,
+		id = "YXJHG_258_6",
+		drop_num1 = 2,
+		drop_rate1 = 1
+	},
+	YXJHG_258_7 = {
+		drop_id2 = 1000205,
+		drop_rate2 = 1,
+		drop_id1 = 6800101,
+		drop_id3 = 3050061,
+		drop_num3 = 1,
+		drop_rate3 = 1,
+		purpose = "元宵节回归额外签到第7天",
+		drop_num2 = 2,
+		id = "YXJHG_258_7",
+		drop_num1 = 2,
+		drop_rate1 = 1
+	}
+}

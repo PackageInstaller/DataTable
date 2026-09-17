@@ -1,0 +1,233 @@
+return {
+	["20061-1"] = {
+		combat_limit = 12890,
+		name = "1层",
+		bigboss = "200610010100",
+		nextQ = 201,
+		boss_model = 50002,
+		id = "20061-1",
+		level_num = 1,
+		boss_combat = 50000,
+		des = "百层塔随机挑战1"
+	},
+	["20061-2"] = {
+		combat_limit = 13148,
+		name = "2层",
+		bigboss = "200610020100",
+		nextQ = 201,
+		boss_model = 50002,
+		id = "20061-2",
+		level_num = 1,
+		boss_combat = 100000,
+		des = "百层塔随机挑战2"
+	},
+	["20061-3"] = {
+		combat_limit = 13406,
+		name = "3层",
+		bigboss = "200610030100",
+		nextQ = 201,
+		boss_model = 50002,
+		id = "20061-3",
+		level_num = 1,
+		boss_combat = 100000,
+		des = "百层塔随机挑战3"
+	},
+	["20061-4"] = {
+		combat_limit = 13750,
+		name = "4层",
+		bigboss = "200610040100",
+		nextQ = 201,
+		boss_model = 50002,
+		id = "20061-4",
+		level_num = 1,
+		boss_combat = 100000,
+		des = "百层塔随机挑战4"
+	},
+	["20061-5"] = {
+		combat_limit = 17445,
+		name = "5层",
+		bigboss = "200610050100",
+		nextQ = 201,
+		boss_model = 50002,
+		id = "20061-5",
+		level_num = 1,
+		boss_combat = 100000,
+		des = "百层塔随机挑战5"
+	},
+	["20061-6"] = {
+		combat_limit = 25000,
+		name = "6层",
+		bigboss = "200610060100",
+		nextQ = 201,
+		boss_model = 50002,
+		id = "20061-6",
+		level_num = 1,
+		boss_combat = 100000,
+		des = "百层塔随机挑战6"
+	},
+	["20061-7"] = {
+		combat_limit = 25000,
+		name = "7层",
+		bigboss = "200610070100",
+		nextQ = 201,
+		boss_model = 50002,
+		id = "20061-7",
+		level_num = 1,
+		boss_combat = 100000,
+		des = "百层塔随机挑战7"
+	},
+	["20061-8"] = {
+		combat_limit = 25000,
+		name = "8层",
+		bigboss = "200610080100",
+		nextQ = 201,
+		boss_model = 50002,
+		id = "20061-8",
+		level_num = 1,
+		boss_combat = 100000,
+		des = "百层塔随机挑战8"
+	},
+	["20061-9"] = {
+		combat_limit = 25000,
+		name = "9层",
+		bigboss = "200610090100",
+		nextQ = 201,
+		boss_model = 50002,
+		id = "20061-9",
+		level_num = 1,
+		boss_combat = 100000,
+		des = "百层塔随机挑战9"
+	},
+	["20061-10"] = {
+		combat_limit = 25000,
+		name = "10层",
+		bigboss = "200610100100",
+		nextQ = 201,
+		boss_model = 50002,
+		id = "20061-10",
+		level_num = 1,
+		boss_combat = 100000,
+		des = "百层塔随机挑战10"
+	},
+	["20061-11"] = {
+		combat_limit = 40000,
+		name = "11层",
+		bigboss = "200610110100",
+		nextQ = 201,
+		boss_model = 50002,
+		id = "20061-11",
+		level_num = 1,
+		boss_combat = 100000,
+		des = "百层塔随机挑战11"
+	},
+	["20061-12"] = {
+		combat_limit = 40000,
+		name = "12层",
+		bigboss = "200610120100",
+		nextQ = 201,
+		boss_model = 50002,
+		id = "20061-12",
+		level_num = 1,
+		boss_combat = 100000,
+		des = "百层塔随机挑战12"
+	},
+	["20061-13"] = {
+		combat_limit = 40000,
+		name = "13层",
+		bigboss = "200610130100",
+		nextQ = 201,
+		boss_model = 50002,
+		id = "20061-13",
+		level_num = 1,
+		boss_combat = 100000,
+		des = "百层塔随机挑战13"
+	},
+	["20061-14"] = {
+		combat_limit = 40000,
+		name = "14层",
+		bigboss = "200610140100",
+		nextQ = 201,
+		boss_model = 50002,
+		id = "20061-14",
+		level_num = 1,
+		boss_combat = 100000,
+		des = "百层塔随机挑战14"
+	},
+	["20061-15"] = {
+		combat_limit = 40000,
+		name = "15层",
+		bigboss = "200610150100",
+		nextQ = 201,
+		boss_model = 50002,
+		id = "20061-15",
+		level_num = 1,
+		boss_combat = 100000,
+		des = "百层塔随机挑战15"
+	},
+	["20061-16"] = {
+		combat_limit = 45000,
+		name = "16层",
+		bigboss = "200610160100",
+		nextQ = 201,
+		boss_model = 50002,
+		id = "20061-16",
+		level_num = 1,
+		boss_combat = 100000,
+		des = "百层塔随机挑战16"
+	},
+	["20061-17"] = {
+		combat_limit = 45000,
+		name = "17层",
+		bigboss = "200610170100",
+		nextQ = 201,
+		boss_model = 50002,
+		id = "20061-17",
+		level_num = 1,
+		boss_combat = 100000,
+		des = "百层塔随机挑战17"
+	},
+	["20061-18"] = {
+		combat_limit = 45000,
+		name = "18层",
+		bigboss = "200610180100",
+		nextQ = 201,
+		boss_model = 50002,
+		id = "20061-18",
+		level_num = 1,
+		boss_combat = 100000,
+		des = "百层塔随机挑战18"
+	},
+	["20061-19"] = {
+		combat_limit = 45000,
+		name = "19层",
+		bigboss = "200610190100",
+		nextQ = 201,
+		boss_model = 50002,
+		id = "20061-19",
+		level_num = 1,
+		boss_combat = 100000,
+		des = "百层塔随机挑战19"
+	},
+	["20061-20"] = {
+		combat_limit = 45000,
+		name = "20层",
+		bigboss = "200610200100",
+		nextQ = 201,
+		boss_model = 50002,
+		id = "20061-20",
+		level_num = 1,
+		boss_combat = 100000,
+		des = "百层塔随机挑战20"
+	},
+	["20061-21"] = {
+		combat_limit = 55000,
+		name = "终极试炼",
+		bigboss = "200610210100",
+		nextQ = 201,
+		boss_model = 50002,
+		id = "20061-21",
+		level_num = 1,
+		boss_combat = 100000,
+		des = "百层塔随机挑战21"
+	}
+}

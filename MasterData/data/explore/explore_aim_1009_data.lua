@@ -1,0 +1,42 @@
+return {
+	[81009001] = {
+		aim1_param1 = "81091005",
+		name = "一往无前",
+		object_cad_id = 1060011,
+		aim_finish_dropid = "VIVIENTX001",
+		is_hide_array = 1,
+		bgm = "explorebgm",
+		fight_girl1 = 81009001,
+		pos_unlock3 = 1,
+		bridges = "1-11,11-21",
+		preview_img = "fightbg114",
+		aim_finish_talk = 8109007,
+		aim1_param2 = 1,
+		pos_unlock2 = 1,
+		aim1_des = "解决医院的骚乱",
+		pos_unlock4 = 1,
+		enter_map_talk = 8109001,
+		mapid = 81009001,
+		id = 81009001
+	},
+	[88858901] = {
+		aim1_param1 = "85891005",
+		name = "浅川玉乃的体检",
+		object_cad_id = 1062011,
+		aim_finish_dropid = "QCYNTX101",
+		is_hide_array = 1,
+		bgm = "explorebgm",
+		fight_girl1 = 81021073,
+		pos_unlock3 = 1,
+		bridges = "1-11,11-21",
+		preview_img = "fightbg114",
+		aim_finish_talk = 8589007,
+		aim1_param2 = 1,
+		pos_unlock2 = 1,
+		aim1_des = "解决医院的骚乱",
+		pos_unlock4 = 1,
+		enter_map_talk = 8589001,
+		mapid = 88858901,
+		id = 88858901
+	}
+}
