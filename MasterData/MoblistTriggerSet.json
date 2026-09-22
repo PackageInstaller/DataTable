@@ -1,0 +1,1207 @@
+[
+  {
+    "triggerElement": [
+      "101=7"
+    ],
+    "triggerId": "TCSMEP08710201",
+    "triggerName": "Po-2移动至战场最后1格"
+  },
+  {
+    "triggerElement": [
+      "110=T100000G70",
+      "112>0"
+    ],
+    "triggerId": "TCSMEP08410303",
+    "triggerName": "没有我方单位损失了全部小队成员"
+  },
+  {
+    "triggerElement": [
+      "110=T100000G70",
+      "112>0"
+    ],
+    "triggerId": "TCSMEP02910101",
+    "triggerName": "没有我方单位损失了全部小队成员"
+  },
+  {
+    "triggerElement": [
+      "100>5"
+    ],
+    "triggerId": "TFLMCS10300220",
+    "triggerName": "回合数＞5"
+  },
+  {
+    "triggerElement": [
+      "110=T100000G70",
+      "112=100"
+    ],
+    "triggerId": "TCSMCS10200116",
+    "triggerName": "「虎Ⅱ」剩余【生命值】100%"
+  },
+  {
+    "triggerElement": [
+      "100>2"
+    ],
+    "triggerId": "TFWMCS0010101",
+    "triggerName": "坚持超过3个回合"
+  },
+  {
+    "triggerElement": [
+      "110=T100000G70",
+      "112>0"
+    ],
+    "triggerId": "TCSMCS10200113",
+    "triggerName": "没有我方单位损失了全部小队成员"
+  },
+  {
+    "triggerElement": [
+      "114!=EMY43411ZY1"
+    ],
+    "triggerId": "TFWMCS0010102",
+    "triggerName": "消灭「通用人偶素体：突袭型」"
+  },
+  {
+    "triggerElement": [
+      "108=T200000G70",
+      "112=0"
+    ],
+    "triggerId": "TFWMEP03510201",
+    "triggerName": "消灭所有敌方单位"
+  },
+  {
+    "triggerElement": [
+      "114!=EMY84116ZY3"
+    ],
+    "triggerId": "TFWMCS0010103",
+    "triggerName": "击败「弥赛亚」"
+  },
+  {
+    "triggerElement": [
+      "109=EMY99986ZY1",
+      "112<100"
+    ],
+    "triggerId": "TFWMCS0010104",
+    "triggerName": "击伤「喷火」"
+  },
+  {
+    "triggerElement": [
+      "100<2"
+    ],
+    "triggerId": "TCSMCS10200114",
+    "triggerName": "在第1回合获得胜利"
+  },
+  {
+    "triggerElement": [
+      "108=T200000G70",
+      "112<100"
+    ],
+    "triggerId": "TFWMCS0010105",
+    "triggerName": "击伤或击败所有敌方单位"
+  },
+  {
+    "triggerElement": [
+      "114!=EMY8416321"
+    ],
+    "triggerId": "TFWMEP05330101",
+    "triggerName": "摧毁「Land Ironclad」"
+  },
+  {
+    "triggerElement": [
+      "114!=EMY8416328"
+    ],
+    "triggerId": "TFWMEP05330102",
+    "triggerName": "摧毁「Land Ironclad」"
+  },
+  {
+    "triggerElement": [
+      "114!=EMY8416334"
+    ],
+    "triggerId": "TFWMEP05330103",
+    "triggerName": "摧毁「Land Ironclad」"
+  },
+  {
+    "triggerElement": [
+      "110=T100000G70",
+      "112>0"
+    ],
+    "triggerId": "TCSMCS0010302",
+    "triggerName": "没有我方单位损失了全部小队成员"
+  },
+  {
+    "triggerElement": [
+      "100>1"
+    ],
+    "triggerId": "TCSEPE10410105",
+    "triggerName": "坚持超过2个回合"
+  },
+  {
+    "triggerElement": [
+      "114!=EMY61411WK4"
+    ],
+    "triggerId": "TFWMEP07620104",
+    "triggerName": "消灭「一幅画」"
+  },
+  {
+    "triggerElement": [
+      "100>4"
+    ],
+    "triggerId": "TFLMCS0010302",
+    "triggerName": "回合数＞4"
+  },
+  {
+    "triggerElement": [
+      "100>3"
+    ],
+    "triggerId": "TFWMCS0010205",
+    "triggerName": "坚持超过4个回合"
+  },
+  {
+    "triggerElement": [
+      "100>2"
+    ],
+    "triggerId": "TFWMCS10611501",
+    "triggerName": "坚持超过3个回合"
+  },
+  {
+    "triggerElement": [
+      "100>1"
+    ],
+    "triggerId": "TCSMST20910105",
+    "triggerName": "坚持超过2个回合"
+  },
+  {
+    "triggerElement": [
+      "110=T100000G70",
+      "112=100"
+    ],
+    "triggerId": "TCSMCS10200106",
+    "triggerName": "「Ta183」剩余【生命值】100%"
+  },
+  {
+    "triggerElement": [
+      "100>10"
+    ],
+    "triggerId": "TFLMCS10300221",
+    "triggerName": "回合数超过10"
+  },
+  {
+    "triggerElement": [
+      "114!=EMY4315107",
+      "114!=EMY1315107"
+    ],
+    "triggerId": "TFWMEP08410101",
+    "triggerName": "消灭除「绝境回廊」外的敌方单位"
+  },
+  {
+    "triggerElement": [
+      "100<2"
+    ],
+    "triggerId": "TCSMCS10300110",
+    "triggerName": "在第1回合获得胜利"
+  },
+  {
+    "triggerElement": [
+      "100>1"
+    ],
+    "triggerId": "TFWMCS10700101",
+    "triggerName": "坚持超过2个回合!"
+  },
+  {
+    "triggerElement": [
+      "100<4"
+    ],
+    "triggerId": "TCSMCS10300116",
+    "triggerName": "在3回合内获得胜利"
+  },
+  {
+    "triggerElement": [
+      "110=T100000G70",
+      "112=100"
+    ],
+    "triggerId": "TCSMCS10300113",
+    "triggerName": "胜利时所有我方单位生命值为100%"
+  },
+  {
+    "triggerElement": [
+      "101=4"
+    ],
+    "triggerId": "TFWMCS05010204",
+    "triggerName": "飞龙移动到第5格"
+  },
+  {
+    "triggerElement": [
+      "106=E8415110"
+    ],
+    "triggerId": "TFWMEP02910401",
+    "triggerName": "击败「科利安？」"
+  },
+  {
+    "triggerElement": [
+      "100<5"
+    ],
+    "triggerId": "TCSMCS10300117",
+    "triggerName": "在4回合内获得胜利"
+  },
+  {
+    "triggerElement": [
+      "100<4"
+    ],
+    "triggerId": "TCSMCS10300118",
+    "triggerName": "在3回合内获得胜利"
+  },
+  {
+    "triggerElement": [
+      "110=T100000G70",
+      "112>0"
+    ],
+    "triggerId": "TCSMEP01030102",
+    "triggerName": "没有我方单位损失了全部小队成员"
+  },
+  {
+    "triggerElement": [
+      "110=T100000G70",
+      "112>0"
+    ],
+    "triggerId": "TCSMEP01030101",
+    "triggerName": "没有我方单位损失了全部小队成员"
+  },
+  {
+    "triggerElement": [
+      "110=T100000G70",
+      "112>0"
+    ],
+    "triggerId": "TCSMEP01030104",
+    "triggerName": "没有我方单位损失了全部小队成员"
+  },
+  {
+    "triggerElement": [
+      "110=T100000G70",
+      "112>0"
+    ],
+    "triggerId": "TCSMEP01030103",
+    "triggerName": "没有我方单位损失了全部小队成员"
+  },
+  {
+    "triggerElement": [
+      "108=T200000G70",
+      "112=0"
+    ],
+    "triggerId": "TFWMCS10200113",
+    "triggerName": "消灭所有敌方单位"
+  },
+  {
+    "triggerElement": [
+      "110=T100000G70",
+      "112>0"
+    ],
+    "triggerId": "TCSMEP01030105",
+    "triggerName": "没有我方单位损失了全部小队成员"
+  },
+  {
+    "triggerElement": [
+      "114!=EMY84163TQ2"
+    ],
+    "triggerId": "TFLMEP05310305",
+    "triggerName": "「Land Ironclad」被摧毁"
+  },
+  {
+    "triggerElement": [
+      "114!=EMY9998301"
+    ],
+    "triggerId": "TCSMEP02910205",
+    "triggerName": "击败「死亡希德恩」"
+  },
+  {
+    "triggerElement": [
+      "100<6"
+    ],
+    "triggerId": "TCSMCS10300221",
+    "triggerName": "在5回合内获得胜利"
+  },
+  {
+    "triggerElement": [
+      "100>10"
+    ],
+    "triggerId": "TFLMCS10300117",
+    "triggerName": "回合数超过10"
+  },
+  {
+    "triggerElement": [
+      "110=T100000G70",
+      "112=100"
+    ],
+    "triggerId": "TCSMCS10300220",
+    "triggerName": "胜利时所有我方单位生命值为100%"
+  },
+  {
+    "triggerElement": [
+      "100>0"
+    ],
+    "triggerId": "TFWMCS0010402",
+    "triggerName": "坚持超过1个回合"
+  },
+  {
+    "triggerElement": [
+      "100>2"
+    ],
+    "triggerId": "TFWMEP03510301",
+    "triggerName": "坚持超过3个回合"
+  },
+  {
+    "triggerElement": [
+      "100<2"
+    ],
+    "triggerId": "TCSMCS10300102",
+    "triggerName": "在第1回合获得胜利"
+  },
+  {
+    "triggerElement": [
+      "100>0"
+    ],
+    "triggerId": "TCSMEP02900000",
+    "triggerName": "假条件"
+  },
+  {
+    "triggerElement": [
+      "115!=T102000G70"
+    ],
+    "triggerId": "TCSMCS0010204",
+    "triggerName": "不使用空中单位"
+  },
+  {
+    "triggerElement": [
+      "110=T100000G70",
+      "112>0"
+    ],
+    "triggerId": "TCSMCS0010205",
+    "triggerName": "没有我方单位损失了全部小队成员"
+  },
+  {
+    "triggerElement": [
+      "114!=EMY6313134"
+    ],
+    "triggerId": "TFWMEP05410204",
+    "triggerName": "消灭敌方所有「方晶石墨」"
+  },
+  {
+    "triggerElement": [
+      "100>1"
+    ],
+    "triggerId": "TCSEPE10410204",
+    "triggerName": "坚持超过2个回合"
+  },
+  {
+    "triggerElement": [
+      "110=T100000G70",
+      "112>0"
+    ],
+    "triggerId": "TCSMEP03510101",
+    "triggerName": "没有我方单位损失了全部小队成员"
+  },
+  {
+    "triggerElement": [
+      "114!=EMY1213134"
+    ],
+    "triggerId": "TFWMEP05410205",
+    "triggerName": "消灭敌方所有「透辉石」"
+  },
+  {
+    "triggerElement": [
+      "108=T202000G70",
+      "112<50"
+    ],
+    "triggerId": "TCSEPE10410205",
+    "triggerName": "莉莉血量低于50%"
+  },
+  {
+    "triggerElement": [
+      "114!=EMY4213122"
+    ],
+    "triggerId": "TFWMEP05320301",
+    "triggerName": "消灭「净水晶」 "
+  },
+  {
+    "triggerElement": [
+      "100>1"
+    ],
+    "triggerId": "TCSEPE10410203",
+    "triggerName": "坚持超过2个回合"
+  },
+  {
+    "triggerElement": [
+      "114!=EMY1213125"
+    ],
+    "triggerId": "TFWMEP05320304",
+    "triggerName": "消灭「透辉石」"
+  },
+  {
+    "triggerElement": [
+      "114!=EMY8413126"
+    ],
+    "triggerId": "TFWMEP05320305",
+    "triggerName": "击败「白新娘」"
+  },
+  {
+    "triggerElement": [
+      "114!=EMY1213123"
+    ],
+    "triggerId": "TFWMEP05320302",
+    "triggerName": "消灭「透辉石」"
+  },
+  {
+    "triggerElement": [
+      "114!=EMY4313124"
+    ],
+    "triggerId": "TFWMEP05320303",
+    "triggerName": "消灭「β石英」"
+  },
+  {
+    "triggerElement": [
+      "101=1"
+    ],
+    "triggerId": "TCSEPE10310101",
+    "triggerName": "移动到战场第2格"
+  },
+  {
+    "triggerElement": [
+      "114!=EMY61411WK2"
+    ],
+    "triggerId": "TFWMEP07610203",
+    "triggerName": "找到异样的画"
+  },
+  {
+    "triggerElement": [
+      "100>2"
+    ],
+    "triggerId": "TFWMEP04210304",
+    "triggerName": "坚持超过3个回合"
+  },
+  {
+    "triggerElement": [
+      "102=6"
+    ],
+    "triggerId": "TCSMCS10611501",
+    "triggerName": "我方地面单位移动到第7格并坚持超过3个回合"
+  },
+  {
+    "triggerElement": [
+      "100>0"
+    ],
+    "triggerId": "TFWMEP07610202",
+    "triggerName": "坚持超过1个回合"
+  },
+  {
+    "triggerElement": [
+      "100<3"
+    ],
+    "triggerId": "TCSMCS10300212",
+    "triggerName": "在2回合内获得胜利"
+  },
+  {
+    "triggerElement": [
+      "114!=EMY4213107",
+      "114!=EMY5213107",
+      "114!=EMY6213107"
+    ],
+    "triggerId": "TFWMEP05310102",
+    "triggerName": "消灭所有「灾兽」"
+  },
+  {
+    "triggerElement": [
+      "102=7"
+    ],
+    "triggerId": "TCSMEP08410304",
+    "triggerName": "八六移动至战场最后1格"
+  },
+  {
+    "triggerElement": [
+      "100<4"
+    ],
+    "triggerId": "TCSMCS10300218",
+    "triggerName": "在3回合内获得胜利"
+  },
+  {
+    "triggerElement": [
+      "100<4"
+    ],
+    "triggerId": "TCSMCS10300219",
+    "triggerName": "在3回合内获得胜利"
+  },
+  {
+    "triggerElement": [
+      "100<4"
+    ],
+    "triggerId": "TCSMCS10300217",
+    "triggerName": "在3回合内获得胜利"
+  },
+  {
+    "triggerElement": [
+      "110=T100000G70",
+      "112>0"
+    ],
+    "triggerId": "TCSMEP08410101",
+    "triggerName": "没有我方单位损失了全部小队成员"
+  },
+  {
+    "triggerElement": [
+      "110=T102000G70"
+    ],
+    "triggerId": "TFLMEP01030103",
+    "triggerName": "使用了空中单位"
+  },
+  {
+    "triggerElement": [
+      "110=T102000G70"
+    ],
+    "triggerId": "TFLMEP01030104",
+    "triggerName": "使用了空中单位"
+  },
+  {
+    "triggerElement": [
+      "100>2"
+    ],
+    "triggerId": "TFWMCS10200213",
+    "triggerName": "坚持3回合"
+  },
+  {
+    "triggerElement": [
+      "100>1"
+    ],
+    "triggerId": "TCSMCS10700101",
+    "triggerName": "坚持超过2个回合!!"
+  },
+  {
+    "triggerElement": [
+      "100>2"
+    ],
+    "triggerId": "TFWMCS10200212",
+    "triggerName": "坚持3回合"
+  },
+  {
+    "triggerElement": [
+      "108=T200000G70",
+      "112=0"
+    ],
+    "triggerId": "TFWMCS10300102",
+    "triggerName": "消灭所有敌方单位"
+  },
+  {
+    "triggerElement": [
+      "108=T200000G70",
+      "112=0"
+    ],
+    "triggerId": "TFWMCS10300220",
+    "triggerName": "消灭所有敌方单位"
+  },
+  {
+    "triggerElement": [
+      "114!=EMY92003ZY2"
+    ],
+    "triggerId": "TFWMCS10300221",
+    "triggerName": "消灭「仿制的Tu-4」"
+  },
+  {
+    "triggerElement": [
+      "108=T200000G70",
+      "112<30"
+    ],
+    "triggerId": "TFWMCS10200211",
+    "triggerName": "P.108的血量低于30%"
+  },
+  {
+    "triggerElement": [
+      "102=0"
+    ],
+    "triggerId": "TCSMCS10620101",
+    "triggerName": "我方地面单位移动到第1格并坚持超过2个回合"
+  },
+  {
+    "triggerElement": [
+      "104=2"
+    ],
+    "triggerId": "TFWMEP10030101",
+    "triggerName": "鼠式占领地面第3格"
+  },
+  {
+    "triggerElement": [
+      "101=7"
+    ],
+    "triggerId": "TFWMCS0010302",
+    "triggerName": "「喷火」前进到战场第8格"
+  },
+  {
+    "triggerElement": [
+      "110=T100000G70",
+      "112>50"
+    ],
+    "triggerId": "TCSMCS0010101",
+    "triggerName": "「怨恨」剩余【生命值】>50%"
+  },
+  {
+    "triggerElement": [
+      "100<2"
+    ],
+    "triggerId": "TCSMCS0010102",
+    "triggerName": "在第1回合获得胜利"
+  },
+  {
+    "triggerElement": [
+      "100>1"
+    ],
+    "triggerId": "TFWEPE10410105",
+    "triggerName": "坚持超过2个回合"
+  },
+  {
+    "triggerElement": [
+      "109=EMY84116ZY3",
+      "106=E84116ZY5"
+    ],
+    "triggerId": "TCSMCS0010103",
+    "triggerName": "「弥赛亚」施放过技能「风暴强袭·对坦克」"
+  },
+  {
+    "triggerElement": [
+      "100<3"
+    ],
+    "triggerId": "TCSMCS0010104",
+    "triggerName": "胜利时回合数≤2"
+  },
+  {
+    "triggerElement": [
+      "108=T201040G70",
+      "112=0"
+    ],
+    "triggerId": "TFWMCS10200209",
+    "triggerName": "消灭所有【仿制品：坦克】"
+  },
+  {
+    "triggerElement": [
+      "115!=T102000G70"
+    ],
+    "triggerId": "TCSMCS0010105",
+    "triggerName": "不使用空中单位"
+  },
+  {
+    "triggerElement": [
+      "101=1"
+    ],
+    "triggerId": "TFWEPE10310101",
+    "triggerName": "移动到战场第2格"
+  },
+  {
+    "triggerElement": [
+      "102>5"
+    ],
+    "triggerId": "TFWMCS10200207",
+    "triggerName": "我方地面单位至少移动到第6格"
+  },
+  {
+    "triggerElement": [
+      "100>2"
+    ],
+    "triggerId": "TFWMEP05410303",
+    "triggerName": "坚持到第3回合"
+  },
+  {
+    "triggerElement": [
+      "100>2"
+    ],
+    "triggerId": "TFWMEP05410304",
+    "triggerName": "坚持到第3回合"
+  },
+  {
+    "triggerElement": [
+      "108=T200000G70",
+      "112=0"
+    ],
+    "triggerId": "TFWMCS10300212",
+    "triggerName": "消灭所有敌方单位"
+  },
+  {
+    "triggerElement": [
+      "108=T200000G70",
+      "112=0"
+    ],
+    "triggerId": "TFWMCS0010403",
+    "triggerName": "击败所有敌方单位"
+  },
+  {
+    "triggerElement": [
+      "114!=EMY4113117"
+    ],
+    "triggerId": "TFWMEP05320201",
+    "triggerName": "消灭「蓝刚玉」"
+  },
+  {
+    "triggerElement": [
+      "110=T100000G70",
+      "112>0"
+    ],
+    "triggerId": "TCSMCS10400219",
+    "triggerName": "没有我方单位损失了全部小队成员"
+  },
+  {
+    "triggerElement": [
+      "114!=EMY99986ZY3"
+    ],
+    "triggerId": "TFWMCS0010404",
+    "triggerName": "击败「喷火」"
+  },
+  {
+    "triggerElement": [
+      "114!=EMY4113118"
+    ],
+    "triggerId": "TFWMEP05320202",
+    "triggerName": "消灭「蓝刚玉」"
+  },
+  {
+    "triggerElement": [
+      "108=T200000G70",
+      "112=0"
+    ],
+    "triggerId": "TFWMCS10300219",
+    "triggerName": "消灭所有敌方单位"
+  },
+  {
+    "triggerElement": [
+      "100>0"
+    ],
+    "triggerId": "TFWMEP02900000",
+    "triggerName": "假条件"
+  },
+  {
+    "triggerElement": [
+      "114!=EMY4113121"
+    ],
+    "triggerId": "TFWMEP05320205",
+    "triggerName": "消灭「蓝刚玉」"
+  },
+  {
+    "triggerElement": [
+      "108=T200000G70",
+      "112=0"
+    ],
+    "triggerId": "TFWMCS10300217",
+    "triggerName": "消灭所有敌方单位"
+  },
+  {
+    "triggerElement": [
+      "114!=EMY1213119"
+    ],
+    "triggerId": "TFWMEP05320203",
+    "triggerName": "消灭「透辉石」"
+  },
+  {
+    "triggerElement": [
+      "108=T200000G70",
+      "112=0"
+    ],
+    "triggerId": "TFWMCS10300218",
+    "triggerName": "消灭所有敌方单位"
+  },
+  {
+    "triggerElement": [
+      "114!=EMY3213120"
+    ],
+    "triggerId": "TFWMEP05320204",
+    "triggerName": "消灭「白云母」"
+  },
+  {
+    "triggerElement": [
+      "104=2"
+    ],
+    "triggerId": "TCSMCS10030101",
+    "triggerName": "鼠式占领地面第3格"
+  },
+  {
+    "triggerElement": [
+      "109=EMY8414135",
+      "106=E841413503"
+    ],
+    "triggerId": "TFWMCS8414135",
+    "triggerName": "「暴君」施放过技能「挪动」"
+  },
+  {
+    "triggerElement": [
+      "102=7"
+    ],
+    "triggerId": "TFWMEP08410304",
+    "triggerName": "八六移动至战场最后1格"
+  },
+  {
+    "triggerElement": [
+      "100>2"
+    ],
+    "triggerId": "TFWMEP08410303",
+    "triggerName": "坚持超过3个回合"
+  },
+  {
+    "triggerElement": [
+      "114!=EMY9998301"
+    ],
+    "triggerId": "TFWMEP02910205",
+    "triggerName": "击败「死亡希德恩」"
+  },
+  {
+    "triggerElement": [
+      "100>2"
+    ],
+    "triggerId": "TCSMEP08410205",
+    "triggerName": "坚持超过3个回合"
+  },
+  {
+    "triggerElement": [
+      "115!=T102000G70"
+    ],
+    "triggerId": "TCSMEP08330101",
+    "triggerName": "不使用空中单位"
+  },
+  {
+    "triggerElement": [
+      "110=T100000G70",
+      "112>0"
+    ],
+    "triggerId": "TCSMEP07610203",
+    "triggerName": "没有我方单位损失了全部小队成员"
+  },
+  {
+    "triggerElement": [
+      "110=T100000G70",
+      "112>0"
+    ],
+    "triggerId": "TCSMEP07610202",
+    "triggerName": "没有我方单位损失了全部小队成员"
+  },
+  {
+    "triggerElement": [
+      "110=T100000G70",
+      "112>0"
+    ],
+    "triggerId": "TCSMEP04210304",
+    "triggerName": "没有我方单位损失了全部小队成员"
+  },
+  {
+    "triggerElement": [
+      "113=T201080G70"
+    ],
+    "triggerId": "TCSMCS10200209",
+    "triggerName": "消灭所有【仿制品：坦克】，且【群众】存活"
+  },
+  {
+    "triggerElement": [
+      "110=T100000G70",
+      "112>0"
+    ],
+    "triggerId": "TCSMEP02910401",
+    "triggerName": "没有我方单位损失了全部小队成员"
+  },
+  {
+    "triggerElement": [
+      "110=T101000G70",
+      "112>50"
+    ],
+    "triggerId": "TCSMCS10200212",
+    "triggerName": "坚持3回合，且虎Ⅱ血量在50%以上"
+  },
+  {
+    "triggerElement": [
+      "108=T202000G70",
+      "112<50"
+    ],
+    "triggerId": "TFWEPE10410205",
+    "triggerName": "莉莉血量低于50%"
+  },
+  {
+    "triggerElement": [
+      "107!=SS213302"
+    ],
+    "triggerId": "TCSMCS10200211",
+    "triggerName": "P.108的血量低于30%，且没有施放过【死线】"
+  },
+  {
+    "triggerElement": [
+      "102=3"
+    ],
+    "triggerId": "TFWMEP03510101",
+    "triggerName": "占领地面第4格"
+  },
+  {
+    "triggerElement": [
+      "108=T201000G70",
+      "112<80"
+    ],
+    "triggerId": "TCSMCS10200213",
+    "triggerName": "坚持3回合，且袋狮血量在80%以下"
+  },
+  {
+    "triggerElement": [
+      "108=T200000G70",
+      "112=0"
+    ],
+    "triggerId": "TFWMCS0010204",
+    "triggerName": "击败所有敌方单位"
+  },
+  {
+    "triggerElement": [
+      "100>1"
+    ],
+    "triggerId": "TFWEPE10410203",
+    "triggerName": "坚持超过2个回合"
+  },
+  {
+    "triggerElement": [
+      "114!=EMY84133ZY1",
+      "114!=EMY84121ST"
+    ],
+    "triggerId": "TFWMCS10400219",
+    "triggerName": "击败「雾霭黄昏石」和「旧日的黑新娘」"
+  },
+  {
+    "triggerElement": [
+      "100>1"
+    ],
+    "triggerId": "TFWEPE10410204",
+    "triggerName": "坚持超过2个回合"
+  },
+  {
+    "triggerElement": [
+      "108=T200000G70",
+      "112=100"
+    ],
+    "triggerId": "TCSMCS0010402",
+    "triggerName": "胜利时敌方所有单位生命值=100%"
+  },
+  {
+    "triggerElement": [
+      "115!=T102030G70",
+      "115!=T101070G70L"
+    ],
+    "triggerId": "TCSMCS0010403",
+    "triggerName": "不使用火炮或轰炸机"
+  },
+  {
+    "triggerElement": [
+      "104<4"
+    ],
+    "triggerId": "TFLMEP03510201",
+    "triggerName": "灾兽占领了地面第4格或第4格后方的格子"
+  },
+  {
+    "triggerElement": [
+      "100<2"
+    ],
+    "triggerId": "TCSMCS0010404",
+    "triggerName": "在第1回合获得胜利"
+  },
+  {
+    "triggerElement": [
+      "114!=EMY4115104",
+      "114!=EMY6215104",
+      "114!=EMY1215104"
+    ],
+    "triggerId": "TFWMEP02910101",
+    "triggerName": "消灭除「绝境回廊」外的敌方单位"
+  },
+  {
+    "triggerElement": [
+      "101=7"
+    ],
+    "triggerId": "TFWMCS10300113",
+    "triggerName": "占领空中第8格"
+  },
+  {
+    "triggerElement": [
+      "108=T200000G70",
+      "112=0"
+    ],
+    "triggerId": "TFWMCS10300110",
+    "triggerName": "消灭所有敌方单位"
+  },
+  {
+    "triggerElement": [
+      "114!=EMY3111134"
+    ],
+    "triggerId": "TFWMCS10300116",
+    "triggerName": "消灭滞空种「琥珀」"
+  },
+  {
+    "triggerElement": [
+      "114!=EMY4213113"
+    ],
+    "triggerId": "TFWMEP05320102",
+    "triggerName": "消灭「净水晶」"
+  },
+  {
+    "triggerElement": [
+      "114!=EMY84111ZY1"
+    ],
+    "triggerId": "TFWMCS10300117",
+    "triggerName": "消灭「进化的结晶之茧」"
+  },
+  {
+    "triggerElement": [
+      "114!=EMY6213114"
+    ],
+    "triggerId": "TFWMEP05320103",
+    "triggerName": "消灭「冰长石」"
+  },
+  {
+    "triggerElement": [
+      "114!=EMY4113112"
+    ],
+    "triggerId": "TFWMEP05320101",
+    "triggerName": "消灭「蓝刚玉」"
+  },
+  {
+    "triggerElement": [
+      "114!=EMY84133ZY1"
+    ],
+    "triggerId": "TFWMCS10300118",
+    "triggerName": "消灭「雾霭黄昏石」"
+  },
+  {
+    "triggerElement": [
+      "114!=EMY1313115"
+    ],
+    "triggerId": "TFWMEP05320104",
+    "triggerName": "消灭「久霞石」"
+  },
+  {
+    "triggerElement": [
+      "114!=EMY5113116"
+    ],
+    "triggerId": "TFWMEP05320105",
+    "triggerName": "消灭「苍蓝塔菲石」"
+  },
+  {
+    "triggerElement": [
+      "108=T200000G70",
+      "112=0"
+    ],
+    "triggerId": "TFWMEP08330101",
+    "triggerName": "消灭所有敌方单位"
+  },
+  {
+    "triggerElement": [
+      "110=T100000G70",
+      "112>0"
+    ],
+    "triggerId": "TCSMEP07620104",
+    "triggerName": "没有我方单位损失了全部小队成员"
+  },
+  {
+    "triggerElement": [
+      "102>3"
+    ],
+    "triggerId": "TFWMEP01030101",
+    "triggerName": "我方地面单位前进到≥5格"
+  },
+  {
+    "triggerElement": [
+      "108=T200000G70",
+      "112=0"
+    ],
+    "triggerId": "TCSMCS10200207",
+    "triggerName": "我方单位至少移动到第6格；且全歼敌人"
+  },
+  {
+    "triggerElement": [
+      "114!=EMY4114134"
+    ],
+    "triggerId": "TFWMEP01030102",
+    "triggerName": "消灭敌方所有「红刚玉」"
+  },
+  {
+    "triggerElement": [
+      "101=7"
+    ],
+    "triggerId": "TFWMEP08710201",
+    "triggerName": "Po-2移动至战场最后1格"
+  },
+  {
+    "triggerElement": [
+      "100>2"
+    ],
+    "triggerId": "TFWMEP01030103",
+    "triggerName": "不携带空中单位并坚持3个回合"
+  },
+  {
+    "triggerElement": [
+      "100>2"
+    ],
+    "triggerId": "TCSMEP05410304",
+    "triggerName": "坚持到第3回合"
+  },
+  {
+    "triggerElement": [
+      "108=T200000G70",
+      "112=0"
+    ],
+    "triggerId": "TFWMEP01030104",
+    "triggerName": "不携带空中单位并消灭所有敌人"
+  },
+  {
+    "triggerElement": [
+      "100>2"
+    ],
+    "triggerId": "TFWMEP08410205",
+    "triggerName": "坚持超过3个回合"
+  },
+  {
+    "triggerElement": [
+      "100>1"
+    ],
+    "triggerId": "TCSMCS05010204",
+    "triggerName": "坚持超过2个回合"
+  },
+  {
+    "triggerElement": [
+      "114!=EMY6114134"
+    ],
+    "triggerId": "TFWMEP01030105",
+    "triggerName": "消灭敌方所有「绯血黑曜岩」"
+  },
+  {
+    "triggerElement": [
+      "104<6"
+    ],
+    "triggerId": "TFLMCS10200113",
+    "triggerName": "敌方地面单位越过了地面第6格"
+  },
+  {
+    "triggerElement": [
+      "100>1"
+    ],
+    "triggerId": "TFWMCS10620101",
+    "triggerName": "坚持超过2个回合"
+  },
+  {
+    "triggerElement": [
+      "100>3"
+    ],
+    "triggerId": "TFWMEP05310303",
+    "triggerName": "坚持超过4个回合"
+  },
+  {
+    "triggerElement": [
+      "116=DOL1161",
+      "102=6"
+    ],
+    "triggerId": "TFWMEP05310305",
+    "triggerName": "玛莎前进到战场第7格"
+  },
+  {
+    "triggerElement": [
+      "109=EMY8414135",
+      "106=E841413503"
+    ],
+    "triggerId": "TCSMCS8414135",
+    "triggerName": "「暴君」施放过技能「挪动」"
+  },
+  {
+    "triggerElement": [
+      "100>1"
+    ],
+    "triggerId": "TFWMST20910105",
+    "triggerName": "坚持超过2个回合"
+  }
+]

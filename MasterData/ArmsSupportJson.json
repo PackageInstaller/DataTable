@@ -1,0 +1,30 @@
+[
+  {
+    "buffInherit": "0",
+    "icon": "SUP1_002,SUP2_002",
+    "spRequire": "0",
+    "suppSupportTarget": "T102000G70",
+    "supportDescription": "当场上我方空中单位数量＜4且陆空单位之和数量＜6时，自动从战场空中最靠后且有空位的一格进入战场。",
+    "supportId": "SUP214302",
+    "supportName": "增援",
+    "supportType": "3",
+    "supportTypeCN": "被动增援",
+    "supportTypeMini": "2",
+    "switchSkillID": "",
+    "targetMode": "0"
+  },
+  {
+    "buffInherit": "1",
+    "icon": "SUP1_001,SUP2_001",
+    "spRequire": "12",
+    "suppSupportTarget": "Tlightning0",
+    "supportDescription": "本回合P-38 闪电行动结束后，替换场上的P-38 闪电并继承其大部分正面状态，再施放技能「Overwhelming」。Overwhelming：所有我方单位获得数个【暴击概率】【暴击伤害】提升25%状态，持续永久（不可驱散），获得数量等于其已拥有【暴击概率】提升状态的数量（最多获得5个），仅生效1次。XP-58对前方1~2格所有敌方空中单位发动165%威力溅射攻击，并对前方1~2格所有敌方地面单位发动165%威力溅射攻击。",
+    "supportId": "SUP214301",
+    "supportName": "合二为一 SP消耗：12",
+    "supportType": "1",
+    "supportTypeCN": "主动替换",
+    "supportTypeMini": "1",
+    "switchSkillID": "SS214302,1",
+    "targetMode": "1"
+  }
+]

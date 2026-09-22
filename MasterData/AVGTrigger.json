@@ -1,0 +1,38 @@
+[
+  {
+    "EventID": "ATN0004",
+    "Trigger_Types": [
+      "EnterTimes"
+    ],
+    "Trigger_Values": [
+      "0"
+    ],
+    "AVG_ID": "0001"
+  },
+  {
+    "EventID": "ATN0001",
+    "Trigger_Types": [
+      "PlayerLevel",
+      "Date",
+      "CampaignProgress"
+    ],
+    "Trigger_Values": [
+      ">10",
+      "2018.02.12.12.12",
+      "CAM0101,10000"
+    ],
+    "AVG_ID": "0002"
+  },
+  {
+    "EventID": "ATN0010",
+    "Trigger_Types": [
+      "EventOverTimes",
+      "EventOverTimes"
+    ],
+    "Trigger_Values": [
+      "EVE010107,>0",
+      "EVE010107,<3"
+    ],
+    "AVG_ID": "0003"
+  }
+]

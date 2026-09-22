@@ -1,0 +1,3368 @@
+[
+  {
+    "description": "敌方全体【最大生命值】提升10%",
+    "effectType": "hpUp",
+    "icon": "BRI_hpUp",
+    "showRate": "100",
+    "wordId": "BRB0201000001",
+    "wordLevel": "2",
+    "wordName": "凛冬的庇护",
+    "wordNumber": "hpStack*0.1",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "hpStack*0.1",
+        "word_name": "hpUp"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【最大生命值】降低10%",
+    "effectType": "hpUp",
+    "icon": "BRI_hpUp",
+    "showRate": "100",
+    "wordId": "BRB0201000002",
+    "wordLevel": "2",
+    "wordName": "失温症",
+    "wordNumber": "hpStack*-0.1",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "hpStack*-0.1",
+        "word_name": "hpUp"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【机动】降低15点",
+    "effectType": "dodge",
+    "icon": "BRI_dodge",
+    "showRate": "100",
+    "wordId": "BRB0103000002",
+    "wordLevel": "1",
+    "wordName": "冻结之霜",
+    "wordNumber": "-15",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "-15",
+        "word_name": "dodge"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【机动】提升15点",
+    "effectType": "dodge",
+    "icon": "BRI_dodge",
+    "showRate": "100",
+    "wordId": "BRB0103000003",
+    "wordLevel": "1",
+    "wordName": "雪中行军",
+    "wordNumber": "15",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "15",
+        "word_name": "dodge"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【机动】降低10%",
+    "effectType": "dodge",
+    "icon": "BRI_dodge",
+    "showRate": "100",
+    "wordId": "BRG0203000001",
+    "wordLevel": "2",
+    "wordName": "高机动目标对抗措施",
+    "wordNumber": "dodge*-0.1",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "dodge*-0.1",
+        "word_name": "dodge"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "我方全体【机动】降低15点",
+    "effectType": "dodge",
+    "icon": "BRI_dodge",
+    "showRate": "100",
+    "wordId": "BRB0103000004",
+    "wordLevel": "1",
+    "wordName": "冻结之霜",
+    "wordNumber": "-15",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "-15",
+        "word_name": "dodge"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【机动】提升10%",
+    "effectType": "dodge",
+    "icon": "BRI_dodge",
+    "showRate": "100",
+    "wordId": "BRG0203000002",
+    "wordLevel": "2",
+    "wordName": "特化行动装置",
+    "wordNumber": "dodge*0.1",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "dodge*0.1",
+        "word_name": "dodge"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "敌方全体【机动】提升15点",
+    "effectType": "dodge",
+    "icon": "BRI_dodge",
+    "showRate": "100",
+    "wordId": "BRB0103000001",
+    "wordLevel": "1",
+    "wordName": "雪中行军",
+    "wordNumber": "15",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "15",
+        "word_name": "dodge"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【最大生命值】提升10%",
+    "effectType": "hpUp",
+    "icon": "BRI_hpUp",
+    "showRate": "100",
+    "wordId": "BRB0201000003",
+    "wordLevel": "2",
+    "wordName": "凛冬的庇护",
+    "wordNumber": "hpStack*0.1",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "hpStack*0.1",
+        "word_name": "hpUp"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【最大生命值】降低10%",
+    "effectType": "hpUp",
+    "icon": "BRI_hpUp",
+    "showRate": "100",
+    "wordId": "BRG0301000001",
+    "wordLevel": "3",
+    "wordName": "强针对攻击训练",
+    "wordNumber": "hpStack*-0.1",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "hpStack*-0.1",
+        "word_name": "hpUp"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "我方全体【最大生命值】降低10%",
+    "effectType": "hpUp",
+    "icon": "BRI_hpUp",
+    "showRate": "100",
+    "wordId": "BRB0201000004",
+    "wordLevel": "2",
+    "wordName": "失温症",
+    "wordNumber": "hpStack*-0.1",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "hpStack*-0.1",
+        "word_name": "hpUp"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【最大生命值】提升10%",
+    "effectType": "hpUp",
+    "icon": "BRI_hpUp",
+    "showRate": "100",
+    "wordId": "BRG0301000002",
+    "wordLevel": "3",
+    "wordName": "试验性机体强化",
+    "wordNumber": "hpStack*0.1",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "hpStack*0.1",
+        "word_name": "hpUp"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "我方全体【命中】降低15点",
+    "effectType": "hit",
+    "icon": "BRI_hit",
+    "showRate": "100",
+    "wordId": "BRB0106000004",
+    "wordLevel": "1",
+    "wordName": "折光冰凌",
+    "wordNumber": "-15",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "-15",
+        "word_name": "hit"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【命中】提升15点",
+    "effectType": "hit",
+    "icon": "BRI_hit",
+    "showRate": "100",
+    "wordId": "BRB0106000003",
+    "wordLevel": "1",
+    "wordName": "寒冬适应",
+    "wordNumber": "15",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "15",
+        "word_name": "hit"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【命中】降低15点",
+    "effectType": "hit",
+    "icon": "BRI_hit",
+    "showRate": "100",
+    "wordId": "BRB0106000002",
+    "wordLevel": "1",
+    "wordName": "折光冰凌",
+    "wordNumber": "-15",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "-15",
+        "word_name": "hit"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【命中】提升15点",
+    "effectType": "hit",
+    "icon": "BRI_hit",
+    "showRate": "100",
+    "wordId": "BRB0106000001",
+    "wordLevel": "1",
+    "wordName": "寒冬适应",
+    "wordNumber": "15",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "15",
+        "word_name": "hit"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【对地火力】降低10%",
+    "effectType": "powerAG",
+    "icon": "BRI_powerAG",
+    "showRate": "100",
+    "wordId": "BRB0204000004",
+    "wordLevel": "2",
+    "wordName": "寒将军·地",
+    "wordNumber": "powerAG*-0.1",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "powerAG*-0.1",
+        "word_name": "powerAG"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【暴击伤害】降低8%",
+    "effectType": "criticalDB",
+    "icon": "BRI_criticalDB",
+    "showRate": "100",
+    "wordId": "BRB0109000002",
+    "wordLevel": "1",
+    "wordName": "失温缠绕",
+    "wordNumber": "-8",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "-8",
+        "word_name": "criticalDB"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【对地火力】提升10%",
+    "effectType": "powerAG",
+    "icon": "BRI_powerAG",
+    "showRate": "100",
+    "wordId": "BRB0204000003",
+    "wordLevel": "2",
+    "wordName": "冬将军·地",
+    "wordNumber": "powerAG*0.1",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "powerAG*0.1",
+        "word_name": "powerAG"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【对地火力】降低10%",
+    "effectType": "powerAG",
+    "icon": "BRI_powerAG",
+    "showRate": "100",
+    "wordId": "BRG0304000001",
+    "wordLevel": "3",
+    "wordName": "地面附加防护措施",
+    "wordNumber": "powerAG*-0.1",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "powerAG*-0.1",
+        "word_name": "powerAG"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "敌方全体【暴击伤害】提升12%",
+    "effectType": "criticalDB",
+    "icon": "BRI_criticalDB",
+    "showRate": "100",
+    "wordId": "BRB0109000003",
+    "wordLevel": "1",
+    "wordName": "攻击增势",
+    "wordNumber": "12",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "12",
+        "word_name": "criticalDB"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【对地火力】降低10%",
+    "effectType": "powerAG",
+    "icon": "BRI_powerAG",
+    "showRate": "100",
+    "wordId": "BRB0204000002",
+    "wordLevel": "2",
+    "wordName": "寒将军·地",
+    "wordNumber": "powerAG*-0.1",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "powerAG*-0.1",
+        "word_name": "powerAG"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【对地火力】提升10%",
+    "effectType": "powerAG",
+    "icon": "BRI_powerAG",
+    "showRate": "100",
+    "wordId": "BRB0204000001",
+    "wordLevel": "2",
+    "wordName": "冬将军·地",
+    "wordNumber": "powerAG*0.1",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "powerAG*0.1",
+        "word_name": "powerAG"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【贯通】降低15%",
+    "effectType": "armorPenetration",
+    "icon": "BRI_armorPenet",
+    "showRate": "100",
+    "wordId": "BRB0307000004",
+    "wordLevel": "3",
+    "wordName": "凛冬已至",
+    "wordNumber": "armorPenetration*-0.15",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "armorPenetration*-0.15",
+        "word_name": "armorPenetration"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【暴击伤害】提升12%",
+    "effectType": "criticalDB",
+    "icon": "BRI_criticalDB",
+    "showRate": "100",
+    "wordId": "BRB0109000001",
+    "wordLevel": "1",
+    "wordName": "攻击增势",
+    "wordNumber": "12",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "12",
+        "word_name": "criticalDB"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【贯通】提升10%",
+    "effectType": "armorPenetration",
+    "icon": "BRI_armorPenet",
+    "showRate": "100",
+    "wordId": "BRB0207000003",
+    "wordLevel": "2",
+    "wordName": "破甲寒冰",
+    "wordNumber": "armorPenetration*0.1",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "armorPenetration*0.1",
+        "word_name": "armorPenetration"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【装甲】降低15%",
+    "effectType": "armor",
+    "icon": "BRI_armor",
+    "showRate": "100",
+    "wordId": "BRB0302000004",
+    "wordLevel": "3",
+    "wordName": "寒性装甲脆化",
+    "wordNumber": "armor*-0.15",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "armor*-0.15",
+        "word_name": "armor"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【贯通】降低10%",
+    "effectType": "armorPenetration",
+    "icon": "BRI_armorPenet",
+    "showRate": "100",
+    "wordId": "BRB0207000004",
+    "wordLevel": "2",
+    "wordName": "凛冬已至",
+    "wordNumber": "armorPenetration*-0.1",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "armorPenetration*-0.1",
+        "word_name": "armorPenetration"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【装甲】提升15%",
+    "effectType": "armor",
+    "icon": "BRI_armor",
+    "showRate": "100",
+    "wordId": "BRB0302000003",
+    "wordLevel": "3",
+    "wordName": "寒冰装甲",
+    "wordNumber": "armor*0.15",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "armor*0.15",
+        "word_name": "armor"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【贯通】提升10%",
+    "effectType": "armorPenetration",
+    "icon": "BRI_armorPenet",
+    "showRate": "100",
+    "wordId": "BRB0207000001",
+    "wordLevel": "2",
+    "wordName": "破甲寒冰",
+    "wordNumber": "armorPenetration*0.1",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "armorPenetration*0.1",
+        "word_name": "armorPenetration"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【暴击伤害】提升25%",
+    "effectType": "criticalDB",
+    "icon": "BRI_criticalDB",
+    "showRate": "100",
+    "wordId": "BRB0209000003",
+    "wordLevel": "2",
+    "wordName": "攻击增势",
+    "wordNumber": "25",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "25",
+        "word_name": "criticalDB"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【装甲】降低15%",
+    "effectType": "armor",
+    "icon": "BRI_armor",
+    "showRate": "100",
+    "wordId": "BRB0302000002",
+    "wordLevel": "3",
+    "wordName": "寒性装甲脆化",
+    "wordNumber": "armor*-0.15",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "armor*-0.15",
+        "word_name": "armor"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【暴击伤害】降低25%",
+    "effectType": "criticalDB",
+    "icon": "BRI_criticalDB",
+    "showRate": "100",
+    "wordId": "BRG0309000001",
+    "wordLevel": "2",
+    "wordName": "试验性抗损改进",
+    "wordNumber": "-25",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "-25",
+        "word_name": "criticalDB"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "我方全体【贯通】降低10%",
+    "effectType": "armorPenetration",
+    "icon": "BRI_armorPenet",
+    "showRate": "100",
+    "wordId": "BRB0207000002",
+    "wordLevel": "2",
+    "wordName": "凛冬已至",
+    "wordNumber": "armorPenetration*-0.1",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "armorPenetration*-0.1",
+        "word_name": "armorPenetration"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【暴击伤害】降低15%",
+    "effectType": "criticalDB",
+    "icon": "BRI_criticalDB",
+    "showRate": "100",
+    "wordId": "BRB0209000004",
+    "wordLevel": "2",
+    "wordName": "失温缠绕",
+    "wordNumber": "-15",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "-15",
+        "word_name": "criticalDB"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【装甲】提升15%",
+    "effectType": "armor",
+    "icon": "BRI_armor",
+    "showRate": "100",
+    "wordId": "BRB0302000001",
+    "wordLevel": "3",
+    "wordName": "寒冰装甲",
+    "wordNumber": "armor*0.15",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "armor*0.15",
+        "word_name": "armor"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【暴击伤害】提升15%",
+    "effectType": "criticalDB",
+    "icon": "BRI_criticalDB",
+    "showRate": "100",
+    "wordId": "BRG0309000002",
+    "wordLevel": "3",
+    "wordName": "改进型干涉装药",
+    "wordNumber": "15",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "15",
+        "word_name": "criticalDB"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "敌方全体【对空火力】提升15%",
+    "effectType": "powerAA",
+    "icon": "BRI_powerAA",
+    "showRate": "100",
+    "wordId": "BRB0305000001",
+    "wordLevel": "3",
+    "wordName": "冬将军·空",
+    "wordNumber": "powerAA*0.15",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "powerAA*0.15",
+        "word_name": "powerAA"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【对空火力】降低15%",
+    "effectType": "powerAA",
+    "icon": "BRI_powerAA",
+    "showRate": "100",
+    "wordId": "BRB0305000004",
+    "wordLevel": "3",
+    "wordName": "寒将军·空",
+    "wordNumber": "powerAA*-0.15",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "powerAA*-0.15",
+        "word_name": "powerAA"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【对空火力】降低15%",
+    "effectType": "powerAA",
+    "icon": "BRI_powerAA",
+    "showRate": "100",
+    "wordId": "BRB0305000002",
+    "wordLevel": "3",
+    "wordName": "寒将军·空",
+    "wordNumber": "powerAA*-0.15",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "powerAA*-0.15",
+        "word_name": "powerAA"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【对空火力】提升15%",
+    "effectType": "powerAA",
+    "icon": "BRI_powerAA",
+    "showRate": "100",
+    "wordId": "BRB0305000003",
+    "wordLevel": "3",
+    "wordName": "冬将军·空",
+    "wordNumber": "powerAA*0.15",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "powerAA*0.15",
+        "word_name": "powerAA"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【命中】降低10%",
+    "effectType": "hit",
+    "icon": "BRI_hit",
+    "showRate": "100",
+    "wordId": "BRG0306000001",
+    "wordLevel": "3",
+    "wordName": "机体伪装措施",
+    "wordNumber": "hit*-0.1",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "hit*-0.1",
+        "word_name": "hit"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "我方全体【命中】提升10%",
+    "effectType": "hit",
+    "icon": "BRI_hit",
+    "showRate": "100",
+    "wordId": "BRG0306000002",
+    "wordLevel": "3",
+    "wordName": "机体试验改装·命中特化",
+    "wordNumber": "hit*0.1",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "hit*0.1",
+        "word_name": "hit"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "敌方全体【幸运】提升25点",
+    "effectType": "luck",
+    "icon": "BRI_luck",
+    "showRate": "100",
+    "wordId": "BRB0110000001",
+    "wordLevel": "1",
+    "wordName": "幸运之雪",
+    "wordNumber": "25",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "25",
+        "word_name": "luck"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【暴击补正】降低12%",
+    "effectType": "critical",
+    "icon": "BRI_critical",
+    "showRate": "100",
+    "wordId": "BRB0308000002",
+    "wordLevel": "3",
+    "wordName": "失温之压",
+    "wordNumber": "-12",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "-12",
+        "word_name": "critical"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【暴击补正】提升12%",
+    "effectType": "critical",
+    "icon": "BRI_critical",
+    "showRate": "100",
+    "wordId": "BRB0308000001",
+    "wordLevel": "3",
+    "wordName": "以逸待劳",
+    "wordNumber": "12",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "12",
+        "word_name": "critical"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【暴击补正】提升8%",
+    "effectType": "critical",
+    "icon": "BRI_critical",
+    "showRate": "100",
+    "wordId": "BRG0208000002",
+    "wordLevel": "2",
+    "wordName": "改进型干涉引信",
+    "wordNumber": "8",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "8",
+        "word_name": "critical"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "我方全体【幸运】降低10%",
+    "effectType": "luck",
+    "icon": "BRI_luck",
+    "showRate": "100",
+    "wordId": "BRB0110000004",
+    "wordLevel": "1",
+    "wordName": "厄运之雪",
+    "wordNumber": "luck*-0.1",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "luck*-0.1",
+        "word_name": "luck"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【幸运】提升20%",
+    "effectType": "luck",
+    "icon": "BRI_luck",
+    "showRate": "100",
+    "wordId": "BRG0210000002",
+    "wordLevel": "2",
+    "wordName": "特制护身符",
+    "wordNumber": "luck*0.2",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "luck*0.2",
+        "word_name": "luck"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "敌方全体【幸运】提升25点",
+    "effectType": "luck",
+    "icon": "BRI_luck",
+    "showRate": "100",
+    "wordId": "BRB0110000003",
+    "wordLevel": "1",
+    "wordName": "幸运之雪",
+    "wordNumber": "25",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "25",
+        "word_name": "luck"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【幸运】降低20%",
+    "effectType": "luck",
+    "icon": "BRI_luck",
+    "showRate": "100",
+    "wordId": "BRG0210000001",
+    "wordLevel": "2",
+    "wordName": "试验性火控改进",
+    "wordNumber": "luck*-0.2",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "luck*-0.2",
+        "word_name": "luck"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "我方全体【幸运】降低10%",
+    "effectType": "luck",
+    "icon": "BRI_luck",
+    "showRate": "100",
+    "wordId": "BRB0110000002",
+    "wordLevel": "1",
+    "wordName": "厄运之雪",
+    "wordNumber": "luck*-0.1",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "luck*-0.1",
+        "word_name": "luck"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "将战场天气替换为「晴朗」",
+    "effectType": "sky",
+    "icon": "BRI_skyB",
+    "showRate": "100",
+    "wordId": "BRG0115000001",
+    "wordLevel": "1",
+    "wordName": "环境适应改装",
+    "wordNumber": "EA0301",
+    "wordTarget": "",
+    "wordValues": [
+      {
+        "wordValue": "EA0301",
+        "word_name": "sky"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "敌方全体【最大生命值】提升15%",
+    "effectType": "hpUp",
+    "icon": "BRI_hpUp",
+    "showRate": "100",
+    "wordId": "BRB0301000003",
+    "wordLevel": "3",
+    "wordName": "凛冬的庇护",
+    "wordNumber": "hpStack*0.15",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "hpStack*0.15",
+        "word_name": "hpUp"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【最大生命值】降低15%",
+    "effectType": "hpUp",
+    "icon": "BRI_hpUp",
+    "showRate": "100",
+    "wordId": "BRB0301000002",
+    "wordLevel": "3",
+    "wordName": "失温症",
+    "wordNumber": "hpStack*-0.15",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "hpStack*-0.15",
+        "word_name": "hpUp"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【最大生命值】降低15%",
+    "effectType": "hpUp",
+    "icon": "BRI_hpUp",
+    "showRate": "100",
+    "wordId": "BRB0301000004",
+    "wordLevel": "3",
+    "wordName": "失温症",
+    "wordNumber": "hpStack*-0.15",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "hpStack*-0.15",
+        "word_name": "hpUp"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【对空火力】提升10%",
+    "effectType": "powerAA",
+    "icon": "BRI_powerAA",
+    "showRate": "100",
+    "wordId": "BRG0205000002",
+    "wordLevel": "2",
+    "wordName": "高效对空弹药配给",
+    "wordNumber": "powerAA*0.1",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "powerAA*0.1",
+        "word_name": "powerAA"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "敌方全体【机动】降低30点",
+    "effectType": "dodge",
+    "icon": "BRI_dodge",
+    "showRate": "100",
+    "wordId": "BRG0103000001",
+    "wordLevel": "1",
+    "wordName": "高机动目标对抗措施",
+    "wordNumber": "-30",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "-30",
+        "word_name": "dodge"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "我方全体【机动】提升30点",
+    "effectType": "dodge",
+    "icon": "BRI_dodge",
+    "showRate": "100",
+    "wordId": "BRG0103000002",
+    "wordLevel": "1",
+    "wordName": "特化行动装置",
+    "wordNumber": "30",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "30",
+        "word_name": "dodge"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "我方全体【贯通】提升30点",
+    "effectType": "armorPenetration",
+    "icon": "BRI_armorPenet",
+    "showRate": "100",
+    "wordId": "BRG0107000002",
+    "wordLevel": "1",
+    "wordName": "改进型穿甲干涉弹药",
+    "wordNumber": "30",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "30",
+        "word_name": "armorPenetration"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "敌方全体【贯通】降低30点",
+    "effectType": "armorPenetration",
+    "icon": "BRI_armorPenet",
+    "showRate": "100",
+    "wordId": "BRG0107000001",
+    "wordLevel": "1",
+    "wordName": "试验型装甲保护系统",
+    "wordNumber": "-30",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "-30",
+        "word_name": "armorPenetration"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "敌方全体【最大生命值】提升15%",
+    "effectType": "hpUp",
+    "icon": "BRI_hpUp",
+    "showRate": "100",
+    "wordId": "BRB0301000001",
+    "wordLevel": "3",
+    "wordName": "凛冬的庇护",
+    "wordNumber": "hpStack*0.15",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "hpStack*0.15",
+        "word_name": "hpUp"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【最大生命值】提升10%",
+    "effectType": "hpUp",
+    "icon": "BRI_hpUp",
+    "showRate": "100",
+    "wordId": "BRG0201000002",
+    "wordLevel": "2",
+    "wordName": "试验性机体强化",
+    "wordNumber": "hpStack*0.1",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "hpStack*0.1",
+        "word_name": "hpUp"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "敌方全体【最大生命值】降低10%",
+    "effectType": "hpUp",
+    "icon": "BRI_hpUp",
+    "showRate": "100",
+    "wordId": "BRG0201000001",
+    "wordLevel": "2",
+    "wordName": "强针对攻击训练",
+    "wordNumber": "hpStack*-0.1",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "hpStack*-0.1",
+        "word_name": "hpUp"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "我方全体【对地火力】降低25点",
+    "effectType": "powerAG",
+    "icon": "BRI_powerAG",
+    "showRate": "100",
+    "wordId": "BRB0104000004",
+    "wordLevel": "1",
+    "wordName": "寒将军·地",
+    "wordNumber": "-25",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "-25",
+        "word_name": "powerAG"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【暴击伤害】提升25%",
+    "effectType": "criticalDB",
+    "icon": "BRI_criticalDB",
+    "showRate": "100",
+    "wordId": "BRB0209000001",
+    "wordLevel": "2",
+    "wordName": "攻击增势",
+    "wordNumber": "25",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "25",
+        "word_name": "criticalDB"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【对地火力】提升8点",
+    "effectType": "powerAG",
+    "icon": "BRI_powerAG",
+    "showRate": "100",
+    "wordId": "BRB0104000003",
+    "wordLevel": "1",
+    "wordName": "冬将军·地",
+    "wordNumber": "8",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "8",
+        "word_name": "powerAG"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【暴击伤害】降低15%",
+    "effectType": "criticalDB",
+    "icon": "BRI_criticalDB",
+    "showRate": "100",
+    "wordId": "BRB0209000002",
+    "wordLevel": "2",
+    "wordName": "失温缠绕",
+    "wordNumber": "-15",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "-15",
+        "word_name": "criticalDB"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【对地火力】降低25点",
+    "effectType": "powerAG",
+    "icon": "BRI_powerAG",
+    "showRate": "100",
+    "wordId": "BRB0104000002",
+    "wordLevel": "1",
+    "wordName": "寒将军·地",
+    "wordNumber": "-25",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "-25",
+        "word_name": "powerAG"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【对地火力】提升8点",
+    "effectType": "powerAG",
+    "icon": "BRI_powerAG",
+    "showRate": "100",
+    "wordId": "BRB0104000001",
+    "wordLevel": "1",
+    "wordName": "冬将军·地",
+    "wordNumber": "8",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "8",
+        "word_name": "powerAG"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【贯通】降低15%",
+    "effectType": "armorPenetration",
+    "icon": "BRI_armorPenet",
+    "showRate": "100",
+    "wordId": "BRB0307000002",
+    "wordLevel": "3",
+    "wordName": "凛冬已至",
+    "wordNumber": "armorPenetration*-0.15",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "armorPenetration*-0.15",
+        "word_name": "armorPenetration"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【装甲】降低10%",
+    "effectType": "armor",
+    "icon": "BRI_armor",
+    "showRate": "100",
+    "wordId": "BRB0202000004",
+    "wordLevel": "2",
+    "wordName": "寒性装甲脆化",
+    "wordNumber": "armor*-0.1",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "armor*-0.1",
+        "word_name": "armor"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【贯通】提升15%",
+    "effectType": "armorPenetration",
+    "icon": "BRI_armorPenet",
+    "showRate": "100",
+    "wordId": "BRB0307000003",
+    "wordLevel": "3",
+    "wordName": "破甲寒冰",
+    "wordNumber": "armorPenetration*0.15",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "armorPenetration*0.15",
+        "word_name": "armorPenetration"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【暴击伤害】降低8%",
+    "effectType": "criticalDB",
+    "icon": "BRI_criticalDB",
+    "showRate": "100",
+    "wordId": "BRB0109000004",
+    "wordLevel": "1",
+    "wordName": "失温缠绕",
+    "wordNumber": "-8",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "-8",
+        "word_name": "criticalDB"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【装甲】提升10%",
+    "effectType": "armor",
+    "icon": "BRI_armor",
+    "showRate": "100",
+    "wordId": "BRB0202000003",
+    "wordLevel": "2",
+    "wordName": "寒冰装甲",
+    "wordNumber": "armor*0.1",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "armor*0.1",
+        "word_name": "armor"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【装甲】降低10%",
+    "effectType": "armor",
+    "icon": "BRI_armor",
+    "showRate": "100",
+    "wordId": "BRB0202000002",
+    "wordLevel": "2",
+    "wordName": "寒性装甲脆化",
+    "wordNumber": "armor*-0.1",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "armor*-0.1",
+        "word_name": "armor"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【贯通】提升15%",
+    "effectType": "armorPenetration",
+    "icon": "BRI_armorPenet",
+    "showRate": "100",
+    "wordId": "BRB0307000001",
+    "wordLevel": "3",
+    "wordName": "破甲寒冰",
+    "wordNumber": "armorPenetration*0.15",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "armorPenetration*0.15",
+        "word_name": "armorPenetration"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【对地火力】提升10%",
+    "effectType": "powerAG",
+    "icon": "BRI_powerAG",
+    "showRate": "100",
+    "wordId": "BRG0304000002",
+    "wordLevel": "3",
+    "wordName": "高效对地弹药配给",
+    "wordNumber": "powerAG*0.1",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "powerAG*0.1",
+        "word_name": "powerAG"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "我方全体【命中】提升10%",
+    "effectType": "hit",
+    "icon": "BRI_hit",
+    "showRate": "100",
+    "wordId": "BRG0206000002",
+    "wordLevel": "2",
+    "wordName": "机体试验改装·命中特化",
+    "wordNumber": "hit*0.1",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "hit*0.1",
+        "word_name": "hit"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "敌方全体【命中】降低10%",
+    "effectType": "hit",
+    "icon": "BRI_hit",
+    "showRate": "100",
+    "wordId": "BRG0206000001",
+    "wordLevel": "2",
+    "wordName": "机体伪装措施",
+    "wordNumber": "hit*-0.1",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "hit*-0.1",
+        "word_name": "hit"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "敌方全体【装甲】提升10%",
+    "effectType": "armor",
+    "icon": "BRI_armor",
+    "showRate": "100",
+    "wordId": "BRB0202000001",
+    "wordLevel": "2",
+    "wordName": "寒冰装甲",
+    "wordNumber": "armor*0.1",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "armor*0.1",
+        "word_name": "armor"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【幸运】提升20%",
+    "effectType": "luck",
+    "icon": "BRI_luck",
+    "showRate": "100",
+    "wordId": "BRG0310000002",
+    "wordLevel": "3",
+    "wordName": "特制护身符",
+    "wordNumber": "luck*0.2",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "luck*0.2",
+        "word_name": "luck"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "我方全体【暴击补正】提升8%",
+    "effectType": "critical",
+    "icon": "BRI_critical",
+    "showRate": "100",
+    "wordId": "BRG0108000002",
+    "wordLevel": "1",
+    "wordName": "改进型干涉引信",
+    "wordNumber": "8",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "8",
+        "word_name": "critical"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "敌方全体【幸运】降低20%",
+    "effectType": "luck",
+    "icon": "BRI_luck",
+    "showRate": "100",
+    "wordId": "BRG0310000001",
+    "wordLevel": "3",
+    "wordName": "试验性火控改进",
+    "wordNumber": "luck*-0.2",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "luck*-0.2",
+        "word_name": "luck"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "我方全体【装甲】提升30点",
+    "effectType": "armor",
+    "icon": "BRI_armor",
+    "showRate": "100",
+    "wordId": "BRG0102000002",
+    "wordLevel": "1",
+    "wordName": "特殊装甲隔层",
+    "wordNumber": "30",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "30",
+        "word_name": "armor"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "敌方全体【装甲】降低30点",
+    "effectType": "armor",
+    "icon": "BRI_armor",
+    "showRate": "100",
+    "wordId": "BRG0102000001",
+    "wordLevel": "1",
+    "wordName": "强针对破甲训练",
+    "wordNumber": "-30",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "-30",
+        "word_name": "armor"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "敌方全体【暴击补正】提升8%",
+    "effectType": "critical",
+    "icon": "BRI_critical",
+    "showRate": "100",
+    "wordId": "BRB0208000001",
+    "wordLevel": "2",
+    "wordName": "以逸待劳",
+    "wordNumber": "8",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "8",
+        "word_name": "critical"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【暴击补正】降低8%",
+    "effectType": "critical",
+    "icon": "BRI_critical",
+    "showRate": "100",
+    "wordId": "BRB0208000002",
+    "wordLevel": "2",
+    "wordName": "失温之压",
+    "wordNumber": "-8",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "-8",
+        "word_name": "critical"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【暴击补正】提升8%",
+    "effectType": "critical",
+    "icon": "BRI_critical",
+    "showRate": "100",
+    "wordId": "BRB0208000003",
+    "wordLevel": "2",
+    "wordName": "以逸待劳",
+    "wordNumber": "8",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "8",
+        "word_name": "critical"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【暴击补正】降低8%",
+    "effectType": "critical",
+    "icon": "BRI_critical",
+    "showRate": "100",
+    "wordId": "BRB0208000004",
+    "wordLevel": "2",
+    "wordName": "失温之压",
+    "wordNumber": "-8",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "-8",
+        "word_name": "critical"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "将战场第3到4格的地形替换为「冰川」",
+    "effectType": "land",
+    "icon": "BRI_landD",
+    "showRate": "100",
+    "wordId": "BRB0316000001",
+    "wordLevel": "3",
+    "wordName": "寒原裂隙",
+    "wordNumber": "EG0303",
+    "wordTarget": "2,3",
+    "wordValues": [
+      {
+        "wordValue": "EG0303",
+        "word_name": "land"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【命中】提升15%",
+    "effectType": "hit",
+    "icon": "BRI_hit",
+    "showRate": "100",
+    "wordId": "BRB0306000001",
+    "wordLevel": "3",
+    "wordName": "寒冬适应",
+    "wordNumber": "hit*0.15",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "hit*0.15",
+        "word_name": "hit"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "将战场第3到4格的地形替换为「冰川」",
+    "effectType": "land",
+    "icon": "BRI_landD",
+    "showRate": "100",
+    "wordId": "BRB0316000003",
+    "wordLevel": "3",
+    "wordName": "寒原裂隙",
+    "wordNumber": "EG0303",
+    "wordTarget": "2,3",
+    "wordValues": [
+      {
+        "wordValue": "EG0303",
+        "word_name": "land"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【命中】降低15%",
+    "effectType": "hit",
+    "icon": "BRI_hit",
+    "showRate": "100",
+    "wordId": "BRB0306000002",
+    "wordLevel": "3",
+    "wordName": "折光冰凌",
+    "wordNumber": "hit*-0.15",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "hit*-0.15",
+        "word_name": "hit"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【命中】提升15%",
+    "effectType": "hit",
+    "icon": "BRI_hit",
+    "showRate": "100",
+    "wordId": "BRB0306000003",
+    "wordLevel": "3",
+    "wordName": "寒冬适应",
+    "wordNumber": "hit*0.15",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "hit*0.15",
+        "word_name": "hit"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【命中】降低15%",
+    "effectType": "hit",
+    "icon": "BRI_hit",
+    "showRate": "100",
+    "wordId": "BRB0306000004",
+    "wordLevel": "3",
+    "wordName": "折光冰凌",
+    "wordNumber": "hit*-0.15",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "hit*-0.15",
+        "word_name": "hit"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【对空火力】提升10%",
+    "effectType": "powerAA",
+    "icon": "BRI_powerAA",
+    "showRate": "100",
+    "wordId": "BRG0305000002",
+    "wordLevel": "3",
+    "wordName": "高效对空弹药配给",
+    "wordNumber": "powerAA*0.1",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "powerAA*0.1",
+        "word_name": "powerAA"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "敌方全体【对空火力】降低10%",
+    "effectType": "powerAA",
+    "icon": "BRI_powerAA",
+    "showRate": "100",
+    "wordId": "BRG0305000001",
+    "wordLevel": "3",
+    "wordName": "空中附加防护措施",
+    "wordNumber": "powerAA*-0.1",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "powerAA*-0.1",
+        "word_name": "powerAA"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "敌方全体【贯通】降低10%",
+    "effectType": "armorPenetration",
+    "icon": "BRI_armorPenet",
+    "showRate": "100",
+    "wordId": "BRG0207000001",
+    "wordLevel": "2",
+    "wordName": "试验型装甲保护系统",
+    "wordNumber": "armorPenetration*-0.1",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "armorPenetration*-0.1",
+        "word_name": "armorPenetration"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "敌方全体【最大生命值】降低200点",
+    "effectType": "hpUp",
+    "icon": "BRI_hpUp",
+    "showRate": "100",
+    "wordId": "BRG0101000001",
+    "wordLevel": "1",
+    "wordName": "强针对攻击训练",
+    "wordNumber": "-200",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "-200",
+        "word_name": "hpUp"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "我方全体【最大生命值】提高50点",
+    "effectType": "hpUp",
+    "icon": "BRI_hpUp",
+    "showRate": "100",
+    "wordId": "BRG0101000002",
+    "wordLevel": "1",
+    "wordName": "试验性机体强化",
+    "wordNumber": "50",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "50",
+        "word_name": "hpUp"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "我方全体【贯通】提升10%",
+    "effectType": "armorPenetration",
+    "icon": "BRI_armorPenet",
+    "showRate": "100",
+    "wordId": "BRG0207000002",
+    "wordLevel": "2",
+    "wordName": "改进型穿甲干涉弹药",
+    "wordNumber": "armorPenetration*0.1",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "armorPenetration*0.1",
+        "word_name": "armorPenetration"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "敌方全体【暴击伤害】提升36%",
+    "effectType": "criticalDB",
+    "icon": "BRI_criticalDB",
+    "showRate": "100",
+    "wordId": "BRB0309000001",
+    "wordLevel": "3",
+    "wordName": "攻击增势",
+    "wordNumber": "36",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "36",
+        "word_name": "criticalDB"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【暴击伤害】提升15%",
+    "effectType": "criticalDB",
+    "icon": "BRI_criticalDB",
+    "showRate": "100",
+    "wordId": "BRG0109000002",
+    "wordLevel": "1",
+    "wordName": "改进型干涉装药",
+    "wordNumber": "15",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "15",
+        "word_name": "criticalDB"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "敌方全体【暴击伤害】降低25%",
+    "effectType": "criticalDB",
+    "icon": "BRI_criticalDB",
+    "showRate": "100",
+    "wordId": "BRG0109000001",
+    "wordLevel": "1",
+    "wordName": "试验性抗损改进",
+    "wordNumber": "-25",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "-25",
+        "word_name": "criticalDB"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "敌方全体【装甲】提升15点",
+    "effectType": "armor",
+    "icon": "BRI_armor",
+    "showRate": "100",
+    "wordId": "BRB0102000001",
+    "wordLevel": "1",
+    "wordName": "寒冰装甲",
+    "wordNumber": "15",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "15",
+        "word_name": "armor"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【装甲】降低15点",
+    "effectType": "armor",
+    "icon": "BRI_armor",
+    "showRate": "100",
+    "wordId": "BRB0102000002",
+    "wordLevel": "1",
+    "wordName": "寒性装甲脆化",
+    "wordNumber": "-15",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "-15",
+        "word_name": "armor"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【幸运】提升30%",
+    "effectType": "luck",
+    "icon": "BRI_luck",
+    "showRate": "100",
+    "wordId": "BRB0310000001",
+    "wordLevel": "3",
+    "wordName": "幸运之雪",
+    "wordNumber": "luck*0.3",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "luck*0.3",
+        "word_name": "luck"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【幸运】降低30%",
+    "effectType": "luck",
+    "icon": "BRI_luck",
+    "showRate": "100",
+    "wordId": "BRB0310000002",
+    "wordLevel": "3",
+    "wordName": "厄运之雪",
+    "wordNumber": "luck*-0.3",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "luck*-0.3",
+        "word_name": "luck"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【幸运】提升30%",
+    "effectType": "luck",
+    "icon": "BRI_luck",
+    "showRate": "100",
+    "wordId": "BRB0310000003",
+    "wordLevel": "3",
+    "wordName": "幸运之雪",
+    "wordNumber": "luck*0.3",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "luck*0.3",
+        "word_name": "luck"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【对地火力】提升50点",
+    "effectType": "powerAG",
+    "icon": "BRI_powerAG",
+    "showRate": "100",
+    "wordId": "BRG0104000002",
+    "wordLevel": "1",
+    "wordName": "高效对地弹药配给",
+    "wordNumber": "50",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "50",
+        "word_name": "powerAG"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "敌方全体【对地火力】降低15点",
+    "effectType": "powerAG",
+    "icon": "BRI_powerAG",
+    "showRate": "100",
+    "wordId": "BRG0104000001",
+    "wordLevel": "1",
+    "wordName": "地面附加防护措施",
+    "wordNumber": "-15",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "-15",
+        "word_name": "powerAG"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "我方全体【命中】提升30点",
+    "effectType": "hit",
+    "icon": "BRI_hit",
+    "showRate": "100",
+    "wordId": "BRG0106000002",
+    "wordLevel": "1",
+    "wordName": "机体试验改装·命中特化",
+    "wordNumber": "30",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "30",
+        "word_name": "hit"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "我方全体【幸运】降低30%",
+    "effectType": "luck",
+    "icon": "BRI_luck",
+    "showRate": "100",
+    "wordId": "BRB0310000004",
+    "wordLevel": "3",
+    "wordName": "厄运之雪",
+    "wordNumber": "luck*-0.3",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "luck*-0.3",
+        "word_name": "luck"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【装甲】提升15点",
+    "effectType": "armor",
+    "icon": "BRI_armor",
+    "showRate": "100",
+    "wordId": "BRB0102000003",
+    "wordLevel": "1",
+    "wordName": "寒冰装甲",
+    "wordNumber": "15",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "15",
+        "word_name": "armor"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【装甲】降低10%",
+    "effectType": "armor",
+    "icon": "BRI_armor",
+    "showRate": "100",
+    "wordId": "BRG0202000001",
+    "wordLevel": "2",
+    "wordName": "强针对破甲训练",
+    "wordNumber": "armor*-0.1",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "armor*-0.1",
+        "word_name": "armor"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "我方全体【装甲】降低15点",
+    "effectType": "armor",
+    "icon": "BRI_armor",
+    "showRate": "100",
+    "wordId": "BRB0102000004",
+    "wordLevel": "1",
+    "wordName": "寒性装甲脆化",
+    "wordNumber": "-15",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "-15",
+        "word_name": "armor"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【装甲】提升10%",
+    "effectType": "armor",
+    "icon": "BRI_armor",
+    "showRate": "100",
+    "wordId": "BRG0202000002",
+    "wordLevel": "2",
+    "wordName": "特殊装甲隔层",
+    "wordNumber": "armor*0.1",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "armor*0.1",
+        "word_name": "armor"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "敌方全体【对空火力】提升8点",
+    "effectType": "powerAA",
+    "icon": "BRI_powerAA",
+    "showRate": "100",
+    "wordId": "BRB0105000001",
+    "wordLevel": "1",
+    "wordName": "冬将军·空",
+    "wordNumber": "8",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "8",
+        "word_name": "powerAA"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【对空火力】提升8点",
+    "effectType": "powerAA",
+    "icon": "BRI_powerAA",
+    "showRate": "100",
+    "wordId": "BRB0105000003",
+    "wordLevel": "1",
+    "wordName": "冬将军·空",
+    "wordNumber": "8",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "8",
+        "word_name": "powerAA"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【对空火力】降低25点",
+    "effectType": "powerAA",
+    "icon": "BRI_powerAA",
+    "showRate": "100",
+    "wordId": "BRB0105000002",
+    "wordLevel": "1",
+    "wordName": "寒将军·空",
+    "wordNumber": "-25",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "-25",
+        "word_name": "powerAA"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "将战场天气替换为「风暴」",
+    "effectType": "sky",
+    "icon": "BRI_skyD",
+    "showRate": "100",
+    "wordId": "BRB0215000003",
+    "wordLevel": "2",
+    "wordName": "冰风暴",
+    "wordNumber": "EA0303",
+    "wordTarget": "",
+    "wordValues": [
+      {
+        "wordValue": "EA0303",
+        "word_name": "sky"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【对空火力】降低25点",
+    "effectType": "powerAA",
+    "icon": "BRI_powerAA",
+    "showRate": "100",
+    "wordId": "BRB0105000004",
+    "wordLevel": "1",
+    "wordName": "寒将军·空",
+    "wordNumber": "-25",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "-25",
+        "word_name": "powerAA"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "将战场天气替换为「风暴」",
+    "effectType": "sky",
+    "icon": "BRI_skyD",
+    "showRate": "100",
+    "wordId": "BRB0215000001",
+    "wordLevel": "2",
+    "wordName": "冰风暴",
+    "wordNumber": "EA0303",
+    "wordTarget": "",
+    "wordValues": [
+      {
+        "wordValue": "EA0303",
+        "word_name": "sky"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【机动】降低10%",
+    "effectType": "dodge",
+    "icon": "BRI_dodge",
+    "showRate": "100",
+    "wordId": "BRB0203000002",
+    "wordLevel": "2",
+    "wordName": "冻结之霜",
+    "wordNumber": "dodge*-0.1",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "dodge*-0.1",
+        "word_name": "dodge"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【机动】提升10%",
+    "effectType": "dodge",
+    "icon": "BRI_dodge",
+    "showRate": "100",
+    "wordId": "BRB0203000001",
+    "wordLevel": "2",
+    "wordName": "雪中行军",
+    "wordNumber": "dodge*0.1",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "dodge*0.1",
+        "word_name": "dodge"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【机动】降低10%",
+    "effectType": "dodge",
+    "icon": "BRI_dodge",
+    "showRate": "100",
+    "wordId": "BRB0203000004",
+    "wordLevel": "2",
+    "wordName": "冻结之霜",
+    "wordNumber": "dodge*-0.1",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "dodge*-0.1",
+        "word_name": "dodge"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【对空火力】降低10%",
+    "effectType": "powerAA",
+    "icon": "BRI_powerAA",
+    "showRate": "100",
+    "wordId": "BRG0205000001",
+    "wordLevel": "2",
+    "wordName": "空中附加防护措施",
+    "wordNumber": "powerAA*-0.1",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "powerAA*-0.1",
+        "word_name": "powerAA"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "敌方全体【机动】提升10%",
+    "effectType": "dodge",
+    "icon": "BRI_dodge",
+    "showRate": "100",
+    "wordId": "BRB0203000003",
+    "wordLevel": "2",
+    "wordName": "雪中行军",
+    "wordNumber": "dodge*0.1",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "dodge*0.1",
+        "word_name": "dodge"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【暴击补正】提升4%",
+    "effectType": "critical",
+    "icon": "BRI_critical",
+    "showRate": "100",
+    "wordId": "BRB0108000001",
+    "wordLevel": "1",
+    "wordName": "以逸待劳",
+    "wordNumber": "4",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "4",
+        "word_name": "critical"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【暴击补正】降低4%",
+    "effectType": "critical",
+    "icon": "BRI_critical",
+    "showRate": "100",
+    "wordId": "BRB0108000002",
+    "wordLevel": "1",
+    "wordName": "失温之压",
+    "wordNumber": "-4",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "-4",
+        "word_name": "critical"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【暴击补正】提升4%",
+    "effectType": "critical",
+    "icon": "BRI_critical",
+    "showRate": "100",
+    "wordId": "BRB0108000003",
+    "wordLevel": "1",
+    "wordName": "以逸待劳",
+    "wordNumber": "4",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "4",
+        "word_name": "critical"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【机动】提升10%",
+    "effectType": "dodge",
+    "icon": "BRI_dodge",
+    "showRate": "100",
+    "wordId": "BRG0303000002",
+    "wordLevel": "3",
+    "wordName": "特化行动装置",
+    "wordNumber": "dodge*0.1",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "dodge*0.1",
+        "word_name": "dodge"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "我方全体【暴击补正】降低4%",
+    "effectType": "critical",
+    "icon": "BRI_critical",
+    "showRate": "100",
+    "wordId": "BRB0108000004",
+    "wordLevel": "1",
+    "wordName": "失温之压",
+    "wordNumber": "-4",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "-4",
+        "word_name": "critical"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【机动】降低10%",
+    "effectType": "dodge",
+    "icon": "BRI_dodge",
+    "showRate": "100",
+    "wordId": "BRG0303000001",
+    "wordLevel": "3",
+    "wordName": "高机动目标对抗措施",
+    "wordNumber": "dodge*-0.1",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "dodge*-0.1",
+        "word_name": "dodge"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "我方全体【暴击补正】降低12%",
+    "effectType": "critical",
+    "icon": "BRI_critical",
+    "showRate": "100",
+    "wordId": "BRB0308000004",
+    "wordLevel": "3",
+    "wordName": "失温之压",
+    "wordNumber": "-12",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "-12",
+        "word_name": "critical"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【最大生命值】提升100点",
+    "effectType": "hpUp",
+    "icon": "BRI_hpUp",
+    "showRate": "100",
+    "wordId": "BRB0101000001",
+    "wordLevel": "1",
+    "wordName": "凛冬的庇护",
+    "wordNumber": "100",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "100",
+        "word_name": "hpUp"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【暴击补正】提升12%",
+    "effectType": "critical",
+    "icon": "BRI_critical",
+    "showRate": "100",
+    "wordId": "BRB0308000003",
+    "wordLevel": "3",
+    "wordName": "以逸待劳",
+    "wordNumber": "12",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "12",
+        "word_name": "critical"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【最大生命值】降低25点",
+    "effectType": "hpUp",
+    "icon": "BRI_hpUp",
+    "showRate": "100",
+    "wordId": "BRB0101000002",
+    "wordLevel": "1",
+    "wordName": "失温症",
+    "wordNumber": "-25",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "-25",
+        "word_name": "hpUp"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【最大生命值】提升100点",
+    "effectType": "hpUp",
+    "icon": "BRI_hpUp",
+    "showRate": "100",
+    "wordId": "BRB0101000003",
+    "wordLevel": "1",
+    "wordName": "凛冬的庇护",
+    "wordNumber": "100",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "100",
+        "word_name": "hpUp"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【最大生命值】降低25点",
+    "effectType": "hpUp",
+    "icon": "BRI_hpUp",
+    "showRate": "100",
+    "wordId": "BRB0101000004",
+    "wordLevel": "1",
+    "wordName": "失温症",
+    "wordNumber": "-25",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "-25",
+        "word_name": "hpUp"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【命中】降低10%",
+    "effectType": "hit",
+    "icon": "BRI_hit",
+    "showRate": "100",
+    "wordId": "BRB0206000002",
+    "wordLevel": "2",
+    "wordName": "折光冰凌",
+    "wordNumber": "hit*-0.1",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "hit*-0.1",
+        "word_name": "hit"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【命中】提升10%",
+    "effectType": "hit",
+    "icon": "BRI_hit",
+    "showRate": "100",
+    "wordId": "BRB0206000003",
+    "wordLevel": "2",
+    "wordName": "寒冬适应",
+    "wordNumber": "hit*0.1",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "hit*0.1",
+        "word_name": "hit"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "将战场第1到2格的地形替换为「冰川」",
+    "effectType": "land",
+    "icon": "BRI_landD",
+    "showRate": "100",
+    "wordId": "BRB0216000003",
+    "wordLevel": "2",
+    "wordName": "寒原裂隙",
+    "wordNumber": "EG0303",
+    "wordTarget": "0,1",
+    "wordValues": [
+      {
+        "wordValue": "EG0303",
+        "word_name": "land"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【命中】降低10%",
+    "effectType": "hit",
+    "icon": "BRI_hit",
+    "showRate": "100",
+    "wordId": "BRB0206000004",
+    "wordLevel": "2",
+    "wordName": "折光冰凌",
+    "wordNumber": "hit*-0.1",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "hit*-0.1",
+        "word_name": "hit"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【命中】提升10%",
+    "effectType": "hit",
+    "icon": "BRI_hit",
+    "showRate": "100",
+    "wordId": "BRB0206000001",
+    "wordLevel": "2",
+    "wordName": "寒冬适应",
+    "wordNumber": "hit*0.1",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "hit*0.1",
+        "word_name": "hit"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "将战场第1到2格的地形替换为「冰川」",
+    "effectType": "land",
+    "icon": "BRI_landD",
+    "showRate": "100",
+    "wordId": "BRB0216000001",
+    "wordLevel": "2",
+    "wordName": "寒原裂隙",
+    "wordNumber": "EG0303",
+    "wordTarget": "0,1",
+    "wordValues": [
+      {
+        "wordValue": "EG0303",
+        "word_name": "land"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【对地火力】提升15%",
+    "effectType": "powerAG",
+    "icon": "BRI_powerAG",
+    "showRate": "100",
+    "wordId": "BRB0304000003",
+    "wordLevel": "3",
+    "wordName": "冬将军·地",
+    "wordNumber": "powerAG*0.15",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "powerAG*0.15",
+        "word_name": "powerAG"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【对地火力】降低15%",
+    "effectType": "powerAG",
+    "icon": "BRI_powerAG",
+    "showRate": "100",
+    "wordId": "BRB0304000004",
+    "wordLevel": "3",
+    "wordName": "寒将军·地",
+    "wordNumber": "powerAG*-0.15",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "powerAG*-0.15",
+        "word_name": "powerAG"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【贯通】降低10%",
+    "effectType": "armorPenetration",
+    "icon": "BRI_armorPenet",
+    "showRate": "100",
+    "wordId": "BRG0307000001",
+    "wordLevel": "3",
+    "wordName": "试验型装甲保护系统",
+    "wordNumber": "armorPenetration*-0.1",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "armorPenetration*-0.1",
+        "word_name": "armorPenetration"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "我方全体【贯通】提升10%",
+    "effectType": "armorPenetration",
+    "icon": "BRI_armorPenet",
+    "showRate": "100",
+    "wordId": "BRG0307000002",
+    "wordLevel": "3",
+    "wordName": "改进型穿甲干涉弹药",
+    "wordNumber": "armorPenetration*0.1",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "armorPenetration*0.1",
+        "word_name": "armorPenetration"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "敌方全体【对地火力】提升15%",
+    "effectType": "powerAG",
+    "icon": "BRI_powerAG",
+    "showRate": "100",
+    "wordId": "BRB0304000001",
+    "wordLevel": "3",
+    "wordName": "冬将军·地",
+    "wordNumber": "powerAG*0.15",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "powerAG*0.15",
+        "word_name": "powerAG"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "将战场第1到4格的地形替换为「街道」",
+    "effectType": "land",
+    "icon": "BRI_landB",
+    "showRate": "100",
+    "wordId": "BRG0116000001",
+    "wordLevel": "1",
+    "wordName": "伴随机动工兵",
+    "wordNumber": "EG0101",
+    "wordTarget": "0,3",
+    "wordValues": [
+      {
+        "wordValue": "EG0101",
+        "word_name": "land"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "我方全体【对地火力】降低15%",
+    "effectType": "powerAG",
+    "icon": "BRI_powerAG",
+    "showRate": "100",
+    "wordId": "BRB0304000002",
+    "wordLevel": "3",
+    "wordName": "寒将军·地",
+    "wordNumber": "powerAG*-0.15",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "powerAG*-0.15",
+        "word_name": "powerAG"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【命中】降低30点",
+    "effectType": "hit",
+    "icon": "BRI_hit",
+    "showRate": "100",
+    "wordId": "BRG0106000001",
+    "wordLevel": "1",
+    "wordName": "机体伪装措施",
+    "wordNumber": "-30",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "-30",
+        "word_name": "hit"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "我方全体【暴击伤害】提升15%",
+    "effectType": "criticalDB",
+    "icon": "BRI_criticalDB",
+    "showRate": "100",
+    "wordId": "BRG0209000002",
+    "wordLevel": "2",
+    "wordName": "改进型干涉装药",
+    "wordNumber": "15",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "15",
+        "word_name": "criticalDB"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "敌方全体【暴击伤害】降低25%",
+    "effectType": "criticalDB",
+    "icon": "BRI_criticalDB",
+    "showRate": "100",
+    "wordId": "BRG0209000001",
+    "wordLevel": "2",
+    "wordName": "试验性抗损改进",
+    "wordNumber": "-25",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "-25",
+        "word_name": "criticalDB"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "我方全体【对地火力】提升10%",
+    "effectType": "powerAG",
+    "icon": "BRI_powerAG",
+    "showRate": "100",
+    "wordId": "BRG0204000002",
+    "wordLevel": "2",
+    "wordName": "高效对地弹药配给",
+    "wordNumber": "powerAG*0.1",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "powerAG*0.1",
+        "word_name": "powerAG"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "敌方全体【对地火力】降低10%",
+    "effectType": "powerAG",
+    "icon": "BRI_powerAG",
+    "showRate": "100",
+    "wordId": "BRG0204000001",
+    "wordLevel": "2",
+    "wordName": "地面附加防护措施",
+    "wordNumber": "powerAG*-0.1",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "powerAG*-0.1",
+        "word_name": "powerAG"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "敌方全体【贯通】提升15点",
+    "effectType": "armorPenetration",
+    "icon": "BRI_armorPenet",
+    "showRate": "100",
+    "wordId": "BRB0107000003",
+    "wordLevel": "1",
+    "wordName": "破甲寒冰",
+    "wordNumber": "15",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "15",
+        "word_name": "armorPenetration"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【贯通】降低15点",
+    "effectType": "armorPenetration",
+    "icon": "BRI_armorPenet",
+    "showRate": "100",
+    "wordId": "BRB0107000002",
+    "wordLevel": "1",
+    "wordName": "凛冬已至",
+    "wordNumber": "-15",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "-15",
+        "word_name": "armorPenetration"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【暴击伤害】降低24%",
+    "effectType": "criticalDB",
+    "icon": "BRI_criticalDB",
+    "showRate": "100",
+    "wordId": "BRB0309000004",
+    "wordLevel": "3",
+    "wordName": "失温缠绕",
+    "wordNumber": "-24",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "-24",
+        "word_name": "criticalDB"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "将战场天气替换为「雷暴」",
+    "effectType": "sky",
+    "icon": "BRI_skyD",
+    "showRate": "100",
+    "wordId": "BRB0315000001",
+    "wordLevel": "3",
+    "wordName": "冰风暴",
+    "wordNumber": "EA0304",
+    "wordTarget": "",
+    "wordValues": [
+      {
+        "wordValue": "EA0304",
+        "word_name": "sky"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【装甲】提升10%",
+    "effectType": "armor",
+    "icon": "BRI_armor",
+    "showRate": "100",
+    "wordId": "BRG0302000002",
+    "wordLevel": "3",
+    "wordName": "特殊装甲隔层",
+    "wordNumber": "armor*0.1",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "armor*0.1",
+        "word_name": "armor"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "敌方全体【暴击伤害】提升36%",
+    "effectType": "criticalDB",
+    "icon": "BRI_criticalDB",
+    "showRate": "100",
+    "wordId": "BRB0309000003",
+    "wordLevel": "3",
+    "wordName": "攻击增势",
+    "wordNumber": "36",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "36",
+        "word_name": "criticalDB"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【装甲】降低10%",
+    "effectType": "armor",
+    "icon": "BRI_armor",
+    "showRate": "100",
+    "wordId": "BRG0302000001",
+    "wordLevel": "3",
+    "wordName": "强针对破甲训练",
+    "wordNumber": "armor*-0.1",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "armor*-0.1",
+        "word_name": "armor"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "我方全体【贯通】降低15点",
+    "effectType": "armorPenetration",
+    "icon": "BRI_armorPenet",
+    "showRate": "100",
+    "wordId": "BRB0107000004",
+    "wordLevel": "1",
+    "wordName": "凛冬已至",
+    "wordNumber": "-15",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "-15",
+        "word_name": "armorPenetration"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【暴击伤害】降低24%",
+    "effectType": "criticalDB",
+    "icon": "BRI_criticalDB",
+    "showRate": "100",
+    "wordId": "BRB0309000002",
+    "wordLevel": "3",
+    "wordName": "失温缠绕",
+    "wordNumber": "-24",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "-24",
+        "word_name": "criticalDB"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【贯通】提升15点",
+    "effectType": "armorPenetration",
+    "icon": "BRI_armorPenet",
+    "showRate": "100",
+    "wordId": "BRB0107000001",
+    "wordLevel": "1",
+    "wordName": "破甲寒冰",
+    "wordNumber": "15",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "15",
+        "word_name": "armorPenetration"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "将战场天气替换为「雷暴」",
+    "effectType": "sky",
+    "icon": "BRI_skyD",
+    "showRate": "100",
+    "wordId": "BRB0315000003",
+    "wordLevel": "3",
+    "wordName": "冰风暴",
+    "wordNumber": "EA0304",
+    "wordTarget": "",
+    "wordValues": [
+      {
+        "wordValue": "EA0304",
+        "word_name": "sky"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【对空火力】降低10%",
+    "effectType": "powerAA",
+    "icon": "BRI_powerAA",
+    "showRate": "100",
+    "wordId": "BRB0205000004",
+    "wordLevel": "2",
+    "wordName": "寒将军·空",
+    "wordNumber": "powerAA*-0.1",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "powerAA*-0.1",
+        "word_name": "powerAA"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【对空火力】提升10%",
+    "effectType": "powerAA",
+    "icon": "BRI_powerAA",
+    "showRate": "100",
+    "wordId": "BRB0205000003",
+    "wordLevel": "2",
+    "wordName": "冬将军·空",
+    "wordNumber": "powerAA*0.1",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "powerAA*0.1",
+        "word_name": "powerAA"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【对空火力】降低10%",
+    "effectType": "powerAA",
+    "icon": "BRI_powerAA",
+    "showRate": "100",
+    "wordId": "BRB0205000002",
+    "wordLevel": "2",
+    "wordName": "寒将军·空",
+    "wordNumber": "powerAA*-0.1",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "powerAA*-0.1",
+        "word_name": "powerAA"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【对空火力】提升10%",
+    "effectType": "powerAA",
+    "icon": "BRI_powerAA",
+    "showRate": "100",
+    "wordId": "BRB0205000001",
+    "wordLevel": "2",
+    "wordName": "冬将军·空",
+    "wordNumber": "powerAA*0.1",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "powerAA*0.1",
+        "word_name": "powerAA"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【幸运】降低20%",
+    "effectType": "luck",
+    "icon": "BRI_luck",
+    "showRate": "100",
+    "wordId": "BRB0210000004",
+    "wordLevel": "2",
+    "wordName": "厄运之雪",
+    "wordNumber": "luck*-0.2",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "luck*-0.2",
+        "word_name": "luck"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【暴击补正】提升8%",
+    "effectType": "critical",
+    "icon": "BRI_critical",
+    "showRate": "100",
+    "wordId": "BRG0308000002",
+    "wordLevel": "3",
+    "wordName": "改进型干涉引信",
+    "wordNumber": "8",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "8",
+        "word_name": "critical"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "敌方全体【幸运】提升20%",
+    "effectType": "luck",
+    "icon": "BRI_luck",
+    "showRate": "100",
+    "wordId": "BRB0210000003",
+    "wordLevel": "2",
+    "wordName": "幸运之雪",
+    "wordNumber": "luck*0.2",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "luck*0.2",
+        "word_name": "luck"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【机动】降低15%",
+    "effectType": "dodge",
+    "icon": "BRI_dodge",
+    "showRate": "100",
+    "wordId": "BRB0303000004",
+    "wordLevel": "3",
+    "wordName": "冻结之霜",
+    "wordNumber": "dodge*-0.15",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "dodge*-0.15",
+        "word_name": "dodge"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【幸运】降低20%",
+    "effectType": "luck",
+    "icon": "BRI_luck",
+    "showRate": "100",
+    "wordId": "BRB0210000002",
+    "wordLevel": "2",
+    "wordName": "厄运之雪",
+    "wordNumber": "luck*-0.2",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "luck*-0.2",
+        "word_name": "luck"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【幸运】降低50点",
+    "effectType": "luck",
+    "icon": "BRI_luck",
+    "showRate": "100",
+    "wordId": "BRG0110000001",
+    "wordLevel": "1",
+    "wordName": "试验性火控改进",
+    "wordNumber": "-50",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "-50",
+        "word_name": "luck"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "敌方全体【幸运】提升20%",
+    "effectType": "luck",
+    "icon": "BRI_luck",
+    "showRate": "100",
+    "wordId": "BRB0210000001",
+    "wordLevel": "2",
+    "wordName": "幸运之雪",
+    "wordNumber": "luck*0.2",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "luck*0.2",
+        "word_name": "luck"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【幸运】提升50点",
+    "effectType": "luck",
+    "icon": "BRI_luck",
+    "showRate": "100",
+    "wordId": "BRG0110000002",
+    "wordLevel": "1",
+    "wordName": "特制护身符",
+    "wordNumber": "50",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "50",
+        "word_name": "luck"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "敌方全体【机动】提升15%",
+    "effectType": "dodge",
+    "icon": "BRI_dodge",
+    "showRate": "100",
+    "wordId": "BRB0303000001",
+    "wordLevel": "3",
+    "wordName": "雪中行军",
+    "wordNumber": "dodge*0.15",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "dodge*0.15",
+        "word_name": "dodge"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【机动】提升15%",
+    "effectType": "dodge",
+    "icon": "BRI_dodge",
+    "showRate": "100",
+    "wordId": "BRB0303000003",
+    "wordLevel": "3",
+    "wordName": "雪中行军",
+    "wordNumber": "dodge*0.15",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "dodge*0.15",
+        "word_name": "dodge"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "敌方全体【对空火力】降低15点",
+    "effectType": "powerAA",
+    "icon": "BRI_powerAA",
+    "showRate": "100",
+    "wordId": "BRG0105000001",
+    "wordLevel": "1",
+    "wordName": "空中附加防护措施",
+    "wordNumber": "-15",
+    "wordTarget": "T200000G70",
+    "wordValues": [
+      {
+        "wordValue": "-15",
+        "word_name": "powerAA"
+      }
+    ],
+    "wordWhich": "1"
+  },
+  {
+    "description": "我方全体【机动】降低15%",
+    "effectType": "dodge",
+    "icon": "BRI_dodge",
+    "showRate": "100",
+    "wordId": "BRB0303000002",
+    "wordLevel": "3",
+    "wordName": "冻结之霜",
+    "wordNumber": "dodge*-0.15",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "dodge*-0.15",
+        "word_name": "dodge"
+      }
+    ],
+    "wordWhich": "2"
+  },
+  {
+    "description": "我方全体【对空火力】提升50点",
+    "effectType": "powerAA",
+    "icon": "BRI_powerAA",
+    "showRate": "100",
+    "wordId": "BRG0105000002",
+    "wordLevel": "1",
+    "wordName": "高效对空弹药配给",
+    "wordNumber": "50",
+    "wordTarget": "T100000G70",
+    "wordValues": [
+      {
+        "wordValue": "50",
+        "word_name": "powerAA"
+      }
+    ],
+    "wordWhich": "1"
+  }
+]

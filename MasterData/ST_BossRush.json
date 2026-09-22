@@ -1,0 +1,258 @@
+[
+  {
+    "Id": "0",
+    "Value": "提示"
+  },
+  {
+    "Id": "Info_Continue",
+    "Value": "是否继承现有进度并继续作战？如放弃作战，系统将以当前进度结算本次作战的战果评定值。"
+  },
+  {
+    "Id": "Info_EndBattle",
+    "Value": "作战完成，本次作战战果评定值：{0}"
+  },
+  {
+    "Id": "Info_TimeTip",
+    "Value": "※每期边境封控作战自周一6:00开始，至周日23:59结束"
+  },
+  {
+    "Id": "Info_TimeUnavailable",
+    "Value": "当期作战结算中，当前不可进行作战"
+  },
+  {
+    "Id": "Info_WipeUnavailable",
+    "Value": "您的上期战果评定值未达到任一目标值，无法进行扫荡"
+  },
+  {
+    "Id": "AreaPredict_0",
+    "Value": "作战成功预计战果评定值：180+"
+  },
+  {
+    "Id": "AreaPredict_1",
+    "Value": "作战成功预计战果评定值：960+"
+  },
+  {
+    "Id": "AreaPredict_2",
+    "Value": "作战成功预计战果评定值：2160+"
+  },
+  {
+    "Id": "AreaPredict_3",
+    "Value": "作战成功预计战果评定值：2160+"
+  },
+  {
+    "Id": "Act_Score",
+    "Value": "当前积分:   {0}"
+  },
+  {
+    "Id": "Act_Activation",
+    "Value": "当前活性化:   {0}"
+  },
+  {
+    "Id": "Act_BuffCount",
+    "Value": "后勤辅助：{0}"
+  },
+  {
+    "Id": "Act_DebuffCount",
+    "Value": "不利因素：{0}"
+  },
+  {
+    "Id": "Act_Attack",
+    "Value": "当前奇袭值:   {0}"
+  },
+  {
+    "Id": "Act_ResourceGet_0",
+    "Value": "触发了{0}：{1}"
+  },
+  {
+    "Id": "Act_ResourceGet_1",
+    "Value": "{0}升级为{1}：{2}"
+  },
+  {
+    "Id": "Act_ResourceGet_2",
+    "Value": "{0}等级已达上限，不再提升等级"
+  },
+  {
+    "Id": "Act_BattleGet",
+    "Value": "战斗胜利，战果评定值提升{0}，获得{1}"
+  },
+  {
+    "Id": "Act_BattleHalt",
+    "Value": "当前存在正在进行中的战斗，请返回继续作战！"
+  },
+  {
+    "Id": "BossRushEnd",
+    "Value": "作战完成，本次作战战果评定值：{0}"
+  },
+  {
+    "Id": "BossRushExit",
+    "Value": "系统检测到战斗中的异常退出，是否使用「备用方案B」*1规避本次战斗失败？"
+  },
+  {
+    "Id": "BossRushRetreat",
+    "Value": "是否确认从本次作战中撤退，并以当前战果评定值进行结算？"
+  },
+  {
+    "Id": "Act_TimeUnavailable",
+    "Value": "当期作战已结束"
+  },
+  {
+    "Id": "ItemName_0",
+    "Value": "泛用型校准仪"
+  },
+  {
+    "Id": "ItemName_1",
+    "Value": "热辐射屏蔽涂料"
+  },
+  {
+    "Id": "ItemName_2",
+    "Value": "适应性改造工具"
+  },
+  {
+    "Id": "ItemName_3",
+    "Value": "矿石探测仪"
+  },
+  {
+    "Id": "ItemName_4",
+    "Value": "备用方案B"
+  },
+  {
+    "Id": "ItemDesc_0",
+    "Value": "指定任一DOLLS回复剩余出击数1。"
+  },
+  {
+    "Id": "ItemDesc_1",
+    "Value": "接下来首次发动奇袭时临时提升40我方奇袭值，奇袭值增幅不可叠加。"
+  },
+  {
+    "Id": "ItemDesc_2",
+    "Value": "指定当前生效中的任一等级1不利因素失效，或指定任一不利因素使其等级-1。"
+  },
+  {
+    "Id": "ItemDesc_3",
+    "Value": "接下来首次战斗胜利后获得的战斗得分提升30%，得分增幅不可叠加。※关底战斗胜利时所获得的关卡数得分不受加成影响。"
+  },
+  {
+    "Id": "ItemDesc_4",
+    "Value": "接下来首次战斗失败后将不进行作战结算并退回至战斗开始前，战斗失败时将自动使用。"
+  },
+  {
+    "Id": "ItemUse_0",
+    "Value": "消耗了「泛用型校准仪」*1"
+  },
+  {
+    "Id": "ItemUse_1",
+    "Value": "消耗了「热辐射屏蔽涂料」*1"
+  },
+  {
+    "Id": "ItemUse_2",
+    "Value": "消耗了「适应性改造工具」*1"
+  },
+  {
+    "Id": "ItemUse_3",
+    "Value": "消耗了「矿石探测仪」*1"
+  },
+  {
+    "Id": "ItemUse_4",
+    "Value": "消耗了「备用方案B」*1"
+  },
+  {
+    "Id": "ItemUseFail_1",
+    "Value": "存在已生效的「热辐射屏蔽涂料」，无法重复使用。"
+  },
+  {
+    "Id": "ItemUseFail_3",
+    "Value": "存在已生效的「矿石探测仪」，无法重复使用"
+  },
+  {
+    "Id": "RandomResult_0_1",
+    "Value": "运气不错，搜集到了能派上用场的东西。"
+  },
+  {
+    "Id": "RandomResult_1_1",
+    "Value": "差强人意，付出了些代价，但至少找到了些补给品。"
+  },
+  {
+    "Id": "RandomResult_1_0",
+    "Value": "一无所获，贸然进行的搜索工作招来了些麻烦。"
+  },
+  {
+    "Id": "RandomTitle_0",
+    "Value": "发现废弃仓库"
+  },
+  {
+    "Id": "RandomDesc_0",
+    "Value": "可能存在前人撤离时遗落的物资，是否对此地进行搜索？"
+  },
+  {
+    "Id": "RandomTitle_1",
+    "Value": "检测到灾兽反应"
+  },
+  {
+    "Id": "RandomDesc_1",
+    "Value": "附近发现灾兽活动迹象，是否延踪迹进行追击？"
+  },
+  {
+    "Id": "Summary_0",
+    "Value": "本次作战中各区域活性化数值：<color=#a0742c>{0}</color>"
+  },
+  {
+    "Id": "Summary_1",
+    "Value": "本次作战中抵达的关卡数：<color=#a0742c>{0}</color>"
+  },
+  {
+    "Id": "Summary_2",
+    "Value": "本次作战中进行的战斗次数：<color=#a0742c>{0}</color>"
+  },
+  {
+    "Id": "Summary_3",
+    "Value": "本次作战中得分增益生效次数：<color=#a0742c>{0}</color>"
+  },
+  {
+    "Id": "Summary_4",
+    "Value": "本次作战中触发不利因素总等级：<color=#a0742c>{0}</color>"
+  },
+  {
+    "Id": "SummaryTitle_0",
+    "Value": "本次作战关卡得分"
+  },
+  {
+    "Id": "SummaryTitle_1",
+    "Value": "本次作战战斗得分"
+  },
+  {
+    "Id": "SetTeam_Attack",
+    "Value": "奇袭值：<color=#f0c800>{0}+{1}</color>"
+  },
+  {
+    "Id": "SetTeam_ConditionFail",
+    "Value": "不满足出击条件"
+  },
+  {
+    "Id": "SetTeam_StackFail",
+    "Value": "部分DOLLS堆叠数不足，请调整编队"
+  },
+  {
+    "Id": "SetTeam_AttendanceFail",
+    "Value": "部分DOLLS剩余可作战次数不足，请调整编队"
+  },
+  {
+    "Id": "SetTeam_ItemFail",
+    "Value": "沙盘数量不足"
+  },
+  {
+    "Id": "SetTeam_AttackFail",
+    "Value": "不满足奇袭条件"
+  },
+  {
+    "Id": "SetTeam_BtnGo",
+    "Value": "是否确认以当前编队进行出击？"
+  },
+  {
+    "Id": "SetTeam_BtnAttack",
+    "Value": "是否以当前编队向敌方发动奇袭，若奇袭失败则将自动进入战斗"
+  },
+  {
+    "Id": "SetTeam_BtnPractice",
+    "Value": "是否消耗「沙盘」*1进行沙盘推演，沙盘推演不消耗合金和作战次数，同时也无法获得战果评定值"
+  }
+]
