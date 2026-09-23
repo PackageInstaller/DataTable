@@ -25,11 +25,11 @@ git clone -b game/xxxxx --single-branch --depth 1 https://github.com/PackageInst
 | `game/CatFantasy`               | CatFantasy               | 猫之城                                                |
 | `game/CounterSide`              | CounterSide              | 未来战                                                |
 | `game/CuisineDimension`         | CuisineDimension         | 料理次元                                              |
-| `game/DaiblosCore` | DaiblosCore |
+| `game/DaiblosCore`              | DaiblosCore              | 交错战线                                              |
 | `game/DengekiBunkoCROSSINGVOID` | DengekiBunkoCROSSINGVOID | 电击文库灵境交错                                      |
 | `game/DotAbyss`                 | DotAbyss                 | 鸡渊                                                  |
 | `game/Echocalypse`              | Echocalypse              | 绯红神约                                              |
-| `game/Echonox24⁄36`            | Echonox24⁄36            | 时序残响                                              |
+| `game/Echonox24⁄36`              | Echonox24⁄36              | 时序残响                                             |
 | `game/Embers`                   | Embers                   | 辉烬                                                  |
 | `game/ErrorGameReset`           | ErrorGameReset           | 404错误游戏                                           |
 | `game/EternalTree`              | EternalTree              | 树游                                                  |
