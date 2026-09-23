@@ -1,0 +1,23 @@
+﻿-- 天赋效果301402
+-- 本文件由工具自动生成,请不要直接编辑本文件
+---------------------------------------------
+-- 技能基类
+Skill301402 = oo.class(SkillBase)
+function Skill301402:Init(skillID, card)
+	SkillBase.Init(self, skillID, card)
+end
+-- 伤害前
+function Skill301402:OnBefourHurt(caster, target, data)
+	-- 8060
+	if SkillJudger:CasterIsSelf(self, caster, target, true) then
+	else
+		return
+	end
+	-- 8073
+	if SkillJudger:TargetIsEnemy(self, caster, target, true) then
+	else
+		return
+	end
+	-- 301402
+	self:AddTempAttr(SkillEffect[301402], caster, self.card, data, "careerAdjust",0.15)
+end

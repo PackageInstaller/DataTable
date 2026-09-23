@@ -1,0 +1,33 @@
+﻿local this=
+{
+mapid=2111,born_group=100,
+groups=
+{
+[100]={10201,10401},
+[101]={10503,10309},
+[104]={10506,10106},
+[102]={10509},
+[103]={10104},
+[105]={10302},
+[106]={10107,10204},
+[107]={10405}
+},
+monsters=
+{
+{id=201111,born_pos=10503,wave=1},
+{id=201112,born_pos=10309,wave=1},
+{id=201111,born_pos=10106,wave=2},
+{id=201113,born_pos=10506,wave=2},
+{id=201114,born_group=102,wave=3}
+},
+props=
+{
+{born_group=103,wave=2,rate=100,nPropID=1,name="货箱",icon="MapProps_001",desc="装着各种随机素材的箱子。",res="GridProps/baoxiang/baoxiang",get_eff="baoxiang_hit",eBlockState=1,nStep=0,state=1,type=26,param={10001}},
+{born_group=103,wave=2,rate=75,nPropID=2,name="货箱",icon="MapProps_001",desc="装着各种随机素材的箱子。",res="GridProps/baoxiang/baoxiang",get_eff="baoxiang_hit",eBlockState=1,nStep=0,state=1,type=28,param={10006}},
+{born_group=105,wave=3,rate=100,nPropID=3,float_content="HP+30%",use_sound="ui_buff_attack",name="生命补给",icon="MapProps_002",desc="基地投送的作战补给，获得后队伍全体生命+30%。",res="GridProps/buff/Buff_Heal",get_eff="get_eff_green",eBlockState=1,nStep=0,state=1,type=2,param={0.3}},
+{born_group=107,wave=1,rate=100,nPropID=4,name="岩石障碍",icon="MapProps_008",desc="碎星建筑残骸，队伍无法移动到上面。",res="GridProps/trap/G_01_Trap_03",eBlockState=3,perpetual=1,nStep=0,state=1,type=16,TriggerType=1,damage=0},
+{born_group=106,wave=1,rate=100,nPropID=5,float_content="冻结2回合行动",name="冰冻捕夹",icon="MapProps_007",desc="碎星造物设置的机械捕夹，队伍踩到后需要消耗两次行动才能解除。",res="GridProps/trap/G_01_Trap_01",get_eff="get_eff_blue",eUseState=1,nStep=0,state=1,type=20,param={2}},
+{born_group=106,wave=1,rate=100,nPropID=6,float_content="冻结2回合行动",name="冰冻捕夹",icon="MapProps_007",desc="碎星造物设置的机械捕夹，队伍踩到后需要消耗两次行动才能解除。",res="GridProps/trap/G_01_Trap_01",get_eff="get_eff_blue",eUseState=1,nStep=0,state=1,type=20,param={2}}
+},
+}
+return this;

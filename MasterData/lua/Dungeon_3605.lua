@@ -1,0 +1,29 @@
+﻿local this=
+{
+mapid=3605,born_group=100,
+groups=
+{
+[100]={10909,10101},
+[101]={10509,10705,10501},
+[102]={10503,10507,10305},
+[103]={10901,10109},
+[104]={10905,10105}
+},
+monsters=
+{
+{id=306051,born_group=101,wave=1},
+{id=306052,born_group=101,wave=1},
+{id=306053,born_group=101,wave=1},
+{id=306054,born_group=102,wave=2},
+{id=306055,born_group=102,wave=2},
+{id=306056,born_group=102,wave=2},
+{id=306057,born_group=104,wave=2},
+{id=306058,born_pos=10505,wave=2}
+},
+props=
+{
+{born_group=103,wave=2,rate=75,nPropID=1,name="宝箱",icon="test02_props",desc="未设置",res="GridProps/baoxiang/baoxiang",get_eff="baoxiang_hit",eBlockState=1,eBlockSetting=1,nStep=0,state=1,type=5,param={30003}},
+{born_group=103,wave=3,rate=75,nPropID=2,name="宝箱",icon="test02_props",desc="未设置",res="GridProps/baoxiang/baoxiang",get_eff="baoxiang_hit",eBlockState=1,eBlockSetting=1,nStep=0,state=1,type=5,param={30003}}
+},
+}
+return this;

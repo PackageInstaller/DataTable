@@ -1,0 +1,30 @@
+﻿-- 机神传送
+-- 本文件由工具自动生成,请不要直接编辑本文件
+---------------------------------------------
+-- 技能基类
+Skill700100702 = oo.class(SkillBase)
+function Skill700100702:Init(skillID, card)
+	SkillBase.Init(self, skillID, card)
+end
+function Skill700100702:CanSummon()
+	return self.card:CanSummon(10000024,1,{3,1},{progress=1001,type=3},nil,nil,true)
+end
+-- 执行技能
+function Skill700100702:DoSkill(caster, target, data)
+	-- 40010
+	self.order = self.order + 1
+	self:SummonTeammate(SkillEffect[40010], caster, self.card, data, 10000024,1,{3,1},{progress=1001,type=3},nil,nil,true)
+	-- 8060
+	if SkillJudger:CasterIsSelf(self, caster, target, true) then
+	else
+		return
+	end
+	-- 700100701
+	self.order = self.order + 1
+	self:ChangeSkill(SkillEffect[700100701], caster, self.card, data, 1,700100601)
+end
+-- 切换周目
+function Skill700100702:OnChangeStage(caster, target, data)
+	-- 20015
+	self:AddProgress(SkillEffect[20015], caster, self.card, data, 600)
+end

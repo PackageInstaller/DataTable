@@ -1,0 +1,14 @@
+﻿-- 技能20
+-- 本文件由工具自动生成,请不要直接编辑本文件
+---------------------------------------------
+-- 技能基类
+Skill90032001 = oo.class(SkillBase)
+function Skill90032001:Init(skillID, card)
+	SkillBase.Init(self, skillID, card)
+end
+-- 执行技能
+function Skill90032001:DoSkill(caster, target, data)
+	-- 2302
+	self.order = self.order + 1
+	self:AddLightShieldCount(SkillEffect[2302], caster, target, data, 2309,2,10)
+end

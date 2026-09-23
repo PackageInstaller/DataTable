@@ -1,0 +1,33 @@
+﻿local this=
+{
+mapid=1112,born_group=100,
+groups=
+{
+[100]={10102,10105},
+[101]={10405,10402},
+[104]={10603,10206},
+[102]={10601},
+[103]={10401},
+[105]={10301,10203,10204,10501},
+[106]={10303}
+},
+monsters=
+{
+{id=101121,born_group=101,wave=1},
+{id=101121,born_group=101,wave=1},
+{id=101122,born_pos=10603,wave=2},
+{id=101123,born_pos=10206,wave=2},
+{id=101124,born_pos=10303,wave=3}
+},
+props=
+{
+{born_group=103,wave=2,rate=100,nPropID=1,name="货箱",icon="MapProps_001",desc="装着各种随机素材的箱子。",res="GridProps/baoxiang/baoxiang",get_eff="baoxiang_hit",eBlockState=1,nStep=0,state=1,type=26,param={10001}},
+{born_group=103,wave=2,rate=75,nPropID=2,name="货箱",icon="MapProps_001",desc="装着各种随机素材的箱子。",res="GridProps/baoxiang/baoxiang",get_eff="baoxiang_hit",eBlockState=1,nStep=0,state=1,type=28,param={10006}},
+{born_pos=10601,wave=3,rate=100,nPropID=3,float_content="HP+30%",use_sound="ui_buff_attack",name="生命补给",icon="MapProps_002",desc="基地投送的作战补给，获得后队伍全体生命+50%。",res="GridProps/buff/Buff_Heal",get_eff="get_eff_green",eBlockState=1,nStep=0,state=1,type=2,param={0.5}},
+{born_group=105,wave=1,rate=100,nPropID=4,float_content="冻结2回合行动",name="冰冻捕夹",icon="MapProps_007",desc="碎星造物设置的机械捕夹，队伍踩到后需要消耗两次行动才能解除。",res="GridProps/trap/G_01_Trap_01",get_eff="get_eff_blue",eUseState=1,nStep=0,state=1,type=20,param={2}},
+{born_group=105,wave=1,rate=100,nPropID=5,float_content="冻结2回合行动",name="冰冻捕夹",icon="MapProps_007",desc="碎星造物设置的机械捕夹，队伍踩到后需要消耗两次行动才能解除。",res="GridProps/trap/G_01_Trap_01",get_eff="get_eff_blue",eUseState=1,nStep=0,state=1,type=20,param={2}},
+{born_group=105,wave=1,rate=100,nPropID=6,float_content="冻结2回合行动",name="冰冻捕夹",icon="MapProps_007",desc="碎星造物设置的机械捕夹，队伍踩到后需要消耗两次行动才能解除。",res="GridProps/trap/G_01_Trap_01",get_eff="get_eff_blue",eUseState=1,nStep=0,state=1,type=20,param={2}},
+{born_group=105,wave=1,rate=100,nPropID=7,float_content="冻结2回合行动",name="冰冻捕夹",icon="MapProps_007",desc="碎星造物设置的机械捕夹，队伍踩到后需要消耗两次行动才能解除。",res="GridProps/trap/G_01_Trap_01",get_eff="get_eff_blue",eUseState=1,nStep=0,state=1,type=20,param={2}}
+},
+}
+return this;

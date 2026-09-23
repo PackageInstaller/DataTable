@@ -1,0 +1,29 @@
+﻿local this=
+{
+mapid=1222,born_group=100,
+groups=
+{
+[100]={10301,10202},
+[101]={10403,10607,10705},
+[104]={10803,10405},
+[102]={10908},
+[103]={10704},
+[106]={10808},
+[107]={11006,10801,10104,10308},
+[108]={10803,10703,10603,10503},
+[109]={10502,10503,10504,10505},
+[112]={10306,10406,10506,10606},
+[113]={10607,10606,10605,10604}
+},
+monsters=
+{
+{id=102194,born_group=102,wave=2},
+{id=402035,born_pos=10505,nRelationID=1,wave=1}
+},
+props=
+{
+{born_pos=10505,wave=1,rate=100,nPropID=1,nRelationID=1,AICtl=1007,icon="图标名称",desc="未设置",bIsCanPass=1,perpetual=1,nStep=2,state=4,type=29,len=2,nChangeStep=0,dir={2}},
+{born_pos=10504,wave=1,rate=100,nPropID=2,desc="未设置",res="GridProps/section2/6",get_eff="baoxiang_hit",eBlockState=3,perpetual=1,nStep=0,state=1,type=0}
+},
+}
+return this;

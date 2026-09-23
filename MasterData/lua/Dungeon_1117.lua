@@ -1,0 +1,35 @@
+﻿local this=
+{
+mapid=1117,born_group=100,
+groups=
+{
+[100]={10102,10201},
+[101]={10405,10504},
+[104]={10501,10106},
+[102]={10601},
+[103]={10303},
+[105]={10203,10302},
+[106]={10603},
+[107]={10303,10304,10403,10404},
+[108]={10501,10502,10601,10602},
+[109]={10105,10106,10205,10206}
+},
+monsters=
+{
+{id=101171,born_group=101,wave=1},
+{id=101172,born_group=101,wave=1},
+{id=101172,born_pos=10106,wave=2},
+{id=101173,born_pos=10501,wave=2},
+{id=101174,born_group=102,wave=3}
+},
+props=
+{
+{born_group=103,wave=2,rate=100,nPropID=1,name="货箱",icon="MapProps_001",desc="装着各种随机素材的箱子。",res="GridProps/baoxiang/baoxiang",get_eff="baoxiang_hit",eBlockState=1,nStep=0,state=1,type=26,param={10001}},
+{born_group=103,wave=2,rate=100,nPropID=2,name="货箱",icon="MapProps_001",desc="装着各种随机素材的箱子。",res="GridProps/baoxiang/baoxiang",get_eff="baoxiang_hit",eBlockState=1,nStep=0,state=1,type=28,param={10006}},
+{born_group=106,wave=3,rate=100,nPropID=3,float_content="HP+30%",use_sound="ui_buff_attack",name="生命补给",icon="MapProps_002",desc="基地投送的作战补给，获得后队伍全体生命+30%。",res="GridProps/buff/Buff_Heal",get_eff="get_eff_green",eBlockState=1,nStep=0,state=1,type=2,param={0.3}},
+{born_group=105,wave=1,rate=100,nPropID=4,float_content="冻结2回合行动",name="冰冻捕夹",icon="MapProps_007",desc="碎星造物设置的机械捕夹，队伍踩到后需要消耗两次行动才能解除。",res="GridProps/trap/G_01_Trap_01",get_eff="get_eff_blue",eUseState=1,nStep=0,state=1,type=20,param={2}},
+{born_group=105,wave=1,rate=100,nPropID=5,float_content="冻结2回合行动",name="冰冻捕夹",icon="MapProps_007",desc="碎星造物设置的机械捕夹，队伍踩到后需要消耗两次行动才能解除。",res="GridProps/trap/G_01_Trap_01",get_eff="get_eff_blue",eUseState=1,nStep=0,state=1,type=20,param={2}},
+{born_pos=10101,wave=1,rate=100,nPropID=6,offset_x=-100,offset_z=200,float_content="HP-20%",shake_delay=0,shake_time=705,shake_range=100,icon="图标名称",desc="红蓝炮塔-2区域",res="GridProps/paotai/paotai",bIsCanPass=1,perpetual=1,nStep=2,state=4,type=30,param={0.1},attackType=1,damage=0.2,ranges={107,108,109}}
+},
+}
+return this;

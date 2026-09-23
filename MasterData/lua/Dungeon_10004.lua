@@ -1,0 +1,37 @@
+﻿local this=
+{
+mapid=10004,born_group=100,
+groups=
+{
+[100]={10201,10301},
+[101]={10506,10104},
+[104]={10303,10409},
+[102]={10509},
+[103]={10209},
+[106]={10106},
+[105]={10505,10208},
+[107]={10305,10207},
+[108]={10207,10208,10209,10307,10308,10309,10407,10408,10409},
+[109]={10201,10202,10203,10301,10302,10303,10401,10402,10403},
+[110]={10204,10205,10206,10304,10305,10306,10404,10405,10406}
+},
+monsters=
+{
+{id=401041,born_group=101,wave=1},
+{id=401041,born_group=101,wave=1},
+{id=401042,born_pos=10409,wave=2},
+{id=401043,born_pos=10303,wave=2},
+{id=401044,born_group=102,wave=3}
+},
+props=
+{
+{born_group=103,wave=2,rate=100,nPropID=1,name="货箱",name_id=70010,icon="MapProps_001",desc="装着各种随机素材的箱子。",desc_id=71010,res="GridProps/baoxiang/baoxiang",get_eff="baoxiang_hit",eBlockState=1,nStep=0,state=1,type=26,param={10001}},
+{born_group=106,wave=2,rate=100,nPropID=2,float_content="耐久+30%",float_content_id=72020,use_sound="ui_buff_attack",name="生命补给",name_id=70020,icon="MapProps_002",desc="基地投送的作战补给，获得后队伍全体耐久+50%。",desc_id=71020,res="GridProps/buff/Buff_Heal",get_eff="get_eff_green",eBlockState=1,nStep=0,state=1,type=2,param={0.3}},
+{born_group=107,wave=1,rate=100,nPropID=3,name="岩石障碍",name_id=70080,icon="MapProps_008",desc="碎星建筑残骸，队伍无法移动到上面。",desc_id=71080,res="GridProps/trap/G_01_Trap_03",eBlockState=3,perpetual=1,nStep=0,state=1,type=16,TriggerType=1,damage=0},
+{born_group=107,wave=1,rate=100,nPropID=4,name="岩石障碍",name_id=70080,icon="MapProps_008",desc="碎星建筑残骸，队伍无法移动到上面。",desc_id=71080,res="GridProps/trap/G_01_Trap_03",eBlockState=3,perpetual=1,nStep=0,state=1,type=16,TriggerType=1,damage=0},
+{born_pos=10101,wave=1,rate=100,nPropID=5,offset_x=200,offset_y=-100,offset_z=600,float_content="耐久-20%",float_content_id=73011,shake_delay=0,shake_time=705,shake_range=100,icon="图标名称",desc="红蓝炮塔-2区域",res="GridProps/paotai/paotai",bIsCanPass=1,perpetual=1,nStep=2,state=4,type=30,param={0.1},attackType=1,damage=0.2,ranges={108,109,110}},
+{born_group=105,wave=1,rate=100,nPropID=6,name="冰冻捕夹",name_id=70070,icon="MapProps_007",desc="碎星造物设置的机械捕夹，队伍踩到后需要消耗两次行动才能解除。",desc_id=71070,res="GridProps/trap/G_01_Trap_01",get_eff="get_eff_blue",eUseState=1,nStep=0,state=1,type=20,param={2}},
+{born_group=105,wave=1,rate=100,nPropID=7,name="冰冻捕夹",name_id=70070,icon="MapProps_007",desc="碎星造物设置的机械捕夹，队伍踩到后需要消耗两次行动才能解除。",desc_id=71070,res="GridProps/trap/G_01_Trap_01",get_eff="get_eff_blue",eUseState=1,nStep=0,state=1,type=20,param={2}}
+},
+}
+return this;

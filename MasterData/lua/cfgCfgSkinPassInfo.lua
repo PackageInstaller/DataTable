@@ -1,0 +1,3 @@
+﻿_G["CfgSkinPassInfo"]={{["itemImg1"]="btn_01_01",["bottomShadow"]="img9_03_01",["bottomImg"]="img9_01_01",["lineCur2"]="bar_01_01",["rigthImg1"]="img_07_01",["centerImg"]="img_06_01",["finishImg1"]="img_08_01",["timeObj"]="img9_05_01",["key"]="1",["iconFrame"]="img_10_01",["lineCur1"]="bar_01_01",["point2"]="img_07_02",["roleName"]="img_11_01",["point1"]="img_07_01",["finishImg2"]="img_08_01",["itemLock3"]="img9_02_01",["lineBg2"]="bar_01_01",["levelImg"]="img_04_01",["id"]=1,["bottomImg2"]="img_09_01",["itemLock1"]="img9_02_01",["rigthImg3"]="img_07_01",["rigthImg2"]="img_07_02",["itemLock2"]="img9_02_01",["bottomImg3"]="img_12_01",["itemLock4"]="img9_02_01",["itemImg2"]="btn_02_01",["levelImg2"]="img_05_01",["rigthImg4"]="img_07_02",["lineBg1"]="bar_01_01"}
+}
+

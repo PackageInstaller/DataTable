@@ -1,0 +1,1 @@
+﻿return { camera_range_x = 200,teleport_cast_delay = 150,cast_default_camera_delay = 250,cast_transfer_show_delay = 450 }

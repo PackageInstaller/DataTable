@@ -1,0 +1,7 @@
+﻿_G["CfgMultiteamBattle"]={{["pointId"]=10502,["missionGp"]=1,["rewardGp"]=1,["nEndTime"]=1759949999,["shopGp"]=6001,["settlementTime"]="2025/10/07 02:59:59",["nSettleTime"]=1759777199,["nBeginTime"]=1759197600,["key"]=1,["endTime"]="2025/10/09 02:59:59",["id"]=1,["begTime"]="2025/09/30 10:00:00",["jumpId"]=140042,["EnterId"]=10503}
+,{["pointId"]=10502,["missionGp"]=2,["rewardGp"]=1,["nEndTime"]=1769021999,["shopGp"]=6001,["settlementTime"]="2026/01/20 02:59:59",["nSettleTime"]=1768849199,["nBeginTime"]=1768269600,["key"]=2,["endTime"]="2026/01/22 02:59:59",["id"]=2,["begTime"]="2026/01/13 10:00:00",["jumpId"]=140042,["EnterId"]=10503}
+,{["pointId"]=10502,["missionGp"]=3,["rewardGp"]=1,["nEndTime"]=1779562799,["shopGp"]=6001,["settlementTime"]="2026/05/22 02:59:59",["nSettleTime"]=1779389999,["nBeginTime"]=1778551200,["key"]=3,["endTime"]="2026/05/24 02:59:59",["id"]=3,["begTime"]="2026/05/12 10:00:00",["jumpId"]=140042,["EnterId"]=10503}
+,{["pointId"]=10502,["missionGp"]=4,["rewardGp"]=1,["nEndTime"]=1785006000,["shopGp"]=6001,["settlementTime"]="2026/07/24 03:00:00",["nSettleTime"]=1784833200,["nBeginTime"]=1783994400,["key"]=4,["endTime"]="2026/07/26 03:00:00",["id"]=4,["begTime"]="2026/07/14 10:00:00",["jumpId"]=140042,["EnterId"]=10503}
+,{["pointId"]=10502,["missionGp"]=5,["rewardGp"]=1,["nEndTime"]=1793646000,["shopGp"]=6001,["settlementTime"]="2026/11/01 03:00:00",["nSettleTime"]=1793473200,["nBeginTime"]=1792116000,["key"]=5,["endTime"]="2026/11/03 03:00:00",["id"]=5,["begTime"]="2026/10/16 10:00:00",["jumpId"]=140042,["EnterId"]=10503}
+}
+

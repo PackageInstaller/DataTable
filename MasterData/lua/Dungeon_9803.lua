@@ -1,0 +1,34 @@
+﻿local this=
+{
+mapid=9803,born_group=100,
+groups=
+{
+[101]={10305,10604,10103,10106},
+[103]={10301,10102,10306,10507},
+[100]={10501,10301},
+[102]={10608},
+[104]={10106,10203,10208,10304,10504,10602}
+},
+monsters=
+{
+{id=101011,born_group=101,wave=1},
+{id=101011,born_group=101,wave=1},
+{id=101011,born_group=101,wave=1},
+{id=100011,born_group=101,wave=1},
+{id=101012,born_group=103,wave=2},
+{id=101012,born_group=103,wave=2},
+{id=101012,born_group=103,wave=2},
+{id=101012,born_group=103,wave=2},
+{id=100014,born_group=102,wave=3}
+},
+props=
+{
+{born_group=104,wave=1,rate=100,nPropID=1,icon="图标名称",desc="未设置",get_eff="bomb",bIsCanPass=1,perpetual=1,nStep=2,state=4,type=18,param={1,2}},
+{born_group=104,wave=1,rate=100,nPropID=2,icon="图标名称",desc="未设置",get_eff="bomb",bIsCanPass=1,perpetual=1,nStep=2,state=4,type=18,param={1,2}},
+{born_group=104,wave=1,rate=100,nPropID=3,icon="图标名称",desc="未设置",get_eff="bomb",bIsCanPass=1,perpetual=1,nStep=2,state=4,type=18,param={1,2}},
+{born_group=104,wave=1,rate=100,nPropID=4,icon="图标名称",desc="未设置",get_eff="bomb",bIsCanPass=1,perpetual=1,nStep=2,state=4,type=18,param={1,2}},
+{born_group=104,wave=1,rate=100,nPropID=5,icon="图标名称",desc="未设置",get_eff="bomb",bIsCanPass=1,perpetual=1,nStep=2,state=4,type=18,param={1,2}},
+{born_group=104,wave=1,rate=100,nPropID=6,icon="图标名称",desc="未设置",get_eff="bomb",bIsCanPass=1,perpetual=1,nStep=2,state=4,type=18,param={1,2}}
+},
+}
+return this;

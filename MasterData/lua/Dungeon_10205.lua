@@ -1,0 +1,30 @@
+﻿local this=
+{
+mapid=10205,born_group=100,
+groups=
+{
+[100]={10102,10201},
+[101]={10404},
+[102]={10804},
+[103]={10401,10506},
+[104]={10806}
+},
+monsters=
+{
+{id=403051,born_pos=10604,wave=1},
+{id=403052,born_pos=10401,wave=1},
+{id=403052,born_pos=10605,wave=1},
+{id=403053,born_pos=10802,wave=1},
+{id=403054,born_group=102,wave=1}
+},
+props=
+{
+{born_group=101,wave=1,rate=100,nPropID=1,name="货箱",name_id=70010,icon="MapProps_001",desc="装着各种随机素材的箱子。",desc_id=71010,res="GridProps/baoxiang/baoxiang",get_eff="baoxiang_hit",eBlockState=1,nStep=0,state=1,type=26,param={10001}},
+{born_group=104,wave=1,rate=100,nPropID=2,float_content="HP+30%",float_content_id=72020,use_sound="ui_buff_attack",name="生命补给",name_id=70020,icon="图标名称",desc="基地投送的作战补给，获得后队伍全体生命+30%。",desc_id=71020,res="GridProps/buff/Buff_Heal",get_eff="get_eff_green",eBlockState=1,nStep=0,state=1,type=2,param={0.3}}
+},
+mists={
+{round=2,view=1},
+{round=10,view=0}
+}
+}
+return this;

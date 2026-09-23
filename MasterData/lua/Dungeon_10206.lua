@@ -1,0 +1,33 @@
+﻿local this=
+{
+mapid=10206,born_group=100,
+groups=
+{
+[100]={10301,10501},
+[101]={10106,10203,10208,10709,10803},
+[102]={10803},
+[103]={10406},
+[104]={10410},
+[105]={10105,10205,10603,10606,10607,10703},
+[106]={10302,10303,10308,10502,10503,10605,10705,10309}
+},
+monsters=
+{
+{id=403062,born_pos=10602,wave=1},
+{id=403061,born_pos=10203,wave=1},
+{id=403062,born_pos=10208,wave=1},
+{id=403063,born_pos=10709,wave=1},
+{id=403064,born_group=103,wave=2}
+},
+props=
+{
+{born_group=104,wave=1,rate=100,nPropID=1,name="货箱",name_id=70010,icon="MapProps_001",desc="装着各种随机素材的箱子。",desc_id=71010,res="GridProps/baoxiang/baoxiang",get_eff="baoxiang_hit",eBlockState=1,nStep=0,state=1,type=26,param={10001}},
+{born_group=102,wave=1,rate=100,nPropID=2,float_content="HP+30%",float_content_id=72020,use_sound="ui_buff_attack",name="生命补给",name_id=70020,icon="MapProps_002",desc="基地投送的作战补给，获得后队伍全体生命+30%。",desc_id=71020,res="GridProps/buff/Buff_Heal",get_eff="get_eff_green",eBlockState=1,nStep=0,state=1,type=2,param={0.3}},
+{born_pos=10101,wave=1,rate=100,nPropID=3,offset_x=-300,offset_y=-100,offset_z=100,float_content="HP-5%",shake_delay=0,shake_time=300,shake_range=100,icon="图标名称",desc="第三章虚影落石",bIsCanPass=1,perpetual=1,nStep=1,state=4,type=38,param={0.1},damage=0.2,ranges={105,106}}
+},
+mists={
+{round=2,view=1},
+{round=10,view=0}
+}
+}
+return this;

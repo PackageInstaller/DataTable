@@ -1,0 +1,29 @@
+﻿local this=
+{
+mapid=10001,born_group=101,
+groups=
+{
+[101]={10201,10102},
+[100]={10503,10305},
+[102]={10405},
+[103]={10203},
+[104]={10303},
+[105]={10504},
+[106]={10202},
+[107]={10104,10105,10204,10205},
+[108]={10401,10402,10501,10502},
+[109]={10403,10303,10304,10404}
+},
+monsters=
+{
+{id=401011,born_pos=10503,wave=1},
+{id=401012,born_pos=10305,wave=1},
+{id=401013,born_pos=10204,wave=2},
+{id=401014,born_group=102,wave=3}
+},
+props=
+{
+{born_pos=10505,wave=1,rate=100,nPropID=1,offset_x=-300,offset_y=-100,offset_z=100,float_content="耐久-20%",shake_delay=0,shake_time=705,shake_range=100,name="裁决之雷",icon="MapProps_009",desc="红蓝炮塔-2区域",res="GridProps/paotai/paotai",bIsCanPass=1,perpetual=1,nStep=2,state=4,type=30,param={0.1},attackType=1,damage=0.2,ranges={107,108,109}}
+},
+}
+return this;

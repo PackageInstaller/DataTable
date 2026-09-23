@@ -1,0 +1,33 @@
+﻿local this=
+{
+mapid=121008,born_group=100,
+groups=
+{
+[100]={10104,10106},
+[101]={10605,10304,10306},
+[104]={10705},
+[105]={10502},
+[102]={10805},
+[103]={10706},
+[107]={10704},
+[109]={10501},
+[110]={10509},
+[111]={10502,10503,10504,10505},
+[112]={10508,10507,10506,10505},
+[106]={10208,10202}
+},
+monsters=
+{
+{id=605081,born_pos=10304,wave=1},
+{id=605082,born_pos=10306,wave=1},
+{id=605083,born_pos=10607,wave=1},
+{id=605085,born_pos=10603,wave=1},
+{id=605084,born_group=102,wave=1}
+},
+props=
+{
+{born_group=103,wave=1,rate=100,nPropID=1,float_content="HP+100%",float_content_id=72023,use_sound="ui_buff_attack",name="耐久补给",name_id=70020,icon="MapProps_002",desc="基地投送的作战补给，获得后队伍全体耐久+100%。",desc_id=71023,res="GridProps/buff/Buff_Heal",get_eff="get_eff_green",eBlockState=1,nStep=0,state=1,type=2,param={1}},
+{born_group=107,wave=1,rate=100,nPropID=2,float_content="NP+50",float_content_id=72030,use_sound="ui_buff_attack",name="NP补给",name_id=70030,icon="MapProps_003",desc="基地投送的作战补给，获得后队伍NP+50。",desc_id=71030,res="GridProps/buff/Buff_NP",get_eff="get_eff_green",eBlockState=1,nStep=0,state=1,type=34,param={0.1},nNp=50}
+},
+}
+return this;

@@ -1,0 +1,33 @@
+﻿local this=
+{
+mapid=10003,born_group=100,
+groups=
+{
+[100]={10201,10102},
+[101]={10602,10306},
+[104]={10303,10505},
+[102]={10606},
+[103]={10106},
+[105]={10404},
+[106]={10604,10504,10404,10505,10605,10405,10406,10506,10606},
+[107]={10603,10602,10601,10501,10502,10503,10403,10402,10401},
+[108]={10303,10203,10103,10102,10101,10201,10301,10302,10202},
+[109]={10304,10305,10306,10206,10106,10105,10104,10204,10205},
+[110]={10105,10501,10505}
+},
+monsters=
+{
+{id=401031,born_group=101,wave=1},
+{id=401031,born_group=101,wave=1},
+{id=401032,born_pos=10505,wave=2},
+{id=401033,born_pos=10303,wave=2},
+{id=401034,born_group=102,wave=3}
+},
+props=
+{
+{born_group=103,wave=2,rate=100,nPropID=1,name="货箱",name_id=70010,icon="MapProps_001",desc="装着各种随机素材的箱子。",desc_id=71010,res="GridProps/baoxiang/baoxiang",get_eff="baoxiang_hit",eBlockState=1,nStep=0,state=1,type=26,param={10001}},
+{born_group=105,wave=2,rate=100,nPropID=2,float_content="攻击力+10%",float_content_id=72060,use_sound="ui_buff_attack",name="攻击补给",name_id=70060,icon="MapProps_006",desc="基地投送的作战补给，获得后队伍全体攻击力+10%。",desc_id=71060,res="GridProps/buff/Buff_Attack",get_eff="get_eff_blue",eBlockState=1,nStep=0,state=1,type=13,param={4002}},
+{born_pos=10101,wave=1,rate=100,nPropID=3,offset_x=-100,offset_z=300,float_content="耐久-20%",float_content_id=73011,shake_delay=0,shake_time=705,shake_range=100,icon="图标名称",desc="红蓝炮塔-2区域",res="GridProps/paotai/paotai",bIsCanPass=1,perpetual=1,nStep=2,state=4,type=30,param={0.1},attackType=1,damage=0.2,ranges={106,107,108,109}}
+},
+}
+return this;

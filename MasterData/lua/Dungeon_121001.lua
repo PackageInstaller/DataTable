@@ -1,0 +1,33 @@
+﻿local this=
+{
+mapid=121001,born_group=100,
+groups=
+{
+[100]={10104,10106},
+[101]={10605,10304,10306},
+[104]={10705},
+[105]={10502},
+[102]={10805},
+[103]={10706},
+[107]={10704},
+[109]={10501},
+[110]={10509},
+[111]={10502,10503,10504,10505},
+[112]={10508,10507,10506,10505},
+[106]={10208,10202}
+},
+monsters=
+{
+{id=605011,born_pos=10304,wave=1},
+{id=605011,born_pos=10306,wave=1},
+{id=605012,born_pos=10607,wave=1},
+{id=605012,born_pos=10603,wave=1},
+{id=605013,born_group=102,wave=1}
+},
+props=
+{
+{born_group=103,wave=3,rate=100,nPropID=1,name="货箱",name_id=70010,icon="MapProps_001",desc="装着各种随机素材的箱子。",desc_id=71010,res="GridProps/baoxiang/baoxiang",get_eff="baoxiang_hit",eBlockState=1,nStep=0,state=1,type=26,param={10001}},
+{born_group=107,wave=2,rate=100,nPropID=2,float_content="耐久+50%",float_content_id=72022,name="生命补给",name_id=70020,icon="图标名称",desc="基地投送的作战补给，获得后队伍全体耐久+50%。",desc_id=71022,res="GridProps/buff/Buff_Heal",get_eff="get_eff_green",eBlockState=1,nStep=0,state=1,type=2,param={0.5}}
+},
+}
+return this;
