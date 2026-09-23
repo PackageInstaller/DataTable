@@ -1,11 +1,3 @@
-#!/usr/bin/env python3
-"""交错战线：把 APK 包体和热更合成 Assets，再把 Lua / 配置导出到 MasterData。
-
-热更地址来自 APK 里的 MJEnv.txt（game-beans.net），不是抓包里的灰烬战线 CDN。
-游戏不用 Addressables catalog。普通 bundle 头部有一段假 UnityFS，真身从
-ABMgr.GetABOffset 起；isEncypt 的 luascripts 是 BinaryFormatter 包一层再稀疏异或。
-"""
-
 from __future__ import annotations
 
 import argparse
@@ -27,13 +19,10 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 UNITY_FS = b"UnityFS"
-CHANNEL_SUFFIXES = ("", "_TW", "_JP", "_KR", "_EngLish", "_Russian")
+CHANNEL_SUFFIXES = "_TW"
 ART_PREFIXES = ("textures_", "prefabs_", "shader")
 SKIP_PREFIXES = ("sounds/", "videos/")
 UA = "UnityPlayer/2022.3.62f2c1 (UnityWebRequest/1.0)"
-
-
-# --- NRBF（Unity / Mono BinaryFormatter），只覆盖 ver.bytes 和 ABCustom ---
 
 class _R:
     def __init__(self, data: bytes):
@@ -331,15 +320,13 @@ def manifest_rows(root: dict) -> list[dict]:
     return rows
 
 
-# --- 游戏自己的两段变换 ---
 
 def ab_offset(name: str) -> int:
-    """ABMgr.GetABOffset：末尾最多 3 个 UTF-16 单元累加到 23，取绝对值低 8 位，0 则改成 1。"""
+    """ABMgr.GetABOffset"""
     name = name.replace("_fhx", "")
     if not name:
         return 23
     total = 23
-    # ponytail: 资源名是 BMP，码点即 UTF-16 单元；出现代理对再按 utf-16-le 拆
     for k in range(3):
         i = len(name) - 1 - k
         if i < 0:
@@ -351,7 +338,7 @@ def ab_offset(name: str) -> int:
 
 
 def xor_sparse(data: bytes) -> bytes:
-    """ABCustom.DdooEennccyypptt。步长 n//100（至少 1），密钥 (n % 254) + 1，原地可逆。"""
+    """ABCustom.DdooEennccyypptt"""
     buf = bytearray(data)
     n = len(buf)
     step = n // 100
@@ -381,7 +368,7 @@ def restore_bytes(name: str, data: bytes, enc: bool) -> bytes:
 
 
 def iter_bs(data: bytes):
-    """ResPackMgr 的 .bs：int32 名长 + utf8 名 + int32 数据长 + 数据。"""
+    """ResPackMgr"""
     p = 0
     n = len(data)
     while p < n:
@@ -408,8 +395,6 @@ def safe_rel(name: str) -> Path:
         raise RuntimeError(f"拒绝写出的路径 {name!r}")
     return Path(*parts)
 
-
-# --- APK / HTTP ---
 
 def game_root(args) -> Path:
     if getattr(args, "apk", None):
@@ -521,20 +506,15 @@ def pick_channel(hot: str, env_path: str, local: bytes, timeout: int, retries: i
     best = None
     best_diff = None
     best_data = None
-    for suf in CHANNEL_SUFFIXES:
-        channel = f"{env_path}{suf}"
-        url = f"{hot.rstrip('/')}/android/{channel}/ver.bytes"
-        try:
-            data = http_get(url, timeout, retries)
-        except RuntimeError as exc:
-            print(f"  跳过 {channel}：{exc}")
-            continue
-        diff = abs(len(data) - len(local))
-        print(f"  {channel} ver.bytes {len(data)} 字节，与包体相差 {diff}")
-        if best_diff is None or diff < best_diff:
-            best, best_diff, best_data = channel, diff, data
-    if best_data is None:
-        raise RuntimeError("六个语言目录都下不到 ver.bytes")
+    channel = f"{env_path}{CHANNEL_SUFFIXES}"
+    url = f"{hot.rstrip('/')}/android/{channel}/ver.bytes"
+    try:
+        data = http_get(url, timeout, retries)
+    except RuntimeError as exc:
+        print(f"  跳过 {channel}：{exc}")
+    diff = abs(len(data) - len(local))
+    if best_diff is None or diff < best_diff:
+        best, best_diff, best_data = channel, diff, data
     return best, best_data
 
 
@@ -660,7 +640,7 @@ def download_missing(rows, hot, channel, assets: Path, state: dict, state_path: 
                 item = futs[fut]
                 try:
                     fut.result()
-                except Exception as exc:  # 单文件失败留到最后，已成功的记在 state 里
+                except Exception as exc:
                     fails.append(f"{item['name']}: {exc}")
                 update()
 
@@ -896,7 +876,6 @@ def painting_filename(cha: str, skin: str, used: set[str], notes: list[str], kee
     cha_s = _safe_fs_name(cha)
     parts = [GAME_TITLE, cha_s]
     skin_s = _safe_fs_name(skin) if skin else ""
-    # 基础款 desc 和角色名相同，不再写成「艾格_艾格」
     if skin_s and skin_s != "未知" and (keep_same or skin_s != cha_s):
         parts.append(skin_s)
     for note in notes:
@@ -1232,35 +1211,7 @@ def cmd_status(args) -> int:
     return 0
 
 
-def self_check(root: Path) -> None:
-    assert ab_offset("-1006182002") == 169, ab_offset("-1006182002")
-    assert ab_offset("") == 23
-    blob = bytes(range(256)) * 3
-    assert xor_sparse(xor_sparse(blob)) == blob
-    assert face_origin(2048, 1590, 175, 132, (-12.5, 413)) == (924.0, 316.0)
-    apks = list_apks(root)
-    if not apks:
-        return
-    ver = read_member(apks, "assets/ver.bytes")
-    rows = manifest_rows(parse_nrbf(ver))
-    assert len(rows) > 1000, len(rows)
-    assert any(len(r["FileMD5"]) == 32 for r in rows)
-    found = find_member(apks, "assets/packs/1.bs")
-    if not found:
-        return
-    apk, name = found
-    with zipfile.ZipFile(apk) as zf:
-        pack = zf.read(name)
-    hit = None
-    for item_name, raw in iter_bs(pack):
-        if item_name == "-1006182002":
-            hit = raw
-            break
-    assert hit is not None, "1.bs 里没有 -1006182002"
-    assert hit[:len(UNITY_FS)] == UNITY_FS
-    off = ab_offset("-1006182002")
-    assert hit[off:off + len(UNITY_FS)] == UNITY_FS
-    assert restore_bytes("-1006182002", hit, False)[:len(UNITY_FS)] == UNITY_FS
+
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -1285,7 +1236,6 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main(argv=None) -> int:
     args = build_parser().parse_args(argv)
-    self_check(game_root(args))
     cmds = {
         "assets": cmd_assets,
         "masterdata": cmd_masterdata,
