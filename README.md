@@ -25,6 +25,7 @@ git clone -b game/xxxxx --single-branch --depth 1 https://github.com/PackageInst
 | `game/CatFantasy`               | CatFantasy               | 猫之城                                                |
 | `game/CounterSide`              | CounterSide              | 未来战                                                |
 | `game/CuisineDimension`         | CuisineDimension         | 料理次元                                              |
+| `game/DaiblosCore` | DaiblosCore |
 | `game/DengekiBunkoCROSSINGVOID` | DengekiBunkoCROSSINGVOID | 电击文库灵境交错                                      |
 | `game/DotAbyss`                 | DotAbyss                 | 鸡渊                                                  |
 | `game/Echocalypse`              | Echocalypse              | 绯红神约                                              |
