@@ -266,7 +266,7 @@ function HeroGroupRecommendGroupItem:refreshAbyssUI()
 	if not string.nilorempty(self._mo.extString) then
 		local skillIds = string.splitToNumber(self._mo.extString, "#")
 
-		skillId = AbyssHelper.getValidSkill(stageId, skillIds[1])
+		skillId = AbyssHelper.getValidSkill(actId, stageId, skillIds[1])
 	end
 
 	local haveSkill = skillId ~= nil and skillId ~= 0

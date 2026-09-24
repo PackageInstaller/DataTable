@@ -33,6 +33,12 @@ function FightSkinSpineAction:_onAnimEvent(actionName, eventName, eventArgs)
 	end
 
 	local spineActionCO = spineActionDict[actionName]
+	local isSub = FightDataHelper.entityMgr:isSub(entityMO.id)
+	local effectRemoveTime
+
+	if spineActionCO then
+		effectRemoveTime = isSub and spineActionCO.effectRemoveTimeForSub or spineActionCO.effectRemoveTime
+	end
 
 	if eventName == SpineAnimEvent.ActionStart then
 		self:_removeEffect()
@@ -40,7 +46,7 @@ function FightSkinSpineAction:_onAnimEvent(actionName, eventName, eventArgs)
 		local play_audio = true
 
 		if actionName == SpineAnimState.die or actionName == SpineAnimState.born then
-			if FightDataHelper.entityMgr:isSub(entityMO.id) then
+			if isSub and actionName == SpineAnimState.die then
 				play_audio = false
 			end
 
@@ -50,17 +56,17 @@ function FightSkinSpineAction:_onAnimEvent(actionName, eventName, eventArgs)
 		end
 
 		if spineActionCO then
-			self:_playActionEffect(spineActionCO)
+			self:_playActionEffect(spineActionCO, isSub)
 
 			if play_audio then
-				self:_playActionAudio(spineActionCO)
+				self:_playActionAudio(spineActionCO, isSub)
 			end
 
-			if spineActionCO.effectRemoveTime > 0 then
-				self:com_registSingleTimer(self._removeEffect, spineActionCO.effectRemoveTime)
+			if effectRemoveTime > 0 then
+				self:com_registSingleTimer(self._removeEffect, effectRemoveTime)
 			end
 		end
-	elseif eventName == SpineAnimEvent.ActionComplete and spineActionCO and spineActionCO.effectRemoveTime == 0 then
+	elseif eventName == SpineAnimEvent.ActionComplete and spineActionCO and effectRemoveTime == 0 then
 		self:_removeEffect()
 	end
 end
@@ -73,10 +79,18 @@ function FightSkinSpineAction:_removeEffect()
 	self._effectWraps = {}
 end
 
-function FightSkinSpineAction:_playActionEffect(spineActionCO)
-	if not string.nilorempty(spineActionCO.effect) then
-		local effectList = string.split(spineActionCO.effect, "#")
-		local hangPoint = string.split(spineActionCO.effectHangPoint, "#")
+function FightSkinSpineAction:_playActionEffect(spineActionCO, isSub)
+	local effect = spineActionCO.effect
+	local effectHangPoint = spineActionCO.effectHangPoint
+
+	if isSub then
+		effect = spineActionCO.effectForSub
+		effectHangPoint = spineActionCO.effectHandPointForSub
+	end
+
+	if not string.nilorempty(effect) then
+		local effectList = string.split(effect, "#")
+		local hangPoint = string.split(effectHangPoint, "#")
 
 		for i, path in ipairs(effectList) do
 			local effectWrap = self.entity.effect:addHangEffect(path, hangPoint[i])
@@ -88,8 +102,14 @@ function FightSkinSpineAction:_playActionEffect(spineActionCO)
 	end
 end
 
-function FightSkinSpineAction:_playActionAudio(spineActionCO)
-	if spineActionCO.audioId and spineActionCO.audioId > 0 then
+function FightSkinSpineAction:_playActionAudio(spineActionCO, isSub)
+	local audioId = spineActionCO.audioId
+
+	if isSub then
+		audioId = spineActionCO.audioIdForSub
+	end
+
+	if audioId and audioId > 0 then
 		local entityMO = self.entity:getMO()
 
 		if not entityMO then
@@ -106,7 +126,7 @@ function FightSkinSpineAction:_playActionAudio(spineActionCO)
 		local charVoiceLangId, langStr, usingDefaultLang = SettingsRoleVoiceModel.instance:getCharVoiceLangPrefValue(heroId)
 		local charVoiceLang = LangSettings.shortcutTab[charVoiceLangId]
 
-		FightAudioMgr.instance:playAudioWithLang(spineActionCO.audioId, (not string.nilorempty(charVoiceLang) and not usingDefaultLang or nil) and charVoiceLang)
+		FightAudioMgr.instance:playAudioWithLang(audioId, (not string.nilorempty(charVoiceLang) and not usingDefaultLang or nil) and charVoiceLang)
 	end
 end
 

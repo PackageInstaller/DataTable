@@ -50,8 +50,13 @@ function removeAssetLoadCb(assetUrl, loadedCb, loadedObj)
 	resMgr:RemoveAssetItemCb(assetUrl, loadedCb, loadedObj)
 end
 
+function getAssetCanonicalPath(assetUrl)
+	return resMgr:GetCanonicalPath(assetUrl)
+end
+
 setGlobal("loadAbAsset", loadAbAsset)
 setGlobal("loadNonAbAsset", loadNonAbAsset)
 setGlobal("loadPersistentRes", loadPersistentRes)
 setGlobal("removeAssetLoadCb", removeAssetLoadCb)
+setGlobal("getAssetCanonicalPath", getAssetCanonicalPath)
 setGlobal("GameResMgr", resMgr)

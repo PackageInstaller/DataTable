@@ -4,7 +4,7 @@ module("modules.logic.fight.entity.comp.heroCustomComp.FightHeroHSYComp", packag
 
 local FightHeroHSYComp = class("FightHeroHSYComp", FightHeroCustomCompBase)
 
-FightHeroHSYComp.EffectReleaseTime = 1
+FightHeroHSYComp.EffectReleaseTime = 2
 
 function FightHeroHSYComp:init(go)
 	FightHeroHSYComp.super.init(self, go)
@@ -25,16 +25,16 @@ function FightHeroHSYComp:init(go)
 	self.audio = config.audio
 	self.existEffectWrapDict = {}
 	self.playingEntityDict = {}
-	self.effectStartTimeDict = {}
+	self.effectEndTimeDict = {}
 	self.updateHandle = UpdateBeat:CreateListener(self._onFrame, self)
 end
 
 function FightHeroHSYComp:_onFrame()
-	if not self.effectStartTimeDict then
+	if not self.effectEndTimeDict then
 		return
 	end
 
-	if not next(self.effectStartTimeDict) then
+	if not next(self.effectEndTimeDict) then
 		self:_tryRemoveUpdateListener()
 
 		return
@@ -42,8 +42,8 @@ function FightHeroHSYComp:_onFrame()
 
 	local now = Time.time
 
-	for targetId, startTime in pairs(self.effectStartTimeDict) do
-		if now > startTime + FightHeroHSYComp.EffectReleaseTime then
+	for targetId, endTime in pairs(self.effectEndTimeDict) do
+		if endTime < now then
 			self:hideEffect(targetId)
 		end
 	end
@@ -92,10 +92,6 @@ function FightHeroHSYComp:createEffect(targetId)
 	FightRenderOrderMgr.instance:onAddEffectWrap(targetId, effectWrap)
 
 	self.existEffectWrapDict[targetId] = effectWrap
-
-	if self.audio ~= 0 then
-		AudioMgr.instance:trigger(self.audio)
-	end
 end
 
 function FightHeroHSYComp:hideEffect(targetId)
@@ -106,7 +102,7 @@ function FightHeroHSYComp:hideEffect(targetId)
 	end
 
 	self.playingEntityDict[targetId] = nil
-	self.effectStartTimeDict[targetId] = nil
+	self.effectEndTimeDict[targetId] = nil
 
 	self:_tryRemoveUpdateListener()
 end
@@ -125,7 +121,14 @@ function FightHeroHSYComp:showEffect(targetId)
 	end
 
 	self.playingEntityDict[targetId] = true
-	self.effectStartTimeDict[targetId] = Time.time
+
+	local duration = self.config.duration
+
+	if not duration or duration <= 0 then
+		duration = FightHeroHSYComp.EffectReleaseTime
+	end
+
+	self.effectEndTimeDict[targetId] = Time.time + duration
 
 	self:_tryAddUpdateListener()
 end
@@ -139,7 +142,7 @@ function FightHeroHSYComp:_tryAddUpdateListener()
 end
 
 function FightHeroHSYComp:_tryRemoveUpdateListener()
-	if self._updateListening and self.updateHandle and not next(self.effectStartTimeDict) then
+	if self._updateListening and self.updateHandle and not next(self.effectEndTimeDict) then
 		UpdateBeat:RemoveListener(self.updateHandle)
 
 		self._updateListening = false
@@ -170,9 +173,9 @@ function FightHeroHSYComp:onDestroy()
 
 	self.playingEntityDict = nil
 
-	tabletool.clear(self.effectStartTimeDict)
+	tabletool.clear(self.effectEndTimeDict)
 
-	self.effectStartTimeDict = nil
+	self.effectEndTimeDict = nil
 
 	FightHeroHSYComp.super.onDestroy(self)
 end

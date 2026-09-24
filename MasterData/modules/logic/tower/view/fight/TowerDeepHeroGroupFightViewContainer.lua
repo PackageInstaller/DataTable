@@ -7,6 +7,7 @@ local TowerDeepHeroGroupFightViewContainer = class("TowerDeepHeroGroupFightViewC
 function TowerDeepHeroGroupFightViewContainer:addLastViews(views)
 	table.insert(views, TowerHeroGroupBossView.New())
 	table.insert(views, TowerDeepHeroGroupInfoView.New())
+	table.insert(views, HeroGroupFightAssistBtn.New())
 end
 
 function TowerDeepHeroGroupFightViewContainer:defineFightView()

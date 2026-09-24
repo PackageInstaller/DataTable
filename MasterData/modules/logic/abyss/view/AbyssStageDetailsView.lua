@@ -35,6 +35,7 @@ function AbyssStageDetailsView:onInitView()
 	self._gotopleft = gohelper.findChild(self.viewGO, "#go_topleft")
 	self._btn_enemy = gohelper.findChildButton(self.viewGO, "Right/Title/#btn_enemy")
 	self._btnReadPreset = gohelper.findChildButton(self.viewGO, "Left/#btn_readpreset")
+	self._txtAssistCount = gohelper.findChildTextMesh(self.viewGO, "#go_assistTimes/#txt_assistTimes")
 
 	if self._editableInitView then
 		self:_editableInitView()
@@ -54,6 +55,8 @@ function AbyssStageDetailsView:addEvents()
 	self.addEventCb(self, HeroGroupController.instance, HeroGroupEvent.OnSnapshotSaveSucc, self._onSnapshotSaveSucc, self)
 	self.addEventCb(self, HeroGroupController.instance, AbyssEvent.OnAbyssLastUpdateTimeChange, self._onStageInfoChanged, self)
 	self.addEventCb(self, HeroGroupPresetController.instance, HeroGroupPresetEvent.UseHeroGroup, self._onUseHeroGroup, self)
+	self.addEventCb(self, AbyssController.instance, AbyssEvent.OnSelectPickAssist, self.onAssistChange, self)
+	self.addEventCb(self, AbyssController.instance, AbyssEvent.OnReleasePickAssist, self.refreshAssistInfo, self)
 end
 
 function AbyssStageDetailsView:removeEvents()
@@ -69,10 +72,16 @@ function AbyssStageDetailsView:removeEvents()
 	self.removeEventCb(self, HeroGroupController.instance, HeroGroupEvent.OnSnapshotSaveSucc, self._onSnapshotSaveSucc, self)
 	self.removeEventCb(self, HeroGroupController.instance, AbyssEvent.OnAbyssLastUpdateTimeChange, self._onStageInfoChanged, self)
 	self.removeEventCb(self, HeroGroupPresetController.instance, HeroGroupPresetEvent.UseHeroGroup, self._onUseHeroGroup, self)
+	self.addEventCb(self, AbyssController.instance, AbyssEvent.OnSelectPickAssist, self.onAssistChange, self)
+	self.addEventCb(self, AbyssController.instance, AbyssEvent.OnReleasePickAssist, self.refreshAssistInfo, self)
 end
 
 function AbyssStageDetailsView:_onModifyHeroGroup()
-	return
+	logNormal("_onModifyHeroGroup")
+
+	for _, item in ipairs(self._stageItemList) do
+		self:_refreshStageItemHeroInfo(item)
+	end
 end
 
 function AbyssStageDetailsView:_onUseHeroGroup(param)
@@ -83,23 +92,34 @@ function AbyssStageDetailsView:_onUseHeroGroup(param)
 	if self.infoMo then
 		local stageMo = self.infoMo:getStageInfo(self.curStageId)
 
-		if stageMo:isChallenged() then
+		if not stageMo or stageMo:isChallenged() then
 			return
 		end
 
-		if stageMo then
-			if not stageMo.heroGroupSubId then
-				local targetSubId = 1
-				local targetMo = HeroGroupPresetController.instance:copyPresetToOther(param.groupId, param.subId, HeroGroupPresetEnum.HeroGroupType.Abyss, targetSubId, false)
+		if not stageMo.heroGroupSubId then
+			local targetSubId = 1
+			local targetMo = HeroGroupPresetController.instance:copyPresetToOther(param.groupId, param.subId, HeroGroupPresetEnum.HeroGroupType.Abyss, targetSubId, false)
 
-				if targetMo == nil then
-					return
-				end
-
-				AbyssController.instance:saveSnapShot(targetMo, targetSubId)
+			if targetMo == nil then
+				return
 			end
+
+			if AbyssModel.instance:getAssistMO() and stageMo:haveAssist() then
+				HeroGroupModel.instance:clearCurAssist(true)
+				HeroGroupController.instance:dispatchEvent(HeroGroupEvent.OnModifyHeroGroup)
+			end
+
+			AbyssController.instance:saveSnapShot(targetMo, targetSubId, self._onSnapShotSaveSucc, self, true)
 		end
 	end
+end
+
+function AbyssStageDetailsView:_onSnapShotSaveSucc(code, msg)
+	local snapshotType = ModuleEnum.HeroGroupSnapshotType.Abyss
+	local curStageInfo = AbyssModel.instance:getCurStageMo()
+	local heroGroupMO = HeroGroupSnapshotModel.instance:getHeroGroupInfo(snapshotType, curStageInfo.heroGroupSubId, true)
+
+	HeroSingleGroupModel.instance:setSingleGroup(heroGroupMO)
 end
 
 function AbyssStageDetailsView:_onSnapshotSaveSucc(snapshotId, snapshotSubId)
@@ -142,6 +162,8 @@ function AbyssStageDetailsView:_btnReadPresetOnClick()
 				heroGroupType
 			}
 		})
+
+		HeroGroupModel.instance.episodeId = self.episodeConfig.id
 	end
 end
 
@@ -319,6 +341,15 @@ function AbyssStageDetailsView:onOpen()
 	AudioMgr.instance:trigger(AudioEnum3_6.Abyss.play_ui_stage_open)
 	self:checkParam()
 	self:refreshUI()
+	self:checkGuide()
+end
+
+function AbyssStageDetailsView:checkGuide()
+	local isFinish = GuideModel.instance:isGuideFinish(GuideEnum.GuideId.AssistAbyss)
+
+	if not isFinish and OpenModel.instance:isFunctionUnlock(OpenEnum.UnlockFunc.Friend) then
+		GuideController.instance:dispatchEvent(GuideEvent.TriggerActive, GuideEnum.EventTrigger.AssistAbyss)
+	end
 end
 
 function AbyssStageDetailsView:checkParam()
@@ -365,6 +396,27 @@ function AbyssStageDetailsView:refreshUI()
 	self:refreshTargetList()
 	self:refreshStageList()
 	self:refreshRecommendInfo()
+	self:refreshAssistInfo()
+end
+
+function AbyssStageDetailsView:onAssistChange()
+	AbyssController.instance:onUseAssist()
+	self:refreshAssistInfo()
+end
+
+function AbyssStageDetailsView:refreshAssistInfo()
+	local count = 0
+	local actInfo = AbyssModel.instance:getCurInfoMo()
+
+	for _, stageInfoMo in ipairs(actInfo.stageInfoList) do
+		if stageInfoMo:haveAssist() then
+			count = count + 1
+		end
+	end
+
+	local maxCount = 1
+
+	self._txtAssistCount.text = GameUtil.getSubPlaceholderLuaLangTwoParam(luaLang("v4a0_abyss_assist_count_tip"), count, maxCount)
 end
 
 function AbyssStageDetailsView:switchStage(stageId)
@@ -375,6 +427,12 @@ function AbyssStageDetailsView:switchStage(stageId)
 	self.curStageId = stageId
 
 	AbyssModel.instance:setCurStageId(stageId)
+
+	local snapshotType = ModuleEnum.HeroGroupSnapshotType.Abyss
+	local curStageInfo = AbyssModel.instance:getCurStageMo()
+	local heroGroupMO = HeroGroupSnapshotModel.instance:getHeroGroupInfo(snapshotType, curStageInfo.heroGroupSubId, true)
+
+	HeroSingleGroupModel.instance:setSingleGroup(heroGroupMO)
 	self:refreshTargetList()
 	self:refreshRecommendInfo()
 	self:refreshStageSelectState()
@@ -524,6 +582,7 @@ function AbyssStageDetailsView:_onStageInfoChanged(actId, stageId)
 	end
 
 	self:refreshTargetList()
+	self:refreshAssistInfo()
 end
 
 function AbyssStageDetailsView:_refreshStageItemHeroInfo(item)
@@ -543,7 +602,20 @@ function AbyssStageDetailsView:_refreshStageItemHeroInfo(item)
 			local heroId
 			local data = {}
 
-			heroId = self:_getPresetHeroId(stageMo, i)
+			if haveChallenge then
+				heroId = stageMo.heroList[i] and stageMo.heroList[i] or 0
+			elseif stageMo:isPosAssist(i) then
+				local assistData = stageMo.assistPosDic[i]
+
+				heroId = assistData and assistData.heroId or 0
+			else
+				heroId = self:_getPresetHeroId(stageMo, i)
+
+				local isLock = AbyssModel.instance:isCurHeroLocked(heroId)
+
+				heroId = isLock and 0 or heroId
+			end
+
 			data.heroId = heroId
 
 			local actInfo = AbyssModel.instance:getCurInfoMo()
@@ -555,9 +627,24 @@ function AbyssStageDetailsView:_refreshStageItemHeroInfo(item)
 			data.isLock = not haveChallenge and AbyssModel.instance:isCurHeroLocked(heroId)
 			data.haveChallenge = haveChallenge
 
-			local heroConfig = HeroConfig.instance:getHeroCO(data.heroId)
+			if heroId ~= nil and heroId ~= 0 then
+				local isAssist = stageMo:isHeroAssist(heroId)
+				local heroConfig = HeroConfig.instance:getHeroCO(heroId)
+				local skinId
 
-			logNormal("_refreshStageItemHeroInfo index: " .. i .. " id:" .. data.heroId .. " name:" .. ((heroConfig or nil) and (heroConfig.name or "")) .. " stageId: " .. stageId .. " isUsed: " .. tostring(data.isUsed))
+				if isAssist then
+					skinId = stageMo.skinDic[heroId]
+				else
+					local heroMo = HeroModel.instance:getByHeroId(heroId)
+
+					skinId = heroMo and heroMo.skin or heroConfig.skinId
+				end
+
+				data.skinId = skinId
+				data.isAssist = isAssist
+
+				logNormal("_refreshStageItemHeroInfo index: " .. i .. " id:" .. data.heroId .. " name:" .. ((heroConfig or nil) and (heroConfig.name or "")) .. " stageId: " .. stageId .. " isUsed: " .. tostring(data.isUsed))
+			end
 
 			tempList[i] = data
 		end
@@ -724,7 +811,7 @@ function AbyssStageDetailsView:onCreateTargetItem(itemGo, desc, index)
 	local stageInfo = AbyssModel.instance:getCurStageMo()
 
 	if stageInfo then
-		::label_37_0::
+		::label_41_0::
 
 		if stageInfo:isChallenged() then
 			if stageInfo.star then

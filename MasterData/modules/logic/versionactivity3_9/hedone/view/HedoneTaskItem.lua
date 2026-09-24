@@ -62,7 +62,7 @@ function HedoneTaskItem:_btngetallOnClick()
 end
 
 function HedoneTaskItem:_delayFinishAll()
-	TaskRpc.instance:sendFinishAllTaskRequest(TaskEnum.TaskType.Activity220)
+	Activity220Controller.instance:finishAllTask(VersionActivity3_9Enum.ActivityId.Hedone)
 end
 
 function HedoneTaskItem:_onOneClickClaimReward(actId)

@@ -24,11 +24,17 @@ function StoryBgEffsPerspectiveCamera:init(bgCo)
 end
 
 function StoryBgEffsPerspectiveCamera:start(callback, callbackObj)
-	StoryBgEffsPerspectiveCamera.super.start(self)
+	if self._bgCo.effDegree == 1 then
+		return
+	end
+
+	StoryBgEffsPerspectiveCamera.super.start(self, callback, callbackObj)
+end
+
+function StoryBgEffsPerspectiveCamera:onStartEffect()
 	ViewMgr.instance:registerCallback(ViewEvent.OnOpenView, self._onOpenView, self)
 	ViewMgr.instance:registerCallback(ViewEvent.OnCloseViewFinish, self._onCloseView, self)
 	self:_setViewTop(true)
-	self:loadRes()
 end
 
 function StoryBgEffsPerspectiveCamera:onLoadFinished()

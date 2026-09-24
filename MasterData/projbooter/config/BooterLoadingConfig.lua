@@ -108,7 +108,7 @@ local BooterLoadingConfig = {
 		episodeId = 0,
 		id = 12,
 		title = "“热沃当的野兽”",
-		weight = 300,
+		weight = 100,
 		desc = "在1936年法国巴黎，人们谣传它，忌讳它，害怕它——也创造了它。\n它始于一场混乱的癔症。市民深陷幻觉，失去维系日常的理性与常识，最后成为“野兽”……"
 	},
 	{
@@ -117,8 +117,44 @@ local BooterLoadingConfig = {
 		episodeId = 0,
 		id = 13,
 		title = "迷思海",
-		weight = 300,
+		weight = 100,
 		desc = "意象宝库、世界灵魂、所有人的梦境、集体潜意识的海洋……\n在悠久的历史上，人们曾赋予它各种称呼，但亲眼见过的人屈指可数。"
+	},
+	{
+		titleen = "Pax House",
+		bg = "originbg18",
+		episodeId = 0,
+		id = 14,
+		title = "鸽子屋",
+		weight = 300,
+		desc = "你一定听说过那高悬于顶的雪白石屋。\n课本里告诉我们，那是人类安全和平理事会，现今地球最高层管理机构。\n他们并不直接对人类社会进行管理，只在关乎存亡和发展的重要时刻显现。"
+	},
+	{
+		titleen = "Manus Vindictae",
+		bg = "originbg19",
+		episodeId = 0,
+		id = 15,
+		title = "重塑之手",
+		weight = 300,
+		desc = "抛却神志的束缚，于灵性的风雨中痛饮，笃信新神的纯血神秘学家相聚于此。\n这里尽是你的同胞，聆听祂的教诲，忠诚而热情地追随祂吧，只待我们期盼的时代降临。"
+	},
+	{
+		titleen = "Vessel Ensoulment",
+		bg = "originbg20",
+		episodeId = 0,
+		id = 16,
+		title = "灌体实验",
+		weight = 300,
+		desc = "一枚红按钮，一把冰冷的大理石座椅，一段无果的寻人记录。\n人为作用下，时空短暂交汇于此，有人祈求希望，有人追逐答案，有人承受苦痛。"
+	},
+	{
+		titleen = "Boon",
+		bg = "originbg21",
+		episodeId = 0,
+		id = 17,
+		title = "“奇迹”",
+		weight = 300,
+		desc = "跨越“暴雨”的方舟短暂停泊后，被辗转交予其真正持有者。\n她得到庇护的答案，随纺线走出迷宫，去寻命运的真相。"
 	}
 }
 

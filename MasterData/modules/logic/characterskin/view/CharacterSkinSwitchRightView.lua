@@ -149,6 +149,19 @@ end
 
 function CharacterSkinSwitchRightView:onOpen()
 	CharacterController.instance:dispatchEvent(CharacterEvent.OnSwitchSkinVertical, false, self.viewName)
+
+	local heroPastSkin = CharacterPastModel.instance:getHeroAllPastSkins(self.viewParam.heroId)
+
+	if heroPastSkin then
+		local skinCoList = SkinConfig.instance:getCharacterSkinCoList(self.viewParam.heroId)
+
+		for i, co in pairs(skinCoList) do
+			if LuaUtil.tableContains(heroPastSkin, co.id) then
+				table.remove(skinCoList, i)
+			end
+		end
+	end
+
 	self:initViewParam()
 	self:refreshHadSkinDict()
 	self:initSkinItem()

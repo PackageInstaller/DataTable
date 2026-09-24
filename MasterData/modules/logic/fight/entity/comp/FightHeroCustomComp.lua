@@ -6,7 +6,8 @@ local FightHeroCustomComp = class("FightHeroCustomComp", FightBaseClass)
 
 FightHeroCustomComp.HeroId2CustomComp = {
 	[3113] = FightHeroALFComp,
-	[3145] = FightHeroHSYComp
+	[3145] = FightHeroHSYComp,
+	[3155] = FightHero4_0HNJComp
 }
 
 function FightHeroCustomComp:onConstructor(entity)
@@ -24,6 +25,12 @@ function FightHeroCustomComp:onConstructor(entity)
 
 		self.customComp:init(go)
 		self.customComp:addEventListeners()
+	end
+end
+
+function FightHeroCustomComp:setActive(active)
+	if self.customComp then
+		self.customComp:setActive(active)
 	end
 end
 

@@ -35,7 +35,7 @@ function AutoChessLeaderItem:setData(id)
 
 		gohelper.setActive(self.go, true)
 	else
-		local episodeId = tonumber(lua_auto_chess_const.configDict[AutoChessEnum.ConstKey.UnlockLeaderSlot].value)
+		local episodeId = AutoChessConfig.instance:getConstValue(AutoChessEnum.ConstKey.UnlockLeaderSlot, true)
 
 		if episodeId ~= 0 then
 			local episodeName = AutoChessConfig.instance:getEpisodeCO(episodeId).name

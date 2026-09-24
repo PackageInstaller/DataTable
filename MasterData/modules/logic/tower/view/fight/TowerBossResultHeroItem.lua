@@ -19,6 +19,7 @@ function TowerBossResultHeroItem:init(go)
 	self._gostar4 = gohelper.findChild(go, "heroitemani/hero/vertical/#go_starList/star4")
 	self._gostar5 = gohelper.findChild(go, "heroitemani/hero/vertical/#go_starList/star5")
 	self._gostar6 = gohelper.findChild(go, "heroitemani/hero/vertical/#go_starList/star6")
+	self._gotrialTag = gohelper.findChild(go, "heroitemani/hero/trialtag")
 	self._goequip = gohelper.findChild(go, "heroitemani/equip")
 	self._imageequiprare = gohelper.findChildImage(go, "heroitemani/equip/equiprare")
 	self._imageequipicon = gohelper.findChildImage(go, "heroitemani/equip/equipicon")
@@ -56,6 +57,7 @@ function TowerBossResultHeroItem:_refreshHero()
 	local careerSpriteName = "lssx_" .. tostring(heroMo.config.career)
 
 	UISpriteSetMgr.instance:setCommonSprite(self._imagecareer, careerSpriteName)
+	gohelper.setActive(self._gotrialTag, heroMo.belongOtherPlayer)
 
 	if not heroMo.level then
 		local level = 0

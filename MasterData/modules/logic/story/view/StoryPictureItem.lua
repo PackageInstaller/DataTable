@@ -122,18 +122,17 @@ function StoryPictureItem:_onPicPrefabLoaded()
 		local curLang = GameLanguageMgr.instance:getShortCutByStoryIndex(index)
 		local txtCo = string.splitToNumber(self._picCo.picture, "#")
 		local picTxtCo = StoryConfig.instance:getStoryPicTxtConfig(tonumber(txtCo[1]))
-		local fontType = 0
-		local hasCn = LuaUtil.containChinese(picTxtCo[LangSettings.shortcutTab[LangSettings.zh]])
+		local fontType = picTxtCo.fontType + 1
 
-		fontType = hasCn and picTxtCo.fontType ~= 0 and self._picCo.inType == StoryEnum.PictureInType.TxtFadeIn and 0 or picTxtCo.fontType + 1
+		self.fontType = fontType
 
-		if fontType ~= 0 and not self._spTxts[fontType] then
+		if not self._spTxts[fontType] or not self._tmpTxts[fontType] then
 			logError(string.format("配置异常，目前还未设置相关fontType：%s的字体设定,请检查配置！", fontType))
 
 			return
 		end
 
-		local useTmp = self._picCo.inType == StoryEnum.PictureInType.SoftLight or self._picCo.inType == StoryEnum.PictureInType.GostMagic
+		local useTmp = true
 
 		gohelper.setActive(self._gotmptxt, useTmp)
 		gohelper.setActive(self._gosptxt, not useTmp)
@@ -147,60 +146,9 @@ function StoryPictureItem:_onPicPrefabLoaded()
 		end
 
 		local txt = picTxtCo[curLang]
-		local time = 0.1 * LuaUtil.getStrLen(txt) * txtCo[2]
-		local playDoText = not useTmp and self._picCo.inType ~= StoryEnum.PictureInType.TxtFadeIn and fontType ~= 0
 
-		if playDoText then
-			self._dtTweenId = ZProj.TweenHelper.DOText(self._useTxts[fontType], txt, time, nil, nil, nil, EaseType.Linear)
-		end
-
-		if self._picCo.inType == StoryEnum.PictureInType.SoftLight or self._picCo.inType == StoryEnum.PictureInType.GostMagic then
-			self:_playTextEffect(true, self._useTxts[fontType], self._picCo.inType)
-		end
-
-		if self._picCo.inType == StoryEnum.PictureInType.FadeIn or self._picCo.inType == StoryEnum.PictureInType.TxtFadeIn then
-			if fontType == 0 then
-				fontType = picTxtCo.fontType + 1
-
-				local filterResult = StoryTool.filterMarkTop(txt)
-
-				gohelper.setActive(self._useTxts[fontType].gameObject, true)
-
-				self._useTxts[fontType].text = filterResult
-			else
-				self._useTxts[fontType].text = txt
-			end
-
-			ZProj.TweenHelper.DOFadeCanvasGroup(self._picGoRoot, 0, 1, self._picCo.inTimes[GameLanguageMgr.instance:getVoiceTypeStoryIndex()], nil, nil, nil, EaseType.Linear)
-		else
-			self._picGoRoot:GetComponent(typeof(UnityEngine.CanvasGroup)).alpha = 1
-		end
-
-		if self._picCo.effType == StoryEnum.PictureEffectType.Shake then
-			if self._picCo.effTimes[GameLanguageMgr.instance:getVoiceTypeStoryIndex()] < 0.1 then
-				return
-			end
-
-			transformhelper.setLocalPosXY(self._gotmptxt.transform, self._picCo.pos[1], self._picCo.pos[2])
-			transformhelper.setLocalPosXY(self._gosptxt.transform, self._picCo.pos[1], self._picCo.pos[2])
-
-			if self._picCo.effDelayTimes[GameLanguageMgr.instance:getVoiceTypeStoryIndex()] < 0.1 then
-				self:_playShake()
-			else
-				TaskDispatcher.runDelay(self._playShake, self, self._picCo.effDelayTimes[GameLanguageMgr.instance:getVoiceTypeStoryIndex()])
-			end
-		elseif self._picCo.effType == StoryEnum.PictureEffectType.Scale then
-			transformhelper.setLocalPosXY(self._gotmptxt.transform, self._picCo.pos[1], self._picCo.pos[2])
-			transformhelper.setLocalPosXY(self._gosptxt.transform, self._picCo.pos[1], self._picCo.pos[2])
-
-			if self._picCo.effDelayTimes[GameLanguageMgr.instance:getVoiceTypeStoryIndex()] < 0.1 then
-				self:_playScale()
-			else
-				TaskDispatcher.runDelay(self._playScale, self, self._picCo.effDelayTimes[GameLanguageMgr.instance:getVoiceTypeStoryIndex()])
-			end
-		elseif self._picCo.effType == StoryEnum.PictureEffectType.FollowBg then
-			self:_playFollowBg()
-		end
+		self:_playTextEffect(true, self._useTxts[fontType], self._picCo.inType, picTxtCo, txt)
+		self:playEffect(self._picCo)
 
 		return
 	end
@@ -249,24 +197,117 @@ function StoryPictureItem:_onPicImageLoaded()
 		end
 	end
 
-	if self._picCo.effType == StoryEnum.PictureEffectType.Shake then
-		if self._picCo.effTimes[GameLanguageMgr.instance:getVoiceTypeStoryIndex()] < 0.1 then
-			return
-		end
+	self:playEffect(self._picCo)
+end
 
-		if self._picCo.effDelayTimes[GameLanguageMgr.instance:getVoiceTypeStoryIndex()] < 0.1 then
-			self:_playShake()
-		else
-			TaskDispatcher.runDelay(self._playShake, self, self._picCo.effDelayTimes[GameLanguageMgr.instance:getVoiceTypeStoryIndex()])
-		end
-	elseif self._picCo.effType == StoryEnum.PictureEffectType.Scale then
-		if self._picCo.effDelayTimes[GameLanguageMgr.instance:getVoiceTypeStoryIndex()] < 0.1 then
-			self:_playScale()
-		else
-			TaskDispatcher.runDelay(self._playScale, self, self._picCo.effDelayTimes[GameLanguageMgr.instance:getVoiceTypeStoryIndex()])
-		end
-	elseif self._picCo.effType == StoryEnum.PictureEffectType.FollowBg then
-		self:_playFollowBg()
+function StoryPictureItem:playEffect(config)
+	local effectType = config.effType
+
+	if effectType == StoryEnum.PictureEffectType.Shake then
+		self:playEffectShake(config)
+	elseif effectType == StoryEnum.PictureEffectType.Scale then
+		self:playEffectScale(config)
+	elseif effectType == StoryEnum.PictureEffectType.FollowBg then
+		self:playEffectFollowBg(config)
+	elseif effectType == StoryEnum.PictureEffectType.Popout then
+		self:playEffectPopout(config)
+	end
+end
+
+function StoryPictureItem:playEffectPopout(config)
+	if config.picType ~= StoryEnum.PictureType.PicTxt then
+		return
+	end
+
+	local textComp = self._useTxts[self.fontType]
+
+	if not textComp then
+		return
+	end
+
+	textComp:ForceMeshUpdate()
+
+	local mat = textComp.fontMaterial
+
+	mat:EnableKeyword("_EDGE_GRADUAL")
+
+	local tb = textComp.textBounds
+	local t = textComp.transform
+	local min = tb.min
+	local max = tb.max
+	local bl = t:TransformPoint(Vector3(min.x, min.y, 0))
+	local tl = t:TransformPoint(Vector3(min.x, max.y, 0))
+	local tr = t:TransformPoint(Vector3(max.x, max.y, 0))
+	local br = t:TransformPoint(Vector3(max.x, min.y, 0))
+	local center = (bl + tr) * 0.5
+	local worldWidth = (tr - tl).magnitude
+
+	mat:SetFloat("_WorldWidth", worldWidth)
+	mat:SetVector("_UIWorldCenter", Vector4.New(center.x, center.y, center.z, 0))
+	mat:SetFloat("_SpaceSwitch", 1)
+
+	local transTime = self._picCo.effTimes[GameLanguageMgr.instance:getVoiceTypeStoryIndex()]
+
+	self._popoutData = {
+		startVal = {
+			20,
+			-10,
+			20,
+			-10
+		},
+		endVal = {
+			20,
+			2,
+			20,
+			2
+		}
+	}
+	self.popOutTweenId = ZProj.TweenHelper.DOTweenFloat(0, 1, transTime, self._onPopoutUpdate, self.onPopoutFinish, self, nil, EaseType.Linear)
+	self._scaleTweenId = ZProj.TweenHelper.DOScale(self._picGoRoot.transform, 1.1, 1.1, 1, 4, nil, nil, nil, EaseType.Linear)
+end
+
+function StoryPictureItem:_onPopoutUpdate(value)
+	local textComp = self._useTxts[self.fontType]
+
+	if not textComp then
+		return
+	end
+
+	local mat = textComp.fontMaterial
+	local fv = self._popoutData.startVal
+	local tv = self._popoutData.endVal
+	local t = value
+
+	mat:SetVector("_RampCtrl", Vector4.New(fv[1] + (tv[1] - fv[1]) * t, fv[2] + (tv[2] - fv[2]) * t, fv[3] + (tv[3] - fv[3]) * t, fv[4] + (tv[4] - fv[4]) * t))
+end
+
+function StoryPictureItem:onPopoutFinish()
+	local textComp = self._useTxts[self.fontType]
+
+	if not textComp then
+		return
+	end
+
+	local mat = textComp.fontMaterial
+
+	mat:DisableKeyword("_EDGE_GRADUAL")
+	self:_onPopoutUpdate(1)
+end
+
+function StoryPictureItem:playEffectShake(config)
+	if config.effTimes[GameLanguageMgr.instance:getVoiceTypeStoryIndex()] < 0.1 then
+		return
+	end
+
+	if config.picType == StoryEnum.PictureType.PicTxt then
+		transformhelper.setLocalPosXY(self._gotmptxt.transform, config.pos[1], config.pos[2])
+		transformhelper.setLocalPosXY(self._gosptxt.transform, config.pos[1], config.pos[2])
+	end
+
+	if config.effDelayTimes[GameLanguageMgr.instance:getVoiceTypeStoryIndex()] < 0.1 then
+		self:_playShake()
+	else
+		TaskDispatcher.runDelay(self._playShake, self, config.effDelayTimes[GameLanguageMgr.instance:getVoiceTypeStoryIndex()])
 	end
 end
 
@@ -283,7 +324,12 @@ function StoryPictureItem:_playShake()
 
 	self._picAni.speed = self._picCo.effRate
 
-	TaskDispatcher.runDelay(self._shakeStop, self, self._picCo.effTimes[GameLanguageMgr.instance:getVoiceTypeStoryIndex()])
+	local shakeTime = self._picCo.effTimes[GameLanguageMgr.instance:getVoiceTypeStoryIndex()]
+
+	if shakeTime >= 0 then
+		TaskDispatcher.cancelTask(self._shakeStop, self)
+		TaskDispatcher.runDelay(self._shakeStop, self, shakeTime)
+	end
 end
 
 function StoryPictureItem:_shakeStop()
@@ -292,7 +338,7 @@ function StoryPictureItem:_shakeStop()
 	self._picAni:SetBool("stoploop", true)
 end
 
-function StoryPictureItem:_playFollowBg()
+function StoryPictureItem:playEffectFollowBg(config)
 	local bgRootGo = ViewMgr.instance:getContainer(ViewName.StoryBackgroundView).viewGO
 
 	self._bgGo = gohelper.findChild(bgRootGo, "#go_upbg")
@@ -312,6 +358,19 @@ function StoryPictureItem:_followBg()
 
 	transformhelper.setLocalPosXY(self._picGoRoot.transform, scaleX * self._deltaPos[1], scaleY * self._deltaPos[2])
 	transformhelper.setLocalScale(self._picGoRoot.transform, scaleY, scaleY, 1)
+end
+
+function StoryPictureItem:playEffectScale(config)
+	if config.picType == StoryEnum.PictureType.PicTxt then
+		transformhelper.setLocalPosXY(self._gotmptxt.transform, config.pos[1], config.pos[2])
+		transformhelper.setLocalPosXY(self._gosptxt.transform, config.pos[1], config.pos[2])
+	end
+
+	if config.effDelayTimes[GameLanguageMgr.instance:getVoiceTypeStoryIndex()] < 0.1 then
+		self:_playScale()
+	else
+		TaskDispatcher.runDelay(self._playScale, self, config.effDelayTimes[GameLanguageMgr.instance:getVoiceTypeStoryIndex()])
+	end
 end
 
 function StoryPictureItem:_playScale()
@@ -384,6 +443,12 @@ function StoryPictureItem:_killTweenId()
 	end
 
 	ZProj.TweenHelper.KillByObj(self._picGoRoot)
+
+	if self.popOutTweenId then
+		ZProj.TweenHelper.KillById(self.popOutTweenId)
+
+		self.popOutTweenId = nil
+	end
 end
 
 function StoryPictureItem:reset(go, picCo)
@@ -410,26 +475,7 @@ function StoryPictureItem:reset(go, picCo)
 		self._picAni.enabled = false
 
 		self:_setNormalPicture()
-
-		if self._picCo.effType == StoryEnum.PictureEffectType.Shake then
-			if self._picCo.effTimes[GameLanguageMgr.instance:getVoiceTypeStoryIndex()] < 0.1 then
-				return
-			end
-
-			if self._picCo.effDelayTimes[GameLanguageMgr.instance:getVoiceTypeStoryIndex()] < 0.1 then
-				self:_playShake()
-			else
-				TaskDispatcher.runDelay(self._playShake, self, self._picCo.effDelayTimes[GameLanguageMgr.instance:getVoiceTypeStoryIndex()])
-			end
-		elseif self._picCo.effType == StoryEnum.PictureEffectType.Scale then
-			if self._picCo.effDelayTimes[GameLanguageMgr.instance:getVoiceTypeStoryIndex()] < 0.1 then
-				self:_playScale()
-			else
-				TaskDispatcher.runDelay(self._playScale, self, self._picCo.effDelayTimes[GameLanguageMgr.instance:getVoiceTypeStoryIndex()])
-			end
-		elseif self._picCo.effType == StoryEnum.PictureEffectType.FollowBg then
-			self:_playFollowBg()
-		end
+		self:playEffect(self._picCo)
 	end
 end
 
@@ -491,11 +537,12 @@ function StoryPictureItem:_onFullFocusPictureLoaded()
 	end
 end
 
-function StoryPictureItem:_playTextEffect(isVisible, textComp, effectType)
+function StoryPictureItem:_playTextEffect(isVisible, textComp, effectType, picTxtCo, txt)
 	if isVisible then
 		self._textLightComp = self._textLightComp or MonoHelper.addNoUpdateLuaComOnceToGo(self._picParentGo, StoryTextLightComp)
 
-		self._textLightComp:playTextEffect(textComp, effectType)
+		self._textLightComp:setPicCo(self._picCo, self._picGoRoot)
+		self._textLightComp:playTextEffect(textComp, effectType, picTxtCo, txt)
 	elseif self._textLightComp then
 		self._textLightComp:hideTextEffect()
 	end
@@ -594,6 +641,8 @@ function StoryPictureItem:_realDestroy()
 
 		return
 	end
+
+	self:_playTextEffect(false)
 
 	if self._picRootCanvas then
 		self._picRootCanvas.sortingOrder = 1008

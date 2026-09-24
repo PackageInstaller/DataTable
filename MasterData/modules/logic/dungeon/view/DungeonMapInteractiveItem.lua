@@ -592,6 +592,16 @@ function DungeonMapInteractiveItem:_onHide()
 
 	AudioMgr.instance:trigger(AudioEnum.UI.play_ui_checkpoint_warnclose)
 	DungeonController.instance:dispatchEvent(DungeonEvent.OnSetEpisodeListVisible, true)
+
+	if self._readElementTime and (self._config.type == DungeonEnum.ElementType.None or self._config.type == DungeonEnum.ElementType.Story) then
+		local elementId = self._config.id
+		local useTime = Time.time - self._readElementTime
+
+		StatController.instance:track(StatEnum.EventName.MapElementRead, {
+			[StatEnum.EventProperties.MapElementId] = elementId,
+			[StatEnum.EventProperties.MapElementTime] = string.format("%.1f", useTime)
+		})
+	end
 end
 
 function DungeonMapInteractiveItem:_onViewClose(viewName)
@@ -710,6 +720,8 @@ function DungeonMapInteractiveItem:_OnClickElement(mapElement)
 
 	local interactType = self._config.type
 	local isStoryType = interactType == DungeonEnum.ElementType.Story
+
+	self._readElementTime = Time.time
 
 	gohelper.setActive(self._txtinfo.gameObject, not isStoryType)
 	gohelper.setActive(self._gochatarea, isStoryType)

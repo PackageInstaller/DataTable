@@ -96,6 +96,7 @@ end
 
 function V1a6_BossRush_ResultView:onClose()
 	FightController.onResultViewClose()
+	AssistController.instance:dispatchEvent(AssistEvent.CloseAddFriendView)
 end
 
 function V1a6_BossRush_ResultView:onDestroyView()

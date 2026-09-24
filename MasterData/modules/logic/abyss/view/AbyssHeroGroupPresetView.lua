@@ -84,7 +84,7 @@ function AbyssHeroGroupPresetView:_onUseHeroGroup(param)
 				return
 			end
 
-			AbyssController.instance:saveSnapShot(targetMo, targetSubId, self._onCopyPresetComplete, self)
+			AbyssController.instance:saveSnapShot(targetMo, targetSubId, self._onCopyPresetComplete, self, true)
 		end
 	end
 end

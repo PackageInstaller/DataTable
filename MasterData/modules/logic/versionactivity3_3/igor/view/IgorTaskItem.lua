@@ -60,7 +60,7 @@ function IgorTaskItem:_delayFinish()
 end
 
 function IgorTaskItem:_delayFinishAll()
-	TaskRpc.instance:sendFinishAllTaskRequest(TaskEnum.TaskType.Activity220)
+	Activity220Controller.instance:finishAllTask(VersionActivity3_3Enum.ActivityId.Igor)
 end
 
 function IgorTaskItem:_editableInitView()

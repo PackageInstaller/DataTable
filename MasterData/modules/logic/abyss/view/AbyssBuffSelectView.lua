@@ -82,7 +82,7 @@ function AbyssBuffSelectView:checkParam()
 	self.actId = param.actId
 	self.stageId = param.stageId
 
-	local skillIdList = AbyssConfig.instance:getStageSkillId(self.stageId)
+	local skillIdList = AbyssConfig.instance:getStageSkillId(self.actId, self.stageId)
 
 	if not skillIdList or not next(skillIdList) then
 		logError("新深渊 没有技能配置")

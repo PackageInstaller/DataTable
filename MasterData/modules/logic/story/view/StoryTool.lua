@@ -24,6 +24,26 @@ function StoryTool.getTxtAlignment(txt, type)
 	return string.match(txt, "<align=\"left\">") and (type == gohelper.Type_TextMesh and TMPro.TextAlignmentOptions.Left or UnityEngine.TextAnchor.MiddleLeft) or string.match(txt, "<align=\"right\">") and (type == gohelper.Type_TextMesh and TMPro.TextAlignmentOptions.Right or UnityEngine.TextAnchor.MiddleRight) or type == gohelper.Type_TextMesh and TMPro.TextAlignmentOptions.Center or UnityEngine.TextAnchor.MiddleCenter
 end
 
+function StoryTool.getFilterFullAlignTxt(txt)
+	return (string.gsub(txt, "</?align%s*=?%s*\"?[^\">]*\"?>", ""))
+end
+
+function StoryTool.getTxtFullAlignment(txt, type)
+	local value = string.match(txt, "<align%s*=%s*\"?([^\">]+)\"?>")
+
+	if type == gohelper.Type_TextMesh then
+		if not StoryEnum.TextAlignmentOptions[value] then
+			local align = StoryEnum.TextAnchor[value]
+
+			if align then
+				return (type == gohelper.Type_TextMesh or nil) and (TMPro.TextAlignmentOptions[align] or UnityEngine.TextAnchor[align])
+			end
+
+			return nil
+		end
+	end
+end
+
 function StoryTool.filterMarkTop(txt)
 	local result = ""
 	local tops = string.split(txt, "</marktop>")
@@ -187,7 +207,19 @@ function StoryTool.applyMaterialScheme(mat, schemeId)
 		return
 	end
 
-	for propName, propDef in pairs(scheme.props) do
+	StoryTool.applyMaterialBySchemeValues(mat, scheme.props)
+end
+
+function StoryTool.applyMaterialBySchemeValues(mat, values)
+	if not mat then
+		return
+	end
+
+	if not values then
+		return
+	end
+
+	for propName, propDef in pairs(values) do
 		local t = propDef.type
 		local v = propDef.value
 
@@ -197,6 +229,12 @@ function StoryTool.applyMaterialScheme(mat, schemeId)
 			mat:SetColor(propName, Color(v[1], v[2], v[3], v[4]))
 		elseif t == StoryEnum.MaterialPropType.Vector then
 			mat:SetVector(propName, Vector4.New(v[1], v[2], v[3], v[4]))
+		elseif t == StoryEnum.MaterialPropType.Keyword then
+			if v then
+				mat:EnableKeyword(propName)
+			else
+				mat:DisableKeyword(propName)
+			end
 		end
 	end
 end
@@ -238,6 +276,8 @@ function StoryTool.getMaterialSchemeInitValues(mat, schemeId)
 				v.z,
 				v.w
 			}
+		elseif t == StoryEnum.MaterialPropType.Keyword then
+			value = mat:IsKeywordEnabled(propName)
 		end
 
 		result[propName] = {

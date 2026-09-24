@@ -7,13 +7,14 @@ local fields = {
 	storyBefore = 6,
 	name = 5,
 	preEpisodeBranchId = 4,
-	type = 10,
-	storyClear = 8,
+	type = 11,
+	storyClear = 9,
 	episodeId = 2,
-	disactiveEpisodeIds = 9,
+	disactiveEpisodeIds = 10,
 	preEpisodeId = 3,
+	fightEpisodeId = 7,
 	activityId = 1,
-	gameId = 7
+	gameId = 8
 }
 local primaryKey = {
 	"activityId",

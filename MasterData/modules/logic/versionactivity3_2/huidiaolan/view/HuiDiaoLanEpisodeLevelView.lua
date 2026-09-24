@@ -15,6 +15,7 @@ function HuiDiaoLanEpisodeLevelView:onInitView()
 	self._btnTask = gohelper.findChildButtonWithAudio(self.viewGO, "#btn_Task")
 	self._goreddot = gohelper.findChild(self.viewGO, "#btn_Task/#go_reddot")
 	self._gobtns = gohelper.findChild(self.viewGO, "#go_btns")
+	self._btnTrial = gohelper.findChildButtonWithAudio(self.viewGO, "#go_Try/#btn_Trial")
 
 	if self._editableInitView then
 		self:_editableInitView()
@@ -27,6 +28,7 @@ function HuiDiaoLanEpisodeLevelView:addEvents()
 	self._drag:AddDragEndListener(self._onDragEnd, self)
 	self._touch:AddClickDownListener(self._onClickDown, self)
 	self._scrollStory:AddOnValueChanged(self._onScrollValueChanged, self)
+	self._btnTrial:AddClickListener(self._btnTrialOnClick, self)
 	self.addEventCb(self, HuiDiaoLanGameController.instance, HuiDiaoLanEvent.SelectEpisode, self.onSelectEpisode, self)
 	self.addEventCb(self, ViewMgr.instance, ViewEvent.OnCloseViewFinish, self.onCloseViewFinish, self, LuaEventSystem.Low)
 end
@@ -37,11 +39,38 @@ function HuiDiaoLanEpisodeLevelView:removeEvents()
 	self._drag:RemoveDragEndListener()
 	self._touch:RemoveClickDownListener()
 	self._scrollStory:RemoveOnValueChanged()
+	self._btnTrial:RemoveClickListener()
 	self.removeEventCb(self, HuiDiaoLanGameController.instance, HuiDiaoLanEvent.SelectEpisode, self.onSelectEpisode, self)
 	self.removeEventCb(self, ViewMgr.instance, ViewEvent.OnCloseViewFinish, self.onCloseViewFinish, self)
 end
 
 HuiDiaoLanEpisodeLevelView.scrollWidth = 5400
+
+function HuiDiaoLanEpisodeLevelView:_btnTrialOnClick()
+	if ActivityHelper.isOpen(self.activityId) then
+		local episodeId = self.config.tryoutEpisode
+
+		if episodeId <= 0 then
+			logError("没有配置对应的试用关卡")
+
+			return
+		end
+
+		local config = DungeonConfig.instance:getEpisodeCO(episodeId)
+
+		DungeonFightController.instance:enterFight(config.chapterId, episodeId)
+	else
+		self:_clickLock()
+	end
+end
+
+function HuiDiaoLanEpisodeLevelView:_clickLock()
+	local toastId, toastParamList = OpenHelper.getToastIdAndParam(self.config.openId)
+
+	if toastId and toastId ~= 0 then
+		GameFacade.showToastWithTableParam(toastId, toastParamList)
+	end
+end
 
 function HuiDiaoLanEpisodeLevelView:_btnTaskOnClick()
 	local param = {}
@@ -57,6 +86,7 @@ function HuiDiaoLanEpisodeLevelView:_editableInitView()
 	self._animPath = self._goPath:GetComponent(gohelper.Type_Animator)
 	self._taskAnimator = gohelper.findChild(self.viewGO, "#btn_Task/ani"):GetComponentInChildren(typeof(UnityEngine.Animator))
 	self.activityId = VersionActivity3_2Enum.ActivityId.HuiDiaoLan
+	self.config = ActivityConfig.instance:getActivityCo(self.activityId)
 
 	RedDotController.instance:addRedDot(self._goreddot, RedDotEnum.DotNode.Activity220Task, self.activityId, self.refreshReddot, self)
 	self:initEpisodeItem()
@@ -122,7 +152,7 @@ function HuiDiaoLanEpisodeLevelView:_onClickDown()
 end
 
 function HuiDiaoLanEpisodeLevelView:onUpdateParam()
-	if self.viewParam.episodeId and self.viewParam.episodeId > 0 then
+	if self.viewParam and self.viewParam.episodeId and self.viewParam.episodeId > 0 then
 		self.curEpisodeId = self.viewParam.episodeId or HuiDiaoLanModel.instance:getInitEpisodeId()
 	end
 
@@ -132,7 +162,7 @@ end
 function HuiDiaoLanEpisodeLevelView:onOpen()
 	HuiDiaoLanTaskListModel.instance:init(self.activityId)
 
-	if self.viewParam.episodeId and self.viewParam.episodeId > 0 then
+	if self.viewParam and self.viewParam.episodeId and self.viewParam.episodeId > 0 then
 		self.curEpisodeId = self.viewParam.episodeId or HuiDiaoLanModel.instance:getInitEpisodeId()
 	end
 

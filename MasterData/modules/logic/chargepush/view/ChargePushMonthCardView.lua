@@ -75,7 +75,7 @@ end
 
 function ChargePushMonthCardView:refreshParam()
 	self.config = self.viewParam and self.viewParam.config
-	self.goodsId = StoreEnum.MonthCardGoodsId
+	self.goodsId = StoreConfig.instance:getMonthCardStoreChargeId()
 end
 
 function ChargePushMonthCardView:refreshView()

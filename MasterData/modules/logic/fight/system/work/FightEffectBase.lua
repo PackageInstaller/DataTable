@@ -6,6 +6,7 @@ local FightEffectBase = class("FightEffectBase", FightWorkItem)
 
 function FightEffectBase:onConstructor()
 	self.skipAutoPlayData = false
+	self.additionalDoneFlow = nil
 end
 
 function FightEffectBase:onLogicEnter(fightStepData, actEffectData)
@@ -52,7 +53,7 @@ function FightEffectBase:beforeStart()
 		FightController.instance:dispatchEvent(FightEvent.InvokeFightWorkEffectType, self.actEffectData.effectType)
 	end
 
-	FightSkillBehaviorMgr.instance:playSkillEffectBehavior(self.fightStepData, self.actEffectData)
+	FightSkillBehaviorMgr.instance:playSkillEffectBehavior(self.fightStepData, self.actEffectData, self)
 end
 
 function FightEffectBase:playEffectData()
@@ -180,6 +181,28 @@ function FightEffectBase:addSameEffectDetectNextStep(list, parallelEffectType, n
 	end
 
 	return true
+end
+
+function FightEffectBase:onDone(isSuccess)
+	local flow = self:com_registFlowSequence()
+
+	if self.workFlowBeforeDone then
+		flow:addWork(self.workFlowBeforeDone)
+	end
+
+	if self.additionalDoneFlow then
+		flow:addWork(self.additionalDoneFlow)
+	end
+
+	flow:registWork(FightWorkFunction, FightWorkItem.onDone, self, isSuccess)
+	self:cancelFightWorkSafeTimer()
+	flow:start()
+end
+
+function FightEffectBase:addWorkBeforeOnDone(work)
+	self.workFlowBeforeDone = self.workFlowBeforeDone or self:com_registFlowSequence()
+
+	self.workFlowBeforeDone:addWork(work)
 end
 
 return FightEffectBase

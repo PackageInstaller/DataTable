@@ -220,7 +220,7 @@ function MainThumbnailHeroView:_updateHero(heroId, skinId)
 
 	local hero = HeroModel.instance:getByHeroId(self._heroId)
 
-	if not hero then
+	if not hero and not CharacterPastModel.instance:hasPastSkinsByHeroId(heroId) then
 		logError("_updateHero no hero:" .. tostring(heroId))
 
 		return
@@ -232,7 +232,9 @@ function MainThumbnailHeroView:_updateHero(heroId, skinId)
 		return
 	end
 
-	self._heroPhotoFrameBg = hero.config.photoFrameBg
+	local heroConfig = HeroConfig.instance:getHeroCO(heroId)
+
+	self._heroPhotoFrameBg = heroConfig.photoFrameBg
 	self._heroSkinConfig = skinCo
 	self._heroSkinTriggerArea = {}
 
@@ -283,6 +285,13 @@ function MainThumbnailHeroView:resetSpineAnchorTween(force)
 	end
 
 	local curHeroId, curSkinId = CharacterSwitchListModel.instance:getMainHero()
+	local jumpHeroId, jumpSkinId = CharacterSwitchListModel.instance:getJumpShowHeroSkin()
+
+	if jumpHeroId and jumpSkinId then
+		curHeroId = jumpHeroId
+		curSkinId = jumpSkinId
+	end
+
 	local skinCo = SkinConfig.instance:getSkinCo(curSkinId)
 
 	if not skinCo then
@@ -354,6 +363,12 @@ function MainThumbnailHeroView:_playGreetingVoices()
 	end
 
 	if not config then
+		local isPastSkin = CharacterPastModel.instance:isPastSkin(self._heroId, self._skinId)
+
+		if isPastSkin then
+			return
+		end
+
 		logError("no greeting voice")
 
 		return

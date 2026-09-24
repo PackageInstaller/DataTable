@@ -3,6 +3,8 @@
 module("modules.logic.store.view.MonthAndSeasonCardView", package.seeall)
 
 local MonthAndSeasonCardView = class("MonthAndSeasonCardView", BaseView)
+local MonthCardTab = 1
+local SeasonCardTab = 2
 
 function MonthAndSeasonCardView:onInitView()
 	self._simagebg = gohelper.findChildSingleImage(self.viewGO, "#simage_bg")
@@ -32,9 +34,11 @@ function MonthAndSeasonCardView:onUpdateParam()
 end
 
 function MonthAndSeasonCardView:onSwitchClick()
-	if self._curGoodsId == StoreEnum.MonthCardGoodsId then
-		if not StoreEnum.MonthAndSeasonCardTab.SeasonCard then
-			local nextTabId = StoreEnum.MonthAndSeasonCardTab.MonthCard
+	local monthCardId = StoreConfig.instance:getMonthCardStoreChargeId()
+
+	if self._curGoodsId == monthCardId then
+		if not SeasonCardTab then
+			local nextTabId = MonthCardTab
 
 			self:switchToNext(nextTabId)
 		end
@@ -42,16 +46,21 @@ function MonthAndSeasonCardView:onSwitchClick()
 end
 
 function MonthAndSeasonCardView:onOpen()
-	local defaultTabId
-	local goodsMo = StoreModel.instance:getGoodsMO(StoreEnum.SeasonCardGoodsId)
+	self.tabId2CardId = {
+		[MonthCardTab] = StoreConfig.instance:getMonthCardStoreChargeId(),
+		[SeasonCardTab] = StoreConfig.instance:getSeasonCardStoreChargeId()
+	}
 
-	self.defaultTabId = (not goodsMo or goodsMo:isSoldOut()) and StoreEnum.MonthAndSeasonCardTab.MonthCard or StoreEnum.MonthAndSeasonCardTab.SeasonCard
+	local defaultTabId
+	local goodsMo = StoreModel.instance:getGoodsMO(self.tabId2CardId[SeasonCardTab])
+
+	self.defaultTabId = (not goodsMo or goodsMo:isSoldOut()) and MonthCardTab or SeasonCardTab
 
 	self:switchToNext(self.defaultTabId, true)
 end
 
 function MonthAndSeasonCardView:switchToNext(selectTabId, isOpen)
-	local curGoodsId = StoreEnum.MonthAndSeasonCardTab2GoodsDic[selectTabId]
+	local curGoodsId = self.tabId2CardId[selectTabId]
 	local goodsMo = StoreModel.instance:getGoodsMO(curGoodsId)
 
 	if not goodsMo or goodsMo:isSoldOut() then
@@ -62,10 +71,12 @@ function MonthAndSeasonCardView:switchToNext(selectTabId, isOpen)
 	self._curTabId = selectTabId
 	self._curGoodsId = curGoodsId
 
-	if curGoodsId == StoreEnum.MonthCardGoodsId then
-		if not StoreEnum.MonthAndSeasonCardTab.SeasonCard then
-			local nextTabId = StoreEnum.MonthAndSeasonCardTab.MonthCard
-			local nextGoodsId = StoreEnum.MonthAndSeasonCardTab2GoodsDic[nextTabId]
+	local monthCardId = StoreConfig.instance:getMonthCardStoreChargeId()
+
+	if curGoodsId == monthCardId then
+		if not SeasonCardTab then
+			local nextTabId = MonthCardTab
+			local nextGoodsId = self.tabId2CardId[nextTabId]
 			local nextGoodsMo = StoreModel.instance:getGoodsMO(nextGoodsId)
 			local canSwitch = nextGoodsMo and not nextGoodsMo:isSoldOut()
 

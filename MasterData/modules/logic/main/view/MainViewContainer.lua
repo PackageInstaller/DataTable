@@ -46,9 +46,15 @@ function MainViewContainer:buildTabViews(tabContainerId)
 		currencyType.Gold
 	}
 
+	self._currencyView = CurrencyView.New(currencyParam)
+
 	return {
-		CurrencyView.New(currencyParam)
+		self._currencyView
 	}
+end
+
+function MainViewContainer:getCurrencyView()
+	return self._currencyView
 end
 
 function MainViewContainer:onContainerOpenFinish()

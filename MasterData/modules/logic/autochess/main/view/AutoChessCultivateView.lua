@@ -68,7 +68,7 @@ function AutoChessCultivateView:_editableInitView()
 end
 
 function AutoChessCultivateView:onOpen()
-	self.addEventCb(self, AutoChessController.instance, AutoChessEvent.updateCultivateReddot, self.onUpdateReddot, self)
+	self.addEventCb(self, AutoChessController.instance, AutoChessEvent.UpdateCultivateReddot, self.onUpdateReddot, self)
 
 	local go = self:getResInst(AutoChessStrEnum.ResPath.WarningItem, self._goWarning)
 	local warningItem = MonoHelper.addNoUpdateLuaComOnceToGo(go, AutoChessWarningItem)

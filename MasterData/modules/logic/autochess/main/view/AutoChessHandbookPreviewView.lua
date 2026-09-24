@@ -30,7 +30,7 @@ function AutoChessHandbookPreviewView:onOpen()
 end
 
 function AutoChessHandbookPreviewView:createChessCardItems()
-	local chessCfgStarList = AutoChessConfig:getChessCfgById(self._chessId)
+	local chessCfgStarList = AutoChessConfig.instance:getChessCfgs(self._chessId)
 
 	for idx, chessCfg in ipairs(chessCfgStarList) do
 		local go = self:getResInst(AutoChessStrEnum.ResPath.ChessCard, self._goCardRoot, "card" .. chessCfg.id)

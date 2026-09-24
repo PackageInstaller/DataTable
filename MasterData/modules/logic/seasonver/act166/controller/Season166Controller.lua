@@ -225,6 +225,8 @@ function Season166Controller:fillToastObj(toastObj, toastParam)
 	callbackGroup.onOpenObj = self
 	callbackGroup.onOpenParam = toastParam
 	toastObj.callbackGroup = callbackGroup
+
+	toastObj:setType(ToastItem.ToastType.Season166)
 end
 
 function Season166Controller:onOpenToast(toastParam, toastItem)

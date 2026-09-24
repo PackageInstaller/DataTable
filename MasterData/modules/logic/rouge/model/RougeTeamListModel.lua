@@ -159,6 +159,32 @@ function RougeTeamListModel.addHookGetHeroUid(uid)
 	return (teamInfo:getAssistHeroMoByUid(uid))
 end
 
+function RougeTeamListModel.addAssistHook_InitTeam()
+	HeroModel.instance:addHookGetHeroId(RougeTeamListModel.addHookGetHeroId_InitTeam)
+	HeroModel.instance:addHookGetHeroUid(RougeTeamListModel.addHookGetHeroUid_InitTeam)
+end
+
+function RougeTeamListModel.removeAssistHook_InitTeam()
+	HeroModel.instance:removeHookGetHeroId(RougeTeamListModel.addHookGetHeroId_InitTeam)
+	HeroModel.instance:removeHookGetHeroUid(RougeTeamListModel.addHookGetHeroUid_InitTeam)
+end
+
+function RougeTeamListModel.addHookGetHeroId_InitTeam(heroId)
+	local mo = RougeHeroGroupEditListModel.instance:getAssistHeroMo()
+
+	if mo and mo.heroId == heroId then
+		return mo
+	end
+end
+
+function RougeTeamListModel.addHookGetHeroUid_InitTeam(uid)
+	local mo = RougeHeroGroupEditListModel.instance:getAssistHeroMo()
+
+	if mo and mo.id == uid then
+		return mo
+	end
+end
+
 RougeTeamListModel.instance = RougeTeamListModel.New()
 
 return RougeTeamListModel

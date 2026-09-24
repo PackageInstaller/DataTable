@@ -42,7 +42,11 @@ function UnitMoverHandler:_onPosChange(mover)
 	local offsetX, offsetY, offsetZ = transformhelper.getPos(sceneRootTransform)
 	local posX, posY, posZ = mover:getPos()
 
-	transformhelper.setPos(self.go.transform, posX + offsetX, posY + offsetY, posZ + offsetZ)
+	posX = posX + offsetX
+	posY = posY + offsetY
+	posZ = posZ + offsetZ
+
+	transformhelper.setPos(self.go.transform, posX, posY, posZ)
 end
 
 return UnitMoverHandler

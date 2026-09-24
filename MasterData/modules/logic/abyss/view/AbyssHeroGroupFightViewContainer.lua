@@ -6,6 +6,7 @@ local AbyssHeroGroupFightViewContainer = class("AbyssHeroGroupFightViewContainer
 
 function AbyssHeroGroupFightViewContainer:addLastViews(views)
 	table.insert(views, AbyssHeroGroupLockView.New())
+	table.insert(views, HeroGroupFightAssistBtn.New())
 end
 
 function AbyssHeroGroupFightViewContainer:getFightLevelView()

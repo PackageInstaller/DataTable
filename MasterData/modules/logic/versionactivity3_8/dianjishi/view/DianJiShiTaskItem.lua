@@ -60,7 +60,7 @@ function DianJiShiTaskItem:_delayFinish()
 end
 
 function DianJiShiTaskItem:_delayFinishAll()
-	TaskRpc.instance:sendFinishAllTaskRequest(TaskEnum.TaskType.Activity220)
+	Activity220Controller.instance:finishAllTask(VersionActivity3_8Enum.ActivityId.DianJiShi)
 end
 
 function DianJiShiTaskItem:_editableInitView()

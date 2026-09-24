@@ -220,6 +220,10 @@ function GMLangController:_onConfigAbCallback(assetItem)
 	local mlStringKey = {}
 	local shortcuts = configName:gsub("language_", "")
 
+	if GameResMgr.IsFromEditorDir then
+		configText = LangConfig.instance:onReplaceOV(configName, configText)
+	end
+
 	lua_language.configList, lua_language.configDict = JsonToLuaParser.parse(configText, fields, primaryKey, mlStringKey)
 	self._langDic[shortcuts] = lua_language
 end

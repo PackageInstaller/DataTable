@@ -409,6 +409,7 @@ function SkinOffsetAdjustView:_initViewList()
 	self:_addView("个人名片", ViewName.NewPlayerCardContentView, self._onPlayerCardViewOpen, self._onPlayerCardViewStaticDrawingUpdate, "view", "playercardViewImgOffset", "characterViewImgOffset", nil, nil, true)
 	self:_addView("装饰商店静态立绘", ViewName.StoreView, self._onDecorateStoreStaticViewOpen, self._onDecorateStoreStaticViewUpdate, "#go_store/decoratestoreview(Clone)/Bg/typebg/#go_typebg2/characterSpine/#go_skincontainer", "decorateskinOffset", nil, nil, nil, true)
 	self:_addView("6选3Up", ViewName.SummonThreeCustomPickView, self._onSummonCustomThreePickOpen, self._onSummonCustomThreePickDataUpdate, "#go_ui/current/#go_selected/#go_role%s/#simage_role%s", "summonPickUpImgOffset", nil, nil, nil, true)
+	self:_addView("皮肤商店静态立绘", ViewName.StoreView, self._onClothesStoreViewOpen, self._onClothesStoreStaticViewUpdate, "#go_store/storeskinview2(Clone)/#go_has/character/bg/characterSpine/#go_skincontainer/#go_2d/#simage_skin", "skinStoreViewImgOffset")
 	table.insert(self._viewNameList, "0#spine小人")
 	self:_addView("皮肤界面小人Spine", ViewName.CharacterSkinView, self._onCharacterSkinSwitchViewOpen, self._onCharacterSkinSwitchViewUpdate, "smalldynamiccontainer/#go_smallspine", "skinSpineOffset")
 	table.insert(self._viewNameList, "0#皮肤放大缩小界面")
@@ -1009,6 +1010,32 @@ function SkinOffsetAdjustView:_onDecorateStoreStaticViewUpdate()
 
 		transform.localScale = Vector3.one * s
 	end, offset)
+end
+
+function SkinOffsetAdjustView:_onClothesStoreStaticViewUpdate()
+	if not self._curViewInfo or not self._curSkinInfo then
+		return
+	end
+
+	local offsetName = self._curViewInfo[6]
+	local containerName = self._curViewInfo[5]
+	local viewGo = self:getCurViewGo()
+
+	if not viewGo then
+		return
+	end
+
+	local img = gohelper.findChildSingleImage(viewGo, containerName)
+	local imgPath
+
+	img:LoadImage(self._curSkinInfo.skinLevel == 2 and not string.nilorempty(self._curSkinInfo.skin2dParams) and ResUrl.getSkin2dBg(self._curSkinInfo.id) or ResUrl.getHeadIconImg(self._curSkinInfo.id), function()
+		ZProj.UGUIHelper.SetImageSize(img.gameObject)
+	end, nil)
+	self:setOffset(self._curSkinInfo, offsetName, function(x, y, s)
+		recthelper.setAnchor(img.transform, x, y)
+
+		img.transform.localScale = Vector3.one * s
+	end)
 end
 
 function SkinOffsetAdjustView:_onCharacterSkinStaticDrawingViewUpdate()

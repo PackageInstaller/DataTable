@@ -16,20 +16,20 @@ function BossRushConfig:getActivityRewardStr()
 	return str
 end
 
-function BossRushConfig:getIssxIconName(stage, layer)
+function BossRushConfig:getIssxIconName(stage, layer, activityId)
 	layer = self:getDefaultLayer(stage) or 1
 
-	local monsterId = self:getFinalMonsterId(stage, layer)
+	local monsterId = self:getFinalMonsterId(stage, layer, activityId)
 	local monsterCO = lua_monster.configDict[monsterId]
 	local career = monsterCO.career
 
 	return "lssx_" .. career
 end
 
-function BossRushConfig:getMonsterCO(stage, layer)
+function BossRushConfig:getMonsterCO(stage, layer, activityId)
 	layer = self:getDefaultLayer(stage) or 1
 
-	local monsterId = self:getFinalMonsterId(stage, layer)
+	local monsterId = self:getFinalMonsterId(stage, layer, activityId)
 
 	return lua_monster.configDict[monsterId]
 end

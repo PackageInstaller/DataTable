@@ -15,25 +15,29 @@ FightRightBottomElementEnum.Elements = {
 	ASFD = GetEnum(),
 	BloodPool = GetEnum(),
 	HeatScale = GetEnum(),
-	MeiLeiErExRound = GetEnum()
+	MeiLeiErExRound = GetEnum(),
+	Qte = GetEnum()
 }
 FightRightBottomElementEnum.Priority = {
 	FightRightBottomElementEnum.Elements.BloodPool,
 	FightRightBottomElementEnum.Elements.ASFD,
 	FightRightBottomElementEnum.Elements.HeatScale,
-	FightRightBottomElementEnum.Elements.MeiLeiErExRound
+	FightRightBottomElementEnum.Elements.MeiLeiErExRound,
+	FightRightBottomElementEnum.Elements.Qte
 }
 FightRightBottomElementEnum.ElementsSizeDict = {
 	[FightRightBottomElementEnum.Elements.BloodPool] = Vector2(180, 170),
 	[FightRightBottomElementEnum.Elements.ASFD] = Vector2(100, 170),
 	[FightRightBottomElementEnum.Elements.HeatScale] = Vector2(180, 170),
-	[FightRightBottomElementEnum.Elements.MeiLeiErExRound] = Vector2(180, 170, 170)
+	[FightRightBottomElementEnum.Elements.MeiLeiErExRound] = Vector2(180, 170),
+	[FightRightBottomElementEnum.Elements.Qte] = Vector2(180, 170)
 }
 FightRightBottomElementEnum.ElementsNodeName = {
 	[FightRightBottomElementEnum.Elements.BloodPool] = "bloodpool",
 	[FightRightBottomElementEnum.Elements.ASFD] = "asfd",
 	[FightRightBottomElementEnum.Elements.HeatScale] = "burngem",
-	[FightRightBottomElementEnum.Elements.MeiLeiErExRound] = "meileiierexround"
+	[FightRightBottomElementEnum.Elements.MeiLeiErExRound] = "meileiierexround",
+	[FightRightBottomElementEnum.Elements.Qte] = "qte"
 }
 
 return FightRightBottomElementEnum

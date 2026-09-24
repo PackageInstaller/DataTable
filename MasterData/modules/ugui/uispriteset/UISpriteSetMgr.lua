@@ -201,6 +201,7 @@ function UISpriteSetMgr:ctor()
 	self._v3a6_dungeon_sprite = self:newSpriteSetUnit("ui/spriteassets/v3a2_dungeon.asset")
 	self._v3a6_dormitorymode_sprite = self:newSpriteSetUnit("ui/spriteassets/v3a6_dormitorymode_spriteset.asset")
 	self._v3a7_main_activity = self:newSpriteSetUnit("ui/spriteassets/v3a7_mainactivity_spriteset.asset")
+	self._v4a0_main_activity = self:newSpriteSetUnit("ui/spriteassets/v4a0_mainactivity_spriteset.asset")
 	self._avg_spelling_sprite = self:newSpriteSetUnit("ui/spriteassets/avg_spelling_spriteset.asset")
 	self._sodache = self:newSpriteSetUnit("modules/sodache/ui/spriteassets/sodache.asset")
 	self._sodache2 = self:newSpriteSetUnit("modules/sodache/ui/spriteassets/sodache_2.asset")
@@ -221,6 +222,9 @@ function UISpriteSetMgr:ctor()
 	self._sp02_paomian = self:newSpriteSetUnit("ui/spriteassets/sp02_paomian.asset")
 	self._abyss = self:newSpriteSetUnit("ui/spriteassets/v3a9_cloudredemption_spriteset.asset")
 	self._v3a9_naxisuosi = self:newSpriteSetUnit("ui/spriteassets/v3a9_naxisuosi_spriteset.asset")
+	self._matchgame = self:newSpriteSetUnit("modules/matchgame/ui/spriteassets/matchgame.asset")
+	self._college = self:newSpriteSetUnit("modules/college/ui/spriteassets/college_1.asset")
+	self._v4a0concert = self:newSpriteSetUnit("ui/spriteassets/v4a0_concert_spriteset.asset")
 end
 
 function UISpriteSetMgr:newSpriteSetUnit(path)
@@ -1025,6 +1029,10 @@ function UISpriteSetMgr:setV3a7MainActivitySprite(image, name, setNativeSize)
 	self._v3a7_main_activity:setSprite(image, name, setNativeSize)
 end
 
+function UISpriteSetMgr:setV4a0MainActivitySprite(image, name, setNativeSize)
+	self._v4a0_main_activity:setSprite(image, name, setNativeSize)
+end
+
 function UISpriteSetMgr:setSodacheSprite(image, name, setNativeSize)
 	self._sodache:setSprite(image, name, setNativeSize)
 end
@@ -1103,6 +1111,18 @@ end
 
 function UISpriteSetMgr:setV3a9NaxiSuosiSprite(image, name, setNativeSize, alpha)
 	self._v3a9_naxisuosi:setSprite(image, name, setNativeSize, alpha)
+end
+
+function UISpriteSetMgr:setMatchGameSprite(image, name, setNativeSize)
+	self._matchgame:setSprite(image, name, setNativeSize)
+end
+
+function UISpriteSetMgr:setCollegeSprite(image, name, setNativeSize)
+	self._college:setSprite(image, name, setNativeSize)
+end
+
+function UISpriteSetMgr:setV4a0ConcertSprite(image, name, setNativeSize)
+	self._v4a0concert:setSprite(image, name, setNativeSize)
 end
 
 function UISpriteSetMgr:tryDispose()

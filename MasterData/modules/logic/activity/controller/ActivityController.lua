@@ -123,7 +123,8 @@ local kAct101RedList = {
 	ActivityEnum.Activity.S02GiftRecommend
 }
 local _act101CostIdList = {
-	ActivityEnum.ConstId.Gifg6StarCharacter
+	ActivityEnum.ConstId.Gifg6StarCharacter,
+	ActivityEnum.ConstId.RandomSkinGift
 }
 
 function ActivityController:checkGetActivityInfo()
@@ -229,6 +230,8 @@ function ActivityController:updateAct101Infos(targetActId)
 	self:_initVersionSummon_kAct101RedList()
 	self:_initDoubleDan_kAct101RedList()
 	self:_initActivityCollect_kAct101RedList()
+	self:_initSixStarGift_kAct101RedList()
+	self:_initCasualSkinGift_kAct101RedList()
 
 	if not targetActId then
 		for _, actId in ipairs(kAct101RedList) do
@@ -351,6 +354,39 @@ end
 
 function ActivityController:_addAct101List(actId)
 	if actId and actId ~= 0 and not LuaUtil.tableContains(kAct101RedList, actId) then
+		table.insert(kAct101RedList, actId)
+	end
+end
+
+local s_SixStarGift = false
+
+function ActivityController:_initSixStarGift_kAct101RedList()
+	if s_SixStarGift then
+		return
+	end
+
+	s_SixStarGift = true
+
+	local fallbackActId = ActivityType101Config.instance:getSixStarGiftActId()
+	local actId = GameBranchMgr.instance:Vxax_ActId("SixStarGift", fallbackActId)
+
+	if actId then
+		table.insert(kAct101RedList, actId)
+	end
+end
+
+local s_CasualSkinGift = false
+
+function ActivityController:_initCasualSkinGift_kAct101RedList()
+	if s_CasualSkinGift then
+		return
+	end
+
+	s_CasualSkinGift = true
+
+	local actId = GameBranchMgr.instance:Vxax_ActId("CasualSkinGift", ActivityType101Config.instance:getCasualSkinGiftActId())
+
+	if actId then
 		table.insert(kAct101RedList, actId)
 	end
 end

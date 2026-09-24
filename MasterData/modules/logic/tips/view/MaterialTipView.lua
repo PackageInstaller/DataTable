@@ -174,7 +174,8 @@ local FakeIconTab = {
 }
 local HideHadnumberSubType = {
 	[ItemEnum.SubType.Portrait] = true,
-	[ItemEnum.SubType.Badge] = true
+	[ItemEnum.SubType.Badge] = true,
+	[ItemEnum.SubType.CharacterPast] = true
 }
 
 function MaterialTipView:_btndetailOnClick()
@@ -199,7 +200,7 @@ function MaterialTipView:_btnsummonsimulationOnClick()
 	end
 
 	if self:_isPackageSkin() then
-		if self._config.id == V3a7_SkinGiftEnum.ItemId then
+		if self._config.subType == ItemEnum.SubType.RandomGift then
 			local param = {}
 
 			param.itemId = self.viewParam.id
@@ -800,6 +801,18 @@ function MaterialTipView:_btnuseOnClick()
 		}
 
 		V2a7_SelfSelectSix_PickChoiceController.instance:openCustomPickChoiceView(effectArr, MaterialTipController.onUseSelfSelectSixHeroGift, MaterialTipController, viewParam)
+	elseif self._config.subType == ItemEnum.SubType.SelfSelectSixInvite then
+		if string.nilorempty(self._config.effect) then
+			return
+		end
+
+		local effectArr = string.splitToNumber(self._config.effect, "#")
+		local viewParam = {
+			quantity = 1,
+			id = self._config.id
+		}
+
+		SummonCustomPickController.instance:openSummonCustomPickView(effectArr, MaterialTipController.onUseSelfSelectSixHeroGift, MaterialTipController, viewParam)
 	elseif self._config.subType == ItemEnum.SubType.DestinyStoneUp then
 		if not OpenModel.instance:isFunctionUnlock(OpenEnum.UnlockFunc.DestinyStone) then
 			local openEpisodeId = lua_open.configDict[OpenEnum.UnlockFunc.DestinyStone].episodeId
@@ -864,7 +877,7 @@ function MaterialTipView:_btnuseOnClick()
 
 		JumpController.instance:jumpByParam(param)
 	elseif self._config.subType == ItemEnum.SubType.NewDestinyStoneUp then
-		local itemId = DestinyStoneGiftPickChoiceEnum.V3a8ItemId
+		local itemId = self._config.id
 
 		DestinyStoneGiftPickChoiceController.instance:openHeroChoiceView(itemId)
 	elseif self._config.subType == ItemEnum.SubType.EquipLvUp then
@@ -1625,7 +1638,12 @@ function MaterialTipView:_refreshInclude()
 					itemIcon:isShowCount(false)
 
 					if subType == ItemEnum.SubType.NewDestinyStoneUp then
-						itemIcon:customOnClickCallback(self._onNewDestinyPreveiew, self, id)
+						local data = {}
+
+						data.id = id
+						data.itemId = self._config.id
+
+						itemIcon:customOnClickCallback(self._onNewDestinyPreveiew, self, data)
 					end
 				elseif type == MaterialEnum.MaterialType.HeroSkin then
 					itemIcon = IconMgr.instance:getCommonItemIcon(self._goincludeContent)
@@ -1658,10 +1676,12 @@ function MaterialTipView:_refreshInclude()
 	end
 end
 
-function MaterialTipView:_onNewDestinyPreveiew(heroId)
-	local itemId = DestinyStoneGiftPickChoiceEnum.V3a8ItemId
+function MaterialTipView:_onNewDestinyPreveiew(data)
+	local heroId = data.id
 
-	DestinyStoneGiftPickChoiceController.instance:openHeroChoicePreview(heroId, itemId)
+	if not data.itemId then
+		DestinyStoneGiftPickChoiceController.instance:openHeroChoicePreview(heroId, data.itemId)
+	end
 end
 
 function MaterialTipView:checkOnlyShowEquip()
@@ -1740,6 +1760,16 @@ function MaterialTipView:_isUseBtnShow()
 
 		if self._config.subType == ItemEnum.SubType.SkinSelelctGift then
 			if self.viewParam.inpack == false or ViewMgr.instance:isOpen(ViewName.StoreView) then
+				return false
+			end
+
+			local itemQuantity = ItemModel.instance:getItemQuantity(self.viewParam.type, self.viewParam.id, self.viewParam.uid, self.viewParam.fakeQuantity)
+
+			return itemQuantity > 0
+		end
+
+		if self._config.subType == ItemEnum.SubType.SelfSelectSixInvite then
+			if not self.viewParam.inpack or ViewMgr.instance:isOpen(ViewName.StoreView) then
 				return false
 			end
 

@@ -40,6 +40,8 @@ function MainSwitchViewContainer:buildTabViews(tabContainerId)
 	end
 
 	if tabContainerId == 3 then
+		self._tabContainerViews3 = {}
+
 		local t = {}
 
 		self:_addSceneSwitch(t)
@@ -146,6 +148,7 @@ function MainSwitchViewContainer:_addSceneSwitch(t)
 	self:_addMainSceneSwitchList(views)
 
 	t[MainSwitchClassifyEnum.Classify.Scene] = MultiView.New(views)
+	self._tabContainerViews3[MainSwitchClassifyEnum.Classify.Scene] = self._displayView
 end
 
 function MainSwitchViewContainer:_addMainUISwitchList(views)
@@ -163,12 +166,14 @@ end
 
 function MainSwitchViewContainer:_addUISwitch(t)
 	local views = {}
+	local switchView = MainUISwitchView.New()
 
-	table.insert(views, MainUISwitchView.New())
+	table.insert(views, switchView)
 	table.insert(views, TabViewGroupFit.New(4, "middle/#go_mainUI"))
 	self:_addMainUISwitchList(views)
 
 	t[MainSwitchClassifyEnum.Classify.UI] = MultiView.New(views)
+	self._tabContainerViews3[MainSwitchClassifyEnum.Classify.UI] = switchView
 end
 
 function MainSwitchViewContainer:_addMainUI(t)
@@ -201,10 +206,13 @@ function MainSwitchViewContainer:_addClickUISwitch(t)
 	scrollUIParam.scrollDir = ScrollEnum.ScrollDirV
 	scrollUIParam.lineCount = 1
 
+	local switchView = ClickUISwitchView.New()
+
 	table.insert(views, LuaMixScrollView.New(ClickUISwitchListModel.instance, scrollUIParam))
-	table.insert(views, ClickUISwitchView.New())
+	table.insert(views, switchView)
 
 	t[MainSwitchClassifyEnum.Classify.Click] = MultiView.New(views)
+	self._tabContainerViews3[MainSwitchClassifyEnum.Classify.Click] = switchView
 end
 
 function MainSwitchViewContainer:_addSummonUISwitch(t)
@@ -218,14 +226,17 @@ function MainSwitchViewContainer:_addSummonUISwitch(t)
 	scrollUIParam.scrollDir = ScrollEnum.ScrollDirV
 	scrollUIParam.lineCount = 1
 
+	local switchView = SummonUISwitchView.New()
+
 	table.insert(views, LuaMixScrollView.New(SummonUISwitchListModel.instance, scrollUIParam))
-	table.insert(views, SummonUISwitchView.New())
+	table.insert(views, switchView)
 
 	self._summonSwitchDisplayView = SummonUISkinSwitchDisplayView.New()
 
 	table.insert(views, self._summonSwitchDisplayView)
 
 	t[MainSwitchClassifyEnum.Classify.Summon] = MultiView.New(views)
+	self._tabContainerViews3[MainSwitchClassifyEnum.Classify.Summon] = switchView
 end
 
 function MainSwitchViewContainer:_addFightUISwitch(t)
@@ -268,9 +279,46 @@ function MainSwitchViewContainer:switchTab(tabId)
 end
 
 function MainSwitchViewContainer:switchClassifyTab(tabId)
-	self._classifyTabId = tabId
+	if self._classifyTabId == tabId then
+		return
+	end
 
-	self:dispatchEvent(ViewEvent.ToSwitchTab, 3, tabId)
+	local isPlayAnim = false
+	local lastTabView = self._tabContainerViews3[self._classifyTabId]
+
+	if lastTabView and lastTabView.viewGO then
+		local animPlayer = SLFramework.AnimatorPlayer.Get(lastTabView.viewGO)
+
+		if animPlayer then
+			local function cb()
+				self:dispatchEvent(ViewEvent.ToSwitchTab, 3, tabId)
+			end
+
+			animPlayer:Play("close", cb, self)
+
+			isPlayAnim = true
+		end
+	end
+
+	local tabView = self._tabContainerViews3[tabId]
+
+	if tabView and tabView.viewGO then
+		local anim = tabView.viewGO:GetComponent(typeof(UnityEngine.Animator))
+
+		if anim then
+			anim.enabled = true
+
+			anim:Play("open", 0, 0)
+		end
+	end
+
+	self._lastTabId = tabId
+
+	if not isPlayAnim then
+		self:dispatchEvent(ViewEvent.ToSwitchTab, 3, tabId)
+	end
+
+	self._classifyTabId = tabId
 end
 
 function MainSwitchViewContainer:getClassify()

@@ -138,6 +138,8 @@ function StoryActivityVideoItem:onDestroy()
 		TaskDispatcher.cancelTask(self._detectPause, self)
 	end
 
+	TaskDispatcher.cancelTask(self._startVideo, self)
+
 	self._videoOutCallback = nil
 	self._videoOutCallbackObj = nil
 	self._videoStartCallback = nil

@@ -61,6 +61,8 @@ function CharacterDataTitleView:_editableInitView()
 	self.showStatusDraw = false
 
 	gohelper.setActive(self._gohasskin, false)
+
+	self._sp = CharacterSpName.s_createByView(self, gohelper.findChild(self.viewGO, "content/intro/container/#txt_name/sp")):bindName0(self._txtname)
 end
 
 function CharacterDataTitleView:onUpdateParam()
@@ -130,8 +132,9 @@ function CharacterDataTitleView:_initInfo()
 	local heroinfo = self.heroInfo
 
 	self._simagesignature:LoadImage(ResUrl.getSignature(heroinfo.config.signature), self._onSignatureImageLoad, self)
-
-	self._txtname.text = self:_getFormatStr(heroinfo.config.name)
+	self._sp:onUpdateMO({
+		heroId = self._heroId
+	}):setAsML_SpAndName0(self:_getFormatStr(self._sp:getOriCnAndEn()))
 
 	local texts = CharacterDataConfig.instance:getCharacterDataCO(self._heroId, heroinfo.skin, CharacterEnum.CharacterDataItemType.Title, 1).text
 	local textList = not string.nilorempty(texts) and string.split(texts, "\\&") or {}
@@ -467,6 +470,8 @@ function CharacterDataTitleView:onDestroyView()
 	if self._signatureClick then
 		self._signatureClick:RemoveClickListener()
 	end
+
+	GameUtil.onDestroyViewMember(self, "_sp")
 end
 
 return CharacterDataTitleView

@@ -59,7 +59,7 @@ function V3a2_BossRush_ResultPanel:_editableInitView()
 	gohelper.setActive(self._goscore, false)
 
 	self._curStage, self._curLayer, self._actId = BossRushModel.instance:getBattleStageAndLayer()
-	self.fightScore = BossRushModel.instance:getFightScore() or 0
+	self.fightScore = V3a2_BossRushModel.instance:getTotalScore() or 0
 	self._txtScore.text = BossRushConfig.instance:getScoreStr(self.fightScore)
 	self._isSpecialLayer = BossRushModel.instance:isSpecialLayer(self._curLayer)
 
@@ -207,7 +207,7 @@ end
 
 function V3a2_BossRush_ResultPanel:checkIsNewRecord()
 	if self._curStage then
-		local isNew = BossRushModel.instance:checkIsNewHighestPointRecord(self._curStage)
+		local isNew = V3a2_BossRushModel.instance:checkIsNewHighestPointRecord(self._curStage)
 
 		if isNew then
 			if not V3a2BossRushEnum.ResultRecord.New then

@@ -227,7 +227,7 @@ function FightOperationDataMgr:resetCurSelectEntityIdDefault()
 	else
 		local curSelectEntityMO = FightDataHelper.entityMgr:getById(self.curSelectEntityId)
 
-		if curSelectEntityMO and curSelectEntityMO:isStatusDead() then
+		if curSelectEntityMO and not curSelectEntityMO:isStatusNormal() then
 			curSelectEntityMO = nil
 		end
 
@@ -249,7 +249,7 @@ function FightOperationDataMgr:resetCurSelectEntityIdDefault()
 		for i = #enemyList, 1, -1 do
 			local enemyMO = enemyList[i]
 
-			if enemyMO:hasBuffFeature(FightEnum.BuffType_CantSelect) or enemyMO:hasBuffFeature(FightEnum.BuffType_CantSelectEx) then
+			if not enemyMO:isStatusNormal() or enemyMO:hasBuffFeature(FightEnum.BuffType_CantSelect) or enemyMO:hasBuffFeature(FightEnum.BuffType_CantSelectEx) then
 				table.remove(enemyList, i)
 			end
 		end

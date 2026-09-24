@@ -456,7 +456,7 @@ function SummonMainCharacterProbUp:_refreshTicket()
 	end
 
 	if curPool.ticketId ~= 0 then
-		self._txtticket.text = tostring((ItemModel.instance:getItemQuantity(MaterialEnum.MaterialType.Item, curPool.ticketId)))
+		self._txtticket.text = GameUtil.numberDisplay((ItemModel.instance:getItemQuantity(MaterialEnum.MaterialType.Item, curPool.ticketId)))
 	end
 
 	gohelper.setActive(self._goShop, curPool.ticketId ~= 0)

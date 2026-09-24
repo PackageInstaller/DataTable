@@ -260,6 +260,14 @@ function MaterialRpc:_onReceiveMaterialChangePush_default(msg, materialDataMOLis
 			})
 		end
 
+		local clickCo = ClickUISwitchConfig.instance:getClickUICoByItemId(mo.materilId)
+
+		if clickCo then
+			PopupController.instance:addPopupView(PopupEnum.PriorityType.CommonPropView, ViewName.ClickUISwitchInfoView, {
+				SkinId = clickCo.id
+			})
+		end
+
 		local summonConfig = SummonUISwitchConfig.instance:getSummonSwitchConfigByItemId(mo.materilId)
 
 		if summonConfig then
@@ -307,6 +315,7 @@ function MaterialRpc:_onReceiveMaterialChangePush_default(msg, materialDataMOLis
 		end
 	end
 
+	CharacterPastModel.instance:checkPopupCharacterPastSkinGainView(materialDataMOList)
 	self:simpleShowView(materialDataMOList)
 end
 

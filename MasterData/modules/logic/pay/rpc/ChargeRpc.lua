@@ -16,6 +16,7 @@ function ChargeRpc:onReceiveGetChargeInfoReply(resultCode, msg)
 		PayModel.instance:setChargeInfo(msg.infos)
 		StoreModel.instance:initChargeInfo(msg.infos)
 		PayController.instance:dispatchEvent(PayEvent.PayInfoChanged)
+		self:sendGetPayDiamondInfoRequest()
 	end
 end
 
@@ -139,7 +140,7 @@ function ChargeRpc:_tryUpdateMonthCard(msg)
 		local chargeGoodsConfig = StoreConfig.instance:getChargeGoodsConfig(goodsId)
 
 		if chargeGoodsConfig then
-			isNeedUpdate = goodsId == StoreEnum.SeasonCardGoodsId
+			isNeedUpdate = goodsId == StoreConfig.instance:getSeasonCardStoreChargeId()
 		end
 	end
 
@@ -156,6 +157,19 @@ function ChargeRpc:_tryUpdateStoreLinkPackage(msg)
 
 	if chargeGoodCfg and chargeGoodCfg.taskid ~= 0 then
 		StoreGoodsTaskController.instance:requestGoodsTaskList()
+	end
+end
+
+function ChargeRpc:sendGetPayDiamondInfoRequest(callback, callbackObj)
+	local req = ChargeModule_pb.GetPayDiamondInfoRequest()
+
+	return self:sendMsg(req, callback, callbackObj)
+end
+
+function ChargeRpc:onReceiveGetPayDiamondInfoReply(resultCode, msg)
+	if resultCode == 0 then
+		PayModel.instance:onReceiveGetPayDiamondInfoReply(msg)
+		PayController.instance:dispatchEvent(PayEvent.onReceiveGetPayDiamondInfoReply, msg)
 	end
 end
 

@@ -38,6 +38,8 @@ function V3a9_BossRush_ActMainItem:addEventListeners()
 	if self._btnLocked then
 		self._btnLocked:AddClickListener(self._btnLockedOnClick, self)
 	end
+
+	self.addEventCb(self, V3a9_BossRushController.instance, V3a9_BossRushEvent.onRefreshV3a9ModeTeamInfo, self.refreshHero, self)
 end
 
 function V3a9_BossRush_ActMainItem:removeEventListeners()
@@ -46,6 +48,8 @@ function V3a9_BossRush_ActMainItem:removeEventListeners()
 	if self._btnLocked then
 		self._btnLocked:RemoveClickListener()
 	end
+
+	self.removeEventCb(self, V3a9_BossRushController.instance, V3a9_BossRushEvent.onRefreshV3a9ModeTeamInfo, self.refreshHero, self)
 end
 
 function V3a9_BossRush_ActMainItem:_btnItemBGOnClick()
@@ -104,7 +108,7 @@ function V3a9_BossRush_ActMainItem:_refresh()
 	local stageCO = mo.stageCO
 	local stage = stageCO.stage
 	local isOpened = self:_isOpen()
-	local issxIconName = BossRushConfig.instance:getIssxIconName(stage)
+	local issxIconName = BossRushConfig.instance:getIssxIconName(stage, 1, stageCO.activityId)
 	local stageName = stageCO.name
 
 	self._actId = stageCO.activityId

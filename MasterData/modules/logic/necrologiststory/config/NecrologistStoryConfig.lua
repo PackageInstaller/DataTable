@@ -13,7 +13,8 @@ function NecrologistStoryConfig:ctor()
 		NecrologistStoryV3A4Config,
 		NecrologistStoryV3A5Config,
 		NecrologistStoryV3A7Config,
-		NecrologistStoryV3A9Config
+		NecrologistStoryV3A9Config,
+		NecrologistStoryV4A0Config
 	}
 end
 

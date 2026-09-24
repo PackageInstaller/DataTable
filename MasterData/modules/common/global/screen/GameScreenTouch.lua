@@ -104,6 +104,10 @@ function GameScreenTouch:_getClickResPath()
 end
 
 function GameScreenTouch:getCurUseUIPrefabName()
+	if StoryModel.instance:hasStoryClickPrefab() then
+		return StoryModel.instance:getStoryClickPrefabName()
+	end
+
 	if SurvivalMapHelper.instance:isInSurvivalScene() then
 		return "laplace_click"
 	end
@@ -144,15 +148,18 @@ function GameScreenTouch:_create(effectGO)
 	end
 
 	local image = gohelper.findChildImage(effectItem, "image")
-	local material = image.material
 
-	image.material = UnityEngine.Object.Instantiate(material)
+	if image then
+		local material = image.material
 
-	local materialPropsCtrl = effectItem:GetComponent(typeof(ZProj.MaterialPropsCtrl))
+		image.material = UnityEngine.Object.Instantiate(material)
 
-	if materialPropsCtrl then
-		materialPropsCtrl.mas:Clear()
-		materialPropsCtrl.mas:Add(image.material)
+		local materialPropsCtrl = effectItem:GetComponent(typeof(ZProj.MaterialPropsCtrl))
+
+		if materialPropsCtrl then
+			materialPropsCtrl.mas:Clear()
+			materialPropsCtrl.mas:Add(image.material)
+		end
 	end
 
 	gohelper.setActive(effectItem, false)
@@ -215,9 +222,17 @@ function GameScreenTouch:_playTouchEffect(pos)
 		mousePos = recthelper.screenPosToAnchorPos(mousePos, self._globalTouchGO.transform)
 
 		recthelper.setAnchor(effectGO.go.transform, mousePos.x, mousePos.y)
-		effectAnim:Stop()
+
+		if effectAnim then
+			effectAnim:Stop()
+		end
+
 		gohelper.setActive(effectGO.go, true)
-		effectAnim:Play()
+
+		if effectAnim then
+			effectAnim:Play()
+		end
+
 		TaskDispatcher.runDelay(effectGO.recycleFunc, self, 0.7)
 	end
 end
@@ -226,7 +241,11 @@ function GameScreenTouch:_recycleEffect(effectGO)
 	local effectAnim = effectGO:GetComponent(typeof(UnityEngine.Animation))
 
 	gohelper.setActive(effectGO, false)
-	effectAnim:Stop()
+
+	if effectAnim then
+		effectAnim:Stop()
+	end
+
 	recthelper.setAnchor(effectGO.transform, 0, 0)
 end
 

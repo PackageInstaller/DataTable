@@ -220,10 +220,11 @@ function TowerMo:getBanHeroAndBoss(layerId, difficulty, episodeId)
 	local heros = {}
 	local assistBosss = {}
 	local trialHeros = {}
+	local skinIds = {}
 	local subEpisodes = self:getLayerSubEpisodeList(layerId, true)
 
 	if not subEpisodes then
-		return heros, assistBosss, trialHeros
+		return heros, assistBosss, trialHeros, skinIds
 	end
 
 	if self.type == TowerEnum.TowerType.Normal then
@@ -234,6 +235,7 @@ function TowerMo:getBanHeroAndBoss(layerId, difficulty, episodeId)
 				v:getHeros(heros)
 				v:getAssistBossId(assistBosss)
 				v:getTrialHeros(trialHeros)
+				v:getSkinIds(skinIds)
 			end
 		end
 	else

@@ -65,14 +65,9 @@ function SpineVoiceBody:init(spineVoice, voiceConfig, spine)
 	self._spine = spine
 	self._skinId = spine and spine._skinId
 
-	self:_initCutMotion(voiceConfig)
-	self:_initPlayCutMotion(voiceConfig)
-
-	self._onlyVoiceStopCut = self._motionCutConfig and self._motionCutConfig.onlyStopCut == 1
-
 	local motion = self:getMotion(voiceConfig)
 
-	self:playBodyActionList(motion)
+	self:playBodyActionList(motion, voiceConfig)
 end
 
 function SpineVoiceBody:getSpineVoice()
@@ -115,13 +110,19 @@ function SpineVoiceBody:_initCutMotion(voiceConfig)
 		return
 	end
 
-	self._motionCutConfig = motionData
-
 	local motionStr = motionData.motion
 	local motionList = string.split(motionStr, "|")
 
 	for i, v in ipairs(motionList) do
 		self._motionCutList["b_" .. v] = true
+	end
+
+	for _, v in ipairs(self._bodyList) do
+		if self._motionCutList[v.bodyName] then
+			self._motionCutConfig = motionData
+
+			return
+		end
 	end
 end
 
@@ -153,12 +154,12 @@ end
 
 function SpineVoiceBody:_configValidity(list, spine)
 	for i = #list, 1, -1 do
-		local action = list[i]
-		local actionParam = string.split(action, "#")
+		local item = list[i]
+		local actionParam = item.actionParam
 		local invalid = true
 
 		if actionParam[2] then
-			local str = "b_" .. actionParam[1]
+			local str = item.bodyName
 
 			if spine:hasAnimation(str) then
 				invalid = false
@@ -167,7 +168,7 @@ function SpineVoiceBody:_configValidity(list, spine)
 
 		if invalid then
 			if SLFramework.FrameworkSettings.IsEditor then
-				logWarn(string.format("编辑器下的调试log，无需在意。 id：%s 语音 body 无效的配置：%s motion:%s", self._voiceConfig.audio, action, self._motion))
+				logWarn(string.format("编辑器下的调试log，无需在意。 id：%s 语音 body 无效的配置：%s motion:%s", self._voiceConfig.audio, item.action, self._motion))
 			end
 
 			table.remove(list, i)
@@ -175,18 +176,31 @@ function SpineVoiceBody:_configValidity(list, spine)
 	end
 end
 
-function SpineVoiceBody:playBodyActionList(motion)
+function SpineVoiceBody:playBodyActionList(motion, voiceConfig)
 	self._bodyStart = 0
 	self._motion = motion
+	self._bodyList = {}
 
 	if not string.nilorempty(motion) then
-		self._bodyList = string.split(motion, "|")
+		local list = string.split(motion, "|")
+
+		for i, v in ipairs(list) do
+			local params = string.split(v, "#")
+
+			self._bodyList[i] = {
+				action = v,
+				actionParam = params,
+				bodyName = "b_" .. params[1]
+			}
+		end
 
 		self:_configValidity(self._bodyList, self._spine)
-	else
-		self._bodyList = {}
 	end
 
+	self:_initCutMotion(voiceConfig)
+	self:_initPlayCutMotion(voiceConfig)
+
+	self._onlyVoiceStopCut = self._motionCutConfig and self._motionCutConfig.onlyStopCut == 1
 	self._appointIdleName = nil
 	self._appointIdleMixTime = nil
 
@@ -195,11 +209,11 @@ end
 
 function SpineVoiceBody:_checkAppointIdle()
 	if self._spineVoice:getInStory() and #self._bodyList > 0 then
-		local action = self._bodyList[1]
-		local actionParam = string.split(action, "#")
+		local item = self._bodyList[1]
+		local actionParam = item.actionParam
 
 		if actionParam[3] == "-2" then
-			self._appointIdleName = "b_" .. actionParam[1]
+			self._appointIdleName = item.bodyName
 			self._appointIdleMixTime = tonumber(actionParam[4])
 
 			table.remove(self._bodyList, 1)
@@ -219,11 +233,11 @@ function SpineVoiceBody:_playBodyAction()
 	TaskDispatcher.cancelTask(self._bodyActionDelay, self)
 
 	if #self._bodyList > 0 then
-		local action = table.remove(self._bodyList, 1)
-		local actionParam = string.split(action, "#")
+		local item = table.remove(self._bodyList, 1)
+		local actionParam = item.actionParam
 
 		if actionParam[2] then
-			self._bodyActionName = "b_" .. actionParam[1]
+			self._bodyActionName = item.bodyName
 			self._actionLoop = actionParam[3] == "-1"
 			self._mixTime = actionParam[4] and tonumber(actionParam[4])
 
@@ -269,8 +283,8 @@ function SpineVoiceBody:_startCheckLoopEnd()
 	end
 
 	if #self._bodyList > 0 then
-		local action = self._bodyList[1]
-		local actionParam = string.split(action, "#")
+		local item = self._bodyList[1]
+		local actionParam = item.actionParam
 
 		if actionParam[2] then
 			local time = tonumber(actionParam[2])

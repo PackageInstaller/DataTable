@@ -18,16 +18,10 @@ function StoryBgEffsFilter:init(bgCo)
 	self._effLoaded = false
 end
 
-function StoryBgEffsFilter:start(callback, callbackObj)
-	StoryBgEffsFilter.super.start(self)
-
-	self._finishedCallback = callback
-	self._finishedCallbackObj = callbackObj
-
+function StoryBgEffsFilter:onStartEffect()
 	StoryViewMgr.instance:setStoryViewLayer(UnityLayer.UITop)
 	ViewMgr.instance:registerCallback(ViewEvent.OnOpenView, self._onOpenView, self)
 	ViewMgr.instance:registerCallback(ViewEvent.OnCloseView, self._onCloseView, self)
-	self:loadRes()
 end
 
 function StoryBgEffsFilter:_onOpenView(viewName)
@@ -115,11 +109,8 @@ function StoryBgEffsFilter:_onEffFinished()
 
 	local value = self._img.material:GetFloat("_Transition")
 
-	if value <= 0.05 and self._finishedCallback then
-		self._finishedCallback(self._finishedCallbackObj)
-
-		self._finishedCallback = nil
-		self._finishedCallbackObj = nil
+	if value <= 0.05 then
+		self:callFinished()
 	end
 end
 
@@ -145,9 +136,6 @@ function StoryBgEffsFilter:destroy()
 	StoryViewMgr.instance:setStoryViewLayer(UnityLayer.UISecond)
 	self:_setFilterUpdate(0)
 	self:_killTween()
-
-	self._finishedCallback = nil
-	self._finishedCallbackObj = nil
 end
 
 return StoryBgEffsFilter

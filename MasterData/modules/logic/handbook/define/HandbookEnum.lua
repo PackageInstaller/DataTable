@@ -45,15 +45,22 @@ HandbookEnum.SkinSceneAsset = {
 	"scenes/v2a8_m_s17_pftj/prefab/sence_10008.prefab",
 	"scenes/v3a3_m_s17_pftj/prefab/sence_13001.prefab",
 	"scenes/v2a8_m_s17_pftj/prefab/v3a9_m_s17_ui_new.prefab",
-	"ui/viewres/skinhandbook/vx_skintaro_unlock.prefab"
+	"ui/viewres/skinhandbook/vx_skintaro_unlock.prefab",
+	"scenes/v4a0_m_s17_pftj/prefab/sence_14001.prefab",
+	"ui/viewres/skinhandbook/vx_skinsevenvirtues_unlock.prefab"
 }
 HandbookEnum.SkinSuitSceneType = {
 	Festival = 3,
+	Seven = 4,
 	Tarot = 2,
 	Normal = 1
 }
+HandbookEnum.SubScene = {
+	[HandbookEnum.SkinSuitSceneType.Seven] = true
+}
 HandbookEnum.SkinUnlockVxPath = {
 	Static = "ui/viewres/skinhandbook/vx_skin_unlock.prefab",
+	Seven = "ui/viewres/skinhandbook/vx_skinsevenvirtues_unlock.prefab",
 	Tarot = "ui/viewres/skinhandbook/vx_skintaro_unlock.prefab",
 	Spine = "ui/viewres/skinhandbook/vx_skinspine_unlock.prefab"
 }
@@ -68,7 +75,14 @@ HandbookEnum.SkinUnlockAnimName = {
 }
 HandbookEnum.SkinSuitId2SceneType = {
 	[11001] = HandbookEnum.SkinSuitSceneType.Tarot,
-	[13001] = HandbookEnum.SkinSuitSceneType.Festival
+	[13001] = HandbookEnum.SkinSuitSceneType.Festival,
+	[14001] = HandbookEnum.SkinSuitSceneType.Seven
+}
+HandbookEnum.SkinSpAnimEnum = {
+	[310003] = true
+}
+HandbookEnum.SkinSp2AnimEnum = {
+	[315503] = true
 }
 HandbookEnum.SkinSuitEnum = {
 	Festival = 11001
@@ -81,12 +95,16 @@ HandbookEnum.HideRootSuit = {
 	[HandbookEnum.SkinSuitLowEnum.OldStories] = true
 }
 HandbookEnum.SkinSuitGroupDefaultScene = "scenes/v2a8_m_s17_pftj/prefab/skin_sence_01.prefab"
+HandbookEnum.SkinSuitRedDotPath = "scenes/v2a8_m_s17_pftj/prefab/v3a9_m_s17_ui_new.prefab"
 HandbookEnum.TarotSkinDefaultCardPath = "singlebg/skinhandbook_singlebg/tarot/card00.png"
 HandbookEnum.TarotSkinCount = 21
 HandbookEnum.TarotCardCount = 5
 HandbookEnum.TarotSkinCardDir = "singlebg/skinhandbook_singlebg/tarot"
 HandbookEnum.TarotDefaultFOV = 22
-HandbookEnum.SkinSuitRedDotPath = "scenes/v2a8_m_s17_pftj/prefab/v3a9_m_s17_ui_new.prefab"
+HandbookEnum.SevenSkinDefaultCardPath = "singlebg/skinhandbook_singlebg/sevenvirtues/card00.png"
+HandbookEnum.SevenSkinCount = 7
+HandbookEnum.SevenCardCount = 5
+HandbookEnum.SevenSkinCardDir = "singlebg/skinhandbook_singlebg/sevenvirtues"
 HandbookEnum.HandbookSkinShowRedDotMap = {
 	[10001] = true,
 	[13001] = true,
@@ -97,8 +115,39 @@ HandbookEnum.Color = {
 	Unlock = "#FFFFFF"
 }
 HandbookEnum.Audio = {
+	play_ui_activity_hero37_checkpoint_gather = 390009,
 	play_ui_tujianskin_special_unlock = 390010,
-	play_ui_activity_hero37_checkpoint_gather = 390009
+	ui_tujianskin_qimeide_open = 400175
 }
+HandbookEnum.CharacterType = {
+	MixedBlood = 4,
+	InfectedPerson = 5,
+	SupernaturalBeing = 1,
+	Occultist = 3,
+	Cryptozoology = 8,
+	Unknown = 7,
+	Awake = 2,
+	Human = 6
+}
+HandbookEnum.CharacterTypeList = {
+	1,
+	2,
+	3,
+	4,
+	5,
+	6,
+	7,
+	8
+}
+HandbookEnum.CharacterCareerList = {
+	1,
+	2,
+	3,
+	4,
+	5,
+	6
+}
+HandbookEnum.PageCharacterNum = 8
+HandbookEnum.PageCareerNum = 6
 
 return HandbookEnum

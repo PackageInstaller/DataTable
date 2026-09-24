@@ -62,7 +62,7 @@ function NaxisuosiTaskItem:_btngetallOnClick()
 end
 
 function NaxisuosiTaskItem:_delayFinishAll()
-	TaskRpc.instance:sendFinishAllTaskRequest(TaskEnum.TaskType.Activity220)
+	Activity220Controller.instance:finishAllTask(VersionActivity3_9Enum.ActivityId.Naxisuosi)
 end
 
 function NaxisuosiTaskItem:_onOneClickClaimReward(actId)

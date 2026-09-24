@@ -366,6 +366,8 @@ function FightRpc:onReceiveEndFightReply(resultCode, msg)
 end
 
 function FightRpc:onReceiveEndFightPush(resultCode, msg)
+	FightDataHelper.fieldMgr:clearSceneIdOfParam()
+
 	if FightDataHelper.stageMgr:inFightState(FightStageMgr.FightStateType.DouQuQu) then
 		return
 	end
@@ -595,6 +597,41 @@ end
 
 function FightRpc:onReceiveAct174FightRoundInfo(resultCode, msg)
 	FightMgr.instance:playGMDouQuQu(msg)
+end
+
+function FightRpc:sendEnterQTERoundRequest()
+	local req = FightModule_pb.EnterQTERoundRequest()
+
+	self:sendMsg(req)
+end
+
+function FightRpc:onReceiveEnterQTERoundReply(resultCode, msg)
+	if resultCode == 0 then
+		FightModel.instance:updateFightRound(msg.round)
+		FightGameMgr.playMgr:playQte()
+	else
+		FightController.instance:dispatchEvent(FightEvent.QTE_EnterFail)
+	end
+end
+
+function FightRpc:sendUseQTESkillRequest(fromId, toId)
+	FightController.instance:dispatchEvent(FightEvent.QTE_BeforeSendUseSkillRpc)
+
+	local req = FightModule_pb.UseQTESkillRequest()
+
+	req.fromId = fromId
+	req.toId = toId
+
+	self:sendMsg(req)
+end
+
+function FightRpc:onReceiveUseQTESkillReply(resultCode, msg)
+	if resultCode == 0 then
+		FightModel.instance:updateFightRound(msg.round)
+		FightGameMgr.playMgr:playUseQteSkill()
+	else
+		FightController.instance:dispatchEvent(FightEvent.QTE_UseQteSkillFail)
+	end
 end
 
 FightRpc.instance = FightRpc.New()

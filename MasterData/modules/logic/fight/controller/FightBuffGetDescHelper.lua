@@ -101,11 +101,11 @@ end
 function FightBuffGetDescHelper.getModifyAttrByBuffLayerDesc(buffMo, buffCo, buffActCo, paramArray)
 	local num = tonumber((not paramArray[2] or nil) and 0)
 
-	if num < 1 then
-		num = 1
-	end
+	num = math.floor(num * 10) / 10
 
-	num = math.floor(num)
+	if num > 0 then
+		num = "+" .. num
+	end
 
 	return GameUtil.getSubPlaceholderLuaLangOneParam(buffCo.desc, num)
 end

@@ -11,6 +11,8 @@ function TowerComposeHeroGroupQuickEditItem:init(go)
 	self._goaddNum = gohelper.findChild(go, "#go_addnum")
 	self._txtNum = gohelper.findChildText(go, "#go_addnum/#txt_num")
 	self._goplaneLock = gohelper.findChild(go, "#go_planeLock")
+	self._goPlane1 = gohelper.findChild(go, "#go_planeAssist/#go_plane1")
+	self._goPlane2 = gohelper.findChild(go, "#go_planeAssist/#go_plane2")
 end
 
 function TowerComposeHeroGroupQuickEditItem:updateTrialTag()
@@ -31,6 +33,34 @@ function TowerComposeHeroGroupQuickEditItem:updateTrialTag()
 	local isInLockPlane = TowerComposeHeroGroupModel.instance:checkHeroUidIsInLockPlane(self._mo.uid)
 
 	gohelper.setActive(self._goplaneLock, isInLockPlane)
+
+	if recordFightParam.plane == TowerComposeEnum.PlaneType.Twice then
+		for planeId = 1, 2 do
+			local assistMo = TowerComposeModel.instance:getEditorAssistMo({
+				planeId = planeId
+			})
+
+			if assistMo and assistMo.heroUid == self._mo.uid then
+				gohelper.setActive(self._goPlane1, planeId == 1)
+				gohelper.setActive(self._goPlane2, planeId == 2)
+
+				break
+			else
+				gohelper.setActive(self._goPlane1, false)
+				gohelper.setActive(self._goPlane2, false)
+			end
+		end
+	elseif recordFightParam.plane == TowerComposeEnum.PlaneType.Once then
+		local assistMo = TowerComposeModel.instance:getEditorAssistMo({
+			planeId = 1
+		})
+
+		gohelper.setActive(self._goPlane1, assistMo and assistMo.heroUid == self._mo.uid)
+		gohelper.setActive(self._goPlane2, false)
+	else
+		gohelper.setActive(self._goPlane1, false)
+		gohelper.setActive(self._goPlane2, false)
+	end
 end
 
 function TowerComposeHeroGroupQuickEditItem:updateTrialRepeat(mo)
@@ -90,6 +120,17 @@ function TowerComposeHeroGroupQuickEditItem:_onItemClick()
 		GameFacade.showToast(ToastEnum.TowerComposeChallengeLock)
 
 		return
+	end
+
+	if self._mo.belongOtherPlayer and not HeroGroupQuickEditListModel.instance:inInTeam(self._mo.uid) then
+		local insetIndex = TowerComposeHeroGroupModel.instance:getQuickSelectOrder()
+		local canSelect, assistPlane = TowerComposeHeroGroupModel.instance:checkCanSelectAssistHero(self._mo.uid, insetIndex, insetIndex)
+
+		if not canSelect and assistPlane then
+			TowerComposeController.instance:showPlaneAssistToast(assistPlane)
+
+			return
+		end
 	end
 
 	if self._mo:isTrial() and not HeroGroupQuickEditListModel.instance:inInTeam(self._mo.uid) then

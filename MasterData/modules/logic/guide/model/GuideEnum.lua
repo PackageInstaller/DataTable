@@ -11,12 +11,17 @@ GuideEnum.uiTypeDragCard = 4
 GuideEnum.uiTypeArrow = 5
 GuideEnum.uiTypePressArrow = 6
 GuideEnum.uiTypeDragCard2 = 7
-GuideEnum.uiTypeMaxCount = 7
+GuideEnum.uiTypeDrag = 8
+GuideEnum.uiTypeMaxCount = 8
 GuideEnum.ArrowRotation = {
 	160,
 	0,
 	-110,
 	70
+}
+GuideEnum.ArrowDragSize = {
+	600,
+	52
 }
 GuideEnum.GuideIconWithCn = {
 	true,
@@ -43,18 +48,22 @@ GuideEnum.GuideRoom = {
 	TaskGuideID = 401
 }
 GuideEnum.GuideId = {
-	RoomCritterTrain = 415,
-	Act157FactoryUnlock = 18103,
-	RoomDailyOrder = 418,
 	NecrologistStoryLinkText = 31308,
+	RoomDailyOrder = 418,
 	NecrologistStoryMagic = 31303,
+	RoomCritterTrain = 415,
+	AssistAbyss = 40012,
+	PlayerViewAssist = 40011,
+	Act157FactoryUnlock = 18103,
 	WeekWalkDeep = 506,
 	V3A5NecrologistStoryGame = 35011
 }
 GuideEnum.EventTrigger = {
-	Act178FoodNotEnough = 2,
+	AssistAbyss = 5,
 	MusicFreeView = 1,
-	FightItemPlayerSkillGroup = 3
+	FightItemPlayerSkillGroup = 3,
+	Act178FoodNotEnough = 2,
+	PlayerViewAssist = 4
 }
 
 return GuideEnum

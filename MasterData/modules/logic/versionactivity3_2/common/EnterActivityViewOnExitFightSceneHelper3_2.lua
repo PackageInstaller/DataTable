@@ -4,6 +4,10 @@ module("modules.logic.versionactivity3_2.common.EnterActivityViewOnExitFightScen
 
 local EnterActivityViewOnExitFightSceneHelper = EnterActivityViewOnExitFightSceneHelper
 
+local function _openPermanent_EnterView(viewParam)
+	PermanentController.instance:jump2Activity(VersionActivity3_2Enum.ActivityId.EnterView, viewParam)
+end
+
 function EnterActivityViewOnExitFightSceneHelper.activate()
 	return
 end
@@ -61,14 +65,9 @@ function EnterActivityViewOnExitFightSceneHelper._enterActivity13223(cls, param)
 		GameSceneMgr.instance:dispatchEvent(SceneEventName.WaitViewOpenCloseLoading, mapLevelViewName)
 	end
 
-	local enterController = VersionActivityFixedHelper.getVersionActivityEnterController()
 	local sequence = FlowSequence.New()
 
-	sequence:addWork(OpenViewWork.New({
-		openFunction = EnterActivityViewOnExitFightSceneHelper.open3_9ReactivityEnterView,
-		openFunctionObj = enterController.instance,
-		waitOpenViewName = enterViewName
-	}))
+	PermanentController.instance:jump2Activity(VersionActivity3_2Enum.ActivityId.EnterView)
 	sequence:registerDoneListener(function()
 		local dungeonController = VersionActivityFixedHelper.getVersionActivityDungeonController(big, small)
 
@@ -93,19 +92,11 @@ function EnterActivityViewOnExitFightSceneHelper.enterActivity13231(forceStartin
 	DungeonModel.instance:resetSendChapterEpisodeId()
 	MainController.instance:enterMainScene(forceStarting)
 	SceneHelper.instance:waitSceneDone(SceneType.Main, function()
-		GameSceneMgr.instance:dispatchEvent(SceneEventName.WaitViewOpenCloseLoading, ViewName.VersionActivity3_2EnterView)
+		local actId = VersionActivity3_2Enum.ActivityId.BeiLiEr
 
-		local actCo = ActivityConfig.instance:getActivityCo(VersionActivity3_2Enum.ActivityId.BeiLiEr)
-
-		if DungeonModel.instance.lastSendEpisodeId == actCo.tryoutEpisode then
-			VersionActivityFixedHelper.getVersionActivityEnterController().instance:openVersionActivityEnterViewIfNotOpened(nil, nil, VersionActivity3_2Enum.ActivityId.BeiLiEr, true)
-		else
-			local function returnViewAction()
-				RoleActivityController.instance:enterActivity(VersionActivity3_2Enum.ActivityId.BeiLiEr)
-			end
-
-			VersionActivityFixedHelper.getVersionActivityEnterController().instance:openVersionActivityEnterViewIfNotOpened(returnViewAction, nil, VersionActivity3_2Enum.ActivityId.BeiLiEr, true)
-		end
+		GameSceneMgr.instance:dispatchEvent(SceneEventName.WaitViewOpenCloseLoading, RoleActivityEnum.LevelView[actId])
+		_openPermanent_EnterView()
+		RoleActivityController.instance:enterActivity(actId)
 	end)
 end
 
@@ -115,19 +106,11 @@ function EnterActivityViewOnExitFightSceneHelper.enterActivity13229(forceStartin
 	DungeonModel.instance:resetSendChapterEpisodeId()
 	MainController.instance:enterMainScene(forceStarting)
 	SceneHelper.instance:waitSceneDone(SceneType.Main, function()
-		GameSceneMgr.instance:dispatchEvent(SceneEventName.WaitViewOpenCloseLoading, ViewName.VersionActivity3_2EnterView)
+		local actId = VersionActivity3_2Enum.ActivityId.HuiDiaoLan
 
-		local actCo = ActivityConfig.instance:getActivityCo(VersionActivity3_2Enum.ActivityId.HuiDiaoLan)
-
-		if DungeonModel.instance.lastSendEpisodeId == actCo.tryoutEpisode then
-			VersionActivityFixedHelper.getVersionActivityEnterController().instance:openVersionActivityEnterViewIfNotOpened(nil, nil, VersionActivity3_2Enum.ActivityId.HuiDiaoLan, true)
-		else
-			local function returnViewAction()
-				RoleActivityController.instance:enterActivity(VersionActivity3_2Enum.ActivityId.HuiDiaoLan)
-			end
-
-			VersionActivityFixedHelper.getVersionActivityEnterController().instance:openVersionActivityEnterViewIfNotOpened(returnViewAction, nil, VersionActivity3_2Enum.ActivityId.HuiDiaoLan, true)
-		end
+		GameSceneMgr.instance:dispatchEvent(SceneEventName.WaitViewOpenCloseLoading, RoleActivityEnum.LevelView[actId])
+		_openPermanent_EnterView()
+		HuiDiaoLanGameController.instance:enterEpisodeLevelView(actId)
 	end)
 end
 

@@ -43,9 +43,10 @@ function FightFloatItem:getGO()
 	return self._typeGO
 end
 
-function FightFloatItem:startFloat(entityId, content, param, isAssassinate)
+function FightFloatItem:startFloat(entityId, content, param, isAssassinate, floatData)
 	self.startTime = Time.time
 	self.entityId = entityId
+	self.floatData = floatData
 
 	gohelper.setActive(self._typeGO, true)
 
@@ -82,6 +83,8 @@ function FightFloatItem:startFloat(entityId, content, param, isAssassinate)
 	if self._effectTimeScale then
 		self._effectTimeScale:SetTimeScale(FightModel.instance:getUISpeed())
 	end
+
+	self:dealOrder()
 end
 
 function FightFloatItem:floatAssassinate(isAssassinate)
@@ -113,6 +116,17 @@ function FightFloatItem:tweenPosY(posY)
 	self._tweenId = ZProj.TweenHelper.DOAnchorPosY(self._typeRectTr, posY, 0.15 / FightModel.instance:getUISpeed())
 end
 
+function FightFloatItem:dealOrder()
+	if self.floatData then
+		if self.floatData then
+			local canvas = gohelper.onceAddComponent(self._typeGO, typeof(UnityEngine.Canvas))
+
+			canvas.overrideSorting = true
+			canvas.sortingOrder = self.floatData
+		end
+	end
+end
+
 function FightFloatItem:stopFloat()
 	self:_onFinish()
 end
@@ -129,6 +143,14 @@ function FightFloatItem:_onFinish()
 	FightFloatMgr.instance:floatEnd(self)
 
 	self.entityId = nil
+
+	if self.floatData then
+		if self.floatData then
+			local canvas = gohelper.onceAddComponent(self._typeGO, typeof(UnityEngine.Canvas))
+
+			gohelper.destroy(canvas)
+		end
+	end
 end
 
 function FightFloatItem:reset()

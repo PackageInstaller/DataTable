@@ -11,6 +11,9 @@ function StoryCameraEffectMO:ctor()
 	self.endTime = 0
 	self.dialogEff = true
 	self.heroEff = true
+	self.target = 0
+	self.autoRestore = true
+	self.keepRefresh = false
 end
 
 function StoryCameraEffectMO:init(info)
@@ -20,6 +23,9 @@ function StoryCameraEffectMO:init(info)
 	self.endTime = info[4]
 	self.dialogEff = info[5]
 	self.heroEff = info[6]
+	self.target = info[7] or 0
+	self.autoRestore = info[8] ~= false
+	self.keepRefresh = info[9] == true
 end
 
 return StoryCameraEffectMO

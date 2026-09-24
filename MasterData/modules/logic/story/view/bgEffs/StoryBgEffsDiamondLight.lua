@@ -21,15 +21,17 @@ function StoryBgEffsDiamondLight:init(bgCo)
 end
 
 function StoryBgEffsDiamondLight:start(callback, callbackObj)
-	StoryBgEffsDiamondLight.super.start(self)
+	if self._bgCo.effDegree == 1 then
+		return
+	end
 
-	self._finishedCallback = callback
-	self._finishedCallbackObj = callbackObj
+	StoryBgEffsDiamondLight.super.start(self, callback, callbackObj)
+end
 
+function StoryBgEffsDiamondLight:onStartEffect()
 	self:_setViewTop(true)
 	ViewMgr.instance:registerCallback(ViewEvent.OnOpenView, self._onOpenView, self)
 	ViewMgr.instance:registerCallback(ViewEvent.OnCloseView, self._onCloseView, self)
-	self:loadRes()
 end
 
 function StoryBgEffsDiamondLight:onLoadFinished()
@@ -96,13 +98,7 @@ end
 
 function StoryBgEffsDiamondLight:_onEffFinished()
 	UIBlockMgr.instance:endBlock("diamondLightEnding")
-
-	if self._finishedCallback then
-		self._finishedCallback(self._finishedCallbackObj)
-
-		self._finishedCallback = nil
-		self._finishedCallbackObj = nil
-	end
+	self:callFinished()
 end
 
 function StoryBgEffsDiamondLight:_onOpenView(viewName)
@@ -142,10 +138,6 @@ function StoryBgEffsDiamondLight:destroy()
 	StoryBgEffsDiamondLight.super.destroy(self)
 	ViewMgr.instance:unregisterCallback(ViewEvent.OnOpenView, self._onOpenView, self)
 	ViewMgr.instance:unregisterCallback(ViewEvent.OnCloseView, self._onCloseView, self)
-
-	self._finishedCallback = nil
-	self._finishedCallbackObj = nil
-
 	TaskDispatcher.cancelTask(self._onEffFinished, self)
 
 	if self._diamondlightGo then

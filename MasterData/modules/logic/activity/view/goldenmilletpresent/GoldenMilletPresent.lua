@@ -51,7 +51,6 @@ function GoldenMilletPresent:onClickModalMask()
 end
 
 function GoldenMilletPresent:onOpen()
-	AudioMgr.instance:trigger(AudioEnum.UI.play_ui_langchao_pailian_special)
 	GoldenMilletPresent.super.onOpen(self)
 end
 

@@ -150,11 +150,6 @@ function AbyssRpc:onReceiveAct229StageTeamSubIdPush(resultCode, msg)
 	if resultCode ~= 0 then
 		return
 	end
-
-	local activityId = msg.activityId
-	local stageSubIds = msg.stageSubIds
-
-	AbyssModel.instance:onUpdateTimePush(activityId, stageSubIds)
 end
 
 AbyssRpc.instance = AbyssRpc.New()

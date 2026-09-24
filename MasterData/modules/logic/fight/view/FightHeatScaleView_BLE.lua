@@ -152,4 +152,8 @@ function FightHeatScaleView_BLE:getCrystalDesc(crystal, count)
 	return (string.format("<color=#%s>%s</color> : %s;", crystalCo.nameColor, crystalCo.name, crystalDesc))
 end
 
+function FightHeatScaleView_BLE:getBreakAudio()
+	return 400006
+end
+
 return FightHeatScaleView_BLE

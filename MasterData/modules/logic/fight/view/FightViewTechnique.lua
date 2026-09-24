@@ -3,7 +3,7 @@
 module("modules.logic.fight.view.FightViewTechnique", package.seeall)
 
 local FightViewTechnique = class("FightViewTechnique", BaseView)
-local buffType2Id, battleId2Id, invalidBuff2Id, resistanceIdList, getCardEnergyList, getASFDSkillList, createBloodPoolList, heatScaleList, weakCareerList, DeviceList
+local buffType2Id, battleId2Id, invalidBuff2Id, resistanceIdList, getCardEnergyList, getASFDSkillList, createBloodPoolList, heatScaleList, weakCareerList, DeviceList, clueExPointList, qteList
 
 function FightViewTechnique:onInitView()
 	if not buffType2Id then
@@ -16,6 +16,8 @@ function FightViewTechnique:onInitView()
 		heatScaleList = {}
 		weakCareerList = {}
 		DeviceList = {}
+		clueExPointList = {}
+		qteList = {}
 
 		for _, co in ipairs(lua_fight_technique.configList) do
 			local array = string.split(co.condition, "|")
@@ -47,6 +49,10 @@ function FightViewTechnique:onInitView()
 					table.insert(weakCareerList, co.id)
 				elseif temp[1] == "10" then
 					table.insert(DeviceList, co.id)
+				elseif temp[1] == "11" then
+					table.insert(clueExPointList, co.id)
+				elseif temp[1] == "12" then
+					table.insert(qteList, co.id)
 				end
 			end
 		end
@@ -109,6 +115,18 @@ function FightViewTechnique:onAddNewEntity(entityId, entityData)
 
 	if hasWeakness then
 		for _, v in ipairs(weakCareerList) do
+			self:_checkAdd(v)
+		end
+	end
+
+	if entityData.exPointType == FightEnum.ExPointType.Clue and clueExPointList then
+		for _, v in ipairs(clueExPointList) do
+			self:_checkAdd(v)
+		end
+	end
+
+	if qteList and entityData:isQteEntity() then
+		for _, v in ipairs(qteList) do
 			self:_checkAdd(v)
 		end
 	end

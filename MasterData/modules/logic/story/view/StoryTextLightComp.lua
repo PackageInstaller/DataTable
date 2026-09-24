@@ -8,21 +8,52 @@ function StoryTextLightComp:onInit()
 	return
 end
 
-function StoryTextLightComp:playTextEffect(textComp, effectType)
+function StoryTextLightComp:setPicCo(picCo, picGoRoot)
+	self._picCo = picCo
+	self._picGoRoot = picGoRoot
+end
+
+function StoryTextLightComp:playTextEffect(textComp, effectType, picTxtCo, txt)
+	self.curEffectType = effectType
+	self._picTxtCo = picTxtCo
+	self._metaTxt = StoryTool.getFilterFullAlignTxt(txt)
+
 	self:setTextComp(textComp)
 	self:setVisible(true)
 
-	if effectType == StoryEnum.PictureInType.SoftLight then
-		self:showSoftLight(true)
-	elseif effectType == StoryEnum.PictureInType.GostMagic then
-		self:showGostMagic(true)
+	if self.isTmpText then
+		local alignment = StoryTool.getTxtFullAlignment(txt, gohelper.Type_TextMesh or gohelper.Type_Text)
+
+		if alignment then
+			self.textComp.alignment = alignment
+		end
+
+		self.textComp.text = self._metaTxt
+
+		if effectType == StoryEnum.PictureInType.SoftLight then
+			self:showSoftLight(true)
+		elseif effectType == StoryEnum.PictureInType.GostMagic then
+			self:showGostMagic(true)
+		elseif effectType == StoryEnum.PictureInType.WordByWord then
+			self:showWordByWord(true)
+		elseif effectType == StoryEnum.PictureInType.FadeIn or effectType == StoryEnum.PictureInType.TxtFadeIn then
+			self:showFadeIn()
+		else
+			self._picGoRoot:GetComponent(typeof(UnityEngine.CanvasGroup)).alpha = 1
+		end
 	end
 end
 
 function StoryTextLightComp:hideTextEffect()
 	self:setVisible(false)
-	self:showSoftLight(false)
-	self:showGostMagic(false)
+
+	if self.curEffectType == StoryEnum.PictureInType.SoftLight then
+		self:showSoftLight(false)
+	elseif self.curEffectType == StoryEnum.PictureInType.GostMagic then
+		self:showGostMagic(false)
+	elseif self.curEffectType == StoryEnum.PictureInType.WordByWord then
+		self:showWordByWord(false)
+	end
 end
 
 function StoryTextLightComp:setTextComp(textComp)
@@ -39,6 +70,32 @@ end
 
 function StoryTextLightComp:setVisible(isVisible)
 	self._isVisible = isVisible
+end
+
+function StoryTextLightComp:showFadeIn(show)
+	local fontType = self._picTxtCo.fontType
+
+	if fontType == 0 then
+		local txtmarktop = IconMgr.instance:getCommonTextMarkTop(self.textGO):GetComponent(gohelper.Type_TextMesh)
+		local conMark = gohelper.onceAddComponent(self.textGO, typeof(ZProj.TMPMark))
+
+		conMark:SetMarkTopGo(txtmarktop.gameObject)
+
+		local filterResult = StoryTool.filterMarkTop(self._metaTxt)
+
+		gohelper.setActive(self.textGO, true)
+
+		self.textComp.text = filterResult
+
+		self.textComp:ForceMeshUpdate()
+		conMark:SetTopOffset(0, -0.5971)
+
+		local markTopList = StoryTool.getMarkTopTextList(self._metaTxt)
+
+		conMark:SetMarksTop(markTopList)
+	end
+
+	ZProj.TweenHelper.DOFadeCanvasGroup(self._picGoRoot, 0, 1, self._picCo.inTimes[GameLanguageMgr.instance:getVoiceTypeStoryIndex()], nil, nil, nil, EaseType.Linear)
 end
 
 function StoryTextLightComp:showSoftLight(show)
@@ -65,6 +122,7 @@ function StoryTextLightComp:showSoftLight(show)
 	else
 		self._conMat:DisableKeyword("UNDERLAY_ON")
 		self._conMat:SetFloat("_BloomFactor", 0)
+		PostProcessingMgr.instance:setUIPPValue("localBloomActive", false)
 		PostProcessingMgr.instance:setUIPPValue("bloomDiffusion", 7)
 	end
 end
@@ -294,6 +352,46 @@ function StoryTextLightComp:_glitchEffLoaded(loader)
 	self:showGlitch(self._isVisible)
 end
 
+function StoryTextLightComp:showWordByWord(show)
+	self:_clearTextTween()
+	self:setVisible(show)
+
+	if not self.isTmpText then
+		return
+	end
+
+	local tmpComp = self.textComp
+
+	tmpComp:ForceMeshUpdate()
+
+	local total = tmpComp.textInfo.characterCount
+
+	tmpComp.maxVisibleCharacters = 0
+
+	local time = self._picCo.inTimes[GameLanguageMgr.instance:getVoiceTypeStoryIndex()]
+	local cur = 0
+
+	self._textTweenId = ZProj.TweenHelper.DOTweenFloat(cur, total, time, self.onWordFameCallback, self.onWordPlayFinishCallback, self, nil, EaseType.Linear)
+end
+
+function StoryTextLightComp:_clearTextTween()
+	if self._textTweenId then
+		ZProj.TweenHelper.KillById(self._textTweenId)
+
+		self._textTweenId = nil
+	end
+end
+
+function StoryTextLightComp:onWordFameCallback(val)
+	self.textComp.maxVisibleCharacters = math.floor(val)
+end
+
+function StoryTextLightComp:onWordPlayFinishCallback()
+	local tmpComp = self.textComp
+
+	tmpComp.maxVisibleCharacters = tmpComp.textInfo.characterCount
+end
+
 function StoryTextLightComp:_setTmpFontMaterial(material)
 	if not self.isTmpText then
 		return
@@ -325,6 +423,7 @@ function StoryTextLightComp:clear()
 	end
 
 	self:_clearGlitchAmountTween()
+	self:_clearTextTween()
 end
 
 function StoryTextLightComp:onDestroy()

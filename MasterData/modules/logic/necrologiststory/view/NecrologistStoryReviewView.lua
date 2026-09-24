@@ -11,6 +11,7 @@ function NecrologistStoryReviewView:onInitView()
 	self._goUnlockedBg = gohelper.findChild(self._goBgCg, "unlocked")
 	self._unlocksimagecgbg = gohelper.findChildSingleImage(self._goUnlockedBg, "#simage_cgbg")
 	self._unlockimagecgbg = gohelper.findChildImage(self._goUnlockedBg, "#simage_cgbg")
+	self._unlockmask = gohelper.findChild(self._goUnlockedBg, "#simage_cgbgmask")
 	self._goLockedBg = gohelper.findChild(self._goBgCg, "locked")
 	self._locksimagecgbg = gohelper.findChildSingleImage(self._goLockedBg, "bgmask/#simage_cgbg")
 	self._lockimagecgbg = gohelper.findChildImage(self._goLockedBg, "bgmask/#simage_cgbg")
@@ -77,11 +78,13 @@ end
 function NecrologistStoryReviewView:refreshStoryList()
 	if self.cgUnlock then
 		gohelper.setActive(self.goScroll, false)
+		gohelper.setActive(self._unlockmask, false)
 
 		return
 	end
 
 	gohelper.setActive(self.goScroll, true)
+	gohelper.setActive(self._unlockmask, true)
 
 	local plotList = NecrologistStoryConfig.instance:getPlotListByStoryId(self.storyId)
 
@@ -152,7 +155,7 @@ function NecrologistStoryReviewView:refreshItem(item, plotCo)
 		if not item.selectItem then
 			local txtItem = item.normalItem
 
-			txtItem.txtIndex.text = string.format("%02d", item.index)
+			txtItem.txtIndex.text = plotCo.storyId == NecrologistStoryEnum.RoleStoryId.V4A0 and "" or string.format("%02d", item.index)
 			txtItem.txtTitle.text = plotCo.storyName
 			txtItem.txtTitleEn.text = plotCo.storyNameEn
 
@@ -169,8 +172,7 @@ function NecrologistStoryReviewView:refreshRoleStoryBg()
 	gohelper.setActive(self._goBgCg, true)
 
 	local storyCo = RoleStoryConfig.instance:getStoryById(self.storyId)
-	local cgUnlockStoryId = storyCo.cgUnlockStoryId
-	local unlock = cgUnlockStoryId == 0 or self.gameMo:isStoryFinish(cgUnlockStoryId)
+	local unlock = RoleStoryModel.instance:isCGUnlock(self.storyId)
 
 	if unlock and (self.cgUnlock or RoleStoryModel.instance:canPlayDungeonUnlockAnim(self.storyId)) then
 		if ViewMgr.instance:isOpen(ViewName.NecrologistStoryView) then

@@ -44,7 +44,8 @@ function Activity182Rpc:onReceiveGetAct182RandomMasterReply(resultCode, msg)
 	local actMo = Activity182Model.instance:getActMo()
 	local gameMo = actMo:getGameMo(msg.activityId, AutoChessEnum.ModuleId.PVP)
 
-	gameMo:updateMasterIdBox(msg.masterId)
+	gameMo:updateMasterIdBox(msg)
+	gameMo:updateMutationId(msg.mutationId)
 	Activity182Controller.instance:dispatchEvent(Activity182Event.RandomMasterReply)
 end
 
@@ -64,7 +65,7 @@ function Activity182Rpc:onReceiveAct182RefreshMasterReply(resultCode, msg)
 	local actMo = Activity182Model.instance:getActMo()
 	local gameMo = actMo:getGameMo(msg.activityId, AutoChessEnum.ModuleId.PVP)
 
-	gameMo:updateMasterIdBox(msg.masterId, true)
+	gameMo:updateMasterIdBox(msg, true)
 end
 
 function Activity182Rpc:sendAct182RefreshBossRequest(activityId, callback, callbackObj)
@@ -105,7 +106,7 @@ function Activity182Rpc:onReceiveAct182ChooseCardpackReply(resultCode, msg)
 	local gameMo = mo:getGameMo(msg.activityId, AutoChessEnum.ModuleId.PVP)
 
 	gameMo:updateCardPackId(msg.cardpackId)
-	gameMo:updateMasterIdBox(msg.masterIds)
+	gameMo:updateMasterIdBox(msg)
 end
 
 function Activity182Rpc:sendAct182SaveSnapshotRequest(activityId, callback, callbackObj)
@@ -121,7 +122,7 @@ function Activity182Rpc:onReceiveAct182SaveSnapshotReply(resultCode, msg)
 		return
 	end
 
-	local mo = Activity182Model.instance:getActMo(msg.activityId)
+	local mo = Activity182Model.instance:getActMo()
 
 	mo:updateSnapshot(msg.snapshot)
 end
@@ -139,7 +140,7 @@ function Activity182Rpc:onReceiveAct182GetHasSnapshotFriendReply(resultCode, msg
 		return
 	end
 
-	local mo = Activity182Model.instance:getActMo(msg.activityId)
+	local mo = Activity182Model.instance:getActMo()
 
 	mo:updateFriendInfoList(msg.friendPlayerInfo)
 	mo:updateFriendSnapshot(msg.snapshot)
@@ -159,7 +160,7 @@ function Activity182Rpc:onReceiveAct182GetFriendSnapshotsReply(resultCode, msg)
 		return
 	end
 
-	local mo = Activity182Model.instance:getActMo(msg.activityId)
+	local mo = Activity182Model.instance:getActMo()
 
 	mo:updateFriendSnapshot(msg.snapshots)
 end
@@ -177,7 +178,7 @@ function Activity182Rpc:onReceiveAct182GetFriendFightRecordsReply(resultCode, ms
 		return
 	end
 
-	local mo = Activity182Model.instance:getActMo(msg.activityId)
+	local mo = Activity182Model.instance:getActMo()
 
 	mo:updateFriendFightRecords(msg.fightRecords)
 end
@@ -197,12 +198,11 @@ function Activity182Rpc:onReceiveAct182GetFriendFightMessageReply(resultCode, ms
 		return
 	end
 
-	AutoChessModel.instance:enterSceneReply(AutoChessEnum.ModuleId.Friend, msg.scene)
+	AutoChessModel.instance:onEnterScene(AutoChessEnum.ModuleId.Friend, msg.scene, msg.activityId)
 
-	local mo = AutoChessModel.instance:getChessMo()
+	local mo = AutoChessModel.instance:getSceneMo()
 
 	if mo then
-		mo:cacheSvrFight()
 		mo:updateSvrTurn(msg.turn)
 		mo:cacheSvrFight()
 		AutoChessController.instance:enterSingleGame()

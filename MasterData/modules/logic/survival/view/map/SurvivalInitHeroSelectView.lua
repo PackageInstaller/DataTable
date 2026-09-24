@@ -528,6 +528,7 @@ function SurvivalInitHeroSelectView:_editableInitView()
 
 	self._passiveskillitems[0] = self:_findPassiveskillitems(4)
 	self._skillContainer = MonoHelper.addNoUpdateLuaComOnceToGo(self._goskill, CharacterSkillContainer)
+	self._skillContainer.viewContainer = self.viewContainer
 
 	gohelper.setActive(self._gononecharacter, false)
 	gohelper.setActive(self._gocharacterinfo, false)

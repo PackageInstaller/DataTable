@@ -23,6 +23,8 @@ HandbookEvent.OnClickFestivalSkinSuit = 50004
 HandbookEvent.OnExitFestivalSkinSuit = 50005
 HandbookEvent.OnExitToSuitGroup = 50006
 HandbookEvent.OnClickFestivalSkinCard = 50007
+HandbookEvent.OnClickSevenSkinSuit = 50008
+HandbookEvent.OnExitSevenSkinSuit = 50009
 HandbookEvent.MarkHandbookSkinSuitRedDot = 6001
 
 return HandbookEvent

@@ -9,6 +9,7 @@ function FightEquipRecordData:onConstructor(proto)
 	self.equipId = proto.equipId
 	self.equipLv = proto.equipLv
 	self.refineLv = proto.refineLv
+	self.breakLv = proto.breakLv
 end
 
 return FightEquipRecordData

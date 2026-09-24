@@ -63,7 +63,6 @@ function AchievementToastItem:refreshUI()
 	self._txtAchievement.text = tostring(self._toastParams.toastTip)
 
 	self._simageAssessIcon:LoadImage(self._toastParams.icon)
-	self._toastItem:setToastType(ToastItem.ToastType.Achievement)
 end
 
 function AchievementToastItem:dispose()

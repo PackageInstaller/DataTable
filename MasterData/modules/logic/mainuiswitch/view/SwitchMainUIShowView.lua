@@ -121,19 +121,15 @@ function SwitchMainUIShowView:_editableInitView()
 	gohelper.setActive(self._goactivity.gameObject, false)
 
 	self._imagesummonnews = self:getUserDataTb_()
-	self._tuziGoList = self:getUserDataTb_()
 
 	for _, skinId in pairs(MainUISwitchEnum.Skin) do
 		local newName = string.format("right/#btn_summon/%s/layout/#image_summonnew", skinId)
-		local tuziName = string.format("right/#btn_summon/%s/layout/#image_tuzi", skinId)
 		local new = gohelper.findChild(self.viewGO, newName)
 
 		table.insert(self._imagesummonnews, new)
-		table.insert(self._tuziGoList, gohelper.findChild(self.viewGO, tuziName))
 	end
 
 	self:initFreeTag()
-	self:_refreshSummonTuziRed()
 end
 
 function SwitchMainUIShowView:_isShowSummonReddot()
@@ -599,7 +595,7 @@ function SwitchMainUIShowView:getCurrencyItem(index)
 end
 
 function SwitchMainUIShowView:_onSwitchUIVisible(visible)
-	self:_refreshOffest(not visible)
+	return
 end
 
 function SwitchMainUIShowView:onClose()
@@ -615,33 +611,6 @@ function SwitchMainUIShowView:onClose()
 
 	self._summonFreeSingleTagList = nil
 	self._summonFreeTenTagList = nil
-end
-
-function SwitchMainUIShowView:_refreshSummonTuziRed()
-	local bLooked = Act101VersionSummonController.instance:getSavedTakeALookSummon()
-	local bShowRed = not bLooked
-
-	if not bLooked then
-		bShowRed = Act101VersionSummonController.instance:isCliamed()
-
-		local actId = Act101VersionSummonController.instance:actId()
-		local dayBonusList = ActivityType101Config.instance:getDayBonusList(actId, 1)
-
-		if bShowRed and dayBonusList and #dayBonusList > 0 then
-			local itemCO = dayBonusList[1]
-			local materilType = itemCO[1]
-			local materilId = itemCO[2]
-			local has = ItemModel.instance:getItemQuantity(materilType, materilId)
-
-			bShowRed = has > 0
-		else
-			bShowRed = false
-		end
-	end
-
-	for _, go in ipairs(self._tuziGoList) do
-		gohelper.setActive(go, bShowRed)
-	end
 end
 
 return SwitchMainUIShowView

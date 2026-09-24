@@ -152,7 +152,7 @@ function Act182MO:getMaxRound(episodeId)
 		episodeRound = episodeCo.maxRound
 	end
 
-	local rankCfg = lua_auto_chess_rank.configDict[self.activityId][self.rank]
+	local rankCfg = AutoChessConfig.instance:getRankCfg(self.rank)
 
 	if rankCfg.maxRound ~= 0 then
 		if not rankCfg.maxRound then

@@ -4,6 +4,10 @@ module("modules.logic.autochess.main.view.comp.AutoChessLeaderCard", package.see
 
 local AutoChessLeaderCard = class("AutoChessLeaderCard", LuaCompBase)
 
+AutoChessLeaderCard.ShowType = {
+	HandBook = 1
+}
+
 function AutoChessLeaderCard:init(go)
 	self.go = go
 	self.simageBg = gohelper.findChildSingleImage(go, "bg")
@@ -17,6 +21,7 @@ function AutoChessLeaderCard:init(go)
 	self._btnCloseTip = gohelper.findChildButtonWithAudio(go, "#go_Tip/#btn_CloseTip")
 	self._txtTipTitle = gohelper.findChildText(go, "#go_Tip/#txt_TipTitle")
 	self._txtTip = gohelper.findChildText(go, "#go_Tip/scroll_tips/viewport/#txt_Tip")
+	self._btnCheck = gohelper.findChildButtonWithAudio(go, "#btn_Check")
 	self._goLock = gohelper.findChild(go, "#go_Lock")
 	self._txtLock = gohelper.findChildText(go, "#go_Lock/#txt_Lock")
 	self._goNew = gohelper.findChild(go, "#go_New")
@@ -25,15 +30,41 @@ function AutoChessLeaderCard:init(go)
 	SkillHelper.addHyperLinkClick(self._txtSkillDesc, self.clcikHyperLink, self)
 
 	self._limitScroll = self._goScroll:GetComponent(gohelper.Type_LimitedScrollRect)
+	self.goChess = gohelper.findChild(go, "Chess")
+	self.txtChessSkill = gohelper.findChildText(self.goChess, "scroll_desc/viewport/content/txt_ChessSkill")
+
+	SkillHelper.addHyperLinkClick(self.txtChessSkill, self.clcikHyperLink, self)
+
+	self.imageChessBg = gohelper.findChildImage(self.goChess, "chess/image_ChessBg")
+	self.goChessMesh = gohelper.findChild(self.goChess, "chess/Mesh")
+	self.txtChessName = gohelper.findChildText(self.goChess, "chess/txt_ChessName")
+	self.goChessHp = gohelper.findChild(self.goChess, "go_ChessHp")
+	self.txtChessHp = gohelper.findChildText(self.goChess, "go_ChessHp/txt_ChessHp")
+	self.goChessAttack = gohelper.findChild(self.goChess, "go_ChessAttack")
+	self.txtChessAttack = gohelper.findChildText(self.goChess, "go_ChessAttack/txt_ChessAttack")
+	self.chessMeshComp = MonoHelper.addNoUpdateLuaComOnceToGo(self.goChessMesh, AutoChessMeshComp)
 end
 
 function AutoChessLeaderCard:addEventListeners()
 	self.addClickCb(self, self._btnCloseTip, self._btnCloseTipOnClick, self)
+	self.addClickCb(self, self._btnCheck, self._btnCheckOnClick, self)
+end
+
+function AutoChessLeaderCard:_btnCloseTipOnClick()
+	gohelper.setActive(self._goTip, false)
+end
+
+function AutoChessLeaderCard:_btnCheckOnClick()
+	ViewMgr.instance:openView(ViewName.AutoChessLeaderShowView, {
+		leaderId = self.config.id
+	})
 end
 
 function AutoChessLeaderCard:setData(data)
+	self.data = data
+
 	if data.leaderId then
-		self.config = lua_auto_chess_master.configDict[data.leaderId]
+		self.config = AutoChessConfig.instance:getLeaderCfg(data.leaderId)
 
 		self:refreshCommon(false)
 		self:refreshSkillDesc()
@@ -50,20 +81,24 @@ function AutoChessLeaderCard:setData(data)
 			gohelper.setActive(self._goLock, false)
 		end
 	else
-		self.chessMo = AutoChessModel.instance:getChessMo()
+		self.sceneMo = AutoChessModel.instance:getSceneMo()
 
-		local leader = data.leader
+		local masterMo = data.leader
 
-		self.config = lua_auto_chess_master.configDict[leader.id]
+		self.config = masterMo.config
 
-		local isEnemy = leader.teamType == AutoChessEnum.TeamType.Enemy
+		local isEnemy = masterMo.teamType == AutoChessEnum.TeamType.Enemy
 
 		self:refreshCommon(isEnemy)
-		self:refreshSkillDesc2(leader)
+		self:refreshSkillDesc2(masterMo)
 	end
 
 	if data.tipPos then
 		recthelper.setAnchor(self._goTip.transform, data.tipPos.x, data.tipPos.y)
+	end
+
+	if data.type == AutoChessLeaderCard.ShowType.HandBook then
+		self:refreshHandbook()
 	end
 end
 
@@ -80,6 +115,30 @@ function AutoChessLeaderCard:refreshCommon(isEnemy)
 	self._txtHp.text = self.config.hp
 
 	self._simageSkill:LoadImage(ResUrl.getAutoChessIcon(self.config.skillIcon, "skillicon"))
+
+	if self.config.spUdimo ~= 0 then
+		local chessCfg = AutoChessConfig.instance:getChessCfgAnyway(self.config.spUdimo)
+
+		if chessCfg then
+			self.chessMeshComp:setData(chessCfg.image, isEnemy)
+
+			if chessCfg.type ~= AutoChessStrEnum.ChessType.Support then
+				self.txtChessAttack.text = chessCfg.attack
+				self.txtChessHp.text = chessCfg.hp
+			end
+
+			self.txtChessName.text = chessCfg.name
+			self.txtChessSkill.text = AutoChessHelper.buildSkillDesc(chessCfg.skillDesc)
+
+			local imageName = AutoChessHelper.getChessQualityBg(chessCfg.type, chessCfg.levelFromMall)
+
+			UISpriteSetMgr.instance:setAutoChessSprite(self.imageChessBg, imageName)
+			gohelper.setActive(self.goChessHp, chessCfg.type ~= AutoChessStrEnum.ChessType.Support)
+			gohelper.setActive(self.goChessAttack, chessCfg.type ~= AutoChessStrEnum.ChessType.Support)
+		end
+	end
+
+	gohelper.setActive(self.goChess, self.config.spUdimo ~= 0)
 end
 
 function AutoChessLeaderCard:refreshSkillDesc()
@@ -101,6 +160,10 @@ function AutoChessLeaderCard:refreshSkillDesc()
 end
 
 function AutoChessLeaderCard:clcikHyperLink(effId, _)
+	if self.data.type == AutoChessLeaderCard.ShowType.HandBook then
+		recthelper.setAnchor(self._goTip.transform, 0, 99)
+	end
+
 	local descCo = AutoChessConfig.instance:getSkillEffectDesc(tonumber(effId))
 
 	if descCo then
@@ -111,10 +174,6 @@ function AutoChessLeaderCard:clcikHyperLink(effId, _)
 	end
 end
 
-function AutoChessLeaderCard:_btnCloseTipOnClick()
-	gohelper.setActive(self._goTip, false)
-end
-
 function AutoChessLeaderCard:refreshSkillDesc2(leader)
 	local skillDesc = self.config.skillDesc
 	local skillProDesc = self.config.skillProgressDesc
@@ -123,14 +182,14 @@ function AutoChessLeaderCard:refreshSkillDesc2(leader)
 
 	if params then
 		if params[1] == AutoChessStrEnum.SkillEffect.GrowUpNow2 then
-			local buyCnt = AutoChessHelper.getBuyChessCntByType(self.chessMo.buyInfos, "Forest")
+			local buyCnt = AutoChessHelper.getBuyChessCntByType(self.sceneMo.baseInfo.buyInfos, "Forest")
 			local quotient = math.floor(buyCnt / tonumber(params[4]))
 			local remainder = buyCnt % tonumber(params[4])
 
 			skillDesc = GameUtil.getSubPlaceholderLuaLangOneParam(skillDesc, tonumber(params[2]) + tonumber(params[5]) * quotient)
 			skillProDesc = GameUtil.getSubPlaceholderLuaLangOneParam(skillProDesc, tonumber(params[4]) - remainder)
 		elseif params[1] == AutoChessStrEnum.SkillEffect.RoundAddCoin then
-			local round = self.chessMo.sceneRound
+			local round = self.sceneMo.baseInfo.sceneRound
 
 			skillDesc = GameUtil.getSubPlaceholderLuaLangOneParam(skillDesc, tonumber(params[2]) + tonumber(params[3]) * (round - 1))
 		elseif params[1] == AutoChessStrEnum.SkillEffect.DigTreasure or params[1] == AutoChessStrEnum.SkillEffect.DigTreasureSP then
@@ -146,7 +205,7 @@ function AutoChessLeaderCard:refreshSkillDesc2(leader)
 
 			skillProDesc = GameUtil.getSubPlaceholderLuaLangOneParam(skillProDesc, needCnt)
 		elseif params[1] == AutoChessStrEnum.SkillEffect.AdditionalDamage then
-			local round = self.chessMo.sceneRound
+			local round = self.sceneMo.baseInfo.sceneRound
 			local needCnt = tonumber(params[3])
 
 			if round < needCnt then
@@ -157,7 +216,7 @@ function AutoChessLeaderCard:refreshSkillDesc2(leader)
 				skillProDesc = ""
 			end
 		elseif params[1] == AutoChessStrEnum.SkillEffect.MasterTransfigurationBuyChess then
-			local buyCnt = AutoChessHelper.getBuyChessCnt(self.chessMo.buyInfos, tonumber(params[3]))
+			local buyCnt = AutoChessHelper.getBuyChessCnt(self.sceneMo.baseInfo.buyInfos, tonumber(params[3]))
 
 			skillProDesc = GameUtil.getSubPlaceholderLuaLangOneParam(skillProDesc, tonumber(params[4] - buyCnt))
 		end
@@ -180,6 +239,11 @@ end
 
 function AutoChessLeaderCard:setScrollParentGo(go)
 	self._limitScroll.parentGameObject = go
+end
+
+function AutoChessLeaderCard:refreshHandbook()
+	gohelper.setActive(self._btnCheck.gameObject, true)
+	gohelper.setActive(self.goChess, false)
 end
 
 return AutoChessLeaderCard

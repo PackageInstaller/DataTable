@@ -81,6 +81,7 @@ function TowerComposeNormalResultView:onOpen()
 	self._slotMapCo = TowerComposeConfig.instance:getModSlotNumMap(self._themeId)
 
 	self:_refreshUI()
+	AssistRecordRpc.instance:sendAssistRecordGetDungeonRecordRequest()
 end
 
 function TowerComposeNormalResultView:_refreshUI()
@@ -164,6 +165,7 @@ end
 
 function TowerComposeNormalResultView:onClose()
 	FightController.onResultViewClose()
+	AssistController.instance:dispatchEvent(AssistEvent.CloseAddFriendView)
 end
 
 function TowerComposeNormalResultView:_onAllFinish()

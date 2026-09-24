@@ -10,7 +10,8 @@ function MainUISwitchConfig:reqConfigNames()
 		"scene_ui_reddot",
 		"main_ui_skin",
 		"main_ui_eagle",
-		"scene_const"
+		"scene_const",
+		"scene_ui_reddot_new"
 	}
 end
 
@@ -51,6 +52,10 @@ function MainUISwitchConfig:getUIReddotStyle(uiId, reddotId)
 	local cos = self._uiReddotCo.configDict[uiId]
 
 	return cos and cos[reddotId]
+end
+
+function MainUISwitchConfig:getUIReddotNewStyleCO(uiId)
+	return lua_scene_ui_reddot_new.configDict[uiId]
 end
 
 function MainUISwitchConfig:_initMainUISkinCo()

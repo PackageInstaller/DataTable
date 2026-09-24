@@ -23,6 +23,7 @@ function MainSceneSwitchInfoView:onInitView()
 	self._goTime = gohelper.findChild(self.viewGO, "left/LayoutGroup/#go_Time")
 	self._txtTime = gohelper.findChildText(self.viewGO, "left/LayoutGroup/#go_Time/#txt_Time")
 	self._txtSceneDescr = gohelper.findChildText(self.viewGO, "left/#txt_SceneDescr")
+	self._weatherRoot = gohelper.findChild(self.viewGO, "left/#go_weatherRoot")
 	self._gobtns = gohelper.findChild(self.viewGO, "#go_btns")
 
 	if self._editableInitView then
@@ -79,8 +80,13 @@ function MainSceneSwitchInfoView:_btnequipOnClick()
 		MainSceneSwitchModel.instance:setCurSceneId(self._selectSceneSkinId)
 		MainSceneSwitchController.instance:dispatchEvent(MainSceneSwitchEvent.BeforeStartSwitchScene)
 		TaskDispatcher.runDelay(self._delaySwitchScene, self, 0.8)
-		self._rootAnimator:Play("switch", 0, 0)
+		self._equipBtnAnimatorPlayer:Play("click", self._onSwitchScene, self)
 	end)
+end
+
+function MainSceneSwitchInfoView:_onSwitchScene()
+	TaskDispatcher.runDelay(self._delaySwitchScene, self, 0.8)
+	self._rootAnimator:Play("switch", 0, 0)
 end
 
 function MainSceneSwitchInfoView:_delaySwitchScene()
@@ -162,6 +168,7 @@ function MainSceneSwitchInfoView:_btnHideOnClick()
 	self._showUI = not self._showUI
 
 	gohelper.setActive(self._goMask, self._showUI)
+	gohelper.setActive(self._weatherRoot, self._showUI)
 	MainSceneSwitchController.instance:dispatchEvent(MainSceneSwitchEvent.PreviewSceneSwitchUIVisible, self._showUI)
 end
 
@@ -185,6 +192,7 @@ function MainSceneSwitchInfoView:_editableInitView()
 	self._goLeft = gohelper.findChild(self.viewGO, "left")
 	self._goMask = gohelper.findChild(self.viewGO, "MaskBG")
 	self._rootAnimator = self.viewGO:GetComponent("Animator")
+	self._equipBtnAnimatorPlayer = SLFramework.AnimatorPlayer.Get(self._btnequip.gameObject)
 
 	gohelper.setActive(self._btnchange, false)
 	gohelper.setActive(self._btnget, false)
@@ -224,10 +232,11 @@ function MainSceneSwitchInfoView:_updateBtnStatus()
 		return
 	end
 
+	local isShow = self.viewParam.isAmplify == nil
 	local useScene = self._selectSceneSkinId == MainSceneSwitchModel.instance:getCurSceneId()
 
-	gohelper.setActive(self._btnequip, not useScene)
-	gohelper.setActive(self._goUse, useScene)
+	gohelper.setActive(self._btnequip, isShow and not useScene)
+	gohelper.setActive(self._goUse, isShow and useScene)
 end
 
 function MainSceneSwitchInfoView:onOpen()

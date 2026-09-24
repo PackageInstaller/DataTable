@@ -31,6 +31,8 @@ function GMSubViewEditorFight:initViewContent()
 	self.hideBuffLayerToggle.isOn = not not GMController.instance.hideBuffLayer
 	self.hideFloatToggle = self.addToggle(self, self:getLineGroup(), "隐藏飘字", self.onHideFloatToggleValueChange, self)
 	self.hideFloatToggle.isOn = not not GMController.instance.hideFloat
+	self.hideQteTotalToggle = self.addToggle(self, self:getLineGroup(), "隐藏QTE总伤", self.onHideQteTotalToggleValueChange, self)
+	self.hideQteTotalToggle.isOn = not not GMController.instance.hideQteTotal
 end
 
 function GMSubViewEditorFight:onHideBuffLayerToggleValueChange()
@@ -41,6 +43,14 @@ end
 
 function GMSubViewEditorFight:onHideFloatToggleValueChange()
 	GMController.instance.hideFloat = self.hideFloatToggle.isOn
+
+	FightController.instance:dispatchEvent(FightEvent.HideFightFloat)
+end
+
+function GMSubViewEditorFight:onHideQteTotalToggleValueChange()
+	GMController.instance.hideQteTotal = self.hideQteTotalToggle.isOn
+
+	FightController.instance:dispatchEvent(FightEvent.OnHideQteTotal)
 end
 
 return GMSubViewEditorFight

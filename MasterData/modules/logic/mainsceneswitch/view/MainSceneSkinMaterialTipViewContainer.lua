@@ -7,8 +7,8 @@ local MainSceneSkinMaterialTipViewContainer = class("MainSceneSkinMaterialTipVie
 function MainSceneSkinMaterialTipViewContainer:buildViews()
 	local views = {}
 
-	table.insert(views, MainSceneSkinMaterialTipView.New())
-	table.insert(views, MainSceneSkinMaterialTipViewBanner.New())
+	table.insert(views, DecorateMaterialTipView.New())
+	table.insert(views, DecorateMaterialTipViewBanner.New())
 
 	return views
 end

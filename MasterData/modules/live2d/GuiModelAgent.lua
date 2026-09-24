@@ -117,6 +117,10 @@ function GuiModelAgent:openBloomView(value)
 	self._openBloomView = value
 end
 
+function GuiModelAgent:getViewName()
+	return self._curModel:getViewName()
+end
+
 function GuiModelAgent:setShareRT(value, viewName)
 	self._shareRT = value
 	self._rtViewName = viewName
@@ -137,6 +141,7 @@ function GuiModelAgent:setResPath(skinCfg, loadedCb, loadedCbObj, cameraSize)
 		self._curModel:setHeroId(skinCfg.characterId)
 		self._curModel:setSkinId(skinCfg.id)
 		self._curModel:showModel()
+		self._curModel:setShareRT(self._shareRT, self._rtViewName)
 		self._curModel:setResPath(ResUrl.getRolesPrefabStory(skinCfg.verticalDrawing), loadedCb, loadedCbObj)
 	else
 		self._isLive2D = true

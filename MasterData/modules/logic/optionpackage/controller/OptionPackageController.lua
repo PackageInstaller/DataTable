@@ -335,17 +335,6 @@ function OptionPackageController:_getPackageName(packageName)
 	end
 end
 
-function OptionPackageHttpWorker:againGetHttp(onFinish, finishObj)
-	self._httpGetterOnFinshFunc = onFinish
-	self._httpGetterOnFinshObj = finishObj
-
-	for _, httpGetter in pairs(self._httpGetterList) do
-		if not self._httpGetterFinishDict[httpGetter:getHttpId()] then
-			httpGetter:start(self._onHttpGetterFinish, self)
-		end
-	end
-end
-
 OptionPackageController.instance = OptionPackageController.New()
 
 return OptionPackageController

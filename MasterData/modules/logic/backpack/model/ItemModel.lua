@@ -98,6 +98,10 @@ local quantityGetFunc = {
 		return heroMO and 1 or 0
 	end,
 	[MaterialEnum.MaterialType.Currency] = function(id)
+		if id == CurrencyEnum.CurrencyType.SpiritualFluid then
+			return (CurrencyModel.instance:getSpiritualFluid())
+		end
+
 		local currency = CurrencyModel.instance:getCurrency(id)
 
 		if not currency then

@@ -11,7 +11,7 @@ function AutoChessEntityMgr:init(scene)
 	self._leaderEntityDic = {}
 end
 
-function AutoChessEntityMgr:addEntity(warZone, data, pos)
+function AutoChessEntityMgr:addEntity(warZone, mo, pos)
 	if not self.scene then
 		return
 	end
@@ -19,14 +19,14 @@ function AutoChessEntityMgr:addEntity(warZone, data, pos)
 	warZone = tonumber(warZone)
 	pos = tonumber(pos)
 
-	local entity = self._cacheEntityDic[data.uid]
+	local entity = self._cacheEntityDic[mo.uid]
 
 	if entity then
-		entity:setData(data, warZone, pos)
+		entity:setData(mo, warZone, pos)
 
-		self._cacheEntityDic[data.uid] = nil
+		self._cacheEntityDic[mo.uid] = nil
 	else
-		entity = self.scene:createEntity(warZone, data, pos)
+		entity = self.scene:createEntity(warZone, mo, pos)
 	end
 
 	if self.scene.viewType == AutoChessEnum.ViewType.All then
@@ -34,12 +34,14 @@ function AutoChessEntityMgr:addEntity(warZone, data, pos)
 		entity:activeExpStar(false)
 	end
 
-	self._entityDic[data.uid] = entity
+	self._entityDic[mo.uid] = entity
 
 	return entity
 end
 
 function AutoChessEntityMgr:removeEntity(uid)
+	uid = tonumber(uid)
+
 	local entity = self._entityDic[uid]
 
 	if entity then
@@ -99,6 +101,8 @@ function AutoChessEntityMgr:clearEntity()
 end
 
 function AutoChessEntityMgr:getEntity(uid)
+	uid = tonumber(uid)
+
 	local entity = self._entityDic[uid]
 
 	if not entity then
@@ -109,10 +113,14 @@ function AutoChessEntityMgr:getEntity(uid)
 end
 
 function AutoChessEntityMgr:tryGetEntity(uid)
+	uid = tonumber(uid)
+
 	return self._entityDic[uid] or self._leaderEntityDic[uid]
 end
 
 function AutoChessEntityMgr:getLeaderEntity(uid)
+	uid = tonumber(uid)
+
 	return self._leaderEntityDic[uid]
 end
 
@@ -126,7 +134,7 @@ function AutoChessEntityMgr:flyStarByTeam(teamType)
 	AudioMgr.instance:trigger(AudioEnum.AutoChess.play_ui_tangren_star_collect)
 
 	for _, chess in pairs(self._entityDic) do
-		if chess.teamType == teamType and chess.config.type == AutoChessStrEnum.ChessType.Attack then
+		if chess.teamType == teamType and chess.mo.config.type == AutoChessStrEnum.ChessType.Attack then
 			chess:flyStar()
 		end
 	end

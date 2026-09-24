@@ -151,6 +151,13 @@ function Activity161Controller:saveRecentGraffitiDialog()
 end
 
 function Activity161Controller:checkHasUnDoElement()
+	local actId = Activity161Model.instance:getActId()
+	local actInfo = ActivityModel.instance:getActMO(actId)
+
+	if not actInfo or not actInfo:isPermanentUnlock() then
+		return
+	end
+
 	local needDoElementId = VersionActivity2_0DungeonModel.instance:getCurNeedUnlockGraffitiElement()
 	local needShowRedDot = needDoElementId and needDoElementId > 0 and 1 or 0
 	local redDotInfoList = {

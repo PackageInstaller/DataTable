@@ -19,15 +19,17 @@ function StoryBgEffsLineLight:init(bgCo)
 end
 
 function StoryBgEffsLineLight:start(callback, callbackObj)
-	StoryBgEffsLineLight.super.start(self)
+	if self._bgCo.effDegree == 1 then
+		return
+	end
 
-	self._finishedCallback = callback
-	self._finishedCallbackObj = callbackObj
+	StoryBgEffsLineLight.super.start(self, callback, callbackObj)
+end
 
+function StoryBgEffsLineLight:onStartEffect()
 	StoryViewMgr.instance:setStoryViewLayer(UnityLayer.UITop)
 	ViewMgr.instance:registerCallback(ViewEvent.OnOpenView, self._onOpenView, self)
 	ViewMgr.instance:registerCallback(ViewEvent.OnCloseView, self._onCloseView, self)
-	self:loadRes()
 end
 
 function StoryBgEffsLineLight:_onOpenView(viewName)
@@ -119,11 +121,8 @@ function StoryBgEffsLineLight:_onEffFinished()
 
 	local value = self._originMat:GetFloat("_SourceColLerp")
 
-	if value >= 0.95 and self._finishedCallback then
-		self._finishedCallback(self._finishedCallbackObj)
-
-		self._finishedCallback = nil
-		self._finishedCallbackObj = nil
+	if value >= 0.95 then
+		self:callFinished()
 	end
 end
 
@@ -149,9 +148,6 @@ function StoryBgEffsLineLight:destroy()
 	StoryViewMgr.instance:setStoryViewLayer(UnityLayer.UISecond)
 	self:_setLightUpdate(0)
 	self:_killTween()
-
-	self._finishedCallback = nil
-	self._finishedCallbackObj = nil
 end
 
 return StoryBgEffsLineLight

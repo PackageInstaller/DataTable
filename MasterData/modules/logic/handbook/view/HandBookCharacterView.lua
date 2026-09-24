@@ -290,6 +290,7 @@ function HandBookCharacterView:findItemSubNodes(goItem)
 
 	o.simagenohero = gohelper.findChildSingleImage(characterItemGO, "nohero/simage_nohero")
 	o.txtnoheroname = gohelper.findChildTextMesh(characterItemGO, "nohero/txt_noheroname")
+	o.sp = CharacterSpName.s_create(o, gohelper.findChild(o.gohero, "sp"), self.viewContainer):bindName0(o.txtname)
 
 	gohelper.setActive(o.gonew, false)
 
@@ -542,8 +543,9 @@ function HandBookCharacterView:showBookItem(item, heroCo, characterIndex, isFirs
 		end
 
 		if showName then
-			item.txtname.text = heroCo.name
-
+			item.sp:onUpdateMO({
+				heroId = heroCo.id
+			}):setAsML_SpAndName0()
 			item.simagesignature:LoadImage(ResUrl.getSignature(heroCo.signature))
 			UISpriteSetMgr.instance:setCommonSprite(item.careerIcon, "lssx_" .. tostring(heroCo.career))
 

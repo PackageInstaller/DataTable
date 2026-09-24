@@ -195,6 +195,10 @@ function V3a9_BossRushExpandBondGroupMO:getCurActiveHeroNum()
 	return num, self._maxActiveNum
 end
 
+function V3a9_BossRushExpandBondGroupMO:getMaxActiveNum()
+	return self._maxActiveNum
+end
+
 function V3a9_BossRushExpandBondGroupMO:getCurActiveMo()
 	local num = self:getCurActiveNum()
 

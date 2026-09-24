@@ -169,6 +169,17 @@ function GMController:_onFrame()
 					end, self, 0.5)
 				end
 
+				if ViewMgr.instance:isOpen(ViewName.MatchGameFightView) then
+					local gameInfoData = MatchGameFightModel.instance:getGameInfoData()
+					local episodeId = gameInfoData.episodeId
+
+					MatchGameController.instance:onEpisodeSuccess(episodeId, true, {
+						1,
+						2,
+						3
+					}, 1)
+				end
+
 				return
 			end
 

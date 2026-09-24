@@ -59,6 +59,7 @@ function FightWorkPlayEnd:onStart()
 	flow:addWork(FightWorkCachotEnding.New())
 	flow:addWork(FightWorkAct183Repress.New())
 	flow:addWork(FightWorkAct183Ending.New())
+	flow:addWork(FightWorkAct220FightEndStory.New())
 	flow:addWork(FightWorkOpenLoadingBlackView.New())
 	flow:registFinishCallback(self.onFlowFinish, self)
 

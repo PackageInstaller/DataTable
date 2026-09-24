@@ -95,7 +95,7 @@ function RougeHeroGroupQuickEditItem:_show_goorderbg()
 	gohelper.setActive(self._goframehp, not isHideHp)
 	gohelper.setActive(self._goframe, isHideHp)
 
-	local showOrder = not self._isSelectHeroType and not self._isInitType
+	local showOrder = not self._isSelectHeroType
 
 	gohelper.setActive(self._goorderbg, showOrder)
 

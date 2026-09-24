@@ -8,6 +8,7 @@ module("modules.proto.TowerComposeModule_pb", package.seeall)
 local TowerComposeModule_pb = {}
 
 TowerComposeModule_pb.FIGHTDEF_PB = require("modules.proto.FightDef_pb")
+TowerComposeModule_pb.HERODEF_PB = require("modules.proto.HeroDef_pb")
 TowerComposeModule_pb.TOWERCOMPOSEPLANE_MSG = protobuf.Descriptor()
 TowerComposeModule_pb.TOWERCOMPOSEPLANEPLANEIDFIELD = protobuf.FieldDescriptor()
 TowerComposeModule_pb.TOWERCOMPOSEPLANEMODSFIELD = protobuf.FieldDescriptor()
@@ -20,6 +21,7 @@ TowerComposeModule_pb.TOWERCOMPOSEHEROPOSFIELD = protobuf.FieldDescriptor()
 TowerComposeModule_pb.TOWERCOMPOSEHEROHEROIDFIELD = protobuf.FieldDescriptor()
 TowerComposeModule_pb.TOWERCOMPOSEHEROTRIALIDFIELD = protobuf.FieldDescriptor()
 TowerComposeModule_pb.TOWERCOMPOSEHEROMINDIDFIELD = protobuf.FieldDescriptor()
+TowerComposeModule_pb.TOWERCOMPOSEHEROASSISTHEROINFOFIELD = protobuf.FieldDescriptor()
 TowerComposeModule_pb.TOWERCOMPOSELOADRECORDREPLY_MSG = protobuf.Descriptor()
 TowerComposeModule_pb.TOWERCOMPOSELOADRECORDREPLYTHEMEIDFIELD = protobuf.FieldDescriptor()
 TowerComposeModule_pb.TOWERCOMPOSELOADRECORDREPLYRECORDFIELD = protobuf.FieldDescriptor()
@@ -221,6 +223,16 @@ TowerComposeModule_pb.TOWERCOMPOSEHEROMINDIDFIELD.has_default_value = false
 TowerComposeModule_pb.TOWERCOMPOSEHEROMINDIDFIELD.default_value = 0
 TowerComposeModule_pb.TOWERCOMPOSEHEROMINDIDFIELD.type = 3
 TowerComposeModule_pb.TOWERCOMPOSEHEROMINDIDFIELD.cpp_type = 2
+TowerComposeModule_pb.TOWERCOMPOSEHEROASSISTHEROINFOFIELD.name = "assistHeroInfo"
+TowerComposeModule_pb.TOWERCOMPOSEHEROASSISTHEROINFOFIELD.full_name = ".TowerComposeHero.assistHeroInfo"
+TowerComposeModule_pb.TOWERCOMPOSEHEROASSISTHEROINFOFIELD.number = 5
+TowerComposeModule_pb.TOWERCOMPOSEHEROASSISTHEROINFOFIELD.index = 4
+TowerComposeModule_pb.TOWERCOMPOSEHEROASSISTHEROINFOFIELD.label = 1
+TowerComposeModule_pb.TOWERCOMPOSEHEROASSISTHEROINFOFIELD.has_default_value = false
+TowerComposeModule_pb.TOWERCOMPOSEHEROASSISTHEROINFOFIELD.default_value = nil
+TowerComposeModule_pb.TOWERCOMPOSEHEROASSISTHEROINFOFIELD.message_type = TowerComposeModule_pb.HERODEF_PB.ASSISTHEROINFO_MSG
+TowerComposeModule_pb.TOWERCOMPOSEHEROASSISTHEROINFOFIELD.type = 11
+TowerComposeModule_pb.TOWERCOMPOSEHEROASSISTHEROINFOFIELD.cpp_type = 10
 TowerComposeModule_pb.TOWERCOMPOSEHERO_MSG.name = "TowerComposeHero"
 TowerComposeModule_pb.TOWERCOMPOSEHERO_MSG.full_name = ".TowerComposeHero"
 TowerComposeModule_pb.TOWERCOMPOSEHERO_MSG.nested_types = {}
@@ -229,7 +241,8 @@ TowerComposeModule_pb.TOWERCOMPOSEHERO_MSG.fields = {
 	TowerComposeModule_pb.TOWERCOMPOSEHEROPOSFIELD,
 	TowerComposeModule_pb.TOWERCOMPOSEHEROHEROIDFIELD,
 	TowerComposeModule_pb.TOWERCOMPOSEHEROTRIALIDFIELD,
-	TowerComposeModule_pb.TOWERCOMPOSEHEROMINDIDFIELD
+	TowerComposeModule_pb.TOWERCOMPOSEHEROMINDIDFIELD,
+	TowerComposeModule_pb.TOWERCOMPOSEHEROASSISTHEROINFOFIELD
 }
 TowerComposeModule_pb.TOWERCOMPOSEHERO_MSG.is_extendable = false
 TowerComposeModule_pb.TOWERCOMPOSEHERO_MSG.extensions = {}

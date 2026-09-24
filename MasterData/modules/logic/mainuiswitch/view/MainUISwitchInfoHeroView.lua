@@ -23,19 +23,12 @@ function MainUISwitchInfoHeroView:removeEvents()
 end
 
 function MainUISwitchInfoHeroView:_onSwitchUIVisible(visible)
-	if visible then
-		if not MainUISwitchEnum.MainUIScale then
-			local scale = 1
-
-			transformhelper.setLocalScale(self._gospinescaleroot.transform, scale, scale, 1)
-		end
-	end
+	return
 end
 
 function MainUISwitchInfoHeroView:_editableInitView()
-	transformhelper.setLocalScale(self._gospinescaleroot.transform, MainUISwitchEnum.MainUIScale, MainUISwitchEnum.MainUIScale, 1)
 	transformhelper.setLocalScale(self._gospineroot.transform, 1, 1, 1)
-	recthelper.setAnchor(self._gospineroot.transform, -200, -1174)
+	recthelper.setAnchor(self._gospineroot.transform, -120, -950)
 end
 
 function MainUISwitchInfoHeroView:onOpen()
@@ -45,9 +38,11 @@ function MainUISwitchInfoHeroView:onOpen()
 	self:_updateHero()
 
 	local offsets = SkinConfig.instance:getSkinOffset(self._heroSkinConfig.characterViewOffset)
-	local scale = tonumber(offsets[3])
+	local scale = tonumber(offsets[3]) * MainUISwitchEnum.MainHeroScale
+	local x = tonumber(offsets[1]) * MainUISwitchEnum.MainHeroScale
+	local y = tonumber(offsets[2]) * MainUISwitchEnum.MainHeroScale
 
-	CharacterVoiceEnum.setSpineOffset(self._uiSpine, tonumber(offsets[1]), tonumber(offsets[2]))
+	CharacterVoiceEnum.setSpineOffset(self._uiSpine, x, y)
 	transformhelper.setLocalScale(self._gospine.transform, scale, scale, scale)
 
 	local spineMountPoint = WeatherController.instance:getSceneNode("s01_obj_a/Anim/Drawing/spine")

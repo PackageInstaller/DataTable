@@ -12,7 +12,9 @@ function FightNewProgressView:onInitView()
 		[FightEnum.ProgressId.Progress_500M] = self.showProgress500M,
 		[FightEnum.ProgressId.Progress_8] = self.showYuQianRuQinBossProgress,
 		[FightEnum.ProgressId.Progress_9] = self.showCelebrityCardProgress,
-		[FightEnum.ProgressId.Progress_10] = self.show38BossWarEchoProgress
+		[FightEnum.ProgressId.Progress_10] = self.show38BossWarEchoProgress,
+		[FightEnum.ProgressId.Progress_11] = self.showProgress11,
+		[FightEnum.ProgressId.Progress_12] = self.showProgress12
 	}
 end
 
@@ -126,6 +128,34 @@ function FightNewProgressView:show38BossWarEchoProgress()
 	local path = "ui/viewres/fight/fight3_8bossview.prefab"
 
 	self.progress10View = self:com_openSubView(Fight38BossWarEchoView, path, goRoot, FightDataHelper.fieldMgr.progressDic:getDataByShowId(FightEnum.ProgressId.Progress_10))
+end
+
+function FightNewProgressView:showProgress11()
+	if self.progress11View then
+		return
+	end
+
+	local goRoot = gohelper.findChild(self.viewGO, "root/topLeftContent/#go_commonalityslider")
+
+	gohelper.setActive(goRoot, true)
+
+	local path = "ui/viewres/fight/commonalityslider.prefab"
+
+	self.progress11View = self:com_openSubView(FightCommonalitySlider11, path, goRoot, FightDataHelper.fieldMgr.progressDic:getDataByShowId(FightEnum.ProgressId.Progress_11))
+end
+
+function FightNewProgressView:showProgress12()
+	if self.progress12View then
+		return
+	end
+
+	local goRoot = gohelper.findChild(self.viewGO, "root/topLeftContent/#go_commonalityslider")
+
+	gohelper.setActive(goRoot, true)
+
+	local path = "ui/viewres/fight/commonalityslider4.prefab"
+
+	self.progress12View = self:com_openSubView(FightCommonalitySlider12, path, goRoot, FightDataHelper.fieldMgr.progressDic:getDataByShowId(FightEnum.ProgressId.Progress_12))
 end
 
 return FightNewProgressView

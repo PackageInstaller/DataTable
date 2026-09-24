@@ -18,15 +18,6 @@ function StoryBgEffsBgDistress:init(bgCo)
 	self._effLoaded = false
 end
 
-function StoryBgEffsBgDistress:start(callback, callbackObj)
-	StoryBgEffsBgDistress.super.start(self)
-
-	self._finishedCallback = callback
-	self._finishedCallbackObj = callbackObj
-
-	self:loadRes()
-end
-
 local distressEffDegree = {
 	0,
 	0.6,
@@ -94,11 +85,8 @@ function StoryBgEffsBgDistress:_onBgEffDistressFinished()
 
 	local value = self._img.material:GetFloat("_TotalFator")
 
-	if value <= 0.05 and self._finishedCallback then
-		self._finishedCallback(self._finishedCallbackObj)
-
-		self._finishedCallback = nil
-		self._finishedCallbackObj = nil
+	if value <= 0.05 then
+		self:callFinished()
 	end
 end
 
@@ -121,9 +109,6 @@ function StoryBgEffsBgDistress:destroy()
 
 	self:_setDistressUpdate(0)
 	self:_killTween()
-
-	self._finishedCallback = nil
-	self._finishedCallbackObj = nil
 end
 
 return StoryBgEffsBgDistress

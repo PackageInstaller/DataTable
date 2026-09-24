@@ -112,8 +112,7 @@ function AutoChessFriendBattleView:onClickBattleStart()
 			end
 
 			local curFriendIdx = self._curFriendIdx
-			local actInfo = Activity182Model.instance:getActMo(self._actId)
-			local friendList = actInfo:getFriendInfoList()
+			local friendList = self._actMo:getFriendInfoList()
 			local curFriendInfo = friendList[curFriendIdx]
 			local friendUserId = curFriendInfo.userId
 
@@ -123,8 +122,7 @@ function AutoChessFriendBattleView:onClickBattleStart()
 end
 
 function AutoChessFriendBattleView:onClickBattleRecord()
-	local actInfo = Activity182Model.instance:getActMo(self._actId)
-	local friendFightRecords = actInfo:getFriendFightRecords()
+	local friendFightRecords = self._actMo:getFriendFightRecords()
 	local hasNoRecord = friendFightRecords and #friendFightRecords == 0
 
 	if hasNoRecord then
@@ -147,8 +145,7 @@ end
 
 function AutoChessFriendBattleView:onClickNextFriendBtn()
 	local curFriendIdx = self._curFriendIdx
-	local actInfo = Activity182Model.instance:getActMo(self._actId)
-	local friendList = actInfo:getFriendInfoList()
+	local friendList = self._actMo:getFriendInfoList()
 	local nextFriendInfo = friendList[curFriendIdx + 1]
 
 	if not nextFriendInfo then
@@ -160,8 +157,7 @@ end
 
 function AutoChessFriendBattleView:onClickLastFriendBtn()
 	local curFriendIdx = self._curFriendIdx
-	local actInfo = Activity182Model.instance:getActMo(self._actId)
-	local friendList = actInfo:getFriendInfoList()
+	local friendList = self._actMo:getFriendInfoList()
 	local lastFriendInfo = friendList[curFriendIdx - 1]
 
 	if not lastFriendInfo then
@@ -185,8 +181,7 @@ end
 function AutoChessFriendBattleView:onChangeFriendSnapshot()
 	self:resetSnapView()
 
-	local actInfo = Activity182Model.instance:getActMo(self._actId)
-	local friendList = actInfo:getFriendInfoList()
+	local friendList = self._actMo:getFriendInfoList()
 
 	for idx, friendInfo in ipairs(friendList) do
 		if friendInfo.userId == self._curFriendUserId then
@@ -196,8 +191,8 @@ function AutoChessFriendBattleView:onChangeFriendSnapshot()
 		end
 	end
 
-	self._selfSnap = actInfo.snapshot
-	self._enemySnap = actInfo:getCurFriendSnapshot()
+	self._selfSnap = self._actMo.snapshot
+	self._enemySnap = self._actMo:getCurFriendSnapshot()
 
 	self:refreshPlayerInfoView()
 
@@ -239,7 +234,8 @@ function AutoChessFriendBattleView:onGotSnapshotFriendCallback()
 end
 
 function AutoChessFriendBattleView:_editableInitView()
-	self._actId = Activity182Model.instance:getCurActId()
+	self._actMo = Activity182Model.instance:getActMo()
+	self._actId = self._actMo.activityId
 
 	Activity182Rpc.instance:sendAct182GetFriendFightRecordsRequest(self._actId, self.onGotFriendFightRecordCallback, self)
 
@@ -256,9 +252,6 @@ end
 
 function AutoChessFriendBattleView:onOpen()
 	AudioMgr.instance:trigger(AudioEnum2_8.AutoChess.play_ui_fuleyuan_comity_open)
-
-	self._actId = Activity182Model.instance:getCurActId()
-
 	self:refreshSnapView()
 	self:refreshChangeFriendBtn()
 	self:refreshBtnState()
@@ -266,11 +259,8 @@ end
 
 function AutoChessFriendBattleView:refreshSnapView()
 	self._curFriendIdx = 1
-
-	local actInfo = Activity182Model.instance:getActMo(self._actId)
-
-	self._selfSnap = actInfo.snapshot
-	self._enemySnap = actInfo:getCurFriendSnapshot()
+	self._selfSnap = self._actMo.snapshot
+	self._enemySnap = self._actMo:getCurFriendSnapshot()
 
 	self:refreshPlayerInfoView()
 
@@ -310,13 +300,8 @@ function AutoChessFriendBattleView:refreshPlayerInfoView()
 	local playerInfo = self._selfSnap.playerInfo
 
 	if playerInfo and playerInfo.userId ~= 0 then
-		self._playerRankCfg = lua_auto_chess_rank.configDict[self._actId][playerInfo.rank]
-
-		if not self._playerRankCfg then
-			self._playerBadge.text = luaLang("autochess_badgeitem_noget")
-		end
-
-		self._playerBadge.text = self._playerRankCfg.name
+		self._playerRankCfg = AutoChessConfig.instance:getRankCfg(playerInfo.rank)
+		self._playerBadge.text = self._playerRankCfg and self._playerRankCfg.name or luaLang("autochess_badgeitem_noget")
 
 		self._playerIconRoot:SetActive(true)
 
@@ -340,16 +325,12 @@ function AutoChessFriendBattleView:refreshPlayerInfoView()
 			gohelper.setActive(self._enemyRoot, true)
 			gohelper.setActive(self._emptyEnemy, false)
 
-			self._enemyRankCfg = lua_auto_chess_rank.configDict[self._actId][enemyInfo.rank]
-
-			if not self._enemyRankCfg then
-				self._enemyBadge.text = luaLang("autochess_badgeitem_noget")
-			end
+			self._enemyRankCfg = AutoChessConfig.instance:getRankCfg(enemyInfo.rank)
+			self._enemyBadge.text = self._enemyRankCfg and self._enemyRankCfg.name or luaLang("autochess_badgeitem_noget")
 
 			local curEnemyInfo = SocialModel.instance:getPlayerMO(enemyInfo.userId)
 
 			curEnemyInfo = curEnemyInfo or enemyInfo
-			self._enemyBadge.text = self._enemyRankCfg.name
 			self._enemyName.text = curEnemyInfo.name
 
 			self._enemyIconRoot:SetActive(true)
@@ -366,7 +347,7 @@ function AutoChessFriendBattleView:refreshPlayerInfoView()
 	end
 end
 
-function AutoChessFriendBattleView:refreshMonsterInfoView(warZones, masterData, isMySelf)
+function AutoChessFriendBattleView:refreshMonsterInfoView(warZones, masterMo, isMySelf)
 	local chessDatas = {}
 
 	for _, zone in ipairs(warZones) do
@@ -374,11 +355,10 @@ function AutoChessFriendBattleView:refreshMonsterInfoView(warZones, masterData, 
 		local positions = zone.positions
 
 		for _, positionData in ipairs(positions) do
-			local chessData = positionData.chess
 			local chessData = {}
 
 			chessData.zoneId = id
-			chessData.chessId = chessData.id
+			chessData.chessId = positionData.chess.id
 			chessData.idx = positionData.index
 			chessDatas[#chessDatas + 1] = chessData
 		end
@@ -391,7 +371,7 @@ function AutoChessFriendBattleView:refreshMonsterInfoView(warZones, masterData, 
 			local snapChessGo = self._goEnemySnapChess
 
 			for i, chessData in ipairs(chessDatas) do
-				local chessCfg = AutoChessConfig.instance:getChessCfg(chessData.chessId)
+				local chessCfg = AutoChessConfig.instance:getChessCfgAnyway(chessData.chessId)
 
 				if i <= 3 then
 					local chessGo = self[chessgoName .. i]
@@ -415,7 +395,7 @@ function AutoChessFriendBattleView:refreshMonsterInfoView(warZones, masterData, 
 
 				comp1:setData(chessCfg.image)
 
-				local chessPosX, chessPosY = 0
+				local chessPosX, chessPosY = 0, 0
 
 				if isMySelf then
 					chessPosX = chessPlayerLinesPosX[chessData.zoneId] + chessData.idx * chessLinesPosOffsetX[chessData.zoneId]
@@ -434,20 +414,18 @@ function AutoChessFriendBattleView:refreshMonsterInfoView(warZones, masterData, 
 				transformhelper.setLocalScale(go.transform, x, y, z)
 			end
 
-			if not masterData then
+			if not masterMo then
 				return
 			end
 
 			if isMySelf then
 				if not self._goPlayerLeaderMesh then
 					local snapLeaderGo = self._goEnemyLeaderMesh
-					local masterId = masterData.id
-					local leaderCfg = lua_auto_chess_master.configDict[masterId]
 
-					if leaderCfg then
+					if masterMo.config then
 						local comp = MonoHelper.addNoUpdateLuaComOnceToGo(snapLeaderGo, AutoChessMeshComp)
 
-						comp:setData(leaderCfg.image, false, true)
+						comp:setData(masterMo.config.image, false, true)
 					end
 				end
 			end
@@ -457,8 +435,7 @@ end
 
 function AutoChessFriendBattleView:refreshChangeFriendBtn()
 	local curFriendIdx = self._curFriendIdx
-	local actInfo = Activity182Model.instance:getActMo(self._actId)
-	local friendList = actInfo:getFriendInfoList()
+	local friendList = self._actMo:getFriendInfoList()
 
 	gohelper.setActive(self._btnEnemySwitchRight.gameObject, curFriendIdx < #friendList)
 	gohelper.setActive(self._btnEnemySwitchLeft.gameObject, curFriendIdx > 1)
@@ -476,8 +453,7 @@ function AutoChessFriendBattleView:refreshBtnState()
 
 			SLFramework.UGUI.GuiHelper.SetColor(self._imageBattleStart, canStart and "#FFFFFF" or "#B0B0B0")
 
-			local actInfo = Activity182Model.instance:getActMo(self._actId)
-			local friendFightRecords = actInfo:getFriendFightRecords()
+			local friendFightRecords = self._actMo:getFriendFightRecords()
 			local hasFightRecord = false
 
 			if friendFightRecords then

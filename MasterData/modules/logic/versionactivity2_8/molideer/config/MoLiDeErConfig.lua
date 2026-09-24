@@ -158,14 +158,6 @@ function MoLiDeErConfig:getBuffConfig(buffId)
 	return self._buffConfig.configDict[buffId]
 end
 
-function MoLiDeErConfig:getItemConfig(itemId)
-	if self._itemConfig == nil or self._itemConfig.configDict == nil then
-		return nil
-	end
-
-	return self._itemConfig.configDict[itemId]
-end
-
 function MoLiDeErConfig:getProgressConfig(optionId)
 	if self._progressConfig == nil or self._progressConfig.configDict == nil then
 		return nil

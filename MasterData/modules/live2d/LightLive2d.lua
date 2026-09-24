@@ -133,6 +133,8 @@ function LightLive2d:setEffectFrameVisible(value)
 			end
 		end
 	end
+
+	self:_showInScene(value)
 end
 
 function LightLive2d:getBoundsMinMaxPos()
@@ -248,6 +250,14 @@ function LightLive2d:setEmissionColor(color)
 	if self._cubismController then
 		self._cubismController:SetEmissionColor(color)
 	end
+end
+
+function LightLive2d:getViewName()
+	if self:isInMainView() then
+		return ViewName.MainView
+	end
+
+	return nil
 end
 
 return LightLive2d

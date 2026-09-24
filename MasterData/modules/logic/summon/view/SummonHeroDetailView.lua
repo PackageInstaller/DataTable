@@ -138,6 +138,7 @@ function SummonHeroDetailView:_editableInitView()
 	}
 
 	self._skillContainer = MonoHelper.addNoUpdateLuaComOnceToGo(self._goskill, CharacterSkillContainer, param)
+	self._skillContainer.viewContainer = self.viewContainer
 	self._attributevalues = {}
 
 	for i = 1, 5 do
@@ -162,6 +163,7 @@ function SummonHeroDetailView:_editableInitView()
 	end
 
 	self._passiveskillGOs[0] = self:_findPassiveskillitems(4)
+	self._sp = CharacterSpName.s_createByView(self, gohelper.findChild(self.viewGO, "characterinfo/#go_characterinfo/sp")):bindName0(self._txtname):bindName0En(self._txtnameen):bindSpName(gohelper.findChildText(self.viewGO, "characterinfo/#go_characterinfo/sp/bg/#txt_sp"))
 end
 
 function SummonHeroDetailView:_findPassiveskillitems(index)
@@ -214,9 +216,9 @@ function SummonHeroDetailView:_refreshHero(heroId)
 		gohelper.setActive(self["_gostar" .. i], i <= CharacterEnum.Star[heroConfig.rare])
 	end
 
-	self._txtname.text = heroConfig.name
-	self._txtnameen.text = heroConfig.nameEng
-
+	self._sp:onUpdateMO({
+		heroId = heroId
+	}):simpleAutoSet()
 	UISpriteSetMgr.instance:setCharactergetSprite(self._imagecareericon, "charactercareer" .. tostring(heroConfig.career))
 	UISpriteSetMgr.instance:setCommonSprite(self._imagedmgtype, "dmgtype" .. tostring(heroConfig.dmgType))
 
@@ -439,6 +441,14 @@ function SummonHeroDetailView:_initViewParam()
 	self._tempHeroMO, self._replaceHeroMOParams = self:_getReplaceSkillHeroMO(self._heroId, self._skinId)
 end
 
+local function _replace_hero_newindex(t, key, value)
+	local target = rawget(t, 1)
+
+	if target then
+		target[key] = value
+	end
+end
+
 function SummonHeroDetailView:_getReplaceSkillHeroMO(heroId, skinId)
 	local rank = CharacterModel.instance:getReplaceSkillRankBySkinId(skinId)
 
@@ -463,8 +473,12 @@ function SummonHeroDetailView:_getReplaceSkillHeroMO(heroId, skinId)
 			rank = rank,
 			replaceSkillRank = rank
 		}
+		local mergHeroMO = RoomHelper.mergeCfg(heroMO, mergeInfo)
+		local metatable = getmetatable(mergHeroMO)
 
-		return RoomHelper.mergeCfg(heroMO, mergeInfo), mergeInfo
+		metatable.__newindex = _replace_hero_newindex
+
+		return mergHeroMO, mergeInfo
 	end
 end
 
@@ -487,6 +501,7 @@ end
 function SummonHeroDetailView:onDestroyView()
 	self._simageredlight:UnLoadImage()
 	self._simagebg:UnLoadImage()
+	GameUtil.onDestroyViewMember(self, "_sp")
 end
 
 function SummonHeroDetailView:_statEnterView(heroId)

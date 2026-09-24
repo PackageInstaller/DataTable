@@ -60,6 +60,7 @@ function MainThumbnailView:_btnblankOnClick()
 	end
 
 	self:closeThis()
+	UIBlockHelper.instance:startBlock("MainThumbnailView blank close", 0.6)
 end
 
 function MainThumbnailView:_btndetailOnClick()
@@ -120,11 +121,15 @@ function MainThumbnailView:RefreshSignature()
 	local heroId = CharacterSwitchListModel.instance:getMainHero()
 	local heroMo = HeroModel.instance:getByHeroId(heroId)
 
-	if not heroMo then
+	if not heroMo and not CharacterPastModel.instance:hasPastSkinsByHeroId(heroId) then
+		logError("RefreshSignature no hero:" .. tostring(heroId))
+
 		return
 	end
 
-	self._simagesignature:LoadImage(ResUrl.getSignature(heroMo.config.signature))
+	local heroConfig = HeroConfig.instance:getHeroCO(heroId)
+
+	self._simagesignature:LoadImage(ResUrl.getSignature(heroConfig.signature))
 end
 
 function MainThumbnailView:onOpen()
@@ -144,6 +149,10 @@ function MainThumbnailView:onOpen()
 	if self.viewParam and self.viewParam.isSwitch then
 		self:_justSwithView()
 	end
+end
+
+function MainThumbnailView:onOpenFinish()
+	MainController.instance:waitOpenMainThumbnailView()
 end
 
 function MainThumbnailView:_justSwithView()

@@ -5,6 +5,7 @@ module("modules.logic.scene.main.comp.MainSceneYearAnimationComp", package.seeal
 local MainSceneYearAnimationComp = class("MainSceneYearAnimationComp", BaseSceneComp)
 
 MainSceneYearAnimationComp.CurveAssetPath = "scenes/dynamic/m_s01_zjm_a/anim/year_curve.asset"
+MainSceneYearAnimationComp.YearPropertyId = UnityEngine.Shader.PropertyToID("_Year")
 MainSceneYearAnimationComp.ConstVarId = {
 	RotateDurationId = 602,
 	IntervalId = 600,
@@ -21,6 +22,7 @@ function MainSceneYearAnimationComp:onInit()
 	self.startYear = 1999
 	self.animationEndTime = 0
 	self.materials = {}
+	self.tempVector4 = Vector4.New(0, 0, 0, 0)
 	self.yearTable = {}
 	self.setNumYearTable = {}
 	self.node = nil
@@ -303,8 +305,12 @@ function MainSceneYearAnimationComp:canStopAnimation()
 end
 
 function MainSceneYearAnimationComp:setMaterialsParam()
+	local numTable = self.setNumYearTable
+
+	self.tempVector4:Set(numTable[1], numTable[2], numTable[3], numTable[4])
+
 	for _, mat in ipairs(self.materials) do
-		mat:SetVector("_Year", Vector4.New(self.setNumYearTable[1], self.setNumYearTable[2], self.setNumYearTable[3], self.setNumYearTable[4]))
+		mat:SetVector(MainSceneYearAnimationComp.YearPropertyId, self.tempVector4)
 	end
 end
 

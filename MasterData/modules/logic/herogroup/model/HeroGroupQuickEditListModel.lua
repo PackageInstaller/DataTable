@@ -14,15 +14,26 @@ function HeroGroupQuickEditListModel:copyQuickEditCardList()
 	self._originalHeroUidList = {}
 	self._selectUid = nil
 
-	local _, assistMo = HeroGroupModel.instance:getAssistMo()
-	local editorAssistMo = HeroGroupModel.instance:getEditorAssistMo()
-	local _assistMo = editorAssistMo or assistMo and assistMo.assistMo
+	local assistMoList = HeroGroupModel.instance:getAssistMoList()
+	local showAssistMoList = HeroGroupModel.instance:getAssistMoList(true)
 
-	if _assistMo then
+	if #showAssistMoList <= 0 then
+		for _, assistMo in ipairs(assistMoList) do
+			if assistMo.assistMo then
+				table.insert(showAssistMoList, assistMo.assistMo)
+			end
+		end
+	end
+
+	for _, _assistMo in ipairs(showAssistMoList) do
 		table.insert(newMOList, _assistMo.heroMO)
 	end
 
-	if assistMo then
+	local assistMoByPos = {}
+
+	for _, assistMo in ipairs(assistMoList) do
+		assistMoByPos[assistMo.id] = assistMo
+
 		local posOpen = HeroGroupModel.instance:isPositionOpen(assistMo.id)
 
 		if posOpen then
@@ -34,7 +45,8 @@ function HeroGroupQuickEditListModel:copyQuickEditCardList()
 	local alreadyList = HeroSingleGroupModel.instance:getList()
 
 	for pos, heroSingleGroupMO in ipairs(alreadyList) do
-		local isAssistPos = assistMo and assistMo.id == pos
+		local assistMo = assistMoByPos[pos]
+		local isAssistPos = assistMo ~= nil
 		local posOpen = HeroGroupModel.instance:isPositionOpen(pos)
 		local heroUid = heroSingleGroupMO.heroUid
 
@@ -63,8 +75,8 @@ function HeroGroupQuickEditListModel:copyQuickEditCardList()
 		end
 
 		if posOpen then
-			if assistMo and _assistMo and assistMo.id == pos then
-				heroUid = _assistMo.heroUid
+			if assistMo then
+				heroUid = assistMo.assistMo and assistMo.assistMo.heroUid or assistMo.heroUid
 			end
 
 			table.insert(self._inTeamHeroUidList, heroUid)

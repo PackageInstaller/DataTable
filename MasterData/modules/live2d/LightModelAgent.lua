@@ -20,6 +20,10 @@ function LightModelAgent:clear()
 	self._curModel:doClear()
 end
 
+function LightModelAgent:getViewName()
+	return self._curModel:getViewName()
+end
+
 function LightModelAgent:_getSpine()
 	self._spine = self._spine or LightSpine.Create(self._go, self._isStory)
 

@@ -28,12 +28,24 @@ function FightWorkStartBornNormal:onStart(context)
 
 		self.entity:setAlpha(0)
 
-		bornWork = self.entity.skill:registTimelineWork(config.timeline, fightStepData)
+		local timelineWork = self.entity.skill:registTimelineWork(config.timeline, fightStepData)
+		local timelineFlow = self.fightClass:com_registFlowSequence()
+
+		timelineFlow:addWork(timelineWork)
+		timelineFlow:registWork(FightWorkFunction, self.setNameUIActive, self)
+
+		bornWork = timelineFlow
 	end
 
 	flow:addWork(bornWork)
 	flow:registFinishCallback(self.onFlowFinish, self)
 	flow:start()
+end
+
+function FightWorkStartBornNormal:setNameUIActive()
+	if self.entity and self.entity.nameUI then
+		self.entity.nameUI:setActive(true)
+	end
 end
 
 function FightWorkStartBornNormal:onFlowFinish()

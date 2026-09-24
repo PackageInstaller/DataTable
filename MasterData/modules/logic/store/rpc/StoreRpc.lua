@@ -25,13 +25,19 @@ function StoreRpc:onReceiveGetStoreInfosReply(resultCode, msg)
 	end
 end
 
-function StoreRpc:sendBuyGoodsRequest(storeId, goodsId, num, callback, callbackObj, selectCost)
+function StoreRpc:sendBuyGoodsRequest(storeId, goodsId, num, callback, callbackObj, selectCost, deductionItemIndices)
 	local req = StoreModule_pb.BuyGoodsRequest()
 
 	req.storeId = storeId
 	req.goodsId = goodsId
 	req.num = num
 	req.selectCost = selectCost or 1
+
+	if deductionItemIndices then
+		for i, v in ipairs(deductionItemIndices) do
+			table.insert(req.deductionItemIndices, v)
+		end
+	end
 
 	return self:sendMsg(req, callback, callbackObj)
 end

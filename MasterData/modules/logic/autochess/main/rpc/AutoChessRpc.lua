@@ -16,9 +16,8 @@ function AutoChessRpc:onReceiveAutoChessGetSceneReply(resultCode, msg)
 	return
 end
 
-function AutoChessRpc:sendAutoChessEnterSceneRequest(activityId, moduleId, episodeId, masterId, firstEnter)
+function AutoChessRpc:sendAutoChessEnterSceneRequest(activityId, moduleId, episodeId, masterId)
 	self.episodeId = episodeId
-	self.firstEnter = firstEnter
 
 	local req = AutoChessModule_pb.AutoChessEnterSceneRequest()
 
@@ -32,11 +31,10 @@ end
 
 function AutoChessRpc:onReceiveAutoChessEnterSceneReply(resultCode, msg)
 	if resultCode == 0 then
-		AutoChessModel.instance:enterSceneReply(msg.moduleId, msg.scene, msg.activityId)
-		AutoChessController.instance:enterGame(self.episodeId, self.firstEnter)
+		AutoChessModel.instance:onEnterScene(msg.moduleId, msg.scene, msg.activityId)
+		AutoChessController.instance:enterGame(self.episodeId)
 	end
 
-	self.firstEnter = nil
 	self.episodeId = nil
 end
 
@@ -53,15 +51,13 @@ function AutoChessRpc:onReceiveAutoChessEnterFightReply(resultCode, msg)
 		return
 	end
 
-	local mo = AutoChessModel.instance:getChessMo()
-
-	mo.sceneRound = msg.sceneRound
+	local mo = AutoChessModel.instance:getSceneMo()
 
 	mo:cacheSvrFight()
 	mo:updateSvrTurn(msg.turn)
 	mo:updateSvrMall(msg.mall)
 	mo:updateSvrBaseInfo(msg.baseInfo)
-	AutoChessController.instance:dispatchEvent(AutoChessEvent.EnterFightReply)
+	AutoChessController.instance:playStep(AutoChessEnum.ActionType.EndBuy)
 end
 
 function AutoChessRpc:sendAutoChessBuyChessRequest(moduleId, mallId, itemUid, warZoneId, position)
@@ -81,7 +77,7 @@ function AutoChessRpc:onReceiveAutoChessBuyChessReply(resultCode, msg)
 		return
 	end
 
-	local mo = AutoChessModel.instance:getChessMo()
+	local mo = AutoChessModel.instance:getSceneMo()
 
 	mo:updateSvrTurn(msg.turn)
 	mo:updateSvrMall(msg.mall)
@@ -110,19 +106,19 @@ function AutoChessRpc:onReceiveAutoChessBuildReply(resultCode, msg)
 		return
 	end
 
-	local mo = AutoChessModel.instance:getChessMo()
+	local mo = AutoChessModel.instance:getSceneMo()
 
 	mo:updateSvrTurn(msg.turn)
 	mo:updateSvrMall(msg.mall)
 	AutoChessController.instance:dispatchEvent(AutoChessEvent.BuildReply)
 end
 
-function AutoChessRpc:sendAutoChessRefreshMallRequest(moduleId)
+function AutoChessRpc:sendAutoChessRefreshMallRequest(moduleId, callback, callbackObj)
 	local req = AutoChessModule_pb.AutoChessRefreshMallRequest()
 
 	req.moduleId = moduleId
 
-	self:sendMsg(req)
+	self:sendMsg(req, callback, callbackObj)
 end
 
 function AutoChessRpc:onReceiveAutoChessRefreshMallReply(resultCode, msg)
@@ -130,9 +126,9 @@ function AutoChessRpc:onReceiveAutoChessRefreshMallReply(resultCode, msg)
 		return
 	end
 
-	local mo = AutoChessModel.instance:getChessMo()
+	local mo = AutoChessModel.instance:getSceneMo()
 
-	mo:updateSvrMall(msg.mall, true)
+	mo:updateSvrMall(msg.mall)
 	mo:updateSvrTurn(msg.turn)
 end
 
@@ -152,9 +148,9 @@ function AutoChessRpc:onReceiveAutoChessFreezeItemReply(resultCode, msg)
 		return
 	end
 
-	local mo = AutoChessModel.instance:getChessMo()
+	local mo = AutoChessModel.instance:getSceneMo()
 
-	mo:freezeReply(msg.mallId, msg.type)
+	mo.mall:fixLockStatus(msg.mallId, msg.type)
 end
 
 function AutoChessRpc:sendAutoChessMallRegionSelectItemRequest(moduleId, itemId)
@@ -173,9 +169,9 @@ function AutoChessRpc:onReceiveAutoChessMallRegionSelectItemReply(resultCode, ms
 		return
 	end
 
-	local mo = AutoChessModel.instance:getChessMo()
+	local mo = AutoChessModel.instance:getSceneMo()
 
-	mo:updateSvrMallRegion(msg.region)
+	mo.mall:updateSvrMallRegion(msg.region)
 
 	if self.select then
 		AutoChessController.instance:dispatchEvent(AutoChessEvent.ForcePickReply)
@@ -199,10 +195,10 @@ function AutoChessRpc:onReceiveAutoChessUseMasterSkillReply(resultCode, msg)
 		return
 	end
 
-	local mo = AutoChessModel.instance:getChessMo()
+	local mo = AutoChessModel.instance:getSceneMo()
 
 	mo:updateSvrTurn(msg.turn)
-	mo.svrFight:updateMasterSkill(msg.skill)
+	mo.fight.mySideMaster:updateMasterSkill(msg.skill)
 end
 
 function AutoChessRpc:sendAutoChessPreviewFightRequest(moduleId, callback, callbackObj)
@@ -218,13 +214,9 @@ function AutoChessRpc:onReceiveAutoChessPreviewFightReply(resultCode, msg)
 		return
 	end
 
-	local mo = AutoChessModel.instance:getChessMo()
+	local mo = AutoChessModel.instance:getSceneMo()
 
-	mo.preview = true
-
-	if mo.previewCoin ~= 0 then
-		mo:updateSvrMallCoin(mo.svrMall.coin - mo.previewCoin)
-	end
+	mo:previewChange()
 end
 
 function AutoChessRpc:sendAutoChessGiveUpRequest(moduleId, callback, callbackObj)
@@ -240,7 +232,7 @@ function AutoChessRpc:onReceiveAutoChessGiveUpReply(resultCode, msg)
 		return
 	end
 
-	local mo = AutoChessModel.instance:getChessMo(true)
+	local mo = AutoChessModel.instance:getSceneMo(true)
 
 	if mo then
 		mo:clearData()
@@ -252,9 +244,9 @@ function AutoChessRpc:onReceiveAutoChessScenePush(resultCode, msg)
 		return
 	end
 
-	local mo = AutoChessModel.instance:getChessMo()
+	local mo = AutoChessModel.instance:getSceneMo()
 
-	mo:updateSvrScene(msg.scene)
+	mo:init(msg.scene)
 end
 
 function AutoChessRpc:onReceiveAutoChessRoundSettlePush(resultCode, msg)
@@ -289,12 +281,11 @@ function AutoChessRpc:onReceiveAutoChessEnterFriendFightSceneReply(resultCode, m
 		return
 	end
 
-	AutoChessModel.instance:enterSceneReply(msg.moduleId, msg.scene)
+	AutoChessModel.instance:onEnterScene(msg.moduleId, msg.scene, msg.activityId)
 
-	local mo = AutoChessModel.instance:getChessMo()
+	local mo = AutoChessModel.instance:getSceneMo()
 
 	if mo then
-		mo:cacheSvrFight()
 		mo:updateSvrTurn(msg.turn)
 		mo:cacheSvrFight()
 		AutoChessController.instance:enterSingleGame()
@@ -315,7 +306,7 @@ function AutoChessRpc:onReceiveAutoChessUseSkillReply(resultCode, msg)
 		return
 	end
 
-	local mo = AutoChessModel.instance:getChessMo()
+	local mo = AutoChessModel.instance:getSceneMo()
 
 	if mo then
 		mo:updateSvrTurn(msg.turn)

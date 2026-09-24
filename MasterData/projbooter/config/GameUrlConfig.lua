@@ -45,6 +45,16 @@ function GameUrlConfig.getLoginUrls(bak)
 				end
 			end
 
+			if isDebugBuild then
+				local gmChannelId = tostring(SDKMgr.instance:getChannelId() or "100")
+				local GMServerUrlConfig = require("modules.logic.gm.GMServerUrlConfig")
+				local gmOverrideUrl = GMServerUrlConfig.getOverrideLoginUrl(gmChannelId)
+
+				if gmOverrideUrl then
+					httpLoginUrl = gmOverrideUrl
+				end
+			end
+
 			local getSessionIdUrl = httpLoginUrl .. "/login0.jsp"
 			local httpWebLoginUrl = httpLoginUrl .. "/login.jsp"
 			local getServerListUrl = httpLoginUrl .. "/loadzone.jsp"

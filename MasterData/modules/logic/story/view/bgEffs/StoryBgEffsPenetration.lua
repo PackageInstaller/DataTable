@@ -19,15 +19,17 @@ function StoryBgEffsPenetration:init(bgCo)
 end
 
 function StoryBgEffsPenetration:start(callback, callbackObj)
-	StoryBgEffsPenetration.super.start(self)
+	if self._bgCo.effDegree ~= 0 then
+		return
+	end
 
-	self._finishedCallback = callback
-	self._finishedCallbackObj = callbackObj
+	StoryBgEffsPenetration.super.start(self, callback, callbackObj)
+end
 
+function StoryBgEffsPenetration:onStartEffect()
 	self:_setViewTop(true)
 	ViewMgr.instance:registerCallback(ViewEvent.OnOpenView, self._onOpenView, self)
 	ViewMgr.instance:registerCallback(ViewEvent.OnCloseView, self._onCloseView, self)
-	self:loadRes()
 end
 
 function StoryBgEffsPenetration:_onOpenView(viewName)
@@ -92,13 +94,7 @@ end
 
 function StoryBgEffsPenetration:_onEndFinished()
 	UIBlockMgr.instance:endBlock("penetrationEnding")
-
-	if self._finishedCallback then
-		self._finishedCallback(self._finishedCallbackObj)
-
-		self._finishedCallback = nil
-		self._finishedCallbackObj = nil
-	end
+	self:callFinished()
 end
 
 function StoryBgEffsPenetration:destroy()

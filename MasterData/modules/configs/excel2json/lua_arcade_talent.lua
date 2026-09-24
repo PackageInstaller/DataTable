@@ -15,7 +15,9 @@ local primaryKey = {
 	"id",
 	"level"
 }
-local mlStringKey = {}
+local mlStringKey = {
+	name = 1
+}
 
 function lua_arcade_talent.onLoad(json)
 	lua_arcade_talent.configList, lua_arcade_talent.configDict = JsonToLuaParser.parse(json, fields, primaryKey, mlStringKey)

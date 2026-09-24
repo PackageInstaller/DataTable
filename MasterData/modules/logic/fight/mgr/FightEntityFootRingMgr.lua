@@ -62,6 +62,10 @@ function FightEntityFootRingMgr:_setSpineFlyEffect(spine)
 		return
 	end
 
+	if target_entity.isFightSummonedFakeEntityObject then
+		return
+	end
+
 	local entity_id = target_entity.id
 	local entity_mo = target_entity:getMO()
 

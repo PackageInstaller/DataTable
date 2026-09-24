@@ -22,6 +22,14 @@ function FightEntitySummonedComp:_refreshSummoned()
 end
 
 function FightEntitySummonedComp:_instantiateSummoned(data)
+	local config = FightConfig.instance:getSummonedConfig(data.summonedId, data.level)
+
+	if config.keyForEntiySummon ~= 0 then
+		self:newClass(FightEntitySummonedEntityItem, self._entity, data, config)
+
+		return
+	end
+
 	local classname = "FightEntitySummonedItem" .. data.summonedId
 
 	if _G[classname] then

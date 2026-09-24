@@ -39,7 +39,7 @@ function GMToolStoryView:_onbtnplayOnClick()
 		local stepId = results[2]
 
 		if storyId then
-			PlayerPrefsHelper.setString(PlayerPrefsKey.GMToolViewStory, storyId)
+			PlayerPrefsHelper.setString(PlayerPrefsKey.GMToolViewStory, txt)
 
 			if stepId then
 				StoryController.instance:playStoryByStartStep(storyId, stepId)

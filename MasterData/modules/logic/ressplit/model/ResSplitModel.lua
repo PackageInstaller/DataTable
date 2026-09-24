@@ -4,7 +4,7 @@ module("modules.logic.ressplit.model.ResSplitModel", package.seeall)
 
 local ResSplitModel = class("ResSplitModel", BaseModel)
 
-function ResSplitModel:init(characterIdDic, chapterIdDic, audioDic, storyIdDic, guideIdDic, videoDic, pathDic, seasonDic)
+function ResSplitModel:init(characterIdDic, chapterIdDic, audioDic, storyIdDic, guideIdDic, videoDic, pathDic, seasonDic, skinIdDic)
 	self._excludeDic = {}
 	self._includeDic = {}
 	self._excludeStoryIdsDic = {}
@@ -13,7 +13,7 @@ function ResSplitModel:init(characterIdDic, chapterIdDic, audioDic, storyIdDic, 
 	self._includeChapterIdDic = chapterIdDic
 	self._includeStoryIdDic = storyIdDic
 	self._includeGuideIdDic = guideIdDic
-	self._includeSkinDic = {}
+	self._includeSkinDic = skinIdDic or {}
 	self._includeSkillDic = {}
 	self._includeTimelineDic = {}
 	self.includeSeasonDic = seasonDic

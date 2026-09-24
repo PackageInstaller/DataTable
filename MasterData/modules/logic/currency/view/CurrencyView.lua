@@ -128,6 +128,26 @@ function CurrencyView._onClick(param)
 	end
 end
 
+function CurrencyView:setVisible(isVisible)
+	self._isVisible = isVisible
+
+	if not self.viewGO then
+		return
+	end
+
+	self._canvasGroup = self._canvasGroup or gohelper.onceAddComponent(self.viewGO, typeof(UnityEngine.CanvasGroup))
+
+	if isVisible then
+		self._canvasGroup.alpha = 1
+		self._canvasGroup.interactable = true
+		self._canvasGroup.blocksRaycasts = true
+	else
+		self._canvasGroup.alpha = 0
+		self._canvasGroup.interactable = false
+		self._canvasGroup.blocksRaycasts = false
+	end
+end
+
 function CurrencyView:_editableInitView()
 	gohelper.setActive(self._gocurrency, false)
 

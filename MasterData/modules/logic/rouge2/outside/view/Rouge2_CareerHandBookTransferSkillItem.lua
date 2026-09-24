@@ -20,7 +20,7 @@ function Rouge2_CareerHandBookTransferSkillItem:addEventListeners()
 	self._btnSearch:AddClickListener(self._btnSearchOnClick, self)
 end
 
-function Rouge2_CareerHandBookTransferSkillItem:addEventListeners()
+function Rouge2_CareerHandBookTransferSkillItem:removeEventListeners()
 	self._btnSearch:RemoveClickListener()
 end
 

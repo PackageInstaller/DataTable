@@ -30,7 +30,7 @@ function VersionActivity2_9DungeonMapInteractView:hide()
 	gohelper.setActive(self._gointeractitem, false)
 	gohelper.setActive(self._gointeractroot, false)
 	TaskDispatcher.cancelTask(self.everySecondCall, self)
-	VersionActivityFixedHelper.getVersionActivityDungeonController().instance:dispatchEvent(VersionActivityFixedDungeonEvent.OnHideInteractUI)
+	VersionActivityFixedDungeonController.instance:dispatchEvent(VersionActivityFixedDungeonEvent.OnHideInteractUI)
 end
 
 return VersionActivity2_9DungeonMapInteractView

@@ -12,7 +12,9 @@ local primaryKey = {
 	"activityId",
 	"optionId"
 }
-local mlStringKey = {}
+local mlStringKey = {
+	optionName = 1
+}
 
 function lua_activity241_option.onLoad(json)
 	lua_activity241_option.configList, lua_activity241_option.configDict = JsonToLuaParser.parse(json, fields, primaryKey, mlStringKey)

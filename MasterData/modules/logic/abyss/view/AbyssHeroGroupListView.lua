@@ -10,6 +10,8 @@ function AbyssHeroGroupListView:addEvents()
 	self.addEventCb(self, HeroGroupController.instance, HeroGroupEvent.OnModifyGroupSelectIndex, self._checkRestrictHero, self)
 	self.addEventCb(self, HeroGroupController.instance, HeroGroupEvent.OnModifyHeroGroup, self._checkRestrictHero, self)
 	self.addEventCb(self, HeroGroupController.instance, HeroGroupEvent.OnReadPreset, self.onReadPreset, self)
+	self.addEventCb(self, AbyssController.instance, AbyssEvent.OnSelectPickAssist, self._updateHeroList, self)
+	self.addEventCb(self, AbyssController.instance, AbyssEvent.OnReleasePickAssist, self.onReleaseAssist, self)
 end
 
 function AbyssHeroGroupListView:removeEvents()
@@ -18,6 +20,8 @@ function AbyssHeroGroupListView:removeEvents()
 	self.removeEventCb(self, HeroGroupController.instance, HeroGroupEvent.OnModifyGroupSelectIndex, self._checkRestrictHero, self)
 	self.removeEventCb(self, HeroGroupController.instance, HeroGroupEvent.OnModifyHeroGroup, self._checkRestrictHero, self)
 	self.removeEventCb(self, HeroGroupController.instance, HeroGroupEvent.OnReadPreset, self.onReadPreset, self)
+	self.removeEventCb(self, AbyssController.instance, AbyssEvent.OnSelectPickAssist, self._updateHeroList, self)
+	self.removeEventCb(self, AbyssController.instance, AbyssEvent.OnReleasePickAssist, self.onReleaseAssist, self)
 end
 
 function AbyssHeroGroupListView:_getHeroItemCls()
@@ -31,11 +35,21 @@ function AbyssHeroGroupListView:onOpen()
 end
 
 function AbyssHeroGroupListView:onResetStage()
-	return
+	self:checkReplaceHeroList()
+	self:_updateHeroList()
+	self:_checkRestrictHero()
 end
 
 function AbyssHeroGroupListView:onReadPreset()
-	HeroSingleGroupModel.instance:setSingleGroup(HeroGroupModel.instance:getCurGroupMO(), true)
+	local snapshotType = ModuleEnum.HeroGroupSnapshotType.Abyss
+	local curStageInfo = AbyssModel.instance:getCurStageMo()
+	local heroGroupMO = HeroGroupSnapshotModel.instance:getHeroGroupInfo(snapshotType, curStageInfo.heroGroupSubId, true)
+
+	HeroSingleGroupModel.instance:setSingleGroup(heroGroupMO, true)
+	self:checkReplaceHeroList()
+end
+
+function AbyssHeroGroupListView:onReleaseAssist()
 	self:checkReplaceHeroList()
 	self:_updateHeroList()
 	self:_checkRestrictHero()
@@ -56,45 +70,49 @@ function AbyssHeroGroupListView:checkReplaceHeroList()
 					local heroList = {}
 
 					for i = 1, #heroIds do
-						local heroMo = HeroModel.instance:getByHeroId(heroIds[i] or 0)
+						local heroId = heroIds[i]
 
-						if heroMo then
-							local trialId = trialHeros[i]
+						if not infoMo:isHeroAssist(heroId) then
+							local heroMo = HeroModel.instance:getByHeroId(heroId or 0)
 
-							if trialId and trialId > 0 then
-								local trialCo = lua_hero_trial.configDict[trialId][0]
-								local heroId = tostring(tonumber(trialCo.id .. "." .. trialCo.trialTemplate) - 1099511627776)
+							if heroMo then
+								local trialId = trialHeros[i]
 
-								table.insert(heroList, {
-									heroUid = heroId,
-									equipUid = {
-										tostring(trialCo.equipId)
-									}
-								})
+								if trialId and trialId > 0 then
+									local trialCo = lua_hero_trial.configDict[trialId][0]
+									local heroId = tostring(tonumber(trialCo.id .. "." .. trialCo.trialTemplate) - 1099511627776)
+
+									table.insert(heroList, {
+										heroUid = heroId,
+										equipUid = {
+											tostring(trialCo.equipId)
+										}
+									})
+								else
+									local equipUids
+
+									table.insert(heroList, {
+										heroUid = heroMo.uid,
+										equipUid = (equipUid[heroIds[i]] or nil) and equipUid[heroIds[i]]
+									})
+								end
 							else
-								local equipUids
+								for _, trialHeroId in ipairs(trialHeros) do
+									if trialHeroId > 0 then
+										local trialCo = lua_hero_trial.configDict[trialHeroId][0]
 
-								table.insert(heroList, {
-									heroUid = heroMo.uid,
-									equipUid = (equipUid[heroIds[i]] or nil) and equipUid[heroIds[i]]
-								})
-							end
-						else
-							for _, trialHeroId in ipairs(trialHeros) do
-								if trialHeroId > 0 then
-									local trialCo = lua_hero_trial.configDict[trialHeroId][0]
+										if trialCo and trialCo.heroId == heroIds[i] then
+											local heroId = tostring(tonumber(trialCo.id .. "." .. trialCo.trialTemplate) - 1099511627776)
 
-									if trialCo and trialCo.heroId == heroIds[i] then
-										local heroId = tostring(tonumber(trialCo.id .. "." .. trialCo.trialTemplate) - 1099511627776)
+											table.insert(heroList, {
+												heroUid = heroId,
+												equipUid = {
+													tostring(trialCo.equipId)
+												}
+											})
 
-										table.insert(heroList, {
-											heroUid = heroId,
-											equipUid = {
-												tostring(trialCo.equipId)
-											}
-										})
-
-										break
+											break
+										end
 									end
 								end
 							end
@@ -111,12 +129,13 @@ function AbyssHeroGroupListView:checkReplaceHeroList()
 	else
 		local groupMO = HeroGroupModel.instance:getCurGroupMO()
 		local actInfoMo = AbyssModel.instance:getCurInfoMo()
+		local stageInfoMo = AbyssModel.instance:getCurStageMo()
 		local removeList = {}
 
 		for _, heroUid in ipairs(groupMO.heroList) do
 			local heroMo = HeroModel.instance:getById(heroUid)
 
-			if heroMo and actInfoMo:isHeroUsed(heroMo.heroId, infoMo.lastUpdateTime) then
+			if heroUid ~= nil and heroUid ~= "0" and not heroMo or heroMo and actInfoMo:isHeroUsed(heroMo.heroId, infoMo.lastUpdateTime) then
 				table.insert(removeList, heroUid)
 			end
 		end

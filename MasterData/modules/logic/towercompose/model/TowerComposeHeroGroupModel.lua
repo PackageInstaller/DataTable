@@ -211,14 +211,14 @@ function TowerComposeHeroGroupModel:getThemePlaneAssistType(themeId, heroId)
 end
 
 function TowerComposeHeroGroupModel:getNotUsedAssistType(themeId)
-	local notUsedAssistType = PickAssistEnum.Type.TowerCompose1
+	local notUsedAssistType = PickAssistEnum.Type.TowerComposeSupport1
 	local usedAssistTypeMap = {}
 
 	for heroId, assistType in pairs(self.themePlaneAssistTypeMap[themeId] or {}) do
 		usedAssistTypeMap[assistType] = true
 	end
 
-	for assistType = PickAssistEnum.Type.TowerCompose1, PickAssistEnum.Type.TowerCompose2 do
+	for assistType = PickAssistEnum.Type.TowerComposeSupport1, PickAssistEnum.Type.TowerComposeSupport2 do
 		if not usedAssistTypeMap[assistType] then
 			notUsedAssistType = assistType
 
@@ -265,7 +265,30 @@ function TowerComposeHeroGroupModel:buildSaveParams(saveBuffParamsStr)
 	local curGroupMO = HeroGroupModel.instance:getCurGroupMO()
 	local saveParamData = {}
 
-	saveParamData.heroList = curGroupMO.heroList
+	saveParamData.heroList = {}
+
+	for index, heroSingleGroupMO in ipairs(HeroSingleGroupModel.instance:getList()) do
+		saveParamData.heroList[index] = heroSingleGroupMO.heroUid
+	end
+
+	local assistMoList = HeroGroupModel.instance:getAssistMoList()
+	local equips = curGroupMO:getAllHeroEquips()
+
+	for _, assistMo in ipairs(assistMoList) do
+		for i, info in ipairs(equips) do
+			local heroUid = info.heroUid
+			local heroMo = HeroModel.instance:getById(heroUid)
+
+			if heroMo and assistMo.assistMo.heroId == heroMo.heroId then
+				info.heroUid = assistMo.heroUid
+
+				break
+			end
+		end
+
+		saveParamData.heroList[assistMo.id] = assistMo.assistMo.heroUid
+	end
+
 	saveParamData.buffParamsStr = saveBuffParamsStr
 	saveParamData.assistDataMap = self.themePlaneAssitDataMap
 
@@ -340,6 +363,41 @@ function TowerComposeHeroGroupModel:checkCanSelectTrialHero(trialCo, index, isQu
 	end
 
 	return (not hasTrialMo or not trialCo or hasTrialPos == index or trialCo.id == hasTrialMo.trial) and canQuickSelect
+end
+
+function TowerComposeHeroGroupModel:checkCanSelectAssistHero(heroUid, curIndex, targetIndex)
+	if not targetIndex then
+		return false
+	end
+
+	local recordFightParam = TowerComposeModel.instance:getRecordFightParam()
+	local targetPlaneId = recordFightParam.plane
+
+	if recordFightParam.plane == TowerComposeEnum.PlaneType.Twice then
+		targetPlaneId = Mathf.Ceil(targetIndex / 4)
+	end
+
+	local isAssistInPlane = TowerComposeModel.instance:getAssistIsInPlane(heroUid)
+
+	if isAssistInPlane and isAssistInPlane > 0 then
+		if targetPlaneId ~= isAssistInPlane then
+			return false, isAssistInPlane
+		end
+	else
+		local planeAssistMo = TowerComposeModel.instance:getAssistMo({
+			planeId = targetPlaneId
+		})
+
+		if planeAssistMo and planeAssistMo.id > 0 and planeAssistMo.id == targetIndex then
+			local curPlaneId = Mathf.Ceil(curIndex / 4)
+
+			if curPlaneId ~= targetPlaneId then
+				return false, targetPlaneId
+			end
+		end
+	end
+
+	return true
 end
 
 function TowerComposeHeroGroupModel:getQuickSelectOrder()
@@ -544,6 +602,10 @@ function TowerComposeHeroGroupModel:replaceLockPlaneHeroList(heroGroupMo, lockHe
 				heroGroupMo.heroList[pos] = "0"
 			end
 		end
+
+		if heroData.assistMo then
+			heroGroupMo.heroList[pos] = "0"
+		end
 	end
 end
 
@@ -556,6 +618,36 @@ function TowerComposeHeroGroupModel:checkHeroUidIsInLockPlane(heroUid)
 	for pos, uid in ipairs(heroGroupMo.heroList) do
 		if heroUid == uid then
 			local planeId = Mathf.Ceil(pos / 4)
+			local isPlaneLock = TowerComposeModel.instance:checkPlaneLock(themeId, planeId)
+			local planeMo = themeMo:getPlaneMo(planeId)
+
+			return isPlaneLock and planeMo.hasFight
+		end
+
+		local isAssistInPlane = TowerComposeModel.instance:getAssistIsInPlane(heroUid)
+
+		if isAssistInPlane and isAssistInPlane > 0 then
+			local isPlaneLock = TowerComposeModel.instance:checkPlaneLock(themeId, isAssistInPlane)
+			local planeMo = themeMo:getPlaneMo(isAssistInPlane)
+
+			return isPlaneLock and planeMo.hasFight
+		end
+	end
+
+	return false
+end
+
+function TowerComposeHeroGroupModel:checkHeroIdIsInLockPlane(heroId)
+	local recordFightParam = TowerComposeModel.instance:getRecordFightParam()
+	local themeId = recordFightParam.themeId
+	local themeMo = TowerComposeModel.instance:getThemeMo(themeId)
+	local heroList = HeroSingleGroupModel.instance:getList()
+
+	for index, heroSingleGroupMO in ipairs(heroList) do
+		local heroMo = HeroModel.instance:getById(heroSingleGroupMO.heroUid)
+
+		if heroMo and heroId == heroMo.heroId then
+			local planeId = Mathf.Ceil(index / 4)
 			local isPlaneLock = TowerComposeModel.instance:checkPlaneLock(themeId, planeId)
 			local planeMo = themeMo:getPlaneMo(planeId)
 
@@ -620,9 +712,9 @@ function TowerComposeHeroGroupModel:checkAndDropAssistHero(themeId, planeId)
 		self:setThemePlaneAssistData(themeId, planeId, nil)
 
 		if heroId <= 0 or not heroId then
-			::label_31_0::
+			::label_33_0::
 
-			local var_31_0 = teamInfoData.assistHero.heroId
+			local var_33_0 = teamInfoData.assistHero.heroId
 
 			if not teamInfoData.assistHero.heroId then
 				local removeHeroId = 0

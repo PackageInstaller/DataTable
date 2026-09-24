@@ -33,7 +33,9 @@ function TaskConfigGetDefine:ctor()
 		[TaskEnum.TaskType.Act231] = TaskConfigGetDefine._getAct231Task,
 		[TaskEnum.TaskType.ActBp] = TaskConfigGetDefine._getActBpTask,
 		[TaskEnum.TaskType.Activity220] = TaskConfigGetDefine._getAct220Task,
-		[TaskEnum.TaskType.Turnback] = TaskConfigGetDefine._getTurnBackTask
+		[TaskEnum.TaskType.Turnback] = TaskConfigGetDefine._getTurnBackTask,
+		[TaskEnum.TaskType.SonnetInterchapter] = TaskConfigGetDefine._getSonnetInterchapterTask,
+		[TaskEnum.TaskType.ConcerActFlip] = TaskConfigGetDefine._getConcerActFlipTask
 	}
 end
 
@@ -141,6 +143,14 @@ end
 
 function TaskConfigGetDefine._getTurnBackTask(id)
 	return TurnbackConfig.instance:getTurnbackTaskCo(id)
+end
+
+function TaskConfigGetDefine._getSonnetInterchapterTask(id)
+	return SonnetInterchapterConfig.instance:getTaskCo(id)
+end
+
+function TaskConfigGetDefine._getConcerActFlipTask(id)
+	return ActFlipConfig.instance:getTaskCo(id)
 end
 
 TaskConfigGetDefine.instance = TaskConfigGetDefine.New()

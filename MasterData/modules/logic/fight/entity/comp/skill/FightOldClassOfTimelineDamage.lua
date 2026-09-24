@@ -889,7 +889,7 @@ function FightOldClassOfTimelineDamage:_playHitVoice(entity)
 			end
 		end
 
-		FightAudioMgr.instance:playHitVoice(heroId, customAudioLang)
+		FightAudioMgr.instance:playHitVoice(heroId, customAudioLang, entityMO and entityMO.skin)
 	end
 end
 

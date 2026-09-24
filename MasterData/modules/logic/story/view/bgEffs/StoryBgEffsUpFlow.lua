@@ -21,15 +21,6 @@ function StoryBgEffsUpFlow:init(bgCo)
 	self._cfg = bgCo
 end
 
-function StoryBgEffsUpFlow:start(callback, callbackObj)
-	StoryBgEffsUpFlow.super.start(self)
-
-	self._finishedCallback = callback
-	self._finishedCallbackObj = callbackObj
-
-	self:loadRes()
-end
-
 function StoryBgEffsUpFlow:onLoadFinished()
 	StoryBgEffsUpFlow.super.onLoadFinished(self)
 
@@ -60,9 +51,6 @@ function StoryBgEffsUpFlow:destroy()
 	end
 
 	StoryBgEffsUpFlow.super.destroy(self)
-
-	self._finishedCallback = nil
-	self._finishedCallbackObj = nil
 end
 
 return StoryBgEffsUpFlow

@@ -136,6 +136,7 @@ function FightEntityMO:init(info, side)
 	self.toughnessPoint = info.toughnessPoint
 	self.isBroken = info.isBroken
 	self.exPointMax = info.exPointMax
+	self.qteSkillGroup = info.qteSkillGroup
 end
 
 function FightEntityMO:onStageChanged(curStage, preStage)
@@ -983,6 +984,10 @@ function FightEntityMO:clearNotifyBindContract()
 	self.notifyBindContract = nil
 end
 
+function FightEntityMO:isStatusNormal()
+	return self.status == FightEnum.EntityStatus.Normal
+end
+
 function FightEntityMO:isStatusDead()
 	return self.status == FightEnum.EntityStatus.Dead
 end
@@ -1241,14 +1246,14 @@ function FightEntityMO:getEquipMo()
 		self.equipMo = EquipMO.New()
 
 		self.equipMo:init({
-			count = 1,
 			exp = 0,
+			count = 1,
 			uid = self.equipRecord.equipUid,
 			equipId = self.equipRecord.equipId,
 			level = self.equipRecord.equipLv,
-			refineLv = self.equipRecord.refineLv
+			refineLv = self.equipRecord.refineLv,
+			breakLv = self.equipRecord.breakLv
 		})
-		self.equipMo:setBreakLvByLevel()
 	end
 
 	return self.equipMo
@@ -1395,6 +1400,51 @@ function FightEntityMO:getHeDuoNieBuffData()
 			end
 		end
 	end
+end
+
+function FightEntityMO:isQteEntity()
+	return self.qteSkillGroup and self.qteSkillGroup ~= 0
+end
+
+function FightEntityMO:getQteGroupCo()
+	if self.qteSkillGroupCo then
+		return self.qteSkillGroupCo
+	end
+
+	self.qteSkillGroupCo = lua_fight_qte_skillgroup.configDict[self.qteSkillGroup]
+
+	return self.qteSkillGroupCo
+end
+
+function FightEntityMO:getQTEMO()
+	if not self.qteSkillGroup or self.qteSkillGroup == 0 then
+		self.qteMo = nil
+
+		return
+	end
+
+	if self.qteMo then
+		return self.qteMo
+	end
+
+	self.qteMo = HeroQTEMO.New()
+
+	self.qteMo:setHero(self.modelId, self)
+	self.qteMo:onRefresh(self.qteSkillGroup)
+
+	return self.qteMo
+end
+
+function FightEntityMO:setDying()
+	self.status = FightEnum.EntityStatus.Dying
+end
+
+function FightEntityMO:checkIsDying()
+	return self.status == FightEnum.EntityStatus.Dying
+end
+
+function FightEntityMO:setStatus(status)
+	self.status = status
 end
 
 function FightEntityMO:set_position(key, position)

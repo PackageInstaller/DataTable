@@ -600,14 +600,13 @@ function RougeHeroGroupEditView:_refreshAttribute()
 	if self._heroMO then
 		local mo = HeroGroupTrialModel.instance:getById(self._originalHeroUid)
 		local trialEquipMo
-		local var_25_0
 
 		if mo then
 			trialEquipMo = mo.trialEquipMo
-			var_25_0 = RougeHeroGroupBalanceHelper.getIsBalanceMode() and not self._heroMO:isTrial()
 		end
 
-		local attrDict = self._heroMO:getTotalBaseAttrDict(self._equips, nil, nil, var_25_0, trialEquipMo, RougeHeroGroupBalanceHelper.getHeroBalanceInfo)
+		local useBalance = RougeHeroGroupBalanceHelper.getIsBalanceMode() and not self._heroMO:isTrial()
+		local attrDict = self._heroMO:getTotalBaseAttrDict(self._equips, nil, nil, useBalance, trialEquipMo, RougeHeroGroupBalanceHelper.getHeroBalanceInfo)
 
 		for index, attrId in ipairs(CharacterEnum.BaseAttrIdList) do
 			local co = HeroConfig.instance:getHeroAttributeCO(attrId)
@@ -950,6 +949,9 @@ function RougeHeroGroupEditView:_editableInitView()
 	self._skillContainer = MonoHelper.addNoUpdateLuaComOnceToGo(self._goskill, CharacterSkillContainer)
 
 	self._skillContainer:setBalanceHelper(RougeHeroGroupBalanceHelper)
+
+	self._skillContainer.viewContainer = self.viewContainer
+
 	gohelper.setActive(self._gononecharacter, false)
 	gohelper.setActive(self._gocharacterinfo, false)
 
@@ -990,8 +992,9 @@ function RougeHeroGroupEditView:_initCapacity()
 	self._assistCapacity = self.viewParam.assistCapacity
 	self._assistPos = self.viewParam.assistPos
 	self._assistHeroId = self.viewParam.assistHeroId
+	self._assistHeroMo = self.viewParam.assistHeroMo
 
-	RougeHeroGroupEditListModel.instance:setCapacityInfo(self._selectHeroCapacity, self._curCapacity, self._totalCapacity, self._assistCapacity, self._assistPos, self._assistHeroId)
+	RougeHeroGroupEditListModel.instance:setCapacityInfo(self._selectHeroCapacity, self._curCapacity, self._totalCapacity, self._assistCapacity, self._assistPos, self._assistHeroId, self._assistHeroMo)
 
 	if not self._capacityComp then
 		local volumeGo = gohelper.findChild(self.viewGO, "characterinfo/volumebg/volume")

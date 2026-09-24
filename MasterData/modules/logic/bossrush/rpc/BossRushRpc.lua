@@ -33,7 +33,7 @@ function BossRushRpc:sendGet128InfosRequest(callback, cbObj)
 			self:sendAct128InfosRequest(actId, function(cmd, resultCode, msg)
 				waitActInfos[actId] = nil
 
-				if (not waitActInfos or #waitActInfos == 0) and callback then
+				if (not waitActInfos or tabletool.len(waitActInfos) == 0) and callback then
 					callback(cbObj, cmd, resultCode, msg)
 				end
 			end)
@@ -44,7 +44,7 @@ end
 function BossRushRpc:sendAct128InfosRequest(actId, callback, cbObj)
 	Activity128Rpc.sendGet128InfosRequest(self, actId, function(cmd, resultCode, msg)
 		if callback then
-			callback(cbObj, cmd, resultCode, msg)
+			callback(cmd, resultCode, msg)
 		end
 	end)
 end

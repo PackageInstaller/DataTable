@@ -347,6 +347,18 @@ function PlayerRpc:onReceiveSetUiStyleSkinReply(resultCode, msg)
 	GameFacade.showToast(ToastEnum.MainUISwitchSuccess)
 end
 
+function PlayerRpc:sendMainSceneLoadCompleteRequest()
+	local req = PlayerModule_pb.MainSceneLoadCompleteRequest()
+
+	self:sendMsg(req)
+end
+
+function PlayerRpc:onReceiveMainSceneLoadCompleteReply(resultCode, msg)
+	if resultCode ~= 0 then
+		return
+	end
+end
+
 PlayerRpc.instance = PlayerRpc.New()
 
 return PlayerRpc

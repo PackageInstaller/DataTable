@@ -71,15 +71,15 @@ V3a9BossRushEnum.HeightScoreEffect = {
 	},
 	{
 		txtColor = "#3A2F56",
-		bg = "v3a9_bossrush_btn_scorebg1"
+		vxnode = "node_level2"
 	},
 	{
 		txtColor = "#5C3710",
-		bg = "v3a9_bossrush_btn_scorebg4"
+		vxnode = "node_level3"
 	},
 	{
 		txtColor = "#33343A",
-		bg = "v3a9_bossrush_btn_scorebg5"
+		vxnode = "node_level4"
 	}
 }
 

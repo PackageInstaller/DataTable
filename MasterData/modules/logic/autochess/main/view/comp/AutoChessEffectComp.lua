@@ -14,7 +14,7 @@ end
 
 function AutoChessEffectComp:playEffect(effectCo, param)
 	if type(effectCo) == "number" then
-		effectCo = lua_auto_chess_effect.configDict[effectCo]
+		effectCo = AutoChessConfig.instance:getEffectCfg(effectCo)
 	end
 
 	if effectCo then
@@ -132,7 +132,7 @@ function AutoChessEffectComp:cacheEffect(effectName, time)
 end
 
 function AutoChessEffectComp:removeEffect(effectId)
-	local effectCo = lua_auto_chess_effect.configDict[effectId]
+	local effectCo = AutoChessConfig.instance:getEffectCfg(effectId)
 
 	for name, effectTbl in pairs(self.effectTblMap) do
 		if name == effectCo.nameUp or name == effectCo.nameDown then

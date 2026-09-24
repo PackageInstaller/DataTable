@@ -126,6 +126,12 @@ end
 function GuiLive2d:hideModel()
 	self:_setCameraVisible(false)
 	gohelper.setActive(self._spineGo, false)
+
+	local effect = self:getCustomEffectComp()
+
+	if effect then
+		effect:hideModel()
+	end
 end
 
 function GuiLive2d:showModel()
@@ -140,6 +146,12 @@ function GuiLive2d:showModel()
 
 	if not self._uiEffectGos then
 		self:_addDelayProcessEffect()
+	end
+
+	local effect = self:getCustomEffectComp()
+
+	if effect then
+		effect:showModel()
 	end
 end
 
@@ -539,6 +551,10 @@ function GuiLive2d:getRTViewName()
 	return self._rtViewName
 end
 
+function GuiLive2d:getViewName()
+	return self._rtViewName
+end
+
 function GuiLive2d.getTextureSizeByCameraSize(cameraSize)
 	local textureSize = 1600
 
@@ -548,10 +564,10 @@ function GuiLive2d.getTextureSizeByCameraSize(cameraSize)
 end
 
 function GuiLive2d:_getOpenBloomView()
-	local var_47_0 = self._openBloomView
+	local var_48_0 = self._openBloomView
 
 	if self._openBloomView then
-		var_47_0 = self._skinId
+		var_48_0 = self._skinId
 
 		if self._skinId then
 			local config = lua_skin_ui_bloom.configDict[self._skinId]

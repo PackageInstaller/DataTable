@@ -45,7 +45,14 @@ function TeachNoteTopicListItem:_onItemClick()
 	end
 
 	if not TeachNoteModel.instance:isTopicUnlock(self.id) then
-		GameFacade.showToast(ToastEnum.TeachNoteTopic)
+		local topicCo = TeachNoteConfig.instance:getInstructionTopicCO(self.id)
+
+		if topicCo and topicCo.spToastId and topicCo.spToastId > 0 then
+			GameFacade.showToast(topicCo.spToastId)
+		else
+			GameFacade.showToast(ToastEnum.TeachNoteTopic)
+		end
+
 		AudioMgr.instance:trigger(AudioEnum.TeachNote.play_ui_no_requirement)
 
 		return

@@ -29,7 +29,7 @@ function AutoChessRankUpView:onOpen()
 	badgeItem:setData(self.actMo.rank, self.actMo.score, AutoChessBadgeItem.ShowType.RankUpView)
 
 	if self.actMo.newRankUp then
-		local rankCo = lua_auto_chess_rank.configDict[self.actMo.activityId][self.actMo.rank]
+		local rankCo = AutoChessConfig.instance:getRankCfg(self.actMo.rank)
 
 		if rankCo then
 			local list = DungeonConfig.instance:getRewardItems(rankCo.reward)
@@ -43,10 +43,10 @@ function AutoChessRankUpView:onOpen()
 				cell_component:setCountFontSize(32)
 			end
 
-			gohelper.setActive(self.goReward, #list ~= 0)
+			gohelper.setActive(self._goReward, #list ~= 0)
 		end
 	else
-		gohelper.setActive(self.goReward, false)
+		gohelper.setActive(self._goReward, false)
 	end
 
 	gohelper.setActive(self._goRewardItem, false)

@@ -12,14 +12,15 @@ function PlayerCardGetView:onInitView()
 	self._goLocked = gohelper.findChild(self.viewGO, "right/start/#go_Locked")
 	self._btnclose = gohelper.findChildButtonWithAudio(self.viewGO, "right/start/#btn_close")
 	self._scrollcard = gohelper.findChildScrollRect(self.viewGO, "right/mask/#scroll_card")
-	self._goSceneName = gohelper.findChild(self.viewGO, "left/LayoutGroup/#go_SceneName")
-	self._txtBgName = gohelper.findChildText(self.viewGO, "left/LayoutGroup/#go_SceneName/#txt_SceneName")
-	self._txtTime = gohelper.findChildText(self.viewGO, "left/LayoutGroup/#go_SceneName/#txt_Time")
-	self._gospecialTag = gohelper.findChild(self.viewGO, "left/LayoutGroup/#go_SceneName/go_playercardTag")
+	self._goSceneName = gohelper.findChild(self.viewGO, "left/LayoutGroup/layout/#go_SceneName")
+	self._txtBgName = gohelper.findChildText(self.viewGO, "left/LayoutGroup/layout/#go_SceneName/#txt_SceneName")
+	self._txtTime = gohelper.findChildText(self.viewGO, "left/LayoutGroup/layout/#go_Time/#txt_Time")
+	self._gospecialTag = gohelper.findChild(self.viewGO, "left/LayoutGroup/layout/#go_SceneName/go_playercardTag")
 	self._scrolleffect = gohelper.findChildScrollRect(self.viewGO, "#scroll_effect")
 	self._goeffectItem = gohelper.findChild(self.viewGO, "#scroll_effect/Viewport/Content/#go_effectItem")
 	self._txtBgDescr = gohelper.findChildText(self.viewGO, "left/#txt_SceneDescr")
 	self._btnshow = gohelper.findChildButtonWithAudio(self.viewGO, "#btn_show")
+	self._btnHide = gohelper.findChildButtonWithAudio(self.viewGO, "left/LayoutGroup/#go_HideBtn/#btn_Hide")
 
 	if self._editableInitView then
 		self:_editableInitView()
@@ -30,6 +31,7 @@ function PlayerCardGetView:addEvents()
 	self._btnequip:AddClickListener(self._btnequipOnClick, self)
 	self._btnclose:AddClickListener(self._btncloseOnClick, self)
 	self._btnshow:AddClickListener(self._btnshowOnClick, self)
+	self._btnHide:AddClickListener(self._btnHideOnClick, self)
 	self.addEventCb(self, PlayerCardController.instance, PlayerCardEvent.ChangeSkin, self._onChangeSkin, self)
 end
 
@@ -37,6 +39,7 @@ function PlayerCardGetView:removeEvents()
 	self._btnequip:RemoveClickListener()
 	self._btnclose:RemoveClickListener()
 	self._btnshow:RemoveClickListener()
+	self._btnHide:RemoveClickListener()
 end
 
 function PlayerCardGetView:_btnequipOnClick()
@@ -48,13 +51,39 @@ function PlayerCardGetView:_btncloseOnClick()
 end
 
 function PlayerCardGetView:_btnshowOnClick()
-	return
+	if self._isPreview then
+		self:_btncloseOnClick()
+	end
+
+	self:_btnHideOnClick()
+end
+
+function PlayerCardGetView:_btnHideOnClick()
+	if self._hideTime and Time.time - self._hideTime < 0.2 then
+		return
+	end
+
+	self._hideTime = Time.time
+	self._showUI = not self._showUI
+
+	self:_refreshShowUI()
+	PlayerCardController.instance:dispatchEvent(PlayerCardEvent.PreviewSwitchUIVisible, self._showUI)
+end
+
+function PlayerCardGetView:_refreshShowUI()
+	gohelper.setActive(self._goleft, self._showUI)
+	gohelper.setActive(self._goright, self._showUI)
+	gohelper.setActive(self._btnshow, not self._showUI)
+	self:_checkShowEffect()
 end
 
 function PlayerCardGetView:_editableInitView()
 	self._effectItems = self:getUserDataTb_()
 
 	gohelper.setActive(self._goeffectItem.gameObject, false)
+
+	self._goleft = gohelper.findChild(self.viewGO, "left")
+	self._goright = gohelper.findChild(self.viewGO, "right")
 end
 
 function PlayerCardGetView:onUpdateParam()
@@ -62,6 +91,8 @@ function PlayerCardGetView:onUpdateParam()
 end
 
 function PlayerCardGetView:onOpen()
+	self._isPreview = self.viewParam and self.viewParam.preview
+	self._showUI = not self._isPreview
 	self._id = self.viewParam and self.viewParam.id
 	self._config = ItemConfig.instance:getItemCo(self._id)
 
@@ -76,9 +107,6 @@ function PlayerCardGetView:onOpen()
 
 	local isSpecial = PlayerCardModel.instance:isSpecialCardSkin(self._id)
 
-	gohelper.setActive(self._gospecialTag.gameObject, isSpecial)
-	gohelper.setActive(self._scrolleffect.gameObject, isSpecial)
-
 	if isSpecial then
 		self._showEffectIndex = 1
 
@@ -88,6 +116,17 @@ function PlayerCardGetView:onOpen()
 	end
 
 	gohelper.setActive(self._btnequip.gameObject, not self.viewParam or not self.viewParam.isHideEquipBtn)
+	self:_refreshShowUI()
+end
+
+function PlayerCardGetView:_checkShowEffect()
+	local isSpecial = PlayerCardModel.instance:isSpecialCardSkin(self._id)
+
+	if self._gospecialTag then
+		gohelper.setActive(self._gospecialTag.gameObject, isSpecial and not self._isPreview and self._showUI)
+	end
+
+	gohelper.setActive(self._scrolleffect.gameObject, isSpecial and not self._isPreview and self._showUI)
 end
 
 function PlayerCardGetView:_refreshSpecialUI()

@@ -20,11 +20,8 @@ function ShowCharacterView:onInitView()
 	self._goAssistReward = gohelper.findChild(self.viewGO, "#go_gather")
 	self._txtAssistRewardCount = gohelper.findChildTextMesh(self.viewGO, "#go_gather/#txt_count")
 	self._btnGetAssistReward = gohelper.findChildButtonWithAudio(self.viewGO, "#go_gather/#btn_gather")
-	self._btnAssistTip = gohelper.findChildButtonWithAudio(self.viewGO, "#go_gather/#btn_tip")
 	self._goCanGetAssistReward = gohelper.findChild(self.viewGO, "#go_gather/go_canget")
-	self._goAssistRewardTip = gohelper.findChild(self.viewGO, "#go_gatherTip")
-	self._btnCloseAssistTip = gohelper.findChildButtonWithAudio(self.viewGO, "#go_gatherTip/#btn_closeGatherTip")
-	self._txtAssistTip = gohelper.findChildTextMesh(self.viewGO, "#go_gatherTip/#image_tipDescBg/#txt_tipDesc")
+	self._btnAssistRecord = gohelper.findChildButtonWithAudio(self.viewGO, "#go_gather/#btn_AssistRecord")
 
 	if self._editableInitView then
 		self:_editableInitView()
@@ -38,10 +35,9 @@ function ShowCharacterView:addEvents()
 	self._btnexskillrank:AddClickListener(self._btnexskillrankOnClick, self)
 	self._btnclassify:AddClickListener(self._btnclassifyOnClick, self)
 	self._btnGetAssistReward:AddClickListener(self._btnGetAssistRewardOnClick, self)
-	self._btnAssistTip:AddClickListener(self._btnAssistTipOnClick, self)
-	self._btnCloseAssistTip:AddClickListener(self._btnCloseAssistTipOnClick, self)
 	self.addEventCb(self, PlayerController.instance, PlayerEvent.UpdateAssistRewardCount, self._refreshAssistRewardCount, self)
 	self.addEventCb(self, CharacterController.instance, CharacterEvent.FilterBackpack, self._onFilterList, self)
+	self.addClickCb(self, self._btnAssistRecord, self._btnAssistRecordOnClick, self)
 end
 
 function ShowCharacterView:removeEvents()
@@ -51,10 +47,12 @@ function ShowCharacterView:removeEvents()
 	self._btnexskillrank:RemoveClickListener()
 	self._btnclassify:RemoveClickListener()
 	self._btnGetAssistReward:RemoveClickListener()
-	self._btnAssistTip:RemoveClickListener()
-	self._btnCloseAssistTip:RemoveClickListener()
 	self.removeEventCb(self, PlayerController.instance, PlayerEvent.UpdateAssistRewardCount, self._refreshAssistRewardCount, self)
 	self.removeEventCb(self, CharacterController.instance, CharacterEvent.FilterBackpack, self._onFilterList, self)
+end
+
+function ShowCharacterView:_btnAssistRecordOnClick()
+	ViewMgr.instance:openView(ViewName.AssistRecordView)
 end
 
 function ShowCharacterView:_btnlvrankOnClick()
@@ -124,14 +122,6 @@ function ShowCharacterView:_btnGetAssistRewardOnClick()
 	PlayerController.instance:getAssistReward()
 end
 
-function ShowCharacterView:_btnAssistTipOnClick()
-	gohelper.setActive(self._goAssistRewardTip, true)
-end
-
-function ShowCharacterView:_btnCloseAssistTipOnClick()
-	gohelper.setActive(self._goAssistRewardTip, false)
-end
-
 function ShowCharacterView:_refreshAssistRewardCount()
 	local isFriendUnlock = OpenModel.instance:isFunctionUnlock(OpenEnum.UnlockFunc.Friend)
 
@@ -156,14 +146,6 @@ function ShowCharacterView:_refreshAssistRewardCount()
 
 		gohelper.setActive(self._goCanGetAssistReward, isHasAssistReward)
 	end
-
-	local hasReceivedAssistRewardCount = PlayerModel.instance:getHasReceiveAssistBonus()
-	local maxAssistRewardCount = PlayerModel.instance:getMaxAssistRewardCount()
-
-	self._txtAssistTip.text = GameUtil.getSubPlaceholderLuaLang(luaLang("player_assist_reward_tips"), {
-		hasReceivedAssistRewardCount,
-		maxAssistRewardCount
-	})
 end
 
 function ShowCharacterView:_updateHeroList()
@@ -197,8 +179,6 @@ function ShowCharacterView:_editableInitView()
 	end
 
 	_, self._initScrollContentPosY = transformhelper.getLocalPos(self._goScrollContent.transform)
-
-	self:_btnCloseAssistTipOnClick()
 end
 
 function ShowCharacterView:onUpdateParam()

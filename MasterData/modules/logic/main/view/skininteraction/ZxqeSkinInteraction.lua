@@ -28,18 +28,6 @@ function ZxqeSkinInteraction:_delayResetCameraPos()
 	self:_resetCameraPos()
 end
 
-function ZxqeSkinInteraction:_resetCameraPos()
-	self._mainRootGo = CameraMgr.instance:getCameraTraceGO()
-
-	transformhelper.setLocalRotation(self._mainRootGo.transform, 0, 0, 0)
-
-	local trace = CameraMgr.instance:getCameraTrace()
-
-	trace.EnableTrace = true
-	trace.EnableTrace = false
-	trace.enabled = false
-end
-
 function ZxqeSkinInteraction:_onDestroy()
 	TaskDispatcher.cancelTask(self._delayResetCameraPos, self)
 	self:_resetCameraPos()

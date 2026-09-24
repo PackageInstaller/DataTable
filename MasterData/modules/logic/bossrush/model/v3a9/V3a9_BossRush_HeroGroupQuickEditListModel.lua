@@ -147,6 +147,10 @@ function V3a9_BossRush_HeroGroupQuickEditListModel:isRepeatHero(heroId, uid)
 		return false
 	end
 
+	if self._inTeamHeroUidMap[uid] then
+		return false
+	end
+
 	for inTeamUid in pairs(self._inTeamHeroUidMap) do
 		if inTeamUid ~= "0" then
 			local mo = self:getById(inTeamUid)

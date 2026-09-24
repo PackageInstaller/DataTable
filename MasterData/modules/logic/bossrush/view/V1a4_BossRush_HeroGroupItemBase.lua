@@ -150,7 +150,18 @@ function V1a4_BossRush_HeroGroupItemBase:_refreshHeroByDefault()
 	local careerSpriteName = self:getCareerSpriteName()
 
 	UISpriteSetMgr.instance:setCommonSprite(self._imagecareer, careerSpriteName)
-	gohelper.setActive(self._goTrialTag, not heroMo:isOwnHero())
+
+	local var_11_0 = heroMo.belongOtherPlayer
+
+	if not heroMo.belongOtherPlayer then
+		var_11_0 = heroMo.isOwnHero
+
+		if heroMo.isOwnHero then
+			local belongOtherPlayer = not heroMo:isOwnHero()
+
+			gohelper.setActive(self._goTrialTag, belongOtherPlayer)
+		end
+	end
 end
 
 function V1a4_BossRush_HeroGroupItemBase:onSetData()

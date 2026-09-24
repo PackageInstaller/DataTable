@@ -88,6 +88,7 @@ function TowerComposeMainView:_btnstoreOnClick()
 end
 
 function TowerComposeMainView:_editableInitView()
+	self._goheroTrial = gohelper.findChild(self.viewGO, "heroTrial")
 	self.viewAnim = self.viewGO:GetComponent(typeof(UnityEngine.Animator))
 end
 
@@ -150,12 +151,7 @@ function TowerComposeMainView:saveHeroTrialNew()
 end
 
 function TowerComposeMainView:refreshHeroTrialNew()
-	local saveSeason = TowerController.instance:getPlayerPrefs(TowerEnum.LocalPrefsKey.ReddotNewHeroTrial, 0)
-	local curSeason = TowerModel.instance:getTrialHeroSeason()
-	local heroTrialList = TowerHeroTrialListModel.instance:getEntranceHeroTrialList(TowerEnum.HeroTrialEntranceType.Compose)
-
-	gohelper.setActive(self._goheroTrial, #heroTrialList > 0)
-	gohelper.setActive(self._goheroTrialNew, saveSeason ~= curSeason and curSeason > 0)
+	gohelper.setActive(self._goheroTrial, false)
 end
 
 function TowerComposeMainView:refreshEntranceInfo()

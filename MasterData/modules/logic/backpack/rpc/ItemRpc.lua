@@ -29,6 +29,19 @@ function ItemRpc:onReceiveUseItemReply(resultCode, msg)
 	BackpackController.instance:dispatchEvent(BackpackEvent.onUseItemFinished)
 end
 
+function ItemRpc:onReceiveItemSubTypeUsePush(resultCode, msg)
+	if resultCode ~= 0 then
+		return
+	end
+
+	local itemId = msg.itemId
+	local itemCo = ItemModel.instance:getItemConfig(MaterialEnum.MaterialType.Item, itemId)
+
+	if itemCo and itemCo.subType == ItemEnum.SubType.SelfSelectSixInvite then
+		SummonCustomPickController.instance:dispatchEvent(SummonCustomPickEvent.OnSummonCustomGet, msg.msg)
+	end
+end
+
 function ItemRpc:onReceiveItemChangePush(resultCode, msg)
 	if resultCode == 0 then
 		SummonMainController.instance:checkItemConvert(msg.items)

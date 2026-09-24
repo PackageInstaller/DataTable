@@ -13,7 +13,7 @@
         [10010,"AttrFixExPoint","","",0,0,""],
         [10011,"AttrFixBuff","","",0,0,""],
         [20001,"Heal","buff/buff_jiaxue","",410000015,0,""],
-        [20002,"AddExPoint","buff/buff_nuqizengjia","",410000022,0,""],
+        [20002,"AddExPoint","buff/buff_nuqizengjia","mountroot",410000022,0,""],
         [20003,"Purify1","buff/buff_jinghua","mountbottom",410000024,0,""],
         [20004,"Purify2","buff/buff_jinghua","mountbottom",410000024,0,""],
         [20005,"AddBuffRound","","",0,0,""],
@@ -410,7 +410,7 @@
         [60287,"ToughnessRecover","","",0,0,""],
         [60288,"LostLife","buff/buff_podun","",0,0,""],
         [60290,"SupplyTeamShareShield","","",0,0,""],
-        [60310,"LostLife","buff/buff_podun_2","mountmiddle",0,0,""],
+        [60310,"LostLife","","",0,0,""],
         [60311,"ConsumeBuffUseSkill3","","",0,0,""],
         [60291,"AddDevicePower","","",0,0,""],
         [60292,"AddDeviceExPoint","","",0,0,""],
@@ -447,6 +447,18 @@
         [60334,"HedoneAddDevicePower","","",0,0,""],
         [60335,"AddBuffByBuffLayerChance","","",0,0,""],
         [60336,"ConsumeBuffAddBuffLimit","","",0,0,""],
-        [60337,"SkillRateAttrByTargetBuffType","","",0,0,""]
+        [60337,"SkillRateAttrByTargetBuffType","","",0,0,""],
+        [60340,"CreateQTEEnergy","","",0,0,""],
+        [60341,"DescendRitualAddProgress","","",0,0,""],
+        [60342,"ConsumeBuffLayerAddHeatScale","","",0,0,""],
+        [60343,"ReplaceQTESkill","","",0,0,""],
+        [60344,"SkillRateUpByQTEActionCount","","",0,0,""],
+        [60345,"LostLife","","",0,0,""],
+        [60346,"AddClue","","",0,0,""],
+        [60347,"ClueToPower","","",0,0,""],
+        [60348,"AddClueExPoint","","",0,0,""],
+        [60349,"DelClueExPoint","","",0,0,""],
+        [60350,"MoveTowardTarget","","",0,0,""],
+        [60351,"ShieldOriginDamage","","",0,0,""]
     ]
 ]

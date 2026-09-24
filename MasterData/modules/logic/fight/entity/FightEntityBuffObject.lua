@@ -16,7 +16,9 @@ local buffId2EffectClass = {
 }
 local buffActId2Class = {
 	[1125] = FightBuffActIdEffect1125,
-	[1139] = FightBuffActIdEffect1139
+	[1139] = FightBuffActIdEffect1139,
+	[1171] = FightBuffActIdEffect1171,
+	[1172] = FightBuffActIdEffect1172
 }
 
 function FightEntityBuffObject:onAddBuff()

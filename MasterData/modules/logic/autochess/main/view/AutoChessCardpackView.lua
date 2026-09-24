@@ -104,7 +104,7 @@ function AutoChessCardpackView:onDestroyView()
 			AutoChessHelper.setUnlockReddot(AutoChessStrEnum.ClientReddotKey.Cardpack, id)
 		end
 
-		AutoChessController.instance:dispatchEvent(AutoChessEvent.updateCultivateReddot)
+		AutoChessController.instance:dispatchEvent(AutoChessEvent.UpdateCultivateReddot)
 	end
 end
 
@@ -382,14 +382,14 @@ function AutoChessCardpackView:refreshChess()
 	self.chessIds = string.splitToNumber(self.cardpackConfig.chessPool, "#")
 
 	table.sort(self.chessIds, function(a, b)
-		local configA = AutoChessConfig.instance:getChessCfg(a)
-		local configB = AutoChessConfig.instance:getChessCfg(b)
+		local configA = AutoChessConfig.instance:getChessCfgAnyway(a)
+		local configB = AutoChessConfig.instance:getChessCfgAnyway(b)
 
 		return configA.levelFromMall < configB.levelFromMall
 	end)
 
 	for index, id in ipairs(self.chessIds) do
-		local config = AutoChessConfig.instance:getChessCfg(id)
+		local config = AutoChessConfig.instance:getChessCfgAnyway(id)
 
 		if config then
 			local item = self.chessItemList[index]
@@ -470,7 +470,7 @@ function AutoChessCardpackView:_btnChessOnClick(index)
 
 	local id = self.chessIds[index]
 
-	AutoChessController.instance:openAutoChessHandbookPreviewView({
+	AutoChessController.instance:openHandbookPreviewView({
 		chessId = id
 	})
 	self:refreshSelect()

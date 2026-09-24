@@ -88,6 +88,14 @@ function MainSceneSkinMaterialTipView:_cloneJumpItem()
 		sourceTables = self:_sourcesStrToTables(self._config.sources)
 	end
 
+	if not sourceTables or next(sourceTables) == nil then
+		sourceTables = {}
+
+		table.insert(sourceTables, {
+			isEmpty = true
+		})
+	end
+
 	for i = 1, #sourceTables do
 		local jumpItemTempTab = self.jumpItemGos[i]
 
@@ -103,6 +111,7 @@ function MainSceneSkinMaterialTipView:_cloneJumpItem()
 						jumpItemTempTab.indexText = gohelper.findChildText(jumpItemGo, "frame/txt_name")
 						jumpItemTempTab.jumpBtn = gohelper.findChildButtonWithAudio(jumpItemGo, "frame/btn_jump")
 						jumpItemTempTab.jumpBgGO = gohelper.findChild(jumpItemGo, "frame/btn_jump/jumpbg")
+						jumpItemTempTab.emptyText = gohelper.findChildText(jumpItemGo, "frame/txt_empty")
 
 						table.insert(self.jumpItemGos, jumpItemTempTab)
 						jumpItemTempTab.jumpBtn:AddClickListener(function(jumpItemTempTab)
@@ -125,26 +134,34 @@ function MainSceneSkinMaterialTipView:_cloneJumpItem()
 
 					local sourceTable = sourceTables[i]
 
-					jumpItemTempTab.canJump = self._canJump
-					jumpItemTempTab.jumpId = sourceTable.sourceId
-
-					local name, index = JumpConfig.instance:getJumpName(sourceTable.sourceId)
-
-					jumpItemTempTab.originText.text = name or ""
-					jumpItemTempTab.indexText.text = index or ""
-
-					local cantJumpTips, toastParamList = self:_getCantJump(sourceTable)
-
-					ZProj.UGUIHelper.SetGrayscale(jumpItemTempTab.jumpBgGO, cantJumpTips ~= nil)
-
-					jumpItemTempTab.cantJumpTips = cantJumpTips
-					jumpItemTempTab.cantJumpParam = toastParamList
-
 					gohelper.setActive(jumpItemTempTab.go, true)
+					gohelper.setActive(jumpItemTempTab.emptyText, sourceTable.isEmpty)
+					gohelper.setActive(jumpItemTempTab.jumpBtn, not sourceTable.isEmpty)
+					gohelper.setActive(jumpItemTempTab.originText, not sourceTable.isEmpty)
+					gohelper.setActive(jumpItemTempTab.indexText, not sourceTable.isEmpty)
 
-					local isOnlyShowJump = JumpController.instance:isOnlyShowJump(sourceTable.sourceId)
+					if not sourceTable.isEmpty then
+						gohelper.setActive(jumpItemTempTab.emptyText, false)
 
-					gohelper.setActive(jumpItemTempTab.jumpBtn, not isOnlyShowJump)
+						jumpItemTempTab.canJump = self._canJump
+						jumpItemTempTab.jumpId = sourceTable.sourceId
+
+						local name, index = JumpConfig.instance:getJumpName(sourceTable.sourceId)
+
+						jumpItemTempTab.originText.text = name or ""
+						jumpItemTempTab.indexText.text = index or ""
+
+						local cantJumpTips, toastParamList = self:_getCantJump(sourceTable)
+
+						ZProj.UGUIHelper.SetGrayscale(jumpItemTempTab.jumpBgGO, cantJumpTips ~= nil)
+
+						jumpItemTempTab.cantJumpTips = cantJumpTips
+						jumpItemTempTab.cantJumpParam = toastParamList
+
+						local isOnlyShowJump = JumpController.instance:isOnlyShowJump(sourceTable.sourceId)
+
+						gohelper.setActive(jumpItemTempTab.jumpBtn, not isOnlyShowJump)
+					end
 				end
 			end
 		end

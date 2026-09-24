@@ -6,5 +6,7 @@ local CharacterVoiceEvent = {}
 local _get = GameUtil.getUniqueTb()
 
 CharacterVoiceEvent.XRAnInteractionStart = _get()
+CharacterVoiceEvent.HongNJSkinInteractionStart = _get()
+CharacterVoiceEvent.PlayMainViewAnim = _get()
 
 return CharacterVoiceEvent

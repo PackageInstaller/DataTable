@@ -20,6 +20,8 @@ function TowerComposeModel:reInit()
 	self.themeSelectPlaneIdMap = {}
 	self.saveLocalDataMap = {}
 	self.curFightPlaneId = 0
+	self.planeAssistMoMap = {}
+	self.planeEditorAssistMoMap = {}
 end
 
 function TowerComposeModel:onReceiveTowerComposeGetInfoReply(info)
@@ -911,6 +913,106 @@ function TowerComposeModel:isAllEpisodeFinish(themeId)
 	local isAllEpisodeFinish = passLayer == finalEpisodeCo.layerId
 
 	return isAllEpisodeFinish, finalEpisodeCo.layerId
+end
+
+function TowerComposeModel:setAssistMo(assistMo, index, params)
+	local fightParam = self:getRecordFightParam()
+
+	if params then
+		if not params.planeId then
+			local planeId = self:getCurFightPlaneId()
+			local themeId = fightParam.themeId
+
+			self.planeAssistMoMap[themeId] = self.planeAssistMoMap[themeId] or {}
+
+			local mo = self.planeAssistMoMap[themeId][planeId]
+
+			if not mo then
+				mo = HeroSingleGroupMO.New()
+				self.planeAssistMoMap[themeId][planeId] = mo
+			end
+
+			mo:init(index, assistMo.heroUid)
+			mo:setAssist(assistMo)
+			self:setEditorAssistMo(assistMo, params)
+		end
+	end
+end
+
+function TowerComposeModel:getAssistMo(params)
+	local fightParam = self:getRecordFightParam()
+
+	if params then
+		if not params.planeId then
+			local planeId = self:getCurFightPlaneId()
+			local themeId = fightParam.themeId
+
+			return self.planeAssistMoMap[themeId] and self.planeAssistMoMap[themeId][planeId]
+		end
+	end
+end
+
+function TowerComposeModel:setEditorAssistMo(assistMo, params)
+	local fightParam = self:getRecordFightParam()
+
+	if params then
+		if not params.planeId then
+			local planeId = self:getCurFightPlaneId()
+			local themeId = fightParam.themeId
+
+			self.planeEditorAssistMoMap[themeId] = self.planeEditorAssistMoMap[themeId] or {}
+			self.planeEditorAssistMoMap[themeId][planeId] = assistMo
+		end
+	end
+end
+
+function TowerComposeModel:getEditorAssistMo(params)
+	local fightParam = self:getRecordFightParam()
+
+	if params then
+		if not params.planeId then
+			local planeId = self:getCurFightPlaneId()
+			local themeId = fightParam.themeId
+
+			return self.planeEditorAssistMoMap[themeId] and self.planeEditorAssistMoMap[themeId][planeId]
+		end
+	end
+end
+
+function TowerComposeModel:clearAssist(isClearEditor, params)
+	local fightParam = self:getRecordFightParam()
+
+	if params then
+		if not params.planeId then
+			local planeId = self:getCurFightPlaneId()
+			local themeId = fightParam.themeId
+
+			if self.planeAssistMoMap[themeId] and self.planeAssistMoMap[themeId][planeId] then
+				self.planeAssistMoMap[themeId][planeId] = nil
+			end
+
+			if isClearEditor and self.planeEditorAssistMoMap[themeId] and self.planeEditorAssistMoMap[themeId][planeId] then
+				self.planeEditorAssistMoMap[themeId][planeId] = nil
+			end
+		end
+	end
+end
+
+function TowerComposeModel:clearAllAssist()
+	self.planeAssistMoMap = {}
+	self.planeEditorAssistMoMap = {}
+end
+
+function TowerComposeModel:getAssistIsInPlane(heroUid)
+	for planeId = 0, 2 do
+		local assistMo = self:getEditorAssistMo({
+			planeId = planeId
+		})
+
+		if assistMo and assistMo.heroUid == heroUid then
+			return planeId
+		end
+	end
 end
 
 TowerComposeModel.instance = TowerComposeModel.New()

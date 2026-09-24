@@ -8,7 +8,7 @@ function FightUISkinMaterialTipViewContainer:buildViews()
 	local views = {}
 
 	table.insert(views, FightUISkinMaterialTipView.New())
-	table.insert(views, FightUISkinMaterialTipViewBanner.New())
+	table.insert(views, DecorateMaterialTipViewBanner.New())
 
 	return views
 end

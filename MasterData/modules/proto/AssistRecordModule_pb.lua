@@ -1,0 +1,247 @@
+﻿-- chunkname: @modules/proto/AssistRecordModule_pb.lua
+
+local require = require
+local protobuf = require("protobuf.protobuf")
+
+module("modules.proto.AssistRecordModule_pb", package.seeall)
+
+local AssistRecordModule_pb = {}
+
+AssistRecordModule_pb.ASSISTRECORDGETDUNGEONRECORDREQUEST_MSG = protobuf.Descriptor()
+AssistRecordModule_pb.ASSISTDUNGEONSTAT_MSG = protobuf.Descriptor()
+AssistRecordModule_pb.ASSISTDUNGEONSTATTYPEFIELD = protobuf.FieldDescriptor()
+AssistRecordModule_pb.ASSISTDUNGEONSTATCOUNTFIELD = protobuf.FieldDescriptor()
+AssistRecordModule_pb.ASSISTDUNGEONSTATMAXRESULTFIELD = protobuf.FieldDescriptor()
+AssistRecordModule_pb.ASSISTRECORDGETDUNGEONRECORDREPLY_MSG = protobuf.Descriptor()
+AssistRecordModule_pb.ASSISTRECORDGETDUNGEONRECORDREPLYRECORDSFIELD = protobuf.FieldDescriptor()
+AssistRecordModule_pb.ASSISTRECORDGETINFOREQUEST_MSG = protobuf.Descriptor()
+AssistRecordModule_pb.ASSISTRECORDGETINFOREPLY_MSG = protobuf.Descriptor()
+AssistRecordModule_pb.ASSISTRECORDGETINFOREPLYRECORDINFOFIELD = protobuf.FieldDescriptor()
+AssistRecordModule_pb.ASSISTRECORDINFO_MSG = protobuf.Descriptor()
+AssistRecordModule_pb.ASSISTRECORDINFOHEROSTATSFIELD = protobuf.FieldDescriptor()
+AssistRecordModule_pb.ASSISTRECORDINFODUNGEONSTATSFIELD = protobuf.FieldDescriptor()
+AssistRecordModule_pb.ASSISTDUNGEONRECORD_MSG = protobuf.Descriptor()
+AssistRecordModule_pb.ASSISTDUNGEONRECORDUSERIDFIELD = protobuf.FieldDescriptor()
+AssistRecordModule_pb.ASSISTDUNGEONRECORDUSERNAMEFIELD = protobuf.FieldDescriptor()
+AssistRecordModule_pb.ASSISTDUNGEONRECORDPORTRAITFIELD = protobuf.FieldDescriptor()
+AssistRecordModule_pb.ASSISTDUNGEONRECORDHEROUIDFIELD = protobuf.FieldDescriptor()
+AssistRecordModule_pb.ASSISTDUNGEONRECORDCOUNTFIELD = protobuf.FieldDescriptor()
+AssistRecordModule_pb.ASSISTHEROSTAT_MSG = protobuf.Descriptor()
+AssistRecordModule_pb.ASSISTHEROSTATHEROUIDFIELD = protobuf.FieldDescriptor()
+AssistRecordModule_pb.ASSISTHEROSTATCOUNTFIELD = protobuf.FieldDescriptor()
+AssistRecordModule_pb.ASSISTRECORDGETDUNGEONRECORDREQUEST_MSG.name = "AssistRecordGetDungeonRecordRequest"
+AssistRecordModule_pb.ASSISTRECORDGETDUNGEONRECORDREQUEST_MSG.full_name = ".AssistRecordGetDungeonRecordRequest"
+AssistRecordModule_pb.ASSISTRECORDGETDUNGEONRECORDREQUEST_MSG.nested_types = {}
+AssistRecordModule_pb.ASSISTRECORDGETDUNGEONRECORDREQUEST_MSG.enum_types = {}
+AssistRecordModule_pb.ASSISTRECORDGETDUNGEONRECORDREQUEST_MSG.fields = {}
+AssistRecordModule_pb.ASSISTRECORDGETDUNGEONRECORDREQUEST_MSG.is_extendable = false
+AssistRecordModule_pb.ASSISTRECORDGETDUNGEONRECORDREQUEST_MSG.extensions = {}
+AssistRecordModule_pb.ASSISTDUNGEONSTATTYPEFIELD.name = "type"
+AssistRecordModule_pb.ASSISTDUNGEONSTATTYPEFIELD.full_name = ".AssistDungeonStat.type"
+AssistRecordModule_pb.ASSISTDUNGEONSTATTYPEFIELD.number = 1
+AssistRecordModule_pb.ASSISTDUNGEONSTATTYPEFIELD.index = 0
+AssistRecordModule_pb.ASSISTDUNGEONSTATTYPEFIELD.label = 1
+AssistRecordModule_pb.ASSISTDUNGEONSTATTYPEFIELD.has_default_value = false
+AssistRecordModule_pb.ASSISTDUNGEONSTATTYPEFIELD.default_value = 0
+AssistRecordModule_pb.ASSISTDUNGEONSTATTYPEFIELD.type = 5
+AssistRecordModule_pb.ASSISTDUNGEONSTATTYPEFIELD.cpp_type = 1
+AssistRecordModule_pb.ASSISTDUNGEONSTATCOUNTFIELD.name = "count"
+AssistRecordModule_pb.ASSISTDUNGEONSTATCOUNTFIELD.full_name = ".AssistDungeonStat.count"
+AssistRecordModule_pb.ASSISTDUNGEONSTATCOUNTFIELD.number = 2
+AssistRecordModule_pb.ASSISTDUNGEONSTATCOUNTFIELD.index = 1
+AssistRecordModule_pb.ASSISTDUNGEONSTATCOUNTFIELD.label = 1
+AssistRecordModule_pb.ASSISTDUNGEONSTATCOUNTFIELD.has_default_value = false
+AssistRecordModule_pb.ASSISTDUNGEONSTATCOUNTFIELD.default_value = 0
+AssistRecordModule_pb.ASSISTDUNGEONSTATCOUNTFIELD.type = 5
+AssistRecordModule_pb.ASSISTDUNGEONSTATCOUNTFIELD.cpp_type = 1
+AssistRecordModule_pb.ASSISTDUNGEONSTATMAXRESULTFIELD.name = "maxResult"
+AssistRecordModule_pb.ASSISTDUNGEONSTATMAXRESULTFIELD.full_name = ".AssistDungeonStat.maxResult"
+AssistRecordModule_pb.ASSISTDUNGEONSTATMAXRESULTFIELD.number = 3
+AssistRecordModule_pb.ASSISTDUNGEONSTATMAXRESULTFIELD.index = 2
+AssistRecordModule_pb.ASSISTDUNGEONSTATMAXRESULTFIELD.label = 1
+AssistRecordModule_pb.ASSISTDUNGEONSTATMAXRESULTFIELD.has_default_value = false
+AssistRecordModule_pb.ASSISTDUNGEONSTATMAXRESULTFIELD.default_value = 0
+AssistRecordModule_pb.ASSISTDUNGEONSTATMAXRESULTFIELD.type = 5
+AssistRecordModule_pb.ASSISTDUNGEONSTATMAXRESULTFIELD.cpp_type = 1
+AssistRecordModule_pb.ASSISTDUNGEONSTAT_MSG.name = "AssistDungeonStat"
+AssistRecordModule_pb.ASSISTDUNGEONSTAT_MSG.full_name = ".AssistDungeonStat"
+AssistRecordModule_pb.ASSISTDUNGEONSTAT_MSG.nested_types = {}
+AssistRecordModule_pb.ASSISTDUNGEONSTAT_MSG.enum_types = {}
+AssistRecordModule_pb.ASSISTDUNGEONSTAT_MSG.fields = {
+	AssistRecordModule_pb.ASSISTDUNGEONSTATTYPEFIELD,
+	AssistRecordModule_pb.ASSISTDUNGEONSTATCOUNTFIELD,
+	AssistRecordModule_pb.ASSISTDUNGEONSTATMAXRESULTFIELD
+}
+AssistRecordModule_pb.ASSISTDUNGEONSTAT_MSG.is_extendable = false
+AssistRecordModule_pb.ASSISTDUNGEONSTAT_MSG.extensions = {}
+AssistRecordModule_pb.ASSISTRECORDGETDUNGEONRECORDREPLYRECORDSFIELD.name = "records"
+AssistRecordModule_pb.ASSISTRECORDGETDUNGEONRECORDREPLYRECORDSFIELD.full_name = ".AssistRecordGetDungeonRecordReply.records"
+AssistRecordModule_pb.ASSISTRECORDGETDUNGEONRECORDREPLYRECORDSFIELD.number = 1
+AssistRecordModule_pb.ASSISTRECORDGETDUNGEONRECORDREPLYRECORDSFIELD.index = 0
+AssistRecordModule_pb.ASSISTRECORDGETDUNGEONRECORDREPLYRECORDSFIELD.label = 3
+AssistRecordModule_pb.ASSISTRECORDGETDUNGEONRECORDREPLYRECORDSFIELD.has_default_value = false
+AssistRecordModule_pb.ASSISTRECORDGETDUNGEONRECORDREPLYRECORDSFIELD.default_value = {}
+AssistRecordModule_pb.ASSISTRECORDGETDUNGEONRECORDREPLYRECORDSFIELD.message_type = AssistRecordModule_pb.ASSISTDUNGEONRECORD_MSG
+AssistRecordModule_pb.ASSISTRECORDGETDUNGEONRECORDREPLYRECORDSFIELD.type = 11
+AssistRecordModule_pb.ASSISTRECORDGETDUNGEONRECORDREPLYRECORDSFIELD.cpp_type = 10
+AssistRecordModule_pb.ASSISTRECORDGETDUNGEONRECORDREPLY_MSG.name = "AssistRecordGetDungeonRecordReply"
+AssistRecordModule_pb.ASSISTRECORDGETDUNGEONRECORDREPLY_MSG.full_name = ".AssistRecordGetDungeonRecordReply"
+AssistRecordModule_pb.ASSISTRECORDGETDUNGEONRECORDREPLY_MSG.nested_types = {}
+AssistRecordModule_pb.ASSISTRECORDGETDUNGEONRECORDREPLY_MSG.enum_types = {}
+AssistRecordModule_pb.ASSISTRECORDGETDUNGEONRECORDREPLY_MSG.fields = {
+	AssistRecordModule_pb.ASSISTRECORDGETDUNGEONRECORDREPLYRECORDSFIELD
+}
+AssistRecordModule_pb.ASSISTRECORDGETDUNGEONRECORDREPLY_MSG.is_extendable = false
+AssistRecordModule_pb.ASSISTRECORDGETDUNGEONRECORDREPLY_MSG.extensions = {}
+AssistRecordModule_pb.ASSISTRECORDGETINFOREQUEST_MSG.name = "AssistRecordGetInfoRequest"
+AssistRecordModule_pb.ASSISTRECORDGETINFOREQUEST_MSG.full_name = ".AssistRecordGetInfoRequest"
+AssistRecordModule_pb.ASSISTRECORDGETINFOREQUEST_MSG.nested_types = {}
+AssistRecordModule_pb.ASSISTRECORDGETINFOREQUEST_MSG.enum_types = {}
+AssistRecordModule_pb.ASSISTRECORDGETINFOREQUEST_MSG.fields = {}
+AssistRecordModule_pb.ASSISTRECORDGETINFOREQUEST_MSG.is_extendable = false
+AssistRecordModule_pb.ASSISTRECORDGETINFOREQUEST_MSG.extensions = {}
+AssistRecordModule_pb.ASSISTRECORDGETINFOREPLYRECORDINFOFIELD.name = "recordInfo"
+AssistRecordModule_pb.ASSISTRECORDGETINFOREPLYRECORDINFOFIELD.full_name = ".AssistRecordGetInfoReply.recordInfo"
+AssistRecordModule_pb.ASSISTRECORDGETINFOREPLYRECORDINFOFIELD.number = 1
+AssistRecordModule_pb.ASSISTRECORDGETINFOREPLYRECORDINFOFIELD.index = 0
+AssistRecordModule_pb.ASSISTRECORDGETINFOREPLYRECORDINFOFIELD.label = 1
+AssistRecordModule_pb.ASSISTRECORDGETINFOREPLYRECORDINFOFIELD.has_default_value = false
+AssistRecordModule_pb.ASSISTRECORDGETINFOREPLYRECORDINFOFIELD.default_value = nil
+AssistRecordModule_pb.ASSISTRECORDGETINFOREPLYRECORDINFOFIELD.message_type = AssistRecordModule_pb.ASSISTRECORDINFO_MSG
+AssistRecordModule_pb.ASSISTRECORDGETINFOREPLYRECORDINFOFIELD.type = 11
+AssistRecordModule_pb.ASSISTRECORDGETINFOREPLYRECORDINFOFIELD.cpp_type = 10
+AssistRecordModule_pb.ASSISTRECORDGETINFOREPLY_MSG.name = "AssistRecordGetInfoReply"
+AssistRecordModule_pb.ASSISTRECORDGETINFOREPLY_MSG.full_name = ".AssistRecordGetInfoReply"
+AssistRecordModule_pb.ASSISTRECORDGETINFOREPLY_MSG.nested_types = {}
+AssistRecordModule_pb.ASSISTRECORDGETINFOREPLY_MSG.enum_types = {}
+AssistRecordModule_pb.ASSISTRECORDGETINFOREPLY_MSG.fields = {
+	AssistRecordModule_pb.ASSISTRECORDGETINFOREPLYRECORDINFOFIELD
+}
+AssistRecordModule_pb.ASSISTRECORDGETINFOREPLY_MSG.is_extendable = false
+AssistRecordModule_pb.ASSISTRECORDGETINFOREPLY_MSG.extensions = {}
+AssistRecordModule_pb.ASSISTRECORDINFOHEROSTATSFIELD.name = "heroStats"
+AssistRecordModule_pb.ASSISTRECORDINFOHEROSTATSFIELD.full_name = ".AssistRecordInfo.heroStats"
+AssistRecordModule_pb.ASSISTRECORDINFOHEROSTATSFIELD.number = 1
+AssistRecordModule_pb.ASSISTRECORDINFOHEROSTATSFIELD.index = 0
+AssistRecordModule_pb.ASSISTRECORDINFOHEROSTATSFIELD.label = 3
+AssistRecordModule_pb.ASSISTRECORDINFOHEROSTATSFIELD.has_default_value = false
+AssistRecordModule_pb.ASSISTRECORDINFOHEROSTATSFIELD.default_value = {}
+AssistRecordModule_pb.ASSISTRECORDINFOHEROSTATSFIELD.message_type = AssistRecordModule_pb.ASSISTHEROSTAT_MSG
+AssistRecordModule_pb.ASSISTRECORDINFOHEROSTATSFIELD.type = 11
+AssistRecordModule_pb.ASSISTRECORDINFOHEROSTATSFIELD.cpp_type = 10
+AssistRecordModule_pb.ASSISTRECORDINFODUNGEONSTATSFIELD.name = "dungeonStats"
+AssistRecordModule_pb.ASSISTRECORDINFODUNGEONSTATSFIELD.full_name = ".AssistRecordInfo.dungeonStats"
+AssistRecordModule_pb.ASSISTRECORDINFODUNGEONSTATSFIELD.number = 2
+AssistRecordModule_pb.ASSISTRECORDINFODUNGEONSTATSFIELD.index = 1
+AssistRecordModule_pb.ASSISTRECORDINFODUNGEONSTATSFIELD.label = 3
+AssistRecordModule_pb.ASSISTRECORDINFODUNGEONSTATSFIELD.has_default_value = false
+AssistRecordModule_pb.ASSISTRECORDINFODUNGEONSTATSFIELD.default_value = {}
+AssistRecordModule_pb.ASSISTRECORDINFODUNGEONSTATSFIELD.message_type = AssistRecordModule_pb.ASSISTDUNGEONSTAT_MSG
+AssistRecordModule_pb.ASSISTRECORDINFODUNGEONSTATSFIELD.type = 11
+AssistRecordModule_pb.ASSISTRECORDINFODUNGEONSTATSFIELD.cpp_type = 10
+AssistRecordModule_pb.ASSISTRECORDINFO_MSG.name = "AssistRecordInfo"
+AssistRecordModule_pb.ASSISTRECORDINFO_MSG.full_name = ".AssistRecordInfo"
+AssistRecordModule_pb.ASSISTRECORDINFO_MSG.nested_types = {}
+AssistRecordModule_pb.ASSISTRECORDINFO_MSG.enum_types = {}
+AssistRecordModule_pb.ASSISTRECORDINFO_MSG.fields = {
+	AssistRecordModule_pb.ASSISTRECORDINFOHEROSTATSFIELD,
+	AssistRecordModule_pb.ASSISTRECORDINFODUNGEONSTATSFIELD
+}
+AssistRecordModule_pb.ASSISTRECORDINFO_MSG.is_extendable = false
+AssistRecordModule_pb.ASSISTRECORDINFO_MSG.extensions = {}
+AssistRecordModule_pb.ASSISTDUNGEONRECORDUSERIDFIELD.name = "userId"
+AssistRecordModule_pb.ASSISTDUNGEONRECORDUSERIDFIELD.full_name = ".AssistDungeonRecord.userId"
+AssistRecordModule_pb.ASSISTDUNGEONRECORDUSERIDFIELD.number = 1
+AssistRecordModule_pb.ASSISTDUNGEONRECORDUSERIDFIELD.index = 0
+AssistRecordModule_pb.ASSISTDUNGEONRECORDUSERIDFIELD.label = 1
+AssistRecordModule_pb.ASSISTDUNGEONRECORDUSERIDFIELD.has_default_value = false
+AssistRecordModule_pb.ASSISTDUNGEONRECORDUSERIDFIELD.default_value = 0
+AssistRecordModule_pb.ASSISTDUNGEONRECORDUSERIDFIELD.type = 3
+AssistRecordModule_pb.ASSISTDUNGEONRECORDUSERIDFIELD.cpp_type = 2
+AssistRecordModule_pb.ASSISTDUNGEONRECORDUSERNAMEFIELD.name = "username"
+AssistRecordModule_pb.ASSISTDUNGEONRECORDUSERNAMEFIELD.full_name = ".AssistDungeonRecord.username"
+AssistRecordModule_pb.ASSISTDUNGEONRECORDUSERNAMEFIELD.number = 2
+AssistRecordModule_pb.ASSISTDUNGEONRECORDUSERNAMEFIELD.index = 1
+AssistRecordModule_pb.ASSISTDUNGEONRECORDUSERNAMEFIELD.label = 1
+AssistRecordModule_pb.ASSISTDUNGEONRECORDUSERNAMEFIELD.has_default_value = false
+AssistRecordModule_pb.ASSISTDUNGEONRECORDUSERNAMEFIELD.default_value = ""
+AssistRecordModule_pb.ASSISTDUNGEONRECORDUSERNAMEFIELD.type = 9
+AssistRecordModule_pb.ASSISTDUNGEONRECORDUSERNAMEFIELD.cpp_type = 9
+AssistRecordModule_pb.ASSISTDUNGEONRECORDPORTRAITFIELD.name = "portrait"
+AssistRecordModule_pb.ASSISTDUNGEONRECORDPORTRAITFIELD.full_name = ".AssistDungeonRecord.portrait"
+AssistRecordModule_pb.ASSISTDUNGEONRECORDPORTRAITFIELD.number = 3
+AssistRecordModule_pb.ASSISTDUNGEONRECORDPORTRAITFIELD.index = 2
+AssistRecordModule_pb.ASSISTDUNGEONRECORDPORTRAITFIELD.label = 1
+AssistRecordModule_pb.ASSISTDUNGEONRECORDPORTRAITFIELD.has_default_value = false
+AssistRecordModule_pb.ASSISTDUNGEONRECORDPORTRAITFIELD.default_value = 0
+AssistRecordModule_pb.ASSISTDUNGEONRECORDPORTRAITFIELD.type = 5
+AssistRecordModule_pb.ASSISTDUNGEONRECORDPORTRAITFIELD.cpp_type = 1
+AssistRecordModule_pb.ASSISTDUNGEONRECORDHEROUIDFIELD.name = "heroUid"
+AssistRecordModule_pb.ASSISTDUNGEONRECORDHEROUIDFIELD.full_name = ".AssistDungeonRecord.heroUid"
+AssistRecordModule_pb.ASSISTDUNGEONRECORDHEROUIDFIELD.number = 4
+AssistRecordModule_pb.ASSISTDUNGEONRECORDHEROUIDFIELD.index = 3
+AssistRecordModule_pb.ASSISTDUNGEONRECORDHEROUIDFIELD.label = 1
+AssistRecordModule_pb.ASSISTDUNGEONRECORDHEROUIDFIELD.has_default_value = false
+AssistRecordModule_pb.ASSISTDUNGEONRECORDHEROUIDFIELD.default_value = 0
+AssistRecordModule_pb.ASSISTDUNGEONRECORDHEROUIDFIELD.type = 3
+AssistRecordModule_pb.ASSISTDUNGEONRECORDHEROUIDFIELD.cpp_type = 2
+AssistRecordModule_pb.ASSISTDUNGEONRECORDCOUNTFIELD.name = "count"
+AssistRecordModule_pb.ASSISTDUNGEONRECORDCOUNTFIELD.full_name = ".AssistDungeonRecord.count"
+AssistRecordModule_pb.ASSISTDUNGEONRECORDCOUNTFIELD.number = 5
+AssistRecordModule_pb.ASSISTDUNGEONRECORDCOUNTFIELD.index = 4
+AssistRecordModule_pb.ASSISTDUNGEONRECORDCOUNTFIELD.label = 1
+AssistRecordModule_pb.ASSISTDUNGEONRECORDCOUNTFIELD.has_default_value = false
+AssistRecordModule_pb.ASSISTDUNGEONRECORDCOUNTFIELD.default_value = 0
+AssistRecordModule_pb.ASSISTDUNGEONRECORDCOUNTFIELD.type = 5
+AssistRecordModule_pb.ASSISTDUNGEONRECORDCOUNTFIELD.cpp_type = 1
+AssistRecordModule_pb.ASSISTDUNGEONRECORD_MSG.name = "AssistDungeonRecord"
+AssistRecordModule_pb.ASSISTDUNGEONRECORD_MSG.full_name = ".AssistDungeonRecord"
+AssistRecordModule_pb.ASSISTDUNGEONRECORD_MSG.nested_types = {}
+AssistRecordModule_pb.ASSISTDUNGEONRECORD_MSG.enum_types = {}
+AssistRecordModule_pb.ASSISTDUNGEONRECORD_MSG.fields = {
+	AssistRecordModule_pb.ASSISTDUNGEONRECORDUSERIDFIELD,
+	AssistRecordModule_pb.ASSISTDUNGEONRECORDUSERNAMEFIELD,
+	AssistRecordModule_pb.ASSISTDUNGEONRECORDPORTRAITFIELD,
+	AssistRecordModule_pb.ASSISTDUNGEONRECORDHEROUIDFIELD,
+	AssistRecordModule_pb.ASSISTDUNGEONRECORDCOUNTFIELD
+}
+AssistRecordModule_pb.ASSISTDUNGEONRECORD_MSG.is_extendable = false
+AssistRecordModule_pb.ASSISTDUNGEONRECORD_MSG.extensions = {}
+AssistRecordModule_pb.ASSISTHEROSTATHEROUIDFIELD.name = "heroUid"
+AssistRecordModule_pb.ASSISTHEROSTATHEROUIDFIELD.full_name = ".AssistHeroStat.heroUid"
+AssistRecordModule_pb.ASSISTHEROSTATHEROUIDFIELD.number = 1
+AssistRecordModule_pb.ASSISTHEROSTATHEROUIDFIELD.index = 0
+AssistRecordModule_pb.ASSISTHEROSTATHEROUIDFIELD.label = 1
+AssistRecordModule_pb.ASSISTHEROSTATHEROUIDFIELD.has_default_value = false
+AssistRecordModule_pb.ASSISTHEROSTATHEROUIDFIELD.default_value = 0
+AssistRecordModule_pb.ASSISTHEROSTATHEROUIDFIELD.type = 3
+AssistRecordModule_pb.ASSISTHEROSTATHEROUIDFIELD.cpp_type = 2
+AssistRecordModule_pb.ASSISTHEROSTATCOUNTFIELD.name = "count"
+AssistRecordModule_pb.ASSISTHEROSTATCOUNTFIELD.full_name = ".AssistHeroStat.count"
+AssistRecordModule_pb.ASSISTHEROSTATCOUNTFIELD.number = 2
+AssistRecordModule_pb.ASSISTHEROSTATCOUNTFIELD.index = 1
+AssistRecordModule_pb.ASSISTHEROSTATCOUNTFIELD.label = 1
+AssistRecordModule_pb.ASSISTHEROSTATCOUNTFIELD.has_default_value = false
+AssistRecordModule_pb.ASSISTHEROSTATCOUNTFIELD.default_value = 0
+AssistRecordModule_pb.ASSISTHEROSTATCOUNTFIELD.type = 5
+AssistRecordModule_pb.ASSISTHEROSTATCOUNTFIELD.cpp_type = 1
+AssistRecordModule_pb.ASSISTHEROSTAT_MSG.name = "AssistHeroStat"
+AssistRecordModule_pb.ASSISTHEROSTAT_MSG.full_name = ".AssistHeroStat"
+AssistRecordModule_pb.ASSISTHEROSTAT_MSG.nested_types = {}
+AssistRecordModule_pb.ASSISTHEROSTAT_MSG.enum_types = {}
+AssistRecordModule_pb.ASSISTHEROSTAT_MSG.fields = {
+	AssistRecordModule_pb.ASSISTHEROSTATHEROUIDFIELD,
+	AssistRecordModule_pb.ASSISTHEROSTATCOUNTFIELD
+}
+AssistRecordModule_pb.ASSISTHEROSTAT_MSG.is_extendable = false
+AssistRecordModule_pb.ASSISTHEROSTAT_MSG.extensions = {}
+AssistRecordModule_pb.AssistDungeonRecord = protobuf.Message(AssistRecordModule_pb.ASSISTDUNGEONRECORD_MSG)
+AssistRecordModule_pb.AssistDungeonStat = protobuf.Message(AssistRecordModule_pb.ASSISTDUNGEONSTAT_MSG)
+AssistRecordModule_pb.AssistHeroStat = protobuf.Message(AssistRecordModule_pb.ASSISTHEROSTAT_MSG)
+AssistRecordModule_pb.AssistRecordGetDungeonRecordReply = protobuf.Message(AssistRecordModule_pb.ASSISTRECORDGETDUNGEONRECORDREPLY_MSG)
+AssistRecordModule_pb.AssistRecordGetDungeonRecordRequest = protobuf.Message(AssistRecordModule_pb.ASSISTRECORDGETDUNGEONRECORDREQUEST_MSG)
+AssistRecordModule_pb.AssistRecordGetInfoReply = protobuf.Message(AssistRecordModule_pb.ASSISTRECORDGETINFOREPLY_MSG)
+AssistRecordModule_pb.AssistRecordGetInfoRequest = protobuf.Message(AssistRecordModule_pb.ASSISTRECORDGETINFOREQUEST_MSG)
+AssistRecordModule_pb.AssistRecordInfo = protobuf.Message(AssistRecordModule_pb.ASSISTRECORDINFO_MSG)
+
+return AssistRecordModule_pb

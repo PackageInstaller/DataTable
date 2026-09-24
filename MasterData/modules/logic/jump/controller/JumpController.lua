@@ -258,7 +258,9 @@ local _notAllowJumpViewNames = {
 	"V2a9_FreeMonthCard_PanelView",
 	"V3a0_SummerSign_PanelView",
 	"RoomFormulaMsgBoxView",
-	"V3a1_AutumnSign_PanelView"
+	"V3a1_AutumnSign_PanelView",
+	"V4a0_CasualSkinGift_PanelView",
+	"CasualSkinGift_PanelView"
 }
 
 function JumpController:checkCanJumpView(jumpView)

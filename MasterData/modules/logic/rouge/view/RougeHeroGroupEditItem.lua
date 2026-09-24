@@ -181,8 +181,10 @@ end
 
 function RougeHeroGroupEditItem:updateTrialTag()
 	local txt
+	local assistMo = self._heroGroupEditListModel:getAssistHeroMo()
+	local isTrial = self._mo:isTrial() or assistMo == self._mo
 
-	self._heroItem:setTrialTxt((self._mo:isTrial() or nil) and luaLang("herogroup_trial_tag0"))
+	self._heroItem:setTrialTxt((isTrial or nil) and luaLang("herogroup_trial_tag0"))
 end
 
 function RougeHeroGroupEditItem:updateTrialRepeat()

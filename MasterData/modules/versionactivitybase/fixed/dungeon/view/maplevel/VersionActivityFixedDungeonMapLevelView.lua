@@ -892,7 +892,7 @@ function VersionActivityFixedDungeonMapLevelView:onModeUnlockAnimationPlayDone()
 	local prefsKey = VersionActivityFixedHelper.getVersionActivityDungeonEnum(self._bigVersion, self._smallVersion).PlayerPrefsKey.ActivityDungeonSpecialEpisodeLastUnLockMode
 	local strLastUnlockMode = cjson.encode(self.unlockedEpisodeModeDict)
 
-	VersionActivityFixedHelper.getVersionActivityDungeonController().instance:savePlayerPrefs(prefsKey, strLastUnlockMode)
+	VersionActivityFixedDungeonController.instance:savePlayerPrefs(prefsKey, strLastUnlockMode)
 
 	self.needPlayUnlockModeAnimation = false
 

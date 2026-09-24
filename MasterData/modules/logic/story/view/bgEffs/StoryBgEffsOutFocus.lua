@@ -19,11 +19,14 @@ function StoryBgEffsOutFocus:init(bgCo)
 end
 
 function StoryBgEffsOutFocus:start(callback, callbackObj)
-	StoryBgEffsOutFocus.super.start(self)
+	if self._bgCo.effDegree == 1 then
+		return
+	end
 
-	self._finishedCallback = callback
-	self._finishedCallbackObj = callbackObj
+	StoryBgEffsOutFocus.super.start(self, callback, callbackObj)
+end
 
+function StoryBgEffsOutFocus:onStartEffect()
 	self:_setViewTop(true)
 	ViewMgr.instance:registerCallback(ViewEvent.OnOpenView, self._onOpenView, self)
 	ViewMgr.instance:registerCallback(ViewEvent.OnCloseViewFinish, self._onCloseView, self)
@@ -31,8 +34,6 @@ function StoryBgEffsOutFocus:start(callback, callbackObj)
 
 	self._captureGo = PostProcessingMgr.instance:getCaptureView()
 	self._capture = self._captureGo:GetComponent(typeof(UrpCustom.UIGaussianEffect))
-
-	self:loadRes()
 end
 
 function StoryBgEffsOutFocus:_btnskipOnClick()
@@ -134,13 +135,7 @@ end
 
 function StoryBgEffsOutFocus:_onEffFinished()
 	UIBlockMgr.instance:endBlock("outFocusEnding")
-
-	if self._finishedCallback then
-		self._finishedCallback(self._finishedCallbackObj)
-
-		self._finishedCallback = nil
-		self._finishedCallbackObj = nil
-	end
+	self:callFinished()
 end
 
 function StoryBgEffsOutFocus:destroy()
@@ -166,9 +161,6 @@ function StoryBgEffsOutFocus:destroy()
 	ViewMgr.instance:unregisterCallback(ViewEvent.OnCloseViewFinish, self._onCloseView, self)
 	StoryController.instance:unregisterCallback(StoryEvent.OnBtnSkipClick, self._btnskipOnClick, self)
 	StoryController.instance:dispatchEvent(StoryEvent.PlayFullBlurOut, 0)
-
-	self._finishedCallback = nil
-	self._finishedCallbackObj = nil
 end
 
 return StoryBgEffsOutFocus

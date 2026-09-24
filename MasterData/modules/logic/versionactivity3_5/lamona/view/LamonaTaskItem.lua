@@ -62,7 +62,7 @@ function LamonaTaskItem:_btngetallOnClick()
 end
 
 function LamonaTaskItem:_delayFinishAll()
-	TaskRpc.instance:sendFinishAllTaskRequest(TaskEnum.TaskType.Activity220)
+	Activity220Controller.instance:finishAllTask(VersionActivity3_5Enum.ActivityId.Lamona)
 end
 
 function LamonaTaskItem:_onOneClickClaimReward(actId)

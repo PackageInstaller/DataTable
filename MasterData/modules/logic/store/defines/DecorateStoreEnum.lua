@@ -18,6 +18,7 @@ DecorateStoreEnum.DecorateItemType = {
 	MainUISkin = 8,
 	BuildingVideo = 4,
 	SelfCard = 5,
+	Hero = 10,
 	Skin = 2
 }
 DecorateStoreEnum.DecorateType = {
@@ -38,5 +39,6 @@ DecorateStoreEnum.DiscountItemActId = {
 	[V3a4GiftRecommendEnum.OffItemId] = ActivityEnum.Activity.V3a4_GiftRecommend
 }
 DecorateStoreEnum.DefaultViewShowTime = 1
+DecorateStoreEnum.V4a0SpiritualFluid = 780001
 
 return DecorateStoreEnum

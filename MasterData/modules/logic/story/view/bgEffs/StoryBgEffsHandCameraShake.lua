@@ -17,15 +17,6 @@ function StoryBgEffsHandCameraShake:init(bgCo)
 	table.insert(self._resList, self._shakeCameraAnimPath)
 end
 
-function StoryBgEffsHandCameraShake:start(callback, callbackObj)
-	StoryBgEffsHandCameraShake.super.start(self)
-
-	self._finishedCallback = callback
-	self._finishedCallbackObj = callbackObj
-
-	self:loadRes()
-end
-
 function StoryBgEffsHandCameraShake:onLoadFinished()
 	StoryBgEffsHandCameraShake.super.onLoadFinished(self)
 
@@ -83,13 +74,7 @@ end
 
 function StoryBgEffsHandCameraShake:_onShakeFinished()
 	UIBlockMgr.instance:endBlock("shakeEnding")
-
-	if self._finishedCallback then
-		self._finishedCallback(self._finishedCallbackObj)
-
-		self._finishedCallback = nil
-		self._finishedCallbackObj = nil
-	end
+	self:callFinished()
 end
 
 function StoryBgEffsHandCameraShake:reset(bgCo)
@@ -135,9 +120,6 @@ function StoryBgEffsHandCameraShake:destroy()
 	if self._bgAnimator then
 		self._bgAnimator.runtimeAnimatorController = nil
 	end
-
-	self._finishedCallback = nil
-	self._finishedCallbackObj = nil
 
 	TaskDispatcher.cancelTask(self._startShake, self)
 	TaskDispatcher.cancelTask(self._shakeStop, self)

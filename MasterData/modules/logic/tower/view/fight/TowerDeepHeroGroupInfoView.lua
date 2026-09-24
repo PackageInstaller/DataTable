@@ -11,8 +11,8 @@ function TowerDeepHeroGroupInfoView:onInitView()
 	self._gopower = gohelper.findChild(self.viewGO, "#go_righttop/#go_power")
 	self._goroundContent = gohelper.findChild(self.viewGO, "#go_righttop/go_restRound/#go_roundContent")
 	self._goroundItem = gohelper.findChild(self.viewGO, "#go_righttop/go_restRound/#go_roundContent/#go_roundItem")
-	self._btnsave = gohelper.findChildButtonWithAudio(self.viewGO, "#go_container/btnContain/horizontal/#btn_save")
-	self._btnload = gohelper.findChildButtonWithAudio(self.viewGO, "#go_container/btnContain/horizontal/#btn_load")
+	self._btnsave = gohelper.findChildButtonWithAudio(self.viewGO, "#go_righttop/#btn_save")
+	self._btnload = gohelper.findChildButtonWithAudio(self.viewGO, "#go_righttop/#btn_load")
 
 	if self._editableInitView then
 		self:_editableInitView()

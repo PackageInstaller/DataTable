@@ -4,28 +4,26 @@ module("modules.logic.autochess.main.model.AutoChessModel", package.seeall)
 
 local AutoChessModel = class("AutoChessModel", BaseModel)
 
-function AutoChessModel:enterSceneReply(moduleId, scene, actId)
-	self.actId = actId
+function AutoChessModel:onEnterScene(moduleId, scene, actId)
 	self.moduleId = moduleId
 
-	local mo = AutoChessMO.New()
+	local mo = AutoChessSceneMo.New()
 
-	mo:updateSvrScene(scene)
+	mo:init(scene)
 
-	self.chessMo = mo
+	self.sceneMo = mo
+	self.actId = actId
 end
 
 function AutoChessModel:setEpisodeId(id)
 	self.episodeId = id
 end
 
-function AutoChessModel:getChessMo(noError)
-	if self.chessMo then
-		return self.chessMo
-	end
-
-	if not noError then
-		logError("异常:不存在游戏数据%s")
+function AutoChessModel:getSceneMo(ignore)
+	if self.sceneMo then
+		return self.sceneMo
+	elseif not ignore then
+		logError("异常:不存在游戏数据")
 	end
 end
 
@@ -41,7 +39,7 @@ function AutoChessModel:clearData()
 	self.actId = nil
 	self.moduleId = nil
 	self.episodeId = nil
-	self.chessMo = nil
+	self.sceneMo = nil
 end
 
 AutoChessModel.instance = AutoChessModel.New()

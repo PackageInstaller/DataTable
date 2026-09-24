@@ -37,6 +37,7 @@ function StoryModel:resetStoryState()
 	self._isPlayFinished = false
 	self._uiActive = false
 	self._inScreenSplit = false
+	self._clickPrefabName = nil
 end
 
 function StoryModel:setPlayFnished()
@@ -462,6 +463,7 @@ end
 function StoryModel:clearData()
 	self._isPlayFinished = false
 	self._log = {}
+	self._clickPrefabName = nil
 
 	StoryLogListModel.instance:clearData()
 end
@@ -854,6 +856,18 @@ function StoryModel:isSetTopView(viewName)
 	end
 
 	return false
+end
+
+function StoryModel:getStoryClickPrefabName()
+	return self._clickPrefabName
+end
+
+function StoryModel:setStoryClickPrefabName(prefabName)
+	self._clickPrefabName = prefabName
+end
+
+function StoryModel:hasStoryClickPrefab()
+	return not string.nilorempty(self._clickPrefabName)
 end
 
 StoryModel.instance = StoryModel.New()

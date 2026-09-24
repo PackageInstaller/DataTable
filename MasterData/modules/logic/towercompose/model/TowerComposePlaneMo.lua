@@ -106,6 +106,13 @@ function TowerComposePlaneMo:updateTeamInfo(teamInfo)
 		heroData.heroId = heroInfo.heroId
 		heroData.trialId = heroInfo.trialId
 		heroData.equipId = heroInfo.mindId
+
+		if heroInfo.assistHeroInfo and tonumber(heroInfo.assistHeroInfo.heroUid) ~= 0 then
+			heroData.assistMo = heroData.assistMo or PickAssistHeroMO.New()
+
+			heroData.assistMo:init(heroInfo.assistHeroInfo)
+		end
+
 		self.teamInfoData.heros[heroData.pos] = heroData
 	end
 

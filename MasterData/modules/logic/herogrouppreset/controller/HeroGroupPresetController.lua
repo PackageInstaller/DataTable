@@ -30,6 +30,10 @@ function HeroGroupPresetController:isFightScene()
 	return GameSceneMgr.instance:isFightScene()
 end
 
+function HeroGroupPresetController:isAbyss()
+	return self:isCopyShowType() and self._heroGroupTypeList ~= nil and #self._heroGroupTypeList == 1 and self._heroGroupTypeList[1] == HeroGroupPresetEnum.HeroGroupType.AbyssPreset
+end
+
 function HeroGroupPresetController:isFightShowType()
 	return self._showType == HeroGroupPresetEnum.ShowType.Fight
 end
@@ -71,7 +75,7 @@ function HeroGroupPresetController:openHeroGroupPresetTeamView(param, isImmediat
 	self._subId = param and param.subId
 	self._targetId = param and param.targetId
 
-	if not self:isFightScene() then
+	if not self:isFightScene() and not self:isAbyss() then
 		HeroGroupModel.instance.episodeId = nil
 
 		HeroGroupModel.instance:initRestrictHeroData()
@@ -245,6 +249,10 @@ function HeroGroupPresetController:revertCurHeroGroup()
 	local heroGroupType = HeroGroupModel.instance.heroGroupType
 
 	if heroGroupType == ModuleEnum.HeroGroupType.Temp or heroGroupType == ModuleEnum.HeroGroupType.Trial then
+		return
+	end
+
+	if heroGroupType == ModuleEnum.HeroGroupType.BossRushActMode then
 		return
 	end
 

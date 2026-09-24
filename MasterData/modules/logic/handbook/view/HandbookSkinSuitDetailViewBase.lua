@@ -115,6 +115,23 @@ end
 
 function HandbookSkinSuitDetailViewBase:_refreshDesc()
 	self._textSkinThemeDescr.text = self._skinSuitCfg.des
+
+	if not string.nilorempty(self._skinSuitCfg.includeSuit) then
+		local includeSuitList = string.splitToNumber(self._skinSuitCfg.includeSuit, "#")
+
+		for index, suit in ipairs(includeSuitList) do
+			local suitCfg = HandbookConfig.instance:getSkinSuitCfg(suit)
+
+			if suitCfg then
+				local goDescr = gohelper.findChild(self.viewGO, "#go_scroll/Viewport/#go_storyStages/#txt_Descr" .. tostring(index + 1))
+				local descr = goDescr and gohelper.findChildTextMesh(goDescr, "")
+
+				if descr then
+					descr.text = suitCfg.des
+				end
+			end
+		end
+	end
 end
 
 function HandbookSkinSuitDetailViewBase:_refreshBg()

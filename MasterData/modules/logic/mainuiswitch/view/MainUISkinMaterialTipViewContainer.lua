@@ -8,7 +8,7 @@ function MainUISkinMaterialTipViewContainer:buildViews()
 	local views = {}
 
 	table.insert(views, MainUISkinMaterialTipView.New())
-	table.insert(views, MainUISkinMaterialTipViewBanner.New())
+	table.insert(views, DecorateMaterialTipViewBanner.New())
 
 	return views
 end

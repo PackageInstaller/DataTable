@@ -43,7 +43,7 @@ end
 
 function StoryBranchOptionSpClickSelectItem:_setOptionSelect()
 	if self._anim then
-		self._anim:SetBool("isSelect", true)
+		self._anim:Play("click")
 	end
 end
 
@@ -53,7 +53,7 @@ end
 
 function StoryBranchOptionSpClickSelectItem:_setOptionUnselect()
 	if self._anim then
-		self._anim:SetBool("isUnselect", true)
+		self._anim:Play("click")
 	end
 end
 
@@ -104,10 +104,18 @@ function StoryBranchOptionSpClickSelectItem:_onSelectItemLoaded()
 			local go = gohelper.clone(prefab, self._goroot)
 
 			if isLang then
+				for _, lanName in pairs(LanguageEnum.LanguageStoryType2Key) do
+					local langGo = gohelper.findChild(go, lanName)
+
+					gohelper.setActive(langGo, false)
+				end
+
 				local txtType = GameLanguageMgr.instance:getLanguageTypeStoryIndex()
 				local lanName = LanguageEnum.LanguageStoryType2Key[txtType]
 
-				self.go = gohelper.findChild(go, lanName)
+				self.go = gohelper.findChild(go, lanName) or gohelper.findChild(go, LanguageEnum.LanguageStoryType2Key[1])
+
+				gohelper.setActive(self.go, true)
 			else
 				self.go = go
 			end

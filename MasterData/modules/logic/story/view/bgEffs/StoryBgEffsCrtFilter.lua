@@ -18,11 +18,6 @@ function StoryBgEffsCrtFilter:init(bgCo)
 	self._effLoaded = false
 end
 
-function StoryBgEffsCrtFilter:start()
-	StoryBgEffsCrtFilter.super.start(self)
-	self:loadRes()
-end
-
 function StoryBgEffsCrtFilter:onLoadFinished()
 	StoryBgEffsCrtFilter.super.onLoadFinished(self)
 
@@ -62,12 +57,12 @@ function StoryBgEffsCrtFilter:setBg()
 	local isOnHero = self._bgCo.effDegree == 0
 
 	if isOnHero then
-		local var_7_0 = gohelper.findChild(ViewMgr.instance:getUIRoot(), "POPUPBlur")
+		local var_6_0 = gohelper.findChild(ViewMgr.instance:getUIRoot(), "POPUPBlur")
 
-		if not var_7_0 then
-			var_7_0 = StoryViewMgr.instance:getStoryView()
+		if not var_6_0 then
+			var_6_0 = StoryViewMgr.instance:getStoryView()
 
-			local parentGO = var_7_0
+			local parentGO = var_6_0
 
 			gohelper.addChild(parentGO, self._filterGo)
 			gohelper.setAsFirstSibling(self._filterGo)

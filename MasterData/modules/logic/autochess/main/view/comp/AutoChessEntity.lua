@@ -25,7 +25,6 @@ function AutoChessEntity:init(go)
 	self.imageLight2 = gohelper.findChildImage(self.goBar, "Exp/go_Star/go_Star2/image_Light2")
 	self.goStar3 = gohelper.findChild(self.goBar, "Exp/go_Star/go_Star3")
 	self.imageLight3 = gohelper.findChildImage(self.goBar, "Exp/go_Star/go_Star3/image_Light3")
-	self.golvup = gohelper.findChild(self.goBar, "Exp/go_lvup")
 	self.anim = gohelper.findChild(go, "ani"):GetComponent(gohelper.Type_Animator)
 	self.goHpFloat = gohelper.findChild(self.goBar, "go_HpFloat")
 	self.meshComp = MonoHelper.addNoUpdateLuaComOnceToGo(self.goMesh, AutoChessMeshComp)
@@ -43,8 +42,8 @@ function AutoChessEntity:init(go)
 
 	self.addEventCb(self, AutoChessController.instance, AutoChessEvent.DragChessEntity, self.onDragChess, self)
 	self.addEventCb(self, AutoChessController.instance, AutoChessEvent.DragChessEntityEnd, self.onDragChessEnd, self)
-	self.addEventCb(self, AutoChessController.instance, AutoChessEvent.DrageMallItem, self.onDragChess, self)
-	self.addEventCb(self, AutoChessController.instance, AutoChessEvent.DrageMallItemEnd, self.onDragChessEnd, self)
+	self.addEventCb(self, AutoChessController.instance, AutoChessEvent.DragMallItem, self.onDragChess, self)
+	self.addEventCb(self, AutoChessController.instance, AutoChessEvent.DragMallItemEnd, self.onDragChessEnd, self)
 
 	self.goExp = gohelper.findChild(self.goBar, "Exp")
 	self.floatItemList = {}
@@ -53,13 +52,14 @@ end
 
 function AutoChessEntity:addEventListeners()
 	self.addEventCb(self, AutoChessController.instance, AutoChessEvent.UsingLeaderSkill, self.onUsingLeaderSkill, self)
+	self.addEventCb(self, AutoChessController.instance, AutoChessEvent.UpdateExtInfo, self.onUpdateExtInfo, self)
 end
 
 function AutoChessEntity:onUsingLeaderSkill(using)
 	if using then
 		local types = AutoChessGameModel.instance.targetTypes
 
-		if tabletool.indexOf(types, self.config.type) then
+		if tabletool.indexOf(types, self.mo.config.type) then
 			gohelper.setActive(self.goEffLight, true)
 
 			return
@@ -69,9 +69,9 @@ function AutoChessEntity:onUsingLeaderSkill(using)
 	gohelper.setActive(self.goEffLight, false)
 end
 
-function AutoChessEntity:onDragChess(chessCo)
-	if self.data.id == chessCo.id and self.data.maxExpLimit ~= 0 then
-		self.lightIndex = self.data.exp + 1
+function AutoChessEntity:onDragChess(config)
+	if self.mo.id == config.id and self.mo.maxExpLimit ~= 0 then
+		self.lightIndex = self.mo.exp + 1
 
 		gohelper.setActive(self["imageLight" .. self.lightIndex].gameObject, true)
 		self["animStar" .. self.lightIndex]:Play("loop", 0, 0)
@@ -92,44 +92,46 @@ function AutoChessEntity:onDestroy()
 	TaskDispatcher.cancelTask(self.checkHpFloat, self)
 end
 
-function AutoChessEntity:setData(data, warZone, pos)
-	self:initChessData(data)
-
+function AutoChessEntity:setData(mo, warZone, pos)
+	self.mo = mo
 	self.warZone = warZone
 	self.index = pos
-	self.teamType = self.data.teamType
-	self.skillIds = {}
+	self.teamType = self.mo.teamType
 
-	if not string.nilorempty(self.config.skillIds) then
-		self.skillIds = string.splitToNumber(self.config.skillIds, "#")
+	local skillIdsStr = self.mo.config.skillIds
+
+	if not string.nilorempty(skillIdsStr) then
+		local skillIds = string.splitToNumber(skillIdsStr, "#")
+
+		self.skillId = skillIds[1]
 	end
 
 	local dir = self.teamType == AutoChessEnum.TeamType.Enemy and 1 or -1
 
 	transformhelper.setLocalScale(self.dirTrs, dir, 1, 1)
-	self.meshComp:setData(self.config.image, self.teamType == AutoChessEnum.TeamType.Enemy)
+	self.meshComp:setData(self.mo.config.image, self.teamType == AutoChessEnum.TeamType.Enemy)
 	self:refreshUI()
 	self:show()
 
-	if self.config.type == AutoChessStrEnum.ChessType.Incubate and self.data.cd == 0 then
+	if self.mo.config.type == AutoChessStrEnum.ChessType.Incubate and self.mo.cd == 0 then
 		self.anim:Play("box_loop", 0, 0)
 	end
 
-	if self.config.type == AutoChessStrEnum.ChessType.Boss then
+	if self.mo.config.type == AutoChessStrEnum.ChessType.Boss then
 		recthelper.setAnchor(self.goAttack.transform, 0, -188)
 		recthelper.setAnchor(self.goHp.transform, 0, -188)
 	end
 end
 
 function AutoChessEntity:updateIndex(warZone, index)
-	self.warZone = warZone
-	self.index = index
+	self.warZone = tonumber(warZone)
+	self.index = tonumber(index)
 
 	self:show()
 end
 
 function AutoChessEntity:updateLocation()
-	local isBoss = self.config.type == AutoChessStrEnum.ChessType.Boss
+	local isBoss = self.mo.config.type == AutoChessStrEnum.ChessType.Boss
 
 	self.pos = AutoChessGameModel.instance:getChessLocation(self.warZone, self.index + 1, isBoss)
 
@@ -140,13 +142,8 @@ function AutoChessEntity:setScale(scale)
 	transformhelper.setLocalScale(self.transform, scale, scale, scale)
 end
 
-function AutoChessEntity:initChessData(data)
-	self.data = data
-	self.config = AutoChessConfig.instance:getChessCfgById(data.id, data.star)
-end
-
 function AutoChessEntity:move(index)
-	if self.config.type == AutoChessStrEnum.ChessType.Boss then
+	if self.mo.config.type == AutoChessStrEnum.ChessType.Boss then
 		logError("Boss类型的棋子不该移动")
 
 		return
@@ -185,51 +182,53 @@ end
 function AutoChessEntity:initBuffEffect()
 	self.effectComp:hideAll()
 
-	for _, buff in ipairs(self.data.buffContainer.buffs) do
-		local buffeffectID = lua_auto_chess_buff.configDict[buff.id].buffeffectID
+	for _, buff in ipairs(self.mo.buffContainer.buffs) do
+		local buffeffectID = buff.config.buffeffectID
 
 		if buffeffectID ~= 0 then
-			local effectCo = lua_auto_chess_effect.configDict[buffeffectID]
+			local effectCo = AutoChessConfig.instance:getEffectCfg(buffeffectID)
 
-			if effectCo.loop == 1 then
+			if effectCo and effectCo.loop == 1 then
 				self.effectComp:playEffect(effectCo)
 			end
 		end
 	end
 
-	local effectTag = self.config.tag
+	local effectTag = self.mo.config.tag
 
 	if not string.nilorempty(effectTag) then
 		local effectId = AutoChessEnum.Tag2EffectId[effectTag]
 
 		self:playEffect(effectId)
 	end
+
+	self:onUpdateExtInfo()
 end
 
 function AutoChessEntity:addBuff(buff)
-	local buffCo = lua_auto_chess_buff.configDict[buff.id]
+	local buffeffectID = buff.config.buffeffectID
 
-	if buffCo.buffeffectID ~= 0 then
-		self:playEffect(buffCo.buffeffectID)
+	if buffeffectID ~= 0 then
+		self:playEffect(buffeffectID)
 	end
 
-	table.insert(self.data.buffContainer.buffs, buff)
+	self.mo.buffContainer:addBuff(buff)
 end
 
 function AutoChessEntity:updateBuff(buff)
 	if buff.layer ~= 0 then
-		local buffCo = lua_auto_chess_buff.configDict[buff.id]
+		local buffeffectID = buff.config.buffeffectID
 
-		if buffCo.buffeffectID ~= 0 then
-			self:playEffect(buffCo.buffeffectID)
+		if buffeffectID ~= 0 then
+			self:playEffect(buffeffectID)
 		end
 	end
 
-	local buffs = self.data.buffContainer.buffs
+	local buffs = self.mo.buffContainer.buffs
 
-	for k, buff1 in ipairs(buffs) do
+	for _, buff1 in ipairs(buffs) do
 		if buff1.uid == buff.uid then
-			buffs[k] = buff
+			buff1:update(buff)
 
 			break
 		end
@@ -237,7 +236,7 @@ function AutoChessEntity:updateBuff(buff)
 end
 
 function AutoChessEntity:delBuff(buffUid)
-	local buffs = self.data.buffContainer.buffs
+	local buffs = self.mo.buffContainer.buffs
 	local index
 
 	for k, buff in ipairs(buffs) do
@@ -250,10 +249,10 @@ function AutoChessEntity:delBuff(buffUid)
 
 	if index then
 		local buff = buffs[index]
-		local buffCo = lua_auto_chess_buff.configDict[buff.id]
+		local buffeffectID = buff.config.buffeffectID
 
-		if buffCo.buffeffectID ~= 0 then
-			self.effectComp:removeEffect(buffCo.buffeffectID)
+		if buffeffectID ~= 0 then
+			self.effectComp:removeEffect(buffeffectID)
 		end
 
 		table.remove(buffs, index)
@@ -265,8 +264,8 @@ end
 function AutoChessEntity:die(playSkill)
 	self.anim:Play("die", 0, 0)
 
-	if playSkill and #self.skillIds ~= 0 then
-		local skillCo = lua_auto_chess_skill.configDict[self.skillIds[1]]
+	if playSkill and self.skillId then
+		local skillCo = AutoChessConfig.instance:getChessSkillCfg(self.skillId)
 
 		if skillCo.tag == "Die" and skillCo.useeffect ~= 0 then
 			self:playEffect(skillCo.useeffect)
@@ -291,7 +290,7 @@ end
 
 function AutoChessEntity:updateHp(value)
 	value = tonumber(value)
-	self.data.hp = self.data.hp + value
+	self.mo.hp = self.mo.hp + value
 
 	self:refreshAttr()
 end
@@ -339,7 +338,7 @@ end
 
 function AutoChessEntity:updateBattle(value)
 	value = tonumber(value)
-	self.data.battle = self.data.battle + value
+	self.mo.battle = self.mo.battle + value
 
 	self:refreshAttr()
 end
@@ -347,15 +346,16 @@ end
 function AutoChessEntity:updateExp(value)
 	value = tonumber(value)
 
-	if value > self.data.maxExpLimit then
-		self.data.exp = self.data.maxExpLimit or value
+	if value > self.mo.maxExpLimit then
+		self.mo.exp = self.mo.maxExpLimit or value
 	end
 
 	self:refreshExp()
 end
 
-function AutoChessEntity:updateStar(chess)
-	self:initChessData(chess)
+function AutoChessEntity:updateStar(mo)
+	self.mo = mo
+
 	self:refreshUI()
 
 	return self:playEffect(50001)
@@ -369,9 +369,9 @@ function AutoChessEntity:refreshUI()
 end
 
 function AutoChessEntity:refreshAttr()
-	if self.config.type == AutoChessStrEnum.ChessType.Attack or self.config.type == AutoChessStrEnum.ChessType.Boss then
-		self.txtAttack.text = self.data.battle
-		self.txtHp.text = self.data.hp
+	if self.mo.config.type == AutoChessStrEnum.ChessType.Attack or self.mo.config.type == AutoChessStrEnum.ChessType.Boss then
+		self.txtAttack.text = self.mo.battle
+		self.txtHp.text = self.mo.hp
 
 		gohelper.setActive(self.goAttack, true)
 		gohelper.setActive(self.goHp, true)
@@ -385,22 +385,22 @@ function AutoChessEntity:refreshExp()
 	for i = 1, 3 do
 		local imageLight = self["imageLight" .. i]
 
-		gohelper.setActive(imageLight, i <= self.data.exp)
+		gohelper.setActive(imageLight, i <= self.mo.exp)
 	end
 end
 
 function AutoChessEntity:refreshStar()
-	if self.data.star == 0 then
+	if self.mo.star == 0 then
 		gohelper.setActive(self.imageLevel, false)
 		gohelper.setActive(self.goExp, false)
 	else
 		local txt = luaLang("autochess_malllevelupview_level")
 
-		UISpriteSetMgr.instance:setAutoChessSprite(self.imageLevel, "v2a5_autochess_levelbg_" .. self.data.star)
+		UISpriteSetMgr.instance:setAutoChessSprite(self.imageLevel, "v2a5_autochess_levelbg_" .. self.mo.star)
 
-		self.txtLevel.text = GameUtil.getSubPlaceholderLuaLangOneParam(txt, self.data.star)
+		self.txtLevel.text = GameUtil.getSubPlaceholderLuaLangOneParam(txt, self.mo.star)
 
-		local maxExp = self.data.maxExpLimit
+		local maxExp = self.mo.maxExpLimit
 
 		if maxExp == 0 then
 			gohelper.setActive(self.goStar, false)
@@ -438,7 +438,7 @@ function AutoChessEntity:checkHpFloat()
 end
 
 function AutoChessEntity:flyStar()
-	local starCnt = self.config.levelFromMall
+	local starCnt = self.mo.config.levelFromMall
 
 	starCnt = starCnt < 5 and starCnt or 5
 
@@ -451,14 +451,14 @@ function AutoChessEntity:flyStar()
 end
 
 function AutoChessEntity:delayFly()
-	local fightMo = AutoChessModel.instance:getChessMo().lastSvrFight
+	local fightMo = AutoChessModel.instance:getSceneMo().lastFight
 	local leaderUid
 	local leader = AutoChessEntityMgr.instance:getLeaderEntity(self.teamType == AutoChessEnum.TeamType.Player and fightMo.mySideMaster.uid or fightMo.enemyMaster.uid)
 
 	if leader then
 		local x, y, z = transformhelper.getPos(leader.go.transform)
 		local targetPos = recthelper.rectToRelativeAnchorPos(Vector3(x, y, z), self.goFlyStar.transform)
-		local starCnt = self.config.levelFromMall
+		local starCnt = self.mo.config.levelFromMall
 
 		starCnt = starCnt < 5 and starCnt or 5
 
@@ -475,15 +475,44 @@ function AutoChessEntity:playEffect(effectId, param)
 		gohelper.setAsLastSibling(self.go)
 	end
 
-	local effectCo = lua_auto_chess_effect.configDict[effectId]
+	local effectCo = AutoChessConfig.instance:getEffectCfg(effectId)
 
-	self.effectComp:playEffect(effectCo, param)
+	if effectCo then
+		self.effectComp:playEffect(effectCo, param)
+	end
 
-	return effectCo.duration
+	return (effectCo or nil) and (effectCo.duration or 0)
 end
 
-function AutoChessEntity:playBuffEffect(effectId)
-	return
+function AutoChessEntity:onUpdateExtInfo()
+	local sceneMo = AutoChessModel.instance:getSceneMo()
+	local extInfo = sceneMo and sceneMo.extInfo
+
+	if extInfo then
+		local isBuyChess = self.mo.uid == extInfo.lastBuyChessUid
+
+		if self.lastBuy and not isBuyChess then
+			self.effectComp:removeEffect(40008)
+
+			self.lastBuy = false
+		elseif not self.lastBuy and isBuyChess then
+			self:playEffect(40008)
+
+			self.lastBuy = true
+		end
+
+		local isDamageExtra = tabletool.indexOf(extInfo.damageExtraTargetChessUids, self.mo.uid)
+
+		if self.damageExtra and not isDamageExtra then
+			self.effectComp:removeEffect(40006)
+
+			self.damageExtra = false
+		elseif not self.damageExtra and isDamageExtra then
+			self:playEffect(40006)
+
+			self.damageExtra = true
+		end
+	end
 end
 
 return AutoChessEntity

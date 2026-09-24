@@ -22,6 +22,10 @@ function FightHeroCustomCompBase:removeEventListeners()
 	return
 end
 
+function FightHeroCustomCompBase:setActive(active)
+	gohelper.setActive(self.go, active)
+end
+
 function FightHeroCustomCompBase:onDestroy()
 	self:__onDispose()
 end

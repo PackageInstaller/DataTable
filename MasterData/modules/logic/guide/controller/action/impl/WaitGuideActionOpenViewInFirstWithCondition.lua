@@ -17,6 +17,13 @@ function WaitGuideActionOpenViewInFirstWithCondition:onStart(context)
 	self._delayTime = paramList[4] and tonumber(paramList[4]) or 0.2
 	self._conditionCheckFun = self[funcName]
 
+	if not self._conditionCheckFun and not string.nilorempty(funcName) then
+		local arr = string.split(funcName, "-")
+		local cls = _G[arr[1]]
+
+		self._conditionCheckFun = cls and cls[arr[2]]
+	end
+
 	if self:checkDone() then
 		return
 	end

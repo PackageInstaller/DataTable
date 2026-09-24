@@ -3,6 +3,7 @@
 module("modules.logic.story.view.bgEffs.StoryBgEffsCameraEffect", package.seeall)
 
 local StoryBgEffsCameraEffect = class("StoryBgEffsCameraEffect", StoryBgEffsBase)
+local UIBlockKey = "storyPostProcessEnding"
 
 function StoryBgEffsCameraEffect:ctor()
 	StoryBgEffsCameraEffect.super.ctor(self)
@@ -12,21 +13,20 @@ function StoryBgEffsCameraEffect:init(bgCo)
 	StoryBgEffsCameraEffect.super.init(self, bgCo)
 
 	self._effMo = StoryCameraEffectModel.instance:getStoryCameraEffectByType(bgCo.effDegree)
-	self._cameraAnimPath = string.format("ui/animations/dynamic/%s.controller", self._effMo.controllerName)
 
-	table.insert(self._resList, self._cameraAnimPath)
+	if self._effMo then
+		if not string.nilorempty(self._effMo) then
+			self._cameraAnimPath = ResUrl.getStoryPostProcessAnim(self._effMo)
+
+			table.insert(self._resList, self._cameraAnimPath)
+		end
+	end
 end
 
-function StoryBgEffsCameraEffect:start(callback, callbackObj)
-	StoryBgEffsCameraEffect.super.start(self)
-
-	self._finishedCallback = callback
-	self._finishedCallbackObj = callbackObj
-
+function StoryBgEffsCameraEffect:onStartEffect()
 	self:_setViewTop(true)
 	ViewMgr.instance:registerCallback(ViewEvent.OnOpenView, self._onOpenView, self)
 	ViewMgr.instance:registerCallback(ViewEvent.OnCloseViewFinish, self._onCloseView, self)
-	self:loadRes()
 end
 
 function StoryBgEffsCameraEffect:onLoadFinished()
@@ -36,15 +36,32 @@ function StoryBgEffsCameraEffect:onLoadFinished()
 
 	StoryTool.enablePostProcess(true)
 
-	local anim = self._loader:getAssetItem(self._cameraAnimPath):GetResource()
+	if not self._cameraAnimPath then
+		return
+	end
 
-	self._cameraAnim = CameraMgr.instance:getCameraRootAnimator()
-	self._preAnimEnabled = self._cameraAnim.enabled
-	self._preRuntimeAnimatorController = self._cameraAnim.runtimeAnimatorController
-	self._cameraAnim.enabled = true
-	self._cameraAnim.runtimeAnimatorController = anim
+	local assetItem = self._loader:getAssetItem(self._cameraAnimPath)
+	local anim = assetItem and assetItem:GetResource()
 
-	self._cameraAnim:Play("start", 0, 0)
+	if not anim then
+		logError("后处理动画加载失败: " .. tostring(self._cameraAnimPath))
+
+		return
+	end
+
+	self._played = StoryPostProcessAnimMgr.instance:play(self:_getTarget(), self, anim, {
+		stateName = "start",
+		autoRestore = self._effMo.autoRestore,
+		keepRefresh = self._effMo.keepRefresh
+	})
+end
+
+function StoryBgEffsCameraEffect:_getTarget()
+	if self._effMo and self._effMo.target == 1 then
+		return StoryPostProcessAnimMgr.Target.Scene
+	end
+
+	return StoryPostProcessAnimMgr.Target.UI
 end
 
 function StoryBgEffsCameraEffect:_onOpenView(viewName)
@@ -97,43 +114,52 @@ function StoryBgEffsCameraEffect:reset(bgCo)
 		return
 	end
 
-	if self._cameraAnim then
-		self._cameraAnim:Play("end", 0, 0)
-		UIBlockMgr.instance:startBlock("outFocusEnding")
+	if not self._played then
+		return
+	end
 
+	local playing = StoryPostProcessAnimMgr.instance:playState(self, "end")
+
+	UIBlockMgr.instance:startBlock(UIBlockKey)
+
+	if playing then
 		if self._effMo then
-			if not self._effMo.endTime then
-				local endTime = 1
+			local endTime = 0
 
-				TaskDispatcher.runDelay(self._onEffFinished, self, endTime)
+			if not self._effMo.endTime then
+				endTime = 1
 			end
+
+			TaskDispatcher.runDelay(self._onEffFinished, self, endTime)
 		end
 	end
 end
 
 function StoryBgEffsCameraEffect:_onEffFinished()
-	UIBlockMgr.instance:endBlock("outFocusEnding")
+	UIBlockMgr.instance:endBlock(UIBlockKey)
+	self:_stopAnim()
+	self:callFinished()
+end
 
-	if self._finishedCallback then
-		self._finishedCallback(self._finishedCallbackObj)
-
-		self._finishedCallback = nil
-		self._finishedCallbackObj = nil
+function StoryBgEffsCameraEffect:_stopAnim()
+	if not self._played then
+		return
 	end
+
+	self._played = false
+
+	StoryPostProcessAnimMgr.instance:stop(self)
+	StoryTool.enablePostProcess(true)
 end
 
 function StoryBgEffsCameraEffect:destroy()
 	self:_setViewTop(false)
 	ViewMgr.instance:unregisterCallback(ViewEvent.OnOpenView, self._onOpenView, self)
 	ViewMgr.instance:unregisterCallback(ViewEvent.OnCloseViewFinish, self._onCloseView, self)
+	TaskDispatcher.cancelTask(self._onEffFinished, self)
+	UIBlockMgr.instance:endBlock(UIBlockKey)
+	self:_stopAnim()
 	StoryBgEffsCameraEffect.super.destroy(self)
-
-	if self._cameraAnim then
-		self._cameraAnim:Play("end", 0, 1)
-
-		self._cameraAnim.runtimeAnimatorController = self._preRuntimeAnimatorController
-		self._cameraAnim.enabled = self._preAnimEnabled
-	end
 end
 
 return StoryBgEffsCameraEffect

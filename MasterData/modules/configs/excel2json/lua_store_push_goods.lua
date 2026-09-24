@@ -17,7 +17,9 @@ local fields = {
 local primaryKey = {
 	"goodpushsId"
 }
-local mlStringKey = {}
+local mlStringKey = {
+	desc = 1
+}
 
 function lua_store_push_goods.onLoad(json)
 	lua_store_push_goods.configList, lua_store_push_goods.configDict = JsonToLuaParser.parse(json, fields, primaryKey, mlStringKey)

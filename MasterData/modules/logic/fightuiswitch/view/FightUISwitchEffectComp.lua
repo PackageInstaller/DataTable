@@ -132,7 +132,7 @@ function FightUISwitchEffectComp:_getEffectItem(index)
 	if not item then
 		local childGO = gohelper.cloneInPlace(self._goeffectItem, "effect_" .. index)
 
-		item = MonoHelper.addNoUpdateLuaComOnceToGo(childGO, MainSwitchClassifyItem)
+		item = MonoHelper.addNoUpdateLuaComOnceToGo(childGO, FightUIEffectBtn)
 		self._effectItems[index] = item
 	end
 
@@ -184,6 +184,12 @@ function FightUISwitchEffectComp:_playEffectAnim()
 	local delayTime = self:_getEffectDelayTime()
 
 	TaskDispatcher.runDelay(self._showNextEffect, self, delayTime)
+
+	local effectItem = self:_getEffectItem(index)
+
+	if effectItem then
+		effectItem:onRefreshProgress(delayTime)
+	end
 end
 
 function FightUISwitchEffectComp:_showNextEffect()
@@ -231,6 +237,8 @@ function FightUISwitchEffectComp:_showCurEffect(index)
 	local progress
 
 	self._scrolleffect.horizontalNormalizedPosition = index < 3 and 0 or index > moLength - 3 and 1 or math.floor(index / moLength)
+
+	self:_refreshEffectProgress()
 end
 
 function FightUISwitchEffectComp:clearEffectAnim()
@@ -290,6 +298,17 @@ function FightUISwitchEffectComp:_repeatShowEffectAnimCB()
 	if tb and tb.anim then
 		gohelper.setActive(tb.anim.gameObject, false)
 		gohelper.setActive(tb.anim.gameObject, true)
+		self:_refreshEffectProgress()
+	end
+end
+
+function FightUISwitchEffectComp:_refreshEffectProgress()
+	local effectItem = self:_getEffectItem(self._showEffectIndex)
+
+	if effectItem then
+		self._repeatEffectTime = self._repeatEffectTime or self:_getEffectDelayTime()
+
+		effectItem:onRefreshProgress(self._repeatEffectTime)
 	end
 end
 

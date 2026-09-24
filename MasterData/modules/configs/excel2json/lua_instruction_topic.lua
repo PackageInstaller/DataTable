@@ -6,6 +6,7 @@ local lua_instruction_topic = {}
 local fields = {
 	id = 1,
 	bonus = 3,
+	spToastId = 4,
 	chapterId = 2
 }
 local primaryKey = {

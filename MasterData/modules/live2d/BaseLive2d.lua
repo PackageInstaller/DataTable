@@ -66,11 +66,9 @@ function BaseLive2d:doClear()
 end
 
 function BaseLive2d:_clear()
-	if self.customEffectComp then
-		MonoHelper.removeLuaComFromGo(self._gameObj, BaseLive2dSpecialEffect)
+	MonoHelper.removeLuaComFromGo(self._gameObj, BaseCommonSpecialEffect)
 
-		self.customEffectComp = nil
-	end
+	self.customEffectComp = nil
 
 	if self._resLoader then
 		self._resLoader:dispose()
@@ -178,6 +176,10 @@ function BaseLive2d:onAnimEventCallback(actName)
 	if self._live2dVoice then
 		self._live2dVoice:onAnimationEvent(actName, SpineAnimEvent.ActionComplete)
 	end
+end
+
+function BaseLive2d:getViewName()
+	return nil
 end
 
 function BaseLive2d:getSpineGo()
@@ -353,18 +355,24 @@ function BaseLive2d:setBodyAnimation(bodyName, loop, mixTime)
 	end
 end
 
+function BaseLive2d:_showInScene(value)
+	if self.customEffectComp then
+		self.customEffectComp:showInScene(value)
+	end
+end
+
 function BaseLive2d:getCurBody()
 	return self._curBodyName
 end
 
-function BaseLive2d:setFaceAnimation(faceName, loop, mixTime)
+function BaseLive2d:setFaceAnimation(faceName, loop, mixTime, immediate)
 	self._curFaceName = faceName
 
 	if gohelper.isNil(self._cubismController) then
 		return
 	end
 
-	self._cubismController:PlayExpression(faceName)
+	self._cubismController:PlayExpression(faceName, immediate or false)
 	self:_showFaceEffect(faceName)
 end
 
@@ -460,7 +468,7 @@ function BaseLive2d:SetAnimation(trackIndex, animationName, loop, mixTime)
 	end
 
 	if trackIndex <= BaseLive2d.MouthTrackIndex then
-		self._cubismController:PlayAnimation(animationName, loop, 1, trackIndex)
+		self._cubismController:PlayAnimation(animationName, loop, mixTime == -1 and 0 or 1, trackIndex)
 	end
 end
 
@@ -542,13 +550,13 @@ function BaseLive2d:initSpecialEffect(resPath)
 		local cls = _G[clsName]
 
 		if cls then
-			self.customEffectComp = MonoHelper.addNoUpdateLuaComOnceToGo(self._gameObj, cls)
+			self.customEffectComp = MonoHelper.addNoUpdateLuaComOnceToGo(self._gameObj, cls, self)
 		end
 	end
+end
 
-	if self.customEffectComp then
-		self.customEffectComp:setLive2d(self)
-	end
+function BaseLive2d:getCustomEffectComp()
+	return self.customEffectComp
 end
 
 function BaseLive2d:addParameter(name, mode, value)

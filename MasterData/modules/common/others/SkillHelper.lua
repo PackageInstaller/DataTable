@@ -37,6 +37,8 @@ function SkillHelper.addHyperLinkClick(textComp, clickCallback, clickCallbackObj
 		return
 	end
 
+	textComp.raycastTarget = true
+
 	local hyperLinkClick = gohelper.onceAddComponent(textComp, typeof(ZProj.TMPHyperLinkClick))
 
 	hyperLinkClick:SetClickListener(clickCallback or SkillHelper.defaultClick, clickCallbackObj)

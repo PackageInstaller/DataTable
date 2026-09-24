@@ -67,6 +67,14 @@ function TowerHeroGroupFightView:_enterFight()
 		local result = FightController.instance:setFightHeroSingleGroup()
 
 		if result then
+			local isHaveUselessAssist = TowerModel.instance:checkHaveUselessAssist()
+
+			if isHaveUselessAssist then
+				GameFacade.showToast(ToastEnum.TowerAssistRelease)
+
+				return
+			end
+
 			self.viewContainer:dispatchEvent(HeroGroupEvent.BeforeEnterFight)
 
 			local param = {}

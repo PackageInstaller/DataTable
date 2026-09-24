@@ -20,13 +20,33 @@ function GuideActionSetNextStepGOPath:onStart(context)
 	GuideActionSetNextStepGOPath.super.onStart(self, context)
 
 	local func = self[self._funcName]
-	local goPath = func(self, self._params)
+	local isStaticFunc
+
+	if not func and not string.nilorempty(self._funcName) then
+		local arr = string.split(self._funcName, "-")
+		local cls = _G[arr[1]]
+
+		func = cls and cls[arr[2]]
+		isStaticFunc = true
+	end
+
+	if not func then
+		logError("设置下一步骤GameObject路径，但函数未配置 " .. self.guideId .. "_" .. self.stepId)
+
+		func = self.defaultCheck
+	end
+
+	local goPath = isStaticFunc and func(self._params) or func(self, self._params)
 
 	if not string.nilorempty(goPath) then
 		GuideModel.instance:setNextStepGOPath(self.guideId, self.stepId, goPath)
 	end
 
 	self:onDone(true)
+end
+
+function GuideActionSetNextStepGOPath:defaultCheck()
+	return ""
 end
 
 function GuideActionSetNextStepGOPath:getCritterMood(params)
@@ -546,6 +566,16 @@ function GuideActionSetNextStepGOPath:getAtomicDungeonEmergencyElementPath()
 	end
 
 	return string.format("UIRoot/POPUP_TOP/AtomicDungeonMainView/root/#go_elementClickRoot/%s/btn_click", elementCo.id)
+end
+
+function GuideActionSetNextStepGOPath:getMatchGameFeverElementPath()
+	local feverElementPath = MatchGameFightModel.instance:getFeverElementPath()
+
+	if string.nilorempty(feverElementPath) then
+		return string.format("UIRoot/POPUP_TOP/MatchGameFightView/root/planeRoot/#go_plane/#go_planeContent/planeItem%d_%d/btn_click", 1, 1)
+	end
+
+	return feverElementPath
 end
 
 return GuideActionSetNextStepGOPath

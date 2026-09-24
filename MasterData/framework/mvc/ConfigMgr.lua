@@ -190,6 +190,10 @@ function ConfigMgr:_onConfigLoaded(jsonString)
 		end
 	end
 
+	if GameResMgr.IsFromEditorDir then
+		configText = LangConfig.instance:onReplaceOV(configName, configText, true)
+	end
+
 	luaConfig.onLoad(configText)
 
 	if not self._configDict[configName] then

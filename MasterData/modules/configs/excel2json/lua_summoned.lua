@@ -8,6 +8,7 @@ local fields = {
 	enterTime = 14,
 	includeTypes = 5,
 	closeTime = 15,
+	keyForEntiySummon = 18,
 	enterAudio = 16,
 	aniEffect = 10,
 	maxLevel = 3,

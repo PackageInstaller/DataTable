@@ -187,7 +187,8 @@ CharacterVoiceEnum.SkinInteraction = {
 	[314702] = "WMZSkinInteraction",
 	[310504] = "ZxqeSkinInteraction",
 	[311003] = "LiangYueSkinInteraction",
-	[314602] = "XRAnSkinInteraction"
+	[314602] = "XRAnSkinInteraction",
+	[315503] = "HongNJSkinInteraction"
 }
 CharacterVoiceEnum.RankUpResultShowMask = {
 	[3120] = true

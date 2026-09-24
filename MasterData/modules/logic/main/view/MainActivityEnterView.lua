@@ -291,6 +291,7 @@ function MainActivityEnterView:getEnterViewActIdList()
 		[ActivityEnum.VersionActivityIdDict.Activity3_7] = VersionActivity3_7Enum.EnterViewActIdListWithRedDot,
 		[ActivityEnum.VersionActivityIdDict.Activity3_8] = VersionActivity3_8Enum.EnterViewActIdListWithRedDot,
 		[ActivityEnum.VersionActivityIdDict.Activity3_9] = VersionActivity3_9Enum.EnterViewActIdListWithRedDot,
+		[ActivityEnum.VersionActivityIdDict.Activity4_0] = VersionActivity4_0Enum.EnterViewActIdListWithRedDot,
 		[ActivityEnum.VersionActivityIdDict.Activity_Assassin_1] = VersionActivity2_9Enum.EnterViewActIdListWithGroup[ActivityEnum.VersionActivityIdDict.Activity_Assassin_1],
 		[ActivityEnum.VersionActivityIdDict.Activity_Assassin_2] = VersionActivity2_9Enum.EnterViewActIdListWithGroup[ActivityEnum.VersionActivityIdDict.Activity_Assassin_2]
 	}
@@ -352,7 +353,7 @@ end
 
 function MainActivityEnterView:getActivityEnterHandleFunc(activityId)
 	self._activityEnterHandleFuncDict = self._activityEnterHandleFuncDict or {
-		[ActivityEnum.VersionActivityIdDict.Activity_sp02] = VersionActivity3_10EnterController.instance
+		[ActivityEnum.VersionActivityIdDict.Activity4_0] = VersionActivityMainFixedHelper.getVersionActivityEnterController().instance
 	}
 
 	return self._activityEnterHandleFuncDict[activityId]

@@ -57,6 +57,7 @@ function FightSkillSelectView:addEvents()
 	self.addEventCb(self, FightController.instance, FightEvent.SetEntityVisibleByTimeline, self._setEntityVisibleByTimeline, self)
 	self.addEventCb(self, FightController.instance, FightEvent.OnBeginWave, self._onBeginWave, self)
 	self.addEventCb(self, FightController.instance, FightEvent.EntityDeadFinish, self.onEntityDeadFinish, self)
+	self.addEventCb(self, FightController.instance, FightEvent.OnEntityDyingChange, self.onDyingChange, self)
 	self.addEventCb(self, FightController.instance, FightEvent.StageChanged, self.onStageChanged, self)
 	self.addEventCb(self, FightController.instance, FightEvent.GuideCreateClickBySkinId, self._onGuideCreateClickBySkinId, self)
 	self.addEventCb(self, FightController.instance, FightEvent.GuideReleaseClickBySkilId, self._onGuideReleaseClickBySkilId, self)
@@ -77,6 +78,7 @@ function FightSkillSelectView:removeEvents()
 	self.removeEventCb(self, FightController.instance, FightEvent.SetEntityVisibleByTimeline, self._setEntityVisibleByTimeline, self)
 	self.removeEventCb(self, FightController.instance, FightEvent.OnBeginWave, self._onBeginWave, self)
 	self.removeEventCb(self, FightController.instance, FightEvent.EntityDeadFinish, self.onEntityDeadFinish, self)
+	self.removeEventCb(self, FightController.instance, FightEvent.OnEntityDyingChange, self.onDyingChange, self)
 	self.removeEventCb(self, FightController.instance, FightEvent.StageChanged, self.onStageChanged, self)
 	self.removeEventCb(self, PCInputController.instance, PCInputEvent.NotifyBattleSelect, self.OnKeySelect, self)
 	self.removeEventCb(self, FightController.instance, FightEvent.OnChangeEntity, self.onChangeEntity, self)
@@ -307,19 +309,17 @@ function FightSkillSelectView:checkCanSelect(entityId)
 		return false
 	end
 
-	local entityData = FightDataHelper.entityMgr:getById(entityId)
+	local entityMo = FightDataHelper.entityMgr:getById(entityId)
 
-	if entityData:isAct191Boss() then
+	if not entityMo then
+		return false
+	end
+
+	if entityMo:isAct191Boss() then
 		return false
 	end
 
 	if FightDataHelper.entityMgr:isSub(entityId) then
-		return false
-	end
-
-	local entityMo = FightDataHelper.entityMgr:getById(entityId)
-
-	if not entityMo then
 		return false
 	end
 
@@ -335,6 +335,10 @@ function FightSkillSelectView:checkCanSelect(entityId)
 		return false
 	end
 
+	if not entityMo:isStatusNormal() then
+		return false
+	end
+
 	return true
 end
 
@@ -346,6 +350,10 @@ end
 
 function FightSkillSelectView:_onLongPress(param)
 	if FightDataHelper.lockOperateMgr:isLock() then
+		return
+	end
+
+	if FightDataHelper.stageMgr:inFightState(FightStageMgr.FightStateType.QTE) then
 		return
 	end
 
@@ -426,6 +434,16 @@ function FightSkillSelectView:onStageChanged(stage)
 end
 
 function FightSkillSelectView:onEntityDeadFinish()
+	self:_resetDefaultFocus()
+	FightController.instance:dispatchEvent(FightEvent.SelectSkillTarget, FightDataHelper.operationDataMgr.curSelectEntityId)
+	self:_updatePos()
+end
+
+function FightSkillSelectView:onDyingChange(targetId)
+	if FightDataHelper.operationDataMgr.curSelectEntityId ~= targetId then
+		return
+	end
+
 	self:_resetDefaultFocus()
 	FightController.instance:dispatchEvent(FightEvent.SelectSkillTarget, FightDataHelper.operationDataMgr.curSelectEntityId)
 	self:_updatePos()

@@ -14,7 +14,7 @@ function FightTLExecuteEffectType:onTrackStart(fightStepData, duration, paramsAr
 
 	self.flow = FightWorkFlowSequence.New()
 
-	self:addFightStepEffectWork(self.flow, self.fightStepData, self.effectType)
+	self:addFightStepEffectWork(self.flow, fightStepData, self.effectType)
 	self.flow:start()
 end
 
@@ -26,7 +26,7 @@ function FightTLExecuteEffectType:addFightStepEffectWork(flow, fightStepData, ef
 	for i, actEffectData in ipairs(fightStepData.actEffect) do
 		if not actEffectData:isDone() then
 			if actEffectData.effectType == FightEnum.EffectType.FIGHTSTEP then
-				self:addFightStepDamageWork(flow, actEffectData.fightStep)
+				self:addFightStepEffectWork(flow, actEffectData.fightStep)
 			elseif actEffectData.effectType == effectType then
 				local class = FightStepBuilder.EffectType2FlowOrWork[effectType]
 

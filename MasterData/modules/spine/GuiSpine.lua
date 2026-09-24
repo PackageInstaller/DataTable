@@ -278,11 +278,23 @@ function GuiSpine:showModel()
 	if self._rawImageGo then
 		gohelper.setActive(self._rawImageGo, true)
 	end
+
+	local effect = self:getCustomEffectComp()
+
+	if effect then
+		effect:showModel()
+	end
 end
 
 function GuiSpine:hideModel()
 	if self._rawImageGo then
 		gohelper.setActive(self._rawImageGo, false)
+	end
+
+	local effect = self:getCustomEffectComp()
+
+	if effect then
+		effect:hideModel()
 	end
 end
 
@@ -306,6 +318,14 @@ function GuiSpine:setFreezeState(isFreeze)
 	end
 
 	self._skeletonComponent.freeze = isFreeze
+end
+
+function GuiSpine:setShareRT(value, viewName)
+	self._rtViewName = viewName
+end
+
+function GuiSpine:getViewName()
+	return self._rtViewName
 end
 
 return GuiSpine

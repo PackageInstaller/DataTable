@@ -142,7 +142,15 @@ function FightFieldDataMgr:isSouDaChe()
 end
 
 function FightFieldDataMgr:clearData()
-	self.param = nil
+	tabletool.clear(self.param)
+end
+
+function FightFieldDataMgr:clearSceneIdOfParam()
+	if self.param == nil then
+		return
+	end
+
+	self.param[FightParamData.ParamKey.SceneId] = nil
 end
 
 return FightFieldDataMgr

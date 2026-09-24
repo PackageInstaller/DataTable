@@ -18,11 +18,11 @@ function SummonUISwitchInfoView:onInitView()
 	self._btnclose = gohelper.findChildButtonWithAudio(self.viewGO, "right/#btn_close")
 	self._goHideBtn = gohelper.findChild(self.viewGO, "left/LayoutGroup/#go_HideBtn")
 	self._btnHide = gohelper.findChildButtonWithAudio(self.viewGO, "left/LayoutGroup/#go_HideBtn/#btn_Hide")
-	self._goSceneName = gohelper.findChild(self.viewGO, "left/LayoutGroup/#go_SceneName")
-	self._txtSceneName = gohelper.findChildText(self.viewGO, "left/LayoutGroup/#go_SceneName/#txt_SceneName")
-	self._goTime = gohelper.findChild(self.viewGO, "left/LayoutGroup/#go_Time")
-	self._txtTime = gohelper.findChildText(self.viewGO, "left/LayoutGroup/#go_Time/#txt_Time")
-	self._txtSceneDescr = gohelper.findChildText(self.viewGO, "left/#txt_SceneDescr")
+	self._goSceneName = gohelper.findChild(self.viewGO, "left/LayoutGroup/layout/#go_SceneName")
+	self._txtSceneName = gohelper.findChildTextMesh(self.viewGO, "left/LayoutGroup/layout/#go_SceneName/#txt_SceneName")
+	self._goTime = gohelper.findChild(self.viewGO, "left/LayoutGroup/layout/#go_Time")
+	self._txtTime = gohelper.findChildTextMesh(self.viewGO, "left/LayoutGroup/layout/#go_Time/#txt_Time")
+	self._txtSceneDescr = gohelper.findChildTextMesh(self.viewGO, "left/#txt_SceneDescr")
 	self._gobtns = gohelper.findChild(self.viewGO, "#go_btns")
 
 	if self._editableInitView then
@@ -44,6 +44,7 @@ end
 
 SummonUISwitchInfoView.UIBlockKey = "switchSummonUISwitchInfo"
 SummonUISwitchInfoView.UIBlockTime = 5
+SummonUISwitchInfoView.EquipAnimTime = 0.667
 
 function SummonUISwitchInfoView:_btncloseOnClick()
 	self:closeThis()
@@ -72,6 +73,7 @@ function SummonUISwitchInfoView:_editableInitView()
 	self._goright = gohelper.findChild(self.viewGO, "right")
 	self._goLeft = gohelper.findChild(self.viewGO, "left")
 	self._rootAnimator = self.viewGO:GetComponent("Animator")
+	self._equipBtnAnimatorPlayer = SLFramework.AnimatorPlayer.Get(self._btnequip.gameObject)
 
 	gohelper.setActive(self._btnchange, false)
 	gohelper.setActive(self._btnget, false)
@@ -93,13 +95,21 @@ end
 function SummonUISwitchInfoView:onUseScene()
 	TaskDispatcher.cancelTask(self.forceEndBlock, self)
 	UIBlockMgr.instance:endBlock(SummonUISwitchInfoView.UIBlockKey)
+	self:_playEquipAnim()
+end
+
+function SummonUISwitchInfoView:_playEquipAnim()
+	self._equipBtnAnimatorPlayer:Play("click", self._onEquipAnimPlayEnd, self)
+end
+
+function SummonUISwitchInfoView:_onEquipAnimPlayEnd()
 	self:_updateBtnStatus()
 	self:_showTip()
 end
 
 function SummonUISwitchInfoView:forceEndBlock()
-	logError("抽卡场景页面锁屏超时")
 	TaskDispatcher.cancelTask(self.forceEndBlock, self)
+	logError("抽卡场景页面锁屏超时")
 	UIBlockMgr.instance:endBlock(SummonUISwitchInfoView.UIBlockKey)
 end
 

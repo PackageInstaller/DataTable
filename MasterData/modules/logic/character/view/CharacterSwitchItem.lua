@@ -66,7 +66,7 @@ function CharacterSwitchItem:onUpdateMO(mo)
 	self._heroId = self._mo.heroMO.heroId
 	self._txtname.text = self._config.name
 
-	self._simageicon:LoadImage(ResUrl.getHeadIconSmall(self._skinId))
+	self._simageicon:LoadImage(ResUrl.getHeadIconSmall(self._config.skinId))
 end
 
 function CharacterSwitchItem:onSelect(isSelect)

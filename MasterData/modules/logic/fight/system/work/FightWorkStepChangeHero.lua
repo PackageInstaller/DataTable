@@ -192,7 +192,7 @@ function FightWorkStepChangeHero:_onEnterEntitySpineLoadFinish(unitSpine)
 		self._work:onStart()
 
 		if entity:isMySide() then
-			FightAudioMgr.instance:playHeroVoiceRandom(self.from_entity_mo.modelId, CharacterEnum.VoiceType.EnterFight)
+			FightAudioMgr.instance:playHeroVoiceRandom(self.from_entity_mo.modelId, CharacterEnum.VoiceType.EnterFight, self.from_entity_mo.id)
 		end
 	end
 end

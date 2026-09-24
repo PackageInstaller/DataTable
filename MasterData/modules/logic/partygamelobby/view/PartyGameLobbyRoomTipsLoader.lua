@@ -21,10 +21,6 @@ function PartyGameLobbyRoomTipsLoader:_onToastLoadedCallBack(loader)
 	local toastPrefab = assetItem:GetResource(self._toastParams.resPath)
 
 	if not self.viewGO then
-		local normalGo = self._toastItem:getToastRootByType(ToastItem.ToastType.Normal)
-
-		gohelper.setActive(normalGo, false)
-
 		local rootGo = self._toastItem:getGo()
 		local go = gohelper.clone(toastPrefab, rootGo)
 		local comp = MonoHelper.addNoUpdateLuaComOnceToGo(go, self._toastParams.toastItemComp)

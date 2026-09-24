@@ -12,8 +12,8 @@ function SummonUISwitchView:onInitView()
 	self._goLocked = gohelper.findChild(self.viewGO, "right/start/#go_Locked")
 	self._scrollcard = gohelper.findChildScrollRect(self.viewGO, "right/mask/#scroll_card")
 	self._goSceneName = gohelper.findChild(self.viewGO, "left/LayoutGroup/#go_SceneName")
-	self._txtSceneName = gohelper.findChildText(self.viewGO, "left/LayoutGroup/#go_SceneName/#txt_SceneName")
-	self._txtTime = gohelper.findChildText(self.viewGO, "left/LayoutGroup/#go_SceneName/#txt_SceneName/#txt_Time")
+	self._txtSceneName = gohelper.findChildText(self.viewGO, "left/LayoutGroup/layout/#go_SceneName/#txt_SceneName")
+	self._txtTime = gohelper.findChildText(self.viewGO, "left/LayoutGroup/layout/#go_Time/#txt_Time")
 	self._btnHide = gohelper.findChildButtonWithAudio(self.viewGO, "left/LayoutGroup/#go_HideBtn/#btn_Hide")
 	self._txtSceneDescr = gohelper.findChildText(self.viewGO, "left/#txt_SceneDescr")
 	self._btnshow = gohelper.findChildButtonWithAudio(self.viewGO, "#btn_show")
@@ -144,7 +144,7 @@ function SummonUISwitchView:onTabSwitchOpen()
 end
 
 function SummonUISwitchView:onTabSwitchClose()
-	MainHeroView.setPostProcessBlur()
+	return
 end
 
 function SummonUISwitchView:_refreshInfo(skinId)

@@ -102,7 +102,7 @@ function FightLogProtobufHelper.getFightStepString(fightStepData, level, index, 
 	FightLogProtobufHelper.addStack(strTb, pre, stack, className)
 	table.insert(strTb, string.format("%s actType : %s %s", pre, fightStepData.actType, FightLogProtobufHelper.getActTypeName(fightStepData.actType)))
 
-	if fightStepData.actType == FightEnum.ActTySKILL or fightStepData.actType == FightEnum.ActType.DEVICE then
+	if fightStepData.actType == FightEnum.ActType.SKILL or fightStepData.actType == FightEnum.ActType.DEVICE then
 		table.insert(strTb, string.format("%s fromId : %s 技能发起者:%s", pre, fightStepData.fromId, FightLogProtobufHelper.getEntityName(fightStepData.fromId)))
 		table.insert(strTb, string.format("%s toId : %s 技能承受者:%s", pre, fightStepData.toId, FightLogProtobufHelper.getEntityName(fightStepData.toId)))
 		table.insert(strTb, string.format("%s actId : %s 技能名字:%s timeline : %s", pre, fightStepData.actId, FightLogProtobufHelper.getSkillName(fightStepData.actId), FightLogProtobufHelper.getTimelineName(fightStepData.fromId, fightStepData.actId)))
@@ -207,6 +207,37 @@ function FightLogProtobufHelper.getFightActEffectString(actEffectData, level, in
 		table.insert(strTb, FightLogProtobufHelper.getDeviceAreaInfoString(actEffectData.deviceAreaInfo, level))
 	end
 
+	if actEffectData.qteInfo then
+		table.insert(strTb, FightLogProtobufHelper.getQteInfoInfoString(actEffectData.qteInfo, level))
+	end
+
+	table.insert(strTb, initPre .. "}")
+
+	return table.concat(strTb, "\n")
+end
+
+function FightLogProtobufHelper.getQteInfoInfoString(qteInfo, level)
+	level = level or 0
+
+	local initPre = FightLogProtobufHelper.getPrefix(level)
+	local className = FightLogProtobufHelper.buildClassNameByIndex("qteInfo")
+
+	if not qteInfo then
+		return string.format("%s %s : nil", initPre, className)
+	end
+
+	local strTb = {
+		string.format("%s %s {", initPre, className)
+	}
+
+	level = level + 1
+
+	local pre = FightLogProtobufHelper.getPrefix(level)
+
+	table.insert(strTb, string.format("%s max : %s", pre, qteInfo.max))
+	table.insert(strTb, string.format("%s energies : [%s]", pre, table.concat(qteInfo.energies, ",")))
+	table.insert(strTb, string.format("%s threshold : %s", pre, qteInfo.threshold))
+	table.insert(strTb, string.format("%s status : %s", pre, qteInfo.status))
 	table.insert(strTb, initPre .. "}")
 
 	return table.concat(strTb, "\n")
@@ -711,6 +742,7 @@ function FightLogProtobufHelper.getEntityMoString(entityMo, level, index)
 	table.insert(strTb, string.format("%s status : %s", pre, entityMo.status))
 	table.insert(strTb, string.format("%s guard : %s", pre, entityMo.guard))
 	table.insert(strTb, string.format("%s powerInfo : %s", pre, cjson.encode(entityMo.powerInfos)))
+	table.insert(strTb, string.format("%s qteSkillGroup : %s", pre, entityMo.qteSkillGroup))
 	table.insert(strTb, initPre .. "}")
 
 	return table.concat(strTb, "\n")
@@ -902,7 +934,7 @@ end
 
 function FightLogProtobufHelper.getTimelineName(entityId, skillId)
 	if entityId then
-		::label_44_0::
+		::label_45_0::
 
 		local entityMo = FightDataHelper.entityMgr:getById(entityId)
 		local timeline = FightConfig.instance:getSkinSkillTimeline(entityMo and entityMo.skin, skillId)

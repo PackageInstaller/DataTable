@@ -23,15 +23,6 @@ function StoryBgEffsStarburst:init(bgCo)
 	self._effLoaded = false
 end
 
-function StoryBgEffsStarburst:start(callback, callbackObj)
-	StoryBgEffsStarburst.super.start(self)
-
-	self._finishedCallback = callback
-	self._finishedCallbackObj = callbackObj
-
-	self:loadRes()
-end
-
 function StoryBgEffsStarburst:onLoadFinished()
 	StoryBgEffsStarburst.super.onLoadFinished(self)
 
@@ -74,9 +65,6 @@ function StoryBgEffsStarburst:destroy()
 	end
 
 	StoryBgEffsStarburst.super.destroy(self)
-
-	self._finishedCallback = nil
-	self._finishedCallbackObj = nil
 end
 
 return StoryBgEffsStarburst

@@ -51,5 +51,6 @@ E("V3a1_GaoSiNiao_LevelView_ShowAllTabIdUpdate")
 E("V3a1_GaoSiNiao_LevelView_EnableEditModeOnSelect")
 E("V3a1_GaoSiNiao_GameView_ShowAllTabIdUpdate")
 E("V3a1_GaoSiNiao_GameView_OnClickSwitchMode")
+E("SettingsAccountView_ShowNodeAccountInfo")
 
 return GMEvent

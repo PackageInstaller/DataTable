@@ -78,6 +78,16 @@ function FightHelper.getEntityStandPos(fightEntityMO, waveId)
 		return 0, 0, 0, 1
 	end
 
+	if fightEntityMO.IS_SUMMONED_ENTITY then
+		local entityData = FightDataHelper.entityMgr:getById(fightEntityMO.SUMMONED_ENTITY_FROM_ID)
+
+		if entityData then
+			return FightHelper.getEntityStandPos(entityData, waveId)
+		end
+
+		return 0, 0, 0, 1
+	end
+
 	if fightEntityMO:isAssistBoss() then
 		if FightDataHelper.paTaMgr:checkIsAssistRole() then
 			return FightHelper.getAssistRoleStandPos(fightEntityMO, waveId)
@@ -892,6 +902,11 @@ end
 
 function FightHelper.detectAttributeCounter()
 	local fight_param = FightModel.instance:getFightParam()
+
+	if fight_param == nil then
+		return {}, {}
+	end
+
 	local sodacheRecommended, sodacheCounter = SodacheMapUtil.getBossCareerRecommend()
 
 	if sodacheRecommended then
@@ -945,6 +960,10 @@ function FightHelper.detectAttributeCounter()
 end
 
 function FightHelper.checkIsMultiCareer(monsterGroupIds)
+	if not monsterGroupIds or next(monsterGroupIds) == nil then
+		return false
+	end
+
 	for i, v in ipairs(monsterGroupIds) do
 		local ids = FightStrUtil.instance:getSplitToNumberCache(lua_monster_group.configDict[v].monster, "#")
 
@@ -1041,6 +1060,7 @@ function FightHelper.getAttributeCounter(monsterGroupIds, isSpScene)
 	local is_boss
 	local enemy_career_tab = {}
 	local isTowerDeepEpisode = FightHelper.checkIsTowerDeepEpisode()
+	local haveMonsterGroup = monsterGroupIds and next(monsterGroupIds) ~= nil
 
 	if isTowerDeepEpisode then
 		local monsterId = TowerPermanentDeepModel.instance:getCurDeepMonsterId()
@@ -1051,7 +1071,7 @@ function FightHelper.getAttributeCounter(monsterGroupIds, isSpScene)
 		end
 	elseif FightHelper.checkIsMultiCareer(monsterGroupIds) then
 		return FightHelper.getMultiAttributeCounter(monsterGroupIds)
-	else
+	elseif haveMonsterGroup then
 		for i, v in ipairs(monsterGroupIds) do
 			if not string.nilorempty(lua_monster_group.configDict[v].bossId) then
 				is_boss = lua_monster_group.configDict[v].bossId
@@ -1080,7 +1100,7 @@ function FightHelper.getAttributeCounter(monsterGroupIds, isSpScene)
 	local recommended = {}
 	local counter = {}
 
-	if isSpScene then
+	if isSpScene or not haveMonsterGroup then
 		return recommended, counter
 	end
 
@@ -2523,6 +2543,12 @@ function FightHelper.processTimelineReplaceCondition(condition, config, entityDa
 		return FightHelper.getSSWLNormalTimeline(timelineName, fightStepData)
 	elseif sign == "17" then
 		return FightHelper.getSSWLXingNormalTimeline(timelineName, fightStepData)
+	elseif sign == "18" and FightModel.instance:getSpeed() > 1 then
+		if PlayerPrefsHelper.getNumber(PlayerPrefsKey.FightHNJUniqueSkillPlayed, 0) == 1 then
+			return config.timeline
+		else
+			PlayerPrefsHelper.setNumber(PlayerPrefsKey.FightHNJUniqueSkillPlayed, 1)
+		end
 	end
 end
 
@@ -2732,7 +2758,7 @@ function FightHelper.getBLETimeLine(timelineName, fightStepData)
 		table.insert(maxCrystalList, FightEnum.CrystalEnum.Green)
 	end
 
-	local co = FightHeroSpEffectConfig.instance:getBLECrystalCo((#maxCrystalList > 1 or nil) and maxCrystalList[math.random(1, #maxCrystalList)])
+	local co = FightHeroSpEffectConfig.instance:getBLECrystalCo((#maxCrystalList > 1 or nil) and maxCrystalList[math.random(1, #maxCrystalList)], entityMo.skin)
 
 	return co.skill3Timeline
 end
@@ -2924,13 +2950,13 @@ function FightHelper.isEnemyCardSkill(fightStepData)
 	return entityMO.teamType == FightEnum.TeamType.EnemySide
 end
 
-function FightHelper.buildMonsterA2B(entity, oldEntityMO, fightFlow, work)
+function FightHelper.buildMonsterA2B(entity, oldEntityMO, fightFlow, work, fightStepData)
 	local config = lua_fight_boss_evolution_client.configDict[oldEntityMO.skin]
 
 	fightFlow:addWork(Work2FightWork.New(FightWorkNormalDialog, FightViewDialog.Type.BeforeMonsterA2B, oldEntityMO.modelId))
 
 	if config then
-		fightFlow:registWork(FightWorkPlayTimeline, entity, config.timeline)
+		fightFlow:registWork(FightWorkPlayMonsterChangeTimeline, entity, config.timeline, fightStepData)
 
 		if config.nextSkinId ~= 0 then
 			fightFlow:registWork(FightWorkFunction, FightHelper.setBossEvolution, FightHelper, entity, config)
@@ -3544,6 +3570,8 @@ function FightHelper.getEmptyFightEntityMO(heroUid, heroId, level, skin)
 	local heroCO = lua_character.configDict[heroId]
 	local fightEntityMO = FightEntityMO.New()
 
+	fightEntityMO:init(FightDef_pb.FightEntityInfo())
+
 	fightEntityMO.id = tostring(heroUid)
 	fightEntityMO.uid = fightEntityMO.id
 	fightEntityMO.modelId = heroId or 0
@@ -3577,6 +3605,8 @@ end
 function FightHelper.buildHeroEntityMOList(side, heroIds, skinIds, subHeroIds, subHeroSkinIds)
 	local function buildEntityMOFunc(heroId, heroCO, skin)
 		local fightEntityMO = FightEntityMO.New()
+
+		fightEntityMO:init(FightDef_pb.FightEntityInfo())
 
 		fightEntityMO.id = tostring(mySideIdCounter)
 		fightEntityMO.uid = fightEntityMO.id
@@ -3701,6 +3731,8 @@ function FightHelper.buildMonsterEntityMOList(side, monsterIds, subMonsterIds)
 
 			if monsterCO then
 				local fightEntityMO = FightEntityMO.New()
+
+				fightEntityMO:init(FightDef_pb.FightEntityInfo())
 
 				fightEntityMO.id = tostring(enemySideIdCounter)
 				fightEntityMO.uid = fightEntityMO.id
@@ -4162,6 +4194,7 @@ function FightHelper.getAssitHeroInfoByUid(heroUid, isSub)
 		local heroCfg = HeroConfig.instance:getHeroCO(entityMo.modelId)
 
 		return {
+			belongOtherPlayer = true,
 			skin = entityMo.skin,
 			level = entityMo.level,
 			config = heroCfg
@@ -4181,6 +4214,10 @@ function FightHelper.canSelectEnemyEntity(entityId)
 	end
 
 	if entityMo.side == FightEnum.EntitySide.MySide then
+		return false
+	end
+
+	if not entityMo:isStatusNormal() then
 		return false
 	end
 
@@ -4849,6 +4886,107 @@ function FightHelper.isHeDuoNieSkill(skillId)
 			end
 		end
 	end
+end
+
+function FightHelper.checkHas4_0HNJChannelBuff(entityMo)
+	if not entityMo then
+		return
+	end
+
+	local had, buffMo = entityMo:hasBuffActId(FightEnum.BuffActId.ChantAddBuffAndReplace)
+
+	if had then
+		return true
+	end
+
+	had, buffMo = entityMo:hasBuffActId(FightEnum.BuffActId.ChantClearBuffOnRemove)
+
+	return had
+end
+
+function FightHelper.get4_0HNJChannelCount(entityMo)
+	local buffTypeId = FightEnum.BuffTypeId_HNJEnergy
+	local buffDict = entityMo:getBuffDic()
+
+	for _, buffMo in pairs(buffDict) do
+		if buffMo.typeId == buffTypeId then
+			return buffMo.layer
+		end
+	end
+
+	return 0
+end
+
+function FightHelper.get4_0HNJChannelMax()
+	return 10
+end
+
+function FightHelper.getQTESkillCost(skillCo)
+	if not skillCo then
+		return 0, 0
+	end
+
+	local costStr = skillCo.qtePowerCost
+
+	if string.nilorempty(costStr) then
+		return 0, 0
+	end
+
+	local array = FightStrUtil.instance:getSplitToNumberCache(costStr, "#")
+
+	if not array[1] then
+		if not array[2] then
+			local cost = 0
+
+			return array[1], cost
+		end
+	end
+end
+
+function FightHelper.hasQteEntity()
+	local entityMoList = FightHelper.tempEntityMoList
+
+	tabletool.clear(entityMoList)
+
+	entityMoList = FightDataHelper.entityMgr:getMyNormalList(entityMoList)
+
+	if not entityMoList then
+		return false
+	end
+
+	for _, entityMo in ipairs(entityMoList) do
+		if entityMo:isQteEntity() then
+			tabletool.clear(entityMoList)
+
+			return true
+		end
+	end
+
+	tabletool.clear(entityMoList)
+
+	return false
+end
+
+function FightHelper.hasLiveEnemyEntity()
+	local entityMoList = FightHelper.tempEntityMoList
+
+	tabletool.clear(entityMoList)
+
+	entityMoList = FightDataHelper.entityMgr:getEnemyNormalList(entityMoList)
+
+	if not entityMoList then
+		return false
+	end
+
+	for _, _ in ipairs(entityMoList) do
+		tabletool.clear(entityMoList)
+
+		return true
+	end
+
+	tabletool.clear(entityMoList)
+
+	return false
 end
 
 return FightHelper

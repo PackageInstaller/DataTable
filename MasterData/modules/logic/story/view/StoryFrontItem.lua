@@ -48,7 +48,6 @@ function StoryFrontItem:showFullScreenText(show, txt)
 		self._fadeOutCallback = nil
 		self._fadeOutCallbackObj = nil
 
-		self:_killTextTween()
 		self:_killFloatTween()
 		ZProj.TweenHelper.KillByObj(self._copyText)
 
@@ -349,8 +348,12 @@ function StoryFrontItem:playIrregularShakeText(co, callback, callbackobj)
 	self._shakeAni = self._goshake:GetComponent(typeof(UnityEngine.Animator))
 
 	local txt = gohelper.findChildText(self._goshake, "tex_ani/#tex")
+	local tmpGo = txt.gameObject
 
-	txt.text = self._stepCo.conversation.diaTexts[GameLanguageMgr.instance:getLanguageTypeStoryIndex()]
+	self._tmpMarkTopText = MonoHelper.addNoUpdateLuaComOnceToGo(tmpGo, TMPMarkTopText)
+
+	self._tmpMarkTopText:registerRebuildLayout(tmpGo.transform.parent)
+	self._tmpMarkTopText:setData(self._stepCo.conversation.diaTexts[GameLanguageMgr.instance:getLanguageTypeStoryIndex()])
 
 	local delayTime = self._stepCo.conversation.showTimes[GameLanguageMgr.instance:getVoiceTypeStoryIndex()] - 0.17
 
@@ -755,7 +758,7 @@ function StoryFrontItem:playGostMagic(co, callback, callbackobj)
 		rt.anchoredPosition = Vector2(0, 0)
 	end
 
-	self._savedUIPPValues = {
+	self._savedUIPPValues = self._savedUIPPValues or {
 		localBloomActive = PostProcessingMgr.instance:getUIPPValue("localBloomActive"),
 		bloomDiffusion = PostProcessingMgr.instance:getUIPPValue("bloomDiffusion"),
 		bloomThreshold = PostProcessingMgr.instance:getUIPPValue("bloomThreshold"),

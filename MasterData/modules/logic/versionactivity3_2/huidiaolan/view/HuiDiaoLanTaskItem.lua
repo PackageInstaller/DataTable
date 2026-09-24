@@ -59,7 +59,7 @@ function HuiDiaoLanTaskItem:_delayFinish()
 end
 
 function HuiDiaoLanTaskItem:_delayFinishAll()
-	TaskRpc.instance:sendFinishAllTaskRequest(TaskEnum.TaskType.Activity220)
+	Activity220Controller.instance:finishAllTask(VersionActivity3_2Enum.ActivityId.HuiDiaoLan)
 end
 
 function HuiDiaoLanTaskItem:_editableInitView()

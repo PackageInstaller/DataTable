@@ -2778,6 +2778,84 @@ local module_cmd = {
 		"Activity243",
 		"Act243InfoPush"
 	},
+	[-8010] = {
+		"Activity244",
+		"GetAct244InfoRequest",
+		"GetAct244InfoReply"
+	},
+	[32608] = {
+		"Activity244",
+		"Act244UpgradeHeroRequest",
+		"Act244UpgradeHeroReply"
+	},
+	[21998] = {
+		"Activity244",
+		"Act244ActiveTalentRequest",
+		"Act244ActiveTalentReply"
+	},
+	[-3275] = {
+		"Activity244",
+		"Act244ResetTalentRequest",
+		"Act244ResetTalentReply"
+	},
+	[16249] = {
+		"Activity244",
+		"Act244ModifyTeamRequest",
+		"Act244ModifyTeamReply"
+	},
+	[-10127] = {
+		"Activity244",
+		"Act244ModifyTeamIndexRequest",
+		"Act244ModifyTeamIndexReply"
+	},
+	[5953] = {
+		"Activity244",
+		"Act244StartEpisodeRequest",
+		"Act244StartEpisodeReply"
+	},
+	[-31644] = {
+		"Activity244",
+		"Act244SettleEpisodeRequest",
+		"Act244SettleEpisodeReply"
+	},
+	[4622] = {
+		"Activity244",
+		"Act244ReceiveStarBonusRequest",
+		"Act244ReceiveStarBonusReply"
+	},
+	[11255] = {
+		"Activity244",
+		"Act244ReceiveChallengeBonusRequest",
+		"Act244ReceiveChallengeBonusReply"
+	},
+	[28493] = {
+		"Activity244",
+		"Act244ItemPush"
+	},
+	[17511] = {
+		"Activity244",
+		"Act244EpisodePush"
+	},
+	[17304] = {
+		"Activity245",
+		"Act245GetInfoRequest",
+		"Act245GetInfoReply"
+	},
+	[13387] = {
+		"Activity245",
+		"Act245SummonRequest",
+		"Act245SummonReply"
+	},
+	[16442] = {
+		"Activity246",
+		"GetAct246InfoRequest",
+		"GetAct246InfoReply"
+	},
+	[-14154] = {
+		"Activity246",
+		"Act246ScratchRequest",
+		"Act246ScratchReply"
+	},
 	[-14582] = {
 		"Activity",
 		"GetActivityInfosRequest",
@@ -3023,6 +3101,16 @@ local module_cmd = {
 	[-32619] = {
 		"AssassinScene",
 		"HeroUpdatePush"
+	},
+	[7987] = {
+		"AssistRecord",
+		"AssistRecordGetInfoRequest",
+		"AssistRecordGetInfoReply"
+	},
+	[17622] = {
+		"AssistRecord",
+		"AssistRecordGetDungeonRecordRequest",
+		"AssistRecordGetDungeonRecordReply"
 	},
 	[27511] = {
 		"Atomic",
@@ -3305,6 +3393,11 @@ local module_cmd = {
 		"ReadChargeNewRequest",
 		"ReadChargeNewReply"
 	},
+	[12557] = {
+		"Charge",
+		"GetPayDiamondInfoRequest",
+		"GetPayDiamondInfoReply"
+	},
 	[-17743] = {
 		"ChargePush",
 		"GetChargePushInfoRequest",
@@ -3347,6 +3440,110 @@ local module_cmd = {
 		"Chat",
 		"WordTestRequest",
 		"WordTestReply"
+	},
+	[-2079] = {
+		"College",
+		"CollegeSceneInfoRequest",
+		"CollegeSceneInfoReply"
+	},
+	[-26116] = {
+		"College",
+		"CollegeCharacterUpgradeRequest",
+		"CollegeCharacterUpgradeReply"
+	},
+	[240] = {
+		"College",
+		"CollegeCharacterDismissRequest",
+		"CollegeCharacterDismissReply"
+	},
+	[-19715] = {
+		"College",
+		"CollegeBuildingUpgradeRequest",
+		"CollegeBuildingUpgradeReply"
+	},
+	[16525] = {
+		"College",
+		"CollegeBuildingSlotOperRequest",
+		"CollegeBuildingSlotOperReply"
+	},
+	[17575] = {
+		"College",
+		"CollegeBuildingRecruitmentRequest",
+		"CollegeBuildingRecruitmentReply"
+	},
+	[27381] = {
+		"College",
+		"CollegeBuildingRecruitmentConfirmRequest",
+		"CollegeBuildingRecruitmentConfirmReply"
+	},
+	[-23152] = {
+		"College",
+		"CollegeBuildingLockEntryRequest",
+		"CollegeBuildingLockEntryReply"
+	},
+	[27986] = {
+		"College",
+		"CollegeBuildingRefinedRequest",
+		"CollegeBuildingRefinedReply"
+	},
+	[-22891] = {
+		"College",
+		"CollegeBuildingConfirmEntryRequest",
+		"CollegeBuildingConfirmEntryReply"
+	},
+	[-26779] = {
+		"College",
+		"CollegeWorldMapSlotOperRequest",
+		"CollegeWorldMapSlotOperReply"
+	},
+	[30461] = {
+		"College",
+		"CollegeMilestoneClaimRequest",
+		"CollegeMilestoneClaimReply"
+	},
+	[-11751] = {
+		"College",
+		"CollegeMilestoneActiveNodeRequest",
+		"CollegeMilestoneActiveNodeReply"
+	},
+	[31252] = {
+		"College",
+		"CollegeMilestoneReadStateRequest",
+		"CollegeMilestoneReadStateReply"
+	},
+	[10598] = {
+		"College",
+		"CollegeEndRoundRequest",
+		"CollegeEndRoundReply"
+	},
+	[-22878] = {
+		"College",
+		"CollegeEventOptionRequest",
+		"CollegeEventOptionReply"
+	},
+	[-9565] = {
+		"College",
+		"CollegeClientDataUpdateRequest",
+		"CollegeClientDataUpdateReply"
+	},
+	[-13222] = {
+		"College",
+		"CollegePushs"
+	},
+	[21994] = {
+		"College",
+		"CollegeHotfix1Request",
+		"CollegeHotfix1Reply"
+	},
+	[21995] = {
+		"College",
+		"CollegeHotfix2Request",
+		"CollegeHotfix2Reply"
+	},
+	[21996] = {
+		"College",
+		"CollegeHotfix3Request",
+		"CollegeHotfix3Reply"
 	},
 	[19527] = {
 		"CommandPost",
@@ -3966,6 +4163,11 @@ local module_cmd = {
 		"GetFightCardDeckInfoRequest",
 		"GetFightCardDeckInfoReply"
 	},
+	[12115] = {
+		"Fight",
+		"EnterQTERoundRequest",
+		"EnterQTERoundReply"
+	},
 	[-18830] = {
 		"Fight",
 		"GetEntityDetailInfosRequest",
@@ -3995,6 +4197,11 @@ local module_cmd = {
 		"Fight",
 		"GetGMFightLogRequest",
 		"GetGMFightLogReply"
+	},
+	[-327] = {
+		"Fight",
+		"UseQTESkillRequest",
+		"UseQTESkillReply"
 	},
 	[-8980] = {
 		"FightTool",
@@ -4535,6 +4742,10 @@ local module_cmd = {
 		"Item",
 		"UseItemRequest",
 		"UseItemReply"
+	},
+	[-8056] = {
+		"Item",
+		"ItemSubTypeUsePush"
 	},
 	[-32183] = {
 		"Item",
@@ -5263,6 +5474,11 @@ local module_cmd = {
 		"SetUiStyleSkinRequest",
 		"SetUiStyleSkinReply"
 	},
+	[22890] = {
+		"Player",
+		"MainSceneLoadCompleteRequest",
+		"MainSceneLoadCompleteReply"
+	},
 	[26644] = {
 		"RedDot",
 		"GetRedDotInfosRequest",
@@ -5422,6 +5638,20 @@ local module_cmd = {
 	[3693] = {
 		"Rogue",
 		"RogueCollectionUnlockPush"
+	},
+	[15010] = {
+		"RoleBadge",
+		"RoleBadgeGetInfoRequest",
+		"RoleBadgeGetInfoReply"
+	},
+	[-26299] = {
+		"RoleBadge",
+		"RoleBadgeWearRequest",
+		"RoleBadgeWearReply"
+	},
+	[-9543] = {
+		"RoleBadge",
+		"RoleBadgeUpdatePush"
 	},
 	[19031] = {
 		"Room",
@@ -6674,6 +6904,25 @@ local module_cmd = {
 		"SodacheOutside",
 		"SodacheOutsideHotfix3Request",
 		"SodacheOutsideHotfix3Reply"
+	},
+	[-25813] = {
+		"Sonnet",
+		"SonnetGetInfoRequest",
+		"SonnetGetInfoReply"
+	},
+	[27144] = {
+		"Sonnet",
+		"SonnetUseWordRequest",
+		"SonnetUseWordReply"
+	},
+	[-15691] = {
+		"Sonnet",
+		"SonnetConsumeWordRequest",
+		"SonnetConsumeWordReply"
+	},
+	[1231] = {
+		"Sonnet",
+		"SonnetWordPush"
 	},
 	[-28177] = {
 		"Stat",

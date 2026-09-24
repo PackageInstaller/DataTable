@@ -158,6 +158,7 @@ function TowerComposeResultView:onOpen()
 
 	self:_refreshUI()
 	self:autoSaveRecord()
+	AssistRecordRpc.instance:sendAssistRecordGetDungeonRecordRequest()
 end
 
 function TowerComposeResultView:_refreshUI()
@@ -566,6 +567,7 @@ function TowerComposeResultView:onClose()
 	FightController.onResultViewClose()
 	TaskDispatcher.cancelTask(self.showScoreAnim, self)
 	self:onScoreTweenDone()
+	AssistController.instance:dispatchEvent(AssistEvent.CloseAddFriendView)
 end
 
 function TowerComposeResultView:_onAllFinish()

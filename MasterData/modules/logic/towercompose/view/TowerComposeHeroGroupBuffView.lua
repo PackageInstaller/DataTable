@@ -443,7 +443,7 @@ function TowerComposeHeroGroupBuffView:refreshPlaneSlotUI(planeSlotItem)
 end
 
 function TowerComposeHeroGroupBuffView:onRefreshAssistReply(info)
-	if info.assistType == PickAssistEnum.Type.TowerCompose1 or info.assistType == PickAssistEnum.Type.TowerCompose2 then
+	if info.assistType == PickAssistEnum.Type.TowerComposeSupport1 or info.assistType == PickAssistEnum.Type.TowerComposeSupport2 then
 		local assistHeroId = info.ext
 		local assistList = DungeonAssistModel.instance:getAssistList(info.assistType)
 

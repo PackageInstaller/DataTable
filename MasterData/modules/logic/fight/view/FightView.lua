@@ -29,6 +29,8 @@ function FightView:onInitView()
 	self.btnEnemyAction = gohelper.findChildButtonWithAudio(self.viewGO, "root/topLeftContent/enemyaction/#btn_enemyaction")
 	self.weeklyWalkSubEnemy = gohelper.findChild(self.viewGO, "root/enemyweekwalkheart")
 	self.btnCheckSub = gohelper.findChildClickWithDefaultAudio(self.viewGO, "root/enemyweekwalkheart/btn_checkSub")
+
+	self.viewContainer:setCacheUserData(FightViewContainerCacheKey.UserDataKey.FightViewRightTopBtnRoot, self._topRightBtnRoot)
 end
 
 function FightView:addEvents()
@@ -53,6 +55,8 @@ function FightView:addEvents()
 	self.addEventCb(self, FightController.instance, FightEvent.RefreshMonsterSubCount, self._onRefreshMonsterSubCount, self)
 	self.addEventCb(self, FightController.instance, FightEvent.SetBtnListVisibleWhenHidingFightView, self.onSetBtnListVisibleWhenHidingFightView, self)
 	self.addEventCb(self, FightController.instance, FightEvent.OnStartSequenceFinish, self.onStartSequenceFinish, self)
+	self.addEventCb(self, FightController.instance, FightEvent.QTE_BeforeEnterQte, self.onBeforeEnterQte, self)
+	self.addEventCb(self, FightController.instance, FightEvent.QTE_AfterExitQte, self.onAfterExitQte, self)
 	self.addEventCb(self, ViewMgr.instance, ViewEvent.OnOpenView, self._onOpenView, self)
 	self.addEventCb(self, ViewMgr.instance, ViewEvent.OnCloseView, self._onCloseView, self)
 	self.addEventCb(self, FightController.instance, FightEvent.ChangeRound, self._onChangeRound, self)
@@ -199,19 +203,34 @@ function FightView:checkEnemyActionIsOpen()
 	return false
 end
 
+function FightView:onBeforeEnterQte()
+	self:_setIsShowUI(false, FightKeyEnum.FightViewUIKey.QteStateChange)
+end
+
+function FightView:onAfterExitQte()
+	self:_setIsShowUI(true, FightKeyEnum.FightViewUIKey.QteStateChange)
+end
+
 function FightView:onClose()
 	FightModel.instance:setUserSpeed(1)
 	TaskDispatcher.cancelTask(self._showBtnSpeedAni, self, 0.001)
 end
 
-function FightView:_setIsShowUI(isVisible)
+function FightView:_setIsShowUI(isVisible, key)
+	self.uiHideKeyDict = self.uiHideKeyDict or {}
+	key = key or FightKeyEnum.FightViewUIKey.Default
+	self.uiHideKeyDict[key] = not isVisible and true or nil
+
+	local active = next(self.uiHideKeyDict) == nil
+
 	self._canvasGroup = self._canvasGroup or gohelper.onceAddComponent(self._rootGO, typeof(UnityEngine.CanvasGroup))
 
 	if FightDataHelper.tempMgr.aiJiAoSelectTargetView then
-		isVisible = false
+		active = false
 	end
 
-	gohelper.setActiveCanvasGroup(self._canvasGroup, isVisible)
+	gohelper.setActiveCanvasGroup(self._canvasGroup, active)
+	gohelper.setActiveCanvasGroup(self._topRightBtnRoot, active)
 end
 
 function FightView:_onOpenView(viewName)
@@ -418,14 +437,14 @@ function FightView:onSetBtnListVisibleWhenHidingFightView(state, showBtnNames)
 		self.originBtnPosX = recthelper.getAnchorX(transform)
 		self.btnRootSiblingIndex = gohelper.getSibling(self._topRightBtnRoot) - 1
 
-		local var_33_0
+		local var_35_0
 
 		if state then
-			var_33_0 = self.viewGO or self._rootGO
+			var_35_0 = self.viewGO or self._rootGO
 		end
 	end
 
-	gohelper.addChild(var_33_0, self._topRightBtnRoot)
+	gohelper.addChild(var_35_0, self._topRightBtnRoot)
 	recthelper.setAnchorX(transform, self.originBtnPosX)
 	gohelper.setSibling(self._topRightBtnRoot, self.btnRootSiblingIndex)
 
@@ -446,6 +465,8 @@ function FightView:onSetBtnListVisibleWhenHidingFightView(state, showBtnNames)
 
 				gohelper.setActive(child.gameObject, tabletool.indexOf(showBtnNames, child.name))
 			end
+
+			gohelper.setActiveCanvasGroup(self._topRightBtnRoot, true)
 		else
 			for i = 0, transform.childCount - 1 do
 				local child = transform:GetChild(i)

@@ -129,6 +129,7 @@ function V3a9_BossRush_ResultView:_initHeroGroup()
 
 					item.heroIcon:isShowRare(false)
 					item.heroIcon:setScale(1.3)
+					gohelper.setActive(item.goAssist.gameObject, isAssist)
 				end
 			end
 
@@ -176,6 +177,8 @@ function V3a9_BossRush_ResultView:_initHeroGroup()
 					else
 						item.heroIcon:onUpdateMO(heroMo)
 					end
+
+					gohelper.setActive(item.goAssist.gameObject, isAssist)
 				end
 			end
 
@@ -209,6 +212,7 @@ function V3a9_BossRush_ResultView:_getFontHeroItem(index)
 
 		item.txtLv = gohelper.findChildText(item.goHas, "layout/lv/lvnum")
 		item.rootHero = gohelper.findChild(item.goHas, "go_HeroItem/go_Hero")
+		item.goAssist = gohelper.findChild(item.goHas, "go_HeroItem/#go_assist")
 		item.heroIcon = IconMgr.instance:getCommonHeroIconNew(item.rootHero)
 		item.goEquipEmpty = gohelper.findChild(item.goHas, "go_EquipItem/go_Empty")
 		item.goEquipHas = gohelper.findChild(item.goHas, "go_EquipItem/equip")
@@ -233,6 +237,7 @@ function V3a9_BossRush_ResultView:_getBackHeroItem(index)
 		item.rootHero = gohelper.findChild(item.go, "go_Hero")
 		item.goEmpty = gohelper.findChild(item.go, "#go_Empty")
 		item.heroIcon = IconMgr.instance:getCommonHeroIconNew(item.rootHero)
+		item.goAssist = gohelper.findChild(item.go, "#go_assist")
 		item.index = index
 		self._backItems[index] = item
 	end

@@ -38,6 +38,7 @@ Activity229Module_pb.ACT229RESETSTAGEREQUESTSTAGEIDFIELD = protobuf.FieldDescrip
 Activity229Module_pb.ACT229HERONO_MSG = protobuf.Descriptor()
 Activity229Module_pb.ACT229HERONOHEROIDFIELD = protobuf.FieldDescriptor()
 Activity229Module_pb.ACT229HERONOEQUIPUIDSFIELD = protobuf.FieldDescriptor()
+Activity229Module_pb.ACT229HERONOSKINIDFIELD = protobuf.FieldDescriptor()
 Activity229Module_pb.GETACT229INFOREQUEST_MSG = protobuf.Descriptor()
 Activity229Module_pb.GETACT229INFOREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
 Activity229Module_pb.ACT229MODIFYSTAGESUBIDREPLY_MSG = protobuf.Descriptor()
@@ -343,13 +344,23 @@ Activity229Module_pb.ACT229HERONOEQUIPUIDSFIELD.has_default_value = false
 Activity229Module_pb.ACT229HERONOEQUIPUIDSFIELD.default_value = {}
 Activity229Module_pb.ACT229HERONOEQUIPUIDSFIELD.type = 3
 Activity229Module_pb.ACT229HERONOEQUIPUIDSFIELD.cpp_type = 2
+Activity229Module_pb.ACT229HERONOSKINIDFIELD.name = "skinId"
+Activity229Module_pb.ACT229HERONOSKINIDFIELD.full_name = ".Act229HeroNO.skinId"
+Activity229Module_pb.ACT229HERONOSKINIDFIELD.number = 3
+Activity229Module_pb.ACT229HERONOSKINIDFIELD.index = 2
+Activity229Module_pb.ACT229HERONOSKINIDFIELD.label = 1
+Activity229Module_pb.ACT229HERONOSKINIDFIELD.has_default_value = false
+Activity229Module_pb.ACT229HERONOSKINIDFIELD.default_value = 0
+Activity229Module_pb.ACT229HERONOSKINIDFIELD.type = 5
+Activity229Module_pb.ACT229HERONOSKINIDFIELD.cpp_type = 1
 Activity229Module_pb.ACT229HERONO_MSG.name = "Act229HeroNO"
 Activity229Module_pb.ACT229HERONO_MSG.full_name = ".Act229HeroNO"
 Activity229Module_pb.ACT229HERONO_MSG.nested_types = {}
 Activity229Module_pb.ACT229HERONO_MSG.enum_types = {}
 Activity229Module_pb.ACT229HERONO_MSG.fields = {
 	Activity229Module_pb.ACT229HERONOHEROIDFIELD,
-	Activity229Module_pb.ACT229HERONOEQUIPUIDSFIELD
+	Activity229Module_pb.ACT229HERONOEQUIPUIDSFIELD,
+	Activity229Module_pb.ACT229HERONOSKINIDFIELD
 }
 Activity229Module_pb.ACT229HERONO_MSG.is_extendable = false
 Activity229Module_pb.ACT229HERONO_MSG.extensions = {}

@@ -63,7 +63,7 @@ end
 
 function VersionActivity3_2DungeonMapNormalInteract2View:addEvents()
 	self._btnclose:AddClickListener(self._btncloseOnClick, self)
-	self.addEventCb(self, VersionActivityFixedHelper.getVersionActivityDungeonController().instance, VersionActivityFixedDungeonEvent.OnClickElement, self.showInteractUI, self)
+	self.addEventCb(self, VersionActivityFixedDungeonController.instance, VersionActivityFixedDungeonEvent.OnClickElement, self.showInteractUI, self)
 	self.addEventCb(self, ViewMgr.instance, ViewEvent.OnCloseViewFinish, self.onCloseViewFinishCall, self)
 	self.addEventCb(self, DialogueController.instance, DialogueEvent.OnDialogueInfoChange, self.onDialogueInfoChange, self)
 	self.addEventCb(self, JumpController.instance, JumpEvent.BeforeJump, self.beforeJump, self)
@@ -71,7 +71,7 @@ end
 
 function VersionActivity3_2DungeonMapNormalInteract2View:removeEvents()
 	self._btnclose:RemoveClickListener()
-	self.removeEventCb(self, VersionActivityFixedHelper.getVersionActivityDungeonController().instance, VersionActivityFixedDungeonEvent.OnClickElement, self.showInteractUI, self)
+	self.removeEventCb(self, VersionActivityFixedDungeonController.instance, VersionActivityFixedDungeonEvent.OnClickElement, self.showInteractUI, self)
 	self.removeEventCb(self, ViewMgr.instance, ViewEvent.OnCloseViewFinish, self.onCloseViewFinishCall, self)
 	self.removeEventCb(self, DialogueController.instance, DialogueEvent.OnDialogueInfoChange, self.onDialogueInfoChange, self)
 	self.removeEventCb(self, JumpController.instance, JumpEvent.BeforeJump, self.beforeJump, self)

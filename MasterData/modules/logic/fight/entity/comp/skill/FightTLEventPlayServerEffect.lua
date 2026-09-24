@@ -144,6 +144,24 @@ function FightTLEventPlayServerEffect:onTrackStart(fightStepData, duration, para
 			flow:start()
 		end
 	end
+
+	local param17 = paramsArr[17]
+
+	if not string.nilorempty(param17) then
+		for i, v in ipairs(self.fightStepData.actEffect) do
+			if v.effectType == FightEnum.EffectType.DAMAGE and v.configEffect == 30005 then
+				local entity = FightGameMgr.entityMgr:getById(fightStepData.fromId)
+
+				if entity then
+					local work = entity.skill:registTimelineWork("toughness_broken_for_3_7_boss_1", fightStepData)
+
+					self:addWork2TimelineFinishWork(work)
+				end
+
+				break
+			end
+		end
+	end
 end
 
 function FightTLEventPlayServerEffect:_afterPlayStory()

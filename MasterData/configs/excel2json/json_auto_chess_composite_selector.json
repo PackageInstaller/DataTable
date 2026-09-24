@@ -1,0 +1,24 @@
+[
+    "auto_chess_composite_selector",
+    [
+        [20001,"BaseSelectorId#101|MaxValue#FinalStatSum"],
+        [20003,"BaseSelectorId#132|RaceTag#Forest|ExcludeSelf#1|MaxValue#FinalStatSum"],
+        [20005,"BaseSelectorId#132|RaceTag#Ocean|ExcludeSelf#1|MaxValue#FinalStatSum"],
+        [20007,"BaseSelectorId#101|RaceTag#RareBeast|EachRowMaxValue#BuffCount(1003)"],
+        [20004,"BaseSelectorId#20011|RaceTag#Forest|ExcludeSelf#1|All"],
+        [20008,"BaseSelectorId#20011|RaceTag#Machine|ExcludeSelf#1|Nearest"],
+        [20009,"BaseSelectorId#20013|RaceTag#Machine|ExcludeSelf#1|All"],
+        [20010,"RandomBranch#20008#20015#20016#20019#20020"],
+        [20002,"BaseSelectorId#20011|RaceTag#Ocean|ExcludeSelf#1|All"],
+        [20006,"BaseSelectorId#20011|ExcludeSelf#1|Nearest"],
+        [20012,"BaseSelectorId#232|Nearest"],
+        [20014,"BaseSelectorId#103|RaceTag#Forest|All"],
+        [20015,"BaseSelectorId#20011|RaceTag#Machine|ExcludeSelf#1|Nearest"],
+        [20016,"BaseSelectorId#20011|RaceTag#Machine|ExcludeSelf#1|Nearest"],
+        [20017,"BaseSelectorId#20013|RaceTag#Machine|ExcludeSelf#1|All"],
+        [20018,"BaseSelectorId#20013|RaceTag#Machine|ExcludeSelf#1|All"],
+        [20019,"BaseSelectorId#103|ExcludeSelf#1|All"],
+        [20020,"BaseSelectorId#103|ExcludeSelf#1|All"],
+        [20021,"RandomBranch#20009#20017#20018#20019#20020"]
+    ]
+]

@@ -135,6 +135,25 @@ function CharacterSearchFilterModel:selectLocalTag(tagId)
 	end
 end
 
+function CharacterSearchFilterModel:getNeedFilterMappingTags()
+	if not self._showMappingTags then
+		return
+	end
+
+	local tagIds = {}
+
+	for tagId, info in pairs(self._showMappingTags) do
+		local type = info.type
+		local selectTags = self._selectLocal[type]
+
+		if selectTags and #selectTags > 0 and not LuaUtil.tableContains(selectTags, tagId) then
+			tagIds[tagId] = true
+		end
+	end
+
+	return tagIds
+end
+
 function CharacterSearchFilterModel:_onSelectLocalTagChange(type, list)
 	if not self._showMappingTags then
 		return
@@ -314,7 +333,7 @@ function CharacterSearchFilterModel:hasFilter()
 	end
 
 	for _, v in pairs(self._selectLocal) do
-		if v then
+		if v and #v > 0 then
 			return true
 		end
 	end

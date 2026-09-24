@@ -26,6 +26,7 @@ function SettingsAccountView:addEvents()
 	self._btnPrivacy:AddClickListener(self._btnPrivacyOnClick, self)
 	self._btnPersonal:AddClickListener(self._btnPersonalOnClick, self)
 	self._btnThirdParty:AddClickListener(self._btnThirdPartyOnClick, self)
+	self._btncheck:AddClickListener(self._btncheckOnClick, self)
 end
 
 function SettingsAccountView:removeEvents()
@@ -36,6 +37,7 @@ function SettingsAccountView:removeEvents()
 	self._btnPrivacy:RemoveClickListener()
 	self._btnPersonal:RemoveClickListener()
 	self._btnThirdParty:RemoveClickListener()
+	self._btncheck:RemoveClickListener()
 end
 
 function SettingsAccountView:_btnaccountOnClick()
@@ -56,6 +58,10 @@ function SettingsAccountView:_btnexitOnClick()
 	SDKController.instance:openSDKExitView()
 end
 
+function SettingsAccountView:_btncheckOnClick()
+	ViewMgr.instance:openView(ViewName.SettingsCurrencyView)
+end
+
 function SettingsAccountView:_editableInitView()
 	self.goAccountContainer = gohelper.findChild(self.viewGO, "Scroll View/Viewport/layout/accountInfo")
 	self.goCdkContainer = gohelper.findChild(self.viewGO, "Scroll View/Viewport/layout/cdkey")
@@ -72,6 +78,11 @@ function SettingsAccountView:_editableInitView()
 		gohelper.setActive(self._btnPersonal.gameObject, false)
 		gohelper.setActive(self._btnThirdParty.gameObject, false)
 	end
+
+	self._currencyInfoGo = gohelper.findChild(self.viewGO, "Scroll View/Viewport/layout/currencyInfo")
+	self._btncheck = gohelper.findChildButtonWithAudio(self._currencyInfoGo, "#btn_check")
+
+	gohelper.setActive(self._currencyInfoGo, SettingsModel.instance:isJpRegion())
 end
 
 function SettingsAccountView:onUpdateParam()

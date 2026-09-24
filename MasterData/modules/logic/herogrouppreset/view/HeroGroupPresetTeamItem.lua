@@ -192,6 +192,8 @@ function HeroGroupPresetTeamItem:_btnreplaceOnClick()
 	local teamSubId = HeroGroupPresetItemListModel.instance:getReplaceTeamSubId(heroList)
 
 	if not teamSubId or teamSubId > 0 then
+		GameFacade.showToast(ToastEnum.HeroGroupPresetReplaceError)
+
 		return
 	end
 

@@ -11,7 +11,7 @@ function FightSkillBehaviorMgr:init()
 	self._specialWorkList = {}
 end
 
-function FightSkillBehaviorMgr:playSkillEffectBehavior(fightStepData, actEffectData)
+function FightSkillBehaviorMgr:playSkillEffectBehavior(fightStepData, actEffectData, fightEffectBase)
 	if not fightStepData or not actEffectData then
 		return
 	end
@@ -38,6 +38,29 @@ function FightSkillBehaviorMgr:playSkillEffectBehavior(fightStepData, actEffectD
 
 			if skillBehaviorCO then
 				self:_doSkillBehaviorEffect(fightStepData, actEffectData, skillBehaviorCO, false)
+			end
+		end
+
+		local toughnessBrokenReward = lua_fight_toughness_broken_reward.configDict[behaviorType]
+
+		if toughnessBrokenReward then
+			local effectType = toughnessBrokenReward.effectType
+
+			if effectType == 1 then
+				local entity = FightGameMgr.entityMgr:getById(fightStepData.fromId)
+
+				if entity then
+					local work = entity.skill:registTimelineWork(toughnessBrokenReward.timeline, fightStepData)
+
+					fightEffectBase.MANUAL_CONTROLLED = true
+
+					fightEffectBase:cancelFightWorkSafeTimer()
+					work:registFinishCallback(fightEffectBase.onStart, fightEffectBase)
+
+					fightEffectBase.additionalDoneFlow = work
+
+					work:start()
+				end
 			end
 		end
 	end

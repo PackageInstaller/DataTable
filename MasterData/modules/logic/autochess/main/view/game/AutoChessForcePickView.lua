@@ -88,10 +88,13 @@ function AutoChessForcePickView:refreshUI()
 
 	if freeMallCnt ~= 0 then
 		local mallItem = self.freeMall.items[1]
-		local chessCo = AutoChessConfig.instance:getChessCfgById(mallItem.chess.id, mallItem.chess.star)
-		local txt = luaLang("autochess_forcepick_warningtip")
+		local config = mallItem.chess.config
 
-		self._txtWarningTip.text = GameUtil.getSubPlaceholderLuaLangOneParam(txt, chessCo.name)
+		if config then
+			local txt = luaLang("autochess_forcepick_warningtip")
+
+			self._txtWarningTip.text = GameUtil.getSubPlaceholderLuaLangOneParam(txt, config.name)
+		end
 	end
 
 	local itemIds = self.freeMall.selectItems

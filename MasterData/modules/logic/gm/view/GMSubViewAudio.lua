@@ -77,6 +77,8 @@ function GMSubViewAudio:initViewContent()
 		fsize = 32
 	})
 	self:addLineIndex()
+	self.addButton(self, self:getLineGroup(), "检查已有bnk调用", self._onClickCheckAudioBankCall, self)
+	self:addLineIndex()
 	self:addLabel(self:getLineGroup(), "章节ID:\n[逗号分隔]", {
 		w = 100,
 		h = 200,
@@ -1310,6 +1312,163 @@ function GMSubViewAudio._getFolderAndParent(filePath)
 	else
 		return nil, nil
 	end
+end
+
+function GMSubViewAudio:_onClickCheckAudioBankCall()
+	logNormal("开始检查已有Bnk音效事件调用--------------------------------")
+
+	local audioDir = "../audios/Android/"
+	local existBankSet = {}
+	local allFilePaths = SLFramework.FileHelper.GetDirFilePaths(audioDir)
+
+	if allFilePaths then
+		for i = 0, allFilePaths.Length - 1 do
+			local path = allFilePaths[i]
+
+			if path:match("[.bnk]$") then
+				local bankFileName = SLFramework.FileHelper.GetFileName(path, false)
+
+				existBankSet[bankFileName] = true
+			end
+		end
+	end
+
+	local xmlPath = "../audios/Android/SoundbanksInfo.xml"
+	local file = io.open(xmlPath, "r")
+
+	if not file then
+		logError("无法打开 SoundbanksInfo.xml: " .. xmlPath)
+
+		return
+	end
+
+	local xml = file:read("*a")
+
+	file:close()
+
+	local xmlTree = ResSplitXmlTree:new()
+	local parser = ResSplitXml2lua.parser(xmlTree)
+
+	parser:parse(xml)
+
+	self._bankEventList = {}
+
+	for _, soundBank in pairs(xmlTree.root.SoundBanksInfo.SoundBanks.SoundBank) do
+		local bankName = soundBank.ShortName
+
+		if existBankSet[bankName] and soundBank.Events and soundBank.Events.Event then
+			for _, event in pairs(soundBank.Events.Event) do
+				if event._attr then
+					if event._attr then
+						table.insert(self._bankEventList, {
+							bankName = bankName,
+							eventName = event._attr
+						})
+					end
+				end
+			end
+		end
+	end
+
+	self._totalBankEventCount = #self._bankEventList
+
+	logNormal("Total bank event count = " .. self._totalBankEventCount)
+
+	if self._totalBankEventCount == 0 then
+		logNormal("未找到任何 Bnk 事件")
+
+		return
+	end
+
+	self._bankEventIdx = 1
+	self._bankEventErrorList = {}
+	self._curBankEventInfo = nil
+
+	self:initAudioEditorTool()
+
+	self._releaseAudioThreshold = tonumber(self._textCallAudioGCThreshold:GetText()) or 10000
+	self._bankEventGCCount = 0
+
+	ZProj.AudioManager.Instance:SetErrorCallback(self._onBankEventErrorCallback, self)
+	TaskDispatcher.runRepeat(self._checkBankEventPlay, self, 0.01)
+end
+
+function GMSubViewAudio:_checkBankEventPlay()
+	if not self._bankEventList or #self._bankEventList == 0 then
+		self:_endCheckBankEventPlay()
+
+		return
+	end
+
+	local callPerLoop = 2
+
+	for i = 1, callPerLoop do
+		local eventInfo = self._bankEventList[self._bankEventIdx]
+
+		self._bankEventIdx = self._bankEventIdx + 1
+
+		if eventInfo then
+			self._curBankEventInfo = eventInfo
+
+			local playingId = self.audioTool:PlayEvent(eventInfo.eventName, eventInfo.bankName)
+
+			logNormal(" event: " .. eventInfo.eventName .. " bank: " .. eventInfo.bankName)
+
+			if playingId == 0 then
+				table.insert(self._bankEventErrorList, {
+					bankName = eventInfo.bankName,
+					eventName = eventInfo.eventName
+				})
+			else
+				AudioMgr.instance:stopPlayingID(playingId)
+			end
+
+			self._curBankEventInfo = nil
+			self._bankEventGCCount = self._bankEventGCCount + 1
+
+			if self._bankEventGCCount >= self._releaseAudioThreshold then
+				AudioMgr.instance:clearUnusedBanks()
+
+				self._bankEventGCCount = 0
+
+				logNormal("Bnk Event GC, Cur Check Count:" .. self._bankEventIdx)
+			end
+		else
+			self:_endCheckBankEventPlay()
+
+			return
+		end
+	end
+end
+
+function GMSubViewAudio:_onBankEventErrorCallback(errorCode, playingId, msg)
+	if self._curBankEventInfo then
+		local eventInfo = self._curBankEventInfo
+
+		table.insert(self._bankEventErrorList, {
+			bankName = eventInfo.bankName,
+			eventName = eventInfo.eventName,
+			errorCode = errorCode,
+			msg = msg
+		})
+	end
+end
+
+function GMSubViewAudio:_endCheckBankEventPlay()
+	logNormal("检查 Bnk 事件调用完毕, 失败数量 = " .. #self._bankEventErrorList)
+
+	for _, errorInfo in ipairs(self._bankEventErrorList) do
+		if errorInfo.errorCode then
+			logError("error_" .. errorInfo.errorCode .. " event: " .. errorInfo.eventName .. " bank: " .. errorInfo.bankName .. "\n" .. errorInfo.msg)
+		else
+			logError("error event: " .. errorInfo.eventName .. " bank: " .. errorInfo.bankName)
+		end
+	end
+
+	GameFacade.showToast(ToastEnum.IconId, "检查完毕")
+	ZProj.AudioManager.Instance:SetErrorCallback(nil, nil)
+	TaskDispatcher.cancelTask(self._checkBankEventPlay, self)
+	AudioMgr.instance:clearUnusedBanks()
 end
 
 return GMSubViewAudio

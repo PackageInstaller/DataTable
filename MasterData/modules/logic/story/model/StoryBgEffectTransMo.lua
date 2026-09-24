@@ -12,6 +12,7 @@ function StoryBgEffectTransMo:ctor()
 	self.aniName = ""
 	self.transTime = 0
 	self.extraParam = ""
+	self.ppController = ""
 end
 
 function StoryBgEffectTransMo:init(info)
@@ -22,6 +23,7 @@ function StoryBgEffectTransMo:init(info)
 	self.aniName = info[5]
 	self.transTime = info[6]
 	self.extraParam = info[7]
+	self.ppController = info[8] or ""
 end
 
 return StoryBgEffectTransMo

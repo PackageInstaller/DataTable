@@ -140,7 +140,8 @@ local activitySubViewDict = {
 	[ActivityEnum.Activity.SP02_LinkGift] = ViewName.SP02_LinkGiftFullView,
 	[ActivityEnum.Activity.V3a8_DragonBoatActivity_FullView] = ViewName.V3a8_DragonBoatActivity_FullView,
 	[ActivityEnum.Activity.SP02_WarmUp] = ViewName.WarmUp,
-	[ActivityEnum.Activity.V3a9_BDuckLinkage] = ViewName.V3a9_BDuckLinkageFullView
+	[ActivityEnum.Activity.V3a9_BDuckLinkage] = ViewName.V3a9_BDuckLinkageFullView,
+	[ActivityEnum.Activity.V4a0_StoneGift] = ViewName.VersionActivity4_0StoneGiftFullView
 }
 local actTypeSubViewDict = {
 	[ActivityEnum.ActivityTypeID.OpenTestWarmUp] = ViewName.ActivityWarmUpView,
@@ -150,7 +151,8 @@ local actTypeSubViewDict = {
 }
 local _actCostIdToViewDict = {
 	[ActivityEnum.ConstId.Gifg5StarCharacter] = ViewName.V1a9_ActivityShow_MatildagiftView,
-	[ActivityEnum.ConstId.Gifg6StarCharacter] = ViewName.V2a8_WuErLiXiGiftFullView
+	[ActivityEnum.ConstId.Gifg6StarCharacter] = ViewName.V2a8_WuErLiXiGiftFullView,
+	[ActivityEnum.ConstId.RandomSkinGift] = ViewName.V3a7_SkinGiftFullView
 }
 
 function ActivityBeginnerView:onUpdateParam()
@@ -181,6 +183,8 @@ function ActivityBeginnerView:onOpen()
 	self:_initGoldenMilletPresent()
 	self:_initFreeMonthCard()
 	self:_initSceneUIPackageAct()
+	self:_initSixStarGift()
+	self:_initCasualSkinGift()
 
 	self._needSetSortInfos = true
 
@@ -664,6 +668,56 @@ end
 function ActivityBeginnerView:_initFreeMonthCard()
 	activitySubViewDict[ActivityEnum.Activity.V2a9_FreeMonthCard] = ViewName.V2a9_FreeMonthCard_FullView
 	activitySubViewDict[VersionActivity3_8Enum.ActivityId.FreeMonthCard] = ViewName.VersionActivity3_8FreeMonthCardFullView
+end
+
+local s_SixStarGift = false
+
+function ActivityBeginnerView:_initSixStarGift()
+	local actId = ActivityType101Config.instance:getSixStarGiftActId()
+	local key = GameBranchMgr.instance:Vxax_ActId("SixStarGift", actId)
+
+	self._actHideTab[key] = self._actHideTab[key] or self._isCanOpenSixStarGift_FullView
+
+	if s_SixStarGift then
+		return
+	end
+
+	s_SixStarGift = true
+
+	local val = GameBranchMgr.instance:Vxax_ViewName("SixStarGift_FullView", ViewName.SixStarGift_FullView)
+
+	activitySubViewDict[key] = activitySubViewDict[key] or val
+end
+
+function ActivityBeginnerView:_isCanOpenSixStarGift_FullView(actId)
+	if ActivityType101Model.instance:isType101RewardCouldGetAnyOne(actId) then
+		return true
+	end
+
+	local lua_store_charge_goods_id = StoreConfig.instance:getSixStarGiftStoreChargeId()
+	local goodsMO = StoreModel.instance:getGoodsMO(lua_store_charge_goods_id)
+
+	if not goodsMO then
+		return false
+	end
+
+	return not goodsMO:isSoldOut()
+end
+
+local s_CasualSkinGift = false
+
+function ActivityBeginnerView:_initCasualSkinGift()
+	if s_CasualSkinGift then
+		return
+	end
+
+	s_CasualSkinGift = true
+
+	local actId = ActivityType101Config.instance:getCasualSkinGiftActId()
+	local key = GameBranchMgr.instance:Vxax_ActId("CasualSkinGift", actId)
+	local val = GameBranchMgr.instance:Vxax_ViewName("CasualSkinGift_FullView", ViewName.CasualSkinGift_FullView)
+
+	activitySubViewDict[key] = activitySubViewDict[key] or val
 end
 
 return ActivityBeginnerView

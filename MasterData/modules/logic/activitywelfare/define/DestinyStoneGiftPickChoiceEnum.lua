@@ -12,5 +12,6 @@ DestinyStoneGiftPickChoiceEnum.HeroStoneType = {
 }
 DestinyStoneGiftPickChoiceEnum.V2a7ItemId = 642801
 DestinyStoneGiftPickChoiceEnum.V3a8ItemId = 642802
+DestinyStoneGiftPickChoiceEnum.V4a0ItemId = 644001
 
 return DestinyStoneGiftPickChoiceEnum

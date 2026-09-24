@@ -5,16 +5,16 @@ module("modules.logic.autochess.main.controller.AutoChessController", package.se
 local AutoChessController = class("AutoChessController", BaseController)
 
 function AutoChessController:onInit()
-	self:reInit()
+	self.cachePopupViewList = {}
+	self.stepFlowMap = {}
 end
 
 function AutoChessController:reInit()
-	self.cachePopupViewList = {}
+	self:onInit()
 end
 
 function AutoChessController:addConstEvents()
-	self.addEventCb(self, AutoChessController.instance, AutoChessEvent.StartFight, self.onStartFight, self)
-	self.addEventCb(self, AutoChessController.instance, AutoChessEvent.SkipFight, self.recordSkipFight, self)
+	self.addEventCb(self, AutoChessController.instance, AutoChessEvent.FinishStepList, self.onStepListFinish, self)
 end
 
 function AutoChessController:enterMainView(actId)
@@ -39,8 +39,8 @@ function AutoChessController:openGameView()
 	ViewMgr.instance:openView(ViewName.AutoChessGameView)
 end
 
-function AutoChessController:openMallView(param)
-	ViewMgr.instance:openView(ViewName.AutoChessMallView, param)
+function AutoChessController:openMallView()
+	ViewMgr.instance:openView(ViewName.AutoChessMallView)
 
 	self.startBuyTime = ServerTime.now()
 end
@@ -69,8 +69,21 @@ function AutoChessController:openFriendListView(param)
 	ViewMgr.instance:openView(ViewName.AutoChessFriendListView, param)
 end
 
-function AutoChessController:openAutoChessHandbookPreviewView(param)
+function AutoChessController:openHandbookView()
+	ViewMgr.instance:openView(ViewName.AutoChessHandBookView)
+end
+
+function AutoChessController:openHandbookPreviewView(param)
 	ViewMgr.instance:openView(ViewName.AutoChessHandbookPreviewView, param)
+end
+
+function AutoChessController:openAdventureView(isEnemy, isSub)
+	local param = {
+		isEnemy = isEnemy,
+		isSub = isSub
+	}
+
+	ViewMgr.instance:openView(ViewName.AutoChessAdventureView, param)
 end
 
 function AutoChessController:startGame(actId, moduleId, episodeCo)
@@ -104,10 +117,10 @@ function AutoChessController:startGame(actId, moduleId, episodeCo)
 			AutoChessRpc.instance:sendAutoChessEnterSceneRequest(actId, moduleId, episodeId, gameMo.selectMasterId)
 		end
 	elseif gameMo.episodeId == 0 then
-		if gameMo.bossId == 0 then
-			Activity182Rpc.instance:sendAct182RefreshBossRequest(actId, self.openBeginView, self)
+		if #gameMo.masterIdBox == 0 then
+			Activity182Rpc.instance:sendGetAct182RandomMasterRequest(actId)
 		else
-			self:openBeginView()
+			ViewMgr.instance:openView(ViewName.AutoChessLeaderSelectView)
 		end
 	else
 		AutoChessRpc.instance:sendAutoChessEnterSceneRequest(actId, moduleId, episodeId, gameMo.selectMasterId)
@@ -132,12 +145,10 @@ function AutoChessController:startPveGame(cmd, resultCode)
 	self.tempEpisodeId = nil
 end
 
-function AutoChessController:enterGame(episodeId, firstEnter)
+function AutoChessController:enterGame(episodeId)
 	AutoChessModel.instance:setEpisodeId(episodeId)
 	self:openGameView()
-	self:openMallView({
-		firstEnter = firstEnter
-	})
+	self:openMallView()
 
 	self.startGameTime = ServerTime.now()
 end
@@ -188,6 +199,7 @@ function AutoChessController:onResultViewClose()
 	else
 		self:openMallView()
 		self:dispatchEvent(AutoChessEvent.NextRound)
+		self:playStep(AutoChessEnum.ActionType.StartBuy)
 	end
 end
 
@@ -218,7 +230,7 @@ function AutoChessController:isDragDisable(operation, param, paramType)
 end
 
 function AutoChessController:isRowIndexEnable(index)
-	local value = tonumber(GuideModel.instance:getFlagValue(GuideModel.instance.GuideFlag.AutoChessSetPlaceIndex))
+	local value = tonumber(GuideModel.instance:getFlagValue(GuideModel.GuideFlag.AutoChessSetPlaceIndex))
 
 	if value == nil or value == 0 then
 		return true
@@ -227,8 +239,8 @@ function AutoChessController:isRowIndexEnable(index)
 	local result = value == index
 
 	if result == false then
-		if GuideModel.instance:isFlagEnable(GuideModel.instance.GuideFlag.AutoChessToast) then
-			local toastParam = GuideModel.instance:getFlagValue(GuideModel.instance.GuideFlag.AutoChessToast)
+		if GuideModel.instance:isFlagEnable(GuideModel.GuideFlag.AutoChessToast) then
+			local toastParam = GuideModel.instance:getFlagValue(GuideModel.GuideFlag.AutoChessToast)
 			local toastId = tonumber(toastParam)
 
 			if toastParam ~= nil and toastId ~= nil then
@@ -247,7 +259,7 @@ function AutoChessController:isRowIndexEnable(index)
 end
 
 function AutoChessController:isOperationEnable(operation, param, paramType)
-	local isEnable = not GuideModel.instance:isFlagEnable(GuideModel.instance.GuideFlag.AutoChessBanAllOper)
+	local isEnable = not GuideModel.instance:isFlagEnable(GuideModel.GuideFlag.AutoChessBanAllOper)
 
 	if operation == nil then
 		logNormal(string.format("当前是否允许操作：%s", isEnable))
@@ -270,8 +282,8 @@ function AutoChessController:isOperationEnable(operation, param, paramType)
 	end
 
 	if isEnable == false then
-		if GuideModel.instance:isFlagEnable(GuideModel.instance.GuideFlag.AutoChessToast) then
-			local toastParam = GuideModel.instance:getFlagValue(GuideModel.instance.GuideFlag.AutoChessToast)
+		if GuideModel.instance:isFlagEnable(GuideModel.GuideFlag.AutoChessToast) then
+			local toastParam = GuideModel.instance:getFlagValue(GuideModel.GuideFlag.AutoChessToast)
 			local toastId = tonumber(toastParam)
 
 			if toastParam ~= nil and toastId ~= nil then
@@ -289,11 +301,11 @@ function AutoChessController:isOperationEnable(operation, param, paramType)
 end
 
 function AutoChessController:showGuideToast()
-	if GuideModel.instance:isFlagEnable(GuideModel.instance.GuideFlag.AutoChessEnableDragFreeChess) then
+	if GuideModel.instance:isFlagEnable(GuideModel.GuideFlag.AutoChessEnableDragFreeChess) then
 		GameFacade.showToast(ToastEnum.AutoChessDragFree)
-	elseif GuideModel.instance:isFlagEnable(GuideModel.instance.GuideFlag.AutoChessEnableExchangeEXP) then
+	elseif GuideModel.instance:isFlagEnable(GuideModel.GuideFlag.AutoChessEnableExchangeEXP) then
 		GameFacade.showToast(ToastEnum.AutoChessExchangeExp)
-	elseif GuideModel.instance:isFlagEnable(GuideModel.instance.GuideFlag.AutoChessEnableSale) then
+	elseif GuideModel.instance:isFlagEnable(GuideModel.GuideFlag.AutoChessEnableSale) then
 		GameFacade.showToast(ToastEnum.AutoChessExchangeExp)
 	else
 		logError("未指定任何操作")
@@ -338,15 +350,21 @@ function AutoChessController:checkGuideEventFlag()
 	end
 end
 
+function AutoChessController:onStepListFinish(type)
+	if type == AutoChessEnum.ActionType.EndBuy then
+		self:onStartFight()
+	end
+end
+
 function AutoChessController:onStartFight()
 	if self.startBuyTime then
-		local chessMo = AutoChessModel.instance:getChessMo()
+		local sceneMo = AutoChessModel.instance:getSceneMo()
 		local useTime = ServerTime.now() - self.startBuyTime
 
 		StatController.instance:track(StatEnum.EventName.AutoChessFightStart, {
 			[StatEnum.EventProperties.EpisodeId] = tostring(AutoChessModel.instance.episodeId),
-			[StatEnum.EventProperties.RoundNum] = chessMo.sceneRound,
-			[StatEnum.EventProperties.OurRemainingHP] = tonumber(chessMo.svrFight.mySideMaster.hp),
+			[StatEnum.EventProperties.RoundNum] = sceneMo.baseInfo.sceneRound,
+			[StatEnum.EventProperties.OurRemainingHP] = tonumber(sceneMo.fight.mySideMaster.hp),
 			[StatEnum.EventProperties.UseTime] = useTime,
 			[StatEnum.EventProperties.ActivityId] = tostring(AutoChessModel.instance.actId)
 		})
@@ -360,25 +378,33 @@ function AutoChessController:recordSkipFight()
 end
 
 function AutoChessController:statExitGame()
-	local chessMo = AutoChessModel.instance:getChessMo()
+	if not self.startGameTime then
+		return
+	end
+
+	local sceneMo = AutoChessModel.instance:getSceneMo()
 	local useTime = ServerTime.now() - self.startGameTime
 
 	StatController.instance:track(StatEnum.EventName.AutoChessSceneExit, {
 		[StatEnum.EventProperties.EpisodeId] = tostring(AutoChessModel.instance.episodeId),
-		[StatEnum.EventProperties.RoundNum] = chessMo.sceneRound,
-		[StatEnum.EventProperties.OurRemainingHP] = tonumber(chessMo.svrFight.mySideMaster.hp),
+		[StatEnum.EventProperties.RoundNum] = sceneMo.baseInfo.sceneRound,
+		[StatEnum.EventProperties.OurRemainingHP] = sceneMo.fight.mySideMaster.hp,
 		[StatEnum.EventProperties.UseTime] = useTime,
 		[StatEnum.EventProperties.ActivityId] = tostring(AutoChessModel.instance.actId)
 	})
 end
 
 function AutoChessController:statFightEnd(leaderHp)
-	local chessMo = AutoChessModel.instance:getChessMo()
+	if not self.startFightTime then
+		return
+	end
+
+	local sceneMo = AutoChessModel.instance:getSceneMo()
 	local useTime = ServerTime.now() - self.startFightTime
 
 	StatController.instance:track(StatEnum.EventName.AutoChessFightEnd, {
 		[StatEnum.EventProperties.EpisodeId] = tostring(AutoChessModel.instance.episodeId),
-		[StatEnum.EventProperties.RoundNum] = chessMo.sceneRound,
+		[StatEnum.EventProperties.RoundNum] = sceneMo.baseInfo.sceneRound,
 		[StatEnum.EventProperties.OurRemainingHP] = leaderHp,
 		[StatEnum.EventProperties.SkipFight] = self.skipFight,
 		[StatEnum.EventProperties.UseTime] = useTime,
@@ -412,6 +438,134 @@ function AutoChessController:popupRewardView()
 	end
 
 	tabletool.clear(self.cachePopupViewList)
+end
+
+function AutoChessController:playStep(type)
+	self:setPlayStatus(true)
+
+	local sceneMo = AutoChessModel.instance:getSceneMo()
+	local effectMoList = sceneMo.stepEffectsMap[type]
+
+	if effectMoList then
+		local flowSequence = AutoChessHelper.buildFlowSequence(effectMoList)
+
+		self.stepFlowMap[type] = flowSequence
+
+		local doneFunc = self["onFlowDone" .. tostring(type)]
+
+		if doneFunc then
+			flowSequence:registerDoneListener(doneFunc, self)
+
+			if type == AutoChessEnum.ActionType.StartBuy or type == AutoChessEnum.ActionType.Immediately then
+				flowSequence:start(sceneMo.fight)
+			else
+				flowSequence:start(sceneMo.lastFight)
+			end
+		else
+			self:onFlowDone(type)
+			logError("AutoChessController缺少stepFlow完成的回调函数,stepType: " .. type)
+		end
+	else
+		self:onFlowDone(type)
+	end
+end
+
+function AutoChessController:onFlowDone(type)
+	local flowSequence = self.stepFlowMap[type]
+
+	if flowSequence then
+		local doneFunc = self["onFlowDone" .. tostring(type)]
+
+		if doneFunc then
+			flowSequence:unregisterDoneListener(doneFunc, self)
+		end
+
+		flowSequence:destroy()
+
+		self.stepFlowMap[type] = nil
+	end
+
+	local sceneMo = AutoChessModel.instance:getSceneMo()
+
+	sceneMo:delStepEffects(type)
+	self:dispatchEvent(AutoChessEvent.FinishStepList, type)
+	self:setPlayStatus(false)
+end
+
+function AutoChessController:onFlowDone9()
+	self:onFlowDone(AutoChessEnum.ActionType.Immediately)
+end
+
+function AutoChessController:onFlowDone8()
+	self:onFlowDone(AutoChessEnum.ActionType.StartBuy)
+end
+
+function AutoChessController:onFlowDone7()
+	self:onFlowDone(AutoChessEnum.ActionType.EndBuy)
+end
+
+function AutoChessController:onFlowDone1()
+	self:onFlowDone(AutoChessEnum.ActionType.RoundStart)
+end
+
+function AutoChessController:stopPlay(type)
+	local flowSequence = self.stepFlowMap[type]
+
+	if flowSequence then
+		flowSequence:stop()
+	else
+		logError("flow为空,actionType类型为: " .. AutoChessEnum.ActionTypeToName[type])
+	end
+
+	self:setPlayStatus(false)
+end
+
+function AutoChessController:resumePlay(type)
+	local flowSequence = self.stepFlowMap[type]
+
+	if flowSequence then
+		flowSequence:resume()
+		self:setPlayStatus(true)
+	else
+		logError("flow为空,actionType类型为: " .. AutoChessEnum.ActionTypeToName[type])
+	end
+end
+
+function AutoChessController:skipPlay(type)
+	local flowSequence = self.stepFlowMap[type]
+
+	if flowSequence then
+		flowSequence:stop()
+
+		if type == AutoChessEnum.ActionType.RoundStart then
+			self:recordSkipFight()
+		end
+	else
+		logError("flow为空,actionType类型为: " .. AutoChessEnum.ActionTypeToName[type])
+	end
+
+	self:onFlowDone(type)
+end
+
+function AutoChessController:clearAllFlow()
+	for type, flow in pairs(self.stepFlowMap) do
+		flow:stop()
+
+		local doneFunc = self["onFlowDone" .. tostring(type)]
+
+		if doneFunc then
+			flow:unregisterDoneListener(doneFunc, self)
+		end
+
+		flow:destroy()
+		logWarn("stepFlow触发保底清理,类型为: " .. AutoChessEnum.ActionTypeToName[type])
+	end
+
+	self.stepFlowMap = {}
+end
+
+function AutoChessController:setPlayStatus(bool)
+	self.isPlaying = bool
 end
 
 AutoChessController.instance = AutoChessController.New()

@@ -8,19 +8,12 @@ AudioMgr.GMOpenLog = nil
 AudioMgr.Evt_ChangeFinish = 1
 AudioMgr.Evt_Trigger = 2
 
-require("tolua.reflection")
-tolua.loadassembly("AK.Wwise.Unity.API")
-
-local type = tolua.findtype("AkSoundEngine")
-local _registerGameObj = tolua.getmethod(type, "RegisterGameObj", typeof("UnityEngine.GameObject"))
-local _unregisterGameObj = tolua.getmethod(type, "UnregisterGameObj", typeof("UnityEngine.GameObject"))
-
 function AudioMgr:RegisterGameObj(go)
-	_registerGameObj:Call(go)
+	self.csharpInst:RegisterGameObj(go)
 end
 
 function AudioMgr:UnregisterGameObj(go)
-	_unregisterGameObj:Call(go)
+	self.csharpInst:UnregisterGameObj(go)
 end
 
 function AudioMgr:ctor()

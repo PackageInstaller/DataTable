@@ -68,7 +68,7 @@ function V3a9_BossRushTeamMO:getHeroId(info)
 			if not heroMo then
 				local userId = PlayerModel.instance:getMyUserId()
 
-				logError(string.format("不是协助角色 拿不到该角色数据：userId:%s  heroUid:%s", userId, info.uid))
+				logError(string.format("不是协助角色 拿不到该角色数据：stage:%s userId:%s  heroUid:%s ", self._stage, userId, info.uid))
 
 				return
 			end

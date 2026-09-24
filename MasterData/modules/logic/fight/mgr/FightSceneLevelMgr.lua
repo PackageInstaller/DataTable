@@ -18,16 +18,32 @@ function FightSceneLevelMgr:loadScene(sceneId, levelId)
 	work:start()
 end
 
+function FightSceneLevelMgr:switchTempScene(levelId)
+	self.levelId = levelId
+
+	GameSceneMgr.instance:getCurScene():setCurLevelId(self.levelId)
+
+	self.sceneResPath = ResUrl.getSceneLevelUrl(self.levelId)
+
+	local flow = self:com_registFlowSequence()
+
+	self.oldLoaderComp = self.loaderComp
+	self.loaderComp = self:addComponent(FightLoaderComponent)
+
+	flow:registWork(FightWorkLoadAssetByComp, self.sceneResPath, self.loaderComp, self.onSceneLoaded, self)
+	flow:start()
+end
+
 function FightSceneLevelMgr:registWorkLoadScene(sceneId, levelId)
-	local var_3_0
+	local var_4_0
 
 	if not sceneId then
-		::label_3_0::
+		::label_4_0::
 
-		var_3_0 = self.sceneId or 10801
+		var_4_0 = self.sceneId or 10801
 	end
 
-	self.sceneId = var_3_0
+	self.sceneId = var_4_0
 
 	self:setLevelId(levelId)
 

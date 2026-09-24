@@ -11,6 +11,7 @@ function AbyssHeroGroupFightView:_editableInitView()
 	MaxMultiplication = CommonConfig.instance:getConstNum(ConstEnum.MaxMultiplication) or MaxMultiplication
 	self._multiplication = 1
 	self._goherogroupcontain = gohelper.findChild(self.viewGO, "herogroupcontain")
+	self._gobuff = gohelper.findChild(self.viewGO, "herogroupcontain/hero/bg5")
 	self._imagebufficon = gohelper.findChildImage(self.viewGO, "herogroupcontain/hero/bg5/#img_icon")
 	self._goAddBuff = gohelper.findChild(self.viewGO, "herogroupcontain/hero/bg5/#go_jiahao")
 	self._btnbuff = gohelper.findChildButton(self.viewGO, "herogroupcontain/hero/bg5/#btn_click")
@@ -86,18 +87,31 @@ end
 function AbyssHeroGroupFightView:onOpen()
 	AbyssHeroGroupFightView.super.onOpen(self)
 	self:refreshBuff()
+
+	self._closeWithEnteringFight = false
+
+	AbyssModel.instance:setIsAbyssAllow(true)
 end
 
-function AbyssHeroGroupFightView:_refreshBtns(isCostPower)
+function AbyssHeroGroupFightView:onClose()
 	AbyssHeroGroupFightView.super.onClose(self)
 end
 
 function AbyssHeroGroupFightView:_enterFight()
 	if HeroGroupModel.instance.episodeId then
 		local stageInfo = AbyssModel.instance:getCurStageMo()
+		local actId = AbyssModel.instance:getCurActId()
+		local stageId = AbyssModel.instance:getCurStageId()
+		local hasSkillOptions = AbyssConfig.instance:getStageSkillId(actId, stageId)
 
-		if stageInfo.skillId == nil or stageInfo.skillId == 0 then
+		if hasSkillOptions and (stageInfo.skillId == nil or stageInfo.skillId == 0) then
 			GameFacade.showToast(ToastEnum.V3a9_Abyss_Skill_Tips)
+
+			return
+		end
+
+		if stageInfo:isChallenged() and stageInfo:haveAssist() then
+			GameFacade.showToast(ToastEnum.AbyssAssistRelease)
 
 			return
 		end
@@ -129,6 +143,30 @@ function AbyssHeroGroupFightView:_enterFight()
 			param.activityId = AbyssModel.instance:getCurActId()
 			param.stageId = AbyssModel.instance:getCurStageId()
 
+			if not self._replayMode then
+				local heroSingleMo = AbyssModel.instance:getAssistMO()
+
+				if heroSingleMo then
+					local assistMO = heroSingleMo:getAssist()
+
+					if assistMO then
+						fightParam:setAssistHeroInfo(assistMO.heroUid, assistMO.userId)
+
+						local singleGroupMoList = HeroSingleGroupModel.instance:getList()
+
+						for pos, mo in ipairs(singleGroupMoList) do
+							if mo.heroUid == assistMO.heroUid then
+								fightParam.mySideUids[pos] = mo.heroUid
+
+								local equips = fightParam.equips[pos]
+
+								equips.heroUid = mo.heroUid
+							end
+						end
+					end
+				end
+			end
+
 			AbyssController.instance:enterFight(param)
 			AudioMgr.instance:trigger(AudioEnum.UI.Stop_HeroNormalVoc)
 		end
@@ -154,10 +192,6 @@ function AbyssHeroGroupFightView:_onModifyHeroGroup()
 	gohelper.setActive(self._dropherogroup, false)
 end
 
-function AbyssHeroGroupFightView:isShowDropHeroGroup()
-	return false
-end
-
 function AbyssHeroGroupFightView:_initFightGroupDrop()
 	gohelper.setActive(self._dropherogroup, false)
 end
@@ -170,6 +204,18 @@ function AbyssHeroGroupFightView:refreshBuff()
 	if not self._imagebufficon then
 		return
 	end
+
+	local actId = AbyssModel.instance:getCurActId()
+	local stageId = AbyssModel.instance:getCurStageId()
+	local hasSkillOptions = AbyssConfig.instance:getStageSkillId(actId, stageId)
+
+	if not hasSkillOptions then
+		gohelper.setActive(self._gobuff.gameObject, false)
+
+		return
+	end
+
+	gohelper.setActive(self._gobuff.gameObject, true)
 
 	local stageMo = AbyssModel.instance:getCurStageMo()
 
@@ -211,27 +257,30 @@ function AbyssHeroGroupFightView:_btnbuffOnClick()
 	AbyssController.instance:openBuffSelectView(stageId)
 end
 
-function AbyssHeroGroupFightView:_groupDropValueChanged(value)
-	local heroGroupType = HeroGroupModel.instance:getPresetHeroGroupType()
+function AbyssHeroGroupFightView:getCurHeroCount()
+	local heroCount = 0
+	local curHeroGroup = HeroGroupModel.instance:getCurGroupMO()
+	local heroList = curHeroGroup and curHeroGroup.heroList
 
-	if heroGroupType ~= HeroGroupPresetEnum.HeroGroupType.Abyss then
-		return
+	if heroList then
+		for index, heroUId in ipairs(heroList) do
+			if heroUId ~= "0" then
+				heroCount = heroCount + 1
+			end
+		end
 	end
 
-	local stageId = AbyssModel.instance:getCurStageId()
+	return heroCount
+end
 
-	if not stageId then
-		return
-	end
-
-	AbyssHeroGroupFightView.super._groupDropValueChanged(self, value)
-	gohelper.setActive(self._btnmodifyname, false)
+function AbyssHeroGroupFightView:onDestroyView()
+	AbyssHeroGroupFightView.super.onDestroyView(self)
+	HeroGroupModel.instance:clearCurAssist(true)
+	AbyssModel.instance:setIsAbyssAllow(false)
 end
 
 function AbyssHeroGroupFightView:isShowDropHeroGroup()
-	local curStageMo = AbyssModel.instance:getCurStageMo()
-
-	return not curStageMo:isChallenged()
+	return false
 end
 
 function AbyssHeroGroupFightView:onDailyRefreshCheck()

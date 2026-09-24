@@ -15,6 +15,7 @@ local fields = {
 	equipEffPos = 14,
 	sources = 15,
 	model = 12,
+	suit = 16,
 	id = 1,
 	icon = 7,
 	equipEffSize = 13,

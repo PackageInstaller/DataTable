@@ -33,15 +33,7 @@ function FightScene:addLowPhoneMemoryComp()
 end
 
 function FightScene:getCurLevelId()
-	local key = FightParamData.ParamKey.SceneId
-	local param = FightDataHelper.fieldMgr.param
-	local value = param and param:getKey(key)
-
-	if value then
-		return value
-	end
-
-	return FightScene.super.getCurLevelId(self)
+	return FightGameMgr.sceneLevelMgr:getCurLevelId()
 end
 
 function FightScene:onClose()

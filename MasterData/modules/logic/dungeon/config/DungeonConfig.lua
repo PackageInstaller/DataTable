@@ -907,6 +907,12 @@ function DungeonConfig:_initChapterList()
 				self._lastEarlyAccessChapterId = chapterCfg.dramaModeToMainChapterld
 			end
 		end
+
+		if DungeonEnum.PreviewMiniChapterId[chapterCfg.id] then
+			self._previewChapterList[chapterCfg.id] = {
+				chapterCfg
+			}
+		end
 	end
 
 	local sortFun = SortUtil.keyLower("id")
@@ -928,6 +934,10 @@ function DungeonConfig:getPreviewChapterList(chapterId)
 	local list = self._previewChapterList[chapterId]
 
 	if not list or #list ~= 2 then
+		if DungeonEnum.PreviewMiniChapterId[chapterId] and list and #list > 0 then
+			return list
+		end
+
 		logError(string.format("DungeonConfig getPreviewChapterList chapterId = %d, chapter list size = %s error", chapterId, list and #list))
 	end
 
@@ -1001,10 +1011,22 @@ function DungeonConfig:_rebuildEpisodeConfigs()
 
 	metatable.__newindex = episodeMetatable.__newindex
 
+	local isEditor = SLFramework.FrameworkSettings.IsEditor
+
 	for _, v in ipairs(lua_episode.configList) do
 		setmetatable(v, metatable)
 
 		if v.chainEpisode > 0 then
+			if isEditor then
+				local chainEpisodeConfig = self:getEpisodeCO(v.chainEpisode)
+				local chapterId = chainEpisodeConfig.chapterId
+				local chapterConfig = self:getChapterCO(chapterId)
+
+				if chapterConfig.dramaModeToMainChapterld ~= 0 and chapterConfig.dramaModeToMainChapterld ~= v.chapterId then
+					logError(string.format("chainEpisode chapter not match curEpisodeId:%s chainEpisode:%s chainChapterId %s dramaModeToMainChapterld %s chapterId %s", v.id, v.chainEpisode, chapterId, chapterConfig.dramaModeToMainChapterld, v.chapterId))
+				end
+			end
+
 			chainEpisodeDict[v.chainEpisode] = v.id
 			backwardChainDict[v.id] = v.chainEpisode
 		end
@@ -1359,7 +1381,21 @@ function DungeonConfig:_getEpisodeIndex(episodeCfg, searchTable)
 	local preEpisodeCfg = self:getEpisodeCO(episodeCfg.preEpisode)
 
 	if searchTable and searchTable[preEpisodeCfg] then
-		logError(string.format("_getEpisodeIndex: %s前置互相依赖了", preEpisodeCfg.id))
+		local chainIds = {
+			tostring(preEpisodeCfg.id)
+		}
+		local cfg = self:getEpisodeCO(preEpisodeCfg.preEpisode)
+		local loopCount = 0
+
+		while cfg and cfg ~= preEpisodeCfg and loopCount < 1000 do
+			table.insert(chainIds, 1, tostring(cfg.id))
+
+			cfg = self:getEpisodeCO(cfg.preEpisode)
+			loopCount = loopCount + 1
+		end
+
+		table.insert(chainIds, 1, tostring(preEpisodeCfg.id))
+		logError(string.format("_getEpisodeIndex: %s前置互相依赖了, 引用链(前置在前): %s", preEpisodeCfg.id, table.concat(chainIds, " -> ")))
 
 		return 0
 	end

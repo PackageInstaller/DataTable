@@ -21,16 +21,10 @@ function StoryBgEffsTimeStop:init(bgCo)
 	self._cfg = bgCo
 end
 
-function StoryBgEffsTimeStop:start(callback, callbackObj)
-	StoryBgEffsTimeStop.super.start(self)
-
-	self._finishedCallback = callback
-	self._finishedCallbackObj = callbackObj
-
+function StoryBgEffsTimeStop:onStartEffect()
 	self:_setViewTop(true)
 	ViewMgr.instance:registerCallback(ViewEvent.OnOpenView, self._onOpenView, self)
 	ViewMgr.instance:registerCallback(ViewEvent.OnCloseView, self._onCloseView, self)
-	self:loadRes()
 end
 
 function StoryBgEffsTimeStop:_onOpenView(viewName)
@@ -254,12 +248,7 @@ function StoryBgEffsTimeStop:_delayCaptureSnapshot()
 end
 
 function StoryBgEffsTimeStop:_onEffFinished()
-	if self._finishedCallback then
-		self._finishedCallback(self._finishedCallbackObj)
-
-		self._finishedCallback = nil
-		self._finishedCallbackObj = nil
-	end
+	self:callFinished()
 end
 
 function StoryBgEffsTimeStop:_clearEffs()
@@ -274,9 +263,6 @@ function StoryBgEffsTimeStop:_clearEffs()
 
 		self._effectGo = nil
 	end
-
-	self._finishedCallback = nil
-	self._finishedCallbackObj = nil
 end
 
 function StoryBgEffsTimeStop:destroy()

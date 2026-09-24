@@ -15,7 +15,9 @@ local primaryKey = {
 	"activityId",
 	"difficultyId"
 }
-local mlStringKey = {}
+local mlStringKey = {
+	refundDesc = 1
+}
 
 function lua_arcade_return.onLoad(json)
 	lua_arcade_return.configList, lua_arcade_return.configDict = JsonToLuaParser.parse(json, fields, primaryKey, mlStringKey)

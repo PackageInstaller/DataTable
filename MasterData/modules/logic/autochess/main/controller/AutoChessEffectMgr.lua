@@ -9,8 +9,6 @@ function AutoChessEffectMgr:init()
 	self.resList = {}
 	self.path2AssetItemDic = {}
 	self.path2CallbackListDic = {}
-	self.path2CallbackObjListDic = {}
-	self.path2CallbackParamListDic = {}
 end
 
 function AutoChessEffectMgr:loadRes(param, callback, callbackObj)
@@ -23,17 +21,22 @@ function AutoChessEffectMgr:loadRes(param, callback, callbackObj)
 
 		callback(callbackObj, go, param)
 	else
-		if not self.path2CallbackListDic[path] then
+		local isFirstRequest = not self.path2CallbackListDic[path]
+
+		if isFirstRequest then
 			self.path2CallbackListDic[path] = {}
-			self.path2CallbackObjListDic[path] = {}
-			self.path2CallbackParamListDic[path] = {}
 		end
 
-		table.insert(self.path2CallbackListDic[path], callback)
-		table.insert(self.path2CallbackObjListDic[path], callbackObj)
-		table.insert(self.path2CallbackParamListDic[path], param)
-		table.insert(self.pathList, path)
-		loadAbAsset(path, false, self.onLoadCallback, self)
+		table.insert(self.path2CallbackListDic[path], {
+			callback,
+			callbackObj,
+			param
+		})
+
+		if isFirstRequest then
+			table.insert(self.pathList, path)
+			loadAbAsset(path, false, self.onLoadCallback, self)
+		end
 	end
 end
 
@@ -51,28 +54,26 @@ function AutoChessEffectMgr:onLoadCallback(assetItem)
 
 		self.path2AssetItemDic[path] = assetItem
 
-		local callbackObjList = self.path2CallbackObjListDic[path]
+		local callbackList = self.path2CallbackListDic[path]
 
-		if callbackObjList then
+		if callbackList then
 			local prefab = assetItem:GetResource(path)
 
-			for k, callbackObj in ipairs(callbackObjList) do
-				if callbackObj then
-					local callback = self.path2CallbackListDic[path][k]
-					local param = self.path2CallbackParamListDic[path][k]
+			for _, info in ipairs(callbackList) do
+				local cb, cbObj, cbParam = info[1], info[2], info[3]
+
+				if cbObj then
 					local effectGo = gohelper.clone(prefab)
 
-					callback(callbackObj, effectGo, param)
+					cb(cbObj, effectGo, cbParam)
 				end
 			end
-
-			tabletool.clear(self.path2CallbackListDic[path])
-			tabletool.clear(self.path2CallbackObjListDic[path])
-			tabletool.clear(self.path2CallbackParamListDic[path])
 		end
 	else
 		logError(string.format("异常:自走棋特效加载失败%s", path))
 	end
+
+	tabletool.clear(self.path2CallbackListDic[path])
 end
 
 function AutoChessEffectMgr:dispose()

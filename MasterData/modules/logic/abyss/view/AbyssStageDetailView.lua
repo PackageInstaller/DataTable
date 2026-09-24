@@ -147,7 +147,7 @@ function AbyssStageDetailView:refreshUI()
 		return
 	end
 
-	self:refreshHeroState(stageInfo.heroList)
+	self:refreshHeroState(stageInfo.heroSkinList)
 end
 
 function AbyssStageDetailView:checkParam()
@@ -260,8 +260,8 @@ function AbyssStageDetailView:refreshHeroState(heroList)
 	gohelper.CreateObjList(self, self.onHeroItemCreate, heroList, nil, self._goherogItem, AbyssStageHeroItem)
 end
 
-function AbyssStageDetailView:onHeroItemCreate(item, heroId, index)
-	item:setInfo(heroId)
+function AbyssStageDetailView:onHeroItemCreate(item, heroData, index)
+	item:setInfo(heroData)
 end
 
 function AbyssStageDetailView:refreshRuleInfo()

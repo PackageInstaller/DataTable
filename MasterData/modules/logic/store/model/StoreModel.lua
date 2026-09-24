@@ -142,13 +142,33 @@ function StoreModel:_addSkinChargePackage(chargeInfo)
 	self._skinChargeDict[chargeInfo.id] = storeSkinChargeMo
 end
 
+function StoreModel:isChargeStoreMonthCardDic(id)
+	if id == StoreEnum.LittleMonthCardGoodsId then
+		return true
+	end
+
+	local monthCardId = StoreConfig.instance:getMonthCardStoreChargeId()
+
+	if id == monthCardId then
+		return true
+	end
+
+	local seasonCardId = StoreConfig.instance:getSeasonCardStoreChargeId()
+
+	if id == seasonCardId then
+		return true
+	end
+
+	return false
+end
+
 function StoreModel:chargeOrderComplete(id)
 	local mo = self._chargeStoreDic[id]
 
 	self.updateChargeStore = false
 
 	if mo == nil then
-		mo = StoreEnum.ChargeStoreMonthCardDic[id] and self._allPackageDic[id] or self._chargePackageStoreDic[id] or self._versionChargePackageDict[id] or self._onceTimeChargePackageDict[id]
+		mo = self:isChargeStoreMonthCardDic(id) and self._allPackageDic[id] or self._chargePackageStoreDic[id] or self._versionChargePackageDict[id] or self._onceTimeChargePackageDict[id]
 	else
 		self.updateChargeStore = true
 	end
@@ -158,7 +178,7 @@ function StoreModel:chargeOrderComplete(id)
 
 		local goodsId = mo.config.id
 
-		if StoreEnum.ChargeStoreMonthCardDic[goodsId] then
+		if self:isChargeStoreMonthCardDic(goodsId) then
 			ChargeRpc.instance:sendGetMonthCardInfoRequest(self.updateGoodsInfo, self)
 		else
 			self:updateGoodsInfo()
@@ -467,7 +487,7 @@ function StoreModel:checkShowInRecommand(goodsMO, isChargeGoods)
 		return false
 	end
 
-	if goodsMO.config.id == StoreEnum.MonthCardGoodsId then
+	if goodsMO.config.id == StoreConfig.instance:getMonthCardStoreChargeId() then
 		if not self:hasPurchaseMonthCard() then
 			return true
 		else
@@ -836,7 +856,7 @@ function StoreModel:getFirstTabs(filterOpen, order)
 		if not StoreConfig.instance:hasTab(tabConfig.belongFirstTab) and not StoreConfig.instance:hasTab(tabConfig.belongSecondTab) then
 			local isIgnore = self:checkContainIgnoreStoreTab(tabConfig.id)
 
-			if not ((tabConfig.id == StoreEnum.StoreId.DecorateStore and #DecorateStoreModel.instance:getDecorateGoodList(StoreEnum.StoreId.NewDecorateStore) == 0 and #DecorateStoreModel.instance:getDecorateGoodList(StoreEnum.StoreId.OldDecorateStore) == 0 or nil) and true) and (not filterOpen or self:isTabOpen(tabConfig.id)) then
+			if not ((tabConfig.id == StoreEnum.StoreId.DecorateStore and #DecorateStoreModel.instance:getDecorateGoodList(StoreEnum.StoreId.NewDecorateStore) == 0 and #DecorateStoreModel.instance:getDecorateGoodList(StoreEnum.StoreId.OldDecorateStore) == 0 and #DecorateStoreModel.instance:getDecorateGoodList(StoreEnum.StoreId.SpiritualityDecorateStore) == 0 or nil) and true) and (not filterOpen or self:isTabOpen(tabConfig.id)) then
 				table.insert(tabList, tabConfig)
 			end
 		end

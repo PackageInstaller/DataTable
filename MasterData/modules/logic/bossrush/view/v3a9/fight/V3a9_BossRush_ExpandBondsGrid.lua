@@ -67,6 +67,8 @@ function V3a9_BossRush_ExpandBondsGrid:refreshExpandBonds(limitShowCount)
 							local groupId = mo:getGroupId()
 							local item = self:_getBondGroupsItem(groupId)
 
+							item.viewGO.gameObject.name = "item_" .. showCount
+
 							item:onUpdateMO(mo)
 							item:setClickCb(self._clickcb, self._clickcbobj, self._closeRoot)
 
@@ -108,7 +110,7 @@ function V3a9_BossRush_ExpandBondsGrid:_getBondGroupsItem(groupId)
 	local item = self._bondGroupItems[groupId]
 
 	if not item then
-		local childGO = gohelper.clone(self._itemRes, self.go, "item_" .. groupId)
+		local childGO = gohelper.clone(self._itemRes, self.go)
 
 		item = MonoHelper.addNoUpdateLuaComOnceToGo(childGO, V3a9_BossRush_ExpandBondsItem, self._isOpenTipView)
 

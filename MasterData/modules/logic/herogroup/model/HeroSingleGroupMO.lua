@@ -73,16 +73,18 @@ function HeroSingleGroupMO:getHeroMO()
 		return self.assistMo.heroMO
 	end
 
-	local _, assistMo = HeroGroupModel.instance:getAssistMo()
-
 	if self.heroUid then
 		local heroMo = HeroModel.instance:getById(self.heroUid)
 
-		if assistMo and self.heroUid and assistMo.assistMo.heroId == self.heroUid.heroId then
-			return
+		if heroMo then
+			for _, assistMo in ipairs(HeroGroupModel.instance:getAssistMoList()) do
+				if assistMo.assistMo and assistMo.assistMo.heroId == heroMo.heroId then
+					return
+				end
+			end
 		end
 
-		return self.heroUid
+		return heroMo
 	end
 end
 

@@ -15,7 +15,7 @@ function ShowCharacterViewContainer:buildViews()
 	scrollParam.scrollDir = ScrollEnum.ScrollDirV
 	scrollParam.lineCount = 7
 	scrollParam.cellWidth = 267
-	scrollParam.cellHeight = 550
+	scrollParam.cellHeight = 600
 	scrollParam.cellSpaceH = 0
 	scrollParam.cellSpaceV = 0
 	scrollParam.startSpace = 0

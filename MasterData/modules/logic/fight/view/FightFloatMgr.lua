@@ -4,7 +4,7 @@ module("modules.logic.fight.view.FightFloatMgr", package.seeall)
 
 local FightFloatMgr = class("FightFloatMgr")
 local idCounter = 1
-local DataParamCount = 5
+local DataParamCount = 6
 local FrameProcessCount = 10
 local SingleEntityInterval = 0.3
 local EnttiyMaxPlayingCount = 3
@@ -152,7 +152,7 @@ function FightFloatMgr:clearFloatItem()
 	self._dataQueue4 = {}
 end
 
-function FightFloatMgr:float(entityId, type, content, param, isAssassinate)
+function FightFloatMgr:float(entityId, type, content, param, isAssassinate, floatData)
 	if isDebugBuild and GMController.instance.hideFloat then
 		return
 	end
@@ -173,6 +173,10 @@ function FightFloatMgr:float(entityId, type, content, param, isAssassinate)
 		param = 0
 	end
 
+	if floatData == nil then
+		floatData = {}
+	end
+
 	if not self.canShowFightNumUI and type ~= FightEnum.FloatType.buff and type ~= FightEnum.FloatType.miss then
 		return
 	end
@@ -188,6 +192,7 @@ function FightFloatMgr:float(entityId, type, content, param, isAssassinate)
 	table.insert(self._dataQueue4, content)
 	table.insert(self._dataQueue4, param)
 	table.insert(self._dataQueue4, isAssassinate or false)
+	table.insert(self._dataQueue4, floatData or {})
 	TaskDispatcher.runRepeat(self._onTick, self, 0.1 / FightModel.instance:getUISpeed())
 end
 
@@ -250,6 +255,7 @@ function FightFloatMgr:_onTick()
 		local content = self._dataQueue4[i + 2]
 		local param = self._dataQueue4[i + 3]
 		local isAssassinate = self._dataQueue4[i + 4]
+		local floatData = self._dataQueue4[i + 5]
 		local lastTime = self._entityTimeDict[entityId]
 
 		if not BuffType[type] and lastTime and now - lastTime < SingleEntityInterval then
@@ -260,10 +266,11 @@ function FightFloatMgr:_onTick()
 			table.insert(delayData, content)
 			table.insert(delayData, param)
 			table.insert(delayData, isAssassinate)
+			table.insert(delayData, floatData)
 		else
 			self._entityTimeDict[entityId] = now
 
-			self:_doShowTip(entityId, type, content, param, isAssassinate)
+			self:_doShowTip(entityId, type, content, param, isAssassinate, floatData)
 
 			processCount = processCount + 1
 		end
@@ -294,7 +301,7 @@ function FightFloatMgr:_onTick()
 	end
 end
 
-function FightFloatMgr:_doShowTip(entityId, type, content, param, isAssassinate)
+function FightFloatMgr:_doShowTip(entityId, type, content, param, isAssassinate, floatData)
 	local entityPlayingItems = self._entityId2PlayingItems[entityId]
 
 	if not entityPlayingItems then
@@ -325,7 +332,7 @@ function FightFloatMgr:_doShowTip(entityId, type, content, param, isAssassinate)
 		gohelper.addChild(entity.nameUI:getFloatContainerGO(), item:getGO())
 	end
 
-	item:startFloat(entityId, content, param, isAssassinate)
+	item:startFloat(entityId, content, param, isAssassinate, floatData)
 
 	local offset_x = 0
 	local offset_y = entity and entity.nameUI and entity.nameUI:getFloatItemStartY() or 0

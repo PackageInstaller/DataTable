@@ -28,13 +28,13 @@ function AutoChessStartFightView:onOpen()
 	AudioMgr.instance:trigger(AudioEnum.AutoChess.play_ui_tangren_battle_enter)
 	TaskDispatcher.runDelay(self.closeThis, self, 1.5)
 
-	local chessMo = AutoChessModel.instance:getChessMo()
-	local roundType = chessMo.lastSvrFight.roundType
+	local sceneMo = AutoChessModel.instance:getSceneMo()
+	local roundType = sceneMo.lastFight.roundType
 
 	if roundType == AutoChessEnum.RoundType.BOSS then
 		local actMo = Activity182Model.instance:getActMo()
 		local bossId = actMo:getGameMo(actMo.activityId, AutoChessEnum.ModuleId.PVP).bossId
-		local bossCfg = lua_auto_chess_boss.configDict[bossId]
+		local bossCfg = AutoChessConfig.instance:getBossCfg(bossId)
 
 		if bossCfg then
 			self._simageBg:LoadImage(ResUrl.getMovingChessIcon(bossCfg.loadingImage, "handbook"))

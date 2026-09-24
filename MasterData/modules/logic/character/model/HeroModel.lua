@@ -159,6 +159,12 @@ function HeroModel:_sortSpecialTouch(voice, type)
 end
 
 function HeroModel:getVoiceConfig(heroId, type, verifyCallback, targetSkinId)
+	local isPastSkin = CharacterPastModel.instance:isPastSkin(heroId, targetSkinId)
+
+	if isPastSkin then
+		return CharacterPastModel.instance:getVoiceConfig(heroId, type, verifyCallback, targetSkinId)
+	end
+
 	local hero = self:getByHeroId(heroId)
 
 	if not hero then

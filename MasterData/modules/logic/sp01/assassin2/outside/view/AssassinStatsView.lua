@@ -131,6 +131,7 @@ function AssassinStatsView:_editableInitView()
 		skillTipX = 409,
 		showAssassinBg = true
 	})
+	self._skillContainer.viewContainer = self.viewContainer
 end
 
 function AssassinStatsView:onUpdateParam()

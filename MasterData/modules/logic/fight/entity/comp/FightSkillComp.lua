@@ -72,6 +72,9 @@ FightSkillComp.FrameEventHandlerCls = {
 	FightTLSetEffectTexture,
 	FightTLUnnamedEffect,
 	FightTLDeviceCardTriggerPowerEffect,
+	FightTLEventRevertScene,
+	FightTLEventOpenView,
+	FightTLEvent4_0HNJAction,
 	[1001] = FightTLEventObjFly,
 	[1002] = FightTLEventSetSign,
 	[2001] = FightScreenTextByTimeline

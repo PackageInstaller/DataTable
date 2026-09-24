@@ -46,7 +46,7 @@ StoreEnum.StoreId = {
 	SummonExchange = 110,
 	HighSummon = 114,
 	CritterStore = 173,
-	SummonEquipExchange = 150,
+	SpiritualityDecorateStore = 803,
 	RecommendPackage = 611,
 	OldRoomStore = 172,
 	WeekWalk = 160,
@@ -55,11 +55,12 @@ StoreEnum.StoreId = {
 	Charge = 410,
 	DecorateStore = 800,
 	MediciPackage = 616,
-	MonthCardRecommend = 1000,
+	SummonEquipExchange = 150,
 	Summon = 130,
 	RoomStore = 170,
 	TwinssychubeEquipStore = 304,
 	TowerStore = 140,
+	MonthCardRecommend = 1000,
 	VersionPackage = 612,
 	SummonCost = 118,
 	LimitStore = 112,
@@ -119,8 +120,6 @@ StoreEnum.GroupOrderType = {
 	GroupD = 4,
 	GroupB = 2
 }
-StoreEnum.MonthCardGoodsId = 610001
-StoreEnum.SeasonCardGoodsId = 836014
 StoreEnum.SupplementMonthCardItemId = 2929001
 StoreEnum.V3a2_SummonSimulationPickItemId = 832004
 StoreEnum.V3a3_SkinDiscountItemId = 833005
@@ -192,19 +191,6 @@ StoreEnum.DefaultSelectFirstTabList = {
 	[StoreEnum.StoreId.DecorateStore] = 4
 }
 StoreEnum.NewPlayerRegisterLimit = 82
-StoreEnum.MonthAndSeasonCardTab = {
-	MonthCard = 1,
-	SeasonCard = 2
-}
-StoreEnum.MonthAndSeasonCardTab2GoodsDic = {
-	[StoreEnum.MonthAndSeasonCardTab.MonthCard] = StoreEnum.MonthCardGoodsId,
-	[StoreEnum.MonthAndSeasonCardTab.SeasonCard] = StoreEnum.SeasonCardGoodsId
-}
-StoreEnum.ChargeStoreMonthCardDic = {
-	[StoreEnum.MonthCardGoodsId] = true,
-	[StoreEnum.SeasonCardGoodsId] = true,
-	[StoreEnum.LittleMonthCardGoodsId] = true
-}
 StoreEnum.DefaultCurrencyItem = CurrencyEnum.CurrencyType.Diamond
 StoreEnum.CurrencyItemSprite = {
 	[CurrencyEnum.CurrencyType.Diamond] = 0,
@@ -216,6 +202,10 @@ StoreEnum.ChargeConditionalClientType = {
 }
 StoreEnum.NewLinkTagType = {
 	SP02 = 1
+}
+StoreEnum.ConstId = {
+	MonthCard = 1,
+	SeasonCard = 2
 }
 StoreEnum.RecommendPackageMaxCount = 8
 

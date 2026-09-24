@@ -76,8 +76,25 @@ function AbyssController:_openMainView()
 end
 
 function AbyssController:startFight()
-	if AbyssModel.instance:getCurStageMo() == nil then
+	local stageMo = AbyssModel.instance:getCurStageMo()
+
+	if stageMo == nil then
 		return
+	end
+
+	local actInfo = AbyssModel.instance:getCurInfoMo()
+	local haveChallengedAssist = false
+
+	for _, stageInfo in ipairs(actInfo.stageInfoList) do
+		if stageInfo:haveAssist() and stageInfo:isChallenged() then
+			haveChallengedAssist = true
+
+			break
+		end
+	end
+
+	if not haveChallengedAssist and not stageMo:haveAssist() then
+		AbyssModel.instance:cleanAssistMO()
 	end
 
 	local snapshotId = ModuleEnum.HeroGroupSnapshotType.Abyss
@@ -258,29 +275,6 @@ function AbyssController:openTeamPresetView(stageId, heroGroupName, onlyQuickEdi
 	end
 end
 
-function AbyssController:saveAbyssHeroGroup(callback, callbackObj)
-	local heroGroupMO = HeroGroupPresetModel.instance:getCurGroupMO()
-
-	if not heroGroupMO then
-		return
-	end
-
-	HeroGroupPresetModel.instance:setHeroGroupSnapshotType(HeroGroupPresetEnum.HeroGroupType.Abyss)
-	HeroGroupPresetModel.instance:replaceSingleGroup()
-	HeroGroupPresetModel.instance:replaceSingleGroupEquips()
-
-	local snapshotId = ModuleEnum.HeroGroupSnapshotType.Abyss
-	local snapshotSubId = HeroGroupPresetModel.instance:getCurGroupId()
-
-	HeroGroupPresetModel.instance:externalSaveCurGroupData(function()
-		self:dispatchEvent(AbyssEvent.OnUpdateStageInfo)
-
-		if callback then
-			callback(callbackObj)
-		end
-	end, self, heroGroupMO, snapshotId, snapshotSubId)
-end
-
 function AbyssController:setStageBuff(stageId, skillId)
 	local actId = AbyssModel.instance:getCurActId()
 	local stageMo = AbyssModel.instance:getStageInfoMo(actId, stageId)
@@ -401,21 +395,21 @@ function AbyssController:getFightCustomParam()
 	return cjson.encode(obj)
 end
 
-function AbyssController:checkAssistHero(fightGroup)
+function AbyssController:checkAssistHero(req)
 	local assistInfo = AbyssModel.instance:getAssistMO()
 
 	if assistInfo then
-		for i, uid in ipairs(fightGroup.heroList) do
+		for i, uid in ipairs(req.fightGroup.heroList) do
 			if assistInfo.heroUid == uid then
-				fightGroup.heroList[i] = "0"
+				req.fightGroup.heroList[i] = "0"
 
-				local equip = fightGroup.equips[i]
+				local equip = req.fightGroup.equips[i]
 
 				if equip then
 					equip.heroUid = "0"
 				end
 
-				local act104Equips = fightGroup.activity104Equips[i]
+				local act104Equips = req.fightGroup.activity104Equips[i]
 
 				if act104Equips then
 					act104Equips.heroUid = "0"
@@ -425,64 +419,106 @@ function AbyssController:checkAssistHero(fightGroup)
 	end
 end
 
-function AbyssController:saveSnapShot(saveGroupMo, subId, callback, callbackObj)
+function AbyssController:onUseAssist()
+	local curStageInfo = AbyssModel.instance:getCurStageMo()
+	local saveGroupMo = HeroGroupSnapshotModel.instance:getHeroGroupInfo(ModuleEnum.HeroGroupSnapshotType.Abyss, curStageInfo.heroGroupSubId)
+
+	for pos, uid in ipairs(saveGroupMo.heroList) do
+		if curStageInfo:isPosAssist(pos) then
+			saveGroupMo.heroList[pos] = "0"
+		end
+	end
+
+	self:saveSnapShot(saveGroupMo, curStageInfo.heroGroupSubId)
+end
+
+function AbyssController:saveSnapShot(saveGroupMo, subId, callback, callbackObj, isReplace)
 	local snapshotId = ModuleEnum.HeroGroupSnapshotType.Abyss
 	local result = {}
 	local infoMo = AbyssModel.instance:getCurInfoMo()
 
 	if infoMo then
-		if not subId then
-			::label_37_0::
+		local curStageInfo = AbyssModel.instance:getCurStageMo()
+		local snapshotSubId = subId or curStageInfo.heroGroupSubId
+		local haveHeroDic = {}
 
-			local snapshotSubId = HeroGroupSnapshotModel.instance:getCurGroupId(nil)
-			local haveHeroDic = {}
+		for pos, uid in ipairs(saveGroupMo.heroList) do
+			local heroMo = HeroModel.instance:getById(uid)
 
-			for _, uid in ipairs(saveGroupMo.heroList) do
-				if not string.nilorempty(uid) and uid ~= "0" then
-					haveHeroDic[uid] = true
-				end
+			if heroMo then
+				haveHeroDic[heroMo.heroId] = true
+			elseif curStageInfo:isPosAssist(pos) then
+				haveHeroDic[curStageInfo:getPosAssistHeroId(pos)] = true
 			end
+		end
 
-			if not next(haveHeroDic) then
-				self:_saveSnapShot(saveGroupMo, snapshotId, snapshotSubId, callback, callbackObj)
-				HeroGroupPresetController.instance:initCopyHeroGroupList()
+		if isReplace and curStageInfo:haveAssist() then
+			curStageInfo:clearAssistHero()
+		end
 
-				return
-			end
+		if not next(haveHeroDic) then
+			self:_saveSnapShot(saveGroupMo, snapshotId, snapshotSubId, callback, callbackObj)
+			HeroGroupPresetController.instance:initCopyHeroGroupList()
 
-			for _, stageMo in ipairs(infoMo.stageInfoList) do
-				if stageMo.heroGroupSubId ~= snapshotSubId and not stageMo:isChallenged() then
-					local groupMo = HeroGroupSnapshotModel.instance:getHeroGroupInfo(snapshotId, stageMo.heroGroupSubId, true)
+			return
+		end
 
-					for i = 1, #groupMo.heroList do
-						local uid = groupMo.heroList[i]
+		for _, stageMo in ipairs(infoMo.stageInfoList) do
+			if stageMo.heroGroupSubId ~= snapshotSubId and not stageMo:isChallenged() then
+				local groupMo = HeroGroupSnapshotModel.instance:getHeroGroupInfo(snapshotId, stageMo.heroGroupSubId, true)
 
-						if uid ~= nil and uid ~= "0" and haveHeroDic[uid] then
-							local heroMo = HeroModel.instance:getById(uid)
+				for i = 1, #groupMo.heroList do
+					local uid = groupMo.heroList[i]
+					local heroMo = HeroModel.instance:getById(uid)
+					local isAssist = stageMo:isPosAssist(i)
 
-							AbyssController.instance:dispatchEvent(AbyssEvent.OnAbyssRecommendHeroRemove, {
-								heroId = heroMo.heroId,
-								pos = i,
-								stageId = stageMo.stageId
-							})
+					if heroMo then
+						if not heroMo.heroId then
+							local heroId = 0
+							local assistId = stageMo:getPosAssistHeroId(i)
+							local isRemove = true
+							local removeId, skinId
 
-							result[stageMo.heroGroupSubId] = groupMo
-							groupMo.heroList[i] = "0"
+							if heroMo ~= nil and haveHeroDic[heroId] then
+								result[stageMo.heroGroupSubId] = groupMo
+								groupMo.heroList[i] = "0"
+								removeId = heroId
+								skinId = heroMo.skin
+							elseif isAssist and haveHeroDic[assistId] then
+								local assistMo = AbyssModel.instance:getAssistMO()
+
+								skinId = assistMo and assistMo.assistMo.skin or stageMo.skinDic[assistId]
+
+								stageMo:clearAssistHero()
+
+								removeId = assistId
+							else
+								isRemove = false
+							end
+
+							if isRemove then
+								AbyssController.instance:dispatchEvent(AbyssEvent.OnAbyssRecommendHeroRemove, {
+									heroId = removeId,
+									skinId = skinId,
+									pos = i,
+									stageId = stageMo.stageId
+								})
+							end
 						end
 					end
 				end
 			end
-
-			if next(result) then
-				result[snapshotSubId] = saveGroupMo
-
-				self:_saveSnapShotList(result, snapshotId, callback, callbackObj)
-			else
-				self:_saveSnapShot(saveGroupMo, snapshotId, snapshotSubId, callback, callbackObj)
-			end
-
-			HeroGroupPresetController.instance:initCopyHeroGroupList()
 		end
+
+		if next(result) then
+			result[snapshotSubId] = saveGroupMo
+
+			self:_saveSnapShotList(result, snapshotId, callback, callbackObj)
+		else
+			self:_saveSnapShot(saveGroupMo, snapshotId, snapshotSubId, callback, callbackObj)
+		end
+
+		HeroGroupPresetController.instance:initCopyHeroGroupList()
 	end
 end
 
@@ -497,6 +533,91 @@ function AbyssController:_saveSnapShot(heroGroupMO, snapshotId, snapshotSubId, c
 
 	FightParam.initFightGroup(req.fightGroup, heroGroupMO.clothId, heroGroupMO:getMainList(), heroGroupMO:getSubList(), heroGroupMO:getAllHeroEquips(), heroGroupMO:getAllHeroActivity104Equips(), heroGroupMO:getAssistBossId())
 	HeroGroupRpc.instance:sendSetHeroGroupSnapshotRequest(snapshotId, snapshotSubId, req, callback, callbackObj)
+end
+
+function AbyssController:enterFightByEpisodeIdGM(episodeId)
+	episodeId = tonumber(episodeId)
+
+	local actId = AbyssConfig.instance:getActIdByEpisodeId(episodeId)
+
+	if not actId then
+		logError("enterFightByEpisodeIdGM: episodeId无效 " .. tostring(episodeId))
+
+		return
+	end
+
+	local stageId = AbyssConfig.instance:getStageIdByEpisodeId(actId, episodeId)
+
+	if not stageId then
+		logError("enterFightByEpisodeIdGM: stageId is nil, episodeId:" .. tostring(episodeId))
+
+		return
+	end
+
+	local stageConfig = AbyssConfig.instance:getEpisodeConfig(actId, stageId)
+
+	if not stageConfig then
+		logError("enterFightByEpisodeIdGM: stageConfig is nil, stageId:" .. tostring(stageId))
+
+		return
+	end
+
+	local episodeConfig = DungeonConfig.instance:getEpisodeCO(episodeId)
+
+	if not episodeConfig then
+		logError("enterFightByEpisodeIdGM: episodeConfig is nil, episodeId:" .. tostring(episodeId))
+
+		return
+	end
+
+	AbyssModel.instance:setCurActId(actId)
+	AbyssModel.instance:setCurStageId(stageId)
+	AbyssModel.instance:cleanAssistMO()
+
+	local infoMo = AbyssModel.instance:getInfoMo(actId)
+
+	if not infoMo then
+		infoMo = AbyssInfoMo.New(actId)
+		AbyssModel.instance._infoMoDic[actId] = infoMo
+	end
+
+	if not infoMo:getStageInfo(stageId) then
+		local stageMo = AbyssStageMo.New()
+
+		stageMo.stageId = stageId
+		stageMo.heroGroupSubId = 1
+		stageMo.skillId = AbyssHelper.getValidSkill(actId, stageId, 0)
+		stageMo.lastUpdateTime = stageId
+		infoMo.stageInfoDic[stageId] = stageMo
+
+		table.insert(infoMo.stageInfoList, stageMo)
+	end
+
+	local stageMo = infoMo:getStageInfo(stageId)
+
+	if stageMo and not stageMo.totalStar then
+		stageMo.totalStar = AbyssConfig.instance:getStageMaxStar(actId, stageId) or 0
+	end
+
+	local stageMo = AbyssModel.instance:getCurStageMo()
+
+	if stageMo then
+		if not stageMo.heroGroupSubId then
+			local selectIndex = 1
+
+			HeroGroupModel.instance:setCurGroupId(selectIndex)
+			HeroGroupModel.instance:setParam(episodeConfig.battleId, episodeId, false, nil, episodeConfig.type)
+
+			local groupInfo = HeroGroupSnapshotModel.instance:getById(ModuleEnum.HeroGroupSnapshotType.Abyss)
+
+			if groupInfo then
+				groupInfo:setSelectIndex(selectIndex)
+			end
+
+			FightController.instance:setFightParamByEpisodeId(episodeId)
+			DungeonFightController.instance:enterFight(episodeConfig.chapterId, episodeId, nil)
+		end
+	end
 end
 
 AbyssController.instance = AbyssController.New()

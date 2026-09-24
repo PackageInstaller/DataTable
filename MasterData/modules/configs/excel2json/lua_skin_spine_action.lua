@@ -4,12 +4,16 @@ module("modules.configs.excel2json.lua_skin_spine_action", package.seeall)
 
 local lua_skin_spine_action = {}
 local fields = {
-	audioId = 6,
+	effectForSub = 8,
 	effect = 3,
 	effectRemoveTime = 5,
-	skinId = 1,
-	effectHangPoint = 4,
 	dieAnim = 7,
+	skinId = 1,
+	effectHandPointForSub = 9,
+	effectRemoveTimeForSub = 10,
+	audioId = 6,
+	audioIdForSub = 11,
+	effectHangPoint = 4,
 	actionName = 2
 }
 local primaryKey = {

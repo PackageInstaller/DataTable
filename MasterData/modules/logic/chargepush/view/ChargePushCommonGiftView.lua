@@ -10,7 +10,7 @@ function ChargePushCommonGiftView:onInitView()
 	self.btnRight = gohelper.findChildButtonWithAudio(self.viewGO, "root/#btn_emptyRight")
 	self.btnTop = gohelper.findChildButtonWithAudio(self.viewGO, "root/#btn_emptyTop")
 	self.btnBottom = gohelper.findChildButtonWithAudio(self.viewGO, "root/#btn_emptyBottom")
-	self.txtDesc = gohelper.findChildTextMesh(self.viewGO, "root/info/#scroll_desc/Viewport/Content/#txt_desc")
+	self.txtDesc = gohelper.findChildTextMesh(self.viewGO, "root/info/#scroll_desc/Viewport/#txt_desc")
 	self.goGiftItem = gohelper.findChild(self.viewGO, "root/#scroll_gift/Viewport/Content/#go_giftitem")
 
 	gohelper.setActive(self.goGiftItem, false)

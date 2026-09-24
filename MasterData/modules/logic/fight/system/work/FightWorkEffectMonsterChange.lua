@@ -45,7 +45,7 @@ function FightWorkEffectMonsterChange:onStart()
 
 		newEntityFlow:registWork(FightWorkFunction, self.setNilBeforeNewEntity, self)
 		newEntityFlow:addWork(self:registBuildNewEntityWork())
-		FightHelper.buildMonsterA2B(oldEntity, self._oldEntityMO, flow, newEntityFlow)
+		FightHelper.buildMonsterA2B(oldEntity, self._oldEntityMO, flow, newEntityFlow, self.fightStepData)
 		flow:registWork(FightWorkDelayTimer, 0.01)
 		flowDone:addWork(flow)
 	else

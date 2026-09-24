@@ -1,0 +1,9 @@
+[
+    "activity244_status_effect",
+    [
+        [1,"poison","bead","until_clear",0,"replace","clear","毒株，消除时扣共享 HP"],
+        [2,"seal","bead","until_remove",0,"replace","adjacent_clear","封印珠不可连线"],
+        [3,"lock","bead","turn",2,"replace","adjacent_clear_or_timeout","锁定珠"],
+        [4,"silence","character","seconds",5,"refresh","timeout","角色封技"]
+    ]
+]

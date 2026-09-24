@@ -417,48 +417,57 @@ function SummonModel:getSummonFullExSkillHero(poolId, heroIds)
 
 	for i = 1, #_checkHeroIds do
 		local checkHeroId = _checkHeroIds[i]
-		local level = 0
-		local mo = HeroModel.instance:getByHeroId(checkHeroId)
 
-		if mo then
-			level = mo.exSkillLevel
-
-			if mo.exSkillLevel >= 5 then
-				return checkHeroId
-			end
-		end
-
-		local exCo = SkillConfig.instance:getheroexskillco(checkHeroId)
-
-		if exCo then
-			local needCount = 0
-			local needItemId, needItemType
-
-			for j = 1, #exCo do
-				if level < j then
-					local co = exCo[j]
-
-					if co then
-						local itemco = string.splitToNumber(co.consume, "#")
-
-						needItemType = itemco[1]
-						needItemId = itemco[2]
-						needCount = itemco[3] + needCount
-					end
-				end
-			end
-
-			if needItemId and needItemType then
-				local haveCount = ItemModel.instance:getItemQuantity(needItemType, needItemId)
-
-				if needCount <= haveCount then
-					return checkHeroId
-				end
-			end
+		if self:isFullExSkillHeroById(checkHeroId) then
+			return checkHeroId
 		end
 	end
 
 	return nil
+end
+
+function SummonModel:isFullExSkillHeroById(heroId)
+	local level = 0
+	local mo = HeroModel.instance:getByHeroId(heroId)
+
+	if mo then
+		level = mo.exSkillLevel
+
+		if mo.exSkillLevel >= 5 then
+			return true
+		end
+	end
+
+	local exCo = SkillConfig.instance:getheroexskillco(heroId)
+
+	if exCo then
+		local needCount = 0
+		local needItemId, needItemType
+
+		for j = 1, #exCo do
+			if level < j then
+				local co = exCo[j]
+
+				if co then
+					local itemco = string.splitToNumber(co.consume, "#")
+
+					needItemType = itemco[1]
+					needItemId = itemco[2]
+					needCount = itemco[3] + needCount
+				end
+			end
+		end
+
+		if needItemId and needItemType then
+			local haveCount = ItemModel.instance:getItemQuantity(needItemType, needItemId)
+
+			if needCount <= haveCount then
+				return true
+			end
+		end
+	end
+
+	return false
 end
 
 function SummonModel:cacheReward(rewardList)

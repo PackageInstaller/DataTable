@@ -75,7 +75,9 @@ function StoreMonthCardView:_btnbuyOnClick()
 
 		StoreController.instance:openPackageStoreGoodsView(packageMo)
 	else
-		self.viewContainer.storeView:_refreshTabs(StoreEnum.StoreId.Package, StoreEnum.MonthCardGoodsId)
+		local monthCardId = StoreConfig.instance:getMonthCardStoreChargeId()
+
+		self.viewContainer.storeView:_refreshTabs(StoreEnum.StoreId.Package, monthCardId)
 		StoreController.instance:onSwitchTab(StoreEnum.StoreId.Package)
 	end
 end
@@ -127,7 +129,9 @@ function StoreMonthCardView:_editableInitView()
 
 	self._simagesupplement:LoadImage(ResUrl.getSpecialPropItemIcon(StoreEnum.SupplementMonthCardItemId))
 
-	self._txtcost.text = PayModel.instance:getProductOriginPriceNum(StoreEnum.MonthCardGoodsId)
+	local monthCardId = StoreConfig.instance:getMonthCardStoreChargeId()
+
+	self._txtcost.text = PayModel.instance:getProductOriginPriceNum(monthCardId)
 
 	local clickCount = 4
 	local offset = 4
@@ -247,7 +251,8 @@ function StoreMonthCardView:refreshRemainDay()
 end
 
 function StoreMonthCardView:refreshRewardIcon()
-	local monthCardCo = StoreConfig.instance:getMonthCardConfig(StoreEnum.MonthCardGoodsId)
+	local monthCardId = StoreConfig.instance:getMonthCardStoreChargeId()
+	local monthCardCo = StoreConfig.instance:getMonthCardConfig(monthCardId)
 	local onceBonusParam = string.split(monthCardCo.onceBonus, "|")
 	local dailyBonusParam = string.split(monthCardCo.dailyBonus, "|")
 	local onceIconUrl, onceQuantity = self:getIconUrlAndQuantity(onceBonusParam[1])
@@ -366,8 +371,8 @@ function StoreMonthCardView:_refreshSupplement()
 	gohelper.setActive(self._gopatchinfo, showtips)
 
 	local storeMonthCardInfo = StoreModel.instance:getMonthCardInfo()
-	local isMaxDay = storeMonthCardInfo and storeMonthCardInfo:getRemainDay() >= StoreConfig.instance:getMonthCardConfig(StoreEnum.MonthCardGoodsId).maxDaysLimit - 1
-	local goodId = StoreEnum.MonthCardGoodsId
+	local goodId = StoreConfig.instance:getMonthCardStoreChargeId()
+	local isMaxDay = storeMonthCardInfo and storeMonthCardInfo:getRemainDay() >= StoreConfig.instance:getMonthCardConfig(goodId).maxDaysLimit - 1
 	local packageMo = StoreModel.instance:getGoodsMO(goodId)
 	local isSoldOut = not packageMo or packageMo:isSoldOut()
 

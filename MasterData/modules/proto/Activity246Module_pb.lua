@@ -1,0 +1,261 @@
+﻿-- chunkname: @modules/proto/Activity246Module_pb.lua
+
+local require = require
+local protobuf = require("protobuf.protobuf")
+
+module("modules.proto.Activity246Module_pb", package.seeall)
+
+local Activity246Module_pb = {}
+
+Activity246Module_pb.ACT246OPENEDBLOCK_MSG = protobuf.Descriptor()
+Activity246Module_pb.ACT246OPENEDBLOCKREWARDIDFIELD = protobuf.FieldDescriptor()
+Activity246Module_pb.ACT246OPENEDBLOCKTOPLEFTINDEXFIELD = protobuf.FieldDescriptor()
+Activity246Module_pb.ACT246OPENEDBLOCKBOTTOMRIGHTINDEXFIELD = protobuf.FieldDescriptor()
+Activity246Module_pb.ACT246SCRATCHREQUEST_MSG = protobuf.Descriptor()
+Activity246Module_pb.ACT246SCRATCHREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity246Module_pb.ACT246SCRATCHREQUESTCARDIDFIELD = protobuf.FieldDescriptor()
+Activity246Module_pb.ACT246SCRATCHREQUESTINDEXFIELD = protobuf.FieldDescriptor()
+Activity246Module_pb.ACT246SCRATCHREPLY_MSG = protobuf.Descriptor()
+Activity246Module_pb.ACT246SCRATCHREPLYACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity246Module_pb.ACT246SCRATCHREPLYCARDIDFIELD = protobuf.FieldDescriptor()
+Activity246Module_pb.ACT246SCRATCHREPLYCARDFIELD = protobuf.FieldDescriptor()
+Activity246Module_pb.ACT246SCRATCHREPLYREWARDIDFIELD = protobuf.FieldDescriptor()
+Activity246Module_pb.ACT246SCRATCHREPLYUNLOCKEDCARDIDFIELD = protobuf.FieldDescriptor()
+Activity246Module_pb.ACT246CARDINFO_MSG = protobuf.Descriptor()
+Activity246Module_pb.ACT246CARDINFOCARDIDFIELD = protobuf.FieldDescriptor()
+Activity246Module_pb.ACT246CARDINFOUNLOCKEDFIELD = protobuf.FieldDescriptor()
+Activity246Module_pb.ACT246CARDINFOOPENEDBLOCKSFIELD = protobuf.FieldDescriptor()
+Activity246Module_pb.GETACT246INFOREPLY_MSG = protobuf.Descriptor()
+Activity246Module_pb.GETACT246INFOREPLYACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity246Module_pb.GETACT246INFOREPLYCARDINFOSFIELD = protobuf.FieldDescriptor()
+Activity246Module_pb.GETACT246INFOREQUEST_MSG = protobuf.Descriptor()
+Activity246Module_pb.GETACT246INFOREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity246Module_pb.ACT246OPENEDBLOCKREWARDIDFIELD.name = "rewardId"
+Activity246Module_pb.ACT246OPENEDBLOCKREWARDIDFIELD.full_name = ".Act246OpenedBlock.rewardId"
+Activity246Module_pb.ACT246OPENEDBLOCKREWARDIDFIELD.number = 1
+Activity246Module_pb.ACT246OPENEDBLOCKREWARDIDFIELD.index = 0
+Activity246Module_pb.ACT246OPENEDBLOCKREWARDIDFIELD.label = 1
+Activity246Module_pb.ACT246OPENEDBLOCKREWARDIDFIELD.has_default_value = false
+Activity246Module_pb.ACT246OPENEDBLOCKREWARDIDFIELD.default_value = 0
+Activity246Module_pb.ACT246OPENEDBLOCKREWARDIDFIELD.type = 5
+Activity246Module_pb.ACT246OPENEDBLOCKREWARDIDFIELD.cpp_type = 1
+Activity246Module_pb.ACT246OPENEDBLOCKTOPLEFTINDEXFIELD.name = "topLeftIndex"
+Activity246Module_pb.ACT246OPENEDBLOCKTOPLEFTINDEXFIELD.full_name = ".Act246OpenedBlock.topLeftIndex"
+Activity246Module_pb.ACT246OPENEDBLOCKTOPLEFTINDEXFIELD.number = 2
+Activity246Module_pb.ACT246OPENEDBLOCKTOPLEFTINDEXFIELD.index = 1
+Activity246Module_pb.ACT246OPENEDBLOCKTOPLEFTINDEXFIELD.label = 1
+Activity246Module_pb.ACT246OPENEDBLOCKTOPLEFTINDEXFIELD.has_default_value = false
+Activity246Module_pb.ACT246OPENEDBLOCKTOPLEFTINDEXFIELD.default_value = 0
+Activity246Module_pb.ACT246OPENEDBLOCKTOPLEFTINDEXFIELD.type = 5
+Activity246Module_pb.ACT246OPENEDBLOCKTOPLEFTINDEXFIELD.cpp_type = 1
+Activity246Module_pb.ACT246OPENEDBLOCKBOTTOMRIGHTINDEXFIELD.name = "bottomRightIndex"
+Activity246Module_pb.ACT246OPENEDBLOCKBOTTOMRIGHTINDEXFIELD.full_name = ".Act246OpenedBlock.bottomRightIndex"
+Activity246Module_pb.ACT246OPENEDBLOCKBOTTOMRIGHTINDEXFIELD.number = 3
+Activity246Module_pb.ACT246OPENEDBLOCKBOTTOMRIGHTINDEXFIELD.index = 2
+Activity246Module_pb.ACT246OPENEDBLOCKBOTTOMRIGHTINDEXFIELD.label = 1
+Activity246Module_pb.ACT246OPENEDBLOCKBOTTOMRIGHTINDEXFIELD.has_default_value = false
+Activity246Module_pb.ACT246OPENEDBLOCKBOTTOMRIGHTINDEXFIELD.default_value = 0
+Activity246Module_pb.ACT246OPENEDBLOCKBOTTOMRIGHTINDEXFIELD.type = 5
+Activity246Module_pb.ACT246OPENEDBLOCKBOTTOMRIGHTINDEXFIELD.cpp_type = 1
+Activity246Module_pb.ACT246OPENEDBLOCK_MSG.name = "Act246OpenedBlock"
+Activity246Module_pb.ACT246OPENEDBLOCK_MSG.full_name = ".Act246OpenedBlock"
+Activity246Module_pb.ACT246OPENEDBLOCK_MSG.nested_types = {}
+Activity246Module_pb.ACT246OPENEDBLOCK_MSG.enum_types = {}
+Activity246Module_pb.ACT246OPENEDBLOCK_MSG.fields = {
+	Activity246Module_pb.ACT246OPENEDBLOCKREWARDIDFIELD,
+	Activity246Module_pb.ACT246OPENEDBLOCKTOPLEFTINDEXFIELD,
+	Activity246Module_pb.ACT246OPENEDBLOCKBOTTOMRIGHTINDEXFIELD
+}
+Activity246Module_pb.ACT246OPENEDBLOCK_MSG.is_extendable = false
+Activity246Module_pb.ACT246OPENEDBLOCK_MSG.extensions = {}
+Activity246Module_pb.ACT246SCRATCHREQUESTACTIVITYIDFIELD.name = "activityId"
+Activity246Module_pb.ACT246SCRATCHREQUESTACTIVITYIDFIELD.full_name = ".Act246ScratchRequest.activityId"
+Activity246Module_pb.ACT246SCRATCHREQUESTACTIVITYIDFIELD.number = 1
+Activity246Module_pb.ACT246SCRATCHREQUESTACTIVITYIDFIELD.index = 0
+Activity246Module_pb.ACT246SCRATCHREQUESTACTIVITYIDFIELD.label = 1
+Activity246Module_pb.ACT246SCRATCHREQUESTACTIVITYIDFIELD.has_default_value = false
+Activity246Module_pb.ACT246SCRATCHREQUESTACTIVITYIDFIELD.default_value = 0
+Activity246Module_pb.ACT246SCRATCHREQUESTACTIVITYIDFIELD.type = 5
+Activity246Module_pb.ACT246SCRATCHREQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity246Module_pb.ACT246SCRATCHREQUESTCARDIDFIELD.name = "cardId"
+Activity246Module_pb.ACT246SCRATCHREQUESTCARDIDFIELD.full_name = ".Act246ScratchRequest.cardId"
+Activity246Module_pb.ACT246SCRATCHREQUESTCARDIDFIELD.number = 2
+Activity246Module_pb.ACT246SCRATCHREQUESTCARDIDFIELD.index = 1
+Activity246Module_pb.ACT246SCRATCHREQUESTCARDIDFIELD.label = 1
+Activity246Module_pb.ACT246SCRATCHREQUESTCARDIDFIELD.has_default_value = false
+Activity246Module_pb.ACT246SCRATCHREQUESTCARDIDFIELD.default_value = 0
+Activity246Module_pb.ACT246SCRATCHREQUESTCARDIDFIELD.type = 5
+Activity246Module_pb.ACT246SCRATCHREQUESTCARDIDFIELD.cpp_type = 1
+Activity246Module_pb.ACT246SCRATCHREQUESTINDEXFIELD.name = "index"
+Activity246Module_pb.ACT246SCRATCHREQUESTINDEXFIELD.full_name = ".Act246ScratchRequest.index"
+Activity246Module_pb.ACT246SCRATCHREQUESTINDEXFIELD.number = 3
+Activity246Module_pb.ACT246SCRATCHREQUESTINDEXFIELD.index = 2
+Activity246Module_pb.ACT246SCRATCHREQUESTINDEXFIELD.label = 1
+Activity246Module_pb.ACT246SCRATCHREQUESTINDEXFIELD.has_default_value = false
+Activity246Module_pb.ACT246SCRATCHREQUESTINDEXFIELD.default_value = 0
+Activity246Module_pb.ACT246SCRATCHREQUESTINDEXFIELD.type = 5
+Activity246Module_pb.ACT246SCRATCHREQUESTINDEXFIELD.cpp_type = 1
+Activity246Module_pb.ACT246SCRATCHREQUEST_MSG.name = "Act246ScratchRequest"
+Activity246Module_pb.ACT246SCRATCHREQUEST_MSG.full_name = ".Act246ScratchRequest"
+Activity246Module_pb.ACT246SCRATCHREQUEST_MSG.nested_types = {}
+Activity246Module_pb.ACT246SCRATCHREQUEST_MSG.enum_types = {}
+Activity246Module_pb.ACT246SCRATCHREQUEST_MSG.fields = {
+	Activity246Module_pb.ACT246SCRATCHREQUESTACTIVITYIDFIELD,
+	Activity246Module_pb.ACT246SCRATCHREQUESTCARDIDFIELD,
+	Activity246Module_pb.ACT246SCRATCHREQUESTINDEXFIELD
+}
+Activity246Module_pb.ACT246SCRATCHREQUEST_MSG.is_extendable = false
+Activity246Module_pb.ACT246SCRATCHREQUEST_MSG.extensions = {}
+Activity246Module_pb.ACT246SCRATCHREPLYACTIVITYIDFIELD.name = "activityId"
+Activity246Module_pb.ACT246SCRATCHREPLYACTIVITYIDFIELD.full_name = ".Act246ScratchReply.activityId"
+Activity246Module_pb.ACT246SCRATCHREPLYACTIVITYIDFIELD.number = 1
+Activity246Module_pb.ACT246SCRATCHREPLYACTIVITYIDFIELD.index = 0
+Activity246Module_pb.ACT246SCRATCHREPLYACTIVITYIDFIELD.label = 1
+Activity246Module_pb.ACT246SCRATCHREPLYACTIVITYIDFIELD.has_default_value = false
+Activity246Module_pb.ACT246SCRATCHREPLYACTIVITYIDFIELD.default_value = 0
+Activity246Module_pb.ACT246SCRATCHREPLYACTIVITYIDFIELD.type = 5
+Activity246Module_pb.ACT246SCRATCHREPLYACTIVITYIDFIELD.cpp_type = 1
+Activity246Module_pb.ACT246SCRATCHREPLYCARDIDFIELD.name = "cardId"
+Activity246Module_pb.ACT246SCRATCHREPLYCARDIDFIELD.full_name = ".Act246ScratchReply.cardId"
+Activity246Module_pb.ACT246SCRATCHREPLYCARDIDFIELD.number = 2
+Activity246Module_pb.ACT246SCRATCHREPLYCARDIDFIELD.index = 1
+Activity246Module_pb.ACT246SCRATCHREPLYCARDIDFIELD.label = 1
+Activity246Module_pb.ACT246SCRATCHREPLYCARDIDFIELD.has_default_value = false
+Activity246Module_pb.ACT246SCRATCHREPLYCARDIDFIELD.default_value = 0
+Activity246Module_pb.ACT246SCRATCHREPLYCARDIDFIELD.type = 5
+Activity246Module_pb.ACT246SCRATCHREPLYCARDIDFIELD.cpp_type = 1
+Activity246Module_pb.ACT246SCRATCHREPLYCARDFIELD.name = "card"
+Activity246Module_pb.ACT246SCRATCHREPLYCARDFIELD.full_name = ".Act246ScratchReply.card"
+Activity246Module_pb.ACT246SCRATCHREPLYCARDFIELD.number = 3
+Activity246Module_pb.ACT246SCRATCHREPLYCARDFIELD.index = 2
+Activity246Module_pb.ACT246SCRATCHREPLYCARDFIELD.label = 1
+Activity246Module_pb.ACT246SCRATCHREPLYCARDFIELD.has_default_value = false
+Activity246Module_pb.ACT246SCRATCHREPLYCARDFIELD.default_value = nil
+Activity246Module_pb.ACT246SCRATCHREPLYCARDFIELD.message_type = Activity246Module_pb.ACT246CARDINFO_MSG
+Activity246Module_pb.ACT246SCRATCHREPLYCARDFIELD.type = 11
+Activity246Module_pb.ACT246SCRATCHREPLYCARDFIELD.cpp_type = 10
+Activity246Module_pb.ACT246SCRATCHREPLYREWARDIDFIELD.name = "rewardId"
+Activity246Module_pb.ACT246SCRATCHREPLYREWARDIDFIELD.full_name = ".Act246ScratchReply.rewardId"
+Activity246Module_pb.ACT246SCRATCHREPLYREWARDIDFIELD.number = 4
+Activity246Module_pb.ACT246SCRATCHREPLYREWARDIDFIELD.index = 3
+Activity246Module_pb.ACT246SCRATCHREPLYREWARDIDFIELD.label = 1
+Activity246Module_pb.ACT246SCRATCHREPLYREWARDIDFIELD.has_default_value = false
+Activity246Module_pb.ACT246SCRATCHREPLYREWARDIDFIELD.default_value = 0
+Activity246Module_pb.ACT246SCRATCHREPLYREWARDIDFIELD.type = 5
+Activity246Module_pb.ACT246SCRATCHREPLYREWARDIDFIELD.cpp_type = 1
+Activity246Module_pb.ACT246SCRATCHREPLYUNLOCKEDCARDIDFIELD.name = "unlockedCardId"
+Activity246Module_pb.ACT246SCRATCHREPLYUNLOCKEDCARDIDFIELD.full_name = ".Act246ScratchReply.unlockedCardId"
+Activity246Module_pb.ACT246SCRATCHREPLYUNLOCKEDCARDIDFIELD.number = 5
+Activity246Module_pb.ACT246SCRATCHREPLYUNLOCKEDCARDIDFIELD.index = 4
+Activity246Module_pb.ACT246SCRATCHREPLYUNLOCKEDCARDIDFIELD.label = 1
+Activity246Module_pb.ACT246SCRATCHREPLYUNLOCKEDCARDIDFIELD.has_default_value = false
+Activity246Module_pb.ACT246SCRATCHREPLYUNLOCKEDCARDIDFIELD.default_value = 0
+Activity246Module_pb.ACT246SCRATCHREPLYUNLOCKEDCARDIDFIELD.type = 5
+Activity246Module_pb.ACT246SCRATCHREPLYUNLOCKEDCARDIDFIELD.cpp_type = 1
+Activity246Module_pb.ACT246SCRATCHREPLY_MSG.name = "Act246ScratchReply"
+Activity246Module_pb.ACT246SCRATCHREPLY_MSG.full_name = ".Act246ScratchReply"
+Activity246Module_pb.ACT246SCRATCHREPLY_MSG.nested_types = {}
+Activity246Module_pb.ACT246SCRATCHREPLY_MSG.enum_types = {}
+Activity246Module_pb.ACT246SCRATCHREPLY_MSG.fields = {
+	Activity246Module_pb.ACT246SCRATCHREPLYACTIVITYIDFIELD,
+	Activity246Module_pb.ACT246SCRATCHREPLYCARDIDFIELD,
+	Activity246Module_pb.ACT246SCRATCHREPLYCARDFIELD,
+	Activity246Module_pb.ACT246SCRATCHREPLYREWARDIDFIELD,
+	Activity246Module_pb.ACT246SCRATCHREPLYUNLOCKEDCARDIDFIELD
+}
+Activity246Module_pb.ACT246SCRATCHREPLY_MSG.is_extendable = false
+Activity246Module_pb.ACT246SCRATCHREPLY_MSG.extensions = {}
+Activity246Module_pb.ACT246CARDINFOCARDIDFIELD.name = "cardId"
+Activity246Module_pb.ACT246CARDINFOCARDIDFIELD.full_name = ".Act246CardInfo.cardId"
+Activity246Module_pb.ACT246CARDINFOCARDIDFIELD.number = 1
+Activity246Module_pb.ACT246CARDINFOCARDIDFIELD.index = 0
+Activity246Module_pb.ACT246CARDINFOCARDIDFIELD.label = 1
+Activity246Module_pb.ACT246CARDINFOCARDIDFIELD.has_default_value = false
+Activity246Module_pb.ACT246CARDINFOCARDIDFIELD.default_value = 0
+Activity246Module_pb.ACT246CARDINFOCARDIDFIELD.type = 5
+Activity246Module_pb.ACT246CARDINFOCARDIDFIELD.cpp_type = 1
+Activity246Module_pb.ACT246CARDINFOUNLOCKEDFIELD.name = "unlocked"
+Activity246Module_pb.ACT246CARDINFOUNLOCKEDFIELD.full_name = ".Act246CardInfo.unlocked"
+Activity246Module_pb.ACT246CARDINFOUNLOCKEDFIELD.number = 2
+Activity246Module_pb.ACT246CARDINFOUNLOCKEDFIELD.index = 1
+Activity246Module_pb.ACT246CARDINFOUNLOCKEDFIELD.label = 1
+Activity246Module_pb.ACT246CARDINFOUNLOCKEDFIELD.has_default_value = false
+Activity246Module_pb.ACT246CARDINFOUNLOCKEDFIELD.default_value = false
+Activity246Module_pb.ACT246CARDINFOUNLOCKEDFIELD.type = 8
+Activity246Module_pb.ACT246CARDINFOUNLOCKEDFIELD.cpp_type = 7
+Activity246Module_pb.ACT246CARDINFOOPENEDBLOCKSFIELD.name = "openedBlocks"
+Activity246Module_pb.ACT246CARDINFOOPENEDBLOCKSFIELD.full_name = ".Act246CardInfo.openedBlocks"
+Activity246Module_pb.ACT246CARDINFOOPENEDBLOCKSFIELD.number = 3
+Activity246Module_pb.ACT246CARDINFOOPENEDBLOCKSFIELD.index = 2
+Activity246Module_pb.ACT246CARDINFOOPENEDBLOCKSFIELD.label = 3
+Activity246Module_pb.ACT246CARDINFOOPENEDBLOCKSFIELD.has_default_value = false
+Activity246Module_pb.ACT246CARDINFOOPENEDBLOCKSFIELD.default_value = {}
+Activity246Module_pb.ACT246CARDINFOOPENEDBLOCKSFIELD.message_type = Activity246Module_pb.ACT246OPENEDBLOCK_MSG
+Activity246Module_pb.ACT246CARDINFOOPENEDBLOCKSFIELD.type = 11
+Activity246Module_pb.ACT246CARDINFOOPENEDBLOCKSFIELD.cpp_type = 10
+Activity246Module_pb.ACT246CARDINFO_MSG.name = "Act246CardInfo"
+Activity246Module_pb.ACT246CARDINFO_MSG.full_name = ".Act246CardInfo"
+Activity246Module_pb.ACT246CARDINFO_MSG.nested_types = {}
+Activity246Module_pb.ACT246CARDINFO_MSG.enum_types = {}
+Activity246Module_pb.ACT246CARDINFO_MSG.fields = {
+	Activity246Module_pb.ACT246CARDINFOCARDIDFIELD,
+	Activity246Module_pb.ACT246CARDINFOUNLOCKEDFIELD,
+	Activity246Module_pb.ACT246CARDINFOOPENEDBLOCKSFIELD
+}
+Activity246Module_pb.ACT246CARDINFO_MSG.is_extendable = false
+Activity246Module_pb.ACT246CARDINFO_MSG.extensions = {}
+Activity246Module_pb.GETACT246INFOREPLYACTIVITYIDFIELD.name = "activityId"
+Activity246Module_pb.GETACT246INFOREPLYACTIVITYIDFIELD.full_name = ".GetAct246InfoReply.activityId"
+Activity246Module_pb.GETACT246INFOREPLYACTIVITYIDFIELD.number = 1
+Activity246Module_pb.GETACT246INFOREPLYACTIVITYIDFIELD.index = 0
+Activity246Module_pb.GETACT246INFOREPLYACTIVITYIDFIELD.label = 1
+Activity246Module_pb.GETACT246INFOREPLYACTIVITYIDFIELD.has_default_value = false
+Activity246Module_pb.GETACT246INFOREPLYACTIVITYIDFIELD.default_value = 0
+Activity246Module_pb.GETACT246INFOREPLYACTIVITYIDFIELD.type = 5
+Activity246Module_pb.GETACT246INFOREPLYACTIVITYIDFIELD.cpp_type = 1
+Activity246Module_pb.GETACT246INFOREPLYCARDINFOSFIELD.name = "cardInfos"
+Activity246Module_pb.GETACT246INFOREPLYCARDINFOSFIELD.full_name = ".GetAct246InfoReply.cardInfos"
+Activity246Module_pb.GETACT246INFOREPLYCARDINFOSFIELD.number = 2
+Activity246Module_pb.GETACT246INFOREPLYCARDINFOSFIELD.index = 1
+Activity246Module_pb.GETACT246INFOREPLYCARDINFOSFIELD.label = 3
+Activity246Module_pb.GETACT246INFOREPLYCARDINFOSFIELD.has_default_value = false
+Activity246Module_pb.GETACT246INFOREPLYCARDINFOSFIELD.default_value = {}
+Activity246Module_pb.GETACT246INFOREPLYCARDINFOSFIELD.message_type = Activity246Module_pb.ACT246CARDINFO_MSG
+Activity246Module_pb.GETACT246INFOREPLYCARDINFOSFIELD.type = 11
+Activity246Module_pb.GETACT246INFOREPLYCARDINFOSFIELD.cpp_type = 10
+Activity246Module_pb.GETACT246INFOREPLY_MSG.name = "GetAct246InfoReply"
+Activity246Module_pb.GETACT246INFOREPLY_MSG.full_name = ".GetAct246InfoReply"
+Activity246Module_pb.GETACT246INFOREPLY_MSG.nested_types = {}
+Activity246Module_pb.GETACT246INFOREPLY_MSG.enum_types = {}
+Activity246Module_pb.GETACT246INFOREPLY_MSG.fields = {
+	Activity246Module_pb.GETACT246INFOREPLYACTIVITYIDFIELD,
+	Activity246Module_pb.GETACT246INFOREPLYCARDINFOSFIELD
+}
+Activity246Module_pb.GETACT246INFOREPLY_MSG.is_extendable = false
+Activity246Module_pb.GETACT246INFOREPLY_MSG.extensions = {}
+Activity246Module_pb.GETACT246INFOREQUESTACTIVITYIDFIELD.name = "activityId"
+Activity246Module_pb.GETACT246INFOREQUESTACTIVITYIDFIELD.full_name = ".GetAct246InfoRequest.activityId"
+Activity246Module_pb.GETACT246INFOREQUESTACTIVITYIDFIELD.number = 1
+Activity246Module_pb.GETACT246INFOREQUESTACTIVITYIDFIELD.index = 0
+Activity246Module_pb.GETACT246INFOREQUESTACTIVITYIDFIELD.label = 1
+Activity246Module_pb.GETACT246INFOREQUESTACTIVITYIDFIELD.has_default_value = false
+Activity246Module_pb.GETACT246INFOREQUESTACTIVITYIDFIELD.default_value = 0
+Activity246Module_pb.GETACT246INFOREQUESTACTIVITYIDFIELD.type = 5
+Activity246Module_pb.GETACT246INFOREQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity246Module_pb.GETACT246INFOREQUEST_MSG.name = "GetAct246InfoRequest"
+Activity246Module_pb.GETACT246INFOREQUEST_MSG.full_name = ".GetAct246InfoRequest"
+Activity246Module_pb.GETACT246INFOREQUEST_MSG.nested_types = {}
+Activity246Module_pb.GETACT246INFOREQUEST_MSG.enum_types = {}
+Activity246Module_pb.GETACT246INFOREQUEST_MSG.fields = {
+	Activity246Module_pb.GETACT246INFOREQUESTACTIVITYIDFIELD
+}
+Activity246Module_pb.GETACT246INFOREQUEST_MSG.is_extendable = false
+Activity246Module_pb.GETACT246INFOREQUEST_MSG.extensions = {}
+Activity246Module_pb.Act246CardInfo = protobuf.Message(Activity246Module_pb.ACT246CARDINFO_MSG)
+Activity246Module_pb.Act246OpenedBlock = protobuf.Message(Activity246Module_pb.ACT246OPENEDBLOCK_MSG)
+Activity246Module_pb.Act246ScratchReply = protobuf.Message(Activity246Module_pb.ACT246SCRATCHREPLY_MSG)
+Activity246Module_pb.Act246ScratchRequest = protobuf.Message(Activity246Module_pb.ACT246SCRATCHREQUEST_MSG)
+Activity246Module_pb.GetAct246InfoReply = protobuf.Message(Activity246Module_pb.GETACT246INFOREPLY_MSG)
+Activity246Module_pb.GetAct246InfoRequest = protobuf.Message(Activity246Module_pb.GETACT246INFOREQUEST_MSG)
+
+return Activity246Module_pb

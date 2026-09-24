@@ -49,7 +49,6 @@ function Season166ToastItem:refreshUI()
 
 	if not self._toastParams.icon then
 		UISpriteSetMgr.instance:setSeason166Sprite(self._imageIcon, string.format("season166_result_tipsicon%s", self._toastParams.icon))
-		self._toastItem:setToastType(ToastItem.ToastType.Season166)
 	end
 end
 

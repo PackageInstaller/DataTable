@@ -10,11 +10,24 @@ function HandbookSkinViewContainer:buildViews()
 
 	self._scene = HandbookSkinScene.New()
 
+	self:buildSubScenes()
+	self._scene:setSevenSubScene(self:getSubScene(HandbookEnum.SkinSuitSceneType.Seven))
+	self._scene:setTarotSubScene(self:getSubScene(HandbookEnum.SkinSuitSceneType.Tarot))
 	table.insert(views, HandbookSkinView.New())
 	table.insert(views, self._scene)
 	table.insert(views, TabViewGroup.New(1, "#go_topleft"))
 
 	return views
+end
+
+function HandbookSkinViewContainer:buildSubScenes()
+	self._subScene = {}
+	self._subScene[HandbookEnum.SkinSuitSceneType.Seven] = HandbookScene_Seven.New()
+	self._subScene[HandbookEnum.SkinSuitSceneType.Tarot] = HandbookScene_Tarot.New()
+end
+
+function HandbookSkinViewContainer:getSubScene(sceneType)
+	return self._subScene[sceneType]
 end
 
 function HandbookSkinViewContainer:buildTabViews(tabContainerId)
@@ -36,6 +49,12 @@ end
 function HandbookSkinViewContainer:_overrideCloseFunc()
 	if self._scene:isInTarotMode() then
 		self._scene:exitTarotScene()
+
+		return
+	end
+
+	if self._scene:isInSevenMode() then
+		self._scene:exitSevenScene()
 
 		return
 	end

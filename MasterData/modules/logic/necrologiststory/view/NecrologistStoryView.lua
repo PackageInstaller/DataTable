@@ -317,7 +317,9 @@ function NecrologistStoryView:refreshUI(storyGroupId)
 	self._storyGroupMo:setPlace(plotGroupCo.place)
 	self._storyGroupMo:setWeather(plotGroupCo.weather)
 
-	self.txtNum.text = string.format("%02d", NecrologistStoryHelper.getStoryGroupIndex(storyGroupId))
+	local index = NecrologistStoryHelper.getStoryGroupIndex(storyGroupId)
+
+	self.txtNum.text = index and string.format("%02d", index) or ""
 
 	self:setLeftPic(plotGroupCo.storyPic)
 
@@ -875,13 +877,14 @@ end
 
 function NecrologistStoryView:onClose()
 	if self.roleStoryId then
-		local storyGameMo = NecrologistStoryModel.instance:getGameMO(self.roleStoryId)
-		local storyId = self._storyGroupMo.id
-		local storyCo = RoleStoryConfig.instance:getStoryById(self.roleStoryId)
-		local unlock = storyCo.cgUnlockStoryId == storyId and storyGameMo:isStoryFinish(storyId)
+		local unlock = RoleStoryModel.instance:isCGUnlock(self.roleStoryId, true)
 
 		if unlock then
-			NecrologistStoryController.instance:openCgUnlockView(self.roleStoryId)
+			local canPlay = RoleStoryModel.instance:canPlayDungeonUnlockAnim(self.roleStoryId)
+
+			if canPlay then
+				NecrologistStoryController.instance:openCgUnlockView(self.roleStoryId)
+			end
 		end
 	end
 

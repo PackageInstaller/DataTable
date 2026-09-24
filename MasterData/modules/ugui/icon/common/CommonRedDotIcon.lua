@@ -64,10 +64,18 @@ function CommonRedDotIcon:defaultRefreshDot()
 			if self.show then
 				self._txtCount.text = RedDotModel.instance:getDotInfoCount(info.id, info.uid)
 
-				local type = RedDotConfig.instance:getRedDotCO(info.id).style
-				local switchReddotCo = MainUISwitchConfig.instance:getUIReddotStyle(curMainUIId, info.id)
+				local reddotCo = RedDotConfig.instance:getRedDotCO(info.id)
+				local type = reddotCo.style
 
-				self:showRedDot((switchReddotCo or nil) and switchReddotCo.style)
+				if reddotCo.isChangeUi == 1 then
+					local switchReddotCo = MainUISwitchConfig.instance:getUIReddotNewStyleCO(curMainUIId)
+
+					if switchReddotCo then
+						type = switchReddotCo.style
+					end
+				end
+
+				self:showRedDot(type)
 
 				return
 			end

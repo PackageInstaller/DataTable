@@ -48,6 +48,16 @@ function TowerComposeHeroGroupEditView:_btnconfirmOnClick()
 					end
 				end
 			end
+
+			for index, heroUid in pairs(newHeroUids) do
+				local editAssistMoList = HeroGroupModel.instance:getAssistMoList(true)
+
+				for _, pickAssistHeroMo in ipairs(editAssistMoList) do
+					if pickAssistHeroMo.heroUid == heroUid then
+						HeroSingleGroupModel.instance:removeFrom(index)
+					end
+				end
+			end
 		end
 
 		self:_saveQuickGroupInfo()
@@ -84,6 +94,44 @@ function TowerComposeHeroGroupEditView:_btnconfirmOnClick()
 	end
 
 	if self._heroMO then
+		local isEditorAssist = false
+
+		for _, editorAssistMo in ipairs(HeroGroupModel.instance:getAssistMoList(true)) do
+			if editorAssistMo.heroUid == self._heroMO.uid then
+				isEditorAssist = true
+
+				break
+			end
+		end
+
+		if isEditorAssist then
+			local isInSupport = TowerComposeHeroGroupModel.instance:checkEquipedSupportHero(self._heroMO.heroId)
+
+			if isInSupport then
+				GameFacade.showToast(ToastEnum.TrialIsJoin)
+
+				return
+			end
+
+			local recordFightParam = TowerComposeModel.instance:getRecordFightParam()
+
+			if recordFightParam.plane == TowerComposeEnum.PlaneType.Twice then
+				local targetPlane = Mathf.Ceil(self._singleGroupMOId / 4)
+				local canSelect, assistPlane = TowerComposeHeroGroupModel.instance:checkCanSelectAssistHero(self._heroMO.uid, self._singleGroupMOId, self._singleGroupMOId)
+
+				if not canSelect then
+					TowerComposeController.instance:showPlaneAssistToast(assistPlane)
+
+					return
+				end
+			end
+
+			self:_saveCurGroupInfo()
+			self:closeThis()
+
+			return
+		end
+
 		if self._adventure then
 			local cd = WeekWalkModel.instance:getCurMapHeroCd(self._heroMO.heroId)
 
@@ -159,6 +207,168 @@ function TowerComposeHeroGroupEditView:_btnconfirmOnClick()
 		self:_saveCurGroupInfo()
 		self:closeThis()
 	end
+end
+
+function TowerComposeHeroGroupEditView:_saveQuickGroupInfo()
+	if not HeroGroupQuickEditListModel.instance:getIsDirty() then
+		return
+	end
+
+	local episodeId = HeroGroupModel.instance.episodeId
+	local newHeroUids = HeroGroupQuickEditListModel.instance:getHeroUids()
+
+	self:replaceQuickGroupHeroDefaultEquip(newHeroUids)
+
+	local fightParam = TowerComposeModel.instance:getRecordFightParam()
+	local isTwice = fightParam.plane == TowerComposeEnum.PlaneType.Twice
+	local editorAssistByPlane = {}
+
+	if isTwice then
+		for planeId = 1, 2 do
+			editorAssistByPlane[planeId] = HeroGroupModel.instance:getEditorAssistMo({
+				planeId = planeId
+			})
+		end
+	else
+		editorAssistByPlane[fightParam.plane] = HeroGroupModel.instance:getEditorAssistMo({
+			planeId = fightParam.plane
+		})
+	end
+
+	local assistMoByHeroUid = {}
+
+	for _, mo in ipairs(HeroGroupModel.instance:getAssistMoList()) do
+		assistMoByHeroUid[mo.heroUid] = mo
+	end
+
+	local assistPosByPlane = {}
+
+	for i = 1, HeroGroupModel.instance:getBattleRoleNum() do
+		local heroUid = newHeroUids[i]
+
+		if heroUid ~= nil then
+			local planeParams = HeroGroupHandler.getAssistParams(episodeId, {
+				singleGroupMOId = i
+			})
+
+			if heroUid ~= "0" then
+				local heroMO = HeroGroupTrialModel.instance:getById(heroUid)
+
+				if heroMO then
+					for planeId, editorAssistMo in pairs(editorAssistByPlane) do
+						if editorAssistMo and heroMO.heroId == editorAssistMo.heroId then
+							HeroSingleGroupModel.instance:remove(heroMO.heroUid)
+
+							break
+						end
+					end
+				end
+			end
+
+			local isEditorAssist = false
+
+			for _, editorAssistMo in pairs(editorAssistByPlane) do
+				if editorAssistMo and heroUid == editorAssistMo.heroUid then
+					isEditorAssist = true
+
+					break
+				end
+			end
+
+			if not isEditorAssist and not assistMoByHeroUid[heroUid] then
+				HeroSingleGroupModel.instance:addTo(heroUid, i)
+
+				local singleGroupMO = HeroSingleGroupModel.instance:getByIndex(i)
+
+				if tonumber(heroUid) < 0 then
+					local heroMO = HeroGroupTrialModel.instance:getById(heroUid)
+
+					if heroMO then
+						singleGroupMO:setTrial(heroMO.trialCo.id, heroMO.trialCo.trialTemplate)
+					else
+						singleGroupMO:setTrial()
+					end
+				else
+					singleGroupMO:setTrial()
+				end
+			end
+		end
+	end
+
+	if isTwice then
+		for planeId = 1, 2 do
+			local editorAssistMo = editorAssistByPlane[planeId]
+			local startIdx, endIdx = planeId == 2 and 5 or 1, planeId == 2 and 8 or 4
+			local assistPos
+
+			if editorAssistMo then
+				for i = startIdx, endIdx do
+					if newHeroUids[i] == editorAssistMo.heroUid then
+						local planeParams = HeroGroupHandler.getAssistParams(episodeId, {
+							singleGroupMOId = i
+						})
+
+						HeroGroupModel.instance:setAssistMo(editorAssistMo, i, planeParams)
+
+						assistPos = i
+
+						break
+					end
+				end
+			end
+
+			self:_saveQuickGroupAssistPos(assistPos, {
+				planeId = planeId
+			})
+
+			if assistPos then
+				assistPosByPlane[planeId] = assistPos
+			end
+		end
+	else
+		local planeId = fightParam.plane
+		local editorAssistMo = editorAssistByPlane[planeId]
+		local assistPos
+
+		if editorAssistMo then
+			for i, heroUid in ipairs(newHeroUids) do
+				if heroUid == editorAssistMo.heroUid then
+					local planeParams = HeroGroupHandler.getAssistParams(episodeId, {
+						singleGroupMOId = i
+					})
+
+					HeroGroupModel.instance:setAssistMo(editorAssistMo, i, planeParams)
+
+					assistPos = i
+
+					break
+				end
+			end
+		end
+
+		self:_saveQuickGroupAssistPos(assistPos)
+
+		if assistPos then
+			assistPosByPlane[planeId] = assistPos
+		end
+	end
+
+	HeroGroupModel.instance:replaceSingleGroup()
+	HeroGroupModel.instance:replaceSingleGroupEquips()
+	HeroGroupController.instance:dispatchEvent(HeroGroupEvent.OnModifyHeroGroup)
+	HeroGroupModel.instance:saveCurGroupData()
+end
+
+function TowerComposeHeroGroupEditView:_saveQuickGroupAssistPos(assistPos, assistParams)
+	if assistPos then
+		HeroSingleGroupModel.instance:removeFrom(assistPos)
+	else
+		HeroGroupModel.instance:clearCurAssist(false, assistParams)
+	end
+end
+
+function TowerComposeHeroGroupEditView:_editableInitView()
+	TowerComposeHeroGroupEditView.super._editableInitView(self)
 end
 
 return TowerComposeHeroGroupEditView

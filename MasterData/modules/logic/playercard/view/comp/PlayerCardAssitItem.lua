@@ -112,6 +112,12 @@ end
 
 function PlayerCardAssitItem:btnClickOnClick()
 	if self.isPlayerSelf and self.compType == PlayerCardEnum.CompType.Normal then
+		AssistRecordRpc.instance:sendAssistRecordGetInfoRequest(self._openShowCharacterView, self)
+	end
+end
+
+function PlayerCardAssitItem:_openShowCharacterView(_, resultCode)
+	if resultCode == 0 then
 		ViewMgr.instance:openView(ViewName.ShowCharacterView, {
 			notRepeatUpdateAssistReward = true
 		})

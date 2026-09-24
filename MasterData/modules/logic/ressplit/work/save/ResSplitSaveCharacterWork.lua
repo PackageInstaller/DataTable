@@ -164,6 +164,8 @@ function ResSplitSaveCharacterWork:_addSkinRes(config, exclude)
 	end
 
 	if exclude == false then
+		local fight_replace_timeline = lua_fight_replace_timeline.configDict
+
 		FightConfig.instance:_checkskinSkill()
 
 		local skinSkillTLDict = FightConfig.instance._skinSkillTLDict[config.id]
@@ -171,6 +173,31 @@ function ResSplitSaveCharacterWork:_addSkinRes(config, exclude)
 		if skinSkillTLDict then
 			for i, timeline in pairs(skinSkillTLDict) do
 				ResSplitModel.instance:addIncludeTimeline(timeline)
+			end
+		end
+
+		local heroCO = HeroConfig.instance:getHeroCO(config.characterId)
+
+		if heroCO then
+			local skillArr = FightHelper.buildSkills(heroCO.id)
+
+			for i, skillId in pairs(skillArr) do
+				ResSplitModel.instance:addIncludeSkill(skillId)
+
+				local skillCO = lua_skill.configDict[skillId]
+
+				if skillCO then
+					local timeline = skillCO.timeline
+					local configs = fight_replace_timeline[timeline]
+
+					if configs then
+						for i, v in pairs(configs) do
+							if string.find(v.condition, tostring(config.id)) then
+								ResSplitModel.instance:addIncludeTimeline(v.timeline)
+							end
+						end
+					end
+				end
 			end
 		end
 	end

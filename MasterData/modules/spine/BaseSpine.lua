@@ -84,6 +84,10 @@ function BaseSpine:_clear()
 	self._effectGo = nil
 	self._renderer = nil
 	self._curBodyName = nil
+
+	MonoHelper.removeLuaComFromGo(self._gameObj, BaseCommonSpecialEffect)
+
+	self.customEffectComp = nil
 end
 
 function BaseSpine:setInMainView()
@@ -92,6 +96,10 @@ end
 
 function BaseSpine:isInMainView()
 	return self._isInMainView
+end
+
+function BaseSpine:getViewName()
+	return nil
 end
 
 function BaseSpine:setBodyChangeCallback(callback, callbackObj)
@@ -170,6 +178,7 @@ function BaseSpine:_onResLoaded()
 
 	self:_initRoleEffect()
 	self:_initFaceEffect()
+	self:initSpecialEffect(self._resPath)
 	self:initSkeletonComponent()
 	self:_changeLookDir()
 
@@ -262,6 +271,14 @@ function BaseSpine:setBodyAnimation(bodyName, loop, mixTime)
 	if self._bodyChangeCallback then
 		self._bodyChangeCallback(self._bodyChangeCallbackObj, oldBodyName, bodyName)
 	end
+
+	if self.customEffectComp then
+		self.customEffectComp:onBodyChange(oldBodyName, bodyName)
+	end
+end
+
+function BaseSpine:getCustomEffectComp()
+	return self.customEffectComp
 end
 
 function BaseSpine:getCurBody()
@@ -314,7 +331,9 @@ end
 function BaseSpine:setMouthAnimation(mouthName, loop, mixTime)
 	self._curMouthName = mouthName
 
-	self:SetAnimation(BaseSpine.MouthTrackIndex, mouthName, loop, mixTime)
+	local value = mixTime == -1 and 0 or mixTime
+
+	self:SetAnimation(BaseSpine.MouthTrackIndex, mouthName, loop, value)
 end
 
 function BaseSpine:setTransition(transitionName, loop, mixTime)
@@ -378,6 +397,18 @@ end
 
 function BaseSpine:getLookDir()
 	return self._lookDir
+end
+
+function BaseSpine:initSpecialEffect(resPath)
+	if not self.customEffectComp then
+		local skinName = string.match(resPath, "([^/]-)%.[^.]*$")
+		local clsName = string.format("SpineSpecialEffect_%s", skinName)
+		local cls = _G[clsName]
+
+		if cls then
+			self.customEffectComp = MonoHelper.addNoUpdateLuaComOnceToGo(self._gameObj, cls, self)
+		end
+	end
 end
 
 function BaseSpine:onDestroy()

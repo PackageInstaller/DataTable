@@ -67,6 +67,11 @@ function StoryLogItem:_editableInitView()
 	self._btnstop:AddClickListener(self._onStopClick, self)
 	StoryController.instance:registerCallback(StoryEvent.LogSelected, self._onItemSelected, self)
 	StoryController.instance:registerCallback(StoryEvent.LogAudioFinished, self._onItemAudioFinished, self)
+
+	self._txtmarktop = IconMgr.instance:getCommonTextMarkTop(self._txtcontent.gameObject):GetComponent(gohelper.Type_TextMesh)
+	self._conMark = gohelper.onceAddComponent(self._txtcontent.gameObject, typeof(ZProj.TMPMark))
+
+	self._conMark:SetMarkTopGo(self._txtmarktop.gameObject)
 end
 
 function StoryLogItem:_editableAddEvents()
@@ -313,6 +318,12 @@ function StoryLogItem:onUpdateMO(mo, mixType)
 
 		self._txtcontent.text = StoryTool.filterSpTag(txt)
 
+		TaskDispatcher.runDelay(function()
+			if self._conMark then
+				self._conMark:SetMarksTop(markTopList)
+			end
+		end, nil, 0.01)
+
 		if co.type ~= StoryEnum.ConversationType.Aside then
 			gohelper.setActive(self._gonorole, false)
 
@@ -417,6 +428,21 @@ end
 function StoryLogItem:_setItemContentColor(colorStr)
 	SLFramework.UGUI.GuiHelper.SetColor(self._txtname, colorStr)
 	SLFramework.UGUI.GuiHelper.SetColor(self._txtcontent, colorStr)
+
+	local graphics = self._conMark.gameObject:GetComponentsInChildren(typeof(UnityEngine.UI.Graphic))
+
+	if graphics then
+		local iter = graphics:GetEnumerator()
+
+		while iter:MoveNext() do
+			local graphic = iter.Current.gameObject:GetComponent(typeof(UnityEngine.UI.Graphic))
+
+			if graphic then
+				SLFramework.UGUI.GuiHelper.SetColor(graphic, colorStr)
+			end
+		end
+	end
+
 	TaskDispatcher.runDelay(function()
 		if not self._txtcontent then
 			return

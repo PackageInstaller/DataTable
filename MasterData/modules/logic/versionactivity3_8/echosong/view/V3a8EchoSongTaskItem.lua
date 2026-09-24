@@ -62,7 +62,7 @@ function V3a8EchoSongTaskItem:_btngetallOnClick()
 end
 
 function V3a8EchoSongTaskItem:_delayFinishAll()
-	TaskRpc.instance:sendFinishAllTaskRequest(TaskEnum.TaskType.Activity220)
+	Activity220Controller.instance:finishAllTask(VersionActivity3_8Enum.ActivityId.EchoSong)
 end
 
 function V3a8EchoSongTaskItem:_onOneClickClaimReward(actId)

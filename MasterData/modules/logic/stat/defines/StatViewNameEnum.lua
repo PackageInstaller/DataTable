@@ -286,7 +286,18 @@ StatViewNameEnum.ChineseViewName = {
 	[ViewName.Turnback4ProgressView] = "回归界面-雨的归处",
 	[ViewName.TurnbackReviewView] = "回归界面-剧集回顾",
 	[ViewName.Turnback4RewardView] = "回归界面-手提箱再提",
-	[ViewName.V3a9_BDuckLinkageFullView] = "Bduck运营活动页"
+	[ViewName.V3a9_BDuckLinkageFullView] = "Bduck运营活动页",
+	[ViewName.VersionActivity4_0EnterView] = "4.0版本活动页",
+	[ViewName.MatchGameEnterView] = "魔精星期五",
+	[ViewName.MatchGameRewardView] = "魔精星期五-奖励页",
+	[ViewName.MatchGameChallengeRewardView] = "魔精星期五-挑战奖励页",
+	[ViewName.MatchGameHeroGroupView] = "魔精星期五-编队页",
+	[ViewName.NewPlayerCardContentView] = "旅券集",
+	[ViewName.SpLilyaLevelView] = "狩勋女巫红弩箭角色活动",
+	[ViewName.DeleikeLevelView] = "德雷克角色活动",
+	[ViewName.V4A0_RoleStoryGameView] = "轶事玩法",
+	[ViewName.MainSwitchView] = "主界面更换页",
+	[ViewName.CharacterNormalSkinView] = "角色常服页"
 }
 StatViewNameEnum.NeedTrackViewDict = {
 	[ViewName.VersionActivity1_8EnterView] = true,
@@ -544,7 +555,17 @@ StatViewNameEnum.NeedTrackViewDict = {
 	[ViewName.Turnback4ProgressView] = true,
 	[ViewName.TurnbackReviewView] = true,
 	[ViewName.Turnback4RewardView] = true,
-	[ViewName.V3a9_BDuckLinkageFullView] = true
+	[ViewName.V3a9_BDuckLinkageFullView] = true,
+	[ViewName.VersionActivity4_0EnterView] = true,
+	[ViewName.MatchGameEnterView] = true,
+	[ViewName.MatchGameRewardView] = true,
+	[ViewName.MatchGameChallengeRewardView] = true,
+	[ViewName.MatchGameHeroGroupView] = true,
+	[ViewName.NewPlayerCardContentView] = true,
+	[ViewName.SpLilyaLevelView] = true,
+	[ViewName.DeleikeLevelView] = true,
+	[ViewName.V4A0_RoleStoryGameView] = true,
+	[ViewName.MainSwitchView] = true
 }
 StatViewNameEnum.NeedViewOpenTimeDict = {
 	[ViewName.SceneUIPackagePanelView] = true,
@@ -573,7 +594,8 @@ StatViewNameEnum.NeedListenTabSwitchList = {
 	ViewName.VersionActivity3_6EnterView,
 	ViewName.VersionActivity3_7EnterView,
 	ViewName.VersionActivity3_8EnterView,
-	ViewName.VersionActivity3_9EnterView
+	ViewName.VersionActivity3_9EnterView,
+	ViewName.VersionActivity4_0EnterView
 }
 StatViewNameEnum.TabViewContainerID = {
 	[ViewName.VersionActivity1_8EnterView] = 2,
@@ -597,7 +619,8 @@ StatViewNameEnum.TabViewContainerID = {
 	[ViewName.VersionActivity3_6EnterView] = 2,
 	[ViewName.VersionActivity3_7EnterView] = 2,
 	[ViewName.VersionActivity3_8EnterView] = 2,
-	[ViewName.VersionActivity3_9EnterView] = 2
+	[ViewName.VersionActivity3_9EnterView] = 2,
+	[ViewName.VersionActivity4_0EnterView] = 2
 }
 StatViewNameEnum.TabViewName = {
 	VersionActivity2_6DungeonEnterView = "疯癫与文明",
@@ -663,7 +686,11 @@ StatViewNameEnum.TabViewName = {
 	RougeActivityView = "肉鸽",
 	VersionActivity3_6DungeonEnterView = "人们向何处去",
 	V2a3_Season123EnterView = "赛季",
+	VersionActivity4_0DungeonEnterView = "应门者",
 	V2a6_XugoujiEnterView = "虚构集",
+	MatchGameVersionActivityEnterView = "魔精星期五",
+	VersionActivity4_0SpLilyaEnterView = "狩勋女巫红弩箭",
+	VersionActivity4_0DeleikeEnterView = "德雷克",
 	V2a3_ReactivityEnterview = "2.3活动复刻",
 	VersionActivity3_5LamonaEnterView = "拉莫纳",
 	VersionActivity3_4PartyGameEnterView = "联机玩法",

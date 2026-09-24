@@ -256,7 +256,7 @@ end
 
 function ActCenterItemBase:_checkRedotShowType(reddotId)
 	local curMainUIId = MainUISwitchModel.instance:getCurUseUI()
-	local switchReddotCo = MainUISwitchConfig.instance:getUIReddotStyle(curMainUIId, reddotId)
+	local switchReddotCo = MainUISwitchConfig.instance:getUIReddotNewStyleCO(curMainUIId)
 
 	if switchReddotCo then
 		local type = switchReddotCo.style

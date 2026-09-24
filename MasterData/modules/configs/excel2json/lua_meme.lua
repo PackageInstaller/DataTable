@@ -11,7 +11,9 @@ local fields = {
 local primaryKey = {
 	"id"
 }
-local mlStringKey = {}
+local mlStringKey = {
+	name = 1
+}
 
 function lua_meme.onLoad(json)
 	lua_meme.configList, lua_meme.configDict = JsonToLuaParser.parse(json, fields, primaryKey, mlStringKey)

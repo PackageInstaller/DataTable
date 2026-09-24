@@ -4,12 +4,12 @@ module("modules.versionactivitybase.mainfixed.VersionActivityMainFixedHelper", p
 
 local VersionActivityMainFixedHelper = class("VersionActivityMainFixedHelper")
 local _version = {
-	big = 3,
-	small = 8
+	big = 4,
+	small = 0
 }
 
 function VersionActivityMainFixedHelper.getActivityChapter()
-	return DungeonEnum.ChapterId.Main1_13
+	return DungeonEnum.ChapterId.Main1_14
 end
 
 function VersionActivityMainFixedHelper.getDungeonEnterReddot()

@@ -17,6 +17,7 @@ function ResSplitSaveHelper.createExcludeConfig()
 	local videoDic = {}
 	local pathDic = {}
 	local seasonDic = {}
+	local skinIdDic = {}
 
 	for i, v in pairs(dic) do
 		for n, m in pairs(v.character) do
@@ -46,12 +47,16 @@ function ResSplitSaveHelper.createExcludeConfig()
 		for n, m in pairs(v.seasonIds) do
 			seasonDic[m] = true
 		end
+
+		for n, m in pairs(v.heroSkinIds) do
+			skinIdDic[m] = true
+		end
 	end
 
 	local allAudioDic = AudioConfig.instance:getAudioCO()
 
 	ResSplitHelper._buildMapData()
-	ResSplitModel.instance:init(characterIdDic, chapterIdDic, allAudioDic, storyIdDic, guideIdDic, videoDic, pathDic, seasonDic)
+	ResSplitModel.instance:init(characterIdDic, chapterIdDic, allAudioDic, storyIdDic, guideIdDic, videoDic, pathDic, seasonDic, skinIdDic)
 
 	local flow = FlowSequence.New()
 

@@ -65,5 +65,10 @@ AudioEnum3_2.WarmUp = {
 	play_ui_shengyan_unsheathe_dagger = 320030,
 	play_ui_shengyan_pull_drawer = 320029
 }
+AudioEnum3_2.PermanentBgm = {
+	BeiLiEr = 3320003,
+	EnterView = 3320001,
+	HuiDiaoLan = 3320002
+}
 
 return AudioEnum3_2

@@ -145,10 +145,62 @@ function TowerComposeResultHeroGroupListView:setHeroItemPos(heroItem, index, twe
 end
 
 function TowerComposeResultHeroGroupListView:_updateHeroList()
-	for index, heroItem in ipairs(self._heroItemList) do
-		local mo = HeroSingleGroupModel.instance:getById(index)
+	if self.fightParam.plane == TowerComposeEnum.PlaneType.Twice then
+		local bossSettleMo = TowerComposeModel.instance:getBossSettleInfo()
+		local recordData = bossSettleMo:getRecordData()
 
-		heroItem:onUpdateMO(mo)
+		if recordData then
+			local bossMo = recordData.bossMo
+			local planeMap = bossMo:getPlaneInfoMap()
+
+			for index, heroItem in ipairs(self._heroItemList) do
+				local planeId = Mathf.Ceil(index / 4)
+				local planeMo = planeMap[planeId]
+				local teamInfoData = planeMo:getTeamInfoData()
+				local heroIndex = (index - 1) % 4 + 1
+				local heroData = teamInfoData.heros[heroIndex]
+				local mo = HeroSingleGroupModel.instance:getById(index)
+
+				if mo.heroUid == "0" and heroData and heroData.assistMo then
+					mo = HeroSingleGroupMO.New()
+
+					mo:init(index, heroData.assistMo.heroUid)
+					mo:setAssist(heroData.assistMo)
+				end
+
+				heroItem:onUpdateMO(mo)
+			end
+		else
+			for index, heroItem in ipairs(self._heroItemList) do
+				local planeId = Mathf.Ceil(index / 4)
+				local mo = HeroSingleGroupModel.instance:getById(index)
+				local assistMo = TowerComposeModel.instance:getAssistMo({
+					planeId = planeId
+				})
+
+				if mo.heroUid == "0" and assistMo and assistMo.id == index and assistMo.assistMo then
+					heroItem:onUpdateMO(assistMo)
+				else
+					heroItem:onUpdateMO(mo)
+				end
+			end
+		end
+	else
+		local fightParam = FightModel.instance:getFightParam()
+		local heroEquipList = fightParam:getHeroEquipAndTrialMoList(false)
+
+		for index, heroItem in ipairs(self._heroItemList) do
+			local mo = HeroSingleGroupModel.instance:getById(index)
+
+			heroItem:onUpdateMO(mo)
+
+			local heroData = heroEquipList[index]
+			local heroMo = heroData and heroData.heroMo
+
+			if mo.heroUid == "0" and heroMo and heroMo.skin then
+				heroItem:showAssistHero(heroMo)
+			end
+		end
 	end
 end
 
@@ -200,7 +252,7 @@ function TowerComposeResultHeroGroupListView:onClose()
 end
 
 function TowerComposeResultHeroGroupListView:onDestroyView()
-	return
+	TowerComposeModel.instance:clearAllAssist()
 end
 
 return TowerComposeResultHeroGroupListView

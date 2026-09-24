@@ -135,6 +135,8 @@ function CharacterDestinyStoneUpView:_editableInitView()
 	self._goreshapeselect = gohelper.findChild(self._btnreshape.gameObject, "selected")
 	self._goreshapeunselect = gohelper.findChild(self._btnreshape.gameObject, "unselect")
 	self._reshapeAnim = self._goreshape:GetComponent(typeof(UnityEngine.Animator))
+	self._simagestoneName1 = gohelper.findChildSingleImage(self.viewGO, "root/#simage_reshapeTitle/#glow")
+	self._imagestoneName1 = gohelper.findChildImage(self.viewGO, "root/#simage_reshapeTitle/#glow")
 
 	self:_initReshapeItem()
 end
@@ -286,6 +288,9 @@ function CharacterDestinyStoneUpView:_refreshStoneItem()
 
 		self._simagestoneName:LoadImage(ResUrl.getTxtDestinyIcon(resName), function()
 			self._imagestoneName:SetNativeSize()
+		end)
+		self._simagestoneName1:LoadImage(ResUrl.getTxtDestinyIcon(resName), function()
+			self._imagestoneName1:SetNativeSize()
 		end)
 	end
 

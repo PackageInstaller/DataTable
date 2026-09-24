@@ -19,16 +19,10 @@ function StoryBgEffsTextureShake:init(bgCo)
 	self._effLoaded = false
 end
 
-function StoryBgEffsTextureShake:start(callback, callbackObj)
-	StoryBgEffsTextureShake.super.start(self)
-
-	self._finishedCallback = callback
-	self._finishedCallbackObj = callbackObj
-
+function StoryBgEffsTextureShake:onStartEffect()
 	StoryViewMgr.instance:setStoryViewLayer(UnityLayer.UITop)
 	ViewMgr.instance:registerCallback(ViewEvent.OnOpenView, self._onOpenView, self)
 	ViewMgr.instance:registerCallback(ViewEvent.OnCloseView, self._onCloseView, self)
-	self:loadRes()
 end
 
 function StoryBgEffsTextureShake:_onOpenView(viewName)
@@ -383,9 +377,6 @@ function StoryBgEffsTextureShake:destroy()
 	end
 
 	StoryViewMgr.instance:setStoryViewLayer(UnityLayer.UISecond)
-
-	self._finishedCallback = nil
-	self._finishedCallbackObj = nil
 end
 
 return StoryBgEffsTextureShake

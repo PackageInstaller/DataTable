@@ -73,6 +73,7 @@ function AbyssEnterView:onOpen()
 	AbyssController.instance:getActivityInfo(self.actId)
 	AbyssController.instance:getTaskInfo()
 	self._animator:Play("open", 0, 0)
+	HeroGroupModel.instance:clearCurAssist(true)
 end
 
 function AbyssEnterView:checkParam()

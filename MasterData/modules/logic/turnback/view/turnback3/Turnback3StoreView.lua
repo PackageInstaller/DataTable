@@ -164,7 +164,8 @@ function Turnback3StoreView:_initMiniMonthCard()
 	end
 
 	local miniMonthCardCo = StoreConfig.instance:getMonthCardAddConfig(self._turnbackconfig.monthCardAddedId)
-	local monthCardCo = StoreConfig.instance:getMonthCardConfig(StoreEnum.MonthCardGoodsId)
+	local monthCardId = StoreConfig.instance:getMonthCardStoreChargeId()
+	local monthCardCo = StoreConfig.instance:getMonthCardConfig(monthCardId)
 	local miniReward = GameUtil.splitString2(miniMonthCardCo and miniMonthCardCo.onceBonus)
 	local rewardList = GameUtil.splitString2(monthCardCo and monthCardCo.dailyBonus)
 

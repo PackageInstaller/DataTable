@@ -17,6 +17,7 @@ function BpSPView:onInitView()
 	self._gomax = gohelper.findChild(self.viewGO, "right/#go_max")
 	self._btnInfo = gohelper.findChildButtonWithAudio(self.viewGO, "#btn_info", AudioEnum.UI.UI_role_introduce_open)
 	self._btnRule = gohelper.findChildButtonWithAudio(self.viewGO, "#btn_rule")
+	self._txt_dec2 = gohelper.findChildText(self.viewGO, "left/txt_dec2")
 end
 
 function BpSPView:addEvents()
@@ -105,11 +106,11 @@ function BpSPView:_updateLevelScore(init)
 		self._addScoreTween = ZProj.TweenHelper.DOTweenFloat(fromValue, toValue, BpEnum.AddScoreTime, self.setSliderValue, nil, self, nil, EaseType.OutQuart)
 	end
 
-	local curLevel = math.floor(BpModel.instance.score / levelScore)
 	local maxLevel = #BpConfig.instance:getBonusCOList(BpModel.instance.id)
-	local ismax = maxLevel <= curLevel
+	local isMax = maxLevel <= level
 
-	gohelper.setActive(self._gomax, ismax)
+	gohelper.setActive(self._gomax, isMax)
+	gohelper.setActive(self._txt_dec2.gameObject, not isMax)
 end
 
 function BpSPView:_onClickSelectBonus()

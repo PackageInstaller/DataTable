@@ -141,7 +141,7 @@ function V3a9_BossRush_HeroGroupEditListModel:getSelectPos()
 	return self.pos
 end
 
-function V3a9_BossRush_HeroGroupEditListModel:getReplaceHeroList(uid)
+function V3a9_BossRush_HeroGroupEditListModel:getReplaceHeroList(index, uid)
 	local list = {}
 
 	index = index or self.pos

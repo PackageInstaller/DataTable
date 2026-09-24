@@ -204,6 +204,15 @@ function LoginGetInfoWork:_initInfo()
 		})
 	end
 
+	if OpenModel.instance:isFunctionUnlock(OpenEnum.UnlockFunc.College) then
+		table.insert(self.GetInfoFuncList, {
+			CollegeRpc.sendCollegeSceneInfo,
+			CollegeRpc.instance,
+			"sendCollegeSceneInfoRequest",
+			false
+		})
+	end
+
 	if RougeOutsideController.instance:isOpen() then
 		local season = RougeOutsideModel.instance:season()
 

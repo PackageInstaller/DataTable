@@ -6,6 +6,13 @@ local TowerDeepHeroGroupFightView = class("TowerDeepHeroGroupFightView", TowerHe
 
 function TowerDeepHeroGroupFightView:_editableInitView()
 	TowerDeepHeroGroupFightView.super._editableInitView(self)
+	TowerPermanentDeepModel.instance:clearAssist(true)
+end
+
+function TowerDeepHeroGroupFightView:onOpenFinish()
+	TowerDeepHeroGroupFightView.super.onOpenFinish(self)
+	self:_dispatchGuideEventOnOpenFinish()
+	AssistRecordRpc.instance:sendAssistRecordGetDungeonRecordRequest()
 end
 
 function TowerDeepHeroGroupFightView:_enterFight()
@@ -28,6 +35,11 @@ function TowerDeepHeroGroupFightView:_enterFight()
 	else
 		logError("没选中关卡，无法开始战斗")
 	end
+end
+
+function TowerDeepHeroGroupFightView:onClose()
+	TowerDeepHeroGroupFightView.super.onClose(self)
+	AssistController.instance:dispatchEvent(AssistEvent.CloseAddFriendView)
 end
 
 return TowerDeepHeroGroupFightView

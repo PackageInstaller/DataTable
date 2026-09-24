@@ -106,6 +106,14 @@ function FightTeamData:onConstructor(proto)
 	if proto:HasField("deviceArea") then
 		self.deviceArea = FightDeviceAreaInfoData.New(proto.deviceArea)
 	end
+
+	if proto:HasField("qteInfo") then
+		self.qteInfo = FightQTEInfoData.New(proto.qteInfo)
+	end
+
+	if proto:HasField("clueArea") then
+		self.clueArea = FightClueAreaInfoData.New(proto.clueArea)
+	end
 end
 
 return FightTeamData

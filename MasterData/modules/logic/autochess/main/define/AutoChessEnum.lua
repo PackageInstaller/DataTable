@@ -15,9 +15,6 @@ AutoChessEnum.EpisodeType = {
 	PVP2 = 2,
 	PVE = 0
 }
-AutoChessEnum.SpecialMaster = {
-	Role37 = 30020
-}
 AutoChessEnum.MallType = {
 	Free = 2,
 	Normal = 1
@@ -34,35 +31,47 @@ AutoChessEnum.ActionType = {
 	FightData = 10,
 	NewStart = 5
 }
+AutoChessEnum.ActionTypeToName = {}
+
+for k, v in pairs(AutoChessEnum.ActionType) do
+	AutoChessEnum.ActionTypeToName[v] = k
+end
+
 AutoChessEnum.EffectType = {
-	UdimoSkill = 24,
+	Remove = 7,
 	NextFightStep = 1,
-	FightUpdate = 20,
+	Cd = 26,
 	RepleaceSkill = 28,
 	DelBuff = 10,
 	BattleChange = 16,
-	LeaderChange = 23,
-	ExpChange = 13,
-	ChessMove = 6,
-	LeaderHpFloat = 3,
 	BossDrop = 25,
-	ChessCd = 26,
+	FightUpdate = 20,
+	ExpChange = 13,
+	LeaderHpFloat = 3,
+	LeaderChange = 23,
+	UpdateExtInfo = 29,
 	LeaderHp = 2,
 	UpdateBuff = 9,
 	Summon = 15,
 	CoinChange = 11,
 	StarChange = 14,
-	ChessCombine = 27,
-	LeaderSkillUpdate = 22,
+	Combine = 27,
 	UpdateChessPos = 19,
 	Explore = 12,
 	AddBuff = 8,
 	MallUpdate = 17,
-	ChessDie = 7,
-	ChessHp = 4,
+	HpFloat = 5,
+	Hp = 4,
+	LeaderSkillUpdate = 22,
 	PlayAttack = 18,
-	ChessHpFloat = 5
+	Move = 6
 }
+AutoChessEnum.EffectTypeToName = {}
+
+for k, v in pairs(AutoChessEnum.EffectType) do
+	AutoChessEnum.EffectTypeToName[v] = k
+end
+
 AutoChessEnum.BuildType = {
 	Exchange = 1,
 	Sell = 2
@@ -123,9 +132,9 @@ AutoChessEnum.TileSize = {
 }
 AutoChessEnum.TileStartPos = {
 	[AutoChessEnum.ViewType.Player] = {
-		Vector2(-377, 256),
-		Vector2(-405, 76),
-		(Vector2(-432, -102))
+		Vector2(-215, 245),
+		Vector2(-241, 76),
+		(Vector2(-261, -102))
 	},
 	[AutoChessEnum.ViewType.Enemy] = {
 		Vector2(-436, 259),
@@ -175,12 +184,6 @@ AutoChessEnum.DamageType = {
 	Melee = 1,
 	Skill = 4
 }
-AutoChessEnum.ContextType = {
-	StartBuy = 2,
-	EndBuy = 3,
-	Fight = 4,
-	Immediately = 1
-}
 AutoChessEnum.Tag2EffectId = {
 	Die = 10002,
 	Ranged = 20002,
@@ -224,6 +227,9 @@ AutoChessEnum.EffectPlayTarget = {
 	TagOwner = 0,
 	To = 2,
 	From = 1
+}
+AutoChessEnum.MutationId = {
+	Fire = 40009
 }
 
 return AutoChessEnum

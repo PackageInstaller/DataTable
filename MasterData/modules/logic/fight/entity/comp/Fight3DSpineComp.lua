@@ -130,12 +130,12 @@ function Fight3DSpineComp:_initSpine(spineGO)
 		end
 
 		FightController.instance:dispatchEvent(FightEvent.AfterInitSpine, self)
-		self:com_registMsg(FightMsgId.BeforePlayTimeline, self.beforePlayTimeline)
+		self:com_registMsg(FightMsgId.OnTimelineWorkCreated, self.onTimelineWorkCreated)
 		self:com_registMsg(FightMsgId.OnTimelineWorkDestroyed, self.onTimelineWorkDestroyed)
 	end
 end
 
-function Fight3DSpineComp:beforePlayTimeline(entityId, skillId, fightStepData, timelineName)
+function Fight3DSpineComp:onTimelineWorkCreated(entityId, skillId, fightStepData, timelineName)
 	if not FightCardDataHelper.isBigSkill(skillId) then
 		if entityId == self.entity.id then
 			return

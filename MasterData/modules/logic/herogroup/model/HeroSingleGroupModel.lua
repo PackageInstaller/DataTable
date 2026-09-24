@@ -135,15 +135,20 @@ function HeroSingleGroupModel:swap(id1, id2)
 			return
 		end
 
-		local _, assistMo = HeroGroupModel.instance:getAssistMo()
-		local assistHeroUid = assistMo and assistMo.heroUid
+		local assistMoList = HeroGroupModel.instance:getAssistMoList()
+		local assistHeroUidMap = {}
+
+		for _, assistMo in ipairs(assistMoList) do
+			assistHeroUidMap[assistMo.heroUid] = true
+		end
+
 		local temp = mo1.heroUid
 
-		if not assistHeroUid or assistHeroUid ~= mo2.heroUid then
+		if not assistHeroUidMap[mo2.heroUid] then
 			mo1:setHeroUid(mo2.heroUid)
 		end
 
-		if not assistHeroUid or assistHeroUid ~= temp then
+		if not assistHeroUidMap[temp] then
 			mo2:setHeroUid(temp)
 		end
 
@@ -159,7 +164,7 @@ function HeroSingleGroupModel:swap(id1, id2)
 		mo1:setTrial(mo2.trial, mo2.trialTemplate, mo2.trialPos, true)
 		mo2:setTrial(tempTrialId, tempTrialTemplate, tempTrialPos, true)
 
-		if assistMo then
+		for _, assistMo in ipairs(assistMoList) do
 			if assistMo.id == id1 then
 				assistMo:swapAssist(assistMo.assistMo, id2)
 			elseif assistMo.id == id2 then

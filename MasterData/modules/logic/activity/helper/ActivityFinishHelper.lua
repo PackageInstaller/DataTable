@@ -18,6 +18,22 @@ function ActivityFinishHelper.CheckActivity13746Finish(actId)
 	return false
 end
 
+function ActivityFinishHelper.CheckActivity14038Finish(actId)
+	if ActivityType101Model.instance:isType101RewardGet(actId, 1) then
+		local config = ActivityConfig.instance:getActivityCo(actId)
+		local packageId = tonumber(config.patFaceParam)
+		local storeGoodsMo = StoreModel.instance:getGoodsMO(packageId)
+
+		if not storeGoodsMo or not storeGoodsMo:isSoldOut() then
+			return false
+		end
+
+		return true
+	end
+
+	return false
+end
+
 function ActivityFinishHelper.CheckActivity138517Finish(actId)
 	local activityConfig = ActivityConfig.instance:getActivityCo(actId)
 

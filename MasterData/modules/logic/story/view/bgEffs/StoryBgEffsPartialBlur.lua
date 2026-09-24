@@ -18,13 +18,9 @@ function StoryBgEffsPartialBlur:init(bgCo)
 	self._effLoaded = false
 end
 
-function StoryBgEffsPartialBlur:start(callback, callbackObj)
-	StoryBgEffsPartialBlur.super.start(self)
-
+function StoryBgEffsPartialBlur:onStartEffect()
 	self._captureGo = PostProcessingMgr.instance:getCaptureView()
 	self._capture = self._captureGo:GetComponent(typeof(UrpCustom.UIGaussianEffect))
-
-	self:loadRes()
 end
 
 function StoryBgEffsPartialBlur:onLoadFinished()

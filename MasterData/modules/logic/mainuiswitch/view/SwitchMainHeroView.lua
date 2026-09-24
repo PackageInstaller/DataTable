@@ -145,12 +145,12 @@ function SwitchMainHeroView:_setOffset(isFull)
 
 	local offsetParam = SkinConfig.instance:getSkinOffset(self._heroSkinConfig.mainViewOffset)
 	local transform = self._golightspine.transform
+	local scale = tonumber(offsetParam[3])
 	local x = tonumber(offsetParam[1])
 	local y = tonumber(offsetParam[2])
-	local scale = tonumber(offsetParam[3])
 
 	transformhelper.setLocalScale(transform, scale, scale, scale)
-	recthelper.setAnchor(transform, isFull and x or x - 1, isFull and y or y + 2.5)
+	recthelper.setAnchor(transform, x - 1 * scale, y + 1.5 * scale)
 end
 
 function SwitchMainHeroView:_onSwitchUIVisible(visible)

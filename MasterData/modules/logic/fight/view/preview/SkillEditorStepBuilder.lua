@@ -1088,20 +1088,6 @@ end
 
 function SkillEditorStepBuilder._buildSummonedDelete(summonedInfo, actEffect, attackerId, targetId, side)
 	local summonedCO = FightConfig.instance:getSummonedConfig(summonedInfo.summonedId, summonedInfo.level)
-
-	if summonedCO and summonedInfo.level >= summonedCO.maxLevel then
-		local actEffectData = FightActEffectData.New()
-
-		actEffectData.targetId = targetId
-		actEffectData.effectType = FightEnum.EffectType.SUMMONEDDELETE
-		actEffectData.effectNum = 0
-		actEffectData.configEffect = 0
-		actEffectData.buffActId = 0
-		actEffectData.reserveId = summonedInfo.uid
-		actEffectData.reserveStr = ""
-
-		table.insert(actEffect, actEffectData)
-	end
 end
 
 function SkillEditorStepBuilder._getTargetIds(logicTarget, attackerId, targetId, side, oppositeSide, randomTargetId)

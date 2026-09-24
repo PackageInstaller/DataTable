@@ -20,7 +20,8 @@ end
 
 RedDotCustomFunc.CustomRedHandleFunc = {
 	[RedDotEnum.DotNode.NecrologistStory] = RedDotCustomFunc.isShowNecrologistStory,
-	[RedDotEnum.DotNode.CommandStationRelationShipBoard] = CommandStationController.getCommandStationRelationShipBoardReddot
+	[RedDotEnum.DotNode.CommandStationRelationShipBoard] = CommandStationController.getCommandStationRelationShipBoardReddot,
+	[RedDotEnum.DotNode.CollegeRelation] = CollegeController.getRelationShipBoardReddot
 }
 
 return RedDotCustomFunc

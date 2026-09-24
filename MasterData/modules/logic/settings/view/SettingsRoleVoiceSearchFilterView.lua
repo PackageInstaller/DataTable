@@ -52,8 +52,11 @@ function SettingsRoleVoiceSearchFilterView:removeEvents()
 end
 
 function SettingsRoleVoiceSearchFilterView:_btnresetOnClick()
-	for i = 1, 6 do
+	for i = 1, HandbookEnum.PageCareerNum do
 		self._selectAttrs[i] = false
+	end
+
+	for i = 1, HandbookEnum.PageCharacterNum do
 		self._selectCharTypes[i] = false
 	end
 
@@ -63,37 +66,23 @@ end
 function SettingsRoleVoiceSearchFilterView:_btnconfirmOnClick()
 	local careers = {}
 
-	for i = 1, 6 do
+	for i = 1, HandbookEnum.PageCareerNum do
 		if self._selectAttrs[i] then
 			table.insert(careers, i)
 		end
 	end
 
-	careers = #careers == 0 and {
-		1,
-		2,
-		3,
-		4,
-		5,
-		6
-	} or careers
+	careers = #careers == 0 and HandbookEnum.CharacterCareerList or careers
 
 	local charTypes = {}
 
-	for i = 1, 6 do
+	for i = 1, HandbookEnum.PageCharacterNum do
 		if self._selectCharTypes[i] then
 			charTypes[#charTypes + 1] = i
 		end
 	end
 
-	charTypes = #charTypes == 0 and {
-		1,
-		2,
-		3,
-		4,
-		5,
-		6
-	} or charTypes
+	charTypes = #charTypes == 0 and HandbookEnum.CharacterTypeList or charTypes
 
 	local filterParam = {}
 
@@ -138,37 +127,23 @@ function SettingsRoleVoiceSearchFilterView:_onDropFilterValueChanged(index)
 
 	local careers = {}
 
-	for i = 1, 6 do
+	for i = 1, HandbookEnum.PageCareerNum do
 		if self._selectAttrs[i] then
 			table.insert(careers, i)
 		end
 	end
 
-	careers = #careers == 0 and {
-		1,
-		2,
-		3,
-		4,
-		5,
-		6
-	} or careers
+	careers = #careers == 0 and HandbookEnum.CharacterCareerList or careers
 
 	local charTypes = {}
 
-	for i = 1, 6 do
+	for i = 1, HandbookEnum.PageCharacterNum do
 		if self._selectCharTypes[i] then
 			charTypes[#charTypes + 1] = i
 		end
 	end
 
-	charTypes = #charTypes == 0 and {
-		1,
-		2,
-		3,
-		4,
-		5,
-		6
-	} or charTypes
+	charTypes = #charTypes == 0 and HandbookEnum.CharacterTypeList or charTypes
 
 	local filterParam = {}
 
@@ -215,7 +190,7 @@ function SettingsRoleVoiceSearchFilterView:_editableInitView()
 	self._attrUnselects = self:getUserDataTb_()
 	self._attrBtnClicks = self:getUserDataTb_()
 
-	for i = 1, 6 do
+	for i = 1, HandbookEnum.PageCareerNum do
 		self._attrUnselects[i] = gohelper.findChild(self.viewGO, "#go_searchfilter/container/Scroll View/Viewport/Content/attrContainer/#go_attr" .. i .. "/unselected")
 		self._attrSelects[i] = gohelper.findChild(self.viewGO, "#go_searchfilter/container/Scroll View/Viewport/Content/attrContainer/#go_attr" .. i .. "/selected")
 		self._attrBtnClicks[i] = gohelper.findChildButtonWithAudio(self.viewGO, "#go_searchfilter/container/Scroll View/Viewport/Content/attrContainer/#go_attr" .. i .. "/click")
@@ -227,7 +202,7 @@ function SettingsRoleVoiceSearchFilterView:_editableInitView()
 	self._charTypeUnselects = self:getUserDataTb_()
 	self._charTypeBtnClicks = self:getUserDataTb_()
 
-	for i = 1, 6 do
+	for i = 1, HandbookEnum.PageCharacterNum do
 		self._charTypeUnselects[i] = gohelper.findChild(self.viewGO, "#go_searchfilter/container/Scroll View/Viewport/Content/locationContainer/#go_location" .. i .. "/unselected")
 		self._charTypeSelects[i] = gohelper.findChild(self.viewGO, "#go_searchfilter/container/Scroll View/Viewport/Content/locationContainer/#go_location" .. i .. "/selected")
 		self._charTypeBtnClicks[i] = gohelper.findChildButtonWithAudio(self.viewGO, "#go_searchfilter/container/Scroll View/Viewport/Content/locationContainer/#go_location" .. i .. "/click")
@@ -256,8 +231,11 @@ function SettingsRoleVoiceSearchFilterView:onOpen()
 	self._selectAttrs = {}
 	self._selectCharTypes = {}
 
-	for i = 1, 6 do
+	for i = 1, HandbookEnum.PageCareerNum do
 		self._selectAttrs[i] = false
+	end
+
+	for i = 1, HandbookEnum.PageCharacterNum do
 		self._selectCharTypes[i] = false
 	end
 
@@ -280,6 +258,9 @@ end
 function SettingsRoleVoiceSearchFilterView:onDestroyView()
 	for i = 1, #self._attrBtnClicks do
 		self._attrBtnClicks[i]:RemoveClickListener()
+	end
+
+	for i = 1, #self._charTypeBtnClicks do
 		self._charTypeBtnClicks[i]:RemoveClickListener()
 	end
 end
@@ -292,12 +273,12 @@ function SettingsRoleVoiceSearchFilterView:_refreshView(selectAttrs, selectCharT
 	selectAttrs = selectAttrs or self._selectAttrs
 	selectCharTypes = selectCharTypes or self._selectCharTypes
 
-	for i = 1, 6 do
+	for i = 1, HandbookEnum.PageCareerNum do
 		gohelper.setActive(self._attrUnselects[i], not selectAttrs[i])
 		gohelper.setActive(self._attrSelects[i], selectAttrs[i])
 	end
 
-	for i = 1, 6 do
+	for i = 1, HandbookEnum.PageCharacterNum do
 		gohelper.setActive(self._charTypeUnselects[i], not selectCharTypes[i])
 		gohelper.setActive(self._charTypeSelects[i], selectCharTypes[i])
 	end
@@ -328,7 +309,7 @@ end
 function SettingsRoleVoiceSearchFilterView:_updateHeroList()
 	local careers = {}
 
-	for i = 1, 6 do
+	for i = 1, HandbookEnum.PageCareerNum do
 		if self._selectAttrs[i] then
 			careers[#careers + 1] = i
 		end
@@ -336,32 +317,18 @@ function SettingsRoleVoiceSearchFilterView:_updateHeroList()
 
 	local charTypes = {}
 
-	for i = 1, 6 do
+	for i = 1, HandbookEnum.PageCharacterNum do
 		if self._selectCharTypes[i] then
 			charTypes[#charTypes + 1] = i
 		end
 	end
 
 	if #careers == 0 then
-		careers = {
-			1,
-			2,
-			3,
-			4,
-			5,
-			6
-		}
+		careers = HandbookEnum.CharacterCareerList
 	end
 
 	if #charTypes == 0 then
-		charTypes = {
-			1,
-			2,
-			3,
-			4,
-			5,
-			6
-		}
+		charTypes = HandbookEnum.CharacterTypeList
 	end
 
 	local filterParam = {}
@@ -398,7 +365,7 @@ end
 function SettingsRoleVoiceSearchFilterView:_checkHasFilter()
 	local careers = {}
 
-	for i = 1, 6 do
+	for i = 1, HandbookEnum.PageCareerNum do
 		if self._selectAttrs[i] then
 			careers[#careers + 1] = i
 		end
@@ -406,7 +373,7 @@ function SettingsRoleVoiceSearchFilterView:_checkHasFilter()
 
 	local charTypes = {}
 
-	for i = 1, 6 do
+	for i = 1, HandbookEnum.PageCharacterNum do
 		if self._selectCharTypes[i] then
 			charTypes[#charTypes + 1] = i
 		end

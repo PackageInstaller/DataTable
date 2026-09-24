@@ -15,6 +15,14 @@ function FightLoaderList:onConstructor(urlList, oneCallback, finishCallback, han
 end
 
 function FightLoaderList:startLoad()
+	if not self.urlList or #self.urlList == 0 then
+		if self.finishCallback then
+			self.finishCallback(self.handle, self)
+		end
+
+		return
+	end
+
 	for i, url in ipairs(self.urlList) do
 		local item = self.newClass(self, FightLoaderItem, url, self.onOneLoadCallback, self, self.paramList[i])
 

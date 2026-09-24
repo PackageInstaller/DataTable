@@ -11,14 +11,17 @@ function AutoChessGameMO:init(info)
 	self.currRound = info.currRound
 	self.episodeId = info.episodeId
 	self.masterIdBox = info.masterIdBox
+	self.cardpackIds = info.cardpackIds
 	self.selectMasterId = info.selectMasterId
 	self.refreshed = info.refreshed
 	self.bossId = info.bossId
-	self.cardpackId = info.cardpackId
+	self.mutationId = info.mutationId
 end
 
-function AutoChessGameMO:updateMasterIdBox(masterIds, refresh)
-	self.masterIdBox = masterIds
+function AutoChessGameMO:updateMasterIdBox(msg, refresh)
+	self.start = true
+	self.masterIdBox = msg.masterIds
+	self.cardpackIds = msg.cardpackIds
 	self.refreshed = refresh
 end
 
@@ -28,7 +31,11 @@ function AutoChessGameMO:updateBossId(id)
 end
 
 function AutoChessGameMO:updateCardPackId(id)
-	self.cardpackId = id
+	return
+end
+
+function AutoChessGameMO:updateMutationId(id)
+	self.mutationId = id
 end
 
 return AutoChessGameMO

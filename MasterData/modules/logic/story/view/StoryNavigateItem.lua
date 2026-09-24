@@ -46,7 +46,8 @@ function StoryNavigateItem:init(go)
 		[StoryEnum.NavigateType.StormTimerStart] = self.showStormTimerStart,
 		[StoryEnum.NavigateType.StormTimerEnd] = self.showStormTimerEnd,
 		[StoryEnum.NavigateType.FullScreenCountdownEnd] = self.showCloseFullScreenCountdown,
-		[StoryEnum.NavigateType.ScoreCard] = self.showV3A9StoryScoreCard
+		[StoryEnum.NavigateType.ScoreCard] = self.showV3A9StoryScoreCard,
+		[StoryEnum.NavigateType.ClickEffect] = self.showClickEffect
 	}
 end
 
@@ -320,6 +321,12 @@ function StoryNavigateItem:getStormTimerPlayer()
 	end
 
 	return self.stormTimerPlayer
+end
+
+function StoryNavigateItem:showClickEffect(config)
+	local prefabName = config.navigateLogo
+
+	StoryModel.instance:setStoryClickPrefabName(prefabName)
 end
 
 function StoryNavigateItem:clear()

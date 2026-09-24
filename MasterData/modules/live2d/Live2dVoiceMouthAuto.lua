@@ -125,7 +125,7 @@ function Live2dVoiceMouthAuto:_addMouth(lastOne, mouthAction, mouthStart, mouthE
 			self._lastFaceAction = mouthAction or self._lastFaceAction
 			self._curMouthEnd = nil
 
-			self._spine:setMouthAnimation(self._curMouth, true, 0)
+			self._spine:setMouthAnimation(self._curMouth, true, self:_getMixTime())
 
 			self._manualMouthRunning = true
 		end
@@ -244,12 +244,12 @@ function Live2dVoiceMouthAuto:_lipSyncUpdate()
 				self._curMouth = mouthAction
 				self._curMouthEnd = nil
 
-				self._spine:setMouthAnimation(self._curMouth, true, 0)
+				self._spine:setMouthAnimation(self._curMouth, true, self:_getMixTime())
 			end
 		elseif self._spine:hasAnimation(StoryAnimName.T_ZhengChang) and self._curMouth ~= StoryAnimName.T_ZhengChang then
 			self._curMouth = StoryAnimName.T_ZhengChang
 
-			self._spine:setMouthAnimation(self._curMouth, true, 0)
+			self._spine:setMouthAnimation(self._curMouth, true, self:_getMixTime())
 		end
 	else
 		self:_setBiZui()
@@ -313,12 +313,12 @@ function Live2dVoiceMouthAuto:_setOpenMouth()
 			self._curMouth = mouthAction
 			self._curMouthEnd = nil
 
-			self._spine:setMouthAnimation(self._curMouth, true, 0)
+			self._spine:setMouthAnimation(self._curMouth, true, self:_getMixTime())
 		end
 	elseif self._spine:hasAnimation(StoryAnimName.T_ZhengChang) and self._curMouth ~= StoryAnimName.T_ZhengChang then
 		self._curMouth = StoryAnimName.T_ZhengChang
 
-		self._spine:setMouthAnimation(self._curMouth, true, 0)
+		self._spine:setMouthAnimation(self._curMouth, true, self:_getMixTime())
 	end
 end
 
@@ -358,7 +358,7 @@ function Live2dVoiceMouthAuto:_setBiZui()
 			if self._curMouth ~= bizuiAction then
 				self._curMouth = bizuiAction
 
-				self._spine:setMouthAnimation(self._curMouth, true, 0)
+				self._spine:setMouthAnimation(self._curMouth, true, self:_getMixTime())
 			end
 
 			return
@@ -369,7 +369,7 @@ function Live2dVoiceMouthAuto:_setBiZui()
 		if self._spine:hasAnimation(StoryAnimName.T_BiZui) then
 			self._curMouth = StoryAnimName.T_BiZui
 
-			self._spine:setMouthAnimation(self._curMouth, true, 0)
+			self._spine:setMouthAnimation(self._curMouth, true, self:_getMixTime())
 		else
 			self._curMouth = StoryAnimName.T_BiZui
 

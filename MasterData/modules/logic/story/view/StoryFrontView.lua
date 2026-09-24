@@ -69,6 +69,10 @@ function StoryFrontView:removeEvents()
 end
 
 function StoryFrontView:_btnpauseOnClick()
+	if StoryModel.instance:isStoryPvPause() then
+		return
+	end
+
 	TaskDispatcher.cancelTask(self._playFinished, self)
 	UIBlockMgr.instance:endBlock("PlayPv")
 	StoryModel.instance:setStoryPvPause(true)

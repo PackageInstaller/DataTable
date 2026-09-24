@@ -111,7 +111,12 @@ end
 function LangSettings:_onConfigAbCallback(assetItem)
 	local jsonString
 	local json = cjson.decode(GameResMgr.IsFromEditorDir and assetItem.TextAsset or assetItem:GetNonAbTextAsset(true))
+	local configName = json[1]
 	local configText = json[2]
+
+	if GameResMgr.IsFromEditorDir then
+		configText = LangConfig.instance:onReplaceOV(configName, configText)
+	end
 
 	LangConfig.instance:updateLanguage(configText)
 

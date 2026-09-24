@@ -121,4 +121,12 @@ function LightSpine:setLumFactor(value)
 	end
 end
 
+function LightSpine:getViewName()
+	if self:isInMainView() then
+		return ViewName.MainView
+	end
+
+	return nil
+end
+
 return LightSpine

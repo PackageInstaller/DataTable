@@ -37,8 +37,7 @@ function BeiLiErTaskItem:removeEvents()
 end
 
 function BeiLiErTaskItem:_btnnotfinishbgOnClick()
-	if self._taskMo.config.jumpId > 0 then
-		GameFacade.jump(self._taskMo.config.jumpId)
+	if self._taskMo.config.jumpId > 0 and GameFacade.jump(self._taskMo.config.jumpId) then
 		ViewMgr.instance:closeView(ViewName.BeiLiErTaskView)
 	end
 end
@@ -60,7 +59,7 @@ function BeiLiErTaskItem:_delayFinish()
 end
 
 function BeiLiErTaskItem:_delayFinishAll()
-	TaskRpc.instance:sendFinishAllTaskRequest(TaskEnum.TaskType.Activity220)
+	Activity220Controller.instance:finishAllTask(VersionActivity3_2Enum.ActivityId.BeiLiEr)
 end
 
 function BeiLiErTaskItem:_editableInitView()

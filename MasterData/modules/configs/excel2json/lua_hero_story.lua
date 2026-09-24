@@ -21,6 +21,7 @@ local fields = {
 	activityId = 16,
 	queryVersion = 11,
 	preStoryId = 25,
+	cgUnlockGameComplete = 26,
 	challengeBonus = 15,
 	cgBg = 7,
 	cgScale = 21,

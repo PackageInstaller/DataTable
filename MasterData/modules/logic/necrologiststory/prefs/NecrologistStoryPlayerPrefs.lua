@@ -31,11 +31,17 @@ function NecrologistStoryPlayerPrefs:setExist(key, id)
 	data:setExist(id)
 end
 
-function NecrologistStoryPlayerPrefs:deletePrefsData()
+function NecrologistStoryPlayerPrefs:deletePrefsData(rolestoryId)
 	self.prefsDataDict = {}
 
 	for k, v in pairs(NecrologistStoryEnum.PrefsKey) do
 		GameUtil.deleteKey(v)
+	end
+
+	local key = RoleStoryModel.instance:getRoleStoryDungeonUnlockAnimKey(rolestoryId)
+
+	if key then
+		PlayerPrefsHelper.deleteKey(key)
 	end
 end
 

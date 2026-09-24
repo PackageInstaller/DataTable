@@ -453,8 +453,16 @@ function HeroGroupListView:_onEndDrag(param, pointerEventData)
 
 		HeroSingleGroupModel.instance:swap(index, dragToIndex)
 
-		local _, assistMo = HeroGroupModel.instance:getAssistMo()
-		local isNeedUpdate = assistMo and (assistMo.id == index or assistMo.id == dragToIndex)
+		local isNeedUpdate
+
+		for _, assistMo in ipairs(HeroGroupModel.instance:getAssistMoList()) do
+			if assistMo.id == index or assistMo.id == dragToIndex then
+				isNeedUpdate = true
+
+				break
+			end
+		end
+
 		local newHeroUids = HeroSingleGroupModel.instance:getHeroUids()
 
 		for i, heroUid in ipairs(heroGroupMO.heroList) do
@@ -511,13 +519,17 @@ function HeroGroupListView:_updateHeroList()
 
 	self:_checkAssistHero()
 
-	local _, assistMo = HeroGroupModel.instance:getAssistMo()
+	local assistMoList = HeroGroupModel.instance:getAssistMoList()
 
 	for i, heroItem in ipairs(self._heroItemList) do
 		local mo = HeroSingleGroupModel.instance:getById(i)
 
-		if assistMo and assistMo.id == i then
-			mo = assistMo
+		for _, assistMo in ipairs(assistMoList) do
+			if assistMo and assistMo.id == i then
+				mo = assistMo
+
+				break
+			end
 		end
 
 		heroItem:onUpdateMO(mo)

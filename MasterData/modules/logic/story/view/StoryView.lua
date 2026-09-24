@@ -1310,6 +1310,7 @@ function StoryView:_buildEffect(name, eff)
 		end
 
 		effGo = self._goeff4
+		order = 2200
 	end
 
 	if not self._effects[name] then
@@ -1354,6 +1355,7 @@ function StoryView:_updatePictureList(param)
 	end
 
 	local isSkip = false
+	local allSkipPics = {}
 
 	if stepLines[self._curStoryId] then
 		for _, v in ipairs(stepLines[self._curStoryId]) do
@@ -1363,18 +1365,22 @@ function StoryView:_updatePictureList(param)
 				isSkip = true
 
 				for i = 1, #picCos do
-					table.insert(picParams, picCos[i])
-
-					if picCos[i].orderType == StoryEnum.PictureOrderType.Destroy then
-						for j = #picParams, 1, -1 do
-							if picParams[j].orderType == StoryEnum.PictureOrderType.Produce and picParams[j].picture == picCos[i].picture then
-								table.remove(picParams, #picParams)
-								table.remove(picParams, j)
-							end
-						end
-					end
+					table.insert(allSkipPics, picCos[i])
 				end
 			end
+		end
+	end
+
+	local seen = {}
+
+	for i = #allSkipPics, 1, -1 do
+		local picCo = allSkipPics[i]
+		local name = self:getPictureName(picCo)
+
+		if not seen[name] then
+			seen[name] = true
+
+			table.insert(picParams, 1, picCo)
 		end
 	end
 
@@ -1387,7 +1393,7 @@ function StoryView:_updatePictureList(param)
 	self._picCo = #picParams > 0 and picParams or param
 
 	for _, v in pairs(self._picCo) do
-		local name = v.picType == StoryEnum.PictureType.FullScreen and "fullfocusitem" or v.picture
+		local name = self:getPictureName(v)
 
 		if v.orderType == StoryEnum.PictureOrderType.Produce and v.layer > 0 then
 			self:_buildPicture(name, v, isSkip)
@@ -1397,6 +1403,10 @@ function StoryView:_updatePictureList(param)
 	end
 
 	self:_checkFloatBgShow()
+end
+
+function StoryView:getPictureName(picConfig)
+	return picConfig.picType == StoryEnum.PictureType.FullScreen and "fullfocusitem" or picConfig.picture
 end
 
 function StoryView:_resetStepPictures()
@@ -1512,20 +1522,47 @@ function StoryView:_updateNavigateList(navs)
 end
 
 function StoryView:_updateVideoList(param)
-	self._videoCo = param
+	local videoCo = param
+	local allSkipVideos = {}
+	local isSkip = false
+	local stepLines = StoryModel.instance:getStepLine()
+
+	if stepLines[self._curStoryId] then
+		for _, v in ipairs(stepLines[self._curStoryId]) do
+			if v.skip then
+				isSkip = true
+
+				local videoCos = StoryStepModel.instance:getStepListById(v.stepId).videoList
+
+				for i = 1, #videoCos do
+					table.insert(allSkipVideos, videoCos[i])
+				end
+			end
+		end
+	end
+
+	if isSkip then
+		videoCo = {}
+
+		for _, v in ipairs(allSkipVideos) do
+			if v.orderType == StoryEnum.VideoOrderType.Destroy then
+				for j = #videoCo, 1, -1 do
+					if videoCo[j].video == v.video then
+						table.remove(videoCo, j)
+					end
+				end
+			end
+
+			table.insert(videoCo, v)
+		end
+	end
+
+	self._videoCo = videoCo
 
 	local hasVideo = false
 
 	for _, v in pairs(self._videoCo) do
-		if v.orderType == StoryEnum.VideoOrderType.Produce or v.orderType == StoryEnum.VideoOrderType.ProduceSkip then
-			self:_buildVideo(v.video, v)
-		elseif v.orderType == StoryEnum.VideoOrderType.Destroy then
-			self:_destroyVideo(v.video, v)
-		elseif v.orderType == StoryEnum.VideoOrderType.Pause then
-			self._videos[v.video]:pause(true)
-		else
-			self._videos[v.video]:pause(false)
-		end
+		self:runVideoOrder(v)
 	end
 
 	for _, v in pairs(self._videoCo) do
@@ -1539,8 +1576,21 @@ function StoryView:_updateVideoList(param)
 	end
 end
 
-function StoryView:_videoStarted(storyVideoItem)
-	return
+function StoryView:runVideoOrder(videoConfig)
+	local orderType = videoConfig.orderType
+	local videoName = videoConfig.video
+
+	if orderType == StoryEnum.VideoOrderType.Produce or orderType == StoryEnum.VideoOrderType.ProduceSkip then
+		self:_buildVideo(videoName, videoConfig)
+	elseif orderType == StoryEnum.VideoOrderType.Destroy then
+		self:_destroyVideo(videoName, videoConfig)
+	elseif orderType == StoryEnum.VideoOrderType.Pause then
+		if self._videos[videoName] then
+			self._videos[videoName]:pause(true)
+		end
+	elseif self._videos[videoName] then
+		self._videos[videoName]:pause(false)
+	end
 end
 
 function StoryView:_buildVideo(name, co)
@@ -1549,7 +1599,7 @@ function StoryView:_buildVideo(name, co)
 	if not self._videos[name] then
 		self._videos[name] = StoryVideoItem.New()
 
-		self._videos[name]:init(videoGo, name, co, self._videoStarted, self)
+		self._videos[name]:init(videoGo, name, co)
 	else
 		self._videos[name]:reset(videoGo, co)
 	end

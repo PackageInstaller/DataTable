@@ -86,7 +86,7 @@ function StoryEffectFadeHelper:setEffectLoop(isLoop)
 end
 
 function StoryEffectFadeHelper:destroy()
-	if not self._go or not self._go.transform then
+	if gohelper.isNil(self._go) then
 		return
 	end
 

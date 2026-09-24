@@ -31,6 +31,7 @@ function FightWorkDirectSwitchBattleAfterEndFight:startNewFight(nextEpisodeId, n
 
 	DungeonModel.instance:SetSendChapterEpisodeId(chapterId, nextEpisodeId)
 
+	local oldFightParam = FightModel.instance:getFightParam()
 	local fightParam = FightController.instance:setFightParamByEpisodeId(nextEpisodeId)
 
 	fightParam:setDungeon(chapterId, nextEpisodeId)
@@ -41,6 +42,8 @@ function FightWorkDirectSwitchBattleAfterEndFight:startNewFight(nextEpisodeId, n
 	HeroGroupTrialModel.instance:setTrialByBattleId(nextBattleId)
 
 	local result = FightController.instance:setFightHeroSingleGroup()
+
+	fightParam.clothId = oldFightParam.clothId
 
 	if result then
 		DungeonRpc.instance:sendStartDungeonRequest(fightParam.chapterId, fightParam.episodeId, fightParam)

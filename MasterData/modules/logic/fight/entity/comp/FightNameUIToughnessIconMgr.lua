@@ -31,6 +31,7 @@ function FightNameUIToughnessIconMgr:onConstructor(entity, viewGO, monsterConfig
 		end
 	end
 
+	self.animator = gohelper.findChildComponent(self.viewGO, "effct", gohelper.Type_Animator)
 	self.empty = gohelper.findChild(self.viewGO, "empty")
 	self.has = gohelper.findChild(self.viewGO, "has")
 	self.icon = gohelper.findChildImage(self.viewGO, "has/#image_reward")
@@ -48,6 +49,7 @@ function FightNameUIToughnessIconMgr:onConstructor(entity, viewGO, monsterConfig
 	self:com_registMsg(FightMsgId.OnUpdateBuff, self.onUpdateBuff)
 	self:com_registMsg(FightMsgId.ChangeEntityToughness, self.showIcon)
 	self:com_registMsg(FightMsgId.UpdateEntityBuffActInfo, self.onUpdateEntityBuffActInfo)
+	self:com_registMsg(FightMsgId.PlayNameUIToughnessBrokenRewardEffect, self.onPlayNameUIToughnessBrokenRewardEffect)
 end
 
 function FightNameUIToughnessIconMgr:onHpChange(entity)
@@ -91,6 +93,12 @@ end
 function FightNameUIToughnessIconMgr:showIcon()
 	local isBroken = self.entityData.isBroken
 
+	if isBroken and self.lastIsBroken == false then
+		self.animator:Play("pre")
+	end
+
+	self.lastIsBroken = isBroken
+
 	if not isBroken then
 		gohelper.setActive(self.empty, false)
 		gohelper.setActive(self.has, true)
@@ -116,8 +124,8 @@ function FightNameUIToughnessIconMgr:showIcon()
 				self.cdImage.fillAmount = hasBuff / self.maxCd
 			else
 				gohelper.setActive(self.empty, false)
-				gohelper.setActive(self.has, false)
-				gohelper.setActive(self.cd, true)
+				gohelper.setActive(self.has, true)
+				gohelper.setActive(self.cd, false)
 
 				self.cdText.text = self.maxCd
 				self.cdImage.fillAmount = 1
@@ -128,6 +136,16 @@ function FightNameUIToughnessIconMgr:showIcon()
 			gohelper.setActive(self.cd, false)
 		end
 	end
+end
+
+function FightNameUIToughnessIconMgr:onPlayNameUIToughnessBrokenRewardEffect(entityID)
+	if entityID ~= self.entityData.id then
+		return
+	end
+
+	self.animator.speed = FightModel.instance:getSpeed()
+
+	self.animator:Play("boom", 0, 0)
 end
 
 return FightNameUIToughnessIconMgr

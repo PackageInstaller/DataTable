@@ -57,7 +57,7 @@ function ProjBooter:start()
 end
 
 function ProjBooter:isUseBigZip()
-	return SLFramework.GameUpdate.UpdateListInfo.UseBigZip
+	return false
 end
 
 function ProjBooter:checkWidowsBackGroundSound()
@@ -73,9 +73,7 @@ function ProjBooter:checkWidowsBackGroundSound()
 end
 
 function ProjBooter:_checkUseBigZip()
-	local key = "UpdateListInfo_UseBigZip"
-
-	return UnityEngine.PlayerPrefs.GetFloat(key, 0) == 1
+	return false
 end
 
 function ProjBooter:UseBigZipDownload()

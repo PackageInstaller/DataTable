@@ -18,16 +18,10 @@ function StoryBgEffsDistress:init(bgCo)
 	self._effLoaded = false
 end
 
-function StoryBgEffsDistress:start(callback, callbackObj)
-	StoryBgEffsDistress.super.start(self)
-
-	self._finishedCallback = callback
-	self._finishedCallbackObj = callbackObj
-
+function StoryBgEffsDistress:onStartEffect()
 	self:_setViewTop(true)
 	ViewMgr.instance:registerCallback(ViewEvent.OnOpenView, self._onOpenView, self)
 	ViewMgr.instance:registerCallback(ViewEvent.OnCloseView, self._onCloseView, self)
-	self:loadRes()
 end
 
 function StoryBgEffsDistress:_onOpenView(viewName)
@@ -126,11 +120,8 @@ function StoryBgEffsDistress:_onBgEffDistressFinished()
 
 	local value = self._img.material:GetFloat("_TotalFator")
 
-	if value <= 0.05 and self._finishedCallback then
-		self._finishedCallback(self._finishedCallbackObj)
-
-		self._finishedCallback = nil
-		self._finishedCallbackObj = nil
+	if value <= 0.05 then
+		self:callFinished()
 	end
 end
 
@@ -156,9 +147,6 @@ function StoryBgEffsDistress:destroy()
 	self:_setViewTop(false)
 	self:_setDistressUpdate(0)
 	self:_killTween()
-
-	self._finishedCallback = nil
-	self._finishedCallbackObj = nil
 end
 
 return StoryBgEffsDistress

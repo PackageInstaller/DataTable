@@ -29,5 +29,6 @@ SettingsEvent.OnCharVoiceTypeChanged = 502
 SettingsEvent.OnSetVoiceRoleFiltered = 503
 SettingsEvent.OnKeyMapChange = 601
 SettingsEvent.OnKeyTipsChange = 602
+SettingsEvent.OnChangeSelecetDelUnusedRes = 701
 
 return SettingsEvent

@@ -56,6 +56,7 @@ function GMCommand.mainheromode(param)
 	local mainViewContainer = ViewMgr.instance:getContainer(ViewName.MainView)
 
 	if mainViewContainer then
+		mainViewContainer:getMainHeroView()._lightSpine:stopVoice()
 		mainViewContainer:getMainHeroView():debugShowMode(showInScene)
 	end
 end

@@ -107,6 +107,14 @@ function FightActEffectData:onConstructor(proto)
 	if proto:HasField("jsonParam") then
 		self.jsonParam = cjson.decode(proto.jsonParam)
 	end
+
+	if proto:HasField("qteInfo") then
+		self.qteInfo = FightQTEInfoData.New(proto.qteInfo)
+	end
+
+	if proto:HasField("cluePosition") then
+		self.cluePosition = FightCluePositionData.New(proto.cluePosition)
+	end
 end
 
 function FightActEffectData:isDone()

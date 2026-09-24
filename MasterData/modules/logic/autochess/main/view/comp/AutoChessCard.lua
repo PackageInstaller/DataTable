@@ -16,8 +16,7 @@ function AutoChessCard:init(go)
 	self._imageBg = gohelper.findChildImage(go, "critters/image_bg")
 	self._goMesh = gohelper.findChild(go, "critters/Mesh")
 	self._txtName = gohelper.findChildText(go, "critters/#txt_Name")
-	self._imageType = gohelper.findChildImage(go, "critters/#image_Type")
-	self._txtType = gohelper.findChildText(go, "critters/#image_Type/#txt_Type")
+	self._goRaceItem = gohelper.findChild(go, "layout/TypeList/#go_RaceItem")
 	self._goHp = gohelper.findChild(go, "#go_Hp")
 	self._txtHp = gohelper.findChildText(go, "#go_Hp/#txt_Hp")
 	self._goAttack = gohelper.findChild(go, "#go_Attack")
@@ -33,7 +32,7 @@ function AutoChessCard:init(go)
 	self._goStar3 = gohelper.findChild(go, "#go_Level/#go_Star/#go_Star3")
 	self._goLight3 = gohelper.findChildImage(go, "#go_Level/#go_Star/#go_Star3/#go_Light3")
 	self._goArrow = gohelper.findChild(go, "#go_arrow")
-	self._txtSkillDesc = gohelper.findChildText(go, "scroll_desc/viewport/#txt_SkillDesc")
+	self._txtSkillDesc = gohelper.findChildText(go, "layout/scroll_desc/viewport/#txt_SkillDesc")
 	self._imageTag = gohelper.findChildImage(go, "#image_Tag")
 	self._btnSell = gohelper.findChildButtonWithAudio(go, "#btn_Sell")
 	self._txtSellCoin = gohelper.findChildText(go, "#btn_Sell/#txt_SellCoin")
@@ -82,16 +81,16 @@ function AutoChessCard:_btnSellOnClick()
 	local entity = self.param.entity
 	local warZone = entity.warZone
 
-	AutoChessRpc.instance:sendAutoChessBuildRequest(moduleId, AutoChessEnum.BuildType.Sell, warZone, entity.index, entity.data.uid)
+	AutoChessRpc.instance:sendAutoChessBuildRequest(moduleId, AutoChessEnum.BuildType.Sell, warZone, entity.index, entity.mo.uid)
 end
 
 function AutoChessCard:_btnBuyOnClick()
 	local moduleId = AutoChessModel.instance.moduleId
-	local chessMo = AutoChessModel.instance:getChessMo()
-	local costEnough, toastId = chessMo:checkCostEnough(self.costType, self.cost)
+	local sceneMo = AutoChessModel.instance:getSceneMo()
+	local costEnough, toastId = sceneMo:checkCostEnough(self.costType, self.cost)
 
 	if self.isFree or costEnough then
-		local warZone, pos = chessMo:getEmptyPos(self.config.type)
+		local warZone, pos = sceneMo.fight:getEmptyPos(self.config.type)
 
 		if not warZone then
 			GameFacade.showToast(ToastEnum.AutoChessBoardFull)
@@ -130,10 +129,12 @@ function AutoChessCard:_btnCheckOnClick()
 		chessId = self.param.itemId
 	}
 
-	AutoChessController.instance:openAutoChessHandbookPreviewView(param)
+	AutoChessController.instance:openHandbookPreviewView(param)
 end
 
 function AutoChessCard:_editableInitView()
+	gohelper.setActive(self._goRaceItem, false)
+
 	self.meshComp = MonoHelper.addNoUpdateLuaComOnceToGo(self._goMesh, AutoChessMeshComp)
 
 	SkillHelper.addHyperLinkClick(self._txtSkillDesc, self.clcikHyperLink, self)
@@ -164,49 +165,47 @@ function AutoChessCard:setData(param)
 end
 
 function AutoChessCard:refreshSell()
-	local chessData = self.param.entity.data
+	local chessMo = self.param.entity.mo
 
-	self.config = AutoChessConfig.instance:getChessCfgById(chessData.id, chessData.star)
+	self.config = chessMo.config
 
 	local isEnemy = self.param.entity.teamType == AutoChessEnum.TeamType.Enemy
 
 	self.meshComp:setData(self.config.image, isEnemy)
 
-	if self.config.type == AutoChessStrEnum.ChessType.Boss then
-		transformhelper.setLocalScale(self._goMesh.transform, -0.5, 0.5, 1)
-	end
+	local scale = self.config.type == AutoChessStrEnum.ChessType.Boss and 0.5 or 1
 
-	local key = AutoChessEnum.ConstKey.ChessSellPrice
+	transformhelper.setLocalScale(self._goMesh.transform, -scale, scale, 1)
 
-	self._txtSellCoin.text = lua_auto_chess_const.configDict[key].value
-	self._txtAttack.text = chessData.battle
-	self._txtHp.text = chessData.hp
+	self._txtSellCoin.text = AutoChessHelper.getSellPrice(self.config.race)
+	self._txtAttack.text = chessMo.battle
+	self._txtHp.text = chessMo.hp
 
-	self:refreshConfigAttr(chessData)
-	self:refreshLevelStar(chessData.star, chessData.exp, chessData.maxExpLimit)
-	gohelper.setActive(self._btnSell, self.param.entity.teamType == AutoChessEnum.TeamType.Player)
+	self:refreshConfigAttr(chessMo)
+	self:refreshLevelStar(chessMo.star, chessMo.exp, chessMo.maxExpLimit)
+	gohelper.setActive(self._btnSell, self.param.showSell)
 end
 
 function AutoChessCard:refreshBuy()
 	self.itemData = self.param.data
 
-	local chessData = self.itemData.chess
+	local chessMo = self.itemData.chess
 
-	self.config = AutoChessConfig.instance:getChessCfgById(chessData.id, chessData.star)
+	self.config = chessMo.config
 
 	self.meshComp:setData(self.config.image)
 
-	local mallCo = lua_auto_chess_mall.configDict[self.param.mallId]
+	local mallCo = AutoChessConfig.instance:getMallCfg(self.param.mallId)
 
 	self.isFree = mallCo.type == AutoChessEnum.MallType.Free
-	self._txtAttack.text = chessData.battle
-	self._txtHp.text = chessData.hp
+	self._txtAttack.text = chessMo.battle
+	self._txtHp.text = chessMo.hp
 
 	self:refreshConfigAttr()
-	self:refreshLevelStar(chessData.star, chessData.exp, chessData.maxExpLimit)
+	self:refreshLevelStar(chessMo.star, chessMo.exp, chessMo.maxExpLimit)
 
-	local chessMo = AutoChessModel.instance:getChessMo()
-	local warZone = chessMo:getEmptyPos(self.config.type)
+	local sceneMo = AutoChessModel.instance:getSceneMo()
+	local warZone = sceneMo.fight:getEmptyPos(self.config.type)
 
 	if self.isFree then
 		self.cost = 0
@@ -218,12 +217,9 @@ function AutoChessCard:refreshBuy()
 		end
 	else
 		self.costType, self.cost = AutoChessConfig.instance:getItemBuyCost(self.itemData.id)
+		self.cost = self.cost + self.itemData.fixCost
 
-		if self.cost >= 1 and chessMo.svrFight.mySideMaster.id == AutoChessEnum.SpecialMaster.Role37 and AutoChessHelper.isPrimeNumber(chessData.battle) and AutoChessHelper.isPrimeNumber(chessData.hp) then
-			self.cost = self.cost - 1
-		end
-
-		local costEnough = chessMo:checkCostEnough(self.costType, self.cost)
+		local costEnough = sceneMo:checkCostEnough(self.costType, self.cost)
 
 		if costEnough then
 			if not self.cost then
@@ -258,10 +254,10 @@ function AutoChessCard:refreshBuy()
 end
 
 function AutoChessCard:refreshForcePick()
-	local itemCo = lua_auto_chess_mall_item.configDict[self.param.itemId]
+	local itemCo = AutoChessConfig.instance:getMallItemCfg(self.param.itemId)
 	local params = string.splitToNumber(itemCo.context, "#")
 
-	self.config = AutoChessConfig.instance:getChessCfgById(params[1], params[2])
+	self.config = AutoChessConfig.instance:getChessCfg(params[1], params[2])
 
 	self.meshComp:setData(self.config.image)
 
@@ -275,7 +271,7 @@ end
 function AutoChessCard:refreshHandbook()
 	local star = self.param.star
 
-	self.config = AutoChessConfig.instance:getChessCfgById(self.param.itemId, star)
+	self.config = star and AutoChessConfig.instance:getChessCfg(self.param.itemId, star) or AutoChessConfig.instance:getChessCfgAnyway(self.param.itemId)
 
 	self.meshComp:setData(self.config.image)
 
@@ -302,32 +298,38 @@ function AutoChessCard:refreshHandbook()
 	end
 end
 
-function AutoChessCard:refreshConfigAttr(chessData)
+function AutoChessCard:refreshConfigAttr(mo)
 	self._txtName.text = self.config.name
 
-	if chessData then
-		if #chessData.replaceSkillChessIds ~= 0 then
+	if mo then
+		if #mo.replaceSkillChessIds ~= 0 then
 			local skillId2CntMap = {}
 
-			for _, chessId in ipairs(chessData.replaceSkillChessIds) do
+			for _, chessId in ipairs(mo.replaceSkillChessIds) do
 				skillId2CntMap[chessId] = skillId2CntMap[chessId] and skillId2CntMap[chessId] + 1 or 1
 			end
 
 			local skillDesc = ""
 			local txt = luaLang("autochess_copyskill_multi")
+			local recordMap = {}
 
-			for skillId, count in pairs(skillId2CntMap) do
-				local config = AutoChessConfig.instance:getChessCfgBySkillId(skillId)
+			for _, skillId in ipairs(mo.replaceSkillChessIds) do
+				if not recordMap[skillId] then
+					recordMap[skillId] = true
 
-				if config then
-					skillDesc = count == 1 and string.format("%s%s<br>", skillDesc, config.skillDesc) or string.format("%s%s%s<br>", skillDesc, config.skillDesc, GameUtil.getSubPlaceholderLuaLangOneParam(txt, count))
+					local count = skillId2CntMap[skillId]
+					local config = AutoChessConfig.instance:getChessCfgBySkillId(skillId)
+
+					if config then
+						skillDesc = count == 1 and string.format("%s%s<br>", skillDesc, config.skillDesc) or string.format("%s%s%s<br>", skillDesc, config.skillDesc, GameUtil.getSubPlaceholderLuaLangOneParam(txt, count))
+					end
 				end
 			end
 
 			self._txtSkillDesc.text = AutoChessHelper.buildSkillDesc(skillDesc)
-		elseif chessData.cd ~= 0 then
+		elseif mo.cd ~= 0 then
 			local skillDesc = AutoChessHelper.buildSkillDesc(self.config.skillDesc)
-			local tip = GameUtil.getSubPlaceholderLuaLangOneParam(luaLang("autochesscard_growup_tip"), chessData.cd)
+			local tip = GameUtil.getSubPlaceholderLuaLangOneParam(luaLang("autochesscard_growup_tip"), mo.cd)
 
 			self._txtSkillDesc.text = string.format("%s%s", skillDesc, tip)
 		else
@@ -337,18 +339,35 @@ function AutoChessCard:refreshConfigAttr(chessData)
 		self._txtSkillDesc.text = AutoChessHelper.buildSkillDesc(self.config.skillDesc)
 	end
 
-	local campCo = lua_auto_chess_translate.configDict[self.config.race]
+	self.raceItemList = self.raceItemList or {}
 
-	if campCo then
-		self._txtType.text = campCo.name
+	local races = AutoChessHelper.getChessExtraRaceList(self.config.race)
 
-		SLFramework.UGUI.GuiHelper.SetColor(self._imageType, campCo.color)
+	for k, race in ipairs(races) do
+		local campCo = AutoChessConfig.instance:getCampCfg(race)
+		local raceItem = self.raceItemList[k]
 
-		if string.nilorempty(campCo.tagResName) then
-			gohelper.setActive(self._imageTag, false)
-		else
-			UISpriteSetMgr.instance:setAutoChessSprite(self._imageTag, campCo.tagResName)
-			gohelper.setActive(self._imageTag, true)
+		if not raceItem then
+			raceItem = self:getUserDataTb_()
+			raceItem.go = gohelper.cloneInPlace(self._goRaceItem)
+			raceItem.imageType = gohelper.findChildImage(raceItem.go, "image_Type")
+			raceItem.txtType = gohelper.findChildText(raceItem.go, "image_Type/txt_Type")
+			self.raceItemList[k] = raceItem
+		end
+
+		SLFramework.UGUI.GuiHelper.SetColor(raceItem.imageType, campCo.color)
+
+		raceItem.txtType.text = campCo.name
+
+		gohelper.setActive(raceItem.go, true)
+
+		if race == self.config.race then
+			if string.nilorempty(campCo.tagResName) then
+				gohelper.setActive(self._imageTag, false)
+			else
+				UISpriteSetMgr.instance:setAutoChessSprite(self._imageTag, campCo.tagResName)
+				gohelper.setActive(self._imageTag, true)
+			end
 		end
 	end
 

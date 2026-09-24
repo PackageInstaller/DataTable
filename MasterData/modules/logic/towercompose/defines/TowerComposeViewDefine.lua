@@ -214,7 +214,7 @@ function TowerComposeViewDefine.init(module_views)
 	module_views.TowerComposeHeroGroupEditView = {
 		container = "TowerComposeHeroGroupEditViewContainer",
 		destroy = 5,
-		mainRes = "ui/viewres/herogroup/herogroupeditview.prefab",
+		mainRes = "ui/viewres/tower/towercompose/towercomposeherogroupeditview.prefab",
 		layer = "POPUP_TOP",
 		viewType = ViewType.Full,
 		anim = ViewAnim.Default,
@@ -226,8 +226,11 @@ function TowerComposeViewDefine.init(module_views)
 			}
 		},
 		otherRes = {
-			[1] = "ui/viewres/tower/towercompose/towercomposeherogroupedititem.prefab",
-			[2] = "ui/viewres/tower/towercompose/towercomposeherogroupquickedititem.prefab"
+			"ui/viewres/tower/towercompose/towercomposeherogroupedititem.prefab",
+			"ui/viewres/tower/towercompose/towercomposeherogroupquickedititem.prefab",
+			NormalCard = "ui/viewres/character/characterbreakthrough_normalcard.prefab",
+			UniqueCard = "ui/viewres/character/characterbreakthrough_uniquecard.prefab",
+			QTERes = "ui/viewres/character/characterbreakthroughview_1.prefab"
 		},
 		customAnimBg = {
 			"bg"

@@ -10,6 +10,9 @@ function TowerComposeHeroGroupEditItem:_initObj(go)
 	self._goplaneLock = gohelper.findChild(go, "#go_planeLock")
 	self._goaddNum = gohelper.findChild(go, "#go_addnum")
 	self._txtNum = gohelper.findChildText(go, "#go_addnum/#txt_num")
+	self._goPlaneAssist = gohelper.findChild(go, "#go_planeAssist")
+	self._goPlane1 = gohelper.findChild(go, "#go_planeAssist/#go_plane1")
+	self._goPlane2 = gohelper.findChild(go, "#go_planeAssist/#go_plane2")
 end
 
 function TowerComposeHeroGroupEditItem:updateTrialTag()
@@ -30,9 +33,48 @@ function TowerComposeHeroGroupEditItem:updateTrialTag()
 	local isInLockPlane = TowerComposeHeroGroupModel.instance:checkHeroUidIsInLockPlane(self._mo.uid)
 
 	gohelper.setActive(self._goplaneLock, isInLockPlane)
+
+	if recordFightParam.plane == TowerComposeEnum.PlaneType.Twice then
+		for planeId = 1, 2 do
+			local assistMo = TowerComposeModel.instance:getEditorAssistMo({
+				planeId = planeId
+			})
+
+			if assistMo and assistMo.heroUid == self._mo.uid then
+				gohelper.setActive(self._goPlane1, planeId == 1)
+				gohelper.setActive(self._goPlane2, planeId == 2)
+
+				break
+			else
+				gohelper.setActive(self._goPlane1, false)
+				gohelper.setActive(self._goPlane2, false)
+			end
+		end
+	elseif recordFightParam.plane == TowerComposeEnum.PlaneType.Once then
+		local assistMo = TowerComposeModel.instance:getEditorAssistMo({
+			planeId = 1
+		})
+
+		gohelper.setActive(self._goPlane1, assistMo and assistMo.heroUid == self._mo.uid)
+		gohelper.setActive(self._goPlane2, false)
+	else
+		gohelper.setActive(self._goPlane1, false)
+		gohelper.setActive(self._goPlane2, false)
+	end
 end
 
 function TowerComposeHeroGroupEditItem:updateTrialRepeat()
+	local recordFightParam = TowerComposeModel.instance:getRecordFightParam()
+	local _, assistMo = HeroGroupHandler.getAssistMo(recordFightParam.episodeId, false, {
+		planeId = (recordFightParam.plane == 2 or nil) and Mathf.Ceil(self._view.viewContainer.viewParam.singleGroupMOId / 4)
+	})
+
+	if assistMo and (assistMo.id == self._view.viewContainer.viewParam.singleGroupMOId or assistMo.heroUid == self._mo.uid) then
+		self._heroItem:setTrialRepeat(false)
+
+		return
+	end
+
 	local singleGroupMO = HeroSingleGroupModel.instance:getById(self._view.viewContainer.viewParam.singleGroupMOId)
 
 	if singleGroupMO and not singleGroupMO:isEmpty() and (singleGroupMO.trial and singleGroupMO:getTrialCO().heroId == self._mo.heroId or not singleGroupMO.trial and (not singleGroupMO:getHeroCO() or singleGroupMO:getHeroCO().id == self._mo.heroId)) then
@@ -75,6 +117,17 @@ function TowerComposeHeroGroupEditItem:_onItemClick()
 		GameFacade.showToast(ToastEnum.TowerComposeChallengeLock)
 
 		return
+	end
+
+	if self._mo.belongOtherPlayer then
+		local insetIndex = self._view.viewContainer.viewParam.singleGroupMOId
+		local canSelect, assistPlane = TowerComposeHeroGroupModel.instance:checkCanSelectAssistHero(self._mo.uid, insetIndex, insetIndex)
+
+		if not canSelect then
+			TowerComposeController.instance:showPlaneAssistToast(assistPlane)
+
+			return
+		end
 	end
 
 	if self._mo:isTrial() and not TowerComposeHeroGroupModel.instance:checkCanSelectTrialHero(self._mo.trialCo, self._view.viewContainer.viewParam.singleGroupMOId) then

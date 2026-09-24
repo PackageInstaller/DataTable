@@ -61,7 +61,7 @@ function Rouge2_GameRecordInfoMO:passEntrustId(entrustId)
 	return self.passEntrustMap and self.passEntrustMap[entrustId]
 end
 
-function Rouge2_GameRecordInfoMO:passLayerId(layerId)
+function Rouge2_GameRecordInfoMO:isPassedLayerId(layerId)
 	return self.passLayerIdMap and self.passLayerIdMap[layerId]
 end
 

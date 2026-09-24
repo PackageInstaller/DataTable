@@ -31,6 +31,9 @@ function FightEntityWeatherEffect:showEffect()
 		elseif weatherEffect == 2 then
 			self._weatherEffect_url = "roleeffects/roleeffect_rain_black"
 			UrpCustom.PPEffectMask.hasRain = true
+		elseif weatherEffect == 3 then
+			self._weatherEffect_url = "roleeffects/roleeffect_snow"
+			UrpCustom.PPEffectMask.hasRain = true
 		else
 			UrpCustom.PPEffectMask.hasRain = false
 

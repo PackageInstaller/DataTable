@@ -47,7 +47,7 @@ end
 
 function AutoChessHelper.getFightBtnIcon(roundType, bossId)
 	if roundType == AutoChessEnum.RoundType.BOSS then
-		local bossCfg = lua_auto_chess_boss.configDict[bossId]
+		local bossCfg = AutoChessConfig.instance:getBossCfg(bossId)
 
 		if not bossCfg.startBtnImage then
 			return bossCfg.startBtnImage, "autochess_game_btn_fight2"
@@ -66,16 +66,6 @@ function AutoChessHelper.getChessQualityBg(type, level)
 		return "v2a5_autochess_quality2_" .. level
 	else
 		return "autochess_leader_chessbg" .. level
-	end
-end
-
-function AutoChessHelper.getMallRegionByType(regions, type)
-	for _, region in ipairs(regions) do
-		local mallCo = lua_auto_chess_mall.configDict[region.mallId]
-
-		if mallCo.type == type then
-			return region
-		end
 	end
 end
 
@@ -98,10 +88,9 @@ function AutoChessHelper.universalMix(race, subRace, buffs)
 		if buff.id == 1015 then
 			return true
 		else
-			local buffCo = lua_auto_chess_buff.configDict[buff.id]
-			local effects = string.split(buffCo.effect, "#")
+			local effects = string.split(buff.config.effect, "#")
 
-			if buffCo.type == 1015 and effects[1] == "UniversalBabyRace" and (effects[2] == "None" or effects[2] == race) and (effects[3] == "None" or effects[3] == subRace) then
+			if buff.config.type == 1015 and effects[1] == "UniversalBabyRace" and (effects[2] == "None" or effects[2] == race) and (effects[3] == "None" or effects[3] == subRace) then
 				return true
 			end
 		end
@@ -120,10 +109,9 @@ function AutoChessHelper.canMix(toChess, fromChess)
 		local buffs = toChess.buffContainer.buffs
 
 		for _, buff in ipairs(buffs) do
-			local buffCo = lua_auto_chess_buff.configDict[buff.id]
-			local effects = string.split(buffCo.effect, "#")
+			local effects = string.split(buff.config.effect, "#")
 
-			if buffCo.type == 1015 and effects[1] == "PenguinTeam" then
+			if buff.config.type == 1015 and effects[1] == "PenguinTeam" then
 				for i = 2, #effects do
 					local params = string.splitToNumber(effects[i], ",")
 
@@ -136,9 +124,9 @@ function AutoChessHelper.canMix(toChess, fromChess)
 
 		return false, ToastEnum.AutoChessPenguinMix
 	elseif not toIndex and not fromIndex then
-		local toCo = AutoChessConfig.instance:getChessCfgById(toId, toChess.star)
+		local config = toChess.config
 
-		if toId == fromId or AutoChessHelper.universalMix(toCo.race, toCo.subRace, fromChess.buffContainer.buffs) then
+		if toId == fromId or AutoChessHelper.universalMix(config.race, config.subRace, fromChess.buffContainer.buffs) then
 			return true
 		end
 	end
@@ -147,8 +135,8 @@ function AutoChessHelper.canMix(toChess, fromChess)
 end
 
 function AutoChessHelper.getLeaderSkillEffect(skillId)
-	local skillCo = lua_auto_chess_master_skill.configDict[skillId]
-	local skillIndex = skillCo.skillIndex
+	local skillCo = AutoChessConfig.instance:getLeaderSkillCfg(skillId)
+	local skillIndex = skillCo and skillCo.skillIndex
 
 	if skillIndex == 3 then
 		return string.split(skillCo.abilities, "#")
@@ -161,10 +149,12 @@ function AutoChessHelper.getLeaderSkillEffect(skillId)
 			chessSkillId = tonumber(skillCo.activeChessSkill)
 		end
 
-		local chessSkillCo = lua_auto_chess_skill.configDict[chessSkillId]
+		if chessSkillId then
+			local chessSkillCo = AutoChessConfig.instance:getChessSkillCfg(chessSkillId)
 
-		if chessSkillCo then
-			return string.split(chessSkillCo.effect1, "#")
+			if chessSkillCo then
+				return string.split(chessSkillCo.effect1, "#")
+			end
 		end
 	end
 end
@@ -185,7 +175,7 @@ function AutoChessHelper.getBuyChessCntByType(buyInfos, type)
 	local cnt = 0
 
 	for _, info in ipairs(buyInfos) do
-		local config = AutoChessConfig.instance:getChessCfg(info.chessId)
+		local config = AutoChessConfig.instance:getChessCfgAnyway(info.chessId)
 
 		if config and config.race == type then
 			cnt = cnt + info.num
@@ -193,26 +183,6 @@ function AutoChessHelper.getBuyChessCntByType(buyInfos, type)
 	end
 
 	return cnt
-end
-
-function AutoChessHelper.isPrimeNumber(number)
-	number = tonumber(number)
-
-	if number == 2 then
-		return true
-	elseif number == 1 or number % 2 == 0 then
-		return false
-	else
-		local right = math.floor(math.sqrt(number)) + 1
-
-		for i = 3, right, 2 do
-			if number % i == 0 then
-				return false
-			end
-		end
-	end
-
-	return true
 end
 
 function AutoChessHelper.lockScreen(key, lock)
@@ -258,44 +228,11 @@ function AutoChessHelper._replaceDescTagFunc(skillName)
 end
 
 function AutoChessHelper.buildEmptyChess()
-	local tbl = {}
+	local mo = AutoChessMo.New()
 
-	tbl.uid = 0
-	tbl.id = 0
+	mo:initEmpty()
 
-	return tbl
-end
-
-function AutoChessHelper.copyChess(chess)
-	if tonumber(chess.uid) == 0 then
-		return AutoChessHelper.buildEmptyChess()
-	end
-
-	local copyTbl = {}
-
-	copyTbl.uid = chess.uid
-	copyTbl.id = chess.id
-	copyTbl.star = chess.star
-	copyTbl.exp = chess.exp
-	copyTbl.maxExpLimit = chess.maxExpLimit
-	copyTbl.teamType = chess.teamType
-	copyTbl.status = chess.status
-	copyTbl.battle = tonumber(chess.battle)
-	copyTbl.hp = tonumber(chess.hp)
-	copyTbl.skillContainer = chess.skillContainer
-	copyTbl.buffContainer = chess.buffContainer
-	copyTbl.durability = chess.durability
-	copyTbl.cd = chess.cd
-
-	local skillIds = {}
-
-	for k, id in ipairs(chess.replaceSkillChessIds) do
-		skillIds[k] = id
-	end
-
-	copyTbl.replaceSkillChessIds = skillIds
-
-	return copyTbl
+	return mo
 end
 
 function AutoChessHelper.getUnlockReddot(key, id)
@@ -309,6 +246,170 @@ function AutoChessHelper.setUnlockReddot(key, id)
 	local prefsKey = string.format("%s_%s", key, id)
 
 	AutoChessHelper.setPlayerPrefs(prefsKey, 1)
+end
+
+function AutoChessHelper.buildFlowSequence(effectMoList)
+	local flow = FlowSequence.New()
+
+	for _, effect in ipairs(effectMoList) do
+		if effect.effectType == AutoChessEnum.EffectType.NextFightStep then
+			AutoChessHelper.recursion(flow, effect.nextFightStep)
+		else
+			local work = AutoChessHelper.getEffectWork(effect)
+
+			if work then
+				flow:addWork(work)
+			end
+		end
+	end
+
+	return flow
+end
+
+function AutoChessHelper.recursion(flow, fightStep)
+	if fightStep.actionType == AutoChessEnum.ActionType.ChessMove then
+		local parFlow = FlowParallel.New()
+
+		for _, effect in ipairs(fightStep.effect) do
+			if effect.effectType == AutoChessEnum.EffectType.Move then
+				local work = AutoChessHelper.getEffectWork(effect)
+
+				if work then
+					parFlow:addWork(work)
+				end
+			else
+				logError("异常:棋子移动Action下面不该有其他类型Effect")
+			end
+		end
+
+		flow:addWork(parFlow)
+	else
+		local skillEffectParams
+
+		if fightStep.actionType == AutoChessEnum.ActionType.ChessSkill then
+			local skillWork = AutoChessSkillWork.New(fightStep.fromId, fightStep.reasonId)
+
+			flow:addWork(skillWork)
+
+			local skillCo = AutoChessConfig.instance:getChessSkillCfg(tonumber(fightStep.reasonId), true)
+
+			if skillCo then
+				local skillEffectStr = skillCo.skilleffID
+
+				if not string.nilorempty(skillEffectStr) then
+					skillEffectParams = string.splitToNumber(skillEffectStr, "#")
+				end
+			end
+		end
+
+		for _, effect in ipairs(fightStep.effect) do
+			if effect.effectType == AutoChessEnum.EffectType.NextFightStep then
+				AutoChessHelper.recursion(flow, effect.nextFightStep)
+			else
+				local work = AutoChessHelper.getEffectWork(effect)
+
+				if work then
+					if skillEffectParams and effect.effectType == skillEffectParams[2] then
+						work:markSkillEffect(fightStep.fromId, skillEffectParams[1])
+					end
+
+					flow:addWork(work)
+				end
+			end
+		end
+	end
+end
+
+function AutoChessHelper.getEffectWork(mo)
+	if not AutoChessEnum.EffectTypeToName[mo.effectType] then
+		local workName = ""
+		local cls = _G[string.format("AutoChess%sWork", workName)]
+
+		if cls then
+			return cls.New(mo)
+		else
+			logError("自走棋缺少Effect处理Work EffectType: " .. mo.effectType)
+		end
+	end
+end
+
+function AutoChessHelper.getChessExtraRaceList(race)
+	local raceList = {
+		race
+	}
+	local sceneMo = AutoChessModel.instance:getSceneMo(true)
+
+	if sceneMo then
+		local masterMo = sceneMo.fight.mySideMaster
+		local buffMos = masterMo and masterMo.buffContainer.buffs
+
+		for i = #buffMos, 1, -1 do
+			local mo = buffMos[i]
+
+			if mo.config then
+				local effect = mo.config.effect
+				local effects = string.split(effect, "#")
+
+				if effects[1] == AutoChessStrEnum.BuffEffect.RaceTagAlias then
+					local raceFilter = effects[2]
+
+					if effects[3] ~= AutoChessStrEnum.ChessRace.None and (raceFilter == AutoChessStrEnum.ChessRace.All or tabletool.indexOf(string.split(effects[2], ","), race)) then
+						local addRaces
+
+						for _, v in ipairs(effects[3] == AutoChessStrEnum.ChessRace.All and AutoChessConfig.instance:getAllRaceList() or string.split(effects[3], ",")) do
+							if v ~= race then
+								raceList[#raceList + 1] = v
+							end
+						end
+
+						break
+					end
+				end
+			end
+		end
+	end
+
+	return raceList
+end
+
+function AutoChessHelper.getSellPrice(race)
+	local sellPrice = AutoChessConfig.instance:getConstValue(AutoChessEnum.ConstKey.ChessSellPrice)
+	local sceneMo = AutoChessModel.instance:getSceneMo()
+
+	if sceneMo then
+		local masterMo = sceneMo.fight.mySideMaster
+		local buffMos = masterMo and masterMo.buffContainer.buffs
+
+		for i = #buffMos, 1, -1 do
+			local mo = buffMos[i]
+
+			if mo.config then
+				local effect = mo.config.effect
+				local effects = string.split(effect, "#")
+
+				if effects[1] == AutoChessStrEnum.BuffEffect.SellIncomeFix then
+					local raceFilter = effects[2]
+
+					if raceFilter == AutoChessStrEnum.ChessRace.All or tabletool.indexOf(string.split(effects[2], ","), race) then
+						local fixValue = tonumber(effects[4])
+						local minValue = tonumber(effects[5])
+
+						if effects[3] == AutoChessStrEnum.BuffFixType.Add then
+							sellPrice = sellPrice + fixValue
+						elseif effects[3] == AutoChessStrEnum.BuffFixType.Override then
+							sellPrice = fixValue
+						end
+
+						sellPrice = minValue < sellPrice and sellPrice or minValue
+
+						break
+					end
+				end
+			end
+		end
+	end
+
+	return sellPrice
 end
 
 return AutoChessHelper

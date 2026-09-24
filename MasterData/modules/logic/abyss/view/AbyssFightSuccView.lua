@@ -51,6 +51,7 @@ function AbyssFightSuccView:_btncloseOnClick()
 end
 
 function AbyssFightSuccView:_btnDataOnClick()
+	AssistController.instance:dispatchEvent(AssistEvent.CloseAddFriendView)
 	ViewMgr.instance:openView(ViewName.FightStatView)
 end
 
@@ -70,6 +71,7 @@ function AbyssFightSuccView:onOpen()
 	AudioMgr.instance:trigger(AudioEnum3_6.Abyss.play_ui_stage_finish)
 	self:checkParam()
 	self:refreshUI()
+	AssistRecordRpc.instance:sendAssistRecordGetDungeonRecordRequest()
 end
 
 function AbyssFightSuccView:clickClose()
@@ -125,7 +127,7 @@ function AbyssFightSuccView:_refreshHeroGroup()
 		local heroUid = fightParam.mySideUids[i]
 		local equip = fightParam.equips[i]
 		local equipUid = equip and equip.equipUid[1]
-		local heroMo = HeroModel.instance:getById(heroUid)
+		local heroMo = HeroModel.instance:getById(heroUid) or FightHelper.getAssitHeroInfoByUid(heroUid)
 		local equipMo = EquipModel.instance:getEquip(equipUid)
 		local heroItem = self.heroItemList[i]
 
@@ -162,7 +164,7 @@ function AbyssFightSuccView:onCreateTargetItem(itemGo, desc, index)
 end
 
 function AbyssFightSuccView:onClose()
-	return
+	AssistController.instance:dispatchEvent(AssistEvent.CloseAddFriendView)
 end
 
 function AbyssFightSuccView:onDestroyView()

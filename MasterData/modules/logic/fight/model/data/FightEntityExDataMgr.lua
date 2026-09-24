@@ -12,7 +12,7 @@ function FightEntityExDataMgr:getById(entityId)
 	local data = self.exDataDic[entityId]
 
 	if not data then
-		data = FightEntityExData.New()
+		data = FightEntityExData.New(entityId)
 		self.exDataDic[entityId] = data
 	end
 

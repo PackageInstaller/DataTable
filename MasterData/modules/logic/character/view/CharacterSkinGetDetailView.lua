@@ -95,7 +95,7 @@ function CharacterSkinGetDetailView:_setImage()
 			end
 
 			if skinConfig.skinGetBackIcon and skinConfig.skinGetBackIcon ~= "" then
-				self._simageskinbg:LoadImage(ResUrl.getHeadSkinIconLarge(skinConfig.skinGetBackIcon))
+				self._simageskinbg:LoadImage(ResUrl.getHeadSkinIconMiddle(skinConfig.skinGetBackIcon))
 			end
 
 			if skinConfig.skinGetIcon and skinConfig.skinGetIcon ~= "" then

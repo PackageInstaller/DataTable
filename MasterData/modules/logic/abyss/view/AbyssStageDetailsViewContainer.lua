@@ -9,6 +9,9 @@ function AbyssStageDetailsViewContainer:buildViews()
 
 	table.insert(views, AbyssStageDetailsView.New())
 	table.insert(views, TabViewGroup.New(1, "#go_topleft"))
+	table.insert(views, HeroGroupFightAssistBtn.New({
+		parentPath = "Left"
+	}))
 
 	return views
 end

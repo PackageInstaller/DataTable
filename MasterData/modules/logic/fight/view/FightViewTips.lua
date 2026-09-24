@@ -247,13 +247,6 @@ function FightViewTips:_setSkillTip(skillId, entityId, cardInfoMO)
 		end
 	end
 
-	if FightHelper.isHeDuoNieSkill(skillId) then
-		local entityMo = FightDataHelper.entityMgr:getById(entityId)
-		local curCount = entityMo and entityMo:getHeDuoNieBuffData() or 0
-
-		desc = GameUtil.getSubPlaceholderLuaLangOneParam(desc, curCount)
-	end
-
 	local linkSkillDesc = self:_buildLinkTag(desc)
 
 	self._txtskilldesc.text = HeroSkillModel.instance:skillDesToSpot(linkSkillDesc, "#c56131", "#7c93ad")

@@ -7,6 +7,7 @@ local fields = {
 	path = 8,
 	video = 7,
 	guide = 6,
+	heroSkinIds = 12,
 	seasonIds = 5,
 	roomTheme = 10,
 	heroStoryIds = 11,

@@ -60,7 +60,7 @@ function XRuiAnYiTaskItem:_delayFinish()
 end
 
 function XRuiAnYiTaskItem:_delayFinishAll()
-	TaskRpc.instance:sendFinishAllTaskRequest(TaskEnum.TaskType.Activity220)
+	Activity220Controller.instance:finishAllTask(VersionActivity3_7Enum.ActivityId.XRuiAnYi)
 end
 
 function XRuiAnYiTaskItem:_editableInitView()

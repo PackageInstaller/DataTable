@@ -60,7 +60,7 @@ function LorentzTaskItem:_delayFinish()
 end
 
 function LorentzTaskItem:_delayFinishAll()
-	TaskRpc.instance:sendFinishAllTaskRequest(TaskEnum.TaskType.Activity220)
+	Activity220Controller.instance:finishAllTask(VersionActivity3_5Enum.ActivityId.Lorentz)
 end
 
 function LorentzTaskItem:_editableInitView()

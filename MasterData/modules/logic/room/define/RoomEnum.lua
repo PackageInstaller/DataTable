@@ -298,6 +298,7 @@ RoomEnum.EntityChildKey = {
 	ContainerGOKey = "container",
 	CritterPoint = "cititer_point_%s",
 	InteractSpineNode = "building%s",
+	Suit1GoKey = "effectSet",
 	WaterBlockEffectGOKey = "water_block_effect",
 	OutSideKey = "outSide",
 	PositionZeroKey = "positionzero",

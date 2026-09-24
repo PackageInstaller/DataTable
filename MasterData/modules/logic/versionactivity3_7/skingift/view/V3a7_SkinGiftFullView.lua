@@ -18,6 +18,7 @@ function V3a7_SkinGiftFullView:onInitView()
 	self._txtnum = gohelper.findChildText(self.viewGO, "Root/right/go_reward/txtbg/#txt_num")
 	self._goclaim = gohelper.findChild(self.viewGO, "Root/right/go_reward/#go_claim")
 	self._btnclaim = gohelper.findChildButtonWithAudio(self.viewGO, "Root/right/go_reward/#go_claim/#btn_claim")
+	self._btnclick = gohelper.findChildButtonWithAudio(self.viewGO, "Root/right/go_reward/#btn_click")
 	self._gohasget = gohelper.findChild(self.viewGO, "Root/right/go_reward/#go_hasget")
 	self._btnbuy = gohelper.findChildButtonWithAudio(self.viewGO, "Root/right/Btn/#btn_buy")
 	self._txtget = gohelper.findChildText(self.viewGO, "Root/right/Btn/#btn_buy/#txt_get")
@@ -35,6 +36,7 @@ function V3a7_SkinGiftFullView:addEvents()
 	self._btntitle01:AddClickListener(self._btntitle01OnClick, self)
 	self._btntitle02:AddClickListener(self._btntitle02OnClick, self)
 	self._btnclaim:AddClickListener(self._btnclaimOnClick, self)
+	self._btnclick:AddClickListener(self._btnclickOnClick, self)
 	self._btnbuy:AddClickListener(self._btnbuyOnClick, self)
 end
 
@@ -45,6 +47,7 @@ function V3a7_SkinGiftFullView:removeEvents()
 	self._btntitle01:RemoveClickListener()
 	self._btntitle02:RemoveClickListener()
 	self._btnclaim:RemoveClickListener()
+	self._btnclick:RemoveClickListener()
 	self._btnbuy:RemoveClickListener()
 end
 
@@ -91,6 +94,21 @@ function V3a7_SkinGiftFullView:_btnclaimOnClick()
 	end
 
 	Activity101Rpc.instance:sendGet101BonusRequest(self.actId, V3a7_SkinGiftEnum.RewardIndex)
+end
+
+function V3a7_SkinGiftFullView:_btnclickOnClick()
+	local state = ActivityType101Model.instance:getType101InfoState(self.actId, V3a7_SkinGiftEnum.RewardIndex)
+	local canGet = state == ActivityEnum.Act101RewardState.Available
+
+	if canGet then
+		return
+	end
+
+	local config = ActivityType101Config.instance:getDayCO(self.actId, V3a7_SkinGiftEnum.RewardIndex)
+	local bonusParamStr = string.split(config.bonus, "|")[1]
+	local bonusParam = string.split(bonusParamStr, "#")
+
+	MaterialTipController.instance:showMaterialInfo(bonusParam[1], bonusParam[2])
 end
 
 function V3a7_SkinGiftFullView:_btnbuyOnClick()
@@ -165,8 +183,8 @@ function V3a7_SkinGiftFullView:checkParam()
 	end
 
 	self.actId = self.viewParam.actId
-	self.packageId = V3a7_SkinGiftEnum.PackageId
-	self.itemId = V3a7_SkinGiftEnum.ItemId
+	self.packageId = V3a7_SkinGiftConfig.instance:getSkinPackageId(self.actId)
+	self.itemId = V3a7_SkinGiftConfig.instance:getSkinItemId(self.actId)
 end
 
 function V3a7_SkinGiftFullView:refreshUI()
@@ -214,7 +232,7 @@ function V3a7_SkinGiftFullView:refreshReward()
 
 	self._simageicon:LoadImage(icon)
 
-	self._txtnum.text = string.format("x%s", tostring(num))
+	self._txtnum.text = string.format("×%s", tostring(num))
 end
 
 function V3a7_SkinGiftFullView:refreshRewardState()
@@ -223,6 +241,7 @@ function V3a7_SkinGiftFullView:refreshRewardState()
 	local canGet = state == ActivityEnum.Act101RewardState.Available
 
 	gohelper.setActive(self._gohasget, isGet)
+	gohelper.setActive(self._btnclick, isGet)
 	gohelper.setActive(self._goclaim, canGet)
 end
 
@@ -245,7 +264,7 @@ function V3a7_SkinGiftFullView:refreshPackageInfo()
 	gohelper.setActive(self._gohasbuy, isSoldOut)
 	gohelper.setActive(self._btnbuy, not isSoldOut)
 
-	self._txtget.text = PayModel.instance:getProductPriceScaledSymbol(packageConfig.id, 31)
+	self._txtget.text = PayModel.instance:getProductPrice(packageConfig.id)
 end
 
 function V3a7_SkinGiftFullView:onClose()

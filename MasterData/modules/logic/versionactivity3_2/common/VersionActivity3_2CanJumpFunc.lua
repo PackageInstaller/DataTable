@@ -65,4 +65,60 @@ function VersionActivity3_2CanJumpFunc:canJumpTo13209(jumpParamArray)
 	return true, JumpController.DefaultToastId, JumpController.DefaultToastParam
 end
 
+function VersionActivity3_2CanJumpFunc:canJumpTo13229(paramsList)
+	local enterViewId = VersionActivity3_2Enum.ActivityId.EnterView
+	local status, toastId, toastParamList = ActivityHelper.getActivityStatusAndToast(enterViewId)
+
+	if status ~= ActivityEnum.ActivityStatus.Normal then
+		return false, toastId, toastParamList
+	end
+
+	local actId = VersionActivity3_2Enum.ActivityId.HuiDiaoLan
+	local actStatus, actToastId, actToastParamList = ActivityHelper.getActivityStatusAndToast(actId)
+
+	if actStatus ~= ActivityEnum.ActivityStatus.Normal then
+		return false, actToastId, actToastParamList
+	end
+
+	local episodeId = paramsList and paramsList[3]
+
+	if episodeId then
+		local isUnlock = HuiDiaoLanModel.instance:getEpisodeInfo(episodeId)
+
+		if not isUnlock then
+			return false, ToastEnum.Activity142PreEpisodeNotClear
+		end
+	end
+
+	return true, JumpController.DefaultToastId, JumpController.DefaultToastParam
+end
+
+function VersionActivity3_2CanJumpFunc:canJumpTo13231(paramsList)
+	local enterViewId = VersionActivity3_2Enum.ActivityId.EnterView
+	local status, toastId, toastParamList = ActivityHelper.getActivityStatusAndToast(enterViewId)
+
+	if status ~= ActivityEnum.ActivityStatus.Normal then
+		return false, toastId, toastParamList
+	end
+
+	local actId = VersionActivity3_2Enum.ActivityId.BeiLiEr
+	local actStatus, actToastId, actToastParamList = ActivityHelper.getActivityStatusAndToast(actId)
+
+	if actStatus ~= ActivityEnum.ActivityStatus.Normal then
+		return false, actToastId, actToastParamList
+	end
+
+	local episodeId = paramsList and paramsList[3]
+
+	if episodeId then
+		local isUnlock = BeiLiErModel.instance:isEpisodeUnlock(episodeId)
+
+		if not isUnlock then
+			return false, ToastEnum.WarmUpGotoOrder, JumpController.DefaultToastParam
+		end
+	end
+
+	return true, JumpController.DefaultToastId, JumpController.DefaultToastParam
+end
+
 return VersionActivity3_2CanJumpFunc

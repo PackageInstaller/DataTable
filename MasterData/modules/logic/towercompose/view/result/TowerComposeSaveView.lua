@@ -232,10 +232,12 @@ function TowerComposeSaveView:refreshTeamHero(planeItem, planeMo)
 			}
 			heroItem.simageRole = gohelper.findChildSingleImage(heroItem.go, "simage_role")
 			heroItem.goEmpty = gohelper.findChild(heroItem.go, "go_empty")
+			heroItem.goTrialTag = gohelper.findChild(heroItem.go, "go_trialtag")
 			planeItem.heroItemMap[pos] = heroItem
 		end
 
 		gohelper.setActive(heroItem.go, true)
+		gohelper.setActive(heroItem.goTrialTag, false)
 
 		if teamInfoData.heros then
 			local heroData = teamInfoData.heros[pos]
@@ -248,9 +250,21 @@ function TowerComposeSaveView:refreshTeamHero(planeItem, planeMo)
 					heroItem.simageRole:LoadImage(ResUrl.getRoomHeadIcon(skinConfig.headIcon))
 				elseif heroData.heroId > 0 then
 					local heroMo = HeroModel.instance:getByHeroId(heroData.heroId)
-					local skinConfig = SkinConfig.instance:getSkinCo(heroMo.skin)
 
-					heroItem.simageRole:LoadImage(ResUrl.getRoomHeadIcon(skinConfig.headIcon))
+					if heroData.assistMo then
+						heroMo = heroData.assistMo.heroMO
+
+						gohelper.setActive(heroItem.goTrialTag, true)
+					end
+
+					if heroMo then
+						local skinConfig = SkinConfig.instance:getSkinCo(heroMo.skin)
+
+						heroItem.simageRole:LoadImage(ResUrl.getRoomHeadIcon(skinConfig.headIcon))
+					else
+						gohelper.setActive(heroItem.simageRole.gameObject, true)
+						gohelper.setActive(heroItem.goEmpty, false)
+					end
 				else
 					gohelper.setActive(heroItem.simageRole.gameObject, false)
 					gohelper.setActive(heroItem.goEmpty, true)

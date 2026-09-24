@@ -13,16 +13,18 @@ function FightUISwitchEquipView:onInitView()
 	self._gonormal = gohelper.findChild(self.viewGO, "root/#go_bottom/#scroll_effect/Viewport/Content/#go_effectItem/#go_normal")
 	self._btnclick = gohelper.findChildButtonWithAudio(self.viewGO, "root/#go_bottom/#scroll_effect/Viewport/Content/#go_effectItem/#go_normal/#btn_click")
 	self._goselect = gohelper.findChild(self.viewGO, "root/#go_bottom/#scroll_effect/Viewport/Content/#go_effectItem/#go_select")
-	self._goSceneName = gohelper.findChild(self.viewGO, "root/#go_bottom/#go_SceneName")
-	self._txtSceneName = gohelper.findChildText(self.viewGO, "root/#go_bottom/#go_SceneName/#txt_SceneName")
-	self._txtTime = gohelper.findChildText(self.viewGO, "root/#go_bottom/#go_SceneName/#txt_SceneName/#txt_Time")
+	self._goSceneName = gohelper.findChild(self.viewGO, "root/#go_bottom/LayoutGroup/layout/#go_SceneName")
+	self._txtSceneName = gohelper.findChildText(self.viewGO, "root/#go_bottom/LayoutGroup/layout/#go_SceneName/#txt_SceneName")
+	self._txtTime = gohelper.findChildText(self.viewGO, "root/#go_bottom/LayoutGroup/layout/#go_Time/#txt_Time")
 	self._txtSceneDescr = gohelper.findChildText(self.viewGO, "root/#go_bottom/#txt_SceneDescr")
 	self._btnequip = gohelper.findChildButtonWithAudio(self.viewGO, "root/#go_bottom/#btn_equip")
 	self._gouse = gohelper.findChild(self.viewGO, "root/#go_bottom/#go_use")
+	self._goTitle = gohelper.findChild(self.viewGO, "root/Title/simage_cardTitle")
 	self._gocardTitle = gohelper.findChild(self.viewGO, "root/Title/simage_cardTitle")
 	self._gonumTitle = gohelper.findChild(self.viewGO, "root/Title/simage_numTitle")
 	self._gouiTitle = gohelper.findChild(self.viewGO, "root/Title/simage_uiTitle")
 	self._btnclose = gohelper.findChildButtonWithAudio(self.viewGO, "root/#btn_close")
+	self._btnHide = gohelper.findChildButtonWithAudio(self.viewGO, "root/#go_bottom/LayoutGroup/#go_HideBtn/#btn_Hide")
 
 	if self._editableInitView then
 		self:_editableInitView()
@@ -33,12 +35,30 @@ function FightUISwitchEquipView:addEvents()
 	self._btnclick:AddClickListener(self._btnclickOnClick, self)
 	self._btnequip:AddClickListener(self._btnequipOnClick, self)
 	self._btnclose:AddClickListener(self._btncloseOnClick, self)
+	self._btnHide:AddClickListener(self._btnHideOnClick, self)
+	self.addEventCb(self, ViewMgr.instance, ViewEvent.OnCloseView, self._onCloseView, self)
 end
 
 function FightUISwitchEquipView:removeEvents()
 	self._btnclick:RemoveClickListener()
 	self._btnequip:RemoveClickListener()
 	self._btnclose:RemoveClickListener()
+	self._btnHide:RemoveClickListener()
+	self.removeEventCb(self, ViewMgr.instance, ViewEvent.OnCloseView, self._onCloseView, self)
+end
+
+function FightUISwitchEquipView:_btnHideOnClick()
+	local co = self._mo:getItemConfig()
+
+	if not co then
+		return
+	end
+
+	FightUISwitchController.instance:openSceneView(co.id)
+end
+
+function FightUISwitchEquipView:_btnshowOnClick()
+	self:_btnHideOnClick()
 end
 
 function FightUISwitchEquipView:_btnclickOnClick()
@@ -47,7 +67,7 @@ end
 
 function FightUISwitchEquipView:_btnequipOnClick()
 	FightUISwitchModel.instance:useStyleId(self._mo.classify, self._mo.id)
-	self:_refreshBtn()
+	self._equipBtnAnimatorPlayer:Play("click", self._refreshBtn, self)
 end
 
 function FightUISwitchEquipView:_btncloseOnClick()
@@ -55,7 +75,14 @@ function FightUISwitchEquipView:_btncloseOnClick()
 end
 
 function FightUISwitchEquipView:_editableInitView()
-	return
+	self._rootAnimator = self.viewGO:GetComponent("Animator")
+	self._equipBtnAnimatorPlayer = SLFramework.AnimatorPlayer.Get(self._btnequip.gameObject)
+end
+
+function FightUISwitchEquipView:_onCloseView(viewName)
+	if viewName == ViewName.FightUISwitchSceneView then
+		self._rootAnimator:Play("fightuiswitchequipview_open", 0, 0)
+	end
 end
 
 function FightUISwitchEquipView:onUpdateParam()
@@ -67,6 +94,8 @@ function FightUISwitchEquipView:onClickModalMask()
 end
 
 function FightUISwitchEquipView:onOpen()
+	self._showUI = true
+
 	self:_refreshView()
 end
 

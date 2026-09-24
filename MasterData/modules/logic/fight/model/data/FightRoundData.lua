@@ -157,6 +157,11 @@ function FightRoundData:onConstructor(proto)
 	end
 
 	self.lastChangeHeroUid = proto.lastChangeHeroUid
+	self.qteTotalHurt = proto.qteTotalHurt
+end
+
+function FightRoundData:getQteTotal()
+	return self.qteTotalHurt
 end
 
 function FightRoundData:buildFightStep(stepProtoList)

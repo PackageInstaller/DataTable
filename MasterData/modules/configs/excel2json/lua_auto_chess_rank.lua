@@ -10,6 +10,7 @@ local fields = {
 	score = 6,
 	rankId = 2,
 	isShow = 9,
+	loseStreak = 11,
 	maxRound = 10,
 	icon = 3,
 	activityId = 1,

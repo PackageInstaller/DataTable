@@ -135,6 +135,10 @@ function StoryDialogItem:hideDialog()
 	self._txtcontentcn.text = ""
 	self._txtsoftlight.text = ""
 
+	if self._conMark then
+		self._conMark:SetMarksTop({})
+	end
+
 	if self._conMat then
 		self._conMat:DisableKeyword("_GRADUAL_ON")
 	end
@@ -209,7 +213,7 @@ function StoryDialogItem:playMagicText(txt, callback, callbackobj)
 		self._magicEff:init(self._gocontent)
 	end
 
-	self._magicEff:start(self._stepCo, txt, callback, callbackobj)
+	self._magicEff:start(self._stepCo, txt, self._magicConFinished, self)
 
 	local disableAudio = self._stepCo.conversation.disableAudio[GameLanguageMgr.instance:getVoiceTypeStoryIndex()] or false
 
@@ -389,9 +393,6 @@ function StoryDialogItem:playNormalText(txt, callback, callbackobj)
 		StoryTool.enablePostProcess(true)
 		PostProcessingMgr.instance:setUIPPValue("localBloomActive", true)
 		PostProcessingMgr.instance:setUIPPValue("bloomDiffusion", 5)
-
-		self._softLightBloomOn = true
-
 		gohelper.setActive(self._goline, false)
 		gohelper.setActive(self._gonexticon, false)
 		gohelper.setActive(self._goblackbottom, self._stepCo.conversation.effType == StoryEnum.ConversationEffectType.SoftLightDarkBg)
@@ -402,13 +403,6 @@ function StoryDialogItem:playNormalText(txt, callback, callbackobj)
 		self._targetTxt.fontSharedMaterial = self._fontNormalMat
 
 		self._targetTxt.fontSharedMaterial:SetFloat("_BloomFactor", 0)
-
-		if self._softLightBloomOn then
-			PostProcessingMgr.instance:setUIPPValue("localBloomActive", false)
-			PostProcessingMgr.instance:setUIPPValue("bloomDiffusion", 7)
-
-			self._softLightBloomOn = false
-		end
 
 		local showContent = self._stepCo.conversation.type ~= StoryEnum.ConversationType.IrregularShake
 
@@ -774,6 +768,10 @@ function StoryDialogItem:_delayShow()
 
 	self._dotMat:SetFloat(self._LineMinYId, height)
 	self._dotMat:SetFloat(self._LineMaxYId, height)
+
+	if self._stepCo.conversation.type ~= StoryEnum.ConversationType.ScreenDialog then
+		self._conMark:SetMarksTop(self._markTopList)
+	end
 
 	self._textInfo = self._targetTxt:GetTextInfo(self._subemtext)
 	self._lineInfoList = {}

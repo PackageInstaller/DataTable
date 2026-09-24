@@ -907,13 +907,19 @@ FightLogHelper.EffectTypeNameDict = {
 	[FightEnum.EffectType.COUNTERCHANGE] = "计数器变化(变化后的值)",
 	[FightEnum.EffectType.DEVICEPOWERCLEAR] = "装置能量清空",
 	[FightEnum.EffectType.DEVICESTOP] = "装置停止",
+	[FightEnum.EffectType.QTEPLUGINCREATE] = "QTE插件创建",
+	[FightEnum.EffectType.QTEPLUGINMAXCHANGE] = "QTE插件最大值变化",
+	[FightEnum.EffectType.QTEPLUGINUPDATE] = "QTE更新",
+	[FightEnum.EffectType.QTEROUNDCHANGE] = "QTE回合变化",
+	[FightEnum.EffectType.QTETOTALDAMAGEUPDATE] = "QTE回合总伤害更新",
 	[FightEnum.EffectType.TRIGGER] = "触发器",
 	[FightEnum.EffectType.EZIOBIGSKILLDAMAGE] = "EZIO大招伤害",
 	[FightEnum.EffectType.EZIOBIGSKILLORIGINDAMAGE] = "EZIO大招本源创伤",
 	[FightEnum.EffectType.UPDATEITEMPLAYERSKILL] = "更新道具主角技能",
 	[FightEnum.EffectType.EZIOBIGSKILLEXIT] = "EZIO大招意外退出",
 	[FightEnum.EffectType.TWINSPOWERUPCOUNT] = "TwinsPower双生计数",
-	[FightEnum.EffectType.TWINSUPCOUNTER] = "TwinsUpByCounter双生提升"
+	[FightEnum.EffectType.TWINSUPCOUNTER] = "TwinsUpByCounter双生提升",
+	[FightEnum.EffectType.ENTITYSTATUSUPDATE] = "实体状态更新"
 }
 
 function FightLogHelper.getEffectTypeName(effectType)

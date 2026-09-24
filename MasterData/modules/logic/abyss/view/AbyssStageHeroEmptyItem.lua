@@ -13,6 +13,7 @@ function AbyssStageHeroEmptyItem:init(go)
 	self._imageheroicon = gohelper.findChildImage(self.viewGO, "#go_hero/#simage_heroicon")
 	self._imagecareer = gohelper.findChildImage(self.viewGO, "#go_hero/#image_career")
 	self.btn_modify = gohelper.findChildButton(self.viewGO, "")
+	self._goAssist = gohelper.findChild(self.viewGO, "#go_hero/#go_assist")
 	self._uiEffectComp = ZProj.UIEffectsCollection.Get(self.viewGO)
 
 	self._uiEffectComp:SetGray(false)
@@ -71,11 +72,14 @@ function AbyssStageHeroEmptyItem:setInfo(data)
 		logNormal("AbyssStageHeroEmptyItem:setRecommendRemoveParam" .. "stageId: " .. data.stageId .. " pos: " .. data.pos .. " heroUid: " .. data.heroId)
 
 		heroId = self.recommendRemoveParam.heroId
+
+		local skinId = self.recommendRemoveParam.skinId
+
 		self.recommendRemoveParam = nil
 
 		self._animator:Play("death", 0, 0)
 		gohelper.setActive(self._gohero, true)
-		self:refreshUI(heroId)
+		self:refreshUI(heroId, skinId)
 		TaskDispatcher.runDelay(self._onAnimPlayFinish, self, 1)
 
 		return
@@ -113,6 +117,8 @@ function AbyssStageHeroEmptyItem:setInfo(data)
 					TaskDispatcher.runDelay(self._onAnimPlayFinish, self, 1)
 				elseif self.lastHeroId == nil and heroId ~= 0 and not showHideAnim or self.lastHeroId ~= data.heroId and state == AbyssEnum.HeroState.NoUsed or self.lastHeroId == data.heroId and self.lastUseState == AbyssEnum.HeroState.IsUsed and state == AbyssEnum.HeroState.NoUsed then
 					self._animator:Play("in", 0, 0)
+				else
+					self._animator:Play("idle", 0, 0)
 				end
 
 				self.lastHeroId = heroId
@@ -122,31 +128,24 @@ function AbyssStageHeroEmptyItem:setInfo(data)
 					return
 				end
 
-				self:refreshUI(heroId)
+				self:refreshUI(heroId, data.skinId)
 			end
 		end
 	end
 end
 
-function AbyssStageHeroEmptyItem:refreshUI(heroId)
+function AbyssStageHeroEmptyItem:refreshUI(heroId, skinId)
 	local careerId
-	local heroMo = HeroModel.instance:getByHeroId(heroId)
+	local heroConfig = HeroConfig.instance:getHeroCO(heroId)
+	local skinConfig = SkinConfig.instance:getSkinCo(skinId)
 
-	if heroMo then
-		local skinConfig = SkinConfig.instance:getSkinCo(heroMo.skin)
+	skinConfig = skinConfig or SkinConfig.instance:getSkinCo(heroConfig.skinId)
 
-		self._simageheroicon:LoadImage(ResUrl.getHeadIconSmall(skinConfig.headIcon))
+	local isAssist = self.data.isAssist
 
-		careerId = heroMo.config.career
-	else
-		local heroConfig = HeroConfig.instance:getHeroCO(heroId)
-
-		self._simageheroicon:LoadImage(ResUrl.getHeadIconSmall(heroConfig.skinId))
-
-		careerId = heroConfig.career
-	end
-
-	UISpriteSetMgr.instance:setCommonSprite(self._imagecareer, "lssx_" .. tostring(careerId), nil)
+	gohelper.setActive(self._goAssist, isAssist)
+	self._simageheroicon:LoadImage(ResUrl.getHeadIconSmall(skinConfig.headIcon))
+	UISpriteSetMgr.instance:setCommonSprite(self._imagecareer, "lssx_" .. tostring(heroConfig.career), nil)
 end
 
 function AbyssStageHeroEmptyItem:_onAnimPlayFinish()

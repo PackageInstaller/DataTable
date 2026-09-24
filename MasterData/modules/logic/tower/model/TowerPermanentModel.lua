@@ -25,6 +25,10 @@ function TowerPermanentModel:initDataInfo()
 	self.curSelectLayer = 1
 	self.curSelectEpisodeId = 0
 	self.realSelectMap = {}
+	self.normalAssistMo = nil
+	self.normalEditorAssistMo = nil
+	self.eliteAssistMoMap = {}
+	self.eliteEditorAssistMoMap = {}
 end
 
 function TowerPermanentModel:cleanData()
@@ -388,6 +392,100 @@ function TowerPermanentModel:checkCanShowMopUpReddot()
 	end
 
 	return false
+end
+
+function TowerPermanentModel:getFightParamInfo()
+	local fightParam = TowerModel.instance:getRecordFightParam()
+	local layerId = fightParam.layerId
+	local permanentCo = TowerConfig.instance:getPermanentEpisodeCo(layerId)
+	local isElite = permanentCo and permanentCo.isElite == 1
+
+	return isElite, fightParam
+end
+
+function TowerPermanentModel:setAssistMo(assistMo, index)
+	local isElite, fightParam = self:getFightParamInfo()
+
+	if isElite then
+		self.eliteAssistMoMap[fightParam.layerId] = self.eliteAssistMoMap[fightParam.layerId] or {}
+
+		local mo = self.eliteAssistMoMap[fightParam.layerId][fightParam.episodeId]
+
+		if not mo then
+			mo = HeroSingleGroupMO.New()
+			self.eliteAssistMoMap[fightParam.layerId][fightParam.episodeId] = mo
+		end
+
+		mo:init(index, assistMo.heroUid)
+		mo:setAssist(assistMo)
+		self:setEditorAssistMo(assistMo)
+	else
+		self.normalAssistMo = self.normalAssistMo or HeroSingleGroupMO.New()
+
+		self.normalAssistMo:init(index, assistMo.heroUid)
+		self.normalAssistMo:setAssist(assistMo)
+		self:setEditorAssistMo(assistMo)
+	end
+end
+
+function TowerPermanentModel:getAssistMo()
+	local isElite, fightParam = self:getFightParamInfo()
+
+	if isElite then
+		self.eliteAssistMoMap[fightParam.layerId] = self.eliteAssistMoMap[fightParam.layerId] or {}
+
+		return self.eliteAssistMoMap[fightParam.layerId][fightParam.episodeId]
+	else
+		return self.normalAssistMo
+	end
+end
+
+function TowerPermanentModel:setEditorAssistMo(assistMo)
+	local isElite, fightParam = self:getFightParamInfo()
+
+	if isElite then
+		self.eliteEditorAssistMoMap[fightParam.layerId] = self.eliteEditorAssistMoMap[fightParam.layerId] or {}
+		self.eliteEditorAssistMoMap[fightParam.layerId][fightParam.episodeId] = assistMo
+	else
+		self.normalEditorAssistMo = assistMo
+	end
+end
+
+function TowerPermanentModel:getEditorAssistMo()
+	local isElite, fightParam = self:getFightParamInfo()
+
+	if isElite then
+		return self.eliteEditorAssistMoMap[fightParam.layerId] and self.eliteEditorAssistMoMap[fightParam.layerId][fightParam.episodeId]
+	else
+		return self.normalEditorAssistMo
+	end
+end
+
+function TowerPermanentModel:clearAssist(isClearEditor)
+	local isElite, fightParam = self:getFightParamInfo()
+
+	if isElite then
+		if self.eliteAssistMoMap[fightParam.layerId] and self.eliteAssistMoMap[fightParam.layerId][fightParam.episodeId] then
+			self.eliteAssistMoMap[fightParam.layerId][fightParam.episodeId] = nil
+		end
+
+		if isClearEditor and self.eliteEditorAssistMoMap[fightParam.layerId] and self.eliteEditorAssistMoMap[fightParam.layerId][fightParam.episodeId] then
+			self.eliteEditorAssistMoMap[fightParam.layerId][fightParam.episodeId] = nil
+		end
+	else
+		self.normalAssistMo = nil
+
+		if isClearEditor then
+			self.normalEditorAssistMo = nil
+		end
+	end
+end
+
+function TowerPermanentModel:clearAllAssist()
+	self.eliteAssistMoMap = {}
+	self.eliteEditorAssistMoMap = {}
+	self.normalAssistMo = nil
+	self.normalEditorAssistMo = nil
 end
 
 TowerPermanentModel.instance = TowerPermanentModel.New()

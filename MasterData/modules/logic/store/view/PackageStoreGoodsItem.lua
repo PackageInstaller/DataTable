@@ -110,6 +110,16 @@ function PackageStoreGoodsItem:_onClick()
 		return
 	end
 
+	if StoreConfig.instance:getSixStarGiftStoreChargeId() == self._mo.goodsId then
+		local actId = ActivityType101Config.instance:getSixStarGiftActId()
+
+		ViewMgr.instance:openView(ViewName.SixStarGift_PanelView, {
+			actId = actId
+		})
+
+		return
+	end
+
 	if self._cfgType == StoreEnum.StoreChargeType.LinkGiftGoods then
 		local chargeConditionalConfig = StoreConfig.instance:getChargeConditionalConfig(self._mo.config.taskid)
 
@@ -406,7 +416,7 @@ function PackageStoreGoodsItem:onUpdateMO(mo)
 
 	gohelper.setActive(self._gowenhao, false)
 
-	if self._mo.goodsId == StoreEnum.MonthCardGoodsId then
+	if self._mo.goodsId == StoreConfig.instance:getMonthCardStoreChargeId() then
 		gohelper.setActive(self._gowenhao, true)
 
 		self._wenhaoClick = gohelper.getClick(self._gowenhao)
@@ -416,7 +426,7 @@ function PackageStoreGoodsItem:onUpdateMO(mo)
 		local showtag = StoreHelper.checkMonthCardLevelUpTagOpen()
 
 		gohelper.setActive(self._gomooncardup, showtag)
-	elseif self._mo.goodsId == StoreEnum.SeasonCardGoodsId then
+	elseif self._mo.goodsId == StoreConfig.instance:getSeasonCardStoreChargeId() then
 		gohelper.setActive(self._gowenhao, true)
 
 		self._wenhaoClick = gohelper.getClick(self._gowenhao)
@@ -534,21 +544,17 @@ function PackageStoreGoodsItem:_showSeasonCardTips()
 	HelpController.instance:openStoreTipView(CommonConfig.instance:getConstStr(ConstEnum.SeasonCardTipsDesc))
 end
 
-local kActiveSummonSimulationPickFXGoodsId = {
-	811466,
-	StoreEnum.SeasonCardGoodsId
-}
-
 function PackageStoreGoodsItem:_onUpdateMO_gosummonSimulationPickFX(mo)
 	local isActive = mo.config.bigImg == StoreEnum.SummonSimulationPick
 
 	if not isActive then
-		for _, goodsId in ipairs(kActiveSummonSimulationPickFXGoodsId) do
-			if mo.goodsId == goodsId then
-				isActive = true
+		local kActiveSummonSimulationPickFXGoodsId = {
+			[811466] = true,
+			[StoreConfig.instance:getSeasonCardStoreChargeId()] = true
+		}
 
-				break
-			end
+		if kActiveSummonSimulationPickFXGoodsId[mo.goodsId] then
+			isActive = true
 		end
 	end
 

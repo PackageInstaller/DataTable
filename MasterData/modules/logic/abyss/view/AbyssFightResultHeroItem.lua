@@ -26,6 +26,9 @@ function AbyssFightResultHeroItem:init(go)
 	self._txtequiplvl = gohelper.findChildTextMesh(go, "heroitemani/equip/moveContainer/equiplv/txtequiplv")
 	self._goEmpty = gohelper.findChild(go, "empty")
 	self._goTags = gohelper.findChild(go, "heroitemani/tags")
+	self._goTrialTag = gohelper.findChild(go, "heroitemani/tags/trialtag")
+	self._goStoryTag = gohelper.findChild(go, "heroitemani/tags/storytag")
+	self._goAidTag = gohelper.findChild(go, "heroitemani/tags/aidtag")
 	self._goCounter = gohelper.findChild(go, "heroitemani/hero/#go_counter")
 end
 
@@ -35,9 +38,10 @@ function AbyssFightResultHeroItem:setData(heroMo, equipMo)
 
 	self:_refreshHero()
 	self:_refreshEquip()
+	gohelper.setActive(self._goStoryTag, false)
+	gohelper.setActive(self._goAidTag, false)
 	gohelper.setActive(self._gohero, heroMo ~= nil)
 	gohelper.setActive(self._goEmpty, heroMo == nil)
-	gohelper.setActive(self._goTags, false)
 	gohelper.setActive(self._goemptyequip, false)
 	gohelper.setActive(self._goCounter, false)
 end
@@ -48,6 +52,11 @@ function AbyssFightResultHeroItem:_refreshHero()
 	if not heroMo then
 		return
 	end
+
+	local isAssist = heroMo.belongOtherPlayer
+
+	gohelper.setActive(self._goTags, isAssist)
+	gohelper.setActive(self._goTrialTag, isAssist)
 
 	local skinCO = FightConfig.instance:getSkinCO(heroMo.skin)
 	local headIconMiddleResUrl = ResUrl.getHeadIconMiddle(skinCO.retangleIcon)

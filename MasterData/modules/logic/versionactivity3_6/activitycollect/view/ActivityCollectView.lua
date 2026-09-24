@@ -335,6 +335,9 @@ function ActivityCollectView:_refreshAct1Time()
 	local co = ActivityCollectConfig.instance:getPublicityCfg(1, self._actId)
 
 	if not co or not co.activityId or LuaUtil.isEmptyStr(co.activityId) then
+		gohelper.setActive(self._goact1opentime, false)
+		gohelper.setActive(self._goact1limittime, false)
+
 		return
 	end
 
@@ -352,7 +355,10 @@ function ActivityCollectView:_refreshAct1Time()
 		local isUnlock = OpenModel.instance:isFunctionUnlock(openId)
 
 		if not isUnlock then
-			self._txtact1opentime.text = luaLang("sp02_calendar_periphery_locked")
+			local episodeId = OpenConfig.instance:getOpenCo(openId).episodeId
+			local episodetxt = DungeonConfig.instance:getEpisodeDisplay(episodeId)
+
+			self._txtact1opentime.text = formatLuaLang("dungeon_unlock_episode_mode", episodetxt)
 
 			gohelper.setActive(self._btnact1jump.gameObject, false)
 			gohelper.setActive(self._goact1opentime, true)
@@ -384,6 +390,9 @@ function ActivityCollectView:_refreshAct2Time()
 	local co = ActivityCollectConfig.instance:getPublicityCfg(2, self._actId)
 
 	if not co or not co.activityId or co.activityId == 0 then
+		gohelper.setActive(self._goact2opentime, false)
+		gohelper.setActive(self._goact2limittime, false)
+
 		return
 	end
 

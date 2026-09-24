@@ -44,6 +44,10 @@ function GuideConfig:onConfigLoaded(configName, configTable)
 						table.insert(self._invalidListDict[guideCO.id], one)
 					end
 				end
+
+				if guideCO.interruptFinish ~= 1 and guideCO.id >= 39001 then
+					logError("guide interruptFinish is not 1 guideCO.id = ", guideCO.id)
+				end
 			end
 		end
 	elseif configName == "guide_step" then

@@ -9,8 +9,7 @@ local EffectTypes = {
 	[TypeDefEffect] = {
 		[FightEnum.EffectType.MISS] = true,
 		[FightEnum.EffectType.DAMAGE] = true,
-		[FightEnum.EffectType.CRIT] = true,
-		[FightEnum.EffectType.SHIELD] = true
+		[FightEnum.EffectType.CRIT] = true
 	},
 	[TypeHealEffect] = {
 		[FightEnum.EffectType.HEAL] = true,

@@ -455,7 +455,7 @@ function SurvivalViewDefine.initMapDefine(module_views)
 	module_views.SurvivalPickAssistView = {
 		destroy = 0,
 		container = "SurvivalPickAssistViewContainer",
-		mainRes = "ui/viewres/pickassist/pickassistview.prefab",
+		mainRes = "ui/viewres/assist/pickassistview.prefab",
 		layer = "POPUP_TOP",
 		viewType = ViewType.Normal,
 		tabRes = {
@@ -466,7 +466,7 @@ function SurvivalViewDefine.initMapDefine(module_views)
 			}
 		},
 		otherRes = {
-			[1] = "ui/viewres/pickassist/pickassistitem.prefab"
+			PickAssistItem.prefabPath
 		}
 	}
 	module_views.SurvivalInitHeroSelectView = {
@@ -484,8 +484,11 @@ function SurvivalViewDefine.initMapDefine(module_views)
 			}
 		},
 		otherRes = {
-			[1] = "ui/viewres/survival/map/survivalherogroupedititem.prefab",
-			[2] = "ui/viewres/survival/map/survivalherogroupquickedititem.prefab"
+			"ui/viewres/survival/map/survivalherogroupedititem.prefab",
+			"ui/viewres/survival/map/survivalherogroupquickedititem.prefab",
+			NormalCard = "ui/viewres/character/characterbreakthrough_normalcard.prefab",
+			UniqueCard = "ui/viewres/character/characterbreakthrough_uniquecard.prefab",
+			QTERes = "ui/viewres/character/characterbreakthroughview_1.prefab"
 		},
 		customAnimBg = {
 			"bg"
@@ -576,8 +579,11 @@ function SurvivalViewDefine.initMapDefine(module_views)
 			}
 		},
 		otherRes = {
-			[1] = "ui/viewres/survival/map/survivalherogroupedititem.prefab",
-			[2] = "ui/viewres/survival/map/survivalherogroupquickedititem.prefab"
+			"ui/viewres/survival/map/survivalherogroupedititem.prefab",
+			"ui/viewres/survival/map/survivalherogroupquickedititem.prefab",
+			NormalCard = "ui/viewres/character/characterbreakthrough_normalcard.prefab",
+			UniqueCard = "ui/viewres/character/characterbreakthrough_uniquecard.prefab",
+			QTERes = "ui/viewres/character/characterbreakthroughview_1.prefab"
 		},
 		customAnimBg = {
 			"bg"
@@ -837,8 +843,11 @@ function SurvivalViewDefine.initShelterDefine(module_views)
 			}
 		},
 		otherRes = {
-			[1] = "ui/viewres/survival/map/survivalherogroupedititem.prefab",
-			[2] = "ui/viewres/survival/map/survivalherogroupquickedititem.prefab"
+			"ui/viewres/survival/map/survivalherogroupedititem.prefab",
+			"ui/viewres/survival/map/survivalherogroupquickedititem.prefab",
+			NormalCard = "ui/viewres/character/characterbreakthrough_normalcard.prefab",
+			UniqueCard = "ui/viewres/character/characterbreakthrough_uniquecard.prefab",
+			QTERes = "ui/viewres/character/characterbreakthroughview_1.prefab"
 		},
 		customAnimBg = {
 			"bg"

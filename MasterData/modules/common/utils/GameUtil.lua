@@ -334,6 +334,20 @@ function GameUtil.numberDisplay(number)
 	end
 end
 
+function GameUtil.numberDisplayCustom(number, kCount, mCount)
+	local num = tonumber(number)
+	local kStart = 10^kCount - 1
+	local mStart = 10^mCount - 1
+
+	if num <= kStart then
+		return num
+	elseif num <= mStart and kStart < num then
+		return math.floor(num / 1000) .. "K"
+	else
+		return math.floor(num / 1000000) .. "M"
+	end
+end
+
 local romanNums = {
 	"I",
 	"II",
@@ -1300,6 +1314,35 @@ function GameUtil.setTbValue(t, k, ...)
 	end
 
 	return GameUtil.setTbValue(tb, ...)
+end
+
+function GameUtil.listToDict(list, dictKey, usePairs)
+	if type(list) ~= "table" then
+		return nil
+	end
+
+	if usePairs then
+		if not pairs then
+			local func = ipairs
+			local dict = {}
+
+			for k, v in func(list) do
+				if not dictKey or dictKey and type(v) == "table" then
+					if dictKey then
+						if not v[dictKey] then
+							local key = v
+
+							if key ~= nil then
+								dict[key] = k
+							end
+						end
+					end
+				end
+			end
+
+			return dict
+		end
+	end
 end
 
 function GameUtil.rpcInfoToMo(info, cls, oldMo)

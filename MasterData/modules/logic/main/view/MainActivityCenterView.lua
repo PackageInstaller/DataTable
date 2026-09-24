@@ -229,6 +229,7 @@ function MainActivityCenterView:_freshBtns()
 	self:_checkActivityImgVisible()
 	self:_checkAct236Btn()
 	self:_checkActSP02_PaoMianBtn()
+	self:_checkConcertLimitBtn()
 	self:_sortBtns()
 end
 
@@ -762,6 +763,27 @@ function MainActivityCenterView:_checkActSP02_PaoMianBtn()
 	self._sp02PaoMianItem:refresh()
 end
 
+function MainActivityCenterView:_checkConcertLimitBtn()
+	local actId = VersionActivity4_0Enum.ActivityId.ConcertLimitMain
+	local isOnline = ActivityHelper.isOpen(actId)
+
+	if not isOnline then
+		GameUtil.onDestroyViewMember(self, "_actConcertLimitItem")
+
+		return
+	end
+
+	if not self._actConcertLimitItem then
+		local go = gohelper.cloneInPlace(self._itemGo)
+
+		self._actConcertLimitItem = MonoHelper.addNoUpdateLuaComOnceToGo(go, ConcertLimitBtnItem)
+
+		self:_addSortBtn(VersionActivity4_0Enum.ActivityId.ConcertLimitMain, self._actConcertLimitItem)
+	end
+
+	self._actConcertLimitItem:refresh()
+end
+
 function MainActivityCenterView:_createActCenterItem(class)
 	local go = gohelper.cloneInPlace(self._itemGo)
 
@@ -794,6 +816,7 @@ function MainActivityCenterView:onDestroyView()
 	GameUtil.onDestroyViewMember(self, "_act236Item")
 	GameUtil.onDestroyViewMember(self, "_actAtomicOperationActivityBtnItem")
 	GameUtil.onDestroyViewMember(self, "_sp02PaoMianItem")
+	GameUtil.onDestroyViewMember(self, "_actConcertLimitItem")
 	self.removeEventCb(self, MainController.instance, MainEvent.OnFuncUnlockRefresh, self._freshBtns, self)
 	self.removeEventCb(self, ViewMgr.instance, ViewEvent.OnCloseFullView, self._onCloseFullView, self)
 	self.removeEventCb(self, ActivityController.instance, ActivityEvent.RefreshActivityState, self._freshBtns, self)

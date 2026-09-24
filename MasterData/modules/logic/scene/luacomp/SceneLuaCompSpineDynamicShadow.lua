@@ -52,7 +52,7 @@ function SceneLuaCompSpineDynamicShadow:onStart()
 	local allEntitys = FightHelper.getAllEntitys()
 
 	for _, entity in ipairs(allEntitys) do
-		if entity.spine and entity.spine:getSpineGO() then
+		if entity:canActiveDynamicShadow() and entity.spine and entity.spine:getSpineGO() then
 			self:_setSpineMat(entity.spineRenderer:getReplaceMat())
 		end
 	end
@@ -69,10 +69,24 @@ function SceneLuaCompSpineDynamicShadow:_onLoadCallback()
 end
 
 function SceneLuaCompSpineDynamicShadow:_onSpineLoaded(unitSpine)
+	if not unitSpine.entity:canActiveDynamicShadow() then
+		return
+	end
+
 	self:_setSpineMat(unitSpine.unitSpawn.spineRenderer:getReplaceMat())
 end
 
 function SceneLuaCompSpineDynamicShadow:_onSpineMatChange(entityId, material)
+	local entity = FightHelper.getEntity(entityId)
+
+	if not entity then
+		return
+	end
+
+	if not entity:canActiveDynamicShadow() then
+		return
+	end
+
 	self:_setSpineMat(material)
 end
 

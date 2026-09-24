@@ -39,52 +39,36 @@ end
 
 function AutoChessGameScene:_editableInitView()
 	self.moduleId = AutoChessModel.instance.moduleId
-	self.chessMo = AutoChessModel.instance:getChessMo()
+	self.sceneMo = AutoChessModel.instance:getSceneMo()
 	self._tfTouch = self.gotouch.transform
 	self._click = gohelper.getClickWithDefaultAudio(self.gotouch)
 
 	CommonDragHelper.instance:registerDragObj(self.gotouch, self._beginDrag, self._onDrag, self._endDrag, self._checkDrag, self, nil, true)
-
-	self.randomSeed = {
-		1,
-		2,
-		3,
-		4
-	}
+	self:resetRandomSeed()
 end
 
 function AutoChessGameScene:onOpen()
 	self.addEventCb(self, ViewMgr.instance, ViewEvent.OnCloseViewFinish, self.onCloseViewFinish, self)
-	self.addEventCb(self, AutoChessController.instance, AutoChessEvent.PlayStepList, self.startImmediatelyFlow, self)
-	self.addEventCb(self, AutoChessController.instance, AutoChessEvent.EnterFightReply, self.onEnterFightReply, self)
-	self.addEventCb(self, AutoChessController.instance, AutoChessEvent.StopFight, self.onStopFight, self)
-	self.addEventCb(self, AutoChessController.instance, AutoChessEvent.SkipFight, self.onSkipFight, self)
 	self.addEventCb(self, AutoChessController.instance, AutoChessEvent.NextRound, self.onNextRound, self)
 	self.addEventCb(self, AutoChessController.instance, AutoChessEvent.CheckEnemyTeam, self.onCheckEnemy, self)
-	self.addEventCb(self, AutoChessController.instance, AutoChessEvent.DrageMallItem, self.activeGlow, self)
-	self.addEventCb(self, AutoChessController.instance, AutoChessEvent.DrageMallItemEnd, self.inactiveGlow, self)
+	self.addEventCb(self, AutoChessController.instance, AutoChessEvent.DragMallItem, self.activeGlow, self)
+	self.addEventCb(self, AutoChessController.instance, AutoChessEvent.DragMallItemEnd, self.inactiveGlow, self)
 	self.addEventCb(self, AutoChessController.instance, AutoChessEvent.BossDrop, self.onBossDrop, self)
+	self.addEventCb(self, AutoChessController.instance, AutoChessEvent.FinishStepList, self.onStepFinish, self)
 	AutoChessEntityMgr.instance:init(self)
 	AutoChessEffectMgr.instance:init()
 
 	if self.moduleId == AutoChessEnum.ModuleId.Friend then
-		self:afterBuyFlowDone()
+		AutoChessController.instance:playStep(AutoChessEnum.ActionType.EndBuy)
 	else
 		self:changeScene(AutoChessEnum.ViewType.Player)
-		self:checkBeforeBuy()
+		AutoChessController.instance:playStep(AutoChessEnum.ActionType.StartBuy)
 	end
 end
 
 function AutoChessGameScene:onClose()
-	if self.fightFlow then
-		self.fightFlow:stop()
-		self.fightFlow:unregisterDoneListener(self.fightFlowDone, self)
-		self.fightFlow:destroy()
-
-		self.fightFlow = nil
-	end
-
-	AutoChessHelper.lockScreen("AutoChessGameScene", false)
+	AutoChessController.instance:clearAllFlow()
+	AutoChessHelper.lockScreen("AutoChessGameSceneLock", false)
 end
 
 function AutoChessGameScene:onDestroyView()
@@ -102,8 +86,8 @@ function AutoChessGameScene:changeScene(type, outInit)
 	AutoChessGameModel.instance:initTileNodes(type)
 
 	if self.viewType == AutoChessEnum.ViewType.All then
-		if not self.chessMo.lastSvrFight then
-			local fightData = self.chessMo.svrFight
+		if not self.sceneMo.lastFight then
+			local fightData = self.sceneMo.fight
 			local resUrl = AutoChessHelper.getSceneBgUrl(self.moduleId, type, fightData.roundType)
 
 			self.simageBg:LoadImage(resUrl)
@@ -154,15 +138,25 @@ function AutoChessGameScene:createLeaderEntity(data)
 end
 
 function AutoChessGameScene:initEntity()
-	local svrFight = self.chessMo.svrFight
+	local fightMo = self.sceneMo.fight
 
 	if self.viewType == AutoChessEnum.ViewType.Player then
-		AutoChessEntityMgr.instance:addLeaderEntity(svrFight.mySideMaster)
-	elseif self.viewType == AutoChessEnum.ViewType.Enemy and svrFight.enemyMaster.id ~= 0 then
-		AutoChessEntityMgr.instance:addLeaderEntity(svrFight.enemyMaster)
+		AutoChessEntityMgr.instance:addLeaderEntity(fightMo.mySideMaster)
+
+		local unwarZone = fightMo:getUnwarZone()
+
+		if unwarZone then
+			for _, v in ipairs(unwarZone.positions) do
+				if tonumber(v.chess.uid) ~= 0 then
+					AutoChessEntityMgr.instance:addEntity(unwarZone.id, v.chess, v.index)
+				end
+			end
+		end
+	elseif self.viewType == AutoChessEnum.ViewType.Enemy and fightMo.enemyMaster.id ~= 0 then
+		AutoChessEntityMgr.instance:addLeaderEntity(fightMo.enemyMaster)
 	end
 
-	for _, warZone in ipairs(svrFight.warZones) do
+	for _, warZone in ipairs(fightMo.warZones) do
 		local x = warZone.id
 
 		for i = 1, #warZone.positions do
@@ -187,9 +181,9 @@ end
 
 function AutoChessGameScene:onCloseViewFinish(viewName)
 	if viewName == ViewName.AutoChessStartFightView then
-		AutoChessHelper.lockScreen("AutoChessGameScene", true)
+		AutoChessHelper.lockScreen("AutoChessGameSceneLock", true)
 
-		local svrFight = self.chessMo.lastSvrFight
+		local svrFight = self.sceneMo.lastFight
 
 		AutoChessEntityMgr.instance:addLeaderEntity(svrFight.mySideMaster, true)
 
@@ -215,7 +209,7 @@ function AutoChessGameScene:onCloseViewFinish(viewName)
 end
 
 function AutoChessGameScene:delayAddEnemy()
-	local svrFight = self.chessMo.lastSvrFight
+	local svrFight = self.sceneMo.lastFight
 
 	for _, warZone in ipairs(svrFight.warZones) do
 		local x = warZone.id
@@ -236,27 +230,6 @@ end
 function AutoChessGameScene:onNextRound()
 	AutoChessEntityMgr.instance:clearEntity()
 	self:changeScene(AutoChessEnum.ViewType.Player)
-	self:checkBeforeBuy()
-end
-
-function AutoChessGameScene:onStopFight(stop)
-	if stop then
-		self.fightFlow:stop()
-	else
-		self.fightFlow:resume()
-	end
-end
-
-function AutoChessGameScene:onSkipFight()
-	if self.fightFlow then
-		self.fightFlow:stop()
-	end
-
-	self:fightFlowDone()
-end
-
-function AutoChessGameScene:onEnterFightReply()
-	self:checkAfterBuy()
 end
 
 function AutoChessGameScene:onCheckEnemy(isCheck)
@@ -267,11 +240,11 @@ function AutoChessGameScene:onCheckEnemy(isCheck)
 	end
 end
 
-function AutoChessGameScene:activeGlow(chessCo)
-	if chessCo.type == AutoChessStrEnum.ChessType.Attack then
+function AutoChessGameScene:activeGlow(config)
+	if config.type == AutoChessStrEnum.ChessType.Attack then
 		gohelper.setActive(self.goGlow1, true)
 		gohelper.setActive(self.goGlow3, true)
-	elseif chessCo.type == AutoChessStrEnum.ChessType.Support then
+	elseif config.type == AutoChessStrEnum.ChessType.Support then
 		gohelper.setActive(self.goGlow2, true)
 	else
 		gohelper.setActive(self.goGlow4, true)
@@ -286,7 +259,7 @@ function AutoChessGameScene:inactiveGlow()
 end
 
 function AutoChessGameScene:onClickScene()
-	if self.isDraging then
+	if self.isDraging or AutoChessController.instance.isPlaying then
 		return
 	end
 
@@ -297,7 +270,7 @@ function AutoChessGameScene:onClickScene()
 
 	if tileY then
 		if self.viewType == AutoChessEnum.ViewType.Enemy then
-			if self.chessMo.svrFight.roundType == AutoChessEnum.RoundType.BOSS then
+			if self.sceneMo.fight.roundType == AutoChessEnum.RoundType.BOSS then
 				tileX = 1
 				tileY = 6
 			else
@@ -306,47 +279,56 @@ function AutoChessGameScene:onClickScene()
 		end
 
 		if self.viewType == AutoChessEnum.ViewType.All then
-			if not self.chessMo.lastSvrFight then
-				local fightData = self.chessMo.svrFight
-				local chessPos = self.chessMo:getChessPosition(tileX, tileY, fightData)
-				local uid = chessPos.chess.uid
+			if not self.sceneMo.lastFight then
+				local fightMo = self.sceneMo.fight
+				local chessPos = fightMo:getChessPosition(tileX, tileY)
 
-				if tonumber(uid) ~= 0 then
-					local entity = AutoChessEntityMgr.instance:getEntity(uid)
+				if chessPos then
+					local chessMo = chessPos.chess
 
-					if usingLeaderSkill then
-						local types = AutoChessGameModel.instance.targetTypes
+					if chessMo then
+						if not chessMo.uid then
+							local uid = 0
 
-						if tabletool.indexOf(types, entity.config.type) then
-							local master = self.chessMo.svrFight.mySideMaster
+							if uid ~= 0 then
+								local chessEntity = AutoChessEntityMgr.instance:getEntity(uid)
 
-							AutoChessRpc.instance:sendAutoChessUseMasterSkillRequest(self.moduleId, master.skill.id, tonumber(uid))
+								if usingLeaderSkill then
+									local types = AutoChessGameModel.instance.targetTypes
+
+									if tabletool.indexOf(types, chessMo.config.type) then
+										local master = self.sceneMo.fight.mySideMaster
+
+										AutoChessRpc.instance:sendAutoChessUseMasterSkillRequest(self.moduleId, master.skill.id, tonumber(uid))
+									end
+								elseif chessMo.config.type == AutoChessStrEnum.ChessType.Incubate and chessPos.chess.cd == 0 then
+									AutoChessRpc.instance:sendAutoChessUseSkillRequest(self.moduleId, uid)
+								else
+									local param = {
+										type = AutoChessCard.ShowType.Sell,
+										entity = chessEntity,
+										showSell = self.viewType == AutoChessEnum.ViewType.Player
+									}
+
+									AutoChessController.instance:openCardInfoView(param)
+								end
+							end
+
+							if usingLeaderSkill then
+								AutoChessGameModel.instance:setUsingLeaderSkill(false)
+							end
 						end
-					elseif entity.config.type == AutoChessStrEnum.ChessType.Incubate and chessPos.chess.cd == 0 then
-						AutoChessRpc.instance:sendAutoChessUseSkillRequest(self.moduleId, uid)
-					else
-						local param = {
-							chessEntity = entity
-						}
-
-						AutoChessController.instance:openCardInfoView(param)
 					end
-				end
-
-				if usingLeaderSkill then
-					AutoChessGameModel.instance:setUsingLeaderSkill(false)
 				end
 			end
 		end
 	else
-		local leader = AutoChessGameModel.instance:getNearestLeader(tempPos)
+		local masterMo = AutoChessGameModel.instance:getNearestMaster(tempPos)
 
-		if leader then
-			local leaderCo = lua_auto_chess_master.configDict[leader.id]
-
-			if leaderCo.skillId ~= 0 then
+		if masterMo then
+			if masterMo.config and masterMo.config.skillId ~= 0 then
 				ViewMgr.instance:openView(ViewName.AutoChessLeaderShowView, {
-					leader = leader
+					leader = masterMo
 				})
 			end
 		elseif usingLeaderSkill then
@@ -358,48 +340,49 @@ end
 function AutoChessGameScene:_beginDrag(_, pointerEventData)
 	self.isDraging = true
 
-	local tempPos = recthelper.screenPosToAnchorPos(pointerEventData.position, self._tfTouch)
-	local tileX, tileY = AutoChessGameModel.instance:getNearestTileXY(tempPos.x, tempPos.y)
+	if self.viewType == AutoChessEnum.ViewType.All then
+		if not self.sceneMo.lastFight then
+			local fightMo = self.sceneMo.fight
+			local tempPos = recthelper.screenPosToAnchorPos(pointerEventData.position, self._tfTouch)
+			local tileX, tileY = AutoChessGameModel.instance:getNearestTileXY(tempPos.x, tempPos.y)
 
-	if tileX then
-		local chessPos = self.chessMo:getChessPosition(tileX, tileY)
-		local uid = chessPos.chess.uid
+			if tileX then
+				local chessPos = fightMo:getChessPosition(tileX, tileY)
+				local chessMo = chessPos.chess
 
-		if tonumber(uid) ~= 0 then
-			local chessId = chessPos.chess.id
-			local entity = AutoChessEntityMgr.instance:getEntity(uid)
+				if chessMo.uid ~= 0 then
+					local entity = AutoChessEntityMgr.instance:getEntity(chessMo.uid)
 
-			if entity.teamType == AutoChessEnum.TeamType.Player then
-				self.chessAvatar = AutoChessGameModel.instance.avatar
+					if entity.teamType == AutoChessEnum.TeamType.Player then
+						self.chessAvatar = AutoChessGameModel.instance.avatar
 
-				if self.chessAvatar then
-					self.selectChess = entity
+						if self.chessAvatar then
+							self.selectChess = entity
 
-					self.selectChess:hide()
+							self.selectChess:hide()
 
-					local dir = transformhelper.getLocalScale(entity.dirTrs)
-					local meshComp = entity.meshComp
-					local uiMesh = gohelper.findChildUIMesh(self.chessAvatar)
+							local dir = transformhelper.getLocalScale(entity.dirTrs)
+							local meshComp = entity.meshComp
+							local uiMesh = gohelper.findChildUIMesh(self.chessAvatar)
 
-					uiMesh.material = meshComp.uiMesh.material
-					uiMesh.mesh = meshComp.uiMesh.mesh
+							uiMesh.material = meshComp.uiMesh.material
+							uiMesh.mesh = meshComp.uiMesh.mesh
 
-					uiMesh:SetVerticesDirty()
-					uiMesh:SetMaterialDirty()
-					recthelper.setAnchor(self.chessAvatar.transform, tempPos.x, tempPos.y)
-					transformhelper.setLocalScale(self.chessAvatar.transform, dir, 1, 1)
+							uiMesh:SetVerticesDirty()
+							uiMesh:SetMaterialDirty()
+							recthelper.setAnchor(self.chessAvatar.transform, tempPos.x, tempPos.y)
+							transformhelper.setLocalScale(self.chessAvatar.transform, dir, 1, 1)
 
-					local image = gohelper.findChildImage(self.chessAvatar, "role")
+							local image = gohelper.findChildImage(self.chessAvatar, "role")
 
-					image.sprite = meshComp.imageRole.sprite
+							image.sprite = meshComp.imageRole.sprite
 
-					image:SetNativeSize()
-					gohelper.setActive(self.chessAvatar, true)
-
-					local chessCo = AutoChessConfig.instance:getChessCfgById(chessId, chessPos.chess.star)
-
-					AutoChessController.instance:dispatchEvent(AutoChessEvent.DragChessEntity, chessCo)
-					self:activeGlow(chessCo)
+							image:SetNativeSize()
+							gohelper.setActive(self.chessAvatar, true)
+							AutoChessController.instance:dispatchEvent(AutoChessEvent.DragChessEntity, chessMo.config)
+							self:activeGlow(chessMo.config)
+						end
+					end
 				end
 			end
 		end
@@ -419,84 +402,87 @@ function AutoChessGameScene:_endDrag(_, pointerEventData)
 	self.isDraging = false
 
 	if self.selectChess then
-		local fromUid = self.selectChess.data.uid
-		local fromWarZone = self.selectChess.warZone
-		local fromIndex = self.selectChess.index
-		local position = pointerEventData.position
-		local tempPos = recthelper.screenPosToAnchorPos(position, self._tfTouch)
-		local tileX, tileY = AutoChessGameModel.instance:getNearestTileXY(tempPos.x, tempPos.y)
+		if self.viewType == AutoChessEnum.ViewType.All then
+			if not self.sceneMo.lastFight then
+				local fightMo = self.sceneMo.fight
+				local fromUid = self.selectChess.mo.uid
+				local fromWarZone = self.selectChess.warZone
+				local fromIndex = self.selectChess.index
+				local position = pointerEventData.position
+				local tempPos = recthelper.screenPosToAnchorPos(position, self._tfTouch)
+				local tileX, tileY = AutoChessGameModel.instance:getNearestTileXY(tempPos.x, tempPos.y)
 
-		if tileY and tileY < 6 then
-			if fromWarZone == AutoChessEnum.WarZone.Four or tileX == AutoChessEnum.WarZone.Four then
-				if fromWarZone == AutoChessEnum.WarZone.Four and tileX == AutoChessEnum.WarZone.Four then
-					if fromIndex + 1 == tileY then
+				if tileY and tileY < 6 then
+					if fromWarZone == AutoChessEnum.WarZone.Four or tileX == AutoChessEnum.WarZone.Four then
+						if fromWarZone == AutoChessEnum.WarZone.Four and tileX == AutoChessEnum.WarZone.Four then
+							if fromIndex + 1 == tileY then
+								self.selectChess:show()
+							else
+								local targetChessPos = fightMo:getChessPosition(tileX, tileY)
+								local targetEntity = AutoChessEntityMgr.instance:tryGetEntity(targetChessPos.chess.uid)
+
+								if targetEntity then
+									self.selectChess:show()
+								else
+									AudioMgr.instance:trigger(AudioEnum.AutoChess.play_ui_tangren_chess_purchase)
+									AutoChessRpc.instance:sendAutoChessBuildRequest(self.moduleId, AutoChessEnum.BuildType.Exchange, fromWarZone, fromIndex, fromUid, tileX, tileY - 1)
+								end
+							end
+						else
+							GameFacade.showToast(ToastEnum.AutoChessExchangeError)
+							self.selectChess:show()
+						end
+					elseif tileX == fromWarZone and tileY == fromIndex + 1 then
 						self.selectChess:show()
 					else
-						local targetChessPos = self.chessMo:getChessPosition(tileX, tileY)
+						local targetChessPos = fightMo:getChessPosition(tileX, tileY)
 						local targetEntity = AutoChessEntityMgr.instance:tryGetEntity(targetChessPos.chess.uid)
 
 						if targetEntity then
-							self.selectChess:show()
-						else
+							if AutoChessHelper.sameWarZoneType(fromWarZone, tileX) or AutoChessHelper.canMix(targetChessPos.chess, self.selectChess.mo) then
+								if targetEntity.mo.id == self.selectChess.mo.id then
+									AudioMgr.instance:trigger(AudioEnum.UI.play_ui_lvhu_building_click)
+								else
+									AudioMgr.instance:trigger(AudioEnum.AutoChess.play_ui_tangren_chess_purchase)
+								end
+
+								AutoChessRpc.instance:sendAutoChessBuildRequest(self.moduleId, AutoChessEnum.BuildType.Exchange, fromWarZone, fromIndex, fromUid, tileX, tileY - 1, targetEntity.mo.uid)
+							else
+								GameFacade.showToast(ToastEnum.AutoChessExchangeError)
+								self.selectChess:show()
+							end
+						elseif AutoChessHelper.sameWarZoneType(fromWarZone, tileX) then
 							AudioMgr.instance:trigger(AudioEnum.AutoChess.play_ui_tangren_chess_purchase)
 							AutoChessRpc.instance:sendAutoChessBuildRequest(self.moduleId, AutoChessEnum.BuildType.Exchange, fromWarZone, fromIndex, fromUid, tileX, tileY - 1)
+						else
+							GameFacade.showToast(ToastEnum.AutoChessExchangeError)
+							self.selectChess:show()
 						end
 					end
 				else
-					GameFacade.showToast(ToastEnum.AutoChessExchangeError)
-					self.selectChess:show()
-				end
-			elseif tileX == fromWarZone and tileY == fromIndex + 1 then
-				self.selectChess:show()
-			else
-				local targetChessPos = self.chessMo:getChessPosition(tileX, tileY)
-				local targetEntity = AutoChessEntityMgr.instance:tryGetEntity(targetChessPos.chess.uid)
+					local pointerEnter = pointerEventData.pointerEnter
 
-				if targetEntity then
-					if AutoChessHelper.sameWarZoneType(fromWarZone, tileX) or AutoChessHelper.canMix(targetChessPos.chess, self.selectChess.data) then
-						if targetEntity.data.id == self.selectChess.data.id then
-							AudioMgr.instance:trigger(AudioEnum.UI.play_ui_lvhu_building_click)
-						else
-							AudioMgr.instance:trigger(AudioEnum.AutoChess.play_ui_tangren_chess_purchase)
-						end
-
-						AutoChessRpc.instance:sendAutoChessBuildRequest(self.moduleId, AutoChessEnum.BuildType.Exchange, fromWarZone, fromIndex, fromUid, tileX, tileY - 1, targetEntity.data.uid)
+					if pointerEnter and pointerEnter.name == "#go_CheckSell" then
+						AutoChessRpc.instance:sendAutoChessBuildRequest(self.moduleId, AutoChessEnum.BuildType.Sell, fromWarZone, fromIndex, fromUid)
 					else
-						GameFacade.showToast(ToastEnum.AutoChessExchangeError)
 						self.selectChess:show()
 					end
-				elseif AutoChessHelper.sameWarZoneType(fromWarZone, tileX) then
-					AudioMgr.instance:trigger(AudioEnum.AutoChess.play_ui_tangren_chess_purchase)
-					AutoChessRpc.instance:sendAutoChessBuildRequest(self.moduleId, AutoChessEnum.BuildType.Exchange, fromWarZone, fromIndex, fromUid, tileX, tileY - 1)
-				else
-					GameFacade.showToast(ToastEnum.AutoChessExchangeError)
-					self.selectChess:show()
 				end
-			end
-		else
-			local pointerEnter = pointerEventData.pointerEnter
 
-			if pointerEnter and pointerEnter.name == "#go_CheckSell" then
-				AutoChessRpc.instance:sendAutoChessBuildRequest(self.moduleId, AutoChessEnum.BuildType.Sell, fromWarZone, fromIndex, fromUid)
-			else
-				self.selectChess:show()
+				gohelper.setActive(self.chessAvatar, false)
+
+				self.chessAvatar = nil
+				self.selectChess = nil
+
+				AutoChessController.instance:dispatchEvent(AutoChessEvent.DragChessEntityEnd)
+				self:inactiveGlow()
 			end
 		end
-
-		gohelper.setActive(self.chessAvatar, false)
-
-		self.chessAvatar = nil
-		self.selectChess = nil
-
-		AutoChessController.instance:dispatchEvent(AutoChessEvent.DragChessEntityEnd)
-		self:inactiveGlow()
 	end
 end
 
 function AutoChessGameScene:_checkDrag()
-	if self.fightFlow then
-		return true
-	end
+	return self.viewType == AutoChessEnum.ViewType.All or AutoChessController.instance.isPlaying
 end
 
 function AutoChessGameScene:_moveToPos(transform, pos)
@@ -515,130 +501,27 @@ function AutoChessGameScene:_moveToPos(transform, pos)
 	end
 end
 
-function AutoChessGameScene:startImmediatelyFlow(effectList)
-	self.immediatelyFlow = FlowSequence.New()
-
-	local work = AutoChessSideWork.New(effectList)
-
-	self.immediatelyFlow:addWork(work)
-	self.immediatelyFlow:registerDoneListener(self.immediatelyFlowDone, self)
-	AutoChessHelper.lockScreen("AutoChessGameScene", true)
-	self.immediatelyFlow:start(AutoChessEnum.ContextType.Immediately)
-end
-
-function AutoChessGameScene:immediatelyFlowDone()
-	if self.immediatelyFlow then
-		self.immediatelyFlow:unregisterDoneListener(self.immediatelyFlowDone, self)
-		self.immediatelyFlow:destroy()
-
-		self.immediatelyFlow = nil
-	end
-
-	AutoChessController.instance:dispatchEvent(AutoChessEvent.ImmediatelyFlowFinish)
-	AutoChessHelper.lockScreen("AutoChessGameScene", false)
-end
-
 function AutoChessGameScene:startFightFlow()
-	AutoChessHelper.lockScreen("AutoChessGameScene", false)
-
-	local effectList = self.chessMo.fightEffectList
-
-	if effectList then
-		self.fightFlow = FlowSequence.New()
-
-		local work = AutoChessSideWork.New(effectList)
-
-		self.fightFlow:addWork(work)
-		self.fightFlow:registerDoneListener(self.fightFlowDone, self)
-		self.fightFlow:start(AutoChessEnum.ContextType.Fight)
-
-		self.chessMo.fightEffectList = nil
-	else
-		AutoChessController.instance:dispatchEvent(AutoChessEvent.EndFight)
-	end
-end
-
-function AutoChessGameScene:fightFlowDone()
-	if self.fightFlow then
-		self.fightFlow:unregisterDoneListener(self.fightFlowDone, self)
-		self.fightFlow:destroy()
-
-		self.fightFlow = nil
-	end
-
-	AutoChessController.instance:dispatchEvent(AutoChessEvent.EndFight)
-
-	if self.chessMo.lastSvrFight.roundType == AutoChessEnum.RoundType.BOSS then
-		for _, item in ipairs(self.dropItemList) do
-			gohelper.setActive(item.go, false)
-		end
-	end
-end
-
-function AutoChessGameScene:checkBeforeBuy()
-	local effectList = self.chessMo.startBuyEffectList
-
-	if effectList then
-		self.beforeBuyFlow = FlowSequence.New()
-
-		local work = AutoChessSideWork.New(effectList)
-
-		self.beforeBuyFlow:addWork(work)
-		self.beforeBuyFlow:registerDoneListener(self.beforeBuyFlowDone, self)
-		AutoChessHelper.lockScreen("AutoChessGameScene", true)
-		self.beforeBuyFlow:start(AutoChessEnum.ContextType.StartBuy)
-
-		self.chessMo.startBuyEffectList = nil
-	else
-		AutoChessController.instance:dispatchEvent(AutoChessEvent.StartBuyStepFinih)
-	end
-end
-
-function AutoChessGameScene:beforeBuyFlowDone()
-	self.beforeBuyFlow:unregisterDoneListener(self.beforeBuyFlowDone, self)
-	self.beforeBuyFlow:destroy()
-
-	self.beforeBuyFlow = nil
-
-	AutoChessHelper.lockScreen("AutoChessGameScene", false)
-	AutoChessController.instance:dispatchEvent(AutoChessEvent.StartBuyStepFinih)
-end
-
-function AutoChessGameScene:checkAfterBuy()
-	AutoChessHelper.lockScreen("AutoChessGameScene", true)
-
-	local effectList = self.chessMo.endBuyEffectList
-
-	if effectList then
-		self.afterBuyFlow = FlowSequence.New()
-
-		local work = AutoChessSideWork.New(effectList)
-
-		self.afterBuyFlow:addWork(work)
-		self.afterBuyFlow:registerDoneListener(self.afterBuyFlowDone, self)
-		self.afterBuyFlow:start(AutoChessEnum.ContextType.EndBuy)
-
-		self.chessMo.endBuyEffectList = nil
-	else
-		self:afterBuyFlowDone()
-	end
-end
-
-function AutoChessGameScene:afterBuyFlowDone()
-	if self.afterBuyFlow then
-		self.afterBuyFlow:unregisterDoneListener(self.beforeBuyFlowDone, self)
-		self.afterBuyFlow:destroy()
-
-		self.afterBuyFlow = nil
-	end
-
-	AutoChessController.instance:dispatchEvent(AutoChessEvent.StartFight)
-	TaskDispatcher.runDelay(self.delayEnterFightScene, self, 0.5)
-	AutoChessHelper.lockScreen("AutoChessGameScene", false)
+	AutoChessHelper.lockScreen("AutoChessGameSceneLock", false)
+	AutoChessController.instance:playStep(AutoChessEnum.ActionType.RoundStart)
 end
 
 function AutoChessGameScene:delayEnterFightScene()
 	self:changeScene(AutoChessEnum.ViewType.All, true)
+end
+
+function AutoChessGameScene:onStepFinish(type)
+	if type == AutoChessEnum.ActionType.EndBuy then
+		TaskDispatcher.runDelay(self.delayEnterFightScene, self, 0.5)
+	elseif type == AutoChessEnum.ActionType.RoundStart then
+		if self.sceneMo.lastFight.roundType == AutoChessEnum.RoundType.BOSS then
+			for _, item in ipairs(self.dropItemList) do
+				gohelper.setActive(item.go, false)
+			end
+		end
+
+		self:resetRandomSeed()
+	end
 end
 
 function AutoChessGameScene:onBossDrop(effectString)
@@ -662,6 +545,15 @@ function AutoChessGameScene:onBossDrop(effectString)
 			end
 		end
 	end
+end
+
+function AutoChessGameScene:resetRandomSeed()
+	self.randomSeed = {
+		1,
+		2,
+		3,
+		4
+	}
 end
 
 return AutoChessGameScene

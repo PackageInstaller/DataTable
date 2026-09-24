@@ -17,6 +17,13 @@ function WeekWalkController:addConstEvents()
 	TaskController.instance:registerCallback(TaskEvent.UpdateTaskList, self._refreshTaskData, self)
 	WeekWalkController.instance:registerCallback(WeekWalkEvent.OnGetInfo, self.startCheckTime, self)
 	TimeDispatcher.instance:registerCallback(TimeDispatcher.OnDailyRefresh, self._onDailyRefresh, self, LuaEventSystem.Low)
+	GuideController.instance:registerCallback(GuideEvent.InterruptGuide, self._onInterruptGuide, self)
+end
+
+function WeekWalkController:_onInterruptGuide(guideId)
+	if guideId == 501 then
+		GuideController.instance:dispatchEvent(GuideEvent.FadeView, "1")
+	end
 end
 
 function WeekWalkController:_onDailyRefresh()

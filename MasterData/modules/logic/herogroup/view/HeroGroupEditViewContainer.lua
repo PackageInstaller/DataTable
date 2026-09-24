@@ -30,6 +30,7 @@ function HeroGroupEditViewContainer:buildViews()
 		LuaListScrollViewWithAnimator.New(HeroGroupEditListModel.instance, scrollParam, animationDelayTimes),
 		self:getQuickEditScroll(),
 		CommonRainEffectView.New("bg/#go_raincontainer"),
+		HeroGroupEditFightAssistBtn.New(),
 		TabViewGroup.New(1, "#go_btns")
 	}
 end

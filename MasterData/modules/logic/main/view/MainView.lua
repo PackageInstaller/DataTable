@@ -82,6 +82,10 @@ function MainView:onInitView()
 	gohelper.setActive(self._golimitedshow, false)
 
 	self._showMainView = true
+	self._btncollege = gohelper.findChildButtonWithAudio(self.viewGO, "right/#btn_copost_2")
+	self._gocollegered = gohelper.findChild(self.viewGO, "right/#btn_copost_2/#go_reddot")
+
+	gohelper.setActive(self._btncollege, true)
 
 	if self._editableInitView then
 		self:_editableInitView()
@@ -122,6 +126,7 @@ function MainView:addEvents()
 	self._btnrole:AddClickListener(self._btnroleOnClick, self)
 	self._btnsummon:AddClickListener(self._btnsummonOnClick, self)
 	self._btncopost:AddClickListener(self._btncopostOnClick, self)
+	self._btncollege:AddClickListener(self._btncollegeOnClick, self)
 	self._btnhide:AddClickListener(self._btnhideOnClick, self)
 	self._btnbgm:AddClickListener(self._btnbgmOnClick, self)
 	self._btnlimitedshow:AddClickListener(self._btnlimitedshowOnClick, self)
@@ -159,6 +164,7 @@ function MainView:removeEvents()
 	self._btnrole:RemoveClickListener()
 	self._btnsummon:RemoveClickListener()
 	self._btncopost:RemoveClickListener()
+	self._btncollege:RemoveClickListener()
 	self._btnhide:RemoveClickListener()
 	self._btnbgm:RemoveClickListener()
 	self._btnlimitedshow:RemoveClickListener()
@@ -239,23 +245,21 @@ function MainView:_setViewVisible(value)
 end
 
 function MainView:_onPlayOpenAnim()
-	if CommandStationEnum.ForceHideCommandStation then
-		return
-	end
-
 	local zeroTime = WeatherModel.instance:getZeroTime()
-	local curTime = CommandStationController.getSaveNumber(CommandStationEnum.PrefsKey.MainViewEntryAnim)
+	local curTime = GameUtil.playerPrefsGetNumberByUserId("College_PlayOpenAnim", 0)
 
 	if curTime == zeroTime then
 		return
 	end
 
-	CommandStationController.setSaveNumber(CommandStationEnum.PrefsKey.MainViewEntryAnim, zeroTime)
+	GameUtil.playerPrefsSetNumberByUserId("College_PlayOpenAnim", zeroTime)
 
-	local animGo = gohelper.findChild(self._btncopost.gameObject, "ani")
-	local animator = animGo:GetComponent("Animator")
+	local animGo = gohelper.findChild(self._btncollege.gameObject, "ani")
+	local animator = animGo and animGo:GetComponent("Animator")
 
-	animator:Play("open", 0, 0)
+	if animator then
+		animator:Play("open", 0, 0)
+	end
 end
 
 function MainView:_setViewRootVisible(value)
@@ -292,6 +296,10 @@ function MainView:_btncopostOnClick()
 	else
 		GameFacade.showToast(OpenModel.instance:getFuncUnlockDesc(OpenEnum.UnlockFunc.CommandStation))
 	end
+end
+
+function MainView:_btncollegeOnClick()
+	CollegeController.instance:enterCollegeCity()
 end
 
 function MainView:OnNotifyEnterSummon()
@@ -371,6 +379,7 @@ function MainView:_refreshBtns()
 	gohelper.setActive(self._btnsummon.gameObject, OpenModel.instance:isFuncBtnShow(OpenEnum.UnlockFunc.Summon))
 	gohelper.setActive(self._btnrole.gameObject, OpenModel.instance:isFuncBtnShow(OpenEnum.UnlockFunc.Role))
 	gohelper.setActive(self._btnswitchrole.gameObject, OpenModel.instance:isFuncBtnShow(OpenEnum.UnlockFunc.MainThumbnail))
+	gohelper.setActive(self._btncollege, OpenModel.instance:isFunctionUnlock(OpenEnum.UnlockFunc.College))
 
 	if CommandStationEnum.ForceHideCommandStation then
 		gohelper.setActive(self._btncopost.gameObject, false)
@@ -529,6 +538,7 @@ function MainView:_editableInitView()
 	gohelper.addUIClickAudio(self._btnswitchrole.gameObject, audioEnum.play_ui_thumbnail_click)
 	gohelper.addUIClickAudio(self._btnsummon.gameObject, audioEnum.play_ui_callfor_open)
 	gohelper.addUIClickAudio(self._btncopost.gameObject, audioEnum.play_ui_role_open)
+	gohelper.addUIClickAudio(self._btncollege.gameObject, audioEnum.play_ui_role_open)
 	gohelper.addUIClickAudio(self._btnquest.gameObject, audioEnum.UI_Mission_open)
 	gohelper.addUIClickAudio(self._btnbank.gameObject, audioEnum.play_ui_bank_open)
 	gohelper.addUIClickAudio(self._btnrole.gameObject, audioEnum.play_ui_role_open)
@@ -587,6 +597,7 @@ function MainView:_refreshRedDot()
 	RedDotController.instance:addRedDot(self._gotaskreddot, RedDotEnum.DotNode.TaskBtn)
 	RedDotController.instance:addRedDot(self._gomailreddot, RedDotEnum.DotNode.MailBtn)
 	RedDotController.instance:addRedDot(self._gocopostred, RedDotEnum.DotNode.CommandStationMain)
+	RedDotController.instance:addRedDot(self._gocollegered, RedDotEnum.DotNode.CollegeMain)
 
 	self._redBank = RedDotController.instance:addRedDot(self._gobankreddot, RedDotEnum.DotNode.StoreBtn, nil, self.storeRedDotRefreshFunc, self)
 
@@ -762,6 +773,15 @@ function MainView:showStoreDeadline(needShow)
 	deadlineItem.needShow = needShow or deadlineItem.needShow
 
 	if deadlineItem.needShow then
+		local itemDeadline = ItemExpireModel.instance:getSpecialExpireItemEarliestExpireTime(StoreEnum.SupplementMonthCardItemId)
+
+		if itemDeadline and itemDeadline > 0 then
+			gohelper.setActive(deadlineItem.godeadline, false)
+			gohelper.setActive(deadlineItem.txttime.gameObject, false)
+
+			return
+		end
+
 		local deadlineHasDay = false
 		local storeEntranceCfg = StoreConfig.instance:getTabConfig(StoreEnum.StoreId.LimitStore)
 		local deadlineTimeSec = 0

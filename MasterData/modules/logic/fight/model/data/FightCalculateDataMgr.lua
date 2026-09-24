@@ -2030,7 +2030,6 @@ function FightCalculateDataMgr:playEffect282(actEffectData)
 		return
 	end
 
-	entityMO:setHp(entityMO.currentHp - actEffectData.effectNum)
 	self:processHurtInfo(actEffectData)
 end
 
@@ -2667,8 +2666,8 @@ function FightCalculateDataMgr:playEffect369(actEffectData)
 
 	local arr = string.splitToNumber(actEffectData.reserveStr, ",")
 
-	entityMO.toughnessPoint = entityMO.toughnessPoint + arr[1]
-	entityMO.toughnessValue = entityMO.toughnessValue + arr[2]
+	entityMO.toughnessPoint = arr[1]
+	entityMO.toughnessValue = arr[2]
 	entityMO.isBroken = false
 end
 
@@ -2844,6 +2843,88 @@ function FightCalculateDataMgr:playEffect383(actEffectData)
 	else
 		deviceArea:restartDeviceAttr(actEffectData.targetId)
 	end
+end
+
+function FightCalculateDataMgr:updateQteInfo(actEffectData)
+	local qteDataMgr = self.dataMgr.qteDataMgr
+
+	if not qteDataMgr then
+		return
+	end
+
+	local teamType = actEffectData.teamType
+
+	teamType = teamType ~= 0 and teamType or FightEnum.TeamType.MySide
+
+	qteDataMgr:updateQteInfo(actEffectData.qteInfo, teamType)
+
+	if actEffectData.qteInfo then
+		local curStatus = actEffectData.qteInfo:getStatus()
+
+		if actEffectData.qteInfo == FightEnum.QTEStage.QTE_SECOND then
+			qteDataMgr:setEnteredSecondStage()
+		elseif actEffectData.qteInfo == FightEnum.QTEStage.QTE_FIRST then
+			qteDataMgr:clearEnteredSecondStage()
+		end
+	end
+end
+
+function FightCalculateDataMgr:playEffect384(actEffectData)
+	self:updateQteInfo(actEffectData)
+end
+
+function FightCalculateDataMgr:playEffect385(actEffectData)
+	self:updateQteInfo(actEffectData)
+end
+
+function FightCalculateDataMgr:playEffect386(actEffectData)
+	self:updateQteInfo(actEffectData)
+end
+
+function FightCalculateDataMgr:playEffect387(actEffectData)
+	self:updateQteInfo(actEffectData)
+end
+
+function FightCalculateDataMgr:playEffect388(actEffectData)
+	return
+end
+
+function FightCalculateDataMgr:playEffect389(actEffectData)
+	local entityMo = self:getTarEntityMO(actEffectData)
+
+	if not entityMo then
+		return
+	end
+
+	entityMo:setStatus(actEffectData.effectNum)
+end
+
+function FightCalculateDataMgr:updateClueInfo(actEffectData, isAdd)
+	local teamDataMgr = self.dataMgr.teamDataMgr
+
+	if not teamDataMgr then
+		return
+	end
+
+	local cluePosition = actEffectData.cluePosition
+
+	if not cluePosition then
+		return
+	end
+
+	local teamType = actEffectData.teamType
+
+	teamType = teamType ~= 0 and teamType or FightEnum.TeamType.MySide
+
+	teamDataMgr:updateCluePosition(cluePosition, teamType, isAdd)
+end
+
+function FightCalculateDataMgr:playEffect390(actEffectData)
+	self:updateClueInfo(actEffectData, true)
+end
+
+function FightCalculateDataMgr:playEffect391(actEffectData)
+	self:updateClueInfo(actEffectData, false)
 end
 
 return FightCalculateDataMgr

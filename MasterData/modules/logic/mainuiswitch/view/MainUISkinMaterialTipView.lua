@@ -2,7 +2,7 @@
 
 module("modules.logic.mainuiswitch.view.MainUISkinMaterialTipView", package.seeall)
 
-local MainUISkinMaterialTipView = class("MainUISkinMaterialTipView", MainSceneSkinMaterialTipView)
+local MainUISkinMaterialTipView = class("MainUISkinMaterialTipView", DecorateMaterialTipView)
 
 function MainUISkinMaterialTipView:onClickModalMask()
 	self:closeThis()

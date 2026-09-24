@@ -14,6 +14,12 @@ function SummonMainCategoryListModel:initCategory()
 		table.insert(data, mo)
 	end
 
+	table.sort(data, SummonMainCategoryListModel.sortSummonCategory)
+
+	for i, mo in ipairs(data) do
+		mo.index = i
+	end
+
 	self:setList(data)
 end
 
@@ -22,8 +28,19 @@ function SummonMainCategoryListModel:createMO(co, index)
 
 	mo.originConf = co
 	mo.index = index
+	mo.priority = SummonPoolSortHelper.getPoolPriority(co) or 0
 
 	return mo
+end
+
+function SummonMainCategoryListModel.sortSummonCategory(a, b)
+	if a.priority ~= b.priority then
+		return a.priority > b.priority
+	end
+
+	if a.originConf.id ~= b.originConf.id then
+		return a.originConf.id < b.originConf.id
+	end
 end
 
 function SummonMainCategoryListModel:saveEnterTime()

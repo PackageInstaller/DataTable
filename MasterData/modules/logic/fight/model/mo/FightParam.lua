@@ -155,7 +155,7 @@ function FightParam.initFightGroup(fightGroup, clothId, heroList, subHeroList, e
 			end
 
 			if equips then
-				local _, assistMo = HeroGroupModel.instance:getAssistMo()
+				local assistMoList = HeroGroupModel.instance:getAssistMoList()
 
 				for i, v in ipairs(equips) do
 					if trialDict[i] then
@@ -164,9 +164,20 @@ function FightParam.initFightGroup(fightGroup, clothId, heroList, subHeroList, e
 						end
 					else
 						local assistuid
+
+						for index, heroId in ipairs(heroList) do
+							for _, assistMo in ipairs(assistMoList) do
+								if index == i and heroId == assistMo.heroUid then
+									assistuid = assistMo.heroUid
+
+									break
+								end
+							end
+						end
+
 						local fightEquip = FightDef_pb.FightEquip()
 
-						fightEquip.heroUid = (assistMo and assistMo.id == i or nil) and assistMo.heroUid or v.heroUid
+						fightEquip.heroUid = assistuid or v.heroUid
 
 						for _, uid in ipairs(v.equipUid) do
 							table.insert(fightEquip.equipUid, uid)
@@ -414,12 +425,17 @@ function FightParam:getHeroEquipMoList()
 		heroUid2EquipMoDict[heroUid] = EquipModel.instance:getEquip(equipUid)
 	end
 
-	local _, assistMo = HeroGroupModel.instance:getAssistMo()
+	local assistMoByHeroUid = {}
+
+	for _, assistMo in ipairs(HeroGroupModel.instance:getAssistMoList()) do
+		assistMoByHeroUid[assistMo.heroUid] = assistMo
+	end
 
 	for _, uid in ipairs(self.mySideUids) do
-		local heroMo = HeroModel.instance:getById(uid)
+		local heroMo = HeroModel.instance:getById(uid) or FightHelper.getAssitHeroInfoByUid(uid)
+		local assistMo = assistMoByHeroUid[uid]
 
-		if assistMo and uid == assistMo.heroUid then
+		if assistMo then
 			heroMo = heroMo or assistMo.assistMo.heroMO
 
 			local info = self.equips[assistMo.id]
@@ -444,7 +460,7 @@ function FightParam:getHeroEquipMoList()
 	end
 
 	for _, uid in ipairs(self.mySideSubUids) do
-		local heroMo = HeroModel.instance:getById(uid)
+		local heroMo = HeroModel.instance:getById(uid) or FightHelper.getAssitHeroInfoByUid(uid)
 
 		if heroMo then
 			local heroUid = heroMo.uid
@@ -646,7 +662,7 @@ function FightParam:getHeroEquipAndTrialMoList(ignoreEmpty)
 	end
 
 	for _, uid in ipairs(self.mySideUids) do
-		local heroMo = HeroModel.instance:getById(uid)
+		local heroMo = HeroModel.instance:getById(uid) or FightHelper.getAssitHeroInfoByUid(uid)
 
 		if heroMo then
 			local heroUid = heroMo.uid
@@ -661,7 +677,7 @@ function FightParam:getHeroEquipAndTrialMoList(ignoreEmpty)
 	end
 
 	for _, uid in ipairs(self.mySideSubUids) do
-		local heroMo = HeroModel.instance:getById(uid)
+		local heroMo = HeroModel.instance:getById(uid) or FightHelper.getAssitHeroInfoByUid(uid)
 
 		if heroMo then
 			local heroUid = heroMo.uid

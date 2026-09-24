@@ -17,7 +17,10 @@ local primaryKey = {
 	"id",
 	"type"
 }
-local mlStringKey = {}
+local mlStringKey = {
+	slogan = 2,
+	title = 1
+}
 
 function lua_activity_publicity.onLoad(json)
 	lua_activity_publicity.configList, lua_activity_publicity.configDict = JsonToLuaParser.parse(json, fields, primaryKey, mlStringKey)

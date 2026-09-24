@@ -19,7 +19,8 @@ FightStageMgr.FightStateType = {
 	PlaySeasonChangeHero = GameUtil.getEnumId(),
 	ClothSkill = GameUtil.getEnumId(),
 	AutoCardPlaying = GameUtil.getEnumId(),
-	AiJiAoQteIng = GameUtil.getEnumId()
+	AiJiAoQteIng = GameUtil.getEnumId(),
+	QTE = GameUtil.getEnumId()
 }
 FightStageMgr.OperateStateType = {
 	Discard = GameUtil.getEnumId(),

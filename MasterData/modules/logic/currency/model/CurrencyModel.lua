@@ -29,6 +29,10 @@ function CurrencyModel:getPower()
 	return self:getCurrency(CurrencyEnum.CurrencyType.Power).quantity or 0
 end
 
+function CurrencyModel:getSpiritualFluid()
+	return (ItemModel.instance:getItemQuantity(MaterialEnum.MaterialType.Item, CurrencyEnum.CurrencyType.SpiritualFluid))
+end
+
 function CurrencyModel:getCurrency(currencyId)
 	return self._currencyList[currencyId]
 end

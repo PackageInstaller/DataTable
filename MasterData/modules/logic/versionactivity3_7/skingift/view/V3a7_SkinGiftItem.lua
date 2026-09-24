@@ -109,8 +109,8 @@ function V3a7_SkinGiftItem:refreshInfo()
 
 	local skinConfig = SkinConfig.instance:getSkinCo(self._skinId)
 	local isNormalSkin = false
-	local isAdvanceSkin = not V3a7_SkinGiftEnum.UniqueSkinDic[skinConfig.id]
-	local isUniqueSkin = V3a7_SkinGiftEnum.UniqueSkinDic[skinConfig.id] == true
+	local isAdvanceSkin = skinConfig.skinLevel == CharacterEnum.SkinRare.Advanced
+	local isUniqueSkin = skinConfig.skinLevel == CharacterEnum.SkinRare.Unique
 	local isShowLinkageSkin = false
 	local isShowNormalSkin = not isShowLinkageSkin and isNormalSkin
 	local isShowAdvancedSkin = not isShowLinkageSkin and isAdvanceSkin
@@ -138,7 +138,7 @@ function V3a7_SkinGiftItem:refreshInfo()
 			imageIcon = isShowAdvancedSkin and self._advanceImageicon or self._simageicon
 		end
 
-		imageIcon:LoadImage(ResUrl.getHeadSkinIconMiddle(self._skinId))
+		imageIcon:LoadImage(ResUrl.getStoreSkin(self._skinId))
 	end
 
 	self.txtSkinName.text = skinConfig.name

@@ -49,6 +49,7 @@ function SpineVoiceMouth:init(spineVoice, voiceConfig, spine)
 	self._hasAudio = AudioConfig.instance:getAudioCOById(voiceConfig.audio)
 	self._setComponentStop = false
 	self._playLastOne = nil
+	self._initCut = self._voiceConfig.initCut
 
 	local mouth = self:getMouth(voiceConfig)
 
@@ -232,6 +233,16 @@ function SpineVoiceMouth:_checkMouthParam(param)
 	return true
 end
 
+function SpineVoiceMouth:_getMixTime()
+	if self._initCut then
+		self._initCut = false
+
+		return -1
+	end
+
+	return 0
+end
+
 function SpineVoiceMouth:_addMouth(lastOne, mouthAction, mouthStart, mouthEnd)
 	if not mouthStart or not mouthEnd then
 		return
@@ -242,7 +253,7 @@ function SpineVoiceMouth:_addMouth(lastOne, mouthAction, mouthStart, mouthEnd)
 			self._curMouth = "t_" .. mouthAction
 			self._curMouthEnd = nil
 
-			self._spine:setMouthAnimation(self._curMouth, true, 0)
+			self._spine:setMouthAnimation(self._curMouth, true, self:_getMixTime())
 		end
 	end
 
@@ -284,7 +295,7 @@ function SpineVoiceMouth:_addMouthBizui(lastOne, mouthStart, mouthEnd, skipStop)
 			if self._spine:hasAnimation(faceBizui) then
 				self._curMouth = faceBizui
 
-				self._spine:setMouthAnimation(self._curMouth, true, 0)
+				self._spine:setMouthAnimation(self._curMouth, true, self:_getMixTime())
 
 				return
 			end
@@ -292,7 +303,7 @@ function SpineVoiceMouth:_addMouthBizui(lastOne, mouthStart, mouthEnd, skipStop)
 			if self._spine:hasAnimation(StoryAnimName.T_BiZui) then
 				self._curMouth = StoryAnimName.T_BiZui
 
-				self._spine:setMouthAnimation(self._curMouth, true, 0)
+				self._spine:setMouthAnimation(self._curMouth, true, self:_getMixTime())
 			end
 		end
 	end
@@ -337,7 +348,7 @@ function SpineVoiceMouth:_mouthRepeat()
 			self._curMouth = "t_" .. self._mouthActionList[id]
 			self._curMouthEnd = nil
 
-			self._spine:setMouthAnimation(self._curMouth, false, 0)
+			self._spine:setMouthAnimation(self._curMouth, false, self:_getMixTime())
 		else
 			self:stopMouth()
 		end
@@ -380,7 +391,7 @@ function SpineVoiceMouth:_setBiZui()
 	if self._spine:hasAnimation(StoryAnimName.T_BiZui) then
 		self._curMouth = StoryAnimName.T_BiZui
 
-		self._spine:setMouthAnimation(self._curMouth, false, 0)
+		self._spine:setMouthAnimation(self._curMouth, false, self:_getMixTime())
 	end
 end
 

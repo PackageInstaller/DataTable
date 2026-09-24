@@ -73,7 +73,7 @@ function CharacterRecommedHeroView:_showSpine(isShow)
 			x = -69
 
 			if not self._uiSpine._curModel._curBodyName then
-				self._uiSpine:playSpecialMotion(self._uiSpine._curModel._curBodyName)
+				self._uiSpine:playSpecialMotion(self._uiSpine._curModel._curBodyName, true)
 			end
 		else
 			if not self._rootParent then

@@ -11,38 +11,77 @@ function NecrologistStoryPlayerPrefsDataBase:ctor(key)
 end
 
 function NecrologistStoryPlayerPrefsDataBase:initData()
-	self.dict = {}
+	local keyType = self:getKeyType()
 
-	local val = GameUtil.playerPrefsGetStringByUserId(self.prefsKey, "")
-	local list = string.splitToNumber(val, "#")
+	if keyType == NecrologistStoryEnum.PrefsKeyType.NumberList then
+		self.dict = {}
 
-	for _, v in ipairs(list) do
-		self.dict[v] = true
+		local val = GameUtil.playerPrefsGetStringByUserId(self.prefsKey, "")
+		local list = string.splitToNumber(val, "#")
+
+		for _, v in ipairs(list) do
+			self.dict[v] = true
+		end
+	elseif keyType == NecrologistStoryEnum.PrefsKeyType.String then
+		self.value = GameUtil.playerPrefsGetStringByUserId(self.prefsKey, "")
+	elseif keyType == NecrologistStoryEnum.PrefsKeyType.Number then
+		self.value = GameUtil.playerPrefsGetNumberByUserId(self.prefsKey, 0)
+	elseif keyType == NecrologistStoryEnum.PrefsKeyType.Bool then
+		local val = GameUtil.playerPrefsGetNumberByUserId(self.prefsKey, 0)
+
+		self.value = val == 1
 	end
 end
 
-function NecrologistStoryPlayerPrefsDataBase:isExist(id)
-	return self.dict[id]
+function NecrologistStoryPlayerPrefsDataBase:isExist(id, value)
+	local keyType = self:getKeyType()
+
+	if keyType == NecrologistStoryEnum.PrefsKeyType.NumberList then
+		return self.dict[id]
+	else
+		return self.value == value
+	end
 end
 
-function NecrologistStoryPlayerPrefsDataBase:setExist(id)
-	if self:isExist(id) then
+function NecrologistStoryPlayerPrefsDataBase:setExist(id, value)
+	if self:isExist(id, value) then
 		return
 	end
 
-	self.dict[id] = true
+	local keyType = self:getKeyType()
+
+	if keyType == NecrologistStoryEnum.PrefsKeyType.NumberList then
+		self.dict[id] = true
+	else
+		self.value = value
+	end
 
 	self:saveData()
 end
 
 function NecrologistStoryPlayerPrefsDataBase:saveData()
-	local list = {}
+	local saveVal
+	local keyType = self:getKeyType()
 
-	for id, _ in pairs(self.dict) do
-		table.insert(list, id)
+	if keyType == NecrologistStoryEnum.PrefsKeyType.NumberList then
+		local list = {}
+
+		for id, _ in pairs(self.dict) do
+			table.insert(list, id)
+		end
+
+		saveVal = table.concat(list, "#")
+	else
+		saveVal = tostring(self.value)
 	end
 
-	GameUtil.playerPrefsSetStringByUserId(self.prefsKey, table.concat(list, "#"))
+	if saveVal then
+		GameUtil.playerPrefsSetStringByUserId(self.prefsKey, saveVal)
+	end
+end
+
+function NecrologistStoryPlayerPrefsDataBase:getKeyType()
+	return NecrologistStoryEnum.PrefsKey2Type[self.prefsKey]
 end
 
 return NecrologistStoryPlayerPrefsDataBase

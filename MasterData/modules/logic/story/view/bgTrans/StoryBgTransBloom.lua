@@ -9,19 +9,29 @@ function StoryBgTransBloom:ctor()
 end
 
 local baseTime = 0.25
+local defaultController = "story_bloomchange"
 
 function StoryBgTransBloom:init()
 	StoryBgTransBloom.super.init(self)
 	self:setBgTransType(StoryEnum.BgTransType.Bloom1)
-
-	self._bloomAnimPath = "ui/animations/dynamic/story_bloomchange.controller"
-
-	table.insert(self._resList, self._bloomAnimPath)
 end
 
 function StoryBgTransBloom:setBgTransType(type)
 	self._transType = type
 	self._transMo = StoryBgEffectTransModel.instance:getStoryBgEffectTransByType(self._transType)
+
+	if self._transMo then
+		local controller = self._transMo.ppController
+
+		if string.nilorempty(self._transMo) then
+			controller = defaultController
+		end
+
+		self._bloomAnimPath = ResUrl.getStoryPostProcessAnim(self._transMo)
+		self._resList = {
+			self._bloomAnimPath
+		}
+	end
 end
 
 function StoryBgTransBloom:start(callback, callbackObj)
@@ -38,18 +48,23 @@ function StoryBgTransBloom:onLoadFinished()
 	StoryBgTransBloom.super.onLoadFinished(self)
 	StoryTool.enablePostProcess(true)
 
-	local anim = self._loader:getAssetItem(self._bloomAnimPath):GetResource()
-	local cameraRoot = CameraMgr.instance:getUICameraGO()
+	local assetItem = self._loader:getAssetItem(self._bloomAnimPath)
+	local anim = assetItem and assetItem:GetResource()
 
-	self._animRoot = gohelper.findChild(cameraRoot, "PPUIVolume")
-	self._bloomAnim = gohelper.onceAddComponent(self._animRoot, typeof(UnityEngine.Animator))
-	self._bloomAnim.runtimeAnimatorController = anim
+	if anim then
+		local var_5_1 = {
+			stateName = "trans"
+		}
 
-	if self._transMo.transTime > 0.01 then
-		self._bloomAnim.speed = baseTime / self._transMo.transTime or 1
+		if self._transMo.transTime > 0.01 then
+			var_5_1.speed = baseTime / self._transMo.transTime or 1
+		end
+
+		StoryPostProcessAnimMgr.instance:play(StoryPostProcessAnimMgr.Target.UI, self, anim, var_5_1)
+	else
+		logError("bloom 转场后处理动画加载失败: " .. tostring(self._bloomAnimPath))
 	end
 
-	self._bloomAnim:Play("trans", 0, 0)
 	TaskDispatcher.runDelay(self.onSwitchBg, self, self._transMo.transTime)
 end
 
@@ -70,7 +85,7 @@ end
 
 function StoryBgTransBloom:_clearTrans()
 	GameUtil.setActiveUIBlock("bgTrans", false, false)
-	gohelper.removeComponent(self._animRoot, typeof(UnityEngine.Animator))
+	StoryPostProcessAnimMgr.instance:stop(self)
 
 	self._finishedCallback = nil
 	self._finishedCallbackObj = nil

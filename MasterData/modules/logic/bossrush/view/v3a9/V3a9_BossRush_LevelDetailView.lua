@@ -48,12 +48,14 @@ end
 function V3a9_BossRush_LevelDetailView:addEvents()
 	V3a9_BossRush_LevelDetailView.super.addEvents(self)
 	self.addEventCb(self, V3a9_BossRushController.instance, V3a9_BossRushEvent.OnResetStage, self._onResetStage, self)
+	self.addEventCb(self, V3a9_BossRushController.instance, V3a9_BossRushEvent.onRefreshV3a9ModeTeamInfo, self._refreshHeros, self)
 	self._btnreset:AddClickListener(self._btnresetOnClick, self)
 end
 
 function V3a9_BossRush_LevelDetailView:removeEvents()
 	V3a9_BossRush_LevelDetailView.super.removeEvents(self)
 	self.removeEventCb(self, V3a9_BossRushController.instance, V3a9_BossRushEvent.OnResetStage, self._onResetStage, self)
+	self.removeEventCb(self, V3a9_BossRushController.instance, V3a9_BossRushEvent.onRefreshV3a9ModeTeamInfo, self._refreshHeros, self)
 	self._btnreset:RemoveClickListener()
 end
 

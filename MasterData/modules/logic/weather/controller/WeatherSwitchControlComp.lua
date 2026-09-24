@@ -38,8 +38,15 @@ function WeatherSwitchControlComp:_btncloseOnClick()
 end
 
 function WeatherSwitchControlComp:_btnupOnClick()
+	self._isPlayingRefreshAnim = true
+
+	if self._weatherAnim then
+		self._weatherAnim:Play("refresh", 0, 0)
+	else
+		self:_delayUpdateStatus()
+	end
+
 	self._switchComp:switchPrevLightMode()
-	self:_updateBtnStatus()
 	self:_startDelayUpdateStatus()
 end
 
@@ -101,17 +108,32 @@ function WeatherSwitchControlComp:_btnclickOnClick(index)
 		return
 	end
 
+	self._isPlayingRefreshAnim = true
+
+	if self._weatherAnim then
+		self._weatherAnim:Play("refresh", 0, 0)
+	else
+		self:_delayUpdateStatus()
+	end
+
 	self._switchComp:switchReport(index)
 end
 
 function WeatherSwitchControlComp:_btndownOnClick()
+	self._isPlayingRefreshAnim = true
+
+	if self._weatherAnim then
+		self._weatherAnim:Play("refresh", 0, 0)
+	else
+		self:_delayUpdateStatus()
+	end
+
 	self._switchComp:switchNextLightMode()
-	self:_updateBtnStatus()
 	self:_startDelayUpdateStatus()
 end
 
 function WeatherSwitchControlComp:_updateBtnStatus()
-	if not self._switchComp then
+	if not self._switchComp or self._isPlayingRefreshAnim then
 		return
 	end
 
@@ -146,6 +168,12 @@ function WeatherSwitchControlComp:_editableInitView()
 		[WeatherEnum.LightModeNight] = "store_weathericon_04"
 	}
 	self._cdTime = CommonConfig.instance:getConstNum(ConstEnum.MainSceneChangeCD) / 1000
+	self._weatherAnim = self._btnmiddle.gameObject:GetComponent(typeof(UnityEngine.Animator))
+	self._animationWeatherEvent = self._btnmiddle.gameObject:GetComponent(typeof(ZProj.AnimationEventWrap))
+
+	if self._animationWeatherEvent then
+		self._animationWeatherEvent:AddEventListener("WeatherSwitch", self._delayUpdateStatus, self)
+	end
 
 	self.addEventCb(self, GameStateMgr.instance, GameStateEvent.OnTouchScreenUp, self._onTouch, self)
 end
@@ -154,11 +182,15 @@ function WeatherSwitchControlComp:_startDelayUpdateStatus()
 	self._btnup.button.interactable = false
 	self._btndown.button.interactable = false
 
-	TaskDispatcher.cancelTask(self._delayUpdateStatus, self)
-	TaskDispatcher.runDelay(self._delayUpdateStatus, self, self._cdTime)
+	if not self._animationWeatherEvent then
+		TaskDispatcher.cancelTask(self._delayUpdateStatus, self)
+		TaskDispatcher.runDelay(self._delayUpdateStatus, self, self._cdTime)
+	end
 end
 
 function WeatherSwitchControlComp:_delayUpdateStatus()
+	self._isPlayingRefreshAnim = false
+
 	self:_updateBtnStatus()
 end
 
@@ -204,6 +236,10 @@ function WeatherSwitchControlComp:onDestroyView()
 
 	for i, v in ipairs(self._itemList) do
 		v.btn:RemoveClickListener()
+	end
+
+	if self._animationWeatherEvent then
+		self._animationWeatherEvent:RemoveEventListener("WeatherSwitch")
 	end
 
 	TaskDispatcher.cancelTask(self._delayUpdateStatus, self)

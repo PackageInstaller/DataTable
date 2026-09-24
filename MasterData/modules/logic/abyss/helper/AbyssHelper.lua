@@ -144,12 +144,12 @@ function AbyssHelper.loadFightRoundCondition(episodeId, gogoal, goconditionitemd
 	end
 end
 
-function AbyssHelper.getValidSkill(stageId, skillId)
+function AbyssHelper.getValidSkill(actId, stageId, skillId)
 	if stageId == nil then
 		return 0
 	end
 
-	local skillDic = AbyssConfig.instance:getStageSkillIdDic(stageId)
+	local skillDic = AbyssConfig.instance:getStageSkillIdDic(actId, stageId)
 
 	if not skillDic or not skillDic[skillId] then
 		return 0

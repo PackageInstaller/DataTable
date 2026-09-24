@@ -30,6 +30,7 @@ function DungeonMapViewContainer:buildViews()
 	table.insert(views, VersionActivity2_8BossActDungeonMapView.New())
 	table.insert(views, CommandStationDungeonMapView.New())
 	table.insert(views, TowerV3a7DungeonMapView.New())
+	table.insert(views, SonnetInterchapterDungeonMapView.New())
 
 	return views
 end

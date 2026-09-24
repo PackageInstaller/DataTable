@@ -236,14 +236,14 @@ function Activity128Config:getDungeonEpisodeCO(stage, layer, activityId)
 	return getDungeonEpisodeCO(episodeId, activityId)
 end
 
-function Activity128Config:getDungeonBattleId(stage, layer)
-	local co = self:getDungeonEpisodeCO(stage, layer)
+function Activity128Config:getDungeonBattleId(stage, layer, activityId)
+	local co = self:getDungeonEpisodeCO(stage, layer, activityId)
 
 	return co.battleId
 end
 
-function Activity128Config:getDungeonBattleCO(stage, layer)
-	local battleId = self:getDungeonBattleId(stage, layer)
+function Activity128Config:getDungeonBattleCO(stage, layer, activityId)
+	local battleId = self:getDungeonBattleId(stage, layer, activityId)
 
 	return getBattleCO(battleId)
 end
@@ -296,8 +296,8 @@ function Activity128Config:getBattleMaxPoints(stage, layer)
 	return getCountBossCO(battleId).maxPoints
 end
 
-function Activity128Config:getFinalMonsterId(stage, layer)
-	local battleId = self:getDungeonBattleId(stage, layer)
+function Activity128Config:getFinalMonsterId(stage, layer, activityId)
+	local battleId = self:getDungeonBattleId(stage, layer, activityId)
 
 	return tonumber(getCountBossCO(battleId).finalMonsterId)
 end

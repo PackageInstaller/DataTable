@@ -18,6 +18,7 @@ function DungeonSectionItem:onInitView()
 	self._txtname = gohelper.findChildText(self.viewGO, "anim/#txt_name")
 	self._txtnameen = gohelper.findChildText(self.viewGO, "anim/#txt_name_en")
 	self._btncommandstation = gohelper.findChildButtonWithAudio(self.viewGO, "anim/#btn_commandstation")
+	self._btncollege = gohelper.findChildButtonWithAudio(self.viewGO, "anim/#btn_commandstation_2")
 	self._gostorytrace = gohelper.findChild(self.viewGO, "anim/#go_trace")
 
 	if self._editableInitView then
@@ -29,6 +30,7 @@ function DungeonSectionItem:addEvents()
 	self._btntip:AddClickListener(self._btntipOnClick, self)
 	self._btnplay:AddClickListener(self._btnplayOnClick, self)
 	self._btncommandstation:AddClickListener(self._btncommandstationOnClick, self)
+	self._btncollege:AddClickListener(self._btncollegeOnClick, self)
 	self.addEventCb(self, CharacterRecommedController.instance, CharacterRecommedEvent.OnRefreshTraced, self._refreshTraced, self)
 end
 
@@ -36,6 +38,7 @@ function DungeonSectionItem:removeEvents()
 	self._btntip:RemoveClickListener()
 	self._btnplay:RemoveClickListener()
 	self._btncommandstation:RemoveClickListener()
+	self._btncollege:RemoveClickListener()
 	self.removeEventCb(self, CharacterRecommedController.instance, CharacterRecommedEvent.OnRefreshTraced, self._refreshTraced, self)
 end
 
@@ -43,6 +46,10 @@ function DungeonSectionItem:_btncommandstationOnClick()
 	CommandStationController.instance:openCommandStationEnterView({
 		fromDungeonSectionItem = true
 	})
+end
+
+function DungeonSectionItem:_btncollegeOnClick()
+	CollegeController.instance:enterCollegeCity()
 end
 
 function DungeonSectionItem:setTipVisible(visible)
@@ -93,6 +100,7 @@ function DungeonSectionItem:_editableInitView()
 
 	gohelper.setActive(self._btnplay, false)
 	gohelper.setActive(self._btncommandstation, false)
+	gohelper.setActive(self._btncollege, false)
 end
 
 function DungeonSectionItem:playOpenAnim()
@@ -143,6 +151,7 @@ end
 
 function DungeonSectionItem:_newFuncUnlock()
 	self:_updateCommandStationStatus()
+	self:_updateCollegeStatus()
 end
 
 function DungeonSectionItem:_loadImgs()
@@ -178,6 +187,7 @@ function DungeonSectionItem:onUpdateMO(mo)
 
 	self:_updatePreviouslyOnStatus()
 	self:_updateCommandStationStatus()
+	self:_updateCollegeStatus()
 	gohelper.setActive(self._goarrow, self._isSelected)
 	gohelper.setActive(self._simagelight, not self._isSelected)
 	TaskDispatcher.cancelTask(self._delayShowTip, self)
@@ -224,6 +234,12 @@ function DungeonSectionItem:_updateCommandStationStatus()
 	local showCommandStation = self._mo.sectionId == 3 and OpenModel.instance:isFunctionUnlock(OpenEnum.UnlockFunc.CommandStation)
 
 	gohelper.setActive(self._btncommandstation, showCommandStation)
+end
+
+function DungeonSectionItem:_updateCollegeStatus()
+	local showBtn = self._mo.sectionId == 4 and OpenModel.instance:isFunctionUnlock(OpenEnum.UnlockFunc.College)
+
+	gohelper.setActive(self._btncollege, showBtn)
 end
 
 function DungeonSectionItem:_addChapterIcon()

@@ -1,6 +1,32 @@
 ﻿-- chunkname: @modules/setting/module_mvc.lua
 
 return {
+	V3a7_SkinGift = {
+		config = {
+			"V3a7_SkinGiftConfig"
+		}
+	},
+	Deleike = {
+		controller = {
+			"DeleikeController"
+		},
+		config = {
+			"DeleikeConfig"
+		}
+	},
+	SpLilya = {
+		controller = {
+			"SpLilyaController",
+			"SpLilyaGameController"
+		},
+		model = {
+			"SpLilyaModel",
+			"SpLilyaGameModel"
+		},
+		config = {
+			"SpLilyaConfig"
+		}
+	},
 	Activity243 = {
 		rpc = {
 			"Activity243Rpc"
@@ -97,6 +123,20 @@ return {
 		},
 		config = {
 			"TowerV3a7Config"
+		}
+	},
+	Sonnet = {
+		model = {
+			"SonnetInterchapterModel"
+		},
+		controller = {
+			"SonnetInterchapterController"
+		},
+		rpc = {
+			"SonnetInterchapterRpc"
+		},
+		config = {
+			"SonnetInterchapterConfig"
 		}
 	},
 	CurrencyExchange = {
@@ -725,12 +765,22 @@ return {
 			"Activity160Rpc"
 		}
 	},
-	PickAssist = {
+	Assist = {
 		model = {
-			"PickAssistListModel"
+			"AssistRecordModel",
+			"PickAssistListModel",
+			"RoleBadgeModel"
 		},
 		controller = {
-			"PickAssistController"
+			"PickAssistController",
+			"AssistController"
+		},
+		config = {
+			"RoleBadgeConfig"
+		},
+		rpc = {
+			"AssistRecordRpc",
+			"RoleBadgeRpc"
 		}
 	},
 	Permanent = {
@@ -773,10 +823,12 @@ return {
 	},
 	CustomPickChoice = {
 		model = {
-			"CustomPickChoiceListModel"
+			"CustomPickChoiceListModel",
+			"SummonCustomPickHeroModel"
 		},
 		controller = {
-			"CustomPickChoiceController"
+			"CustomPickChoiceController",
+			"SummonCustomPickController"
 		}
 	},
 	SemmelWeisGift = {
@@ -1030,6 +1082,20 @@ return {
 		},
 		config = {
 			"MeilanniConfig"
+		}
+	},
+	College = {
+		model = {
+			"CollegeModel"
+		},
+		controller = {
+			"CollegeController"
+		},
+		rpc = {
+			"CollegeRpc"
+		},
+		config = {
+			"CollegeConfig"
 		}
 	},
 	Activity114 = {
@@ -1291,6 +1357,14 @@ return {
 			"MainSwitchClassifyListModel"
 		}
 	},
+	Decorate = {
+		controller = {
+			"DecorateController"
+		},
+		model = {
+			"DecorateModel"
+		}
+	},
 	Main = {
 		controller = {
 			"MainController"
@@ -1487,7 +1561,8 @@ return {
 			"CharacterEquipSettingListModel",
 			"CharacterDestinyModel",
 			"HeroResonaceModel",
-			"CharacterSearchFilterModel"
+			"CharacterSearchFilterModel",
+			"CharacterPastModel"
 		},
 		controller = {
 			"CharacterController",
@@ -1836,6 +1911,9 @@ return {
 		},
 		rpc = {
 			"StatRpc"
+		},
+		config = {
+			"StatConfig"
 		}
 	},
 	room = {
@@ -3988,6 +4066,47 @@ return {
 		},
 		controller = {
 			"NaxisuosiController"
+		}
+	},
+	Activity244 = {
+		model = {
+			"MatchGameFightModel",
+			"MatchGameHeroGroupModel",
+			"MatchGameModel",
+			"MatchGameLevelModel"
+		},
+		controller = {
+			"MatchGameController"
+		},
+		config = {
+			"MatchGameConfig",
+			"MatchGameFightConfig"
+		},
+		rpc = {
+			"MatchGameRpc"
+		}
+	},
+	ConcertLimit = {
+		config = {
+			"CandyRoomConfig",
+			"MusicGameConfig",
+			"ActFlipConfig"
+		},
+		model = {
+			"ConcertLimitModel",
+			"CandyRoomModel",
+			"MusicGameModel",
+			"ActFlipModel"
+		},
+		controller = {
+			"ConcertLimitController",
+			"CandyRoomController",
+			"MusicGameController",
+			"ActFlipController"
+		},
+		rpc = {
+			"Activity245Rpc",
+			"Activity246Rpc"
 		}
 	}
 }

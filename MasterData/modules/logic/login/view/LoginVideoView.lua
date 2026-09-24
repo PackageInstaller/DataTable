@@ -55,9 +55,7 @@ function LoginVideoView:onDestroyView()
 end
 
 function LoginVideoView:play()
-	local videlPath = CommonConfig.instance:getConstStr(ConstEnum.LoginViewVideoPathId)
-
-	self:_playByPath(videlPath)
+	self:_playByPath(self._videoName)
 end
 
 function LoginVideoView:_playByPath(videoPath)

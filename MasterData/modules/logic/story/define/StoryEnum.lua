@@ -47,20 +47,24 @@ StoryEnum.HeroPos = {
 }
 StoryEnum.HeroEffect = {
 	SetFlash = "setFlash",
-	StyDissolve = "stydissolve",
-	Glow = "glow",
 	Gray = "gray",
+	ShowNode = "showNode",
+	SetAlpha = "setAlpha",
 	BlackFog = "blackFog",
-	SetSkin = "setSkin",
-	WaterWave = "waterWave",
-	SetDissolve = "setDissolve",
+	SetFadeIn = "setFadeIn",
 	DissolveAndSoft = "dissolveAndSoft",
+	WaterWave = "waterWave",
+	DLKBloom = "dlkBloom",
+	SetParam = "setParam",
+	SetSkin = "setSkin",
+	Glow = "glow",
+	StyDissolve = "stydissolve",
+	SetDissolve = "setDissolve",
+	SetFadeOut = "setFadeOut",
 	Erase = "erase",
 	HideNode = "hideNode",
-	SetAlpha = "setAlpha",
-	ShowNode = "showNode",
-	KeepAction = "keepAction",
-	SetParam = "setParam"
+	SetMaterial = "setMaterial",
+	KeepAction = "keepAction"
 }
 StoryEnum.BgType = {
 	Video = 2,
@@ -121,7 +125,7 @@ StoryEnum.BgEffectType = {
 	LineLight = 24,
 	FishEye = 2,
 	CustomBlur = 23,
-	Starburst = 18,
+	MonitorFilter = 38,
 	EagleEye = 13,
 	FullBlur = 4,
 	Malfunction = 29,
@@ -131,6 +135,7 @@ StoryEnum.BgEffectType = {
 	CrtFilter = 36,
 	BgDistress = 20,
 	ScreenHalo2 = 35,
+	Starburst = 18,
 	BlindFilter = 10,
 	Penetration = 22,
 	RgbSplit = 12,
@@ -216,6 +221,7 @@ StoryEnum.PictureOrderType = {
 }
 StoryEnum.PictureInType = {
 	SoftLight = 3,
+	WordByWord = 5,
 	GostMagic = 4,
 	FadeIn = 1,
 	TxtFadeIn = 2,
@@ -228,6 +234,7 @@ StoryEnum.PictureOutType = {
 StoryEnum.PictureEffectType = {
 	Scale = 3,
 	FollowBg = 2,
+	Popout = 4,
 	Shake = 1,
 	None = 0
 }
@@ -253,6 +260,7 @@ StoryEnum.OptionType = {
 	EndAsk = 6,
 	ContinueAsk = 5,
 	SpLongClick = 4,
+	SpSlide2 = 7,
 	SpSlide = 3,
 	None = 0
 }
@@ -263,6 +271,7 @@ StoryEnum.NavigateType = {
 	HideBtns = 5,
 	Map = 1,
 	FullScreenCountdown = 12,
+	ClickEffect = 17,
 	StormDeadline = 9,
 	RoleStoryStart = 8,
 	StrategyStart = 10,
@@ -339,9 +348,10 @@ StoryEnum.FullScreenCountdownAnimType = {
 }
 StoryEnum.MaterialPropType = {
 	Texture = 3,
-	Float = 0,
 	Vector = 2,
-	Color = 1
+	Keyword = 4,
+	Color = 1,
+	Float = 0
 }
 StoryEnum.ScoreCardAnimType = {
 	dafenban2_end = 6,
@@ -354,6 +364,34 @@ StoryEnum.ScoreCardAnimType = {
 	dafenban8_end = 9,
 	dafenban5_change = 4,
 	dafenban4_start = 2
+}
+StoryEnum.TextAlignmentOptions = {
+	bottomleft = "BottomLeft",
+	center = "Center",
+	topright = "TopRight",
+	bottomright = "BottomRight",
+	left = "Left",
+	top = "Top",
+	topleft = "TopLeft",
+	bottom = "Bottom",
+	right = "Right"
+}
+StoryEnum.TextAnchor = {
+	bottomleft = "LowerLeft",
+	center = "MiddleCenter",
+	topright = "UpperRight",
+	bottomright = "LowerRight",
+	left = "MiddleLeft",
+	top = "UpperCenter",
+	topleft = "UpperLeft",
+	bottom = "LowerCenter",
+	right = "MiddleRight"
+}
+StoryEnum.VideoEffectType = {
+	FadeOut = 2,
+	FadeIn = 1,
+	LoopFade = 3,
+	None = 0
 }
 
 return StoryEnum

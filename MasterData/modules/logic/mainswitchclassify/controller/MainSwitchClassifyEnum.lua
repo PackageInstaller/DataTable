@@ -38,14 +38,18 @@ MainSwitchClassifyEnum.StyleClassifyInfo = {
 }
 MainSwitchClassifyEnum.ItemInfo = {
 	[ItemEnum.SubType.SceneUIPackage] = {
-		Logo = "mainsceneswitch_logo06",
+		Tag = "p_mainsceneswitchview_title_2",
+		Logo = "p_mainsceneskinmaterialtipview2_txt_tab1",
+		Title = "p_mainsceneskinmaterialtipview2_txt_tab1",
 		LogoAnchor = {
 			x = -560,
 			y = 290
 		}
 	},
 	[ItemEnum.SubType.MainSceneSkin] = {
+		Tag = "p_mainsceneswitchview_title_2",
 		Logo = "mainsceneswitch_logo",
+		Title = "main_switch_classify_title_1",
 		Classify = MainSwitchClassifyEnum.Classify.Scene,
 		LogoAnchor = {
 			x = -510,
@@ -53,7 +57,9 @@ MainSwitchClassifyEnum.ItemInfo = {
 		}
 	},
 	[ItemEnum.SubType.MainUISkin] = {
+		Tag = "p_mainsceneswitchview_title_2",
 		Logo = "mainsceneswitch_logo03",
+		Title = "main_switch_classify_title_2",
 		Classify = MainSwitchClassifyEnum.Classify.UI,
 		LogoAnchor = {
 			x = -560,

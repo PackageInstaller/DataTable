@@ -44,5 +44,10 @@ CharacterRecommedEnum.AnimName = {
 }
 CharacterRecommedEnum.TracedIconPath = "ui/viewres/character/recommed/traceitem.prefab"
 CharacterRecommedEnum.TraceHeroPref = "CharacterRecommedEnum_TraceHeroPref_"
+CharacterRecommedEnum.HeroIconStart = 100
+CharacterRecommedEnum.HeroIconSpace = 165
+CharacterRecommedEnum.TeamMaxHero = 4
+CharacterRecommedEnum.GroupTweenDuration = 0.2
+CharacterRecommedEnum.HeroIconTweenDuration = 0.2
 
 return CharacterRecommedEnum

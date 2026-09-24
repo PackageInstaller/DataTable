@@ -94,6 +94,7 @@ function GoldenMilletPresentImpl:onOpen()
 	self:_refreshItemList()
 	ViewMgr.instance:registerCallback(ViewEvent.OnCloseView, self._onCloseView, self)
 	ActivityController.instance:registerCallback(ActivityEvent.RefreshNorSignActivity, self._onRefreshNorSignActivity, self)
+	AudioMgr.instance:trigger(AudioEnum.UI.play_ui_yingmen4_0_xingjian_open)
 end
 
 function GoldenMilletPresentImpl:onClose()

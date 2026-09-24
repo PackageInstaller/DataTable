@@ -83,7 +83,7 @@ function MailView:_btngetallbatchOnClick()
 end
 
 function MailView:_btnrenewOnClick()
-	StoreController.instance:openStoreView(StoreEnum.StoreId.Package, StoreEnum.MonthCardGoodsId)
+	StoreController.instance:openStoreView(StoreEnum.StoreId.Package, StoreConfig.instance:getMonthCardStoreChargeId())
 end
 
 function MailView:_btnmodifynameOnClick()

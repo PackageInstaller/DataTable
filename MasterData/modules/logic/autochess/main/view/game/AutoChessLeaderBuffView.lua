@@ -37,9 +37,9 @@ function AutoChessLeaderBuffView:_editableInitView()
 end
 
 function AutoChessLeaderBuffView:onOpen()
-	self.chessMo = AutoChessModel.instance:getChessMo()
+	self.sceneMo = AutoChessModel.instance:getSceneMo()
 
-	local master = self.chessMo.svrFight.mySideMaster
+	local master = self.sceneMo.fight.mySideMaster
 	local energy = AutoChessHelper.getBuffCnt(master.buffContainer.buffs, AutoChessEnum.EnergyBuffIds)
 
 	if energy == 0 then

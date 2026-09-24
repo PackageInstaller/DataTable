@@ -217,6 +217,11 @@ function StoryBranchView:_refreshOptionSelectItems()
 
 				self._items[i]:init(self._gosp)
 				table.insert(self._spItems, self._items[i])
+			elseif v.optionCo and v.optionCo.type == StoryEnum.OptionType.SpSlide2 then
+				self._items[i] = StoryBranchOptionSpSlideSelectItem2.New()
+
+				self._items[i]:init(self._gosp)
+				table.insert(self._spItems, self._items[i])
 			else
 				self._items[i] = StoryBranchOptionSelectItem.New()
 

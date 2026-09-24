@@ -6,6 +6,7 @@ local Activity220Config = class("Activity220Config", BaseConfig)
 
 function Activity220Config:ctor()
 	self.activityTaskList = {}
+	self._episodeId2EpisodeInfoDic = nil
 end
 
 function Activity220Config:reqConfigNames()
@@ -98,6 +99,43 @@ end
 
 function Activity220Config:getAllActivityTaskConfigList(activityId)
 	return self.activityTaskList[activityId] or {}
+end
+
+function Activity220Config:get220EpisodeIdByFightEpisodeId(actId, fightEpisodeId)
+	if not actId or actId == 0 then
+		if not self._episodeId2EpisodeInfoDic then
+			self:initEpisodeId2EpisodeInfoDic()
+		end
+
+		local info = self._episodeId2EpisodeInfoDic[fightEpisodeId]
+
+		if info then
+			return info.episodeId, info.actId
+		end
+
+		return nil
+	end
+
+	local episodeCfgMap = self:getAllEpisodeConfigMap(actId)
+
+	for _, v in pairs(episodeCfgMap) do
+		if v.fightEpisodeId == fightEpisodeId then
+			return v.episodeId
+		end
+	end
+end
+
+function Activity220Config:initEpisodeId2EpisodeInfoDic()
+	self._episodeId2EpisodeInfoDic = {}
+
+	for _, v in ipairs(self._episodeConfig.configList) do
+		if v.fightEpisodeId and v.fightEpisodeId ~= 0 then
+			self._episodeId2EpisodeInfoDic[v.fightEpisodeId] = {
+				actId = v.activityId,
+				episodeId = v.episodeId
+			}
+		end
+	end
 end
 
 Activity220Config.instance = Activity220Config.New()

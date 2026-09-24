@@ -468,6 +468,14 @@ function TowerComposeHeroGroupView:checkPlaneHeroGroupEmpty()
 				end
 			end
 
+			local _, assistHero = HeroGroupModel.instance:getAssistMo({
+				planeId = planeId
+			})
+
+			if not isHasHero and assistHero then
+				isHasHero = true
+			end
+
 			if isHasHero == false then
 				return true, planeId
 			end

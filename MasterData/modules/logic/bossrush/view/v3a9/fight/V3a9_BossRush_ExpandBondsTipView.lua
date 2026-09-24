@@ -67,6 +67,8 @@ function V3a9_BossRush_ExpandBondsTipView:onOpen()
 	self._closeRoot = self.viewParam.closeRoot
 	self._heroId = self.viewParam.heroId
 
+	V3a9_BossRushExpandBondModel.instance:refreshExpandBondHeroList()
+
 	if self._closeRoot then
 		gohelper.addChildPosStay(self._closeRoot, self._btnclose)
 	end

@@ -30,6 +30,7 @@ function SettingsGameView:onInitView()
 	self._udimoDrop = gohelper.findChildDropdown(self.viewGO, "scroll/Viewport/Content/#go_udimoenter/#go_saving/dropudimo")
 	self._udimodropclick = gohelper.getClickWithAudio(self._godropudimo, AudioEnum.UI.play_ui_set_click)
 	self._udimoTemplate = gohelper.findChild(self._godropudimo, "Template")
+	self._btndeleteres = gohelper.findChildButtonWithAudio(self.viewGO, "scroll/Viewport/Content/#go_deleteres/#btn_go")
 
 	if self._editableInitView then
 		self:_editableInitView()
@@ -48,6 +49,7 @@ function SettingsGameView:addEvents()
 	self._btnudimoenterclick:AddClickListener(self._btnudimoenterOnClick, self)
 	self._udimoDrop:AddOnValueChanged(self._onUdimoSettingValueChanged, self)
 	self._udimodropclick:AddClickListener(self.udimoDropOnClick, self)
+	self._btndeleteres:AddClickListener(self._btndeleteresOnClick, self)
 end
 
 function SettingsGameView:removeEvents()
@@ -62,6 +64,7 @@ function SettingsGameView:removeEvents()
 	self._btnudimoenterclick:RemoveClickListener()
 	self._udimoDrop:RemoveOnValueChanged()
 	self._udimodropclick:RemoveClickListener()
+	self._btndeleteres:RemoveClickListener()
 end
 
 function SettingsGameView:_editableInitView()
@@ -253,6 +256,37 @@ function SettingsGameView:_saveSetting()
 	if SDKMgr.instance:isEmulator() then
 		PlayerPrefsHelper.save()
 	end
+end
+
+function SettingsGameView:_btndeleteresOnClick()
+	ViewMgr.instance:openView(ViewName.SettingsDelUnusedResView)
+end
+
+function SettingsGameView:_onLoadResInfo(assetItem)
+	if GameResMgr.IsFromEditorDir then
+		if not assetItem.TextAsset then
+			local jsonString = SLFramework.GameUpdate.UnityZipUtil.UnzipStr(assetItem.DataAsset)
+			local remoteJson = cjson.decode(jsonString)
+			local remoteDic = {}
+
+			for i, v in pairs(remoteJson) do
+				for dlcType, infoList in pairs(v) do
+					for key, value in pairs(infoList) do
+						remoteDic[key] = value.md5
+					end
+				end
+			end
+
+			GameFacade.showMessageBox(MessageBoxIdDefine.DeleteUnusedResConfirm, MsgBoxEnum.BoxType.Yes_No, function()
+				self:_deleteRes(remoteDic)
+			end)
+		end
+	end
+end
+
+function SettingsGameView:_deleteRes(remoteDic)
+	local persistentResRootDir = SLFramework.FileHelper.GetUnityPath(SLFramework.FrameworkSettings.PersistentResRootDir)
+	local allFiles = SLFramework.FileHelper.GetDirFilePaths(persistentResRootDir, true)
 end
 
 return SettingsGameView

@@ -26,8 +26,11 @@ function ClothesStoreView:onInitView()
 	self.txtDiscount = gohelper.findChildTextMesh(self.viewGO, "#go_has/RightBtn/#btn_buy/#go_discount/#txt_discount")
 	self.goCost = gohelper.findChild(self.viewGO, "#go_has/RightBtn/#btn_buy/#go_cost")
 	self.goCostCurrency1 = gohelper.findChild(self.goCost, "currency1")
+	self.btnCostCurrency1Click = gohelper.findChildButtonWithAudio(self.goCostCurrency1, "#btn_click")
 	self.txtPrice = gohelper.findChildTextMesh(self.goCost, "currency1/txt_materialNum")
 	self.txtOriginalPrice = gohelper.findChildTextMesh(self.goCost, "currency1/#txt_original_price")
+	self.goCostCurrency2 = gohelper.findChild(self.goCost, "currency2")
+	self.btnCostCurrency2Click = gohelper.findChildButtonWithAudio(self.goCostCurrency2, "#btn_click")
 	self.imagematerial = gohelper.findChildImage(self.goCost, "currency2/icon/simage_material")
 	self.txtMaterialNum = gohelper.findChildTextMesh(self.goCost, "currency2/txt_materialNum")
 	self.txtOriginalMaterialNum = gohelper.findChildTextMesh(self.goCost, "currency2/#txt_original_price")
@@ -69,6 +72,8 @@ function ClothesStoreView:addEvents()
 	self.addClickCb(self, self.btnBuy, self._onClickBtnBuy, self)
 	self.addClickCb(self, self.btnArrow, self._onClickBtnArrow, self)
 	self.addEventCb(self, StoreController.instance, StoreEvent.SkinPlayPriceAnim, self._onSkinPlayPriceAnim, self)
+	self.addClickCb(self, self.btnCostCurrency1Click, self._onClickBtnCostCurrency1, self)
+	self.addClickCb(self, self.btnCostCurrency2Click, self._onClickBtnCostCurrency2, self)
 end
 
 function ClothesStoreView:removeEvents()
@@ -86,6 +91,8 @@ function ClothesStoreView:removeEvents()
 	self:removeClickCb(self.btnBuy)
 	self:removeClickCb(self.btnArrow)
 	self.removeEventCb(self, StoreController.instance, StoreEvent.SkinPlayPriceAnim, self._onSkinPlayPriceAnim, self)
+	self:removeClickCb(self.btnCostCurrency1Click)
+	self:removeClickCb(self.btnCostCurrency2Click)
 end
 
 local csAnimatorPlayer = SLFramework.AnimatorPlayer
@@ -95,6 +102,7 @@ function ClothesStoreView:_editableInitView()
 
 	gohelper.setActive(self._goempty, false)
 
+	self._godeductionIconGo = gohelper.findChild(self.viewGO, "#go_has/RightBtn/#btn_buy/#go_deduction/icon")
 	self._btnBuyAnimPlayer = csAnimatorPlayer.Get(self.btnBuy.gameObject)
 	self._btnBuyAnimator = self._btnBuyAnimPlayer.animator
 
@@ -157,6 +165,16 @@ end
 function ClothesStoreView:hideUI(noAnim, isNotAutoClose)
 	self._isDefaultShowViewAutoClose = isNotAutoClose ~= false
 
+	local goodsMo = StoreClothesGoodsItemListModel.instance:getSelectGoods()
+
+	if goodsMo then
+		local goodsConfig = goodsMo.config
+
+		if goodsConfig.skinLevel == 2 and self:checkSkinVideoNotPlayed(self.skinId) then
+			self._isDefaultShowViewAutoClose = false
+		end
+	end
+
 	if noAnim then
 		StoreController.instance:dispatchEvent(StoreEvent.PlayHideStoreAnim)
 		self:_startDefaultShowView()
@@ -169,7 +187,10 @@ function ClothesStoreView:hideUI(noAnim, isNotAutoClose)
 end
 
 function ClothesStoreView:_onClickBtnPlay()
-	self:playVideo()
+	local goodsMo = StoreClothesGoodsItemListModel.instance:getSelectGoods()
+
+	StoreController.instance:dispatchEvent(StoreEvent.OnPlaySkinVideo, goodsMo)
+	self:hideUI(false, false)
 
 	if self.skinId then
 		StatController.instance:track(StatEnum.EventName.ButtonClick, {
@@ -253,36 +274,31 @@ function ClothesStoreView:_onClickBtnDetail()
 end
 
 function ClothesStoreView:_onClickBtnBuy()
+	self:_onClickBtnBuyImpl()
+end
+
+function ClothesStoreView:_onClickBtnCostCurrency1()
+	self:_onClickBtnBuyImpl(StoreSkinGoodsView2.CostIndex.RMB)
+end
+
+function ClothesStoreView:_onClickBtnCostCurrency2()
+	self:_onClickBtnBuyImpl(StoreSkinGoodsView2.CostIndex.Coin)
+end
+
+function ClothesStoreView:_onClickBtnBuyImpl(eStoreSkinGoodsView2CostIndex)
 	local goodsMO = StoreClothesGoodsItemListModel.instance:getSelectGoods()
 
 	if not goodsMO then
 		return
 	end
 
-	local goodsConfig = goodsMO.config
+	if self:_bOpenGoldenMilletPresentView() then
+		self:_showMessageBox_GoldenMilletPresentSkinBeforeBuy()
 
-	if not self._goodsPriceInfo then
-		local info = StoreHelper.getSkinGoodsPriceInfo(goodsConfig, self.skinId)
-		local specialofferItemType = info.specialofferItemType
-		local specialofferItemId = info.specialofferItemId
-		local hasSpecialOfferItem = info.hasSpecialOfferItem
-
-		if specialofferItemType then
-			local specialofferItemCO = ItemModel.instance:getItemConfig(specialofferItemType, specialofferItemId)
-
-			if ItemEnum.Tag.GoldenMilletPresentSkin == specialofferItemCO.clienttag and GoldenMilletPresentModel.instance:isShowRedDot() and not hasSpecialOfferItem then
-				GameFacade.showMessageBox(MessageBoxIdDefine.GoldenMilletPresentSkinBeforeBuy, MsgBoxEnum.BoxType.Yes, function()
-					GoldenMilletPresentController.instance:openGoldenMilletPresentView()
-				end, nil, nil, self, nil, nil)
-
-				return
-			end
-		end
-
-		ViewMgr.instance:openView(ViewName.StoreSkinGoodsView2, {
-			goodsMO = goodsMO
-		})
+		return
 	end
+
+	self:_simpleShowStoreSkinGoodsView2(goodsMO, eStoreSkinGoodsView2CostIndex)
 end
 
 function ClothesStoreView:_startDefaultShowView()
@@ -326,66 +342,6 @@ function ClothesStoreView:_refreshTabs(selectTabId, openUpdate)
 	local _
 
 	_, self._selectSecondTabId, self._selectThirdTabId = StoreModel.instance:jumpTabIdToSelectTabId(selectTabId)
-
-	local thirdConfig = StoreConfig.instance:getTabConfig(self._selectThirdTabId)
-	local secondConfig = StoreConfig.instance:getTabConfig(self._selectSecondTabId)
-	local firstConfig = StoreConfig.instance:getTabConfig(self.viewContainer:getSelectFirstTabId())
-	local showCurrency = {}
-
-	if thirdConfig and not string.nilorempty(thirdConfig.showCost) then
-		showCurrency = string.splitToNumber(thirdConfig.showCost, "#")
-	elseif secondConfig and not string.nilorempty(secondConfig.showCost) then
-		showCurrency = string.splitToNumber(secondConfig.showCost, "#")
-	elseif firstConfig and not string.nilorempty(firstConfig.showCost) then
-		showCurrency = string.splitToNumber(firstConfig.showCost, "#")
-	end
-
-	local skinTickets = ItemModel.instance:getItemsBySubType(ItemEnum.SubType.SkinTicket)
-	local skinTicketItemId
-
-	for _, itemMo in ipairs(skinTickets) do
-		local itemId = itemMo.id
-		local config = lua_item.configDict[itemId]
-
-		if config.clienttag == ItemEnum.Tag.GoldenMilletPresentSkin then
-			-- block empty
-		elseif skinTicketItemId == nil then
-			skinTicketItemId = itemId
-		end
-
-		table.insert(showCurrency, {
-			isCurrencySprite = true,
-			type = MaterialEnum.MaterialType.Item,
-			id = itemId
-		})
-	end
-
-	if skinTicketItemId then
-		local deadlineTimeHour = 0
-		local itemCo = ItemModel.instance:getItemConfigAndIcon(MaterialEnum.MaterialType.Item, skinTicketItemId)
-
-		if itemCo and not string.nilorempty(itemCo.expireTime) then
-			local ts = TimeUtil.stringToTimestamp(itemCo.expireTime)
-			local offsetSecond = math.floor(ts - ServerTime.now())
-
-			if offsetSecond >= 0 and offsetSecond <= 259200 then
-				deadlineTimeHour = math.floor(offsetSecond / 60 / 60)
-				deadlineTimeHour = math.max(deadlineTimeHour, 1)
-			end
-		end
-
-		if deadlineTimeHour > 0 then
-			gohelper.setActive(self.goDeduction, true)
-
-			self.txtDeduction.text = GameUtil.getSubPlaceholderLuaLangOneParam(luaLang("bp_deduction_item_deadtime"), tostring(deadlineTimeHour))
-		else
-			gohelper.setActive(self.goDeduction, false)
-		end
-	else
-		gohelper.setActive(self.goDeduction, false)
-	end
-
-	self.viewContainer:setCurrencyByParams(showCurrency)
 
 	if not openUpdate and preSelectSecondTabId == self._selectSecondTabId and preSelectThirdTabId == self._selectThirdTabId then
 		return
@@ -503,6 +459,7 @@ function ClothesStoreView:_updateItemList()
 	local jumpTabId = self.viewContainer:getJumpTabId()
 
 	self:_refreshTabs(jumpTabId, true)
+	self:_refreshCurrency()
 end
 
 function ClothesStoreView:_onStoreInfoChanged()
@@ -665,12 +622,8 @@ function ClothesStoreView:refreshSkinInfo()
 	end
 
 	if isShowVideoBtn and self:checkSkinVideoNotPlayed(skinId) then
-		self:setSkinVideoPlayed(skinId)
 		self:playVideo()
-	elseif self:checkSkinVideoNotPlayed(0) then
-		self:setSkinVideoPlayed(0)
-		self:hideUI()
-		self:_playSkinVideoStoreByMo(goodsMo, skinViewCfg)
+		self:setSkinVideoPlayed(skinId)
 	else
 		self:_playSkinVideoStoreByMo(goodsMo, skinViewCfg)
 	end
@@ -696,11 +649,13 @@ function ClothesStoreView:refreshChargeInfo()
 	local coinsReduction = info.coinsReduction
 	local hasDeductionItem = info.hasDeductionItem
 	local hasSpecialOfferItem = info.hasSpecialOfferItem
+	local containDeductionCount = info.containDeductionCount
+	local specialofferItemId = info.specialofferItemId
 	local canRepeatBuy = StoreModel.instance:isSkinGoodsCanRepeatBuy(goodsMo)
 	local alreadyHas = goodsMo:alreadyHas() and not canRepeatBuy
 
 	if rmbCurPrice then
-		self.txtPrice.text = string.format("%s%s", StoreModel.instance:getCostStr(rmbCurPrice))
+		self.txtPrice.text = rmbCurPrice
 	end
 
 	gohelper.setActive(self.goCostCurrency1, rmbCurPrice)
@@ -725,7 +680,15 @@ function ClothesStoreView:refreshChargeInfo()
 
 	gohelper.setActive(self.txtOriginalMaterialNum, isShowCoinsOriginalPrice)
 
-	self.txtCostDeduction.text = -coinsReduction
+	if containDeductionCount > 1 then
+		gohelper.setActive(self._godeductionIconGo, false)
+
+		self.txtCostDeduction.text = string.format(luaLang("StoreSkinGoodsView2_total_discount"), -coinsReduction)
+	else
+		self.txtCostDeduction.text = -coinsReduction
+
+		gohelper.setActive(self._godeductionIconGo, true)
+	end
 
 	gohelper.setActive(self.goCostDeduction, hasDeductionItem)
 
@@ -739,7 +702,7 @@ function ClothesStoreView:refreshChargeInfo()
 	local isShowOffTag = false
 
 	if isShowOffTag then
-		local offDiscount = math.ceil(coinsCurPrice / coinsOriginalPrice * 100)
+		local offDiscount = coinsOriginalPrice > 0 and math.ceil(coinsCurPrice / coinsOriginalPrice * 100) or 100
 
 		isShowOffTag = offDiscount < 100 and offDiscount > 0
 		self.txtDiscount.text = string.format("-%d%%", 100 - offDiscount)
@@ -759,6 +722,33 @@ function ClothesStoreView:refreshChargeInfo()
 	end
 
 	self:_setActive_redOrOrange(hasSpecialOfferItem)
+
+	if hasSpecialOfferItem then
+		local deadlineTimeHour = 0
+		local itemCo = ItemModel.instance:getItemConfigAndIcon(MaterialEnum.MaterialType.Item, specialofferItemId)
+
+		if itemCo and not string.nilorempty(itemCo.expireTime) then
+			local ts = TimeUtil.stringToTimestamp(itemCo.expireTime)
+			local offsetSecond = math.floor(ts - ServerTime.now())
+
+			if offsetSecond >= 0 and offsetSecond <= 259200 then
+				deadlineTimeHour = math.floor(offsetSecond / 60 / 60)
+				deadlineTimeHour = math.max(deadlineTimeHour, 1)
+			end
+		end
+
+		if deadlineTimeHour > 0 then
+			gohelper.setActive(self.goDeduction, true)
+
+			self.txtDeduction.text = GameUtil.getSubPlaceholderLuaLangOneParam(luaLang("bp_deduction_item_deadtime"), tostring(deadlineTimeHour))
+		else
+			gohelper.setActive(self.goDeduction, false)
+		end
+	else
+		gohelper.setActive(self.goDeduction, false)
+	end
+
+	self:_refreshCurrency()
 end
 
 function ClothesStoreView:refreshNewArrow()
@@ -881,6 +871,104 @@ end
 function ClothesStoreView:_setActive_redOrOrange(bRed)
 	gohelper.setActive(self._goimg_orange, not bRed)
 	gohelper.setActive(self._goimg_red, bRed)
+end
+
+function ClothesStoreView:_refreshCurrency()
+	if not self._goodsMo then
+		return
+	end
+
+	if not self._goodsPriceInfo then
+		local goodsMo = self._goodsMo
+		local goodsConfig = goodsMo.config
+		local skinId = self.skinId
+		local skinCo = SkinConfig.instance:getSkinCo(skinId)
+
+		self._goodsPriceInfo = StoreHelper.getSkinGoodsPriceInfo(goodsConfig, skinId)
+	end
+
+	local info = self._goodsPriceInfo
+	local hasDeductionItem = info.hasDeductionItem
+	local deductionItemInfoList = info.deductionItemInfoList
+	local hasSpecialOfferItem = info.hasSpecialOfferItem
+	local specialofferItemType = info.specialofferItemType
+	local specialofferItemId = info.specialofferItemId
+	local thirdConfig = StoreConfig.instance:getTabConfig(self._selectThirdTabId)
+	local secondConfig = StoreConfig.instance:getTabConfig(self._selectSecondTabId)
+	local firstConfig = StoreConfig.instance:getTabConfig(self.viewContainer:getSelectFirstTabId())
+	local showCurrency = {}
+
+	if thirdConfig and not string.nilorempty(thirdConfig.showCost) then
+		showCurrency = string.splitToNumber(thirdConfig.showCost, "#")
+	elseif secondConfig and not string.nilorempty(secondConfig.showCost) then
+		showCurrency = string.splitToNumber(secondConfig.showCost, "#")
+	elseif firstConfig and not string.nilorempty(firstConfig.showCost) then
+		showCurrency = string.splitToNumber(firstConfig.showCost, "#")
+	end
+
+	if hasDeductionItem then
+		for _, info in ipairs(deductionItemInfoList) do
+			if info.has then
+				table.insert(showCurrency, {
+					isCurrencySprite = true,
+					type = info.itemType,
+					id = info.itemId
+				})
+			end
+		end
+	end
+
+	if hasSpecialOfferItem then
+		table.insert(showCurrency, {
+			isCurrencySprite = true,
+			type = specialofferItemType,
+			id = specialofferItemId
+		})
+	end
+
+	self.viewContainer:setCurrencyByParams(showCurrency)
+end
+
+function ClothesStoreView:_simpleShowStoreSkinGoodsView2(goodsMO, optEStoreSkinGoodsView2CostIndex)
+	local viewParam = {
+		goodsMO = goodsMO,
+		index = optEStoreSkinGoodsView2CostIndex
+	}
+
+	ViewMgr.instance:openView(ViewName.StoreSkinGoodsView2, viewParam)
+end
+
+function ClothesStoreView:_bOpenGoldenMilletPresentView()
+	local goodsMO = StoreClothesGoodsItemListModel.instance:getSelectGoods()
+
+	if not goodsMO then
+		return false
+	end
+
+	local goodsConfig = goodsMO.config
+
+	if not self._goodsPriceInfo then
+		local info = StoreHelper.getSkinGoodsPriceInfo(goodsConfig, self.skinId)
+		local specialofferItemType = info.specialofferItemType
+		local specialofferItemId = info.specialofferItemId
+		local hasSpecialOfferItem = info.hasSpecialOfferItem
+
+		if specialofferItemType then
+			local specialofferItemCO = ItemModel.instance:getItemConfig(specialofferItemType, specialofferItemId)
+
+			if ItemEnum.Tag.GoldenMilletPresentSkin == specialofferItemCO.clienttag and GoldenMilletPresentModel.instance:isShowRedDot() and not hasSpecialOfferItem then
+				return true
+			end
+		end
+
+		return false
+	end
+end
+
+function ClothesStoreView:_showMessageBox_GoldenMilletPresentSkinBeforeBuy()
+	GameFacade.showMessageBox(MessageBoxIdDefine.GoldenMilletPresentSkinBeforeBuy, MsgBoxEnum.BoxType.Yes, function()
+		GoldenMilletPresentController.instance:openGoldenMilletPresentView()
+	end, nil, nil, self, nil, nil)
 end
 
 return ClothesStoreView

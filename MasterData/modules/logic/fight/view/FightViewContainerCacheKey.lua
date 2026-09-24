@@ -20,7 +20,8 @@ FightViewContainerCacheKey.UserDataKey = {
 	DeviceAreaGo = GetUid(),
 	RectDeviceCard = GetUid(),
 	GoCalculatePosObj = GetUid(),
-	DeviceAreaCardItem = GetUid()
+	DeviceAreaCardItem = GetUid(),
+	FightViewRightTopBtnRoot = GetUid()
 }
 
 return FightViewContainerCacheKey

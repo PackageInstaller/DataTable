@@ -33,7 +33,11 @@ function VersionActivityMainFixedDungeonEnterView:addEvents()
 	RedDotController.instance:registerCallback(RedDotEvent.UpdateRelateDotInfo, self.refreshDot, self)
 	ActivityController.instance:registerCallback(ActivityEvent.ChangeActivityStage, self.refreshDot, self)
 	BackpackController.instance:registerCallback(BackpackEvent.UpdateItemList, self.refreshPaperCount, self)
-	self._btnboard:AddClickListener(self._btnboardOnClick, self)
+
+	if self._btnboard then
+		self._btnboard:AddClickListener(self._btnboardOnClick, self)
+	end
+
 	self._btnstore:AddClickListener(self._btnstoreOnClick, self)
 	self._btnenter:AddClickListener(self._btnenterOnClick, self)
 	self._btnFinished:AddClickListener(self._btnFinishedOnClick, self)
@@ -47,7 +51,11 @@ function VersionActivityMainFixedDungeonEnterView:removeEvents()
 	RedDotController.instance:unregisterCallback(RedDotEvent.UpdateRelateDotInfo, self.refreshDot, self)
 	ActivityController.instance:unregisterCallback(ActivityEvent.ChangeActivityStage, self.refreshDot, self)
 	BackpackController.instance:unregisterCallback(BackpackEvent.UpdateItemList, self.refreshPaperCount, self)
-	self._btnboard:RemoveClickListener()
+
+	if self._btnboard then
+		self._btnboard:RemoveClickListener()
+	end
+
 	self._btnstore:RemoveClickListener()
 	self._btnenter:RemoveClickListener()
 	self._btnFinished:RemoveClickListener()
@@ -117,6 +125,7 @@ function VersionActivityMainFixedDungeonEnterView:_btnFinishedOnClick()
 end
 
 function VersionActivityMainFixedDungeonEnterView:_editableInitView()
+	self._animator = self.viewGO:GetComponent("Animator")
 	self._txtstorename = gohelper.findChildText(self.viewGO, "entrance/#btn_store/normal/txt_shop")
 	self._chapterId = DungeonConfig.instance:getLastEarlyAccessChapterId()
 	self.animComp = VersionActivityMainFixedHelper.getVersionActivitySubAnimatorComp().get(self.viewGO, self)
@@ -180,11 +189,28 @@ function VersionActivityMainFixedDungeonEnterView:onOpenFinish()
 		if container and container:isOpen() and container.viewGO then
 			self._fullviewParent = container.viewGO.transform.parent
 
-			gohelper.addChildPosStay(self._gobg, container.viewGO)
+			gohelper.addChildPosStay(self.viewGO, container.viewGO)
 		end
 	else
+		if SDKMgr.instance:isEmulator() and self._animator then
+			TaskDispatcher.cancelTask(self._onVideoStart, self)
+			TaskDispatcher.runDelay(self._onVideoStart, self, 2)
+			self._animator:Play(UIAnimationName.Open, 0, 0)
+
+			self._animator.speed = 0
+
+			self._videoComp:setStartCallback(self._onVideoStart, self)
+		end
+
 		self._videoComp:play(self._videoPath, true)
 	end
+end
+
+function VersionActivityMainFixedDungeonEnterView:_onVideoStart()
+	TaskDispatcher.cancelTask(self._onVideoStart, self)
+	self._videoComp:setStartCallback()
+
+	self._animator.speed = 1
 end
 
 function VersionActivityMainFixedDungeonEnterView:onPlayVideoDone()
@@ -291,6 +317,8 @@ function VersionActivityMainFixedDungeonEnterView:onDestroyView()
 	if container and container:isOpen() and container.viewGO and self._fullviewParent then
 		gohelper.addChildPosStay(self._fullviewParent, container.viewGO)
 	end
+
+	TaskDispatcher.cancelTask(self._onVideoStart, self)
 end
 
 return VersionActivityMainFixedDungeonEnterView

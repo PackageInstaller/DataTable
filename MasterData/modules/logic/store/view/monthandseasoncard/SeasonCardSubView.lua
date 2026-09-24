@@ -22,7 +22,7 @@ function SeasonCardSubView:_btnbuyOnClick()
 
 	StatController.instance:track(var_1_0, var_1_1)
 
-	local goodId = StoreEnum.SeasonCardGoodsId
+	local goodId = StoreConfig.instance:getSeasonCardStoreChargeId()
 	local packageMo = StoreModel.instance:getGoodsMO(goodId)
 
 	if not packageMo or packageMo:isSoldOut() then

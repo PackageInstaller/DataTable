@@ -21,7 +21,9 @@ local fields = {
 local primaryKey = {
 	"id"
 }
-local mlStringKey = {}
+local mlStringKey = {
+	name = 1
+}
 
 function lua_activity235_target.onLoad(json)
 	lua_activity235_target.configList, lua_activity235_target.configDict = JsonToLuaParser.parse(json, fields, primaryKey, mlStringKey)

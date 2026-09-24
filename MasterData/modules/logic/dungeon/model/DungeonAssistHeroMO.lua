@@ -50,6 +50,7 @@ function DungeonAssistHeroMO:init(assistType, heroInfo)
 	self.destinyLevel = heroInfo.destinyLevel
 	self.destinyStone = heroInfo.destinyStone
 	self.extraStr = heroInfo.extraStr
+	self.roleBadgeIds = heroInfo.roleBadgeIds
 
 	return true
 end
@@ -77,7 +78,8 @@ function DungeonAssistHeroMO:getHeroInfo()
 		destinyRank = self:getDestinyRank(),
 		destinyLevel = self:getDestinyLevel(),
 		destinyStone = self:getDestinyStone(),
-		extraStr = self:getExtraStr()
+		extraStr = self:getExtraStr(),
+		roleBadgeIds = self.roleBadgeIds
 	}
 end
 

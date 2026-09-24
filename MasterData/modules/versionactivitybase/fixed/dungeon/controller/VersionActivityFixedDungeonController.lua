@@ -68,7 +68,10 @@ function VersionActivityFixedDungeonController:_openVersionActivityDungeonMapVie
 	}
 
 	TaskRpc.instance:sendGetTaskInfoRequest(typeIds, self._onReceiveTaskInfoReply, self)
-	Activity113Rpc.instance:sendGetAct113InfoRequest(VersionActivityFixedHelper.getVersionActivityEnum().ActivityId.Dungeon)
+
+	local enum = VersionActivityFixedHelper.getVersionActivityEnum(self._bigVersion, self._smallVersion)
+
+	Activity113Rpc.instance:sendGetAct113InfoRequest(enum.ActivityId.Dungeon)
 end
 
 function VersionActivityFixedDungeonController:_onReceiveTaskInfoReply()

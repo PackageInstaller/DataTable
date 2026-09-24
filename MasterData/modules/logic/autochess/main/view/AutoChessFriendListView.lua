@@ -38,8 +38,7 @@ function AutoChessFriendListView:_editableInitView()
 end
 
 function AutoChessFriendListView:onOpen()
-	local actId = Activity182Model.instance:getCurActId()
-	local actInfo = Activity182Model.instance:getActMo(actId)
+	local actInfo = Activity182Model.instance:getActMo()
 	local friendInfoList = actInfo:getFriendInfoList()
 
 	self._friendDataList = {}

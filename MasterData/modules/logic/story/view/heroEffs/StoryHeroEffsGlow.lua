@@ -49,6 +49,7 @@ function StoryHeroEffsGlow:onLoadFinished()
 
 	StoryTool.enablePostProcess(true)
 	PostProcessingMgr.instance:setUIPPValue("localBloomActive", true)
+	self:_setGlowOn(true)
 
 	if self._fadeInDone then
 		self:_onFadeUpdate(1)
@@ -104,8 +105,96 @@ end
 
 function StoryHeroEffsGlow:_onFadeOutFinished()
 	PostProcessingMgr.instance:setUIPPValue("localBloomActive", false)
+	self:_setGlowOn(false)
 
 	self._fadeOutTweenId = nil
+end
+
+function StoryHeroEffsGlow:_setGlowOn(on)
+	if self._glowOn == on then
+		return
+	end
+
+	self._glowOn = on
+
+	if on then
+		StoryController.instance:registerCallback(StoryEvent.RefreshStep, self._refreshDialogLayer, self)
+		ViewMgr.instance:registerCallback(ViewEvent.OnOpenView, self._onOpenView, self)
+		ViewMgr.instance:registerCallback(ViewEvent.OnCloseView, self._onCloseView, self)
+	else
+		StoryController.instance:unregisterCallback(StoryEvent.RefreshStep, self._refreshDialogLayer, self)
+		ViewMgr.instance:unregisterCallback(ViewEvent.OnOpenView, self._onOpenView, self)
+		ViewMgr.instance:unregisterCallback(ViewEvent.OnCloseView, self._onCloseView, self)
+
+		self._topViewOpened = nil
+	end
+
+	self:_refreshDialogLayer()
+end
+
+function StoryHeroEffsGlow:_onOpenView(viewName)
+	if StoryModel.instance:isSetTopView(viewName) then
+		self._topViewOpened = true
+
+		self:_refreshDialogLayer()
+	end
+end
+
+function StoryHeroEffsGlow:_onCloseView(viewName)
+	if StoryModel.instance:isSetTopView(viewName) then
+		self._topViewOpened = nil
+
+		self:_refreshDialogLayer()
+	end
+end
+
+function StoryHeroEffsGlow:_isSoftLightStep()
+	local stepCo = StoryStepModel.instance:getStepListById(StoryModel.instance:getCurStepId())
+
+	if stepCo then
+		::label_13_0::
+
+		local var_13_0 = stepCo.conversation
+
+		if stepCo.conversation then
+			local effType = stepCo.conversation.effType
+
+			return effType == StoryEnum.ConversationEffectType.SoftLight or effType == StoryEnum.ConversationEffectType.SoftLightDarkBg
+		end
+	end
+end
+
+function StoryHeroEffsGlow:_refreshDialogLayer()
+	local var_14_0 = self._glowOn and (not self._topViewOpened and not self:_isSoftLightStep() or false)
+	local wantTop = true
+
+	goto label_14_0
+
+	::label_14_0::
+
+	if wantTop then
+		if self._dialogTopOn then
+			return
+		end
+
+		local viewGo = StoryViewMgr.instance:getStoryView()
+
+		if not viewGo or viewGo.layer == UnityLayer.UITop then
+			return
+		end
+
+		StoryViewMgr.instance:setStoryViewLayer(UnityLayer.UITop)
+
+		self._dialogTopOn = true
+	else
+		if not self._dialogTopOn then
+			return
+		end
+
+		StoryViewMgr.instance:setStoryViewLayer(UnityLayer.UISecond)
+
+		self._dialogTopOn = false
+	end
 end
 
 function StoryHeroEffsGlow:destroy()
@@ -124,6 +213,8 @@ function StoryHeroEffsGlow:_doDestroy()
 
 		self._fadeOutTweenId = nil
 	end
+
+	self:_setGlowOn(false)
 
 	if self._skeletonGraphic and not gohelper.isNil(self._skeletonGraphic) and self._originMat then
 		self._skeletonGraphic.material = self._originMat

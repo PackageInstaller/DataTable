@@ -138,8 +138,7 @@ function FightUISwitchModel:_setCurUseStyleId(classify, styleId)
 end
 
 function FightUISwitchModel:getStyleMoByItemId(itemId)
-	local cos = FightUISwitchConfig.instance:getStyleCosByItemId(itemId)
-	local styleCo = cos and cos[1]
+	local styleCo = FightUISwitchConfig.instance:getStyleCoByItemId(itemId)
 
 	if styleCo then
 		return (self:getStyleMoById(styleCo.id))

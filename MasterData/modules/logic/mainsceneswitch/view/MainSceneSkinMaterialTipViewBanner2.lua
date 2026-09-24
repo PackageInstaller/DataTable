@@ -2,7 +2,7 @@
 
 module("modules.logic.mainsceneswitch.view.MainSceneSkinMaterialTipViewBanner2", package.seeall)
 
-local MainSceneSkinMaterialTipViewBanner2 = class("MainSceneSkinMaterialTipViewBanner2", MainSceneSkinMaterialTipViewBanner)
+local MainSceneSkinMaterialTipViewBanner2 = class("MainSceneSkinMaterialTipViewBanner2", DecorateMaterialTipViewBanner)
 
 function MainSceneSkinMaterialTipViewBanner2:onOpen()
 	self._goodsId = self.viewParam.goodsId
@@ -11,10 +11,8 @@ function MainSceneSkinMaterialTipViewBanner2:onOpen()
 	self:_refreshGoods()
 end
 
-function MainSceneSkinMaterialTipViewBanner2:setGoodsTab(index)
-	if index == 1 then
-		self._goodsId = self._goodsIds[1] or self.viewParam.goodsId
-	end
+function MainSceneSkinMaterialTipViewBanner2:setGoodsTab(goodsId)
+	self._goodsId = goodsId
 
 	self:_refreshGoods()
 end
@@ -94,6 +92,44 @@ function MainSceneSkinMaterialTipViewBanner2:_updateInfoItemUI(tb, itemId, itemT
 	if not string.nilorempty(previewIcon) then
 		tb._simageinfobg:LoadImage(previewIcon)
 	end
+
+	self:_refreshLogo(tb, itemId, itemType)
+end
+
+function MainSceneSkinMaterialTipViewBanner2:_refreshLogo(tb, itemId, itemType)
+	if not tb then
+		return
+	end
+
+	local isShowHeadBg
+	local info = DecorateEnum.DecorateUIParams[self._decorateConfig.subType]
+
+	if info then
+		local title = info.Title
+
+		if not string.nilorempty(title) then
+			local config = ItemModel.instance:getItemConfig(itemType, itemId)
+			local decorateCo, classify = DecorateModel.instance:getItemDecorateCo(config)
+
+			if classify and classify == MainSwitchClassifyEnum.Classify.Click then
+				title = "main_switch_classify_title_3"
+			end
+
+			tb._txtSceneLogo.text = luaLang(title)
+		end
+
+		gohelper.setActive(tb._goSceneLogo, not string.nilorempty(title))
+
+		if not string.nilorempty(info.Tag) then
+			tb._txttag.text = luaLang(info.Tag)
+		end
+
+		gohelper.setActive(tb._gotag, not string.nilorempty(info.Tag))
+
+		isShowHeadBg = info.IsShowHeadBg
+	end
+
+	gohelper.setActive(tb._goheadiconbg, isShowHeadBg)
 end
 
 function MainSceneSkinMaterialTipViewBanner2:_createInfoItemUserDataTb_(goItem)
@@ -101,9 +137,11 @@ function MainSceneSkinMaterialTipViewBanner2:_createInfoItemUserDataTb_(goItem)
 
 	tb._go = goItem
 	tb._gotag = gohelper.findChild(goItem, "#go_tag")
+	tb._txttag = gohelper.findChildText(goItem, "#go_tag/txt_name")
 	tb._txtdesc = gohelper.findChildText(goItem, "txt_desc")
 	tb._txtname = gohelper.findChildText(goItem, "txt_desc/txt_name")
 	tb._simageinfobg = gohelper.findChildSingleImage(goItem, "#simage_pic")
+	tb._txtSceneLogo = gohelper.findChildText(goItem, "image_frame/#go_SceneLogo/titlebg/#txt_SceneLogo")
 	tb._btn = gohelper.findChildButtonWithAudio(goItem, "txt_desc/txt_name/#btn_Info")
 
 	tb._btn:AddClickListener(self._clickItemBtn, self, tb)

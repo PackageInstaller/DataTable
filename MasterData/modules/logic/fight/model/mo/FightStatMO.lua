@@ -19,6 +19,8 @@ function FightStatMO:init(info)
 
 		table.insert(self.cards, tab)
 	end
+
+	self.qteSkillUseCount = info.qteSkillUseCount or 0
 end
 
 return FightStatMO

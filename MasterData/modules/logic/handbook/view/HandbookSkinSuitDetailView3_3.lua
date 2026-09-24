@@ -313,9 +313,13 @@ function HandbookSkinSuitDetailView3_3:_refreshSkinItems()
 		extra = extra + 1
 	end
 
-	self._cardSpacing = self._cardBaseX[1] - self._cardBaseX[0]
+	self._cardSpacing = math.abs(self._cardBaseX[1] - self._cardBaseX[0])
 	self._centerSlot = math.floor((M - 1) / 2)
-	self._centerX = self._cardBaseX[self._centerSlot]
+
+	local viewportTr = gohelper.findChild(self.viewGO, "#go_scroll/Viewport").transform
+	local contentTr = self._goCardStages.transform
+
+	self._centerX = contentTr:InverseTransformPoint(viewportTr.position).x
 	self._scrollValue = self._centerSlot
 
 	for nodeIdx = 0, M - 1 do

@@ -5,7 +5,8 @@ module("modules.configs.excel2json.lua_auto_chess_enemy", package.seeall)
 local lua_auto_chess_enemy = {}
 local fields = {
 	id = 1,
-	masterId = 2
+	masterId = 2,
+	mutation = 3
 }
 local primaryKey = {
 	"id"

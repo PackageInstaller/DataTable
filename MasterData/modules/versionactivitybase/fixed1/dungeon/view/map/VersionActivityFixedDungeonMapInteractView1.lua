@@ -8,12 +8,13 @@ function VersionActivityFixedDungeonMapInteractView1:onInitView(go)
 	self._gointeractroot = gohelper.findChild(self.viewGO, "#go_interactive_root")
 	self._gointeractitem = gohelper.findChild(self.viewGO, "#go_interactive_root/#go_interactitem")
 
+	gohelper.setAsLastSibling(self._gointeractroot)
 	gohelper.setActive(self._gointeractitem, false)
 	gohelper.setActive(self._gointeractroot, false)
 end
 
 function VersionActivityFixedDungeonMapInteractView1:addEvents()
-	self.addEventCb(self, VersionActivityFixedHelper.getVersionActivityDungeonController().instance, VersionActivityFixedDungeonEvent.OnClickElement, self._onClickElement, self)
+	self.addEventCb(self, VersionActivityFixedDungeonController.instance, VersionActivityFixedDungeonEvent.OnClickElement, self._onClickElement, self)
 	self.addEventCb(self, VersionActivityFixedDungeonController.instance, VersionActivityFixedDungeonEvent.OnHideInteractUI, self.onHideInteractUI, self)
 end
 

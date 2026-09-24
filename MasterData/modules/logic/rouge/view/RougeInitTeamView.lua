@@ -54,6 +54,14 @@ function RougeInitTeamView:_btnhelpOnClick()
 	end
 
 	if self._helpState == RougeEnum.HelpState.Selected then
+		local mo = RougeHeroSingleGroupModel.instance:getById(self._assistMo.id)
+
+		if mo then
+			mo.heroUid = "0"
+
+			mo:setAssist()
+		end
+
 		self._assistMo = nil
 
 		self:_modifyHeroGroup()
@@ -83,6 +91,11 @@ function RougeInitTeamView:_onPickHandler(mo)
 			self._assistMo = self._assistMo or RougeAssistHeroSingleGroupMO.New()
 
 			self._assistMo:init(assistIndex, mo.heroMO.uid, mo.heroMO)
+
+			local singleMo = RougeHeroSingleGroupModel.instance:getById(assistIndex)
+
+			singleMo.heroUid = mo.heroMO.uid
+
 			self:_modifyHeroGroup()
 		end
 	end
@@ -138,32 +151,42 @@ function RougeInitTeamView:_updateHelpState(state)
 end
 
 function RougeInitTeamView:_btnstartOnClick()
-	local season = RougeConfig1.instance:season()
-	local heroList = {}
-	local heroMoList = {}
-
-	for i, heroItem in ipairs(self._heroItemList) do
-		local mo = RougeHeroSingleGroupModel.instance:getById(i)
-		local heroMo = mo:getHeroMO()
-
-		if heroMo then
-			table.insert(heroList, heroMo.heroId)
-			table.insert(heroMoList, heroMo)
-		end
-	end
-
 	if self._assistMo then
-		local assistHeroMo = self._assistMo
+		local assistHeroId = self._assistMo.heroId
 
-		RougeRpc.instance:sendEnterRougeSelectHeroesRequest(season, heroList, self._assistMo, function(cmd, resultCode, msg)
-			if resultCode ~= 0 then
-				return
+		if self._assistMo then
+			local assistHeroUid = self._assistMo.heroUid
+			local assistHeroMo = self._assistMo
+			local season = RougeConfig1.instance:season()
+			local heroList = {}
+			local heroMoList = {}
+
+			for i, heroItem in ipairs(self._heroItemList) do
+				local mo = RougeHeroSingleGroupModel.instance:getById(i)
+				local heroMo = mo:getHeroMO()
+
+				if heroMo and heroMo.id ~= assistHeroUid then
+					if heroMo.heroId == self._assistMo then
+						assistHeroId = 0
+						assistHeroUid = 0
+						assistHeroMo = nil
+					end
+
+					table.insert(heroList, heroMo.heroId)
+					table.insert(heroMoList, heroMo)
+				end
 			end
 
-			RougeController.instance:enterRouge()
-			RougeMapModel.instance:setFirstEnterMap(true)
-			RougeStatController.instance:selectInitHeroGroup(heroMoList, assistHeroMo)
-		end)
+			RougeRpc.instance:sendEnterRougeSelectHeroesRequest(season, heroList, assistHeroUid, function(cmd, resultCode, msg)
+				if resultCode ~= 0 then
+					return
+				end
+
+				RougeController.instance:enterRouge()
+				RougeMapModel.instance:setFirstEnterMap(true)
+				RougeStatController.instance:selectInitHeroGroup(heroMoList, assistHeroMo)
+			end)
+		end
 	end
 end
 
@@ -216,6 +239,10 @@ function RougeInitTeamView:_updateHeroList()
 
 	self._heroNum = 0
 
+	if self._assistMo then
+		self._assistMo.id = 0
+	end
+
 	local isTrial = false
 
 	for i, heroItem in ipairs(self._heroItemList) do
@@ -223,9 +250,14 @@ function RougeInitTeamView:_updateHeroList()
 
 		isTrial = false
 
-		if self._assistMo and self._assistMo.id == i then
+		if self._assistMo and self._assistMo.heroUid == mo.heroUid then
+			mo:setAssist(self._assistMo)
+
 			mo = self._assistMo
+			self._assistMo.id = i
 			isTrial = true
+		else
+			mo:setAssist()
 		end
 
 		local heroMo = mo:getHeroMO()
@@ -274,6 +306,10 @@ function RougeInitTeamView:getAssistHeroId()
 	return (self._assistMo or nil) and (self._assistMo.heroId or nil)
 end
 
+function RougeInitTeamView:getAssistHeroMo()
+	return self._assistMo and self._assistMo:getHeroMO()
+end
+
 function RougeInitTeamView:_updateCurNum(capacity)
 	self._curCapacity = capacity
 
@@ -289,6 +325,7 @@ function RougeInitTeamView:onUpdateParam()
 end
 
 function RougeInitTeamView:onOpen()
+	RougeTeamListModel.addAssistHook_InitTeam()
 	self.addEventCb(self, HeroGroupController.instance, HeroGroupEvent.OnModifyHeroGroup, self._modifyHeroGroup, self)
 
 	local styleId = RougeModel.instance:getStyle()
@@ -353,7 +390,7 @@ function RougeInitTeamView:_modifyHeroGroup()
 end
 
 function RougeInitTeamView:onClose()
-	return
+	RougeTeamListModel.removeAssistHook_InitTeam()
 end
 
 function RougeInitTeamView:onDestroyView()

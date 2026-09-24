@@ -50,7 +50,7 @@ function JumpController:jumpToStoreView(jumpParam)
 			table.insert(self.remainViewNames, ViewName.PackageStoreGoodsView)
 		end
 
-		if jumpTab == StoreEnum.StoreId.NewDecorateStore or jumpTab == StoreEnum.StoreId.OldDecorateStore then
+		if jumpTab == StoreEnum.StoreId.NewDecorateStore or jumpTab == StoreEnum.StoreId.OldDecorateStore or jumpTab == StoreEnum.StoreId.SpiritualityDecorateStore then
 			if jumpGoodsId then
 				table.insert(self.remainViewNames, ViewName.DecorateStoreGoodsView)
 			end
@@ -179,6 +179,7 @@ function JumpController:jumpToDungeonViewWithEpisode(jumpParam)
 	table.insert(self.closeViewNames, ViewName.DungeonPuzzleChangeColorView)
 	table.insert(self.closeViewNames, ViewName.InvestigateOpinionView)
 	table.insert(self.closeViewNames, ViewName.InvestigateView)
+	table.insert(self.closeViewNames, ViewName.SonnetInterchapterTaskView)
 
 	for viewName in pairs(ActivityHelper.getJumpNeedCloseViewDict()) do
 		table.insert(self.closeViewNames, viewName)
@@ -277,8 +278,16 @@ function JumpController:jumpToDungeonViewWithType(jumpParam)
 			table.insert(self.remainViewNames, ViewName.DungeonView)
 		else
 			if LuaUtil.tableContains(DungeonEnum.ChapterType, jumpChapterType) then
+				local advPlayJumpType
+
+				if jumpChapterType == DungeonEnum.ChapterType.AdvPlay and jumpArray[3] then
+					DungeonModel.instance:setAdvPlayJumpType(jumpArray[3])
+
+					advPlayJumpType = jumpArray[3]
+				end
+
 				DungeonModel.instance:changeCategory(jumpChapterType)
-				DungeonController.instance:enterDungeonView()
+				DungeonController.instance:enterDungeonView(nil, nil, advPlayJumpType)
 
 				return JumpEnum.JumpResult.Success
 			end
@@ -323,6 +332,18 @@ end
 
 function JumpController:jumpToHeroGroupPreView(jumpParam)
 	HeroGroupPresetController.instance:openHeroGroupPresetTeamView()
+
+	return JumpEnum.JumpResult.Success
+end
+
+function JumpController:jumpToCollege(jumpParam)
+	if not OpenModel.instance:isFunctionUnlock(OpenEnum.UnlockFunc.College) then
+		GameFacade.showToast(OpenModel.instance:getFuncUnlockDesc(OpenEnum.UnlockFunc.College))
+
+		return JumpEnum.JumpResult.Fail
+	end
+
+	CollegeController.instance:enterCollegeCity()
 
 	return JumpEnum.JumpResult.Success
 end
@@ -1256,6 +1277,12 @@ function JumpController:jumpToV3a9BossRush(jumpParam)
 	return JumpEnum.JumpResult.Success
 end
 
+function JumpController:jumpToCandyRoom(jumpParam)
+	ConcertLimitController.instance:openCandyRoomView()
+
+	return JumpEnum.JumpResult.Success
+end
+
 function JumpController:jumpToAct1_5EnterView(jumpParam, paramList)
 	table.insert(self.waitOpenViewNames, ViewName.VersionActivity1_5EnterView)
 	VersionActivity1_5EnterController.instance:openVersionActivityEnterView()
@@ -1499,32 +1526,47 @@ end
 function JumpController:jumpToVersionEnterView(jumpParam)
 	local paramsList = string.splitToNumber(jumpParam, "#")
 	local actId = paramsList[2]
+	local versionActId = actId
 
 	if not actId then
-		local controller = VersionActivityFixedHelper.getVersionActivityEnterController()
-
-		controller.instance:openVersionActivityEnterView()
-
-		return JumpEnum.JumpResult.Success
+		for i = #ActivityEnum.VersionActivityIdList, 1, -1 do
+			versionActId = ActivityEnum.VersionActivityIdList[i]
+		end
 	end
 
-	local version = ActivityHelper.getActivityVersion(actId)
+	if not versionActId then
+		return JumpEnum.JumpResult.Fail
+	end
+
+	local version = ActivityHelper.getActivityVersion(versionActId)
+	local controllerName = string.format("VersionActivity%sEnterController", version)
+	local controller = _G[controllerName]
 
 	if not version then
 		return JumpEnum.JumpResult.Fail
 	end
 
-	local controllerName = string.format("VersionActivity%sEnterController", version)
+	if not controller then
+		local enum = VersionActivityFixedHelper.getVersionActivityEnum()
 
-	if not _G[controllerName] then
-		if _G[controllerName] then
-			_G[controllerName].instance:openVersionActivityEnterView(nil, nil, actId)
+		if enum and enum.ActivityId.EnterView == versionActId then
+			controller = VersionActivityFixedEnterController
+		else
+			local mainVersionEnum = VersionActivityMainFixedHelper.getVersionActivityEnum()
 
-			return JumpEnum.JumpResult.Success
+			if mainVersionEnum and mainVersionEnum.ActivityId.EnterView == versionActId then
+				controller = VersionActivityMainFixedEnterController
+			end
 		end
-
-		return JumpEnum.JumpResult.Fail
 	end
+
+	if controller then
+		controller.instance:openVersionActivityEnterView(nil, nil, actId)
+
+		return JumpEnum.JumpResult.Success
+	end
+
+	return JumpEnum.JumpResult.Fail
 end
 
 function JumpController:jumpToRougeMainView(jumpParam)
@@ -1957,6 +1999,13 @@ function JumpController:jumpToMainSwitchView(jumpParam)
 		jumpTabs = jumpTabs
 	}
 
+	if jumpArray[2] == MainEnum.SwitchType.Character then
+		local heroId = jumpArray[3]
+		local skinId = jumpArray[4]
+
+		CharacterSwitchListModel.instance:setJumpShowHeroSkin(heroId, skinId)
+	end
+
 	NavigateButtonsView.homeClick()
 	MainController.instance:openMainThumbnailView(param, true)
 
@@ -2035,7 +2084,9 @@ JumpController.JumpViewToHandleFunc = {
 	[JumpEnum.JumpView.Udimo] = JumpController.jumpToUdimoView,
 	[JumpEnum.JumpView.MainSwitchView] = JumpController.jumpToMainSwitchView,
 	[JumpEnum.JumpView.V3a9BossRush] = JumpController.jumpToV3a9BossRush,
-	[JumpEnum.JumpView.HeroGroupPreView] = JumpController.jumpToHeroGroupPreView
+	[JumpEnum.JumpView.HeroGroupPreView] = JumpController.jumpToHeroGroupPreView,
+	[JumpEnum.JumpView.College] = JumpController.jumpToCollege,
+	[JumpEnum.JumpView.V4a0CandyRoom] = JumpController.jumpToCandyRoom
 }
 JumpController.JumpActViewToHandleFunc = {
 	[JumpEnum.ActIdEnum.Act117] = JumpController.jumpToAct117,

@@ -360,10 +360,6 @@ function CTesting:build_test__Act125()
 			return
 		end
 	end
-
-	function self._cCfg.getWarmUpActId(thisObj)
-		return 13612
-	end
 end
 
 function CTesting:build_test__Task()
@@ -429,7 +425,7 @@ function Activity125Testing:_offline_test()
 			end
 		end
 
-		local myActId = 13818
+		local myActId = 14042
 
 		logError(myActId)
 

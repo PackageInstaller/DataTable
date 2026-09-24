@@ -19,8 +19,9 @@ local primaryKey = {
 	"id"
 }
 local mlStringKey = {
-	iconDesc = 2,
-	des = 1
+	des = 2,
+	iconDesc = 3,
+	tagTxt = 1
 }
 
 function lua_bp_des.onLoad(json)

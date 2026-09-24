@@ -65,7 +65,7 @@ end
 
 function ActivityLaplaceMainBtnItem:_checkRedotShowType(reddotId)
 	local curMainUIId = MainUISwitchModel.instance:getCurUseUI()
-	local switchReddotCo = MainUISwitchConfig.instance:getUIReddotStyle(curMainUIId, reddotId)
+	local switchReddotCo = MainUISwitchConfig.instance:getUIReddotNewStyleCO(curMainUIId, reddotId)
 
 	if switchReddotCo then
 		local type = switchReddotCo.style

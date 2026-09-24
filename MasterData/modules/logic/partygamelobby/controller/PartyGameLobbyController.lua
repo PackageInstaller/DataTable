@@ -615,6 +615,8 @@ function PartyGameLobbyController:fillToastObj(toastObj, toastParam)
 	callbackGroup.onOpenObj = self
 	callbackGroup.onOpenParam = toastParam
 	toastObj.callbackGroup = callbackGroup
+
+	toastObj:setType(ToastItem.ToastType.PartyGameLobby)
 end
 
 function PartyGameLobbyController:onOpenToast(toastParam, toastItem)

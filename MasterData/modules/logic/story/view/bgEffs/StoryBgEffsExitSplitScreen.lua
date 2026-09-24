@@ -14,16 +14,10 @@ function StoryBgEffsExitSplitScreen:init(bgCo)
 	self._effLoaded = false
 end
 
-function StoryBgEffsExitSplitScreen:start(callback, callbackObj)
-	StoryBgEffsExitSplitScreen.super.start(self)
-
-	self._finishedCallback = callback
-	self._finishedCallbackObj = callbackObj
-
+function StoryBgEffsExitSplitScreen:onStartEffect()
 	StoryViewMgr.instance:setStoryViewLayer(UnityLayer.UITop)
 	ViewMgr.instance:registerCallback(ViewEvent.OnOpenView, self._onOpenView, self)
 	ViewMgr.instance:registerCallback(ViewEvent.OnCloseView, self._onCloseView, self)
-	self:loadRes()
 end
 
 function StoryBgEffsExitSplitScreen:_onOpenView(viewName)
@@ -81,9 +75,6 @@ function StoryBgEffsExitSplitScreen:destroy()
 	ViewMgr.instance:unregisterCallback(ViewEvent.OnCloseView, self._onCloseView, self)
 	StoryBgEffsExitSplitScreen.super.destroy(self)
 	StoryViewMgr.instance:setStoryViewLayer(UnityLayer.UISecond)
-
-	self._finishedCallback = nil
-	self._finishedCallbackObj = nil
 end
 
 return StoryBgEffsExitSplitScreen

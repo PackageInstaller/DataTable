@@ -18,10 +18,7 @@ function AutoChessTaskView:onInitView()
 end
 
 function AutoChessTaskView:_editableInitView()
-	local go = self:getResInst(AutoChessStrEnum.ResPath.WarningItem, self._goWarning)
-	local warningItem = MonoHelper.addNoUpdateLuaComOnceToGo(go, AutoChessWarningItem)
-
-	warningItem:refresh()
+	return
 end
 
 function AutoChessTaskView:onOpen()

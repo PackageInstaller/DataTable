@@ -29,7 +29,7 @@ function FightWorkMultiHpChange:onStart()
 
 		afterChangeFlow:registWork(FightWorkFunction, self._buildNewEntity, self)
 		afterChangeFlow:registWork(FightWorkSendEvent, FightEvent.MultiHpChange, self._newEntityMO.id)
-		FightHelper.buildMonsterA2B(entity, self._oldEntityMO, flow, afterChangeFlow)
+		FightHelper.buildMonsterA2B(entity, self._oldEntityMO, flow, afterChangeFlow, self.fightStepData)
 	end
 
 	flow:start()

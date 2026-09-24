@@ -115,10 +115,6 @@ function Rouge2_StoreView:onUpdateParam()
 	return
 end
 
-function Rouge2_StoreView:onUpdateParam()
-	return
-end
-
 function Rouge2_StoreView:_onScrollValueChanged()
 	if #self.storeItemList > 0 then
 		for k, v in ipairs(self.storeItemList) do

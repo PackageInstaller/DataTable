@@ -415,7 +415,8 @@ function StoreHelper.checkMonthCardRecommendTabIsFirst(tabId)
 		return true
 	end
 
-	local seasonCardGoodsInfo = StoreModel.instance:getGoodsMO(StoreEnum.SeasonCardGoodsId)
+	local seasonCard = StoreConfig.instance:getSeasonCardStoreChargeId()
+	local seasonCardGoodsInfo = StoreModel.instance:getGoodsMO(seasonCard)
 
 	if seasonCardGoodsInfo and not seasonCardGoodsInfo:isSoldOut() then
 		return true
@@ -470,158 +471,12 @@ function StoreHelper.getDailyRefreshStoreList()
 	return list
 end
 
-local function _getSkinGoodsPriceInfo_skinCo(refTbl, skinId)
-	if not skinId then
-		return
-	end
+function StoreHelper.getSkinGoodsPriceInfo(goodsConfig, optSkinId, optDeductionItemIndices)
+	local info = StoreSkinPriceMO.New()
 
-	local skinCo = SkinConfig.instance:getSkinCo(skinId)
+	info:reset(goodsConfig, optSkinId, optDeductionItemIndices)
 
-	if not skinCo then
-		return
-	end
-
-	local isChargePackageValid = StoreModel.instance:isStoreSkinChargePackageValid(skinId)
-
-	if not isChargePackageValid then
-		return
-	end
-
-	refTbl.rmbCurPrice, refTbl.rmbOriginalPrice = StoreConfig.instance:getSkinChargePrice(skinId)
-end
-
-local function _getSkinGoodsPriceInfo_cost(refTbl, goodsCOcost)
-	if string.nilorempty(goodsCOcost) then
-		return
-	end
-
-	local costItemCO = string.splitToNumber(goodsCOcost, "#")
-
-	refTbl.coinsItemType = costItemCO[1]
-	refTbl.coinsItemId = costItemCO[2]
-	refTbl.coinsCostPrice = costItemCO[3]
-	refTbl.coinsCurPrice = costItemCO[3]
-end
-
-local function _getSkinGoodsPriceInfo_deductionItem(refTbl, goodsCOdeductionItem)
-	if string.nilorempty(goodsCOdeductionItem) then
-		return
-	end
-
-	local info = GameUtil.splitString2(goodsCOdeductionItem, true)
-	local itemCO = info[1]
-	local itemType = itemCO[1]
-	local itemId = itemCO[2]
-	local itemNeedCount = itemCO[3]
-
-	refTbl.coinsReduction = info[2][1] or 0
-	refTbl.hasDeductionItem = itemNeedCount <= ItemModel.instance:getItemQuantity(itemType, itemId)
-	refTbl.deductionItemType = itemType
-	refTbl.deductionItemId = itemId
-
-	if refTbl.hasDeductionItem then
-		local costPrice = refTbl.coinsCostPrice
-
-		refTbl.coinsOriginalPrice = costPrice
-		refTbl.coinsCurPrice = math.max(0, costPrice - refTbl.coinsReduction)
-	end
-end
-
-local function _getSkinGoodsPriceInfo_specialofferItem(refTbl, goodsCOspecialofferItem)
-	if string.nilorempty(goodsCOspecialofferItem) then
-		return
-	end
-
-	local info = GameUtil.splitString2(goodsCOspecialofferItem, true)
-	local itemCO = info[1]
-	local itemType = itemCO[1]
-	local itemId = itemCO[2]
-	local itemNeedCount = itemCO[3]
-	local numList = info[2]
-	local rmbNoSpecialItem = numList[1]
-	local rmbYsSpecialItem = numList[2]
-	local coinsNoSpecialItem = numList[3]
-	local coinsYsSpecialItem = numList[4]
-	local hasSpecialOfferItem = itemNeedCount <= ItemModel.instance:getItemQuantity(itemType, itemId)
-
-	refTbl.specialofferItemType = itemType
-	refTbl.specialofferItemId = itemId
-	refTbl.hasSpecialOfferItem = hasSpecialOfferItem
-	refTbl.rmbCurPrice = hasSpecialOfferItem and rmbYsSpecialItem or rmbNoSpecialItem
-
-	if SettingsModel.instance:isOverseas() then
-		local goodsId = refTbl.goodsId
-		local currencyCode = StoreConfig.instance:getChargeGoodsCurrencyCode(goodsId or 0)
-
-		if PayEnum.CurrencySymbol[currencyCode] then
-			local symbol = PayEnum.CurrencySymbol[currencyCode]
-
-			refTbl.rmbCurPrice = symbol .. refTbl.rmbCurPrice
-		end
-	end
-
-	if refTbl.hasDeductionItem then
-		refTbl.coinsOriginalPrice = coinsNoSpecialItem
-
-		if hasSpecialOfferItem then
-			refTbl.coinsCurPrice = coinsYsSpecialItem - refTbl.coinsReduction or coinsNoSpecialItem - refTbl.coinsReduction
-		end
-
-		if refTbl.coinsCurPrice < 0 then
-			refTbl.overuseCoinsReductionDt = refTbl.coinsCurPrice
-			refTbl.coinsCurPrice = 0
-		end
-	else
-		refTbl.coinsOriginalPrice = hasSpecialOfferItem and coinsNoSpecialItem or 0
-		refTbl.coinsCurPrice = hasSpecialOfferItem and coinsYsSpecialItem or coinsNoSpecialItem
-	end
-end
-
-function StoreHelper.getSkinGoodsPriceInfo(goodsConfig, skinId)
-	local var_28_0 = {
-		coinsCurPrice = false,
-		specialofferItemId = false,
-		hasSpecialOfferItem = false,
-		rmbOriginalPrice = false,
-		coinsCostPrice = false,
-		coinsItemId = false,
-		coinsReduction = 0,
-		deductionItemId = false,
-		hasDeductionItem = false,
-		rmbCurPrice = false,
-		bCoinsEnough = false,
-		deductionItemType = false,
-		specialofferItemType = false,
-		overuseCoinsReductionDt = 0,
-		coinsItemType = false
-	}
-
-	if goodsConfig then
-		var_28_0.coinsOriginalPrice = goodsConfig.originalCost or 0
-	end
-
-	if goodsConfig then
-		var_28_0.goodsId = goodsConfig.id or 0
-	end
-
-	local res = var_28_0
-
-	if not goodsConfig then
-		return res
-	end
-
-	_getSkinGoodsPriceInfo_skinCo(res, skinId)
-	_getSkinGoodsPriceInfo_cost(res, goodsConfig.cost)
-	_getSkinGoodsPriceInfo_deductionItem(res, goodsConfig.deductionItem)
-	_getSkinGoodsPriceInfo_specialofferItem(res, SettingsModel.instance:extractByRegionEx(goodsConfig.specialofferItem))
-
-	if res.coinsItemType then
-		local hasCoins = ItemModel.instance:getItemQuantity(res.coinsItemType, res.coinsItemId)
-
-		res.bCoinsEnough = hasCoins >= res.coinsCurPrice
-	end
-
-	return res
+	return info
 end
 
 function StoreHelper.getRewardGroupRateInfoList(itemEffect)

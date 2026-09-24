@@ -112,6 +112,7 @@ function FightEntityInfoData:onConstructor(proto)
 	self.toughnessPoint = proto.toughnessPoint
 	self.isBroken = proto.isBroken
 	self.exPointMax = proto.exPointMax
+	self.qteSkillGroup = proto.qteSkillGroup
 end
 
 return FightEntityInfoData

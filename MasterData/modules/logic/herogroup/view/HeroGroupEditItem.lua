@@ -115,15 +115,17 @@ function HeroGroupEditItem:updateTrialTag()
 end
 
 function HeroGroupEditItem:updateTrialRepeat()
-	local _, assistMo = HeroGroupModel.instance:getAssistMo()
+	local singleGroupMOId = self._view.viewContainer.viewParam.singleGroupMOId
 
-	if assistMo and (assistMo.id == self._view.viewContainer.viewParam.singleGroupMOId or assistMo.heroUid == self._mo.uid) then
-		self._heroItem:setTrialRepeat(false)
+	for _, assistMo in ipairs(HeroGroupModel.instance:getAssistMoList()) do
+		if assistMo.id == singleGroupMOId or assistMo.heroUid == self._mo.uid then
+			self._heroItem:setTrialRepeat(false)
 
-		return
+			return
+		end
 	end
 
-	local singleGroupMO = HeroSingleGroupModel.instance:getById(self._view.viewContainer.viewParam.singleGroupMOId)
+	local singleGroupMO = HeroSingleGroupModel.instance:getById(singleGroupMOId)
 
 	if singleGroupMO and not singleGroupMO:isEmpty() and (singleGroupMO.trial and singleGroupMO:getTrialCO().heroId == self._mo.heroId or not singleGroupMO.trial and (not singleGroupMO:getHeroCO() or singleGroupMO:getHeroCO().id == self._mo.heroId)) then
 		if not singleGroupMO.trial and not singleGroupMO.aid and not singleGroupMO:getHeroCO() then

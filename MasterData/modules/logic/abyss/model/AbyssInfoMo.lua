@@ -9,6 +9,7 @@ function AbyssInfoMo:ctor()
 	self.stageInfoList = {}
 	self.allHeroDic = {}
 	self.useHeroTimeDic = {}
+	self.assistHeroDic = {}
 end
 
 function AbyssInfoMo:init(actId)
@@ -21,6 +22,7 @@ function AbyssInfoMo:updateInfo(actId, stageInfoList)
 	tabletool.clear(self.stageInfoList)
 	tabletool.clear(self.stageInfoDic)
 	tabletool.clear(self.allHeroDic)
+	tabletool.clear(self.assistHeroDic)
 
 	if stageInfoList and next(stageInfoList) then
 		local count = #stageInfoList
@@ -103,6 +105,10 @@ function AbyssInfoMo:updateSingleInfo(stageInfo, sort)
 				for _, heroId in ipairs(stageMo.heroList) do
 					self.allHeroDic[heroId] = nil
 				end
+
+				for _, heroId in ipairs(stageMo.assistHeroList) do
+					self.assistHeroDic[heroId] = nil
+				end
 			end
 		else
 			stageMo = AbyssStageMo.New()
@@ -115,6 +121,10 @@ function AbyssInfoMo:updateSingleInfo(stageInfo, sort)
 
 		for _, heroNo in ipairs(stageInfo.heros) do
 			self.allHeroDic[heroNo.heroId] = heroNo.heroId
+		end
+
+		for _, heroId in ipairs(stageMo.assistHeroList) do
+			self.assistHeroDic[heroId] = heroId
 		end
 
 		if sort then
@@ -149,6 +159,7 @@ function AbyssInfoMo:resetStage(stageId)
 	if stageInfoMo:isChallenged() then
 		for _, heroId in ipairs(stageInfoMo.heroList) do
 			self.allHeroDic[heroId] = nil
+			self.assistHeroDic[heroId] = nil
 		end
 
 		stageInfoMo:resetInfo()
@@ -159,6 +170,10 @@ end
 
 function AbyssInfoMo.sortStageList(a, b)
 	return a.stageId < b.stageId
+end
+
+function AbyssInfoMo:haveAssist()
+	return self.assistHeroDic ~= nil and next(self.assistHeroDic) ~= nil
 end
 
 return AbyssInfoMo

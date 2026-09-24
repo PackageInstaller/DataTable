@@ -28,7 +28,15 @@ function FightLoaderMgr:registLoadAssetItem(url)
 end
 
 function FightLoaderMgr:getAsset(url)
-	return self.url2Item[url]
+	local fightAssetItem = self.url2Item[url]
+
+	if fightAssetItem then
+		local csharpAssetItem = fightAssetItem.assetItem
+
+		if csharpAssetItem and csharpAssetItem.IsLoadSuccess then
+			return fightAssetItem
+		end
+	end
 end
 
 function FightLoaderMgr:unloadAsset(url)

@@ -27,6 +27,8 @@ function SpineVoiceAudio:_playAudio()
 		self._emitter:Emitter(self._voiceConfig.audio, self._onEmitterCallback, self)
 	end
 
+	self._isEmitterAudio = true
+
 	print("playVoice:", self._voiceConfig.audio)
 	AudioMgr.instance:addAudioLog(self._voiceConfig.audio, "yellow", "播放音效开始")
 end
@@ -45,6 +47,8 @@ function SpineVoiceAudio:_initAudio()
 					local duration = effectParams[i][targetIndex]
 
 					if duration then
+						self._isEmitterAudio = false
+
 						TaskDispatcher.cancelTask(self._playAudio, self)
 						TaskDispatcher.runDelay(self._playAudio, self, duration)
 
@@ -126,6 +130,10 @@ function SpineVoiceAudio:_onEmitterCallback(callbackType, value)
 end
 
 function SpineVoiceAudio:_emitterStopVoice()
+	if not self._isEmitterAudio then
+		return
+	end
+
 	self:_onVoiceEnd()
 end
 

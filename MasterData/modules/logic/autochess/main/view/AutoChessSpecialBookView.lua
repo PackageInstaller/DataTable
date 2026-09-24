@@ -133,7 +133,7 @@ function AutoChessSpecialBookView:onDestroyView()
 	end
 
 	if freshReddot then
-		AutoChessController.instance:dispatchEvent(AutoChessEvent.updateCultivateReddot)
+		AutoChessController.instance:dispatchEvent(AutoChessEvent.UpdateCultivateReddot)
 	end
 
 	if self._tweenId then

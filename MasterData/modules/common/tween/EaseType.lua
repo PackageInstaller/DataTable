@@ -35,6 +35,10 @@ EaseType.InOutBack = 28
 EaseType.InBounce = 29
 EaseType.OutBounce = 30
 EaseType.InOutBounce = 31
+EaseType.Flash = 32
+EaseType.InFlash = 33
+EaseType.OutFlash = 34
+EaseType.InOutFlash = 35
 EaseType.Str2TypeDict = {
 	linear = EaseType.Linear,
 	insine = EaseType.InSine,
@@ -66,7 +70,11 @@ EaseType.Str2TypeDict = {
 	inoutelastic = EaseType.InOutElastic,
 	inbounce = EaseType.InBounce,
 	outbounce = EaseType.OutBounce,
-	inoutbounce = EaseType.InOutBounce
+	inoutbounce = EaseType.InOutBounce,
+	flash = EaseType.Flash,
+	inflash = EaseType.InFlash,
+	outflash = EaseType.OutFlash,
+	inoutflash = EaseType.InOutFlash
 }
 
 function EaseType.Str2Type(_type)

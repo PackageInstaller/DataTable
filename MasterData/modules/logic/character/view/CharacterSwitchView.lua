@@ -15,7 +15,8 @@ function CharacterSwitchView:onInitView()
 	self._golightspine = gohelper.findChild(self.viewGO, "#go_spine_scale/lightspine/#go_lightspine")
 	self._goinfo = gohelper.findChild(self.viewGO, "left/#go_info")
 	self._simagesignature = gohelper.findChildSingleImage(self.viewGO, "left/#go_info/#simage_signature")
-	self._txttime = gohelper.findChildText(self.viewGO, "left/#go_info/#txt_time")
+	self._gotime = gohelper.findChild(self.viewGO, "left/#go_info/time")
+	self._txttime = gohelper.findChildText(self.viewGO, "left/#go_info/time/#txt_time")
 	self._goheroskin = gohelper.findChild(self.viewGO, "left/#go_heroskin")
 	self._gobgbottom = gohelper.findChild(self.viewGO, "left/#go_heroskin/#go_bgbottom")
 	self._scrollskin = gohelper.findChildScrollRect(self.viewGO, "left/#go_heroskin/#scroll_skin")
@@ -133,6 +134,7 @@ function CharacterSwitchView:_editableInitView()
 	gohelper.addUIClickAudio(self._btnchange.gameObject, AudioEnum.UI.Store_Good_Click)
 	CharacterSwitchListModel.instance:initHeroList()
 	self:_showMainHero(true)
+	self:checkJumpHero(true)
 	self:_refreshSelect()
 	self:_refreshBtnIcon()
 	MainHeroView.setSpineScale(self._gospinescale)
@@ -153,6 +155,38 @@ function CharacterSwitchView:_showMainHero(updateSelect)
 		if updateSelect then
 			self:_refreshSelect()
 		end
+	end
+end
+
+function CharacterSwitchView:checkJumpHero(updateSelect)
+	local heroId, skinId = CharacterSwitchListModel.instance:getJumpShowHeroSkin()
+
+	if heroId then
+		self:changeHero(heroId)
+
+		if not skinId then
+			local heroMO = HeroModel.instance:getByHeroId(heroId)
+
+			if heroMO then
+				skinId = heroMO.skin
+			else
+				local heroCo = HeroConfig.instance:getHeroCO(heroId)
+
+				skinId = heroCo.skinId
+			end
+		end
+
+		if skinId then
+			self:_switchHero(heroId, skinId, false)
+
+			if updateSelect then
+				self:_refreshSelect()
+			end
+
+			self._scrollskin.verticalNormalizedPosition = self._curSkinVNP or 1
+		end
+
+		return true
 	end
 end
 
@@ -194,6 +228,7 @@ function CharacterSwitchView:_updateHero(heroId, skinId, isRandom)
 	self:showTip()
 
 	local hero = HeroModel.instance:getByHeroId(self._heroId)
+	local heroConfig = HeroConfig.instance:getHeroCO(heroId)
 	local skinCo = SkinConfig.instance:getSkinCo(self._skinId or hero and hero.skin)
 
 	if not skinCo then
@@ -215,7 +250,7 @@ function CharacterSwitchView:_updateHero(heroId, skinId, isRandom)
 	TaskDispatcher.cancelTask(self._delayInitLightSpine, self)
 	self._lightSpine:setResPath(skinCo, self._onLightSpineLoaded, self)
 	self._simagesignature:UnLoadImage()
-	self._simagesignature:LoadImage(ResUrl.getSignature(self._hero.config.signature))
+	self._simagesignature:LoadImage(ResUrl.getSignature(heroConfig.signature))
 end
 
 function CharacterSwitchView:_setOffset()
@@ -296,13 +331,17 @@ function CharacterSwitchView:_delayInitLightSpine()
 	WeatherController.instance:changeRoleGo(param)
 	self._goinfo:SetActive(true)
 
-	local timeStr = ServerTime.formatTimeInLocal(self._hero.createTime / 1000, "%Y / %m / %d")
+	if self._hero then
+		local timeStr = ServerTime.formatTimeInLocal(self._hero.createTime / 1000, "%Y / %m / %d")
 
-	if not timeStr then
-		return
+		if not timeStr then
+			return
+		end
+
+		self._txttime.text = timeStr
 	end
 
-	self._txttime.text = timeStr
+	gohelper.setActive(self._gotime.gameObject, self._hero ~= nil)
 end
 
 function CharacterSwitchView:onUpdateParam()
@@ -314,6 +353,10 @@ function CharacterSwitchView:onOpen()
 	self.addEventCb(self, CharacterController.instance, CharacterEvent.SwitchHeroSkin, self._switchHeroSkin, self)
 	self.addEventCb(self, GameGlobalMgr.instance, GameStateEvent.OnScreenResize, self._onScreenResize, self)
 	self.addEventCb(self, MainSceneSwitchController.instance, MainSceneSwitchEvent.SwitchSceneFinishStory, self._onSwitchSceneFinishStory, self)
+end
+
+function CharacterSwitchView:onOpenFinish()
+	CharacterSwitchListModel.instance:setJumpShowHeroSkin()
 end
 
 function CharacterSwitchView:onClose()
@@ -425,31 +468,55 @@ function CharacterSwitchView:_showSkinList(heroId, showSkinId)
 	end
 
 	local heroMO = HeroModel.instance:getByHeroId(heroId)
-	local skinInfoList = tabletool.copy(heroMO.skinInfoList)
+	local skinInfoList = heroMO and tabletool.copy(heroMO.skinInfoList) or {}
 
 	table.sort(skinInfoList, CharacterSwitchView._sort)
 
-	local skinInfoMO = SkinInfoMO.New()
+	if heroMO then
+		local skinInfoMO = SkinInfoMO.New()
 
-	skinInfoMO:init({
-		expireSec = 0,
-		skin = heroMO.config.skinId
-	})
-	table.insert(skinInfoList, 1, skinInfoMO)
+		skinInfoMO:init({
+			expireSec = 0,
+			skin = heroMO.config.skinId
+		})
+		table.insert(skinInfoList, 1, skinInfoMO)
+	end
+
+	local pastSkins = CharacterPastModel.instance:getHeroPastSkins(heroId)
+
+	if pastSkins then
+		for _, skinId in ipairs(pastSkins) do
+			local pastSkinInfoMO = SkinInfoMO.New()
+
+			pastSkinInfoMO:init({
+				expireSec = 0,
+				skin = skinId
+			})
+			table.insert(skinInfoList, pastSkinInfoMO)
+		end
+	end
 
 	skinInfoList = self:removeDuplicates(skinInfoList)
 
 	self:_hideAllItems()
 
-	for _, skinInfo in ipairs(skinInfoList) do
+	local curSkinIndex = 1
+
+	for i, skinInfo in ipairs(skinInfoList) do
 		local skinId = skinInfo.skin
 
 		self:_showSkinItem(heroId, skinId, skinId == showSkinId)
+
+		if skinId == showSkinId then
+			curSkinIndex = i
+		end
 	end
 
 	local offsetIndex = math.min(#skinInfoList, #yOffset)
 
 	recthelper.setAnchorY(self._gobgbottom.transform, yOffset[offsetIndex])
+
+	self._curSkinVNP = 1 - (curSkinIndex - 1) / (#skinInfoList - 1)
 end
 
 function CharacterSwitchView:removeDuplicates(skinInfoList)

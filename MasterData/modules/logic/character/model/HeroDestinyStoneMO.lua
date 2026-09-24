@@ -298,6 +298,84 @@ function HeroDestinyStoneMO.replaceSkillList(skillIdList, destinyId, rank)
 	return skillIdList
 end
 
+function HeroDestinyStoneMO:replaceDestinyStoneExSkillIds(exSkillLevel, allSkillIdDict)
+	if not self:isEquipReshape() then
+		return
+	end
+
+	for i = exSkillLevel, 1, -1 do
+		local co = self:getExpExchangeSkillCo(i)
+
+		if co and not string.nilorempty(co.skillGroup1) then
+			allSkillIdDict[1] = string.splitToNumber(co.skillGroup1, "|")
+
+			break
+		end
+	end
+
+	for i = exSkillLevel, 1, -1 do
+		local co = self:getExpExchangeSkillCo(i)
+
+		if co and not string.nilorempty(co.skillGroup2) then
+			allSkillIdDict[2] = string.splitToNumber(co.skillGroup2, "|")
+
+			break
+		end
+	end
+
+	for i = exSkillLevel, 1, -1 do
+		local co = self:getExpExchangeSkillCo(i)
+
+		if co and co.skillEx ~= 0 then
+			allSkillIdDict[3] = {
+				co.skillEx
+			}
+
+			break
+		end
+	end
+
+	return true
+end
+
+function HeroDestinyStoneMO:replaceDestinyStoneExBaseSkillIds(exSkillLevel, baseSkillIdDict)
+	if not self:isEquipReshape() then
+		return
+	end
+
+	for i = exSkillLevel, 1, -1 do
+		local co = self:getExpExchangeSkillCo(i)
+
+		if co and not string.nilorempty(co.skillGroup1) then
+			baseSkillIdDict[1] = string.splitToNumber(co.skillGroup1, "|")[1]
+
+			break
+		end
+	end
+
+	for i = exSkillLevel, 1, -1 do
+		local co = self:getExpExchangeSkillCo(i)
+
+		if co and not string.nilorempty(co.skillGroup2) then
+			baseSkillIdDict[2] = string.splitToNumber(co.skillGroup2, "|")[1]
+
+			break
+		end
+	end
+
+	for i = exSkillLevel, 1, -1 do
+		local co = self:getExpExchangeSkillCo(i)
+
+		if co and co.skillEx ~= 0 then
+			baseSkillIdDict[3] = co.skillEx
+
+			break
+		end
+	end
+
+	return true
+end
+
 function HeroDestinyStoneMO:isEquipReshape()
 	if self.curUseStoneId == 0 then
 		return

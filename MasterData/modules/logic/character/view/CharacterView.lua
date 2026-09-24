@@ -216,6 +216,7 @@ function CharacterView:_editableInitView()
 	end
 
 	self._skillContainer = MonoHelper.addNoUpdateLuaComOnceToGo(self._goskill, CharacterSkillContainer)
+	self._skillContainer.viewContainer = self.viewContainer
 	self._passiveskillitems = {}
 
 	for i = 1, 3 do
@@ -250,6 +251,7 @@ function CharacterView:_editableInitView()
 
 	self._talentRedType1 = gohelper.findChild(self._gotalentreddot, "type1")
 	self._talentRedNew = gohelper.findChild(self._gotalentreddot, "new")
+	self._sp = CharacterSpName.s_createByView(self, gohelper.findChild(self.viewGO, "anim/info/sp")):bindName0(self._txtnamecn):bindName0En(self._txtnameen):bindSpName(gohelper.findChildText(self.viewGO, "anim/info/sp/bg/#txt_sp"))
 end
 
 function CharacterView:_findPassiveskillitems(index)
@@ -1319,9 +1321,10 @@ function CharacterView:_refreshInfo()
 	self._txttrust.text = percent * 100 .. "%"
 
 	self._slidertrust:SetValue(percent)
+	self._sp:onUpdateMO({
+		heroId = self._heroMO.heroId
+	}):simpleAutoSet()
 
-	self._txtnamecn.text = self._heroMO:getHeroName()
-	self._txtnameen.text = self._heroMO.config.nameEng
 	self._txttalentcn.text = luaLang("talent_character_talentcn" .. self._heroMO:getTalentTxtByHeroType())
 	self._txttalenten.text = luaLang("talent_character_talenten" .. self._heroMO:getTalentTxtByHeroType())
 end
@@ -1837,6 +1840,7 @@ function CharacterView:onDestroyView()
 	TaskDispatcher.cancelTask(self._delaySetModelHide, self)
 	TaskDispatcher.cancelTask(self._playSpineVoice, self)
 	UnityEngine.Shader.DisableKeyword("_CLIPALPHA_ON")
+	GameUtil.onDestroyViewMember(self, "_sp")
 end
 
 function CharacterView:_checkPlaySpecialBodyMotion()

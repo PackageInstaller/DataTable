@@ -55,8 +55,8 @@ function AutoChessBattleRecordItem:onUpdateData(recordData)
 	local enemyIsWin = enemyInfo.isWin
 	local playerName = playerInfo.name
 	local enemyName = enemyInfo.name
-	local playerRankCfg = lua_auto_chess_rank.configDict[self._actId][playerRank]
-	local enemyRankCfg = lua_auto_chess_rank.configDict[self._actId][enemyRank]
+	local playerRankCfg = AutoChessConfig.instance:getRankCfg(playerRank)
+	local enemyRankCfg = AutoChessConfig.instance:getRankCfg(enemyRank)
 
 	if playerRankCfg then
 		if not playerRankCfg.name then

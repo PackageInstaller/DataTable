@@ -16,11 +16,13 @@ StoreModule_pb.BUYGOODSREQUESTSTOREIDFIELD = protobuf.FieldDescriptor()
 StoreModule_pb.BUYGOODSREQUESTGOODSIDFIELD = protobuf.FieldDescriptor()
 StoreModule_pb.BUYGOODSREQUESTNUMFIELD = protobuf.FieldDescriptor()
 StoreModule_pb.BUYGOODSREQUESTSELECTCOSTFIELD = protobuf.FieldDescriptor()
+StoreModule_pb.BUYGOODSREQUESTDEDUCTIONITEMINDICESFIELD = protobuf.FieldDescriptor()
 StoreModule_pb.BUYGOODSREPLY_MSG = protobuf.Descriptor()
 StoreModule_pb.BUYGOODSREPLYSTOREIDFIELD = protobuf.FieldDescriptor()
 StoreModule_pb.BUYGOODSREPLYGOODSIDFIELD = protobuf.FieldDescriptor()
 StoreModule_pb.BUYGOODSREPLYNUMFIELD = protobuf.FieldDescriptor()
 StoreModule_pb.BUYGOODSREPLYSELECTCOSTFIELD = protobuf.FieldDescriptor()
+StoreModule_pb.BUYGOODSREPLYDEDUCTIONITEMINDICESFIELD = protobuf.FieldDescriptor()
 StoreModule_pb.GOODSINFO_MSG = protobuf.Descriptor()
 StoreModule_pb.GOODSINFOGOODSIDFIELD = protobuf.FieldDescriptor()
 StoreModule_pb.GOODSINFOBUYCOUNTFIELD = protobuf.FieldDescriptor()
@@ -107,6 +109,15 @@ StoreModule_pb.BUYGOODSREQUESTSELECTCOSTFIELD.has_default_value = false
 StoreModule_pb.BUYGOODSREQUESTSELECTCOSTFIELD.default_value = 0
 StoreModule_pb.BUYGOODSREQUESTSELECTCOSTFIELD.type = 5
 StoreModule_pb.BUYGOODSREQUESTSELECTCOSTFIELD.cpp_type = 1
+StoreModule_pb.BUYGOODSREQUESTDEDUCTIONITEMINDICESFIELD.name = "deductionItemIndices"
+StoreModule_pb.BUYGOODSREQUESTDEDUCTIONITEMINDICESFIELD.full_name = ".BuyGoodsRequest.deductionItemIndices"
+StoreModule_pb.BUYGOODSREQUESTDEDUCTIONITEMINDICESFIELD.number = 5
+StoreModule_pb.BUYGOODSREQUESTDEDUCTIONITEMINDICESFIELD.index = 4
+StoreModule_pb.BUYGOODSREQUESTDEDUCTIONITEMINDICESFIELD.label = 3
+StoreModule_pb.BUYGOODSREQUESTDEDUCTIONITEMINDICESFIELD.has_default_value = false
+StoreModule_pb.BUYGOODSREQUESTDEDUCTIONITEMINDICESFIELD.default_value = {}
+StoreModule_pb.BUYGOODSREQUESTDEDUCTIONITEMINDICESFIELD.type = 5
+StoreModule_pb.BUYGOODSREQUESTDEDUCTIONITEMINDICESFIELD.cpp_type = 1
 StoreModule_pb.BUYGOODSREQUEST_MSG.name = "BuyGoodsRequest"
 StoreModule_pb.BUYGOODSREQUEST_MSG.full_name = ".BuyGoodsRequest"
 StoreModule_pb.BUYGOODSREQUEST_MSG.nested_types = {}
@@ -115,7 +126,8 @@ StoreModule_pb.BUYGOODSREQUEST_MSG.fields = {
 	StoreModule_pb.BUYGOODSREQUESTSTOREIDFIELD,
 	StoreModule_pb.BUYGOODSREQUESTGOODSIDFIELD,
 	StoreModule_pb.BUYGOODSREQUESTNUMFIELD,
-	StoreModule_pb.BUYGOODSREQUESTSELECTCOSTFIELD
+	StoreModule_pb.BUYGOODSREQUESTSELECTCOSTFIELD,
+	StoreModule_pb.BUYGOODSREQUESTDEDUCTIONITEMINDICESFIELD
 }
 StoreModule_pb.BUYGOODSREQUEST_MSG.is_extendable = false
 StoreModule_pb.BUYGOODSREQUEST_MSG.extensions = {}
@@ -155,6 +167,15 @@ StoreModule_pb.BUYGOODSREPLYSELECTCOSTFIELD.has_default_value = false
 StoreModule_pb.BUYGOODSREPLYSELECTCOSTFIELD.default_value = 0
 StoreModule_pb.BUYGOODSREPLYSELECTCOSTFIELD.type = 5
 StoreModule_pb.BUYGOODSREPLYSELECTCOSTFIELD.cpp_type = 1
+StoreModule_pb.BUYGOODSREPLYDEDUCTIONITEMINDICESFIELD.name = "deductionItemIndices"
+StoreModule_pb.BUYGOODSREPLYDEDUCTIONITEMINDICESFIELD.full_name = ".BuyGoodsReply.deductionItemIndices"
+StoreModule_pb.BUYGOODSREPLYDEDUCTIONITEMINDICESFIELD.number = 5
+StoreModule_pb.BUYGOODSREPLYDEDUCTIONITEMINDICESFIELD.index = 4
+StoreModule_pb.BUYGOODSREPLYDEDUCTIONITEMINDICESFIELD.label = 3
+StoreModule_pb.BUYGOODSREPLYDEDUCTIONITEMINDICESFIELD.has_default_value = false
+StoreModule_pb.BUYGOODSREPLYDEDUCTIONITEMINDICESFIELD.default_value = {}
+StoreModule_pb.BUYGOODSREPLYDEDUCTIONITEMINDICESFIELD.type = 5
+StoreModule_pb.BUYGOODSREPLYDEDUCTIONITEMINDICESFIELD.cpp_type = 1
 StoreModule_pb.BUYGOODSREPLY_MSG.name = "BuyGoodsReply"
 StoreModule_pb.BUYGOODSREPLY_MSG.full_name = ".BuyGoodsReply"
 StoreModule_pb.BUYGOODSREPLY_MSG.nested_types = {}
@@ -163,7 +184,8 @@ StoreModule_pb.BUYGOODSREPLY_MSG.fields = {
 	StoreModule_pb.BUYGOODSREPLYSTOREIDFIELD,
 	StoreModule_pb.BUYGOODSREPLYGOODSIDFIELD,
 	StoreModule_pb.BUYGOODSREPLYNUMFIELD,
-	StoreModule_pb.BUYGOODSREPLYSELECTCOSTFIELD
+	StoreModule_pb.BUYGOODSREPLYSELECTCOSTFIELD,
+	StoreModule_pb.BUYGOODSREPLYDEDUCTIONITEMINDICESFIELD
 }
 StoreModule_pb.BUYGOODSREPLY_MSG.is_extendable = false
 StoreModule_pb.BUYGOODSREPLY_MSG.extensions = {}

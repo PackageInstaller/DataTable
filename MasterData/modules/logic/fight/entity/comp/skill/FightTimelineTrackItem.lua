@@ -17,7 +17,7 @@ function FightTimelineTrackItem:onTrackStart(fightStepData, duration, paramsArr)
 end
 
 function FightTimelineTrackItem:onTrackEnd()
-	return
+	FightController.instance:dispatchEvent(FightEvent.OnTimelineTrackDone, self.id)
 end
 
 function FightTimelineTrackItem:addWork2TimelineFinishWork(work)
@@ -25,7 +25,7 @@ function FightTimelineTrackItem:addWork2TimelineFinishWork(work)
 end
 
 function FightTimelineTrackItem:onDestructor()
-	return
+	FightController.instance:dispatchEvent(FightEvent.OnTimelineTrackDestructor, self.id)
 end
 
 return FightTimelineTrackItem

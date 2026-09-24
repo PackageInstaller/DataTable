@@ -60,6 +60,8 @@ function SequenceAbLoader:getAssetItemDict()
 end
 
 function SequenceAbLoader:getAssetItem(path)
+	path = getAssetCanonicalPath(path)
+
 	return self._resDict[path] or self._singlePath2AssetItemDict[path]
 end
 

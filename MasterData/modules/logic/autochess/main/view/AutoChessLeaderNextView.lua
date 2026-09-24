@@ -17,6 +17,7 @@ function AutoChessLeaderNextView:onClickModalMask()
 end
 
 function AutoChessLeaderNextView:onOpen()
+	self.addEventCb(self, ViewMgr.instance, ViewEvent.OnOpenViewFinish, self.onOpenView, self)
 	AudioMgr.instance:trigger(AudioEnum.AutoChess.play_ui_tangren_qishou_confirm)
 
 	if self.viewParam and self.viewParam.leaderId then
@@ -25,15 +26,27 @@ function AutoChessLeaderNextView:onOpen()
 
 		leaderItem:setData(self.viewParam.leaderId)
 		leaderItem:setActiveChesk(false)
-		TaskDispatcher.runDelay(self.closeThis, self, 2)
+		TaskDispatcher.runDelay(self.delayEnter, self, 2)
+		TaskDispatcher.runDelay(self.closeThis, self, 4)
 	end
 end
 
-function AutoChessLeaderNextView:onClose()
+function AutoChessLeaderNextView:onDestroyView()
+	TaskDispatcher.cancelTask(self.delayEnter, self)
+	TaskDispatcher.cancelTask(self.closeThis, self)
+end
+
+function AutoChessLeaderNextView:delayEnter()
 	if not self.viewParam.actId then
 		local actId = Activity182Model.instance:getCurActId()
 
-		AutoChessRpc.instance:sendAutoChessEnterSceneRequest(self.viewParam.actId, self.viewParam.moduleId, self.viewParam.episodeId, self.viewParam.leaderId, true)
+		AutoChessRpc.instance:sendAutoChessEnterSceneRequest(self.viewParam.actId, self.viewParam.moduleId, self.viewParam.episodeId, self.viewParam.leaderId)
+	end
+end
+
+function AutoChessLeaderNextView:onOpenView(viewName)
+	if viewName == ViewName.AutoChessGameView then
+		self:closeThis()
 	end
 end
 

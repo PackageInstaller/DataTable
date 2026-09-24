@@ -14,6 +14,18 @@ function CharacterSwitchSkinItem:showSkin(heroId, skinId)
 	self._image.enabled = false
 
 	self._singleImg:LoadImage(ResUrl.getHeadIconMiddle(skinId), self._loadCallback, self)
+
+	local isHasPastSkin = CharacterPastModel.instance:isHasPastSkin(heroId, skinId)
+
+	gohelper.setActive(self._gopasttag, isHasPastSkin)
+
+	local heroMo = HeroModel.instance:getByHeroId(self._heroId)
+
+	gohelper.setActive(self._goTip, isHasPastSkin and heroMo == nil)
+
+	self._isOpenTip = false
+
+	gohelper.setActive(self._goTipDesc, self._isOpenTip)
 end
 
 function CharacterSwitchSkinItem:_loadCallback()
@@ -34,7 +46,11 @@ function CharacterSwitchSkinItem:init(go)
 	self._singleImg = gohelper.findChildSingleImage(self.viewGO, "heroskin")
 	self._selectGo = gohelper.findChild(self.viewGO, "heroskin/select")
 	self._unselectGo = gohelper.findChild(self.viewGO, "heroskin/unselect")
+	self._gopasttag = gohelper.findChild(self.viewGO, "heroskin/#go_normalSkin")
 	self._canvas = gohelper.findChildComponent(self.viewGO, "heroskin", typeof(UnityEngine.CanvasGroup))
+	self._goTip = gohelper.findChild(self.viewGO, "#go_tips")
+	self._btnTip = gohelper.findChildButtonWithAudio(self.viewGO, "#go_tips/#btn_icon")
+	self._goTipDesc = gohelper.findChild(self.viewGO, "#go_tips/#go_descbg")
 end
 
 function CharacterSwitchSkinItem:addEventListeners()
@@ -45,6 +61,7 @@ function CharacterSwitchSkinItem:addEventListeners()
 	end
 
 	CharacterController.instance:registerCallback(CharacterEvent.SwitchHeroSkin, self._switchHeroSkin, self)
+	self._btnTip:AddClickListener(self._openTip, self)
 end
 
 function CharacterSwitchSkinItem:removeEventListeners()
@@ -53,6 +70,14 @@ function CharacterSwitchSkinItem:removeEventListeners()
 	if self._click then
 		self._click:RemoveClickListener()
 	end
+
+	self._btnTip:RemoveClickListener()
+end
+
+function CharacterSwitchSkinItem:_openTip()
+	self._isOpenTip = not self._isOpenTip
+
+	gohelper.setActive(self._goTipDesc, self._isOpenTip)
 end
 
 function CharacterSwitchSkinItem:_switchHeroSkin(heroId, skinId)

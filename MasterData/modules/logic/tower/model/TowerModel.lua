@@ -247,7 +247,7 @@ function TowerModel:refreshHeroGroupInfo()
 	local difficulty = self.fightParam.difficulty
 	local episodeId = self.fightParam.episodeId
 	local towerInfo = self:getTowerInfoById(towerType, towerId)
-	local isHeroGroupLock, heroIds, assistBoss, equipUids, banHeroIds, banAssistBoss, banTrialHeros, trialHeros
+	local isHeroGroupLock, heroIds, assistBoss, equipUids, banHeroIds, banAssistBoss, banTrialHeros, trialHeros, assistSkinIds
 
 	if towerInfo then
 		local isLock, subEpisodeInfo = towerInfo:isHeroGroupLock(layerId, episodeId)
@@ -259,6 +259,7 @@ function TowerModel:refreshHeroGroupInfo()
 			assistBoss = subEpisodeInfo.assistBossId
 			equipUids = subEpisodeInfo.equipUids
 			trialHeros = subEpisodeInfo.trialHeroIds
+			assistSkinIds = subEpisodeInfo.skinIds
 		end
 
 		banHeroIds, banAssistBoss, banTrialHeros = towerInfo:getBanHeroAndBoss(layerId, difficulty, episodeId)
@@ -268,6 +269,7 @@ function TowerModel:refreshHeroGroupInfo()
 	self.fightParam.heros = heroIds
 	self.fightParam.equipUids = equipUids
 	self.fightParam.trialHeros = trialHeros
+	self.fightParam.assistSkinIds = assistSkinIds
 	self.fightParam.herosDict = {}
 
 	if heroIds then
@@ -317,6 +319,7 @@ function TowerModel:resetTowerSubEpisode(msg)
 	towerMO:resetLayerInfos(layerInfo)
 	towerMO:resetLayerScore(layerInfo)
 	towerMO:updateHistoryHighScore(msg.historyHighScore)
+	self:refreshHeroGroupInfo()
 end
 
 function TowerModel:getTowerInfoList(towerType)
@@ -601,6 +604,32 @@ end
 
 function TowerModel:getTrialHeroCoDataList(seasonId)
 	return self.towerTrialHeroDataMap[seasonId]
+end
+
+function TowerModel:checkHaveUselessAssist()
+	local recordFightParam = self:getRecordFightParam()
+	local isEpisodeFinish, subEpisodeMo = TowerPermanentModel.instance:checkLayerSubEpisodeFinish(recordFightParam.layerId, recordFightParam.episodeId)
+	local isHaveUselessAssist = false
+
+	if subEpisodeMo and recordFightParam.isHeroGroupLock and recordFightParam.towerType == TowerEnum.TowerType.Normal then
+		for index, heroData in ipairs(subEpisodeMo.heros) do
+			local skinId = subEpisodeMo.skinIds[index]
+
+			if skinId > 0 then
+				isHaveUselessAssist = true
+
+				break
+			end
+
+			if heroData.trialId > 0 then
+				isHaveUselessAssist = true
+
+				break
+			end
+		end
+	end
+
+	return isHaveUselessAssist
 end
 
 TowerModel.instance = TowerModel.New()

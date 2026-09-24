@@ -52,10 +52,6 @@ function BeiLiErGameController:finishGame()
 	ViewMgr.instance:openView(ViewName.BeiLiErResultView)
 end
 
-function BeiLiErGameController:reInit()
-	return
-end
-
 BeiLiErGameController.instance = BeiLiErGameController.New()
 
 return BeiLiErGameController

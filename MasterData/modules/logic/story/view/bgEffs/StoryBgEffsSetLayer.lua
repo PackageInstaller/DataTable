@@ -12,12 +12,10 @@ function StoryBgEffsSetLayer:init(bgCo)
 	StoryBgEffsSetLayer.super.init(self, bgCo)
 end
 
-function StoryBgEffsSetLayer:start(callback, callbackObj)
-	StoryBgEffsSetLayer.super.start(self)
+function StoryBgEffsSetLayer:onStartEffect()
 	self:_setViewTop(true)
 	ViewMgr.instance:registerCallback(ViewEvent.OnOpenView, self._onOpenView, self)
 	ViewMgr.instance:registerCallback(ViewEvent.OnCloseView, self._onCloseView, self)
-	self:loadRes()
 end
 
 function StoryBgEffsSetLayer:_onOpenView(viewName)

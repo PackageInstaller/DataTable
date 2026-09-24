@@ -243,6 +243,30 @@ function RoomSkinModel:getOtherPlayerRoomSkinDict()
 	return self._otherPlayerRoomSkinDict
 end
 
+function RoomSkinModel:bAllowPlaySuit1Eff()
+	if not self._isInitSkinMoList then
+		self:initSkinMoList()
+	end
+
+	local kSuitId = 1
+	local needCnt = 4
+	local roomSkinMoList = self:getList() or {}
+
+	for _, roomSkinMO in ipairs(roomSkinMoList) do
+		local skinId = roomSkinMO:getId()
+
+		if roomSkinMO:isEquipped() then
+			local suit = RoomConfig.instance:getRoomSkinSuit(skinId)
+
+			if suit == kSuitId then
+				needCnt = needCnt - 1
+			end
+		end
+	end
+
+	return needCnt <= 0
+end
+
 RoomSkinModel.instance = RoomSkinModel.New()
 
 return RoomSkinModel

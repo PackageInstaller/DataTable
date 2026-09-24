@@ -201,10 +201,6 @@ function Rouge2_ActivityView:_endYesCallback()
 	Rouge2_Rpc.instance:sendRouge2AbortRequest(self._onReceiveEndReply, self)
 end
 
-function Rouge2_ActivityView:_onReceiveEndReply()
-	Rouge2_Controller.instance:startEndFlow()
-end
-
 function Rouge2_ActivityView:onClose()
 	TaskDispatcher.cancelTask(self._refreshTime, self)
 

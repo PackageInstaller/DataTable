@@ -31,6 +31,7 @@ function ClothesStorePreviewSkinComp:init(go)
 		[308303] = 2,
 		[314403] = 1.5
 	}
+	self._sp = CharacterSpName.s_createByListScrollCellExtend(self, gohelper.findChild(self.viewGO, "#txt_characterName/sp")):bindName0(self._txtcharacterName):simpleBindSpNameWithBg()
 end
 
 function ClothesStorePreviewSkinComp:addEventListeners()
@@ -110,10 +111,11 @@ function ClothesStorePreviewSkinComp:setGOActive(go, isActive)
 end
 
 function ClothesStorePreviewSkinComp:refreshInfo()
-	local heroConfig = HeroConfig.instance:getHeroCO(self.skinCo.characterId)
+	local heroId = self.skinCo.characterId
 
-	self._txtcharacterName.text = heroConfig.name
-
+	self._sp:onUpdateMO({
+		heroId = heroId
+	}):setAsML_SpAndName0()
 	gohelper.setActive(self._txtskinName.gameObject, true)
 	gohelper.setActive(self._txtskinNameEn.gameObject, true)
 
@@ -277,6 +279,11 @@ function ClothesStorePreviewSkinComp:_loadedImage()
 	if not self.special2dBgScale[self.skinCo.id] then
 		local defaultScale = 1
 
+		if not string.nilorempty(self.skinCo.skinStoreViewImgOffset) then
+			offsetStr = self.skinCo.skinStoreViewImgOffset
+			defaultScale = 1
+		end
+
 		if not string.nilorempty(offsetStr) then
 			local offsets = string.splitToNumber(offsetStr, "#")
 
@@ -318,6 +325,7 @@ end
 
 function ClothesStorePreviewSkinComp:onDestroy()
 	self:clearSkin()
+	GameUtil.onDestroyViewMember(self, "_sp")
 end
 
 return ClothesStorePreviewSkinComp

@@ -21,11 +21,6 @@ function StoryBgEffsScreenHalo:init(bgCo)
 	self._cfg = bgCo
 end
 
-function StoryBgEffsScreenHalo:start()
-	StoryBgEffsScreenHalo.super.start(self)
-	self:loadRes()
-end
-
 function StoryBgEffsScreenHalo:onLoadFinished()
 	StoryBgEffsScreenHalo.super.onLoadFinished(self)
 

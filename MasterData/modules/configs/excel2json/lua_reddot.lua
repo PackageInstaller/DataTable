@@ -8,7 +8,8 @@ local fields = {
 	isOnline = 3,
 	parent = 2,
 	style = 5,
-	id = 1
+	id = 1,
+	isChangeUi = 6
 }
 local primaryKey = {
 	"id"

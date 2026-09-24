@@ -22,6 +22,7 @@ function FightViewMgr:addEvents()
 	self:com_registFightEvent(FightEvent.OnBuffUpdate, self._onBuffUpdate)
 	self:com_registFightEvent(FightEvent.BloodPool_OnCreate, self.onBloodPoolCreate)
 	self:com_registFightEvent(FightEvent.HeatScale_OnCreate, self.onHeatScaleCreate)
+	self:com_registFightEvent(FightEvent.QTE_OnCreate, self.onCreateQTE)
 	self:com_registFightEvent(FightEvent.DoomsdayClock_OnValueChange, self.onCreateDoomsdayClock)
 	self:com_registFightEvent(FightEvent.DoomsdayClock_OnAreaChange, self.onCreateDoomsdayClock)
 	self:com_registMsg(FightMsgId.FightProgressValueChange, self._showFightProgress)
@@ -58,6 +59,14 @@ function FightViewMgr:onHeatScaleCreate(teamType)
 	end
 
 	self:_createHeatScale(teamType)
+end
+
+function FightViewMgr:onCreateQTE(teamType)
+	if teamType ~= FightEnum.TeamType.MySide then
+		return
+	end
+
+	self:createQTEBtnView(teamType)
 end
 
 function FightViewMgr:_showSimplePolarizationLevel()
@@ -191,6 +200,15 @@ function FightViewMgr:onOpen()
 	self:showRouge2Slapstick()
 	self:openLorentzCardView()
 	self:showMeileiierExRound()
+	self:showQTEBtnView()
+end
+
+function FightViewMgr:showQTEBtnView()
+	local qteInfo = FightDataHelper.qteDataMgr:getQteInfo(FightEnum.TeamType.MySide)
+
+	if qteInfo then
+		self:createQTEBtnView(FightEnum.TeamType.MySide)
+	end
 end
 
 function FightViewMgr:openLorentzCardView()
@@ -478,6 +496,18 @@ function FightViewMgr:_createBloodPool(teamType)
 	self.viewContainer.rightBottomElementLayoutView:showElement(FightRightBottomElementEnum.Elements.BloodPool)
 end
 
+function FightViewMgr:createQTEBtnView(teamType)
+	if self.qteBtnView then
+		return
+	end
+
+	local parentRoot = self.viewContainer.rightBottomElementLayoutView:getElementContainer(FightRightBottomElementEnum.Elements.Qte)
+
+	self.qteBtnView = self:com_openSubView(FightQteBtnView, "ui/viewres/fight/fightbreakthroughbtnview.prefab", parentRoot, teamType)
+
+	self.viewContainer.rightBottomElementLayoutView:showElement(FightRightBottomElementEnum.Elements.Qte)
+end
+
 function FightViewMgr:_createHeatScale(teamType)
 	if self.heatScaleMgrView then
 		return
@@ -692,7 +722,7 @@ function FightViewMgr:onCardBoxNumChange(beforeNum, afterNum)
 	self:activeDeck()
 	self:clearTweenId()
 
-	local var_52_0 = tonumber(self.txtNum.text) or 0
+	local var_55_0 = tonumber(self.txtNum.text) or 0
 end
 
 function FightViewMgr:directSetDeckNum(value)

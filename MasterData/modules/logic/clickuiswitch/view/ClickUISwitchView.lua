@@ -11,13 +11,13 @@ function ClickUISwitchView:onInitView()
 	self._goshowing = gohelper.findChild(self.viewGO, "right/start/#go_showing")
 	self._goLocked = gohelper.findChild(self.viewGO, "right/start/#go_Locked")
 	self._scrollcard = gohelper.findChildScrollRect(self.viewGO, "right/mask/#scroll_card")
-	self._goname = gohelper.findChild(self.viewGO, "left/LayoutGroup/#go_name")
-	self._txtname = gohelper.findChildText(self.viewGO, "left/LayoutGroup/#go_name/#txt_name")
-	self._txtTime = gohelper.findChildText(self.viewGO, "left/LayoutGroup/#go_name/#txt_name/#txt_Time")
+	self._goname = gohelper.findChild(self.viewGO, "left/LayoutGroup/layout/#go_SceneName")
+	self._txtname = gohelper.findChildText(self.viewGO, "left/LayoutGroup/layout/#go_SceneName/#txt_SceneName")
+	self._txtTime = gohelper.findChildText(self.viewGO, "left/LayoutGroup/layout/#go_Time/#txt_Time")
 	self._txtdescr = gohelper.findChildText(self.viewGO, "left/#txt_descr")
 	self._goright = gohelper.findChild(self.viewGO, "right")
 	self._goleft = gohelper.findChild(self.viewGO, "left")
-	self._btnHide = gohelper.findChildButtonWithAudio(self.viewGO, "left/LayoutGroup/#go_name/#btn_namecheck")
+	self._btnHide = gohelper.findChildButtonWithAudio(self.viewGO, "left/LayoutGroup/#go_HideBtn/#btn_Hide")
 	self._btnShow = gohelper.findChildButtonWithAudio(self.viewGO, "#btn_show")
 
 	if self._editableInitView then
@@ -94,6 +94,9 @@ function ClickUISwitchView:_btnHideOnClick()
 	self._hideTime = Time.time
 	self._showUI = not self._showUI
 
+	local animName = self._showUI and "switch1" or "switch2"
+
+	self._rootAnimator:Play(animName, 0, 0)
 	gohelper.setActive(self._btnShow, not self._showUI)
 	ClickUISwitchController.instance:dispatchEvent(ClickUISwitchEvent.SwitchVisible, self._showUI)
 end

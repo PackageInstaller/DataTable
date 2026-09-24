@@ -33,7 +33,11 @@ function GuideViewParam:setStep(guideId, stepId)
 	local goPath = GuideModel.instance:getStepGOPath(guideId, stepId)
 
 	self:initUiType(stepCO.uiInfo)
-	self:setUiOffset(stepCO.uiOffset)
+
+	if self.uiInfo.uiType ~= GuideEnum.uiTypeDrag or not string.nilorempty(stepCO.uiOffset) then
+		self:setUiOffset(stepCO.uiOffset)
+	end
+
 	self:setGoPath(goPath)
 
 	self.touchGOPath = stepCO.touchGOPath
@@ -151,6 +155,17 @@ function GuideViewParam:getUiTypeParam(uiInfo)
 			maskAlpha = temp[7]
 			imgAlpha = temp[8]
 		end
+	elseif result.uiType == GuideEnum.uiTypeDrag then
+		result.rotation = temp[2] or 0
+		result.width = temp[3] or 0
+		result.height = temp[4] or 0
+		result.dragOffsetX = temp[5] or 0
+		result.dragOffsetY = temp[6] or 0
+		result.arrowScale = temp[7] or 1
+		result.arrowOffsetX = temp[8] or 0
+		result.arrowOffsetY = temp[9] or 0
+		maskAlpha = temp[10]
+		imgAlpha = temp[11]
 	end
 
 	result.maskAlpha = maskAlpha or 0

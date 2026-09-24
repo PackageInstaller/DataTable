@@ -738,16 +738,20 @@ function CharacterModel:isFilterTagByBattleTags(selectTags, battleTag, heroId)
 		return true
 	end
 
-	local count = tabletool.len(selectTags)
+	local listCount = 0
 
-	if count == 0 then
+	for _, list in pairs(selectTags) do
+		listCount = listCount + #list
+	end
+
+	if listCount == 0 then
 		return true
 	end
 
-	local battleTags = string.split(battleTag, "#")
 	local count1 = 0
+	local battleTags = string.split(battleTag, "#")
 
-	for _, list in pairs(selectTags) do
+	for type, list in pairs(selectTags) do
 		local count2 = 0
 
 		for _, tagId in ipairs(list) do
@@ -757,7 +761,7 @@ function CharacterModel:isFilterTagByBattleTags(selectTags, battleTag, heroId)
 		end
 
 		if #list > 0 and count2 == 0 then
-			return false
+			break
 		end
 
 		count1 = count1 + count2
@@ -765,7 +769,7 @@ function CharacterModel:isFilterTagByBattleTags(selectTags, battleTag, heroId)
 
 	self._tagCountDict[heroId] = count1
 
-	return true
+	return count1 > 0
 end
 
 function CharacterModel:clearTagCountDict()

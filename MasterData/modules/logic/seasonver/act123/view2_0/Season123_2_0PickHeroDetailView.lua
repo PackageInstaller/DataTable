@@ -153,6 +153,7 @@ function Season123_2_0PickHeroDetailView:_editableInitView()
 	end
 
 	self._skillContainer = MonoHelper.addNoUpdateLuaComOnceToGo(self._goskill, CharacterSkillContainer)
+	self._skillContainer.viewContainer = self.viewContainer
 
 	gohelper.setActive(self._gononecharacter, false)
 	gohelper.setActive(self._gocharacterinfo, false)

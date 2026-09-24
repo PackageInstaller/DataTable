@@ -1203,8 +1203,9 @@ function WeatherComp:initRoleParam(targetReport)
 	end
 
 	local hero = HeroModel.instance:getByHeroId(heroId)
+	local isPastSkin = CharacterPastModel.instance:isPastSkin(heroId, skinId)
 
-	if not hero then
+	if not hero and not isPastSkin then
 		return
 	end
 

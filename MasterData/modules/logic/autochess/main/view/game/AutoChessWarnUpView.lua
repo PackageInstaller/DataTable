@@ -161,7 +161,7 @@ function AutoChessWarnUpView:refreshUI()
 			transformhelper.setLocalScale(item.go.transform, 0.7, 0.7, 1)
 		end
 	elseif self.index == 4 then
-		local chesCfg = AutoChessConfig.instance:getChessCfg(self.bossId)
+		local chesCfg = AutoChessConfig.instance:getChessCfgAnyway(self.bossId)
 		local meshComp = MonoHelper.addNoUpdateLuaComOnceToGo(self._goBMesh, AutoChessMeshComp)
 
 		meshComp:setData(chesCfg.image, true)
@@ -181,13 +181,6 @@ function AutoChessWarnUpView:_checkCardpack(cardpackId)
 			break
 		end
 	end
-
-	local param = {
-		index = checkIndex,
-		configs = self.cardpackCfgs
-	}
-
-	ViewMgr.instance:openView(ViewName.AutoChessCardpackInfoView, param)
 end
 
 return AutoChessWarnUpView

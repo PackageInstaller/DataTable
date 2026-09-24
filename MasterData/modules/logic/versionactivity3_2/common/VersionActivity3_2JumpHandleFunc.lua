@@ -44,11 +44,9 @@ function VersionActivity3_2JumpHandleFunc:jumpTo13229(paramsList)
 	local episodeId = paramsList and paramsList[3]
 	local actId = VersionActivity3_2Enum.ActivityId.HuiDiaoLan
 
-	table.insert(self.waitOpenViewNames, VersionActivityFixedHelper.getVersionActivityEnterViewName())
-	VersionActivityFixedHelper.getVersionActivityEnterController().instance:openVersionActivityEnterViewIfNotOpened(function()
-		VersionActivityFixedHelper.getVersionActivityEnterController().instance:openVersionActivityEnterViewIfNotOpened(nil, nil, actId, true)
-		HuiDiaoLanGameController.instance:enterEpisodeLevelView(actId, episodeId)
-	end)
+	table.insert(self.waitOpenViewNames, RoleActivityEnum.LevelView[actId])
+	PermanentController.instance:jump2Activity(VersionActivity3_2Enum.ActivityId.EnterView)
+	HuiDiaoLanGameController.instance:enterEpisodeLevelView(actId, episodeId)
 
 	return JumpEnum.JumpResult.Success
 end
@@ -57,11 +55,9 @@ function VersionActivity3_2JumpHandleFunc:jumpTo13231(paramsList)
 	local episodeId = paramsList and paramsList[3]
 	local actId = VersionActivity3_2Enum.ActivityId.BeiLiEr
 
-	table.insert(self.waitOpenViewNames, VersionActivityFixedHelper.getVersionActivityEnterViewName())
-	VersionActivityFixedHelper.getVersionActivityEnterController().instance:openVersionActivityEnterViewIfNotOpened(function()
-		VersionActivityFixedHelper.getVersionActivityEnterController().instance:openVersionActivityEnterViewIfNotOpened(nil, nil, actId, true)
-		BeiLiErController.instance:enterLevelView(episodeId)
-	end)
+	table.insert(self.waitOpenViewNames, RoleActivityEnum.LevelView[actId])
+	PermanentController.instance:jump2Activity(VersionActivity3_2Enum.ActivityId.EnterView)
+	BeiLiErController.instance:enterLevelView(episodeId)
 
 	return JumpEnum.JumpResult.Success
 end

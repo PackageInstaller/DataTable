@@ -221,9 +221,7 @@ function BossRushModel:getBattleStageAndLayer()
 	local episodeId = DungeonModel.instance.curSendEpisodeId
 
 	if GameSceneMgr.instance:getCurSceneType() ~= SceneType.Fight or not episodeId then
-		self:setBattleStageAndLayer(nil, nil)
-
-		return 1, 1
+		return 1, 1, BossRushConfig.instance:getActivityId()
 	end
 
 	local config = self:getConfig()

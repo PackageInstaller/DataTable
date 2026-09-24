@@ -32,6 +32,11 @@ end
 
 function FightTLEventDefHit:onTrackStart(fightStepData, duration, paramsArr)
 	self._paramsArr = paramsArr
+
+	if not string.nilorempty(paramsArr[16]) then
+		self.floatOrder = tonumber(paramsArr[16])
+	end
+
 	self.fightStepData = fightStepData
 
 	self.fightStepData:addHitIndex()
@@ -867,7 +872,13 @@ function FightTLEventDefHit:_statisticAndFloat()
 					end
 				end
 
-				FightFloatMgr.instance:float(targetId, floatType, num, param, isAssassinate)
+				local floatData = {}
+
+				if self.floatOrder then
+					floatData.order = self.floatOrder
+				end
+
+				FightFloatMgr.instance:float(targetId, floatType, num, param, isAssassinate, floatData)
 				FightController.instance:dispatchEvent(FightEvent.OnDamageTotal, self.fightStepData, oneDefender, num, self._isLastHit)
 			end
 		end
@@ -921,7 +932,7 @@ function FightTLEventDefHit:_playHitVoice(entity)
 			end
 		end
 
-		FightAudioMgr.instance:playHitVoice(heroId, customAudioLang)
+		FightAudioMgr.instance:playHitVoice(heroId, customAudioLang, entityMO and entityMO.skin)
 	end
 end
 

@@ -11,13 +11,13 @@ function MainUISwitchView:onInitView()
 	self._btnget = gohelper.findChildButtonWithAudio(self.viewGO, "right/start/#btn_get")
 	self._goshowing = gohelper.findChild(self.viewGO, "right/start/#go_showing")
 	self._goLocked = gohelper.findChild(self.viewGO, "right/start/#go_Locked")
-	self._goSceneName = gohelper.findChild(self.viewGO, "left/LayoutGroup/#go_SceneName")
-	self._txtSceneName = gohelper.findChildText(self.viewGO, "left/LayoutGroup/#go_SceneName/#txt_SceneName")
-	self._txtTime = gohelper.findChildText(self.viewGO, "left/LayoutGroup/#go_SceneName/#txt_SceneName/#txt_Time")
+	self._goSceneName = gohelper.findChild(self.viewGO, "left/LayoutGroup/layout/#go_SceneName")
+	self._txtSceneName = gohelper.findChildText(self.viewGO, "left/LayoutGroup/layout/#go_SceneName/#txt_SceneName")
+	self._txtTime = gohelper.findChildText(self.viewGO, "left/LayoutGroup/layout/#go_Time/#txt_Time")
 	self._txtSceneDescr = gohelper.findChildText(self.viewGO, "left/#txt_SceneDescr")
 	self._goright = gohelper.findChild(self.viewGO, "right")
 	self._goleft = gohelper.findChild(self.viewGO, "left")
-	self._btnHide = gohelper.findChildButtonWithAudio(self.viewGO, "left/LayoutGroup/#go_SceneName/#btn_namecheck")
+	self._btnHide = gohelper.findChildButtonWithAudio(self.viewGO, "left/LayoutGroup/#go_HideBtn/#btn_Hide")
 	self._btnShow = gohelper.findChildButtonWithAudio(self.viewGO, "#btn_show")
 
 	if self._editableInitView then
@@ -92,6 +92,10 @@ function MainUISwitchView:_btnHideOnClick()
 	self._showUI = not self._showUI
 
 	gohelper.setActive(self._btnShow, not self._showUI)
+
+	local animName = self._showUI and "switch1" or "switch2"
+
+	self._rootAnimator:Play(animName, 0, 0)
 	MainUISwitchController.instance:dispatchEvent(MainUISwitchEvent.SwitchUIVisible, self._showUI)
 end
 
@@ -156,6 +160,11 @@ function MainUISwitchView:onOpen()
 	MainSceneSwitchDisplayController.instance:hideScene()
 	WeatherController.instance:onSceneShow()
 	self._rootAnimator:Play("open", 0, 0)
+end
+
+function MainUISwitchView:onOpenFinish()
+	gohelper.setActive(self.viewGO, false)
+	gohelper.setActive(self.viewGO, true)
 end
 
 function MainUISwitchView:_refreshView()

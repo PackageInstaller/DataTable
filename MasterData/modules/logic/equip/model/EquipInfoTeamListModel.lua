@@ -82,7 +82,7 @@ end
 function EquipInfoTeamListModel:initInTeamEquipUidToHero()
 	self.equipUidToHeroMo = {}
 
-	local heroUidList = self.curGroupMO.heroList
+	local heroUidList = tabletool.copy(self.curGroupMO.heroList)
 
 	if self.viewParam.fromView == EquipEnum.FromViewEnum.V3a9_BossRush_HeroGroupListView and self.viewParam.stage then
 		heroUidList = V3a9_BossRushModel.instance:getHeroUIds(self.viewParam.stage)

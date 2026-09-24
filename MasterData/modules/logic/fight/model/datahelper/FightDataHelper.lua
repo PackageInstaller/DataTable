@@ -126,6 +126,15 @@ function FightDataHelper.getClientDeviceInfo(uid)
 	return areaInfo and areaInfo:getClientDeviceInfo(uid)
 end
 
+function FightDataHelper.getClueArea(teamType)
+	teamType = teamType or FightEnum.TeamType.MySide
+
+	local teamDataMgr = FightDataHelper.teamDataMgr
+	local teamData = teamDataMgr and teamDataMgr[teamType]
+
+	return teamData and teamData.clueArea
+end
+
 function FightDataHelper.getCounterValue(counterId)
 	local counterMgr = FightDataHelper.counterMgr
 

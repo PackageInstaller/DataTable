@@ -438,4 +438,12 @@ function UnityVideoPlayer:SetRaycast(v)
 	end
 end
 
+function UnityVideoPlayer:getTimeRange()
+	local startTime = 0
+	local duration = self._videoPlayer.length
+	local curTime = self._videoPlayer.time
+
+	return startTime, duration, curTime
+end
+
 return UnityVideoPlayer

@@ -14,6 +14,7 @@ IconMgrConfig.UrlPlayerIcon = "ui/viewres/common/item/commonplayericon.prefab"
 IconMgrConfig.UrlRedDotIcon = "ui/viewres/common/item/commonreddoticon.prefab"
 IconMgrConfig.UrlRoomGoodsItemIcon = "ui/viewres/room/roomgoodsitem.prefab"
 IconMgrConfig.UrlCommonTextMarkTop = "ui/viewres/common/item/commontextmarktop.prefab"
+IconMgrConfig.UrlCommonTextDotBottom = "ui/viewres/common/item/commontextdotbottom.prefab"
 IconMgrConfig.UrlHeadIcon = "ui/viewres/common/item/commonheadicon.prefab"
 IconMgrConfig.UrlCritterIcon = "ui/viewres/common/item/commoncrittericon.prefab"
 IconMgrConfig.UrlIconTag = "ui/viewres/common/item/commonicontag.prefab"
@@ -28,6 +29,8 @@ function IconMgrConfig.getPreloadList()
 		IconMgrConfig.UrlHeroItemNew,
 		IconMgrConfig.UrlPlayerIcon,
 		IconMgrConfig.UrlRedDotIcon,
+		IconMgrConfig.UrlCommonTextMarkTop,
+		IconMgrConfig.UrlCommonTextDotBottom,
 		IconMgrConfig.UrlHeadIcon,
 		IconMgrConfig.UrlCritterIcon,
 		IconMgrConfig.UrlIconTag

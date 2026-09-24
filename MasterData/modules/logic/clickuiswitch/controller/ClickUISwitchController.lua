@@ -24,11 +24,12 @@ function ClickUISwitchController:_onGetInfoFinish()
 	ClickUISwitchModel.instance:initClickUI()
 end
 
-function ClickUISwitchController:openClickUISwitchInfoView(skinId, noInfoEffect, isPreview)
+function ClickUISwitchController:openClickUISwitchInfoView(skinId, noInfoEffect, isPreview, isAmplify)
 	ViewMgr.instance:openView(ViewName.ClickUISwitchInfoView, {
 		SkinId = skinId,
 		noInfoEffect = noInfoEffect,
-		isPreview = isPreview
+		isPreview = isPreview,
+		isAmplify = isAmplify
 	})
 end
 

@@ -972,63 +972,81 @@ function HeroGroupMO:setAssistBossId(bossId)
 	self.assistBossId = bossId
 end
 
-function HeroGroupMO:replaceTowerHeroList(heroList)
-	local dict = {}
-	local list = {}
+function HeroGroupMO:replaceTowerHeroList(heroList, keepPosition)
 	local emptyUid = tostring(0)
 
-	if heroList then
-		if not #heroList then
-			local heroCount = 0
+	self.heroList = self.heroList or {}
 
-			for i = 1, heroCount do
-				local hero = heroList[i].heroUid
+	local dict = {}
 
-				dict[hero] = heroList[i].equipUid
+	if keepPosition then
+		for i = 1, ModuleEnum.MaxHeroCountInGroup do
+			local heroInfo = heroList and heroList[i]
 
-				if hero ~= emptyUid then
-					table.insert(list, hero)
-				end
+			if heroInfo then
+				self.heroList[i] = heroInfo.heroUid or emptyUid
 			end
+		end
+	else
+		local list = {}
 
-			self.heroList = self.heroList or {}
+		if heroList then
+			if not #heroList then
+				local heroCount = 0
 
-			local emptyPosDict = {}
+				for i = 1, heroCount do
+					local hero = heroList[i].heroUid
 
-			for i = 1, ModuleEnum.MaxHeroCountInGroup do
-				if not self.heroList[i] then
-					local hero = emptyUid
+					dict[hero] = heroList[i].equipUid
 
-					if dict[hero] then
-						tabletool.removeValue(list, hero)
-					else
-						self.heroList[i] = emptyUid
-						emptyPosDict[i] = 1
+					if hero ~= emptyUid then
+						table.insert(list, hero)
 					end
 				end
+
+				local emptyPosDict = {}
+
+				for i = 1, ModuleEnum.MaxHeroCountInGroup do
+					if not self.heroList[i] then
+						local hero = emptyUid
+
+						if dict[hero] then
+							tabletool.removeValue(list, hero)
+						else
+							self.heroList[i] = emptyUid
+							emptyPosDict[i] = 1
+						end
+					end
+				end
+
+				local posList = {}
+
+				for k, v in pairs(emptyPosDict) do
+					table.insert(posList, k)
+				end
+
+				if #posList > 1 then
+					table.sort(posList)
+				end
+
+				for i, v in ipairs(list) do
+					local pos = posList[i]
+
+					self.heroList[pos] = v
+				end
 			end
+		end
+	end
 
-			local posList = {}
+	self.equips = {}
 
-			for k, v in pairs(emptyPosDict) do
-				table.insert(posList, k)
-			end
+	for i = 1, ModuleEnum.MaxHeroCountInGroup do
+		if not self.heroList[i] then
+			local hero = emptyUid
+			local heroInfo = keepPosition and heroList and heroList[i]
 
-			if #posList > 1 then
-				table.sort(posList)
-			end
-
-			for i, v in ipairs(list) do
-				local pos = posList[i]
-
-				self.heroList[pos] = v
-			end
-
-			self.equips = {}
-
-			for i = 1, ModuleEnum.MaxHeroCountInGroup do
-				if not self.heroList[i] then
-					local hero = emptyUid
+			if keepPosition and heroInfo then
+				if not heroInfo.equipUid then
 					local equipUid = dict[hero]
 
 					if equipUid then
@@ -1043,22 +1061,22 @@ function HeroGroupMO:replaceTowerHeroList(heroList)
 					end
 				end
 			end
+		end
+	end
 
-			self.trialDict = {}
+	self.trialDict = {}
 
-			for pos, heroUid in ipairs(self.heroList) do
-				if tonumber(heroUid) < 0 then
-					local heroMO = HeroGroupTrialModel.instance:getById(heroUid)
+	for pos, heroUid in ipairs(self.heroList) do
+		if tonumber(heroUid) < 0 then
+			local heroMO = HeroGroupTrialModel.instance:getById(heroUid)
 
-					if heroMO then
-						self.trialDict[pos] = {
-							heroMO.trialCo.id,
-							0
-						}
-					else
-						self.heroList[pos] = "0"
-					end
-				end
+			if heroMO then
+				self.trialDict[pos] = {
+					heroMO.trialCo.id,
+					0
+				}
+			else
+				self.heroList[pos] = "0"
 			end
 		end
 	end

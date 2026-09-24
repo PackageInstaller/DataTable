@@ -8,8 +8,10 @@ function CharacterRecommedMO:init(co)
 	self.id = co.id
 	self.heroId = co.id
 	self.co = co
-	self.teamRec = GameUtil.splitString2(co.teamRec, true, "|", "#")
-	self.equipRec = string.splitToNumber(co.equipRec, "|")
+	self.heroCo = lua_character.configDict[self.heroId]
+	self.teamRec = CharacterRecommedConfig.instance:getRecommendTeamListByHeroId(self.heroId)
+	self.teamNum = self.teamRec and tabletool.len(self.teamRec) or 0
+	self.equipRec = string.splitToNumber(self.heroCo.equipRec, "#")
 	self.lvRec = GameUtil.splitString2(co.lvRec, true, "|", "#")
 	self.resonanceRec = string.splitToNumber(co.resonanceRec, "|")
 end
@@ -96,11 +98,11 @@ function CharacterRecommedMO:getTalentLevel()
 end
 
 function CharacterRecommedMO:isShowTeam()
-	return self.co.teamDisplay == 1 and not string.nilorempty(self.co.teamRec)
+	return self.co.teamDisplay == 1 and self.teamNum > 0
 end
 
 function CharacterRecommedMO:isShowEquip()
-	return self.co.equipDisplay == 1 and not string.nilorempty(self.co.equipRec)
+	return self.equipRec and #self.equipRec > 0
 end
 
 function CharacterRecommedMO:getNextDevelopMaterial()

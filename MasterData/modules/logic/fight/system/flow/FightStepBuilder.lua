@@ -214,7 +214,15 @@ FightStepBuilder.ActEffectWorkCls = {
 	[FightEnum.EffectType.UNNAMEDSTRENGTHEN] = FightWorkUnnamedStrengthen380,
 	[FightEnum.EffectType.COUNTERCHANGE] = FightWorkCounterChange381,
 	[FightEnum.EffectType.DEVICEPOWERCLEAR] = FightWorkDevicePowerClear382,
-	[FightEnum.EffectType.DEVICESTOP] = FightWorkDeviceStop383
+	[FightEnum.EffectType.DEVICESTOP] = FightWorkDeviceStop383,
+	[FightEnum.EffectType.QTEPLUGINCREATE] = FightWorkQTEPluginCreate384,
+	[FightEnum.EffectType.QTEPLUGINMAXCHANGE] = FightWorkQTEPluginMaxChange385,
+	[FightEnum.EffectType.QTEPLUGINUPDATE] = FightWorkQTEPluginUpdate386,
+	[FightEnum.EffectType.QTEROUNDCHANGE] = FightWorkQTERoundChange387,
+	[FightEnum.EffectType.QTETOTALDAMAGEUPDATE] = FightWorkQTETotalDamageUpdate388,
+	[FightEnum.EffectType.ENTITYSTATUSUPDATE] = FightWorkEntityStatusUpdate389,
+	[FightEnum.EffectType.CLUEADD] = FightWorkClueAdd390,
+	[FightEnum.EffectType.CLUEDEL] = FightWorkClueDel391
 }
 FightStepBuilder.EffectType2FlowOrWork = {
 	[FightEnum.EffectType.ADDSPHANDCARD] = FightWorkAddSpHandCard320Container,
@@ -364,6 +372,8 @@ function FightStepBuilder._buildSkillWork(fightStepList, fightStepData, preStepD
 		table.insert(stepWorkList, FightNextSkillIsSameStep.New(fightStepData, preStepData))
 
 		preStepData = fightStepData
+
+		FightGameMgr.preloadTimelineAssetMgr:addPreLoad(timeline, fightStepData)
 	else
 		table.insert(stepWorkList, FightWorkShowEquipSkillEffect.New(fightStepData, nextStepData))
 		table.insert(stepWorkList, FightNonTimelineSkillStep.New(fightStepData))

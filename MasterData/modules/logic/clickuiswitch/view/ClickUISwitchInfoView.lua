@@ -12,10 +12,10 @@ function ClickUISwitchInfoView:onInitView()
 	self._goLocked = gohelper.findChild(self.viewGO, "right/start/#go_Locked")
 	self._btnclose = gohelper.findChildButtonWithAudio(self.viewGO, "right/start/#btn_close")
 	self._scrollcard = gohelper.findChildScrollRect(self.viewGO, "right/mask/#scroll_card")
-	self._goSceneName = gohelper.findChild(self.viewGO, "left/LayoutGroup/#go_SceneName")
-	self._txtSceneName = gohelper.findChildText(self.viewGO, "left/LayoutGroup/#go_SceneName/#txt_SceneName")
-	self._txtTime = gohelper.findChildText(self.viewGO, "left/LayoutGroup/#go_SceneName/#txt_SceneName/#txt_Time")
-	self._btnnamecheck = gohelper.findChildButtonWithAudio(self.viewGO, "left/LayoutGroup/#go_SceneName/#btn_namecheck")
+	self._goSceneName = gohelper.findChild(self.viewGO, "left/LayoutGroup/layout/#go_SceneName")
+	self._txtSceneName = gohelper.findChildText(self.viewGO, "left/LayoutGroup/layout/#go_SceneName/#txt_SceneName")
+	self._txtTime = gohelper.findChildText(self.viewGO, "left/LayoutGroup/layout/#go_Time/#txt_Time")
+	self._btnnamecheck = gohelper.findChildButtonWithAudio(self.viewGO, "left/LayoutGroup/#go_HideBtn/#btn_Hide")
 	self._txtSceneDescr = gohelper.findChildText(self.viewGO, "left/#txt_SceneDescr")
 	self._btnshow = gohelper.findChildButtonWithAudio(self.viewGO, "#btn_show")
 	self._goSceneLogo4 = gohelper.findChild(self.viewGO, "left/#go_SceneLogo4")
@@ -52,6 +52,10 @@ function ClickUISwitchInfoView:_btnHideOnClick()
 	gohelper.setActive(self._goleft, self._showUI and self._isCanShowLeft)
 	gohelper.setActive(self._goright, self._showUI)
 	gohelper.setActive(self._btnshow.gameObject, not self._showUI)
+
+	local animName = self._showUI and "open" or "close"
+
+	self._rootAnimator:Play(animName, 0, 0)
 	ClickUISwitchController.instance:dispatchEvent(ClickUISwitchEvent.PreviewSwitchVisible, self._showUI)
 end
 
@@ -60,26 +64,43 @@ function ClickUISwitchInfoView:_btnshowOnClick()
 end
 
 function ClickUISwitchInfoView:_btnequipOnClick()
+	self._equipBtnAnimatorPlayer:Play("click", self._equipCb, self)
+end
+
+function ClickUISwitchInfoView:_equipCb()
 	ClickUISwitchController.instance:setCurClickUIStyle(self._selectSkinId, self._showSceneStatus, self)
+
+	local title = luaLang("main_switch_classify_title_3")
+
+	ToastController.instance:showToast(ToastEnum.FightUISwitchSuccess, title)
 end
 
 function ClickUISwitchInfoView:_showSceneStatus()
 	local sceneStatus = ClickUISwitchModel.getUIStatus(self._selectSkinId)
+	local isShow = self.viewParam.isAmplify == nil
 	local isUnlock = sceneStatus == MainSceneSwitchEnum.SceneStutas.Unlock
 	local isEquip = self._selectSkinId == ClickUISwitchModel.instance:getCurUseUI()
 
-	gohelper.setActive(self._btnequip, isUnlock and not isEquip)
-	gohelper.setActive(self._goshowing, isUnlock and isEquip)
-	gohelper.setActive(self._goLocked, not isUnlock)
+	gohelper.setActive(self._btnequip, isShow and isUnlock and not isEquip)
+	gohelper.setActive(self._goshowing, isShow and isUnlock and isEquip)
+	gohelper.setActive(self._goLocked, isShow and not isUnlock)
 	self:_updateSceneInfo()
 end
 
 function ClickUISwitchInfoView:_btncloseOnClick()
-	self:closeThis()
+	if self._isClosing then
+		return
+	end
+
+	self._rootAnimator:Play("close", 0, 0)
+	TaskDispatcher.runDelay(self.closeThis, self, 0.334)
+
+	self._isClosing = true
 end
 
 function ClickUISwitchInfoView:_editableInitView()
 	self._rootAnimator = self.viewGO:GetComponent("Animator")
+	self._equipBtnAnimatorPlayer = SLFramework.AnimatorPlayer.Get(self._btnequip.gameObject)
 	self._goleft = gohelper.findChild(self.viewGO, "left")
 	self._goright = gohelper.findChild(self.viewGO, "right")
 	self._rawImage = gohelper.onceAddComponent(self._gorawImage, gohelper.Type_RawImage)

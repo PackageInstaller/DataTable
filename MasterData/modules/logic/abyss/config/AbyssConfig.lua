@@ -27,6 +27,7 @@ function AbyssConfig:reInit()
 	self._episodeId2StageIdDic = nil
 	self._stageSkillDic = {}
 	self._stageSkillIdDic = {}
+	self._stage2ActDic = nil
 end
 
 function AbyssConfig:onConfigLoaded(configName, configTable)
@@ -136,7 +137,7 @@ function AbyssConfig:getStageMaxStar(actId, stageId)
 			local episodeConfig = DungeonConfig.instance:getEpisodeCO(stageConfig.episodeId)
 
 			if episodeConfig then
-				local condition = DungeonConfig:getEpisodeAdvancedCondition(episodeConfig.id, episodeConfig.battleId)
+				local condition = DungeonConfig.instance:getEpisodeAdvancedCondition(episodeConfig.id, episodeConfig.battleId)
 				local param = string.split(condition, "|")
 
 				if param then
@@ -210,36 +211,52 @@ function AbyssConfig:_initStageSkill()
 	tabletool.clear(self._stageSkillDic)
 	tabletool.clear(self._stageSkillIdDic)
 
+	self._stage2ActDic = {}
+
 	for _, config in ipairs(self._episodeConfig.configList) do
+		self._stage2ActDic[config.stage] = config.activityId
+
 		if not string.nilorempty(config.optionalSkills) then
 			local result = string.splitToNumber(config.optionalSkills, "#")
+			local actId = config.activityId
 
-			self._stageSkillDic[config.stage] = result
+			self._stageSkillDic[actId] = self._stageSkillDic[actId] or {}
+			self._stageSkillDic[actId][config.stage] = result
 
 			if next(result) then
+				self._stageSkillIdDic[actId] = self._stageSkillIdDic[actId] or {}
+
 				for _, id in ipairs(result) do
-					self._stageSkillIdDic[config.stage] = self._stageSkillIdDic[config.stage] or {}
-					self._stageSkillIdDic[config.stage][id] = true
+					self._stageSkillIdDic[actId][config.stage] = self._stageSkillIdDic[actId][config.stage] or {}
+					self._stageSkillIdDic[actId][config.stage][id] = true
 				end
 			end
 		end
 	end
 end
 
-function AbyssConfig:getStageSkillId(stageId)
-	if not self._stageSkillDic then
+function AbyssConfig:getStageSkillId(actId, stageId)
+	if not self._stageSkillDic or not self._stageSkillDic[actId] then
 		return nil
 	end
 
-	return self._stageSkillDic[stageId]
+	return self._stageSkillDic[actId][stageId]
 end
 
-function AbyssConfig:getStageSkillIdDic(stageId)
-	if not self._stageSkillIdDic then
+function AbyssConfig:getStageSkillIdDic(actId, stageId)
+	if not self._stageSkillIdDic or not self._stageSkillIdDic[actId] then
 		return nil
 	end
 
-	return self._stageSkillIdDic[stageId]
+	return self._stageSkillIdDic[actId][stageId]
+end
+
+function AbyssConfig:getActIdByStageId(stageId)
+	if not self._stage2ActDic then
+		self:_initStageSkill()
+	end
+
+	return self._stage2ActDic[stageId]
 end
 
 function AbyssConfig:getActivityId()

@@ -11,32 +11,16 @@ function UdimoHelper.isCanEnterUdimoLockMode()
 		return
 	end
 
-	local curSceneType = GameSceneMgr.instance:getCurSceneType()
-
-	if not UdimoEnum.WaitEnterUdimoLockModeSceneType[curSceneType] then
-		return
-	end
-
-	local forceGuideId = GuideModel.instance:lastForceGuideId()
-	local isFinishForceGuide = GuideModel.instance:isGuideFinish(forceGuideId)
-	local isGuiding = GuideController.instance:isGuiding()
-	local doingClickGuide = GuideModel.instance:isDoingClickGuide()
-	local isForbidGuide = GuideController.instance:isForbidGuides()
-
-	if (isGuiding or doingClickGuide or not isFinishForceGuide) and not isForbidGuide then
-		return
-	end
-
-	local pickedUpUdimo = UdimoModel.instance:getPickedUpUdimoId()
-
-	if pickedUpUdimo then
-		return
-	end
-
 	local settingId = UdimoModel.instance:getUdimoSettingId()
 	local waitTime = UdimoConfig.instance:getSettingWaitTime(settingId)
 
 	if not waitTime or waitTime <= 0 then
+		return
+	end
+
+	local curSceneType = GameSceneMgr.instance:getCurSceneType()
+
+	if not UdimoEnum.WaitEnterUdimoLockModeSceneType[curSceneType] then
 		return
 	end
 
@@ -61,6 +45,22 @@ function UdimoHelper.isCanEnterUdimoLockMode()
 	local topView = viewNameList[#viewNameList]
 
 	if not UdimoEnum.WaitEnterUdimoLockModeView[topView] then
+		return
+	end
+
+	local pickedUpUdimo = UdimoModel.instance:getPickedUpUdimoId()
+
+	if pickedUpUdimo then
+		return
+	end
+
+	local forceGuideId = GuideModel.instance:lastForceGuideId()
+	local isFinishForceGuide = GuideModel.instance:isGuideFinish(forceGuideId)
+	local isGuiding = GuideController.instance:isGuiding()
+	local doingClickGuide = GuideModel.instance:isDoingClickGuide()
+	local isForbidGuide = GuideController.instance:isForbidGuides()
+
+	if (isGuiding or doingClickGuide or not isFinishForceGuide) and not isForbidGuide then
 		return
 	end
 

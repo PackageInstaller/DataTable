@@ -49,5 +49,6 @@ HeroGroupEvent.OnModifyGroupName = 83
 HeroGroupEvent.BeforeEnterFight = 84
 HeroGroupEvent.OnUseRecommendGroupAfterEnterEpisode = 85
 HeroGroupEvent.OnReadPreset = 86
+HeroGroupEvent.OnAssistPickOver = 87
 
 return HeroGroupEvent

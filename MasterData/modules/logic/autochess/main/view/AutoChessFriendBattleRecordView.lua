@@ -42,9 +42,7 @@ function AutoChessFriendBattleRecordView:onUpdateParam()
 end
 
 function AutoChessFriendBattleRecordView:onOpen()
-	self._actId = Activity182Model.instance:getCurActId()
-
-	local actInfo = Activity182Model.instance:getActMo(self._actId)
+	local actInfo = Activity182Model.instance:getActMo()
 	local friendFightRecords = actInfo:getFriendFightRecords()
 
 	self._recordDataList = {}

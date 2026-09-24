@@ -189,8 +189,9 @@ function StorePackageGoodsItemListModel._sortFunction(x, y)
 		return ySoldOut
 	end
 
-	local xIsMothCard = x.goodsId == StoreEnum.MonthCardGoodsId
-	local yIsMothCard = y.goodsId == StoreEnum.MonthCardGoodsId
+	local monthCardId = StoreConfig.instance:getMonthCardStoreChargeId()
+	local xIsMothCard = x.goodsId == monthCardId
+	local yIsMothCard = y.goodsId == monthCardId
 
 	if xIsMothCard ~= yIsMothCard then
 		local isMonthCardDaysEnough = StoreModel.instance:IsMonthCardDaysEnough()

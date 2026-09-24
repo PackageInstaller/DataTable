@@ -21,4 +21,8 @@ function FightEntityTemp:initComponents()
 	self.entityVisible = self:addEntityComponent(FightEntityVisibleComp)
 end
 
+function FightEntityTemp:canActiveDynamicShadow()
+	return false
+end
+
 return FightEntityTemp

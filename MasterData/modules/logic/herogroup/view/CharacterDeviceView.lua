@@ -56,7 +56,7 @@ function CharacterDeviceView:_editableInitView()
 		self._cardItems[i] = item
 	end
 
-	self._animator = self.viewGO:GetComponent(typeof(UnityEngine.Animator))
+	self._animatorPlayer = SLFramework.AnimatorPlayer.Get(self.viewGO)
 
 	for i, item in ipairs(self._cardItems) do
 		item.index = i
@@ -346,12 +346,37 @@ function CharacterDeviceView:_onSkillCardClick(index)
 	AudioMgr.instance:trigger(AudioEnum.UI.Play_ui_role_description)
 end
 
+function CharacterDeviceView:playOpenAni(viewType, forcePlayAnim)
+	if self.viewGO and self.viewGO.activeInHierarchy then
+		local deviceViewParam = CharacterEnum.DeviceViewParam[viewType]
+		local aniName = deviceViewParam and deviceViewParam.OpenAniName
+
+		if self._playingAni == aniName then
+			self._isPlayedOpenAnim = false
+		end
+
+		if not self._isPlayedOpenAnim or forcePlayAnim then
+			if aniName then
+				self:playAnim(aniName)
+			end
+
+			self._isPlayedOpenAnim = true
+		end
+	end
+end
+
 function CharacterDeviceView:playAnim(animName)
-	if not self._animator then
+	if not self._animatorPlayer then
 		return
 	end
 
-	self._animator:Play(animName, 0, 0)
+	self._playingAni = animName
+
+	self._animatorPlayer:Play(animName, self._playFinishAnim, self)
+end
+
+function CharacterDeviceView:_playFinishAnim()
+	self._playingAni = nil
 end
 
 function CharacterDeviceView:onDestroy()

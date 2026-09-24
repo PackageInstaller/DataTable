@@ -30,21 +30,29 @@ end
 function AutoChessMallLevelUpView:onOpen()
 	AudioMgr.instance:trigger(AudioEnum.AutoChess.play_ui_tangren_store_upgrade)
 
-	local chessMo = AutoChessModel.instance:getChessMo()
-	local region = AutoChessHelper.getMallRegionByType(chessMo.svrMall.regions, AutoChessEnum.MallType.Normal)
-	local mallCo = lua_auto_chess_mall.configDict[region.mallId]
-	local nowLevel = mallCo.showLevel
-	local lastLevel = nowLevel - 1
+	local sceneMo = AutoChessModel.instance:getSceneMo()
+	local region = sceneMo.mall:getNormalRegion()
 
-	UISpriteSetMgr.instance:setAutoChessSprite(self._imageLevel1, "v2a5_autochess_quality3_" .. lastLevel)
-	UISpriteSetMgr.instance:setAutoChessSprite(self._imageLevel2, "v2a5_autochess_quality3_" .. nowLevel)
+	if region.config then
+		if not region.config.showLevel then
+			local nowLevel = 2
+			local lastLevel = nowLevel - 1
 
-	local txt = luaLang("autochess_malllevelupview_level")
+			UISpriteSetMgr.instance:setAutoChessSprite(self._imageLevel1, "v2a5_autochess_quality3_" .. lastLevel)
+			UISpriteSetMgr.instance:setAutoChessSprite(self._imageLevel2, "v2a5_autochess_quality3_" .. nowLevel)
 
-	self._txtMallLv1.text = GameUtil.getSubPlaceholderLuaLangOneParam(txt, lastLevel)
-	self._txtMallLv2.text = GameUtil.getSubPlaceholderLuaLangOneParam(txt, nowLevel)
+			local txt = luaLang("autochess_malllevelupview_level")
 
-	TaskDispatcher.runDelay(self.onClickModalMask, self, 2)
+			self._txtMallLv1.text = GameUtil.getSubPlaceholderLuaLangOneParam(txt, lastLevel)
+			self._txtMallLv2.text = GameUtil.getSubPlaceholderLuaLangOneParam(txt, nowLevel)
+
+			TaskDispatcher.runDelay(self.closeThis, self, 2)
+		end
+	end
+end
+
+function AutoChessMallLevelUpView:onDestroyView()
+	TaskDispatcher.cancelTask(self.closeThis, self)
 end
 
 return AutoChessMallLevelUpView

@@ -43,6 +43,7 @@ TowerDeepModule_pb.TOWERDEEPLOADARCHIVEREPLYARCHIVEFIELD = protobuf.FieldDescrip
 TowerDeepModule_pb.TOWERDEEPHERO_MSG = protobuf.Descriptor()
 TowerDeepModule_pb.TOWERDEEPHEROHEROIDFIELD = protobuf.FieldDescriptor()
 TowerDeepModule_pb.TOWERDEEPHEROTRIALIDFIELD = protobuf.FieldDescriptor()
+TowerDeepModule_pb.TOWERDEEPHEROSKINIDFIELD = protobuf.FieldDescriptor()
 TowerDeepModule_pb.TOWERDEEPSAVEARCHIVEREQUEST_MSG = protobuf.Descriptor()
 TowerDeepModule_pb.TOWERDEEPSAVEARCHIVEREQUESTARCHIVENOFIELD = protobuf.FieldDescriptor()
 TowerDeepModule_pb.TOWERDEEPRESETREQUEST_MSG.name = "TowerDeepResetRequest"
@@ -377,13 +378,23 @@ TowerDeepModule_pb.TOWERDEEPHEROTRIALIDFIELD.has_default_value = false
 TowerDeepModule_pb.TOWERDEEPHEROTRIALIDFIELD.default_value = 0
 TowerDeepModule_pb.TOWERDEEPHEROTRIALIDFIELD.type = 5
 TowerDeepModule_pb.TOWERDEEPHEROTRIALIDFIELD.cpp_type = 1
+TowerDeepModule_pb.TOWERDEEPHEROSKINIDFIELD.name = "skinId"
+TowerDeepModule_pb.TOWERDEEPHEROSKINIDFIELD.full_name = ".TowerDeepHero.skinId"
+TowerDeepModule_pb.TOWERDEEPHEROSKINIDFIELD.number = 3
+TowerDeepModule_pb.TOWERDEEPHEROSKINIDFIELD.index = 2
+TowerDeepModule_pb.TOWERDEEPHEROSKINIDFIELD.label = 1
+TowerDeepModule_pb.TOWERDEEPHEROSKINIDFIELD.has_default_value = false
+TowerDeepModule_pb.TOWERDEEPHEROSKINIDFIELD.default_value = 0
+TowerDeepModule_pb.TOWERDEEPHEROSKINIDFIELD.type = 5
+TowerDeepModule_pb.TOWERDEEPHEROSKINIDFIELD.cpp_type = 1
 TowerDeepModule_pb.TOWERDEEPHERO_MSG.name = "TowerDeepHero"
 TowerDeepModule_pb.TOWERDEEPHERO_MSG.full_name = ".TowerDeepHero"
 TowerDeepModule_pb.TOWERDEEPHERO_MSG.nested_types = {}
 TowerDeepModule_pb.TOWERDEEPHERO_MSG.enum_types = {}
 TowerDeepModule_pb.TOWERDEEPHERO_MSG.fields = {
 	TowerDeepModule_pb.TOWERDEEPHEROHEROIDFIELD,
-	TowerDeepModule_pb.TOWERDEEPHEROTRIALIDFIELD
+	TowerDeepModule_pb.TOWERDEEPHEROTRIALIDFIELD,
+	TowerDeepModule_pb.TOWERDEEPHEROSKINIDFIELD
 }
 TowerDeepModule_pb.TOWERDEEPHERO_MSG.is_extendable = false
 TowerDeepModule_pb.TOWERDEEPHERO_MSG.extensions = {}

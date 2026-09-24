@@ -89,35 +89,7 @@ function ToastController:PackToastObj(toastid, ...)
 		local extra = {
 			...
 		}
-		local contain = false
-
-		if co.notMerge == 0 then
-			for _, v in pairs(self._notToastList) do
-				local sameExtra = false
-
-				if v.extra and #extra == #v.extra then
-					local same = true
-
-					for i = 1, #extra do
-						if extra[i] ~= v.extra[i] then
-							same = false
-
-							break
-						end
-					end
-
-					sameExtra = same
-				end
-
-				if v.toastid == toastid and sameExtra then
-					contain = true
-
-					break
-				end
-			end
-		end
-
-		local key = ""
+		local key = tostring(toastid)
 
 		if #extra > 0 then
 			for i = 1, #extra do
@@ -125,51 +97,40 @@ function ToastController:PackToastObj(toastid, ...)
 			end
 		end
 
-		key = tostring(toastid) .. key
+		local obj = self._notToastList[key]
 
-		if not contain then
-			local o = {}
-
-			o.toastid = toastid
-			o.extra = extra
-			o.time = ServerTime.now()
-			self._notToastList[key] = o
-		elseif not self:_isExpire(toastid, self._notToastList[key].time) then
-			return
+		if obj and co.notMerge == 0 then
+			if obj:isExpire() then
+				self._notToastList[key]:resetTime()
+			else
+				return
+			end
 		else
-			self._notToastList[key].time = ServerTime.now()
+			obj = ToastObj.New()
+
+			obj:init(co, extra, self._icon)
+
+			self._notToastList[key] = obj
 		end
 
-		if not self._notToastList[key] then
-			local o = {}
-
-			o.co = co
-			o.extra = extra
-			o.sicon = self._icon
-
-			return o
-		end
+		return obj
 	end
 end
 
-ToastController.DefaultIconType = 11
-
 function ToastController:showToastWithString(msg, isTop)
-	if self._notToastList[msg] and not self:_isExpire(nil, self._notToastList[msg].time) then
+	local lastObj = self._notToastList[msg]
+
+	if lastObj and not not lastObj:isExpire() then
 		return
 	end
 
-	local msgObject = {
-		co = {
-			tips = msg,
-			icon = ToastController.DefaultIconType
-		},
-		time = ServerTime.now()
-	}
+	local obj = ToastObj.New()
 
-	self._notToastList[msg] = msgObject
+	obj:initWithString(msg)
 
-	self:_showToast(msgObject, isTop)
+	self._notToastList[msg] = obj
+
+	self:_showToast(obj, isTop)
 end
 
 function ToastController:showToastWithCustomData(toastid, toastObjHandler, toastObjHandlerObj, toastObjHandlerParam, ...)
@@ -204,18 +165,6 @@ function ToastController:getToastMsgWithTableParam(toastId, paramList)
 
 		return paramList and #paramList > 0 and GameUtil.getSubPlaceholderLuaLang(toastCO.tips, paramList) or toastCO.tips
 	end
-end
-
-function ToastController:isExpire(time)
-	return ServerTime.now() - time >= 4
-end
-
-function ToastController:_isExpire(toastId, time)
-	return ServerTime.now() - time >= self:getShowTime(toastId)
-end
-
-function ToastController:getShowTime(toastId)
-	return ToastParamEnum.LifeTime[toastId] or 4
 end
 
 ToastController.instance = ToastController.New()

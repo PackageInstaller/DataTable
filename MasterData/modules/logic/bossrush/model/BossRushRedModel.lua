@@ -273,7 +273,7 @@ function BossRushRedModel:_refreshReward(refDict, stage)
 	end
 
 	if self:_modifyOrMakeRedDotGroupItem(defineId, uid, value) then
-		refDict[defineId] = trued
+		refDict[defineId] = true
 	end
 end
 

@@ -5,6 +5,7 @@ module("modules.logic.tower.view.fight.TowerHeroGroupFightViewContainer", packag
 local TowerHeroGroupFightViewContainer = class("TowerHeroGroupFightViewContainer", HeroGroupFightViewContainer)
 
 function TowerHeroGroupFightViewContainer:addLastViews(views)
+	table.insert(views, HeroGroupFightAssistBtn.New())
 	table.insert(views, TowerHeroGroupBossView.New())
 end
 

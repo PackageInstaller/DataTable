@@ -41,6 +41,7 @@ local Vector4 = _G.Vector4
 local splitToNumber = string.splitToNumber
 local split = string.split
 local csAnimatorPlayer = SLFramework.AnimatorPlayer
+local csTweenHelper = ZProj.TweenHelper
 local kAnimEvt = "onSwitchTaskPanel"
 local kTimeout = 9.99
 local kFirstLocked = -1
@@ -112,6 +113,8 @@ end
 function WarmUp:ctor()
 	self._draggedState = kFirstLocked
 	self._drag = UIDragListenerHelper.New()
+	self._charCount = -1
+	self._charIndex = 0
 end
 
 function WarmUp:_editableInitView()
@@ -250,6 +253,7 @@ function WarmUp:onClose()
 	GameUtil.onDestroyViewMember_TweenId(self, "_movetweenId")
 	GameUtil.onDestroyViewMember_TweenId(self, "_tweenId")
 	TaskDispatcher.cancelTask(self._showLeftTime, self)
+	TaskDispatcher.cancelTask(self._openDesc2OnTick, self)
 end
 
 function WarmUp:onDestroyView()
@@ -528,38 +532,7 @@ function WarmUp:_refreshRewards(optEpisodeId)
 end
 
 function WarmUp:openDesc(cb, cbObj)
-	local isRecevied, localIsPlay = self.viewContainer:getRLOCCur()
-
-	if isRecevied or localIsPlay then
-		if cb then
-			cb(cbObj)
-		end
-
-		return
-	end
-
-	self:_resetTweenDescPos()
-
-	local co = self.viewContainer:getEpisodeConfigCur()
-	local duration = math.max(co.time or 0, 1)
-
-	gohelper.setActive(self._goWrongChannel, false)
-	gohelper.setActive(self._scroll_TaskDescGo, true)
-	AudioMgr.instance:trigger(AudioEnum.UI.play_ui_wulu_atticletter_write_loop)
-
-	local function _tweenDescDoneCallBack()
-		AudioMgr.instance:trigger(AudioEnum.UI.play_ui_wulu_atticletter_write_stop)
-
-		if cb then
-			cb(cbObj)
-		end
-	end
-
-	GameUtil.onDestroyViewMember_TweenId(self, "_tweenId")
-
-	self._tweenId = ZProj.TweenHelper.DOTweenFloat(1, 0, duration, self._tweenDescUpdateCb, function()
-		self:_tweenDescEndCb(duration, _tweenDescDoneCallBack)
-	end, self)
+	self:_openDesc2(cb, cbObj)
 end
 
 local lerp = Mathf.Lerp
@@ -585,7 +558,7 @@ function WarmUp:_tweenDescEndCb(maskDurationTime, cb, cbObj)
 
 	GameUtil.onDestroyViewMember_TweenId(self, "_movetweenId")
 
-	self._movetweenId = ZProj.TweenHelper.DOLocalMoveY(self._txtTaskContentTran, toPosY, duration, cb, cbObj)
+	self._movetweenId = csTweenHelper.DOLocalMoveY(self._txtTaskContentTran, toPosY, duration, cb, cbObj)
 end
 
 function WarmUp:_resetTaskContentPos()
@@ -607,7 +580,13 @@ function WarmUp:index2EpisodeId(index)
 end
 
 function WarmUp:_setMaskPaddingBottom(bottom)
+	local bBlock = bottom > 0
+
 	self._taskDescMask.padding = Vector4(0, bottom, 0, 0)
+
+	if not bBlock then
+		self._txtTaskContent.maxVisibleCharacters = 199999999
+	end
 end
 
 function WarmUp:_autoSelectTab()
@@ -646,6 +625,7 @@ end
 function WarmUp:_resetTweenDescPos()
 	GameUtil.onDestroyViewMember_TweenId(self, "_movetweenId")
 	GameUtil.onDestroyViewMember_TweenId(self, "_tweenId")
+	TaskDispatcher.cancelTask(self._openDesc2OnTick, self)
 	self:_resetTaskContentPos()
 end
 
@@ -991,6 +971,159 @@ end
 
 function WarmUp:_play_ui_fuleyuan_yure_whoosh()
 	return
+end
+
+function WarmUp:_openDesc1(cb, cbObj)
+	local isRecevied, localIsPlay = self.viewContainer:getRLOCCur()
+
+	if isRecevied or localIsPlay then
+		if cb then
+			cb(cbObj)
+		end
+
+		return
+	end
+
+	self:_resetTweenDescPos()
+
+	local co = self.viewContainer:getEpisodeConfigCur()
+	local duration = math.max(co.time or 0, 1)
+
+	gohelper.setActive(self._goWrongChannel, false)
+	gohelper.setActive(self._scroll_TaskDescGo, true)
+	AudioMgr.instance:trigger(AudioEnum.UI.play_ui_wulu_atticletter_write_loop)
+
+	local function _tweenDescDoneCallBack()
+		AudioMgr.instance:trigger(AudioEnum.UI.play_ui_wulu_atticletter_write_stop)
+
+		if cb then
+			cb(cbObj)
+		end
+	end
+
+	GameUtil.onDestroyViewMember_TweenId(self, "_tweenId")
+
+	self._tweenId = csTweenHelper.DOTweenFloat(1, 0, duration, self._tweenDescUpdateCb, function()
+		self:_tweenDescEndCb(duration, _tweenDescDoneCallBack)
+	end, self)
+end
+
+function WarmUp:_openDesc2(cb, cbObj)
+	local isRecevied, localIsPlay = self.viewContainer:getRLOCCur()
+
+	if isRecevied or localIsPlay then
+		if cb then
+			cb(cbObj)
+		end
+
+		return
+	end
+
+	self._openDesc2DoneCb = cb
+	self._openDesc2DoneCbObj = cbObj
+
+	self:_resetTweenDescPos()
+
+	self._txtTaskContent.maxVisibleCharacters = 0
+	self._charCount = -1
+	self._charIndex = 0
+	self._taskDescMask.padding = Vector4(0, 0, 0, 0)
+
+	self:_refreshTextInfo()
+
+	local co = self.viewContainer:getEpisodeConfigCur()
+	local duration = math.max(co.time or 0, 1)
+	local tickInterval = 1 / (self._charCount / duration)
+
+	gohelper.setActive(self._goWrongChannel, false)
+	gohelper.setActive(self._scroll_TaskDescGo, true)
+	AudioMgr.instance:trigger(AudioEnum.UI.play_ui_wulu_atticletter_write_loop)
+	TaskDispatcher.runRepeat(self._openDesc2OnTick, self, tickInterval)
+end
+
+function WarmUp:_refreshTextInfo()
+	self._txtTaskContent:ForceMeshUpdate(true, true)
+
+	self._charCount = self._txtTaskContent.textInfo.characterCount
+	self._descHeight = self._txtTaskContent.preferredHeight
+end
+
+function WarmUp:_openDesc2OnTick()
+	local bDone = self._charIndex > self._charCount
+
+	self:_tryScrollDown()
+
+	if bDone then
+		self:_openDesc2OnTickDone()
+
+		return
+	end
+
+	self._txtTaskContent.maxVisibleCharacters = self._charIndex
+	self._charIndex = self._charIndex + 1
+end
+
+function WarmUp:_tryScrollDown()
+	local viewportHeight = self._taskDescViewportHeight
+	local visibleHeight = self:_getVisibleTextHeight(self._txtTaskContent)
+	local deltaScrollY = visibleHeight - viewportHeight
+
+	if deltaScrollY > 0 then
+		GameUtil.onDestroyViewMember_TweenId(self, "_movetweenId")
+
+		self._movetweenId = csTweenHelper.DOLocalMoveY(self._txtTaskContentTran, deltaScrollY, 0.1, nil, nil, nil, EaseType.OutQuad)
+	end
+end
+
+function WarmUp:_getVisibleTextHeight(tmpcmp)
+	local textInfo = tmpcmp.textInfo
+
+	if not textInfo or textInfo.characterCount == 0 then
+		return 0
+	end
+
+	local visibleCount = tmpcmp.maxVisibleCharacters
+	local charCount = textInfo.characterCount
+	local endIndex = math.min(visibleCount, charCount)
+
+	if endIndex <= 0 then
+		return 0
+	end
+
+	local lastChar = textInfo.characterInfo[endIndex]
+
+	if not lastChar then
+		return 0
+	end
+
+	local lineNum = lastChar.lineNumber + 1
+	local lineInfo = textInfo.lineInfo[lineNum]
+
+	if not lineInfo then
+		return 0
+	end
+
+	local firstLine = textInfo.lineInfo[1]
+	local topY = firstLine.ascender
+	local bottomY = lineInfo.descender
+
+	return topY - bottomY
+end
+
+function WarmUp:_openDesc2OnTickDone()
+	TaskDispatcher.cancelTask(self._openDesc2OnTick, self)
+	GameUtil.onDestroyViewMember_TweenId(self, "_movetweenId")
+	AudioMgr.instance:trigger(AudioEnum.UI.play_ui_wulu_atticletter_write_stop)
+
+	local toPosY = self._descHeight - self._taskDescViewportHeight
+
+	if toPosY > 0 then
+		self._movetweenId = csTweenHelper.DOLocalMoveY(self._txtTaskContentTran, toPosY, 0.1, nil, nil, nil, EaseType.OutQuad)
+	end
+
+	if self._openDesc2DoneCb then
+		self._openDesc2DoneCb(self._openDesc2DoneCbObj)
+	end
 end
 
 return WarmUp

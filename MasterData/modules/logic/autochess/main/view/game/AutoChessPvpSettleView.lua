@@ -106,7 +106,7 @@ end
 function AutoChessPvpSettleView:_createSnapshotMap()
 	self.settleData = AutoChessModel.instance.settleData
 
-	local leaderCo = lua_auto_chess_master.configDict[self.settleData.masterId]
+	local leaderCo = AutoChessConfig.instance:getLeaderCfg(self.settleData.masterId)
 
 	if leaderCo then
 		local comp = MonoHelper.addNoUpdateLuaComOnceToGo(self._goSnapLeaderMesh, AutoChessMeshComp)
@@ -147,7 +147,7 @@ function AutoChessPvpSettleView:refreshMonsterInfoView(warZones)
 	local snapChessGo = self._goSnapChess
 
 	for _, chessData in ipairs(chessDatas) do
-		local config = AutoChessConfig.instance:getChessCfg(chessData.chessId)
+		local config = AutoChessConfig.instance:getChessCfgAnyway(chessData.chessId)
 
 		if config then
 			local go = gohelper.cloneInPlace(snapChessGo, chessData.chessId)

@@ -78,6 +78,9 @@ function GMSubViewCommon:initViewContent()
 		fsize = 40
 	})
 	self._switchKeyToggle.isOn = UnityEngine.PlayerPrefs.GetInt("PCInputSwitch", 0) == 1
+
+	self:_initServerUrlView()
+
 	self.langList = {}
 	self.langShortCutList = {}
 	self.curUILang = LangSettings.instance:getCurLang()
@@ -413,6 +416,93 @@ end
 
 function GMSubViewCommon:_onClickResourceCollector()
 	SLFramework.ResourceCollector.ExportCollectInfo("")
+end
+
+function GMSubViewCommon:_initServerUrlView()
+	if not isDebugBuild then
+		return
+	end
+
+	self:addTitleSplitLine("修改服务器url（仅真机debug包用，重启生效）")
+
+	local GMServerUrlConfig = require("modules.logic.gm.GMServerUrlConfig")
+
+	self._gmServerTypeKeys = {}
+
+	local serverTypeNames = {}
+
+	for _, key in ipairs(GMServerUrlConfig.PresetOrder) do
+		local info = GMServerUrlConfig.Presets[key]
+
+		table.insert(self._gmServerTypeKeys, key)
+		table.insert(serverTypeNames, info.name)
+	end
+
+	self._gmPlatformIds = {
+		GMServerUrlConfig.AllPlatformId
+	}
+
+	local platformNames = {
+		"全部渠道(all)"
+	}
+
+	for channelId = 100, 107 do
+		table.insert(self._gmPlatformIds, tostring(channelId))
+		table.insert(platformNames, tostring(channelId))
+	end
+
+	self._gmServerTypeIndex = 0
+	self._gmPlatformIndex = 0
+	self._serverTypeDrop = self.addDropDown(self, "L8", "服务器类型", serverTypeNames, self._onGMServerTypeChange, self)
+	self._platformIdDrop = self.addDropDown(self, "L8", "平台id", platformNames, self._onGMPlatformIdChange, self)
+
+	self.addButton(self, "L8", "应用", self._onClickApplyServerUrl, self)
+	self.addButton(self, "L8", "清除本地修改", self._onClickClearServerUrl, self)
+
+	local savedType = PlayerPrefsHelper.getString(PlayerPrefsKey.GMServerUrlOverrideType, "")
+	local savedPlatform = PlayerPrefsHelper.getString(PlayerPrefsKey.GMServerUrlOverridePlatform, "")
+	local typeSelIndex = tabletool.indexOf(self._gmServerTypeKeys, savedType)
+
+	if typeSelIndex then
+		self._gmServerTypeIndex = typeSelIndex - 1
+
+		self._serverTypeDrop:SetValue(self._gmServerTypeIndex)
+	end
+
+	local platformSelIndex = tabletool.indexOf(self._gmPlatformIds, savedPlatform)
+
+	if platformSelIndex then
+		self._gmPlatformIndex = platformSelIndex - 1
+
+		self._platformIdDrop:SetValue(self._gmPlatformIndex)
+	end
+end
+
+function GMSubViewCommon:_onGMServerTypeChange(index)
+	self._gmServerTypeIndex = index
+end
+
+function GMSubViewCommon:_onGMPlatformIdChange(index)
+	self._gmPlatformIndex = index
+end
+
+function GMSubViewCommon:_onClickApplyServerUrl()
+	local typeKey = self._gmServerTypeKeys[self._gmServerTypeIndex + 1]
+	local platformId = self._gmPlatformIds[self._gmPlatformIndex + 1]
+
+	if not typeKey or not platformId then
+		return
+	end
+
+	PlayerPrefsHelper.setString(PlayerPrefsKey.GMServerUrlOverrideType, typeKey)
+	PlayerPrefsHelper.setString(PlayerPrefsKey.GMServerUrlOverridePlatform, platformId)
+	ToastController.instance:showToastWithString("设置成功，重启生效")
+end
+
+function GMSubViewCommon:_onClickClearServerUrl()
+	PlayerPrefsHelper.deleteKey(PlayerPrefsKey.GMServerUrlOverrideType)
+	PlayerPrefsHelper.deleteKey(PlayerPrefsKey.GMServerUrlOverridePlatform)
+	ToastController.instance:showToastWithString("清空成功，重启生效")
 end
 
 return GMSubViewCommon

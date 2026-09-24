@@ -2,7 +2,7 @@
 
 module("modules.logic.room.entity.RoomInitBuildingEntity", package.seeall)
 
-local RoomInitBuildingEntity = class("RoomInitBuildingEntity", RoomBaseEntity)
+local RoomInitBuildingEntity = class("RoomInitBuildingEntity", RoomBasicBuildingEntityBase)
 
 function RoomInitBuildingEntity:ctor(entityId)
 	RoomInitBuildingEntity.super.ctor(self)
@@ -36,6 +36,10 @@ function RoomInitBuildingEntity:initComponents()
 	self:addComp("nightlight", RoomNightLightComp)
 	self:addComp("skin", RoomInitBuildingSkinComp)
 	self:addComp("alphaThresholdComp", RoomAlphaThresholdComp)
+end
+
+function RoomInitBuildingEntity:onEffectRebuild()
+	RoomInitBuildingEntity.super.onEffectRebuild(self)
 end
 
 function RoomInitBuildingEntity:onStart()

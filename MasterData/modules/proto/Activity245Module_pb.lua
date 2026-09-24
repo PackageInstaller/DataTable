@@ -1,0 +1,161 @@
+﻿-- chunkname: @modules/proto/Activity245Module_pb.lua
+
+local require = require
+local protobuf = require("protobuf.protobuf")
+
+module("modules.proto.Activity245Module_pb", package.seeall)
+
+local Activity245Module_pb = {}
+
+Activity245Module_pb.ACT245SUMMONREQUEST_MSG = protobuf.Descriptor()
+Activity245Module_pb.ACT245SUMMONREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity245Module_pb.ACT245SUMMONREQUESTCOUNTFIELD = protobuf.FieldDescriptor()
+Activity245Module_pb.ACT245SUMMONREPLY_MSG = protobuf.Descriptor()
+Activity245Module_pb.ACT245SUMMONREPLYACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity245Module_pb.ACT245SUMMONREPLYREWARDIDSFIELD = protobuf.FieldDescriptor()
+Activity245Module_pb.ACT245GETINFOREQUEST_MSG = protobuf.Descriptor()
+Activity245Module_pb.ACT245GETINFOREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity245Module_pb.ACT245SUMMONEDINFO_MSG = protobuf.Descriptor()
+Activity245Module_pb.ACT245SUMMONEDINFOREWARDIDFIELD = protobuf.FieldDescriptor()
+Activity245Module_pb.ACT245SUMMONEDINFOSUMMONEDCOUNTFIELD = protobuf.FieldDescriptor()
+Activity245Module_pb.ACT245GETINFOREPLY_MSG = protobuf.Descriptor()
+Activity245Module_pb.ACT245GETINFOREPLYACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity245Module_pb.ACT245GETINFOREPLYSUMMONEDINFOSFIELD = protobuf.FieldDescriptor()
+Activity245Module_pb.ACT245SUMMONREQUESTACTIVITYIDFIELD.name = "activityId"
+Activity245Module_pb.ACT245SUMMONREQUESTACTIVITYIDFIELD.full_name = ".Act245SummonRequest.activityId"
+Activity245Module_pb.ACT245SUMMONREQUESTACTIVITYIDFIELD.number = 1
+Activity245Module_pb.ACT245SUMMONREQUESTACTIVITYIDFIELD.index = 0
+Activity245Module_pb.ACT245SUMMONREQUESTACTIVITYIDFIELD.label = 1
+Activity245Module_pb.ACT245SUMMONREQUESTACTIVITYIDFIELD.has_default_value = false
+Activity245Module_pb.ACT245SUMMONREQUESTACTIVITYIDFIELD.default_value = 0
+Activity245Module_pb.ACT245SUMMONREQUESTACTIVITYIDFIELD.type = 5
+Activity245Module_pb.ACT245SUMMONREQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity245Module_pb.ACT245SUMMONREQUESTCOUNTFIELD.name = "count"
+Activity245Module_pb.ACT245SUMMONREQUESTCOUNTFIELD.full_name = ".Act245SummonRequest.count"
+Activity245Module_pb.ACT245SUMMONREQUESTCOUNTFIELD.number = 2
+Activity245Module_pb.ACT245SUMMONREQUESTCOUNTFIELD.index = 1
+Activity245Module_pb.ACT245SUMMONREQUESTCOUNTFIELD.label = 1
+Activity245Module_pb.ACT245SUMMONREQUESTCOUNTFIELD.has_default_value = false
+Activity245Module_pb.ACT245SUMMONREQUESTCOUNTFIELD.default_value = 0
+Activity245Module_pb.ACT245SUMMONREQUESTCOUNTFIELD.type = 5
+Activity245Module_pb.ACT245SUMMONREQUESTCOUNTFIELD.cpp_type = 1
+Activity245Module_pb.ACT245SUMMONREQUEST_MSG.name = "Act245SummonRequest"
+Activity245Module_pb.ACT245SUMMONREQUEST_MSG.full_name = ".Act245SummonRequest"
+Activity245Module_pb.ACT245SUMMONREQUEST_MSG.nested_types = {}
+Activity245Module_pb.ACT245SUMMONREQUEST_MSG.enum_types = {}
+Activity245Module_pb.ACT245SUMMONREQUEST_MSG.fields = {
+	Activity245Module_pb.ACT245SUMMONREQUESTACTIVITYIDFIELD,
+	Activity245Module_pb.ACT245SUMMONREQUESTCOUNTFIELD
+}
+Activity245Module_pb.ACT245SUMMONREQUEST_MSG.is_extendable = false
+Activity245Module_pb.ACT245SUMMONREQUEST_MSG.extensions = {}
+Activity245Module_pb.ACT245SUMMONREPLYACTIVITYIDFIELD.name = "activityId"
+Activity245Module_pb.ACT245SUMMONREPLYACTIVITYIDFIELD.full_name = ".Act245SummonReply.activityId"
+Activity245Module_pb.ACT245SUMMONREPLYACTIVITYIDFIELD.number = 1
+Activity245Module_pb.ACT245SUMMONREPLYACTIVITYIDFIELD.index = 0
+Activity245Module_pb.ACT245SUMMONREPLYACTIVITYIDFIELD.label = 1
+Activity245Module_pb.ACT245SUMMONREPLYACTIVITYIDFIELD.has_default_value = false
+Activity245Module_pb.ACT245SUMMONREPLYACTIVITYIDFIELD.default_value = 0
+Activity245Module_pb.ACT245SUMMONREPLYACTIVITYIDFIELD.type = 5
+Activity245Module_pb.ACT245SUMMONREPLYACTIVITYIDFIELD.cpp_type = 1
+Activity245Module_pb.ACT245SUMMONREPLYREWARDIDSFIELD.name = "rewardIds"
+Activity245Module_pb.ACT245SUMMONREPLYREWARDIDSFIELD.full_name = ".Act245SummonReply.rewardIds"
+Activity245Module_pb.ACT245SUMMONREPLYREWARDIDSFIELD.number = 2
+Activity245Module_pb.ACT245SUMMONREPLYREWARDIDSFIELD.index = 1
+Activity245Module_pb.ACT245SUMMONREPLYREWARDIDSFIELD.label = 3
+Activity245Module_pb.ACT245SUMMONREPLYREWARDIDSFIELD.has_default_value = false
+Activity245Module_pb.ACT245SUMMONREPLYREWARDIDSFIELD.default_value = {}
+Activity245Module_pb.ACT245SUMMONREPLYREWARDIDSFIELD.type = 5
+Activity245Module_pb.ACT245SUMMONREPLYREWARDIDSFIELD.cpp_type = 1
+Activity245Module_pb.ACT245SUMMONREPLY_MSG.name = "Act245SummonReply"
+Activity245Module_pb.ACT245SUMMONREPLY_MSG.full_name = ".Act245SummonReply"
+Activity245Module_pb.ACT245SUMMONREPLY_MSG.nested_types = {}
+Activity245Module_pb.ACT245SUMMONREPLY_MSG.enum_types = {}
+Activity245Module_pb.ACT245SUMMONREPLY_MSG.fields = {
+	Activity245Module_pb.ACT245SUMMONREPLYACTIVITYIDFIELD,
+	Activity245Module_pb.ACT245SUMMONREPLYREWARDIDSFIELD
+}
+Activity245Module_pb.ACT245SUMMONREPLY_MSG.is_extendable = false
+Activity245Module_pb.ACT245SUMMONREPLY_MSG.extensions = {}
+Activity245Module_pb.ACT245GETINFOREQUESTACTIVITYIDFIELD.name = "activityId"
+Activity245Module_pb.ACT245GETINFOREQUESTACTIVITYIDFIELD.full_name = ".Act245GetInfoRequest.activityId"
+Activity245Module_pb.ACT245GETINFOREQUESTACTIVITYIDFIELD.number = 1
+Activity245Module_pb.ACT245GETINFOREQUESTACTIVITYIDFIELD.index = 0
+Activity245Module_pb.ACT245GETINFOREQUESTACTIVITYIDFIELD.label = 1
+Activity245Module_pb.ACT245GETINFOREQUESTACTIVITYIDFIELD.has_default_value = false
+Activity245Module_pb.ACT245GETINFOREQUESTACTIVITYIDFIELD.default_value = 0
+Activity245Module_pb.ACT245GETINFOREQUESTACTIVITYIDFIELD.type = 5
+Activity245Module_pb.ACT245GETINFOREQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity245Module_pb.ACT245GETINFOREQUEST_MSG.name = "Act245GetInfoRequest"
+Activity245Module_pb.ACT245GETINFOREQUEST_MSG.full_name = ".Act245GetInfoRequest"
+Activity245Module_pb.ACT245GETINFOREQUEST_MSG.nested_types = {}
+Activity245Module_pb.ACT245GETINFOREQUEST_MSG.enum_types = {}
+Activity245Module_pb.ACT245GETINFOREQUEST_MSG.fields = {
+	Activity245Module_pb.ACT245GETINFOREQUESTACTIVITYIDFIELD
+}
+Activity245Module_pb.ACT245GETINFOREQUEST_MSG.is_extendable = false
+Activity245Module_pb.ACT245GETINFOREQUEST_MSG.extensions = {}
+Activity245Module_pb.ACT245SUMMONEDINFOREWARDIDFIELD.name = "rewardId"
+Activity245Module_pb.ACT245SUMMONEDINFOREWARDIDFIELD.full_name = ".Act245SummonedInfo.rewardId"
+Activity245Module_pb.ACT245SUMMONEDINFOREWARDIDFIELD.number = 1
+Activity245Module_pb.ACT245SUMMONEDINFOREWARDIDFIELD.index = 0
+Activity245Module_pb.ACT245SUMMONEDINFOREWARDIDFIELD.label = 1
+Activity245Module_pb.ACT245SUMMONEDINFOREWARDIDFIELD.has_default_value = false
+Activity245Module_pb.ACT245SUMMONEDINFOREWARDIDFIELD.default_value = 0
+Activity245Module_pb.ACT245SUMMONEDINFOREWARDIDFIELD.type = 5
+Activity245Module_pb.ACT245SUMMONEDINFOREWARDIDFIELD.cpp_type = 1
+Activity245Module_pb.ACT245SUMMONEDINFOSUMMONEDCOUNTFIELD.name = "summonedCount"
+Activity245Module_pb.ACT245SUMMONEDINFOSUMMONEDCOUNTFIELD.full_name = ".Act245SummonedInfo.summonedCount"
+Activity245Module_pb.ACT245SUMMONEDINFOSUMMONEDCOUNTFIELD.number = 2
+Activity245Module_pb.ACT245SUMMONEDINFOSUMMONEDCOUNTFIELD.index = 1
+Activity245Module_pb.ACT245SUMMONEDINFOSUMMONEDCOUNTFIELD.label = 1
+Activity245Module_pb.ACT245SUMMONEDINFOSUMMONEDCOUNTFIELD.has_default_value = false
+Activity245Module_pb.ACT245SUMMONEDINFOSUMMONEDCOUNTFIELD.default_value = 0
+Activity245Module_pb.ACT245SUMMONEDINFOSUMMONEDCOUNTFIELD.type = 5
+Activity245Module_pb.ACT245SUMMONEDINFOSUMMONEDCOUNTFIELD.cpp_type = 1
+Activity245Module_pb.ACT245SUMMONEDINFO_MSG.name = "Act245SummonedInfo"
+Activity245Module_pb.ACT245SUMMONEDINFO_MSG.full_name = ".Act245SummonedInfo"
+Activity245Module_pb.ACT245SUMMONEDINFO_MSG.nested_types = {}
+Activity245Module_pb.ACT245SUMMONEDINFO_MSG.enum_types = {}
+Activity245Module_pb.ACT245SUMMONEDINFO_MSG.fields = {
+	Activity245Module_pb.ACT245SUMMONEDINFOREWARDIDFIELD,
+	Activity245Module_pb.ACT245SUMMONEDINFOSUMMONEDCOUNTFIELD
+}
+Activity245Module_pb.ACT245SUMMONEDINFO_MSG.is_extendable = false
+Activity245Module_pb.ACT245SUMMONEDINFO_MSG.extensions = {}
+Activity245Module_pb.ACT245GETINFOREPLYACTIVITYIDFIELD.name = "activityId"
+Activity245Module_pb.ACT245GETINFOREPLYACTIVITYIDFIELD.full_name = ".Act245GetInfoReply.activityId"
+Activity245Module_pb.ACT245GETINFOREPLYACTIVITYIDFIELD.number = 1
+Activity245Module_pb.ACT245GETINFOREPLYACTIVITYIDFIELD.index = 0
+Activity245Module_pb.ACT245GETINFOREPLYACTIVITYIDFIELD.label = 1
+Activity245Module_pb.ACT245GETINFOREPLYACTIVITYIDFIELD.has_default_value = false
+Activity245Module_pb.ACT245GETINFOREPLYACTIVITYIDFIELD.default_value = 0
+Activity245Module_pb.ACT245GETINFOREPLYACTIVITYIDFIELD.type = 5
+Activity245Module_pb.ACT245GETINFOREPLYACTIVITYIDFIELD.cpp_type = 1
+Activity245Module_pb.ACT245GETINFOREPLYSUMMONEDINFOSFIELD.name = "summonedInfos"
+Activity245Module_pb.ACT245GETINFOREPLYSUMMONEDINFOSFIELD.full_name = ".Act245GetInfoReply.summonedInfos"
+Activity245Module_pb.ACT245GETINFOREPLYSUMMONEDINFOSFIELD.number = 2
+Activity245Module_pb.ACT245GETINFOREPLYSUMMONEDINFOSFIELD.index = 1
+Activity245Module_pb.ACT245GETINFOREPLYSUMMONEDINFOSFIELD.label = 3
+Activity245Module_pb.ACT245GETINFOREPLYSUMMONEDINFOSFIELD.has_default_value = false
+Activity245Module_pb.ACT245GETINFOREPLYSUMMONEDINFOSFIELD.default_value = {}
+Activity245Module_pb.ACT245GETINFOREPLYSUMMONEDINFOSFIELD.message_type = Activity245Module_pb.ACT245SUMMONEDINFO_MSG
+Activity245Module_pb.ACT245GETINFOREPLYSUMMONEDINFOSFIELD.type = 11
+Activity245Module_pb.ACT245GETINFOREPLYSUMMONEDINFOSFIELD.cpp_type = 10
+Activity245Module_pb.ACT245GETINFOREPLY_MSG.name = "Act245GetInfoReply"
+Activity245Module_pb.ACT245GETINFOREPLY_MSG.full_name = ".Act245GetInfoReply"
+Activity245Module_pb.ACT245GETINFOREPLY_MSG.nested_types = {}
+Activity245Module_pb.ACT245GETINFOREPLY_MSG.enum_types = {}
+Activity245Module_pb.ACT245GETINFOREPLY_MSG.fields = {
+	Activity245Module_pb.ACT245GETINFOREPLYACTIVITYIDFIELD,
+	Activity245Module_pb.ACT245GETINFOREPLYSUMMONEDINFOSFIELD
+}
+Activity245Module_pb.ACT245GETINFOREPLY_MSG.is_extendable = false
+Activity245Module_pb.ACT245GETINFOREPLY_MSG.extensions = {}
+Activity245Module_pb.Act245GetInfoReply = protobuf.Message(Activity245Module_pb.ACT245GETINFOREPLY_MSG)
+Activity245Module_pb.Act245GetInfoRequest = protobuf.Message(Activity245Module_pb.ACT245GETINFOREQUEST_MSG)
+Activity245Module_pb.Act245SummonReply = protobuf.Message(Activity245Module_pb.ACT245SUMMONREPLY_MSG)
+Activity245Module_pb.Act245SummonRequest = protobuf.Message(Activity245Module_pb.ACT245SUMMONREQUEST_MSG)
+Activity245Module_pb.Act245SummonedInfo = protobuf.Message(Activity245Module_pb.ACT245SUMMONEDINFO_MSG)
+
+return Activity245Module_pb

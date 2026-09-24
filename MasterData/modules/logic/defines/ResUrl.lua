@@ -471,6 +471,14 @@ function ResUrl.getCameraAnimABUrl()
 	return "effects/cameraanim"
 end
 
+function ResUrl.getStoryPostProcessAnim(resName)
+	return string.format("ui/animations/postprocess/%s.controller", resName)
+end
+
+function ResUrl.getStoryPostProcessAnimABUrl()
+	return "ui/animations/postprocess"
+end
+
 function ResUrl.getEntityAnim(resName)
 	return string.format("effects/entityanim/%s.anim", resName)
 end
@@ -1872,6 +1880,50 @@ end
 
 function ResUrl.getS02PaoMianSingleBg(path)
 	return string.format("singlebg/sp02_paomian_singlebg/%s.png", path)
+end
+
+function ResUrl.getV4a0ConcertCandyRoomSingleBg(resName)
+	return string.format("singlebg/v4a0_candy_singlebg/%s.png", resName)
+end
+
+function ResUrl.getV4a0ConcertCandyRoomRewardPanelSingleBg(resName)
+	return string.format("singlebg/v4a0_candy_singlebg/rewardpanel/%s.png", resName)
+end
+
+function ResUrl.getV4a0ConcertCandyRoomLangIcon(resName)
+	return string.format("singlebg_lang/txt_v4a0_candy_singlebg/%s.png", resName)
+end
+
+function ResUrl.getCollegeSingleBg(resName, path)
+	if path then
+		return string.format("modules/college/ui/singlebg/%s/%s.png", path, resName)
+	else
+		return string.format("modules/college/ui/singlebg/%s.png", resName)
+	end
+end
+
+function ResUrl.getMatchGameSingleBg(resName, path)
+	if path then
+		return string.format("modules/matchgame/singlebg/matchgame/%s/%s.png", path, resName)
+	else
+		return string.format("modules/matchgame/singlebg/matchgame/%s.png", resName)
+	end
+end
+
+function ResUrl.getDeleikeSingleBg(resName, path)
+	if path then
+		return string.format("singlebg/v4a0_deleike_singlebg/%s/%s.png", path, resName)
+	else
+		return string.format("singlebg/v4a0_deleike_singlebg/%s.png", resName)
+	end
+end
+
+function ResUrl.getFightQteSingleBg(resName)
+	return string.format("singlebg/fight_qte_singlebg/head_icon/%s.png", resName)
+end
+
+function ResUrl.getRoleBadgeSingleBg(resName)
+	return string.format("singlebg/assist_singlebg/%s.png", resName)
 end
 
 return ResUrl

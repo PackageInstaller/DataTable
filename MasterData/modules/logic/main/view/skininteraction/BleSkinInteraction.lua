@@ -66,7 +66,7 @@ end
 
 function BleSkinInteraction:_delayResetCamera()
 	UIBlockMgrExtend.setNeedCircleMv(true)
-	self:_resetCameraPos()
+	self:_resetCameraPos(self._animationControllerName)
 end
 
 function BleSkinInteraction:isCustomDrag()
@@ -691,19 +691,29 @@ function BleSkinInteraction:_onMoveCameraFinish()
 	return
 end
 
-function BleSkinInteraction:_resetCameraPos()
+function BleSkinInteraction:_resetCameraPos(animationControllerName)
+	if GameSceneMgr.instance:getCurSceneType() ~= SceneType.Main then
+		return
+	end
+
+	if GameSceneMgr.instance:isClosing() then
+		return
+	end
+
 	if not self._mainRootGo then
 		return
 	end
 
-	local animator = CameraMgr.instance:getCameraRootAnimator()
-	local animatorInst = animator.runtimeAnimatorController
+	if animationControllerName then
+		local animator = CameraMgr.instance:getCameraRootAnimator()
+		local animatorInst = animator.runtimeAnimatorController
 
-	if not animatorInst or animatorInst.name ~= self._animationControllerName then
-		return
+		if not animatorInst or animatorInst.name ~= animationControllerName then
+			return
+		end
+
+		animator.runtimeAnimatorController = nil
 	end
-
-	animator.runtimeAnimatorController = nil
 
 	local cameraPosX, cameraPosY, cameraPosZ = transformhelper.getLocalPos(self._mainRootGo.transform)
 
@@ -742,7 +752,7 @@ function BleSkinInteraction:_onDestroy()
 		self._effectLoader:dispose()
 	end
 
-	self:_resetCameraPos()
+	self:_resetCameraPos(self._animationControllerName)
 end
 
 return BleSkinInteraction

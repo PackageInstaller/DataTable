@@ -12,6 +12,8 @@ function FightWorkRequestAutoFight:onStart()
 	self:com_registMsg(FightMsgId.AutoRoundReply, self.onAutoRoundReply)
 	self:com_registMsg(FightMsgId.AutoRoundReplyFail, self.onAutoRoundReplyFail)
 	self:com_registMsg(FightMsgId.UseClothSkillReplyFail, self.onUseClothSkillReplyFail)
+	self:com_registFightEvent(FightEvent.QTE_EnterFail, self.onEnterQteFail)
+	self:com_registFightEvent(FightEvent.QTE_UseQteSkillFail, self.onUseQteSkillFail)
 	FightRpc.instance:sendAutoRoundRequest(FightDataHelper.operationDataMgr:getOpList())
 	self:cancelFightWorkSafeTimer()
 end
@@ -20,7 +22,15 @@ function FightWorkRequestAutoFight:onAutoRoundReply(msg)
 	if msg:HasField("clothSkill") ~= 0 then
 		local clothSkill = msg.clothSkill
 
-		if clothSkill.skillId ~= 0 then
+		if clothSkill.type == FightEnum.ClothSkillType.EnterQteRound then
+			FightRpc.instance:sendEnterQTERoundRequest()
+
+			return
+		elseif clothSkill.type == FightEnum.ClothSkillType.UseQTESkill then
+			FightRpc.instance:sendUseQTESkillRequest(clothSkill.fromId, clothSkill.toId)
+
+			return
+		elseif clothSkill.skillId ~= 0 then
 			FightRpc.instance:sendUseClothSkillRequest(clothSkill.skillId, clothSkill.fromId, clothSkill.toId, clothSkill.type)
 
 			return
@@ -84,6 +94,14 @@ function FightWorkRequestAutoFight:onAutoRoundReplyFail()
 end
 
 function FightWorkRequestAutoFight:onUseClothSkillReplyFail()
+	self:onDone(true)
+end
+
+function FightWorkRequestAutoFight:onEnterQteFail()
+	self:onDone(true)
+end
+
+function FightWorkRequestAutoFight:onUseQteSkillFail()
 	self:onDone(true)
 end
 

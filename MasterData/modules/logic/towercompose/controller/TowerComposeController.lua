@@ -229,6 +229,7 @@ function TowerComposeController:_openMainSelectView(_, resultCode, _)
 end
 
 function TowerComposeController:openTowerThemeView(param)
+	TowerComposeModel.instance:clearAllAssist()
 	ViewMgr.instance:openView(ViewName.TowerComposeThemeView, param)
 end
 
@@ -363,6 +364,8 @@ function TowerComposeController:_enterFight()
 		return
 	end
 
+	TowerComposeModel.instance:clearAssist(true)
+
 	local episodeId = param.episodeId
 
 	TowerComposeModel.instance:setRecordFightParam(param.towerEpisodeConfig.themeId, param.towerEpisodeConfig.layerId, param.episodeId, false)
@@ -411,6 +414,8 @@ function TowerComposeController:startDungeonRequest()
 end
 
 function TowerComposeController:setFightParamsEquipsAndHero(fightParam)
+	TowerComposeHeroGroupModel.instance:saveThemePlaneBuffData()
+
 	local curFightPlaneId = TowerComposeModel.instance:getCurFightPlaneId()
 	local recordFightParam = TowerComposeModel.instance:getRecordFightParam()
 	local fightParamEquips = {}
@@ -420,8 +425,7 @@ function TowerComposeController:setFightParamsEquipsAndHero(fightParam)
 	local curGroupMO = HeroGroupModel.instance:getCurGroupMO()
 	local saveStr = curGroupMO:getSaveParams()
 	local saveData = string.nilorempty(saveStr) and {} or cjson.decode(saveStr)
-	local saveHeroList = saveData.heroList
-	local curHeroList = recordFightParam.isReconnect and saveHeroList and #saveHeroList > 0 and saveHeroList or curGroupMO.heroList
+	local curHeroList = saveData.heroList
 
 	for index = startPos, endPos do
 		table.insert(fightParamEquips, fightParam.equips[index])
@@ -503,6 +507,22 @@ function TowerComposeController:showPlaneTrialLimitToast(planeId)
 		local planeName = luaLang("towercompose_plane" .. planeId) or ""
 
 		GameFacade.showToast(ToastEnum.TowerComposePlaneTrialLimit, episodeConfig.name, planeName)
+	else
+		GameFacade.showToast(ToastEnum.TrialJoinLimit, 1)
+	end
+end
+
+function TowerComposeController:showPlaneAssistToast(planeId)
+	local fighRecordParam = TowerComposeModel.instance:getRecordFightParam()
+	local themeId = fighRecordParam.themeId
+	local layerId = fighRecordParam.layerId
+	local towerEpisodeConfig = TowerComposeConfig.instance:getEpisodeConfig(themeId, layerId)
+
+	if towerEpisodeConfig.plane > 0 then
+		local episodeConfig = DungeonConfig.instance:getEpisodeCO(towerEpisodeConfig.episodeId)
+		local planeName = luaLang("towercompose_plane" .. planeId) or ""
+
+		GameFacade.showToast(ToastEnum.TowerComposePlaneAssistFightLimit, planeName, planeName)
 	else
 		GameFacade.showToast(ToastEnum.TrialJoinLimit, 1)
 	end

@@ -49,8 +49,17 @@ function StoreConfig:reqConfigNames()
 		"slow_release_gift",
 		"store_charge_optional",
 		"month_card_added",
-		"store_charge_conditional"
+		"store_charge_conditional",
+		"store_const"
 	}
+end
+
+local function _constCO(id)
+	if not _G.lua_store_const or not lua_store_const.configDict then
+		return
+	end
+
+	return lua_store_const.configDict[id]
 end
 
 function StoreConfig:onConfigLoaded(configName, configTable)
@@ -122,7 +131,7 @@ function StoreConfig:initPreGoodsIdDict(configTable)
 			self._critterStoreGoods[arr[2]] = self._critterStoreGoods[arr[2]] or {}
 
 			table.insert(self._critterStoreGoods[arr[2]], cfg)
-		elseif storeId == StoreEnum.StoreId.NewDecorateStore or storeId == StoreEnum.StoreId.OldDecorateStore then
+		elseif storeId == StoreEnum.StoreId.NewDecorateStore or storeId == StoreEnum.StoreId.OldDecorateStore or storeId == StoreEnum.StoreId.SpiritualityDecorateStore then
 			local arr = string.splitToNumber(cfg.product, "#")
 
 			self._decorateProduct2GoodsId[arr[2]] = self._decorateProduct2GoodsId[arr[2]] or {}
@@ -569,6 +578,54 @@ function StoreConfig:getDecorateGoodsIdById(materialId)
 	local cfg = self:getDecorateGoodsCfgById(materialId)
 
 	return (cfg or nil) and cfg.id
+end
+
+function StoreConfig:getConst(id, fallback)
+	local CO = _constCO(id)
+
+	if not CO then
+		return fallback
+	end
+
+	return CO.strValue
+end
+
+function StoreConfig:getConstAsNum(id, fallback)
+	local CO = _constCO(id)
+
+	if not CO then
+		return fallback
+	end
+
+	return tonumber(CO.strValue) or fallback
+end
+
+function StoreConfig:getMonthCardStoreChargeId()
+	return self:getConstAsNum(StoreEnum.ConstId.MonthCard)
+end
+
+function StoreConfig:getSeasonCardStoreChargeId(fallback)
+	return self:getConstAsNum(StoreEnum.ConstId.SeasonCard)
+end
+
+function StoreConfig:getSummonSimulationPickStoreChargeId(fallback)
+	return self:getConstAsNum(3, fallback or 832004)
+end
+
+function StoreConfig:getSkinDiscountStoreChargeId(fallback)
+	return self:getConstAsNum(4, fallback or 833005)
+end
+
+function StoreConfig:getDestinySummonStoreChargeId(fallback)
+	return self:getConstAsNum(5, fallback or 834005)
+end
+
+function StoreConfig:getNewbiePackStoreChargeId(fallback)
+	return self:getConstAsNum(6, fallback or 811422)
+end
+
+function StoreConfig:getSixStarGiftStoreChargeId(fallback)
+	return self:getConstAsNum(40000, fallback or 832004)
 end
 
 StoreConfig.instance = StoreConfig.New()

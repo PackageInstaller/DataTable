@@ -47,6 +47,10 @@ function FightTLEventAtkEffect:onTrackStart(fightStepData, duration, paramsArr)
 		self._targetEntity = self._attacker
 	end
 
+	if paramsArr[16] == "1" then
+		self._targetEntity = FightMsgMgr.sendMsg(FightMsgId.GetSummonedEntity, fightStepData.fromId) or self._targetEntity
+	end
+
 	self:_bootLogic(fightStepData, duration, paramsArr)
 
 	if not string.nilorempty(paramsArr[11]) then

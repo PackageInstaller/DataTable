@@ -4,46 +4,24 @@ module("modules.logic.autochess.act182.model.Activity182Model", package.seeall)
 
 local Activity182Model = class("Activity182Model", BaseModel)
 
-function Activity182Model:onInit()
-	self:reInit()
-end
-
-function Activity182Model:reInit()
-	self.actMoDic = {}
-end
-
 function Activity182Model:setActInfo(info)
-	self.curActId = info.activityId
-
-	local mo = self.actMoDic[self.curActId]
-
-	if mo then
-		mo:update(info)
+	if self.act182Mo then
+		self.act182Mo:update(info)
 	else
-		mo = Act182MO.New()
+		self.act182Mo = Act182MO.New()
 
-		mo:init(info)
-
-		self.actMoDic[self.curActId] = mo
+		self.act182Mo:init(info)
 	end
 
 	Activity182Controller.instance:dispatchEvent(Activity182Event.UpdateInfo)
 end
 
 function Activity182Model:getCurActId()
-	return self.curActId
+	return self.act182Mo and self.act182Mo.activityId
 end
 
-function Activity182Model:getActMo(actId)
-	actId = actId or self.curActId
-
-	local mo = self.actMoDic[actId]
-
-	if not mo then
-		logError("不存在活动数据" .. tostring(actId))
-	end
-
-	return mo
+function Activity182Model:getActMo()
+	return self.act182Mo
 end
 
 Activity182Model.instance = Activity182Model.New()

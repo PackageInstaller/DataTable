@@ -170,6 +170,24 @@ function UIBlockMgrExtend:onDisable()
 	end
 end
 
+function UIBlockMgrExtend:resetMaskShow()
+	if not UIBlockMgr.instance:isBlock() then
+		return
+	end
+
+	self:onDisable()
+
+	if needCircleMv then
+		if UIBlockMgrExtend.CircleMvDelay and UIBlockMgrExtend.CircleMvDelay > 0 then
+			if not UIBlockMgrExtend.CircleMvDelay then
+				local delay = Delay
+
+				TaskDispatcher.runDelay(self._onDelayShow, self, delay)
+			end
+		end
+	end
+end
+
 function UIBlockMgrExtend:_onDelayShow()
 	if not needCircleMv then
 		return

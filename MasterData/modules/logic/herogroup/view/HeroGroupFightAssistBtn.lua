@@ -5,8 +5,8 @@ module("modules.logic.herogroup.view.HeroGroupFightAssistBtn", package.seeall)
 local HeroGroupFightAssistBtn = class("HeroGroupFightAssistBtn", BaseView)
 
 function HeroGroupFightAssistBtn:onInitView()
-	self._btnassist = gohelper.findChildButtonWithAudio(self.viewGO, "#go_container/btnContain/horizontal/#btn_assist")
-	self._btnrelease = gohelper.findChildButtonWithAudio(self.viewGO, "#go_container/btnContain/horizontal/#btn_release")
+	self._btnassist = gohelper.findChildButtonWithAudio(self.viewGO, self._parentPath .. "/#btn_assist")
+	self._btnrelease = gohelper.findChildButtonWithAudio(self.viewGO, self._parentPath .. "/#btn_release")
 
 	if self._editableInitView then
 		self:_editableInitView()
@@ -24,6 +24,9 @@ function HeroGroupFightAssistBtn:addEvents()
 
 	self.addEventCb(self, HeroGroupController.instance, HeroGroupEvent.OnModifyHeroGroup, self._refresh, self)
 	self.addEventCb(self, HeroGroupController.instance, HeroGroupEvent.OnModifyGroupSelectIndex, self._onModifyGroupSelectIndex, self)
+	self.addEventCb(self, TowerController.instance, TowerEvent.OnTowerResetSubEpisode, self._refresh, self)
+	self.addEventCb(self, AbyssController.instance, AbyssEvent.OnResetStage, self._refresh, self)
+	self.addEventCb(self, AbyssController.instance, AbyssEvent.OnCurStageChange, self._refresh, self)
 end
 
 function HeroGroupFightAssistBtn:removeEvents()
@@ -37,6 +40,12 @@ function HeroGroupFightAssistBtn:removeEvents()
 
 	self.removeEventCb(self, HeroGroupController.instance, HeroGroupEvent.OnModifyHeroGroup, self._refresh, self)
 	self.removeEventCb(self, HeroGroupController.instance, HeroGroupEvent.OnModifyGroupSelectIndex, self._onModifyGroupSelectIndex, self)
+	self.removeEventCb(self, TowerController.instance, TowerEvent.OnTowerResetSubEpisode, self._refresh, self)
+	self.removeEventCb(self, AbyssController.instance, AbyssEvent.OnCurStageChange, self._refresh, self)
+end
+
+function HeroGroupFightAssistBtn:ctor(param)
+	self._parentPath = param and not string.nilorempty(param.parentPath) and param.parentPath or "#go_container/btnContain/horizontal"
 end
 
 function HeroGroupFightAssistBtn:_btnassistOnClick()
@@ -50,7 +59,25 @@ function HeroGroupFightAssistBtn:_btnassistOnClick()
 		return
 	end
 
-	PickAssistController.instance:openPickAssistView(assistType, self._episdoeActId, nil, self._pickOverCallBack, self, true)
+	local episodeId = self:_getEpisodeId()
+
+	PickAssistController.instance:openPickAssistView(assistType, self._episdoeActId, nil, self._pickOverCallBack, self, true, nil, nil, {
+		episodeId = episodeId
+	})
+end
+
+function HeroGroupFightAssistBtn:_getEpisodeId()
+	local episodeId = DungeonModel.instance.curSendEpisodeId
+
+	if episodeId ~= nil then
+		logNormal("HeroGroupFightAssistBtn use curSendEpisodeId curId: " .. tostring(episodeId) .. " episodeID: " .. tostring(HeroGroupModel.instance.episodeId))
+
+		return episodeId
+	end
+
+	logNormal("HeroGroupFightAssistBtn use HeroGroupModelId curId: " .. tostring(episodeId) .. " episodeID: " .. tostring(HeroGroupModel.instance.episodeId))
+
+	return HeroGroupModel.instance.episodeId
 end
 
 function HeroGroupFightAssistBtn:_pickOverCallBack(mo)
@@ -71,6 +98,8 @@ function HeroGroupFightAssistBtn:_pickOverCallBack(mo)
 			local heroMo = HeroModel.instance:getById(_mo.heroUid)
 
 			if heroMo and heroMo.heroId == mo.heroId then
+				HeroSingleGroupModel.instance:remove(_mo.heroUid)
+
 				index = i
 			end
 		end
@@ -78,6 +107,7 @@ function HeroGroupFightAssistBtn:_pickOverCallBack(mo)
 
 	if index then
 		self:_setAssistMo(mo, index)
+		HeroGroupHandler.replaceSingleGroup(DungeonModel.instance.curSendEpisodeId)
 	else
 		HeroGroupModel.instance:setEditorAssistMo(mo)
 

@@ -85,7 +85,7 @@ function SwitchMainActivityEnterView:refreshActivityIcon()
 	else
 		self.imageActivityIcon.color = Color.white
 
-		gohelper.setAsLastSibling(self.btnEnterActivity.gameObject)
+		gohelper.setAsFirstSibling(self.btnEnterActivity.gameObject)
 
 		if self._imageActivityIconChilds then
 			for i = 0, self._imageActivityIconChilds.Length - 1 do

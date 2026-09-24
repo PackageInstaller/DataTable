@@ -23,6 +23,7 @@ function FightWorkRefreshFightAfterCrash:onStart()
 	end
 
 	flow:registWork(FightWorkFunction, FightGameMgr.entityMgr.newAllEntityAndRemoveDiff, FightGameMgr.entityMgr)
+	flow:registWork(FightWorkFunction, FightTLDeviceCardTriggerPowerEffect.clearFlyNode)
 	flow:registWork(FightWorkFunction, ViewMgr.instance.closeView, ViewMgr.instance, ViewName.FightSkillSelectView, true)
 	flow:registWork(FightWorkFunction, ViewMgr.instance.closeView, ViewMgr.instance, ViewName.FightView, true)
 	flow:registWork(FightWorkFunction, ViewDestroyMgr.instance.destroyImmediately, ViewDestroyMgr.instance)

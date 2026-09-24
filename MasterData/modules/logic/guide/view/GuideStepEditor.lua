@@ -39,6 +39,11 @@ function GuideStepEditor:onInitView()
 	self._goarrowyoffset = gohelper.findChild(self.viewGO, "#go_edit/#go_allmodules/#go_container/offset/#go_arrowyoffset")
 	self._slideroffsetarrowy = gohelper.findChildSlider(self.viewGO, "#go_edit/#go_allmodules/#go_container/offset/#go_arrowyoffset/#slider_offsetarrowy")
 	self._txtoffsetarrowy = gohelper.findChildText(self.viewGO, "#go_edit/#go_allmodules/#go_container/offset/#go_arrowyoffset/#txt_offsetarrowy")
+	self._gorotation = gohelper.findChild(self.viewGO, "#go_edit/#go_allmodules/#go_container/offset/#go_rotation")
+	self._slideroffsetrotation = gohelper.findChildSlider(self.viewGO, "#go_edit/#go_allmodules/#go_container/offset/#go_rotation/#slider_offsetrotation")
+	self._txtoffsetrotation = gohelper.findChildText(self.viewGO, "#go_edit/#go_allmodules/#go_container/offset/#go_rotation/#txt_offsetrotation")
+	self._goarrowScale = gohelper.findChild(self.viewGO, "#go_edit/#go_allmodules/#go_container/offset/#go_arrowScale")
+	self._inputarrowScale = gohelper.findChildTextMeshInputField(self.viewGO, "#go_edit/#go_allmodules/#go_container/offset/#go_arrowScale/#input_arrowScale")
 	self._togglemask = gohelper.findChildToggle(self.viewGO, "#go_edit/#go_allmodules/#go_container/toggles/#toggle_mask")
 	self._toggleshape = gohelper.findChildToggle(self.viewGO, "#go_edit/#go_allmodules/#go_container/toggles/#toggle_shape")
 	self._gotextContainer = gohelper.findChild(self.viewGO, "#go_edit/#go_allmodules/#go_textContainer")
@@ -116,11 +121,13 @@ function GuideStepEditor:removeEvents()
 	SLFramework.UGUI.UIClickListener.Get(self._txtoffseth.gameObject):RemoveClickListener()
 	SLFramework.UGUI.UIClickListener.Get(self._txtoffsetarrowx.gameObject):RemoveClickListener()
 	SLFramework.UGUI.UIClickListener.Get(self._txtoffsetarrowy.gameObject):RemoveClickListener()
+	SLFramework.UGUI.UIClickListener.Get(self._txtoffsetrotation.gameObject):RemoveClickListener()
 	SLFramework.UGUI.UIClickListener.Get(self._txttipsoffsetx.gameObject):RemoveClickListener()
 	SLFramework.UGUI.UIClickListener.Get(self._txttipsoffsety.gameObject):RemoveClickListener()
 	self._inputtext:RemoveOnValueChanged()
 	self._inputoffset:RemoveOnValueChanged()
 	self._inputoffset:RemoveOnEndEdit()
+	self._inputarrowScale:RemoveOnValueChanged()
 end
 
 function GuideStepEditor:_btnswitchposOnClick()
@@ -267,12 +274,15 @@ function GuideStepEditor:_editableInitView()
 	self:initDropUiInfo()
 	self._goarrowxoffset:SetActive(false)
 	self._goarrowyoffset:SetActive(false)
+	self._gorotation:SetActive(false)
+	self._goarrowScale:SetActive(false)
 	self:initSlider(self._slideroffsetx, 1500, -1500, self._onOffsetXChange)
 	self:initSlider(self._slideroffsety, 1500, -1500, self._onOffsetYChange)
 	self:initSlider(self._slideroffsetarrowx, 1500, -1500, self._onOffsetArrowXChange)
 	self:initSlider(self._slideroffsetarrowy, 1500, -1500, self._onOffsetArrowYChange)
-	self:initSlider(self._slideroffsetw, 3000, -1, self._onOffsetWChange, 200)
-	self:initSlider(self._slideroffseth, 1500, -1, self._onOffsetHChange, 200)
+	self:initSlider(self._slideroffsetw, 3000, -1, self._onOffsetWChange, GuideEnum.ArrowDragSize[1])
+	self:initSlider(self._slideroffseth, 1500, -1, self._onOffsetHChange, GuideEnum.ArrowDragSize[2])
+	self:initSlider(self._slideroffsetrotation, 180, -180, self._onOffsetRotationChange)
 	self:initSlider(self._slidertipsoffsetx, 1500, -1500, self._onTipsOffsetXChange)
 	self:initSlider(self._slidertipsoffsety, 1500, -1500, self._onTipsOffsetYChange)
 	self._togglemask:AddOnValueChanged(self._onParamValueChange, self)
@@ -281,6 +291,8 @@ function GuideStepEditor:_editableInitView()
 	self._toggletip:AddOnValueChanged(self._onTipsParamValueChange, self)
 	self._inputtext:AddOnValueChanged(self._inputValueChanged, self)
 	self._inputtext:SetText("这是测试文本！这是测试文本！这是测试文本！")
+	self._inputarrowScale:AddOnValueChanged(self._arrowScaleValueChanged, self)
+	self._inputarrowScale:SetText("1")
 	self:_showModule(true)
 
 	self._showContainer = true
@@ -293,6 +305,7 @@ function GuideStepEditor:_editableInitView()
 	self:initTxtOffset(self._txtoffseth, self._slideroffseth)
 	self:initTxtOffset(self._txtoffsetarrowx, self._slideroffsetarrowx)
 	self:initTxtOffset(self._txtoffsetarrowy, self._slideroffsetarrowy)
+	self:initTxtOffset(self._txtoffsetrotation, self._slideroffsetrotation)
 	self:initTxtOffset(self._txttipsoffsetx, self._slidertipsoffsetx)
 	self:initTxtOffset(self._txttipsoffsety, self._slidertipsoffsety)
 end
@@ -301,6 +314,10 @@ function GuideStepEditor:_inputValueChanged()
 	if self._showText then
 		self:updateText()
 	end
+end
+
+function GuideStepEditor:_arrowScaleValueChanged()
+	self:_onParamValueChange()
 end
 
 function GuideStepEditor:_cancelRaycastTarget()
@@ -445,6 +462,12 @@ function GuideStepEditor:_onOffsetHChange(param, value)
 	self:_onParamValueChange()
 end
 
+function GuideStepEditor:_onOffsetRotationChange(param, value)
+	self._txtoffsetrotation.text = string.format("r:%s", math.ceil(value))
+
+	self:_onParamValueChange()
+end
+
 function GuideStepEditor:_getCorrectValue(value)
 	return tonumber(value) == 0 and 0 or tonumber(value)
 end
@@ -466,7 +489,8 @@ function GuideStepEditor:initDropUiInfo()
 		"战斗移牌动画",
 		"箭头指示动画",
 		"长按指示动画",
-		"战斗移牌动画2"
+		"战斗移牌动画2",
+		"拖动动画"
 	}
 
 	self._dropUiInfo:AddOptions(self._uiInfoList)
@@ -494,8 +518,10 @@ function GuideStepEditor:_onUiInfoValueChanged(index)
 	self._index = index
 
 	self:_getTargetWidthAndHeight()
-	self._goarrowxoffset:SetActive(self:_isArrowType())
-	self._goarrowyoffset:SetActive(self:_isArrowType())
+	self._goarrowxoffset:SetActive(self:_isArrowType() or self._index == GuideEnum.uiTypeDrag)
+	self._goarrowyoffset:SetActive(self:_isArrowType() or self._index == GuideEnum.uiTypeDrag)
+	self._gorotation:SetActive(self._index == GuideEnum.uiTypeDrag)
+	self._goarrowScale:SetActive(self._index == GuideEnum.uiTypeDrag)
 	self:updateGuide()
 end
 
@@ -524,19 +550,28 @@ function GuideStepEditor:updateGuide()
 	param._isStepEditor = true
 
 	if maskOn == 1 then
-		self:_setUIType(param, 0)
+		self:_setUIType(param, 0, x, y)
 		ViewMgr.instance:openView(ViewName.GuideStepEditor, param)
 	end
 
-	self:_setUIType(param, maskOn)
+	self:_setUIType(param, maskOn, x, y)
 	ViewMgr.instance:openView(ViewName.GuideStepEditor, param)
 end
 
-function GuideStepEditor:_setUIType(param, maskOn)
+function GuideStepEditor:_setUIType(param, maskOn, x, y)
 	local arrowx = self:_getCorrectValue(math.ceil(self._slideroffsetarrowx:GetValue()))
 	local arrowy = self:_getCorrectValue(math.ceil(self._slideroffsetarrowy:GetValue()))
 	local w = self:_getCorrectValue(math.ceil(self._slideroffsetw:GetValue()))
 	local h = self:_getCorrectValue(math.ceil(self._slideroffseth:GetValue()))
+	local rotation = self:_getCorrectValue(math.ceil(self._slideroffsetrotation:GetValue()))
+	local arrowScaleNumStr = self._inputarrowScale:GetText()
+	local arrowScaleNumStr
+
+	if string.nilorempty(self._inputarrowScale:GetText()) then
+		arrowScaleNumStr = 0
+	end
+
+	local arrowScale = self:_getCorrectValue(tonumber(arrowScaleNumStr))
 	local shapeOn = self._toggleshape.isOn and 1 or 0
 
 	if self._index == GuideEnum.uiTypeCircle then
@@ -549,6 +584,8 @@ function GuideStepEditor:_setUIType(param, maskOn)
 		self._uiInfo = string.format("%s#%s", self._index, maskOn)
 	elseif self:_isArrowType() then
 		self._uiInfo = string.format("%s#%s#%s#%s#%s#%s#%s#%s", self._index, 2, w, h, arrowx, arrowy, maskOn, shapeOn)
+	elseif self._index == GuideEnum.uiTypeDrag then
+		self._uiInfo = string.format("%s#%s#%s#%s#%s#%s#%s#%s#%s#%s#%s", self._index, rotation, w, h, x, y, arrowScale, arrowx, arrowy, maskOn, shapeOn)
 	end
 
 	param:initUiType(self._uiInfo)
@@ -636,6 +673,7 @@ function GuideStepEditor:onClose()
 	self:clearSlider(self._slideroffsetarrowy)
 	self:clearSlider(self._slideroffsetw)
 	self:clearSlider(self._slideroffseth)
+	self:clearSlider(self._slideroffsetrotation)
 	self:clearSlider(self._slidertipsoffsetx)
 	self:clearSlider(self._slidertipsoffsety)
 	self._togglemask:RemoveOnValueChanged()

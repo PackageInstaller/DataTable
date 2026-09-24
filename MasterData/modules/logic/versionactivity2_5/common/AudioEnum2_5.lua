@@ -20,7 +20,9 @@ AudioEnum.AutoChess = {
 	play_ui_mln_details_open = 20250421,
 	play_ui_tangren_chess_lock = 20250422,
 	play_ui_tangren_store_upgrade = 20250409,
+	play_ui_yingmen_adventure_activate = 400084,
 	play_ui_tangren_award_get = 20250423,
+	play_ui_yingmen_adventure_get = 400083,
 	play_ui_tangren_chess_move = 20250424
 }
 AudioEnum.GoldenMillet = {

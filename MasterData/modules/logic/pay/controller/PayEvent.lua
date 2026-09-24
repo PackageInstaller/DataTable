@@ -3,11 +3,13 @@
 module("modules.logic.pay.controller.PayEvent", package.seeall)
 
 local PayEvent = _M
+local make = GameUtil.getUniqueTb()
 
-PayEvent.GetSignFailed = 1
-PayEvent.GetSignSuccess = 2
-PayEvent.PayFinished = 11
-PayEvent.PayFailed = 12
-PayEvent.PayInfoChanged = 13
+PayEvent.GetSignFailed = make()
+PayEvent.GetSignSuccess = make()
+PayEvent.PayFinished = make()
+PayEvent.PayFailed = make()
+PayEvent.PayInfoChanged = make()
+PayEvent.onReceiveGetPayDiamondInfoReply = make()
 
 return PayEvent

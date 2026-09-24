@@ -53,6 +53,10 @@ function FightWorkItem:__start(context)
 	table.insert(self.EXCLUSIVETIMER, self.SAFETIMER)
 	self:beforeStart()
 
+	if self.MANUAL_CONTROLLED then
+		return
+	end
+
 	return self:onStart()
 end
 

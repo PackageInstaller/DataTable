@@ -1419,15 +1419,7 @@ function GMToolView:_onClickOpenHuaRongViewBtn()
 end
 
 function GMToolView:_onClickOpenSeasonViewBtn()
-	local mapId = self._inptSeason:GetText()
-
-	self._inptSeason:SetText(mapId)
-
-	if string.nilorempty(mapId) then
-		mapId = 0
-	end
-
-	AtomicDungeonModel.instance:setGMCurMapId(tonumber(mapId))
+	MatchGameController.instance:openMatchGameFightView()
 end
 
 function GMToolView:_onEarToggleValueChange()

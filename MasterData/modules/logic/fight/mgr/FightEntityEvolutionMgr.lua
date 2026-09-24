@@ -18,7 +18,6 @@ function FightEntityEvolutionMgr:onConstructor()
 	self:com_registMsg(FightMsgId.ReleaseAllEntrustedEntity, self._onReleaseAllEntrustedEntity)
 	self:com_registMsg(FightMsgId.SpineLoadFinish, self._onSpineLoadFinish)
 	self:com_registMsg(FightMsgId.IsEvolutionSkin, self._onIsEvolutionSkin)
-	self:com_registFightEvent(FightEvent.BeforeDestroyEntity, self._onBeforeDestroyEntity)
 end
 
 function FightEntityEvolutionMgr:_onBeforeDestroyEntity(entity)

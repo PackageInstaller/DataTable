@@ -94,6 +94,7 @@ function CharacterSkinGainView:_editableInitView()
 
 	self._txtanacn.text = ""
 	self._txtanaen.text = ""
+	self._sp = CharacterSpName.s_createByView(self, gohelper.findChild(self.viewGO, "root/left/#simage_bg/#txt_skinname/sp")):bindName0(self._txtname):bindName0En(self._txtnameen):simpleBindSpNameWithBg()
 
 	self.addEventCb(self, CharacterController.instance, CharacterEvent.successDressUpSkin, self._successDressUpSkin, self)
 end
@@ -137,23 +138,24 @@ end
 
 function CharacterSkinGainView:_refreshView()
 	self._skinCo = SkinConfig.instance:getSkinCo(self.viewParam.skinId)
-	self._heroMo = HeroModel.instance:getByHeroId(self._skinCo.characterId)
 
-	local heroConfig = HeroConfig.instance:getHeroCO(self._skinCo.characterId)
+	local heroId = self._skinCo.characterId
+	local heroConfig = HeroConfig.instance:getHeroCO(heroId)
+
+	self._heroMo = HeroModel.instance:getByHeroId(heroId)
 
 	self:_setNameBgWidth(self._skinCo.characterSkin, (heroConfig or nil) and (heroConfig.name or ""))
 
 	self._txtskinname.text = self._skinCo.characterSkin
 
 	if heroConfig then
-		gohelper.setActive(self._txtname.gameObject, true)
-
-		self._txtname.text = heroConfig.name
+		self._sp:onUpdateMO({
+			heroId = heroId
+		}):setAsML_SpAndName0()
 	else
-		gohelper.setActive(self._txtname.gameObject, false)
+		self._sp:setActiveNameOnly(false)
+		self._sp:setActive(false)
 	end
-
-	self._txtnameen.text = heroConfig.nameEng
 
 	self._uiSpine:setResPath(self._skinCo, self._onUISpineLoaded, self)
 	self._simageicon:LoadImage(ResUrl.getHeadIconImg(self._skinCo.id), self._loadedImage, self)
@@ -350,6 +352,7 @@ function CharacterSkinGainView:onDestroyView()
 	self._simagemask:UnLoadImage()
 	self._simagelefticon:UnLoadImage()
 	self._simagerighticon:UnLoadImage()
+	GameUtil.onDestroyViewMember(self, "_sp")
 end
 
 return CharacterSkinGainView

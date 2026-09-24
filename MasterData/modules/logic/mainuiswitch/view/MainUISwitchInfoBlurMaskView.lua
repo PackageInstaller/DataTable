@@ -41,6 +41,8 @@ function MainUISwitchInfoBlurMaskView:_onSwitchUIVisible(visible)
 			self._root.transform:SetAsFirstSibling()
 		end
 	end
+
+	MainUISwitchController.instance:dispatchEvent(MainUISwitchEvent.MaskHeroMoveFinish, visible)
 end
 
 function MainUISwitchInfoBlurMaskView:_onCloseView(viewName)
@@ -58,6 +60,11 @@ function MainUISwitchInfoBlurMaskView:onOpen()
 			self:_onShowSceneInfo(sceneId)
 		end
 	end
+end
+
+function MainUISwitchInfoBlurMaskView:onOpenFinish()
+	gohelper.setActive(self.viewGO, false)
+	gohelper.setActive(self.viewGO, true)
 end
 
 function MainUISwitchInfoBlurMaskView:_onShowSceneInfo(id)

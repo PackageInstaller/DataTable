@@ -135,7 +135,7 @@ function VersionActivity3_2DungeonMapSceneElements:_removeElement(id)
 	if elementComp then
 		local config = elementComp:getConfig()
 
-		if config.type == DungeonEnum.ElementType.V3a2Note then
+		if config.type == DungeonEnum.ElementType.V3a2Note and self._noteGo.activeInHierarchy then
 			local elementTrans = elementComp:getTransform()
 			local camera = CameraMgr.instance:getMainCamera()
 			local worldPos = elementTrans.position

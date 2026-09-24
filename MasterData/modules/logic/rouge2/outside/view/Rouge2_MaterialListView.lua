@@ -111,18 +111,6 @@ function Rouge2_MaterialListView:_editableInitView()
 	self._dropHeroText = gohelper.findChildTextMesh(self.viewGO, "Left/filter/#go_layout/selected/Label")
 end
 
-function Rouge2_MaterialListView:_checkDropArrow()
-	local childCount = self._goSelectLayout.transform.childCount
-
-	if childCount ~= self._dropDownChildCount then
-		self._dropDownChildCount = childCount
-
-		local isOpen = self._dropgroupchildcount ~= childCount
-
-		transformhelper.setLocalScale(self._dropherogrouparrow, 1, isOpen and -1 or 1, 1)
-	end
-end
-
 function Rouge2_MaterialListView:_onDropValueChanged(value)
 	self._selectIndex = value + 1
 

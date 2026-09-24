@@ -14,7 +14,7 @@ function StoryGMView:_btnLogClick()
 	local curStoryId = StoryController.instance._curStoryId
 	local curStepId = StoryController.instance._curStepId
 
-	logError(string.format("curStoryId : %s  curStepId : %s", curStoryId, curStepId))
+	logNormal(string.format("curStoryId : %s  curStepId : %s", curStoryId, curStepId))
 end
 
 function StoryGMView:destroy()

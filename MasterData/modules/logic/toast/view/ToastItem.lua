@@ -7,8 +7,9 @@ local OutSidePos = 10000
 local csTweenHelper = ZProj.TweenHelper
 
 ToastItem.ToastType = {
-	Achievement = 2,
+	PartyGameLobby = 4,
 	Season166 = 3,
+	Achievement = 2,
 	Normal = 1
 }
 
@@ -37,27 +38,31 @@ function ToastItem:setMsg(msg)
 	self._toastId = msg.co and msg.co.id
 	self.msg = msg
 	self.canvasGroup.alpha = 1
-	self._txt.text = self:getTip()
 
-	self:setToastType(ToastItem.ToastType.Normal)
+	if self.msg.type == ToastItem.ToastType.Normal then
+		self._txt.text = self:getTip()
 
-	if not msg.co.icon or msg.co.icon == 0 or not string.nilorempty(msg.sicon) then
-		gohelper.setActive(self._icon.gameObject, false)
-	else
-		gohelper.setActive(self._icon.gameObject, true)
-		UISpriteSetMgr.instance:setToastSprite(self._icon, tostring(msg.co.icon), false)
-	end
+		local hasSicon = not string.nilorempty(msg.sicon)
 
-	if string.nilorempty(msg.sicon) then
-		gohelper.setActive(self._sicon.gameObject, false)
-	else
-		gohelper.setActive(self._sicon.gameObject, true)
-		self._sicon:LoadImage(msg.sicon)
+		if msg.co.icon then
+			local hasIcon = msg.co.icon ~= 0
+
+			if hasSicon then
+				self._sicon:LoadImage(msg.sicon)
+			elseif hasIcon then
+				UISpriteSetMgr.instance:setToastSprite(self._icon, tostring(msg.co.icon))
+			end
+
+			gohelper.setActive(self._icon, not hasSicon and hasIcon)
+			gohelper.setActive(self._sicon, hasSicon)
+		end
 	end
 
 	if self.msg and self.msg.callbackGroup then
 		self.msg.callbackGroup:tryOnOpen(self)
 	end
+
+	self:setToastType(self.msg.type)
 end
 
 function ToastItem:_delay()
@@ -75,7 +80,7 @@ function ToastItem:appearAnimation()
 	self.startTweenId = csTweenHelper.DOAnchorPosX(self.tr, 0, self._duration, function()
 		self.startTweenId = nil
 
-		local showTime = ToastController.instance:getShowTime(self._toastId) - self._animDuration
+		local showTime = self.msg.showTime - self._animDuration
 
 		TaskDispatcher.runDelay(self._delay, self, showTime)
 	end)
@@ -99,7 +104,7 @@ function ToastItem:quitAnimation(quitAnimationDoneCallback, callbackObj)
 end
 
 function ToastItem:quitAnimationFrame(value)
-	local upPositionY = (1 - value) * ((not ToastParamEnum.ToastHeight[self._toastId] or nil) and self.height)
+	local upPositionY = (1 - value) * self:getHeight()
 
 	recthelper.setAnchorY(self.tr, self.startAnchorPositionY + upPositionY)
 
@@ -133,20 +138,10 @@ function ToastItem:clearAllTask()
 	self.callbackObj = nil
 end
 
-function ToastItem:setToastType(toastType)
-	if toastType == ToastItem.ToastType.Normal then
-		gohelper.setActive(self._gonormal, true)
-		gohelper.setActive(self._goachievement, false)
-		gohelper.setActive(self._goseason166, false)
-	elseif toastType == ToastItem.ToastType.Achievement then
-		gohelper.setActive(self._gonormal, false)
-		gohelper.setActive(self._goachievement, true)
-		gohelper.setActive(self._goseason166, false)
-	elseif toastType == ToastItem.ToastType.Season166 then
-		gohelper.setActive(self._gonormal, false)
-		gohelper.setActive(self._goachievement, false)
-		gohelper.setActive(self._goseason166, true)
-	end
+function ToastItem:setToastType(type)
+	gohelper.setActive(self._gonormal, type == ToastItem.ToastType.Normal)
+	gohelper.setActive(self._goachievement, type == ToastItem.ToastType.Achievement)
+	gohelper.setActive(self._goseason166, type == ToastItem.ToastType.Season166)
 end
 
 function ToastItem:getToastRootByType(toastType)
@@ -173,6 +168,10 @@ end
 function ToastItem:onDestroy()
 	self._sicon:UnLoadImage()
 	self:clearAllTask()
+end
+
+function ToastItem:getHeight()
+	return ToastParamEnum.ToastHeight[self._toastId] or self.height
 end
 
 return ToastItem

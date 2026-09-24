@@ -101,16 +101,16 @@ function StoreSkinPreviewRightView:_btnbuyOnClick()
 			if goodsId then
 				AudioMgr.instance:trigger(AudioEnum.UI.play_ui_payment_click)
 				ViewMgr.instance:openView(ViewName.StoreSkinGoodsView2, {
-					index = 1,
-					goodsMo = goodsMo
+					goodsMo = goodsMo,
+					index = StoreSkinGoodsView2.CostIndex.RMB
 				})
 			else
 				GameFacade.showToast(ToastEnum.CanNotBuy)
 			end
 		else
 			ViewMgr.instance:openView(ViewName.StoreSkinGoodsView2, {
-				index = 2,
-				goodsMo = goodsMo
+				goodsMo = goodsMo,
+				index = StoreSkinGoodsView2.CostIndex.Coin
 			})
 		end
 	end
@@ -140,6 +140,7 @@ function StoreSkinPreviewRightView:_refreshPrice()
 	local coinsReduction = info.coinsReduction
 	local hasDeductionItem = info.hasDeductionItem
 	local hasSpecialOfferItem = info.hasSpecialOfferItem
+	local containDeductionCount = info.containDeductionCount
 	local canRepeatBuy = StoreModel.instance:isSkinGoodsCanRepeatBuy(goodsMo)
 	local alreadyHas = goodsMo:alreadyHas() and not canRepeatBuy
 
@@ -186,7 +187,15 @@ function StoreSkinPreviewRightView:_refreshPrice()
 		self._txtPropNum.text = tostring(currencyNum)
 	end
 
-	self._costItem._txtdeduction.text = -coinsReduction
+	if containDeductionCount > 1 then
+		gohelper.setActive(self._costItem._godeductionIconGo, false)
+
+		self._costItem._txtdeduction.text = string.format(luaLang("StoreSkinGoodsView2_total_discount"), -coinsReduction)
+	else
+		self._costItem._txtdeduction.text = -coinsReduction
+
+		gohelper.setActive(self._costItem._godeductionIconGo, true)
+	end
 
 	gohelper.setActive(self._costItem._godeduction, hasDeductionItem)
 end
@@ -232,6 +241,7 @@ function StoreSkinPreviewRightView:_createPayItemUserDataTb(go, bRmbBuy)
 		tb._imageicon = gohelper.findChildImage(go, "txt_desc/simage_icon")
 		tb._godeduction = gohelper.findChild(go, "#go_deduction")
 		tb._txtdeduction = gohelper.findChildTextMesh(go, "#go_deduction/txt_materialNum")
+		tb._godeductionIconGo = gohelper.findChild(go, "#go_deduction/icon")
 	end
 
 	tb._btnpay = gohelper.findChildButtonWithAudio(go, "btn_pay")
@@ -251,6 +261,7 @@ function StoreSkinPreviewRightView:onOpen()
 	self._allSkinList = StoreClothesGoodsItemListModel.instance:getList()
 
 	self:onUpdateParam()
+	PayController.instance:registerCallback(PayEvent.PayFinished, self._onPayFinished, self)
 end
 
 function StoreSkinPreviewRightView:_refreshView()
@@ -392,6 +403,7 @@ function StoreSkinPreviewRightView:onClose()
 	self._drag:RemoveDragListener()
 	self._costItem._btnpay:RemoveClickListener()
 	self._chargeItem._btnpay:RemoveClickListener()
+	PayController.instance:unregisterCallback(PayEvent.PayFinished, self._onPayFinished, self)
 end
 
 function StoreSkinPreviewRightView:onDestroyView()
@@ -450,8 +462,25 @@ function StoreSkinPreviewRightView:_setPriceText(rmbCurPrice, rmbOriginalPrice)
 		gohelper.setActive(self._txtOriginalCharge, bActive)
 	end
 
-	_setRmbText(rmbCurPrice and string.format("%s%s", StoreModel.instance:getCostStr(rmbCurPrice)) or nil)
+	_setRmbText(rmbCurPrice)
 	_setCoinsText(rmbOriginalPrice)
+end
+
+function StoreSkinPreviewRightView:_onPayFinished()
+	local goodsMo = self:_goodsMo()
+	local goodsConfig = goodsMo.config
+	local skinId
+	local canRepeatBuy = StoreModel.instance:isSkinGoodsCanRepeatBuy(goodsMo)
+	local alreadyHas = goodsMo:alreadyHas() and not canRepeatBuy
+
+	if alreadyHas then
+		gohelper.setActive(self._btnbuy.gameObject, not alreadyHas)
+		gohelper.setActive(self._gohas, alreadyHas)
+	else
+		self._goodsPriceInfo = StoreHelper.getSkinGoodsPriceInfo(goodsConfig, (self._skinCo or nil) and self._skinCo.id)
+
+		self:_refreshPrice()
+	end
 end
 
 return StoreSkinPreviewRightView

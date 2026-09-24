@@ -25,15 +25,9 @@ function StoryBgEffsEnterSplitScreen:init(bgCo)
 	self._effLoaded = false
 end
 
-function StoryBgEffsEnterSplitScreen:start(callback, callbackObj)
-	StoryBgEffsEnterSplitScreen.super.start(self)
-
-	self._finishedCallback = callback
-	self._finishedCallbackObj = callbackObj
-
+function StoryBgEffsEnterSplitScreen:onStartEffect()
 	ViewMgr.instance:registerCallback(ViewEvent.OnOpenView, self._onOpenView, self)
 	ViewMgr.instance:registerCallback(ViewEvent.OnCloseView, self._onCloseView, self)
-	self:loadRes()
 end
 
 function StoryBgEffsEnterSplitScreen:_onOpenView(viewName)
@@ -122,9 +116,6 @@ function StoryBgEffsEnterSplitScreen:destroy()
 	PostProcessingMgr.instance:setUIPPValue("IsLocalRGBSplit", false)
 	PostProcessingMgr.instance:setUIPPValue("RgbSplitStrength", 0)
 	StoryViewMgr.instance:setStoryViewLayer(UnityLayer.UISecond)
-
-	self._finishedCallback = nil
-	self._finishedCallbackObj = nil
 end
 
 return StoryBgEffsEnterSplitScreen

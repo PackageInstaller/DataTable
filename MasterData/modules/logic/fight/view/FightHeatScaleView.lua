@@ -77,6 +77,7 @@ end
 
 function FightHeatScaleView:onOpen()
 	self:refreshValue()
+	self:updateBgEffect()
 end
 
 function FightHeatScaleView:refreshValue()
@@ -89,17 +90,56 @@ function FightHeatScaleView:refreshValue()
 	self:directUpdateValue(curValue)
 end
 
+function FightHeatScaleView:updateBgEffect()
+	local isBreak = self:checkIsBreak()
+
+	gohelper.setActive(self.goNormal, not isBreak)
+	gohelper.setActive(self.goSp, isBreak)
+
+	if isBreak == self.preIsBreak then
+		return
+	end
+
+	self.preIsBreak = isBreak
+
+	if isBreak then
+		AudioMgr.instance:trigger(self:getBreakAudio())
+	end
+end
+
+function FightHeatScaleView:checkIsBreak()
+	local maxValue = self:getMaxValue()
+	local configMaxValue = FightConfig.instance:getJGZMax()
+
+	return configMaxValue < maxValue
+end
+
+function FightHeatScaleView:getBreakAudio()
+	return 400005
+end
+
 FightHeatScaleView.StartFillMount = 0.2
 FightHeatScaleView.EndFillMount = 0.82
+FightHeatScaleView.StartFillMount_Break = 0.3
+FightHeatScaleView.EndFillMount_Break = 0.8
+
+function FightHeatScaleView:getStartAndEndFillMount()
+	if self:checkIsBreak() then
+		return FightHeatScaleView.StartFillMount_Break, FightHeatScaleView.EndFillMount_Break
+	end
+
+	return FightHeatScaleView.StartFillMount, FightHeatScaleView.EndFillMount
+end
 
 function FightHeatScaleView:getFillMount(floatValue)
-	local len = FightHeatScaleView.EndFillMount - FightHeatScaleView.StartFillMount
+	local startFillMount, endFillMount = self:getStartAndEndFillMount()
+	local len = endFillMount - startFillMount
 
 	len = len * floatValue
 
-	local fillMount = FightHeatScaleView.StartFillMount + len
+	local fillMount = startFillMount + len
 
-	return math.min(fillMount, FightHeatScaleView.EndFillMount)
+	return math.min(fillMount, endFillMount)
 end
 
 function FightHeatScaleView:directUpdateValue(value)
@@ -130,6 +170,7 @@ end
 
 function FightHeatScaleView:onMaxValueChange()
 	self:refreshValue()
+	self:updateBgEffect()
 end
 
 FightHeatScaleView.SubTweenDuration = 0.8

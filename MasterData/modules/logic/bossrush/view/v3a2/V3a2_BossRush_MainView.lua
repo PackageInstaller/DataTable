@@ -96,7 +96,13 @@ function V3a2_BossRush_MainView:onOpen()
 
 	local activityCfg = ActivityConfig.instance:getActivityCo(self.actId)
 	local achievementJumpId = activityCfg and activityCfg.achievementJumpId
+	local actModelId = V3a9_BossRushModel.instance:getActModeActId()
 
+	if not actModelId then
+		self._txtActDesc.text = activityCfg.actDesc
+	end
+
+	gohelper.setActive(self._txtActDesc.gameObject, actModelId == nil)
 	gohelper.setActive(self._gotopRight, achievementJumpId and achievementJumpId ~= 0)
 end
 

@@ -2,15 +2,17 @@
 
 module("modules.logic.autochess.main.flow.AutoChessSkillWork", package.seeall)
 
-local AutoChessSkillWork = class("AutoChessSkillWork", BaseWork)
+local AutoChessSkillWork = class("AutoChessSkillWork", AutoChessBaseWork)
 
-function AutoChessSkillWork:ctor(step)
-	self.step = step
+function AutoChessSkillWork:ctor(fromId, reasonId)
+	self.delayFuncMap = {}
+	self.fromId = tonumber(fromId)
+	self.reasonId = tonumber(reasonId)
 end
 
-function AutoChessSkillWork:onStart(context)
+function AutoChessSkillWork:onStart()
 	local mgr = AutoChessEntityMgr.instance
-	local skillEntity = mgr:tryGetEntity(self.step.fromId)
+	local skillEntity = mgr:tryGetEntity(self.fromId)
 
 	if not skillEntity then
 		self:finishWork()
@@ -18,11 +20,9 @@ function AutoChessSkillWork:onStart(context)
 		return
 	end
 
-	local skillCo
 	local animTime = 0
 	local effectTime = 0
-
-	skillCo = skillEntity.warZone and lua_auto_chess_skill.configDict[tonumber(self.step.reasonId)] or lua_auto_chess_master_skill.configDict[tonumber(self.step.reasonId)]
+	local skillCo = AutoChessConfig.instance:getLeaderSkillCfg(self.reasonId)
 
 	if skillCo then
 		if not string.nilorempty(skillCo.skillaction) then
@@ -36,35 +36,13 @@ function AutoChessSkillWork:onStart(context)
 
 	local delayTime = math.max(animTime, effectTime)
 
-	if delayTime == 0 then
-		self:finishWork()
-	else
-		TaskDispatcher.runDelay(self.finishWork, self, delayTime)
-	end
+	self:delayCall(self.finishWork, delayTime)
 end
 
-function AutoChessSkillWork:onResume()
-	self:finishWork()
-end
+function AutoChessSkillWork:onDestroy()
+	self:clearTask()
 
-function AutoChessSkillWork:clearWork()
-	if self.hasClear then
-		return
-	end
-
-	self.hasClear = true
-
-	TaskDispatcher.cancelTask(self.finishWork, self)
-
-	self.step = nil
-end
-
-function AutoChessSkillWork:finishWork()
-	self:onDone(true)
-end
-
-function AutoChessSkillWork:onReset()
-	return
+	self.delayFuncMap = nil
 end
 
 return AutoChessSkillWork

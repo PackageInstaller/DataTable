@@ -82,12 +82,10 @@ function StoryEffectItem:_onNormalEffectLoaded()
 
 	self._fadeHelper:init(self._effectGo)
 
-	if self._effectCo.layer < 4 then
+	if self._effectCo.layer < 10 then
 		local layer = self.viewGO.layer
 
 		gohelper.setLayer(self._effectGo, layer, true)
-	elseif self._effectCo.layer < 10 then
-		gohelper.setLayer(self._effectGo, UnityLayer.UISecond, true)
 	elseif self._effectCo.layer == 12 or self._effectCo.layer == 11 then
 		gohelper.setLayer(self._effectGo, UnityLayer.UI, true)
 	elseif self._effectCo.layer == 14 or self._effectCo.layer == 13 then
@@ -196,14 +194,14 @@ end
 function StoryEffectItem:_playFollowBg()
 	self._bgFrontGo = StoryViewMgr.instance:getStoryFrontBgImgGo()
 
-	local frontTransX, frontTransY = transformhelper.getLocalPos(self._bgFrontGo.transform)
+	local frontTransX, frontTransY = transformhelper.getPos(self._bgFrontGo.transform)
 
 	self._initFrontPos = {
 		frontTransX,
 		frontTransY
 	}
 
-	local picTransX, picTransY = transformhelper.getLocalPos(self._uieffectTransform)
+	local picTransX, picTransY = transformhelper.getPos(self._uieffectTransform)
 
 	self._deltaPos = {
 		picTransX,
@@ -216,11 +214,11 @@ end
 function StoryEffectItem:_followBg()
 	local bgGo = StoryViewMgr.instance:getStoryFrontBgGo()
 	local scaleX, scaleY = transformhelper.getLocalScale(bgGo.transform)
-	local frontTransX, frontTransY = transformhelper.getLocalPos(self._bgFrontGo.transform)
-	local posX = scaleX * (self._deltaPos[1] + frontTransX - self._initFrontPos[1])
-	local posY = scaleY * (self._deltaPos[2] + frontTransY - self._initFrontPos[2])
+	local frontTransX, frontTransY = transformhelper.getPos(self._bgFrontGo.transform)
+	local posX = self._deltaPos[1] + frontTransX - self._initFrontPos[1]
+	local posY = self._deltaPos[2] + frontTransY - self._initFrontPos[2]
 
-	transformhelper.setLocalPosXY(self._uieffectTransform, posX, posY)
+	transformhelper.setPos(self._uieffectTransform, posX, posY, 0)
 	transformhelper.setLocalScale(self._uieffectTransform, scaleY, scaleY, 1)
 end
 

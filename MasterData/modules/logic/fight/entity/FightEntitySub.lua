@@ -21,6 +21,7 @@ function FightEntitySub:initComponents()
 	self.moveComp = self:addEntityComponent(FightEntityMoveComp)
 	self.entityVisible = self:addEntityComponent(FightEntityVisibleComp)
 	self.variantCrayon = self:addEntityComponent(FightVariantCrayonComp)
+	self.skinSpineAction = self:addEntityComponent(FightSkinSpineAction)
 end
 
 function FightEntitySub:setRenderOrder(order)

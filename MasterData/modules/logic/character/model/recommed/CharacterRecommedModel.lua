@@ -9,23 +9,63 @@ function CharacterRecommedModel:onInit()
 end
 
 function CharacterRecommedModel:reInit()
-	return
+	self._allTeamMoMap = {}
 end
 
-function CharacterRecommedModel:initMO(configDict)
+function CharacterRecommedModel:initMO()
 	self._heroRecommendMos = {}
 
-	if not configDict then
-		return
-	end
-
-	for heroId, config in pairs(configDict) do
+	for heroId, config in pairs(lua_character_recommend.configDict) do
 		local heroRecommendMO = CharacterRecommedMO.New()
 
 		heroRecommendMO:init(config)
 
 		self._heroRecommendMos[heroId] = heroRecommendMO
 	end
+end
+
+function CharacterRecommedModel:swapTeamHero(teamId, teamIndex1, teamIndex2, posIndex)
+	local groupMo = self:getTeamGroupMo(teamId)
+
+	groupMo:swapTeamHero(teamIndex1, teamIndex2, posIndex, true)
+end
+
+function CharacterRecommedModel:getTeamGroupMo(teamId)
+	local groupMo = self._allTeamMoMap[teamId]
+
+	if not groupMo then
+		groupMo = CharacterRecommedTeamGroupMO.New()
+
+		groupMo:init(teamId)
+		groupMo:checkMainTeam()
+
+		self._allTeamMoMap[teamId] = groupMo
+	end
+
+	return groupMo
+end
+
+function CharacterRecommedModel:checkHeroMainTeam(heroId)
+	local heroRecommendMO = self:getHeroRecommendMo(heroId)
+
+	if not heroRecommendMO or not heroRecommendMO.teamRec then
+		return
+	end
+
+	for _, teamCo in ipairs(heroRecommendMO.teamRec) do
+		local teamId = teamCo.id
+		local groupMo = self:getTeamGroupMo(teamId)
+
+		if groupMo then
+			groupMo:checkMainTeam()
+		end
+	end
+end
+
+function CharacterRecommedModel:getTeamMo(teamId, teamIndex)
+	local groupMo = self:getTeamGroupMo(teamId)
+
+	return groupMo and groupMo:getTeamMo(teamIndex)
 end
 
 function CharacterRecommedModel:getAllHeroRecommendMos()

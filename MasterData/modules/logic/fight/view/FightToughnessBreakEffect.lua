@@ -7,8 +7,6 @@ local FightToughnessBreakEffect = class("FightToughnessBreakEffect", FightBaseCl
 function FightToughnessBreakEffect:onConstructor(viewGO)
 	self.viewGO = viewGO
 	self.root = gohelper.create2d(viewGO, "FightToughnessBreakEffect")
-
-	self:com_registMsg(FightMsgId.ToughnessBreakEffect, self.onToughnessBreakEffect)
 end
 
 function FightToughnessBreakEffect:onToughnessBreakEffect()

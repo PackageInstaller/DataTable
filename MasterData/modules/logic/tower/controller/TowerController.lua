@@ -555,6 +555,7 @@ end
 function TowerController:endFightEnterTowerDeepHeroGroup(episodeCO)
 	local battleId = DungeonConfig.instance:getEpisodeBattleId(episodeCO.id)
 
+	TowerPermanentDeepModel.instance:clearAssist(true)
 	HeroGroupModel.instance:setParam(battleId, episodeCO.id)
 
 	local preSceneType = GameSceneMgr.instance:getPreSceneType()

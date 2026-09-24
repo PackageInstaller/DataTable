@@ -388,6 +388,16 @@ function JumpController.activateCanJumpFuncController()
 	return
 end
 
+function JumpController:canJumpToCandyRoom(jumpParam)
+	local status, toastId, toastParamList = ActivityHelper.getActivityStatusAndToast(VersionActivity4_0Enum.ActivityId.ConcertCandyRoom)
+
+	if status ~= ActivityEnum.ActivityStatus.Normal then
+		return false, toastId, toastParamList
+	end
+
+	return self:defaultCanJump(jumpParam)
+end
+
 function JumpController:canJumpToBossRush(jumpParam)
 	local jumpData = string.splitToNumber(jumpParam, "#")
 	local stage = jumpData[2]
@@ -420,7 +430,7 @@ function JumpController:canJumpToV3a9BossRush(jumpParam)
 
 	if not jumpData[2] then
 		local tabIndex = 1
-		local actId = Bossrush.instance:getActivityId(tabIndex)
+		local actId = BossRushModel.instance:getActivityId(tabIndex)
 
 		if not ActivityHelper.isOpen(actId) then
 			return false, ToastEnum.V1a4_BossRushBossLockTip
@@ -561,10 +571,12 @@ function JumpController:canJumpToVersionEnterView(jumpParam)
 			return false, ToastEnum.ActivityNotOpen, JumpController.DefaultToastParam
 		end
 	else
-		local enum = VersionActivityFixedHelper.getVersionActivityEnum()
+		for i = #ActivityEnum.VersionActivityIdList, 1, -1 do
+			actId = ActivityEnum.VersionActivityIdList[i]
+		end
 
-		if enum and enum.ActivityId.EnterView then
-			local actMO = ActivityModel.instance:getActMO(enum.ActivityId.EnterView)
+		if actId then
+			local actMO = ActivityModel.instance:getActMO(actId)
 
 			if actMO and actMO:isOpen() then
 				return self:defaultCanJump(jumpParam)
@@ -875,6 +887,26 @@ function JumpController:canJumpToUdimoView(jumpParam)
 end
 
 function JumpController:canJumpToMainSwitchView(jumpParam)
+	local jumpArray = string.splitToNumber(jumpParam, "#")
+
+	if jumpArray[2] == MainEnum.SwitchType.Character then
+		local heroId = jumpArray[3]
+		local skinId = jumpArray[4]
+
+		if heroId then
+			local heroMO = HeroModel.instance:getByHeroId(heroId)
+			local hasPastSkin = CharacterPastModel.instance:getHeroPastSkins(heroId)
+
+			if not heroMO and not hasPastSkin then
+				return false, ToastEnum.HeroLock
+			end
+
+			if skinId and not CharacterPastModel.instance:isHasPastSkin(heroId, skinId) then
+				return false, ToastEnum.HeroLock
+			end
+		end
+	end
+
 	return self:defaultCanJump(jumpParam)
 end
 
@@ -926,7 +958,8 @@ JumpController.JumpViewToCanJumpFunc = {
 	[JumpEnum.JumpView.TeachingMain] = JumpController.canJumpToTeachingMainiew,
 	[JumpEnum.JumpView.Udimo] = JumpController.canJumpToUdimoView,
 	[JumpEnum.JumpView.MainSwitchView] = JumpController.canJumpToMainSwitchView,
-	[JumpEnum.JumpView.V3a9BossRush] = JumpController.canJumpToBossRush
+	[JumpEnum.JumpView.V3a9BossRush] = JumpController.canJumpToBossRush,
+	[JumpEnum.JumpView.V4a0CandyRoom] = JumpController.canJumpToCandyRoom
 }
 JumpController.CanJumpActFunc = {
 	[JumpEnum.ActIdEnum.Act113] = JumpController.canJump2Activity1_1Dungeon,

@@ -4,10 +4,9 @@ module("modules.configs.excel2json.lua_activity220_sub_type", package.seeall)
 
 local lua_activity220_sub_type = {}
 local fields = {
-	jumpId = 4,
+	reddotId = 3,
 	subType = 2,
-	activityId = 1,
-	reddotId = 3
+	activityId = 1
 }
 local primaryKey = {
 	"activityId"

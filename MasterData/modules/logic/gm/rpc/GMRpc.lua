@@ -79,6 +79,8 @@ function GMRpc:onReceiveServerErrorInfoPush(resultCode, msg)
 
 	if msg.isAlert then
 		MessageBoxController.instance:showMsgBoxByStr("服务器报错了: " .. msg.msg, MsgBoxEnum.BoxType.Yes)
+	elseif msg.msg:find("RequestException") then
+		logError("参数错误的堆栈：\n" .. msg.msg)
 	else
 		ToastController.instance:showToastWithString("服务器报错了，看一下Console！")
 		logError("服务器报错了: " .. msg.msg)

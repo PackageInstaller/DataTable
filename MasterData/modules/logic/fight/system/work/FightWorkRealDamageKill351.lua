@@ -38,7 +38,7 @@ function FightWorkRealDamageKill351:onStart()
 		return self:onDone(true)
 	end
 
-	TaskDispatcher.runDelay(self.finishWork, self, waitTime)
+	self:com_registTimer(self.finishWork, waitTime)
 end
 
 function FightWorkRealDamageKill351:getKillCo()
@@ -55,7 +55,7 @@ function FightWorkRealDamageKill351:getKillCo()
 end
 
 function FightWorkRealDamageKill351:clearWork()
-	TaskDispatcher.cancelTask(self.finishWork, self)
+	return
 end
 
 return FightWorkRealDamageKill351

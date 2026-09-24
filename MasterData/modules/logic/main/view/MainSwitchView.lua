@@ -99,7 +99,7 @@ function MainSwitchView:_onSceneSwitchUIVisible(visible)
 end
 
 function MainSwitchView:_itemClick(id)
-	self.viewContainer:playCloseAnim(id)
+	self.viewContainer:playCloseAnim(id, 2)
 
 	for k, v in pairs(self._itemList) do
 		v:refreshStatus()

@@ -55,7 +55,7 @@ function AutoChessCourseView:onOpen()
 		end)
 
 		for _, data in ipairs(chessArr) do
-			local config = AutoChessConfig.instance:getChessCfg(data[1])
+			local config = AutoChessConfig.instance:getChessCfgAnyway(data[1])
 
 			if config then
 				local go = gohelper.cloneInPlace(self._goChessItem)

@@ -4,6 +4,13 @@ module("modules.logic.character.view.recommed.CharacterRecommedChangeHeroItem", 
 
 local CharacterRecommedChangeHeroItem = class("CharacterRecommedChangeHeroItem", CharacterRecommedHeroIcon)
 
+function CharacterRecommedChangeHeroItem:onUpdateMO(mo)
+	CharacterRecommedChangeHeroItem.super.onUpdateMO(self, mo)
+	self:showLevel(true)
+	self:showRank(true)
+	self:showExSkill(true)
+end
+
 function CharacterRecommedChangeHeroItem:_btnclickOnClick()
 	AudioMgr.instance:trigger(AudioEnum.UI.UI_Common_Click)
 

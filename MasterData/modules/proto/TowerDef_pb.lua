@@ -31,6 +31,7 @@ TowerDef_pb.HERONO_MSG = protobuf.Descriptor()
 TowerDef_pb.HERONOHEROIDFIELD = protobuf.FieldDescriptor()
 TowerDef_pb.HERONOEQUIPUIDFIELD = protobuf.FieldDescriptor()
 TowerDef_pb.HERONOTRIALIDFIELD = protobuf.FieldDescriptor()
+TowerDef_pb.HERONOSKINIDFIELD = protobuf.FieldDescriptor()
 TowerDef_pb.TOWERNO_MSG = protobuf.Descriptor()
 TowerDef_pb.TOWERNOTYPEFIELD = protobuf.FieldDescriptor()
 TowerDef_pb.TOWERNOTOWERIDFIELD = protobuf.FieldDescriptor()
@@ -270,6 +271,15 @@ TowerDef_pb.HERONOTRIALIDFIELD.has_default_value = false
 TowerDef_pb.HERONOTRIALIDFIELD.default_value = 0
 TowerDef_pb.HERONOTRIALIDFIELD.type = 5
 TowerDef_pb.HERONOTRIALIDFIELD.cpp_type = 1
+TowerDef_pb.HERONOSKINIDFIELD.name = "skinId"
+TowerDef_pb.HERONOSKINIDFIELD.full_name = ".HeroNO.skinId"
+TowerDef_pb.HERONOSKINIDFIELD.number = 4
+TowerDef_pb.HERONOSKINIDFIELD.index = 3
+TowerDef_pb.HERONOSKINIDFIELD.label = 1
+TowerDef_pb.HERONOSKINIDFIELD.has_default_value = false
+TowerDef_pb.HERONOSKINIDFIELD.default_value = 0
+TowerDef_pb.HERONOSKINIDFIELD.type = 5
+TowerDef_pb.HERONOSKINIDFIELD.cpp_type = 1
 TowerDef_pb.HERONO_MSG.name = "HeroNO"
 TowerDef_pb.HERONO_MSG.full_name = ".HeroNO"
 TowerDef_pb.HERONO_MSG.nested_types = {}
@@ -277,7 +287,8 @@ TowerDef_pb.HERONO_MSG.enum_types = {}
 TowerDef_pb.HERONO_MSG.fields = {
 	TowerDef_pb.HERONOHEROIDFIELD,
 	TowerDef_pb.HERONOEQUIPUIDFIELD,
-	TowerDef_pb.HERONOTRIALIDFIELD
+	TowerDef_pb.HERONOTRIALIDFIELD,
+	TowerDef_pb.HERONOSKINIDFIELD
 }
 TowerDef_pb.HERONO_MSG.is_extendable = false
 TowerDef_pb.HERONO_MSG.extensions = {}

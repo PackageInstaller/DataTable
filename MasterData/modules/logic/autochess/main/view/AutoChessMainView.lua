@@ -14,7 +14,8 @@ function AutoChessMainView:onInitView()
 	self._goRoundP = gohelper.findChild(self.viewGO, "#btn_PVP/#go_RoundP")
 	self._txtRoundP = gohelper.findChildText(self.viewGO, "#btn_PVP/#go_RoundP/#txt_RoundP")
 	self._btnGiveUpP = gohelper.findChildButtonWithAudio(self.viewGO, "#btn_PVP/#btn_GiveUpP")
-	self._btnMyCardpack = gohelper.findChildButtonWithAudio(self.viewGO, "#btn_MyCardpack")
+	self._btnTask = gohelper.findChildButtonWithAudio(self.viewGO, "#btn_Task")
+	self._btnHandBook = gohelper.findChildButtonWithAudio(self.viewGO, "#btn_HandBook")
 	self._goBadgeContent = gohelper.findChild(self.viewGO, "#go_BadgeContent")
 	self._btnAchievement = gohelper.findChildButtonWithAudio(self.viewGO, "#btn_Achievement")
 	self._btnCourse = gohelper.findChildButtonWithAudio(self.viewGO, "#btn_Course")
@@ -32,7 +33,8 @@ function AutoChessMainView:addEvents()
 	self._btnCultivate:AddClickListener(self._btnCultivateOnClick, self)
 	self._btnPVP:AddClickListener(self._btnPVPOnClick, self)
 	self._btnGiveUpP:AddClickListener(self._btnGiveUpPOnClick, self)
-	self._btnMyCardpack:AddClickListener(self._btnMyCardpackOnClick, self)
+	self._btnTask:AddClickListener(self._btnTaskOnClick, self)
+	self._btnHandBook:AddClickListener(self._btnHandBookOnClick, self)
 	self._btnAchievement:AddClickListener(self._btnAchievementOnClick, self)
 	self._btnCourse:AddClickListener(self._btnCourseOnClick, self)
 end
@@ -42,19 +44,29 @@ function AutoChessMainView:removeEvents()
 	self._btnCultivate:RemoveClickListener()
 	self._btnPVP:RemoveClickListener()
 	self._btnGiveUpP:RemoveClickListener()
-	self._btnMyCardpack:RemoveClickListener()
+	self._btnTask:RemoveClickListener()
+	self._btnHandBook:RemoveClickListener()
 	self._btnAchievement:RemoveClickListener()
 	self._btnCourse:RemoveClickListener()
 end
 
+function AutoChessMainView:_btnTaskOnClick()
+	AutoChessController.instance:statButtonClick(self.viewName, "_btnTaskOnClick")
+	ViewMgr.instance:openView(ViewName.AutoChessTaskView)
+end
+
 function AutoChessMainView:_btnCultivateOnClick()
-	AutoChessController.instance:statButtonClick(self.viewName, "_btnCultivateOnClick")
-	ViewMgr.instance:openView(ViewName.AutoChessCultivateView)
+	return
 end
 
 function AutoChessMainView:_btnMyCardpackOnClick()
 	AutoChessController.instance:statButtonClick(self.viewName, "_btnMyCardpackOnClick")
 	ViewMgr.instance:openView(ViewName.AutoChessCardpackView, AutoChessCardpackView.OpenType.Own)
+end
+
+function AutoChessMainView:_btnHandBookOnClick()
+	AutoChessController.instance:statButtonClick(self.viewName, "_btnHandBookOnClick")
+	AutoChessController.instance:openHandbookView()
 end
 
 function AutoChessMainView:_btnFriendOnClick()
@@ -71,7 +83,7 @@ end
 
 function AutoChessMainView:_btnGiveUpPOnClick()
 	local moduleId = AutoChessEnum.ModuleId.PVP
-	local rankCfg = lua_auto_chess_rank.configDict[self.actId][self.actMo.rank]
+	local rankCfg = AutoChessConfig.instance:getRankCfg(self.actMo.rank)
 	local roundScores = string.splitToNumber(rankCfg.round2Score, "|")
 	local gameMo = self.actMo:getGameMo(self.actId, moduleId)
 
@@ -81,7 +93,7 @@ function AutoChessMainView:_btnGiveUpPOnClick()
 			local scoreChange = roundScores[curRound]
 
 			if scoreChange < 0 and rankCfg.protection then
-				local laseCfg = lua_auto_chess_rank.configDict[self.actId][self.actMo.rank - 1]
+				local laseCfg = AutoChessConfig.instance:getRankCfg(self.actMo.rank - 1)
 
 				if laseCfg then
 					if not laseCfg.score then
@@ -103,7 +115,7 @@ function AutoChessMainView:_btnGiveUpPOnClick()
 				if scoreChange < 0 then
 					scoreStr = string.format("<color=#9f342c>%s</color>", scoreChange)
 				else
-					local limitRank = tonumber(lua_auto_chess_const.configDict[AutoChessEnum.ConstKey.DoubleScoreRank].value)
+					local limitRank = AutoChessConfig.instance:getConstValue(AutoChessEnum.ConstKey.DoubleScoreRank, true)
 
 					if limitRank >= self.actMo.rank and self.actMo.doubleScoreTimes > 0 then
 						scoreChange = scoreChange * 2
@@ -156,14 +168,9 @@ function AutoChessMainView:_editableInitView()
 	self.actMo = Activity182Model.instance:getActMo()
 	self.pvpEpisodeCo = AutoChessConfig.instance:getPvpEpisodeCo(self.actId)
 
-	local goReddot = gohelper.findChild(self._btnCultivate.gameObject, "go_reddot")
+	local goReddot = gohelper.findChild(self._btnTask.gameObject, "go_reddot")
 
-	self.cultivateReddot = RedDotController.instance:addNotEventRedDot(goReddot, self._checkCultivateReddot, self)
-
-	local go = self:getResInst(AutoChessStrEnum.ResPath.WarningItem, self._goWarningContent)
-	local warningItem = MonoHelper.addNoUpdateLuaComOnceToGo(go, AutoChessWarningItem)
-
-	warningItem:refresh(true)
+	RedDotController.instance:addRedDot(goReddot, RedDotEnum.DotNode.V2a5_AutoChess)
 end
 
 function AutoChessMainView:onRefreshBossReply()
@@ -195,11 +202,9 @@ function AutoChessMainView:onSettlPush()
 end
 
 function AutoChessMainView:onOpen()
+	self.addEventCb(self, Activity182Controller.instance, Activity182Event.RandomMasterReply, self.onRandomMasterReply, self)
 	self.addEventCb(self, Activity182Controller.instance, Activity182Event.UpdateInfo, self.refreshUI, self)
-	self.addEventCb(self, Activity182Controller.instance, Activity182Event.RefreshBossReply, self.onRefreshBossReply, self)
 	self.addEventCb(self, AutoChessController.instance, AutoChessEvent.SettlePush, self.onSettlPush, self)
-	self.addEventCb(self, AutoChessController.instance, AutoChessEvent.updateCultivateReddot, self.onUpdateCultivateReddot, self)
-	self.addEventCb(self, RedDotController.instance, RedDotEvent.UpdateRelateDotInfo, self.onUpdateReddot, self)
 	self:refreshUI()
 end
 
@@ -247,19 +252,25 @@ function AutoChessMainView:refreshLeftTime()
 end
 
 function AutoChessMainView:refreshDoubleRankTip()
-	local limitRank = tonumber(lua_auto_chess_const.configDict[AutoChessEnum.ConstKey.DoubleScoreRank].value)
-	local rankName = lua_auto_chess_rank.configDict[self.actId][limitRank].name
-	local doubleCnt = tonumber(lua_auto_chess_const.configDict[AutoChessEnum.ConstKey.DoubleScoreCnt].value)
+	local limitRank = AutoChessConfig.instance:getConstValue(AutoChessEnum.ConstKey.DoubleScoreRank, true)
+	local rankCfg = AutoChessConfig.instance:getRankCfg(limitRank)
 
-	if limitRank >= self.actMo.rank then
-		local txt = luaLang("autochess_mainview_tips1")
-		local allCnt = string.format("（%d/%d）", self.actMo.doubleScoreTimes, doubleCnt)
+	if rankCfg then
+		if not rankCfg.name then
+			local rankName = ""
+			local doubleCnt = AutoChessConfig.instance:getConstValue(AutoChessEnum.ConstKey.DoubleScoreCnt, true)
 
-		self._txtTip.text = GameUtil.getSubPlaceholderLuaLangThreeParam(txt, rankName, doubleCnt, allCnt)
+			if limitRank >= self.actMo.rank then
+				local txt = luaLang("autochess_mainview_tips1")
+				local allCnt = string.format("（%d/%d）", self.actMo.doubleScoreTimes, doubleCnt)
 
-		gohelper.setActive(self._goTip, true)
-	else
-		gohelper.setActive(self._goTip, false)
+				self._txtTip.text = GameUtil.getSubPlaceholderLuaLangThreeParam(txt, rankName, doubleCnt, allCnt)
+
+				gohelper.setActive(self._goTip, true)
+			else
+				gohelper.setActive(self._goTip, false)
+			end
+		end
 	end
 end
 
@@ -322,6 +333,11 @@ function AutoChessMainView:_checkCultivateReddot()
 			return true
 		end
 	end
+end
+
+function AutoChessMainView:onRandomMasterReply()
+	self:refreshBtnStatus()
+	ViewMgr.instance:openView(ViewName.AutoChessLeaderSelectView)
 end
 
 return AutoChessMainView

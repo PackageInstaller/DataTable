@@ -4,7 +4,10 @@ module("modules.logic.fight.model.data.FightEntityExData", package.seeall)
 
 local FightEntityExData = FightDataClass("FightEntityExData")
 
-function FightEntityExData:onConstructor()
+function FightEntityExData:onConstructor(entityId)
+	self.entityId = entityId
+	self.entityMo = FightDataHelper.entityMgr:getById(entityId)
+	self.modelId = self.entityMo and self.entityMo.modelId
 	self.customDefaultEntityInitData = nil
 	self.aiUseCardList = {}
 	self.scaleOffsetDic = {}
@@ -15,6 +18,7 @@ function FightEntityExData:onConstructor()
 	self.useScaleReplaceSpineScale = false
 	self.skin = nil
 	self.timelineTempEntitySign = {}
+	self.needDispatchPositionChangeEvent = self.modelId and FightEnum.NeedDispatchPosChangeEventHeroIdDict[self.modelId]
 end
 
 function FightEntityExData:getCustomDefaultEntityInitData()

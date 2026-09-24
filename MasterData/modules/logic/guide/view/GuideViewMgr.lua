@@ -5,6 +5,9 @@ module("modules.logic.guide.view.GuideViewMgr", package.seeall)
 local GuideViewMgr = class("GuideViewMgr")
 
 function GuideViewMgr:open(guideId, stepId)
+	local oldGuideId = self.guideId
+	local oldStepId = self.stepId
+
 	self.guideId = guideId
 	self.stepId = stepId
 	self.viewParam = GuideViewParam.New()
@@ -16,13 +19,31 @@ function GuideViewMgr:open(guideId, stepId)
 	else
 		ViewMgr.instance:openView(ViewName.GuideView, self.viewParam, true)
 	end
+
+	if oldGuideId and oldGuideId ~= guideId then
+		logWarn(string.format("GuideViewMgr:open replace guide oldGuideId=%s, oldStepId=%s guideId=%s, stepId=%s", oldGuideId, oldStepId, guideId, stepId))
+		GuideController.instance:dispatchEvent(GuideEvent.InterruptGuide, oldGuideId)
+	end
 end
 
-function GuideViewMgr:close()
+function GuideViewMgr:close(guideId, stepId)
 	self.viewParam = nil
 
 	ViewMgr.instance:closeView(ViewName.GuideView, true)
 	ViewMgr.instance:closeView(ViewName.GuideView2, true)
+
+	if guideId and stepId then
+		local oldGuideId = self.guideId
+		local oldStepId = self.stepId
+
+		if oldGuideId and oldGuideId ~= guideId then
+			logWarn(string.format("GuideViewMgr:close replace guide oldGuideId=%s, oldStepId=%s guideId=%s, stepId=%s", oldGuideId, oldStepId, guideId, stepId))
+			GuideController.instance:dispatchEvent(GuideEvent.InterruptGuide, oldGuideId)
+		end
+	end
+
+	self.guideId = nil
+	self.stepId = nil
 end
 
 function GuideViewMgr:enableHoleClick()

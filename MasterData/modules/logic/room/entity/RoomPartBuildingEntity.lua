@@ -2,7 +2,7 @@
 
 module("modules.logic.room.entity.RoomPartBuildingEntity", package.seeall)
 
-local RoomPartBuildingEntity = class("RoomPartBuildingEntity", RoomBaseEntity)
+local RoomPartBuildingEntity = class("RoomPartBuildingEntity", RoomBasicBuildingEntityBase)
 
 function RoomPartBuildingEntity:ctor(entityId)
 	RoomPartBuildingEntity.super.ctor(self)
@@ -84,6 +84,7 @@ function RoomPartBuildingEntity:_levelUp()
 end
 
 function RoomPartBuildingEntity:onEffectRebuild()
+	RoomPartBuildingEntity.super.onEffectRebuild(self)
 	self:_refreshWorkingEffect()
 	self:_refreshAudio()
 end

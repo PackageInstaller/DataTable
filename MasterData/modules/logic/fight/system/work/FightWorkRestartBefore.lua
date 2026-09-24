@@ -33,6 +33,7 @@ function FightWorkRestartBefore:_onWorkFinish()
 		self._loadTime = Time.time
 	else
 		self:_correctRootState()
+		FightController.instance:dispatchEvent(FightEvent.OnSceneLevelLoaded, FightGameMgr.sceneLevelMgr:getCurLevelId())
 		self:onDone(true)
 	end
 end

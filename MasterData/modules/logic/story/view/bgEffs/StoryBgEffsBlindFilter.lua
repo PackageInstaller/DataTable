@@ -19,17 +19,18 @@ function StoryBgEffsBlindFilter:init(bgCo)
 end
 
 function StoryBgEffsBlindFilter:start(callback, callbackObj)
-	StoryBgEffsBlindFilter.super.start(self)
+	if self._bgCo.effDegree == 0 then
+		return
+	end
 
-	self._finishedCallback = callback
-	self._finishedCallbackObj = callbackObj
+	StoryBgEffsBlindFilter.super.start(self, callback, callbackObj)
+end
 
+function StoryBgEffsBlindFilter:onStartEffect()
 	ViewMgr.instance:registerCallback(ViewEvent.OnOpenView, self._onOpenView, self)
 	ViewMgr.instance:registerCallback(ViewEvent.OnCloseViewFinish, self._onCloseView, self)
 
 	self._blitEff = StoryViewMgr.instance:getStoryBlitEff()
-
-	self:loadRes()
 end
 
 function StoryBgEffsBlindFilter:onLoadFinished()

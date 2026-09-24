@@ -404,7 +404,7 @@ function UdimoMainView:refreshWeather()
 	gohelper.setActive(self._txtTips, showWeather)
 	gohelper.setActive(self._txtTemperature, showWeather)
 	gohelper.setActive(self._goweather, showWeather)
-	gohelper.setActive(self._goweathertitle, (showWeather or nil) and SettingsModel.instance:isOverseas())
+	gohelper.setActive(self._goweathertitle, true)
 end
 
 function UdimoMainView:refreshSlider(progress, pos)

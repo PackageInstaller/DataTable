@@ -47,8 +47,6 @@ function DeviceController:_onFirstEnterMain()
 			return
 		end
 	end
-
-	SDKMgr.instance:requestLocationPermission()
 end
 
 function DeviceController:onBatteryValueChange(value)

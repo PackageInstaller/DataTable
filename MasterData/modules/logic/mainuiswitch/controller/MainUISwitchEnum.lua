@@ -36,6 +36,7 @@ MainUISwitchEnum.SwitchMainUIOffsetType = {
 	}
 }
 MainUISwitchEnum.MainUIScale = 0.8
+MainUISwitchEnum.MainHeroScale = 0.8
 MainUISwitchEnum.Skin = {
 	V3a4 = 4,
 	Sp01 = 2,

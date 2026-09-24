@@ -6,7 +6,7 @@ local BPFaceFestivalViewContainer = class("BPFaceFestivalViewContainer", BaseVie
 
 function BPFaceFestivalViewContainer:buildViews()
 	return {
-		BPFaceFestivalView.New()
+		BPFaceFestivalView2.New()
 	}
 end
 

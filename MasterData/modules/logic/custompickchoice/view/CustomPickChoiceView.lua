@@ -51,7 +51,6 @@ function CustomPickChoiceView:_editableInitView()
 end
 
 function CustomPickChoiceView:onOpen()
-	logNormal("CustomPickChoiceView onOpen")
 	CustomPickChoiceController.instance:onOpenView()
 
 	if self.viewParam then

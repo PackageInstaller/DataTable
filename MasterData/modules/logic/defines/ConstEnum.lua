@@ -159,5 +159,6 @@ ConstEnum.ForceNeedKrJpActivityId = 38504
 ConstEnum.SP_StoryIdPrefix = 38507
 ConstEnum.V3a9_BDuckLinkageDesc = 39001
 ConstEnum.V3a9_BDuckLinkageTitle = 39002
+ConstEnum.V4a0_CandyRoomTipDesc = 84002
 
 return ConstEnum

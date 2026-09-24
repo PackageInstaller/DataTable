@@ -49,6 +49,7 @@ function SkillDescComp:updateInfo(txtComp, desc, heroId)
 	desc = self:addNumColor(desc)
 	desc = self:revertBracketText(desc)
 	desc = self:_revertSkillName(desc, 1)
+	self._txtComp.raycastTarget = true
 	self._hyperLinkClick = gohelper.onceAddComponent(self.viewGO, typeof(ZProj.TMPHyperLinkClick))
 
 	self._hyperLinkClick:SetClickListener(self._onHyperLinkClick, self)

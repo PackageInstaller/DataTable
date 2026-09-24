@@ -13,6 +13,7 @@ function PayModelBase:onInit()
 	self._orderInfo = {}
 	self._sandboxEnable = false
 	self._sandboxBalance = 0
+	self._payDiamond = 0
 end
 
 function PayModelBase:reInit()
@@ -20,6 +21,7 @@ function PayModelBase:reInit()
 	self._orderInfo = {}
 	self._sandboxEnable = false
 	self._sandboxBalance = 0
+	self._payDiamond = 0
 end
 
 function PayModelBase:setSandboxInfo(sandboxEnable, sandboxBalance)
@@ -171,6 +173,28 @@ end
 
 function PayModelBase:isNoDecimalsCurrency(enumCurrencyCode)
 	return PayEnum.NoDecimalsCurrency[enumCurrencyCode] ~= nil
+end
+
+function PayModelBase:onReceiveGetPayDiamondInfoReply(msg)
+	local payDiamond = msg.payDiamond
+
+	self:setPayDiamond(payDiamond)
+end
+
+function PayModelBase:setPayDiamond(payDiamond)
+	self._payDiamond = tonumber(payDiamond) or 0
+end
+
+function PayModelBase:getPayDiamond()
+	return self._payDiamond or 0
+end
+
+function PayModelBase:getTotalDiamond()
+	return CurrencyModel.instance:getDiamond()
+end
+
+function PayModelBase:getNonPaidDiamond()
+	return math.max(0, self:getTotalDiamond() - self:getPayDiamond())
 end
 
 function PayModelBase:getProductPrice(lua_store_charge_goods_id)

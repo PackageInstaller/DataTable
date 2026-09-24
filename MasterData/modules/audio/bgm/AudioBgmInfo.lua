@@ -124,8 +124,10 @@ function AudioBgmInfo:_initBgmDatas()
 	self:_addBgmData(AudioBgmEnum.Layer.VersionActivity3_0MainAmbientSound, 0, 0)
 	self:_addBgmData(AudioBgmEnum.Layer.VersionActivity3_1Main, AudioEnum3_1.PermanentBgm.EnterView, AudioEnum.Bgm.Stop_LeiMiTeBeiBgm)
 	self:_addBgmData(AudioBgmEnum.Layer.NecrologistStoryView, 0, AudioEnum.Bgm.Stop_LeiMiTeBeiBgm)
-	self:_addBgmData(AudioBgmEnum.Layer.VersionActivity3_2Main, 0, AudioEnum.Bgm.Stop_LeiMiTeBeiBgm)
+	self:_addBgmData(AudioBgmEnum.Layer.VersionActivity3_2Main, AudioEnum3_2.PermanentBgm.EnterView, AudioEnum.Bgm.Stop_LeiMiTeBeiBgm)
 	self:_addBgmData(AudioBgmEnum.Layer.Udimo, 0, AudioEnum.Bgm.Stop_LeiMiTeBeiBgm)
+	self:_addBgmData(AudioBgmEnum.Layer.HuiDiaoLan, AudioEnum3_2.PermanentBgm.HuiDiaoLan, AudioEnum.Bgm.Stop_LeiMiTeBeiBgm)
+	self:_addBgmData(AudioBgmEnum.Layer.BeiLiEr, AudioEnum3_2.PermanentBgm.BeiLiEr, AudioEnum.Bgm.Stop_LeiMiTeBeiBgm)
 	self:_addBgmData(AudioBgmEnum.Layer.VersionActivity3_3Main, 0, AudioEnum.Bgm.Stop_LeiMiTeBeiBgm)
 	self:_addBgmData(AudioBgmEnum.Layer.ArcadeOutSide, AudioEnum3_3.bgm.play_8bit_music_explore, AudioEnum.Bgm.Stop_LeiMiTeBeiBgm)
 	self:_addBgmData(AudioBgmEnum.Layer.Igor, AudioEnum3_3.bgm.play_activitymusic_zuozhan_3_3, AudioEnum.Bgm.Stop_LeiMiTeBeiBgm)
@@ -155,6 +157,9 @@ function AudioBgmInfo:_initBgmDatas()
 	self:_addBgmData(AudioBgmEnum.Layer.V3a9RacingGameLobby, V3a9RacingCarEnum.bgm.partygame_lobby, AudioEnum.Bgm.Stop_LeiMiTeBeiBgm)
 	self:_addBgmData(AudioBgmEnum.Layer.V3a9RacingGameMain, V3a9RacingCarEnum.bgm.partygame_main, V3a9RacingCarEnum.bgm.partygame_bgm_stop)
 	self:_addBgmData(AudioBgmEnum.Layer.V3a9Bird, AudioEnum.Bgm.play_lianji_playcards_music, AudioEnum.Bgm.Stop_LeiMiTeBeiBgm)
+	self:_addBgmData(AudioBgmEnum.Layer.VersionActivity4_0Main, 0, AudioEnum.Bgm.Stop_LeiMiTeBeiBgm)
+	self:_addBgmData(AudioBgmEnum.Layer.College, CollegeAudioEnum.BGM, AudioEnum.Bgm.Stop_LeiMiTeBeiBgm)
+	self:_addBgmData(AudioBgmEnum.Layer.V4A0_SpLilya, AudioEnum4_0.SpLilya.play_battle_shiji_1_8_normalfight, AudioEnum.Bgm.Stop_LeiMiTeBeiBgm)
 end
 
 function AudioBgmInfo:_initBgmUsage()
@@ -745,7 +750,8 @@ function AudioBgmInfo:_initBgmUsage()
 	self:_addBgmUsage({
 		AudioBgmEnum.Layer.VersionActivity3_2Main
 	}, AudioBgmEnum.UsageType.View, {
-		ViewName.VersionActivity3_2EnterView
+		ViewName.VersionActivity3_2EnterView,
+		ViewName.Permanent3_2EnterView
 	}, nil, nil, true)
 	self:_addBgmUsage({
 		AudioBgmEnum.Layer.Udimo
@@ -757,6 +763,16 @@ function AudioBgmInfo:_initBgmUsage()
 	}, AudioBgmEnum.UsageType.Scene, {
 		SceneType.Rouge2
 	})
+	self:_addBgmUsage({
+		AudioBgmEnum.Layer.HuiDiaoLan
+	}, AudioBgmEnum.UsageType.View, {
+		ViewName.HuiDiaoLanEpisodeLevelView
+	}, nil, nil, true)
+	self:_addBgmUsage({
+		AudioBgmEnum.Layer.BeiLiEr
+	}, AudioBgmEnum.UsageType.View, {
+		ViewName.BeiLiErLevelView
+	}, nil, nil, true)
 	self:_addBgmUsage({
 		AudioBgmEnum.Layer.VersionActivity3_3Main
 	}, AudioBgmEnum.UsageType.View, {
@@ -903,8 +919,22 @@ function AudioBgmInfo:_initBgmUsage()
 	self:_addBgmUsage({
 		AudioBgmEnum.Layer.V3a9Bird
 	}, AudioBgmEnum.UsageType.View, {
-		ViewName.V3a9BirdMainView,
-		ViewName.V3a9BirdGameView
+		ViewName.V3a9BirdMainView
+	}, nil, nil, true)
+	self:_addBgmUsage({
+		AudioBgmEnum.Layer.VersionActivity4_0Main
+	}, AudioBgmEnum.UsageType.View, {
+		ViewName.VersionActivity4_0EnterView
+	}, nil, nil, true)
+	self:_addBgmUsage({
+		AudioBgmEnum.Layer.College
+	}, AudioBgmEnum.UsageType.View, {
+		ViewName.CollegeMainView
+	}, nil, nil, true)
+	self:_addBgmUsage({
+		AudioBgmEnum.Layer.V4A0_SpLilya
+	}, AudioBgmEnum.UsageType.View, {
+		ViewName.SpLilyaGameView
 	}, nil, nil, true)
 end
 

@@ -173,8 +173,8 @@ end
 
 function AutoChessLevelItem:refreshSpecialUnlockTips()
 	local pvpEpisodeCo = AutoChessConfig.instance:getPvpEpisodeCo(self.actId)
-	local unlockRefresh = tonumber(lua_auto_chess_const.configDict[AutoChessEnum.ConstKey.UnlockLeaderRefresh].value)
-	local unlockSlot = tonumber(lua_auto_chess_const.configDict[AutoChessEnum.ConstKey.UnlockLeaderSlot].value)
+	local unlockRefresh = AutoChessConfig.instance:getConstValue(AutoChessEnum.ConstKey.UnlockLeaderRefresh, true)
+	local unlockSlot = AutoChessConfig.instance:getConstValue(AutoChessEnum.ConstKey.UnlockLeaderSlot, true)
 	local unlockPVP = pvpEpisodeCo.preEpisode
 
 	if self.co.id == unlockRefresh then

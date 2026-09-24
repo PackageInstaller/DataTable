@@ -17,13 +17,14 @@ function RougeHeroGroupEditListModel:setHeroGroupEditType(value)
 	self._skipAssitType = self._heroGroupEditType == RougeEnum.HeroGroupEditType.Init or self._heroGroupEditType == RougeEnum.HeroGroupEditType.SelectHero
 end
 
-function RougeHeroGroupEditListModel:setCapacityInfo(selectHeroCapacity, curCapacity, totalCapacity, assistCapacity, assistPos, assistHeroId)
+function RougeHeroGroupEditListModel:setCapacityInfo(selectHeroCapacity, curCapacity, totalCapacity, assistCapacity, assistPos, assistHeroId, assistHeroMo)
 	self._selectHeroCapacity = selectHeroCapacity
 	self._curCapacity = curCapacity
 	self._totalCapacity = totalCapacity
 	self._assistCapacity = assistCapacity or 0
 	self._assistPos = assistPos
 	self._assistHeroId = assistHeroId
+	self._assistHeroMo = assistHeroMo
 end
 
 function RougeHeroGroupEditListModel:getAssistHeroId()
@@ -36,6 +37,10 @@ end
 
 function RougeHeroGroupEditListModel:getAssistPos()
 	return self._assistPos
+end
+
+function RougeHeroGroupEditListModel:getAssistHeroMo()
+	return self._assistHeroMo
 end
 
 function RougeHeroGroupEditListModel:getTotalCapacity()
@@ -82,8 +87,6 @@ function RougeHeroGroupEditListModel:calcTotalCapacity(index, newHeroMo)
 
 		totalCapacity = totalCapacity + capacity
 	end
-
-	totalCapacity = totalCapacity + self._assistCapacity
 
 	return totalCapacity
 end
@@ -147,6 +150,18 @@ function RougeHeroGroupEditListModel:getSelectHeroList(moList)
 	return result
 end
 
+function RougeHeroGroupEditListModel:getHeroListInInit(moList)
+	local result = {}
+
+	tabletool.addValues(result, moList)
+
+	if self._assistHeroMo and (not self._assistPos or self._assistPos == 0) then
+		table.insert(moList, self._assistHeroMo)
+	end
+
+	return result
+end
+
 function RougeHeroGroupEditListModel:copyCharacterCardList(init)
 	local moList = CharacterBackpackCardListModel.instance:getCharacterCardList()
 
@@ -154,6 +169,8 @@ function RougeHeroGroupEditListModel:copyCharacterCardList(init)
 		moList = self:getTeamList(moList)
 	elseif self._heroGroupEditType == RougeEnum.HeroGroupEditType.SelectHero then
 		moList = self:getSelectHeroList(moList)
+	elseif self._heroGroupEditType == RougeEnum.HeroGroupEditType.Init then
+		moList = self:getHeroListInInit(moList)
 	end
 
 	local newMOList = {}
@@ -170,6 +187,8 @@ function RougeHeroGroupEditListModel:copyCharacterCardList(init)
 		if heroSingleGroupMO.trial or not heroSingleGroupMO.aid and tonumber(heroSingleGroupMO.heroUid) > 0 and not repeatHero[heroSingleGroupMO.heroUid] then
 			if heroSingleGroupMO.trial then
 				table.insert(newMOList, HeroGroupTrialModel.instance:getById(heroSingleGroupMO.heroUid))
+			elseif self._assistHeroMo and heroSingleGroupMO.heroUid == self._assistHeroMo.id then
+				table.insert(newMOList, self._assistHeroMo)
 			else
 				table.insert(newMOList, HeroModel.instance:getById(heroSingleGroupMO.heroUid))
 			end
@@ -216,7 +235,7 @@ function RougeHeroGroupEditListModel:copyCharacterCardList(init)
 				self._moveHeroIndex = groupHeroNum + 1
 
 				table.insert(newMOList, self._moveHeroIndex, mo)
-			elseif mo.heroId ~= self._assistHeroId then
+			else
 				table.insert(newMOList, mo)
 			end
 		end

@@ -7,11 +7,13 @@ local TowerHeroGroupListView = class("TowerHeroGroupListView", HeroGroupListView
 function TowerHeroGroupListView:addEvents()
 	TowerHeroGroupListView.super.addEvents(self)
 	self.addEventCb(self, TowerController.instance, TowerEvent.OnLoadTeamSuccess, self._checkRestrictHero, self)
+	self.addEventCb(self, TowerController.instance, TowerEvent.OnTowerResetSubEpisode, self._updateHeroList, self)
 end
 
 function TowerHeroGroupListView:removeEvents()
 	TowerHeroGroupListView.super.removeEvents(self)
 	self.removeEventCb(self, TowerController.instance, TowerEvent.OnLoadTeamSuccess, self._checkRestrictHero, self)
+	self.removeEventCb(self, TowerController.instance, TowerEvent.OnTowerResetSubEpisode, self._updateHeroList, self)
 end
 
 function TowerHeroGroupListView:_getHeroItemCls()
@@ -36,55 +38,58 @@ function TowerHeroGroupListView:checkReplaceHeroList()
 					local trialHeros = {}
 					local heroList = {}
 
-					for i = 1, #param.heros do
-						local heroMo = HeroModel.instance:getByHeroId(param.heros[i] or 0)
-
-						if heroMo then
-							local trialId = trialHeros[i]
-
-							if trialId and trialId > 0 then
-								local trialCo = lua_hero_trial.configDict[trialId][0]
-								local heroId = tostring(tonumber(trialCo.id .. "." .. trialCo.trialTemplate) - 1099511627776)
-
-								table.insert(heroList, {
-									heroUid = heroId,
-									equipUid = {
-										tostring(trialCo.equipId)
-									}
-								})
-							else
-								table.insert(heroList, {
-									heroUid = heroMo.uid,
+					if not param.assistSkinIds then
+						for i = 1, #param.heros do
+							if not param.assistSkinIds[i] then
+								local heroInfo = {
+									heroUid = "0",
 									equipUid = equipUids[i]
-								})
-							end
-						else
-							for _, trialHeroId in ipairs(trialHeros) do
-								if trialHeroId > 0 then
-									local trialCo = lua_hero_trial.configDict[trialHeroId][0]
+								}
 
-									if trialCo and trialCo.heroId == param.heros[i] then
-										local heroId = tostring(tonumber(trialCo.id .. "." .. trialCo.trialTemplate) - 1099511627776)
+								heroList[i] = heroInfo
 
-										table.insert(heroList, {
-											heroUid = heroId,
-											equipUid = {
+								if param.assistSkinIds[i] == 0 then
+									local heroMo = HeroModel.instance:getByHeroId(param.heros[i] or 0)
+
+									if heroMo then
+										local trialId = trialHeros[i]
+
+										if trialId and trialId > 0 then
+											local trialCo = lua_hero_trial.configDict[trialId][0]
+
+											heroInfo.heroUid = tostring(tonumber(trialCo.id .. "." .. trialCo.trialTemplate) - 1099511627776)
+											heroInfo.equipUid = {
 												tostring(trialCo.equipId)
 											}
-										})
+										else
+											heroInfo.heroUid = heroMo.uid
+										end
+									else
+										for _, trialHeroId in ipairs(trialHeros) do
+											if trialHeroId > 0 then
+												local trialCo = lua_hero_trial.configDict[trialHeroId][0]
 
-										break
+												if trialCo and trialCo.heroId == param.heros[i] then
+													heroInfo.heroUid = tostring(tonumber(trialCo.id .. "." .. trialCo.trialTemplate) - 1099511627776)
+													heroInfo.equipUid = {
+														tostring(trialCo.equipId)
+													}
+
+													break
+												end
+											end
+										end
 									end
 								end
 							end
 						end
+
+						local groupMO = HeroGroupModel.instance:getCurGroupMO()
+
+						groupMO:replaceTowerHeroList(heroList, true)
+						groupMO:setAssistBossId(assistBoss)
+						HeroSingleGroupModel.instance:setSingleGroup(groupMO, #heroList > 0)
 					end
-
-					local groupMO = HeroGroupModel.instance:getCurGroupMO()
-
-					groupMO:replaceTowerHeroList(heroList)
-					groupMO:setAssistBossId(assistBoss)
-					HeroSingleGroupModel.instance:setSingleGroup(groupMO, #heroList > 0)
 				end
 			end
 		end

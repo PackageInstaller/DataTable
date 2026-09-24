@@ -64,6 +64,7 @@ function StoreSkinGoodsItem:_editableInitView()
 
 	self._txtmaterialNum = gohelper.findChildText(self._goprice, "txt_materialNum")
 	self._simagematerial = gohelper.findChildImage(self._goprice, "simage_material")
+	self._coinPriceZeroGo = gohelper.findChild(self._goprice, "#go_Zero")
 	self._btnGO = gohelper.findChild(self.viewGO, "clickArea")
 	self._btn = gohelper.getClickWithAudio(self._btnGO, AudioEnum.UI.play_ui_rolesopen)
 
@@ -73,6 +74,7 @@ function StoreSkinGoodsItem:_editableInitView()
 	self.viewGOTrs = self.viewGO.transform
 	self.parentViewGO = self.viewGO.transform.parent.gameObject
 	self._costAnimator = self._gocost:GetComponent(gohelper.Type_Animator)
+	self._godeductionIconGo = gohelper.findChild(self.viewGO, "#go_tag/#go_deduction/icon")
 end
 
 function StoreSkinGoodsItem:_onSkinPreviewChanged()
@@ -197,6 +199,7 @@ function StoreSkinGoodsItem:refreshChargeInfo()
 	local coinsOriginalPrice = info.coinsOriginalPrice
 	local coinsReduction = info.coinsReduction
 	local hasDeductionItem = info.hasDeductionItem
+	local containDeductionCount = info.containDeductionCount
 	local alreadyHas = mo:alreadyHas() and not StoreModel.instance:isSkinGoodsCanRepeatBuy(mo)
 
 	gohelper.setActive(self._goowned, alreadyHas)
@@ -207,12 +210,20 @@ function StoreSkinGoodsItem:refreshChargeInfo()
 		recthelper.setAnchorX(self._goprice.transform, rmbCurPrice and 60 or 5)
 	end
 
-	self._txtdeduction.text = -coinsReduction
+	if containDeductionCount > 1 then
+		gohelper.setActive(self._godeductionIconGo, false)
+
+		self._txtdeduction.text = string.format(luaLang("StoreSkinGoodsView2_total_discount"), -coinsReduction)
+	else
+		self._txtdeduction.text = -coinsReduction
+
+		gohelper.setActive(self._godeductionIconGo, true)
+	end
 
 	gohelper.setActive(self._godeduction, not alreadyHas and hasDeductionItem)
 
 	if rmbCurPrice then
-		self._txtCharge.text = string.format("%s%s", StoreModel.instance:getCostStr(rmbCurPrice))
+		self._txtCharge.text = rmbCurPrice
 	end
 
 	gohelper.setActive(self._goCharge, rmbCurPrice and not alreadyHas)
@@ -223,12 +234,17 @@ function StoreSkinGoodsItem:refreshChargeInfo()
 	end
 
 	gohelper.setActive(self._txtOriginalCharge, rmbOriginalPrice)
+	gohelper.setActive(self._txtmaterialNum, coinsCurPrice)
+	gohelper.setActive(self._coinPriceZeroGo, false)
 
 	if coinsCurPrice then
 		self._txtmaterialNum.text = coinsCurPrice
-	end
 
-	gohelper.setActive(self._txtmaterialNum, coinsCurPrice)
+		local bZero = coinsCurPrice <= 0
+
+		gohelper.setActive(self._txtmaterialNum, not bZero)
+		gohelper.setActive(self._coinPriceZeroGo, bZero)
+	end
 
 	local isShowCoinsOriginalPrice = false
 
@@ -241,7 +257,7 @@ function StoreSkinGoodsItem:refreshChargeInfo()
 	local isShowOffTag = false
 
 	if isShowOffTag then
-		local offDiscount = math.ceil(coinsCurPrice / coinsOriginalPrice * 100)
+		local offDiscount = coinsOriginalPrice > 0 and math.ceil(coinsCurPrice / coinsOriginalPrice * 100) or 100
 
 		isShowOffTag = offDiscount < 100 and offDiscount > 0
 		self._txtdiscount.text = string.format("-%d%%", 100 - offDiscount)

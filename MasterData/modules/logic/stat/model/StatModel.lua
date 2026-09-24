@@ -20,6 +20,7 @@ end
 function StatModel:reInit()
 	self._basePropertiesStr = nil
 	self._tempEventCommonProperties = nil
+	self._enterViewIgnorDict = nil
 end
 
 function StatModel:updateBaseProperties(basePropertiesStr)
@@ -76,6 +77,26 @@ function StatModel:getPayInfo()
 	logNormal("Pay Info " .. jsonPayInfo)
 
 	return jsonPayInfo
+end
+
+function StatModel:isEnterViewIgnore(viewName)
+	if self._enterViewIgnorDict == nil then
+		self._enterViewIgnorDict = {}
+
+		local ignoreCfgList = StatConfig.instance:getEventIgnoreList()
+
+		if ignoreCfgList then
+			for _, ignoreCfg in ipairs(ignoreCfgList) do
+				self._enterViewIgnorDict[ignoreCfg.propertyValue] = true
+			end
+		end
+	end
+
+	if self._enterViewIgnorDict[viewName] then
+		return true
+	end
+
+	return false
 end
 
 StatModel.instance = StatModel.New()

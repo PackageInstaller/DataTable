@@ -159,7 +159,7 @@ function HandbookSkinItem:_setUnlockGray(has)
 				SLFramework_UGUI_GuiHelper.SetColor(self.image_l2dbg, color)
 			end
 
-			local isFrameAsIcon = self._btnframeclick ~= nil
+			local isFrameAsIcon = self._roleImageFrame ~= nil
 
 			if isFrameAsIcon then
 				SLFramework_UGUI_GuiHelper.SetColor(self._roleImageFrame, color)

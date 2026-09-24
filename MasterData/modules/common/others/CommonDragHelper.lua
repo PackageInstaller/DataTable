@@ -191,6 +191,12 @@ function CommonDragHelper:stopDrag(go, isEndCall)
 	end
 end
 
+function CommonDragHelper:stopCurDrag(isEndCall)
+	if self._nowDragData then
+		self:stopDrag(self._nowDragData.go, isEndCall)
+	end
+end
+
 function CommonDragHelper:unregisterDragObj(go)
 	local data, index = self:getDragData(go)
 

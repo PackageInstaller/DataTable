@@ -86,10 +86,13 @@ function GuideMaskItem:updateUI(go, viewParam, csGuideMaskHole, holeImg, typeGo)
 
 	self._uiType = uiInfo.uiType
 	self._rotation = uiInfo.rotation
+	self._arrowScale = uiInfo.arrowScale
 	self._width = uiInfo.width
 	self._height = uiInfo.height
 	self._arrowOffsetX = uiInfo.arrowOffsetX
 	self._arrowOffsetY = uiInfo.arrowOffsetY
+	self._dragOffsetX = uiInfo.dragOffsetX
+	self._dragOffsetY = uiInfo.dragOffsetY
 	self._maskAlpha = uiInfo.maskAlpha
 	self._imgAlpha = uiInfo.imgAlpha
 	self._goPath = viewParam.goPath
@@ -113,7 +116,12 @@ function GuideMaskItem:updateUI(go, viewParam, csGuideMaskHole, holeImg, typeGo)
 	self._typeGo = typeGo
 	self._viewTrs = go.transform
 
+	if not gohelper.isNil(typeGo) and self._uiType ~= GuideEnum.uiTypeDrag then
+		transformhelper.setLocalScale(typeGo.transform, 1, 1, 1)
+	end
+
 	self:initTargetGo()
+	self:_setDrag()
 
 	self._globalTouch = not string.nilorempty(self._touchGoPath) and gohelper.find(self._touchGoPath) or nil
 
@@ -252,6 +260,39 @@ function GuideMaskItem:_setArrow(holeImg)
 	end
 end
 
+function GuideMaskItem:_setDrag()
+	if not self:_hasDrag() then
+		return
+	end
+
+	local typeGo = self._typeGo
+
+	if gohelper.isNil(typeGo) then
+		return
+	end
+
+	if self._width then
+		if not (self._width / GuideEnum.ArrowDragSize[1]) then
+			local scaleX = 1
+			local drag = gohelper.findChild(typeGo, "GameObject")
+			local scaleGO = gohelper.findChild(typeGo, "GameObject/scale")
+
+			if drag then
+				transformhelper.setLocalPosXY(drag.transform, self._dragOffsetX, self._dragOffsetY)
+				transformhelper.setLocalScale(drag.transform, scaleX, scaleX, 1)
+				transformhelper.setLocalRotation(drag.transform, 0, 0, self._rotation)
+				gohelper.setActive(drag, true)
+			end
+
+			if scaleGO then
+				transformhelper.setLocalScale(scaleGO.transform, self._arrowScale, self._arrowScale, 1)
+				transformhelper.setLocalPosXY(scaleGO.transform, self._arrowOffsetX / scaleX, self._arrowOffsetY / scaleX)
+				gohelper.setActive(scaleGO, true)
+			end
+		end
+	end
+end
+
 function GuideMaskItem:_showArrow()
 	gohelper.setActive(self._arrow, true)
 end
@@ -260,8 +301,12 @@ function GuideMaskItem:_hasArrow()
 	return self._uiType == GuideEnum.uiTypeArrow or self._uiType == GuideEnum.uiTypePressArrow
 end
 
+function GuideMaskItem:_hasDrag()
+	return self._uiType == GuideEnum.uiTypeDrag
+end
+
 function GuideMaskItem:_isRectangle()
-	return self._uiType == GuideEnum.uiTypeRectangle or self._uiType == GuideEnum.uiTypeArrow or self._uiType == GuideEnum.uiTypePressArrow
+	return self._uiType == GuideEnum.uiTypeRectangle or self._uiType == GuideEnum.uiTypeArrow or self._uiType == GuideEnum.uiTypePressArrow or self._uiType == GuideEnum.uiTypeDrag
 end
 
 function GuideMaskItem:_updateMaskPosAndSize()
@@ -358,7 +403,7 @@ function GuideMaskItem:_updateMaskPosAndSize()
 		local typeGO = self._typeGo
 
 		if not gohelper.isNil(typeGO) then
-			recthelper.setAnchor(typeGO.transform, posX, posY)
+			transformhelper.setLocalPosXY(typeGO.transform, posX, posY)
 		end
 	end
 end

@@ -199,11 +199,19 @@ function NormalStoreGoodsView:_btnbuyOnClick()
 	end
 
 	if (self._itemType == MaterialEnum.MaterialType.Hero or nil) and CharacterModel.instance:isHeroFullDuplicateCount(self._itemId) then
-		local duplicateItem2 = HeroConfig.instance:getHeroCO(self._itemId).duplicateItem2
+		local heroConfig = HeroConfig.instance:getHeroCO(self._itemId)
+		local duplicateItem2 = heroConfig.duplicateItem2
 		local arr = GameUtil.splitString2(duplicateItem2, true)
 		local itemConfig = ItemConfig.instance:getItemConfig(arr[1][1], arr[1][2])
+		local isSixRole = CharacterEnum.Star[heroConfig.rare] == 6
 
-		MessageBoxController.instance:showMsgBox(MessageBoxIdDefine.HeroFullDuplicateCount, MsgBoxEnum.BoxType.Yes_No, self._tryBuyGoods, nil, nil, self, nil, nil, itemConfig.name)
+		if isSixRole and arr[2] then
+			local costCo = ItemModel.instance:getItemConfig(arr[2][1], arr[2][2])
+
+			MessageBoxController.instance:showMsgBox(MessageBoxIdDefine.SixHeroFullDuplicateCount, MsgBoxEnum.BoxType.Yes_No, self._tryBuyGoods, nil, nil, self, nil, nil, itemConfig.name, costCo.name)
+		else
+			MessageBoxController.instance:showMsgBox(MessageBoxIdDefine.HeroFullDuplicateCount, MsgBoxEnum.BoxType.Yes_No, self._tryBuyGoods, nil, nil, self, nil, nil, itemConfig.name)
+		end
 	else
 		self:_tryBuyGoods()
 	end

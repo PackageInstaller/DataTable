@@ -84,7 +84,7 @@ function AutoChessBossBookView:onOpen()
 		gohelper.setActive(goLock, isLock)
 		gohelper.setActive(goUnlock, not isLock)
 
-		self.chessCfgList[k] = AutoChessConfig.instance:getChessCfg(cfg.id)
+		self.chessCfgList[k] = AutoChessConfig.instance:getChessCfgAnyway(cfg.id)
 	end
 
 	gohelper.setActive(self._goBossItem, false)
@@ -138,7 +138,7 @@ function AutoChessBossBookView:onDestroyView()
 			AutoChessHelper.setUnlockReddot(AutoChessStrEnum.ClientReddotKey.Boss, id)
 		end
 
-		AutoChessController.instance:dispatchEvent(AutoChessEvent.updateCultivateReddot)
+		AutoChessController.instance:dispatchEvent(AutoChessEvent.UpdateCultivateReddot)
 	end
 
 	TaskDispatcher.cancelTask(self.refreshInfo, self)

@@ -53,6 +53,8 @@ function CharacterSkillContainer:init(go)
 	self._godevice = gohelper.findChild(go, "line/#go_device")
 
 	gohelper.setActive(self._godevice, false)
+
+	self._goqte = gohelper.findChild(go, "line/#go_breakthrough")
 end
 
 function CharacterSkillContainer:_onLoadFinish()
@@ -68,16 +70,16 @@ function CharacterSkillContainer:_onLoadFinish()
 end
 
 function CharacterSkillContainer:_playOpenAni()
-	if not self._isPlayedOpenAnim and self._godevice and self._godevice.activeInHierarchy then
-		local deviceViewParam = CharacterEnum.DeviceViewParam[self._viewType]
-		local aniName = deviceViewParam and deviceViewParam.OpenAniName
+	self._deviceView:playOpenAni(self._viewType, not self._isInitView)
+end
 
-		if aniName then
-			self:playDeviceAnim(aniName)
-		end
+function CharacterSkillContainer:_refreshUI()
+	local isDevice = self._deviceMo ~= nil
+	local isQte = self._qteMo ~= nil
 
-		self._isPlayedOpenAnim = true
-	end
+	gohelper.setActive(self._godevice, isDevice)
+	gohelper.setActive(self._goqte, isQte)
+	gohelper.setActive(self._goskills, not isQte and not isDevice)
 end
 
 function CharacterSkillContainer:_refreshDevice()
@@ -89,11 +91,34 @@ function CharacterSkillContainer:_refreshDevice()
 
 	self._deviceMo = SkillConfig.instance:getHeroDeviceMO(self._heroId, self._heroMo)
 
-	local isDevice = self._deviceMo ~= nil
-
-	gohelper.setActive(self._godevice, isDevice)
-	gohelper.setActive(self._goskills, not isDevice)
+	self:_refreshUI()
 	self:_playOpenAni()
+end
+
+function CharacterSkillContainer:_refreshQTE()
+	if not self.viewContainer then
+		return
+	end
+
+	if not self._qteView then
+		local QTEResPath = self.viewContainer:getSetting().otherRes.QTERes
+
+		if string.nilorempty(QTEResPath) then
+			return
+		end
+
+		local childGO = self.viewContainer:getResInst(QTEResPath, self._goqte.gameObject)
+
+		self._qteView = MonoHelper.addNoUpdateLuaComOnceToGo(childGO, CharacterQTEView)
+		self._qteView.viewContainer = self.viewContainer
+	end
+
+	self._qteView:onUpdateMO(self._heroId, self._heroMo, self._param, self._isBalance, self._showAttributeOption, self._balanceHelper)
+
+	self._qteMo = SkillConfig.instance:getHeroQteMO(self._heroId, self._heroMo)
+
+	self:_refreshUI()
+	self._qteView:playOpenAni(self._viewType, not self._isInitView)
 end
 
 function CharacterSkillContainer:onDestroy()
@@ -135,6 +160,10 @@ function CharacterSkillContainer:onUpdateMO(heroId, showAttributeOption, heroMo,
 		self._loader:addPath(self._deviceViewPath)
 		self._loader:startLoad(self._onLoadFinish, self)
 	end
+
+	self:_refreshQTE()
+
+	self._isInitView = true
 end
 
 function CharacterSkillContainer:setBalanceHelper(balanceHelper)
@@ -158,10 +187,11 @@ function CharacterSkillContainer:_showSkillUI(skillIdDict)
 
 			if not skillCO then
 				logError(string.format("heroID : %s, skillId not found : %s", self._heroId, skillId))
+			else
+				self._skillitems[i].icon:LoadImage(ResUrl.getSkillIcon(skillCO.icon))
+				self._skillitems[i].tag:LoadImage(ResUrl.getAttributeIcon("attribute_" .. skillCO.showTag))
 			end
 
-			self._skillitems[i].icon:LoadImage(ResUrl.getSkillIcon(skillCO.icon))
-			self._skillitems[i].tag:LoadImage(ResUrl.getAttributeIcon("attribute_" .. skillCO.showTag))
 			gohelper.setActive(self._skillitems[i].tag.gameObject, i ~= 3)
 		end
 
@@ -246,12 +276,6 @@ function CharacterSkillContainer:checkShowReplaceBeforeSkillUI()
 	end
 end
 
-function CharacterSkillContainer:playDeviceAnim(animName)
-	if self._deviceView then
-		self._deviceView:playAnim(animName)
-	end
-end
-
 function CharacterSkillContainer:clearDelay()
 	TaskDispatcher.cancelTask(self.playNuodikaReplaceSkillAudio, self)
 end
@@ -267,7 +291,8 @@ function CharacterSkillContainer:_showSkillReddot(isNeedPlay)
 end
 
 function CharacterSkillContainer:onClose()
-	self._isPlayedOpenAnim = nil
+	self._isPlayedOpenDeviceAnim = nil
+	self._isInitView = nil
 end
 
 return CharacterSkillContainer

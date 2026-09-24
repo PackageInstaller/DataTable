@@ -30,7 +30,7 @@ PatFaceEnum.patFace = {
 	V2a9_VersionSummonPanel_Part1 = 20900,
 	V1a8_Work_PanelSignView = 15,
 	V1a9_Role_PanelSignView_Part1 = 10900,
-	V1a9_SemmelWeisGift = 10904,
+	CasualSkinGiftPanel = 40001,
 	V2a3_Special_PanelsView = 20304,
 	TurnBackView = 2,
 	V2a8_Role_PanelSignView_Part2 = 20801,
@@ -75,6 +75,7 @@ PatFaceEnum.patFace = {
 	V2a3_Role_PanelSignView_Part2 = 20302,
 	V3a9_BDuckLinage = 30901,
 	V2a4_Role_PanelSignView_Part2 = 20401,
+	V1a9_SemmelWeisGift = 10904,
 	V2a5_Role_PanelSignView_Part2 = 20501,
 	V2a6_Role_PanelSignView_Part2 = 20601,
 	V2a7_Role_PanelSignView_Part2 = 20701,
@@ -102,6 +103,7 @@ PatFaceEnum.patFace = {
 	WeekwalkHeart_PanelView = 20603,
 	PanelSign = 6,
 	DragonBoatFestival = 10903,
+	V4a0_StoneGift = 40003,
 	V2a7_Role_PanelSignView_Part1 = 20700
 }
 PatFaceEnum.CustomCheckCanPatFun = {
@@ -206,7 +208,9 @@ PatFaceEnum.patFaceCustomWork = {
 	[PatFaceEnum.patFace.V3a4_GiftRecommend] = Activity101SignPatFaceWork,
 	[PatFaceEnum.patFace.GoldenMilletPresent] = ActivityGoldenMilletPresentPatWork,
 	[PatFaceEnum.patFace.Sp02_GiftRecommend] = Activity101SignPatFaceWork,
-	[PatFaceEnum.patFace.V3a9_BDuckLinage] = Activity101SignPatFaceWork
+	[PatFaceEnum.patFace.V3a9_BDuckLinage] = Activity101SignPatFaceWork,
+	[PatFaceEnum.patFace.CasualSkinGiftPanel] = CasualSkinGiftPatWork,
+	[PatFaceEnum.patFace.V4a0_StoneGift] = Activity101SignPatFaceWork
 }
 
 return PatFaceEnum

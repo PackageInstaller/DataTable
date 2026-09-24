@@ -18,7 +18,6 @@ function RougeHeroGroupQuickEditListModel:calcTotalCapacity()
 	end
 
 	totalCapacity = totalCapacity + self:_getAssitCapacity()
-	totalCapacity = totalCapacity + RougeHeroGroupEditListModel.instance:getAssistCapacity()
 
 	return totalCapacity
 end
@@ -52,7 +51,6 @@ function RougeHeroGroupQuickEditListModel:_isTeamCapacityEnough(posIndex, uid)
 	end
 
 	totalCapacity = totalCapacity + self:_getAssitCapacity(posIndex, uid)
-	totalCapacity = totalCapacity + RougeHeroGroupEditListModel.instance:getAssistCapacity()
 
 	return totalCapacity <= RougeHeroGroupEditListModel.instance:getTotalCapacity()
 end
@@ -186,7 +184,7 @@ function RougeHeroGroupQuickEditListModel:copyQuickEditCardList()
 				else
 					table.insert(newMOList, mo)
 				end
-			elseif mo.heroId ~= assistHeroId then
+			else
 				table.insert(newMOList, mo)
 			end
 		end
@@ -271,7 +269,7 @@ function RougeHeroGroupQuickEditListModel:selectHero(uid)
 		for i = 1, #self._inTeamHeroUidList do
 			local heroUid = self._inTeamHeroUidList[i]
 
-			if heroUid == 0 or heroUid == "0" and not self:_skipAssistPos(i) then
+			if heroUid == 0 or heroUid == "0" then
 				self._inTeamHeroUidList[i] = uid
 				self._inTeamHeroUidMap[uid] = 1
 

@@ -122,7 +122,7 @@ function StoryGCController:_onStep(o)
 		local effList = stepCO and stepCO.effList
 
 		for _, one in ipairs(effList) do
-			if not self._markUseDict[one.effect] then
+			if one.orderType ~= StoryEnum.EffectOrderType.Destroy and not self._markUseDict[one.effect] then
 				self._markUseDict[one.effect] = true
 
 				local o = {

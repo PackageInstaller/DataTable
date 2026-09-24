@@ -15,6 +15,7 @@ function CharacterViewContainer:buildViews()
 	table.insert(views, self._equipView)
 	table.insert(views, self._extraView)
 	table.insert(views, self._destinyView)
+	table.insert(views, self._qteView)
 	table.insert(views, CharacterSpineGCView.New())
 	table.insert(views, CommonRainEffectView.New("anim/bgcanvas/#go_glowcontainer"))
 

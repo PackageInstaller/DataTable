@@ -36,7 +36,7 @@ function Live2dVoiceMouth:_setBiZui()
 		self._curMouth = "t_" .. self._pauseMouth
 		self._pauseMouth = nil
 
-		self._spine:setMouthAnimation(self._curMouth, false, 0)
+		self._spine:setMouthAnimation(self._curMouth, false, self:_getMixTime())
 
 		return
 	end
@@ -44,7 +44,7 @@ function Live2dVoiceMouth:_setBiZui()
 	if self._spine:hasAnimation(StoryAnimName.T_BiZui) then
 		self._curMouth = StoryAnimName.T_BiZui
 
-		self._spine:setMouthAnimation(self._curMouth, true, 0)
+		self._spine:setMouthAnimation(self._curMouth, true, self:_getMixTime())
 	else
 		logError("no animation:t_bizui")
 	end

@@ -2,7 +2,7 @@
 
 module("modules.logic.rouge2.outside.model.Rouge2_StoreTabListModel", package.seeall)
 
-local Rouge2_StoreGoodsListModel = class("Rouge2_StoreTabListModel", ListScrollModel)
+local Rouge2_StoreTabListModel = class("Rouge2_StoreTabListModel", ListScrollModel)
 
 Rouge2_StoreTabListModel.instance = Rouge2_StoreTabListModel.New()
 

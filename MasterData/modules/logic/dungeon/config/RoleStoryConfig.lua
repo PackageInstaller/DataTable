@@ -87,7 +87,13 @@ function RoleStoryConfig:getStoryList()
 end
 
 function RoleStoryConfig:getStoryById(storyId)
-	return self._roleStoryConfig.configDict[storyId]
+	local cfg = self._roleStoryConfig.configDict[storyId]
+
+	if not cfg then
+		logError(string.format("RoleStoryConfig:getStoryById storyId:%d not found", storyId))
+	end
+
+	return cfg
 end
 
 function RoleStoryConfig:getScoreConfig(storyId)

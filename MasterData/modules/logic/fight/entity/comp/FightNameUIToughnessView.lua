@@ -11,6 +11,7 @@ function FightNameUIToughnessView:onConstructor(entity, viewGO, monsterConfig)
 	self.monsterConfig = monsterConfig
 	self.tweenComp = self:addComponent(FightTweenComponent)
 	self.arr = string.splitToNumber(monsterConfig.toughness, "#")
+	self.animator = gohelper.onceAddComponent(self.viewGO, gohelper.Type_Animator)
 	self.fill = gohelper.findChildImage(self.viewGO, "fill")
 	self.fillWidth = recthelper.getWidth(self.fill.transform)
 	self.lineObj = gohelper.findChild(self.viewGO, "fill/line")
@@ -26,7 +27,7 @@ function FightNameUIToughnessView:onConstructor(entity, viewGO, monsterConfig)
 	end
 
 	gohelper.CreateObjList(self, self.onItemShow, dataList, self.fill.gameObject, self.lineObj)
-	self:showToughness()
+	self:showToughness(true)
 	self:com_registFightEvent(FightEvent.OnHpChange, self.onHpChange)
 	self:com_registMsg(FightMsgId.ChangeEntityToughness, self.onChangeEntityToughness)
 end
@@ -43,7 +44,7 @@ function FightNameUIToughnessView:onChangeEntityToughness(entityID)
 	end
 end
 
-function FightNameUIToughnessView:showToughness()
+function FightNameUIToughnessView:showToughness(isInit)
 	local arr = self.arr
 	local showType = arr[3]
 
@@ -53,12 +54,32 @@ function FightNameUIToughnessView:showToughness()
 		local finalValue = ((self.entityData.toughnessPoint - 1) * oneNum + self.entityData.toughnessValue) / maxNum
 
 		self.tweenComp:DOFillAmount(self.fill, finalValue, 0.5)
+
+		if finalValue <= 0 then
+			if isInit then
+				self.animator:Play("idle")
+			else
+				self.animator:Play("die")
+			end
+		else
+			self.animator:Play("idle")
+		end
 	elseif showType == 1 then
 		local oneNum = self.entityData.attrMO.hp * arr[1] / 1000
 		local maxNum = oneNum * arr[2]
 		local finalValue = ((self.entityData.toughnessPoint - 1) * oneNum + self.entityData.toughnessValue) / maxNum
 
 		self.tweenComp:DOFillAmount(self.fill, finalValue, 0.5)
+
+		if finalValue <= 0 then
+			if isInit then
+				self.animator:Play("idle")
+			else
+				self.animator:Play("die")
+			end
+		else
+			self.animator:Play("idle")
+		end
 	end
 end
 

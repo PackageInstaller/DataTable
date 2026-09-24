@@ -21,14 +21,20 @@ end
 function RougeSimpleItemBase:init(...)
 	RougeSimpleItemBase.super.init(self, ...)
 	self:addEventListeners()
+
+	return self
 end
 
 function RougeSimpleItemBase:onInitView()
 	self:_editableInitView()
+
+	return self
 end
 
 function RougeSimpleItemBase:onUpdateMO(mo)
 	self:setData(mo)
+
+	return self
 end
 
 function RougeSimpleItemBase:parent()
@@ -85,6 +91,10 @@ function RougeSimpleItemBase:isSelected()
 	return self._staticData.isSelected
 end
 
+function RougeSimpleItemBase:setSelectedSlient(isSelect)
+	self._staticData.isSelected = isSelect
+end
+
 function RougeSimpleItemBase:setSelected(isSelect)
 	if self:isSelected() == isSelect then
 		return
@@ -93,8 +103,16 @@ function RougeSimpleItemBase:setSelected(isSelect)
 	self:onSelect(isSelect)
 end
 
+function RougeSimpleItemBase:onSelect(isSelect)
+	RougeSimpleItemBase.super.onSelect(self, isSelect)
+
+	self._staticData.isSelected = isSelect
+end
+
 function RougeSimpleItemBase:setIndex(index)
 	self._index = index
+
+	return self
 end
 
 function RougeSimpleItemBase:index()
@@ -103,6 +121,8 @@ end
 
 function RougeSimpleItemBase:setName(name)
 	self.viewGO.name = name
+
+	return self
 end
 
 function RougeSimpleItemBase:name()
@@ -111,22 +131,26 @@ end
 
 function RougeSimpleItemBase:setActive(isActive)
 	gohelper.setActive(self.viewGO, isActive)
+
+	return self
 end
 
 function RougeSimpleItemBase:setActive01(isActive, targetTransform)
 	GameUtil.setActive01(targetTransform or self._trans, isActive)
+
+	return self
 end
 
-function RougeSimpleItemBase:posX()
-	return recthelper.getAnchorX(self._trans)
+function RougeSimpleItemBase:posX(targetTransform)
+	return recthelper.getAnchorX(targetTransform or self._trans)
 end
 
-function RougeSimpleItemBase:posY()
-	return recthelper.getAnchorY(self._trans)
+function RougeSimpleItemBase:posY(targetTransform)
+	return recthelper.getAnchorY(targetTransform or self._trans)
 end
 
-function RougeSimpleItemBase:posXY()
-	return recthelper.getAnchor(self._trans)
+function RougeSimpleItemBase:posXY(targetTransform)
+	return recthelper.getAnchor(targetTransform or self._trans)
 end
 
 function RougeSimpleItemBase:WPos()
@@ -135,14 +159,23 @@ end
 
 function RougeSimpleItemBase:setWPos(newWPos)
 	self._trans.position = newWPos
+
+	return self
 end
 
 function RougeSimpleItemBase:setAPos(newAPosX, newAPosY, targetTransform)
-	recthelper.setAnchor(targetTransform or self._trans, newAPosX, newAPosY)
+	local t = targetTransform or self._trans
+	local oldX, oldY = self:posXY(t)
+
+	recthelper.setAnchor(t, newAPosX or oldX, newAPosY or oldY)
+
+	return self
 end
 
-function RougeSimpleItemBase:zeroPos()
-	self:setLocalPosXY(0, 0)
+function RougeSimpleItemBase:zeroPos(targetTransform)
+	self:setLocalPosXY(0, 0, targetTransform)
+
+	return self
 end
 
 function RougeSimpleItemBase:uiPosToScreenPos2(targetTransform)
@@ -159,10 +192,14 @@ function RougeSimpleItemBase:setPosByScreenPos(screenPosX, screenPosY, targetTra
 	local localPosV2 = self:screenPosToLocal(screenPosX, screenPosY, targetTransform)
 
 	self:setLocalPosXY(localPosV2.x, localPosV2.y, targetTransform)
+
+	return self
 end
 
 function RougeSimpleItemBase:setDock(targetRectTrans, eDock, curRectTrans, ...)
 	UIDockingHelper.setDock(eDock, curRectTrans or self._trans, targetRectTrans, ...)
+
+	return self
 end
 
 function RougeSimpleItemBase:logicParentTrans()
@@ -181,6 +218,8 @@ end
 
 function RougeSimpleItemBase:setPivot(newPivot)
 	self._trans.pivot = newPivot
+
+	return self
 end
 
 function RougeSimpleItemBase:rect()
@@ -189,47 +228,103 @@ end
 
 function RougeSimpleItemBase:setAsLastSibling()
 	self._trans:SetAsLastSibling()
+
+	return self
 end
 
 function RougeSimpleItemBase:setAsFirstSibling()
 	self._trans:SetAsFirstSibling()
+
+	return self
 end
 
 function RougeSimpleItemBase:setSiblingIndex(index)
 	self._trans:SetSiblingIndex(index)
+
+	return self
 end
 
 function RougeSimpleItemBase:setParent(newParentTrans, worldPositionStays)
 	self._trans:SetParent(newParentTrans, worldPositionStays and true or false)
+
+	return self
 end
 
 function RougeSimpleItemBase:setParentAndResetPosZero(newParentTrans)
 	self:setParent(newParentTrans)
 	self:zeroPos()
+
+	return self
 end
 
 function RougeSimpleItemBase:localRotateZ(zDegree, targetTransform)
 	transformhelper.setLocalRotation(targetTransform or self._trans, 0, 0, zDegree)
+
+	return self
 end
 
 function RougeSimpleItemBase:setLocalPosXY(x, y, targetTransform)
 	transformhelper.setLocalPosXY(targetTransform or self._trans, x, y)
+
+	return self
 end
 
 function RougeSimpleItemBase:GetComponent(csType)
 	return self.viewGO:GetComponent(csType)
 end
 
+function RougeSimpleItemBase:setW(value, targetTransform)
+	recthelper.setWidth(targetTransform or self._trans, value)
+
+	return self
+end
+
+function RougeSimpleItemBase:setH(value, targetTransform)
+	recthelper.setHeight(targetTransform or self._trans, value)
+
+	return self
+end
+
+function RougeSimpleItemBase:getW(targetTransform)
+	return recthelper.getWidth(targetTransform or self._trans)
+end
+
+function RougeSimpleItemBase:getH(targetTransform)
+	return recthelper.getHeight(targetTransform or self._trans)
+end
+
 function RougeSimpleItemBase:setWH(newWidth, newHeight, targetTransform)
 	recthelper.setSize(targetTransform or self._trans, newWidth, newHeight)
+
+	return self
+end
+
+function RougeSimpleItemBase:setWHByRatio(ratioX, ratioY, targetTransform)
+	local t = targetTransform or self._trans
+	local sz = t.sizeDelta
+
+	t.sizeDelta = Vector2(sz.x * ratioX, sz.y * ratioY)
+
+	return self
+end
+
+function RougeSimpleItemBase:getWH(targetTransform)
+	local w = self:getW(targetTransform)
+	local h = self:getH(targetTransform)
+
+	return w, h
 end
 
 function RougeSimpleItemBase:setScale(newScaleValue, targetTransform)
 	self:setScaleXYZ(newScaleValue, newScaleValue, newScaleValue, targetTransform)
+
+	return self
 end
 
 function RougeSimpleItemBase:setScaleXYZ(newScaleX, newScaleY, newScaleZ, targetTransform)
 	transformhelper.setLocalScale(targetTransform or self._trans, newScaleX or 1, newScaleY or 1, newScaleZ or 1)
+
+	return self
 end
 
 function RougeSimpleItemBase:XYWH(targetTransform)
@@ -315,10 +410,14 @@ end
 
 function RougeSimpleItemBase:setData(mo)
 	self._mo = mo
+
+	return self
 end
 
 function RougeSimpleItemBase:refresh()
 	self:onUpdateMO(self._mo)
+
+	return self
 end
 
 function RougeSimpleItemBase:onDestroyView()
@@ -328,6 +427,8 @@ end
 
 function RougeSimpleItemBase:setGrayscale(go, isGray)
 	UGUIHelper.SetGrayscale(go, isGray)
+
+	return self
 end
 
 return RougeSimpleItemBase

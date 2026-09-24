@@ -207,8 +207,8 @@ function FightAudioMgr:stopCardAudio(entityId)
 	end
 end
 
-function FightAudioMgr:playHeroVoiceRandom(heroId, voiceType)
-	local id = self:getHeroVoiceRandom(heroId, voiceType)
+function FightAudioMgr:playHeroVoiceRandom(heroId, voiceType, entityId)
+	local id = self:getHeroVoiceRandom(heroId, voiceType, entityId)
 
 	if id then
 		local audioLang
@@ -251,9 +251,9 @@ function FightAudioMgr:getHeroVoiceRandom(heroId, voiceType, entityId)
 	end
 end
 
-function FightAudioMgr:playHitVoice(heroId, targetLang)
+function FightAudioMgr:playHitVoice(heroId, targetLang, skinId)
 	local voiceType = CharacterEnum.VoiceType.FightBehit
-	local audioId = self:getHeroVoiceWithWeight(heroId, voiceType)
+	local audioId = self:getHeroVoiceWithWeight(heroId, voiceType, skinId)
 
 	if audioId then
 		self:playAudioWithLang(audioId, targetLang)
@@ -265,8 +265,8 @@ function FightAudioMgr:playHitVoice(heroId, targetLang)
 	end
 end
 
-function FightAudioMgr:getHeroVoiceWithWeight(heroId, voiceType)
-	local voiceCOs = self:_getHeroVoiceCOs(heroId, voiceType)
+function FightAudioMgr:getHeroVoiceWithWeight(heroId, voiceType, skinId)
+	local voiceCOs = self:_getHeroVoiceCOs(heroId, voiceType, skinId)
 
 	if voiceCOs and #voiceCOs > 0 then
 		local totalWeight = 0

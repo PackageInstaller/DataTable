@@ -75,6 +75,10 @@ function SettingsModel:onInit()
 	if SDKMgr.instance:isEmulator() and (self._primaryCpuAbi == "armeabi-v7a" or self._primaryCpuAbi == "arm64-v8a") then
 		self._isUseUnityVideo = 1
 	end
+
+	if not PlayerPrefsHelper.hasKey(PlayerPrefsKey.SettingsVideoHDMode) and (BootNativeUtil.isWindows() or BootNativeUtil.isMuMu()) then
+		self:setVideoHDMode(true)
+	end
 end
 
 function SettingsModel:reInit()

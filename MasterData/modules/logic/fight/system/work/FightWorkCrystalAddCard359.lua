@@ -23,7 +23,8 @@ function FightWorkCrystalAddCard359:onStart()
 
 	FightController.instance:dispatchEvent(FightEvent.SetHandCardVisible, true)
 
-	local timeline = self:getTimeline()
+	local entityMo = entity:getMO()
+	local timeline = self:getTimeline(entityMo and entityMo.skin)
 	local work = entity.skill:registTimelineWork(timeline, self.fightStepData)
 
 	if work then
@@ -39,11 +40,11 @@ function FightWorkCrystalAddCard359:onPlayTimeDone()
 	self:com_registTimer(self._delayAfterPerformance, 0.5)
 end
 
-function FightWorkCrystalAddCard359:getTimeline()
+function FightWorkCrystalAddCard359:getTimeline(skin)
 	local cardInfo = self.actEffectData.cardInfo
 	local co = FightHeroSpEffectConfig.instance:getSkill2CrystalCo(cardInfo.skillId)
 	local crystal = co.crystal
-	local crystalCo = FightHeroSpEffectConfig.instance:getBLECrystalCo(crystal)
+	local crystalCo = FightHeroSpEffectConfig.instance:getBLECrystalCo(crystal, skin)
 
 	return crystalCo.cardTimeline
 end

@@ -57,36 +57,31 @@ end
 function AutoChessGameView:_btnResumeOnClick()
 	gohelper.setActive(self._btnStop, true)
 	gohelper.setActive(self._btnResume, false)
-	AutoChessController.instance:dispatchEvent(AutoChessEvent.StopFight, false)
+	AutoChessController.instance:resumePlay(AutoChessEnum.ActionType.RoundStart)
 end
 
 function AutoChessGameView:_btnStopOnClick()
 	gohelper.setActive(self._btnStop, false)
 	gohelper.setActive(self._btnResume, true)
-	AutoChessController.instance:dispatchEvent(AutoChessEvent.StopFight, true)
+	AutoChessController.instance:stopPlay(AutoChessEnum.ActionType.RoundStart)
 end
 
 function AutoChessGameView:_btnSkipOnClick()
-	AutoChessController.instance:dispatchEvent(AutoChessEvent.SkipFight)
+	AutoChessController.instance:skipPlay(AutoChessEnum.ActionType.RoundStart)
 end
 
 function AutoChessGameView:_editableInitView()
 	self.moduleId = AutoChessModel.instance.moduleId
 
 	NavigateMgr.instance:addEscape(self.viewName, self._onEscapeBtnClick, self)
-
-	self.collectionTbl = {}
-
-	gohelper.setActive(self._goCollectionItem, false)
 end
 
 function AutoChessGameView:onOpen()
-	self.addEventCb(self, AutoChessController.instance, AutoChessEvent.StartFight, self.onStartFight, self)
-	self.addEventCb(self, AutoChessController.instance, AutoChessEvent.EndFight, self.onEndFight, self)
 	self.addEventCb(self, AutoChessController.instance, AutoChessEvent.NextRound, self.onNextRound, self)
 	self.addEventCb(self, AutoChessController.instance, AutoChessEvent.CheckEnemyTeam, self.onCheckEnemy, self)
+	self.addEventCb(self, AutoChessController.instance, AutoChessEvent.FinishStepList, self.onStepListFinish, self)
 
-	self.chessMo = AutoChessModel.instance:getChessMo()
+	self.sceneMo = AutoChessModel.instance:getSceneMo()
 	self.actId = Activity182Model.instance:getCurActId()
 	self.curSpeed = AutoChessHelper.getPlayerPrefs("AutoChessFightSpeed", 1)
 
@@ -106,37 +101,13 @@ function AutoChessGameView:refreshUI()
 		return
 	end
 
-	if self.chessMo.svrFight.roundType == AutoChessEnum.RoundType.BOSS then
+	if self.sceneMo.fight.roundType == AutoChessEnum.RoundType.BOSS then
 		self._txtDamageTip.text = luaLang("autochess_gameview_bosslimit")
 	else
-		local roundCo = lua_auto_chess_round.configDict[self.actId][self.chessMo.sceneRound]
+		local roundCo = lua_auto_chess_round.configDict[self.actId][self.sceneMo.baseInfo.sceneRound]
 		local txt1 = luaLang("autochess_gameview_damagelimit")
 
 		self._txtDamageTip.text = GameUtil.getSubPlaceholderLuaLangOneParam(txt1, roundCo.maxdamage)
-	end
-end
-
-function AutoChessGameView:onStartFight()
-	ViewMgr.instance:openView(ViewName.AutoChessStartFightView)
-	TaskDispatcher.runDelay(self.delayShowFightRoot, self, 0.5)
-end
-
-function AutoChessGameView:delayShowFightRoot()
-	self:refreshSpeed()
-	gohelper.setActive(self._gotouch, false)
-	gohelper.setActive(self._goFightRoot, true)
-	gohelper.setActive(self._goDamageTip, self.moduleId ~= AutoChessEnum.ModuleId.Friend)
-end
-
-function AutoChessGameView:onEndFight()
-	self:recoverSpeed()
-
-	local resultData = AutoChessModel.instance.resultData
-
-	if resultData then
-		AutoChessController.instance:openResultView()
-	else
-		AutoChessController.instance:onResultViewClose()
 	end
 end
 
@@ -144,7 +115,6 @@ function AutoChessGameView:onNextRound()
 	self:refreshUI()
 	gohelper.setActive(self._btnStop, true)
 	gohelper.setActive(self._btnResume, false)
-	gohelper.setActive(self._gotouch, true)
 	gohelper.setActive(self._goFightRoot, false)
 	gohelper.setActive(self._goDamageTip, false)
 end
@@ -161,6 +131,37 @@ end
 
 function AutoChessGameView:recoverSpeed()
 	GameTimeMgr.instance:setTimeScale(GameTimeMgr.TimeScaleType.AutoChess, 1)
+end
+
+function AutoChessGameView:onStepListFinish(type)
+	if type == AutoChessEnum.ActionType.EndBuy then
+		self:onStartFight()
+	elseif type == AutoChessEnum.ActionType.RoundStart then
+		self:onEndFight()
+	end
+end
+
+function AutoChessGameView:onStartFight()
+	ViewMgr.instance:openView(ViewName.AutoChessStartFightView)
+	TaskDispatcher.runDelay(self.delayShowFightRoot, self, 0.5)
+end
+
+function AutoChessGameView:delayShowFightRoot()
+	self:refreshSpeed()
+	gohelper.setActive(self._goFightRoot, true)
+	gohelper.setActive(self._goDamageTip, self.moduleId ~= AutoChessEnum.ModuleId.Friend)
+end
+
+function AutoChessGameView:onEndFight()
+	self:recoverSpeed()
+
+	local resultData = AutoChessModel.instance.resultData
+
+	if resultData then
+		AutoChessController.instance:openResultView()
+	else
+		AutoChessController.instance:onResultViewClose()
+	end
 end
 
 return AutoChessGameView

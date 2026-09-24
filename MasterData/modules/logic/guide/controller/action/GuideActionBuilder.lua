@@ -38,6 +38,7 @@ function GuideActionBuilder:ctor()
 	self._ActionType2Impl[130] = GuideActionRoomFocusBlockBuildingPut
 	self._ActionType2Impl[131] = GuideActionCondition
 	self._ActionType2Impl[132] = GuideActionAdditionCondition
+	self._ActionType2Impl[133] = GuideActionEnableDrag
 	self._ActionType2Impl[201] = WaitGuideActionClickMask
 	self._ActionType2Impl[202] = WaitGuideActionClickAnywhere
 	self._ActionType2Impl[203] = WaitGuideActionStoryStart

@@ -46,7 +46,6 @@ end
 function StoryBgEffsShapeMask:init(bgCo)
 	StoryBgEffsShapeMask.super.init(self, bgCo)
 
-	self._bgCo = bgCo
 	self._shapeMaskCo = nil
 	self._prefabPath = nil
 	self._createTweenId = nil
@@ -58,8 +57,6 @@ function StoryBgEffsShapeMask:init(bgCo)
 end
 
 function StoryBgEffsShapeMask:start(callback, callbackObj)
-	StoryBgEffsShapeMask.super.start(self)
-
 	self._finishedCallback = callback
 	self._finishedCallbackObj = callbackObj
 
@@ -321,8 +318,6 @@ end
 function StoryBgEffsShapeMask:reset(bgCo)
 	StoryBgEffsShapeMask.super.reset(self, bgCo)
 
-	self._bgCo = bgCo
-
 	local oldPrefabPath = self._prefabPath
 
 	self:_cacheConfigByBgCo()
@@ -389,8 +384,6 @@ function StoryBgEffsShapeMask:destroy()
 
 	self._maskMat = nil
 	self._shapeMaskCo = nil
-	self._finishedCallback = nil
-	self._finishedCallbackObj = nil
 end
 
 return StoryBgEffsShapeMask

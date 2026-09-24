@@ -4,10 +4,11 @@ module("modules.configs.excel2json.lua_fight_hsy_effect", package.seeall)
 
 local lua_fight_hsy_effect = {}
 local fields = {
-	effect = 2,
-	skin = 1,
 	audio = 4,
-	hangPoint = 3
+	effect = 2,
+	duration = 5,
+	hangPoint = 3,
+	skin = 1
 }
 local primaryKey = {
 	"skin"

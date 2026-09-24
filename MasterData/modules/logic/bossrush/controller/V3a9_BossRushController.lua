@@ -168,7 +168,38 @@ function V3a9_BossRushController:onResetTeam(actId, stage, callback, callbackObj
 		Activity128Rpc.instance:sendResetAct128TeamRequest(actId, stage, callback, callbackObj)
 	end
 
-	GameFacade.showOptionMessageBox(MessageBoxIdDefine.V3a9BossRushActModeResetStage, MsgBoxEnum.BoxType.Yes_No, MsgBoxEnum.optionType.Daily, _yesCallback, nil, nil, self)
+	local function _yes1Callback()
+		self:_onResetStage(actId, stage, callback, callbackObj)
+	end
+
+	local messageBoxId = MessageBoxIdDefine.V3a9BossRushActModeResetStage
+	local msgBoxType = MsgBoxEnum.BoxType.Yes_No
+	local optionType = MsgBoxEnum.optionType.Daily
+	local param = {
+		msg = MessageBoxConfig.instance:getMessage(messageBoxId),
+		title = MessageBoxConfig.instance:getMessageTitle(messageBoxId),
+		messageBoxId = messageBoxId,
+		msgBoxType = msgBoxType,
+		optionType = optionType,
+		yesCallback = _yesCallback,
+		yesCallbackObj = self,
+		yesStr = luaLang("p_v3a9_bossrushleveldetail_txt_comfirm_reset_2"),
+		yes1Str = luaLang("p_v3a9_bossrushleveldetail_txt_comfirm_reset_1"),
+		yesStrEn = luaLang("p_v3a9_bossrushleveldetail_txt_comfirm_resetten_2"),
+		yes1StrEn = luaLang("p_v3a9_bossrushleveldetail_txt_comfirm_reseten_1"),
+		yes1Callback = _yes1Callback,
+		yes1CallbackObj = self
+	}
+
+	ViewMgr.instance:openView(ViewName.V3a9_BossRush_ResetView, param)
+end
+
+function V3a9_BossRushController:_onResetStage(actId, stage, callback, callbackObj)
+	local function cb()
+		V3a9_BossRushModel.instance:quickModifyHeroGroup(stage, nil, callback, callbackObj)
+	end
+
+	Activity128Rpc.instance:sendResetAct128TeamRequest(actId, stage, cb, callbackObj)
 end
 
 function V3a9_BossRushController:closeExpandBondsTipView()

@@ -63,68 +63,66 @@ function CommonHeroItem:init(go)
 end
 
 function CommonHeroItem:_initObj()
-	self._hideFavor = false
+	if self._view then
+		if not self._view.viewContainer then
+			local c = self.viewContainer
 
-	if self._breakObj then
-		self._breakImgs = {}
+			self._sp = CharacterSpNameLvRank.s_create(self, gohelper.findChild(self.go, "sp"), c):bindName0(self._nameCnTxt):bindName0En(self._nameEnTxt):simpleBindSpNameWithBg():bindLv0(CharacterLv.s_create(self, self._lvObj, c)):bindRank0(CharacterRank.s_create(self, self._rankObj, c))
 
-		for i = 1, 6 do
-			self._breakImgs[i] = gohelper.findChildImage(self._breakObj, "break" .. tostring(i))
+			if self._rankObjEmpty ~= self._rankObj then
+				self._sp:rank0():bindRankEmpty(CharacterRank.s_create(self, self._rankObjEmpty, c))
+			end
+
+			self._hideFavor = false
+
+			if self._breakObj then
+				self._breakImgs = {}
+
+				for i = 1, 6 do
+					self._breakImgs[i] = gohelper.findChildImage(self._breakObj, "break" .. tostring(i))
+				end
+			end
+
+			self._rareEffectGOs = self:getUserDataTb_()
+
+			table.insert(self._rareEffectGOs, self._gorareEffect1)
+			table.insert(self._rareEffectGOs, self._gorareEffect2)
+			table.insert(self._rareEffectGOs, self._gorareEffect3)
+
+			for k, v in ipairs(self._rareEffectGOs) do
+				gohelper.setActive(v, false)
+			end
+
+			self._callback = nil
+			self._callbackObj = nil
+
+			gohelper.setActive(self._injury1, false)
+			gohelper.setActive(self._gorestrict, false)
+			gohelper.setActive(self._selectframe, false)
+			gohelper.setActive(self._injuryselectframe, false)
+			gohelper.setActive(self._gobuff, false)
+			gohelper.setActive(self._inteam, false)
+			gohelper.setActive(self._current, false)
+			gohelper.setActive(self._aid, false)
+			gohelper.setActive(self._gochoose, false)
+			self:setRankObjActive(true)
+			gohelper.setActive(self._goTrialTag, false)
+			gohelper.setActive(self._goTrialRepeat, false)
+			gohelper.setActive(self._goCenterTxt, false)
+
+			self.injuryAnim = self._injury1:GetComponent(typeof(UnityEngine.Animator))
+			self.exSkillFillAmount = {
+				0.2,
+				0.4,
+				0.6,
+				0.79,
+				1
+			}
+
+			self:isShowSeasonMask(false)
+			self:setTrialRepeatCn(luaLang("p_commonheroitemnew_repeat"))
 		end
 	end
-
-	self._rankGOs = self:getUserDataTb_()
-	self._rankEmptyGOs = self:getUserDataTb_()
-
-	if self._rankGOs then
-		for i = 1, 3 do
-			local rankGO = gohelper.findChildImage(self._rankObj, "rank" .. i)
-			local rankEmptyGO = gohelper.findChildImage(self._rankObjEmpty, "rank" .. i)
-
-			table.insert(self._rankGOs, rankGO)
-			table.insert(self._rankEmptyGOs, rankEmptyGO)
-		end
-	end
-
-	self._rareEffectGOs = self:getUserDataTb_()
-
-	table.insert(self._rareEffectGOs, self._gorareEffect1)
-	table.insert(self._rareEffectGOs, self._gorareEffect2)
-	table.insert(self._rareEffectGOs, self._gorareEffect3)
-
-	for k, v in ipairs(self._rareEffectGOs) do
-		gohelper.setActive(v, false)
-	end
-
-	self._callback = nil
-	self._callbackObj = nil
-
-	gohelper.setActive(self._injury1, false)
-	gohelper.setActive(self._gorestrict, false)
-	gohelper.setActive(self._selectframe, false)
-	gohelper.setActive(self._injuryselectframe, false)
-	gohelper.setActive(self._gobuff, false)
-	gohelper.setActive(self._inteam, false)
-	gohelper.setActive(self._current, false)
-	gohelper.setActive(self._aid, false)
-	gohelper.setActive(self._gochoose, false)
-	gohelper.setActive(self._rankObj, true)
-	gohelper.setActive(self._rankObjEmpty, true)
-	gohelper.setActive(self._goTrialTag, false)
-	gohelper.setActive(self._goTrialRepeat, false)
-	gohelper.setActive(self._goCenterTxt, false)
-
-	self.injuryAnim = self._injury1:GetComponent(typeof(UnityEngine.Animator))
-	self.exSkillFillAmount = {
-		0.2,
-		0.4,
-		0.6,
-		0.79,
-		1
-	}
-
-	self:isShowSeasonMask(false)
-	self:setTrialRepeatCn(luaLang("p_commonheroitemnew_repeat"))
 end
 
 function CommonHeroItem:addClickListener(callback, callbackObj)
@@ -181,7 +179,9 @@ function CommonHeroItem:setKeepAnim()
 end
 
 function CommonHeroItem:setLevel(level, heroId)
-	self._lvTxt.text = heroId and heroId == self._mo.heroId and HeroConfig.instance:getShowLevel(level) or HeroConfig.instance:getShowLevel(self._mo.level)
+	local showLevel
+
+	self._sp:setLv(heroId and heroId == self._mo.heroId and level or self._mo.level)
 end
 
 function CommonHeroItem:setTrialTxt(txt)
@@ -195,17 +195,11 @@ function CommonHeroItem:setTrialTxt(txt)
 end
 
 function CommonHeroItem:setBalanceLv(level)
-	local showLv, rank = HeroConfig.instance:getShowLevel(level)
+	local showLv, showRank = HeroConfig.instance:getShowLevel(level)
 
-	self._lvTxt.text = "<color=#bfdaff>" .. showLv
-
-	if self._lvTxtEn then
-		SLFramework.UGUI.GuiHelper.SetColor(self._lvTxtEn, "#bfdaff")
-	end
-
-	if self._rankObj then
-		self:_fillStarContent(self._mo.config.rare, rank, true)
-	end
+	self._sp:setLv(showLv)
+	self._sp:setLvColor("#bfdaff")
+	self:_fillStarContent(self._mo.config.rare, showRank, true)
 end
 
 function CommonHeroItem:setTrialRepeat(isRepeat)
@@ -232,20 +226,14 @@ function CommonHeroItem:onUpdateMO(mo)
 	self._mo = mo
 
 	local level = CharacterModel.instance:getFakeLevel(self._mo.heroId) or mo.level
+	local showLv, showRank = HeroConfig.instance:getShowLevel(level)
 
-	self._lvTxt.text = HeroConfig.instance:getShowLevel(level)
-
-	if self._lvTxtEn then
-		SLFramework.UGUI.GuiHelper.SetColor(self._lvTxtEn, "#E9E9E9")
-	end
-
-	if self._nameCnTxt then
-		self._nameCnTxt.text = mo:getHeroName()
-	end
-
-	if self._nameEnTxt then
-		self._nameEnTxt.text = mo.config.nameEng
-	end
+	self._sp:onUpdateMO({
+		heroId = self._mo.heroId,
+		level = showLv,
+		rank = showRank
+	}):simpleAutoSet(mo:getHeroName())
+	self._sp:setLvColor("#E9E9E9")
 
 	if self._newObj then
 		gohelper.setActive(self._newObj, mo.isNew)
@@ -259,10 +247,7 @@ function CommonHeroItem:onUpdateMO(mo)
 		self:_fillBreakContent(mo.exSkillLevel)
 	end
 
-	if self._rankObj then
-		self:_fillStarContent(mo.config.rare, mo.rank)
-	end
-
+	self:_fillStarContent(mo.config.rare, mo.rank)
 	self:updateHero()
 	self:_updateExSkill()
 end
@@ -416,13 +401,11 @@ function CommonHeroItem:setSelectFrameSize(width, height, x, y)
 end
 
 function CommonHeroItem:setLevelContentShow(isShow)
-	gohelper.setActive(self._lvObj, isShow)
-	gohelper.setActive(self._lvTxt and self._lvTxt.gameObject, isShow)
+	self._sp:setActiveLvOnly(isShow)
 end
 
 function CommonHeroItem:setNameContentShow(isShow)
-	gohelper.setActive(self._nameCnTxt.gameObject, isShow)
-	gohelper.setActive(self._nameEnTxt.gameObject, isShow)
+	self._sp:setActiveNameOnly(isShow)
 end
 
 function CommonHeroItem:setRedDotShow(show)
@@ -487,49 +470,11 @@ function CommonHeroItem:_fillBreakContent(value)
 end
 
 function CommonHeroItem:_fillStarContent(rare, rank, isBalance)
-	for i = 1, 3 do
-		local rankGO = self._rankGOs[i]
-		local rankEmptyGO = self._rankEmptyGOs[i]
-
-		if isBalance then
-			if rankGO then
-				SLFramework.UGUI.GuiHelper.SetColor(rankGO, "#a9c7f1")
-			end
-
-			if rankEmptyGO then
-				SLFramework.UGUI.GuiHelper.SetColor(rankEmptyGO, "#a9c7f1")
-			end
-		else
-			if rankGO then
-				SLFramework.UGUI.GuiHelper.SetColor(rankGO, "#F6F3EC")
-			end
-
-			if rankEmptyGO then
-				SLFramework.UGUI.GuiHelper.SetColor(rankEmptyGO, "#F6F3EC")
-			end
-		end
-
-		gohelper.setActive(rankGO, i == rank - 1)
-		gohelper.setActive(rankEmptyGO, i == rank - 1)
-	end
+	self:_fillStarContentColor(rare, rank, isBalance and "#a9c7f1" or "#F6F3EC")
 end
 
-function CommonHeroItem:_fillStarContentColor(rare, rank, color1, color2)
-	for i = 1, 3 do
-		local rankGO = self._rankGOs[i]
-		local rankEmptyGO = self._rankEmptyGOs[i]
-
-		if rankGO then
-			SLFramework.UGUI.GuiHelper.SetColor(rankGO, color1 or color2)
-		end
-
-		if rankEmptyGO then
-			SLFramework.UGUI.GuiHelper.SetColor(rankEmptyGO, color1 or color2)
-		end
-
-		gohelper.setActive(rankGO, i == rank - 1)
-		gohelper.setActive(rankEmptyGO, i == rank - 1)
-	end
+function CommonHeroItem:_fillStarContentColor(rare, rank, color)
+	self._sp:setRankColor(rank, color)
 end
 
 function CommonHeroItem:_setTranScale(paramName, scaleX, scaleY, scaleZ)
@@ -559,14 +504,8 @@ function CommonHeroItem:_setTxtSizeScale(paramName, ratioX, ratioY)
 	self[paramName].transform.sizeDelta = Vector2(sizeX, sizeY)
 end
 
-function CommonHeroItem:setRankObjEmptyShow(hasEquip)
-	gohelper.setActive(self._rankObj, hasEquip)
-	gohelper.setActive(self._rankObjEmpty, not hasEquip)
-end
-
 function CommonHeroItem:setRankObjActive(active)
-	gohelper.setActive(self._rankObj, active)
-	gohelper.setActive(self._rankObjEmpty, active)
+	self._sp:setActiveRankOnly(active)
 end
 
 function CommonHeroItem:setCenterTxt(txt)
@@ -602,6 +541,8 @@ function CommonHeroItem:onDestroy()
 	if self.tweenid then
 		ZProj.TweenHelper.KillById(self.tweenid)
 	end
+
+	GameUtil.onDestroyViewMember(self, "_sp")
 end
 
 function CommonHeroItem:_setTxtWidth(paramName, width)
@@ -613,56 +554,95 @@ function CommonHeroItem:_setTxtWidth(paramName, width)
 end
 
 function CommonHeroItem:setStyle_HeroGroupEdit()
-	self:_setTranScale("_nameCnTxt", 1.25, 1.25)
-	self:_setTranScale("_nameEnTxt", 1.25, 1.25)
-	self:_setTranScale("_lvObj", 1.25, 1.25)
-	self:_setTranScale("_rankObj", 0.22, 0.22)
-	self:_setTxtPos("_nameCnTxt", 0.55, 68.9)
-	self:_setTxtPos("_nameEnTxt", 0.55, 41.1)
-	self:_setTxtPos("_lvObj", 1.7, 82)
-	self:_setTxtPos("_rankObj", 1.7, -107.7)
-	self:_setTxtSizeScale("_nameCnTxt", 0.8, 1)
+	if not self._sp:mo() then
+		self._sp:regSetStyleAfterSetData(self.setStyle_HeroGroupEdit, self)
+
+		return
+	end
+
+	self._sp:setScaleHeroName(1.25, 1.25)
+	self._sp:setScaleHeroSpName(1.25, 1.25)
+	self._sp:setScaleLv(1.25, 1.25)
+	self._sp:setScaleRank(0.22, 0.22)
+
+	local bOldPattern = self._sp:bOldPattern()
+
+	if bOldPattern then
+		self._sp:setPosNameCn(0.55, 68.9)
+		self._sp:setPosNameEn(0.55, 41.1)
+		self._sp:setPosLv(1.7, 82)
+		self._sp:setPosRank(1.7, -107.7)
+	end
+
+	self._sp:setSizeScaleNameCn(0.8, 1)
 end
 
 function CommonHeroItem:setStyle_SeasonPickAssist()
-	self:_setTxtWidth("_nameCnTxt", 205)
-	self:_setTranScale("_nameCnTxt", 1, 1)
-	self:_setTranScale("_nameEnTxt", 1, 1)
-	self:_setTranScale("_lvObj", 1, 1)
-	self:_setTranScale("_rankObj", 0.18, 0.18)
-	self:_setTxtPos("_rankObj", 2, -37)
-	self:_setTxtPos("_lvObj", 1.7, 178.6)
-	self:_setTxtPos("_nameCnTxt", 0.55, 153.4)
-	self:_setTxtPos("_nameEnTxt", 0.55, 124.3)
+	if not self._sp:mo() then
+		self._sp:regSetStyleAfterSetData(self.setStyle_SeasonPickAssist, self)
+
+		return
+	end
+
+	self._sp:setWidthNameCn(205)
+	self._sp:setScaleHeroName(1, 1)
+	self._sp:setScaleLv(1, 1)
+	self._sp:setScaleRank(0.18, 0.18)
+
+	local bOldPattern = self._sp:bOldPattern()
+
+	if bOldPattern then
+		self._sp:setPosLv(1.7, 178.6)
+		self._sp:setPosRank(2, -37)
+		self._sp:setPosNameCn(0.55, 153.4)
+		self._sp:setPosNameEn(0.55, 124.3)
+	end
+
 	self:_setTxtPos("_goexskill", 1.7, -170)
 end
 
 function CommonHeroItem:setStyle_RougePickAssist()
-	self:_setTxtWidth("_nameCnTxt", 205)
-	self:_setTranScale("_nameCnTxt", 1, 1)
-	self:_setTranScale("_nameEnTxt", 1, 1)
-	self:_setTranScale("_lvObj", 1, 1)
-	self:_setTranScale("_rankObj", 0.2, 0.2)
-	self:_setTxtPos("_rankObj", 2, -37)
-	self:_setTxtPos("_lvObj", 1.7, 165)
-	self:_setTxtPos("_nameCnTxt", 0.55, 153.4)
-	self:_setTxtPos("_nameEnTxt", 0.55, 124.3)
-	self:_setTxtPos("_goexskill", 1.7, -170)
+	if not self._sp:mo() then
+		self._sp:regSetStyleAfterSetData(self.setStyle_RougePickAssist, self)
+
+		return
+	end
+
+	self._sp:setWidthNameCn(205)
+	self._sp:setScaleHeroName(1, 1)
+	self._sp:setScaleLv(1, 1)
+	self._sp:setScaleRank(0.2, 0.2)
 end
 
 function CommonHeroItem:setStyle_CharacterBackpack()
-	self:_setTxtWidth("_nameCnTxt", 205)
-	self:_setTranScale("_nameCnTxt", 1, 1)
-	self:_setTranScale("_nameEnTxt", 1, 1)
-	self:_setTranScale("_lvObj", 1, 1)
-	self:_setTranScale("_rankObj", 0.18, 0.18)
-	self:_setTxtPos("_nameCnTxt", 0.99, 68.9)
-	self:_setTxtPos("_nameEnTxt", 1.1, 42.29)
-	self:_setTxtPos("_lvObj", 2.02, 75)
-	self:_setTxtPos("_rankObj", 1.06, -127.22)
+	if not self._sp:mo() then
+		self._sp:regSetStyleAfterSetData(self.setStyle_CharacterBackpack, self)
+
+		return
+	end
+
+	self._sp:setWidthNameCn(205)
+	self._sp:setScaleHeroName(1, 1)
+	self._sp:setScaleLv(1, 1)
+	self._sp:setScaleRank(0.18, 0.18)
+
+	local bOldPattern = self._sp:bOldPattern()
+
+	if bOldPattern then
+		self._sp:setPosNameCn(0.99, 68.9)
+		self._sp:setPosNameEn(1.1, 42.29)
+		self._sp:setPosLv(2.02, 75)
+		self._sp:setPosRank(1.06, -127.22)
+	end
 end
 
 function CommonHeroItem:setStyle_SurvivalHeroGroupEdit()
+	if not self._sp:mo() then
+		self._sp:regSetStyleAfterSetData(self.setStyle_SurvivalHeroGroupEdit, self)
+
+		return
+	end
+
 	self:setStyle_HeroGroupEdit()
 end
 

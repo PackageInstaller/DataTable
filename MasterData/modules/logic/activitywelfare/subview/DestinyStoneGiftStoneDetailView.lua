@@ -63,6 +63,9 @@ function DestinyStoneGiftStoneDetailView:_editableInitView()
 	end
 
 	self:_initReshapeItem()
+
+	self._simagestoneName1 = gohelper.findChildSingleImage(self.viewGO, "root/#simage_reshapeTitle/#glow")
+	self._imagestoneName1 = gohelper.findChildImage(self.viewGO, "root/#simage_reshapeTitle/#glow")
 end
 
 function DestinyStoneGiftStoneDetailView:_getEffectItem(index)
@@ -210,10 +213,13 @@ function DestinyStoneGiftStoneDetailView:_refreshStoneItem()
 				gohelper.setActive(self._simagestoneName.gameObject, isReshapeStone)
 
 				if isReshapeStone then
-					local resName = self._stoneMo.stoneId
+					local resName = self._stoneId
 
 					self._simagestoneName:LoadImage(ResUrl.getTxtDestinyIcon(resName), function()
 						self._imagestoneName:SetNativeSize()
+					end)
+					self._simagestoneName1:LoadImage(ResUrl.getTxtDestinyIcon(resName), function()
+						self._imagestoneName1:SetNativeSize()
 					end)
 				end
 
@@ -266,10 +272,10 @@ function DestinyStoneGiftStoneDetailView:_refreshStoneReshape(isPlayAnim)
 	if self._heroMO then
 		local destinyStoneMo = self._heroMO.destinyStoneMo
 		local isEquipReshapeAttr = destinyStoneMo and destinyStoneMo:getEquipReshapeStoneCo(self._stoneMo) ~= nil
-		local var_15_1 = self._stoneMo
+		local var_16_1 = self._stoneMo
 
 		if self._stoneMo then
-			var_15_1 = self._stoneMo.isUnlock
+			var_16_1 = self._stoneMo.isUnlock
 
 			if self._stoneMo.isUnlock then
 				local isUnlock = isEquipReshapeAttr
@@ -281,7 +287,7 @@ function DestinyStoneGiftStoneDetailView:_refreshStoneReshape(isPlayAnim)
 					item.titleTxt.text = GameUtil.getSubPlaceholderLuaLangOneParam(lang, i)
 					item.skillDesc = MonoHelper.addNoUpdateLuaComOnceToGo(item.descTxt.gameObject, SkillDescComp)
 
-					item.skillDesc:updateInfo(item.descTxt, descList[i], self._heroMO.heroId)
+					item.skillDesc:updateInfo(item.descTxt, descList[i], self._heroId)
 					item.skillDesc:setTipParam(0, Vector2(300, 100))
 
 					item.cg.alpha = isUnlock and 1 or 0.43

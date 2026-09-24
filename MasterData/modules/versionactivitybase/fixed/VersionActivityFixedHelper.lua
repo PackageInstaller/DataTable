@@ -4,8 +4,8 @@ module("modules.versionactivitybase.fixed.VersionActivityFixedHelper", package.s
 
 local VersionActivityFixedHelper = class("VersionActivityFixedHelper")
 local _version = {
-	big = 3,
-	small = 9
+	big = 4,
+	small = 0
 }
 local _versionTable
 local foramt1 = "%s_%s"

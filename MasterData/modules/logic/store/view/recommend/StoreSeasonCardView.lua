@@ -66,7 +66,6 @@ function StoreSeasonCardView:removeEvents()
 end
 
 local split = string.split
-local kGoodsId = StoreEnum.SeasonCardGoodsId
 
 function StoreSeasonCardView:_btnbuyOnClick()
 	AudioMgr.instance:trigger(AudioEnum.UI.play_ui_common_pause)
@@ -120,6 +119,7 @@ function StoreSeasonCardView:_editableInitView()
 	self._wenhaoClick = gohelper.getClick(gohelper.findChild(self.viewGO, "view/decorateicon"))
 	self._bgClick = gohelper.getClick(self._simagegoods.gameObject)
 
+	local kGoodsId = StoreConfig.instance:getSeasonCardStoreChargeId()
 	local symbol = PayModel.instance:getProductOriginPriceSymbol(kGoodsId)
 	local num, numStr = PayModel.instance:getProductOriginPriceNum(kGoodsId)
 
@@ -256,7 +256,8 @@ end
 
 function StoreSeasonCardView:_refreshRewardIcon()
 	local f = StoreConfig.instance:getSeasonCardMultiFactor()
-	local monthCardCo = StoreConfig.instance:getMonthCardConfig(StoreEnum.MonthCardGoodsId)
+	local monthCardId = StoreConfig.instance:getMonthCardStoreChargeId()
+	local monthCardCo = StoreConfig.instance:getMonthCardConfig(monthCardId)
 	local onceBonusParam = split(monthCardCo.onceBonus, "|")
 	local dailyBonusParam = split(monthCardCo.dailyBonus, "|")
 	local onceIconUrl, onceQuantity = self:_getIconUrlAndQuantity(onceBonusParam[1])
@@ -371,7 +372,7 @@ function StoreSeasonCardView:_refreshSupplement()
 	gohelper.setActive(self._gopatchcurrtime, not showlimiticon)
 	gohelper.setActive(self._gopatchinfo, showtips)
 
-	local goodId = StoreEnum.SeasonCardGoodsId
+	local goodId = StoreConfig.instance:getSeasonCardStoreChargeId()
 	local packageMo = StoreModel.instance:getGoodsMO(goodId)
 	local isSoldOut = not packageMo or packageMo:isSoldOut()
 

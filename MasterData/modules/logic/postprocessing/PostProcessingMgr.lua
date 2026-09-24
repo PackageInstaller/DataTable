@@ -766,6 +766,20 @@ function PostProcessingMgr:setUIPPValue(key, value)
 	end
 end
 
+function PostProcessingMgr:getUIPPVolumeWrap()
+	return self._uiPPVolume
+end
+
+function PostProcessingMgr:getUnitPPVolumeWrap()
+	return self._unitPPVolume
+end
+
+function PostProcessingMgr:setPPRefresh(wrap, value)
+	if wrap and not gohelper.isNil(wrap) then
+		wrap.refresh = not not value
+	end
+end
+
 function PostProcessingMgr:_onEnterScene(sceneType, sceneId)
 	if self:IsGaussianFreezeStatus() then
 		self:setUIBlurActive(1)

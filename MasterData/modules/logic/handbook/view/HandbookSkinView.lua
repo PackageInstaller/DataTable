@@ -53,6 +53,8 @@ function HandbookSkinView:addEvents()
 	self.addEventCb(self, self.viewContainer, HandbookEvent.OnExitTarotSkinSuit, self._onExitTarotMode, self)
 	self.addEventCb(self, self.viewContainer, HandbookEvent.OnClickFestivalSkinSuit, self._onEnterFestivalSkinSuit, self)
 	self.addEventCb(self, self.viewContainer, HandbookEvent.OnExitFestivalSkinSuit, self._onExitFestivalSkinSuit, self)
+	self.addEventCb(self, self.viewContainer, HandbookEvent.OnClickSevenSkinSuit, self._onEnterSevenMode, self)
+	self.addEventCb(self, self.viewContainer, HandbookEvent.OnExitSevenSkinSuit, self._onExitSevenMode, self)
 	self.addEventCb(self, HandbookController.instance, HandbookEvent.OnClickSkinSuitFloorItem, self.onClickFloorItem, self)
 	self.addEventCb(self, HandbookController.instance, HandbookEvent.MarkHandbookSkinSuitRedDot, self.refreshSkinRedDot, self)
 
@@ -105,6 +107,11 @@ function HandbookSkinView:_onScrollDragging(param, eventData)
 
 	if HandbookEnum.SkinSuitId2SceneType[skinGroupId] == HandbookEnum.SkinSuitSceneType.Tarot then
 		HandbookController.instance:dispatchEvent(HandbookEvent.SkinBookSlide, moveOffset.x)
+	elseif HandbookEnum.SkinSuitId2SceneType[skinGroupId] == HandbookEnum.SkinSuitSceneType.Seven then
+		self._scrollDragOffsetX = self._scrollDragOffsetX + moveOffset.x
+		self._scrollDragOffsetY = self._scrollDragOffsetY + moveOffset.y
+
+		HandbookController.instance:dispatchEvent(HandbookEvent.SkinBookSlide, -moveOffset.x, -moveOffset.y)
 	else
 		self._scrollDragOffsetX = self._scrollDragOffsetX + moveOffset.x
 		self._scrollDragOffsetY = self._scrollDragOffsetY + moveOffset.y
@@ -347,7 +354,7 @@ function HandbookSkinView:_createFloorItem(itemComp, data, index)
 end
 
 function HandbookSkinView:clickFloorItemAction(item)
-	if self._tarotMode then
+	if self._tarotMode or self._sevenMode then
 		return
 	end
 
@@ -463,6 +470,18 @@ function HandbookSkinView:_onEnterFestivalSkinSuit()
 end
 
 function HandbookSkinView:_onExitFestivalSkinSuit()
+	self._viewAnimatorPlayer:Play(UIAnimationName.Back)
+end
+
+function HandbookSkinView:_onEnterSevenMode()
+	self._sevenMode = true
+
+	self._viewAnimatorPlayer:Play(UIAnimationName.Close)
+end
+
+function HandbookSkinView:_onExitSevenMode()
+	self._sevenMode = false
+
 	self._viewAnimatorPlayer:Play(UIAnimationName.Back)
 end
 

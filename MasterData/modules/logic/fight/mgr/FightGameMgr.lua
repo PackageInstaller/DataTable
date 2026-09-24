@@ -29,7 +29,7 @@ function FightGameMgr:onLogicEnter()
 end
 
 function FightGameMgr:registMgr()
-	self.timelinePreLoaderMgr = self:addMgr(FightTimelinePreLoaderMgr)
+	self.preloadTimelineAssetMgr = self:addMgr(FightPreloadTimelineAssetMgr)
 	self.entityMgr = self:addMgr(FightEntityMgr)
 	self.playMgr = self:addMgr(FightPlayMgr)
 	self.operateMgr = self:addMgr(FightOperateMgr)
@@ -61,6 +61,8 @@ function FightGameMgr:registMgr()
 	self.transitionMgr = self:addMgr(FightTransitionMgr)
 	self.triggerBuffMgr = self:addMgr(FightTriggerBuffMgr)
 	self.tokenReleaseEntityMgr = self:addMgr(FightTokenReleaseEntityMgr)
+	self.clueEffectMgr = self:addMgr(FightClueEffectMgr)
+	self.entityPhysicsWhenCameraShakeMgr = self:addMgr(FightEntityPhysicsWhenCameraShakeMgr)
 end
 
 function FightGameMgr:addMgr(class)
@@ -137,7 +139,7 @@ function FightGameMgr:onReconnectSucc_def()
 end
 
 function FightGameMgr:onDestructor()
-	return
+	FightDataHelper.fieldMgr:clearSceneIdOfParam()
 end
 
 return FightGameMgr

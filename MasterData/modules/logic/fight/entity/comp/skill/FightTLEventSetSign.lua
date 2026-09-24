@@ -171,6 +171,24 @@ function FightTLEventSetSign:onTrackStart(fightStepData, duration, paramsArr)
 		FightDataHelper.tempMgr.isNdkQteing = true
 	elseif param6 == "ndkqteend" then
 		FightDataHelper.tempMgr.isNdkQteing = false
+	elseif param6 == "play3_7boss_broken_hit_effect" then
+		local entity
+
+		for k, entityData in pairs(FightDataHelper.entityMgr.entityDataDic) do
+			local skin = entityData.skin
+
+			if lua_fight_monster_3d.configDict[skin] then
+				entity = FightGameMgr.entityMgr:getById(entityData.id)
+
+				break
+			end
+		end
+
+		if entity then
+			entity.spine.animatorPlayer.animator:Play("hit_effect", 1, 0)
+		end
+	elseif param6 == "toughness_broken_reward_normal" then
+		FightMsgMgr.sendMsg(FightMsgId.PlayNameUIToughnessBrokenRewardEffect, fightStepData.fromId)
 	end
 
 	local param7 = paramsArr[7]

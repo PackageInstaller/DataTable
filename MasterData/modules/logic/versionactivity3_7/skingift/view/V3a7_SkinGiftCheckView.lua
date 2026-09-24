@@ -90,7 +90,7 @@ function V3a7_SkinGiftCheckView:refreshSkinList()
 		for index, info in ipairs(self.rateInfoList) do
 			local skinConfig = SkinConfig.instance:getSkinCo(info[2])
 
-			if V3a7_SkinGiftEnum.UniqueSkinDic[skinConfig.id] then
+			if skinConfig.skinLevel == CharacterEnum.SkinRare.Unique then
 				table.insert(uniqueSkinList, {
 					id = skinConfig.id,
 					index = index

@@ -50,6 +50,12 @@ end
 
 function PowerItemFlyGroup:onDestroy()
 	self:cancelTask()
+
+	if self._items then
+		for _, item in ipairs(self._items) do
+			item:onDestroy()
+		end
+	end
 end
 
 function PowerItemFlyGroup:cancelTask()

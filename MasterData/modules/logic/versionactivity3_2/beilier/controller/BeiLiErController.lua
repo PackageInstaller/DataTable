@@ -132,10 +132,6 @@ function BeiLiErController:_onRecInfo(cmd, resultCode, msg)
 	end
 end
 
-function BeiLiErController:reInit()
-	return
-end
-
 BeiLiErController.instance = BeiLiErController.New()
 
 return BeiLiErController

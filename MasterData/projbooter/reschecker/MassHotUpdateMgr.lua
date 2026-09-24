@@ -12,7 +12,7 @@ function MassHotUpdateMgr:ctor()
 end
 
 function MassHotUpdateMgr:_needShowChangeZipDownload()
-	return self._downloadFailAlertNum > 3
+	return false
 end
 
 function MassHotUpdateMgr:isDownloading()

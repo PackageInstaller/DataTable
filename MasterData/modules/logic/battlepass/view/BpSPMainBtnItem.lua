@@ -31,7 +31,7 @@ function BpSPMainBtnItem:_refreshItem()
 	UISpriteSetMgr.instance:setMainSprite(self._imgitem, spriteName, true)
 	self:setFestival(isShow)
 
-	self._redDot = RedDotController.instance:addRedDot(self._goactivityreddot, RedDotEnum.DotNode.BattlePassSPMain)
+	self._redDot = RedDotController.instance:addRedDot(self._goactivityreddot, RedDotEnum.DotNode.BattlePassSPMain2)
 end
 
 function BpSPMainBtnItem:isShowRedDot()

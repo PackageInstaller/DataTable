@@ -5,9 +5,15 @@ module("modules.logic.character.controller.CharacterRecommedEvent", package.seea
 local CharacterRecommedEvent = {}
 
 CharacterRecommedEvent.OnChangeHero = GameUtil.getEventId()
+CharacterRecommedEvent.OnReplaceTeam = GameUtil.getEventId()
 CharacterRecommedEvent.OnCutHeroAnimCB = GameUtil.getEventId()
 CharacterRecommedEvent.OnLoadFinishTracedIcon = GameUtil.getEventId()
 CharacterRecommedEvent.OnRefreshTraced = GameUtil.getEventId()
 CharacterRecommedEvent.OnJumpView = GameUtil.getEventId()
+CharacterRecommedEvent.RegisterHeroIcon = GameUtil.getEventId()
+CharacterRecommedEvent.OnBeginDragHeroIcon = GameUtil.getEventId()
+CharacterRecommedEvent.OnDragHeroIcon = GameUtil.getEventId()
+CharacterRecommedEvent.OnEndDragHeroIcon = GameUtil.getEventId()
+CharacterRecommedEvent.OnExpandTeam = GameUtil.getEventId()
 
 return CharacterRecommedEvent

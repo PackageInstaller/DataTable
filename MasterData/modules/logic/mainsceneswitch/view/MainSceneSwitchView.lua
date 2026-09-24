@@ -16,10 +16,10 @@ function MainSceneSwitchView:onInitView()
 	self._goHideBtn = gohelper.findChild(self.viewGO, "left/LayoutGroup/#go_HideBtn")
 	self._btnHide = gohelper.findChildButtonWithAudio(self.viewGO, "left/LayoutGroup/#go_HideBtn/#btn_Hide")
 	self._btnShow = gohelper.findChildButtonWithAudio(self.viewGO, "#btn_show")
-	self._goSceneName = gohelper.findChild(self.viewGO, "left/LayoutGroup/#go_SceneName")
-	self._txtSceneName = gohelper.findChildText(self.viewGO, "left/LayoutGroup/#go_SceneName/#txt_SceneName")
-	self._txtTime = gohelper.findChildText(self.viewGO, "left/LayoutGroup/#go_SceneName/#txt_SceneName/#txt_Time")
-	self._goTime = gohelper.findChild(self.viewGO, "left/LayoutGroup/#go_Time")
+	self._goSceneName = gohelper.findChild(self.viewGO, "left/LayoutGroup/layout/#go_SceneName")
+	self._txtSceneName = gohelper.findChildText(self.viewGO, "left/LayoutGroup/layout/#go_SceneName/#txt_SceneName")
+	self._txtTime = gohelper.findChildText(self.viewGO, "left/LayoutGroup/layout/#go_Time/#txt_Time")
+	self._goTime = gohelper.findChild(self.viewGO, "left/LayoutGroup/layout/#go_Time")
 	self._txtSceneDescr = gohelper.findChildText(self.viewGO, "left/#txt_SceneDescr")
 	self._gobtns = gohelper.findChild(self.viewGO, "#go_btns")
 
@@ -124,6 +124,7 @@ function MainSceneSwitchView:_showSceneStatus()
 	local showCurScene = self._selectSceneSkinId == self._curSceneSkinId
 	local isUnlock = sceneStatus == MainSceneSwitchEnum.SceneStutas.Unlock
 
+	gohelper.setActive(self._goTime, isUnlock)
 	gohelper.setActive(self._btnchange, not showCurScene and isUnlock)
 	gohelper.setActive(self._btnget, not showCurScene and sceneStatus == MainSceneSwitchEnum.SceneStutas.LockCanGet)
 	gohelper.setActive(self._goshowing, showCurScene and isUnlock)
@@ -240,7 +241,9 @@ function MainSceneSwitchView:onOpenFinish()
 end
 
 function MainSceneSwitchView:_onSceneSwitchUIVisible(visible)
-	self._rootAnimator:Play(visible and "open" or "close", 0, 0)
+	local animName = visible and "switch1" or "switch2"
+
+	self._rootAnimator:Play(animName, 0, 0)
 end
 
 function MainSceneSwitchView:_onClickSwitchItem(mo, index)
@@ -278,8 +281,6 @@ function MainSceneSwitchView:_updateSceneInfo()
 
 	self._txtSceneName.text = itemConfig.name
 	self._txtSceneDescr.text = itemConfig.desc
-
-	gohelper.setActive(self._goTime, false)
 
 	if selectedSceneConfig.defaultUnlock == 1 then
 		local info = PlayerModel.instance:getPlayinfo()

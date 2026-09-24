@@ -37,10 +37,6 @@ function EquipMO:getBreakLvByLevel(level)
 	return breakLv
 end
 
-function EquipMO:setBreakLvByLevel(level)
-	self.breakLv = self:getBreakLvByLevel(level or self.level)
-end
-
 function EquipMO:initByConfig(uid, equipId, equipLv, equipRefine)
 	uid = uid or "-9999999999"
 	self.id = tonumber(uid)

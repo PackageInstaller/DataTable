@@ -23,7 +23,7 @@ function NewPlayerCardContentViewContainer:buildThemeScrollView(views)
 	scrollParam.cellClass = PlayerCardThemeItem
 	scrollParam.scrollDir = ScrollEnum.ScrollDirH
 	scrollParam.lineCount = 1
-	scrollParam.cellWidth = 404
+	scrollParam.cellWidth = 364
 	scrollParam.cellHeight = 172
 	scrollParam.cellSpaceH = -26
 	scrollParam.cellSpaceV = 0

@@ -16,6 +16,19 @@ function WaitGuideActionOpenViewWithCondition:onStart(context)
 	self._conditionParam = paramList[3]
 	self._conditionCheckFun = self[funcName]
 
+	if not self._conditionCheckFun and not string.nilorempty(funcName) then
+		local arr = string.split(funcName, "-")
+		local cls = _G[arr[1]]
+
+		self._conditionCheckFun = cls and cls[arr[2]]
+	end
+
+	if not self._conditionCheckFun then
+		logError("WaitGuideActionOpenViewWithCondition condition check function is nil:" .. tostring(funcName))
+
+		self._conditionCheckFun = self.defaultCheck
+	end
+
 	if ViewMgr.instance:isOpen(self._viewName) and self._conditionCheckFun(self._conditionParam) then
 		self:onDone(true)
 
@@ -187,6 +200,12 @@ function WaitGuideActionOpenViewWithCondition.isMainMode()
 	return chapterConfig.type == DungeonEnum.ChapterType.Normal
 end
 
+function WaitGuideActionOpenViewWithCondition.isTargetChapter(param)
+	local chapterId = tonumber(param)
+
+	return chapterId and DungeonModel.instance.curLookChapterId == chapterId
+end
+
 function WaitGuideActionOpenViewWithCondition.isHardMode()
 	local episodeId = HeroGroupModel.instance.episodeId
 	local episodeConfig = DungeonConfig.instance:getEpisodeCO(episodeId)
@@ -283,15 +302,15 @@ function WaitGuideActionOpenViewWithCondition.isAutoChessInEpisodeAndRound(param
 		return
 	end
 
-	local mo = AutoChessModel.instance:getChessMo()
+	local mo = AutoChessModel.instance:getSceneMo()
 
-	if mo == nil or mo.sceneRound == nil then
+	if mo == nil or mo.baseInfo.sceneRound == nil then
 		return false
 	end
 
 	local round = data[2]
 
-	return mo.sceneRound == round
+	return mo.baseInfo.sceneRound == round
 end
 
 function WaitGuideActionOpenViewWithCondition.isUnlockEpisode(id)
@@ -514,6 +533,16 @@ function WaitGuideActionOpenViewWithCondition.checkNaxisuoxiGameId(id)
 	local curGameId = NaxisuosiPipeModel.instance:getGameId()
 
 	return curGameId ~= nil and curGameId == tonumber(id)
+end
+
+function WaitGuideActionOpenViewWithCondition.defaultCheck()
+	return false
+end
+
+function WaitGuideActionOpenViewWithCondition.enterMatchGameFightEpisodeId(episodeId)
+	local gameInfoData = MatchGameFightModel.instance:getGameInfoData()
+
+	return gameInfoData.episodeId == tonumber(episodeId)
 end
 
 return WaitGuideActionOpenViewWithCondition

@@ -76,6 +76,14 @@ function FightTLEventEntityVisible:onTrackStart(fightStepData, duration, paramsA
 					end
 				end
 			end
+
+			if not string.nilorempty(paramsArr[7]) then
+				local summonedEntity = FightMsgMgr.sendMsg(FightMsgId.GetSummonedEntity, fightStepData.fromId)
+
+				if summonedEntity then
+					summonedEntity:setAlpha(tonumber(paramsArr[7]), transitionTime)
+				end
+			end
 		end
 	end
 end

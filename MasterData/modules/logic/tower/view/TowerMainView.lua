@@ -661,12 +661,7 @@ function TowerMainView:saveHeroTrialNew()
 end
 
 function TowerMainView:refreshHeroTrialNew()
-	local saveSeason = TowerController.instance:getPlayerPrefs(TowerEnum.LocalPrefsKey.ReddotNewHeroTrial, 0)
-	local curSeason = TowerModel.instance:getTrialHeroSeason()
-	local heroTrialList = TowerHeroTrialListModel.instance:getEntranceHeroTrialList(TowerEnum.HeroTrialEntranceType.Normal)
-
-	gohelper.setActive(self._goheroTrial, #heroTrialList > 0)
-	gohelper.setActive(self._goheroTrialNew, saveSeason ~= curSeason and curSeason > 0)
+	gohelper.setActive(self._goheroTrial, false)
 end
 
 function TowerMainView:refreshLimitedActTaskNew()

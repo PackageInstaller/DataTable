@@ -73,7 +73,7 @@ function MaterialTipController:showMaterialInfoWithData(type, id, data)
 		elseif ItemEnum.RoomBackpackPropSubType[config.subType] then
 			ViewMgr.instance:openView(ViewName.RoomManufactureMaterialTipView, data)
 		elseif config.subType == ItemEnum.SubType.PlayerBg then
-			ViewMgr.instance:openView(ViewName.DecorateStoreGoodsTipView, data)
+			ViewMgr.instance:openView(ViewName.DecorateMaterialTipView, data)
 		else
 			data.isReturnLastTipView = true
 

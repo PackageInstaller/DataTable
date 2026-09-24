@@ -130,6 +130,10 @@ function MainController:enterMainScene(forceStarting, forceSceneType)
 	GameSceneMgr.instance:startSceneDefaultLevel(SceneType.Main, 101, forceStarting, forceSceneType)
 end
 
+function MainController:waitOpenMainThumbnailView(isOpen)
+	self._waitOpenMainThumbnailView = isOpen
+end
+
 function MainController:openMainThumbnailView(param, isImmediate)
 	MainController.instance:dispatchEvent(MainEvent.OnClickSwitchRole)
 	ViewMgr.instance:openView(ViewName.MainThumbnailView, param, isImmediate)
@@ -144,6 +148,10 @@ function MainController:getLastRequestNoticeTime()
 end
 
 function MainController:isInMainView()
+	if self._waitOpenMainThumbnailView then
+		return false
+	end
+
 	local openViews = ViewMgr.instance:getOpenViewNameList()
 	local openFullView = {}
 

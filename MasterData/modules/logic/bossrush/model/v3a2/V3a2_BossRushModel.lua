@@ -255,7 +255,8 @@ function V3a2_BossRushModel:setScore(extra)
 
 					self._score = {
 						baseScore = baseScore,
-						ruleScore = ruleScore
+						ruleScore = ruleScore,
+						totalScore = baseScore + ruleScore
 					}
 				end
 			end
@@ -265,6 +266,16 @@ end
 
 function V3a2_BossRushModel:getScore()
 	return self._score or {}
+end
+
+function V3a2_BossRushModel:getTotalScore()
+	local score = self:getScore()
+
+	return (score or nil) and (score.totalScore or 0)
+end
+
+function V3a2_BossRushModel:checkIsNewHighestPointRecord(stage)
+	return self:getTotalScore() > BossRushModel.instance:getHighestPoint(stage)
 end
 
 function V3a2_BossRushModel:setAssistMo(assistMo, index)
@@ -309,6 +320,10 @@ end
 function V3a2_BossRushModel:getEditorAssistMo()
 	local stage, _, actId = BossRushModel.instance:getBattleStageAndLayer()
 
+	if not stage or not actId then
+		return
+	end
+
 	self._editorAssistMos = self._editorAssistMos or {}
 	self._editorAssistMos[actId] = self._editorAssistMos[actId] or {}
 
@@ -317,6 +332,10 @@ end
 
 function V3a2_BossRushModel:clearAssist(isClearEditor)
 	local stage, _, actId = BossRushModel.instance:getBattleStageAndLayer()
+
+	if not stage or not actId then
+		return
+	end
 
 	if self._assistMos and self._assistMos[actId] and self._assistMos[actId][stage] then
 		self._assistMos[actId][stage] = nil

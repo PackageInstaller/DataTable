@@ -251,8 +251,11 @@ function BossRushDefine.initV3a9(module_views)
 			}
 		},
 		otherRes = {
-			[1] = "ui/viewres/versionactivity_1_4/v1a4_bossrush/v3a9_bossrush/v3a9_bossrush_edititem.prefab",
-			[2] = BossRushEnum.ResPath.v3a9_bossrush_bondsitem
+			"ui/viewres/versionactivity_1_4/v1a4_bossrush/v3a9_bossrush/v3a9_bossrush_edititem.prefab",
+			BossRushEnum.ResPath.v3a9_bossrush_bondsitem,
+			NormalCard = "ui/viewres/character/characterbreakthrough_normalcard.prefab",
+			UniqueCard = "ui/viewres/character/characterbreakthrough_uniquecard.prefab",
+			QTERes = "ui/viewres/character/characterbreakthroughview_1.prefab"
 		}
 	}
 	module_views.V3a9_BossRush_ExpandBondsTipView = {
@@ -329,6 +332,18 @@ function BossRushDefine.initV3a9(module_views)
 		layer = "POPUP_TOP",
 		viewType = ViewType.Normal,
 		anim = ViewAnim.Default
+	}
+	module_views.V3a9_BossRush_ResetView = {
+		destroy = 0,
+		container = "V3a9_BossRush_ResetViewContainer",
+		bgBlur = 1,
+		mainRes = "ui/viewres/versionactivity_1_4/v1a4_bossrush/v3a9_bossrush/v3a9_bossrush_resetview.prefab",
+		layer = "MESSAGE",
+		viewType = ViewType.Modal,
+		anim = ViewAnim.Default,
+		customAnimBg = {
+			"#simage_tipbg"
+		}
 	}
 end
 

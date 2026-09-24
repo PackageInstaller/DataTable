@@ -42,9 +42,7 @@ function AutoChessFriendItem:onUpdateData(friendData)
 
 	self._playerLiveHeadIcon:setLiveHead(playerIconId)
 
-	local actId = Activity182Model.instance:getCurActId()
-
-	self._playerRankCfg = lua_auto_chess_rank.configDict[actId][playerRank]
+	self._playerRankCfg = AutoChessConfig.instance:getRankCfg(playerRank)
 
 	if not self._playerRankCfg then
 		self._playerBadge.text = luaLang("autochess_badgeitem_noget")

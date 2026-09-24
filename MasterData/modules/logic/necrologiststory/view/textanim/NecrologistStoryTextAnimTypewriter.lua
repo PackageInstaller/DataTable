@@ -15,6 +15,14 @@ function NecrologistStoryTextAnimTypewriter:_onPlay()
 	TaskDispatcher.runRepeat(self._tick, self, tickInterval)
 end
 
+function NecrologistStoryTextAnimTypewriter:isDone()
+	if self.charCount == -1 then
+		return false
+	end
+
+	return NecrologistStoryTextAnimTypewriter.super.isDone(self)
+end
+
 function NecrologistStoryTextAnimTypewriter:stop()
 	TaskDispatcher.cancelTask(self._tick, self)
 end

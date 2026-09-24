@@ -61,6 +61,10 @@ function FightTLEventAtkAction:onTrackStart(fightStepData, duration, paramsArr)
 		self._attacker = FightGameMgr.tokenReleaseEntityMgr:getEntity(paramsArr[12])
 	end
 
+	if paramsArr[14] == "1" then
+		self._attacker = FightMsgMgr.sendMsg(FightMsgId.GetSummonedEntity, fightStepData.fromId) or self._attacker
+	end
+
 	if self.timelineItem.spineDelayTime then
 		TaskDispatcher.runDelay(self._playAct, self, self.timelineItem.spineDelayTime)
 	else

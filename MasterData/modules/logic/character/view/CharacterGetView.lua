@@ -152,6 +152,8 @@ function CharacterGetView:_editableInitView()
 	self._videoGo = gohelper.findChild(self.viewGO, "#go_bg/videoplayer")
 
 	self:setFullScreenMaskVisible(true)
+
+	self._sp = CharacterSpName.s_createByView(self, gohelper.findChild(self.viewGO, "introduce/sp")):bindName0(self._txtcharacterNameCn):simpleBindSpNameWithBg()
 end
 
 function CharacterGetView:_initVideoPlayer()
@@ -353,9 +355,9 @@ function CharacterGetView:_refreshShow()
 	gohelper.setActive(self._gobottomTalk, false)
 	gohelper.setActive(self._btnskip.gameObject, self._isSummon and not SummonController.instance:isInSummonGuide())
 	self:_loadSpine()
-
-	self._txtcharacterNameCn.text = config.name
-
+	self._sp:onUpdateMO({
+		heroId = self._heroId
+	}):setAsML_SpAndName0()
 	self._simagecareericon:LoadImage(ResUrl.getCharacterGetIcon("charactercareer_big_0" .. config.career))
 	UISpriteSetMgr.instance:setCharactergetSprite(self._imagecareericon, "charactercareer" .. config.career)
 	UISpriteSetMgr.instance:setCharactergetSprite(self._imagecareerline, "line_" .. config.career)
@@ -606,6 +608,8 @@ function CharacterGetView:onDestroyView()
 
 		self._videoPlayer = nil
 	end
+
+	GameUtil.onDestroyViewMember(self, "_sp")
 end
 
 return CharacterGetView

@@ -130,6 +130,114 @@ function StoryViewMgr:getStoryFrontView()
 	return viewContainer.viewGO
 end
 
+function StoryViewMgr:getStoryBottomBgGo()
+	local bgRootGo = self:getStoryBackgroundView()
+
+	if not bgRootGo then
+		return nil
+	end
+
+	return gohelper.findChild(bgRootGo, "#go_bottombg")
+end
+
+function StoryViewMgr:getStoryBgImage()
+	local imgGo = self:getStoryFrontBgImgGo()
+
+	if not imgGo then
+		return nil
+	end
+
+	return imgGo:GetComponent(gohelper.Type_Image)
+end
+
+function StoryViewMgr:getStoryBgImageTop()
+	local imgGo = self:getStoryFrontBgImgGo()
+
+	if not imgGo then
+		return nil
+	end
+
+	local topGo = gohelper.findChild(imgGo, "#simage_bgtop")
+
+	if not topGo then
+		return nil
+	end
+
+	return topGo:GetComponent(gohelper.Type_Image)
+end
+
+function StoryViewMgr:getStoryBgCustomImage()
+	local imgGo = self:getStoryFrontBgImgGo()
+
+	if not imgGo then
+		return nil
+	end
+
+	return imgGo:GetComponent(typeof(UnityEngine.UI.CustomImage))
+end
+
+function StoryViewMgr:getStoryBgBlurComp()
+	local imgGo = self:getStoryFrontBgImgGo()
+
+	if not imgGo then
+		return nil
+	end
+
+	return imgGo:GetComponent(typeof(UrpCustom.UIGaussianEffect))
+end
+
+function StoryViewMgr:getStoryBgBlurGo()
+	local imgGo = self:getStoryFrontBgImgGo()
+
+	if not imgGo then
+		return nil
+	end
+
+	return gohelper.findChild(imgGo, "#go_blur")
+end
+
+function StoryViewMgr:getStoryOldBgImage()
+	local bottomGo = self:getStoryBottomBgGo()
+
+	if not bottomGo then
+		return nil
+	end
+
+	local oldGo = gohelper.findChild(bottomGo, "#simage_bgold")
+
+	if not oldGo then
+		return nil
+	end
+
+	return oldGo:GetComponent(gohelper.Type_Image)
+end
+
+function StoryViewMgr:getStoryOldBgImageTop()
+	local bottomGo = self:getStoryBottomBgGo()
+
+	if not bottomGo then
+		return nil
+	end
+
+	local topGo = gohelper.findChild(bottomGo, "#simage_bgold/#simage_bgoldtop")
+
+	if not topGo then
+		return nil
+	end
+
+	return topGo:GetComponent(gohelper.Type_Image)
+end
+
+function StoryViewMgr:getStoryOldBgGo()
+	local bottomGo = self:getStoryBottomBgGo()
+
+	if not bottomGo then
+		return nil
+	end
+
+	return gohelper.findChild(bottomGo, "#simage_bgold")
+end
+
 function StoryViewMgr:getStoryScreenTxtComp()
 	local viewContainer = ViewMgr.instance:getContainer(ViewName.StoryFrontView)
 

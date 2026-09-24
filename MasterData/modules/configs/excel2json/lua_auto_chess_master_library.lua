@@ -6,7 +6,8 @@ local lua_auto_chess_master_library = {}
 local fields = {
 	id = 1,
 	masterId = 2,
-	weight = 3
+	weight = 4,
+	cardpackId = 3
 }
 local primaryKey = {
 	"id",

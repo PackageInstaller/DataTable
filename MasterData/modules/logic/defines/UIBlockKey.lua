@@ -32,5 +32,6 @@ UIBlockKey.SurvivalReputationSelectView = "SurvivalReputationSelectView"
 UIBlockKey.SurvivalBagInfoPart = "SurvivalBagInfoPart"
 UIBlockKey.SurvivalCommon = "SurvivalCommon"
 UIBlockKey.SimpleListComp = "SimpleListComp"
+UIBlockKey.Fight_WaitEnterQte = "Fight_WaitEnterQte"
 
 return UIBlockKey

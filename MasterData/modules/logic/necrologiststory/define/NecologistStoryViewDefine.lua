@@ -297,6 +297,28 @@ function NecologistStoryViewDefine.init(module_views)
 		viewType = ViewType.Normal,
 		anim = ViewAnim.Internal
 	}
+	module_views.V4A0_RoleStoryGameView = {
+		destroy = 0,
+		container = "V4A0_RoleStoryGameViewContainer",
+		mainRes = "ui/viewres/dungeon/rolestory/v4a0/v4a0_rolestorygameview.prefab",
+		layer = "POPUP_TOP",
+		viewType = ViewType.Full,
+		tabRes = {
+			{
+				{
+					NavigateButtonsView.prefabPath
+				}
+			}
+		}
+	}
+	module_views.V4A0_RoleStoryQuestionView = {
+		destroy = 0,
+		container = "V4A0_RoleStoryQuestionViewContainer",
+		bgBlur = 1,
+		mainRes = "ui/viewres/dungeon/rolestory/v4a0/v4a0_splevelview.prefab",
+		layer = "POPUP_TOP",
+		viewType = ViewType.Normal
+	}
 end
 
 return NecologistStoryViewDefine

@@ -11,6 +11,7 @@ function TowerComposeHeroGroupViewContainer:buildViews()
 	table.insert(views, TowerComposeHeroGroupRuleView.New())
 	table.insert(views, TowerComposeHeroGroupPlaneRuleView.New())
 	table.insert(views, TowerComposeHeroGroupListView.New())
+	table.insert(views, HeroGroupFightAssistBtn.New())
 	table.insert(views, TabViewGroup.New(1, "#go_container/btnContain/commonBtns"))
 
 	return views

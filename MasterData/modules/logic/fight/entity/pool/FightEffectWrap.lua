@@ -41,6 +41,7 @@ function FightEffectWrap:play()
 			local speed = FightModel.instance:getSpeed()
 
 			effectShakeComp:Play(CameraMgr.instance:getCameraShake(), speed, (speed > 1.4 or nil) and 1 - 0.3 * (speed - 1.4) / 1.4)
+			FightGameMgr.entityPhysicsWhenCameraShakeMgr:startShake()
 		end
 	end
 end

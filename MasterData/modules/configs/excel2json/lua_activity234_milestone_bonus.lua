@@ -5,9 +5,10 @@ module("modules.configs.excel2json.lua_activity234_milestone_bonus", package.see
 local lua_activity234_milestone_bonus = {}
 local fields = {
 	coinNum = 3,
-	bonus = 4,
+	rewardId = 2,
+	isBigReward = 5,
 	activityId = 1,
-	rewardId = 2
+	bonus = 4
 }
 local primaryKey = {
 	"activityId",

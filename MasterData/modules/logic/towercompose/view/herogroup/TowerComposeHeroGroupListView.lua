@@ -199,13 +199,24 @@ function TowerComposeHeroGroupListView:checkReplaceHeroList()
 						if heroData.heroId > 0 then
 							local heroMo = HeroModel.instance:getByHeroId(heroData.heroId)
 
-							table.insert(heroList, {
-								heroUid = heroMo.uid,
-								equipUid = {
-									heroData.equipId
-								}
-							})
-						elseif heroData.trialId > 0 then
+							if heroData.assistMo then
+								heroMo = heroData.assistMo.heroMO
+
+								TowerComposeModel.instance:setAssistMo(heroData.assistMo, pos, {
+									planeId = planeId
+								})
+							end
+
+							if heroMo then
+								table.insert(heroList, {
+									heroUid = heroMo.uid,
+									equipUid = {
+										heroData.equipId
+									},
+									assistMo = heroData.assistMo
+								})
+							end
+						elseif heroData.trialId > 0 and self:checkHeroItemInLockPlane(pos) then
 							local trialCo = lua_hero_trial.configDict[heroData.trialId][0]
 							local heroId = tostring(tonumber(trialCo.id .. "." .. trialCo.trialTemplate) - 1099511627776)
 
@@ -242,9 +253,19 @@ function TowerComposeHeroGroupListView:checkReplaceHeroList()
 end
 
 function TowerComposeHeroGroupListView:_updateHeroList()
+	local assistMoList = HeroGroupModel.instance:getAssistMoList()
+
 	for index, heroItem in ipairs(self._heroItemList) do
 		if TowerComposeHeroGroupModel.instance:isTowerComposeEpisode(self.episodeId) then
 			local mo = HeroSingleGroupModel.instance:getById(index)
+
+			for _, assistMo in ipairs(assistMoList) do
+				if assistMo.id == index then
+					mo = assistMo
+
+					break
+				end
+			end
 
 			heroItem:onUpdateMO(mo)
 
@@ -296,12 +317,36 @@ end
 
 function TowerComposeHeroGroupListView:_checkRestrictHero()
 	local needRemoveHeroUidDict = {}
+	local themeMo = TowerComposeModel.instance:getThemeMo(self.themeId)
+	local curBossMo = themeMo:getCurBossMo()
 
 	for i = 1, self.roleNum do
 		local heroSingleGroupMO = HeroSingleGroupModel.instance:getById(i)
 
 		if heroSingleGroupMO and HeroGroupModel.instance:isRestrict(heroSingleGroupMO.heroUid) then
 			needRemoveHeroUidDict[heroSingleGroupMO.heroUid] = true
+		end
+
+		local planeId = Mathf.Ceil(i / 4)
+		local planeMo = curBossMo:getPlaneMo(planeId)
+
+		if planeMo then
+			local teamInfoData = planeMo:getTeamInfoData()
+
+			if i > 4 then
+				if not (i - 4) then
+					local dataPos = i
+					local heroData = teamInfoData.heros[dataPos]
+
+					if heroData and heroData.heroId > 0 and heroData.assistMo and not self:checkHeroItemInLockPlane(i) then
+						needRemoveHeroUidDict[heroData.assistMo.heroUid] = true
+
+						TowerComposeModel.instance:clearAssist(true, {
+							planeId = planeId
+						})
+					end
+				end
+			end
 		end
 	end
 
@@ -491,6 +536,17 @@ function TowerComposeHeroGroupListView:_onEndDrag(param, pointerEventData)
 		return
 	end
 
+	if self.isHaveTwoPlane then
+		local canSelect, assistPlane = TowerComposeHeroGroupModel.instance:checkCanSelectAssistHero(heroItem.mo.heroUid, index, dragToIndex)
+
+		if not canSelect then
+			TowerComposeController.instance:showPlaneAssistToast(assistPlane)
+			self.setHeroItemPos(self, heroItem, index, true, completeDragFunc, self)
+
+			return
+		end
+	end
+
 	if not self:canDrag(dragToIndex, true) then
 		if dragHeroItem and dragHeroItem.isTrialLock then
 			GameFacade.showToast(ToastEnum.TrialCantChangePos)
@@ -551,6 +607,16 @@ function TowerComposeHeroGroupListView:_onEndDrag(param, pointerEventData)
 
 		HeroSingleGroupModel.instance:swap(index, dragToIndex)
 
+		local isNeedUpdate
+
+		for _, assistMo in ipairs(HeroGroupModel.instance:getAssistMoList()) do
+			if assistMo.id == index or assistMo.id == dragToIndex then
+				isNeedUpdate = true
+
+				break
+			end
+		end
+
 		local newHeroUids = HeroSingleGroupModel.instance:getHeroUids()
 
 		for i, heroUid in ipairs(heroGroupMO.heroList) do
@@ -560,8 +626,14 @@ function TowerComposeHeroGroupListView:_onEndDrag(param, pointerEventData)
 				HeroGroupModel.instance:saveCurGroupData()
 				self:_updateHeroList()
 
+				isNeedUpdate = false
+
 				break
 			end
+		end
+
+		if isNeedUpdate then
+			self:_updateHeroList()
 		end
 	end, self)
 end

@@ -34,6 +34,7 @@ function FightDataMgr:initTrueDataMgr()
 	self.playCardMgr = self:registMgr(FightPlayCardDataMgr)
 	self.ASFDDataMgr = self:registMgr(FightASFDDataMgr)
 	self.teamDataMgr = self:registMgr(FightTeamDataMgr)
+	self.qteDataMgr = self:registMgr(FightQTEDataMgr)
 end
 
 function FightDataMgr:initTempDataMgr()

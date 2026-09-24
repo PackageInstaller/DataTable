@@ -41,33 +41,36 @@ function V3a7_SkinGiftHelper.calcRewardGroupRateInfoList(refList, itemEffect)
 		return
 	end
 
-	local totWeight = 0
 	local weightParam = CommonConfig.instance:getConstStr(ConstEnum.V3a7SkinConfigWeight)
 	local constParam = string.splitToNumber(weightParam, "#")
-	local st = #refList
+	local uniqueCount, normalCount = 0, 0
 
 	for _, CO in ipairs(COList) do
-		if V3a7_SkinGiftEnum.UniqueSkinDic[CO.materialId] then
-			if not constParam[1] then
-				local weight = constParam[2]
+		local skinConfig = SkinConfig.instance:getSkinCo(CO.materialId)
 
-				totWeight = totWeight + weight
+		if skinConfig.skinLevel == CharacterEnum.SkinRare.Unique then
+			uniqueCount = uniqueCount + 1
+		else
+			normalCount = normalCount + 1
+		end
+	end
+
+	for _, CO in ipairs(COList) do
+		local skinConfig = SkinConfig.instance:getSkinCo(CO.materialId)
+		local isUnique = skinConfig.skinLevel == CharacterEnum.SkinRare.Unique
+
+		if isUnique then
+			if not constParam[1] then
+				local groupRate = constParam[2]
+				local groupCount = isUnique and uniqueCount or normalCount
 
 				table.insert(refList, {
-					weight = weight,
+					rate = groupCount == 0 and 0 or groupRate / 100 / groupCount,
 					materialType = CO.materialType,
 					materialId = CO.materialId
 				})
 			end
 		end
-	end
-
-	local ed = #refList
-
-	for i = st + 1, ed do
-		local rateInfo = refList[i]
-
-		rateInfo.rate = totWeight == 0 and 0 or rateInfo.weight / totWeight
 	end
 end
 

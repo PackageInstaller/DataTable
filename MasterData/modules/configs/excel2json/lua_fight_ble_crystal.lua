@@ -4,16 +4,18 @@ module("modules.configs.excel2json.lua_fight_ble_crystal", package.seeall)
 
 local lua_fight_ble_crystal = {}
 local fields = {
-	id = 1,
-	name = 2,
-	smallIcon = 5,
-	nameColor = 6,
-	iconBg = 4,
-	icon = 3,
-	cardTimeline = 7,
-	skill3Timeline = 8
+	smallIcon = 6,
+	name = 3,
+	iconBg = 5,
+	cardTimeline = 8,
+	skin = 1,
+	nameColor = 7,
+	id = 2,
+	icon = 4,
+	skill3Timeline = 9
 }
 local primaryKey = {
+	"skin",
 	"id"
 }
 local mlStringKey = {

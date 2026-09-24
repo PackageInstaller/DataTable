@@ -51,7 +51,8 @@ function CharacterDataConfig:reqConfigNames()
 		"character_face_effect",
 		"character_motion_special",
 		"character_special_interaction_voice",
-		"story_hero_to_character"
+		"story_hero_to_character",
+		"characterpast_voice"
 	}
 end
 
@@ -113,6 +114,8 @@ function CharacterDataConfig:onConfigLoaded(configName, configTable)
 		self._episodeConfig = configTable
 	elseif configName == "character_shop_voice" then
 		self._shopVoiceConfig = configTable
+	elseif configName == "characterpast_voice" then
+		self._characterPastConfig = configTable
 	end
 end
 
@@ -388,6 +391,14 @@ function CharacterDataConfig:getCharacterShopVoiceCO(heroId, audioId)
 	local cos = self:getCharacterShopVoicesCo(heroId)
 
 	return cos and cos[audioId]
+end
+
+function CharacterDataConfig:getCharacterPostCOs(heroId)
+	return self._characterPastConfig.configDict[heroId]
+end
+
+function CharacterDataConfig:getCharacterPostCO(heroId, audioId)
+	return self._characterPastConfig.configDict[heroId] and self._characterPastConfig.configDict[heroId][audioId]
 end
 
 CharacterDataConfig.instance = CharacterDataConfig.New()

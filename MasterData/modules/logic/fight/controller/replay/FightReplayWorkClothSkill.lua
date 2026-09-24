@@ -70,6 +70,18 @@ function FightReplayWorkClothSkill:onStart()
 		FightRpc.instance:sendUseClothSkillRequest(0, self.clothSkillOp.fromId, "0", FightEnum.ClothSkillType.MeiLeiErExtraRound)
 
 		return
+	elseif self.clothSkillOp.type == FightEnum.ClothSkillType.EnterQteRound then
+		FightController.instance:registerCallback(FightEvent.QTE_EnterFail, self._failDone, self)
+		FightController.instance:registerCallback(FightEvent.QTE_AfterEnterQte, self._onClothSkillDone, self)
+		FightRpc.instance:sendEnterQTERoundRequest()
+
+		return
+	elseif self.clothSkillOp.type == FightEnum.ClothSkillType.UseQTESkill then
+		FightController.instance:registerCallback(FightEvent.QTE_UseQteSkillFail, self._failDone, self)
+		FightController.instance:registerCallback(FightEvent.QTE_AfterUseQteSkill, self._onClothSkillDone, self)
+		FightRpc.instance:sendUseQTESkillRequest(self.clothSkillOp.fromId, self.clothSkillOp.toId)
+
+		return
 	end
 
 	if self.clothSkillOp.skillId == FightEnum.DeviceDiscardSkillId then
@@ -169,6 +181,10 @@ function FightReplayWorkClothSkill:clearWork()
 	FightController.instance:unregisterCallback(FightEvent.OnClothSkillRoundSequenceFinish, self._onClothSkillDone, self)
 	FightController.instance:unregisterCallback(FightEvent.RespUseClothSkillFail, self._failDone, self)
 	FightController.instance:unregisterCallback(FightEvent.OnCombineCardEnd, self._onRedealCardDone, self)
+	FightController.instance:unregisterCallback(FightEvent.QTE_EnterFail, self._failDone, self)
+	FightController.instance:unregisterCallback(FightEvent.QTE_AfterEnterQte, self._onClothSkillDone, self)
+	FightController.instance:unregisterCallback(FightEvent.QTE_UseQteSkillFail, self._failDone, self)
+	FightController.instance:unregisterCallback(FightEvent.QTE_AfterUseQteSkill, self._onClothSkillDone, self)
 	TaskDispatcher.cancelTask(self._delayDone, self)
 	TaskDispatcher.cancelTask(self._done, self)
 

@@ -58,9 +58,9 @@ function AutoChessMallInfoView:onOpen()
 		return
 	end
 
-	local chessMo = AutoChessModel.instance:getChessMo()
+	local sceneMo = AutoChessModel.instance:getSceneMo()
 
-	self._txtCoin.text = chessMo.svrMall.coin
+	self._txtCoin.text = sceneMo.mall.coin
 
 	if self.viewParam.mall then
 		self.mall = self.viewParam.mall
@@ -97,15 +97,9 @@ function AutoChessMallInfoView:refreshChessUI()
 	gohelper.setActive(self._btnRight, false)
 	gohelper.setActive(self._txtPage, false)
 
-	local entity = self.viewParam.chessEntity
+	local param = self.viewParam
 
-	gohelper.setActive(self._goTopRight, entity.teamType == AutoChessEnum.TeamType.Player)
-
-	local param = {
-		type = AutoChessCard.ShowType.Sell,
-		entity = entity
-	}
-
+	gohelper.setActive(self._goTopRight, param.showSell)
 	self.card:setData(param)
 end
 

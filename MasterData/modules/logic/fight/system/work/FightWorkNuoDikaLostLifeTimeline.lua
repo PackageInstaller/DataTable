@@ -36,6 +36,10 @@ function FightWorkNuoDikaLostLifeTimeline:onStart()
 				end
 			end
 		end
+	else
+		self:onDone(true)
+
+		return
 	end
 
 	local toId = targetId

@@ -41,6 +41,7 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 ASSETS_DIR = SCRIPT_DIR / "Assets"
 MASTER_DIR = SCRIPT_DIR / "MasterData"
 PORTRAIT_DIR = SCRIPT_DIR / "Painting"
+PORTRAIT_VERSION = PORTRAIT_DIR / ".version.json"
 MANIFEST_PATH = ASSETS_DIR / ".manifest.json"
 RESINFO_CACHE = ASSETS_DIR / ".resinfo.json"
 
@@ -852,13 +853,15 @@ def is_portrait_ab(ab_name: str) -> bool:
 
 
 def recover_ab_names(allmanifest: bytes, bundle_stems: set[str]) -> dict[str, str]:
-    """从 BinaryFormatter 明文串还原 abName -> md5 文件名。"""
+    """allmanifest 是 JSON，bundles/<md5>.dat 的 md5 就是 abName 的 MD5。"""
     names: dict[str, str] = {}
-    for m in re.finditer(rb"[\x20-\x7e]{4,}", allmanifest):
-        s = m.group().decode("ascii")
-        h = hashlib.md5(s.encode("utf-8")).hexdigest()
+    for item in json.loads(allmanifest):
+        name = item.get("abName") if isinstance(item, dict) else None
+        if not isinstance(name, str) or not name:
+            continue
+        h = hashlib.md5(name.encode("utf-8")).hexdigest()
         if h in bundle_stems:
-            names[s] = h
+            names[name] = h
     return names
 
 
@@ -965,51 +968,119 @@ def extract_portrait_textures(bundle: Path) -> list[tuple[str, str, Any]]:
     return hits
 
 
-def export_portraits(
-    bundles: list[Path], mapping: dict[str, tuple[str, str, str]], force: bool
-) -> tuple[int, int, int]:
+def load_portrait_version() -> dict:
+    if not PORTRAIT_VERSION.is_file():
+        return {}
+    try:
+        return json.loads(PORTRAIT_VERSION.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+
+
+def save_portrait_version(doc: dict) -> None:
     PORTRAIT_DIR.mkdir(parents=True, exist_ok=True)
+    PORTRAIT_VERSION.write_text(
+        json.dumps(doc, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+
+
+def _bundle_exported(rec: dict | None, md5: str) -> bool:
+    if not rec or rec.get("md5") != md5:
+        return False
+    portraits = rec.get("portraits") or {}
+    return all((PORTRAIT_DIR / name).is_file() for name in portraits.values())
+
+
+def export_portraits(
+    items: list[dict],
+    mapping: dict[str, tuple[str, str, str]],
+    force: bool,
+    version: str,
+) -> tuple[int, int, int]:
+    """按 Painting/.version.json 跳过未变化的 bundle，只拆有更新的。"""
+    PORTRAIT_DIR.mkdir(parents=True, exist_ok=True)
+    old = load_portrait_version()
+    known: dict[str, str] = {}
+    for rec in (old.get("bundles") or {}).values():
+        known.update(rec.get("portraits") or {})
+    bundles_doc: dict[str, dict] = {} if force else dict(old.get("bundles") or {})
     used: set[str] = set()
     seen_stems: set[str] = set()
     ok = skip = fail = 0
     failures: dict[str, str] = {}
-    progress = Progress(
-        SpinnerColumn(),
-        TextColumn("[progress.description]{task.description}"),
-        BarColumn(),
-        "[progress.percentage]{task.percentage:>3.1f}%",
-        TimeElapsedColumn(),
-        TimeRemainingColumn(),
-        console=console,
-        transient=False,
-        refresh_per_second=8,
-    )
-    with progress:
-        task = progress.add_task("[cyan]导出立绘", total=len(bundles))
-        for bundle in bundles:
-            try:
-                textures = extract_portrait_textures(bundle)
-                if not textures:
-                    raise ValueError("没有 Texture2D")
-                for container, tex_name, img in textures:
-                    stem = _texture_stem(container, tex_name)
-                    if stem in seen_stems:
-                        skip += 1
-                        continue
-                    seen_stems.add(stem)
-                    dest = portrait_dest(stem, mapping, used)
-                    if dest.exists() and not force:
-                        skip += 1
-                        continue
-                    if getattr(img, "mode", "") not in ("RGB", "RGBA"):
-                        img = img.convert("RGBA")
-                    img.save(dest, "PNG")
-                    ok += 1
-            except Exception as exc:
-                fail += 1
-                failures[bundle.name] = str(exc)
-                progress.live.print(f"[red]失败[/red] {bundle.name}: {exc}")
-            progress.advance(task)
+    pending: list[dict] = []
+    for it in items:
+        rec = None if force else bundles_doc.get(it["path"])
+        if _bundle_exported(rec, it["md5"]):
+            portraits = rec.get("portraits") or {}
+            skip += len(portraits)
+            seen_stems.update(portraits)
+            used.update(portraits.values())
+            continue
+        pending.append(it)
+
+    if not pending:
+        console.print(f"  立绘已是最新，跳过导出 {skip} 张")
+    else:
+        progress = Progress(
+            SpinnerColumn(),
+            TextColumn("[progress.description]{task.description}"),
+            BarColumn(),
+            "[progress.percentage]{task.percentage:>3.1f}%",
+            TimeElapsedColumn(),
+            TimeRemainingColumn(),
+            console=console,
+            transient=False,
+            refresh_per_second=8,
+        )
+        with progress:
+            task = progress.add_task("[cyan]导出立绘", total=len(pending))
+            for it in pending:
+                bundle = ASSETS_DIR / it["path"]
+                try:
+                    textures = extract_portrait_textures(bundle)
+                    if not textures:
+                        raise ValueError("没有 Texture2D")
+                    files: dict[str, str] = {}
+                    for container, tex_name, img in textures:
+                        stem = _texture_stem(container, tex_name)
+                        if stem in seen_stems:
+                            skip += 1
+                            continue
+                        seen_stems.add(stem)
+                        if stem in known:
+                            name = known[stem]
+                            used.add(name)
+                            dest = PORTRAIT_DIR / name
+                        else:
+                            dest = portrait_dest(stem, mapping, used)
+                        files[stem] = dest.name
+                        if dest.exists() and not force:
+                            skip += 1
+                            continue
+                        if getattr(img, "mode", "") not in ("RGB", "RGBA"):
+                            img = img.convert("RGBA")
+                        img.save(dest, "PNG")
+                        ok += 1
+                    bundles_doc[it["path"]] = {"md5": it["md5"], "portraits": files}
+                except Exception as exc:
+                    fail += 1
+                    failures[bundle.name] = str(exc)
+                    progress.live.print(f"[red]失败[/red] {bundle.name}: {exc}")
+                progress.advance(task)
+
+    keep = {it["path"] for it in items}
+    for key in list(bundles_doc):
+        if key not in keep:
+            del bundles_doc[key]
+    if pending and bundles_doc:
+        save_portrait_version(
+            {
+                "version": version,
+                "updated": time.strftime("%Y-%m-%d %H:%M:%S"),
+                "bundles": bundles_doc,
+            }
+        )
     if failures:
         (SCRIPT_DIR / "portrait_failed.txt").write_text(
             "\n".join(f"{k}\t{v}" for k, v in failures.items()), encoding="utf-8"
@@ -1061,12 +1132,8 @@ def run_portrait(threads: int, force: bool) -> int:
     mapping = load_portrait_mappings()
     console.print(f"  皮肤映射 {len(mapping)} 条")
 
-    local_bundles = []
-    for it in items:
-        dest = ASSETS_DIR / it["path"]
-        if dest.is_file():
-            local_bundles.append(dest)
-    exported, skipped_png, exp_fail = export_portraits(local_bundles, mapping, force)
+    local_items = [it for it in items if (ASSETS_DIR / it["path"]).is_file()]
+    exported, skipped_png, exp_fail = export_portraits(local_items, mapping, force, latest)
     pngs = sum(1 for _ in PORTRAIT_DIR.glob("*.png"))
     console.print(
         f"[bold green]Painting[/bold green] 新导出={exported} 跳过={skipped_png} "
@@ -1108,9 +1175,8 @@ def main() -> int:
     )
     parser.add_argument(
         "mode",
-        nargs="?",
-        choices=("lua", "masterdata", "data", "portrait", "painting"),
-        help="lua=只转 Lua+配表；portrait=只导出角色立绘到 Painting/；省略则下载全部资产",
+        choices=("assets", "masterdata", "painting"),
+        help="assets=下载全部资产；masterdata=只转 Lua+配表；painting=导出角色立绘",
     )
     parser.add_argument(
         "--threads",
@@ -1126,13 +1192,15 @@ def main() -> int:
         action="store_true",
         help="全量模式排除 dlc（语音/活动包）",
     )
+    if len(sys.argv) == 1:
+        parser.print_help()
+        return 0
     args = parser.parse_args()
     threads = max(1, args.threads)
-    if args.mode in ("portrait", "painting"):
+    if args.mode == "painting":
         return run_portrait(threads, args.force)
-    lua_only = args.mode in ("lua", "masterdata", "data")
     return run(
-        lua_only=lua_only,
+        lua_only=args.mode == "masterdata",
         threads=threads,
         force=args.force,
         include_dlc=not args.no_dlc,

@@ -19,16 +19,10 @@ function StoryBgEffsEagleEye:init(bgCo)
 	self._effKeepTime = bgCo.effTimes[GameLanguageMgr.instance:getVoiceTypeStoryIndex()]
 end
 
-function StoryBgEffsEagleEye:start(callback, callbackObj)
-	StoryBgEffsEagleEye.super.start(self)
-
-	self._finishedCallback = callback
-	self._finishedCallbackObj = callbackObj
-
+function StoryBgEffsEagleEye:onStartEffect()
 	self:_setViewTop(true)
 	ViewMgr.instance:registerCallback(ViewEvent.OnOpenView, self._onOpenView, self)
 	ViewMgr.instance:registerCallback(ViewEvent.OnCloseView, self._onCloseView, self)
-	self:loadRes()
 end
 
 function StoryBgEffsEagleEye:_onOpenView(viewName)
@@ -119,13 +113,7 @@ end
 
 function StoryBgEffsEagleEye:onEffOutFinished()
 	StoryBgEffsEagleEye.super.onEffOutFinished(self)
-
-	if self._finishedCallback then
-		self._finishedCallback(self._finishedCallbackObj)
-
-		self._finishedCallback = nil
-		self._finishedCallbackObj = nil
-	end
+	self:callFinished()
 end
 
 function StoryBgEffsEagleEye:_clearEffs()
@@ -143,9 +131,6 @@ function StoryBgEffsEagleEye:_clearEffs()
 
 		self._eagleEyeGo = nil
 	end
-
-	self._finishedCallback = nil
-	self._finishedCallbackObj = nil
 end
 
 function StoryBgEffsEagleEye:destroy()

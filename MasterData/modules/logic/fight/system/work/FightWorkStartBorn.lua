@@ -74,7 +74,7 @@ function FightWorkStartBorn:_playEnterVoice()
 		local randomEntity = entityNoSubList[math.random(#entityNoSubList)]
 		local heroId = randomEntity:getMO().modelId
 
-		FightAudioMgr.instance:playHeroVoiceRandom(heroId, CharacterEnum.VoiceType.EnterFight)
+		FightAudioMgr.instance:playHeroVoiceRandom(heroId, CharacterEnum.VoiceType.EnterFight, randomEntity.entityId)
 
 		FightAudioMgr.instance.enterFightVoiceHeroID = heroId
 	end

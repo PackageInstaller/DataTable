@@ -12,7 +12,7 @@ end
 
 function GuideActionOpenMaskHole:onDestroy()
 	GuideActionOpenMaskHole.super.onDestroy(self)
-	GuideViewMgr.instance:close()
+	GuideViewMgr.instance:close(self.guideId, self.stepId)
 end
 
 return GuideActionOpenMaskHole

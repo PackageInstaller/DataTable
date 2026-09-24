@@ -46,7 +46,28 @@ function VersionSummonFull:_btnplayOnClick()
 		storyId = 800007
 	end
 
-	StoryController.instance:playStory(storyId)
+	self:_playStory(storyId)
+end
+
+function VersionSummonFull:_playStory(storyId)
+	local actId = self.viewParam.actId
+	local jumpParam = {
+		JumpEnum.JumpView.ActivityView,
+		actId
+	}
+	local jumpParamStr = table.concat(jumpParam, "#")
+
+	StoryController.instance:playStory(storyId, nil, function()
+		if not ActivityType101Model.instance:isOpen(actId) then
+			return
+		end
+
+		JumpController.instance.waitOpenViewNames = JumpController.instance.waitOpenViewNames or {}
+		JumpController.instance.remainViewNames = JumpController.instance.remainViewNames or {}
+		JumpController.instance.closeViewNames = JumpController.instance.closeViewNames or {}
+
+		JumpController.instance:jumpToActivityView(jumpParamStr)
+	end)
 end
 
 function VersionSummonFull:_btnClaimOnClick()

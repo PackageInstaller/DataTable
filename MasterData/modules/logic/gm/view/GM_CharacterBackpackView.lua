@@ -62,8 +62,13 @@ function GM_CharacterBackpackView.CharacterBackpackCardListItem_register(T)
 
 		if GM_CharacterBackpackView.s_ShowAllTabId then
 			local mo = selfObj._mo
+			local heroId = mo.heroId
+			local heroItem = selfObj._heroItem
+			local str = gohelper.getRichColorText(heroId, kYellow)
 
-			selfObj._heroItem._nameCnTxt.text = gohelper.getRichColorText(mo.config.id, kYellow)
+			heroItem._nameCnTxt.text = str
+
+			heroItem._sp:setSpName(str)
 		end
 	end
 

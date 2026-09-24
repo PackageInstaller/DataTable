@@ -155,7 +155,8 @@ function GMSubViewActivity:_resetRoleStory()
 	local rolestoryId = tonumber(self._rolestoryId:GetText())
 
 	NecrologistStoryRpc.instance:_sendUpdateNecrologistStoryRequest(tonumber(rolestoryId))
-	NecrologistStoryPlayerPrefs.instance:deletePrefsData()
+	NecrologistStoryPlayerPrefs.instance:deletePrefsData(rolestoryId)
+	GMRpc.instance:sendGMRequest("delete taskType 65")
 	self:closeThis()
 end
 
@@ -443,6 +444,11 @@ function GMSubViewActivity:_resetVersionActivityKVOpenVideo()
 	local userId = PlayerModel.instance:getPlayinfo().userId
 	local enum = VersionActivityFixedHelper.getVersionActivityEnum()
 	local key = string.format("%s_%s_%s", userId, PlayerPrefsKey.FirstLoginTodayRed, enum.EnterVideoDayKey)
+
+	PlayerPrefsHelper.setString(key, "")
+
+	enum = VersionActivityMainFixedHelper.getVersionActivityEnum()
+	key = string.format("%s_%s_%s", userId, PlayerPrefsKey.FirstLoginTodayRed, enum.EnterVideoDayKey)
 
 	PlayerPrefsHelper.setString(key, "")
 end

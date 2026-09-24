@@ -942,6 +942,21 @@ function RoomMapController:statRoomEnd()
 
 	if statInfo then
 		self._statTime = nil
+
+		local lineList = {}
+		local lineMOList = RoomProductionModel.instance:getList()
+
+		for _, lineMO in ipairs(lineMOList) do
+			if lineMO and lineMO.config then
+				table.insert(lineList, {
+					id = lineMO.id,
+					name = lineMO.config.name,
+					level = lineMO.level
+				})
+			end
+		end
+
+		statInfo[StatEnum.EventProperties.ProductionLine] = lineList
 		statInfo[StatEnum.EventProperties.SharePlanNum] = RoomLayoutModel.instance:getSharePlanCount()
 		statInfo[StatEnum.EventProperties.Attention] = RoomLayoutModel.instance:getUseCount()
 

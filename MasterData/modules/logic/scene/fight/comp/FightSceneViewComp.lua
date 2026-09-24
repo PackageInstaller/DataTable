@@ -41,6 +41,10 @@ function FightSceneViewComp:onSceneClose(sceneId, levelId)
 	ViewMgr.instance:closeView(ViewName.FightS02SSWLSelectCardView, true)
 	ViewMgr.instance:closeView(ViewName.Fight3_5BaiFuZhangWheelSelectCardView, true)
 	ViewMgr.instance:closeView(ViewName.Fight3_5BaiFuZhangWheelView, true)
+	ViewMgr.instance:closeView(ViewName.FightQteView, true)
+	ViewMgr.instance:closeView(ViewName.QteSkillTipView, true)
+	ViewMgr.instance:closeView(ViewName.FightQteTipView, true)
+	ViewMgr.instance:closeView(ViewName.QteEnterEffectView, true)
 end
 
 return FightSceneViewComp

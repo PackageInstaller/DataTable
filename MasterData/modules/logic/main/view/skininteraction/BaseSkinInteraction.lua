@@ -134,6 +134,37 @@ function BaseSkinInteraction:_onClick(pos)
 	return
 end
 
+function BaseSkinInteraction:_resetCameraPos(animationControllerName)
+	if GameSceneMgr.instance:getCurSceneType() ~= SceneType.Main then
+		return
+	end
+
+	if GameSceneMgr.instance:isClosing() then
+		return
+	end
+
+	if animationControllerName then
+		local animator = CameraMgr.instance:getCameraRootAnimator()
+		local animatorInst = animator.runtimeAnimatorController
+
+		if not animatorInst or animatorInst.name ~= animationControllerName then
+			return
+		end
+
+		animator.runtimeAnimatorController = nil
+	end
+
+	local root = CameraMgr.instance:getCameraTraceGO()
+
+	transformhelper.setLocalRotation(root.transform, 0, 0, 0)
+
+	local trace = CameraMgr.instance:getCameraTrace()
+
+	trace.EnableTrace = true
+	trace.EnableTrace = false
+	trace.enabled = false
+end
+
 function BaseSkinInteraction:onDestroy()
 	self:_callBehavior("_onDestroy")
 	self:_onDestroy()

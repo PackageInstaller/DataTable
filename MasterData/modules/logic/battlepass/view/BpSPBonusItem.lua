@@ -187,10 +187,16 @@ function BpSPBonusItem:_setBonus(itemSp, itemIconList, itemPrefab, clickCb, canG
 		itemIcon:SetCountLocalY(43.6)
 		itemIcon:SetCountBgHeight(40)
 		itemIcon:SetCountBgScale(1, 1.3, 1)
-		itemIcon:showStackableNum()
 		itemIcon:setHideLvAndBreakFlag(true)
 		itemIcon:hideEquipLvAndBreak(true)
-		itemIcon:isShowCount(one[1] ~= MaterialEnum.MaterialType.HeroSkin)
+
+		local showCount = one[1] ~= MaterialEnum.MaterialType.HeroSkin
+
+		itemIcon:isShowCount(showCount)
+
+		if showCount then
+			itemIcon:showStackableNum()
+		end
 
 		if hasGet then
 			itemIcon:setAlpha(0.45, 0.8)

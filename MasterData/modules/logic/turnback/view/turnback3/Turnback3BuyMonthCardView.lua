@@ -45,7 +45,8 @@ function Turnback3BuyMonthCardView:_editableInitView()
 end
 
 function Turnback3BuyMonthCardView:_btnmonthcardOnClick()
-	local storePackageMo = StoreModel.instance:getGoodsMO(StoreEnum.MonthCardGoodsId)
+	local monthCardId = StoreConfig.instance:getMonthCardStoreChargeId()
+	local storePackageMo = StoreModel.instance:getGoodsMO(monthCardId)
 
 	StoreController.instance:openPackageStoreGoodsView(storePackageMo)
 end
@@ -72,8 +73,9 @@ function Turnback3BuyMonthCardView:onOpen()
 	self._txtdesc.text = GameUtil.getSubPlaceholderLuaLangTwoParam(luaLang("Turnback3BuyMonthCardView_Tip"), price, needNum)
 
 	local haveMonthCard = StoreModel.instance:hasPurchaseMonthCard()
+	local monthCardId = StoreConfig.instance:getMonthCardStoreChargeId()
 
-	self._txtprice.text = PayModel.instance:getProductPrice(StoreEnum.MonthCardGoodsId)
+	self._txtprice.text = PayModel.instance:getProductPrice(monthCardId)
 
 	gohelper.setActive(self._goyueka, not haveMonthCard)
 end

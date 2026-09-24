@@ -13,6 +13,12 @@ function AbyssModel:reInit()
 	self._curActId = nil
 	self._curStage = nil
 	self._isFirstGetInfo = false
+	self._assistMO = nil
+	self._assistMODic = {}
+	self._assistHeroMODic = {}
+	self._normalAssistMo = nil
+	self._normalEditorAssistMo = nil
+	self._isAllowAssist = nil
 end
 
 function AbyssModel:isFirstGetInfo()
@@ -29,6 +35,8 @@ end
 
 function AbyssModel:setCurStageId(stageId)
 	self._curStage = stageId
+
+	AbyssController.instance:dispatchEvent(AbyssEvent.OnCurStageChange)
 end
 
 function AbyssModel:getCurStageId()
@@ -61,8 +69,14 @@ end
 
 function AbyssModel:onResetStage(actId, stageId)
 	local infoMo = self:getInfoMo(actId)
+	local stageInfoMo = infoMo:getStageInfo(stageId)
 
 	infoMo:resetStage(stageId)
+
+	if stageInfoMo:haveAssist() then
+		self:cleanAssistMO()
+	end
+
 	AbyssController.instance:dispatchEvent(AbyssEvent.OnResetStage, actId, stageId)
 end
 
@@ -90,6 +104,16 @@ function AbyssModel:getStageInfoMo(actId, stageId)
 	end
 
 	return infoMo:getStageInfo(stageId)
+end
+
+function AbyssModel:getIsAbyssAllow()
+	local stageInfo = AbyssModel.instance:getCurStageMo()
+
+	return not stageInfo:isChallenged()
+end
+
+function AbyssModel:setIsAbyssAllow(value)
+	self._isAllowAssist = value
 end
 
 function AbyssModel:isHeroLocked(actId, heroId)
@@ -147,12 +171,97 @@ function AbyssModel:clearFightResultParam()
 	self.curFightResultParam = nil
 end
 
+function AbyssModel:setAssistMO(mo, index)
+	self:cleanAssistMO()
+
+	self._assistMO = mo
+	self._normalAssistMo = self._normalAssistMo or HeroSingleGroupMO.New()
+
+	self._normalAssistMo:init(index, mo.heroUid)
+	self._normalAssistMo:setAssist(mo)
+
+	self._normalEditorAssistMo = mo
+	self._assistMODic[mo.heroUid] = mo.heroMO
+	self._assistHeroMODic[mo.heroId] = mo.heroMO
+
+	local curStageMo = self:getCurStageMo()
+
+	if curStageMo then
+		curStageMo:addAssistHero(mo.heroId, mo.skin, index)
+	end
+
+	AbyssController.instance:dispatchEvent(AbyssEvent.OnSelectPickAssist)
+end
+
+function AbyssModel:getAssistMO()
+	return self._normalAssistMo
+end
+
+function AbyssModel:getEditorAssistMO()
+	return self._normalEditorAssistMo
+end
+
+function AbyssModel:setEditorAssistMo(mo)
+	self._normalEditorAssistMo = mo
+end
+
+function AbyssModel:cleanAssistMO()
+	self._assistMO = nil
+	self._normalAssistMo = nil
+	self._normalEditorAssistMo = nil
+
+	tabletool.clear(self._assistMODic)
+	tabletool.clear(self._assistHeroMODic)
+
+	local infoMo = self:getCurInfoMo()
+
+	if infoMo then
+		for _, stageMo in ipairs(infoMo.stageInfoList) do
+			if not stageMo:isChallenged() then
+				stageMo:clearAssistHero()
+			end
+		end
+	end
+
+	AbyssController.instance:dispatchEvent(AbyssEvent.OnReleasePickAssist)
+end
+
 function AbyssModel:isInAbyssBattle()
 	local episodeId = HeroGroupModel.instance.episodeId
 	local episodeCO = episodeId and lua_episode.configDict[episodeId]
 	local episodeType = episodeCO and episodeCO.type
 
 	return episodeType == DungeonEnum.EpisodeType.Abyss
+end
+
+function AbyssModel.addAssistHook()
+	HeroModel.instance:addHookGetHeroId(AbyssModel.addHookGetHeroId)
+	HeroModel.instance:addHookGetHeroUid(AbyssModel.addHookGetHeroUid)
+end
+
+function AbyssModel.removeAssistHook()
+	HeroModel.instance:removeHookGetHeroId(AbyssModel.addHookGetHeroId)
+	HeroModel.instance:removeHookGetHeroUid(AbyssModel.addHookGetHeroUid)
+end
+
+function AbyssModel.addHookGetHeroId(heroId)
+	local moDic = AbyssModel.instance:getAssistMODicHero()
+
+	return moDic and moDic[heroId]
+end
+
+function AbyssModel.addHookGetHeroUid(uid)
+	local moDic = AbyssModel.instance:getAssistMODic()
+
+	return moDic and moDic[uid]
+end
+
+function AbyssModel:getAssistMODic()
+	return self._assistMODic
+end
+
+function AbyssModel:getAssistMODicHero()
+	return self._assistHeroMODic
 end
 
 function AbyssModel:onUpdateTimePush(actId, stageNOs)

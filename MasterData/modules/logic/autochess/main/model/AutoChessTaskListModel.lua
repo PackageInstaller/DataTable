@@ -48,6 +48,8 @@ function AutoChessTaskListModel.sortMO(objA, objB)
 	elseif objA.id ~= objB.id then
 		return objA.id < objB.id
 	end
+
+	return false
 end
 
 function AutoChessTaskListModel.getSortIndex(objA)

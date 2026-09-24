@@ -26,6 +26,7 @@ function BeiLiErLevelView:onInitView()
 	self._animPath = self._gopath:GetComponent(typeof(UnityEngine.Animator))
 	self._animTask = self._gotaskani:GetComponent(typeof(UnityEngine.Animator))
 	self._animEndless = self._goEndless:GetComponent(typeof(UnityEngine.Animator))
+	self._btnTrial = gohelper.findChildButtonWithAudio(self.viewGO, "#go_Try/#btn_Trial")
 
 	if self._editableInitView then
 		self:_editableInitView()
@@ -35,6 +36,7 @@ end
 function BeiLiErLevelView:addEvents()
 	self._btntask:AddClickListener(self._btntaskOnClick, self)
 	self._btnEndless:AddClickListener(self._btnEndlessOnClick, self)
+	self._btnTrial:AddClickListener(self._btnTrialOnClick, self)
 	self.addEventCb(self, BeiLiErController.instance, BeiLiErEvent.EpisodeFinished, self._onEpisodeFinished, self)
 	self.addEventCb(self, BeiLiErController.instance, BeiLiErEvent.OnBackToLevel, self._onBackToLevel, self)
 	self.addEventCb(self, ViewMgr.instance, ViewEvent.OnCloseView, self._onCloseView, self)
@@ -49,7 +51,34 @@ function BeiLiErLevelView:removeEvents()
 	self.removeEventCb(self, BeiLiErController.instance, BeiLiErEvent.OnBackToLevel, self._onBackToLevel, self)
 	self.removeEventCb(self, ViewMgr.instance, ViewEvent.OnCloseView, self._onCloseView, self)
 	self.removeEventCb(self, GameGlobalMgr.instance, GameStateEvent.OnScreenResize, self._onScreenSizeChange, self)
+	self._btnTrial:RemoveClickListener()
 	self._scrollstory:RemoveOnValueChanged()
+end
+
+function BeiLiErLevelView:_btnTrialOnClick()
+	if ActivityHelper.isOpen(self.actId) then
+		local episodeId = self.config.tryoutEpisode
+
+		if episodeId <= 0 then
+			logError("没有配置对应的试用关卡")
+
+			return
+		end
+
+		local config = DungeonConfig.instance:getEpisodeCO(episodeId)
+
+		DungeonFightController.instance:enterFight(config.chapterId, episodeId)
+	else
+		self:_clickLock()
+	end
+end
+
+function BeiLiErLevelView:_clickLock()
+	local toastId, toastParamList = OpenHelper.getToastIdAndParam(self.config.openId)
+
+	if toastId and toastId ~= 0 then
+		GameFacade.showToastWithTableParam(toastId, toastParamList)
+	end
 end
 
 function BeiLiErLevelView:_btntaskOnClick()
@@ -104,6 +133,7 @@ function BeiLiErLevelView:_editableInitView()
 	self:_initViewInfo()
 
 	self.actId = VersionActivity3_2Enum.ActivityId.BeiLiEr
+	self.config = ActivityConfig.instance:getActivityCo(self.actId)
 	self._viewAnimator = self.viewGO:GetComponent(typeof(UnityEngine.Animator))
 
 	RedDotController.instance:addRedDot(self._goreddotreward, RedDotEnum.DotNode.Activity220Task, self.actId)

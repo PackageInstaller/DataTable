@@ -35,11 +35,29 @@ function V3a9_BossRushExpandBondModel:_initExpandBondGroup(actId)
 			end
 		end
 
-		for _, co in ipairs(lua_character.configList) do
-			if co.isOnline == "1" then
-				for _, mo in pairs(self._expandBondGroupMos[actId]) do
-					mo:refreshHero(co.id)
-				end
+		self:refreshExpandBondHeroList()
+	end
+end
+
+function V3a9_BossRushExpandBondModel:refreshExpandBondHeroList()
+	local actId = BossRushConfig.instance:getActivityId(V3a9BossRushEnum.Mode.Act)
+
+	if not self._expandBondGroupMos or not self._expandBondGroupMos[actId] then
+		self:_initExpandBondGroup(actId)
+
+		return
+	end
+
+	local mos = self._expandBondGroupMos[actId]
+
+	if not mos then
+		return
+	end
+
+	for _, co in ipairs(lua_character.configList) do
+		if co.isOnline == "1" then
+			for _, mo in pairs(mos) do
+				mo:refreshHero(co.id)
 			end
 		end
 	end
@@ -196,11 +214,12 @@ function V3a9_BossRushExpandBondModel:refreshAddBondGroupId()
 
 	for _, mo in pairs(groupMos) do
 		local num = mo:getRealActiveHeroNum()
+		local max = mo:getMaxActiveNum()
 		local groupId = mo:getGroupId()
 		local tagType = mo:getTagType()
 
 		if num > 0 then
-			if tagType == V3a9BossRushEnum.TagType.BattleTag and not mo:isOverMaxLevel() then
+			if tagType == V3a9BossRushEnum.TagType.BattleTag and num < max then
 				if maxCount < num then
 					maxCount = num
 					list = {

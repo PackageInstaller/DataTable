@@ -256,60 +256,93 @@ function FightStatItem:_refreshInfoUI(argsStatType)
 
 	gohelper.setActive(self._godata, statType == FightEnum.FightStatType.DataView)
 	gohelper.setActive(self._goskill, statType == FightEnum.FightStatType.SkillView)
-	gohelper.setActive(self._goscrolluseskill, GameUtil.getTabLen(self._mo.cards) > 0)
-	gohelper.setActive(self._goskillempty, GameUtil.getTabLen(self._mo.cards) == 0)
 
-	local cardsLen = GameUtil.getTabLen(self._mo.cards)
-	local skillItemLen = GameUtil.getTabLen(self._skillItems)
+	local cardLen = #self._mo.cards
+	local useCount = 0
 
-	if cardsLen > 0 and statType == FightEnum.FightStatType.SkillView then
+	if cardLen > 0 and statType == FightEnum.FightStatType.SkillView then
 		self:_sortCard()
 
 		for index, cardmo in ipairs(self._mo.cards) do
-			local skillItem = self._skillItems[index]
+			useCount = useCount + 1
 
-			if not skillItem then
-				skillItem = self:getUserDataTb_()
-				skillItem.go = gohelper.clone(self._goskillItem, self._goskillContent, "skillitem" .. index)
-				skillItem.skillIconGo = self:getUserDataTb_()
+			local skillItem = self._skillItems[useCount]
 
-				for i = 0, 4 do
-					local item = gohelper.findChild(skillItem.go, "skillicon" .. i)
-					local o = self:getUserDataTb_()
-
-					o.go = item
-					o.imgIcon = gohelper.findChildSingleImage(item, "imgIcon")
-					o.tag = gohelper.findChildSingleImage(item, "tag/tagIcon")
-					o.count = gohelper.findChildText(item, "count/txt_count")
-					o.goStar = gohelper.findChildText(item, "star")
-					skillItem.skillIconGo[i + 1] = o
-				end
-
-				table.insert(self._skillItems, skillItem)
-			end
-
-			for _, o in ipairs(skillItem.skillIconGo) do
-				o.isBigSkill = FightCardDataHelper.isBigSkill(cardmo.skillId)
-
-				if lua_skill_next.configDict[cardmo.skillId] then
-					o.isBigSkill = false
-				end
-
-				gohelper.setActive(o.goStar, true)
-			end
+			skillItem = skillItem or self:createSkillItem(useCount)
 
 			gohelper.setActive(skillItem.go, true)
 			self:_setSkillCardInfo(skillItem, cardmo)
 		end
 	end
 
-	if cardsLen < skillItemLen then
-		for i = cardsLen + 1, skillItemLen do
-			local skillItem = self._skillItems[i]
+	if statType == FightEnum.FightStatType.SkillView and self.entityMO:isQteEntity() and self._mo.qteSkillUseCount > 0 then
+		useCount = useCount + 1
 
-			gohelper.setActive(skillItem and skillItem.go, false)
+		local skillItem = self._skillItems[useCount]
+
+		skillItem = skillItem or self:createSkillItem(useCount)
+
+		gohelper.setActive(skillItem.go, true)
+
+		local skillLv = 0
+		local qteCo = self.entityMO:getQteGroupCo()
+		local skillId = qteCo and qteCo.activeId
+		local skillConfig = skillId and lua_skill.configDict[skillId]
+
+		if skillConfig then
+			for index, cardinfo in ipairs(skillItem.skillIconGo) do
+				local lv = index - 1
+
+				gohelper.setActive(cardinfo.go, lv == skillLv)
+
+				if lv == skillLv then
+					local skillIcon = ResUrl.getSkillIcon(skillConfig.icon)
+
+					cardinfo.imgIcon:LoadImage(skillIcon)
+					cardinfo.tag:LoadImage(ResUrl.getAttributeIcon("attribute_" .. skillConfig.showTag))
+
+					cardinfo.count.text = self._mo.qteSkillUseCount
+				end
+			end
 		end
 	end
+
+	for i = useCount + 1, #self._skillItems do
+		local skillItem = self._skillItems[i]
+
+		if skillItem then
+			gohelper.setActive(skillItem.go, false)
+		end
+	end
+
+	gohelper.setActive(self._goscrolluseskill, useCount > 0)
+	gohelper.setActive(self._goskillempty, useCount < 1)
+end
+
+function FightStatItem:createSkillItem(index)
+	local skillItem = self:getUserDataTb_()
+
+	skillItem.go = gohelper.clone(self._goskillItem, self._goskillContent, "skillitem" .. index)
+	skillItem.skillIconGo = self:getUserDataTb_()
+
+	for i = 0, 4 do
+		local item = gohelper.findChild(skillItem.go, "skillicon" .. i)
+		local o = self:getUserDataTb_()
+
+		o.go = item
+		o.imgIcon = gohelper.findChildSingleImage(item, "imgIcon")
+		o.tag = gohelper.findChildSingleImage(item, "tag/tagIcon")
+		o.count = gohelper.findChildText(item, "count/txt_count")
+		o.goStar = gohelper.findChildText(item, "star")
+
+		gohelper.setActive(o.goStar, true)
+
+		skillItem.skillIconGo[i + 1] = o
+	end
+
+	table.insert(self._skillItems, skillItem)
+
+	return skillItem
 end
 
 function FightStatItem:_sortCard()
@@ -362,6 +395,7 @@ function FightStatItem:_setSkillCardInfo(skillItem, cardmo)
 
 	local skillLv = self.entityMO:getSkillLv(cardmo.skillId)
 	local skillConfig = lua_skill.configDict[cardmo.skillId]
+	local isBigSkill = FightCardDataHelper.isBigSkill(cardmo.skillId)
 
 	for index, cardinfo in ipairs(skillItem.skillIconGo) do
 		local lv = index - 1
@@ -373,13 +407,11 @@ function FightStatItem:_setSkillCardInfo(skillItem, cardmo)
 
 			cardinfo.imgIcon:LoadImage(skillIcon)
 
-			if not cardinfo.isBigSkill then
+			if not ((lua_skill_next.configDict[cardmo.skillId] or nil) and false) then
 				cardinfo.tag:LoadImage(ResUrl.getAttributeIcon("attribute_" .. skillConfig.showTag))
 			end
 
 			cardinfo.count.text = cardmo.useCount
-
-			gohelper.setActive(skillItem.goStar, false)
 		end
 	end
 end
@@ -628,14 +660,11 @@ function FightStatItem:onDestroy()
 	self._tweenHurt = nil
 	self._tweenHeal = nil
 
-	for index, card in pairs(self._skillItems) do
+	for _, card in pairs(self._skillItems) do
 		if card then
-			for key, cardinfo in pairs(card.skillIconGo) do
+			for _, cardinfo in pairs(card.skillIconGo) do
 				cardinfo.imgIcon:UnLoadImage()
-
-				if not cardinfo.isBigSkill then
-					cardinfo.tag:UnLoadImage()
-				end
+				cardinfo.tag:UnLoadImage()
 			end
 		end
 	end

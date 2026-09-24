@@ -13,13 +13,21 @@ function DestinyStoneGiftPickChoiceController:reInit()
 end
 
 function DestinyStoneGiftPickChoiceController:openHeroChoiceView(itemId)
-	if itemId and itemId == DestinyStoneGiftPickChoiceEnum.V3a8ItemId then
+	if itemId then
 		local isAllHeroDestinyLvMaxed = DestinyStoneGiftPickChoiceModel.instance:isAllHeroDestinyLvMaxed(itemId)
 
 		if isAllHeroDestinyLvMaxed then
-			GameFacade.showMessageBox(MessageBoxIdDefine.V3a8SelfSelectSixAllHeroLvMaxChangeItem, MsgBoxEnum.BoxType.Yes_No, self._onChangeStoneItem, nil, nil, self, nil)
+			self._itemId = itemId
 
-			return
+			if itemId == DestinyStoneGiftPickChoiceEnum.V3a8ItemId then
+				GameFacade.showMessageBox(MessageBoxIdDefine.V3a8SelfSelectSixAllHeroLvMaxChangeItem, MsgBoxEnum.BoxType.Yes_No, self._onChangeStoneItem, nil, nil, self, nil)
+
+				return
+			elseif itemId == DestinyStoneGiftPickChoiceEnum.V4a0ItemId then
+				GameFacade.showMessageBox(MessageBoxIdDefine.V4a0SelfSelectSixAllHeroLvMaxChangeItem, MsgBoxEnum.BoxType.Yes_No, self._onChangeStoneItem, nil, nil, self, nil, nil, itemId)
+
+				return
+			end
 		end
 	end
 
@@ -34,7 +42,7 @@ function DestinyStoneGiftPickChoiceController:_onChangeStoneItem()
 	local data = {}
 	local o = {}
 
-	o.materialId = DestinyStoneGiftPickChoiceEnum.V3a8ItemId
+	o.materialId = self._itemId
 	o.quantity = 1
 
 	table.insert(data, o)

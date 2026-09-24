@@ -76,6 +76,16 @@ function TowerComposeHeroGroupSupportItem:_onSupportItemClick()
 		return
 	end
 
+	local assistHeroList = HeroGroupModel.instance:getAssistMoList()
+
+	for index, assistHeroMo in ipairs(assistHeroList) do
+		if assistHeroMo and assistHeroMo.assistMo and self.heroMo.heroId == assistHeroMo.assistMo.heroId then
+			GameFacade.showToast(ToastEnum.TowerComposeHeroInTeams)
+
+			return
+		end
+	end
+
 	local isPlaneLock = TowerComposeModel.instance:checkPlaneLock(self.themeId, self.curPlaneId)
 	local themeMo = TowerComposeModel.instance:getThemeMo(self.themeId)
 	local planeMo = themeMo:getPlaneMo(self.curPlaneId)
@@ -147,6 +157,15 @@ function TowerComposeHeroGroupSupportItem:_onAssistItemClick()
 	local themeMo = TowerComposeModel.instance:getThemeMo(self.themeId)
 	local planeMo = themeMo:getPlaneMo(self.curPlaneId)
 	local isHeroInSupport, supportHeroInPlaneId = TowerComposeHeroGroupModel.instance:checkEquipedSupportHero(self.heroId)
+	local assistHeroList = HeroGroupModel.instance:getAssistMoList()
+
+	for index, assistHeroMo in ipairs(assistHeroList) do
+		if assistHeroMo and assistHeroMo.assistMo and self.heroId == assistHeroMo.assistMo.heroId then
+			GameFacade.showToast(ToastEnum.TowerComposeHeroInTeams)
+
+			return
+		end
+	end
 
 	if self.isHeroInTeams and self.assistHeroId ~= self.heroId then
 		GameFacade.showToast(ToastEnum.TowerComposeAssistInTeam)

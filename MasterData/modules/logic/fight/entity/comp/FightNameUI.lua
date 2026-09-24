@@ -229,6 +229,8 @@ function FightNameUI:_onLoaded()
 	self:initToughnessIconMgr()
 	self:initYaMiShieldMgr()
 	self:initMeiLeiErMgr()
+	self:initDeLeiKeSliderMgr()
+	self:initSpHNJMgr()
 
 	self._opContainerGO = gohelper.findChild(self._uiGO, "layout/top/op")
 	self._opContainerTr = self._opContainerGO.transform
@@ -414,6 +416,16 @@ function FightNameUI:initMeiLeiErMgr()
 	self.meiLeiErMgr = self:newClass(FightNameUIMeiLeiErMgr, self.entity, self._uiGO)
 end
 
+function FightNameUI:initDeLeiKeSliderMgr()
+	self.deLeiKeSliderMgr = self:newClass(FightNameUIDeLeiKeSliderMgr, self.entity, self._uiGO)
+end
+
+function FightNameUI:initSpHNJMgr()
+	self.spHNJMgr = FightNameUISpHNJMgr.New()
+
+	self.spHNJMgr:init(self.entity, self._uiGO)
+end
+
 function FightNameUI:initStressMgr()
 	local entityMo = self.entity:getMO()
 
@@ -464,6 +476,12 @@ function FightNameUI:onDestructor()
 		self.rouge2RevivalComp:beforeDestroy()
 
 		self.rouge2RevivalComp = nil
+	end
+
+	if self.spHNJMgr then
+		self.spHNJMgr:dispose()
+
+		self.spHNJMgr = nil
 	end
 
 	self.buffMgr:beforeDestroy()

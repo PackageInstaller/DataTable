@@ -41,7 +41,11 @@ function FightHeroSpEffectConfig:reqConfigNames()
 		"fight_hsy_effect",
 		"fight_sswl_skill1_effect",
 		"fight_sswl_skill2_effect",
-		"fight_sswl_unique_effect"
+		"fight_sswl_unique_effect",
+		"fight_hnj_cost",
+		"fight_hnj_special_spine",
+		"fight_hnj_helmet_spine",
+		"fight_hnj_second_stage_effect"
 	}
 end
 
@@ -191,8 +195,12 @@ function FightHeroSpEffectConfig:getAlfCardAddEffect()
 	return string.format("ui/viewres/fight/%s.prefab", co.effect)
 end
 
-function FightHeroSpEffectConfig:getBLECrystalCo(crystal)
-	local co = lua_fight_ble_crystal.configDict[crystal]
+function FightHeroSpEffectConfig:getBLECrystalCo(crystal, skin)
+	local coDict = skin and lua_fight_ble_crystal.configDict[skin]
+
+	coDict = coDict or lua_fight_ble_crystal.configDict[0]
+
+	local co = coDict[crystal]
 
 	if not co then
 		logError("贝丽尔水晶配置不存在 ：" .. tostring(crystal))

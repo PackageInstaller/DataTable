@@ -26,17 +26,26 @@ function Activity220Controller:onGameFinished(actId, episodeId)
 	end
 
 	if not episodeInfo:isEpisodePass() then
-		local param = {
+		local episodeConfig = Activity220Config.instance:getEpisodeConfig(actId, episodeId)
+		local isFightLevel = episodeConfig and episodeConfig.fightEpisodeId ~= 0
+
+		if not isFightLevel then
+			local storyClear = episodeInfo:getStoryClear()
+
+			if storyClear and storyClear ~= 0 then
+				StoryController.instance:playStory(storyClear, nil, self._afterFinishStory, self, {
+					episodeId = episodeId,
+					activityId = actId
+				})
+
+				return
+			end
+		end
+
+		self:_afterFinishStory({
 			episodeId = episodeId,
 			activityId = actId
-		}
-		local storyClear = episodeInfo:getStoryClear()
-
-		if storyClear and storyClear ~= 0 then
-			StoryController.instance:playStory(storyClear, nil, self._afterFinishStory, self, param)
-		else
-			self:_afterFinishStory(param)
-		end
+		})
 	else
 		self:_playStoryClear(actId, episodeId)
 	end
@@ -94,8 +103,10 @@ function Activity220Controller:_playStoryClear(actId, episodeId)
 		activityId = actId
 	}
 	local storyClear = episodeInfo:getStoryClear()
+	local episodeConfig = Activity220Config.instance:getEpisodeConfig(actId, episodeId)
+	local showStory = episodeConfig.gameId ~= 0 and episodeConfig.fightEpisodeId == 0
 
-	if storyClear and storyClear ~= 0 then
+	if showStory and storyClear and storyClear ~= 0 then
 		StoryController.instance:playStory(storyClear, nil, self.finishEpisode, self, param)
 	else
 		self:finishEpisode(param)
@@ -111,6 +122,48 @@ function Activity220Controller:finishEpisode(param)
 	end
 
 	self:dispatchEvent(Activity220Event.EpisodeFinished)
+end
+
+function Activity220Controller:finishAllTask(activityId, callback, callbackObj)
+	TaskRpc.instance:sendFinishAllTaskRequest(TaskEnum.TaskType.Activity220, nil, nil, callback, callbackObj, activityId)
+end
+
+function Activity220Controller:enterFight(actId, episodeId)
+	local act220EpisodeConfig = Activity220Config.instance:getEpisodeConfig(actId, episodeId)
+
+	if not act220EpisodeConfig then
+		logError("活动220_关卡配置不存在 actId:" .. tostring(actId) .. " episodeId:" .. tostring(episodeId))
+
+		return
+	end
+
+	local fightEpisodeId = act220EpisodeConfig.fightEpisodeId
+	local episodeConfig = DungeonConfig.instance:getEpisodeCO(fightEpisodeId)
+
+	if not episodeConfig then
+		logError("副本表_关卡表不存在关卡配置 fightEpisodeId:" .. tostring(fightEpisodeId))
+
+		return
+	end
+
+	local chapterId = episodeConfig.chapterId
+	local battleId = episodeConfig.battleId
+
+	if chapterId and episodeConfig.id and battleId > 0 then
+		DungeonFightController.instance:enterFightByBattleId(chapterId, episodeConfig.id, battleId)
+
+		local showResultView = episodeConfig.afterStory == nil or act220EpisodeConfig.afterStory == 0
+
+		self:setResultViewState(showResultView)
+	end
+end
+
+function Activity220Controller:setResultViewState(isShow)
+	local fightParam = FightModel.instance:getFightParam()
+
+	if fightParam then
+		fightParam:setShowSettlement(isShow)
+	end
 end
 
 Activity220Controller.instance = Activity220Controller.New()

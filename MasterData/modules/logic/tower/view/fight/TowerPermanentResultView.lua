@@ -89,11 +89,13 @@ end
 
 function TowerPermanentResultView:_onBtnRankClick()
 	ViewMgr.instance:openView(ViewName.FightStatView)
+	AssistController.instance:dispatchEvent(AssistEvent.CloseAddFriendView)
 end
 
 function TowerPermanentResultView:onOpen()
 	self:refreshParam()
 	self:refreshView()
+	AssistRecordRpc.instance:sendAssistRecordGetDungeonRecordRequest()
 end
 
 function TowerPermanentResultView:refreshParam()
@@ -315,6 +317,7 @@ end
 
 function TowerPermanentResultView:onClose()
 	FightController.onResultViewClose()
+	AssistController.instance:dispatchEvent(AssistEvent.CloseAddFriendView)
 end
 
 function TowerPermanentResultView:onDestroyView()

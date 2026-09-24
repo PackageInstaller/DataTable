@@ -10,6 +10,7 @@ FightSpineComp.TypeSpineAnimationEvent = typeof(ZProj.SpineAnimationEvent)
 function FightSpineComp:onConstructor(entity)
 	self.unitSpawn = entity
 	self.entity = entity
+	self.entityId = entity.id
 	self.entityData = entity.entityData
 	self.entityExData = FightDataHelper.entityExMgr:getById(entity.entityData.id)
 
@@ -106,6 +107,18 @@ function FightSpineComp:onSpineLoaded(success, loader)
 	self:_initSpine(spineGO)
 end
 
+function FightSpineComp:setLocalPos(x, y, z)
+	self.localPosX = x or 0
+	self.localPosY = y or 0
+	self.localPosZ = z or 0
+
+	local spineTr = self:getSpineTr()
+
+	if not gohelper.isNil(spineTr) then
+		transformhelper.setLocalPos(spineTr, self.localPosX, self.localPosY, self.localPosZ)
+	end
+end
+
 function FightSpineComp:setFreeze(isFreeze)
 	self._bFreeze = isFreeze
 
@@ -169,6 +182,7 @@ function FightSpineComp:_initSpine(spineGO)
 
 	self._csSpineEvt:SetAnimEventCallback(self._onAnimCallback, self)
 	self:setActive(self._isActive)
+	self:setLocalPos(self.localPosX, self.localPosY, self.localPosZ)
 
 	if self._curAnimState then
 		local animState = self._curAnimState
@@ -236,6 +250,8 @@ function FightSpineComp:setRenderOrder(order, force)
 
 	if not gohelper.isNil(self._spineRenderer) then
 		self._spineRenderer.sortingOrder = order
+
+		FightMsgMgr.sendMsg(FightMsgId.OnSetEntityRederOrder, self.entityId, order, force)
 	end
 end
 

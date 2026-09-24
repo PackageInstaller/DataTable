@@ -141,6 +141,10 @@ function CharacterRecommedView:_refreshHeroInfo()
 
 	gohelper.setActive(self._gotab1, isShowRecommendTab)
 	self:_statEnterView(self._heroId)
+
+	if not isShowRecommendTab then
+		self:_onClickTab(CharacterRecommedEnum.TabSubType.DevelopGoals)
+	end
 end
 
 function CharacterRecommedView:_initTab()

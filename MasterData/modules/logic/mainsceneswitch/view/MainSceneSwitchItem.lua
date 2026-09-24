@@ -95,7 +95,7 @@ function MainSceneSwitchItem:onSelect(isSelect)
 
 	self._goselected:SetActive(isSelect)
 
-	if oldSelected ~= nil and oldSelected ~= isSelect then
+	if oldSelected ~= nil and oldSelected ~= isSelect and self.viewGO.activeInHierarchy then
 		self._animPlaying = true
 
 		if isSelect then

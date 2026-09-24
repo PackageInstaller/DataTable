@@ -104,7 +104,7 @@ function FightTLEventMove:onTrackStart(fightStepData, duration, paramsArr)
 		end)
 	end
 
-	local forceEndPos
+	local forceEndPos, forceEndPosList
 
 	if not string.nilorempty(self._paramsArr[8]) and #moveEntitys == 1 then
 		local entity = moveEntitys[1]
@@ -133,6 +133,78 @@ function FightTLEventMove:onTrackStart(fightStepData, duration, paramsArr)
 		end
 	end
 
+	if not string.nilorempty(self._paramsArr[9]) and #moveEntitys == 2 then
+		forceEndPosList = {}
+
+		local posStrList = FightStrUtil.instance:getSplitCache(self._paramsArr[9], ";")
+
+		for idx, posStr in ipairs(posStrList) do
+			local entity = moveEntitys[idx]
+
+			if entity then
+				local arr = FightStrUtil.instance:getSplitCache(posStr, "|")
+
+				if #arr > 1 then
+					local hasSkin = false
+
+					for i = 2, #arr do
+						local skinArr = FightStrUtil.instance:getSplitCache(arr[i], "_")
+						local entityMO = entity:getMO()
+
+						if entityMO and entityMO.skin == tonumber(skinArr[1]) then
+							forceEndPosList[idx] = FightStrUtil.instance:getSplitToNumberCache(skinArr[2], ",")
+							hasSkin = true
+
+							break
+						end
+					end
+
+					if not hasSkin then
+						forceEndPosList[idx] = FightStrUtil.instance:getSplitToNumberCache(arr[1], ",")
+					end
+				else
+					forceEndPosList[idx] = FightStrUtil.instance:getSplitToNumberCache(posStr, ",")
+				end
+			end
+		end
+	end
+
+	if not string.nilorempty(self._paramsArr[10]) and #moveEntitys == 3 then
+		forceEndPosList = {}
+
+		local posStrList = FightStrUtil.instance:getSplitCache(self._paramsArr[10], ";")
+
+		for idx, posStr in ipairs(posStrList) do
+			local entity = moveEntitys[idx]
+
+			if entity then
+				local arr = FightStrUtil.instance:getSplitCache(posStr, "|")
+
+				if #arr > 1 then
+					local hasSkin = false
+
+					for i = 2, #arr do
+						local skinArr = FightStrUtil.instance:getSplitCache(arr[i], "_")
+						local entityMO = entity:getMO()
+
+						if entityMO and entityMO.skin == tonumber(skinArr[1]) then
+							forceEndPosList[idx] = FightStrUtil.instance:getSplitToNumberCache(skinArr[2], ",")
+							hasSkin = true
+
+							break
+						end
+					end
+
+					if not hasSkin then
+						forceEndPosList[idx] = FightStrUtil.instance:getSplitToNumberCache(arr[1], ",")
+					end
+				else
+					forceEndPosList[idx] = FightStrUtil.instance:getSplitToNumberCache(posStr, ",")
+				end
+			end
+		end
+	end
+
 	for i, entity in ipairs(moveEntitys) do
 		if not gohelper.isNil(entity.go) then
 			local startX, startY, startZ = transformhelper.getPos(entity.go.transform)
@@ -142,6 +214,12 @@ function FightTLEventMove:onTrackStart(fightStepData, duration, paramsArr)
 				endX = forceEndPos[1] and (entity:isMySide() and forceEndPos[1] or -forceEndPos[1]) or 0
 				endY = forceEndPos[2] or 0
 				endZ = forceEndPos[3] or 0
+			elseif forceEndPosList and forceEndPosList[i] then
+				local pos = forceEndPosList[i]
+
+				endX = pos[1] and (entity:isMySide() and pos[1] or -pos[1]) or 0
+				endY = pos[2] or 0
+				endZ = pos[3] or 0
 			end
 
 			FightTLEventMove._setupEntityMove(entity, startX, startY, startZ, endX, endY, endZ, duration, height, easeType)
@@ -280,6 +358,18 @@ function FightTLEventMove:_getEndPosXYZ(fightStepData, entity, offsetList, selec
 										endZ = endZ + offsetZ
 									end
 								end
+							elseif targetType == 7 then
+								local targetEntity = defender
+
+								if targetEntity and targetEntity.spine then
+									local hangPointRootGO = gohelper.findChild(targetEntity.spine.spineGO, ModuleEnum.SpineHangPointRoot)
+
+									if hangPointRootGO then
+										endX, endY, endZ = transformhelper.getPos(hangPointRootGO.transform)
+									end
+								end
+							elseif targetType == 8 then
+								endX, endY, endZ = FightHelper.getProcessEntitySpinePos(defender)
 							end
 
 							return endX, endY, endZ
@@ -329,6 +419,12 @@ function FightTLEventMove._getMoveEntitys(fightStepData, selectEntityType)
 	elseif selectEntityType == "6" then
 		if defender then
 			table.insert(entitys, defender)
+		end
+	elseif selectEntityType == "7" then
+		local tempEntity = FightMsgMgr.sendMsg(FightMsgId.GetSummonedEntity, fightStepData.fromId)
+
+		if tempEntity then
+			table.insert(entitys, tempEntity)
 		end
 	else
 		local entityMgr = FightGameMgr.entityMgr

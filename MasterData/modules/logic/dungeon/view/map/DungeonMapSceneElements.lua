@@ -457,6 +457,8 @@ function DungeonMapSceneElements:clickElement(id)
 		DungeonRpc.instance:sendMapElementRequest(config.id)
 	elseif config.type == DungeonEnum.ElementType.FairyLand then
 		FairyLandController.instance:openFairyLandView()
+	elseif config.type == DungeonEnum.ElementType.V4a0Sonnet then
+		SonnetInterchapterController.instance:openSonnetInterchapterGetView(config.id)
 	else
 		local item = self._mapScene:getInteractiveItem()
 

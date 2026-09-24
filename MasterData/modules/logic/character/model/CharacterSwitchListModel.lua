@@ -7,11 +7,13 @@ local CharacterSwitchListModel = class("CharacterSwitchListModel", ListScrollMod
 function CharacterSwitchListModel:onInit()
 	self._tempHeroId = nil
 	self._tempSkinId = nil
+	self._mainHeroList = nil
 end
 
 function CharacterSwitchListModel:reInit()
 	self._tempHeroId = nil
 	self._tempSkinId = nil
+	self._mainHeroList = nil
 end
 
 function CharacterSwitchListModel:initHeroList()
@@ -30,6 +32,29 @@ function CharacterSwitchListModel:initHeroList()
 
 		defaultMainHeroMO:init(heroMO, heroMO.config.skinId, false)
 		table.insert(self._mainHeroList, defaultMainHeroMO)
+	end
+
+	local hadPastSkins = CharacterPastModel.instance:hadPastSkins()
+
+	if hadPastSkins then
+		for heroId, list in pairs(hadPastSkins) do
+			local heroMo = HeroModel.instance:getByHeroId(heroId)
+
+			if not heroMo then
+				local defaultMainHeroMO = CharacterMainHeroMO.New()
+
+				heroMo = HeroMo.New()
+
+				local config = HeroConfig.instance:getHeroCO(heroId)
+
+				heroMo:initFromConfig(config)
+
+				heroMo.skin = list[1]
+
+				defaultMainHeroMO:init(heroMo, list[1], false)
+				table.insert(self._mainHeroList, defaultMainHeroMO)
+			end
+		end
 	end
 end
 
@@ -70,6 +95,14 @@ function CharacterSwitchListModel:sortByTime(asceTime)
 		end
 
 		if a.heroMO.createTime ~= b.heroMO.createTime then
+			if a.heroMO.createTime == 0 then
+				return false
+			end
+
+			if b.heroMO.createTime == 0 then
+				return true
+			end
+
 			if asceTime then
 				return a.heroMO.createTime < b.heroMO.createTime
 			else
@@ -135,6 +168,26 @@ function CharacterSwitchListModel:getMoByHero(heroId, skinId)
 	end
 end
 
+function CharacterSwitchListModel:getHeroList()
+	if not self._mainHeroList then
+		self:initHeroList()
+	end
+
+	if not self._mainHeroList then
+		return HeroModel.instance:getList()
+	end
+
+	local heroList = {}
+
+	for i, mo in ipairs(self._mainHeroList) do
+		if not mo.isRandom then
+			table.insert(heroList, mo.heroMO)
+		end
+	end
+
+	return heroList
+end
+
 function CharacterSwitchListModel:getMainHero(random)
 	local mainHeroParam = PlayerModel.instance:getSimpleProperty(PlayerEnum.SimpleProperty.MainHero)
 	local mainHeros = string.splitToNumber(mainHeroParam, "#")
@@ -144,16 +197,20 @@ function CharacterSwitchListModel:getMainHero(random)
 
 	if isRandom then
 		if random or not self._tempHeroId or not self._tempSkinId then
-			local heroList = HeroModel.instance:getList()
+			local heroList = self:getHeroList()
 			local heroMO = heroList[math.random(#heroList)]
 
 			if heroMO then
-				local skinList = {
-					heroMO.config.skinId
-				}
+				local skinList = {}
 
-				for _, skinInfo in ipairs(heroMO.skinInfoList) do
-					table.insert(skinList, skinInfo.skin)
+				if HeroModel.instance:getByHeroId(heroMO.heroId) then
+					table.insert(skinList, heroMO.config.skinId)
+
+					for _, skinInfo in ipairs(heroMO.skinInfoList) do
+						table.insert(skinList, skinInfo.skin)
+					end
+				else
+					table.insert(skinList, heroMO.skin)
 				end
 
 				self._tempHeroId = heroMO.heroId
@@ -196,6 +253,15 @@ function CharacterSwitchListModel:getMainHero(random)
 	end
 
 	return heroId, skinId, isRandom
+end
+
+function CharacterSwitchListModel:setJumpShowHeroSkin(heroId, skinId)
+	self._jumpShowHeroId = heroId
+	self._jumpShowskinId = skinId
+end
+
+function CharacterSwitchListModel:getJumpShowHeroSkin()
+	return self._jumpShowHeroId, self._jumpShowskinId
 end
 
 function CharacterSwitchListModel:getDefaultHeroId()

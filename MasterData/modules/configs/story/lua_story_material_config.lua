@@ -119,19 +119,20 @@ return {
 		}
 	},
 	[1006] = {
-		name = "crt滤镜（液晶）",
+		name = "格林杜尔立绘透明",
 		props = {
-			_MaskScale = {
-				value = 1,
-				type = 0
+			_InvisibleOffset = {
+				type = 2,
+				value = {
+					-0.08,
+					0.03,
+					1.07,
+					1.11
+				}
 			},
-			_BloomStrength = {
-				value = 1,
-				type = 0
-			},
-			_ChromaOffset = {
-				value = 2,
-				type = 0
+			USE_INVISIBLE = {
+				value = true,
+				type = 4
 			}
 		}
 	}
