@@ -85,4 +85,5 @@ git clone -b game/xxxxx --single-branch --depth 1 https://github.com/PackageInst
 | `game/TenkeiParadox`            | TenkeiParadox            | 天启                                                  |
 | `game/TrickcalRevive`           | TrickcalRevive           | 坨坨可爱捏                                            |
 | `game/TwinkleStarKnights`       | TwinkleStarKnights       | 闪耀星骑士                                            |
+| `game/WarshipGirlsR` | WarshipGirlsR |
 | `game/WitchSpring`              | WitchSpring              | 第五部啥时候出？                                      |
