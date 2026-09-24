@@ -1,0 +1,376 @@
+{
+  "_allData": [
+    {
+      "_id": 1,
+      "_key": "life_base",
+      "_value": "1000",
+      "_subValue": ""
+    },
+    {
+      "_id": 2,
+      "_key": "life_denger",
+      "_value": "300",
+      "_subValue": ""
+    },
+    {
+      "_id": 3,
+      "_key": "flick_distance",
+      "_value": "0.2",
+      "_subValue": ""
+    },
+    {
+      "_id": 4,
+      "_key": "note_speed_min",
+      "_value": "1",
+      "_subValue": ""
+    },
+    {
+      "_id": 5,
+      "_key": "note_speed_max",
+      "_value": "12",
+      "_subValue": ""
+    },
+    {
+      "_id": 6,
+      "_key": "note_speed_view_min",
+      "_value": "4",
+      "_subValue": ""
+    },
+    {
+      "_id": 7,
+      "_key": "note_speed_view_max",
+      "_value": "0.35",
+      "_subValue": ""
+    },
+    {
+      "_id": 8,
+      "_key": "note_slide_combo_rhythmic_unit",
+      "_value": "8",
+      "_subValue": ""
+    },
+    {
+      "_id": 9,
+      "_key": "note_score_adjustment_factor",
+      "_value": "3",
+      "_subValue": ""
+    },
+    {
+      "_id": 10,
+      "_key": "gekisou_judgement_accuracy_one_percent_ms",
+      "_value": "3",
+      "_subValue": ""
+    },
+    {
+      "_id": 11,
+      "_key": "gekisou_just_timing_skill_base_factor",
+      "_value": "8",
+      "_subValue": ""
+    },
+    {
+      "_id": 12,
+      "_key": "motion_speed_base_bpm",
+      "_value": "190",
+      "_subValue": ""
+    },
+    {
+      "_id": 13,
+      "_key": "motion_speed_delta_per_bpm",
+      "_value": "0.0025",
+      "_subValue": ""
+    },
+    {
+      "_id": 14,
+      "_key": "IPhone13_greaterEqual_input_offset_ms",
+      "_value": "20",
+      "_subValue": ""
+    },
+    {
+      "_id": 15,
+      "_key": "gekisou_luck_gauge_max",
+      "_value": "140",
+      "_subValue": ""
+    },
+    {
+      "_id": 16,
+      "_key": "gekisou_luck_gauge_max_rush",
+      "_value": "70",
+      "_subValue": ""
+    },
+    {
+      "_id": 17,
+      "_key": "gekisou_luck_rush_score_bonus_percent",
+      "_value": "10",
+      "_subValue": ""
+    },
+    {
+      "_id": 18,
+      "_key": "assist_gauge_point_max",
+      "_value": "100",
+      "_subValue": ""
+    },
+    {
+      "_id": 19,
+      "_key": "assist_great_point",
+      "_value": "25",
+      "_subValue": ""
+    },
+    {
+      "_id": 20,
+      "_key": "assist_good_point",
+      "_value": "60",
+      "_subValue": ""
+    },
+    {
+      "_id": 21,
+      "_key": "assist_bad_point",
+      "_value": "80",
+      "_subValue": ""
+    },
+    {
+      "_id": 22,
+      "_key": "assist_miss_point",
+      "_value": "100",
+      "_subValue": ""
+    },
+    {
+      "_id": 23,
+      "_key": "assist_level_down_perfect_count",
+      "_value": "20",
+      "_subValue": ""
+    },
+    {
+      "_id": 24,
+      "_key": "assist_score_percent",
+      "_value": "90",
+      "_subValue": ""
+    },
+    {
+      "_id": 25,
+      "_key": "slide_offset_min_note_lane_width",
+      "_value": "4",
+      "_subValue": ""
+    },
+    {
+      "_id": 26,
+      "_key": "slide_offset_max_note_lane_width",
+      "_value": "5",
+      "_subValue": ""
+    },
+    {
+      "_id": 27,
+      "_key": "live_side_monitor_switch_interval",
+      "_value": "8",
+      "_subValue": ""
+    },
+    {
+      "_id": 28,
+      "_key": "live_stage_light_speed_low",
+      "_value": "0.75",
+      "_subValue": ""
+    },
+    {
+      "_id": 29,
+      "_key": "live_stage_light_speed_mid",
+      "_value": "1",
+      "_subValue": ""
+    },
+    {
+      "_id": 30,
+      "_key": "live_stage_light_speed_high",
+      "_value": "1.5",
+      "_subValue": ""
+    },
+    {
+      "_id": 31,
+      "_key": "live_stage_light_speed_very_low",
+      "_value": "0.5",
+      "_subValue": ""
+    },
+    {
+      "_id": 32,
+      "_key": "live_stage_light_speed_very_high",
+      "_value": "2",
+      "_subValue": ""
+    },
+    {
+      "_id": 33,
+      "_key": "live_finish_direction_duration",
+      "_value": "3",
+      "_subValue": ""
+    },
+    {
+      "_id": 34,
+      "_key": "live_combo_call_disableLast_n_notes",
+      "_value": "50",
+      "_subValue": ""
+    },
+    {
+      "_id": 35,
+      "_key": "note_score_life_onus_factor",
+      "_value": "0.3",
+      "_subValue": ""
+    },
+    {
+      "_id": 36,
+      "_key": "stop_in_vain_time_ms_diff",
+      "_value": "200",
+      "_subValue": ""
+    },
+    {
+      "_id": 37,
+      "_key": "note_overlap_lane_buffer",
+      "_value": "4",
+      "_subValue": ""
+    },
+    {
+      "_id": 38,
+      "_key": "tutorial_sound_tap",
+      "_value": "1000100",
+      "_subValue": ""
+    },
+    {
+      "_id": 39,
+      "_key": "tutorial_music_score_file_name_tap",
+      "_value": "tut_tap",
+      "_subValue": ""
+    },
+    {
+      "_id": 40,
+      "_key": "tutorial_sound_flick",
+      "_value": "1000101",
+      "_subValue": ""
+    },
+    {
+      "_id": 41,
+      "_key": "tutorial_music_score_file_name_flick",
+      "_value": "tut_flick",
+      "_subValue": ""
+    },
+    {
+      "_id": 42,
+      "_key": "tutorial_sound_slide",
+      "_value": "1000102",
+      "_subValue": ""
+    },
+    {
+      "_id": 43,
+      "_key": "tutorial_music_score_file_name_slide",
+      "_value": "tut_slide",
+      "_subValue": ""
+    },
+    {
+      "_id": 44,
+      "_key": "tutorial_sound_gekisou",
+      "_value": "1000103",
+      "_subValue": ""
+    },
+    {
+      "_id": 45,
+      "_key": "tutorial_music_score_file_name_gekisou",
+      "_value": "tutorial_gekisou",
+      "_subValue": ""
+    },
+    {
+      "_id": 46,
+      "_key": "tutorial_carouse_note_summary_id",
+      "_value": "7",
+      "_subValue": ""
+    },
+    {
+      "_id": 47,
+      "_key": "tutorial_carouse_gekisou_id",
+      "_value": "8",
+      "_subValue": ""
+    },
+    {
+      "_id": 48,
+      "_key": "tutorial_start_direction_sound",
+      "_value": "100017",
+      "_subValue": ""
+    },
+    {
+      "_id": 53,
+      "_key": "tutorial_sound_bgm_id",
+      "_value": "1200000000001",
+      "_subValue": ""
+    },
+    {
+      "_id": 54,
+      "_key": "tutorial_video_enjoy_mode",
+      "_value": "4202000001",
+      "_subValue": ""
+    },
+    {
+      "_id": 55,
+      "_key": "tutorial_video_concentrate_mode",
+      "_value": "4202000002",
+      "_subValue": ""
+    },
+    {
+      "_id": 56,
+      "_key": "tutorial_concentrate_note_effect_skin_id",
+      "_value": "2",
+      "_subValue": ""
+    },
+    {
+      "_id": 57,
+      "_key": "tutorial_guide_freeze_times_tap",
+      "_value": "0",
+      "_subValue": ""
+    },
+    {
+      "_id": 58,
+      "_key": "tutorial_guide_freeze_times_flick",
+      "_value": "0,3000,4000",
+      "_subValue": ""
+    },
+    {
+      "_id": 59,
+      "_key": "tutorial_guide_freeze_times_slide",
+      "_value": "0,4000",
+      "_subValue": ""
+    },
+    {
+      "_id": 60,
+      "_key": "tutorial_guide_freeze_times_gekisou",
+      "_value": "5200,8000",
+      "_subValue": ""
+    },
+    {
+      "_id": 61,
+      "_key": "tutorial_music_score_file_name_tap_practice",
+      "_value": "tut_tap2",
+      "_subValue": ""
+    },
+    {
+      "_id": 62,
+      "_key": "tutorial_music_score_file_name_flick_practice",
+      "_value": "tut_flick2",
+      "_subValue": ""
+    },
+    {
+      "_id": 63,
+      "_key": "tutorial_music_score_file_name_slide_practice",
+      "_value": "tut_slide2",
+      "_subValue": ""
+    },
+    {
+      "_id": 64,
+      "_key": "tutorial_sound_timing_adjust",
+      "_value": "1500",
+      "_subValue": ""
+    },
+    {
+      "_id": 65,
+      "_key": "tutorial_music_score_file_name_timing_adjust",
+      "_value": "timing_adjust",
+      "_subValue": ""
+    },
+    {
+      "_id": 66,
+      "_key": "gekisou_live_ingame_load_timeout_sec",
+      "_value": "30",
+      "_subValue": ""
+    }
+  ]
+}

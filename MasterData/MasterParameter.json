@@ -1,0 +1,389 @@
+{
+  "_allData": [
+    {
+      "_id": "live_boost_recovery_time",
+      "_type": "Int32",
+      "_value": "1800"
+    },
+    {
+      "_id": "live_boost_by_star",
+      "_type": "Int32",
+      "_value": "10"
+    },
+    {
+      "_id": "live_boost_ad_repair",
+      "_type": "Int32",
+      "_value": "10"
+    },
+    {
+      "_id": "live_boost_daily_ad_limit",
+      "_type": "Int32",
+      "_value": "1"
+    },
+    {
+      "_id": "consume_all_live_boost_count",
+      "_type": "Int32",
+      "_value": "1"
+    },
+    {
+      "_id": "live_boost_by_rank_up",
+      "_type": "Int32",
+      "_value": "10"
+    },
+    {
+      "_id": "friendship_line_border_min",
+      "_type": "Int32",
+      "_value": "1"
+    },
+    {
+      "_id": "friendship_line_border_low",
+      "_type": "Int32",
+      "_value": "5"
+    },
+    {
+      "_id": "friendship_line_border_mid",
+      "_type": "Int32",
+      "_value": "15"
+    },
+    {
+      "_id": "friendship_line_border_high",
+      "_type": "Int32",
+      "_value": "30"
+    },
+    {
+      "_id": "friendship_line_border_max",
+      "_type": "Int32",
+      "_value": "50"
+    },
+    {
+      "_id": "music_favorite_slots",
+      "_type": "Int32",
+      "_value": "3"
+    },
+    {
+      "_id": "daily_reset_time",
+      "_type": "String",
+      "_value": "0:00"
+    },
+    {
+      "_id": "night_notice_start_at",
+      "_type": "String",
+      "_value": "0:00"
+    },
+    {
+      "_id": "night_notice_end_at",
+      "_type": "String",
+      "_value": "6:00"
+    },
+    {
+      "_id": "member_exp_exchange_cost",
+      "_type": "Int32",
+      "_value": "0"
+    },
+    {
+      "_id": "support_exp_exchange_cost",
+      "_type": "Int32",
+      "_value": "0"
+    },
+    {
+      "_id": "music_type_base_bonus_rate",
+      "_type": "Int32",
+      "_value": "500"
+    },
+    {
+      "_id": "type_link_base_bonus_rate",
+      "_type": "Int32",
+      "_value": "500"
+    },
+    {
+      "_id": "music_tag_base_bonus_rate",
+      "_type": "Int32",
+      "_value": "500"
+    },
+    {
+      "_id": "gacha_point_conversion_to_coin_rate",
+      "_type": "Int32",
+      "_value": "100"
+    },
+    {
+      "_id": "gacha_point_convert_item_id",
+      "_type": "Int64",
+      "_value": "47"
+    },
+    {
+      "_id": "piece_exchange_member_item_id",
+      "_type": "Int32",
+      "_value": "47"
+    },
+    {
+      "_id": "piece_exchange_support_item_id",
+      "_type": "Int32",
+      "_value": "47"
+    },
+    {
+      "_id": "high_score_rating_top_music_count",
+      "_type": "Int32",
+      "_value": "1"
+    },
+    {
+      "_id": "music_rating_scale_factor",
+      "_type": "Int32",
+      "_value": "1000"
+    },
+    {
+      "_id": "music_min_high_score_rating",
+      "_type": "Int32",
+      "_value": "1"
+    },
+    {
+      "_id": "live_skip_max_usage_count",
+      "_type": "Int32",
+      "_value": "3"
+    },
+    {
+      "_id": "ng_word_replace_forbidden_strings",
+      "_type": "String",
+      "_value": "_,-,=,., ,　,、,。"
+    },
+    {
+      "_id": "common_rank_up_item_id_for_rarity_r",
+      "_type": "Int64",
+      "_value": "38"
+    },
+    {
+      "_id": "common_rank_up_item_id_for_rarity_sr",
+      "_type": "Int64",
+      "_value": "39"
+    },
+    {
+      "_id": "common_rank_up_item_id_for_rarity_ssr",
+      "_type": "Int64",
+      "_value": "40"
+    },
+    {
+      "_id": "common_rank_up_item_id_for_rarity_bd",
+      "_type": "Int64",
+      "_value": "41"
+    },
+    {
+      "_id": "offline_bonus_skip_daily_ad_limit",
+      "_type": "Int32",
+      "_value": "1"
+    },
+    {
+      "_id": "offline_bonus_skip_reward_duration",
+      "_type": "Int32",
+      "_value": "360"
+    },
+    {
+      "_id": "offline_bonus_efficiency_decay_rate",
+      "_type": "Int32",
+      "_value": "1000"
+    },
+    {
+      "_id": "offline_bonus_coin_convert_item_id",
+      "_type": "Int64",
+      "_value": "3"
+    },
+    {
+      "_id": "offline_bonus_member_exp_convert_item_id",
+      "_type": "Int64",
+      "_value": "5"
+    },
+    {
+      "_id": "offline_bonus_support_exp_convert_item_id",
+      "_type": "Int64",
+      "_value": "6"
+    },
+    {
+      "_id": "offline_bonus_reward_interval_min",
+      "_type": "Int32",
+      "_value": "10"
+    },
+    {
+      "_id": "offline_bonus_notification_buffer_min",
+      "_type": "Int32",
+      "_value": "15"
+    },
+    {
+      "_id": "season_pass_point_price",
+      "_type": "int32",
+      "_value": "1"
+    },
+    {
+      "_id": "vip_point_free_gem",
+      "_type": "Int32",
+      "_value": "1"
+    },
+    {
+      "_id": "vip_point_paid_gem",
+      "_type": "Int32",
+      "_value": "10"
+    },
+    {
+      "_id": "deck_formation_default_count",
+      "_type": "Int32",
+      "_value": "25"
+    },
+    {
+      "_id": "gekisou_ranking_reward_timeout_sec",
+      "_type": "Int32",
+      "_value": "60"
+    },
+    {
+      "_id": "gekisou_live_download_timeout_sec",
+      "_type": "Int32",
+      "_value": "25"
+    },
+    {
+      "_id": "live_skip_result_score_rank",
+      "_type": "String",
+      "_value": "C"
+    },
+    {
+      "_id": "terms_version",
+      "_type": "String",
+      "_value": "0.1.0.0"
+    },
+    {
+      "_id": "invitation_establishment_max",
+      "_type": "Int32",
+      "_value": "10"
+    },
+    {
+      "_id": "arena_disconnect_penalty_threshold",
+      "_type": "Int32",
+      "_value": "5"
+    },
+    {
+      "_id": "thinkingdata_night_notice_start_at",
+      "_type": "String",
+      "_value": "0:00"
+    },
+    {
+      "_id": "thinkingdata_night_notice_end_at",
+      "_type": "String",
+      "_value": "5:59"
+    },
+    {
+      "_id": "spot_favorite_slots",
+      "_type": "Int32",
+      "_value": "10"
+    },
+    {
+      "_id": "profile_card_initial_slot_count",
+      "_type": "Int32",
+      "_value": "10"
+    },
+    {
+      "_id": "customer_support_mail_address",
+      "_type": "String",
+      "_value": "support_ournotes@bushimo.jp"
+    },
+    {
+      "_id": "support_card_diary_default_sound_id",
+      "_type": "Int64",
+      "_value": "1200000000007"
+    },
+    {
+      "_id": "battle_live_invitation_timeout_sec",
+      "_type": "Int64",
+      "_value": "500"
+    },
+    {
+      "_id": "battle_live_invitation_polling_interval_sec",
+      "_type": "Int32",
+      "_value": "20"
+    },
+    {
+      "_id": "battle_live_invitation_notification_duration_sec",
+      "_type": "Int32",
+      "_value": "10"
+    },
+    {
+      "_id": "purchase_alert_payment_threshold",
+      "_type": "Int32",
+      "_value": "100000"
+    },
+    {
+      "_id": "bundle_cache_limit_mb",
+      "_type": "Int32",
+      "_value": "8000"
+    },
+    {
+      "_id": "bundle_cache_auto_clean_suppress_duration",
+      "_type": "Int32",
+      "_value": "30"
+    },
+    {
+      "_id": "gacha_ascension_rate_member_R",
+      "_type": "Int32",
+      "_value": "2000"
+    },
+    {
+      "_id": "gacha_ascension_rate_member_SR",
+      "_type": "Int32",
+      "_value": "0"
+    },
+    {
+      "_id": "gacha_ascension_rate_support_R",
+      "_type": "Int32",
+      "_value": "1000"
+    },
+    {
+      "_id": "gacha_ascension_rate_support_SR",
+      "_type": "Int32",
+      "_value": "0"
+    },
+    {
+      "_id": "client_version_recommended",
+      "_type": "String",
+      "_value": "1.0.1"
+    },
+    {
+      "_id": "client_version_required",
+      "_type": "String",
+      "_value": "1.0.1"
+    },
+    {
+      "_id": "client_version_download_url",
+      "_type": "String",
+      "_value": ""
+    },
+    {
+      "_id": "monthly_pass_add_purchase_threshold",
+      "_type": "Int32",
+      "_value": "14"
+    },
+    {
+      "_id": "profile_card_good_count_max",
+      "_type": "Int32",
+      "_value": "2000000000"
+    },
+    {
+      "_id": "gekisou_live_wait_other_player_timeout_sec",
+      "_type": "Int32",
+      "_value": "60"
+    },
+    {
+      "_id": "store_review_reopen_threshold",
+      "_type": "Int32",
+      "_value": "120"
+    },
+    {
+      "_id": "initial_challenge_point",
+      "_type": "Int32",
+      "_value": "200"
+    },
+    {
+      "_id": "event_ranking_aggregation_time",
+      "_type": "Int32",
+      "_value": "600"
+    },
+    {
+      "_id": "same_degree_max_count",
+      "_type": "Int32",
+      "_value": "99999999"
+    }
+  ]
+}
