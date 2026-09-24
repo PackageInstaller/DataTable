@@ -1,0 +1,1111 @@
+{
+  "sequence": [
+    {
+      "condition": {
+        "id": 0,
+        "ship_id": 1,
+        "stage": 0
+      },
+      "equipment_id": 10058221,
+      "id": 200001,
+      "task1": {
+        "equip_types": [
+          32
+        ],
+        "num": 5,
+        "type": 1
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF005^C454545FF00000000个^C2997FFFFFFFFFF00反舰导弹发射器",
+      "task1_name": "发射装置整合",
+      "task2": {
+        "equip_cids": [
+          10025121
+        ],
+        "num": 5,
+        "type": 2
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF005^C454545FF00000000个^C2997FFFFFFFFFF00上游-1发射器",
+      "task2_name": "导弹精度测试",
+      "task3": {
+        "num": 250,
+        "shipTons": [
+          1
+        ],
+        "type": 3
+      },
+      "task3_desc": "^C454545FF00000000在舰队满足携带^C2997FFFFFFFFFF00小型船^C454545FF00000000的情况下进行^C2997FFFFFFFFFF00250^C454545FF00000000次非演习出征",
+      "task3_name": "实战效能测试"
+    },
+    {
+      "condition": {
+        "id": 100002,
+        "ship_id": 1,
+        "stage": 2
+      },
+      "equipment_id": 10058121,
+      "id": 200002,
+      "task1": {
+        "equip_types": [
+          1,
+          16,
+          17,
+          23,
+          24,
+          40
+        ],
+        "num": 200,
+        "type": 1
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00200^C454545FF00000000个^C2997FFFFFFFFFF00主炮",
+      "task1_name": "发射姿态调节",
+      "task2": {
+        "equip_cids": [
+          10025221
+        ],
+        "num": 2,
+        "type": 2
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF002^C454545FF00000000个^C2997FFFFFFFFFF00上游-1导弹",
+      "task2_name": "力争上游",
+      "task3": {
+        "guardTypes": [
+          1
+        ],
+        "num": 250,
+        "type": 3
+      },
+      "task3_desc": "^C454545FF00000000在舰队满足携带^C2997FFFFFFFFFF00主力舰^C454545FF00000000的情况下进行^C2997FFFFFFFFFF00250^C454545FF00000000次非演习出征",
+      "task3_name": "武器稳定测试"
+    },
+    {
+      "condition": {
+        "id": 100003,
+        "ship_id": 1,
+        "stage": 3
+      },
+      "equipment_id": 10058121,
+      "id": 200003,
+      "task1": {
+        "equip_types": [
+          34
+        ],
+        "num": 5,
+        "type": 1
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF005^C454545FF00000000个^C2997FFFFFFFFFF00反舰导弹",
+      "task1_name": "储备弹药管理",
+      "task2": {
+        "equip_cids": [
+          10025221
+        ],
+        "num": 3,
+        "type": 2
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF003^C454545FF00000000个^C2997FFFFFFFFFF00上游-1导弹",
+      "task2_name": "鹰击海天",
+      "task3": {
+        "num": 250,
+        "shipTypes": [
+          23
+        ],
+        "type": 3
+      },
+      "task3_desc": "^C454545FF00000000在舰队满足携带^C2997FFFFFFFFFF00导驱^C454545FF00000000的情况下进行^C2997FFFFFFFFFF00250^C454545FF00000000次非演习出征",
+      "task3_name": "百发百中挑战"
+    },
+    {
+      "condition": {
+        "id": 0,
+        "ship_id": 2,
+        "stage": 0
+      },
+      "equipment_id": 10061321,
+      "id": 200004,
+      "task1": {
+        "equip_types": [
+          32
+        ],
+        "num": 5,
+        "type": 1
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF005^C454545FF00000000个^C2997FFFFFFFFFF00反舰导弹发射器",
+      "task1_name": "大步前进",
+      "task2": {
+        "item_id": 741,
+        "num": 120,
+        "type": 4
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00120^C454545FF00000000个^C2997FFFFFFFFFF00装备蓝图",
+      "task2_name": "舰体规格敲定",
+      "task3": {
+        "num": 300,
+        "shipTons": [
+          2
+        ],
+        "type": 3
+      },
+      "task3_desc": "^C454545FF00000000在舰队满足携带^C2997FFFFFFFFFF00中型船^C454545FF00000000的情况下进行^C2997FFFFFFFFFF00300^C454545FF00000000次非演习出征",
+      "task3_name": "稳定适航"
+    },
+    {
+      "condition": {
+        "id": 100005,
+        "ship_id": 2,
+        "stage": 2
+      },
+      "equipment_id": 10061221,
+      "id": 200005,
+      "task1": {
+        "equip_types": [
+          1,
+          16,
+          17,
+          23,
+          24,
+          40
+        ],
+        "num": 300,
+        "type": 1
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00300^C454545FF00000000个^C2997FFFFFFFFFF00主炮",
+      "task1_name": "双子风暴",
+      "task2": {
+        "item_id": 20241,
+        "num": 250,
+        "type": 4
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00250^C454545FF00000000个^C2997FFFFFFFFFF00中型船舾装图纸",
+      "task2_name": "舰种转型工作",
+      "task3": {
+        "guardTypes": [
+          1
+        ],
+        "num": 300,
+        "type": 3
+      },
+      "task3_desc": "^C454545FF00000000在舰队满足携带^C2997FFFFFFFFFF00主力舰^C454545FF00000000的情况下进行^C2997FFFFFFFFFF00300^C454545FF00000000次非演习出征",
+      "task3_name": "精准火力"
+    },
+    {
+      "condition": {
+        "id": 100006,
+        "ship_id": 2,
+        "stage": 3
+      },
+      "equipment_id": 10061221,
+      "id": 200006,
+      "task1": {
+        "equip_types": [
+          34
+        ],
+        "num": 5,
+        "type": 1
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF005^C454545FF00000000个^C2997FFFFFFFFFF00反舰导弹",
+      "task1_name": "代号5型",
+      "task2": {
+        "item_id": 10341,
+        "num": 50,
+        "type": 4
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF0050^C454545FF00000000个^C2997FFFFFFFFFF00巡洋改造核心",
+      "task2_name": "巡洋舰种认定",
+      "task3": {
+        "num": 300,
+        "shipTypes": [
+          30
+        ],
+        "type": 3
+      },
+      "task3_desc": "^C454545FF00000000在舰队满足携带^C2997FFFFFFFFFF00导巡^C454545FF00000000的情况下进行^C2997FFFFFFFFFF00300^C454545FF00000000次非演习出征",
+      "task3_name": "威严之始"
+    },
+    {
+      "condition": {
+        "id": 0,
+        "ship_id": 2,
+        "stage": 0
+      },
+      "equipment_id": 10063121,
+      "id": 200007,
+      "task1": {
+        "equip_types": [
+          11
+        ],
+        "num": 180,
+        "type": 1
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00180^C454545FF00000000个^C2997FFFFFFFFFF00防空炮",
+      "task1_name": "防空作战概论学习",
+      "task2": {
+        "item_id": 20141,
+        "num": 270,
+        "type": 4
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00270^C454545FF00000000个^C2997FFFFFFFFFF00小型船舾装图纸",
+      "task2_name": "精确打击方案研究",
+      "task3": {
+        "num": 250,
+        "shipTons": [
+          1
+        ],
+        "type": 3
+      },
+      "task3_desc": "^C454545FF00000000在舰队满足携带^C2997FFFFFFFFFF00小型船^C454545FF00000000的情况下进行^C2997FFFFFFFFFF00250^C454545FF00000000次非演习出征",
+      "task3_name": "次世代战斗部实验"
+    },
+    {
+      "condition": {
+        "id": 100008,
+        "ship_id": 2,
+        "stage": 2
+      },
+      "equipment_id": 10063121,
+      "id": 200008,
+      "task1": {
+        "equip_types": [
+          35,
+          38
+        ],
+        "num": 8,
+        "type": 1
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF008^C454545FF00000000个^C2997FFFFFFFFFF00防空导弹",
+      "task1_name": "防空导弹运用理论学习",
+      "task2": {
+        "item_id": 10441,
+        "num": 40,
+        "type": 4
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF0040^C454545FF00000000个^C2997FFFFFFFFFF00驱逐改造核心",
+      "task2_name": "导弹发射效率研究",
+      "task3": {
+        "guardTypes": [
+          2
+        ],
+        "num": 250,
+        "type": 3
+      },
+      "task3_desc": "^C454545FF00000000在舰队满足携带^C2997FFFFFFFFFF00护卫舰^C454545FF00000000的情况下进行^C2997FFFFFFFFFF00250^C454545FF00000000次非演习出征",
+      "task3_name": "目标航迹预测实验"
+    },
+    {
+      "condition": {
+        "id": 100009,
+        "ship_id": 2,
+        "stage": 3
+      },
+      "equipment_id": 10063221,
+      "id": 200009,
+      "task1": {
+        "equip_types": [
+          33,
+          39
+        ],
+        "num": 8,
+        "type": 1
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF008^C454545FF00000000个^C2997FFFFFFFFFF00防空导弹发射器",
+      "task1_name": "导弹发射器操作学习",
+      "task2": {
+        "item_id": 741,
+        "num": 100,
+        "type": 4
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00100^C454545FF00000000个^C2997FFFFFFFFFF00装备蓝图",
+      "task2_name": "发射器配置研究",
+      "task3": {
+        "num": 250,
+        "shipTypes": [
+          24
+        ],
+        "type": 3
+      },
+      "task3_desc": "^C454545FF00000000在舰队满足携带^C2997FFFFFFFFFF00防驱^C454545FF00000000的情况下进行^C2997FFFFFFFFFF00250^C454545FF00000000次非演习出征",
+      "task3_name": "高级武器配置实验"
+    },
+    {
+      "condition": {
+        "id": 0,
+        "ship_id": 4,
+        "stage": 0
+      },
+      "equipment_id": 10065421,
+      "id": 200010,
+      "task1": {
+        "item_id": 10441,
+        "num": 35,
+        "type": 4
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF0035^C454545FF00000000个^C2997FFFFFFFFFF00驱逐改造核心",
+      "task1_name": "导弹数据链整合",
+      "task2": {
+        "item_id": 741,
+        "num": 80,
+        "type": 4
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF0080^C454545FF00000000个^C2997FFFFFFFFFF00装备蓝图",
+      "task2_name": "引导雷达选型",
+      "task3": {
+        "num": 300,
+        "shipTons": [
+          1
+        ],
+        "type": 3
+      },
+      "task3_desc": "^C454545FF00000000在舰队满足携带^C2997FFFFFFFFFF00小型船^C454545FF00000000的情况下进行^C2997FFFFFFFFFF00300^C454545FF00000000次非演习出征",
+      "task3_name": "防空阵型效率测试"
+    },
+    {
+      "condition": {
+        "id": 100011,
+        "ship_id": 4,
+        "stage": 2
+      },
+      "equipment_id": 10065421,
+      "id": 200011,
+      "task1": {
+        "equip_types": [
+          35,
+          38
+        ],
+        "num": 8,
+        "type": 1
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF008^C454545FF00000000个^C2997FFFFFFFFFF00防空导弹",
+      "task1_name": "破片战斗部测试",
+      "task2": {
+        "equip_types": [
+          1,
+          16,
+          17,
+          23,
+          24,
+          40
+        ],
+        "num": 300,
+        "type": 1
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00300^C454545FF00000000个^C2997FFFFFFFFFF00主炮",
+      "task2_name": "毁伤效能对比",
+      "task3": {
+        "guardTypes": [
+          2
+        ],
+        "num": 300,
+        "type": 3
+      },
+      "task3_desc": "^C454545FF00000000在舰队满足携带^C2997FFFFFFFFFF00护卫舰^C454545FF00000000的情况下进行^C2997FFFFFFFFFF00300^C454545FF00000000次非演习出征",
+      "task3_name": "综合火力强度验证"
+    },
+    {
+      "condition": {
+        "id": 100012,
+        "ship_id": 4,
+        "stage": 3
+      },
+      "equipment_id": 10065521,
+      "id": 200012,
+      "task1": {
+        "equip_types": [
+          33,
+          39
+        ],
+        "num": 8,
+        "type": 1
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF008^C454545FF00000000个^C2997FFFFFFFFFF00防空导弹发射器",
+      "task1_name": "发射器效能验证",
+      "task2": {
+        "item_id": 20141,
+        "num": 300,
+        "type": 4
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00300^C454545FF00000000个^C2997FFFFFFFFFF00小型船舾装图纸",
+      "task2_name": "舰体结构适配",
+      "task3": {
+        "num": 300,
+        "shipTypes": [
+          24
+        ],
+        "type": 3
+      },
+      "task3_desc": "^C454545FF00000000在舰队满足携带^C2997FFFFFFFFFF00防驱^C454545FF00000000的情况下进行^C2997FFFFFFFFFF00300^C454545FF00000000次非演习出征",
+      "task3_name": "区域防空打击实验"
+    },
+    {
+      "condition": {
+        "id": 0,
+        "ship_id": 5,
+        "stage": 0
+      },
+      "equipment_id": 10067021,
+      "id": 200013,
+      "task1": {
+        "equip_types": [
+          9,
+          19,
+          20,
+          28,
+          30,
+          37
+        ],
+        "num": 60,
+        "type": 1
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF0060^C454545FF00000000个^C2997FFFFFFFFFF00强化部件",
+      "task1_name": "舰用装备接口研究",
+      "task2": {
+        "equip_types": [
+          35,
+          38
+        ],
+        "num": 4,
+        "type": 1
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF004^C454545FF00000000个^C2997FFFFFFFFFF00防空导弹",
+      "task2_name": "遥测弹飞行试验",
+      "task3": {
+        "num": 250,
+        "shipTons": [
+          1
+        ],
+        "type": 3
+      },
+      "task3_desc": "^C454545FF00000000在舰队满足携带^C2997FFFFFFFFFF00小型船^C454545FF00000000的情况下进行^C2997FFFFFFFFFF00250^C454545FF00000000次非演习出征",
+      "task3_name": "引导头可靠性测试"
+    },
+    {
+      "condition": {
+        "id": 100014,
+        "ship_id": 5,
+        "stage": 2
+      },
+      "equipment_id": 10067021,
+      "id": 200014,
+      "task1": {
+        "item_id": 10441,
+        "num": 40,
+        "type": 4
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF0040^C454545FF00000000个^C2997FFFFFFFFFF00驱逐改造核心",
+      "task1_name": "引信设计优化",
+      "task2": {
+        "equip_types": [
+          35,
+          38
+        ],
+        "num": 4,
+        "type": 1
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF004^C454545FF00000000个^C2997FFFFFFFFFF00防空导弹",
+      "task2_name": "半实物模拟打靶实验",
+      "task3": {
+        "guardTypes": [
+          2
+        ],
+        "num": 250,
+        "type": 3
+      },
+      "task3_desc": "^C454545FF00000000在舰队满足携带^C2997FFFFFFFFFF00护卫舰^C454545FF00000000的情况下进行^C2997FFFFFFFFFF00250^C454545FF00000000次非演习出征",
+      "task3_name": "导弹设计定型"
+    },
+    {
+      "condition": {
+        "id": 100015,
+        "ship_id": 5,
+        "stage": 3
+      },
+      "equipment_id": 10067121,
+      "id": 200015,
+      "task1": {
+        "equip_types": [
+          33,
+          39
+        ],
+        "num": 8,
+        "type": 1
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF008^C454545FF00000000个^C2997FFFFFFFFFF00防空导弹发射器",
+      "task1_name": "新型发射器设计",
+      "task2": {
+        "item_id": 20141,
+        "num": 300,
+        "type": 4
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00300^C454545FF00000000个^C2997FFFFFFFFFF00小型船舾装图纸",
+      "task2_name": "发射器稳定性测试",
+      "task3": {
+        "num": 250,
+        "shipTypes": [
+          24
+        ],
+        "type": 3
+      },
+      "task3_desc": "^C454545FF00000000在舰队满足携带^C2997FFFFFFFFFF00防驱^C454545FF00000000的情况下进行^C2997FFFFFFFFFF00250^C454545FF00000000次非演习出征",
+      "task3_name": "海上打靶实验"
+    },
+    {
+      "condition": {
+        "id": 0,
+        "ship_id": 6,
+        "stage": 0
+      },
+      "equipment_id": 10069321,
+      "id": 200016,
+      "task1": {
+        "equip_types": [
+          32
+        ],
+        "num": 5,
+        "type": 1
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF005^C454545FF00000000个^C2997FFFFFFFFFF00反舰导弹发射器",
+      "task1_name": "新式发射器需求整理",
+      "task2": {
+        "item_id": 20341,
+        "num": 300,
+        "type": 4
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00300^C454545FF00000000个^C2997FFFFFFFFFF00大型船舾装图纸",
+      "task2_name": "多弹种适配测试",
+      "task3": {
+        "num": 300,
+        "shipTons": [
+          2
+        ],
+        "type": 3
+      },
+      "task3_desc": "^C454545FF00000000在舰队满足携带^C2997FFFFFFFFFF00中型船^C454545FF00000000的情况下进行^C2997FFFFFFFFFF00300^C454545FF00000000次非演习出征",
+      "task3_name": "发射器设计定型"
+    },
+    {
+      "condition": {
+        "id": 100017,
+        "ship_id": 6,
+        "stage": 2
+      },
+      "equipment_id": 10069221,
+      "id": 200017,
+      "task1": {
+        "equip_types": [
+          9,
+          19,
+          20,
+          28,
+          30,
+          37
+        ],
+        "num": 80,
+        "type": 1
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF0080^C454545FF00000000个^C2997FFFFFFFFFF00强化部件",
+      "task1_name": "新式反舰导弹需求整理",
+      "task2": {
+        "item_id": 20141,
+        "num": 300,
+        "type": 4
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00300^C454545FF00000000个^C2997FFFFFFFFFF00小型船舾装图纸",
+      "task2_name": "多舰种适配测试",
+      "task3": {
+        "guardTypes": [
+          1
+        ],
+        "num": 300,
+        "type": 3
+      },
+      "task3_desc": "^C454545FF00000000在舰队满足携带^C2997FFFFFFFFFF00主力舰^C454545FF00000000的情况下进行^C2997FFFFFFFFFF00300^C454545FF00000000次非演习出征",
+      "task3_name": "研发工作调整"
+    },
+    {
+      "condition": {
+        "id": 100018,
+        "ship_id": 6,
+        "stage": 3
+      },
+      "equipment_id": 10069221,
+      "id": 200018,
+      "task1": {
+        "equip_types": [
+          34
+        ],
+        "num": 5,
+        "type": 1
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF005^C454545FF00000000个^C2997FFFFFFFFFF00反舰导弹",
+      "task1_name": "新时代作战需求整理",
+      "task2": {
+        "item_id": 10341,
+        "num": 50,
+        "type": 4
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF0050^C454545FF00000000个^C2997FFFFFFFFFF00巡洋改造核心",
+      "task2_name": "战斗部效能评估",
+      "task3": {
+        "num": 300,
+        "shipTypes": [
+          30
+        ],
+        "type": 3
+      },
+      "task3_desc": "^C454545FF00000000在舰队满足携带^C2997FFFFFFFFFF00导巡^C454545FF00000000的情况下进行^C2997FFFFFFFFFF00300^C454545FF00000000次非演习出征",
+      "task3_name": "旧型号可靠性复测"
+    },
+    {
+      "condition": {
+        "id": 0,
+        "ship_id": 7,
+        "stage": 0
+      },
+      "equipment_id": 10071321,
+      "id": 200019,
+      "task1": {
+        "equip_types": [
+          32
+        ],
+        "num": 5,
+        "type": 1
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF005^C454545FF00000000个^C2997FFFFFFFFFF00反舰导弹发射器",
+      "task1_name": "弹筒水下密封测试",
+      "task2": {
+        "item_id": 20141,
+        "num": 250,
+        "type": 4
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00250^C454545FF00000000个^C2997FFFFFFFFFF00小型船舾装图纸",
+      "task2_name": "发射器安装方案设计",
+      "task3": {
+        "num": 300,
+        "shipTons": [
+          1
+        ],
+        "type": 3
+      },
+      "task3_desc": "^C454545FF00000000在舰队满足携带^C2997FFFFFFFFFF00小型船^C454545FF00000000的情况下进行^C2997FFFFFFFFFF00300^C454545FF00000000次非演习出征",
+      "task3_name": "火控电磁兼容测试"
+    },
+    {
+      "condition": {
+        "id": 100020,
+        "ship_id": 7,
+        "stage": 2
+      },
+      "equipment_id": 10071221,
+      "id": 200020,
+      "task1": {
+        "equip_types": [
+          34
+        ],
+        "num": 5,
+        "type": 1
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF005^C454545FF00000000个^C2997FFFFFFFFFF00反舰导弹",
+      "task1_name": "固体火箭发动机研究",
+      "task2": {
+        "item_id": 10541,
+        "num": 50,
+        "type": 4
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF0050^C454545FF00000000个^C2997FFFFFFFFFF00潜艇改造核心",
+      "task2_name": "潜射需求评估",
+      "task3": {
+        "guardTypes": [
+          1
+        ],
+        "num": 300,
+        "type": 3
+      },
+      "task3_desc": "^C454545FF00000000在舰队满足携带^C2997FFFFFFFFFF00主力舰^C454545FF00000000的情况下进行^C2997FFFFFFFFFF00300^C454545FF00000000次非演习出征",
+      "task3_name": "弹体尺寸设计"
+    },
+    {
+      "condition": {
+        "id": 100021,
+        "ship_id": 7,
+        "stage": 3
+      },
+      "equipment_id": 10071221,
+      "id": 200021,
+      "task1": {
+        "equip_types": [
+          34
+        ],
+        "num": 5,
+        "type": 1
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF005^C454545FF00000000个^C2997FFFFFFFFFF00反舰导弹",
+      "task1_name": "陆上发射试验",
+      "task2": {
+        "item_id": 741,
+        "num": 150,
+        "type": 4
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00150^C454545FF00000000个^C2997FFFFFFFFFF00装备蓝图",
+      "task2_name": "导弹设计定型",
+      "task3": {
+        "num": 300,
+        "shipTypes": [
+          13
+        ],
+        "type": 3
+      },
+      "task3_desc": "^C454545FF00000000在舰队满足携带^C2997FFFFFFFFFF00导潜^C454545FF00000000的情况下进行^C2997FFFFFFFFFF00300^C454545FF00000000次非演习出征",
+      "task3_name": "海上发射试验"
+    },
+    {
+      "condition": {
+        "id": 0,
+        "ship_id": 8,
+        "stage": 0
+      },
+      "equipment_id": 10072921,
+      "id": 200022,
+      "task1": {
+        "equip_types": [
+          32
+        ],
+        "num": 5,
+        "type": 1
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF005^C454545FF00000000个^C2997FFFFFFFFFF00反舰导弹发射器",
+      "task1_name": "发射器实装试验",
+      "task2": {
+        "equip_cids": [
+          10025121
+        ],
+        "num": 5,
+        "type": 2
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF005^C454545FF00000000个^C2997FFFFFFFFFF00上游-1发射器",
+      "task2_name": "武装迭代校验",
+      "task3": {
+        "num": 250,
+        "shipTons": [
+          1
+        ],
+        "type": 3
+      },
+      "task3_desc": "^C454545FF00000000在舰队满足携带^C2997FFFFFFFFFF00小型船^C454545FF00000000的情况下进行^C2997FFFFFFFFFF00250^C454545FF00000000次非演习出征",
+      "task3_name": "千里之行始于足下"
+    },
+    {
+      "condition": {
+        "id": 100023,
+        "ship_id": 8,
+        "stage": 2
+      },
+      "equipment_id": 10072921,
+      "id": 200023,
+      "task1": {
+        "equip_types": [
+          1,
+          16,
+          17,
+          23,
+          24,
+          40
+        ],
+        "num": 131,
+        "type": 1
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00131^C454545FF00000000个^C2997FFFFFFFFFF00主炮",
+      "task1_name": "火炮系统再调整",
+      "task2": {
+        "equip_cids": [
+          10025221
+        ],
+        "num": 5,
+        "type": 2
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF005^C454545FF00000000个^C2997FFFFFFFFFF00上游-1导弹",
+      "task2_name": "气动外形调整",
+      "task3": {
+        "guardTypes": [
+          1
+        ],
+        "num": 250,
+        "type": 3
+      },
+      "task3_desc": "^C454545FF00000000在舰队满足携带^C2997FFFFFFFFFF00主力舰^C454545FF00000000的情况下进行^C2997FFFFFFFFFF00250^C454545FF00000000次非演习出征",
+      "task3_name": "多流汗少流血"
+    },
+    {
+      "condition": {
+        "id": 100024,
+        "ship_id": 8,
+        "stage": 3
+      },
+      "equipment_id": 10073021,
+      "id": 200024,
+      "task1": {
+        "equip_types": [
+          34
+        ],
+        "num": 5,
+        "type": 1
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF005^C454545FF00000000个^C2997FFFFFFFFFF00反舰导弹",
+      "task1_name": "遥测技术理论验证",
+      "task2": {
+        "equip_cids": [
+          10025221
+        ],
+        "num": 5,
+        "type": 2
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF005^C454545FF00000000个^C2997FFFFFFFFFF00上游-1导弹",
+      "task2_name": "助推器出力验证",
+      "task3": {
+        "num": 250,
+        "shipTypes": [
+          23
+        ],
+        "type": 3
+      },
+      "task3_desc": "^C454545FF00000000在舰队满足携带^C2997FFFFFFFFFF00导驱^C454545FF00000000的情况下进行^C2997FFFFFFFFFF00250^C454545FF00000000次非演习出征",
+      "task3_name": "以武止戈，砥定乾坤"
+    },
+    {
+      "condition": {
+        "id": 0,
+        "ship_id": 9,
+        "stage": 0
+      },
+      "equipment_id": 10075321,
+      "id": 200025,
+      "task1": {
+        "item_id": 741,
+        "num": 120,
+        "type": 4
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00120^C454545FF00000000个^C2997FFFFFFFFFF00装备蓝图",
+      "task1_name": "基础理论课程",
+      "task2": {
+        "item_id": 20141,
+        "num": 300,
+        "type": 4
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00300^C454545FF00000000个^C2997FFFFFFFFFF00小型船舾装图纸",
+      "task2_name": "实践训练课程",
+      "task3": {
+        "num": 250,
+        "shipTons": [
+          1
+        ],
+        "type": 3
+      },
+      "task3_desc": "^C454545FF00000000在舰队满足携带^C2997FFFFFFFFFF00小型船^C454545FF00000000的情况下进行^C2997FFFFFFFFFF00250^C454545FF00000000次非演习出征",
+      "task3_name": "中期测试通过"
+    },
+    {
+      "condition": {
+        "id": 100026,
+        "ship_id": 9,
+        "stage": 2
+      },
+      "equipment_id": 10075321,
+      "id": 200026,
+      "task1": {
+        "item_id": 141,
+        "num": 80,
+        "type": 4
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF0080^C454545FF00000000个^C2997FFFFFFFFFF00快速建造工具",
+      "task1_name": "综合反潜课程",
+      "task2": {
+        "equip_types": [
+          35,
+          38
+        ],
+        "num": 6,
+        "type": 1
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF006^C454545FF00000000个^C2997FFFFFFFFFF00防空导弹",
+      "task2_name": "近海防空课程",
+      "task3": {
+        "guardTypes": [
+          2
+        ],
+        "num": 250,
+        "type": 3
+      },
+      "task3_desc": "^C454545FF00000000在舰队满足携带^C2997FFFFFFFFFF00护卫舰^C454545FF00000000的情况下进行^C2997FFFFFFFFFF00250^C454545FF00000000次非演习出征",
+      "task3_name": "验收测试通过"
+    },
+    {
+      "condition": {
+        "id": 100027,
+        "ship_id": 9,
+        "stage": 3
+      },
+      "equipment_id": 10075421,
+      "id": 200027,
+      "task1": {
+        "item_id": 10441,
+        "num": 45,
+        "type": 4
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF0045^C454545FF00000000个^C2997FFFFFFFFFF00驱逐改造核心",
+      "task1_name": "编队航行演习",
+      "task2": {
+        "equip_types": [
+          33,
+          39
+        ],
+        "num": 6,
+        "type": 1
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF006^C454545FF00000000个^C2997FFFFFFFFFF00防空导弹发射器",
+      "task2_name": "巡逻警戒演习",
+      "task3": {
+        "num": 250,
+        "shipTypes": [
+          24
+        ],
+        "type": 3
+      },
+      "task3_desc": "^C454545FF00000000在舰队满足携带^C2997FFFFFFFFFF00防驱^C454545FF00000000的情况下进行^C2997FFFFFFFFFF00250^C454545FF00000000次非演习出征",
+      "task3_name": "实战考验"
+    },
+    {
+      "condition": {
+        "id": 0,
+        "ship_id": 10,
+        "stage": 0
+      },
+      "equipment_id": 10076721,
+      "id": 200028,
+      "task1": {
+        "equip_types": [
+          35,
+          38
+        ],
+        "num": 5,
+        "type": 1
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF005^C454545FF00000000个^C2997FFFFFFFFFF00防空导弹",
+      "task1_name": "固体燃料助推器开发",
+      "task2": {
+        "item_id": 10441,
+        "num": 50,
+        "type": 4
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF0050^C454545FF00000000个^C2997FFFFFFFFFF00驱逐改造核心",
+      "task2_name": "舰装保障能力提升",
+      "task3": {
+        "num": 250,
+        "shipTons": [
+          1
+        ],
+        "type": 3
+      },
+      "task3_desc": "^C454545FF00000000在舰队满足携带^C2997FFFFFFFFFF00小型船^C454545FF00000000的情况下进行^C2997FFFFFFFFFF00250^C454545FF00000000次非演习出征",
+      "task3_name": "部件可靠性测试"
+    },
+    {
+      "condition": {
+        "id": 100029,
+        "ship_id": 10,
+        "stage": 2
+      },
+      "equipment_id": 10076721,
+      "id": 200029,
+      "task1": {
+        "equip_types": [
+          35,
+          38
+        ],
+        "num": 5,
+        "type": 1
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF005^C454545FF00000000个^C2997FFFFFFFFFF00防空导弹",
+      "task1_name": "冲压巡航发动机开发",
+      "task2": {
+        "item_id": 741,
+        "num": 150,
+        "type": 4
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00150^C454545FF00000000个^C2997FFFFFFFFFF00装备蓝图",
+      "task2_name": "装备调度能力提升",
+      "task3": {
+        "guardTypes": [
+          2
+        ],
+        "num": 250,
+        "type": 3
+      },
+      "task3_desc": "^C454545FF00000000在舰队满足携带^C2997FFFFFFFFFF00护卫舰^C454545FF00000000的情况下进行^C2997FFFFFFFFFF00250^C454545FF00000000次非演习出征",
+      "task3_name": "系统可靠性复测"
+    },
+    {
+      "condition": {
+        "id": 100030,
+        "ship_id": 10,
+        "stage": 3
+      },
+      "equipment_id": 10076821,
+      "id": 200030,
+      "task1": {
+        "equip_types": [
+          33,
+          39
+        ],
+        "num": 5,
+        "type": 1
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF005^C454545FF00000000个^C2997FFFFFFFFFF00防空导弹发射器",
+      "task1_name": "发射系统综合适配",
+      "task2": {
+        "item_id": 20141,
+        "num": 280,
+        "type": 4
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00280^C454545FF00000000个^C2997FFFFFFFFFF00小型船舾装图纸",
+      "task2_name": "战时适航性验证",
+      "task3": {
+        "num": 250,
+        "shipTypes": [
+          24
+        ],
+        "type": 3
+      },
+      "task3_desc": "^C454545FF00000000在舰队满足携带^C2997FFFFFFFFFF00防驱^C454545FF00000000的情况下进行^C2997FFFFFFFFFF00250^C454545FF00000000次非演习出征",
+      "task3_name": "完整舰装验收"
+    }
+  ],
+  "sequence_num": 30,
+  "unique_id": {
+    "200001": 1,
+    "200002": 2,
+    "200003": 3,
+    "200004": 4,
+    "200005": 5,
+    "200006": 6,
+    "200007": 7,
+    "200008": 8,
+    "200009": 9,
+    "200010": 10,
+    "200011": 11,
+    "200012": 12,
+    "200013": 13,
+    "200014": 14,
+    "200015": 15,
+    "200016": 16,
+    "200017": 17,
+    "200018": 18,
+    "200019": 19,
+    "200020": 20,
+    "200021": 21,
+    "200022": 22,
+    "200023": 23,
+    "200024": 24,
+    "200025": 25,
+    "200026": 26,
+    "200027": 27,
+    "200028": 28,
+    "200029": 29,
+    "200030": 30
+  }
+}

@@ -1,0 +1,1291 @@
+{
+  "sequence": [
+    {
+      "buff_icon": "16",
+      "desc_level_1": "0",
+      "desc_level_2": "0",
+      "desc_level_3": "0",
+      "effect": 2,
+      "effect_desc": "情报点数+2",
+      "effect_level_1": [],
+      "effect_level_2": [],
+      "effect_level_3": [],
+      "id": 11000,
+      "level": 1,
+      "title": "情报点数",
+      "type": 1,
+      "value": 0
+    },
+    {
+      "buff_icon": "6",
+      "desc_level_1": "大型船造成的伤害提升^C1C8BE5FF000000005%",
+      "desc_level_2": "大型船造成的伤害提升^C1C8BE5FF0000000015%",
+      "desc_level_3": "大型船造成的伤害提升^C1C8BE5FF0000000030%",
+      "effect": 0,
+      "effect_desc": "大型船造成的伤害提升",
+      "effect_level_1": [
+        {
+          "num": 5,
+          "shipTons": [
+            3
+          ],
+          "type": 3
+        }
+      ],
+      "effect_level_2": [
+        {
+          "num": 15,
+          "shipTons": [
+            3
+          ],
+          "type": 3
+        }
+      ],
+      "effect_level_3": [
+        {
+          "num": 30,
+          "shipTons": [
+            3
+          ],
+          "type": 3
+        }
+      ],
+      "id": 11001,
+      "level": 3,
+      "title": "全新弹种·大型",
+      "type": 3,
+      "value": 7
+    },
+    {
+      "buff_icon": "6",
+      "desc_level_1": "中型船造成的伤害提升^C1C8BE5FF0000000010%",
+      "desc_level_2": "中型船造成的伤害提升^C1C8BE5FF0000000020%",
+      "desc_level_3": "中型船造成的伤害提升^C1C8BE5FF0000000035%",
+      "effect": 0,
+      "effect_desc": "中型船造成的伤害提升",
+      "effect_level_1": [
+        {
+          "num": 10,
+          "shipTons": [
+            2
+          ],
+          "type": 3
+        }
+      ],
+      "effect_level_2": [
+        {
+          "num": 20,
+          "shipTons": [
+            2
+          ],
+          "type": 3
+        }
+      ],
+      "effect_level_3": [
+        {
+          "num": 35,
+          "shipTons": [
+            2
+          ],
+          "type": 3
+        }
+      ],
+      "id": 11002,
+      "level": 3,
+      "title": "全新弹种·中型",
+      "type": 2,
+      "value": 6
+    },
+    {
+      "buff_icon": "6",
+      "desc_level_1": "小型船造成的伤害提升^C1C8BE5FF0000000010%",
+      "desc_level_2": "小型船造成的伤害提升^C1C8BE5FF0000000020%",
+      "desc_level_3": "小型船造成的伤害提升^C1C8BE5FF0000000035%",
+      "effect": 0,
+      "effect_desc": "小型船造成的伤害提升",
+      "effect_level_1": [
+        {
+          "num": 10,
+          "shipTons": [
+            1
+          ],
+          "type": 3
+        }
+      ],
+      "effect_level_2": [
+        {
+          "num": 20,
+          "shipTons": [
+            1
+          ],
+          "type": 3
+        }
+      ],
+      "effect_level_3": [
+        {
+          "num": 35,
+          "shipTons": [
+            1
+          ],
+          "type": 3
+        }
+      ],
+      "id": 11003,
+      "level": 3,
+      "title": "全新弹种·小型",
+      "type": 2,
+      "value": 4
+    },
+    {
+      "buff_icon": "4",
+      "desc_level_1": "大型船暴击率提升^C1C8BE5FF000000005%",
+      "desc_level_2": "大型船暴击率提升^C1C8BE5FF0000000010%",
+      "desc_level_3": "大型船暴击率提升^C1C8BE5FF0000000020%",
+      "effect": 0,
+      "effect_desc": "大型船暴击率提升",
+      "effect_level_1": [
+        {
+          "num": 5,
+          "num4": 16,
+          "shipTons": [
+            3
+          ],
+          "type": 2
+        }
+      ],
+      "effect_level_2": [
+        {
+          "num": 10,
+          "num4": 16,
+          "shipTons": [
+            3
+          ],
+          "type": 2
+        }
+      ],
+      "effect_level_3": [
+        {
+          "num": 20,
+          "num4": 16,
+          "shipTons": [
+            3
+          ],
+          "type": 2
+        }
+      ],
+      "id": 11004,
+      "level": 3,
+      "title": "暴怒一击·大型",
+      "type": 3,
+      "value": 7
+    },
+    {
+      "buff_icon": "4",
+      "desc_level_1": "中型船暴击率提升^C1C8BE5FF0000000010%",
+      "desc_level_2": "中型船暴击率提升^C1C8BE5FF0000000015%",
+      "desc_level_3": "中型船暴击率提升^C1C8BE5FF0000000025%",
+      "effect": 0,
+      "effect_desc": "中型船暴击率提升",
+      "effect_level_1": [
+        {
+          "num": 10,
+          "num4": 16,
+          "shipTons": [
+            2
+          ],
+          "type": 2
+        }
+      ],
+      "effect_level_2": [
+        {
+          "num": 15,
+          "num4": 16,
+          "shipTons": [
+            2
+          ],
+          "type": 2
+        }
+      ],
+      "effect_level_3": [
+        {
+          "num": 25,
+          "num4": 16,
+          "shipTons": [
+            2
+          ],
+          "type": 2
+        }
+      ],
+      "id": 11005,
+      "level": 3,
+      "title": "暴怒一击·中型",
+      "type": 2,
+      "value": 6
+    },
+    {
+      "buff_icon": "4",
+      "desc_level_1": "小型船暴击率提升^C1C8BE5FF0000000010%",
+      "desc_level_2": "小型船暴击率提升^C1C8BE5FF0000000015%",
+      "desc_level_3": "小型船暴击率提升^C1C8BE5FF0000000025%",
+      "effect": 0,
+      "effect_desc": "小型船暴击率提升",
+      "effect_level_1": [
+        {
+          "num": 10,
+          "num4": 16,
+          "shipTons": [
+            1
+          ],
+          "type": 2
+        }
+      ],
+      "effect_level_2": [
+        {
+          "num": 15,
+          "num4": 16,
+          "shipTons": [
+            1
+          ],
+          "type": 2
+        }
+      ],
+      "effect_level_3": [
+        {
+          "num": 25,
+          "num4": 16,
+          "shipTons": [
+            1
+          ],
+          "type": 2
+        }
+      ],
+      "id": 11006,
+      "level": 3,
+      "title": "暴怒一击·小型",
+      "type": 2,
+      "value": 4
+    },
+    {
+      "buff_icon": "7",
+      "desc_level_1": "战列、战巡、航战火力增加^C1C8BE5FF000000005",
+      "desc_level_2": "战列、战巡、航战火力增加^C1C8BE5FF0000000010",
+      "desc_level_3": "战列、战巡、航战火力增加^C1C8BE5FF0000000020",
+      "effect": 0,
+      "effect_desc": "战列、战巡、航战火力增加",
+      "effect_level_1": [
+        {
+          "num": 5,
+          "num4": 2,
+          "shipTypes": [
+            4,
+            5,
+            6
+          ],
+          "type": 1
+        }
+      ],
+      "effect_level_2": [
+        {
+          "num": 10,
+          "num4": 2,
+          "shipTypes": [
+            4,
+            5,
+            6
+          ],
+          "type": 1
+        }
+      ],
+      "effect_level_3": [
+        {
+          "num": 20,
+          "num4": 2,
+          "shipTypes": [
+            4,
+            5,
+            6
+          ],
+          "type": 1
+        }
+      ],
+      "id": 11007,
+      "level": 3,
+      "title": "战力叠加·战舰",
+      "type": 3,
+      "value": 6
+    },
+    {
+      "buff_icon": "7",
+      "desc_level_1": "航母、装母、轻母火力增加^C1C8BE5FF000000005",
+      "desc_level_2": "航母、装母、轻母火力增加^C1C8BE5FF0000000010",
+      "desc_level_3": "航母、装母、轻母火力增加^C1C8BE5FF0000000020",
+      "effect": 0,
+      "effect_desc": "航母、装母、轻母火力增加",
+      "effect_level_1": [
+        {
+          "num": 5,
+          "num4": 2,
+          "shipTypes": [
+            1,
+            2,
+            3
+          ],
+          "type": 1
+        }
+      ],
+      "effect_level_2": [
+        {
+          "num": 10,
+          "num4": 2,
+          "shipTypes": [
+            1,
+            2,
+            3
+          ],
+          "type": 1
+        }
+      ],
+      "effect_level_3": [
+        {
+          "num": 20,
+          "num4": 2,
+          "shipTypes": [
+            1,
+            2,
+            3
+          ],
+          "type": 1
+        }
+      ],
+      "id": 11008,
+      "level": 3,
+      "title": "战力叠加·航母",
+      "type": 3,
+      "value": 6
+    },
+    {
+      "buff_icon": "7",
+      "desc_level_1": "重巡、航巡、轻巡火力增加^C1C8BE5FF000000005",
+      "desc_level_2": "重巡、航巡、轻巡火力增加^C1C8BE5FF0000000010",
+      "desc_level_3": "重巡、航巡、轻巡火力增加^C1C8BE5FF0000000020",
+      "effect": 0,
+      "effect_desc": "重巡、航巡、轻巡火力增加",
+      "effect_level_1": [
+        {
+          "num": 5,
+          "num4": 2,
+          "shipTypes": [
+            7,
+            10,
+            8,
+            28
+          ],
+          "type": 1
+        }
+      ],
+      "effect_level_2": [
+        {
+          "num": 10,
+          "num4": 2,
+          "shipTypes": [
+            7,
+            10,
+            8,
+            28
+          ],
+          "type": 1
+        }
+      ],
+      "effect_level_3": [
+        {
+          "num": 20,
+          "num4": 2,
+          "shipTypes": [
+            7,
+            10,
+            8,
+            28
+          ],
+          "type": 1
+        }
+      ],
+      "id": 11009,
+      "level": 3,
+      "title": "战力叠加·巡洋",
+      "type": 2,
+      "value": 4
+    },
+    {
+      "buff_icon": "7",
+      "desc_level_1": "小型船火力增加^C1C8BE5FF0000000010",
+      "desc_level_2": "小型船火力增加^C1C8BE5FF0000000020",
+      "desc_level_3": "小型船火力增加^C1C8BE5FF0000000035",
+      "effect": 0,
+      "effect_desc": "小型船火力增加",
+      "effect_level_1": [
+        {
+          "num": 10,
+          "num4": 2,
+          "shipTons": [
+            1
+          ],
+          "type": 1
+        }
+      ],
+      "effect_level_2": [
+        {
+          "num": 20,
+          "num4": 2,
+          "shipTons": [
+            1
+          ],
+          "type": 1
+        }
+      ],
+      "effect_level_3": [
+        {
+          "num": 35,
+          "num4": 2,
+          "shipTons": [
+            1
+          ],
+          "type": 1
+        }
+      ],
+      "id": 11010,
+      "level": 3,
+      "title": "战力叠加·小型",
+      "type": 1,
+      "value": 3
+    },
+    {
+      "buff_icon": "8",
+      "desc_level_1": "护卫舰鱼雷增加^C1C8BE5FF000000005",
+      "desc_level_2": "护卫舰鱼雷增加^C1C8BE5FF0000000010",
+      "desc_level_3": "护卫舰鱼雷增加^C1C8BE5FF0000000020",
+      "effect": 0,
+      "effect_desc": "护卫舰鱼雷增加",
+      "effect_level_1": [
+        {
+          "guardTypes": [
+            2
+          ],
+          "num": 5,
+          "num4": 4,
+          "type": 1
+        }
+      ],
+      "effect_level_2": [
+        {
+          "guardTypes": [
+            2
+          ],
+          "num": 10,
+          "num4": 4,
+          "type": 1
+        }
+      ],
+      "effect_level_3": [
+        {
+          "guardTypes": [
+            2
+          ],
+          "num": 20,
+          "num4": 4,
+          "type": 1
+        }
+      ],
+      "id": 11011,
+      "level": 3,
+      "title": "鱼雷之海·护卫",
+      "type": 2,
+      "value": 4
+    },
+    {
+      "buff_icon": "9",
+      "desc_level_1": "大型船装甲增加^C1C8BE5FF000000005",
+      "desc_level_2": "大型船装甲增加^C1C8BE5FF0000000010",
+      "desc_level_3": "大型船装甲增加^C1C8BE5FF0000000020",
+      "effect": 0,
+      "effect_desc": "大型船装甲增加",
+      "effect_level_1": [
+        {
+          "num": 5,
+          "num4": 3,
+          "shipTons": [
+            3
+          ],
+          "type": 1
+        }
+      ],
+      "effect_level_2": [
+        {
+          "num": 10,
+          "num4": 3,
+          "shipTons": [
+            3
+          ],
+          "type": 1
+        }
+      ],
+      "effect_level_3": [
+        {
+          "num": 20,
+          "num4": 3,
+          "shipTons": [
+            3
+          ],
+          "type": 1
+        }
+      ],
+      "id": 11012,
+      "level": 3,
+      "title": "防护强化·大型",
+      "type": 3,
+      "value": 7
+    },
+    {
+      "buff_icon": "9",
+      "desc_level_1": "中型船装甲增加^C1C8BE5FF000000005",
+      "desc_level_2": "中型船装甲增加^C1C8BE5FF0000000010",
+      "desc_level_3": "中型船装甲增加^C1C8BE5FF0000000020",
+      "effect": 0,
+      "effect_desc": "中型船装甲增加",
+      "effect_level_1": [
+        {
+          "num": 5,
+          "num4": 3,
+          "shipTons": [
+            2
+          ],
+          "type": 1
+        }
+      ],
+      "effect_level_2": [
+        {
+          "num": 10,
+          "num4": 3,
+          "shipTons": [
+            2
+          ],
+          "type": 1
+        }
+      ],
+      "effect_level_3": [
+        {
+          "num": 20,
+          "num4": 3,
+          "shipTons": [
+            2
+          ],
+          "type": 1
+        }
+      ],
+      "id": 11013,
+      "level": 3,
+      "title": "防护强化·中型",
+      "type": 2,
+      "value": 6
+    },
+    {
+      "buff_icon": "9",
+      "desc_level_1": "小型船装甲增加^C1C8BE5FF000000005",
+      "desc_level_2": "小型船装甲增加^C1C8BE5FF0000000010",
+      "desc_level_3": "小型船装甲增加^C1C8BE5FF0000000020",
+      "effect": 0,
+      "effect_desc": "小型船装甲增加",
+      "effect_level_1": [
+        {
+          "num": 5,
+          "num4": 3,
+          "shipTons": [
+            1
+          ],
+          "type": 1
+        }
+      ],
+      "effect_level_2": [
+        {
+          "num": 10,
+          "num4": 3,
+          "shipTons": [
+            1
+          ],
+          "type": 1
+        }
+      ],
+      "effect_level_3": [
+        {
+          "num": 20,
+          "num4": 3,
+          "shipTons": [
+            1
+          ],
+          "type": 1
+        }
+      ],
+      "id": 11014,
+      "level": 3,
+      "title": "防护强化·小型",
+      "type": 1,
+      "value": 3
+    },
+    {
+      "buff_icon": "3",
+      "desc_level_1": "主力舰命中增加^C1C8BE5FF000000005",
+      "desc_level_2": "主力舰命中增加^C1C8BE5FF0000000010",
+      "desc_level_3": "主力舰命中增加^C1C8BE5FF0000000020",
+      "effect": 0,
+      "effect_desc": "主力舰命中增加",
+      "effect_level_1": [
+        {
+          "guardTypes": [
+            1
+          ],
+          "num": 5,
+          "num4": 17,
+          "type": 1
+        }
+      ],
+      "effect_level_2": [
+        {
+          "guardTypes": [
+            1
+          ],
+          "num": 10,
+          "num4": 17,
+          "type": 1
+        }
+      ],
+      "effect_level_3": [
+        {
+          "guardTypes": [
+            1
+          ],
+          "num": 20,
+          "num4": 17,
+          "type": 1
+        }
+      ],
+      "id": 11015,
+      "level": 3,
+      "title": "火控校准·主力",
+      "type": 3,
+      "value": 6
+    },
+    {
+      "buff_icon": "3",
+      "desc_level_1": "护卫舰命中增加^C1C8BE5FF000000005",
+      "desc_level_2": "护卫舰命中增加^C1C8BE5FF0000000010",
+      "desc_level_3": "护卫舰命中增加^C1C8BE5FF0000000020",
+      "effect": 0,
+      "effect_desc": "护卫舰命中增加",
+      "effect_level_1": [
+        {
+          "guardTypes": [
+            2
+          ],
+          "num": 5,
+          "num4": 17,
+          "type": 1
+        }
+      ],
+      "effect_level_2": [
+        {
+          "guardTypes": [
+            2
+          ],
+          "num": 10,
+          "num4": 17,
+          "type": 1
+        }
+      ],
+      "effect_level_3": [
+        {
+          "guardTypes": [
+            2
+          ],
+          "num": 20,
+          "num4": 17,
+          "type": 1
+        }
+      ],
+      "id": 11016,
+      "level": 3,
+      "title": "火控校准·护卫",
+      "type": 2,
+      "value": 4
+    },
+    {
+      "buff_icon": "11",
+      "desc_level_1": "主力舰回避增加^C1C8BE5FF000000005",
+      "desc_level_2": "主力舰回避增加^C1C8BE5FF0000000010",
+      "desc_level_3": "主力舰回避增加^C1C8BE5FF0000000020",
+      "effect": 0,
+      "effect_desc": "主力舰回避增加",
+      "effect_level_1": [
+        {
+          "guardTypes": [
+            1
+          ],
+          "num": 5,
+          "num4": 5,
+          "type": 1
+        }
+      ],
+      "effect_level_2": [
+        {
+          "guardTypes": [
+            1
+          ],
+          "num": 10,
+          "num4": 5,
+          "type": 1
+        }
+      ],
+      "effect_level_3": [
+        {
+          "guardTypes": [
+            1
+          ],
+          "num": 20,
+          "num4": 5,
+          "type": 1
+        }
+      ],
+      "id": 11017,
+      "level": 3,
+      "title": "紧急回避·主力",
+      "type": 3,
+      "value": 6
+    },
+    {
+      "buff_icon": "11",
+      "desc_level_1": "护卫舰回避增加^C1C8BE5FF000000005",
+      "desc_level_2": "护卫舰回避增加^C1C8BE5FF0000000010",
+      "desc_level_3": "护卫舰回避增加^C1C8BE5FF0000000020",
+      "effect": 0,
+      "effect_desc": "护卫舰回避增加",
+      "effect_level_1": [
+        {
+          "guardTypes": [
+            2
+          ],
+          "num": 5,
+          "num4": 5,
+          "type": 1
+        }
+      ],
+      "effect_level_2": [
+        {
+          "guardTypes": [
+            2
+          ],
+          "num": 10,
+          "num4": 5,
+          "type": 1
+        }
+      ],
+      "effect_level_3": [
+        {
+          "guardTypes": [
+            2
+          ],
+          "num": 20,
+          "num4": 5,
+          "type": 1
+        }
+      ],
+      "id": 11018,
+      "level": 3,
+      "title": "紧急回避·护卫",
+      "type": 3,
+      "value": 4
+    },
+    {
+      "buff_icon": "2",
+      "desc_level_1": "C国、S国舰船^C1C8BE5FF00000000夜战无视弹损",
+      "desc_level_2": "C国、S国舰船^C1C8BE5FF00000000炮击战、夜战无视弹损",
+      "desc_level_3": "C国、S国舰船^C1C8BE5FF00000000全阶段无视弹损",
+      "effect": 0,
+      "effect_desc": "C国、S国舰船夜战无视弹损",
+      "effect_level_1": [
+        {
+          "country": [
+            7,
+            8
+          ],
+          "stage": [
+            7
+          ],
+          "type": 6
+        }
+      ],
+      "effect_level_2": [
+        {
+          "country": [
+            7,
+            8
+          ],
+          "stage": [
+            5,
+            7
+          ],
+          "type": 6
+        }
+      ],
+      "effect_level_3": [
+        {
+          "country": [
+            7,
+            8
+          ],
+          "stage": [
+            0
+          ],
+          "type": 6
+        }
+      ],
+      "id": 11019,
+      "level": 3,
+      "title": "最大航程·C国、S国",
+      "type": 3,
+      "value": 3
+    },
+    {
+      "buff_icon": "2",
+      "desc_level_1": "E国、F国舰船^C1C8BE5FF00000000夜战无视弹损",
+      "desc_level_2": "E国、F国舰船^C1C8BE5FF00000000炮击战、夜战无视弹损",
+      "desc_level_3": "E国、F国舰船^C1C8BE5FF00000000全阶段无视弹损",
+      "effect": 0,
+      "effect_desc": "E国、F国舰船夜战无视弹损",
+      "effect_level_1": [
+        {
+          "country": [
+            3,
+            6
+          ],
+          "stage": [
+            7
+          ],
+          "type": 6
+        }
+      ],
+      "effect_level_2": [
+        {
+          "country": [
+            3,
+            6
+          ],
+          "stage": [
+            5,
+            7
+          ],
+          "type": 6
+        }
+      ],
+      "effect_level_3": [
+        {
+          "country": [
+            3,
+            6
+          ],
+          "stage": [
+            0
+          ],
+          "type": 6
+        }
+      ],
+      "id": 11020,
+      "level": 3,
+      "title": "最大航程·E国、F国",
+      "type": 3,
+      "value": 7
+    },
+    {
+      "buff_icon": "2",
+      "desc_level_1": "U国、I国舰船^C1C8BE5FF00000000夜战无视弹损",
+      "desc_level_2": "U国、I国舰船^C1C8BE5FF00000000炮击战、夜战无视弹损",
+      "desc_level_3": "U国、I国舰船^C1C8BE5FF00000000全阶段无视弹损",
+      "effect": 0,
+      "effect_desc": "U国、I国舰船夜战无视弹损",
+      "effect_level_1": [
+        {
+          "country": [
+            4,
+            5
+          ],
+          "stage": [
+            7
+          ],
+          "type": 6
+        }
+      ],
+      "effect_level_2": [
+        {
+          "country": [
+            4,
+            5
+          ],
+          "stage": [
+            5,
+            7
+          ],
+          "type": 6
+        }
+      ],
+      "effect_level_3": [
+        {
+          "country": [
+            4,
+            5
+          ],
+          "stage": [
+            0
+          ],
+          "type": 6
+        }
+      ],
+      "id": 11021,
+      "level": 3,
+      "title": "最大航程·U国、I国",
+      "type": 3,
+      "value": 7
+    },
+    {
+      "buff_icon": "2",
+      "desc_level_1": "G国、J国舰船^C1C8BE5FF00000000夜战无视弹损",
+      "desc_level_2": "G国、J国舰船^C1C8BE5FF00000000炮击战、夜战无视弹损",
+      "desc_level_3": "G国、J国舰船^C1C8BE5FF00000000全阶段无视弹损",
+      "effect": 0,
+      "effect_desc": "G国、J国舰船夜战无视弹损",
+      "effect_level_1": [
+        {
+          "country": [
+            1,
+            2
+          ],
+          "stage": [
+            7
+          ],
+          "type": 6
+        }
+      ],
+      "effect_level_2": [
+        {
+          "country": [
+            1,
+            2
+          ],
+          "stage": [
+            5,
+            7
+          ],
+          "type": 6
+        }
+      ],
+      "effect_level_3": [
+        {
+          "country": [
+            1,
+            2
+          ],
+          "stage": [
+            0
+          ],
+          "type": 6
+        }
+      ],
+      "id": 11022,
+      "level": 3,
+      "title": "最大航程·G国、J国",
+      "type": 3,
+      "value": 6
+    },
+    {
+      "buff_icon": "1",
+      "desc_level_1": "大巡、防巡^C1C8BE5FF00000000炮击战无视战损",
+      "desc_level_2": "大巡、防巡^C1C8BE5FF00000000炮击战、夜战无视战损",
+      "desc_level_3": "大巡、防巡^C1C8BE5FF00000000全阶段无视战损",
+      "effect": 0,
+      "effect_desc": "大巡、防巡炮击战无视战损",
+      "effect_level_1": [
+        {
+          "shipTypes": [
+            26,
+            29
+          ],
+          "stage": [
+            5
+          ],
+          "type": 5
+        }
+      ],
+      "effect_level_2": [
+        {
+          "shipTypes": [
+            26,
+            29
+          ],
+          "stage": [
+            5,
+            7
+          ],
+          "type": 5
+        }
+      ],
+      "effect_level_3": [
+        {
+          "shipTypes": [
+            26,
+            29
+          ],
+          "stage": [
+            0
+          ],
+          "type": 5
+        }
+      ],
+      "id": 11023,
+      "level": 3,
+      "title": "底力爆发·大巡、防巡",
+      "type": 2,
+      "value": 4
+    },
+    {
+      "buff_icon": "1",
+      "desc_level_1": "导驱、防驱^C1C8BE5FF00000000炮击战无视战损",
+      "desc_level_2": "导驱、防驱^C1C8BE5FF00000000炮击战、夜战无视战损",
+      "desc_level_3": "导驱、防驱^C1C8BE5FF00000000全阶段无视战损",
+      "effect": 0,
+      "effect_desc": "导驱、防驱炮击战无视战损",
+      "effect_level_1": [
+        {
+          "shipTypes": [
+            23,
+            24
+          ],
+          "stage": [
+            5
+          ],
+          "type": 5
+        }
+      ],
+      "effect_level_2": [
+        {
+          "shipTypes": [
+            23,
+            24
+          ],
+          "stage": [
+            5,
+            7
+          ],
+          "type": 5
+        }
+      ],
+      "effect_level_3": [
+        {
+          "shipTypes": [
+            23,
+            24
+          ],
+          "stage": [
+            0
+          ],
+          "type": 5
+        }
+      ],
+      "id": 11024,
+      "level": 3,
+      "title": "底力爆发·导驱、防驱",
+      "type": 2,
+      "value": 4
+    },
+    {
+      "buff_icon": "3",
+      "desc_level_1": "潜艇^C1C8BE5FF00000000先制鱼雷必中",
+      "desc_level_2": "潜艇^C1C8BE5FF00000000先制鱼雷、鱼雷战必中",
+      "desc_level_3": "潜艇^C1C8BE5FF00000000全阶段必中",
+      "effect": 0,
+      "effect_desc": "潜艇先制鱼雷必中",
+      "effect_level_1": [
+        {
+          "shipTypes": [
+            14
+          ],
+          "stage": [
+            4
+          ],
+          "type": 7
+        }
+      ],
+      "effect_level_2": [
+        {
+          "shipTypes": [
+            14
+          ],
+          "stage": [
+            4,
+            6
+          ],
+          "type": 7
+        }
+      ],
+      "effect_level_3": [
+        {
+          "shipTypes": [
+            14
+          ],
+          "stage": [
+            0
+          ],
+          "type": 7
+        }
+      ],
+      "id": 11025,
+      "level": 3,
+      "title": "弹无虚发·潜艇",
+      "type": 4,
+      "value": 7
+    },
+    {
+      "buff_icon": "3",
+      "desc_level_1": "重巡、轻巡^C1C8BE5FF00000000鱼雷战必中",
+      "desc_level_2": "重巡、轻巡^C1C8BE5FF00000000炮击战、鱼雷战必中",
+      "desc_level_3": "重巡、轻巡^C1C8BE5FF00000000全阶段必中",
+      "effect": 0,
+      "effect_desc": "重巡、轻巡鱼雷战必中",
+      "effect_level_1": [
+        {
+          "shipTypes": [
+            7,
+            10
+          ],
+          "stage": [
+            6
+          ],
+          "type": 7
+        }
+      ],
+      "effect_level_2": [
+        {
+          "shipTypes": [
+            7,
+            10
+          ],
+          "stage": [
+            5,
+            6
+          ],
+          "type": 7
+        }
+      ],
+      "effect_level_3": [
+        {
+          "shipTypes": [
+            7,
+            10
+          ],
+          "stage": [
+            0
+          ],
+          "type": 7
+        }
+      ],
+      "id": 11026,
+      "level": 3,
+      "title": "弹无虚发·轻巡、重巡",
+      "type": 2,
+      "value": 6
+    },
+    {
+      "buff_icon": "8",
+      "desc_level_1": "轻巡开启先制鱼雷",
+      "desc_level_2": "轻巡、重巡开启先制鱼雷",
+      "desc_level_3": "驱逐、轻巡、重巡开启先制鱼雷",
+      "effect": 0,
+      "effect_desc": "轻巡开启先制鱼雷",
+      "effect_level_1": [
+        {
+          "shipTypes": [
+            10
+          ],
+          "type": 8
+        }
+      ],
+      "effect_level_2": [
+        {
+          "shipTypes": [
+            10,
+            7
+          ],
+          "type": 8
+        }
+      ],
+      "effect_level_3": [
+        {
+          "shipTypes": [
+            12,
+            10,
+            7
+          ],
+          "type": 8
+        }
+      ],
+      "id": 11027,
+      "level": 3,
+      "title": "先发制人",
+      "type": 3,
+      "value": 6
+    },
+    {
+      "buff_icon": "16",
+      "desc_level_1": "0",
+      "desc_level_2": "0",
+      "desc_level_3": "0",
+      "effect": 10,
+      "effect_desc": "情报点数+10",
+      "effect_level_1": [],
+      "effect_level_2": [],
+      "effect_level_3": [],
+      "id": 11028,
+      "level": 1,
+      "title": "情报点数",
+      "type": 1,
+      "value": 0
+    }
+  ],
+  "sequence_num": 29,
+  "unique_id": {
+    "11000": 1,
+    "11001": 2,
+    "11002": 3,
+    "11003": 4,
+    "11004": 5,
+    "11005": 6,
+    "11006": 7,
+    "11007": 8,
+    "11008": 9,
+    "11009": 10,
+    "11010": 11,
+    "11011": 12,
+    "11012": 13,
+    "11013": 14,
+    "11014": 15,
+    "11015": 16,
+    "11016": 17,
+    "11017": 18,
+    "11018": 19,
+    "11019": 20,
+    "11020": 21,
+    "11021": 22,
+    "11022": 23,
+    "11023": 24,
+    "11024": 25,
+    "11025": 26,
+    "11026": 27,
+    "11027": 28,
+    "11028": 29
+  }
+}

@@ -1,0 +1,1217 @@
+{
+  "sequence": [
+    {
+      "equipment": [
+        200001,
+        200002,
+        200003
+      ],
+      "id": 100001,
+      "num": 1,
+      "position": [
+        -40,
+        -20
+      ],
+      "ship_id": 10050211,
+      "size": 1,
+      "stage": 1,
+      "stage_name": "舰装",
+      "task1": {
+        "num": 30,
+        "type": 1
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF0030^C454545FF00000000个任意舰种改造核心",
+      "task1_name": "舰体结构强化",
+      "task2": {
+        "num": 200,
+        "shipTons": [
+          1
+        ],
+        "type": 3
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00200^C454545FF00000000艘小型船",
+      "task2_name": "齐装配套工作",
+      "task3": {
+        "num": 10000,
+        "num2": 3,
+        "type": 5
+      },
+      "task3_desc": "^C454545FF00000000舰船补给累计消耗^C2997FFFFFFFFFF0010000^C454545FF00000000弹药",
+      "task3_name": "舰体定型验收"
+    },
+    {
+      "equipment": [
+        200001,
+        200002,
+        200003
+      ],
+      "id": 100002,
+      "num": 1,
+      "position": [
+        -40,
+        -20
+      ],
+      "ship_id": 10050211,
+      "size": 1,
+      "stage": 2,
+      "stage_name": "动力",
+      "task1": {
+        "num": 500,
+        "type": 2
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00500^C454545FF00000000个任意船型舾装图纸",
+      "task1_name": "稳定航行测试",
+      "task2": {
+        "guardTypes": [
+          1
+        ],
+        "num": 50,
+        "type": 3
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF0050^C454545FF00000000艘主力舰",
+      "task2_name": "锅炉风道改造",
+      "task3": {
+        "num": 15000,
+        "num2": 2,
+        "type": 5
+      },
+      "task3_desc": "^C454545FF00000000舰船补给累计消耗^C2997FFFFFFFFFF0015000^C454545FF00000000燃料",
+      "task3_name": "续航能力测试"
+    },
+    {
+      "equipment": [
+        200001,
+        200002,
+        200003
+      ],
+      "id": 100003,
+      "num": 1,
+      "position": [
+        -40,
+        -20
+      ],
+      "ship_id": 10050211,
+      "size": 1,
+      "stage": 3,
+      "stage_name": "武备",
+      "task1": {
+        "num": 3,
+        "shipTypes": [
+          23
+        ],
+        "type": 3
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF003^C454545FF00000000艘通用型导弹驱逐舰",
+      "task1_name": "舰载火力试射",
+      "task2": {
+        "num": 30000,
+        "num2": 2,
+        "type": 5
+      },
+      "task2_desc": "^C454545FF00000000舰船补给累计消耗^C2997FFFFFFFFFF0030000^C454545FF00000000燃料",
+      "task2_name": "导弹系统定型",
+      "task3": {
+        "num": 45000,
+        "num2": 3,
+        "type": 5
+      },
+      "task3_desc": "^C454545FF00000000舰船补给累计消耗^C2997FFFFFFFFFF0045000^C454545FF00000000弹药",
+      "task3_name": "作战能力测试"
+    },
+    {
+      "equipment": [
+        200004,
+        200005,
+        200006
+      ],
+      "id": 100004,
+      "num": 2,
+      "position": [
+        -110,
+        -50
+      ],
+      "ship_id": 10053312,
+      "size": 1,
+      "stage": 1,
+      "stage_name": "舰装",
+      "task1": {
+        "num": 600,
+        "type": 2
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00600^C454545FF00000000个任意船型舾装图纸",
+      "task1_name": "初始船体定型",
+      "task2": {
+        "num": 200,
+        "shipTons": [
+          2
+        ],
+        "type": 3
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00200^C454545FF00000000艘中型船",
+      "task2_name": "舰体结构补强",
+      "task3": {
+        "num": 25000,
+        "num2": 3,
+        "type": 5
+      },
+      "task3_desc": "^C454545FF00000000舰船补给累计消耗^C2997FFFFFFFFFF0025000^C454545FF00000000弹药",
+      "task3_name": "导弹试射项目"
+    },
+    {
+      "equipment": [
+        200004,
+        200005,
+        200006
+      ],
+      "id": 100005,
+      "num": 2,
+      "position": [
+        -110,
+        -50
+      ],
+      "ship_id": 10053312,
+      "size": 1,
+      "stage": 2,
+      "stage_name": "动力",
+      "task1": {
+        "num": 35,
+        "type": 1
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF0035^C454545FF00000000个任意舰种改造核心",
+      "task1_name": "变更舰种通知",
+      "task2": {
+        "guardTypes": [
+          1
+        ],
+        "num": 75,
+        "type": 3
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF0075^C454545FF00000000艘主力舰",
+      "task2_name": "火力测试工程",
+      "task3": {
+        "num": 25000,
+        "num2": 2,
+        "type": 5
+      },
+      "task3_desc": "^C454545FF00000000舰船补给累计消耗^C2997FFFFFFFFFF0025000^C454545FF00000000燃料",
+      "task3_name": "全球海域通行"
+    },
+    {
+      "equipment": [
+        200004,
+        200005,
+        200006
+      ],
+      "id": 100006,
+      "num": 2,
+      "position": [
+        -110,
+        -50
+      ],
+      "ship_id": 10053312,
+      "size": 1,
+      "stage": 3,
+      "stage_name": "武备",
+      "task1": {
+        "item_id": 241,
+        "num": 100,
+        "type": 6
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00100^C454545FF00000000个舰船蓝图",
+      "task1_name": "最终资格认证",
+      "task2": {
+        "num": 3,
+        "shipTypes": [
+          23
+        ],
+        "type": 3
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF003^C454545FF00000000艘通用型导弹驱逐舰",
+      "task2_name": "后期验收工作",
+      "task3": {
+        "num": 25000,
+        "num2": 9,
+        "type": 5
+      },
+      "task3_desc": "^C454545FF00000000舰船补给累计消耗^C2997FFFFFFFFFF0025000^C454545FF00000000铝材",
+      "task3_name": "舰体结构补强"
+    },
+    {
+      "equipment": [
+        200007,
+        200008,
+        200009
+      ],
+      "id": 100007,
+      "num": 3,
+      "position": [
+        -40,
+        -20
+      ],
+      "ship_id": 10055211,
+      "size": 1,
+      "stage": 1,
+      "stage_name": "舰装",
+      "task1": {
+        "num": 500,
+        "type": 2
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00500^C454545FF00000000个任意船型舾装图纸",
+      "task1_name": "驱逐舰设计理论学习",
+      "task2": {
+        "num": 250,
+        "shipTons": [
+          1
+        ],
+        "type": 3
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00250^C454545FF00000000艘小型船",
+      "task2_name": "船体设计学习",
+      "task3": {
+        "num": 15000,
+        "num2": 3,
+        "type": 5
+      },
+      "task3_desc": "^C454545FF00000000舰船补给累计消耗^C2997FFFFFFFFFF0015000^C454545FF00000000弹药",
+      "task3_name": "主炮设计学习"
+    },
+    {
+      "equipment": [
+        200007,
+        200008,
+        200009
+      ],
+      "id": 100008,
+      "num": 3,
+      "position": [
+        -40,
+        -20
+      ],
+      "ship_id": 10055211,
+      "size": 1,
+      "stage": 2,
+      "stage_name": "动力",
+      "task1": {
+        "num": 30,
+        "type": 1
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF0030^C454545FF00000000个任意舰种改造核心",
+      "task1_name": "导弹驱逐舰设计理论研究",
+      "task2": {
+        "num": 15000,
+        "num2": 2,
+        "type": 5
+      },
+      "task2_desc": "^C454545FF00000000舰船补给累计消耗^C2997FFFFFFFFFF0015000^C454545FF00000000燃料",
+      "task2_name": "新型轮机效能研究",
+      "task3": {
+        "num": 15000,
+        "num2": 9,
+        "type": 5
+      },
+      "task3_desc": "^C454545FF00000000舰船补给累计消耗^C2997FFFFFFFFFF0015000^C454545FF00000000铝材",
+      "task3_name": "供电系统升级研究"
+    },
+    {
+      "equipment": [
+        200007,
+        200008,
+        200009
+      ],
+      "id": 100009,
+      "num": 3,
+      "position": [
+        -40,
+        -20
+      ],
+      "ship_id": 10055211,
+      "size": 1,
+      "stage": 3,
+      "stage_name": "武备",
+      "task1": {
+        "item_id": 10441,
+        "num": 25,
+        "type": 6
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF0025^C454545FF00000000个驱逐改造核心",
+      "task1_name": "防空导弹驱逐舰设计论证",
+      "task2": {
+        "num": 3,
+        "shipTypes": [
+          24
+        ],
+        "type": 3
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF003^C454545FF00000000艘防空型导弹驱逐舰",
+      "task2_name": "火控系统升级论证",
+      "task3": {
+        "num": 25000,
+        "num2": 9,
+        "type": 5
+      },
+      "task3_desc": "^C454545FF00000000舰船补给累计消耗^C2997FFFFFFFFFF0025000^C454545FF00000000铝材",
+      "task3_name": "电子对抗系统论证"
+    },
+    {
+      "equipment": [
+        200010,
+        200011,
+        200012
+      ],
+      "id": 100010,
+      "num": 4,
+      "position": [
+        -40,
+        0
+      ],
+      "ship_id": 10055911,
+      "size": 1,
+      "stage": 1,
+      "stage_name": "舰装",
+      "task1": {
+        "num": 300,
+        "shipTons": [
+          1
+        ],
+        "type": 3
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00300^C454545FF00000000艘小型船",
+      "task1_name": "前代设计回顾",
+      "task2": {
+        "num": 500,
+        "type": 2
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00500^C454545FF00000000个任意船型舾装图纸",
+      "task2_name": "舰体设计改良",
+      "task3": {
+        "num": 20000,
+        "num2": 2,
+        "type": 5
+      },
+      "task3_desc": "^C454545FF00000000舰船补给累计消耗^C2997FFFFFFFFFF0020000^C454545FF00000000燃料",
+      "task3_name": "新式轮机选择"
+    },
+    {
+      "equipment": [
+        200010,
+        200011,
+        200012
+      ],
+      "id": 100011,
+      "num": 4,
+      "position": [
+        -40,
+        0
+      ],
+      "ship_id": 10055911,
+      "size": 1,
+      "stage": 2,
+      "stage_name": "动力",
+      "task1": {
+        "guardTypes": [
+          1
+        ],
+        "num": 100,
+        "type": 3
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00100^C454545FF00000000艘主力舰",
+      "task1_name": "新式设计参考",
+      "task2": {
+        "num": 35,
+        "type": 1
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF0035^C454545FF00000000个任意舰种改造核心",
+      "task2_name": "导弹发射器安装",
+      "task3": {
+        "num": 30000,
+        "num2": 2,
+        "type": 5
+      },
+      "task3_desc": "^C454545FF00000000舰船补给累计消耗^C2997FFFFFFFFFF0030000^C454545FF00000000燃料",
+      "task3_name": "适航性优化"
+    },
+    {
+      "equipment": [
+        200010,
+        200011,
+        200012
+      ],
+      "id": 100012,
+      "num": 4,
+      "position": [
+        -40,
+        0
+      ],
+      "ship_id": 10055911,
+      "size": 1,
+      "stage": 3,
+      "stage_name": "武备",
+      "task1": {
+        "num": 3,
+        "shipTypes": [
+          24
+        ],
+        "type": 3
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF003^C454545FF00000000艘防空型导弹驱逐舰",
+      "task1_name": "最终设计定型",
+      "task2": {
+        "item_id": 241,
+        "num": 100,
+        "type": 6
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00100^C454545FF00000000个舰船蓝图",
+      "task2_name": "备弹位置选择",
+      "task3": {
+        "num": 25000,
+        "num2": 9,
+        "type": 5
+      },
+      "task3_desc": "^C454545FF00000000舰船补给累计消耗^C2997FFFFFFFFFF0025000^C454545FF00000000铝材",
+      "task3_name": "导弹再装填实验"
+    },
+    {
+      "equipment": [
+        200013,
+        200014,
+        200015
+      ],
+      "id": 100013,
+      "num": 5,
+      "position": [
+        -40,
+        0
+      ],
+      "ship_id": 10028711,
+      "size": 1,
+      "stage": 1,
+      "stage_name": "舰装",
+      "task1": {
+        "num": 250,
+        "shipTons": [
+          1
+        ],
+        "type": 3
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00250^C454545FF00000000艘小型船",
+      "task1_name": "防空护卫舰研制探索",
+      "task2": {
+        "guardTypes": [
+          1
+        ],
+        "num": 150,
+        "type": 3
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00150^C454545FF00000000艘主力舰",
+      "task2_name": "先进设计经验参考",
+      "task3": {
+        "num": 35000,
+        "num2": 3,
+        "type": 5
+      },
+      "task3_desc": "^C454545FF00000000舰船补给累计消耗^C2997FFFFFFFFFF0035000^C454545FF00000000弹药",
+      "task3_name": "武器系统设计"
+    },
+    {
+      "equipment": [
+        200013,
+        200014,
+        200015
+      ],
+      "id": 100014,
+      "num": 5,
+      "position": [
+        -40,
+        0
+      ],
+      "ship_id": 10028711,
+      "size": 1,
+      "stage": 2,
+      "stage_name": "动力",
+      "task1": {
+        "num": 600,
+        "type": 2
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00600^C454545FF00000000个任意船型舾装图纸",
+      "task1_name": "舰体设计定型",
+      "task2": {
+        "item_id": 241,
+        "num": 150,
+        "type": 6
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00150^C454545FF00000000个舰船蓝图",
+      "task2_name": "舰炮系统安装",
+      "task3": {
+        "num": 35000,
+        "num2": 2,
+        "type": 5
+      },
+      "task3_desc": "^C454545FF00000000舰船补给累计消耗^C2997FFFFFFFFFF0035000^C454545FF00000000燃料",
+      "task3_name": "综合海试"
+    },
+    {
+      "equipment": [
+        200013,
+        200014,
+        200015
+      ],
+      "id": 100015,
+      "num": 5,
+      "position": [
+        -40,
+        0
+      ],
+      "ship_id": 10028711,
+      "size": 1,
+      "stage": 3,
+      "stage_name": "武备",
+      "task1": {
+        "num": 3,
+        "shipTypes": [
+          24
+        ],
+        "type": 3
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF003^C454545FF00000000艘防空型导弹驱逐舰",
+      "task1_name": "防空导弹运用研究",
+      "task2": {
+        "num": 40,
+        "type": 1
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF0040^C454545FF00000000个任意舰种改造核心",
+      "task2_name": "导弹系统整合",
+      "task3": {
+        "num": 30000,
+        "num2": 9,
+        "type": 5
+      },
+      "task3_desc": "^C454545FF00000000舰船补给累计消耗^C2997FFFFFFFFFF0030000^C454545FF00000000铝材",
+      "task3_name": "实战目标打击验证"
+    },
+    {
+      "equipment": [
+        200016,
+        200017,
+        200018
+      ],
+      "id": 100016,
+      "num": 6,
+      "position": [
+        -80,
+        -80
+      ],
+      "ship_id": 10058112,
+      "size": 1,
+      "stage": 1,
+      "stage_name": "舰装",
+      "task1": {
+        "guardTypes": [
+          1
+        ],
+        "num": 80,
+        "type": 3
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF0080^C454545FF00000000艘主力舰",
+      "task1_name": "实战数据总结",
+      "task2": {
+        "num": 250,
+        "shipTons": [
+          2
+        ],
+        "type": 3
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00250^C454545FF00000000艘中型船",
+      "task2_name": "新型导弹舰需求整理",
+      "task3": {
+        "num": 30000,
+        "num2": 9,
+        "type": 5
+      },
+      "task3_desc": "^C454545FF00000000舰船补给累计消耗^C2997FFFFFFFFFF0030000^C454545FF00000000铝材",
+      "task3_name": "舰载航空设施开发"
+    },
+    {
+      "equipment": [
+        200016,
+        200017,
+        200018
+      ],
+      "id": 100017,
+      "num": 6,
+      "position": [
+        -80,
+        -80
+      ],
+      "ship_id": 10058112,
+      "size": 1,
+      "stage": 2,
+      "stage_name": "动力",
+      "task1": {
+        "item_id": 241,
+        "num": 120,
+        "type": 6
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00120^C454545FF00000000个舰船蓝图",
+      "task1_name": "新时代作战环境研判",
+      "task2": {
+        "num": 500,
+        "type": 2
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00500^C454545FF00000000个任意船型舾装图纸",
+      "task2_name": "新型导弹舰需求调整",
+      "task3": {
+        "num": 30000,
+        "num2": 2,
+        "type": 5
+      },
+      "task3_desc": "^C454545FF00000000舰船补给累计消耗^C2997FFFFFFFFFF0030000^C454545FF00000000燃料",
+      "task3_name": "大功率轮机系统开发"
+    },
+    {
+      "equipment": [
+        200016,
+        200017,
+        200018
+      ],
+      "id": 100018,
+      "num": 6,
+      "position": [
+        -80,
+        -80
+      ],
+      "ship_id": 10058112,
+      "size": 1,
+      "stage": 3,
+      "stage_name": "武备",
+      "task1": {
+        "item_id": 10341,
+        "num": 25,
+        "type": 6
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF0025^C454545FF00000000个巡洋改造核心",
+      "task1_name": "电子系统定型",
+      "task2": {
+        "num": 3,
+        "shipTypes": [
+          23
+        ],
+        "type": 3
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF003^C454545FF00000000艘通用型导弹驱逐舰",
+      "task2_name": "导弹系统定型",
+      "task3": {
+        "num": 30000,
+        "num2": 9,
+        "type": 5
+      },
+      "task3_desc": "^C454545FF00000000舰船补给累计消耗^C2997FFFFFFFFFF0030000^C454545FF00000000铝材",
+      "task3_name": "新型主炮开发"
+    },
+    {
+      "equipment": [
+        200019,
+        200020,
+        200021
+      ],
+      "id": 100019,
+      "num": 7,
+      "position": [
+        0,
+        0
+      ],
+      "ship_id": 10060111,
+      "size": 1,
+      "stage": 1,
+      "stage_name": "舰装",
+      "task1": {
+        "guardTypes": [
+          1
+        ],
+        "num": 150,
+        "type": 3
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00150^C454545FF00000000艘主力舰",
+      "task1_name": "潜射导弹方案论证",
+      "task2": {
+        "item_id": 10541,
+        "num": 40,
+        "type": 6
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF0040^C454545FF00000000个潜艇改造核心",
+      "task2_name": "导弹潜艇概念设计",
+      "task3": {
+        "num": 25000,
+        "num2": 3,
+        "type": 5
+      },
+      "task3_desc": "^C454545FF00000000舰船补给累计消耗^C2997FFFFFFFFFF0025000^C454545FF00000000弹药",
+      "task3_name": "新式导弹设计协助"
+    },
+    {
+      "equipment": [
+        200019,
+        200020,
+        200021
+      ],
+      "id": 100020,
+      "num": 7,
+      "position": [
+        0,
+        0
+      ],
+      "ship_id": 10060111,
+      "size": 1,
+      "stage": 2,
+      "stage_name": "动力",
+      "task1": {
+        "num": 500,
+        "shipTons": [
+          1
+        ],
+        "type": 3
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00500^C454545FF00000000艘小型船",
+      "task1_name": "潜射导弹方案再议",
+      "task2": {
+        "num": 600,
+        "type": 2
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00600^C454545FF00000000个任意船型舾装图纸",
+      "task2_name": "导弹潜艇详细论证",
+      "task3": {
+        "num": 25000,
+        "num2": 2,
+        "type": 5
+      },
+      "task3_desc": "^C454545FF00000000舰船补给累计消耗^C2997FFFFFFFFFF0025000^C454545FF00000000燃料",
+      "task3_name": "导弹系统装舰"
+    },
+    {
+      "equipment": [
+        200019,
+        200020,
+        200021
+      ],
+      "id": 100021,
+      "num": 7,
+      "position": [
+        0,
+        0
+      ],
+      "ship_id": 10060111,
+      "size": 1,
+      "stage": 3,
+      "stage_name": "武备",
+      "task1": {
+        "num": 3,
+        "shipTypes": [
+          23
+        ],
+        "type": 3
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF003^C454545FF00000000艘通用型导弹驱逐舰",
+      "task1_name": "系泊实验",
+      "task2": {
+        "num": 120,
+        "shipTypes": [
+          14
+        ],
+        "type": 3
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00120^C454545FF00000000艘潜水艇",
+      "task2_name": "子系统协调实验",
+      "task3": {
+        "num": 40000,
+        "num2": 9,
+        "type": 5
+      },
+      "task3_desc": "^C454545FF00000000舰船补给累计消耗^C2997FFFFFFFFFF0040000^C454545FF00000000铝材",
+      "task3_name": "海上作业试验"
+    },
+    {
+      "equipment": [
+        200022,
+        200023,
+        200024
+      ],
+      "id": 100022,
+      "num": 8,
+      "position": [
+        -40,
+        -20
+      ],
+      "ship_id": 10061711,
+      "size": 1,
+      "stage": 1,
+      "stage_name": "舰装",
+      "task1": {
+        "num": 30,
+        "type": 1
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF0030^C454545FF00000000个任意舰种改造核心",
+      "task1_name": "舰体稳定性测验",
+      "task2": {
+        "num": 131,
+        "shipTons": [
+          1
+        ],
+        "type": 3
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00131^C454545FF00000000艘小型船",
+      "task2_name": "为了美好的明天",
+      "task3": {
+        "num": 30000,
+        "num2": 9,
+        "type": 5
+      },
+      "task3_desc": "^C454545FF00000000舰船补给累计消耗^C2997FFFFFFFFFF0030000^C454545FF00000000铝材",
+      "task3_name": "抢占先机"
+    },
+    {
+      "equipment": [
+        200022,
+        200023,
+        200024
+      ],
+      "id": 100023,
+      "num": 8,
+      "position": [
+        -40,
+        -20
+      ],
+      "ship_id": 10061711,
+      "size": 1,
+      "stage": 2,
+      "stage_name": "动力",
+      "task1": {
+        "num": 500,
+        "type": 2
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00500^C454545FF00000000个任意船型舾装图纸",
+      "task1_name": "舾装可能性验证",
+      "task2": {
+        "guardTypes": [
+          1
+        ],
+        "num": 131,
+        "type": 3
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00131^C454545FF00000000艘主力舰",
+      "task2_name": "致以辉煌的人",
+      "task3": {
+        "num": 30000,
+        "num2": 2,
+        "type": 5
+      },
+      "task3_desc": "^C454545FF00000000舰船补给累计消耗^C2997FFFFFFFFFF0030000^C454545FF00000000燃料",
+      "task3_name": "适航性能测验"
+    },
+    {
+      "equipment": [
+        200022,
+        200023,
+        200024
+      ],
+      "id": 100024,
+      "num": 8,
+      "position": [
+        -40,
+        -20
+      ],
+      "ship_id": 10061711,
+      "size": 1,
+      "stage": 3,
+      "stage_name": "武备",
+      "task1": {
+        "item_id": 10441,
+        "num": 30,
+        "type": 6
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF0030^C454545FF00000000个驱逐改造核心",
+      "task1_name": "列装许可审批",
+      "task2": {
+        "num": 3,
+        "shipTypes": [
+          23
+        ],
+        "type": 3
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF003^C454545FF00000000艘通用型导弹驱逐舰",
+      "task2_name": "青出于蓝胜于蓝",
+      "task3": {
+        "num": 30000,
+        "num2": 3,
+        "type": 5
+      },
+      "task3_desc": "^C454545FF00000000舰船补给累计消耗^C2997FFFFFFFFFF0030000^C454545FF00000000弹药",
+      "task3_name": "炮火的宣言"
+    },
+    {
+      "equipment": [
+        200025,
+        200026,
+        200027
+      ],
+      "id": 100025,
+      "num": 9,
+      "position": [
+        -40,
+        -20
+      ],
+      "ship_id": 10064011,
+      "size": 1,
+      "stage": 1,
+      "stage_name": "舰装",
+      "task1": {
+        "num": 250,
+        "shipTons": [
+          1
+        ],
+        "type": 3
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00250^C454545FF00000000艘小型船",
+      "task1_name": "初步规划定版",
+      "task2": {
+        "item_id": 241,
+        "num": 80,
+        "type": 6
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF0080^C454545FF00000000个舰船蓝图",
+      "task2_name": "设计路线微调",
+      "task3": {
+        "num": 30000,
+        "num2": 2,
+        "type": 5
+      },
+      "task3_desc": "^C454545FF00000000舰船补给累计消耗^C2997FFFFFFFFFF0030000^C454545FF00000000燃料",
+      "task3_name": "建造预算核实"
+    },
+    {
+      "equipment": [
+        200025,
+        200026,
+        200027
+      ],
+      "id": 100026,
+      "num": 9,
+      "position": [
+        -40,
+        -20
+      ],
+      "ship_id": 10064011,
+      "size": 1,
+      "stage": 2,
+      "stage_name": "动力",
+      "task1": {
+        "num": 500,
+        "type": 2
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00500^C454545FF00000000个任意船型舾装图纸",
+      "task1_name": "动力需求预估",
+      "task2": {
+        "num": 50,
+        "type": 1
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF0050^C454545FF00000000个任意舰种改造核心",
+      "task2_name": "可用方案选型",
+      "task3": {
+        "num": 30000,
+        "num2": 9,
+        "type": 5
+      },
+      "task3_desc": "^C454545FF00000000舰船补给累计消耗^C2997FFFFFFFFFF0030000^C454545FF00000000铝材",
+      "task3_name": "供能管线整合"
+    },
+    {
+      "equipment": [
+        200025,
+        200026,
+        200027
+      ],
+      "id": 100027,
+      "num": 9,
+      "position": [
+        -40,
+        -20
+      ],
+      "ship_id": 10064011,
+      "size": 1,
+      "stage": 3,
+      "stage_name": "武备",
+      "task1": {
+        "num": 3,
+        "shipTypes": [
+          24
+        ],
+        "type": 3
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF003^C454545FF00000000艘防空型导弹驱逐舰",
+      "task1_name": "先进经验沿用",
+      "task2": {
+        "item_id": 66641,
+        "num": 2,
+        "type": 6
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF002^C454545FF00000000个损害管制小组",
+      "task2_name": "特殊风险预案",
+      "task3": {
+        "num": 30000,
+        "num2": 9,
+        "type": 5
+      },
+      "task3_desc": "^C454545FF00000000舰船补给累计消耗^C2997FFFFFFFFFF0030000^C454545FF00000000铝材",
+      "task3_name": "防空导弹储备"
+    },
+    {
+      "equipment": [
+        200028,
+        200029,
+        200030
+      ],
+      "id": 100028,
+      "num": 10,
+      "position": [
+        -40,
+        -20
+      ],
+      "ship_id": 10065611,
+      "size": 1,
+      "stage": 1,
+      "stage_name": "舰装",
+      "task1": {
+        "num": 3,
+        "shipTypes": [
+          24
+        ],
+        "type": 3
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF003^C454545FF00000000艘防空型导弹驱逐舰",
+      "task1_name": "通识理论课程讲习",
+      "task2": {
+        "num": 45,
+        "type": 1
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF0045^C454545FF00000000个任意舰种改造核心",
+      "task2_name": "无预警突击测验",
+      "task3": {
+        "num": 30000,
+        "num2": 9,
+        "type": 5
+      },
+      "task3_desc": "^C454545FF00000000舰船补给累计消耗^C2997FFFFFFFFFF0030000^C454545FF00000000铝材",
+      "task3_name": "结课论文答辩"
+    },
+    {
+      "equipment": [
+        200028,
+        200029,
+        200030
+      ],
+      "id": 100029,
+      "num": 10,
+      "position": [
+        -40,
+        -20
+      ],
+      "ship_id": 10065611,
+      "size": 1,
+      "stage": 2,
+      "stage_name": "动力",
+      "task1": {
+        "num": 300,
+        "shipTypes": [
+          12
+        ],
+        "type": 3
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00300^C454545FF00000000艘驱逐舰",
+      "task1_name": "全装航行训练",
+      "task2": {
+        "num": 500,
+        "type": 2
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00500^C454545FF00000000个任意船型舾装图纸",
+      "task2_name": "失能队友救助",
+      "task3": {
+        "num": 30000,
+        "num2": 9,
+        "type": 5
+      },
+      "task3_desc": "^C454545FF00000000舰船补给累计消耗^C2997FFFFFFFFFF0030000^C454545FF00000000铝材",
+      "task3_name": "交叉考评通过"
+    },
+    {
+      "equipment": [
+        200028,
+        200029,
+        200030
+      ],
+      "id": 100030,
+      "num": 10,
+      "position": [
+        -40,
+        -20
+      ],
+      "ship_id": 10065611,
+      "size": 1,
+      "stage": 3,
+      "stage_name": "武备",
+      "task1": {
+        "num": 300,
+        "shipTons": [
+          1
+        ],
+        "type": 3
+      },
+      "task1_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF00300^C454545FF00000000艘小型船",
+      "task1_name": "实弹对抗演练",
+      "task2": {
+        "item_id": 141,
+        "num": 45,
+        "type": 6
+      },
+      "task2_desc": "^C454545FF00000000提交^C2997FFFFFFFFFF0045^C454545FF00000000个快速建造工具",
+      "task2_name": "意外险情处置",
+      "task3": {
+        "num": 30000,
+        "num2": 3,
+        "type": 5
+      },
+      "task3_desc": "^C454545FF00000000舰船补给累计消耗^C2997FFFFFFFFFF0030000^C454545FF00000000弹药",
+      "task3_name": "培养方案完成"
+    }
+  ],
+  "sequence_num": 30,
+  "unique_id": {
+    "100001": 1,
+    "100002": 2,
+    "100003": 3,
+    "100004": 4,
+    "100005": 5,
+    "100006": 6,
+    "100007": 7,
+    "100008": 8,
+    "100009": 9,
+    "100010": 10,
+    "100011": 11,
+    "100012": 12,
+    "100013": 13,
+    "100014": 14,
+    "100015": 15,
+    "100016": 16,
+    "100017": 17,
+    "100018": 18,
+    "100019": 19,
+    "100020": 20,
+    "100021": 21,
+    "100022": 22,
+    "100023": 23,
+    "100024": 24,
+    "100025": 25,
+    "100026": 26,
+    "100027": 27,
+    "100028": 28,
+    "100029": 29,
+    "100030": 30
+  }
+}

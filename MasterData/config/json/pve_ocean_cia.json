@@ -1,0 +1,3565 @@
+{
+  "sequence": [
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带^C2795FDFF000000004^CFFFFFFFF00000000艘舰船",
+      "effect": {
+        "num": 4,
+        "type": 121
+      },
+      "effect_desc": "由于在迷雾中四散开来，互相之间难以支援，可使用舰船不足。",
+      "hard": 0,
+      "icon": 0,
+      "id": 11001,
+      "need_buff": [],
+      "score": 0,
+      "title": "四散孤立",
+      "type": 0,
+      "unlock_id": [
+        21001,
+        21002
+      ],
+      "unlock_type": 214
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000只可携带^C2795FDFF00000000驱逐舰",
+      "effect": {
+        "shipTypes": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          14,
+          15,
+          16,
+          23
+        ],
+        "type": 105
+      },
+      "effect_desc": "似乎我方绝大多数主力舰都被阻隔，只能联系到极少数的船型作战。",
+      "hard": 0,
+      "icon": 0,
+      "id": 11002,
+      "need_buff": [],
+      "score": 0,
+      "title": "主力舰阻隔",
+      "type": 0,
+      "unlock_id": [
+        21003,
+        21004,
+        21005,
+        21006,
+        21007,
+        21008,
+        21010,
+        21011,
+        21013,
+        21014,
+        21015,
+        21018,
+        21019,
+        21020,
+        21026,
+        21027,
+        21028,
+        21032,
+        21033,
+        21034,
+        21035,
+        21036,
+        21037,
+        21038,
+        21039,
+        21040,
+        21041,
+        21048,
+        21049,
+        21050,
+        21051,
+        21052
+      ],
+      "unlock_type": 204
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000不携带^C2795FDFF00000000U,J^CFFFFFFFF00000000国航母",
+      "effect": {
+        "countrys": [
+          1,
+          4
+        ],
+        "shipTypes": [
+          1
+        ],
+        "type": 105
+      },
+      "effect_desc": "拥有强大侦查能力的U、J两国航母编队暂时无法取得联系。",
+      "hard": 0,
+      "icon": 0,
+      "id": 11003,
+      "need_buff": [
+        21022,
+        21023,
+        21024,
+        21025
+      ],
+      "score": 0,
+      "title": "消失的主力舰队",
+      "type": 0,
+      "unlock_id": [
+        21026,
+        21027,
+        21028
+      ],
+      "unlock_type": 204
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000战列数量^C2795FDFF00000000<=2^CFFFFFFFF00000000条",
+      "effect": {
+        "num": 2,
+        "shipType": 4,
+        "type": 106
+      },
+      "effect_desc": "由于孤立无援，也没有太多补给，请节约使用。",
+      "hard": 0,
+      "icon": 0,
+      "id": 11004,
+      "need_buff": [
+        100
+      ],
+      "score": 0,
+      "title": "补给不足:战列",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 210
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000战巡数量^C2795FDFF00000000<=1^CFFFFFFFF00000000条",
+      "effect": {
+        "num": 1,
+        "shipType": 6,
+        "type": 106
+      },
+      "effect_desc": "由于孤立无援，也没有太多补给，请节约使用。",
+      "hard": 0,
+      "icon": 0,
+      "id": 11005,
+      "need_buff": [
+        100
+      ],
+      "score": 0,
+      "title": "补给不足:战巡",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 210
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000重巡数量^C2795FDFF00000000<=2^CFFFFFFFF00000000条",
+      "effect": {
+        "num": 2,
+        "shipType": 7,
+        "type": 106
+      },
+      "effect_desc": "由于孤立无援，也没有太多补给，请节约使用。",
+      "hard": 0,
+      "icon": 0,
+      "id": 11006,
+      "need_buff": [
+        100
+      ],
+      "score": 0,
+      "title": "补给不足:重巡",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 210
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000潜艇数量^C2795FDFF00000000<=1^CFFFFFFFF00000000条",
+      "effect": {
+        "num": 1,
+        "shipType": 14,
+        "type": 106
+      },
+      "effect_desc": "由于孤立无援，也没有太多补给，请节约使用。",
+      "hard": 0,
+      "icon": 0,
+      "id": 11007,
+      "need_buff": [
+        100
+      ],
+      "score": 0,
+      "title": "补给不足:潜艇",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 210
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000轻母数量^C2795FDFF00000000<=1^CFFFFFFFF00000000条",
+      "effect": {
+        "num": 1,
+        "shipType": 2,
+        "type": 106
+      },
+      "effect_desc": "由于孤立无援，也没有太多补给，请节约使用。",
+      "hard": 0,
+      "icon": 0,
+      "id": 11008,
+      "need_buff": [
+        100
+      ],
+      "score": 0,
+      "title": "补给不足:轻母",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 210
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000航母数量^C2795FDFF00000000<=0^CFFFFFFFF00000000条",
+      "effect": {
+        "num": 0,
+        "shipType": 1,
+        "type": 106
+      },
+      "effect_desc": "由于孤立无援，也没有太多补给，请节约使用。",
+      "hard": 0,
+      "icon": 0,
+      "id": 11009,
+      "need_buff": [
+        100
+      ],
+      "score": 0,
+      "title": "补给不足",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 210
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000旗舰为^C2795FDFF00000000初始舰",
+      "effect": {
+        "shipCids": [
+          10006411,
+          10009311,
+          10007511,
+          10008211
+        ],
+        "type": 119
+      },
+      "effect_desc": "率先取得联络的初始舰成为了此时的旗舰。",
+      "hard": 0,
+      "icon": 0,
+      "id": 11010,
+      "need_buff": [],
+      "score": 0,
+      "title": "临时旗舰",
+      "type": 0,
+      "unlock_id": [
+        21042,
+        21043,
+        21044,
+        21045,
+        21046,
+        21047
+      ],
+      "unlock_type": 208
+    },
+    {
+      "buff_type": 0,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000全体回避^C2795FDFF00000000-10^CFFFFFFFF00000000点",
+      "effect": {
+        "num": -10,
+        "num4": 5,
+        "type": 101
+      },
+      "effect_desc": "海面状况极其恶劣，想要躲开敌人的攻击更是难上加难。",
+      "hard": 0,
+      "icon": 0,
+      "id": 11011,
+      "need_buff": [],
+      "score": 0,
+      "title": "海况恶劣",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 201
+    },
+    {
+      "buff_type": 0,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000全体装甲^C2795FDFF00000000-10^CFFFFFFFF00000000点",
+      "effect": {
+        "num": -10,
+        "num4": 3,
+        "type": 101
+      },
+      "effect_desc": "穿越过来的时候舰装出现了大量受损。",
+      "hard": 0,
+      "icon": 0,
+      "id": 11012,
+      "need_buff": [],
+      "score": 0,
+      "title": "舰装损坏",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 201
+    },
+    {
+      "buff_type": 0,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000全体索敌^C2795FDFF00000000-20^CFFFFFFFF00000000点",
+      "effect": {
+        "num": -20,
+        "num4": 11,
+        "type": 101
+      },
+      "effect_desc": "这里很多地方都处于混沌状态，雷达卫星都无法探明。",
+      "hard": 0,
+      "icon": 0,
+      "id": 11013,
+      "need_buff": [],
+      "score": 0,
+      "title": "雷达无法探明",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 201
+    },
+    {
+      "buff_type": 0,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^C2795FDFF00000000战列^CFFFFFFFF00000000的火力^C2795FDFF00000000-20^CFFFFFFFF00000000点",
+      "effect": {
+        "num": -20,
+        "num4": 2,
+        "shipType": 4,
+        "type": 103
+      },
+      "effect_desc": "由于混乱中穿越过来，弹药严重不足，要节约使用。",
+      "hard": 0,
+      "icon": 0,
+      "id": 11014,
+      "need_buff": [],
+      "score": 0,
+      "title": "弹药不足:战列",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 203
+    },
+    {
+      "buff_type": 0,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^C2795FDFF00000000战巡^CFFFFFFFF00000000的火力^C2795FDFF00000000-20^CFFFFFFFF00000000点",
+      "effect": {
+        "num": -20,
+        "num4": 2,
+        "shipType": 6,
+        "type": 103
+      },
+      "effect_desc": "由于混乱中穿越过来，弹药严重不足，要节约使用。",
+      "hard": 0,
+      "icon": 0,
+      "id": 11015,
+      "need_buff": [],
+      "score": 0,
+      "title": "弹药不足:战巡",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 203
+    },
+    {
+      "buff_type": 0,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^C2795FDFF00000000航战^CFFFFFFFF00000000的火力^C2795FDFF00000000-20^CFFFFFFFF00000000点",
+      "effect": {
+        "num": -20,
+        "num4": 2,
+        "shipType": 5,
+        "type": 103
+      },
+      "effect_desc": "由于混乱中穿越过来，弹药严重不足，要节约使用。",
+      "hard": 0,
+      "icon": 0,
+      "id": 11016,
+      "need_buff": [],
+      "score": 0,
+      "title": "弹药不足:航战",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 203
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000不携带^C2795FDFF00000000U,J^CFFFFFFFF00000000国航母;^C2795FDFF00000000U,E,G,J^CFFFFFFFF00000000国船只数量^C2795FDFF00000000<=3^CFFFFFFFF00000000条",
+      "effect": {
+        "country": 4,
+        "num": 3,
+        "type": 108
+      },
+      "effect_desc": "伙伴们都被迫分散开了，希望能尽快找到她们。",
+      "hard": 0,
+      "icon": 0,
+      "id": 11017,
+      "need_buff": [],
+      "score": 0,
+      "title": "分散的伙伴",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 212
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^C2795FDFF00000000E^CFFFFFFFF00000000国船只数量^C2795FDFF00000000<=3^CFFFFFFFF00000000条",
+      "effect": {
+        "country": 3,
+        "num": 3,
+        "type": 108
+      },
+      "effect_desc": "伙伴们都被迫分散开了，希望能尽快找到她们。",
+      "hard": 0,
+      "icon": 0,
+      "id": 11018,
+      "need_buff": [
+        100
+      ],
+      "score": 0,
+      "title": "分散的伙伴:E国",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 212
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^C2795FDFF00000000G^CFFFFFFFF00000000国船只数量^C2795FDFF00000000<=3^CFFFFFFFF00000000条",
+      "effect": {
+        "country": 2,
+        "num": 3,
+        "type": 108
+      },
+      "effect_desc": "伙伴们都被迫分散开了，希望能尽快找到她们。",
+      "hard": 0,
+      "icon": 0,
+      "id": 11019,
+      "need_buff": [
+        100
+      ],
+      "score": 0,
+      "title": "分散的伙伴:G国",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 212
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^C2795FDFF00000000J^CFFFFFFFF00000000国船只数量^C2795FDFF00000000<=3^CFFFFFFFF00000000条",
+      "effect": {
+        "country": 1,
+        "num": 3,
+        "type": 108
+      },
+      "effect_desc": "伙伴们都被迫分散开了，希望能尽快找到她们。",
+      "hard": 0,
+      "icon": 0,
+      "id": 11020,
+      "need_buff": [
+        100
+      ],
+      "score": 0,
+      "title": "分散的伙伴:J国",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 212
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 961302,
+      "buy_desc": "通过E1的A点解锁",
+      "desc": "^CFFFFFFFF00000000可携带^C2795FDFF000000005^CFFFFFFFF00000000艘舰船",
+      "effect": {
+        "num": 5,
+        "shipType": 100,
+        "type": 214
+      },
+      "effect_desc": "就近进行了简单的探索，伙伴的数量增加了。",
+      "hard": 0,
+      "icon": 1,
+      "id": 21001,
+      "need_buff": [],
+      "score": 200,
+      "title": "就近探索",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 961312,
+      "buy_desc": "通过E1的K点解锁",
+      "desc": "^CFFFFFFFF00000000可携带^C2795FDFF000000006^CFFFFFFFF00000000艘舰船",
+      "effect": {
+        "num": 6,
+        "shipType": 100,
+        "type": 214
+      },
+      "effect_desc": "根据掌握的信息，我们现在可以大规模援助伙伴，得到了更多地战力。",
+      "hard": 0,
+      "icon": 1,
+      "id": 21002,
+      "need_buff": [],
+      "score": 500,
+      "title": "全面营救",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000S国战列",
+      "effect": {
+        "country": 7,
+        "shipType": 4,
+        "type": 204
+      },
+      "effect_desc": "顺利与战列舰们会合，可以使用该国的战列舰了。战列数量<=2",
+      "hard": 0,
+      "icon": 1,
+      "id": 21003,
+      "need_buff": [],
+      "score": 50,
+      "title": "会合:S国战列",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000J国战列",
+      "effect": {
+        "country": 1,
+        "shipType": 4,
+        "type": 204
+      },
+      "effect_desc": "顺利与战列舰们会合，可以使用该国的战列舰了。战列数量<=2",
+      "hard": 0,
+      "icon": 1,
+      "id": 21004,
+      "need_buff": [],
+      "score": 150,
+      "title": "会合:J国战列",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000G国战列",
+      "effect": {
+        "country": 2,
+        "shipType": 4,
+        "type": 204
+      },
+      "effect_desc": "顺利与战列舰们会合，可以使用该国的战列舰了。战列数量<=2",
+      "hard": 0,
+      "icon": 1,
+      "id": 21005,
+      "need_buff": [],
+      "score": 250,
+      "title": "会合:G国战列",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000E国战列",
+      "effect": {
+        "country": 3,
+        "shipType": 4,
+        "type": 204
+      },
+      "effect_desc": "顺利与战列舰们会合，可以使用该国的战列舰了。战列数量<=2",
+      "hard": 0,
+      "icon": 1,
+      "id": 21006,
+      "need_buff": [],
+      "score": 150,
+      "title": "会合:E国战列",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000U国战列",
+      "effect": {
+        "country": 4,
+        "shipType": 4,
+        "type": 204
+      },
+      "effect_desc": "顺利与战列舰们会合，可以使用该国的战列舰了。战列数量<=2",
+      "hard": 0,
+      "icon": 1,
+      "id": 21007,
+      "need_buff": [],
+      "score": 450,
+      "title": "会合:U国战列",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 961619,
+      "buy_desc": "通过E4的R点解锁",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数任意^C2795FDFF00000000战列",
+      "effect": {
+        "shipType": 4,
+        "type": 204
+      },
+      "effect_desc": "顺利与战列舰们会合，可以使用任意的战列舰了。战列数量<=2",
+      "hard": 0,
+      "icon": 1,
+      "id": 21008,
+      "need_buff": [],
+      "score": 1000,
+      "title": "会合:全部战列",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000战列数量^C2795FDFF00000000<=4条",
+      "effect": {
+        "num": 4,
+        "shipType": 4,
+        "type": 210
+      },
+      "effect_desc": "向战列舰倾斜了资源，可以在作战中使用更多战列舰。首先要\"会合\"战列",
+      "hard": 0,
+      "icon": 1,
+      "id": 21009,
+      "need_buff": [],
+      "score": 600,
+      "title": "资源分配:战列",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000G国战巡",
+      "effect": {
+        "country": 2,
+        "shipType": 6,
+        "type": 204
+      },
+      "effect_desc": "(G国)战列巡洋舰编组在得知了大部队方位后迅速赶到。战巡数量<=1",
+      "hard": 0,
+      "icon": 1,
+      "id": 21010,
+      "need_buff": [],
+      "score": 200,
+      "title": "会合:G国战巡",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 961412,
+      "buy_desc": "通过E2的K点解锁",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数任意^C2795FDFF00000000战巡",
+      "effect": {
+        "shipType": 6,
+        "type": 204
+      },
+      "effect_desc": "全部战列巡洋舰编组在得知了大部队方位后迅速赶到。战巡数量<=1",
+      "hard": 0,
+      "icon": 1,
+      "id": 21011,
+      "need_buff": [],
+      "score": 500,
+      "title": "会合:全部战巡",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000战巡数量^C2795FDFF00000000<=4条",
+      "effect": {
+        "num": 4,
+        "shipType": 6,
+        "type": 210
+      },
+      "effect_desc": "让战列巡洋舰编队出征是一个危险的决策。首先要\"会合\"战巡",
+      "hard": 0,
+      "icon": 1,
+      "id": 21012,
+      "need_buff": [],
+      "score": 400,
+      "title": "危险决策:战巡",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000U国潜艇",
+      "effect": {
+        "country": 4,
+        "shipType": 14,
+        "type": 204
+      },
+      "effect_desc": "(U国)潜艇编队已经在海洋上整装待发。潜艇数量<=1",
+      "hard": 0,
+      "icon": 1,
+      "id": 21013,
+      "need_buff": [],
+      "score": 1500,
+      "title": "隐匿:U国潜艇",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000G国潜艇",
+      "effect": {
+        "country": 2,
+        "shipType": 14,
+        "type": 204
+      },
+      "effect_desc": "(G国)潜艇编队已经在海洋上整装待发。潜艇数量<=1",
+      "hard": 0,
+      "icon": 1,
+      "id": 21014,
+      "need_buff": [],
+      "score": 2000,
+      "title": "隐匿:G国潜艇",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 961716,
+      "buy_desc": "通过E5的O点解锁",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数任意^C2795FDFF00000000潜艇",
+      "effect": {
+        "shipType": 14,
+        "type": 204
+      },
+      "effect_desc": "潜艇编队已经在海洋上整装待发，只需要一个命令，即可出战。潜艇数量<=1",
+      "hard": 0,
+      "icon": 1,
+      "id": 21015,
+      "need_buff": [],
+      "score": 3000,
+      "title": "隐匿:全部潜艇",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000潜艇数量^C2795FDFF00000000<=2条",
+      "effect": {
+        "num": 2,
+        "shipType": 14,
+        "type": 210
+      },
+      "effect_desc": "潜艇部队在远洋失去了补给因而无法行动，需要补给。首先要\"隐匿\"潜艇",
+      "hard": 0,
+      "icon": 1,
+      "id": 21016,
+      "need_buff": [],
+      "score": 1000,
+      "title": "远洋补给:潜艇1",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000潜艇数量^C2795FDFF00000000<=4条",
+      "effect": {
+        "num": 4,
+        "shipType": 14,
+        "type": 210
+      },
+      "effect_desc": "潜艇部队在远洋失去了补给因而无法行动，需要补给。首先要\"隐匿\"潜艇",
+      "hard": 0,
+      "icon": 1,
+      "id": 21017,
+      "need_buff": [],
+      "score": 2000,
+      "title": "远洋补给:潜艇2",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000G国重巡",
+      "effect": {
+        "country": 2,
+        "shipType": 7,
+        "type": 204
+      },
+      "effect_desc": "我们已经掌握了各国重巡洋舰的所在地。重巡数量<=2",
+      "hard": 0,
+      "icon": 1,
+      "id": 21018,
+      "need_buff": [],
+      "score": 200,
+      "title": "重巡救援:G国",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000E国重巡",
+      "effect": {
+        "country": 3,
+        "shipType": 7,
+        "type": 204
+      },
+      "effect_desc": "我们已经掌握了各国重巡洋舰的所在地。重巡数量<=2",
+      "hard": 0,
+      "icon": 1,
+      "id": 21019,
+      "need_buff": [],
+      "score": 150,
+      "title": "重巡救援:E国",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数任意^C2795FDFF00000000重巡",
+      "effect": {
+        "shipType": 7,
+        "type": 204
+      },
+      "effect_desc": "我们已经掌握了各国重巡洋舰的所在地。重巡数量<=2",
+      "hard": 0,
+      "icon": 1,
+      "id": 21020,
+      "need_buff": [],
+      "score": 800,
+      "title": "重巡救援:全部",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000重巡数量^C2795FDFF00000000<=4条",
+      "effect": {
+        "num": 4,
+        "shipType": 7,
+        "type": 210
+      },
+      "effect_desc": "重巡洋舰的破坏性和机动性是我们需要的战力。首先要\"重巡救援\"",
+      "hard": 0,
+      "icon": 1,
+      "id": 21021,
+      "need_buff": [],
+      "score": 400,
+      "title": "等价交换:重巡",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000航母数量^C2795FDFF00000000<=1条",
+      "effect": {
+        "num": 1,
+        "shipType": 1,
+        "type": 210
+      },
+      "effect_desc": "紧张的资源是限制她们发挥的唯一因素。U,J国航母仍然受到限制",
+      "hard": 0,
+      "icon": 1,
+      "id": 21022,
+      "need_buff": [],
+      "score": 100,
+      "title": "昂贵支援:航母1",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000航母数量^C2795FDFF00000000<=2条",
+      "effect": {
+        "num": 2,
+        "shipType": 1,
+        "type": 210
+      },
+      "effect_desc": "紧张的资源是限制她们发挥的唯一因素。U,J国航母仍然受到限制",
+      "hard": 0,
+      "icon": 1,
+      "id": 21023,
+      "need_buff": [],
+      "score": 500,
+      "title": "昂贵支援:航母2",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 961717,
+      "buy_desc": "通过E5的P点解锁",
+      "desc": "^CFFFFFFFF00000000航母数量^C2795FDFF00000000<=4条",
+      "effect": {
+        "num": 4,
+        "shipType": 1,
+        "type": 210
+      },
+      "effect_desc": "紧张的资源是限制她们发挥的唯一因素。U,J国航母仍然受到限制",
+      "hard": 0,
+      "icon": 1,
+      "id": 21024,
+      "need_buff": [],
+      "score": 1100,
+      "title": "昂贵支援:航母3",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000航母数量^C2795FDFF00000000<=6条",
+      "effect": {
+        "num": 6,
+        "shipType": 1,
+        "type": 210
+      },
+      "effect_desc": "紧张的资源是限制她们发挥的唯一因素。U,J国航母仍然受到限制",
+      "hard": 0,
+      "icon": 1,
+      "id": 21025,
+      "need_buff": [],
+      "score": 3000,
+      "title": "昂贵支援:航母4",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000U国航母",
+      "effect": {
+        "country": 4,
+        "shipType": 1,
+        "type": 204
+      },
+      "effect_desc": "(U国)航母编队由于失去了重要的补给只能等待救援。首先要\"昂贵支援\"航母",
+      "hard": 0,
+      "icon": 1,
+      "id": 21026,
+      "need_buff": [],
+      "score": 600,
+      "title": "沉睡的U国航母",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000J国航母",
+      "effect": {
+        "country": 1,
+        "shipType": 1,
+        "type": 204
+      },
+      "effect_desc": "(J国)航母编队由于失去了重要的补给只能等待救援。首先要\"昂贵支援\"航母",
+      "hard": 0,
+      "icon": 1,
+      "id": 21027,
+      "need_buff": [],
+      "score": 800,
+      "title": "沉睡的J国航母",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数任意^C2795FDFF00000000轻母",
+      "effect": {
+        "shipType": 2,
+        "type": 204
+      },
+      "effect_desc": "将轻母伪装成补给舰船，从而完成会合方案。轻母数量<=1",
+      "hard": 0,
+      "icon": 1,
+      "id": 21028,
+      "need_buff": [],
+      "score": 1000,
+      "title": "暗度陈仓:轻母",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 961615,
+      "buy_desc": "通过E4的N点解锁",
+      "desc": "^CFFFFFFFF00000000轻母数量^C2795FDFF00000000<=3条",
+      "effect": {
+        "num": 3,
+        "shipType": 2,
+        "type": 210
+      },
+      "effect_desc": "利用有限的资源来对空中进行压制，也是现阶段的最优解。首先要\"暗度陈仓\"轻母",
+      "hard": 0,
+      "icon": 1,
+      "id": 21029,
+      "need_buff": [],
+      "score": 600,
+      "title": "弱制空领域计划",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000G国轻巡",
+      "effect": {
+        "country": 2,
+        "shipType": 10,
+        "type": 204
+      },
+      "effect_desc": "只要通过雷达传输信息，就可以展开作战。",
+      "hard": 0,
+      "icon": 1,
+      "id": 21030,
+      "need_buff": [],
+      "score": 100,
+      "title": "雷达战:G国轻巡",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000C国轻巡",
+      "effect": {
+        "country": 8,
+        "shipType": 10,
+        "type": 204
+      },
+      "effect_desc": "只要通过雷达传输信息，就可以展开作战。",
+      "hard": 0,
+      "icon": 1,
+      "id": 21031,
+      "need_buff": [],
+      "score": 50,
+      "title": "雷达战:C国轻巡",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000U国轻巡",
+      "effect": {
+        "country": 4,
+        "shipType": 10,
+        "type": 204
+      },
+      "effect_desc": "只要通过雷达传输信息，就可以展开作战。",
+      "hard": 0,
+      "icon": 1,
+      "id": 21032,
+      "need_buff": [],
+      "score": 200,
+      "title": "雷达战:U国轻巡",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000E国轻巡",
+      "effect": {
+        "country": 3,
+        "shipType": 10,
+        "type": 204
+      },
+      "effect_desc": "只要通过雷达传输信息，就可以展开作战。",
+      "hard": 0,
+      "icon": 1,
+      "id": 21033,
+      "need_buff": [],
+      "score": 100,
+      "title": "雷达战:E国轻巡",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 961519,
+      "buy_desc": "通过E3的R点解锁",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数任意^C2795FDFF00000000装母",
+      "effect": {
+        "shipType": 3,
+        "type": 204
+      },
+      "effect_desc": "装甲航空母舰是我方坚实的海上起飞平台，请务必保护好她们。",
+      "hard": 0,
+      "icon": 1,
+      "id": 21034,
+      "need_buff": [],
+      "score": 800,
+      "title": "海上起飞平台",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数任意^C2795FDFF00000000航战",
+      "effect": {
+        "shipType": 5,
+        "type": 204
+      },
+      "effect_desc": "已经掌握了航空战列舰的位置，将她们迎接回。",
+      "hard": 0,
+      "icon": 1,
+      "id": 21035,
+      "need_buff": [],
+      "score": 400,
+      "title": "会合:航战",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数任意^C2795FDFF00000000重炮",
+      "effect": {
+        "shipType": 11,
+        "type": 204
+      },
+      "effect_desc": "平时不起眼的浅水重炮舰是此时我们最值得依靠的重型火力舰。",
+      "hard": 0,
+      "icon": 1,
+      "id": 21036,
+      "need_buff": [],
+      "score": 150,
+      "title": "重火力支援:重炮",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 961414,
+      "buy_desc": "通过E2的M点解锁",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数任意^C2795FDFF00000000炮潜",
+      "effect": {
+        "shipType": 15,
+        "type": 204
+      },
+      "effect_desc": "敌人看不到我们的，让我们开火吧！",
+      "hard": 0,
+      "icon": 1,
+      "id": 21037,
+      "need_buff": [],
+      "score": 500,
+      "title": "悄悄地……",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数任意^C2795FDFF00000000雷巡",
+      "effect": {
+        "shipType": 9,
+        "type": 204
+      },
+      "effect_desc": "作为特殊舰种，此时就要发挥特殊的作用。",
+      "hard": 0,
+      "icon": 1,
+      "id": 21038,
+      "need_buff": [],
+      "score": 200,
+      "title": "特种部队:雷巡",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数任意^C2795FDFF00000000航巡",
+      "effect": {
+        "shipType": 8,
+        "type": 204
+      },
+      "effect_desc": "敌人未知的作战单位，在哪里使用比较好呢？",
+      "hard": 0,
+      "icon": 1,
+      "id": 21039,
+      "need_buff": [],
+      "score": 50,
+      "title": "未知单位",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 961509,
+      "buy_desc": "通过E3的H点解锁",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数任意^C2795FDFF00000000导驱",
+      "effect": {
+        "shipType": 23,
+        "type": 204
+      },
+      "effect_desc": "一切的战争到最后都是科技的决胜。——艾拉。",
+      "hard": 0,
+      "icon": 1,
+      "id": 21040,
+      "need_buff": [],
+      "score": 300,
+      "title": "科技压制:导驱",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数任意^C2795FDFF00000000补给",
+      "effect": {
+        "shipType": 16,
+        "type": 204
+      },
+      "effect_desc": "哈哈哈哈，我是天下第一！",
+      "hard": 0,
+      "icon": 1,
+      "id": 21041,
+      "need_buff": [],
+      "score": 10,
+      "title": "天下第一",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000旗舰为除^C2795FDFF00000000潜艇^CFFFFFFFF00000000外任意^C2795FDFF00000000小型船",
+      "effect": {
+        "shipType": 100,
+        "shipTypes": [
+          11,
+          12,
+          15,
+          16,
+          23
+        ],
+        "type": 208
+      },
+      "effect_desc": "旗舰的通话机制也可以广泛运用于更多舰娘。",
+      "hard": 0,
+      "icon": 0,
+      "id": 21042,
+      "need_buff": [],
+      "score": 200,
+      "title": "旗舰的灵活调度",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000旗舰为除^C2795FDFF00000000潜艇^CFFFFFFFF00000000外任意^C2795FDFF00000000中小型船",
+      "effect": {
+        "shipType": 100,
+        "shipTypes": [
+          2,
+          7,
+          10,
+          8,
+          9,
+          11,
+          12,
+          15,
+          16,
+          23
+        ],
+        "type": 208
+      },
+      "effect_desc": "旗舰的通话机制也可以广泛运用于更多舰娘。",
+      "hard": 0,
+      "icon": 0,
+      "id": 21043,
+      "need_buff": [],
+      "score": 300,
+      "title": "旗舰的灵活调度",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000旗舰为除^C2795FDFF00000000潜艇,战巡,航母^CFFFFFFFF00000000外任意船",
+      "effect": {
+        "shipType": 100,
+        "shipTypes": [
+          3,
+          4,
+          5,
+          2,
+          7,
+          10,
+          8,
+          9,
+          11,
+          12,
+          15,
+          16,
+          23
+        ],
+        "type": 208
+      },
+      "effect_desc": "旗舰的通话机制也可以广泛运用于更多舰娘。",
+      "hard": 0,
+      "icon": 0,
+      "id": 21044,
+      "need_buff": [],
+      "score": 400,
+      "title": "旗舰的灵活调度",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000旗舰可以为^C2795FDFF00000000潜艇",
+      "effect": {
+        "shipType": 100,
+        "shipTypes": [
+          14
+        ],
+        "type": 208
+      },
+      "effect_desc": "旗舰的通话机制也可以广泛运用于更多舰娘。",
+      "hard": 0,
+      "icon": 0,
+      "id": 21045,
+      "need_buff": [],
+      "score": 1000,
+      "title": "旗舰的灵活调度",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000旗舰可以为^C2795FDFF00000000战巡",
+      "effect": {
+        "shipType": 100,
+        "shipTypes": [
+          6
+        ],
+        "type": 208
+      },
+      "effect_desc": "旗舰的通话机制也可以广泛运用于更多舰娘。",
+      "hard": 0,
+      "icon": 0,
+      "id": 21046,
+      "need_buff": [],
+      "score": 500,
+      "title": "旗舰的灵活调度",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000旗舰可以为^C2795FDFF00000000航母",
+      "effect": {
+        "shipType": 100,
+        "shipTypes": [
+          1
+        ],
+        "type": 208
+      },
+      "effect_desc": "旗舰的通话机制也可以广泛运用于更多舰娘。",
+      "hard": 0,
+      "icon": 0,
+      "id": 21047,
+      "need_buff": [],
+      "score": 1000,
+      "title": "旗舰的灵活调度",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000I国战列",
+      "effect": {
+        "country": 5,
+        "shipType": 4,
+        "type": 204
+      },
+      "effect_desc": "顺利与战列舰们会合，可以使用该国的战列舰了。战列数量<=2",
+      "hard": 0,
+      "icon": 1,
+      "id": 21048,
+      "need_buff": [],
+      "score": 200,
+      "title": "会合:I国战列",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000J国轻巡",
+      "effect": {
+        "country": 1,
+        "shipType": 10,
+        "type": 204
+      },
+      "effect_desc": "只要通过雷达传输信息，就可以展开作战。",
+      "hard": 0,
+      "icon": 1,
+      "id": 21049,
+      "need_buff": [],
+      "score": 200,
+      "title": "雷达战:J国轻巡",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000U国战巡",
+      "effect": {
+        "country": 4,
+        "shipType": 6,
+        "type": 204
+      },
+      "effect_desc": "(U国)战列巡洋舰编组在得知了大部队方位后迅速赶到。战巡数量<=1",
+      "hard": 0,
+      "icon": 1,
+      "id": 21050,
+      "need_buff": [],
+      "score": 200,
+      "title": "会合:U国战巡",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000J国重巡",
+      "effect": {
+        "country": 1,
+        "shipType": 7,
+        "type": 204
+      },
+      "effect_desc": "我们已经掌握了各国重巡洋舰的所在地。重巡数量<=2",
+      "hard": 0,
+      "icon": 1,
+      "id": 21051,
+      "need_buff": [],
+      "score": 300,
+      "title": "重巡救援:J国",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 961416,
+      "buy_desc": "通过E2的O点解锁",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000U国重巡",
+      "effect": {
+        "country": 4,
+        "shipType": 7,
+        "type": 204
+      },
+      "effect_desc": "我们已经掌握了各国重巡洋舰的所在地。重巡数量<=2",
+      "hard": 0,
+      "icon": 1,
+      "id": 21052,
+      "need_buff": [],
+      "score": 500,
+      "title": "重巡救援:U国",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带^C2795FDFF000000004^CFFFFFFFF00000000艘舰船",
+      "effect": {
+        "num": 4,
+        "type": 121
+      },
+      "effect_desc": "由于在迷雾中四散开来，互相之间难以支援，可使用舰船不足。",
+      "hard": 1,
+      "icon": 0,
+      "id": 12001,
+      "need_buff": [],
+      "score": 0,
+      "title": "四散孤立",
+      "type": 0,
+      "unlock_id": [
+        22001,
+        22002
+      ],
+      "unlock_type": 214
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000只可携带^C2795FDFF00000000驱逐舰",
+      "effect": {
+        "shipTypes": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          14,
+          15,
+          16,
+          23
+        ],
+        "type": 105
+      },
+      "effect_desc": "似乎我方绝大多数主力舰都被阻隔，只能联系到极少数的船型作战。",
+      "hard": 1,
+      "icon": 0,
+      "id": 12002,
+      "need_buff": [],
+      "score": 0,
+      "title": "主力舰阻隔",
+      "type": 0,
+      "unlock_id": [
+        22003,
+        22004,
+        22005,
+        22006,
+        22007,
+        22008,
+        22010,
+        22011,
+        22013,
+        22014,
+        22015,
+        22018,
+        22019,
+        22020,
+        22026,
+        22027,
+        22028,
+        22032,
+        22033,
+        22034,
+        22035,
+        22036,
+        22037,
+        22038,
+        22039,
+        22040,
+        22041,
+        22048,
+        22049,
+        22050,
+        22051,
+        22052
+      ],
+      "unlock_type": 204
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000不携带^C2795FDFF00000000U,J^CFFFFFFFF00000000国航母",
+      "effect": {
+        "countrys": [
+          1,
+          4
+        ],
+        "shipTypes": [
+          1
+        ],
+        "type": 105
+      },
+      "effect_desc": "拥有强大侦查能力的U、J两国航母编队暂时无法取得联系。",
+      "hard": 1,
+      "icon": 0,
+      "id": 12003,
+      "need_buff": [
+        22022,
+        22023,
+        22024,
+        22025
+      ],
+      "score": 0,
+      "title": "消失的主力舰队",
+      "type": 0,
+      "unlock_id": [
+        22026,
+        22027,
+        22028
+      ],
+      "unlock_type": 204
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000战列数量^C2795FDFF00000000<=2^CFFFFFFFF00000000条",
+      "effect": {
+        "num": 2,
+        "shipType": 4,
+        "type": 106
+      },
+      "effect_desc": "由于孤立无援，也没有太多补给，请节约使用。",
+      "hard": 1,
+      "icon": 0,
+      "id": 12004,
+      "need_buff": [
+        100
+      ],
+      "score": 0,
+      "title": "补给不足:战列",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 210
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000战巡数量^C2795FDFF00000000<=1^CFFFFFFFF00000000条",
+      "effect": {
+        "num": 1,
+        "shipType": 6,
+        "type": 106
+      },
+      "effect_desc": "由于孤立无援，也没有太多补给，请节约使用。",
+      "hard": 1,
+      "icon": 0,
+      "id": 12005,
+      "need_buff": [
+        100
+      ],
+      "score": 0,
+      "title": "补给不足:战巡",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 210
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000重巡数量^C2795FDFF00000000<=2^CFFFFFFFF00000000条",
+      "effect": {
+        "num": 2,
+        "shipType": 7,
+        "type": 106
+      },
+      "effect_desc": "由于孤立无援，也没有太多补给，请节约使用。",
+      "hard": 1,
+      "icon": 0,
+      "id": 12006,
+      "need_buff": [
+        100
+      ],
+      "score": 0,
+      "title": "补给不足:重巡",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 210
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000潜艇数量^C2795FDFF00000000<=1^CFFFFFFFF00000000条",
+      "effect": {
+        "num": 1,
+        "shipType": 14,
+        "type": 106
+      },
+      "effect_desc": "由于孤立无援，也没有太多补给，请节约使用。",
+      "hard": 1,
+      "icon": 0,
+      "id": 12007,
+      "need_buff": [
+        100
+      ],
+      "score": 0,
+      "title": "补给不足:潜艇",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 210
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000轻母数量^C2795FDFF00000000<=1^CFFFFFFFF00000000条",
+      "effect": {
+        "num": 1,
+        "shipType": 2,
+        "type": 106
+      },
+      "effect_desc": "由于孤立无援，也没有太多补给，请节约使用。",
+      "hard": 1,
+      "icon": 0,
+      "id": 12008,
+      "need_buff": [
+        100
+      ],
+      "score": 0,
+      "title": "补给不足:轻母",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 210
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000航母数量^C2795FDFF00000000<=0^CFFFFFFFF00000000条",
+      "effect": {
+        "num": 0,
+        "shipType": 1,
+        "type": 106
+      },
+      "effect_desc": "由于孤立无援，也没有太多补给，请节约使用。",
+      "hard": 1,
+      "icon": 0,
+      "id": 12009,
+      "need_buff": [
+        100
+      ],
+      "score": 0,
+      "title": "补给不足",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 210
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000旗舰为^C2795FDFF00000000初始舰",
+      "effect": {
+        "shipCids": [
+          10006411,
+          10009311,
+          10007511,
+          10008211
+        ],
+        "type": 119
+      },
+      "effect_desc": "率先取得联络的初始舰成为了此时的旗舰。",
+      "hard": 1,
+      "icon": 0,
+      "id": 12010,
+      "need_buff": [],
+      "score": 0,
+      "title": "临时旗舰",
+      "type": 0,
+      "unlock_id": [
+        22042,
+        22043,
+        22044,
+        22045,
+        22046,
+        22047
+      ],
+      "unlock_type": 208
+    },
+    {
+      "buff_type": 0,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000全体回避,装甲^CE45A5AFF00000000-10^CFFFFFFFF00000000;索敌^CE45A5AFF00000000-20^CFFFFFFFF00000000",
+      "effect": {
+        "num": -10,
+        "num4": 5,
+        "type": 101
+      },
+      "effect_desc": "海面状况极其恶劣，想要躲开敌人的攻击更是难上加难。",
+      "hard": 1,
+      "icon": 0,
+      "id": 12011,
+      "need_buff": [],
+      "score": 0,
+      "title": "海况恶劣",
+      "type": 0,
+      "unlock_id": [
+        22053,
+        22054,
+        22055
+      ],
+      "unlock_type": 201
+    },
+    {
+      "buff_type": 0,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000全体装甲^C2795FDFF00000000-10^CFFFFFFFF00000000点",
+      "effect": {
+        "num": -10,
+        "num4": 3,
+        "type": 101
+      },
+      "effect_desc": "穿越过来的时候舰装出现了大量受损。",
+      "hard": 1,
+      "icon": 0,
+      "id": 12012,
+      "need_buff": [
+        100
+      ],
+      "score": 0,
+      "title": "舰装损坏",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 201
+    },
+    {
+      "buff_type": 0,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000全体索敌^C2795FDFF00000000-20^CFFFFFFFF00000000点",
+      "effect": {
+        "num": -20,
+        "num4": 11,
+        "type": 101
+      },
+      "effect_desc": "这里很多地方都处于混沌状态，雷达卫星都无法探明。",
+      "hard": 1,
+      "icon": 0,
+      "id": 12013,
+      "need_buff": [
+        100
+      ],
+      "score": 0,
+      "title": "雷达无法探明",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 201
+    },
+    {
+      "buff_type": 0,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^C2795FDFF00000000战列^CFFFFFFFF00000000的火力^C2795FDFF00000000-20^CFFFFFFFF00000000点",
+      "effect": {
+        "num": -20,
+        "num4": 2,
+        "shipType": 4,
+        "type": 103
+      },
+      "effect_desc": "由于混乱中穿越过来，弹药严重不足，要节约使用。",
+      "hard": 1,
+      "icon": 0,
+      "id": 12014,
+      "need_buff": [
+        100
+      ],
+      "score": 0,
+      "title": "弹药不足:战列",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 203
+    },
+    {
+      "buff_type": 0,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^C2795FDFF00000000战巡^CFFFFFFFF00000000的火力^C2795FDFF00000000-20^CFFFFFFFF00000000点",
+      "effect": {
+        "num": -20,
+        "num4": 2,
+        "shipType": 6,
+        "type": 103
+      },
+      "effect_desc": "由于混乱中穿越过来，弹药严重不足，要节约使用。",
+      "hard": 1,
+      "icon": 0,
+      "id": 12015,
+      "need_buff": [
+        100
+      ],
+      "score": 0,
+      "title": "弹药不足:战巡",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 203
+    },
+    {
+      "buff_type": 0,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^C2795FDFF00000000航战^CFFFFFFFF00000000的火力^C2795FDFF00000000-20^CFFFFFFFF00000000点",
+      "effect": {
+        "num": -20,
+        "num4": 2,
+        "shipType": 5,
+        "type": 103
+      },
+      "effect_desc": "由于混乱中穿越过来，弹药严重不足，要节约使用。",
+      "hard": 1,
+      "icon": 0,
+      "id": 12016,
+      "need_buff": [
+        100
+      ],
+      "score": 0,
+      "title": "弹药不足:航战",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 203
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000不携带^C2795FDFF00000000U,J^CFFFFFFFF00000000国航母;^C2795FDFF00000000U,E,G,J^CFFFFFFFF00000000国船只数量^C2795FDFF00000000<=3^CFFFFFFFF00000000条",
+      "effect": {
+        "country": 4,
+        "num": 3,
+        "type": 108
+      },
+      "effect_desc": "伙伴们都被迫分散开了，希望能尽快找到她们。",
+      "hard": 1,
+      "icon": 0,
+      "id": 12017,
+      "need_buff": [],
+      "score": 0,
+      "title": "分散的伙伴",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 212
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^C2795FDFF00000000E^CFFFFFFFF00000000国船只数量^C2795FDFF00000000<=3^CFFFFFFFF00000000条",
+      "effect": {
+        "country": 3,
+        "num": 3,
+        "type": 108
+      },
+      "effect_desc": "伙伴们都被迫分散开了，希望能尽快找到她们。",
+      "hard": 1,
+      "icon": 0,
+      "id": 12018,
+      "need_buff": [
+        100
+      ],
+      "score": 0,
+      "title": "分散的伙伴:E国",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 212
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^C2795FDFF00000000G^CFFFFFFFF00000000国船只数量^C2795FDFF00000000<=3^CFFFFFFFF00000000条",
+      "effect": {
+        "country": 2,
+        "num": 3,
+        "type": 108
+      },
+      "effect_desc": "伙伴们都被迫分散开了，希望能尽快找到她们。",
+      "hard": 1,
+      "icon": 0,
+      "id": 12019,
+      "need_buff": [
+        100
+      ],
+      "score": 0,
+      "title": "分散的伙伴:G国",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 212
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^C2795FDFF00000000J^CFFFFFFFF00000000国船只数量^C2795FDFF00000000<=3^CFFFFFFFF00000000条",
+      "effect": {
+        "country": 1,
+        "num": 3,
+        "type": 108
+      },
+      "effect_desc": "伙伴们都被迫分散开了，希望能尽快找到她们。",
+      "hard": 1,
+      "icon": 0,
+      "id": 12020,
+      "need_buff": [
+        100
+      ],
+      "score": 0,
+      "title": "分散的伙伴:J国",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 212
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 961902,
+      "buy_desc": "通过E7的A点解锁",
+      "desc": "^CFFFFFFFF00000000可携带^C2795FDFF000000005^CFFFFFFFF00000000艘舰船",
+      "effect": {
+        "num": 5,
+        "shipType": 100,
+        "type": 214
+      },
+      "effect_desc": "就近进行了简单的探索，伙伴的数量增加了。",
+      "hard": 1,
+      "icon": 1,
+      "id": 22001,
+      "need_buff": [],
+      "score": 200,
+      "title": "就近探索",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 961912,
+      "buy_desc": "通过E7的K点解锁",
+      "desc": "^CFFFFFFFF00000000可携带^C2795FDFF000000006^CFFFFFFFF00000000艘舰船",
+      "effect": {
+        "num": 6,
+        "shipType": 100,
+        "type": 214
+      },
+      "effect_desc": "根据掌握的信息，我们现在可以大规模援助伙伴，得到了更多地战力。",
+      "hard": 1,
+      "icon": 1,
+      "id": 22002,
+      "need_buff": [],
+      "score": 500,
+      "title": "全面营救",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000S国战列^CFFFFFFFF00000000,火力^CE45A5AFF00000000-20",
+      "effect": {
+        "country": 7,
+        "shipType": 4,
+        "type": 204
+      },
+      "effect_desc": "顺利与战列舰们会合，可以使用该国的战列舰了。战列数量<=2",
+      "hard": 1,
+      "icon": 1,
+      "id": 22003,
+      "need_buff": [],
+      "score": 50,
+      "title": "会合:S国战列",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000J国战列^CFFFFFFFF00000000,火力^CE45A5AFF00000000-20",
+      "effect": {
+        "country": 1,
+        "shipType": 4,
+        "type": 204
+      },
+      "effect_desc": "顺利与战列舰们会合，可以使用该国的战列舰了。战列数量<=2",
+      "hard": 1,
+      "icon": 1,
+      "id": 22004,
+      "need_buff": [],
+      "score": 150,
+      "title": "会合:J国战列",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000G国战列^CFFFFFFFF00000000,火力^CE45A5AFF00000000-20",
+      "effect": {
+        "country": 2,
+        "shipType": 4,
+        "type": 204
+      },
+      "effect_desc": "顺利与战列舰们会合，可以使用该国的战列舰了。战列数量<=2",
+      "hard": 1,
+      "icon": 1,
+      "id": 22005,
+      "need_buff": [],
+      "score": 250,
+      "title": "会合:G国战列",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000E国战列^CFFFFFFFF00000000,火力^CE45A5AFF00000000-20",
+      "effect": {
+        "country": 3,
+        "shipType": 4,
+        "type": 204
+      },
+      "effect_desc": "顺利与战列舰们会合，可以使用该国的战列舰了。战列数量<=2",
+      "hard": 1,
+      "icon": 1,
+      "id": 22006,
+      "need_buff": [],
+      "score": 150,
+      "title": "会合:E国战列",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000U国战列^CFFFFFFFF00000000,火力^CE45A5AFF00000000-20",
+      "effect": {
+        "country": 4,
+        "shipType": 4,
+        "type": 204
+      },
+      "effect_desc": "顺利与战列舰们会合，可以使用该国的战列舰了。战列数量<=2",
+      "hard": 1,
+      "icon": 1,
+      "id": 22007,
+      "need_buff": [],
+      "score": 450,
+      "title": "会合:U国战列",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 962219,
+      "buy_desc": "通过E10的R点解锁",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数任意^C2795FDFF00000000战列^CFFFFFFFF00000000,火力^CE45A5AFF00000000-20",
+      "effect": {
+        "shipType": 4,
+        "type": 204
+      },
+      "effect_desc": "顺利与战列舰们会合，可以使用任意国的战列舰了。战列数量<=2",
+      "hard": 1,
+      "icon": 1,
+      "id": 22008,
+      "need_buff": [],
+      "score": 1000,
+      "title": "会合:全部战列",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000战列数量^C2795FDFF00000000<=4条",
+      "effect": {
+        "num": 4,
+        "shipType": 4,
+        "type": 210
+      },
+      "effect_desc": "向战列舰倾斜了资源，可以在作战中使用更多战列舰。首先要\"会合\"战列",
+      "hard": 1,
+      "icon": 1,
+      "id": 22009,
+      "need_buff": [],
+      "score": 600,
+      "title": "资源分配:战列",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000G国战巡^CFFFFFFFF00000000,火力^CE45A5AFF00000000-20",
+      "effect": {
+        "country": 2,
+        "shipType": 6,
+        "type": 204
+      },
+      "effect_desc": "(G国)战列巡洋舰编组在得知了大部队方位后迅速赶到。战巡数量<=1",
+      "hard": 1,
+      "icon": 1,
+      "id": 22010,
+      "need_buff": [],
+      "score": 200,
+      "title": "会合:G国战巡",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 962012,
+      "buy_desc": "通过E8的K点解锁",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数任意^C2795FDFF00000000战巡^CFFFFFFFF00000000,火力^CE45A5AFF00000000-20",
+      "effect": {
+        "shipType": 6,
+        "type": 204
+      },
+      "effect_desc": "全部战列巡洋舰编组在得知了大部队方位后迅速赶到。战巡数量<=1",
+      "hard": 1,
+      "icon": 1,
+      "id": 22011,
+      "need_buff": [],
+      "score": 500,
+      "title": "会合:全部战巡",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000战巡数量^C2795FDFF00000000<=4条",
+      "effect": {
+        "num": 4,
+        "shipType": 6,
+        "type": 210
+      },
+      "effect_desc": "让战列巡洋舰编队出征是一个危险的决策。首先要\"会合\"战巡",
+      "hard": 1,
+      "icon": 1,
+      "id": 22012,
+      "need_buff": [],
+      "score": 400,
+      "title": "危险决策:战巡",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000U国潜艇",
+      "effect": {
+        "country": 4,
+        "shipType": 14,
+        "type": 204
+      },
+      "effect_desc": "(U国)潜艇编队已经在海洋上整装待发。潜艇数量<=1",
+      "hard": 1,
+      "icon": 1,
+      "id": 22013,
+      "need_buff": [],
+      "score": 1500,
+      "title": "隐匿:U国潜艇",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000G国潜艇",
+      "effect": {
+        "country": 2,
+        "shipType": 14,
+        "type": 204
+      },
+      "effect_desc": "(G国)潜艇编队已经在海洋上整装待发。潜艇数量<=1",
+      "hard": 1,
+      "icon": 1,
+      "id": 22014,
+      "need_buff": [],
+      "score": 2000,
+      "title": "隐匿:G国潜艇",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 962316,
+      "buy_desc": "通过E11的O点解锁",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数任意^C2795FDFF00000000潜艇",
+      "effect": {
+        "shipType": 14,
+        "type": 204
+      },
+      "effect_desc": "潜艇编队已经在海洋上整装待发，只需要一个命令，即可出战。潜艇数量<=1",
+      "hard": 1,
+      "icon": 1,
+      "id": 22015,
+      "need_buff": [],
+      "score": 3000,
+      "title": "隐匿:全部潜艇",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000潜艇数量^C2795FDFF00000000<=2条",
+      "effect": {
+        "num": 2,
+        "shipType": 14,
+        "type": 210
+      },
+      "effect_desc": "潜艇部队在远洋失去了补给因而无法行动，需要补给。首先要\"隐匿\"潜艇",
+      "hard": 1,
+      "icon": 1,
+      "id": 22016,
+      "need_buff": [],
+      "score": 1000,
+      "title": "远洋补给:潜艇1",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000潜艇数量^C2795FDFF00000000<=4条",
+      "effect": {
+        "num": 4,
+        "shipType": 14,
+        "type": 210
+      },
+      "effect_desc": "潜艇部队在远洋失去了补给因而无法行动，需要补给。首先要\"隐匿\"潜艇",
+      "hard": 1,
+      "icon": 1,
+      "id": 22017,
+      "need_buff": [],
+      "score": 2000,
+      "title": "远洋补给:潜艇2",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000G国重巡",
+      "effect": {
+        "country": 2,
+        "shipType": 7,
+        "type": 204
+      },
+      "effect_desc": "我们已经掌握了各国重巡洋舰的所在地。重巡数量<=2",
+      "hard": 1,
+      "icon": 1,
+      "id": 22018,
+      "need_buff": [],
+      "score": 200,
+      "title": "重巡救援:G国",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000E国重巡",
+      "effect": {
+        "country": 3,
+        "shipType": 7,
+        "type": 204
+      },
+      "effect_desc": "我们已经掌握了各国重巡洋舰的所在地。重巡数量<=2",
+      "hard": 1,
+      "icon": 1,
+      "id": 22019,
+      "need_buff": [],
+      "score": 150,
+      "title": "重巡救援:E国",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数任意^C2795FDFF00000000重巡",
+      "effect": {
+        "shipType": 7,
+        "type": 204
+      },
+      "effect_desc": "我们已经掌握了各国重巡洋舰的所在地。重巡数量<=2",
+      "hard": 1,
+      "icon": 1,
+      "id": 22020,
+      "need_buff": [],
+      "score": 800,
+      "title": "重巡救援:全部",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000重巡数量^C2795FDFF00000000<=4条",
+      "effect": {
+        "num": 4,
+        "shipType": 7,
+        "type": 210
+      },
+      "effect_desc": "重巡洋舰的破坏性和机动性是我们需要的战力。首先要\"重巡救援\"",
+      "hard": 1,
+      "icon": 1,
+      "id": 22021,
+      "need_buff": [],
+      "score": 400,
+      "title": "等价交换:重巡",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000航母数量^C2795FDFF00000000<=1条",
+      "effect": {
+        "num": 1,
+        "shipType": 1,
+        "type": 210
+      },
+      "effect_desc": "紧张的资源是限制她们发挥的唯一因素。U,J国航母仍然受到限制",
+      "hard": 1,
+      "icon": 1,
+      "id": 22022,
+      "need_buff": [],
+      "score": 100,
+      "title": "昂贵支援:航母1",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000航母数量^C2795FDFF00000000<=2条",
+      "effect": {
+        "num": 2,
+        "shipType": 1,
+        "type": 210
+      },
+      "effect_desc": "紧张的资源是限制她们发挥的唯一因素。U,J国航母仍然受到限制",
+      "hard": 1,
+      "icon": 1,
+      "id": 22023,
+      "need_buff": [],
+      "score": 500,
+      "title": "昂贵支援:航母2",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 962317,
+      "buy_desc": "通过E11的P点解锁",
+      "desc": "^CFFFFFFFF00000000航母数量^C2795FDFF00000000<=4条",
+      "effect": {
+        "num": 4,
+        "shipType": 1,
+        "type": 210
+      },
+      "effect_desc": "紧张的资源是限制她们发挥的唯一因素。U,J国航母仍然受到限制",
+      "hard": 1,
+      "icon": 1,
+      "id": 22024,
+      "need_buff": [],
+      "score": 1100,
+      "title": "昂贵支援:航母3",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000航母数量^C2795FDFF00000000<=6条",
+      "effect": {
+        "num": 6,
+        "shipType": 1,
+        "type": 210
+      },
+      "effect_desc": "紧张的资源是限制她们发挥的唯一因素。U,J国航母仍然受到限制",
+      "hard": 1,
+      "icon": 1,
+      "id": 22025,
+      "need_buff": [],
+      "score": 3000,
+      "title": "昂贵支援:航母4",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000U国航母",
+      "effect": {
+        "country": 4,
+        "shipType": 1,
+        "type": 204
+      },
+      "effect_desc": "(U国)航母编队由于失去了重要的补给只能等待救援。首先要\"昂贵支援\"航母",
+      "hard": 1,
+      "icon": 1,
+      "id": 22026,
+      "need_buff": [],
+      "score": 600,
+      "title": "沉睡的U国航母",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000J国航母",
+      "effect": {
+        "country": 1,
+        "shipType": 1,
+        "type": 204
+      },
+      "effect_desc": "(J国)航母编队由于失去了重要的补给只能等待救援。首先要\"昂贵支援\"航母",
+      "hard": 1,
+      "icon": 1,
+      "id": 22027,
+      "need_buff": [],
+      "score": 800,
+      "title": "沉睡的J国航母",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数任意^C2795FDFF00000000轻母",
+      "effect": {
+        "shipType": 2,
+        "type": 204
+      },
+      "effect_desc": "将轻母伪装成补给舰船，从而完成会合方案。轻母数量<=1",
+      "hard": 1,
+      "icon": 1,
+      "id": 22028,
+      "need_buff": [],
+      "score": 1000,
+      "title": "暗度陈仓:轻母",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 962215,
+      "buy_desc": "通过E10的N点解锁",
+      "desc": "^CFFFFFFFF00000000轻母数量^C2795FDFF00000000<=3条",
+      "effect": {
+        "num": 3,
+        "shipType": 2,
+        "type": 210
+      },
+      "effect_desc": "利用有限的资源来对空中进行压制，也是现阶段的最优解。首先要\"暗度陈仓\"轻母",
+      "hard": 1,
+      "icon": 1,
+      "id": 22029,
+      "need_buff": [],
+      "score": 600,
+      "title": "弱制空领域计划",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000G国轻巡",
+      "effect": {
+        "country": 2,
+        "shipType": 10,
+        "type": 204
+      },
+      "effect_desc": "只要通过雷达传输信息，就可以展开作战。",
+      "hard": 1,
+      "icon": 1,
+      "id": 22030,
+      "need_buff": [],
+      "score": 100,
+      "title": "雷达战:G国轻巡",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000C国轻巡",
+      "effect": {
+        "country": 8,
+        "shipType": 10,
+        "type": 204
+      },
+      "effect_desc": "只要通过雷达传输信息，就可以展开作战。",
+      "hard": 1,
+      "icon": 1,
+      "id": 22031,
+      "need_buff": [],
+      "score": 50,
+      "title": "雷达战:C国轻巡",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000U国轻巡",
+      "effect": {
+        "country": 4,
+        "shipType": 10,
+        "type": 204
+      },
+      "effect_desc": "只要通过雷达传输信息，就可以展开作战。",
+      "hard": 1,
+      "icon": 1,
+      "id": 22032,
+      "need_buff": [],
+      "score": 200,
+      "title": "雷达战:U国轻巡",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000E国轻巡",
+      "effect": {
+        "country": 3,
+        "shipType": 10,
+        "type": 204
+      },
+      "effect_desc": "只要通过雷达传输信息，就可以展开作战。",
+      "hard": 1,
+      "icon": 1,
+      "id": 22033,
+      "need_buff": [],
+      "score": 100,
+      "title": "雷达战:E国轻巡",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 962119,
+      "buy_desc": "通过E9的R点解锁",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数任意^C2795FDFF00000000装母",
+      "effect": {
+        "shipType": 3,
+        "type": 204
+      },
+      "effect_desc": "装甲航空母舰是我方坚实的海上起飞平台，请务必保护好她们。",
+      "hard": 1,
+      "icon": 1,
+      "id": 22034,
+      "need_buff": [],
+      "score": 800,
+      "title": "海上起飞平台",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数任意^C2795FDFF00000000航战^CFFFFFFFF00000000,火力^CE45A5AFF00000000-20",
+      "effect": {
+        "shipType": 5,
+        "type": 204
+      },
+      "effect_desc": "已经掌握了航空战列舰的位置，将她们迎接回。",
+      "hard": 1,
+      "icon": 1,
+      "id": 22035,
+      "need_buff": [],
+      "score": 400,
+      "title": "会合:航战",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数任意^C2795FDFF00000000重炮",
+      "effect": {
+        "shipType": 11,
+        "type": 204
+      },
+      "effect_desc": "平时不起眼的浅水重炮舰是此时我们最值得依靠的重型火力舰。",
+      "hard": 1,
+      "icon": 1,
+      "id": 22036,
+      "need_buff": [],
+      "score": 150,
+      "title": "重火力支援:重炮",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 962014,
+      "buy_desc": "通过E8的M点解锁",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数任意^C2795FDFF00000000炮潜",
+      "effect": {
+        "shipType": 15,
+        "type": 204
+      },
+      "effect_desc": "敌人看不到我们的，让我们开火吧！",
+      "hard": 1,
+      "icon": 1,
+      "id": 22037,
+      "need_buff": [],
+      "score": 500,
+      "title": "悄悄地……",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数任意^C2795FDFF00000000雷巡",
+      "effect": {
+        "shipType": 9,
+        "type": 204
+      },
+      "effect_desc": "作为特殊舰种，此时就要发挥特殊的作用。",
+      "hard": 1,
+      "icon": 1,
+      "id": 22038,
+      "need_buff": [],
+      "score": 200,
+      "title": "特种部队:雷巡",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数任意^C2795FDFF00000000航巡",
+      "effect": {
+        "shipType": 8,
+        "type": 204
+      },
+      "effect_desc": "敌人未知的作战单位，在哪里使用比较好呢？",
+      "hard": 1,
+      "icon": 1,
+      "id": 22039,
+      "need_buff": [],
+      "score": 50,
+      "title": "未知单位",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 962109,
+      "buy_desc": "通过E9的H点解锁",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数任意^C2795FDFF00000000导驱",
+      "effect": {
+        "shipType": 23,
+        "type": 204
+      },
+      "effect_desc": "一切的战争到最后都是科技的决胜。——艾拉。",
+      "hard": 1,
+      "icon": 1,
+      "id": 22040,
+      "need_buff": [],
+      "score": 300,
+      "title": "科技压制:导驱",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数任意^C2795FDFF00000000补给",
+      "effect": {
+        "shipType": 16,
+        "type": 204
+      },
+      "effect_desc": "哈哈哈哈，我是天下第一！",
+      "hard": 1,
+      "icon": 1,
+      "id": 22041,
+      "need_buff": [],
+      "score": 10,
+      "title": "天下第一",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000旗舰为除^C2795FDFF00000000潜艇^CFFFFFFFF00000000外任意^C2795FDFF00000000小型船",
+      "effect": {
+        "shipType": 100,
+        "shipTypes": [
+          11,
+          12,
+          15,
+          16,
+          23
+        ],
+        "type": 208
+      },
+      "effect_desc": "旗舰的通话机制也可以广泛运用于更多舰娘。",
+      "hard": 1,
+      "icon": 0,
+      "id": 22042,
+      "need_buff": [],
+      "score": 200,
+      "title": "旗舰的灵活调度",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000旗舰为除^C2795FDFF00000000潜艇^CFFFFFFFF00000000外任意^C2795FDFF00000000中小型船",
+      "effect": {
+        "shipType": 100,
+        "shipTypes": [
+          2,
+          7,
+          10,
+          8,
+          9,
+          11,
+          12,
+          15,
+          16,
+          23
+        ],
+        "type": 208
+      },
+      "effect_desc": "旗舰的通话机制也可以广泛运用于更多舰娘。",
+      "hard": 1,
+      "icon": 0,
+      "id": 22043,
+      "need_buff": [],
+      "score": 300,
+      "title": "旗舰的灵活调度",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000旗舰为除^C2795FDFF00000000潜艇,战巡,航母^CFFFFFFFF00000000外任意船",
+      "effect": {
+        "shipType": 100,
+        "shipTypes": [
+          3,
+          4,
+          5,
+          2,
+          7,
+          10,
+          8,
+          9,
+          11,
+          12,
+          15,
+          16,
+          23
+        ],
+        "type": 208
+      },
+      "effect_desc": "旗舰的通话机制也可以广泛运用于更多舰娘。",
+      "hard": 1,
+      "icon": 0,
+      "id": 22044,
+      "need_buff": [],
+      "score": 400,
+      "title": "旗舰的灵活调度",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000旗舰可以为^C2795FDFF00000000潜艇",
+      "effect": {
+        "shipType": 100,
+        "shipTypes": [
+          14
+        ],
+        "type": 208
+      },
+      "effect_desc": "旗舰的通话机制也可以广泛运用于更多舰娘。",
+      "hard": 1,
+      "icon": 0,
+      "id": 22045,
+      "need_buff": [],
+      "score": 1000,
+      "title": "旗舰的灵活调度",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000旗舰可以为^C2795FDFF00000000战巡",
+      "effect": {
+        "shipType": 100,
+        "shipTypes": [
+          6
+        ],
+        "type": 208
+      },
+      "effect_desc": "旗舰的通话机制也可以广泛运用于更多舰娘。",
+      "hard": 1,
+      "icon": 0,
+      "id": 22046,
+      "need_buff": [],
+      "score": 500,
+      "title": "旗舰的灵活调度",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000旗舰可以为^C2795FDFF00000000航母",
+      "effect": {
+        "shipType": 100,
+        "shipTypes": [
+          1
+        ],
+        "type": 208
+      },
+      "effect_desc": "旗舰的通话机制也可以广泛运用于更多舰娘。",
+      "hard": 1,
+      "icon": 0,
+      "id": 22047,
+      "need_buff": [],
+      "score": 1000,
+      "title": "旗舰的灵活调度",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000I国战列",
+      "effect": {
+        "country": 5,
+        "shipType": 4,
+        "type": 204
+      },
+      "effect_desc": "顺利与战列舰们会合，可以使用该国的战列舰了。战列数量<=2",
+      "hard": 1,
+      "icon": 1,
+      "id": 22048,
+      "need_buff": [],
+      "score": 200,
+      "title": "会合:I国战列",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000J国轻巡",
+      "effect": {
+        "country": 1,
+        "shipType": 10,
+        "type": 204
+      },
+      "effect_desc": "只要通过雷达传输信息，就可以展开作战。",
+      "hard": 1,
+      "icon": 1,
+      "id": 22049,
+      "need_buff": [],
+      "score": 200,
+      "title": "雷达战:J国轻巡",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000U国战巡^CFFFFFFFF00000000,火力^CE45A5AFF00000000-20",
+      "effect": {
+        "country": 4,
+        "shipType": 6,
+        "type": 204
+      },
+      "effect_desc": "(U国)战列巡洋舰编组在得知了大部队方位后迅速赶到。战巡数量<=1",
+      "hard": 1,
+      "icon": 1,
+      "id": 22050,
+      "need_buff": [],
+      "score": 200,
+      "title": "会合:U国战巡",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000J国重巡",
+      "effect": {
+        "country": 1,
+        "shipType": 7,
+        "type": 204
+      },
+      "effect_desc": "我们已经掌握了各国重巡洋舰的所在地。重巡数量<=2",
+      "hard": 1,
+      "icon": 1,
+      "id": 22051,
+      "need_buff": [],
+      "score": 300,
+      "title": "重巡救援:J国",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 1,
+      "buy_condition": 962016,
+      "buy_desc": "通过E8的O点解锁",
+      "desc": "^CFFFFFFFF00000000可携带不超限制数^C2795FDFF00000000U国重巡",
+      "effect": {
+        "country": 4,
+        "shipType": 7,
+        "type": 204
+      },
+      "effect_desc": "我们已经掌握了各国重巡洋舰的所在地。重巡数量<=2",
+      "hard": 1,
+      "icon": 1,
+      "id": 22052,
+      "need_buff": [],
+      "score": 500,
+      "title": "重巡救援:U国",
+      "type": 1,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 0,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000全体回避不受影响",
+      "effect": {
+        "num": 10,
+        "num4": 5,
+        "shipType": 100,
+        "type": 201
+      },
+      "effect_desc": "经过了一段时间的训练，终于适应了这片海域的恶劣情况，闪避不受影响了。",
+      "hard": 1,
+      "icon": 0,
+      "id": 22053,
+      "need_buff": [],
+      "score": 50,
+      "title": "强化训练",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 0,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000全体装甲不受影响",
+      "effect": {
+        "num": 10,
+        "num4": 3,
+        "shipType": 100,
+        "type": 201
+      },
+      "effect_desc": "女灶神和夕张没日没夜加班工作，终于完成了舰装的修复工作，装甲将不受影响。",
+      "hard": 1,
+      "icon": 0,
+      "id": 22054,
+      "need_buff": [],
+      "score": 50,
+      "title": "舰装修复工作",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 0,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000全体索敌不受影响",
+      "effect": {
+        "num": 20,
+        "num4": 11,
+        "shipType": 100,
+        "type": 201
+      },
+      "effect_desc": "经过了极其危险的强行侦查，海面上的盲点都被探明，索敌将不受影响。",
+      "hard": 1,
+      "icon": 0,
+      "id": 22055,
+      "need_buff": [],
+      "score": 50,
+      "title": "强行侦查",
+      "type": 0,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 0,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000战列的火力不受影响",
+      "effect": {
+        "num": 20,
+        "num4": 2,
+        "shipType": 4,
+        "type": 203
+      },
+      "effect_desc": "在几次战斗后终于拥有了坚实的后备弹药，战列可以全力开火了。",
+      "hard": 1,
+      "icon": 3,
+      "id": 22056,
+      "need_buff": [],
+      "score": 50,
+      "title": "弹药补充:战列",
+      "type": 3,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 0,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000战巡的火力不受影响",
+      "effect": {
+        "num": 20,
+        "num4": 2,
+        "shipType": 6,
+        "type": 203
+      },
+      "effect_desc": "在几次战斗后终于拥有了坚实的后备弹药，战巡可以全力开火了。",
+      "hard": 1,
+      "icon": 3,
+      "id": 22057,
+      "need_buff": [],
+      "score": 50,
+      "title": "弹药补充:战巡",
+      "type": 3,
+      "unlock_id": [],
+      "unlock_type": 0
+    },
+    {
+      "buff_type": 0,
+      "buy_condition": 0,
+      "buy_desc": "0",
+      "desc": "^CFFFFFFFF00000000航战的火力不受影响",
+      "effect": {
+        "num": 20,
+        "num4": 2,
+        "shipType": 5,
+        "type": 203
+      },
+      "effect_desc": "在几次战斗后终于拥有了坚实的后备弹药，航战可以全力开火了。",
+      "hard": 1,
+      "icon": 3,
+      "id": 22058,
+      "need_buff": [],
+      "score": 50,
+      "title": "弹药补充:航战",
+      "type": 3,
+      "unlock_id": [],
+      "unlock_type": 0
+    }
+  ],
+  "sequence_num": 150,
+  "unique_id": {
+    "11001": 1,
+    "11002": 2,
+    "11003": 3,
+    "11004": 4,
+    "11005": 5,
+    "11006": 6,
+    "11007": 7,
+    "11008": 8,
+    "11009": 9,
+    "11010": 10,
+    "11011": 11,
+    "11012": 12,
+    "11013": 13,
+    "11014": 14,
+    "11015": 15,
+    "11016": 16,
+    "11017": 17,
+    "11018": 18,
+    "11019": 19,
+    "11020": 20,
+    "12001": 73,
+    "12002": 74,
+    "12003": 75,
+    "12004": 76,
+    "12005": 77,
+    "12006": 78,
+    "12007": 79,
+    "12008": 80,
+    "12009": 81,
+    "12010": 82,
+    "12011": 83,
+    "12012": 84,
+    "12013": 85,
+    "12014": 86,
+    "12015": 87,
+    "12016": 88,
+    "12017": 89,
+    "12018": 90,
+    "12019": 91,
+    "12020": 92,
+    "21001": 21,
+    "21002": 22,
+    "21003": 23,
+    "21004": 24,
+    "21005": 25,
+    "21006": 26,
+    "21007": 27,
+    "21008": 28,
+    "21009": 29,
+    "21010": 30,
+    "21011": 31,
+    "21012": 32,
+    "21013": 33,
+    "21014": 34,
+    "21015": 35,
+    "21016": 36,
+    "21017": 37,
+    "21018": 38,
+    "21019": 39,
+    "21020": 40,
+    "21021": 41,
+    "21022": 42,
+    "21023": 43,
+    "21024": 44,
+    "21025": 45,
+    "21026": 46,
+    "21027": 47,
+    "21028": 48,
+    "21029": 49,
+    "21030": 50,
+    "21031": 51,
+    "21032": 52,
+    "21033": 53,
+    "21034": 54,
+    "21035": 55,
+    "21036": 56,
+    "21037": 57,
+    "21038": 58,
+    "21039": 59,
+    "21040": 60,
+    "21041": 61,
+    "21042": 62,
+    "21043": 63,
+    "21044": 64,
+    "21045": 65,
+    "21046": 66,
+    "21047": 67,
+    "21048": 68,
+    "21049": 69,
+    "21050": 70,
+    "21051": 71,
+    "21052": 72,
+    "22001": 93,
+    "22002": 94,
+    "22003": 95,
+    "22004": 96,
+    "22005": 97,
+    "22006": 98,
+    "22007": 99,
+    "22008": 100,
+    "22009": 101,
+    "22010": 102,
+    "22011": 103,
+    "22012": 104,
+    "22013": 105,
+    "22014": 106,
+    "22015": 107,
+    "22016": 108,
+    "22017": 109,
+    "22018": 110,
+    "22019": 111,
+    "22020": 112,
+    "22021": 113,
+    "22022": 114,
+    "22023": 115,
+    "22024": 116,
+    "22025": 117,
+    "22026": 118,
+    "22027": 119,
+    "22028": 120,
+    "22029": 121,
+    "22030": 122,
+    "22031": 123,
+    "22032": 124,
+    "22033": 125,
+    "22034": 126,
+    "22035": 127,
+    "22036": 128,
+    "22037": 129,
+    "22038": 130,
+    "22039": 131,
+    "22040": 132,
+    "22041": 133,
+    "22042": 134,
+    "22043": 135,
+    "22044": 136,
+    "22045": 137,
+    "22046": 138,
+    "22047": 139,
+    "22048": 140,
+    "22049": 141,
+    "22050": 142,
+    "22051": 143,
+    "22052": 144,
+    "22053": 145,
+    "22054": 146,
+    "22055": 147,
+    "22056": 148,
+    "22057": 149,
+    "22058": 150
+  }
+}

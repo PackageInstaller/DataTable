@@ -1,0 +1,1672 @@
+{
+  "hinge_set": {
+    "105": 105,
+    "202": 202,
+    "305": 305,
+    "403": 403,
+    "504": 504,
+    "607": 607,
+    "702": 702,
+    "804": 804,
+    "902": 902,
+    "1001": 1001
+  },
+  "sequence": [
+    {
+      "arrow_offset": [
+        0,
+        0
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "指挥官，您刚刚到任，本想向您介绍一下港区内的功能设施，但我们刚接到报告显示在^C1C8BE5FF00000000[母港附近海域]^C696969FF00000000发现了小股的敌人。",
+      "direction": 0,
+      "frame_pos": [
+        -250,
+        -245
+      ],
+      "group": 1,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 1,
+      "is_angle": true,
+      "is_hinge": false,
+      "step": 100,
+      "step_name": "null"
+    },
+    {
+      "arrow_offset": [
+        0,
+        124
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "为了安全起见我们需要先携带舰船进行迎战，点击^C1C8BE5FF00000000[出征]^C696969FF00000000即可进入出征地图界面。",
+      "direction": 2,
+      "frame_pos": [
+        -250,
+        -245
+      ],
+      "group": 1,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 1,
+      "is_angle": false,
+      "is_hinge": false,
+      "step": 101,
+      "step_name": "btn_out"
+    },
+    {
+      "arrow_offset": [
+        0,
+        -47
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "请选择出征地图，进入出征准备界面。",
+      "direction": 1,
+      "frame_pos": [
+        -245,
+        -242
+      ],
+      "group": 1,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        -270
+      ],
+      "image_direction": 1,
+      "is_angle": false,
+      "is_hinge": false,
+      "step": 102,
+      "step_name": "map_click_btn"
+    },
+    {
+      "arrow_offset": [
+        0,
+        0
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "在出征准备界面可以选择出征的舰队，并且可以查看舰船的耐久和补给情况。",
+      "direction": 0,
+      "frame_pos": [
+        -245,
+        -244
+      ],
+      "group": 1,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 1,
+      "is_angle": true,
+      "is_hinge": false,
+      "step": 103,
+      "step_name": "null"
+    },
+    {
+      "arrow_offset": [
+        0,
+        124
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "准备好以后就出击吧，不同的战斗点会消耗不同比例的资源，指挥官需要多留意补给情况。现在点击^C1C8BE5FF00000000[开始出征]^C696969FF00000000。",
+      "direction": 2,
+      "frame_pos": [
+        -245,
+        -244
+      ],
+      "group": 1,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 1,
+      "is_angle": false,
+      "is_hinge": false,
+      "step": 104,
+      "step_name": "start_fight_btn"
+    },
+    {
+      "arrow_offset": [
+        0,
+        0
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "恭喜指挥官！我们取得了初次战斗的胜利，在结算界面您可以确认获得的经验，战斗获得B胜及以上战果时有概率获得新的舰船。",
+      "direction": 0,
+      "frame_pos": [
+        -235,
+        -245
+      ],
+      "group": 1,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 1,
+      "is_angle": true,
+      "is_hinge": true,
+      "step": 105,
+      "step_name": "null"
+    },
+    {
+      "arrow_offset": [
+        0,
+        91
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "虽然继续前进可以扩大战果，但在刚才的战斗中我们的舰船受损了，现在先返回港口进行修整吧！之后再一鼓作气干掉敌人。",
+      "direction": 2,
+      "frame_pos": [
+        -250,
+        -246
+      ],
+      "group": 1,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 1,
+      "is_angle": false,
+      "is_hinge": false,
+      "step": 106,
+      "step_name": "quit"
+    },
+    {
+      "arrow_offset": [
+        0,
+        0
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "虽然继续前进可以扩大战果，但在刚才的战斗中我们的舰船受损了，现在先返回港口进行修整吧！之后再一鼓作气干掉敌人。",
+      "direction": 2,
+      "frame_pos": [
+        -235,
+        -246
+      ],
+      "group": 1,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 1,
+      "is_angle": false,
+      "is_hinge": false,
+      "step": 107,
+      "step_name": "nightwarright"
+    },
+    {
+      "arrow_offset": [
+        0,
+        109
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "通过刚才的战斗，我们完成了任务，现在可以领取奖励了，详情请到任务面板中进行确认吧。",
+      "direction": 2,
+      "frame_pos": [
+        -250,
+        -247
+      ],
+      "group": 2,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 1,
+      "is_angle": false,
+      "is_hinge": false,
+      "step": 200,
+      "step_name": "btn_task"
+    },
+    {
+      "arrow_offset": [
+        0,
+        84
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "点击^C1C8BE5FF00000000[领取奖励]^C696969FF00000000即可领取任务奖励。",
+      "direction": 2,
+      "frame_pos": [
+        -15,
+        -90
+      ],
+      "group": 2,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 1,
+      "is_angle": false,
+      "is_hinge": false,
+      "step": 201,
+      "step_name": "finishbtn"
+    },
+    {
+      "arrow_offset": [
+        0,
+        60
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "点击^C1C8BE5FF00000000[确认]^C696969FF00000000，收取奖励。",
+      "direction": 2,
+      "frame_pos": [
+        -250,
+        -246
+      ],
+      "group": 2,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 1,
+      "is_angle": false,
+      "is_hinge": true,
+      "step": 202,
+      "step_name": "one"
+    },
+    {
+      "arrow_offset": [
+        0,
+        -125
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "如果接到新的任务就第一时间把它完成吧，现在我们返回港口，对舰队进行修整。",
+      "direction": 1,
+      "frame_pos": [
+        -15,
+        -90
+      ],
+      "group": 2,
+      "hollow_offset": [
+        5,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 1,
+      "is_angle": false,
+      "is_hinge": false,
+      "step": 203,
+      "step_name": "returnbtn"
+    },
+    {
+      "arrow_offset": [
+        0,
+        0
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "舰船受损和补给情况会影响舰船的战斗能力。如果队伍里的舰船大破了则需要特别注意，大破后的舰船继续前进可能会被击沉导致好感度下降。",
+      "direction": 0,
+      "frame_pos": [
+        -250,
+        -246
+      ],
+      "group": 3,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 1,
+      "is_angle": true,
+      "is_hinge": false,
+      "step": 300,
+      "step_name": "null"
+    },
+    {
+      "arrow_offset": [
+        0,
+        114
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "现在先对受损的舰船进行修理，修理可以在港区或船坞中进行。",
+      "direction": 2,
+      "frame_pos": [
+        -250,
+        -246
+      ],
+      "group": 3,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 1,
+      "is_angle": false,
+      "is_hinge": false,
+      "step": 301,
+      "step_name": "btn_ship"
+    },
+    {
+      "arrow_offset": [
+        0,
+        -118
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "点击右上角的^C1C8BE5FF00000000[修理舰船]^C696969FF00000000即可进入修理界面。",
+      "direction": 1,
+      "frame_pos": [
+        -150,
+        -127
+      ],
+      "group": 3,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 1,
+      "is_angle": false,
+      "is_hinge": false,
+      "step": 302,
+      "step_name": "repair_btn"
+    },
+    {
+      "arrow_offset": [
+        0,
+        -124
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "点击^C1C8BE5FF00000000[选择舰船]^C696969FF00000000即可选择要修理的舰娘。",
+      "direction": 1,
+      "frame_pos": [
+        -247,
+        -245
+      ],
+      "group": 3,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 1,
+      "is_angle": false,
+      "is_hinge": false,
+      "step": 303,
+      "step_name": "repair_btn"
+    },
+    {
+      "arrow_offset": [
+        0,
+        -85
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "点击舰船即可对其进行修理，要注意确认修理消耗的资材。",
+      "direction": 1,
+      "frame_pos": [
+        225,
+        -180
+      ],
+      "group": 3,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 2,
+      "is_angle": false,
+      "is_hinge": false,
+      "step": 304,
+      "step_name": "bathroom_parent_guide/icon_layer"
+    },
+    {
+      "arrow_offset": [
+        0,
+        -121
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "修理完后可以点击主界面按钮返回港口。",
+      "direction": 1,
+      "frame_pos": [
+        227,
+        -177
+      ],
+      "group": 3,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 2,
+      "is_angle": false,
+      "is_hinge": true,
+      "step": 305,
+      "step_name": "home_btn"
+    },
+    {
+      "arrow_offset": [
+        0,
+        114
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "之后就是对舰队进行补给了，补给可以在船坞或者出征准备界面进行。",
+      "direction": 2,
+      "frame_pos": [
+        -250,
+        -246
+      ],
+      "group": 4,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 1,
+      "is_angle": false,
+      "is_hinge": false,
+      "step": 400,
+      "step_name": "btn_ship"
+    },
+    {
+      "arrow_offset": [
+        0,
+        -115
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "每次出击前最好检查一下舰队的补给是否充足。舰船进入战斗携带的弹药量低于50%时，导弹以外的攻击每减少10%弹药量会降低20%的攻击威力。",
+      "direction": 1,
+      "frame_pos": [
+        -250,
+        -237
+      ],
+      "group": 4,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 1,
+      "is_angle": false,
+      "is_hinge": false,
+      "step": 401,
+      "step_name": "sbt3"
+    },
+    {
+      "arrow_offset": [
+        0,
+        78
+      ],
+      "circle_image": 1,
+      "delay": 700,
+      "desc": "点击携带资源不足的舰船来对其进行补给，点击^C1C8BE5FF00000000[全部补给]^C696969FF00000000即可对当前舰队的所有舰娘进行补给。",
+      "direction": 2,
+      "frame_pos": [
+        -250,
+        -245
+      ],
+      "group": 4,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 2,
+      "is_angle": true,
+      "is_hinge": false,
+      "step": 402,
+      "step_name": "supply/supply_btn"
+    },
+    {
+      "arrow_offset": [
+        0,
+        -132
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "补给完成，现在返回港口吧。",
+      "direction": 1,
+      "frame_pos": [
+        230,
+        -180
+      ],
+      "group": 4,
+      "hollow_offset": [
+        5,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 2,
+      "is_angle": false,
+      "is_hinge": true,
+      "step": 403,
+      "step_name": "return_btn"
+    },
+    {
+      "arrow_offset": [
+        0,
+        109
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "完成了^C1C8BE5FF00000000[修理]^C696969FF00000000和^C1C8BE5FF00000000[补给]^C696969FF00000000的任务，现在可以领取奖励，快去看看吧。",
+      "direction": 2,
+      "frame_pos": [
+        -250,
+        -247
+      ],
+      "group": 5,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 1,
+      "is_angle": false,
+      "is_hinge": false,
+      "step": 500,
+      "step_name": "btn_task"
+    },
+    {
+      "arrow_offset": [
+        0,
+        84
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "点击^C1C8BE5FF00000000[领取奖励]^C696969FF00000000，领取修理任务的奖励。",
+      "direction": 2,
+      "frame_pos": [
+        -15,
+        -90
+      ],
+      "group": 5,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 1,
+      "is_angle": false,
+      "is_hinge": false,
+      "step": 501,
+      "step_name": "task_parent_guide/finishbtn"
+    },
+    {
+      "arrow_offset": [
+        0,
+        60
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "点击^C1C8BE5FF00000000[确认]^C696969FF00000000。",
+      "direction": 2,
+      "frame_pos": [
+        -250,
+        -246
+      ],
+      "group": 5,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 1,
+      "is_angle": false,
+      "is_hinge": false,
+      "step": 502,
+      "step_name": "one"
+    },
+    {
+      "arrow_offset": [
+        0,
+        84
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "接下来领取补给任务的奖励。",
+      "direction": 2,
+      "frame_pos": [
+        -15,
+        -90
+      ],
+      "group": 5,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 1,
+      "is_angle": false,
+      "is_hinge": false,
+      "step": 503,
+      "step_name": "finishbtn"
+    },
+    {
+      "arrow_offset": [
+        0,
+        60
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "点击^C1C8BE5FF00000000[确认]^C696969FF00000000，收取任务奖励。",
+      "direction": 2,
+      "frame_pos": [
+        -250,
+        -246
+      ],
+      "group": 5,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 1,
+      "is_angle": false,
+      "is_hinge": true,
+      "step": 504,
+      "step_name": "one"
+    },
+    {
+      "arrow_offset": [
+        0,
+        -125
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "领取完成，现在返回港口。",
+      "direction": 1,
+      "frame_pos": [
+        -15,
+        -90
+      ],
+      "group": 5,
+      "hollow_offset": [
+        5,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 1,
+      "is_angle": false,
+      "is_hinge": false,
+      "step": 505,
+      "step_name": "returnbtn"
+    },
+    {
+      "arrow_offset": [
+        0,
+        110
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "获得新舰娘的途径除了出征以外还有^C1C8BE5FF00000000[建造]^C696969FF00000000，通过建造新的舰娘来快速壮大舰队的实力也是一个不错的选择。",
+      "direction": 2,
+      "frame_pos": [
+        230,
+        -168
+      ],
+      "group": 6,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 2,
+      "is_angle": false,
+      "is_hinge": false,
+      "step": 600,
+      "step_name": "menu_btn"
+    },
+    {
+      "arrow_offset": [
+        0,
+        -141
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "事不宜迟，现在就赶快试一下吧，点击^C1C8BE5FF00000000[建造]^C696969FF00000000。",
+      "direction": 1,
+      "frame_pos": [
+        237,
+        -190
+      ],
+      "group": 6,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 2,
+      "is_angle": false,
+      "is_hinge": false,
+      "step": 601,
+      "step_name": "build"
+    },
+    {
+      "arrow_offset": [
+        0,
+        -141
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "事不宜迟，现在就赶快试一下吧，点击^C1C8BE5FF00000000[建造]^C696969FF00000000。",
+      "direction": 1,
+      "frame_pos": [
+        237,
+        -190
+      ],
+      "group": 6,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 2,
+      "is_angle": false,
+      "is_hinge": false,
+      "step": 602,
+      "step_name": "item_btn_1"
+    },
+    {
+      "arrow_offset": [
+        0,
+        66
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "指挥官在达到10级以前是无法建造出非常稀有的舰船的。",
+      "direction": 2,
+      "frame_pos": [
+        -250,
+        -243
+      ],
+      "group": 6,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 1,
+      "is_angle": false,
+      "is_hinge": false,
+      "step": 603,
+      "step_name": "supplement_btn"
+    },
+    {
+      "arrow_offset": [
+        0,
+        69
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "点击^C1C8BE5FF00000000[建造]^C696969FF00000000，即可进入建造资源选择界面。",
+      "direction": 2,
+      "frame_pos": [
+        -250,
+        -243
+      ],
+      "group": 6,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 1,
+      "is_angle": false,
+      "is_hinge": false,
+      "step": 604,
+      "step_name": "dock_parent_guide/instant_build"
+    },
+    {
+      "arrow_offset": [
+        0,
+        0
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "建造一艘新的舰船需要消耗燃油、弹药、钢材、铝材以及一张舰船蓝图。",
+      "direction": 0,
+      "frame_pos": [
+        -245,
+        -240
+      ],
+      "group": 6,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 1,
+      "is_angle": true,
+      "is_hinge": false,
+      "step": 605,
+      "step_name": "null"
+    },
+    {
+      "arrow_offset": [
+        0,
+        77
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "依据资源投入的比例，会产生不同的建造结果，在右上角的^C1C8BE5FF00000000[建造日志]^C696969FF00000000中可以看到其他提督使用过的资源比例和建造结果，现在请点击^C1C8BE5FF00000000[建造]^C696969FF00000000按钮。",
+      "direction": 2,
+      "frame_pos": [
+        -245,
+        -240
+      ],
+      "group": 6,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 1,
+      "is_angle": false,
+      "is_hinge": false,
+      "step": 606,
+      "step_name": "build_btn"
+    },
+    {
+      "arrow_offset": [
+        0,
+        -126
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "不同的舰船建造的时间，由于现在急需扩充舰队战力，使用^C1C8BE5FF00000000[快速建造]^C696969FF00000000吧，通过快速建造可以立刻完成建造，获得新的舰娘。",
+      "direction": 1,
+      "frame_pos": [
+        -250,
+        -243
+      ],
+      "group": 6,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 1,
+      "is_angle": false,
+      "is_hinge": true,
+      "step": 607,
+      "step_name": "instant_build"
+    },
+    {
+      "arrow_offset": [
+        0,
+        0
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "进行快速建造需要消耗一个快速建造工具，点击^C1C8BE5FF00000000[确认]^C696969FF00000000。",
+      "direction": 0,
+      "frame_pos": [
+        -235,
+        -274
+      ],
+      "group": 6,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 2,
+      "is_angle": false,
+      "is_hinge": false,
+      "step": 60701,
+      "step_name": "null"
+    },
+    {
+      "arrow_offset": [
+        0,
+        0
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "建造完成，点击[建造完成]来领取舰船。",
+      "direction": 0,
+      "frame_pos": [
+        -235,
+        -275
+      ],
+      "group": 6,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 2,
+      "is_angle": false,
+      "is_hinge": false,
+      "step": 60702,
+      "step_name": "null"
+    },
+    {
+      "arrow_offset": [
+        0,
+        60
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "进行快速建造需要消耗一个快速建造工具，点击^C1C8BE5FF00000000[确认]^C696969FF00000000。",
+      "direction": 2,
+      "frame_pos": [
+        -250,
+        -243
+      ],
+      "group": 6,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 1,
+      "is_angle": false,
+      "is_hinge": false,
+      "step": 608,
+      "step_name": "confirm"
+    },
+    {
+      "arrow_offset": [
+        0,
+        -133
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "建造完成，点击^C1C8BE5FF00000000[建造完成]^C696969FF00000000来领取舰船。",
+      "direction": 1,
+      "frame_pos": [
+        -250,
+        -243
+      ],
+      "group": 6,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 1,
+      "is_angle": false,
+      "is_hinge": false,
+      "step": 609,
+      "step_name": "instant_build"
+    },
+    {
+      "arrow_offset": [
+        0,
+        0
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "可以领取^C1C8BE5FF00000000[建造]^C696969FF00000000任务的奖励。",
+      "direction": 2,
+      "frame_pos": [
+        -235,
+        -278
+      ],
+      "group": 6,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 2,
+      "is_angle": false,
+      "is_hinge": false,
+      "step": 60901,
+      "step_name": "null"
+    },
+    {
+      "arrow_offset": [
+        0,
+        0
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "null",
+      "direction": 1,
+      "frame_pos": [
+        -235,
+        -279
+      ],
+      "group": 6,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 2,
+      "is_angle": true,
+      "is_hinge": false,
+      "step": 60902,
+      "step_name": "null"
+    },
+    {
+      "arrow_offset": [
+        -4,
+        -155
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "现在完成了^C1C8BE5FF00000000[建造]^C696969FF00000000的任务，返回港口吧。",
+      "direction": 1,
+      "frame_pos": [
+        -250,
+        -243
+      ],
+      "group": 6,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 1,
+      "is_angle": false,
+      "is_hinge": false,
+      "step": 610,
+      "step_name": "close_btn"
+    },
+    {
+      "arrow_offset": [
+        0,
+        109
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "进入任务界面查看详情。",
+      "direction": 2,
+      "frame_pos": [
+        -250,
+        -247
+      ],
+      "group": 7,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 1,
+      "is_angle": false,
+      "is_hinge": false,
+      "step": 700,
+      "step_name": "btn_task"
+    },
+    {
+      "arrow_offset": [
+        0,
+        84
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "可以领取^C1C8BE5FF00000000[建造]^C696969FF00000000任务的奖励。",
+      "direction": 2,
+      "frame_pos": [
+        -15,
+        -90
+      ],
+      "group": 7,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 1,
+      "is_angle": false,
+      "is_hinge": false,
+      "step": 701,
+      "step_name": "finishbtn"
+    },
+    {
+      "arrow_offset": [
+        0,
+        60
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "点击^C1C8BE5FF00000000[确认]^C696969FF00000000，收取任务奖励。",
+      "direction": 2,
+      "frame_pos": [
+        -250,
+        -246
+      ],
+      "group": 7,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 1,
+      "is_angle": false,
+      "is_hinge": true,
+      "step": 702,
+      "step_name": "one"
+    },
+    {
+      "arrow_offset": [
+        0,
+        -125
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "返回港口，点击返回。",
+      "direction": 1,
+      "frame_pos": [
+        -15,
+        -90
+      ],
+      "group": 7,
+      "hollow_offset": [
+        5,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 1,
+      "is_angle": true,
+      "is_hinge": false,
+      "step": 703,
+      "step_name": "returnbtn"
+    },
+    {
+      "arrow_offset": [
+        0,
+        114
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "现在可以把刚刚获得的新舰娘编入到出击舰队里，点击^C1C8BE5FF00000000[船坞]^C696969FF00000000。",
+      "direction": 2,
+      "frame_pos": [
+        -250,
+        -246
+      ],
+      "group": 8,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 1,
+      "is_angle": false,
+      "is_hinge": false,
+      "step": 800,
+      "step_name": "btn_ship"
+    },
+    {
+      "arrow_offset": [
+        -16,
+        -136
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "在编队界面，点击舰队中空着的位置就可以选择要上阵的舰船。最多可以拥有4队出征编队，未解锁的出征编队可以通过完成任务解锁。",
+      "direction": 1,
+      "frame_pos": [
+        250,
+        -230
+      ],
+      "group": 8,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 2,
+      "is_angle": false,
+      "is_hinge": false,
+      "step": 801,
+      "step_name": "team_single_parent_guide/empty"
+    },
+    {
+      "arrow_offset": [
+        0,
+        0
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "每只舰队中最多可以上阵6艘舰船，不同类型的舰船具有各自的优势，编成合适的舰队可以更好的对付不同种类的敌人。",
+      "direction": 0,
+      "frame_pos": [
+        245,
+        -245
+      ],
+      "group": 8,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 2,
+      "is_angle": true,
+      "is_hinge": false,
+      "step": 802,
+      "step_name": "null"
+    },
+    {
+      "arrow_offset": [
+        23,
+        -262
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "点击舰船即可将其加入舰队中，现在就把之前获得的新舰船加入第一舰队吧。",
+      "direction": 1,
+      "frame_pos": [
+        245,
+        -245
+      ],
+      "group": 8,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 2,
+      "is_angle": false,
+      "is_hinge": false,
+      "step": 803,
+      "step_name": "team_parent_guide/all_layer"
+    },
+    {
+      "arrow_offset": [
+        0,
+        -142
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "编队完成，现在可以返回港口。",
+      "direction": 1,
+      "frame_pos": [
+        228,
+        -177
+      ],
+      "group": 8,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 2,
+      "is_angle": false,
+      "is_hinge": true,
+      "step": 804,
+      "step_name": "return_btn"
+    },
+    {
+      "arrow_offset": [
+        0,
+        124
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "舰队已经修整完毕，现在可以去清扫港口周围的敌人了，点击^C1C8BE5FF00000000[出征]^C696969FF00000000。",
+      "direction": 2,
+      "frame_pos": [
+        -250,
+        -245
+      ],
+      "group": 9,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 1,
+      "is_angle": false,
+      "is_hinge": false,
+      "step": 900,
+      "step_name": "btn_out"
+    },
+    {
+      "arrow_offset": [
+        0,
+        -47
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "选择^C1C8BE5FF00000000[母港附近海域]^C696969FF00000000地图，进行出击准备。",
+      "direction": 1,
+      "frame_pos": [
+        -245,
+        -242
+      ],
+      "group": 9,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        -270
+      ],
+      "image_direction": 1,
+      "is_angle": false,
+      "is_hinge": false,
+      "step": 901,
+      "step_name": "map_click_btn"
+    },
+    {
+      "arrow_offset": [
+        0,
+        90
+      ],
+      "circle_image": 1,
+      "delay": 300,
+      "desc": "现在可以看到我们的舰队状态是完好的，点击^C1C8BE5FF00000000[开始出征]^C696969FF00000000，进行出征。",
+      "direction": 2,
+      "frame_pos": [
+        -245,
+        -244
+      ],
+      "group": 9,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        6
+      ],
+      "image_direction": 1,
+      "is_angle": false,
+      "is_hinge": true,
+      "step": 902,
+      "step_name": "start_fight_btn"
+    },
+    {
+      "arrow_offset": [
+        0,
+        0
+      ],
+      "circle_image": 2,
+      "delay": 300,
+      "desc": "在战斗开始前如果索敌成功，能得知敌方舰队的部分信息，同时在战斗中会获得极大的增益。队伍成员超过3艘时还可以选择单纵阵以外的阵型进行战斗。",
+      "direction": 0,
+      "frame_pos": [
+        -134,
+        -205
+      ],
+      "group": 10,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 1,
+      "is_angle": true,
+      "is_hinge": false,
+      "step": 1000,
+      "step_name": "null"
+    },
+    {
+      "arrow_offset": [
+        0,
+        0
+      ],
+      "circle_image": 2,
+      "delay": 300,
+      "desc": "采用不同阵型具有不同的战斗效果，可以根据自己出征舰队以及敌方舰队的情况选择更合适的阵型。现在可以点击^C1C8BE5FF00000000[开始战斗]^C696969FF00000000。",
+      "direction": 0,
+      "frame_pos": [
+        -134,
+        -205
+      ],
+      "group": 10,
+      "hollow_offset": [
+        0,
+        0
+      ],
+      "hollow_pos": [
+        0,
+        0
+      ],
+      "image_direction": 1,
+      "is_angle": true,
+      "is_hinge": true,
+      "step": 1001,
+      "step_name": "null"
+    }
+  ],
+  "sequence_num": 57,
+  "unique_step": {
+    "100": 1,
+    "101": 2,
+    "102": 3,
+    "103": 4,
+    "104": 5,
+    "105": 6,
+    "106": 7,
+    "107": 8,
+    "200": 9,
+    "201": 10,
+    "202": 11,
+    "203": 12,
+    "300": 13,
+    "301": 14,
+    "302": 15,
+    "303": 16,
+    "304": 17,
+    "305": 18,
+    "400": 19,
+    "401": 20,
+    "402": 21,
+    "403": 22,
+    "500": 23,
+    "501": 24,
+    "502": 25,
+    "503": 26,
+    "504": 27,
+    "505": 28,
+    "600": 29,
+    "601": 30,
+    "602": 31,
+    "603": 32,
+    "604": 33,
+    "605": 34,
+    "606": 35,
+    "607": 36,
+    "608": 39,
+    "609": 40,
+    "610": 43,
+    "700": 44,
+    "701": 45,
+    "702": 46,
+    "703": 47,
+    "800": 48,
+    "801": 49,
+    "802": 50,
+    "803": 51,
+    "804": 52,
+    "900": 53,
+    "901": 54,
+    "902": 55,
+    "1000": 56,
+    "1001": 57,
+    "60701": 37,
+    "60702": 38,
+    "60901": 41,
+    "60902": 42
+  }
+}

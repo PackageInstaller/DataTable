@@ -1,0 +1,2837 @@
+{
+  "sequence": [
+    {
+      "buff_icon": 80003,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000全体^C00FFEAFFFFFFFF00火力+15,命中-10^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000全体^C2997FFFFFFFFFF00火力+15,命中-10^C454545FF00000000",
+      "effect": [
+        {
+          "num": 15,
+          "num4": 2,
+          "type": 7
+        },
+        {
+          "num": 10,
+          "num4": 17,
+          "type": 8
+        }
+      ],
+      "effect_desc": "舰队获得了最新的战斗情报，请谨慎选择。",
+      "id": 20000,
+      "pre_effect": [],
+      "side": 0,
+      "title": "机密情报:E",
+      "type": 4
+    },
+    {
+      "buff_icon": 80003,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000全体^C00FFEAFFFFFFFF00命中+15,装甲-10^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000全体^C2997FFFFFFFFFF00命中+15,装甲-10^C454545FF00000000",
+      "effect": [
+        {
+          "num": 15,
+          "num4": 17,
+          "type": 7
+        },
+        {
+          "num": 10,
+          "num4": 3,
+          "type": 8
+        }
+      ],
+      "effect_desc": "舰队获得了最新的战斗情报，请谨慎选择。",
+      "id": 20001,
+      "pre_effect": [],
+      "side": 0,
+      "title": "机密情报:E",
+      "type": 4
+    },
+    {
+      "buff_icon": 80003,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000全体^C00FFEAFFFFFFFF00装甲,回避+10,火力-10^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000全体^C2997FFFFFFFFFF00装甲,回避+10,火力-10^C454545FF00000000",
+      "effect": [
+        {
+          "num": 10,
+          "num4": 3,
+          "type": 7
+        },
+        {
+          "num": 10,
+          "num4": 5,
+          "type": 7
+        },
+        {
+          "num": 10,
+          "num4": 2,
+          "type": 8
+        }
+      ],
+      "effect_desc": "舰队获得了最新的战斗情报，请谨慎选择。",
+      "id": 20002,
+      "pre_effect": [],
+      "side": 0,
+      "title": "机密情报:E",
+      "type": 4
+    },
+    {
+      "buff_icon": 80001,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000U国舰船^C00FFEAFFFFFFFF00火力+15,装甲-10^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000U国舰船^C2997FFFFFFFFFF00火力+15,装甲-10^C454545FF00000000",
+      "effect": [
+        {
+          "country": [
+            4
+          ],
+          "num": 15,
+          "num4": 2,
+          "type": 19
+        },
+        {
+          "country": [
+            4
+          ],
+          "num": 10,
+          "num4": 3,
+          "type": 20
+        }
+      ],
+      "effect_desc": "舰队获得了最新的战斗情报，请谨慎选择。",
+      "id": 20003,
+      "pre_effect": [],
+      "side": 0,
+      "title": "机密情报:E",
+      "type": 4
+    },
+    {
+      "buff_icon": 80001,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000J国舰船^C00FFEAFFFFFFFF00火力+15,装甲-10^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000J国舰船^C2997FFFFFFFFFF00火力+15,装甲-10^C454545FF00000000",
+      "effect": [
+        {
+          "country": [
+            1
+          ],
+          "num": 15,
+          "num4": 2,
+          "type": 19
+        },
+        {
+          "country": [
+            1
+          ],
+          "num": 10,
+          "num4": 3,
+          "type": 20
+        }
+      ],
+      "effect_desc": "舰队获得了最新的战斗情报，请谨慎选择。",
+      "id": 20004,
+      "pre_effect": [],
+      "side": 0,
+      "title": "机密情报:E",
+      "type": 4
+    },
+    {
+      "buff_icon": 80003,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000全队^C00FFEAFFFFFFFF00航速+3,回避-5^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000全队^C2997FFFFFFFFFF00航速+3,回避-5^C454545FF00000000",
+      "effect": [
+        {
+          "num": 3,
+          "num4": 10,
+          "type": 7
+        },
+        {
+          "num": 5,
+          "num4": 5,
+          "type": 8
+        }
+      ],
+      "effect_desc": "这个特殊的情报能为我们的战斗提供很多便利。",
+      "id": 20005,
+      "pre_effect": [],
+      "side": 0,
+      "title": "特殊情报:G",
+      "type": 4
+    },
+    {
+      "buff_icon": 80003,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000全队^C00FFEAFFFFFFFF00索敌+5,火力-5^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000全队^C2997FFFFFFFFFF00索敌+5,火力-5^C454545FF00000000",
+      "effect": [
+        {
+          "num": 5,
+          "num4": 11,
+          "type": 7
+        },
+        {
+          "num": 5,
+          "num4": 2,
+          "type": 8
+        }
+      ],
+      "effect_desc": "这个特殊的情报能为我们的战斗提供很多便利。",
+      "id": 20006,
+      "pre_effect": [
+        {
+          "num": 5,
+          "num4": 11,
+          "type": 7
+        },
+        {
+          "num": 5,
+          "num4": 2,
+          "type": 8
+        }
+      ],
+      "side": 0,
+      "title": "特殊情报:G",
+      "type": 4
+    },
+    {
+      "buff_icon": 80003,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000全队^C00FFEAFFFFFFFF00回避+10,装甲-10^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000全队^C2997FFFFFFFFFF00回避+10,装甲-10^C454545FF00000000",
+      "effect": [
+        {
+          "num": 10,
+          "num4": 5,
+          "type": 7
+        },
+        {
+          "num": 10,
+          "num4": 3,
+          "type": 8
+        }
+      ],
+      "effect_desc": "这个特殊的情报能为我们的战斗提供很多便利。",
+      "id": 20007,
+      "pre_effect": [],
+      "side": 0,
+      "title": "特殊情报:G",
+      "type": 4
+    },
+    {
+      "buff_icon": 80003,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000全队^C00FFEAFFFFFFFF00对空+10,命中-5^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000全队^C2997FFFFFFFFFF00对空+10,命中-5^C454545FF00000000",
+      "effect": [
+        {
+          "num": 10,
+          "num4": 6,
+          "type": 7
+        },
+        {
+          "num": 5,
+          "num4": 17,
+          "type": 8
+        }
+      ],
+      "effect_desc": "这个特殊的情报能为我们的战斗提供很多便利。",
+      "id": 20008,
+      "pre_effect": [],
+      "side": 0,
+      "title": "特殊情报:G",
+      "type": 4
+    },
+    {
+      "buff_icon": 80003,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000全队^C00FFEAFFFFFFFF00装甲+10,索敌-5^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000全队^C2997FFFFFFFFFF00装甲+10,索敌-5^C454545FF00000000",
+      "effect": [
+        {
+          "num": 10,
+          "num4": 3,
+          "type": 7
+        },
+        {
+          "num": 5,
+          "num4": 11,
+          "type": 8
+        }
+      ],
+      "effect_desc": "这个特殊的情报能为我们的战斗提供很多便利。",
+      "id": 20009,
+      "pre_effect": [
+        {
+          "num": 10,
+          "num4": 3,
+          "type": 7
+        },
+        {
+          "num": 5,
+          "num4": 11,
+          "type": 8
+        }
+      ],
+      "side": 0,
+      "title": "特殊情报:G",
+      "type": 4
+    },
+    {
+      "buff_icon": 80003,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000战列^C00FFEAFFFFFFFF00火力+10,^CFFFFFFFF00000000航母^C00FFEAFFFFFFFF00火力-10^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000战列^C2997FFFFFFFFFF00火力+10,^C454545FF00000000航母^C2997FFFFFFFFFF00火力-10^C454545FF00000000",
+      "effect": [
+        {
+          "num": 10,
+          "num4": 2,
+          "shipType": [
+            4
+          ],
+          "type": 9
+        },
+        {
+          "num": 10,
+          "num4": 2,
+          "shipType": [
+            1
+          ],
+          "type": 10
+        }
+      ],
+      "effect_desc": "改装可能会有副作用，但这无足轻重。",
+      "id": 20010,
+      "pre_effect": [],
+      "side": 0,
+      "title": "改装计划:L",
+      "type": 4
+    },
+    {
+      "buff_icon": 80003,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000航母^C00FFEAFFFFFFFF00火力+10,^CFFFFFFFF00000000驱逐^C00FFEAFFFFFFFF00回避-10^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000航母^C2997FFFFFFFFFF00火力+10,^C454545FF00000000驱逐^C2997FFFFFFFFFF00回避-10^C454545FF00000000",
+      "effect": [
+        {
+          "num": 10,
+          "num4": 2,
+          "shipType": [
+            1
+          ],
+          "type": 9
+        },
+        {
+          "num": 10,
+          "num4": 5,
+          "shipType": [
+            12
+          ],
+          "type": 10
+        }
+      ],
+      "effect_desc": "改装可能会有副作用，但这无足轻重。",
+      "id": 20011,
+      "pre_effect": [],
+      "side": 0,
+      "title": "改装计划:L",
+      "type": 4
+    },
+    {
+      "buff_icon": 80003,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000驱逐^C00FFEAFFFFFFFF00回避+10,^CFFFFFFFF00000000驱逐^C00FFEAFFFFFFFF00对空+10^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000驱逐^C2997FFFFFFFFFF00回避+10,^C454545FF00000000驱逐^C2997FFFFFFFFFF00对空+10^C454545FF00000000",
+      "effect": [
+        {
+          "num": 10,
+          "num4": 5,
+          "shipType": [
+            12
+          ],
+          "type": 9
+        },
+        {
+          "num": 10,
+          "num4": 6,
+          "shipType": [
+            12
+          ],
+          "type": 9
+        }
+      ],
+      "effect_desc": "改装可能会有副作用，但这无足轻重。",
+      "id": 20012,
+      "pre_effect": [],
+      "side": 0,
+      "title": "改装计划:L",
+      "type": 4
+    },
+    {
+      "buff_icon": 80003,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000轻巡和重巡^C00FFEAFFFFFFFF00火力+10,命中+10^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000轻巡和重巡^C2997FFFFFFFFFF00火力+10,命中+10^C454545FF00000000",
+      "effect": [
+        {
+          "num": 10,
+          "num4": 2,
+          "shipType": [
+            10
+          ],
+          "type": 9
+        },
+        {
+          "num": 10,
+          "num4": 17,
+          "shipType": [
+            10
+          ],
+          "type": 9
+        },
+        {
+          "num": 10,
+          "num4": 2,
+          "shipType": [
+            7
+          ],
+          "type": 9
+        },
+        {
+          "num": 10,
+          "num4": 17,
+          "shipType": [
+            7
+          ],
+          "type": 9
+        }
+      ],
+      "effect_desc": "改装可能会有副作用，但这无足轻重。",
+      "id": 20013,
+      "pre_effect": [],
+      "side": 0,
+      "title": "改装计划:L",
+      "type": 4
+    },
+    {
+      "buff_icon": 80003,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000潜艇^C00FFEAFFFFFFFF00鱼雷+10.^CFFFFFFFF00000000航母,战列^C00FFEAFFFFFFFF00火力-5^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000潜艇^C2997FFFFFFFFFF00鱼雷+10.^C454545FF00000000航母,战列^C2997FFFFFFFFFF00火力-5^C454545FF00000000",
+      "effect": [
+        {
+          "num": 10,
+          "num4": 4,
+          "shipType": [
+            14
+          ],
+          "type": 9
+        },
+        {
+          "num": 5,
+          "num4": 2,
+          "shipType": [
+            1
+          ],
+          "type": 10
+        },
+        {
+          "num": 5,
+          "num4": 2,
+          "shipType": [
+            4
+          ],
+          "type": 10
+        }
+      ],
+      "effect_desc": "改装可能会有副作用，但这无足轻重。",
+      "id": 20014,
+      "pre_effect": [],
+      "side": 0,
+      "title": "改装计划:L",
+      "type": 4
+    },
+    {
+      "buff_icon": 80005,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000战列,战巡的^C00FFEAFFFFFFFF00火力-40,装甲-40^CFFFFFFFF00000000战斗^C00FFEAFFFFFFFF00S^CFFFFFFFF00000000胜以下无法前进（削弱条件：G,H点各击破一次并取得S胜及以上的战斗评级）",
+      "desc2": "^C454545FF00000000战列,战巡的^C2997FFFFFFFFFF00火力-40,装甲-40^C454545FF00000000战斗^C2997FFFFFFFFFF00S^C454545FF00000000胜以下无法前进（削弱条件：G,H点各击破一次并取得S胜及以上的战斗评级）",
+      "effect": [
+        {
+          "num": 40,
+          "num4": 2,
+          "shipType": [
+            4
+          ],
+          "type": 10
+        },
+        {
+          "num": 40,
+          "num4": 3,
+          "shipType": [
+            4
+          ],
+          "type": 10
+        },
+        {
+          "num": 40,
+          "num4": 2,
+          "shipType": [
+            6
+          ],
+          "type": 10
+        },
+        {
+          "num": 40,
+          "num4": 3,
+          "shipType": [
+            6
+          ],
+          "type": 10
+        }
+      ],
+      "effect_desc": "封锁战况",
+      "id": 20015,
+      "pre_effect": [],
+      "side": 0,
+      "title": "封锁战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 80005,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000战列,战巡的^C00FFEAFFFFFFFF00火力-10,装甲-10^CFFFFFFFF00000000战斗^C00FFEAFFFFFFFF00B^CFFFFFFFF00000000胜以下无法前进",
+      "desc2": "^C454545FF00000000战列,战巡的^C2997FFFFFFFFFF00火力-10,装甲-10^C454545FF00000000战斗^C2997FFFFFFFFFF00B^C454545FF00000000胜以下无法前进",
+      "effect": [
+        {
+          "num": 10,
+          "num4": 2,
+          "shipType": [
+            4
+          ],
+          "type": 10
+        },
+        {
+          "num": 10,
+          "num4": 3,
+          "shipType": [
+            4
+          ],
+          "type": 10
+        },
+        {
+          "num": 10,
+          "num4": 2,
+          "shipType": [
+            6
+          ],
+          "type": 10
+        },
+        {
+          "num": 10,
+          "num4": 3,
+          "shipType": [
+            6
+          ],
+          "type": 10
+        }
+      ],
+      "effect_desc": "封锁战况(削弱后)",
+      "id": 20016,
+      "pre_effect": [],
+      "side": 0,
+      "title": "封锁战况(削弱后)",
+      "type": 4
+    },
+    {
+      "buff_icon": 80003,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000全体^C00FFEAFFFFFFFF00火力-10,命中-10,闪避+15,装甲+15^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000全体^C2997FFFFFFFFFF00火力-10,命中-10,闪避+15,装甲+15^C454545FF00000000",
+      "effect": [
+        {
+          "num": 10,
+          "num4": 2,
+          "type": 8
+        },
+        {
+          "num": 10,
+          "num4": 17,
+          "type": 8
+        },
+        {
+          "num": 15,
+          "num4": 5,
+          "type": 7
+        },
+        {
+          "num": 15,
+          "num4": 3,
+          "type": 7
+        }
+      ],
+      "effect_desc": "小心前进，不要被打中了。",
+      "id": 20017,
+      "pre_effect": [],
+      "side": 0,
+      "title": "小心翼翼",
+      "type": 4
+    },
+    {
+      "buff_icon": 80003,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000全体^C00FFEAFFFFFFFF00航速-5,火力+5,命中+5^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000全体^C2997FFFFFFFFFF00航速-5,火力+5,命中+5^C454545FF00000000",
+      "effect": [
+        {
+          "num": 5,
+          "num4": 10,
+          "type": 8
+        },
+        {
+          "num": 5,
+          "num4": 2,
+          "type": 7
+        },
+        {
+          "num": 5,
+          "num4": 17,
+          "type": 7
+        }
+      ],
+      "effect_desc": "不要太快了，慢慢走，没那么急。",
+      "id": 20018,
+      "pre_effect": [],
+      "side": 0,
+      "title": "稳步前进",
+      "type": 4
+    },
+    {
+      "buff_icon": 80003,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000全体^C00FFEAFFFFFFFF00火力+15,闪避-15,装甲-15,对空-15^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000全体^C2997FFFFFFFFFF00火力+15,闪避-15,装甲-15,对空-15^C454545FF00000000",
+      "effect": [
+        {
+          "num": 15,
+          "num4": 2,
+          "type": 7
+        },
+        {
+          "num": 15,
+          "num4": 5,
+          "type": 8
+        },
+        {
+          "num": 15,
+          "num4": 3,
+          "type": 8
+        },
+        {
+          "num": 15,
+          "num4": 6,
+          "type": 8
+        }
+      ],
+      "effect_desc": "火力神教万岁！进攻就是最好的防守！",
+      "id": 20019,
+      "pre_effect": [],
+      "side": 0,
+      "title": "火力万岁",
+      "type": 4
+    },
+    {
+      "buff_icon": 80003,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000全体^C00FFEAFFFFFFFF00命中+20,闪避-10,装甲-10^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000全体^C2997FFFFFFFFFF00命中+20,闪避-10,装甲-10^C454545FF00000000",
+      "effect": [
+        {
+          "num": 20,
+          "num4": 17,
+          "type": 7
+        },
+        {
+          "num": 10,
+          "num4": 5,
+          "type": 8
+        },
+        {
+          "num": 10,
+          "num4": 3,
+          "type": 8
+        }
+      ],
+      "effect_desc": "好好瞄准，别miss了！",
+      "id": 20020,
+      "pre_effect": [],
+      "side": 0,
+      "title": "瞄准",
+      "type": 4
+    },
+    {
+      "buff_icon": 80003,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000全体^C00FFEAFFFFFFFF00闪避+20,命中-15,火力-10^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000全体^C2997FFFFFFFFFF00闪避+20,命中-15,火力-10^C454545FF00000000",
+      "effect": [
+        {
+          "num": 20,
+          "num4": 5,
+          "type": 7
+        },
+        {
+          "num": 15,
+          "num4": 17,
+          "type": 8
+        },
+        {
+          "num": 10,
+          "num4": 2,
+          "type": 8
+        }
+      ],
+      "effect_desc": "一定要小心，找到敌人再行动！",
+      "id": 20021,
+      "pre_effect": [],
+      "side": 0,
+      "title": "搜索阵型",
+      "type": 4
+    },
+    {
+      "buff_icon": 80005,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方^C00FFEAFFFFFFFF00重巡、轻巡^CFFFFFFFF00000000的攻击^C00FFEAFFFFFFFF00必定命中^CFFFFFFFF00000000；敌方^C00FFEAFFFFFFFF00驱逐^CFFFFFFFF00000000可以进行^C00FFEAFFFFFFFF00开幕雷击^CFFFFFFFF00000000；敌方在^C00FFEAFFFFFFFF00航空战^CFFFFFFFF00000000阶段，伤害提高^C00FFEAFFFFFFFF0050%^CFFFFFFFF00000000，受到伤害降低^C00FFEAFFFFFFFF0050%^CFFFFFFFF00000000。战斗^C00FFEAFFFFFFFF00S^CFFFFFFFF00000000胜以下无法前进。(削弱条件：K点击破一次并取得S胜及以上的战斗评级)",
+      "desc2": "^C454545FF00000000敌方^C2795FDFF00000000重巡、轻巡^C454545FF00000000的攻击^C2795FDFF00000000必定命中^C454545FF00000000；敌方^C2795FDFF00000000驱逐^C454545FF00000000可以进行^C2795FDFF00000000开幕雷击^C454545FF00000000；敌方在^C2795FDFF00000000航空战^C454545FF00000000阶段，伤害提高^C2795FDFF0000000050%^C454545FF00000000，受到伤害降低^C2795FDFF0000000050%^C454545FF00000000。战斗^C2795FDFF00000000S^C454545FF00000000胜以下无法前进。(削弱条件：K点击破一次并取得S胜及以上的战斗评级)",
+      "effect": [
+        {
+          "shipTypes": [
+            7,
+            10
+          ],
+          "type": 110
+        },
+        {
+          "num": 50,
+          "num5": 2,
+          "type": 106
+        },
+        {
+          "shipTypes": [
+            12
+          ],
+          "type": 109
+        },
+        {
+          "num": 50,
+          "num5": 2,
+          "type": 105
+        }
+      ],
+      "effect_desc": "封锁战况",
+      "id": 20022,
+      "pre_effect": [],
+      "side": 1,
+      "title": "封锁战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 80005,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方航母、轻母、驱逐的射程提高为^C00FFEAFFFFFFFF00长^CFFFFFFFF00000000；敌方^C00FFEAFFFFFFFF00航母、轻母、装母^CFFFFFFFF00000000可以参加^C00FFEAFFFFFFFF00夜战^CFFFFFFFF00000000；敌方在^C00FFEAFFFFFFFF00炮击战^CFFFFFFFF00000000阶段，伤害提高^C00FFEAFFFFFFFF0020%^CFFFFFFFF00000000，受到伤害降低^C00FFEAFFFFFFFF0030%^CFFFFFFFF00000000。战斗^C00FFEAFFFFFFFF00B^CFFFFFFFF00000000胜以下无法前进。",
+      "desc2": "^C454545FF00000000敌方航母、轻母、驱逐的射程提高为^C2795FDFF00000000长^C454545FF00000000；敌方^C2795FDFF00000000航母、轻母、装母^C454545FF00000000可以参加^C2795FDFF00000000夜战^C454545FF00000000；敌方在^C2795FDFF00000000炮击战^C454545FF00000000阶段，伤害提高^C2795FDFF0000000020%^C454545FF00000000，受到伤害降低^C2795FDFF0000000030%^C454545FF00000000。战斗^C2795FDFF00000000B^C454545FF00000000胜以下无法前进。",
+      "effect": [
+        {
+          "num": 3,
+          "shipTypes": [
+            1,
+            2,
+            12
+          ],
+          "type": 102
+        },
+        {
+          "num": 30,
+          "num5": 5,
+          "type": 106
+        },
+        {
+          "type": 107
+        },
+        {
+          "num": 20,
+          "num5": 5,
+          "type": 105
+        }
+      ],
+      "effect_desc": "封锁战况(削弱后)",
+      "id": 20023,
+      "pre_effect": [],
+      "side": 1,
+      "title": "封锁战况(削弱后)",
+      "type": 4
+    },
+    {
+      "buff_icon": 80003,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000战列^C00FFEAFFFFFFFF00火力+20,命中-10^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000战列^C2997FFFFFFFFFF00火力+20,命中-10^C454545FF00000000",
+      "effect": [
+        {
+          "num": 20,
+          "num4": 2,
+          "shipType": [
+            4
+          ],
+          "type": 9
+        },
+        {
+          "num": 10,
+          "num4": 17,
+          "shipType": [
+            4
+          ],
+          "type": 10
+        }
+      ],
+      "effect_desc": "为了适应海域作战进行了改装。",
+      "id": 20024,
+      "pre_effect": [],
+      "side": 0,
+      "title": "重火力改装（战列）",
+      "type": 4
+    },
+    {
+      "buff_icon": 80003,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000战巡^C00FFEAFFFFFFFF00火力+20,回避-10^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000战巡^C2997FFFFFFFFFF00火力+20,回避-10^C454545FF00000000",
+      "effect": [
+        {
+          "num": 20,
+          "num4": 2,
+          "shipType": [
+            6
+          ],
+          "type": 9
+        },
+        {
+          "num": 10,
+          "num4": 5,
+          "shipType": [
+            6
+          ],
+          "type": 10
+        }
+      ],
+      "effect_desc": "为了适应海域作战进行了改装。",
+      "id": 20025,
+      "pre_effect": [],
+      "side": 0,
+      "title": "重火力改装（战巡）",
+      "type": 4
+    },
+    {
+      "buff_icon": 80003,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000重巡^C00FFEAFFFFFFFF00火力+20,装甲-15^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000重巡^C2997FFFFFFFFFF00火力+20,装甲-15^C454545FF00000000",
+      "effect": [
+        {
+          "num": 20,
+          "num4": 2,
+          "shipType": [
+            7
+          ],
+          "type": 9
+        },
+        {
+          "num": 15,
+          "num4": 3,
+          "shipType": [
+            7
+          ],
+          "type": 10
+        }
+      ],
+      "effect_desc": "为了适应海域作战进行了改装。",
+      "id": 20026,
+      "pre_effect": [],
+      "side": 0,
+      "title": "重火力改装（重巡）",
+      "type": 4
+    },
+    {
+      "buff_icon": 80003,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000航母,轻母^C00FFEAFFFFFFFF00的火力+20,命中-10,装甲-10,闪避-10^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000航母,轻母^C2997FFFFFFFFFF00的火力+20,命中-10,装甲-10,闪避-10^C454545FF00000000",
+      "effect": [
+        {
+          "num": 20,
+          "num4": 2,
+          "shipType": [
+            1
+          ],
+          "type": 9
+        },
+        {
+          "num": 10,
+          "num4": 17,
+          "shipType": [
+            1
+          ],
+          "type": 10
+        },
+        {
+          "num": 10,
+          "num4": 3,
+          "shipType": [
+            1
+          ],
+          "type": 10
+        },
+        {
+          "num": 10,
+          "num4": 5,
+          "shipType": [
+            1
+          ],
+          "type": 10
+        },
+        {
+          "num": 20,
+          "num4": 2,
+          "shipType": [
+            2
+          ],
+          "type": 9
+        },
+        {
+          "num": 10,
+          "num4": 17,
+          "shipType": [
+            2
+          ],
+          "type": 10
+        },
+        {
+          "num": 10,
+          "num4": 3,
+          "shipType": [
+            2
+          ],
+          "type": 10
+        },
+        {
+          "num": 10,
+          "num4": 5,
+          "shipType": [
+            2
+          ],
+          "type": 10
+        }
+      ],
+      "effect_desc": "为了适应海域作战进行了改装。",
+      "id": 20027,
+      "pre_effect": [],
+      "side": 0,
+      "title": "超载",
+      "type": 4
+    },
+    {
+      "buff_icon": 80007,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方全体^C00FFEAFFFFFFFF00火力+20^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000敌方全体^C2795FDFF00000000火力+20^C454545FF00000000",
+      "effect": [
+        {
+          "num": 20,
+          "num4": 2,
+          "shipTypes": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            7,
+            10,
+            12,
+            14
+          ],
+          "type": 101
+        }
+      ],
+      "effect_desc": "可以用于提升难度，机理不明。",
+      "id": 20028,
+      "pre_effect": [],
+      "side": 1,
+      "title": "提升难度",
+      "type": 4
+    },
+    {
+      "buff_icon": 80003,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000主力舰^C00FFEAFFFFFFFF00火力-15,装甲+10,闪避+10^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000主力舰^C2997FFFFFFFFFF00火力-15,装甲+10,闪避+10^C454545FF00000000",
+      "effect": [
+        {
+          "guardType": [
+            1
+          ],
+          "num": 15,
+          "num4": 2,
+          "type": 10
+        },
+        {
+          "guardType": [
+            1
+          ],
+          "num": 10,
+          "num4": 3,
+          "type": 9
+        },
+        {
+          "guardType": [
+            1
+          ],
+          "num": 10,
+          "num4": 5,
+          "type": 9
+        }
+      ],
+      "effect_desc": "为了适应海域作战进行了改装。",
+      "id": 20029,
+      "pre_effect": [],
+      "side": 0,
+      "title": "主力舰防护强化",
+      "type": 4
+    },
+    {
+      "buff_icon": 80003,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000护卫舰^C00FFEAFFFFFFFF00火力+10,索敌+10,装甲-15,闪避-15^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000护卫舰^C2997FFFFFFFFFF00火力+10,索敌+10,装甲-15,闪避-15^C454545FF00000000",
+      "effect": [
+        {
+          "guardType": [
+            2
+          ],
+          "num": 10,
+          "num4": 2,
+          "type": 9
+        },
+        {
+          "guardType": [
+            2
+          ],
+          "num": 10,
+          "num4": 11,
+          "type": 9
+        },
+        {
+          "guardType": [
+            2
+          ],
+          "num": 15,
+          "num4": 5,
+          "type": 10
+        },
+        {
+          "guardType": [
+            2
+          ],
+          "num": 15,
+          "num4": 3,
+          "type": 10
+        }
+      ],
+      "effect_desc": "为了适应海域作战进行了改装。",
+      "id": 20030,
+      "pre_effect": [
+        {
+          "guardType": [
+            2
+          ],
+          "num": 10,
+          "num4": 2,
+          "type": 9
+        },
+        {
+          "guardType": [
+            2
+          ],
+          "num": 10,
+          "num4": 11,
+          "type": 9
+        },
+        {
+          "guardType": [
+            2
+          ],
+          "num": 15,
+          "num4": 5,
+          "type": 10
+        },
+        {
+          "guardType": [
+            2
+          ],
+          "num": 15,
+          "num4": 3,
+          "type": 10
+        }
+      ],
+      "side": 0,
+      "title": "护卫舰改装",
+      "type": 4
+    },
+    {
+      "buff_icon": 80003,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000小型船^C00FFEAFFFFFFFF00命中+20,索敌+10,火力-30,装甲-10^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000小型船^C2997FFFFFFFFFF00命中+20,索敌+10,火力-30,装甲-10^C454545FF00000000",
+      "effect": [
+        {
+          "num": 20,
+          "num4": 17,
+          "shipTon": [
+            1
+          ],
+          "type": 9
+        },
+        {
+          "num": 10,
+          "num4": 11,
+          "shipTon": [
+            1
+          ],
+          "type": 9
+        },
+        {
+          "num": 30,
+          "num4": 2,
+          "shipTon": [
+            1
+          ],
+          "type": 10
+        },
+        {
+          "num": 10,
+          "num4": 3,
+          "shipTon": [
+            1
+          ],
+          "type": 10
+        }
+      ],
+      "effect_desc": "为了适应海域作战进行了改装。",
+      "id": 20031,
+      "pre_effect": [
+        {
+          "num": 20,
+          "num4": 17,
+          "shipTon": [
+            1
+          ],
+          "type": 9
+        },
+        {
+          "num": 10,
+          "num4": 11,
+          "shipTon": [
+            1
+          ],
+          "type": 9
+        },
+        {
+          "num": 30,
+          "num4": 2,
+          "shipTon": [
+            1
+          ],
+          "type": 10
+        },
+        {
+          "num": 10,
+          "num4": 3,
+          "shipTon": [
+            1
+          ],
+          "type": 10
+        }
+      ],
+      "side": 0,
+      "title": "索敌优先",
+      "type": 4
+    },
+    {
+      "buff_icon": 80007,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方主力舰^C00FFEAFFFFFFFF00命中+10,火力+5^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000敌方主力舰^C2795FDFF00000000命中+10,火力+5^C454545FF00000000",
+      "effect": [
+        {
+          "num": 5,
+          "num4": 2,
+          "shipTypes": [
+            1,
+            3,
+            4,
+            5,
+            23,
+            6
+          ],
+          "type": 101
+        },
+        {
+          "num": 10,
+          "num4": 17,
+          "shipTypes": [
+            1,
+            3,
+            4,
+            5,
+            23,
+            6
+          ],
+          "type": 101
+        }
+      ],
+      "effect_desc": "可以用于提升难度，机理不明。",
+      "id": 20032,
+      "pre_effect": [],
+      "side": 1,
+      "title": "还不够强",
+      "type": 4
+    },
+    {
+      "buff_icon": 80007,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方护卫舰^C00FFEAFFFFFFFF00回避+10,装甲+10^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000敌方护卫舰^C2795FDFF00000000闪避+10,装甲+10^C454545FF00000000",
+      "effect": [
+        {
+          "num": 10,
+          "num4": 5,
+          "shipTypes": [
+            2,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            16,
+            24
+          ],
+          "type": 101
+        },
+        {
+          "num": 10,
+          "num4": 3,
+          "shipTypes": [
+            2,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            16,
+            24
+          ],
+          "type": 101
+        }
+      ],
+      "effect_desc": "可以用于提升难度，机理不明。",
+      "id": 20033,
+      "pre_effect": [],
+      "side": 1,
+      "title": "挑战自我",
+      "type": 4
+    },
+    {
+      "buff_icon": 80005,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C00FFEAFFFFFFFF0010%^CFFFFFFFF00000000的减伤。战斗^C00FFEAFFFFFFFF00S^CFFFFFFFF00000000胜以下无法前进。(削弱条件：K点击破一次并取得S胜及以上的战斗评级)",
+      "desc2": "^C454545FF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C2795FDFF0000000010%^C454545FF00000000的减伤。战斗^C2795FDFF00000000S^C454545FF00000000胜以下无法前进。(削弱条件：K点击破一次并取得S胜及以上的战斗评级)",
+      "effect": [
+        {
+          "num": 10,
+          "type": 111
+        }
+      ],
+      "effect_desc": "封锁战况",
+      "id": 20034,
+      "pre_effect": [],
+      "side": 1,
+      "title": "封锁战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 80005,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C00FFEAFFFFFFFF005%^CFFFFFFFF00000000的减伤。战斗^C00FFEAFFFFFFFF00B^CFFFFFFFF00000000胜以下无法前进。",
+      "desc2": "^C454545FF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C2795FDFF000000005%^C454545FF00000000的减伤。战斗^C2795FDFF00000000B^C454545FF00000000胜以下无法前进。",
+      "effect": [
+        {
+          "num": 5,
+          "type": 111
+        }
+      ],
+      "effect_desc": "封锁战况(削弱后)",
+      "id": 20035,
+      "pre_effect": [],
+      "side": 1,
+      "title": "封锁战况(削弱后)",
+      "type": 4
+    },
+    {
+      "buff_icon": 80005,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方舰队旗舰存活时，为所有非旗舰提供^C00FFEAFFFFFFFF0030%^CFFFFFFFF00000000的减伤；航母、轻母火力-40。战斗^C00FFEAFFFFFFFF00S^CFFFFFFFF00000000胜以下无法前进。(削弱条件：J点击破一次并取得S胜及以上的战斗评级)",
+      "desc2": "^C454545FF00000000敌方舰队旗舰存活时，为所有非旗舰提供^C2795FDFF0000000030%^C454545FF00000000的减伤；航母、轻母火力^C2795FDFF00000000-40^C454545FF00000000。战斗^C2795FDFF00000000S^C454545FF00000000胜以下无法前进。(削弱条件：J点击破一次并取得^C2795FDFF00000000S^C454545FF00000000胜及以上的战斗评级)",
+      "effect": [
+        {
+          "num": 30,
+          "type": 112
+        },
+        {
+          "num": 40,
+          "num4": 2,
+          "shipType": [
+            1,
+            2
+          ],
+          "type": 10
+        }
+      ],
+      "effect_desc": "封锁战况",
+      "id": 20036,
+      "pre_effect": [],
+      "side": 1,
+      "title": "封锁战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 80005,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方舰队旗舰存活时，为所有非旗舰提供^C00FFEAFFFFFFFF0010%^CFFFFFFFF00000000的减伤；航母、轻母装甲-10。战斗^C00FFEAFFFFFFFF00B^CFFFFFFFF00000000胜以下无法前进。",
+      "desc2": "^C454545FF00000000敌方舰队旗舰存活时，为所有非旗舰提供^C2795FDFF0000000010%^C454545FF00000000的减伤；航母、轻母装甲^C2795FDFF00000000-10^C454545FF00000000。战斗^C2795FDFF00000000B^C454545FF00000000胜以下无法前进。",
+      "effect": [
+        {
+          "num": 10,
+          "type": 112
+        },
+        {
+          "num": 10,
+          "num4": 3,
+          "shipType": [
+            1,
+            2
+          ],
+          "type": 10
+        }
+      ],
+      "effect_desc": "封锁战况(削弱后)",
+      "id": 20037,
+      "pre_effect": [],
+      "side": 1,
+      "title": "封锁战况(削弱后)",
+      "type": 4
+    },
+    {
+      "buff_icon": 80007,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方舰队^C00FFEAFFFFFFFF00受到驱逐舰^CFFFFFFFF00000000伤害降低^C00FFEAFFFFFFFF0050%",
+      "desc2": "^C454545FF00000000敌方舰队^C2795FDFF00000000受到驱逐舰^C454545FF00000000伤害降低^C2795FDFF0000000050%",
+      "effect": [
+        {
+          "num": 50,
+          "shipTypes": [
+            12
+          ],
+          "type": 104
+        }
+      ],
+      "effect_desc": "待定",
+      "id": 20040,
+      "pre_effect": [],
+      "side": 1,
+      "title": "防雷网",
+      "type": 4
+    },
+    {
+      "buff_icon": 80007,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方舰队在^C00FFEAFFFFFFFF00夜战^CFFFFFFFF00000000阶段，受到伤害降低^C00FFEAFFFFFFFF0050%",
+      "desc2": "^C454545FF00000000敌方舰队在^C2795FDFF00000000夜战^C454545FF00000000阶段，受到伤害降低^C2795FDFF0000000050%",
+      "effect": [
+        {
+          "num": 50,
+          "num5": 7,
+          "type": 106
+        }
+      ],
+      "effect_desc": "待定",
+      "id": 20041,
+      "pre_effect": [],
+      "side": 1,
+      "title": "夜间警备",
+      "type": 4
+    },
+    {
+      "buff_icon": 80007,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方舰队^C00FFEAFFFFFFFF00受到航母^CFFFFFFFF00000000伤害降低^C00FFEAFFFFFFFF0050%",
+      "desc2": "^C454545FF00000000敌方舰队^C2795FDFF00000000受到航母^C454545FF00000000伤害降低^C2795FDFF0000000050%",
+      "effect": [
+        {
+          "num": 50,
+          "shipTypes": [
+            1
+          ],
+          "type": 104
+        }
+      ],
+      "effect_desc": "待定",
+      "id": 20042,
+      "pre_effect": [],
+      "side": 1,
+      "title": "空域压制",
+      "type": 4
+    },
+    {
+      "buff_icon": 80007,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方舰队^C00FFEAFFFFFFFF00驱逐^CFFFFFFFF00000000可以进行^C00FFEAFFFFFFFF00开幕雷击",
+      "desc2": "^C454545FF00000000敌方舰队^C2795FDFF00000000驱逐^C454545FF00000000可以进行^C2795FDFF00000000开幕雷击",
+      "effect": [
+        {
+          "shipTypes": [
+            12
+          ],
+          "type": 109
+        }
+      ],
+      "effect_desc": "待定",
+      "id": 20043,
+      "pre_effect": [],
+      "side": 1,
+      "title": "水雷布置",
+      "type": 4
+    },
+    {
+      "buff_icon": 80007,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方舰队^C00FFEAFFFFFFFF00轻巡^CFFFFFFFF00000000可以进行^C00FFEAFFFFFFFF00开幕雷击",
+      "desc2": "^C454545FF00000000敌方舰队^C2795FDFF00000000轻巡^C454545FF00000000可以进行^C2795FDFF00000000开幕雷击",
+      "effect": [
+        {
+          "shipTypes": [
+            10
+          ],
+          "type": 109
+        }
+      ],
+      "effect_desc": "待定",
+      "id": 20044,
+      "pre_effect": [],
+      "side": 1,
+      "title": "雁形阵",
+      "type": 4
+    },
+    {
+      "buff_icon": 80007,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方舰队^C00FFEAFFFFFFFF00受到战列^CFFFFFFFF00000000伤害降低^C00FFEAFFFFFFFF0050%",
+      "desc2": "^C454545FF00000000敌方舰队^C2795FDFF00000000受到战列^C454545FF00000000伤害降低^C2795FDFF0000000050%",
+      "effect": [
+        {
+          "num": 50,
+          "shipTypes": [
+            4
+          ],
+          "type": 104
+        }
+      ],
+      "effect_desc": "待定",
+      "id": 20045,
+      "pre_effect": [],
+      "side": 1,
+      "title": "重点防御",
+      "type": 4
+    },
+    {
+      "buff_icon": 80007,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方战列的^C00FFEAFFFFFFFF00装甲+20^CFFFFFFFF00000000点",
+      "desc2": "^C454545FF00000000敌方战列的^C2795FDFF00000000装甲+20^C454545FF00000000点",
+      "effect": [
+        {
+          "num": 20,
+          "num4": 3,
+          "shipTypes": [
+            4
+          ],
+          "type": 101
+        }
+      ],
+      "effect_desc": "待定",
+      "id": 20046,
+      "pre_effect": [],
+      "side": 1,
+      "title": "全面防御",
+      "type": 4
+    },
+    {
+      "buff_icon": 80007,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方航母的^C00FFEAFFFFFFFF00装甲+20^CFFFFFFFF00000000点",
+      "desc2": "^C454545FF00000000敌方航母的^C2795FDFF00000000装甲+20^C454545FF00000000点",
+      "effect": [
+        {
+          "num": 20,
+          "num4": 3,
+          "shipTypes": [
+            1
+          ],
+          "type": 101
+        }
+      ],
+      "effect_desc": "待定",
+      "id": 20047,
+      "pre_effect": [],
+      "side": 1,
+      "title": "装甲航母",
+      "type": 4
+    },
+    {
+      "buff_icon": 80007,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方舰队^C00FFEAFFFFFFFF00对战列^CFFFFFFFF00000000伤害提高^C00FFEAFFFFFFFF0050%",
+      "desc2": "^C454545FF00000000敌方舰队^C2795FDFF00000000对战列^C454545FF00000000伤害提高^C2795FDFF0000000050%",
+      "effect": [
+        {
+          "num": 50,
+          "shipTypes": [
+            4
+          ],
+          "type": 103
+        }
+      ],
+      "effect_desc": "待定",
+      "id": 20048,
+      "pre_effect": [],
+      "side": 1,
+      "title": "集中火力",
+      "type": 4
+    },
+    {
+      "buff_icon": 80007,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方^C00FFEAFFFFFFFF00机场、航母、轻母、装母^CFFFFFFFF00000000中破、大破时^C00FFEAFFFFFFFF00仍可参加攻击",
+      "desc2": "^C454545FF00000000敌方^C2795FDFF00000000机场、航母、轻母、装母^C454545FF00000000中破、大破时^C2795FDFF00000000仍可参加攻击",
+      "effect": [
+        {
+          "type": 108
+        }
+      ],
+      "effect_desc": "待定",
+      "id": 20049,
+      "pre_effect": [],
+      "side": 1,
+      "title": "精英损管",
+      "type": 4
+    },
+    {
+      "buff_icon": 80007,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方^C00FFEAFFFFFFFF00航母、轻母、装母^CFFFFFFFF00000000可以参加^C00FFEAFFFFFFFF00夜战",
+      "desc2": "^C454545FF00000000敌方^C2795FDFF00000000航母、轻母、装母^C454545FF00000000可以参加^C2795FDFF00000000夜战",
+      "effect": [
+        {
+          "type": 107
+        }
+      ],
+      "effect_desc": "待定",
+      "id": 20050,
+      "pre_effect": [],
+      "side": 1,
+      "title": "探照灯",
+      "type": 4
+    },
+    {
+      "buff_icon": 80007,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方轻巡、重巡的射程提高为^C00FFEAFFFFFFFF00长",
+      "desc2": "^C454545FF00000000敌方轻巡、重巡的射程提高为^C2795FDFF00000000长",
+      "effect": [
+        {
+          "num": 3,
+          "shipTypes": [
+            7,
+            10
+          ],
+          "type": 102
+        }
+      ],
+      "effect_desc": "待定",
+      "id": 20051,
+      "pre_effect": [],
+      "side": 1,
+      "title": "新式武器",
+      "type": 4
+    },
+    {
+      "buff_icon": 80007,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方舰队在^C00FFEAFFFFFFFF00航空战^CFFFFFFFF00000000阶段，受到伤害降低^C00FFEAFFFFFFFF0050%",
+      "desc2": "^C454545FF00000000敌方舰队在^C2795FDFF00000000航空战^C454545FF00000000阶段，受到伤害降低^C2795FDFF0000000050%",
+      "effect": [
+        {
+          "num": 50,
+          "num5": 2,
+          "type": 106
+        }
+      ],
+      "effect_desc": "待定",
+      "id": 20052,
+      "pre_effect": [],
+      "side": 1,
+      "title": "对空警戒",
+      "type": 4
+    },
+    {
+      "buff_icon": 80007,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方舰队^C00FFEAFFFFFFFF00对航母^CFFFFFFFF00000000伤害提高^C00FFEAFFFFFFFF0050%",
+      "desc2": "^C454545FF00000000敌方舰队^C2795FDFF00000000对航母^C454545FF00000000伤害提高^C2795FDFF0000000050%",
+      "effect": [
+        {
+          "num": 50,
+          "shipTypes": [
+            1
+          ],
+          "type": 103
+        }
+      ],
+      "effect_desc": "待定",
+      "id": 20053,
+      "pre_effect": [],
+      "side": 1,
+      "title": "偷袭",
+      "type": 4
+    },
+    {
+      "buff_icon": 80007,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方舰队^C00FFEAFFFFFFFF00战列^CFFFFFFFF00000000的攻击^C00FFEAFFFFFFFF00必定命中",
+      "desc2": "^C454545FF00000000敌方舰队^C2795FDFF00000000战列^C454545FF00000000的攻击^C2795FDFF00000000必定命中",
+      "effect": [
+        {
+          "shipTypes": [
+            4
+          ],
+          "type": 110
+        }
+      ],
+      "effect_desc": "待定",
+      "id": 20054,
+      "pre_effect": [],
+      "side": 1,
+      "title": "高机动包围网",
+      "type": 4
+    },
+    {
+      "buff_icon": 80007,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方舰队^C00FFEAFFFFFFFF00航母^CFFFFFFFF00000000的攻击^C00FFEAFFFFFFFF00必定命中",
+      "desc2": "^C454545FF00000000敌方舰队^C2795FDFF00000000航母^C454545FF00000000的攻击^C2795FDFF00000000必定命中",
+      "effect": [
+        {
+          "shipTypes": [
+            1
+          ],
+          "type": 110
+        }
+      ],
+      "effect_desc": "待定",
+      "id": 20055,
+      "pre_effect": [],
+      "side": 1,
+      "title": "定位",
+      "type": 4
+    },
+    {
+      "buff_icon": 80003,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000全体^C00FFEAFFFFFFFF00火力+15,命中-10^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000全体^C2997FFFFFFFFFF00火力+15,命中-10^C454545FF00000000",
+      "effect": [
+        {
+          "num": 15,
+          "num4": 2,
+          "type": 7
+        },
+        {
+          "num": 10,
+          "num4": 17,
+          "type": 8
+        }
+      ],
+      "effect_desc": "重火力，不需要考虑命中率，打就对了。",
+      "id": 21001,
+      "pre_effect": [],
+      "side": 0,
+      "title": "重火力覆盖",
+      "type": 4
+    },
+    {
+      "buff_icon": 80003,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000全体^C00FFEAFFFFFFFF00命中+15,装甲-10^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000全体^C2997FFFFFFFFFF00命中+15,装甲-10^C454545FF00000000",
+      "effect": [
+        {
+          "num": 15,
+          "num4": 17,
+          "type": 7
+        },
+        {
+          "num": 10,
+          "num4": 3,
+          "type": 8
+        }
+      ],
+      "effect_desc": "虽然这个改装会降低装甲，但进攻就是最好的防御。",
+      "id": 21002,
+      "pre_effect": [],
+      "side": 0,
+      "title": "私下改装",
+      "type": 4
+    },
+    {
+      "buff_icon": 80003,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000全体^C00FFEAFFFFFFFF00装甲+15,闪避-10^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000全体^C2997FFFFFFFFFF00装甲+15,闪避-10^C454545FF00000000",
+      "effect": [
+        {
+          "num": 15,
+          "num4": 3,
+          "type": 7
+        },
+        {
+          "num": 10,
+          "num4": 5,
+          "type": 8
+        }
+      ],
+      "effect_desc": "有点重，各方面反应都会变得迟钝，但是更耐揍了。",
+      "id": 21003,
+      "pre_effect": [],
+      "side": 0,
+      "title": "加重改装",
+      "type": 4
+    },
+    {
+      "buff_icon": 80003,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000全体^C00FFEAFFFFFFFF00闪避+15,火力-10^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000全体^C2997FFFFFFFFFF00闪避+15,火力-10^C454545FF00000000",
+      "effect": [
+        {
+          "num": 15,
+          "num4": 5,
+          "type": 7
+        },
+        {
+          "num": 10,
+          "num4": 2,
+          "type": 8
+        }
+      ],
+      "effect_desc": "撤掉了不必要的火力零件，这样就不会被打中了。",
+      "id": 21004,
+      "pre_effect": [],
+      "side": 0,
+      "title": "轻量化改装",
+      "type": 4
+    },
+    {
+      "buff_icon": 80003,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000全体^C00FFEAFFFFFFFF00火力和装甲+10,闪避和命中-10^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000全体^C2997FFFFFFFFFF00火力和装甲+10,闪避和命中-10^C454545FF00000000",
+      "effect": [
+        {
+          "num": 10,
+          "num4": 2,
+          "type": 7
+        },
+        {
+          "num": 10,
+          "num4": 3,
+          "type": 7
+        },
+        {
+          "num": 10,
+          "num4": 5,
+          "type": 8
+        },
+        {
+          "num": 10,
+          "num4": 17,
+          "type": 8
+        }
+      ],
+      "effect_desc": "闪避和命中都是玄学，火力装甲才是王道。",
+      "id": 21005,
+      "pre_effect": [],
+      "side": 0,
+      "title": "平衡性改装",
+      "type": 4
+    },
+    {
+      "buff_icon": 80003,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000战列^C00FFEAFFFFFFFF00装甲+20,火力-20^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000战列^C2997FFFFFFFFFF00装甲+20,火力-20^C454545FF00000000",
+      "effect": [
+        {
+          "num": 20,
+          "num4": 3,
+          "shipType": [
+            4
+          ],
+          "type": 9
+        },
+        {
+          "num": 20,
+          "num4": 2,
+          "shipType": [
+            4
+          ],
+          "type": 10
+        }
+      ],
+      "effect_desc": "全新的海域，不可贸然行动，攻击能力大幅下降。",
+      "id": 21006,
+      "pre_effect": [],
+      "side": 0,
+      "title": "畏首畏尾",
+      "type": 4
+    },
+    {
+      "buff_icon": 80003,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000战巡^C00FFEAFFFFFFFF00火力+20.闪避-20^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000战巡^C2997FFFFFFFFFF00火力+20.闪避-20^C454545FF00000000",
+      "effect": [
+        {
+          "num": 20,
+          "num4": 2,
+          "shipType": [
+            6
+          ],
+          "type": 9
+        },
+        {
+          "num": 20,
+          "num4": 5,
+          "shipType": [
+            6
+          ],
+          "type": 10
+        }
+      ],
+      "effect_desc": "穿插作战，突入奇袭，别管那么多，冲锋！",
+      "id": 21007,
+      "pre_effect": [],
+      "side": 0,
+      "title": "莽就对了",
+      "type": 4
+    },
+    {
+      "buff_icon": 80003,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000航母^C00FFEAFFFFFFFF00暴击率+10%,闪避-20^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000航母^C2997FFFFFFFFFF00暴击率+10%,闪避-20^C454545FF00000000",
+      "effect": [
+        {
+          "num": 10,
+          "num4": 16,
+          "shipType": [
+            1
+          ],
+          "type": 9
+        },
+        {
+          "num": 20,
+          "num4": 5,
+          "shipType": [
+            1
+          ],
+          "type": 10
+        }
+      ],
+      "effect_desc": "为了精准打击敌人，对自身所处的位置丝毫没有感觉。",
+      "id": 21008,
+      "pre_effect": [],
+      "side": 0,
+      "title": "精准打击",
+      "type": 4
+    },
+    {
+      "buff_icon": 80003,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000小型船^C00FFEAFFFFFFFF00装甲+20,命中-20^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000小型船^C2997FFFFFFFFFF00装甲+20,命中-20^C454545FF00000000",
+      "effect": [
+        {
+          "num": 20,
+          "num4": 3,
+          "shipTon": [
+            1
+          ],
+          "type": 9
+        },
+        {
+          "num": 20,
+          "num4": 17,
+          "shipTon": [
+            1
+          ],
+          "type": 10
+        }
+      ],
+      "effect_desc": "舍本逐末的改装，让小型船失去了自己的灵动性，但也许会有奇效吧。",
+      "id": 21009,
+      "pre_effect": [],
+      "side": 0,
+      "title": "轻装甲",
+      "type": 4
+    },
+    {
+      "buff_icon": 80003,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000护卫舰^C00FFEAFFFFFFFF00闪避+20,装甲-20^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000护卫舰^C2997FFFFFFFFFF00闪避+20,装甲-20^C454545FF00000000",
+      "effect": [
+        {
+          "guardType": [
+            2
+          ],
+          "num": 20,
+          "num4": 5,
+          "type": 9
+        },
+        {
+          "guardType": [
+            2
+          ],
+          "num": 20,
+          "num4": 3,
+          "type": 10
+        }
+      ],
+      "effect_desc": "如此灵活的护卫……意思是躲开攻击让主力舰承担？",
+      "id": 21010,
+      "pre_effect": [],
+      "side": 0,
+      "title": "灵活的护卫",
+      "type": 4
+    },
+    {
+      "buff_icon": 80005,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C00FFEAFFFFFFFF0010%^CFFFFFFFF00000000的减伤。战斗^C00FFEAFFFFFFFF00B^CFFFFFFFF00000000胜以下无法前进。(削弱条件：F点击破一次并取得S胜及以上的战斗评级)",
+      "desc2": "^C454545FF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C2795FDFF0000000010%^C454545FF00000000的减伤。战斗^C2795FDFF00000000B^C454545FF00000000胜以下无法前进。(削弱条件：F点击破一次并取得S胜及以上的战斗评级)",
+      "effect": [
+        {
+          "num": 10,
+          "type": 111
+        }
+      ],
+      "effect_desc": "封锁战况",
+      "id": 21011,
+      "pre_effect": [],
+      "side": 1,
+      "title": "封锁战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 80005,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C00FFEAFFFFFFFF0010%^CFFFFFFFF00000000的减伤。战斗^C00FFEAFFFFFFFF00B^CFFFFFFFF00000000胜以下无法前进。(削弱条件：L点击破一次并取得S胜及以上的战斗评级)",
+      "desc2": "^C454545FF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C2795FDFF0000000010%^C454545FF00000000的减伤。战斗^C2795FDFF00000000B^C454545FF00000000胜以下无法前进。(削弱条件：L点击破一次并取得S胜及以上的战斗评级)",
+      "effect": [
+        {
+          "num": 10,
+          "type": 111
+        }
+      ],
+      "effect_desc": "封锁战况",
+      "id": 21012,
+      "pre_effect": [],
+      "side": 1,
+      "title": "封锁战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 80005,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C00FFEAFFFFFFFF0010%^CFFFFFFFF00000000的减伤。战斗^C00FFEAFFFFFFFF00B^CFFFFFFFF00000000胜以下无法前进。(削弱条件：H点击破一次并取得S胜及以上的战斗评级)",
+      "desc2": "^C454545FF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C2795FDFF0000000010%^C454545FF00000000的减伤。战斗^C2795FDFF00000000B^C454545FF00000000胜以下无法前进。(削弱条件：H点击破一次并取得S胜及以上的战斗评级)",
+      "effect": [
+        {
+          "num": 10,
+          "type": 111
+        }
+      ],
+      "effect_desc": "封锁战况",
+      "id": 21013,
+      "pre_effect": [],
+      "side": 1,
+      "title": "封锁战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 80005,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C00FFEAFFFFFFFF0010%^CFFFFFFFF00000000的减伤。战斗^C00FFEAFFFFFFFF00A^CFFFFFFFF00000000胜以下无法前进。(削弱条件：I点击破一次并取得S胜及以上的战斗评级)",
+      "desc2": "^C454545FF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C2795FDFF0000000010%^C454545FF00000000的减伤。战斗^C2795FDFF00000000A^C454545FF00000000胜以下无法前进。(削弱条件：I点击破一次并取得S胜及以上的战斗评级)",
+      "effect": [
+        {
+          "num": 10,
+          "type": 111
+        }
+      ],
+      "effect_desc": "封锁战况",
+      "id": 21014,
+      "pre_effect": [],
+      "side": 1,
+      "title": "封锁战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 80005,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C00FFEAFFFFFFFF0010%^CFFFFFFFF00000000的减伤。战斗^C00FFEAFFFFFFFF00A^CFFFFFFFF00000000胜以下无法前进。(削弱条件：F点击破一次并取得S胜及以上的战斗评级)",
+      "desc2": "^C454545FF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C2795FDFF0000000010%^C454545FF00000000的减伤。战斗^C2795FDFF00000000A^C454545FF00000000胜以下无法前进。(削弱条件：F点击破一次并取得S胜及以上的战斗评级)",
+      "effect": [
+        {
+          "num": 10,
+          "type": 111
+        }
+      ],
+      "effect_desc": "封锁战况",
+      "id": 21015,
+      "pre_effect": [],
+      "side": 1,
+      "title": "封锁战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 80003,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方主力舰^C00FFEAFFFFFFFF00火力+15^CFFFFFFFF00000000、护卫舰^C00FFEAFFFFFFFF00暴击率+10%^CFFFFFFFF00000000、大型船^C00FFEAFFFFFFFF00装甲+15^CFFFFFFFF00000000、中型船^C00FFEAFFFFFFFF00命中+15^CFFFFFFFF00000000、小型船^C00FFEAFFFFFFFF00回避+15^CFFFFFFFF00000000。",
+      "desc2": "^C454545FF00000000我方主力舰^C2997FFFFFFFFFF00火力+15^C454545FF00000000、护卫舰^C2997FFFFFFFFFF00暴击率+10%^C454545FF00000000、大型船^C2997FFFFFFFFFF00装甲+15^C454545FF00000000、中型船^C2997FFFFFFFFFF00命中+15^C454545FF00000000、小型船^C2997FFFFFFFFFF00闪避+15^C454545FF00000000。",
+      "effect": [
+        {
+          "guardType": [
+            1
+          ],
+          "num": 15,
+          "num4": 2,
+          "type": 9
+        },
+        {
+          "guardType": [
+            2
+          ],
+          "num": 10,
+          "num4": 16,
+          "type": 9
+        },
+        {
+          "num": 15,
+          "num4": 3,
+          "shipTon": [
+            3
+          ],
+          "type": 9
+        },
+        {
+          "num": 15,
+          "num4": 17,
+          "shipTon": [
+            2
+          ],
+          "type": 9
+        },
+        {
+          "num": 15,
+          "num4": 5,
+          "shipTon": [
+            1
+          ],
+          "type": 9
+        }
+      ],
+      "effect_desc": "封锁战况(艾拉的支援)",
+      "id": 21016,
+      "pre_effect": [],
+      "side": 0,
+      "title": "封锁战况(艾拉的支援)",
+      "type": 4
+    },
+    {
+      "buff_icon": 80005,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C00FFEAFFFFFFFF0010%^CFFFFFFFF00000000的减伤。战斗^C00FFEAFFFFFFFF00B^CFFFFFFFF00000000胜以下无法前进。(削弱条件：A点击破一次并取得S胜及以上的战斗评级)",
+      "desc2": "^C454545FF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C2795FDFF0000000010%^C454545FF00000000的减伤。战斗^C2795FDFF00000000B^C454545FF00000000胜以下无法前进。(削弱条件：A点击破一次并取得S胜及以上的战斗评级)",
+      "effect": [
+        {
+          "num": 10,
+          "type": 111
+        }
+      ],
+      "effect_desc": "封锁战况",
+      "id": 21017,
+      "pre_effect": [],
+      "side": 1,
+      "title": "封锁战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 80005,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C00FFEAFFFFFFFF0010%^CFFFFFFFF00000000的减伤。战斗^C00FFEAFFFFFFFF00B^CFFFFFFFF00000000胜以下无法前进。(削弱条件：A点击破一次并取得S胜及以上的战斗评级)",
+      "desc2": "^C454545FF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C2795FDFF0000000010%^C454545FF00000000的减伤。战斗^C2795FDFF00000000B^C454545FF00000000胜以下无法前进。(削弱条件：A点击破一次并取得S胜及以上的战斗评级)",
+      "effect": [
+        {
+          "num": 10,
+          "type": 111
+        }
+      ],
+      "effect_desc": "封锁战况",
+      "id": 21018,
+      "pre_effect": [],
+      "side": 1,
+      "title": "封锁战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 80005,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C00FFEAFFFFFFFF0010%^CFFFFFFFF00000000的减伤。战斗^C00FFEAFFFFFFFF00B^CFFFFFFFF00000000胜以下无法前进。(削弱条件：A点击破一次并取得S胜及以上的战斗评级)",
+      "desc2": "^C454545FF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C2795FDFF0000000010%^C454545FF00000000的减伤。战斗^C2795FDFF00000000B^C454545FF00000000胜以下无法前进。(削弱条件：A点击破一次并取得S胜及以上的战斗评级)",
+      "effect": [
+        {
+          "num": 10,
+          "type": 111
+        }
+      ],
+      "effect_desc": "封锁战况",
+      "id": 21019,
+      "pre_effect": [],
+      "side": 1,
+      "title": "封锁战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 80005,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C00FFEAFFFFFFFF0010%^CFFFFFFFF00000000的减伤。战斗^C00FFEAFFFFFFFF00B^CFFFFFFFF00000000胜以下无法前进。(削弱条件：A点击破一次并取得S胜及以上的战斗评级)",
+      "desc2": "^C454545FF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C2795FDFF0000000010%^C454545FF00000000的减伤。战斗^C2795FDFF00000000B^C454545FF00000000胜以下无法前进。(削弱条件：A点击破一次并取得S胜及以上的战斗评级)",
+      "effect": [
+        {
+          "num": 10,
+          "type": 111
+        }
+      ],
+      "effect_desc": "封锁战况",
+      "id": 21020,
+      "pre_effect": [],
+      "side": 1,
+      "title": "封锁战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 80005,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C00FFEAFFFFFFFF0010%^CFFFFFFFF00000000的减伤。战斗^C00FFEAFFFFFFFF00A^CFFFFFFFF00000000胜以下无法前进。(削弱条件：H点击破一次并取得S胜及以上的战斗评级)",
+      "desc2": "^C454545FF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C2795FDFF0000000010%^C454545FF00000000的减伤。战斗^C2795FDFF00000000A^C454545FF00000000胜以下无法前进。(削弱条件：H点击破一次并取得S胜及以上的战斗评级)",
+      "effect": [
+        {
+          "num": 10,
+          "type": 111
+        }
+      ],
+      "effect_desc": "封锁战况",
+      "id": 21021,
+      "pre_effect": [],
+      "side": 1,
+      "title": "封锁战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 80005,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C00FFEAFFFFFFFF0010%^CFFFFFFFF00000000的减伤。战斗^C00FFEAFFFFFFFF00A^CFFFFFFFF00000000胜以下无法前进。(削弱条件：G点击破一次并取得S胜及以上的战斗评级)",
+      "desc2": "^C454545FF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C2795FDFF0000000010%^C454545FF00000000的减伤。战斗^C2795FDFF00000000A^C454545FF00000000胜以下无法前进。(削弱条件：G点击破一次并取得S胜及以上的战斗评级)",
+      "effect": [
+        {
+          "num": 10,
+          "type": 111
+        }
+      ],
+      "effect_desc": "封锁战况",
+      "id": 21022,
+      "pre_effect": [],
+      "side": 1,
+      "title": "封锁战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 80005,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C00FFEAFFFFFFFF0010%^CFFFFFFFF00000000的减伤。战斗^C00FFEAFFFFFFFF00B^CFFFFFFFF00000000胜以下无法前进。(削弱条件：E点击破一次并取得S胜及以上的战斗评级)",
+      "desc2": "^C454545FF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C2795FDFF0000000010%^C454545FF00000000的减伤。战斗^C2795FDFF00000000B^C454545FF00000000胜以下无法前进。(削弱条件：E点击破一次并取得S胜及以上的战斗评级)",
+      "effect": [
+        {
+          "num": 10,
+          "type": 111
+        }
+      ],
+      "effect_desc": "封锁战况",
+      "id": 21023,
+      "pre_effect": [],
+      "side": 1,
+      "title": "封锁战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 80005,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C00FFEAFFFFFFFF0010%^CFFFFFFFF00000000的减伤。战斗^C00FFEAFFFFFFFF00B^CFFFFFFFF00000000胜以下无法前进。(削弱条件：J点击破一次并取得S胜及以上的战斗评级)",
+      "desc2": "^C454545FF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C2795FDFF0000000010%^C454545FF00000000的减伤。战斗^C2795FDFF00000000B^C454545FF00000000胜以下无法前进。(削弱条件：J点击破一次并取得S胜及以上的战斗评级)",
+      "effect": [
+        {
+          "num": 10,
+          "type": 111
+        }
+      ],
+      "effect_desc": "封锁战况",
+      "id": 21024,
+      "pre_effect": [],
+      "side": 1,
+      "title": "封锁战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 80005,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C00FFEAFFFFFFFF0010%^CFFFFFFFF00000000的减伤。战斗^C00FFEAFFFFFFFF00B^CFFFFFFFF00000000胜以下无法前进。(削弱条件：H点击破一次并取得S胜及以上的战斗评级)",
+      "desc2": "^C454545FF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C2795FDFF0000000010%^C454545FF00000000的减伤。战斗^C2795FDFF00000000B^C454545FF00000000胜以下无法前进。(削弱条件：H点击破一次并取得S胜及以上的战斗评级)",
+      "effect": [
+        {
+          "num": 10,
+          "type": 111
+        }
+      ],
+      "effect_desc": "封锁战况",
+      "id": 21025,
+      "pre_effect": [],
+      "side": 1,
+      "title": "封锁战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 80005,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C00FFEAFFFFFFFF0010%^CFFFFFFFF00000000的减伤。战斗^C00FFEAFFFFFFFF00A^CFFFFFFFF00000000胜以下无法前进。(削弱条件：F点击破一次并取得S胜及以上的战斗评级)",
+      "desc2": "^C454545FF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C2795FDFF0000000010%^C454545FF00000000的减伤。战斗^C2795FDFF00000000A^C454545FF00000000胜以下无法前进。(削弱条件：F点击破一次并取得S胜及以上的战斗评级)",
+      "effect": [
+        {
+          "num": 10,
+          "type": 111
+        }
+      ],
+      "effect_desc": "封锁战况",
+      "id": 21026,
+      "pre_effect": [],
+      "side": 1,
+      "title": "封锁战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 80005,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方舰队旗舰存活时，为所有非旗舰提供^C00FFEAFFFFFFFF0030%^CFFFFFFFF00000000的减伤，主力舰装甲^C00FFEAFFFFFFFF00-20^CFFFFFFFF00000000，火力^C00FFEAFFFFFFFF00-20^CFFFFFFFF00000000。战斗^C00FFEAFFFFFFFF00S^CFFFFFFFF00000000胜以下无法前进。(削弱条件：H点击破一次并取得S胜及以上的战斗评级)",
+      "desc2": "^C454545FF00000000敌方舰队旗舰存活时，为所有非旗舰提供^C2795FDFF0000000030%^C454545FF00000000的减伤，主力舰装甲^C2795FDFF00000000-20^C454545FF00000000，火力^C2795FDFF00000000-20^C454545FF00000000。战斗^C2795FDFF00000000S^C454545FF00000000胜以下无法前进。(削弱条件：H点击破一次并取得S胜及以上的战斗评级)",
+      "effect": [
+        {
+          "num": 30,
+          "type": 112
+        },
+        {
+          "guardType": [
+            1
+          ],
+          "num": 20,
+          "num4": 2,
+          "type": 10
+        },
+        {
+          "guardType": [
+            1
+          ],
+          "num": 20,
+          "num4": 3,
+          "type": 10
+        }
+      ],
+      "effect_desc": "封锁战况",
+      "id": 20056,
+      "pre_effect": [],
+      "side": 1,
+      "title": "封锁战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 80005,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方舰队旗舰存活时，为所有非旗舰提供^C00FFEAFFFFFFFF0010%^CFFFFFFFF00000000的减伤。战斗^C00FFEAFFFFFFFF00B^CFFFFFFFF00000000胜以下无法前进。",
+      "desc2": "^C454545FF00000000敌方舰队旗舰存活时，为所有非旗舰提供^C2795FDFF0000000010%^C454545FF00000000的减伤。战斗^C2795FDFF00000000B^C454545FF00000000胜以下无法前进。",
+      "effect": [
+        {
+          "num": 10,
+          "type": 112
+        }
+      ],
+      "effect_desc": "封锁战况(削弱后)",
+      "id": 20057,
+      "pre_effect": [],
+      "side": 1,
+      "title": "封锁战况(削弱后)",
+      "type": 4
+    },
+    {
+      "buff_icon": 80005,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C00FFEAFFFFFFFF0010%^CFFFFFFFF00000000的减伤。战斗^C00FFEAFFFFFFFF00B^CFFFFFFFF00000000胜以下无法前进。(削弱条件：C点击破一次并取得S胜及以上的战斗评级)",
+      "desc2": "^C454545FF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C2795FDFF0000000010%^C454545FF00000000的减伤。战斗^C2795FDFF00000000B^C454545FF00000000胜以下无法前进。(削弱条件：C点击破一次并取得S胜及以上的战斗评级)",
+      "effect": [
+        {
+          "num": 10,
+          "type": 111
+        }
+      ],
+      "effect_desc": "封锁战况",
+      "id": 21027,
+      "pre_effect": [],
+      "side": 1,
+      "title": "封锁战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 80005,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C00FFEAFFFFFFFF0010%^CFFFFFFFF00000000的减伤。战斗^C00FFEAFFFFFFFF00B^CFFFFFFFF00000000胜以下无法前进。(削弱条件：L点击破一次并取得S胜及以上的战斗评级)",
+      "desc2": "^C454545FF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C2795FDFF0000000010%^C454545FF00000000的减伤。战斗^C2795FDFF00000000B^C454545FF00000000胜以下无法前进。(削弱条件：L点击破一次并取得S胜及以上的战斗评级)",
+      "effect": [
+        {
+          "num": 10,
+          "type": 111
+        }
+      ],
+      "effect_desc": "封锁战况",
+      "id": 21028,
+      "pre_effect": [],
+      "side": 1,
+      "title": "封锁战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 80005,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C00FFEAFFFFFFFF0010%^CFFFFFFFF00000000的减伤。战斗^C00FFEAFFFFFFFF00B^CFFFFFFFF00000000胜以下无法前进。(削弱条件：H点击破一次并取得S胜及以上的战斗评级)",
+      "desc2": "^C454545FF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C2795FDFF0000000010%^C454545FF00000000的减伤。战斗^C2795FDFF00000000B^C454545FF00000000胜以下无法前进。(削弱条件：H点击破一次并取得S胜及以上的战斗评级)",
+      "effect": [
+        {
+          "num": 10,
+          "type": 111
+        }
+      ],
+      "effect_desc": "封锁战况",
+      "id": 21029,
+      "pre_effect": [],
+      "side": 1,
+      "title": "封锁战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 80005,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C00FFEAFFFFFFFF0010%^CFFFFFFFF00000000的减伤。战斗^C00FFEAFFFFFFFF00A^CFFFFFFFF00000000胜以下无法前进。(削弱条件：D点击破一次并取得S胜及以上的战斗评级)",
+      "desc2": "^C454545FF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C2795FDFF0000000010%^C454545FF00000000的减伤。战斗^C2795FDFF00000000A^C454545FF00000000胜以下无法前进。(削弱条件：D点击破一次并取得S胜及以上的战斗评级)",
+      "effect": [
+        {
+          "num": 10,
+          "type": 111
+        }
+      ],
+      "effect_desc": "封锁战况",
+      "id": 21030,
+      "pre_effect": [],
+      "side": 1,
+      "title": "封锁战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 80005,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C00FFEAFFFFFFFF0010%^CFFFFFFFF00000000的减伤。战斗^C00FFEAFFFFFFFF00S^CFFFFFFFF00000000胜以下无法前进。(削弱条件：G点击破一次并取得S胜及以上的战斗评级)",
+      "desc2": "^C454545FF00000000敌方舰队每存活1个非旗舰单位都会为旗舰提供^C2795FDFF0000000010%^C454545FF00000000的减伤。战斗^C2795FDFF00000000S^C454545FF00000000胜以下无法前进。(削弱条件：G点击破一次并取得S胜及以上的战斗评级)",
+      "effect": [
+        {
+          "num": 10,
+          "type": 111
+        }
+      ],
+      "effect_desc": "封锁战况",
+      "id": 21031,
+      "pre_effect": [],
+      "side": 1,
+      "title": "封锁战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 80005,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方舰队旗舰存活时，为所有非旗舰提供^C00FFEAFFFFFFFF0050%^CFFFFFFFF00000000的减伤，主力舰命中^C00FFEAFFFFFFFF00-30^CFFFFFFFF00000000，回避^C00FFEAFFFFFFFF00-30^CFFFFFFFF00000000。战斗^C00FFEAFFFFFFFF00S^CFFFFFFFF00000000胜以下无法前进。(削弱条件：J点击破一次并取得S胜及以上的战斗评级)",
+      "desc2": "^C454545FF00000000敌方舰队旗舰存活时，为所有非旗舰提供^C2795FDFF0000000050%^C454545FF00000000的减伤，主力舰命中^C2795FDFF00000000-30^C454545FF00000000，回避^C2795FDFF00000000-30^C454545FF00000000。战斗^C2795FDFF00000000S^C454545FF00000000胜以下无法前进。(削弱条件：J点击破一次并取得S胜及以上的战斗评级)",
+      "effect": [
+        {
+          "num": 50,
+          "type": 112
+        },
+        {
+          "guardType": [
+            1
+          ],
+          "num": 30,
+          "num4": 5,
+          "type": 10
+        },
+        {
+          "guardType": [
+            1
+          ],
+          "num": 30,
+          "num4": 17,
+          "type": 10
+        }
+      ],
+      "effect_desc": "封锁战况",
+      "id": 21032,
+      "pre_effect": [],
+      "side": 1,
+      "title": "封锁战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 80005,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方舰队旗舰存活时，为所有非旗舰提供^C00FFEAFFFFFFFF0050%^CFFFFFFFF00000000的减伤，全队火力^C00FFEAFFFFFFFF00-40^CFFFFFFFF00000000，装甲^C00FFEAFFFFFFFF00-40^CFFFFFFFF00000000。战斗^C00FFEAFFFFFFFF00S^CFFFFFFFF00000000胜以下无法前进。(削弱条件：L点击破一次并取得S胜及以上的战斗评级)",
+      "desc2": "^C454545FF00000000敌方舰队旗舰存活时，为所有非旗舰提供^C2795FDFF0000000050%^C454545FF00000000的减伤，全队火力^C2795FDFF00000000-40^C454545FF00000000，装甲^C2795FDFF00000000-40^C454545FF00000000。战斗^C2795FDFF00000000S^C454545FF00000000胜以下无法前进。(削弱条件：L点击破一次并取得S胜及以上的战斗评级)",
+      "effect": [
+        {
+          "num": 50,
+          "type": 112
+        },
+        {
+          "num": 40,
+          "num4": 2,
+          "type": 8
+        },
+        {
+          "num": 40,
+          "num4": 3,
+          "type": 8
+        }
+      ],
+      "effect_desc": "封锁战况",
+      "id": 21033,
+      "pre_effect": [],
+      "side": 1,
+      "title": "封锁战况",
+      "type": 4
+    }
+  ],
+  "sequence_num": 89,
+  "unique_id": {
+    "20000": 1,
+    "20001": 2,
+    "20002": 3,
+    "20003": 4,
+    "20004": 5,
+    "20005": 6,
+    "20006": 7,
+    "20007": 8,
+    "20008": 9,
+    "20009": 10,
+    "20010": 11,
+    "20011": 12,
+    "20012": 13,
+    "20013": 14,
+    "20014": 15,
+    "20015": 16,
+    "20016": 17,
+    "20017": 18,
+    "20018": 19,
+    "20019": 20,
+    "20020": 21,
+    "20021": 22,
+    "20022": 23,
+    "20023": 24,
+    "20024": 25,
+    "20025": 26,
+    "20026": 27,
+    "20027": 28,
+    "20028": 29,
+    "20029": 30,
+    "20030": 31,
+    "20031": 32,
+    "20032": 33,
+    "20033": 34,
+    "20034": 35,
+    "20035": 36,
+    "20036": 37,
+    "20037": 38,
+    "20040": 39,
+    "20041": 40,
+    "20042": 41,
+    "20043": 42,
+    "20044": 43,
+    "20045": 44,
+    "20046": 45,
+    "20047": 46,
+    "20048": 47,
+    "20049": 48,
+    "20050": 49,
+    "20051": 50,
+    "20052": 51,
+    "20053": 52,
+    "20054": 53,
+    "20055": 54,
+    "20056": 81,
+    "20057": 82,
+    "21001": 55,
+    "21002": 56,
+    "21003": 57,
+    "21004": 58,
+    "21005": 59,
+    "21006": 60,
+    "21007": 61,
+    "21008": 62,
+    "21009": 63,
+    "21010": 64,
+    "21011": 65,
+    "21012": 66,
+    "21013": 67,
+    "21014": 68,
+    "21015": 69,
+    "21016": 70,
+    "21017": 71,
+    "21018": 72,
+    "21019": 73,
+    "21020": 74,
+    "21021": 75,
+    "21022": 76,
+    "21023": 77,
+    "21024": 78,
+    "21025": 79,
+    "21026": 80,
+    "21027": 83,
+    "21028": 84,
+    "21029": 85,
+    "21030": 86,
+    "21031": 87,
+    "21032": 88,
+    "21033": 89
+  }
+}

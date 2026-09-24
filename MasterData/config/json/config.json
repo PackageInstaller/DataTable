@@ -1,0 +1,475 @@
+{
+  "sequence": [
+    {
+      "comment": "初始化所拥有的资源",
+      "type": "init_resources",
+      "value": "500"
+    },
+    {
+      "comment": "油恢复周期",
+      "type": "oil_recover_time",
+      "value": "60"
+    },
+    {
+      "comment": "油恢复数量",
+      "type": "oil_recover_amount",
+      "value": "1"
+    },
+    {
+      "comment": "子弹恢复周期",
+      "type": "bullet_recover_time",
+      "value": "60"
+    },
+    {
+      "comment": "子弹恢复数量",
+      "type": "bullet_recover_amount",
+      "value": "1"
+    },
+    {
+      "comment": "铁恢复周期",
+      "type": "fe_recover_time",
+      "value": "60"
+    },
+    {
+      "comment": "铁恢复数量",
+      "type": "fe_recover_amount",
+      "value": "1"
+    },
+    {
+      "comment": "铝恢复周期",
+      "type": "al_recover_time",
+      "value": "180"
+    },
+    {
+      "comment": "铝恢复数量",
+      "type": "al_recover_amount",
+      "value": "1"
+    },
+    {
+      "comment": "初始化选择角色id",
+      "type": "init_chatacter",
+      "value": "{10006411,10009311,10007511,10008211}"
+    },
+    {
+      "comment": "初始化家具上限",
+      "type": "init_furniture_limit",
+      "value": "200"
+    },
+    {
+      "comment": "家具分解星级对应积分",
+      "type": "furniture_resolve",
+      "value": "{[3]=3,[4]=4,[5]=6,[6]=12}"
+    },
+    {
+      "comment": "初始使用的头像",
+      "type": "init_chat_head",
+      "value": "10000161"
+    },
+    {
+      "comment": "初始使用的提督府风格",
+      "type": "init_mansion_style",
+      "value": "10145"
+    },
+    {
+      "comment": "初始获得的菜谱",
+      "type": "init_cookbook",
+      "value": "10000472"
+    },
+    {
+      "comment": "初始获得的战役支援",
+      "type": "init_support",
+      "value": "1000122"
+    },
+    {
+      "comment": "初始化餐厅装饰",
+      "type": "int_cook_style",
+      "value": "11145"
+    },
+    {
+      "comment": "好友数量上限",
+      "type": "friends_limit",
+      "value": "60"
+    },
+    {
+      "comment": "好友申请列表上限",
+      "type": "friend_request_limit",
+      "value": "100"
+    },
+    {
+      "comment": "升级奖励",
+      "type": "level_up_award",
+      "value": "{\n [10]={{type=2,id=2,count=500},{type=2,id=3,count=500},{type=2,id=4,count=500},{type=2,id=9,count=500},{type=2,id=241,count=3},{type=2,id=741,count=3}},\n [20]={{type=2,id=141,count=5},{type=2,id=541,count=5},{type=4,id=10005912,count=1}},\n [30]={{type=2,id=2,count=2000},{type=2,id=3,count=2000},{type=2,id=4,count=2000},{type=2,id=9,count=2000},{type=2,id=241,count=7},{type=2,id=741,count=7}},\n [40]={{type=2,id=2,count=4000},{type=2,id=3,count=4000},{type=2,id=4,count=4000},{type=2,id=9,count=4000},{type=4,id=10003013,count=1}},\n [50]={{type=2,id=141,count=10},{type=2,id=541,count=10},{type=4,id=10001013,count=1}},\n [60]={{type=2,id=10141,count=25},{type=2,id=10241,count=25},{type=2,id=10341,count=25},{type=2,id=10441,count=25}},\n [70]={{type=2,id=2,count=6000},{type=2,id=3,count=6000},{type=2,id=4,count=6000},{type=2,id=9,count=6000}},\n [80]={{type=2,id=241,count=25},{type=2,id=141,count=25},{type=2,id=541,count=50},{type=2,id=66641,count=5}},\n [90]={{type=2,id=2,count=8000},{type=2,id=3,count=8000},{type=2,id=4,count=8000},{type=2,id=9,count=8000}},\n [100]={{type=2,id=10242,count=25},{type=2,id=10542,count=25},{type=2,id=88841,count=1},{type=2,id=14,count=180}},\n}"
+    },
+    {
+      "comment": "玩家最大等級",
+      "type": "level_limit",
+      "value": "250"
+    },
+    {
+      "comment": "初始老师",
+      "type": "init_teacher",
+      "value": "10000173"
+    },
+    {
+      "comment": "学院开放等级",
+      "type": "school_open_level",
+      "value": "90"
+    },
+    {
+      "comment": "学院扩张位子消耗钻石",
+      "type": "extend_seat",
+      "value": "200"
+    },
+    {
+      "comment": "学院扩张班级消耗钻石",
+      "type": "extend_classroom",
+      "value": "500"
+    },
+    {
+      "comment": "月卡邮件",
+      "type": "month_card_gift",
+      "value": "{item = {{ type = 2, id = 2, count = 500 },{ type = 2, id = 3, count = 500 },{ type = 2, id = 4, count = 500 },{ type = 2, id = 9, count = 500 },{ type = 2, id = 241, count = 1 },},title = \"月卡礼包，剩余%s天\",title_en = \"Monthly card gift package, remaining %s days\",title_jp = \"月間パス、残り%s日\"}"
+    },
+    {
+      "comment": "战利品商店送老师商品id以及老师id",
+      "type": "spoils_teacher_product",
+      "value": "{[5007]=10000373,[4013]=10000273}"
+    },
+    {
+      "comment": "宿舍扩充消耗以及获得格子数量",
+      "type": "room_extend",
+      "value": "{user={[3]=100,[4]=150,[5]=200,[6]=300},limit=20}"
+    },
+    {
+      "comment": "改造[角色]时送的皮肤id",
+      "type": "evo_add_skin",
+      "value": "{[11009711]=1000970151,[11019211]=1001920251,[11028911]=1002890151,[11012113]=1001210351,[11024812]=1002480251,[11003113]=1000310251}"
+    },
+    {
+      "comment": "商店购买浴室装饰id对应装饰id",
+      "type": "shop_repair_style",
+      "value": "{[31]=274,[32]=374}"
+    },
+    {
+      "comment": "初始获得的浴场风格",
+      "type": "init_repair_style",
+      "value": "174"
+    },
+    {
+      "comment": "初始获得的收藏室风格",
+      "type": "init_boxroom_style",
+      "value": "10146"
+    },
+    {
+      "comment": "签名最长的字符数",
+      "type": "max_signature_length",
+      "value": "30"
+    },
+    {
+      "comment": "注册时间满X天奖励(key为天数)",
+      "type": "register_time_reward",
+      "value": "{[365] ={mail_title = \"注册一周年头像\", mail_title_jp = \"システム報酬\",mail_title_en = \"Register first anniversary avatar\", rewards = {{id = 10001661, type = 8, count = 1}}}}"
+    },
+    {
+      "comment": "通关奖励",
+      "type": "pass_map_mail",
+      "value": "{[105] ={mail_title = \"通关奖励\",mail_title_jp = \"システム報酬\",mail_title_en = \"Clearance reward\", rewards = {{id = 10029811, type = 4, count = 1}}}}"
+    },
+    {
+      "comment": "每日战役次数",
+      "type": "campaign_count",
+      "value": "8"
+    },
+    {
+      "comment": "初始解锁的剧情组",
+      "type": "init_story_group",
+      "value": "{1001, 1002, 1003}"
+    },
+    {
+      "comment": "六周年活动初始获得的副官",
+      "type": "init_adjutant",
+      "value": "10082"
+    },
+    {
+      "comment": "首充奖励",
+      "type": "first_time",
+      "value": "{{id=2,type=2,count=1000},{id=3,type=2,count=1000},{id=4,type=2,count=1000},{id=9,type=2,count=500},{id=241,type=2,count=3},{id=741,type=2,count=3},{id=10045413,type=4,count=1}}"
+    },
+    {
+      "comment": "爬塔芯片槽位",
+      "type": "tower_chip_slot",
+      "value": "5"
+    },
+    {
+      "comment": "爬塔临时芯片槽数量",
+      "type": "tower_chip_transient_slot",
+      "value": "2"
+    },
+    {
+      "comment": "爬塔在活动表中的id",
+      "type": "tower_activite_id",
+      "value": "20"
+    },
+    {
+      "comment": "立体强袭在ship_rule表中的id",
+      "type": "solid_strike_rule_id",
+      "value": "17"
+    },
+    {
+      "comment": "战争协奏曲id",
+      "type": "concerto_activete_id",
+      "value": "19"
+    },
+    {
+      "comment": "娱乐模式默认角色",
+      "type": "concerto_recreation_init_ship",
+      "value": "{10002319,10002419}"
+    },
+    {
+      "comment": "战争协奏曲娱乐模式",
+      "type": "concerto_recreation_point",
+      "value": "800"
+    },
+    {
+      "comment": "远洋破袭在ship_rule表中的id",
+      "type": "ocean_rule_id",
+      "value": "18"
+    },
+    {
+      "comment": "六周年在ship_rule表中的id",
+      "type": "sixth_rule_id",
+      "value": "21"
+    },
+    {
+      "comment": "战利品掉落在ship_rule表中的id",
+      "type": "spoils_rule_id",
+      "value": "8"
+    },
+    {
+      "comment": "获得角色时发送邮件",
+      "type": "evo_mail_reward",
+      "value": "{[11012013] = {title = \"约克城首次改造奖励\", title_jp = \"ヨークタウン初回改造報酬\", title_en = \"York City First Renovation Bonus\",rewards = {{id = 10035921, type = 1, count = 1}}}}"
+    },
+    {
+      "comment": "深海模式在ship_rule表中的id",
+      "type": "abyss_rule_id",
+      "value": "22"
+    },
+    {
+      "comment": "爬塔BUFF石分解获得芯片，key品质 value数量",
+      "type": "tower_chip_resolve",
+      "value": "{[1]=1,[4]=4}"
+    },
+    {
+      "comment": "无法参与合成的深海舰CID",
+      "type": "abyss_not_combine_cid",
+      "value": "{10004918,11004918}"
+    },
+    {
+      "comment": "获得角色时增加任务",
+      "type": "get_ship_task",
+      "value": "{[10002812] = {1100031}}"
+    },
+    {
+      "comment": "推图活动在ship_rule表中的id",
+      "type": "main_rule_id",
+      "value": "7"
+    },
+    {
+      "comment": "深海模式初始角色",
+      "type": "abyss_init_ship",
+      "value": "{{id=10000118,num=1},{id=10000918,num=1},{id=10002318,num=1},{id=10003118,num=1},{id=10004418,num=2},{id=10004918,num=1}}"
+    },
+    {
+      "comment": "深海模式初始旗舰",
+      "type": "abyss_flag_ship",
+      "value": "10004918"
+    },
+    {
+      "comment": "购买[皮肤]时送的皮肤id",
+      "type": "special_add_skin",
+      "value": "{[1004670151]=1004670251,[1004830151]=1004830251,[1004180151]=1004180251,[1004610351]=1004610451,[1005210351]=1005210451,[1005760151]=1005760251,[1000300751]=1000300651,[1003800251]=1003800351,[1006130251]=1006130351,[1000970651]=1000970751}"
+    },
+    {
+      "comment": "深海阴兵在ship_rule表中的id",
+      "type": "bosskiller_rule_id",
+      "value": "23"
+    },
+    {
+      "comment": "审核开关在ship_rule表中的id",
+      "type": "audit_rule_id",
+      "value": "24"
+    },
+    {
+      "comment": "战役活动在ship_rule表中的id",
+      "type": "campaign_activity_rule_id",
+      "value": "10"
+    },
+    {
+      "comment": "养成活动在ship_rule表中的id",
+      "type": "cultivate_activity_rule_id",
+      "value": "11"
+    },
+    {
+      "comment": "浴场扩展商品id",
+      "type": "repair_dock_shop_id",
+      "value": "23"
+    },
+    {
+      "comment": "建造扩展商品id",
+      "type": "build_ship_dock_shop_id",
+      "value": "24"
+    },
+    {
+      "comment": "开发扩展商品id",
+      "type": "build_equip_dock_shop_id",
+      "value": "25"
+    },
+    {
+      "comment": "船坞扩展商品id",
+      "type": "ship_dock_shop_id",
+      "value": "26"
+    },
+    {
+      "comment": "装备扩展商品id",
+      "type": "equip_dock_shop_id",
+      "value": "27"
+    },
+    {
+      "comment": "家具扩展商品id",
+      "type": "furniture_dock_shop_id",
+      "value": "29"
+    },
+    {
+      "comment": "建造活动在ship_rule表中的id",
+      "type": "build_activity_id",
+      "value": "6"
+    },
+    {
+      "comment": "荣誉榜在ship_rule表中的id",
+      "type": "honor_leaderboard_rule_id",
+      "value": "25"
+    },
+    {
+      "comment": "七周年活动在ship_rule表中的id",
+      "type": "seventh_rule_id",
+      "value": "26"
+    },
+    {
+      "comment": "通过家具galo娃娃机获得任务",
+      "type": "get_furniture_task",
+      "value": "{[10045171] = {7100131}}"
+    },
+    {
+      "comment": "积分推图活动在rule表中的id",
+      "type": "answer_rule_id",
+      "value": "27"
+    },
+    {
+      "comment": "八周年活动在rule表中的id",
+      "type": "eighth_rule_id",
+      "value": "28"
+    },
+    {
+      "comment": "苍青活动在rule表中的id",
+      "type": "mist_rule_id",
+      "value": "29"
+    },
+    {
+      "comment": "九周年活动在rule表中的id",
+      "type": "ninth_rule_id",
+      "value": "30"
+    },
+    {
+      "comment": "绑定手机成功的邮件",
+      "type": "iphone_mail_reward",
+      "value": "{[1] = {title = \"账号绑定手机奖励\", title_jp = \"喵喵喵喵\", rewards = {{ type = 2, id = 2, count = 1000 },{ type = 2, id = 3, count = 1000 },{ type = 2, id = 4, count = 1000 },{ type = 2, id = 9, count = 1000 },{ type = 2, id = 241, count = 1 },{ type = 2, id = 141, count = 1 }}}}"
+    },
+    {
+      "comment": "中文登陆语音数量",
+      "type": "cv_num",
+      "value": "311"
+    }
+  ],
+  "sequence_num": 78,
+  "unique_type": {
+    "abyss_flag_ship": 57,
+    "abyss_init_ship": 56,
+    "abyss_not_combine_cid": 53,
+    "abyss_rule_id": 51,
+    "al_recover_amount": 9,
+    "al_recover_time": 8,
+    "answer_rule_id": 73,
+    "audit_rule_id": 60,
+    "bosskiller_rule_id": 59,
+    "build_activity_id": 69,
+    "build_equip_dock_shop_id": 65,
+    "build_ship_dock_shop_id": 64,
+    "bullet_recover_amount": 5,
+    "bullet_recover_time": 4,
+    "campaign_activity_rule_id": 61,
+    "campaign_count": 36,
+    "concerto_activete_id": 44,
+    "concerto_recreation_init_ship": 45,
+    "concerto_recreation_point": 46,
+    "cultivate_activity_rule_id": 62,
+    "cv_num": 78,
+    "eighth_rule_id": 74,
+    "equip_dock_shop_id": 67,
+    "evo_add_skin": 29,
+    "evo_mail_reward": 50,
+    "extend_classroom": 25,
+    "extend_seat": 24,
+    "fe_recover_amount": 7,
+    "fe_recover_time": 6,
+    "first_time": 39,
+    "friend_request_limit": 19,
+    "friends_limit": 18,
+    "furniture_dock_shop_id": 68,
+    "furniture_resolve": 12,
+    "get_furniture_task": 72,
+    "get_ship_task": 54,
+    "honor_leaderboard_rule_id": 70,
+    "init_adjutant": 38,
+    "init_boxroom_style": 32,
+    "init_chat_head": 13,
+    "init_chatacter": 10,
+    "init_cookbook": 15,
+    "init_furniture_limit": 11,
+    "init_mansion_style": 14,
+    "init_repair_style": 31,
+    "init_resources": 1,
+    "init_story_group": 37,
+    "init_support": 16,
+    "init_teacher": 22,
+    "int_cook_style": 17,
+    "iphone_mail_reward": 77,
+    "level_limit": 21,
+    "level_up_award": 20,
+    "main_rule_id": 55,
+    "max_signature_length": 33,
+    "mist_rule_id": 75,
+    "month_card_gift": 26,
+    "ninth_rule_id": 76,
+    "ocean_rule_id": 47,
+    "oil_recover_amount": 3,
+    "oil_recover_time": 2,
+    "pass_map_mail": 35,
+    "register_time_reward": 34,
+    "repair_dock_shop_id": 63,
+    "room_extend": 28,
+    "school_open_level": 23,
+    "seventh_rule_id": 71,
+    "ship_dock_shop_id": 66,
+    "shop_repair_style": 30,
+    "sixth_rule_id": 48,
+    "solid_strike_rule_id": 43,
+    "special_add_skin": 58,
+    "spoils_rule_id": 49,
+    "spoils_teacher_product": 27,
+    "tower_activite_id": 42,
+    "tower_chip_resolve": 52,
+    "tower_chip_slot": 40,
+    "tower_chip_transient_slot": 41
+  }
+}

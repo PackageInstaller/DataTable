@@ -1,0 +1,1511 @@
+{
+  "buff_count": 69,
+  "sequence": [
+    {
+      "buff_bg": 0,
+      "buff_icon": 11,
+      "buff_id": 1001,
+      "buff_type": 1,
+      "effect": [],
+      "effect_desc": "^C454545FF00000000我方小型船^C2997FFFFFFFFFF00回避+10^C454545FF00000000",
+      "id": 100100,
+      "level": 0,
+      "need_id": 0,
+      "order": 1,
+      "pre_effect": [],
+      "title": "紧急回避"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 11,
+      "buff_id": 1001,
+      "buff_type": 1,
+      "effect": [
+        {
+          "num": 10,
+          "num4": 5,
+          "shipTon": 1,
+          "type": 3
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方小型船^C2997FFFFFFFFFF00回避+10^C454545FF00000000",
+      "id": 100101,
+      "level": 1,
+      "need_id": 0,
+      "order": 1,
+      "pre_effect": [],
+      "title": "紧急回避"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 8,
+      "buff_id": 1002,
+      "buff_type": 1,
+      "effect": [
+        {
+          "num": 10,
+          "num4": 4,
+          "shipTon": 1,
+          "type": 3
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方小型船^C2997FFFFFFFFFF00鱼雷+10^C454545FF00000000",
+      "id": 100201,
+      "level": 1,
+      "need_id": 100101,
+      "order": 2,
+      "pre_effect": [],
+      "title": "极限负重"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 13,
+      "buff_id": 1003,
+      "buff_type": 1,
+      "effect": [
+        {
+          "num": 10,
+          "num4": 16,
+          "shipTon": 1,
+          "type": 3
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方小型船^C2997FFFFFFFFFF00暴击率+10%^C454545FF00000000",
+      "id": 100301,
+      "level": 1,
+      "need_id": 100201,
+      "order": 3,
+      "pre_effect": [],
+      "title": "眼观六路"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 1004,
+      "buff_type": 1,
+      "effect": [
+        {
+          "num": 3,
+          "shipTon": 1,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方小型船造成的伤害提高^C2997FFFFFFFFFF003%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF006%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 100401,
+      "level": 1,
+      "need_id": 100301,
+      "order": 4,
+      "pre_effect": [],
+      "title": "装药超载"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 1004,
+      "buff_type": 1,
+      "effect": [
+        {
+          "num": 6,
+          "shipTon": 1,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方小型船造成的伤害提高^C2997FFFFFFFFFF006%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF009%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 100402,
+      "level": 2,
+      "need_id": 100401,
+      "order": 4,
+      "pre_effect": [],
+      "title": "装药超载"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 1004,
+      "buff_type": 1,
+      "effect": [
+        {
+          "num": 9,
+          "shipTon": 1,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方小型船造成的伤害提高^C2997FFFFFFFFFF009%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0012%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 100403,
+      "level": 3,
+      "need_id": 100402,
+      "order": 4,
+      "pre_effect": [],
+      "title": "装药超载"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 1004,
+      "buff_type": 1,
+      "effect": [
+        {
+          "num": 12,
+          "shipTon": 1,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方小型船造成的伤害提高^C2997FFFFFFFFFF0012%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0015%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 100404,
+      "level": 4,
+      "need_id": 100403,
+      "order": 4,
+      "pre_effect": [],
+      "title": "装药超载"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 1004,
+      "buff_type": 1,
+      "effect": [
+        {
+          "num": 15,
+          "shipTon": 1,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方小型船造成的伤害提高^C2997FFFFFFFFFF0015%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0018%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 100405,
+      "level": 5,
+      "need_id": 100404,
+      "order": 4,
+      "pre_effect": [],
+      "title": "装药超载"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 1004,
+      "buff_type": 1,
+      "effect": [
+        {
+          "num": 18,
+          "shipTon": 1,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方小型船造成的伤害提高^C2997FFFFFFFFFF0018%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0021%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 100406,
+      "level": 6,
+      "need_id": 100405,
+      "order": 4,
+      "pre_effect": [],
+      "title": "装药超载"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 1004,
+      "buff_type": 1,
+      "effect": [
+        {
+          "num": 21,
+          "shipTon": 1,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方小型船造成的伤害提高^C2997FFFFFFFFFF0021%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0024%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 100407,
+      "level": 7,
+      "need_id": 100406,
+      "order": 4,
+      "pre_effect": [],
+      "title": "装药超载"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 1004,
+      "buff_type": 1,
+      "effect": [
+        {
+          "num": 24,
+          "shipTon": 1,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方小型船造成的伤害提高^C2997FFFFFFFFFF0024%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0027%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 100408,
+      "level": 8,
+      "need_id": 100407,
+      "order": 4,
+      "pre_effect": [],
+      "title": "装药超载"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 1004,
+      "buff_type": 1,
+      "effect": [
+        {
+          "num": 27,
+          "shipTon": 1,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方小型船造成的伤害提高^C2997FFFFFFFFFF0027%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0030%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 100409,
+      "level": 9,
+      "need_id": 100408,
+      "order": 4,
+      "pre_effect": [],
+      "title": "装药超载"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 1004,
+      "buff_type": 1,
+      "effect": [
+        {
+          "num": 30,
+          "shipTon": 1,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方小型船造成的伤害提高^C2997FFFFFFFFFF0030%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0033%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 100410,
+      "level": 10,
+      "need_id": 100409,
+      "order": 4,
+      "pre_effect": [],
+      "title": "装药超载"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 1004,
+      "buff_type": 1,
+      "effect": [
+        {
+          "num": 33,
+          "shipTon": 1,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方小型船造成的伤害提高^C2997FFFFFFFFFF0033%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0036%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 100411,
+      "level": 11,
+      "need_id": 100410,
+      "order": 4,
+      "pre_effect": [],
+      "title": "装药超载"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 1004,
+      "buff_type": 1,
+      "effect": [
+        {
+          "num": 36,
+          "shipTon": 1,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方小型船造成的伤害提高^C2997FFFFFFFFFF0036%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0039%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 100412,
+      "level": 12,
+      "need_id": 100411,
+      "order": 4,
+      "pre_effect": [],
+      "title": "装药超载"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 1004,
+      "buff_type": 1,
+      "effect": [
+        {
+          "num": 39,
+          "shipTon": 1,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方小型船造成的伤害提高^C2997FFFFFFFFFF0039%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0042%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 100413,
+      "level": 13,
+      "need_id": 100412,
+      "order": 4,
+      "pre_effect": [],
+      "title": "装药超载"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 1004,
+      "buff_type": 1,
+      "effect": [
+        {
+          "num": 42,
+          "shipTon": 1,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方小型船造成的伤害提高^C2997FFFFFFFFFF0042%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0045%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 100414,
+      "level": 14,
+      "need_id": 100413,
+      "order": 4,
+      "pre_effect": [],
+      "title": "装药超载"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 1004,
+      "buff_type": 1,
+      "effect": [
+        {
+          "num": 45,
+          "shipTon": 1,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方小型船造成的伤害提高^C2997FFFFFFFFFF0045%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0048%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 100415,
+      "level": 15,
+      "need_id": 100414,
+      "order": 4,
+      "pre_effect": [],
+      "title": "装药超载"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 1004,
+      "buff_type": 1,
+      "effect": [
+        {
+          "num": 48,
+          "shipTon": 1,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方小型船造成的伤害提高^C2997FFFFFFFFFF0048%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0051%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 100416,
+      "level": 16,
+      "need_id": 100415,
+      "order": 4,
+      "pre_effect": [],
+      "title": "装药超载"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 1004,
+      "buff_type": 1,
+      "effect": [
+        {
+          "num": 51,
+          "shipTon": 1,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方小型船造成的伤害提高^C2997FFFFFFFFFF0051%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0054%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 100417,
+      "level": 17,
+      "need_id": 100416,
+      "order": 4,
+      "pre_effect": [],
+      "title": "装药超载"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 1004,
+      "buff_type": 1,
+      "effect": [
+        {
+          "num": 54,
+          "shipTon": 1,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方小型船造成的伤害提高^C2997FFFFFFFFFF0054%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0057%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 100418,
+      "level": 18,
+      "need_id": 100417,
+      "order": 4,
+      "pre_effect": [],
+      "title": "装药超载"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 1004,
+      "buff_type": 1,
+      "effect": [
+        {
+          "num": 57,
+          "shipTon": 1,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方小型船造成的伤害提高^C2997FFFFFFFFFF0057%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0060%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 100419,
+      "level": 19,
+      "need_id": 100418,
+      "order": 4,
+      "pre_effect": [],
+      "title": "装药超载"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 1004,
+      "buff_type": 1,
+      "effect": [
+        {
+          "num": 60,
+          "shipTon": 1,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方小型船造成的伤害提高^C2997FFFFFFFFFF0060%^C454545FF00000000",
+      "id": 100420,
+      "level": 20,
+      "need_id": 100419,
+      "order": 4,
+      "pre_effect": [],
+      "title": "装药超载"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 1,
+      "buff_id": 2001,
+      "buff_type": 2,
+      "effect": [],
+      "effect_desc": "^C454545FF00000000我方中型船^C2997FFFFFFFFFF00火力+10^C454545FF00000000",
+      "id": 200100,
+      "level": 0,
+      "need_id": 0,
+      "order": 1,
+      "pre_effect": [],
+      "title": "新式弹种"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 1,
+      "buff_id": 2001,
+      "buff_type": 2,
+      "effect": [
+        {
+          "num": 10,
+          "num4": 2,
+          "shipTon": 2,
+          "type": 3
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方中型船^C2997FFFFFFFFFF00火力+10^C454545FF00000000",
+      "id": 200101,
+      "level": 1,
+      "need_id": 0,
+      "order": 1,
+      "pre_effect": [],
+      "title": "新式弹种"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 9,
+      "buff_id": 2002,
+      "buff_type": 2,
+      "effect": [
+        {
+          "num": 10,
+          "num4": 3,
+          "shipTon": 2,
+          "type": 3
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方中型船^C2997FFFFFFFFFF00装甲+10^C454545FF00000000",
+      "id": 200201,
+      "level": 1,
+      "need_id": 200101,
+      "order": 2,
+      "pre_effect": [],
+      "title": "甲板强化"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 6,
+      "buff_id": 2003,
+      "buff_type": 2,
+      "effect": [
+        {
+          "num": 10,
+          "num4": 16,
+          "shipTon": 2,
+          "type": 3
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方中型船^C2997FFFFFFFFFF00暴击率+10%^C454545FF00000000",
+      "id": 200301,
+      "level": 1,
+      "need_id": 200201,
+      "order": 3,
+      "pre_effect": [],
+      "title": "会心一击"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 2004,
+      "buff_type": 2,
+      "effect": [
+        {
+          "num": 3,
+          "shipTon": 2,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方中型船造成的伤害提高^C2997FFFFFFFFFF003%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF006%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 200401,
+      "level": 1,
+      "need_id": 200301,
+      "order": 4,
+      "pre_effect": [],
+      "title": "界限突破"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 2004,
+      "buff_type": 2,
+      "effect": [
+        {
+          "num": 6,
+          "shipTon": 2,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方中型船造成的伤害提高^C2997FFFFFFFFFF006%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF009%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 200402,
+      "level": 2,
+      "need_id": 200401,
+      "order": 4,
+      "pre_effect": [],
+      "title": "界限突破"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 2004,
+      "buff_type": 2,
+      "effect": [
+        {
+          "num": 9,
+          "shipTon": 2,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方中型船造成的伤害提高^C2997FFFFFFFFFF009%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0012%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 200403,
+      "level": 3,
+      "need_id": 200402,
+      "order": 4,
+      "pre_effect": [],
+      "title": "界限突破"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 2004,
+      "buff_type": 2,
+      "effect": [
+        {
+          "num": 12,
+          "shipTon": 2,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方中型船造成的伤害提高^C2997FFFFFFFFFF0012%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0015%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 200404,
+      "level": 4,
+      "need_id": 200403,
+      "order": 4,
+      "pre_effect": [],
+      "title": "界限突破"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 2004,
+      "buff_type": 2,
+      "effect": [
+        {
+          "num": 15,
+          "shipTon": 2,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方中型船造成的伤害提高^C2997FFFFFFFFFF0015%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0018%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 200405,
+      "level": 5,
+      "need_id": 200404,
+      "order": 4,
+      "pre_effect": [],
+      "title": "界限突破"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 2004,
+      "buff_type": 2,
+      "effect": [
+        {
+          "num": 18,
+          "shipTon": 2,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方中型船造成的伤害提高^C2997FFFFFFFFFF0018%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0021%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 200406,
+      "level": 6,
+      "need_id": 200405,
+      "order": 4,
+      "pre_effect": [],
+      "title": "界限突破"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 2004,
+      "buff_type": 2,
+      "effect": [
+        {
+          "num": 21,
+          "shipTon": 2,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方中型船造成的伤害提高^C2997FFFFFFFFFF0021%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0024%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 200407,
+      "level": 7,
+      "need_id": 200406,
+      "order": 4,
+      "pre_effect": [],
+      "title": "界限突破"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 2004,
+      "buff_type": 2,
+      "effect": [
+        {
+          "num": 24,
+          "shipTon": 2,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方中型船造成的伤害提高^C2997FFFFFFFFFF0024%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0027%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 200408,
+      "level": 8,
+      "need_id": 200407,
+      "order": 4,
+      "pre_effect": [],
+      "title": "界限突破"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 2004,
+      "buff_type": 2,
+      "effect": [
+        {
+          "num": 27,
+          "shipTon": 2,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方中型船造成的伤害提高^C2997FFFFFFFFFF0027%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0030%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 200409,
+      "level": 9,
+      "need_id": 200408,
+      "order": 4,
+      "pre_effect": [],
+      "title": "界限突破"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 2004,
+      "buff_type": 2,
+      "effect": [
+        {
+          "num": 30,
+          "shipTon": 2,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方中型船造成的伤害提高^C2997FFFFFFFFFF0030%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0033%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 200410,
+      "level": 10,
+      "need_id": 200409,
+      "order": 4,
+      "pre_effect": [],
+      "title": "界限突破"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 2004,
+      "buff_type": 2,
+      "effect": [
+        {
+          "num": 33,
+          "shipTon": 2,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方中型船造成的伤害提高^C2997FFFFFFFFFF0033%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0036%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 200411,
+      "level": 11,
+      "need_id": 200410,
+      "order": 4,
+      "pre_effect": [],
+      "title": "界限突破"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 2004,
+      "buff_type": 2,
+      "effect": [
+        {
+          "num": 36,
+          "shipTon": 2,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方中型船造成的伤害提高^C2997FFFFFFFFFF0036%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0039%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 200412,
+      "level": 12,
+      "need_id": 200411,
+      "order": 4,
+      "pre_effect": [],
+      "title": "界限突破"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 2004,
+      "buff_type": 2,
+      "effect": [
+        {
+          "num": 39,
+          "shipTon": 2,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方中型船造成的伤害提高^C2997FFFFFFFFFF0039%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0042%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 200413,
+      "level": 13,
+      "need_id": 200412,
+      "order": 4,
+      "pre_effect": [],
+      "title": "界限突破"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 2004,
+      "buff_type": 2,
+      "effect": [
+        {
+          "num": 42,
+          "shipTon": 2,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方中型船造成的伤害提高^C2997FFFFFFFFFF0042%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0045%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 200414,
+      "level": 14,
+      "need_id": 200413,
+      "order": 4,
+      "pre_effect": [],
+      "title": "界限突破"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 2004,
+      "buff_type": 2,
+      "effect": [
+        {
+          "num": 45,
+          "shipTon": 2,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方中型船造成的伤害提高^C2997FFFFFFFFFF0045%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0048%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 200415,
+      "level": 15,
+      "need_id": 200414,
+      "order": 4,
+      "pre_effect": [],
+      "title": "界限突破"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 2004,
+      "buff_type": 2,
+      "effect": [
+        {
+          "num": 48,
+          "shipTon": 2,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方中型船造成的伤害提高^C2997FFFFFFFFFF0048%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0051%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 200416,
+      "level": 16,
+      "need_id": 200415,
+      "order": 4,
+      "pre_effect": [],
+      "title": "界限突破"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 2004,
+      "buff_type": 2,
+      "effect": [
+        {
+          "num": 51,
+          "shipTon": 2,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方中型船造成的伤害提高^C2997FFFFFFFFFF0051%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0054%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 200417,
+      "level": 17,
+      "need_id": 200416,
+      "order": 4,
+      "pre_effect": [],
+      "title": "界限突破"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 2004,
+      "buff_type": 2,
+      "effect": [
+        {
+          "num": 54,
+          "shipTon": 2,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方中型船造成的伤害提高^C2997FFFFFFFFFF0054%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0057%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 200418,
+      "level": 18,
+      "need_id": 200417,
+      "order": 4,
+      "pre_effect": [],
+      "title": "界限突破"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 2004,
+      "buff_type": 2,
+      "effect": [
+        {
+          "num": 57,
+          "shipTon": 2,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方中型船造成的伤害提高^C2997FFFFFFFFFF0057%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0060%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 200419,
+      "level": 19,
+      "need_id": 200418,
+      "order": 4,
+      "pre_effect": [],
+      "title": "界限突破"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 2004,
+      "buff_type": 2,
+      "effect": [
+        {
+          "num": 60,
+          "shipTon": 2,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方中型船造成的伤害提高^C2997FFFFFFFFFF0060%^C454545FF00000000",
+      "id": 200420,
+      "level": 20,
+      "need_id": 200419,
+      "order": 4,
+      "pre_effect": [],
+      "title": "界限突破"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 3,
+      "buff_id": 3001,
+      "buff_type": 3,
+      "effect": [],
+      "effect_desc": "^C454545FF00000000我方大型船^C2997FFFFFFFFFF00命中+10^C454545FF00000000",
+      "id": 300100,
+      "level": 0,
+      "need_id": 0,
+      "order": 1,
+      "pre_effect": [],
+      "title": "火控校准"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 3,
+      "buff_id": 3001,
+      "buff_type": 3,
+      "effect": [
+        {
+          "num": 10,
+          "num4": 17,
+          "shipTon": 3,
+          "type": 3
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方大型船^C2997FFFFFFFFFF00命中+10^C454545FF00000000",
+      "id": 300101,
+      "level": 1,
+      "need_id": 0,
+      "order": 1,
+      "pre_effect": [],
+      "title": "火控校准"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 9,
+      "buff_id": 3002,
+      "buff_type": 3,
+      "effect": [
+        {
+          "num": 10,
+          "num4": 3,
+          "shipTon": 3,
+          "type": 3
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方大型船^C2997FFFFFFFFFF00装甲+10^C454545FF00000000",
+      "id": 300201,
+      "level": 1,
+      "need_id": 300101,
+      "order": 2,
+      "pre_effect": [],
+      "title": "厚甲覆盖"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 1,
+      "buff_id": 3003,
+      "buff_type": 3,
+      "effect": [
+        {
+          "num": 10,
+          "num4": 2,
+          "shipTon": 3,
+          "type": 3
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方大型船^C2997FFFFFFFFFF00火力+10^C454545FF00000000",
+      "id": 300301,
+      "level": 1,
+      "need_id": 300201,
+      "order": 3,
+      "pre_effect": [],
+      "title": "口径至上"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 3004,
+      "buff_type": 3,
+      "effect": [
+        {
+          "num": 3,
+          "shipTon": 3,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方大型船造成的伤害提高^C2997FFFFFFFFFF003%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF006%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 300401,
+      "level": 1,
+      "need_id": 300301,
+      "order": 4,
+      "pre_effect": [],
+      "title": "火力覆盖"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 3004,
+      "buff_type": 3,
+      "effect": [
+        {
+          "num": 6,
+          "shipTon": 3,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方大型船造成的伤害提高^C2997FFFFFFFFFF006%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF009%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 300402,
+      "level": 2,
+      "need_id": 300401,
+      "order": 4,
+      "pre_effect": [],
+      "title": "火力覆盖"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 3004,
+      "buff_type": 3,
+      "effect": [
+        {
+          "num": 9,
+          "shipTon": 3,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方大型船造成的伤害提高^C2997FFFFFFFFFF009%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0012%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 300403,
+      "level": 3,
+      "need_id": 300402,
+      "order": 4,
+      "pre_effect": [],
+      "title": "火力覆盖"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 3004,
+      "buff_type": 3,
+      "effect": [
+        {
+          "num": 12,
+          "shipTon": 3,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方大型船造成的伤害提高^C2997FFFFFFFFFF0012%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0015%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 300404,
+      "level": 4,
+      "need_id": 300403,
+      "order": 4,
+      "pre_effect": [],
+      "title": "火力覆盖"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 3004,
+      "buff_type": 3,
+      "effect": [
+        {
+          "num": 15,
+          "shipTon": 3,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方大型船造成的伤害提高^C2997FFFFFFFFFF0015%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0018%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 300405,
+      "level": 5,
+      "need_id": 300404,
+      "order": 4,
+      "pre_effect": [],
+      "title": "火力覆盖"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 3004,
+      "buff_type": 3,
+      "effect": [
+        {
+          "num": 18,
+          "shipTon": 3,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方大型船造成的伤害提高^C2997FFFFFFFFFF0018%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0021%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 300406,
+      "level": 6,
+      "need_id": 300405,
+      "order": 4,
+      "pre_effect": [],
+      "title": "火力覆盖"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 3004,
+      "buff_type": 3,
+      "effect": [
+        {
+          "num": 21,
+          "shipTon": 3,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方大型船造成的伤害提高^C2997FFFFFFFFFF0021%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0024%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 300407,
+      "level": 7,
+      "need_id": 300406,
+      "order": 4,
+      "pre_effect": [],
+      "title": "火力覆盖"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 3004,
+      "buff_type": 3,
+      "effect": [
+        {
+          "num": 24,
+          "shipTon": 3,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方大型船造成的伤害提高^C2997FFFFFFFFFF0024%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0027%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 300408,
+      "level": 8,
+      "need_id": 300407,
+      "order": 4,
+      "pre_effect": [],
+      "title": "火力覆盖"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 3004,
+      "buff_type": 3,
+      "effect": [
+        {
+          "num": 27,
+          "shipTon": 3,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方大型船造成的伤害提高^C2997FFFFFFFFFF0027%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0030%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 300409,
+      "level": 9,
+      "need_id": 300408,
+      "order": 4,
+      "pre_effect": [],
+      "title": "火力覆盖"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 3004,
+      "buff_type": 3,
+      "effect": [
+        {
+          "num": 30,
+          "shipTon": 3,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方大型船造成的伤害提高^C2997FFFFFFFFFF0030%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0033%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 300410,
+      "level": 10,
+      "need_id": 300409,
+      "order": 4,
+      "pre_effect": [],
+      "title": "火力覆盖"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 3004,
+      "buff_type": 3,
+      "effect": [
+        {
+          "num": 33,
+          "shipTon": 3,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方大型船造成的伤害提高^C2997FFFFFFFFFF0033%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0036%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 300411,
+      "level": 11,
+      "need_id": 300410,
+      "order": 4,
+      "pre_effect": [],
+      "title": "火力覆盖"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 3004,
+      "buff_type": 3,
+      "effect": [
+        {
+          "num": 36,
+          "shipTon": 3,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方大型船造成的伤害提高^C2997FFFFFFFFFF0036%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0039%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 300412,
+      "level": 12,
+      "need_id": 300411,
+      "order": 4,
+      "pre_effect": [],
+      "title": "火力覆盖"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 3004,
+      "buff_type": 3,
+      "effect": [
+        {
+          "num": 39,
+          "shipTon": 3,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方大型船造成的伤害提高^C2997FFFFFFFFFF0039%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0042%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 300413,
+      "level": 13,
+      "need_id": 300412,
+      "order": 4,
+      "pre_effect": [],
+      "title": "火力覆盖"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 3004,
+      "buff_type": 3,
+      "effect": [
+        {
+          "num": 42,
+          "shipTon": 3,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方大型船造成的伤害提高^C2997FFFFFFFFFF0042%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0045%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 300414,
+      "level": 14,
+      "need_id": 300413,
+      "order": 4,
+      "pre_effect": [],
+      "title": "火力覆盖"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 3004,
+      "buff_type": 3,
+      "effect": [
+        {
+          "num": 45,
+          "shipTon": 3,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方大型船造成的伤害提高^C2997FFFFFFFFFF0045%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0048%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 300415,
+      "level": 15,
+      "need_id": 300414,
+      "order": 4,
+      "pre_effect": [],
+      "title": "火力覆盖"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 3004,
+      "buff_type": 3,
+      "effect": [
+        {
+          "num": 48,
+          "shipTon": 3,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方大型船造成的伤害提高^C2997FFFFFFFFFF0048%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0051%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 300416,
+      "level": 16,
+      "need_id": 300415,
+      "order": 4,
+      "pre_effect": [],
+      "title": "火力覆盖"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 3004,
+      "buff_type": 3,
+      "effect": [
+        {
+          "num": 51,
+          "shipTon": 3,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方大型船造成的伤害提高^C2997FFFFFFFFFF0051%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0054%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 300417,
+      "level": 17,
+      "need_id": 300416,
+      "order": 4,
+      "pre_effect": [],
+      "title": "火力覆盖"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 3004,
+      "buff_type": 3,
+      "effect": [
+        {
+          "num": 54,
+          "shipTon": 3,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方大型船造成的伤害提高^C2997FFFFFFFFFF0054%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0057%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 300418,
+      "level": 18,
+      "need_id": 300417,
+      "order": 4,
+      "pre_effect": [],
+      "title": "火力覆盖"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 3004,
+      "buff_type": 3,
+      "effect": [
+        {
+          "num": 57,
+          "shipTon": 3,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方大型船造成的伤害提高^C2997FFFFFFFFFF0057%^C454545FF00000000（下一级提高^C2997FFFFFFFFFF0060%^C454545FF00000000，最高^C2997FFFFFFFFFF0060%^C454545FF00000000）",
+      "id": 300419,
+      "level": 19,
+      "need_id": 300418,
+      "order": 4,
+      "pre_effect": [],
+      "title": "火力覆盖"
+    },
+    {
+      "buff_bg": 0,
+      "buff_icon": 5,
+      "buff_id": 3004,
+      "buff_type": 3,
+      "effect": [
+        {
+          "num": 60,
+          "shipTon": 3,
+          "type": 5
+        }
+      ],
+      "effect_desc": "^C454545FF00000000我方大型船造成的伤害提高^C2997FFFFFFFFFF0060%^C454545FF00000000",
+      "id": 300420,
+      "level": 20,
+      "need_id": 300419,
+      "order": 4,
+      "pre_effect": [],
+      "title": "火力覆盖"
+    }
+  ],
+  "sequence_num": 72,
+  "unique_id": {
+    "100100": 1,
+    "100101": 2,
+    "100201": 3,
+    "100301": 4,
+    "100401": 5,
+    "100402": 6,
+    "100403": 7,
+    "100404": 8,
+    "100405": 9,
+    "100406": 10,
+    "100407": 11,
+    "100408": 12,
+    "100409": 13,
+    "100410": 14,
+    "100411": 15,
+    "100412": 16,
+    "100413": 17,
+    "100414": 18,
+    "100415": 19,
+    "100416": 20,
+    "100417": 21,
+    "100418": 22,
+    "100419": 23,
+    "100420": 24,
+    "200100": 25,
+    "200101": 26,
+    "200201": 27,
+    "200301": 28,
+    "200401": 29,
+    "200402": 30,
+    "200403": 31,
+    "200404": 32,
+    "200405": 33,
+    "200406": 34,
+    "200407": 35,
+    "200408": 36,
+    "200409": 37,
+    "200410": 38,
+    "200411": 39,
+    "200412": 40,
+    "200413": 41,
+    "200414": 42,
+    "200415": 43,
+    "200416": 44,
+    "200417": 45,
+    "200418": 46,
+    "200419": 47,
+    "200420": 48,
+    "300100": 49,
+    "300101": 50,
+    "300201": 51,
+    "300301": 52,
+    "300401": 53,
+    "300402": 54,
+    "300403": 55,
+    "300404": 56,
+    "300405": 57,
+    "300406": 58,
+    "300407": 59,
+    "300408": 60,
+    "300409": 61,
+    "300410": 62,
+    "300411": 63,
+    "300412": 64,
+    "300413": 65,
+    "300414": 66,
+    "300415": 67,
+    "300416": 68,
+    "300417": 69,
+    "300418": 70,
+    "300419": 71,
+    "300420": 72
+  }
+}

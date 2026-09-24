@@ -1,0 +1,4100 @@
+{
+  "sequence": [
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "",
+      "formation": 0,
+      "id": 1040101,
+      "movie": [],
+      "next_node": [
+        1040102
+      ],
+      "next_node_path": "{\"9303-A-A\":{\"x\":445,\"y\":570}}",
+      "node_type": 4,
+      "node_weight": [],
+      "position": {
+        "x": 410,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 430,
+        "y": 575
+      },
+      "pve_level_id": 10401,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "A1",
+      "formation": 1101,
+      "id": 1040102,
+      "movie": [],
+      "next_node": [
+        1040103,
+        1040104
+      ],
+      "next_node_path": "{\"9302-A-A\":{\"x\":660,\"y\":465},\"9304-A-A\":{\"x\":660,\"y\":608}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 630,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 650,
+        "y": 575
+      },
+      "pve_level_id": 10401,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "B1",
+      "formation": 1102,
+      "id": 1040103,
+      "movie": [],
+      "next_node": [
+        1040105,
+        1040106
+      ],
+      "next_node_path": "{\"9302-A-A\":{\"x\":880,\"y\":355},\"9304-A-A\":{\"x\":880,\"y\":498}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 850,
+        "y": 465
+      },
+      "position_letter": {
+        "x": 870,
+        "y": 465
+      },
+      "pve_level_id": 10401,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "B2",
+      "formation": 1102,
+      "id": 1040104,
+      "movie": [],
+      "next_node": [
+        1040106,
+        1040107
+      ],
+      "next_node_path": "{\"9302-A-A\":{\"x\":880,\"y\":576},\"9304-A-A\":{\"x\":880,\"y\":719}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 850,
+        "y": 686
+      },
+      "position_letter": {
+        "x": 870,
+        "y": 686
+      },
+      "pve_level_id": 10401,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 20
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 10,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+10%^C454545FF00000000",
+      "flag": "C1",
+      "formation": 1103,
+      "id": 1040105,
+      "movie": [],
+      "next_node": [
+        1040108
+      ],
+      "next_node_path": "{\"9306-A-A\":{\"x\":1105,\"y\":356}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1070,
+        "y": 355
+      },
+      "position_letter": {
+        "x": 1090,
+        "y": 355
+      },
+      "pve_level_id": 10401,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 18
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 5,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+5%^C454545FF00000000",
+      "flag": "C2",
+      "formation": 1103,
+      "id": 1040106,
+      "movie": [],
+      "next_node": [
+        1040108
+      ],
+      "next_node_path": "{\"9303-A-A\":{\"x\":1105,\"y\":570}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1070,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 1090,
+        "y": 575
+      },
+      "pve_level_id": 10401,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 16
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "C3",
+      "formation": 1103,
+      "id": 1040107,
+      "movie": [],
+      "next_node": [
+        1040108
+      ],
+      "next_node_path": "{\"9309-A-A\":{\"x\":1105,\"y\":622}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1070,
+        "y": 790
+      },
+      "position_letter": {
+        "x": 1090,
+        "y": 790
+      },
+      "pve_level_id": 10401,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "D1",
+      "formation": 1104,
+      "id": 1040108,
+      "movie": [],
+      "next_node": [
+        1040109,
+        1040110
+      ],
+      "next_node_path": "{\"9302-A-A\":{\"x\":1320,\"y\":465},\"9304-A-A\":{\"x\":1320,\"y\":608}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1290,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 1310,
+        "y": 575
+      },
+      "pve_level_id": 10401,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "E1",
+      "formation": 1105,
+      "id": 1040109,
+      "movie": [],
+      "next_node": [
+        1040111,
+        1040112
+      ],
+      "next_node_path": "{\"9302-A-A\":{\"x\":1540,\"y\":355},\"9304-A-A\":{\"x\":1540,\"y\":498}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1510,
+        "y": 465
+      },
+      "position_letter": {
+        "x": 1530,
+        "y": 465
+      },
+      "pve_level_id": 10401,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "E2",
+      "formation": 1105,
+      "id": 1040110,
+      "movie": [],
+      "next_node": [
+        1040112,
+        1040113
+      ],
+      "next_node_path": "{\"9302-A-A\":{\"x\":1540,\"y\":576},\"9304-A-A\":{\"x\":1540,\"y\":719}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1510,
+        "y": 686
+      },
+      "position_letter": {
+        "x": 1530,
+        "y": 686
+      },
+      "pve_level_id": 10401,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 80
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 10,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+10%^C454545FF00000000",
+      "flag": "F1",
+      "formation": 1106,
+      "id": 1040111,
+      "movie": [],
+      "next_node": [],
+      "next_node_path": "{}",
+      "node_type": 2,
+      "node_weight": [],
+      "position": {
+        "x": 1730,
+        "y": 355
+      },
+      "position_letter": {
+        "x": 1750,
+        "y": 355
+      },
+      "pve_level_id": 10401,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 72
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 5,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+5%^C454545FF00000000",
+      "flag": "F2",
+      "formation": 1106,
+      "id": 1040112,
+      "movie": [],
+      "next_node": [],
+      "next_node_path": "{}",
+      "node_type": 2,
+      "node_weight": [],
+      "position": {
+        "x": 1730,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 1750,
+        "y": 575
+      },
+      "pve_level_id": 10401,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 64
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "F3",
+      "formation": 1106,
+      "id": 1040113,
+      "movie": [],
+      "next_node": [],
+      "next_node_path": "{}",
+      "node_type": 2,
+      "node_weight": [],
+      "position": {
+        "x": 1730,
+        "y": 790
+      },
+      "position_letter": {
+        "x": 1750,
+        "y": 790
+      },
+      "pve_level_id": 10401,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "",
+      "formation": 0,
+      "id": 1040201,
+      "movie": [],
+      "next_node": [
+        1040202,
+        1040203
+      ],
+      "next_node_path": "{\"9302-A-A\":{\"x\":440,\"y\":465},\"9304-A-A\":{\"x\":440,\"y\":608}}",
+      "node_type": 4,
+      "node_weight": [],
+      "position": {
+        "x": 410,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 430,
+        "y": 575
+      },
+      "pve_level_id": 10402,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "A1",
+      "formation": 1201,
+      "id": 1040202,
+      "movie": [],
+      "next_node": [
+        1040204,
+        1040205
+      ],
+      "next_node_path": "{\"9302-A-A\":{\"x\":660,\"y\":355},\"9304-A-A\":{\"x\":660,\"y\":498}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 630,
+        "y": 465
+      },
+      "position_letter": {
+        "x": 650,
+        "y": 465
+      },
+      "pve_level_id": 10402,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "A2",
+      "formation": 1201,
+      "id": 1040203,
+      "movie": [],
+      "next_node": [
+        1040205,
+        1040206
+      ],
+      "next_node_path": "{\"9302-A-A\":{\"x\":660,\"y\":576},\"9304-A-A\":{\"x\":660,\"y\":719}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 630,
+        "y": 686
+      },
+      "position_letter": {
+        "x": 650,
+        "y": 686
+      },
+      "pve_level_id": 10402,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 20
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 15,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+15%^C454545FF00000000",
+      "flag": "B1",
+      "formation": 1202,
+      "id": 1040204,
+      "movie": [],
+      "next_node": [
+        1040207
+      ],
+      "next_node_path": "{\"9303-A-A\":{\"x\":885,\"y\":350}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 850,
+        "y": 355
+      },
+      "position_letter": {
+        "x": 870,
+        "y": 355
+      },
+      "pve_level_id": 10402,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 18
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 5,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+5%^C454545FF00000000",
+      "flag": "B2",
+      "formation": 1202,
+      "id": 1040205,
+      "movie": [],
+      "next_node": [
+        1040208
+      ],
+      "next_node_path": "{\"9303-A-A\":{\"x\":885,\"y\":570}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 850,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 870,
+        "y": 575
+      },
+      "pve_level_id": 10402,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 16
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "B3",
+      "formation": 1202,
+      "id": 1040206,
+      "movie": [],
+      "next_node": [
+        1040209
+      ],
+      "next_node_path": "{\"9303-A-A\":{\"x\":885,\"y\":785}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 850,
+        "y": 790
+      },
+      "position_letter": {
+        "x": 870,
+        "y": 790
+      },
+      "pve_level_id": 10402,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "C1",
+      "formation": 1203,
+      "id": 1040207,
+      "movie": [],
+      "next_node": [
+        1040210
+      ],
+      "next_node_path": "{\"9307-A-A\":{\"x\":1100,\"y\":355}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1070,
+        "y": 355
+      },
+      "position_letter": {
+        "x": 1090,
+        "y": 355
+      },
+      "pve_level_id": 10402,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "C2",
+      "formation": 1203,
+      "id": 1040208,
+      "movie": [],
+      "next_node": [
+        1040210,
+        1040211
+      ],
+      "next_node_path": "{\"9308-A-A\":{\"x\":1100,\"y\":498},\"9307-A-A\":{\"x\":1100,\"y\":575}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1070,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 1090,
+        "y": 575
+      },
+      "pve_level_id": 10402,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "C3",
+      "formation": 1203,
+      "id": 1040209,
+      "movie": [],
+      "next_node": [
+        1040211
+      ],
+      "next_node_path": "{\"9308-A-A\":{\"x\":1100,\"y\":713}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1070,
+        "y": 790
+      },
+      "position_letter": {
+        "x": 1090,
+        "y": 790
+      },
+      "pve_level_id": 10402,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "D1",
+      "formation": 1204,
+      "id": 1040210,
+      "movie": [],
+      "next_node": [
+        1040212
+      ],
+      "next_node_path": "{\"9307-A-A\":{\"x\":1320,\"y\":465}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1290,
+        "y": 465
+      },
+      "position_letter": {
+        "x": 1310,
+        "y": 465
+      },
+      "pve_level_id": 10402,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "D2",
+      "formation": 1204,
+      "id": 1040211,
+      "movie": [],
+      "next_node": [
+        1040212
+      ],
+      "next_node_path": "{\"9308-A-A\":{\"x\":1320,\"y\":609}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1290,
+        "y": 686
+      },
+      "position_letter": {
+        "x": 1310,
+        "y": 686
+      },
+      "pve_level_id": 10402,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "E1",
+      "formation": 1205,
+      "id": 1040212,
+      "movie": [],
+      "next_node": [
+        1040213,
+        1040214
+      ],
+      "next_node_path": "{\"9302-A-A\":{\"x\":1540,\"y\":465},\"9304-A-A\":{\"x\":1540,\"y\":608}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1510,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 1530,
+        "y": 575
+      },
+      "pve_level_id": 10402,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 80
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 25,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+25%^C454545FF00000000",
+      "flag": "F1",
+      "formation": 1206,
+      "id": 1040213,
+      "movie": [],
+      "next_node": [],
+      "next_node_path": "{}",
+      "node_type": 2,
+      "node_weight": [],
+      "position": {
+        "x": 1730,
+        "y": 465
+      },
+      "position_letter": {
+        "x": 1750,
+        "y": 465
+      },
+      "pve_level_id": 10402,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 64
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 10,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+10%^C454545FF00000000",
+      "flag": "F2",
+      "formation": 1206,
+      "id": 1040214,
+      "movie": [],
+      "next_node": [],
+      "next_node_path": "{}",
+      "node_type": 2,
+      "node_weight": [],
+      "position": {
+        "x": 1730,
+        "y": 686
+      },
+      "position_letter": {
+        "x": 1750,
+        "y": 686
+      },
+      "pve_level_id": 10402,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "",
+      "formation": 0,
+      "id": 1040301,
+      "movie": [],
+      "next_node": [
+        1040302,
+        1040303,
+        1040304
+      ],
+      "next_node_path": "{\"9301-A-A\":{\"x\":410,\"y\":356},\"9303-A-A\":{\"x\":445,\"y\":570},\"9305-A-A\":{\"x\":410,\"y\":622}}",
+      "node_type": 4,
+      "node_weight": [],
+      "position": {
+        "x": 410,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 430,
+        "y": 575
+      },
+      "pve_level_id": 10403,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "A1",
+      "formation": 1301,
+      "id": 1040302,
+      "movie": [],
+      "next_node": [
+        1040305
+      ],
+      "next_node_path": "{\"9306-A-A\":{\"x\":665,\"y\":356}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 630,
+        "y": 355
+      },
+      "position_letter": {
+        "x": 650,
+        "y": 355
+      },
+      "pve_level_id": 10403,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "A2",
+      "formation": 1301,
+      "id": 1040303,
+      "movie": [],
+      "next_node": [
+        1040305
+      ],
+      "next_node_path": "{\"9303-A-A\":{\"x\":665,\"y\":570}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 630,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 650,
+        "y": 575
+      },
+      "pve_level_id": 10403,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "A3",
+      "formation": 1301,
+      "id": 1040304,
+      "movie": [],
+      "next_node": [
+        1040305
+      ],
+      "next_node_path": "{\"9309-A-A\":{\"x\":665,\"y\":622}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 630,
+        "y": 790
+      },
+      "position_letter": {
+        "x": 650,
+        "y": 790
+      },
+      "pve_level_id": 10403,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "B1",
+      "formation": 1302,
+      "id": 1040305,
+      "movie": [],
+      "next_node": [
+        1040306,
+        1040307,
+        1040308
+      ],
+      "next_node_path": "{\"9301-A-A\":{\"x\":850,\"y\":356},\"9303-A-A\":{\"x\":885,\"y\":570},\"9305-A-A\":{\"x\":850,\"y\":622}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 850,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 870,
+        "y": 575
+      },
+      "pve_level_id": 10403,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 20
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 35,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+35%^C454545FF00000000",
+      "flag": "C1",
+      "formation": 1303,
+      "id": 1040306,
+      "movie": [],
+      "next_node": [
+        1040309
+      ],
+      "next_node_path": "{\"9303-A-A\":{\"x\":1105,\"y\":350}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1070,
+        "y": 355
+      },
+      "position_letter": {
+        "x": 1090,
+        "y": 355
+      },
+      "pve_level_id": 10403,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 18
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 25,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+25%^C454545FF00000000",
+      "flag": "C2",
+      "formation": 1303,
+      "id": 1040307,
+      "movie": [],
+      "next_node": [
+        1040310
+      ],
+      "next_node_path": "{\"9303-A-A\":{\"x\":1105,\"y\":570}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1070,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 1090,
+        "y": 575
+      },
+      "pve_level_id": 10403,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 16
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 15,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+15%^C454545FF00000000",
+      "flag": "C3",
+      "formation": 1303,
+      "id": 1040308,
+      "movie": [],
+      "next_node": [
+        1040311
+      ],
+      "next_node_path": "{\"9303-A-A\":{\"x\":1105,\"y\":785}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1070,
+        "y": 790
+      },
+      "position_letter": {
+        "x": 1090,
+        "y": 790
+      },
+      "pve_level_id": 10403,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "D1",
+      "formation": 1304,
+      "id": 1040309,
+      "movie": [],
+      "next_node": [
+        1040312
+      ],
+      "next_node_path": "{\"9307-A-A\":{\"x\":1320,\"y\":355}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1290,
+        "y": 355
+      },
+      "position_letter": {
+        "x": 1310,
+        "y": 355
+      },
+      "pve_level_id": 10403,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "D2",
+      "formation": 1304,
+      "id": 1040310,
+      "movie": [],
+      "next_node": [
+        1040312,
+        1040313
+      ],
+      "next_node_path": "{\"9308-A-A\":{\"x\":1320,\"y\":498},\"9307-A-A\":{\"x\":1320,\"y\":575}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1290,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 1310,
+        "y": 575
+      },
+      "pve_level_id": 10403,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "D3",
+      "formation": 1304,
+      "id": 1040311,
+      "movie": [],
+      "next_node": [
+        1040313
+      ],
+      "next_node_path": "{\"9308-A-A\":{\"x\":1320,\"y\":713}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1290,
+        "y": 790
+      },
+      "position_letter": {
+        "x": 1310,
+        "y": 790
+      },
+      "pve_level_id": 10403,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "E1",
+      "formation": 1305,
+      "id": 1040312,
+      "movie": [],
+      "next_node": [
+        1040314
+      ],
+      "next_node_path": "{\"9307-A-A\":{\"x\":1540,\"y\":465}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1510,
+        "y": 465
+      },
+      "position_letter": {
+        "x": 1530,
+        "y": 465
+      },
+      "pve_level_id": 10403,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "E2",
+      "formation": 1305,
+      "id": 1040313,
+      "movie": [],
+      "next_node": [
+        1040314
+      ],
+      "next_node_path": "{\"9308-A-A\":{\"x\":1540,\"y\":609}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1510,
+        "y": 686
+      },
+      "position_letter": {
+        "x": 1530,
+        "y": 686
+      },
+      "pve_level_id": 10403,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "F1",
+      "formation": 1306,
+      "id": 1040314,
+      "movie": [],
+      "next_node": [
+        1040315,
+        1040316
+      ],
+      "next_node_path": "{\"9302-A-A\":{\"x\":1760,\"y\":465},\"9304-A-A\":{\"x\":1760,\"y\":608}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1730,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 1750,
+        "y": 575
+      },
+      "pve_level_id": 10403,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 80
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 50,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+50%^C454545FF00000000",
+      "flag": "G1",
+      "formation": 1307,
+      "id": 1040315,
+      "movie": [],
+      "next_node": [],
+      "next_node_path": "{}",
+      "node_type": 2,
+      "node_weight": [],
+      "position": {
+        "x": 1950,
+        "y": 465
+      },
+      "position_letter": {
+        "x": 1970,
+        "y": 465
+      },
+      "pve_level_id": 10403,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 64
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 15,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+15%^C454545FF00000000",
+      "flag": "G2",
+      "formation": 1307,
+      "id": 1040316,
+      "movie": [],
+      "next_node": [],
+      "next_node_path": "{}",
+      "node_type": 2,
+      "node_weight": [],
+      "position": {
+        "x": 1950,
+        "y": 686
+      },
+      "position_letter": {
+        "x": 1970,
+        "y": 686
+      },
+      "pve_level_id": 10403,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "",
+      "formation": 0,
+      "id": 1040401,
+      "movie": [],
+      "next_node": [
+        1040402,
+        1040403
+      ],
+      "next_node_path": "{\"9302-A-A\":{\"x\":440,\"y\":465},\"9304-A-A\":{\"x\":440,\"y\":608}}",
+      "node_type": 4,
+      "node_weight": [],
+      "position": {
+        "x": 410,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 430,
+        "y": 575
+      },
+      "pve_level_id": 10404,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "A1",
+      "formation": 2101,
+      "id": 1040402,
+      "movie": [],
+      "next_node": [
+        1040404
+      ],
+      "next_node_path": "{\"9303-A-A\":{\"x\":665,\"y\":460}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 630,
+        "y": 465
+      },
+      "position_letter": {
+        "x": 650,
+        "y": 465
+      },
+      "pve_level_id": 10404,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "A2",
+      "formation": 2101,
+      "id": 1040403,
+      "movie": [],
+      "next_node": [
+        1040405
+      ],
+      "next_node_path": "{\"9303-A-A\":{\"x\":665,\"y\":681}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 630,
+        "y": 686
+      },
+      "position_letter": {
+        "x": 650,
+        "y": 686
+      },
+      "pve_level_id": 10404,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "B1",
+      "formation": 2102,
+      "id": 1040404,
+      "movie": [],
+      "next_node": [
+        1040406
+      ],
+      "next_node_path": "{\"9307-A-A\":{\"x\":880,\"y\":465}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 850,
+        "y": 465
+      },
+      "position_letter": {
+        "x": 870,
+        "y": 465
+      },
+      "pve_level_id": 10404,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "B2",
+      "formation": 2102,
+      "id": 1040405,
+      "movie": [],
+      "next_node": [
+        1040406
+      ],
+      "next_node_path": "{\"9308-A-A\":{\"x\":880,\"y\":609}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 850,
+        "y": 686
+      },
+      "position_letter": {
+        "x": 870,
+        "y": 686
+      },
+      "pve_level_id": 10404,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "C1",
+      "formation": 2103,
+      "id": 1040406,
+      "movie": [],
+      "next_node": [
+        1040407,
+        1040408
+      ],
+      "next_node_path": "{\"9302-A-A\":{\"x\":1100,\"y\":465},\"9304-A-A\":{\"x\":1100,\"y\":608}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1070,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 1090,
+        "y": 575
+      },
+      "pve_level_id": 10404,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 40
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 10,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+10%^C454545FF00000000",
+      "flag": "D1",
+      "formation": 2104,
+      "id": 1040407,
+      "movie": [],
+      "next_node": [
+        1040409,
+        1040410
+      ],
+      "next_node_path": "{\"9302-A-A\":{\"x\":1320,\"y\":355},\"9304-A-A\":{\"x\":1320,\"y\":498}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1290,
+        "y": 465
+      },
+      "position_letter": {
+        "x": 1310,
+        "y": 465
+      },
+      "pve_level_id": 10404,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 32
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 5,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+5%^C454545FF00000000",
+      "flag": "D2",
+      "formation": 2104,
+      "id": 1040408,
+      "movie": [],
+      "next_node": [
+        1040410,
+        1040411
+      ],
+      "next_node_path": "{\"9302-A-A\":{\"x\":1320,\"y\":576},\"9304-A-A\":{\"x\":1320,\"y\":719}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1290,
+        "y": 686
+      },
+      "position_letter": {
+        "x": 1310,
+        "y": 686
+      },
+      "pve_level_id": 10404,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "E1",
+      "formation": 2105,
+      "id": 1040409,
+      "movie": [],
+      "next_node": [
+        1040412
+      ],
+      "next_node_path": "{\"9307-A-A\":{\"x\":1540,\"y\":355}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1510,
+        "y": 355
+      },
+      "position_letter": {
+        "x": 1530,
+        "y": 355
+      },
+      "pve_level_id": 10404,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "E2",
+      "formation": 2105,
+      "id": 1040410,
+      "movie": [],
+      "next_node": [
+        1040412,
+        1040413
+      ],
+      "next_node_path": "{\"9308-A-A\":{\"x\":1540,\"y\":498},\"9307-A-A\":{\"x\":1540,\"y\":575}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1510,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 1530,
+        "y": 575
+      },
+      "pve_level_id": 10404,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "E3",
+      "formation": 2105,
+      "id": 1040411,
+      "movie": [],
+      "next_node": [
+        1040413
+      ],
+      "next_node_path": "{\"9308-A-A\":{\"x\":1540,\"y\":713}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1510,
+        "y": 790
+      },
+      "position_letter": {
+        "x": 1530,
+        "y": 790
+      },
+      "pve_level_id": 10404,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 160
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 10,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+10%^C454545FF00000000",
+      "flag": "F1",
+      "formation": 2106,
+      "id": 1040412,
+      "movie": [],
+      "next_node": [],
+      "next_node_path": "{}",
+      "node_type": 2,
+      "node_weight": [],
+      "position": {
+        "x": 1730,
+        "y": 465
+      },
+      "position_letter": {
+        "x": 1750,
+        "y": 465
+      },
+      "pve_level_id": 10404,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 128
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 5,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+5%^C454545FF00000000",
+      "flag": "F2",
+      "formation": 2106,
+      "id": 1040413,
+      "movie": [],
+      "next_node": [],
+      "next_node_path": "{}",
+      "node_type": 2,
+      "node_weight": [],
+      "position": {
+        "x": 1730,
+        "y": 686
+      },
+      "position_letter": {
+        "x": 1750,
+        "y": 686
+      },
+      "pve_level_id": 10404,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "",
+      "formation": 0,
+      "id": 1040501,
+      "movie": [],
+      "next_node": [
+        1040502
+      ],
+      "next_node_path": "{\"9303-A-A\":{\"x\":445,\"y\":570}}",
+      "node_type": 4,
+      "node_weight": [],
+      "position": {
+        "x": 410,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 430,
+        "y": 575
+      },
+      "pve_level_id": 10405,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "A1",
+      "formation": 2201,
+      "id": 1040502,
+      "movie": [],
+      "next_node": [
+        1040503,
+        1040504
+      ],
+      "next_node_path": "{\"9302-A-A\":{\"x\":660,\"y\":465},\"9304-A-A\":{\"x\":660,\"y\":608}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 630,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 650,
+        "y": 575
+      },
+      "pve_level_id": 10405,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 40
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 15,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+15%^C454545FF00000000",
+      "flag": "B1",
+      "formation": 2202,
+      "id": 1040503,
+      "movie": [],
+      "next_node": [
+        1040505
+      ],
+      "next_node_path": "{\"9303-A-A\":{\"x\":885,\"y\":460}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 850,
+        "y": 465
+      },
+      "position_letter": {
+        "x": 870,
+        "y": 465
+      },
+      "pve_level_id": 10405,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 32
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 5,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+5%^C454545FF00000000",
+      "flag": "B2",
+      "formation": 2202,
+      "id": 1040504,
+      "movie": [],
+      "next_node": [
+        1040506
+      ],
+      "next_node_path": "{\"9303-A-A\":{\"x\":885,\"y\":681}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 850,
+        "y": 686
+      },
+      "position_letter": {
+        "x": 870,
+        "y": 686
+      },
+      "pve_level_id": 10405,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "C1",
+      "formation": 2203,
+      "id": 1040505,
+      "movie": [],
+      "next_node": [
+        1040507
+      ],
+      "next_node_path": "{\"9307-A-A\":{\"x\":1100,\"y\":465}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1070,
+        "y": 465
+      },
+      "position_letter": {
+        "x": 1090,
+        "y": 465
+      },
+      "pve_level_id": 10405,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "C2",
+      "formation": 2203,
+      "id": 1040506,
+      "movie": [],
+      "next_node": [
+        1040507
+      ],
+      "next_node_path": "{\"9308-A-A\":{\"x\":1100,\"y\":609}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1070,
+        "y": 686
+      },
+      "position_letter": {
+        "x": 1090,
+        "y": 686
+      },
+      "pve_level_id": 10405,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "D1",
+      "formation": 2204,
+      "id": 1040507,
+      "movie": [],
+      "next_node": [
+        1040508,
+        1040509
+      ],
+      "next_node_path": "{\"9302-A-A\":{\"x\":1320,\"y\":465},\"9304-A-A\":{\"x\":1320,\"y\":608}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1290,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 1310,
+        "y": 575
+      },
+      "pve_level_id": 10405,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "E1",
+      "formation": 2205,
+      "id": 1040508,
+      "movie": [],
+      "next_node": [
+        1040510,
+        1040511
+      ],
+      "next_node_path": "{\"9302-A-A\":{\"x\":1540,\"y\":355},\"9304-A-A\":{\"x\":1540,\"y\":498}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1510,
+        "y": 465
+      },
+      "position_letter": {
+        "x": 1530,
+        "y": 465
+      },
+      "pve_level_id": 10405,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "E2",
+      "formation": 2205,
+      "id": 1040509,
+      "movie": [],
+      "next_node": [
+        1040511,
+        1040512
+      ],
+      "next_node_path": "{\"9302-A-A\":{\"x\":1540,\"y\":576},\"9304-A-A\":{\"x\":1540,\"y\":719}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1510,
+        "y": 686
+      },
+      "position_letter": {
+        "x": 1530,
+        "y": 686
+      },
+      "pve_level_id": 10405,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "F1",
+      "formation": 2206,
+      "id": 1040510,
+      "movie": [],
+      "next_node": [
+        1040513
+      ],
+      "next_node_path": "{\"9307-A-A\":{\"x\":1760,\"y\":355}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1730,
+        "y": 355
+      },
+      "position_letter": {
+        "x": 1750,
+        "y": 355
+      },
+      "pve_level_id": 10405,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "F2",
+      "formation": 2206,
+      "id": 1040511,
+      "movie": [],
+      "next_node": [
+        1040513,
+        1040514
+      ],
+      "next_node_path": "{\"9308-A-A\":{\"x\":1760,\"y\":498},\"9307-A-A\":{\"x\":1760,\"y\":575}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1730,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 1750,
+        "y": 575
+      },
+      "pve_level_id": 10405,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "F3",
+      "formation": 2206,
+      "id": 1040512,
+      "movie": [],
+      "next_node": [
+        1040514
+      ],
+      "next_node_path": "{\"9308-A-A\":{\"x\":1760,\"y\":713}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1730,
+        "y": 790
+      },
+      "position_letter": {
+        "x": 1750,
+        "y": 790
+      },
+      "pve_level_id": 10405,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 160
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 25,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+25%^C454545FF00000000",
+      "flag": "G1",
+      "formation": 2207,
+      "id": 1040513,
+      "movie": [],
+      "next_node": [],
+      "next_node_path": "{}",
+      "node_type": 2,
+      "node_weight": [],
+      "position": {
+        "x": 1950,
+        "y": 465
+      },
+      "position_letter": {
+        "x": 1970,
+        "y": 465
+      },
+      "pve_level_id": 10405,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 128
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 10,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+10%^C454545FF00000000",
+      "flag": "G2",
+      "formation": 2207,
+      "id": 1040514,
+      "movie": [],
+      "next_node": [],
+      "next_node_path": "{}",
+      "node_type": 2,
+      "node_weight": [],
+      "position": {
+        "x": 1950,
+        "y": 686
+      },
+      "position_letter": {
+        "x": 1970,
+        "y": 686
+      },
+      "pve_level_id": 10405,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "",
+      "formation": 0,
+      "id": 1040601,
+      "movie": [],
+      "next_node": [
+        1040602,
+        1040603,
+        1040604
+      ],
+      "next_node_path": "{\"9301-A-A\":{\"x\":410,\"y\":356},\"9303-A-A\":{\"x\":445,\"y\":570},\"9305-A-A\":{\"x\":410,\"y\":622}}",
+      "node_type": 4,
+      "node_weight": [],
+      "position": {
+        "x": 410,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 430,
+        "y": 575
+      },
+      "pve_level_id": 10406,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "A1",
+      "formation": 2301,
+      "id": 1040602,
+      "movie": [],
+      "next_node": [
+        1040605
+      ],
+      "next_node_path": "{\"9303-A-A\":{\"x\":665,\"y\":350}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 630,
+        "y": 355
+      },
+      "position_letter": {
+        "x": 650,
+        "y": 355
+      },
+      "pve_level_id": 10406,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "A2",
+      "formation": 2301,
+      "id": 1040603,
+      "movie": [],
+      "next_node": [
+        1040606
+      ],
+      "next_node_path": "{\"9303-A-A\":{\"x\":665,\"y\":570}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 630,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 650,
+        "y": 575
+      },
+      "pve_level_id": 10406,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "A3",
+      "formation": 2301,
+      "id": 1040604,
+      "movie": [],
+      "next_node": [
+        1040607
+      ],
+      "next_node_path": "{\"9303-A-A\":{\"x\":665,\"y\":785}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 630,
+        "y": 790
+      },
+      "position_letter": {
+        "x": 650,
+        "y": 790
+      },
+      "pve_level_id": 10406,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 40
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 35,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+35%^C454545FF00000000",
+      "flag": "B1",
+      "formation": 2302,
+      "id": 1040605,
+      "movie": [],
+      "next_node": [
+        1040608
+      ],
+      "next_node_path": "{\"9307-A-A\":{\"x\":880,\"y\":355}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 850,
+        "y": 355
+      },
+      "position_letter": {
+        "x": 870,
+        "y": 355
+      },
+      "pve_level_id": 10406,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 32
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 25,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+25%^C454545FF00000000",
+      "flag": "B2",
+      "formation": 2302,
+      "id": 1040606,
+      "movie": [],
+      "next_node": [
+        1040608,
+        1040609
+      ],
+      "next_node_path": "{\"9308-A-A\":{\"x\":880,\"y\":498},\"9307-A-A\":{\"x\":880,\"y\":575}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 850,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 870,
+        "y": 575
+      },
+      "pve_level_id": 10406,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 24
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 15,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+15%^C454545FF00000000",
+      "flag": "B3",
+      "formation": 2302,
+      "id": 1040607,
+      "movie": [],
+      "next_node": [
+        1040609
+      ],
+      "next_node_path": "{\"9308-A-A\":{\"x\":880,\"y\":713}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 850,
+        "y": 790
+      },
+      "position_letter": {
+        "x": 870,
+        "y": 790
+      },
+      "pve_level_id": 10406,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "C1",
+      "formation": 2303,
+      "id": 1040608,
+      "movie": [],
+      "next_node": [
+        1040610
+      ],
+      "next_node_path": "{\"9307-A-A\":{\"x\":1100,\"y\":465}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1070,
+        "y": 465
+      },
+      "position_letter": {
+        "x": 1090,
+        "y": 465
+      },
+      "pve_level_id": 10406,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "C2",
+      "formation": 2303,
+      "id": 1040609,
+      "movie": [],
+      "next_node": [
+        1040610
+      ],
+      "next_node_path": "{\"9308-A-A\":{\"x\":1100,\"y\":609}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1070,
+        "y": 686
+      },
+      "position_letter": {
+        "x": 1090,
+        "y": 686
+      },
+      "pve_level_id": 10406,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "D1",
+      "formation": 2304,
+      "id": 1040610,
+      "movie": [],
+      "next_node": [
+        1040611
+      ],
+      "next_node_path": "{\"9303-A-A\":{\"x\":1325,\"y\":570}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1290,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 1310,
+        "y": 575
+      },
+      "pve_level_id": 10406,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "E1",
+      "formation": 2305,
+      "id": 1040611,
+      "movie": [],
+      "next_node": [
+        1040612,
+        1040613,
+        1040614
+      ],
+      "next_node_path": "{\"9301-A-A\":{\"x\":1510,\"y\":356},\"9303-A-A\":{\"x\":1545,\"y\":570},\"9305-A-A\":{\"x\":1510,\"y\":622}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1510,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 1530,
+        "y": 575
+      },
+      "pve_level_id": 10406,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "F1",
+      "formation": 2306,
+      "id": 1040612,
+      "movie": [],
+      "next_node": [
+        1040615
+      ],
+      "next_node_path": "{\"9303-A-A\":{\"x\":1765,\"y\":350}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1730,
+        "y": 355
+      },
+      "position_letter": {
+        "x": 1750,
+        "y": 355
+      },
+      "pve_level_id": 10406,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "F2",
+      "formation": 2306,
+      "id": 1040613,
+      "movie": [],
+      "next_node": [
+        1040616
+      ],
+      "next_node_path": "{\"9303-A-A\":{\"x\":1765,\"y\":570}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1730,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 1750,
+        "y": 575
+      },
+      "pve_level_id": 10406,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "F3",
+      "formation": 2306,
+      "id": 1040614,
+      "movie": [],
+      "next_node": [
+        1040617
+      ],
+      "next_node_path": "{\"9303-A-A\":{\"x\":1765,\"y\":785}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1730,
+        "y": 790
+      },
+      "position_letter": {
+        "x": 1750,
+        "y": 790
+      },
+      "pve_level_id": 10406,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 160
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 50,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+50%^C454545FF00000000",
+      "flag": "G1",
+      "formation": 2307,
+      "id": 1040615,
+      "movie": [],
+      "next_node": [],
+      "next_node_path": "{}",
+      "node_type": 2,
+      "node_weight": [],
+      "position": {
+        "x": 1950,
+        "y": 355
+      },
+      "position_letter": {
+        "x": 1970,
+        "y": 355
+      },
+      "pve_level_id": 10406,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 128
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 35,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+35%^C454545FF00000000",
+      "flag": "G2",
+      "formation": 2307,
+      "id": 1040616,
+      "movie": [],
+      "next_node": [],
+      "next_node_path": "{}",
+      "node_type": 2,
+      "node_weight": [],
+      "position": {
+        "x": 1950,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 1970,
+        "y": 575
+      },
+      "pve_level_id": 10406,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 96
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 15,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+15%^C454545FF00000000",
+      "flag": "G3",
+      "formation": 2307,
+      "id": 1040617,
+      "movie": [],
+      "next_node": [],
+      "next_node_path": "{}",
+      "node_type": 2,
+      "node_weight": [],
+      "position": {
+        "x": 1950,
+        "y": 790
+      },
+      "position_letter": {
+        "x": 1970,
+        "y": 790
+      },
+      "pve_level_id": 10406,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "",
+      "formation": 0,
+      "id": 1040701,
+      "movie": [],
+      "next_node": [
+        1040702,
+        1040703
+      ],
+      "next_node_path": "{\"9302-A-A\":{\"x\":440,\"y\":465},\"9304-A-A\":{\"x\":440,\"y\":608}}",
+      "node_type": 4,
+      "node_weight": [],
+      "position": {
+        "x": 410,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 430,
+        "y": 575
+      },
+      "pve_level_id": 10407,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "A1",
+      "formation": 3101,
+      "id": 1040702,
+      "movie": [],
+      "next_node": [
+        1040704
+      ],
+      "next_node_path": "{\"9307-A-A\":{\"x\":660,\"y\":465}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 630,
+        "y": 465
+      },
+      "position_letter": {
+        "x": 650,
+        "y": 465
+      },
+      "pve_level_id": 10407,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "A2",
+      "formation": 3101,
+      "id": 1040703,
+      "movie": [],
+      "next_node": [
+        1040704
+      ],
+      "next_node_path": "{\"9308-A-A\":{\"x\":660,\"y\":609}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 630,
+        "y": 686
+      },
+      "position_letter": {
+        "x": 650,
+        "y": 686
+      },
+      "pve_level_id": 10407,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "B1",
+      "formation": 3102,
+      "id": 1040704,
+      "movie": [],
+      "next_node": [
+        1040705,
+        1040706,
+        1040707
+      ],
+      "next_node_path": "{\"9301-A-A\":{\"x\":850,\"y\":356},\"9303-A-A\":{\"x\":885,\"y\":570},\"9305-A-A\":{\"x\":850,\"y\":622}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 850,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 870,
+        "y": 575
+      },
+      "pve_level_id": 10407,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 80
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 10,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+10%^C454545FF00000000",
+      "flag": "C1",
+      "formation": 3103,
+      "id": 1040705,
+      "movie": [],
+      "next_node": [
+        1040708
+      ],
+      "next_node_path": "{\"9307-A-A\":{\"x\":1100,\"y\":355}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1070,
+        "y": 355
+      },
+      "position_letter": {
+        "x": 1090,
+        "y": 355
+      },
+      "pve_level_id": 10407,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 64
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 5,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+5%^C454545FF00000000",
+      "flag": "C2",
+      "formation": 3103,
+      "id": 1040706,
+      "movie": [],
+      "next_node": [
+        1040708,
+        1040709
+      ],
+      "next_node_path": "{\"9308-A-A\":{\"x\":1100,\"y\":498},\"9307-A-A\":{\"x\":1100,\"y\":575}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1070,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 1090,
+        "y": 575
+      },
+      "pve_level_id": 10407,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 48
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "C3",
+      "formation": 3103,
+      "id": 1040707,
+      "movie": [],
+      "next_node": [
+        1040709
+      ],
+      "next_node_path": "{\"9308-A-A\":{\"x\":1100,\"y\":713}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1070,
+        "y": 790
+      },
+      "position_letter": {
+        "x": 1090,
+        "y": 790
+      },
+      "pve_level_id": 10407,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "D1",
+      "formation": 3104,
+      "id": 1040708,
+      "movie": [],
+      "next_node": [
+        1040710
+      ],
+      "next_node_path": "{\"9307-A-A\":{\"x\":1320,\"y\":465}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1290,
+        "y": 465
+      },
+      "position_letter": {
+        "x": 1310,
+        "y": 465
+      },
+      "pve_level_id": 10407,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "D2",
+      "formation": 3104,
+      "id": 1040709,
+      "movie": [],
+      "next_node": [
+        1040710
+      ],
+      "next_node_path": "{\"9308-A-A\":{\"x\":1320,\"y\":609}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1290,
+        "y": 686
+      },
+      "position_letter": {
+        "x": 1310,
+        "y": 686
+      },
+      "pve_level_id": 10407,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "E1",
+      "formation": 3105,
+      "id": 1040710,
+      "movie": [],
+      "next_node": [
+        1040711,
+        1040712
+      ],
+      "next_node_path": "{\"9302-A-A\":{\"x\":1540,\"y\":465},\"9304-A-A\":{\"x\":1540,\"y\":608}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1510,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 1530,
+        "y": 575
+      },
+      "pve_level_id": 10407,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 320
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 10,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+10%^C454545FF00000000",
+      "flag": "F1",
+      "formation": 3106,
+      "id": 1040711,
+      "movie": [],
+      "next_node": [],
+      "next_node_path": "{}",
+      "node_type": 2,
+      "node_weight": [],
+      "position": {
+        "x": 1730,
+        "y": 465
+      },
+      "position_letter": {
+        "x": 1750,
+        "y": 465
+      },
+      "pve_level_id": 10407,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 256
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 5,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+5%^C454545FF00000000",
+      "flag": "F2",
+      "formation": 3106,
+      "id": 1040712,
+      "movie": [],
+      "next_node": [],
+      "next_node_path": "{}",
+      "node_type": 2,
+      "node_weight": [],
+      "position": {
+        "x": 1730,
+        "y": 686
+      },
+      "position_letter": {
+        "x": 1750,
+        "y": 686
+      },
+      "pve_level_id": 10407,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "",
+      "formation": 0,
+      "id": 1040801,
+      "movie": [],
+      "next_node": [
+        1040802,
+        1040803,
+        1040804
+      ],
+      "next_node_path": "{\"9301-A-A\":{\"x\":410,\"y\":356},\"9303-A-A\":{\"x\":445,\"y\":570},\"9305-A-A\":{\"x\":410,\"y\":622}}",
+      "node_type": 4,
+      "node_weight": [],
+      "position": {
+        "x": 410,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 430,
+        "y": 575
+      },
+      "pve_level_id": 10408,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+25%^C454545FF00000000",
+      "flag": "A1",
+      "formation": 3201,
+      "id": 1040802,
+      "movie": [],
+      "next_node": [
+        1040805
+      ],
+      "next_node_path": "{\"9307-A-A\":{\"x\":660,\"y\":355}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 630,
+        "y": 355
+      },
+      "position_letter": {
+        "x": 650,
+        "y": 355
+      },
+      "pve_level_id": 10408,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+15%^C454545FF00000000",
+      "flag": "A2",
+      "formation": 3201,
+      "id": 1040803,
+      "movie": [],
+      "next_node": [
+        1040805,
+        1040806
+      ],
+      "next_node_path": "{\"9308-A-A\":{\"x\":660,\"y\":498},\"9307-A-A\":{\"x\":660,\"y\":575}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 630,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 650,
+        "y": 575
+      },
+      "pve_level_id": 10408,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+10%^C454545FF00000000",
+      "flag": "A3",
+      "formation": 3201,
+      "id": 1040804,
+      "movie": [],
+      "next_node": [
+        1040806
+      ],
+      "next_node_path": "{\"9308-A-A\":{\"x\":660,\"y\":713}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 630,
+        "y": 790
+      },
+      "position_letter": {
+        "x": 650,
+        "y": 790
+      },
+      "pve_level_id": 10408,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "B1",
+      "formation": 3202,
+      "id": 1040805,
+      "movie": [],
+      "next_node": [
+        1040807
+      ],
+      "next_node_path": "{\"9307-A-A\":{\"x\":880,\"y\":465}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 850,
+        "y": 465
+      },
+      "position_letter": {
+        "x": 870,
+        "y": 465
+      },
+      "pve_level_id": 10408,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "B2",
+      "formation": 3202,
+      "id": 1040806,
+      "movie": [],
+      "next_node": [
+        1040807
+      ],
+      "next_node_path": "{\"9308-A-A\":{\"x\":880,\"y\":609}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 850,
+        "y": 686
+      },
+      "position_letter": {
+        "x": 870,
+        "y": 686
+      },
+      "pve_level_id": 10408,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "C1",
+      "formation": 3203,
+      "id": 1040807,
+      "movie": [],
+      "next_node": [
+        1040808,
+        1040809
+      ],
+      "next_node_path": "{\"9302-A-A\":{\"x\":1100,\"y\":465},\"9304-A-A\":{\"x\":1100,\"y\":608}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1070,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 1090,
+        "y": 575
+      },
+      "pve_level_id": 10408,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "D1",
+      "formation": 3204,
+      "id": 1040808,
+      "movie": [],
+      "next_node": [
+        1040810,
+        1040811
+      ],
+      "next_node_path": "{\"9302-A-A\":{\"x\":1320,\"y\":355},\"9304-A-A\":{\"x\":1320,\"y\":498}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1290,
+        "y": 465
+      },
+      "position_letter": {
+        "x": 1310,
+        "y": 465
+      },
+      "pve_level_id": 10408,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "D2",
+      "formation": 3204,
+      "id": 1040809,
+      "movie": [],
+      "next_node": [
+        1040811,
+        1040812
+      ],
+      "next_node_path": "{\"9302-A-A\":{\"x\":1320,\"y\":576},\"9304-A-A\":{\"x\":1320,\"y\":719}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1290,
+        "y": 686
+      },
+      "position_letter": {
+        "x": 1310,
+        "y": 686
+      },
+      "pve_level_id": 10408,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 80
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 25,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+25%^C454545FF00000000",
+      "flag": "E1",
+      "formation": 3205,
+      "id": 1040810,
+      "movie": [],
+      "next_node": [
+        1040813
+      ],
+      "next_node_path": "{\"9306-A-A\":{\"x\":1545,\"y\":356}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1510,
+        "y": 355
+      },
+      "position_letter": {
+        "x": 1530,
+        "y": 355
+      },
+      "pve_level_id": 10408,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 64
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 15,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+15%^C454545FF00000000",
+      "flag": "E2",
+      "formation": 3205,
+      "id": 1040811,
+      "movie": [],
+      "next_node": [
+        1040813
+      ],
+      "next_node_path": "{\"9303-A-A\":{\"x\":1545,\"y\":570}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1510,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 1530,
+        "y": 575
+      },
+      "pve_level_id": 10408,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 48
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 10,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+10%^C454545FF00000000",
+      "flag": "E3",
+      "formation": 3205,
+      "id": 1040812,
+      "movie": [],
+      "next_node": [
+        1040813
+      ],
+      "next_node_path": "{\"9309-A-A\":{\"x\":1545,\"y\":622}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1510,
+        "y": 790
+      },
+      "position_letter": {
+        "x": 1530,
+        "y": 790
+      },
+      "pve_level_id": 10408,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "F1",
+      "formation": 3206,
+      "id": 1040813,
+      "movie": [],
+      "next_node": [
+        1040814,
+        1040815,
+        1040816
+      ],
+      "next_node_path": "{\"9301-A-A\":{\"x\":1730,\"y\":356},\"9303-A-A\":{\"x\":1765,\"y\":570},\"9305-A-A\":{\"x\":1730,\"y\":622}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1730,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 1750,
+        "y": 575
+      },
+      "pve_level_id": 10408,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 320
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 25,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+25%^C454545FF00000000",
+      "flag": "G1",
+      "formation": 3207,
+      "id": 1040814,
+      "movie": [],
+      "next_node": [],
+      "next_node_path": "{}",
+      "node_type": 2,
+      "node_weight": [],
+      "position": {
+        "x": 1950,
+        "y": 355
+      },
+      "position_letter": {
+        "x": 1970,
+        "y": 355
+      },
+      "pve_level_id": 10408,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 256
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 15,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+15%^C454545FF00000000",
+      "flag": "G2",
+      "formation": 3207,
+      "id": 1040815,
+      "movie": [],
+      "next_node": [],
+      "next_node_path": "{}",
+      "node_type": 2,
+      "node_weight": [],
+      "position": {
+        "x": 1950,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 1970,
+        "y": 575
+      },
+      "pve_level_id": 10408,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 192
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 10,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+10%^C454545FF00000000",
+      "flag": "G3",
+      "formation": 3207,
+      "id": 1040816,
+      "movie": [],
+      "next_node": [],
+      "next_node_path": "{}",
+      "node_type": 2,
+      "node_weight": [],
+      "position": {
+        "x": 1950,
+        "y": 790
+      },
+      "position_letter": {
+        "x": 1970,
+        "y": 790
+      },
+      "pve_level_id": 10408,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "",
+      "formation": 0,
+      "id": 1040901,
+      "movie": [],
+      "next_node": [
+        1040902,
+        1040903
+      ],
+      "next_node_path": "{\"9302-A-A\":{\"x\":440,\"y\":465},\"9304-A-A\":{\"x\":440,\"y\":608}}",
+      "node_type": 4,
+      "node_weight": [],
+      "position": {
+        "x": 410,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 430,
+        "y": 575
+      },
+      "pve_level_id": 10409,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "A1",
+      "formation": 3301,
+      "id": 1040902,
+      "movie": [],
+      "next_node": [
+        1040904,
+        1040905
+      ],
+      "next_node_path": "{\"9302-A-A\":{\"x\":660,\"y\":355},\"9304-A-A\":{\"x\":660,\"y\":498}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 630,
+        "y": 465
+      },
+      "position_letter": {
+        "x": 650,
+        "y": 465
+      },
+      "pve_level_id": 10409,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "A2",
+      "formation": 3301,
+      "id": 1040903,
+      "movie": [],
+      "next_node": [
+        1040905,
+        1040906
+      ],
+      "next_node_path": "{\"9302-A-A\":{\"x\":660,\"y\":576},\"9304-A-A\":{\"x\":660,\"y\":719}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 630,
+        "y": 686
+      },
+      "position_letter": {
+        "x": 650,
+        "y": 686
+      },
+      "pve_level_id": 10409,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "B1",
+      "formation": 3302,
+      "id": 1040904,
+      "movie": [],
+      "next_node": [
+        1040907
+      ],
+      "next_node_path": "{\"9306-A-A\":{\"x\":885,\"y\":356}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 850,
+        "y": 355
+      },
+      "position_letter": {
+        "x": 870,
+        "y": 355
+      },
+      "pve_level_id": 10409,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "B2",
+      "formation": 3302,
+      "id": 1040905,
+      "movie": [],
+      "next_node": [
+        1040907
+      ],
+      "next_node_path": "{\"9303-A-A\":{\"x\":885,\"y\":570}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 850,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 870,
+        "y": 575
+      },
+      "pve_level_id": 10409,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "B3",
+      "formation": 3302,
+      "id": 1040906,
+      "movie": [],
+      "next_node": [
+        1040907
+      ],
+      "next_node_path": "{\"9309-A-A\":{\"x\":885,\"y\":622}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 850,
+        "y": 790
+      },
+      "position_letter": {
+        "x": 870,
+        "y": 790
+      },
+      "pve_level_id": 10409,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "C1",
+      "formation": 3303,
+      "id": 1040907,
+      "movie": [],
+      "next_node": [
+        1040908,
+        1040909,
+        1040910
+      ],
+      "next_node_path": "{\"9301-A-A\":{\"x\":1070,\"y\":356},\"9303-A-A\":{\"x\":1105,\"y\":570},\"9305-A-A\":{\"x\":1070,\"y\":622}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1070,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 1090,
+        "y": 575
+      },
+      "pve_level_id": 10409,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 80
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 35,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+35%^C454545FF00000000",
+      "flag": "D1",
+      "formation": 3304,
+      "id": 1040908,
+      "movie": [],
+      "next_node": [
+        1040911
+      ],
+      "next_node_path": "{\"9307-A-A\":{\"x\":1320,\"y\":355}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1290,
+        "y": 355
+      },
+      "position_letter": {
+        "x": 1310,
+        "y": 355
+      },
+      "pve_level_id": 10409,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 64
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 25,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+25%^C454545FF00000000",
+      "flag": "D2",
+      "formation": 3304,
+      "id": 1040909,
+      "movie": [],
+      "next_node": [
+        1040911,
+        1040912
+      ],
+      "next_node_path": "{\"9308-A-A\":{\"x\":1320,\"y\":498},\"9307-A-A\":{\"x\":1320,\"y\":575}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1290,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 1310,
+        "y": 575
+      },
+      "pve_level_id": 10409,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 48
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 15,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+15%^C454545FF00000000",
+      "flag": "D3",
+      "formation": 3304,
+      "id": 1040910,
+      "movie": [],
+      "next_node": [
+        1040912
+      ],
+      "next_node_path": "{\"9308-A-A\":{\"x\":1320,\"y\":713}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1290,
+        "y": 790
+      },
+      "position_letter": {
+        "x": 1310,
+        "y": 790
+      },
+      "pve_level_id": 10409,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "E1",
+      "formation": 3305,
+      "id": 1040911,
+      "movie": [],
+      "next_node": [
+        1040913
+      ],
+      "next_node_path": "{\"9303-A-A\":{\"x\":1545,\"y\":460}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1510,
+        "y": 465
+      },
+      "position_letter": {
+        "x": 1530,
+        "y": 465
+      },
+      "pve_level_id": 10409,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "E2",
+      "formation": 3305,
+      "id": 1040912,
+      "movie": [],
+      "next_node": [
+        1040914
+      ],
+      "next_node_path": "{\"9303-A-A\":{\"x\":1545,\"y\":681}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1510,
+        "y": 686
+      },
+      "position_letter": {
+        "x": 1530,
+        "y": 686
+      },
+      "pve_level_id": 10409,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "F1",
+      "formation": 3306,
+      "id": 1040913,
+      "movie": [],
+      "next_node": [
+        1040915
+      ],
+      "next_node_path": "{\"9307-A-A\":{\"x\":1760,\"y\":465}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1730,
+        "y": 465
+      },
+      "position_letter": {
+        "x": 1750,
+        "y": 465
+      },
+      "pve_level_id": 10409,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "F2",
+      "formation": 3306,
+      "id": 1040914,
+      "movie": [],
+      "next_node": [
+        1040915
+      ],
+      "next_node_path": "{\"9308-A-A\":{\"x\":1760,\"y\":609}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1730,
+        "y": 686
+      },
+      "position_letter": {
+        "x": 1750,
+        "y": 686
+      },
+      "pve_level_id": 10409,
+      "self_formation": []
+    },
+    {
+      "award": [],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [],
+      "buff_desc": "^C454545FF00000000无效果^C454545FF00000000",
+      "flag": "G1",
+      "formation": 3307,
+      "id": 1040915,
+      "movie": [],
+      "next_node": [
+        1040916,
+        1040917,
+        1040918
+      ],
+      "next_node_path": "{\"9301-A-A\":{\"x\":1950,\"y\":356},\"9303-A-A\":{\"x\":1985,\"y\":570},\"9305-A-A\":{\"x\":1950,\"y\":622}}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 1950,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 1970,
+        "y": 575
+      },
+      "pve_level_id": 10409,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 320
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 50,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+50%^C454545FF00000000",
+      "flag": "H1",
+      "formation": 3308,
+      "id": 1040916,
+      "movie": [],
+      "next_node": [],
+      "next_node_path": "{}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 2170,
+        "y": 355
+      },
+      "position_letter": {
+        "x": 2190,
+        "y": 355
+      },
+      "pve_level_id": 10409,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 256
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 35,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+35%^C454545FF00000000",
+      "flag": "H2",
+      "formation": 3308,
+      "id": 1040917,
+      "movie": [],
+      "next_node": [],
+      "next_node_path": "{}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 2170,
+        "y": 575
+      },
+      "position_letter": {
+        "x": 2190,
+        "y": 575
+      },
+      "pve_level_id": 10409,
+      "self_formation": []
+    },
+    {
+      "award": [
+        {
+          "id": 31,
+          "value": 192
+        }
+      ],
+      "bg_sea": "BG_sea_Normal",
+      "buff": [
+        {
+          "num": 15,
+          "num4": 1,
+          "type": 2
+        }
+      ],
+      "buff_desc": "^C454545FF00000000敌方全体^C1C8BE5FF00000000HP+15%^C454545FF00000000",
+      "flag": "H3",
+      "formation": 3308,
+      "id": 1040918,
+      "movie": [],
+      "next_node": [],
+      "next_node_path": "{}",
+      "node_type": 1,
+      "node_weight": [],
+      "position": {
+        "x": 2170,
+        "y": 790
+      },
+      "position_letter": {
+        "x": 2190,
+        "y": 790
+      },
+      "pve_level_id": 10409,
+      "self_formation": []
+    }
+  ],
+  "sequence_num": 133,
+  "unique_id": {
+    "1040101": 1,
+    "1040102": 2,
+    "1040103": 3,
+    "1040104": 4,
+    "1040105": 5,
+    "1040106": 6,
+    "1040107": 7,
+    "1040108": 8,
+    "1040109": 9,
+    "1040110": 10,
+    "1040111": 11,
+    "1040112": 12,
+    "1040113": 13,
+    "1040201": 14,
+    "1040202": 15,
+    "1040203": 16,
+    "1040204": 17,
+    "1040205": 18,
+    "1040206": 19,
+    "1040207": 20,
+    "1040208": 21,
+    "1040209": 22,
+    "1040210": 23,
+    "1040211": 24,
+    "1040212": 25,
+    "1040213": 26,
+    "1040214": 27,
+    "1040301": 28,
+    "1040302": 29,
+    "1040303": 30,
+    "1040304": 31,
+    "1040305": 32,
+    "1040306": 33,
+    "1040307": 34,
+    "1040308": 35,
+    "1040309": 36,
+    "1040310": 37,
+    "1040311": 38,
+    "1040312": 39,
+    "1040313": 40,
+    "1040314": 41,
+    "1040315": 42,
+    "1040316": 43,
+    "1040401": 44,
+    "1040402": 45,
+    "1040403": 46,
+    "1040404": 47,
+    "1040405": 48,
+    "1040406": 49,
+    "1040407": 50,
+    "1040408": 51,
+    "1040409": 52,
+    "1040410": 53,
+    "1040411": 54,
+    "1040412": 55,
+    "1040413": 56,
+    "1040501": 57,
+    "1040502": 58,
+    "1040503": 59,
+    "1040504": 60,
+    "1040505": 61,
+    "1040506": 62,
+    "1040507": 63,
+    "1040508": 64,
+    "1040509": 65,
+    "1040510": 66,
+    "1040511": 67,
+    "1040512": 68,
+    "1040513": 69,
+    "1040514": 70,
+    "1040601": 71,
+    "1040602": 72,
+    "1040603": 73,
+    "1040604": 74,
+    "1040605": 75,
+    "1040606": 76,
+    "1040607": 77,
+    "1040608": 78,
+    "1040609": 79,
+    "1040610": 80,
+    "1040611": 81,
+    "1040612": 82,
+    "1040613": 83,
+    "1040614": 84,
+    "1040615": 85,
+    "1040616": 86,
+    "1040617": 87,
+    "1040701": 88,
+    "1040702": 89,
+    "1040703": 90,
+    "1040704": 91,
+    "1040705": 92,
+    "1040706": 93,
+    "1040707": 94,
+    "1040708": 95,
+    "1040709": 96,
+    "1040710": 97,
+    "1040711": 98,
+    "1040712": 99,
+    "1040801": 100,
+    "1040802": 101,
+    "1040803": 102,
+    "1040804": 103,
+    "1040805": 104,
+    "1040806": 105,
+    "1040807": 106,
+    "1040808": 107,
+    "1040809": 108,
+    "1040810": 109,
+    "1040811": 110,
+    "1040812": 111,
+    "1040813": 112,
+    "1040814": 113,
+    "1040815": 114,
+    "1040816": 115,
+    "1040901": 116,
+    "1040902": 117,
+    "1040903": 118,
+    "1040904": 119,
+    "1040905": 120,
+    "1040906": 121,
+    "1040907": 122,
+    "1040908": 123,
+    "1040909": 124,
+    "1040910": 125,
+    "1040911": 126,
+    "1040912": 127,
+    "1040913": 128,
+    "1040914": 129,
+    "1040915": 130,
+    "1040916": 131,
+    "1040917": 132,
+    "1040918": 133
+  }
+}

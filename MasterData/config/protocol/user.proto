@@ -1,0 +1,4771 @@
+syntax = "proto2";
+package user;
+
+message TellIPNotify {
+  required string ip = 1;
+}
+
+message ErrorCodeNotify {
+  required int32 error_code = 1;
+  required string error_msg = 2;
+}
+
+message DebugLogNotify {
+  required string info = 1;
+}
+
+message LastTimeInfoNotify {
+  required int64 offline_time = 1;
+  required string ip = 2;
+}
+
+message ReadyNotify {
+}
+
+message LoadDataResultNotify {
+  required bool result = 1;
+}
+
+message map_statistics {
+  required int32 win_count = 1;
+  required int32 battle_count = 2;
+}
+
+message pool_info {
+  required int32 pos_id = 1;
+  required int32 id = 2;
+  required int32 state = 3;
+  required int32 time = 4;
+  required bool available = 5;
+}
+
+message login_award_info {
+  required int32 cumulative_days = 1;
+  required bool is_already_get = 2;
+}
+
+message data_struct {
+  required bool init_ship = 1;
+  required bool change_name = 2;
+  required int32 level = 3;
+  required int32 exp = 4;
+  required int32 diamond = 5;
+  required int32 al = 6;
+  required int32 fe = 7;
+  required int32 bullet = 8;
+  required int32 oil = 9;
+  required int32 secretary = 10;
+  repeated int32 expedition_open = 11;
+  required int32 max_ship = 12;
+  required int32 max_equip = 13;
+  required login_award_info login_award = 14;
+  required login_award_info once_login_award = 15;
+  required int32 furniture_point = 16;
+  required int32 furniture_extend_limit = 17;
+  required int32 chat_head = 18;
+  required int32 mansion_style = 19;
+  required string signature = 20;
+  required int32 cook_count = 21;
+  required int32 friend_cook_count = 22;
+  required int32 cook_style = 23;
+  required int32 cook_popularity = 24;
+  required int32 chef = 25;
+  required int32 music = 26;
+  repeated int32 level_up_award = 27;
+  required bool recommend_off = 28;
+  required int32 change_name_time = 29;
+  required int64 month_card_time = 30;
+  required int32 spoils = 31;
+  required int32 exploit = 32;
+  required int32 repair_style = 33;
+  required int32 record_upload = 34;
+  required int32 boxroom_style = 35;
+  required int32 racing_count = 36;
+  required bool auto_supply = 37;
+  required int32 exp_card = 38;
+  required bool school = 39;
+  required int32 friend_maneuver_count = 40;
+  required bool racing_open = 41;
+  required bool first_pay = 42;
+  required bool first_get = 43;
+  required int32 exploit_rank = 44;
+  required int32 tower_best_time = 45;
+  required bool daily_notice = 46;
+  required int32 spoils_limit = 47;
+  required bool secretary_follow = 48;
+  required int32 paid_diamond = 49;
+  required int32 ship_drop = 50;
+  repeated int32 room_style_list = 51;
+  required bool binding_phone_hint = 52;
+  required int32 binding_phone = 53;
+  required int32 binding_email = 54;
+  required string email_address = 55;
+  required int32 combatshop_exp_card = 56;
+  required int32 combatshop_tactics_card = 57;
+}
+
+message LoadDataReq {
+}
+
+message LoadDataResp {
+  required int64 account_id = 1;
+  required string name = 2;
+  required int32 sex = 3;
+  required data_struct data = 4;
+}
+
+message UserInfoUpdate {
+  required data_struct user_info = 1;
+}
+
+message ServerTimeNotify {
+  required int64 utc_time = 1;
+}
+
+message TellWaitEnterNotify {
+}
+
+message EnterReq {
+}
+
+message EnterResp {
+}
+
+message ChangeNameReq {
+  required string name = 1;
+}
+
+message ChangeNameResp {
+  required string name = 1;
+  required bool result = 2;
+}
+
+message DailyAwardNotify {
+}
+
+message OnceDailyAwardNotify {
+}
+
+message TellDeviceReq {
+  required string device = 1;
+  required string device_code = 2;
+  required string dpi = 3;
+  required string os = 4;
+  required string propel_token = 5;
+}
+
+message TellDeviceResp {
+  required int32 result = 1;
+}
+
+message DailyNoticeReq {
+  required bool state = 1;
+}
+
+message DailyNoticeResp {
+  required int32 result = 1;
+}
+
+message IntensifyInfo {
+  required int32 exp = 1;
+  required int32 level = 2;
+  required string attr = 3;
+}
+
+message ShipEquipInfo {
+  required int32 id = 1;
+  required int32 carry_type = 2;
+  required int32 num = 3;
+}
+
+message ShipEquipRecordInfo {
+  repeated int32 equips = 1;
+  required int32 index = 2;
+}
+
+message TacticsInfo {
+  required int32 id = 1;
+  required int32 exp = 2;
+  required int32 state = 3;
+}
+
+message repair_info {
+  required int64 repair_time = 1;
+  required int32 pos = 2;
+  required bool can_rub_back = 3;
+}
+
+message ship_statistics {
+  required int32 damage = 1;
+  required int32 kills = 2;
+  required int32 battle_count = 3;
+  required int32 miss_attack = 4;
+  required int32 maneuver_win = 5;
+  required int32 repair_count = 6;
+  required int32 consume_oil = 7;
+  required int32 consume_bullet = 8;
+  required int32 consume_fe = 9;
+  required int32 consume_al = 10;
+  required int64 create_time = 11;
+  required int32 marry_time = 12;
+  required int32 build_rare_ship = 13;
+  repeated int32 medal = 14;
+}
+
+message ShipInfo {
+  required int32 id = 1;
+  required int32 cid = 2;
+  required int32 level = 3;
+  required int32 exp = 4;
+  required string name = 5;
+  required int32 love = 6;
+  required int32 state = 7;
+  repeated ShipEquipInfo equips = 8;
+  required int32 now_skill = 9;
+  required int32 skill_level = 10;
+  repeated IntensifyInfo intensify = 11;
+  required int32 now_hp = 12;
+  required float now_oil = 13;
+  required float now_bullet = 14;
+  required int32 skin = 15;
+  required int32 room = 16;
+  required bool lock = 17;
+  repeated ShipEquipRecordInfo record = 18;
+  repeated int32 tactics = 19;
+  repeated TacticsInfo all_tactics = 20;
+  required bool marry = 21;
+  required repair_info repair = 22;
+  required ship_statistics statistics = 23;
+}
+
+message ShipInfoNode {
+  required int32 action = 1 [default = 0];
+  required ShipInfo info = 2;
+}
+
+message ShipInfoUpdate {
+  repeated ShipInfoNode updates = 1;
+}
+
+message SkinInfoNode {
+  required int32 action = 1 [default = 0];
+  required int32 id = 2;
+}
+
+message SkinInfoUpdate {
+  repeated SkinInfoNode updates = 1;
+}
+
+message GetNewPlayerShipReq {
+  required int32 index = 1;
+}
+
+message GetNewPlayerShipResp {
+  required int32 result = 1;
+}
+
+message IntensifyShipReq {
+  required int32 id = 1;
+  repeated int32 consumables = 2;
+}
+
+message IntensifyShipResp {
+  required int32 result = 1;
+}
+
+message IntensifySkillReq {
+  required int32 id = 1;
+}
+
+message IntensifySkillResp {
+  required int32 result = 1;
+}
+
+message ShipRenameReq {
+  required int32 id = 1;
+  required string name = 3;
+}
+
+message ShipRenameResp {
+  required int32 result = 1;
+}
+
+message ChangeSecretaryReq {
+  required int32 id = 1;
+}
+
+message ChangeSecretaryResp {
+  required int32 result = 1;
+}
+
+message ResetSecretaryReq {
+}
+
+message ResetSecretaryResp {
+  required int32 result = 1;
+}
+
+message ShipLockReq {
+  required int32 id = 1;
+}
+
+message ShipLockResp {
+  required int32 result = 1;
+}
+
+message ShipEquipReq {
+  required int32 id = 1;
+  required int32 pos = 2;
+  required int32 equip_id = 3;
+}
+
+message ShipEquipResp {
+  required int32 result = 1;
+}
+
+message ShipRemoveEquipReq {
+  required int32 id = 1;
+  required int32 pos = 2;
+}
+
+message ShipRemoveEquipResp {
+  required int32 result = 1;
+}
+
+message ShipEquipRecordReq {
+  required int32 id = 1;
+  required int32 index = 2;
+}
+
+message ShipEquipRecordResp {
+  required int32 result = 1;
+}
+
+message UseEquipRecordReq {
+  required int32 id = 1;
+  required int32 index = 2;
+}
+
+message UseEquipRecordResp {
+  required int32 result = 1;
+}
+
+message ShipRepairReq {
+  required int32 id = 1;
+  required int32 room_id = 2;
+}
+
+message ShipRepairResp {
+  required int32 result = 1;
+}
+
+message QuickRepairReq {
+  repeated int32 id_array = 1;
+}
+
+message QuickRepairResp {
+  required int32 result = 1;
+}
+
+message RubBackReq {
+  required int32 id = 1;
+}
+
+message RubBackResp {
+  required int32 result = 1;
+}
+
+message ShipMarryReq {
+  required int32 id = 1;
+}
+
+message ShipMarryResp {
+  required int32 result = 1;
+}
+
+message ShipChangeSkinReq {
+  required int32 id = 1;
+  required int32 skin_id = 2;
+}
+
+message ShipChangeSkinResp {
+  required int32 result = 1;
+}
+
+message ShipEvoReq {
+  required int32 id = 1;
+}
+
+message ShipEvoResp {
+  required int32 result = 1;
+  required bool is_new = 2;
+  required int32 get_skin = 3;
+}
+
+message ShipChangeTacticsReq {
+  required int32 id = 1;
+  required int32 type = 2;
+  required int32 tactics_id = 3;
+}
+
+message ShipChangeTacticsResp {
+  required int32 result = 1;
+}
+
+message ShipChangeSkillReq {
+  required int32 id = 1;
+  required int32 skill_id = 2;
+}
+
+message ShipChangeSkillResp {
+  required int32 result = 1;
+}
+
+message SupplyTacticInfo {
+  required int32 id = 1;
+  required int32 exp = 2;
+  required int32 now_exp = 3;
+  required int32 before = 4;
+  required int32 later = 5;
+}
+
+message TeamInfo {
+  required int32 team_type = 1;
+  required string name = 2;
+  repeated int32 members = 3;
+  required int32 id = 4;
+  required bool station = 5;
+  required int32 station_point = 6;
+}
+
+message TeamInfoNode {
+  required int32 action = 1 [default = 0];
+  required TeamInfo info = 2;
+}
+
+message SupportInfo {
+  required int32 id = 1;
+  required int32 map_id = 2;
+  required int32 level = 3;
+  required int32 oil = 4;
+  required int32 bullet = 5;
+  required int32 al = 6;
+}
+
+message SupportInfoNode {
+  required int32 action = 1 [default = 0];
+  required SupportInfo info = 2;
+}
+
+message TeamInfoUpdate {
+  repeated TeamInfoNode updates = 1;
+}
+
+message SupportInfoUpdate {
+  repeated SupportInfoNode updates = 1;
+}
+
+message TeamSaveReq {
+  required int32 id = 1;
+  repeated int32 members = 2;
+  required bool quick = 3;
+}
+
+message TeamSaveResp {
+  required int32 result = 1;
+}
+
+message TeamRenameReq {
+  required int32 id = 1;
+  required string name = 2;
+}
+
+message TeamRenameResp {
+  required int32 result = 1;
+}
+
+message ShipSupplyReq {
+  repeated int32 id_array = 1;
+}
+
+message ShipSupplyResp {
+  required int32 result = 1;
+  repeated SupplyTacticInfo tactics = 2;
+}
+
+message TeamSupplyReq {
+  required int32 id = 1;
+}
+
+message TeamSupplyResp {
+  required int32 result = 1;
+  repeated SupplyTacticInfo tactics = 2;
+}
+
+message AllShipSupplyReq {
+}
+
+message AllShipSupplyResp {
+  required int32 result = 1;
+  repeated SupplyTacticInfo tactics = 2;
+}
+
+message TeamRepairReq {
+  required int32 id = 1;
+}
+
+message TeamRepairResp {
+  required int32 result = 1;
+}
+
+message SupportLevelUpReq {
+  required int32 id = 1;
+}
+
+message SupportLevelUpResp {
+  required int32 result = 1;
+}
+
+message SupportSupplyReq {
+  required int32 id = 1;
+}
+
+message SupportSupplyResp {
+  required int32 result = 1;
+}
+
+message ActiveAutoSupplyReq {
+}
+
+message ActiveAutoSupplyResp {
+  required int32 result = 1;
+}
+
+message ItemInfo {
+  required int32 count = 1;
+  required int32 id = 2;
+}
+
+message ItemInfoNode {
+  required int32 action = 1 [default = 0];
+  required ItemInfo info = 2;
+}
+
+message ItemInfoUpdate {
+  repeated ItemInfoNode updates = 1;
+}
+
+message EquipInfo {
+  required int32 num = 1;
+  required int32 id = 2;
+  required bool lock = 3;
+}
+
+message EquipInfoNode {
+  required int32 action = 1 [default = 0];
+  required EquipInfo info = 2;
+}
+
+message EquipLockInfoNode {
+  required int32 action = 1 [default = 0];
+  required int32 id = 2;
+}
+
+message EquipInfoUpdate {
+  repeated EquipInfoNode updates = 1;
+}
+
+message EquipLockInfoUpdate {
+  repeated EquipLockInfoNode updates = 1;
+}
+
+message EquipLockReq {
+  required int32 id = 1;
+}
+
+message EquipLockResp {
+  required int32 result = 1;
+}
+
+message GetLevelAwardReq {
+  required int32 id = 1;
+}
+
+message GetLevelAwardResp {
+  required int32 result = 1;
+  repeated RewardInfo reward = 2;
+}
+
+message GetDailyAwardReq {
+}
+
+message GetDailyAwardResp {
+  required int32 result = 1;
+  repeated RewardInfo reward = 2;
+}
+
+message GetOnceDailyAwardReq {
+}
+
+message GetOnceDailyAwardResp {
+  required int32 result = 1;
+  repeated RewardInfo reward = 2;
+}
+
+message GetLevelUpAwardReq {
+  required int32 id = 1;
+}
+
+message GetLevelUpAwardResp {
+  required int32 result = 1;
+  repeated RewardInfo reward = 2;
+}
+
+message CompleteMapNotify {
+  required int32 id = 1;
+  repeated RewardInfo reward = 2;
+}
+
+message PassGradeInfo {
+  required int32 grade = 1;
+  required int32 count = 2;
+}
+
+message PassPointInfo {
+  required int32 id = 1;
+  repeated PassGradeInfo info = 2;
+}
+
+message NodeHideInfo {
+  required int32 point_id = 1;
+  required int32 next_point_id = 2;
+}
+
+message MapInfo {
+  required int32 id = 1;
+  required int32 state = 2;
+  required bool support = 3;
+  repeated PassPointInfo pass_point = 4;
+  required int32 hp = 5;
+  required int32 hp2 = 6;
+  repeated NodeHideInfo node_hide = 7;
+  repeated NodeHideInfo node_miss = 8;
+  repeated PassPointInfo temp_pass_point = 9;
+}
+
+message ResourceInfo {
+  required int32 id = 1;
+  required int32 value = 2;
+}
+
+message MapInfoNode {
+  required int32 action = 1 [default = 0];
+  required MapInfo info = 2;
+}
+
+message BattleInfo {
+  required int32 type = 1;
+  required int32 id = 2;
+  required int32 point = 3;
+  required int32 team = 4;
+}
+
+message BattleTime {
+  required int32 frame_interval = 1;
+  required int32 speed = 2;
+}
+
+message ShipState {
+  required int32 id = 1;
+  required int32 hp = 2;
+  required int32 max_hp = 3;
+  required int32 init_hp = 4;
+  required bool mvp = 5;
+  required int32 exp = 6;
+  required bool up = 7;
+  required bool add_love = 8;
+  required int32 love_change = 9;
+  required int32 tactic_id = 10;
+  required int32 tactic_exp = 11;
+  required int32 level = 12;
+}
+
+message MapInfoUpdate {
+  repeated MapInfoNode updates = 1;
+}
+
+message BattleInfoUpdate {
+  required BattleInfo battle_info = 1;
+}
+
+message EnterMapReq {
+  required int32 id = 1;
+  required int32 team_id = 2;
+  required int32 start_point = 3;
+}
+
+message EnterMapResp {
+  required int32 result = 1;
+}
+
+message QuitMapReq {
+}
+
+message QuitMapResp {
+  required int32 result = 1;
+}
+
+message MapMoveReq {
+  required int32 point = 1;
+}
+
+message MapMoveResp {
+  required int32 result = 1;
+  required int32 point = 2;
+  required ResourceInfo lose = 3;
+  required ResourceInfo get = 4;
+  required int32 monster = 5;
+  repeated int32 monster_array = 6;
+  required bool search = 7;
+  required bool finish = 8;
+  required int32 search_rate = 9;
+}
+
+message RoundAboutReq {
+  required bool result = 1;
+}
+
+message RoundAboutResp {
+  required int32 result = 1;
+}
+
+message StationPointReq {
+  required int32 id = 1;
+  required int32 team_id = 2;
+  required int32 battle_type = 3;
+}
+
+message StationPointResp {
+  required int32 result = 1;
+  required int32 id = 2;
+  required int32 battle_type = 3;
+}
+
+message StationPointExitReq {
+  required int32 id = 1;
+}
+
+message StationPointExitResp {
+  required int32 result = 1;
+}
+
+message StartBattleReq {
+  required int32 formation = 1 [default = 1];
+  required int32 buff_id = 2;
+}
+
+message StartBattleResp {
+  required int32 result = 1;
+  required int32 battle_id = 2;
+  required int32 lose = 3;
+  required string record = 4;
+  required BattleInfo battle_info = 5;
+  required string bvr_record = 6;
+}
+
+message StartNightBattleReq {
+}
+
+message StartNightBattleResp {
+  required int32 result = 1;
+  required int32 lose = 2;
+}
+
+message QuitNightBattleReq {
+}
+
+message QuitNightBattleResp {
+  required int32 result = 1;
+}
+
+message BattleFinishReq {
+}
+
+message BattleFinishResp {
+  required int32 result = 1;
+  required int32 battle_id = 2;
+  repeated RewardInfo reward = 3;
+  repeated ShipState state = 4;
+  repeated ShipState enemy_state = 5;
+  required int32 grade = 6;
+  required float score = 7;
+  required float enemy_score = 8;
+  required bool finish = 9;
+  required int32 exp = 10;
+  required int32 monster = 11;
+  repeated int32 monster_array = 12;
+  required string md5_result = 13;
+}
+
+message ActiveShellingReq {
+  required int32 id = 1;
+}
+
+message ActiveShellingResp {
+  required int32 result = 1;
+}
+
+message CampaignInfo {
+  required int32 id = 1;
+  required int32 state = 2;
+  repeated int32 members = 3;
+}
+
+message CampaignInfoNode {
+  required int32 action = 1;
+  required CampaignInfo info = 2;
+}
+
+message CampaignInfoUpdate {
+  repeated CampaignInfoNode updates = 1;
+  required int32 count = 2;
+  required int64 time = 3;
+}
+
+message CampaignTeamSaveReq {
+  required int32 id = 1;
+  repeated int32 members = 2;
+}
+
+message CampaignTeamSaveResp {
+  required int32 result = 1;
+}
+
+message EnterCampaignReq {
+  required int32 id = 1;
+}
+
+message EnterCampaignResp {
+  required int32 result = 1;
+  required int32 monster = 2;
+  repeated int32 monster_array = 3;
+  required bool search = 4;
+  required int32 search_rate = 5;
+}
+
+message RefreshCampaignReq {
+}
+
+message RefreshCampaignResp {
+  required int32 result = 1;
+}
+
+message CompleteNodeHideReq {
+  repeated NodeHideInfo info = 1;
+}
+
+message CompleteNodeHideResp {
+  required int32 result = 1;
+}
+
+message CompleteNodeMissReq {
+  repeated NodeHideInfo info = 1;
+}
+
+message CompleteNodeMissResp {
+  required int32 result = 1;
+}
+
+message ExpeditionInfo {
+  required int32 team = 1;
+  required int32 end_time = 2;
+  required int32 id = 3;
+}
+
+message RewardInfo {
+  required int32 count = 1;
+  required int32 id = 2;
+  required int32 type = 3;
+  required bool is_new = 4;
+}
+
+message ExpeditionInfoNode {
+  required int32 action = 1 [default = 0];
+  required ExpeditionInfo info = 2;
+}
+
+message ExpeditionInfoUpdate {
+  repeated ExpeditionInfoNode updates = 1;
+}
+
+message ExpeditionStartReq {
+  required int32 team_id = 1;
+  required int32 id = 2;
+}
+
+message ExpeditionStartResp {
+  required int32 result = 1;
+}
+
+message ExpeditionStopReq {
+  required int32 id = 1;
+}
+
+message ExpeditionStopResp {
+  required int32 result = 1;
+}
+
+message ExpeditionFinishReq {
+  required int32 id = 1;
+}
+
+message ExpeditionFinishResp {
+  required int32 result = 1;
+  repeated RewardInfo reward = 2;
+  required bool is_big = 3;
+  required int32 team = 4;
+  required int32 id = 5;
+}
+
+message TaskProgress {
+  required int32 counter = 1;
+}
+
+message Task {
+  required int32 id = 1;
+  required int32 state = 2;
+  repeated TaskProgress progresses = 3;
+}
+
+message TaskNode {
+  required int32 action = 1 [default = 0];
+  required Task info = 2;
+}
+
+message TaskUpdate {
+  repeated TaskNode updates = 1;
+}
+
+message CommitTaskReq {
+  required int32 task_id = 1;
+}
+
+message CommitTaskResp {
+  required int32 result = 1;
+  repeated RewardInfo reward = 2;
+}
+
+message ShipArchiveInfo {
+  required int32 id = 1;
+  required bool married = 2;
+}
+
+message ShipArchiveNode {
+  required int32 action = 1 [default = 0];
+  required ShipArchiveInfo info = 2;
+}
+
+message ShipArchiveUpdate {
+  repeated ShipArchiveNode updates = 1;
+}
+
+message ArchiveInfo {
+  required int32 id = 1;
+}
+
+message ArchiveNode {
+  required int32 action = 1 [default = 0];
+  required ArchiveInfo info = 2;
+}
+
+message EquipmentArchiveUpdate {
+  repeated ArchiveNode updates = 1;
+}
+
+message MusicArchiveUpdate {
+  repeated ArchiveNode updates = 1;
+}
+
+message FurnitureArchiveUpdate {
+  repeated ArchiveNode updates = 1;
+}
+
+message BuffArchiveUpdate {
+  repeated ArchiveNode updates = 1;
+}
+
+message ShopInfo {
+  required int32 id = 1;
+  required int32 buy_count = 2;
+}
+
+message ShopInfoNode {
+  required int32 action = 1 [default = 0];
+  required ShopInfo info = 2;
+}
+
+message ShopInfoUpdate {
+  repeated ShopInfoNode updates = 1;
+}
+
+message SpoilsShopInfoUpdate {
+  repeated ShopInfoNode updates = 1;
+}
+
+message ShopBuyReq {
+  required int32 type = 1;
+  required int32 id = 2;
+  required string name = 3;
+}
+
+message ShopBuyResp {
+  required int32 result = 1;
+  required string name = 2;
+  repeated RewardInfo reward = 3;
+}
+
+message MultiShopBuyReq {
+  required int32 type = 1;
+  required int32 id = 2;
+  required int32 num = 3;
+}
+
+message MultiShopBuyResp {
+  required int32 result = 1;
+  repeated RewardInfo reward = 2;
+}
+
+message SpoilsBuyReq {
+  required int32 id = 1;
+}
+
+message SpoilsBuyResp {
+  required int32 result = 1;
+  required int32 id = 2;
+  required bool is_new = 3;
+  required int32 ship = 4;
+}
+
+message MultiSpoilsBuyReq {
+  required int32 id = 1;
+  required int32 num = 2;
+}
+
+message MultiSpoilsBuyResp {
+  required int32 result = 1;
+  required int32 id = 2;
+  required bool is_new = 3;
+  required int32 ship = 4;
+}
+
+message VoucherShopBuyReq {
+  required int32 shop_id = 1;
+  required int32 voucher_id = 2;
+  required int32 skin_id = 3;
+}
+
+message VoucherShopBuyResp {
+  required int32 result = 1;
+  repeated RewardInfo reward = 2;
+}
+
+message Story {
+  required int32 id = 1;
+  required int32 type = 2;
+  required bool read = 3;
+}
+
+message StoryNode {
+  required int32 action = 1 [default = 0];
+  required Story info = 2;
+}
+
+message StoryUpdate {
+  repeated StoryNode updates = 1;
+}
+
+message UnlockStoryReq {
+  required int32 id = 1;
+}
+
+message UnlockStoryResp {
+  required int32 result = 1;
+}
+
+message ReadStoryReq {
+  required int32 id = 1;
+}
+
+message ReadStoryResp {
+  required int32 result = 1;
+}
+
+message UnlockShipStoryReq {
+  required int32 id = 1;
+}
+
+message UnlockShipStoryResp {
+  required int32 result = 1;
+}
+
+message TokenUnlockStoryReq {
+  required int32 id = 1;
+}
+
+message TokenUnlockStoryResp {
+  required int32 result = 1;
+}
+
+message MailInfo {
+  required int32 id = 1;
+  required int64 send_time = 2;
+  required string title = 3;
+  repeated RewardInfo item = 4;
+  required bool get = 5;
+  required bool lock = 6;
+}
+
+message MailNode {
+  required int32 action = 1 [default = 0];
+  required MailInfo info = 2;
+}
+
+message MailUpdate {
+  repeated MailNode updates = 1;
+  required int32 num = 2;
+}
+
+message GetMailReq {
+  required int32 id = 1;
+}
+
+message GetMailResp {
+  required int32 result = 1;
+  repeated RewardInfo reward = 2;
+}
+
+message DeleteMailReq {
+  required int32 id = 1;
+}
+
+message DeleteMailResp {
+  required int32 result = 1;
+}
+
+message GetAllMailReq {
+}
+
+message GetAllMailResp {
+  required int32 result = 1;
+  repeated RewardInfo reward = 2;
+}
+
+message DeleteAllMailReq {
+}
+
+message DeleteAllMailResp {
+  required int32 result = 1;
+}
+
+message LockMailReq {
+  required int32 type = 1;
+  required int32 id = 2;
+}
+
+message LockMailResp {
+  required int32 result = 1;
+}
+
+message pool_struct {
+  repeated pool_info repair_pool = 1;
+  repeated pool_info ship_build_pool = 2;
+  repeated pool_info equipment_build_pool = 3;
+}
+
+message PoolResourceInfo {
+  required int32 oil = 1;
+  required int32 bullet = 2;
+  required int32 fe = 3;
+  required int32 al = 4;
+}
+
+message PoolResource {
+  required PoolResourceInfo ship_build_pool = 1;
+  required PoolResourceInfo equipment_build_pool = 2;
+}
+
+message BuildInfoNotify {
+  required pool_struct info = 1;
+  required PoolResource resource = 2;
+}
+
+message BuildShipReq {
+  required int32 pos_id = 1;
+  required int32 oil = 2;
+  required int32 bullet = 3;
+  required int32 fe = 4;
+  required int32 al = 5;
+}
+
+message BuildShipResp {
+  required int32 result = 1;
+}
+
+message BuildEquipmentReq {
+  required int32 pos_id = 1;
+  required int32 oil = 2;
+  required int32 bullet = 3;
+  required int32 fe = 4;
+  required int32 al = 5;
+}
+
+message BuildEquipmentResp {
+  required int32 result = 1;
+}
+
+message GetBuildShipRewardReq {
+  required int32 pos_id = 1;
+}
+
+message GetBuildShipRewardResp {
+  required int32 result = 1;
+  repeated RewardInfo reward = 2;
+}
+
+message GetBuildEquipmentRewardReq {
+  required int32 pos_id = 1;
+}
+
+message GetBuildEquipmentRewardResp {
+  required int32 result = 1;
+  repeated RewardInfo reward = 2;
+}
+
+message QuickBuildShipReq {
+  required int32 pos_id = 1;
+}
+
+message QuickBuildShipResp {
+  required int32 result = 1;
+}
+
+message QuickBuildEquipmentReq {
+  required int32 pos_id = 1;
+}
+
+message QuickBuildEquipmentResp {
+  required int32 result = 1;
+}
+
+message BatchBuildShipReq {
+  required int32 count = 1;
+  required int32 oil = 2;
+  required int32 bullet = 3;
+  required int32 fe = 4;
+  required int32 al = 5;
+}
+
+message BatchBuildShipResp {
+  required int32 result = 1;
+  repeated RewardInfo reward = 2;
+}
+
+message BatchBuildEquipmentReq {
+  required int32 count = 1;
+  required int32 oil = 2;
+  required int32 bullet = 3;
+  required int32 fe = 4;
+  required int32 al = 5;
+}
+
+message BatchBuildEquipmentResp {
+  required int32 result = 1;
+  repeated RewardInfo reward = 2;
+}
+
+message DecomposeShipReq {
+  repeated int32 id_array = 1;
+  required bool remove = 2;
+}
+
+message DecomposeShipResp {
+  required int32 result = 1;
+  repeated RewardInfo reward = 2;
+}
+
+message DecomposeEquipmentReq {
+  repeated EquipInfo equip_array = 1;
+}
+
+message DecomposeEquipmentResp {
+  required int32 result = 1;
+  repeated RewardInfo reward = 2;
+}
+
+message UseItemBoxReq {
+  required int32 id = 1;
+  required int32 num = 2;
+}
+
+message UseItemBoxResp {
+  required int32 result = 1;
+  repeated RewardInfo reward = 2;
+}
+
+message RepairStyleNode {
+  required int32 action = 1 [default = 0];
+  required int32 id = 2;
+}
+
+message RepairStyleUpdate {
+  repeated RepairStyleNode updates = 1;
+}
+
+message ChangeRepairStyleReq {
+  required int32 id = 1;
+}
+
+message ChangeRepairStyleResp {
+  required int32 result = 1;
+}
+
+message DecomposeCoreReq {
+  required int32 id = 1;
+  required int32 count = 2;
+}
+
+message DecomposeCoreResp {
+  required int32 result = 1;
+  repeated RewardInfo reward = 2;
+}
+
+message BuildRecordInfo {
+  required int64 id = 1;
+  required string name = 2;
+  required int64 time = 3;
+  required int32 oil = 4;
+  required int32 bullet = 5;
+  required int32 fe = 6;
+  required int32 al = 7;
+  required int32 cid = 8;
+}
+
+message BuildRecordNode {
+  required int32 action = 1 [default = 0];
+  required int32 type = 2;
+  required BuildRecordInfo record = 3;
+}
+
+message BuildRecordUpdate {
+  repeated BuildRecordNode updates = 1;
+}
+
+message CollectBuildRecordReq {
+  required int32 type = 1;
+  required BuildRecordInfo record = 2;
+}
+
+message CollectBuildRecordResp {
+  required int32 result = 1;
+}
+
+message DeleteBuildRecordReq {
+  required int32 type = 1;
+  required int32 id = 2;
+}
+
+message DeleteBuildRecordResp {
+  required int32 result = 1;
+}
+
+message FurnitureInfo {
+  required int32 id = 1;
+  required int32 cid = 2;
+  required int32 room = 3;
+  required bool lock = 4;
+  required int32 time = 5;
+}
+
+message FurnitureCollectInfo {
+  required bool get = 1;
+  required int32 id = 2;
+  repeated int32 furniture = 3;
+}
+
+message PointInfo {
+  required float x = 1;
+  required float y = 2;
+}
+
+message FurniturePointInfo {
+  required int32 id = 1;
+  required int32 cid = 2;
+  required PointInfo point = 3;
+  required bool rotate = 4;
+}
+
+message RoomInfo {
+  required int32 id = 1;
+  repeated int32 members = 2;
+  repeated FurniturePointInfo furniture = 3;
+}
+
+message ExhibitionCollectInfo {
+  required int32 id = 1;
+  required int32 type = 2;
+}
+
+message LayoutInfo {
+  required int32 id = 1;
+  required PointInfo point = 2;
+  required bool rotate = 3;
+}
+
+message LayoutRoomInfo {
+  required int32 action = 1;
+  required LayoutInfo furniture = 2;
+}
+
+message FurnitureNode {
+  required int32 action = 1 [default = 0];
+  required FurnitureInfo info = 2;
+}
+
+message FurnitureCollectNode {
+  required int32 action = 1 [default = 0];
+  required FurnitureCollectInfo info = 2;
+}
+
+message RoomNode {
+  required int32 action = 1 [default = 0];
+  required RoomInfo info = 2;
+}
+
+message ExhibitionCollectNode {
+  required int32 action = 1 [default = 0];
+  required ExhibitionCollectInfo info = 2;
+}
+
+message FurnitureUpdate {
+  repeated FurnitureNode updates = 1;
+}
+
+message FurnitureCollectUpdate {
+  repeated FurnitureCollectNode updates = 1;
+}
+
+message RoomUpdate {
+  repeated RoomNode updates = 1;
+}
+
+message RoomRecordUpdate {
+  repeated RoomNode updates = 1;
+}
+
+message ExhibitionCollectUpdate {
+  repeated ExhibitionCollectNode updates = 1;
+}
+
+message LockFurnitureReq {
+  required int32 id = 1;
+}
+
+message LockFurnitureResp {
+  required int32 result = 1;
+}
+
+message ResolveFurnitureReq {
+  repeated int32 id_set = 1;
+}
+
+message ResolveFurnitureResp {
+  required int32 result = 1;
+}
+
+message ShipEnterRoomReq {
+  required int32 id = 1;
+  repeated int32 members = 2;
+}
+
+message ShipEnterRoomResp {
+  required int32 result = 1;
+}
+
+message RecordRoomReq {
+  required int32 room_id = 1;
+  required int32 record_id = 2;
+}
+
+message RecordRoomResp {
+  required int32 result = 1;
+}
+
+message ResetRecordReq {
+  required int32 id = 1;
+}
+
+message ResetRecordResp {
+  required int32 result = 1;
+}
+
+message UseRecordReq {
+  required int32 room_id = 1;
+  required int32 record_id = 2;
+  required bool move = 3;
+}
+
+message UseRecordResp {
+  required int32 result = 1;
+}
+
+message BuyFurnitureBoxReq {
+  required int32 id = 1;
+}
+
+message BuyFurnitureBoxResp {
+  required int32 result = 1;
+}
+
+message MultiBuyFurnitureBoxReq {
+  required int32 id = 1;
+  required int32 num = 2;
+}
+
+message MultiBuyFurnitureBoxResp {
+  required int32 result = 1;
+}
+
+message LayoutRoomReq {
+  required int32 id = 1;
+  repeated LayoutRoomInfo layout = 2;
+  required bool empty = 3;
+}
+
+message LayoutRoomResp {
+  required int32 result = 1;
+}
+
+message getFurnitureCoollectRewardReq {
+  required int32 id = 1;
+}
+
+message getFurnitureCoollectRewardResp {
+  required int32 result = 1;
+  required int32 id = 2;
+}
+
+message AddExhibitionCollectReq {
+  required int32 id = 1;
+  required int32 type = 2;
+}
+
+message AddExhibitionCollectResp {
+  required int32 result = 1;
+}
+
+message RemoveExhibitionCollectReq {
+  required int32 id = 1;
+}
+
+message RemoveExhibitionCollectResp {
+  required int32 result = 1;
+}
+
+message UploadRecordReq {
+  required int32 id = 1;
+  required string name = 2;
+}
+
+message UploadRecordResp {
+  required int32 result = 1;
+}
+
+message UserExhibitionReq {
+  required int32 id = 1;
+  required int32 room_id = 2;
+}
+
+message UserExhibitionResp {
+  required int32 result = 1;
+}
+
+message RacingReq {
+  required int32 id = 1;
+  required int32 furniture_id = 2;
+  required bool win = 3;
+}
+
+message RacingResp {
+  required int32 result = 1;
+}
+
+message RoomExtendReq {
+}
+
+message RoomExtendResp {
+  required int32 result = 1;
+}
+
+message RoomCropReq {
+  required int32 score = 1;
+}
+
+message RoomCropResp {
+  required int32 result = 1;
+}
+
+message DollMachineReq {
+}
+
+message DollMachineResp {
+  required int32 result = 1;
+}
+
+message RoomInteractReq {
+  required int32 id = 1;
+}
+
+message RoomInteractResp {
+  required int32 result = 1;
+}
+
+message RacingBuffInfo {
+  required int32 id = 1;
+  required int32 country = 2;
+  required int32 end_time = 3;
+}
+
+message RacingBuffInfoUpdate {
+  required RacingBuffInfo buff = 1;
+}
+
+message ExhibitionFurnitureInfo {
+  required int32 id = 1;
+  required int32 cid = 2;
+  required PointInfo point = 3;
+  required bool rotate = 4;
+}
+
+message ExhibitionInfo {
+  required int32 id = 1;
+  required int32 time = 2;
+  required string title = 3;
+  required float score = 4;
+  required float popular = 5;
+  required string username = 6;
+  repeated ExhibitionFurnitureInfo furniture = 7;
+}
+
+message GetExhibitionReq {
+}
+
+message GetExhibitionResp {
+  repeated ExhibitionInfo exhibition = 1;
+}
+
+message EvaluateExhibitionReq {
+  required int32 id = 1;
+  required int32 account_id = 2;
+  required int32 score = 3;
+}
+
+message EvaluateExhibitionResp {
+  required ExhibitionInfo info = 1;
+  required int32 result = 2;
+}
+
+message ChatHeadNode {
+  required int32 action = 1 [default = 0];
+  required int32 id = 2;
+}
+
+message ChatHeadUpdate {
+  repeated ChatHeadNode updates = 1;
+}
+
+message ChangeChatHeadReq {
+  required int32 id = 1;
+}
+
+message ChangeChatHeadResp {
+  required int32 result = 1;
+}
+
+message MansionStyleNode {
+  required int32 action = 1 [default = 0];
+  required int32 id = 2;
+}
+
+message MansionStyleUpdate {
+  repeated MansionStyleNode updates = 1;
+}
+
+message ChangeMansionStyleReq {
+  required int32 id = 1;
+}
+
+message ChangeMansionStyleResp {
+  required int32 result = 1;
+}
+
+message ChangeMusicReq {
+  required int32 id = 1;
+}
+
+message ChangeMusicResp {
+  required int32 result = 1;
+}
+
+message ResetMusicReq {
+}
+
+message ResetMusicResp {
+  required int32 result = 1;
+}
+
+message ChangeSignatureReq {
+  required string signature = 1;
+}
+
+message ChangeSignatureResp {
+  required int32 result = 1;
+}
+
+message ChefCookBookInfo {
+  required int32 id = 1;
+  required int32 exp = 2;
+}
+
+message CookBuffInfo {
+  required int32 id = 1;
+  required int32 end_time = 2;
+}
+
+message CookBookNode {
+  required int32 action = 1 [default = 0];
+  required int32 id = 2;
+}
+
+message CookStyleNode {
+  required int32 action = 1 [default = 0];
+  required int32 id = 2;
+}
+
+message CookBookUpdate {
+  repeated CookBookNode updates = 1;
+}
+
+message CookBuffInfoUpdate {
+  required CookBuffInfo buff = 1;
+}
+
+message UseCookBookUpdate {
+  repeated ChefCookBookInfo set = 1;
+}
+
+message ChefCookBookUpdate {
+  repeated ChefCookBookInfo set = 1;
+}
+
+message CookStyleUpdate {
+  repeated CookStyleNode updates = 1;
+}
+
+message UseCookBookReq {
+  required int32 id = 1;
+}
+
+message UseCookBookResp {
+  required int32 result = 1;
+  required int32 type = 2;
+}
+
+message UseFriendCookBookReq {
+  required int32 id = 1;
+  required int32 account_id = 2;
+}
+
+message UseFriendCookBookResp {
+  required int32 result = 1;
+  required int32 type = 2;
+}
+
+message SetCookBookReq {
+  required int32 id = 1;
+}
+
+message SetCookBookResp {
+  required int32 result = 1;
+}
+
+message RemoveCookBookReq {
+  required int32 id = 1;
+}
+
+message RemoveCookBookResp {
+  required int32 result = 1;
+}
+
+message SetCookStyleReq {
+  required int32 id = 1;
+}
+
+message SetCookStyleResp {
+  required int32 result = 1;
+}
+
+message SetChefReq {
+  required int32 id = 1;
+}
+
+message SetChefResp {
+  required int32 result = 1;
+}
+
+message AllChefUseExp {
+  required int32 id = 1;
+  required int32 exp = 2;
+}
+
+message AllChefUseExpNode {
+  required int32 ship_id = 1;
+  repeated AllChefUseExp info = 2;
+}
+
+message AllChefInfoUpdate {
+  repeated AllChefUseExpNode updates = 1;
+}
+
+message FriendCookInfo {
+  required int32 style = 1;
+  required int32 chef = 2;
+  repeated ChefCookBookInfo cookbook = 3;
+  required int32 popularity = 4;
+  required int32 skin = 5;
+}
+
+message FriendMedalInfo {
+  required int32 id = 1;
+  required int32 level = 2;
+}
+
+message FriendBoxroomInfo {
+  required int32 style = 1;
+  repeated Boxroom wall = 2;
+  repeated Boxroom desk = 3;
+  repeated FriendMedalInfo medal = 4;
+}
+
+message FriendMansion {
+  required int32 style = 1;
+  repeated GarrisonInfo garrison = 2;
+}
+
+message FriendInfo {
+  required int32 new_state = 1;
+  required int32 account_id = 2;
+  required string name = 3;
+  required int32 level = 4;
+  required string signature = 5;
+  required int32 last_login_time = 6;
+  required int32 head = 7;
+  required int32 secretary = 8;
+  required int32 skin = 9;
+  required int32 exp = 10;
+  required int32 equip = 11;
+  required int32 max_equip = 12;
+  required int32 ship = 13;
+  required int32 max_ship = 14;
+  required int32 archive_ship = 15;
+  required int32 exploit = 16;
+  required map_statistics expedition = 17;
+  required map_statistics pvp = 18;
+  required map_statistics pve = 19;
+  required FriendCookInfo cook = 20;
+  required FriendBoxroomInfo boxroom = 21;
+  required FriendMansion mansion = 22;
+  repeated int32 collection_buff = 23;
+  repeated int32 workshop_buff = 24;
+  required int32 time = 25;
+  required int32 top_time = 26;
+}
+
+message FriendRequestInfo {
+  required int32 account_id = 1;
+  required string name = 2;
+  required int32 level = 3;
+  required string signature = 4;
+  required int32 last_login_time = 5;
+  required int32 head = 6;
+}
+
+message FriendRecommendInfo {
+  required int32 account_id = 1;
+  required string name = 2;
+  required int32 level = 3;
+  required int32 head = 4;
+  required string signature = 5;
+  required int32 exploit = 6;
+}
+
+message FriendInfoNode {
+  required int32 action = 1 [default = 0];
+  required FriendInfo info = 2;
+}
+
+message FriendRequestInfoNode {
+  required int32 action = 1 [default = 0];
+  required FriendRequestInfo info = 2;
+}
+
+message FriendInfoUpdate {
+  repeated FriendInfoNode updates = 1;
+}
+
+message FriendRequestInfoUpdate {
+  repeated FriendRequestInfoNode updates = 1;
+}
+
+message RequestAddFriendReq {
+  required int32 account_id = 1;
+}
+
+message RequestAddFriendResp {
+  required int32 result = 1;
+}
+
+message AddFriendReq {
+  required int32 account_id = 1;
+}
+
+message AddFriendResp {
+  required int32 result = 1;
+}
+
+message RemoveFriendRequestReq {
+  required int32 account_id = 1;
+}
+
+message RemoveFriendRequestResp {
+  required int32 result = 1;
+}
+
+message RemoveAllFriendRequestReq {
+}
+
+message RemoveAllFriendRequestResp {
+  required int32 result = 1;
+}
+
+message RemoveFriendReq {
+  required int32 account_id = 1;
+}
+
+message RemoveFriendResp {
+  required int32 result = 1;
+}
+
+message RecommendReq {
+}
+
+message RecommendResp {
+  required int32 result = 1;
+}
+
+message GetRecommendListReq {
+}
+
+message GetRecommendListResp {
+  repeated FriendRecommendInfo list = 1;
+  required int32 result = 2;
+}
+
+message CancelFriendStateReq {
+}
+
+message CancelFriendStateResp {
+}
+
+message TopFriendStateReq {
+  required int32 account_id = 1;
+}
+
+message TopFriendStateResp {
+  required int32 result = 1;
+}
+
+message GarrisonInfo {
+  required int32 cid = 1;
+  required int32 hp = 2;
+  required int32 now_hp = 3;
+  required int32 level = 4;
+  required int32 exp = 5;
+  required int32 skin = 6;
+  required int32 love = 7;
+  required bool marry = 8;
+  required int32 now_skill = 9;
+  required int32 skill_level = 10;
+  repeated ShipEquipInfo equips = 11;
+  repeated IntensifyInfo intensify = 12;
+  repeated int32 tactics = 13;
+  repeated TacticsInfo all_tactics = 14;
+}
+
+message ManeuverInfo {
+  required int32 id = 1;
+  required int32 level = 2;
+  required int32 chat_head = 3;
+  required string signature = 4;
+  required string name = 5;
+  required int32 rank = 6;
+  required int32 collection_rate = 7;
+  required int32 win_rate = 8;
+  repeated GarrisonInfo garrison = 9;
+  required bool robot = 10;
+  required bool finish = 11;
+  required int32 grade = 12;
+  repeated int32 collection_buff = 13;
+  repeated int32 workshop_buff = 14;
+}
+
+message ManeuverFriendRivalInfo {
+  required int32 id = 1;
+  required int32 grade = 2;
+}
+
+message ManeuverInfoNode {
+  required int32 action = 1 [default = 0];
+  required ManeuverInfo info = 2;
+}
+
+message ManeuverFriendRivalInfoNode {
+  required int32 action = 1 [default = 0];
+  required ManeuverFriendRivalInfo info = 2;
+}
+
+message ManeuverInfoUpdate {
+  repeated ManeuverInfoNode updates = 1;
+  required int32 refresh_count = 2;
+}
+
+message ManeuverFriendRivalInfoUpdate {
+  repeated ManeuverFriendRivalInfoNode updates = 1;
+}
+
+message SaveGarrisonReq {
+  repeated int32 members = 1;
+}
+
+message SaveGarrisonResp {
+  required int32 result = 1;
+}
+
+message GrrisonUpdate {
+  repeated int32 members = 1;
+}
+
+message RefreshRivalReq {
+  required int32 id = 1;
+}
+
+message RefreshRivalResp {
+  required int32 result = 1;
+}
+
+message EnterManeuverReq {
+  required int32 id = 1;
+  required int32 team_id = 2;
+  required bool is_friend = 3;
+}
+
+message EnterManeuverResp {
+  required int32 result = 1;
+  required int32 formation = 2;
+  required bool search = 3;
+  required int32 search_rate = 4;
+}
+
+message ClassroomInfo {
+  required int32 id = 1;
+  required int32 teacher = 2;
+  repeated int32 seat = 3;
+}
+
+message TeacherInfo {
+  required int32 id = 1;
+  required int32 class = 2;
+}
+
+message ClassroomInfoNode {
+  required int32 action = 1 [default = 0];
+  required ClassroomInfo info = 2;
+}
+
+message TeacherInfoNode {
+  required int32 action = 1 [default = 0];
+  required TeacherInfo info = 2;
+}
+
+message ClassroomInfoUpdate {
+  repeated ClassroomInfoNode updates = 1;
+}
+
+message TeacherInfoUpdate {
+  repeated TeacherInfoNode updates = 1;
+}
+
+message ClassroomExtendReq {
+}
+
+message ClassroomExtendResp {
+  required int32 result = 1;
+}
+
+message ReplaceTeacherReq {
+  required int32 teacher = 1;
+  required int32 class = 2;
+}
+
+message ReplaceTeacherResp {
+  required int32 result = 1;
+}
+
+message StartStudyReq {
+  required int32 class = 1;
+  required int32 tactics = 2;
+  required int32 ship = 3;
+  required int32 seat = 4;
+}
+
+message StartStudyResp {
+  required int32 result = 1;
+}
+
+message StopStudyReq {
+  required int32 class = 1;
+  required int32 ship = 2;
+}
+
+message StopStudyResp {
+  required int32 result = 1;
+}
+
+message SchoolOpenNotify {
+}
+
+message RankTask {
+  required int32 id = 1;
+  required int32 state = 2;
+}
+
+message RankTaskNode {
+  required int32 action = 1 [default = 0];
+  required RankTask info = 2;
+}
+
+message RankSupportInfo {
+  required int32 id = 1;
+  required bool read = 2;
+}
+
+message RankSupportNode {
+  required int32 action = 1 [default = 0];
+  required RankSupportInfo info = 2;
+}
+
+message RankTaskUpdate {
+  repeated RankTaskNode updates = 1;
+}
+
+message RankSupportInfoUpdate {
+  repeated RankSupportNode updates = 1;
+  required int32 rank_point = 2;
+  required int32 using_support = 3;
+  required int32 support_count = 4;
+  required bool is_active = 5;
+}
+
+message ChangeRankSupportReq {
+  required int32 id = 1;
+}
+
+message ChangeRankSupportResp {
+  required int32 result = 1;
+}
+
+message ReadRankSupportReq {
+  required int32 id = 1;
+}
+
+message ReadRankSupportResp {
+  required int32 result = 1;
+}
+
+message ActiveRankSupportReq {
+}
+
+message ActiveRankSupportResp {
+  required int32 result = 1;
+}
+
+message Boxroom {
+  required int32 index = 1;
+  required int32 id = 2;
+}
+
+message BoxroomNode {
+  required int32 action = 1 [default = 0];
+  required Boxroom info = 2;
+}
+
+message MedalInfo {
+  required int32 id = 1;
+  required int32 level = 2;
+  required int64 time = 5;
+}
+
+message UnlockMedalInfo {
+  required int32 id = 1;
+  required int32 level = 2;
+}
+
+message MedalNode {
+  required int32 action = 1 [default = 0];
+  required MedalInfo info = 2;
+}
+
+message UnlockMedalNode {
+  required int32 action = 1 [default = 0];
+  required UnlockMedalInfo info = 2;
+}
+
+message BoxroomWallUpdate {
+  repeated BoxroomNode updates = 1;
+}
+
+message BoxroomDeskUpdate {
+  repeated BoxroomNode updates = 1;
+}
+
+message BoxroomMedalUpdate {
+  repeated int32 id_array = 1;
+}
+
+message MedalUpdate {
+  repeated MedalNode updates = 1;
+}
+
+message UnlockMedalUpdate {
+  repeated UnlockMedalNode updates = 1;
+}
+
+message ChangeWallCollectionReq {
+  required int32 index = 1;
+  required int32 id = 2;
+}
+
+message ChangeWallCollectionResp {
+  required int32 result = 1;
+}
+
+message ChangeDeskCollectionReq {
+  required int32 index = 1;
+  required int32 id = 2;
+}
+
+message ChangeDeskCollectionResp {
+  required int32 result = 1;
+}
+
+message ChangeMedalReq {
+  repeated int32 id_array = 1;
+}
+
+message ChangeMedalResp {
+  required int32 result = 1;
+}
+
+message UpgradeMedalReq {
+  required int32 id = 1;
+}
+
+message UpgradeMedalResp {
+  required int32 result = 1;
+}
+
+message BoxroomStyleNode {
+  required int32 action = 1 [default = 0];
+  required int32 id = 2;
+}
+
+message BoxroomStyleUpdate {
+  repeated BoxroomStyleNode updates = 1;
+}
+
+message ChangeBoxroomStyleReq {
+  required int32 id = 1;
+}
+
+message ChangeBoxroomStyleResp {
+  required int32 result = 1;
+}
+
+message GuideNode {
+  required int32 action = 1;
+  required int32 guide_id = 2;
+}
+
+message GuideUpdate {
+  repeated GuideNode updates = 1;
+}
+
+message SaveGuideReq {
+  repeated int32 id_array = 1;
+}
+
+message SaveGuideResp {
+  required int32 result = 1;
+}
+
+message StatisticsShipTypeNum {
+  required int32 type = 1;
+  required int32 count = 2;
+}
+
+message StatisticsInfo {
+  required int32 expedition_total = 1;
+  required int32 expedition_win = 2;
+  required int32 maneuver_total = 3;
+  required int32 maneuver_win = 4;
+  required int32 map_total = 5;
+  required int32 map_win = 6;
+  required int32 map_not_boss_complete = 7;
+  required int32 map_flag_supply_ship = 8;
+  repeated StatisticsShipTypeNum map_drop_ship_type_to_num = 9;
+  required int32 love_point_100 = 10;
+  required int32 build_ship = 11;
+  required int32 quick_repair = 12;
+  required int32 quick_build = 13;
+  required int32 crop_count = 14;
+  required int32 task_total = 15;
+  required int32 exploit_total = 16;
+}
+
+message StatisticsInfoUpdate {
+  required StatisticsInfo statistics = 1;
+}
+
+message SixthPassToken {
+  required int32 id = 1;
+  required int32 token = 2;
+}
+
+message SixthBigMap {
+  required int32 id = 1;
+  required int32 state = 2;
+  repeated int32 members = 3;
+  repeated SixthPassToken pass_token = 4;
+}
+
+message SixthBigMapNode {
+  required int32 action = 1 [default = 0];
+  required SixthBigMap info = 2;
+}
+
+message SixthMap {
+  required int32 id = 1;
+  required int32 state = 2;
+  repeated PassPointInfo pass_point = 3;
+}
+
+message SixthMapNode {
+  required int32 action = 1 [default = 0];
+  required SixthMap info = 2;
+}
+
+message SixthStruct {
+  required int32 adjutant = 1;
+  required int32 token = 2;
+  required int32 ticket = 3;
+  required int32 last_recover_time = 4;
+  required int32 buy_count = 5;
+  repeated int32 adjutant_set = 6;
+  required bool guide = 7;
+}
+
+message SixthPointGrade {
+  required int32 point = 1;
+  required int32 grade = 2;
+}
+
+message SixthAdjutantInfo {
+  required int32 id = 1;
+  required int32 level = 2;
+  required int32 exp = 3;
+  required int32 skill_count = 4;
+}
+
+message SixthBuffInfo {
+  required int32 id = 1;
+  required int32 level = 2;
+}
+
+message SixthBuyList {
+  required int32 idx = 1;
+  required int32 type = 2;
+  required int32 id = 3;
+  required int32 cost = 4;
+}
+
+message SixthCombatInfo {
+  required int32 big_id = 1;
+  required int32 id = 2;
+  required int32 point = 3;
+  required int32 coin = 4;
+  required bool buy = 5;
+  required bool refresh = 6;
+  required bool battle = 7;
+  repeated int32 members = 8;
+  repeated SixthPointGrade point_grade = 9;
+  required SixthAdjutantInfo adjutant = 10;
+  required bool adjutant_buff = 11;
+  repeated SixthBuffInfo buff = 12;
+  repeated SixthBuffInfo ship = 13;
+  repeated int32 ship_total = 14;
+  repeated SixthBuyList list = 15;
+  repeated int32 pass_map = 16;
+  required int32 fleetdecisive_buff = 17;
+}
+
+message SixthBigMapInfoUpdate {
+  repeated SixthBigMapNode updates = 1;
+}
+
+message SixthMapInfoUpdate {
+  repeated SixthMapNode updates = 1;
+}
+
+message SixthInfoUpdate {
+  required SixthStruct sixth_info = 1;
+}
+
+message SixthCombatInfoUpdate {
+  required SixthCombatInfo info = 1;
+}
+
+message SixthShopInfoUpdate {
+  repeated ShopInfoNode updates = 1;
+}
+
+message EnterSixthBigMapReq {
+  required int32 id = 1;
+  repeated int32 members = 2;
+}
+
+message EnterSixthBigMapResp {
+  required int32 result = 1;
+}
+
+message EnterSixthMapReq {
+  required int32 id = 1;
+}
+
+message EnterSixthMapResp {
+  required int32 result = 1;
+}
+
+message EnterSixthStoryReq {
+  required int32 point_id = 1;
+  required int32 grade = 2;
+}
+
+message EnterSixthStoryResp {
+  required int32 result = 1;
+}
+
+message SixthMoveReq {
+  required int32 point_id = 1;
+}
+
+message SixthMoveResp {
+  required int32 result = 1;
+  repeated SixthBuyList list = 2;
+}
+
+message SixthChooseReq {
+  repeated int32 idx_array = 1;
+}
+
+message SixthChooseResp {
+  required int32 result = 1;
+}
+
+message SixthTeamSaveReq {
+  repeated int32 members = 1;
+}
+
+message SixthTeamSaveResp {
+  required int32 result = 1;
+}
+
+message SixthQuitMapReq {
+}
+
+message SixthQuitMapResp {
+  required int32 result = 1;
+}
+
+message SixthEnterPointReq {
+}
+
+message SixthEnterPointResp {
+  required int32 result = 1;
+  required int32 point = 2;
+  required int32 monster = 3;
+  repeated int32 monster_array = 4;
+  required bool search = 5;
+  required int32 search_rate = 6;
+}
+
+message SixthCompleteMapReq {
+}
+
+message SixthCompleteMapResp {
+  required int32 result = 1;
+  repeated RewardInfo reward = 2;
+}
+
+message SixthShopBuyReq {
+  required int32 id = 1;
+}
+
+message SixthShopBuyResp {
+  required int32 result = 1;
+  repeated RewardInfo reward = 2;
+  required int32 id = 3;
+}
+
+message MultiSixthShopBuyReq {
+  required int32 id = 1;
+  required int32 num = 2;
+}
+
+message MultiSixthShopBuyResp {
+  required int32 result = 1;
+  repeated RewardInfo reward = 2;
+  required int32 id = 3;
+}
+
+message SixthUseAdjutantSkillReq {
+}
+
+message SixthUseAdjutantSkillResp {
+  required int32 result = 1;
+  repeated SixthBuyList list = 2;
+}
+
+message SixthBuyTicketReq {
+  required int32 type = 1;
+}
+
+message SixthBuyTicketResp {
+  required int32 result = 1;
+}
+
+message SixthRefreshChooseReq {
+}
+
+message SixthRefreshChooseResp {
+  required int32 result = 1;
+  repeated SixthBuyList list = 2;
+}
+
+message SixthChangeAdjutantReq {
+  required int32 id = 1;
+}
+
+message SixthChangeAdjutantResp {
+  required int32 result = 1;
+}
+
+message SixthBuyAdjutantExpReq {
+}
+
+message SixthBuyAdjutantExpResp {
+  required int32 result = 1;
+}
+
+message SixthGuideReq {
+}
+
+message SixthGuideResp {
+  required int32 result = 1;
+}
+
+message SixthResetBigMapReq {
+  required int32 id = 1;
+}
+
+message SixthResetBigMapResp {
+  required int32 result = 1;
+}
+
+message WorkshopNode {
+  required int32 action = 1 [default = 0];
+  required int32 id = 2;
+}
+
+message WorkshopInfoUpdate {
+  repeated WorkshopNode updates = 1;
+}
+
+message UpgradeWorkshopReq {
+  required int32 id = 1;
+}
+
+message UpgradeWorkshopResp {
+  required int32 result = 1;
+}
+
+message PayOrderData {
+  required string order_id = 1;
+  required int32 goods_id = 2;
+  required string extra_info = 3;
+}
+
+message CreatePayOrderReq {
+  required int32 goods_id = 1;
+}
+
+message CreatePayOrderResp {
+  required int32 result = 1;
+  required int32 goods_id = 2;
+  required bool is_free = 3;
+}
+
+message NewPayOrderNotify {
+  required PayOrderData order_data = 1;
+}
+
+message OrderPayDoneReq {
+  required string order_id = 1;
+  required bool is_succeed = 2;
+  required string platform_order_id = 3;
+  required string receipt = 4;
+}
+
+message OrderPayDoneResp {
+  required int32 result = 1;
+}
+
+message GetFirstRewardReq {
+}
+
+message PaySucceedNotify {
+  required int32 result = 1;
+}
+
+message GetFirstRewardResp {
+  required int32 result = 1;
+  repeated RewardInfo reward = 2;
+}
+
+message ChipInfo {
+  repeated int32 slot = 1;
+  repeated int32 transient = 2;
+  required int32 new = 3;
+  required int32 coin = 4;
+  required bool get_new = 5;
+}
+
+message TowerEnemyInfo {
+  required int32 id = 1;
+  required bool pass = 2;
+}
+
+message TowerInfo {
+  required bool get_reward = 1;
+  required int32 cost = 2;
+  required int32 level = 3;
+  repeated TowerEnemyInfo enemys = 4;
+  repeated int32 use_ship = 5;
+}
+
+message TowerInfoNode {
+  required int32 action = 1 [default = 0];
+  required TowerInfo info = 2;
+}
+
+message TowerInfoUpdate {
+  repeated TowerInfoNode updates = 1;
+}
+
+message ChipInfoUpdate {
+  required ChipInfo info = 1;
+}
+
+message EnterTowerReq {
+  required int32 team_id = 1;
+  required int32 monster = 2;
+  required int32 level = 4;
+}
+
+message EnterTowerResp {
+  required int32 result = 1;
+  required int32 monster = 2;
+  repeated int32 monster_array = 3;
+  required bool search = 4;
+  required int32 search_rate = 5;
+}
+
+message TowerGetRewardReq {
+  required int32 level = 1;
+}
+
+message TowerGetRewardResp {
+  required int32 result = 1;
+  repeated RewardInfo reward = 2;
+}
+
+message TowerGetChipReq {
+  required int32 type = 1;
+}
+
+message TowerGetChipResp {
+  required int32 result = 1;
+  required int32 id = 2;
+}
+
+message TowerEquipChipReq {
+  required int32 pos = 1;
+}
+
+message TowerEquipChipResp {
+  required int32 result = 1;
+}
+
+message TowerChipInTransientReq {
+  required int32 pos = 1;
+}
+
+message TowerChipInTransientResp {
+  required int32 result = 1;
+}
+
+message TowerDecomposeChipReq {
+  required int32 pos = 1;
+}
+
+message TowerDecomposeChipResp {
+  required int32 result = 1;
+}
+
+message TowerChipAbandonReq {
+}
+
+message TowerChipAbandonResp {
+  required int32 result = 1;
+}
+
+message TowerTransientEquipReq {
+  required int32 transient_pos = 1;
+  required int32 pos = 2;
+}
+
+message TowerTransientEquipResp {
+  required int32 result = 1;
+}
+
+message TowerResetLevelReq {
+  required int32 level = 1;
+}
+
+message TowerResetLevelResp {
+  required int32 result = 1;
+}
+
+message TowerBuyChipReq {
+  required int32 id = 1;
+}
+
+message TowerBuyChipResp {
+  required int32 result = 1;
+}
+
+message TowerGetNewReq {
+}
+
+message TowerGetNewResp {
+  required int32 result = 1;
+  repeated RewardInfo reward = 2;
+}
+
+message ActivityTask {
+  required int32 id = 1;
+  required int32 state = 2;
+}
+
+message ActivityTaskNode {
+  required int32 action = 1 [default = 0];
+  required ActivityTask info = 2;
+}
+
+message ActivityTaskUpdate {
+  repeated ActivityTaskNode updates = 1;
+}
+
+message EmergencyInfoNode {
+  required int32 id = 1;
+  required int32 start_time = 2;
+  required int32 end_time = 3;
+  required int32 award_time = 4;
+}
+
+message EmergencyInfoUpdate {
+  repeated EmergencyInfoNode updates = 1;
+}
+
+message ActivityDurationReq {
+  required int32 id = 1;
+  required int32 start_time = 2;
+  required int32 end_time = 3;
+}
+
+message ActivityDurationResp {
+  required int32 result = 1;
+}
+
+message SolidBuffProgress {
+  required int32 type = 1;
+  required int32 target_value = 2;
+  required int32 counter = 3;
+}
+
+message SolidMap {
+  required int32 id = 1;
+  required int32 state = 2;
+  required int32 state_hard = 3;
+  required int32 score = 4;
+  repeated int32 pass_point = 5;
+  repeated int32 hard_pass_point = 6;
+}
+
+message SolidMapNode {
+  required int32 action = 1 [default = 0];
+  required SolidMap info = 2;
+}
+
+message SolidBuffInfo {
+  required int32 id = 1;
+  required int32 score = 2;
+  required int32 point_id = 3;
+  required bool replace = 4;
+  required bool state = 5;
+  required int32 change_id = 6;
+  repeated SolidBuffProgress progresses = 7;
+}
+
+message SolidInfo {
+  required int32 id = 1;
+  required int32 point_id = 2;
+  required int32 next_point_id = 3;
+  repeated SolidBuffInfo buffs = 4;
+  repeated int32 use_ship = 5;
+}
+
+message SolidAwardNode {
+  required int32 action = 1 [default = 0];
+  required int32 id = 2;
+}
+
+message SolidMapInfoUpdate {
+  repeated SolidMapNode updates = 1;
+}
+
+message SolidAwardInfoUpdate {
+  repeated SolidAwardNode updates = 1;
+}
+
+message SolidTeamInfoUpdate {
+  repeated int32 members = 1;
+}
+
+message SolidInfoUpdate {
+  required SolidInfo info = 1;
+}
+
+message SolidEnterMapReq {
+  required int32 id = 1;
+  required bool choose = 2;
+}
+
+message SolidEnterMapResp {
+  required int32 result = 1;
+}
+
+message SolidEnterPointReq {
+}
+
+message SolidEnterPointResp {
+  required int32 result = 1;
+  required int32 point = 2;
+  required int32 monster = 3;
+  repeated int32 monster_array = 4;
+  required bool search = 5;
+  required int32 search_rate = 6;
+}
+
+message SolidSaveTeamReq {
+  repeated int32 members = 1;
+}
+
+message SolidSaveTeamResp {
+  required int32 result = 1;
+}
+
+message SolidQuitMapReq {
+}
+
+message SolidQuitMapResp {
+  required int32 result = 1;
+}
+
+message SolidGetAwardReq {
+  required int32 id = 1;
+}
+
+message SolidGetAwardResp {
+  required int32 result = 1;
+  repeated RewardInfo reward = 2;
+}
+
+message ConcertoStationInfo {
+  required int32 team = 1;
+  required int32 id = 2;
+}
+
+message ConcertoPassPointInfo {
+  required int32 id = 1;
+  required int32 grade = 2;
+}
+
+message ConcertoMapInfo {
+  required int32 id = 1;
+  required int32 state = 2;
+  repeated ConcertoPassPointInfo pass_point = 4;
+  required int32 hp = 5;
+  required int32 hp2 = 6;
+  repeated int32 exclude = 7;
+  required bool new = 8;
+}
+
+message ConcertoMapInfoNode {
+  required int32 action = 1 [default = 0];
+  required ConcertoMapInfo info = 2;
+}
+
+message RecreationMapInfo {
+  required int32 hp = 1;
+  required int32 hp2 = 2;
+  repeated int32 get = 3;
+  required int32 id = 4;
+}
+
+message ConcertoInfo {
+  required int32 point = 1;
+  repeated ConcertoStationInfo station = 2;
+  repeated int32 task = 3;
+  repeated int32 reward = 4;
+  required bool state = 5;
+  required int32 love = 6;
+  required int32 recreation_point = 7;
+  repeated int32 ship_set = 8;
+  repeated int32 member = 9;
+}
+
+message ConcertoInfoUpdate {
+  required ConcertoInfo info = 1;
+}
+
+message ConcertoMapInfoUpdate {
+  repeated ConcertoMapInfoNode updates = 1;
+}
+
+message RecreationShopInfoUpdate {
+  repeated ShopInfoNode updates = 1;
+}
+
+message RecreationMapInfoNode {
+  required int32 action = 1 [default = 0];
+  required RecreationMapInfo info = 2;
+}
+
+message RecreationMapInfoUpdate {
+  repeated RecreationMapInfoNode updates = 1;
+}
+
+message ConcertoEnterMapReq {
+  required int32 id = 1;
+  required int32 team_id = 2;
+}
+
+message ConcertoEnterMapResp {
+  required int32 result = 1;
+}
+
+message ConcertoMapMoveReq {
+  required int32 point = 1;
+}
+
+message ConcertoMapMoveResp {
+  required int32 result = 1;
+  required int32 point = 2;
+  required ResourceInfo lose = 3;
+  required ResourceInfo get = 4;
+  required int32 monster = 5;
+  repeated int32 monster_array = 6;
+  required bool search = 7;
+  required bool finish = 8;
+  required int32 search_rate = 9;
+}
+
+message ConcertoStationReq {
+  required int32 id = 1;
+  required int32 team = 2;
+}
+
+message ConcertoStationResp {
+  required int32 result = 1;
+}
+
+message ConcertoStationExitReq {
+  required int32 team = 1;
+}
+
+message ConcertoStationExitResp {
+  required int32 result = 1;
+}
+
+message ConcertoGetRewardReq {
+  required int32 id = 1;
+}
+
+message ConcertoGetRewardResp {
+  required int32 result = 1;
+  repeated RewardInfo rewards = 2;
+}
+
+message RecreationOpenNotify {
+}
+
+message RecreationTeamSaveReq {
+  repeated int32 member = 1;
+}
+
+message RecreationTeamSaveResp {
+  required int32 result = 1;
+}
+
+message RecreationShopBuyReq {
+  required int32 id = 1;
+}
+
+message RecreationShopBuyResp {
+  required int32 result = 1;
+  repeated RewardInfo rewards = 2;
+  required int32 cid = 3;
+}
+
+message RecreationEnterMapReq {
+  required int32 id = 1;
+}
+
+message RecreationEnterMapResp {
+  required int32 result = 1;
+}
+
+message RecreationMoveMapReq {
+  required int32 point = 1;
+}
+
+message RecreationMoveMapResp {
+  required int32 result = 1;
+  required int32 point = 2;
+  required int32 monster = 3;
+  repeated int32 monster_array = 4;
+  required bool search = 5;
+  required int32 search_rate = 6;
+}
+
+message RecreationBuffRrwardNotify {
+  required int32 level = 1;
+}
+
+message ConcertoReadReq {
+  required int32 id = 1;
+}
+
+message ConcertoReadResp {
+  required int32 result = 1;
+}
+
+message BossHpInfo {
+  required int32 id = 1;
+  required int32 hp = 2;
+}
+
+message OceanMap {
+  required int32 id = 1;
+  required int32 state = 2;
+  repeated PassPointInfo pass_point = 3;
+  repeated BossHpInfo boss_hp = 4;
+  repeated int32 start_point = 5;
+  required int32 last_start = 6;
+}
+
+message OceanMapNode {
+  required int32 action = 1 [default = 0];
+  required OceanMap info = 2;
+}
+
+message OceanBuffInfo {
+  required int32 id = 1;
+  required int32 hard = 2;
+}
+
+message OceanBuffNode {
+  required int32 action = 1 [default = 0];
+  required OceanBuffInfo info = 2;
+}
+
+message OceanStruct {
+  required int32 coin = 1;
+  required int32 hard_coin = 2;
+  required int64 time = 3;
+  required int64 hard_time = 4;
+}
+
+message OceanMapInfoUpdate {
+  repeated OceanMapNode updates = 1;
+}
+
+message OceanTeamInfoUpdate {
+  repeated int32 members = 1;
+}
+
+message OceanBuffInfoUpdate {
+  repeated OceanBuffNode updates = 1;
+}
+
+message OceanInfoUpdate {
+  required OceanStruct info = 1;
+}
+
+message OceanSaveTeamReq {
+  repeated int32 members = 1;
+}
+
+message OceanSaveTeamResp {
+  required int32 result = 1;
+}
+
+message OceanBuyReq {
+  required int32 id = 1;
+}
+
+message OceanBuyResp {
+  required int32 result = 1;
+}
+
+message OceanResetBuyReq {
+  required bool hard = 1;
+}
+
+message OceanResetBuyResp {
+  required int32 result = 1;
+}
+
+message OceanEnterMapReq {
+  required int32 id = 1;
+  required int32 start_point = 2;
+}
+
+message OceanEnterMapResp {
+  required int32 result = 1;
+}
+
+message OceanMoveMapReq {
+  required int32 point = 1;
+}
+
+message OceanMoveMapResp {
+  required int32 result = 1;
+  required int32 point = 2;
+  required int32 monster = 3;
+  repeated int32 monster_array = 4;
+  required bool search = 5;
+}
+
+message OceanQuitMapReq {
+}
+
+message OceanQuitMapResp {
+  required int32 result = 1;
+}
+
+message BuildRecordReq {
+  required int32 type = 1;
+}
+
+message BuildRecordResp {
+  required int32 result = 1;
+  required int32 type = 2;
+  required string records = 3;
+}
+
+message LeaderboardReq {
+  required int32 type = 1;
+}
+
+message LeaderboardResp {
+  required int32 result = 1;
+  required int32 type = 2;
+  required string board = 3;
+}
+
+message RedeemCodeReq {
+  required string code = 1;
+}
+
+message RedeemCodeResp {
+  required int32 result = 1;
+  repeated RewardInfo reward = 2;
+}
+
+message AbyssShipInfo {
+  required int32 id = 1;
+  required int32 cid = 2;
+  required int32 level = 3;
+  required int32 exp = 4;
+  required int32 now_hp = 5;
+  required int64 create_time = 6;
+}
+
+message AbyssShipInfoNode {
+  required int32 action = 1 [default = 0];
+  required AbyssShipInfo info = 2;
+}
+
+message AbyssMapInfo {
+  required int32 id = 1;
+  required int32 state = 2;
+  repeated PassPointInfo pass_point = 3;
+}
+
+message AbyssMapInfoNode {
+  required int32 action = 1 [default = 0];
+  required AbyssMapInfo info = 2;
+}
+
+message AbyssInfo {
+  required int32 score = 1;
+  required int32 boss_count = 2;
+  required bool guide = 3;
+}
+
+message AbyssAwardNode {
+  required int32 action = 1 [default = 0];
+  required int32 id = 2;
+}
+
+message AbyssBossInfo {
+  required int32 chapter_id = 1;
+  required int32 hp = 2;
+  required int32 step = 3;
+}
+
+message AbyssMapBuffInfo {
+  required int32 point_id = 1;
+  required int32 buff_id = 2;
+}
+
+message AbyssBattleInfo {
+  required int32 map_id_1 = 1;
+  required int32 map_id_2 = 2;
+  required int32 point_id_1 = 3;
+  required int32 point_id_2 = 4;
+  repeated int32 buff_1 = 5;
+  repeated int32 buff_2 = 6;
+  repeated AbyssMapBuffInfo map_buff = 7;
+  required int32 abyss_power = 8;
+}
+
+message AbyssShipInfoUpdate {
+  repeated AbyssShipInfoNode updates = 1;
+}
+
+message AbyssMapInfoUpdate {
+  repeated AbyssMapInfoNode updates = 1;
+}
+
+message AbyssInfoUpdate {
+  required AbyssInfo info = 1;
+}
+
+message AbyssTeamInfoUpdate {
+  repeated int32 members = 1;
+}
+
+message AbyssAbyssTeamInfoUpdate {
+  repeated int32 members = 1;
+}
+
+message AbyssAwardUpdate {
+  repeated AbyssAwardNode updates = 1;
+}
+
+message AbyssBattleInfoUpdate {
+  required AbyssBattleInfo info = 1;
+}
+
+message AbyssEnterMapReq {
+  required int32 id = 1;
+}
+
+message AbyssEnterMapResp {
+  required int32 result = 1;
+}
+
+message AbyssMoveMapReq {
+  required int32 point = 1;
+  required int32 team = 2;
+}
+
+message AbyssMoveMapResp {
+  required int32 result = 1;
+  required int32 point = 2;
+  required int32 monster = 3;
+  repeated int32 monster_array = 4;
+  required bool search = 5;
+  required int32 search_rate = 6;
+}
+
+message AbyssSaveTeamReq {
+  repeated int32 members = 1;
+}
+
+message AbyssSaveTeamResp {
+  required int32 result = 1;
+}
+
+message AbyssAbyssSaveTeamReq {
+  repeated int32 members = 1;
+}
+
+message AbyssAbyssSaveTeamResp {
+  required int32 result = 1;
+}
+
+message AbyssCombineReq {
+  required int32 id_1 = 1;
+  required int32 id_2 = 2;
+}
+
+message AbyssCombineResp {
+  required int32 result = 1;
+  required int32 id = 2;
+  required bool is_new = 3;
+}
+
+message AbyssEvoReq {
+  required int32 id = 1;
+}
+
+message AbyssEvoResp {
+  required int32 result = 1;
+  required bool is_new = 2;
+}
+
+message AbyssGetAwardReq {
+  required int32 id = 1;
+}
+
+message AbyssGetAwardResp {
+  required int32 result = 1;
+  repeated RewardInfo reward = 2;
+}
+
+message AbyssBossInfoReq {
+  required int32 id = 1;
+}
+
+message AbyssBossInfoResp {
+  required int32 result = 1;
+  repeated AbyssBossInfo info = 2;
+}
+
+message AbyssChooseBuffReq {
+  required int32 id = 1;
+}
+
+message AbyssChooseBuffResp {
+  required int32 result = 1;
+}
+
+message AbyssQuitMapReq {
+}
+
+message AbyssQuitMapResp {
+  required int32 result = 1;
+}
+
+message AbyssGuideReq {
+}
+
+message AbyssGuideResp {
+  required int32 result = 1;
+}
+
+message AbyssAwardBoxReq {
+  required int32 id = 1;
+}
+
+message AbyssAwardBoxResp {
+  required int32 result = 1;
+  repeated RewardInfo reward = 2;
+}
+
+message PushBuffInfoUpdate {
+  repeated int32 using_buff = 1;
+}
+
+message PushStruct {
+  required int32 coin = 1;
+  repeated int32 using_buff = 2;
+  required int32 guide = 3;
+}
+
+message PushInfoUpdate {
+  required PushStruct info = 1;
+}
+
+message PushBuyBuffReq {
+  required int32 buff_id = 1;
+}
+
+message PushBuyBuffResp {
+  required int32 result = 1;
+}
+
+message PushResetBuffReq {
+}
+
+message PushResetBuffResp {
+  required int32 result = 1;
+}
+
+message PushEnterMapReq {
+  required int32 id = 1;
+  required int32 team_id = 2;
+}
+
+message PushEnterMapResp {
+  required int32 result = 1;
+}
+
+message PushQuitMapReq {
+}
+
+message PushQuitMapResp {
+  required int32 result = 1;
+}
+
+message PushMapMoveReq {
+  required int32 point = 1;
+}
+
+message PushMapMoveResp {
+  required int32 result = 1;
+  required int32 point = 2;
+  required ResourceInfo lose = 3;
+  required ResourceInfo get = 4;
+  required int32 monster = 5;
+  repeated int32 monster_array = 6;
+  required bool search = 7;
+  required bool finish = 8;
+  required int32 search_rate = 9;
+}
+
+message DailyOnlineTimeLimitNotify {
+  required int32 reason = 1;
+}
+
+message BattleLogReq {
+  required string battle_log = 1;
+}
+
+message BattleLogResp {
+  required int32 result = 1;
+}
+
+message SecretaryShipInfo {
+  required int32 cid = 1;
+  required int32 scale = 2;
+  required int32 pos_x = 3;
+  required int32 pos_y = 4;
+}
+
+message SecretaryShipAdjustNode {
+  required int32 action = 1;
+  repeated SecretaryShipInfo info = 2;
+}
+
+message SecretaryShipAdjustUpdate {
+  repeated SecretaryShipAdjustNode updates = 1;
+}
+
+message SecretaryShipAdjustReq {
+  required int32 cid = 1;
+  required int32 scale = 2;
+  required int32 pos_x = 3;
+  required int32 pos_y = 4;
+}
+
+message SecretaryShipAdjustResp {
+  required int32 result = 1;
+}
+
+message SixthDecisiveBattleBuffReq {
+  required int32 chapter_buff_id = 1;
+}
+
+message SixthDecisiveBattleBuffResp {
+  required int32 result = 1;
+}
+
+message PushPointBuffInfo {
+  required int32 point_id = 1;
+  required int32 buff_id = 2;
+}
+
+message PushPointBuffNode {
+  required int32 action = 1;
+  required PushPointBuffInfo info = 2;
+}
+
+message PushPointBuffUpdate {
+  repeated PushPointBuffNode updates = 1;
+}
+
+message PushTimeNotify {
+  required int32 refresh_last_time = 1;
+}
+
+message PushActivityGetInReq {
+}
+
+message PushActivityGetInResp {
+  required int32 result = 1;
+}
+
+message PushActivityRefreshReq {
+}
+
+message PushActivityRefreshResp {
+  required int32 result = 1;
+}
+
+message SixthQuitBigMapReq {
+}
+
+message SixthQuitBigMapResp {
+  required int32 result = 1;
+}
+
+message SoildChooseBuffReq {
+  repeated int32 buffs = 1;
+}
+
+message SoildChooseBuffResp {
+  required int32 result = 1;
+}
+
+message SeventhBossInfo {
+  required int32 pos = 1;
+  required int32 monster = 2;
+  required int32 state = 3;
+}
+
+message SeventhMapInfo {
+  required int32 id = 1;
+  required int32 state = 2;
+  repeated PassPointInfo pass_point = 3;
+  required int32 hp = 4;
+  repeated NodeHideInfo node_hide = 5;
+  repeated NodeHideInfo node_miss = 6;
+  repeated SeventhBossInfo elite = 7;
+  repeated SeventhBossInfo chase = 8;
+  required int32 pos = 9;
+  required bool finish_chase = 10;
+  required int32 treasure_position = 11;
+  required int32 treasure_num = 12;
+}
+
+message SeventhMapInfoNode {
+  required int32 action = 1 [default = 0];
+  required SeventhMapInfo info = 2;
+}
+
+message SeventhInfoUpdate {
+  required int32 buff_point = 1;
+  repeated int32 active_buff = 2;
+  required bool guide = 3;
+}
+
+message SeventhMapInfoUpdate {
+  repeated SeventhMapInfoNode updates = 1;
+}
+
+message SeventhEnterMapReq {
+  required int32 id = 1;
+  required int32 team_id = 2;
+}
+
+message SeventhEnterMapResp {
+  required int32 result = 1;
+}
+
+message SeventhQuitMapReq {
+}
+
+message SeventhQuitMapResp {
+  required int32 result = 1;
+}
+
+message SeventhMapMoveReq {
+  required int32 point = 1;
+}
+
+message SeventhMapMoveResp {
+  required int32 result = 1;
+  required int32 point = 2;
+  required ResourceInfo lose = 3;
+  required ResourceInfo get = 4;
+  required int32 monster = 5;
+  repeated int32 monster_array = 6;
+  required bool search = 7;
+  required bool finish = 8;
+  required int32 search_rate = 9;
+}
+
+message SeventhBigMapMoveReq {
+  required int32 id = 1;
+  required int32 pos = 2;
+}
+
+message SeventhBigMapMoveResp {
+  required int32 result = 1;
+}
+
+message SeventhEnterEliteReq {
+  required int32 id = 1;
+  required int32 pos = 2;
+  required int32 team_id = 3;
+}
+
+message SeventhEnterEliteResp {
+  required int32 result = 1;
+  required int32 monster = 2;
+  repeated int32 monster_array = 3;
+  required bool search = 4;
+  required int32 search_rate = 5;
+}
+
+message SeventhEnterChaseReq {
+  required int32 id = 1;
+  required int32 pos = 2;
+  required int32 team_id = 3;
+}
+
+message SeventhEnterChaseResp {
+  required int32 result = 1;
+  required int32 monster = 2;
+  repeated int32 monster_array = 3;
+  required bool search = 4;
+  required int32 search_rate = 5;
+}
+
+message SeventhUpgradeBuffReq {
+  required int32 buff_id = 1;
+}
+
+message SeventhUpgradeBuffResp {
+  required int32 result = 1;
+}
+
+message SeventhResetBuffReq {
+}
+
+message SeventhResetBuffResp {
+  required int32 result = 1;
+}
+
+message SeventhGuideReq {
+}
+
+message SeventhGuideResp {
+  required int32 result = 1;
+}
+
+message CustomCoverNotify {
+  repeated int32 ids = 1;
+}
+
+message SaveCustomCoverReq {
+  repeated int32 ids = 1;
+}
+
+message SaveCustomCoverResp {
+  required int32 result = 1;
+}
+
+message AnswerMap {
+  required int32 id = 1;
+  required int32 state = 2;
+  repeated PassPointInfo pass_point = 3;
+  repeated BossHpInfo boss_hp = 4;
+  repeated int32 start_point = 5;
+  required int32 last_start = 6;
+}
+
+message AnswerMapNode {
+  required int32 action = 1 [default = 0];
+  required AnswerMap info = 2;
+}
+
+message AnswerStruct {
+  required int32 coin = 1;
+  required int64 time = 2;
+  required bool guide = 3;
+  required int32 buff_point = 4;
+}
+
+message AnswerQuestionInfo {
+  required int32 id = 1;
+  required int32 pos = 2;
+  required int32 state = 3;
+  repeated int32 answer = 4;
+}
+
+message AnswerQuestionNode {
+  required int32 action = 1 [default = 0];
+  required AnswerQuestionInfo info = 2;
+}
+
+message AnswerMapInfoUpdate {
+  repeated AnswerMapNode updates = 1;
+}
+
+message AnswerInfoUpdate {
+  required AnswerStruct info = 1;
+}
+
+message AnswerQuestionUpdate {
+  repeated AnswerQuestionNode updates = 1;
+}
+
+message AnswerBuffInfoNotify {
+  repeated int32 ids = 1;
+}
+
+message AnswerTaskInfoNotify {
+  repeated int32 ids = 1;
+}
+
+message AnswerAwardInfoNotify {
+  repeated int32 ids = 1;
+}
+
+message AnswerBuyReq {
+  required int32 id = 1;
+}
+
+message AnswerBuyResp {
+  required int32 result = 1;
+}
+
+message AnswerResetBuyReq {
+}
+
+message AnswerResetBuyResp {
+  required int32 result = 1;
+}
+
+message AnswerGetAwardReq {
+  required int32 id = 1;
+}
+
+message AnswerGetAwardResp {
+  required int32 result = 1;
+}
+
+message AnswerRemindReq {
+}
+
+message AnswerRemindResp {
+  required int32 result = 1;
+  required bool remind = 2;
+}
+
+message AnswerQuestionReq {
+  required int32 pos = 1;
+  repeated int32 answer = 2;
+}
+
+message AnswerQuestionResp {
+  required int32 result = 1;
+}
+
+message AnswerGuideReq {
+}
+
+message AnswerGuideResp {
+  required int32 result = 1;
+}
+
+message AnswerEnterMapReq {
+  required int32 id = 1;
+  required int32 start_point = 2;
+  required int32 team_id = 3;
+}
+
+message AnswerEnterMapResp {
+  required int32 result = 1;
+}
+
+message AnswerMoveMapReq {
+  required int32 point = 1;
+}
+
+message AnswerMoveMapResp {
+  required int32 result = 1;
+  required int32 point = 2;
+  required int32 monster = 3;
+  repeated int32 monster_array = 4;
+  required bool search = 5;
+  required int32 search_rate = 6;
+}
+
+message AnswerQuitMapReq {
+}
+
+message AnswerQuitMapResp {
+  required int32 result = 1;
+}
+
+message shipProgress {
+  required int32 id = 1;
+  required int32 complete_time = 2;
+  required int32 task_num_1 = 3;
+  required int32 task_num_2 = 4;
+  required int32 task_num_3 = 5;
+  required int32 status = 6;
+}
+
+message equipProgress {
+  required int32 id = 1;
+  required int32 task_num_1 = 2;
+  required int32 task_num_2 = 3;
+  required int32 task_num_3 = 4;
+  required int32 status = 5;
+}
+
+message ResearchUpdate {
+  repeated int32 unlockShips = 1;
+  repeated int32 unlockEquips = 2;
+  repeated shipProgress shipTask = 3;
+  repeated equipProgress equipTask = 4;
+  required int32 shipResearchId = 5;
+}
+
+message SolidExtendBuffUpdate {
+  required int32 num = 1;
+  required int32 extend_buff = 2;
+}
+
+message SolidExtendBuffNumReq {
+}
+
+message SolidExtendBuffNumResp {
+  required int32 result = 1;
+}
+
+message SolidExtendBuffStatusReq {
+  required int32 extend_buff = 1;
+}
+
+message SolidExtendBuffStatusResp {
+  required int32 result = 1;
+}
+
+message ResearchTaskInfo {
+  required int32 num = 1;
+  required int32 cid = 2;
+}
+
+message ResearchTaskSubmitReq {
+  required int32 research_id = 1;
+  required int32 task_id = 2;
+  repeated ResearchTaskInfo task_info = 3;
+}
+
+message ResearchTaskSubmitResp {
+  required int32 result = 1;
+  required int32 research_id = 2;
+  required int32 task_id = 3;
+}
+
+message GetResearchShipRewardReq {
+  required int32 ship_id = 1;
+}
+
+message GetResearchShipRewardResp {
+  required int32 result = 1;
+  repeated RewardInfo reward = 2;
+}
+
+message ResearchEquipSubmitReq {
+  required int32 research_id = 1;
+  required int32 task_id = 2;
+  repeated ResearchTaskInfo task_info = 3;
+}
+
+message ResearchEquipSubmitResp {
+  required int32 result = 1;
+  required int32 research_id = 2;
+  required int32 task_id = 3;
+}
+
+message GetResearchEquipRewardReq {
+  required int32 equip_id = 1;
+}
+
+message GetResearchEquipRewardResp {
+  required int32 result = 1;
+  repeated RewardInfo reward = 2;
+}
+
+message ResearchBoatIdReq {
+  required int32 research_id = 1;
+}
+
+message ResearchBoatIdResp {
+  required int32 result = 1;
+  required int32 research_id = 2;
+}
+
+message SeventhTreasureGetAwardReq {
+  required int32 id = 1;
+}
+
+message SeventhTreasureGetAwardResp {
+  required int32 result = 1;
+  repeated RewardInfo reward = 2;
+}
+
+message SolidInitBattleDataReq {
+}
+
+message SolidInitBattleDataResp {
+  required int32 result = 1;
+}
+
+message CommitTaskAllReq {
+}
+
+message CommitTaskAllResp {
+  required int32 result = 1;
+  repeated RewardInfo reward = 2;
+}
+
+message MultiShipChangeSkinReq {
+  repeated int32 ids = 1;
+  required int32 skin_id = 2;
+}
+
+message MultiShipChangeSkinResp {
+  required int32 result = 1;
+}
+
+message ChangeRoomStyleReq {
+  required int32 id = 1;
+  required int32 room_id = 2;
+}
+
+message ChangeRoomStyleResp {
+  required int32 result = 1;
+}
+
+message ChangeStarSetReq {
+  repeated int32 ids = 1;
+}
+
+message StarSetUpdate {
+  repeated int32 ids = 1;
+}
+
+message ChangeStarSetResp {
+  required int32 result = 1;
+}
+
+message BVRAttackChangeReq {
+  required bool state = 1;
+}
+
+message BVRAttackChangeUpdate {
+  required bool state = 1;
+}
+
+message BVRAttackChangeResp {
+  required int32 result = 1;
+}
+
+message EighthEliteBuffInfo {
+  required int32 rate = 1;
+  required int32 type = 2;
+  required int32 num = 3;
+}
+
+message EighthBossInfo {
+  required int32 pos = 1;
+  required int32 monster = 2;
+  required int32 state = 3;
+  required int32 hp = 4;
+  required int32 id = 5;
+  required int32 pre_pos = 6;
+  repeated EighthEliteBuffInfo buff = 7;
+}
+
+message EighthMapInfo {
+  required int32 id = 1;
+  required int32 state = 2;
+  repeated PassPointInfo pass_point = 3;
+  required int32 hp = 4;
+  repeated NodeHideInfo node_hide = 5;
+  repeated NodeHideInfo node_miss = 6;
+  repeated EighthBossInfo elite = 7;
+  required int32 pos = 8;
+  repeated int32 support_fleet = 9;
+  required int32 enemy_buff_id = 10;
+}
+
+message EighthMapInfoNode {
+  required int32 action = 1 [default = 0];
+  required EighthMapInfo info = 2;
+}
+
+message EighthInfoUpdate {
+  required int32 buff_point = 1;
+  repeated int32 active_buff = 2;
+  required bool guide = 3;
+  required int32 support_fleet_num = 4;
+  repeated int32 task_finished = 5;
+}
+
+message EighthMapInfoUpdate {
+  repeated EighthMapInfoNode updates = 1;
+}
+
+message EighthEnterMapReq {
+  required int32 id = 1;
+  required int32 team_id = 2;
+}
+
+message EighthEnterMapResp {
+  required int32 result = 1;
+}
+
+message EighthQuitMapReq {
+}
+
+message EighthQuitMapResp {
+  required int32 result = 1;
+}
+
+message EighthMapMoveReq {
+  required int32 point = 1;
+}
+
+message EighthMapMoveResp {
+  required int32 result = 1;
+  required int32 point = 2;
+  required ResourceInfo lose = 3;
+  required ResourceInfo get = 4;
+  required int32 monster = 5;
+  repeated int32 monster_array = 6;
+  required bool search = 7;
+  required bool finish = 8;
+  required int32 search_rate = 9;
+}
+
+message EighthBigMapMoveReq {
+  required int32 id = 1;
+  required int32 pos = 2;
+}
+
+message EighthBigMapMoveResp {
+  required int32 result = 1;
+}
+
+message EighthEnemyMoveReq {
+  required int32 id = 1;
+  repeated EighthBossInfo chase = 2;
+}
+
+message EighthEnemyMoveResp {
+  required int32 result = 1;
+}
+
+message EighthEnterEliteReq {
+  required int32 id = 1;
+  required int32 elite_id = 2;
+  required int32 team_id = 3;
+}
+
+message EighthEnterEliteResp {
+  required int32 result = 1;
+  required int32 monster = 2;
+  repeated int32 monster_array = 3;
+  required bool search = 4;
+  required int32 search_rate = 5;
+}
+
+message EighthEnterChaseReq {
+  required int32 id = 1;
+  required int32 pos = 2;
+  required int32 team_id = 3;
+}
+
+message EighthEnterChaseResp {
+  required int32 result = 1;
+  required int32 monster = 2;
+  repeated int32 monster_array = 3;
+  required bool search = 4;
+  required int32 search_rate = 5;
+}
+
+message EighthUpgradeBuffReq {
+  required int32 buff_id = 1;
+}
+
+message EighthUpgradeBuffResp {
+  required int32 result = 1;
+}
+
+message EighthResetBuffReq {
+}
+
+message EighthResetBuffResp {
+  required int32 result = 1;
+}
+
+message EighthGuideReq {
+}
+
+message EighthGuideResp {
+  required int32 result = 1;
+}
+
+message EighthSupportFleetAtkReq {
+  required int32 id = 1;
+  repeated EighthBossInfo chase = 2;
+}
+
+message EighthSupportFleetAtkResp {
+  required int32 result = 1;
+}
+
+message EighthSetSupPosReq {
+  required int32 map_id = 1;
+  required int32 sup_pos = 2;
+  required int32 action = 3;
+}
+
+message EighthSetSupPosResp {
+  required int32 result = 1;
+}
+
+message EighthEliteMoveInfo {
+  required int32 id = 1;
+  required int32 pos = 2;
+}
+
+message EighthEliteMoveReq {
+  required int32 map_id = 1;
+  repeated EighthEliteMoveInfo info = 2;
+}
+
+message EighthEliteMoveResp {
+  required int32 result = 1;
+}
+
+message EighthAtkEliteUpdate {
+  repeated int32 elite_info = 1;
+}
+
+message MistPassToken {
+  required int32 id = 1;
+  required int32 token = 2;
+}
+
+message MistBigMap {
+  required int32 id = 1;
+  required int32 state = 2;
+  repeated int32 members = 3;
+  repeated MistPassToken pass_token = 4;
+}
+
+message MistBigMapNode {
+  required int32 action = 1 [default = 0];
+  required MistBigMap info = 2;
+}
+
+message MistMap {
+  required int32 id = 1;
+  required int32 state = 2;
+  repeated PassPointInfo pass_point = 3;
+  required int32 score_token = 4;
+}
+
+message MistMapNode {
+  required int32 action = 1 [default = 0];
+  required MistMap info = 2;
+}
+
+message MistStruct {
+  required int32 adjutant = 1;
+  required int32 token = 2;
+  required int32 ticket = 3;
+  required int32 last_recover_time = 4;
+  required int32 buy_count = 5;
+  repeated int32 adjutant_set = 6;
+  required bool guide = 7;
+  required int32 pass_score = 8;
+  required bool already_get_in_point = 9;
+}
+
+message MistPointGrade {
+  required int32 point = 1;
+  required int32 grade = 2;
+}
+
+message MistAdjutantInfo {
+  required int32 id = 1;
+  required int32 level = 2;
+  required int32 exp = 3;
+  required int32 skill_count = 4;
+}
+
+message MistBuffInfo {
+  required int32 id = 1;
+  required int32 level = 2;
+}
+
+message MistBuyList {
+  required int32 idx = 1;
+  required int32 type = 2;
+  required int32 id = 3;
+  required int32 cost = 4;
+}
+
+message MistCombatInfo {
+  required int32 big_id = 1;
+  required int32 id = 2;
+  required int32 point = 3;
+  required int32 coin = 4;
+  required bool buy = 5;
+  required bool refresh = 6;
+  required bool battle = 7;
+  repeated int32 members = 8;
+  repeated MistPointGrade point_grade = 9;
+  required MistAdjutantInfo adjutant = 10;
+  required bool adjutant_buff = 11;
+  repeated MistBuffInfo buff = 12;
+  repeated MistBuffInfo ship = 13;
+  repeated int32 ship_total = 14;
+  repeated MistBuyList list = 15;
+  repeated int32 pass_map = 16;
+  required int32 fleetdecisive_buff = 17;
+}
+
+message MistBigMapInfoUpdate {
+  repeated MistBigMapNode updates = 1;
+}
+
+message MistMapInfoUpdate {
+  repeated MistMapNode updates = 1;
+}
+
+message MistInfoUpdate {
+  required MistStruct mist_info = 1;
+}
+
+message MistCombatInfoUpdate {
+  required MistCombatInfo info = 1;
+}
+
+message MistShopInfoUpdate {
+  repeated ShopInfoNode updates = 1;
+}
+
+message EnterMistBigMapReq {
+  required int32 id = 1;
+  repeated int32 members = 2;
+}
+
+message EnterMistBigMapResp {
+  required int32 result = 1;
+}
+
+message EnterMistMapReq {
+  required int32 id = 1;
+}
+
+message EnterMistMapResp {
+  required int32 result = 1;
+}
+
+message EnterMistStoryReq {
+  required int32 point_id = 1;
+  required int32 grade = 2;
+}
+
+message EnterMistStoryResp {
+  required int32 result = 1;
+}
+
+message MistMoveReq {
+  required int32 point_id = 1;
+}
+
+message MistMoveResp {
+  required int32 result = 1;
+  repeated MistBuyList list = 2;
+}
+
+message MistChooseReq {
+  repeated int32 idx_array = 1;
+}
+
+message MistChooseResp {
+  required int32 result = 1;
+}
+
+message MistTeamSaveReq {
+  repeated int32 members = 1;
+}
+
+message MistTeamSaveResp {
+  required int32 result = 1;
+}
+
+message MistQuitMapReq {
+}
+
+message MistQuitMapResp {
+  required int32 result = 1;
+}
+
+message MistEnterPointReq {
+}
+
+message MistEnterPointResp {
+  required int32 result = 1;
+  required int32 point = 2;
+  required int32 monster = 3;
+  repeated int32 monster_array = 4;
+  required bool search = 5;
+  required int32 search_rate = 6;
+}
+
+message MistPointCompleteReq {
+  required int32 battle_result = 1;
+  required int32 battle_point = 2;
+}
+
+message MistPointCompleteResp {
+  required int32 result = 1;
+}
+
+message MistCompleteMapReq {
+  required int32 battle_result = 1;
+  required bool battle_confirm = 2;
+}
+
+message MistCompleteMapResp {
+  required int32 result = 1;
+  repeated RewardInfo reward = 2;
+}
+
+message MistUseAdjutantSkillReq {
+}
+
+message MistUseAdjutantSkillResp {
+  required int32 result = 1;
+  repeated MistBuyList list = 2;
+}
+
+message MistBuyTicketReq {
+  required int32 type = 1;
+}
+
+message MistBuyTicketResp {
+  required int32 result = 1;
+}
+
+message MistRefreshChooseReq {
+}
+
+message MistRefreshChooseResp {
+  required int32 result = 1;
+  repeated MistBuyList list = 2;
+}
+
+message MistChangeAdjutantReq {
+  required int32 id = 1;
+}
+
+message MistChangeAdjutantResp {
+  required int32 result = 1;
+}
+
+message MistBuyAdjutantExpReq {
+}
+
+message MistBuyAdjutantExpResp {
+  required int32 result = 1;
+}
+
+message MistGuideReq {
+}
+
+message MistGuideResp {
+  required int32 result = 1;
+}
+
+message MistResetBigMapReq {
+  required int32 id = 1;
+}
+
+message MistResetBigMapResp {
+  required int32 result = 1;
+}
+
+message MistAwardNode {
+  required int32 action = 1 [default = 0];
+  required int32 id = 2;
+}
+
+message MistGetAwardReq {
+  required int32 id = 1;
+}
+
+message MistAwardInfoUpdate {
+  repeated MistAwardNode updates = 1;
+}
+
+message MistGetAwardResp {
+  required int32 result = 1;
+  repeated RewardInfo reward = 2;
+}
+
+message RepairShipInfo {
+  required int32 id = 1;
+  required int32 room_id = 2;
+}
+
+message MultiShipRepairReq {
+  repeated RepairShipInfo ship_array = 1;
+}
+
+message MultiShipRepairResp {
+  required int32 result = 1;
+}
+
+message PushGuideReq {
+}
+
+message PushGuideResp {
+  required int32 result = 1;
+}
+
+message SecretaryInfoUpdate {
+  repeated int32 members = 1;
+  required int32 middle_broken_flag = 2;
+  required int32 rand_secretary_flag = 3;
+}
+
+message ChangeSecretaryDataReq {
+  repeated int32 members = 1;
+}
+
+message ChangeSecretaryDataResp {
+  required int32 result = 1;
+}
+
+message ChangeMiddleBrokenReq {
+  required int32 middle_broken_flag = 1;
+}
+
+message ChangeMiddleBrokenResp {
+  required int32 result = 1;
+}
+
+message ChangeRandSecretaryReq {
+  required int32 rand_secretary_flag = 1;
+}
+
+message ChangeRandSecretaryResp {
+  required int32 result = 1;
+}
+
+message SimulatedBuildReq {
+  required int32 oil = 1;
+  required int32 bullet = 2;
+  required int32 fe = 3;
+  required int32 al = 4;
+  required int32 type = 5;
+}
+
+message SimulatedBuildResp {
+  required int32 result = 1;
+  repeated int32 cids = 2;
+  required int32 type = 3;
+}
+
+message BindingPhoneReq {
+  required bool state = 1;
+}
+
+message BindingPhoneResp {
+  required int32 result = 1;
+}
+
+message SensitiveWordsReq {
+  required int32 type = 1;
+  required string sensitive_words = 2;
+}
+
+message SensitiveWordsResp {
+  required int32 result = 1;
+}
+
+message NinthMaxScoreStruct {
+  required int32 account_id = 1;
+  required string name = 2;
+  required int32 channel = 3;
+  required int32 level = 4;
+  required int32 time = 5;
+  required int32 chat_head = 6;
+}
+
+message NinthMaxScoreUpdate {
+  repeated NinthMaxScoreStruct info = 1;
+}
+
+message NinthLevelPassStruct {
+  required int32 level_id = 1;
+  required int32 num = 2;
+}
+
+message NinthLevelPassUpdate {
+  repeated NinthLevelPassStruct info = 1;
+}
+
+message NinthMap {
+  required int32 id = 1;
+  required int32 state = 2;
+  repeated PassPointInfo pass_point = 3;
+  required int32 hp = 4;
+  repeated NodeHideInfo node_hide = 5;
+  repeated NodeHideInfo node_miss = 6;
+}
+
+message NinthMapNode {
+  required int32 action = 1 [default = 0];
+  required NinthMap info = 2;
+}
+
+message NinthStruct {
+  required int32 score_point = 1;
+  required int32 buff_point = 2;
+  required bool guide = 3;
+}
+
+message NinthMapInfoUpdate {
+  repeated NinthMapNode updates = 1;
+}
+
+message NinthInfoUpdate {
+  required NinthStruct info = 1;
+}
+
+message NinthBuffInfoNotify {
+  repeated int32 ids = 1;
+}
+
+message NinthTaskInfoUpdate {
+  repeated int32 ids = 1;
+}
+
+message NinthServerTaskInfoUpdate {
+  repeated int32 ids = 1;
+}
+
+message NinthAwardInfoNotify {
+  repeated int32 ids = 1;
+}
+
+message NinthBuyReq {
+  required int32 id = 1;
+}
+
+message NinthBuyResp {
+  required int32 result = 1;
+}
+
+message NinthResetBuyReq {
+}
+
+message NinthResetBuyResp {
+  required int32 result = 1;
+}
+
+message NinthGetAwardReq {
+  required int32 id = 1;
+}
+
+message NinthGetAwardResp {
+  required int32 result = 1;
+  repeated RewardInfo reward = 2;
+}
+
+message NinthGuideReq {
+}
+
+message NinthGuideResp {
+  required int32 result = 1;
+}
+
+message NinthEnterMapReq {
+  required int32 id = 1;
+  required int32 start_point = 2;
+  required int32 team_id = 3;
+}
+
+message NinthEnterMapResp {
+  required int32 result = 1;
+}
+
+message NinthMapMoveReq {
+  required int32 point = 1;
+}
+
+message NinthMapMoveResp {
+  required int32 result = 1;
+  required int32 point = 2;
+  required int32 monster = 3;
+  repeated int32 monster_array = 4;
+  required bool search = 5;
+  required int32 search_rate = 6;
+}
+
+message NinthQuitMapReq {
+}
+
+message NinthQuitMapResp {
+  required int32 result = 1;
+}
+
+message NinthMaxScoreLevelPassReq {
+}
+
+message NinthMaxScoreLevelPassResp {
+  required int32 result = 1;
+}
+
+message AnswerMaxScoreStruct {
+  required int32 account_id = 1;
+  required string name = 2;
+  required int32 channel = 3;
+  required int32 level = 4;
+  required int32 time = 5;
+  required int32 chat_head = 6;
+}
+
+message AnswerMaxScoreUpdate {
+  repeated AnswerMaxScoreStruct info = 1;
+}
+
+message AnswerMaxScoreLevelPassReq {
+}
+
+message AnswerMaxScoreLevelPassResp {
+  required int32 result = 1;
+}
+
+message SolidMaxScoreStruct {
+  required int32 account_id = 1;
+  required string name = 2;
+  required int32 channel = 3;
+  required int32 level = 4;
+  required int32 time = 5;
+  required int32 chat_head = 6;
+}
+
+message SolidMaxScoreUpdate {
+  repeated SolidMaxScoreStruct info = 1;
+}
+
+message SolidMaxScoreLevelPassReq {
+}
+
+message SolidMaxScoreLevelPassResp {
+  required int32 result = 1;
+}
+
+message TokenRefreshReq {
+  required string channel = 1;
+  required string refresh_token = 2;
+}
+
+message TokenRefreshUpdate {
+  required string token = 1;
+}
+
+message TokenRefreshResp {
+  required int32 result = 1;
+}
+
+message AnnouncementRefreshReq {
+}
+
+message AnnouncementStruct {
+  required int32 id = 1;
+  required string type = 2;
+  required string title = 3;
+  required string text = 4;
+  required string text_pic_id = 5;
+  required string is_new = 6;
+  required string link = 7;
+  required string active_text = 8;
+}
+
+message AnnouncementUpdate {
+  repeated AnnouncementStruct info = 1;
+}
+
+message AnnouncementRefreshResp {
+  required int32 result = 1;
+}
+

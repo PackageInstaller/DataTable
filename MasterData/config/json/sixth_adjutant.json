@@ -1,0 +1,139 @@
+{
+  "sequence": [
+    {
+      "desc": "紫貂作为模拟演习作战的负责人，可以为玩家提供大量的策略点数。（策略点数获取数量随技能等级提升）",
+      "effect": [
+        {
+          "num": 5,
+          "type": 1
+        },
+        {
+          "num": 10,
+          "type": 1
+        },
+        {
+          "num": 15,
+          "type": 1
+        },
+        {
+          "num": 20,
+          "type": 1
+        }
+      ],
+      "effect_desc": [
+        "^CFFFFFFFF00000000使用后直接增加^C00FFEAFFFFFFFF005^CFFFFFFFF00000000个策略点",
+        "^CFFFFFFFF00000000使用后直接增加^C00FFEAFFFFFFFF0010^CFFFFFFFF00000000个策略点",
+        "^CFFFFFFFF00000000使用后直接增加^C00FFEAFFFFFFFF0015^CFFFFFFFF00000000个策略点",
+        "^CFFFFFFFF00000000使用后直接增加^C00FFEAFFFFFFFF0020^CFFFFFFFF00000000个策略点"
+      ],
+      "get_type": 0,
+      "id": 10082,
+      "skill_effect": [
+        5,
+        10,
+        15,
+        20
+      ],
+      "skill_title": "模拟演习的成果",
+      "skillup_dialogue": "未作",
+      "title": "紫貂",
+      "touch_dialogue": [
+        "战备券和策略点都只能通过战斗获取，快去出征吧指挥官！",
+        "每个副官的技能在每次关卡挑战里都只能使用一次哦！",
+        "升级副官不仅能增强副官技能效果，还能提升策略点获取量。"
+      ]
+    },
+    {
+      "desc": "骑士精神让她在决斗中绝不肯落后于人，提升我方下一场战斗全体的伤害。（提升伤害比例随技能等级提升而提升）",
+      "effect": [
+        {
+          "num": 5,
+          "type": 2
+        },
+        {
+          "num": 10,
+          "type": 2
+        },
+        {
+          "num": 15,
+          "type": 2
+        },
+        {
+          "num": 20,
+          "type": 2
+        }
+      ],
+      "effect_desc": [
+        "^CFFFFFFFF00000000使用后下一场战斗提升^C00FFEAFFFFFFFF005%^CFFFFFFFF00000000伤害",
+        "^CFFFFFFFF00000000使用后下一场战斗提升^C00FFEAFFFFFFFF0010%^CFFFFFFFF00000000伤害",
+        "^CFFFFFFFF00000000使用后下一场战斗提升^C00FFEAFFFFFFFF0015%^CFFFFFFFF00000000伤害",
+        "^CFFFFFFFF00000000使用后下一场战斗提升^C00FFEAFFFFFFFF0020%^CFFFFFFFF00000000伤害"
+      ],
+      "get_type": 1,
+      "id": 10182,
+      "skill_effect": [
+        0.05,
+        0.1,
+        0.15,
+        0.2
+      ],
+      "skill_title": "公正的决斗",
+      "skillup_dialogue": "未作",
+      "title": "奇尔沙治",
+      "touch_dialogue": [
+        "战备券和策略点都只能通过战斗获取，快去出征吧指挥官！",
+        "每个副官的技能在每次关卡挑战里都只能使用一次哦！",
+        "升级副官不仅能增强副官技能效果，还能提升策略点获取量。"
+      ]
+    },
+    {
+      "desc": "她会给你她认为最合理的答案。使用技能后，随机获得船池里的角色。（获得角色数量随技能等级提升而提升）",
+      "effect": [
+        {
+          "num": 1,
+          "type": 3
+        },
+        {
+          "num": 2,
+          "type": 3
+        },
+        {
+          "num": 3,
+          "type": 3
+        },
+        {
+          "num": 4,
+          "type": 3
+        }
+      ],
+      "effect_desc": [
+        "^CFFFFFFFF00000000使用后随机获得^C00FFEAFFFFFFFF001^CFFFFFFFF00000000艘战术条例舰船",
+        "^CFFFFFFFF00000000使用后随机获得^C00FFEAFFFFFFFF002^CFFFFFFFF00000000艘战术条例舰船",
+        "^CFFFFFFFF00000000使用后随机获得^C00FFEAFFFFFFFF003^CFFFFFFFF00000000艘战术条例舰船",
+        "^CFFFFFFFF00000000使用后随机获得^C00FFEAFFFFFFFF004^CFFFFFFFF00000000艘战术条例舰船"
+      ],
+      "get_type": 1,
+      "id": 10282,
+      "skill_effect": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "skill_title": "天才的奇思妙想",
+      "skillup_dialogue": "未作",
+      "title": "哈巴库克",
+      "touch_dialogue": [
+        "战备券和策略点都只能通过战斗获取，快去出征吧指挥官！",
+        "每个副官的技能在每次关卡挑战里都只能使用一次哦！",
+        "升级副官不仅能增强副官技能效果，还能提升策略点获取量。"
+      ]
+    }
+  ],
+  "sequence_num": 3,
+  "unique_id": {
+    "10082": 1,
+    "10182": 2,
+    "10282": 3
+  }
+}

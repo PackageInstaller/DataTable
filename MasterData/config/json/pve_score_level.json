@@ -1,0 +1,9525 @@
+{
+  "sequence": [
+    {
+      "arrow": [
+        {
+          "x": 296,
+          "y": 93
+        }
+      ],
+      "boss": [
+        [
+          1020111,
+          254,
+          909,
+          1150,
+          430
+        ],
+        [
+          1020112,
+          254,
+          909,
+          710,
+          778
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 254,
+          "point_id": 1020112
+        },
+        {
+          "hp": 254,
+          "point_id": 1020111
+        }
+      ],
+      "boss_id": 10201,
+      "boss_node_id": [
+        1020112
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10201,
+      "init_node_id": 1020101,
+      "init_nodes": [
+        1020101
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": [],
+      "map": {
+        "x": 116,
+        "y": 210
+      },
+      "map_id": 10201,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 170,
+        "y": 200
+      },
+      "need_pve_level_id": 0,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10202,
+      "nodes_desc": [
+        "",
+        ""
+      ],
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 80,
+      "ship_exp": 100,
+      "sub_title": "强行闯关",
+      "support_id": 0,
+      "support_next_desc": "0",
+      "support_open_desc": "0",
+      "support_pre_desc": "0",
+      "tips": "^C454545FF00000000推荐舰船等级大于^C1C8BE5FF0000000010^C454545FF00000000级",
+      "title": "Ex-1",
+      "total_score": 400,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 309,
+        "y": 340
+      },
+      "type": 2,
+      "user_exp": 100
+    },
+    {
+      "arrow": [
+        {
+          "x": 290,
+          "y": 510
+        },
+        {
+          "x": 458,
+          "y": 461
+        }
+      ],
+      "boss": [
+        [
+          1020211,
+          314,
+          9855,
+          958,
+          795
+        ],
+        [
+          1020212,
+          350,
+          9849,
+          121,
+          520
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 314,
+          "point_id": 1020211
+        },
+        {
+          "hp": 350,
+          "point_id": 1020212
+        }
+      ],
+      "boss_id": 10202,
+      "boss_node_id": [
+        1020212
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10202,
+      "init_node_id": 1020201,
+      "init_nodes": [
+        1020201,
+        1020213
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1020201": [
+          567,
+          247
+        ],
+        "1020213": [
+          636,
+          500
+        ]
+      },
+      "map": {
+        "x": 612,
+        "y": 228
+      },
+      "map_id": 10202,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 880,
+        "y": 190
+      },
+      "need_pve_level_id": 10201,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10203,
+      "nodes_desc": [
+        "需通关E1J点",
+        "需通关E3M点"
+      ],
+      "position": {
+        "x": 559,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 80,
+      "ship_exp": 200,
+      "sub_title": "远洋遇险",
+      "support_id": 0,
+      "support_next_desc": "0",
+      "support_open_desc": "0",
+      "support_pre_desc": "0",
+      "tips": "^C454545FF00000000推荐舰船等级大于^C1C8BE5FF0000000020^C454545FF00000000级",
+      "title": "Ex-2",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 521,
+        "y": 405
+      },
+      "type": 2,
+      "user_exp": 140
+    },
+    {
+      "arrow": [
+        {
+          "x": 485,
+          "y": 22
+        },
+        {
+          "x": 622,
+          "y": -48
+        },
+        {
+          "x": 753,
+          "y": -14
+        }
+      ],
+      "boss": [
+        [
+          1020314,
+          395,
+          9855,
+          1095,
+          283
+        ],
+        [
+          1020315,
+          689,
+          995,
+          1055,
+          763
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 689,
+          "point_id": 1020315
+        },
+        {
+          "hp": 395,
+          "point_id": 1020314
+        }
+      ],
+      "boss_id": 10203,
+      "boss_node_id": [
+        1020315
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10203,
+      "init_node_id": 1020301,
+      "init_nodes": [
+        1020301,
+        1020316
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1020301": [
+          317,
+          491
+        ],
+        "1020316": [
+          571,
+          430
+        ]
+      },
+      "map": {
+        "x": 165,
+        "y": 529
+      },
+      "map_id": 10203,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 180,
+        "y": 640
+      },
+      "need_pve_level_id": 10202,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10204,
+      "nodes_desc": [
+        "需通关E1K点",
+        "需通关E2K点"
+      ],
+      "position": {
+        "x": 0,
+        "y": 387
+      },
+      "pve_id": 102,
+      "score_max": 80,
+      "ship_exp": 500,
+      "sub_title": "峡湾激战",
+      "support_id": 0,
+      "support_next_desc": "0",
+      "support_open_desc": "0",
+      "support_pre_desc": "0",
+      "tips": "^C454545FF00000000推荐舰船等级大于^C1C8BE5FF0000000030^C454545FF00000000级",
+      "title": "Ex-3",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 721,
+        "y": 173
+      },
+      "type": 2,
+      "user_exp": 180
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1020416,
+          1200,
+          9838,
+          1118,
+          766
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 1200,
+          "point_id": 1020416
+        }
+      ],
+      "boss_id": 10204,
+      "boss_node_id": [
+        1020416
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10204,
+      "init_node_id": 1020401,
+      "init_nodes": [
+        1020401,
+        1020417
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1020401": [
+          589,
+          760
+        ],
+        "1020417": [
+          922,
+          476
+        ]
+      },
+      "map": {
+        "x": 665,
+        "y": 545
+      },
+      "map_id": 10204,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 1130,
+        "y": 530
+      },
+      "need_pve_level_id": 10203,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10205,
+      "nodes_desc": [
+        "需通关E3N点",
+        "需通关E2J点"
+      ],
+      "position": {
+        "x": 557,
+        "y": 338
+      },
+      "pve_id": 102,
+      "score_max": 40,
+      "ship_exp": 540,
+      "sub_title": "战斗的女士",
+      "support_id": 16,
+      "support_next_desc": "成功击溃了N点的敌军，在对BOSS点（O）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "战胜位于N点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船等级大于^C1C8BE5FF0000000050^C454545FF00000000级",
+      "title": "Ex-4",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 928,
+        "y": 444
+      },
+      "type": 2,
+      "user_exp": 220
+    },
+    {
+      "arrow": [
+        {
+          "x": 296,
+          "y": 93
+        }
+      ],
+      "boss": [
+        [
+          1020511,
+          554,
+          948,
+          1150,
+          430
+        ],
+        [
+          1020512,
+          590,
+          948,
+          710,
+          778
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 590,
+          "point_id": 1020512
+        },
+        {
+          "hp": 554,
+          "point_id": 1020511
+        }
+      ],
+      "boss_id": 10205,
+      "boss_node_id": [
+        1020512
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10205,
+      "init_node_id": 1020501,
+      "init_nodes": [
+        1020501
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": [],
+      "map": {
+        "x": 116,
+        "y": 210
+      },
+      "map_id": 10205,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 170,
+        "y": 200
+      },
+      "need_pve_level_id": 10204,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10206,
+      "nodes_desc": [
+        "",
+        ""
+      ],
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 220,
+      "ship_exp": 580,
+      "sub_title": "强行闯关(困难)",
+      "support_id": 0,
+      "support_next_desc": "0",
+      "support_open_desc": "0",
+      "support_pre_desc": "0",
+      "tips": "^C454545FF00000000推荐舰船等级大于^C1C8BE5FF0000000070^C454545FF00000000级",
+      "title": "Ex-5",
+      "total_score": 400,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 309,
+        "y": 340
+      },
+      "type": 2,
+      "user_exp": 260
+    },
+    {
+      "arrow": [
+        {
+          "x": 290,
+          "y": 510
+        },
+        {
+          "x": 458,
+          "y": 461
+        }
+      ],
+      "boss": [
+        [
+          1020611,
+          689,
+          9856,
+          958,
+          795
+        ],
+        [
+          1020612,
+          890,
+          9850,
+          121,
+          520
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 689,
+          "point_id": 1020611
+        },
+        {
+          "hp": 890,
+          "point_id": 1020612
+        }
+      ],
+      "boss_id": 10206,
+      "boss_node_id": [
+        1020612
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10206,
+      "init_node_id": 1020601,
+      "init_nodes": [
+        1020601,
+        1020613
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1020601": [
+          567,
+          247
+        ],
+        "1020613": [
+          636,
+          500
+        ]
+      },
+      "map": {
+        "x": 612,
+        "y": 228
+      },
+      "map_id": 10206,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 880,
+        "y": 190
+      },
+      "need_pve_level_id": 10205,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10207,
+      "nodes_desc": [
+        "需通关E5J点",
+        "需通关E7M点"
+      ],
+      "position": {
+        "x": 559,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 220,
+      "ship_exp": 620,
+      "sub_title": "远洋遇险(困难)",
+      "support_id": 0,
+      "support_next_desc": "0",
+      "support_open_desc": "0",
+      "support_pre_desc": "0",
+      "tips": "^C454545FF00000000推荐舰船等级大于^C1C8BE5FF0000000080^C454545FF00000000级",
+      "title": "Ex-6",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 521,
+        "y": 405
+      },
+      "type": 2,
+      "user_exp": 300
+    },
+    {
+      "arrow": [
+        {
+          "x": 485,
+          "y": 22
+        },
+        {
+          "x": 622,
+          "y": -48
+        },
+        {
+          "x": 753,
+          "y": -14
+        }
+      ],
+      "boss": [
+        [
+          1020714,
+          695,
+          9856,
+          1095,
+          283
+        ],
+        [
+          1020715,
+          1988,
+          995,
+          1055,
+          763
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 1988,
+          "point_id": 1020715
+        },
+        {
+          "hp": 695,
+          "point_id": 1020714
+        }
+      ],
+      "boss_id": 10207,
+      "boss_node_id": [
+        1020715
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10207,
+      "init_node_id": 1020701,
+      "init_nodes": [
+        1020701,
+        1020716
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1020701": [
+          317,
+          491
+        ],
+        "1020716": [
+          571,
+          430
+        ]
+      },
+      "map": {
+        "x": 165,
+        "y": 529
+      },
+      "map_id": 10207,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 180,
+        "y": 640
+      },
+      "need_pve_level_id": 10206,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10208,
+      "nodes_desc": [
+        "需通关E5K点",
+        "需通关E6K点"
+      ],
+      "position": {
+        "x": 0,
+        "y": 387
+      },
+      "pve_id": 102,
+      "score_max": 230,
+      "ship_exp": 660,
+      "sub_title": "峡湾激战(困难)",
+      "support_id": 0,
+      "support_next_desc": "0",
+      "support_open_desc": "0",
+      "support_pre_desc": "0",
+      "tips": "^C454545FF00000000推荐舰船等级大于^C1C8BE5FF0000000090^C454545FF00000000级",
+      "title": "Ex-7",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 721,
+        "y": 173
+      },
+      "type": 2,
+      "user_exp": 340
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1020816,
+          2160,
+          9838,
+          1118,
+          766
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 2160,
+          "point_id": 1020816
+        }
+      ],
+      "boss_id": 10208,
+      "boss_node_id": [
+        1020816
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10208,
+      "init_node_id": 1020801,
+      "init_nodes": [
+        1020801,
+        1020817
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1020801": [
+          589,
+          760
+        ],
+        "1020817": [
+          922,
+          476
+        ]
+      },
+      "map": {
+        "x": 665,
+        "y": 545
+      },
+      "map_id": 10208,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 1130,
+        "y": 530
+      },
+      "need_pve_level_id": 10207,
+      "next_pve_level": 0,
+      "next_pve_level_id": 0,
+      "nodes_desc": [
+        "需通关E7N点",
+        "需通关E6J点"
+      ],
+      "position": {
+        "x": 557,
+        "y": 338
+      },
+      "pve_id": 102,
+      "score_max": 200,
+      "ship_exp": 700,
+      "sub_title": "战斗的女士(困难)",
+      "support_id": 18,
+      "support_next_desc": "成功击溃了N点的敌军，在对BOSS点（O）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "战胜位于N点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船等级大于^C1C8BE5FF00000000100^C454545FF00000000级",
+      "title": "Ex-8",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 928,
+        "y": 444
+      },
+      "type": 2,
+      "user_exp": 380
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1020911,
+          288,
+          990,
+          1124,
+          255
+        ],
+        [
+          1020912,
+          498,
+          9815,
+          1002,
+          768
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 498,
+          "point_id": 1020912
+        },
+        {
+          "hp": 288,
+          "point_id": 1020911
+        }
+      ],
+      "boss_id": 10209,
+      "boss_node_id": [
+        1020911
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10209,
+      "init_node_id": 1020901,
+      "init_nodes": [
+        1020901
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": [],
+      "map": {
+        "x": 81,
+        "y": 235
+      },
+      "map_id": 10209,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 170,
+        "y": 200
+      },
+      "need_pve_level_id": 0,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10210,
+      "nodes_desc": [
+        "",
+        ""
+      ],
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 80,
+      "ship_exp": 220,
+      "sub_title": "巨兽来袭",
+      "support_id": 0,
+      "support_next_desc": "0",
+      "support_open_desc": "0",
+      "support_pre_desc": "0",
+      "tips": "^C454545FF00000000推荐舰船等级大于^C1C8BE5FF0000000010^C454545FF00000000级",
+      "title": "Ex-1",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 0,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 120
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1021012,
+          699,
+          9815,
+          1046,
+          780
+        ],
+        [
+          1021013,
+          540,
+          9831,
+          1126,
+          343
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 699,
+          "point_id": 1021012
+        },
+        {
+          "hp": 540,
+          "point_id": 1021013
+        }
+      ],
+      "boss_id": 10210,
+      "boss_node_id": [
+        1021012
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10210,
+      "init_node_id": 1021001,
+      "init_nodes": [
+        1021001
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1021001": [
+          228,
+          477
+        ]
+      },
+      "map": {
+        "x": 107,
+        "y": 520
+      },
+      "map_id": 10210,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 140,
+        "y": 490
+      },
+      "need_pve_level_id": 10209,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10211,
+      "nodes_desc": [
+        "需通关E1K点",
+        ""
+      ],
+      "position": {
+        "x": 0,
+        "y": 387
+      },
+      "pve_id": 102,
+      "score_max": 80,
+      "ship_exp": 270,
+      "sub_title": "陡峭山岭",
+      "support_id": 0,
+      "support_next_desc": "0",
+      "support_open_desc": "0",
+      "support_pre_desc": "0",
+      "tips": "^C454545FF00000000推荐舰船等级大于^C1C8BE5FF0000000020^C454545FF00000000级",
+      "title": "Ex-2",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 0,
+        "y": 387
+      },
+      "type": 2,
+      "user_exp": 140
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1021112,
+          540,
+          990,
+          1098,
+          261
+        ],
+        [
+          1021113,
+          504,
+          9853,
+          893,
+          782
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 540,
+          "point_id": 1021112
+        },
+        {
+          "hp": 504,
+          "point_id": 1021113
+        }
+      ],
+      "boss_id": 10211,
+      "boss_node_id": [
+        1021112
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10211,
+      "init_node_id": 1021101,
+      "init_nodes": [
+        1021101,
+        1021114
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1021101": [
+          414,
+          239
+        ],
+        "1021114": [
+          428,
+          487
+        ]
+      },
+      "map": {
+        "x": 415,
+        "y": 261
+      },
+      "map_id": 10211,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 600,
+        "y": 200
+      },
+      "need_pve_level_id": 10210,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10212,
+      "nodes_desc": [
+        "需通关E1J点",
+        "需通关E2L点"
+      ],
+      "position": {
+        "x": 384,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 80,
+      "ship_exp": 320,
+      "sub_title": "鏖战",
+      "support_id": 0,
+      "support_next_desc": "0",
+      "support_open_desc": "0",
+      "support_pre_desc": "0",
+      "tips": "^C454545FF00000000推荐舰船等级大于^C1C8BE5FF0000000030^C454545FF00000000级",
+      "title": "Ex-3",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 384,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 160
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1021213,
+          225,
+          992,
+          1167,
+          233
+        ],
+        [
+          1021214,
+          600,
+          9831,
+          1000,
+          780
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 600,
+          "point_id": 1021214
+        },
+        {
+          "hp": 225,
+          "point_id": 1021213
+        }
+      ],
+      "boss_id": 10212,
+      "boss_node_id": [
+        1021213
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10212,
+      "init_node_id": 1021201,
+      "init_nodes": [
+        1021201,
+        1021215
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1021201": [
+          528,
+          497
+        ],
+        "1021215": [
+          407,
+          715
+        ]
+      },
+      "map": {
+        "x": 451,
+        "y": 526
+      },
+      "map_id": 10212,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 630,
+        "y": 800
+      },
+      "need_pve_level_id": 10211,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10213,
+      "nodes_desc": [
+        "需通关E3L点",
+        "需通关E2K点"
+      ],
+      "position": {
+        "x": 398,
+        "y": 463
+      },
+      "pve_id": 102,
+      "score_max": 80,
+      "ship_exp": 370,
+      "sub_title": "带刺之凰",
+      "support_id": 0,
+      "support_next_desc": "0",
+      "support_open_desc": "0",
+      "support_pre_desc": "0",
+      "tips": "^C454545FF00000000推荐舰船等级大于^C1C8BE5FF0000000040^C454545FF00000000级",
+      "title": "Ex-4",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 398,
+        "y": 463
+      },
+      "type": 2,
+      "user_exp": 180
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1021316,
+          932,
+          990,
+          1071,
+          783
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 932,
+          "point_id": 1021316
+        }
+      ],
+      "boss_id": 10213,
+      "boss_node_id": [
+        1021316
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10213,
+      "init_node_id": 1021301,
+      "init_nodes": [
+        1021301,
+        1021317
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1021301": [
+          744,
+          222
+        ],
+        "1021317": [
+          774,
+          482
+        ]
+      },
+      "map": {
+        "x": 809,
+        "y": 239
+      },
+      "map_id": 10213,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 1130,
+        "y": 220
+      },
+      "need_pve_level_id": 10212,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10214,
+      "nodes_desc": [
+        "需通关E3K点",
+        "需通关E4L点"
+      ],
+      "position": {
+        "x": 737,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 40,
+      "ship_exp": 420,
+      "sub_title": "钢铁磨盘",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了H点的敌军，在对BOSS点（O）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "战胜位于H点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船等级大于^C1C8BE5FF0000000050^C454545FF00000000级",
+      "title": "Ex-5",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 737,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 200
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1021418,
+          1080,
+          9867,
+          648,
+          704
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 1080,
+          "point_id": 1021418
+        }
+      ],
+      "boss_id": 10214,
+      "boss_node_id": [
+        1021418
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10214,
+      "init_node_id": 1021401,
+      "init_nodes": [
+        1021401,
+        1021419
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1021401": [
+          1056,
+          500
+        ],
+        "1021419": [
+          722,
+          783
+        ]
+      },
+      "map": {
+        "x": 795,
+        "y": 537
+      },
+      "map_id": 10214,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 950,
+        "y": 510
+      },
+      "need_pve_level_id": 10213,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10215,
+      "nodes_desc": [
+        "需通关E5O点",
+        "需通关E4M点"
+      ],
+      "position": {
+        "x": 753,
+        "y": 474
+      },
+      "pve_id": 102,
+      "score_max": 40,
+      "ship_exp": 470,
+      "sub_title": "乾坤一掷",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了G点的敌军，在对BOSS点（Q）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "战胜位于G点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船等级大于^C1C8BE5FF0000000060^C454545FF00000000级",
+      "title": "Ex-6",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 753,
+        "y": 474
+      },
+      "type": 2,
+      "user_exp": 220
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1021511,
+          900,
+          991,
+          1124,
+          255
+        ],
+        [
+          1021512,
+          999,
+          9815,
+          1002,
+          768
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 900,
+          "point_id": 1021511
+        },
+        {
+          "hp": 999,
+          "point_id": 1021512
+        }
+      ],
+      "boss_id": 10215,
+      "boss_node_id": [
+        1021511
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10215,
+      "init_node_id": 1021501,
+      "init_nodes": [
+        1021501
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": [],
+      "map": {
+        "x": 81,
+        "y": 235
+      },
+      "map_id": 10215,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 170,
+        "y": 200
+      },
+      "need_pve_level_id": 10214,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10216,
+      "nodes_desc": [
+        "",
+        ""
+      ],
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 240,
+      "ship_exp": 520,
+      "sub_title": "巨兽来袭(困难)",
+      "support_id": 0,
+      "support_next_desc": "0",
+      "support_open_desc": "0",
+      "support_pre_desc": "0",
+      "tips": "^C454545FF00000000推荐舰船等级大于^C1C8BE5FF0000000070^C454545FF00000000级",
+      "title": "Ex-7",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 0,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 240
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1021612,
+          1188,
+          9815,
+          1046,
+          780
+        ],
+        [
+          1021613,
+          1350,
+          9832,
+          1126,
+          343
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 1188,
+          "point_id": 1021612
+        },
+        {
+          "hp": 1350,
+          "point_id": 1021613
+        }
+      ],
+      "boss_id": 10216,
+      "boss_node_id": [
+        1021612
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10216,
+      "init_node_id": 1021601,
+      "init_nodes": [
+        1021601
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1021601": [
+          228,
+          477
+        ]
+      },
+      "map": {
+        "x": 107,
+        "y": 520
+      },
+      "map_id": 10216,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 140,
+        "y": 490
+      },
+      "need_pve_level_id": 10215,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10217,
+      "nodes_desc": [
+        "需通关E7K点",
+        ""
+      ],
+      "position": {
+        "x": 0,
+        "y": 387
+      },
+      "pve_id": 102,
+      "score_max": 260,
+      "ship_exp": 570,
+      "sub_title": "陡峭山岭(困难)",
+      "support_id": 0,
+      "support_next_desc": "0",
+      "support_open_desc": "0",
+      "support_pre_desc": "0",
+      "tips": "^C454545FF00000000推荐舰船等级大于^C1C8BE5FF0000000080^C454545FF00000000级",
+      "title": "Ex-8",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 0,
+        "y": 387
+      },
+      "type": 2,
+      "user_exp": 260
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1021712,
+          1350,
+          991,
+          1098,
+          261
+        ],
+        [
+          1021713,
+          1200,
+          9854,
+          893,
+          782
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 1350,
+          "point_id": 1021712
+        },
+        {
+          "hp": 1200,
+          "point_id": 1021713
+        }
+      ],
+      "boss_id": 10217,
+      "boss_node_id": [
+        1021712
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10217,
+      "init_node_id": 1021701,
+      "init_nodes": [
+        1021701,
+        1021714
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1021701": [
+          414,
+          239
+        ],
+        "1021714": [
+          428,
+          487
+        ]
+      },
+      "map": {
+        "x": 415,
+        "y": 261
+      },
+      "map_id": 10217,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 600,
+        "y": 200
+      },
+      "need_pve_level_id": 10216,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10218,
+      "nodes_desc": [
+        "需通关E7J点",
+        "需通关E8L点"
+      ],
+      "position": {
+        "x": 384,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 280,
+      "ship_exp": 620,
+      "sub_title": "鏖战(困难)",
+      "support_id": 0,
+      "support_next_desc": "0",
+      "support_open_desc": "0",
+      "support_pre_desc": "0",
+      "tips": "^C454545FF00000000推荐舰船等级大于^C1C8BE5FF0000000090^C454545FF00000000级",
+      "title": "Ex-9",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 384,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 280
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1021813,
+          1080,
+          993,
+          1167,
+          233
+        ],
+        [
+          1021814,
+          1350,
+          9832,
+          1000,
+          780
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 1080,
+          "point_id": 1021813
+        },
+        {
+          "hp": 1350,
+          "point_id": 1021814
+        }
+      ],
+      "boss_id": 10218,
+      "boss_node_id": [
+        1021813
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10218,
+      "init_node_id": 1021801,
+      "init_nodes": [
+        1021801,
+        1021815
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1021801": [
+          528,
+          497
+        ],
+        "1021815": [
+          407,
+          715
+        ]
+      },
+      "map": {
+        "x": 451,
+        "y": 526
+      },
+      "map_id": 10218,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 630,
+        "y": 800
+      },
+      "need_pve_level_id": 10217,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10219,
+      "nodes_desc": [
+        "需通关E9L点",
+        "需通关E8K点"
+      ],
+      "position": {
+        "x": 398,
+        "y": 463
+      },
+      "pve_id": 102,
+      "score_max": 290,
+      "ship_exp": 670,
+      "sub_title": "带刺之凰(困难)",
+      "support_id": 0,
+      "support_next_desc": "0",
+      "support_open_desc": "0",
+      "support_pre_desc": "0",
+      "tips": "^C454545FF00000000推荐舰船等级大于^C1C8BE5FF00000000100^C454545FF00000000级",
+      "title": "Ex-10",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 398,
+        "y": 463
+      },
+      "type": 2,
+      "user_exp": 300
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1021916,
+          1800,
+          991,
+          1071,
+          783
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 1800,
+          "point_id": 1021916
+        }
+      ],
+      "boss_id": 10219,
+      "boss_node_id": [
+        1021916
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10219,
+      "init_node_id": 1021901,
+      "init_nodes": [
+        1021901,
+        1021917
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1021901": [
+          744,
+          222
+        ],
+        "1021917": [
+          774,
+          482
+        ]
+      },
+      "map": {
+        "x": 809,
+        "y": 239
+      },
+      "map_id": 10219,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 1130,
+        "y": 220
+      },
+      "need_pve_level_id": 10218,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10220,
+      "nodes_desc": [
+        "需通关E9K点",
+        "需通关E10L点"
+      ],
+      "position": {
+        "x": 737,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 280,
+      "ship_exp": 720,
+      "sub_title": "钢铁磨盘(困难)",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了H点的敌军，在对BOSS点（O）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "战胜位于H点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船等级大于^C1C8BE5FF00000000100^C454545FF00000000级",
+      "title": "Ex-11",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 737,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 320
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1022018,
+          2160,
+          9868,
+          648,
+          704
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 2160,
+          "point_id": 1022018
+        }
+      ],
+      "boss_id": 10220,
+      "boss_node_id": [
+        1022018
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10220,
+      "init_node_id": 1022001,
+      "init_nodes": [
+        1022001,
+        1022019
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1022001": [
+          1056,
+          500
+        ],
+        "1022019": [
+          722,
+          783
+        ]
+      },
+      "map": {
+        "x": 795,
+        "y": 537
+      },
+      "map_id": 10220,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 950,
+        "y": 510
+      },
+      "need_pve_level_id": 10219,
+      "next_pve_level": 0,
+      "next_pve_level_id": 0,
+      "nodes_desc": [
+        "需通关E11O点",
+        "需通关E10M点"
+      ],
+      "position": {
+        "x": 753,
+        "y": 474
+      },
+      "pve_id": 102,
+      "score_max": 300,
+      "ship_exp": 770,
+      "sub_title": "乾坤一掷(困难)",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了G点的敌军，在对BOSS点（Q）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "战胜位于G点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船等级大于^C1C8BE5FF00000000110^C454545FF00000000级",
+      "title": "Ex-12",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 753,
+        "y": 474
+      },
+      "type": 2,
+      "user_exp": 340
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1022110,
+          282,
+          9819,
+          1166,
+          255
+        ],
+        [
+          1022111,
+          999,
+          9826,
+          255,
+          661
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 282,
+          "point_id": 1022110
+        },
+        {
+          "hp": 999,
+          "point_id": 1022111
+        }
+      ],
+      "boss_id": 10221,
+      "boss_node_id": [
+        1022110
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10221,
+      "init_node_id": 1022101,
+      "init_nodes": [
+        1022101
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": [],
+      "map": {
+        "x": 94,
+        "y": 267
+      },
+      "map_id": 10221,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 170,
+        "y": 200
+      },
+      "need_pve_level_id": 0,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10222,
+      "nodes_desc": [
+        "",
+        ""
+      ],
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 80,
+      "ship_exp": 360,
+      "sub_title": "偶然碰撞",
+      "support_id": 0,
+      "support_next_desc": "0",
+      "support_open_desc": "0",
+      "support_pre_desc": "0",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000030^C454545FF00000000级",
+      "title": "Ex-1",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 0,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 120
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1022211,
+          324,
+          9855,
+          1139,
+          308
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 324,
+          "point_id": 1022211
+        }
+      ],
+      "boss_id": 10222,
+      "boss_node_id": [
+        1022211
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10222,
+      "init_node_id": 1022201,
+      "init_nodes": [
+        1022201
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1022201": [
+          84,
+          469
+        ]
+      },
+      "map": {
+        "x": 102,
+        "y": 503
+      },
+      "map_id": 10222,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 270,
+        "y": 480
+      },
+      "need_pve_level_id": 10221,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10223,
+      "nodes_desc": [
+        "需通关E1J点",
+        ""
+      ],
+      "position": {
+        "x": 0,
+        "y": 457
+      },
+      "pve_id": 102,
+      "score_max": 40,
+      "ship_exp": 395,
+      "sub_title": "追逐赛",
+      "support_id": 0,
+      "support_next_desc": "0",
+      "support_open_desc": "0",
+      "support_pre_desc": "0",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000040^C454545FF00000000级",
+      "title": "Ex-2",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 0,
+        "y": 387
+      },
+      "type": 2,
+      "user_exp": 140
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1022313,
+          405,
+          9820,
+          1173,
+          274
+        ],
+        [
+          1022314,
+          354,
+          9811,
+          470,
+          690
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 405,
+          "point_id": 1022313
+        },
+        {
+          "hp": 354,
+          "point_id": 1022314
+        }
+      ],
+      "boss_id": 10223,
+      "boss_node_id": [
+        1022313
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10223,
+      "init_node_id": 1022301,
+      "init_nodes": [
+        1022301,
+        1022315
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1022301": [
+          391,
+          232
+        ],
+        "1022315": [
+          779,
+          402
+        ]
+      },
+      "map": {
+        "x": 451,
+        "y": 240
+      },
+      "map_id": 10223,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 600,
+        "y": 200
+      },
+      "need_pve_level_id": 10222,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10224,
+      "nodes_desc": [
+        "需通关E1I点",
+        "需通关E5O点"
+      ],
+      "position": {
+        "x": 405,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 80,
+      "ship_exp": 430,
+      "sub_title": "前卫遭遇战",
+      "support_id": 0,
+      "support_next_desc": "0",
+      "support_open_desc": "0",
+      "support_pre_desc": "0",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000050^C454545FF00000000级",
+      "title": "Ex-3",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 384,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 160
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1022414,
+          540,
+          911,
+          930,
+          713
+        ],
+        [
+          1022415,
+          504,
+          9818,
+          1056,
+          384
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 540,
+          "point_id": 1022414
+        },
+        {
+          "hp": 504,
+          "point_id": 1022415
+        }
+      ],
+      "boss_id": 10224,
+      "boss_node_id": [
+        1022414
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10224,
+      "init_node_id": 1022401,
+      "init_nodes": [
+        1022401,
+        1022416
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1022401": [
+          418,
+          516
+        ],
+        "1022416": [
+          531,
+          463
+        ]
+      },
+      "map": {
+        "x": 438,
+        "y": 532
+      },
+      "map_id": 10224,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 630,
+        "y": 760
+      },
+      "need_pve_level_id": 10223,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10225,
+      "nodes_desc": [
+        "需通关E2J点",
+        "需通关E3M点"
+      ],
+      "position": {
+        "x": 383,
+        "y": 440
+      },
+      "pve_id": 102,
+      "score_max": 80,
+      "ship_exp": 465,
+      "sub_title": "激烈交锋",
+      "support_id": 0,
+      "support_next_desc": "0",
+      "support_open_desc": "0",
+      "support_pre_desc": "0",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000060^C454545FF00000000级",
+      "title": "Ex-4",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 398,
+        "y": 463
+      },
+      "type": 2,
+      "user_exp": 180
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1022515,
+          540,
+          9855,
+          1084,
+          754
+        ],
+        [
+          1022516,
+          699,
+          9812,
+          157,
+          517
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 540,
+          "point_id": 1022515
+        },
+        {
+          "hp": 699,
+          "point_id": 1022516
+        }
+      ],
+      "boss_id": 10225,
+      "boss_node_id": [
+        1022515
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10225,
+      "init_node_id": 1022501,
+      "init_nodes": [
+        1022501,
+        1022517
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1022501": [
+          778,
+          222
+        ],
+        "1022517": [
+          724,
+          454
+        ]
+      },
+      "map": {
+        "x": 832,
+        "y": 243
+      },
+      "map_id": 10225,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 1050,
+        "y": 215
+      },
+      "need_pve_level_id": 10224,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10226,
+      "nodes_desc": [
+        "需通关E3L点",
+        "需通关E4N点"
+      ],
+      "position": {
+        "x": 790,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 80,
+      "ship_exp": 500,
+      "sub_title": "战线交错",
+      "support_id": 0,
+      "support_next_desc": "0",
+      "support_open_desc": "0",
+      "support_pre_desc": "0",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000070^C454545FF00000000级",
+      "title": "Ex-5",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 737,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 200
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1022619,
+          1080,
+          9812,
+          1147,
+          781
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 1080,
+          "point_id": 1022619
+        }
+      ],
+      "boss_id": 10226,
+      "boss_node_id": [
+        1022619
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10226,
+      "init_node_id": 1022601,
+      "init_nodes": [
+        1022601,
+        1022620
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1022601": [
+          1025,
+          426
+        ],
+        "1022620": [
+          757,
+          705
+        ]
+      },
+      "map": {
+        "x": 793,
+        "y": 537
+      },
+      "map_id": 10226,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 1020,
+        "y": 780
+      },
+      "need_pve_level_id": 10225,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10227,
+      "nodes_desc": [
+        "需通关E5N点",
+        "需通关E4M点"
+      ],
+      "position": {
+        "x": 733,
+        "y": 404
+      },
+      "pve_id": 102,
+      "score_max": 40,
+      "ship_exp": 535,
+      "sub_title": "冰海魅影",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了Q点的敌军，在对BOSS点（R）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "战胜位于Q点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000070^C454545FF00000000级",
+      "title": "Ex-6",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 753,
+        "y": 474
+      },
+      "type": 2,
+      "user_exp": 220
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1022710,
+          699,
+          9819,
+          1166,
+          255
+        ],
+        [
+          1022711,
+          1998,
+          9827,
+          255,
+          661
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 1998,
+          "point_id": 1022711
+        },
+        {
+          "hp": 699,
+          "point_id": 1022710
+        }
+      ],
+      "boss_id": 10227,
+      "boss_node_id": [
+        1022710
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10227,
+      "init_node_id": 1022701,
+      "init_nodes": [
+        1022701
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": [],
+      "map": {
+        "x": 94,
+        "y": 267
+      },
+      "map_id": 10227,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 170,
+        "y": 200
+      },
+      "need_pve_level_id": 10226,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10228,
+      "nodes_desc": [
+        "",
+        ""
+      ],
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 240,
+      "ship_exp": 570,
+      "sub_title": "偶然碰撞(困难)",
+      "support_id": 0,
+      "support_next_desc": "0",
+      "support_open_desc": "0",
+      "support_pre_desc": "0",
+      "tips": "^C454545FF00000000推荐舰船装备、强化、技能完善且等级大于^C1C8BE5FF0000000080^C454545FF00000000级",
+      "title": "Ex-7",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 0,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 240
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1022811,
+          840,
+          9856,
+          1139,
+          308
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 840,
+          "point_id": 1022811
+        }
+      ],
+      "boss_id": 10228,
+      "boss_node_id": [
+        1022811
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10228,
+      "init_node_id": 1022801,
+      "init_nodes": [
+        1022801
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1022801": [
+          84,
+          469
+        ]
+      },
+      "map": {
+        "x": 102,
+        "y": 503
+      },
+      "map_id": 10228,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 270,
+        "y": 480
+      },
+      "need_pve_level_id": 10227,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10229,
+      "nodes_desc": [
+        "需通关E7J点",
+        ""
+      ],
+      "position": {
+        "x": 0,
+        "y": 457
+      },
+      "pve_id": 102,
+      "score_max": 130,
+      "ship_exp": 605,
+      "sub_title": "追逐赛(困难)",
+      "support_id": 0,
+      "support_next_desc": "0",
+      "support_open_desc": "0",
+      "support_pre_desc": "0",
+      "tips": "^C454545FF00000000推荐舰船装备、强化、技能完善且等级大于^C1C8BE5FF0000000090^C454545FF00000000级",
+      "title": "Ex-8",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 0,
+        "y": 387
+      },
+      "type": 2,
+      "user_exp": 260
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1022913,
+          960,
+          9821,
+          1173,
+          274
+        ],
+        [
+          1022914,
+          840,
+          9813,
+          470,
+          690
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 960,
+          "point_id": 1022913
+        },
+        {
+          "hp": 840,
+          "point_id": 1022914
+        }
+      ],
+      "boss_id": 10229,
+      "boss_node_id": [
+        1022913
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10229,
+      "init_node_id": 1022901,
+      "init_nodes": [
+        1022901,
+        1022915
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1022901": [
+          391,
+          232
+        ],
+        "1022915": [
+          779,
+          402
+        ]
+      },
+      "map": {
+        "x": 451,
+        "y": 240
+      },
+      "map_id": 10229,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 600,
+        "y": 200
+      },
+      "need_pve_level_id": 10228,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10230,
+      "nodes_desc": [
+        "需通关E7I点",
+        "需通关E11O点"
+      ],
+      "position": {
+        "x": 405,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 290,
+      "ship_exp": 640,
+      "sub_title": "前卫遭遇战(困难)",
+      "support_id": 0,
+      "support_next_desc": "0",
+      "support_open_desc": "0",
+      "support_pre_desc": "0",
+      "tips": "^C454545FF00000000推荐舰船装备、强化、技能完善且等级大于^C1C8BE5FF00000000100^C454545FF00000000级",
+      "title": "Ex-9",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 384,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 280
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1023014,
+          1080,
+          912,
+          930,
+          713
+        ],
+        [
+          1023015,
+          1008,
+          9818,
+          1056,
+          384
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 1008,
+          "point_id": 1023015
+        },
+        {
+          "hp": 1080,
+          "point_id": 1023014
+        }
+      ],
+      "boss_id": 10230,
+      "boss_node_id": [
+        1023014
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10230,
+      "init_node_id": 1023001,
+      "init_nodes": [
+        1023001,
+        1023016
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1023001": [
+          418,
+          516
+        ],
+        "1023016": [
+          531,
+          463
+        ]
+      },
+      "map": {
+        "x": 438,
+        "y": 532
+      },
+      "map_id": 10230,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 630,
+        "y": 760
+      },
+      "need_pve_level_id": 10229,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10231,
+      "nodes_desc": [
+        "需通关E8J点",
+        "需通关E9M点"
+      ],
+      "position": {
+        "x": 383,
+        "y": 440
+      },
+      "pve_id": 102,
+      "score_max": 320,
+      "ship_exp": 675,
+      "sub_title": "激烈交锋(困难)",
+      "support_id": 0,
+      "support_next_desc": "0",
+      "support_open_desc": "0",
+      "support_pre_desc": "0",
+      "tips": "^C454545FF00000000推荐舰船装备、强化、技能完善且等级大于^C1C8BE5FF00000000100^C454545FF00000000级",
+      "title": "Ex-10",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 398,
+        "y": 463
+      },
+      "type": 2,
+      "user_exp": 300
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1023115,
+          1140,
+          9856,
+          1084,
+          754
+        ],
+        [
+          1023116,
+          1350,
+          9814,
+          157,
+          517
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 1140,
+          "point_id": 1023115
+        },
+        {
+          "hp": 1350,
+          "point_id": 1023116
+        }
+      ],
+      "boss_id": 10231,
+      "boss_node_id": [
+        1023115
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10231,
+      "init_node_id": 1023101,
+      "init_nodes": [
+        1023101,
+        1023117
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1023101": [
+          778,
+          222
+        ],
+        "1023117": [
+          724,
+          454
+        ]
+      },
+      "map": {
+        "x": 832,
+        "y": 243
+      },
+      "map_id": 10231,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 1050,
+        "y": 215
+      },
+      "need_pve_level_id": 10230,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10232,
+      "nodes_desc": [
+        "需通关E9L点",
+        "需通关E10N点"
+      ],
+      "position": {
+        "x": 790,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 340,
+      "ship_exp": 710,
+      "sub_title": "战线交错(困难)",
+      "support_id": 0,
+      "support_next_desc": "0",
+      "support_open_desc": "0",
+      "support_pre_desc": "0",
+      "tips": "^C454545FF00000000推荐舰船装备、强化、技能完善且等级大于^C1C8BE5FF00000000100^C454545FF00000000级",
+      "title": "Ex-11",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 737,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 320
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1023219,
+          1920,
+          9814,
+          1147,
+          781
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 1920,
+          "point_id": 1023219
+        }
+      ],
+      "boss_id": 10232,
+      "boss_node_id": [
+        1023219
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10232,
+      "init_node_id": 1023201,
+      "init_nodes": [
+        1023201,
+        1023220
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1023201": [
+          1025,
+          426
+        ],
+        "1023220": [
+          757,
+          705
+        ]
+      },
+      "map": {
+        "x": 793,
+        "y": 537
+      },
+      "map_id": 10232,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 1020,
+        "y": 780
+      },
+      "need_pve_level_id": 10231,
+      "next_pve_level": 0,
+      "next_pve_level_id": 0,
+      "nodes_desc": [
+        "需通关E11N点",
+        "需通关E10M点"
+      ],
+      "position": {
+        "x": 733,
+        "y": 404
+      },
+      "pve_id": 102,
+      "score_max": 180,
+      "ship_exp": 745,
+      "sub_title": "冰海魅影(困难)",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了Q点的敌军，在对BOSS点（R）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "战胜位于Q点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化、技能完善且等级大于^C1C8BE5FF00000000100^C454545FF00000000级",
+      "title": "Ex-12",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 753,
+        "y": 474
+      },
+      "type": 2,
+      "user_exp": 340
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1023311,
+          449,
+          911,
+          982,
+          760
+        ],
+        [
+          1023312,
+          413,
+          911,
+          1013,
+          193
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 413,
+          "point_id": 1023312
+        },
+        {
+          "hp": 449,
+          "point_id": 1023311
+        }
+      ],
+      "boss_id": 10233,
+      "boss_node_id": [
+        1023311
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10233,
+      "init_node_id": 1023301,
+      "init_nodes": [
+        1023301
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": [],
+      "map": {
+        "x": 93,
+        "y": 266
+      },
+      "map_id": 10233,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 170,
+        "y": 200
+      },
+      "need_pve_level_id": 0,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10234,
+      "nodes_desc": [
+        "",
+        ""
+      ],
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 80,
+      "ship_exp": 360,
+      "sub_title": "新维度",
+      "support_id": 0,
+      "support_next_desc": "0",
+      "support_open_desc": "0",
+      "support_pre_desc": "0",
+      "tips": "^C454545FF00000000推荐舰船装备、强化、技能完善且等级大于^C1C8BE5FF0000000010^C454545FF00000000级",
+      "title": "Ex-1",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 0,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 120
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1023412,
+          425,
+          9819,
+          1150,
+          768
+        ],
+        [
+          1023413,
+          449,
+          9820,
+          1152,
+          207
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 449,
+          "point_id": 1023413
+        },
+        {
+          "hp": 425,
+          "point_id": 1023412
+        }
+      ],
+      "boss_id": 10234,
+      "boss_node_id": [
+        1023412
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10234,
+      "init_node_id": 1023401,
+      "init_nodes": [
+        1023401,
+        1023414
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1023401": [
+          83,
+          447
+        ],
+        "1023414": [
+          363,
+          457
+        ]
+      },
+      "map": {
+        "x": 66,
+        "y": 535
+      },
+      "map_id": 10234,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 300,
+        "y": 758
+      },
+      "need_pve_level_id": 10233,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10235,
+      "nodes_desc": [
+        "需通关E1J点",
+        "需通关E3L点"
+      ],
+      "position": {
+        "x": 0,
+        "y": 439
+      },
+      "pve_id": 102,
+      "score_max": 80,
+      "ship_exp": 395,
+      "sub_title": "紧急信号",
+      "support_id": 0,
+      "support_next_desc": "0",
+      "support_open_desc": "0",
+      "support_pre_desc": "0",
+      "tips": "^C454545FF00000000推荐舰船装备、强化、技能完善且等级大于^C1C8BE5FF0000000020^C454545FF00000000级",
+      "title": "Ex-2",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 0,
+        "y": 387
+      },
+      "type": 2,
+      "user_exp": 140
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1023513,
+          539,
+          9812,
+          285,
+          800
+        ],
+        [
+          1023514,
+          998,
+          9826,
+          1184,
+          430
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 539,
+          "point_id": 1023513
+        },
+        {
+          "hp": 998,
+          "point_id": 1023514
+        }
+      ],
+      "boss_id": 10235,
+      "boss_node_id": [
+        1023513
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10235,
+      "init_node_id": 1023501,
+      "init_nodes": [
+        1023501,
+        1023515
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1023501": [
+          332,
+          233
+        ],
+        "1023515": [
+          336,
+          419
+        ]
+      },
+      "map": {
+        "x": 456,
+        "y": 254
+      },
+      "map_id": 10235,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 600,
+        "y": 200
+      },
+      "need_pve_level_id": 10234,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10236,
+      "nodes_desc": [
+        "需通关E1K点",
+        "需通关E2L点"
+      ],
+      "position": {
+        "x": 387,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 80,
+      "ship_exp": 430,
+      "sub_title": "双管齐下",
+      "support_id": 0,
+      "support_next_desc": "成功压制了K点的敌军，在对BOSS点（L）（M）进行作战的时候，能够获得来自友军路基炮台的火力支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于K点的敌军，为友军布置路基炮台作战扫清障碍",
+      "tips": "^C454545FF00000000推荐舰船装备、强化、技能完善且等级大于^C1C8BE5FF0000000030^C454545FF00000000级",
+      "title": "Ex-3",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 384,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 160
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1023615,
+          554,
+          9849,
+          930,
+          205
+        ],
+        [
+          1023616,
+          599,
+          924,
+          1154,
+          661
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 599,
+          "point_id": 1023616
+        },
+        {
+          "hp": 554,
+          "point_id": 1023615
+        }
+      ],
+      "boss_id": 10236,
+      "boss_node_id": [
+        1023615
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10236,
+      "init_node_id": 1023601,
+      "init_nodes": [
+        1023601,
+        1023617
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1023601": [
+          737,
+          416
+        ],
+        "1023617": [
+          355,
+          749
+        ]
+      },
+      "map": {
+        "x": 401,
+        "y": 545
+      },
+      "map_id": 10236,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 710,
+        "y": 767
+      },
+      "need_pve_level_id": 10235,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10237,
+      "nodes_desc": [
+        "需通关E5O点",
+        "需通关E2K点"
+      ],
+      "position": {
+        "x": 343,
+        "y": 447
+      },
+      "pve_id": 102,
+      "score_max": 80,
+      "ship_exp": 465,
+      "sub_title": "浮出水面",
+      "support_id": 0,
+      "support_next_desc": "成功压制了M点的敌军，在对BOSS点（N）（O）进行作战的时候，能够获得来自友军路基炮台的火力支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于M点的敌军，为友军布置路基炮台作战扫清障碍",
+      "tips": "^C454545FF00000000推荐舰船装备、强化、技能完善且等级大于^C1C8BE5FF0000000040^C454545FF00000000级",
+      "title": "Ex-4",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 398,
+        "y": 463
+      },
+      "type": 2,
+      "user_exp": 180
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1023716,
+          698,
+          9818,
+          110,
+          802
+        ],
+        [
+          1023717,
+          698,
+          917,
+          1043,
+          787
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 698,
+          "point_id": 1023716
+        },
+        {
+          "hp": 698,
+          "point_id": 1023717
+        }
+      ],
+      "boss_id": 10237,
+      "boss_node_id": [
+        1023716
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10237,
+      "init_node_id": 1023701,
+      "init_nodes": [
+        1023701,
+        1023718
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1023701": [
+          757,
+          229
+        ],
+        "1023718": [
+          652,
+          359
+        ]
+      },
+      "map": {
+        "x": 816,
+        "y": 224
+      },
+      "map_id": 10237,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 916,
+        "y": 195
+      },
+      "need_pve_level_id": 10236,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10238,
+      "nodes_desc": [
+        "需通关E3M点",
+        "需通关E4N点"
+      ],
+      "position": {
+        "x": 781,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 80,
+      "ship_exp": 500,
+      "sub_title": "无限制战斗",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了M点的敌军，在对BOSS点（O）（P）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于N点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化、技能完善且等级大于^C1C8BE5FF0000000050^C454545FF00000000级",
+      "title": "Ex-5",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 737,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 200
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1023819,
+          1079,
+          9855,
+          1190,
+          717
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 1079,
+          "point_id": 1023819
+        }
+      ],
+      "boss_id": 10238,
+      "boss_node_id": [
+        1023819
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 1,
+      "id": 10238,
+      "init_node_id": 1023801,
+      "init_nodes": [
+        1023801,
+        1023820
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1023801": [
+          1124,
+          415
+        ],
+        "1023820": [
+          764,
+          680
+        ]
+      },
+      "map": {
+        "x": 822,
+        "y": 524
+      },
+      "map_id": 10238,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 1012,
+        "y": 487
+      },
+      "need_pve_level_id": 10237,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10239,
+      "nodes_desc": [
+        "需通关E5P点",
+        "需通关E4O点"
+      ],
+      "position": {
+        "x": 692,
+        "y": 435
+      },
+      "pve_id": 102,
+      "score_max": 50,
+      "ship_exp": 535,
+      "sub_title": "海底危机",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了Q点的敌军，在对BOSS点（R）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于Q点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化、技能完善且等级大于^C1C8BE5FF0000000060^C454545FF00000000级",
+      "title": "Ex-6",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 753,
+        "y": 474
+      },
+      "type": 2,
+      "user_exp": 220
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1023911,
+          803,
+          912,
+          982,
+          760
+        ],
+        [
+          1023912,
+          749,
+          912,
+          1013,
+          193
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 749,
+          "point_id": 1023912
+        },
+        {
+          "hp": 803,
+          "point_id": 1023911
+        }
+      ],
+      "boss_id": 10239,
+      "boss_node_id": [
+        1023911
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10239,
+      "init_node_id": 1023901,
+      "init_nodes": [
+        1023901
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": [],
+      "map": {
+        "x": 93,
+        "y": 266
+      },
+      "map_id": 10239,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 170,
+        "y": 200
+      },
+      "need_pve_level_id": 10238,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10240,
+      "nodes_desc": [
+        "",
+        ""
+      ],
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 230,
+      "ship_exp": 570,
+      "sub_title": "新维度(困难)",
+      "support_id": 0,
+      "support_next_desc": "0",
+      "support_open_desc": "0",
+      "support_pre_desc": "0",
+      "tips": "^C454545FF00000000推荐舰船装备、强化、技能完善且等级大于^C1C8BE5FF0000000070^C454545FF00000000级",
+      "title": "Ex-7",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 0,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 240
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1024012,
+          839,
+          9819,
+          1150,
+          768
+        ],
+        [
+          1024013,
+          959,
+          9821,
+          1152,
+          207
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 839,
+          "point_id": 1024012
+        },
+        {
+          "hp": 959,
+          "point_id": 1024013
+        }
+      ],
+      "boss_id": 10240,
+      "boss_node_id": [
+        1024012
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10240,
+      "init_node_id": 1024001,
+      "init_nodes": [
+        1024001,
+        1024014
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1024001": [
+          83,
+          447
+        ],
+        "1024014": [
+          363,
+          457
+        ]
+      },
+      "map": {
+        "x": 66,
+        "y": 535
+      },
+      "map_id": 10240,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 300,
+        "y": 758
+      },
+      "need_pve_level_id": 10239,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10241,
+      "nodes_desc": [
+        "需通关E7J点",
+        "需通关E9L点"
+      ],
+      "position": {
+        "x": 0,
+        "y": 439
+      },
+      "pve_id": 102,
+      "score_max": 270,
+      "ship_exp": 605,
+      "sub_title": "紧急信号(困难)",
+      "support_id": 0,
+      "support_next_desc": "0",
+      "support_open_desc": "0",
+      "support_pre_desc": "0",
+      "tips": "^C454545FF00000000推荐舰船装备、强化、技能完善且等级大于^C1C8BE5FF0000000080^C454545FF00000000级",
+      "title": "Ex-8",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 0,
+        "y": 387
+      },
+      "type": 2,
+      "user_exp": 260
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1024113,
+          899,
+          9814,
+          285,
+          800
+        ],
+        [
+          1024114,
+          1997,
+          9827,
+          1184,
+          430
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 899,
+          "point_id": 1024113
+        },
+        {
+          "hp": 1997,
+          "point_id": 1024114
+        }
+      ],
+      "boss_id": 10241,
+      "boss_node_id": [
+        1024113
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10241,
+      "init_node_id": 1024101,
+      "init_nodes": [
+        1024101,
+        1024115
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1024101": [
+          332,
+          233
+        ],
+        "1024115": [
+          336,
+          419
+        ]
+      },
+      "map": {
+        "x": 456,
+        "y": 254
+      },
+      "map_id": 10241,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 600,
+        "y": 200
+      },
+      "need_pve_level_id": 10240,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10242,
+      "nodes_desc": [
+        "需通关E7K点",
+        "需通关E8L点"
+      ],
+      "position": {
+        "x": 387,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 290,
+      "ship_exp": 640,
+      "sub_title": "双管齐下(困难)",
+      "support_id": 0,
+      "support_next_desc": "成功压制了K点的敌军，在对BOSS点（L）（M）进行作战的时候，能够获得来自友军路基炮台的火力支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于K点的敌军，为友军布置路基炮台作战扫清障碍",
+      "tips": "^C454545FF00000000推荐舰船装备、强化、技能完善且等级大于^C1C8BE5FF0000000090^C454545FF00000000级",
+      "title": "Ex-9",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 384,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 280
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1024215,
+          1079,
+          9850,
+          930,
+          205
+        ],
+        [
+          1024216,
+          1079,
+          942,
+          1154,
+          661
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 1079,
+          "point_id": 1024216
+        },
+        {
+          "hp": 1079,
+          "point_id": 1024215
+        }
+      ],
+      "boss_id": 10242,
+      "boss_node_id": [
+        1024215
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10242,
+      "init_node_id": 1024201,
+      "init_nodes": [
+        1024201,
+        1024217
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1024201": [
+          737,
+          416
+        ],
+        "1024217": [
+          355,
+          749
+        ]
+      },
+      "map": {
+        "x": 401,
+        "y": 545
+      },
+      "map_id": 10242,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 710,
+        "y": 767
+      },
+      "need_pve_level_id": 10241,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10243,
+      "nodes_desc": [
+        "需通关E11O点",
+        "需通关E8K点"
+      ],
+      "position": {
+        "x": 343,
+        "y": 447
+      },
+      "pve_id": 102,
+      "score_max": 330,
+      "ship_exp": 675,
+      "sub_title": "浮出水面(困难)",
+      "support_id": 0,
+      "support_next_desc": "成功压制了M点的敌军，在对BOSS点（N）（O）进行作战的时候，能够获得来自友军路基炮台的火力支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于M点的敌军，为友军布置路基炮台作战扫清障碍",
+      "tips": "^C454545FF00000000推荐舰船装备、强化、技能完善且等级大于^C1C8BE5FF00000000100^C454545FF00000000级",
+      "title": "Ex-10",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 398,
+        "y": 463
+      },
+      "type": 2,
+      "user_exp": 300
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1024316,
+          1019,
+          9818,
+          110,
+          802
+        ],
+        [
+          1024317,
+          1079,
+          918,
+          1043,
+          787
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 1079,
+          "point_id": 1024317
+        },
+        {
+          "hp": 1019,
+          "point_id": 1024316
+        }
+      ],
+      "boss_id": 10243,
+      "boss_node_id": [
+        1024316
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10243,
+      "init_node_id": 1024301,
+      "init_nodes": [
+        1024301,
+        1024318
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1024301": [
+          757,
+          229
+        ],
+        "1024318": [
+          652,
+          359
+        ]
+      },
+      "map": {
+        "x": 816,
+        "y": 224
+      },
+      "map_id": 10243,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 916,
+        "y": 195
+      },
+      "need_pve_level_id": 10242,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10244,
+      "nodes_desc": [
+        "需通关E9M点",
+        "需通关E10N点"
+      ],
+      "position": {
+        "x": 781,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 340,
+      "ship_exp": 710,
+      "sub_title": "无限制战斗(困难)",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了M点的敌军，在对BOSS点（O）（P）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于N点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化、技能完善且等级大于^C1C8BE5FF00000000100^C454545FF00000000级",
+      "title": "Ex-11",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 737,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 320
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1024419,
+          1997,
+          9856,
+          1190,
+          717
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 1997,
+          "point_id": 1024419
+        }
+      ],
+      "boss_id": 10244,
+      "boss_node_id": [
+        1024419
+      ],
+      "boss_score": 60,
+      "desc": "0",
+      "hard": 2,
+      "id": 10244,
+      "init_node_id": 1024401,
+      "init_nodes": [
+        1024401,
+        1024420
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1024401": [
+          1124,
+          415
+        ],
+        "1024420": [
+          764,
+          680
+        ]
+      },
+      "map": {
+        "x": 822,
+        "y": 524
+      },
+      "map_id": 10244,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 1012,
+        "y": 487
+      },
+      "need_pve_level_id": 10243,
+      "next_pve_level": 0,
+      "next_pve_level_id": 0,
+      "nodes_desc": [
+        "需通关E11P点",
+        "需通关E10O点"
+      ],
+      "position": {
+        "x": 692,
+        "y": 435
+      },
+      "pve_id": 102,
+      "score_max": 190,
+      "ship_exp": 745,
+      "sub_title": "海底危机(困难)",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了Q点的敌军，在对BOSS点（R）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于Q点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化、技能完善且等级大于^C1C8BE5FF00000000110^C454545FF00000000级",
+      "title": "Ex-12",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 753,
+        "y": 474
+      },
+      "type": 2,
+      "user_exp": 340
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1024512,
+          214,
+          911,
+          1167,
+          498
+        ],
+        [
+          1024513,
+          218,
+          9812,
+          663,
+          680
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 214,
+          "point_id": 1024512
+        },
+        {
+          "hp": 218,
+          "point_id": 1024513
+        }
+      ],
+      "boss_id": 10245,
+      "boss_node_id": [
+        1024512
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10245,
+      "init_node_id": 1024501,
+      "init_nodes": [
+        1024501
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": [],
+      "map": {
+        "x": 59,
+        "y": 264
+      },
+      "map_id": 10245,
+      "music": "battle-event",
+      "name_position": {
+        "x": 150,
+        "y": 211
+      },
+      "need_pve_level_id": 0,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10246,
+      "nodes_desc": [
+        "",
+        ""
+      ],
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 80,
+      "ship_exp": 360,
+      "sub_title": "踏上征程",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了G点的敌军，在对BOSS点（K）和（L）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于G点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000030^C454545FF00000000级",
+      "title": "Ex-1",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 0,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 120
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1024613,
+          664,
+          9833,
+          1157,
+          281
+        ],
+        [
+          1024614,
+          664,
+          9851,
+          1157,
+          768
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 664,
+          "point_id": 1024614
+        },
+        {
+          "hp": 664,
+          "point_id": 1024613
+        }
+      ],
+      "boss_id": 10246,
+      "boss_node_id": [
+        1024613
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10246,
+      "init_node_id": 1024601,
+      "init_nodes": [
+        1024601
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1024601": [
+          76,
+          444
+        ]
+      },
+      "map": {
+        "x": 72,
+        "y": 581
+      },
+      "map_id": 10246,
+      "music": "battle-event3",
+      "name_position": {
+        "x": 150,
+        "y": 560
+      },
+      "need_pve_level_id": 10245,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10247,
+      "nodes_desc": [
+        "需通关E1L点",
+        ""
+      ],
+      "position": {
+        "x": 0,
+        "y": 439
+      },
+      "pve_id": 102,
+      "score_max": 80,
+      "ship_exp": 395,
+      "sub_title": "先头舰队",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了G点的敌军，在对BOSS点（L）和（M）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于G点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000040^C454545FF00000000级",
+      "title": "Ex-2",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 0,
+        "y": 387
+      },
+      "type": 2,
+      "user_exp": 140
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1024714,
+          464,
+          9855,
+          1019,
+          790
+        ],
+        [
+          1024715,
+          464,
+          9855,
+          861,
+          162
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 464,
+          "point_id": 1024714
+        },
+        {
+          "hp": 464,
+          "point_id": 1024715
+        }
+      ],
+      "boss_id": 10247,
+      "boss_node_id": [
+        1024714
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10247,
+      "init_node_id": 1024701,
+      "init_nodes": [
+        1024701,
+        1024716
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1024701": [
+          393,
+          419
+        ],
+        "1024716": [
+          732,
+          430
+        ]
+      },
+      "map": {
+        "x": 461,
+        "y": 239
+      },
+      "map_id": 10247,
+      "music": "battle-event",
+      "name_position": {
+        "x": 553,
+        "y": 200
+      },
+      "need_pve_level_id": 10246,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10248,
+      "nodes_desc": [
+        "需通关E2L点",
+        "需通关E4N点"
+      ],
+      "position": {
+        "x": 385,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 80,
+      "ship_exp": 430,
+      "sub_title": "围追堵截",
+      "support_id": 0,
+      "support_next_desc": "0",
+      "support_open_desc": "0",
+      "support_pre_desc": "",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000050^C454545FF00000000级",
+      "title": "Ex-3",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 384,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 160
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1024815,
+          1330,
+          9837,
+          873,
+          170
+        ],
+        [
+          1024816,
+          1330,
+          9833,
+          1142,
+          608
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 1330,
+          "point_id": 1024815
+        },
+        {
+          "hp": 1330,
+          "point_id": 1024816
+        }
+      ],
+      "boss_id": 10248,
+      "boss_node_id": [
+        1024815
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10248,
+      "init_node_id": 1024801,
+      "init_nodes": [
+        1024801,
+        1024817
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1024801": [
+          376,
+          398
+        ],
+        "1024817": [
+          371,
+          771
+        ]
+      },
+      "map": {
+        "x": 447,
+        "y": 589
+      },
+      "map_id": 10248,
+      "music": "battle-event3",
+      "name_position": {
+        "x": 630,
+        "y": 550
+      },
+      "need_pve_level_id": 10247,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10249,
+      "nodes_desc": [
+        "需通关E1K点",
+        "需通关E2M点"
+      ],
+      "position": {
+        "x": 384,
+        "y": 479
+      },
+      "pve_id": 102,
+      "score_max": 80,
+      "ship_exp": 465,
+      "sub_title": "海空攻略",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了G点的敌军，在对BOSS点（N）和（O）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于G点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000060^C454545FF00000000级",
+      "title": "Ex-4",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 398,
+        "y": 463
+      },
+      "type": 2,
+      "user_exp": 180
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1024916,
+          568,
+          9812,
+          788,
+          743
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 568,
+          "point_id": 1024916
+        }
+      ],
+      "boss_id": 10249,
+      "boss_node_id": [
+        1024916
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10249,
+      "init_node_id": 1024901,
+      "init_nodes": [
+        1024901,
+        1024917
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1024901": [
+          781,
+          433
+        ],
+        "1024917": [
+          759,
+          247
+        ]
+      },
+      "map": {
+        "x": 878,
+        "y": 241
+      },
+      "map_id": 10249,
+      "music": "battle-event4",
+      "name_position": {
+        "x": 1000,
+        "y": 210
+      },
+      "need_pve_level_id": 10248,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10250,
+      "nodes_desc": [
+        "需通关E4O点",
+        "需通关E3N点"
+      ],
+      "position": {
+        "x": 776,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 40,
+      "ship_exp": 500,
+      "sub_title": "极寒之影",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了M点的敌军，在对BOSS点（O）和（0）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于M点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000070^C454545FF00000000级",
+      "title": "Ex-5",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 737,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 200
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1025019,
+          1995,
+          9851,
+          637,
+          749
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 1995,
+          "point_id": 1025019
+        }
+      ],
+      "boss_id": 10250,
+      "boss_node_id": [
+        1025019
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10250,
+      "init_node_id": 1025001,
+      "init_nodes": [
+        1025001,
+        1025020
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1025001": [
+          726,
+          445
+        ],
+        "1025020": [
+          1106,
+          444
+        ]
+      },
+      "map": {
+        "x": 865,
+        "y": 575
+      },
+      "map_id": 10250,
+      "music": "battle-event6",
+      "name_position": {
+        "x": 1050,
+        "y": 540
+      },
+      "need_pve_level_id": 10249,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10251,
+      "nodes_desc": [
+        "需通关E3M点",
+        "需通关E5O点"
+      ],
+      "position": {
+        "x": 763,
+        "y": 464
+      },
+      "pve_id": 102,
+      "score_max": 40,
+      "ship_exp": 535,
+      "sub_title": "遥远海滩",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了M点的敌军，在对BOSS点（R）和（0）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于M点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000070^C454545FF00000000级",
+      "title": "Ex-6",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 753,
+        "y": 474
+      },
+      "type": 2,
+      "user_exp": 220
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1025112,
+          852,
+          912,
+          1167,
+          498
+        ],
+        [
+          1025113,
+          897,
+          9814,
+          663,
+          680
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 897,
+          "point_id": 1025113
+        },
+        {
+          "hp": 852,
+          "point_id": 1025112
+        }
+      ],
+      "boss_id": 10251,
+      "boss_node_id": [
+        1025112
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10251,
+      "init_node_id": 1025101,
+      "init_nodes": [
+        1025101
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": [],
+      "map": {
+        "x": 59,
+        "y": 264
+      },
+      "map_id": 10251,
+      "music": "battle-event7",
+      "name_position": {
+        "x": 150,
+        "y": 211
+      },
+      "need_pve_level_id": 10250,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10252,
+      "nodes_desc": [
+        "",
+        ""
+      ],
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 230,
+      "ship_exp": 570,
+      "sub_title": "踏上征程(困难)",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了G点的敌军，在对BOSS点（K）和（L）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于G点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000080^C454545FF00000000级",
+      "title": "Ex-7",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 0,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 240
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1025213,
+          1995,
+          9834,
+          1157,
+          281
+        ],
+        [
+          1025214,
+          1995,
+          9852,
+          1157,
+          768
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 1995,
+          "point_id": 1025213
+        },
+        {
+          "hp": 1995,
+          "point_id": 1025214
+        }
+      ],
+      "boss_id": 10252,
+      "boss_node_id": [
+        1025213
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10252,
+      "init_node_id": 1025201,
+      "init_nodes": [
+        1025201
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1025201": [
+          76,
+          444
+        ]
+      },
+      "map": {
+        "x": 72,
+        "y": 581
+      },
+      "map_id": 10252,
+      "music": "battle-event8",
+      "name_position": {
+        "x": 150,
+        "y": 560
+      },
+      "need_pve_level_id": 10251,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10253,
+      "nodes_desc": [
+        "需通关E7L点",
+        ""
+      ],
+      "position": {
+        "x": 0,
+        "y": 439
+      },
+      "pve_id": 102,
+      "score_max": 270,
+      "ship_exp": 605,
+      "sub_title": "先头舰队(困难)",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了G点的敌军，在对BOSS点（L）和（M）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于G点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000090^C454545FF00000000级",
+      "title": "Ex-8",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 0,
+        "y": 387
+      },
+      "type": 2,
+      "user_exp": 260
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1025314,
+          1077,
+          9856,
+          1019,
+          790
+        ],
+        [
+          1025315,
+          1077,
+          9856,
+          861,
+          162
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 1077,
+          "point_id": 1025314
+        },
+        {
+          "hp": 1077,
+          "point_id": 1025315
+        }
+      ],
+      "boss_id": 10253,
+      "boss_node_id": [
+        1025314
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10253,
+      "init_node_id": 1025301,
+      "init_nodes": [
+        1025301,
+        1025316
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1025301": [
+          393,
+          419
+        ],
+        "1025316": [
+          732,
+          430
+        ]
+      },
+      "map": {
+        "x": 461,
+        "y": 239
+      },
+      "map_id": 10253,
+      "music": "battle-event9",
+      "name_position": {
+        "x": 553,
+        "y": 200
+      },
+      "need_pve_level_id": 10252,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10254,
+      "nodes_desc": [
+        "需通关E8L点",
+        "需通关E10N点"
+      ],
+      "position": {
+        "x": 385,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 290,
+      "ship_exp": 640,
+      "sub_title": "围追堵截(困难)",
+      "support_id": 0,
+      "support_next_desc": "0",
+      "support_open_desc": "0",
+      "support_pre_desc": "",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF00000000100^C454545FF00000000级",
+      "title": "Ex-9",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 384,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 280
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1025415,
+          1995,
+          9838,
+          873,
+          170
+        ],
+        [
+          1025416,
+          1995,
+          9834,
+          1142,
+          608
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 1995,
+          "point_id": 1025416
+        },
+        {
+          "hp": 1995,
+          "point_id": 1025415
+        }
+      ],
+      "boss_id": 10254,
+      "boss_node_id": [
+        1025415
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10254,
+      "init_node_id": 1025401,
+      "init_nodes": [
+        1025401,
+        1025417
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1025401": [
+          376,
+          398
+        ],
+        "1025417": [
+          371,
+          771
+        ]
+      },
+      "map": {
+        "x": 447,
+        "y": 589
+      },
+      "map_id": 10254,
+      "music": "battle-event10",
+      "name_position": {
+        "x": 630,
+        "y": 550
+      },
+      "need_pve_level_id": 10253,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10255,
+      "nodes_desc": [
+        "需通关E7K点",
+        "需通关E8M点"
+      ],
+      "position": {
+        "x": 384,
+        "y": 479
+      },
+      "pve_id": 102,
+      "score_max": 330,
+      "ship_exp": 675,
+      "sub_title": "海空攻略(困难)",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了G点的敌军，在对BOSS点（N）和（O）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于G点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF00000000100^C454545FF00000000级",
+      "title": "Ex-10",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 398,
+        "y": 463
+      },
+      "type": 2,
+      "user_exp": 300
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1025516,
+          1347,
+          9814,
+          788,
+          743
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 1347,
+          "point_id": 1025516
+        }
+      ],
+      "boss_id": 10255,
+      "boss_node_id": [
+        1025516
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10255,
+      "init_node_id": 1025501,
+      "init_nodes": [
+        1025501,
+        1025517
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1025501": [
+          781,
+          433
+        ],
+        "1025517": [
+          759,
+          247
+        ]
+      },
+      "map": {
+        "x": 878,
+        "y": 241
+      },
+      "map_id": 10255,
+      "music": "battle-event12",
+      "name_position": {
+        "x": 1000,
+        "y": 210
+      },
+      "need_pve_level_id": 10254,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10256,
+      "nodes_desc": [
+        "需通关E10O点",
+        "需通关E9N点"
+      ],
+      "position": {
+        "x": 776,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 170,
+      "ship_exp": 710,
+      "sub_title": "极寒之影(困难)",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了M点的敌军，在对BOSS点（O）和（0）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于M点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF00000000100^C454545FF00000000级",
+      "title": "Ex-11",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 737,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 320
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1025619,
+          2661,
+          9852,
+          637,
+          749
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 2661,
+          "point_id": 1025619
+        }
+      ],
+      "boss_id": 10256,
+      "boss_node_id": [
+        1025619
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10256,
+      "init_node_id": 1025601,
+      "init_nodes": [
+        1025601,
+        1025620
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1025601": [
+          726,
+          445
+        ],
+        "1025620": [
+          1106,
+          444
+        ]
+      },
+      "map": {
+        "x": 865,
+        "y": 575
+      },
+      "map_id": 10256,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 1050,
+        "y": 540
+      },
+      "need_pve_level_id": 10255,
+      "next_pve_level": 0,
+      "next_pve_level_id": 0,
+      "nodes_desc": [
+        "需通关E9M点",
+        "需通关E11O点"
+      ],
+      "position": {
+        "x": 763,
+        "y": 464
+      },
+      "pve_id": 102,
+      "score_max": 310,
+      "ship_exp": 745,
+      "sub_title": "遥远海滩(困难)",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了M点的敌军，在对BOSS点（R）和（0）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于M点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF00000000100^C454545FF00000000级",
+      "title": "Ex-12",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 753,
+        "y": 474
+      },
+      "type": 2,
+      "user_exp": 340
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1025714,
+          254,
+          915,
+          1192,
+          296
+        ],
+        [
+          1025715,
+          254,
+          911,
+          1168,
+          689
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 254,
+          "point_id": 1025715
+        },
+        {
+          "hp": 254,
+          "point_id": 1025714
+        }
+      ],
+      "boss_id": 10257,
+      "boss_node_id": [
+        1025714
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10257,
+      "init_node_id": 1025701,
+      "init_nodes": [
+        1025701
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": [],
+      "map": {
+        "x": 105,
+        "y": 236
+      },
+      "map_id": 10257,
+      "music": "battle-event",
+      "name_position": {
+        "x": 204,
+        "y": 200
+      },
+      "need_pve_level_id": 0,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10258,
+      "nodes_desc": [
+        "",
+        ""
+      ],
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 80,
+      "ship_exp": 360,
+      "sub_title": "远海",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了J点的敌军，在对BOSS点（M、N）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于J点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000030^C454545FF00000000级",
+      "title": "Ex-1",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 0,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 120
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1025815,
+          358,
+          915,
+          1170,
+          336
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 358,
+          "point_id": 1025815
+        }
+      ],
+      "boss_id": 10258,
+      "boss_node_id": [
+        1025815
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10258,
+      "init_node_id": 1025801,
+      "init_nodes": [
+        1025801
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1025801": [
+          364,
+          714
+        ]
+      },
+      "map": {
+        "x": 113,
+        "y": 567
+      },
+      "map_id": 10258,
+      "music": "battle-event3",
+      "name_position": {
+        "x": 195,
+        "y": 530
+      },
+      "need_pve_level_id": 10257,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10259,
+      "nodes_desc": [
+        "需通关E4O点",
+        ""
+      ],
+      "position": {
+        "x": 0,
+        "y": 392
+      },
+      "pve_id": 102,
+      "score_max": 40,
+      "ship_exp": 395,
+      "sub_title": "高速突袭",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了M点的敌军，在对BOSS点（N）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于M点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000040^C454545FF00000000级",
+      "title": "Ex-2",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 0,
+        "y": 387
+      },
+      "type": 2,
+      "user_exp": 140
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1025915,
+          358,
+          915,
+          1076,
+          664
+        ],
+        [
+          1025916,
+          358,
+          992,
+          944,
+          348
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 358,
+          "point_id": 1025916
+        },
+        {
+          "hp": 358,
+          "point_id": 1025915
+        }
+      ],
+      "boss_id": 10259,
+      "boss_node_id": [
+        1025915
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10259,
+      "init_node_id": 1025901,
+      "init_nodes": [
+        1025901,
+        1025917
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1025901": [
+          397,
+          240
+        ],
+        "1025917": [
+          381,
+          411
+        ]
+      },
+      "map": {
+        "x": 438,
+        "y": 235
+      },
+      "map_id": 10259,
+      "music": "battle-event",
+      "name_position": {
+        "x": 591,
+        "y": 200
+      },
+      "need_pve_level_id": 10258,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10260,
+      "nodes_desc": [
+        "需通关E1M点",
+        "需通关E2M点"
+      ],
+      "position": {
+        "x": 405,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 80,
+      "ship_exp": 430,
+      "sub_title": "意外遭遇",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了K点的敌军，在对BOSS点（N、O）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于K点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000050^C454545FF00000000级",
+      "title": "Ex-3",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 384,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 160
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1026015,
+          398,
+          915,
+          123,
+          658
+        ],
+        [
+          1026016,
+          464,
+          9835,
+          1166,
+          658
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 398,
+          "point_id": 1026015
+        },
+        {
+          "hp": 464,
+          "point_id": 1026016
+        }
+      ],
+      "boss_id": 10260,
+      "boss_node_id": [
+        1026015
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10260,
+      "init_node_id": 1026001,
+      "init_nodes": [
+        1026001,
+        1026017
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1026001": [
+          388,
+          399
+        ],
+        "1026017": [
+          727,
+          413
+        ]
+      },
+      "map": {
+        "x": 469,
+        "y": 572
+      },
+      "map_id": 10260,
+      "music": "battle-event3",
+      "name_position": {
+        "x": 630,
+        "y": 532
+      },
+      "need_pve_level_id": 10259,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10261,
+      "nodes_desc": [
+        "需通关E1N点",
+        "需通关E3N点"
+      ],
+      "position": {
+        "x": 318,
+        "y": 471
+      },
+      "pve_id": 102,
+      "score_max": 80,
+      "ship_exp": 465,
+      "sub_title": "换位",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了M点的敌军，在对BOSS点（N、O）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于M点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000060^C454545FF00000000级",
+      "title": "Ex-4",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 398,
+        "y": 463
+      },
+      "type": 2,
+      "user_exp": 180
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1026117,
+          498,
+          915,
+          178,
+          741
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 498,
+          "point_id": 1026117
+        }
+      ],
+      "boss_id": 10261,
+      "boss_node_id": [
+        1026117
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10261,
+      "init_node_id": 1026101,
+      "init_nodes": [
+        1026101,
+        1026118
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1026101": [
+          709,
+          217
+        ]
+      },
+      "map": {
+        "x": 855,
+        "y": 220
+      },
+      "map_id": 10261,
+      "music": "battle-event4",
+      "name_position": {
+        "x": 1139,
+        "y": 381
+      },
+      "need_pve_level_id": 10260,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10262,
+      "nodes_desc": [
+        "需通关E3O点",
+        ""
+      ],
+      "position": {
+        "x": 750,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 40,
+      "ship_exp": 500,
+      "sub_title": "大回环",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了E点的敌军，在对BOSS点（P）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于E点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000070^C454545FF00000000级",
+      "title": "Ex-5",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 737,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 200
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1026219,
+          638,
+          915,
+          1121,
+          771
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 638,
+          "point_id": 1026219
+        }
+      ],
+      "boss_id": 10262,
+      "boss_node_id": [
+        1026219
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10262,
+      "init_node_id": 1026201,
+      "init_nodes": [
+        1026201,
+        1026220
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1026201": [
+          903,
+          402
+        ],
+        "1026220": [
+          797,
+          725
+        ]
+      },
+      "map": {
+        "x": 871,
+        "y": 545
+      },
+      "map_id": 10262,
+      "music": "battle-event6",
+      "name_position": {
+        "x": 1105,
+        "y": 513
+      },
+      "need_pve_level_id": 10261,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10263,
+      "nodes_desc": [
+        "需通关E5P点",
+        "需通关E4P点"
+      ],
+      "position": {
+        "x": 771,
+        "y": 422
+      },
+      "pve_id": 102,
+      "score_max": 40,
+      "ship_exp": 535,
+      "sub_title": "迎向晨曦",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了P点的敌军，在对BOSS点（R）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于P点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000070^C454545FF00000000级",
+      "title": "Ex-6",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 753,
+        "y": 474
+      },
+      "type": 2,
+      "user_exp": 220
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1026314,
+          586,
+          915,
+          1192,
+          296
+        ],
+        [
+          1026315,
+          558,
+          912,
+          1168,
+          689
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 586,
+          "point_id": 1026314
+        },
+        {
+          "hp": 558,
+          "point_id": 1026315
+        }
+      ],
+      "boss_id": 10263,
+      "boss_node_id": [
+        1026314
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10263,
+      "init_node_id": 1026301,
+      "init_nodes": [
+        1026301
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": [],
+      "map": {
+        "x": 105,
+        "y": 236
+      },
+      "map_id": 10263,
+      "music": "battle-event7",
+      "name_position": {
+        "x": 150,
+        "y": 188
+      },
+      "need_pve_level_id": 10262,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10264,
+      "nodes_desc": [
+        "",
+        ""
+      ],
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 230,
+      "ship_exp": 570,
+      "sub_title": "远海(困难)",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了J点的敌军，在对BOSS点（M、N）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于J点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000080^C454545FF00000000级",
+      "title": "Ex-7",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 0,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 240
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1026415,
+          646,
+          945,
+          1170,
+          336
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 646,
+          "point_id": 1026415
+        }
+      ],
+      "boss_id": 10264,
+      "boss_node_id": [
+        1026415
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10264,
+      "init_node_id": 1026401,
+      "init_nodes": [
+        1026401
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1026401": [
+          364,
+          714
+        ]
+      },
+      "map": {
+        "x": 113,
+        "y": 567
+      },
+      "map_id": 10264,
+      "music": "battle-event8",
+      "name_position": {
+        "x": 150,
+        "y": 560
+      },
+      "need_pve_level_id": 10263,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10265,
+      "nodes_desc": [
+        "需通关E9O点",
+        ""
+      ],
+      "position": {
+        "x": 0,
+        "y": 392
+      },
+      "pve_id": 102,
+      "score_max": 130,
+      "ship_exp": 605,
+      "sub_title": "高速突袭(困难)",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了M点的敌军，在对BOSS点（N）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于M点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000090^C454545FF00000000级",
+      "title": "Ex-8",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 0,
+        "y": 387
+      },
+      "type": 2,
+      "user_exp": 260
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1026515,
+          598,
+          945,
+          1076,
+          664
+        ],
+        [
+          1026516,
+          718,
+          993,
+          944,
+          348
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 718,
+          "point_id": 1026516
+        },
+        {
+          "hp": 598,
+          "point_id": 1026515
+        }
+      ],
+      "boss_id": 10265,
+      "boss_node_id": [
+        1026515
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10265,
+      "init_node_id": 1026501,
+      "init_nodes": [
+        1026501,
+        1026517
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1026501": [
+          397,
+          240
+        ],
+        "1026517": [
+          381,
+          411
+        ]
+      },
+      "map": {
+        "x": 438,
+        "y": 235
+      },
+      "map_id": 10265,
+      "music": "battle-event9",
+      "name_position": {
+        "x": 525,
+        "y": 200
+      },
+      "need_pve_level_id": 10264,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10266,
+      "nodes_desc": [
+        "需通关E6Q点",
+        "需通关E7N点"
+      ],
+      "position": {
+        "x": 405,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 280,
+      "ship_exp": 640,
+      "sub_title": "意外遭遇(困难)",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了K点的敌军，在对BOSS点（N、O）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于K点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF00000000100^C454545FF00000000级",
+      "title": "Ex-9",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 384,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 280
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1026615,
+          758,
+          945,
+          123,
+          658
+        ],
+        [
+          1026616,
+          768,
+          9836,
+          1166,
+          658
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 768,
+          "point_id": 1026616
+        },
+        {
+          "hp": 758,
+          "point_id": 1026615
+        }
+      ],
+      "boss_id": 10266,
+      "boss_node_id": [
+        1026615
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10266,
+      "init_node_id": 1026601,
+      "init_nodes": [
+        1026601,
+        1026617
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1026601": [
+          388,
+          399
+        ],
+        "1026617": [
+          727,
+          413
+        ]
+      },
+      "map": {
+        "x": 469,
+        "y": 572
+      },
+      "map_id": 10266,
+      "music": "battle-event10",
+      "name_position": {
+        "x": 630,
+        "y": 550
+      },
+      "need_pve_level_id": 10265,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10267,
+      "nodes_desc": [
+        "需通关E7M点",
+        "需通关E8M点"
+      ],
+      "position": {
+        "x": 318,
+        "y": 471
+      },
+      "pve_id": 102,
+      "score_max": 300,
+      "ship_exp": 675,
+      "sub_title": "换位(困难)",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了M点的敌军，在对BOSS点（N、O）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于M点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF00000000100^C454545FF00000000级",
+      "title": "Ex-10",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 398,
+        "y": 463
+      },
+      "type": 2,
+      "user_exp": 300
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1026717,
+          1617,
+          945,
+          178,
+          741
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 1617,
+          "point_id": 1026717
+        }
+      ],
+      "boss_id": 10267,
+      "boss_node_id": [
+        1026717
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10267,
+      "init_node_id": 1026701,
+      "init_nodes": [
+        1026701,
+        1026718
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1026701": [
+          709,
+          217
+        ]
+      },
+      "map": {
+        "x": 855,
+        "y": 220
+      },
+      "map_id": 10267,
+      "music": "battle-event12",
+      "name_position": {
+        "x": 1000,
+        "y": 210
+      },
+      "need_pve_level_id": 10266,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10268,
+      "nodes_desc": [
+        "需通关E9N点",
+        ""
+      ],
+      "position": {
+        "x": 750,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 160,
+      "ship_exp": 710,
+      "sub_title": "大回环(困难)",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了E点的敌军，在对BOSS点（P）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于E点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF00000000100^C454545FF00000000级",
+      "title": "Ex-11",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 737,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 320
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1026819,
+          1995,
+          945,
+          1121,
+          771
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 1995,
+          "point_id": 1026819
+        }
+      ],
+      "boss_id": 10268,
+      "boss_node_id": [
+        1026819
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10268,
+      "init_node_id": 1026801,
+      "init_nodes": [
+        1026801,
+        1026820
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1026801": [
+          903,
+          402
+        ],
+        "1026820": [
+          797,
+          725
+        ]
+      },
+      "map": {
+        "x": 871,
+        "y": 545
+      },
+      "map_id": 10268,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 1050,
+        "y": 540
+      },
+      "need_pve_level_id": 10267,
+      "next_pve_level": 0,
+      "next_pve_level_id": 0,
+      "nodes_desc": [
+        "需通关E10P点",
+        "需通关E10O点"
+      ],
+      "position": {
+        "x": 771,
+        "y": 422
+      },
+      "pve_id": 102,
+      "score_max": 290,
+      "ship_exp": 745,
+      "sub_title": "迎向晨曦(困难)",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了P点的敌军，在对BOSS点（R）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于P点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF00000000100^C454545FF00000000级",
+      "title": "Ex-12",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 753,
+        "y": 474
+      },
+      "type": 2,
+      "user_exp": 340
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1026914,
+          194,
+          911,
+          89,
+          693
+        ],
+        [
+          1026915,
+          214,
+          911,
+          1168,
+          689
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 214,
+          "point_id": 1026915
+        },
+        {
+          "hp": 194,
+          "point_id": 1026914
+        }
+      ],
+      "boss_id": 10269,
+      "boss_node_id": [
+        1026914
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10269,
+      "init_node_id": 1026901,
+      "init_nodes": [
+        1026901
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": [],
+      "map": {
+        "x": 77,
+        "y": 229
+      },
+      "map_id": 10269,
+      "music": "battle-event",
+      "name_position": {
+        "x": 204,
+        "y": 190
+      },
+      "need_pve_level_id": 0,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10270,
+      "nodes_desc": [
+        "",
+        ""
+      ],
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 80,
+      "ship_exp": 490,
+      "sub_title": "追捕黑影",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了L点的敌军，在对BOSS点（M、N）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于L点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000030^C454545FF00000000级",
+      "title": "Ex-1",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 0,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 120
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1027014,
+          234,
+          9849,
+          1124,
+          767
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 234,
+          "point_id": 1027014
+        }
+      ],
+      "boss_id": 10270,
+      "boss_node_id": [
+        1027014
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10270,
+      "init_node_id": 1027001,
+      "init_nodes": [
+        1027001
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1027001": [
+          101,
+          410
+        ]
+      },
+      "map": {
+        "x": 105,
+        "y": 486
+      },
+      "map_id": 10270,
+      "music": "battle-event3",
+      "name_position": {
+        "x": 183,
+        "y": 675
+      },
+      "need_pve_level_id": 10269,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10271,
+      "nodes_desc": [
+        "需通关E1M点",
+        ""
+      ],
+      "position": {
+        "x": 0,
+        "y": 337
+      },
+      "pve_id": 102,
+      "score_max": 40,
+      "ship_exp": 545,
+      "sub_title": "危险航路",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了H点的敌军，在对BOSS点（M）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于H点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000040^C454545FF00000000级",
+      "title": "Ex-2",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 0,
+        "y": 387
+      },
+      "type": 2,
+      "user_exp": 140
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1027115,
+          222,
+          9855,
+          1188,
+          413
+        ],
+        [
+          1027116,
+          238,
+          911,
+          1206,
+          738
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 238,
+          "point_id": 1027116
+        },
+        {
+          "hp": 222,
+          "point_id": 1027115
+        }
+      ],
+      "boss_id": 10271,
+      "boss_node_id": [
+        1027115
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10271,
+      "init_node_id": 1027101,
+      "init_nodes": [
+        1027101,
+        1027117
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1027101": [
+          373,
+          402
+        ],
+        "1027117": [
+          484,
+          417
+        ]
+      },
+      "map": {
+        "x": 463,
+        "y": 251
+      },
+      "map_id": 10271,
+      "music": "battle-event",
+      "name_position": {
+        "x": 591,
+        "y": 200
+      },
+      "need_pve_level_id": 10270,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10272,
+      "nodes_desc": [
+        "需通关E1N点",
+        "需通关E4O点"
+      ],
+      "position": {
+        "x": 338,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 80,
+      "ship_exp": 600,
+      "sub_title": "浮标入水",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了M点的敌军，在对BOSS点（N、O）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于M点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000050^C454545FF00000000级",
+      "title": "Ex-3",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 384,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 160
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1027216,
+          298,
+          9849,
+          297,
+          201
+        ],
+        [
+          1027217,
+          358,
+          992,
+          1198,
+          635
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 298,
+          "point_id": 1027216
+        },
+        {
+          "hp": 358,
+          "point_id": 1027217
+        }
+      ],
+      "boss_id": 10272,
+      "boss_node_id": [
+        1027216
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10272,
+      "init_node_id": 1027201,
+      "init_nodes": [
+        1027201,
+        1027218
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1027201": [
+          375,
+          668
+        ],
+        "1027218": [
+          797,
+          435
+        ]
+      },
+      "map": {
+        "x": 465,
+        "y": 497
+      },
+      "map_id": 10272,
+      "music": "battle-event3",
+      "name_position": {
+        "x": 594,
+        "y": 697
+      },
+      "need_pve_level_id": 10271,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10273,
+      "nodes_desc": [
+        "需通关E2M点",
+        "需通关E5P点"
+      ],
+      "position": {
+        "x": 316,
+        "y": 443
+      },
+      "pve_id": 102,
+      "score_max": 80,
+      "ship_exp": 655,
+      "sub_title": "捕猎黑鱼",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了I点的敌军，在对BOSS点（O、P）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于I点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000060^C454545FF00000000级",
+      "title": "Ex-4",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 398,
+        "y": 463
+      },
+      "type": 2,
+      "user_exp": 180
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1027317,
+          368,
+          9820,
+          630,
+          679
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 368,
+          "point_id": 1027317
+        }
+      ],
+      "boss_id": 10273,
+      "boss_node_id": [
+        1027317
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10273,
+      "init_node_id": 1027301,
+      "init_nodes": [
+        1027301
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1027301": [
+          765,
+          266
+        ]
+      },
+      "map": {
+        "x": 850,
+        "y": 250
+      },
+      "map_id": 10273,
+      "music": "battle-event4",
+      "name_position": {
+        "x": 1087,
+        "y": 219
+      },
+      "need_pve_level_id": 10272,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10274,
+      "nodes_desc": [
+        "需通关E3N点",
+        ""
+      ],
+      "position": {
+        "x": 673,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 40,
+      "ship_exp": 710,
+      "sub_title": "关键节点",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了F点的敌军，在对BOSS点（P）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于F点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000070^C454545FF00000000级",
+      "title": "Ex-5",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 737,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 200
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1027418,
+          464,
+          9811,
+          980,
+          767
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 464,
+          "point_id": 1027418
+        }
+      ],
+      "boss_id": 10274,
+      "boss_node_id": [
+        1027418
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10274,
+      "init_node_id": 1027401,
+      "init_nodes": [
+        1027401,
+        1027419
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1027401": [
+          764,
+          415
+        ],
+        "1027419": [
+          805,
+          682
+        ]
+      },
+      "map": {
+        "x": 862,
+        "y": 508
+      },
+      "map_id": 10274,
+      "music": "battle-event6",
+      "name_position": {
+        "x": 1008,
+        "y": 715
+      },
+      "need_pve_level_id": 10273,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10275,
+      "nodes_desc": [
+        "需通关E3O点",
+        "需通关E4P点"
+      ],
+      "position": {
+        "x": 751,
+        "y": 385
+      },
+      "pve_id": 102,
+      "score_max": 40,
+      "ship_exp": 765,
+      "sub_title": "拦阻袭击",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了K点的敌军，在对BOSS点（Q）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于K点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000070^C454545FF00000000级",
+      "title": "Ex-6",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 753,
+        "y": 474
+      },
+      "type": 2,
+      "user_exp": 220
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1027514,
+          448,
+          912,
+          89,
+          693
+        ],
+        [
+          1027515,
+          430,
+          912,
+          1168,
+          689
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 448,
+          "point_id": 1027514
+        },
+        {
+          "hp": 430,
+          "point_id": 1027515
+        }
+      ],
+      "boss_id": 10275,
+      "boss_node_id": [
+        1027514
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10275,
+      "init_node_id": 1027501,
+      "init_nodes": [
+        1027501
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": [],
+      "map": {
+        "x": 77,
+        "y": 229
+      },
+      "map_id": 10275,
+      "music": "battle-event7",
+      "name_position": {
+        "x": 204,
+        "y": 190
+      },
+      "need_pve_level_id": 10274,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10276,
+      "nodes_desc": [
+        "",
+        ""
+      ],
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 270,
+      "ship_exp": 820,
+      "sub_title": "追捕黑影(困难)",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了L点的敌军，在对BOSS点（M、N）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于L点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000080^C454545FF00000000级",
+      "title": "Ex-7",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 0,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 240
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1027614,
+          368,
+          9850,
+          1124,
+          767
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 368,
+          "point_id": 1027614
+        }
+      ],
+      "boss_id": 10276,
+      "boss_node_id": [
+        1027614
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10276,
+      "init_node_id": 1027601,
+      "init_nodes": [
+        1027601
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1027601": [
+          101,
+          410
+        ]
+      },
+      "map": {
+        "x": 105,
+        "y": 486
+      },
+      "map_id": 10276,
+      "music": "battle-event8",
+      "name_position": {
+        "x": 183,
+        "y": 675
+      },
+      "need_pve_level_id": 10275,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10277,
+      "nodes_desc": [
+        "需通关E7M点",
+        ""
+      ],
+      "position": {
+        "x": 0,
+        "y": 337
+      },
+      "pve_id": 102,
+      "score_max": 150,
+      "ship_exp": 875,
+      "sub_title": "危险航路(困难)",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了H点的敌军，在对BOSS点（M）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于H点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000090^C454545FF00000000级",
+      "title": "Ex-8",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 0,
+        "y": 387
+      },
+      "type": 2,
+      "user_exp": 260
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1027715,
+          638,
+          9856,
+          1188,
+          413
+        ],
+        [
+          1027716,
+          622,
+          912,
+          1206,
+          738
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 638,
+          "point_id": 1027715
+        },
+        {
+          "hp": 622,
+          "point_id": 1027716
+        }
+      ],
+      "boss_id": 10277,
+      "boss_node_id": [
+        1027715
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10277,
+      "init_node_id": 1027701,
+      "init_nodes": [
+        1027701,
+        1027717
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1027701": [
+          373,
+          402
+        ],
+        "1027717": [
+          484,
+          417
+        ]
+      },
+      "map": {
+        "x": 463,
+        "y": 251
+      },
+      "map_id": 10277,
+      "music": "battle-event9",
+      "name_position": {
+        "x": 591,
+        "y": 200
+      },
+      "need_pve_level_id": 10276,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10278,
+      "nodes_desc": [
+        "需通关E7N点",
+        "需通关E10O点"
+      ],
+      "position": {
+        "x": 338,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 320,
+      "ship_exp": 930,
+      "sub_title": "浮标入水(困难)",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了M点的敌军，在对BOSS点（N、O）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于M点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF00000000100^C454545FF00000000级",
+      "title": "Ex-9",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 384,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 280
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1027816,
+          718,
+          9850,
+          297,
+          201
+        ],
+        [
+          1027817,
+          718,
+          993,
+          1198,
+          635
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 718,
+          "point_id": 1027816
+        },
+        {
+          "hp": 718,
+          "point_id": 1027817
+        }
+      ],
+      "boss_id": 10278,
+      "boss_node_id": [
+        1027816
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10278,
+      "init_node_id": 1027801,
+      "init_nodes": [
+        1027801,
+        1027818
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1027801": [
+          375,
+          668
+        ],
+        "1027818": [
+          797,
+          435
+        ]
+      },
+      "map": {
+        "x": 465,
+        "y": 497
+      },
+      "map_id": 10278,
+      "music": "battle-event10",
+      "name_position": {
+        "x": 594,
+        "y": 697
+      },
+      "need_pve_level_id": 10277,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10279,
+      "nodes_desc": [
+        "需通关E8M点",
+        "需通关E11P点"
+      ],
+      "position": {
+        "x": 316,
+        "y": 443
+      },
+      "pve_id": 102,
+      "score_max": 340,
+      "ship_exp": 985,
+      "sub_title": "捕猎黑鱼(困难)",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了I点的敌军，在对BOSS点（O、P）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于I点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF00000000100^C454545FF00000000级",
+      "title": "Ex-10",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 398,
+        "y": 463
+      },
+      "type": 2,
+      "user_exp": 300
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1027917,
+          838,
+          9821,
+          630,
+          679
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 838,
+          "point_id": 1027917
+        }
+      ],
+      "boss_id": 10279,
+      "boss_node_id": [
+        1027917
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10279,
+      "init_node_id": 1027901,
+      "init_nodes": [
+        1027901
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1027901": [
+          765,
+          266
+        ]
+      },
+      "map": {
+        "x": 850,
+        "y": 250
+      },
+      "map_id": 10279,
+      "music": "battle-event12",
+      "name_position": {
+        "x": 1087,
+        "y": 219
+      },
+      "need_pve_level_id": 10278,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10280,
+      "nodes_desc": [
+        "需通关E9N点",
+        ""
+      ],
+      "position": {
+        "x": 673,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 180,
+      "ship_exp": 1040,
+      "sub_title": "关键节点(困难)",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了F点的敌军，在对BOSS点（P）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于F点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF00000000100^C454545FF00000000级",
+      "title": "Ex-11",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 737,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 320
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1028018,
+          898,
+          9813,
+          980,
+          767
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 898,
+          "point_id": 1028018
+        }
+      ],
+      "boss_id": 10280,
+      "boss_node_id": [
+        1028018
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10280,
+      "init_node_id": 1028001,
+      "init_nodes": [
+        1028001,
+        1028019
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1028001": [
+          764,
+          415
+        ],
+        "1028019": [
+          805,
+          682
+        ]
+      },
+      "map": {
+        "x": 862,
+        "y": 508
+      },
+      "map_id": 10280,
+      "music": "battle-event13",
+      "name_position": {
+        "x": 1008,
+        "y": 715
+      },
+      "need_pve_level_id": 10279,
+      "next_pve_level": 0,
+      "next_pve_level_id": 0,
+      "nodes_desc": [
+        "需通关E9O点",
+        "需通关E10P点"
+      ],
+      "position": {
+        "x": 751,
+        "y": 385
+      },
+      "pve_id": 102,
+      "score_max": 180,
+      "ship_exp": 1095,
+      "sub_title": "拦阻袭击(困难)",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了K点的敌军，在对BOSS点（Q）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于K点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF00000000100^C454545FF00000000级",
+      "title": "Ex-12",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 753,
+        "y": 474
+      },
+      "type": 2,
+      "user_exp": 340
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1028113,
+          214,
+          992,
+          109,
+          742
+        ],
+        [
+          1028114,
+          214,
+          992,
+          1198,
+          620
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 214,
+          "point_id": 1028114
+        },
+        {
+          "hp": 214,
+          "point_id": 1028113
+        }
+      ],
+      "boss_id": 10281,
+      "boss_node_id": [
+        1028113
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10281,
+      "init_node_id": 1028101,
+      "init_nodes": [
+        1028101
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": [],
+      "map": {
+        "x": 83,
+        "y": 227
+      },
+      "map_id": 10281,
+      "music": "battle-event",
+      "name_position": {
+        "x": 217,
+        "y": 197
+      },
+      "need_pve_level_id": 0,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10282,
+      "nodes_desc": [
+        "",
+        ""
+      ],
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 80,
+      "ship_exp": 900,
+      "sub_title": "激战漩涡 ",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了I点的敌军，在对BOSS点（L、M）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于I点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000030^C454545FF00000000级",
+      "title": "Ex-1",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 0,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 120
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1028214,
+          258,
+          911,
+          1026,
+          207
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 258,
+          "point_id": 1028214
+        }
+      ],
+      "boss_id": 10282,
+      "boss_node_id": [
+        1028214
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10282,
+      "init_node_id": 1028201,
+      "init_nodes": [
+        1028201
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1028201": [
+          68,
+          399
+        ]
+      },
+      "map": {
+        "x": 83,
+        "y": 540
+      },
+      "map_id": 10282,
+      "music": "battle-event",
+      "name_position": {
+        "x": 194,
+        "y": 507
+      },
+      "need_pve_level_id": 10281,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10283,
+      "nodes_desc": [
+        "需通关E1L点",
+        ""
+      ],
+      "position": {
+        "x": 0,
+        "y": 390
+      },
+      "pve_id": 102,
+      "score_max": 40,
+      "ship_exp": 950,
+      "sub_title": "扭转局势",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了I点的敌军，在对BOSS点（M）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于I点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000040^C454545FF00000000级",
+      "title": "Ex-2",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 0,
+        "y": 387
+      },
+      "type": 2,
+      "user_exp": 140
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1028315,
+          298,
+          915,
+          1192,
+          522
+        ],
+        [
+          1028316,
+          310,
+          9843,
+          1161,
+          771
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 310,
+          "point_id": 1028316
+        },
+        {
+          "hp": 298,
+          "point_id": 1028315
+        }
+      ],
+      "boss_id": 10283,
+      "boss_node_id": [
+        1028315
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10283,
+      "init_node_id": 1028301,
+      "init_nodes": [
+        1028301,
+        1028317
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1028301": [
+          333,
+          387
+        ],
+        "1028317": [
+          786,
+          204
+        ]
+      },
+      "map": {
+        "x": 467,
+        "y": 213
+      },
+      "map_id": 10283,
+      "music": "battle-event",
+      "name_position": {
+        "x": 640,
+        "y": 190
+      },
+      "need_pve_level_id": 10282,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10284,
+      "nodes_desc": [
+        "需通关E2M点",
+        "需通关E5P点"
+      ],
+      "position": {
+        "x": 337,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 80,
+      "ship_exp": 1000,
+      "sub_title": "忠诚铁卫",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了H点的敌军，在对BOSS点（N、O）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于H点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000050^C454545FF00000000级",
+      "title": "Ex-3",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 384,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 160
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1028416,
+          358,
+          9835,
+          1124,
+          761
+        ],
+        [
+          1028417,
+          358,
+          9859,
+          1184,
+          275
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 358,
+          "point_id": 1028416
+        },
+        {
+          "hp": 358,
+          "point_id": 1028417
+        }
+      ],
+      "boss_id": 10284,
+      "boss_node_id": [
+        1028416
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10284,
+      "init_node_id": 1028401,
+      "init_nodes": [
+        1028401,
+        1028418
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1028401": [
+          370,
+          381
+        ],
+        "1028418": [
+          751,
+          399
+        ]
+      },
+      "map": {
+        "x": 527,
+        "y": 549
+      },
+      "map_id": 10284,
+      "music": "battle-event",
+      "name_position": {
+        "x": 640,
+        "y": 507
+      },
+      "need_pve_level_id": 10283,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10285,
+      "nodes_desc": [
+        "需通关E1M点",
+        "需通关E3O点"
+      ],
+      "position": {
+        "x": 314,
+        "y": 407
+      },
+      "pve_id": 102,
+      "score_max": 80,
+      "ship_exp": 1050,
+      "sub_title": "鹰群阻击",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了F点的敌军，在对BOSS点（O、P）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于F点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000060^C454545FF00000000级",
+      "title": "Ex-4",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 398,
+        "y": 463
+      },
+      "type": 2,
+      "user_exp": 180
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1028517,
+          558,
+          990,
+          85,
+          376
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 558,
+          "point_id": 1028517
+        }
+      ],
+      "boss_id": 10285,
+      "boss_node_id": [
+        1028517
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10285,
+      "init_node_id": 1028501,
+      "init_nodes": [
+        1028501
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1028501": [
+          835,
+          390
+        ]
+      },
+      "map": {
+        "x": 896,
+        "y": 214
+      },
+      "map_id": 10285,
+      "music": "battle-event",
+      "name_position": {
+        "x": 978,
+        "y": 390
+      },
+      "need_pve_level_id": 10284,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10286,
+      "nodes_desc": [
+        "需通关E4P点",
+        ""
+      ],
+      "position": {
+        "x": 783,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 40,
+      "ship_exp": 1100,
+      "sub_title": "吹响号角",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了L点的敌军，在对BOSS点（P）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于L点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000070^C454545FF00000000级",
+      "title": "Ex-5",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 737,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 200
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1028618,
+          638,
+          9880,
+          967,
+          402
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 638,
+          "point_id": 1028618
+        }
+      ],
+      "boss_id": 10286,
+      "boss_node_id": [
+        1028618
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10286,
+      "init_node_id": 1028601,
+      "init_nodes": [
+        1028601,
+        1028619
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1028601": [
+          796,
+          675
+        ],
+        "1028619": [
+          785,
+          356
+        ]
+      },
+      "map": {
+        "x": 892,
+        "y": 505
+      },
+      "map_id": 10286,
+      "music": "battle-event",
+      "name_position": {
+        "x": 1059,
+        "y": 474
+      },
+      "need_pve_level_id": 10285,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10287,
+      "nodes_desc": [
+        "需通关E4O点",
+        "需通关E3N点"
+      ],
+      "position": {
+        "x": 741,
+        "y": 421
+      },
+      "pve_id": 102,
+      "score_max": 40,
+      "ship_exp": 1150,
+      "sub_title": "迈向胜利",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了G点的敌军，在对BOSS点（Q）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于G点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000070^C454545FF00000000级",
+      "title": "Ex-6",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 753,
+        "y": 474
+      },
+      "type": 2,
+      "user_exp": 220
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1028713,
+          558,
+          993,
+          109,
+          742
+        ],
+        [
+          1028714,
+          554,
+          993,
+          1198,
+          620
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 558,
+          "point_id": 1028713
+        },
+        {
+          "hp": 554,
+          "point_id": 1028714
+        }
+      ],
+      "boss_id": 10287,
+      "boss_node_id": [
+        1028713
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10287,
+      "init_node_id": 1028701,
+      "init_nodes": [
+        1028701
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": [],
+      "map": {
+        "x": 83,
+        "y": 227
+      },
+      "map_id": 10287,
+      "music": "battle-event",
+      "name_position": {
+        "x": 217,
+        "y": 197
+      },
+      "need_pve_level_id": 10286,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10288,
+      "nodes_desc": [
+        "",
+        ""
+      ],
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 260,
+      "ship_exp": 1200,
+      "sub_title": "激战漩涡 (困难)",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了I点的敌军，在对BOSS点（L、M）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于I点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000080^C454545FF00000000级",
+      "title": "Ex-7",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 0,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 240
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1028814,
+          590,
+          912,
+          1026,
+          207
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 590,
+          "point_id": 1028814
+        }
+      ],
+      "boss_id": 10288,
+      "boss_node_id": [
+        1028814
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10288,
+      "init_node_id": 1028801,
+      "init_nodes": [
+        1028801
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1028801": [
+          68,
+          399
+        ]
+      },
+      "map": {
+        "x": 83,
+        "y": 540
+      },
+      "map_id": 10288,
+      "music": "battle-event",
+      "name_position": {
+        "x": 194,
+        "y": 507
+      },
+      "need_pve_level_id": 10287,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10289,
+      "nodes_desc": [
+        "需通关E7L点",
+        ""
+      ],
+      "position": {
+        "x": 0,
+        "y": 390
+      },
+      "pve_id": 102,
+      "score_max": 140,
+      "ship_exp": 1250,
+      "sub_title": "扭转局势(困难)",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了I点的敌军，在对BOSS点（M）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于I点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000090^C454545FF00000000级",
+      "title": "Ex-8",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 0,
+        "y": 387
+      },
+      "type": 2,
+      "user_exp": 260
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1028915,
+          718,
+          945,
+          1192,
+          522
+        ],
+        [
+          1028916,
+          710,
+          9844,
+          1161,
+          771
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 718,
+          "point_id": 1028915
+        },
+        {
+          "hp": 710,
+          "point_id": 1028916
+        }
+      ],
+      "boss_id": 10289,
+      "boss_node_id": [
+        1028915
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10289,
+      "init_node_id": 1028901,
+      "init_nodes": [
+        1028901,
+        1028917
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1028901": [
+          333,
+          387
+        ],
+        "1028917": [
+          786,
+          204
+        ]
+      },
+      "map": {
+        "x": 467,
+        "y": 213
+      },
+      "map_id": 10289,
+      "music": "battle-event",
+      "name_position": {
+        "x": 640,
+        "y": 190
+      },
+      "need_pve_level_id": 10288,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10290,
+      "nodes_desc": [
+        "需通关E8M点",
+        "需通关E11P点"
+      ],
+      "position": {
+        "x": 337,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 310,
+      "ship_exp": 1300,
+      "sub_title": "忠诚铁卫(困难)",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了H点的敌军，在对BOSS点（N、O）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于H点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF00000000100^C454545FF00000000级",
+      "title": "Ex-9",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 384,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 280
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1029016,
+          758,
+          9836,
+          1124,
+          761
+        ],
+        [
+          1029017,
+          838,
+          9859,
+          1184,
+          275
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 758,
+          "point_id": 1029016
+        },
+        {
+          "hp": 838,
+          "point_id": 1029017
+        }
+      ],
+      "boss_id": 10290,
+      "boss_node_id": [
+        1029016
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10290,
+      "init_node_id": 1029001,
+      "init_nodes": [
+        1029001,
+        1029018
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1029001": [
+          370,
+          381
+        ],
+        "1029018": [
+          751,
+          399
+        ]
+      },
+      "map": {
+        "x": 527,
+        "y": 549
+      },
+      "map_id": 10290,
+      "music": "battle-event",
+      "name_position": {
+        "x": 640,
+        "y": 507
+      },
+      "need_pve_level_id": 10289,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10291,
+      "nodes_desc": [
+        "需通关E7M点",
+        "需通关E9O点"
+      ],
+      "position": {
+        "x": 314,
+        "y": 407
+      },
+      "pve_id": 102,
+      "score_max": 330,
+      "ship_exp": 1350,
+      "sub_title": "鹰群阻击(困难)",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了F点的敌军，在对BOSS点（O、P）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于F点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF00000000100^C454545FF00000000级",
+      "title": "Ex-10",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 398,
+        "y": 463
+      },
+      "type": 2,
+      "user_exp": 300
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1029117,
+          898,
+          991,
+          85,
+          376
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 898,
+          "point_id": 1029117
+        }
+      ],
+      "boss_id": 10291,
+      "boss_node_id": [
+        1029117
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10291,
+      "init_node_id": 1029101,
+      "init_nodes": [
+        1029101
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1029101": [
+          835,
+          390
+        ]
+      },
+      "map": {
+        "x": 896,
+        "y": 214
+      },
+      "map_id": 10291,
+      "music": "battle-event",
+      "name_position": {
+        "x": 978,
+        "y": 390
+      },
+      "need_pve_level_id": 10290,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10292,
+      "nodes_desc": [
+        "需通关E10P点",
+        ""
+      ],
+      "position": {
+        "x": 783,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 170,
+      "ship_exp": 1400,
+      "sub_title": "吹响号角(困难)",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了L点的敌军，在对BOSS点（P）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于L点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF00000000100^C454545FF00000000级",
+      "title": "Ex-11",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 737,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 320
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1029218,
+          1438,
+          9879,
+          967,
+          402
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 1438,
+          "point_id": 1029218
+        }
+      ],
+      "boss_id": 10292,
+      "boss_node_id": [
+        1029218
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10292,
+      "init_node_id": 1029201,
+      "init_nodes": [
+        1029201,
+        1029219
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1029201": [
+          796,
+          675
+        ],
+        "1029219": [
+          785,
+          356
+        ]
+      },
+      "map": {
+        "x": 892,
+        "y": 505
+      },
+      "map_id": 10292,
+      "music": "battle-event",
+      "name_position": {
+        "x": 1059,
+        "y": 474
+      },
+      "need_pve_level_id": 10291,
+      "next_pve_level": 0,
+      "next_pve_level_id": 0,
+      "nodes_desc": [
+        "需通关E10O点",
+        "需通关E9N点"
+      ],
+      "position": {
+        "x": 741,
+        "y": 421
+      },
+      "pve_id": 102,
+      "score_max": 180,
+      "ship_exp": 1450,
+      "sub_title": "迈向胜利(困难)",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了G点的敌军，在对BOSS点（Q）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于G点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF00000000100^C454545FF00000000级",
+      "title": "Ex-12",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 753,
+        "y": 474
+      },
+      "type": 2,
+      "user_exp": 340
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1029313,
+          358,
+          9855,
+          1221,
+          425
+        ],
+        [
+          1029314,
+          464,
+          9817,
+          1091,
+          809
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 464,
+          "point_id": 1029314
+        },
+        {
+          "hp": 358,
+          "point_id": 1029313
+        }
+      ],
+      "boss_id": 10293,
+      "boss_node_id": [
+        1029313
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10293,
+      "init_node_id": 1029301,
+      "init_nodes": [
+        1029301
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": [],
+      "map": {
+        "x": 88,
+        "y": 258
+      },
+      "map_id": 10293,
+      "music": "battle-event",
+      "name_position": {
+        "x": 213,
+        "y": 215
+      },
+      "need_pve_level_id": 0,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10294,
+      "nodes_desc": [
+        "",
+        ""
+      ],
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 80,
+      "ship_exp": 1026,
+      "sub_title": "明争暗斗",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了D点的敌军，在对BOSS点（L、M）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于D点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000030^C454545FF00000000级",
+      "title": "Ex-1",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 0,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 120
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1029414,
+          498,
+          9855,
+          999,
+          215
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 498,
+          "point_id": 1029414
+        }
+      ],
+      "boss_id": 10294,
+      "boss_node_id": [
+        1029414
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10294,
+      "init_node_id": 1029401,
+      "init_nodes": [
+        1029401
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1029401": [
+          384,
+          692
+        ]
+      },
+      "map": {
+        "x": 99,
+        "y": 543
+      },
+      "map_id": 10294,
+      "music": "battle-event",
+      "name_position": {
+        "x": 213,
+        "y": 500
+      },
+      "need_pve_level_id": 10293,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10295,
+      "nodes_desc": [
+        "需通关E4N点",
+        ""
+      ],
+      "position": {
+        "x": 0,
+        "y": 405
+      },
+      "pve_id": 102,
+      "score_max": 40,
+      "ship_exp": 1126,
+      "sub_title": "追捕海盗",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了F点的敌军，在对BOSS点（M）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于F点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000040^C454545FF00000000级",
+      "title": "Ex-2",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 0,
+        "y": 387
+      },
+      "type": 2,
+      "user_exp": 140
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1029514,
+          664,
+          994,
+          734,
+          804
+        ],
+        [
+          1029515,
+          664,
+          9837,
+          1151,
+          697
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 664,
+          "point_id": 1029514
+        },
+        {
+          "hp": 664,
+          "point_id": 1029515
+        }
+      ],
+      "boss_id": 10295,
+      "boss_node_id": [
+        1029514
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10295,
+      "init_node_id": 1029501,
+      "init_nodes": [
+        1029501,
+        1029516
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1029501": [
+          413,
+          274
+        ],
+        "1029516": [
+          344,
+          436
+        ]
+      },
+      "map": {
+        "x": 459,
+        "y": 250
+      },
+      "map_id": 10295,
+      "music": "battle-event",
+      "name_position": {
+        "x": 640,
+        "y": 205
+      },
+      "need_pve_level_id": 10294,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10296,
+      "nodes_desc": [
+        "需通关E1L点",
+        "需通关E2M点"
+      ],
+      "position": {
+        "x": 343,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 80,
+      "ship_exp": 1226,
+      "sub_title": "反攻跳板",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了F点的敌军，在对BOSS点（M、N）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于F点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000050^C454545FF00000000级",
+      "title": "Ex-3",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 384,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 160
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1029615,
+          886,
+          9837,
+          178,
+          768
+        ],
+        [
+          1029616,
+          886,
+          9837,
+          1067,
+          167
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 886,
+          "point_id": 1029616
+        },
+        {
+          "hp": 886,
+          "point_id": 1029615
+        }
+      ],
+      "boss_id": 10296,
+      "boss_node_id": [
+        1029615
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10296,
+      "init_node_id": 1029601,
+      "init_nodes": [
+        1029601,
+        1029617
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1029601": [
+          369,
+          435
+        ],
+        "1029617": [
+          507,
+          442
+        ]
+      },
+      "map": {
+        "x": 462,
+        "y": 555
+      },
+      "map_id": 10296,
+      "music": "battle-event",
+      "name_position": {
+        "x": 602,
+        "y": 520
+      },
+      "need_pve_level_id": 10295,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10297,
+      "nodes_desc": [
+        "需通关E1M点",
+        "需通关E3M点"
+      ],
+      "position": {
+        "x": 361,
+        "y": 438
+      },
+      "pve_id": 102,
+      "score_max": 80,
+      "ship_exp": 1326,
+      "sub_title": "雪中送炭",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了J点的敌军，在对BOSS点（N、O）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于J点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000060^C454545FF00000000级",
+      "title": "Ex-4",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 398,
+        "y": 463
+      },
+      "type": 2,
+      "user_exp": 180
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1029716,
+          558,
+          915,
+          1050,
+          775
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 558,
+          "point_id": 1029716
+        }
+      ],
+      "boss_id": 10297,
+      "boss_node_id": [
+        1029716
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10297,
+      "init_node_id": 1029701,
+      "init_nodes": [
+        1029701
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1029701": [
+          719,
+          440
+        ]
+      },
+      "map": {
+        "x": 862,
+        "y": 251
+      },
+      "map_id": 10297,
+      "music": "battle-event",
+      "name_position": {
+        "x": 1060,
+        "y": 215
+      },
+      "need_pve_level_id": 10296,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10298,
+      "nodes_desc": [
+        "需通关E4O点",
+        ""
+      ],
+      "position": {
+        "x": 750,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 40,
+      "ship_exp": 1426,
+      "sub_title": "夜空惊雷",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了N点的敌军，在对BOSS点（O）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于N点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000070^C454545FF00000000级",
+      "title": "Ex-5",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 737,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 200
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1029818,
+          718,
+          99991,
+          851,
+          661
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 718,
+          "point_id": 1029818
+        }
+      ],
+      "boss_id": 10298,
+      "boss_node_id": [
+        1029818
+      ],
+      "boss_score": 40,
+      "desc": "0",
+      "hard": 1,
+      "id": 10298,
+      "init_node_id": 1029801,
+      "init_nodes": [
+        1029801,
+        1029819
+      ],
+      "isRedPath": 0,
+      "is_support": 0,
+      "line": {
+        "1029801": [
+          749,
+          425
+        ],
+        "1029819": [
+          1031,
+          427
+        ]
+      },
+      "map": {
+        "x": 856,
+        "y": 586
+      },
+      "map_id": 10298,
+      "music": "battle-event",
+      "name_position": {
+        "x": 990,
+        "y": 540
+      },
+      "need_pve_level_id": 10297,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10299,
+      "nodes_desc": [
+        "需通关E3N点",
+        "需通关E5O点"
+      ],
+      "position": {
+        "x": 705,
+        "y": 480
+      },
+      "pve_id": 102,
+      "score_max": 40,
+      "ship_exp": 1526,
+      "sub_title": "热斗",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了E点的敌军，在对BOSS点（Q）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于E点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000070^C454545FF00000000级",
+      "title": "Ex-6",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 753,
+        "y": 474
+      },
+      "type": 2,
+      "user_exp": 220
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1029913,
+          718,
+          9856,
+          1221,
+          425
+        ],
+        [
+          1029914,
+          758,
+          9817,
+          1091,
+          809
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 758,
+          "point_id": 1029914
+        },
+        {
+          "hp": 718,
+          "point_id": 1029913
+        }
+      ],
+      "boss_id": 10299,
+      "boss_node_id": [
+        1029913
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10299,
+      "init_node_id": 1029901,
+      "init_nodes": [
+        1029901
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": [],
+      "map": {
+        "x": 88,
+        "y": 258
+      },
+      "map_id": 10299,
+      "music": "battle-event",
+      "name_position": {
+        "x": 213,
+        "y": 215
+      },
+      "need_pve_level_id": 10298,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10300,
+      "nodes_desc": [
+        "",
+        ""
+      ],
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 280,
+      "ship_exp": 1626,
+      "sub_title": "明争暗斗(困难)",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了D点的敌军，在对BOSS点（L、M）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于D点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000080^C454545FF00000000级",
+      "title": "Ex-7",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 0,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 240
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1030014,
+          718,
+          9856,
+          999,
+          215
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 718,
+          "point_id": 1030014
+        }
+      ],
+      "boss_id": 10300,
+      "boss_node_id": [
+        1030014
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10300,
+      "init_node_id": 1030001,
+      "init_nodes": [
+        1030001
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1030001": [
+          384,
+          692
+        ]
+      },
+      "map": {
+        "x": 99,
+        "y": 543
+      },
+      "map_id": 10300,
+      "music": "battle-event",
+      "name_position": {
+        "x": 213,
+        "y": 500
+      },
+      "need_pve_level_id": 10299,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10301,
+      "nodes_desc": [
+        "需通关E10N点",
+        ""
+      ],
+      "position": {
+        "x": 0,
+        "y": 405
+      },
+      "pve_id": 102,
+      "score_max": 150,
+      "ship_exp": 1726,
+      "sub_title": "追捕海盗(困难)",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了F点的敌军，在对BOSS点（M）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于F点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF0000000090^C454545FF00000000级",
+      "title": "Ex-8",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 0,
+        "y": 387
+      },
+      "type": 2,
+      "user_exp": 260
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1030114,
+          1330,
+          995,
+          734,
+          804
+        ],
+        [
+          1030115,
+          1330,
+          9838,
+          1151,
+          697
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 1330,
+          "point_id": 1030115
+        },
+        {
+          "hp": 1330,
+          "point_id": 1030114
+        }
+      ],
+      "boss_id": 10301,
+      "boss_node_id": [
+        1030114
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10301,
+      "init_node_id": 1030101,
+      "init_nodes": [
+        1030101,
+        1030116
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1030101": [
+          413,
+          274
+        ],
+        "1030116": [
+          344,
+          436
+        ]
+      },
+      "map": {
+        "x": 459,
+        "y": 250
+      },
+      "map_id": 10301,
+      "music": "battle-event",
+      "name_position": {
+        "x": 640,
+        "y": 205
+      },
+      "need_pve_level_id": 10300,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10302,
+      "nodes_desc": [
+        "需通关E7L点",
+        "需通关E8M点"
+      ],
+      "position": {
+        "x": 343,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 330,
+      "ship_exp": 1826,
+      "sub_title": "反攻跳板(困难)",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了F点的敌军，在对BOSS点（M、N）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于F点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF00000000100^C454545FF00000000级",
+      "title": "Ex-9",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 384,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 280
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1030215,
+          1330,
+          9838,
+          178,
+          768
+        ],
+        [
+          1030216,
+          1330,
+          9838,
+          1067,
+          167
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 1330,
+          "point_id": 1030216
+        },
+        {
+          "hp": 1330,
+          "point_id": 1030215
+        }
+      ],
+      "boss_id": 10302,
+      "boss_node_id": [
+        1030215
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10302,
+      "init_node_id": 1030201,
+      "init_nodes": [
+        1030201,
+        1030217
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1030201": [
+          369,
+          435
+        ],
+        "1030217": [
+          507,
+          442
+        ]
+      },
+      "map": {
+        "x": 462,
+        "y": 555
+      },
+      "map_id": 10302,
+      "music": "battle-event",
+      "name_position": {
+        "x": 602,
+        "y": 520
+      },
+      "need_pve_level_id": 10301,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10303,
+      "nodes_desc": [
+        "需通关E7M点",
+        "需通关E9M点"
+      ],
+      "position": {
+        "x": 361,
+        "y": 438
+      },
+      "pve_id": 102,
+      "score_max": 370,
+      "ship_exp": 1926,
+      "sub_title": "雪中送炭(困难)",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了J点的敌军，在对BOSS点（N、O）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于J点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF00000000100^C454545FF00000000级",
+      "title": "Ex-10",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 398,
+        "y": 463
+      },
+      "type": 2,
+      "user_exp": 300
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1030316,
+          1038,
+          945,
+          1050,
+          775
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 1038,
+          "point_id": 1030316
+        }
+      ],
+      "boss_id": 10303,
+      "boss_node_id": [
+        1030316
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10303,
+      "init_node_id": 1030301,
+      "init_nodes": [
+        1030301
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1030301": [
+          719,
+          440
+        ]
+      },
+      "map": {
+        "x": 862,
+        "y": 251
+      },
+      "map_id": 10303,
+      "music": "battle-event",
+      "name_position": {
+        "x": 1060,
+        "y": 215
+      },
+      "need_pve_level_id": 10302,
+      "next_pve_level": 0,
+      "next_pve_level_id": 10304,
+      "nodes_desc": [
+        "需通关E10O点",
+        ""
+      ],
+      "position": {
+        "x": 750,
+        "y": 0
+      },
+      "pve_id": 102,
+      "score_max": 200,
+      "ship_exp": 2026,
+      "sub_title": "夜空惊雷(困难)",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了N点的敌军，在对BOSS点（O）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于N点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF00000000100^C454545FF00000000级",
+      "title": "Ex-11",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 737,
+        "y": 0
+      },
+      "type": 2,
+      "user_exp": 320
+    },
+    {
+      "arrow": [],
+      "boss": [
+        [
+          1030418,
+          1996,
+          99991,
+          851,
+          661
+        ]
+      ],
+      "boss_hp": [
+        {
+          "hp": 1996,
+          "point_id": 1030418
+        }
+      ],
+      "boss_id": 10304,
+      "boss_node_id": [
+        1030418
+      ],
+      "boss_score": 50,
+      "desc": "0",
+      "hard": 2,
+      "id": 10304,
+      "init_node_id": 1030401,
+      "init_nodes": [
+        1030401,
+        1030419
+      ],
+      "isRedPath": 1,
+      "is_support": 0,
+      "line": {
+        "1030401": [
+          749,
+          425
+        ],
+        "1030419": [
+          1031,
+          427
+        ]
+      },
+      "map": {
+        "x": 856,
+        "y": 586
+      },
+      "map_id": 10304,
+      "music": "battle-event",
+      "name_position": {
+        "x": 990,
+        "y": 540
+      },
+      "need_pve_level_id": 10303,
+      "next_pve_level": 0,
+      "next_pve_level_id": 0,
+      "nodes_desc": [
+        "需通关E9N点",
+        "需通关E11O点"
+      ],
+      "position": {
+        "x": 705,
+        "y": 480
+      },
+      "pve_id": 102,
+      "score_max": 210,
+      "ship_exp": 2126,
+      "sub_title": "热斗(困难)",
+      "support_id": 0,
+      "support_next_desc": "成功击溃了E点的敌军，在对BOSS点（Q）进行作战的时候，能得到来自路基机场的航空支援",
+      "support_open_desc": "0",
+      "support_pre_desc": "压制位于E点的敌军，以便让陆战队修筑机场，部署海航战机",
+      "tips": "^C454545FF00000000推荐舰船装备、强化完善且等级大于^C1C8BE5FF00000000100^C454545FF00000000级",
+      "title": "Ex-12",
+      "total_score": 200,
+      "total_treasure": 1,
+      "touch_position": {
+        "x": 50,
+        "y": 50
+      },
+      "touch_size": {
+        "x": 753,
+        "y": 474
+      },
+      "type": 2,
+      "user_exp": 340
+    }
+  ],
+  "sequence_num": 104,
+  "unique_id": {
+    "10201": 1,
+    "10202": 2,
+    "10203": 3,
+    "10204": 4,
+    "10205": 5,
+    "10206": 6,
+    "10207": 7,
+    "10208": 8,
+    "10209": 9,
+    "10210": 10,
+    "10211": 11,
+    "10212": 12,
+    "10213": 13,
+    "10214": 14,
+    "10215": 15,
+    "10216": 16,
+    "10217": 17,
+    "10218": 18,
+    "10219": 19,
+    "10220": 20,
+    "10221": 21,
+    "10222": 22,
+    "10223": 23,
+    "10224": 24,
+    "10225": 25,
+    "10226": 26,
+    "10227": 27,
+    "10228": 28,
+    "10229": 29,
+    "10230": 30,
+    "10231": 31,
+    "10232": 32,
+    "10233": 33,
+    "10234": 34,
+    "10235": 35,
+    "10236": 36,
+    "10237": 37,
+    "10238": 38,
+    "10239": 39,
+    "10240": 40,
+    "10241": 41,
+    "10242": 42,
+    "10243": 43,
+    "10244": 44,
+    "10245": 45,
+    "10246": 46,
+    "10247": 47,
+    "10248": 48,
+    "10249": 49,
+    "10250": 50,
+    "10251": 51,
+    "10252": 52,
+    "10253": 53,
+    "10254": 54,
+    "10255": 55,
+    "10256": 56,
+    "10257": 57,
+    "10258": 58,
+    "10259": 59,
+    "10260": 60,
+    "10261": 61,
+    "10262": 62,
+    "10263": 63,
+    "10264": 64,
+    "10265": 65,
+    "10266": 66,
+    "10267": 67,
+    "10268": 68,
+    "10269": 69,
+    "10270": 70,
+    "10271": 71,
+    "10272": 72,
+    "10273": 73,
+    "10274": 74,
+    "10275": 75,
+    "10276": 76,
+    "10277": 77,
+    "10278": 78,
+    "10279": 79,
+    "10280": 80,
+    "10281": 81,
+    "10282": 82,
+    "10283": 83,
+    "10284": 84,
+    "10285": 85,
+    "10286": 86,
+    "10287": 87,
+    "10288": 88,
+    "10289": 89,
+    "10290": 90,
+    "10291": 91,
+    "10292": 92,
+    "10293": 93,
+    "10294": 94,
+    "10295": 95,
+    "10296": 96,
+    "10297": 97,
+    "10298": 98,
+    "10299": 99,
+    "10300": 100,
+    "10301": 101,
+    "10302": 102,
+    "10303": 103,
+    "10304": 104
+  }
+}

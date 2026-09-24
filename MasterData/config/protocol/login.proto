@@ -1,0 +1,61 @@
+syntax = "proto2";
+package login;
+
+message PingPong {
+}
+
+message ChangeGateNotify {
+  required string ip = 1;
+  required int32 port = 2;
+}
+
+message RandomNotify {
+  required string random = 1;
+}
+
+message AuthReq {
+  required int64 account_id = 1;
+  required string channel = 2;
+  required string auth_string = 3;
+  required string token = 4;
+  required bool first_auth = 5;
+  required string uid = 6;
+  required string channel_uid = 7;
+  required string product_id = 8;
+  required string protocol_version = 9;
+  required string json_version = 10;
+  required string battle_version = 11;
+  required string login_os = 12;
+}
+
+message AuthResp {
+  required int32 error_code = 1;
+  required int64 account_id = 2;
+  required int32 time = 3;
+}
+
+message InOtherLocalLoginNotify {
+}
+
+message PatchUpdateNotify {
+  required int32 reason = 1;
+}
+
+message ProtocolUpdateNotify {
+}
+
+message SystemDataNotify {
+  required string system_data = 1;
+}
+
+message RealNameAuthReq {
+  required string channel = 1;
+  required string token = 2;
+  required string id_card = 3;
+  required string name = 4;
+}
+
+message RealNameAuthResp {
+  required int32 error_code = 1;
+}
+

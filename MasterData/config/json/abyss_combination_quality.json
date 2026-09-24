@@ -1,0 +1,219 @@
+{
+  "primary_material1_material2": {
+    "3": {
+      "3": 1,
+      "4": 2,
+      "5": 3,
+      "6": 4
+    },
+    "4": {
+      "4": 5,
+      "5": 6,
+      "6": 7
+    },
+    "5": {
+      "5": 8,
+      "6": 9
+    },
+    "6": {
+      "6": 10
+    }
+  },
+  "sequence": [
+    {
+      "id": 1,
+      "material1": 3,
+      "material2": 3,
+      "n": 60,
+      "r": 40,
+      "sr": 0,
+      "ssr": 0,
+      "weight": [
+        {
+          "star": 3,
+          "weight": 60
+        },
+        {
+          "star": 4,
+          "weight": 40
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "material1": 3,
+      "material2": 4,
+      "n": 50,
+      "r": 50,
+      "sr": 0,
+      "ssr": 0,
+      "weight": [
+        {
+          "star": 3,
+          "weight": 50
+        },
+        {
+          "star": 4,
+          "weight": 50
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "material1": 3,
+      "material2": 5,
+      "n": 20,
+      "r": 80,
+      "sr": 0,
+      "ssr": 0,
+      "weight": [
+        {
+          "star": 3,
+          "weight": 20
+        },
+        {
+          "star": 4,
+          "weight": 80
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "material1": 3,
+      "material2": 6,
+      "n": 0,
+      "r": 100,
+      "sr": 0,
+      "ssr": 0,
+      "weight": [
+        {
+          "star": 4,
+          "weight": 100
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "material1": 4,
+      "material2": 4,
+      "n": 0,
+      "r": 60,
+      "sr": 40,
+      "ssr": 0,
+      "weight": [
+        {
+          "star": 4,
+          "weight": 60
+        },
+        {
+          "star": 5,
+          "weight": 40
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "material1": 4,
+      "material2": 5,
+      "n": 0,
+      "r": 50,
+      "sr": 50,
+      "ssr": 0,
+      "weight": [
+        {
+          "star": 4,
+          "weight": 50
+        },
+        {
+          "star": 5,
+          "weight": 50
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "material1": 4,
+      "material2": 6,
+      "n": 0,
+      "r": 20,
+      "sr": 80,
+      "ssr": 0,
+      "weight": [
+        {
+          "star": 4,
+          "weight": 20
+        },
+        {
+          "star": 5,
+          "weight": 80
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "material1": 5,
+      "material2": 5,
+      "n": 0,
+      "r": 0,
+      "sr": 60,
+      "ssr": 40,
+      "weight": [
+        {
+          "star": 5,
+          "weight": 60
+        },
+        {
+          "star": 6,
+          "weight": 40
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "material1": 5,
+      "material2": 6,
+      "n": 0,
+      "r": 0,
+      "sr": 50,
+      "ssr": 50,
+      "weight": [
+        {
+          "star": 5,
+          "weight": 50
+        },
+        {
+          "star": 6,
+          "weight": 50
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "material1": 6,
+      "material2": 6,
+      "n": 0,
+      "r": 0,
+      "sr": 0,
+      "ssr": 100,
+      "weight": [
+        {
+          "star": 6,
+          "weight": 100
+        }
+      ]
+    }
+  ],
+  "sequence_num": 10,
+  "unique_id": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ]
+}

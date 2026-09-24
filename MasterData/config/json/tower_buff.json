@@ -1,0 +1,4651 @@
+{
+  "sequence": [
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方战列舰火力^C00FFEAFFFFFFFF00-40^CFFFFFFFF00000000，且不能携带航空母舰",
+      "desc2": "^C454545FF00000000战列^C2997FFFFFFFFFF00舰火力-40，且不能携带航空母舰。^C454545FF00000000",
+      "effect": [
+        {
+          "num": 0,
+          "shipType": 1,
+          "type": 1
+        },
+        {
+          "num": 40,
+          "num4": 2,
+          "shipType": 4,
+          "type": 10
+        }
+      ],
+      "effect_desc": "战列舰火力-40，且不能携带航空母舰。",
+      "id": 30001,
+      "side": 0,
+      "title": "冷落的往昔",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方舰队^C00FFEAFFFFFFFF00平均航速>=27",
+      "desc2": "^C454545FF00000000舰队^C2997FFFFFFFFFF00平均航速>=27^C454545FF00000000",
+      "effect": [
+        {
+          "num": 26.9,
+          "num4": 10,
+          "type": 14
+        }
+      ],
+      "effect_desc": "舰队平均航速>=27",
+      "id": 30002,
+      "side": 0,
+      "title": "静谧的赞美",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方小型船闪避^C00FFEAFFFFFFFF00+10，火力^C00FFEAFFFFFFFF00-10^CFFFFFFFF00000000；中型船火力^C00FFEAFFFFFFFF00+10^CFFFFFFFF00000000，闪避^C00FFEAFFFFFFFF00-10",
+      "desc2": "^C454545FF00000000小型^C2997FFFFFFFFFF00船闪避+10，火力-10；中型船火力+10，闪避-10。^C454545FF00000000",
+      "effect": [
+        {
+          "num": 10,
+          "num4": 5,
+          "shipTon": 1,
+          "type": 9
+        },
+        {
+          "num": 10,
+          "num4": 2,
+          "shipTon": 1,
+          "type": 10
+        },
+        {
+          "num": 10,
+          "num4": 2,
+          "shipTon": 2,
+          "type": 9
+        },
+        {
+          "num": 10,
+          "num4": 5,
+          "shipTon": 2,
+          "type": 10
+        }
+      ],
+      "effect_desc": "小型船闪避+10，火力-10；中型船火力+10，闪避-10。",
+      "id": 30003,
+      "side": 0,
+      "title": "微笑的未来",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方总舰船数^C00FFEAFFFFFFFF00<=5，^CFFFFFFFF00000000我方全体^C00FFEAFFFFFFFF00火力+10^CFFFFFFFF00000000，^C00FFEAFFFFFFFF00闪避-10",
+      "desc2": "^C454545FF00000000总舰^C2997FFFFFFFFFF00船数<=5，我方全体火力+10，闪避-10^C454545FF00000000",
+      "effect": [
+        {
+          "num": 5,
+          "num4": 1,
+          "num5": 1,
+          "type": 5
+        },
+        {
+          "num": 10,
+          "num4": 2,
+          "type": 7
+        },
+        {
+          "num": 10,
+          "num4": 5,
+          "type": 8
+        }
+      ],
+      "effect_desc": "总舰船数<=5，我方全体火力+10，闪避-10",
+      "id": 30004,
+      "side": 0,
+      "title": "重生的余烬",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方中型船^C00FFEAFFFFFFFF00火力+15^CFFFFFFFF00000000、^C00FFEAFFFFFFFF00装甲+10^CFFFFFFFF00000000、^C00FFEAFFFFFFFF00闪避-15",
+      "desc2": "^C454545FF00000000我方^C2997FFFFFFFFFF00中型船火力+15、装甲+10，闪避-15^C454545FF00000000",
+      "effect": [
+        {
+          "num": 15,
+          "num4": 2,
+          "shipTon": 2,
+          "type": 9
+        },
+        {
+          "num": 10,
+          "num4": 3,
+          "shipTon": 2,
+          "type": 9
+        },
+        {
+          "num": 15,
+          "num4": 5,
+          "shipTon": 2,
+          "type": 10
+        }
+      ],
+      "effect_desc": "我方中型船火力+15、装甲+10，闪避-15",
+      "id": 30005,
+      "side": 0,
+      "title": "幸福的寻常",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方全体^C00FFEAFFFFFFFF00火力-10^CFFFFFFFF00000000，^C00FFEAFFFFFFFF00装甲+20",
+      "desc2": "^C454545FF00000000我方^C2997FFFFFFFFFF00全体火力-10，装甲+20^C454545FF00000000",
+      "effect": [
+        {
+          "num": 10,
+          "num4": 2,
+          "type": 8
+        },
+        {
+          "num": 20,
+          "num4": 3,
+          "type": 7
+        }
+      ],
+      "effect_desc": "我方全体火力-10，装甲+20",
+      "id": 30006,
+      "side": 0,
+      "title": "耀眼的伊甸",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方总舰船数^C00FFEAFFFFFFFF00<=2",
+      "desc2": "^C454545FF00000000总舰^C2997FFFFFFFFFF00船数<=2^C454545FF00000000",
+      "effect": [
+        {
+          "num": 2,
+          "num4": 1,
+          "num5": 1,
+          "type": 5
+        }
+      ],
+      "effect_desc": "总舰船数<=2",
+      "id": 30007,
+      "side": 0,
+      "title": "耀眼的伊甸",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方战列舰^C00FFEAFFFFFFFF00<=3^CFFFFFFFF00000000，战列巡洋舰^C00FFEAFFFFFFFF00<=3",
+      "desc2": "^C454545FF00000000战列^C2997FFFFFFFFFF00舰<=3，战列巡洋舰<=3^C454545FF00000000",
+      "effect": [
+        {
+          "num": 3,
+          "shipType": 4,
+          "type": 1
+        },
+        {
+          "num": 3,
+          "shipType": 6,
+          "type": 1
+        }
+      ],
+      "effect_desc": "战列舰<=3，战列巡洋舰<=3",
+      "id": 30008,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方全体暴击率^C00FFEAFFFFFFFF00＋10%^CFFFFFFFF00000000，闪避^C00FFEAFFFFFFFF00-10^CFFFFFFFF00000000，装甲^C00FFEAFFFFFFFF00-10",
+      "desc2": "^C454545FF00000000我方^C2997FFFFFFFFFF00全体暴击率提升10%，闪避-10，装甲-10^C454545FF00000000",
+      "effect": [
+        {
+          "num": 10,
+          "num4": 16,
+          "type": 7
+        },
+        {
+          "num": 10,
+          "num4": 3,
+          "type": 8
+        },
+        {
+          "num": 10,
+          "num4": 5,
+          "type": 8
+        }
+      ],
+      "effect_desc": "我方全体暴击率提升10%，闪避-10，装甲-10",
+      "id": 30009,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^C00FFEAFFFFFFFF00E国^CFFFFFFFF00000000舰船额外暴击率^C00FFEAFFFFFFFF00＋10%^CFFFFFFFF00000000，闪避^C00FFEAFFFFFFFF00-10^CFFFFFFFF00000000，装甲^C00FFEAFFFFFFFF00-10",
+      "desc2": "^C454545FF00000000E国^C2997FFFFFFFFFF00舰船额外提升暴击率10%，闪避-10，装甲-10^C454545FF00000000",
+      "effect": [
+        {
+          "country": 3,
+          "num": 10,
+          "num4": 16,
+          "type": 19
+        },
+        {
+          "country": 3,
+          "num": 10,
+          "num4": 3,
+          "type": 20
+        },
+        {
+          "country": 3,
+          "num": 10,
+          "num4": 5,
+          "type": 20
+        }
+      ],
+      "effect_desc": "E国舰船额外提升暴击率10%，闪避-10，装甲-10",
+      "id": 30010,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方战列舰^C00FFEAFFFFFFFF00<=4^CFFFFFFFF00000000、轻巡洋舰^C00FFEAFFFFFFFF00<=4^CFFFFFFFF00000000、驱逐舰^C00FFEAFFFFFFFF00<=4^CFFFFFFFF00000000、航空母舰^C00FFEAFFFFFFFF00<=4",
+      "desc2": "^C454545FF00000000我方^C2997FFFFFFFFFF00战列舰<=4、轻巡洋舰<=4、驱逐舰<=4、航空母舰<=4^C454545FF00000000",
+      "effect": [
+        {
+          "num": 4,
+          "shipType": 4,
+          "type": 1
+        },
+        {
+          "num": 4,
+          "shipType": 1,
+          "type": 1
+        },
+        {
+          "num": 4,
+          "shipType": 12,
+          "type": 1
+        },
+        {
+          "num": 4,
+          "shipType": 10,
+          "type": 1
+        }
+      ],
+      "effect_desc": "我方战列舰<=4、轻巡洋舰<=4、驱逐舰<=4、航空母舰<=4",
+      "id": 30011,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000不能携带^C00FFEAFFFFFFFF00大型船",
+      "desc2": "^C454545FF00000000不能^C2997FFFFFFFFFF00携带大型船^C454545FF00000000",
+      "effect": [
+        {
+          "num": 0,
+          "shipTon": 3,
+          "shipType": 0,
+          "type": 1
+        }
+      ],
+      "effect_desc": "不能携带大型船",
+      "id": 30012,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方总舰船数^C00FFEAFFFFFFFF00<=3",
+      "desc2": "^C454545FF00000000总舰^C2997FFFFFFFFFF00船数<=3^C454545FF00000000",
+      "effect": [
+        {
+          "num": 3,
+          "num4": 1,
+          "type": 5
+        }
+      ],
+      "effect_desc": "总舰船数<=3",
+      "id": 30013,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方全体火力^C00FFEAFFFFFFFF00-20^CFFFFFFFF00000000，装甲^C00FFEAFFFFFFFF00+20^CFFFFFFFF00000000，回避^C00FFEAFFFFFFFF00＋10",
+      "desc2": "^C454545FF00000000我方^C2997FFFFFFFFFF00全体火力-20，装甲+20，闪避+10。^C454545FF00000000",
+      "effect": [
+        {
+          "num": 20,
+          "num4": 3,
+          "type": 7
+        },
+        {
+          "num": 20,
+          "num4": 2,
+          "type": 8
+        },
+        {
+          "num": 10,
+          "num4": 5,
+          "type": 7
+        }
+      ],
+      "effect_desc": "我方全体火力-20，装甲+20，闪避+10。",
+      "id": 30014,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方全体暴击率^C00FFEAFFFFFFFF00+95%",
+      "desc2": "^C454545FF00000000我方^C2997FFFFFFFFFF00全体暴击率提升100%^C454545FF00000000",
+      "effect": [
+        {
+          "num": 100,
+          "num4": 16,
+          "type": 7
+        }
+      ],
+      "effect_desc": "我方全体暴击率提升100%",
+      "id": 30015,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方总舰船数^C00FFEAFFFFFFFF00>4",
+      "desc2": "^C454545FF00000000我方^C2997FFFFFFFFFF00总舰船数>4^C454545FF00000000",
+      "effect": [
+        {
+          "num": 4,
+          "num4": 1,
+          "num5": 1,
+          "type": 6
+        }
+      ],
+      "effect_desc": "我方总舰船数>4",
+      "id": 30016,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000不能使用^C00FFEAFFFFFFFF00U^CFFFFFFFF00000000、^C00FFEAFFFFFFFF00E^CFFFFFFFF00000000、^C00FFEAFFFFFFFF00F国^CFFFFFFFF00000000舰船",
+      "desc2": "^C454545FF00000000不能^C2997FFFFFFFFFF00使用U、E、F国舰船^C454545FF00000000",
+      "effect": [
+        {
+          "country": 3,
+          "num": 0,
+          "type": 3
+        },
+        {
+          "country": 4,
+          "num": 0,
+          "type": 3
+        },
+        {
+          "country": 6,
+          "num": 0,
+          "type": 3
+        }
+      ],
+      "effect_desc": "不能使用U、E、F国舰船",
+      "id": 30017,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方不能使用^C00FFEAFFFFFFFF00G^CFFFFFFFF00000000、^C00FFEAFFFFFFFF00F^CFFFFFFFF00000000、^C00FFEAFFFFFFFF00J国^CFFFFFFFF00000000舰船，且^C00FFEAFFFFFFFF00火力-10",
+      "desc2": "^C454545FF00000000我方^C2997FFFFFFFFFF00不能使用G、F、J国舰船，且火力-10^C454545FF00000000",
+      "effect": [
+        {
+          "country": 2,
+          "num": 0,
+          "type": 3
+        },
+        {
+          "country": 6,
+          "num": 0,
+          "type": 3
+        },
+        {
+          "country": 1,
+          "num": 0,
+          "type": 3
+        },
+        {
+          "num": 10,
+          "num5": 2,
+          "type": 8
+        }
+      ],
+      "effect_desc": "我方不能使用G、F、J国舰船，且火力-10",
+      "id": 30018,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方仅能使用^C00FFEAFFFFFFFF00小型船",
+      "desc2": "^C454545FF00000000我方^C2997FFFFFFFFFF00仅能使用小型船^C454545FF00000000",
+      "effect": [
+        {
+          "num": 0,
+          "shipTon": 2,
+          "shipType": 0,
+          "type": 1
+        },
+        {
+          "num": 0,
+          "shipTon": 3,
+          "shipType": 0,
+          "type": 1
+        }
+      ],
+      "effect_desc": "我方仅能使用小型船",
+      "id": 30019,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方仅能使用^C00FFEAFFFFFFFF00中型船",
+      "desc2": "^C454545FF00000000我方^C2997FFFFFFFFFF00仅能使用中型船^C454545FF00000000",
+      "effect": [
+        {
+          "num": 0,
+          "shipTon": 1,
+          "shipType": 0,
+          "type": 1
+        },
+        {
+          "num": 0,
+          "shipTon": 3,
+          "shipType": 0,
+          "type": 1
+        }
+      ],
+      "effect_desc": "我方仅能使用中型船",
+      "id": 30020,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方仅能使用^C00FFEAFFFFFFFF00大型船",
+      "desc2": "^C454545FF00000000我方^C2997FFFFFFFFFF00仅能使用大型船^C454545FF00000000",
+      "effect": [
+        {
+          "num": 0,
+          "shipTon": 1,
+          "shipType": 0,
+          "type": 1
+        },
+        {
+          "num": 0,
+          "shipTon": 2,
+          "shipType": 0,
+          "type": 1
+        }
+      ],
+      "effect_desc": "我方仅能使用大型船",
+      "id": 30021,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方小型船闪避^C00FFEAFFFFFFFF00+10^CFFFFFFFF00000000，大型船火力^C00FFEAFFFFFFFF00+10^CFFFFFFFF00000000，中型船暴击率^C00FFEAFFFFFFFF00+10%",
+      "desc2": "^C454545FF00000000我方^C2997FFFFFFFFFF00小型船闪避+10，大型船火力+10，中型船暴击率+10%^C454545FF00000000",
+      "effect": [
+        {
+          "num": 10,
+          "num4": 5,
+          "shipTon": 1,
+          "type": 9
+        },
+        {
+          "num": 10,
+          "num4": 2,
+          "shipTon": 3,
+          "type": 9
+        },
+        {
+          "num": 10,
+          "num4": 16,
+          "shipTon": 2,
+          "type": 9
+        }
+      ],
+      "effect_desc": "我方小型船闪避+10，大型船火力+10，中型船暴击率+10%",
+      "id": 30022,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方总舰船数^C00FFEAFFFFFFFF00<=3^CFFFFFFFF00000000，大型船^C00FFEAFFFFFFFF00<=1^CFFFFFFFF00000000，中型船^C00FFEAFFFFFFFF00<=1^CFFFFFFFF00000000，小型船^C00FFEAFFFFFFFF00<=1",
+      "desc2": "^C454545FF00000000总舰^C2997FFFFFFFFFF00船数<=3，大型船<=1，中型船<=1，小型船<=1^C454545FF00000000",
+      "effect": [
+        {
+          "num": 3,
+          "num4": 1,
+          "num5": 1,
+          "type": 5
+        },
+        {
+          "num": 1,
+          "shipTon": 1,
+          "shipType": 0,
+          "type": 1
+        },
+        {
+          "num": 1,
+          "shipTon": 2,
+          "shipType": 0,
+          "type": 1
+        },
+        {
+          "num": 1,
+          "shipTon": 3,
+          "shipType": 0,
+          "type": 1
+        }
+      ],
+      "effect_desc": "总舰船数<=3，大型船<=1，中型船<=1，小型船<=1",
+      "id": 30023,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000不能携带^C00FFEAFFFFFFFF00潜艇",
+      "desc2": "^C454545FF00000000不能^C2997FFFFFFFFFF00携带潜艇^C454545FF00000000",
+      "effect": [
+        {
+          "num": 0,
+          "shipType": 14,
+          "type": 1
+        }
+      ],
+      "effect_desc": "不能携带潜艇",
+      "id": 30024,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方全体暴击率^C00FFEAFFFFFFFF00+10%",
+      "desc2": "^C454545FF00000000我方^C2997FFFFFFFFFF00全体暴击率提升10%^C454545FF00000000",
+      "effect": [
+        {
+          "num": 10,
+          "num4": 16,
+          "type": 7
+        }
+      ],
+      "effect_desc": "我方全体暴击率提升10%",
+      "id": 30025,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方全体暴击率^C00FFEAFFFFFFFF00+10%^CFFFFFFFF00000000，索敌^C00FFEAFFFFFFFF00+20^CFFFFFFFF00000000，对空^C00FFEAFFFFFFFF00-20^CFFFFFFFF00000000，装甲^C00FFEAFFFFFFFF00-10",
+      "desc2": "^C454545FF00000000我方^C2997FFFFFFFFFF00全体暴击率+10%，索敌+20，对空-20，装甲-10^C454545FF00000000",
+      "effect": [
+        {
+          "num": 10,
+          "num4": 16,
+          "type": 7
+        },
+        {
+          "num": 20,
+          "num4": 6,
+          "type": 8
+        },
+        {
+          "num": 10,
+          "num4": 3,
+          "type": 8
+        },
+        {
+          "num": 20,
+          "num4": 11,
+          "type": 7
+        }
+      ],
+      "effect_desc": "我方全体暴击率+10%，索敌+20，对空-20，装甲-10",
+      "id": 30026,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方驱逐舰、轻巡洋舰射程为^C00FFEAFFFFFFFF00长^CFFFFFFFF00000000，轻巡洋舰命中^C00FFEAFFFFFFFF00+10^CFFFFFFFF00000000，驱逐舰火力^C00FFEAFFFFFFFF00+10",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00驱逐舰、轻巡洋舰射程为长，轻巡洋舰命中+10，驱逐舰火力+10^C454545FF00000000",
+      "effect": [
+        {
+          "num": 3,
+          "shipTypes": [
+            12,
+            10
+          ],
+          "type": 102
+        },
+        {
+          "num": 10,
+          "num4": 2,
+          "shipTypes": [
+            12
+          ],
+          "type": 101
+        },
+        {
+          "num": 10,
+          "num4": 17,
+          "shipTypes": [
+            10
+          ],
+          "type": 101
+        }
+      ],
+      "effect_desc": "敌方驱逐舰、轻巡洋舰射程为长，轻巡洋舰命中+10，驱逐舰火力+10",
+      "id": 40001,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方战巡命中^C00FFEAFFFFFFFF00+10",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00重巡洋舰射程为长，战巡命中+10，重巡火力+10^C454545FF00000000",
+      "effect": [
+        {
+          "num": 3,
+          "shipTypes": [
+            7
+          ],
+          "type": 102
+        },
+        {
+          "num": 10,
+          "num4": 2,
+          "shipTypes": [
+            7
+          ],
+          "type": 101
+        },
+        {
+          "num": 10,
+          "num4": 17,
+          "shipTypes": [
+            6
+          ],
+          "type": 101
+        }
+      ],
+      "effect_desc": "敌方重巡洋舰射程为长，战巡命中+10，重巡火力+10",
+      "id": 40002,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方轻巡洋舰解锁开幕雷击",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00轻巡洋舰解锁开幕雷击。^C454545FF00000000",
+      "effect": [
+        {
+          "shipTypes": [
+            10
+          ],
+          "type": 109
+        }
+      ],
+      "effect_desc": "敌方轻巡洋舰解锁开幕雷击。",
+      "id": 40003,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方轻母、航母射程为^C00FFEAFFFFFFFF00长^CFFFFFFFF00000000，轻母闪避^C00FFEAFFFFFFFF00+15^CFFFFFFFF00000000，航母装甲^C00FFEAFFFFFFFF00+10",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00轻母、航母射程为长，轻母闪避+15，航母装甲+10^C454545FF00000000",
+      "effect": [
+        {
+          "num": 3,
+          "shipTypes": [
+            1,
+            2
+          ],
+          "type": 102
+        },
+        {
+          "num": 10,
+          "num4": 5,
+          "shipTypes": [
+            2
+          ],
+          "type": 101
+        },
+        {
+          "num": 10,
+          "num4": 3,
+          "shipTypes": [
+            1
+          ],
+          "type": 101
+        }
+      ],
+      "effect_desc": "敌方轻母、航母射程为长，轻母闪避+15，航母装甲+10",
+      "id": 40004,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方潜艇、驱逐舰攻击必定命中，且暴击率增加^C00FFEAFFFFFFFF0010%",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00潜艇、驱逐舰攻击必定命中，且暴击率增加10%。^C454545FF00000000",
+      "effect": [
+        {
+          "shipTypes": [
+            12,
+            14
+          ],
+          "type": 110
+        },
+        {
+          "num": 10,
+          "num4": 16,
+          "shipTypes": [
+            12,
+            14
+          ],
+          "type": 101
+        }
+      ],
+      "effect_desc": "敌方潜艇、驱逐舰攻击必定命中，且暴击率增加10%。",
+      "id": 40005,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方驱逐舰解锁开幕雷击",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00驱逐舰解锁开幕雷击。^C454545FF00000000",
+      "effect": [
+        {
+          "shipTypes": [
+            12
+          ],
+          "type": 109
+        }
+      ],
+      "effect_desc": "敌方驱逐舰解锁开幕雷击。",
+      "id": 40006,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方大型船暴击率^C00FFEAFFFFFFFF00+10%^CFFFFFFFF00000000，命中^CFFFFFFFF00000000+10^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00大型船暴击率提升10%，命中+10。^C454545FF00000000",
+      "effect": [
+        {
+          "num": 10,
+          "num4": 16,
+          "shipTons": [
+            3
+          ],
+          "type": 101
+        },
+        {
+          "num": 10,
+          "num4": 17,
+          "shipTons": [
+            3
+          ],
+          "type": 101
+        }
+      ],
+      "effect_desc": "敌方大型船暴击率提升10%，命中+10。",
+      "id": 40007,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方在航空战阶段，受到的伤害降低^C00FFEAFFFFFFFF0040%^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00在航空战阶段，受到的伤害降低50%。^C454545FF00000000",
+      "effect": [
+        {
+          "num": 50,
+          "num5": 2,
+          "type": 106
+        }
+      ],
+      "effect_desc": "敌方在航空战阶段，受到的伤害降低50%。",
+      "id": 40008,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方在炮击战阶段，受到的伤害降低^C00FFEAFFFFFFFF0010%^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00在炮击战阶段，受到的伤害降低10%。^C454545FF00000000",
+      "effect": [
+        {
+          "num": 10,
+          "num5": 5,
+          "type": 106
+        }
+      ],
+      "effect_desc": "敌方在炮击战阶段，受到的伤害降低10%。",
+      "id": 40009,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方的航空母舰、轻型航空母舰、装甲航空母舰舰种可以参加夜战",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00的航空母舰、轻型航空母舰、装甲航空母舰舰种可以参加夜战。^C454545FF00000000",
+      "effect": [
+        {
+          "type": 107
+        }
+      ],
+      "effect_desc": "敌方的航空母舰、轻型航空母舰、装甲航空母舰舰种可以参加夜战。",
+      "id": 40010,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方受到驱逐舰的攻击降低^C00FFEAFFFFFFFF0050%",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00受到驱逐舰的攻击降低50%^C454545FF00000000",
+      "effect": [
+        {
+          "num": 50,
+          "shipTypes": [
+            12
+          ],
+          "type": 104
+        }
+      ],
+      "effect_desc": "敌方受到驱逐舰的攻击降低50%",
+      "id": 40011,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方驱逐舰、轻巡洋舰解锁开幕雷击",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00驱逐舰、轻巡洋舰解锁开幕雷击。^C454545FF00000000",
+      "effect": [
+        {
+          "shipTypes": [
+            12,
+            10
+          ],
+          "type": 109
+        }
+      ],
+      "effect_desc": "敌方驱逐舰、轻巡洋舰解锁开幕雷击。",
+      "id": 40012,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方航母、轻母、装母射程变更为^C00FFEAFFFFFFFF00长^CFFFFFFFF00000000，中破大破时仍可参加攻击，且能参加夜战",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00航母、轻母、装母射程变更为长，中破大破时仍可参加攻击，且能参加夜战。^C454545FF00000000",
+      "effect": [
+        {
+          "num": 3,
+          "shipTypes": [
+            1,
+            2,
+            3
+          ],
+          "type": 102
+        },
+        {
+          "type": 107
+        },
+        {
+          "type": 108
+        }
+      ],
+      "effect_desc": "敌方航母、轻母、装母射程变更为长，中破大破时仍可参加攻击，且能参加夜战。",
+      "id": 40013,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方受到的潜艇伤害降低^C00FFEAFFFFFFFF0040%",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00受到的潜艇伤害降低40%。^C454545FF00000000",
+      "effect": [
+        {
+          "num": 40,
+          "shipTypes": [
+            14
+          ],
+          "type": 104
+        }
+      ],
+      "effect_desc": "敌方受到的潜艇伤害降低40%。",
+      "id": 40014,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方暴击率^C00FFEAFFFFFFFF00+95%^CFFFFFFFF00000000，命中^C00FFEAFFFFFFFF00+10",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00暴击率+100%，命中+10^C454545FF00000000",
+      "effect": [
+        {
+          "num": 100,
+          "num4": 16,
+          "shipTons": [
+            1,
+            2,
+            3
+          ],
+          "type": 101
+        },
+        {
+          "num": 10,
+          "num4": 17,
+          "shipTons": [
+            1,
+            2,
+            3
+          ],
+          "type": 101
+        }
+      ],
+      "effect_desc": "敌方暴击率+100%，命中+10",
+      "id": 40015,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方在炮击战阶段，受到的伤害降低^C00FFEAFFFFFFFF0050%^CFFFFFFFF00000000",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00在炮击战阶段，受到的伤害降低50%。^C454545FF00000000",
+      "effect": [
+        {
+          "num": 50,
+          "num5": 5,
+          "type": 106
+        }
+      ],
+      "effect_desc": "敌方在炮击战阶段，受到的伤害降低50%。",
+      "id": 40016,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方暴击率^C00FFEAFFFFFFFF00+5%",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00暴击率+5%^C454545FF00000000",
+      "effect": [
+        {
+          "num": 5,
+          "num4": 16,
+          "shipTons": [
+            1,
+            2,
+            3
+          ],
+          "type": 101
+        }
+      ],
+      "effect_desc": "敌方暴击率+5%",
+      "id": 40017,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方暴击率^C00FFEAFFFFFFFF00+10%",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00暴击率+10%^C454545FF00000000",
+      "effect": [
+        {
+          "num": 10,
+          "num4": 16,
+          "shipTons": [
+            1,
+            2,
+            3
+          ],
+          "type": 101
+        }
+      ],
+      "effect_desc": "敌方暴击率+10%",
+      "id": 40018,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方大型船火力^C00FFEAFFFFFFFF00+10^CFFFFFFFF00000000，对空^C00FFEAFFFFFFFF00+10",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00大型船火力+10，对空+10^C454545FF00000000",
+      "effect": [
+        {
+          "num": 10,
+          "num4": 2,
+          "shipTons": [
+            3
+          ],
+          "type": 101
+        },
+        {
+          "num": 10,
+          "num4": 6,
+          "shipTons": [
+            3
+          ],
+          "type": 101
+        }
+      ],
+      "effect_desc": "敌方大型船火力+10，对空+10",
+      "id": 40019,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方大型船闪避^C00FFEAFFFFFFFF00+10",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00大型船闪避+10^C454545FF00000000",
+      "effect": [
+        {
+          "num": 10,
+          "num4": 5,
+          "shipTons": [
+            3
+          ],
+          "type": 101
+        }
+      ],
+      "effect_desc": "敌方大型船闪避+10",
+      "id": 40020,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方小型船闪避^C00FFEAFFFFFFFF00+10^CFFFFFFFF00000000，大型船火力^C00FFEAFFFFFFFF00+10",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00小型船闪避+10，大型船火力+10，中型船暴击率+10%^C454545FF00000000",
+      "effect": [
+        {
+          "num": 10,
+          "num4": 5,
+          "shipTons": [
+            1
+          ],
+          "type": 101
+        },
+        {
+          "num": 10,
+          "num4": 2,
+          "shipTons": [
+            3
+          ],
+          "type": 101
+        },
+        {
+          "num": 10,
+          "num4": 16,
+          "shipTons": [
+            2
+          ],
+          "type": 101
+        }
+      ],
+      "effect_desc": "敌方小型船闪避+10，大型船火力+10，中型船暴击率+10%",
+      "id": 40021,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方受到航母，装母，导驱，导战的伤害降低^C00FFEAFFFFFFFF0050%",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00受到航母，装母，导驱，导战的伤害降低50%^C454545FF00000000",
+      "effect": [
+        {
+          "num": 50,
+          "shipTypes": [
+            1,
+            27,
+            23,
+            3
+          ],
+          "type": 104
+        }
+      ],
+      "effect_desc": "敌方受到航母，装母，导驱，导战的伤害降低50%",
+      "id": 40022,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000不能携带导战，大巡",
+      "desc2": "^CFFFFFFFF00000000不能携带导弹战列舰，大型导弹巡洋舰",
+      "effect": [
+        {
+          "num": 0,
+          "shipType": 26,
+          "type": 1
+        },
+        {
+          "num": 0,
+          "shipType": 27,
+          "type": 1
+        },
+        {
+          "num": 0,
+          "shipType": 29,
+          "type": 1
+        }
+      ],
+      "effect_desc": "不能携带导弹战列舰，大型导弹巡洋舰",
+      "id": 30027,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000不能携带战列，轻巡，潜艇",
+      "desc2": "^CFFFFFFFF00000000不能携带战列舰，轻型巡洋舰，潜水艇",
+      "effect": [
+        {
+          "num": 0,
+          "shipType": 4,
+          "type": 1
+        },
+        {
+          "num": 0,
+          "shipType": 10,
+          "type": 1
+        },
+        {
+          "num": 0,
+          "shipType": 14,
+          "type": 1
+        }
+      ],
+      "effect_desc": "不能携带战列舰，轻型巡洋舰，潜水艇",
+      "id": 30028,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000不能携带航母，轻母",
+      "desc2": "^CFFFFFFFF00000000不能携带航空母舰，轻型航空母舰",
+      "effect": [
+        {
+          "num": 0,
+          "shipType": 1,
+          "type": 1
+        },
+        {
+          "num": 0,
+          "shipType": 2,
+          "type": 1
+        }
+      ],
+      "effect_desc": "不能携带航空母舰，轻型航空母舰",
+      "id": 30029,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000不能携带战巡，重巡",
+      "desc2": "^CFFFFFFFF00000000不能携带战巡，重巡",
+      "effect": [
+        {
+          "num": 0,
+          "shipType": 6,
+          "type": 1
+        },
+        {
+          "num": 0,
+          "shipType": 7,
+          "type": 1
+        }
+      ],
+      "effect_desc": "不能携带战巡，重巡",
+      "id": 30030,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000总舰船数^C00FFEAFFFFFFFF00<=5",
+      "desc2": "^CFFFFFFFF00000000总舰船数<=5",
+      "effect": [
+        {
+          "num": 5,
+          "num4": 1,
+          "num5": 0,
+          "type": 5
+        }
+      ],
+      "effect_desc": "总舰船数<=5",
+      "id": 30031,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000不能携带航母，轻母，装母",
+      "desc2": "^CFFFFFFFF00000000不能携带航母，轻母，装母",
+      "effect": [
+        {
+          "num": 0,
+          "shipType": 1,
+          "type": 1
+        },
+        {
+          "num": 0,
+          "shipType": 2,
+          "type": 1
+        },
+        {
+          "num": 0,
+          "shipType": 3,
+          "type": 1
+        }
+      ],
+      "effect_desc": "不能携带航母，轻母，装母",
+      "id": 30032,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000不能携带导战，导驱，潜艇",
+      "desc2": "^CFFFFFFFF00000000不能携带导战，导驱，潜艇",
+      "effect": [
+        {
+          "num": 0,
+          "shipType": 27,
+          "type": 1
+        },
+        {
+          "num": 0,
+          "shipType": 23,
+          "type": 1
+        },
+        {
+          "num": 0,
+          "shipType": 14,
+          "type": 1
+        }
+      ],
+      "effect_desc": "不能携带导战，导驱，潜艇",
+      "id": 30033,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000总舰船数^C00FFEAFFFFFFFF00<=4",
+      "desc2": "^CFFFFFFFF00000000总舰船数<=4",
+      "effect": [
+        {
+          "num": 4,
+          "num4": 1,
+          "num5": 0,
+          "type": 5
+        }
+      ],
+      "effect_desc": "总舰船数<=4",
+      "id": 30034,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方全体舰船cost^C00FFEAFFFFFFFF00+3",
+      "desc2": "^CFFFFFFFF00000000我方全体舰船cost增加3点",
+      "effect": [
+        {
+          "num": 3,
+          "num4": 18,
+          "shipTon": [
+            1,
+            2,
+            3
+          ],
+          "type": 9
+        }
+      ],
+      "effect_desc": "我方全体舰船cost增加3点",
+      "id": 30035,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方重巡，轻巡，轻母cost^C00FFEAFFFFFFFF00-1",
+      "desc2": "^CFFFFFFFF00000000我方重巡，轻巡，轻母cost减少1",
+      "effect": [
+        {
+          "num": 1,
+          "num4": 18,
+          "shipType": [
+            2,
+            7,
+            10
+          ],
+          "type": 10
+        }
+      ],
+      "effect_desc": "我方重巡，轻巡，轻母cost减少1",
+      "id": 30036,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方仅能使用大型船",
+      "desc2": "^CFFFFFFFF00000000我方仅能使用大型船，且航母、导战cost+1，航战、战巡cost-1",
+      "effect": [
+        {
+          "num": 0,
+          "shipTon": 1,
+          "type": 1
+        },
+        {
+          "num": 0,
+          "shipTon": 2,
+          "type": 1
+        }
+      ],
+      "effect_desc": "我方仅能使用大型船",
+      "id": 30037,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方仅能使用中小型船，且潜艇、导驱cost^C00FFEAFFFFFFFF00+1",
+      "desc2": "^CFFFFFFFF00000000我方仅能使用中小型船，且潜艇、导驱cost+1",
+      "effect": [
+        {
+          "num": 0,
+          "shipTon": 3,
+          "type": 1
+        },
+        {
+          "num": 1,
+          "num4": 18,
+          "shipType": [
+            14,
+            23
+          ],
+          "type": 9
+        }
+      ],
+      "effect_desc": "我方仅能使用中小型船，且潜艇、导驱cost+1",
+      "id": 30038,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方大型船^C00FFEAFFFFFFFF00>=1^CFFFFFFFF00000000，中型船^C00FFEAFFFFFFFF00>=1^CFFFFFFFF00000000，小型船^C00FFEAFFFFFFFF00>=1",
+      "desc2": "^CFFFFFFFF00000000我方大型船>=1，中型船>=1，小型船>=1",
+      "effect": [
+        {
+          "num": 0,
+          "shipTon": 1,
+          "type": 2
+        },
+        {
+          "num": 0,
+          "shipTon": 2,
+          "type": 2
+        },
+        {
+          "num": 0,
+          "shipTon": 3,
+          "type": 2
+        }
+      ],
+      "effect_desc": "我方大型船>=1，中型船>=1，小型船>=1",
+      "id": 30039,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方大型船^C00FFEAFFFFFFFF00<=3^CFFFFFFFF00000000，中型船^C00FFEAFFFFFFFF00<=3^CFFFFFFFF00000000，小型船^C00FFEAFFFFFFFF00<=3",
+      "desc2": "^CFFFFFFFF00000000我方大型船<=3，中型船<=3，小型船<=3",
+      "effect": [
+        {
+          "num": 3,
+          "shipTon": 1,
+          "type": 1
+        },
+        {
+          "num": 3,
+          "shipTon": 2,
+          "type": 1
+        },
+        {
+          "num": 3,
+          "shipTon": 3,
+          "type": 1
+        }
+      ],
+      "effect_desc": "我方大型船<=3，中型船<=3，小型船<=3",
+      "id": 30040,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000大型船为旗舰，装母、轻母cost^C00FFEAFFFFFFFF00+1",
+      "desc2": "^CFFFFFFFF00000000大型船为旗舰，装母、轻母cost+1",
+      "effect": [
+        {
+          "shipTon": 3,
+          "type": 15
+        },
+        {
+          "num": 1,
+          "num4": 18,
+          "shipType": [
+            2,
+            3
+          ],
+          "type": 9
+        }
+      ],
+      "effect_desc": "大型船为旗舰，装母、轻母cost+1",
+      "id": 30041,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方战列舰^C00FFEAFFFFFFFF00>=1^CFFFFFFFF00000000,航母、装母、导战cost^C00FFEAFFFFFFFF00+1",
+      "desc2": "^CFFFFFFFF00000000我方战列舰>=1,航母、装母、导战cost+1",
+      "effect": [
+        {
+          "num": 0,
+          "shipType": 4,
+          "type": 2
+        },
+        {
+          "num": 1,
+          "num4": 18,
+          "shipType": [
+            1,
+            3,
+            27
+          ],
+          "type": 9
+        }
+      ],
+      "effect_desc": "我方战列舰>=1,航母、装母、导战cost+1",
+      "id": 30042,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000不携带小型船",
+      "desc2": "^CFFFFFFFF00000000不携带小型船",
+      "effect": [
+        {
+          "num": 0,
+          "shipTon": 1,
+          "type": 1
+        }
+      ],
+      "effect_desc": "不携带小型船",
+      "id": 30043,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000U国与J国所有舰船cost^C00FFEAFFFFFFFF00+1",
+      "desc2": "^CFFFFFFFF00000000U\\J国舰船cost+1",
+      "effect": [
+        {
+          "country": [
+            4,
+            1
+          ],
+          "num": 1,
+          "num4": 18,
+          "type": 19
+        }
+      ],
+      "effect_desc": "U\\J国舰船cost+1",
+      "id": 30044,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方全体暴击率^C00FFEAFFFFFFFF00+10%^CFFFFFFFF00000000，火力^C00FFEAFFFFFFFF00-10^CFFFFFFFF00000000，回避^C00FFEAFFFFFFFF00-10^CFFFFFFFF00000000，装甲^C00FFEAFFFFFFFF00-10",
+      "desc2": "^C454545FF00000000我方^C2997FFFFFFFFFF00全体暴击率+10%，装甲-10，火力-10，回避-10^C454545FF00000000",
+      "effect": [
+        {
+          "num": 10,
+          "num4": 16,
+          "type": 7
+        },
+        {
+          "num": 10,
+          "num4": 5,
+          "type": 8
+        },
+        {
+          "num": 10,
+          "num4": 3,
+          "type": 8
+        },
+        {
+          "num": 10,
+          "num4": 2,
+          "type": 8
+        }
+      ],
+      "effect_desc": "我方全体暴击率+10%，装甲-10，火力-10，回避-10",
+      "id": 30045,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000U国与E国所有舰船cost^C00FFEAFFFFFFFF00+1",
+      "desc2": "^CFFFFFFFF00000000U\\E国舰船cost+1",
+      "effect": [
+        {
+          "country": [
+            4,
+            3
+          ],
+          "num": 1,
+          "num4": 18,
+          "type": 19
+        }
+      ],
+      "effect_desc": "U\\E国舰船cost+1",
+      "id": 30046,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方大型船cost^C00FFEAFFFFFFFF00+1^CFFFFFFFF00000000，中型船cost^C00FFEAFFFFFFFF00-1",
+      "desc2": "^CFFFFFFFF00000000我方大型船cost+1，中型船cost-1",
+      "effect": [
+        {
+          "num": 1,
+          "num4": 18,
+          "shipTon": [
+            3
+          ],
+          "type": 9
+        },
+        {
+          "num": 1,
+          "num4": 18,
+          "shipTon": [
+            2
+          ],
+          "type": 10
+        }
+      ],
+      "effect_desc": "我方大型船cost+1，中型船cost-1",
+      "id": 30047,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方中型船^C00FFEAFFFFFFFF00>=1^CFFFFFFFF00000000、小型船^C00FFEAFFFFFFFF00<=2^CFFFFFFFF00000000、大型船^C00FFEAFFFFFFFF00<=3",
+      "desc2": "^CFFFFFFFF00000000我方中型船>=1、小型船<=2、大型船<=3",
+      "effect": [
+        {
+          "num": 0,
+          "shipTon": 2,
+          "type": 2
+        },
+        {
+          "num": 2,
+          "shipTon": 1,
+          "type": 1
+        },
+        {
+          "num": 3,
+          "shipTon": 3,
+          "type": 1
+        }
+      ],
+      "effect_desc": "我方中型船>=1、小型船<=2、大型船<=3",
+      "id": 30048,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方潜水艇cost^C00FFEAFFFFFFFF00+1",
+      "desc2": "^CFFFFFFFF00000000我方潜水艇cost+1",
+      "effect": [
+        {
+          "num": 1,
+          "num4": 18,
+          "shipType": [
+            14
+          ],
+          "type": 9
+        }
+      ],
+      "effect_desc": "我方潜水艇cost+1",
+      "id": 30049,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方大型船cost^C00FFEAFFFFFFFF00+1",
+      "desc2": "^CFFFFFFFF00000000我方大型船cost+1",
+      "effect": [
+        {
+          "num": 1,
+          "num4": 18,
+          "shipTon": [
+            3
+          ],
+          "type": 9
+        }
+      ],
+      "effect_desc": "我方大型船cost+1",
+      "id": 30050,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方大型船cost^C00FFEAFFFFFFFF00-1",
+      "desc2": "^CFFFFFFFF00000000我方大型船cost-1",
+      "effect": [
+        {
+          "num": 1,
+          "num4": 18,
+          "shipTon": [
+            3
+          ],
+          "type": 10
+        }
+      ],
+      "effect_desc": "我方大型船cost-1",
+      "id": 30051,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方中型船cost^C00FFEAFFFFFFFF00+1",
+      "desc2": "^CFFFFFFFF00000000我方中型船cost+1",
+      "effect": [
+        {
+          "num": 1,
+          "num4": 18,
+          "shipTon": [
+            2
+          ],
+          "type": 9
+        }
+      ],
+      "effect_desc": "我方中型船cost+1",
+      "id": 30052,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方中型船cost^C00FFEAFFFFFFFF00-1",
+      "desc2": "^CFFFFFFFF00000000我方中型船cost-1",
+      "effect": [
+        {
+          "num": 1,
+          "num4": 18,
+          "shipTon": [
+            2
+          ],
+          "type": 10
+        }
+      ],
+      "effect_desc": "我方中型船cost-1",
+      "id": 30053,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方小型船cost^C00FFEAFFFFFFFF00+1",
+      "desc2": "^CFFFFFFFF00000000我方小型船cost+1",
+      "effect": [
+        {
+          "num": 1,
+          "num4": 18,
+          "shipTon": [
+            1
+          ],
+          "type": 9
+        }
+      ],
+      "effect_desc": "我方小型船cost+1",
+      "id": 30054,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方小型船cost^C00FFEAFFFFFFFF00-1",
+      "desc2": "^CFFFFFFFF00000000我方小型船cost-1",
+      "effect": [
+        {
+          "num": 1,
+          "num4": 18,
+          "shipTon": [
+            1
+          ],
+          "type": 10
+        }
+      ],
+      "effect_desc": "我方小型船cost-1",
+      "id": 30055,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方中型船^C00FFEAFFFFFFFF00>=1^CFFFFFFFF00000000,小型船^C00FFEAFFFFFFFF00<=1",
+      "desc2": "^CFFFFFFFF00000000我方中型船>=1,小型船<=1",
+      "effect": [
+        {
+          "num": 0,
+          "shipTon": 2,
+          "type": 2
+        },
+        {
+          "num": 1,
+          "shipTon": 1,
+          "type": 1
+        }
+      ],
+      "effect_desc": "我方中型船>=1,小型船<=1",
+      "id": 30056,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000不携带潜艇",
+      "desc2": "^CFFFFFFFF00000000不携带潜艇",
+      "effect": [
+        {
+          "num": 0,
+          "shipType": 14,
+          "type": 1
+        }
+      ],
+      "effect_desc": "不携带潜艇",
+      "id": 30057,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方小型船^C00FFEAFFFFFFFF00=2",
+      "desc2": "^CFFFFFFFF00000000我方小型船=2",
+      "effect": [
+        {
+          "num": 2,
+          "shipTon": 1,
+          "type": 1
+        },
+        {
+          "num": 1,
+          "shipTon": 1,
+          "type": 2
+        }
+      ],
+      "effect_desc": "我方小型船=2",
+      "id": 30058,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方中型船^C00FFEAFFFFFFFF00=2",
+      "desc2": "^CFFFFFFFF00000000我方中型船=2",
+      "effect": [
+        {
+          "num": 2,
+          "shipTon": 2,
+          "type": 1
+        },
+        {
+          "num": 1,
+          "shipTon": 2,
+          "type": 2
+        }
+      ],
+      "effect_desc": "我方中型船=2",
+      "id": 30059,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方大型船^C00FFEAFFFFFFFF00=2",
+      "desc2": "^CFFFFFFFF00000000我方大型船=2",
+      "effect": [
+        {
+          "num": 2,
+          "shipTon": 3,
+          "type": 1
+        },
+        {
+          "num": 1,
+          "shipTon": 3,
+          "type": 2
+        }
+      ],
+      "effect_desc": "我方大型船=2",
+      "id": 30060,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000驱逐为旗舰",
+      "desc2": "^CFFFFFFFF00000000驱逐为旗舰",
+      "effect": [
+        {
+          "shipType": 12,
+          "type": 15
+        }
+      ],
+      "effect_desc": "驱逐为旗舰",
+      "id": 30061,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000战列不为旗舰，不能携带驱逐",
+      "desc2": "^CFFFFFFFF00000000战列不为旗舰，不能携带驱逐",
+      "effect": [
+        {
+          "shipType": 4,
+          "type": 16
+        },
+        {
+          "num": 0,
+          "shipType": 12,
+          "type": 1
+        }
+      ],
+      "effect_desc": "战列不为旗舰，不能携带驱逐",
+      "id": 30062,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000不能携带战列",
+      "desc2": "^CFFFFFFFF00000000不能携带战列",
+      "effect": [
+        {
+          "num": 0,
+          "shipType": 4,
+          "type": 1
+        }
+      ],
+      "effect_desc": "不能携带战列",
+      "id": 30063,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000战列巡洋舰^C00FFEAFFFFFFFF00<=1^CFFFFFFFF00000000，且不携带轻巡洋舰",
+      "desc2": "^CFFFFFFFF00000000战列巡洋舰<=1，且不携带轻巡洋舰",
+      "effect": [
+        {
+          "num": 0,
+          "shipType": 10,
+          "type": 1
+        },
+        {
+          "num": 1,
+          "shipType": 6,
+          "type": 1
+        }
+      ],
+      "effect_desc": "战列巡洋舰<=1，且不携带轻巡洋舰。",
+      "id": 30064,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000潜艇不为旗舰",
+      "desc2": "^CFFFFFFFF00000000潜艇不为旗舰",
+      "effect": [
+        {
+          "shipType": 14,
+          "type": 16
+        }
+      ],
+      "effect_desc": "潜艇不为旗舰",
+      "id": 30065,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方舰船数^C00FFEAFFFFFFFF00<=4",
+      "desc2": "^CFFFFFFFF00000000我方舰船数<=4",
+      "effect": [
+        {
+          "num": 4,
+          "num4": 1,
+          "num5": 1,
+          "type": 5
+        }
+      ],
+      "effect_desc": "我方舰船数<=4",
+      "id": 30066,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方全体暴击率^C00FFEAFFFFFFFF00+10%",
+      "desc2": "^C454545FF00000000我方^C2997FFFFFFFFFF00全体暴击率+10%^C454545FF00000000",
+      "effect": [
+        {
+          "num": 10,
+          "num4": 16,
+          "type": 7
+        }
+      ],
+      "effect_desc": "我方全体暴击率+10%",
+      "id": 30067,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000J\\G\\I国舰船cost^C00FFEAFFFFFFFF00+1",
+      "desc2": "^CFFFFFFFF00000000J\\G\\I国舰船cost+1",
+      "effect": [
+        {
+          "country": [
+            1,
+            2,
+            5
+          ],
+          "num": 1,
+          "num4": 18,
+          "type": 19
+        }
+      ],
+      "effect_desc": "J\\G\\I国舰船cost+1",
+      "id": 30068,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000E\\F\\U国舰船cost^C00FFEAFFFFFFFF00-1",
+      "desc2": "^CFFFFFFFF00000000E\\F\\U国舰船cost-1",
+      "effect": [
+        {
+          "country": [
+            3,
+            4,
+            6
+          ],
+          "num": 1,
+          "num4": 18,
+          "type": 20
+        }
+      ],
+      "effect_desc": "E\\F\\U国舰船cost-1",
+      "id": 30069,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000航母不为旗舰",
+      "desc2": "^CFFFFFFFF00000000航母不为旗舰",
+      "effect": [
+        {
+          "shipType": 1,
+          "type": 16
+        }
+      ],
+      "effect_desc": "航母不为旗舰",
+      "id": 30070,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方大型船^C00FFEAFFFFFFFF00<=2",
+      "desc2": "^CFFFFFFFF00000000我方大型船<=2",
+      "effect": [
+        {
+          "num": 2,
+          "shipTon": 3,
+          "type": 1
+        }
+      ],
+      "effect_desc": "我方大型船<=2",
+      "id": 30071,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000大型船不为旗舰",
+      "desc2": "^CFFFFFFFF00000000大型船不为旗舰",
+      "effect": [
+        {
+          "shipTon": 3,
+          "type": 16
+        }
+      ],
+      "effect_desc": "大型船不为旗舰",
+      "id": 30072,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方战巡cost^C00FFEAFFFFFFFF00-1",
+      "desc2": "^CFFFFFFFF00000000我方战巡cost-1",
+      "effect": [
+        {
+          "num": 1,
+          "num4": 18,
+          "shipType": 6,
+          "type": 10
+        }
+      ],
+      "effect_desc": "我方战巡cost-1",
+      "id": 30073,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000总舰船数大于^C00FFEAFFFFFFFF002^CFFFFFFFF00000000且小于等于^C00FFEAFFFFFFFF004",
+      "desc2": "^C454545FF00000000总舰^C2997FFFFFFFFFF00船数大于2且小于等于4^C454545FF00000000",
+      "effect": [
+        {
+          "num": 4,
+          "num4": 1,
+          "num5": 1,
+          "type": 5
+        },
+        {
+          "num": 2,
+          "num4": 1,
+          "num5": 1,
+          "type": 6
+        },
+        {
+          "num": 1,
+          "shipTon": 2,
+          "shipType": 0,
+          "type": 1
+        },
+        {
+          "num": 1,
+          "shipTon": 3,
+          "shipType": 0,
+          "type": 1
+        }
+      ],
+      "effect_desc": "总舰船数大于2且小于等于4",
+      "id": 30074,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方小型船闪避^C00FFEAFFFFFFFF00+10^CFFFFFFFF00000000，中型船暴击率^C00FFEAFFFFFFFF00+10%^CFFFFFFFF00000000，大型船火力^C00FFEAFFFFFFFF00+10",
+      "desc2": "^C454545FF00000000我方^C2997FFFFFFFFFF00小型船闪避+10，中型船暴击率+10%，大型船火力+10^C454545FF00000000",
+      "effect": [
+        {
+          "num": 10,
+          "num4": 16,
+          "shipTon": [
+            2
+          ],
+          "type": 9
+        },
+        {
+          "num": 10,
+          "num4": 5,
+          "shipTon": [
+            1
+          ],
+          "type": 9
+        },
+        {
+          "num": 10,
+          "num4": 2,
+          "shipTon": [
+            3
+          ],
+          "type": 9
+        }
+      ],
+      "effect_desc": "我方小型船闪避+10，中型船暴击率+10%，大型船火力+10",
+      "id": 30075,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方舰船数^C00FFEAFFFFFFFF00=5",
+      "desc2": "^CFFFFFFFF00000000我方舰船数=5",
+      "effect": [
+        {
+          "num": 5,
+          "num4": 1,
+          "num5": 1,
+          "type": 5
+        },
+        {
+          "num": 4,
+          "num4": 1,
+          "num5": 1,
+          "type": 6
+        }
+      ],
+      "effect_desc": "我方舰船数=5",
+      "id": 30076,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方舰船数^C00FFEAFFFFFFFF00=4",
+      "desc2": "^CFFFFFFFF00000000我方舰船数=4",
+      "effect": [
+        {
+          "num": 4,
+          "num4": 1,
+          "num5": 1,
+          "type": 5
+        },
+        {
+          "num": 3,
+          "num4": 1,
+          "num5": 1,
+          "type": 6
+        }
+      ],
+      "effect_desc": "我方舰船数=4",
+      "id": 30077,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方总舰船数^C00FFEAFFFFFFFF00>3",
+      "desc2": "^C454545FF00000000我方^C2997FFFFFFFFFF00总舰船数>3^C454545FF00000000",
+      "effect": [
+        {
+          "num": 3,
+          "num4": 1,
+          "num5": 1,
+          "type": 6
+        }
+      ],
+      "effect_desc": "我方总舰船数>3",
+      "id": 30078,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000E\\G国舰船cost^C00FFEAFFFFFFFF00-1",
+      "desc2": "^CFFFFFFFF00000000E\\G国舰船cost-1",
+      "effect": [
+        {
+          "country": [
+            2,
+            3
+          ],
+          "num": 1,
+          "num4": 18,
+          "type": 20
+        }
+      ],
+      "effect_desc": "E\\G国舰船cost-1",
+      "id": 30079,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000E\\F\\U国舰船cost^C00FFEAFFFFFFFF00+1",
+      "desc2": "^CFFFFFFFF00000000E\\F\\U国舰船cost+1",
+      "effect": [
+        {
+          "country": [
+            4,
+            6,
+            3
+          ],
+          "num": 1,
+          "num4": 18,
+          "type": 19
+        }
+      ],
+      "effect_desc": "E\\F\\U国舰船cost+1",
+      "id": 30080,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000航母、导战cost^C00FFEAFFFFFFFF00+1",
+      "desc2": "^CFFFFFFFF00000000E\\F\\U国舰船cost+2",
+      "effect": [
+        {
+          "num": 1,
+          "num4": 18,
+          "shipType": [
+            1,
+            27
+          ],
+          "type": 9
+        }
+      ],
+      "effect_desc": "航母、导战cost+1",
+      "id": 30081,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方小型船^C00FFEAFFFFFFFF00<=4^CFFFFFFFF00000000且小型船暴击率提升^C00FFEAFFFFFFFF0010%",
+      "desc2": "^CFFFFFFFF00000000我方小型船<=4，中型船<=4，大型船<=4",
+      "effect": [
+        {
+          "num": 4,
+          "shipTon": 1,
+          "type": 1
+        },
+        {
+          "num": 10,
+          "num4": 16,
+          "shipTon": [
+            1
+          ],
+          "type": 9
+        }
+      ],
+      "effect_desc": "我方小型船<=4，暴击率提升10%",
+      "id": 30082,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方中型船<=4^CFFFFFFFF00000000且中型船火力^C00FFEAFFFFFFFF00+10",
+      "desc2": "^CFFFFFFFF00000000我方小型船<=4，中型船<=4，大型船<=4",
+      "effect": [
+        {
+          "num": 4,
+          "shipTon": 2,
+          "type": 1
+        },
+        {
+          "num": 10,
+          "num4": 2,
+          "shipTon": [
+            2
+          ],
+          "type": 9
+        }
+      ],
+      "effect_desc": "我方中型船<=4，火力提升10",
+      "id": 30083,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方大型船^C00FFEAFFFFFFFF00<=4^CFFFFFFFF00000000^CFFFFFFFF00000000且大型船装甲^C00FFEAFFFFFFFF00+15",
+      "desc2": "^CFFFFFFFF00000000我方小型船<=4，中型船<=4，大型船<=4",
+      "effect": [
+        {
+          "num": 4,
+          "shipTon": 3,
+          "type": 1
+        },
+        {
+          "num": 15,
+          "num4": 3,
+          "shipTon": [
+            3
+          ],
+          "type": 9
+        }
+      ],
+      "effect_desc": "我方大型船<=4，装甲提升15",
+      "id": 30084,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方航母^C00FFEAFFFFFFFF00<=3",
+      "desc2": "^CFFFFFFFF00000000我方小型船<=4，中型船<=4，大型船<=4",
+      "effect": [
+        {
+          "num": 3,
+          "shipType": 1,
+          "type": 1
+        }
+      ],
+      "effect_desc": "航空母舰<=3",
+      "id": 30085,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方战列^C00FFEAFFFFFFFF00<=3",
+      "desc2": "^CFFFFFFFF00000000我方小型船<=4，中型船<=4，大型船<=4",
+      "effect": [
+        {
+          "num": 3,
+          "shipType": 4,
+          "type": 1
+        }
+      ],
+      "effect_desc": "战列<=3",
+      "id": 30086,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方战巡^C00FFEAFFFFFFFF00<=3",
+      "desc2": "^CFFFFFFFF00000000我方小型船<=4，中型船<=4，大型船<=4",
+      "effect": [
+        {
+          "num": 3,
+          "shipType": 6,
+          "type": 1
+        }
+      ],
+      "effect_desc": "战巡<=3",
+      "id": 30087,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方总舰船数^C00FFEAFFFFFFFF00>=5",
+      "desc2": "^CFFFFFFFF00000000我方小型船<=4，中型船<=4，大型船<=4",
+      "effect": [
+        {
+          "num": 4,
+          "num4": 1,
+          "num5": 1,
+          "type": 6
+        }
+      ],
+      "effect_desc": "总舰船数>=5",
+      "id": 30088,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方航母^C00FFEAFFFFFFFF00>=2",
+      "desc2": "^CFFFFFFFF00000000我方小型船<=4，中型船<=4，大型船<=4",
+      "effect": [
+        {
+          "num": 1,
+          "shipType": 1,
+          "type": 2
+        }
+      ],
+      "effect_desc": "航空母舰>=2",
+      "id": 30089,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方全体装甲^C00FFEAFFFFFFFF00+20",
+      "desc2": "^C454545FF00000000我方^C2997FFFFFFFFFF00全体装甲+20^C454545FF00000000",
+      "effect": [
+        {
+          "num": 20,
+          "num4": 3,
+          "type": 7
+        }
+      ],
+      "effect_desc": "我方全体装甲+20",
+      "id": 30090,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方总舰船数^C00FFEAFFFFFFFF00>=3",
+      "desc2": "^CFFFFFFFF00000000我方小型船<=4，中型船<=4，大型船<=4",
+      "effect": [
+        {
+          "num": 2,
+          "num4": 1,
+          "num5": 1,
+          "type": 6
+        }
+      ],
+      "effect_desc": "总舰船数>=3",
+      "id": 30091,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方大型船暴击率^C00FFEAFFFFFFFF00+20%^CFFFFFFFF00000000，火力^C00FFEAFFFFFFFF00-20",
+      "desc2": "^CFFFFFFFF00000000我方小型船<=4，中型船<=4，大型船<=4",
+      "effect": [
+        {
+          "num": 20,
+          "num4": 16,
+          "shipTon": [
+            3
+          ],
+          "type": 9
+        },
+        {
+          "num": 20,
+          "num4": 2,
+          "shipTon": [
+            3
+          ],
+          "type": 10
+        }
+      ],
+      "effect_desc": "我方大型船暴击率+20%，火力-20",
+      "id": 30092,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方中型船装甲^C00FFEAFFFFFFFF00+20^CFFFFFFFF00000000，闪避^C00FFEAFFFFFFFF00-20",
+      "desc2": "^CFFFFFFFF00000000我方小型船<=4，中型船<=4，大型船<=4",
+      "effect": [
+        {
+          "num": 20,
+          "num4": 3,
+          "shipTon": [
+            2
+          ],
+          "type": 9
+        },
+        {
+          "num": 20,
+          "num4": 5,
+          "shipTon": [
+            2
+          ],
+          "type": 10
+        }
+      ],
+      "effect_desc": "我方中型船装甲+20，闪避-20",
+      "id": 30093,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方小型船鱼雷^C00FFEAFFFFFFFF00+20^CFFFFFFFF00000000，暴击率^C00FFEAFFFFFFFF00-20%",
+      "desc2": "^CFFFFFFFF00000000我方小型船<=4，中型船<=4，大型船<=4",
+      "effect": [
+        {
+          "num": 20,
+          "num4": 4,
+          "shipTon": [
+            1
+          ],
+          "type": 9
+        },
+        {
+          "num": 20,
+          "num4": 16,
+          "shipTon": [
+            1
+          ],
+          "type": 10
+        }
+      ],
+      "effect_desc": "我方小型船鱼雷+20，暴击率-20%。",
+      "id": 30094,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方全体火力^C00FFEAFFFFFFFF00+30",
+      "desc2": "^C454545FF00000000我方^C2997FFFFFFFFFF00全体火力+30^C454545FF00000000",
+      "effect": [
+        {
+          "num": 30,
+          "num4": 2,
+          "type": 7
+        }
+      ],
+      "effect_desc": "我方全体火力+30",
+      "id": 30095,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方全体暴击率^C00FFEAFFFFFFFF00-20%",
+      "desc2": "^C454545FF00000000我方^C2997FFFFFFFFFF00全体暴击率-20%^C454545FF00000000",
+      "effect": [
+        {
+          "num": 20,
+          "num4": 16,
+          "type": 8
+        }
+      ],
+      "effect_desc": "我方全体暴击率-20%",
+      "id": 30096,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方全体装甲^C00FFEAFFFFFFFF00-20",
+      "desc2": "^C454545FF00000000我方^C2997FFFFFFFFFF00全体装甲-20^C454545FF00000000",
+      "effect": [
+        {
+          "num": 20,
+          "num4": 3,
+          "type": 8
+        }
+      ],
+      "effect_desc": "我方全体装甲-20",
+      "id": 30097,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方航母^C00FFEAFFFFFFFF00<=2",
+      "desc2": "^CFFFFFFFF00000000我方小型船<=4，中型船<=4，大型船<=4",
+      "effect": [
+        {
+          "num": 2,
+          "shipType": 1,
+          "type": 1
+        }
+      ],
+      "effect_desc": "航空母舰<=2",
+      "id": 30098,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方战列^C00FFEAFFFFFFFF00<=2",
+      "desc2": "^CFFFFFFFF00000000我方小型船<=4，中型船<=4，大型船<=4",
+      "effect": [
+        {
+          "num": 2,
+          "shipType": 4,
+          "type": 1
+        }
+      ],
+      "effect_desc": "战列<=2",
+      "id": 30099,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方战巡^C00FFEAFFFFFFFF00<=2",
+      "desc2": "^CFFFFFFFF00000000我方小型船<=4，中型船<=4，大型船<=4",
+      "effect": [
+        {
+          "num": 2,
+          "shipType": 6,
+          "type": 1
+        }
+      ],
+      "effect_desc": "战巡<=2",
+      "id": 30100,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方舰船数^C00FFEAFFFFFFFF00=6",
+      "desc2": "^CFFFFFFFF00000000我方舰船数=5",
+      "effect": [
+        {
+          "num": 6,
+          "num4": 1,
+          "num5": 1,
+          "type": 5
+        },
+        {
+          "num": 5,
+          "num4": 1,
+          "num5": 1,
+          "type": 6
+        }
+      ],
+      "effect_desc": "我方舰船数=6",
+      "id": 30101,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方全体火力^C00FFEAFFFFFFFF00+20",
+      "desc2": "^C454545FF00000000我方^C2997FFFFFFFFFF00全体火力+20^C454545FF00000000",
+      "effect": [
+        {
+          "num": 20,
+          "num4": 2,
+          "type": 7
+        }
+      ],
+      "effect_desc": "我方全体火力+20",
+      "id": 30102,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方大型船火力^C00FFEAFFFFFFFF00-40",
+      "desc2": "^CFFFFFFFF00000000我方小型船<=4，中型船<=4，大型船<=4",
+      "effect": [
+        {
+          "num": 40,
+          "num4": 3,
+          "shipTon": [
+            3
+          ],
+          "type": 9
+        },
+        {
+          "num": 40,
+          "num4": 2,
+          "shipTon": [
+            3
+          ],
+          "type": 10
+        }
+      ],
+      "effect_desc": "我方大型船火力-40",
+      "id": 30103,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000不携带轻巡",
+      "desc2": "^CFFFFFFFF00000000不携带潜艇",
+      "effect": [
+        {
+          "num": 0,
+          "shipType": 12,
+          "type": 1
+        }
+      ],
+      "effect_desc": "不携带轻巡",
+      "id": 30104,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方全体装甲^C00FFEAFFFFFFFF00+20",
+      "desc2": "^C454545FF00000000我方^C2997FFFFFFFFFF00全体装甲+20^C454545FF00000000",
+      "effect": [
+        {
+          "num": 20,
+          "num4": 3,
+          "type": 7
+        }
+      ],
+      "effect_desc": "我方全体装甲+20",
+      "id": 30105,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方全体回避^C00FFEAFFFFFFFF00-20",
+      "desc2": "^C454545FF00000000我方^C2997FFFFFFFFFF00全体回避-20^C454545FF00000000",
+      "effect": [
+        {
+          "num": 20,
+          "num4": 5,
+          "type": 8
+        }
+      ],
+      "effect_desc": "我方全体回避-20",
+      "id": 30106,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000我方全体对空^C00FFEAFFFFFFFF00-20",
+      "desc2": "^C454545FF00000000我方^C2997FFFFFFFFFF00全体对空-20^C454545FF00000000",
+      "effect": [
+        {
+          "num": 20,
+          "num4": 6,
+          "type": 8
+        }
+      ],
+      "effect_desc": "我方全体对空-20",
+      "id": 30107,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000不能携带轻巡、战巡",
+      "desc2": "^CFFFFFFFF00000000不能携带轻巡、战巡",
+      "effect": [
+        {
+          "num": 0,
+          "shipType": 10,
+          "type": 1
+        },
+        {
+          "num": 0,
+          "shipType": 6,
+          "type": 1
+        }
+      ],
+      "effect_desc": "不能携带轻巡、战巡",
+      "id": 30108,
+      "side": 0,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方全体命中^C00FFEAFFFFFFFF00+10^CFFFFFFFF00000000、火力^C00FFEAFFFFFFFF00+10",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00全体命中+10、火力+10^C454545FF00000000",
+      "effect": [
+        {
+          "num": 10,
+          "num4": 2,
+          "shipTons": [
+            1,
+            2,
+            3
+          ],
+          "type": 101
+        },
+        {
+          "num": 10,
+          "num4": 17,
+          "shipTons": [
+            1,
+            2,
+            3
+          ],
+          "type": 101
+        }
+      ],
+      "effect_desc": "敌方全体命中+10、火力+10",
+      "id": 40023,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方全体装甲^C00FFEAFFFFFFFF00+10",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00全体装甲+10^C454545FF00000000",
+      "effect": [
+        {
+          "num": 10,
+          "num4": 3,
+          "shipTons": [
+            1,
+            2,
+            3
+          ],
+          "type": 101
+        }
+      ],
+      "effect_desc": "敌方全体装甲+10",
+      "id": 40024,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方全体回避^C00FFEAFFFFFFFF00+10",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00全体回避+10^C454545FF00000000",
+      "effect": [
+        {
+          "num": 10,
+          "num4": 5,
+          "shipTons": [
+            1,
+            2,
+            3
+          ],
+          "type": 101
+        }
+      ],
+      "effect_desc": "敌方全体回避+10",
+      "id": 40025,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方小型船攻击必定命中",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00小型船攻击必定命中^C454545FF00000000",
+      "effect": [
+        {
+          "shipTons": [
+            1
+          ],
+          "type": 110
+        }
+      ],
+      "effect_desc": "敌方小型船攻击必定命中",
+      "id": 40026,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方全体火力^C00FFEAFFFFFFFF00+30",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00全体火力+30^C454545FF00000000",
+      "effect": [
+        {
+          "num": 30,
+          "num4": 2,
+          "shipTons": [
+            1,
+            2,
+            3
+          ],
+          "type": 101
+        }
+      ],
+      "effect_desc": "敌方全体火力+30",
+      "id": 40027,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方全体装甲^C00FFEAFFFFFFFF00+30",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00全体装甲+30^C454545FF00000000",
+      "effect": [
+        {
+          "num": 30,
+          "num4": 3,
+          "shipTons": [
+            1,
+            2,
+            3
+          ],
+          "type": 101
+        }
+      ],
+      "effect_desc": "敌方全体装甲+30",
+      "id": 40028,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方航母、轻母、装母射程变更为^C00FFEAFFFFFFFF00长",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00航母、轻母、装母射程变更为长^C454545FF00000000",
+      "effect": [
+        {
+          "num": 3,
+          "shipTypes": [
+            1,
+            2,
+            3
+          ],
+          "type": 102
+        }
+      ],
+      "effect_desc": "敌方航母、轻母、装母射程变更为长",
+      "id": 40029,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方中型船攻击必定命中",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00中型船攻击必定命中^C454545FF00000000",
+      "effect": [
+        {
+          "shipTons": [
+            2
+          ],
+          "type": 110
+        }
+      ],
+      "effect_desc": "敌方中型船攻击必定命中",
+      "id": 40030,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方全体暴击率^C00FFEAFFFFFFFF00+15%^CFFFFFFFF00000000、火力^C00FFEAFFFFFFFF00+15",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00全体暴击率+15%、火力+15^C454545FF00000000",
+      "effect": [
+        {
+          "num": 15,
+          "num4": 2,
+          "shipTons": [
+            1,
+            2,
+            3
+          ],
+          "type": 101
+        },
+        {
+          "num": 15,
+          "num4": 16,
+          "shipTons": [
+            1,
+            2,
+            3
+          ],
+          "type": 101
+        }
+      ],
+      "effect_desc": "敌方全体暴击率+15%、火力+15",
+      "id": 40031,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方全体命中^C00FFEAFFFFFFFF00+15^CFFFFFFFF00000000、闪避^C00FFEAFFFFFFFF00+15",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00全体命中+15、闪避+15^C454545FF00000000",
+      "effect": [
+        {
+          "num": 15,
+          "num4": 5,
+          "shipTons": [
+            1,
+            2,
+            3
+          ],
+          "type": 101
+        },
+        {
+          "num": 15,
+          "num4": 17,
+          "shipTons": [
+            1,
+            2,
+            3
+          ],
+          "type": 101
+        }
+      ],
+      "effect_desc": "敌方全体命中+15、闪避+15",
+      "id": 40032,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方在夜战阶段，受到的伤害降低^C00FFEAFFFFFFFF0060%",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00在夜战阶段，受到的伤害降低60%。^C454545FF00000000",
+      "effect": [
+        {
+          "num": 60,
+          "num5": 7,
+          "type": 106
+        }
+      ],
+      "effect_desc": "敌方在夜战阶段，受到的伤害降低60%。",
+      "id": 40033,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方全体暴击率^C00FFEAFFFFFFFF00+10%^CFFFFFFFF00000000、火力^C00FFEAFFFFFFFF00+10",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00全体暴击率+10%、火力+10^C454545FF00000000",
+      "effect": [
+        {
+          "num": 10,
+          "num4": 2,
+          "shipTons": [
+            1,
+            2,
+            3
+          ],
+          "type": 101
+        },
+        {
+          "num": 10,
+          "num4": 16,
+          "shipTons": [
+            1,
+            2,
+            3
+          ],
+          "type": 101
+        }
+      ],
+      "effect_desc": "敌方全体暴击率+10%、火力+10",
+      "id": 40034,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方全体射程变更为^C00FFEAFFFFFFFF00长",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00全体射程变更为长^C454545FF00000000",
+      "effect": [
+        {
+          "num": 3,
+          "shipTons": [
+            1,
+            2,
+            3
+          ],
+          "type": 102
+        }
+      ],
+      "effect_desc": "敌方全体射程变更为长",
+      "id": 40035,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方在炮击战阶段，受到的伤害降低^C00FFEAFFFFFFFF0040%",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00在炮击战阶段，受到的伤害降低40%。^C454545FF00000000",
+      "effect": [
+        {
+          "num": 40,
+          "num5": 5,
+          "type": 106
+        }
+      ],
+      "effect_desc": "敌方在炮击战阶段，受到的伤害降低40%。",
+      "id": 40036,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方全体暴击率^C00FFEAFFFFFFFF00+10%",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00全体暴击率+10%^C454545FF00000000",
+      "effect": [
+        {
+          "num": 10,
+          "num4": 16,
+          "shipTons": [
+            1,
+            2,
+            3
+          ],
+          "type": 101
+        }
+      ],
+      "effect_desc": "敌方全体暴击率+10%",
+      "id": 40037,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方受到驱逐的伤害降低^C00FFEAFFFFFFFF0050%",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00受到驱逐的伤害降低50%^C454545FF00000000",
+      "effect": [
+        {
+          "num": 50,
+          "shipTypes": [
+            12
+          ],
+          "type": 104
+        }
+      ],
+      "effect_desc": "敌方受到驱逐的伤害降低50%",
+      "id": 40038,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方受到潜艇的伤害降低^C00FFEAFFFFFFFF0035%",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00受到潜艇的伤害降低35%^C454545FF00000000",
+      "effect": [
+        {
+          "num": 35,
+          "shipTypes": [
+            14
+          ],
+          "type": 104
+        }
+      ],
+      "effect_desc": "敌方受到潜艇的伤害降低35%",
+      "id": 40039,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方大型船射程为^C00FFEAFFFFFFFF00超长",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00大型船射程变为超长^C454545FF00000000",
+      "effect": [
+        {
+          "num": 4,
+          "shipTons": [
+            3
+          ],
+          "type": 102
+        }
+      ],
+      "effect_desc": "敌方大型船射程变为超长",
+      "id": 40040,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方大型船攻击必定命中",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00大型船攻击必定命中^C454545FF00000000",
+      "effect": [
+        {
+          "shipTons": [
+            3
+          ],
+          "type": 110
+        }
+      ],
+      "effect_desc": "敌方大型船攻击必定命中",
+      "id": 40041,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方全体命中^C00FFEAFFFFFFFF00+10^CFFFFFFFF00000000、火力^C00FFEAFFFFFFFF00+15、^CFFFFFFFF00000000暴击率^C00FFEAFFFFFFFF00+10%",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00全体火力+15，暴击率+10%，命中+10^C454545FF00000000",
+      "effect": [
+        {
+          "num": 15,
+          "num4": 2,
+          "shipTons": [
+            1,
+            2,
+            3
+          ],
+          "type": 101
+        },
+        {
+          "num": 10,
+          "num4": 17,
+          "shipTons": [
+            1,
+            2,
+            3
+          ],
+          "type": 101
+        },
+        {
+          "num": 10,
+          "num4": 16,
+          "shipTons": [
+            1,
+            2,
+            3
+          ],
+          "type": 101
+        }
+      ],
+      "effect_desc": "敌方全体火力+15，暴击率+10%，命中+10",
+      "id": 40042,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方小型船射程为^C00FFEAFFFFFFFF00超长",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00小型船射程变为超长^C454545FF00000000",
+      "effect": [
+        {
+          "num": 4,
+          "shipTons": [
+            1
+          ],
+          "type": 102
+        }
+      ],
+      "effect_desc": "敌方小型船射程变为超长",
+      "id": 40043,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方大型船火力^C00FFEAFFFFFFFF00+20",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00大型船火力+20^C454545FF00000000",
+      "effect": [
+        {
+          "num": 20,
+          "num4": 2,
+          "shipTons": [
+            3
+          ],
+          "type": 101
+        }
+      ],
+      "effect_desc": "敌方大型船火力+20",
+      "id": 40044,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方全体装甲^C00FFEAFFFFFFFF00+20",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00全体装甲+20^C454545FF00000000",
+      "effect": [
+        {
+          "num": 20,
+          "num4": 3,
+          "shipTons": [
+            1,
+            2,
+            3
+          ],
+          "type": 101
+        }
+      ],
+      "effect_desc": "敌方全体装甲+20",
+      "id": 40045,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方全体火力^C00FFEAFFFFFFFF00+20",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00全体火力+20^C454545FF00000000",
+      "effect": [
+        {
+          "num": 20,
+          "num4": 2,
+          "shipTons": [
+            1,
+            2,
+            3
+          ],
+          "type": 101
+        }
+      ],
+      "effect_desc": "敌方全体火力+20",
+      "id": 40046,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方大型船射程为^C00FFEAFFFFFFFF00超长",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00全体射程变为超长^C454545FF00000000",
+      "effect": [
+        {
+          "num": 4,
+          "shipTons": [
+            3
+          ],
+          "type": 102
+        }
+      ],
+      "effect_desc": "敌方全体射程变为超长",
+      "id": 40047,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000敌方全体暴击率^C00FFEAFFFFFFFF00+20%",
+      "desc2": "^C454545FF00000000敌方^C2997FFFFFFFFFF00全体暴击率+20%^C454545FF00000000",
+      "effect": [
+        {
+          "num": 20,
+          "num4": 16,
+          "shipTons": [
+            1,
+            2,
+            3
+          ],
+          "type": 101
+        }
+      ],
+      "effect_desc": "敌方全体暴击率+20%",
+      "id": 40048,
+      "side": 1,
+      "title": "模拟战况",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000舰队驱逐轻巡小于等于3",
+      "desc2": "^C454545FF00000000测试^C2997FFFFFFFFFF001^C454545FF00000000",
+      "effect": [
+        {
+          "num": 3,
+          "shipType": [
+            12,
+            10
+          ],
+          "type": 1
+        }
+      ],
+      "effect_desc": "测试1",
+      "id": 30109,
+      "side": 0,
+      "title": "测试1",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000舰队驱逐轻巡大于3",
+      "desc2": "^C454545FF00000000测试^C2997FFFFFFFFFF002^C454545FF00000000",
+      "effect": [
+        {
+          "num": 3,
+          "shipType": [
+            12,
+            10
+          ],
+          "type": 2
+        }
+      ],
+      "effect_desc": "测试2",
+      "id": 30110,
+      "side": 0,
+      "title": "测试2",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000舰队j，g国舰船小于等于3",
+      "desc2": "^C454545FF00000000测试^C2997FFFFFFFFFF003^C454545FF00000000",
+      "effect": [
+        {
+          "country": [
+            1,
+            2
+          ],
+          "num": 3,
+          "type": 3
+        }
+      ],
+      "effect_desc": "测试3",
+      "id": 30111,
+      "side": 0,
+      "title": "测试3",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000舰队j，g国舰船大于3",
+      "desc2": "^C454545FF00000000测试^C2997FFFFFFFFFF004^C454545FF00000000",
+      "effect": [
+        {
+          "country": [
+            1,
+            2
+          ],
+          "num": 3,
+          "type": 4
+        }
+      ],
+      "effect_desc": "测试4",
+      "id": 30112,
+      "side": 0,
+      "title": "测试4",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000舰队驱逐轻巡cost加3",
+      "desc2": "^C454545FF00000000测试^C2997FFFFFFFFFF009^C454545FF00000000",
+      "effect": [
+        {
+          "num": 3,
+          "num4": 18,
+          "shipType": [
+            12,
+            10
+          ],
+          "type": 9
+        }
+      ],
+      "effect_desc": "测试9",
+      "id": 30113,
+      "side": 0,
+      "title": "测试9",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000舰队航母轻母cost扣3",
+      "desc2": "^C454545FF00000000测试^C2997FFFFFFFFFF0010^C454545FF00000000",
+      "effect": [
+        {
+          "num": 3,
+          "num4": 18,
+          "shipType": [
+            1,
+            2
+          ],
+          "type": 10
+        }
+      ],
+      "effect_desc": "测试10",
+      "id": 30114,
+      "side": 0,
+      "title": "测试10",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000旗舰为驱逐或轻巡",
+      "desc2": "^C454545FF00000000测试^C2997FFFFFFFFFF0015^C454545FF00000000",
+      "effect": [
+        {
+          "shipType": [
+            12,
+            10
+          ],
+          "type": 15
+        }
+      ],
+      "effect_desc": "测试15",
+      "id": 30115,
+      "side": 0,
+      "title": "测试15",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000j，g国cost加3",
+      "desc2": "^C454545FF00000000测试^C2997FFFFFFFFFF0019^C454545FF00000000",
+      "effect": [
+        {
+          "country": [
+            1,
+            2
+          ],
+          "num": 3,
+          "num4": 18,
+          "type": 19
+        }
+      ],
+      "effect_desc": "测试19",
+      "id": 30116,
+      "side": 0,
+      "title": "测试19",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000E，U国cost扣3",
+      "desc2": "^C454545FF00000000测试^C2997FFFFFFFFFF0020^C454545FF00000000",
+      "effect": [
+        {
+          "country": [
+            3,
+            4
+          ],
+          "num": 3,
+          "num4": 18,
+          "type": 20
+        }
+      ],
+      "effect_desc": "测试20",
+      "id": 30117,
+      "side": 0,
+      "title": "测试20",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000j，g国的驱逐与轻巡小于等于3",
+      "desc2": "^C454545FF00000000测试^C2997FFFFFFFFFF0021^C454545FF00000000",
+      "effect": [
+        {
+          "country": [
+            1,
+            2
+          ],
+          "num": 3,
+          "shipType": [
+            12,
+            10
+          ],
+          "type": 21
+        }
+      ],
+      "effect_desc": "测试21",
+      "id": 30118,
+      "side": 0,
+      "title": "测试21",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000j，g国的驱逐与轻巡大于3",
+      "desc2": "^C454545FF00000000测试^C2997FFFFFFFFFF0022^C454545FF00000000",
+      "effect": [
+        {
+          "country": [
+            1,
+            2
+          ],
+          "num": 3,
+          "shipType": [
+            12,
+            10
+          ],
+          "type": 22
+        }
+      ],
+      "effect_desc": "测试22",
+      "id": 30119,
+      "side": 0,
+      "title": "测试22",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000驱逐和轻巡总数等于3",
+      "desc2": "^C454545FF00000000测试^C2997FFFFFFFFFF0027^C454545FF00000000",
+      "effect": [
+        {
+          "num": 3,
+          "shipType": [
+            12,
+            10
+          ],
+          "type": 27
+        }
+      ],
+      "effect_desc": "测试27",
+      "id": 30120,
+      "side": 0,
+      "title": "测试27",
+      "type": 4
+    },
+    {
+      "buff_icon": 0,
+      "change_buff": 0,
+      "change_condition": 0,
+      "change_desc": 0,
+      "change_id": 0,
+      "desc": "^CFFFFFFFF00000000只能携带j，g国的驱逐和轻巡",
+      "desc2": "^C454545FF00000000测试^C2997FFFFFFFFFF0032^C454545FF00000000",
+      "effect": [
+        {
+          "country": [
+            1,
+            2
+          ],
+          "shipType": [
+            12,
+            10
+          ],
+          "type": 32
+        }
+      ],
+      "effect_desc": "测试32",
+      "id": 30121,
+      "side": 0,
+      "title": "测试32",
+      "type": 4
+    }
+  ],
+  "sequence_num": 169,
+  "unique_id": {
+    "30001": 1,
+    "30002": 2,
+    "30003": 3,
+    "30004": 4,
+    "30005": 5,
+    "30006": 6,
+    "30007": 7,
+    "30008": 8,
+    "30009": 9,
+    "30010": 10,
+    "30011": 11,
+    "30012": 12,
+    "30013": 13,
+    "30014": 14,
+    "30015": 15,
+    "30016": 16,
+    "30017": 17,
+    "30018": 18,
+    "30019": 19,
+    "30020": 20,
+    "30021": 21,
+    "30022": 22,
+    "30023": 23,
+    "30024": 24,
+    "30025": 25,
+    "30026": 26,
+    "30027": 49,
+    "30028": 50,
+    "30029": 51,
+    "30030": 52,
+    "30031": 53,
+    "30032": 54,
+    "30033": 55,
+    "30034": 56,
+    "30035": 57,
+    "30036": 58,
+    "30037": 59,
+    "30038": 60,
+    "30039": 61,
+    "30040": 62,
+    "30041": 63,
+    "30042": 64,
+    "30043": 65,
+    "30044": 66,
+    "30045": 67,
+    "30046": 68,
+    "30047": 69,
+    "30048": 70,
+    "30049": 71,
+    "30050": 72,
+    "30051": 73,
+    "30052": 74,
+    "30053": 75,
+    "30054": 76,
+    "30055": 77,
+    "30056": 78,
+    "30057": 79,
+    "30058": 80,
+    "30059": 81,
+    "30060": 82,
+    "30061": 83,
+    "30062": 84,
+    "30063": 85,
+    "30064": 86,
+    "30065": 87,
+    "30066": 88,
+    "30067": 89,
+    "30068": 90,
+    "30069": 91,
+    "30070": 92,
+    "30071": 93,
+    "30072": 94,
+    "30073": 95,
+    "30074": 96,
+    "30075": 97,
+    "30076": 98,
+    "30077": 99,
+    "30078": 100,
+    "30079": 101,
+    "30080": 102,
+    "30081": 103,
+    "30082": 104,
+    "30083": 105,
+    "30084": 106,
+    "30085": 107,
+    "30086": 108,
+    "30087": 109,
+    "30088": 110,
+    "30089": 111,
+    "30090": 112,
+    "30091": 113,
+    "30092": 114,
+    "30093": 115,
+    "30094": 116,
+    "30095": 117,
+    "30096": 118,
+    "30097": 119,
+    "30098": 120,
+    "30099": 121,
+    "30100": 122,
+    "30101": 123,
+    "30102": 124,
+    "30103": 125,
+    "30104": 126,
+    "30105": 127,
+    "30106": 128,
+    "30107": 129,
+    "30108": 130,
+    "30109": 157,
+    "30110": 158,
+    "30111": 159,
+    "30112": 160,
+    "30113": 161,
+    "30114": 162,
+    "30115": 163,
+    "30116": 164,
+    "30117": 165,
+    "30118": 166,
+    "30119": 167,
+    "30120": 168,
+    "30121": 169,
+    "40001": 27,
+    "40002": 28,
+    "40003": 29,
+    "40004": 30,
+    "40005": 31,
+    "40006": 32,
+    "40007": 33,
+    "40008": 34,
+    "40009": 35,
+    "40010": 36,
+    "40011": 37,
+    "40012": 38,
+    "40013": 39,
+    "40014": 40,
+    "40015": 41,
+    "40016": 42,
+    "40017": 43,
+    "40018": 44,
+    "40019": 45,
+    "40020": 46,
+    "40021": 47,
+    "40022": 48,
+    "40023": 131,
+    "40024": 132,
+    "40025": 133,
+    "40026": 134,
+    "40027": 135,
+    "40028": 136,
+    "40029": 137,
+    "40030": 138,
+    "40031": 139,
+    "40032": 140,
+    "40033": 141,
+    "40034": 142,
+    "40035": 143,
+    "40036": 144,
+    "40037": 145,
+    "40038": 146,
+    "40039": 147,
+    "40040": 148,
+    "40041": 149,
+    "40042": 150,
+    "40043": 151,
+    "40044": 152,
+    "40045": 153,
+    "40046": 154,
+    "40047": 155,
+    "40048": 156
+  }
+}

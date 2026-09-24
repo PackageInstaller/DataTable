@@ -1,0 +1,21 @@
+local var_0_0 = {}
+local var_0_2 = gamecore.UILoader
+
+gamecore.UILoader:define("single_rank_destroy", function(arg_1_0)
+	function arg_1_0:show()
+		self:setVisible(true)
+		self:__init_panel()
+	end
+
+	function arg_1_0.__init_panel(arg_3_0)
+		return
+	end
+
+	gamecore.extend_method(arg_1_0)
+end)
+
+function var_0_0.create(arg_4_0)
+	return (var_0_2:class("single_rank_destroy"))
+end
+
+return var_0_0
