@@ -62,6 +62,7 @@ git clone -b game/xxxxx --single-branch --depth 1 https://github.com/PackageInst
 | `game/OrphansOrder`             | OrphansOrder             | 孤儿的工作                                            |
 | `game/OshiroProjectRE`          | OshiroProjectRE          | 我去没r18(御城)                                       |
 | `game/OtogiFrontierR`           | OtogiFrontierR           | 村人                                                  |
+| `game/OverRush` | OverRush |
 | `game/PathToNowhere`            | PathToNowhere            | 无期迷途                                              |
 | `game/Resonance`                | Resonance                | 雷索纳斯                                              |
 | `game/Reverse1999`              | Reverse1999              | 重返未来1999                                          |
