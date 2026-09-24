@@ -21,7 +21,7 @@ git clone -b game/xxxxx --single-branch --depth 1 https://github.com/PackageInst
 | `game/AtelierResleriana`        | AtelierResleriana        | 红色的炼金术士和白色的守护者 ～蕾斯莱莉娅娜的炼金工房 |
 | `game/AzurLane`                 | AzurLane                 | 碧蓝航线                                              |
 | `game/AzurPromilia`             | AzurPromilia             | 蓝色星原：旅谣                                        |
-| `game/BanGDreamOurNotes` | BanGDreamOurNotes |
+| `game/BanGDreamOurNotes`        | BanGDreamOurNotes        | BanG Dream! 交织的乐章                                |
 | `game/BlackBeacon`              | BlackBeacon              | 黑色信标                                              |
 | `game/CatFantasy`               | CatFantasy               | 猫之城                                                |
 | `game/CounterSide`              | CounterSide              | 未来战                                                |
