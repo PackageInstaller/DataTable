@@ -1,0 +1,311 @@
+[
+  {
+    "statusTokenTypeId": 2,
+    "name": "ATKアップ",
+    "description": "ATKをアップ",
+    "paramList": {
+      "$hex": "1e0000"
+    },
+    "enemyParamList": {
+      "$hex": "1e0000"
+    }
+  },
+  {
+    "statusTokenTypeId": 3,
+    "name": "ディスアーム",
+    "description": "対象のATKを0.6%ダウン\nアタックすると消滅する",
+    "paramList": {
+      "$hex": "060000"
+    },
+    "enemyParamList": {
+      "$hex": "0a0000"
+    }
+  },
+  {
+    "statusTokenTypeId": 4,
+    "name": "攻撃速度アップ",
+    "description": "アタック速度をアップ",
+    "paramList": {
+      "$hex": "0a0000"
+    },
+    "enemyParamList": {
+      "$hex": "0a0000"
+    }
+  },
+  {
+    "statusTokenTypeId": 5,
+    "name": "攻撃速度ダウン",
+    "description": "アタック速度をダウン",
+    "paramList": {
+      "$hex": "320000"
+    },
+    "enemyParamList": {
+      "$hex": "320000"
+    }
+  },
+  {
+    "statusTokenTypeId": 6,
+    "name": "防御力アップ",
+    "description": "被ダメージを減らす",
+    "paramList": {
+      "$hex": "0a0000"
+    },
+    "enemyParamList": {
+      "$hex": "0a0000"
+    }
+  },
+  {
+    "statusTokenTypeId": 7,
+    "name": "防御力ダウン",
+    "description": "被ダメージを増やす",
+    "paramList": {
+      "$hex": "0a0000"
+    },
+    "enemyParamList": {
+      "$hex": "0a0000"
+    }
+  },
+  {
+    "statusTokenTypeId": 8,
+    "name": "ウイルス（毒）",
+    "description": "２秒ごとにダメージを与える",
+    "interval": 2000,
+    "paramList": {
+      "$hex": "f4030000"
+    },
+    "enemyParamList": {
+      "$hex": "f4030000"
+    }
+  },
+  {
+    "statusTokenTypeId": 21,
+    "name": "カードリロードスピードアップ",
+    "description": "カードのリロードスピードを（param1）%上昇する",
+    "paramList": {
+      "$hex": "0a0000"
+    },
+    "enemyParamList": {
+      "$hex": "0a0000"
+    }
+  },
+  {
+    "statusTokenTypeId": 22,
+    "name": "スタンゲージ蓄積量アップ",
+    "description": "スタンゲージの蓄積量を（param1）%上昇する",
+    "paramList": {
+      "$hex": "0a0000"
+    },
+    "enemyParamList": {
+      "$hex": "0a0000"
+    }
+  },
+  {
+    "statusTokenTypeId": 23,
+    "name": "スタンゲージ蓄積量ダウン",
+    "description": "スタンゲージの蓄積量を（param1）%減少する",
+    "paramList": {
+      "$hex": "0a0000"
+    },
+    "enemyParamList": {
+      "$hex": "0a0000"
+    }
+  },
+  {
+    "statusTokenTypeId": 24,
+    "name": "RUSH上昇量アップ",
+    "description": "RUSHの上昇量アップ",
+    "paramList": {
+      "$hex": "0a0000"
+    },
+    "enemyParamList": {
+      "$hex": "0a0000"
+    }
+  },
+  {
+    "statusTokenTypeId": 25,
+    "name": "RUSH上昇量ダウン",
+    "description": "RUSHの上昇量ダウン",
+    "paramList": {
+      "$hex": "0a0000"
+    },
+    "enemyParamList": {
+      "$hex": "0a0000"
+    }
+  },
+  {
+    "statusTokenTypeId": 26,
+    "name": "マナ回復速度アップ",
+    "description": "マナ回復速度を（param1）%上昇する",
+    "paramList": {
+      "$hex": "0a0000"
+    },
+    "enemyParamList": {
+      "$hex": "0a0000"
+    }
+  },
+  {
+    "statusTokenTypeId": 27,
+    "name": "マナ回復速度ダウン",
+    "description": "マナ回復速度を（param1）%減少する",
+    "paramList": {
+      "$hex": "0a0000"
+    },
+    "enemyParamList": {
+      "$hex": "0a0000"
+    }
+  },
+  {
+    "statusTokenTypeId": 28,
+    "name": "ボム",
+    "description": "起爆すると1個につき 【ATK50%】のダメージ\n10個になると自動起爆\n進化後は1個につき 【ATK100%】のダメージ",
+    "paramList": {
+      "$hex": "f4030ae807"
+    },
+    "enemyParamList": {
+      "$hex": "f4030ae807"
+    }
+  },
+  {
+    "statusTokenTypeId": 29,
+    "name": "トラップ",
+    "description": "付与対象が行動するごとに\nバディ【ATK1.7%分】のダメージ",
+    "paramList": {
+      "$hex": "110000"
+    },
+    "enemyParamList": {
+      "$hex": "110000"
+    }
+  },
+  {
+    "statusTokenTypeId": 30,
+    "name": "ヒート",
+    "description": "カードを使用するごとに\n付与対象に 【ATK1.7%】のダメージ\n進化後は 【ATK3.4%】のダメージを与える",
+    "paramList": {
+      "$hex": "112200"
+    },
+    "enemyParamList": {
+      "$hex": "112200"
+    }
+  },
+  {
+    "statusTokenTypeId": 31,
+    "name": "赤ダメージダウン",
+    "description": "付与対象からの赤アタックダメージを【80%】ダウン",
+    "paramList": {
+      "$hex": "a0060000"
+    },
+    "enemyParamList": {
+      "$hex": "a0060000"
+    }
+  },
+  {
+    "statusTokenTypeId": 32,
+    "name": "青ダメージダウン",
+    "description": "付与対象からの青アタックダメージを【80%】ダウン",
+    "paramList": {
+      "$hex": "a0060000"
+    },
+    "enemyParamList": {
+      "$hex": "a0060000"
+    }
+  },
+  {
+    "statusTokenTypeId": 33,
+    "name": "緑ダメージダウン",
+    "description": "付与対象からの緑アタックダメージを【80%】ダウン",
+    "paramList": {
+      "$hex": "a0060000"
+    },
+    "enemyParamList": {
+      "$hex": "a0060000"
+    }
+  },
+  {
+    "statusTokenTypeId": 34,
+    "name": "ウィーク",
+    "description": "対象へのアタックダメージを【1%】増加",
+    "paramList": {
+      "$hex": "0a0000"
+    },
+    "enemyParamList": {
+      "$hex": "0a0000"
+    }
+  },
+  {
+    "statusTokenTypeId": 35,
+    "name": "フォーカス",
+    "description": "クリティカル発生率が【1%】アップ\n進化後は【2%】アップになる",
+    "paramList": {
+      "$hex": "0a1400"
+    },
+    "enemyParamList": {
+      "$hex": "0a1400"
+    }
+  },
+  {
+    "statusTokenTypeId": 36,
+    "name": "全色ダメージダウン",
+    "description": "付与対象からの全アタックダメージを【50%】ダウン",
+    "paramList": {
+      "$hex": "f4030000"
+    },
+    "enemyParamList": {
+      "$hex": "f4030000"
+    }
+  },
+  {
+    "statusTokenTypeId": 37,
+    "name": "HP回復量ダウン",
+    "description": "付与対象のHP回復量を【50‰】減少させる",
+    "paramList": {
+      "$hex": "f4030000"
+    },
+    "enemyParamList": {
+      "$hex": "f4030000"
+    }
+  },
+  {
+    "statusTokenTypeId": 38,
+    "name": "ヒートダメージダウン",
+    "description": "相手に付与すると自身が受けるヒートのダメージを【80%】軽減",
+    "paramList": {
+      "$hex": "a0060000"
+    },
+    "enemyParamList": {
+      "$hex": "a0060000"
+    }
+  },
+  {
+    "statusTokenTypeId": 39,
+    "name": "ボムダメージダウン",
+    "description": "相手に付与すると自身が受けるボムのダメージを【80%】軽減",
+    "paramList": {
+      "$hex": "a0060000"
+    },
+    "enemyParamList": {
+      "$hex": "a0060000"
+    }
+  },
+  {
+    "statusTokenTypeId": 40,
+    "name": "ウィーク効果ダウン",
+    "description": "相手に付与すると自身が受けるウィークのダメージを【80%】軽減",
+    "paramList": {
+      "$hex": "a0060000"
+    },
+    "enemyParamList": {
+      "$hex": "a0060000"
+    }
+  },
+  {
+    "statusTokenTypeId": 41,
+    "name": "クリティカル発生率ダウン",
+    "description": "相手に付与すると自身が受けるクリティカル発生率を【80%】軽減",
+    "paramList": {
+      "$hex": "a0060000"
+    },
+    "enemyParamList": {
+      "$hex": "a0060000"
+    }
+  }
+]

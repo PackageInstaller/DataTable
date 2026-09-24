@@ -1,0 +1,3591 @@
+[
+  {
+    "enemyId": 105101011,
+    "name": "セキュリティボット",
+    "description": "特徴なし",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "918ad730000000000000000000"
+    },
+    "modelName": "enemy_105101011",
+    "iconName": "enemy_icon_105101011",
+    "enemyStatusId": 105101011,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102090001
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105101012,
+    "name": "パトロールボットⅡ",
+    "description": "リリース時未使用（ストック）",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "918ad730000000000000000000"
+    },
+    "modelName": "enemy_105101012",
+    "iconName": "enemy_icon_105101012",
+    "enemyStatusId": 105101012,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_2": 102090001
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105101013,
+    "name": "パトロールボットⅢ",
+    "description": "リリース時未使用（ストック）",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "918ad730000000000000000000"
+    },
+    "modelName": "enemy_105101013",
+    "iconName": "enemy_icon_105101013",
+    "enemyStatusId": 105101013,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_2": 102090001
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105101021,
+    "name": "パイロ",
+    "description": "徐々にダメージアップ",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "9b8ad7309c8ad7309d8ad7309e8ad7309f8ad730a08ad73000000000"
+    },
+    "modelName": "enemy_105101021",
+    "iconName": "enemy_icon_105101021",
+    "enemyStatusId": 105101021,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102090011
+      },
+      {
+        "_1": 600,
+        "_2": 102090012
+      },
+      {
+        "_1": 600,
+        "_2": 102090013
+      },
+      {
+        "_1": 600,
+        "_2": 102090014
+      },
+      {
+        "_1": 600,
+        "_2": 102090015
+      },
+      {
+        "_1": 600,
+        "_2": 102090016
+      },
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105101022,
+    "name": "パイロ（青）",
+    "description": "ヒート禁止＆徐々にダメージアップ",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "9b8ad7309c8ad7309d8ad7309e8ad7309f8ad730a08ad73000000000"
+    },
+    "modelName": "enemy_105101022",
+    "iconName": "enemy_icon_105101022",
+    "enemyStatusId": 105101022,
+    "initialAction": 102090010,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102090011
+      },
+      {
+        "_1": 600,
+        "_2": 102090012
+      },
+      {
+        "_1": 600,
+        "_2": 102090013
+      },
+      {
+        "_1": 600,
+        "_2": 102090014
+      },
+      {
+        "_1": 600,
+        "_2": 102090015
+      },
+      {
+        "_1": 600,
+        "_2": 102090016
+      },
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105102011,
+    "name": "アクセルジェッター",
+    "description": "速攻（徐々に早くなる）",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "b98ad730ba8ad730bb8ad730bc8ad730000000000000"
+    },
+    "modelName": "enemy_105102011",
+    "iconName": "enemy_icon_105102011",
+    "enemyStatusId": 105102011,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 650,
+        "_2": 102090041
+      },
+      {
+        "_1": 650,
+        "_2": 102090042
+      },
+      {
+        "_1": 650,
+        "_2": 102090043
+      },
+      {
+        "_1": 650,
+        "_2": 102090044
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105102012,
+    "name": "クイックボットα",
+    "description": "フォーカス禁止＆速攻",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "b98ad730ba8ad730bb8ad730bc8ad730000000000000"
+    },
+    "modelName": "enemy_105102012",
+    "iconName": "enemy_icon_105102012",
+    "enemyStatusId": 105102012,
+    "initialAction": 102090040,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 650,
+        "_2": 102090041
+      },
+      {
+        "_1": 650,
+        "_2": 102090042
+      },
+      {
+        "_1": 650,
+        "_2": 102090043
+      },
+      {
+        "_1": 650,
+        "_2": 102090044
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105102013,
+    "name": "クイックボットβ",
+    "description": "リリース時未使用（ストック）",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "918ad730000000000000000000"
+    },
+    "modelName": "enemy_105102013",
+    "iconName": "enemy_icon_105102013",
+    "enemyStatusId": 105102013,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_2": 102090001
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105102021,
+    "name": "パワーボット",
+    "description": "大攻撃",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "a58ad730a68ad730a78ad730a88ad730a98ad7300000000000"
+    },
+    "modelName": "enemy_105102021",
+    "iconName": "enemy_icon_105102021",
+    "enemyStatusId": 105102021,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 650,
+        "_2": 102090021
+      },
+      {
+        "_1": 650,
+        "_2": 102090022
+      },
+      {
+        "_1": 650,
+        "_2": 102090023
+      },
+      {
+        "_1": 650,
+        "_2": 102090024
+      },
+      {
+        "_1": 650,
+        "_2": 102090025
+      },
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105102022,
+    "name": "パワーボットα",
+    "description": "ボム禁止＆大攻撃",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "a58ad730a68ad730a78ad730a88ad730a98ad7300000000000"
+    },
+    "modelName": "enemy_105102022",
+    "iconName": "enemy_icon_105102022",
+    "enemyStatusId": 105102022,
+    "initialAction": 102090020,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 650,
+        "_2": 102090021
+      },
+      {
+        "_1": 650,
+        "_2": 102090022
+      },
+      {
+        "_1": 650,
+        "_2": 102090023
+      },
+      {
+        "_1": 650,
+        "_2": 102090024
+      },
+      {
+        "_1": 650,
+        "_2": 102090025
+      },
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105102023,
+    "name": "パワーボットβ",
+    "description": "リリース時未使用（ストック）",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "918ad730000000000000000000"
+    },
+    "modelName": "enemy_105102023",
+    "iconName": "enemy_icon_105102023",
+    "enemyStatusId": 105102023,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_2": 102090001
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105102031,
+    "name": "パーツドローン",
+    "description": "素材クエスト用",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "918ad730000000000000000000"
+    },
+    "modelName": "enemy_105102031",
+    "iconName": "enemy_icon_105102031",
+    "enemyStatusId": 105102031,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102090001
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105102032,
+    "name": "パーツドローンⅡ",
+    "description": "素材クエスト用",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "918ad730000000000000000000"
+    },
+    "modelName": "enemy_105102032",
+    "iconName": "enemy_icon_105102032",
+    "enemyStatusId": 105102032,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102090001
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105102033,
+    "name": "パーツドローンⅢ",
+    "description": "素材クエスト用",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "918ad730000000000000000000"
+    },
+    "modelName": "enemy_105102033",
+    "iconName": "enemy_icon_105102033",
+    "enemyStatusId": 105102033,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102090001
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105102041,
+    "name": "バンクドローン",
+    "description": "コインクエスト用",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "918ad730000000000000000000"
+    },
+    "modelName": "enemy_105102041",
+    "iconName": "enemy_icon_105102041",
+    "enemyStatusId": 105102041,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102090001
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105102042,
+    "name": "バンクドローンⅡ",
+    "description": "コインクエスト用",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "918ad730000000000000000000"
+    },
+    "modelName": "enemy_105102042",
+    "iconName": "enemy_icon_105102042",
+    "enemyStatusId": 105102042,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102090001
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105102043,
+    "name": "バンクドローンⅢ",
+    "description": "コインクエスト用",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "918ad730000000000000000000"
+    },
+    "modelName": "enemy_105102043",
+    "iconName": "enemy_icon_105102043",
+    "enemyStatusId": 105102043,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102090001
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105103011,
+    "name": "オンスロート",
+    "description": "連撃",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "af8ad730b08ad730b18ad730b28ad730b38ad7300000000000"
+    },
+    "modelName": "enemy_105103011",
+    "iconName": "enemy_icon_105103011",
+    "enemyStatusId": 105103011,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 650,
+        "_2": 102090031
+      },
+      {
+        "_1": 650,
+        "_2": 102090032
+      },
+      {
+        "_1": 650,
+        "_2": 102090033
+      },
+      {
+        "_1": 650,
+        "_2": 102090034
+      },
+      {
+        "_1": 650,
+        "_2": 102090035
+      },
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105103012,
+    "name": "ガードボットα",
+    "description": "ウィーク禁止＆連撃",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "af8ad730b08ad730b18ad730b28ad730b38ad7300000000000"
+    },
+    "modelName": "enemy_105103012",
+    "iconName": "enemy_icon_105103012",
+    "enemyStatusId": 105103012,
+    "initialAction": 102090030,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 650,
+        "_2": 102090031
+      },
+      {
+        "_1": 650,
+        "_2": 102090032
+      },
+      {
+        "_1": 650,
+        "_2": 102090033
+      },
+      {
+        "_1": 650,
+        "_2": 102090034
+      },
+      {
+        "_1": 650,
+        "_2": 102090035
+      },
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105103013,
+    "name": "ガードボットβ",
+    "description": "リリース時未使用（ストック）",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "918ad730000000000000000000"
+    },
+    "modelName": "enemy_105103013",
+    "iconName": "enemy_icon_105103013",
+    "enemyStatusId": 105103013,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_2": 102090001
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105103021,
+    "name": "アンチ・レッド",
+    "description": "赤カード禁止",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "ee8ad730000000000000000000"
+    },
+    "modelName": "enemy_105103021",
+    "iconName": "enemy_icon_105103021",
+    "enemyStatusId": 105103021,
+    "initialAction": 102090091,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102090094
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105103022,
+    "name": "アンチ・ブルー",
+    "description": "青カード禁止",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "ee8ad730000000000000000000"
+    },
+    "modelName": "enemy_105103022",
+    "iconName": "enemy_icon_105103022",
+    "enemyStatusId": 105103022,
+    "initialAction": 102090093,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102090094
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105103023,
+    "name": "アンチ・グリーン",
+    "description": "緑カード禁止",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "ee8ad730000000000000000000"
+    },
+    "modelName": "enemy_105103023",
+    "iconName": "enemy_icon_105103023",
+    "enemyStatusId": 105103023,
+    "initialAction": 102090092,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102090094
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105103024,
+    "name": "アンチ・オール",
+    "description": "全カード減衰（トークンは通る）",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "ee8ad730000000000000000000"
+    },
+    "modelName": "enemy_105103024",
+    "iconName": "enemy_icon_105103024",
+    "enemyStatusId": 105103024,
+    "initialAction": 102090090,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102090094
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105105011,
+    "name": "ミスタートラフィック",
+    "description": "トラップ",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "e18ad730000000000000000000"
+    },
+    "modelName": "enemy_105105011",
+    "iconName": "enemy_icon_105105011",
+    "enemyStatusId": 105105011,
+    "initialAction": 102090080,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 650,
+        "_2": 102090081
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105105031,
+    "name": "チャージボット",
+    "description": "リンクレベルダウン大",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "c38ad730c48ad730c58ad730c68ad730c78ad7300000000000"
+    },
+    "modelName": "enemy_105105031",
+    "iconName": "enemy_icon_105105031",
+    "enemyStatusId": 105105031,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102090051
+      },
+      {
+        "_1": 600,
+        "_2": 102090052
+      },
+      {
+        "_1": 600,
+        "_2": 102090053
+      },
+      {
+        "_1": 600,
+        "_2": 102090054
+      },
+      {
+        "_1": 600,
+        "_2": 102090055
+      },
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105105032,
+    "name": "チャージボットⅡ",
+    "description": "リンクレベルダウン大",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "c38ad730c48ad730c58ad730c68ad730c78ad7300000000000"
+    },
+    "modelName": "enemy_105105032",
+    "iconName": "enemy_icon_105105032",
+    "enemyStatusId": 105105032,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102090051
+      },
+      {
+        "_1": 600,
+        "_2": 102090052
+      },
+      {
+        "_1": 600,
+        "_2": 102090053
+      },
+      {
+        "_1": 600,
+        "_2": 102090054
+      },
+      {
+        "_1": 600,
+        "_2": 102090055
+      },
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105106011,
+    "name": "クリーンシェル",
+    "description": "トークン禁止",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "d78ad730000000000000000000"
+    },
+    "modelName": "enemy_105106011",
+    "iconName": "enemy_icon_105106011",
+    "enemyStatusId": 105106011,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102090071
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105106021,
+    "name": "ドレインアンテナ",
+    "description": "毎ターン回復",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "cd8ad730000000000000000000"
+    },
+    "modelName": "enemy_105106021",
+    "iconName": "enemy_icon_105106021",
+    "enemyStatusId": 105106021,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102090061
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105106022,
+    "name": "タックスシェルβ",
+    "description": "回復禁止＆毎ターン回復",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "cd8ad730000000000000000000"
+    },
+    "modelName": "enemy_105106022",
+    "iconName": "enemy_icon_105106022",
+    "enemyStatusId": 105106022,
+    "initialAction": 102090060,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102090061
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105107011,
+    "name": "アーケードマシン",
+    "description": "ジャマー",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "f58ad730000000000000000000"
+    },
+    "modelName": "enemy_105107011",
+    "iconName": "enemy_icon_105107011",
+    "enemyStatusId": 105107011,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102090101
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105107012,
+    "name": "トリックジャマーⅡ",
+    "description": "リリース時未使用（ストック）",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "918ad730000000000000000000"
+    },
+    "modelName": "enemy_105107012",
+    "iconName": "enemy_icon_105107012",
+    "enemyStatusId": 105107012,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_2": 102090001
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105107013,
+    "name": "トリックジャマーⅢ",
+    "description": "リリース時未使用（ストック）",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "918ad730000000000000000000"
+    },
+    "modelName": "enemy_105107013",
+    "iconName": "enemy_icon_105107013",
+    "enemyStatusId": 105107013,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_2": 102090001
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105108011,
+    "name": "リミットチェッカーⅠ",
+    "description": "極限試練EX WAVEのスコア稼ぎ用",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "898bd730000000000000000000"
+    },
+    "modelName": "enemy_105108011",
+    "iconName": "enemy_icon_105108011",
+    "enemyStatusId": 105108011,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_2": 102090121
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105108012,
+    "name": "リミットチェッカーⅡ",
+    "description": "極限試練EX WAVEのスコア稼ぎ用",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "8a8bd730000000000000000000"
+    },
+    "modelName": "enemy_105108012",
+    "iconName": "enemy_icon_105108012",
+    "enemyStatusId": 105108012,
+    "turnActionDataList": [
+      {
+        "_2": 102090122
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105108013,
+    "name": "リミットチェッカーⅢ",
+    "description": "極限試練EX WAVEのスコア稼ぎ用",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "8b8bd730000000000000000000"
+    },
+    "modelName": "enemy_105108013",
+    "iconName": "enemy_icon_105108013",
+    "enemyStatusId": 105108013,
+    "turnActionDataList": [
+      {
+        "_2": 102090123
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105108014,
+    "name": "リミットチェッカーⅣ",
+    "description": "極限試練EX WAVEのスコア稼ぎ用",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "8c8bd730000000000000000000"
+    },
+    "modelName": "enemy_105108014",
+    "iconName": "enemy_icon_105108014",
+    "enemyStatusId": 105108014,
+    "turnActionDataList": [
+      {
+        "_2": 102090124
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105108015,
+    "name": "ファイナルチェッカー",
+    "description": "極限試練EX WAVEのスコア稼ぎ用（実質ダメージチャレンジ）",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "8d8bd730000000000000000000"
+    },
+    "modelName": "enemy_105108015",
+    "iconName": "enemy_icon_105108015",
+    "enemyStatusId": 105108015,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_2": 102090125
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105109011,
+    "name": "セキュリティスフィア",
+    "description": "爆弾岩",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "ff8ad730000000000000000000"
+    },
+    "modelName": "enemy_105109011",
+    "iconName": "enemy_icon_105109011",
+    "enemyStatusId": 105109011,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_2": 102090111
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105201011,
+    "name": "ギガントリッパー",
+    "description": "ジャマーカードを追加してくる\n連撃をしてくる\nカウンター不可の強力なアタックをしてくる",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "8392d7308492d7308592d7308692d7308792d7308892d7308992d730000000"
+    },
+    "modelName": "enemy_105201011",
+    "iconName": "enemy_icon_105201011",
+    "enemyStatusId": 105201011,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102091011
+      },
+      {
+        "_1": 600,
+        "_2": 102091012
+      },
+      {
+        "_1": 600,
+        "_2": 102091013
+      },
+      {
+        "_1": 600,
+        "_2": 102091014
+      },
+      {
+        "_1": 600,
+        "_2": 102091015
+      },
+      {
+        "_1": 600,
+        "_2": 102091016
+      },
+      {
+        "_1": 600,
+        "_2": 102091017
+      },
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105201012,
+    "name": "ギガントリッパーⅡ",
+    "description": "ジャマーカードを追加してくる\n連撃をしてくる\nカウンター不可の強力なアタックをしてくる",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "8392d7308492d7308592d7308692d7308792d7308892d7308992d730000000"
+    },
+    "modelName": "enemy_105201012",
+    "iconName": "enemy_icon_105201012",
+    "enemyStatusId": 105201012,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102091011
+      },
+      {
+        "_1": 600,
+        "_2": 102091012
+      },
+      {
+        "_1": 600,
+        "_2": 102091013
+      },
+      {
+        "_1": 600,
+        "_2": 102091014
+      },
+      {
+        "_1": 600,
+        "_2": 102091015
+      },
+      {
+        "_1": 600,
+        "_2": 102091016
+      },
+      {
+        "_1": 600,
+        "_2": 102091017
+      },
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105202011,
+    "name": "ストームワスプ",
+    "description": "リンクレベルを下げるジャマーカードを追加してくる\nカウンター不可の強力なアタックをしてくる",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "8d92d7308e92d7308f92d7309092d7309192d7309292d73000000000"
+    },
+    "modelName": "enemy_105202011",
+    "iconName": "enemy_icon_105202011",
+    "enemyStatusId": 105202011,
+    "initialAction": 102091020,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102091021
+      },
+      {
+        "_1": 600,
+        "_2": 102091022
+      },
+      {
+        "_1": 600,
+        "_2": 102091023
+      },
+      {
+        "_1": 600,
+        "_2": 102091024
+      },
+      {
+        "_1": 600,
+        "_2": 102091025
+      },
+      {
+        "_1": 600,
+        "_2": 102091026
+      },
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105202012,
+    "name": "ストームワスプⅡ",
+    "description": "リンクレベルを下げるジャマーカードを追加してくる\nカウンター不可の強力なアタックをしてくる",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "8d92d7308e92d7308f92d7309092d7309192d7309292d73000000000"
+    },
+    "modelName": "enemy_105202012",
+    "iconName": "enemy_icon_105202012",
+    "enemyStatusId": 105202012,
+    "initialAction": 102091020,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102091021
+      },
+      {
+        "_1": 600,
+        "_2": 102091022
+      },
+      {
+        "_1": 600,
+        "_2": 102091023
+      },
+      {
+        "_1": 600,
+        "_2": 102091024
+      },
+      {
+        "_1": 600,
+        "_2": 102091025
+      },
+      {
+        "_1": 600,
+        "_2": 102091026
+      },
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105203011,
+    "name": "ドレッドナイト",
+    "description": "ジャマーカードを追加してくる\nカウンター不可の強力なアタックをしてくる",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "9792d7309892d7309992d7309a92d7309b92d7309c92d7309d92d730000000"
+    },
+    "modelName": "enemy_105203011",
+    "iconName": "enemy_icon_105203011",
+    "enemyStatusId": 105203011,
+    "initialAction": 102091030,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102091031
+      },
+      {
+        "_1": 600,
+        "_2": 102091032
+      },
+      {
+        "_1": 600,
+        "_2": 102091033
+      },
+      {
+        "_1": 600,
+        "_2": 102091034
+      },
+      {
+        "_1": 600,
+        "_2": 102091035
+      },
+      {
+        "_1": 600,
+        "_2": 102091036
+      },
+      {
+        "_1": 600,
+        "_2": 102091037
+      },
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105203012,
+    "name": "ドレッドナイトⅡ",
+    "description": "ジャマーカードを追加してくる\nカウンター不可の強力なアタックをしてくる",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "9792d7309892d7309992d7309a92d7309b92d7309c92d7309d92d730000000"
+    },
+    "modelName": "enemy_105203012",
+    "iconName": "enemy_icon_105203012",
+    "enemyStatusId": 105203012,
+    "initialAction": 102091030,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102091031
+      },
+      {
+        "_1": 600,
+        "_2": 102091032
+      },
+      {
+        "_1": 600,
+        "_2": 102091033
+      },
+      {
+        "_1": 600,
+        "_2": 102091034
+      },
+      {
+        "_1": 600,
+        "_2": 102091035
+      },
+      {
+        "_1": 600,
+        "_2": 102091036
+      },
+      {
+        "_1": 600,
+        "_2": 102091037
+      },
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105204011,
+    "name": "メガスフィア",
+    "description": "アタックごとに赤青緑カードいずれかのアタックダメージをダウンしてくる\nカウンター不可の強力なアタックをしてくる",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "a192d730a292d730a392d730a192d730a292d730a392d730a492d730000000"
+    },
+    "modelName": "enemy_105204011",
+    "iconName": "enemy_icon_105204011",
+    "enemyStatusId": 105204011,
+    "initialAction": 102091040,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 650,
+        "_2": 102091041
+      },
+      {
+        "_1": 650,
+        "_2": 102091042
+      },
+      {
+        "_1": 650,
+        "_2": 102091043
+      },
+      {
+        "_1": 650,
+        "_2": 102091041
+      },
+      {
+        "_1": 650,
+        "_2": 102091042
+      },
+      {
+        "_1": 650,
+        "_2": 102091043
+      },
+      {
+        "_1": 650,
+        "_2": 102091044
+      },
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105204012,
+    "name": "メガスフィアⅡ",
+    "description": "アタックごとに赤青緑カードいずれかのアタックダメージをダウンしてくる\nカウンター不可の強力なアタックをしてくる",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "a192d730a292d730a392d730a192d730a292d730a392d730a492d730000000"
+    },
+    "modelName": "enemy_105204012",
+    "iconName": "enemy_icon_105204012",
+    "enemyStatusId": 105204012,
+    "initialAction": 102091040,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 650,
+        "_2": 102091041
+      },
+      {
+        "_1": 650,
+        "_2": 102091042
+      },
+      {
+        "_1": 650,
+        "_2": 102091043
+      },
+      {
+        "_1": 650,
+        "_2": 102091041
+      },
+      {
+        "_1": 650,
+        "_2": 102091042
+      },
+      {
+        "_1": 650,
+        "_2": 102091043
+      },
+      {
+        "_1": 650,
+        "_2": 102091044
+      },
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105205011,
+    "name": "アビスパニッシャー",
+    "description": "5回使うと死に至るジャマーカードを追加してくる\n連撃をしてくる\nカウンター不可の強力なアタックをしてくる",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "ab92d730ac92d730ad92d730ae92d730af92d730b092d730b192d730000000"
+    },
+    "modelName": "enemy_105205011",
+    "iconName": "enemy_icon_105205011",
+    "enemyStatusId": 105205011,
+    "initialAction": 102091050,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 650,
+        "_2": 102091051
+      },
+      {
+        "_1": 650,
+        "_2": 102091052
+      },
+      {
+        "_1": 650,
+        "_2": 102091053
+      },
+      {
+        "_1": 650,
+        "_2": 102091054
+      },
+      {
+        "_1": 650,
+        "_2": 102091055
+      },
+      {
+        "_1": 650,
+        "_2": 102091056
+      },
+      {
+        "_1": 650,
+        "_2": 102091057
+      },
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105205012,
+    "name": "アビスパニッシャーⅡ",
+    "description": "5回使うと死に至るジャマーカードを追加してくる\n連撃をしてくる\nカウンター不可の強力なアタックをしてくる",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "ab92d730ac92d730ad92d730ae92d730af92d730b092d730b192d730000000"
+    },
+    "modelName": "enemy_105205012",
+    "iconName": "enemy_icon_105205012",
+    "enemyStatusId": 105205012,
+    "initialAction": 102091050,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 650,
+        "_2": 102091051
+      },
+      {
+        "_1": 650,
+        "_2": 102091052
+      },
+      {
+        "_1": 650,
+        "_2": 102091053
+      },
+      {
+        "_1": 650,
+        "_2": 102091054
+      },
+      {
+        "_1": 650,
+        "_2": 102091055
+      },
+      {
+        "_1": 650,
+        "_2": 102091056
+      },
+      {
+        "_1": 650,
+        "_2": 102091057
+      },
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105301011,
+    "name": "セキュリティボット",
+    "description": "特徴なし",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "918ad730000000000000000000"
+    },
+    "modelName": "enemy_105101011",
+    "iconName": "enemy_icon_105301011",
+    "enemyStatusId": 105301011,
+    "enemyVariantType": 1,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102090001
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105301012,
+    "name": "パトロールボットⅡ",
+    "description": "ヒート禁止＆徐々にダメージアップ",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "918ad730000000000000000000"
+    },
+    "modelName": "enemy_105101012",
+    "iconName": "enemy_icon_105301012",
+    "enemyStatusId": 105301012,
+    "enemyVariantType": 1,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_2": 102090001
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105301013,
+    "name": "パトロールボットⅢ",
+    "description": "リリース時未使用（ストック）",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "918ad730000000000000000000"
+    },
+    "modelName": "enemy_105101013",
+    "iconName": "enemy_icon_105301013",
+    "enemyStatusId": 105301013,
+    "enemyVariantType": 1,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_2": 102090001
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105301021,
+    "name": "パイロ",
+    "description": "徐々にダメージアップ",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "9b8ad7309c8ad7309d8ad7309e8ad7309f8ad730a08ad73000000000"
+    },
+    "modelName": "enemy_105101021",
+    "iconName": "enemy_icon_105301021",
+    "enemyStatusId": 105301021,
+    "enemyVariantType": 1,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102090011
+      },
+      {
+        "_1": 600,
+        "_2": 102090012
+      },
+      {
+        "_1": 600,
+        "_2": 102090013
+      },
+      {
+        "_1": 600,
+        "_2": 102090014
+      },
+      {
+        "_1": 600,
+        "_2": 102090015
+      },
+      {
+        "_1": 600,
+        "_2": 102090016
+      },
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105301022,
+    "name": "パイロ（青）",
+    "description": "ヒート禁止＆徐々にダメージアップ",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "9b8ad7309c8ad7309d8ad7309e8ad7309f8ad730a08ad73000000000"
+    },
+    "modelName": "enemy_105101022",
+    "iconName": "enemy_icon_105301022",
+    "enemyStatusId": 105301022,
+    "enemyVariantType": 1,
+    "initialAction": 102090010,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102090011
+      },
+      {
+        "_1": 600,
+        "_2": 102090012
+      },
+      {
+        "_1": 600,
+        "_2": 102090013
+      },
+      {
+        "_1": 600,
+        "_2": 102090014
+      },
+      {
+        "_1": 600,
+        "_2": 102090015
+      },
+      {
+        "_1": 600,
+        "_2": 102090016
+      },
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105302011,
+    "name": "アクセルジェッター",
+    "description": "速攻（徐々に早くなる）",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "b98ad730ba8ad730bb8ad730bc8ad730000000000000"
+    },
+    "modelName": "enemy_105102011",
+    "iconName": "enemy_icon_105302011",
+    "enemyStatusId": 105302011,
+    "enemyVariantType": 1,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 650,
+        "_2": 102090041
+      },
+      {
+        "_1": 650,
+        "_2": 102090042
+      },
+      {
+        "_1": 650,
+        "_2": 102090043
+      },
+      {
+        "_1": 650,
+        "_2": 102090044
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105302012,
+    "name": "クイックボットα",
+    "description": "クリティカル禁止＆速攻（徐々に早くなる）",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "b98ad730ba8ad730bb8ad730bc8ad730000000000000"
+    },
+    "modelName": "enemy_105102012",
+    "iconName": "enemy_icon_105302012",
+    "enemyStatusId": 105302012,
+    "enemyVariantType": 1,
+    "initialAction": 102090040,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 650,
+        "_2": 102090041
+      },
+      {
+        "_1": 650,
+        "_2": 102090042
+      },
+      {
+        "_1": 650,
+        "_2": 102090043
+      },
+      {
+        "_1": 650,
+        "_2": 102090044
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105302013,
+    "name": "クイックボットβ",
+    "description": "リリース時未使用（ストック）",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "918ad730000000000000000000"
+    },
+    "modelName": "enemy_105102013",
+    "iconName": "enemy_icon_105302013",
+    "enemyStatusId": 105302013,
+    "enemyVariantType": 1,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_2": 102090001
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105302021,
+    "name": "パワーボット",
+    "description": "大攻撃",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "a58ad730a68ad730a78ad730a88ad730a98ad7300000000000"
+    },
+    "modelName": "enemy_105102021",
+    "iconName": "enemy_icon_105302021",
+    "enemyStatusId": 105302021,
+    "enemyVariantType": 1,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 650,
+        "_2": 102090021
+      },
+      {
+        "_1": 650,
+        "_2": 102090022
+      },
+      {
+        "_1": 650,
+        "_2": 102090023
+      },
+      {
+        "_1": 650,
+        "_2": 102090024
+      },
+      {
+        "_1": 650,
+        "_2": 102090025
+      },
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105302022,
+    "name": "パワーボットα",
+    "description": "ボム禁止＆大攻撃",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "a58ad730a68ad730a78ad730a88ad730a98ad7300000000000"
+    },
+    "modelName": "enemy_105102022",
+    "iconName": "enemy_icon_105302022",
+    "enemyStatusId": 105302022,
+    "enemyVariantType": 1,
+    "initialAction": 102090020,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 650,
+        "_2": 102090021
+      },
+      {
+        "_1": 650,
+        "_2": 102090022
+      },
+      {
+        "_1": 650,
+        "_2": 102090023
+      },
+      {
+        "_1": 650,
+        "_2": 102090024
+      },
+      {
+        "_1": 650,
+        "_2": 102090025
+      },
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105302023,
+    "name": "パワーボットβ",
+    "description": "リリース時未使用（ストック）",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "918ad730000000000000000000"
+    },
+    "modelName": "enemy_105102023",
+    "iconName": "enemy_icon_105302023",
+    "enemyStatusId": 105302023,
+    "enemyVariantType": 1,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_2": 102090001
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105302031,
+    "name": "パーツドローン",
+    "description": "素材クエスト用",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "918ad730000000000000000000"
+    },
+    "modelName": "enemy_105102031",
+    "iconName": "enemy_icon_105302031",
+    "enemyStatusId": 105302031,
+    "enemyVariantType": 1,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102090001
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105302032,
+    "name": "パーツドローンⅡ",
+    "description": "素材クエスト用",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "918ad730000000000000000000"
+    },
+    "modelName": "enemy_105102032",
+    "iconName": "enemy_icon_105302032",
+    "enemyStatusId": 105302032,
+    "enemyVariantType": 1,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102090001
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105302033,
+    "name": "パーツドローンⅢ",
+    "description": "素材クエスト用",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "918ad730000000000000000000"
+    },
+    "modelName": "enemy_105102033",
+    "iconName": "enemy_icon_105302033",
+    "enemyStatusId": 105302033,
+    "enemyVariantType": 1,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102090001
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105302041,
+    "name": "バンクドローン",
+    "description": "コインクエスト用",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "918ad730000000000000000000"
+    },
+    "modelName": "enemy_105102041",
+    "iconName": "enemy_icon_105302041",
+    "enemyStatusId": 105302041,
+    "enemyVariantType": 1,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102090001
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105302042,
+    "name": "バンクドローンⅡ",
+    "description": "コインクエスト用",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "918ad730000000000000000000"
+    },
+    "modelName": "enemy_105102042",
+    "iconName": "enemy_icon_105302042",
+    "enemyStatusId": 105302042,
+    "enemyVariantType": 1,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102090001
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105302043,
+    "name": "バンクドローンⅢ",
+    "description": "コインクエスト用",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "918ad730000000000000000000"
+    },
+    "modelName": "enemy_105102043",
+    "iconName": "enemy_icon_105302043",
+    "enemyStatusId": 105302043,
+    "enemyVariantType": 1,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102090001
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105303011,
+    "name": "オンスロート",
+    "description": "連撃",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "af8ad730b08ad730b18ad730b28ad730b38ad7300000000000"
+    },
+    "modelName": "enemy_105103011",
+    "iconName": "enemy_icon_105303011",
+    "enemyStatusId": 105303011,
+    "enemyVariantType": 1,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 650,
+        "_2": 102090031
+      },
+      {
+        "_1": 650,
+        "_2": 102090032
+      },
+      {
+        "_1": 650,
+        "_2": 102090033
+      },
+      {
+        "_1": 650,
+        "_2": 102090034
+      },
+      {
+        "_1": 650,
+        "_2": 102090035
+      },
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105303012,
+    "name": "ガードボットα",
+    "description": "ウィーク禁止＆連撃",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "af8ad730b08ad730b18ad730b28ad730b38ad7300000000000"
+    },
+    "modelName": "enemy_105103012",
+    "iconName": "enemy_icon_105303012",
+    "enemyStatusId": 105303012,
+    "enemyVariantType": 1,
+    "initialAction": 102090030,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 650,
+        "_2": 102090031
+      },
+      {
+        "_1": 650,
+        "_2": 102090032
+      },
+      {
+        "_1": 650,
+        "_2": 102090033
+      },
+      {
+        "_1": 650,
+        "_2": 102090034
+      },
+      {
+        "_1": 650,
+        "_2": 102090035
+      },
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105303013,
+    "name": "ガードボットβ",
+    "description": "リリース時未使用（ストック）",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "918ad730000000000000000000"
+    },
+    "modelName": "enemy_105103013",
+    "iconName": "enemy_icon_105303013",
+    "enemyStatusId": 105303013,
+    "enemyVariantType": 1,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_2": 102090001
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105303021,
+    "name": "アンチ・レッド",
+    "description": "赤カード禁止",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "ee8ad730000000000000000000"
+    },
+    "modelName": "enemy_105103021",
+    "iconName": "enemy_icon_105303021",
+    "enemyStatusId": 105303021,
+    "enemyVariantType": 1,
+    "initialAction": 102090091,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102090094
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105303022,
+    "name": "アンチ・ブルー",
+    "description": "青カード禁止",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "ee8ad730000000000000000000"
+    },
+    "modelName": "enemy_105103022",
+    "iconName": "enemy_icon_105303022",
+    "enemyStatusId": 105303022,
+    "enemyVariantType": 1,
+    "initialAction": 102090093,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102090094
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105303023,
+    "name": "アンチ・グリーン",
+    "description": "緑カード禁止",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "ee8ad730000000000000000000"
+    },
+    "modelName": "enemy_105103023",
+    "iconName": "enemy_icon_105303023",
+    "enemyStatusId": 105303023,
+    "enemyVariantType": 1,
+    "initialAction": 102090092,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102090094
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105303024,
+    "name": "アンチ・オール",
+    "description": "全カード減衰（トークンは通る）",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "ee8ad730000000000000000000"
+    },
+    "modelName": "enemy_105103024",
+    "iconName": "enemy_icon_105303024",
+    "enemyStatusId": 105303024,
+    "enemyVariantType": 1,
+    "initialAction": 102090090,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102090094
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105305011,
+    "name": "ミスタートラフィック",
+    "description": "トラップ",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "e18ad730000000000000000000"
+    },
+    "modelName": "enemy_105105011",
+    "iconName": "enemy_icon_105305011",
+    "enemyStatusId": 105305011,
+    "enemyVariantType": 1,
+    "initialAction": 102090080,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 650,
+        "_2": 102090081
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105305031,
+    "name": "チャージボット",
+    "description": "リンクレベルダウン大",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "c38ad730c48ad730c58ad730c68ad730c78ad7300000000000"
+    },
+    "modelName": "enemy_105105031",
+    "iconName": "enemy_icon_105305031",
+    "enemyStatusId": 105305031,
+    "enemyVariantType": 1,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102090051
+      },
+      {
+        "_1": 600,
+        "_2": 102090052
+      },
+      {
+        "_1": 600,
+        "_2": 102090053
+      },
+      {
+        "_1": 600,
+        "_2": 102090054
+      },
+      {
+        "_1": 600,
+        "_2": 102090055
+      },
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105305032,
+    "name": "チャージボットⅡ",
+    "description": "未定",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "c38ad730c48ad730c58ad730c68ad730c78ad7300000000000"
+    },
+    "modelName": "enemy_105105032",
+    "iconName": "enemy_icon_105305032",
+    "enemyStatusId": 105305032,
+    "enemyVariantType": 1,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102090051
+      },
+      {
+        "_1": 600,
+        "_2": 102090052
+      },
+      {
+        "_1": 600,
+        "_2": 102090053
+      },
+      {
+        "_1": 600,
+        "_2": 102090054
+      },
+      {
+        "_1": 600,
+        "_2": 102090055
+      },
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105306011,
+    "name": "クリーンシェル",
+    "description": "トークン禁止",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "d78ad730000000000000000000"
+    },
+    "modelName": "enemy_105106011",
+    "iconName": "enemy_icon_105306011",
+    "enemyStatusId": 105306011,
+    "enemyVariantType": 1,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102090071
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105306021,
+    "name": "ドレインアンテナ",
+    "description": "毎ターン回復",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "cd8ad730000000000000000000"
+    },
+    "modelName": "enemy_105106021",
+    "iconName": "enemy_icon_105306021",
+    "enemyStatusId": 105306021,
+    "enemyVariantType": 1,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102090061
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105306022,
+    "name": "タックスシェルβ",
+    "description": "回復禁止＆毎ターン回復",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "cd8ad730000000000000000000"
+    },
+    "modelName": "enemy_105106022",
+    "iconName": "enemy_icon_105306022",
+    "enemyStatusId": 105306022,
+    "enemyVariantType": 1,
+    "initialAction": 102090060,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102090061
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105307011,
+    "name": "アーケードマシン",
+    "description": "ジャマー",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "f58ad730000000000000000000"
+    },
+    "modelName": "enemy_105107011",
+    "iconName": "enemy_icon_105307011",
+    "enemyStatusId": 105307011,
+    "enemyVariantType": 1,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102090101
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105307012,
+    "name": "トリックジャマーⅡ",
+    "description": "リリース時未使用（ストック）",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "918ad730000000000000000000"
+    },
+    "modelName": "enemy_105107012",
+    "iconName": "enemy_icon_105307012",
+    "enemyStatusId": 105307012,
+    "enemyVariantType": 1,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_2": 102090001
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105307013,
+    "name": "トリックジャマーⅢ",
+    "description": "リリース時未使用（ストック）",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "918ad730000000000000000000"
+    },
+    "modelName": "enemy_105107013",
+    "iconName": "enemy_icon_105307013",
+    "enemyStatusId": 105307013,
+    "enemyVariantType": 1,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_2": 102090001
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105309011,
+    "name": "セキュリティスフィア",
+    "description": "爆弾岩",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "ff8ad730000000000000000000"
+    },
+    "modelName": "enemy_105109011",
+    "iconName": "enemy_icon_105309011",
+    "enemyStatusId": 105309011,
+    "enemyVariantType": 1,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_2": 102090111
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105401011,
+    "name": "ギガントリッパー",
+    "description": "ジャマーカードを追加してくる\n連撃をしてくる\nカウンター不可の強力なアタックをしてくる",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "8392d7308492d7308592d7308692d7308792d7308892d7308992d730000000"
+    },
+    "modelName": "enemy_105201011",
+    "iconName": "enemy_icon_105401011",
+    "enemyStatusId": 105401011,
+    "enemyVariantType": 1,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102091011
+      },
+      {
+        "_1": 600,
+        "_2": 102091012
+      },
+      {
+        "_1": 600,
+        "_2": 102091013
+      },
+      {
+        "_1": 600,
+        "_2": 102091014
+      },
+      {
+        "_1": 600,
+        "_2": 102091015
+      },
+      {
+        "_1": 600,
+        "_2": 102091016
+      },
+      {
+        "_1": 600,
+        "_2": 102091017
+      },
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105401012,
+    "name": "ギガントリッパーⅡ",
+    "description": "ジャマーカードを追加してくる\n連撃をしてくる\nカウンター不可の強力なアタックをしてくる",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "8392d7308492d7308592d7308692d7308792d7308892d7308992d730000000"
+    },
+    "modelName": "enemy_105201012",
+    "iconName": "enemy_icon_105401012",
+    "enemyStatusId": 105401012,
+    "enemyVariantType": 1,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102091011
+      },
+      {
+        "_1": 600,
+        "_2": 102091012
+      },
+      {
+        "_1": 600,
+        "_2": 102091013
+      },
+      {
+        "_1": 600,
+        "_2": 102091014
+      },
+      {
+        "_1": 600,
+        "_2": 102091015
+      },
+      {
+        "_1": 600,
+        "_2": 102091016
+      },
+      {
+        "_1": 600,
+        "_2": 102091017
+      },
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105402011,
+    "name": "ストームワスプ",
+    "description": "リンクレベルを下げるジャマーカードを追加してくる\nカウンター不可の強力なアタックをしてくる",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "8d92d7308e92d7308f92d7309092d7309192d7309292d73000000000"
+    },
+    "modelName": "enemy_105202011",
+    "iconName": "enemy_icon_105402011",
+    "enemyStatusId": 105402011,
+    "enemyVariantType": 1,
+    "initialAction": 102091020,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102091021
+      },
+      {
+        "_1": 600,
+        "_2": 102091022
+      },
+      {
+        "_1": 600,
+        "_2": 102091023
+      },
+      {
+        "_1": 600,
+        "_2": 102091024
+      },
+      {
+        "_1": 600,
+        "_2": 102091025
+      },
+      {
+        "_1": 600,
+        "_2": 102091026
+      },
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105402012,
+    "name": "ストームワスプⅡ",
+    "description": "リンクレベルを下げるジャマーカードを追加してくる\nカウンター不可の強力なアタックをしてくる",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "8d92d7308e92d7308f92d7309092d7309192d7309292d73000000000"
+    },
+    "modelName": "enemy_105202012",
+    "iconName": "enemy_icon_105402012",
+    "enemyStatusId": 105402012,
+    "enemyVariantType": 1,
+    "initialAction": 102091020,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102091021
+      },
+      {
+        "_1": 600,
+        "_2": 102091022
+      },
+      {
+        "_1": 600,
+        "_2": 102091023
+      },
+      {
+        "_1": 600,
+        "_2": 102091024
+      },
+      {
+        "_1": 600,
+        "_2": 102091025
+      },
+      {
+        "_1": 600,
+        "_2": 102091026
+      },
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105403011,
+    "name": "ドレッドナイト",
+    "description": "ジャマーカードを追加してくる\nカウンター不可の強力なアタックをしてくる",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "9792d7309892d7309992d7309a92d7309b92d7309c92d7309d92d730000000"
+    },
+    "modelName": "enemy_105203011",
+    "iconName": "enemy_icon_105403011",
+    "enemyStatusId": 105403011,
+    "enemyVariantType": 1,
+    "initialAction": 102091030,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102091031
+      },
+      {
+        "_1": 600,
+        "_2": 102091032
+      },
+      {
+        "_1": 600,
+        "_2": 102091033
+      },
+      {
+        "_1": 600,
+        "_2": 102091034
+      },
+      {
+        "_1": 600,
+        "_2": 102091035
+      },
+      {
+        "_1": 600,
+        "_2": 102091036
+      },
+      {
+        "_1": 600,
+        "_2": 102091037
+      },
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105403012,
+    "name": "ドレッドナイトⅡ",
+    "description": "ジャマーカードを追加してくる\nカウンター不可の強力なアタックをしてくる",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "9792d7309892d7309992d7309a92d7309b92d7309c92d7309d92d730000000"
+    },
+    "modelName": "enemy_105203012",
+    "iconName": "enemy_icon_105403012",
+    "enemyStatusId": 105403012,
+    "enemyVariantType": 1,
+    "initialAction": 102091030,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102091031
+      },
+      {
+        "_1": 600,
+        "_2": 102091032
+      },
+      {
+        "_1": 600,
+        "_2": 102091033
+      },
+      {
+        "_1": 600,
+        "_2": 102091034
+      },
+      {
+        "_1": 600,
+        "_2": 102091035
+      },
+      {
+        "_1": 600,
+        "_2": 102091036
+      },
+      {
+        "_1": 600,
+        "_2": 102091037
+      },
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105404011,
+    "name": "メガスフィア",
+    "description": "アタックごとに赤青緑カードいずれかのアタックダメージをダウンしてくる\nカウンター不可の強力なアタックをしてくる",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "a192d730a292d730a392d730a192d730a292d730a392d730a492d730000000"
+    },
+    "modelName": "enemy_105204011",
+    "iconName": "enemy_icon_105404011",
+    "enemyStatusId": 105404011,
+    "enemyVariantType": 1,
+    "initialAction": 102091040,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 650,
+        "_2": 102091041
+      },
+      {
+        "_1": 650,
+        "_2": 102091042
+      },
+      {
+        "_1": 650,
+        "_2": 102091043
+      },
+      {
+        "_1": 650,
+        "_2": 102091041
+      },
+      {
+        "_1": 650,
+        "_2": 102091042
+      },
+      {
+        "_1": 650,
+        "_2": 102091043
+      },
+      {
+        "_1": 650,
+        "_2": 102091044
+      },
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105404012,
+    "name": "メガスフィアⅡ",
+    "description": "アタックごとに赤青緑カードいずれかのアタックダメージをダウンしてくる\nカウンター不可の強力なアタックをしてくる",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "a192d730a292d730a392d730a192d730a292d730a392d730a492d730000000"
+    },
+    "modelName": "enemy_105204012",
+    "iconName": "enemy_icon_105404012",
+    "enemyStatusId": 105404012,
+    "enemyVariantType": 1,
+    "initialAction": 102091040,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 650,
+        "_2": 102091041
+      },
+      {
+        "_1": 650,
+        "_2": 102091042
+      },
+      {
+        "_1": 650,
+        "_2": 102091043
+      },
+      {
+        "_1": 650,
+        "_2": 102091041
+      },
+      {
+        "_1": 650,
+        "_2": 102091042
+      },
+      {
+        "_1": 650,
+        "_2": 102091043
+      },
+      {
+        "_1": 650,
+        "_2": 102091044
+      },
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105405011,
+    "name": "アビスパニッシャー",
+    "description": "5回使うと死に至るジャマーカードを追加してくる\n連撃をしてくる\nカウンター不可の強力なアタックをしてくる",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "ab92d730ac92d730ad92d730ae92d730af92d730b092d730b192d730000000"
+    },
+    "modelName": "enemy_105205011",
+    "iconName": "enemy_icon_105405011",
+    "enemyStatusId": 105405011,
+    "enemyVariantType": 1,
+    "initialAction": 102091050,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 650,
+        "_2": 102091051
+      },
+      {
+        "_1": 650,
+        "_2": 102091052
+      },
+      {
+        "_1": 650,
+        "_2": 102091053
+      },
+      {
+        "_1": 650,
+        "_2": 102091054
+      },
+      {
+        "_1": 650,
+        "_2": 102091055
+      },
+      {
+        "_1": 650,
+        "_2": 102091056
+      },
+      {
+        "_1": 650,
+        "_2": 102091057
+      },
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105405012,
+    "name": "アビスパニッシャーⅡ",
+    "description": "5回使うと死に至るジャマーカードを追加してくる\n連撃をしてくる\nカウンター不可の強力なアタックをしてくる",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "ab92d730ac92d730ad92d730ae92d730af92d730b092d730b192d730000000"
+    },
+    "modelName": "enemy_105205012",
+    "iconName": "enemy_icon_105405012",
+    "enemyStatusId": 105405012,
+    "enemyVariantType": 1,
+    "initialAction": 102091050,
+    "needsIntroduction": 1,
+    "turnActionDataList": [
+      {
+        "_1": 650,
+        "_2": 102091051
+      },
+      {
+        "_1": 650,
+        "_2": 102091052
+      },
+      {
+        "_1": 650,
+        "_2": 102091053
+      },
+      {
+        "_1": 650,
+        "_2": 102091054
+      },
+      {
+        "_1": 650,
+        "_2": 102091055
+      },
+      {
+        "_1": 650,
+        "_2": 102091056
+      },
+      {
+        "_1": 650,
+        "_2": 102091057
+      },
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105999001,
+    "name": "セキュリティボット",
+    "description": "特徴なし",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "d9c78e31000000000000000000"
+    },
+    "modelName": "enemy_105101011",
+    "iconName": "enemy_icon_105101011",
+    "enemyStatusId": 105999001,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102999001
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "enemyId": 105999002,
+    "name": "ギガントリッパー",
+    "description": "暴走したワークロイド",
+    "maxStunCounter": 10000,
+    "abilityIdList": {
+      "$hex": "0000"
+    },
+    "turnActionList": {
+      "$hex": "d9c78e31000000000000000000"
+    },
+    "modelName": "enemy_105201011",
+    "iconName": "enemy_icon_105201011",
+    "enemyStatusId": 105999002,
+    "turnActionDataList": [
+      {
+        "_1": 600,
+        "_2": 102999001
+      },
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      {
+        "_1": 950
+      },
+      "",
+      ""
+    ]
+  }
+]

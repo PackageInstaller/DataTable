@@ -1,0 +1,62 @@
+[
+  {
+    "regularGachaId": 130000001,
+    "name": "シルバーガチャ",
+    "costOne": 18446744073709551615,
+    "costTen": 18446744073709551615,
+    "ticketInventoryItemId": 108000019,
+    "sortOrder": 3,
+    "ticketBatchDrawMaxCount": 100
+  },
+  {
+    "regularGachaId": 130000002,
+    "name": "ゴールドガチャ",
+    "costOne": 120,
+    "costTen": 1200,
+    "ticketInventoryItemId": 108000020,
+    "dailyAdLimitCount": 1,
+    "pityList": {
+      "_1": 1,
+      "_2": 10,
+      "_3": 4
+    },
+    "sortOrder": 5
+  },
+  {
+    "regularGachaId": 130000003,
+    "name": "プラチナガチャ",
+    "costOne": 160,
+    "costTen": 1600,
+    "ticketInventoryItemId": 108000021,
+    "pityList": [
+      {
+        "_1": 1,
+        "_2": 10,
+        "_3": 4
+      },
+      {
+        "_1": 2,
+        "_2": 50,
+        "_6": {
+          "$hex": "96e6bf33"
+        }
+      }
+    ],
+    "sortOrder": 2
+  },
+  {
+    "regularGachaId": 130000004,
+    "name": "バディガチャ",
+    "costOne": 18446744073709551615,
+    "costTen": 18446744073709551615,
+    "ticketInventoryItemId": 108000024,
+    "sortOrder": 1
+  },
+  {
+    "regularGachaId": 130000999,
+    "name": "チュートリアルガチャ",
+    "costOne": 18446744073709551615,
+    "costTen": 18446744073709551615,
+    "sortOrder": 4
+  }
+]

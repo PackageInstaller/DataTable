@@ -1,0 +1,440 @@
+[
+  {
+    "equipmentId": 104001000,
+    "name": "バトルチップ汎用合成パーツ",
+    "description": "バトルチップの合成に使用する汎用素材",
+    "equipmentType": 1
+  },
+  {
+    "equipmentId": 104002000,
+    "name": "ヘッドギア汎用合成パーツ",
+    "description": "ヘッドギアの合成に使用する汎用素材",
+    "equipmentType": 2
+  },
+  {
+    "equipmentId": 104003000,
+    "name": "グローブ汎用合成パーツ",
+    "description": "グローブの合成に使用する汎用素材",
+    "equipmentType": 3
+  },
+  {
+    "equipmentId": 104004000,
+    "name": "ウェア汎用合成パーツ",
+    "description": "ウェアの合成に使用する汎用素材",
+    "equipmentType": 4
+  },
+  {
+    "equipmentId": 104005000,
+    "name": "パンツ汎用合成パーツ",
+    "description": "パンツの合成に使用する汎用素材",
+    "equipmentType": 5
+  },
+  {
+    "equipmentId": 104006000,
+    "name": "シューズ汎用合成パーツ",
+    "description": "シューズの合成に使用する汎用素材",
+    "equipmentType": 6
+  },
+  {
+    "equipmentId": 104022001,
+    "name": "スマッシュ",
+    "description": "小ダメージを与える\n【LinkBurst】威力がアップする",
+    "equipmentType": 1,
+    "cardId": 102022001
+  },
+  {
+    "equipmentId": 104022002,
+    "name": "キュア",
+    "description": "プレイヤーのHPを5%回復する\n【LinkBurst】\nさらにプレイヤーのHPを5%回復する",
+    "equipmentType": 1,
+    "cardId": 102022002
+  },
+  {
+    "equipmentId": 104022003,
+    "name": "フレイム",
+    "description": "ヒートを1つ付与する\n【LinkBurst】さらヒートを3つ付与する",
+    "equipmentType": 1,
+    "cardId": 102022003
+  },
+  {
+    "equipmentId": 104022004,
+    "name": "ジャブ",
+    "description": "小ダメージを与える\n【LinkBurst】Lv2に進化する",
+    "equipmentType": 1,
+    "cardId": 102022004
+  },
+  {
+    "equipmentId": 104022007,
+    "name": "ラッキーストライク",
+    "description": "小ダメージを与える\n〈クリティカル時〉威力がアップする\n【LinkBurst】威力がアップする",
+    "equipmentType": 1,
+    "cardId": 102022007
+  },
+  {
+    "equipmentId": 104023001,
+    "name": "オーバーヒート",
+    "description": "ダメージを与える\n【LinkBurst】\nヒートトークンの数が多いほど威力アップする",
+    "equipmentType": 1,
+    "equipmentClassType": 1,
+    "cardId": 102023001
+  },
+  {
+    "equipmentId": 104023002,
+    "name": "ボムラッシュ",
+    "description": "小ダメージを与える\n【LinkBurst】\nボムトークンを5個付与する",
+    "equipmentType": 1,
+    "equipmentClassType": 1,
+    "cardId": 102023002
+  },
+  {
+    "equipmentId": 104023003,
+    "name": "クロスブースト",
+    "description": "小ダメージを与える\n【LinkBurst】コンボ数+1\n〈リンクLVmax時〉コンボ数+1",
+    "equipmentType": 1,
+    "equipmentClassType": 1,
+    "cardId": 102023003
+  },
+  {
+    "equipmentId": 104023004,
+    "name": "フェイタルストライク",
+    "description": "小ダメージを与える\n【LinkBurst】\n威力を大幅にアップする\nクリティカルすると威力が大幅にアップ",
+    "equipmentType": 1,
+    "equipmentClassType": 1,
+    "cardId": 102023004
+  },
+  {
+    "equipmentId": 104034001,
+    "name": "スマッシュ",
+    "description": "小ダメージを与える\n【LinkBurst】威力がアップする",
+    "equipmentType": 2,
+    "cardId": 102034001
+  },
+  {
+    "equipmentId": 104034002,
+    "name": "バーンナックル",
+    "description": "小ダメージを与え\nヒートを2つ付与する\n【LinkBurst】威力微アップ",
+    "equipmentType": 2,
+    "cardId": 102034002
+  },
+  {
+    "equipmentId": 104034003,
+    "name": "ソリッドボム",
+    "description": "ボムを2つ付与する\n【LinkBurst】さらにボムを2つ付与する",
+    "equipmentType": 2,
+    "cardId": 102034003
+  },
+  {
+    "equipmentId": 104034004,
+    "name": "フルブレイク",
+    "description": "小ダメージを与える\n〈リンクLVmax時〉威力がアップする\n【LinkBurst】威力がアップする",
+    "equipmentType": 2,
+    "cardId": 102034004
+  },
+  {
+    "equipmentId": 104034005,
+    "name": "テンポナックル",
+    "description": "ダメージを与える\n【LinkBurst】Lv2に進化する",
+    "equipmentType": 2,
+    "cardId": 102034005
+  },
+  {
+    "equipmentId": 104035001,
+    "name": "デスストライク",
+    "description": "ダメージを与える\n【LinkBurst】HPが高いほど威力が上がる",
+    "equipmentType": 2,
+    "equipmentClassType": 1,
+    "cardId": 102035001
+  },
+  {
+    "equipmentId": 104035002,
+    "name": "デモリッション",
+    "description": "ボムを2個付与する\n【LinkBurst】ボムを即起爆し個数×〇〇％ダメージを与える",
+    "equipmentType": 2,
+    "equipmentClassType": 1,
+    "cardId": 102035002
+  },
+  {
+    "equipmentId": 104035003,
+    "name": "チャージアップLv1",
+    "description": "ウィークを1付与する\n『チャージアップLv2』に変化する\n【LinkBurst】ウィーク数に応じたダメージを与える",
+    "equipmentType": 2,
+    "equipmentClassType": 1,
+    "cardId": 102035003
+  },
+  {
+    "equipmentId": 104035009,
+    "name": "フィーバータイム",
+    "description": "クリティカルトークンを1つ付与する\n【LinkBurst】\nさらにクリティカルトークンを5つ付与する",
+    "equipmentType": 2,
+    "equipmentClassType": 1,
+    "cardId": 102035009
+  },
+  {
+    "equipmentId": 104046001,
+    "name": "スマッシュ",
+    "description": "小ダメージを与える\n【LinkBurst】威力がアップする",
+    "equipmentType": 3,
+    "cardId": 102046001
+  },
+  {
+    "equipmentId": 104046002,
+    "name": "ジャミング",
+    "description": "ディスアームx１を付与する\n【LinkBurst】\nディスアームx１を付与する",
+    "equipmentType": 3,
+    "cardId": 102046002
+  },
+  {
+    "equipmentId": 104046003,
+    "name": "ボムリンク",
+    "description": "ボムを1つ付与する\n【LinkBurst】さらにボムを3つ付与する",
+    "equipmentType": 3,
+    "cardId": 102046003
+  },
+  {
+    "equipmentId": 104046004,
+    "name": "マックスラッシュ",
+    "description": "小ダメージを与える\n〈リンクLVmax時〉威力がアップする\n【LinkBurst】威力がアップする",
+    "equipmentType": 3,
+    "cardId": 102046004
+  },
+  {
+    "equipmentId": 104046005,
+    "name": "ハッピーチャンス",
+    "description": "小ダメージを与える\n〈クリティカル時〉威力がアップする\n【LinkBurst】クリティカルトークンを2個付与する",
+    "equipmentType": 3,
+    "cardId": 102046005
+  },
+  {
+    "equipmentId": 104047001,
+    "name": "ドレインハンド",
+    "description": "中ダメージを与える\n【LinkBurst】\nさらにプレイヤーのHPを20%回復する",
+    "equipmentType": 3,
+    "equipmentClassType": 1,
+    "cardId": 102047001
+  },
+  {
+    "equipmentId": 104047002,
+    "name": "ヒートウェーブ",
+    "description": "ヒートトークンを1つ付与\n【LinkBurst】\nヒートトークンを5個付与する",
+    "equipmentType": 3,
+    "equipmentClassType": 1,
+    "cardId": 102047002
+  },
+  {
+    "equipmentId": 104047003,
+    "name": "グレイトインパクト",
+    "description": "小ダメージを与える\n〈LinkLVmax時〉威力が上がる\n【LinkBurst】威力がアップする",
+    "equipmentType": 3,
+    "equipmentClassType": 1,
+    "cardId": 102047003
+  },
+  {
+    "equipmentId": 104047004,
+    "name": "デルタウィーク",
+    "description": "ダメージを与える\n【LinkBurst】\nウィークを2付与する\n『デルタウィーク』に変化する",
+    "equipmentType": 3,
+    "equipmentClassType": 1,
+    "cardId": 102047004
+  },
+  {
+    "equipmentId": 104052001,
+    "name": "プロトアタック",
+    "description": "小ダメージを与える",
+    "equipmentType": 4,
+    "cardId": 102052001
+  },
+  {
+    "equipmentId": 104052002,
+    "name": "ヒール",
+    "description": "体力を5%回復する",
+    "equipmentType": 4,
+    "cardId": 102052002
+  },
+  {
+    "equipmentId": 104052003,
+    "name": "ボムスタンプ",
+    "description": "ボム2個を与える",
+    "equipmentType": 4,
+    "cardId": 102052003
+  },
+  {
+    "equipmentId": 104052004,
+    "name": "マキシマムスマッシュ",
+    "description": "小ダメージを与える\n〈リンクLVmax時〉威力がアップする",
+    "equipmentType": 4,
+    "cardId": 102052004
+  },
+  {
+    "equipmentId": 104052005,
+    "name": "ウィルスプログラム",
+    "description": "ウィークを1個付与する\nクラックプログラムに進化する",
+    "equipmentType": 4,
+    "cardId": 102052005
+  },
+  {
+    "equipmentId": 104053001,
+    "name": "プロテクトコード",
+    "description": "ディスアームを3個付与する\n<HP50%以下>さらに2個付与する",
+    "equipmentType": 4,
+    "equipmentClassType": 1,
+    "cardId": 102053001
+  },
+  {
+    "equipmentId": 104053002,
+    "name": "インフェルノ",
+    "description": "ダメージを与える\n「プロミネンス」カードを2枚生成する",
+    "equipmentType": 4,
+    "equipmentClassType": 1,
+    "cardId": 102053002
+  },
+  {
+    "equipmentId": 104053003,
+    "name": "エボルクロスα",
+    "description": "ダメージを与え\nウィークを1付与する\n『エボルクロスβに進化する』",
+    "equipmentType": 4,
+    "equipmentClassType": 1,
+    "cardId": 102053003
+  },
+  {
+    "equipmentId": 104053007,
+    "name": "ダブルアップチャンス",
+    "description": "小ダメージを与える\nクリティカルすると『ラッキーパンチ』1枚をデッキに加える",
+    "equipmentType": 4,
+    "equipmentClassType": 1,
+    "cardId": 102053007
+  },
+  {
+    "equipmentId": 104064001,
+    "name": "プロトアタック",
+    "description": "小ダメージを与える",
+    "equipmentType": 5,
+    "cardId": 102064001
+  },
+  {
+    "equipmentId": 104064002,
+    "name": "コンセントレート",
+    "description": "次に使うカードのダメ―ジを5%アップする",
+    "equipmentType": 5,
+    "cardId": 102064002
+  },
+  {
+    "equipmentId": 104064003,
+    "name": "スプレッドヒート",
+    "description": "ヒートトークンを1個付与する\n<HP50%以下>ヒートトークンを3個付与する",
+    "equipmentType": 5,
+    "cardId": 102064003
+  },
+  {
+    "equipmentId": 104064004,
+    "name": "フルチャージ",
+    "description": "小ダメージを与える\n〈リンクLVmax時〉\n威力がアップする",
+    "equipmentType": 5,
+    "cardId": 102064004
+  },
+  {
+    "equipmentId": 104064005,
+    "name": "リスクヘッジ",
+    "description": "小ダメージを与える\n<クリティカル時>HPを5％回復する",
+    "equipmentType": 5,
+    "cardId": 102064005
+  },
+  {
+    "equipmentId": 104065001,
+    "name": "メテオインパクト",
+    "description": "ダメージを与える\nヒートトークン5個ごとに威力〇〇%アップする",
+    "equipmentType": 5,
+    "equipmentClassType": 1,
+    "cardId": 102065001
+  },
+  {
+    "equipmentId": 104065002,
+    "name": "チェインブラスト",
+    "description": "ボムを1個付与する\n使うたびにボムを追加で1つ付与する（最大5個まで)",
+    "equipmentType": 5,
+    "equipmentClassType": 1,
+    "cardId": 102065002
+  },
+  {
+    "equipmentId": 104065007,
+    "name": "リベンジインパクト",
+    "description": "小ダメージを与える\n〈リンクLVmax時〉\nデッキに『マキシマムインパクト』を加える",
+    "equipmentType": 5,
+    "equipmentClassType": 1,
+    "cardId": 102065007
+  },
+  {
+    "equipmentId": 104065008,
+    "name": "カードスロー",
+    "description": "ダメージを与える\nその後、進化する",
+    "equipmentType": 5,
+    "equipmentClassType": 1,
+    "cardId": 102065008
+  },
+  {
+    "equipmentId": 104076001,
+    "name": "プロトアタック",
+    "description": "小ダメージを与える",
+    "equipmentType": 6,
+    "cardId": 102076001
+  },
+  {
+    "equipmentId": 104076002,
+    "name": "ヒートスタンプ",
+    "description": "ヒートトークン1個を付与する",
+    "equipmentType": 6,
+    "cardId": 102076002
+  },
+  {
+    "equipmentId": 104076003,
+    "name": "ダイナマイトアッパー",
+    "description": "小ダメージを与える\nボム1個を与える",
+    "equipmentType": 6,
+    "cardId": 102076003
+  },
+  {
+    "equipmentId": 104076004,
+    "name": "エヴェルジャミング",
+    "description": "ダメージを与える\nウィーク1つを付与する",
+    "equipmentType": 6,
+    "cardId": 102076004
+  },
+  {
+    "equipmentId": 104076005,
+    "name": "ベッティング",
+    "description": "クリティカルトークン1個を付与する",
+    "equipmentType": 6,
+    "cardId": 102076005
+  },
+  {
+    "equipmentId": 104077001,
+    "name": "エマージェンシーコード",
+    "description": "HPを10%回復する\n<HP25%以下>HPを20%回復する",
+    "equipmentType": 6,
+    "equipmentClassType": 1,
+    "cardId": 102077001
+  },
+  {
+    "equipmentId": 104077002,
+    "name": "ダイハード",
+    "description": "ボムを2個付与する\n<HP70%以下>さらに3個付与する\n<HP25%以下>さらに5個付与する",
+    "equipmentType": 6,
+    "equipmentClassType": 1,
+    "cardId": 102077002
+  },
+  {
+    "equipmentId": 104077003,
+    "name": "マキシマムチャージ",
+    "description": "次に使うカードのダメ―ジを10%アップする\n〈リンクLVmax時〉さらに10%増加する",
+    "equipmentType": 6,
+    "equipmentClassType": 1,
+    "cardId": 102077003
+  },
+  {
+    "equipmentId": 104077004,
+    "name": "レイズアップ",
+    "description": "クリティカルトークン（クリティカル率アップ）を1つ付与する\n次に使うカードのアタックダメージを20%アップする",
+    "equipmentType": 6,
+    "equipmentClassType": 1,
+    "cardId": 102077004
+  }
+]
