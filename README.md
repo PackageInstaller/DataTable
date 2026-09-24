@@ -29,7 +29,7 @@ git clone -b game/xxxxx --single-branch --depth 1 https://github.com/PackageInst
 | `game/DengekiBunkoCROSSINGVOID` | DengekiBunkoCROSSINGVOID | 电击文库灵境交错                                      |
 | `game/DotAbyss`                 | DotAbyss                 | 鸡渊                                                  |
 | `game/Echocalypse`              | Echocalypse              | 绯红神约                                              |
-| `game/Echonox24⁄36`              | Echonox24⁄36              | 时序残响                                             |
+| `game/Echonox24⁄36`            | Echonox24⁄36            | 时序残响                                              |
 | `game/Embers`                   | Embers                   | 辉烬                                                  |
 | `game/ErrorGameReset`           | ErrorGameReset           | 404错误游戏                                           |
 | `game/EternalTree`              | EternalTree              | 树游                                                  |
@@ -62,7 +62,7 @@ git clone -b game/xxxxx --single-branch --depth 1 https://github.com/PackageInst
 | `game/OrphansOrder`             | OrphansOrder             | 孤儿的工作                                            |
 | `game/OshiroProjectRE`          | OshiroProjectRE          | 我去没r18(御城)                                       |
 | `game/OtogiFrontierR`           | OtogiFrontierR           | 村人                                                  |
-| `game/OverRush` | OverRush |
+| `game/OverRush`                 | OverRush                 | OverRush                                              |
 | `game/PathToNowhere`            | PathToNowhere            | 无期迷途                                              |
 | `game/Resonance`                | Resonance                | 雷索纳斯                                              |
 | `game/Reverse1999`              | Reverse1999              | 重返未来1999                                          |
