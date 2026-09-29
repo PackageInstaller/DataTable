@@ -1,0 +1,1154 @@
+[
+  {
+    "Id": 11,
+    "StoryEventHighScoreBuffPatternGroupId": 1,
+    "EffectMasterId": 80003,
+    "EffectName": "舞台照明",
+    "EffectDescription": "アクターの集中力が[:param1]上昇する",
+    "IconImagePath": "11"
+  },
+  {
+    "Id": 12,
+    "StoryEventHighScoreBuffPatternGroupId": 1,
+    "EffectMasterId": 80002,
+    "EffectName": "舞台スピーカー",
+    "EffectDescription": "アクターの表現力が[:param1]上昇する",
+    "IconImagePath": "12"
+  },
+  {
+    "Id": 13,
+    "StoryEventHighScoreBuffPatternGroupId": 1,
+    "EffectMasterId": 80001,
+    "EffectName": "舞台マイク",
+    "EffectDescription": "アクターの歌唱力が[:param1]上昇する",
+    "IconImagePath": "13"
+  },
+  {
+    "Id": 14,
+    "StoryEventHighScoreBuffPatternGroupId": 1,
+    "EffectMasterId": 80004,
+    "EffectName": "舞台カーテン",
+    "EffectDescription": "アクターの演技力が[:param1]％上昇する",
+    "IconImagePath": "14"
+  },
+  {
+    "Id": 101,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80005,
+    "EffectName": "砂のお城",
+    "EffectDescription": "劇団電姫に所属するアクター1人につき、プリンシパルゲージの上限値が[:param1]上昇する",
+    "IconImagePath": "101"
+  },
+  {
+    "Id": 102,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80006,
+    "EffectName": "海の家",
+    "EffectDescription": "劇団電姫に所属するアクターのセンスのCTが[:param1]秒短縮する",
+    "IconImagePath": "102"
+  },
+  {
+    "Id": 103,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80007,
+    "EffectName": "BBQセット",
+    "EffectDescription": "スターアクト発動に必要な特殊の光が[:param1]個減少する（必要な光の数は1個未満にならない）　※猫足 蕾のみ対象",
+    "IconImagePath": "103"
+  },
+  {
+    "Id": 104,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80008,
+    "EffectName": "パラソル",
+    "EffectDescription": "センス発動時、追加で「SP光」を[:param1]個付与する（レベル10の時に効果発動／SP光はどの系統の光としても扱われる）※阿岐留 カミラのみ対象",
+    "IconImagePath": "104"
+  },
+  {
+    "Id": 105,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80009,
+    "EffectName": "扇子",
+    "EffectDescription": "<color=#ff679d>憐属性</color>のアクターの集中力が[:param1]％上昇する",
+    "IconImagePath": "105"
+  },
+  {
+    "Id": 106,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80010,
+    "EffectName": "シャンデリア",
+    "EffectDescription": "スターアクト発動に必要な特殊の光<color=#0000ff>*</color>が[:param1]個減少する（必要な光の数は1個未満にならない）　※<color=#ff679d>憐属性</color>かつ劇団電姫に所属しているアクターのみ対象",
+    "IconImagePath": "106"
+  },
+  {
+    "Id": 107,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80011,
+    "EffectName": "ドレッサー",
+    "EffectDescription": "<color=#ff679d>憐属性</color>かつ支配系統のアクターがセンス発動時、追加で「特殊の光<color=#0000ff>*</color>」を[:param1]個付与する（レベル5以降の時に効果発動）",
+    "IconImagePath": "107"
+  },
+  {
+    "Id": 108,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80012,
+    "EffectName": "ベッド",
+    "EffectDescription": "<color=#ff679d>憐属性</color>かつ増幅系統のアクターがセンス発動時、追加で「SP光」を[:param1]個付与する（レベル10の時に効果発動／SP光はどの系統の光としても扱われる）",
+    "IconImagePath": "108"
+  },
+  {
+    "Id": 109,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80013,
+    "EffectName": "ポンポン",
+    "EffectDescription": "アクターの表現力が[:param1]％上昇する　※<color=#7AC940>彩属性</color>のアクターのみ対象",
+    "IconImagePath": "111"
+  },
+  {
+    "Id": 110,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80014,
+    "EffectName": "リレーバトン",
+    "EffectDescription": "アクターの演技力上限値が[:param1]％上昇する　※<color=#7AC940>彩属性</color>のアクターのみ対象",
+    "IconImagePath": "112"
+  },
+  {
+    "Id": 111,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80015,
+    "EffectName": "ハチマキ",
+    "EffectDescription": "センスCTが[:param1]秒短縮する　※<color=#7AC940>彩属性</color>の舎人 仁花子のみ対象",
+    "IconImagePath": "109"
+  },
+  {
+    "Id": 112,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80016,
+    "EffectName": "応援旗",
+    "EffectDescription": "センス発動時、追加で「SP光」を[:param1]個付与する（SP光はどの系統の光としても扱われる）　※<color=#7AC940>彩属性</color>の舎人 仁花子のみ対象",
+    "IconImagePath": "110"
+  },
+  {
+    "Id": 113,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80017,
+    "EffectName": "パソコン",
+    "EffectDescription": "アクターの演技力上限値が[:param1]％上昇する　※<color=#33B4DF>凛属性</color>のアクターのみ対象",
+    "IconImagePath": "113"
+  },
+  {
+    "Id": 114,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80018,
+    "EffectName": "手持ちカメラ",
+    "EffectDescription": "<color=#33B4DF>凛属性</color>のアクター1体につき、公演開始時にプリンシパルゲージが[:param1]上昇する",
+    "IconImagePath": "114"
+  },
+  {
+    "Id": 115,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80019,
+    "EffectName": "紅葉の木",
+    "EffectDescription": "<color=#33B4DF>凛属性</color>のアクター1体につき、プリンシパルゲージの上限値が[:param1]上昇する",
+    "IconImagePath": "115"
+  },
+  {
+    "Id": 116,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80020,
+    "EffectName": "鳥居",
+    "EffectDescription": "<color=#33B4DF>凛属性</color>かつ増幅系統のアクターがセンス発動時、追加で「SP光」を[:param1]個付与する（レベル5以降の時に効果発動／SP光はどの系統の光としても扱われる）",
+    "IconImagePath": "116"
+  },
+  {
+    "Id": 117,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80021,
+    "EffectName": "ランドセル",
+    "EffectDescription": "アクターの歌唱力が[:param1]％上昇する　※<color=#FF9314>陽属性</color>のアクターのみ対象",
+    "IconImagePath": "117"
+  },
+  {
+    "Id": 118,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80022,
+    "EffectName": "ドッジボール",
+    "EffectDescription": "アクターの演技力上限値が[:param1]％上昇する　※<color=#FF9314>陽属性</color>のアクターのみ対象",
+    "IconImagePath": "118"
+  },
+  {
+    "Id": 119,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80023,
+    "EffectName": "宿題の山",
+    "EffectDescription": "スターアクト発動に必要な支配の光<color=#ff0000>*</color>が[:param1]個減少する（必要な光の数は1個未満にならない）　※<color=#FF9314>陽属性</color>かつ支配系統のアクターのみ対象",
+    "IconImagePath": "119"
+  },
+  {
+    "Id": 120,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80024,
+    "EffectName": "体操着",
+    "EffectDescription": "<color=#FF9314>陽属性</color>のアクターがセンス発動時、追加で「SP光」を[:param1]個付与する（レベル10の時に効果発動／SP光はどの系統の光としても扱われる）",
+    "IconImagePath": "120"
+  },
+  {
+    "Id": 121,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80025,
+    "EffectName": "ダンスシューズ",
+    "EffectDescription": "アクターの演技力上限値が[:param1]％上昇する　※<color=#ff679d>憐属性</color>のアクターのみ対象",
+    "IconImagePath": "122"
+  },
+  {
+    "Id": 122,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80026,
+    "EffectName": "イルミネーションツリー",
+    "EffectDescription": "センス発動時、追加で「SP光」を[:param1]個付与する　※<color=#ff679d>憐属性</color>の阿岐留 カミラのみ対象",
+    "IconImagePath": "123"
+  },
+  {
+    "Id": 123,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80027,
+    "EffectName": "雪だるま",
+    "EffectDescription": "センスCTが[:param1]秒短縮する　※<color=#ff679d>憐属性</color>の与那国 緋花里のみ対象",
+    "IconImagePath": "121"
+  },
+  {
+    "Id": 124,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80028,
+    "EffectName": "コーンポタージュ",
+    "EffectDescription": "スターアクト発動条件に必要な光の数を超えて付与された光を最大[:param1]個「SP光」に変換する（レベル10の時に効果発動）　※<color=#ff679d>憐属性</color>の与那国 緋花里のみ対象",
+    "IconImagePath": "124"
+  },
+  {
+    "Id": 125,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80029,
+    "EffectName": "吊り橋",
+    "EffectDescription": "アクターの集中力が[:param1]％上昇する　※<color=#33B4DF>凛属性</color>のアクターのみ対象",
+    "IconImagePath": "126"
+  },
+  {
+    "Id": 126,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80030,
+    "EffectName": "ピクニックセット",
+    "EffectDescription": "アクターの演技力上限値が[:param1]％上昇する　※<color=#33B4DF>凛属性</color>のアクターのみ対象",
+    "IconImagePath": "127"
+  },
+  {
+    "Id": 127,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80031,
+    "EffectName": "パフェ",
+    "EffectDescription": "スターアクト発動に必要な支配の光<color=#ff0000>*</color>が[:param1]個減少する（必要な光の数は1個未満にならない）　※<color=#33B4DF>凛属性</color>の舎人 仁花子のみ対象",
+    "IconImagePath": "125"
+  },
+  {
+    "Id": 128,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80032,
+    "EffectName": "半分このドーナッツ",
+    "EffectDescription": "センス発動時、追加で「SP光」を[:param1]個付与する　※<color=#33B4DF>凛属性</color>の筆島 しぐれのみ対象",
+    "IconImagePath": "128"
+  },
+  {
+    "Id": 129,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80033,
+    "EffectName": "板チョコ",
+    "EffectDescription": "アクターの演技力上限値が[:param1]％上昇する　※Edenに所属するアクターのみ対象",
+    "IconImagePath": "129"
+  },
+  {
+    "Id": 130,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80034,
+    "EffectName": "ハートのバルーン",
+    "EffectDescription": "Edenに所属するアクター1人につき、公演開始時にプリンシパルゲージが[:param1]上昇する",
+    "IconImagePath": "131"
+  },
+  {
+    "Id": 131,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80035,
+    "EffectName": "メッセージカード",
+    "EffectDescription": "Edenに所属するアクター1人につき、プリンシパルゲージの上限値が[:param1]上昇する",
+    "IconImagePath": "132"
+  },
+  {
+    "Id": 132,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80036,
+    "EffectName": "ギフトチョコ",
+    "EffectDescription": "スターアクト発動に必要な支援の光<color=#228b22>*</color>が[:param1]個減少する（必要な光の数は1個未満にならない）　※<color=#33B4DF>凛属性</color>の連尺野 初魅のみ対象",
+    "IconImagePath": "130"
+  },
+  {
+    "Id": 133,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80037,
+    "EffectName": "魔法のランプ",
+    "EffectDescription": "アクターの歌唱力が[:param1]%上昇する　※シリウスに所属するアクターのみ対象",
+    "IconImagePath": "149"
+  },
+  {
+    "Id": 134,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80038,
+    "EffectName": "ランドセル",
+    "EffectDescription": "スターアクト発動に必要な支配の光<color=#ff0000>*</color>が[:param1]個減少する（必要な光の数は1個未満にならない）　※<color=#33B4DF>凛属性</color>の新妻 八恵のみ対象",
+    "IconImagePath": "152"
+  },
+  {
+    "Id": 135,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80039,
+    "EffectName": "真っ赤なバラ",
+    "EffectDescription": "センスのCTが[:param1]秒短縮する　※<color=#33B4DF>凛属性</color>の鳳 ここなのみ対象",
+    "IconImagePath": "151"
+  },
+  {
+    "Id": 136,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80040,
+    "EffectName": "ファントムの仮面",
+    "EffectDescription": "スターアクト発動条件に必要な光の数を超えて付与された光を最大[:param1]個「SP光」に変換する（レベル10の時に効果発動）　※<color=#33B4DF>凛属性</color>の鳳 ここなのみ対象",
+    "IconImagePath": "150"
+  },
+  {
+    "Id": 137,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80041,
+    "EffectName": "調味料セット",
+    "EffectDescription": "アクターの表現力が[:param1]%上昇する　※<color=#7AC940>彩属性</color>のアクターのみ対象",
+    "IconImagePath": "139"
+  },
+  {
+    "Id": 138,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80042,
+    "EffectName": "ラーメン",
+    "EffectDescription": "アクターの演技力上限値が[:param1]%上昇する　※<color=#7AC940>彩属性</color>のアクターのみ対象",
+    "IconImagePath": "140"
+  },
+  {
+    "Id": 139,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80043,
+    "EffectName": "チャーハン",
+    "EffectDescription": "<color=#7AC940>彩属性</color>の与那国 緋花里が編成されているとき、公演開始時にプリンシパルゲージが[:param1]上昇する",
+    "IconImagePath": "137"
+  },
+  {
+    "Id": 140,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80044,
+    "EffectName": "中華鍋",
+    "EffectDescription": "スターアクト発動に必要な増幅の光<color=#ffd700>*</color>が[:param1]個減少する（必要な光の数は1個未満にならない）　※<color=#7AC940>彩属性</color>の白丸 美兎のみ対象",
+    "IconImagePath": "138"
+  },
+  {
+    "Id": 141,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80045,
+    "EffectName": "髪飾り",
+    "EffectDescription": "アクターの集中力が[:param1]%上昇する　※シリウスに所属するアクターのみ対象",
+    "IconImagePath": "148"
+  },
+  {
+    "Id": 142,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80046,
+    "EffectName": "ネックレス",
+    "EffectDescription": "シリウスに所属するアクター1人につき、公演開始時にプリンシパルゲージが[:param1]上昇する",
+    "IconImagePath": "146"
+  },
+  {
+    "Id": 143,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80047,
+    "EffectName": "羽帽子",
+    "EffectDescription": "センスのCTが[:param1]秒短縮する　※<color=#33B4DF>凛属性</color>のカトリナ・グリーベルのみ対象",
+    "IconImagePath": "145"
+  },
+  {
+    "Id": 144,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80048,
+    "EffectName": "歯車",
+    "EffectDescription": "スターアクト発動に必要な支援の光<color=#228b22>*</color>が[:param1]個減少する（必要な光の数は1個未満にならない）　※<color=#33B4DF>凛属性</color>の静香のみ対象",
+    "IconImagePath": "147"
+  },
+  {
+    "Id": 145,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80049,
+    "EffectName": "装飾品",
+    "EffectDescription": "アクターの表現力が[:param1]%上昇する　※Edenに所属するアクターのみ対象",
+    "IconImagePath": "144"
+  },
+  {
+    "Id": 146,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80050,
+    "EffectName": "サロメの宝飾品",
+    "EffectDescription": "アクターの演技力上限値が[:param1]%上昇する　※Edenに所属するアクターのみ対象",
+    "IconImagePath": "142"
+  },
+  {
+    "Id": 147,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80051,
+    "EffectName": "ヨカナーンのお面",
+    "EffectDescription": "センス発動時、追加で「特殊の光<color=#0000ff>*</color>」を[:param1]個付与する　※<color=#FF9314>陽属性</color>の舎人 仁花子のみ対象",
+    "IconImagePath": "143"
+  },
+  {
+    "Id": 148,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80052,
+    "EffectName": "サロメのヴェール",
+    "EffectDescription": "スターアクト発動に必要な特殊の光<color=#0000ff>*</color>が[:param1]個減少する（必要な光の数は1個未満にならない）　※<color=#FF9314>陽属性</color>の萬 容のみ対象",
+    "IconImagePath": "141"
+  },
+  {
+    "Id": 149,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80053,
+    "EffectName": "玉座",
+    "EffectDescription": "アクターの演技力上限値が[:param1]%上昇する　※Edenに所属するアクターのみ対象",
+    "IconImagePath": "153"
+  },
+  {
+    "Id": 150,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80054,
+    "EffectName": "古井戸",
+    "EffectDescription": "Edenに所属するアクター1人につき、公演開始時にプリンシパルゲージが[:param1]上昇する",
+    "IconImagePath": "154"
+  },
+  {
+    "Id": 151,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80055,
+    "EffectName": "どら焼き",
+    "EffectDescription": "センスのCTが[:param1]秒短縮する　　※<color=#ff679d>憐属性</color>の萬 容のみ対象",
+    "IconImagePath": "155"
+  },
+  {
+    "Id": 152,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80056,
+    "EffectName": "土星",
+    "EffectDescription": "センス発動時、追加で「SP光」を[:param1]個付与する　※<color=#ff679d>憐属性</color>の舎人 仁花子のみ対象",
+    "IconImagePath": "156"
+  },
+  {
+    "Id": 153,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80057,
+    "EffectName": "夏休みの宿題",
+    "EffectDescription": "アクターの演技力上限値が[:param1]%上昇する　※シリウスに所属するアクターのみ対象",
+    "IconImagePath": "157"
+  },
+  {
+    "Id": 154,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80058,
+    "EffectName": "線香花火",
+    "EffectDescription": "シリウスに所属するアクター1人につき、プリンシパルゲージの上限値が[:param1]上昇する",
+    "IconImagePath": "160"
+  },
+  {
+    "Id": 155,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80059,
+    "EffectName": "浴衣",
+    "EffectDescription": "公演開始時にプリンシパルゲージが[:param1]上昇する　　※<color=#FF9314>陽属性</color>の新妻 八恵のみ対象",
+    "IconImagePath": "158"
+  },
+  {
+    "Id": 156,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80060,
+    "EffectName": "流しそうめん機",
+    "EffectDescription": "センスのCTが[:param1]秒短縮する　　※<color=#FF9314>陽属性</color>の流石 知冴のみ対象",
+    "IconImagePath": "159"
+  },
+  {
+    "Id": 157,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80061,
+    "EffectName": "ゲーセンイス",
+    "EffectDescription": "アクターの演技力上限値が[:param1]%上昇する　※銀河座に所属するアクターのみ対象",
+    "IconImagePath": "134"
+  },
+  {
+    "Id": 158,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80062,
+    "EffectName": "ベル",
+    "EffectDescription": "銀河座に所属するアクター1人につき、公演開始時にプリンシパルゲージが[:param1]上昇する",
+    "IconImagePath": "136"
+  },
+  {
+    "Id": 159,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80063,
+    "EffectName": "カード",
+    "EffectDescription": "公演開始時にプリンシパルゲージの上限値が[:param1]上昇する　　※<color=#7AC940>彩属性</color>の王 雪のみ対象",
+    "IconImagePath": "135"
+  },
+  {
+    "Id": 160,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80064,
+    "EffectName": "オンゲキ筐体",
+    "EffectDescription": "センス発動時、追加で「SP光」を[:param1]個付与する　※<color=#7AC940>彩属性</color>の千寿 暦のみ対象",
+    "IconImagePath": "133"
+  },
+  {
+    "Id": 161,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80065,
+    "EffectName": "Edenの看板",
+    "EffectDescription": "アクターの表現力が[:param1]%上昇する　※Edenに所属するアクターのみ対象",
+    "IconImagePath": "162"
+  },
+  {
+    "Id": 162,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80066,
+    "EffectName": "エデンホールの鍵",
+    "EffectDescription": "Edenに所属するアクター1人につき、プリンシパルゲージの上限値が[:param1]上昇する",
+    "IconImagePath": "164"
+  },
+  {
+    "Id": 163,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80067,
+    "EffectName": "サンクルーガイド",
+    "EffectDescription": "スターアクト発動に必要な増幅の光<color=#ffd700>*</color>が[:param1]個減少する（必要な光の数は1個未満にならない）　※<color=#ff679d>憐属性</color>の烏森 大黒のみ対象",
+    "IconImagePath": "161"
+  },
+  {
+    "Id": 164,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80068,
+    "EffectName": "コーヒー",
+    "EffectDescription": "公演開始時にプリンシパルゲージが[:param1]上昇する　　※<color=#ff679d>憐属性</color>の連尺野 初魅のみ対象",
+    "IconImagePath": "163"
+  },
+  {
+    "Id": 165,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80069,
+    "EffectName": "ラブライブの優勝旗",
+    "EffectDescription": "ラブライブ！サンシャイン!!に所属するアクター1人につき、プリンシパルゲージの上限値が[:param1]上昇する",
+    "IconImagePath": "165"
+  },
+  {
+    "Id": 166,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80070,
+    "EffectName": "エビのぬいぐるみ",
+    "EffectDescription": "スターアクト発動に必要な増幅の光<color=#ffd700>*</color>が[:param1]個減少する（必要な光の数は1個未満にならない）　※<color=#FF9314>陽属性</color>の高海 千歌のみ対象",
+    "IconImagePath": "166"
+  },
+  {
+    "Id": 167,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80071,
+    "EffectName": "Aqoursのロゴ",
+    "EffectDescription": "センスのCTが[:param1]秒短縮する　※<color=#ff679d>憐属性</color>の黒澤 ダイヤのみ対象",
+    "IconImagePath": "167"
+  },
+  {
+    "Id": 168,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80072,
+    "EffectName": "青空Jumping Heartの衣装",
+    "EffectDescription": "公演開始時にプリンシパルゲージが[:param1]上昇する　※<color=#FF9314>陽属性</color>の黒澤 ルビィのみ対象",
+    "IconImagePath": "168"
+  },
+  {
+    "Id": 169,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80073,
+    "EffectName": "サンタの帽子",
+    "EffectDescription": "アクターの歌唱力が[:param1]%上昇する　※シリウスに所属するアクターのみ対象",
+    "IconImagePath": "169"
+  },
+  {
+    "Id": 170,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80074,
+    "EffectName": "ソリ",
+    "EffectDescription": "センスのCTが[:param1]秒短縮する　※<color=#33B4DF>凛属性</color>の鳳 ここなのみ対象",
+    "IconImagePath": "170"
+  },
+  {
+    "Id": 171,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80075,
+    "EffectName": "トナカイのカチューシャ",
+    "EffectDescription": "スターアクト発動条件に必要な光の数を超えて付与された光を最大[:param1]個「SP光」に変換する（レベル10の時に効果発動）　※<color=#33B4DF>凛属性</color>の鳳 ここなのみ対象",
+    "IconImagePath": "172"
+  },
+  {
+    "Id": 172,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80076,
+    "EffectName": "クリスマスカード",
+    "EffectDescription": "アクターの集中力が[:param1]%上昇する　※<color=#33B4DF>凛属性</color>の静香のみ対象",
+    "IconImagePath": "171"
+  },
+  {
+    "Id": 173,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80077,
+    "EffectName": "高級マッサージチェア",
+    "EffectDescription": "アクターの集中力が[:param1]%上昇する　※銀河座に所属するアクターのみ対象",
+    "IconImagePath": "173"
+  },
+  {
+    "Id": 174,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80078,
+    "EffectName": "トランプカード",
+    "EffectDescription": "銀河座に所属するアクター1人につき、プリンシパルゲージの上限値が[:param1]上昇する",
+    "IconImagePath": "176"
+  },
+  {
+    "Id": 175,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80079,
+    "EffectName": "枕",
+    "EffectDescription": "センスのCTが[:param1]秒短縮する　※<color=#FF9314>陽属性</color>のリリヤのみ対象",
+    "IconImagePath": "174"
+  },
+  {
+    "Id": 176,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80080,
+    "EffectName": "露天風呂",
+    "EffectDescription": "公演開始時にプリンシパルゲージが[:param1]上昇する　※<color=#FF9314>陽属性</color>のラモーナのみ対象",
+    "IconImagePath": "175"
+  },
+  {
+    "Id": 177,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80081,
+    "EffectName": "銀河座のロゴ",
+    "EffectDescription": "アクターの演技力上限値が[:param1]%上昇する　※銀河座に所属するアクターのみ対象",
+    "IconImagePath": "177"
+  },
+  {
+    "Id": 178,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80082,
+    "EffectName": "フロストフラワー【凛】",
+    "EffectDescription": "公演開始時にプリンシパルゲージが[:param1]上昇する　※<color=#33B4DF>凛属性</color>のリリヤのみ対象",
+    "IconImagePath": "180"
+  },
+  {
+    "Id": 179,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80083,
+    "EffectName": "ハーバリウム【凛】",
+    "EffectDescription": "スターアクト発動条件に必要な光の数を超えて付与された光を最大[:param1]個「SP光」に変換する（レベル10の時に効果発動）　※<color=#33B4DF>凛属性</color>の与那国 緋花里のみ対象",
+    "IconImagePath": "179"
+  },
+  {
+    "Id": 180,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80084,
+    "EffectName": "キャンドルホルダー【凛】",
+    "EffectDescription": "公演開始時にプリンシパルゲージの上限値が[:param1]上昇する　　※<color=#33B4DF>凛属性</color>の王 雪のみ対象",
+    "IconImagePath": "178"
+  },
+  {
+    "Id": 181,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80085,
+    "EffectName": "劇団電姫のロゴ",
+    "EffectDescription": "アクターの演技力上限が[:param1]％上昇する　※劇団電姫に所属するアクターのみ対象",
+    "IconImagePath": "181"
+  },
+  {
+    "Id": 182,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80086,
+    "EffectName": "夜桜の扇子【凛】",
+    "EffectDescription": "アクターの表現力が[:param1]%上昇する　　※<color=#33B4DF>凛属性</color>の猫足 蕾のみ対象",
+    "IconImagePath": "183"
+  },
+  {
+    "Id": 183,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80087,
+    "EffectName": "白詰草のスワッグ【凛】",
+    "EffectDescription": "スターアクト発動条件に必要な光の数を超えて付与された光を最大1個「SP光」に変換する（レベル10の時に効果発動）　※<color=#33B4DF>凛属性</color>の白丸 美兎のみ対象",
+    "IconImagePath": "182"
+  },
+  {
+    "Id": 184,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80088,
+    "EffectName": "天使のオーブ【凛】",
+    "EffectDescription": "公演開始時にプリンシパルゲージが[:param1]上昇する　※<color=#33B4DF>凛属性</color>の本巣 叶羽のみ対象",
+    "IconImagePath": "184"
+  },
+  {
+    "Id": 185,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80089,
+    "EffectName": "銀河座のロゴ",
+    "EffectDescription": "銀河座に所属するアクター1人につき、公演開始時にプリンシパルゲージが[:param1]上昇する",
+    "IconImagePath": "177"
+  },
+  {
+    "Id": 186,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80090,
+    "EffectName": "ハーバリウム【憐】",
+    "EffectDescription": "公演開始時にプリンシパルゲージの上限値が[:param1]上昇する　※<color=#ff679d>憐属性</color>の与那国 緋花里のみ対象",
+    "IconImagePath": "187"
+  },
+  {
+    "Id": 187,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80091,
+    "EffectName": "蝶のブローチ【憐】",
+    "EffectDescription": "スターアクト発動条件に必要な光の数を超えて付与された光を最大[:param1]個「SP光」に変換する（レベル10の時に効果発動）　※<color=#ff679d>憐属性</color>の千寿 暦のみ対象",
+    "IconImagePath": "185"
+  },
+  {
+    "Id": 188,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80092,
+    "EffectName": "模造刀【憐】",
+    "EffectDescription": "センス発動時、追加で「SP光」を[:param1]個付与する（レベル10の時に効果発動）※<color=#ff679d>憐属性</color>のラモーナ・ウォルフのみ対象",
+    "IconImagePath": "186"
+  },
+  {
+    "Id": 189,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80093,
+    "EffectName": "Edenのロゴ",
+    "EffectDescription": "アクターの演技力上限が[:param1]％上昇する　※Edenに所属するアクターのみ対象",
+    "IconImagePath": "188"
+  },
+  {
+    "Id": 190,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80094,
+    "EffectName": "Edenのカードキー",
+    "EffectDescription": "Edenに所属するアクター1人につき、プリンシパルゲージの上限値が[:param1]上昇する",
+    "IconImagePath": "191"
+  },
+  {
+    "Id": 191,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80095,
+    "EffectName": "スコッチウイスキー【凛】",
+    "EffectDescription": "センス発動時、追加で「SP光」を[:param1]個付与する（レベル10の時に効果発動）　※<color=#33B4DF>凛属性</color>の連尺野 初魅のみ対象",
+    "IconImagePath": "189"
+  },
+  {
+    "Id": 192,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80096,
+    "EffectName": "フラワーグラス【凛】",
+    "EffectDescription": "公演開始時にプリンシパルゲージが[:param1]上昇する　※<color=#33B4DF>凛属性</color>の舎人 仁花子のみ対象",
+    "IconImagePath": "190"
+  },
+  {
+    "Id": 193,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80097,
+    "EffectName": "Edenのロゴ",
+    "EffectDescription": "アクターの演技力上限が[:param1]％上昇する　※<color=#7AC940>彩属性</color>のアクターのみ対象",
+    "IconImagePath": "188"
+  },
+  {
+    "Id": 194,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80098,
+    "EffectName": "天使のオーブ【彩】",
+    "EffectDescription": "<color=#7AC940>彩属性</color>のアクター1人につき、公演開始時にプリンシパルゲージが[:param1]上昇する",
+    "IconImagePath": "194"
+  },
+  {
+    "Id": 195,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80099,
+    "EffectName": "小悪魔リボン【彩】",
+    "EffectDescription": "アクターの表現力が[:param1]％上昇する　※<color=#7AC940>彩属性</color>の筆島 しぐれのみ対象",
+    "IconImagePath": "193"
+  },
+  {
+    "Id": 196,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80100,
+    "EffectName": "音符のブローチ【彩】",
+    "EffectDescription": "スターアクト発動条件に必要な光の数を超えて付与された光を最大[:param1]個「SP光」に変換する（レベル10の時に効果発動）　※<color=#7AC940>彩属性</color>の新妻 八恵のみ対象",
+    "IconImagePath": "192"
+  },
+  {
+    "Id": 197,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80101,
+    "EffectName": "銀河座のロゴ",
+    "EffectDescription": "アクターの演技力上限が[:param1]％上昇する　※銀河座に所属するアクターのみ対象",
+    "IconImagePath": "177"
+  },
+  {
+    "Id": 198,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80102,
+    "EffectName": "キャンドルホルダー【彩】",
+    "EffectDescription": "公演開始時にプリンシパルゲージが[:param1]上昇する　※<color=#7AC940>彩属性</color>の王  雪のみ対象",
+    "IconImagePath": "200"
+  },
+  {
+    "Id": 199,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80103,
+    "EffectName": "フロストフラワー【彩】",
+    "EffectDescription": "公演開始前にプリンシパルゲージの上限値が[:param1]上昇する　※<color=#7AC940>彩属性</color>の リリヤ・クルトベイのみ対象",
+    "IconImagePath": "201"
+  },
+  {
+    "Id": 200,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80104,
+    "EffectName": "蝶のブローチ【彩】",
+    "EffectDescription": "センス発動時、追加で「SP光」を[:param1]個付与する（レベル10の時に効果発動）　※<color=#7AC940>彩属性</color>の千寿  暦のみ対象",
+    "IconImagePath": "198"
+  },
+  {
+    "Id": 201,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80105,
+    "EffectName": "劇団電姫のロゴ",
+    "EffectDescription": "アクターの演技力上限が[:param1]％上昇する　※劇団電姫所属するアクターのみ対象",
+    "IconImagePath": "181"
+  },
+  {
+    "Id": 202,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80106,
+    "EffectName": "アクリルリング【憐】",
+    "EffectDescription": "劇団電姫に所属するアクター1人につき、プリンシパルゲージの上限値が[:param1]上昇する",
+    "IconImagePath": "208"
+  },
+  {
+    "Id": 203,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80107,
+    "EffectName": "天使のオーブ【憐】",
+    "EffectDescription": "公演開始時にプリンシパルゲージが[:param1]上昇する　※<color=#ff679d>憐属性</color>の本巣 叶羽のみ対象",
+    "IconImagePath": "203"
+  },
+  {
+    "Id": 204,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80108,
+    "EffectName": "夜桜の扇子【憐】",
+    "EffectDescription": "センスのCTが[:param1]秒短縮する　※<color=#ff679d>憐属性</color>の猫足 蕾のみ対象",
+    "IconImagePath": "204"
+  },
+  {
+    "Id": 205,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80109,
+    "EffectName": "Edenのロゴ",
+    "EffectDescription": "アクターの演技力上限が[:param1]％上昇する　※Edenに所属するアクターのみ対象",
+    "IconImagePath": "188"
+  },
+  {
+    "Id": 206,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80110,
+    "EffectName": "小悪魔リボン【凛】",
+    "EffectDescription": "Edenに所属するアクター1人につき、公演開始時にプリンシパルゲージが[:param1]上昇する",
+    "IconImagePath": "207"
+  },
+  {
+    "Id": 207,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80111,
+    "EffectName": "フラワーグラス【凛】",
+    "EffectDescription": "センス発動時、追加で「SP光」を[:param1]個付与する（レベル10の時に効果発動）　※<color=#33B4DF>凛属性</color>の舎人 仁花子のみ対象",
+    "IconImagePath": "190"
+  },
+  {
+    "Id": 208,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80112,
+    "EffectName": "積怨の日記【凛】",
+    "EffectDescription": "公演開始前にプリンシパルゲージの上限値が[:param1]上昇する　　※<color=#33B4DF>凛属性</color>の烏森 大黒のみ対象",
+    "IconImagePath": "206"
+  },
+  {
+    "Id": 209,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80113,
+    "EffectName": "シリウスのロゴ",
+    "EffectDescription": "アクターの演技力上限が[:param1]％上昇する　※シリウスに所属するアクターのみ対象",
+    "IconImagePath": "195"
+  },
+  {
+    "Id": 210,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80114,
+    "EffectName": "星のペンダント【凛】",
+    "EffectDescription": "シリウスに所属するアクター1人につき、プリンシパルゲージの上限値が[:param1]上昇する",
+    "IconImagePath": "214"
+  },
+  {
+    "Id": 211,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80115,
+    "EffectName": "音符のブローチ【凛】",
+    "EffectDescription": "センス発動時、追加で「SP光」を[:param1]個付与する（レベル10の時に効果発動）　※<color=#33B4DF>凛属性</color>の新妻 八恵のみ対象",
+    "IconImagePath": "212"
+  },
+  {
+    "Id": 212,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80116,
+    "EffectName": "懐中時計【凛】",
+    "EffectDescription": "センスのCTが[:param1]秒短縮する　※<color=#33B4DF>凛属性</color>のカトリナ・グリーベルのみ対象",
+    "IconImagePath": "213"
+  },
+  {
+    "Id": 213,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80117,
+    "EffectName": "Edenのロゴ",
+    "EffectDescription": "アクターの演技力上限が[:param1]％上昇する　※Edenに所属するアクターのみ対象",
+    "IconImagePath": "188"
+  },
+  {
+    "Id": 214,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80118,
+    "EffectName": "積怨の日記【陽】",
+    "EffectDescription": "Edenに所属するアクター1人につき、プリンシパルゲージの上限値が[:param1]上昇する",
+    "IconImagePath": "211"
+  },
+  {
+    "Id": 215,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80119,
+    "EffectName": "トランプカード【陽】",
+    "EffectDescription": "公演開始時にプリンシパルゲージが[:param1]上昇する　※<color=#FF9314>陽属性</color>の萬 容のみ対象",
+    "IconImagePath": "210"
+  },
+  {
+    "Id": 216,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80120,
+    "EffectName": "フラワーグラス【陽】",
+    "EffectDescription": "スターアクト発動条件に必要な光の数を超えて付与された光を最大[:param1]個「SP光」に変換する（レベル10の時に効果発動）　　※<color=#FF9314>陽属性</color>の舎人 仁花子のみ対象",
+    "IconImagePath": "209"
+  },
+  {
+    "Id": 217,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80121,
+    "EffectName": "銀河座のロゴ",
+    "EffectDescription": "アクターの演技力上限が[:param1]％上昇する　※銀河座に所属するアクターのみ対象",
+    "IconImagePath": "177"
+  },
+  {
+    "Id": 218,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80122,
+    "EffectName": "キャンドルホルダー【凛】",
+    "EffectDescription": "銀河座に所属するアクター1人につき、プリンシパルゲージの上限値が[:param1]上昇する",
+    "IconImagePath": "178"
+  },
+  {
+    "Id": 219,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80123,
+    "EffectName": "ハーバリウム【凛】",
+    "EffectDescription": "センス発動時、追加で「SP光」を[:param1]個付与する（レベル10の時に効果発動）　※<color=#33B4DF>凛属性</color>の与那国　緋花里のみ対象",
+    "IconImagePath": "179"
+  },
+  {
+    "Id": 220,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80124,
+    "EffectName": "フロストフラワー【凛】",
+    "EffectDescription": "センスのCTが[:param1]秒短縮する　※<color=#33B4DF>凛属性</color>のリリヤ ・クルトベイのみ対象",
+    "IconImagePath": "180"
+  },
+  {
+    "Id": 221,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80125,
+    "EffectName": "Edenのロゴ",
+    "EffectDescription": "アクターの演技力上限が[:param1]％上昇する　※Edenに所属するアクターのみ対象",
+    "IconImagePath": "188"
+  },
+  {
+    "Id": 222,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80126,
+    "EffectName": "小悪魔リボン【彩】",
+    "EffectDescription": "Edenに所属するアクター1人につき、プリンシパルゲージが[:param1]上昇する",
+    "IconImagePath": "193"
+  },
+  {
+    "Id": 223,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80127,
+    "EffectName": "スコッチウイスキー【彩】",
+    "EffectDescription": "センスのCTが[:param1]秒短縮する　※<color=#7AC940>彩属性</color>の連尺野 初魅のみ対象",
+    "IconImagePath": "218"
+  },
+  {
+    "Id": 224,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80128,
+    "EffectName": "トランプカード【彩】",
+    "EffectDescription": "公演開始時にプリンシパルゲージの上限値が[:param1]上昇する　※<color=#7AC940>彩属性</color>の萬 容のみ対象",
+    "IconImagePath": "219"
+  },
+  {
+    "Id": 225,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80129,
+    "EffectName": "シリウスのロゴ",
+    "EffectDescription": "アクターの演技力上限が[:param1]％上昇する　※シリウスに所属するアクターのみ対象",
+    "IconImagePath": "195"
+  },
+  {
+    "Id": 226,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80130,
+    "EffectName": "流星のペンダント【陽】",
+    "EffectDescription": "シリウスに所属するアクター1人につき、プリンシパルゲージの上限値が[:param1]上昇する",
+    "IconImagePath": "222"
+  },
+  {
+    "Id": 227,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80131,
+    "EffectName": "星のペンダント【陽】",
+    "EffectDescription": "センス発動時、追加で「SP光」を[:param1]個付与する（レベル10の時に効果発動）　※<color=#FF9314>陽属性</color>の鳳　ここなのみ対象",
+    "IconImagePath": "221"
+  },
+  {
+    "Id": 228,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80132,
+    "EffectName": "サンキャッチャー【陽】",
+    "EffectDescription": "アクターの集中力が[:param1]%上昇する　※<color=#FF9314>陽属性</color>の柳場　ぱんだのみ対象",
+    "IconImagePath": "220"
+  },
+  {
+    "Id": 229,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80133,
+    "EffectName": "劇団電姫のロゴ",
+    "EffectDescription": "アクターの演技力上限が[:param1]％上昇する　※<color=#FF9314>陽属性</color>のアクターのみ対象",
+    "IconImagePath": "181"
+  },
+  {
+    "Id": 230,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80134,
+    "EffectName": "蝶のブローチ【陽】",
+    "EffectDescription": "<color=#FF9314>陽属性</color>のアクター1人につき、プリンシパルゲージの上限値が[:param1]上昇する",
+    "IconImagePath": "228"
+  },
+  {
+    "Id": 231,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80135,
+    "EffectName": "天使のオーブ【陽】",
+    "EffectDescription": "公演開始時にプリンシパルゲージが[:param1]上昇する　※<color=#FF9314>陽属性</color>の本巣 叶羽のみ対象",
+    "IconImagePath": "226"
+  },
+  {
+    "Id": 232,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80136,
+    "EffectName": "猫耳ヘッドフォン【陽】",
+    "EffectDescription": "スターアクト発動に必要な増幅の光が[:param1]個減少する（必要な光の数は1個未満にならない）　※<color=#FF9314>陽属性</color>の陽属性のいろはのみ対象        ",
+    "IconImagePath": "225"
+  },
+  {
+    "Id": 233,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80137,
+    "EffectName": "シリウスのロゴ",
+    "EffectDescription": "アクターの演技力上限が[:param1]％上昇する　※<color=#7AC940>彩属性</color>のアクターのみ対象",
+    "IconImagePath": "195"
+  },
+  {
+    "Id": 234,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80138,
+    "EffectName": "天使のオーブ【彩】",
+    "EffectDescription": "<color=#7AC940>彩属性</color>のアクター1人につき、公演開始時にプリンシパルゲージが[:param1]上昇する",
+    "IconImagePath": "194"
+  },
+  {
+    "Id": 235,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80139,
+    "EffectName": "白詰草のスワッグ【彩】",
+    "EffectDescription": "公演開始時にプリンシパルゲージの上限値が[:param1]上昇する　※<color=#7AC940>彩属性</color>の白丸 美兎のみ対象",
+    "IconImagePath": "230"
+  },
+  {
+    "Id": 236,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80140,
+    "EffectName": "音符のブローチ【彩】",
+    "EffectDescription": "スターアクト発動条件に必要な光の数を超えて付与された光を最大[:param1]個「SP光」に変換する（レベル10の時に効果発動）　※<color=#7AC940>彩属性</color>の新妻 八恵のみ対象",
+    "IconImagePath": "192"
+  },
+  {
+    "Id": 237,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80141,
+    "EffectName": "シリウスのロゴ",
+    "EffectDescription": "アクターの演技力上限が[:param1]％上昇する　※シリウスに所属するアクターのみ対象",
+    "IconImagePath": "195"
+  },
+  {
+    "Id": 238,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80142,
+    "EffectName": "音符のブローチ【凛】",
+    "EffectDescription": "シリウスに所属するアクターのセンスのCTが[:param1]秒短縮する",
+    "IconImagePath": "212"
+  },
+  {
+    "Id": 239,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80143,
+    "EffectName": "流星のペンダント【凛】",
+    "EffectDescription": "公演開始時にプリンシパルゲージの上限値が[:param1]上昇する　※<color=#33B4DF>凛属性</color>の静香のみ対象",
+    "IconImagePath": "224"
+  },
+  {
+    "Id": 240,
+    "StoryEventHighScoreBuffPatternGroupId": 2,
+    "EffectMasterId": 80144,
+    "EffectName": "星のペンダント【凛】",
+    "EffectDescription": "センス発動時、追加で「SP光」を[:param1]個付与する（レベル10の時に効果発動）　※<color=#33B4DF>凛属性</color>の鳳　ここなのみ対象",
+    "IconImagePath": "214"
+  }
+]

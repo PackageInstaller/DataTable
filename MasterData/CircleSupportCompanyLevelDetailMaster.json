@@ -1,0 +1,542 @@
+[
+  {
+    "Id": 101,
+    "Company": 1,
+    "Level": 1,
+    "RequiredSupportPoint": 30000,
+    "EffectMasterId": 90101,
+    "Description": "シリウスに所属しているアクターの歌唱力が3％上昇",
+    "ReleaseDate": "2024-01-31T17:00:00+00:00"
+  },
+  {
+    "Id": 102,
+    "Company": 2,
+    "Level": 1,
+    "RequiredSupportPoint": 30000,
+    "EffectMasterId": 90201,
+    "Description": "Edenに所属しているアクターの表現力が3％上昇",
+    "ReleaseDate": "2024-01-31T17:00:00+00:00"
+  },
+  {
+    "Id": 103,
+    "Company": 3,
+    "Level": 1,
+    "RequiredSupportPoint": 30000,
+    "EffectMasterId": 90301,
+    "Description": "銀河座に所属しているアクターの集中力が3％上昇",
+    "ReleaseDate": "2024-01-31T17:00:00+00:00"
+  },
+  {
+    "Id": 104,
+    "Company": 4,
+    "Level": 1,
+    "RequiredSupportPoint": 30000,
+    "EffectMasterId": 90401,
+    "Description": "劇団電姫に所属しているアクターの歌唱力が3％上昇",
+    "ReleaseDate": "2024-01-31T17:00:00+00:00"
+  },
+  {
+    "Id": 201,
+    "Company": 1,
+    "Level": 2,
+    "RequiredSupportPoint": 70000,
+    "EffectMasterId": 90102,
+    "Description": "シリウスに所属しているアクターの表現力が3％上昇",
+    "ReleaseDate": "2024-01-31T17:00:00+00:00"
+  },
+  {
+    "Id": 202,
+    "Company": 2,
+    "Level": 2,
+    "RequiredSupportPoint": 70000,
+    "EffectMasterId": 90202,
+    "Description": "Edenに所属しているアクターの歌唱力が3％上昇",
+    "ReleaseDate": "2024-01-31T17:00:00+00:00"
+  },
+  {
+    "Id": 203,
+    "Company": 3,
+    "Level": 2,
+    "RequiredSupportPoint": 70000,
+    "EffectMasterId": 90302,
+    "Description": "銀河座に所属しているアクターの歌唱力が3％上昇",
+    "ReleaseDate": "2024-01-31T17:00:00+00:00"
+  },
+  {
+    "Id": 204,
+    "Company": 4,
+    "Level": 2,
+    "RequiredSupportPoint": 70000,
+    "EffectMasterId": 90402,
+    "Description": "劇団電姫に所属しているアクターの集中力が3％上昇",
+    "ReleaseDate": "2024-01-31T17:00:00+00:00"
+  },
+  {
+    "Id": 301,
+    "Company": 1,
+    "Level": 3,
+    "RequiredSupportPoint": 120000,
+    "EffectMasterId": 90103,
+    "Description": "シリウスに所属しているアクターの集中力が3％上昇",
+    "ReleaseDate": "2024-01-31T17:00:00+00:00"
+  },
+  {
+    "Id": 302,
+    "Company": 2,
+    "Level": 3,
+    "RequiredSupportPoint": 120000,
+    "EffectMasterId": 90203,
+    "Description": "Edenに所属しているアクターの集中力が3％上昇",
+    "ReleaseDate": "2024-01-31T17:00:00+00:00"
+  },
+  {
+    "Id": 303,
+    "Company": 3,
+    "Level": 3,
+    "RequiredSupportPoint": 120000,
+    "EffectMasterId": 90303,
+    "Description": "銀河座に所属しているアクターの表現力が3％上昇",
+    "ReleaseDate": "2024-01-31T17:00:00+00:00"
+  },
+  {
+    "Id": 304,
+    "Company": 4,
+    "Level": 3,
+    "RequiredSupportPoint": 120000,
+    "EffectMasterId": 90403,
+    "Description": "劇団電姫に所属しているアクターの表現力が3％上昇",
+    "ReleaseDate": "2024-01-31T17:00:00+00:00"
+  },
+  {
+    "Id": 401,
+    "Company": 1,
+    "Level": 4,
+    "RequiredSupportPoint": 180000,
+    "EffectMasterId": 90104,
+    "Description": "シリウスに所属しているアクターの演技力が2％上昇",
+    "ReleaseDate": "2024-01-31T17:00:00+00:00"
+  },
+  {
+    "Id": 402,
+    "Company": 2,
+    "Level": 4,
+    "RequiredSupportPoint": 180000,
+    "EffectMasterId": 90204,
+    "Description": "Edenに所属しているアクターの演技力が2％上昇",
+    "ReleaseDate": "2024-01-31T17:00:00+00:00"
+  },
+  {
+    "Id": 403,
+    "Company": 3,
+    "Level": 4,
+    "RequiredSupportPoint": 180000,
+    "EffectMasterId": 90304,
+    "Description": "銀河座に所属しているアクターの演技力が2％上昇",
+    "ReleaseDate": "2024-01-31T17:00:00+00:00"
+  },
+  {
+    "Id": 404,
+    "Company": 4,
+    "Level": 4,
+    "RequiredSupportPoint": 180000,
+    "EffectMasterId": 90404,
+    "Description": "劇団電姫に所属しているアクターの演技力が2％上昇",
+    "ReleaseDate": "2024-01-31T17:00:00+00:00"
+  },
+  {
+    "Id": 501,
+    "Company": 1,
+    "Level": 5,
+    "RequiredSupportPoint": 250000,
+    "EffectMasterId": 90105,
+    "Description": "全アクターの演技力が1％上昇",
+    "ReleaseDate": "2024-01-31T17:00:00+00:00"
+  },
+  {
+    "Id": 502,
+    "Company": 2,
+    "Level": 5,
+    "RequiredSupportPoint": 250000,
+    "EffectMasterId": 90205,
+    "Description": "全アクターの演技力が1％上昇",
+    "ReleaseDate": "2024-01-31T17:00:00+00:00"
+  },
+  {
+    "Id": 503,
+    "Company": 3,
+    "Level": 5,
+    "RequiredSupportPoint": 250000,
+    "EffectMasterId": 90305,
+    "Description": "全アクターの演技力が1％上昇",
+    "ReleaseDate": "2024-01-31T17:00:00+00:00"
+  },
+  {
+    "Id": 504,
+    "Company": 4,
+    "Level": 5,
+    "RequiredSupportPoint": 250000,
+    "EffectMasterId": 90405,
+    "Description": "全アクターの演技力が1％上昇",
+    "ReleaseDate": "2024-01-31T17:00:00+00:00"
+  },
+  {
+    "Id": 601,
+    "Company": 1,
+    "Level": 6,
+    "RequiredSupportPoint": 100000,
+    "EffectMasterId": 90101,
+    "Description": "シリウスに所属しているアクターの歌唱力が3％上昇",
+    "ReleaseDate": "2024-01-31T17:00:00+00:00"
+  },
+  {
+    "Id": 602,
+    "Company": 2,
+    "Level": 6,
+    "RequiredSupportPoint": 100000,
+    "EffectMasterId": 90201,
+    "Description": "Edenに所属しているアクターの表現力が3％上昇",
+    "ReleaseDate": "2024-01-31T17:00:00+00:00"
+  },
+  {
+    "Id": 603,
+    "Company": 3,
+    "Level": 6,
+    "RequiredSupportPoint": 100000,
+    "EffectMasterId": 90301,
+    "Description": "銀河座に所属しているアクターの集中力が3％上昇",
+    "ReleaseDate": "2024-01-31T17:00:00+00:00"
+  },
+  {
+    "Id": 604,
+    "Company": 4,
+    "Level": 6,
+    "RequiredSupportPoint": 100000,
+    "EffectMasterId": 90401,
+    "Description": "劇団電姫に所属しているアクターの歌唱力が3％上昇",
+    "ReleaseDate": "2024-01-31T17:00:00+00:00"
+  },
+  {
+    "Id": 701,
+    "Company": 1,
+    "Level": 7,
+    "RequiredSupportPoint": 100000,
+    "EffectMasterId": 90102,
+    "Description": "シリウスに所属しているアクターの表現力が3％上昇",
+    "ReleaseDate": "2024-01-31T17:00:00+00:00"
+  },
+  {
+    "Id": 702,
+    "Company": 2,
+    "Level": 7,
+    "RequiredSupportPoint": 100000,
+    "EffectMasterId": 90202,
+    "Description": "Edenに所属しているアクターの歌唱力が3％上昇",
+    "ReleaseDate": "2024-01-31T17:00:00+00:00"
+  },
+  {
+    "Id": 703,
+    "Company": 3,
+    "Level": 7,
+    "RequiredSupportPoint": 100000,
+    "EffectMasterId": 90302,
+    "Description": "銀河座に所属しているアクターの歌唱力が3％上昇",
+    "ReleaseDate": "2024-01-31T17:00:00+00:00"
+  },
+  {
+    "Id": 704,
+    "Company": 4,
+    "Level": 7,
+    "RequiredSupportPoint": 100000,
+    "EffectMasterId": 90402,
+    "Description": "劇団電姫に所属しているアクターの集中力が3％上昇",
+    "ReleaseDate": "2024-01-31T17:00:00+00:00"
+  },
+  {
+    "Id": 801,
+    "Company": 1,
+    "Level": 8,
+    "RequiredSupportPoint": 125000,
+    "EffectMasterId": 90103,
+    "Description": "シリウスに所属しているアクターの集中力が3％上昇",
+    "ReleaseDate": "2024-01-31T17:00:00+00:00"
+  },
+  {
+    "Id": 802,
+    "Company": 2,
+    "Level": 8,
+    "RequiredSupportPoint": 125000,
+    "EffectMasterId": 90203,
+    "Description": "Edenに所属しているアクターの集中力が3％上昇",
+    "ReleaseDate": "2024-01-31T17:00:00+00:00"
+  },
+  {
+    "Id": 803,
+    "Company": 3,
+    "Level": 8,
+    "RequiredSupportPoint": 125000,
+    "EffectMasterId": 90303,
+    "Description": "銀河座に所属しているアクターの表現力が3％上昇",
+    "ReleaseDate": "2024-01-31T17:00:00+00:00"
+  },
+  {
+    "Id": 804,
+    "Company": 4,
+    "Level": 8,
+    "RequiredSupportPoint": 125000,
+    "EffectMasterId": 90403,
+    "Description": "劇団電姫に所属しているアクターの表現力が3％上昇",
+    "ReleaseDate": "2024-01-31T17:00:00+00:00"
+  },
+  {
+    "Id": 901,
+    "Company": 1,
+    "Level": 9,
+    "RequiredSupportPoint": 200000,
+    "EffectMasterId": 90104,
+    "Description": "シリウスに所属しているアクターの演技力が2％上昇",
+    "ReleaseDate": "2024-01-31T17:00:00+00:00"
+  },
+  {
+    "Id": 902,
+    "Company": 2,
+    "Level": 9,
+    "RequiredSupportPoint": 200000,
+    "EffectMasterId": 90204,
+    "Description": "Edenに所属しているアクターの演技力が2％上昇",
+    "ReleaseDate": "2024-01-31T17:00:00+00:00"
+  },
+  {
+    "Id": 903,
+    "Company": 3,
+    "Level": 9,
+    "RequiredSupportPoint": 200000,
+    "EffectMasterId": 90304,
+    "Description": "銀河座に所属しているアクターの演技力が2％上昇",
+    "ReleaseDate": "2024-01-31T17:00:00+00:00"
+  },
+  {
+    "Id": 904,
+    "Company": 4,
+    "Level": 9,
+    "RequiredSupportPoint": 200000,
+    "EffectMasterId": 90404,
+    "Description": "劇団電姫に所属しているアクターの演技力が2％上昇",
+    "ReleaseDate": "2024-01-31T17:00:00+00:00"
+  },
+  {
+    "Id": 1001,
+    "Company": 1,
+    "Level": 10,
+    "RequiredSupportPoint": 250000,
+    "EffectMasterId": 90105,
+    "Description": "全アクターの演技力が1％上昇",
+    "ReleaseDate": "2024-01-31T17:00:00+00:00"
+  },
+  {
+    "Id": 1002,
+    "Company": 2,
+    "Level": 10,
+    "RequiredSupportPoint": 250000,
+    "EffectMasterId": 90205,
+    "Description": "全アクターの演技力が1％上昇",
+    "ReleaseDate": "2024-01-31T17:00:00+00:00"
+  },
+  {
+    "Id": 1003,
+    "Company": 3,
+    "Level": 10,
+    "RequiredSupportPoint": 250000,
+    "EffectMasterId": 90305,
+    "Description": "全アクターの演技力が1％上昇",
+    "ReleaseDate": "2024-01-31T17:00:00+00:00"
+  },
+  {
+    "Id": 1004,
+    "Company": 4,
+    "Level": 10,
+    "RequiredSupportPoint": 250000,
+    "EffectMasterId": 90405,
+    "Description": "全アクターの演技力が1％上昇",
+    "ReleaseDate": "2024-01-31T17:00:00+00:00"
+  },
+  {
+    "Id": 1101,
+    "Company": 1,
+    "Level": 11,
+    "RequiredSupportPoint": 125000,
+    "EffectMasterId": 90101,
+    "Description": "シリウスに所属しているアクターの歌唱力が3％上昇",
+    "ReleaseDate": "2025-10-20T14:00:00+00:00"
+  },
+  {
+    "Id": 1102,
+    "Company": 2,
+    "Level": 11,
+    "RequiredSupportPoint": 125000,
+    "EffectMasterId": 90201,
+    "Description": "Edenに所属しているアクターの表現力が3％上昇",
+    "ReleaseDate": "2025-10-20T14:00:00+00:00"
+  },
+  {
+    "Id": 1103,
+    "Company": 3,
+    "Level": 11,
+    "RequiredSupportPoint": 125000,
+    "EffectMasterId": 90301,
+    "Description": "銀河座に所属しているアクターの集中力が3％上昇",
+    "ReleaseDate": "2025-10-20T14:00:00+00:00"
+  },
+  {
+    "Id": 1104,
+    "Company": 4,
+    "Level": 11,
+    "RequiredSupportPoint": 125000,
+    "EffectMasterId": 90401,
+    "Description": "劇団電姫に所属しているアクターの歌唱力が3％上昇",
+    "ReleaseDate": "2025-10-20T14:00:00+00:00"
+  },
+  {
+    "Id": 1201,
+    "Company": 1,
+    "Level": 12,
+    "RequiredSupportPoint": 125000,
+    "EffectMasterId": 90102,
+    "Description": "シリウスに所属しているアクターの表現力が3％上昇",
+    "ReleaseDate": "2025-10-20T14:00:00+00:00"
+  },
+  {
+    "Id": 1202,
+    "Company": 2,
+    "Level": 12,
+    "RequiredSupportPoint": 125000,
+    "EffectMasterId": 90202,
+    "Description": "Edenに所属しているアクターの歌唱力が3％上昇",
+    "ReleaseDate": "2025-10-20T14:00:00+00:00"
+  },
+  {
+    "Id": 1203,
+    "Company": 3,
+    "Level": 12,
+    "RequiredSupportPoint": 125000,
+    "EffectMasterId": 90302,
+    "Description": "銀河座に所属しているアクターの歌唱力が3％上昇",
+    "ReleaseDate": "2025-10-20T14:00:00+00:00"
+  },
+  {
+    "Id": 1204,
+    "Company": 4,
+    "Level": 12,
+    "RequiredSupportPoint": 125000,
+    "EffectMasterId": 90402,
+    "Description": "劇団電姫に所属しているアクターの集中力が3％上昇",
+    "ReleaseDate": "2025-10-20T14:00:00+00:00"
+  },
+  {
+    "Id": 1301,
+    "Company": 1,
+    "Level": 13,
+    "RequiredSupportPoint": 150000,
+    "EffectMasterId": 90103,
+    "Description": "シリウスに所属しているアクターの集中力が3％上昇",
+    "ReleaseDate": "2025-10-20T14:00:00+00:00"
+  },
+  {
+    "Id": 1302,
+    "Company": 2,
+    "Level": 13,
+    "RequiredSupportPoint": 150000,
+    "EffectMasterId": 90203,
+    "Description": "Edenに所属しているアクターの集中力が3％上昇",
+    "ReleaseDate": "2025-10-20T14:00:00+00:00"
+  },
+  {
+    "Id": 1303,
+    "Company": 3,
+    "Level": 13,
+    "RequiredSupportPoint": 150000,
+    "EffectMasterId": 90303,
+    "Description": "銀河座に所属しているアクターの表現力が3％上昇",
+    "ReleaseDate": "2025-10-20T14:00:00+00:00"
+  },
+  {
+    "Id": 1304,
+    "Company": 4,
+    "Level": 13,
+    "RequiredSupportPoint": 150000,
+    "EffectMasterId": 90403,
+    "Description": "劇団電姫に所属しているアクターの表現力が3％上昇",
+    "ReleaseDate": "2025-10-20T14:00:00+00:00"
+  },
+  {
+    "Id": 1401,
+    "Company": 1,
+    "Level": 14,
+    "RequiredSupportPoint": 225000,
+    "EffectMasterId": 90104,
+    "Description": "シリウスに所属しているアクターの演技力が2％上昇",
+    "ReleaseDate": "2025-10-20T14:00:00+00:00"
+  },
+  {
+    "Id": 1402,
+    "Company": 2,
+    "Level": 14,
+    "RequiredSupportPoint": 225000,
+    "EffectMasterId": 90204,
+    "Description": "Edenに所属しているアクターの演技力が2％上昇",
+    "ReleaseDate": "2025-10-20T14:00:00+00:00"
+  },
+  {
+    "Id": 1403,
+    "Company": 3,
+    "Level": 14,
+    "RequiredSupportPoint": 225000,
+    "EffectMasterId": 90304,
+    "Description": "銀河座に所属しているアクターの演技力が2％上昇",
+    "ReleaseDate": "2025-10-20T14:00:00+00:00"
+  },
+  {
+    "Id": 1404,
+    "Company": 4,
+    "Level": 14,
+    "RequiredSupportPoint": 225000,
+    "EffectMasterId": 90404,
+    "Description": "劇団電姫に所属しているアクターの演技力が2％上昇",
+    "ReleaseDate": "2025-10-20T14:00:00+00:00"
+  },
+  {
+    "Id": 1501,
+    "Company": 1,
+    "Level": 15,
+    "RequiredSupportPoint": 250000,
+    "EffectMasterId": 90105,
+    "Description": "全アクターの演技力が1％上昇",
+    "ReleaseDate": "2025-10-20T14:00:00+00:00"
+  },
+  {
+    "Id": 1502,
+    "Company": 2,
+    "Level": 15,
+    "RequiredSupportPoint": 250000,
+    "EffectMasterId": 90205,
+    "Description": "全アクターの演技力が1％上昇",
+    "ReleaseDate": "2025-10-20T14:00:00+00:00"
+  },
+  {
+    "Id": 1503,
+    "Company": 3,
+    "Level": 15,
+    "RequiredSupportPoint": 250000,
+    "EffectMasterId": 90305,
+    "Description": "全アクターの演技力が1％上昇",
+    "ReleaseDate": "2025-10-20T14:00:00+00:00"
+  },
+  {
+    "Id": 1504,
+    "Company": 4,
+    "Level": 15,
+    "RequiredSupportPoint": 250000,
+    "EffectMasterId": 90405,
+    "Description": "全アクターの演技力が1％上昇",
+    "ReleaseDate": "2025-10-20T14:00:00+00:00"
+  }
+]

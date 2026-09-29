@@ -1,0 +1,2585 @@
+[
+  {
+    "Id": 103,
+    "Description": "スタミナを消費",
+    "LiveSettingMasterId": 1,
+    "Rewards": [
+      [
+        120001,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": null,
+    "EndDate": null,
+    "Order": 1030
+  },
+  {
+    "Id": 104,
+    "Description": "スタミナを消費 + スコア10,000以上",
+    "LiveSettingMasterId": 1,
+    "Rewards": [
+      [
+        130041,
+        1,
+        0
+      ],
+      [
+        120001,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": null,
+    "EndDate": null,
+    "Order": 1040
+  },
+  {
+    "Id": 105,
+    "Description": "スタミナを消費 + スコア30,000以上",
+    "LiveSettingMasterId": 1,
+    "Rewards": [
+      [
+        130042,
+        1,
+        0
+      ],
+      [
+        130031,
+        1,
+        0
+      ],
+      [
+        130032,
+        1,
+        0
+      ],
+      [
+        130033,
+        1,
+        0
+      ],
+      [
+        130034,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": null,
+    "EndDate": null,
+    "Order": 1050
+  },
+  {
+    "Id": 106,
+    "Description": "スタミナを消費 + スコア100,000以上",
+    "LiveSettingMasterId": 1,
+    "Rewards": [
+      [
+        130081,
+        1,
+        0
+      ],
+      [
+        130082,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": null,
+    "EndDate": null,
+    "Order": 1060
+  },
+  {
+    "Id": 107,
+    "Description": "スタミナを消費 + スコア100,000以上/n(確率で獲得)",
+    "LiveSettingMasterId": 1,
+    "Rewards": [
+      [
+        331010,
+        4,
+        0
+      ],
+      [
+        331020,
+        4,
+        0
+      ],
+      [
+        331030,
+        4,
+        0
+      ],
+      [
+        331040,
+        4,
+        0
+      ]
+    ],
+    "Etcetera": true,
+    "StartDate": null,
+    "EndDate": null,
+    "Order": 1070
+  },
+  {
+    "Id": 108,
+    "Description": "スタミナを消費 + スコア200,000以上",
+    "LiveSettingMasterId": 1,
+    "Rewards": [
+      [
+        130061,
+        1,
+        0
+      ],
+      [
+        130062,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": null,
+    "EndDate": null,
+    "Order": 1080
+  },
+  {
+    "Id": 109,
+    "Description": "スタミナを消費　～2024年1月10日 17:00",
+    "LiveSettingMasterId": 1,
+    "Rewards": [
+      [
+        212001,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2023-12-31T15:00:00+00:00",
+    "EndDate": "2024-01-10T17:00:00+00:00",
+    "Order": 1029
+  },
+  {
+    "Id": 110,
+    "Description": "スタミナを消費　～2024年1月31日 17:00",
+    "LiveSettingMasterId": 1,
+    "Rewards": [
+      [
+        130063,
+        1,
+        0
+      ],
+      [
+        130064,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2024-01-26T17:00:00+00:00",
+    "EndDate": "2024-01-31T17:00:00+00:00",
+    "Order": 1028
+  },
+  {
+    "Id": 111,
+    "Description": "スタミナを消費　～2024年2月5日 17:00/n(確率で獲得)",
+    "LiveSettingMasterId": 1,
+    "Rewards": [
+      [
+        120002,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2024-01-31T17:00:00+00:00",
+    "EndDate": "2024-02-05T17:00:00+00:00",
+    "Order": 1027
+  },
+  {
+    "Id": 112,
+    "Description": "スタミナを消費　～2024年5月6日 17:00",
+    "LiveSettingMasterId": 1,
+    "Rewards": [
+      [
+        137001,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2024-04-26T17:00:00+00:00",
+    "EndDate": "2024-05-06T17:00:00+00:00",
+    "Order": 1029
+  },
+  {
+    "Id": 113,
+    "Description": "スタミナを消費　～2024年7月23日 17:00",
+    "LiveSettingMasterId": 1,
+    "Rewards": [
+      [
+        137002,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2024-07-12T17:00:00+00:00",
+    "EndDate": "2024-07-23T17:00:00+00:00",
+    "Order": 1030
+  },
+  {
+    "Id": 114,
+    "Description": "スタミナを消費　～2026年4月18日 22:00",
+    "LiveSettingMasterId": 1,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 1140
+  },
+  {
+    "Id": 115,
+    "Description": "スタミナを消費 + 達成率90%以上 ～2026年4月18日 22:00",
+    "LiveSettingMasterId": 1,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 1150
+  },
+  {
+    "Id": 116,
+    "Description": "スタミナを消費 + スターアクト発動(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 1,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 1160
+  },
+  {
+    "Id": 117,
+    "Description": "スタミナを消費(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 1,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 1170
+  },
+  {
+    "Id": 118,
+    "Description": "スタミナを消費(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 1,
+    "Rewards": [
+      [
+        132053,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 1180
+  },
+  {
+    "Id": 119,
+    "Description": "スタミナを消費 + スコア100,000以上(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 1,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 1190
+  },
+  {
+    "Id": 120,
+    "Description": "スタミナを消費 + スコア300,000以上(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 1,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 1200
+  },
+  {
+    "Id": 121,
+    "Description": "スタミナを消費 + スコア750,000以上(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 1,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 1210
+  },
+  {
+    "Id": 122,
+    "Description": "スタミナを消費 + スコア1,500,000以上(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 1,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 1220
+  },
+  {
+    "Id": 123,
+    "Description": "スタミナを消費　～2024年9月24日 17:00",
+    "LiveSettingMasterId": 1,
+    "Rewards": [
+      [
+        137003,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2024-09-14T17:00:00+00:00",
+    "EndDate": "2024-09-24T17:00:00+00:00",
+    "Order": 1230
+  },
+  {
+    "Id": 124,
+    "Description": "スタミナを消費　～2025年1月10日 17:00",
+    "LiveSettingMasterId": 1,
+    "Rewards": [
+      [
+        137004,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2024-12-31T15:00:00+00:00",
+    "EndDate": "2025-01-10T17:00:00+00:00",
+    "Order": 1240
+  },
+  {
+    "Id": 125,
+    "Description": "スタミナを消費　～2025年6月12日 22:00",
+    "LiveSettingMasterId": 1,
+    "Rewards": [
+      [
+        137005,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2025-06-03T17:00:00+00:00",
+    "EndDate": "2025-06-12T22:00:00+00:00",
+    "Order": 1090
+  },
+  {
+    "Id": 126,
+    "Description": "スタミナを消費　～2026年1月10日 17:00",
+    "LiveSettingMasterId": 1,
+    "Rewards": [
+      [
+        137006,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2025-12-31T15:00:00+00:00",
+    "EndDate": "2026-01-10T17:00:00+00:00",
+    "Order": 1090
+  },
+  {
+    "Id": 127,
+    "Description": "スタミナを消費　～2026年4月10日 17:00",
+    "LiveSettingMasterId": 1,
+    "Rewards": [
+      [
+        137007,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-03-31T17:00:00+00:00",
+    "EndDate": "2026-04-10T17:00:00+00:00",
+    "Order": 1090
+  },
+  {
+    "Id": 128,
+    "Description": "スタミナを消費　～2026年5月10日 17:00",
+    "LiveSettingMasterId": 1,
+    "Rewards": [
+      [
+        137051,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-20T00:00:00+00:00",
+    "EndDate": "2026-05-10T17:00:00+00:00",
+    "Order": 1090
+  },
+  {
+    "Id": 1103,
+    "Description": "スタミナを消費 + スコア50,000以上",
+    "LiveSettingMasterId": 11,
+    "Rewards": [
+      [
+        120001,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": null,
+    "EndDate": null,
+    "Order": 11030
+  },
+  {
+    "Id": 1104,
+    "Description": "スタミナを消費 + スコア200,000以上",
+    "LiveSettingMasterId": 11,
+    "Rewards": [
+      [
+        130061,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": null,
+    "EndDate": null,
+    "Order": 11040
+  },
+  {
+    "Id": 1105,
+    "Description": "スタミナを消費 + スコア300,000以上",
+    "LiveSettingMasterId": 11,
+    "Rewards": [
+      [
+        130041,
+        1,
+        0
+      ],
+      [
+        130031,
+        1,
+        0
+      ],
+      [
+        130032,
+        1,
+        0
+      ],
+      [
+        130033,
+        1,
+        0
+      ],
+      [
+        130034,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": null,
+    "EndDate": null,
+    "Order": 11050
+  },
+  {
+    "Id": 1106,
+    "Description": "スタミナを消費 + スコア500,000以上",
+    "LiveSettingMasterId": 11,
+    "Rewards": [
+      [
+        130062,
+        1,
+        0
+      ],
+      [
+        130061,
+        1,
+        0
+      ],
+      [
+        130032,
+        1,
+        0
+      ],
+      [
+        130033,
+        1,
+        0
+      ],
+      [
+        130034,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": null,
+    "EndDate": null,
+    "Order": 11060
+  },
+  {
+    "Id": 1107,
+    "Description": "スタミナを消費 + スコア800,000以上",
+    "LiveSettingMasterId": 11,
+    "Rewards": [
+      [
+        130041,
+        1,
+        0
+      ],
+      [
+        130031,
+        1,
+        0
+      ],
+      [
+        130032,
+        1,
+        0
+      ],
+      [
+        130033,
+        1,
+        0
+      ],
+      [
+        130034,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": null,
+    "EndDate": null,
+    "Order": 11070
+  },
+  {
+    "Id": 1108,
+    "Description": "スタミナを消費 + スコア1000,000以上",
+    "LiveSettingMasterId": 11,
+    "Rewards": [
+      [
+        130063,
+        1,
+        0
+      ],
+      [
+        130062,
+        1,
+        0
+      ],
+      [
+        130061,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": null,
+    "EndDate": null,
+    "Order": 11080
+  },
+  {
+    "Id": 1109,
+    "Description": "スタミナを消費 + スターアクト発動",
+    "LiveSettingMasterId": 11,
+    "Rewards": [
+      [
+        120001,
+        1,
+        0
+      ],
+      [
+        130042,
+        1,
+        0
+      ],
+      [
+        130041,
+        1,
+        0
+      ],
+      [
+        130062,
+        1,
+        0
+      ],
+      [
+        130061,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": null,
+    "EndDate": null,
+    "Order": 11090
+  },
+  {
+    "Id": 1110,
+    "Description": "スタミナを消費　～2024年1月31日 17:00",
+    "LiveSettingMasterId": 11,
+    "Rewards": [
+      [
+        130063,
+        1,
+        0
+      ],
+      [
+        130064,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2024-01-26T17:00:00+00:00",
+    "EndDate": "2024-01-31T17:00:00+00:00",
+    "Order": 11028
+  },
+  {
+    "Id": 1111,
+    "Description": "スタミナを消費　～2024年2月5日 17:00/n(確率で獲得)",
+    "LiveSettingMasterId": 11,
+    "Rewards": [
+      [
+        120002,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2024-01-31T17:00:00+00:00",
+    "EndDate": "2024-02-05T17:00:00+00:00",
+    "Order": 11027
+  },
+  {
+    "Id": 1112,
+    "Description": "スタミナを消費　～2024年5月6日 17:00",
+    "LiveSettingMasterId": 11,
+    "Rewards": [
+      [
+        137001,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2024-04-26T17:00:00+00:00",
+    "EndDate": "2024-05-06T17:00:00+00:00",
+    "Order": 11029
+  },
+  {
+    "Id": 1113,
+    "Description": "スタミナを消費　～2024年7月23日 17:00",
+    "LiveSettingMasterId": 11,
+    "Rewards": [
+      [
+        137002,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2024-07-12T17:00:00+00:00",
+    "EndDate": "2024-07-23T17:00:00+00:00",
+    "Order": 11090
+  },
+  {
+    "Id": 1114,
+    "Description": "スタミナを消費　～2026年4月18日 22:00",
+    "LiveSettingMasterId": 11,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 11140
+  },
+  {
+    "Id": 1115,
+    "Description": "スタミナを消費 + 達成率90%以上 ～2026年4月18日 22:00",
+    "LiveSettingMasterId": 11,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 11150
+  },
+  {
+    "Id": 1116,
+    "Description": "スタミナを消費 + スターアクト発動(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 11,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 11160
+  },
+  {
+    "Id": 1117,
+    "Description": "スタミナを消費(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 11,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 11170
+  },
+  {
+    "Id": 1118,
+    "Description": "スタミナを消費(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 11,
+    "Rewards": [
+      [
+        132053,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 11180
+  },
+  {
+    "Id": 1119,
+    "Description": "スタミナを消費 + スコア100,000以上(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 11,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 11190
+  },
+  {
+    "Id": 1120,
+    "Description": "スタミナを消費 + スコア300,000以上(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 11,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 11200
+  },
+  {
+    "Id": 1121,
+    "Description": "スタミナを消費 + スコア750,000以上(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 11,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 11210
+  },
+  {
+    "Id": 1122,
+    "Description": "スタミナを消費 + スコア1,500,000以上(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 11,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 11220
+  },
+  {
+    "Id": 1123,
+    "Description": "スタミナを消費　～2024年9月24日 17:00",
+    "LiveSettingMasterId": 11,
+    "Rewards": [
+      [
+        137003,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2024-09-14T17:00:00+00:00",
+    "EndDate": "2024-09-24T17:00:00+00:00",
+    "Order": 11230
+  },
+  {
+    "Id": 1124,
+    "Description": "スタミナを消費　～2025年1月10日 17:00",
+    "LiveSettingMasterId": 11,
+    "Rewards": [
+      [
+        137004,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2024-12-31T15:00:00+00:00",
+    "EndDate": "2025-01-10T17:00:00+00:00",
+    "Order": 11240
+  },
+  {
+    "Id": 1125,
+    "Description": "スタミナを消費　～2025年6月12日 22:00",
+    "LiveSettingMasterId": 11,
+    "Rewards": [
+      [
+        137005,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2025-06-03T17:00:00+00:00",
+    "EndDate": "2025-06-12T22:00:00+00:00",
+    "Order": 11100
+  },
+  {
+    "Id": 1126,
+    "Description": "スタミナを消費　～2026年1月10日 17:00",
+    "LiveSettingMasterId": 11,
+    "Rewards": [
+      [
+        137006,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2025-12-31T15:00:00+00:00",
+    "EndDate": "2026-01-10T17:00:00+00:00",
+    "Order": 11100
+  },
+  {
+    "Id": 1128,
+    "Description": "スタミナを消費　～2026年4月10日 17:00",
+    "LiveSettingMasterId": 11,
+    "Rewards": [
+      [
+        137007,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-03-31T17:00:00+00:00",
+    "EndDate": "2026-04-10T17:00:00+00:00",
+    "Order": 11100
+  },
+  {
+    "Id": 1129,
+    "Description": "スタミナを消費　～2026年5月10日 17:00",
+    "LiveSettingMasterId": 11,
+    "Rewards": [
+      [
+        137051,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-20T00:00:00+00:00",
+    "EndDate": "2026-05-10T17:00:00+00:00",
+    "Order": 11100
+  },
+  {
+    "Id": 1204,
+    "Description": "スタミナを消費 + スターアクト発動(確率で獲得)",
+    "LiveSettingMasterId": 12,
+    "Rewards": [
+      [
+        130025,
+        1,
+        0
+      ],
+      [
+        130035,
+        1,
+        0
+      ],
+      [
+        130091,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": null,
+    "EndDate": null,
+    "Order": 12040
+  },
+  {
+    "Id": 1205,
+    "Description": "スタミナを消費",
+    "LiveSettingMasterId": 12,
+    "Rewards": [
+      [
+        130301,
+        1,
+        0
+      ],
+      [
+        130306,
+        1,
+        0
+      ],
+      [
+        130025,
+        1,
+        0
+      ],
+      [
+        130035,
+        1,
+        0
+      ],
+      [
+        130091,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": true,
+    "StartDate": null,
+    "EndDate": null,
+    "Order": 12050
+  },
+  {
+    "Id": 1208,
+    "Description": "スタミナを消費　～2024年1月10日 17:00",
+    "LiveSettingMasterId": 12,
+    "Rewards": [
+      [
+        212001,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2023-12-31T15:00:00+00:00",
+    "EndDate": "2024-01-10T17:00:00+00:00",
+    "Order": 12029
+  },
+  {
+    "Id": 1209,
+    "Description": "スタミナを消費　～2024年1月31日 17:00",
+    "LiveSettingMasterId": 12,
+    "Rewards": [
+      [
+        130063,
+        1,
+        0
+      ],
+      [
+        130064,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2024-01-26T17:00:00+00:00",
+    "EndDate": "2024-01-31T17:00:00+00:00",
+    "Order": 12028
+  },
+  {
+    "Id": 1210,
+    "Description": "スタミナを消費　～2024年5月6日 17:00",
+    "LiveSettingMasterId": 12,
+    "Rewards": [
+      [
+        137001,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2024-04-26T17:00:00+00:00",
+    "EndDate": "2024-05-06T17:00:00+00:00",
+    "Order": 11029
+  },
+  {
+    "Id": 1211,
+    "Description": "スタミナを消費　～2024年7月23日 17:00",
+    "LiveSettingMasterId": 12,
+    "Rewards": [
+      [
+        137002,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2024-07-12T17:00:00+00:00",
+    "EndDate": "2024-07-23T17:00:00+00:00",
+    "Order": 11090
+  },
+  {
+    "Id": 1212,
+    "Description": "スタミナを消費　～2026年4月18日 22:00",
+    "LiveSettingMasterId": 12,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 12120
+  },
+  {
+    "Id": 1213,
+    "Description": "スタミナを消費 + 達成率90%以上 ～2026年4月18日 22:00",
+    "LiveSettingMasterId": 12,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 12130
+  },
+  {
+    "Id": 1214,
+    "Description": "スタミナを消費 + スターアクト発動(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 12,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 12140
+  },
+  {
+    "Id": 1215,
+    "Description": "スタミナを消費(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 12,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 12150
+  },
+  {
+    "Id": 1216,
+    "Description": "スタミナを消費(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 12,
+    "Rewards": [
+      [
+        132053,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 12160
+  },
+  {
+    "Id": 1217,
+    "Description": "スタミナを消費 + スコア100,000以上(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 12,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 12170
+  },
+  {
+    "Id": 1218,
+    "Description": "スタミナを消費 + スコア300,000以上(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 12,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 12180
+  },
+  {
+    "Id": 1219,
+    "Description": "スタミナを消費 + スコア750,000以上(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 12,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 12190
+  },
+  {
+    "Id": 1220,
+    "Description": "スタミナを消費 + スコア1,500,000以上(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 12,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 12200
+  },
+  {
+    "Id": 1221,
+    "Description": "スタミナを消費　～2024年9月24日 17:00",
+    "LiveSettingMasterId": 12,
+    "Rewards": [
+      [
+        137003,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2024-09-14T17:00:00+00:00",
+    "EndDate": "2024-09-24T17:00:00+00:00",
+    "Order": 12210
+  },
+  {
+    "Id": 1222,
+    "Description": "スタミナを消費　～2025年1月10日 17:00",
+    "LiveSettingMasterId": 12,
+    "Rewards": [
+      [
+        137004,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2024-12-31T15:00:00+00:00",
+    "EndDate": "2025-01-10T17:00:00+00:00",
+    "Order": 12220
+  },
+  {
+    "Id": 1223,
+    "Description": "スタミナを消費　～2025年6月12日 22:00",
+    "LiveSettingMasterId": 12,
+    "Rewards": [
+      [
+        137005,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2025-06-03T17:00:00+00:00",
+    "EndDate": "2025-06-12T22:00:00+00:00",
+    "Order": 11090
+  },
+  {
+    "Id": 1224,
+    "Description": "スタミナを消費　～2026年1月10日 17:00",
+    "LiveSettingMasterId": 12,
+    "Rewards": [
+      [
+        137006,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2025-12-31T15:00:00+00:00",
+    "EndDate": "2026-01-10T17:00:00+00:00",
+    "Order": 11090
+  },
+  {
+    "Id": 1226,
+    "Description": "スタミナを消費　～2026年4月10日 17:00",
+    "LiveSettingMasterId": 12,
+    "Rewards": [
+      [
+        137007,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-03-31T17:00:00+00:00",
+    "EndDate": "2026-04-10T17:00:00+00:00",
+    "Order": 11090
+  },
+  {
+    "Id": 1227,
+    "Description": "スタミナを消費　～2026年5月10日 17:00",
+    "LiveSettingMasterId": 12,
+    "Rewards": [
+      [
+        137051,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-20T00:00:00+00:00",
+    "EndDate": "2026-05-10T17:00:00+00:00",
+    "Order": 11090
+  },
+  {
+    "Id": 1303,
+    "Description": "スタミナを消費",
+    "LiveSettingMasterId": 13,
+    "Rewards": [
+      [
+        120001,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": null,
+    "EndDate": null,
+    "Order": 13030
+  },
+  {
+    "Id": 1304,
+    "Description": "スタミナを消費/n(確率で獲得)",
+    "LiveSettingMasterId": 13,
+    "Rewards": [
+      [
+        130071,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": null,
+    "EndDate": null,
+    "Order": 13040
+  },
+  {
+    "Id": 1305,
+    "Description": "スタミナを消費 + スターアクト発動",
+    "LiveSettingMasterId": 13,
+    "Rewards": [
+      [
+        130062,
+        1,
+        0
+      ],
+      [
+        130061,
+        1,
+        0
+      ],
+      [
+        120001,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": null,
+    "EndDate": null,
+    "Order": 13050
+  },
+  {
+    "Id": 1306,
+    "Description": "スタミナを消費　～2024年7月23日 17:00",
+    "LiveSettingMasterId": 13,
+    "Rewards": [
+      [
+        137002,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2024-07-12T17:00:00+00:00",
+    "EndDate": "2024-07-23T17:00:00+00:00",
+    "Order": 13060
+  },
+  {
+    "Id": 1307,
+    "Description": "スタミナを消費　～2026年4月18日 22:00",
+    "LiveSettingMasterId": 13,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 13070
+  },
+  {
+    "Id": 1308,
+    "Description": "スタミナを消費 + 達成率90%以上 ～2026年4月18日 22:00",
+    "LiveSettingMasterId": 13,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 13080
+  },
+  {
+    "Id": 1309,
+    "Description": "スタミナを消費 + スターアクト発動(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 13,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 13090
+  },
+  {
+    "Id": 1310,
+    "Description": "スタミナを消費(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 13,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 13100
+  },
+  {
+    "Id": 1311,
+    "Description": "スタミナを消費(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 13,
+    "Rewards": [
+      [
+        132053,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 13110
+  },
+  {
+    "Id": 1312,
+    "Description": "スタミナを消費 + スコア100,000以上(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 13,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 13120
+  },
+  {
+    "Id": 1313,
+    "Description": "スタミナを消費 + スコア300,000以上(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 13,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 13130
+  },
+  {
+    "Id": 1314,
+    "Description": "スタミナを消費 + スコア750,000以上(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 13,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 13140
+  },
+  {
+    "Id": 1315,
+    "Description": "スタミナを消費 + スコア1,500,000以上(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 13,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 13150
+  },
+  {
+    "Id": 1316,
+    "Description": "スタミナを消費　～2024年9月24日 17:00",
+    "LiveSettingMasterId": 13,
+    "Rewards": [
+      [
+        137003,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2024-09-14T17:00:00+00:00",
+    "EndDate": "2024-09-24T17:00:00+00:00",
+    "Order": 13160
+  },
+  {
+    "Id": 1317,
+    "Description": "スタミナを消費　～2025年1月10日 17:00",
+    "LiveSettingMasterId": 13,
+    "Rewards": [
+      [
+        137004,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2024-12-31T15:00:00+00:00",
+    "EndDate": "2025-01-10T17:00:00+00:00",
+    "Order": 13170
+  },
+  {
+    "Id": 1318,
+    "Description": "スタミナを消費　～2025年6月12日 22:00",
+    "LiveSettingMasterId": 13,
+    "Rewards": [
+      [
+        137005,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2025-06-03T17:00:00+00:00",
+    "EndDate": "2025-06-12T22:00:00+00:00",
+    "Order": 13060
+  },
+  {
+    "Id": 1319,
+    "Description": "スタミナを消費　～2026年5月10日 17:00",
+    "LiveSettingMasterId": 13,
+    "Rewards": [
+      [
+        137051,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-20T00:00:00+00:00",
+    "EndDate": "2026-05-10T17:00:00+00:00",
+    "Order": 13060
+  },
+  {
+    "Id": 1403,
+    "Description": "スタミナを消費",
+    "LiveSettingMasterId": 14,
+    "Rewards": [
+      [
+        120001,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": null,
+    "EndDate": null,
+    "Order": 14030
+  },
+  {
+    "Id": 1404,
+    "Description": "スタミナを消費/n(確率で獲得)",
+    "LiveSettingMasterId": 14,
+    "Rewards": [
+      [
+        331750,
+        4,
+        0
+      ],
+      [
+        331760,
+        4,
+        0
+      ],
+      [
+        331540,
+        4,
+        0
+      ]
+    ],
+    "Etcetera": true,
+    "StartDate": null,
+    "EndDate": null,
+    "Order": 14040
+  },
+  {
+    "Id": 1405,
+    "Description": "スタミナを消費 + スコア100,000以上/n(確率で獲得)",
+    "LiveSettingMasterId": 14,
+    "Rewards": [
+      [
+        331750,
+        4,
+        0
+      ],
+      [
+        331760,
+        4,
+        0
+      ],
+      [
+        331540,
+        4,
+        0
+      ]
+    ],
+    "Etcetera": true,
+    "StartDate": null,
+    "EndDate": null,
+    "Order": 14050
+  },
+  {
+    "Id": 1406,
+    "Description": "スタミナを消費 + スコア300,000以上/n(確率で獲得)",
+    "LiveSettingMasterId": 14,
+    "Rewards": [
+      [
+        331750,
+        4,
+        0
+      ],
+      [
+        331760,
+        4,
+        0
+      ],
+      [
+        331540,
+        4,
+        0
+      ]
+    ],
+    "Etcetera": true,
+    "StartDate": null,
+    "EndDate": null,
+    "Order": 14060
+  },
+  {
+    "Id": 1407,
+    "Description": "スタミナを消費 + スコア750,000以上/n(確率で獲得)",
+    "LiveSettingMasterId": 14,
+    "Rewards": [
+      [
+        331750,
+        4,
+        0
+      ],
+      [
+        331760,
+        4,
+        0
+      ],
+      [
+        331540,
+        4,
+        0
+      ]
+    ],
+    "Etcetera": true,
+    "StartDate": null,
+    "EndDate": null,
+    "Order": 14070
+  },
+  {
+    "Id": 1408,
+    "Description": "スタミナを消費 + スコア1,500,000以上/n(確率で獲得)",
+    "LiveSettingMasterId": 14,
+    "Rewards": [
+      [
+        331750,
+        4,
+        0
+      ],
+      [
+        331760,
+        4,
+        0
+      ],
+      [
+        331540,
+        4,
+        0
+      ]
+    ],
+    "Etcetera": true,
+    "StartDate": null,
+    "EndDate": null,
+    "Order": 14080
+  },
+  {
+    "Id": 1409,
+    "Description": "スタミナを消費 + スコア3,000,000以上/n(確率で獲得)",
+    "LiveSettingMasterId": 14,
+    "Rewards": [
+      [
+        331750,
+        4,
+        0
+      ],
+      [
+        331760,
+        4,
+        0
+      ],
+      [
+        331540,
+        4,
+        0
+      ]
+    ],
+    "Etcetera": true,
+    "StartDate": null,
+    "EndDate": null,
+    "Order": 14090
+  },
+  {
+    "Id": 1411,
+    "Description": "スタミナを消費 + スターアクト発動",
+    "LiveSettingMasterId": 14,
+    "Rewards": [
+      [
+        130082,
+        1,
+        0
+      ],
+      [
+        130081,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": null,
+    "EndDate": null,
+    "Order": 14110
+  },
+  {
+    "Id": 1412,
+    "Description": "スタミナを消費　～2024年1月10日 17:00",
+    "LiveSettingMasterId": 14,
+    "Rewards": [
+      [
+        212001,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2023-12-31T15:00:00+00:00",
+    "EndDate": "2024-01-10T17:00:00+00:00",
+    "Order": 14029
+  },
+  {
+    "Id": 1413,
+    "Description": "スタミナを消費　～2024年2月5日 17:00/n(確率で獲得)",
+    "LiveSettingMasterId": 14,
+    "Rewards": [
+      [
+        120002,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2024-01-31T17:00:00+00:00",
+    "EndDate": "2024-02-05T17:00:00+00:00",
+    "Order": 14028
+  },
+  {
+    "Id": 1414,
+    "Description": "スタミナを消費　～2024年5月6日 17:00",
+    "LiveSettingMasterId": 14,
+    "Rewards": [
+      [
+        137001,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2024-04-26T17:00:00+00:00",
+    "EndDate": "2024-05-06T17:00:00+00:00",
+    "Order": 14029
+  },
+  {
+    "Id": 1415,
+    "Description": "スタミナを消費　～2024年7月23日 17:00",
+    "LiveSettingMasterId": 14,
+    "Rewards": [
+      [
+        137002,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2024-07-12T17:00:00+00:00",
+    "EndDate": "2024-07-23T17:00:00+00:00",
+    "Order": 14120
+  },
+  {
+    "Id": 1416,
+    "Description": "スタミナを消費　～2026年4月18日 22:00",
+    "LiveSettingMasterId": 14,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 14160
+  },
+  {
+    "Id": 1417,
+    "Description": "スタミナを消費 + 達成率90%以上 ～2026年4月18日 22:00",
+    "LiveSettingMasterId": 14,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 14170
+  },
+  {
+    "Id": 1418,
+    "Description": "スタミナを消費 + スターアクト発動(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 14,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 14180
+  },
+  {
+    "Id": 1419,
+    "Description": "スタミナを消費(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 14,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 14190
+  },
+  {
+    "Id": 1420,
+    "Description": "スタミナを消費(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 14,
+    "Rewards": [
+      [
+        132053,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 14200
+  },
+  {
+    "Id": 1421,
+    "Description": "スタミナを消費 + スコア100,000以上(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 14,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 14210
+  },
+  {
+    "Id": 1422,
+    "Description": "スタミナを消費 + スコア300,000以上(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 14,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 14220
+  },
+  {
+    "Id": 1423,
+    "Description": "スタミナを消費 + スコア750,000以上(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 14,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 14230
+  },
+  {
+    "Id": 1424,
+    "Description": "スタミナを消費 + スコア1,500,000以上(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 14,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 14240
+  },
+  {
+    "Id": 1425,
+    "Description": "スタミナを消費　～2025年1月10日 17:00",
+    "LiveSettingMasterId": 14,
+    "Rewards": [
+      [
+        137004,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2024-12-31T15:00:00+00:00",
+    "EndDate": "2025-01-10T17:00:00+00:00",
+    "Order": 14250
+  },
+  {
+    "Id": 1426,
+    "Description": "スタミナを消費　～2025年6月12日 22:00",
+    "LiveSettingMasterId": 14,
+    "Rewards": [
+      [
+        137005,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2025-06-03T17:00:00+00:00",
+    "EndDate": "2025-06-12T22:00:00+00:00",
+    "Order": 14120
+  },
+  {
+    "Id": 1427,
+    "Description": "スタミナを消費　～2026年1月10日 17:00",
+    "LiveSettingMasterId": 14,
+    "Rewards": [
+      [
+        137006,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2025-12-31T15:00:00+00:00",
+    "EndDate": "2026-01-10T17:00:00+00:00",
+    "Order": 14120
+  },
+  {
+    "Id": 1428,
+    "Description": "スタミナを消費　～2026年4月10日 17:00",
+    "LiveSettingMasterId": 14,
+    "Rewards": [
+      [
+        137007,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-03-31T17:00:00+00:00",
+    "EndDate": "2026-04-10T17:00:00+00:00",
+    "Order": 14120
+  },
+  {
+    "Id": 1429,
+    "Description": "スタミナを消費　～2026年5月10日 17:00",
+    "LiveSettingMasterId": 14,
+    "Rewards": [
+      [
+        137051,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-20T00:00:00+00:00",
+    "EndDate": "2026-05-10T17:00:00+00:00",
+    "Order": 14120
+  },
+  {
+    "Id": 1503,
+    "Description": "スタミナを消費",
+    "LiveSettingMasterId": 15,
+    "Rewards": [
+      [
+        120001,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": null,
+    "EndDate": null,
+    "Order": 15030
+  },
+  {
+    "Id": 1504,
+    "Description": "スタミナを消費/n(確率で獲得)",
+    "LiveSettingMasterId": 15,
+    "Rewards": [
+      [
+        331750,
+        4,
+        0
+      ],
+      [
+        331760,
+        4,
+        0
+      ]
+    ],
+    "Etcetera": true,
+    "StartDate": null,
+    "EndDate": null,
+    "Order": 15040
+  },
+  {
+    "Id": 1505,
+    "Description": "スタミナを消費 + スコア100,000以上/n(確率で獲得)",
+    "LiveSettingMasterId": 15,
+    "Rewards": [
+      [
+        331750,
+        4,
+        0
+      ],
+      [
+        331760,
+        4,
+        0
+      ]
+    ],
+    "Etcetera": true,
+    "StartDate": null,
+    "EndDate": null,
+    "Order": 15050
+  },
+  {
+    "Id": 1506,
+    "Description": "スタミナを消費 + スコア300,000以上/n(確率で獲得)",
+    "LiveSettingMasterId": 15,
+    "Rewards": [
+      [
+        331750,
+        4,
+        0
+      ],
+      [
+        331760,
+        4,
+        0
+      ]
+    ],
+    "Etcetera": true,
+    "StartDate": null,
+    "EndDate": null,
+    "Order": 15060
+  },
+  {
+    "Id": 1507,
+    "Description": "スタミナを消費 + スコア750,000以上/n(確率で獲得)",
+    "LiveSettingMasterId": 15,
+    "Rewards": [
+      [
+        331750,
+        4,
+        0
+      ],
+      [
+        331760,
+        4,
+        0
+      ]
+    ],
+    "Etcetera": true,
+    "StartDate": null,
+    "EndDate": null,
+    "Order": 15070
+  },
+  {
+    "Id": 1508,
+    "Description": "スタミナを消費 + スコア1,500,000以上/n(確率で獲得)",
+    "LiveSettingMasterId": 15,
+    "Rewards": [
+      [
+        331750,
+        4,
+        0
+      ],
+      [
+        331760,
+        4,
+        0
+      ]
+    ],
+    "Etcetera": true,
+    "StartDate": null,
+    "EndDate": null,
+    "Order": 15080
+  },
+  {
+    "Id": 1509,
+    "Description": "スタミナを消費 + スコア3,000,000以上/n(確率で獲得)",
+    "LiveSettingMasterId": 15,
+    "Rewards": [
+      [
+        331750,
+        4,
+        0
+      ],
+      [
+        331760,
+        4,
+        0
+      ]
+    ],
+    "Etcetera": true,
+    "StartDate": null,
+    "EndDate": null,
+    "Order": 15090
+  },
+  {
+    "Id": 1511,
+    "Description": "スタミナを消費 + スターアクト発動",
+    "LiveSettingMasterId": 15,
+    "Rewards": [
+      [
+        130082,
+        1,
+        0
+      ],
+      [
+        130081,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": null,
+    "EndDate": null,
+    "Order": 15110
+  },
+  {
+    "Id": 1512,
+    "Description": "スタミナを消費　～2024年7月23日 17:00",
+    "LiveSettingMasterId": 15,
+    "Rewards": [
+      [
+        137002,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2024-07-12T17:00:00+00:00",
+    "EndDate": "2024-07-23T17:00:00+00:00",
+    "Order": 15120
+  },
+  {
+    "Id": 1513,
+    "Description": "スタミナを消費　～2026年4月18日 22:00",
+    "LiveSettingMasterId": 15,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 15130
+  },
+  {
+    "Id": 1514,
+    "Description": "スタミナを消費 + 達成率90%以上 ～2026年4月18日 22:00",
+    "LiveSettingMasterId": 15,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 15140
+  },
+  {
+    "Id": 1515,
+    "Description": "スタミナを消費 + スターアクト発動(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 15,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 15150
+  },
+  {
+    "Id": 1516,
+    "Description": "スタミナを消費(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 15,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 15160
+  },
+  {
+    "Id": 1517,
+    "Description": "スタミナを消費(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 15,
+    "Rewards": [
+      [
+        132053,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 15170
+  },
+  {
+    "Id": 1518,
+    "Description": "スタミナを消費 + スコア100,000以上(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 15,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 15180
+  },
+  {
+    "Id": 1519,
+    "Description": "スタミナを消費 + スコア300,000以上(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 15,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 15190
+  },
+  {
+    "Id": 1520,
+    "Description": "スタミナを消費 + スコア750,000以上(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 15,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 15200
+  },
+  {
+    "Id": 1521,
+    "Description": "スタミナを消費 + スコア1,500,000以上(確率で獲得)/n～2026年4月18日 22:00",
+    "LiveSettingMasterId": 15,
+    "Rewards": [
+      [
+        132052,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-10T17:00:00+00:00",
+    "EndDate": "2026-04-18T22:00:00+00:00",
+    "Order": 15210
+  },
+  {
+    "Id": 1522,
+    "Description": "スタミナを消費　～2024年9月24日 17:00",
+    "LiveSettingMasterId": 15,
+    "Rewards": [
+      [
+        137003,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2024-09-14T17:00:00+00:00",
+    "EndDate": "2024-09-24T17:00:00+00:00",
+    "Order": 15220
+  },
+  {
+    "Id": 1523,
+    "Description": "スタミナを消費　～2025年1月10日 17:00",
+    "LiveSettingMasterId": 15,
+    "Rewards": [
+      [
+        137004,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2024-12-31T15:00:00+00:00",
+    "EndDate": "2025-01-10T17:00:00+00:00",
+    "Order": 15220
+  },
+  {
+    "Id": 1524,
+    "Description": "スタミナを消費　～2025年6月12日 22:00",
+    "LiveSettingMasterId": 15,
+    "Rewards": [
+      [
+        137005,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2025-06-03T17:00:00+00:00",
+    "EndDate": "2025-06-12T22:00:00+00:00",
+    "Order": 15120
+  },
+  {
+    "Id": 1525,
+    "Description": "スタミナを消費　～2026年1月10日 17:00",
+    "LiveSettingMasterId": 15,
+    "Rewards": [
+      [
+        137006,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2025-12-31T15:00:00+00:00",
+    "EndDate": "2026-01-10T17:00:00+00:00",
+    "Order": 15120
+  },
+  {
+    "Id": 1526,
+    "Description": "スタミナを消費　～2026年4月10日 17:00",
+    "LiveSettingMasterId": 15,
+    "Rewards": [
+      [
+        137007,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-03-31T17:00:00+00:00",
+    "EndDate": "2026-04-10T17:00:00+00:00",
+    "Order": 15120
+  },
+  {
+    "Id": 1527,
+    "Description": "スタミナを消費　～2026年5月10日 17:00",
+    "LiveSettingMasterId": 15,
+    "Rewards": [
+      [
+        137051,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": "2026-04-20T00:00:00+00:00",
+    "EndDate": "2026-05-10T17:00:00+00:00",
+    "Order": 15120
+  },
+  {
+    "Id": 2101,
+    "Description": "難易度「かんたん」をクリア",
+    "LiveSettingMasterId": 21,
+    "Rewards": [
+      [
+        138101,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": null,
+    "EndDate": null,
+    "Order": 21010
+  },
+  {
+    "Id": 2102,
+    "Description": "難易度「ふつう」をクリア",
+    "LiveSettingMasterId": 21,
+    "Rewards": [
+      [
+        138102,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": null,
+    "EndDate": null,
+    "Order": 21020
+  },
+  {
+    "Id": 2103,
+    "Description": "難易度「むずかしい」をクリア",
+    "LiveSettingMasterId": 21,
+    "Rewards": [
+      [
+        138103,
+        1,
+        0
+      ]
+    ],
+    "Etcetera": false,
+    "StartDate": null,
+    "EndDate": null,
+    "Order": 21030
+  }
+]

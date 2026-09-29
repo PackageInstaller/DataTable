@@ -1,0 +1,98 @@
+[
+  {
+    "Id": 1,
+    "ConditionText": "スターランク[:param]以上で解放",
+    "ConditionUsableTableFilter": 1,
+    "UnlockConditionType": 1
+  },
+  {
+    "Id": 2,
+    "ConditionText": "ストーリー「[:param]」を読むと解放",
+    "ConditionUsableTableFilter": 21,
+    "UnlockConditionType": 2
+  },
+  {
+    "Id": 3,
+    "ConditionText": "ポスター「[:param]」を獲得すると解放",
+    "ConditionUsableTableFilter": 2,
+    "UnlockConditionType": 3
+  },
+  {
+    "Id": 4,
+    "ConditionText": "ポスター「[:param]」を1回上限解放すると解放",
+    "ConditionUsableTableFilter": 2,
+    "UnlockConditionType": 4
+  },
+  {
+    "Id": 5,
+    "ConditionText": "ポスター「[:param]」を2回上限解放すると解放",
+    "ConditionUsableTableFilter": 2,
+    "UnlockConditionType": 5
+  },
+  {
+    "Id": 6,
+    "ConditionText": "ポスター「[:param]」を3回上限解放すると解放",
+    "ConditionUsableTableFilter": 2,
+    "UnlockConditionType": 6
+  },
+  {
+    "Id": 7,
+    "ConditionText": "ポスター「[:param]」を4回上限解放すると解放",
+    "ConditionUsableTableFilter": 2,
+    "UnlockConditionType": 7
+  },
+  {
+    "Id": 8,
+    "ConditionText": "プレイヤーレート[:param]以上で解放",
+    "ConditionUsableTableFilter": 4,
+    "UnlockConditionType": 8
+  },
+  {
+    "Id": 9,
+    "ConditionText": "演劇リーグで特定のクラスに到達すると解放",
+    "ConditionUsableTableFilter": 4,
+    "UnlockConditionType": 9
+  },
+  {
+    "Id": 10,
+    "ConditionText": "特定のアイテムを購入すると解放",
+    "ConditionUsableTableFilter": 4,
+    "UnlockConditionType": 10
+  },
+  {
+    "Id": 11,
+    "ConditionText": "いずれかのメインストーリー[:param]章を読むと解放",
+    "ConditionUsableTableFilter": 4,
+    "UnlockConditionType": 11
+  },
+  {
+    "Id": 12,
+    "ConditionText": "オーディションのStage.[:param]をクリアすると解放",
+    "ConditionUsableTableFilter": 16,
+    "UnlockConditionType": 12
+  },
+  {
+    "Id": 13,
+    "ConditionText": "楽曲を解放した上で以下のいずれかの条件を満たす/n/n・難易度EXTRAでGOOD以下を10個以内でクリア/n・任意の楽曲のOLIVIER譜面を20個解放",
+    "ConditionUsableTableFilter": 32,
+    "UnlockConditionType": 13
+  },
+  {
+    "Id": 14,
+    "ConditionText": "譜面ショップで購入",
+    "ConditionUsableTableFilter": 32,
+    "UnlockConditionType": 14
+  },
+  {
+    "Id": 15,
+    "ConditionText": "ジュエルショップにて特定のアイテムを購入すると解放",
+    "ConditionUsableTableFilter": 4,
+    "UnlockConditionType": 15
+  },
+  {
+    "Id": 16,
+    "ConditionText": "ランク[:param]以上で解放",
+    "ConditionUsableTableFilter": 4,
+    "UnlockConditionType": 16
+  }
+]

@@ -1,0 +1,2848 @@
+{
+  "version": "1790021136_1790021136",
+  "publish_timestamp": 1790021136,
+  "uri": "2026-09-22/mastermemory_1790021136_1790021136.db",
+  "tables": {
+    "AccessoryMaster": {
+      "records": 240,
+      "fields": [
+        "Id",
+        "Name",
+        "Description",
+        "Rarity",
+        "AccessoryLevelPatternGroupId",
+        "FixedAccessoryEffects",
+        "RandomEffectGroups",
+        "PronounceName",
+        "Series",
+        "MaxLevel"
+      ],
+      "type": "AccessoryMaster"
+    },
+    "AccessoryEffectMaster": {
+      "records": 261,
+      "fields": [
+        "Id",
+        "EffectMasterId",
+        "Name",
+        "Description",
+        "Variety"
+      ],
+      "type": "AccessoryEffectMaster"
+    },
+    "RandomEffectGroupMaster": {
+      "records": 14,
+      "fields": [
+        "Id",
+        "AccessoryEffects"
+      ],
+      "type": "RandomEffectGroupMaster"
+    },
+    "AccessoryLevelPatternGroupMaster": {
+      "records": 3,
+      "fields": [
+        "Id",
+        "Patterns"
+      ],
+      "type": "AccessoryLevelPatternGroupMaster"
+    },
+    "AccessoryEffectFilterMaster": {
+      "records": 8,
+      "fields": [
+        "Id",
+        "EffectType",
+        "Name",
+        "StartDate",
+        "Order"
+      ],
+      "type": "AccessoryEffectFilterMaster"
+    },
+    "AuditionMaster": {
+      "records": 250,
+      "fields": [
+        "Id",
+        "MusicMasterId",
+        "RecommendedCompany",
+        "CanSkip",
+        "SenseNotationMasterId",
+        "MaxPhase",
+        "DisplayStartAt",
+        "DisplayEndAt",
+        "VocalVersion",
+        "AuditionGroupNumber",
+        "SkipStartAt"
+      ],
+      "type": "AuditionMaster"
+    },
+    "AuditionPhaseMaster": {
+      "records": 550,
+      "fields": [
+        "Id",
+        "AuditionasterId",
+        "Phase",
+        "RecommendedPlayerRank",
+        "ClearScore",
+        "StarActCount",
+        "AuditionRewardPackageMasterId"
+      ],
+      "type": "AuditionPhaseMaster"
+    },
+    "AuditionRewardPackageMaster": {
+      "records": 15,
+      "fields": [
+        "Id",
+        "Rewards"
+      ],
+      "type": "AuditionRewardPackageMaster"
+    },
+    "CharacterMaster": {
+      "records": 384,
+      "fields": [
+        "Id",
+        "CharacterBaseMasterId",
+        "Name",
+        "Description",
+        "AssetId",
+        "Rarity",
+        "Attribute",
+        "MinLevelStatus",
+        "field_8",
+        "StarActMasterId",
+        "AwakenStarActMasterId",
+        "SenseMasterId",
+        "ForbidGenericItemBloom",
+        "BloomBonusGroupMasterId",
+        "SenseEnhanceItemGroupMasterId",
+        "FirstEpisodeReleaseItemGroupId",
+        "SecondEpisodeReleaseItemGroupId",
+        "CharacterAwakeningItemGroupMasterId",
+        "DisplayStartAt",
+        "DisplayEndAt",
+        "UnlockText",
+        "Categories",
+        "LeaderSenseMasterId",
+        "MaxTalentStage",
+        "MaxTalentStageReleaseDate",
+        "SecondaryCharacterBaseMasterId",
+        "SecondarySenseMasterId",
+        "SecondaryAttribute"
+      ],
+      "type": "CharacterMaster"
+    },
+    "CharacterBaseMaster": {
+      "records": 26,
+      "fields": [
+        "Id",
+        "Name",
+        "Description",
+        "School",
+        "Grade",
+        "BirthMonth",
+        "BirthDay",
+        "Height",
+        "Hobby",
+        "CompanyMasterId",
+        "NameRomanization",
+        "SenseName",
+        "SenseEffect",
+        "CharacterVoice",
+        "ProfileImageAssetId",
+        "Age",
+        "FamilyNameRomanization",
+        "FirstNameRomanization",
+        "PronounceFamilyName",
+        "PronounceFirstName",
+        "FamilyName",
+        "FirstName",
+        "EvoSenseName",
+        "EvoSenseEffect",
+        "DefaultCostumeMasterId",
+        "CharacterBaseType"
+      ],
+      "type": "CharacterBaseMaster"
+    },
+    "CompanyMaster": {
+      "records": 5,
+      "fields": [
+        "Id",
+        "Name",
+        "Companies",
+        "Description",
+        "IsOther"
+      ],
+      "type": "CompanyMaster"
+    },
+    "CharacterLevelMaster": {
+      "records": 300,
+      "fields": [
+        "Level",
+        "ExperienceToLevelUp",
+        "CharacterStatusLevel",
+        "StartDate"
+      ],
+      "type": "CharacterLevelMaster"
+    },
+    "CharacterBloomBonusGroupMaster": {
+      "records": 288,
+      "fields": [
+        "Id",
+        "BloomBonuses",
+        "BloomRewards"
+      ],
+      "type": "CharacterBloomBonusGroupMaster"
+    },
+    "CharacterSenseEnhanceItemGroupMaster": {
+      "records": 5,
+      "fields": [
+        "Id",
+        "Items"
+      ],
+      "type": "CharacterSenseEnhanceItemGroupMaster"
+    },
+    "CharacterExperienceItemMaster": {
+      "records": 3,
+      "fields": [
+        "Id",
+        "ItemMasterId",
+        "AcquirableExperience",
+        "AcquirableExperienceBonus"
+      ],
+      "type": "CharacterExperienceItemMaster"
+    },
+    "CharacterBloomItemMaster": {
+      "records": 21,
+      "fields": [
+        "Rarity",
+        "CurrentStage",
+        "RequiredPieceAmount",
+        "TalentBloomItemType",
+        "GenericBloomItemMasterId",
+        "RequiredItemMasterId",
+        "RequiredItemAmount"
+      ],
+      "type": "CharacterBloomItemMaster"
+    },
+    "CharacterBaseBloomGenericItemMaster": {
+      "records": 21,
+      "fields": [
+        "Id",
+        "ItemMasterId",
+        "CharacterBaseMasterId",
+        "TalentBloomItemType"
+      ],
+      "type": "CharacterBaseBloomGenericItemMaster"
+    },
+    "CharacterBloomDetailMaster": {
+      "records": 0,
+      "fields": [
+        "CharacterMasterId",
+        "Text",
+        "VoicePath"
+      ],
+      "type": "CharacterBloomDetailMaster"
+    },
+    "CharacterAwakeningItemGroupMaster": {
+      "records": 12,
+      "fields": [
+        "Id",
+        "Items"
+      ],
+      "type": "CharacterAwakeningItemGroupMaster"
+    },
+    "CharacterAwakeningItemMaster": {
+      "records": 24,
+      "fields": [
+        "Id",
+        "field_1",
+        "field_2",
+        "AwakeningPhase",
+        "ItemMasterId",
+        "RequiredQuantity"
+      ],
+      "type": "CharacterAwakeningItemMaster"
+    },
+    "CharacterProfileRestrictionMaster": {
+      "records": 42,
+      "fields": [
+        "Id",
+        "CharacterBaseMasterId",
+        "ProfileRestrictionItem",
+        "UnlockConditionMasterId",
+        "ProfileUnlockValue"
+      ],
+      "type": "CharacterProfileRestrictionMaster"
+    },
+    "CharacterStarRankMaster": {
+      "records": 201,
+      "fields": [
+        "Rank",
+        "NextRankPoint",
+        "RequiredLessonScore",
+        "StatusBonus"
+      ],
+      "type": "CharacterStarRankMaster"
+    },
+    "StarRankRewardMaster": {
+      "records": 5200,
+      "fields": [
+        "Rank",
+        "CharacterBaseMasterId",
+        "CharacterStarRankRewardGroupMasterId"
+      ],
+      "type": "StarRankRewardMaster"
+    },
+    "CharacterStarRankRewardGroupMaster": {
+      "records": 885,
+      "fields": [
+        "Id",
+        "Rewards"
+      ],
+      "type": "CharacterStarRankRewardGroupMaster"
+    },
+    "CharacterMissionMaster": {
+      "records": 11,
+      "fields": [
+        "Id",
+        "Title",
+        "JumpType",
+        "JumpValue",
+        "Stages"
+      ],
+      "type": "CharacterMissionMaster"
+    },
+    "CharacterMissionStageMaster": {
+      "records": 573,
+      "fields": [
+        "Id",
+        "CharacterMissionCategoryLevelMasterId",
+        "CharacterMissionMasterId",
+        "ExclusionNoSenseCharacter",
+        "Order",
+        "StageOrder",
+        "GoalCount"
+      ],
+      "type": "CharacterMissionStageMaster"
+    },
+    "CharacterMissionCategoryLevelMaster": {
+      "records": 150,
+      "fields": [
+        "Id",
+        "CategoryType",
+        "Level",
+        "GiveStarPoint",
+        "StartDate",
+        "EndDate"
+      ],
+      "type": "CharacterMissionCategoryLevelMaster"
+    },
+    "CharacterKeyMissionMaster": {
+      "records": 30,
+      "fields": [
+        "Id",
+        "Level",
+        "Color",
+        "GiveStarPoint",
+        "StartDate",
+        "EndDate",
+        "RequiredCategoryCount"
+      ],
+      "type": "CharacterKeyMissionMaster"
+    },
+    "CostumeWearableCharacterGroupMaster": {
+      "records": 75,
+      "fields": [
+        "Id",
+        "CharacterBaseMasterIds"
+      ],
+      "type": "CostumeWearableCharacterGroupMaster"
+    },
+    "CharacterPieceMaster": {
+      "records": 636,
+      "fields": [
+        "ItemMasterId",
+        "CharacterMasterId",
+        "DugongRequiredAmount",
+        "TalentBloomItemType"
+      ],
+      "type": "CharacterPieceMaster"
+    },
+    "SensePerformanceMaster": {
+      "records": 4,
+      "fields": [
+        "Id",
+        "LabelType",
+        "PerformanceGroup",
+        "Characters"
+      ],
+      "type": "SensePerformanceMaster"
+    },
+    "CategoryGroupMaster": {
+      "records": 8,
+      "fields": [
+        "Id",
+        "Order",
+        "Name",
+        "ColorCode"
+      ],
+      "type": "CategoryGroupMaster"
+    },
+    "CategoryMaster": {
+      "records": 153,
+      "fields": [
+        "Id",
+        "CategoryGroupMasterId",
+        "Order",
+        "Name"
+      ],
+      "type": "CategoryMaster"
+    },
+    "CharacterMissionItemMaster": {
+      "records": 63,
+      "fields": [
+        "Id",
+        "ItemMasterId",
+        "CharacterBaseMasterId",
+        "CharacterMissionMasterId"
+      ],
+      "type": "CharacterMissionItemMaster"
+    },
+    "ActivityLogMessageTemplateMaster": {
+      "records": 10,
+      "fields": [
+        "Id",
+        "LogType",
+        "MessageTemplate"
+      ],
+      "type": "ActivityLogMessageTemplateMaster"
+    },
+    "CircleTheaterLevelMaster": {
+      "records": 61,
+      "fields": [
+        "Id",
+        "Level",
+        "StaminaBaseValue",
+        "Description"
+      ],
+      "type": "CircleTheaterLevelMaster"
+    },
+    "CircleSupportCompanyLevelDetailMaster": {
+      "records": 60,
+      "fields": [
+        "Id",
+        "Company",
+        "Level",
+        "RequiredSupportPoint",
+        "EffectMasterId",
+        "Description",
+        "ReleaseDate"
+      ],
+      "type": "CircleSupportCompanyLevelDetailMaster"
+    },
+    "CircleSupportCompanyLevelLimitMaster": {
+      "records": 5,
+      "fields": [
+        "Id",
+        "NextLevelLimit",
+        "RequiredCoin",
+        "ReleaseDate",
+        "Details"
+      ],
+      "type": "CircleSupportCompanyLevelLimitMaster"
+    },
+    "ComebackCampaignMaster": {
+      "records": 2,
+      "fields": [
+        "Id",
+        "MissionActiveDays",
+        "JewelShopItemActiveDays",
+        "LoginBonusActiveDays",
+        "BuffCampaignActiveDays"
+      ],
+      "type": "ComebackCampaignMaster"
+    },
+    "ComicMaster": {
+      "records": 27,
+      "fields": [
+        "Id",
+        "GroupName",
+        "Episodes"
+      ],
+      "type": "ComicMaster"
+    },
+    "UnlockConditionMaster": {
+      "records": 16,
+      "fields": [
+        "Id",
+        "ConditionText",
+        "ConditionUsableTableFilter",
+        "UnlockConditionType"
+      ],
+      "type": "UnlockConditionMaster"
+    },
+    "NgWordMaster": {
+      "records": 1105,
+      "fields": [
+        "Id",
+        "KeyWord"
+      ],
+      "type": "NgWordMaster"
+    },
+    "ConcertMaster": {
+      "records": 34,
+      "fields": [
+        "Id",
+        "field_1",
+        "StartDate",
+        "EndDate",
+        "Name",
+        "EventMasterId"
+      ],
+      "type": "ConcertMaster"
+    },
+    "ConcertStageMaster": {
+      "records": 256,
+      "fields": [
+        "Id",
+        "ConcertMasterId",
+        "MusicMasterId",
+        "VocalVersion",
+        "SenseNotationMasterId",
+        "RecommendedCompany",
+        "RecommendedLevel",
+        "ClearScore",
+        "Rewards"
+      ],
+      "type": "ConcertStageMaster"
+    },
+    "EffectMaster": {
+      "records": 2031,
+      "fields": [
+        "Id",
+        "Type",
+        "Range",
+        "CalculationType",
+        "Details",
+        "Conditions",
+        "DurationSecond",
+        "Triggers",
+        "FireTimingType"
+      ],
+      "type": "EffectMaster"
+    },
+    "EffectTriggerCharacterBaseGroupMaster": {
+      "records": 14,
+      "fields": [
+        "Id",
+        "CharacterBaseMasterIds"
+      ],
+      "type": "EffectTriggerCharacterBaseGroupMaster"
+    },
+    "EffectDurationGroupMaster": {
+      "records": 0,
+      "fields": [
+        "Id",
+        "Durations"
+      ],
+      "type": "EffectDurationGroupMaster"
+    },
+    "EventMaster": {
+      "records": 117,
+      "fields": [
+        "Id",
+        "EventType",
+        "StartDate",
+        "EndDate",
+        "ForceEndDate",
+        "Name",
+        "IsAsideLiveButton",
+        "EventPointItemMasterId",
+        "BonusAttribute",
+        "BonusCategoryMasterId10",
+        "BonusCategoryMasterId20",
+        "Bonuses",
+        "PointRewards",
+        "RankingRewards",
+        "ExchangeShopMasterId",
+        "AsideLiveButtonType",
+        "SecondaryBonusAttribute"
+      ],
+      "type": "EventMaster"
+    },
+    "SpecialEventMaster": {
+      "records": 8,
+      "fields": [
+        "Id",
+        "EventMaster",
+        "EventName",
+        "CategoryType",
+        "Layouts",
+        "GameHintPageCount"
+      ],
+      "type": "SpecialEventMaster"
+    },
+    "TotalPointEventMaster": {
+      "records": 8,
+      "fields": [
+        "Id",
+        "SpecialEventMasterId"
+      ],
+      "type": "TotalPointEventMaster"
+    },
+    "TotalPointEventRewardMaster": {
+      "records": 137,
+      "fields": [
+        "Id",
+        "TotalPointEventMasterId",
+        "Point",
+        "ThingType",
+        "ThingId",
+        "ThingQuantity",
+        "Order"
+      ],
+      "type": "TotalPointEventRewardMaster"
+    },
+    "StoryEventMaster": {
+      "records": 84,
+      "fields": [
+        "Id",
+        "Category",
+        "BonusAttribute",
+        "Title",
+        "ExchangeShopMasterId",
+        "EventPointItemMasterId",
+        "StartDate",
+        "EndDate",
+        "ForceEndDate",
+        "BonusCategoryMasterId10",
+        "BonusCategoryMasterId20",
+        "SecondaryBonusAttribute"
+      ],
+      "type": "StoryEventMaster"
+    },
+    "StoryEventBonusCharacterBaseMaster": {
+      "records": 195,
+      "fields": [
+        "Id",
+        "StoryEventMasterId",
+        "BonusTargetType",
+        "BonusTargetId"
+      ],
+      "type": "StoryEventBonusCharacterBaseMaster"
+    },
+    "StoryEventRewardMaster": {
+      "records": 2184,
+      "fields": [
+        "Id",
+        "StoryEventMasterId",
+        "TargetMinRank",
+        "TargetMaxRank",
+        "StoryEventRewardItemPackageId"
+      ],
+      "type": "StoryEventRewardMaster"
+    },
+    "StoryEventTotalPointRewardMaster": {
+      "records": 4677,
+      "fields": [
+        "Id",
+        "StoryEventMasterId",
+        "RequiredTotalPoint",
+        "ThingType",
+        "ThingId",
+        "ThingQuantity"
+      ],
+      "type": "StoryEventTotalPointRewardMaster"
+    },
+    "StoryEventRewardItemPackage": {
+      "records": 2184,
+      "fields": [
+        "Id",
+        "Rewards"
+      ],
+      "type": "StoryEventRewardItemPackage"
+    },
+    "StoryEventStoryMaster": {
+      "records": 71,
+      "fields": [
+        "Id",
+        "StoryMasterId",
+        "StoryEventMasterId",
+        "ListedStartDate",
+        "EventStoryListFlags",
+        "IsKeyStory"
+      ],
+      "type": "StoryEventStoryMaster"
+    },
+    "StoryEventEpisodeMaster": {
+      "records": 684,
+      "fields": [
+        "Id",
+        "StoryMasterId",
+        "field_2",
+        "RequiredTotalAcquiredPoint",
+        "Title",
+        "Order",
+        "RequiredReadEpisodeMasterId",
+        "EpisodeRewardPackageMasterId"
+      ],
+      "type": "StoryEventEpisodeMaster"
+    },
+    "StoryEventStoryBgmGroupMaster": {
+      "records": 0,
+      "fields": [
+        "StoryEventMasterId",
+        "Schedules"
+      ],
+      "type": "StoryEventStoryBgmGroupMaster"
+    },
+    "StoryEventCircleMaster": {
+      "records": 1,
+      "fields": [
+        "Id",
+        "StoryEventMasterId",
+        "MusicMasterId"
+      ],
+      "type": "StoryEventCircleMaster"
+    },
+    "StoryEventCircleHighScoreRewardMaster": {
+      "records": 50,
+      "fields": [
+        "Id",
+        "StoryEventMasterId",
+        "Score",
+        "ThingId",
+        "ThingType",
+        "ThingQuantity"
+      ],
+      "type": "StoryEventCircleHighScoreRewardMaster"
+    },
+    "StoryEventCircleMissionMaster": {
+      "records": 17,
+      "fields": [
+        "Id",
+        "StoryEventMasterId",
+        "Title",
+        "CountUnit",
+        "GoalCount",
+        "MaxPhase",
+        "GivePointAtGoal"
+      ],
+      "type": "StoryEventCircleMissionMaster"
+    },
+    "StoryEventCircleMissionRewardMaster": {
+      "records": 81,
+      "fields": [
+        "Id",
+        "StoryEventMasterId",
+        "RequiredCirclePoint",
+        "RequiredUserPoint",
+        "ThingId",
+        "ThingType",
+        "ThingQuantity"
+      ],
+      "type": "StoryEventCircleMissionRewardMaster"
+    },
+    "StoryEventHighScoreMaster": {
+      "records": 35,
+      "fields": [
+        "Id",
+        "StoryEventMasterId",
+        "MusicMasterId",
+        "BuffIds",
+        "SenseNotationMasterId"
+      ],
+      "type": "StoryEventHighScoreMaster"
+    },
+    "StoryEventHighScoreBuffSettingMaster": {
+      "records": 280,
+      "fields": [
+        "Id",
+        "StoryEventHighScoreMasterId",
+        "StoryEventHighScoreBuffMasterId",
+        "StoryEventHighScoreBuffMaster"
+      ],
+      "type": "StoryEventHighScoreBuffSettingMaster"
+    },
+    "StoryEventHighScoreBuffMaster": {
+      "records": 144,
+      "fields": [
+        "Id",
+        "StoryEventHighScoreBuffPatternGroupId",
+        "EffectMasterId",
+        "EffectName",
+        "EffectDescription",
+        "IconImagePath"
+      ],
+      "type": "StoryEventHighScoreBuffMaster"
+    },
+    "StoryEventHighScoreBuffPatternGroupMaster": {
+      "records": 2,
+      "fields": [
+        "Id",
+        "Patterns"
+      ],
+      "type": "StoryEventHighScoreBuffPatternGroupMaster"
+    },
+    "StoryEventHighScoreRewardMaster": {
+      "records": 2391,
+      "fields": [
+        "Id",
+        "StoryEventMasterId",
+        "Score",
+        "ThingId",
+        "ThingType",
+        "ThingQuantity"
+      ],
+      "type": "StoryEventHighScoreRewardMaster"
+    },
+    "TournamentMaster": {
+      "records": 0,
+      "fields": [
+        "Id",
+        "StartDate",
+        "EndDate",
+        "Details"
+      ],
+      "type": "TournamentMaster"
+    },
+    "EventBoxGachaMaster": {
+      "records": 8,
+      "fields": [
+        "Id",
+        "Name",
+        "EventMasterId",
+        "RequiredItemMasterId",
+        "RequiredQuantity",
+        "Details",
+        "EventBoxGachaTextTemplateMasterId"
+      ],
+      "type": "EventBoxGachaMaster"
+    },
+    "EventBoxGachaBoxMaster": {
+      "records": 49,
+      "fields": [
+        "Id",
+        "EventBoxGachaMasterId",
+        "Order",
+        "BoxThings"
+      ],
+      "type": "EventBoxGachaBoxMaster"
+    },
+    "EventBoxGachaTextTemplateMaster": {
+      "records": 6,
+      "fields": [
+        "Id",
+        "Description"
+      ],
+      "type": "EventBoxGachaTextTemplateMaster"
+    },
+    "CharacterPointEventMaster": {
+      "records": 10,
+      "fields": [
+        "Id",
+        "EventMasterId",
+        "Title",
+        "ExchangeShopMasterId",
+        "EventPointItemMasterId",
+        "CharacterBaseMasterIds"
+      ],
+      "type": "CharacterPointEventMaster"
+    },
+    "CharacterPointEventCharacterRankingRewardMaster": {
+      "records": 525,
+      "fields": [
+        "Id",
+        "CharacterPointEventMasterId",
+        "CharacterBaseMasterId",
+        "TargetMinRank",
+        "TargetMaxRank",
+        "CharacterPointEventCharacterRankingRewardItemPackageMasterId"
+      ],
+      "type": "CharacterPointEventCharacterRankingRewardMaster"
+    },
+    "CharacterPointEventCharacterRankingRewardItemPackageMaster": {
+      "records": 525,
+      "fields": [
+        "Id",
+        "Rewards"
+      ],
+      "type": "CharacterPointEventCharacterRankingRewardItemPackageMaster"
+    },
+    "CircleEventMaster": {
+      "records": 5,
+      "fields": [
+        "Id",
+        "EventMasterId",
+        "CircleEventMissionRefreshSettingGroupMasterId"
+      ],
+      "type": "CircleEventMaster"
+    },
+    "CircleEventMissionMaster": {
+      "records": 132,
+      "fields": [
+        "Id",
+        "CircleEventMasterId",
+        "MissionCategory",
+        "Title",
+        "JumpType",
+        "JumpTargetId",
+        "GoalCount",
+        "GivePointAtGoal",
+        "CircleGoalCount",
+        "CircleGivePointAtGoal",
+        "IsDefault"
+      ],
+      "type": "CircleEventMissionMaster"
+    },
+    "CircleEventMissionRefreshSettingGroupMaster": {
+      "records": 1,
+      "fields": [
+        "Id",
+        "Settings"
+      ],
+      "type": "CircleEventMissionRefreshSettingGroupMaster"
+    },
+    "CircleEventCirclePointRewardMaster": {
+      "records": 252,
+      "fields": [
+        "Id",
+        "CircleEventMasterId",
+        "Point",
+        "ThingType",
+        "ThingId",
+        "ThingQuantity",
+        "Order"
+      ],
+      "type": "CircleEventCirclePointRewardMaster"
+    },
+    "CircleEventCircleRankingRewardMaster": {
+      "records": 95,
+      "fields": [
+        "Id",
+        "CircleEventMasterId",
+        "CircleEventCircleRankingRewardItemPackageMasterId",
+        "TargetMinRank",
+        "TargetMaxRank"
+      ],
+      "type": "CircleEventCircleRankingRewardMaster"
+    },
+    "CircleEventCircleRankingRewardItemPackageMaster": {
+      "records": 95,
+      "fields": [
+        "Id",
+        "Rewards"
+      ],
+      "type": "CircleEventCircleRankingRewardItemPackageMaster"
+    },
+    "RouletteEventMaster": {
+      "records": 18,
+      "fields": [
+        "Id",
+        "EventMasterId",
+        "RoulettePointItemMasterId"
+      ],
+      "type": "RouletteEventMaster"
+    },
+    "TournamentQualifyingMaster": {
+      "records": 1,
+      "fields": [
+        "Id",
+        "EventMasterId",
+        "EntryPageUrl",
+        "EntryStartDate",
+        "EntryEndDate",
+        "WebsiteUrl"
+      ],
+      "type": "TournamentQualifyingMaster"
+    },
+    "DugongRunCourseMaster": {
+      "records": 6,
+      "fields": [
+        "Id",
+        "EventMasterId",
+        "Difficulty",
+        "MusicMasterId",
+        "NotationPath",
+        "ScrollSpeed",
+        "DugongRunCourseGroupId"
+      ],
+      "type": "DugongRunCourseMaster"
+    },
+    "DugongRunRewardMaster": {
+      "records": 6,
+      "fields": [
+        "Id",
+        "RequiredClearCourseCount",
+        "ThingType",
+        "ThingId",
+        "ThingQuantity",
+        "DugongRunCourseGroupId"
+      ],
+      "type": "DugongRunRewardMaster"
+    },
+    "TrialPartyEventMaster": {
+      "records": 34,
+      "fields": [
+        "Id",
+        "MEventId",
+        "IsHideComplate",
+        "StartDate",
+        "EndDate",
+        "BgmPath",
+        "Name"
+      ],
+      "type": "TrialPartyEventMaster"
+    },
+    "TrialPartyEventStageMaster": {
+      "records": 112,
+      "fields": [
+        "Id",
+        "TrialPartyEventMasterId",
+        "MusicMasterId",
+        "VocalVersion",
+        "SenseNotationMasterId",
+        "ClearScore",
+        "ClearSenseCount",
+        "ClearStarActCount",
+        "ClearPrincipalGaugeValue",
+        "Title",
+        "Hint",
+        "RestrictionInfo",
+        "Rewards",
+        "TrialPartyMasterId",
+        "UnrecommendedAuto"
+      ],
+      "type": "TrialPartyEventStageMaster"
+    },
+    "ConcoursMaster": {
+      "records": 2,
+      "fields": [
+        "Id",
+        "EventMasterId",
+        "BgmPath",
+        "Details",
+        "Points"
+      ],
+      "type": "ConcoursMaster"
+    },
+    "ConcoursPointRewardMaster": {
+      "records": 12,
+      "fields": [
+        "Id",
+        "ConcoursMasterId",
+        "RequiredPoint",
+        "Things"
+      ],
+      "type": "ConcoursPointRewardMaster"
+    },
+    "EventCampMaster": {
+      "records": 6,
+      "fields": [
+        "Id",
+        "EventMasterId",
+        "WinCampRatio",
+        "LoseCampRatio",
+        "NoneCampRatio",
+        "Camp1TeamName",
+        "Camp2TeamName",
+        "CampSelectMessage",
+        "BgmPath",
+        "CharacterMasterIdIconLeft",
+        "CharacterMasterIdIconRight"
+      ],
+      "type": "EventCampMaster"
+    },
+    "EventCampSupportPointRewardMaster": {
+      "records": 6,
+      "fields": [
+        "Id",
+        "EventMasterId",
+        "TargetMinRank",
+        "TargetMaxRank",
+        "Camp1RewardTrophyMasterId",
+        "Camp2RewardTrophyMasterId"
+      ],
+      "type": "EventCampSupportPointRewardMaster"
+    },
+    "EventCampClassMaster": {
+      "records": 0,
+      "fields": [
+        "Id",
+        "EventMasterId",
+        "TargetMaxRank",
+        "TargetMinRank",
+        "RewardReceiveRatio"
+      ],
+      "type": "EventCampClassMaster"
+    },
+    "FriendInvitationMissionMaster": {
+      "records": 14,
+      "fields": [
+        "Id",
+        "Description",
+        "Order",
+        "StartDate",
+        "EndDate",
+        "JumpType",
+        "JumpTargetId",
+        "Stages"
+      ],
+      "type": "FriendInvitationMissionMaster"
+    },
+    "GachaMaster": {
+      "records": 1342,
+      "fields": [
+        "Id",
+        "Name",
+        "CardType",
+        "GachaType",
+        "GachaTextTemplateMasterId",
+        "StartDate",
+        "EndDate",
+        "BonusThings",
+        "GachaDetails",
+        "Things",
+        "HasMovie",
+        "StoryEventMasterId",
+        "AttentionGachaTextTemplateMasterId",
+        "IsForceDisplay",
+        "IsHideEndDate",
+        "UnlockType",
+        "UnlockValue",
+        "ExchangeShopBannerPath",
+        "Order",
+        "DisplayFooterCondition",
+        "GroupType",
+        "RollBonuses",
+        "ReRollLimit",
+        "ReplaceAssetName"
+      ],
+      "type": "GachaMaster"
+    },
+    "GachaTextTemplateMaster": {
+      "records": 1290,
+      "fields": [
+        "Id",
+        "Description"
+      ],
+      "type": "GachaTextTemplateMaster"
+    },
+    "StepupGachaGroupMaster": {
+      "records": 128,
+      "fields": [
+        "Id",
+        "StepupGachas"
+      ],
+      "type": "StepupGachaGroupMaster"
+    },
+    "PickupSelectionGachaMaster": {
+      "records": 72,
+      "fields": [
+        "Id",
+        "GachaMasterId",
+        "MinSelectCount",
+        "MaxSelectCount",
+        "FixedPrizePickupOnly"
+      ],
+      "type": "PickupSelectionGachaMaster"
+    },
+    "HomeCharacterVoiceMaster": {
+      "records": 1010,
+      "fields": [
+        "Id",
+        "CharacterBaseMasterId",
+        "Text",
+        "Weight",
+        "field_4",
+        "CharacterVoicePeriodMasterId",
+        "field_6",
+        "IsPlayerBirthDateVoice",
+        "VoiceFileName1",
+        "VoiceFileName2",
+        "VoiceFileName3",
+        "VoiceFileName4",
+        "field_12",
+        "VoiceInterval1",
+        "VoiceInterval2",
+        "VoiceInterval3",
+        "MouthMotionId1",
+        "MouthMotionId2",
+        "MouthMotionId3",
+        "MouthMotionId4",
+        "BodyMotionId1",
+        "BodyMotionId2",
+        "BodyMotionId3",
+        "BodyMotionId4"
+      ],
+      "type": "HomeCharacterVoiceMaster"
+    },
+    "HomeCharacterVoicePeriodMaster": {
+      "records": 37,
+      "fields": [
+        "Id",
+        "StartMonth",
+        "StartDay",
+        "StartTime",
+        "EndMonth",
+        "EndDay",
+        "EndTime"
+      ],
+      "type": "HomeCharacterVoicePeriodMaster"
+    },
+    "CampaignMaster": {
+      "records": 107,
+      "fields": [
+        "Id",
+        "Title",
+        "Description",
+        "IconImagePath",
+        "Order",
+        "StartDate",
+        "EndDate",
+        "ComebackCampaignMasterId",
+        "CampaignEffectType",
+        "CampaignEffectValue"
+      ],
+      "type": "CampaignMaster"
+    },
+    "GameHintMaster": {
+      "records": 37,
+      "fields": [
+        "Id",
+        "PageCategory",
+        "PageCount"
+      ],
+      "type": "GameHintMaster"
+    },
+    "BannerMaster": {
+      "records": 998,
+      "fields": [
+        "Id",
+        "Order",
+        "Name",
+        "JumpType",
+        "JumpPageId",
+        "WebLinkType",
+        "LinkUrl",
+        "DeleteConditionType",
+        "DeleteConditionValue",
+        "ImagePath",
+        "StartDate",
+        "EndDate"
+      ],
+      "type": "BannerMaster"
+    },
+    "HomePosterMaster": {
+      "records": 5,
+      "fields": [
+        "Id",
+        "PosterMasterId",
+        "GachaMasterId",
+        "DisplayStartDate",
+        "DisplayEndDate"
+      ],
+      "type": "HomePosterMaster"
+    },
+    "TipMaster": {
+      "records": 42,
+      "fields": [
+        "Id",
+        "CharacterBaseMasterId",
+        "Description",
+        "Name"
+      ],
+      "type": "TipMaster"
+    },
+    "SplashMaster": {
+      "records": 223,
+      "fields": [
+        "Id",
+        "Order",
+        "SplashType",
+        "SplashValue",
+        "StartDate",
+        "EndDate",
+        "AdditionalSplashValue0",
+        "AdditionalSplashValue1",
+        "UnlockCondition",
+        "UnlockConditionValue"
+      ],
+      "type": "SplashMaster"
+    },
+    "HomeBackgroundMaster": {
+      "records": 9,
+      "fields": [
+        "Id",
+        "Name",
+        "StartDate",
+        "EndDate"
+      ],
+      "type": "HomeBackgroundMaster"
+    },
+    "TimeLimitedControlMaster": {
+      "records": 1,
+      "fields": [
+        "Id",
+        "EndDate"
+      ],
+      "type": "TimeLimitedControlMaster"
+    },
+    "HomeBGMMaster": {
+      "records": 5,
+      "fields": [
+        "Id",
+        "Priority",
+        "SelectionType",
+        "DefaultBGMName",
+        "DefaultBGMPath",
+        "StartDate",
+        "EndDate"
+      ],
+      "type": "HomeBGMMaster"
+    },
+    "HomeBGMDetailMaster": {
+      "records": 183,
+      "fields": [
+        "Id",
+        "HomeBGMMasterId",
+        "BGMName",
+        "BGMPath",
+        "StartDate",
+        "EndDate",
+        "MusicMasterId"
+      ],
+      "type": "HomeBGMDetailMaster"
+    },
+    "TitleBackgroundMaster": {
+      "records": 161,
+      "fields": [
+        "Id",
+        "Priority",
+        "StartDate",
+        "EndDate",
+        "Details"
+      ],
+      "type": "TitleBackgroundMaster"
+    },
+    "TitleDecorationMaster": {
+      "records": 4,
+      "fields": [
+        "Id",
+        "DecorationType",
+        "StartDate",
+        "EndDate"
+      ],
+      "type": "TitleDecorationMaster"
+    },
+    "HomeCharacterMaster": {
+      "records": 26,
+      "fields": [
+        "Id",
+        "CharacterBaseMasterId",
+        "StartDate",
+        "EndDate"
+      ],
+      "type": "HomeCharacterMaster"
+    },
+    "TitleCallVoiceMaster": {
+      "records": 56,
+      "fields": [
+        "Id",
+        "Priority",
+        "VoiceId",
+        "StartDate",
+        "EndDate"
+      ],
+      "type": "TitleCallVoiceMaster"
+    },
+    "LoginBonusSpineCostumeMaster": {
+      "records": 221,
+      "fields": [
+        "Id",
+        "SpineId",
+        "CharacterBaseMasterId",
+        "TargetValue",
+        "ReleaseDate"
+      ],
+      "type": "LoginBonusSpineCostumeMaster"
+    },
+    "LeagueMaster": {
+      "records": 165,
+      "fields": [
+        "Id",
+        "MusicMasterId",
+        "MaxDifficulty",
+        "DisplayStartAt",
+        "CountingStartAt",
+        "DisplayEndAt",
+        "LeagueClassGroupMasterId",
+        "SenseNotationMasterId",
+        "VocalVersion",
+        "LeagueSeasonMasterId"
+      ],
+      "type": "LeagueMaster"
+    },
+    "LeagueClassGroupMaster": {
+      "records": 5,
+      "fields": [
+        "Id",
+        "Classes"
+      ],
+      "type": "LeagueClassGroupMaster"
+    },
+    "LeaguePlayRewardPackageMaster": {
+      "records": 202,
+      "fields": [
+        "Id",
+        "Rewards"
+      ],
+      "type": "LeaguePlayRewardPackageMaster"
+    },
+    "LeagueGroupRankingRewardPackageMaster": {
+      "records": 56,
+      "fields": [
+        "Id",
+        "Rewards",
+        "ClassType",
+        "MinRank",
+        "MaxRank",
+        "RewardTitle"
+      ],
+      "type": "LeagueGroupRankingRewardPackageMaster"
+    },
+    "LeagueRewardPackageMaster": {
+      "records": 52,
+      "fields": [
+        "Id",
+        "Rewards"
+      ],
+      "type": "LeagueRewardPackageMaster"
+    },
+    "TripleCastGroupRankingRewardPackageMaster": {
+      "records": 56,
+      "fields": [
+        "Id",
+        "Rewards",
+        "ClassType",
+        "MinRank",
+        "MaxRank",
+        "RewardTitle"
+      ],
+      "type": "TripleCastGroupRankingRewardPackageMaster"
+    },
+    "LeagueAllClassGlobalRankingRewardThingMaster": {
+      "records": 532,
+      "fields": [
+        "ThingId",
+        "ThingType",
+        "ThingQuantity"
+      ],
+      "type": "LeagueAllClassGlobalRankingRewardPackageMaster"
+    },
+    "TripleCastMaster": {
+      "records": 37,
+      "fields": [
+        "Id",
+        "MusicMasterId",
+        "VocalVersion",
+        "MaxDifficulty",
+        "SenseNotationMasterId1",
+        "SenseNotationMasterId2",
+        "SenseNotationMasterId3",
+        "DisplayStartAt",
+        "CountingStartAt",
+        "DisplayEndAt",
+        "LeagueClassGroupMasterId",
+        "TripleCastSeasonMasterId",
+        "VocalEffectMasterId",
+        "ExpressionEffectMasterId",
+        "ConcentrationEffectMasterId"
+      ],
+      "type": "TripleCastMaster"
+    },
+    "TripleCastAllClassGlobalRankingRewardThingMaster": {
+      "records": 245,
+      "fields": [
+        "ThingId",
+        "ThingType",
+        "ThingQuantity"
+      ],
+      "type": "TripleCastAllClassGlobalRankingRewardPackageMaster"
+    },
+    "LessonScoreRewardMaster": {
+      "records": 62,
+      "fields": [
+        "Id",
+        "ThingType",
+        "ThingId",
+        "ThingQuantity"
+      ],
+      "type": "LessonScoreRewardMaster"
+    },
+    "LessonScoreRewardGroupMaster": {
+      "records": 33,
+      "fields": [
+        "Id",
+        "Rewards"
+      ],
+      "type": "LessonScoreRewardGroupMaster"
+    },
+    "CharacterLessonScoreRewardMaster": {
+      "records": 2877,
+      "fields": [
+        "Id",
+        "CharacterBaseMasterId",
+        "RequiredScore",
+        "LessonScoreGroupMasterId"
+      ],
+      "type": "CharacterLessonScoreRewardMaster"
+    },
+    "AdditionalRewardPackageMaster": {
+      "records": 143,
+      "fields": [
+        "Id",
+        "Description",
+        "LiveSettingMasterId",
+        "Rewards",
+        "Etcetera",
+        "StartDate",
+        "EndDate",
+        "Order"
+      ],
+      "type": "AdditionalRewardPackageMaster"
+    },
+    "ResultVoiceMaster": {
+      "records": 156,
+      "fields": [
+        "Id",
+        "CharacterBaseMasterId",
+        "Order",
+        "ConditionType",
+        "VoiceAssetId",
+        "Motion"
+      ],
+      "type": "ResultVoiceMaster"
+    },
+    "LiveMaster": {
+      "records": 1490,
+      "fields": [
+        "Id",
+        "Difficulty",
+        "MusicMasterId",
+        "Level",
+        "NoteCount",
+        "UnlockCondition",
+        "UnlockValue",
+        "StartDate",
+        "EndDate"
+      ],
+      "type": "LiveMaster"
+    },
+    "MusicMaster": {
+      "records": 298,
+      "fields": [
+        "Id",
+        "Name",
+        "Description",
+        "field_3",
+        "RewardRuleMasterId",
+        "PronounceName",
+        "LyricWriter",
+        "Composer",
+        "Arranger",
+        "field_9",
+        "UnlockText",
+        "IsLongVersion",
+        "ReleasedAt",
+        "StaminaConsumption",
+        "MusicTimeSecond",
+        "Invisible",
+        "field_16",
+        "SampleStartSeconds",
+        "SampleEndSeconds",
+        "DelaySeconds",
+        "VocalVersions",
+        "UnlockConditionType",
+        "UnlockConditionValue",
+        "MusicVideoType",
+        "MusicCoverType",
+        "StoryEventMasterId",
+        "StoryMasterId",
+        "EventMasterId"
+      ],
+      "type": "MusicMaster"
+    },
+    "LiveSettingMaster": {
+      "records": 8,
+      "fields": [
+        "Id",
+        "Name",
+        "LiveType",
+        "LiveDropFrameGroupMasterId"
+      ],
+      "type": "LiveSettingMaster"
+    },
+    "MultiLiveScheduleMaster": {
+      "records": 164,
+      "fields": [
+        "Id",
+        "StartDate",
+        "EndDate",
+        "LiveSettingMasterId1",
+        "LiveSettingMasterId2",
+        "AdditionalEndDate",
+        "EndDateDisplayType1",
+        "EndDateDisplayType2"
+      ],
+      "type": "MultiLiveScheduleMaster"
+    },
+    "LiveDropFrameGroupMaster": {
+      "records": 8,
+      "fields": [
+        "Id",
+        "DropFrames"
+      ],
+      "type": "LiveDropFrameGroupMaster"
+    },
+    "RewardRuleMaster": {
+      "records": 1,
+      "fields": [
+        "Id",
+        "AchivementRateRewards"
+      ],
+      "type": "RewardRuleMaster"
+    },
+    "MusicVocalVersionMaster": {
+      "records": 313,
+      "fields": [
+        "Id",
+        "MusicMasterId",
+        "VocalVersion",
+        "Singer",
+        "Name",
+        "MusicTimeSecond",
+        "SampleStartSeconds",
+        "SampleEndSeconds",
+        "MusicVideoType",
+        "Characters"
+      ],
+      "type": "MusicVocalVersionMaster"
+    },
+    "LightLoadSplitEffectMaster": {
+      "records": 95,
+      "fields": [
+        "Id",
+        "BaseEffect",
+        "LightLoadEffect"
+      ],
+      "type": "LightLoadSplitEffectMaster"
+    },
+    "TeamChallengeMaster": {
+      "records": 114,
+      "fields": [
+        "Id",
+        "MusicMasterId",
+        "Difficulty",
+        "GoalType",
+        "GoalMinValue",
+        "GoalMaxValue",
+        "StartDate",
+        "EndDate"
+      ],
+      "type": "TeamChallengeMaster"
+    },
+    "AnotherNotationMaster": {
+      "records": 112,
+      "fields": [
+        "Id",
+        "MusicMasterId",
+        "VocalVersion",
+        "NotationPath",
+        "Difficulty",
+        "Level",
+        "AnotherNotationType",
+        "StartDate",
+        "EndDate"
+      ],
+      "type": "AnotherNotationMaster"
+    },
+    "MusicGroupMaster": {
+      "records": 51,
+      "fields": [
+        "Id",
+        "MainMusicMasterId"
+      ],
+      "type": "MusicGroupMaster"
+    },
+    "MusicGroupDetailMaster": {
+      "records": 102,
+      "fields": [
+        "Id",
+        "MusicGroupMasterId",
+        "MusicMasterId"
+      ],
+      "type": "MusicGroupDetailMaster"
+    },
+    "BonusLiveMaster": {
+      "records": 18,
+      "fields": [
+        "Id",
+        "EventMasterId",
+        "FirstClearEventPointQuantity",
+        "ClearEventPointQuantity",
+        "UnlockConditionType",
+        "UnlockConditionValue",
+        "Stages"
+      ],
+      "type": "BonusLiveMaster"
+    },
+    "BonusLiveStageMaster": {
+      "records": 90,
+      "fields": [
+        "Id",
+        "BonusLiveMasterId",
+        "Order",
+        "MusicMasterId",
+        "VocalVersion",
+        "SenseNotationMasterId",
+        "RecommendedCompany",
+        "RecommendedLevel",
+        "ClearScore",
+        "UnlockConditionValue",
+        "StartDate",
+        "Rewards",
+        "ClearStarActCount"
+      ],
+      "type": "BonusLiveStageMaster"
+    },
+    "MusicCourseMaster": {
+      "records": 291,
+      "fields": [
+        "Id",
+        "Name",
+        "MusicCourseType",
+        "Order",
+        "InitialLife",
+        "RequiredItemMasterId",
+        "RequiredAmount",
+        "StartDate",
+        "EndDate",
+        "UnlockCondition",
+        "UnlockConditionValue",
+        "TournamentQualifyingMasterId",
+        "Details"
+      ],
+      "type": "MusicCourseMaster"
+    },
+    "MusicCourseRewardGroupMaster": {
+      "records": 256,
+      "fields": [
+        "Id",
+        "MusicCourseMasterId",
+        "RequiredCertificationGrade",
+        "Rewards"
+      ],
+      "type": "MusicCourseRewardGroupMaster"
+    },
+    "CourseRankingRewardMaster": {
+      "records": 1128,
+      "fields": [
+        "Id",
+        "MusicCourseMasterId",
+        "TargetHighestRank",
+        "TargetLowestRank",
+        "Rewards"
+      ],
+      "type": "CourseRankingRewardMaster"
+    },
+    "GhostLiveMaster": {
+      "records": 8,
+      "fields": [
+        "Id",
+        "MusicMasterId",
+        "VocalVersion",
+        "SenseNotationMasterId",
+        "StartDate",
+        "EndDate"
+      ],
+      "type": "GhostLiveMaster"
+    },
+    "MissionPassMaster": {
+      "records": 36,
+      "fields": [
+        "Id",
+        "ItemMasterId",
+        "StartDate",
+        "EndDate"
+      ],
+      "type": "MissionPassMaster"
+    },
+    "MissionPassDetailMaster": {
+      "records": 251,
+      "fields": [
+        "Id",
+        "Phase",
+        "MissionPassMasterId",
+        "ClearPoint",
+        "StartDate",
+        "EndDate",
+        "Rewards"
+      ],
+      "type": "MissionPassDetailMaster"
+    },
+    "MissionPassLoopRewardMaster": {
+      "records": 96,
+      "fields": [
+        "Id",
+        "Phase",
+        "StartDate",
+        "EndDate",
+        "Rewards"
+      ],
+      "type": "MissionPassLoopRewardMaster"
+    },
+    "MissionPassLoopRewardThingMaster": {
+      "records": 96,
+      "fields": [
+        "Id",
+        "MissionPassLoopRewardMasterId",
+        "ThingId",
+        "ThingType",
+        "ThingQuantity",
+        "IsSp"
+      ],
+      "type": "MissionPassLoopRewardThingMaster"
+    },
+    "MissionMaster": {
+      "records": 812,
+      "fields": [
+        "Id",
+        "MissionCategory",
+        "MissionViewOrder",
+        "Title",
+        "Description",
+        "field_5",
+        "field_6",
+        "field_7",
+        "field_8",
+        "field_9",
+        "field_10",
+        "EventMasterId",
+        "JumpType",
+        "JumpTargetId",
+        "StartDate",
+        "EndDate",
+        "Stages",
+        "ComebackCampaignMasterId"
+      ],
+      "type": "MissionMaster"
+    },
+    "GradualMissionGroupMaster": {
+      "records": 1,
+      "fields": [
+        "Id",
+        "StartDate",
+        "EndDate",
+        "Missions"
+      ],
+      "type": "GradualMissionGroupMaster"
+    },
+    "PickupCharacterMissionMaster": {
+      "records": 190,
+      "fields": [
+        "Id",
+        "CharacterMasterId",
+        "Order",
+        "PickupCharacterMissionDetailGroupMasterId",
+        "StartDate",
+        "EndDate"
+      ],
+      "type": "PickupCharacterMissionMaster"
+    },
+    "PickupCharacterMissionDetailGroupMaster": {
+      "records": 190,
+      "fields": [
+        "Id",
+        "Details"
+      ],
+      "type": "PickupCharacterMissionDetailGroupMaster"
+    },
+    "PickupCharacterMissionDetailMaster": {
+      "records": 1321,
+      "fields": [
+        "Id",
+        "Order",
+        "CheckCondition",
+        "Description",
+        "GoalValue",
+        "Rewards"
+      ],
+      "type": "PickupCharacterMissionDetailMaster"
+    },
+    "TrialPartyMaster": {
+      "records": 112,
+      "fields": [
+        "Id",
+        "LeaderPosition",
+        "DefaultSlots"
+      ],
+      "type": "TrialPartyMaster"
+    },
+    "TrialPartyCharacterMaster": {
+      "records": 1066,
+      "fields": [
+        "Id",
+        "TrialPartyMasterId",
+        "CharacterMasterId",
+        "Level",
+        "TalentStage",
+        "AwakeningStatus",
+        "SenseLevel",
+        "ReadEpisodeOrder"
+      ],
+      "type": "TrialPartyCharacterMaster"
+    },
+    "TrialPartyPosterMaster": {
+      "records": 717,
+      "fields": [
+        "Id",
+        "TrialPartyMasterId",
+        "PosterMasterId",
+        "Level",
+        "BreakthroughPhase"
+      ],
+      "type": "TrialPartyPosterMaster"
+    },
+    "TrialPartyAccessoryMaster": {
+      "records": 606,
+      "fields": [
+        "Id",
+        "TrialPartyMasterId",
+        "AccessoryMasterId",
+        "Level",
+        "AccessoryEffects"
+      ],
+      "type": "TrialPartyAccessoryMaster"
+    },
+    "AlbumThemeMaster": {
+      "records": 32,
+      "fields": [
+        "Id",
+        "Order",
+        "Name",
+        "Description",
+        "IsHide",
+        "IsDefault",
+        "StartDate",
+        "EndDate"
+      ],
+      "type": "AlbumThemeMaster"
+    },
+    "AlbumEffectMaster": {
+      "records": 130,
+      "fields": [
+        "Id",
+        "Level",
+        "Description",
+        "EffectMasterId"
+      ],
+      "type": "AlbumEffectMaster"
+    },
+    "FilmItemMaster": {
+      "records": 32,
+      "fields": [
+        "Id",
+        "ItemMasterId",
+        "TargetCharacterBaseMasterId"
+      ],
+      "type": "FilmItemMaster"
+    },
+    "MusicVideoMaster": {
+      "records": 43,
+      "fields": [
+        "Id",
+        "MusicMasterId",
+        "MemberAmount",
+        "DisplayStartAt",
+        "DisplayEndAt",
+        "Characters",
+        "DelaySeconds",
+        "MovieDelaySeconds",
+        "MusicVideoDefaultCostumeGroupMasterId",
+        "IsFixedMember",
+        "Order"
+      ],
+      "type": "MusicVideoMaster"
+    },
+    "MusicVideoDefaultCostumeGroupMaster": {
+      "records": 3,
+      "fields": [
+        "Id",
+        "DefaultCostumes"
+      ],
+      "type": "MusicVideoDefaultCostumeGroupMaster"
+    },
+    "PhotoEffectMaster": {
+      "records": 991,
+      "fields": [
+        "Id",
+        "Name",
+        "Description",
+        "EffectMasterId",
+        "Variety",
+        "PhotoEffectTypeGroupMasterId",
+        "PhotoEffectGroupMasterId"
+      ],
+      "type": "PhotoEffectMaster"
+    },
+    "PhotoLevelUpItemGroupMaster": {
+      "records": 95,
+      "fields": [
+        "Id",
+        "Rarity",
+        "BaseLevel",
+        "RequiredCoin",
+        "Items"
+      ],
+      "type": "PhotoLevelUpItemGroupMaster"
+    },
+    "PhotoSpotMaster": {
+      "records": 13,
+      "fields": [
+        "Id",
+        "Name",
+        "ReleasePlayerRank",
+        "DisplayStartAt",
+        "DisplayEndAt"
+      ],
+      "type": "PhotoSpotMaster"
+    },
+    "SignMaster": {
+      "records": 26,
+      "fields": [
+        "Id",
+        "CharacterBaseMasterId",
+        "SignImagePath"
+      ],
+      "type": "SignMaster"
+    },
+    "TheaterChapterMaster": {
+      "records": 7,
+      "fields": [
+        "Id",
+        "Name",
+        "CompanyMasterId",
+        "DisplayStartAt",
+        "DisplayEndAt",
+        "Stories",
+        "EpisodeMasterId",
+        "RequiredReadEpisodeMasterId",
+        "TheaterStoryMasterIds"
+      ],
+      "type": "TheaterChapterMaster"
+    },
+    "TheaterStoryMaster": {
+      "records": 54,
+      "fields": [
+        "Id",
+        "Name",
+        "Order",
+        "HasSynopsis",
+        "Synopsis",
+        "DisplayStartAt",
+        "DisplayEndAt",
+        "Roles",
+        "Details"
+      ],
+      "type": "TheaterStoryMaster"
+    },
+    "PhotoEffectTypeGroupMaster": {
+      "records": 8,
+      "fields": [
+        "Id",
+        "PhotoEffectMaxVariety",
+        "Description",
+        "CanUseItem"
+      ],
+      "type": "PhotoEffectTypeGroupMaster"
+    },
+    "PhotoEffectChangeItemMaster": {
+      "records": 8,
+      "fields": [
+        "Id",
+        "ItemMasterId",
+        "PhotoEffectTypeGroupMasterId",
+        "RequiredQuantity"
+      ],
+      "type": "PhotoEffectChangeItemMaster"
+    },
+    "PhotoEffectVarietyChangeDetailMaster": {
+      "records": 8,
+      "fields": [
+        "Id",
+        "BeforePhotoEffectMaxVariety",
+        "AfterPhotoEffectMaxVariety",
+        "BeforeVariety",
+        "AfterVariety"
+      ],
+      "type": "PhotoEffectVarietyChangeDetailMaster"
+    },
+    "PhotoEffectVarietyUpDetailMaster": {
+      "records": 14,
+      "fields": [
+        "Id",
+        "PhotoEffectTypeGroupMasterId",
+        "CurrentVariety",
+        "RequiredQuantity"
+      ],
+      "type": "PhotoEffectVarietyUpDetailMaster"
+    },
+    "PlayerRankMaster": {
+      "records": 300,
+      "fields": [
+        "Rank",
+        "PointToLevelUp",
+        "MaxStamina",
+        "field_3",
+        "IsReleasedRank",
+        "PlayerRankCapMasterId"
+      ],
+      "type": "PlayerRankMaster"
+    },
+    "PlayerRankCapMaster": {
+      "records": 14,
+      "fields": [
+        "Id",
+        "Coin",
+        "Details"
+      ],
+      "type": "PlayerRankCapMaster"
+    },
+    "ItemMaster": {
+      "records": 1984,
+      "fields": [
+        "Id",
+        "Name",
+        "Description",
+        "DisplayOrder",
+        "DisplayEndDate",
+        "MaxStock",
+        "Category",
+        "Consumable",
+        "JumpType",
+        "JumpTargetId",
+        "TabCategory",
+        "Rarity"
+      ],
+      "type": "ItemMaster"
+    },
+    "TrophyMaster": {
+      "records": 6455,
+      "fields": [
+        "Id",
+        "Name",
+        "Description",
+        "Rarity",
+        "Order",
+        "TrophyGroupMasterId",
+        "Hidden",
+        "UnlockText"
+      ],
+      "type": "TrophyMaster"
+    },
+    "TrophyGroupMaster": {
+      "records": 6123,
+      "fields": [
+        "Id",
+        "Category"
+      ],
+      "type": "TrophyGroupMaster"
+    },
+    "StaminaRecoveryItemMaster": {
+      "records": 110,
+      "fields": [
+        "ItemMasterId",
+        "RecoveryAmount",
+        "ExpiredAt",
+        "IsForceShowList"
+      ],
+      "type": "StaminaRecoveryItemMaster"
+    },
+    "StampMaster": {
+      "records": 354,
+      "fields": [
+        "Id",
+        "Order",
+        "IsDefault",
+        "CharacterBaseMasterId",
+        "Type",
+        "AssetId",
+        "VoiceAssetId",
+        "Name",
+        "CharacterBaseMasterIds"
+      ],
+      "type": "StampMaster"
+    },
+    "BombMaster": {
+      "records": 1,
+      "fields": [
+        "Id",
+        "Name",
+        "Description",
+        "Order",
+        "Hidden",
+        "IsDefault"
+      ],
+      "type": "BombMaster"
+    },
+    "CostumeMaster": {
+      "records": 410,
+      "fields": [
+        "Id",
+        "Name",
+        "Order",
+        "IsDefault",
+        "CostumeGroupMasterId",
+        "Description"
+      ],
+      "type": "CostumeMaster"
+    },
+    "CostumeGroupMaster": {
+      "records": 257,
+      "fields": [
+        "Id",
+        "Name",
+        "Description",
+        "Order",
+        "CostumeMasterIds",
+        "CostumeWearableCharacterGroupMasterId",
+        "PerformanceGroupId",
+        "IsHairChange",
+        "DisplayStartAt",
+        "DisplayEndAt"
+      ],
+      "type": "CostumeGroupMaster"
+    },
+    "NameColorMaster": {
+      "records": 18,
+      "fields": [
+        "Id",
+        "Name",
+        "Description",
+        "Order",
+        "Hidden",
+        "IsDefault",
+        "UnlockText"
+      ],
+      "type": "NameColorMaster"
+    },
+    "NameplateMaster": {
+      "records": 70,
+      "fields": [
+        "Id",
+        "Name",
+        "Description",
+        "Order",
+        "Hidden",
+        "IsDefault",
+        "Details",
+        "UnlockText",
+        "ChangeType",
+        "ChangeValue1",
+        "ChangeValue2"
+      ],
+      "type": "NameplateMaster"
+    },
+    "NoteMaster": {
+      "records": 1,
+      "fields": [
+        "Id",
+        "Name",
+        "Description",
+        "Order",
+        "Hidden",
+        "IsDefault"
+      ],
+      "type": "NoteMaster"
+    },
+    "DecorationMaster": {
+      "records": 410,
+      "fields": [
+        "Id",
+        "Order",
+        "IsDefault",
+        "Name",
+        "Category",
+        "WidhtPx",
+        "HeightPx",
+        "MinWidthPx",
+        "MaxWidthPx"
+      ],
+      "type": "DecorationMaster"
+    },
+    "NameBaseColorMaster": {
+      "records": 22,
+      "fields": [
+        "Id",
+        "Name",
+        "Order",
+        "UnlockConditionText",
+        "Hidden",
+        "IsDefault"
+      ],
+      "type": "NameBaseColorMaster"
+    },
+    "IconFrameMaster": {
+      "records": 26,
+      "fields": [
+        "Id",
+        "Name",
+        "Order",
+        "UnlockConditionText",
+        "Hidden",
+        "IsDefault"
+      ],
+      "type": "IconFrameMaster"
+    },
+    "HomeSkinMaster": {
+      "records": 22,
+      "fields": [
+        "Id",
+        "Name",
+        "Order",
+        "UnlockConditionText",
+        "Hidden",
+        "IsDefault",
+        "DisplayStartDate"
+      ],
+      "type": "HomeSkinMaster"
+    },
+    "BuffItemMaster": {
+      "records": 16,
+      "fields": [
+        "Id",
+        "ItemMasterId",
+        "EffectType",
+        "EffectValue",
+        "ValidDay",
+        "DialogTitle",
+        "DialogDescription"
+      ],
+      "type": "BuffItemMaster"
+    },
+    "PosterMaster": {
+      "records": 297,
+      "fields": [
+        "Id",
+        "Name",
+        "OrganizeRestrictGroupId",
+        "Rarity",
+        "field_4",
+        "LevelPatternGroupMasterId",
+        "SubTitlePositionX1",
+        "SubTitlePositionY1",
+        "SubTitlePositionX2",
+        "SubTitlePositionY2",
+        "SubTitlePositionX3",
+        "SubTitlePositionY3",
+        "ReleaseItemGroupId",
+        "field_13",
+        "field_14",
+        "PronounceName",
+        "Costumes",
+        "AppearanceCharacterBaseMasterIds",
+        "IsRestrictItemBreakThrough",
+        "DisplayStartAt",
+        "DisplayEndAt",
+        "UnlockText",
+        "Orientation",
+        "SubTitleDisplayCondition",
+        "SubTitleDisplayConditionValue",
+        "PosterBreakthroughMaxPhase",
+        "PosterBreakthroughMaxPhaseReleaseDate",
+        "SecondarySubTitleDisplayCondition",
+        "SecondarySubTitleDisplayConditionValue",
+        "AlternateImagePositionX1",
+        "AlternateImagePositionY1",
+        "AlternateImageReleasePhase1",
+        "AlternateImagePositionX2",
+        "AlternateImagePositionY2",
+        "AlternateImageReleasePhase2",
+        "AlternateImagePositionX3",
+        "AlternateImagePositionY3",
+        "AlternateImageReleasePhase3"
+      ],
+      "type": "PosterMaster"
+    },
+    "PosterLevelPatternGroupMaster": {
+      "records": 4,
+      "fields": [
+        "Id",
+        "Patterns"
+      ],
+      "type": "PosterLevelPatternGroupMaster"
+    },
+    "PosterStoryMaster": {
+      "records": 3579,
+      "fields": [
+        "Id",
+        "PosterMasterId",
+        "EpisodeType",
+        "CharacterBaseMasterId",
+        "Description",
+        "Order",
+        "CharacterIconId",
+        "CharacterName"
+      ],
+      "type": "PosterStoryMaster"
+    },
+    "PosterReleaseItemGroupMaster": {
+      "records": 6,
+      "fields": [
+        "Id",
+        "Items",
+        "ItemConsumeApplyFlag"
+      ],
+      "type": "PosterReleaseItemGroupMaster"
+    },
+    "PosterAbilityMaster": {
+      "records": 1116,
+      "fields": [
+        "Id",
+        "Name",
+        "Description",
+        "PosterMasterId",
+        "Type",
+        "field_5",
+        "FrameNumber",
+        "ReleaseLevelAt",
+        "Hidden",
+        "Branches",
+        "BranchConditionType1",
+        "ConditionValue1",
+        "BranchConditionType2",
+        "ConditionValue2"
+      ],
+      "type": "PosterAbilityMaster"
+    },
+    "RouletteMaster": {
+      "records": 54,
+      "fields": [
+        "Id",
+        "RouletteEventMasterId",
+        "Order",
+        "RouletteType",
+        "RouletteTicketItemMasterId",
+        "RequiredTicketQuantity",
+        "RouletteImagePath",
+        "Prizes",
+        "RollRewards",
+        "Name"
+      ],
+      "type": "RouletteMaster"
+    },
+    "RoulettePrizeMaster": {
+      "records": 648,
+      "fields": [
+        "Id",
+        "Slot",
+        "AcquirePointQuantity",
+        "AcquirePrizeThing"
+      ],
+      "type": "RoulettePrizeMaster"
+    },
+    "SenseMaster": {
+      "records": 389,
+      "fields": [
+        "Id",
+        "Name",
+        "Description",
+        "Type",
+        "PreEffects",
+        "Branches",
+        "AcquirableGauge",
+        "AcquirableScorePercent",
+        "ScoreUpPerLevel",
+        "LightCount",
+        "CoolTime",
+        "BranchCondition1",
+        "ConditionValue1",
+        "BranchCondition2",
+        "ConditionValue2",
+        "SubTypes"
+      ],
+      "type": "SenseMaster"
+    },
+    "SenseBranchMaster": {
+      "records": 371,
+      "fields": [
+        "Id",
+        "Order",
+        "Effects"
+      ],
+      "type": "SenseBranchMaster"
+    },
+    "SenseNotationMaster": {
+      "records": 1019,
+      "fields": [
+        "Id",
+        "Details",
+        "Buffs"
+      ],
+      "type": "SenseNotationMaster"
+    },
+    "StarActMaster": {
+      "records": 389,
+      "fields": [
+        "Id",
+        "Name",
+        "Description",
+        "field_3",
+        "StarActConditionMasterId",
+        "AcquirableScorePercent",
+        "ScoreUpPerLevel",
+        "PreEffects",
+        "Branches",
+        "BranchCondition1",
+        "ConditionValue1",
+        "BranchCondition2",
+        "ConditionValue2"
+      ],
+      "type": "StarActMaster"
+    },
+    "StarActConditionMaster": {
+      "records": 132,
+      "fields": [
+        "Id",
+        "FreeLight",
+        "SupportLight",
+        "ControlLight",
+        "AmplificationLight",
+        "SpecialLight"
+      ],
+      "type": "StarActConditionMaster"
+    },
+    "StarActBranchMaster": {
+      "records": 278,
+      "fields": [
+        "Id",
+        "Order",
+        "Effects"
+      ],
+      "type": "StarActBranchMaster"
+    },
+    "LeaderSenseMaster": {
+      "records": 264,
+      "fields": [
+        "Id",
+        "Description",
+        "Details"
+      ],
+      "type": "LeaderSenseMaster"
+    },
+    "ExchangeShopMaster": {
+      "records": 676,
+      "fields": [
+        "Id",
+        "IsDisplayRequiredHavingItem",
+        "Category",
+        "Name",
+        "DisplayThingType",
+        "DisplayItemMasterId",
+        "BannerPath",
+        "StartDate",
+        "EndDate",
+        "LastRefreshedAt",
+        "Lineup",
+        "Order"
+      ],
+      "type": "ExchangeShopMaster"
+    },
+    "MarketFrameThingMaster": {
+      "records": 138,
+      "fields": [
+        "Id",
+        "ThingId",
+        "ThingType",
+        "ThingQuantity",
+        "field_4",
+        "field_5",
+        "RequiredThingType",
+        "RequiredThingId",
+        "RequiredThingQuantity",
+        "DisplayType"
+      ],
+      "type": "MarketFrameThingMaster"
+    },
+    "PermanentMarketThingMaster": {
+      "records": 12,
+      "fields": [
+        "Id",
+        "ThingId",
+        "ThingType",
+        "ThingQuantity",
+        "ExchangeLimit",
+        "Order",
+        "UnlockType",
+        "UnlockValue",
+        "StartDate",
+        "EndDate",
+        "field_10",
+        "RequiredThingType",
+        "RequiredThingId",
+        "RequiredThingQuantity"
+      ],
+      "type": "PermanentMarketThingMaster"
+    },
+    "JewelShopCategoryMaster": {
+      "records": 8,
+      "fields": [
+        "Id",
+        "Name",
+        "LayoutType",
+        "IsDisplayLocking",
+        "BannerPath",
+        "Order"
+      ],
+      "type": "JewelShopCategoryMaster"
+    },
+    "JewelShopItemMaster": {
+      "records": 1926,
+      "fields": [
+        "Id",
+        "Order",
+        "AppStoreProductId",
+        "GooglePlayProductId",
+        "Name",
+        "PackText",
+        "MJewelShopCategoryId",
+        "DialogType",
+        "PurchaseType",
+        "PurchaseValue",
+        "SubscriptionFlag",
+        "GivePaidJewel",
+        "ReplaceTypes",
+        "ReplaceValue",
+        "PurchaseLimit",
+        "ExpiredDay",
+        "CanPurchaseDayOfWeek",
+        "IsBuyNotDisplay",
+        "SaleType",
+        "SaleValue",
+        "IsDisplayLocking",
+        "UnlockType",
+        "UnlockValue",
+        "StartDate",
+        "EndDate",
+        "Lineup",
+        "ShopItemType",
+        "ShopItemValue",
+        "ComebackCampaignMasterId",
+        "ItemIconBodyImagePath",
+        "ItemIconDetailImagePath",
+        "ItemIconBadgeImagePath"
+      ],
+      "type": "JewelShopItemMaster"
+    },
+    "StoryMaster": {
+      "records": 95,
+      "fields": [
+        "Id",
+        "Type",
+        "CompanyMasterId",
+        "EventMasterId",
+        "ChapterOrder",
+        "DisplayStartAt",
+        "DisplayEndAt"
+      ],
+      "type": "StoryMaster"
+    },
+    "EpisodeMaster": {
+      "records": 362,
+      "fields": [
+        "Id",
+        "StoryMasterId",
+        "Title",
+        "Order",
+        "EpisodeRewardPackageMasterId",
+        "Conditions",
+        "PreEpisodeMasterId",
+        "DisplayStartDate",
+        "DisplayEndDate"
+      ],
+      "type": "EpisodeMaster"
+    },
+    "StoryRelationMaster": {
+      "records": 93,
+      "fields": [
+        "StoryMasterId",
+        "PreviousStoryMasterIds",
+        "NextStoryMasterIds",
+        "SideStoryCharacterMasterIds",
+        "RelatedStoryMasterIds"
+      ],
+      "type": "StoryRelationMaster"
+    },
+    "CharacterEpisodeReleaseItemGroupMaster": {
+      "records": 32,
+      "fields": [
+        "Id",
+        "Items"
+      ],
+      "type": "CharacterEpisodeReleaseItemGroupMaster"
+    },
+    "EpisodeRewardPackageMaster": {
+      "records": 2308,
+      "fields": [
+        "Id",
+        "Rewards"
+      ],
+      "type": "EpisodeRewardPackageMaster"
+    },
+    "FacialExpressionMaster": {
+      "records": 78,
+      "fields": [
+        "Id",
+        "EyeBrow",
+        "Eye",
+        "EyeBlink",
+        "Cheek",
+        "Mouth"
+      ],
+      "type": "FacialExpressionMaster"
+    },
+    "LipSyncMaster": {
+      "records": 4,
+      "fields": [
+        "Id",
+        "MotionName"
+      ],
+      "type": "LipSyncMaster"
+    },
+    "HeadMotionMaster": {
+      "records": 6,
+      "fields": [
+        "Id",
+        "MotionName"
+      ],
+      "type": "HeadMotionMaster"
+    },
+    "LoopMotionMaster": {
+      "records": 57,
+      "fields": [
+        "Id",
+        "TargetCharacterBaseId",
+        "LoopSpeed",
+        "Height",
+        "Size"
+      ],
+      "type": "LoopMotionMaster"
+    },
+    "HeadDirectionMaster": {
+      "records": 7,
+      "fields": [
+        "Id",
+        "DirectionName"
+      ],
+      "type": "HeadDirectionMaster"
+    },
+    "BodyMotionMaster": {
+      "records": 28,
+      "fields": [
+        "Id",
+        "MotionName"
+      ],
+      "type": "BodyMotionMaster"
+    },
+    "ChangeBodyMotionMaster": {
+      "records": 756,
+      "fields": [
+        "Id",
+        "BeforeMotionName",
+        "AfterMotionName",
+        "Second"
+      ],
+      "type": "ChangeBodyMotionMaster"
+    },
+    "SceneCameraMaster": {
+      "records": 11,
+      "fields": [
+        "Id",
+        "StartPositionX",
+        "StartPositionY",
+        "StartZoomRatio",
+        "EndPositionX",
+        "EndPositionY",
+        "EndZoomRatio",
+        "CameraMoveTurnaroundTimeSeconds"
+      ],
+      "type": "SceneCameraMaster"
+    },
+    "SpotConversationMaster": {
+      "records": 604,
+      "fields": [
+        "Id",
+        "Spot",
+        "CharacterId1",
+        "CharacterId2",
+        "CharacterId3",
+        "CharacterId4",
+        "field_6",
+        "field_7",
+        "CharacterId5",
+        "EpisodeMasterId",
+        "CostumeId1",
+        "CostumeId2",
+        "CostumeId3",
+        "CostumeId4",
+        "CostumeId5",
+        "Title"
+      ],
+      "type": "SpotConversationMaster"
+    },
+    "CharacterEpisodeMaster": {
+      "records": 768,
+      "fields": [
+        "Id",
+        "CharacterMasterId",
+        "EpisodeMasterId",
+        "EpisodeOrder",
+        "RequiredCharacterLevel"
+      ],
+      "type": "CharacterEpisodeMaster"
+    },
+    "CharacterEpisodeRelationMaster": {
+      "records": 334,
+      "fields": [
+        "CharacterMasterid",
+        "PreviousStoryMasterIds",
+        "NextStoryMasterIds",
+        "SideStoryCharacterMasterIds",
+        "RelatedStoryMasterIds"
+      ],
+      "type": "CharacterEpisodeRelationMaster"
+    },
+    "SpecialStoryMaster": {
+      "records": 6,
+      "fields": [
+        "Id",
+        "StoryMasterId",
+        "StartDate",
+        "EndDate",
+        "EventStoryListFlags",
+        "Title",
+        "Order"
+      ],
+      "type": "SpecialStoryMaster"
+    },
+    "SpecialEpisodeMaster": {
+      "records": 6,
+      "fields": [
+        "Id",
+        "StoryMasterId",
+        "Title",
+        "RequiredReadEpisodeMasterId"
+      ],
+      "type": "SpecialEpisodeMaster"
+    }
+  }
+}
