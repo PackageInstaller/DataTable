@@ -88,3 +88,4 @@ git clone -b game/xxxxx --single-branch --depth 1 https://github.com/PackageInst
 | `game/TwinkleStarKnights`       | TwinkleStarKnights       | 闪耀星骑士                                            |
 | `game/WarshipGirlsR`            | WarshipGirlsR            | 战舰少女R                                             |
 | `game/WitchSpring`              | WitchSpring              | 第五部啥时候出？                                      |
+| `game/WorldDaiStar` | WorldDaiStar |
