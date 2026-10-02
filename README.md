@@ -18,6 +18,7 @@ git clone -b game/xxxxx --single-branch --depth 1 https://github.com/PackageInst
 | `game/AngelicaAsterR`           | AngelicaAsterR           | 当归紫苑                                              |
 | `game/AshArms`                  | AshArms                  | 灰烬战线                                              |
 | `game/AssaultLilyLastBullet`    | AssaultLilyLastBullet    | 突击莉莉                                              |
+| `game/AstraeOratio` | AstraeOratio |
 | `game/AtelierResleriana`        | AtelierResleriana        | 红色的炼金术士和白色的守护者 ～蕾斯莱莉娅娜的炼金工房 |
 | `game/AzurLane`                 | AzurLane                 | 碧蓝航线                                              |
 | `game/AzurPromilia`             | AzurPromilia             | 蓝色星原：旅谣                                        |
