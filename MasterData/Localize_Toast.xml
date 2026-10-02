@@ -1,0 +1,1131 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Table>
+  <DataList>
+    <LocalizeKey>8028202450874565506</LocalizeKey>
+    <LocalizeText>
+      <Value>선공필승! {@NS} 전투 스킬을 사용해요!</Value>
+      <Value>先手必勝！「 {@NS} 戦闘スキル」で攻撃です！</Value>
+      <Value>Striking first is the key to victory! Use a {@NS} Normal Skill!</Value>
+      <Value>先攻者勝！使用 {@NS} 戰鬥技能！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>3693666055799040814</LocalizeKey>
+    <LocalizeText>
+      <Value>{@NS} 전투 스킬은 연사할 수 있으니까, 멈추지 말고 계속 공격해!</Value>
+      <Value>{@NS} 戦闘スキルは連続で使えるから、続けて攻撃して！</Value>
+      <Value>{@NS} Normal Skills can be used in rapid succession, so keep the attacks coming!</Value>
+      <Value>{@NS} 戰鬥技能可以連續發動，所以不要停，繼續攻擊！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>16094448180885925167</LocalizeKey>
+    <LocalizeText>
+      <Value>좋아, 지금은 {@NS} 전투 스킬이 대기 상태니까, 지금은 {@BS} 일반 스킬을 사용해!</Value>
+      <Value>{@NS} 戦闘スキルがクールタイムだから、次は「 {@BS} 通常スキル」だ！</Value>
+      <Value>Alright, the {@NS} Normal Skill is on cooldown, so use the 「 {@BS} Basic Skill」 for now!</Value>
+      <Value>很好，目前 {@NS} 戰鬥技能正在等待發動，現在使用 {@BS} 普通技能！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>2741738706303094956</LocalizeKey>
+    <LocalizeText>
+      <Value>이건 적의 행동 준비 예고?! 빨리 대응해야 해!</Value>
+      <Value>この閃光、攻撃だ！先手、打つよ！</Value>
+      <Value>The enemy's getting ready to act! We have to respond fast!</Value>
+      <Value>這是在預告敵人準備發動嗎？！得趕快應對才行！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>11753953892072990987</LocalizeKey>
+    <LocalizeText>
+      <Value>하지만 전투 스킬은 {@Cooldown} 쿨다운 상태야…….</Value>
+      <Value>でも、戦闘スキルを使うには、まだ時間が……。</Value>
+      <Value>But the Normal Skill is on {@Cooldown} cooldown...</Value>
+      <Value>但戰鬥技能處於 {@Cooldown} 冷卻狀態……</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>3887405979299559365</LocalizeKey>
+    <LocalizeText>
+      <Value>{@BS} 일반 스킬을 사용해요! 이걸로 전투 스킬의 {@Cooldown} 쿨다운도 줄어들어요!</Value>
+      <Value>「 {@BS} 通常スキル」で攻撃です！戦闘スキルの {@Cooldown} クールタイムも短縮できますよ！</Value>
+      <Value>Use the 「 {@BS} Basic Skill」! It'll reduce the Normal Skill's {@Cooldown} Cooldown as well!</Value>
+      <Value>使用 {@BS} 普通技能！這樣可以縮短戰鬥技能的 {@Cooldown} 冷卻時間！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>12256190878967258004</LocalizeKey>
+    <LocalizeText>
+      <Value>좋아요, 이제 {@NS} 전투 스킬을 사용할 수 있게 되었어요.</Value>
+      <Value>これで「 {@NS} 戦闘スキル」が使えるようになりました。</Value>
+      <Value>Great, now the {@NS} Normal Skill is ready again.</Value>
+      <Value>很好，現在可以使用 {@NS} 戰鬥技能了。</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>16971322710850260833</LocalizeKey>
+    <LocalizeText>
+      <Value>특수한 공격 전조예요?! 이건 에린 쨩의 {@SS} 태그 스페셜 스킬로 대응해야 해요!</Value>
+      <Value>この閃光は、特殊な攻撃です！ここは、えりんちゃんの「 {@SS} タグスペシャルスキル」です！</Value>
+      <Value>A special attack?! Counter it with Erin-chan's {@SS} Tag Special Skill!</Value>
+      <Value>這是特殊攻擊前兆？！得用繪琳醬的 {@SS} 切換特殊技能來應對！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>426710421963255994</LocalizeKey>
+    <LocalizeText>
+      <Value>좋아, 이제 나와 태그해!</Value>
+      <Value>よし、私と代わって！</Value>
+      <Value>Excellent work! Now tag me in!</Value>
+      <Value>好，現在換我來接手！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>2669398313267821725</LocalizeKey>
+    <LocalizeText>
+      <Value>근접 전투는 내가 유리해!</Value>
+      <Value>近接戦は私に任せて！</Value>
+      <Value>I have the advantage in close combat!</Value>
+      <Value>近身戰對我比較有利！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>3586882677707127353</LocalizeKey>
+    <LocalizeText>
+      <Value>응, 적이 브레이크 상태에 빠졌어!</Value>
+      <Value>やった！ブレイク状態になった！</Value>
+      <Value>Yes, the enemy is in Break state!</Value>
+      <Value>嗯，敵軍陷入破防狀態了！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>13719074537721071543</LocalizeKey>
+    <LocalizeText>
+      <Value>그럼 이제 제 차례예요!</Value>
+      <Value>次は、私の番です！</Value>
+      <Value>Then I guess it's my turn next!</Value>
+      <Value>那接下來就輪到我了！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>15285459815927102932</LocalizeKey>
+    <LocalizeText>
+      <Value>이건 {@DOS} 영지 선언……?! 조심해요, 에린 쨩!</Value>
+      <Value>これは「 {@DOS} 領地宣言」……！？えりんちゃん、気を付けてください！</Value>
+      <Value>A {@DOS} Dominion Skill?! Watch out, Erin-chan!</Value>
+      <Value>這是 {@DOS} 領地宣言……？！小心，繪琳醬！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>4164862949275320540</LocalizeKey>
+    <LocalizeText>
+      <Value>위험해, 적의 {@US} 얼티메이트 스킬이야!</Value>
+      <Value>えりん！敵の「 {@US} アルティメットスキル」だよ！</Value>
+      <Value>Look out, it's the enemy's {@US} Ultimate Skill!</Value>
+      <Value>危險，是敵人的 {@US} 終極技能！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>11240621705981655774</LocalizeKey>
+    <LocalizeText>
+      <Value>에린이 브레이크 상태에 빠졌어! 교대해야 해!</Value>
+      <Value>えりんがブレイク状態だ！私が行く！</Value>
+      <Value>Erin's in Break state! We have to swap her out!</Value>
+      <Value>繪琳陷入破防狀態了！快換人！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>5099920744566081863</LocalizeKey>
+    <LocalizeText>
+      <Value>기회야! 나도 {@DOS} 영지 선언을 하겠어!!</Value>
+      <Value>今がチャンス！「 {@DOS} 領地宣言」するよ！！</Value>
+      <Value>Here's our chance! I'll use my {@DOS} Dominion Skill!</Value>
+      <Value>趁現在！我也要發動 {@DOS} 領地宣言！！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>11724155061799328913</LocalizeKey>
+    <LocalizeText>
+      <Value>이걸로 연속 공격이 가능해졌어요! 안나 쨩!</Value>
+      <Value>アンナちゃん、これで連続攻撃できますよ！</Value>
+      <Value>This lets us perform a consecutive attack! Anna-chan!</Value>
+      <Value>這樣就能連續發動攻擊了！安娜醬！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>413800203583215320</LocalizeKey>
+    <LocalizeText>
+      <Value>알고 있어! 간다-!</Value>
+      <Value>わかってる！行くよっ！</Value>
+      <Value>I know! Here I go!</Value>
+      <Value>我知道！上吧──！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>15563127094198502836</LocalizeKey>
+    <LocalizeText>
+      <Value>성명은 추후 설정에서 언제든지 수정할 수 있습니다.</Value>
+      <Value>名前は設定からいつでも編集できます。</Value>
+      <Value>You can change your name at any time in the settings.</Value>
+      <Value>之後可以在設定中修改姓名。</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>17879490291355842755</LocalizeKey>
+    <LocalizeText>
+      <Value>한글 4글자 (영문 8글자) 이내로 입력할 수 있습니다.</Value>
+      <Value>日本語4文字（英文8文字）まで入力できます。</Value>
+      <Value>You can enter up to 4 Korean characters or 8 English characters.</Value>
+      <Value>可輸入中文4字（英文8字）以內。</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>18215922660508876596</LocalizeKey>
+    <LocalizeText>
+      <Value>하나의 언어로만 입력할 수 있습니다.</Value>
+      <Value>同じ言語で入力してください。</Value>
+      <Value>You can only use characters from a single language.</Value>
+      <Value>只能使用單一語言輸入。</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>17864059778254920424</LocalizeKey>
+    <LocalizeText>
+      <Value>이름</Value>
+      <Value>名前</Value>
+      <Value>First Name</Value>
+      <Value>名稱</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>17524607898628685954</LocalizeKey>
+    <LocalizeText>
+      <Value>알림</Value>
+      <Value>お知らせ</Value>
+      <Value>Notice</Value>
+      <Value>通知</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>12671076313149623167</LocalizeKey>
+    <LocalizeText>
+      <Value>가챠에서 R등급 아티팩트 획득 시 자동 분해</Value>
+      <Value>ガチャでR級アーティファクト獲得時に自動分解</Value>
+      <Value>Automatically Dismantle R-rank Artifacts obtained from Gacha</Value>
+      <Value>在扭蛋中獲得R級神器時自動分解</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>13290651306635519371</LocalizeKey>
+    <LocalizeText>
+      <Value>SR 아티팩트 획득 시 자동 잠금</Value>
+      <Value>SRアーティファクト獲得時、自動ロック</Value>
+      <Value>Auto-lock SR Artifacts upon acquisition</Value>
+      <Value>獲得SR神器時自動鎖定</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>13005149700958890497</LocalizeKey>
+    <LocalizeText>
+      <Value>아티팩트 관련 옵션은 기기를 변경해도 유지됩니다.</Value>
+      <Value>アーティファクト設定は、デバイスを変更しても維持されます。</Value>
+      <Value>Artifact settings are retained when switching devices.</Value>
+      <Value>即使更換裝置，神器相關設定也會維持不變。</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>4943200865838210134</LocalizeKey>
+    <LocalizeText>
+      <Value>스코어 트라이얼이 종료됐습니다.</Value>
+      <Value>スコアトライアルが終了しました。</Value>
+      <Value>The Score Trial has ended.</Value>
+      <Value>分數試煉已結束。</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>8930290114608944911</LocalizeKey>
+    <LocalizeText>
+      <Value>개최 기간이 아닙니다.</Value>
+      <Value>開催期間ではありません。</Value>
+      <Value>The event is not currently active.</Value>
+      <Value>非進行期間。</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>9333455295777708072</LocalizeKey>
+    <LocalizeText>
+      <Value>아스타로트가 강력한 스킬을 준비합니다.</Value>
+      <Value>アスタロトが強力なスキルを準備しています。</Value>
+      <Value>Astaroth is preparing a powerful skill.</Value>
+      <Value>亞斯塔祿正在準備強大技能。</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>17069885028823718407</LocalizeKey>
+    <LocalizeText>
+      <Value>부위 파괴! - 아스타로트를 구속하던 입마개가 파괴되었습니다.</Value>
+      <Value>部位破壊！- アスタロトの口輪が破壊されました。</Value>
+      <Value>Part Destroyed! - The muzzle restraining Astaroth has been destroyed.</Value>
+      <Value>部位破壞！ – 束縛亞斯塔祿的封嘴已遭破壞。</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>10947537262630951778</LocalizeKey>
+    <LocalizeText>
+      <Value>부위 파괴! - 아스타로트의 팔이 손상되었습니다.</Value>
+      <Value>部位破壊！- アスタロトの腕が破壊されました。</Value>
+      <Value>Part Destroyed! - Astaroth's arm has been damaged.</Value>
+      <Value>部位破壞！ – 亞斯塔祿的手臂受到損傷。</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>862266305042346861</LocalizeKey>
+    <LocalizeText>
+      <Value>자동 전투를 사용할 수 없습니다.</Value>
+      <Value>オートバトルを使用できません。</Value>
+      <Value>Auto-Battle cannot be used.</Value>
+      <Value>無法使用自動戰鬥。</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>10877437291279806920</LocalizeKey>
+    <LocalizeText>
+      <Value>전투 속도를 변경할 수 없습니다.</Value>
+      <Value>戦闘速度を変更できません。</Value>
+      <Value>Battle speed cannot be changed.</Value>
+      <Value>無法變更戰鬥速度。</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>8087505590252954763</LocalizeKey>
+    <LocalizeText>
+      <Value>토지정령의 일종? 아니, 뒤틀려 있나……?</Value>
+      <Value>土地の精霊の一種？いや、何か歪んでる……？</Value>
+      <Value>A type of land spirit? Wait, is it warped...?</Value>
+      <Value>是土地精靈的一種？不對，好像被扭曲了……？</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>17313672555002708536</LocalizeKey>
+    <LocalizeText>
+      <Value>지금 그런 거 분석할 때예요?</Value>
+      <Value>今、そんな分析をしている場合ですか？</Value>
+      <Value>Is now really the time to analyze that?</Value>
+      <Value>現在是分析的時候嗎？</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>6827775756500046750</LocalizeKey>
+    <LocalizeText>
+      <Value>이쪽으로 오잖아요! 아키 쨩, 준비를!</Value>
+      <Value>こっちに来ますよ！アキちゃん、準備を！</Value>
+      <Value>It's coming this way! Aki-chan, get ready!</Value>
+      <Value>他往這邊過來了！明菜醬，準備！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>6063821916250800196</LocalizeKey>
+    <LocalizeText>
+      <Value>좋아, 간다!</Value>
+      <Value>よし、行くよ！</Value>
+      <Value>Alright, here I go!</Value>
+      <Value>好，上了！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>5791018509561458820</LocalizeKey>
+    <LocalizeText>
+      <Value>짜잔! 불후의 명작 &lt;신주쿠 중식도 사변&gt;의 주인공, 스즈키 더 킬러예요!</Value>
+      <Value>じゃじゃーん！不朽の名作「新宿中華包丁事変」の主人公、スズキ・ザ・キラーですよ！</Value>
+      <Value>Ta-da! It's the protagonist of the immortal masterpiece 「Shinjuku Chinese Cleaver Incident」, Suzuki the Killer!</Value>
+      <Value>登場！不朽名作&lt;新宿中式菜刀事件&gt;的主角，鈴木殺手！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>2095825013854504228</LocalizeKey>
+    <LocalizeText>
+      <Value>마법사로서의 제 클래스는 &lt;마이나데스&gt;. 
+디오니시아 제전을 주관하는 그리스 여사제의 마법을 사용하거든요.</Value>
+      <Value>魔法使いとしてのわたしのクラスは「マイナデス」。
+ディオニュシア祭を司るギリシアの女司祭の魔法を使うんです。</Value>
+      <Value>As a magician, my class is 「Maenades」. I use the magic of the Greek priestesses who oversaw the Dionysia festivals.</Value>
+      <Value>身為魔法師，我的職業是&lt;邁那德斯&gt;。
+使用的是主掌狄奧尼索斯祭典的古希臘女祭司之魔法。</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>5071589729664791681</LocalizeKey>
+    <LocalizeText>
+      <Value>영화라는 것은 현대의 연극, 연극은 본래 신에게 바치는 제의!</Value>
+      <Value>映画とは現代の演劇、演劇とは本来、神に捧げる儀式！</Value>
+      <Value>Film is modern theater, and theater was originally a ritual offering to the gods!</Value>
+      <Value>電影是現代的戲劇，而戲劇本來就是獻給神明的儀式！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>6586550215188704483</LocalizeKey>
+    <LocalizeText>
+      <Value>신이교주의 마법사로서 영화를 제의로 해석해 소환수를 현현시키는 마법이랍니다~!</Value>
+      <Value>新異教主義の魔法使いとして、映画を儀式と解釈し、召喚獣を顕現させる魔法なんです〜！</Value>
+      <Value>As a Neo-Pagan magician, I use magic that treats movies as rituals and manifests summons!</Value>
+      <Value>身為新異教主義魔法師，我將電影視為儀式，藉此讓召喚獸現身的魔法喔～！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>248572390151835193</LocalizeKey>
+    <LocalizeText>
+      <Value>아니, 하루! 설명이 너무 길잖아!</Value>
+      <Value>ちょっと、はる！いつまで説明してるの！</Value>
+      <Value>Haru! Your explanation is getting too long!</Value>
+      <Value>喂，春！說明也太長了吧！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>15206350052376281289</LocalizeKey>
+    <LocalizeText>
+      <Value>아, 아앗!?</Value>
+      <Value>あ、ああっ！？</Value>
+      <Value>Ah?!</Value>
+      <Value>啊、啊啊！？</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>15455743461318963963</LocalizeKey>
+    <LocalizeText>
+      <Value>스즈키 쨩! 공격이에요! 앞으로, 앞으로!</Value>
+      <Value>スズキちゃん！攻撃です！前へ、前へ！</Value>
+      <Value>Suzuki-chan! Attack! Forward, forward!</Value>
+      <Value>鈴木醬！攻擊！往前、往前！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>8710347277591911949</LocalizeKey>
+    <LocalizeText>
+      <Value>우리가 도둑맞은 돈만큼 너희들이 지불해주셔야겠어!</Value>
+      <Value>アタイたちが盗まれた金、お前らに返してもらうぜ！</Value>
+      <Value>You'll have to pay what she stole!</Value>
+      <Value>我們被偷的錢，妳們就幫忙賠吧！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>10716089981157477172</LocalizeKey>
+    <LocalizeText>
+      <Value>그래, 한 3배 정도로 보상해야지? 히히힛-</Value>
+      <Value>そうだな、3倍くらいにして補償してもらわねぇとな？ひひひっ。</Value>
+      <Value>Yeah, triple it, right? Hehe!</Value>
+      <Value>對啊，至少賠個三倍吧？呵呵呵……</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>14886067962635403173</LocalizeKey>
+    <LocalizeText>
+      <Value>어, 어쩌다 이렇게 된 거죠?</Value>
+      <Value>ど、どうしてこんなことに？</Value>
+      <Value>H-How did it come to this?</Value>
+      <Value>啊，怎麼會變成這樣？</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>4009831805893433451</LocalizeKey>
+    <LocalizeText>
+      <Value>아니, 그걸 나에게 물어도…….</Value>
+      <Value>私に聞かれても……。</Value>
+      <Value>Don't ask me...</Value>
+      <Value>這個……妳問我也沒用……</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>5188213934399968259</LocalizeKey>
+    <LocalizeText>
+      <Value>어쩔 수 없지. 여긴 나에게 맡겨 줘.</Value>
+      <Value>仕方ないな。ここは私に任せて。</Value>
+      <Value>Can't be helped. Leave this to me.</Value>
+      <Value>沒辦法了。這裡交給我。</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>14785949525372249758</LocalizeKey>
+    <LocalizeText>
+      <Value>마이 쨩?</Value>
+      <Value>真衣ちゃん？</Value>
+      <Value>Mai-chan?</Value>
+      <Value>真衣醬？</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>4915368344964735679</LocalizeKey>
+    <LocalizeText>
+      <Value>&lt;괴담 사냥꾼&gt;…… 각오하시길.</Value>
+      <Value>「怪談狩り」……覚悟なさってください。</Value>
+      <Value>「Urban legend hunters」... Prepare yourselves.</Value>
+      <Value>&lt;怪談獵人&gt;……做好覺悟吧。</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>3605921060670310752</LocalizeKey>
+    <LocalizeText>
+      <Value>칫…… 강해, 이 녀석들……! 컬러갱이랑은 차원이 달라…….</Value>
+      <Value>ちっ……こいつら、強い……！カラーギャングとは次元が違う……。</Value>
+      <Value>Tch... these guys are tough...! They're nothing like those Color Gang punks</Value>
+      <Value>嘖……好強……這些傢伙……！跟那些彩色幫根本不是同一個等級……</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>11472028364210989187</LocalizeKey>
+    <LocalizeText>
+      <Value>후훗, 이걸로 놀랄 정도? 신주쿠의 마법사는 약하네~!</Value>
+      <Value>ふふっ、この程度で驚くの？新宿の魔法使いはひ弱なのね〜！</Value>
+      <Value>Heh heh, that's all it takes to shock you? Shinjuku magicians are pretty flimsy!</Value>
+      <Value>呵呵，這樣就嚇到了？新宿的魔法師也太弱了吧～！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>2058200328907375985</LocalizeKey>
+    <LocalizeText>
+      <Value>아직 안 끝났어……!</Value>
+      <Value>まだ、終わってない……！</Value>
+      <Value>We're not done yet...!</Value>
+      <Value>還沒結束……！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>14063940678230566601</LocalizeKey>
+    <LocalizeText>
+      <Value>아, 운동부다. 저 아이는 위험할지도…….</Value>
+      <Value>あ、運動部だ。あの子は危ないかも……。</Value>
+      <Value>Oh, it's the athletics kid. She could be trouble...</Value>
+      <Value>喔？運動系的。那孩子可能有點危險呢……</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>18194440927560641497</LocalizeKey>
+    <LocalizeText>
+      <Value>역시 그리스의 마법인가요. 물러서세요, 제가 나서죠.</Value>
+      <Value>やはりギリシア系の魔法ですね。下がってください、私が出ます。</Value>
+      <Value>So it really is Greek-style magic. Fall back, I'll handle this.</Value>
+      <Value>果然是希臘的魔法嗎？退下吧。讓我來。</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>9247035681501211377</LocalizeKey>
+    <LocalizeText>
+      <Value>마법으로 곡해된 하우스도르프 차원 구축, 재해석, 위상 격리.</Value>
+      <Value>魔法によって歪曲されたハウスドルフ次元の構築、再解釈、位相隔離。</Value>
+      <Value>Construction, reinterpretation, and topological isolation of a Hausdorff dimension distorted by magic.</Value>
+      <Value>以魔法扭曲的郝斯多夫空間進行構築再詮釋，相位隔離。</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>6495015151782293797</LocalizeKey>
+    <LocalizeText>
+      <Value>큭— 뭐야, 이건……!</Value>
+      <Value>くっ──なに、これ……！</Value>
+      <Value>Ngh...what is this...!</Value>
+      <Value>唔——這是什麼……！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>7071678799748328683</LocalizeKey>
+    <LocalizeText>
+      <Value>&lt;바이어슈트라스의 위상 방벽&gt;입니다. 즉, 위상학적 절대 결계죠.</Value>
+      <Value>「ワイエルシュトラスの位相防壁」です。つまり、位相学的絶対結界です。</Value>
+      <Value>This is the 「Weierstrass Topological Barrier」. In other words, an absolute topological barrier.</Value>
+      <Value>&lt;魏爾施特拉斯的相位屏障&gt;。也就是拓樸學上的絕對結界。</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>18270428432289812248</LocalizeKey>
+    <LocalizeText>
+      <Value>어떤 공격이든, 통하지 않는다구.</Value>
+      <Value>どんな攻撃も、通じないんだから。</Value>
+      <Value>No attack can get through it.</Value>
+      <Value>任何攻擊都打不進去喔。</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>11005092986758273715</LocalizeKey>
+    <LocalizeText>
+      <Value>이래 봬도…… 강하니까요, 저희…….</Value>
+      <Value>こう見えても……強いですから、私たち……。</Value>
+      <Value>We may not look it... but we're strong, you know...</Value>
+      <Value>別看我們這樣……我們其實很強的……</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>15560511818124756820</LocalizeKey>
+    <LocalizeText>
+      <Value>좋아, 계획대로 가는 거야!</Value>
+      <Value>よし、作戦どおりいくよ！</Value>
+      <Value>Okay, stick to the plan!</Value>
+      <Value>好，照計畫行動！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>7734420292272196049</LocalizeKey>
+    <LocalizeText>
+      <Value>네, 마이 쨩! 준비됐죠?</Value>
+      <Value>はい、真衣ちゃん！準備はいいですか？</Value>
+      <Value>Got it, Mai-chan! You're ready, right?</Value>
+      <Value>是，真衣醬！準備好了嗎？</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>13712059877487640875</LocalizeKey>
+    <LocalizeText>
+      <Value>응. 맡겨줘.</Value>
+      <Value>うん。任せて。</Value>
+      <Value>Yeah. Leave it to me.</Value>
+      <Value>嗯，交給我。</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>570468634266286203</LocalizeKey>
+    <LocalizeText>
+      <Value>모아, 노노, 그럼 저희들도 처음부터 전력으로 가겠습니다.</Value>
+      <Value>百杏、望乃、私たちも最初から全力でいきますよ。</Value>
+      <Value>Moa, Nono, then we will also go at full power from the start.</Value>
+      <Value>百杏、望乃，那我們一開始就直接全力應戰吧。</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>9536431291750013960</LocalizeKey>
+    <LocalizeText>
+      <Value>후후훗! 좋았어!</Value>
+      <Value>ふふふっ！いいわよ！</Value>
+      <Value>Fufu! Good!</Value>
+      <Value>呵呵呵！正合我意！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>2996859828152607880</LocalizeKey>
+    <LocalizeText>
+      <Value>네, 아, 알겠어요!</Value>
+      <Value>はい、わ、わかりました！</Value>
+      <Value>O-Okay!</Value>
+      <Value>好、好的！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>13934420707146362463</LocalizeKey>
+    <LocalizeText>
+      <Value>아직 멀었어, 마이……?</Value>
+      <Value>まだなの？真衣……！</Value>
+      <Value>Not yet, Mai...?</Value>
+      <Value>真衣，還沒好嗎……？</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>7758082778692078835</LocalizeKey>
+    <LocalizeText>
+      <Value>더는 견디기 힘들 것 같은데……!</Value>
+      <Value>もう耐えられそうにないんですけど……！</Value>
+      <Value>I don't think I can hold on any longer...!</Value>
+      <Value>我快撐不住了……！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>3920755189140714690</LocalizeKey>
+    <LocalizeText>
+      <Value>……다 된 거 같아.</Value>
+      <Value>……できたみたい。</Value>
+      <Value>...That should do it.</Value>
+      <Value>……差不多了。</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>13541470130520965083</LocalizeKey>
+    <LocalizeText>
+      <Value>또 그 운동부 쨩이야. 무슨 속셈이지?</Value>
+      <Value>またあの運動部ちゃんね。何を企んでいるのかしら？</Value>
+      <Value>It's that track girl again. What's she up to?</Value>
+      <Value>又是那個運動社團的女孩啊。她在打什麼主意？</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>17942145778540053116</LocalizeKey>
+    <LocalizeText>
+      <Value>저번 전투에서도 치카게 씨의 위상 방벽 앞에 무너졌으면서…….</Value>
+      <Value>前のトライアルでも、千景さんの位相防壁に敵わなかったくせに……。</Value>
+      <Value>She couldn't get past Chikage's phase barrier last time...</Value>
+      <Value>上次戰鬥也是敗在千景小姐的相位屏障啊……</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>1102486379674175084</LocalizeKey>
+    <LocalizeText>
+      <Value>뭘 준비하고 있든, 몇 번이고 상대해드리죠.</Value>
+      <Value>何を準備していようと、何度でもお相手しますよ。</Value>
+      <Value>Whatever you've prepared, I will face it as many times as needed.</Value>
+      <Value>不管妳們準備了什麼，來幾次我都奉陪！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>13860319328178725052</LocalizeKey>
+    <LocalizeText>
+      <Value>간다……! 이것이 바로 대영웅의 창……!!</Value>
+      <Value>いくよ……！これが、大英雄の槍……！！</Value>
+      <Value>Here I come...! Behold... the great hero's spear!!</Value>
+      <Value>要上了……！這就是大英雄之槍……！！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>5061140536258525981</LocalizeKey>
+    <LocalizeText>
+      <Value>하아아아아아아아아———!!!!</Value>
+      <Value>はぁぁぁぁぁぁぁぁぁ———！！！！</Value>
+      <Value>Haaaaaaaaaaaaah!!!</Value>
+      <Value>哈啊啊啊啊啊啊啊—————！！！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>8563626806779611487</LocalizeKey>
+    <LocalizeText>
+      <Value>큭……! 이……건……!</Value>
+      <Value>くっ……！こ……れは……！</Value>
+      <Value>Ngh...! This...!</Value>
+      <Value>唔……！這是……！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>408871296218981214</LocalizeKey>
+    <LocalizeText>
+      <Value>우와아아아—?!</Value>
+      <Value>うわああああっ──！？</Value>
+      <Value>Whooaaaaah?!</Value>
+      <Value>嗚哇啊啊啊——？！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>5466900393467708821</LocalizeKey>
+    <LocalizeText>
+      <Value>마, 말도 안 돼……?!</Value>
+      <Value>そ、そんな……！？</Value>
+      <Value>N-No way...!</Value>
+      <Value>不、不可能……？！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>358728177913657391</LocalizeKey>
+    <LocalizeText>
+      <Value>깨졌다!!</Value>
+      <Value>割れた！！</Value>
+      <Value>It shattered!</Value>
+      <Value>破了！！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>7551786808593376412</LocalizeKey>
+    <LocalizeText>
+      <Value>됐어, 해냈어요!</Value>
+      <Value>やった、やりましたよ！</Value>
+      <Value>Huh?! Really?!</Value>
+      <Value>成功了，我們做到了！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>16872622684486722256</LocalizeKey>
+    <LocalizeText>
+      <Value>……!! 적은 이제 무방비 상태야! 몰아쳐야 해!</Value>
+      <Value>……！！相手はもう無防備！畳みかけよう！</Value>
+      <Value>...!! They're wide open... Now's our chance!</Value>
+      <Value>……！！現在敵人毫無防備！趁現在追擊！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>8931639515655505446</LocalizeKey>
+    <LocalizeText>
+      <Value>네!</Value>
+      <Value>はい！</Value>
+      <Value>Okay!</Value>
+      <Value>對！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>2878586877323271394</LocalizeKey>
+    <LocalizeText>
+      <Value>가자고!</Value>
+      <Value>行くよ！</Value>
+      <Value>Let's go!</Value>
+      <Value>上吧！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>12555872149509761676</LocalizeKey>
+    <LocalizeText>
+      <Value>한낱 나무 조각 따위가-!! 나를 적이라고 선언하느냐!!</Value>
+      <Value>たかが木偶の分際で！！この私に敵うと思っているのか！！</Value>
+      <Value>A mere piece of wood dares to declare itself my enemy?!</Value>
+      <Value>區區一塊木頭碎片──！！竟敢將我視為敵人！！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>156076203694999120</LocalizeKey>
+    <LocalizeText>
+      <Value>비켜라-!! 의미 없고 무가치한 미물아-!!</Value>
+      <Value>どけぇー！！無意味で無価値な虫けらが！！</Value>
+      <Value>Get out of my way! You meaningless, worthless little creature!</Value>
+      <Value>給我滾開──！！毫無意義、毫無價值的低等生物──！！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>2750379437120114445</LocalizeKey>
+    <LocalizeText>
+      <Value>──뭐라고?</Value>
+      <Value>───なんだと？</Value>
+      <Value>...What?</Value>
+      <Value>────什麼？</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>14679573496882198489</LocalizeKey>
+    <LocalizeText>
+      <Value>어째서냐…… 어째서 쓰러지지 않는 거지?!</Value>
+      <Value>なぜだ……なぜ倒れぬ！？</Value>
+      <Value>Why...? Why will you not fall?!</Value>
+      <Value>為什麼……為什麼妳還沒有倒下？！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>12205523946705374708</LocalizeKey>
+    <LocalizeText>
+      <Value>너의 생명을 지탱하던 마법은 이미 예전에 소멸되었다! 그런데도 어째서!!</Value>
+      <Value>貴様の命を支えていた魔法は、完全に消滅したはずだ！それなのに、なぜだ！！</Value>
+      <Value>The magic that sustained your life vanished long ago! And yet, why?!</Value>
+      <Value>支撐妳生命的魔法，早就已經消滅了才對！既然如此，為什麼！！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>14337811566772237840</LocalizeKey>
+    <LocalizeText>
+      <Value>설마……!!</Value>
+      <Value>まさか……！！</Value>
+      <Value>No way...!</Value>
+      <Value>難道說……？！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>4672682186029848650</LocalizeKey>
+    <LocalizeText>
+      <Value>이 마법……, 이건 단순한 게 아니다……. 이것은 분명…….</Value>
+      <Value>この魔法……これはただの魔法ではない……。これはまさしく……。</Value>
+      <Value>This magic... This is not something simple... This is definitely...</Value>
+      <Value>這個魔法……這不是普通的東西……這毫無疑問……</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>12651443094502581104</LocalizeKey>
+    <LocalizeText>
+      <Value>뭐지?! 지금 이 느낌은…….</Value>
+      <Value>なんだ！？この感覚は……。</Value>
+      <Value>What is this?! What is this sensation...</Value>
+      <Value>什麼？！現在這股感覺是……</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>17424705022462860726</LocalizeKey>
+    <LocalizeText>
+      <Value>별의 운행이 달라지고 있다. 새로운 별자리와 성운이 생겨나고 있다!!</Value>
+      <Value>星の運行が変わっている。新たな星座と星雲が生まれている！！</Value>
+      <Value>The movement of the stars is changing. New constellations and nebulae are forming!!</Value>
+      <Value>星星的運行正在改變。新的星座與星雲正在誕生！！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>5694200244381641082</LocalizeKey>
+    <LocalizeText>
+      <Value>청장인가……!! 이 세계에 무슨 짓을 저지른 거냐!!</Value>
+      <Value>長官か……！！この世界に何をしでかした！！</Value>
+      <Value>Is it the Commissioner?! What have you done to this world?!</Value>
+      <Value>是廳長嗎……！！妳到底對這個世界做了什麼！！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>6684009025457795686</LocalizeKey>
+    <LocalizeText>
+      <Value>크으으으—!! 비켜라, 나무 조각!! 지금 너 따위를 상대하고 있을 시간이 없다!!</Value>
+      <Value>くぅぅぅーー！！どけ、木偶がぁ！！今は貴様ごときを相手にしている暇はない！！</Value>
+      <Value>Ngh...! Out of my way, wooden scrap! I have no time to deal with the likes of you!</Value>
+      <Value>嗚嗚嗚嗚────！！給我滾開，木頭碎片！！我現在沒空陪妳這種東西耗下去！！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>10894121131028009280</LocalizeKey>
+    <LocalizeText>
+      <Value>우오오오오오오──, 사라져라——!!</Value>
+      <Value>くおおおおお、消え失せろ！！</Value>
+      <Value>Ahhhh! Vanish!</Value>
+      <Value>哇喔喔喔喔喔──！消失吧──！！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>6822233173150314918</LocalizeKey>
+    <LocalizeText>
+      <Value>깨달았다…… 그 타워의 정체…… 그것은…….</Value>
+      <Value>理解したぞ……あのタワーの正体……あれは……。</Value>
+      <Value>I see now... the true nature of that tower... is...</Value>
+      <Value>我明白了……那座塔的真面目……那是……</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>17950471842706210145</LocalizeKey>
+    <LocalizeText>
+      <Value>설마 그 신들이…… 우리를…… 불신임한다는…….</Value>
+      <Value>まさか、あの神々が……我らを……不信任するなど……。</Value>
+      <Value>Could it be that the gods... have lost faith... in us...?</Value>
+      <Value>難道那些神明……正在……否定我們……</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>631645829622013319</LocalizeKey>
+    <LocalizeText>
+      <Value>각오해! 수상한 변태들!!</Value>
+      <Value>覚悟しなさい！怪しい変態ども！！</Value>
+      <Value>Prepare yourselves, you suspicious perverts!</Value>
+      <Value>做好覺悟吧！奇怪的變態！！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>14702679241013061872</LocalizeKey>
+    <LocalizeText>
+      <Value>트라이얼이 선언되었어요!</Value>
+      <Value>トライアルが宣言されましたよ！</Value>
+      <Value>A Trial has been declared!</Value>
+      <Value>試煉已經宣告了！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>4046595267384376550</LocalizeKey>
+    <LocalizeText>
+      <Value>그래, 이제 에린을 쓰러트리는 수밖엔 없어!</Value>
+      <Value>うん、もうえりんを倒すしかない！</Value>
+      <Value>Yeah, now we have no choice but to defeat Erin!</Value>
+      <Value>對，現在只能打倒繪琳了！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>10334655785935753120</LocalizeKey>
+    <LocalizeText>
+      <Value>안나 쨩, 조심하세요! 에린 쨩이 사용하는 마법은 저도 뭔지 모르겠어요! 평범해 보이지 않아요!</Value>
+      <Value>アンナちゃん、気をつけてください！えりんちゃんが使う魔法、私にもなんだかわからないんです！普通じゃなさそうですよ！</Value>
+      <Value>Anna-chan, be careful! I don't know what kind of magic Erin-chan is using either! It doesn't look ordinary!</Value>
+      <Value>安娜醬，小心！我也不知道繪琳醬使用的是什麼魔法！感覺很不尋常！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>13324187556789360543</LocalizeKey>
+    <LocalizeText>
+      <Value>걱정하지 마. 나는 &lt;앰버 나이트&gt;야. 초심자가 사용하는 마법쯤은…….</Value>
+      <Value>心配しないで。私は「アンバーナイト」だよ。初心者の使う魔法くらい……。</Value>
+      <Value>Don't worry. I am an 「Amber Knight.」 A beginner's magic is hardly—</Value>
+      <Value>不用擔心。我可是&lt;琥珀騎士&gt;。區區新手使用的魔法……</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>15707409654331122090</LocalizeKey>
+    <LocalizeText>
+      <Value>와하하하——?! 정말로 됐잖아?! 어때, 어때?</Value>
+      <Value>わーー！？ほんとにできちゃったんだけど！？どう？どう？</Value>
+      <Value>Wahahaha?! It really worked?! How's that, huh?</Value>
+      <Value>哇哈哈哈——？！居然真的成功了？！怎麼樣、怎麼樣？</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>15722115671793667658</LocalizeKey>
+    <LocalizeText>
+      <Value>뭐, 뭐야, 이 마법은……?!</Value>
+      <Value>な、なに、この魔法……！？</Value>
+      <Value>Wh-What the heck is this magic...?!</Value>
+      <Value>什、什麼？！這是什麼魔法……？！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>16786318419277898529</LocalizeKey>
+    <LocalizeText>
+      <Value>안나 쨩?! 무슨 어쩌고 나이트라면서요!? 어떻게 된 건가요?!</Value>
+      <Value>ちょっとアンナちゃん！？なんとかナイトじゃなかったんですか！？どうなってるんですか！？</Value>
+      <Value>Anna-chan?! What about that whole whatever-Knight thing?! What's going on?!</Value>
+      <Value>安娜醬？！妳不是什麼騎士嗎？！這是怎麼回事？！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>7627777100403437943</LocalizeKey>
+    <LocalizeText>
+      <Value>어, 엄청 강해, 에린……! 이건 대체 무슨 마법이지? 정체가 뭐야?!</Value>
+      <Value>め、めちゃくちゃ強いよ、えりん……！これなんの魔法……？正体はなんなの……！？</Value>
+      <Value>E-Erin's so strong...! Just what kind of magic is this? What are you?!</Value>
+      <Value>好、好強……繪琳！這到底是什麼魔法？妳的真面目究竟是什麼？！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>8412389386917566555</LocalizeKey>
+    <LocalizeText>
+      <Value>응? 정체? 어…… 마법 소녀……?</Value>
+      <Value>え？正体？えーと……魔法少女……？</Value>
+      <Value>Huh? What am I? Um... a magical girl...?</Value>
+      <Value>嗯？真面目？呃……魔法少女……？</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>5599860721717806225</LocalizeKey>
+    <LocalizeText>
+      <Value>그럴 리가 없잖아!</Value>
+      <Value>んなわけないでしょ！</Value>
+      <Value>'Course you're not!</Value>
+      <Value>怎麼可能啊！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>8662552512688895903</LocalizeKey>
+    <LocalizeText>
+      <Value>그럴 리가 없잖아요!</Value>
+      <Value>そんなわけないじゃないですか！</Value>
+      <Value>Of course you're not!</Value>
+      <Value>怎麼可能啦！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>258311262698498009</LocalizeKey>
+    <LocalizeText>
+      <Value>안 되겠어요, 안나 쨩, 교대예요. 제가 나설게요!</Value>
+      <Value>このままじゃだめですね。アンナちゃん、交代です。次は、私が相手します！</Value>
+      <Value>This won't do, Anna-chan, swap with me. I'll handle this!</Value>
+      <Value>不行了，安娜醬，換人！這次由我上！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>5425841356023737489</LocalizeKey>
+    <LocalizeText>
+      <Value>앗, 이번엔 너야? 리리아!?</Value>
+      <Value>あっ、今度は璃々愛が相手なんだね！？</Value>
+      <Value>Oh, you're next? Riria?!</Value>
+      <Value>啊，這次換妳嗎？璃璃愛！？</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>4873261660576137720</LocalizeKey>
+    <LocalizeText>
+      <Value>네에~ 저랍니다? 에린 쨩? 잘 부탁드려요.</Value>
+      <Value>は～い、私ですよ～？えりんちゃん、よろしくお願いしま～す。</Value>
+      <Value>Yeees! It's me, Erin-chan. Let's have a good duel.</Value>
+      <Value>沒錯～就是我哦？繪琳醬？請多指教。</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>9874132545765453051</LocalizeKey>
+    <LocalizeText>
+      <Value>좋아, 너도 각오해!</Value>
+      <Value>覚悟して！璃々愛！</Value>
+      <Value>Alright! You'd better prepare yourself too!</Value>
+      <Value>好，妳也做好覺悟吧！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>9143204301778473273</LocalizeKey>
+    <LocalizeText>
+      <Value>어, 어라……? 어쩐지 연속해서 마법 사용이 힘든 느낌……?</Value>
+      <Value>あ、あれっ……？なんだか、魔法を続けて使うのって、しんどいかも……？</Value>
+      <Value>H-Huh...? Why does it feel so hard to use magic again right away...?</Value>
+      <Value>咦、咦……？總覺得連續使用魔法變得很吃力……？</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>12789297086271066546</LocalizeKey>
+    <LocalizeText>
+      <Value>네에~ 맞아요. 그런 거죠. 이렇게 하나 배웠네요, 에린 쨩?</Value>
+      <Value>は～い、そうなんです。一つ勉強になりましたね？えりんちゃん。</Value>
+      <Value>Correct! That's how it works. Consider that your first lesson, Erin-chan.</Value>
+      <Value>沒錯～就是這樣。繪琳醬，妳又學到一件事了呢？</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>14493543980399901329</LocalizeKey>
+    <LocalizeText>
+      <Value>이, 이잇——! 그렇다면!</Value>
+      <Value>えーーっ！それなら！</Value>
+      <Value>N-Ngh! In that case!</Value>
+      <Value>咿、咿呀——！既然這樣！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>6595914531511413562</LocalizeKey>
+    <LocalizeText>
+      <Value>으, 으윽……. 뭐야, 저 리코더…….</Value>
+      <Value>う、うう……。なんなの、あのリコーダー……。</Value>
+      <Value>U-Ugh... What's with that recorder...?</Value>
+      <Value>呃、呃唔……那支直笛到底是什麼……</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>8212119333997698327</LocalizeKey>
+    <LocalizeText>
+      <Value>자아~ 어떠신가요? 에린 쨩?</Value>
+      <Value>さぁ〜、どうでしたか？えりんちゃん？</Value>
+      <Value>So, how did you like that? Erin-chan?</Value>
+      <Value>來～覺得怎麼樣呢？繪琳醬？</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>382898273910834817</LocalizeKey>
+    <LocalizeText>
+      <Value>참고로 이건 평범한 리코더가 아니랍니다? 고대의 주술적 제의를 재현하는 무녀의 무구예요!</Value>
+      <Value>ちなみにこれ、普通のリコーダーじゃないんですよ？古代の呪術的な祭儀を再現する、巫女の祭具なんです！</Value>
+      <Value>For the record, this isn't an ordinary recorder. It's a shrine maiden's shamanic implement that recreates ancient magical rites!</Value>
+      <Value>順帶一提，這可不是普通的直笛喔！是重現古代咒術儀式時，巫女所使用的巫具！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>15396527738059659817</LocalizeKey>
+    <LocalizeText>
+      <Value>&lt;고대 무녀&gt;였구나……. 그치만 그런 걸 알려줘도 되는 거야?</Value>
+      <Value>「古代の巫女」だったんだ……。でも、そんなこと教えちゃっていいの？</Value>
+      <Value>An 「Ancient Shrine Maiden,」 huh...? But are you sure you should be telling me that?</Value>
+      <Value>原來妳是&lt;古代巫女&gt;啊……不過，把這種事告訴我真的沒關係嗎？</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>6910374993133789291</LocalizeKey>
+    <LocalizeText>
+      <Value>앗…….</Value>
+      <Value>あっ……。</Value>
+      <Value>Ah...!</Value>
+      <Value>啊……</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>4047604786716569547</LocalizeKey>
+    <LocalizeText>
+      <Value>우와, 정신없어……. 그치만 이 정도쯤이야!!</Value>
+      <Value>うわあ、目が回る……。でも、なんのこれしき！！</Value>
+      <Value>Whoa, this is making my head spin... But it'll take more than this to beat me!</Value>
+      <Value>哇，真是手忙腳亂……不過，這點程度還難不倒我！！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>2179022024951453078</LocalizeKey>
+    <LocalizeText>
+      <Value>우와! 에린 쨩, 엄청 터프해요!</Value>
+      <Value>うわぁ！えりんちゃん、めちゃくちゃタフですね！</Value>
+      <Value>Wow! Erin-chan, you're super tough!</Value>
+      <Value>哇！繪琳醬，妳也太耐打了吧！！</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>6170135451655806503</LocalizeKey>
+    <LocalizeText>
+      <Value>미안, 에린. 봐주면서 하기엔 너는 너무 강해. 이제 슬슬 끝내겠어.</Value>
+      <Value>ごめん、えりん。手加減するには、えりんは強すぎる。そろそろ終わらせるよ。</Value>
+      <Value>I'm sorry, Erin. You're way too strong for me to go easy on you. It's time to finish this.</Value>
+      <Value>抱歉，繪琳。妳太強了，沒辦法再手下留情。差不多該結束了。</Value>
+    </LocalizeText>
+  </DataList>
+  <DataList>
+    <LocalizeKey>861687442816018176</LocalizeKey>
+    <LocalizeText>
+      <Value>일시 정지를 할 수 없습니다.</Value>
+      <Value>一時停止できません。</Value>
+      <Value>Cannot pause the game.</Value>
+      <Value>無法暫停。</Value>
+    </LocalizeText>
+  </DataList>
+</Table>
