@@ -112,7 +112,7 @@ def cmd_catalog(args: argparse.Namespace) -> None:
     console.print(table)
 
 def cmd_masterdata(args: argparse.Namespace) -> None:
-    """提取游戏全量数据表（底层MMap + 1881张总管表 + 任务决策表 + 行为树）、Lua 源码、HybridCLR 元数据并反编译。"""
+    """提取游戏全量数据表（底层MMap + 1881张总管表 + 任务决策表）、Lua 源码、HybridCLR 元数据并反编译。"""
     manifests = ensure_manifests(force_refresh=args.refresh)
     force = getattr(args, "force", False)
 
@@ -131,6 +131,7 @@ def cmd_masterdata(args: argparse.Namespace) -> None:
     nostream_info = manifests.get("raw_nostreaming_package")
     if nostream_info:
         cdn_url = f"{CDN_BASE}/.res/raw_nostreaming_package"
+
         out_bt = MASTER_DIR / "BehaviorTree"
         MasterData.extract_behavior_trees(nostream_info.bundles, cdn_url, out_bt, limit=args.limit, force=force)
 
@@ -146,9 +147,21 @@ def cmd_masterdata(args: argparse.Namespace) -> None:
         )
 
     out_mv = MASTER_DIR / "MetaVersions"
-    MasterData.extract_meta_versions(CDN_BASE, out_mv, force=force)
+    hotfix_dll_dir = MASTER_DIR / "HotfixDlls"
+    MasterData.extract_hybridclr_hotfix(CDN_BASE, out_mv, hotfix_dll_dir, force=force)
     out_csharp = MASTER_DIR / "CSharp"
-    MasterData.decompile_csharp_dlls(ROOT / "dll", out_csharp, force=force)
+    ref_dll_dir = ROOT / "dll"
+    MasterData.decompile_csharp_dlls(hotfix_dll_dir, out_csharp, ref_dir=ref_dll_dir, force=force)
+
+
+def cmd_behaviortree(args: argparse.Namespace) -> None:
+    """单独提取世界行为树 JSON 配置文件 (独立于数据表)。"""
+    manifests = ensure_manifests(force_refresh=args.refresh)
+    nostream_info = manifests.get("raw_nostreaming_package")
+    if nostream_info:
+        cdn_url = f"{CDN_BASE}/.res/raw_nostreaming_package"
+        out_bt = MASTER_DIR / "BehaviorTree"
+        MasterData.extract_behavior_trees(nostream_info.bundles, cdn_url, out_bt, limit=args.limit, force=getattr(args, "force", False))
 
 
 def is_bundle_complete(out_path: Path, b: Catalog.BundleInfo) -> bool:
@@ -352,6 +365,8 @@ def build_parser() -> argparse.ArgumentParser:
     sub.add_parser("catalog", aliases=["list", "version"], parents=[shared], help="查看 5 个 Package 清单信息")
     p_master = sub.add_parser("masterdata", aliases=["data", "lua", "config"], parents=[shared], help="提取配置表与反编译 Lua 源码")
     p_master.add_argument("--limit", type=int, default=0, help="限制提取/反编译文件数量（调试用）")
+    p_bt = sub.add_parser("behaviortree", aliases=["bt"], parents=[shared], help="单独提取世界行为树 JSON 配置 (独立于数据表)")
+    p_bt.add_argument("--limit", type=int, default=0, help="限制提取数量（调试用）")
     p_assets = sub.add_parser("assets", aliases=["download"], parents=[shared], help="多线程下载并解密 Unity 资产到 Assets/")
     p_assets.add_argument("--package", choices=PACKAGES, default="default_package", help="指定下载的 Package，默认 default_package")
     p_assets.add_argument("--limit", type=int, default=0, help="限制下载数量（调试用）")
@@ -379,6 +394,8 @@ def main() -> None:
         cmd_catalog(args)
     elif args.command in ("masterdata", "data", "lua", "config"):
         cmd_masterdata(args)
+    elif args.command in ("behaviortree", "bt"):
+        cmd_behaviortree(args)
     elif args.command in ("assets", "download"):
         cmd_assets(args)
     elif args.command == "decrypt":

@@ -771,7 +771,9 @@ def extract_behavior_trees(
     output_dir: Path,
     limit: int = 0,
     force: bool = False,
+    max_workers: int = 16,
 ) -> None:
+    import json
     bt_bundles = [b for b in nostreaming_bundles if 'world_behaviortree' in b.bundle_name.lower()]
     if limit > 0:
         bt_bundles = bt_bundles[:limit]
@@ -790,8 +792,14 @@ def extract_behavior_trees(
         fname = fname.replace('_json', '.json')
         target_p = output_dir / fname
         if not force and target_p.is_file() and target_p.stat().st_size > 0:
-            skipped += 1
-            continue
+            try:
+                with open(target_p, 'r', encoding='utf-8') as f:
+                    first_char = f.read(1)
+                    if first_char in ('{', '['):
+                        skipped += 1
+                        continue
+            except Exception:
+                pass
         needed_bts.append((b, target_p))
 
     if skipped > 0:
@@ -800,21 +808,42 @@ def extract_behavior_trees(
     if not needed_bts:
         return
 
-    console.print(f"[cyan]正在增量提取世界行为树配置文件，共 {len(needed_bts)} 个...[/cyan]")
+    console.print(f"[cyan]正在增量提取并反序列化世界行为树配置文件，共 {len(needed_bts)} 个...[/cyan]")
     session = requests.Session()
-    for b, target_p in needed_bts:
+
+    def process_one_bt(item: Tuple[BundleInfo, Path]) -> bool:
+        b, target_p = item
         url = f"{cdn_base}/{b.pack_res_name}"
         headers = {}
         if b.file_size > 0:
             headers['Range'] = f"bytes={b.file_offset}-{b.file_offset + b.file_size - 1}"
-        try:
-            r = session.get(url, headers=headers, timeout=20)
-            if r.status_code in (200, 206):
-                with open(target_p, 'wb') as f:
-                    f.write(r.content)
-        except Exception:
-            pass
-    console.print(f" [green]✓ 世界行为树配置提取完成至:[/green] {output_dir}")
+        for _ in range(3):
+            try:
+                r = session.get(url, headers=headers, timeout=20)
+                if r.status_code in (200, 206):
+                    # 单字节异或 0x40 解密
+                    dec_bytes = bytes(x ^ 0x40 for x in r.content)
+                    try:
+                        obj = json.loads(dec_bytes.decode('utf-8'))
+                        with open(target_p, 'w', encoding='utf-8') as f:
+                            json.dump(obj, f, indent=2, ensure_ascii=False)
+                        return True
+                    except Exception:
+                        with open(target_p, 'wb') as f:
+                            f.write(dec_bytes)
+                        return True
+            except Exception:
+                pass
+        return False
+
+    success_count = 0
+    with ThreadPoolExecutor(max_workers=max_workers) as pool:
+        futures = [pool.submit(process_one_bt, it) for it in needed_bts]
+        for fut in as_completed(futures):
+            if fut.result():
+                success_count += 1
+
+    console.print(f" [green]✓ 世界行为树配置反序列化完成（成功: {success_count}/{len(needed_bts)}）至:[/green] {output_dir}")
 
 def extract_configs(
     config_bundles: List[BundleInfo],
@@ -874,52 +903,153 @@ def extract_configs(
         except Exception as e:
             console.print(f"[red]配置表处理失败: {b.bundle_name} -> {e}[/red]")
 
-META_VERSION_FILES = [
-    "AzurLoader.mv.bytes",
-    "ThirdPart.mv.bytes",
-    "AzurFramework.mv.bytes",
-    "Assembly-CSharp.mv.bytes",
-    "AzurProto.mv.bytes",
+HYBRIDCLR_ASSEMBLIES = [
+    "AzurLoader",
+    "ThirdPart",
+    "AzurFramework",
+    "Assembly-CSharp",
+    "AzurProto",
 ]
 
-def extract_meta_versions(cdn_root: str, output_dir: Path, force: bool = False) -> None:
-    output_dir.mkdir(parents=True, exist_ok=True)
-    console.print(f"[bold cyan]正在检查 HybridCLR 元数据版本文件: {output_dir}...[/bold cyan]")
+META_VERSION_FILES = [f"{a}.mv.bytes" for a in HYBRIDCLR_ASSEMBLIES]
+
+# 硬编码的 HybridCLR 远端候选下载相对路径
+HYBRIDCLR_HOTFIX_URL_PATTERNS = [
+    # 差分热更程序集与补丁
+    "CodeRes/HybridCLR/HotfixDlls/{name}.dll.bytes",
+    "CodeRes/HybridCLR/HotfixDlls/{name}.dll",
+    "CodeRes/HybridCLR/HotfixDlls/{name}.bytes",
+    "CodeRes/HybridCLR/HotfixDlls/{name}.mv.bytes",
+    # 独立热更 DLL
+    "CodeRes/HybridCLR/HotfixDlls/Hotfix.dll",
+    "CodeRes/HybridCLR/HotfixDlls/Hotfix.dll.bytes",
+    "CodeRes/HybridCLR/HotfixDlls/hotfix_manifest.xml",
+    # AOT 补充元数据
+    "CodeRes/HybridCLR/AOTDlls/{name}.dll.bytes",
+    "CodeRes/HybridCLR/AOTDlls/{name}.dll",
+    "CodeRes/HybridCLR/AOTDlls/{name}.bytes",
+    # 备选路径
+    "OriginalMetaVersions/{name}.dll.bytes",
+    "OriginalMetaVersions/{name}.dll",
+]
+
+def extract_hybridclr_hotfix(
+    cdn_root: str,
+    mv_output_dir: Path,
+    hotfix_dll_output_dir: Path,
+    force: bool = False,
+) -> List[Path]:
+    """从 CDN 拉取硬编码的 HybridCLR 元数据文件与热更 DLL 补丁。
+
+    1. 拉取并解密 5 个核心基线元数据: OriginalMetaVersions/*.mv.bytes
+    2. 探测并拉取硬编码的热更补丁: CodeRes/HybridCLR/HotfixDlls/* 等
+    若发现热更 DLL 则解密保存至 hotfix_dll_output_dir 并返回下载的 DLL 列表。
+    """
+    mv_output_dir.mkdir(parents=True, exist_ok=True)
+    hotfix_dll_output_dir.mkdir(parents=True, exist_ok=True)
+    console.print(f"[bold cyan]正在检查 HybridCLR 元数据与热更 DLL (硬编码远端地址拉取)...[/bold cyan]")
     from AzurPromiliaDecrypt import decrypt_meta_version
 
     session = requests.Session()
-    for mv_name in META_VERSION_FILES:
-        dest_raw = output_dir / mv_name
-        dest_dec = output_dir / mv_name.replace('.mv.bytes', '.dec.mv')
+    session.headers.update({"User-Agent": "UnityPlayer/2022.3.21f1 (Windows)"})
+
+    # 1. 下载并解密 5 个基线 MetaVersion 文件
+    for name in HYBRIDCLR_ASSEMBLIES:
+        mv_name = f"{name}.mv.bytes"
+        dest_raw = mv_output_dir / mv_name
+        dest_dec = mv_output_dir / f"{name}.dec.mv"
 
         if not force and dest_raw.is_file() and dest_raw.stat().st_size > 0 and dest_dec.is_file():
-            console.print(f" [green]✓ 元数据文件已存在:[/green] {dest_raw.name}，跳过下载。")
+            console.print(f" [green]✓ 元数据已存在:[/green] {dest_raw.name}，跳过下载。")
             continue
 
         url = f"{cdn_root}/OriginalMetaVersions/{mv_name}"
         try:
-            r = session.get(url, timeout=30)
+            r = session.get(url, timeout=20)
             if r.status_code == 200:
-                with open(dest_raw, 'wb') as f:
+                with open(dest_raw, "wb") as f:
                     f.write(r.content)
                 dec_data = decrypt_meta_version(r.content)
-                with open(dest_dec, 'wb') as f:
+                with open(dest_dec, "wb") as f:
                     f.write(dec_data)
-                console.print(f" [green]✓ 成功解密元数据:[/green] {dest_dec.name} ({len(dec_data)} bytes)")
+                console.print(f" [green]✓ 成功拉取并解密基线元数据:[/green] {dest_dec.name} ({len(dec_data)} bytes)")
             else:
                 console.print(f" [dim]未在远端找到 {mv_name} [{r.status_code}][/dim]")
         except Exception as e:
             console.print(f"[red]元数据获取失败: {mv_name} -> {e}[/red]")
 
-def decompile_csharp_dlls(dll_dir: Path, output_dir: Path, force: bool = False) -> None:
-    if not dll_dir.exists():
+    # 2. 探测硬编码的热更 DLL 地址
+    downloaded_dlls: List[Path] = []
+    unique_patterns = []
+    for pattern in HYBRIDCLR_HOTFIX_URL_PATTERNS:
+        if "{name}" in pattern:
+            for name in HYBRIDCLR_ASSEMBLIES:
+                unique_patterns.append(pattern.format(name=name))
+        else:
+            unique_patterns.append(pattern)
+
+    for rel_path in unique_patterns:
+        url = f"{cdn_root}/{rel_path}"
+        fname = Path(rel_path).name
+        if fname.endswith(".bytes"):
+            clean_name = fname[:-6]
+            if not clean_name.endswith(".dll") and not clean_name.endswith(".xml") and not clean_name.endswith(".mv"):
+                clean_name += ".dll"
+        else:
+            clean_name = fname
+        target_path = hotfix_dll_output_dir / clean_name
+
+        if not force and target_path.is_file() and target_path.stat().st_size > 0:
+            if target_path.suffix.lower() == ".dll":
+                downloaded_dlls.append(target_path)
+            continue
+
+        try:
+            r = session.get(url, timeout=10)
+            if r.status_code == 200 and len(r.content) > 0:
+                content = r.content
+                dec_data = decrypt_meta_version(content)
+                with open(target_path, "wb") as f:
+                    f.write(dec_data)
+                console.print(f"  [bold green]★ 成功从硬编码地址捕获热更文件:[/bold green] {rel_path} -> {target_path.name} ({len(dec_data)} bytes)")
+                if target_path.suffix.lower() == ".dll":
+                    downloaded_dlls.append(target_path)
+        except Exception:
+            pass
+
+    if downloaded_dlls:
+        console.print(f"  [bold green]✓ 成功从硬编码地址捕获并解密 {len(downloaded_dlls)} 个热更 DLL[/bold green]")
+    else:
+        console.print(f"  [dim]ℹ 探测硬编码热更地址完成：远端尚未发布独立差分热更 DLL（底包默认运行于原版 AOT 镜像）[/dim]")
+
+    return downloaded_dlls
+
+def extract_meta_versions(cdn_root: str, output_dir: Path, force: bool = False) -> None:
+    extract_hybridclr_hotfix(cdn_root, output_dir, output_dir.parent / "HotfixDlls", force=force)
+
+def decompile_csharp_dlls(
+    hotfix_dll_dir: Path,
+    output_dir: Path,
+    ref_dir: Optional[Path] = None,
+    force: bool = False,
+) -> None:
+    """使用 ilspycmd 反编译热更 DLL 为 C# 工程。
+
+    参数说明：
+    hotfix_dll_dir: 实际包含热更 DLL 的目录（例如 MasterData/HotfixDlls）
+    output_dir: 反编译 C# 项目输出目录（MasterData/CSharp）
+    ref_dir: 引用依赖程序集目录（即 dll/ 目录），通过 -r 传递给 ilspycmd 解决引用依赖，不被反编译
+    """
+    if not hotfix_dll_dir.exists():
+        console.print(f" [dim]热更 DLL 目录不存在: {hotfix_dll_dir}，跳过 C# 反编译。[/dim]")
         return
-    dlls = list(dll_dir.glob("*.dll"))
+    dlls = list(hotfix_dll_dir.glob("*.dll"))
     if not dlls:
+        console.print(f" [dim]未在 {hotfix_dll_dir} 中发现待反编译的热更 DLL，跳过 C# 反编译。[/dim]")
         return
 
     output_dir.mkdir(parents=True, exist_ok=True)
-    console.print(f"[bold cyan]检查 C# 程序集反编译 (共 {len(dlls)} 个程序集)...[/bold cyan]")
+    console.print(f"[bold cyan]检查 C# 热更程序集反编译 (共 {len(dlls)} 个程序集)...[/bold cyan]")
 
     needed_dlls = []
     for dll_path in dlls:
@@ -929,15 +1059,18 @@ def decompile_csharp_dlls(dll_dir: Path, output_dir: Path, force: bool = False) 
         needed_dlls.append(dll_path)
 
     if not needed_dlls:
-        console.print(f" [green]✓ 所有 {len(dlls)} 个 C# 程序集均已反编译，跳过。[/green]")
+        console.print(f" [green]✓ 所有 {len(dlls)} 个 C# 热更程序集均已反编译，跳过。[/green]")
         return
 
-    console.print(f"[bold cyan]正在调用 ilspycmd 反编译 {len(needed_dlls)} 个 C# 程序集...[/bold cyan]")
+    console.print(f"[bold cyan]正在调用 ilspycmd 反编译 {len(needed_dlls)} 个 C# 热更程序集 (引用依赖目录: {ref_dir})...[/bold cyan]")
     for dll_path in needed_dlls:
         target_proj_dir = output_dir / dll_path.stem
         target_proj_dir.mkdir(parents=True, exist_ok=True)
         try:
-            cmd = ["ilspycmd", "-p", "-o", str(target_proj_dir), str(dll_path)]
+            cmd = ["ilspycmd", "-p", "-o", str(target_proj_dir)]
+            if ref_dir and ref_dir.is_dir():
+                cmd.extend(["-r", str(ref_dir)])
+            cmd.append(str(dll_path))
             res = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, check=False)
             if res.returncode == 0:
                 console.print(f" [green]✓ 反编译成功:[/green] {dll_path.name} -> {target_proj_dir}")
