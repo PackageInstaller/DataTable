@@ -1,0 +1,64 @@
+namespace YooAsset;
+
+internal class DWRFSRequestPackageVersionOperation : FSRequestPackageVersionOperation
+{
+	private enum ESteps
+	{
+		None,
+		RequestPackageVersion,
+		Done
+	}
+
+	private readonly DefaultWebRemoteFileSystem _fileSystem;
+
+	private readonly bool _appendTimeTicks;
+
+	private readonly int _timeout;
+
+	private RequestWebRemotePackageVersionOperation _requestWebPackageVersionOp;
+
+	private ESteps _steps;
+
+	internal DWRFSRequestPackageVersionOperation(DefaultWebRemoteFileSystem fileSystem, bool appendTimeTicks, int timeout)
+	{
+		_fileSystem = fileSystem;
+		_appendTimeTicks = appendTimeTicks;
+		_timeout = timeout;
+	}
+
+	internal override void InternalStart()
+	{
+		_steps = ESteps.RequestPackageVersion;
+	}
+
+	internal override void InternalUpdate()
+	{
+		if (_steps == ESteps.None || _steps == ESteps.Done || _steps != ESteps.RequestPackageVersion)
+		{
+			return;
+		}
+		if (_requestWebPackageVersionOp == null)
+		{
+			_requestWebPackageVersionOp = new RequestWebRemotePackageVersionOperation(_fileSystem, _appendTimeTicks, _timeout);
+			_requestWebPackageVersionOp.StartOperation();
+			AddChildOperation(_requestWebPackageVersionOp);
+		}
+		_requestWebPackageVersionOp.UpdateOperation();
+		Progress = _requestWebPackageVersionOp.Progress;
+		if (_requestWebPackageVersionOp.IsDone)
+		{
+			if (_requestWebPackageVersionOp.Status == EOperationStatus.Succeed)
+			{
+				_steps = ESteps.Done;
+				PackageVersion = _requestWebPackageVersionOp.PackageVersion;
+				Status = EOperationStatus.Succeed;
+			}
+			else
+			{
+				_steps = ESteps.Done;
+				Status = EOperationStatus.Failed;
+				Error = _requestWebPackageVersionOp.Error;
+			}
+		}
+	}
+}

@@ -1,0 +1,364 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace Cysharp.Threading.Tasks.Internal;
+
+internal static class UnityEqualityComparer
+{
+	private static class Cache<T>
+	{
+		public static readonly IEqualityComparer<T> Comparer;
+
+		static Cache()
+		{
+			object defaultHelper = GetDefaultHelper(typeof(T));
+			if (defaultHelper == null)
+			{
+				Comparer = EqualityComparer<T>.Default;
+			}
+			else
+			{
+				Comparer = (IEqualityComparer<T>)defaultHelper;
+			}
+		}
+	}
+
+	private sealed class Vector2EqualityComparer : IEqualityComparer<Vector2>
+	{
+		public bool Equals(Vector2 self, Vector2 vector)
+		{
+			if (self.x.Equals(vector.x))
+			{
+				return self.y.Equals(vector.y);
+			}
+			return false;
+		}
+
+		public int GetHashCode(Vector2 obj)
+		{
+			return obj.x.GetHashCode() ^ (obj.y.GetHashCode() << 2);
+		}
+	}
+
+	private sealed class Vector3EqualityComparer : IEqualityComparer<Vector3>
+	{
+		public bool Equals(Vector3 self, Vector3 vector)
+		{
+			if (self.x.Equals(vector.x) && self.y.Equals(vector.y))
+			{
+				return self.z.Equals(vector.z);
+			}
+			return false;
+		}
+
+		public int GetHashCode(Vector3 obj)
+		{
+			return obj.x.GetHashCode() ^ (obj.y.GetHashCode() << 2) ^ (obj.z.GetHashCode() >> 2);
+		}
+	}
+
+	private sealed class Vector4EqualityComparer : IEqualityComparer<Vector4>
+	{
+		public bool Equals(Vector4 self, Vector4 vector)
+		{
+			if (self.x.Equals(vector.x) && self.y.Equals(vector.y) && self.z.Equals(vector.z))
+			{
+				return self.w.Equals(vector.w);
+			}
+			return false;
+		}
+
+		public int GetHashCode(Vector4 obj)
+		{
+			return obj.x.GetHashCode() ^ (obj.y.GetHashCode() << 2) ^ (obj.z.GetHashCode() >> 2) ^ (obj.w.GetHashCode() >> 1);
+		}
+	}
+
+	private sealed class ColorEqualityComparer : IEqualityComparer<Color>
+	{
+		public bool Equals(Color self, Color other)
+		{
+			if (self.r.Equals(other.r) && self.g.Equals(other.g) && self.b.Equals(other.b))
+			{
+				return self.a.Equals(other.a);
+			}
+			return false;
+		}
+
+		public int GetHashCode(Color obj)
+		{
+			return obj.r.GetHashCode() ^ (obj.g.GetHashCode() << 2) ^ (obj.b.GetHashCode() >> 2) ^ (obj.a.GetHashCode() >> 1);
+		}
+	}
+
+	private sealed class RectEqualityComparer : IEqualityComparer<Rect>
+	{
+		public bool Equals(Rect self, Rect other)
+		{
+			if (self.x.Equals(other.x) && self.width.Equals(other.width) && self.y.Equals(other.y))
+			{
+				return self.height.Equals(other.height);
+			}
+			return false;
+		}
+
+		public int GetHashCode(Rect obj)
+		{
+			return obj.x.GetHashCode() ^ (obj.width.GetHashCode() << 2) ^ (obj.y.GetHashCode() >> 2) ^ (obj.height.GetHashCode() >> 1);
+		}
+	}
+
+	private sealed class BoundsEqualityComparer : IEqualityComparer<Bounds>
+	{
+		public bool Equals(Bounds self, Bounds vector)
+		{
+			if (self.center.Equals(vector.center))
+			{
+				return self.extents.Equals(vector.extents);
+			}
+			return false;
+		}
+
+		public int GetHashCode(Bounds obj)
+		{
+			return obj.center.GetHashCode() ^ (obj.extents.GetHashCode() << 2);
+		}
+	}
+
+	private sealed class QuaternionEqualityComparer : IEqualityComparer<Quaternion>
+	{
+		public bool Equals(Quaternion self, Quaternion vector)
+		{
+			if (self.x.Equals(vector.x) && self.y.Equals(vector.y) && self.z.Equals(vector.z))
+			{
+				return self.w.Equals(vector.w);
+			}
+			return false;
+		}
+
+		public int GetHashCode(Quaternion obj)
+		{
+			return obj.x.GetHashCode() ^ (obj.y.GetHashCode() << 2) ^ (obj.z.GetHashCode() >> 2) ^ (obj.w.GetHashCode() >> 1);
+		}
+	}
+
+	private sealed class Color32EqualityComparer : IEqualityComparer<Color32>
+	{
+		public bool Equals(Color32 self, Color32 vector)
+		{
+			if (self.a.Equals(vector.a) && self.r.Equals(vector.r) && self.g.Equals(vector.g))
+			{
+				return self.b.Equals(vector.b);
+			}
+			return false;
+		}
+
+		public int GetHashCode(Color32 obj)
+		{
+			return obj.a.GetHashCode() ^ (obj.r.GetHashCode() << 2) ^ (obj.g.GetHashCode() >> 2) ^ (obj.b.GetHashCode() >> 1);
+		}
+	}
+
+	private sealed class Vector2IntEqualityComparer : IEqualityComparer<Vector2Int>
+	{
+		public bool Equals(Vector2Int self, Vector2Int vector)
+		{
+			if (self.x.Equals(vector.x))
+			{
+				return self.y.Equals(vector.y);
+			}
+			return false;
+		}
+
+		public int GetHashCode(Vector2Int obj)
+		{
+			return obj.x.GetHashCode() ^ (obj.y.GetHashCode() << 2);
+		}
+	}
+
+	private sealed class Vector3IntEqualityComparer : IEqualityComparer<Vector3Int>
+	{
+		public static readonly Vector3IntEqualityComparer Default = new Vector3IntEqualityComparer();
+
+		public bool Equals(Vector3Int self, Vector3Int vector)
+		{
+			if (self.x.Equals(vector.x) && self.y.Equals(vector.y))
+			{
+				return self.z.Equals(vector.z);
+			}
+			return false;
+		}
+
+		public int GetHashCode(Vector3Int obj)
+		{
+			return obj.x.GetHashCode() ^ (obj.y.GetHashCode() << 2) ^ (obj.z.GetHashCode() >> 2);
+		}
+	}
+
+	private sealed class RangeIntEqualityComparer : IEqualityComparer<RangeInt>
+	{
+		public bool Equals(RangeInt self, RangeInt vector)
+		{
+			if (self.start.Equals(vector.start))
+			{
+				return self.length.Equals(vector.length);
+			}
+			return false;
+		}
+
+		public int GetHashCode(RangeInt obj)
+		{
+			return obj.start.GetHashCode() ^ (obj.length.GetHashCode() << 2);
+		}
+	}
+
+	private sealed class RectIntEqualityComparer : IEqualityComparer<RectInt>
+	{
+		public bool Equals(RectInt self, RectInt other)
+		{
+			if (self.x.Equals(other.x) && self.width.Equals(other.width) && self.y.Equals(other.y))
+			{
+				return self.height.Equals(other.height);
+			}
+			return false;
+		}
+
+		public int GetHashCode(RectInt obj)
+		{
+			return obj.x.GetHashCode() ^ (obj.width.GetHashCode() << 2) ^ (obj.y.GetHashCode() >> 2) ^ (obj.height.GetHashCode() >> 1);
+		}
+	}
+
+	private sealed class BoundsIntEqualityComparer : IEqualityComparer<BoundsInt>
+	{
+		public bool Equals(BoundsInt self, BoundsInt vector)
+		{
+			if (Vector3IntEqualityComparer.Default.Equals(self.position, vector.position))
+			{
+				return Vector3IntEqualityComparer.Default.Equals(self.size, vector.size);
+			}
+			return false;
+		}
+
+		public int GetHashCode(BoundsInt obj)
+		{
+			return Vector3IntEqualityComparer.Default.GetHashCode(obj.position) ^ (Vector3IntEqualityComparer.Default.GetHashCode(obj.size) << 2);
+		}
+	}
+
+	public static readonly IEqualityComparer<Vector2> Vector2 = new Vector2EqualityComparer();
+
+	public static readonly IEqualityComparer<Vector3> Vector3 = new Vector3EqualityComparer();
+
+	public static readonly IEqualityComparer<Vector4> Vector4 = new Vector4EqualityComparer();
+
+	public static readonly IEqualityComparer<Color> Color = new ColorEqualityComparer();
+
+	public static readonly IEqualityComparer<Color32> Color32 = new Color32EqualityComparer();
+
+	public static readonly IEqualityComparer<Rect> Rect = new RectEqualityComparer();
+
+	public static readonly IEqualityComparer<Bounds> Bounds = new BoundsEqualityComparer();
+
+	public static readonly IEqualityComparer<Quaternion> Quaternion = new QuaternionEqualityComparer();
+
+	private static readonly RuntimeTypeHandle vector2Type = typeof(Vector2).TypeHandle;
+
+	private static readonly RuntimeTypeHandle vector3Type = typeof(Vector3).TypeHandle;
+
+	private static readonly RuntimeTypeHandle vector4Type = typeof(Vector4).TypeHandle;
+
+	private static readonly RuntimeTypeHandle colorType = typeof(Color).TypeHandle;
+
+	private static readonly RuntimeTypeHandle color32Type = typeof(Color32).TypeHandle;
+
+	private static readonly RuntimeTypeHandle rectType = typeof(Rect).TypeHandle;
+
+	private static readonly RuntimeTypeHandle boundsType = typeof(Bounds).TypeHandle;
+
+	private static readonly RuntimeTypeHandle quaternionType = typeof(Quaternion).TypeHandle;
+
+	public static readonly IEqualityComparer<Vector2Int> Vector2Int = new Vector2IntEqualityComparer();
+
+	public static readonly IEqualityComparer<Vector3Int> Vector3Int = new Vector3IntEqualityComparer();
+
+	public static readonly IEqualityComparer<RangeInt> RangeInt = new RangeIntEqualityComparer();
+
+	public static readonly IEqualityComparer<RectInt> RectInt = new RectIntEqualityComparer();
+
+	public static readonly IEqualityComparer<BoundsInt> BoundsInt = new BoundsIntEqualityComparer();
+
+	private static readonly RuntimeTypeHandle vector2IntType = typeof(Vector2Int).TypeHandle;
+
+	private static readonly RuntimeTypeHandle vector3IntType = typeof(Vector3Int).TypeHandle;
+
+	private static readonly RuntimeTypeHandle rangeIntType = typeof(RangeInt).TypeHandle;
+
+	private static readonly RuntimeTypeHandle rectIntType = typeof(RectInt).TypeHandle;
+
+	private static readonly RuntimeTypeHandle boundsIntType = typeof(BoundsInt).TypeHandle;
+
+	public static IEqualityComparer<T> GetDefault<T>()
+	{
+		return Cache<T>.Comparer;
+	}
+
+	private static object GetDefaultHelper(Type type)
+	{
+		RuntimeTypeHandle typeHandle = type.TypeHandle;
+		if (typeHandle.Equals(vector2Type))
+		{
+			return Vector2;
+		}
+		if (typeHandle.Equals(vector3Type))
+		{
+			return Vector3;
+		}
+		if (typeHandle.Equals(vector4Type))
+		{
+			return Vector4;
+		}
+		if (typeHandle.Equals(colorType))
+		{
+			return Color;
+		}
+		if (typeHandle.Equals(color32Type))
+		{
+			return Color32;
+		}
+		if (typeHandle.Equals(rectType))
+		{
+			return Rect;
+		}
+		if (typeHandle.Equals(boundsType))
+		{
+			return Bounds;
+		}
+		if (typeHandle.Equals(quaternionType))
+		{
+			return Quaternion;
+		}
+		if (typeHandle.Equals(vector2IntType))
+		{
+			return Vector2Int;
+		}
+		if (typeHandle.Equals(vector3IntType))
+		{
+			return Vector3Int;
+		}
+		if (typeHandle.Equals(rangeIntType))
+		{
+			return RangeInt;
+		}
+		if (typeHandle.Equals(rectIntType))
+		{
+			return RectInt;
+		}
+		if (typeHandle.Equals(boundsIntType))
+		{
+			return BoundsInt;
+		}
+		return null;
+	}
+}

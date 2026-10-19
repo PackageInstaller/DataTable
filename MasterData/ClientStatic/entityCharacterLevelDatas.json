@@ -1,0 +1,10200 @@
+{
+  "1010100": {
+    "Id": 1010100,
+    "Character": 10101,
+    "Stage": 0,
+    "LevelMax": 20,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 20000
+      },
+      {
+        "Id": 220141,
+        "Count": 1
+      },
+      {
+        "Id": 201020,
+        "Count": 3
+      },
+      {
+        "Id": 200222,
+        "Count": 3
+      }
+    ],
+    "NewSkill": [
+      10111,
+      10112,
+      10113,
+      10116
+    ],
+    "GainProperty": [],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 5
+      }
+    ],
+    "RewardId": 24,
+    "ChipSpace": 4
+  },
+  "1010101": {
+    "Id": 1010101,
+    "Character": 10101,
+    "Stage": 1,
+    "LevelMax": 30,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 40000
+      },
+      {
+        "Id": 200243,
+        "Count": 2
+      },
+      {
+        "Id": 230142,
+        "Count": 3
+      },
+      {
+        "Id": 201020,
+        "Count": 10
+      },
+      {
+        "Id": 200222,
+        "Count": 15
+      }
+    ],
+    "NewSkill": [
+      10114
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 535.194
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 30.294
+      },
+      {
+        "Property": 2000,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 15
+      }
+    ],
+    "RewardId": 25,
+    "ChipSpace": 8
+  },
+  "1010102": {
+    "Id": 1010102,
+    "Character": 10101,
+    "Stage": 2,
+    "LevelMax": 40,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 60000
+      },
+      {
+        "Id": 200243,
+        "Count": 4
+      },
+      {
+        "Id": 230142,
+        "Count": 6
+      },
+      {
+        "Id": 201020,
+        "Count": 20
+      },
+      {
+        "Id": 200223,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 535.194
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 30.294
+      },
+      {
+        "Property": 2000,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 25
+      }
+    ],
+    "RewardId": 26,
+    "ChipSpace": 12
+  },
+  "1010103": {
+    "Id": 1010103,
+    "Character": 10101,
+    "Stage": 3,
+    "LevelMax": 60,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 80000
+      },
+      {
+        "Id": 200243,
+        "Count": 8
+      },
+      {
+        "Id": 240143,
+        "Count": 3
+      },
+      {
+        "Id": 201020,
+        "Count": 30
+      },
+      {
+        "Id": 200223,
+        "Count": 18
+      }
+    ],
+    "NewSkill": [
+      10115
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 535.194
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 30.294
+      },
+      {
+        "Property": 2000,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 35
+      }
+    ],
+    "RewardId": 27,
+    "ChipSpace": 16
+  },
+  "1010104": {
+    "Id": 1010104,
+    "Character": 10101,
+    "Stage": 4,
+    "LevelMax": 70,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 100000
+      },
+      {
+        "Id": 200243,
+        "Count": 12
+      },
+      {
+        "Id": 240143,
+        "Count": 6
+      },
+      {
+        "Id": 201020,
+        "Count": 45
+      },
+      {
+        "Id": 200224,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 535.194
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 30.294
+      },
+      {
+        "Property": 2000,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 40
+      }
+    ],
+    "RewardId": 28,
+    "ChipSpace": 20
+  },
+  "1010105": {
+    "Id": 1010105,
+    "Character": 10101,
+    "Stage": 5,
+    "LevelMax": 80,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 120000
+      },
+      {
+        "Id": 200243,
+        "Count": 20
+      },
+      {
+        "Id": 250144,
+        "Count": 6
+      },
+      {
+        "Id": 201020,
+        "Count": 60
+      },
+      {
+        "Id": 200224,
+        "Count": 24
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 535.194
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 30.294
+      },
+      {
+        "Property": 2000,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 50
+      }
+    ],
+    "RewardId": 29,
+    "ChipSpace": 20
+  },
+  "1010106": {
+    "Id": 1010106,
+    "Character": 10101,
+    "Stage": 6,
+    "LevelMax": 90,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 535.194
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 30.294
+      },
+      {
+        "Property": 2000,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [],
+    "RewardId": 0,
+    "ChipSpace": 20
+  },
+  "1010200": {
+    "Id": 1010200,
+    "Character": 10102,
+    "Stage": 0,
+    "LevelMax": 20,
+    "BreakRequirement": [],
+    "NewSkill": [
+      10121,
+      10122,
+      10123,
+      10126
+    ],
+    "GainProperty": [],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 5
+      }
+    ],
+    "RewardId": 24,
+    "ChipSpace": 4
+  },
+  "1010201": {
+    "Id": 1010201,
+    "Character": 10102,
+    "Stage": 1,
+    "LevelMax": 40,
+    "BreakRequirement": [],
+    "NewSkill": [
+      10124
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 605.9
+      },
+      {
+        "Property": 200,
+        "Value": 11.128
+      },
+      {
+        "Property": 800,
+        "Value": 34.131
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 15
+      }
+    ],
+    "RewardId": 25,
+    "ChipSpace": 8
+  },
+  "1010202": {
+    "Id": 1010202,
+    "Character": 10102,
+    "Stage": 2,
+    "LevelMax": 50,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 605.9
+      },
+      {
+        "Property": 200,
+        "Value": 11.128
+      },
+      {
+        "Property": 800,
+        "Value": 34.131
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 25
+      }
+    ],
+    "RewardId": 26,
+    "ChipSpace": 12
+  },
+  "1010203": {
+    "Id": 1010203,
+    "Character": 10102,
+    "Stage": 3,
+    "LevelMax": 60,
+    "BreakRequirement": [],
+    "NewSkill": [
+      10125
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 605.9
+      },
+      {
+        "Property": 200,
+        "Value": 11.128
+      },
+      {
+        "Property": 800,
+        "Value": 34.131
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 35
+      }
+    ],
+    "RewardId": 27,
+    "ChipSpace": 16
+  },
+  "1010204": {
+    "Id": 1010204,
+    "Character": 10102,
+    "Stage": 4,
+    "LevelMax": 70,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 605.9
+      },
+      {
+        "Property": 200,
+        "Value": 11.128
+      },
+      {
+        "Property": 800,
+        "Value": 34.131
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 40
+      }
+    ],
+    "RewardId": 28,
+    "ChipSpace": 20
+  },
+  "1010205": {
+    "Id": 1010205,
+    "Character": 10102,
+    "Stage": 5,
+    "LevelMax": 80,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 605.9
+      },
+      {
+        "Property": 200,
+        "Value": 11.128
+      },
+      {
+        "Property": 800,
+        "Value": 34.131
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 50
+      }
+    ],
+    "RewardId": 29,
+    "ChipSpace": 20
+  },
+  "1010206": {
+    "Id": 1010206,
+    "Character": 10102,
+    "Stage": 6,
+    "LevelMax": 90,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 605.9
+      },
+      {
+        "Property": 200,
+        "Value": 11.128
+      },
+      {
+        "Property": 800,
+        "Value": 34.131
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [],
+    "RewardId": 0,
+    "ChipSpace": 20
+  },
+  "1010300": {
+    "Id": 1010300,
+    "Character": 10103,
+    "Stage": 0,
+    "LevelMax": 20,
+    "BreakRequirement": [],
+    "NewSkill": [
+      10131,
+      10132,
+      10133,
+      10136
+    ],
+    "GainProperty": [],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 5
+      }
+    ],
+    "RewardId": 24,
+    "ChipSpace": 4
+  },
+  "1010301": {
+    "Id": 1010301,
+    "Character": 10103,
+    "Stage": 1,
+    "LevelMax": 40,
+    "BreakRequirement": [],
+    "NewSkill": [
+      10134
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 605.9
+      },
+      {
+        "Property": 200,
+        "Value": 11.128
+      },
+      {
+        "Property": 800,
+        "Value": 34.131
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 15
+      }
+    ],
+    "RewardId": 25,
+    "ChipSpace": 8
+  },
+  "1010302": {
+    "Id": 1010302,
+    "Character": 10103,
+    "Stage": 2,
+    "LevelMax": 50,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 605.9
+      },
+      {
+        "Property": 200,
+        "Value": 11.128
+      },
+      {
+        "Property": 800,
+        "Value": 34.131
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 25
+      }
+    ],
+    "RewardId": 26,
+    "ChipSpace": 12
+  },
+  "1010303": {
+    "Id": 1010303,
+    "Character": 10103,
+    "Stage": 3,
+    "LevelMax": 60,
+    "BreakRequirement": [],
+    "NewSkill": [
+      10135
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 605.9
+      },
+      {
+        "Property": 200,
+        "Value": 11.128
+      },
+      {
+        "Property": 800,
+        "Value": 34.131
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 35
+      }
+    ],
+    "RewardId": 27,
+    "ChipSpace": 16
+  },
+  "1010304": {
+    "Id": 1010304,
+    "Character": 10103,
+    "Stage": 4,
+    "LevelMax": 70,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 605.9
+      },
+      {
+        "Property": 200,
+        "Value": 11.128
+      },
+      {
+        "Property": 800,
+        "Value": 34.131
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 40
+      }
+    ],
+    "RewardId": 28,
+    "ChipSpace": 20
+  },
+  "1010305": {
+    "Id": 1010305,
+    "Character": 10103,
+    "Stage": 5,
+    "LevelMax": 80,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 605.9
+      },
+      {
+        "Property": 200,
+        "Value": 11.128
+      },
+      {
+        "Property": 800,
+        "Value": 34.131
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 50
+      }
+    ],
+    "RewardId": 29,
+    "ChipSpace": 20
+  },
+  "1010306": {
+    "Id": 1010306,
+    "Character": 10103,
+    "Stage": 6,
+    "LevelMax": 90,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 605.9
+      },
+      {
+        "Property": 200,
+        "Value": 11.128
+      },
+      {
+        "Property": 800,
+        "Value": 34.131
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [],
+    "RewardId": 0,
+    "ChipSpace": 20
+  },
+  "1010400": {
+    "Id": 1010400,
+    "Character": 10104,
+    "Stage": 0,
+    "LevelMax": 20,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 20000
+      },
+      {
+        "Id": 220141,
+        "Count": 1
+      },
+      {
+        "Id": 201001,
+        "Count": 3
+      },
+      {
+        "Id": 200020,
+        "Count": 3
+      }
+    ],
+    "NewSkill": [
+      10111,
+      10112,
+      10113,
+      10116
+    ],
+    "GainProperty": [],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 15
+      }
+    ],
+    "RewardId": 24,
+    "ChipSpace": 4
+  },
+  "1010401": {
+    "Id": 1010401,
+    "Character": 10104,
+    "Stage": 1,
+    "LevelMax": 40,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 40000
+      },
+      {
+        "Id": 200103,
+        "Count": 2
+      },
+      {
+        "Id": 230142,
+        "Count": 3
+      },
+      {
+        "Id": 201001,
+        "Count": 10
+      },
+      {
+        "Id": 200020,
+        "Count": 15
+      }
+    ],
+    "NewSkill": [
+      10114
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 535.194
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 30.294
+      },
+      {
+        "Property": 2300,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 25
+      }
+    ],
+    "RewardId": 25,
+    "ChipSpace": 8
+  },
+  "1010402": {
+    "Id": 1010402,
+    "Character": 10104,
+    "Stage": 2,
+    "LevelMax": 50,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 60000
+      },
+      {
+        "Id": 200103,
+        "Count": 4
+      },
+      {
+        "Id": 230142,
+        "Count": 6
+      },
+      {
+        "Id": 201001,
+        "Count": 20
+      },
+      {
+        "Id": 200111,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 535.194
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 30.294
+      },
+      {
+        "Property": 2300,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 30
+      }
+    ],
+    "RewardId": 26,
+    "ChipSpace": 12
+  },
+  "1010403": {
+    "Id": 1010403,
+    "Character": 10104,
+    "Stage": 3,
+    "LevelMax": 60,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 80000
+      },
+      {
+        "Id": 200103,
+        "Count": 8
+      },
+      {
+        "Id": 240143,
+        "Count": 3
+      },
+      {
+        "Id": 201001,
+        "Count": 30
+      },
+      {
+        "Id": 200111,
+        "Count": 18
+      }
+    ],
+    "NewSkill": [
+      10115
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 535.194
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 30.294
+      },
+      {
+        "Property": 2300,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 35
+      }
+    ],
+    "RewardId": 27,
+    "ChipSpace": 16
+  },
+  "1010404": {
+    "Id": 1010404,
+    "Character": 10104,
+    "Stage": 4,
+    "LevelMax": 70,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 100000
+      },
+      {
+        "Id": 200103,
+        "Count": 12
+      },
+      {
+        "Id": 240143,
+        "Count": 6
+      },
+      {
+        "Id": 201001,
+        "Count": 45
+      },
+      {
+        "Id": 200112,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 535.194
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 30.294
+      },
+      {
+        "Property": 2300,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 40
+      }
+    ],
+    "RewardId": 28,
+    "ChipSpace": 20
+  },
+  "1010405": {
+    "Id": 1010405,
+    "Character": 10104,
+    "Stage": 5,
+    "LevelMax": 80,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 120000
+      },
+      {
+        "Id": 200103,
+        "Count": 20
+      },
+      {
+        "Id": 250144,
+        "Count": 6
+      },
+      {
+        "Id": 201001,
+        "Count": 60
+      },
+      {
+        "Id": 200112,
+        "Count": 24
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 535.194
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 30.294
+      },
+      {
+        "Property": 2300,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 50
+      }
+    ],
+    "RewardId": 29,
+    "ChipSpace": 20
+  },
+  "1010406": {
+    "Id": 1010406,
+    "Character": 10104,
+    "Stage": 6,
+    "LevelMax": 90,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 535.194
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 30.294
+      },
+      {
+        "Property": 2300,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [],
+    "RewardId": 0,
+    "ChipSpace": 20
+  },
+  "1020100": {
+    "Id": 1020100,
+    "Character": 10201,
+    "Stage": 0,
+    "LevelMax": 20,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 20000
+      },
+      {
+        "Id": 220141,
+        "Count": 1
+      },
+      {
+        "Id": 201021,
+        "Count": 3
+      },
+      {
+        "Id": 200234,
+        "Count": 3
+      }
+    ],
+    "NewSkill": [
+      10211,
+      10212,
+      10213,
+      10216
+    ],
+    "GainProperty": [],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 5
+      }
+    ],
+    "RewardId": 24,
+    "ChipSpace": 4
+  },
+  "1020101": {
+    "Id": 1020101,
+    "Character": 10201,
+    "Stage": 1,
+    "LevelMax": 30,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 40000
+      },
+      {
+        "Id": 200243,
+        "Count": 2
+      },
+      {
+        "Id": 230142,
+        "Count": 3
+      },
+      {
+        "Id": 201021,
+        "Count": 10
+      },
+      {
+        "Id": 200234,
+        "Count": 15
+      }
+    ],
+    "NewSkill": [
+      10214
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 550.341
+      },
+      {
+        "Property": 200,
+        "Value": 10.556
+      },
+      {
+        "Property": 800,
+        "Value": 33.7
+      },
+      {
+        "Property": 4000,
+        "Value": 0.051
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 15
+      }
+    ],
+    "RewardId": 25,
+    "ChipSpace": 8
+  },
+  "1020102": {
+    "Id": 1020102,
+    "Character": 10201,
+    "Stage": 2,
+    "LevelMax": 40,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 60000
+      },
+      {
+        "Id": 200243,
+        "Count": 4
+      },
+      {
+        "Id": 230142,
+        "Count": 6
+      },
+      {
+        "Id": 201021,
+        "Count": 20
+      },
+      {
+        "Id": 200235,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 550.341
+      },
+      {
+        "Property": 200,
+        "Value": 10.556
+      },
+      {
+        "Property": 800,
+        "Value": 33.7
+      },
+      {
+        "Property": 4000,
+        "Value": 0.051
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 25
+      }
+    ],
+    "RewardId": 26,
+    "ChipSpace": 12
+  },
+  "1020103": {
+    "Id": 1020103,
+    "Character": 10201,
+    "Stage": 3,
+    "LevelMax": 60,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 80000
+      },
+      {
+        "Id": 200243,
+        "Count": 8
+      },
+      {
+        "Id": 240143,
+        "Count": 3
+      },
+      {
+        "Id": 201021,
+        "Count": 30
+      },
+      {
+        "Id": 200235,
+        "Count": 18
+      }
+    ],
+    "NewSkill": [
+      10215
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 550.341
+      },
+      {
+        "Property": 200,
+        "Value": 10.556
+      },
+      {
+        "Property": 800,
+        "Value": 33.7
+      },
+      {
+        "Property": 4000,
+        "Value": 0.051
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 35
+      }
+    ],
+    "RewardId": 27,
+    "ChipSpace": 16
+  },
+  "1020104": {
+    "Id": 1020104,
+    "Character": 10201,
+    "Stage": 4,
+    "LevelMax": 70,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 100000
+      },
+      {
+        "Id": 200243,
+        "Count": 12
+      },
+      {
+        "Id": 240143,
+        "Count": 6
+      },
+      {
+        "Id": 201021,
+        "Count": 45
+      },
+      {
+        "Id": 200236,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 550.341
+      },
+      {
+        "Property": 200,
+        "Value": 10.556
+      },
+      {
+        "Property": 800,
+        "Value": 33.7
+      },
+      {
+        "Property": 4000,
+        "Value": 0.051
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 40
+      }
+    ],
+    "RewardId": 28,
+    "ChipSpace": 20
+  },
+  "1020105": {
+    "Id": 1020105,
+    "Character": 10201,
+    "Stage": 5,
+    "LevelMax": 80,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 120000
+      },
+      {
+        "Id": 200243,
+        "Count": 20
+      },
+      {
+        "Id": 250144,
+        "Count": 6
+      },
+      {
+        "Id": 201021,
+        "Count": 60
+      },
+      {
+        "Id": 200236,
+        "Count": 24
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 550.341
+      },
+      {
+        "Property": 200,
+        "Value": 10.556
+      },
+      {
+        "Property": 800,
+        "Value": 33.7
+      },
+      {
+        "Property": 4000,
+        "Value": 0.051
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 50
+      }
+    ],
+    "RewardId": 29,
+    "ChipSpace": 20
+  },
+  "1020106": {
+    "Id": 1020106,
+    "Character": 10201,
+    "Stage": 6,
+    "LevelMax": 90,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 550.341
+      },
+      {
+        "Property": 200,
+        "Value": 10.556
+      },
+      {
+        "Property": 800,
+        "Value": 33.7
+      },
+      {
+        "Property": 4000,
+        "Value": 0.051
+      }
+    ],
+    "PreconditionParam": [],
+    "RewardId": 0,
+    "ChipSpace": 20
+  },
+  "1020300": {
+    "Id": 1020300,
+    "Character": 10203,
+    "Stage": 0,
+    "LevelMax": 20,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 20000
+      },
+      {
+        "Id": 220141,
+        "Count": 1
+      },
+      {
+        "Id": 201002,
+        "Count": 3
+      },
+      {
+        "Id": 200125,
+        "Count": 3
+      }
+    ],
+    "NewSkill": [
+      10211,
+      10212,
+      10213,
+      10216
+    ],
+    "GainProperty": [],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 15
+      }
+    ],
+    "RewardId": 24,
+    "ChipSpace": 4
+  },
+  "1020301": {
+    "Id": 1020301,
+    "Character": 10203,
+    "Stage": 1,
+    "LevelMax": 40,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 40000
+      },
+      {
+        "Id": 200010,
+        "Count": 2
+      },
+      {
+        "Id": 230142,
+        "Count": 3
+      },
+      {
+        "Id": 201002,
+        "Count": 10
+      },
+      {
+        "Id": 200125,
+        "Count": 15
+      }
+    ],
+    "NewSkill": [
+      10214
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 550.341
+      },
+      {
+        "Property": 200,
+        "Value": 10.556
+      },
+      {
+        "Property": 800,
+        "Value": 33.7
+      },
+      {
+        "Property": 4000,
+        "Value": 0.051
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 25
+      }
+    ],
+    "RewardId": 25,
+    "ChipSpace": 8
+  },
+  "1020302": {
+    "Id": 1020302,
+    "Character": 10203,
+    "Stage": 2,
+    "LevelMax": 50,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 60000
+      },
+      {
+        "Id": 200010,
+        "Count": 4
+      },
+      {
+        "Id": 230142,
+        "Count": 6
+      },
+      {
+        "Id": 201002,
+        "Count": 20
+      },
+      {
+        "Id": 200126,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 550.341
+      },
+      {
+        "Property": 200,
+        "Value": 10.556
+      },
+      {
+        "Property": 800,
+        "Value": 33.7
+      },
+      {
+        "Property": 4000,
+        "Value": 0.051
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 30
+      }
+    ],
+    "RewardId": 26,
+    "ChipSpace": 12
+  },
+  "1020303": {
+    "Id": 1020303,
+    "Character": 10203,
+    "Stage": 3,
+    "LevelMax": 60,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 80000
+      },
+      {
+        "Id": 200010,
+        "Count": 8
+      },
+      {
+        "Id": 240143,
+        "Count": 3
+      },
+      {
+        "Id": 201002,
+        "Count": 30
+      },
+      {
+        "Id": 200126,
+        "Count": 18
+      }
+    ],
+    "NewSkill": [
+      10215
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 550.341
+      },
+      {
+        "Property": 200,
+        "Value": 10.556
+      },
+      {
+        "Property": 800,
+        "Value": 33.7
+      },
+      {
+        "Property": 4000,
+        "Value": 0.051
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 35
+      }
+    ],
+    "RewardId": 27,
+    "ChipSpace": 16
+  },
+  "1020304": {
+    "Id": 1020304,
+    "Character": 10203,
+    "Stage": 4,
+    "LevelMax": 70,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 100000
+      },
+      {
+        "Id": 200010,
+        "Count": 12
+      },
+      {
+        "Id": 240143,
+        "Count": 6
+      },
+      {
+        "Id": 201002,
+        "Count": 45
+      },
+      {
+        "Id": 200127,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 550.341
+      },
+      {
+        "Property": 200,
+        "Value": 10.556
+      },
+      {
+        "Property": 800,
+        "Value": 33.7
+      },
+      {
+        "Property": 4000,
+        "Value": 0.051
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 40
+      }
+    ],
+    "RewardId": 28,
+    "ChipSpace": 20
+  },
+  "1020305": {
+    "Id": 1020305,
+    "Character": 10203,
+    "Stage": 5,
+    "LevelMax": 80,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 120000
+      },
+      {
+        "Id": 200010,
+        "Count": 20
+      },
+      {
+        "Id": 250144,
+        "Count": 6
+      },
+      {
+        "Id": 201002,
+        "Count": 60
+      },
+      {
+        "Id": 200127,
+        "Count": 24
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 550.341
+      },
+      {
+        "Property": 200,
+        "Value": 10.556
+      },
+      {
+        "Property": 800,
+        "Value": 33.7
+      },
+      {
+        "Property": 4000,
+        "Value": 0.051
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 50
+      }
+    ],
+    "RewardId": 29,
+    "ChipSpace": 20
+  },
+  "1020306": {
+    "Id": 1020306,
+    "Character": 10203,
+    "Stage": 6,
+    "LevelMax": 90,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 550.341
+      },
+      {
+        "Property": 200,
+        "Value": 10.556
+      },
+      {
+        "Property": 800,
+        "Value": 33.7
+      },
+      {
+        "Property": 4000,
+        "Value": 0.051
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 0,
+        "Count": 0
+      }
+    ],
+    "RewardId": 0,
+    "ChipSpace": 20
+  },
+  "1020400": {
+    "Id": 1020400,
+    "Character": 10204,
+    "Stage": 0,
+    "LevelMax": 20,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 20000
+      },
+      {
+        "Id": 220141,
+        "Count": 1
+      },
+      {
+        "Id": 201002,
+        "Count": 3
+      },
+      {
+        "Id": 200125,
+        "Count": 3
+      }
+    ],
+    "NewSkill": [
+      10211,
+      10212,
+      10213,
+      10216
+    ],
+    "GainProperty": [],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 5
+      }
+    ],
+    "RewardId": 24,
+    "ChipSpace": 4
+  },
+  "1020401": {
+    "Id": 1020401,
+    "Character": 10204,
+    "Stage": 1,
+    "LevelMax": 40,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 40000
+      },
+      {
+        "Id": 200010,
+        "Count": 2
+      },
+      {
+        "Id": 230142,
+        "Count": 3
+      },
+      {
+        "Id": 201002,
+        "Count": 10
+      },
+      {
+        "Id": 200125,
+        "Count": 15
+      }
+    ],
+    "NewSkill": [
+      10214
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 550.341
+      },
+      {
+        "Property": 200,
+        "Value": 10.556
+      },
+      {
+        "Property": 800,
+        "Value": 33.7
+      },
+      {
+        "Property": 4000,
+        "Value": 0.051
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 15
+      }
+    ],
+    "RewardId": 25,
+    "ChipSpace": 8
+  },
+  "1020402": {
+    "Id": 1020402,
+    "Character": 10204,
+    "Stage": 2,
+    "LevelMax": 50,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 60000
+      },
+      {
+        "Id": 200010,
+        "Count": 4
+      },
+      {
+        "Id": 230142,
+        "Count": 6
+      },
+      {
+        "Id": 201002,
+        "Count": 20
+      },
+      {
+        "Id": 200126,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 550.341
+      },
+      {
+        "Property": 200,
+        "Value": 10.556
+      },
+      {
+        "Property": 800,
+        "Value": 33.7
+      },
+      {
+        "Property": 4000,
+        "Value": 0.051
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 25
+      }
+    ],
+    "RewardId": 26,
+    "ChipSpace": 12
+  },
+  "1020403": {
+    "Id": 1020403,
+    "Character": 10204,
+    "Stage": 3,
+    "LevelMax": 60,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 80000
+      },
+      {
+        "Id": 200010,
+        "Count": 8
+      },
+      {
+        "Id": 240143,
+        "Count": 3
+      },
+      {
+        "Id": 201002,
+        "Count": 30
+      },
+      {
+        "Id": 200126,
+        "Count": 18
+      }
+    ],
+    "NewSkill": [
+      10215
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 550.341
+      },
+      {
+        "Property": 200,
+        "Value": 10.556
+      },
+      {
+        "Property": 800,
+        "Value": 33.7
+      },
+      {
+        "Property": 4000,
+        "Value": 0.051
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 35
+      }
+    ],
+    "RewardId": 27,
+    "ChipSpace": 16
+  },
+  "1020404": {
+    "Id": 1020404,
+    "Character": 10204,
+    "Stage": 4,
+    "LevelMax": 70,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 100000
+      },
+      {
+        "Id": 200010,
+        "Count": 12
+      },
+      {
+        "Id": 240143,
+        "Count": 6
+      },
+      {
+        "Id": 201002,
+        "Count": 45
+      },
+      {
+        "Id": 200127,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 550.341
+      },
+      {
+        "Property": 200,
+        "Value": 10.556
+      },
+      {
+        "Property": 800,
+        "Value": 33.7
+      },
+      {
+        "Property": 4000,
+        "Value": 0.051
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 40
+      }
+    ],
+    "RewardId": 28,
+    "ChipSpace": 20
+  },
+  "1020405": {
+    "Id": 1020405,
+    "Character": 10204,
+    "Stage": 5,
+    "LevelMax": 80,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 120000
+      },
+      {
+        "Id": 200010,
+        "Count": 20
+      },
+      {
+        "Id": 250144,
+        "Count": 6
+      },
+      {
+        "Id": 201002,
+        "Count": 60
+      },
+      {
+        "Id": 200127,
+        "Count": 24
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 550.341
+      },
+      {
+        "Property": 200,
+        "Value": 10.556
+      },
+      {
+        "Property": 800,
+        "Value": 33.7
+      },
+      {
+        "Property": 4000,
+        "Value": 0.051
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 50
+      }
+    ],
+    "RewardId": 29,
+    "ChipSpace": 20
+  },
+  "1020406": {
+    "Id": 1020406,
+    "Character": 10204,
+    "Stage": 6,
+    "LevelMax": 90,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 550.341
+      },
+      {
+        "Property": 200,
+        "Value": 10.556
+      },
+      {
+        "Property": 800,
+        "Value": 33.7
+      },
+      {
+        "Property": 4000,
+        "Value": 0.051
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 0,
+        "Count": 0
+      }
+    ],
+    "RewardId": 0,
+    "ChipSpace": 20
+  },
+  "1030100": {
+    "Id": 1030100,
+    "Character": 10301,
+    "Stage": 0,
+    "LevelMax": 20,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 20000
+      },
+      {
+        "Id": 220141,
+        "Count": 1
+      },
+      {
+        "Id": 201022,
+        "Count": 3
+      },
+      {
+        "Id": 200234,
+        "Count": 3
+      }
+    ],
+    "NewSkill": [
+      10311,
+      10312,
+      10313,
+      10316
+    ],
+    "GainProperty": [],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 5
+      }
+    ],
+    "RewardId": 24,
+    "ChipSpace": 4
+  },
+  "1030101": {
+    "Id": 1030101,
+    "Character": 10301,
+    "Stage": 1,
+    "LevelMax": 30,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 40000
+      },
+      {
+        "Id": 200243,
+        "Count": 2
+      },
+      {
+        "Id": 230142,
+        "Count": 3
+      },
+      {
+        "Id": 201022,
+        "Count": 10
+      },
+      {
+        "Id": 200234,
+        "Count": 15
+      }
+    ],
+    "NewSkill": [
+      10314
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 525.096
+      },
+      {
+        "Property": 200,
+        "Value": 10.44
+      },
+      {
+        "Property": 800,
+        "Value": 35.722
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 15
+      }
+    ],
+    "RewardId": 25,
+    "ChipSpace": 8
+  },
+  "1030102": {
+    "Id": 1030102,
+    "Character": 10301,
+    "Stage": 2,
+    "LevelMax": 40,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 60000
+      },
+      {
+        "Id": 200243,
+        "Count": 4
+      },
+      {
+        "Id": 230142,
+        "Count": 6
+      },
+      {
+        "Id": 201022,
+        "Count": 20
+      },
+      {
+        "Id": 200235,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 525.096
+      },
+      {
+        "Property": 200,
+        "Value": 10.44
+      },
+      {
+        "Property": 800,
+        "Value": 35.722
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 25
+      }
+    ],
+    "RewardId": 26,
+    "ChipSpace": 12
+  },
+  "1030103": {
+    "Id": 1030103,
+    "Character": 10301,
+    "Stage": 3,
+    "LevelMax": 60,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 80000
+      },
+      {
+        "Id": 200243,
+        "Count": 8
+      },
+      {
+        "Id": 240143,
+        "Count": 3
+      },
+      {
+        "Id": 201022,
+        "Count": 30
+      },
+      {
+        "Id": 200235,
+        "Count": 18
+      }
+    ],
+    "NewSkill": [
+      10315
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 525.096
+      },
+      {
+        "Property": 200,
+        "Value": 10.44
+      },
+      {
+        "Property": 800,
+        "Value": 35.722
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 35
+      }
+    ],
+    "RewardId": 27,
+    "ChipSpace": 16
+  },
+  "1030104": {
+    "Id": 1030104,
+    "Character": 10301,
+    "Stage": 4,
+    "LevelMax": 70,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 100000
+      },
+      {
+        "Id": 200243,
+        "Count": 12
+      },
+      {
+        "Id": 240143,
+        "Count": 6
+      },
+      {
+        "Id": 201022,
+        "Count": 45
+      },
+      {
+        "Id": 200236,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 525.096
+      },
+      {
+        "Property": 200,
+        "Value": 10.44
+      },
+      {
+        "Property": 800,
+        "Value": 35.722
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 40
+      }
+    ],
+    "RewardId": 28,
+    "ChipSpace": 20
+  },
+  "1030105": {
+    "Id": 1030105,
+    "Character": 10301,
+    "Stage": 5,
+    "LevelMax": 80,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 120000
+      },
+      {
+        "Id": 200243,
+        "Count": 20
+      },
+      {
+        "Id": 250144,
+        "Count": 6
+      },
+      {
+        "Id": 201022,
+        "Count": 60
+      },
+      {
+        "Id": 200236,
+        "Count": 24
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 525.096
+      },
+      {
+        "Property": 200,
+        "Value": 10.44
+      },
+      {
+        "Property": 800,
+        "Value": 35.722
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 50
+      }
+    ],
+    "RewardId": 29,
+    "ChipSpace": 20
+  },
+  "1030106": {
+    "Id": 1030106,
+    "Character": 10301,
+    "Stage": 6,
+    "LevelMax": 90,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 525.096
+      },
+      {
+        "Property": 200,
+        "Value": 10.44
+      },
+      {
+        "Property": 800,
+        "Value": 35.722
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [],
+    "RewardId": 0,
+    "ChipSpace": 20
+  },
+  "1030200": {
+    "Id": 1030200,
+    "Character": 10302,
+    "Stage": 0,
+    "LevelMax": 20,
+    "BreakRequirement": [],
+    "NewSkill": [
+      10311,
+      10312,
+      10313,
+      10316
+    ],
+    "GainProperty": [],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 5
+      }
+    ],
+    "RewardId": 24,
+    "ChipSpace": 4
+  },
+  "1030201": {
+    "Id": 1030201,
+    "Character": 10302,
+    "Stage": 1,
+    "LevelMax": 30,
+    "BreakRequirement": [],
+    "NewSkill": [
+      10314
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 520.047
+      },
+      {
+        "Property": 200,
+        "Value": 11.136
+      },
+      {
+        "Property": 800,
+        "Value": 30.906
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 15
+      }
+    ],
+    "RewardId": 25,
+    "ChipSpace": 8
+  },
+  "1030202": {
+    "Id": 1030202,
+    "Character": 10302,
+    "Stage": 2,
+    "LevelMax": 40,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 520.047
+      },
+      {
+        "Property": 200,
+        "Value": 11.136
+      },
+      {
+        "Property": 800,
+        "Value": 30.906
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 25
+      }
+    ],
+    "RewardId": 26,
+    "ChipSpace": 12
+  },
+  "1030203": {
+    "Id": 1030203,
+    "Character": 10302,
+    "Stage": 3,
+    "LevelMax": 60,
+    "BreakRequirement": [],
+    "NewSkill": [
+      10315
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 520.047
+      },
+      {
+        "Property": 200,
+        "Value": 11.136
+      },
+      {
+        "Property": 800,
+        "Value": 30.906
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 35
+      }
+    ],
+    "RewardId": 27,
+    "ChipSpace": 16
+  },
+  "1030204": {
+    "Id": 1030204,
+    "Character": 10302,
+    "Stage": 4,
+    "LevelMax": 70,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 520.047
+      },
+      {
+        "Property": 200,
+        "Value": 11.136
+      },
+      {
+        "Property": 800,
+        "Value": 30.906
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 40
+      }
+    ],
+    "RewardId": 28,
+    "ChipSpace": 20
+  },
+  "1030205": {
+    "Id": 1030205,
+    "Character": 10302,
+    "Stage": 5,
+    "LevelMax": 80,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 520.047
+      },
+      {
+        "Property": 200,
+        "Value": 11.136
+      },
+      {
+        "Property": 800,
+        "Value": 30.906
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 50
+      }
+    ],
+    "RewardId": 29,
+    "ChipSpace": 20
+  },
+  "1030206": {
+    "Id": 1030206,
+    "Character": 10302,
+    "Stage": 6,
+    "LevelMax": 90,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 520.047
+      },
+      {
+        "Property": 200,
+        "Value": 11.136
+      },
+      {
+        "Property": 800,
+        "Value": 30.906
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 0,
+        "Count": 0
+      }
+    ],
+    "RewardId": 0,
+    "ChipSpace": 20
+  },
+  "1040100": {
+    "Id": 1040100,
+    "Character": 10401,
+    "Stage": 0,
+    "LevelMax": 20,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 20000
+      },
+      {
+        "Id": 220141,
+        "Count": 1
+      },
+      {
+        "Id": 201001,
+        "Count": 3
+      },
+      {
+        "Id": 200020,
+        "Count": 3
+      }
+    ],
+    "NewSkill": [
+      10411,
+      10412,
+      10413,
+      10416
+    ],
+    "GainProperty": [],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 5
+      }
+    ],
+    "RewardId": 24,
+    "ChipSpace": 4
+  },
+  "1040101": {
+    "Id": 1040101,
+    "Character": 10401,
+    "Stage": 1,
+    "LevelMax": 30,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 40000
+      },
+      {
+        "Id": 200010,
+        "Count": 2
+      },
+      {
+        "Id": 230142,
+        "Count": 3
+      },
+      {
+        "Id": 201001,
+        "Count": 10
+      },
+      {
+        "Id": 200020,
+        "Count": 15
+      }
+    ],
+    "NewSkill": [
+      10414
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 599.841
+      },
+      {
+        "Property": 200,
+        "Value": 11.544
+      },
+      {
+        "Property": 800,
+        "Value": 33.03
+      },
+      {
+        "Property": 802,
+        "Value": 0.057
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 15
+      }
+    ],
+    "RewardId": 25,
+    "ChipSpace": 8
+  },
+  "1040102": {
+    "Id": 1040102,
+    "Character": 10401,
+    "Stage": 2,
+    "LevelMax": 40,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 60000
+      },
+      {
+        "Id": 200010,
+        "Count": 4
+      },
+      {
+        "Id": 230142,
+        "Count": 6
+      },
+      {
+        "Id": 201001,
+        "Count": 20
+      },
+      {
+        "Id": 200111,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 599.841
+      },
+      {
+        "Property": 200,
+        "Value": 11.544
+      },
+      {
+        "Property": 800,
+        "Value": 33.03
+      },
+      {
+        "Property": 802,
+        "Value": 0.057
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 25
+      }
+    ],
+    "RewardId": 26,
+    "ChipSpace": 12
+  },
+  "1040103": {
+    "Id": 1040103,
+    "Character": 10401,
+    "Stage": 3,
+    "LevelMax": 60,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 80000
+      },
+      {
+        "Id": 200010,
+        "Count": 8
+      },
+      {
+        "Id": 240143,
+        "Count": 3
+      },
+      {
+        "Id": 201001,
+        "Count": 30
+      },
+      {
+        "Id": 200111,
+        "Count": 18
+      }
+    ],
+    "NewSkill": [
+      10415
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 599.841
+      },
+      {
+        "Property": 200,
+        "Value": 11.544
+      },
+      {
+        "Property": 800,
+        "Value": 33.03
+      },
+      {
+        "Property": 802,
+        "Value": 0.057
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 35
+      }
+    ],
+    "RewardId": 27,
+    "ChipSpace": 16
+  },
+  "1040104": {
+    "Id": 1040104,
+    "Character": 10401,
+    "Stage": 4,
+    "LevelMax": 70,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 100000
+      },
+      {
+        "Id": 200010,
+        "Count": 12
+      },
+      {
+        "Id": 240143,
+        "Count": 6
+      },
+      {
+        "Id": 201001,
+        "Count": 45
+      },
+      {
+        "Id": 200112,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 599.841
+      },
+      {
+        "Property": 200,
+        "Value": 11.544
+      },
+      {
+        "Property": 800,
+        "Value": 33.03
+      },
+      {
+        "Property": 802,
+        "Value": 0.057
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 40
+      }
+    ],
+    "RewardId": 28,
+    "ChipSpace": 20
+  },
+  "1040105": {
+    "Id": 1040105,
+    "Character": 10401,
+    "Stage": 5,
+    "LevelMax": 80,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 120000
+      },
+      {
+        "Id": 200010,
+        "Count": 20
+      },
+      {
+        "Id": 250144,
+        "Count": 6
+      },
+      {
+        "Id": 201001,
+        "Count": 60
+      },
+      {
+        "Id": 200112,
+        "Count": 24
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 599.841
+      },
+      {
+        "Property": 200,
+        "Value": 11.544
+      },
+      {
+        "Property": 800,
+        "Value": 33.03
+      },
+      {
+        "Property": 802,
+        "Value": 0.057
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 50
+      }
+    ],
+    "RewardId": 29,
+    "ChipSpace": 20
+  },
+  "1040106": {
+    "Id": 1040106,
+    "Character": 10401,
+    "Stage": 6,
+    "LevelMax": 90,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 599.841
+      },
+      {
+        "Property": 200,
+        "Value": 11.544
+      },
+      {
+        "Property": 800,
+        "Value": 33.03
+      },
+      {
+        "Property": 802,
+        "Value": 0.057
+      }
+    ],
+    "PreconditionParam": [],
+    "RewardId": 0,
+    "ChipSpace": 20
+  },
+  "1040200": {
+    "Id": 1040200,
+    "Character": 10402,
+    "Stage": 0,
+    "LevelMax": 20,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 20000
+      },
+      {
+        "Id": 220141,
+        "Count": 1
+      },
+      {
+        "Id": 201015,
+        "Count": 3
+      },
+      {
+        "Id": 200162,
+        "Count": 3
+      }
+    ],
+    "NewSkill": [
+      10411,
+      10412,
+      10413,
+      10416
+    ],
+    "GainProperty": [],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 5
+      }
+    ],
+    "RewardId": 24,
+    "ChipSpace": 4
+  },
+  "1040201": {
+    "Id": 1040201,
+    "Character": 10402,
+    "Stage": 1,
+    "LevelMax": 40,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 40000
+      },
+      {
+        "Id": 200010,
+        "Count": 2
+      },
+      {
+        "Id": 230142,
+        "Count": 3
+      },
+      {
+        "Id": 201015,
+        "Count": 10
+      },
+      {
+        "Id": 200162,
+        "Count": 15
+      }
+    ],
+    "NewSkill": [
+      10414
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 599.841
+      },
+      {
+        "Property": 200,
+        "Value": 11.544
+      },
+      {
+        "Property": 800,
+        "Value": 33.03
+      },
+      {
+        "Property": 802,
+        "Value": 0.057
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 15
+      }
+    ],
+    "RewardId": 25,
+    "ChipSpace": 8
+  },
+  "1040202": {
+    "Id": 1040202,
+    "Character": 10402,
+    "Stage": 2,
+    "LevelMax": 50,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 60000
+      },
+      {
+        "Id": 200010,
+        "Count": 4
+      },
+      {
+        "Id": 230142,
+        "Count": 6
+      },
+      {
+        "Id": 201015,
+        "Count": 20
+      },
+      {
+        "Id": 200163,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 599.841
+      },
+      {
+        "Property": 200,
+        "Value": 11.544
+      },
+      {
+        "Property": 800,
+        "Value": 33.03
+      },
+      {
+        "Property": 802,
+        "Value": 0.057
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 25
+      }
+    ],
+    "RewardId": 26,
+    "ChipSpace": 12
+  },
+  "1040203": {
+    "Id": 1040203,
+    "Character": 10402,
+    "Stage": 3,
+    "LevelMax": 60,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 80000
+      },
+      {
+        "Id": 200010,
+        "Count": 8
+      },
+      {
+        "Id": 240143,
+        "Count": 3
+      },
+      {
+        "Id": 201015,
+        "Count": 30
+      },
+      {
+        "Id": 200163,
+        "Count": 18
+      }
+    ],
+    "NewSkill": [
+      10415
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 599.841
+      },
+      {
+        "Property": 200,
+        "Value": 11.544
+      },
+      {
+        "Property": 800,
+        "Value": 33.03
+      },
+      {
+        "Property": 802,
+        "Value": 0.057
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 35
+      }
+    ],
+    "RewardId": 27,
+    "ChipSpace": 16
+  },
+  "1040204": {
+    "Id": 1040204,
+    "Character": 10402,
+    "Stage": 4,
+    "LevelMax": 70,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 100000
+      },
+      {
+        "Id": 200010,
+        "Count": 12
+      },
+      {
+        "Id": 240143,
+        "Count": 6
+      },
+      {
+        "Id": 201015,
+        "Count": 45
+      },
+      {
+        "Id": 200164,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 599.841
+      },
+      {
+        "Property": 200,
+        "Value": 11.544
+      },
+      {
+        "Property": 800,
+        "Value": 33.03
+      },
+      {
+        "Property": 802,
+        "Value": 0.057
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 40
+      }
+    ],
+    "RewardId": 28,
+    "ChipSpace": 20
+  },
+  "1040205": {
+    "Id": 1040205,
+    "Character": 10402,
+    "Stage": 5,
+    "LevelMax": 80,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 120000
+      },
+      {
+        "Id": 200010,
+        "Count": 20
+      },
+      {
+        "Id": 250144,
+        "Count": 6
+      },
+      {
+        "Id": 201015,
+        "Count": 60
+      },
+      {
+        "Id": 200164,
+        "Count": 24
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 599.841
+      },
+      {
+        "Property": 200,
+        "Value": 11.544
+      },
+      {
+        "Property": 800,
+        "Value": 33.03
+      },
+      {
+        "Property": 802,
+        "Value": 0.057
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 50
+      }
+    ],
+    "RewardId": 29,
+    "ChipSpace": 20
+  },
+  "1040206": {
+    "Id": 1040206,
+    "Character": 10402,
+    "Stage": 6,
+    "LevelMax": 90,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 599.841
+      },
+      {
+        "Property": 200,
+        "Value": 11.544
+      },
+      {
+        "Property": 800,
+        "Value": 33.03
+      },
+      {
+        "Property": 802,
+        "Value": 0.057
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 0,
+        "Count": 0
+      }
+    ],
+    "RewardId": 0,
+    "ChipSpace": 20
+  },
+  "1050100": {
+    "Id": 1050100,
+    "Character": 10501,
+    "Stage": 0,
+    "LevelMax": 20,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 20000
+      },
+      {
+        "Id": 220141,
+        "Count": 1
+      },
+      {
+        "Id": 201002,
+        "Count": 3
+      },
+      {
+        "Id": 200177,
+        "Count": 3
+      }
+    ],
+    "NewSkill": [
+      10511,
+      10512,
+      10513,
+      10516
+    ],
+    "GainProperty": [],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 5
+      }
+    ],
+    "RewardId": 24,
+    "ChipSpace": 4
+  },
+  "1050101": {
+    "Id": 1050101,
+    "Character": 10501,
+    "Stage": 1,
+    "LevelMax": 30,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 40000
+      },
+      {
+        "Id": 200103,
+        "Count": 2
+      },
+      {
+        "Id": 230142,
+        "Count": 3
+      },
+      {
+        "Id": 201002,
+        "Count": 10
+      },
+      {
+        "Id": 200177,
+        "Count": 15
+      }
+    ],
+    "NewSkill": [
+      10514
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 671.22
+      },
+      {
+        "Property": 200,
+        "Value": 16.335
+      },
+      {
+        "Property": 800,
+        "Value": 31.68
+      },
+      {
+        "Property": 2200,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 15
+      }
+    ],
+    "RewardId": 25,
+    "ChipSpace": 8
+  },
+  "1050102": {
+    "Id": 1050102,
+    "Character": 10501,
+    "Stage": 2,
+    "LevelMax": 40,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 60000
+      },
+      {
+        "Id": 200103,
+        "Count": 4
+      },
+      {
+        "Id": 230142,
+        "Count": 6
+      },
+      {
+        "Id": 201002,
+        "Count": 20
+      },
+      {
+        "Id": 200178,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 671.22
+      },
+      {
+        "Property": 200,
+        "Value": 16.335
+      },
+      {
+        "Property": 800,
+        "Value": 31.68
+      },
+      {
+        "Property": 2200,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 25
+      }
+    ],
+    "RewardId": 26,
+    "ChipSpace": 12
+  },
+  "1050103": {
+    "Id": 1050103,
+    "Character": 10501,
+    "Stage": 3,
+    "LevelMax": 60,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 80000
+      },
+      {
+        "Id": 200103,
+        "Count": 8
+      },
+      {
+        "Id": 240143,
+        "Count": 3
+      },
+      {
+        "Id": 201002,
+        "Count": 30
+      },
+      {
+        "Id": 200178,
+        "Count": 18
+      }
+    ],
+    "NewSkill": [
+      10515
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 671.22
+      },
+      {
+        "Property": 200,
+        "Value": 16.335
+      },
+      {
+        "Property": 800,
+        "Value": 31.68
+      },
+      {
+        "Property": 2200,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 35
+      }
+    ],
+    "RewardId": 27,
+    "ChipSpace": 16
+  },
+  "1050104": {
+    "Id": 1050104,
+    "Character": 10501,
+    "Stage": 4,
+    "LevelMax": 70,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 100000
+      },
+      {
+        "Id": 200103,
+        "Count": 12
+      },
+      {
+        "Id": 240143,
+        "Count": 6
+      },
+      {
+        "Id": 201002,
+        "Count": 45
+      },
+      {
+        "Id": 200179,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 671.22
+      },
+      {
+        "Property": 200,
+        "Value": 16.335
+      },
+      {
+        "Property": 800,
+        "Value": 31.68
+      },
+      {
+        "Property": 2200,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 40
+      }
+    ],
+    "RewardId": 28,
+    "ChipSpace": 20
+  },
+  "1050105": {
+    "Id": 1050105,
+    "Character": 10501,
+    "Stage": 5,
+    "LevelMax": 80,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 120000
+      },
+      {
+        "Id": 200103,
+        "Count": 20
+      },
+      {
+        "Id": 250144,
+        "Count": 6
+      },
+      {
+        "Id": 201002,
+        "Count": 60
+      },
+      {
+        "Id": 200179,
+        "Count": 24
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 671.22
+      },
+      {
+        "Property": 200,
+        "Value": 16.335
+      },
+      {
+        "Property": 800,
+        "Value": 31.68
+      },
+      {
+        "Property": 2200,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 50
+      }
+    ],
+    "RewardId": 29,
+    "ChipSpace": 20
+  },
+  "1050106": {
+    "Id": 1050106,
+    "Character": 10501,
+    "Stage": 6,
+    "LevelMax": 90,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 671.22
+      },
+      {
+        "Property": 200,
+        "Value": 16.335
+      },
+      {
+        "Property": 800,
+        "Value": 31.68
+      },
+      {
+        "Property": 2200,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [],
+    "RewardId": 0,
+    "ChipSpace": 20
+  },
+  "1050200": {
+    "Id": 1050200,
+    "Character": 10502,
+    "Stage": 0,
+    "LevelMax": 20,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 20000
+      },
+      {
+        "Id": 220141,
+        "Count": 1
+      },
+      {
+        "Id": 201016,
+        "Count": 3
+      },
+      {
+        "Id": 200198,
+        "Count": 3
+      }
+    ],
+    "NewSkill": [
+      10511,
+      10512,
+      10513,
+      10516
+    ],
+    "GainProperty": [],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 5
+      }
+    ],
+    "RewardId": 24,
+    "ChipSpace": 4
+  },
+  "1050201": {
+    "Id": 1050201,
+    "Character": 10502,
+    "Stage": 1,
+    "LevelMax": 30,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 40000
+      },
+      {
+        "Id": 200103,
+        "Count": 2
+      },
+      {
+        "Id": 230142,
+        "Count": 3
+      },
+      {
+        "Id": 201016,
+        "Count": 10
+      },
+      {
+        "Id": 200198,
+        "Count": 15
+      }
+    ],
+    "NewSkill": [
+      10514
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 570.537
+      },
+      {
+        "Property": 200,
+        "Value": 11.484
+      },
+      {
+        "Property": 800,
+        "Value": 26.928
+      },
+      {
+        "Property": 2200,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 15
+      }
+    ],
+    "RewardId": 25,
+    "ChipSpace": 8
+  },
+  "1050202": {
+    "Id": 1050202,
+    "Character": 10502,
+    "Stage": 2,
+    "LevelMax": 40,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 60000
+      },
+      {
+        "Id": 200103,
+        "Count": 4
+      },
+      {
+        "Id": 230142,
+        "Count": 6
+      },
+      {
+        "Id": 201016,
+        "Count": 20
+      },
+      {
+        "Id": 200199,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 570.537
+      },
+      {
+        "Property": 200,
+        "Value": 11.484
+      },
+      {
+        "Property": 800,
+        "Value": 26.928
+      },
+      {
+        "Property": 2200,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 25
+      }
+    ],
+    "RewardId": 26,
+    "ChipSpace": 12
+  },
+  "1050203": {
+    "Id": 1050203,
+    "Character": 10502,
+    "Stage": 3,
+    "LevelMax": 60,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 80000
+      },
+      {
+        "Id": 200103,
+        "Count": 8
+      },
+      {
+        "Id": 240143,
+        "Count": 3
+      },
+      {
+        "Id": 201016,
+        "Count": 30
+      },
+      {
+        "Id": 200199,
+        "Count": 18
+      }
+    ],
+    "NewSkill": [
+      10515
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 570.537
+      },
+      {
+        "Property": 200,
+        "Value": 11.484
+      },
+      {
+        "Property": 800,
+        "Value": 26.928
+      },
+      {
+        "Property": 2200,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 35
+      }
+    ],
+    "RewardId": 27,
+    "ChipSpace": 16
+  },
+  "1050204": {
+    "Id": 1050204,
+    "Character": 10502,
+    "Stage": 4,
+    "LevelMax": 70,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 100000
+      },
+      {
+        "Id": 200103,
+        "Count": 12
+      },
+      {
+        "Id": 240143,
+        "Count": 6
+      },
+      {
+        "Id": 201016,
+        "Count": 45
+      },
+      {
+        "Id": 200200,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 570.537
+      },
+      {
+        "Property": 200,
+        "Value": 11.484
+      },
+      {
+        "Property": 800,
+        "Value": 26.928
+      },
+      {
+        "Property": 2200,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 40
+      }
+    ],
+    "RewardId": 28,
+    "ChipSpace": 20
+  },
+  "1050205": {
+    "Id": 1050205,
+    "Character": 10502,
+    "Stage": 5,
+    "LevelMax": 80,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 120000
+      },
+      {
+        "Id": 200103,
+        "Count": 20
+      },
+      {
+        "Id": 250144,
+        "Count": 6
+      },
+      {
+        "Id": 201016,
+        "Count": 60
+      },
+      {
+        "Id": 200200,
+        "Count": 24
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 570.537
+      },
+      {
+        "Property": 200,
+        "Value": 11.484
+      },
+      {
+        "Property": 800,
+        "Value": 26.928
+      },
+      {
+        "Property": 2200,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 50
+      }
+    ],
+    "RewardId": 29,
+    "ChipSpace": 20
+  },
+  "1050206": {
+    "Id": 1050206,
+    "Character": 10502,
+    "Stage": 6,
+    "LevelMax": 90,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 570.537
+      },
+      {
+        "Property": 200,
+        "Value": 11.484
+      },
+      {
+        "Property": 800,
+        "Value": 26.928
+      },
+      {
+        "Property": 2200,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 0,
+        "Count": 0
+      }
+    ],
+    "RewardId": 0,
+    "ChipSpace": 20
+  },
+  "1060100": {
+    "Id": 1060100,
+    "Character": 10601,
+    "Stage": 0,
+    "LevelMax": 20,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 20000
+      },
+      {
+        "Id": 220141,
+        "Count": 1
+      },
+      {
+        "Id": 201020,
+        "Count": 3
+      },
+      {
+        "Id": 200222,
+        "Count": 3
+      }
+    ],
+    "NewSkill": [
+      10111,
+      10112,
+      10113,
+      10116
+    ],
+    "GainProperty": [],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 5
+      }
+    ],
+    "RewardId": 24,
+    "ChipSpace": 4
+  },
+  "1060101": {
+    "Id": 1060101,
+    "Character": 10601,
+    "Stage": 1,
+    "LevelMax": 30,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 40000
+      },
+      {
+        "Id": 200243,
+        "Count": 2
+      },
+      {
+        "Id": 230142,
+        "Count": 3
+      },
+      {
+        "Id": 201020,
+        "Count": 10
+      },
+      {
+        "Id": 200222,
+        "Count": 15
+      }
+    ],
+    "NewSkill": [
+      10114
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 535.194
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 30.294
+      },
+      {
+        "Property": 2000,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 15
+      }
+    ],
+    "RewardId": 25,
+    "ChipSpace": 8
+  },
+  "1060102": {
+    "Id": 1060102,
+    "Character": 10601,
+    "Stage": 2,
+    "LevelMax": 40,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 60000
+      },
+      {
+        "Id": 200243,
+        "Count": 4
+      },
+      {
+        "Id": 230142,
+        "Count": 6
+      },
+      {
+        "Id": 201020,
+        "Count": 20
+      },
+      {
+        "Id": 200223,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 535.194
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 30.294
+      },
+      {
+        "Property": 2000,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 25
+      }
+    ],
+    "RewardId": 26,
+    "ChipSpace": 12
+  },
+  "1060103": {
+    "Id": 1060103,
+    "Character": 10601,
+    "Stage": 3,
+    "LevelMax": 60,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 80000
+      },
+      {
+        "Id": 200243,
+        "Count": 8
+      },
+      {
+        "Id": 240143,
+        "Count": 3
+      },
+      {
+        "Id": 201020,
+        "Count": 30
+      },
+      {
+        "Id": 200223,
+        "Count": 18
+      }
+    ],
+    "NewSkill": [
+      10115
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 535.194
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 30.294
+      },
+      {
+        "Property": 2000,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 35
+      }
+    ],
+    "RewardId": 27,
+    "ChipSpace": 16
+  },
+  "1060104": {
+    "Id": 1060104,
+    "Character": 10601,
+    "Stage": 4,
+    "LevelMax": 70,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 100000
+      },
+      {
+        "Id": 200243,
+        "Count": 12
+      },
+      {
+        "Id": 240143,
+        "Count": 6
+      },
+      {
+        "Id": 201020,
+        "Count": 45
+      },
+      {
+        "Id": 200224,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 535.194
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 30.294
+      },
+      {
+        "Property": 2000,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 40
+      }
+    ],
+    "RewardId": 28,
+    "ChipSpace": 20
+  },
+  "1060105": {
+    "Id": 1060105,
+    "Character": 10601,
+    "Stage": 5,
+    "LevelMax": 80,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 120000
+      },
+      {
+        "Id": 200243,
+        "Count": 20
+      },
+      {
+        "Id": 250144,
+        "Count": 6
+      },
+      {
+        "Id": 201020,
+        "Count": 60
+      },
+      {
+        "Id": 200224,
+        "Count": 24
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 535.194
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 30.294
+      },
+      {
+        "Property": 2000,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 50
+      }
+    ],
+    "RewardId": 29,
+    "ChipSpace": 20
+  },
+  "1060106": {
+    "Id": 1060106,
+    "Character": 10601,
+    "Stage": 6,
+    "LevelMax": 90,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 535.194
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 30.294
+      },
+      {
+        "Property": 2000,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [],
+    "RewardId": 0,
+    "ChipSpace": 20
+  },
+  "1070100": {
+    "Id": 1070100,
+    "Character": 10701,
+    "Stage": 0,
+    "LevelMax": 20,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 20000
+      },
+      {
+        "Id": 220141,
+        "Count": 1
+      },
+      {
+        "Id": 201001,
+        "Count": 3
+      },
+      {
+        "Id": 200147,
+        "Count": 3
+      }
+    ],
+    "NewSkill": [
+      10711,
+      10712,
+      10713,
+      10716
+    ],
+    "GainProperty": [],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 5
+      }
+    ],
+    "RewardId": 24,
+    "ChipSpace": 4
+  },
+  "1070101": {
+    "Id": 1070101,
+    "Character": 10701,
+    "Stage": 1,
+    "LevelMax": 40,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 40000
+      },
+      {
+        "Id": 200010,
+        "Count": 2
+      },
+      {
+        "Id": 230142,
+        "Count": 3
+      },
+      {
+        "Id": 201001,
+        "Count": 10
+      },
+      {
+        "Id": 200147,
+        "Count": 15
+      }
+    ],
+    "NewSkill": [
+      10714
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 593.406
+      },
+      {
+        "Property": 200,
+        "Value": 15.18
+      },
+      {
+        "Property": 800,
+        "Value": 29.682
+      },
+      {
+        "Property": 300,
+        "Value": 0.036
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 15
+      }
+    ],
+    "RewardId": 25,
+    "ChipSpace": 8
+  },
+  "1070102": {
+    "Id": 1070102,
+    "Character": 10701,
+    "Stage": 2,
+    "LevelMax": 50,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 60000
+      },
+      {
+        "Id": 200010,
+        "Count": 4
+      },
+      {
+        "Id": 230142,
+        "Count": 6
+      },
+      {
+        "Id": 201001,
+        "Count": 20
+      },
+      {
+        "Id": 200148,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 593.406
+      },
+      {
+        "Property": 200,
+        "Value": 15.18
+      },
+      {
+        "Property": 800,
+        "Value": 29.682
+      },
+      {
+        "Property": 300,
+        "Value": 0.036
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 25
+      }
+    ],
+    "RewardId": 26,
+    "ChipSpace": 12
+  },
+  "1070103": {
+    "Id": 1070103,
+    "Character": 10701,
+    "Stage": 3,
+    "LevelMax": 60,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 80000
+      },
+      {
+        "Id": 200010,
+        "Count": 8
+      },
+      {
+        "Id": 240143,
+        "Count": 3
+      },
+      {
+        "Id": 201001,
+        "Count": 30
+      },
+      {
+        "Id": 200148,
+        "Count": 18
+      }
+    ],
+    "NewSkill": [
+      10715
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 593.406
+      },
+      {
+        "Property": 200,
+        "Value": 15.18
+      },
+      {
+        "Property": 800,
+        "Value": 29.682
+      },
+      {
+        "Property": 300,
+        "Value": 0.036
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 35
+      }
+    ],
+    "RewardId": 27,
+    "ChipSpace": 16
+  },
+  "1070104": {
+    "Id": 1070104,
+    "Character": 10701,
+    "Stage": 4,
+    "LevelMax": 70,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 100000
+      },
+      {
+        "Id": 200010,
+        "Count": 12
+      },
+      {
+        "Id": 240143,
+        "Count": 6
+      },
+      {
+        "Id": 201001,
+        "Count": 45
+      },
+      {
+        "Id": 200149,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 593.406
+      },
+      {
+        "Property": 200,
+        "Value": 15.18
+      },
+      {
+        "Property": 800,
+        "Value": 29.682
+      },
+      {
+        "Property": 300,
+        "Value": 0.036
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 40
+      }
+    ],
+    "RewardId": 28,
+    "ChipSpace": 20
+  },
+  "1070105": {
+    "Id": 1070105,
+    "Character": 10701,
+    "Stage": 5,
+    "LevelMax": 80,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 120000
+      },
+      {
+        "Id": 200010,
+        "Count": 20
+      },
+      {
+        "Id": 250144,
+        "Count": 6
+      },
+      {
+        "Id": 201001,
+        "Count": 60
+      },
+      {
+        "Id": 200149,
+        "Count": 24
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 593.406
+      },
+      {
+        "Property": 200,
+        "Value": 15.18
+      },
+      {
+        "Property": 800,
+        "Value": 29.682
+      },
+      {
+        "Property": 300,
+        "Value": 0.036
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 50
+      }
+    ],
+    "RewardId": 29,
+    "ChipSpace": 20
+  },
+  "1070106": {
+    "Id": 1070106,
+    "Character": 10701,
+    "Stage": 6,
+    "LevelMax": 90,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 593.406
+      },
+      {
+        "Property": 200,
+        "Value": 15.18
+      },
+      {
+        "Property": 800,
+        "Value": 29.682
+      },
+      {
+        "Property": 300,
+        "Value": 0.036
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 0,
+        "Count": 0
+      }
+    ],
+    "RewardId": 0,
+    "ChipSpace": 20
+  },
+  "1070200": {
+    "Id": 1070200,
+    "Character": 10702,
+    "Stage": 0,
+    "LevelMax": 20,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 20000
+      },
+      {
+        "Id": 220141,
+        "Count": 1
+      },
+      {
+        "Id": 201001,
+        "Count": 3
+      },
+      {
+        "Id": 200147,
+        "Count": 3
+      }
+    ],
+    "NewSkill": [
+      10711,
+      10712,
+      10713,
+      10716
+    ],
+    "GainProperty": [],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 5
+      }
+    ],
+    "RewardId": 24,
+    "ChipSpace": 4
+  },
+  "1070201": {
+    "Id": 1070201,
+    "Character": 10702,
+    "Stage": 1,
+    "LevelMax": 30,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 40000
+      },
+      {
+        "Id": 200010,
+        "Count": 2
+      },
+      {
+        "Id": 230142,
+        "Count": 3
+      },
+      {
+        "Id": 201001,
+        "Count": 10
+      },
+      {
+        "Id": 200147,
+        "Count": 15
+      }
+    ],
+    "NewSkill": [
+      10714
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 593.406
+      },
+      {
+        "Property": 200,
+        "Value": 15.18
+      },
+      {
+        "Property": 800,
+        "Value": 29.682
+      },
+      {
+        "Property": 300,
+        "Value": 0.036
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 15
+      }
+    ],
+    "RewardId": 25,
+    "ChipSpace": 8
+  },
+  "1070202": {
+    "Id": 1070202,
+    "Character": 10702,
+    "Stage": 2,
+    "LevelMax": 40,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 60000
+      },
+      {
+        "Id": 200010,
+        "Count": 4
+      },
+      {
+        "Id": 230142,
+        "Count": 6
+      },
+      {
+        "Id": 201001,
+        "Count": 20
+      },
+      {
+        "Id": 200148,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 593.406
+      },
+      {
+        "Property": 200,
+        "Value": 15.18
+      },
+      {
+        "Property": 800,
+        "Value": 29.682
+      },
+      {
+        "Property": 300,
+        "Value": 0.036
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 25
+      }
+    ],
+    "RewardId": 26,
+    "ChipSpace": 12
+  },
+  "1070203": {
+    "Id": 1070203,
+    "Character": 10702,
+    "Stage": 3,
+    "LevelMax": 60,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 80000
+      },
+      {
+        "Id": 200010,
+        "Count": 8
+      },
+      {
+        "Id": 240143,
+        "Count": 3
+      },
+      {
+        "Id": 201001,
+        "Count": 30
+      },
+      {
+        "Id": 200148,
+        "Count": 18
+      }
+    ],
+    "NewSkill": [
+      10715
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 593.406
+      },
+      {
+        "Property": 200,
+        "Value": 15.18
+      },
+      {
+        "Property": 800,
+        "Value": 29.682
+      },
+      {
+        "Property": 300,
+        "Value": 0.036
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 35
+      }
+    ],
+    "RewardId": 27,
+    "ChipSpace": 16
+  },
+  "1070204": {
+    "Id": 1070204,
+    "Character": 10702,
+    "Stage": 4,
+    "LevelMax": 70,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 100000
+      },
+      {
+        "Id": 200010,
+        "Count": 12
+      },
+      {
+        "Id": 240143,
+        "Count": 6
+      },
+      {
+        "Id": 201001,
+        "Count": 45
+      },
+      {
+        "Id": 200149,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 593.406
+      },
+      {
+        "Property": 200,
+        "Value": 15.18
+      },
+      {
+        "Property": 800,
+        "Value": 29.682
+      },
+      {
+        "Property": 300,
+        "Value": 0.036
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 40
+      }
+    ],
+    "RewardId": 28,
+    "ChipSpace": 20
+  },
+  "1070205": {
+    "Id": 1070205,
+    "Character": 10702,
+    "Stage": 5,
+    "LevelMax": 80,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 120000
+      },
+      {
+        "Id": 200010,
+        "Count": 20
+      },
+      {
+        "Id": 250144,
+        "Count": 6
+      },
+      {
+        "Id": 201001,
+        "Count": 60
+      },
+      {
+        "Id": 200149,
+        "Count": 24
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 593.406
+      },
+      {
+        "Property": 200,
+        "Value": 15.18
+      },
+      {
+        "Property": 800,
+        "Value": 29.682
+      },
+      {
+        "Property": 300,
+        "Value": 0.036
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 50
+      }
+    ],
+    "RewardId": 29,
+    "ChipSpace": 20
+  },
+  "1070206": {
+    "Id": 1070206,
+    "Character": 10702,
+    "Stage": 6,
+    "LevelMax": 90,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 593.406
+      },
+      {
+        "Property": 200,
+        "Value": 15.18
+      },
+      {
+        "Property": 800,
+        "Value": 29.682
+      },
+      {
+        "Property": 300,
+        "Value": 0.036
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 0,
+        "Count": 0
+      }
+    ],
+    "RewardId": 0,
+    "ChipSpace": 20
+  },
+  "1080100": {
+    "Id": 1080100,
+    "Character": 10801,
+    "Stage": 0,
+    "LevelMax": 20,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 20000
+      },
+      {
+        "Id": 220141,
+        "Count": 1
+      },
+      {
+        "Id": 201002,
+        "Count": 3
+      },
+      {
+        "Id": 200116,
+        "Count": 3
+      }
+    ],
+    "NewSkill": [
+      10811,
+      10812,
+      10813,
+      10816
+    ],
+    "GainProperty": [],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 5
+      }
+    ],
+    "RewardId": 24,
+    "ChipSpace": 4
+  },
+  "1080101": {
+    "Id": 1080101,
+    "Character": 10801,
+    "Stage": 1,
+    "LevelMax": 30,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 40000
+      },
+      {
+        "Id": 200103,
+        "Count": 2
+      },
+      {
+        "Id": 230142,
+        "Count": 3
+      },
+      {
+        "Id": 201002,
+        "Count": 10
+      },
+      {
+        "Id": 200116,
+        "Count": 15
+      }
+    ],
+    "NewSkill": [
+      10814
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 521.074
+      },
+      {
+        "Property": 200,
+        "Value": 11.752
+      },
+      {
+        "Property": 800,
+        "Value": 37.067
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 15
+      }
+    ],
+    "RewardId": 25,
+    "ChipSpace": 8
+  },
+  "1080102": {
+    "Id": 1080102,
+    "Character": 10801,
+    "Stage": 2,
+    "LevelMax": 40,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 60000
+      },
+      {
+        "Id": 200103,
+        "Count": 4
+      },
+      {
+        "Id": 230142,
+        "Count": 6
+      },
+      {
+        "Id": 201002,
+        "Count": 20
+      },
+      {
+        "Id": 200117,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 521.074
+      },
+      {
+        "Property": 200,
+        "Value": 11.752
+      },
+      {
+        "Property": 800,
+        "Value": 37.067
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 25
+      }
+    ],
+    "RewardId": 26,
+    "ChipSpace": 12
+  },
+  "1080103": {
+    "Id": 1080103,
+    "Character": 10801,
+    "Stage": 3,
+    "LevelMax": 60,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 80000
+      },
+      {
+        "Id": 200103,
+        "Count": 8
+      },
+      {
+        "Id": 240143,
+        "Count": 3
+      },
+      {
+        "Id": 201002,
+        "Count": 30
+      },
+      {
+        "Id": 200117,
+        "Count": 18
+      }
+    ],
+    "NewSkill": [
+      10815
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 521.074
+      },
+      {
+        "Property": 200,
+        "Value": 11.752
+      },
+      {
+        "Property": 800,
+        "Value": 37.067
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 35
+      }
+    ],
+    "RewardId": 27,
+    "ChipSpace": 16
+  },
+  "1080104": {
+    "Id": 1080104,
+    "Character": 10801,
+    "Stage": 4,
+    "LevelMax": 70,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 100000
+      },
+      {
+        "Id": 200103,
+        "Count": 12
+      },
+      {
+        "Id": 240143,
+        "Count": 6
+      },
+      {
+        "Id": 201002,
+        "Count": 45
+      },
+      {
+        "Id": 200118,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 521.074
+      },
+      {
+        "Property": 200,
+        "Value": 11.752
+      },
+      {
+        "Property": 800,
+        "Value": 37.067
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 40
+      }
+    ],
+    "RewardId": 28,
+    "ChipSpace": 20
+  },
+  "1080105": {
+    "Id": 1080105,
+    "Character": 10801,
+    "Stage": 5,
+    "LevelMax": 80,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 120000
+      },
+      {
+        "Id": 200103,
+        "Count": 20
+      },
+      {
+        "Id": 250144,
+        "Count": 6
+      },
+      {
+        "Id": 201002,
+        "Count": 60
+      },
+      {
+        "Id": 200118,
+        "Count": 24
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 521.074
+      },
+      {
+        "Property": 200,
+        "Value": 11.752
+      },
+      {
+        "Property": 800,
+        "Value": 37.067
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 50
+      }
+    ],
+    "RewardId": 29,
+    "ChipSpace": 20
+  },
+  "1080106": {
+    "Id": 1080106,
+    "Character": 10801,
+    "Stage": 6,
+    "LevelMax": 90,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 521.074
+      },
+      {
+        "Property": 200,
+        "Value": 11.752
+      },
+      {
+        "Property": 800,
+        "Value": 37.067
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 0,
+        "Count": 0
+      }
+    ],
+    "RewardId": 0,
+    "ChipSpace": 20
+  },
+  "1020200": {
+    "Id": 1020200,
+    "Character": 10202,
+    "Stage": 0,
+    "LevelMax": 20,
+    "BreakRequirement": [],
+    "NewSkill": [
+      10221,
+      10222,
+      10223,
+      10226
+    ],
+    "GainProperty": [],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 5
+      }
+    ],
+    "RewardId": 24,
+    "ChipSpace": 4
+  },
+  "1020201": {
+    "Id": 1020201,
+    "Character": 10202,
+    "Stage": 1,
+    "LevelMax": 30,
+    "BreakRequirement": [],
+    "NewSkill": [
+      10224
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 587.723
+      },
+      {
+        "Property": 200,
+        "Value": 11.752
+      },
+      {
+        "Property": 800,
+        "Value": 33.03
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 15
+      }
+    ],
+    "RewardId": 25,
+    "ChipSpace": 8
+  },
+  "1020202": {
+    "Id": 1020202,
+    "Character": 10202,
+    "Stage": 2,
+    "LevelMax": 40,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 587.723
+      },
+      {
+        "Property": 200,
+        "Value": 11.752
+      },
+      {
+        "Property": 800,
+        "Value": 33.03
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 25
+      }
+    ],
+    "RewardId": 26,
+    "ChipSpace": 12
+  },
+  "1020203": {
+    "Id": 1020203,
+    "Character": 10202,
+    "Stage": 3,
+    "LevelMax": 60,
+    "BreakRequirement": [],
+    "NewSkill": [
+      10225
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 587.723
+      },
+      {
+        "Property": 200,
+        "Value": 11.752
+      },
+      {
+        "Property": 800,
+        "Value": 33.03
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 35
+      }
+    ],
+    "RewardId": 27,
+    "ChipSpace": 16
+  },
+  "1020204": {
+    "Id": 1020204,
+    "Character": 10202,
+    "Stage": 4,
+    "LevelMax": 70,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 587.723
+      },
+      {
+        "Property": 200,
+        "Value": 11.752
+      },
+      {
+        "Property": 800,
+        "Value": 33.03
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 40
+      }
+    ],
+    "RewardId": 28,
+    "ChipSpace": 20
+  },
+  "1020205": {
+    "Id": 1020205,
+    "Character": 10202,
+    "Stage": 5,
+    "LevelMax": 80,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 587.723
+      },
+      {
+        "Property": 200,
+        "Value": 11.752
+      },
+      {
+        "Property": 800,
+        "Value": 33.03
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 50
+      }
+    ],
+    "RewardId": 29,
+    "ChipSpace": 20
+  },
+  "1020206": {
+    "Id": 1020206,
+    "Character": 10202,
+    "Stage": 6,
+    "LevelMax": 90,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 587.723
+      },
+      {
+        "Property": 200,
+        "Value": 11.752
+      },
+      {
+        "Property": 800,
+        "Value": 33.03
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 0,
+        "Count": 0
+      }
+    ],
+    "RewardId": 0,
+    "ChipSpace": 20
+  },
+  "1090100": {
+    "Id": 1090100,
+    "Character": 10901,
+    "Stage": 0,
+    "LevelMax": 20,
+    "BreakRequirement": [],
+    "NewSkill": [
+      10911,
+      10912,
+      10913,
+      10916
+    ],
+    "GainProperty": [],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 5
+      }
+    ],
+    "RewardId": 24,
+    "ChipSpace": 4
+  },
+  "1090101": {
+    "Id": 1090101,
+    "Character": 10901,
+    "Stage": 1,
+    "LevelMax": 40,
+    "BreakRequirement": [],
+    "NewSkill": [
+      10914
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 677.16
+      },
+      {
+        "Property": 200,
+        "Value": 15.18
+      },
+      {
+        "Property": 800,
+        "Value": 33.84
+      },
+      {
+        "Property": 102,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 15
+      }
+    ],
+    "RewardId": 25,
+    "ChipSpace": 8
+  },
+  "1090102": {
+    "Id": 1090102,
+    "Character": 10901,
+    "Stage": 2,
+    "LevelMax": 50,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 677.16
+      },
+      {
+        "Property": 200,
+        "Value": 15.18
+      },
+      {
+        "Property": 800,
+        "Value": 33.84
+      },
+      {
+        "Property": 102,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 25
+      }
+    ],
+    "RewardId": 26,
+    "ChipSpace": 12
+  },
+  "1090103": {
+    "Id": 1090103,
+    "Character": 10901,
+    "Stage": 3,
+    "LevelMax": 60,
+    "BreakRequirement": [],
+    "NewSkill": [
+      10915
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 677.16
+      },
+      {
+        "Property": 200,
+        "Value": 15.18
+      },
+      {
+        "Property": 800,
+        "Value": 33.84
+      },
+      {
+        "Property": 102,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 35
+      }
+    ],
+    "RewardId": 27,
+    "ChipSpace": 16
+  },
+  "1090104": {
+    "Id": 1090104,
+    "Character": 10901,
+    "Stage": 4,
+    "LevelMax": 70,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 677.16
+      },
+      {
+        "Property": 200,
+        "Value": 15.18
+      },
+      {
+        "Property": 800,
+        "Value": 33.84
+      },
+      {
+        "Property": 102,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 40
+      }
+    ],
+    "RewardId": 28,
+    "ChipSpace": 20
+  },
+  "1090105": {
+    "Id": 1090105,
+    "Character": 10901,
+    "Stage": 5,
+    "LevelMax": 80,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 677.16
+      },
+      {
+        "Property": 200,
+        "Value": 15.18
+      },
+      {
+        "Property": 800,
+        "Value": 33.84
+      },
+      {
+        "Property": 102,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 50
+      }
+    ],
+    "RewardId": 29,
+    "ChipSpace": 20
+  },
+  "1090106": {
+    "Id": 1090106,
+    "Character": 10901,
+    "Stage": 6,
+    "LevelMax": 90,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 677.16
+      },
+      {
+        "Property": 200,
+        "Value": 15.18
+      },
+      {
+        "Property": 800,
+        "Value": 33.84
+      },
+      {
+        "Property": 102,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 0,
+        "Count": 0
+      }
+    ],
+    "RewardId": 0,
+    "ChipSpace": 20
+  },
+  "1100100": {
+    "Id": 1100100,
+    "Character": 11001,
+    "Stage": 0,
+    "LevelMax": 20,
+    "BreakRequirement": [],
+    "NewSkill": [
+      11011,
+      11012,
+      11013,
+      11016
+    ],
+    "GainProperty": [],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 5
+      }
+    ],
+    "RewardId": 24,
+    "ChipSpace": 4
+  },
+  "1100101": {
+    "Id": 1100101,
+    "Character": 11001,
+    "Stage": 1,
+    "LevelMax": 30,
+    "BreakRequirement": [],
+    "NewSkill": [
+      11014
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 655.776
+      },
+      {
+        "Property": 200,
+        "Value": 15.198
+      },
+      {
+        "Property": 800,
+        "Value": 45.792
+      },
+      {
+        "Property": 102,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 15
+      }
+    ],
+    "RewardId": 25,
+    "ChipSpace": 8
+  },
+  "1100102": {
+    "Id": 1100102,
+    "Character": 11001,
+    "Stage": 2,
+    "LevelMax": 40,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 655.776
+      },
+      {
+        "Property": 200,
+        "Value": 15.198
+      },
+      {
+        "Property": 800,
+        "Value": 45.792
+      },
+      {
+        "Property": 102,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 25
+      }
+    ],
+    "RewardId": 26,
+    "ChipSpace": 12
+  },
+  "1100103": {
+    "Id": 1100103,
+    "Character": 11001,
+    "Stage": 3,
+    "LevelMax": 60,
+    "BreakRequirement": [],
+    "NewSkill": [
+      11015
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 655.776
+      },
+      {
+        "Property": 200,
+        "Value": 15.198
+      },
+      {
+        "Property": 800,
+        "Value": 45.792
+      },
+      {
+        "Property": 102,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 35
+      }
+    ],
+    "RewardId": 27,
+    "ChipSpace": 16
+  },
+  "1100104": {
+    "Id": 1100104,
+    "Character": 11001,
+    "Stage": 4,
+    "LevelMax": 70,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 655.776
+      },
+      {
+        "Property": 200,
+        "Value": 15.198
+      },
+      {
+        "Property": 800,
+        "Value": 45.792
+      },
+      {
+        "Property": 102,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 40
+      }
+    ],
+    "RewardId": 28,
+    "ChipSpace": 20
+  },
+  "1100105": {
+    "Id": 1100105,
+    "Character": 11001,
+    "Stage": 5,
+    "LevelMax": 80,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 655.776
+      },
+      {
+        "Property": 200,
+        "Value": 15.198
+      },
+      {
+        "Property": 800,
+        "Value": 45.792
+      },
+      {
+        "Property": 102,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 50
+      }
+    ],
+    "RewardId": 29,
+    "ChipSpace": 20
+  },
+  "1100106": {
+    "Id": 1100106,
+    "Character": 11001,
+    "Stage": 6,
+    "LevelMax": 90,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 655.776
+      },
+      {
+        "Property": 200,
+        "Value": 15.198
+      },
+      {
+        "Property": 800,
+        "Value": 45.792
+      },
+      {
+        "Property": 102,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 0,
+        "Count": 0
+      }
+    ],
+    "RewardId": 0,
+    "ChipSpace": 20
+  },
+  "1110100": {
+    "Id": 1110100,
+    "Character": 11101,
+    "Stage": 0,
+    "LevelMax": 20,
+    "BreakRequirement": [],
+    "NewSkill": [
+      11111,
+      11112,
+      11113,
+      11116
+    ],
+    "GainProperty": [],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 5
+      }
+    ],
+    "RewardId": 24,
+    "ChipSpace": 4
+  },
+  "1110101": {
+    "Id": 1110101,
+    "Character": 11101,
+    "Stage": 1,
+    "LevelMax": 30,
+    "BreakRequirement": [],
+    "NewSkill": [
+      11114
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 653.4
+      },
+      {
+        "Property": 200,
+        "Value": 16.17
+      },
+      {
+        "Property": 800,
+        "Value": 36.432
+      },
+      {
+        "Property": 102,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 15
+      }
+    ],
+    "RewardId": 25,
+    "ChipSpace": 8
+  },
+  "1110102": {
+    "Id": 1110102,
+    "Character": 11101,
+    "Stage": 2,
+    "LevelMax": 40,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 653.4
+      },
+      {
+        "Property": 200,
+        "Value": 16.17
+      },
+      {
+        "Property": 800,
+        "Value": 36.432
+      },
+      {
+        "Property": 102,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 25
+      }
+    ],
+    "RewardId": 26,
+    "ChipSpace": 12
+  },
+  "1110103": {
+    "Id": 1110103,
+    "Character": 11101,
+    "Stage": 3,
+    "LevelMax": 60,
+    "BreakRequirement": [],
+    "NewSkill": [
+      11115
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 653.4
+      },
+      {
+        "Property": 200,
+        "Value": 16.17
+      },
+      {
+        "Property": 800,
+        "Value": 36.432
+      },
+      {
+        "Property": 102,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 35
+      }
+    ],
+    "RewardId": 27,
+    "ChipSpace": 16
+  },
+  "1110104": {
+    "Id": 1110104,
+    "Character": 11101,
+    "Stage": 4,
+    "LevelMax": 70,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 653.4
+      },
+      {
+        "Property": 200,
+        "Value": 16.17
+      },
+      {
+        "Property": 800,
+        "Value": 36.432
+      },
+      {
+        "Property": 102,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 40
+      }
+    ],
+    "RewardId": 28,
+    "ChipSpace": 20
+  },
+  "1110105": {
+    "Id": 1110105,
+    "Character": 11101,
+    "Stage": 5,
+    "LevelMax": 80,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 653.4
+      },
+      {
+        "Property": 200,
+        "Value": 16.17
+      },
+      {
+        "Property": 800,
+        "Value": 36.432
+      },
+      {
+        "Property": 102,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 50
+      }
+    ],
+    "RewardId": 29,
+    "ChipSpace": 20
+  },
+  "1110106": {
+    "Id": 1110106,
+    "Character": 11101,
+    "Stage": 6,
+    "LevelMax": 90,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 653.4
+      },
+      {
+        "Property": 200,
+        "Value": 16.17
+      },
+      {
+        "Property": 800,
+        "Value": 36.432
+      },
+      {
+        "Property": 102,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 0,
+        "Count": 0
+      }
+    ],
+    "RewardId": 0,
+    "ChipSpace": 20
+  },
+  "1120100": {
+    "Id": 1120100,
+    "Character": 11201,
+    "Stage": 0,
+    "LevelMax": 20,
+    "BreakRequirement": [],
+    "NewSkill": [
+      11211,
+      11212,
+      11213,
+      11216
+    ],
+    "GainProperty": [],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 5
+      }
+    ],
+    "RewardId": 24,
+    "ChipSpace": 4
+  },
+  "1120101": {
+    "Id": 1120101,
+    "Character": 11201,
+    "Stage": 1,
+    "LevelMax": 30,
+    "BreakRequirement": [],
+    "NewSkill": [
+      11214
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 525.096
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 34.037
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 15
+      }
+    ],
+    "RewardId": 25,
+    "ChipSpace": 8
+  },
+  "1120102": {
+    "Id": 1120102,
+    "Character": 11201,
+    "Stage": 2,
+    "LevelMax": 40,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 525.096
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 34.037
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 25
+      }
+    ],
+    "RewardId": 26,
+    "ChipSpace": 12
+  },
+  "1120103": {
+    "Id": 1120103,
+    "Character": 11201,
+    "Stage": 3,
+    "LevelMax": 60,
+    "BreakRequirement": [],
+    "NewSkill": [
+      11215
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 525.096
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 34.037
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 35
+      }
+    ],
+    "RewardId": 27,
+    "ChipSpace": 16
+  },
+  "1120104": {
+    "Id": 1120104,
+    "Character": 11201,
+    "Stage": 4,
+    "LevelMax": 70,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 525.096
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 34.037
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 40
+      }
+    ],
+    "RewardId": 28,
+    "ChipSpace": 20
+  },
+  "1120105": {
+    "Id": 1120105,
+    "Character": 11201,
+    "Stage": 5,
+    "LevelMax": 80,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 525.096
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 34.037
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 50
+      }
+    ],
+    "RewardId": 29,
+    "ChipSpace": 20
+  },
+  "1120106": {
+    "Id": 1120106,
+    "Character": 11201,
+    "Stage": 6,
+    "LevelMax": 90,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 525.096
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 34.037
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 0,
+        "Count": 0
+      }
+    ],
+    "RewardId": 0,
+    "ChipSpace": 20
+  },
+  "1130100": {
+    "Id": 1130100,
+    "Character": 11301,
+    "Stage": 0,
+    "LevelMax": 20,
+    "BreakRequirement": [],
+    "NewSkill": [
+      11311,
+      11312,
+      11313,
+      11316
+    ],
+    "GainProperty": [],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 5
+      }
+    ],
+    "RewardId": 24,
+    "ChipSpace": 4
+  },
+  "1130101": {
+    "Id": 1130101,
+    "Character": 11301,
+    "Stage": 1,
+    "LevelMax": 40,
+    "BreakRequirement": [],
+    "NewSkill": [
+      11314
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 629.64
+      },
+      {
+        "Property": 200,
+        "Value": 15.015
+      },
+      {
+        "Property": 800,
+        "Value": 40.788
+      },
+      {
+        "Property": 102,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 15
+      }
+    ],
+    "RewardId": 25,
+    "ChipSpace": 8
+  },
+  "1130102": {
+    "Id": 1130102,
+    "Character": 11301,
+    "Stage": 2,
+    "LevelMax": 50,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 629.64
+      },
+      {
+        "Property": 200,
+        "Value": 15.015
+      },
+      {
+        "Property": 800,
+        "Value": 40.788
+      },
+      {
+        "Property": 102,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 25
+      }
+    ],
+    "RewardId": 26,
+    "ChipSpace": 12
+  },
+  "1130103": {
+    "Id": 1130103,
+    "Character": 11301,
+    "Stage": 3,
+    "LevelMax": 60,
+    "BreakRequirement": [],
+    "NewSkill": [
+      11315
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 629.64
+      },
+      {
+        "Property": 200,
+        "Value": 15.015
+      },
+      {
+        "Property": 800,
+        "Value": 40.788
+      },
+      {
+        "Property": 102,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 35
+      }
+    ],
+    "RewardId": 27,
+    "ChipSpace": 16
+  },
+  "1130104": {
+    "Id": 1130104,
+    "Character": 11301,
+    "Stage": 4,
+    "LevelMax": 70,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 629.64
+      },
+      {
+        "Property": 200,
+        "Value": 15.015
+      },
+      {
+        "Property": 800,
+        "Value": 40.788
+      },
+      {
+        "Property": 102,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 40
+      }
+    ],
+    "RewardId": 28,
+    "ChipSpace": 20
+  },
+  "1130105": {
+    "Id": 1130105,
+    "Character": 11301,
+    "Stage": 5,
+    "LevelMax": 80,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 629.64
+      },
+      {
+        "Property": 200,
+        "Value": 15.015
+      },
+      {
+        "Property": 800,
+        "Value": 40.788
+      },
+      {
+        "Property": 102,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 50
+      }
+    ],
+    "RewardId": 29,
+    "ChipSpace": 20
+  },
+  "1130106": {
+    "Id": 1130106,
+    "Character": 11301,
+    "Stage": 6,
+    "LevelMax": 90,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 629.64
+      },
+      {
+        "Property": 200,
+        "Value": 15.015
+      },
+      {
+        "Property": 800,
+        "Value": 40.788
+      },
+      {
+        "Property": 102,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 0,
+        "Count": 0
+      }
+    ],
+    "RewardId": 0,
+    "ChipSpace": 20
+  },
+  "1140100": {
+    "Id": 1140100,
+    "Character": 11401,
+    "Stage": 0,
+    "LevelMax": 20,
+    "BreakRequirement": [],
+    "NewSkill": [
+      10311,
+      10312,
+      10313,
+      10316
+    ],
+    "GainProperty": [],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 5
+      }
+    ],
+    "RewardId": 24,
+    "ChipSpace": 4
+  },
+  "1140101": {
+    "Id": 1140101,
+    "Character": 11401,
+    "Stage": 1,
+    "LevelMax": 30,
+    "BreakRequirement": [],
+    "NewSkill": [
+      10314
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 599.94
+      },
+      {
+        "Property": 200,
+        "Value": 15.015
+      },
+      {
+        "Property": 800,
+        "Value": 38.88
+      },
+      {
+        "Property": 102,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 15
+      }
+    ],
+    "RewardId": 25,
+    "ChipSpace": 8
+  },
+  "1140102": {
+    "Id": 1140102,
+    "Character": 11401,
+    "Stage": 2,
+    "LevelMax": 40,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 599.94
+      },
+      {
+        "Property": 200,
+        "Value": 15.015
+      },
+      {
+        "Property": 800,
+        "Value": 38.88
+      },
+      {
+        "Property": 102,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 25
+      }
+    ],
+    "RewardId": 26,
+    "ChipSpace": 12
+  },
+  "1140103": {
+    "Id": 1140103,
+    "Character": 11401,
+    "Stage": 3,
+    "LevelMax": 60,
+    "BreakRequirement": [],
+    "NewSkill": [
+      10315
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 599.94
+      },
+      {
+        "Property": 200,
+        "Value": 15.015
+      },
+      {
+        "Property": 800,
+        "Value": 38.88
+      },
+      {
+        "Property": 102,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 35
+      }
+    ],
+    "RewardId": 27,
+    "ChipSpace": 16
+  },
+  "1140104": {
+    "Id": 1140104,
+    "Character": 11401,
+    "Stage": 4,
+    "LevelMax": 70,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 599.94
+      },
+      {
+        "Property": 200,
+        "Value": 15.015
+      },
+      {
+        "Property": 800,
+        "Value": 38.88
+      },
+      {
+        "Property": 102,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 40
+      }
+    ],
+    "RewardId": 28,
+    "ChipSpace": 20
+  },
+  "1140105": {
+    "Id": 1140105,
+    "Character": 11401,
+    "Stage": 5,
+    "LevelMax": 80,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 599.94
+      },
+      {
+        "Property": 200,
+        "Value": 15.015
+      },
+      {
+        "Property": 800,
+        "Value": 38.88
+      },
+      {
+        "Property": 102,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 50
+      }
+    ],
+    "RewardId": 29,
+    "ChipSpace": 20
+  },
+  "1140106": {
+    "Id": 1140106,
+    "Character": 11401,
+    "Stage": 6,
+    "LevelMax": 90,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 599.94
+      },
+      {
+        "Property": 200,
+        "Value": 15.015
+      },
+      {
+        "Property": 800,
+        "Value": 38.88
+      },
+      {
+        "Property": 102,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 0,
+        "Count": 0
+      }
+    ],
+    "RewardId": 0,
+    "ChipSpace": 20
+  },
+  "1150100": {
+    "Id": 1150100,
+    "Character": 11501,
+    "Stage": 0,
+    "LevelMax": 20,
+    "BreakRequirement": [],
+    "NewSkill": [
+      11511,
+      11512,
+      11513,
+      11516
+    ],
+    "GainProperty": [],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 5
+      }
+    ],
+    "RewardId": 24,
+    "ChipSpace": 4
+  },
+  "1150101": {
+    "Id": 1150101,
+    "Character": 11501,
+    "Stage": 1,
+    "LevelMax": 30,
+    "BreakRequirement": [],
+    "NewSkill": [
+      11514
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 545.31
+      },
+      {
+        "Property": 200,
+        "Value": 11.336
+      },
+      {
+        "Property": 800,
+        "Value": 37.067
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 15
+      }
+    ],
+    "RewardId": 25,
+    "ChipSpace": 8
+  },
+  "1150102": {
+    "Id": 1150102,
+    "Character": 11501,
+    "Stage": 2,
+    "LevelMax": 40,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 545.31
+      },
+      {
+        "Property": 200,
+        "Value": 11.336
+      },
+      {
+        "Property": 800,
+        "Value": 37.067
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 25
+      }
+    ],
+    "RewardId": 26,
+    "ChipSpace": 12
+  },
+  "1150103": {
+    "Id": 1150103,
+    "Character": 11501,
+    "Stage": 3,
+    "LevelMax": 60,
+    "BreakRequirement": [],
+    "NewSkill": [
+      11515
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 545.31
+      },
+      {
+        "Property": 200,
+        "Value": 11.336
+      },
+      {
+        "Property": 800,
+        "Value": 37.067
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 35
+      }
+    ],
+    "RewardId": 27,
+    "ChipSpace": 16
+  },
+  "1150104": {
+    "Id": 1150104,
+    "Character": 11501,
+    "Stage": 4,
+    "LevelMax": 70,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 545.31
+      },
+      {
+        "Property": 200,
+        "Value": 11.336
+      },
+      {
+        "Property": 800,
+        "Value": 37.067
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 40
+      }
+    ],
+    "RewardId": 28,
+    "ChipSpace": 20
+  },
+  "1150105": {
+    "Id": 1150105,
+    "Character": 11501,
+    "Stage": 5,
+    "LevelMax": 80,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 545.31
+      },
+      {
+        "Property": 200,
+        "Value": 11.336
+      },
+      {
+        "Property": 800,
+        "Value": 37.067
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 50
+      }
+    ],
+    "RewardId": 29,
+    "ChipSpace": 20
+  },
+  "1150106": {
+    "Id": 1150106,
+    "Character": 11501,
+    "Stage": 6,
+    "LevelMax": 90,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 545.31
+      },
+      {
+        "Property": 200,
+        "Value": 11.336
+      },
+      {
+        "Property": 800,
+        "Value": 37.067
+      },
+      {
+        "Property": 102,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 0,
+        "Count": 0
+      }
+    ],
+    "RewardId": 0,
+    "ChipSpace": 20
+  },
+  "1080200": {
+    "Id": 1080200,
+    "Character": 10802,
+    "Stage": 0,
+    "LevelMax": 20,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 20000
+      },
+      {
+        "Id": 220141,
+        "Count": 1
+      },
+      {
+        "Id": 201002,
+        "Count": 3
+      },
+      {
+        "Id": 200177,
+        "Count": 3
+      }
+    ],
+    "NewSkill": [
+      10801,
+      10802,
+      10803,
+      10804,
+      10805,
+      10806,
+      10811,
+      10812,
+      10813,
+      10814,
+      10815,
+      10816,
+      10817,
+      10818,
+      10819,
+      10820,
+      10821
+    ],
+    "GainProperty": [],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 5
+      }
+    ],
+    "RewardId": 24,
+    "ChipSpace": 4
+  },
+  "1080201": {
+    "Id": 1080201,
+    "Character": 10802,
+    "Stage": 1,
+    "LevelMax": 30,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 40000
+      },
+      {
+        "Id": 200103,
+        "Count": 2
+      },
+      {
+        "Id": 230142,
+        "Count": 3
+      },
+      {
+        "Id": 201002,
+        "Count": 10
+      },
+      {
+        "Id": 200177,
+        "Count": 15
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 671.22
+      },
+      {
+        "Property": 200,
+        "Value": 16.335
+      },
+      {
+        "Property": 800,
+        "Value": 31.68
+      },
+      {
+        "Property": 2200,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 15
+      }
+    ],
+    "RewardId": 25,
+    "ChipSpace": 8
+  },
+  "1080202": {
+    "Id": 1080202,
+    "Character": 10802,
+    "Stage": 2,
+    "LevelMax": 40,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 60000
+      },
+      {
+        "Id": 200103,
+        "Count": 4
+      },
+      {
+        "Id": 230142,
+        "Count": 6
+      },
+      {
+        "Id": 201002,
+        "Count": 20
+      },
+      {
+        "Id": 200178,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 671.22
+      },
+      {
+        "Property": 200,
+        "Value": 16.335
+      },
+      {
+        "Property": 800,
+        "Value": 31.68
+      },
+      {
+        "Property": 2200,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 25
+      }
+    ],
+    "RewardId": 26,
+    "ChipSpace": 12
+  },
+  "1080203": {
+    "Id": 1080203,
+    "Character": 10802,
+    "Stage": 3,
+    "LevelMax": 60,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 80000
+      },
+      {
+        "Id": 200103,
+        "Count": 8
+      },
+      {
+        "Id": 240143,
+        "Count": 3
+      },
+      {
+        "Id": 201002,
+        "Count": 30
+      },
+      {
+        "Id": 200178,
+        "Count": 18
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 671.22
+      },
+      {
+        "Property": 200,
+        "Value": 16.335
+      },
+      {
+        "Property": 800,
+        "Value": 31.68
+      },
+      {
+        "Property": 2200,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 35
+      }
+    ],
+    "RewardId": 27,
+    "ChipSpace": 16
+  },
+  "1080204": {
+    "Id": 1080204,
+    "Character": 10802,
+    "Stage": 4,
+    "LevelMax": 70,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 100000
+      },
+      {
+        "Id": 200103,
+        "Count": 12
+      },
+      {
+        "Id": 240143,
+        "Count": 6
+      },
+      {
+        "Id": 201002,
+        "Count": 45
+      },
+      {
+        "Id": 200179,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 671.22
+      },
+      {
+        "Property": 200,
+        "Value": 16.335
+      },
+      {
+        "Property": 800,
+        "Value": 31.68
+      },
+      {
+        "Property": 2200,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 40
+      }
+    ],
+    "RewardId": 28,
+    "ChipSpace": 20
+  },
+  "1080205": {
+    "Id": 1080205,
+    "Character": 10802,
+    "Stage": 5,
+    "LevelMax": 80,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 120000
+      },
+      {
+        "Id": 200103,
+        "Count": 20
+      },
+      {
+        "Id": 250144,
+        "Count": 6
+      },
+      {
+        "Id": 201002,
+        "Count": 60
+      },
+      {
+        "Id": 200179,
+        "Count": 24
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 671.22
+      },
+      {
+        "Property": 200,
+        "Value": 16.335
+      },
+      {
+        "Property": 800,
+        "Value": 31.68
+      },
+      {
+        "Property": 2200,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 50
+      }
+    ],
+    "RewardId": 29,
+    "ChipSpace": 20
+  },
+  "1080206": {
+    "Id": 1080206,
+    "Character": 10802,
+    "Stage": 6,
+    "LevelMax": 90,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 671.22
+      },
+      {
+        "Property": 200,
+        "Value": 16.335
+      },
+      {
+        "Property": 800,
+        "Value": 31.68
+      },
+      {
+        "Property": 2200,
+        "Value": 0.055
+      }
+    ],
+    "PreconditionParam": [],
+    "RewardId": 0,
+    "ChipSpace": 20
+  },
+  "1160100": {
+    "Id": 1160100,
+    "Character": 11601,
+    "Stage": 0,
+    "LevelMax": 20,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 20000
+      },
+      {
+        "Id": 220141,
+        "Count": 1
+      },
+      {
+        "Id": 201015,
+        "Count": 3
+      },
+      {
+        "Id": 200125,
+        "Count": 3
+      }
+    ],
+    "NewSkill": [
+      10111,
+      10112,
+      10113,
+      10116
+    ],
+    "GainProperty": [],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 5
+      }
+    ],
+    "RewardId": 24,
+    "ChipSpace": 4
+  },
+  "1160101": {
+    "Id": 1160101,
+    "Character": 11601,
+    "Stage": 1,
+    "LevelMax": 30,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 40000
+      },
+      {
+        "Id": 200010,
+        "Count": 2
+      },
+      {
+        "Id": 230142,
+        "Count": 3
+      },
+      {
+        "Id": 201015,
+        "Count": 10
+      },
+      {
+        "Id": 200125,
+        "Count": 15
+      }
+    ],
+    "NewSkill": [
+      10114
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 677.16
+      },
+      {
+        "Property": 200,
+        "Value": 15.18
+      },
+      {
+        "Property": 800,
+        "Value": 33.84
+      },
+      {
+        "Property": 300,
+        "Value": 0.036
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 15
+      }
+    ],
+    "RewardId": 25,
+    "ChipSpace": 8
+  },
+  "1160102": {
+    "Id": 1160102,
+    "Character": 11601,
+    "Stage": 2,
+    "LevelMax": 40,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 60000
+      },
+      {
+        "Id": 200010,
+        "Count": 4
+      },
+      {
+        "Id": 230142,
+        "Count": 6
+      },
+      {
+        "Id": 201015,
+        "Count": 20
+      },
+      {
+        "Id": 200126,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 677.16
+      },
+      {
+        "Property": 200,
+        "Value": 15.18
+      },
+      {
+        "Property": 800,
+        "Value": 33.84
+      },
+      {
+        "Property": 300,
+        "Value": 0.036
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 25
+      }
+    ],
+    "RewardId": 26,
+    "ChipSpace": 12
+  },
+  "1160103": {
+    "Id": 1160103,
+    "Character": 11601,
+    "Stage": 3,
+    "LevelMax": 60,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 80000
+      },
+      {
+        "Id": 200010,
+        "Count": 8
+      },
+      {
+        "Id": 240143,
+        "Count": 3
+      },
+      {
+        "Id": 201015,
+        "Count": 30
+      },
+      {
+        "Id": 200126,
+        "Count": 18
+      }
+    ],
+    "NewSkill": [
+      10115
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 677.16
+      },
+      {
+        "Property": 200,
+        "Value": 15.18
+      },
+      {
+        "Property": 800,
+        "Value": 33.84
+      },
+      {
+        "Property": 300,
+        "Value": 0.036
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 35
+      }
+    ],
+    "RewardId": 27,
+    "ChipSpace": 16
+  },
+  "1160104": {
+    "Id": 1160104,
+    "Character": 11601,
+    "Stage": 4,
+    "LevelMax": 70,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 100000
+      },
+      {
+        "Id": 200010,
+        "Count": 12
+      },
+      {
+        "Id": 240143,
+        "Count": 6
+      },
+      {
+        "Id": 201015,
+        "Count": 45
+      },
+      {
+        "Id": 200127,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 677.16
+      },
+      {
+        "Property": 200,
+        "Value": 15.18
+      },
+      {
+        "Property": 800,
+        "Value": 33.84
+      },
+      {
+        "Property": 300,
+        "Value": 0.036
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 40
+      }
+    ],
+    "RewardId": 28,
+    "ChipSpace": 20
+  },
+  "1160105": {
+    "Id": 1160105,
+    "Character": 11601,
+    "Stage": 5,
+    "LevelMax": 80,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 120000
+      },
+      {
+        "Id": 200010,
+        "Count": 20
+      },
+      {
+        "Id": 250144,
+        "Count": 6
+      },
+      {
+        "Id": 201015,
+        "Count": 60
+      },
+      {
+        "Id": 200127,
+        "Count": 24
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 677.16
+      },
+      {
+        "Property": 200,
+        "Value": 15.18
+      },
+      {
+        "Property": 800,
+        "Value": 33.84
+      },
+      {
+        "Property": 300,
+        "Value": 0.036
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 50
+      }
+    ],
+    "RewardId": 29,
+    "ChipSpace": 20
+  },
+  "1160106": {
+    "Id": 1160106,
+    "Character": 11601,
+    "Stage": 6,
+    "LevelMax": 90,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 677.16
+      },
+      {
+        "Property": 200,
+        "Value": 15.18
+      },
+      {
+        "Property": 800,
+        "Value": 33.84
+      },
+      {
+        "Property": 300,
+        "Value": 0.036
+      }
+    ],
+    "PreconditionParam": [],
+    "RewardId": 0,
+    "ChipSpace": 20
+  },
+  "1170100": {
+    "Id": 1170100,
+    "Character": 11701,
+    "Stage": 0,
+    "LevelMax": 20,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 20000
+      },
+      {
+        "Id": 220141,
+        "Count": 1
+      },
+      {
+        "Id": 201021,
+        "Count": 3
+      },
+      {
+        "Id": 200234,
+        "Count": 3
+      }
+    ],
+    "NewSkill": [
+      10211,
+      10212,
+      10213,
+      10216
+    ],
+    "GainProperty": [],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 5
+      }
+    ],
+    "RewardId": 24,
+    "ChipSpace": 4
+  },
+  "1170101": {
+    "Id": 1170101,
+    "Character": 11701,
+    "Stage": 1,
+    "LevelMax": 30,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 40000
+      },
+      {
+        "Id": 200243,
+        "Count": 2
+      },
+      {
+        "Id": 230142,
+        "Count": 3
+      },
+      {
+        "Id": 201021,
+        "Count": 10
+      },
+      {
+        "Id": 200234,
+        "Count": 15
+      }
+    ],
+    "NewSkill": [
+      10214
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 550.341
+      },
+      {
+        "Property": 200,
+        "Value": 10.556
+      },
+      {
+        "Property": 800,
+        "Value": 33.7
+      },
+      {
+        "Property": 4000,
+        "Value": 0.051
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 15
+      }
+    ],
+    "RewardId": 25,
+    "ChipSpace": 8
+  },
+  "1170102": {
+    "Id": 1170102,
+    "Character": 11701,
+    "Stage": 2,
+    "LevelMax": 40,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 60000
+      },
+      {
+        "Id": 200243,
+        "Count": 4
+      },
+      {
+        "Id": 230142,
+        "Count": 6
+      },
+      {
+        "Id": 201021,
+        "Count": 20
+      },
+      {
+        "Id": 200235,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 550.341
+      },
+      {
+        "Property": 200,
+        "Value": 10.556
+      },
+      {
+        "Property": 800,
+        "Value": 33.7
+      },
+      {
+        "Property": 4000,
+        "Value": 0.051
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 25
+      }
+    ],
+    "RewardId": 26,
+    "ChipSpace": 12
+  },
+  "1170103": {
+    "Id": 1170103,
+    "Character": 11701,
+    "Stage": 3,
+    "LevelMax": 60,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 80000
+      },
+      {
+        "Id": 200243,
+        "Count": 8
+      },
+      {
+        "Id": 240143,
+        "Count": 3
+      },
+      {
+        "Id": 201021,
+        "Count": 30
+      },
+      {
+        "Id": 200235,
+        "Count": 18
+      }
+    ],
+    "NewSkill": [
+      10215
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 550.341
+      },
+      {
+        "Property": 200,
+        "Value": 10.556
+      },
+      {
+        "Property": 800,
+        "Value": 33.7
+      },
+      {
+        "Property": 4000,
+        "Value": 0.051
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 35
+      }
+    ],
+    "RewardId": 27,
+    "ChipSpace": 16
+  },
+  "1170104": {
+    "Id": 1170104,
+    "Character": 11701,
+    "Stage": 4,
+    "LevelMax": 70,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 100000
+      },
+      {
+        "Id": 200243,
+        "Count": 12
+      },
+      {
+        "Id": 240143,
+        "Count": 6
+      },
+      {
+        "Id": 201021,
+        "Count": 45
+      },
+      {
+        "Id": 200236,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 550.341
+      },
+      {
+        "Property": 200,
+        "Value": 10.556
+      },
+      {
+        "Property": 800,
+        "Value": 33.7
+      },
+      {
+        "Property": 4000,
+        "Value": 0.051
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 40
+      }
+    ],
+    "RewardId": 28,
+    "ChipSpace": 20
+  },
+  "1170105": {
+    "Id": 1170105,
+    "Character": 11701,
+    "Stage": 5,
+    "LevelMax": 80,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 120000
+      },
+      {
+        "Id": 200243,
+        "Count": 20
+      },
+      {
+        "Id": 250144,
+        "Count": 6
+      },
+      {
+        "Id": 201021,
+        "Count": 60
+      },
+      {
+        "Id": 200236,
+        "Count": 24
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 550.341
+      },
+      {
+        "Property": 200,
+        "Value": 10.556
+      },
+      {
+        "Property": 800,
+        "Value": 33.7
+      },
+      {
+        "Property": 4000,
+        "Value": 0.051
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 50
+      }
+    ],
+    "RewardId": 29,
+    "ChipSpace": 20
+  },
+  "1170106": {
+    "Id": 1170106,
+    "Character": 11701,
+    "Stage": 6,
+    "LevelMax": 90,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 550.341
+      },
+      {
+        "Property": 200,
+        "Value": 10.556
+      },
+      {
+        "Property": 800,
+        "Value": 33.7
+      },
+      {
+        "Property": 4000,
+        "Value": 0.051
+      }
+    ],
+    "PreconditionParam": [],
+    "RewardId": 0,
+    "ChipSpace": 20
+  },
+  "1220100": {
+    "Id": 1220100,
+    "Character": 12201,
+    "Stage": 0,
+    "LevelMax": 20,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 20000
+      },
+      {
+        "Id": 220141,
+        "Count": 1
+      },
+      {
+        "Id": 201021,
+        "Count": 3
+      },
+      {
+        "Id": 200234,
+        "Count": 3
+      }
+    ],
+    "NewSkill": [
+      10211,
+      10212,
+      10213,
+      10216
+    ],
+    "GainProperty": [],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 5
+      }
+    ],
+    "RewardId": 24,
+    "ChipSpace": 4
+  },
+  "1220101": {
+    "Id": 1220101,
+    "Character": 12201,
+    "Stage": 1,
+    "LevelMax": 30,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 40000
+      },
+      {
+        "Id": 200243,
+        "Count": 2
+      },
+      {
+        "Id": 230142,
+        "Count": 3
+      },
+      {
+        "Id": 201021,
+        "Count": 10
+      },
+      {
+        "Id": 200234,
+        "Count": 15
+      }
+    ],
+    "NewSkill": [
+      10214
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 550.341
+      },
+      {
+        "Property": 200,
+        "Value": 10.556
+      },
+      {
+        "Property": 800,
+        "Value": 33.7
+      },
+      {
+        "Property": 4000,
+        "Value": 0.051
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 15
+      }
+    ],
+    "RewardId": 25,
+    "ChipSpace": 8
+  },
+  "1220102": {
+    "Id": 1220102,
+    "Character": 12201,
+    "Stage": 2,
+    "LevelMax": 40,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 60000
+      },
+      {
+        "Id": 200243,
+        "Count": 4
+      },
+      {
+        "Id": 230142,
+        "Count": 6
+      },
+      {
+        "Id": 201021,
+        "Count": 20
+      },
+      {
+        "Id": 200235,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 550.341
+      },
+      {
+        "Property": 200,
+        "Value": 10.556
+      },
+      {
+        "Property": 800,
+        "Value": 33.7
+      },
+      {
+        "Property": 4000,
+        "Value": 0.051
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 25
+      }
+    ],
+    "RewardId": 26,
+    "ChipSpace": 12
+  },
+  "1220103": {
+    "Id": 1220103,
+    "Character": 12201,
+    "Stage": 3,
+    "LevelMax": 60,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 80000
+      },
+      {
+        "Id": 200243,
+        "Count": 8
+      },
+      {
+        "Id": 240143,
+        "Count": 3
+      },
+      {
+        "Id": 201021,
+        "Count": 30
+      },
+      {
+        "Id": 200235,
+        "Count": 18
+      }
+    ],
+    "NewSkill": [
+      10215
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 550.341
+      },
+      {
+        "Property": 200,
+        "Value": 10.556
+      },
+      {
+        "Property": 800,
+        "Value": 33.7
+      },
+      {
+        "Property": 4000,
+        "Value": 0.051
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 35
+      }
+    ],
+    "RewardId": 27,
+    "ChipSpace": 16
+  },
+  "1220104": {
+    "Id": 1220104,
+    "Character": 12201,
+    "Stage": 4,
+    "LevelMax": 70,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 100000
+      },
+      {
+        "Id": 200243,
+        "Count": 12
+      },
+      {
+        "Id": 240143,
+        "Count": 6
+      },
+      {
+        "Id": 201021,
+        "Count": 45
+      },
+      {
+        "Id": 200236,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 550.341
+      },
+      {
+        "Property": 200,
+        "Value": 10.556
+      },
+      {
+        "Property": 800,
+        "Value": 33.7
+      },
+      {
+        "Property": 4000,
+        "Value": 0.051
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 40
+      }
+    ],
+    "RewardId": 28,
+    "ChipSpace": 20
+  },
+  "1220105": {
+    "Id": 1220105,
+    "Character": 12201,
+    "Stage": 5,
+    "LevelMax": 80,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 120000
+      },
+      {
+        "Id": 200243,
+        "Count": 20
+      },
+      {
+        "Id": 250144,
+        "Count": 6
+      },
+      {
+        "Id": 201021,
+        "Count": 60
+      },
+      {
+        "Id": 200236,
+        "Count": 24
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 550.341
+      },
+      {
+        "Property": 200,
+        "Value": 10.556
+      },
+      {
+        "Property": 800,
+        "Value": 33.7
+      },
+      {
+        "Property": 4000,
+        "Value": 0.051
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 50
+      }
+    ],
+    "RewardId": 29,
+    "ChipSpace": 20
+  },
+  "1220106": {
+    "Id": 1220106,
+    "Character": 12201,
+    "Stage": 6,
+    "LevelMax": 90,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 550.341
+      },
+      {
+        "Property": 200,
+        "Value": 10.556
+      },
+      {
+        "Property": 800,
+        "Value": 33.7
+      },
+      {
+        "Property": 4000,
+        "Value": 0.051
+      }
+    ],
+    "PreconditionParam": [],
+    "RewardId": 0,
+    "ChipSpace": 20
+  },
+  "1230100": {
+    "Id": 1230100,
+    "Character": 12301,
+    "Stage": 0,
+    "LevelMax": 20,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 20000
+      },
+      {
+        "Id": 220141,
+        "Count": 1
+      },
+      {
+        "Id": 201016,
+        "Count": 3
+      },
+      {
+        "Id": 200125,
+        "Count": 3
+      }
+    ],
+    "NewSkill": [
+      10111,
+      10112,
+      10113,
+      10116
+    ],
+    "GainProperty": [],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 5
+      }
+    ],
+    "RewardId": 24,
+    "ChipSpace": 4
+  },
+  "1230101": {
+    "Id": 1230101,
+    "Character": 12301,
+    "Stage": 1,
+    "LevelMax": 30,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 40000
+      },
+      {
+        "Id": 200103,
+        "Count": 2
+      },
+      {
+        "Id": 230142,
+        "Count": 3
+      },
+      {
+        "Id": 201016,
+        "Count": 10
+      },
+      {
+        "Id": 200125,
+        "Count": 15
+      }
+    ],
+    "NewSkill": [
+      10114
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 535.194
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 30.294
+      },
+      {
+        "Property": 2300,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 15
+      }
+    ],
+    "RewardId": 25,
+    "ChipSpace": 8
+  },
+  "1230102": {
+    "Id": 1230102,
+    "Character": 12301,
+    "Stage": 2,
+    "LevelMax": 40,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 60000
+      },
+      {
+        "Id": 200103,
+        "Count": 4
+      },
+      {
+        "Id": 230142,
+        "Count": 6
+      },
+      {
+        "Id": 201016,
+        "Count": 20
+      },
+      {
+        "Id": 200126,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 535.194
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 30.294
+      },
+      {
+        "Property": 2300,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 25
+      }
+    ],
+    "RewardId": 26,
+    "ChipSpace": 12
+  },
+  "1230103": {
+    "Id": 1230103,
+    "Character": 12301,
+    "Stage": 3,
+    "LevelMax": 60,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 80000
+      },
+      {
+        "Id": 200103,
+        "Count": 8
+      },
+      {
+        "Id": 240143,
+        "Count": 3
+      },
+      {
+        "Id": 201016,
+        "Count": 30
+      },
+      {
+        "Id": 200126,
+        "Count": 18
+      }
+    ],
+    "NewSkill": [
+      10115
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 535.194
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 30.294
+      },
+      {
+        "Property": 2300,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 35
+      }
+    ],
+    "RewardId": 27,
+    "ChipSpace": 16
+  },
+  "1230104": {
+    "Id": 1230104,
+    "Character": 12301,
+    "Stage": 4,
+    "LevelMax": 70,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 100000
+      },
+      {
+        "Id": 200103,
+        "Count": 12
+      },
+      {
+        "Id": 240143,
+        "Count": 6
+      },
+      {
+        "Id": 201016,
+        "Count": 45
+      },
+      {
+        "Id": 200127,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 535.194
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 30.294
+      },
+      {
+        "Property": 2300,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 40
+      }
+    ],
+    "RewardId": 28,
+    "ChipSpace": 20
+  },
+  "1230105": {
+    "Id": 1230105,
+    "Character": 12301,
+    "Stage": 5,
+    "LevelMax": 80,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 120000
+      },
+      {
+        "Id": 200103,
+        "Count": 20
+      },
+      {
+        "Id": 250144,
+        "Count": 6
+      },
+      {
+        "Id": 201016,
+        "Count": 60
+      },
+      {
+        "Id": 200127,
+        "Count": 24
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 535.194
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 30.294
+      },
+      {
+        "Property": 2300,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 50
+      }
+    ],
+    "RewardId": 29,
+    "ChipSpace": 20
+  },
+  "1230106": {
+    "Id": 1230106,
+    "Character": 12301,
+    "Stage": 6,
+    "LevelMax": 90,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 535.194
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 30.294
+      },
+      {
+        "Property": 2300,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [],
+    "RewardId": 0,
+    "ChipSpace": 20
+  },
+  "1250100": {
+    "Id": 1250100,
+    "Character": 12501,
+    "Stage": 0,
+    "LevelMax": 20,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 20000
+      },
+      {
+        "Id": 220141,
+        "Count": 1
+      },
+      {
+        "Id": 201016,
+        "Count": 3
+      },
+      {
+        "Id": 200125,
+        "Count": 3
+      }
+    ],
+    "NewSkill": [
+      10111,
+      10112,
+      10113,
+      10116
+    ],
+    "GainProperty": [],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 5
+      }
+    ],
+    "RewardId": 24,
+    "ChipSpace": 4
+  },
+  "1250101": {
+    "Id": 1250101,
+    "Character": 12501,
+    "Stage": 1,
+    "LevelMax": 30,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 40000
+      },
+      {
+        "Id": 200103,
+        "Count": 2
+      },
+      {
+        "Id": 230142,
+        "Count": 3
+      },
+      {
+        "Id": 201016,
+        "Count": 10
+      },
+      {
+        "Id": 200125,
+        "Count": 15
+      }
+    ],
+    "NewSkill": [
+      10114
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 535.194
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 30.294
+      },
+      {
+        "Property": 2300,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 15
+      }
+    ],
+    "RewardId": 25,
+    "ChipSpace": 8
+  },
+  "1250102": {
+    "Id": 1250102,
+    "Character": 12501,
+    "Stage": 2,
+    "LevelMax": 40,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 60000
+      },
+      {
+        "Id": 200103,
+        "Count": 4
+      },
+      {
+        "Id": 230142,
+        "Count": 6
+      },
+      {
+        "Id": 201016,
+        "Count": 20
+      },
+      {
+        "Id": 200126,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 535.194
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 30.294
+      },
+      {
+        "Property": 2300,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 25
+      }
+    ],
+    "RewardId": 26,
+    "ChipSpace": 12
+  },
+  "1250103": {
+    "Id": 1250103,
+    "Character": 12501,
+    "Stage": 3,
+    "LevelMax": 60,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 80000
+      },
+      {
+        "Id": 200103,
+        "Count": 8
+      },
+      {
+        "Id": 240143,
+        "Count": 3
+      },
+      {
+        "Id": 201016,
+        "Count": 30
+      },
+      {
+        "Id": 200126,
+        "Count": 18
+      }
+    ],
+    "NewSkill": [
+      10115
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 535.194
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 30.294
+      },
+      {
+        "Property": 2300,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 35
+      }
+    ],
+    "RewardId": 27,
+    "ChipSpace": 16
+  },
+  "1250104": {
+    "Id": 1250104,
+    "Character": 12501,
+    "Stage": 4,
+    "LevelMax": 70,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 100000
+      },
+      {
+        "Id": 200103,
+        "Count": 12
+      },
+      {
+        "Id": 240143,
+        "Count": 6
+      },
+      {
+        "Id": 201016,
+        "Count": 45
+      },
+      {
+        "Id": 200127,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 535.194
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 30.294
+      },
+      {
+        "Property": 2300,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 40
+      }
+    ],
+    "RewardId": 28,
+    "ChipSpace": 20
+  },
+  "1250105": {
+    "Id": 1250105,
+    "Character": 12501,
+    "Stage": 5,
+    "LevelMax": 80,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 120000
+      },
+      {
+        "Id": 200103,
+        "Count": 20
+      },
+      {
+        "Id": 250144,
+        "Count": 6
+      },
+      {
+        "Id": 201016,
+        "Count": 60
+      },
+      {
+        "Id": 200127,
+        "Count": 24
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 535.194
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 30.294
+      },
+      {
+        "Property": 2300,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 50
+      }
+    ],
+    "RewardId": 29,
+    "ChipSpace": 20
+  },
+  "1250106": {
+    "Id": 1250106,
+    "Character": 12501,
+    "Stage": 6,
+    "LevelMax": 90,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 535.194
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 30.294
+      },
+      {
+        "Property": 2300,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [],
+    "RewardId": 0,
+    "ChipSpace": 20
+  },
+  "1260100": {
+    "Id": 1260100,
+    "Character": 12601,
+    "Stage": 0,
+    "LevelMax": 20,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 20000
+      },
+      {
+        "Id": 220141,
+        "Count": 1
+      },
+      {
+        "Id": 201021,
+        "Count": 3
+      },
+      {
+        "Id": 200234,
+        "Count": 3
+      }
+    ],
+    "NewSkill": [
+      10211,
+      10212,
+      10213,
+      10216
+    ],
+    "GainProperty": [],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 5
+      }
+    ],
+    "RewardId": 24,
+    "ChipSpace": 4
+  },
+  "1260101": {
+    "Id": 1260101,
+    "Character": 12601,
+    "Stage": 1,
+    "LevelMax": 30,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 40000
+      },
+      {
+        "Id": 200243,
+        "Count": 2
+      },
+      {
+        "Id": 230142,
+        "Count": 3
+      },
+      {
+        "Id": 201021,
+        "Count": 10
+      },
+      {
+        "Id": 200234,
+        "Count": 15
+      }
+    ],
+    "NewSkill": [
+      10214
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 550.341
+      },
+      {
+        "Property": 200,
+        "Value": 10.556
+      },
+      {
+        "Property": 800,
+        "Value": 33.7
+      },
+      {
+        "Property": 4000,
+        "Value": 0.051
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 15
+      }
+    ],
+    "RewardId": 25,
+    "ChipSpace": 8
+  },
+  "1260102": {
+    "Id": 1260102,
+    "Character": 12601,
+    "Stage": 2,
+    "LevelMax": 40,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 60000
+      },
+      {
+        "Id": 200243,
+        "Count": 4
+      },
+      {
+        "Id": 230142,
+        "Count": 6
+      },
+      {
+        "Id": 201021,
+        "Count": 20
+      },
+      {
+        "Id": 200235,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 550.341
+      },
+      {
+        "Property": 200,
+        "Value": 10.556
+      },
+      {
+        "Property": 800,
+        "Value": 33.7
+      },
+      {
+        "Property": 4000,
+        "Value": 0.051
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 25
+      }
+    ],
+    "RewardId": 26,
+    "ChipSpace": 12
+  },
+  "1260103": {
+    "Id": 1260103,
+    "Character": 12601,
+    "Stage": 3,
+    "LevelMax": 60,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 80000
+      },
+      {
+        "Id": 200243,
+        "Count": 8
+      },
+      {
+        "Id": 240143,
+        "Count": 3
+      },
+      {
+        "Id": 201021,
+        "Count": 30
+      },
+      {
+        "Id": 200235,
+        "Count": 18
+      }
+    ],
+    "NewSkill": [
+      10215
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 550.341
+      },
+      {
+        "Property": 200,
+        "Value": 10.556
+      },
+      {
+        "Property": 800,
+        "Value": 33.7
+      },
+      {
+        "Property": 4000,
+        "Value": 0.051
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 35
+      }
+    ],
+    "RewardId": 27,
+    "ChipSpace": 16
+  },
+  "1260104": {
+    "Id": 1260104,
+    "Character": 12601,
+    "Stage": 4,
+    "LevelMax": 70,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 100000
+      },
+      {
+        "Id": 200243,
+        "Count": 12
+      },
+      {
+        "Id": 240143,
+        "Count": 6
+      },
+      {
+        "Id": 201021,
+        "Count": 45
+      },
+      {
+        "Id": 200236,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 550.341
+      },
+      {
+        "Property": 200,
+        "Value": 10.556
+      },
+      {
+        "Property": 800,
+        "Value": 33.7
+      },
+      {
+        "Property": 4000,
+        "Value": 0.051
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 40
+      }
+    ],
+    "RewardId": 28,
+    "ChipSpace": 20
+  },
+  "1260105": {
+    "Id": 1260105,
+    "Character": 12601,
+    "Stage": 5,
+    "LevelMax": 80,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 120000
+      },
+      {
+        "Id": 200243,
+        "Count": 20
+      },
+      {
+        "Id": 250144,
+        "Count": 6
+      },
+      {
+        "Id": 201021,
+        "Count": 60
+      },
+      {
+        "Id": 200236,
+        "Count": 24
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 550.341
+      },
+      {
+        "Property": 200,
+        "Value": 10.556
+      },
+      {
+        "Property": 800,
+        "Value": 33.7
+      },
+      {
+        "Property": 4000,
+        "Value": 0.051
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 50
+      }
+    ],
+    "RewardId": 29,
+    "ChipSpace": 20
+  },
+  "1260106": {
+    "Id": 1260106,
+    "Character": 12601,
+    "Stage": 6,
+    "LevelMax": 90,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 550.341
+      },
+      {
+        "Property": 200,
+        "Value": 10.556
+      },
+      {
+        "Property": 800,
+        "Value": 33.7
+      },
+      {
+        "Property": 4000,
+        "Value": 0.051
+      }
+    ],
+    "PreconditionParam": [],
+    "RewardId": 0,
+    "ChipSpace": 20
+  },
+  "1270100": {
+    "Id": 1270100,
+    "Character": 12701,
+    "Stage": 0,
+    "LevelMax": 20,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 20000
+      },
+      {
+        "Id": 220141,
+        "Count": 1
+      },
+      {
+        "Id": 201016,
+        "Count": 3
+      },
+      {
+        "Id": 200125,
+        "Count": 3
+      }
+    ],
+    "NewSkill": [
+      10111,
+      10112,
+      10113,
+      10116
+    ],
+    "GainProperty": [],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 5
+      }
+    ],
+    "RewardId": 24,
+    "ChipSpace": 4
+  },
+  "1270101": {
+    "Id": 1270101,
+    "Character": 12701,
+    "Stage": 1,
+    "LevelMax": 30,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 40000
+      },
+      {
+        "Id": 200103,
+        "Count": 2
+      },
+      {
+        "Id": 230142,
+        "Count": 3
+      },
+      {
+        "Id": 201016,
+        "Count": 10
+      },
+      {
+        "Id": 200125,
+        "Count": 15
+      }
+    ],
+    "NewSkill": [
+      10114
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 535.194
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 30.294
+      },
+      {
+        "Property": 2300,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 15
+      }
+    ],
+    "RewardId": 25,
+    "ChipSpace": 8
+  },
+  "1270102": {
+    "Id": 1270102,
+    "Character": 12701,
+    "Stage": 2,
+    "LevelMax": 40,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 60000
+      },
+      {
+        "Id": 200103,
+        "Count": 4
+      },
+      {
+        "Id": 230142,
+        "Count": 6
+      },
+      {
+        "Id": 201016,
+        "Count": 20
+      },
+      {
+        "Id": 200126,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 535.194
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 30.294
+      },
+      {
+        "Property": 2300,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 25
+      }
+    ],
+    "RewardId": 26,
+    "ChipSpace": 12
+  },
+  "1270103": {
+    "Id": 1270103,
+    "Character": 12701,
+    "Stage": 3,
+    "LevelMax": 60,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 80000
+      },
+      {
+        "Id": 200103,
+        "Count": 8
+      },
+      {
+        "Id": 240143,
+        "Count": 3
+      },
+      {
+        "Id": 201016,
+        "Count": 30
+      },
+      {
+        "Id": 200126,
+        "Count": 18
+      }
+    ],
+    "NewSkill": [
+      10115
+    ],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 535.194
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 30.294
+      },
+      {
+        "Property": 2300,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 35
+      }
+    ],
+    "RewardId": 27,
+    "ChipSpace": 16
+  },
+  "1270104": {
+    "Id": 1270104,
+    "Character": 12701,
+    "Stage": 4,
+    "LevelMax": 70,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 100000
+      },
+      {
+        "Id": 200103,
+        "Count": 12
+      },
+      {
+        "Id": 240143,
+        "Count": 6
+      },
+      {
+        "Id": 201016,
+        "Count": 45
+      },
+      {
+        "Id": 200127,
+        "Count": 12
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 535.194
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 30.294
+      },
+      {
+        "Property": 2300,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 40
+      }
+    ],
+    "RewardId": 28,
+    "ChipSpace": 20
+  },
+  "1270105": {
+    "Id": 1270105,
+    "Character": 12701,
+    "Stage": 5,
+    "LevelMax": 80,
+    "BreakRequirement": [
+      {
+        "Id": 2,
+        "Count": 120000
+      },
+      {
+        "Id": 200103,
+        "Count": 20
+      },
+      {
+        "Id": 250144,
+        "Count": 6
+      },
+      {
+        "Id": 201016,
+        "Count": 60
+      },
+      {
+        "Id": 200127,
+        "Count": 24
+      }
+    ],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 535.194
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 30.294
+      },
+      {
+        "Property": 2300,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [
+      {
+        "Id": 2,
+        "Count": 50
+      }
+    ],
+    "RewardId": 29,
+    "ChipSpace": 20
+  },
+  "1270106": {
+    "Id": 1270106,
+    "Character": 12701,
+    "Stage": 6,
+    "LevelMax": 90,
+    "BreakRequirement": [],
+    "NewSkill": [],
+    "GainProperty": [
+      {
+        "Property": 100,
+        "Value": 535.194
+      },
+      {
+        "Property": 200,
+        "Value": 11.02
+      },
+      {
+        "Property": 800,
+        "Value": 30.294
+      },
+      {
+        "Property": 2300,
+        "Value": 0.046
+      }
+    ],
+    "PreconditionParam": [],
+    "RewardId": 0,
+    "ChipSpace": 20
+  }
+}

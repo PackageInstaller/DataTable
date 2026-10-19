@@ -1,0 +1,7 @@
+namespace ACT.Net;
+
+public enum CodeGM
+{
+	KICK_PLAYER_BY_GM_DIRECT = 1,
+	KICK_PLAYER_BY_ACCOUNT_INFO_CHANGE
+}

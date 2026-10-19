@@ -1,0 +1,10 @@
+namespace ACT.Net;
+
+public enum ClientCodeNetWork
+{
+	NO_NETWORK = 1,
+	CONNECT_TIMEOUT = 2,
+	CONNECT_GAME_SERVER_FAILED = 4,
+	INVALID_GATE_ADDRESS = 6,
+	RESOLVE_HOST_FAILED = 7
+}

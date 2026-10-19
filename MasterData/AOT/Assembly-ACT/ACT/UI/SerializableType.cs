@@ -1,0 +1,32 @@
+using System;
+
+namespace ACT.UI;
+
+[Serializable]
+public class SerializableType
+{
+	public string TypeName;
+
+	private Type mType;
+
+	public Type ActualType => mType ?? (mType = Type.GetType(TypeName));
+
+	public SerializableType()
+	{
+	}
+
+	public SerializableType(Type type)
+	{
+		TypeName = type.AssemblyQualifiedName;
+	}
+
+	public static implicit operator Type(SerializableType typeKeyframes)
+	{
+		return typeKeyframes.ActualType;
+	}
+
+	public static implicit operator SerializableType(Type type)
+	{
+		return new SerializableType(type);
+	}
+}

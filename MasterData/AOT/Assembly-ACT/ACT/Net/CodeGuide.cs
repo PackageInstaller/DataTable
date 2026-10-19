@@ -1,0 +1,9 @@
+namespace ACT.Net;
+
+public enum CodeGuide
+{
+	UNLOCK_NOT_FOUND_ID = 1,
+	UNLOCK_EXIST_ID,
+	UNLOCK_TYPE_NOT_MATCH,
+	COMPLETE_NOT_FOUND_INFO
+}

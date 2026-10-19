@@ -1,0 +1,1406 @@
+{
+  "30001": {
+    "Id": 30001,
+    "ItemId": 500017,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 99,
+        "Count": 300
+      }
+    ],
+    "LimitCount": 7,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "30002": {
+    "Id": 30002,
+    "ItemId": 4150103,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 99,
+        "Count": 200
+      }
+    ],
+    "LimitCount": 1,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "30003": {
+    "Id": 30003,
+    "ItemId": 30000103,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 99,
+        "Count": 100
+      }
+    ],
+    "LimitCount": 3,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "30004": {
+    "Id": 30004,
+    "ItemId": 4160112,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 99,
+        "Count": 100
+      }
+    ],
+    "LimitCount": 1,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "30005": {
+    "Id": 30005,
+    "ItemId": 4160113,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 99,
+        "Count": 100
+      }
+    ],
+    "LimitCount": 1,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "30006": {
+    "Id": 30006,
+    "ItemId": 100104,
+    "ItemCount": 50,
+    "ItemNeed": [
+      {
+        "Id": 99,
+        "Count": 50
+      }
+    ],
+    "LimitCount": 8,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "30007": {
+    "Id": 30007,
+    "ItemId": 2,
+    "ItemCount": 20000,
+    "ItemNeed": [
+      {
+        "Id": 99,
+        "Count": 5
+      }
+    ],
+    "LimitCount": 20,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "30008": {
+    "Id": 30008,
+    "ItemId": 1,
+    "ItemCount": 5000,
+    "ItemNeed": [
+      {
+        "Id": 99,
+        "Count": 5
+      }
+    ],
+    "LimitCount": 20,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "30009": {
+    "Id": 30009,
+    "ItemId": 5,
+    "ItemCount": 4000,
+    "ItemNeed": [
+      {
+        "Id": 99,
+        "Count": 5
+      }
+    ],
+    "LimitCount": 20,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40001": {
+    "Id": 40001,
+    "ItemId": 30000002,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 307501,
+        "Count": 1
+      }
+    ],
+    "LimitCount": 1,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40002": {
+    "Id": 40002,
+    "ItemId": 30000003,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 307501,
+        "Count": 1
+      }
+    ],
+    "LimitCount": 1,
+    "LimitRefreshType": 0,
+    "Precondition": 6,
+    "PreconditionParam": [
+      30000002,
+      1
+    ],
+    "MissionGroupId": 0
+  },
+  "40003": {
+    "Id": 40003,
+    "ItemId": 30000004,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 307501,
+        "Count": 1
+      }
+    ],
+    "LimitCount": 1,
+    "LimitRefreshType": 0,
+    "Precondition": 6,
+    "PreconditionParam": [
+      30000003,
+      1
+    ],
+    "MissionGroupId": 0
+  },
+  "40004": {
+    "Id": 40004,
+    "ItemId": 30000005,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 307501,
+        "Count": 1
+      }
+    ],
+    "LimitCount": 1,
+    "LimitRefreshType": 0,
+    "Precondition": 6,
+    "PreconditionParam": [
+      30000004,
+      1
+    ],
+    "MissionGroupId": 0
+  },
+  "40005": {
+    "Id": 40005,
+    "ItemId": 30000006,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 307501,
+        "Count": 1
+      }
+    ],
+    "LimitCount": 1,
+    "LimitRefreshType": 0,
+    "Precondition": 6,
+    "PreconditionParam": [
+      30000005,
+      1
+    ],
+    "MissionGroupId": 0
+  },
+  "40101": {
+    "Id": 40101,
+    "ItemId": 200129,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 200131,
+        "Count": 5
+      }
+    ],
+    "LimitCount": 0,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40102": {
+    "Id": 40102,
+    "ItemId": 200130,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 200131,
+        "Count": 5
+      }
+    ],
+    "LimitCount": 0,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40103": {
+    "Id": 40103,
+    "ItemId": 500001,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 200131,
+        "Count": 35
+      }
+    ],
+    "LimitCount": 1,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40104": {
+    "Id": 40104,
+    "ItemId": 500002,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 200131,
+        "Count": 35
+      }
+    ],
+    "LimitCount": 1,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40105": {
+    "Id": 40105,
+    "ItemId": 500008,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 200131,
+        "Count": 35
+      }
+    ],
+    "LimitCount": 1,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40106": {
+    "Id": 40106,
+    "ItemId": 100001,
+    "ItemCount": 30,
+    "ItemNeed": [
+      {
+        "Id": 200131,
+        "Count": 25
+      }
+    ],
+    "LimitCount": 4,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40107": {
+    "Id": 40107,
+    "ItemId": 100002,
+    "ItemCount": 30,
+    "ItemNeed": [
+      {
+        "Id": 200131,
+        "Count": 25
+      }
+    ],
+    "LimitCount": 4,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40108": {
+    "Id": 40108,
+    "ItemId": 100003,
+    "ItemCount": 30,
+    "ItemNeed": [
+      {
+        "Id": 200131,
+        "Count": 25
+      }
+    ],
+    "LimitCount": 4,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40109": {
+    "Id": 40109,
+    "ItemId": 100004,
+    "ItemCount": 30,
+    "ItemNeed": [
+      {
+        "Id": 200131,
+        "Count": 25
+      }
+    ],
+    "LimitCount": 4,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40110": {
+    "Id": 40110,
+    "ItemId": 100005,
+    "ItemCount": 30,
+    "ItemNeed": [
+      {
+        "Id": 200131,
+        "Count": 25
+      }
+    ],
+    "LimitCount": 4,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40111": {
+    "Id": 40111,
+    "ItemId": 202102,
+    "ItemCount": 3,
+    "ItemNeed": [
+      {
+        "Id": 200131,
+        "Count": 2
+      }
+    ],
+    "LimitCount": 25,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40112": {
+    "Id": 40112,
+    "ItemId": 202112,
+    "ItemCount": 3,
+    "ItemNeed": [
+      {
+        "Id": 200131,
+        "Count": 2
+      }
+    ],
+    "LimitCount": 25,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40113": {
+    "Id": 40113,
+    "ItemId": 202122,
+    "ItemCount": 3,
+    "ItemNeed": [
+      {
+        "Id": 200131,
+        "Count": 2
+      }
+    ],
+    "LimitCount": 25,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40114": {
+    "Id": 40114,
+    "ItemId": 202132,
+    "ItemCount": 3,
+    "ItemNeed": [
+      {
+        "Id": 200131,
+        "Count": 2
+      }
+    ],
+    "LimitCount": 25,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40118": {
+    "Id": 40118,
+    "ItemId": 202142,
+    "ItemCount": 3,
+    "ItemNeed": [
+      {
+        "Id": 200131,
+        "Count": 2
+      }
+    ],
+    "LimitCount": 25,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40115": {
+    "Id": 40115,
+    "ItemId": 202103,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 200131,
+        "Count": 2
+      }
+    ],
+    "LimitCount": 8,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40116": {
+    "Id": 40116,
+    "ItemId": 202113,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 200131,
+        "Count": 2
+      }
+    ],
+    "LimitCount": 8,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40117": {
+    "Id": 40117,
+    "ItemId": 202123,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 200131,
+        "Count": 2
+      }
+    ],
+    "LimitCount": 8,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40119": {
+    "Id": 40119,
+    "ItemId": 202133,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 200131,
+        "Count": 2
+      }
+    ],
+    "LimitCount": 8,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40120": {
+    "Id": 40120,
+    "ItemId": 202143,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 200131,
+        "Count": 2
+      }
+    ],
+    "LimitCount": 8,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40201": {
+    "Id": 40201,
+    "ItemId": 200129,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 200132,
+        "Count": 75
+      }
+    ],
+    "LimitCount": 5,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40202": {
+    "Id": 40202,
+    "ItemId": 200130,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 200132,
+        "Count": 75
+      }
+    ],
+    "LimitCount": 5,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40203": {
+    "Id": 40203,
+    "ItemId": 1,
+    "ItemCount": 500,
+    "ItemNeed": [
+      {
+        "Id": 200132,
+        "Count": 8
+      }
+    ],
+    "LimitCount": 100,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40204": {
+    "Id": 40204,
+    "ItemId": 2,
+    "ItemCount": 10000,
+    "ItemNeed": [
+      {
+        "Id": 200132,
+        "Count": 10
+      }
+    ],
+    "LimitCount": 30,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40205": {
+    "Id": 40205,
+    "ItemId": 202011,
+    "ItemCount": 3,
+    "ItemNeed": [
+      {
+        "Id": 200132,
+        "Count": 5
+      }
+    ],
+    "LimitCount": 30,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40206": {
+    "Id": 40206,
+    "ItemId": 202012,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 200132,
+        "Count": 5
+      }
+    ],
+    "LimitCount": 70,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40207": {
+    "Id": 40207,
+    "ItemId": 202021,
+    "ItemCount": 3,
+    "ItemNeed": [
+      {
+        "Id": 200132,
+        "Count": 5
+      }
+    ],
+    "LimitCount": 30,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40208": {
+    "Id": 40208,
+    "ItemId": 202022,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 200132,
+        "Count": 5
+      }
+    ],
+    "LimitCount": 70,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40209": {
+    "Id": 40209,
+    "ItemId": 202031,
+    "ItemCount": 3,
+    "ItemNeed": [
+      {
+        "Id": 200132,
+        "Count": 5
+      }
+    ],
+    "LimitCount": 30,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40210": {
+    "Id": 40210,
+    "ItemId": 202032,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 200132,
+        "Count": 5
+      }
+    ],
+    "LimitCount": 70,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40211": {
+    "Id": 40211,
+    "ItemId": 202041,
+    "ItemCount": 3,
+    "ItemNeed": [
+      {
+        "Id": 200132,
+        "Count": 5
+      }
+    ],
+    "LimitCount": 30,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40212": {
+    "Id": 40212,
+    "ItemId": 202042,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 200132,
+        "Count": 5
+      }
+    ],
+    "LimitCount": 70,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40213": {
+    "Id": 40213,
+    "ItemId": 202051,
+    "ItemCount": 3,
+    "ItemNeed": [
+      {
+        "Id": 200132,
+        "Count": 5
+      }
+    ],
+    "LimitCount": 30,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40214": {
+    "Id": 40214,
+    "ItemId": 202052,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 200132,
+        "Count": 5
+      }
+    ],
+    "LimitCount": 70,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40215": {
+    "Id": 40215,
+    "ItemId": 202061,
+    "ItemCount": 3,
+    "ItemNeed": [
+      {
+        "Id": 200132,
+        "Count": 5
+      }
+    ],
+    "LimitCount": 30,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40216": {
+    "Id": 40216,
+    "ItemId": 202062,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 200132,
+        "Count": 5
+      }
+    ],
+    "LimitCount": 70,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40217": {
+    "Id": 40217,
+    "ItemId": 202071,
+    "ItemCount": 3,
+    "ItemNeed": [
+      {
+        "Id": 200132,
+        "Count": 5
+      }
+    ],
+    "LimitCount": 30,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40218": {
+    "Id": 40218,
+    "ItemId": 202072,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 200132,
+        "Count": 5
+      }
+    ],
+    "LimitCount": 70,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40219": {
+    "Id": 40219,
+    "ItemId": 202081,
+    "ItemCount": 3,
+    "ItemNeed": [
+      {
+        "Id": 200132,
+        "Count": 5
+      }
+    ],
+    "LimitCount": 30,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40220": {
+    "Id": 40220,
+    "ItemId": 202082,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 200132,
+        "Count": 5
+      }
+    ],
+    "LimitCount": 70,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40221": {
+    "Id": 40221,
+    "ItemId": 202091,
+    "ItemCount": 3,
+    "ItemNeed": [
+      {
+        "Id": 200132,
+        "Count": 5
+      }
+    ],
+    "LimitCount": 30,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40222": {
+    "Id": 40222,
+    "ItemId": 202092,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 200132,
+        "Count": 5
+      }
+    ],
+    "LimitCount": 70,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40300": {
+    "Id": 40300,
+    "ItemId": 200129,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 97,
+        "Count": 160
+      }
+    ],
+    "LimitCount": 0,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40301": {
+    "Id": 40301,
+    "ItemId": 200130,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 97,
+        "Count": 160
+      }
+    ],
+    "LimitCount": 0,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40401": {
+    "Id": 40401,
+    "ItemId": 200129,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 200132,
+        "Count": 75
+      }
+    ],
+    "LimitCount": 5,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 100100
+  },
+  "40402": {
+    "Id": 40402,
+    "ItemId": 200130,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 200132,
+        "Count": 75
+      }
+    ],
+    "LimitCount": 5,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 100100
+  },
+  "40403": {
+    "Id": 40403,
+    "ItemId": 1,
+    "ItemCount": 500,
+    "ItemNeed": [
+      {
+        "Id": 200132,
+        "Count": 8
+      }
+    ],
+    "LimitCount": 100,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40404": {
+    "Id": 40404,
+    "ItemId": 2,
+    "ItemCount": 10000,
+    "ItemNeed": [
+      {
+        "Id": 200132,
+        "Count": 10
+      }
+    ],
+    "LimitCount": 30,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40405": {
+    "Id": 40405,
+    "ItemId": 202011,
+    "ItemCount": 3,
+    "ItemNeed": [
+      {
+        "Id": 200132,
+        "Count": 5
+      }
+    ],
+    "LimitCount": 30,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40406": {
+    "Id": 40406,
+    "ItemId": 202012,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 200132,
+        "Count": 5
+      }
+    ],
+    "LimitCount": 70,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40407": {
+    "Id": 40407,
+    "ItemId": 202021,
+    "ItemCount": 3,
+    "ItemNeed": [
+      {
+        "Id": 200132,
+        "Count": 5
+      }
+    ],
+    "LimitCount": 30,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40408": {
+    "Id": 40408,
+    "ItemId": 202022,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 200132,
+        "Count": 5
+      }
+    ],
+    "LimitCount": 70,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40409": {
+    "Id": 40409,
+    "ItemId": 202031,
+    "ItemCount": 3,
+    "ItemNeed": [
+      {
+        "Id": 200132,
+        "Count": 5
+      }
+    ],
+    "LimitCount": 30,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40410": {
+    "Id": 40410,
+    "ItemId": 202032,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 200132,
+        "Count": 5
+      }
+    ],
+    "LimitCount": 70,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40411": {
+    "Id": 40411,
+    "ItemId": 202041,
+    "ItemCount": 3,
+    "ItemNeed": [
+      {
+        "Id": 200132,
+        "Count": 5
+      }
+    ],
+    "LimitCount": 30,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40412": {
+    "Id": 40412,
+    "ItemId": 202042,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 200132,
+        "Count": 5
+      }
+    ],
+    "LimitCount": 70,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40413": {
+    "Id": 40413,
+    "ItemId": 202051,
+    "ItemCount": 3,
+    "ItemNeed": [
+      {
+        "Id": 200132,
+        "Count": 5
+      }
+    ],
+    "LimitCount": 30,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40414": {
+    "Id": 40414,
+    "ItemId": 202052,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 200132,
+        "Count": 5
+      }
+    ],
+    "LimitCount": 70,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40415": {
+    "Id": 40415,
+    "ItemId": 202081,
+    "ItemCount": 3,
+    "ItemNeed": [
+      {
+        "Id": 200132,
+        "Count": 5
+      }
+    ],
+    "LimitCount": 30,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40416": {
+    "Id": 40416,
+    "ItemId": 202082,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 200132,
+        "Count": 5
+      }
+    ],
+    "LimitCount": 70,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40417": {
+    "Id": 40417,
+    "ItemId": 202091,
+    "ItemCount": 3,
+    "ItemNeed": [
+      {
+        "Id": 200132,
+        "Count": 5
+      }
+    ],
+    "LimitCount": 30,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "40418": {
+    "Id": 40418,
+    "ItemId": 202092,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 200132,
+        "Count": 5
+      }
+    ],
+    "LimitCount": 70,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "60101": {
+    "Id": 60101,
+    "ItemId": 100001,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 88,
+        "Count": 10
+      }
+    ],
+    "LimitCount": 0,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "60102": {
+    "Id": 60102,
+    "ItemId": 100002,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 88,
+        "Count": 10
+      }
+    ],
+    "LimitCount": 0,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "60103": {
+    "Id": 60103,
+    "ItemId": 100003,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 88,
+        "Count": 10
+      }
+    ],
+    "LimitCount": 0,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "60104": {
+    "Id": 60104,
+    "ItemId": 100004,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 88,
+        "Count": 10
+      }
+    ],
+    "LimitCount": 0,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "60105": {
+    "Id": 60105,
+    "ItemId": 100005,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 88,
+        "Count": 10
+      }
+    ],
+    "LimitCount": 0,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "70101": {
+    "Id": 70101,
+    "ItemId": 1001,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 89,
+        "Count": 100
+      }
+    ],
+    "LimitCount": 1,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "70102": {
+    "Id": 70102,
+    "ItemId": 1002,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 89,
+        "Count": 100
+      }
+    ],
+    "LimitCount": 1,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "70103": {
+    "Id": 70103,
+    "ItemId": 1003,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 89,
+        "Count": 100
+      }
+    ],
+    "LimitCount": 1,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "70104": {
+    "Id": 70104,
+    "ItemId": 1004,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 89,
+        "Count": 100
+      }
+    ],
+    "LimitCount": 1,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "70105": {
+    "Id": 70105,
+    "ItemId": 1005,
+    "ItemCount": 1,
+    "ItemNeed": [
+      {
+        "Id": 89,
+        "Count": 100
+      }
+    ],
+    "LimitCount": 1,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  },
+  "70106": {
+    "Id": 70106,
+    "ItemId": 2,
+    "ItemCount": 10000,
+    "ItemNeed": [
+      {
+        "Id": 89,
+        "Count": 100
+      }
+    ],
+    "LimitCount": 0,
+    "LimitRefreshType": 0,
+    "Precondition": 0,
+    "PreconditionParam": [],
+    "MissionGroupId": 0
+  }
+}

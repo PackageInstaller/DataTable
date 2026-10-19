@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>Bamboo.Chronos.Unity.Runtime</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <TargetFramework>net40</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>14.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="Bamboo.Chronos.Runtime">
+      <HintPath>../Bamboo.Chronos.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Bamboo.HeartBeat.Unity.Runtime">
+      <HintPath>../Bamboo.HeartBeat.Unity.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Bamboo.HeartBeat.Runtime">
+      <HintPath>../Bamboo.HeartBeat.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

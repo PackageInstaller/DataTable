@@ -1,0 +1,223 @@
+{
+  "1": {
+    "Id": 1,
+    "GmName": "击杀附近所有怪",
+    "CommandGroup": [
+      "KillAll"
+    ]
+  },
+  "2": {
+    "Id": 2,
+    "GmName": "杀当前操控的角色",
+    "CommandGroup": [
+      "KillEntity"
+    ]
+  },
+  "3": {
+    "Id": 3,
+    "GmName": "恢复全队血量",
+    "CommandGroup": [
+      "RecoverTeamHp"
+    ]
+  },
+  "4": {
+    "Id": 4,
+    "GmName": "清空怪物架势值",
+    "CommandGroup": [
+      "ClearEnemyPosture"
+    ]
+  },
+  "5": {
+    "Id": 5,
+    "GmName": "掉落虚空复位",
+    "CommandGroup": [
+      "ResetPosition"
+    ]
+  },
+  "6": {
+    "Id": 6,
+    "GmName": "技能条充电宝",
+    "CommandGroup": [
+      "SkillCharging"
+    ]
+  },
+  "7": {
+    "Id": 7,
+    "GmName": "技能无冷却",
+    "CommandGroup": [
+      "DisableCoolDown"
+    ]
+  },
+  "8": {
+    "Id": 8,
+    "GmName": "大招能量充电宝",
+    "CommandGroup": [
+      "BigSkillCharging"
+    ]
+  },
+  "9": {
+    "Id": 9,
+    "GmName": "解锁全部灯塔传送点",
+    "CommandGroup": [
+      "UnlockAllLightHouse"
+    ]
+  },
+  "10": {
+    "Id": 10,
+    "GmName": "隐身模式",
+    "CommandGroup": [
+      "AddBuff cantBeAttack"
+    ]
+  },
+  "11": {
+    "Id": 11,
+    "GmName": "关闭隐身",
+    "CommandGroup": [
+      "RemoveBuff cantBeAttack"
+    ]
+  },
+  "12": {
+    "Id": 12,
+    "GmName": "重置出场技CD",
+    "CommandGroup": [
+      "RestSwitchSkillCD"
+    ]
+  },
+  "13": {
+    "Id": 13,
+    "GmName": "解锁全部地图",
+    "CommandGroup": [
+      "UnlockMap"
+    ]
+  },
+  "14": {
+    "Id": 14,
+    "GmName": "完成当前追踪任务",
+    "CommandGroup": [
+      "FinishTracingMission"
+    ]
+  },
+  "15": {
+    "Id": 15,
+    "GmName": "暂停或继续游戏",
+    "CommandGroup": [
+      "Pause"
+    ]
+  },
+  "16": {
+    "Id": 16,
+    "GmName": "获得所有道具",
+    "CommandGroup": [
+      "Allitem"
+    ]
+  },
+  "17": {
+    "Id": 17,
+    "GmName": "添加所有养成道具",
+    "CommandGroup": [
+      "AdditemByType 2 999",
+      "Additem 2 999999"
+    ]
+  },
+  "18": {
+    "Id": 18,
+    "GmName": "添加所有武器",
+    "CommandGroup": [
+      "AdditemByType 3 1"
+    ]
+  },
+  "19": {
+    "Id": 19,
+    "GmName": "添加999个体力",
+    "CommandGroup": [
+      "Additem 96 999"
+    ]
+  },
+  "20": {
+    "Id": 20,
+    "GmName": "添加一百个评价积分",
+    "CommandGroup": [
+      "Additem 93 100"
+    ]
+  },
+  "21": {
+    "Id": 21,
+    "GmName": "添加一千个评价积分",
+    "CommandGroup": [
+      "Additem 93 1000"
+    ]
+  },
+  "22": {
+    "Id": 22,
+    "GmName": "添加一万个评价积分",
+    "CommandGroup": [
+      "Additem 93 10000"
+    ]
+  },
+  "23": {
+    "Id": 23,
+    "GmName": "获得10万卢克",
+    "CommandGroup": [
+      "Additem 2 100000"
+    ]
+  },
+  "24": {
+    "Id": 24,
+    "GmName": "获得所有角色",
+    "CommandGroup": [
+      "Additem 500001 1",
+      "Additem 500002 1",
+      "Additem 500003 1",
+      "Additem 500004 1",
+      "Additem 500005 1",
+      "Additem 500006 1",
+      "Additem 500008 1",
+      "Additem 500010 1",
+      "Additem 500011 1",
+      "Additem 500012 1",
+      "Additem 500013 1",
+      "Additem 500014 1",
+      "Additem 500015 1",
+      "Additem 500016 1",
+      "Additem 500017 1",
+      ""
+    ]
+  },
+  "25": {
+    "Id": 25,
+    "GmName": "所有角色升满级",
+    "CommandGroup": [
+      "LevelUpRoleMax 10101",
+      "LevelUpRoleMax 10201",
+      "LevelUpRoleMax 10301",
+      "LevelUpRoleMax 10401",
+      "LevelUpRoleMax 10501",
+      "LevelUpRoleMax 11601",
+      "LevelUpRoleMax 12701",
+      "LevelUpRoleMax 12601",
+      "LevelUpRoleMax 11701",
+      ""
+    ]
+  },
+  "26": {
+    "Id": 26,
+    "GmName": "开关UI",
+    "CommandGroup": [
+      "SwitchUI"
+    ]
+  },
+  "27": {
+    "Id": 27,
+    "GmName": "跳过视频",
+    "CommandGroup": [
+      "SkipVideo"
+    ]
+  },
+  "28": {
+    "Id": 28,
+    "GmName": "特殊能量条充电宝",
+    "CommandGroup": [
+      "SpecialSkillCharging"
+    ]
+  }
+}

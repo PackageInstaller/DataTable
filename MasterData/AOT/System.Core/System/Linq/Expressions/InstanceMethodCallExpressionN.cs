@@ -1,0 +1,27 @@
+using System.Collections.Generic;
+using System.Reflection;
+
+namespace System.Linq.Expressions;
+
+internal sealed class InstanceMethodCallExpressionN : InstanceMethodCallExpression, IArgumentProvider
+{
+	private IReadOnlyList<Expression> _arguments;
+
+	public override int ArgumentCount => _arguments.Count;
+
+	public InstanceMethodCallExpressionN(MethodInfo method, Expression instance, IReadOnlyList<Expression> args)
+		: base(method, instance)
+	{
+		_arguments = args;
+	}
+
+	public override Expression GetArgument(int index)
+	{
+		return _arguments[index];
+	}
+
+	internal override MethodCallExpression Rewrite(Expression instance, IReadOnlyList<Expression> args)
+	{
+		return Expression.Call(instance, Method, args ?? _arguments);
+	}
+}

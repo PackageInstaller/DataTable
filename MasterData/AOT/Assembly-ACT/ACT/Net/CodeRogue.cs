@@ -1,0 +1,11 @@
+namespace ACT.Net;
+
+public enum CodeRogue
+{
+	INVALID_STATE = 1,
+	CONFIG_NOT_FOUND,
+	CONDITION_NOT_MET,
+	TEAM_ERROR,
+	ROOM_ERROR,
+	ITEM_ERROR
+}

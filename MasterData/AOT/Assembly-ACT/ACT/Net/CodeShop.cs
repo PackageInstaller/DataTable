@@ -1,0 +1,10 @@
+namespace ACT.Net;
+
+public enum CodeShop
+{
+	BUY_NUM_INVALID_VALID = 1,
+	SUB_ITEM_FAILED,
+	NOT_IN_OPEN_TIME,
+	NOT_MEET_BUY_CONDITION,
+	BUY_NUM_OVER_LIMIT
+}

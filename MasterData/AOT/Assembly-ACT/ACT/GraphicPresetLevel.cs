@@ -1,0 +1,10 @@
+namespace ACT;
+
+public enum GraphicPresetLevel
+{
+	BEST_PERFORMANCE,
+	PERFER_PERFORMANCE,
+	BALANCE,
+	PERFER_GRAPHICS,
+	BEST_GRAPHICS
+}

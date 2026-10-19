@@ -1,0 +1,36 @@
+namespace ACT.UI.CommonComponent.FancyScrollView.Scroller;
+
+public enum Ease
+{
+	Linear,
+	InBack,
+	InBounce,
+	InCirc,
+	InCubic,
+	InElastic,
+	InExpo,
+	InQuad,
+	InQuart,
+	InQuint,
+	InSine,
+	OutBack,
+	OutBounce,
+	OutCirc,
+	OutCubic,
+	OutElastic,
+	OutExpo,
+	OutQuad,
+	OutQuart,
+	OutQuint,
+	OutSine,
+	InOutBack,
+	InOutBounce,
+	InOutCirc,
+	InOutCubic,
+	InOutElastic,
+	InOutExpo,
+	InOutQuad,
+	InOutQuart,
+	InOutQuint,
+	InOutSine
+}

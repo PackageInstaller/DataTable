@@ -1,0 +1,75 @@
+using System;
+
+namespace Google.Protobuf.Reflection;
+
+public static class DescriptorReflection
+{
+	private static FileDescriptor descriptor;
+
+	public static FileDescriptor Descriptor => descriptor;
+
+	static DescriptorReflection()
+	{
+		descriptor = FileDescriptor.FromGeneratedCode(Convert.FromBase64String("CiBnb29nbGUvcHJvdG9idWYvZGVzY3JpcHRvci5wcm90bxIPZ29vZ2xlLnBy" + "b3RvYnVmIkcKEUZpbGVEZXNjcmlwdG9yU2V0EjIKBGZpbGUYASADKAsyJC5n" + "b29nbGUucHJvdG9idWYuRmlsZURlc2NyaXB0b3JQcm90byLbAwoTRmlsZURl" + "c2NyaXB0b3JQcm90bxIMCgRuYW1lGAEgASgJEg8KB3BhY2thZ2UYAiABKAkS" + "EgoKZGVwZW5kZW5jeRgDIAMoCRIZChFwdWJsaWNfZGVwZW5kZW5jeRgKIAMo" + "BRIXCg93ZWFrX2RlcGVuZGVuY3kYCyADKAUSNgoMbWVzc2FnZV90eXBlGAQg" + "AygLMiAuZ29vZ2xlLnByb3RvYnVmLkRlc2NyaXB0b3JQcm90bxI3CgllbnVt" + "X3R5cGUYBSADKAsyJC5nb29nbGUucHJvdG9idWYuRW51bURlc2NyaXB0b3JQ" + "cm90bxI4CgdzZXJ2aWNlGAYgAygLMicuZ29vZ2xlLnByb3RvYnVmLlNlcnZp" + "Y2VEZXNjcmlwdG9yUHJvdG8SOAoJZXh0ZW5zaW9uGAcgAygLMiUuZ29vZ2xl" + "LnByb3RvYnVmLkZpZWxkRGVzY3JpcHRvclByb3RvEi0KB29wdGlvbnMYCCAB" + "KAsyHC5nb29nbGUucHJvdG9idWYuRmlsZU9wdGlvbnMSOQoQc291cmNlX2Nv" + "ZGVfaW5mbxgJIAEoCzIfLmdvb2dsZS5wcm90b2J1Zi5Tb3VyY2VDb2RlSW5m" + "bxIOCgZzeW50YXgYDCABKAkiqQUKD0Rlc2NyaXB0b3JQcm90bxIMCgRuYW1l" + "GAEgASgJEjQKBWZpZWxkGAIgAygLMiUuZ29vZ2xlLnByb3RvYnVmLkZpZWxk" + "RGVzY3JpcHRvclByb3RvEjgKCWV4dGVuc2lvbhgGIAMoCzIlLmdvb2dsZS5w" + "cm90b2J1Zi5GaWVsZERlc2NyaXB0b3JQcm90bxI1CgtuZXN0ZWRfdHlwZRgD" + "IAMoCzIgLmdvb2dsZS5wcm90b2J1Zi5EZXNjcmlwdG9yUHJvdG8SNwoJZW51" + "bV90eXBlGAQgAygLMiQuZ29vZ2xlLnByb3RvYnVmLkVudW1EZXNjcmlwdG9y" + "UHJvdG8SSAoPZXh0ZW5zaW9uX3JhbmdlGAUgAygLMi8uZ29vZ2xlLnByb3Rv" + "YnVmLkRlc2NyaXB0b3JQcm90by5FeHRlbnNpb25SYW5nZRI5CgpvbmVvZl9k" + "ZWNsGAggAygLMiUuZ29vZ2xlLnByb3RvYnVmLk9uZW9mRGVzY3JpcHRvclBy" + "b3RvEjAKB29wdGlvbnMYByABKAsyHy5nb29nbGUucHJvdG9idWYuTWVzc2Fn" + "ZU9wdGlvbnMSRgoOcmVzZXJ2ZWRfcmFuZ2UYCSADKAsyLi5nb29nbGUucHJv" + "dG9idWYuRGVzY3JpcHRvclByb3RvLlJlc2VydmVkUmFuZ2USFQoNcmVzZXJ2" + "ZWRfbmFtZRgKIAMoCRplCg5FeHRlbnNpb25SYW5nZRINCgVzdGFydBgBIAEo" + "BRILCgNlbmQYAiABKAUSNwoHb3B0aW9ucxgDIAEoCzImLmdvb2dsZS5wcm90" + "b2J1Zi5FeHRlbnNpb25SYW5nZU9wdGlvbnMaKwoNUmVzZXJ2ZWRSYW5nZRIN" + "CgVzdGFydBgBIAEoBRILCgNlbmQYAiABKAUiZwoVRXh0ZW5zaW9uUmFuZ2VP" + "cHRpb25zEkMKFHVuaW50ZXJwcmV0ZWRfb3B0aW9uGOcHIAMoCzIkLmdvb2ds" + "ZS5wcm90b2J1Zi5VbmludGVycHJldGVkT3B0aW9uKgkI6AcQgICAgAIi1QUK" + "FEZpZWxkRGVzY3JpcHRvclByb3RvEgwKBG5hbWUYASABKAkSDgoGbnVtYmVy" + "GAMgASgFEjoKBWxhYmVsGAQgASgOMisuZ29vZ2xlLnByb3RvYnVmLkZpZWxk" + "RGVzY3JpcHRvclByb3RvLkxhYmVsEjgKBHR5cGUYBSABKA4yKi5nb29nbGUu" + "cHJvdG9idWYuRmllbGREZXNjcmlwdG9yUHJvdG8uVHlwZRIRCgl0eXBlX25h" + "bWUYBiABKAkSEAoIZXh0ZW5kZWUYAiABKAkSFQoNZGVmYXVsdF92YWx1ZRgH" + "IAEoCRITCgtvbmVvZl9pbmRleBgJIAEoBRIRCglqc29uX25hbWUYCiABKAkS" + "LgoHb3B0aW9ucxgIIAEoCzIdLmdvb2dsZS5wcm90b2J1Zi5GaWVsZE9wdGlv" + "bnMSFwoPcHJvdG8zX29wdGlvbmFsGBEgASgIIrYCCgRUeXBlEg8KC1RZUEVf" + "RE9VQkxFEAESDgoKVFlQRV9GTE9BVBACEg4KClRZUEVfSU5UNjQQAxIPCgtU" + "WVBFX1VJTlQ2NBAEEg4KClRZUEVfSU5UMzIQBRIQCgxUWVBFX0ZJWEVENjQQ" + "BhIQCgxUWVBFX0ZJWEVEMzIQBxINCglUWVBFX0JPT0wQCBIPCgtUWVBFX1NU" + "UklORxAJEg4KClRZUEVfR1JPVVAQChIQCgxUWVBFX01FU1NBR0UQCxIOCgpU" + "WVBFX0JZVEVTEAwSDwoLVFlQRV9VSU5UMzIQDRINCglUWVBFX0VOVU0QDhIR" + "Cg1UWVBFX1NGSVhFRDMyEA8SEQoNVFlQRV9TRklYRUQ2NBAQEg8KC1RZUEVf" + "U0lOVDMyEBESDwoLVFlQRV9TSU5UNjQQEiJDCgVMYWJlbBISCg5MQUJFTF9P" + "UFRJT05BTBABEhIKDkxBQkVMX1JFUVVJUkVEEAISEgoOTEFCRUxfUkVQRUFU" + "RUQQAyJUChRPbmVvZkRlc2NyaXB0b3JQcm90bxIMCgRuYW1lGAEgASgJEi4K" + "B29wdGlvbnMYAiABKAsyHS5nb29nbGUucHJvdG9idWYuT25lb2ZPcHRpb25z" + "IqQCChNFbnVtRGVzY3JpcHRvclByb3RvEgwKBG5hbWUYASABKAkSOAoFdmFs" + "dWUYAiADKAsyKS5nb29nbGUucHJvdG9idWYuRW51bVZhbHVlRGVzY3JpcHRv" + "clByb3RvEi0KB29wdGlvbnMYAyABKAsyHC5nb29nbGUucHJvdG9idWYuRW51" + "bU9wdGlvbnMSTgoOcmVzZXJ2ZWRfcmFuZ2UYBCADKAsyNi5nb29nbGUucHJv" + "dG9idWYuRW51bURlc2NyaXB0b3JQcm90by5FbnVtUmVzZXJ2ZWRSYW5nZRIV" + "Cg1yZXNlcnZlZF9uYW1lGAUgAygJGi8KEUVudW1SZXNlcnZlZFJhbmdlEg0K" + "BXN0YXJ0GAEgASgFEgsKA2VuZBgCIAEoBSJsChhFbnVtVmFsdWVEZXNjcmlw" + "dG9yUHJvdG8SDAoEbmFtZRgBIAEoCRIOCgZudW1iZXIYAiABKAUSMgoHb3B0" + "aW9ucxgDIAEoCzIhLmdvb2dsZS5wcm90b2J1Zi5FbnVtVmFsdWVPcHRpb25z" + "IpABChZTZXJ2aWNlRGVzY3JpcHRvclByb3RvEgwKBG5hbWUYASABKAkSNgoG" + "bWV0aG9kGAIgAygLMiYuZ29vZ2xlLnByb3RvYnVmLk1ldGhvZERlc2NyaXB0" + "b3JQcm90bxIwCgdvcHRpb25zGAMgASgLMh8uZ29vZ2xlLnByb3RvYnVmLlNl" + "cnZpY2VPcHRpb25zIsEBChVNZXRob2REZXNjcmlwdG9yUHJvdG8SDAoEbmFt" + "ZRgBIAEoCRISCgppbnB1dF90eXBlGAIgASgJEhMKC291dHB1dF90eXBlGAMg" + "ASgJEi8KB29wdGlvbnMYBCABKAsyHi5nb29nbGUucHJvdG9idWYuTWV0aG9k" + "T3B0aW9ucxIfChBjbGllbnRfc3RyZWFtaW5nGAUgASgIOgVmYWxzZRIfChBz" + "ZXJ2ZXJfc3RyZWFtaW5nGAYgASgIOgVmYWxzZSKlBgoLRmlsZU9wdGlvbnMS" + "FAoMamF2YV9wYWNrYWdlGAEgASgJEhwKFGphdmFfb3V0ZXJfY2xhc3NuYW1l" + "GAggASgJEiIKE2phdmFfbXVsdGlwbGVfZmlsZXMYCiABKAg6BWZhbHNlEikK" + "HWphdmFfZ2VuZXJhdGVfZXF1YWxzX2FuZF9oYXNoGBQgASgIQgIYARIlChZq" + "YXZhX3N0cmluZ19jaGVja191dGY4GBsgASgIOgVmYWxzZRJGCgxvcHRpbWl6" + "ZV9mb3IYCSABKA4yKS5nb29nbGUucHJvdG9idWYuRmlsZU9wdGlvbnMuT3B0" + "aW1pemVNb2RlOgVTUEVFRBISCgpnb19wYWNrYWdlGAsgASgJEiIKE2NjX2dl" + "bmVyaWNfc2VydmljZXMYECABKAg6BWZhbHNlEiQKFWphdmFfZ2VuZXJpY19z" + "ZXJ2aWNlcxgRIAEoCDoFZmFsc2USIgoTcHlfZ2VuZXJpY19zZXJ2aWNlcxgS" + "IAEoCDoFZmFsc2USIwoUcGhwX2dlbmVyaWNfc2VydmljZXMYKiABKAg6BWZh" + "bHNlEhkKCmRlcHJlY2F0ZWQYFyABKAg6BWZhbHNlEh4KEGNjX2VuYWJsZV9h" + "cmVuYXMYHyABKAg6BHRydWUSGQoRb2JqY19jbGFzc19wcmVmaXgYJCABKAkS" + "GAoQY3NoYXJwX25hbWVzcGFjZRglIAEoCRIUCgxzd2lmdF9wcmVmaXgYJyAB" + "KAkSGAoQcGhwX2NsYXNzX3ByZWZpeBgoIAEoCRIVCg1waHBfbmFtZXNwYWNl" + "GCkgASgJEh4KFnBocF9tZXRhZGF0YV9uYW1lc3BhY2UYLCABKAkSFAoMcnVi" + "eV9wYWNrYWdlGC0gASgJEkMKFHVuaW50ZXJwcmV0ZWRfb3B0aW9uGOcHIAMo" + "CzIkLmdvb2dsZS5wcm90b2J1Zi5VbmludGVycHJldGVkT3B0aW9uIjoKDE9w" + "dGltaXplTW9kZRIJCgVTUEVFRBABEg0KCUNPREVfU0laRRACEhAKDExJVEVf" + "UlVOVElNRRADKgkI6AcQgICAgAJKBAgmECcihAIKDk1lc3NhZ2VPcHRpb25z" + "EiYKF21lc3NhZ2Vfc2V0X3dpcmVfZm9ybWF0GAEgASgIOgVmYWxzZRIuCh9u" + "b19zdGFuZGFyZF9kZXNjcmlwdG9yX2FjY2Vzc29yGAIgASgIOgVmYWxzZRIZ" + "CgpkZXByZWNhdGVkGAMgASgIOgVmYWxzZRIRCgltYXBfZW50cnkYByABKAgS" + "QwoUdW5pbnRlcnByZXRlZF9vcHRpb24Y5wcgAygLMiQuZ29vZ2xlLnByb3Rv" + "YnVmLlVuaW50ZXJwcmV0ZWRPcHRpb24qCQjoBxCAgICAAkoECAQQBUoECAUQ" + "BkoECAYQB0oECAgQCUoECAkQCiKeAwoMRmllbGRPcHRpb25zEjoKBWN0eXBl" + "GAEgASgOMiMuZ29vZ2xlLnByb3RvYnVmLkZpZWxkT3B0aW9ucy5DVHlwZToG" + "U1RSSU5HEg4KBnBhY2tlZBgCIAEoCBI/CgZqc3R5cGUYBiABKA4yJC5nb29n" + "bGUucHJvdG9idWYuRmllbGRPcHRpb25zLkpTVHlwZToJSlNfTk9STUFMEhMK" + "BGxhenkYBSABKAg6BWZhbHNlEhkKCmRlcHJlY2F0ZWQYAyABKAg6BWZhbHNl" + "EhMKBHdlYWsYCiABKAg6BWZhbHNlEkMKFHVuaW50ZXJwcmV0ZWRfb3B0aW9u" + "GOcHIAMoCzIkLmdvb2dsZS5wcm90b2J1Zi5VbmludGVycHJldGVkT3B0aW9u" + "Ii8KBUNUeXBlEgoKBlNUUklORxAAEggKBENPUkQQARIQCgxTVFJJTkdfUElF" + "Q0UQAiI1CgZKU1R5cGUSDQoJSlNfTk9STUFMEAASDQoJSlNfU1RSSU5HEAES" + "DQoJSlNfTlVNQkVSEAIqCQjoBxCAgICAAkoECAQQBSJeCgxPbmVvZk9wdGlv" + "bnMSQwoUdW5pbnRlcnByZXRlZF9vcHRpb24Y5wcgAygLMiQuZ29vZ2xlLnBy" + "b3RvYnVmLlVuaW50ZXJwcmV0ZWRPcHRpb24qCQjoBxCAgICAAiKTAQoLRW51" + "bU9wdGlvbnMSEwoLYWxsb3dfYWxpYXMYAiABKAgSGQoKZGVwcmVjYXRlZBgD" + "IAEoCDoFZmFsc2USQwoUdW5pbnRlcnByZXRlZF9vcHRpb24Y5wcgAygLMiQu" + "Z29vZ2xlLnByb3RvYnVmLlVuaW50ZXJwcmV0ZWRPcHRpb24qCQjoBxCAgICA" + "AkoECAUQBiJ9ChBFbnVtVmFsdWVPcHRpb25zEhkKCmRlcHJlY2F0ZWQYASAB" + "KAg6BWZhbHNlEkMKFHVuaW50ZXJwcmV0ZWRfb3B0aW9uGOcHIAMoCzIkLmdv" + "b2dsZS5wcm90b2J1Zi5VbmludGVycHJldGVkT3B0aW9uKgkI6AcQgICAgAIi" + "ewoOU2VydmljZU9wdGlvbnMSGQoKZGVwcmVjYXRlZBghIAEoCDoFZmFsc2US" + "QwoUdW5pbnRlcnByZXRlZF9vcHRpb24Y5wcgAygLMiQuZ29vZ2xlLnByb3Rv" + "YnVmLlVuaW50ZXJwcmV0ZWRPcHRpb24qCQjoBxCAgICAAiKtAgoNTWV0aG9k" + "T3B0aW9ucxIZCgpkZXByZWNhdGVkGCEgASgIOgVmYWxzZRJfChFpZGVtcG90" + "ZW5jeV9sZXZlbBgiIAEoDjIvLmdvb2dsZS5wcm90b2J1Zi5NZXRob2RPcHRp" + "b25zLklkZW1wb3RlbmN5TGV2ZWw6E0lERU1QT1RFTkNZX1VOS05PV04SQwoU" + "dW5pbnRlcnByZXRlZF9vcHRpb24Y5wcgAygLMiQuZ29vZ2xlLnByb3RvYnVm" + "LlVuaW50ZXJwcmV0ZWRPcHRpb24iUAoQSWRlbXBvdGVuY3lMZXZlbBIXChNJ" + "REVNUE9URU5DWV9VTktOT1dOEAASEwoPTk9fU0lERV9FRkZFQ1RTEAESDgoK" + "SURFTVBPVEVOVBACKgkI6AcQgICAgAIingIKE1VuaW50ZXJwcmV0ZWRPcHRp" + "b24SOwoEbmFtZRgCIAMoCzItLmdvb2dsZS5wcm90b2J1Zi5VbmludGVycHJl" + "dGVkT3B0aW9uLk5hbWVQYXJ0EhgKEGlkZW50aWZpZXJfdmFsdWUYAyABKAkS" + "GgoScG9zaXRpdmVfaW50X3ZhbHVlGAQgASgEEhoKEm5lZ2F0aXZlX2ludF92" + "YWx1ZRgFIAEoAxIUCgxkb3VibGVfdmFsdWUYBiABKAESFAoMc3RyaW5nX3Zh" + "bHVlGAcgASgMEhcKD2FnZ3JlZ2F0ZV92YWx1ZRgIIAEoCRozCghOYW1lUGFy" + "dBIRCgluYW1lX3BhcnQYASACKAkSFAoMaXNfZXh0ZW5zaW9uGAIgAigIItUB" + "Cg5Tb3VyY2VDb2RlSW5mbxI6Cghsb2NhdGlvbhgBIAMoCzIoLmdvb2dsZS5w" + "cm90b2J1Zi5Tb3VyY2VDb2RlSW5mby5Mb2NhdGlvbhqGAQoITG9jYXRpb24S" + "EAoEcGF0aBgBIAMoBUICEAESEAoEc3BhbhgCIAMoBUICEAESGAoQbGVhZGlu" + "Z19jb21tZW50cxgDIAEoCRIZChF0cmFpbGluZ19jb21tZW50cxgEIAEoCRIh" + "ChlsZWFkaW5nX2RldGFjaGVkX2NvbW1lbnRzGAYgAygJIqcBChFHZW5lcmF0" + "ZWRDb2RlSW5mbxJBCgphbm5vdGF0aW9uGAEgAygLMi0uZ29vZ2xlLnByb3Rv" + "YnVmLkdlbmVyYXRlZENvZGVJbmZvLkFubm90YXRpb24aTwoKQW5ub3RhdGlv" + "bhIQCgRwYXRoGAEgAygFQgIQARITCgtzb3VyY2VfZmlsZRgCIAEoCRINCgVi" + "ZWdpbhgDIAEoBRILCgNlbmQYBCABKAVCfgoTY29tLmdvb2dsZS5wcm90b2J1" + "ZkIQRGVzY3JpcHRvclByb3Rvc0gBWi1nb29nbGUuZ29sYW5nLm9yZy9wcm90" + "b2J1Zi90eXBlcy9kZXNjcmlwdG9ycGL4AQGiAgNHUEKqAhpHb29nbGUuUHJv" + "dG9idWYuUmVmbGVjdGlvbg=="), new FileDescriptor[0], new GeneratedClrTypeInfo(null, null, new GeneratedClrTypeInfo[21]
+		{
+			new GeneratedClrTypeInfo(typeof(FileDescriptorSet), FileDescriptorSet.Parser, new string[1] { "File" }, null, null, null, null),
+			new GeneratedClrTypeInfo(typeof(FileDescriptorProto), FileDescriptorProto.Parser, new string[12]
+			{
+				"Name", "Package", "Dependency", "PublicDependency", "WeakDependency", "MessageType", "EnumType", "Service", "Extension", "Options",
+				"SourceCodeInfo", "Syntax"
+			}, null, null, null, null),
+			new GeneratedClrTypeInfo(typeof(DescriptorProto), DescriptorProto.Parser, new string[10] { "Name", "Field", "Extension", "NestedType", "EnumType", "ExtensionRange", "OneofDecl", "Options", "ReservedRange", "ReservedName" }, null, null, null, new GeneratedClrTypeInfo[2]
+			{
+				new GeneratedClrTypeInfo(typeof(DescriptorProto.Types.ExtensionRange), DescriptorProto.Types.ExtensionRange.Parser, new string[3] { "Start", "End", "Options" }, null, null, null, null),
+				new GeneratedClrTypeInfo(typeof(DescriptorProto.Types.ReservedRange), DescriptorProto.Types.ReservedRange.Parser, new string[2] { "Start", "End" }, null, null, null, null)
+			}),
+			new GeneratedClrTypeInfo(typeof(ExtensionRangeOptions), ExtensionRangeOptions.Parser, new string[1] { "UninterpretedOption" }, null, null, null, null),
+			new GeneratedClrTypeInfo(typeof(FieldDescriptorProto), FieldDescriptorProto.Parser, new string[11]
+			{
+				"Name", "Number", "Label", "Type", "TypeName", "Extendee", "DefaultValue", "OneofIndex", "JsonName", "Options",
+				"Proto3Optional"
+			}, null, new Type[2]
+			{
+				typeof(FieldDescriptorProto.Types.Type),
+				typeof(FieldDescriptorProto.Types.Label)
+			}, null, null),
+			new GeneratedClrTypeInfo(typeof(OneofDescriptorProto), OneofDescriptorProto.Parser, new string[2] { "Name", "Options" }, null, null, null, null),
+			new GeneratedClrTypeInfo(typeof(EnumDescriptorProto), EnumDescriptorProto.Parser, new string[5] { "Name", "Value", "Options", "ReservedRange", "ReservedName" }, null, null, null, new GeneratedClrTypeInfo[1]
+			{
+				new GeneratedClrTypeInfo(typeof(EnumDescriptorProto.Types.EnumReservedRange), EnumDescriptorProto.Types.EnumReservedRange.Parser, new string[2] { "Start", "End" }, null, null, null, null)
+			}),
+			new GeneratedClrTypeInfo(typeof(EnumValueDescriptorProto), EnumValueDescriptorProto.Parser, new string[3] { "Name", "Number", "Options" }, null, null, null, null),
+			new GeneratedClrTypeInfo(typeof(ServiceDescriptorProto), ServiceDescriptorProto.Parser, new string[3] { "Name", "Method", "Options" }, null, null, null, null),
+			new GeneratedClrTypeInfo(typeof(MethodDescriptorProto), MethodDescriptorProto.Parser, new string[6] { "Name", "InputType", "OutputType", "Options", "ClientStreaming", "ServerStreaming" }, null, null, null, null),
+			new GeneratedClrTypeInfo(typeof(FileOptions), FileOptions.Parser, new string[21]
+			{
+				"JavaPackage", "JavaOuterClassname", "JavaMultipleFiles", "JavaGenerateEqualsAndHash", "JavaStringCheckUtf8", "OptimizeFor", "GoPackage", "CcGenericServices", "JavaGenericServices", "PyGenericServices",
+				"PhpGenericServices", "Deprecated", "CcEnableArenas", "ObjcClassPrefix", "CsharpNamespace", "SwiftPrefix", "PhpClassPrefix", "PhpNamespace", "PhpMetadataNamespace", "RubyPackage",
+				"UninterpretedOption"
+			}, null, new Type[1] { typeof(FileOptions.Types.OptimizeMode) }, null, null),
+			new GeneratedClrTypeInfo(typeof(MessageOptions), MessageOptions.Parser, new string[5] { "MessageSetWireFormat", "NoStandardDescriptorAccessor", "Deprecated", "MapEntry", "UninterpretedOption" }, null, null, null, null),
+			new GeneratedClrTypeInfo(typeof(FieldOptions), FieldOptions.Parser, new string[7] { "Ctype", "Packed", "Jstype", "Lazy", "Deprecated", "Weak", "UninterpretedOption" }, null, new Type[2]
+			{
+				typeof(FieldOptions.Types.CType),
+				typeof(FieldOptions.Types.JSType)
+			}, null, null),
+			new GeneratedClrTypeInfo(typeof(OneofOptions), OneofOptions.Parser, new string[1] { "UninterpretedOption" }, null, null, null, null),
+			new GeneratedClrTypeInfo(typeof(EnumOptions), EnumOptions.Parser, new string[3] { "AllowAlias", "Deprecated", "UninterpretedOption" }, null, null, null, null),
+			new GeneratedClrTypeInfo(typeof(EnumValueOptions), EnumValueOptions.Parser, new string[2] { "Deprecated", "UninterpretedOption" }, null, null, null, null),
+			new GeneratedClrTypeInfo(typeof(ServiceOptions), ServiceOptions.Parser, new string[2] { "Deprecated", "UninterpretedOption" }, null, null, null, null),
+			new GeneratedClrTypeInfo(typeof(MethodOptions), MethodOptions.Parser, new string[3] { "Deprecated", "IdempotencyLevel", "UninterpretedOption" }, null, new Type[1] { typeof(MethodOptions.Types.IdempotencyLevel) }, null, null),
+			new GeneratedClrTypeInfo(typeof(UninterpretedOption), UninterpretedOption.Parser, new string[7] { "Name", "IdentifierValue", "PositiveIntValue", "NegativeIntValue", "DoubleValue", "StringValue", "AggregateValue" }, null, null, null, new GeneratedClrTypeInfo[1]
+			{
+				new GeneratedClrTypeInfo(typeof(UninterpretedOption.Types.NamePart), UninterpretedOption.Types.NamePart.Parser, new string[2] { "NamePart_", "IsExtension" }, null, null, null, null)
+			}),
+			new GeneratedClrTypeInfo(typeof(SourceCodeInfo), SourceCodeInfo.Parser, new string[1] { "Location" }, null, null, null, new GeneratedClrTypeInfo[1]
+			{
+				new GeneratedClrTypeInfo(typeof(SourceCodeInfo.Types.Location), SourceCodeInfo.Types.Location.Parser, new string[5] { "Path", "Span", "LeadingComments", "TrailingComments", "LeadingDetachedComments" }, null, null, null, null)
+			}),
+			new GeneratedClrTypeInfo(typeof(GeneratedCodeInfo), GeneratedCodeInfo.Parser, new string[1] { "Annotation" }, null, null, null, new GeneratedClrTypeInfo[1]
+			{
+				new GeneratedClrTypeInfo(typeof(GeneratedCodeInfo.Types.Annotation), GeneratedCodeInfo.Types.Annotation.Parser, new string[4] { "Path", "SourceFile", "Begin", "End" }, null, null, null, null)
+			})
+		}));
+	}
+}

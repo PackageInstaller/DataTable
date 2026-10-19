@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>Newtonsoft.Json</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>14.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="System.Numerics">
+      <HintPath>../../../dll/System.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml">
+      <HintPath>../../../dll/System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <HintPath>../../../dll/System.Xml.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>../System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <HintPath>../../../dll/System.Runtime.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>../../../dll/System.Data.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

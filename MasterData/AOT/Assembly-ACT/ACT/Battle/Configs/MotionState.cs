@@ -1,0 +1,37 @@
+namespace ACT.Battle.Configs;
+
+public enum MotionState
+{
+	None = 0,
+	Born = 1,
+	Idle = 2,
+	Move = 3,
+	Jump = 4,
+	FreeFall = 5,
+	ClimbCompensate = 6,
+	Dodge = 7,
+	Attack = 8,
+	Hit = 9,
+	Climb = 10,
+	Die = 11,
+	Turn = 12,
+	OpenBox = 22,
+	Adsorb = 23,
+	SwitchIn = 24,
+	ClimbDown = 25,
+	BackTrace = 26,
+	AirAttackA = 27,
+	GrabHook = 28,
+	GrabHookBegin = 29,
+	Spring = 30,
+	JumpDown = 31,
+	SpringBegin = 32,
+	BeCarryed = 33,
+	WallClimb = 34,
+	WallJump = 35,
+	Glide = 36,
+	Updraft = 37,
+	TeleportSitLoop = 38,
+	TeleportMoveToPath = 39,
+	TimelineControl = 40
+}

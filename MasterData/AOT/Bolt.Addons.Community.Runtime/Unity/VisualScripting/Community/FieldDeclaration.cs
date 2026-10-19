@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+using Unity.VisualScripting.Community.Libraries.CSharp;
+using UnityEngine;
+
+namespace Unity.VisualScripting.Community;
+
+[Serializable]
+[Inspectable]
+[RenamedFrom("Bolt.Addons.Community.Code.FieldDeclaration")]
+public abstract class FieldDeclaration : ScriptableObject
+{
+	[Inspectable]
+	public Type type = typeof(int);
+
+	[Inspectable]
+	public bool inspectable = true;
+
+	[Inspectable]
+	public bool serialized = true;
+
+	[Inspectable]
+	public object value;
+
+	public string FieldName;
+
+	public AccessModifier scope;
+
+	public FieldModifier fieldModifier;
+
+	public PropertyModifier propertyModifier;
+
+	public bool isProperty;
+
+	public bool get = true;
+
+	public bool set = true;
+
+	public List<AttributeDeclaration> attributes = new List<AttributeDeclaration>();
+
+	public ClassAsset classAsset;
+
+	public StructAsset structAsset;
+
+	public PropertyGetterMacro getter;
+
+	public PropertySetterMacro setter;
+
+	[SerializeField]
+	[HideInInspector]
+	private string qualifiedName;
+}

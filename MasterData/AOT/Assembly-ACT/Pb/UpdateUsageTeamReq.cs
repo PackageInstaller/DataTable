@@ -1,0 +1,246 @@
+using System;
+using System.CodeDom.Compiler;
+using System.Diagnostics;
+using ACT.Game.Data;
+using Google.Protobuf;
+using Google.Protobuf.Reflection;
+
+namespace Pb;
+
+public sealed class UpdateUsageTeamReq : IMessage<UpdateUsageTeamReq>, IMessage, IEquatable<UpdateUsageTeamReq>, IDeepCloneable<UpdateUsageTeamReq>, IBufferMessage
+{
+	private static readonly MessageParser<UpdateUsageTeamReq> _parser = new MessageParser<UpdateUsageTeamReq>(() => new UpdateUsageTeamReq());
+
+	private UnknownFieldSet _unknownFields;
+
+	public const int SceneEnumFieldNumber = 1;
+
+	private int sceneEnum_;
+
+	public const int NewUsageFieldNumber = 2;
+
+	private TeamUsage newUsage_;
+
+	[DebuggerNonUserCode]
+	[GeneratedCode("protoc", null)]
+	public static MessageParser<UpdateUsageTeamReq> Parser => _parser;
+
+	[DebuggerNonUserCode]
+	[GeneratedCode("protoc", null)]
+	public static MessageDescriptor Descriptor => TeamReflection.Descriptor.MessageTypes[11];
+
+	[DebuggerNonUserCode]
+	[GeneratedCode("protoc", null)]
+	MessageDescriptor IMessage.Descriptor => Descriptor;
+
+	[DebuggerNonUserCode]
+	[GeneratedCode("protoc", null)]
+	public int SceneEnum
+	{
+		get
+		{
+			return sceneEnum_;
+		}
+		set
+		{
+			sceneEnum_ = value;
+		}
+	}
+
+	[DebuggerNonUserCode]
+	[GeneratedCode("protoc", null)]
+	public TeamUsage NewUsage
+	{
+		get
+		{
+			return newUsage_;
+		}
+		set
+		{
+			newUsage_ = value;
+		}
+	}
+
+	[DebuggerNonUserCode]
+	[GeneratedCode("protoc", null)]
+	public UpdateUsageTeamReq()
+	{
+	}
+
+	[DebuggerNonUserCode]
+	[GeneratedCode("protoc", null)]
+	public UpdateUsageTeamReq(UpdateUsageTeamReq other)
+		: this()
+	{
+		sceneEnum_ = other.sceneEnum_;
+		newUsage_ = ((other.newUsage_ != null) ? other.newUsage_.Clone() : null);
+		_unknownFields = UnknownFieldSet.Clone(other._unknownFields);
+	}
+
+	[DebuggerNonUserCode]
+	[GeneratedCode("protoc", null)]
+	public UpdateUsageTeamReq Clone()
+	{
+		return new UpdateUsageTeamReq(this);
+	}
+
+	[DebuggerNonUserCode]
+	[GeneratedCode("protoc", null)]
+	public override bool Equals(object other)
+	{
+		return Equals(other as UpdateUsageTeamReq);
+	}
+
+	[DebuggerNonUserCode]
+	[GeneratedCode("protoc", null)]
+	public bool Equals(UpdateUsageTeamReq other)
+	{
+		if (other == null)
+		{
+			return false;
+		}
+		if (other == this)
+		{
+			return true;
+		}
+		if (SceneEnum != other.SceneEnum)
+		{
+			return false;
+		}
+		if (!object.Equals(NewUsage, other.NewUsage))
+		{
+			return false;
+		}
+		return object.Equals(_unknownFields, other._unknownFields);
+	}
+
+	[DebuggerNonUserCode]
+	[GeneratedCode("protoc", null)]
+	public override int GetHashCode()
+	{
+		int num = 1;
+		if (SceneEnum != 0)
+		{
+			num ^= SceneEnum.GetHashCode();
+		}
+		if (newUsage_ != null)
+		{
+			num ^= NewUsage.GetHashCode();
+		}
+		if (_unknownFields != null)
+		{
+			num ^= _unknownFields.GetHashCode();
+		}
+		return num;
+	}
+
+	[DebuggerNonUserCode]
+	[GeneratedCode("protoc", null)]
+	public override string ToString()
+	{
+		return JsonFormatter.ToDiagnosticString(this);
+	}
+
+	[DebuggerNonUserCode]
+	[GeneratedCode("protoc", null)]
+	public void WriteTo(CodedOutputStream output)
+	{
+		output.WriteRawMessage(this);
+	}
+
+	[DebuggerNonUserCode]
+	[GeneratedCode("protoc", null)]
+	void IBufferMessage.InternalWriteTo(ref WriteContext output)
+	{
+		if (SceneEnum != 0)
+		{
+			output.WriteRawTag(8);
+			output.WriteInt32(SceneEnum);
+		}
+		if (newUsage_ != null)
+		{
+			output.WriteRawTag(18);
+			output.WriteMessage(NewUsage);
+		}
+		if (_unknownFields != null)
+		{
+			_unknownFields.WriteTo(ref output);
+		}
+	}
+
+	[DebuggerNonUserCode]
+	[GeneratedCode("protoc", null)]
+	public int CalculateSize()
+	{
+		int num = 0;
+		if (SceneEnum != 0)
+		{
+			num += 1 + CodedOutputStream.ComputeInt32Size(SceneEnum);
+		}
+		if (newUsage_ != null)
+		{
+			num += 1 + CodedOutputStream.ComputeMessageSize(NewUsage);
+		}
+		if (_unknownFields != null)
+		{
+			num += _unknownFields.CalculateSize();
+		}
+		return num;
+	}
+
+	[DebuggerNonUserCode]
+	[GeneratedCode("protoc", null)]
+	public void MergeFrom(UpdateUsageTeamReq other)
+	{
+		if (other == null)
+		{
+			return;
+		}
+		if (other.SceneEnum != 0)
+		{
+			SceneEnum = other.SceneEnum;
+		}
+		if (other.newUsage_ != null)
+		{
+			if (newUsage_ == null)
+			{
+				NewUsage = new TeamUsage();
+			}
+			NewUsage.MergeFrom(other.NewUsage);
+		}
+		_unknownFields = UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+	}
+
+	[DebuggerNonUserCode]
+	[GeneratedCode("protoc", null)]
+	public void MergeFrom(CodedInputStream input)
+	{
+		input.ReadRawMessage(this);
+	}
+
+	[DebuggerNonUserCode]
+	[GeneratedCode("protoc", null)]
+	void IBufferMessage.InternalMergeFrom(ref ParseContext input)
+	{
+		uint num;
+		while ((num = input.ReadTag()) != 0)
+		{
+			switch (num)
+			{
+			default:
+				_unknownFields = UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+				break;
+			case 8u:
+				SceneEnum = input.ReadInt32();
+				break;
+			case 18u:
+				if (newUsage_ == null)
+				{
+					NewUsage = new TeamUsage();
+				}
+				input.ReadMessage(NewUsage);
+				break;
+			}
+		}
+	}
+}

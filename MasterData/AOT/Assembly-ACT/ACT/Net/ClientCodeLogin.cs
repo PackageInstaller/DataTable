@@ -1,0 +1,8 @@
+namespace ACT.Net;
+
+public enum ClientCodeLogin
+{
+	OPEN_ID_LOGIN_WHILE_SDK_LOGGED_IN = 1,
+	UID_LOGIN_WHILE_SDK_LOGGED_IN,
+	LAST_SESSION_EXPIRED
+}

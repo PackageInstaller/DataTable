@@ -1,0 +1,106 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>Assembly-LocalLoader</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <TargetFramework>net40</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>14.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="FMODUnity">
+      <HintPath>../../../dll/FMODUnity.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>../UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+      <HintPath>../Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="com.bamboo.sdk.core.Runtime">
+      <HintPath>../../../dll/com.bamboo.sdk.core.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>../Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>../System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>../../../dll/UnityEngine.UnityWebRequestModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UniTask">
+      <HintPath>../UniTask.dll</HintPath>
+    </Reference>
+    <Reference Include="YooAsset">
+      <HintPath>../YooAsset.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression">
+      <HintPath>../../../dll/System.IO.Compression.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>../UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <HintPath>../../../dll/System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>../../../dll/Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>../../../dll/UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>../../../dll/UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="spine-unity">
+      <HintPath>../../../dll/spine-unity.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>../UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>../../../dll/UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InputSystem">
+      <HintPath>../Unity.InputSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Localization">
+      <HintPath>../Unity.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>../DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-AOTGenericReferences">
+      <HintPath>../../../dll/Assembly-AOTGenericReferences.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Core">
+      <HintPath>../Unity.VisualScripting.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>../../../dll/UnityEngine.AssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>../UnityEngine.JSONSerializeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.Utilities">
+      <HintPath>../Sirenix.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>../../../dll/UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="CrashSight">
+      <HintPath>../../../dll/CrashSight.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>../../../dll/UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-DOTween">
+      <HintPath>../../../dll/Assembly-DOTween.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

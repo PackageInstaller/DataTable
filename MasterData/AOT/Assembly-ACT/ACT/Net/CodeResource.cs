@@ -1,0 +1,8 @@
+namespace ACT.Net;
+
+public enum CodeResource
+{
+	LOAD_DATA_CONFIG_FAILED = 1,
+	LOAD_SCENE_CONFIG_FAILED,
+	LOAD_SENSITIVE_FAILED
+}

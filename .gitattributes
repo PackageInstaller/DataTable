@@ -1,0 +1,12 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# JSON & Python files
+*.json text eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.sh text eol=lf
+
+# Binary files
+*.dll binary
+*.bin binary

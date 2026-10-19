@@ -1,0 +1,751 @@
+{
+  "1": {
+    "Id": 1,
+    "Desc": "条件：按下某个按键",
+    "ParamDesc": "",
+    "ServerTrigger": false,
+    "EditorShowName": "按下按键"
+  },
+  "2": {
+    "Id": 2,
+    "Desc": "条件：播放avg对话直到完成",
+    "ParamDesc": "storyGroupId(int):对话Id",
+    "ServerTrigger": false,
+    "EditorShowName": "播放AVG并等待完成完成"
+  },
+  "3": {
+    "Id": 3,
+    "Desc": "条件：播放timeline对话直到完成",
+    "ParamDesc": "timelineId(int):TimelineId",
+    "ServerTrigger": false,
+    "EditorShowName": "播放Timeline并等待完成"
+  },
+  "4": {
+    "Id": 4,
+    "Desc": "条件：监听或检查任务完成",
+    "ParamDesc": "missionId(int):任务Id",
+    "ServerTrigger": false,
+    "EditorShowName": "任务完成"
+  },
+  "5": {
+    "Id": 5,
+    "Desc": "条件：监听或检查小队所有角色死亡",
+    "ParamDesc": "",
+    "ServerTrigger": false,
+    "EditorShowName": "角色全部死亡"
+  },
+  "6": {
+    "Id": 6,
+    "Desc": "条件：监听角色等级是否在范围内",
+    "ParamDesc": "minLevel(int):最小等级 maxLevel(int):最大等级 ",
+    "ServerTrigger": false,
+    "EditorShowName": "等级是否在范围内"
+  },
+  "7": {
+    "Id": 7,
+    "Desc": "条件：是否到达某地图的某地点的半径范围内",
+    "ParamDesc": "worldId(int):地图Id positionX(float):坐标X positionY(float):坐标Y positionZ(float):坐标Z radius(float):半径",
+    "ServerTrigger": false,
+    "EditorShowName": "进入某范围"
+  },
+  "8": {
+    "Id": 8,
+    "Desc": "条件：玩家下线",
+    "ParamDesc": "",
+    "ServerTrigger": false,
+    "EditorShowName": "玩家下线"
+  },
+  "9": {
+    "Id": 9,
+    "Desc": "行为：播放Aside",
+    "ParamDesc": "asideId(int)",
+    "ServerTrigger": false,
+    "EditorShowName": "播放Aside"
+  },
+  "10": {
+    "Id": 10,
+    "Desc": "行为：创建怪物",
+    "ParamDesc": "monsterId(int)：怪物Id",
+    "ServerTrigger": false,
+    "EditorShowName": "创建怪物"
+  },
+  "11": {
+    "Id": 11,
+    "Desc": "行为：传送玩家至地点",
+    "ParamDesc": "positionX(float)坐标X positionY(float)坐标Y positionZ(float)坐标Z",
+    "ServerTrigger": false,
+    "EditorShowName": "传送玩家至地点"
+  },
+  "12": {
+    "Id": 12,
+    "Desc": "行为：设置复活点",
+    "ParamDesc": "positionX(float)坐标X positionY(float)坐标Y positionZ(float)坐标Z",
+    "ServerTrigger": false,
+    "EditorShowName": "更新本地和服务器复活点记录"
+  },
+  "13": {
+    "Id": 13,
+    "Desc": "行为：修改交互物状态",
+    "ParamDesc": "interactableId(int):交互物Id state(int):交互物状态",
+    "ServerTrigger": false,
+    "EditorShowName": "修改交互物状态"
+  },
+  "14": {
+    "Id": 14,
+    "Desc": "行为：消灭全部敌人",
+    "ParamDesc": "monsterId(int)：怪物Id count(int):数量",
+    "ServerTrigger": false,
+    "EditorShowName": "消灭全部敌人"
+  },
+  "15": {
+    "Id": 15,
+    "Desc": "条件：击杀静态配置的怪物",
+    "ParamDesc": "monsterId(int)：怪物Id count(int):数量",
+    "ServerTrigger": false,
+    "EditorShowName": "(废弃)击杀静态配置的怪物"
+  },
+  "16": {
+    "Id": 16,
+    "Desc": "条件：对比交互物状态",
+    "ParamDesc": "{ \"interactObjectStates\": [ { \"swid\": 0, \"stateId\":0 } ] }",
+    "ServerTrigger": false,
+    "EditorShowName": "对比交互物状态"
+  },
+  "17": {
+    "Id": 17,
+    "Desc": "条件：播放并完成蓝图",
+    "ParamDesc": "{ \"key\":\"\" }",
+    "ServerTrigger": false,
+    "EditorShowName": "播放并完成蓝图"
+  },
+  "18": {
+    "Id": 18,
+    "Desc": "行为：传送玩家至地点，可以选择worldId",
+    "ParamDesc": "worldId(int):地图Id positionX(float)坐标X positionY(float)坐标Y positionZ(float)坐标Z",
+    "ServerTrigger": false,
+    "EditorShowName": "传送玩家至世界地点"
+  },
+  "19": {
+    "Id": 19,
+    "Desc": "条件：当前持有物品",
+    "ParamDesc": "{itemId:0, itemCount:10}",
+    "ServerTrigger": false,
+    "EditorShowName": "当前持有物品"
+  },
+  "20": {
+    "Id": 20,
+    "Desc": "行为：打开短信界面",
+    "ParamDesc": "{contactId:12701,messageGroupId:1001}",
+    "ServerTrigger": false,
+    "EditorShowName": "打开短信界面"
+  },
+  "21": {
+    "Id": 21,
+    "Desc": "行为：发送短信",
+    "ParamDesc": "{messageGroupId:0}",
+    "ServerTrigger": true,
+    "EditorShowName": "服务器：发送短信"
+  },
+  "22": {
+    "Id": 22,
+    "Desc": "行为：调整UI状态(记录状态)",
+    "ParamDesc": "{uiModule:0,state:true}",
+    "ServerTrigger": true,
+    "EditorShowName": "服务器：调整UI状态"
+  },
+  "23": {
+    "Id": 23,
+    "Desc": "行为：开启/关闭战斗按钮(记录状态)",
+    "ParamDesc": "{key:0,active:true}",
+    "ServerTrigger": true,
+    "EditorShowName": "服务器：开启或关闭战斗按钮"
+  },
+  "24": {
+    "Id": 24,
+    "Desc": "行为：给队伍所有角色充能",
+    "ParamDesc": "",
+    "ServerTrigger": false,
+    "EditorShowName": "给队伍所有角色充能"
+  },
+  "25": {
+    "Id": 25,
+    "Desc": "行为：打开软引导",
+    "ParamDesc": "{guideId:0}",
+    "ServerTrigger": false,
+    "EditorShowName": "打开软引导"
+  },
+  "26": {
+    "Id": 26,
+    "Desc": "行为：打开强引导",
+    "ParamDesc": "{guideId:0}",
+    "ServerTrigger": false,
+    "EditorShowName": "打开强引导"
+  },
+  "27": {
+    "Id": 27,
+    "Desc": "行为：自动上阵血瓶",
+    "ParamDesc": "{bloodBottleId:0}",
+    "ServerTrigger": false,
+    "EditorShowName": "自动上阵血瓶"
+  },
+  "28": {
+    "Id": 28,
+    "Desc": "行为：解锁系统",
+    "ParamDesc": "{systemId:0}",
+    "ServerTrigger": true,
+    "EditorShowName": "服务器：解锁系统"
+  },
+  "29": {
+    "Id": 29,
+    "Desc": "行为：添加物品",
+    "ParamDesc": "{itemId:0, itemCount:10}",
+    "ServerTrigger": true,
+    "EditorShowName": "服务器：添加物品"
+  },
+  "30": {
+    "Id": 30,
+    "Desc": "条件：向NPC提交指定物品",
+    "ParamDesc": "{ \"items\": [ { \"itemId\": 0, \"itemCount\":0 } ] }",
+    "ServerTrigger": true,
+    "EditorShowName": "服务器：向NPC提交指定物品"
+  },
+  "31": {
+    "Id": 31,
+    "Desc": "行为：播放Timeline",
+    "ParamDesc": "{timelineId:1}",
+    "ServerTrigger": false,
+    "EditorShowName": "播放Timeline对话"
+  },
+  "32": {
+    "Id": 32,
+    "Desc": "行为：挂载蓝图",
+    "ParamDesc": "{key:\"\"}",
+    "ServerTrigger": false,
+    "EditorShowName": "挂载蓝图"
+  },
+  "33": {
+    "Id": 33,
+    "Desc": "行为：卸载蓝图",
+    "ParamDesc": "{key:\"\"}",
+    "ServerTrigger": false,
+    "EditorShowName": "卸载蓝图"
+  },
+  "34": {
+    "Id": 34,
+    "Desc": "条件：离开指定区域(区域名)",
+    "ParamDesc": "{mapArea:enum,areaName:\"\"}",
+    "ServerTrigger": false,
+    "EditorShowName": "离开指定区域(区域名)"
+  },
+  "35": {
+    "Id": 35,
+    "Desc": "条件：抵达指定区域(区域名)",
+    "ParamDesc": "{mapArea:enum,areaName:\"\"}",
+    "ServerTrigger": false,
+    "EditorShowName": "抵达指定区域(区域名)"
+  },
+  "36": {
+    "Id": 36,
+    "Desc": "条件：现实时间经过N天",
+    "ParamDesc": "{days:1}",
+    "ServerTrigger": false,
+    "EditorShowName": "服务器：现实时间经过X天"
+  },
+  "37": {
+    "Id": 37,
+    "Desc": "条件：当前处于某界面",
+    "ParamDesc": "{uiType:0}",
+    "ServerTrigger": false,
+    "EditorShowName": "当前处于某界面"
+  },
+  "38": {
+    "Id": 38,
+    "Desc": "条件：当前处于某地图",
+    "ParamDesc": "{map:0}",
+    "ServerTrigger": false,
+    "EditorShowName": "当前处于某地图"
+  },
+  "39": {
+    "Id": 39,
+    "Desc": "行为：删除物品",
+    "ParamDesc": "{itemId:0, itemCount:10}",
+    "ServerTrigger": true,
+    "EditorShowName": "服务器：删除某物品"
+  },
+  "40": {
+    "Id": 40,
+    "Desc": "行为：系统解锁提示",
+    "ParamDesc": "{}",
+    "ServerTrigger": false,
+    "EditorShowName": "系统解锁提示"
+  },
+  "41": {
+    "Id": 41,
+    "Desc": "行为：标记任务坐标点",
+    "ParamDesc": "{key:0,mapArea:enum,positionX:0f,positionY:0f,positionZ:0f}",
+    "ServerTrigger": false,
+    "EditorShowName": "标记任务坐标点"
+  },
+  "42": {
+    "Id": 42,
+    "Desc": "行为：打开指定界面",
+    "ParamDesc": "{uiType:0}",
+    "ServerTrigger": false,
+    "EditorShowName": "打开指定界面"
+  },
+  "43": {
+    "Id": 43,
+    "Desc": "行为：移除任务坐标点",
+    "ParamDesc": "{key:0}",
+    "ServerTrigger": false,
+    "EditorShowName": "移除任务坐标点"
+  },
+  "44": {
+    "Id": 44,
+    "Desc": "条件：直到某AVG对话完成",
+    "ParamDesc": "{storyGroupId:0}",
+    "ServerTrigger": false,
+    "EditorShowName": "直到某AVG对话完成"
+  },
+  "45": {
+    "Id": 45,
+    "Desc": "条件：当接收到全局事件(蓝图)",
+    "ParamDesc": "{eventId:0}",
+    "ServerTrigger": false,
+    "EditorShowName": "当接收到全局事件(蓝图)"
+  },
+  "46": {
+    "Id": 46,
+    "Desc": "条件：当接收到全局事件String(蓝图)",
+    "ParamDesc": "{eventId:\"evtId\"}",
+    "ServerTrigger": false,
+    "EditorShowName": "当接收到全局事件String(蓝图)"
+  },
+  "47": {
+    "Id": 47,
+    "Desc": "条件：与NPC对话并播放AVG",
+    "ParamDesc": "{npcId:0,storyGroupId:0}",
+    "ServerTrigger": false,
+    "EditorShowName": "与NPC对话并播放AVG"
+  },
+  "48": {
+    "Id": 48,
+    "Desc": "条件：与NPC对话并播放Timeline",
+    "ParamDesc": "{npcId:0,timelineId:0}",
+    "ServerTrigger": false,
+    "EditorShowName": "与NPC对话并播放Timeline"
+  },
+  "49": {
+    "Id": 49,
+    "Desc": "条件：开启强引导并等待完成",
+    "ParamDesc": "{guideId:0}",
+    "ServerTrigger": false,
+    "EditorShowName": "开启强引导并等待完成"
+  },
+  "50": {
+    "Id": 50,
+    "Desc": "条件：系统解锁动画播放过",
+    "ParamDesc": "{systemId:0}",
+    "ServerTrigger": false,
+    "EditorShowName": "系统解锁动画播放过"
+  },
+  "51": {
+    "Id": 51,
+    "Desc": "行为：设置复活为不移动",
+    "ParamDesc": "{}",
+    "ServerTrigger": false,
+    "EditorShowName": "复活设置：原地复活"
+  },
+  "52": {
+    "Id": 52,
+    "Desc": "行为：移除复活设置",
+    "ParamDesc": "{}",
+    "ServerTrigger": false,
+    "EditorShowName": "复活设置：移除"
+  },
+  "53": {
+    "Id": 53,
+    "Desc": "行为：禁用传送按钮",
+    "ParamDesc": "{}",
+    "ServerTrigger": false,
+    "EditorShowName": "禁用传送按钮"
+  },
+  "54": {
+    "Id": 54,
+    "Desc": "行为：激活传送按钮",
+    "ParamDesc": "{}",
+    "ServerTrigger": false,
+    "EditorShowName": "激活传送按钮"
+  },
+  "55": {
+    "Id": 55,
+    "Desc": "行为：黑屏",
+    "ParamDesc": "{duration:0.5f}",
+    "ServerTrigger": false,
+    "EditorShowName": "黑屏"
+  },
+  "56": {
+    "Id": 56,
+    "Desc": "行为：复活设置：设置复活到复活点",
+    "ParamDesc": "{}",
+    "ServerTrigger": false,
+    "EditorShowName": "复活设置：复活到复活点"
+  },
+  "57": {
+    "Id": 57,
+    "Desc": "条件：当追逐战失败",
+    "ParamDesc": "{}",
+    "ServerTrigger": false,
+    "EditorShowName": "当追逐战失败"
+  },
+  "58": {
+    "Id": 58,
+    "Desc": "条件：当接收到客户端事件",
+    "ParamDesc": "{clientEvent:0}",
+    "ServerTrigger": false,
+    "EditorShowName": "当接收到客户端事件"
+  },
+  "59": {
+    "Id": 59,
+    "Desc": "条件：直到某Timeline完成",
+    "ParamDesc": "{timelineId:0}",
+    "ServerTrigger": false,
+    "EditorShowName": "直到某Timeline完成"
+  },
+  "60": {
+    "Id": 60,
+    "Desc": "条件：现实时间经过X秒",
+    "ParamDesc": "{ seconds: 1 }",
+    "ServerTrigger": false,
+    "EditorShowName": "服务器：现实时间经过X秒"
+  },
+  "61": {
+    "Id": 61,
+    "Desc": "条件：检查世界等级是否在范围内",
+    "ParamDesc": "{ minLevel: 0, maxLevel: 10}",
+    "ServerTrigger": false,
+    "EditorShowName": "检查世界等级是否在范围内"
+  },
+  "62": {
+    "Id": 62,
+    "Desc": "条件：检查神庙是否完成",
+    "ParamDesc": "{ templeIds: [ 0, 1, 2, 3 ] }",
+    "ServerTrigger": false,
+    "EditorShowName": "检查神庙是否完成"
+  },
+  "63": {
+    "Id": 63,
+    "Desc": "条件：KeyPoint检测",
+    "ParamDesc": "{ keyPoint: 0 }",
+    "ServerTrigger": false,
+    "EditorShowName": "KeyPoint检测"
+  },
+  "64": {
+    "Id": 64,
+    "Desc": "行为：发送KeyPoint",
+    "ParamDesc": "{ keyPoint: 0 }",
+    "ServerTrigger": false,
+    "EditorShowName": "发送KeyPoint"
+  },
+  "65": {
+    "Id": 65,
+    "Desc": "行为：大电梯修改状态",
+    "ParamDesc": "{ swid: 0, floor: 0}",
+    "ServerTrigger": false,
+    "EditorShowName": "大电梯修改状态"
+  },
+  "66": {
+    "Id": 66,
+    "Desc": "行为：播放BGM",
+    "ParamDesc": "{ bgmName: \"\" }",
+    "ServerTrigger": false,
+    "EditorShowName": "播放BGM(临时)"
+  },
+  "67": {
+    "Id": 67,
+    "Desc": "行为：设置BGM状态",
+    "ParamDesc": "{ bgmState: 0 }",
+    "ServerTrigger": false,
+    "EditorShowName": "设置BGM状态(临时)"
+  },
+  "68": {
+    "Id": 68,
+    "Desc": "行为：触发图文引导",
+    "ParamDesc": "{ tutorialId: 0 }",
+    "ServerTrigger": false,
+    "EditorShowName": "打开图文引导"
+  },
+  "69": {
+    "Id": 69,
+    "Desc": "行为：播放AVG",
+    "ParamDesc": "{ storyGroupId: 0 }",
+    "ServerTrigger": false,
+    "EditorShowName": "播放AVG"
+  },
+  "70": {
+    "Id": 70,
+    "Desc": "行为：播放Timeline",
+    "ParamDesc": "{timelineId:0}",
+    "ServerTrigger": false,
+    "EditorShowName": "播放Timeline"
+  },
+  "71": {
+    "Id": 71,
+    "Desc": "行为：章节开启结束提示",
+    "ParamDesc": "{tipType:0}",
+    "ServerTrigger": false,
+    "EditorShowName": "章节开启结束提示"
+  },
+  "72": {
+    "Id": 72,
+    "Desc": "条件：系统是否解锁",
+    "ParamDesc": "{systemId:0}",
+    "ServerTrigger": false,
+    "EditorShowName": "系统是否解锁"
+  },
+  "73": {
+    "Id": 73,
+    "Desc": "条件：当离开任务世界",
+    "ParamDesc": "{}",
+    "ServerTrigger": false,
+    "EditorShowName": "当离开任务世界"
+  },
+  "74": {
+    "Id": 74,
+    "Desc": "行为：进入主角模式",
+    "ParamDesc": "{}",
+    "ServerTrigger": false,
+    "EditorShowName": "进入主角模式"
+  },
+  "75": {
+    "Id": 75,
+    "Desc": "行为：退出主角模式",
+    "ParamDesc": "{}",
+    "ServerTrigger": false,
+    "EditorShowName": "退出主角模式"
+  },
+  "76": {
+    "Id": 76,
+    "Desc": "条件：检测战斗房怪物血量百分比",
+    "ParamDesc": "{}",
+    "ServerTrigger": false,
+    "EditorShowName": "检测战斗房级怪物血量百分比"
+  },
+  "77": {
+    "Id": 77,
+    "Desc": "条件：播放aside并检测完成",
+    "ParamDesc": "{asideId:0}",
+    "ServerTrigger": false,
+    "EditorShowName": "播放Aside并检测完成"
+  },
+  "78": {
+    "Id": 78,
+    "Desc": "条件：检测当前战斗房波次",
+    "ParamDesc": "{waves:0}",
+    "ServerTrigger": false,
+    "EditorShowName": "检测当前战斗房波次"
+  },
+  "79": {
+    "Id": 79,
+    "Desc": "条件：监测当前战斗房boss血量百分比",
+    "ParamDesc": "{hpPercent:0}",
+    "ServerTrigger": false,
+    "EditorShowName": "检测当前战斗房boss血量百分比"
+  },
+  "80": {
+    "Id": 80,
+    "Desc": "条件：检测某对话选项是否选择过",
+    "ParamDesc": "{optionId:0}",
+    "ServerTrigger": false,
+    "EditorShowName": "检测某对话选项是否选择过"
+  },
+  "81": {
+    "Id": 81,
+    "Desc": "条件：检测短信是否完成",
+    "ParamDesc": "{snsId:0}",
+    "ServerTrigger": false,
+    "EditorShowName": "检测短信是否完成"
+  },
+  "82": {
+    "Id": 82,
+    "Desc": "条件：可选任务条件",
+    "ParamDesc": "{missions:{0}}",
+    "ServerTrigger": false,
+    "EditorShowName": "可选任务"
+  },
+  "83": {
+    "Id": 83,
+    "Desc": "条件：打开副本界面",
+    "ParamDesc": "{raidId:0}",
+    "ServerTrigger": false,
+    "EditorShowName": "打开副本界面"
+  },
+  "84": {
+    "Id": 84,
+    "Desc": "条件：交互物提交物品",
+    "ParamDesc": "{ \"items\": [ { \"itemId\": 0, \"itemCount\":0 } ] }",
+    "ServerTrigger": true,
+    "EditorShowName": "服务器：向交互物提交指定物品"
+  },
+  "85": {
+    "Id": 85,
+    "Desc": "条件：Precondition任务组完成",
+    "ParamDesc": "{preconditionGroup:0}",
+    "ServerTrigger": false,
+    "EditorShowName": "Precondition任务组完成"
+  },
+  "86": {
+    "Id": 86,
+    "Desc": "条件：打开阅读物界面并等待完成",
+    "ParamDesc": "{}",
+    "ServerTrigger": false,
+    "EditorShowName": "打开阅读物界面并等待完成"
+  },
+  "87": {
+    "Id": 87,
+    "Desc": "行为：打开阅读物界面",
+    "ParamDesc": "{}",
+    "ServerTrigger": false,
+    "EditorShowName": "打开阅读物界面"
+  },
+  "88": {
+    "Id": 88,
+    "Desc": "行为：复活设置：复活到指定位置",
+    "ParamDesc": "{chunkId:0, positionX:0,positionY:0,positionZ:0}",
+    "ServerTrigger": false,
+    "EditorShowName": "复活设置：复活到指定位置"
+  },
+  "89": {
+    "Id": 89,
+    "Desc": "行为：突破任务HUD提示",
+    "ParamDesc": "{}",
+    "ServerTrigger": false,
+    "EditorShowName": "突破任务HUD提示"
+  },
+  "90": {
+    "Id": 90,
+    "Desc": "条件：检测是否阅读过指定阅读物",
+    "ParamDesc": "{textLibraryContentId：0}",
+    "ServerTrigger": false,
+    "EditorShowName": "是否阅读过指定阅读物"
+  },
+  "91": {
+    "Id": 91,
+    "Desc": "条件：打开小游戏并等待小游戏完成",
+    "ParamDesc": "{}",
+    "ServerTrigger": false,
+    "EditorShowName": "打开小游戏并等待小游戏完成"
+  },
+  "92": {
+    "Id": 92,
+    "Desc": "条件：当接收到任务信号",
+    "ParamDesc": "{signal: \"\"}",
+    "ServerTrigger": false,
+    "EditorShowName": "当接收到任务信号"
+  },
+  "93": {
+    "Id": 93,
+    "Desc": "行为：清理KeyPoints",
+    "ParamDesc": "{keypoints: [0,1,2,3]}",
+    "ServerTrigger": false,
+    "EditorShowName": "清理KeyPoints"
+  },
+  "94": {
+    "Id": 94,
+    "Desc": "条件：肉鸽完成次数条件",
+    "ParamDesc": "{level: 0}",
+    "ServerTrigger": false,
+    "EditorShowName": "肉鸽完成次数条件"
+  },
+  "95": {
+    "Id": 95,
+    "Desc": "条件：深渊完成次数条件",
+    "ParamDesc": "{raidId: 0,count:0}",
+    "ServerTrigger": false,
+    "EditorShowName": "深渊完成次数条件"
+  },
+  "96": {
+    "Id": 96,
+    "Desc": "条件：训练场完成次数条件",
+    "ParamDesc": "{raidId: 0,count:0}",
+    "ServerTrigger": false,
+    "EditorShowName": "训练场完成次数条件"
+  },
+  "97": {
+    "Id": 97,
+    "Desc": "条件：权限等级条件",
+    "ParamDesc": "{raidId: 0,count:0}",
+    "ServerTrigger": false,
+    "EditorShowName": "权限等级条件"
+  },
+  "98": {
+    "Id": 98,
+    "Desc": "条件：触发倒计时引导",
+    "ParamDesc": "{}",
+    "ServerTrigger": false,
+    "EditorShowName": "触发倒计时引导"
+  },
+  "99": {
+    "Id": 99,
+    "Desc": "行为：进入试用角色",
+    "ParamDesc": "{}",
+    "ServerTrigger": false,
+    "EditorShowName": "进入试用角色"
+  },
+  "100": {
+    "Id": 100,
+    "Desc": "行为：退出试用角色",
+    "ParamDesc": "{}",
+    "ServerTrigger": false,
+    "EditorShowName": "退出试用角色"
+  },
+  "101": {
+    "Id": 101,
+    "Desc": "行为：打开权限等级弹窗",
+    "ParamDesc": "{}",
+    "ServerTrigger": false,
+    "EditorShowName": "打开权限等级弹窗"
+  },
+  "102": {
+    "Id": 102,
+    "Desc": "条件：进入专注模式",
+    "ParamDesc": "{}",
+    "ServerTrigger": false,
+    "EditorShowName": "进入专注模式"
+  },
+  "103": {
+    "Id": 103,
+    "Desc": "条件：打开专注模式弹窗",
+    "ParamDesc": "{}",
+    "ServerTrigger": false,
+    "EditorShowName": "打开专注模式弹窗"
+  },
+  "104": {
+    "Id": 104,
+    "Desc": "条件：开始倒计时",
+    "ParamDesc": "{}",
+    "ServerTrigger": false,
+    "EditorShowName": "开始倒计时"
+  },
+  "105": {
+    "Id": 105,
+    "Desc": "条件：离开某范围",
+    "ParamDesc": "{}",
+    "ServerTrigger": false,
+    "EditorShowName": "离开某范围"
+  },
+  "107": {
+    "Id": 107,
+    "Desc": "条件：当进入或离开Chunk",
+    "ParamDesc": "{}",
+    "ServerTrigger": false,
+    "EditorShowName": "当进入或离开Chunk"
+  },
+  "108": {
+    "Id": 108,
+    "Desc": "条件：当退出主角模式",
+    "ParamDesc": "{}",
+    "ServerTrigger": false,
+    "EditorShowName": "当退出主角模式"
+  }
+}

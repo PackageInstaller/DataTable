@@ -1,0 +1,92 @@
+{
+  "1001": {
+    "Id": 1001,
+    "TargetId": 1202,
+    "TimetargetId": 1202,
+    "EndType": 3,
+    "Enabled": 1,
+    "Priority": 2,
+    "CycleType": 1,
+    "MaxShowTimes": 1,
+    "ButtonActionType": 3,
+    "JumpParam": [],
+    "PrefebPath": "UI/SlapTenDaySignIn",
+    "OffMissongroup": 0
+  },
+  "1002": {
+    "Id": 1002,
+    "TargetId": 1203,
+    "TimetargetId": 1203,
+    "EndType": 3,
+    "Enabled": 1,
+    "Priority": 2,
+    "CycleType": 1,
+    "MaxShowTimes": 1,
+    "ButtonActionType": 3,
+    "JumpParam": [],
+    "PrefebPath": "UI/SlapTenDaySignIn",
+    "OffMissongroup": 0
+  },
+  "1003": {
+    "Id": 1003,
+    "TargetId": 2100001,
+    "TimetargetId": 2100001,
+    "EndType": 1,
+    "Enabled": 1,
+    "Priority": 4,
+    "CycleType": 1,
+    "MaxShowTimes": 1,
+    "ButtonActionType": 1,
+    "JumpParam": [
+      2708
+    ],
+    "PrefebPath": "UI/DeparturePackage",
+    "OffMissongroup": 40002
+  },
+  "1004": {
+    "Id": 1004,
+    "TargetId": 901,
+    "TimetargetId": 3004,
+    "EndType": 2,
+    "Enabled": 1,
+    "Priority": 5,
+    "CycleType": 1,
+    "MaxShowTimes": 1,
+    "ButtonActionType": 1,
+    "JumpParam": [
+      2504
+    ],
+    "PrefebPath": "UI/CharacterSkinPackageView",
+    "OffMissongroup": 0
+  },
+  "1005": {
+    "Id": 1005,
+    "TargetId": 1003,
+    "TimetargetId": 1003,
+    "EndType": 3,
+    "Enabled": 1,
+    "Priority": 1,
+    "CycleType": 1,
+    "MaxShowTimes": 1,
+    "ButtonActionType": 3,
+    "JumpParam": [],
+    "PrefebPath": "UI/NewbieLoginView",
+    "OffMissongroup": 0
+  },
+  "1006": {
+    "Id": 1006,
+    "TargetId": 5200001,
+    "TimetargetId": 5200001,
+    "EndType": 1,
+    "Enabled": 1,
+    "Priority": 3,
+    "CycleType": 1,
+    "MaxShowTimes": 1,
+    "ButtonActionType": 1,
+    "JumpParam": [
+      2707
+    ],
+    "PrefebPath": "UI/TenTicketGiftView ",
+    "OffMissongroup": 40002
+  }
+}

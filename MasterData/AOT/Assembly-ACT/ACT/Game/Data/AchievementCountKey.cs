@@ -1,0 +1,67 @@
+using Google.Protobuf.Reflection;
+
+namespace ACT.Game.Data;
+
+public enum AchievementCountKey
+{
+	[OriginalName("ACHIEVEMENT_COUNT_MAXIMUM_WORLD_LEVEL")]
+	AchievementCountMaximumWorldLevel,
+	[OriginalName("ACHIEVEMENT_COUNT_LOGIN_DAY")]
+	AchievementCountLoginDay,
+	[OriginalName("ACHIEVEMENT_COUNT_MAXIMUM_ABYSS_STARTS")]
+	AchievementCountMaximumAbyssStarts,
+	[OriginalName("ACHIEVEMENT_COUNT_PERFECT_DODGE")]
+	AchievementCountPerfectDodge,
+	[OriginalName("ACHIEVEMENT_COUNT_TOTAL_DAMAGE")]
+	AchievementCountTotalDamage,
+	[OriginalName("ACHIEVEMENT_COUNT_KILLED_MONSTER")]
+	AchievementCountKilledMonster,
+	[OriginalName("ACHIEVEMENT_COUNT_KILLED_BOSS")]
+	AchievementCountKilledBoss,
+	[OriginalName("ACHIEVEMENT_COUNT_MAIN_MISSION")]
+	AchievementCountMainMission,
+	[OriginalName("ACHIEVEMENT_COUNT_SIDE_MISSION")]
+	AchievementCountSideMission,
+	[OriginalName("ACHIEVEMENT_COUNT_DAILY_MISSION")]
+	AchievementCountDailyMission,
+	[OriginalName("ACHIEVEMENT_COUNT_ONLINE_TIME")]
+	AchievementCountOnlineTime,
+	[OriginalName("ACHIEVEMENT_COUNT_GACHA")]
+	AchievementCountGacha,
+	[OriginalName("ACHIEVEMENT_COUNT_EQUIP_CREATE")]
+	AchievementCountEquipCreate,
+	[OriginalName("ACHIEVEMENT_COUNT_CONSECUTIVE_LOGIN")]
+	AchievementCountConsecutiveLogin,
+	[OriginalName("ACHIEVEMENT_COUNT_LEVEL_UP_EQUIP")]
+	AchievementCountLevelUpEquip,
+	[OriginalName("ACHIEVEMENT_COUNT_OPEN_TREASURE")]
+	AchievementCountOpenTreasure,
+	[OriginalName("ACHIEVEMENT_COUNT_COLLECT_GATHERABLE")]
+	AchievementCountCollectGatherable,
+	[OriginalName("ACHIEVEMENT_COUNT_COMBINE_ITEM")]
+	AchievementCountCombineItem,
+	[OriginalName("ACHIEVEMENT_COUNT_SUPPORT_SKILL_CAST")]
+	AchievementCountSupportSkillCast,
+	[OriginalName("ACHIEVEMENT_COUNT_ROGUELIKE_RAID_PASS")]
+	AchievementCountRoguelikeRaidPass,
+	[OriginalName("ACHIEVEMENT_COUNT_WILD_BOSS_CHALLENGE")]
+	AchievementCountWildBossChallenge,
+	[OriginalName("ACHIEVEMENT_COUNT_BREAK_TOUGHNESS_BAR_COUNT")]
+	AchievementCountBreakToughnessBarCount,
+	[OriginalName("ACHIEVEMENT_COUNT_CHAR_TUTORIAL_TASK_COMPLETE")]
+	AchievementCountCharTutorialTaskComplete,
+	[OriginalName("ACHIEVEMENT_COUNT_DEATH_BY_TRAP_COUNT")]
+	AchievementCountDeathByTrapCount,
+	[OriginalName("ACHIEVEMENT_COUNT_DESTROY_MAP_PROP_COUNT")]
+	AchievementCountDestroyMapPropCount,
+	[OriginalName("ACHIEVEMENT_COUNT_REVIVE_CHARACTERS_WITH_BEACONS")]
+	AchievementCountReviveCharactersWithBeacons,
+	[OriginalName("ACHIEVEMENT_COUNT_SCENE_USE_GRIPPER_COUNT")]
+	AchievementCountSceneUseGripperCount,
+	[OriginalName("ACHIEVEMENT_COUNT_BEACON_TELEPORT_COUNT")]
+	AchievementCountBeaconTeleportCount,
+	[OriginalName("ACHIEVEMENT_COUNT_KILL_MONSTER_BY_TRAP_COUNT")]
+	AchievementCountKillMonsterByTrapCount,
+	[OriginalName("ACHIEVEMENT_COUNT_UPDRAFT_MAXIMUM_SEC")]
+	AchievementCountUpdraftMaximumSec
+}

@@ -1,0 +1,259 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>Assembly-ACT</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <TargetFramework>net40</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>14.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>../UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>../System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Bamboo.ECS.Runtime">
+      <HintPath>../Bamboo.ECS.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>../../../dll/Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>../../../dll/UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>../UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Flow">
+      <HintPath>../Unity.VisualScripting.Flow.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Core">
+      <HintPath>../Unity.VisualScripting.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.Serialization">
+      <HintPath>../Sirenix.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="UniTask">
+      <HintPath>../UniTask.dll</HintPath>
+    </Reference>
+    <Reference Include="Fundamental">
+      <HintPath>../Fundamental.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-LocalLoader">
+      <HintPath>../Assembly-LocalLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="Bamboo.Chronos.Runtime">
+      <HintPath>../Bamboo.Chronos.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.BehaviorTree.Runtime">
+      <HintPath>../../../dll/Plugin.BehaviorTree.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="BehaviorDesigner.Runtime">
+      <HintPath>../BehaviorDesigner.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>../../../dll/UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+      <HintPath>../Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+      <HintPath>../Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>../UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="FMODUnity">
+      <HintPath>../../../dll/FMODUnity.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.DirectorModule">
+      <HintPath>../../../dll/UnityEngine.DirectorModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>../Cinemachine.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline">
+      <HintPath>../../../dll/Unity.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Bamboo.AssetField.Runtime">
+      <HintPath>../Bamboo.AssetField.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InputSystem">
+      <HintPath>../Unity.InputSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Localization">
+      <HintPath>../Unity.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ResourceManager">
+      <HintPath>../Unity.ResourceManager.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>../DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="UniTask.DOTween">
+      <HintPath>../../../dll/UniTask.DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-RootMotion">
+      <HintPath>../../../dll/Assembly-RootMotion.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AndroidJNIModule">
+      <HintPath>../UnityEngine.AndroidJNIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Bamboo.Precache.Runtime">
+      <HintPath>../../../dll/Bamboo.Precache.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf">
+      <HintPath>../Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-LoopScroll">
+      <HintPath>../Assembly-LoopScroll.dll</HintPath>
+    </Reference>
+    <Reference Include="YooAsset">
+      <HintPath>../YooAsset.dll</HintPath>
+    </Reference>
+    <Reference Include="Bamboo.Collections.Runtime">
+      <HintPath>../Bamboo.Collections.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Bamboo.Command.Runtime">
+      <HintPath>../Bamboo.Command.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleJson">
+      <HintPath>../../../dll/SimpleJson.dll</HintPath>
+    </Reference>
+    <Reference Include="com.bamboo.sdk.core.Runtime">
+      <HintPath>../../../dll/com.bamboo.sdk.core.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>../../../dll/UnityEngine.UnityWebRequestModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>../../../dll/UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
+    <Reference Include="EasyCharacterMovement.CharacterMovement">
+      <HintPath>../EasyCharacterMovement.CharacterMovement.dll</HintPath>
+    </Reference>
+    <Reference Include="PathFinding2D.Runtime">
+      <HintPath>../PathFinding2D.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>../Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OSA.Core">
+      <HintPath>../OSA.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="RenderProject.URP.CustomSkinning.Runtime">
+      <HintPath>../../../dll/RenderProject.URP.CustomSkinning.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="uLipSync.Runtime">
+      <HintPath>../../../dll/uLipSync.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule">
+      <HintPath>../../../dll/UnityEngine.Physics2DModule.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>../../../dll/System.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VideoModule">
+      <HintPath>../../../dll/UnityEngine.VideoModule.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <HintPath>../../../dll/System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.OdinInspector.Attributes">
+      <HintPath>../Sirenix.OdinInspector.Attributes.dll</HintPath>
+    </Reference>
+    <Reference Include="Coffee.UIParticle">
+      <HintPath>../../../dll/Coffee.UIParticle.dll</HintPath>
+    </Reference>
+    <Reference Include="Bolt.Addons.Community.Runtime">
+      <HintPath>../Bolt.Addons.Community.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>../../../dll/Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule">
+      <HintPath>../../../dll/UnityEngine.UIElementsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="spine-unity">
+      <HintPath>../../../dll/spine-unity.dll</HintPath>
+    </Reference>
+    <Reference Include="spine-csharp">
+      <HintPath>../../../dll/spine-csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Bamboo.Pool.Runtime">
+      <HintPath>../Bamboo.Pool.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="XNode">
+      <HintPath>../../../dll/XNode.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics">
+      <HintPath>../../../dll/System.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>../../../dll/UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AIModule">
+      <HintPath>../../../dll/UnityEngine.AIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="GameplayAbilitySystem.Runtime">
+      <HintPath>../../../dll/GameplayAbilitySystem.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="MagicaClothV2">
+      <HintPath>../../../dll/MagicaClothV2.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VFXModule">
+      <HintPath>../../../dll/UnityEngine.VFXModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.Serialization.Config">
+      <HintPath>../../../dll/Sirenix.Serialization.Config.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>../../../dll/UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Bamboo.Chronos.Unity.Runtime">
+      <HintPath>../Bamboo.Chronos.Unity.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>../../../dll/UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.Utilities">
+      <HintPath>../Sirenix.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Bamboo.NumberString.Runtime">
+      <HintPath>../Bamboo.NumberString.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Bamboo.Common.Runtime">
+      <HintPath>../Bamboo.Common.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>../UnityEngine.JSONSerializeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UniTask.Linq">
+      <HintPath>../UniTask.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>../../../dll/UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-DOTween">
+      <HintPath>../../../dll/Assembly-DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="Bamboo.HeartBeat.Unity.Runtime">
+      <HintPath>../Bamboo.HeartBeat.Unity.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Bamboo.HeartBeat.Runtime">
+      <HintPath>../Bamboo.HeartBeat.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-WebView">
+      <HintPath>../../../dll/Assembly-WebView.dll</HintPath>
+    </Reference>
+    <Reference Include="EasyCharacterMovement.Characters">
+      <HintPath>../EasyCharacterMovement.Characters.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

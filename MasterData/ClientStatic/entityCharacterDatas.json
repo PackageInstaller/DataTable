@@ -1,0 +1,2393 @@
+{
+  "10101": {
+    "Id": 10101,
+    "Name": 24616,
+    "CharacterArmorType": 1,
+    "CharacterDamageType": 1,
+    "MannerType": 2,
+    "ConstellationItem": 204011,
+    "EliteElementItem": 100102,
+    "EliteCharacterItem": 110101,
+    "PresentId": [
+      [
+        1
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    "CharacterTagGroup": [
+      1
+    ],
+    "Config": "Role_01_01",
+    "DetaileShowModel": "Role_01_01_DetaileShowPrefab",
+    "ShowModel": "Role_01_01_Show",
+    "CharacterPorpertyBase": [
+      {
+        "Property": 100,
+        "Value": 1702.8
+      },
+      {
+        "Property": 200,
+        "Value": 158.4
+      },
+      {
+        "Property": 800,
+        "Value": 49.2
+      },
+      {
+        "Property": 300,
+        "Value": 0.05
+      },
+      {
+        "Property": 400,
+        "Value": 0.5
+      },
+      {
+        "Property": 4000,
+        "Value": 1.0
+      },
+      {
+        "Property": 5500,
+        "Value": 100.0
+      },
+      {
+        "Property": 6500,
+        "Value": 100.0
+      },
+      {
+        "Property": 5700,
+        "Value": 0.2
+      }
+    ],
+    "CharacterPorpertyAdd": [
+      {
+        "Property": 100,
+        "Value": 147.289
+      },
+      {
+        "Property": 200,
+        "Value": 11.964
+      },
+      {
+        "Property": 800,
+        "Value": 5.493
+      }
+    ],
+    "Stars": 4,
+    "Wp1Type": 1,
+    "InitWeapon": 0,
+    "SkillEnergy": 90.0,
+    "NormalEnergy": 300.0,
+    "SpecialEnergy": 100.0,
+    "CharacterNameEng": 310101,
+    "CharacterNameCh": 0,
+    "CharacterIcon": 0,
+    "CharacterType": 0,
+    "Difficulty": 0,
+    "CharacterArt": 10101,
+    "EffectsRGB": [],
+    "UltimateSkillIcon": 10113,
+    "SwitchSkillCD": 27.0,
+    "AssistEnergy": 100.0,
+    "CharacterHeight": 1.66,
+    "SkillGroupIds": [
+      10101,
+      10102,
+      10103,
+      10104,
+      10105,
+      10106,
+      10107,
+      10108
+    ],
+    "CustomUiPc": "Role_01_01_CustomUI_pc",
+    "CustomUiMb": "Role_01_01_CustomUI",
+    "ViewPosition": [
+      0.03,
+      1.22,
+      2.44
+    ],
+    "ViewRotation": [
+      0.0,
+      179.25,
+      2.6
+    ],
+    "ViewFov": 22.29,
+    "ViewSound": "event:/UI/CharacterView/01_01/Show",
+    "ComSuit": [
+      1001006,
+      1001001
+    ],
+    "ComProperty": [
+      202,
+      300,
+      400,
+      2000
+    ],
+    "IsProtagonist": false,
+    "TimelinePath": "Timeline/Role_01_01_GaChaGet",
+    "TapePath": "Role_01_01_Tape"
+  },
+  "10201": {
+    "Id": 10201,
+    "Name": 24617,
+    "CharacterArmorType": 2,
+    "CharacterDamageType": 2,
+    "MannerType": 1,
+    "ConstellationItem": 204021,
+    "EliteElementItem": 100101,
+    "EliteCharacterItem": 110201,
+    "PresentId": [
+      [
+        4
+      ],
+      [
+        5,
+        1
+      ]
+    ],
+    "CharacterTagGroup": [
+      1,
+      2
+    ],
+    "Config": "Role_02_01",
+    "DetaileShowModel": "Role_02_01_DetaileShowPrefab",
+    "ShowModel": "Role_02_01_Show",
+    "CharacterPorpertyBase": [
+      {
+        "Property": 100,
+        "Value": 1663.2
+      },
+      {
+        "Property": 200,
+        "Value": 154.0
+      },
+      {
+        "Property": 800,
+        "Value": 51.6
+      },
+      {
+        "Property": 300,
+        "Value": 0.05
+      },
+      {
+        "Property": 400,
+        "Value": 0.5
+      },
+      {
+        "Property": 4000,
+        "Value": 1.0
+      },
+      {
+        "Property": 5500,
+        "Value": 100.0
+      },
+      {
+        "Property": 6500,
+        "Value": 100.0
+      },
+      {
+        "Property": 5700,
+        "Value": 0.0
+      }
+    ],
+    "CharacterPorpertyAdd": [
+      {
+        "Property": 100,
+        "Value": 143.864
+      },
+      {
+        "Property": 200,
+        "Value": 11.631
+      },
+      {
+        "Property": 800,
+        "Value": 5.761
+      }
+    ],
+    "Stars": 4,
+    "Wp1Type": 6,
+    "InitWeapon": 0,
+    "SkillEnergy": 90.0,
+    "NormalEnergy": 200.0,
+    "SpecialEnergy": 60.0,
+    "CharacterNameEng": 310201,
+    "CharacterNameCh": 210201,
+    "CharacterIcon": 500002,
+    "CharacterType": 2938,
+    "Difficulty": 400001,
+    "CharacterArt": 10201,
+    "EffectsRGB": [
+      133,
+      170,
+      219,
+      255
+    ],
+    "UltimateSkillIcon": 10213,
+    "SwitchSkillCD": 27.0,
+    "AssistEnergy": 100.0,
+    "CharacterHeight": 1.46,
+    "SkillGroupIds": [
+      10201,
+      10202,
+      10203,
+      10204,
+      10205,
+      10206,
+      10207,
+      10208
+    ],
+    "CustomUiPc": "Role_02_01_CustomUI_pc",
+    "CustomUiMb": "Role_02_01_CustomUI",
+    "ViewPosition": [
+      0.488,
+      1.521,
+      2.441
+    ],
+    "ViewRotation": [
+      17.506,
+      192.135,
+      13.586
+    ],
+    "ViewFov": 22.29,
+    "ViewSound": "event:/UI/CharacterView/02_01/Show",
+    "ComSuit": [
+      1001016,
+      1001007
+    ],
+    "ComProperty": [
+      102,
+      4000,
+      2100
+    ],
+    "IsProtagonist": false,
+    "TimelinePath": "Timeline/Role_02_01_GaChaGet",
+    "TapePath": "Role_02_01_Tape"
+  },
+  "10301": {
+    "Id": 10301,
+    "Name": 24618,
+    "CharacterArmorType": 3,
+    "CharacterDamageType": 1,
+    "MannerType": 3,
+    "ConstellationItem": 204031,
+    "EliteElementItem": 100103,
+    "EliteCharacterItem": 110301,
+    "PresentId": [
+      [
+        1
+      ],
+      [
+        3,
+        5
+      ]
+    ],
+    "CharacterTagGroup": [
+      3
+    ],
+    "Config": "Role_03_01",
+    "DetaileShowModel": "Role_03_01_DetaileShowPrefab",
+    "ShowModel": "Role_03_01_Show",
+    "CharacterPorpertyBase": [
+      {
+        "Property": 100,
+        "Value": 1702.8
+      },
+      {
+        "Property": 200,
+        "Value": 156.2
+      },
+      {
+        "Property": 800,
+        "Value": 49.8
+      },
+      {
+        "Property": 300,
+        "Value": 0.05
+      },
+      {
+        "Property": 400,
+        "Value": 0.5
+      },
+      {
+        "Property": 4000,
+        "Value": 1.0
+      },
+      {
+        "Property": 5500,
+        "Value": 100.0
+      },
+      {
+        "Property": 6500,
+        "Value": 100.0
+      },
+      {
+        "Property": 5700,
+        "Value": 0.0
+      }
+    ],
+    "CharacterPorpertyAdd": [
+      {
+        "Property": 100,
+        "Value": 147.289
+      },
+      {
+        "Property": 200,
+        "Value": 11.797
+      },
+      {
+        "Property": 800,
+        "Value": 5.56
+      }
+    ],
+    "Stars": 4,
+    "Wp1Type": 7,
+    "InitWeapon": 0,
+    "SkillEnergy": 90.0,
+    "NormalEnergy": 200.0,
+    "SpecialEnergy": 100.0,
+    "CharacterNameEng": 310301,
+    "CharacterNameCh": 210301,
+    "CharacterIcon": 500002,
+    "CharacterType": 24613,
+    "Difficulty": 400001,
+    "CharacterArt": 10301,
+    "EffectsRGB": [
+      133,
+      170,
+      219,
+      255
+    ],
+    "UltimateSkillIcon": 10313,
+    "SwitchSkillCD": 27.0,
+    "AssistEnergy": 100.0,
+    "CharacterHeight": 1.75,
+    "SkillGroupIds": [
+      10301,
+      10302,
+      10303,
+      10304,
+      10305,
+      10306,
+      10307,
+      10308
+    ],
+    "CustomUiPc": "Role_03_01_CustomUI_pc",
+    "CustomUiMb": "Role_03_01_CustomUI",
+    "ViewPosition": [
+      0.366,
+      1.567,
+      1.867
+    ],
+    "ViewRotation": [
+      6.052,
+      190.521,
+      0.994
+    ],
+    "ViewFov": 22.29,
+    "ViewSound": "event:/UI/CharacterView/03_01/Show",
+    "ComSuit": [
+      1001004,
+      1001002
+    ],
+    "ComProperty": [
+      202,
+      300,
+      400,
+      2200
+    ],
+    "IsProtagonist": false,
+    "TimelinePath": "Timeline/Role_03_01_GaChaGet",
+    "TapePath": "Role_03_01_Tape"
+  },
+  "10401": {
+    "Id": 10401,
+    "Name": 24619,
+    "CharacterArmorType": 4,
+    "CharacterDamageType": 1,
+    "MannerType": 2,
+    "ConstellationItem": 204041,
+    "EliteElementItem": 100102,
+    "EliteCharacterItem": 110401,
+    "PresentId": [
+      [
+        2
+      ],
+      [
+        3,
+        5
+      ]
+    ],
+    "CharacterTagGroup": [
+      2
+    ],
+    "Config": "Role_04_01",
+    "DetaileShowModel": "Role_04_01_DetaileShowPrefab",
+    "ShowModel": "Role_04_01_Show",
+    "CharacterPorpertyBase": [
+      {
+        "Property": 100,
+        "Value": 1683.0
+      },
+      {
+        "Property": 200,
+        "Value": 154.0
+      },
+      {
+        "Property": 800,
+        "Value": 51.0
+      },
+      {
+        "Property": 300,
+        "Value": 0.05
+      },
+      {
+        "Property": 400,
+        "Value": 0.5
+      },
+      {
+        "Property": 4000,
+        "Value": 1.0
+      },
+      {
+        "Property": 5500,
+        "Value": 100.0
+      },
+      {
+        "Property": 6500,
+        "Value": 100.0
+      },
+      {
+        "Property": 5700,
+        "Value": 0.2
+      }
+    ],
+    "CharacterPorpertyAdd": [
+      {
+        "Property": 100,
+        "Value": 145.576
+      },
+      {
+        "Property": 200,
+        "Value": 11.631
+      },
+      {
+        "Property": 800,
+        "Value": 5.694
+      }
+    ],
+    "Stars": 4,
+    "Wp1Type": 6,
+    "InitWeapon": 0,
+    "SkillEnergy": 90.0,
+    "NormalEnergy": 100.0,
+    "SpecialEnergy": 60.0,
+    "CharacterNameEng": 310401,
+    "CharacterNameCh": 0,
+    "CharacterIcon": 0,
+    "CharacterType": 0,
+    "Difficulty": 0,
+    "CharacterArt": 10401,
+    "EffectsRGB": [],
+    "UltimateSkillIcon": 10413,
+    "SwitchSkillCD": 27.0,
+    "AssistEnergy": 100.0,
+    "CharacterHeight": 1.75,
+    "SkillGroupIds": [
+      10401,
+      10402,
+      10403,
+      10404,
+      10405,
+      10406,
+      10407,
+      10408
+    ],
+    "CustomUiPc": "Role_04_01_CustomUI_pc",
+    "CustomUiMb": "Role_04_01_CustomUI",
+    "ViewPosition": [
+      -0.1,
+      1.59,
+      2.04
+    ],
+    "ViewRotation": [
+      4.863,
+      177.588,
+      0.0
+    ],
+    "ViewFov": 22.29,
+    "ViewSound": "event:/UI/CharacterView/04_01/Show",
+    "ComSuit": [
+      1001018,
+      1001022
+    ],
+    "ComProperty": [
+      202,
+      300,
+      400,
+      2000
+    ],
+    "IsProtagonist": false,
+    "TimelinePath": "Timeline/Role_04_01_GaChaGet",
+    "TapePath": "Role_04_01_Tape"
+  },
+  "10501": {
+    "Id": 10501,
+    "Name": 24620,
+    "CharacterArmorType": 5,
+    "CharacterDamageType": 1,
+    "MannerType": 3,
+    "ConstellationItem": 204051,
+    "EliteElementItem": 100003,
+    "EliteCharacterItem": 110501,
+    "PresentId": [
+      [
+        1
+      ],
+      [
+        3
+      ]
+    ],
+    "CharacterTagGroup": [
+      2,
+      3
+    ],
+    "Config": "Role_05_01",
+    "DetaileShowModel": "Role_05_01_DetaileShowPrefab",
+    "ShowModel": "Role_05_01_Show",
+    "CharacterPorpertyBase": [
+      {
+        "Property": 100,
+        "Value": 1861.2
+      },
+      {
+        "Property": 200,
+        "Value": 187.0
+      },
+      {
+        "Property": 800,
+        "Value": 57.6
+      },
+      {
+        "Property": 300,
+        "Value": 0.05
+      },
+      {
+        "Property": 400,
+        "Value": 0.5
+      },
+      {
+        "Property": 4000,
+        "Value": 1.0
+      },
+      {
+        "Property": 5500,
+        "Value": 100.0
+      },
+      {
+        "Property": 6500,
+        "Value": 100.0
+      },
+      {
+        "Property": 5700,
+        "Value": 0.0
+      }
+    ],
+    "CharacterPorpertyAdd": [
+      {
+        "Property": 100,
+        "Value": 160.99
+      },
+      {
+        "Property": 200,
+        "Value": 14.124
+      },
+      {
+        "Property": 800,
+        "Value": 6.431
+      }
+    ],
+    "Stars": 5,
+    "Wp1Type": 1,
+    "InitWeapon": 0,
+    "SkillEnergy": 90.0,
+    "NormalEnergy": 300.0,
+    "SpecialEnergy": 80.0,
+    "CharacterNameEng": 310501,
+    "CharacterNameCh": 210501,
+    "CharacterIcon": 500001,
+    "CharacterType": 24614,
+    "Difficulty": 400001,
+    "CharacterArt": 10501,
+    "EffectsRGB": [
+      133,
+      170,
+      219,
+      255
+    ],
+    "UltimateSkillIcon": 10513,
+    "SwitchSkillCD": 27.0,
+    "AssistEnergy": 100.0,
+    "CharacterHeight": 1.66,
+    "SkillGroupIds": [
+      10501,
+      10502,
+      10503,
+      10504,
+      10505,
+      10506,
+      10507,
+      10508
+    ],
+    "CustomUiPc": "Role_05_01_CustomUI_pc",
+    "CustomUiMb": "Role_05_01_CustomUI",
+    "ViewPosition": [
+      0.07,
+      1.82,
+      1.86
+    ],
+    "ViewRotation": [
+      15.225,
+      185.436,
+      -2.144
+    ],
+    "ViewFov": 22.29,
+    "ViewSound": "event:/UI/CharacterView/05_01/Show",
+    "ComSuit": [
+      1001014,
+      1001005
+    ],
+    "ComProperty": [
+      202,
+      300,
+      400,
+      2200
+    ],
+    "IsProtagonist": false,
+    "TimelinePath": "Timeline/Role_05_01_GaChaGet",
+    "TapePath": "Role_05_01_Tape"
+  },
+  "10601": {
+    "Id": 10601,
+    "Name": 24621,
+    "CharacterArmorType": 6,
+    "CharacterDamageType": 2,
+    "MannerType": 5,
+    "ConstellationItem": 204061,
+    "EliteElementItem": 100105,
+    "EliteCharacterItem": 110601,
+    "PresentId": [
+      [
+        3
+      ],
+      [
+        1,
+        5
+      ]
+    ],
+    "CharacterTagGroup": [
+      3
+    ],
+    "Config": "Role_06_01",
+    "DetaileShowModel": "Role_06_01_DetaileShowPrefab",
+    "ShowModel": "Role_06_01_Show",
+    "CharacterPorpertyBase": [
+      {
+        "Property": 100,
+        "Value": 1683.0
+      },
+      {
+        "Property": 200,
+        "Value": 156.2
+      },
+      {
+        "Property": 800,
+        "Value": 50.4
+      },
+      {
+        "Property": 300,
+        "Value": 0.05
+      },
+      {
+        "Property": 400,
+        "Value": 0.5
+      },
+      {
+        "Property": 4000,
+        "Value": 1.0
+      },
+      {
+        "Property": 5500,
+        "Value": 100.0
+      },
+      {
+        "Property": 6500,
+        "Value": 100.0
+      },
+      {
+        "Property": 5700,
+        "Value": 0.0
+      }
+    ],
+    "CharacterPorpertyAdd": [
+      {
+        "Property": 100,
+        "Value": 145.576
+      },
+      {
+        "Property": 200,
+        "Value": 11.797
+      },
+      {
+        "Property": 800,
+        "Value": 5.627
+      }
+    ],
+    "Stars": 4,
+    "Wp1Type": 7,
+    "InitWeapon": 0,
+    "SkillEnergy": 90.0,
+    "NormalEnergy": 400.0,
+    "SpecialEnergy": 100.0,
+    "CharacterNameEng": 310601,
+    "CharacterNameCh": 0,
+    "CharacterIcon": 0,
+    "CharacterType": 0,
+    "Difficulty": 0,
+    "CharacterArt": 10601,
+    "EffectsRGB": [],
+    "UltimateSkillIcon": 10613,
+    "SwitchSkillCD": 27.0,
+    "AssistEnergy": 100.0,
+    "CharacterHeight": 1.66,
+    "SkillGroupIds": [
+      10601,
+      10602,
+      10603,
+      10604,
+      10605,
+      10606,
+      10607,
+      10608
+    ],
+    "CustomUiPc": "Role_06_01_CustomUI_pc",
+    "CustomUiMb": "Role_06_01_CustomUI",
+    "ViewPosition": [],
+    "ViewRotation": [],
+    "ViewFov": 22.29,
+    "ViewSound": "",
+    "ComSuit": [
+      1001006,
+      1001013
+    ],
+    "ComProperty": [
+      202,
+      300,
+      2400
+    ],
+    "IsProtagonist": false,
+    "TimelinePath": "Timeline/Role_06_01_GaChaGet",
+    "TapePath": "Role_06_01_Tape"
+  },
+  "10801": {
+    "Id": 10801,
+    "Name": 24622,
+    "CharacterArmorType": 8,
+    "CharacterDamageType": 3,
+    "MannerType": 3,
+    "ConstellationItem": 204081,
+    "EliteElementItem": 100103,
+    "EliteCharacterItem": 110801,
+    "PresentId": [
+      [
+        3
+      ],
+      [
+        2,
+        5
+      ]
+    ],
+    "CharacterTagGroup": [
+      1,
+      3
+    ],
+    "Config": "Role_08_01",
+    "DetaileShowModel": "Role_08_01_DetaileShowPrefab",
+    "ShowModel": "Role_08_01_Show",
+    "CharacterPorpertyBase": [
+      {
+        "Property": 100,
+        "Value": 1663.2
+      },
+      {
+        "Property": 200,
+        "Value": 156.2
+      },
+      {
+        "Property": 800,
+        "Value": 51.0
+      },
+      {
+        "Property": 300,
+        "Value": 0.05
+      },
+      {
+        "Property": 400,
+        "Value": 0.5
+      },
+      {
+        "Property": 4000,
+        "Value": 1.0
+      },
+      {
+        "Property": 5500,
+        "Value": 100.0
+      },
+      {
+        "Property": 6500,
+        "Value": 100.0
+      },
+      {
+        "Property": 5700,
+        "Value": 0.0
+      }
+    ],
+    "CharacterPorpertyAdd": [
+      {
+        "Property": 100,
+        "Value": 143.864
+      },
+      {
+        "Property": 200,
+        "Value": 11.797
+      },
+      {
+        "Property": 800,
+        "Value": 5.694
+      }
+    ],
+    "Stars": 4,
+    "Wp1Type": 1,
+    "InitWeapon": 0,
+    "SkillEnergy": 90.0,
+    "NormalEnergy": 100.0,
+    "SpecialEnergy": 100.0,
+    "CharacterNameEng": 310801,
+    "CharacterNameCh": 0,
+    "CharacterIcon": 0,
+    "CharacterType": 0,
+    "Difficulty": 0,
+    "CharacterArt": 10801,
+    "EffectsRGB": [],
+    "UltimateSkillIcon": 10813,
+    "SwitchSkillCD": 27.0,
+    "AssistEnergy": 100.0,
+    "CharacterHeight": 1.8,
+    "SkillGroupIds": [
+      10801,
+      10802,
+      10803,
+      10804,
+      10805,
+      10806,
+      10807,
+      10808
+    ],
+    "CustomUiPc": "Role_08_01_CustomUI_pc",
+    "CustomUiMb": "Role_08_01_CustomUI",
+    "ViewPosition": [],
+    "ViewRotation": [],
+    "ViewFov": 0,
+    "ViewSound": "",
+    "ComSuit": [
+      1001007,
+      1001004
+    ],
+    "ComProperty": [
+      202,
+      4000,
+      2200
+    ],
+    "IsProtagonist": false,
+    "TimelinePath": "Timeline/Role_08_01_GaChaGet",
+    "TapePath": "Role_08_01_Tape"
+  },
+  "10901": {
+    "Id": 10901,
+    "Name": 24623,
+    "CharacterArmorType": 9,
+    "CharacterDamageType": 3,
+    "MannerType": 4,
+    "ConstellationItem": 204091,
+    "EliteElementItem": 100104,
+    "EliteCharacterItem": 110901,
+    "PresentId": [
+      [
+        3
+      ],
+      [
+        5
+      ]
+    ],
+    "CharacterTagGroup": [
+      3
+    ],
+    "Config": "Role_09_01",
+    "DetaileShowModel": "Role_09_01_DetaileShowPrefab",
+    "ShowModel": "Role_09_01_Show",
+    "CharacterPorpertyBase": [
+      {
+        "Property": 100,
+        "Value": 1742.4
+      },
+      {
+        "Property": 200,
+        "Value": 162.8
+      },
+      {
+        "Property": 800,
+        "Value": 52.8
+      },
+      {
+        "Property": 300,
+        "Value": 0.05
+      },
+      {
+        "Property": 400,
+        "Value": 0.5
+      },
+      {
+        "Property": 4000,
+        "Value": 1.0
+      },
+      {
+        "Property": 5500,
+        "Value": 100.0
+      },
+      {
+        "Property": 6500,
+        "Value": 100.0
+      },
+      {
+        "Property": 5700,
+        "Value": 0.0
+      }
+    ],
+    "CharacterPorpertyAdd": [
+      {
+        "Property": 100,
+        "Value": 150.714
+      },
+      {
+        "Property": 200,
+        "Value": 12.296
+      },
+      {
+        "Property": 800,
+        "Value": 5.895
+      }
+    ],
+    "Stars": 4,
+    "Wp1Type": 1,
+    "InitWeapon": 0,
+    "SkillEnergy": 90.0,
+    "NormalEnergy": 300.0,
+    "SpecialEnergy": 100.0,
+    "CharacterNameEng": 310901,
+    "CharacterNameCh": 0,
+    "CharacterIcon": 0,
+    "CharacterType": 0,
+    "Difficulty": 0,
+    "CharacterArt": 10901,
+    "EffectsRGB": [],
+    "UltimateSkillIcon": 10913,
+    "SwitchSkillCD": 27.0,
+    "AssistEnergy": 100.0,
+    "CharacterHeight": 1.83,
+    "SkillGroupIds": [
+      10901,
+      10902,
+      10903,
+      10904,
+      10905,
+      10906,
+      10907,
+      10908
+    ],
+    "CustomUiPc": "Role_09_01_CustomUI_pc",
+    "CustomUiMb": "Role_09_01_CustomUI",
+    "ViewPosition": [],
+    "ViewRotation": [],
+    "ViewFov": 22.29,
+    "ViewSound": "",
+    "ComSuit": [
+      1001013,
+      1001004
+    ],
+    "ComProperty": [
+      202,
+      4000,
+      2300
+    ],
+    "IsProtagonist": false,
+    "TimelinePath": "Timeline/Role_09_01_GaChaGet",
+    "TapePath": "Role_09_01_Tape"
+  },
+  "11001": {
+    "Id": 11001,
+    "Name": 24624,
+    "CharacterArmorType": 10,
+    "CharacterDamageType": 1,
+    "MannerType": 4,
+    "ConstellationItem": 204101,
+    "EliteElementItem": 100004,
+    "EliteCharacterItem": 111001,
+    "PresentId": [
+      [
+        5
+      ],
+      [
+        1
+      ]
+    ],
+    "CharacterTagGroup": [
+      3
+    ],
+    "Config": "Role_10_01",
+    "DetaileShowModel": "Role_10_01_DetaileShowPrefab",
+    "ShowModel": "Role_10_01_Show",
+    "CharacterPorpertyBase": [
+      {
+        "Property": 100,
+        "Value": 1900.8
+      },
+      {
+        "Property": 200,
+        "Value": 184.8
+      },
+      {
+        "Property": 800,
+        "Value": 57.0
+      },
+      {
+        "Property": 300,
+        "Value": 0.05
+      },
+      {
+        "Property": 400,
+        "Value": 0.5
+      },
+      {
+        "Property": 4000,
+        "Value": 1.0
+      },
+      {
+        "Property": 5500,
+        "Value": 100.0
+      },
+      {
+        "Property": 6500,
+        "Value": 100.0
+      },
+      {
+        "Property": 5700,
+        "Value": 0.0
+      }
+    ],
+    "CharacterPorpertyAdd": [
+      {
+        "Property": 100,
+        "Value": 164.416
+      },
+      {
+        "Property": 200,
+        "Value": 13.958
+      },
+      {
+        "Property": 800,
+        "Value": 6.364
+      }
+    ],
+    "Stars": 5,
+    "Wp1Type": 1,
+    "InitWeapon": 0,
+    "SkillEnergy": 90.0,
+    "NormalEnergy": 200.0,
+    "SpecialEnergy": 150.0,
+    "CharacterNameEng": 311001,
+    "CharacterNameCh": 0,
+    "CharacterIcon": 0,
+    "CharacterType": 0,
+    "Difficulty": 0,
+    "CharacterArt": 11001,
+    "EffectsRGB": [],
+    "UltimateSkillIcon": 11013,
+    "SwitchSkillCD": 27.0,
+    "AssistEnergy": 100.0,
+    "CharacterHeight": 1.75,
+    "SkillGroupIds": [
+      11001,
+      11002,
+      11003,
+      11004,
+      11005,
+      11006,
+      11007,
+      11008
+    ],
+    "CustomUiPc": "Role_10_01_CustomUI_pc",
+    "CustomUiMb": "Role_10_01_CustomUI",
+    "ViewPosition": [],
+    "ViewRotation": [],
+    "ViewFov": 22.29,
+    "ViewSound": "",
+    "ComSuit": [
+      1001032,
+      1001005
+    ],
+    "ComProperty": [
+      202,
+      2300
+    ],
+    "IsProtagonist": false,
+    "TimelinePath": "Timeline/Role_10_01_GaChaGet",
+    "TapePath": "Role_10_01_Tape"
+  },
+  "11101": {
+    "Id": 11101,
+    "Name": 24625,
+    "CharacterArmorType": 11,
+    "CharacterDamageType": 3,
+    "MannerType": 2,
+    "ConstellationItem": 204111,
+    "EliteElementItem": 100002,
+    "EliteCharacterItem": 111101,
+    "PresentId": [
+      [
+        1
+      ],
+      [
+        3
+      ]
+    ],
+    "CharacterTagGroup": [
+      1
+    ],
+    "Config": "Role_11_01",
+    "DetaileShowModel": "Role_11_01_DetaileShowPrefab",
+    "ShowModel": "Role_11_01_Show",
+    "CharacterPorpertyBase": [
+      {
+        "Property": 100,
+        "Value": 1861.2
+      },
+      {
+        "Property": 200,
+        "Value": 189.2
+      },
+      {
+        "Property": 800,
+        "Value": 57.0
+      },
+      {
+        "Property": 300,
+        "Value": 0.05
+      },
+      {
+        "Property": 400,
+        "Value": 0.5
+      },
+      {
+        "Property": 4000,
+        "Value": 1.0
+      },
+      {
+        "Property": 5500,
+        "Value": 100.0
+      },
+      {
+        "Property": 6500,
+        "Value": 100.0
+      },
+      {
+        "Property": 5700,
+        "Value": 0.2
+      }
+    ],
+    "CharacterPorpertyAdd": [
+      {
+        "Property": 100,
+        "Value": 160.99
+      },
+      {
+        "Property": 200,
+        "Value": 14.29
+      },
+      {
+        "Property": 800,
+        "Value": 6.364
+      }
+    ],
+    "Stars": 5,
+    "Wp1Type": 1,
+    "InitWeapon": 0,
+    "SkillEnergy": 90.0,
+    "NormalEnergy": 400.0,
+    "SpecialEnergy": 150.0,
+    "CharacterNameEng": 311101,
+    "CharacterNameCh": 0,
+    "CharacterIcon": 0,
+    "CharacterType": 0,
+    "Difficulty": 0,
+    "CharacterArt": 11101,
+    "EffectsRGB": [],
+    "UltimateSkillIcon": 11113,
+    "SwitchSkillCD": 27.0,
+    "AssistEnergy": 100.0,
+    "CharacterHeight": 1.66,
+    "SkillGroupIds": [
+      11101,
+      11102,
+      11103,
+      11104,
+      11105,
+      11106,
+      11107,
+      11108
+    ],
+    "CustomUiPc": "",
+    "CustomUiMb": "",
+    "ViewPosition": [],
+    "ViewRotation": [],
+    "ViewFov": 0,
+    "ViewSound": "",
+    "ComSuit": [
+      1001030,
+      1001002
+    ],
+    "ComProperty": [
+      202,
+      4000,
+      2000
+    ],
+    "IsProtagonist": false,
+    "TimelinePath": "Timeline/Role_11_01_GaChaGet",
+    "TapePath": "Role_11_01_Tape"
+  },
+  "11301": {
+    "Id": 11301,
+    "Name": 24626,
+    "CharacterArmorType": 13,
+    "CharacterDamageType": 1,
+    "MannerType": 5,
+    "ConstellationItem": 204131,
+    "EliteElementItem": 100005,
+    "EliteCharacterItem": 111301,
+    "PresentId": [
+      [
+        4
+      ],
+      [
+        3
+      ]
+    ],
+    "CharacterTagGroup": [
+      2
+    ],
+    "Config": "Role_13_01",
+    "DetaileShowModel": "Role_13_01_DetaileShowPrefab",
+    "ShowModel": "Role_13_01_Show",
+    "CharacterPorpertyBase": [
+      {
+        "Property": 100,
+        "Value": 1960.2
+      },
+      {
+        "Property": 200,
+        "Value": 224.4
+      },
+      {
+        "Property": 800,
+        "Value": 59.4
+      },
+      {
+        "Property": 300,
+        "Value": 0.05
+      },
+      {
+        "Property": 400,
+        "Value": 0.5
+      },
+      {
+        "Property": 4000,
+        "Value": 1.0
+      },
+      {
+        "Property": 5500,
+        "Value": 100.0
+      },
+      {
+        "Property": 6500,
+        "Value": 100.0
+      },
+      {
+        "Property": 5700,
+        "Value": 0.0
+      }
+    ],
+    "CharacterPorpertyAdd": [
+      {
+        "Property": 100,
+        "Value": 169.554
+      },
+      {
+        "Property": 200,
+        "Value": 16.949
+      },
+      {
+        "Property": 800,
+        "Value": 6.632
+      }
+    ],
+    "Stars": 5,
+    "Wp1Type": 3,
+    "InitWeapon": 0,
+    "SkillEnergy": 90.0,
+    "NormalEnergy": 300.0,
+    "SpecialEnergy": 100.0,
+    "CharacterNameEng": 311301,
+    "CharacterNameCh": 0,
+    "CharacterIcon": 0,
+    "CharacterType": 0,
+    "Difficulty": 0,
+    "CharacterArt": 11301,
+    "EffectsRGB": [],
+    "UltimateSkillIcon": 11313,
+    "SwitchSkillCD": 27.0,
+    "AssistEnergy": 100.0,
+    "CharacterHeight": 1.8,
+    "SkillGroupIds": [
+      11301,
+      11302,
+      11303,
+      11304,
+      11305,
+      11306,
+      11307,
+      11308
+    ],
+    "CustomUiPc": "Role_13_01_CustomUI_pc",
+    "CustomUiMb": "Role_13_01_CustomUI",
+    "ViewPosition": [],
+    "ViewRotation": [],
+    "ViewFov": 22.29,
+    "ViewSound": "event:/UI/CharacterView/13_01/Show",
+    "ComSuit": [
+      1001028,
+      1001001
+    ],
+    "ComProperty": [
+      202,
+      300,
+      2400
+    ],
+    "IsProtagonist": false,
+    "TimelinePath": "Timeline/Role_13_01_GaChaGet",
+    "TapePath": "Role_13_01_Tape"
+  },
+  "11601": {
+    "Id": 11601,
+    "Name": 24627,
+    "CharacterArmorType": 16,
+    "CharacterDamageType": 2,
+    "MannerType": 1,
+    "ConstellationItem": 204161,
+    "EliteElementItem": 100001,
+    "EliteCharacterItem": 111601,
+    "PresentId": [
+      [
+        3
+      ],
+      [
+        1
+      ]
+    ],
+    "CharacterTagGroup": [
+      1
+    ],
+    "Config": "Role_16_01",
+    "DetaileShowModel": "Role_16_01_DetaileShowPrefab",
+    "ShowModel": "Role_16_01_Show",
+    "CharacterPorpertyBase": [
+      {
+        "Property": 100,
+        "Value": 1900.8
+      },
+      {
+        "Property": 200,
+        "Value": 184.8
+      },
+      {
+        "Property": 800,
+        "Value": 57.0
+      },
+      {
+        "Property": 300,
+        "Value": 0.05
+      },
+      {
+        "Property": 400,
+        "Value": 0.5
+      },
+      {
+        "Property": 4000,
+        "Value": 1.0
+      },
+      {
+        "Property": 5500,
+        "Value": 100.0
+      },
+      {
+        "Property": 6500,
+        "Value": 100.0
+      },
+      {
+        "Property": 5700,
+        "Value": 0.0
+      }
+    ],
+    "CharacterPorpertyAdd": [
+      {
+        "Property": 100,
+        "Value": 164.416
+      },
+      {
+        "Property": 200,
+        "Value": 13.958
+      },
+      {
+        "Property": 800,
+        "Value": 6.364
+      }
+    ],
+    "Stars": 5,
+    "Wp1Type": 8,
+    "InitWeapon": 0,
+    "SkillEnergy": 90.0,
+    "NormalEnergy": 200.0,
+    "SpecialEnergy": 100.0,
+    "CharacterNameEng": 311601,
+    "CharacterNameCh": 0,
+    "CharacterIcon": 0,
+    "CharacterType": 0,
+    "Difficulty": 0,
+    "CharacterArt": 11601,
+    "EffectsRGB": [],
+    "UltimateSkillIcon": 10113,
+    "SwitchSkillCD": 27.0,
+    "AssistEnergy": 100.0,
+    "CharacterHeight": 1.7,
+    "SkillGroupIds": [
+      11601,
+      11602,
+      11603,
+      11604,
+      11605,
+      11606,
+      11607,
+      11608
+    ],
+    "CustomUiPc": "Role_16_01_CustomUI_pc",
+    "CustomUiMb": "Role_16_01_CustomUI",
+    "ViewPosition": [
+      0.95,
+      1.11,
+      1.023
+    ],
+    "ViewRotation": [
+      -11.21,
+      -497.5,
+      25.1
+    ],
+    "ViewFov": 22.29,
+    "ViewSound": "event:/UI/CharacterView/16_01/Show",
+    "ComSuit": [
+      1001011,
+      1001012
+    ],
+    "ComProperty": [
+      102,
+      2200
+    ],
+    "IsProtagonist": false,
+    "TimelinePath": "Timeline/Role_16_01_GaChaGet",
+    "TapePath": "Role_16_01_Tape"
+  },
+  "11701": {
+    "Id": 11701,
+    "Name": 24628,
+    "CharacterArmorType": 17,
+    "CharacterDamageType": 3,
+    "MannerType": 4,
+    "ConstellationItem": 204171,
+    "EliteElementItem": 100104,
+    "EliteCharacterItem": 111701,
+    "PresentId": [
+      [
+        3
+      ],
+      [
+        1,
+        5
+      ]
+    ],
+    "CharacterTagGroup": [
+      2
+    ],
+    "Config": "Role_17_01",
+    "DetaileShowModel": "Role_17_01_DetaileShowPrefab",
+    "ShowModel": "Role_17_01_Show",
+    "CharacterPorpertyBase": [
+      {
+        "Property": 100,
+        "Value": 1603.8
+      },
+      {
+        "Property": 200,
+        "Value": 160.6
+      },
+      {
+        "Property": 800,
+        "Value": 51.6
+      },
+      {
+        "Property": 300,
+        "Value": 0.05
+      },
+      {
+        "Property": 400,
+        "Value": 0.5
+      },
+      {
+        "Property": 4000,
+        "Value": 1.0
+      },
+      {
+        "Property": 5500,
+        "Value": 100.0
+      },
+      {
+        "Property": 6500,
+        "Value": 100.0
+      },
+      {
+        "Property": 5700,
+        "Value": 0.0
+      }
+    ],
+    "CharacterPorpertyAdd": [
+      {
+        "Property": 100,
+        "Value": 138.726
+      },
+      {
+        "Property": 200,
+        "Value": 12.13
+      },
+      {
+        "Property": 800,
+        "Value": 5.761
+      }
+    ],
+    "Stars": 4,
+    "Wp1Type": 7,
+    "InitWeapon": 0,
+    "SkillEnergy": 90.0,
+    "NormalEnergy": 100.0,
+    "SpecialEnergy": 60.0,
+    "CharacterNameEng": 311701,
+    "CharacterNameCh": 0,
+    "CharacterIcon": 0,
+    "CharacterType": 0,
+    "Difficulty": 0,
+    "CharacterArt": 11701,
+    "EffectsRGB": [],
+    "UltimateSkillIcon": 10413,
+    "SwitchSkillCD": 27.0,
+    "AssistEnergy": 100.0,
+    "CharacterHeight": 1.46,
+    "SkillGroupIds": [
+      11701,
+      11702,
+      11703,
+      11704,
+      11705,
+      11706,
+      11707,
+      11708
+    ],
+    "CustomUiPc": "Role_17_01_CustomUI_pc",
+    "CustomUiMb": "Role_17_01_CustomUI",
+    "ViewPosition": [],
+    "ViewRotation": [],
+    "ViewFov": 22.29,
+    "ViewSound": "",
+    "ComSuit": [
+      1001020,
+      1001024
+    ],
+    "ComProperty": [
+      102,
+      4000,
+      2300
+    ],
+    "IsProtagonist": false,
+    "TimelinePath": "Timeline/Role_17_01_GaChaGet",
+    "TapePath": "Role_17_01_Tape"
+  },
+  "12101": {
+    "Id": 12101,
+    "Name": 24629,
+    "CharacterArmorType": 21,
+    "CharacterDamageType": 1,
+    "MannerType": 1,
+    "ConstellationItem": 204211,
+    "EliteElementItem": 100001,
+    "EliteCharacterItem": 112101,
+    "PresentId": [
+      [
+        5
+      ],
+      [
+        2
+      ]
+    ],
+    "CharacterTagGroup": [],
+    "Config": "Role_21_01",
+    "DetaileShowModel": "Role_21_01_DetaileShowPrefab",
+    "ShowModel": "Role_21_01_Show",
+    "CharacterPorpertyBase": [
+      {
+        "Property": 100,
+        "Value": 1960.2
+      },
+      {
+        "Property": 200,
+        "Value": 224.4
+      },
+      {
+        "Property": 800,
+        "Value": 59.4
+      },
+      {
+        "Property": 300,
+        "Value": 0.05
+      },
+      {
+        "Property": 400,
+        "Value": 0.5
+      },
+      {
+        "Property": 4000,
+        "Value": 1.0
+      },
+      {
+        "Property": 5500,
+        "Value": 100.0
+      },
+      {
+        "Property": 6500,
+        "Value": 100.0
+      },
+      {
+        "Property": 5700,
+        "Value": 0.0
+      }
+    ],
+    "CharacterPorpertyAdd": [
+      {
+        "Property": 100,
+        "Value": 169.554
+      },
+      {
+        "Property": 200,
+        "Value": 16.949
+      },
+      {
+        "Property": 800,
+        "Value": 6.632
+      }
+    ],
+    "Stars": 5,
+    "Wp1Type": 3,
+    "InitWeapon": 0,
+    "SkillEnergy": 90.0,
+    "NormalEnergy": 200.0,
+    "SpecialEnergy": 0,
+    "CharacterNameEng": 0,
+    "CharacterNameCh": 0,
+    "CharacterIcon": 0,
+    "CharacterType": 0,
+    "Difficulty": 0,
+    "CharacterArt": 0,
+    "EffectsRGB": [],
+    "UltimateSkillIcon": 0,
+    "SwitchSkillCD": 0,
+    "AssistEnergy": 0,
+    "CharacterHeight": 0,
+    "SkillGroupIds": [
+      10101,
+      10102,
+      10103,
+      10104,
+      10105,
+      10106,
+      10107,
+      10108
+    ],
+    "CustomUiPc": "",
+    "CustomUiMb": "",
+    "ViewPosition": [],
+    "ViewRotation": [],
+    "ViewFov": 0,
+    "ViewSound": "",
+    "ComSuit": [],
+    "ComProperty": [
+      202,
+      2200
+    ],
+    "IsProtagonist": false,
+    "TimelinePath": "Timeline/Role_21_01_GaChaGet",
+    "TapePath": "Role_21_01_Tape"
+  },
+  "12201": {
+    "Id": 12201,
+    "Name": 24630,
+    "CharacterArmorType": 22,
+    "CharacterDamageType": 1,
+    "MannerType": 5,
+    "ConstellationItem": 204221,
+    "EliteElementItem": 100105,
+    "EliteCharacterItem": 112201,
+    "PresentId": [
+      [
+        4
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "CharacterTagGroup": [
+      2,
+      3
+    ],
+    "Config": "Role_22_01",
+    "DetaileShowModel": "Role_22_01_DetaileShowPrefab",
+    "ShowModel": "Role_22_01_Show",
+    "CharacterPorpertyBase": [
+      {
+        "Property": 100,
+        "Value": 1702.8
+      },
+      {
+        "Property": 200,
+        "Value": 151.8
+      },
+      {
+        "Property": 800,
+        "Value": 51.0
+      },
+      {
+        "Property": 300,
+        "Value": 0.05
+      },
+      {
+        "Property": 400,
+        "Value": 0.5
+      },
+      {
+        "Property": 4000,
+        "Value": 1.0
+      },
+      {
+        "Property": 5500,
+        "Value": 100.0
+      },
+      {
+        "Property": 6500,
+        "Value": 100.0
+      },
+      {
+        "Property": 5700,
+        "Value": 0.0
+      }
+    ],
+    "CharacterPorpertyAdd": [
+      {
+        "Property": 100,
+        "Value": 147.289
+      },
+      {
+        "Property": 200,
+        "Value": 11.465
+      },
+      {
+        "Property": 800,
+        "Value": 5.694
+      }
+    ],
+    "Stars": 4,
+    "Wp1Type": 7,
+    "InitWeapon": 0,
+    "SkillEnergy": 90.0,
+    "NormalEnergy": 300.0,
+    "SpecialEnergy": 100.0,
+    "CharacterNameEng": 312201,
+    "CharacterNameCh": 0,
+    "CharacterIcon": 0,
+    "CharacterType": 0,
+    "Difficulty": 0,
+    "CharacterArt": 12201,
+    "EffectsRGB": [],
+    "UltimateSkillIcon": 10413,
+    "SwitchSkillCD": 27.0,
+    "AssistEnergy": 100.0,
+    "CharacterHeight": 1.66,
+    "SkillGroupIds": [
+      12201,
+      12202,
+      12203,
+      12204,
+      12205,
+      12206,
+      12207,
+      12208
+    ],
+    "CustomUiPc": "",
+    "CustomUiMb": "Role_26_01_CustomUI",
+    "ViewPosition": [
+      0.14,
+      1.45,
+      1.82
+    ],
+    "ViewRotation": [
+      -3.663,
+      185.699,
+      -7.807
+    ],
+    "ViewFov": 22.29,
+    "ViewSound": "",
+    "ComSuit": [
+      1001020,
+      1001004
+    ],
+    "ComProperty": [
+      102,
+      4000
+    ],
+    "IsProtagonist": false,
+    "TimelinePath": "Timeline/Role_22_01_GaChaGet",
+    "TapePath": "Role_22_01_Tape"
+  },
+  "12501": {
+    "Id": 12501,
+    "Name": 24631,
+    "CharacterArmorType": 25,
+    "CharacterDamageType": 2,
+    "MannerType": 1,
+    "ConstellationItem": 204251,
+    "EliteElementItem": 100101,
+    "EliteCharacterItem": 112501,
+    "PresentId": [
+      [
+        5
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    "CharacterTagGroup": [
+      1,
+      2
+    ],
+    "Config": "Role_25_01",
+    "DetaileShowModel": "Role_25_01_DetaileShowPrefab",
+    "ShowModel": "Role_25_01_Show",
+    "CharacterPorpertyBase": [
+      {
+        "Property": 100,
+        "Value": 1683.0
+      },
+      {
+        "Property": 200,
+        "Value": 156.2
+      },
+      {
+        "Property": 800,
+        "Value": 50.4
+      },
+      {
+        "Property": 300,
+        "Value": 0.05
+      },
+      {
+        "Property": 400,
+        "Value": 0.5
+      },
+      {
+        "Property": 4000,
+        "Value": 1.0
+      },
+      {
+        "Property": 5500,
+        "Value": 100.0
+      },
+      {
+        "Property": 6500,
+        "Value": 100.0
+      },
+      {
+        "Property": 5700,
+        "Value": 0.0
+      }
+    ],
+    "CharacterPorpertyAdd": [
+      {
+        "Property": 100,
+        "Value": 145.576
+      },
+      {
+        "Property": 200,
+        "Value": 11.797
+      },
+      {
+        "Property": 800,
+        "Value": 5.627
+      }
+    ],
+    "Stars": 4,
+    "Wp1Type": 1,
+    "InitWeapon": 0,
+    "SkillEnergy": 90.0,
+    "NormalEnergy": 300.0,
+    "SpecialEnergy": 100.0,
+    "CharacterNameEng": 312501,
+    "CharacterNameCh": 0,
+    "CharacterIcon": 0,
+    "CharacterType": 0,
+    "Difficulty": 0,
+    "CharacterArt": 12501,
+    "EffectsRGB": [],
+    "UltimateSkillIcon": 10413,
+    "SwitchSkillCD": 27.0,
+    "AssistEnergy": 100.0,
+    "CharacterHeight": 1.55,
+    "SkillGroupIds": [
+      12501,
+      12502,
+      12503,
+      12504,
+      12505,
+      12506,
+      12507,
+      12508
+    ],
+    "CustomUiPc": "Role_25_01_CustomUI_pc",
+    "CustomUiMb": "Role_25_01_CustomUI",
+    "ViewPosition": [
+      0.115,
+      1.394,
+      1.676
+    ],
+    "ViewRotation": [
+      -4.24,
+      185.285,
+      -1.799
+    ],
+    "ViewFov": 22.29,
+    "ViewSound": "event:/UI/CharacterView/27_01/Show",
+    "ComSuit": [
+      1001021,
+      1001001
+    ],
+    "ComProperty": [
+      102,
+      4000,
+      2100
+    ],
+    "IsProtagonist": false,
+    "TimelinePath": "Timeline/Role_25_01_GaChaGet",
+    "TapePath": "Role_25_01_Tape"
+  },
+  "12601": {
+    "Id": 12601,
+    "Name": 24632,
+    "CharacterArmorType": 26,
+    "CharacterDamageType": 2,
+    "MannerType": 3,
+    "ConstellationItem": 204261,
+    "EliteElementItem": 100003,
+    "EliteCharacterItem": 112601,
+    "PresentId": [
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "CharacterTagGroup": [
+      2
+    ],
+    "Config": "Role_26_01",
+    "DetaileShowModel": "Role_26_01_DetaileShowPrefab",
+    "ShowModel": "Role_26_01_Show",
+    "CharacterPorpertyBase": [
+      {
+        "Property": 100,
+        "Value": 1940.4
+      },
+      {
+        "Property": 200,
+        "Value": 228.8
+      },
+      {
+        "Property": 800,
+        "Value": 58.8
+      },
+      {
+        "Property": 300,
+        "Value": 0.05
+      },
+      {
+        "Property": 400,
+        "Value": 0.5
+      },
+      {
+        "Property": 4000,
+        "Value": 1.0
+      },
+      {
+        "Property": 5500,
+        "Value": 100.0
+      },
+      {
+        "Property": 6500,
+        "Value": 100.0
+      },
+      {
+        "Property": 5700,
+        "Value": 0.0
+      }
+    ],
+    "CharacterPorpertyAdd": [
+      {
+        "Property": 100,
+        "Value": 167.841
+      },
+      {
+        "Property": 200,
+        "Value": 17.281
+      },
+      {
+        "Property": 800,
+        "Value": 6.565
+      }
+    ],
+    "Stars": 5,
+    "Wp1Type": 6,
+    "InitWeapon": 0,
+    "SkillEnergy": 90.0,
+    "NormalEnergy": 100.0,
+    "SpecialEnergy": 90.0,
+    "CharacterNameEng": 312601,
+    "CharacterNameCh": 0,
+    "CharacterIcon": 0,
+    "CharacterType": 0,
+    "Difficulty": 0,
+    "CharacterArt": 12601,
+    "EffectsRGB": [],
+    "UltimateSkillIcon": 10413,
+    "SwitchSkillCD": 27.0,
+    "AssistEnergy": 100.0,
+    "CharacterHeight": 1.8,
+    "SkillGroupIds": [
+      12601,
+      12602,
+      12603,
+      12604,
+      12605,
+      12606,
+      12607,
+      12608
+    ],
+    "CustomUiPc": "",
+    "CustomUiMb": "Role_26_01_CustomUI",
+    "ViewPosition": [
+      0.14,
+      1.45,
+      1.82
+    ],
+    "ViewRotation": [
+      -3.663,
+      185.699,
+      -7.807
+    ],
+    "ViewFov": 22.29,
+    "ViewSound": "",
+    "ComSuit": [
+      1001031,
+      1001013
+    ],
+    "ComProperty": [
+      202,
+      300,
+      400,
+      2200
+    ],
+    "IsProtagonist": false,
+    "TimelinePath": "Timeline/Role_26_01_GaChaGet",
+    "TapePath": "Role_26_01_Tape"
+  },
+  "12701": {
+    "Id": 12701,
+    "Name": 24633,
+    "CharacterArmorType": 27,
+    "CharacterDamageType": 1,
+    "MannerType": 5,
+    "ConstellationItem": 204271,
+    "EliteElementItem": 100005,
+    "EliteCharacterItem": 112701,
+    "PresentId": [
+      [
+        3
+      ],
+      [
+        5
+      ]
+    ],
+    "CharacterTagGroup": [
+      1
+    ],
+    "Config": "Role_27_01",
+    "DetaileShowModel": "Role_27_01_DetaileShowPrefab",
+    "ShowModel": "Role_27_01_Show",
+    "CharacterPorpertyBase": [
+      {
+        "Property": 100,
+        "Value": 1881.0
+      },
+      {
+        "Property": 200,
+        "Value": 187.0
+      },
+      {
+        "Property": 800,
+        "Value": 57.0
+      },
+      {
+        "Property": 300,
+        "Value": 0.05
+      },
+      {
+        "Property": 400,
+        "Value": 0.5
+      },
+      {
+        "Property": 4000,
+        "Value": 1.0
+      },
+      {
+        "Property": 5500,
+        "Value": 100.0
+      },
+      {
+        "Property": 6500,
+        "Value": 100.0
+      },
+      {
+        "Property": 5700,
+        "Value": 0.0
+      }
+    ],
+    "CharacterPorpertyAdd": [
+      {
+        "Property": 100,
+        "Value": 162.703
+      },
+      {
+        "Property": 200,
+        "Value": 14.124
+      },
+      {
+        "Property": 800,
+        "Value": 6.364
+      }
+    ],
+    "Stars": 5,
+    "Wp1Type": 1,
+    "InitWeapon": 0,
+    "SkillEnergy": 90.0,
+    "NormalEnergy": 400.0,
+    "SpecialEnergy": 100.0,
+    "CharacterNameEng": 312701,
+    "CharacterNameCh": 0,
+    "CharacterIcon": 0,
+    "CharacterType": 0,
+    "Difficulty": 0,
+    "CharacterArt": 12701,
+    "EffectsRGB": [],
+    "UltimateSkillIcon": 10413,
+    "SwitchSkillCD": 27.0,
+    "AssistEnergy": 100.0,
+    "CharacterHeight": 1.8,
+    "SkillGroupIds": [
+      12701,
+      12702,
+      12703,
+      12704,
+      12705,
+      12706,
+      12707,
+      12708
+    ],
+    "CustomUiPc": "Role_27_01_CustomUI_pc",
+    "CustomUiMb": "Role_27_01_CustomUI",
+    "ViewPosition": [
+      0.115,
+      1.394,
+      1.676
+    ],
+    "ViewRotation": [
+      -4.24,
+      185.285,
+      -1.799
+    ],
+    "ViewFov": 22.29,
+    "ViewSound": "event:/UI/CharacterView/27_01/Show",
+    "ComSuit": [
+      1001029,
+      1001021
+    ],
+    "ComProperty": [
+      202,
+      300,
+      400,
+      2400
+    ],
+    "IsProtagonist": false,
+    "TimelinePath": "Timeline/Role_27_01_GaChaGet",
+    "TapePath": "Role_27_01_Tape"
+  },
+  "10001": {
+    "Id": 10001,
+    "Name": 24615,
+    "CharacterArmorType": 0,
+    "CharacterDamageType": 1,
+    "MannerType": 1,
+    "ConstellationItem": 0,
+    "EliteElementItem": 0,
+    "EliteCharacterItem": 0,
+    "PresentId": [
+      [
+        0
+      ]
+    ],
+    "CharacterTagGroup": [
+      0
+    ],
+    "Config": "Role_00_01",
+    "DetaileShowModel": "Role_00_01_DetaileShowPrefab",
+    "ShowModel": "Role_00_01_Show",
+    "CharacterPorpertyBase": [
+      {
+        "Property": 100,
+        "Value": 1940.4
+      },
+      {
+        "Property": 200,
+        "Value": 226.6
+      },
+      {
+        "Property": 800,
+        "Value": 59.4
+      },
+      {
+        "Property": 300,
+        "Value": 0.05
+      },
+      {
+        "Property": 400,
+        "Value": 0.5
+      },
+      {
+        "Property": 4000,
+        "Value": 1.0
+      },
+      {
+        "Property": 5500,
+        "Value": 100.0
+      },
+      {
+        "Property": 6500,
+        "Value": 100.0
+      }
+    ],
+    "CharacterPorpertyAdd": [
+      {
+        "Property": 100,
+        "Value": 167.841
+      },
+      {
+        "Property": 200,
+        "Value": 17.115
+      },
+      {
+        "Property": 800,
+        "Value": 6.632
+      }
+    ],
+    "Stars": 5,
+    "Wp1Type": 1,
+    "InitWeapon": 0,
+    "SkillEnergy": 90.0,
+    "NormalEnergy": 100.0,
+    "SpecialEnergy": 100.0,
+    "CharacterNameEng": 310001,
+    "CharacterNameCh": 210001,
+    "CharacterIcon": 0,
+    "CharacterType": 0,
+    "Difficulty": 0,
+    "CharacterArt": 10001,
+    "EffectsRGB": [],
+    "UltimateSkillIcon": 0,
+    "SwitchSkillCD": 27.0,
+    "AssistEnergy": 100.0,
+    "CharacterHeight": 1.8,
+    "SkillGroupIds": [
+      12701,
+      12702,
+      12703,
+      12704,
+      12705,
+      12706,
+      12707,
+      12708
+    ],
+    "CustomUiPc": "Role_00_01_CustomUI_pc",
+    "CustomUiMb": "Role_00_01_CustomUI",
+    "ViewPosition": [],
+    "ViewRotation": [],
+    "ViewFov": 22.29,
+    "ViewSound": "",
+    "ComSuit": [],
+    "ComProperty": [],
+    "IsProtagonist": true,
+    "TimelinePath": "Timeline/Role_00_01_GaChaGet",
+    "TapePath": "Role_00_01_Tape"
+  }
+}

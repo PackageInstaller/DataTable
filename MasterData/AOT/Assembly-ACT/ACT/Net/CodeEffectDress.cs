@@ -1,0 +1,10 @@
+namespace ACT.Net;
+
+public enum CodeEffectDress
+{
+	NOT_FOUND_CHARACTER = 1,
+	NOT_FOUND_EFFECT_DRESS,
+	NOT_OWNED_OR_EXPIRED,
+	NOT_WEARING,
+	CHARACTER_NOT_MATCH
+}
