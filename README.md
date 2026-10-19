@@ -47,7 +47,7 @@ git clone -b game/xxxxx --single-branch --depth 1 https://github.com/PackageInst
 | `game/KalpaOfUniverse`          | KalpaOfUniverse          | 天地劫                                                |
 | `game/LegendOfAoqi`             | LegendOfAoqi             | 奥奇传说                                              |
 | `game/LostSword`                | LostSword                | 丢剑                                                  |
-| `game/Lumin` | Lumin |
+| `game/Lumin`                    | Lumin                    | 绿梦：时空之声                                        |
 | `game/MAkeDrama`                | MAkeDrama                | MAkeDrama                                             |
 | `game/ManasisRefranin`          | ManasisRefranin          | 麻辣鸡丝                                              |
 | `game/MementoMori`              | MementoMori              | 妹妹头                                                |
