@@ -152,6 +152,8 @@ RSYNC_EXCLUDES=(
     --exclude "__pycache__/"
     --exclude "*.py[cod]"
     --exclude "snapshot-game.sh"
+    --exclude "Cache/"
+    --exclude ".cache/"
     --exclude "Assets/"
     --exclude "Painting/"
     --exclude "Paintings/"
@@ -180,7 +182,7 @@ list_large_files() {
     find "$root" -type f -print0 | while IFS= read -r -d '' f; do
         local rel="${f#"$root"/}"
         case "$rel" in
-            .git/* | __pycache__/* | Assets/* | Painting/* | Paintings/* | Zips/* | ZipsSilent/* | ZipsLang/* | Usms/* | Bytecode/*)
+            .git/* | __pycache__/* | Cache/* | .cache/* | Assets/* | Painting/* | Paintings/* | Zips/* | ZipsSilent/* | ZipsLang/* | Usms/* | Bytecode/*)
                 continue
                 ;;
         esac
