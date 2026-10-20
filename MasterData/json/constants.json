@@ -50,6 +50,9 @@
   ],
   "CardPoolWaterLevel": 51,
   "SSRCardProbability": 500,
+  "SeasonCardPoolWaterLevel": 33,
+  "SeasonSSRCardProbability": 1250,
+  "SeasonCardPoolConsume": 0,
   "CardPoolTypeChange": 50,
   "CardPoolChangeNum": 1,
   "CardPoolChooseMaxNum": 4,
@@ -913,10 +916,10 @@
   "ActiveDropNum": 5,
   "ActiveDropNew": [
     [
-      "5255",
-      "150",
-      "2026/03/05 10:00:00",
-      "2026/03/26 09:59:59"
+      "5306",
+      "175",
+      "2026/09/30 10:00:00",
+      "2026/10/22 09:59:59"
     ]
   ],
   "RollInterval": 300,
@@ -2074,5 +2077,11 @@
   "FirstAdventureChapter": "101",
   "AdventureRoleMoveSpeed": 210,
   "AdventureTipsWaitSecond": 15,
-  "AdventureSkipWaitSecond": 60
+  "AdventureSkipWaitSecond": 60,
+  "SeasonGuideGroup": [
+    6000,
+    6010,
+    6020
+  ],
+  "ForceGuideGroup": null
 }

@@ -531,5 +531,41 @@
     "textLan": "DungeonLan_HelpPicture_textLan_2026",
     "textLanText": "该区域为本场战斗中，收藏家可以使用的特殊指令。每轮次最多使用1个特殊指令；每场战斗中，每个指令最多可用1次。\n拨针：使用后，立刻进入下一个场地效果\n停摆：使用后，使当前场地效果延长一回合\n溯时：使用后，立刻进入上一个场地效果\n调表：使用后，立刻切换至收藏家指定的一个场地效果",
     "picture": "3,BattleHelpPics/ui_zd_bz_54"
+  },
+  {
+    "id": "2027",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_2027",
+    "nameLanText": "韧性值",
+    "textLan": "DungeonLan_HelpPicture_textLan_2027",
+    "textLanText": "韧性值\n部分关卡中的敌方单位存在【韧性值】。当敌方单位存在【韧性值】时，其受到的伤害特别降低。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_56"
+  },
+  {
+    "id": "2028",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_2028",
+    "nameLanText": "削韧&削韧值",
+    "textLan": "DungeonLan_HelpPicture_textLan_2028",
+    "textLanText": "削韧&削韧值\n我方单位对敌方进行部分攻击时，可减少该单位【韧性值】。\n我方单位进行攻击时，使敌方韧性值减少的点数即为【削韧值】。\n收藏家可点击【削韧说明】，查看该关卡中可以造成削韧的方式。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_57"
+  },
+  {
+    "id": "2029",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_2029",
+    "nameLanText": "破韧&颓势",
+    "textLan": "DungeonLan_HelpPicture_textLan_2029",
+    "textLanText": "破韧\n敌方单位的【韧性值】减少至0时，该单位被【破韧】。\n颓势\n当敌方单位被【破韧】后，进入【颓势】。\n【颓势】持续期间，该单位获得负面状态。\n【颓势】结束后，【韧性值】恢复",
+    "picture": "3,BattleHelpPics/ui_zd_bz_58"
+  },
+  {
+    "id": "2030",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_2030",
+    "nameLanText": "全局破韧总值",
+    "textLan": "DungeonLan_HelpPicture_textLan_2030",
+    "textLanText": "全局破韧总值\n当任意敌方单位进入【颓势】后，【全局破韧总值】增加。\n【全局破韧总值】越高，获得的加成效果越多。\n收藏家可以点击【全局破韧总值】区域，查看各个阶段的增益效果。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_59"
   }
 ]

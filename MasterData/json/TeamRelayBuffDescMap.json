@@ -2279,6 +2279,616 @@
     "Sort": 9,
     "IconType": ""
   },
+  "Buff_ZEZY_Group_10": {
+    "Id": "Buff_ZEZY_Group_10",
+    "BuffId": "Buff_ZEZY_Group_10",
+    "BuffName": "挪转",
+    "BuffDes": "每轮次结束时，敌方单位获得<color=#ff6724>1</color>次额外行动。",
+    "BuffIcon": "Buff_WJHY_Group1_J3",
+    "BuffNameLan": "activeLan_TeamRelayBuffDesc_buffNameLan_Buff_ZEZY_Group_10",
+    "BuffNameLanText": "挪转",
+    "BuffDesLan": "activeLan_TeamRelayBuffDesc_buffDesLan_Buff_ZEZY_Group_10",
+    "BuffDesLanText": "每轮次结束时，敌方单位获得<color=#ff6724>1</color>次额外行动。",
+    "Param": [
+      "1"
+    ],
+    "Sort": 31,
+    "IconType": ""
+  },
+  "Buff_ZEZY_Group_11": {
+    "Id": "Buff_ZEZY_Group_11",
+    "BuffId": "Buff_ZEZY_Group_11",
+    "BuffName": "集火",
+    "BuffDes": "敌方全体单位无法使用绝技，常击伤害提高<color=#ff6724>50%</color>。",
+    "BuffIcon": "Buff_WJHY_Group1_B3",
+    "BuffNameLan": "activeLan_TeamRelayBuffDesc_buffNameLan_Buff_ZEZY_Group_11",
+    "BuffNameLanText": "集火",
+    "BuffDesLan": "activeLan_TeamRelayBuffDesc_buffDesLan_Buff_ZEZY_Group_11",
+    "BuffDesLanText": "敌方全体单位无法使用绝技，常击伤害提高<color=#ff6724>50%</color>。",
+    "Param": [
+      "50%"
+    ],
+    "Sort": 32,
+    "IconType": ""
+  },
+  "Buff_ZEZY_Group_12": {
+    "Id": "Buff_ZEZY_Group_12",
+    "BuffId": "Buff_ZEZY_Group_12",
+    "BuffName": "树敌",
+    "BuffDes": "任意敌方单位回合开始时，若其<color=#ff6724>周围2格</color>内不存在我方单位，则该敌方单位下<color=#ff6724>1</color>次攻击造成的伤害提高<color=#ff6724>50%</color>，攻击后，清除此状态。",
+    "BuffIcon": "Buff_WJHY_Group1_E2",
+    "BuffNameLan": "activeLan_TeamRelayBuffDesc_buffNameLan_Buff_ZEZY_Group_12",
+    "BuffNameLanText": "树敌",
+    "BuffDesLan": "activeLan_TeamRelayBuffDesc_buffDesLan_Buff_ZEZY_Group_12",
+    "BuffDesLanText": "任意敌方单位回合开始时，若其<color=#ff6724>周围2格</color>内不存在我方单位，则该敌方单位下<color=#ff6724>1</color>次攻击造成的伤害提高<color=#ff6724>50%</color>，攻击后，清除此状态。",
+    "Param": [],
+    "Sort": 33,
+    "IconType": ""
+  },
+  "Buff_ZEZY_Group_13": {
+    "Id": "Buff_ZEZY_Group_13",
+    "BuffId": "Buff_ZEZY_Group_13",
+    "BuffName": "冰爆",
+    "BuffDes": "敌方任意单位被击败后，使其<color=#ff6724>周围3格</color>内的敌方全体暴击率增加<color=#ff6724>20%</color>，最多可叠加<color=#ff6724>3</color>层，持续<color=#ff6724>1</color>回合。",
+    "BuffIcon": "Buff_WJ_Group2_4",
+    "BuffNameLan": "activeLan_TeamRelayBuffDesc_buffNameLan_Buff_ZEZY_Group_13",
+    "BuffNameLanText": "冰爆",
+    "BuffDesLan": "activeLan_TeamRelayBuffDesc_buffDesLan_Buff_ZEZY_Group_13",
+    "BuffDesLanText": "敌方任意单位被击败后，使其<color=#ff6724>周围3格</color>内的敌方全体暴击率增加<color=#ff6724>20%</color>，最多可叠加<color=#ff6724>3</color>层，持续<color=#ff6724>1</color>回合。",
+    "Param": [],
+    "Sort": 34,
+    "IconType": ""
+  },
+  "Buff_ZEZY_Group_17": {
+    "Id": "Buff_ZEZY_Group_17",
+    "BuffId": "Buff_ZEZY_Group_17",
+    "BuffName": "屏障",
+    "BuffDes": "我方单位能量达到最大时，防御力提高<color=#ff6724>300%</color>。",
+    "BuffIcon": "Buff_WJHY_Group1_I1",
+    "BuffNameLan": "activeLan_TeamRelayBuffDesc_buffNameLan_Buff_ZEZY_Group_17",
+    "BuffNameLanText": "屏障",
+    "BuffDesLan": "activeLan_TeamRelayBuffDesc_buffDesLan_Buff_ZEZY_Group_17",
+    "BuffDesLanText": "我方单位能量达到最大时，防御力提高<color=#ff6724>300%</color>。",
+    "Param": [
+      "0"
+    ],
+    "Sort": 35,
+    "IconType": ""
+  },
+  "Buff_ZEZY_Group_18": {
+    "Id": "Buff_ZEZY_Group_18",
+    "BuffId": "Buff_ZEZY_Group_18",
+    "BuffName": "护体",
+    "BuffDes": "我方单位受到治疗后，下<color=#ff6724>1</color>次受到的伤害降低<color=#ff6724>50%</color>。",
+    "BuffIcon": "Buff_WJHY_Group1_D3",
+    "BuffNameLan": "activeLan_TeamRelayBuffDesc_buffNameLan_Buff_ZEZY_Group_18",
+    "BuffNameLanText": "护体",
+    "BuffDesLan": "activeLan_TeamRelayBuffDesc_buffDesLan_Buff_ZEZY_Group_18",
+    "BuffDesLanText": "我方单位受到治疗后，下<color=#ff6724>1</color>次受到的伤害降低<color=#ff6724>50%</color>。",
+    "Param": [
+      "0"
+    ],
+    "Sort": 36,
+    "IconType": ""
+  },
+  "Buff_ZEZY_Group_19": {
+    "Id": "Buff_ZEZY_Group_19",
+    "BuffId": "Buff_ZEZY_Group_19",
+    "BuffName": "回刺",
+    "BuffDes": "触发格挡时，我方单位的回击伤害提高<color=#ff6724>60%</color>，此状态持续<color=#ff6724>1</color>回合。",
+    "BuffIcon": "Buff_ZLZ03_6",
+    "BuffNameLan": "activeLan_TeamRelayBuffDesc_buffNameLan_Buff_ZEZY_Group_19",
+    "BuffNameLanText": "回刺",
+    "BuffDesLan": "activeLan_TeamRelayBuffDesc_buffDesLan_Buff_ZEZY_Group_19",
+    "BuffDesLanText": "触发格挡时，我方单位的回击伤害提高<color=#ff6724>60%</color>，此状态持续<color=#ff6724>1</color>回合。",
+    "Param": [
+      "0"
+    ],
+    "Sort": 37,
+    "IconType": ""
+  },
+  "Buff_ZEZY_Group_1_1": {
+    "Id": "Buff_ZEZY_Group_1_1",
+    "BuffId": "Buff_ZEZY_Group_1_1",
+    "BuffName": "繁生Ⅰ",
+    "BuffDes": "敌方全体最大生命值增加<color=#ff6724>50%</color>。",
+    "BuffIcon": "Buff_ZLZ03_10",
+    "BuffNameLan": "activeLan_TeamRelayBuffDesc_buffNameLan_Buff_ZEZY_Group_1_1",
+    "BuffNameLanText": "繁生Ⅰ",
+    "BuffDesLan": "activeLan_TeamRelayBuffDesc_buffDesLan_Buff_ZEZY_Group_1_1",
+    "BuffDesLanText": "敌方全体最大生命值增加<color=#ff6724>50%</color>。",
+    "Param": [
+      "50%"
+    ],
+    "Sort": 1,
+    "IconType": ""
+  },
+  "Buff_ZEZY_Group_1_2": {
+    "Id": "Buff_ZEZY_Group_1_2",
+    "BuffId": "Buff_ZEZY_Group_1_2",
+    "BuffName": "繁生Ⅱ",
+    "BuffDes": "敌方全体最大生命值增加<color=#ff6724>100%</color>。",
+    "BuffIcon": "Buff_ZLZ03_10",
+    "BuffNameLan": "activeLan_TeamRelayBuffDesc_buffNameLan_Buff_ZEZY_Group_1_2",
+    "BuffNameLanText": "繁生Ⅱ",
+    "BuffDesLan": "activeLan_TeamRelayBuffDesc_buffDesLan_Buff_ZEZY_Group_1_2",
+    "BuffDesLanText": "敌方全体最大生命值增加<color=#ff6724>100%</color>。",
+    "Param": [
+      "100%"
+    ],
+    "Sort": 2,
+    "IconType": ""
+  },
+  "Buff_ZEZY_Group_1_3": {
+    "Id": "Buff_ZEZY_Group_1_3",
+    "BuffId": "Buff_ZEZY_Group_1_3",
+    "BuffName": "繁生Ⅲ",
+    "BuffDes": "敌方全体最大生命值增加<color=#ff6724>150%</color>。",
+    "BuffIcon": "Buff_ZLZ03_10",
+    "BuffNameLan": "activeLan_TeamRelayBuffDesc_buffNameLan_Buff_ZEZY_Group_1_3",
+    "BuffNameLanText": "繁生Ⅲ",
+    "BuffDesLan": "activeLan_TeamRelayBuffDesc_buffDesLan_Buff_ZEZY_Group_1_3",
+    "BuffDesLanText": "敌方全体最大生命值增加<color=#ff6724>150%</color>。",
+    "Param": [
+      "150%"
+    ],
+    "Sort": 3,
+    "IconType": ""
+  },
+  "Buff_ZEZY_Group_1_4": {
+    "Id": "Buff_ZEZY_Group_1_4",
+    "BuffId": "Buff_ZEZY_Group_1_4",
+    "BuffName": "繁生Ⅳ",
+    "BuffDes": "敌方全体最大生命值增加<color=#ff6724>200%</color>。",
+    "BuffIcon": "Buff_ZLZ03_9",
+    "BuffNameLan": "activeLan_TeamRelayBuffDesc_buffNameLan_Buff_ZEZY_Group_1_4",
+    "BuffNameLanText": "繁生Ⅳ",
+    "BuffDesLan": "activeLan_TeamRelayBuffDesc_buffDesLan_Buff_ZEZY_Group_1_4",
+    "BuffDesLanText": "敌方全体最大生命值增加<color=#ff6724>200%</color>。",
+    "Param": [
+      "200%"
+    ],
+    "Sort": 4,
+    "IconType": ""
+  },
+  "Buff_ZEZY_Group_1_5": {
+    "Id": "Buff_ZEZY_Group_1_5",
+    "BuffId": "Buff_ZEZY_Group_1_5",
+    "BuffName": "繁生Ⅴ",
+    "BuffDes": "敌方全体最大生命值增加<color=#ff6724>500%</color>。",
+    "BuffIcon": "Buff_ZLZ03_9",
+    "BuffNameLan": "activeLan_TeamRelayBuffDesc_buffNameLan_Buff_ZEZY_Group_1_5",
+    "BuffNameLanText": "繁生Ⅴ",
+    "BuffDesLan": "activeLan_TeamRelayBuffDesc_buffDesLan_Buff_ZEZY_Group_1_5",
+    "BuffDesLanText": "敌方全体最大生命值增加<color=#ff6724>500%</color>。",
+    "Param": [
+      "500%"
+    ],
+    "Sort": 5,
+    "IconType": ""
+  },
+  "Buff_ZEZY_Group_20": {
+    "Id": "Buff_ZEZY_Group_20",
+    "BuffId": "Buff_ZEZY_Group_20",
+    "BuffName": "祭祀",
+    "BuffDes": "我方单位生命值每减少<color=#ff6724>1</color>次，造成的构素伤害提高<color=#ff6724>10%</color>，最多叠加<color=#ff6724>8</color>层，此状态持续<color=#ff6724>2</color>回合。",
+    "BuffIcon": "Buff_WJ_Group2_1",
+    "BuffNameLan": "activeLan_TeamRelayBuffDesc_buffNameLan_Buff_ZEZY_Group_20",
+    "BuffNameLanText": "祭祀",
+    "BuffDesLan": "activeLan_TeamRelayBuffDesc_buffDesLan_Buff_ZEZY_Group_20",
+    "BuffDesLanText": "我方单位生命值每减少<color=#ff6724>1</color>次，造成的构素伤害提高<color=#ff6724>10%</color>，最多叠加<color=#ff6724>8</color>层，此状态持续<color=#ff6724>2</color>回合。",
+    "Param": [
+      "0"
+    ],
+    "Sort": 38,
+    "IconType": ""
+  },
+  "Buff_ZEZY_Group_21": {
+    "Id": "Buff_ZEZY_Group_21",
+    "BuffId": "Buff_ZEZY_Group_21",
+    "BuffName": "余威",
+    "BuffDes": "我方任意单位每造成<color=#ff6724>1</color>次额外伤害，则使其造成的额外伤害提高<color=#ff6724>15%</color>；该状态最多叠加<color=#ff6724>6</color>层，持续<color=#ff6724>2</color>回合。",
+    "BuffIcon": "Buff_WJ_Group2_6",
+    "BuffNameLan": "activeLan_TeamRelayBuffDesc_buffNameLan_Buff_ZEZY_Group_21",
+    "BuffNameLanText": "余威",
+    "BuffDesLan": "activeLan_TeamRelayBuffDesc_buffDesLan_Buff_ZEZY_Group_21",
+    "BuffDesLanText": "我方任意单位每造成<color=#ff6724>1</color>次额外伤害，则使其造成的额外伤害提高<color=#ff6724>15%</color>；该状态最多叠加<color=#ff6724>6</color>层，持续<color=#ff6724>2</color>回合。",
+    "Param": [
+      "0"
+    ],
+    "Sort": 39,
+    "IconType": ""
+  },
+  "Buff_ZEZY_Group_22_1": {
+    "Id": "Buff_ZEZY_Group_22_1",
+    "BuffId": "Buff_ZEZY_Group_22_1",
+    "BuffName": "缚己Ⅰ",
+    "BuffDes": "每<color=#161bdb>2</color>轮次开始时，我方全体单位获得<color=#161bdb>1</color>层<color=#ff6724>流失</color>状态。",
+    "BuffIcon": "Buff_WJHY_Group1_F2",
+    "BuffNameLan": "activeLan_TeamRelayBuffDesc_buffNameLan_Buff_ZEZY_Group_22_1",
+    "BuffNameLanText": "缚己Ⅰ",
+    "BuffDesLan": "activeLan_TeamRelayBuffDesc_buffDesLan_Buff_ZEZY_Group_22_1",
+    "BuffDesLanText": "每<color=#161bdb>2</color>轮次开始时，我方全体单位获得<color=#161bdb>1</color>层<color=#ff6724>流失</color>状态。",
+    "Param": [],
+    "Sort": 18,
+    "IconType": ""
+  },
+  "Buff_ZEZY_Group_22_2": {
+    "Id": "Buff_ZEZY_Group_22_2",
+    "BuffId": "Buff_ZEZY_Group_22_2",
+    "BuffName": "缚己Ⅱ",
+    "BuffDes": "每<color=#161bdb>2</color>轮次开始时，我方全体单位获得<color=#161bdb>2</color>层<color=#ff6724>流失</color>状态。",
+    "BuffIcon": "Buff_WJHY_Group1_F2",
+    "BuffNameLan": "activeLan_TeamRelayBuffDesc_buffNameLan_Buff_ZEZY_Group_22_2",
+    "BuffNameLanText": "缚己Ⅱ",
+    "BuffDesLan": "activeLan_TeamRelayBuffDesc_buffDesLan_Buff_ZEZY_Group_22_2",
+    "BuffDesLanText": "每<color=#161bdb>2</color>轮次开始时，我方全体单位获得<color=#161bdb>2</color>层<color=#ff6724>流失</color>状态。",
+    "Param": [],
+    "Sort": 19,
+    "IconType": ""
+  },
+  "Buff_ZEZY_Group_22_3": {
+    "Id": "Buff_ZEZY_Group_22_3",
+    "BuffId": "Buff_ZEZY_Group_22_3",
+    "BuffName": "缚己Ⅲ",
+    "BuffDes": "每<color=#161bdb>1</color>轮次开始时，我方全体单位获得<color=#161bdb>2</color>层<color=#ff6724>流失</color>状态。",
+    "BuffIcon": "Buff_WJHY_Group1_F2",
+    "BuffNameLan": "activeLan_TeamRelayBuffDesc_buffNameLan_Buff_ZEZY_Group_22_3",
+    "BuffNameLanText": "缚己Ⅲ",
+    "BuffDesLan": "activeLan_TeamRelayBuffDesc_buffDesLan_Buff_ZEZY_Group_22_3",
+    "BuffDesLanText": "每<color=#161bdb>1</color>轮次开始时，我方全体单位获得<color=#161bdb>2</color>层<color=#ff6724>流失</color>状态。",
+    "Param": [],
+    "Sort": 20,
+    "IconType": ""
+  },
+  "Buff_ZEZY_Group_2_1": {
+    "Id": "Buff_ZEZY_Group_2_1",
+    "BuffId": "Buff_ZEZY_Group_2_1",
+    "BuffName": "奔逐Ⅰ",
+    "BuffDes": "敌方全体移动力增加<color=#ff6724>1</color>。",
+    "BuffIcon": "Buff_ZLZ03_4",
+    "BuffNameLan": "activeLan_TeamRelayBuffDesc_buffNameLan_Buff_ZEZY_Group_2_1",
+    "BuffNameLanText": "奔逐Ⅰ",
+    "BuffDesLan": "activeLan_TeamRelayBuffDesc_buffDesLan_Buff_ZEZY_Group_2_1",
+    "BuffDesLanText": "敌方全体移动力增加<color=#ff6724>1</color>。",
+    "Param": [
+      "1"
+    ],
+    "Sort": 6,
+    "IconType": ""
+  },
+  "Buff_ZEZY_Group_2_2": {
+    "Id": "Buff_ZEZY_Group_2_2",
+    "BuffId": "Buff_ZEZY_Group_2_2",
+    "BuffName": "奔逐Ⅱ",
+    "BuffDes": "敌方全体移动力增加<color=#ff6724>2</color>。",
+    "BuffIcon": "Buff_ZLZ03_4",
+    "BuffNameLan": "activeLan_TeamRelayBuffDesc_buffNameLan_Buff_ZEZY_Group_2_2",
+    "BuffNameLanText": "奔逐Ⅱ",
+    "BuffDesLan": "activeLan_TeamRelayBuffDesc_buffDesLan_Buff_ZEZY_Group_2_2",
+    "BuffDesLanText": "敌方全体移动力增加<color=#ff6724>2</color>。",
+    "Param": [
+      "2"
+    ],
+    "Sort": 7,
+    "IconType": ""
+  },
+  "Buff_ZEZY_Group_2_3": {
+    "Id": "Buff_ZEZY_Group_2_3",
+    "BuffId": "Buff_ZEZY_Group_2_3",
+    "BuffName": "奔逐Ⅲ",
+    "BuffDes": "敌方全体移动力增加<color=#ff6724>4</color>；\n敌方单位单次行动内每移动<color=#158bdb>1</color>格，使其造成的伤害提高<color=#158bdb>15%</color>，持续至该回合结束。",
+    "BuffIcon": "Buff_ZLZ03_4",
+    "BuffNameLan": "activeLan_TeamRelayBuffDesc_buffNameLan_Buff_ZEZY_Group_2_3",
+    "BuffNameLanText": "奔逐Ⅲ",
+    "BuffDesLan": "activeLan_TeamRelayBuffDesc_buffDesLan_Buff_ZEZY_Group_2_3",
+    "BuffDesLanText": "敌方全体移动力增加<color=#ff6724>4</color>；\n敌方单位单次行动内每移动<color=#158bdb>1</color>格，使其造成的伤害提高<color=#158bdb>15%</color>，持续至该回合结束。",
+    "Param": [
+      "4"
+    ],
+    "Sort": 8,
+    "IconType": ""
+  },
+  "Buff_ZEZY_Group_3_1": {
+    "Id": "Buff_ZEZY_Group_3_1",
+    "BuffId": "Buff_ZEZY_Group_3_1",
+    "BuffName": "流星Ⅰ",
+    "BuffDes": "本次战斗的最大轮次减少<color=#ff6724>3</color>。",
+    "BuffIcon": "Buff_WJ_Group1_2",
+    "BuffNameLan": "activeLan_TeamRelayBuffDesc_buffNameLan_Buff_ZEZY_Group_3_1",
+    "BuffNameLanText": "流星Ⅰ",
+    "BuffDesLan": "activeLan_TeamRelayBuffDesc_buffDesLan_Buff_ZEZY_Group_3_1",
+    "BuffDesLanText": "本次战斗的最大轮次减少<color=#ff6724>3</color>。",
+    "Param": [
+      "3"
+    ],
+    "Sort": 9,
+    "IconType": ""
+  },
+  "Buff_ZEZY_Group_3_2": {
+    "Id": "Buff_ZEZY_Group_3_2",
+    "BuffId": "Buff_ZEZY_Group_3_2",
+    "BuffName": "流星Ⅱ",
+    "BuffDes": "本次战斗的最大轮次减少<color=#ff6724>5</color>。",
+    "BuffIcon": "Buff_WJ_Group1_2",
+    "BuffNameLan": "activeLan_TeamRelayBuffDesc_buffNameLan_Buff_ZEZY_Group_3_2",
+    "BuffNameLanText": "流星Ⅱ",
+    "BuffDesLan": "activeLan_TeamRelayBuffDesc_buffDesLan_Buff_ZEZY_Group_3_2",
+    "BuffDesLanText": "本次战斗的最大轮次减少<color=#ff6724>5</color>。",
+    "Param": [
+      "5"
+    ],
+    "Sort": 10,
+    "IconType": ""
+  },
+  "Buff_ZEZY_Group_4_1": {
+    "Id": "Buff_ZEZY_Group_4_1",
+    "BuffId": "Buff_ZEZY_Group_4_1",
+    "BuffName": "疾骤Ⅰ",
+    "BuffDes": "战斗开始时，敌方全体速度增加<color=#ff6724>50</color>，持续整场战斗。",
+    "BuffIcon": "Buff_WJHY_Group1_A1",
+    "BuffNameLan": "activeLan_TeamRelayBuffDesc_buffNameLan_Buff_ZEZY_Group_4_1",
+    "BuffNameLanText": "疾骤Ⅰ",
+    "BuffDesLan": "activeLan_TeamRelayBuffDesc_buffDesLan_Buff_ZEZY_Group_4_1",
+    "BuffDesLanText": "战斗开始时，敌方全体速度增加<color=#ff6724>50</color>，持续整场战斗。",
+    "Param": [
+      "50"
+    ],
+    "Sort": 11,
+    "IconType": ""
+  },
+  "Buff_ZEZY_Group_4_2": {
+    "Id": "Buff_ZEZY_Group_4_2",
+    "BuffId": "Buff_ZEZY_Group_4_2",
+    "BuffName": "疾骤Ⅱ",
+    "BuffDes": "战斗开始时，敌方全体速度增加<color=#ff6724>100</color>，持续整场战斗。",
+    "BuffIcon": "Buff_WJHY_Group1_A2",
+    "BuffNameLan": "activeLan_TeamRelayBuffDesc_buffNameLan_Buff_ZEZY_Group_4_2",
+    "BuffNameLanText": "疾骤Ⅱ",
+    "BuffDesLan": "activeLan_TeamRelayBuffDesc_buffDesLan_Buff_ZEZY_Group_4_2",
+    "BuffDesLanText": "战斗开始时，敌方全体速度增加<color=#ff6724>100</color>，持续整场战斗。",
+    "Param": [
+      "100"
+    ],
+    "Sort": 12,
+    "IconType": ""
+  },
+  "Buff_ZEZY_Group_4_3": {
+    "Id": "Buff_ZEZY_Group_4_3",
+    "BuffId": "Buff_ZEZY_Group_4_3",
+    "BuffName": "疾骤Ⅲ",
+    "BuffDes": "战斗开始时，敌方全体速度增加<color=#ff6724>200</color>，持续整场战斗。",
+    "BuffIcon": "Buff_WJHY_Group1_A3",
+    "BuffNameLan": "activeLan_TeamRelayBuffDesc_buffNameLan_Buff_ZEZY_Group_4_3",
+    "BuffNameLanText": "疾骤Ⅲ",
+    "BuffDesLan": "activeLan_TeamRelayBuffDesc_buffDesLan_Buff_ZEZY_Group_4_3",
+    "BuffDesLanText": "战斗开始时，敌方全体速度增加<color=#ff6724>200</color>，持续整场战斗。",
+    "Param": [
+      "200"
+    ],
+    "Sort": 13,
+    "IconType": ""
+  },
+  "Buff_ZEZY_Group_5": {
+    "Id": "Buff_ZEZY_Group_5",
+    "BuffId": "Buff_ZEZY_Group_5",
+    "BuffName": "能量Ⅰ",
+    "BuffDes": "敌方单位生命值首次低于该单位最大生命值的<color=#ff6724>50%</color>时，获得<color=#ff6724>1</color>次额外行动。",
+    "BuffIcon": "Buff_ZLZ03_3",
+    "BuffNameLan": "activeLan_TeamRelayBuffDesc_buffNameLan_Buff_ZEZY_Group_5",
+    "BuffNameLanText": "能量Ⅰ",
+    "BuffDesLan": "activeLan_TeamRelayBuffDesc_buffDesLan_Buff_ZEZY_Group_5",
+    "BuffDesLanText": "敌方单位生命值首次低于该单位最大生命值的<color=#ff6724>50%</color>时，获得<color=#ff6724>1</color>次额外行动。",
+    "Param": [
+      "50%"
+    ],
+    "Sort": 14,
+    "IconType": ""
+  },
+  "Buff_ZEZY_Group_6_1": {
+    "Id": "Buff_ZEZY_Group_6_1",
+    "BuffId": "Buff_ZEZY_Group_6_1",
+    "BuffName": "裂魂Ⅰ",
+    "BuffDes": "进入战斗后，我方全体受到最大生命值<color=#ff6724>15%</color>的真实伤害，暴击伤害降低<color=#ff6724>50%</color>。",
+    "BuffIcon": "Buff_WJHY_Group1_D2",
+    "BuffNameLan": "activeLan_TeamRelayBuffDesc_buffNameLan_Buff_ZEZY_Group_6_1",
+    "BuffNameLanText": "裂魂Ⅰ",
+    "BuffDesLan": "activeLan_TeamRelayBuffDesc_buffDesLan_Buff_ZEZY_Group_6_1",
+    "BuffDesLanText": "进入战斗后，我方全体受到最大生命值<color=#ff6724>15%</color>的真实伤害，暴击伤害降低<color=#ff6724>50%</color>。",
+    "Param": [
+      "15%"
+    ],
+    "Sort": 15,
+    "IconType": ""
+  },
+  "Buff_ZEZY_Group_6_2": {
+    "Id": "Buff_ZEZY_Group_6_2",
+    "BuffId": "Buff_ZEZY_Group_6_2",
+    "BuffName": "裂魂Ⅱ",
+    "BuffDes": "进入战斗后，我方全体受到最大生命值<color=#ff6724>30%</color>的真实伤害，暴击伤害降低<color=#ff6724>50%</color>。",
+    "BuffIcon": "Buff_WJHY_Group1_D2",
+    "BuffNameLan": "activeLan_TeamRelayBuffDesc_buffNameLan_Buff_ZEZY_Group_6_2",
+    "BuffNameLanText": "裂魂Ⅱ",
+    "BuffDesLan": "activeLan_TeamRelayBuffDesc_buffDesLan_Buff_ZEZY_Group_6_2",
+    "BuffDesLanText": "进入战斗后，我方全体受到最大生命值<color=#ff6724>30%</color>的真实伤害，暴击伤害降低<color=#ff6724>50%</color>。",
+    "Param": [
+      "30%"
+    ],
+    "Sort": 16,
+    "IconType": ""
+  },
+  "Buff_ZEZY_Group_6_3": {
+    "Id": "Buff_ZEZY_Group_6_3",
+    "BuffId": "Buff_ZEZY_Group_6_3",
+    "BuffName": "裂魂Ⅲ",
+    "BuffDes": "进入战斗后，我方全体受到最大生命值<color=#ff6724>50%</color>的真实伤害，暴击伤害降低<color=#ff6724>150%</color>。",
+    "BuffIcon": "Buff_WJHY_Group1_D2",
+    "BuffNameLan": "activeLan_TeamRelayBuffDesc_buffNameLan_Buff_ZEZY_Group_6_3",
+    "BuffNameLanText": "裂魂Ⅲ",
+    "BuffDesLan": "activeLan_TeamRelayBuffDesc_buffDesLan_Buff_ZEZY_Group_6_3",
+    "BuffDesLanText": "进入战斗后，我方全体受到最大生命值<color=#ff6724>50%</color>的真实伤害，暴击伤害降低<color=#ff6724>150%</color>。",
+    "Param": [
+      "50%"
+    ],
+    "Sort": 17,
+    "IconType": ""
+  },
+  "Buff_ZEZY_Group_7_1": {
+    "Id": "Buff_ZEZY_Group_7_1",
+    "BuffId": "Buff_ZEZY_Group_7_1",
+    "BuffName": "锐势Ⅰ",
+    "BuffDes": "敌方全体攻击力提高<color=#ff6724>15%</color>。",
+    "BuffIcon": "Buff_WJHY_Group1_E3",
+    "BuffNameLan": "activeLan_TeamRelayBuffDesc_buffNameLan_Buff_ZEZY_Group_7_1",
+    "BuffNameLanText": "锐势Ⅰ",
+    "BuffDesLan": "activeLan_TeamRelayBuffDesc_buffDesLan_Buff_ZEZY_Group_7_1",
+    "BuffDesLanText": "敌方全体攻击力提高<color=#ff6724>15%</color>。",
+    "Param": [
+      "15%"
+    ],
+    "Sort": 21,
+    "IconType": ""
+  },
+  "Buff_ZEZY_Group_7_2": {
+    "Id": "Buff_ZEZY_Group_7_2",
+    "BuffId": "Buff_ZEZY_Group_7_2",
+    "BuffName": "锐势Ⅱ",
+    "BuffDes": "敌方全体攻击力提高<color=#ff6724>30%</color>。",
+    "BuffIcon": "Buff_WJHY_Group1_E3",
+    "BuffNameLan": "activeLan_TeamRelayBuffDesc_buffNameLan_Buff_ZEZY_Group_7_2",
+    "BuffNameLanText": "锐势Ⅱ",
+    "BuffDesLan": "activeLan_TeamRelayBuffDesc_buffDesLan_Buff_ZEZY_Group_7_2",
+    "BuffDesLanText": "敌方全体攻击力提高<color=#ff6724>30%</color>。",
+    "Param": [
+      "30%"
+    ],
+    "Sort": 22,
+    "IconType": ""
+  },
+  "Buff_ZEZY_Group_7_3": {
+    "Id": "Buff_ZEZY_Group_7_3",
+    "BuffId": "Buff_ZEZY_Group_7_3",
+    "BuffName": "锐势Ⅲ",
+    "BuffDes": "敌方全体攻击力提高<color=#ff6724>50%</color>。",
+    "BuffIcon": "Buff_WJHY_Group1_E3",
+    "BuffNameLan": "activeLan_TeamRelayBuffDesc_buffNameLan_Buff_ZEZY_Group_7_3",
+    "BuffNameLanText": "锐势Ⅲ",
+    "BuffDesLan": "activeLan_TeamRelayBuffDesc_buffDesLan_Buff_ZEZY_Group_7_3",
+    "BuffDesLanText": "敌方全体攻击力提高<color=#ff6724>50%</color>。",
+    "Param": [
+      "50%"
+    ],
+    "Sort": 23,
+    "IconType": ""
+  },
+  "Buff_ZEZY_Group_7_4": {
+    "Id": "Buff_ZEZY_Group_7_4",
+    "BuffId": "Buff_ZEZY_Group_7_4",
+    "BuffName": "锐势Ⅳ",
+    "BuffDes": "敌方全体攻击力提高<color=#ff6724>75%</color>，暴击率增加<color=#ff6724>15%</color>。",
+    "BuffIcon": "Buff_WJHY_Group1_E3",
+    "BuffNameLan": "activeLan_TeamRelayBuffDesc_buffNameLan_Buff_ZEZY_Group_7_4",
+    "BuffNameLanText": "锐势Ⅳ",
+    "BuffDesLan": "activeLan_TeamRelayBuffDesc_buffDesLan_Buff_ZEZY_Group_7_4",
+    "BuffDesLanText": "敌方全体攻击力提高<color=#ff6724>75%</color>，暴击率增加<color=#ff6724>15%</color>。",
+    "Param": [
+      "75%"
+    ],
+    "Sort": 24,
+    "IconType": ""
+  },
+  "Buff_ZEZY_Group_7_5": {
+    "Id": "Buff_ZEZY_Group_7_5",
+    "BuffId": "Buff_ZEZY_Group_7_5",
+    "BuffName": "锐势Ⅴ",
+    "BuffDes": "敌方全体攻击力提高<color=#ff6724>100%</color>，暴击率增加<color=#ff6724>40%</color>。",
+    "BuffIcon": "Buff_WJHY_Group1_E3",
+    "BuffNameLan": "activeLan_TeamRelayBuffDesc_buffNameLan_Buff_ZEZY_Group_7_5",
+    "BuffNameLanText": "锐势Ⅴ",
+    "BuffDesLan": "activeLan_TeamRelayBuffDesc_buffDesLan_Buff_ZEZY_Group_7_5",
+    "BuffDesLanText": "敌方全体攻击力提高<color=#ff6724>100%</color>，暴击率增加<color=#ff6724>40%</color>。",
+    "Param": [
+      "100%"
+    ],
+    "Sort": 25,
+    "IconType": ""
+  },
+  "Buff_ZEZY_Group_8_1": {
+    "Id": "Buff_ZEZY_Group_8_1",
+    "BuffId": "Buff_ZEZY_Group_8_1",
+    "BuffName": "反骨Ⅰ",
+    "BuffDes": "敌方单位生命值首次低于该单位最大生命值的<color=#ff6724>60%</color>时，该单位造成的伤害提高<color=#ff6724>20%</color>。",
+    "BuffIcon": "Buff_ZLZ03_8",
+    "BuffNameLan": "activeLan_TeamRelayBuffDesc_buffNameLan_Buff_ZEZY_Group_8_1",
+    "BuffNameLanText": "反骨Ⅰ",
+    "BuffDesLan": "activeLan_TeamRelayBuffDesc_buffDesLan_Buff_ZEZY_Group_8_1",
+    "BuffDesLanText": "敌方单位生命值首次低于该单位最大生命值的<color=#ff6724>60%</color>时，该单位造成的伤害提高<color=#ff6724>20%</color>。",
+    "Param": [],
+    "Sort": 26,
+    "IconType": ""
+  },
+  "Buff_ZEZY_Group_8_2": {
+    "Id": "Buff_ZEZY_Group_8_2",
+    "BuffId": "Buff_ZEZY_Group_8_2",
+    "BuffName": "反骨Ⅱ",
+    "BuffDes": "敌方单位生命值首次低于该单位最大生命值的<color=#ff6724>60%/40%</color>时，该单位造成的伤害提高<color=#ff6724>20%/40%</color>。",
+    "BuffIcon": "Buff_ZLZ03_8",
+    "BuffNameLan": "activeLan_TeamRelayBuffDesc_buffNameLan_Buff_ZEZY_Group_8_2",
+    "BuffNameLanText": "反骨Ⅱ",
+    "BuffDesLan": "activeLan_TeamRelayBuffDesc_buffDesLan_Buff_ZEZY_Group_8_2",
+    "BuffDesLanText": "敌方单位生命值首次低于该单位最大生命值的<color=#ff6724>60%/40%</color>时，该单位造成的伤害提高<color=#ff6724>20%/40%</color>。",
+    "Param": [],
+    "Sort": 27,
+    "IconType": ""
+  },
+  "Buff_ZEZY_Group_9_1": {
+    "Id": "Buff_ZEZY_Group_9_1",
+    "BuffId": "Buff_ZEZY_Group_9_1",
+    "BuffName": "凝盾Ⅰ",
+    "BuffDes": "进入战斗后，敌方全体免疫<color=#ff6724>1</color>次伤害。",
+    "BuffIcon": "Buff_WJ_Group1_3",
+    "BuffNameLan": "activeLan_TeamRelayBuffDesc_buffNameLan_Buff_ZEZY_Group_9_1",
+    "BuffNameLanText": "凝盾Ⅰ",
+    "BuffDesLan": "activeLan_TeamRelayBuffDesc_buffDesLan_Buff_ZEZY_Group_9_1",
+    "BuffDesLanText": "进入战斗后，敌方全体免疫<color=#ff6724>1</color>次伤害。",
+    "Param": [
+      "1"
+    ],
+    "Sort": 28,
+    "IconType": ""
+  },
+  "Buff_ZEZY_Group_9_2": {
+    "Id": "Buff_ZEZY_Group_9_2",
+    "BuffId": "Buff_ZEZY_Group_9_2",
+    "BuffName": "凝盾Ⅱ",
+    "BuffDes": "进入战斗后，敌方全体免疫<color=#ff6724>2</color>次伤害。",
+    "BuffIcon": "Buff_WJ_Group1_3",
+    "BuffNameLan": "activeLan_TeamRelayBuffDesc_buffNameLan_Buff_ZEZY_Group_9_2",
+    "BuffNameLanText": "凝盾Ⅱ",
+    "BuffDesLan": "activeLan_TeamRelayBuffDesc_buffDesLan_Buff_ZEZY_Group_9_2",
+    "BuffDesLanText": "进入战斗后，敌方全体免疫<color=#ff6724>2</color>次伤害。",
+    "Param": [
+      "2"
+    ],
+    "Sort": 29,
+    "IconType": ""
+  },
+  "Buff_ZEZY_Group_9_3": {
+    "Id": "Buff_ZEZY_Group_9_3",
+    "BuffId": "Buff_ZEZY_Group_9_3",
+    "BuffName": "凝盾Ⅲ",
+    "BuffDes": "进入战斗后，敌方全体免疫<color=#ff6724>3</color>次伤害。",
+    "BuffIcon": "Buff_WJ_Group1_3",
+    "BuffNameLan": "activeLan_TeamRelayBuffDesc_buffNameLan_Buff_ZEZY_Group_9_3",
+    "BuffNameLanText": "凝盾Ⅲ",
+    "BuffDesLan": "activeLan_TeamRelayBuffDesc_buffDesLan_Buff_ZEZY_Group_9_3",
+    "BuffDesLanText": "进入战斗后，敌方全体免疫<color=#ff6724>3</color>次伤害。",
+    "Param": [
+      "3"
+    ],
+    "Sort": 30,
+    "IconType": ""
+  },
   "Buff_ZSLB_Group_1": {
     "Id": "Buff_ZSLB_Group_1",
     "BuffId": "Buff_ZSLB_Group_1",

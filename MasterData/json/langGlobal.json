@@ -9868,7 +9868,7 @@
   "29516": {
     "ID": "29516",
     "NameLan": "LangGlobalLan_LangGlobal_name_29516",
-    "NameLanText": "本场战斗已使用该特殊指令，无法再次使用"
+    "NameLanText": "该特殊指令次数消耗完毕，无法再次使用"
   },
   "29517": {
     "ID": "29517",
@@ -12095,6 +12095,16 @@
     "NameLan": "LangGlobalLan_LangGlobal_name_31273",
     "NameLanText": "首次吹风时，消除敌方全体存在的墨华谱·摹写状态。"
   },
+  "31274": {
+    "ID": "31274",
+    "NameLan": "LangGlobalLan_LangGlobal_name_31274",
+    "NameLanText": "进入玄英效果时，消除敌方全体存在的墨华谱·摹写状态。"
+  },
+  "31275": {
+    "ID": "31275",
+    "NameLan": "LangGlobalLan_LangGlobal_name_31275",
+    "NameLanText": "【全局韧性总值】大于13000时，消除敌方全体存在的墨华谱·摹写状态。"
+  },
   "33101": {
     "ID": "33101",
     "NameLan": "LangGlobalLan_LangGlobal_name_33101",
@@ -12364,6 +12374,1241 @@
     "ID": "33156",
     "NameLan": "LangGlobalLan_LangGlobal_name_33156",
     "NameLanText": "敌方进入区域后，全体敌方单位获得调查·远行：移动力提高1，可叠加9层，持续整场战斗。"
+  },
+  "33201": {
+    "ID": "33201",
+    "NameLan": "LangGlobalLan_LangGlobal_name_33201",
+    "NameLanText": "1.点击地穴放置五里堠，将逃跑的小骷髅围住，即为成功。"
+  },
+  "33202": {
+    "ID": "33202",
+    "NameLan": "LangGlobalLan_LangGlobal_name_33202",
+    "NameLanText": "2.收藏家每放置一座五里堠，小骷髅都将向周围一圈内、没有放置过五里堠的地穴逃跑一步。"
+  },
+  "33203": {
+    "ID": "33203",
+    "NameLan": "LangGlobalLan_LangGlobal_name_33203",
+    "NameLanText": "3.若小骷髅周围一圈都放置有五里堠，则顺利通关；若小骷髅逃到地穴边缘，则失败。"
+  },
+  "33204": {
+    "ID": "33204",
+    "NameLan": "LangGlobalLan_LangGlobal_name_33204",
+    "NameLanText": "鬼话含量 %s"
+  },
+  "33205": {
+    "ID": "33205",
+    "NameLan": "LangGlobalLan_LangGlobal_name_33205",
+    "NameLanText": "恭喜收藏家顺利通关！"
+  },
+  "33206": {
+    "ID": "33206",
+    "NameLan": "LangGlobalLan_LangGlobal_name_33206",
+    "NameLanText": "小骷髅逃走了，再尝试一次吧！"
+  },
+  "33207": {
+    "ID": "33207",
+    "NameLan": "LangGlobalLan_LangGlobal_name_33207",
+    "NameLanText": "是否重置当前关卡？"
+  },
+  "33208": {
+    "ID": "33208",
+    "NameLan": "LangGlobalLan_LangGlobal_name_33208",
+    "NameLanText": "是否跳过当前关卡？跳过后可直接获得奖励。"
+  },
+  "33209": {
+    "ID": "33209",
+    "NameLan": "LangGlobalLan_LangGlobal_name_33209",
+    "NameLanText": "是否退出当前关卡？"
+  },
+  "33210": {
+    "ID": "33210",
+    "NameLan": "LangGlobalLan_LangGlobal_name_33210",
+    "NameLanText": "此地穴无法放置五里堠。"
+  },
+  "33211": {
+    "ID": "33211",
+    "NameLan": "LangGlobalLan_LangGlobal_name_33211",
+    "NameLanText": "当前没有前置操作，无法撤销至上一步。"
+  },
+  "33212": {
+    "ID": "33212",
+    "NameLan": "LangGlobalLan_LangGlobal_name_33212",
+    "NameLanText": "鬼话含量 %s  (已领取)"
+  },
+  "33213": {
+    "ID": "33213",
+    "NameLan": "LangGlobalLan_LangGlobal_name_33213",
+    "NameLanText": "啊？我吗？我来看店吗？！这这这是不是哪位大人一时把名单看错了行，卖货应该找隔壁的针铺铜版大人才对吧？？啊收藏家已经来了#￥@%&欢迎您大驾光临！！（器者扑倒在地的声音）"
+  },
+  "33214": {
+    "ID": "33214",
+    "NameLan": "LangGlobalLan_LangGlobal_name_33214",
+    "NameLanText": "苦苦：苦苦乐乐代班中。小幻，不在了。乐乐：不在，词义同死亡、去世，小幻死了。苦苦：小幻死了。幻戏图：回来了回来了，还没有死。只是被叫去把偷偷上架的骷髅周边收起来而已……"
+  },
+  "33215": {
+    "ID": "33215",
+    "NameLan": "LangGlobalLan_LangGlobal_name_33215",
+    "NameLanText": "虽然鄙人确实只是一个没皮没脸的骷髅……但叫人家鬼图什么的，还是有点太难听了吧，呜呜！！"
+  },
+  "33216": {
+    "ID": "33216",
+    "NameLan": "LangGlobalLan_LangGlobal_name_33216",
+    "NameLanText": "鱼写了个新工具，可以绕开五柱器大人的屏蔽系统三十秒左右……做不了什么操作但只是看看高层内部通告的话……嗯？《拟暂停男团舞台表演的相关通告》？啊啊，吃瓜吃到自己家！午门大人要回来了办公室立刻按轴对称重新收拾！！"
+  },
+  "33217": {
+    "ID": "33217",
+    "NameLan": "LangGlobalLan_LangGlobal_name_33217",
+    "NameLanText": "鬼话论坛吗？聊斋图说大人倾力推荐过，我也关注了一阵子，但我那个，一开始不懂论坛规则，因为一直挖坟贴被封号好多次……“坟贴”这种叫法，我一看就很想点一点嘛。"
+  },
+  "33218": {
+    "ID": "33218",
+    "NameLan": "LangGlobalLan_LangGlobal_name_33218",
+    "NameLanText": "此处虽然只是临时商铺，但所有产品都是现货！！这一点简直令鄙人万分感动——您知道我和洛神赋图大人一起订购的娃衣都花了多长时间才发货吗呜呜呜……啊，难道说！因为等待预售而死就是我最终的死法？"
+  },
+  "33240": {
+    "ID": "33240",
+    "NameLan": "LangGlobalLan_LangGlobal_name_33240",
+    "NameLanText": "幽萤水晶"
+  },
+  "33241": {
+    "ID": "33241",
+    "NameLan": "LangGlobalLan_LangGlobal_name_33241",
+    "NameLanText": "进入战斗后，我方全体获得<color=#ff6724>汲取</color>状态和<color=#ff6724>奔涌</color>状态。"
+  },
+  "34001": {
+    "ID": "34001",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34001",
+    "NameLanText": "削韧：\n·我方单位对敌方进行部分攻击时，可减少该单位韧性值。\n削韧方式：\n·本场战斗中，可削韧的方式：\n<color=#ff6724>直接攻击、追击攻击、回击攻击或攻击造成额外伤害。</color>\n\n全局破韧总值：\n·当任意敌方单位进入【颓势】后，【全局破韧总值】增加。"
+  },
+  "34010": {
+    "ID": "34010",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34010",
+    "NameLanText": "韧性总值：<b>13001-19000</b>"
+  },
+  "34011": {
+    "ID": "34011",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34011",
+    "NameLanText": "韧性总值：<b>7001-13000</b>"
+  },
+  "34012": {
+    "ID": "34012",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34012",
+    "NameLanText": "韧性总值：<b>1000-7000</b>"
+  },
+  "34013": {
+    "ID": "34013",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34013",
+    "NameLanText": "敌方全体效果：\n·受到暴击伤害、防御穿透降低<color=#158bdb>30%</color>。\n·造成伤害时，获得<color=#158bdb>1</color>层<color=#ff6724>异·怪力</color>状态。\n·开始行动时，获得<color=#158bdb>1</color>点能量。"
+  },
+  "34014": {
+    "ID": "34014",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34014",
+    "NameLanText": "敌方全体效果：\n·造成伤害时，获得<color=#158bdb>1</color>层<color=#ff6724>异·怪力</color>状态。\n·开始行动时，获得<color=#158bdb>1</color>点能量。"
+  },
+  "34015": {
+    "ID": "34015",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34015",
+    "NameLanText": "敌方全体效果：\n·受到直接攻击时，获得<color=#158bdb>1</color>层<color=#ff6724>坚韧·煞刃</color>状态。\n<color=#ff6724>坚韧·煞刃</color>：自身回合开始时，消耗全部此状态，每层此状态使自身受到当前生命值<color=#158bdb>9%</color>的物理伤害；\n此状态最多可叠加<color=#158bdb>10</color>层。"
+  },
+  "34016": {
+    "ID": "34016",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34016",
+    "NameLanText": "韧性总值：<b>19001-28000</b>"
+  },
+  "34017": {
+    "ID": "34017",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34017",
+    "NameLanText": "韧性总值：<b>10001-19000</b>"
+  },
+  "34018": {
+    "ID": "34018",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34018",
+    "NameLanText": "韧性总值：<b>1000-10000</b>"
+  },
+  "34019": {
+    "ID": "34019",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34019",
+    "NameLanText": "韧性总值：<b>25001-37000</b>"
+  },
+  "34020": {
+    "ID": "34020",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34020",
+    "NameLanText": "韧性总值：<b>13001-25000</b>"
+  },
+  "34021": {
+    "ID": "34021",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34021",
+    "NameLanText": "韧性总值：<b>1000-13000</b>"
+  },
+  "34101": {
+    "ID": "34101",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34101",
+    "NameLanText": "凝露台1阶"
+  },
+  "34102": {
+    "ID": "34102",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34102",
+    "NameLanText": "凿石坊1阶"
+  },
+  "34103": {
+    "ID": "34103",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34103",
+    "NameLanText": "斫木坊1阶"
+  },
+  "34104": {
+    "ID": "34104",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34104",
+    "NameLanText": "醴泉坊1阶"
+  },
+  "34105": {
+    "ID": "34105",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34105",
+    "NameLanText": "限时收割"
+  },
+  "34106": {
+    "ID": "34106",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34106",
+    "NameLanText": "全体派遣"
+  },
+  "34107": {
+    "ID": "34107",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34107",
+    "NameLanText": "全体建造"
+  },
+  "34108": {
+    "ID": "34108",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34108",
+    "NameLanText": "请在倒计时结束前清剿周围的下型体，清剿工作完成后可以领取奖励。"
+  },
+  "34109": {
+    "ID": "34109",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34109",
+    "NameLanText": "下型体反击！请全体收藏家合力清剿。通关后可获得个人奖励，并推进全体进度。"
+  },
+  "34110": {
+    "ID": "34110",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34110",
+    "NameLanText": "所有收藏家都可进行酿造派遣，推动世界进度，派遣完成后，领取相应奖励。"
+  },
+  "34111": {
+    "ID": "34111",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34111",
+    "NameLanText": "全服进行建造，提交材料建造后可以领取奖励。"
+  },
+  "34112": {
+    "ID": "34112",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34112",
+    "NameLanText": "交付材料后可以获得奖励，并推动全体进度，建造工作完成后可以获得全体增益。"
+  },
+  "34113": {
+    "ID": "34113",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34113",
+    "NameLanText": "可以在醴泉坊派遣器者进行酿造生产，提供大量证量琼浆。"
+  },
+  "34114": {
+    "ID": "34114",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34114",
+    "NameLanText": "进行器者生产派遣，快速产出大量芝草露华。产量与器者等级和凝露台等级相关。"
+  },
+  "34115": {
+    "ID": "34115",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34115",
+    "NameLanText": "进行器者生产派遣，快速产出大量木板。产量与器者等级和斫木坊等级相关。"
+  },
+  "34116": {
+    "ID": "34116",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34116",
+    "NameLanText": "进行器者生产派遣，快速产出大量砖块。产量与器者等级和凿石坊等级相关。"
+  },
+  "34117": {
+    "ID": "34117",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34117",
+    "NameLanText": "未知区域，等待着你的探索。"
+  },
+  "34118": {
+    "ID": "34118",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34118",
+    "NameLanText": "太阳神鸟告知收藏家，榑桑晷（时间之树）的来古市节点分支失控，扭曲或将入侵现实。\n\n收藏家需借\"堪舆图\"进入树中各条可能性收集素材、修复异变。语毕，收藏家脚下一空，坠入曲解降临后的废墟。\n\n一条收藏家与蝠桃瓶未能阻止灾难的时间线。"
+  },
+  "34119": {
+    "ID": "34119",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34119",
+    "NameLanText": "未知区域"
+  },
+  "34120": {
+    "ID": "34120",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34120",
+    "NameLanText": "凝露台2阶"
+  },
+  "34121": {
+    "ID": "34121",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34121",
+    "NameLanText": "凿石坊2阶"
+  },
+  "34122": {
+    "ID": "34122",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34122",
+    "NameLanText": "斫木坊2阶"
+  },
+  "34123": {
+    "ID": "34123",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34123",
+    "NameLanText": "醴泉坊2阶"
+  },
+  "34124": {
+    "ID": "34124",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34124",
+    "NameLanText": "凝露台3阶"
+  },
+  "34125": {
+    "ID": "34125",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34125",
+    "NameLanText": "凿石坊3阶"
+  },
+  "34126": {
+    "ID": "34126",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34126",
+    "NameLanText": "斫木坊3阶"
+  },
+  "34127": {
+    "ID": "34127",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34127",
+    "NameLanText": "醴泉坊3阶"
+  },
+  "34128": {
+    "ID": "34128",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34128",
+    "NameLanText": "凝露台4阶"
+  },
+  "34129": {
+    "ID": "34129",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34129",
+    "NameLanText": "凿石坊4阶"
+  },
+  "34130": {
+    "ID": "34130",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34130",
+    "NameLanText": "斫木坊4阶"
+  },
+  "34131": {
+    "ID": "34131",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34131",
+    "NameLanText": "醴泉坊4阶"
+  },
+  "34132": {
+    "ID": "34132",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34132",
+    "NameLanText": "凝露台5阶"
+  },
+  "34133": {
+    "ID": "34133",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34133",
+    "NameLanText": "凿石坊5阶"
+  },
+  "34134": {
+    "ID": "34134",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34134",
+    "NameLanText": "斫木坊5阶"
+  },
+  "34135": {
+    "ID": "34135",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34135",
+    "NameLanText": "醴泉坊5阶"
+  },
+  "34136": {
+    "ID": "34136",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34136",
+    "NameLanText": "未知区域"
+  },
+  "34141": {
+    "ID": "34141",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34141",
+    "NameLanText": "榑桑晷小助手"
+  },
+  "34142": {
+    "ID": "34142",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34142",
+    "NameLanText": "攻占一个地块"
+  },
+  "34143": {
+    "ID": "34143",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34143",
+    "NameLanText": "参与一次设施建造"
+  },
+  "34144": {
+    "ID": "34144",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34144",
+    "NameLanText": "参与一次修复"
+  },
+  "34145": {
+    "ID": "34145",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34145",
+    "NameLanText": "参与一次冲突讨伐"
+  },
+  "34146": {
+    "ID": "34146",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34146",
+    "NameLanText": "推荐攻占"
+  },
+  "34147": {
+    "ID": "34147",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34147",
+    "NameLanText": "推荐派遣"
+  },
+  "34148": {
+    "ID": "34148",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34148",
+    "NameLanText": "推荐重建"
+  },
+  "34149": {
+    "ID": "34149",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34149",
+    "NameLanText": "推荐讨伐"
+  },
+  "34150": {
+    "ID": "34150",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34150",
+    "NameLanText": "危急"
+  },
+  "34151": {
+    "ID": "34151",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34151",
+    "NameLanText": "本阶段剩余时间："
+  },
+  "34152": {
+    "ID": "34152",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34152",
+    "NameLanText": "首占奖励"
+  },
+  "34153": {
+    "ID": "34153",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34153",
+    "NameLanText": "恭喜收藏家在%s地块的攻占中成为了第%s名！"
+  },
+  "34154": {
+    "ID": "34154",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34154",
+    "NameLanText": "攻占"
+  },
+  "34155": {
+    "ID": "34155",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34155",
+    "NameLanText": "派遣"
+  },
+  "34156": {
+    "ID": "34156",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34156",
+    "NameLanText": "重建"
+  },
+  "34157": {
+    "ID": "34157",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34157",
+    "NameLanText": "讨伐"
+  },
+  "34158": {
+    "ID": "34158",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34158",
+    "NameLanText": "再引介<color=#CF64C9>{0}</color>/{1}次后可领取"
+  },
+  "34159": {
+    "ID": "34159",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34159",
+    "NameLanText": "当前可领取"
+  },
+  "34160": {
+    "ID": "34160",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34160",
+    "NameLanText": "已全部领取"
+  },
+  "34161": {
+    "ID": "34161",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34161",
+    "NameLanText": "累计引介%s"
+  },
+  "34162": {
+    "ID": "34162",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34162",
+    "NameLanText": "累计引介次数:<color=#b003ec>%d</color> /%s"
+  },
+  "34163": {
+    "ID": "34163",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34163",
+    "NameLanText": "当期卡池开放期间，在当前卡池累计引介次数，可获得额外赠礼。"
+  },
+  "34164": {
+    "ID": "34164",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34164",
+    "NameLanText": "已领取"
+  },
+  "34165": {
+    "ID": "34165",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34165",
+    "NameLanText": "领取"
+  },
+  "34166": {
+    "ID": "34166",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34166",
+    "NameLanText": "未达成"
+  },
+  "34167": {
+    "ID": "34167",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34167",
+    "NameLanText": "赛季渠道"
+  },
+  "34168": {
+    "ID": "34168",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34168",
+    "NameLanText": "此处是障碍物，请收藏家绕行"
+  },
+  "34169": {
+    "ID": "34169",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34169",
+    "NameLanText": "派遣中"
+  },
+  "34170": {
+    "ID": "34170",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34170",
+    "NameLanText": "当前器者正在派遣中，无法参与其他行动"
+  },
+  "34171": {
+    "ID": "34171",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34171",
+    "NameLanText": "一键升级会一次性消耗大量升级材料，是否确认一键升级？"
+  },
+  "34172": {
+    "ID": "34172",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34172",
+    "NameLanText": "确认"
+  },
+  "34173": {
+    "ID": "34173",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34173",
+    "NameLanText": "取消"
+  },
+  "34174": {
+    "ID": "34174",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34174",
+    "NameLanText": "攻占进度+%s"
+  },
+  "34175": {
+    "ID": "34175",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34175",
+    "NameLanText": "派遣进度+%s"
+  },
+  "34176": {
+    "ID": "34176",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34176",
+    "NameLanText": "重建进度+%s"
+  },
+  "34177": {
+    "ID": "34177",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34177",
+    "NameLanText": "剩余时间:%s天%s时%s分"
+  },
+  "34178": {
+    "ID": "34178",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34178",
+    "NameLanText": "全服推进任务%s成功"
+  },
+  "34179": {
+    "ID": "34179",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34179",
+    "NameLanText": "全服推进任务%s失败"
+  },
+  "34180": {
+    "ID": "34180",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34180",
+    "NameLanText": "讨伐了%s次大型冲突"
+  },
+  "34181": {
+    "ID": "34181",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34181",
+    "NameLanText": "%s击败了终局之战%s"
+  },
+  "34182": {
+    "ID": "34182",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34182",
+    "NameLanText": "修复了%s个建筑"
+  },
+  "34183": {
+    "ID": "34183",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34183",
+    "NameLanText": "所有玩家共用同一张地图，协同推进地块占领、修复建筑，解锁新区域。"
+  },
+  "34184": {
+    "ID": "34184",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34184",
+    "NameLanText": "活动专属器者拥有独立强化系统，自带专属战斗 buff。"
+  },
+  "34185": {
+    "ID": "34185",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34185",
+    "NameLanText": "标志性建筑为全服资源众筹，玩家提交基础资源推进建造进度，建成后还提供全服生产，战斗类buff。"
+  },
+  "34186": {
+    "ID": "34186",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34186",
+    "NameLanText": "玩家可以消耗资源升级科技树，获得生产，战斗相关BUFF。"
+  },
+  "34187": {
+    "ID": "34187",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34187",
+    "NameLanText": "战斗设置普通、简单两种难度模式，简单模式怪物附带减益 buff、奖励对应削减，攻占进度推进效率衰减。"
+  },
+  "34188": {
+    "ID": "34188",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34188",
+    "NameLanText": "器者驻守派遣累计达到指定时长可领取额外奖励，领取后累计时长清零。"
+  },
+  "34189": {
+    "ID": "34189",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34189",
+    "NameLanText": "点击小地图已开放区域任意位置，可快速跳转至大地图对应坐标。"
+  },
+  "34190": {
+    "ID": "34190",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34190",
+    "NameLanText": "购买高级通行证，会开通玩家昵称变色，和活动中将收藏家默认形象替换为玩家选择设置器者形象功能"
+  },
+  "34191": {
+    "ID": "34191",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34191",
+    "NameLanText": "当大地图找不到目标时，顺着指引箭头能够快速找到BOSS点或推荐任务点。"
+  },
+  "34192": {
+    "ID": "34192",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34192",
+    "NameLanText": "点击未知地块，会弹出该地块的预览信息，帮助您快速了解该地块信息。"
+  },
+  "34193": {
+    "ID": "34193",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34193",
+    "NameLanText": "阳和街"
+  },
+  "34194": {
+    "ID": "34194",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34194",
+    "NameLanText": "停云公园"
+  },
+  "34195": {
+    "ID": "34195",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34195",
+    "NameLanText": "暮成巷"
+  },
+  "34196": {
+    "ID": "34196",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34196",
+    "NameLanText": "吉羽百货"
+  },
+  "34197": {
+    "ID": "34197",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34197",
+    "NameLanText": "中楼"
+  },
+  "34198": {
+    "ID": "34198",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34198",
+    "NameLanText": "白河大道"
+  },
+  "34199": {
+    "ID": "34199",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34199",
+    "NameLanText": "森列路"
+  },
+  "34200": {
+    "ID": "34200",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34200",
+    "NameLanText": "弗远桥"
+  },
+  "34201": {
+    "ID": "34201",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34201",
+    "NameLanText": "阳和街"
+  },
+  "34202": {
+    "ID": "34202",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34202",
+    "NameLanText": "停云公园"
+  },
+  "34203": {
+    "ID": "34203",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34203",
+    "NameLanText": "暮成巷"
+  },
+  "34204": {
+    "ID": "34204",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34204",
+    "NameLanText": "吉羽百货"
+  },
+  "34205": {
+    "ID": "34205",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34205",
+    "NameLanText": "中楼"
+  },
+  "34206": {
+    "ID": "34206",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34206",
+    "NameLanText": "白河大道"
+  },
+  "34207": {
+    "ID": "34207",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34207",
+    "NameLanText": "森列路"
+  },
+  "34208": {
+    "ID": "34208",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34208",
+    "NameLanText": "弗远桥"
+  },
+  "34209": {
+    "ID": "34209",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34209",
+    "NameLanText": "全服进行建造，提交材料建造后可以领取奖励。"
+  },
+  "34210": {
+    "ID": "34210",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34210",
+    "NameLanText": "全服进行建造，提交材料建造后可以领取奖励。"
+  },
+  "34211": {
+    "ID": "34211",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34211",
+    "NameLanText": "全服进行建造，提交材料建造后可以领取奖励。"
+  },
+  "34212": {
+    "ID": "34212",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34212",
+    "NameLanText": "全服进行建造，提交材料建造后可以领取奖励。"
+  },
+  "34213": {
+    "ID": "34213",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34213",
+    "NameLanText": "全服进行建造，提交材料建造后可以领取奖励。"
+  },
+  "34214": {
+    "ID": "34214",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34214",
+    "NameLanText": "全服进行建造，提交材料建造后可以领取奖励。"
+  },
+  "34215": {
+    "ID": "34215",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34215",
+    "NameLanText": "全服进行建造，提交材料建造后可以领取奖励。"
+  },
+  "34216": {
+    "ID": "34216",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34216",
+    "NameLanText": "全服进行建造，提交材料建造后可以领取奖励。"
+  },
+  "34217": {
+    "ID": "34217",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34217",
+    "NameLanText": "交付材料后可以获得奖励，并推动全体进度，建造工作完成后可以获得全体增益。"
+  },
+  "34218": {
+    "ID": "34218",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34218",
+    "NameLanText": "交付材料后可以获得奖励，并推动全体进度，建造工作完成后可以获得全体增益。"
+  },
+  "34219": {
+    "ID": "34219",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34219",
+    "NameLanText": "交付材料后可以获得奖励，并推动全体进度，建造工作完成后可以获得全体增益。"
+  },
+  "34220": {
+    "ID": "34220",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34220",
+    "NameLanText": "交付材料后可以获得奖励，并推动全体进度，建造工作完成后可以获得全体增益。"
+  },
+  "34221": {
+    "ID": "34221",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34221",
+    "NameLanText": "交付材料后可以获得奖励，并推动全体进度，建造工作完成后可以获得全体增益。"
+  },
+  "34222": {
+    "ID": "34222",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34222",
+    "NameLanText": "交付材料后可以获得奖励，并推动全体进度，建造工作完成后可以获得全体增益。"
+  },
+  "34223": {
+    "ID": "34223",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34223",
+    "NameLanText": "交付材料后可以获得奖励，并推动全体进度，建造工作完成后可以获得全体增益。"
+  },
+  "34224": {
+    "ID": "34224",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34224",
+    "NameLanText": "交付材料后可以获得奖励，并推动全体进度，建造工作完成后可以获得全体增益。"
+  },
+  "34225": {
+    "ID": "34225",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34225",
+    "NameLanText": "资源产出提升50%"
+  },
+  "34226": {
+    "ID": "34226",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34226",
+    "NameLanText": "行动力上限增加3点"
+  },
+  "34227": {
+    "ID": "34227",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34227",
+    "NameLanText": "派遣奖励提升5%"
+  },
+  "34228": {
+    "ID": "34228",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34228",
+    "NameLanText": "前往引介"
+  },
+  "34229": {
+    "ID": "34229",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34229",
+    "NameLanText": "我方与敌方存在一定差距，战斗失败。"
+  },
+  "34230": {
+    "ID": "34230",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34230",
+    "NameLanText": "运气不错，险胜一招。"
+  },
+  "34231": {
+    "ID": "34231",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34231",
+    "NameLanText": "锋芒初露，小胜一场。"
+  },
+  "34232": {
+    "ID": "34232",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34232",
+    "NameLanText": "恭喜收藏家，轻松胜出！"
+  },
+  "34233": {
+    "ID": "34233",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34233",
+    "NameLanText": "获得奖励"
+  },
+  "34234": {
+    "ID": "34234",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34234",
+    "NameLanText": "惜败。本次战斗奖励相比大胜大幅减少，有如下收获"
+  },
+  "34235": {
+    "ID": "34235",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34235",
+    "NameLanText": "险胜。本次战斗奖励相比大胜小幅减少，有如下收获"
+  },
+  "34236": {
+    "ID": "34236",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34236",
+    "NameLanText": "胜利。本次战斗奖励相比大胜稍微减少，有如下收获"
+  },
+  "34237": {
+    "ID": "34237",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34237",
+    "NameLanText": "大胜。本次战斗有如下收获"
+  },
+  "34238": {
+    "ID": "34238",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34238",
+    "NameLanText": "本日行动力消耗%s/%s"
+  },
+  "34239": {
+    "ID": "34239",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34239",
+    "NameLanText": "当前器者只可使用徽章进行升级"
+  },
+  "34240": {
+    "ID": "34240",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34240",
+    "NameLanText": "请选择提升所需素材"
+  },
+  "34241": {
+    "ID": "34241",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34241",
+    "NameLanText": "当前%s级"
+  },
+  "34242": {
+    "ID": "34242",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34242",
+    "NameLanText": "当前建筑投入资源已达上限"
+  },
+  "34243": {
+    "ID": "34243",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34243",
+    "NameLanText": "“名与身孰亲？身与货孰多？” 一定要做选择么？那刻本山海经和我说，都是上千岁的器者了，答案必须是——“我全都要”。"
+  },
+  "34244": {
+    "ID": "34244",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34244",
+    "NameLanText": "看店？行吧，地图在哪看都是看，还能躲一会杜虎符。《执行部规章》第三百一十三条：非紧急工作，需依序推进，即便是杜虎符来了也要排队提需求。"
+  },
+  "34245": {
+    "ID": "34245",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34245",
+    "NameLanText": "想提高商品购买率？嗯……顾客来走两圈，讨价还价、决绝转身离开……又失败了么？啊？问我为什么不叫住顾客？不，我受过严格的收银培训，打折是不可能打折的……那把顾客腿打折……（一阵猛烈的翻书声）哦，也是不行的。"
+  },
+  "34246": {
+    "ID": "34246",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34246",
+    "NameLanText": "我发现器者同僚们在工作时，会出现爱恨交织的情况，并因此纠结痛苦。我对此的建议是，不上班就不会下班，不下班就没有上班。"
+  },
+  "34247": {
+    "ID": "34247",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34247",
+    "NameLanText": "长信宫灯托敖敖送来一份包裹：刚出炉的金毛狮子鱼、四龙四凤座前辈寄来的新衣服、朱雀衔环杯送来的……一捆发绳……好吧，这确实是比烟雾更易消失之物。"
+  },
+  "34248": {
+    "ID": "34248",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34248",
+    "NameLanText": "复苏增益已解锁"
+  },
+  "34249": {
+    "ID": "34249",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34249",
+    "NameLanText": "复苏增益未解锁"
+  },
+  "34250": {
+    "ID": "34250",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34250",
+    "NameLanText": "一次性购买整套宝鉴，折后仅需198元"
+  },
+  "34251": {
+    "ID": "34251",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34251",
+    "NameLanText": "经以山海"
+  },
+  "34252": {
+    "ID": "34252",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34252",
+    "NameLanText": "榑桑遗境"
+  },
+  "34253": {
+    "ID": "34253",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34253",
+    "NameLanText": "野营货栈"
+  },
+  "34254": {
+    "ID": "34254",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34254",
+    "NameLanText": "复苏游历"
+  },
+  "34255": {
+    "ID": "34255",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34255",
+    "NameLanText": "本期时令宝鉴剩余时间:"
+  },
+  "34256": {
+    "ID": "34256",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34256",
+    "NameLanText": "宝鉴"
+  },
+  "34257": {
+    "ID": "34257",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34257",
+    "NameLanText": "凝露派遣"
+  },
+  "34258": {
+    "ID": "34258",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34258",
+    "NameLanText": "凿石派遣"
+  },
+  "34259": {
+    "ID": "34259",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34259",
+    "NameLanText": "斫木派遣"
+  },
+  "34260": {
+    "ID": "34260",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34260",
+    "NameLanText": "醴泉派遣"
+  },
+  "34261": {
+    "ID": "34261",
+    "NameLan": "LangGlobalLan_LangGlobal_name_34261",
+    "NameLanText": "本期"
+  },
+  "35101": {
+    "ID": "35101",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35101",
+    "NameLanText": "累计登录"
+  },
+  "35102": {
+    "ID": "35102",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35102",
+    "NameLanText": "%d天"
+  },
+  "35103": {
+    "ID": "35103",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35103",
+    "NameLanText": "收藏家等级达到<color=#286153>%d</color>/%d级"
+  },
+  "35104": {
+    "ID": "35104",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35104",
+    "NameLanText": "当前累计登录<color=#286153>%d</color>/%d天"
+  },
+  "35105": {
+    "ID": "35105",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35105",
+    "NameLanText": "收藏家可通过参与日常任务累计登录天数，达到指定天数与等级后，即可领取相应奖励。"
+  },
+  "35106": {
+    "ID": "35106",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35106",
+    "NameLanText": "每日4:00-次日3:59登录，即可完成当日登录任务。"
+  },
+  "35111": {
+    "ID": "35111",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35111",
+    "NameLanText": "时令宝鉴"
+  },
+  "35112": {
+    "ID": "35112",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35112",
+    "NameLanText": "是否撤回当前队伍"
+  },
+  "35113": {
+    "ID": "35113",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35113",
+    "NameLanText": "撤回"
+  },
+  "35114": {
+    "ID": "35114",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35114",
+    "NameLanText": "取消"
+  },
+  "35115": {
+    "ID": "35115",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35115",
+    "NameLanText": "已达到最大购买等级，无法继续购买"
+  },
+  "35116": {
+    "ID": "35116",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35116",
+    "NameLanText": "请前往榑桑遗境活动购买复苏游历宝鉴，开通自选器者形象功能"
+  },
+  "35117": {
+    "ID": "35117",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35117",
+    "NameLanText": "归墟"
+  },
+  "35118": {
+    "ID": "35118",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35118",
+    "NameLanText": "都广之野"
+  },
+  "35119": {
+    "ID": "35119",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35119",
+    "NameLanText": "昆仑山"
+  },
+  "35120": {
+    "ID": "35120",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35120",
+    "NameLanText": "无启国"
+  },
+  "35121": {
+    "ID": "35121",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35121",
+    "NameLanText": "太行山"
+  },
+  "35122": {
+    "ID": "35122",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35122",
+    "NameLanText": "招集"
+  },
+  "35123": {
+    "ID": "35123",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35123",
+    "NameLanText": "引介"
+  },
+  "35124": {
+    "ID": "35124",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35124",
+    "NameLanText": "次内必得<color=#EA373B>特出</color>器者"
+  },
+  "35125": {
+    "ID": "35125",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35125",
+    "NameLanText": "【每十次必得<color=#d8bb46>优异</color>及以上器者】"
+  },
+  "35126": {
+    "ID": "35126",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35126",
+    "NameLanText": "行动记录"
+  },
+  "35127": {
+    "ID": "35127",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35127",
+    "NameLanText": " 仅首席及次席可以操作"
+  },
+  "35128": {
+    "ID": "35128",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35128",
+    "NameLanText": "%s-%s名"
+  },
+  "35129": {
+    "ID": "35129",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35129",
+    "NameLanText": "待领取"
+  },
+  "35130": {
+    "ID": "35130",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35130",
+    "NameLanText": "前辈，本周也有研学哦"
+  },
+  "35131": {
+    "ID": "35131",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35131",
+    "NameLanText": "%d时%d分%d秒"
+  },
+  "35132": {
+    "ID": "35132",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35132",
+    "NameLanText": "活动暂未开启"
+  },
+  "35133": {
+    "ID": "35133",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35133",
+    "NameLanText": "将在%s后恢复行动力"
+  },
+  "35134": {
+    "ID": "35134",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35134",
+    "NameLanText": "恢复<color=#32D9CF><size=24>%d</size></color>行动力"
+  },
+  "35135": {
+    "ID": "35135",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35135",
+    "NameLanText": "消耗<color=#2B6ECE><size=24>%d</size></color>"
+  },
+  "35136": {
+    "ID": "35136",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35136",
+    "NameLanText": "总计恢复<color=#23CFC4><size=24>%s</size></color>行动力"
+  },
+  "35137": {
+    "ID": "35137",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35137",
+    "NameLanText": "行动力已达到上限"
+  },
+  "35138": {
+    "ID": "35138",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35138",
+    "NameLanText": "行动力不足"
+  },
+  "35139": {
+    "ID": "35139",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35139",
+    "NameLanText": "可恢复行动力不能超过最大上限"
+  },
+  "35140": {
+    "ID": "35140",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35140",
+    "NameLanText": "购买行动力"
+  },
+  "35141": {
+    "ID": "35141",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35141",
+    "NameLanText": "已达到自然恢复上限"
+  },
+  "35142": {
+    "ID": "35142",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35142",
+    "NameLanText": "行动力自然恢复中……"
+  },
+  "35143": {
+    "ID": "35143",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35143",
+    "NameLanText": "行动力上限"
+  },
+  "35144": {
+    "ID": "35144",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35144",
+    "NameLanText": "当前行动力"
+  },
+  "35145": {
+    "ID": "35145",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35145",
+    "NameLanText": "行动力已恢复"
+  },
+  "35146": {
+    "ID": "35146",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35146",
+    "NameLanText": "总计恢复<color=#23CFC4><size=24>%s</size></color>行动力"
+  },
+  "35147": {
+    "ID": "35147",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35147",
+    "NameLanText": "预计%s:%s:%s后全部恢复"
+  },
+  "35148": {
+    "ID": "35148",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35148",
+    "NameLanText": "将在00:00后恢复行动力"
+  },
+  "35149": {
+    "ID": "35149",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35149",
+    "NameLanText": "本队历史积分:"
+  },
+  "35150": {
+    "ID": "35150",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35150",
+    "NameLanText": "当前地块已爆发冲突，暂时无法派遣"
+  },
+  "35151": {
+    "ID": "35151",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35151",
+    "NameLanText": "本场战斗积分:"
+  },
+  "35152": {
+    "ID": "35152",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35152",
+    "NameLanText": "坐标（%d, %d）发生了%s，请收藏家们尽快前往讨伐。"
+  },
+  "35153": {
+    "ID": "35153",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35153",
+    "NameLanText": "第一名"
+  },
+  "35154": {
+    "ID": "35154",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35154",
+    "NameLanText": "第二名"
+  },
+  "35155": {
+    "ID": "35155",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35155",
+    "NameLanText": "第三名"
+  },
+  "35156": {
+    "ID": "35156",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35156",
+    "NameLanText": "立即获得"
+  },
+  "35157": {
+    "ID": "35157",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35157",
+    "NameLanText": "立即获得"
+  },
+  "35158": {
+    "ID": "35158",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35158",
+    "NameLanText": "宝鉴增益"
+  },
+  "35159": {
+    "ID": "35159",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35159",
+    "NameLanText": "期全购"
+  },
+  "35160": {
+    "ID": "35160",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35160",
+    "NameLanText": "本期宝鉴尚未开启，是否预先购买？\n购买后需等待宝鉴开启。"
+  },
+  "35161": {
+    "ID": "35161",
+    "NameLan": "LangGlobalLan_LangGlobal_name_35161",
+    "NameLanText": "兑换"
   },
   "5001": {
     "ID": "5001",

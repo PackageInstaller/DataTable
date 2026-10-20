@@ -33,6 +33,50 @@
     "RuleShowLanText": "进入战斗后，敌方全体获得<color=#158bdb>5</color>层<color=#ff6724>试炼·浑沦</color>状态；每轮次结束时，若敌方单位不存在<color=#ff6724>试炼·浑沦</color>状态，则获得<color=#ff6724>试炼·凝精</color>状态。\n<color=#ff6724>试炼·浑沦</color>：每层此状态使自身受到的暴击伤害降低<color=#158bdb>8%</color>，造成的伤害提高<color=#158bdb>3%</color>；此状态最多可叠加<color=#158bdb>10</color>层，持续整场战斗，每次受到直接攻击时减少<color=#158bdb>1</color>层。\n<color=#ff6724>试炼·凝精</color>：自身受到的额外伤害提高<color=#158bdb>60%</color>，受到的物理伤害和构素伤害提高<color=#158bdb>30%</color>，此状态持续整场战斗。\n<color=#ff6724>【肆层新增】</color>进入战斗后，敌方全体额外获得<color=#158bdb>3</color>层<color=#ff6724>试炼·浑沦</color>状态；每轮次结束时，若敌方单位存在<color=#ff6724>试炼·浑沦</color>状态，则获得<color=#158bdb>5</color>层<color=#ff6724>试炼·浑沦</color>状态。\n<color=#ff6724>【肆层新增】</color>部分敌方单位根据自身最大基础生命值，受到以最大生命值百分比计算的伤害小幅度降低。",
     "RuleShowType": 3
   },
+  "101": {
+    "Group": "1",
+    "RuleId": "101",
+    "Filter": "all",
+    "Action": [
+      "globalbuff"
+    ],
+    "RuleShowLan": "activeLan_BTRule_ruleShowLan_101",
+    "RuleShowLanText": "敌方全体造成的技能伤害提高<color=#158bdb>50%</color>；敌方任意单位进行常击后，自身获得<color=#ff6724>试炼·缀枝</color>状态。\n<color=#ff6724>试炼·缀枝</color>：自身受到的回击伤害和持续伤害提高<color=#158bdb>50%</color>，此状态持续<color=#158bdb>1</color>回合。\n<color=#ff6724>【肆层新增】</color>任意单位自身回合开始时，消耗自身当前生命值的<color=#158bdb>10%</color>，此效果每个单位每轮次最多可触发<color=#158bdb>5</color>次。\n<color=#ff6724>【伍层新增】</color>部分敌方单位根据自身最大基础生命值，受到以最大生命值百分比计算的伤害小幅度降低。",
+    "RuleShowType": 3
+  },
+  "102": {
+    "Group": "1",
+    "RuleId": "102",
+    "Filter": "all",
+    "Action": [
+      "globalbuff"
+    ],
+    "RuleShowLan": "activeLan_BTRule_ruleShowLan_102",
+    "RuleShowLanText": "敌方全体移动力增加<color=#158bdb>2</color>，受到的额外伤害和持续伤害提高<color=#158bdb>40%</color>。\n<color=#ff6724>【肆层新增】</color>敌方全体单位无法在自身回合内获得能量；敌方任意单位受到伤害后，立即获得额外行动<color=#158bdb>1</color>次，此效果每个单位每轮次最多可触发<color=#158bdb>2</color>次。\n<color=#ff6724>【伍层新增】</color>部分敌方单位根据自身最大基础生命值，受到以最大生命值百分比计算的伤害小幅度降低。",
+    "RuleShowType": 3
+  },
+  "103": {
+    "Group": "1",
+    "RuleId": "103",
+    "Filter": "all",
+    "Action": [
+      "globalbuff"
+    ],
+    "RuleShowLan": "activeLan_BTRule_ruleShowLan_103",
+    "RuleShowLanText": "敌方单位受到追击后，获得<color=#158bdb>2</color> 层<color=#ff6724>脆弱</color> ，此状态持续<color=#158bdb>2</color> 回合。\n<color=#ff6724>【肆层新增】</color>每轮次开始时，敌方单位受到暴击的概率降低<color=#158bdb>50%</color> ；敌方单位受到追击或额外伤害后，当前轮次中该效果失效。\n<color=#ff6724>【肆层新增】</color>部分敌方单位根据自身最大基础生命值，受到以最大生命值百分比计算的伤害小幅度降低。",
+    "RuleShowType": 3
+  },
+  "104": {
+    "Group": "1",
+    "RuleId": "104",
+    "Filter": "all",
+    "Action": [
+      "globalbuff"
+    ],
+    "RuleShowLan": "activeLan_BTRule_ruleShowLan_104",
+    "RuleShowLanText": "敌方单位每次受到直接攻击时，获得<color=#158bdb>1</color> 层<color=#ff6724>试炼·寒英</color> 状态。\n<color=#ff6724>试炼·寒英</color>：每层此状态使敌方单位受到的伤害提高<color=#158bdb>1%</color> ；此状态最多可叠加<color=#158bdb>30</color> 层，持续<color=#158bdb>2</color> 回合。\n<color=#ff6724>【肆层新增】</color>行动结束时，敌方单位获得<color=#158bdb>1</color> 层<color=#ff6724>试炼·冷香</color> 状态；若该单位存在的<color=#ff6724>试炼·寒英</color> 状态小于<color=#158bdb>12</color> 层，则额外获得<color=#158bdb>1</color> 层<color=#ff6724>试炼·冷香</color> 状态。\n<color=#ff6724>试炼·冷香</color>：每层此状态使敌方单位暴击率提高<color=#158bdb>10%</color> ；若<color=#ff6724>试炼·冷香</color> 状态叠加至<color=#158bdb>2</color> 层，则敌方单位立即获得<color=#158bdb>1</color> 次额外行动，并在回合结束时清除敌方单位所有的<color=#ff6724>试炼·冷香</color> 状态层数；此状态最多可叠加<color=#158bdb>2</color> 层，效果持续整场战斗。\n<color=#ff6724>【肆层新增】</color>部分敌方单位根据自身最大基础生命值，受到以最大生命值百分比计算的伤害小幅度降低。",
+    "RuleShowType": 3
+  },
   "11": {
     "Group": "1",
     "RuleId": "11",

@@ -1,0 +1,501 @@
+{
+  "W009700": {
+    "Id": "W009700",
+    "NameLan": "activeLan_SeasonalTalent_nameLan_W009700",
+    "NameLanText": "秘言·圣泉",
+    "Name": "秘言·圣泉",
+    "DescLan": "activeLan_SeasonalTalent_descLan_W009700",
+    "DescLanText": "秘言·圣泉描述(仅限专属器者：凯尔特之书)",
+    "Desc": "秘言·圣泉描述(仅限专属器者：凯尔特之书)",
+    "Image": "sjz-zlfy-kjs-qzicon-6",
+    "CharacterId": "W0097",
+    "RequireItems": 5304,
+    "RequireItemsNum": [
+      18800,
+      18800,
+      18800
+    ],
+    "PrefixId": [],
+    "BuffId": [],
+    "TalentId": [
+      "SW009701",
+      "SW009702",
+      "SW009703"
+    ],
+    "MaxLevel": 3,
+    "DefaultLevel": 0,
+    "Point": [
+      -548,
+      9
+    ],
+    "Size": [],
+    "LinePoint": [
+      54,
+      -140
+    ],
+    "LineType": 1050
+  },
+  "W009701": {
+    "Id": "W009701",
+    "NameLan": "activeLan_SeasonalTalent_nameLan_W009701",
+    "NameLanText": "秘言·冲锋",
+    "Name": "秘言·冲锋",
+    "DescLan": "activeLan_SeasonalTalent_descLan_W009701",
+    "DescLanText": "秘言·冲锋描述(仅限专属器者：凯尔特之书)",
+    "Desc": "秘言·冲锋描述(仅限专属器者：凯尔特之书)",
+    "Image": "sjz-zlfy-kjs-qzicon-9",
+    "CharacterId": "W0097",
+    "RequireItems": 5304,
+    "RequireItemsNum": [
+      18800,
+      18800,
+      18800
+    ],
+    "PrefixId": [
+      "W009700"
+    ],
+    "BuffId": [],
+    "TalentId": [
+      "SW009704",
+      "SW009705",
+      "SW009706"
+    ],
+    "MaxLevel": 3,
+    "DefaultLevel": 0,
+    "Point": [
+      -348,
+      133
+    ],
+    "Size": [],
+    "LinePoint": [
+      79,
+      -10
+    ],
+    "LineType": 1010
+  },
+  "W009702": {
+    "Id": "W009702",
+    "NameLan": "activeLan_SeasonalTalent_nameLan_W009702",
+    "NameLanText": "秘言·橡木盾",
+    "Name": "秘言·橡木盾",
+    "DescLan": "activeLan_SeasonalTalent_descLan_W009702",
+    "DescLanText": "秘言·橡木盾描述(仅限专属器者：凯尔特之书)",
+    "Desc": "秘言·橡木盾描述(仅限专属器者：凯尔特之书)",
+    "Image": "sjz-zlfy-kjs-qzicon-10",
+    "CharacterId": "W0097",
+    "RequireItems": 5304,
+    "RequireItemsNum": [
+      30200,
+      30200,
+      30200
+    ],
+    "PrefixId": [
+      "W009701"
+    ],
+    "BuffId": [],
+    "TalentId": [
+      "SW009707",
+      "SW009708",
+      "SW009709"
+    ],
+    "MaxLevel": 3,
+    "DefaultLevel": 0,
+    "Point": [
+      -111,
+      133
+    ],
+    "Size": [],
+    "LinePoint": [
+      79,
+      -10
+    ],
+    "LineType": 1010
+  },
+  "W009703": {
+    "Id": "W009703",
+    "NameLan": "activeLan_SeasonalTalent_nameLan_W009703",
+    "NameLanText": "秘言·结界",
+    "Name": "秘言·结界",
+    "DescLan": "activeLan_SeasonalTalent_descLan_W009703",
+    "DescLanText": "秘言·结界描述(仅限专属器者：凯尔特之书)",
+    "Desc": "秘言·结界描述(仅限专属器者：凯尔特之书)",
+    "Image": "sjz-zlfy-kjs-qzicon-2",
+    "CharacterId": "W0097",
+    "RequireItems": 5304,
+    "RequireItemsNum": [
+      30200,
+      30200,
+      30200
+    ],
+    "PrefixId": [
+      "W009702"
+    ],
+    "BuffId": [],
+    "TalentId": [
+      "SW009710",
+      "SW009711",
+      "SW009712"
+    ],
+    "MaxLevel": 3,
+    "DefaultLevel": 0,
+    "Point": [
+      125,
+      133
+    ],
+    "Size": [],
+    "LinePoint": [
+      79,
+      -10
+    ],
+    "LineType": 1010
+  },
+  "W009704": {
+    "Id": "W009704",
+    "NameLan": "activeLan_SeasonalTalent_nameLan_W009704",
+    "NameLanText": "秘言·箭矢",
+    "Name": "秘言·箭矢",
+    "DescLan": "activeLan_SeasonalTalent_descLan_W009704",
+    "DescLanText": "秘言·箭矢描述(仅限专属器者：凯尔特之书)",
+    "Desc": "秘言·箭矢描述(仅限专属器者：凯尔特之书)",
+    "Image": "sjz-zlfy-kjs-qzicon-1",
+    "CharacterId": "W0097",
+    "RequireItems": 5304,
+    "RequireItemsNum": [
+      37600,
+      37600,
+      37600
+    ],
+    "PrefixId": [
+      "W009703"
+    ],
+    "BuffId": [],
+    "TalentId": [
+      "SW009713",
+      "SW009714",
+      "SW009715"
+    ],
+    "MaxLevel": 3,
+    "DefaultLevel": 0,
+    "Point": [
+      355,
+      133
+    ],
+    "Size": [],
+    "LinePoint": [
+      154,
+      -124
+    ],
+    "LineType": 1021
+  },
+  "W009705": {
+    "Id": "W009705",
+    "NameLan": "activeLan_SeasonalTalent_nameLan_W009705",
+    "NameLanText": "秘言·断裂",
+    "Name": "秘言·断裂",
+    "DescLan": "activeLan_SeasonalTalent_descLan_W009705",
+    "DescLanText": "秘言·断裂描述(仅限专属器者：凯尔特之书)",
+    "Desc": "秘言·断裂描述(仅限专属器者：凯尔特之书)",
+    "Image": "sjz-zlfy-kjs-qzicon-8",
+    "CharacterId": "W0097",
+    "RequireItems": 5304,
+    "RequireItemsNum": [
+      37600,
+      37600,
+      37600
+    ],
+    "PrefixId": [
+      "W009700"
+    ],
+    "BuffId": [],
+    "TalentId": [
+      "SW009716",
+      "SW009717",
+      "SW009718"
+    ],
+    "MaxLevel": 3,
+    "DefaultLevel": 0,
+    "Point": [
+      -348,
+      -110
+    ],
+    "Size": [],
+    "LinePoint": [
+      74,
+      -11
+    ],
+    "LineType": 1010
+  },
+  "W009706": {
+    "Id": "W009706",
+    "NameLan": "activeLan_SeasonalTalent_nameLan_W009706",
+    "NameLanText": "秘言·压制",
+    "Name": "秘言·压制",
+    "DescLan": "activeLan_SeasonalTalent_descLan_W009706",
+    "DescLanText": "秘言·压制描述(仅限专属器者：凯尔特之书)",
+    "Desc": "秘言·压制描述(仅限专属器者：凯尔特之书)",
+    "Image": "sjz-zlfy-kjs-qzicon-4",
+    "CharacterId": "W0097",
+    "RequireItems": 5304,
+    "RequireItemsNum": [
+      45200,
+      45200,
+      45200
+    ],
+    "PrefixId": [
+      "W009705"
+    ],
+    "BuffId": [],
+    "TalentId": [
+      "SW009719",
+      "SW009720",
+      "SW009721"
+    ],
+    "MaxLevel": 3,
+    "DefaultLevel": 0,
+    "Point": [
+      -111,
+      -110
+    ],
+    "Size": [],
+    "LinePoint": [
+      77,
+      -11
+    ],
+    "LineType": 1010
+  },
+  "W009707": {
+    "Id": "W009707",
+    "NameLan": "activeLan_SeasonalTalent_nameLan_W009707",
+    "NameLanText": "秘言·穿甲",
+    "Name": "秘言·穿甲",
+    "DescLan": "activeLan_SeasonalTalent_descLan_W009707",
+    "DescLanText": "秘言·穿甲描述(仅限专属器者：凯尔特之书)",
+    "Desc": "秘言·穿甲描述(仅限专属器者：凯尔特之书)",
+    "Image": "sjz-zlfy-kjs-qzicon-7",
+    "CharacterId": "W0097",
+    "RequireItems": 5304,
+    "RequireItemsNum": [
+      45200,
+      45200,
+      45200
+    ],
+    "PrefixId": [
+      "W009706"
+    ],
+    "BuffId": [],
+    "TalentId": [
+      "SW009722",
+      "SW009723",
+      "SW009724"
+    ],
+    "MaxLevel": 3,
+    "DefaultLevel": 0,
+    "Point": [
+      125,
+      -110
+    ],
+    "Size": [],
+    "LinePoint": [
+      79,
+      -10
+    ],
+    "LineType": 1010
+  },
+  "W009708": {
+    "Id": "W009708",
+    "NameLan": "activeLan_SeasonalTalent_nameLan_W009708",
+    "NameLanText": "秘言·审判",
+    "Name": "秘言·审判",
+    "DescLan": "activeLan_SeasonalTalent_descLan_W009708",
+    "DescLanText": "秘言·审判描述(仅限专属器者：凯尔特之书)",
+    "Desc": "秘言·审判描述(仅限专属器者：凯尔特之书)",
+    "Image": "sjz-zlfy-kjs-qzicon-5",
+    "CharacterId": "W0097",
+    "RequireItems": 5304,
+    "RequireItemsNum": [
+      56400,
+      56400,
+      56400
+    ],
+    "PrefixId": [
+      "W009707"
+    ],
+    "BuffId": [
+      "Buff_SW009701",
+      "Buff_SW009702",
+      "Buff_SW009703"
+    ],
+    "TalentId": [],
+    "MaxLevel": 3,
+    "DefaultLevel": 0,
+    "Point": [
+      355,
+      -110
+    ],
+    "Size": [],
+    "LinePoint": [
+      68,
+      -5
+    ],
+    "LineType": 1020
+  },
+  "W009709": {
+    "Id": "W009709",
+    "NameLan": "activeLan_SeasonalTalent_nameLan_W009709",
+    "NameLanText": "秘言·丰收",
+    "Name": "秘言·丰收",
+    "DescLan": "activeLan_SeasonalTalent_descLan_W009709",
+    "DescLanText": "秘言·丰收描述(仅限专属器者：凯尔特之书)",
+    "Desc": "秘言·丰收描述(仅限专属器者：凯尔特之书)",
+    "Image": "sjz-zlfy-kjs-qzicon-3",
+    "CharacterId": "W0097",
+    "RequireItems": 5304,
+    "RequireItemsNum": [
+      56400,
+      56400,
+      56400
+    ],
+    "PrefixId": [
+      "W009704",
+      "W009708"
+    ],
+    "BuffId": [
+      "SW009728",
+      "SW009729",
+      "SW009730"
+    ],
+    "TalentId": [],
+    "MaxLevel": 3,
+    "DefaultLevel": 0,
+    "Point": [
+      568,
+      9
+    ],
+    "Size": [],
+    "LinePoint": [
+      79,
+      -10
+    ],
+    "LineType": 0
+  },
+  "W009710": {
+    "Id": "W009710",
+    "NameLan": "activeLan_SeasonalTalent_nameLan_W009710",
+    "NameLanText": "生命",
+    "Name": "生命",
+    "DescLan": "activeLan_SeasonalTalent_descLan_W009710",
+    "DescLanText": "最大生命值+5%",
+    "Desc": "最大生命值+5%",
+    "Image": "sjz-zlfy-kjs-gricon-js-01",
+    "CharacterId": "W0097",
+    "RequireItems": 5304,
+    "RequireItemsNum": [],
+    "PrefixId": [],
+    "BuffId": [],
+    "TalentId": [
+      "SW009728"
+    ],
+    "MaxLevel": 1,
+    "DefaultLevel": 1,
+    "Point": [
+      -233,
+      9
+    ],
+    "Size": [],
+    "LinePoint": [
+      79,
+      -10
+    ],
+    "LineType": 0
+  },
+  "W009711": {
+    "Id": "W009711",
+    "NameLan": "activeLan_SeasonalTalent_nameLan_W009711",
+    "NameLanText": "攻击力",
+    "Name": "攻击力",
+    "DescLan": "activeLan_SeasonalTalent_descLan_W009711",
+    "DescLanText": "构素防御+5%",
+    "Desc": "构素防御+5%",
+    "Image": "sjz-zlfy-kjs-gricon-js-02",
+    "CharacterId": "W0097",
+    "RequireItems": 5304,
+    "RequireItemsNum": [],
+    "PrefixId": [],
+    "BuffId": [],
+    "TalentId": [
+      "SW009729"
+    ],
+    "MaxLevel": 1,
+    "DefaultLevel": 1,
+    "Point": [
+      233,
+      9
+    ],
+    "Size": [],
+    "LinePoint": [
+      79,
+      -10
+    ],
+    "LineType": 0
+  },
+  "W009712": {
+    "Id": "W009712",
+    "NameLan": "activeLan_SeasonalTalent_nameLan_W009712",
+    "NameLanText": "物理防御",
+    "Name": "物理防御",
+    "DescLan": "activeLan_SeasonalTalent_descLan_W009712",
+    "DescLanText": "伤害+5%",
+    "Desc": "伤害+5%",
+    "Image": "sjz-zlfy-kjs-gricon-js-03",
+    "CharacterId": "W0097",
+    "RequireItems": 5304,
+    "RequireItemsNum": [],
+    "PrefixId": [],
+    "BuffId": [],
+    "TalentId": [
+      "SW009730"
+    ],
+    "MaxLevel": 1,
+    "DefaultLevel": 1,
+    "Point": [
+      0,
+      240
+    ],
+    "Size": [],
+    "LinePoint": [
+      79,
+      -10
+    ],
+    "LineType": 0
+  },
+  "W009713": {
+    "Id": "W009713",
+    "NameLan": "activeLan_SeasonalTalent_nameLan_W009713",
+    "NameLanText": "构素防御",
+    "Name": "构素防御",
+    "DescLan": "activeLan_SeasonalTalent_descLan_W009713",
+    "DescLanText": "暴击率+5%",
+    "Desc": "暴击率+5%",
+    "Image": "sjz-zlfy-kjs-gricon-js-04",
+    "CharacterId": "W0097",
+    "RequireItems": 5304,
+    "RequireItemsNum": [],
+    "PrefixId": [],
+    "BuffId": [],
+    "TalentId": [
+      "SW009731"
+    ],
+    "MaxLevel": 1,
+    "DefaultLevel": 1,
+    "Point": [
+      0,
+      -240
+    ],
+    "Size": [],
+    "LinePoint": [
+      79,
+      -10
+    ],
+    "LineType": 0
+  }
+}
