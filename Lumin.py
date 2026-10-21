@@ -210,9 +210,6 @@ def decrypt_bundles_in_dir(
     return len(files), decrypted
 
 
-# ══════════════════════════════════════════════════════════════
-#  子命令实现
-# ══════════════════════════════════════════════════════════════
 
 def cmd_status(args) -> int:
     work = Path(args.workdir)
@@ -433,10 +430,6 @@ def cmd_update(args) -> int:
             return rc
     return 0
 
-
-# ══════════════════════════════════════════════════════════════
-#  CLI 参数构建
-# ══════════════════════════════════════════════════════════════
 
 def add_common(p: argparse.ArgumentParser) -> None:
     p.add_argument("--workdir", default=str(DEFAULT_WORK), help="工作/缓存目录")
