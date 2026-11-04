@@ -4,7 +4,7 @@
 
 ## Azur Promilia 内容下架说明
 
-2026 年 11 月 4 日，本仓库依据日期为 2026 年 11 月 3 日的 DMCA 提交通知，移除 `game/AzurPromilia` 分支，停止提供 Azur Promilia（蓝色星原）的数据快照及相关工具，也不再维护或重新发布该分支，具体请看removed文件夹内源文件。
+2026 年 11 月 4 日，本仓库依据日期为 2026 年 11 月 3 日的 DMCA 提交通知，移除 `game/AzurPromilia` 分支，停止提供 Azur Promilia（蓝色星原）的数据快照及相关工具，也不再维护或重新发布该分支，具体请看[removed](https://github.com/PackageInstaller/DataTable/tree/master/removed)文件夹内源文件。
 
 通知提交方自述受 Manjuu Co., Ltd. 委托，要求移除上述分支，并就游戏数据的提取、解密与传播等行为提出侵权及规避技术保护措施的指控。此处仅说明通知内容与本仓库的下架处理，不代表对通知中的全部指控作出事实或法律认定。
 
