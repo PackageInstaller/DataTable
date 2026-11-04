@@ -10,6 +10,12 @@
 
 请勿通过本仓库的分支、提交或 Pull Request 重新上传已下架的相关内容。分支列表不再包含该游戏。
 
+### 致 fork 仓库维护者
+
+原仓库删除分支不会自动删除各 fork 中保留的副本。请各 fork 仓库维护者检查并删除 `game/AzurPromilia` 分支，以及其他分支、标签、提交历史、Release 或附件中保留的 Azur Promilia 数据、解密工具及相关内容，停止维护和重新发布这些内容。仅同步 `master` 或删除 README 中的索引，不能清除 fork 内已有的相关内容。
+
+上述通知也表达了针对 fork 中相关内容的投诉意图，但其 fork 栏目列出的仍是原仓库地址，并未逐一列出其他 fork。本仓库维护者无权修改或删除他人的 fork，也无法代其完成清理；请各维护者主动处理自己控制的仓库。如收到 GitHub 的通知，请按通知要求与 GitHub 沟通。各 fork 的具体处理范围由 GitHub 按其 [DMCA 政策](https://docs.github.com/en/site-policy/content-removal-policies/dmca-takedown-policy)及有效通知核实确定。
+
 ## 克隆单个游戏
 
 ```bash
