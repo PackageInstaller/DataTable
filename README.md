@@ -90,6 +90,7 @@ git clone -b game/xxxxx --single-branch --depth 1 https://github.com/PackageInst
 | `game/TaimaninSquad`            | TaimaninSquad            | 对魔忍特遣队                                          |
 | `game/Techcronossx`             | Techcronossx             | 铁扣连接                                              |
 | `game/TenkeiParadox`            | TenkeiParadox            | 天启                                                  |
+| `game/TouhouLostWord` | TouhouLostWord |
 | `game/TrickcalRevive`           | TrickcalRevive           | 坨坨可爱捏                                            |
 | `game/TwinkleStarKnights`       | TwinkleStarKnights       | 闪耀星骑士                                            |
 | `game/WarshipGirlsR`            | WarshipGirlsR            | 战舰少女R                                             |
