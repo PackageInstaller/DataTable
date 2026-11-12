@@ -1,0 +1,857 @@
+{
+  "52_PALYER_ID_BAN_LIST": {
+    "key": "52_PALYER_ID_BAN_LIST",
+    "value": "[]",
+    "description": "52服玩家战斗履历禁止上榜名单"
+  },
+  "AFK_DESTINY_VALUE_MAX": {
+    "key": "AFK_DESTINY_VALUE_MAX",
+    "value": "50",
+    "description": ""
+  },
+  "ALREADY_READ_MAX": {
+    "key": "ALREADY_READ_MAX",
+    "value": "30",
+    "description": "伝書既読最大件数"
+  },
+  "ANNIVERSARY_PRESENT_EVENT_ID": {
+    "key": "ANNIVERSARY_PRESENT_EVENT_ID",
+    "value": "2740",
+    "description": "一周年記念イベントのイベントID"
+  },
+  "ANNIVERSARY_PRESENT_LOGIN_COUNT": {
+    "key": "ANNIVERSARY_PRESENT_LOGIN_COUNT",
+    "value": "30",
+    "description": "応募条件に必要なログイン数"
+  },
+  "APPROVAL_PENDING_COUNT_MAX": {
+    "key": "APPROVAL_PENDING_COUNT_MAX",
+    "value": "100",
+    "description": "フレンド申請承認待ち"
+  },
+  "ARENA_DAILY_DAY_COUNT_START_AT": {
+    "key": "ARENA_DAILY_DAY_COUNT_START_AT",
+    "value": "2021-07-30 00:00:00",
+    "description": "アリーナ日次報酬カウント開始日時"
+  },
+  "AUTO_REPLAY_BASE_TIME": {
+    "key": "AUTO_REPLAY_BASE_TIME",
+    "value": "60",
+    "description": "おまかせモードの最低必要時間"
+  },
+  "AUTO_REPLAY_CONSUME_PHANTASM_POINT_CORRECT": {
+    "key": "AUTO_REPLAY_CONSUME_PHANTASM_POINT_CORRECT",
+    "value": "1.2",
+    "description": "おまかせモードの霊P消費補正"
+  },
+  "AUTO_REPLAY_EXECUTE_MAX": {
+    "key": "AUTO_REPLAY_EXECUTE_MAX",
+    "value": "999",
+    "description": "おまかせモード最大実行回数"
+  },
+  "AUTO_REPLAY_EXECUTE_MIN": {
+    "key": "AUTO_REPLAY_EXECUTE_MIN",
+    "value": "1",
+    "description": "おまかせモード最低実行回数"
+  },
+  "AUTO_REPLAY_MAX_TURN": {
+    "key": "AUTO_REPLAY_MAX_TURN",
+    "value": "20",
+    "description": "おまかせモード計測最大ターン数"
+  },
+  "AUTO_REPLAY_MEASURING_SPEED": {
+    "key": "AUTO_REPLAY_MEASURING_SPEED",
+    "value": "20",
+    "description": "おまかせモード計測速度"
+  },
+  "AUTO_REPLAY_ONE_ACTION_TIME": {
+    "key": "AUTO_REPLAY_ONE_ACTION_TIME",
+    "value": "20",
+    "description": "おまかせモードの1アクションあたりの必要時間"
+  },
+  "AUTO_REPLAY_WIN_RATE_MAX": {
+    "key": "AUTO_REPLAY_WIN_RATE_MAX",
+    "value": "10",
+    "description": "おまかせモード最大勝利数"
+  },
+  "BEGINNER_TIME": {
+    "key": "BEGINNER_TIME",
+    "value": "72",
+    "description": "初心者时间"
+  },
+  "BEST_LIMIT_UNIT_LEN": {
+    "key": "BEST_LIMIT_UNIT_LEN",
+    "value": "2",
+    "description": "战斗履历个人best显示人数限制小于等于"
+  },
+  "BEST_LIMIT_UNIT_LEN2": {
+    "key": "BEST_LIMIT_UNIT_LEN2",
+    "value": "6",
+    "description": "战斗履历个人best显示人数限制2小于等于"
+  },
+  "BEST_MAX_DAMAGE": {
+    "key": "BEST_MAX_DAMAGE",
+    "value": "100000000",
+    "description": "战斗履历个人best显示最大伤害限制大于"
+  },
+  "BEST_MAX_DAMAGE2": {
+    "key": "BEST_MAX_DAMAGE2",
+    "value": "10000000000",
+    "description": "战斗履历个人best显示最大伤害限制2大于"
+  },
+  "CLEAR_HISTORY_PUBLISH": {
+    "key": "CLEAR_HISTORY_PUBLISH",
+    "value": "1",
+    "description": "クリア履歴公開フラグ　0:非公開　1:公開"
+  },
+  "CLOSE_EXTERNAL_LINK_MIRRATIV": {
+    "key": "CLOSE_EXTERNAL_LINK_MIRRATIV",
+    "value": "1",
+    "description": "Mirrativ"
+  },
+  "CONVERT_ABILITYSEAL_TO_GOLD": {
+    "key": "CONVERT_ABILITYSEAL_TO_GOLD",
+    "value": "100",
+    "description": "所持済みシール取得時、付与賽銭量"
+  },
+  "CONVERT_AVATAR_TO_GOLD": {
+    "key": "CONVERT_AVATAR_TO_GOLD",
+    "value": "1500",
+    "description": "头像框已经获得时，给予赛钱的量"
+  },
+  "CONVERT_BGM_TO_GOLD": {
+    "key": "CONVERT_BGM_TO_GOLD",
+    "value": "1500",
+    "description": "BGM已经获得时，给予赛钱的量"
+  },
+  "CONVERT_COSTUME_TO_GOLD": {
+    "key": "CONVERT_COSTUME_TO_GOLD",
+    "value": "1500",
+    "description": "服装已经获得时，给予赛钱的量"
+  },
+  "CRYSTAL_MAX": {
+    "key": "CRYSTAL_MAX",
+    "value": "999999",
+    "description": "最大封结晶数"
+  },
+  "DAILY_ARENA_RELEASE_EPISODE_ID": {
+    "key": "DAILY_ARENA_RELEASE_EPISODE_ID",
+    "value": "100500129",
+    "description": "白玉擂台开启关卡"
+  },
+  "DAILY_DISPATCH_APPEAR_COUNT": {
+    "key": "DAILY_DISPATCH_APPEAR_COUNT",
+    "value": "5",
+    "description": "日常派遣出现数"
+  },
+  "DECREASING_TRUST_BY_MOTIVATION": {
+    "key": "DECREASING_TRUST_BY_MOTIVATION",
+    "value": "100",
+    "description": "战斗结束时若没有一定的干劲会减少信赖度"
+  },
+  "DEFAULT_HOME_BGM_ID": {
+    "key": "DEFAULT_HOME_BGM_ID",
+    "value": "1002",
+    "description": "ホーム画面の初期BGMのID"
+  },
+  "DELIVERY_WARNING_REST_DAYS": {
+    "key": "DELIVERY_WARNING_REST_DAYS",
+    "value": "5",
+    "description": "出现宅配便警告的剩余日数"
+  },
+  "DESTINY_VALUE_ADD_FOR_MATERIAL_ITEM": {
+    "key": "DESTINY_VALUE_ADD_FOR_MATERIAL_ITEM",
+    "value": "1",
+    "description": "運命鏡での運命値上昇値"
+  },
+  "DESTINY_VALUE_ADD_FOR_PAPER_DOLL": {
+    "key": "DESTINY_VALUE_ADD_FOR_PAPER_DOLL",
+    "value": "5",
+    "description": "形代系での運命値上昇値"
+  },
+  "DESTINY_VALUE_ADD_UNIT_EXCLUSIVE_ITEM": {
+    "key": "DESTINY_VALUE_ADD_UNIT_EXCLUSIVE_ITEM",
+    "value": "1",
+    "description": ""
+  },
+  "DESTINY_VALUE_DEFAULT": {
+    "key": "DESTINY_VALUE_DEFAULT",
+    "value": "5",
+    "description": "運命値初期値"
+  },
+  "DESTINY_VALUE_MATERIAL_ID": {
+    "key": "DESTINY_VALUE_MATERIAL_ID",
+    "value": "802",
+    "description": ""
+  },
+  "DESTINY_VALUE_MAX": {
+    "key": "DESTINY_VALUE_MAX",
+    "value": "300",
+    "description": "運命値最大値"
+  },
+  "DISPATCH_BAD_POINT": {
+    "key": "DISPATCH_BAD_POINT",
+    "value": "0",
+    "description": "派遣「糟糕」评价点数"
+  },
+  "DISPATCH_GOOD_POINT": {
+    "key": "DISPATCH_GOOD_POINT",
+    "value": "3",
+    "description": "派遣「良」评价点数"
+  },
+  "DISPATCH_NORMAL_POINT": {
+    "key": "DISPATCH_NORMAL_POINT",
+    "value": "1",
+    "description": "派遣「普通」评价点数"
+  },
+  "DO_CACHE_DELETE_ANDROID": {
+    "key": "DO_CACHE_DELETE_ANDROID",
+    "value": "20200513",
+    "description": "登录时自动缓存完成  安卓"
+  },
+  "DO_CACHE_DELETE_IOS": {
+    "key": "DO_CACHE_DELETE_IOS",
+    "value": "0",
+    "description": "登录时自动缓存完成  ios"
+  },
+  "ENABLE_MULTIPLE_SPIRITS": {
+    "key": "ENABLE_MULTIPLE_SPIRITS",
+    "value": "1",
+    "description": "复灵是否开启"
+  },
+  "ENABLE_UNIT_REINCARNATION": {
+    "key": "ENABLE_UNIT_REINCARNATION",
+    "value": "1",
+    "description": "少女转生是否开启"
+  },
+  "EVENT_POINT_MAX": {
+    "key": "EVENT_POINT_MAX",
+    "value": "999999",
+    "description": "活动点数最大值"
+  },
+  "EVENT_SPECIAL_MISSION_OPEN_HOUR": {
+    "key": "EVENT_SPECIAL_MISSION_OPEN_HOUR",
+    "value": "0",
+    "description": "在限定活动中满足解放条件后，解放时间以0:00为基准进行调整"
+  },
+  "EXTERNAL_WEB_GOOD_SMILE_GAME_LINK": {
+    "key": "EXTERNAL_WEB_GOOD_SMILE_GAME_LINK",
+    "value": "1",
+    "description": ""
+  },
+  "EXTERNAL_WEB_PAYMENT_LINK": {
+    "key": "EXTERNAL_WEB_PAYMENT_LINK",
+    "value": "1",
+    "description": ""
+  },
+  "EXTRA_QUEST_COUNT": {
+    "key": "EXTRA_QUEST_COUNT",
+    "value": "3",
+    "description": "额外关卡对应"
+  },
+  "FIGURE_PRESENT_EVENT_ID": {
+    "key": "FIGURE_PRESENT_EVENT_ID",
+    "value": "1050",
+    "description": "手办赠礼活动ID"
+  },
+  "FIGURE_PRESENT_LOGIN_COUNT": {
+    "key": "FIGURE_PRESENT_LOGIN_COUNT",
+    "value": "30",
+    "description": "登录日数"
+  },
+  "FREE_ITEM_START_AT": {
+    "key": "FREE_ITEM_START_AT",
+    "value": "2021-06-23 00:00:00",
+    "description": "無料アイテム開始日時"
+  },
+  "FRIEND_COUNT_MAX": {
+    "key": "FRIEND_COUNT_MAX",
+    "value": "100",
+    "description": "フレンド枠上限"
+  },
+  "GET_COMIC_PAGE_USED_POINT": {
+    "key": "GET_COMIC_PAGE_USED_POINT",
+    "value": "10",
+    "description": "マンガ1ページあたりの消費ポイント"
+  },
+  "GOLD_EXCHANGE_SHOP_UPDATE_HOUR_1": {
+    "key": "GOLD_EXCHANGE_SHOP_UPDATE_HOUR_1",
+    "value": "6",
+    "description": "赛钱交换队列更新时刻１　6"
+  },
+  "GOLD_EXCHANGE_SHOP_UPDATE_HOUR_2": {
+    "key": "GOLD_EXCHANGE_SHOP_UPDATE_HOUR_2",
+    "value": "14",
+    "description": "赛钱交换队列更新时刻２　14"
+  },
+  "GOLD_EXCHANGE_SHOP_UPDATE_HOUR_3": {
+    "key": "GOLD_EXCHANGE_SHOP_UPDATE_HOUR_3",
+    "value": "22",
+    "description": "赛钱交换队列更新时刻３　22"
+  },
+  "GOLD_MAX": {
+    "key": "GOLD_MAX",
+    "value": "9999999",
+    "description": "最大赛钱数"
+  },
+  "INFO_COLLECT_URL": {
+    "key": "INFO_COLLECT_URL",
+    "value": "cn_east_qd",
+    "description": "个人信息收集清单网页地址"
+  },
+  "INSANITY_DIVIDE": {
+    "key": "INSANITY_DIVIDE",
+    "value": "435",
+    "description": "狂化の除算値"
+  },
+  "IOS_PALYER_ID_BAN_LIST": {
+    "key": "IOS_PALYER_ID_BAN_LIST",
+    "value": "[]",
+    "description": "IOS服玩家战斗履历禁止上榜名单"
+  },
+  "IS_IP_CHECK": {
+    "key": "IS_IP_CHECK",
+    "value": "1",
+    "description": "用户注册时的的IP地址检测"
+  },
+  "ITEM_MAX": {
+    "key": "ITEM_MAX",
+    "value": "9999",
+    "description": "最大所持道具数"
+  },
+  "JUSTNOW_LIMIT_UNIT_LEN": {
+    "key": "JUSTNOW_LIMIT_UNIT_LEN",
+    "value": "2",
+    "description": "战斗履历最近显示人数限制小于等于"
+  },
+  "JUSTNOW_LIMIT_UNIT_LEN2": {
+    "key": "JUSTNOW_LIMIT_UNIT_LEN2",
+    "value": "6",
+    "description": "战斗履历最近显示人数限制2小于等于"
+  },
+  "JUSTNOW_MAX_DAMAGE": {
+    "key": "JUSTNOW_MAX_DAMAGE",
+    "value": "100000000",
+    "description": "战斗履历最近显示最大伤害限制大于"
+  },
+  "JUSTNOW_MAX_DAMAGE2": {
+    "key": "JUSTNOW_MAX_DAMAGE2",
+    "value": "10000000000",
+    "description": "战斗履历最近显示最大伤害限制2大于"
+  },
+  "LECTURE_EXP_ADD_TIME": {
+    "key": "LECTURE_EXP_ADD_TIME",
+    "value": "15",
+    "description": "寺子屋经验值追加时间(秒)"
+  },
+  "LECTURE_EXP_PARAM_1": {
+    "key": "LECTURE_EXP_PARAM_1",
+    "value": "0.05",
+    "description": "寺子屋经验值计算参数有食物第1"
+  },
+  "LECTURE_EXP_PARAM_2": {
+    "key": "LECTURE_EXP_PARAM_2",
+    "value": "1",
+    "description": "寺子屋经验值计算参数有食物第2"
+  },
+  "LECTURE_EXP_RATE_LIMITED_ADD_VALUE": {
+    "key": "LECTURE_EXP_RATE_LIMITED_ADD_VALUE",
+    "value": "1",
+    "description": "寺子屋取得经验值在限定时间内追加的修正值(通常：１)"
+  },
+  "LECTURE_MOTIVATION_RECOVERY_LIMIT": {
+    "key": "LECTURE_MOTIVATION_RECOVERY_LIMIT",
+    "value": "150",
+    "description": "进入教室时干劲的増加上限"
+  },
+  "LECTURE_MOTIVATION_RECOVERY_VALUE": {
+    "key": "LECTURE_MOTIVATION_RECOVERY_VALUE",
+    "value": "4",
+    "description": "进入教室时的干劲的増加量／小时"
+  },
+  "LECTURE_NO_FOOD_EXP_PARAM_1": {
+    "key": "LECTURE_NO_FOOD_EXP_PARAM_1",
+    "value": "0.01",
+    "description": "寺子屋经验值计算参数无食物第1部分"
+  },
+  "LECTURE_NO_FOOD_EXP_PARAM_2": {
+    "key": "LECTURE_NO_FOOD_EXP_PARAM_2",
+    "value": "0.2",
+    "description": "寺子屋经验值计算参数无食物第2部分"
+  },
+  "LIFE_POINT_POWER_CALC_VALUE": {
+    "key": "LIFE_POINT_POWER_CALC_VALUE",
+    "value": "5",
+    "description": "计算编组强度值"
+  },
+  "LOGIN_BONUS_MAIL_GRACE": {
+    "key": "LOGIN_BONUS_MAIL_GRACE",
+    "value": "30",
+    "description": "登录奖励的邮件的有效期限"
+  },
+  "LOST_WORD_LIVE_LINK": {
+    "key": "LOST_WORD_LIVE_LINK",
+    "value": "0",
+    "description": ""
+  },
+  "MAIL_MAX": {
+    "key": "MAIL_MAX",
+    "value": "1000",
+    "description": "最大信箱数"
+  },
+  "MAJOR_PALYER_ID_BAN_LIST": {
+    "key": "MAJOR_PALYER_ID_BAN_LIST",
+    "value": "[9239147903,4238062813,9231122324,4231238387,6769563653,6762981284,9237283786,9238502413,4428201177,6763059673]",
+    "description": "MAJOR服玩家战斗履历禁止上榜名单"
+  },
+  "MAP_BUFF_GROUP_ID": {
+    "key": "MAP_BUFF_GROUP_ID",
+    "value": "1003",
+    "description": "現シーズンのマップバフグループ"
+  },
+  "MAX_REROLL": {
+    "key": "MAX_REROLL",
+    "value": "3",
+    "description": "守矢秘境における最大引き直し回数"
+  },
+  "MINI_GAME_RELEASE_EPISODE_ID": {
+    "key": "MINI_GAME_RELEASE_EPISODE_ID",
+    "value": "100900205",
+    "description": "ミニゲーム解放エピソードID"
+  },
+  "MISSION_REWARD_MAIL_GRACE": {
+    "key": "MISSION_REWARD_MAIL_GRACE",
+    "value": "30",
+    "description": "课题报酬信箱送付时有效期限"
+  },
+  "MOTIVATION_LOWER_LIMIT_FOR_UNIT_EXP_BONUS": {
+    "key": "MOTIVATION_LOWER_LIMIT_FOR_UNIT_EXP_BONUS",
+    "value": "120",
+    "description": "战斗结束时、附加单位奖励的干劲的上限值"
+  },
+  "MOTIVATION_RECOVERY_LIMIT": {
+    "key": "MOTIVATION_RECOVERY_LIMIT",
+    "value": "119",
+    "description": "干劲的増加上限"
+  },
+  "MOTIVATION_RECOVERY_TIME": {
+    "key": "MOTIVATION_RECOVERY_TIME",
+    "value": "360",
+    "description": "干劲的增加时间（秒）"
+  },
+  "MOTIVATION_RECOVERY_VALUE": {
+    "key": "MOTIVATION_RECOVERY_VALUE",
+    "value": "2",
+    "description": "干劲増加量／小时"
+  },
+  "MOTIVATION_UPPER_LIMIT_FOR_UNIT_EXP_ONUS": {
+    "key": "MOTIVATION_UPPER_LIMIT_FOR_UNIT_EXP_ONUS",
+    "value": "0",
+    "description": "战斗结束时、单位拥有者干劲的下限值"
+  },
+  "MULTIPLE_SPIRITS_WEEKLY_RELEASE_EPISODE_ID": {
+    "key": "MULTIPLE_SPIRITS_WEEKLY_RELEASE_EPISODE_ID",
+    "value": "100200506",
+    "description": "複霊週次の解放クエストフラグ"
+  },
+  "NAME_LENGTH": {
+    "key": "NAME_LENGTH",
+    "value": "10",
+    "description": "名字文字数"
+  },
+  "NO_LOGIN_TIME": {
+    "key": "NO_LOGIN_TIME",
+    "value": "2026-11-03 14:00:00",
+    "description": "停止注册时间"
+  },
+  "ORB_MAX": {
+    "key": "ORB_MAX",
+    "value": "999999",
+    "description": "最大神珠数"
+  },
+  "OTHER_PALYER_ID_BAN_LIST": {
+    "key": "OTHER_PALYER_ID_BAN_LIST",
+    "value": "[6765899622,4231449286]",
+    "description": "OTHER服玩家战斗履历禁止上榜名单"
+  },
+  "PA_RESET_FREE_FLAG": {
+    "key": "PA_RESET_FREE_FLAG",
+    "value": "0",
+    "description": "全体的に運命効果リセットを無料にさせるフラグ"
+  },
+  "PHANTASM_POINT_BUY_BASE": {
+    "key": "PHANTASM_POINT_BUY_BASE",
+    "value": "500",
+    "description": "灵点回复量为初期值500 玩家等级×3"
+  },
+  "PHANTASM_POINT_BUY_CALC_VALUE": {
+    "key": "PHANTASM_POINT_BUY_CALC_VALUE",
+    "value": "3",
+    "description": "灵点回复量为初期值500 玩家等级×3"
+  },
+  "PHANTASM_POINT_MAX": {
+    "key": "PHANTASM_POINT_MAX",
+    "value": "999999",
+    "description": "最大灵点数"
+  },
+  "PICTURE_COUNT_MAX": {
+    "key": "PICTURE_COUNT_MAX",
+    "value": "9999",
+    "description": "系统中绘卷的最大持有数"
+  },
+  "PLAYING_TOKEN_LOG_SAVE_PATTERN": {
+    "key": "PLAYING_TOKEN_LOG_SAVE_PATTERN",
+    "value": "2",
+    "description": "プレイングトークン記録パターン。0: 記録しない、1: テキストログ、2: DB"
+  },
+  "POINT_EXCHANGE_SHOP_UPDATE_HOUR_1": {
+    "key": "POINT_EXCHANGE_SHOP_UPDATE_HOUR_1",
+    "value": "6",
+    "description": "点数交换队列更新时刻１"
+  },
+  "POINT_EXCHANGE_SHOP_UPDATE_HOUR_2": {
+    "key": "POINT_EXCHANGE_SHOP_UPDATE_HOUR_2",
+    "value": "14",
+    "description": "点数交换队列更新时刻２"
+  },
+  "POINT_EXCHANGE_SHOP_UPDATE_HOUR_3": {
+    "key": "POINT_EXCHANGE_SHOP_UPDATE_HOUR_3",
+    "value": "22",
+    "description": "点数交换队列更新时刻３"
+  },
+  "PURCHASE_STOP_ANDROID": {
+    "key": "PURCHASE_STOP_ANDROID",
+    "value": "0",
+    "description": "ANDROID課金不可フラグ"
+  },
+  "PURCHASE_STOP_IOS": {
+    "key": "PURCHASE_STOP_IOS",
+    "value": "0",
+    "description": "iOS課金不可フラグ"
+  },
+  "QUEST_ANOTHER_BACKGROUND": {
+    "key": "QUEST_ANOTHER_BACKGROUND",
+    "value": "11320101",
+    "description": "秘封TOP画面の背景のID"
+  },
+  "QUEST_ANOTHER_BGM": {
+    "key": "QUEST_ANOTHER_BGM",
+    "value": "1043",
+    "description": "秘封TOP画面のBGMのID"
+  },
+  "QUEST_RELEASE_EPISODE_ID": {
+    "key": "QUEST_RELEASE_EPISODE_ID",
+    "value": "100100501",
+    "description": "秘封开启关卡"
+  },
+  "RAID_RESULT1": {
+    "key": "RAID_RESULT1",
+    "value": "1",
+    "description": "共通課題223901_ラウンド1勝敗判定"
+  },
+  "RAID_RESULT2": {
+    "key": "RAID_RESULT2",
+    "value": "1",
+    "description": "共通課題223902_ラウンド2勝敗判定"
+  },
+  "RAID_RESULT3": {
+    "key": "RAID_RESULT3",
+    "value": "1",
+    "description": "共通課題223903_ラウンド3勝敗判定（負け想定）"
+  },
+  "RAKING_LIMIT_UNIT_LEN": {
+    "key": "RAKING_LIMIT_UNIT_LEN",
+    "value": "2",
+    "description": "战斗履历top10显示人数限制小于等于"
+  },
+  "RAKING_LIMIT_UNIT_LEN2": {
+    "key": "RAKING_LIMIT_UNIT_LEN2",
+    "value": "6",
+    "description": "战斗履历top10显示人数限制2小于等于"
+  },
+  "RAKING_MAX_DAMAGE": {
+    "key": "RAKING_MAX_DAMAGE",
+    "value": "100000000",
+    "description": "战斗履历top10显示最大伤害限制大于"
+  },
+  "RAKING_MAX_DAMAGE2": {
+    "key": "RAKING_MAX_DAMAGE2",
+    "value": "10000000000",
+    "description": "战斗履历top10显示最大伤害限制2大于"
+  },
+  "RANKING_SCORE_CALC_VALUE1": {
+    "key": "RANKING_SCORE_CALC_VALUE1",
+    "value": "100000",
+    "description": "ランキングスコア不正確認計算値"
+  },
+  "RANKING_SCORE_CALC_VALUE2": {
+    "key": "RANKING_SCORE_CALC_VALUE2",
+    "value": "67453",
+    "description": "ランキングスコア不正確認計算値"
+  },
+  "RANKING_SCORE_CALC_VALUE3": {
+    "key": "RANKING_SCORE_CALC_VALUE3",
+    "value": "36947",
+    "description": "ランキングスコア不正確認計算値"
+  },
+  "RANKING_SCORE_CALC_VALUE4": {
+    "key": "RANKING_SCORE_CALC_VALUE4",
+    "value": "420839",
+    "description": "ランキングスコア不正確認計算値"
+  },
+  "REINCARNATION_AFTER_TRUST": {
+    "key": "REINCARNATION_AFTER_TRUST",
+    "value": "10000",
+    "description": "転生後の固定信頼度"
+  },
+  "REINCARNATION_LEVEL": {
+    "key": "REINCARNATION_LEVEL",
+    "value": "100",
+    "description": "転生可能レベル"
+  },
+  "REINCARNATION_MATERIAL_CONSUME_COUNT": {
+    "key": "REINCARNATION_MATERIAL_CONSUME_COUNT",
+    "value": "1000",
+    "description": "無名の転生鏡交換時消費数"
+  },
+  "REINCARNATION_MATERIAL_FREE_ID": {
+    "key": "REINCARNATION_MATERIAL_FREE_ID",
+    "value": "900",
+    "description": "転生鏡"
+  },
+  "REINCARNATION_MATERIAL_GAIN_COUNT": {
+    "key": "REINCARNATION_MATERIAL_GAIN_COUNT",
+    "value": "1",
+    "description": "無名の転生鏡交換時獲得数"
+  },
+  "REINCARNATION_RANK": {
+    "key": "REINCARNATION_RANK",
+    "value": "5",
+    "description": "転生可能ランク"
+  },
+  "REINCARNATION_RARE": {
+    "key": "REINCARNATION_RARE",
+    "value": "5",
+    "description": "転生可能レアリティ"
+  },
+  "REINCARNATION_SKILL_LEVEL": {
+    "key": "REINCARNATION_SKILL_LEVEL",
+    "value": "10",
+    "description": "転生可能スキルレベル"
+  },
+  "REINCARNATION_TRUST": {
+    "key": "REINCARNATION_TRUST",
+    "value": "9901",
+    "description": "転生探索解放信頼度"
+  },
+  "REQUEST_COUNT_MAX": {
+    "key": "REQUEST_COUNT_MAX",
+    "value": "200",
+    "description": "フレンド申請上限"
+  },
+  "RETRY_GACHA_MAIL_GRACE": {
+    "key": "RETRY_GACHA_MAIL_GRACE",
+    "value": "30",
+    "description": "引きなおしおいのりの伝書受け取り期限"
+  },
+  "RHYTHM_GAME_PHANTASM_POINT_FORMULA1": {
+    "key": "RHYTHM_GAME_PHANTASM_POINT_FORMULA1",
+    "value": "500",
+    "description": "リズムゲーム付与霊P計算値1"
+  },
+  "RHYTHM_GAME_PHANTASM_POINT_FORMULA2": {
+    "key": "RHYTHM_GAME_PHANTASM_POINT_FORMULA2",
+    "value": "1",
+    "description": "リズムゲーム付与霊P計算値2"
+  },
+  "RHYTHM_GAME_PHANTASM_POINT_FORMULA3": {
+    "key": "RHYTHM_GAME_PHANTASM_POINT_FORMULA3",
+    "value": "10",
+    "description": "リズムゲーム付与霊P計算値3"
+  },
+  "ROGUELITE_RESET_DATE": {
+    "key": "ROGUELITE_RESET_DATE",
+    "value": "2025-12-26 11:00:00",
+    "description": ""
+  },
+  "SERIES_BATTLE_52_BAN_LIST": {
+    "key": "SERIES_BATTLE_52_BAN_LIST",
+    "value": "[4237708904,4235186294]",
+    "description": "52服玩家永远战线排名禁止上榜名单"
+  },
+  "SERIES_BATTLE_IOS_BAN_LIST": {
+    "key": "SERIES_BATTLE_IOS_BAN_LIST",
+    "value": "[4231979440]",
+    "description": "IOS服玩家永远战线排名禁止上榜名单"
+  },
+  "SERIES_BATTLE_MAJOR_BAN_LIST": {
+    "key": "SERIES_BATTLE_MAJOR_BAN_LIST",
+    "value": "[6766025695,3819609450,9637782400,4427714910,4422359336,9238502413,6763059673,9237520202,9235195636,6769563653,6764108082,4428316547,6762624782,9639169755,6761695848,4427346412,9638737581,9231461690,9233886335,9238625252,3812123828,4234477297,9636961229,6769046453,6762981284,9631828150,9632240772,6764099929]",
+    "description": "MAJOR服玩家永远战线排名禁止上榜名单"
+  },
+  "SERIES_BATTLE_OTHER_BAN_LIST": {
+    "key": "SERIES_BATTLE_OTHER_BAN_LIST",
+    "value": "[3816636040,6761552191,6760130512,3819813096,4231382493]",
+    "description": "OTHER服玩家永远战线排名禁止上榜名单"
+  },
+  "SYSTEM_CRYSTAL_MAX": {
+    "key": "SYSTEM_CRYSTAL_MAX",
+    "value": "99999999",
+    "description": "封结晶系统的上限"
+  },
+  "SYSTEM_EVENT_POINT_MAX": {
+    "key": "SYSTEM_EVENT_POINT_MAX",
+    "value": "99999999",
+    "description": "活动点数上限"
+  },
+  "SYSTEM_GOLD_MAX": {
+    "key": "SYSTEM_GOLD_MAX",
+    "value": "99999999",
+    "description": "赛钱上限"
+  },
+  "SYSTEM_ITEM_MAX": {
+    "key": "SYSTEM_ITEM_MAX",
+    "value": "99999999",
+    "description": "道具系统的上限"
+  },
+  "SYSTEM_ORB_MAX": {
+    "key": "SYSTEM_ORB_MAX",
+    "value": "99999999",
+    "description": "系统上神结晶的最大值"
+  },
+  "SYSTEM_PHANTASM_POINT_MAX": {
+    "key": "SYSTEM_PHANTASM_POINT_MAX",
+    "value": "99999999",
+    "description": "灵点上限"
+  },
+  "TEAM_MAX": {
+    "key": "TEAM_MAX",
+    "value": "10",
+    "description": "最大编成数"
+  },
+  "TIMEOUT_RETRY_SECONDS": {
+    "key": "TIMEOUT_RETRY_SECONDS",
+    "value": "60",
+    "description": "超时重连秒数"
+  },
+  "TIPS_ACTIVE_TIME": {
+    "key": "TIPS_ACTIVE_TIME",
+    "value": "4000",
+    "description": "TIPS表示小时(msec)"
+  },
+  "TIPS_WAIT_TIME": {
+    "key": "TIPS_WAIT_TIME",
+    "value": "2000",
+    "description": "TIPS展示的时间(msec)"
+  },
+  "TOWER_FIRST_COMIC_FILE_PATH": {
+    "key": "TOWER_FIRST_COMIC_FILE_PATH",
+    "value": "Tower/ScarletDevilTower/Floor0.asset",
+    "description": "第一次塔顶重播的剧本文件路径"
+  },
+  "TOWER_FIRST_COMIC_TITLE": {
+    "key": "TOWER_FIRST_COMIC_TITLE",
+    "value": "序章",
+    "description": "在初次塔TOP所播放剧情的标题"
+  },
+  "TOWER_MAX_RECOVERY_COUNT": {
+    "key": "TOWER_MAX_RECOVERY_COUNT",
+    "value": "4",
+    "description": "包括免费在内一天内可以实行的回复次数"
+  },
+  "TOWER_RECOVERY_USED_CRYSTAL_FIRST": {
+    "key": "TOWER_RECOVERY_USED_CRYSTAL_FIRST",
+    "value": "5",
+    "description": "在塔内使用有偿回复第1次时消费的结晶数"
+  },
+  "TOWER_RECOVERY_USED_CRYSTAL_SECOND": {
+    "key": "TOWER_RECOVERY_USED_CRYSTAL_SECOND",
+    "value": "10",
+    "description": "在塔内使用有偿回复第2次时消费的结晶数"
+  },
+  "TOWER_RECOVERY_USED_CRYSTAL_THIRD": {
+    "key": "TOWER_RECOVERY_USED_CRYSTAL_THIRD",
+    "value": "15",
+    "description": "在塔内使用有偿回复第3次时消费的结晶数"
+  },
+  "TOWER_RELEASE_EPISODE_ID": {
+    "key": "TOWER_RELEASE_EPISODE_ID",
+    "value": "100400302",
+    "description": "为解放塔而必须完成的章节ID"
+  },
+  "TOWER_UNIT_OVER_LEVEL": {
+    "key": "TOWER_UNIT_OVER_LEVEL",
+    "value": "30",
+    "description": "能参加塔的单位等级"
+  },
+  "TRIAL_SEAL_MAX_ID": {
+    "key": "TRIAL_SEAL_MAX_ID",
+    "value": "999",
+    "description": "お試しアビリティシールidの上限値"
+  },
+  "TRUST_RECOVERY_LIMIT": {
+    "key": "TRUST_RECOVERY_LIMIT",
+    "value": "9000",
+    "description": "中意单位时的信赖度的增加上限"
+  },
+  "TRUST_RECOVERY_LOWER_LIMIT": {
+    "key": "TRUST_RECOVERY_LOWER_LIMIT",
+    "value": "4901",
+    "description": "信頼度上昇条件の下限値"
+  },
+  "TRUST_RECOVERY_TIME": {
+    "key": "TRUST_RECOVERY_TIME",
+    "value": "360",
+    "description": "信赖度的増加时长（秒）"
+  },
+  "TRUST_RECOVERY_VALUE": {
+    "key": "TRUST_RECOVERY_VALUE",
+    "value": "2",
+    "description": "中意的单位时的信赖度的増加量（100分率）／小时"
+  },
+  "UNIT_COUNT_MAX": {
+    "key": "UNIT_COUNT_MAX",
+    "value": "9999",
+    "description": "系统上的单位的最大所有值"
+  },
+  "UNIT_EXP_BONUS_RATE_BY_MOTIVATION": {
+    "key": "UNIT_EXP_BONUS_RATE_BY_MOTIVATION",
+    "value": "120",
+    "description": "战斗结束时、存在一定以上干劲时的单位经验值奖励"
+  },
+  "UNIT_EXP_ONUS_RATE_BY_MOTIVATION": {
+    "key": "UNIT_EXP_ONUS_RATE_BY_MOTIVATION",
+    "value": "50",
+    "description": "战斗结束时、存在一定以上干劲时的单位经验值奖励"
+  },
+  "UNIT_LIFE_POINT_CALC_VALUE_1": {
+    "key": "UNIT_LIFE_POINT_CALC_VALUE_1",
+    "value": "110",
+    "description": "单位状态计算值"
+  },
+  "UNIT_LIFE_POINT_CALC_VALUE_2": {
+    "key": "UNIT_LIFE_POINT_CALC_VALUE_2",
+    "value": "100",
+    "description": "单位状态计算值"
+  },
+  "UNIT_LIFE_POINT_CALC_VALUE_3": {
+    "key": "UNIT_LIFE_POINT_CALC_VALUE_3",
+    "value": "30",
+    "description": "单位状态计算值"
+  },
+  "UNIT_STATUS_CALC_VALUE_1": {
+    "key": "UNIT_STATUS_CALC_VALUE_1",
+    "value": "110",
+    "description": "单位状态计算值"
+  },
+  "UNIT_STATUS_CALC_VALUE_2": {
+    "key": "UNIT_STATUS_CALC_VALUE_2",
+    "value": "100",
+    "description": "单位状态计算值"
+  },
+  "UNIT_STATUS_CALC_VALUE_3": {
+    "key": "UNIT_STATUS_CALC_VALUE_3",
+    "value": "15",
+    "description": "单位状态计算值"
+  }
+}

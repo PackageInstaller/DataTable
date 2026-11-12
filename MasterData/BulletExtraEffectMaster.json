@@ -1,0 +1,5562 @@
+{
+  "1": {
+    "id": 1,
+    "name": "阳攻△",
+    "description": "自身「阳气攻击力」上升1级。",
+    "target": 1,
+    "turn": 1,
+    "type": 1,
+    "subtype": 1,
+    "value": 1
+  },
+  "2": {
+    "id": 2,
+    "name": "阳防△",
+    "description": "自身「阳气防御力」上升1级。",
+    "target": 1,
+    "turn": 1,
+    "type": 1,
+    "subtype": 2,
+    "value": 1
+  },
+  "3": {
+    "id": 3,
+    "name": "阴攻△",
+    "description": "自身「阴气攻击力」上升1级。",
+    "target": 1,
+    "turn": 1,
+    "type": 1,
+    "subtype": 3,
+    "value": 1
+  },
+  "4": {
+    "id": 4,
+    "name": "阴防△",
+    "description": "自身「阴气防御力」上升1级。",
+    "target": 1,
+    "turn": 1,
+    "type": 1,
+    "subtype": 4,
+    "value": 1
+  },
+  "5": {
+    "id": 5,
+    "name": "速度△",
+    "description": "自身「速度」上升1级。",
+    "target": 1,
+    "turn": 1,
+    "type": 1,
+    "subtype": 5,
+    "value": 1
+  },
+  "6": {
+    "id": 6,
+    "name": "命中△",
+    "description": "自身「命中」上升1级。",
+    "target": 1,
+    "turn": 1,
+    "type": 1,
+    "subtype": 6,
+    "value": 1
+  },
+  "7": {
+    "id": 7,
+    "name": "回避△",
+    "description": "自身「回避」上升1级。",
+    "target": 1,
+    "turn": 1,
+    "type": 1,
+    "subtype": 7,
+    "value": 1
+  },
+  "8": {
+    "id": 8,
+    "name": "会心攻击△",
+    "description": "自身「会心攻击」上升1级。",
+    "target": 1,
+    "turn": 1,
+    "type": 1,
+    "subtype": 8,
+    "value": 1
+  },
+  "9": {
+    "id": 9,
+    "name": "会心防御△",
+    "description": "自身「会心防御」上升1级。",
+    "target": 1,
+    "turn": 1,
+    "type": 1,
+    "subtype": 9,
+    "value": 1
+  },
+  "10": {
+    "id": 10,
+    "name": "会心命中△",
+    "description": "自身「会心命中」上升1级。",
+    "target": 1,
+    "turn": 1,
+    "type": 1,
+    "subtype": 10,
+    "value": 1
+  },
+  "11": {
+    "id": 11,
+    "name": "会心回避△",
+    "description": "自身「会心回避」上升1级。",
+    "target": 1,
+    "turn": 1,
+    "type": 1,
+    "subtype": 11,
+    "value": 1
+  },
+  "12": {
+    "id": 12,
+    "name": "仇恨值△",
+    "description": "自身「仇恨值」上升1级。",
+    "target": 1,
+    "turn": 1,
+    "type": 1,
+    "subtype": 12,
+    "value": 1
+  },
+  "13": {
+    "id": 13,
+    "name": "阳攻▼",
+    "description": "自身「阳气攻击力」下降1级。",
+    "target": 1,
+    "turn": 1,
+    "type": 2,
+    "subtype": 1,
+    "value": 1
+  },
+  "14": {
+    "id": 14,
+    "name": "阳防▼",
+    "description": "自身「阳气防御力」下降1级。",
+    "target": 1,
+    "turn": 1,
+    "type": 2,
+    "subtype": 2,
+    "value": 1
+  },
+  "15": {
+    "id": 15,
+    "name": "阴攻▼",
+    "description": "自身「阴气攻击力」下降1级。",
+    "target": 1,
+    "turn": 1,
+    "type": 2,
+    "subtype": 3,
+    "value": 1
+  },
+  "16": {
+    "id": 16,
+    "name": "阴防▼",
+    "description": "自身「阴气防御力」下降1级。",
+    "target": 1,
+    "turn": 1,
+    "type": 2,
+    "subtype": 4,
+    "value": 1
+  },
+  "17": {
+    "id": 17,
+    "name": "速度▼",
+    "description": "自身「速度」下降1级。",
+    "target": 1,
+    "turn": 1,
+    "type": 2,
+    "subtype": 5,
+    "value": 1
+  },
+  "18": {
+    "id": 18,
+    "name": "命中▼",
+    "description": "自身「命中」下降1级。",
+    "target": 1,
+    "turn": 1,
+    "type": 2,
+    "subtype": 6,
+    "value": 1
+  },
+  "19": {
+    "id": 19,
+    "name": "回避▼",
+    "description": "自身「回避」下降1级。",
+    "target": 1,
+    "turn": 1,
+    "type": 2,
+    "subtype": 7,
+    "value": 1
+  },
+  "20": {
+    "id": 20,
+    "name": "会心攻击▼",
+    "description": "自身「会心攻击」下降1级。",
+    "target": 1,
+    "turn": 1,
+    "type": 2,
+    "subtype": 8,
+    "value": 1
+  },
+  "21": {
+    "id": 21,
+    "name": "会心防御▼",
+    "description": "自身「会心防御」下降1级。",
+    "target": 1,
+    "turn": 1,
+    "type": 2,
+    "subtype": 9,
+    "value": 1
+  },
+  "22": {
+    "id": 22,
+    "name": "会心命中▼",
+    "description": "自身「会心命中」下降1级。",
+    "target": 1,
+    "turn": 1,
+    "type": 2,
+    "subtype": 10,
+    "value": 1
+  },
+  "23": {
+    "id": 23,
+    "name": "会心回避▼",
+    "description": "自身「会心回避」下降1级。",
+    "target": 1,
+    "turn": 1,
+    "type": 2,
+    "subtype": 11,
+    "value": 1
+  },
+  "24": {
+    "id": 24,
+    "name": "仇恨值▼",
+    "description": "自身「仇恨值」下降1级。",
+    "target": 1,
+    "turn": 1,
+    "type": 2,
+    "subtype": 12,
+    "value": 1
+  },
+  "25": {
+    "id": 25,
+    "name": "燃烧",
+    "description": "自身「结界」附加结界异常「燃烧」。",
+    "target": 1,
+    "turn": 1,
+    "type": 6,
+    "subtype": 1,
+    "value": 1
+  },
+  "26": {
+    "id": 26,
+    "name": "冷却",
+    "description": "自身「结界」附加结界异常「冻结」。",
+    "target": 1,
+    "turn": 1,
+    "type": 6,
+    "subtype": 2,
+    "value": 1
+  },
+  "27": {
+    "id": 27,
+    "name": "带电",
+    "description": "自身「结界」附加结界异常「感电」。",
+    "target": 1,
+    "turn": 1,
+    "type": 6,
+    "subtype": 3,
+    "value": 1
+  },
+  "28": {
+    "id": 28,
+    "name": "喷毒",
+    "description": "自身「结界」附加结界异常「毒雾」。",
+    "target": 1,
+    "turn": 1,
+    "type": 6,
+    "subtype": 4,
+    "value": 1
+  },
+  "29": {
+    "id": 29,
+    "name": "烟幕",
+    "description": "自身「结界」附加结界异常「黑暗」。",
+    "target": 1,
+    "turn": 1,
+    "type": 6,
+    "subtype": 5,
+    "value": 1
+  },
+  "30": {
+    "id": 30,
+    "name": "冲击",
+    "description": "对自身「击昏」（行动取消）效果。",
+    "target": 1,
+    "turn": 1,
+    "type": 7,
+    "subtype": 1,
+    "value": 1
+  },
+  "31": {
+    "id": 31,
+    "name": "粘着",
+    "description": "对自身「迟缓」（行动顺序后退）效果。",
+    "target": 1,
+    "turn": 1,
+    "type": 7,
+    "subtype": 2,
+    "value": 1
+  },
+  "32": {
+    "id": 32,
+    "name": "阳攻△",
+    "description": "自身「阳气攻击力」上升1级。",
+    "target": 1,
+    "turn": 2,
+    "type": 1,
+    "subtype": 1,
+    "value": 1
+  },
+  "33": {
+    "id": 33,
+    "name": "阳防△",
+    "description": "自身「阳气防御力」上升1级。",
+    "target": 1,
+    "turn": 2,
+    "type": 1,
+    "subtype": 2,
+    "value": 1
+  },
+  "34": {
+    "id": 34,
+    "name": "阴攻△",
+    "description": "自身「阴气攻击力」上升1级。",
+    "target": 1,
+    "turn": 2,
+    "type": 1,
+    "subtype": 3,
+    "value": 1
+  },
+  "35": {
+    "id": 35,
+    "name": "阴防△",
+    "description": "自身「阴气防御力」上升1级。",
+    "target": 1,
+    "turn": 2,
+    "type": 1,
+    "subtype": 4,
+    "value": 1
+  },
+  "36": {
+    "id": 36,
+    "name": "速度△",
+    "description": "自身「速度」上升1级。",
+    "target": 1,
+    "turn": 2,
+    "type": 1,
+    "subtype": 5,
+    "value": 1
+  },
+  "37": {
+    "id": 37,
+    "name": "命中△",
+    "description": "自身「命中」上升1级。",
+    "target": 1,
+    "turn": 2,
+    "type": 1,
+    "subtype": 6,
+    "value": 1
+  },
+  "38": {
+    "id": 38,
+    "name": "回避△",
+    "description": "自身「回避」上升1级。",
+    "target": 1,
+    "turn": 2,
+    "type": 1,
+    "subtype": 7,
+    "value": 1
+  },
+  "39": {
+    "id": 39,
+    "name": "会心攻击△",
+    "description": "自身「会心攻击」上升1级。",
+    "target": 1,
+    "turn": 2,
+    "type": 1,
+    "subtype": 8,
+    "value": 1
+  },
+  "40": {
+    "id": 40,
+    "name": "会心防御△",
+    "description": "自身「会心防御」上升1级。",
+    "target": 1,
+    "turn": 2,
+    "type": 1,
+    "subtype": 9,
+    "value": 1
+  },
+  "41": {
+    "id": 41,
+    "name": "会心命中△",
+    "description": "自身「会心命中」上升1级。",
+    "target": 1,
+    "turn": 2,
+    "type": 1,
+    "subtype": 10,
+    "value": 1
+  },
+  "42": {
+    "id": 42,
+    "name": "会心回避△",
+    "description": "自身「会心回避」上升1级。",
+    "target": 1,
+    "turn": 2,
+    "type": 1,
+    "subtype": 11,
+    "value": 1
+  },
+  "43": {
+    "id": 43,
+    "name": "仇恨值△",
+    "description": "自身「仇恨值」上升1级。",
+    "target": 1,
+    "turn": 2,
+    "type": 1,
+    "subtype": 12,
+    "value": 1
+  },
+  "44": {
+    "id": 44,
+    "name": "阳攻▼",
+    "description": "自身「阳气攻击力」下降1级。",
+    "target": 1,
+    "turn": 2,
+    "type": 2,
+    "subtype": 1,
+    "value": 1
+  },
+  "45": {
+    "id": 45,
+    "name": "阳防▼",
+    "description": "自身「阳气防御力」下降1级。",
+    "target": 1,
+    "turn": 2,
+    "type": 2,
+    "subtype": 2,
+    "value": 1
+  },
+  "46": {
+    "id": 46,
+    "name": "阴攻▼",
+    "description": "自身「阴气攻击力」下降1级。",
+    "target": 1,
+    "turn": 2,
+    "type": 2,
+    "subtype": 3,
+    "value": 1
+  },
+  "47": {
+    "id": 47,
+    "name": "阴防▼",
+    "description": "自身「阴气防御力」下降1级。",
+    "target": 1,
+    "turn": 2,
+    "type": 2,
+    "subtype": 4,
+    "value": 1
+  },
+  "48": {
+    "id": 48,
+    "name": "速度▼",
+    "description": "自身「速度」下降1级。",
+    "target": 1,
+    "turn": 2,
+    "type": 2,
+    "subtype": 5,
+    "value": 1
+  },
+  "49": {
+    "id": 49,
+    "name": "命中▼",
+    "description": "自身「命中」下降1级。",
+    "target": 1,
+    "turn": 2,
+    "type": 2,
+    "subtype": 6,
+    "value": 1
+  },
+  "50": {
+    "id": 50,
+    "name": "回避▼",
+    "description": "自身「回避」下降1级。",
+    "target": 1,
+    "turn": 2,
+    "type": 2,
+    "subtype": 7,
+    "value": 1
+  },
+  "51": {
+    "id": 51,
+    "name": "会心攻击▼",
+    "description": "自身「会心攻击」下降1级。",
+    "target": 1,
+    "turn": 2,
+    "type": 2,
+    "subtype": 8,
+    "value": 1
+  },
+  "52": {
+    "id": 52,
+    "name": "会心防御▼",
+    "description": "自身「会心防御」下降1级。",
+    "target": 1,
+    "turn": 2,
+    "type": 2,
+    "subtype": 9,
+    "value": 1
+  },
+  "53": {
+    "id": 53,
+    "name": "会心命中▼",
+    "description": "自身「会心命中」下降1级。",
+    "target": 1,
+    "turn": 2,
+    "type": 2,
+    "subtype": 10,
+    "value": 1
+  },
+  "54": {
+    "id": 54,
+    "name": "会心回避▼",
+    "description": "自身「会心回避」下降1级。",
+    "target": 1,
+    "turn": 2,
+    "type": 2,
+    "subtype": 11,
+    "value": 1
+  },
+  "55": {
+    "id": 55,
+    "name": "仇恨值▼",
+    "description": "自身「仇恨值」下降1级。",
+    "target": 1,
+    "turn": 2,
+    "type": 2,
+    "subtype": 12,
+    "value": 1
+  },
+  "56": {
+    "id": 56,
+    "name": "燃烧",
+    "description": "自身「结界」附加结界异常「燃烧」。",
+    "target": 1,
+    "turn": 2,
+    "type": 6,
+    "subtype": 1,
+    "value": 1
+  },
+  "57": {
+    "id": 57,
+    "name": "冷却",
+    "description": "自身「结界」附加结界异常「冻结」。",
+    "target": 1,
+    "turn": 2,
+    "type": 6,
+    "subtype": 2,
+    "value": 1
+  },
+  "58": {
+    "id": 58,
+    "name": "带电",
+    "description": "自身「结界」附加结界异常「感电」。",
+    "target": 1,
+    "turn": 2,
+    "type": 6,
+    "subtype": 3,
+    "value": 1
+  },
+  "59": {
+    "id": 59,
+    "name": "喷毒",
+    "description": "自身「结界」附加结界异常「毒雾」。",
+    "target": 1,
+    "turn": 2,
+    "type": 6,
+    "subtype": 4,
+    "value": 1
+  },
+  "60": {
+    "id": 60,
+    "name": "烟幕",
+    "description": "自身「结界」附加结界异常「黑暗」。",
+    "target": 1,
+    "turn": 2,
+    "type": 6,
+    "subtype": 5,
+    "value": 1
+  },
+  "61": {
+    "id": 61,
+    "name": "冲击",
+    "description": "对自身「击昏」（行动取消）效果。",
+    "target": 1,
+    "turn": 2,
+    "type": 7,
+    "subtype": 1,
+    "value": 1
+  },
+  "62": {
+    "id": 62,
+    "name": "粘着",
+    "description": "对自身「迟缓」（行动顺序后退）效果。",
+    "target": 1,
+    "turn": 2,
+    "type": 7,
+    "subtype": 2,
+    "value": 1
+  },
+  "63": {
+    "id": 63,
+    "name": "阳攻△",
+    "description": "自身「阳气攻击力」上升1级。",
+    "target": 1,
+    "turn": 3,
+    "type": 1,
+    "subtype": 1,
+    "value": 1
+  },
+  "64": {
+    "id": 64,
+    "name": "阳防△",
+    "description": "自身「阳气防御力」上升1级。",
+    "target": 1,
+    "turn": 3,
+    "type": 1,
+    "subtype": 2,
+    "value": 1
+  },
+  "65": {
+    "id": 65,
+    "name": "阴攻△",
+    "description": "自身「阴气攻击力」上升1级。",
+    "target": 1,
+    "turn": 3,
+    "type": 1,
+    "subtype": 3,
+    "value": 1
+  },
+  "66": {
+    "id": 66,
+    "name": "阴防△",
+    "description": "自身「阴气防御力」上升1级。",
+    "target": 1,
+    "turn": 3,
+    "type": 1,
+    "subtype": 4,
+    "value": 1
+  },
+  "67": {
+    "id": 67,
+    "name": "速度△",
+    "description": "自身「速度」上升1级。",
+    "target": 1,
+    "turn": 3,
+    "type": 1,
+    "subtype": 5,
+    "value": 1
+  },
+  "68": {
+    "id": 68,
+    "name": "命中△",
+    "description": "自身「命中」上升1级。",
+    "target": 1,
+    "turn": 3,
+    "type": 1,
+    "subtype": 6,
+    "value": 1
+  },
+  "69": {
+    "id": 69,
+    "name": "回避△",
+    "description": "自身「回避」上升1级。",
+    "target": 1,
+    "turn": 3,
+    "type": 1,
+    "subtype": 7,
+    "value": 1
+  },
+  "70": {
+    "id": 70,
+    "name": "会心攻击△",
+    "description": "自身「会心攻击」上升1级。",
+    "target": 1,
+    "turn": 3,
+    "type": 1,
+    "subtype": 8,
+    "value": 1
+  },
+  "71": {
+    "id": 71,
+    "name": "会心防御△",
+    "description": "自身「会心防御」上升1级。",
+    "target": 1,
+    "turn": 3,
+    "type": 1,
+    "subtype": 9,
+    "value": 1
+  },
+  "72": {
+    "id": 72,
+    "name": "会心命中△",
+    "description": "自身「会心命中」上升1级。",
+    "target": 1,
+    "turn": 3,
+    "type": 1,
+    "subtype": 10,
+    "value": 1
+  },
+  "73": {
+    "id": 73,
+    "name": "会心回避△",
+    "description": "自身「会心回避」上升1级。",
+    "target": 1,
+    "turn": 3,
+    "type": 1,
+    "subtype": 11,
+    "value": 1
+  },
+  "74": {
+    "id": 74,
+    "name": "仇恨值△",
+    "description": "自身「仇恨值」上升1级。",
+    "target": 1,
+    "turn": 3,
+    "type": 1,
+    "subtype": 12,
+    "value": 1
+  },
+  "75": {
+    "id": 75,
+    "name": "阳攻▼",
+    "description": "自身「阳气攻击力」下降1级。",
+    "target": 1,
+    "turn": 3,
+    "type": 2,
+    "subtype": 1,
+    "value": 1
+  },
+  "76": {
+    "id": 76,
+    "name": "阳防▼",
+    "description": "自身「阳气防御力」下降1级。",
+    "target": 1,
+    "turn": 3,
+    "type": 2,
+    "subtype": 2,
+    "value": 1
+  },
+  "77": {
+    "id": 77,
+    "name": "阴攻▼",
+    "description": "自身「阴气攻击力」下降1级。",
+    "target": 1,
+    "turn": 3,
+    "type": 2,
+    "subtype": 3,
+    "value": 1
+  },
+  "78": {
+    "id": 78,
+    "name": "阴防▼",
+    "description": "自身「阴气防御力」下降1级。",
+    "target": 1,
+    "turn": 3,
+    "type": 2,
+    "subtype": 4,
+    "value": 1
+  },
+  "79": {
+    "id": 79,
+    "name": "速度▼",
+    "description": "自身「速度」下降1级。",
+    "target": 1,
+    "turn": 3,
+    "type": 2,
+    "subtype": 5,
+    "value": 1
+  },
+  "80": {
+    "id": 80,
+    "name": "命中▼",
+    "description": "自身「命中」下降1级。",
+    "target": 1,
+    "turn": 3,
+    "type": 2,
+    "subtype": 6,
+    "value": 1
+  },
+  "81": {
+    "id": 81,
+    "name": "回避▼",
+    "description": "自身「回避」下降1级。",
+    "target": 1,
+    "turn": 3,
+    "type": 2,
+    "subtype": 7,
+    "value": 1
+  },
+  "82": {
+    "id": 82,
+    "name": "会心攻击▼",
+    "description": "自身「会心攻击」下降1级。",
+    "target": 1,
+    "turn": 3,
+    "type": 2,
+    "subtype": 8,
+    "value": 1
+  },
+  "83": {
+    "id": 83,
+    "name": "会心防御▼",
+    "description": "自身「会心防御」下降1级。",
+    "target": 1,
+    "turn": 3,
+    "type": 2,
+    "subtype": 9,
+    "value": 1
+  },
+  "84": {
+    "id": 84,
+    "name": "会心命中▼",
+    "description": "自身「会心命中」下降1级。",
+    "target": 1,
+    "turn": 3,
+    "type": 2,
+    "subtype": 10,
+    "value": 1
+  },
+  "85": {
+    "id": 85,
+    "name": "会心回避▼",
+    "description": "自身「会心回避」下降1级。",
+    "target": 1,
+    "turn": 3,
+    "type": 2,
+    "subtype": 11,
+    "value": 1
+  },
+  "86": {
+    "id": 86,
+    "name": "仇恨值▼",
+    "description": "自身「仇恨值」下降1级。",
+    "target": 1,
+    "turn": 3,
+    "type": 2,
+    "subtype": 12,
+    "value": 1
+  },
+  "87": {
+    "id": 87,
+    "name": "燃烧",
+    "description": "自身「结界」附加结界异常「燃烧」。",
+    "target": 1,
+    "turn": 3,
+    "type": 6,
+    "subtype": 1,
+    "value": 1
+  },
+  "88": {
+    "id": 88,
+    "name": "冷却",
+    "description": "自身「结界」附加结界异常「冻结」。",
+    "target": 1,
+    "turn": 3,
+    "type": 6,
+    "subtype": 2,
+    "value": 1
+  },
+  "89": {
+    "id": 89,
+    "name": "带电",
+    "description": "自身「结界」附加结界异常「感电」。",
+    "target": 1,
+    "turn": 3,
+    "type": 6,
+    "subtype": 3,
+    "value": 1
+  },
+  "90": {
+    "id": 90,
+    "name": "喷毒",
+    "description": "自身「结界」附加结界异常「毒雾」。",
+    "target": 1,
+    "turn": 3,
+    "type": 6,
+    "subtype": 4,
+    "value": 1
+  },
+  "91": {
+    "id": 91,
+    "name": "烟幕",
+    "description": "自身「结界」附加结界异常「黑暗」。",
+    "target": 1,
+    "turn": 3,
+    "type": 6,
+    "subtype": 5,
+    "value": 1
+  },
+  "92": {
+    "id": 92,
+    "name": "冲击",
+    "description": "对自身「击昏」（行动取消）效果。",
+    "target": 1,
+    "turn": 3,
+    "type": 7,
+    "subtype": 1,
+    "value": 1
+  },
+  "93": {
+    "id": 93,
+    "name": "粘着",
+    "description": "对自身「迟缓」（行动顺序后退）效果。",
+    "target": 1,
+    "turn": 3,
+    "type": 7,
+    "subtype": 2,
+    "value": 1
+  },
+  "94": {
+    "id": 94,
+    "name": "阳攻△",
+    "description": "目标「阳气攻击力」上升1级。",
+    "target": 2,
+    "turn": 1,
+    "type": 1,
+    "subtype": 1,
+    "value": 1
+  },
+  "95": {
+    "id": 95,
+    "name": "阳防△",
+    "description": "目标「阳气防御力」上升1级。",
+    "target": 2,
+    "turn": 1,
+    "type": 1,
+    "subtype": 2,
+    "value": 1
+  },
+  "96": {
+    "id": 96,
+    "name": "阴攻△",
+    "description": "目标「阴气攻击力」上升1级。",
+    "target": 2,
+    "turn": 1,
+    "type": 1,
+    "subtype": 3,
+    "value": 1
+  },
+  "97": {
+    "id": 97,
+    "name": "阴防△",
+    "description": "目标「阴气防御力」上升1级。",
+    "target": 2,
+    "turn": 1,
+    "type": 1,
+    "subtype": 4,
+    "value": 1
+  },
+  "98": {
+    "id": 98,
+    "name": "速度△",
+    "description": "目标「速度」上升1级。",
+    "target": 2,
+    "turn": 1,
+    "type": 1,
+    "subtype": 5,
+    "value": 1
+  },
+  "99": {
+    "id": 99,
+    "name": "命中△",
+    "description": "目标「命中」上升1级。",
+    "target": 2,
+    "turn": 1,
+    "type": 1,
+    "subtype": 6,
+    "value": 1
+  },
+  "100": {
+    "id": 100,
+    "name": "回避△",
+    "description": "目标「回避」上升1级。",
+    "target": 2,
+    "turn": 1,
+    "type": 1,
+    "subtype": 7,
+    "value": 1
+  },
+  "101": {
+    "id": 101,
+    "name": "会心攻击△",
+    "description": "目标「会心攻击」上升1级。",
+    "target": 2,
+    "turn": 1,
+    "type": 1,
+    "subtype": 8,
+    "value": 1
+  },
+  "102": {
+    "id": 102,
+    "name": "会心防御△",
+    "description": "目标「会心防御」上升1级。",
+    "target": 2,
+    "turn": 1,
+    "type": 1,
+    "subtype": 9,
+    "value": 1
+  },
+  "103": {
+    "id": 103,
+    "name": "会心命中△",
+    "description": "目标「会心命中」上升1级。",
+    "target": 2,
+    "turn": 1,
+    "type": 1,
+    "subtype": 10,
+    "value": 1
+  },
+  "104": {
+    "id": 104,
+    "name": "会心回避△",
+    "description": "目标「会心回避」上升1级。",
+    "target": 2,
+    "turn": 1,
+    "type": 1,
+    "subtype": 11,
+    "value": 1
+  },
+  "105": {
+    "id": 105,
+    "name": "仇恨值△",
+    "description": "目标「仇恨值」上升1级。",
+    "target": 2,
+    "turn": 1,
+    "type": 1,
+    "subtype": 12,
+    "value": 1
+  },
+  "106": {
+    "id": 106,
+    "name": "阳攻▼",
+    "description": "目标「阳气攻击力」下降1级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 1,
+    "value": 1
+  },
+  "107": {
+    "id": 107,
+    "name": "阳防▼",
+    "description": "目标「阳气防御力」下降1级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 2,
+    "value": 1
+  },
+  "108": {
+    "id": 108,
+    "name": "阴攻▼",
+    "description": "目标「阴气攻击力」下降1级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 3,
+    "value": 1
+  },
+  "109": {
+    "id": 109,
+    "name": "阴防▼",
+    "description": "目标「阴气防御力」下降1级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 4,
+    "value": 1
+  },
+  "110": {
+    "id": 110,
+    "name": "速度▼",
+    "description": "目标「速度」下降1级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 5,
+    "value": 1
+  },
+  "111": {
+    "id": 111,
+    "name": "命中▼",
+    "description": "目标「命中」下降1级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 6,
+    "value": 1
+  },
+  "112": {
+    "id": 112,
+    "name": "回避▼",
+    "description": "目标「回避」下降1级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 7,
+    "value": 1
+  },
+  "113": {
+    "id": 113,
+    "name": "会心攻击▼",
+    "description": "目标「会心攻击」下降1级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 8,
+    "value": 1
+  },
+  "114": {
+    "id": 114,
+    "name": "会心防御▼",
+    "description": "目标「会心防御」下降1级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 9,
+    "value": 1
+  },
+  "115": {
+    "id": 115,
+    "name": "会心命中▼",
+    "description": "目标「会心命中」下降1级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 10,
+    "value": 1
+  },
+  "116": {
+    "id": 116,
+    "name": "会心回避▼",
+    "description": "目标「会心回避」下降1级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 11,
+    "value": 1
+  },
+  "117": {
+    "id": 117,
+    "name": "仇恨值▼",
+    "description": "目标「仇恨值」下降1级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 12,
+    "value": 1
+  },
+  "118": {
+    "id": 118,
+    "name": "燃烧",
+    "description": "目标「结界」附加结界异常「燃烧」。",
+    "target": 2,
+    "turn": 1,
+    "type": 6,
+    "subtype": 1,
+    "value": 1
+  },
+  "119": {
+    "id": 119,
+    "name": "冷却",
+    "description": "目标「结界」附加结界异常「冻结」。",
+    "target": 2,
+    "turn": 1,
+    "type": 6,
+    "subtype": 2,
+    "value": 1
+  },
+  "120": {
+    "id": 120,
+    "name": "带电",
+    "description": "目标「结界」附加结界异常「感电」。",
+    "target": 2,
+    "turn": 1,
+    "type": 6,
+    "subtype": 3,
+    "value": 1
+  },
+  "121": {
+    "id": 121,
+    "name": "喷毒",
+    "description": "目标「结界」附加结界异常「毒雾」。",
+    "target": 2,
+    "turn": 1,
+    "type": 6,
+    "subtype": 4,
+    "value": 1
+  },
+  "122": {
+    "id": 122,
+    "name": "烟幕",
+    "description": "目标「结界」附加结界异常「黑暗」。",
+    "target": 2,
+    "turn": 1,
+    "type": 6,
+    "subtype": 5,
+    "value": 1
+  },
+  "123": {
+    "id": 123,
+    "name": "冲击",
+    "description": "对目标「击昏」（行动取消）效果。",
+    "target": 2,
+    "turn": 1,
+    "type": 7,
+    "subtype": 1,
+    "value": 1
+  },
+  "124": {
+    "id": 124,
+    "name": "粘着",
+    "description": "对目标「迟缓」（行动顺后退）效果。",
+    "target": 2,
+    "turn": 1,
+    "type": 7,
+    "subtype": 2,
+    "value": 1
+  },
+  "125": {
+    "id": 125,
+    "name": "阳攻△",
+    "description": "目标「阳气攻击力」上升1级。",
+    "target": 2,
+    "turn": 2,
+    "type": 1,
+    "subtype": 1,
+    "value": 1
+  },
+  "126": {
+    "id": 126,
+    "name": "阳防△",
+    "description": "目标「阳气防御力」上升1级。",
+    "target": 2,
+    "turn": 2,
+    "type": 1,
+    "subtype": 2,
+    "value": 1
+  },
+  "127": {
+    "id": 127,
+    "name": "阴攻△",
+    "description": "目标「阴气攻击力」上升1级。",
+    "target": 2,
+    "turn": 2,
+    "type": 1,
+    "subtype": 3,
+    "value": 1
+  },
+  "128": {
+    "id": 128,
+    "name": "阴防△",
+    "description": "目标「阴气防御力」上升1级。",
+    "target": 2,
+    "turn": 2,
+    "type": 1,
+    "subtype": 4,
+    "value": 1
+  },
+  "129": {
+    "id": 129,
+    "name": "速度△",
+    "description": "目标「速度」上升1级。",
+    "target": 2,
+    "turn": 2,
+    "type": 1,
+    "subtype": 5,
+    "value": 1
+  },
+  "130": {
+    "id": 130,
+    "name": "命中△",
+    "description": "目标「命中」上升1级。",
+    "target": 2,
+    "turn": 2,
+    "type": 1,
+    "subtype": 6,
+    "value": 1
+  },
+  "131": {
+    "id": 131,
+    "name": "回避△",
+    "description": "目标「回避」上升1级。",
+    "target": 2,
+    "turn": 2,
+    "type": 1,
+    "subtype": 7,
+    "value": 1
+  },
+  "132": {
+    "id": 132,
+    "name": "会心攻击△",
+    "description": "目标「会心攻击」上升1级。",
+    "target": 2,
+    "turn": 2,
+    "type": 1,
+    "subtype": 8,
+    "value": 1
+  },
+  "133": {
+    "id": 133,
+    "name": "会心防御△",
+    "description": "目标「会心防御」上升1级。",
+    "target": 2,
+    "turn": 2,
+    "type": 1,
+    "subtype": 9,
+    "value": 1
+  },
+  "134": {
+    "id": 134,
+    "name": "会心命中△",
+    "description": "目标「会心命中」上升1级。",
+    "target": 2,
+    "turn": 2,
+    "type": 1,
+    "subtype": 10,
+    "value": 1
+  },
+  "135": {
+    "id": 135,
+    "name": "会心回避△",
+    "description": "目标「会心回避」上升1级。",
+    "target": 2,
+    "turn": 2,
+    "type": 1,
+    "subtype": 11,
+    "value": 1
+  },
+  "136": {
+    "id": 136,
+    "name": "仇恨值△",
+    "description": "目标「仇恨值」上升1级。",
+    "target": 2,
+    "turn": 2,
+    "type": 1,
+    "subtype": 12,
+    "value": 1
+  },
+  "137": {
+    "id": 137,
+    "name": "阳攻▼",
+    "description": "目标「阳气攻击力」下降1级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 1,
+    "value": 1
+  },
+  "138": {
+    "id": 138,
+    "name": "阳防▼",
+    "description": "目标「阳气防御力」下降1级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 2,
+    "value": 1
+  },
+  "139": {
+    "id": 139,
+    "name": "阴攻▼",
+    "description": "目标「阴气攻击力」下降1级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 3,
+    "value": 1
+  },
+  "140": {
+    "id": 140,
+    "name": "阴防▼",
+    "description": "目标「阴气防御力」下降1级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 4,
+    "value": 1
+  },
+  "141": {
+    "id": 141,
+    "name": "速度▼",
+    "description": "目标「速度」下降1级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 5,
+    "value": 1
+  },
+  "142": {
+    "id": 142,
+    "name": "命中▼",
+    "description": "目标「命中」下降1级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 6,
+    "value": 1
+  },
+  "143": {
+    "id": 143,
+    "name": "回避▼",
+    "description": "目标「回避」下降1级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 7,
+    "value": 1
+  },
+  "144": {
+    "id": 144,
+    "name": "会心攻击▼",
+    "description": "目标「会心攻击」下降1级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 8,
+    "value": 1
+  },
+  "145": {
+    "id": 145,
+    "name": "会心防御▼",
+    "description": "目标「会心防御」下降1级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 9,
+    "value": 1
+  },
+  "146": {
+    "id": 146,
+    "name": "会心命中▼",
+    "description": "目标「会心命中」下降1级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 10,
+    "value": 1
+  },
+  "147": {
+    "id": 147,
+    "name": "会心回避▼",
+    "description": "目标「会心回避」下降1级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 11,
+    "value": 1
+  },
+  "148": {
+    "id": 148,
+    "name": "仇恨值▼",
+    "description": "目标「仇恨值」下降1级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 12,
+    "value": 1
+  },
+  "149": {
+    "id": 149,
+    "name": "燃烧",
+    "description": "目标「结界」附加结界异常「燃烧」。",
+    "target": 2,
+    "turn": 2,
+    "type": 6,
+    "subtype": 1,
+    "value": 1
+  },
+  "150": {
+    "id": 150,
+    "name": "冷却",
+    "description": "目标「结界」附加结界异常「冻结」。",
+    "target": 2,
+    "turn": 2,
+    "type": 6,
+    "subtype": 2,
+    "value": 1
+  },
+  "151": {
+    "id": 151,
+    "name": "带电",
+    "description": "目标「结界」附加结界异常「感电」。",
+    "target": 2,
+    "turn": 2,
+    "type": 6,
+    "subtype": 3,
+    "value": 1
+  },
+  "152": {
+    "id": 152,
+    "name": "喷毒",
+    "description": "目标「结界」附加结界异常「毒雾」。",
+    "target": 2,
+    "turn": 2,
+    "type": 6,
+    "subtype": 4,
+    "value": 1
+  },
+  "153": {
+    "id": 153,
+    "name": "烟幕",
+    "description": "目标「结界」附加结界异常「黑暗」。",
+    "target": 2,
+    "turn": 2,
+    "type": 6,
+    "subtype": 5,
+    "value": 1
+  },
+  "154": {
+    "id": 154,
+    "name": "冲击",
+    "description": "对目标「击昏」（行动取消）效果。",
+    "target": 2,
+    "turn": 2,
+    "type": 7,
+    "subtype": 1,
+    "value": 1
+  },
+  "155": {
+    "id": 155,
+    "name": "粘着",
+    "description": "对目标「迟缓」（行动顺后退）效果。",
+    "target": 2,
+    "turn": 2,
+    "type": 7,
+    "subtype": 2,
+    "value": 1
+  },
+  "156": {
+    "id": 156,
+    "name": "阳攻△",
+    "description": "目标「阳气攻击力」上升1级。",
+    "target": 2,
+    "turn": 3,
+    "type": 1,
+    "subtype": 1,
+    "value": 1
+  },
+  "157": {
+    "id": 157,
+    "name": "阳防△",
+    "description": "目标「阳气防御力」上升1级。",
+    "target": 2,
+    "turn": 3,
+    "type": 1,
+    "subtype": 2,
+    "value": 1
+  },
+  "158": {
+    "id": 158,
+    "name": "阴攻△",
+    "description": "目标「阴气攻击力」上升1级。",
+    "target": 2,
+    "turn": 3,
+    "type": 1,
+    "subtype": 3,
+    "value": 1
+  },
+  "159": {
+    "id": 159,
+    "name": "阴防△",
+    "description": "目标「阴气防御力」上升1级。",
+    "target": 2,
+    "turn": 3,
+    "type": 1,
+    "subtype": 4,
+    "value": 1
+  },
+  "160": {
+    "id": 160,
+    "name": "速度△",
+    "description": "目标「速度」上升1级。",
+    "target": 2,
+    "turn": 3,
+    "type": 1,
+    "subtype": 5,
+    "value": 1
+  },
+  "161": {
+    "id": 161,
+    "name": "命中△",
+    "description": "目标「命中」上升1级。",
+    "target": 2,
+    "turn": 3,
+    "type": 1,
+    "subtype": 6,
+    "value": 1
+  },
+  "162": {
+    "id": 162,
+    "name": "回避△",
+    "description": "目标「回避」上升1级。",
+    "target": 2,
+    "turn": 3,
+    "type": 1,
+    "subtype": 7,
+    "value": 1
+  },
+  "163": {
+    "id": 163,
+    "name": "会心攻击△",
+    "description": "目标「会心攻击」上升1级。",
+    "target": 2,
+    "turn": 3,
+    "type": 1,
+    "subtype": 8,
+    "value": 1
+  },
+  "164": {
+    "id": 164,
+    "name": "会心防御△",
+    "description": "目标「会心防御」上升1级。",
+    "target": 2,
+    "turn": 3,
+    "type": 1,
+    "subtype": 9,
+    "value": 1
+  },
+  "165": {
+    "id": 165,
+    "name": "会心命中△",
+    "description": "目标「会心命中」上升1级。",
+    "target": 2,
+    "turn": 3,
+    "type": 1,
+    "subtype": 10,
+    "value": 1
+  },
+  "166": {
+    "id": 166,
+    "name": "会心回避△",
+    "description": "目标「会心回避」上升1级。",
+    "target": 2,
+    "turn": 3,
+    "type": 1,
+    "subtype": 11,
+    "value": 1
+  },
+  "167": {
+    "id": 167,
+    "name": "仇恨值△",
+    "description": "目标「仇恨值」上升1级。",
+    "target": 2,
+    "turn": 3,
+    "type": 1,
+    "subtype": 12,
+    "value": 1
+  },
+  "168": {
+    "id": 168,
+    "name": "阳攻▼",
+    "description": "目标「阳气攻击力」下降1级。",
+    "target": 2,
+    "turn": 3,
+    "type": 2,
+    "subtype": 1,
+    "value": 1
+  },
+  "169": {
+    "id": 169,
+    "name": "阳防▼",
+    "description": "目标「阳气防御力」下降1级。",
+    "target": 2,
+    "turn": 3,
+    "type": 2,
+    "subtype": 2,
+    "value": 1
+  },
+  "170": {
+    "id": 170,
+    "name": "阴攻▼",
+    "description": "目标「阴气攻击力」下降1级。",
+    "target": 2,
+    "turn": 3,
+    "type": 2,
+    "subtype": 3,
+    "value": 1
+  },
+  "171": {
+    "id": 171,
+    "name": "阴防▼",
+    "description": "目标「阴气防御力」下降1级。",
+    "target": 2,
+    "turn": 3,
+    "type": 2,
+    "subtype": 4,
+    "value": 1
+  },
+  "172": {
+    "id": 172,
+    "name": "速度▼",
+    "description": "目标「速度」下降1级。",
+    "target": 2,
+    "turn": 3,
+    "type": 2,
+    "subtype": 5,
+    "value": 1
+  },
+  "173": {
+    "id": 173,
+    "name": "命中▼",
+    "description": "目标「命中」下降1级。",
+    "target": 2,
+    "turn": 3,
+    "type": 2,
+    "subtype": 6,
+    "value": 1
+  },
+  "174": {
+    "id": 174,
+    "name": "回避▼",
+    "description": "目标「回避」下降1级。",
+    "target": 2,
+    "turn": 3,
+    "type": 2,
+    "subtype": 7,
+    "value": 1
+  },
+  "175": {
+    "id": 175,
+    "name": "会心攻击▼",
+    "description": "目标「会心攻击」下降1级。",
+    "target": 2,
+    "turn": 3,
+    "type": 2,
+    "subtype": 8,
+    "value": 1
+  },
+  "176": {
+    "id": 176,
+    "name": "会心防御▼",
+    "description": "目标「会心防御」下降1级。",
+    "target": 2,
+    "turn": 3,
+    "type": 2,
+    "subtype": 9,
+    "value": 1
+  },
+  "177": {
+    "id": 177,
+    "name": "会心命中▼",
+    "description": "目标「会心命中」下降1级。",
+    "target": 2,
+    "turn": 3,
+    "type": 2,
+    "subtype": 10,
+    "value": 1
+  },
+  "178": {
+    "id": 178,
+    "name": "会心回避▼",
+    "description": "目标「会心回避」下降1级。",
+    "target": 2,
+    "turn": 3,
+    "type": 2,
+    "subtype": 11,
+    "value": 1
+  },
+  "179": {
+    "id": 179,
+    "name": "仇恨值▼",
+    "description": "目标「仇恨值」下降1级。",
+    "target": 2,
+    "turn": 3,
+    "type": 2,
+    "subtype": 12,
+    "value": 1
+  },
+  "180": {
+    "id": 180,
+    "name": "燃烧",
+    "description": "目标「结界」附加结界异常「燃烧」。",
+    "target": 2,
+    "turn": 3,
+    "type": 6,
+    "subtype": 1,
+    "value": 1
+  },
+  "181": {
+    "id": 181,
+    "name": "冷却",
+    "description": "目标「结界」附加结界异常「冻结」。",
+    "target": 2,
+    "turn": 3,
+    "type": 6,
+    "subtype": 2,
+    "value": 1
+  },
+  "182": {
+    "id": 182,
+    "name": "带电",
+    "description": "目标「结界」附加结界异常「感电」。",
+    "target": 2,
+    "turn": 3,
+    "type": 6,
+    "subtype": 3,
+    "value": 1
+  },
+  "183": {
+    "id": 183,
+    "name": "喷毒",
+    "description": "目标「结界」附加结界异常「毒雾」。",
+    "target": 2,
+    "turn": 3,
+    "type": 6,
+    "subtype": 4,
+    "value": 1
+  },
+  "184": {
+    "id": 184,
+    "name": "烟幕",
+    "description": "目标「结界」附加结界异常「黑暗」。",
+    "target": 2,
+    "turn": 3,
+    "type": 6,
+    "subtype": 5,
+    "value": 1
+  },
+  "185": {
+    "id": 185,
+    "name": "冲击",
+    "description": "对目标「击昏」（行动取消）效果。",
+    "target": 2,
+    "turn": 3,
+    "type": 7,
+    "subtype": 1,
+    "value": 1
+  },
+  "186": {
+    "id": 186,
+    "name": "粘着",
+    "description": "对目标「迟缓」（行动顺后退）效果。",
+    "target": 2,
+    "turn": 3,
+    "type": 7,
+    "subtype": 2,
+    "value": 1
+  },
+  "187": {
+    "id": 187,
+    "name": "阳攻△",
+    "description": "自身「阳气攻击力」上升2级。",
+    "target": 1,
+    "turn": 1,
+    "type": 1,
+    "subtype": 1,
+    "value": 2
+  },
+  "188": {
+    "id": 188,
+    "name": "阳防△",
+    "description": "自身「阳气防御力」上升2级。",
+    "target": 1,
+    "turn": 1,
+    "type": 1,
+    "subtype": 2,
+    "value": 2
+  },
+  "189": {
+    "id": 189,
+    "name": "阴攻△",
+    "description": "自身「阴气攻击力」上升2级。",
+    "target": 1,
+    "turn": 1,
+    "type": 1,
+    "subtype": 3,
+    "value": 2
+  },
+  "190": {
+    "id": 190,
+    "name": "阴防△",
+    "description": "自身「阴气防御力」上升2级。",
+    "target": 1,
+    "turn": 1,
+    "type": 1,
+    "subtype": 4,
+    "value": 2
+  },
+  "191": {
+    "id": 191,
+    "name": "速度△",
+    "description": "自身「速度」上升2级。",
+    "target": 1,
+    "turn": 1,
+    "type": 1,
+    "subtype": 5,
+    "value": 2
+  },
+  "192": {
+    "id": 192,
+    "name": "命中△",
+    "description": "自身「命中」上升2级。",
+    "target": 1,
+    "turn": 1,
+    "type": 1,
+    "subtype": 6,
+    "value": 2
+  },
+  "193": {
+    "id": 193,
+    "name": "回避△",
+    "description": "自身「回避」上升2级。",
+    "target": 1,
+    "turn": 1,
+    "type": 1,
+    "subtype": 7,
+    "value": 2
+  },
+  "194": {
+    "id": 194,
+    "name": "会心攻击△",
+    "description": "自身「会心攻击」上升2级。",
+    "target": 1,
+    "turn": 1,
+    "type": 1,
+    "subtype": 8,
+    "value": 2
+  },
+  "195": {
+    "id": 195,
+    "name": "会心防御△",
+    "description": "自身「会心防御」上升2级。",
+    "target": 1,
+    "turn": 1,
+    "type": 1,
+    "subtype": 9,
+    "value": 2
+  },
+  "196": {
+    "id": 196,
+    "name": "会心命中△",
+    "description": "自身「会心命中」上升2级。",
+    "target": 1,
+    "turn": 1,
+    "type": 1,
+    "subtype": 10,
+    "value": 2
+  },
+  "197": {
+    "id": 197,
+    "name": "会心回避△",
+    "description": "自身「会心回避」上升2级。",
+    "target": 1,
+    "turn": 1,
+    "type": 1,
+    "subtype": 11,
+    "value": 2
+  },
+  "198": {
+    "id": 198,
+    "name": "仇恨值△",
+    "description": "自身「仇恨值」上升2级。",
+    "target": 1,
+    "turn": 1,
+    "type": 1,
+    "subtype": 12,
+    "value": 2
+  },
+  "199": {
+    "id": 199,
+    "name": "阳攻▼",
+    "description": "自身「阳气攻击力」下降2级。",
+    "target": 1,
+    "turn": 1,
+    "type": 2,
+    "subtype": 1,
+    "value": 2
+  },
+  "200": {
+    "id": 200,
+    "name": "阳防▼",
+    "description": "自身「阳气防御力」下降2级。",
+    "target": 1,
+    "turn": 1,
+    "type": 2,
+    "subtype": 2,
+    "value": 2
+  },
+  "201": {
+    "id": 201,
+    "name": "阴攻▼",
+    "description": "自身「阴气攻击力」下降2级。",
+    "target": 1,
+    "turn": 1,
+    "type": 2,
+    "subtype": 3,
+    "value": 2
+  },
+  "202": {
+    "id": 202,
+    "name": "阴防▼",
+    "description": "自身「阴气防御力」下降2级。",
+    "target": 1,
+    "turn": 1,
+    "type": 2,
+    "subtype": 4,
+    "value": 2
+  },
+  "203": {
+    "id": 203,
+    "name": "速度▼",
+    "description": "自身「速度」下降2级。",
+    "target": 1,
+    "turn": 1,
+    "type": 2,
+    "subtype": 5,
+    "value": 2
+  },
+  "204": {
+    "id": 204,
+    "name": "命中▼",
+    "description": "自身「命中」下降2级。",
+    "target": 1,
+    "turn": 1,
+    "type": 2,
+    "subtype": 6,
+    "value": 2
+  },
+  "205": {
+    "id": 205,
+    "name": "回避▼",
+    "description": "自身「回避」下降2级。",
+    "target": 1,
+    "turn": 1,
+    "type": 2,
+    "subtype": 7,
+    "value": 2
+  },
+  "206": {
+    "id": 206,
+    "name": "会心攻击▼",
+    "description": "自身「会心攻击」下降2级。",
+    "target": 1,
+    "turn": 1,
+    "type": 2,
+    "subtype": 8,
+    "value": 2
+  },
+  "207": {
+    "id": 207,
+    "name": "会心防御▼",
+    "description": "自身「会心防御」下降2级。",
+    "target": 1,
+    "turn": 1,
+    "type": 2,
+    "subtype": 9,
+    "value": 2
+  },
+  "208": {
+    "id": 208,
+    "name": "会心命中▼",
+    "description": "自身「会心命中」下降2级。",
+    "target": 1,
+    "turn": 1,
+    "type": 2,
+    "subtype": 10,
+    "value": 2
+  },
+  "209": {
+    "id": 209,
+    "name": "会心回避▼",
+    "description": "自身「会心回避」下降2级。",
+    "target": 1,
+    "turn": 1,
+    "type": 2,
+    "subtype": 11,
+    "value": 2
+  },
+  "210": {
+    "id": 210,
+    "name": "仇恨值▼",
+    "description": "自身「仇恨值」下降2级。",
+    "target": 1,
+    "turn": 1,
+    "type": 2,
+    "subtype": 12,
+    "value": 2
+  },
+  "211": {
+    "id": 211,
+    "name": "阳攻△",
+    "description": "自身「阳气攻击力」上升2级。",
+    "target": 1,
+    "turn": 2,
+    "type": 1,
+    "subtype": 1,
+    "value": 2
+  },
+  "212": {
+    "id": 212,
+    "name": "阳防△",
+    "description": "自身「阳气防御力」上升2级。",
+    "target": 1,
+    "turn": 2,
+    "type": 1,
+    "subtype": 2,
+    "value": 2
+  },
+  "213": {
+    "id": 213,
+    "name": "阴攻△",
+    "description": "自身「阴气攻击力」上升2级。",
+    "target": 1,
+    "turn": 2,
+    "type": 1,
+    "subtype": 3,
+    "value": 2
+  },
+  "214": {
+    "id": 214,
+    "name": "阴防△",
+    "description": "自身「阴气防御力」上升2级。",
+    "target": 1,
+    "turn": 2,
+    "type": 1,
+    "subtype": 4,
+    "value": 2
+  },
+  "215": {
+    "id": 215,
+    "name": "速度△",
+    "description": "自身「速度」上升2级。",
+    "target": 1,
+    "turn": 2,
+    "type": 1,
+    "subtype": 5,
+    "value": 2
+  },
+  "216": {
+    "id": 216,
+    "name": "命中△",
+    "description": "自身「命中」上升2级。",
+    "target": 1,
+    "turn": 2,
+    "type": 1,
+    "subtype": 6,
+    "value": 2
+  },
+  "217": {
+    "id": 217,
+    "name": "回避△",
+    "description": "自身「回避」上升2级。",
+    "target": 1,
+    "turn": 2,
+    "type": 1,
+    "subtype": 7,
+    "value": 2
+  },
+  "218": {
+    "id": 218,
+    "name": "会心攻击△",
+    "description": "自身「会心攻击」上升2级。",
+    "target": 1,
+    "turn": 2,
+    "type": 1,
+    "subtype": 8,
+    "value": 2
+  },
+  "219": {
+    "id": 219,
+    "name": "会心防御△",
+    "description": "自身「会心防御」上升2级。",
+    "target": 1,
+    "turn": 2,
+    "type": 1,
+    "subtype": 9,
+    "value": 2
+  },
+  "220": {
+    "id": 220,
+    "name": "会心命中△",
+    "description": "自身「会心命中」上升2级。",
+    "target": 1,
+    "turn": 2,
+    "type": 1,
+    "subtype": 10,
+    "value": 2
+  },
+  "221": {
+    "id": 221,
+    "name": "会心回避△",
+    "description": "自身「会心回避」上升2级。",
+    "target": 1,
+    "turn": 2,
+    "type": 1,
+    "subtype": 11,
+    "value": 2
+  },
+  "222": {
+    "id": 222,
+    "name": "仇恨值△",
+    "description": "自身「仇恨值」上升2级。",
+    "target": 1,
+    "turn": 2,
+    "type": 1,
+    "subtype": 12,
+    "value": 2
+  },
+  "223": {
+    "id": 223,
+    "name": "阳攻▼",
+    "description": "自身「阳气攻击力」下降2级。",
+    "target": 1,
+    "turn": 2,
+    "type": 2,
+    "subtype": 1,
+    "value": 2
+  },
+  "224": {
+    "id": 224,
+    "name": "阳防▼",
+    "description": "自身「阳气防御力」下降2级。",
+    "target": 1,
+    "turn": 2,
+    "type": 2,
+    "subtype": 2,
+    "value": 2
+  },
+  "225": {
+    "id": 225,
+    "name": "阴攻▼",
+    "description": "自身「阴气攻击力」下降2级。",
+    "target": 1,
+    "turn": 2,
+    "type": 2,
+    "subtype": 3,
+    "value": 2
+  },
+  "226": {
+    "id": 226,
+    "name": "阴防▼",
+    "description": "自身「阴气防御力」下降2级。",
+    "target": 1,
+    "turn": 2,
+    "type": 2,
+    "subtype": 4,
+    "value": 2
+  },
+  "227": {
+    "id": 227,
+    "name": "速度▼",
+    "description": "自身「速度」下降2级。",
+    "target": 1,
+    "turn": 2,
+    "type": 2,
+    "subtype": 5,
+    "value": 2
+  },
+  "228": {
+    "id": 228,
+    "name": "命中▼",
+    "description": "自身「命中」下降2级。",
+    "target": 1,
+    "turn": 2,
+    "type": 2,
+    "subtype": 6,
+    "value": 2
+  },
+  "229": {
+    "id": 229,
+    "name": "回避▼",
+    "description": "自身「回避」下降2级。",
+    "target": 1,
+    "turn": 2,
+    "type": 2,
+    "subtype": 7,
+    "value": 2
+  },
+  "230": {
+    "id": 230,
+    "name": "会心攻击▼",
+    "description": "自身「会心攻击」下降2级。",
+    "target": 1,
+    "turn": 2,
+    "type": 2,
+    "subtype": 8,
+    "value": 2
+  },
+  "231": {
+    "id": 231,
+    "name": "会心防御▼",
+    "description": "自身「会心防御」下降2级。",
+    "target": 1,
+    "turn": 2,
+    "type": 2,
+    "subtype": 9,
+    "value": 2
+  },
+  "232": {
+    "id": 232,
+    "name": "会心命中▼",
+    "description": "自身「会心命中」下降2级。",
+    "target": 1,
+    "turn": 2,
+    "type": 2,
+    "subtype": 10,
+    "value": 2
+  },
+  "233": {
+    "id": 233,
+    "name": "会心回避▼",
+    "description": "自身「会心回避」下降2级。",
+    "target": 1,
+    "turn": 2,
+    "type": 2,
+    "subtype": 11,
+    "value": 2
+  },
+  "234": {
+    "id": 234,
+    "name": "仇恨值▼",
+    "description": "自身「仇恨值」下降2级。",
+    "target": 1,
+    "turn": 2,
+    "type": 2,
+    "subtype": 12,
+    "value": 2
+  },
+  "235": {
+    "id": 235,
+    "name": "阳攻△",
+    "description": "自身「阳气攻击力」上升2级。",
+    "target": 1,
+    "turn": 3,
+    "type": 1,
+    "subtype": 1,
+    "value": 2
+  },
+  "236": {
+    "id": 236,
+    "name": "阳防△",
+    "description": "自身「阳气防御力」上升2级。",
+    "target": 1,
+    "turn": 3,
+    "type": 1,
+    "subtype": 2,
+    "value": 2
+  },
+  "237": {
+    "id": 237,
+    "name": "阴攻△",
+    "description": "自身「阴气攻击力」上升2级。",
+    "target": 1,
+    "turn": 3,
+    "type": 1,
+    "subtype": 3,
+    "value": 2
+  },
+  "238": {
+    "id": 238,
+    "name": "阴防△",
+    "description": "自身「阴气防御力」上升2级。",
+    "target": 1,
+    "turn": 3,
+    "type": 1,
+    "subtype": 4,
+    "value": 2
+  },
+  "239": {
+    "id": 239,
+    "name": "速度△",
+    "description": "自身「速度」上升2级。",
+    "target": 1,
+    "turn": 3,
+    "type": 1,
+    "subtype": 5,
+    "value": 2
+  },
+  "240": {
+    "id": 240,
+    "name": "命中△",
+    "description": "自身「命中」上升2级。",
+    "target": 1,
+    "turn": 3,
+    "type": 1,
+    "subtype": 6,
+    "value": 2
+  },
+  "241": {
+    "id": 241,
+    "name": "回避△",
+    "description": "自身「回避」上升2级。",
+    "target": 1,
+    "turn": 3,
+    "type": 1,
+    "subtype": 7,
+    "value": 2
+  },
+  "242": {
+    "id": 242,
+    "name": "会心攻击△",
+    "description": "自身「会心攻击」上升2级。",
+    "target": 1,
+    "turn": 3,
+    "type": 1,
+    "subtype": 8,
+    "value": 2
+  },
+  "243": {
+    "id": 243,
+    "name": "会心防御△",
+    "description": "自身「会心防御」上升2级。",
+    "target": 1,
+    "turn": 3,
+    "type": 1,
+    "subtype": 9,
+    "value": 2
+  },
+  "244": {
+    "id": 244,
+    "name": "会心命中△",
+    "description": "自身「会心命中」上升2级。",
+    "target": 1,
+    "turn": 3,
+    "type": 1,
+    "subtype": 10,
+    "value": 2
+  },
+  "245": {
+    "id": 245,
+    "name": "会心回避△",
+    "description": "自身「会心回避」上升2级。",
+    "target": 1,
+    "turn": 3,
+    "type": 1,
+    "subtype": 11,
+    "value": 2
+  },
+  "246": {
+    "id": 246,
+    "name": "仇恨值△",
+    "description": "自身「仇恨值」上升2级。",
+    "target": 1,
+    "turn": 3,
+    "type": 1,
+    "subtype": 12,
+    "value": 2
+  },
+  "247": {
+    "id": 247,
+    "name": "阳攻▼",
+    "description": "自身「阳气攻击力」下降2级。",
+    "target": 1,
+    "turn": 3,
+    "type": 2,
+    "subtype": 1,
+    "value": 2
+  },
+  "248": {
+    "id": 248,
+    "name": "阳防▼",
+    "description": "自身「阳气防御力」下降2级。",
+    "target": 1,
+    "turn": 3,
+    "type": 2,
+    "subtype": 2,
+    "value": 2
+  },
+  "249": {
+    "id": 249,
+    "name": "阴攻▼",
+    "description": "自身「阴气攻击力」下降2级。",
+    "target": 1,
+    "turn": 3,
+    "type": 2,
+    "subtype": 3,
+    "value": 2
+  },
+  "250": {
+    "id": 250,
+    "name": "阴防▼",
+    "description": "自身「阴气防御力」下降2级。",
+    "target": 1,
+    "turn": 3,
+    "type": 2,
+    "subtype": 4,
+    "value": 2
+  },
+  "251": {
+    "id": 251,
+    "name": "速度▼",
+    "description": "自身「速度」下降2级。",
+    "target": 1,
+    "turn": 3,
+    "type": 2,
+    "subtype": 5,
+    "value": 2
+  },
+  "252": {
+    "id": 252,
+    "name": "命中▼",
+    "description": "自身「命中」下降2级。",
+    "target": 1,
+    "turn": 3,
+    "type": 2,
+    "subtype": 6,
+    "value": 2
+  },
+  "253": {
+    "id": 253,
+    "name": "回避▼",
+    "description": "自身「回避」下降2级。",
+    "target": 1,
+    "turn": 3,
+    "type": 2,
+    "subtype": 7,
+    "value": 2
+  },
+  "254": {
+    "id": 254,
+    "name": "会心攻击▼",
+    "description": "自身「会心攻击」下降2级。",
+    "target": 1,
+    "turn": 3,
+    "type": 2,
+    "subtype": 8,
+    "value": 2
+  },
+  "255": {
+    "id": 255,
+    "name": "会心防御▼",
+    "description": "自身「会心防御」下降2级。",
+    "target": 1,
+    "turn": 3,
+    "type": 2,
+    "subtype": 9,
+    "value": 2
+  },
+  "256": {
+    "id": 256,
+    "name": "会心命中▼",
+    "description": "自身「会心命中」下降2级。",
+    "target": 1,
+    "turn": 3,
+    "type": 2,
+    "subtype": 10,
+    "value": 2
+  },
+  "257": {
+    "id": 257,
+    "name": "会心回避▼",
+    "description": "自身「会心回避」下降2级。",
+    "target": 1,
+    "turn": 3,
+    "type": 2,
+    "subtype": 11,
+    "value": 2
+  },
+  "258": {
+    "id": 258,
+    "name": "仇恨值▼",
+    "description": "自身「仇恨值」下降2级。",
+    "target": 1,
+    "turn": 3,
+    "type": 2,
+    "subtype": 12,
+    "value": 2
+  },
+  "259": {
+    "id": 259,
+    "name": "阳攻△",
+    "description": "目标「阳气攻击力」上升2级。",
+    "target": 2,
+    "turn": 1,
+    "type": 1,
+    "subtype": 1,
+    "value": 2
+  },
+  "260": {
+    "id": 260,
+    "name": "阳防△",
+    "description": "目标「阳气防御力」上升2级。",
+    "target": 2,
+    "turn": 1,
+    "type": 1,
+    "subtype": 2,
+    "value": 2
+  },
+  "261": {
+    "id": 261,
+    "name": "阴攻△",
+    "description": "目标「阴气攻击力」上升2级。",
+    "target": 2,
+    "turn": 1,
+    "type": 1,
+    "subtype": 3,
+    "value": 2
+  },
+  "262": {
+    "id": 262,
+    "name": "阴防△",
+    "description": "目标「阴气防御力」上升2级。",
+    "target": 2,
+    "turn": 1,
+    "type": 1,
+    "subtype": 4,
+    "value": 2
+  },
+  "263": {
+    "id": 263,
+    "name": "速度△",
+    "description": "目标「速度」上升2级。",
+    "target": 2,
+    "turn": 1,
+    "type": 1,
+    "subtype": 5,
+    "value": 2
+  },
+  "264": {
+    "id": 264,
+    "name": "命中△",
+    "description": "目标「命中」上升2级。",
+    "target": 2,
+    "turn": 1,
+    "type": 1,
+    "subtype": 6,
+    "value": 2
+  },
+  "265": {
+    "id": 265,
+    "name": "回避△",
+    "description": "目标「回避」上升2级。",
+    "target": 2,
+    "turn": 1,
+    "type": 1,
+    "subtype": 7,
+    "value": 2
+  },
+  "266": {
+    "id": 266,
+    "name": "会心攻击△",
+    "description": "目标「会心攻击」上升2级。",
+    "target": 2,
+    "turn": 1,
+    "type": 1,
+    "subtype": 8,
+    "value": 2
+  },
+  "267": {
+    "id": 267,
+    "name": "会心防御△",
+    "description": "目标「会心防御」上升2级。",
+    "target": 2,
+    "turn": 1,
+    "type": 1,
+    "subtype": 9,
+    "value": 2
+  },
+  "268": {
+    "id": 268,
+    "name": "会心命中△",
+    "description": "目标「会心命中」上升2级。",
+    "target": 2,
+    "turn": 1,
+    "type": 1,
+    "subtype": 10,
+    "value": 2
+  },
+  "269": {
+    "id": 269,
+    "name": "会心回避△",
+    "description": "目标「会心回避」上升2级。",
+    "target": 2,
+    "turn": 1,
+    "type": 1,
+    "subtype": 11,
+    "value": 2
+  },
+  "270": {
+    "id": 270,
+    "name": "仇恨值△",
+    "description": "目标「仇恨值」上升2级。",
+    "target": 2,
+    "turn": 1,
+    "type": 1,
+    "subtype": 12,
+    "value": 2
+  },
+  "271": {
+    "id": 271,
+    "name": "阳攻▼",
+    "description": "目标「阳气攻击力」下降2级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 1,
+    "value": 2
+  },
+  "272": {
+    "id": 272,
+    "name": "阳防▼",
+    "description": "目标「阳气防御力」下降2级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 2,
+    "value": 2
+  },
+  "273": {
+    "id": 273,
+    "name": "阴攻▼",
+    "description": "目标「阴气攻击力」下降2级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 3,
+    "value": 2
+  },
+  "274": {
+    "id": 274,
+    "name": "阴防▼",
+    "description": "目标「阴气防御力」下降2级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 4,
+    "value": 2
+  },
+  "275": {
+    "id": 275,
+    "name": "速度▼",
+    "description": "目标「速度」下降2级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 5,
+    "value": 2
+  },
+  "276": {
+    "id": 276,
+    "name": "命中▼",
+    "description": "目标「命中」下降2级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 6,
+    "value": 2
+  },
+  "277": {
+    "id": 277,
+    "name": "回避▼",
+    "description": "目标「回避」下降2级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 7,
+    "value": 2
+  },
+  "278": {
+    "id": 278,
+    "name": "会心攻击▼",
+    "description": "目标「会心攻击」下降2级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 8,
+    "value": 2
+  },
+  "279": {
+    "id": 279,
+    "name": "会心防御▼",
+    "description": "目标「会心防御」下降2级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 9,
+    "value": 2
+  },
+  "280": {
+    "id": 280,
+    "name": "会心命中▼",
+    "description": "目标「会心命中」下降2级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 10,
+    "value": 2
+  },
+  "281": {
+    "id": 281,
+    "name": "会心回避▼",
+    "description": "目标「会心回避」下降2级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 11,
+    "value": 2
+  },
+  "282": {
+    "id": 282,
+    "name": "仇恨值▼",
+    "description": "目标「仇恨值」下降2级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 12,
+    "value": 2
+  },
+  "283": {
+    "id": 283,
+    "name": "燃烧",
+    "description": "目标「结界」附加结界异常「燃烧」。",
+    "target": 2,
+    "turn": 1,
+    "type": 6,
+    "subtype": 1,
+    "value": 2
+  },
+  "284": {
+    "id": 284,
+    "name": "冷却",
+    "description": "目标「结界」附加结界异常「冻结」。",
+    "target": 2,
+    "turn": 1,
+    "type": 6,
+    "subtype": 2,
+    "value": 2
+  },
+  "285": {
+    "id": 285,
+    "name": "带电",
+    "description": "目标「结界」附加结界异常「感电」。",
+    "target": 2,
+    "turn": 1,
+    "type": 6,
+    "subtype": 3,
+    "value": 2
+  },
+  "286": {
+    "id": 286,
+    "name": "喷毒",
+    "description": "目标「结界」附加结界异常「毒雾」。",
+    "target": 2,
+    "turn": 1,
+    "type": 6,
+    "subtype": 4,
+    "value": 2
+  },
+  "287": {
+    "id": 287,
+    "name": "烟幕",
+    "description": "目标「结界」附加结界异常「黑暗」。",
+    "target": 2,
+    "turn": 1,
+    "type": 6,
+    "subtype": 5,
+    "value": 2
+  },
+  "288": {
+    "id": 288,
+    "name": "冲击",
+    "description": "对目标「击昏」（行动取消）效果。",
+    "target": 2,
+    "turn": 1,
+    "type": 7,
+    "subtype": 1,
+    "value": 2
+  },
+  "289": {
+    "id": 289,
+    "name": "粘着",
+    "description": "对目标「迟缓」（行动顺后退）效果。",
+    "target": 2,
+    "turn": 1,
+    "type": 7,
+    "subtype": 2,
+    "value": 2
+  },
+  "290": {
+    "id": 290,
+    "name": "阳攻△",
+    "description": "目标「阳气攻击力」上升2级。",
+    "target": 2,
+    "turn": 2,
+    "type": 1,
+    "subtype": 1,
+    "value": 2
+  },
+  "291": {
+    "id": 291,
+    "name": "阳防△",
+    "description": "目标「阳气防御力」上升2级。",
+    "target": 2,
+    "turn": 2,
+    "type": 1,
+    "subtype": 2,
+    "value": 2
+  },
+  "292": {
+    "id": 292,
+    "name": "阴攻△",
+    "description": "目标「阴气攻击力」上升2级。",
+    "target": 2,
+    "turn": 2,
+    "type": 1,
+    "subtype": 3,
+    "value": 2
+  },
+  "293": {
+    "id": 293,
+    "name": "阴防△",
+    "description": "目标「阴气防御力」上升2级。",
+    "target": 2,
+    "turn": 2,
+    "type": 1,
+    "subtype": 4,
+    "value": 2
+  },
+  "294": {
+    "id": 294,
+    "name": "速度△",
+    "description": "目标「速度」上升2级。",
+    "target": 2,
+    "turn": 2,
+    "type": 1,
+    "subtype": 5,
+    "value": 2
+  },
+  "295": {
+    "id": 295,
+    "name": "命中△",
+    "description": "目标「命中」上升2级。",
+    "target": 2,
+    "turn": 2,
+    "type": 1,
+    "subtype": 6,
+    "value": 2
+  },
+  "296": {
+    "id": 296,
+    "name": "回避△",
+    "description": "目标「回避」上升2级。",
+    "target": 2,
+    "turn": 2,
+    "type": 1,
+    "subtype": 7,
+    "value": 2
+  },
+  "297": {
+    "id": 297,
+    "name": "会心攻击△",
+    "description": "目标「会心攻击」上升2级。",
+    "target": 2,
+    "turn": 2,
+    "type": 1,
+    "subtype": 8,
+    "value": 2
+  },
+  "298": {
+    "id": 298,
+    "name": "会心防御△",
+    "description": "目标「会心防御」上升2级。",
+    "target": 2,
+    "turn": 2,
+    "type": 1,
+    "subtype": 9,
+    "value": 2
+  },
+  "299": {
+    "id": 299,
+    "name": "会心命中△",
+    "description": "目标「会心命中」上升2级。",
+    "target": 2,
+    "turn": 2,
+    "type": 1,
+    "subtype": 10,
+    "value": 2
+  },
+  "300": {
+    "id": 300,
+    "name": "会心回避△",
+    "description": "目标「会心回避」上升2级。",
+    "target": 2,
+    "turn": 2,
+    "type": 1,
+    "subtype": 11,
+    "value": 2
+  },
+  "301": {
+    "id": 301,
+    "name": "仇恨值△",
+    "description": "目标「仇恨值」上升2级。",
+    "target": 2,
+    "turn": 2,
+    "type": 1,
+    "subtype": 12,
+    "value": 2
+  },
+  "302": {
+    "id": 302,
+    "name": "阳攻▼",
+    "description": "目标「阳气攻击力」下降2级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 1,
+    "value": 2
+  },
+  "303": {
+    "id": 303,
+    "name": "阳防▼",
+    "description": "目标「阳气防御力」下降2级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 2,
+    "value": 2
+  },
+  "304": {
+    "id": 304,
+    "name": "阴攻▼",
+    "description": "目标「阴气攻击力」下降2级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 3,
+    "value": 2
+  },
+  "305": {
+    "id": 305,
+    "name": "阴防▼",
+    "description": "目标「阴气防御力」下降2级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 4,
+    "value": 2
+  },
+  "306": {
+    "id": 306,
+    "name": "速度▼",
+    "description": "目标「速度」下降2级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 5,
+    "value": 2
+  },
+  "307": {
+    "id": 307,
+    "name": "命中▼",
+    "description": "目标「命中」下降2级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 6,
+    "value": 2
+  },
+  "308": {
+    "id": 308,
+    "name": "回避▼",
+    "description": "目标「回避」下降2级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 7,
+    "value": 2
+  },
+  "309": {
+    "id": 309,
+    "name": "会心攻击▼",
+    "description": "目标「会心攻击」下降2级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 8,
+    "value": 2
+  },
+  "310": {
+    "id": 310,
+    "name": "会心防御▼",
+    "description": "目标「会心防御」下降2级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 9,
+    "value": 2
+  },
+  "311": {
+    "id": 311,
+    "name": "会心命中▼",
+    "description": "目标「会心命中」下降2级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 10,
+    "value": 2
+  },
+  "312": {
+    "id": 312,
+    "name": "会心回避▼",
+    "description": "目标「会心回避」下降2级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 11,
+    "value": 2
+  },
+  "313": {
+    "id": 313,
+    "name": "仇恨值▼",
+    "description": "目标「仇恨值」下降2级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 12,
+    "value": 2
+  },
+  "314": {
+    "id": 314,
+    "name": "阳攻△",
+    "description": "目标「阳气攻击力」上升2级。",
+    "target": 2,
+    "turn": 3,
+    "type": 1,
+    "subtype": 1,
+    "value": 2
+  },
+  "315": {
+    "id": 315,
+    "name": "阳防△",
+    "description": "目标「阳气防御力」上升2级。",
+    "target": 2,
+    "turn": 3,
+    "type": 1,
+    "subtype": 2,
+    "value": 2
+  },
+  "316": {
+    "id": 316,
+    "name": "阴攻△",
+    "description": "目标「阴气攻击力」上升2级。",
+    "target": 2,
+    "turn": 3,
+    "type": 1,
+    "subtype": 3,
+    "value": 2
+  },
+  "317": {
+    "id": 317,
+    "name": "阴防△",
+    "description": "目标「阴气防御力」上升2级。",
+    "target": 2,
+    "turn": 3,
+    "type": 1,
+    "subtype": 4,
+    "value": 2
+  },
+  "318": {
+    "id": 318,
+    "name": "速度△",
+    "description": "目标「速度」上升2级。",
+    "target": 2,
+    "turn": 3,
+    "type": 1,
+    "subtype": 5,
+    "value": 2
+  },
+  "319": {
+    "id": 319,
+    "name": "命中△",
+    "description": "目标「命中」上升2级。",
+    "target": 2,
+    "turn": 3,
+    "type": 1,
+    "subtype": 6,
+    "value": 2
+  },
+  "320": {
+    "id": 320,
+    "name": "回避△",
+    "description": "目标「回避」上升2级。",
+    "target": 2,
+    "turn": 3,
+    "type": 1,
+    "subtype": 7,
+    "value": 2
+  },
+  "321": {
+    "id": 321,
+    "name": "会心攻击△",
+    "description": "目标「会心攻击」上升2级。",
+    "target": 2,
+    "turn": 3,
+    "type": 1,
+    "subtype": 8,
+    "value": 2
+  },
+  "322": {
+    "id": 322,
+    "name": "会心防御△",
+    "description": "目标「会心防御」上升2级。",
+    "target": 2,
+    "turn": 3,
+    "type": 1,
+    "subtype": 9,
+    "value": 2
+  },
+  "323": {
+    "id": 323,
+    "name": "会心命中△",
+    "description": "目标「会心命中」上升2级。",
+    "target": 2,
+    "turn": 3,
+    "type": 1,
+    "subtype": 10,
+    "value": 2
+  },
+  "324": {
+    "id": 324,
+    "name": "会心回避△",
+    "description": "目标「会心回避」上升2级。",
+    "target": 2,
+    "turn": 3,
+    "type": 1,
+    "subtype": 11,
+    "value": 2
+  },
+  "325": {
+    "id": 325,
+    "name": "仇恨值△",
+    "description": "目标「仇恨值」上升2级。",
+    "target": 2,
+    "turn": 3,
+    "type": 1,
+    "subtype": 12,
+    "value": 2
+  },
+  "326": {
+    "id": 326,
+    "name": "阳攻▼",
+    "description": "目标「阳气攻击力」下降2级。",
+    "target": 2,
+    "turn": 3,
+    "type": 2,
+    "subtype": 1,
+    "value": 2
+  },
+  "327": {
+    "id": 327,
+    "name": "阳防▼",
+    "description": "目标「阳气防御力」下降2级。",
+    "target": 2,
+    "turn": 3,
+    "type": 2,
+    "subtype": 2,
+    "value": 2
+  },
+  "328": {
+    "id": 328,
+    "name": "阴攻▼",
+    "description": "目标「阴气攻击力」下降2级。",
+    "target": 2,
+    "turn": 3,
+    "type": 2,
+    "subtype": 3,
+    "value": 2
+  },
+  "329": {
+    "id": 329,
+    "name": "阴防▼",
+    "description": "目标「阴气防御力」下降2级。",
+    "target": 2,
+    "turn": 3,
+    "type": 2,
+    "subtype": 4,
+    "value": 2
+  },
+  "330": {
+    "id": 330,
+    "name": "速度▼",
+    "description": "目标「速度」下降2级。",
+    "target": 2,
+    "turn": 3,
+    "type": 2,
+    "subtype": 5,
+    "value": 2
+  },
+  "331": {
+    "id": 331,
+    "name": "命中▼",
+    "description": "目标「命中」下降2级。",
+    "target": 2,
+    "turn": 3,
+    "type": 2,
+    "subtype": 6,
+    "value": 2
+  },
+  "332": {
+    "id": 332,
+    "name": "回避▼",
+    "description": "目标「回避」下降2级。",
+    "target": 2,
+    "turn": 3,
+    "type": 2,
+    "subtype": 7,
+    "value": 2
+  },
+  "333": {
+    "id": 333,
+    "name": "会心攻击▼",
+    "description": "目标「会心攻击」下降2级。",
+    "target": 2,
+    "turn": 3,
+    "type": 2,
+    "subtype": 8,
+    "value": 2
+  },
+  "334": {
+    "id": 334,
+    "name": "会心防御▼",
+    "description": "目标「会心防御」下降2级。",
+    "target": 2,
+    "turn": 3,
+    "type": 2,
+    "subtype": 9,
+    "value": 2
+  },
+  "335": {
+    "id": 335,
+    "name": "会心命中▼",
+    "description": "目标「会心命中」下降2级。",
+    "target": 2,
+    "turn": 3,
+    "type": 2,
+    "subtype": 10,
+    "value": 2
+  },
+  "336": {
+    "id": 336,
+    "name": "会心回避▼",
+    "description": "目标「会心回避」下降2级。",
+    "target": 2,
+    "turn": 3,
+    "type": 2,
+    "subtype": 11,
+    "value": 2
+  },
+  "337": {
+    "id": 337,
+    "name": "仇恨值▼",
+    "description": "目标「仇恨值」下降2级。",
+    "target": 2,
+    "turn": 3,
+    "type": 2,
+    "subtype": 12,
+    "value": 2
+  },
+  "338": {
+    "id": 338,
+    "name": "阳攻△",
+    "description": "自身「阳气攻击力」上升3级。",
+    "target": 1,
+    "turn": 1,
+    "type": 1,
+    "subtype": 1,
+    "value": 3
+  },
+  "339": {
+    "id": 339,
+    "name": "阳防△",
+    "description": "自身「阳气防御力」上升3级。",
+    "target": 1,
+    "turn": 1,
+    "type": 1,
+    "subtype": 2,
+    "value": 3
+  },
+  "340": {
+    "id": 340,
+    "name": "阴攻△",
+    "description": "自身「阴气攻击力」上升3级。",
+    "target": 1,
+    "turn": 1,
+    "type": 1,
+    "subtype": 3,
+    "value": 3
+  },
+  "341": {
+    "id": 341,
+    "name": "阴防△",
+    "description": "自身「阴气防御力」上升3级。",
+    "target": 1,
+    "turn": 1,
+    "type": 1,
+    "subtype": 4,
+    "value": 3
+  },
+  "342": {
+    "id": 342,
+    "name": "速度△",
+    "description": "自身「速度」上升3级。",
+    "target": 1,
+    "turn": 1,
+    "type": 1,
+    "subtype": 5,
+    "value": 3
+  },
+  "343": {
+    "id": 343,
+    "name": "命中△",
+    "description": "自身「命中」上升3级。",
+    "target": 1,
+    "turn": 1,
+    "type": 1,
+    "subtype": 6,
+    "value": 3
+  },
+  "344": {
+    "id": 344,
+    "name": "回避△",
+    "description": "自身「回避」上升3级。",
+    "target": 1,
+    "turn": 1,
+    "type": 1,
+    "subtype": 7,
+    "value": 3
+  },
+  "345": {
+    "id": 345,
+    "name": "会心攻击△",
+    "description": "自身「会心攻击」上升3级。",
+    "target": 1,
+    "turn": 1,
+    "type": 1,
+    "subtype": 8,
+    "value": 3
+  },
+  "346": {
+    "id": 346,
+    "name": "会心防御△",
+    "description": "自身「会心防御」上升3级。",
+    "target": 1,
+    "turn": 1,
+    "type": 1,
+    "subtype": 9,
+    "value": 3
+  },
+  "347": {
+    "id": 347,
+    "name": "会心命中△",
+    "description": "自身「会心命中」上升3级。",
+    "target": 1,
+    "turn": 1,
+    "type": 1,
+    "subtype": 10,
+    "value": 3
+  },
+  "348": {
+    "id": 348,
+    "name": "会心回避△",
+    "description": "自身「会心回避」上升3级。",
+    "target": 1,
+    "turn": 1,
+    "type": 1,
+    "subtype": 11,
+    "value": 3
+  },
+  "349": {
+    "id": 349,
+    "name": "仇恨值△",
+    "description": "自身「仇恨值」上升3级。",
+    "target": 1,
+    "turn": 1,
+    "type": 1,
+    "subtype": 12,
+    "value": 3
+  },
+  "350": {
+    "id": 350,
+    "name": "阳攻▼",
+    "description": "自身「阳气攻击力」下降3级。",
+    "target": 1,
+    "turn": 1,
+    "type": 2,
+    "subtype": 1,
+    "value": 3
+  },
+  "351": {
+    "id": 351,
+    "name": "阳防▼",
+    "description": "自身「阳气防御力」下降3级。",
+    "target": 1,
+    "turn": 1,
+    "type": 2,
+    "subtype": 2,
+    "value": 3
+  },
+  "352": {
+    "id": 352,
+    "name": "阴攻▼",
+    "description": "自身「阴气攻击力」下降3级。",
+    "target": 1,
+    "turn": 1,
+    "type": 2,
+    "subtype": 3,
+    "value": 3
+  },
+  "353": {
+    "id": 353,
+    "name": "阴防▼",
+    "description": "自身「阴气防御力」下降3级。",
+    "target": 1,
+    "turn": 1,
+    "type": 2,
+    "subtype": 4,
+    "value": 3
+  },
+  "354": {
+    "id": 354,
+    "name": "速度▼",
+    "description": "自身「速度」下降3级。",
+    "target": 1,
+    "turn": 1,
+    "type": 2,
+    "subtype": 5,
+    "value": 3
+  },
+  "355": {
+    "id": 355,
+    "name": "命中▼",
+    "description": "自身「命中」下降3级。",
+    "target": 1,
+    "turn": 1,
+    "type": 2,
+    "subtype": 6,
+    "value": 3
+  },
+  "356": {
+    "id": 356,
+    "name": "回避▼",
+    "description": "自身「回避」下降3级。",
+    "target": 1,
+    "turn": 1,
+    "type": 2,
+    "subtype": 7,
+    "value": 3
+  },
+  "357": {
+    "id": 357,
+    "name": "会心攻击▼",
+    "description": "自身「会心攻击」下降3级。",
+    "target": 1,
+    "turn": 1,
+    "type": 2,
+    "subtype": 8,
+    "value": 3
+  },
+  "358": {
+    "id": 358,
+    "name": "会心防御▼",
+    "description": "自身「会心防御」下降3级。",
+    "target": 1,
+    "turn": 1,
+    "type": 2,
+    "subtype": 9,
+    "value": 3
+  },
+  "359": {
+    "id": 359,
+    "name": "会心命中▼",
+    "description": "自身「会心命中」下降3级。",
+    "target": 1,
+    "turn": 1,
+    "type": 2,
+    "subtype": 10,
+    "value": 3
+  },
+  "360": {
+    "id": 360,
+    "name": "会心回避▼",
+    "description": "自身「会心回避」下降3级。",
+    "target": 1,
+    "turn": 1,
+    "type": 2,
+    "subtype": 11,
+    "value": 3
+  },
+  "361": {
+    "id": 361,
+    "name": "仇恨值▼",
+    "description": "自身「仇恨值」下降3级。",
+    "target": 1,
+    "turn": 1,
+    "type": 2,
+    "subtype": 12,
+    "value": 3
+  },
+  "362": {
+    "id": 362,
+    "name": "阳攻△",
+    "description": "自身「阳气攻击力」上升3级。",
+    "target": 1,
+    "turn": 2,
+    "type": 1,
+    "subtype": 1,
+    "value": 3
+  },
+  "363": {
+    "id": 363,
+    "name": "阳防△",
+    "description": "自身「阳气防御力」上升3级。",
+    "target": 1,
+    "turn": 2,
+    "type": 1,
+    "subtype": 2,
+    "value": 3
+  },
+  "364": {
+    "id": 364,
+    "name": "阴攻△",
+    "description": "自身「阴气攻击力」上升3级。",
+    "target": 1,
+    "turn": 2,
+    "type": 1,
+    "subtype": 3,
+    "value": 3
+  },
+  "365": {
+    "id": 365,
+    "name": "阴防△",
+    "description": "自身「阴气防御力」上升3级。",
+    "target": 1,
+    "turn": 2,
+    "type": 1,
+    "subtype": 4,
+    "value": 3
+  },
+  "366": {
+    "id": 366,
+    "name": "速度△",
+    "description": "自身「速度」上升3级。",
+    "target": 1,
+    "turn": 2,
+    "type": 1,
+    "subtype": 5,
+    "value": 3
+  },
+  "367": {
+    "id": 367,
+    "name": "命中△",
+    "description": "自身「命中」上升3级。",
+    "target": 1,
+    "turn": 2,
+    "type": 1,
+    "subtype": 6,
+    "value": 3
+  },
+  "368": {
+    "id": 368,
+    "name": "回避△",
+    "description": "自身「回避」上升3级。",
+    "target": 1,
+    "turn": 2,
+    "type": 1,
+    "subtype": 7,
+    "value": 3
+  },
+  "369": {
+    "id": 369,
+    "name": "会心攻击△",
+    "description": "自身「会心攻击」上升3级。",
+    "target": 1,
+    "turn": 2,
+    "type": 1,
+    "subtype": 8,
+    "value": 3
+  },
+  "370": {
+    "id": 370,
+    "name": "会心防御△",
+    "description": "自身「会心防御」上升3级。",
+    "target": 1,
+    "turn": 2,
+    "type": 1,
+    "subtype": 9,
+    "value": 3
+  },
+  "371": {
+    "id": 371,
+    "name": "会心命中△",
+    "description": "自身「会心命中」上升3级。",
+    "target": 1,
+    "turn": 2,
+    "type": 1,
+    "subtype": 10,
+    "value": 3
+  },
+  "372": {
+    "id": 372,
+    "name": "会心回避△",
+    "description": "自身「会心回避」上升3级。",
+    "target": 1,
+    "turn": 2,
+    "type": 1,
+    "subtype": 11,
+    "value": 3
+  },
+  "373": {
+    "id": 373,
+    "name": "仇恨值△",
+    "description": "自身「仇恨值」上升3级。",
+    "target": 1,
+    "turn": 2,
+    "type": 1,
+    "subtype": 12,
+    "value": 3
+  },
+  "374": {
+    "id": 374,
+    "name": "阳攻▼",
+    "description": "自身「阳气攻击力」下降3级。",
+    "target": 1,
+    "turn": 2,
+    "type": 2,
+    "subtype": 1,
+    "value": 3
+  },
+  "375": {
+    "id": 375,
+    "name": "阳防▼",
+    "description": "自身「阳气防御力」下降3级。",
+    "target": 1,
+    "turn": 2,
+    "type": 2,
+    "subtype": 2,
+    "value": 3
+  },
+  "376": {
+    "id": 376,
+    "name": "阴攻▼",
+    "description": "自身「阴气攻击力」下降3级。",
+    "target": 1,
+    "turn": 2,
+    "type": 2,
+    "subtype": 3,
+    "value": 3
+  },
+  "377": {
+    "id": 377,
+    "name": "阴防▼",
+    "description": "自身「阴气防御力」下降3级。",
+    "target": 1,
+    "turn": 2,
+    "type": 2,
+    "subtype": 4,
+    "value": 3
+  },
+  "378": {
+    "id": 378,
+    "name": "速度▼",
+    "description": "自身「速度」下降3级。",
+    "target": 1,
+    "turn": 2,
+    "type": 2,
+    "subtype": 5,
+    "value": 3
+  },
+  "379": {
+    "id": 379,
+    "name": "命中▼",
+    "description": "自身「命中」下降3级。",
+    "target": 1,
+    "turn": 2,
+    "type": 2,
+    "subtype": 6,
+    "value": 3
+  },
+  "380": {
+    "id": 380,
+    "name": "回避▼",
+    "description": "自身「回避」下降3级。",
+    "target": 1,
+    "turn": 2,
+    "type": 2,
+    "subtype": 7,
+    "value": 3
+  },
+  "381": {
+    "id": 381,
+    "name": "会心攻击▼",
+    "description": "自身「会心攻击」下降3级。",
+    "target": 1,
+    "turn": 2,
+    "type": 2,
+    "subtype": 8,
+    "value": 3
+  },
+  "382": {
+    "id": 382,
+    "name": "会心防御▼",
+    "description": "自身「会心防御」下降3级。",
+    "target": 1,
+    "turn": 2,
+    "type": 2,
+    "subtype": 9,
+    "value": 3
+  },
+  "383": {
+    "id": 383,
+    "name": "会心命中▼",
+    "description": "自身「会心命中」下降3级。",
+    "target": 1,
+    "turn": 2,
+    "type": 2,
+    "subtype": 10,
+    "value": 3
+  },
+  "384": {
+    "id": 384,
+    "name": "会心回避▼",
+    "description": "自身「会心回避」下降3级。",
+    "target": 1,
+    "turn": 2,
+    "type": 2,
+    "subtype": 11,
+    "value": 3
+  },
+  "385": {
+    "id": 385,
+    "name": "仇恨值▼",
+    "description": "自身「仇恨值」下降3级。",
+    "target": 1,
+    "turn": 2,
+    "type": 2,
+    "subtype": 12,
+    "value": 3
+  },
+  "386": {
+    "id": 386,
+    "name": "阳攻△",
+    "description": "自身「阳气攻击力」上升3级。",
+    "target": 1,
+    "turn": 3,
+    "type": 1,
+    "subtype": 1,
+    "value": 3
+  },
+  "387": {
+    "id": 387,
+    "name": "阳防△",
+    "description": "自身「阳气防御力」上升3级。",
+    "target": 1,
+    "turn": 3,
+    "type": 1,
+    "subtype": 2,
+    "value": 3
+  },
+  "388": {
+    "id": 388,
+    "name": "阴攻△",
+    "description": "自身「阴气攻击力」上升3级。",
+    "target": 1,
+    "turn": 3,
+    "type": 1,
+    "subtype": 3,
+    "value": 3
+  },
+  "389": {
+    "id": 389,
+    "name": "阴防△",
+    "description": "自身「阴气防御力」上升3级。",
+    "target": 1,
+    "turn": 3,
+    "type": 1,
+    "subtype": 4,
+    "value": 3
+  },
+  "390": {
+    "id": 390,
+    "name": "速度△",
+    "description": "自身「速度」上升3级。",
+    "target": 1,
+    "turn": 3,
+    "type": 1,
+    "subtype": 5,
+    "value": 3
+  },
+  "391": {
+    "id": 391,
+    "name": "命中△",
+    "description": "自身「命中」上升3级。",
+    "target": 1,
+    "turn": 3,
+    "type": 1,
+    "subtype": 6,
+    "value": 3
+  },
+  "392": {
+    "id": 392,
+    "name": "回避△",
+    "description": "自身「回避」上升3级。",
+    "target": 1,
+    "turn": 3,
+    "type": 1,
+    "subtype": 7,
+    "value": 3
+  },
+  "393": {
+    "id": 393,
+    "name": "会心攻击△",
+    "description": "自身「会心攻击」上升3级。",
+    "target": 1,
+    "turn": 3,
+    "type": 1,
+    "subtype": 8,
+    "value": 3
+  },
+  "394": {
+    "id": 394,
+    "name": "会心防御△",
+    "description": "自身「会心防御」上升3级。",
+    "target": 1,
+    "turn": 3,
+    "type": 1,
+    "subtype": 9,
+    "value": 3
+  },
+  "395": {
+    "id": 395,
+    "name": "会心命中△",
+    "description": "自身「会心命中」上升3级。",
+    "target": 1,
+    "turn": 3,
+    "type": 1,
+    "subtype": 10,
+    "value": 3
+  },
+  "396": {
+    "id": 396,
+    "name": "会心回避△",
+    "description": "自身「会心回避」上升3级。",
+    "target": 1,
+    "turn": 3,
+    "type": 1,
+    "subtype": 11,
+    "value": 3
+  },
+  "397": {
+    "id": 397,
+    "name": "仇恨值△",
+    "description": "自身「仇恨值」上升3级。",
+    "target": 1,
+    "turn": 3,
+    "type": 1,
+    "subtype": 12,
+    "value": 3
+  },
+  "398": {
+    "id": 398,
+    "name": "阳攻▼",
+    "description": "自身「阳气攻击力」下降3级。",
+    "target": 1,
+    "turn": 3,
+    "type": 2,
+    "subtype": 1,
+    "value": 3
+  },
+  "399": {
+    "id": 399,
+    "name": "阳防▼",
+    "description": "自身「阳气防御力」下降3级。",
+    "target": 1,
+    "turn": 3,
+    "type": 2,
+    "subtype": 2,
+    "value": 3
+  },
+  "400": {
+    "id": 400,
+    "name": "阴攻▼",
+    "description": "自身「阴气攻击力」下降3级。",
+    "target": 1,
+    "turn": 3,
+    "type": 2,
+    "subtype": 3,
+    "value": 3
+  },
+  "401": {
+    "id": 401,
+    "name": "阴防▼",
+    "description": "自身「阴气防御力」下降3级。",
+    "target": 1,
+    "turn": 3,
+    "type": 2,
+    "subtype": 4,
+    "value": 3
+  },
+  "402": {
+    "id": 402,
+    "name": "速度▼",
+    "description": "自身「速度」下降3级。",
+    "target": 1,
+    "turn": 3,
+    "type": 2,
+    "subtype": 5,
+    "value": 3
+  },
+  "403": {
+    "id": 403,
+    "name": "命中▼",
+    "description": "自身「命中」下降3级。",
+    "target": 1,
+    "turn": 3,
+    "type": 2,
+    "subtype": 6,
+    "value": 3
+  },
+  "404": {
+    "id": 404,
+    "name": "回避▼",
+    "description": "自身「回避」下降3级。",
+    "target": 1,
+    "turn": 3,
+    "type": 2,
+    "subtype": 7,
+    "value": 3
+  },
+  "405": {
+    "id": 405,
+    "name": "会心攻击▼",
+    "description": "自身「会心攻击」下降3级。",
+    "target": 1,
+    "turn": 3,
+    "type": 2,
+    "subtype": 8,
+    "value": 3
+  },
+  "406": {
+    "id": 406,
+    "name": "会心防御▼",
+    "description": "自身「会心防御」下降3级。",
+    "target": 1,
+    "turn": 3,
+    "type": 2,
+    "subtype": 9,
+    "value": 3
+  },
+  "407": {
+    "id": 407,
+    "name": "会心命中▼",
+    "description": "自身「会心命中」下降3级。",
+    "target": 1,
+    "turn": 3,
+    "type": 2,
+    "subtype": 10,
+    "value": 3
+  },
+  "408": {
+    "id": 408,
+    "name": "会心回避▼",
+    "description": "自身「会心回避」下降3级。",
+    "target": 1,
+    "turn": 3,
+    "type": 2,
+    "subtype": 11,
+    "value": 3
+  },
+  "409": {
+    "id": 409,
+    "name": "仇恨值▼",
+    "description": "自身「仇恨值」下降3级。",
+    "target": 1,
+    "turn": 3,
+    "type": 2,
+    "subtype": 12,
+    "value": 3
+  },
+  "410": {
+    "id": 410,
+    "name": "阳攻△",
+    "description": "目标「阳气攻击力」上升3级。",
+    "target": 2,
+    "turn": 1,
+    "type": 1,
+    "subtype": 1,
+    "value": 3
+  },
+  "411": {
+    "id": 411,
+    "name": "阳防△",
+    "description": "目标「阳气防御力」上升3级。",
+    "target": 2,
+    "turn": 1,
+    "type": 1,
+    "subtype": 2,
+    "value": 3
+  },
+  "412": {
+    "id": 412,
+    "name": "阴攻△",
+    "description": "目标「阴气攻击力」上升3级。",
+    "target": 2,
+    "turn": 1,
+    "type": 1,
+    "subtype": 3,
+    "value": 3
+  },
+  "413": {
+    "id": 413,
+    "name": "阴防△",
+    "description": "目标「阴气防御力」上升3级。",
+    "target": 2,
+    "turn": 1,
+    "type": 1,
+    "subtype": 4,
+    "value": 3
+  },
+  "414": {
+    "id": 414,
+    "name": "速度△",
+    "description": "目标「速度」上升3级。",
+    "target": 2,
+    "turn": 1,
+    "type": 1,
+    "subtype": 5,
+    "value": 3
+  },
+  "415": {
+    "id": 415,
+    "name": "命中△",
+    "description": "目标「命中」上升3级。",
+    "target": 2,
+    "turn": 1,
+    "type": 1,
+    "subtype": 6,
+    "value": 3
+  },
+  "416": {
+    "id": 416,
+    "name": "回避△",
+    "description": "目标「回避」上升3级。",
+    "target": 2,
+    "turn": 1,
+    "type": 1,
+    "subtype": 7,
+    "value": 3
+  },
+  "417": {
+    "id": 417,
+    "name": "会心攻击△",
+    "description": "目标「会心攻击」上升3级。",
+    "target": 2,
+    "turn": 1,
+    "type": 1,
+    "subtype": 8,
+    "value": 3
+  },
+  "418": {
+    "id": 418,
+    "name": "会心防御△",
+    "description": "目标「会心防御」上升3级。",
+    "target": 2,
+    "turn": 1,
+    "type": 1,
+    "subtype": 9,
+    "value": 3
+  },
+  "419": {
+    "id": 419,
+    "name": "会心命中△",
+    "description": "目标「会心命中」上升3级。",
+    "target": 2,
+    "turn": 1,
+    "type": 1,
+    "subtype": 10,
+    "value": 3
+  },
+  "420": {
+    "id": 420,
+    "name": "会心回避△",
+    "description": "目标「会心回避」上升3级。",
+    "target": 2,
+    "turn": 1,
+    "type": 1,
+    "subtype": 11,
+    "value": 3
+  },
+  "421": {
+    "id": 421,
+    "name": "仇恨值△",
+    "description": "目标「仇恨值」上升3级。",
+    "target": 2,
+    "turn": 1,
+    "type": 1,
+    "subtype": 12,
+    "value": 3
+  },
+  "422": {
+    "id": 422,
+    "name": "阳攻▼",
+    "description": "目标「阳气攻击力」下降3级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 1,
+    "value": 3
+  },
+  "423": {
+    "id": 423,
+    "name": "阳防▼",
+    "description": "目标「阳气防御力」下降3级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 2,
+    "value": 3
+  },
+  "424": {
+    "id": 424,
+    "name": "阴攻▼",
+    "description": "目标「阴气攻击力」下降3级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 3,
+    "value": 3
+  },
+  "425": {
+    "id": 425,
+    "name": "阴防▼",
+    "description": "目标「阴气防御力」下降3级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 4,
+    "value": 3
+  },
+  "426": {
+    "id": 426,
+    "name": "速度▼",
+    "description": "目标「速度」下降3级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 5,
+    "value": 3
+  },
+  "427": {
+    "id": 427,
+    "name": "命中▼",
+    "description": "目标「命中」下降3级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 6,
+    "value": 3
+  },
+  "428": {
+    "id": 428,
+    "name": "回避▼",
+    "description": "目标「回避」下降3级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 7,
+    "value": 3
+  },
+  "429": {
+    "id": 429,
+    "name": "会心攻击▼",
+    "description": "目标「会心攻击」下降3级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 8,
+    "value": 3
+  },
+  "430": {
+    "id": 430,
+    "name": "会心防御▼",
+    "description": "目标「会心防御」下降3级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 9,
+    "value": 3
+  },
+  "431": {
+    "id": 431,
+    "name": "会心命中▼",
+    "description": "目标「会心命中」下降3级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 10,
+    "value": 3
+  },
+  "432": {
+    "id": 432,
+    "name": "会心回避▼",
+    "description": "目标「会心回避」下降3级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 11,
+    "value": 3
+  },
+  "433": {
+    "id": 433,
+    "name": "仇恨值▼",
+    "description": "目标「仇恨值」下降3级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 12,
+    "value": 3
+  },
+  "434": {
+    "id": 434,
+    "name": "燃烧",
+    "description": "目标「结界」附加结界异常「燃烧」。",
+    "target": 2,
+    "turn": 1,
+    "type": 6,
+    "subtype": 1,
+    "value": 3
+  },
+  "435": {
+    "id": 435,
+    "name": "冷却",
+    "description": "目标「结界」附加结界异常「冻结」。",
+    "target": 2,
+    "turn": 1,
+    "type": 6,
+    "subtype": 2,
+    "value": 3
+  },
+  "436": {
+    "id": 436,
+    "name": "带电",
+    "description": "目标「结界」附加结界异常「感电」。",
+    "target": 2,
+    "turn": 1,
+    "type": 6,
+    "subtype": 3,
+    "value": 3
+  },
+  "437": {
+    "id": 437,
+    "name": "喷毒",
+    "description": "目标「结界」附加结界异常「毒雾」。",
+    "target": 2,
+    "turn": 1,
+    "type": 6,
+    "subtype": 4,
+    "value": 3
+  },
+  "438": {
+    "id": 438,
+    "name": "烟幕",
+    "description": "目标「结界」附加结界异常「黑暗」。",
+    "target": 2,
+    "turn": 1,
+    "type": 6,
+    "subtype": 5,
+    "value": 3
+  },
+  "439": {
+    "id": 439,
+    "name": "冲击",
+    "description": "对目标「击昏」（行动取消）效果。",
+    "target": 2,
+    "turn": 1,
+    "type": 7,
+    "subtype": 1,
+    "value": 3
+  },
+  "440": {
+    "id": 440,
+    "name": "粘着",
+    "description": "对目标「迟缓」（行动顺后退）效果。",
+    "target": 2,
+    "turn": 1,
+    "type": 7,
+    "subtype": 2,
+    "value": 3
+  },
+  "441": {
+    "id": 441,
+    "name": "阳攻△",
+    "description": "目标「阳气攻击力」上升3级。",
+    "target": 2,
+    "turn": 2,
+    "type": 1,
+    "subtype": 1,
+    "value": 3
+  },
+  "442": {
+    "id": 442,
+    "name": "阳防△",
+    "description": "目标「阳气防御力」上升3级。",
+    "target": 2,
+    "turn": 2,
+    "type": 1,
+    "subtype": 2,
+    "value": 3
+  },
+  "443": {
+    "id": 443,
+    "name": "阴攻△",
+    "description": "目标「阴气攻击力」上升3级。",
+    "target": 2,
+    "turn": 2,
+    "type": 1,
+    "subtype": 3,
+    "value": 3
+  },
+  "444": {
+    "id": 444,
+    "name": "阴防△",
+    "description": "目标「阴气防御力」上升3级。",
+    "target": 2,
+    "turn": 2,
+    "type": 1,
+    "subtype": 4,
+    "value": 3
+  },
+  "445": {
+    "id": 445,
+    "name": "速度△",
+    "description": "目标「速度」上升3级。",
+    "target": 2,
+    "turn": 2,
+    "type": 1,
+    "subtype": 5,
+    "value": 3
+  },
+  "446": {
+    "id": 446,
+    "name": "命中△",
+    "description": "目标「命中」上升3级。",
+    "target": 2,
+    "turn": 2,
+    "type": 1,
+    "subtype": 6,
+    "value": 3
+  },
+  "447": {
+    "id": 447,
+    "name": "回避△",
+    "description": "目标「回避」上升3级。",
+    "target": 2,
+    "turn": 2,
+    "type": 1,
+    "subtype": 7,
+    "value": 3
+  },
+  "448": {
+    "id": 448,
+    "name": "会心攻击△",
+    "description": "目标「会心攻击」上升3级。",
+    "target": 2,
+    "turn": 2,
+    "type": 1,
+    "subtype": 8,
+    "value": 3
+  },
+  "449": {
+    "id": 449,
+    "name": "会心防御△",
+    "description": "目标「会心防御」上升3级。",
+    "target": 2,
+    "turn": 2,
+    "type": 1,
+    "subtype": 9,
+    "value": 3
+  },
+  "450": {
+    "id": 450,
+    "name": "会心命中△",
+    "description": "目标「会心命中」上升3级。",
+    "target": 2,
+    "turn": 2,
+    "type": 1,
+    "subtype": 10,
+    "value": 3
+  },
+  "451": {
+    "id": 451,
+    "name": "会心回避△",
+    "description": "目标「会心回避」上升3级。",
+    "target": 2,
+    "turn": 2,
+    "type": 1,
+    "subtype": 11,
+    "value": 3
+  },
+  "452": {
+    "id": 452,
+    "name": "仇恨值△",
+    "description": "目标「仇恨值」上升3级。",
+    "target": 2,
+    "turn": 2,
+    "type": 1,
+    "subtype": 12,
+    "value": 3
+  },
+  "453": {
+    "id": 453,
+    "name": "阳攻▼",
+    "description": "目标「阳气攻击力」下降3级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 1,
+    "value": 3
+  },
+  "454": {
+    "id": 454,
+    "name": "阳防▼",
+    "description": "目标「阳气防御力」下降3级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 2,
+    "value": 3
+  },
+  "455": {
+    "id": 455,
+    "name": "阴攻▼",
+    "description": "目标「阴气攻击力」下降3级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 3,
+    "value": 3
+  },
+  "456": {
+    "id": 456,
+    "name": "阴防▼",
+    "description": "目标「阴气防御力」下降3级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 4,
+    "value": 3
+  },
+  "457": {
+    "id": 457,
+    "name": "速度▼",
+    "description": "目标「速度」下降3级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 5,
+    "value": 3
+  },
+  "458": {
+    "id": 458,
+    "name": "命中▼",
+    "description": "目标「命中」下降3级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 6,
+    "value": 3
+  },
+  "459": {
+    "id": 459,
+    "name": "回避▼",
+    "description": "目标「回避」下降3级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 7,
+    "value": 3
+  },
+  "460": {
+    "id": 460,
+    "name": "会心攻击▼",
+    "description": "目标「会心攻击」下降3级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 8,
+    "value": 3
+  },
+  "461": {
+    "id": 461,
+    "name": "会心防御▼",
+    "description": "目标「会心防御」下降3级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 9,
+    "value": 3
+  },
+  "462": {
+    "id": 462,
+    "name": "会心命中▼",
+    "description": "目标「会心命中」下降3级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 10,
+    "value": 3
+  },
+  "463": {
+    "id": 463,
+    "name": "会心回避▼",
+    "description": "目标「会心回避」下降3级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 11,
+    "value": 3
+  },
+  "464": {
+    "id": 464,
+    "name": "仇恨值▼",
+    "description": "目标「仇恨值」下降3级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 12,
+    "value": 3
+  },
+  "465": {
+    "id": 465,
+    "name": "阳攻△",
+    "description": "目标「阳气攻击力」上升3级。",
+    "target": 2,
+    "turn": 3,
+    "type": 1,
+    "subtype": 1,
+    "value": 3
+  },
+  "466": {
+    "id": 466,
+    "name": "阳防△",
+    "description": "目标「阳气防御力」上升3级。",
+    "target": 2,
+    "turn": 3,
+    "type": 1,
+    "subtype": 2,
+    "value": 3
+  },
+  "467": {
+    "id": 467,
+    "name": "阴攻△",
+    "description": "目标「阴气攻击力」上升3级。",
+    "target": 2,
+    "turn": 3,
+    "type": 1,
+    "subtype": 3,
+    "value": 3
+  },
+  "468": {
+    "id": 468,
+    "name": "阴防△",
+    "description": "目标「阴气防御力」上升3级。",
+    "target": 2,
+    "turn": 3,
+    "type": 1,
+    "subtype": 4,
+    "value": 3
+  },
+  "469": {
+    "id": 469,
+    "name": "速度△",
+    "description": "目标「速度」上升3级。",
+    "target": 2,
+    "turn": 3,
+    "type": 1,
+    "subtype": 5,
+    "value": 3
+  },
+  "470": {
+    "id": 470,
+    "name": "命中△",
+    "description": "目标「命中」上升3级。",
+    "target": 2,
+    "turn": 3,
+    "type": 1,
+    "subtype": 6,
+    "value": 3
+  },
+  "471": {
+    "id": 471,
+    "name": "回避△",
+    "description": "目标「回避」上升3级。",
+    "target": 2,
+    "turn": 3,
+    "type": 1,
+    "subtype": 7,
+    "value": 3
+  },
+  "472": {
+    "id": 472,
+    "name": "会心攻击△",
+    "description": "目标「会心攻击」上升3级。",
+    "target": 2,
+    "turn": 3,
+    "type": 1,
+    "subtype": 8,
+    "value": 3
+  },
+  "473": {
+    "id": 473,
+    "name": "会心防御△",
+    "description": "目标「会心防御」上升3级。",
+    "target": 2,
+    "turn": 3,
+    "type": 1,
+    "subtype": 9,
+    "value": 3
+  },
+  "474": {
+    "id": 474,
+    "name": "会心命中△",
+    "description": "目标「会心命中」上升3级。",
+    "target": 2,
+    "turn": 3,
+    "type": 1,
+    "subtype": 10,
+    "value": 3
+  },
+  "475": {
+    "id": 475,
+    "name": "会心回避△",
+    "description": "目标「会心回避」上升3级。",
+    "target": 2,
+    "turn": 3,
+    "type": 1,
+    "subtype": 11,
+    "value": 3
+  },
+  "476": {
+    "id": 476,
+    "name": "仇恨值△",
+    "description": "目标「仇恨值」上升3级。",
+    "target": 2,
+    "turn": 3,
+    "type": 1,
+    "subtype": 12,
+    "value": 3
+  },
+  "477": {
+    "id": 477,
+    "name": "阳攻▼",
+    "description": "目标「阳气攻击力」下降3级。",
+    "target": 2,
+    "turn": 3,
+    "type": 2,
+    "subtype": 1,
+    "value": 3
+  },
+  "478": {
+    "id": 478,
+    "name": "阳防▼",
+    "description": "目标「阳气防御力」下降3级。",
+    "target": 2,
+    "turn": 3,
+    "type": 2,
+    "subtype": 2,
+    "value": 3
+  },
+  "479": {
+    "id": 479,
+    "name": "阴攻▼",
+    "description": "目标「阴气攻击力」下降3级。",
+    "target": 2,
+    "turn": 3,
+    "type": 2,
+    "subtype": 3,
+    "value": 3
+  },
+  "480": {
+    "id": 480,
+    "name": "阴防▼",
+    "description": "目标「阴气防御力」下降3级。",
+    "target": 2,
+    "turn": 3,
+    "type": 2,
+    "subtype": 4,
+    "value": 3
+  },
+  "481": {
+    "id": 481,
+    "name": "速度▼",
+    "description": "目标「速度」下降3级。",
+    "target": 2,
+    "turn": 3,
+    "type": 2,
+    "subtype": 5,
+    "value": 3
+  },
+  "482": {
+    "id": 482,
+    "name": "命中▼",
+    "description": "目标「命中」下降3级。",
+    "target": 2,
+    "turn": 3,
+    "type": 2,
+    "subtype": 6,
+    "value": 3
+  },
+  "483": {
+    "id": 483,
+    "name": "回避▼",
+    "description": "目标「回避」下降3级。",
+    "target": 2,
+    "turn": 3,
+    "type": 2,
+    "subtype": 7,
+    "value": 3
+  },
+  "484": {
+    "id": 484,
+    "name": "会心攻击▼",
+    "description": "目标「会心攻击」下降3级。",
+    "target": 2,
+    "turn": 3,
+    "type": 2,
+    "subtype": 8,
+    "value": 3
+  },
+  "485": {
+    "id": 485,
+    "name": "会心防御▼",
+    "description": "目标「会心防御」下降3级。",
+    "target": 2,
+    "turn": 3,
+    "type": 2,
+    "subtype": 9,
+    "value": 3
+  },
+  "486": {
+    "id": 486,
+    "name": "会心命中▼",
+    "description": "目标「会心命中」下降3级。",
+    "target": 2,
+    "turn": 3,
+    "type": 2,
+    "subtype": 10,
+    "value": 3
+  },
+  "487": {
+    "id": 487,
+    "name": "会心回避▼",
+    "description": "目标「会心回避」下降3级。",
+    "target": 2,
+    "turn": 3,
+    "type": 2,
+    "subtype": 11,
+    "value": 3
+  },
+  "488": {
+    "id": 488,
+    "name": "仇恨值▼",
+    "description": "目标「仇恨值」下降3级。",
+    "target": 2,
+    "turn": 3,
+    "type": 2,
+    "subtype": 12,
+    "value": 3
+  },
+  "489": {
+    "id": 489,
+    "name": "阴攻▼",
+    "description": "目标「阴气攻击力」下降6级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 3,
+    "value": 6
+  },
+  "490": {
+    "id": 490,
+    "name": "阳攻▼",
+    "description": "目标「阳气攻击力」下降6级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 1,
+    "value": 6
+  },
+  "491": {
+    "id": 491,
+    "name": "阴防▼",
+    "description": "目标「阴气防御力」下降5级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 4,
+    "value": 5
+  },
+  "492": {
+    "id": 492,
+    "name": "阳防▼",
+    "description": "目标「阳气防御力」下降5级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 2,
+    "value": 5
+  },
+  "493": {
+    "id": 493,
+    "name": "会心回避▼",
+    "description": "目标「会心回避」下降7级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 11,
+    "value": 7
+  },
+  "494": {
+    "id": 494,
+    "name": "命中▼",
+    "description": "目标「命中」下降3级。",
+    "target": 2,
+    "turn": 3,
+    "type": 2,
+    "subtype": 6,
+    "value": 5
+  },
+  "495": {
+    "id": 495,
+    "name": "带电",
+    "description": "目标「结界」附加结界异常「感电」。",
+    "target": 2,
+    "turn": 2,
+    "type": 6,
+    "subtype": 3,
+    "value": 1
+  },
+  "496": {
+    "id": 496,
+    "name": "带电",
+    "description": "目标「结界」附加结界异常「感电」。",
+    "target": 2,
+    "turn": 2,
+    "type": 6,
+    "subtype": 3,
+    "value": 2
+  },
+  "497": {
+    "id": 497,
+    "name": "冷却",
+    "description": "目标「结界」附加结界异常「冻结」。",
+    "target": 2,
+    "turn": 2,
+    "type": 6,
+    "subtype": 2,
+    "value": 1
+  },
+  "498": {
+    "id": 498,
+    "name": "冷却",
+    "description": "目标「结界」附加结界异常「冻结」。",
+    "target": 2,
+    "turn": 2,
+    "type": 6,
+    "subtype": 2,
+    "value": 2
+  },
+  "522": {
+    "id": 522,
+    "name": "烟幕",
+    "description": "目标「结界」附加结界异常「黑暗」。",
+    "target": 2,
+    "turn": 2,
+    "type": 6,
+    "subtype": 5,
+    "value": 2
+  },
+  "524": {
+    "id": 524,
+    "name": "冷却",
+    "description": "目标「结界」附加结界异常「冻结」。",
+    "target": 2,
+    "turn": 2,
+    "type": 6,
+    "subtype": 2,
+    "value": 3
+  },
+  "526": {
+    "id": 526,
+    "name": "阳防▼",
+    "description": "目标「阳气防御力」下降7级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 2,
+    "value": 7
+  },
+  "527": {
+    "id": 527,
+    "name": "会心攻击▼",
+    "description": "目标「会心攻击」下降5级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 8,
+    "value": 5
+  },
+  "528": {
+    "id": 528,
+    "name": "会心回避▼",
+    "description": "目标「会心回避」下降6级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 11,
+    "value": 6
+  },
+  "529": {
+    "id": 529,
+    "name": "燃烧",
+    "description": "目标「结界」附加结界异常「燃烧」。",
+    "target": 2,
+    "turn": 2,
+    "type": 6,
+    "subtype": 1,
+    "value": 2
+  },
+  "530": {
+    "id": 530,
+    "name": "阳攻▼",
+    "description": "目标「阳气攻击力」下降5级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 1,
+    "value": 5
+  },
+  "531": {
+    "id": 531,
+    "name": "会心命中▼",
+    "description": "目标「会心命中」下降6级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 10,
+    "value": 6
+  },
+  "532": {
+    "id": 532,
+    "name": "会心攻击▼",
+    "description": "目标「会心攻击」下降7级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 8,
+    "value": 7
+  },
+  "533": {
+    "id": 533,
+    "name": "会心回避▼",
+    "description": "目标「会心回避」下降8级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 11,
+    "value": 8
+  },
+  "534": {
+    "id": 534,
+    "name": "带电",
+    "description": "目标「结界」附加结界异常「感电」。",
+    "target": 2,
+    "turn": 2,
+    "type": 6,
+    "subtype": 3,
+    "value": 3
+  },
+  "535": {
+    "id": 535,
+    "name": "燃烧",
+    "description": "目标「结界」附加结界异常「燃烧」。",
+    "target": 2,
+    "turn": 2,
+    "type": 6,
+    "subtype": 1,
+    "value": 3
+  },
+  "536": {
+    "id": 536,
+    "name": "烟幕",
+    "description": "目标「结界」附加结界异常「黑暗」。",
+    "target": 2,
+    "turn": 2,
+    "type": 6,
+    "subtype": 5,
+    "value": 3
+  },
+  "537": {
+    "id": 537,
+    "name": "阳攻▼",
+    "description": "目标「阳气攻击力」下降7级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 1,
+    "value": 7
+  },
+  "538": {
+    "id": 538,
+    "name": "阴防▼",
+    "description": "目标「阴气防御力」下降7级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 4,
+    "value": 7
+  },
+  "539": {
+    "id": 539,
+    "name": "会心命中▼",
+    "description": "目标「会心命中」下降8级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 10,
+    "value": 8
+  },
+  "540": {
+    "id": 540,
+    "name": "会心回避▼",
+    "description": "目标「会心回避」下降5级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 11,
+    "value": 5
+  },
+  "542": {
+    "id": 542,
+    "name": "回避▼",
+    "description": "目标「回避」下降5级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 7,
+    "value": 5
+  },
+  "543": {
+    "id": 543,
+    "name": "回避▼",
+    "description": "目标「回避」下降7级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 7,
+    "value": 7
+  },
+  "545": {
+    "id": 545,
+    "name": "回避▼",
+    "description": "目标「回避」下降6级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 7,
+    "value": 6
+  },
+  "546": {
+    "id": 546,
+    "name": "命中▼",
+    "description": "目标「命中」下降4级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 6,
+    "value": 4
+  },
+  "547": {
+    "id": 547,
+    "name": "阳攻▼",
+    "description": "目标「阳攻」下降8级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 1,
+    "value": 8
+  },
+  "548": {
+    "id": 548,
+    "name": "阴攻▼",
+    "description": "目标「阴攻」下降8级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 3,
+    "value": 8
+  },
+  "549": {
+    "id": 549,
+    "name": "阴攻▼",
+    "description": "目标「阴攻」下降7级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 3,
+    "value": 7
+  },
+  "550": {
+    "id": 550,
+    "name": "喷毒",
+    "description": "目标「结界」附加结界异常「毒雾」。",
+    "target": 2,
+    "turn": 2,
+    "type": 6,
+    "subtype": 4,
+    "value": 2
+  },
+  "551": {
+    "id": 551,
+    "name": "阴攻▼",
+    "description": "目标「阴气攻击力」下降5级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 3,
+    "value": 5
+  },
+  "554": {
+    "id": 554,
+    "name": "阴攻▼",
+    "description": "目标「阳攻」下降6级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 3,
+    "value": 6
+  },
+  "555": {
+    "id": 555,
+    "name": "阳攻▼",
+    "description": "目标「阴攻」下降6级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 1,
+    "value": 6
+  },
+  "557": {
+    "id": 557,
+    "name": "阳防▼",
+    "description": "目标「阳气防御力」下降7级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 2,
+    "value": 7
+  },
+  "558": {
+    "id": 558,
+    "name": "喷毒",
+    "description": "目标「结界」附加结界异常「毒雾」。",
+    "target": 2,
+    "turn": 2,
+    "type": 6,
+    "subtype": 4,
+    "value": 3
+  },
+  "559": {
+    "id": 559,
+    "name": "回避▼",
+    "description": "目标「回避」下降4级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 7,
+    "value": 4
+  },
+  "561": {
+    "id": 561,
+    "name": "仇恨值△",
+    "description": "目标「仇恨值」上升6级。",
+    "target": 2,
+    "turn": 1,
+    "type": 1,
+    "subtype": 12,
+    "value": 6
+  },
+  "562": {
+    "id": 562,
+    "name": "仇恨值△",
+    "description": "目标「仇恨值」上升8级。",
+    "target": 2,
+    "turn": 1,
+    "type": 1,
+    "subtype": 12,
+    "value": 8
+  },
+  "563": {
+    "id": 563,
+    "name": "阳防▼",
+    "description": "目标「阳气防御力」下降5级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 2,
+    "value": 5
+  },
+  "564": {
+    "id": 564,
+    "name": "会心防御▼",
+    "description": "目标「会心防御」下降5级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 9,
+    "value": 5
+  },
+  "565": {
+    "id": 565,
+    "name": "速度▼",
+    "description": "目标「速度」下降5级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 5,
+    "value": 5
+  },
+  "566": {
+    "id": 566,
+    "name": "速度▼",
+    "description": "目标「速度」下降7级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 5,
+    "value": 7
+  },
+  "567": {
+    "id": 567,
+    "name": "会心防御▼",
+    "description": "目标「会心防御」下降7级。",
+    "target": 2,
+    "turn": 2,
+    "type": 2,
+    "subtype": 9,
+    "value": 7
+  },
+  "568": {
+    "id": 568,
+    "name": "阴防▼",
+    "description": "目标「阴气防御力」下降5级。",
+    "target": 2,
+    "turn": 1,
+    "type": 2,
+    "subtype": 4,
+    "value": 5
+  },
+  "569": {
+    "id": 569,
+    "name": "喷毒",
+    "description": "目标「结界」附加结界异常「毒雾」。",
+    "target": 2,
+    "turn": 2,
+    "type": 6,
+    "subtype": 4,
+    "value": 4
+  },
+  "570": {
+    "id": 570,
+    "name": "阴攻△",
+    "description": "自身「阴气攻击力」上升3级。",
+    "target": 1,
+    "turn": 4,
+    "type": 1,
+    "subtype": 3,
+    "value": 3
+  },
+  "571": {
+    "id": 571,
+    "name": "阴防▼",
+    "description": "目标「阴气防御力」下降3级。",
+    "target": 2,
+    "turn": 4,
+    "type": 2,
+    "subtype": 4,
+    "value": 3
+  },
+  "572": {
+    "id": 572,
+    "name": "阴攻△",
+    "description": "自身「阴气攻击力」上升4级。",
+    "target": 1,
+    "turn": 4,
+    "type": 1,
+    "subtype": 3,
+    "value": 4
+  },
+  "573": {
+    "id": 573,
+    "name": "阴防▼",
+    "description": "目标「阴气防御力」下降4级。",
+    "target": 2,
+    "turn": 4,
+    "type": 2,
+    "subtype": 4,
+    "value": 4
+  },
+  "574": {
+    "id": 574,
+    "name": "燃烧",
+    "description": "自身「结界」附加结界异常「燃烧」。",
+    "target": 1,
+    "turn": 1,
+    "type": 6,
+    "subtype": 1,
+    "value": 3
+  },
+  "575": {
+    "id": 575,
+    "name": "冷却",
+    "description": "自身「结界」附加结界异常「冻结」。",
+    "target": 1,
+    "turn": 1,
+    "type": 6,
+    "subtype": 2,
+    "value": 3
+  },
+  "576": {
+    "id": 576,
+    "name": "带电",
+    "description": "自身「结界」附加结界异常「感电」。",
+    "target": 1,
+    "turn": 1,
+    "type": 6,
+    "subtype": 3,
+    "value": 3
+  },
+  "577": {
+    "id": 577,
+    "name": "喷毒",
+    "description": "自身「结界」附加结界异常「毒雾」。",
+    "target": 1,
+    "turn": 1,
+    "type": 6,
+    "subtype": 4,
+    "value": 3
+  },
+  "578": {
+    "id": 578,
+    "name": "烟幕",
+    "description": "自身「结界」附加结界异常「黑暗」。",
+    "target": 1,
+    "turn": 1,
+    "type": 6,
+    "subtype": 5,
+    "value": 3
+  },
+  "579": {
+    "id": 579,
+    "name": "会心命中△",
+    "description": "自身「会心命中」上升1级。",
+    "target": 1,
+    "turn": 6,
+    "type": 1,
+    "subtype": 10,
+    "value": 1
+  },
+  "580": {
+    "id": 580,
+    "name": "会心命中△",
+    "description": "自身「会心命中」上升1级。",
+    "target": 1,
+    "turn": 8,
+    "type": 1,
+    "subtype": 10,
+    "value": 1
+  },
+  "581": {
+    "id": 581,
+    "name": "速度△",
+    "description": "自身「速度」上升1级。",
+    "target": 1,
+    "turn": 6,
+    "type": 1,
+    "subtype": 5,
+    "value": 1
+  },
+  "582": {
+    "id": 582,
+    "name": "速度△",
+    "description": "自身「速度」上升1级。",
+    "target": 1,
+    "turn": 8,
+    "type": 1,
+    "subtype": 5,
+    "value": 1
+  },
+  "583": {
+    "id": 583,
+    "name": "仇恨值△",
+    "description": "目标「仇恨值」上升4级。",
+    "target": 2,
+    "turn": 2,
+    "type": 1,
+    "subtype": 12,
+    "value": 4
+  },
+  "584": {
+    "id": 584,
+    "name": "仇恨值△",
+    "description": "目标「仇恨值」上升4级。",
+    "target": 2,
+    "turn": 1,
+    "type": 1,
+    "subtype": 12,
+    "value": 4
+  },
+  "9991": {
+    "id": 9991,
+    "name": "验证用子弹效果1",
+    "description": "毒雾",
+    "target": 2,
+    "turn": 3,
+    "type": 6,
+    "subtype": 4,
+    "value": 3
+  },
+  "9992": {
+    "id": 9992,
+    "name": "验证用子弹效果2",
+    "description": "速度▼",
+    "target": 2,
+    "turn": 10,
+    "type": 2,
+    "subtype": 5,
+    "value": 3
+  },
+  "9993": {
+    "id": 9993,
+    "name": "验证用子弹效果3",
+    "description": "仇恨值▼",
+    "target": 2,
+    "turn": 10,
+    "type": 2,
+    "subtype": 12,
+    "value": 3
+  }
+}

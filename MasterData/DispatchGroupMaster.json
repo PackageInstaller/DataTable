@@ -1,0 +1,62 @@
+{
+  "1": {
+    "id": 1,
+    "type": 0,
+    "appear_limit": 0,
+    "open_dispatch_group_id": 0,
+    "open_complete_count": 0,
+    "open_start_hour": 0,
+    "open_end_hour": 0,
+    "close_complete_count": 10,
+    "display_order": 100,
+    "description": "每日优先(可以完成10次)"
+  },
+  "2": {
+    "id": 2,
+    "type": 0,
+    "appear_limit": 0,
+    "open_dispatch_group_id": 1,
+    "open_complete_count": 10,
+    "open_start_hour": 0,
+    "open_end_hour": 0,
+    "close_complete_count": 0,
+    "display_order": 100,
+    "description": "每日(完成10次每日优先之后)"
+  },
+  "3": {
+    "id": 3,
+    "type": 0,
+    "appear_limit": 1,
+    "open_dispatch_group_id": 0,
+    "open_complete_count": 0,
+    "open_start_hour": 0,
+    "open_end_hour": 0,
+    "close_complete_count": 0,
+    "display_order": 10,
+    "description": "每日长时间"
+  },
+  "4": {
+    "id": 4,
+    "type": 1,
+    "appear_limit": 3,
+    "open_dispatch_group_id": 0,
+    "open_complete_count": 0,
+    "open_start_hour": 0,
+    "open_end_hour": 0,
+    "close_complete_count": 0,
+    "display_order": 10,
+    "description": "紧急"
+  },
+  "5": {
+    "id": 5,
+    "type": 1,
+    "appear_limit": 3,
+    "open_dispatch_group_id": 0,
+    "open_complete_count": 0,
+    "open_start_hour": -5,
+    "open_end_hour": 0,
+    "close_complete_count": 0,
+    "display_order": 10,
+    "description": "紧急夜间"
+  }
+}
