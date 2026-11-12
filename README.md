@@ -1,17 +1,13 @@
-# DataTable，也许不只是数据表，谁知道呢
+顾名思义，目的是为了方便wiki编写者快速获取数据，仅供学习交流
 
-`master` 只保留索引和 git 相关文件，每个游戏一个独立的快照分支（`game/<游戏名>`），方便只拉取自己需要的数据。
-
-## 内容移除说明
-
-各位法务，看到了其实直接在Issuses或者Discussions给我发通知即可，没必要向Github发起DMCA，我看到了会删，目前已有：
+## 各位法务，看到了其实直接在Issuses或者Discussions给我发通知即可，没必要向Github发起DMCA，我看到了会删，目前已有：
 
  - 蛮啾-蓝色星原：旅谣
  
 详情请见[DMCA](https://github.com/PackageInstaller/DataTable/tree/master/DMCA)
 
-## 克隆单个游戏
 
+`master` 只保留索引和 git 相关文件，每个游戏一个独立的快照分支（`game/<游戏名>`），方便只拉取自己需要的数据。
 ```bash
 git clone -b game/xxxxx --single-branch --depth 1 https://github.com/PackageInstaller/DataTable.git
 ```
