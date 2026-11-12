@@ -1,0 +1,54 @@
+{
+  "101": {
+    "Id": 101,
+    "Name": "均衡之国的魔王",
+    "Personality_Intuition": 4,
+    "Personality_Analysis": 4,
+    "Personality_Chaos": 4,
+    "SoldierPlayerHead": "Icon/SoldierPlayerHead/playerhead_main_N",
+    "SoldierRoleSkillType": 1,
+    "SoldierRoleSkillIcon": "Icon/SoldierSkill/soldierplayerskill_main_N",
+    "Title": "和谐天平",
+    "Desc": "初始额外获得6贤才金币和1个随机的3费成员，3个节点后再获得6金币",
+    "IsUnlock": true
+  },
+  "102": {
+    "Id": 102,
+    "Name": "本性天真的魔王",
+    "Personality_Intuition": 5,
+    "Personality_Analysis": 5,
+    "Personality_Chaos": 3,
+    "SoldierPlayerHead": "Icon/SoldierPlayerHead/playerhead_main_C",
+    "SoldierRoleSkillType": 1,
+    "SoldierRoleSkillIcon": "Icon/SoldierSkill/soldierplayerskill_main_C",
+    "Title": "混沌巧舌",
+    "Desc": "每次进入新节点时，获得1次免费商店刷新；进入第2、第3阶段时，额外获得2次免费商店刷新",
+    "TechNodeId": 10003
+  },
+  "103": {
+    "Id": 103,
+    "Name": "指引胜利的魔王",
+    "Personality_Intuition": 5,
+    "Personality_Analysis": 3,
+    "Personality_Chaos": 5,
+    "SoldierPlayerHead": "Icon/SoldierPlayerHead/playerhead_main_B",
+    "SoldierRoleSkillType": 1,
+    "SoldierRoleSkillIcon": "Icon/SoldierSkill/soldierplayerskill_main_B",
+    "Title": "稳健复盘",
+    "Desc": "每次进入新节点时，获得2点魔王经验",
+    "TechNodeId": 10004
+  },
+  "104": {
+    "Id": 104,
+    "Name": "心怀宏伟的魔王",
+    "Personality_Intuition": 3,
+    "Personality_Analysis": 5,
+    "Personality_Chaos": 5,
+    "SoldierPlayerHead": "Icon/SoldierPlayerHead/playerhead_main_A",
+    "SoldierRoleSkillType": 1,
+    "SoldierRoleSkillIcon": "Icon/SoldierSkill/soldierplayerskill_main_A",
+    "Title": "直觉投资",
+    "Desc": "贤才金币的利息上限额外+2；进入第2、第3阶段时，额外获得15贤才金币",
+    "TechNodeId": 10005
+  }
+}

@@ -1,0 +1,18 @@
+using System.Collections;
+
+namespace AIScript.Monster._13021XiaoMan;
+
+public class Skill_Spawn : SkillSimpleBase
+{
+	protected readonly ComboInputBuffer.ActionKey[] Spawn_Combo = new ComboInputBuffer.ActionKey[1] { ComboInputBuffer.ActionKey._1 };
+
+	protected override IEnumerator DoMainLogic()
+	{
+		SetBattleOutEnable();
+		BeginAttack(1, Spawn_Combo);
+		yield return WaitCustomEvent("Start");
+		ShowCenterHpBar();
+		SetBattleOutDisable();
+		yield return WaitCombo(ComboAttackType.isComboFinish);
+	}
+}

@@ -1,0 +1,1488 @@
+using System;
+using System.Diagnostics;
+using Google.Protobuf;
+using Google.Protobuf.Collections;
+using Google.Protobuf.Reflection;
+
+namespace Nova.Hotfix;
+
+public sealed class MallPackage : IMessage<MallPackage>, IMessage, IEquatable<MallPackage>, IDeepCloneable<MallPackage>
+{
+	private static readonly MessageParser<MallPackage> _parser = new MessageParser<MallPackage>(() => new MallPackage());
+
+	private UnknownFieldSet _unknownFields;
+
+	public const int IdFieldNumber = 1;
+
+	private string id_ = "";
+
+	public const int NameFieldNumber = 2;
+
+	private string name_ = "";
+
+	public const int DetailNameFieldNumber = 3;
+
+	private string detailName_ = "";
+
+	public const int GroupIdFieldNumber = 4;
+
+	private int groupId_;
+
+	public const int StatisticalGroupFieldNumber = 5;
+
+	private string statisticalGroup_ = "";
+
+	public const int SaleRateFieldNumber = 6;
+
+	private int saleRate_;
+
+	public const int TagFieldNumber = 7;
+
+	private int tag_;
+
+	public const int SortFieldNumber = 8;
+
+	private int sort_;
+
+	public const int CurrencyTypeFieldNumber = 9;
+
+	private int currencyType_;
+
+	public const int CurrencyItemIdFieldNumber = 10;
+
+	private int currencyItemId_;
+
+	public const int CurrencyItemQtyFieldNumber = 11;
+
+	private int currencyItemQty_;
+
+	public const int CurrencyShowPriceFieldNumber = 12;
+
+	private string currencyShowPrice_ = "";
+
+	public const int StockFieldNumber = 13;
+
+	private int stock_;
+
+	public const int RefreshTypeFieldNumber = 14;
+
+	private int refreshType_;
+
+	public const int ItemsFieldNumber = 15;
+
+	private string items_ = "";
+
+	public const int ListCondTypeFieldNumber = 16;
+
+	private int listCondType_;
+
+	public const int ListCondParamsFieldNumber = 17;
+
+	private string listCondParams_ = "";
+
+	public const int OrderCondTypeFieldNumber = 18;
+
+	private int orderCondType_;
+
+	public const int OrderCondParamsFieldNumber = 19;
+
+	private string orderCondParams_ = "";
+
+	public const int ListTimeFieldNumber = 20;
+
+	private string listTime_ = "";
+
+	public const int DeListTimeFieldNumber = 21;
+
+	private string deListTime_ = "";
+
+	public const int ProDeListTimeFieldNumber = 22;
+
+	private string proDeListTime_ = "";
+
+	public const int IsSaleSkinFieldNumber = 23;
+
+	private bool isSaleSkin_;
+
+	public const int BasePriceFieldNumber = 24;
+
+	private int basePrice_;
+
+	public const int CurrencyShowBasePriceFieldNumber = 25;
+
+	private string currencyShowBasePrice_ = "";
+
+	public const int ContentIconFieldNumber = 26;
+
+	private static readonly FieldCodec<int> _repeated_contentIcon_codec = FieldCodec.ForInt32(210u);
+
+	private readonly RepeatedField<int> contentIcon_ = new RepeatedField<int>();
+
+	public const int DisplayModeFieldNumber = 27;
+
+	private int displayMode_;
+
+	public const int IconFieldNumber = 28;
+
+	private string icon_ = "";
+
+	public const int IconBgFieldNumber = 29;
+
+	private string iconBg_ = "";
+
+	public const int SimpleNameFieldNumber = 30;
+
+	private string simpleName_ = "";
+
+	public const int RarityFieldNumber = 31;
+
+	private int rarity_;
+
+	public const int IsNewFieldNumber = 32;
+
+	private bool isNew_;
+
+	public const int PaymentCenterOnlyFieldNumber = 33;
+
+	private bool paymentCenterOnly_;
+
+	[DebuggerNonUserCode]
+	public static MessageParser<MallPackage> Parser => _parser;
+
+	[DebuggerNonUserCode]
+	public static MessageDescriptor Descriptor => HotfixClientTableReflection.Descriptor.MessageTypes.get_Item(520);
+
+	[DebuggerNonUserCode]
+	MessageDescriptor IMessage.Descriptor => Descriptor;
+
+	[DebuggerNonUserCode]
+	public string Id
+	{
+		get
+		{
+			return id_;
+		}
+		set
+		{
+			id_ = ProtoPreconditions.CheckNotNull(value, "value");
+		}
+	}
+
+	[DebuggerNonUserCode]
+	public string Name
+	{
+		get
+		{
+			return name_;
+		}
+		set
+		{
+			name_ = ProtoPreconditions.CheckNotNull(value, "value");
+		}
+	}
+
+	[DebuggerNonUserCode]
+	public string DetailName
+	{
+		get
+		{
+			return detailName_;
+		}
+		set
+		{
+			detailName_ = ProtoPreconditions.CheckNotNull(value, "value");
+		}
+	}
+
+	[DebuggerNonUserCode]
+	public int GroupId
+	{
+		get
+		{
+			return groupId_;
+		}
+		set
+		{
+			groupId_ = value;
+		}
+	}
+
+	[DebuggerNonUserCode]
+	public string StatisticalGroup
+	{
+		get
+		{
+			return statisticalGroup_;
+		}
+		set
+		{
+			statisticalGroup_ = ProtoPreconditions.CheckNotNull(value, "value");
+		}
+	}
+
+	[DebuggerNonUserCode]
+	public int SaleRate
+	{
+		get
+		{
+			return saleRate_;
+		}
+		set
+		{
+			saleRate_ = value;
+		}
+	}
+
+	[DebuggerNonUserCode]
+	public int Tag
+	{
+		get
+		{
+			return tag_;
+		}
+		set
+		{
+			tag_ = value;
+		}
+	}
+
+	[DebuggerNonUserCode]
+	public int Sort
+	{
+		get
+		{
+			return sort_;
+		}
+		set
+		{
+			sort_ = value;
+		}
+	}
+
+	[DebuggerNonUserCode]
+	public int CurrencyType
+	{
+		get
+		{
+			return currencyType_;
+		}
+		set
+		{
+			currencyType_ = value;
+		}
+	}
+
+	[DebuggerNonUserCode]
+	public int CurrencyItemId
+	{
+		get
+		{
+			return currencyItemId_;
+		}
+		set
+		{
+			currencyItemId_ = value;
+		}
+	}
+
+	[DebuggerNonUserCode]
+	public int CurrencyItemQty
+	{
+		get
+		{
+			return currencyItemQty_;
+		}
+		set
+		{
+			currencyItemQty_ = value;
+		}
+	}
+
+	[DebuggerNonUserCode]
+	public string CurrencyShowPrice
+	{
+		get
+		{
+			return currencyShowPrice_;
+		}
+		set
+		{
+			currencyShowPrice_ = ProtoPreconditions.CheckNotNull(value, "value");
+		}
+	}
+
+	[DebuggerNonUserCode]
+	public int Stock
+	{
+		get
+		{
+			return stock_;
+		}
+		set
+		{
+			stock_ = value;
+		}
+	}
+
+	[DebuggerNonUserCode]
+	public int RefreshType
+	{
+		get
+		{
+			return refreshType_;
+		}
+		set
+		{
+			refreshType_ = value;
+		}
+	}
+
+	[DebuggerNonUserCode]
+	public string Items
+	{
+		get
+		{
+			return items_;
+		}
+		set
+		{
+			items_ = ProtoPreconditions.CheckNotNull(value, "value");
+		}
+	}
+
+	[DebuggerNonUserCode]
+	public int ListCondType
+	{
+		get
+		{
+			return listCondType_;
+		}
+		set
+		{
+			listCondType_ = value;
+		}
+	}
+
+	[DebuggerNonUserCode]
+	public string ListCondParams
+	{
+		get
+		{
+			return listCondParams_;
+		}
+		set
+		{
+			listCondParams_ = ProtoPreconditions.CheckNotNull(value, "value");
+		}
+	}
+
+	[DebuggerNonUserCode]
+	public int OrderCondType
+	{
+		get
+		{
+			return orderCondType_;
+		}
+		set
+		{
+			orderCondType_ = value;
+		}
+	}
+
+	[DebuggerNonUserCode]
+	public string OrderCondParams
+	{
+		get
+		{
+			return orderCondParams_;
+		}
+		set
+		{
+			orderCondParams_ = ProtoPreconditions.CheckNotNull(value, "value");
+		}
+	}
+
+	[DebuggerNonUserCode]
+	public string ListTime
+	{
+		get
+		{
+			return listTime_;
+		}
+		set
+		{
+			listTime_ = ProtoPreconditions.CheckNotNull(value, "value");
+		}
+	}
+
+	[DebuggerNonUserCode]
+	public string DeListTime
+	{
+		get
+		{
+			return deListTime_;
+		}
+		set
+		{
+			deListTime_ = ProtoPreconditions.CheckNotNull(value, "value");
+		}
+	}
+
+	[DebuggerNonUserCode]
+	public string ProDeListTime
+	{
+		get
+		{
+			return proDeListTime_;
+		}
+		set
+		{
+			proDeListTime_ = ProtoPreconditions.CheckNotNull(value, "value");
+		}
+	}
+
+	[DebuggerNonUserCode]
+	public bool IsSaleSkin
+	{
+		get
+		{
+			return isSaleSkin_;
+		}
+		set
+		{
+			isSaleSkin_ = value;
+		}
+	}
+
+	[DebuggerNonUserCode]
+	public int BasePrice
+	{
+		get
+		{
+			return basePrice_;
+		}
+		set
+		{
+			basePrice_ = value;
+		}
+	}
+
+	[DebuggerNonUserCode]
+	public string CurrencyShowBasePrice
+	{
+		get
+		{
+			return currencyShowBasePrice_;
+		}
+		set
+		{
+			currencyShowBasePrice_ = ProtoPreconditions.CheckNotNull(value, "value");
+		}
+	}
+
+	[DebuggerNonUserCode]
+	public RepeatedField<int> ContentIcon => contentIcon_;
+
+	[DebuggerNonUserCode]
+	public int DisplayMode
+	{
+		get
+		{
+			return displayMode_;
+		}
+		set
+		{
+			displayMode_ = value;
+		}
+	}
+
+	[DebuggerNonUserCode]
+	public string Icon
+	{
+		get
+		{
+			return icon_;
+		}
+		set
+		{
+			icon_ = ProtoPreconditions.CheckNotNull(value, "value");
+		}
+	}
+
+	[DebuggerNonUserCode]
+	public string IconBg
+	{
+		get
+		{
+			return iconBg_;
+		}
+		set
+		{
+			iconBg_ = ProtoPreconditions.CheckNotNull(value, "value");
+		}
+	}
+
+	[DebuggerNonUserCode]
+	public string SimpleName
+	{
+		get
+		{
+			return simpleName_;
+		}
+		set
+		{
+			simpleName_ = ProtoPreconditions.CheckNotNull(value, "value");
+		}
+	}
+
+	[DebuggerNonUserCode]
+	public int Rarity
+	{
+		get
+		{
+			return rarity_;
+		}
+		set
+		{
+			rarity_ = value;
+		}
+	}
+
+	[DebuggerNonUserCode]
+	public bool IsNew
+	{
+		get
+		{
+			return isNew_;
+		}
+		set
+		{
+			isNew_ = value;
+		}
+	}
+
+	[DebuggerNonUserCode]
+	public bool PaymentCenterOnly
+	{
+		get
+		{
+			return paymentCenterOnly_;
+		}
+		set
+		{
+			paymentCenterOnly_ = value;
+		}
+	}
+
+	[DebuggerNonUserCode]
+	public MallPackage()
+	{
+	}
+
+	[DebuggerNonUserCode]
+	public MallPackage(MallPackage other)
+		: this()
+	{
+		id_ = other.id_;
+		name_ = other.name_;
+		detailName_ = other.detailName_;
+		groupId_ = other.groupId_;
+		statisticalGroup_ = other.statisticalGroup_;
+		saleRate_ = other.saleRate_;
+		tag_ = other.tag_;
+		sort_ = other.sort_;
+		currencyType_ = other.currencyType_;
+		currencyItemId_ = other.currencyItemId_;
+		currencyItemQty_ = other.currencyItemQty_;
+		currencyShowPrice_ = other.currencyShowPrice_;
+		stock_ = other.stock_;
+		refreshType_ = other.refreshType_;
+		items_ = other.items_;
+		listCondType_ = other.listCondType_;
+		listCondParams_ = other.listCondParams_;
+		orderCondType_ = other.orderCondType_;
+		orderCondParams_ = other.orderCondParams_;
+		listTime_ = other.listTime_;
+		deListTime_ = other.deListTime_;
+		proDeListTime_ = other.proDeListTime_;
+		isSaleSkin_ = other.isSaleSkin_;
+		basePrice_ = other.basePrice_;
+		currencyShowBasePrice_ = other.currencyShowBasePrice_;
+		contentIcon_ = other.contentIcon_.Clone();
+		displayMode_ = other.displayMode_;
+		icon_ = other.icon_;
+		iconBg_ = other.iconBg_;
+		simpleName_ = other.simpleName_;
+		rarity_ = other.rarity_;
+		isNew_ = other.isNew_;
+		paymentCenterOnly_ = other.paymentCenterOnly_;
+		_unknownFields = UnknownFieldSet.Clone(other._unknownFields);
+	}
+
+	[DebuggerNonUserCode]
+	public MallPackage Clone()
+	{
+		return new MallPackage(this);
+	}
+
+	[DebuggerNonUserCode]
+	public override bool Equals(object other)
+	{
+		return Equals(other as MallPackage);
+	}
+
+	[DebuggerNonUserCode]
+	public bool Equals(MallPackage other)
+	{
+		if (other == null)
+		{
+			return false;
+		}
+		if (other == this)
+		{
+			return true;
+		}
+		if (Id != other.Id)
+		{
+			return false;
+		}
+		if (Name != other.Name)
+		{
+			return false;
+		}
+		if (DetailName != other.DetailName)
+		{
+			return false;
+		}
+		if (GroupId != other.GroupId)
+		{
+			return false;
+		}
+		if (StatisticalGroup != other.StatisticalGroup)
+		{
+			return false;
+		}
+		if (SaleRate != other.SaleRate)
+		{
+			return false;
+		}
+		if (Tag != other.Tag)
+		{
+			return false;
+		}
+		if (Sort != other.Sort)
+		{
+			return false;
+		}
+		if (CurrencyType != other.CurrencyType)
+		{
+			return false;
+		}
+		if (CurrencyItemId != other.CurrencyItemId)
+		{
+			return false;
+		}
+		if (CurrencyItemQty != other.CurrencyItemQty)
+		{
+			return false;
+		}
+		if (CurrencyShowPrice != other.CurrencyShowPrice)
+		{
+			return false;
+		}
+		if (Stock != other.Stock)
+		{
+			return false;
+		}
+		if (RefreshType != other.RefreshType)
+		{
+			return false;
+		}
+		if (Items != other.Items)
+		{
+			return false;
+		}
+		if (ListCondType != other.ListCondType)
+		{
+			return false;
+		}
+		if (ListCondParams != other.ListCondParams)
+		{
+			return false;
+		}
+		if (OrderCondType != other.OrderCondType)
+		{
+			return false;
+		}
+		if (OrderCondParams != other.OrderCondParams)
+		{
+			return false;
+		}
+		if (ListTime != other.ListTime)
+		{
+			return false;
+		}
+		if (DeListTime != other.DeListTime)
+		{
+			return false;
+		}
+		if (ProDeListTime != other.ProDeListTime)
+		{
+			return false;
+		}
+		if (IsSaleSkin != other.IsSaleSkin)
+		{
+			return false;
+		}
+		if (BasePrice != other.BasePrice)
+		{
+			return false;
+		}
+		if (CurrencyShowBasePrice != other.CurrencyShowBasePrice)
+		{
+			return false;
+		}
+		if (!contentIcon_.Equals(other.contentIcon_))
+		{
+			return false;
+		}
+		if (DisplayMode != other.DisplayMode)
+		{
+			return false;
+		}
+		if (Icon != other.Icon)
+		{
+			return false;
+		}
+		if (IconBg != other.IconBg)
+		{
+			return false;
+		}
+		if (SimpleName != other.SimpleName)
+		{
+			return false;
+		}
+		if (Rarity != other.Rarity)
+		{
+			return false;
+		}
+		if (IsNew != other.IsNew)
+		{
+			return false;
+		}
+		if (PaymentCenterOnly != other.PaymentCenterOnly)
+		{
+			return false;
+		}
+		return object.Equals(_unknownFields, other._unknownFields);
+	}
+
+	[DebuggerNonUserCode]
+	public override int GetHashCode()
+	{
+		int num = 1;
+		if (Id.Length != 0)
+		{
+			num ^= Id.GetHashCode();
+		}
+		if (Name.Length != 0)
+		{
+			num ^= Name.GetHashCode();
+		}
+		if (DetailName.Length != 0)
+		{
+			num ^= DetailName.GetHashCode();
+		}
+		if (GroupId != 0)
+		{
+			num ^= GroupId.GetHashCode();
+		}
+		if (StatisticalGroup.Length != 0)
+		{
+			num ^= StatisticalGroup.GetHashCode();
+		}
+		if (SaleRate != 0)
+		{
+			num ^= SaleRate.GetHashCode();
+		}
+		if (Tag != 0)
+		{
+			num ^= Tag.GetHashCode();
+		}
+		if (Sort != 0)
+		{
+			num ^= Sort.GetHashCode();
+		}
+		if (CurrencyType != 0)
+		{
+			num ^= CurrencyType.GetHashCode();
+		}
+		if (CurrencyItemId != 0)
+		{
+			num ^= CurrencyItemId.GetHashCode();
+		}
+		if (CurrencyItemQty != 0)
+		{
+			num ^= CurrencyItemQty.GetHashCode();
+		}
+		if (CurrencyShowPrice.Length != 0)
+		{
+			num ^= CurrencyShowPrice.GetHashCode();
+		}
+		if (Stock != 0)
+		{
+			num ^= Stock.GetHashCode();
+		}
+		if (RefreshType != 0)
+		{
+			num ^= RefreshType.GetHashCode();
+		}
+		if (Items.Length != 0)
+		{
+			num ^= Items.GetHashCode();
+		}
+		if (ListCondType != 0)
+		{
+			num ^= ListCondType.GetHashCode();
+		}
+		if (ListCondParams.Length != 0)
+		{
+			num ^= ListCondParams.GetHashCode();
+		}
+		if (OrderCondType != 0)
+		{
+			num ^= OrderCondType.GetHashCode();
+		}
+		if (OrderCondParams.Length != 0)
+		{
+			num ^= OrderCondParams.GetHashCode();
+		}
+		if (ListTime.Length != 0)
+		{
+			num ^= ListTime.GetHashCode();
+		}
+		if (DeListTime.Length != 0)
+		{
+			num ^= DeListTime.GetHashCode();
+		}
+		if (ProDeListTime.Length != 0)
+		{
+			num ^= ProDeListTime.GetHashCode();
+		}
+		if (IsSaleSkin)
+		{
+			num ^= IsSaleSkin.GetHashCode();
+		}
+		if (BasePrice != 0)
+		{
+			num ^= BasePrice.GetHashCode();
+		}
+		if (CurrencyShowBasePrice.Length != 0)
+		{
+			num ^= CurrencyShowBasePrice.GetHashCode();
+		}
+		num ^= contentIcon_.GetHashCode();
+		if (DisplayMode != 0)
+		{
+			num ^= DisplayMode.GetHashCode();
+		}
+		if (Icon.Length != 0)
+		{
+			num ^= Icon.GetHashCode();
+		}
+		if (IconBg.Length != 0)
+		{
+			num ^= IconBg.GetHashCode();
+		}
+		if (SimpleName.Length != 0)
+		{
+			num ^= SimpleName.GetHashCode();
+		}
+		if (Rarity != 0)
+		{
+			num ^= Rarity.GetHashCode();
+		}
+		if (IsNew)
+		{
+			num ^= IsNew.GetHashCode();
+		}
+		if (PaymentCenterOnly)
+		{
+			num ^= PaymentCenterOnly.GetHashCode();
+		}
+		if (_unknownFields != null)
+		{
+			num ^= _unknownFields.GetHashCode();
+		}
+		return num;
+	}
+
+	[DebuggerNonUserCode]
+	public override string ToString()
+	{
+		return JsonFormatter.ToDiagnosticString(this);
+	}
+
+	[DebuggerNonUserCode]
+	public void WriteTo(CodedOutputStream output)
+	{
+		if (Id.Length != 0)
+		{
+			output.WriteRawTag(10);
+			output.WriteString(Id);
+		}
+		if (Name.Length != 0)
+		{
+			output.WriteRawTag(18);
+			output.WriteString(Name);
+		}
+		if (DetailName.Length != 0)
+		{
+			output.WriteRawTag(26);
+			output.WriteString(DetailName);
+		}
+		if (GroupId != 0)
+		{
+			output.WriteRawTag(32);
+			output.WriteInt32(GroupId);
+		}
+		if (StatisticalGroup.Length != 0)
+		{
+			output.WriteRawTag(42);
+			output.WriteString(StatisticalGroup);
+		}
+		if (SaleRate != 0)
+		{
+			output.WriteRawTag(48);
+			output.WriteInt32(SaleRate);
+		}
+		if (Tag != 0)
+		{
+			output.WriteRawTag(56);
+			output.WriteInt32(Tag);
+		}
+		if (Sort != 0)
+		{
+			output.WriteRawTag(64);
+			output.WriteInt32(Sort);
+		}
+		if (CurrencyType != 0)
+		{
+			output.WriteRawTag(72);
+			output.WriteInt32(CurrencyType);
+		}
+		if (CurrencyItemId != 0)
+		{
+			output.WriteRawTag(80);
+			output.WriteInt32(CurrencyItemId);
+		}
+		if (CurrencyItemQty != 0)
+		{
+			output.WriteRawTag(88);
+			output.WriteInt32(CurrencyItemQty);
+		}
+		if (CurrencyShowPrice.Length != 0)
+		{
+			output.WriteRawTag(98);
+			output.WriteString(CurrencyShowPrice);
+		}
+		if (Stock != 0)
+		{
+			output.WriteRawTag(104);
+			output.WriteInt32(Stock);
+		}
+		if (RefreshType != 0)
+		{
+			output.WriteRawTag(112);
+			output.WriteInt32(RefreshType);
+		}
+		if (Items.Length != 0)
+		{
+			output.WriteRawTag(122);
+			output.WriteString(Items);
+		}
+		if (ListCondType != 0)
+		{
+			output.WriteRawTag(128, 1);
+			output.WriteInt32(ListCondType);
+		}
+		if (ListCondParams.Length != 0)
+		{
+			output.WriteRawTag(138, 1);
+			output.WriteString(ListCondParams);
+		}
+		if (OrderCondType != 0)
+		{
+			output.WriteRawTag(144, 1);
+			output.WriteInt32(OrderCondType);
+		}
+		if (OrderCondParams.Length != 0)
+		{
+			output.WriteRawTag(154, 1);
+			output.WriteString(OrderCondParams);
+		}
+		if (ListTime.Length != 0)
+		{
+			output.WriteRawTag(162, 1);
+			output.WriteString(ListTime);
+		}
+		if (DeListTime.Length != 0)
+		{
+			output.WriteRawTag(170, 1);
+			output.WriteString(DeListTime);
+		}
+		if (ProDeListTime.Length != 0)
+		{
+			output.WriteRawTag(178, 1);
+			output.WriteString(ProDeListTime);
+		}
+		if (IsSaleSkin)
+		{
+			output.WriteRawTag(184, 1);
+			output.WriteBool(IsSaleSkin);
+		}
+		if (BasePrice != 0)
+		{
+			output.WriteRawTag(192, 1);
+			output.WriteInt32(BasePrice);
+		}
+		if (CurrencyShowBasePrice.Length != 0)
+		{
+			output.WriteRawTag(202, 1);
+			output.WriteString(CurrencyShowBasePrice);
+		}
+		contentIcon_.WriteTo(output, _repeated_contentIcon_codec);
+		if (DisplayMode != 0)
+		{
+			output.WriteRawTag(216, 1);
+			output.WriteInt32(DisplayMode);
+		}
+		if (Icon.Length != 0)
+		{
+			output.WriteRawTag(226, 1);
+			output.WriteString(Icon);
+		}
+		if (IconBg.Length != 0)
+		{
+			output.WriteRawTag(234, 1);
+			output.WriteString(IconBg);
+		}
+		if (SimpleName.Length != 0)
+		{
+			output.WriteRawTag(242, 1);
+			output.WriteString(SimpleName);
+		}
+		if (Rarity != 0)
+		{
+			output.WriteRawTag(248, 1);
+			output.WriteInt32(Rarity);
+		}
+		if (IsNew)
+		{
+			output.WriteRawTag(128, 2);
+			output.WriteBool(IsNew);
+		}
+		if (PaymentCenterOnly)
+		{
+			output.WriteRawTag(136, 2);
+			output.WriteBool(PaymentCenterOnly);
+		}
+		if (_unknownFields != null)
+		{
+			_unknownFields.WriteTo(output);
+		}
+	}
+
+	[DebuggerNonUserCode]
+	public int CalculateSize()
+	{
+		int num = 0;
+		if (Id.Length != 0)
+		{
+			num += 1 + CodedOutputStream.ComputeStringSize(Id);
+		}
+		if (Name.Length != 0)
+		{
+			num += 1 + CodedOutputStream.ComputeStringSize(Name);
+		}
+		if (DetailName.Length != 0)
+		{
+			num += 1 + CodedOutputStream.ComputeStringSize(DetailName);
+		}
+		if (GroupId != 0)
+		{
+			num += 1 + CodedOutputStream.ComputeInt32Size(GroupId);
+		}
+		if (StatisticalGroup.Length != 0)
+		{
+			num += 1 + CodedOutputStream.ComputeStringSize(StatisticalGroup);
+		}
+		if (SaleRate != 0)
+		{
+			num += 1 + CodedOutputStream.ComputeInt32Size(SaleRate);
+		}
+		if (Tag != 0)
+		{
+			num += 1 + CodedOutputStream.ComputeInt32Size(Tag);
+		}
+		if (Sort != 0)
+		{
+			num += 1 + CodedOutputStream.ComputeInt32Size(Sort);
+		}
+		if (CurrencyType != 0)
+		{
+			num += 1 + CodedOutputStream.ComputeInt32Size(CurrencyType);
+		}
+		if (CurrencyItemId != 0)
+		{
+			num += 1 + CodedOutputStream.ComputeInt32Size(CurrencyItemId);
+		}
+		if (CurrencyItemQty != 0)
+		{
+			num += 1 + CodedOutputStream.ComputeInt32Size(CurrencyItemQty);
+		}
+		if (CurrencyShowPrice.Length != 0)
+		{
+			num += 1 + CodedOutputStream.ComputeStringSize(CurrencyShowPrice);
+		}
+		if (Stock != 0)
+		{
+			num += 1 + CodedOutputStream.ComputeInt32Size(Stock);
+		}
+		if (RefreshType != 0)
+		{
+			num += 1 + CodedOutputStream.ComputeInt32Size(RefreshType);
+		}
+		if (Items.Length != 0)
+		{
+			num += 1 + CodedOutputStream.ComputeStringSize(Items);
+		}
+		if (ListCondType != 0)
+		{
+			num += 2 + CodedOutputStream.ComputeInt32Size(ListCondType);
+		}
+		if (ListCondParams.Length != 0)
+		{
+			num += 2 + CodedOutputStream.ComputeStringSize(ListCondParams);
+		}
+		if (OrderCondType != 0)
+		{
+			num += 2 + CodedOutputStream.ComputeInt32Size(OrderCondType);
+		}
+		if (OrderCondParams.Length != 0)
+		{
+			num += 2 + CodedOutputStream.ComputeStringSize(OrderCondParams);
+		}
+		if (ListTime.Length != 0)
+		{
+			num += 2 + CodedOutputStream.ComputeStringSize(ListTime);
+		}
+		if (DeListTime.Length != 0)
+		{
+			num += 2 + CodedOutputStream.ComputeStringSize(DeListTime);
+		}
+		if (ProDeListTime.Length != 0)
+		{
+			num += 2 + CodedOutputStream.ComputeStringSize(ProDeListTime);
+		}
+		if (IsSaleSkin)
+		{
+			num += 3;
+		}
+		if (BasePrice != 0)
+		{
+			num += 2 + CodedOutputStream.ComputeInt32Size(BasePrice);
+		}
+		if (CurrencyShowBasePrice.Length != 0)
+		{
+			num += 2 + CodedOutputStream.ComputeStringSize(CurrencyShowBasePrice);
+		}
+		num += contentIcon_.CalculateSize(_repeated_contentIcon_codec);
+		if (DisplayMode != 0)
+		{
+			num += 2 + CodedOutputStream.ComputeInt32Size(DisplayMode);
+		}
+		if (Icon.Length != 0)
+		{
+			num += 2 + CodedOutputStream.ComputeStringSize(Icon);
+		}
+		if (IconBg.Length != 0)
+		{
+			num += 2 + CodedOutputStream.ComputeStringSize(IconBg);
+		}
+		if (SimpleName.Length != 0)
+		{
+			num += 2 + CodedOutputStream.ComputeStringSize(SimpleName);
+		}
+		if (Rarity != 0)
+		{
+			num += 2 + CodedOutputStream.ComputeInt32Size(Rarity);
+		}
+		if (IsNew)
+		{
+			num += 3;
+		}
+		if (PaymentCenterOnly)
+		{
+			num += 3;
+		}
+		if (_unknownFields != null)
+		{
+			num += _unknownFields.CalculateSize();
+		}
+		return num;
+	}
+
+	[DebuggerNonUserCode]
+	public void MergeFrom(MallPackage other)
+	{
+		if (other != null)
+		{
+			if (other.Id.Length != 0)
+			{
+				Id = other.Id;
+			}
+			if (other.Name.Length != 0)
+			{
+				Name = other.Name;
+			}
+			if (other.DetailName.Length != 0)
+			{
+				DetailName = other.DetailName;
+			}
+			if (other.GroupId != 0)
+			{
+				GroupId = other.GroupId;
+			}
+			if (other.StatisticalGroup.Length != 0)
+			{
+				StatisticalGroup = other.StatisticalGroup;
+			}
+			if (other.SaleRate != 0)
+			{
+				SaleRate = other.SaleRate;
+			}
+			if (other.Tag != 0)
+			{
+				Tag = other.Tag;
+			}
+			if (other.Sort != 0)
+			{
+				Sort = other.Sort;
+			}
+			if (other.CurrencyType != 0)
+			{
+				CurrencyType = other.CurrencyType;
+			}
+			if (other.CurrencyItemId != 0)
+			{
+				CurrencyItemId = other.CurrencyItemId;
+			}
+			if (other.CurrencyItemQty != 0)
+			{
+				CurrencyItemQty = other.CurrencyItemQty;
+			}
+			if (other.CurrencyShowPrice.Length != 0)
+			{
+				CurrencyShowPrice = other.CurrencyShowPrice;
+			}
+			if (other.Stock != 0)
+			{
+				Stock = other.Stock;
+			}
+			if (other.RefreshType != 0)
+			{
+				RefreshType = other.RefreshType;
+			}
+			if (other.Items.Length != 0)
+			{
+				Items = other.Items;
+			}
+			if (other.ListCondType != 0)
+			{
+				ListCondType = other.ListCondType;
+			}
+			if (other.ListCondParams.Length != 0)
+			{
+				ListCondParams = other.ListCondParams;
+			}
+			if (other.OrderCondType != 0)
+			{
+				OrderCondType = other.OrderCondType;
+			}
+			if (other.OrderCondParams.Length != 0)
+			{
+				OrderCondParams = other.OrderCondParams;
+			}
+			if (other.ListTime.Length != 0)
+			{
+				ListTime = other.ListTime;
+			}
+			if (other.DeListTime.Length != 0)
+			{
+				DeListTime = other.DeListTime;
+			}
+			if (other.ProDeListTime.Length != 0)
+			{
+				ProDeListTime = other.ProDeListTime;
+			}
+			if (other.IsSaleSkin)
+			{
+				IsSaleSkin = other.IsSaleSkin;
+			}
+			if (other.BasePrice != 0)
+			{
+				BasePrice = other.BasePrice;
+			}
+			if (other.CurrencyShowBasePrice.Length != 0)
+			{
+				CurrencyShowBasePrice = other.CurrencyShowBasePrice;
+			}
+			contentIcon_.Add(other.contentIcon_);
+			if (other.DisplayMode != 0)
+			{
+				DisplayMode = other.DisplayMode;
+			}
+			if (other.Icon.Length != 0)
+			{
+				Icon = other.Icon;
+			}
+			if (other.IconBg.Length != 0)
+			{
+				IconBg = other.IconBg;
+			}
+			if (other.SimpleName.Length != 0)
+			{
+				SimpleName = other.SimpleName;
+			}
+			if (other.Rarity != 0)
+			{
+				Rarity = other.Rarity;
+			}
+			if (other.IsNew)
+			{
+				IsNew = other.IsNew;
+			}
+			if (other.PaymentCenterOnly)
+			{
+				PaymentCenterOnly = other.PaymentCenterOnly;
+			}
+			_unknownFields = UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+		}
+	}
+
+	[DebuggerNonUserCode]
+	public void MergeFrom(CodedInputStream input)
+	{
+		uint num;
+		while ((num = input.ReadTag()) != 0)
+		{
+			switch (num)
+			{
+			default:
+				_unknownFields = UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+				break;
+			case 10u:
+				Id = input.ReadString();
+				break;
+			case 18u:
+				Name = input.ReadString();
+				break;
+			case 26u:
+				DetailName = input.ReadString();
+				break;
+			case 32u:
+				GroupId = input.ReadInt32();
+				break;
+			case 42u:
+				StatisticalGroup = input.ReadString();
+				break;
+			case 48u:
+				SaleRate = input.ReadInt32();
+				break;
+			case 56u:
+				Tag = input.ReadInt32();
+				break;
+			case 64u:
+				Sort = input.ReadInt32();
+				break;
+			case 72u:
+				CurrencyType = input.ReadInt32();
+				break;
+			case 80u:
+				CurrencyItemId = input.ReadInt32();
+				break;
+			case 88u:
+				CurrencyItemQty = input.ReadInt32();
+				break;
+			case 98u:
+				CurrencyShowPrice = input.ReadString();
+				break;
+			case 104u:
+				Stock = input.ReadInt32();
+				break;
+			case 112u:
+				RefreshType = input.ReadInt32();
+				break;
+			case 122u:
+				Items = input.ReadString();
+				break;
+			case 128u:
+				ListCondType = input.ReadInt32();
+				break;
+			case 138u:
+				ListCondParams = input.ReadString();
+				break;
+			case 144u:
+				OrderCondType = input.ReadInt32();
+				break;
+			case 154u:
+				OrderCondParams = input.ReadString();
+				break;
+			case 162u:
+				ListTime = input.ReadString();
+				break;
+			case 170u:
+				DeListTime = input.ReadString();
+				break;
+			case 178u:
+				ProDeListTime = input.ReadString();
+				break;
+			case 184u:
+				IsSaleSkin = input.ReadBool();
+				break;
+			case 192u:
+				BasePrice = input.ReadInt32();
+				break;
+			case 202u:
+				CurrencyShowBasePrice = input.ReadString();
+				break;
+			case 208u:
+			case 210u:
+				contentIcon_.AddEntriesFrom(input, _repeated_contentIcon_codec);
+				break;
+			case 216u:
+				DisplayMode = input.ReadInt32();
+				break;
+			case 226u:
+				Icon = input.ReadString();
+				break;
+			case 234u:
+				IconBg = input.ReadString();
+				break;
+			case 242u:
+				SimpleName = input.ReadString();
+				break;
+			case 248u:
+				Rarity = input.ReadInt32();
+				break;
+			case 256u:
+				IsNew = input.ReadBool();
+				break;
+			case 264u:
+				PaymentCenterOnly = input.ReadBool();
+				break;
+			}
+		}
+	}
+}

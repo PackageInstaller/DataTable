@@ -1,0 +1,67 @@
+local MainBattlePanel = class("MainBattlePanel", BasePanel)
+local GamepadUIManager = require("GameCore.Module.GamepadUIManager")
+MainBattlePanel.OpenMinMap = true
+MainBattlePanel._bAddToBackHistory = false
+MainBattlePanel._tbDefine = {
+  {
+    sPrefabPath = "RoguelikeItemTip/RoguelikeItemTipPanel.prefab",
+    sCtrlName = "Game.UI.RoguelikeItemTips.RoguelikeItemTipsCtrl"
+  },
+  {
+    sPrefabPath = "Battle/BattleDashboard.prefab",
+    sCtrlName = "Game.UI.Battle.BattleDashboardCtrl"
+  },
+  {
+    sPrefabPath = "Battle/MainBattleMenu.prefab",
+    sCtrlName = "Game.UI.Battle.MainBattleMenuCtrl"
+  },
+  {
+    sPrefabPath = "Battle/AdventureMainUI/AdventureMainUI.prefab",
+    sCtrlName = "Game.UI.Battle.MainBattleCtrl"
+  },
+  {
+    sPrefabPath = "GuideProloguel/GuideProloguelPanel.prefab",
+    sCtrlName = "Game.UI.GuideProloguel.GuideProloguelCtrl"
+  },
+  {
+    sPrefabPath = "Battle/AdventureMainUI/BattlePopupTips.prefab",
+    sCtrlName = "Game.UI.Battle.BattlePopupTipsCtrl"
+  },
+  {
+    sPrefabPath = "Battle/SkillHintIndicators.prefab",
+    sCtrlName = "Game.UI.Battle.SkillHintIndicator.HintIndicators"
+  },
+  {
+    sPrefabPath = "Battle/SubSkillDisplay.prefab",
+    sCtrlName = "Game.UI.Battle.SubSkillDisplay.SubSkillDisplayCtrl"
+  }
+}
+
+function MainBattlePanel:Awake()
+  GamepadUIManager.EnterAdventure()
+  GamepadUIManager.EnableGamepadUI("BattleMenu", {})
+  self.BattleType = GameEnum.worldLevelType.Mainline
+end
+
+function MainBattlePanel:OnEnable()
+  local function wait()
+    coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
+    
+    EventManager.Hit(EventId.OpenPanel, PanelId.Hud)
+    EventManager.Hit(EventId.ClosePanel, PanelId.MainlineFormation)
+    EventManager.Hit(EventId.ClosePanel, PanelId.RegionBossFormation)
+  end
+  
+  cs_coroutine.start(wait)
+end
+
+function MainBattlePanel:OnAfterEnter()
+  EventManager.Hit(EventId.SubSkillDisplayInit, self._tbParam[1])
+end
+
+function MainBattlePanel:OnDisable()
+  GamepadUIManager.DisableGamepadUI("BattleMenu")
+  GamepadUIManager.QuitAdventure()
+end
+
+return MainBattlePanel

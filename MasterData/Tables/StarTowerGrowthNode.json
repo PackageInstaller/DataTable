@@ -1,0 +1,1258 @@
+{
+  "10101": {
+    "Id": 10101,
+    "NodeId": 1,
+    "Group": 1,
+    "Name": "同谐的心弦Ⅰ",
+    "IsServer": true,
+    "Type": 1,
+    "EffectClient": 27,
+    "Clientlvl": 1,
+    "Priority": 1,
+    "Position": [
+      1,
+      1
+    ],
+    "Desc": "星塔探索中，战斗之间获得音符的概率提升15%",
+    "ItemId1": 51,
+    "ItemQty1": 10
+  },
+  "10102": {
+    "Id": 10102,
+    "NodeId": 2,
+    "Group": 1,
+    "Name": "源初的歌谣",
+    "IsServer": true,
+    "Type": 1,
+    "EffectClient": 28,
+    "Clientlvl": 1,
+    "Priority": 2,
+    "Position": [
+      1,
+      2
+    ],
+    "Desc": "星塔探索开始时，额外获得3个音符",
+    "ItemId1": 51,
+    "ItemQty1": 10
+  },
+  "10103": {
+    "Id": 10103,
+    "NodeId": 3,
+    "Group": 1,
+    "Name": "第一桶金Ⅰ",
+    "IsServer": true,
+    "Type": 1,
+    "EffectClient": 11,
+    "Clientlvl": 1,
+    "Priority": 3,
+    "Position": [
+      1,
+      3
+    ],
+    "Desc": "星塔探索开始时额外获得50<sprite name=item_11_small>",
+    "ItemId1": 51,
+    "ItemQty1": 10
+  },
+  "10201": {
+    "Id": 10201,
+    "NodeId": 4,
+    "Group": 1,
+    "Name": "超限理论Ⅰ",
+    "IsServer": true,
+    "IsClient": true,
+    "Type": 1,
+    "PreNodes": [
+      10101
+    ],
+    "EffectClient": 21,
+    "ClientParams": "[500]",
+    "Clientlvl": 1,
+    "Priority": 4,
+    "Position": [
+      2,
+      1
+    ],
+    "Desc": "每周获取征途票根上限提高500",
+    "ItemId1": 51,
+    "ItemQty1": 20
+  },
+  "10202": {
+    "Id": 10202,
+    "NodeId": 5,
+    "Group": 1,
+    "Name": "额外的小确幸",
+    "IsServer": true,
+    "Type": 1,
+    "PreNodes": [
+      10102
+    ],
+    "EffectClient": 15,
+    "Clientlvl": 1,
+    "Priority": 5,
+    "Position": [
+      2,
+      2
+    ],
+    "Desc": "成功探索星塔时，额外获得少量礼物",
+    "ItemId1": 51,
+    "ItemQty1": 20
+  },
+  "10203": {
+    "Id": 10203,
+    "NodeId": 6,
+    "Group": 1,
+    "Name": "刮刮乐Ⅰ",
+    "IsServer": true,
+    "Type": 1,
+    "PreNodes": [
+      10103
+    ],
+    "EffectClient": 12,
+    "Clientlvl": 1,
+    "Priority": 6,
+    "Position": [
+      2,
+      3
+    ],
+    "Desc": "星塔探索中，每通过1个战斗房间，有10%的概率额外获得10<sprite name=item_11_small>，单局星塔探索最大触发5次",
+    "ItemId1": 51,
+    "ItemQty1": 20
+  },
+  "10301": {
+    "Id": 10301,
+    "NodeId": 7,
+    "Group": 1,
+    "Name": "星梯的密码",
+    "IsServer": true,
+    "IsClient": true,
+    "Type": 2,
+    "Color": 1,
+    "PreNodes": [
+      10201,
+      10202,
+      10203
+    ],
+    "EffectClient": 4,
+    "Clientlvl": 1,
+    "Priority": 7,
+    "Icon": "Icon/ZZZOther/startowergrowth_keypoint_1",
+    "Position": [
+      3,
+      1
+    ],
+    "Desc": "解锁「星塔速通」功能：\n消耗星梯搭乘票，可快速通关星塔，获取纪录\n解锁「维塔」功能：\n消耗词元，可在「星塔速通」中开启托管，自动操作通关星塔",
+    "ItemId1": 51,
+    "ItemQty1": 50
+  },
+  "10401": {
+    "Id": 10401,
+    "NodeId": 8,
+    "Group": 1,
+    "Name": "同谐的心弦Ⅱ",
+    "IsServer": true,
+    "Type": 1,
+    "PreNodes": [
+      10301
+    ],
+    "EffectClient": 27,
+    "Clientlvl": 2,
+    "Priority": 8,
+    "Position": [
+      4,
+      1
+    ],
+    "Desc": "难度2及以上的星塔探索中，战斗之间获得音符的概率提升30%",
+    "ItemId1": 51,
+    "ItemQty1": 20
+  },
+  "10402": {
+    "Id": 10402,
+    "NodeId": 9,
+    "Group": 1,
+    "Name": "星塔严选Ⅰ",
+    "IsServer": true,
+    "Type": 1,
+    "PreNodes": [
+      10301
+    ],
+    "EffectClient": 13,
+    "Clientlvl": 1,
+    "Priority": 9,
+    "Position": [
+      4,
+      2
+    ],
+    "Desc": "星塔探索中，商店会额外刷新2件商品",
+    "ItemId1": 51,
+    "ItemQty1": 20
+  },
+  "10403": {
+    "Id": 10403,
+    "NodeId": 10,
+    "Group": 1,
+    "Name": "第一桶金Ⅱ",
+    "IsServer": true,
+    "Type": 1,
+    "PreNodes": [
+      10301
+    ],
+    "EffectClient": 11,
+    "Clientlvl": 1,
+    "Priority": 10,
+    "Position": [
+      4,
+      3
+    ],
+    "Desc": "星塔探索开始时额外获得100<sprite name=item_11_small>",
+    "ItemId1": 51,
+    "ItemQty1": 20
+  },
+  "10501": {
+    "Id": 10501,
+    "NodeId": 11,
+    "Group": 1,
+    "Name": "增效定律Ⅰ",
+    "IsServer": true,
+    "Type": 1,
+    "PreNodes": [
+      10401
+    ],
+    "EffectClient": 20,
+    "Clientlvl": 1,
+    "Priority": 11,
+    "Position": [
+      5,
+      1
+    ],
+    "Desc": "星塔探索获取征途票根数量增加30%",
+    "ItemId1": 51,
+    "ItemQty1": 20
+  },
+  "10502": {
+    "Id": 10502,
+    "NodeId": 12,
+    "Group": 1,
+    "Name": "超限理论Ⅱ",
+    "IsServer": true,
+    "IsClient": true,
+    "Type": 1,
+    "PreNodes": [
+      10402
+    ],
+    "EffectClient": 21,
+    "ClientParams": "[1000]",
+    "Clientlvl": 1,
+    "Priority": 12,
+    "Position": [
+      5,
+      2
+    ],
+    "Desc": "每周获取征途票根上限提高1000",
+    "ItemId1": 51,
+    "ItemQty1": 20
+  },
+  "10503": {
+    "Id": 10503,
+    "NodeId": 13,
+    "Group": 1,
+    "Name": "刮刮乐Ⅱ",
+    "IsServer": true,
+    "Type": 1,
+    "PreNodes": [
+      10403
+    ],
+    "EffectClient": 12,
+    "Clientlvl": 2,
+    "Priority": 13,
+    "Position": [
+      5,
+      3
+    ],
+    "Desc": "难度2及以上的星塔探索中，每通过1个战斗房间，有30%的概率额外获得30<sprite name=item_11_small>，单局星塔探索最大触发5次",
+    "ItemId1": 51,
+    "ItemQty1": 20
+  },
+  "10601": {
+    "Id": 10601,
+    "NodeId": 14,
+    "Group": 1,
+    "Name": "冲线的褒奖",
+    "IsServer": true,
+    "Type": 2,
+    "Color": 2,
+    "PreNodes": [
+      10501,
+      10502
+    ],
+    "EffectClient": 7,
+    "Clientlvl": 2,
+    "Priority": 14,
+    "Icon": "Icon/ZZZOther/startowergrowth_keypoint_2",
+    "Position": [
+      6,
+      1
+    ],
+    "Desc": "难度2及以上的星塔探索中，通关星塔时可使用「强化机」功能：\n消耗<sprite name=item_11_small>，强化已拥有的潜能等级",
+    "ItemId1": 51,
+    "ItemQty1": 50
+  },
+  "10602": {
+    "Id": 10602,
+    "NodeId": 15,
+    "Group": 1,
+    "Name": "唱机改造Ⅰ",
+    "IsServer": true,
+    "IsClient": true,
+    "Type": 2,
+    "Color": 2,
+    "PreNodes": [
+      10502,
+      10503
+    ],
+    "EffectClient": 26,
+    "ClientParams": "[1]",
+    "Clientlvl": 1,
+    "Priority": 15,
+    "Icon": "Icon/ZZZOther/startowergrowth_keypoint_1",
+    "Position": [
+      6,
+      2
+    ],
+    "Desc": "星塔探索中，队伍可携带2张辅位秘纹",
+    "ItemId1": 51,
+    "ItemQty1": 50
+  },
+  "10701": {
+    "Id": 10701,
+    "NodeId": 16,
+    "Group": 1,
+    "Name": "幸运音符Ⅰ",
+    "IsServer": true,
+    "Type": 1,
+    "PreNodes": [
+      10601,
+      10602
+    ],
+    "EffectClient": 25,
+    "Clientlvl": 3,
+    "Priority": 16,
+    "Position": [
+      7,
+      1
+    ],
+    "Desc": "难度3及以上的星塔探索中，首领之间与魔王之间战斗后有50%概率获得额外3个音符",
+    "ItemId1": 51,
+    "ItemQty1": 30
+  },
+  "10702": {
+    "Id": 10702,
+    "NodeId": 17,
+    "Group": 1,
+    "Name": "第一桶金Ⅲ",
+    "IsServer": true,
+    "Type": 1,
+    "PreNodes": [
+      10601,
+      10602
+    ],
+    "EffectClient": 11,
+    "Clientlvl": 1,
+    "Priority": 17,
+    "Position": [
+      7,
+      2
+    ],
+    "Desc": "星塔探索开始时额外获得200<sprite name=item_11_small>",
+    "ItemId1": 51,
+    "ItemQty1": 30
+  },
+  "10801": {
+    "Id": 10801,
+    "NodeId": 18,
+    "Group": 1,
+    "Name": "幸运币",
+    "IsServer": true,
+    "Type": 1,
+    "PreNodes": [
+      10701
+    ],
+    "EffectClient": 9,
+    "Clientlvl": 1,
+    "Priority": 18,
+    "Position": [
+      8,
+      1
+    ],
+    "Desc": "星塔探索中，首次使用强化机免费",
+    "ItemId1": 51,
+    "ItemQty1": 30
+  },
+  "10802": {
+    "Id": 10802,
+    "NodeId": 19,
+    "Group": 1,
+    "Name": "刮刮乐Ⅲ",
+    "IsServer": true,
+    "Type": 1,
+    "PreNodes": [
+      10702
+    ],
+    "EffectClient": 12,
+    "Clientlvl": 3,
+    "Priority": 19,
+    "Position": [
+      8,
+      2
+    ],
+    "Desc": "难度3及以上的星塔探索中，每通过1个战斗房间，有50%的概率额外获得50<sprite name=item_11_small>，单局星塔探索最大触发5次",
+    "ItemId1": 51,
+    "ItemQty1": 30
+  },
+  "10901": {
+    "Id": 10901,
+    "NodeId": 20,
+    "Group": 1,
+    "Name": "命运的选择Ⅰ",
+    "IsServer": true,
+    "Type": 2,
+    "Color": 2,
+    "PreNodes": [
+      10801,
+      10802
+    ],
+    "EffectClient": 31,
+    "Clientlvl": 3,
+    "Priority": 20,
+    "Icon": "Icon/ZZZOther/startowergrowth_keypoint_1",
+    "Position": [
+      9,
+      1
+    ],
+    "Desc": "难度3及以上的星塔，战斗之间完成后有20%的概率出现随机事件，单局星塔探索最大触发3次",
+    "ItemId1": 51,
+    "ItemQty1": 60
+  },
+  "20101": {
+    "Id": 20101,
+    "NodeId": 1,
+    "Group": 2,
+    "Name": "同谐的心弦Ⅲ",
+    "IsServer": true,
+    "Type": 1,
+    "EffectClient": 27,
+    "Clientlvl": 3,
+    "Priority": 21,
+    "Position": [
+      1,
+      1
+    ],
+    "Desc": "难度3及以上的星塔探索中，战斗之间获得音符的概率提升45%",
+    "ItemId1": 51,
+    "ItemQty1": 30
+  },
+  "20102": {
+    "Id": 20102,
+    "NodeId": 2,
+    "Group": 2,
+    "Name": "增效定律Ⅱ",
+    "IsServer": true,
+    "Type": 1,
+    "EffectClient": 20,
+    "Clientlvl": 1,
+    "Priority": 22,
+    "Position": [
+      1,
+      2
+    ],
+    "Desc": "星塔探索获取征途票根数量增加60%",
+    "ItemId1": 51,
+    "ItemQty1": 30
+  },
+  "20201": {
+    "Id": 20201,
+    "NodeId": 3,
+    "Group": 2,
+    "Name": "惊喜音符Ⅰ",
+    "IsServer": true,
+    "Type": 1,
+    "PreNodes": [
+      20101
+    ],
+    "EffectClient": 29,
+    "Clientlvl": 3,
+    "Priority": 23,
+    "Position": [
+      2,
+      1
+    ],
+    "Desc": "难度3及以上的星塔探索中，获得音符时10%概率获得额外3个音符，单局星塔探索最大触发2次",
+    "ItemId1": 51,
+    "ItemQty1": 30
+  },
+  "20202": {
+    "Id": 20202,
+    "NodeId": 4,
+    "Group": 2,
+    "Name": "会员折扣Ⅰ",
+    "IsServer": true,
+    "Type": 1,
+    "PreNodes": [
+      20102
+    ],
+    "EffectClient": 14,
+    "Clientlvl": 3,
+    "Priority": 24,
+    "Position": [
+      2,
+      2
+    ],
+    "Desc": "难度3及以上的星塔探索中，商店的货物随机2件获得80%折扣",
+    "ItemId1": 51,
+    "ItemQty1": 30
+  },
+  "20301": {
+    "Id": 20301,
+    "NodeId": 5,
+    "Group": 2,
+    "Name": "吞金的陷阱",
+    "IsServer": true,
+    "Type": 2,
+    "Color": 1,
+    "PreNodes": [
+      20201,
+      20202
+    ],
+    "EffectClient": 7,
+    "Clientlvl": 4,
+    "Priority": 25,
+    "Icon": "Icon/ZZZOther/startowergrowth_keypoint_1",
+    "Position": [
+      3,
+      1
+    ],
+    "Desc": "难度4及以上的星塔探索中，商店房会出现强化机。",
+    "ItemId1": 51,
+    "ItemQty1": 80
+  },
+  "20302": {
+    "Id": 20302,
+    "NodeId": 6,
+    "Group": 2,
+    "Name": "唱机改造Ⅱ",
+    "IsServer": true,
+    "IsClient": true,
+    "Type": 2,
+    "Color": 1,
+    "PreNodes": [
+      20201,
+      20202
+    ],
+    "EffectClient": 26,
+    "ClientParams": "[2]",
+    "Clientlvl": 1,
+    "Priority": 26,
+    "Icon": "Icon/ZZZOther/startowergrowth_keypoint_1",
+    "Position": [
+      3,
+      2
+    ],
+    "Desc": "星塔探索中，队伍可携带3张辅位秘纹",
+    "ItemId1": 51,
+    "ItemQty1": 80
+  },
+  "20401": {
+    "Id": 20401,
+    "NodeId": 7,
+    "Group": 2,
+    "Name": "同谐的心弦Ⅳ",
+    "IsServer": true,
+    "Type": 1,
+    "PreNodes": [
+      20301
+    ],
+    "EffectClient": 27,
+    "Clientlvl": 4,
+    "Priority": 27,
+    "Position": [
+      4,
+      1
+    ],
+    "Desc": "难度4及以上的星塔探索中，战斗之间获得音符的概率提升60%",
+    "ItemId1": 51,
+    "ItemQty1": 30
+  },
+  "20402": {
+    "Id": 20402,
+    "NodeId": 8,
+    "Group": 2,
+    "Name": "星塔严选Ⅱ",
+    "IsServer": true,
+    "Type": 1,
+    "PreNodes": [
+      20301,
+      20302
+    ],
+    "EffectClient": 13,
+    "Clientlvl": 4,
+    "Priority": 28,
+    "Position": [
+      4,
+      2
+    ],
+    "Desc": "难度4及以上的星塔探索中，商店会额外刷新4件商品",
+    "ItemId1": 51,
+    "ItemQty1": 30
+  },
+  "20403": {
+    "Id": 20403,
+    "NodeId": 9,
+    "Group": 2,
+    "Name": "增效定律Ⅲ",
+    "IsServer": true,
+    "Type": 1,
+    "PreNodes": [
+      20302
+    ],
+    "EffectClient": 20,
+    "Clientlvl": 1,
+    "Priority": 29,
+    "Position": [
+      4,
+      3
+    ],
+    "Desc": "星塔探索获取征途票根数量增加100%",
+    "ItemId1": 51,
+    "ItemQty1": 30
+  },
+  "20501": {
+    "Id": 20501,
+    "NodeId": 10,
+    "Group": 2,
+    "Name": "惊喜音符Ⅱ",
+    "IsServer": true,
+    "Type": 1,
+    "PreNodes": [
+      20401
+    ],
+    "EffectClient": 29,
+    "Clientlvl": 4,
+    "Priority": 30,
+    "Position": [
+      5,
+      1
+    ],
+    "Desc": "难度4及以上的星塔探索中，获得音符时10%概率获得额外6个音符，单局星塔探索最大触发2次",
+    "ItemId1": 51,
+    "ItemQty1": 30
+  },
+  "20502": {
+    "Id": 20502,
+    "NodeId": 11,
+    "Group": 2,
+    "Name": "会员折扣Ⅱ",
+    "IsServer": true,
+    "Type": 1,
+    "PreNodes": [
+      20402
+    ],
+    "EffectClient": 14,
+    "Clientlvl": 4,
+    "Priority": 31,
+    "Position": [
+      5,
+      2
+    ],
+    "Desc": "难度4及以上的星塔探索中，商店的货物随机3件获得80%折扣；最多1件折扣商品有30%概率提高到50%折扣",
+    "ItemId1": 51,
+    "ItemQty1": 30
+  },
+  "20503": {
+    "Id": 20503,
+    "NodeId": 12,
+    "Group": 2,
+    "Name": "命运的选择Ⅱ",
+    "IsServer": true,
+    "Type": 1,
+    "PreNodes": [
+      20403
+    ],
+    "EffectClient": 31,
+    "Clientlvl": 4,
+    "Priority": 32,
+    "Position": [
+      5,
+      3
+    ],
+    "Desc": "难度4及以上的星塔，战斗之间完成后有30%的概率出现随机事件，单局星塔探索最大触发5次",
+    "ItemId1": 51,
+    "ItemQty1": 30
+  },
+  "20601": {
+    "Id": 20601,
+    "NodeId": 13,
+    "Group": 2,
+    "Name": "无际心海Ⅰ",
+    "IsServer": true,
+    "IsClient": true,
+    "Type": 2,
+    "Color": 3,
+    "PreNodes": [
+      20501,
+      20502,
+      20503
+    ],
+    "EffectClient": 30,
+    "ClientParams": "[1]",
+    "Clientlvl": 1,
+    "Priority": 33,
+    "Icon": "Icon/ZZZOther/startowergrowth_keypoint_1",
+    "Position": [
+      6,
+      1
+    ],
+    "Desc": "星塔探索中潜能等级上限提升至4级",
+    "ItemId1": 51,
+    "ItemQty1": 80
+  },
+  "20701": {
+    "Id": 20701,
+    "NodeId": 14,
+    "Group": 2,
+    "Name": "幸运音符Ⅱ",
+    "IsServer": true,
+    "Type": 1,
+    "PreNodes": [
+      20601
+    ],
+    "EffectClient": 25,
+    "Clientlvl": 5,
+    "Priority": 34,
+    "Position": [
+      7,
+      1
+    ],
+    "Desc": "难度5及以上的星塔探索中，首领之间与魔王之间战斗后有50%概率获得额外6个音符",
+    "ItemId1": 51,
+    "ItemQty1": 40
+  },
+  "20702": {
+    "Id": 20702,
+    "NodeId": 15,
+    "Group": 2,
+    "Name": "星塔严选Ⅲ",
+    "IsServer": true,
+    "Type": 1,
+    "PreNodes": [
+      20601
+    ],
+    "EffectClient": 13,
+    "Clientlvl": 5,
+    "Priority": 35,
+    "Position": [
+      7,
+      2
+    ],
+    "Desc": "难度5及以上的星塔探索中，商店会额外刷新6件商品",
+    "ItemId1": 51,
+    "ItemQty1": 40
+  },
+  "20801": {
+    "Id": 20801,
+    "NodeId": 16,
+    "Group": 2,
+    "Name": "心花怒放Ⅰ",
+    "IsServer": true,
+    "Type": 1,
+    "PreNodes": [
+      20701
+    ],
+    "EffectClient": 6,
+    "Clientlvl": 5,
+    "Priority": 36,
+    "Position": [
+      8,
+      1
+    ],
+    "Desc": "难度5及以上的星塔探索中，获取新潜能时，有5%的概率额外提升1级，单局星塔探索最大触发1次",
+    "ItemId1": 51,
+    "ItemQty1": 40
+  },
+  "20802": {
+    "Id": 20802,
+    "NodeId": 17,
+    "Group": 2,
+    "Name": "会员折扣Ⅲ",
+    "IsServer": true,
+    "Type": 1,
+    "PreNodes": [
+      20702
+    ],
+    "EffectClient": 14,
+    "Clientlvl": 5,
+    "Priority": 37,
+    "Position": [
+      8,
+      2
+    ],
+    "Desc": "难度5及以上的星塔探索中，商店的货物随机4件获得80%折扣；最多2件折扣商品有70%概率提高到50%折扣",
+    "ItemId1": 51,
+    "ItemQty1": 40
+  },
+  "20901": {
+    "Id": 20901,
+    "NodeId": 18,
+    "Group": 2,
+    "Name": "云彩的骰子",
+    "IsServer": true,
+    "Type": 2,
+    "Color": 3,
+    "PreNodes": [
+      20801,
+      20802
+    ],
+    "EffectClient": 1,
+    "Clientlvl": 1,
+    "Priority": 38,
+    "Icon": "Icon/ZZZOther/startowergrowth_keypoint_1",
+    "Position": [
+      9,
+      1
+    ],
+    "Desc": "解锁「潜能刷新」功能：\n可消耗<sprite name=item_11_small>，重新抽取一次「潜能」",
+    "ItemId1": 51,
+    "ItemQty1": 80
+  },
+  "20902": {
+    "Id": 20902,
+    "NodeId": 19,
+    "Group": 2,
+    "Name": "货仓的钥匙",
+    "IsServer": true,
+    "Type": 2,
+    "Color": 3,
+    "PreNodes": [
+      20801,
+      20802
+    ],
+    "EffectClient": 5,
+    "Clientlvl": 1,
+    "Priority": 39,
+    "Icon": "Icon/ZZZOther/startowergrowth_keypoint_2",
+    "Position": [
+      9,
+      2
+    ],
+    "Desc": "解锁「商店补货」功能：\n可消耗<sprite name=item_11_small>，刷新商店的货物，每次星塔探索限定1次。",
+    "ItemId1": 51,
+    "ItemQty1": 80
+  },
+  "30101": {
+    "Id": 30101,
+    "NodeId": 1,
+    "Group": 3,
+    "Name": "星空之命Ⅰ",
+    "IsServer": true,
+    "Type": 1,
+    "EffectClient": 1,
+    "Clientlvl": 1,
+    "Priority": 40,
+    "Position": [
+      1,
+      1
+    ],
+    "Desc": "潜能重随价格降低30",
+    "ItemId1": 51,
+    "ItemQty1": 60
+  },
+  "30102": {
+    "Id": 30102,
+    "NodeId": 2,
+    "Group": 3,
+    "Name": "套餐协议Ⅰ",
+    "IsServer": true,
+    "Type": 1,
+    "EffectClient": 10,
+    "Clientlvl": 1,
+    "Priority": 41,
+    "Position": [
+      1,
+      2
+    ],
+    "Desc": "强化机强化消耗降低30",
+    "ItemId1": 51,
+    "ItemQty1": 60
+  },
+  "30201": {
+    "Id": 30201,
+    "NodeId": 3,
+    "Group": 3,
+    "Name": "心花怒放Ⅱ",
+    "IsServer": true,
+    "Type": 1,
+    "PreNodes": [
+      30101
+    ],
+    "EffectClient": 6,
+    "Clientlvl": 6,
+    "Priority": 42,
+    "Position": [
+      2,
+      1
+    ],
+    "Desc": "难度6及以上的星塔探索中，获取新潜能时，有10%的概率额外提升1级，单局星塔探索触发次数不限",
+    "ItemId1": 51,
+    "ItemQty1": 80
+  },
+  "30202": {
+    "Id": 30202,
+    "NodeId": 4,
+    "Group": 3,
+    "Name": "潜能飞升Ⅰ",
+    "IsServer": true,
+    "Type": 1,
+    "PreNodes": [
+      30102
+    ],
+    "EffectClient": 8,
+    "Clientlvl": 6,
+    "Priority": 43,
+    "Position": [
+      2,
+      2
+    ],
+    "Desc": "难度6及以上的星塔探索中，强化潜能时，有10%的概率额外强化1级，单局星塔探索最大触发1次",
+    "ItemId1": 51,
+    "ItemQty1": 80
+  },
+  "30301": {
+    "Id": 30301,
+    "NodeId": 5,
+    "Group": 3,
+    "Name": "无际心海Ⅱ",
+    "IsServer": true,
+    "IsClient": true,
+    "Type": 2,
+    "Color": 1,
+    "PreNodes": [
+      30201,
+      30202
+    ],
+    "EffectClient": 30,
+    "ClientParams": "[3]",
+    "Clientlvl": 1,
+    "Priority": 44,
+    "Icon": "Icon/ZZZOther/startowergrowth_keypoint_1",
+    "Position": [
+      3,
+      1
+    ],
+    "Desc": "星塔探索中潜能等级上限提升至6级",
+    "ItemId1": 51,
+    "ItemQty1": 120
+  },
+  "30401": {
+    "Id": 30401,
+    "NodeId": 6,
+    "Group": 3,
+    "Name": "星空之命Ⅱ",
+    "IsServer": true,
+    "Type": 1,
+    "PreNodes": [
+      30301
+    ],
+    "EffectClient": 1,
+    "Clientlvl": 1,
+    "Priority": 45,
+    "Position": [
+      4,
+      1
+    ],
+    "Desc": "潜能重随价格降低40",
+    "ItemId1": 51,
+    "ItemQty1": 100
+  },
+  "30402": {
+    "Id": 30402,
+    "NodeId": 7,
+    "Group": 3,
+    "Name": "套餐协议Ⅱ",
+    "IsServer": true,
+    "Type": 1,
+    "PreNodes": [
+      30301
+    ],
+    "EffectClient": 10,
+    "Clientlvl": 1,
+    "Priority": 46,
+    "Position": [
+      4,
+      2
+    ],
+    "Desc": "强化机强化消耗降低60",
+    "ItemId1": 51,
+    "ItemQty1": 100
+  },
+  "30501": {
+    "Id": 30501,
+    "NodeId": 8,
+    "Group": 3,
+    "Name": "惊喜音符Ⅲ",
+    "IsServer": true,
+    "Type": 1,
+    "PreNodes": [
+      30401
+    ],
+    "EffectClient": 29,
+    "Clientlvl": 6,
+    "Priority": 47,
+    "Position": [
+      5,
+      1
+    ],
+    "Desc": "难度6及以上的星塔探索中，获得音符时20%概率获得额外6个音符，单局星塔探索最大触发4次",
+    "ItemId1": 51,
+    "ItemQty1": 120
+  },
+  "30502": {
+    "Id": 30502,
+    "NodeId": 9,
+    "Group": 3,
+    "Name": "潜能飞升Ⅱ",
+    "IsServer": true,
+    "Type": 1,
+    "PreNodes": [
+      30402
+    ],
+    "EffectClient": 8,
+    "Clientlvl": 6,
+    "Priority": 48,
+    "Position": [
+      5,
+      2
+    ],
+    "Desc": "难度6及以上的星塔探索中，强化潜能时，有20%的概率额外强化1级，单局星塔探索最大触发2次",
+    "ItemId1": 51,
+    "ItemQty1": 120
+  },
+  "30601": {
+    "Id": 30601,
+    "NodeId": 10,
+    "Group": 3,
+    "Name": "仓管的权能",
+    "IsServer": true,
+    "Type": 2,
+    "Color": 2,
+    "PreNodes": [
+      30501,
+      30502
+    ],
+    "EffectClient": 5,
+    "Clientlvl": 1,
+    "Priority": 49,
+    "Icon": "Icon/ZZZOther/startowergrowth_keypoint_2",
+    "Position": [
+      6,
+      1
+    ],
+    "Desc": "「商店补货」次数+1",
+    "ItemId1": 51,
+    "ItemQty1": 200
+  },
+  "30701": {
+    "Id": 30701,
+    "NodeId": 11,
+    "Group": 3,
+    "Name": "幸运音符Ⅲ",
+    "IsServer": true,
+    "Type": 1,
+    "PreNodes": [
+      30601
+    ],
+    "EffectClient": 25,
+    "Clientlvl": 7,
+    "Priority": 50,
+    "Position": [
+      7,
+      1
+    ],
+    "Desc": "难度7及以上的星塔探索中，首领之间与魔王之间战斗后有50%概率获得额外9个音符",
+    "ItemId1": 51,
+    "ItemQty1": 150
+  },
+  "30702": {
+    "Id": 30702,
+    "NodeId": 12,
+    "Group": 3,
+    "Name": "星空之命Ⅲ",
+    "IsServer": true,
+    "Type": 1,
+    "PreNodes": [
+      30601
+    ],
+    "EffectClient": 1,
+    "Clientlvl": 1,
+    "Priority": 51,
+    "Position": [
+      7,
+      2
+    ],
+    "Desc": "潜能重随价格降低60",
+    "ItemId1": 51,
+    "ItemQty1": 150
+  },
+  "30801": {
+    "Id": 30801,
+    "NodeId": 13,
+    "Group": 3,
+    "Name": "心花怒放Ⅲ",
+    "IsServer": true,
+    "Type": 1,
+    "PreNodes": [
+      30701
+    ],
+    "EffectClient": 6,
+    "Clientlvl": 7,
+    "Priority": 52,
+    "Position": [
+      8,
+      1
+    ],
+    "Desc": "难度7及以上的星塔探索中，获取新潜能时，有20%的概率额外提升1级，单局星塔探索触发次数不限",
+    "ItemId1": 51,
+    "ItemQty1": 150
+  },
+  "30802": {
+    "Id": 30802,
+    "NodeId": 14,
+    "Group": 3,
+    "Name": "潜能飞升Ⅲ",
+    "IsServer": true,
+    "Type": 1,
+    "PreNodes": [
+      30702
+    ],
+    "EffectClient": 8,
+    "Clientlvl": 7,
+    "Priority": 53,
+    "Position": [
+      8,
+      2
+    ],
+    "Desc": "难度7及以上的星塔探索中，强化潜能时，有30%的概率额外强化1级，单局星塔探索最大触发5次",
+    "ItemId1": 51,
+    "ItemQty1": 150
+  },
+  "30901": {
+    "Id": 30901,
+    "NodeId": 15,
+    "Group": 3,
+    "Name": "辉光的奇迹",
+    "IsServer": true,
+    "Type": 2,
+    "Color": 3,
+    "PreNodes": [
+      30801,
+      30802
+    ],
+    "EffectClient": 33,
+    "Clientlvl": 7,
+    "Priority": 54,
+    "Icon": "Icon/ZZZOther/startowergrowth_keypoint_1",
+    "Position": [
+      9,
+      1
+    ],
+    "Desc": "难度7及以上的星塔探索中，前10次触发「心花怒放」效果时，一定概率额外提升1级",
+    "ItemId1": 51,
+    "ItemQty1": 310
+  },
+  "40101": {
+    "Id": 40101,
+    "NodeId": 1,
+    "Group": 4,
+    "Name": "圣洁的共鸣",
+    "IsServer": true,
+    "Type": 2,
+    "Color": 1,
+    "EffectClient": 32,
+    "Clientlvl": 8,
+    "Priority": 55,
+    "Icon": "Icon/ZZZOther/startowergrowth_keypoint_1",
+    "Position": [
+      1,
+      1
+    ],
+    "Desc": "难度8及以上的星塔探索中，当主控旅人元素属性与星塔属性一致时，仅会出现相同属性的元素音符",
+    "ItemId1": 51,
+    "ItemQty1": 300
+  },
+  "40201": {
+    "Id": 40201,
+    "NodeId": 2,
+    "Group": 4,
+    "Name": "欲望的增殖",
+    "IsServer": true,
+    "Type": 2,
+    "Color": 2,
+    "PreNodes": [
+      40101
+    ],
+    "EffectClient": 20,
+    "Clientlvl": 1,
+    "Priority": 56,
+    "Icon": "Icon/ZZZOther/startowergrowth_keypoint_2",
+    "Position": [
+      2,
+      1
+    ],
+    "Desc": "星塔探索获取征途票根数量增加200%",
+    "ItemId1": 51,
+    "ItemQty1": 300
+  },
+  "40301": {
+    "Id": 40301,
+    "NodeId": 3,
+    "Group": 4,
+    "Name": "公平的贪婪",
+    "IsServer": true,
+    "Type": 2,
+    "Color": 1,
+    "PreNodes": [
+      40201
+    ],
+    "EffectClient": 35,
+    "Clientlvl": 8,
+    "Priority": 57,
+    "Icon": "Icon/ZZZOther/startowergrowth_keypoint_2",
+    "Position": [
+      3,
+      1
+    ],
+    "Desc": "难度8及以上的星塔探索中，触发「潜能飞升」时，本次的三张潜能均触发等级强化，且仅消耗一次次数",
+    "ItemId1": 51,
+    "ItemQty1": 300
+  },
+  "40401": {
+    "Id": 40401,
+    "NodeId": 4,
+    "Group": 4,
+    "Name": "后付的代价",
+    "IsServer": true,
+    "Type": 2,
+    "Color": 3,
+    "PreNodes": [
+      40301
+    ],
+    "EffectClient": 34,
+    "Clientlvl": 8,
+    "Priority": 58,
+    "Icon": "Icon/ZZZOther/startowergrowth_keypoint_1",
+    "Position": [
+      4,
+      1
+    ],
+    "Desc": "难度8及以上的星塔探索中，「辉光的奇迹」强化为在实际选取时再消耗触发次数",
+    "ItemId1": 51,
+    "ItemQty1": 300
+  }
+}

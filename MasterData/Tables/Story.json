@@ -1,0 +1,3781 @@
+{
+  "100": {
+    "Id": 100,
+    "StoryId": "BAm01_05",
+    "Chapter": 1,
+    "Index": "BT01",
+    "Title": "重返孤儿院",
+    "Desc": "言语说不通的时候，就需要用剑来开路。",
+    "TrialBuild": 101,
+    "ConditionId": "C01_05",
+    "IsBattle": true,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm01_05"
+    ],
+    "FloorId": [
+      1010201
+    ],
+    "PreviewMonsterGroupId": 10102,
+    "Recommend": "5",
+    "Aim": "Story.100.3"
+  },
+  "101": {
+    "Id": 101,
+    "StoryId": "STm01_01",
+    "Chapter": 1,
+    "Index": "01",
+    "Title": "梦醒时分",
+    "Desc": "每一次醒来，都是一段新的人生。",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "AvgLuaName": "STm01_01",
+    "Aim": "Story.101.3"
+  },
+  "102": {
+    "Id": 102,
+    "StoryId": "STm01_02",
+    "Chapter": 1,
+    "Index": "02",
+    "Title": "过去的痕迹",
+    "Desc": "失去了所有记忆的你，收到了一份久远的礼物。",
+    "ConditionId": "C01_01",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm01_01"
+    ],
+    "AvgLuaName": "STm01_02",
+    "Aim": "Story.102.3",
+    "AvgMotion": "style_20"
+  },
+  "103": {
+    "Id": 103,
+    "StoryId": "STm01_03",
+    "Chapter": 1,
+    "Index": "03",
+    "Title": "消失的绿洲",
+    "Desc": "一转眼，你们的容身之所就被夺走了。",
+    "ConditionId": "C01_02",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm01_02"
+    ],
+    "AvgLuaName": "STm01_03",
+    "Aim": "Story.103.3",
+    "AvgMotion": "style_20"
+  },
+  "104": {
+    "Id": 104,
+    "StoryId": "STm01_04",
+    "Chapter": 1,
+    "Index": "04",
+    "Title": "桥洞下",
+    "Desc": "无家可归的人，总要找个遮风挡雨的地方。",
+    "ConditionId": "C01_03",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm01_03"
+    ],
+    "AvgLuaName": "STm01_04",
+    "Aim": "Story.104.3",
+    "AvgMotion": "style_20"
+  },
+  "105": {
+    "Id": 105,
+    "StoryId": "STm01_05",
+    "Chapter": 1,
+    "Index": "05",
+    "Title": "灰城区的风",
+    "Desc": "物是人非，旧日的街道上已经没有了熟悉的风景。",
+    "ConditionId": "C01_04",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm01_04"
+    ],
+    "AvgLuaName": "STm01_05",
+    "Aim": "Story.105.3",
+    "AvgMotion": "style_20"
+  },
+  "106": {
+    "Id": 106,
+    "StoryId": "STm01_06",
+    "Chapter": 1,
+    "Index": "06",
+    "Title": "飞翔的选择",
+    "Desc": "这是她的故事，也是灰城区的故事。",
+    "ConditionId": "CBA01_05",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "BAm01_05"
+    ],
+    "AvgLuaName": "STm01_06",
+    "Aim": "Story.106.3",
+    "AvgMotion": "style_20"
+  },
+  "107": {
+    "Id": 107,
+    "StoryId": "STm01_07",
+    "Chapter": 1,
+    "Index": "07",
+    "Title": "不同的许愿",
+    "Desc": "崭新的许愿方式，是变革还是灾祸？",
+    "ConditionId": "C01_06",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm01_06"
+    ],
+    "HasEvidence": true,
+    "AvgLuaName": "STm01_07",
+    "Aim": "Story.107.3",
+    "AvgMotion": "style_20"
+  },
+  "108": {
+    "Id": 108,
+    "StoryId": "STm01_08_a",
+    "Chapter": 1,
+    "Index": "08A",
+    "Title": "调查结果",
+    "Desc": "很多时候，答案就藏在最显眼的地方。",
+    "ConditionId": "C01_07_a",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm01_07"
+    ],
+    "AvgLuaName": "STm01_08_a",
+    "Aim": "Story.108.3",
+    "AvgMotion": "style_20"
+  },
+  "109": {
+    "Id": 109,
+    "StoryId": "STm01_08_c",
+    "Chapter": 1,
+    "Index": "08B",
+    "Title": "饭后甜点",
+    "Desc": "治愈人心的美食，往往只需要最朴素的烹饪方式。",
+    "ConditionId": "C01_07_c",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm01_07"
+    ],
+    "AvgLuaName": "STm01_08_c",
+    "Aim": "Story.109.3",
+    "AvgMotion": "style_20"
+  },
+  "110": {
+    "Id": 110,
+    "StoryId": "STm01_08_b",
+    "Chapter": 1,
+    "Index": "终局",
+    "Title": "没有旅人的未来",
+    "Desc": "不要向星星许愿。",
+    "ConditionId": "C01_07_b",
+    "IsBranch": true,
+    "Reward": 112,
+    "RewardDisplay": "[{\"Tid\":1,\"Qty\":666}]",
+    "ParentStoryId": [
+      "STm01_07"
+    ],
+    "AvgLuaName": "STm01_08_b",
+    "Aim": "Story.110.3",
+    "AvgMotion": "style_20"
+  },
+  "111": {
+    "Id": 111,
+    "StoryId": "STm01_09",
+    "Chapter": 1,
+    "Index": "09",
+    "Title": "填补记忆的方式",
+    "Desc": "抵御失忆的方法就是创造更多有趣的记忆。",
+    "ConditionId": "C01_08",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm01_08_a",
+      "STm01_08_c"
+    ],
+    "AvgLuaName": "STm01_09",
+    "Aim": "Story.111.3",
+    "AvgMotion": "style_20"
+  },
+  "112": {
+    "Id": 112,
+    "StoryId": "STm01_10",
+    "Chapter": 1,
+    "Index": "10",
+    "Title": "最终解释权",
+    "Desc": "有恩赐印章就是可以为所欲为。",
+    "ConditionId": "C01_09",
+    "Reward": 104,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":50}]",
+    "ParentStoryId": [
+      "STm01_09"
+    ],
+    "AvgLuaName": "STm01_10",
+    "Aim": "Story.112.3",
+    "IsLast": true,
+    "AvgMotion": "style_20"
+  },
+  "201": {
+    "Id": 201,
+    "StoryId": "BAm02_03",
+    "Chapter": 2,
+    "Index": "BT01",
+    "Title": "逃出包围",
+    "Desc": "总有人想用笼子抓住风。",
+    "TrialBuild": 201,
+    "ConditionId": "C02_03",
+    "IsBattle": true,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm02_03_a",
+      "STm02_03_b"
+    ],
+    "FloorId": [
+      1020301
+    ],
+    "PreviewMonsterGroupId": 10203,
+    "Recommend": "5",
+    "Aim": "Story.201.3"
+  },
+  "202": {
+    "Id": 202,
+    "StoryId": "BAm02_09",
+    "Chapter": 2,
+    "Index": "BT02",
+    "Title": "灾变的星骸",
+    "Desc": "玩弄规则的人从来不会好好认输。",
+    "TrialBuild": 202,
+    "ConditionId": "C02_09",
+    "IsBattle": true,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm02_09"
+    ],
+    "FloorId": [
+      1020101
+    ],
+    "PreviewMonsterGroupId": 10201,
+    "Recommend": "5",
+    "Aim": "Story.202.3"
+  },
+  "203": {
+    "Id": 203,
+    "StoryId": "BAm02_10",
+    "Chapter": 2,
+    "Index": "BT03",
+    "Title": "宿敌重逢",
+    "Desc": "旅人不会两次败给同一只星骸。",
+    "TrialBuild": 203,
+    "ConditionId": "C02_10",
+    "IsBattle": true,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm02_10"
+    ],
+    "FloorId": [
+      1020201
+    ],
+    "PreviewMonsterGroupId": 10202,
+    "Recommend": "5",
+    "Aim": "Story.203.3"
+  },
+  "204": {
+    "Id": 204,
+    "StoryId": "STm02_01",
+    "Chapter": 2,
+    "Index": "01",
+    "Title": "公司与绿洲",
+    "Desc": "从天而降的好处越多，就越要谨慎行事。",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "HasEvidence": true,
+    "AvgLuaName": "STm02_01",
+    "Aim": "Story.204.3",
+    "AvgMotion": "style_20"
+  },
+  "205": {
+    "Id": 205,
+    "StoryId": "STm02_02_a",
+    "Chapter": 2,
+    "Index": "02A",
+    "Title": "深夜潜入",
+    "Desc": "既然说我们是野蛮人，那就做点野蛮的事吧。",
+    "ConditionId": "C02_02_a",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm02_01"
+    ],
+    "AvgLuaName": "STm02_02_a",
+    "Aim": "Story.205.3",
+    "AvgMotion": "style_20"
+  },
+  "206": {
+    "Id": 206,
+    "StoryId": "STm02_02_b",
+    "Chapter": 2,
+    "Index": "02B",
+    "Title": "变装侦查",
+    "Desc": "人靠衣装，是因为有些人只看得见衣装。",
+    "ConditionId": "C02_02_b",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm02_01"
+    ],
+    "AvgLuaName": "STm02_02_b",
+    "Aim": "Story.206.3",
+    "AvgMotion": "style_20"
+  },
+  "207": {
+    "Id": 207,
+    "StoryId": "STm02_02_c",
+    "Chapter": 2,
+    "Index": "终局",
+    "Title": "永恒",
+    "Desc": "复杂的计划总会出意外。",
+    "ConditionId": "C02_02_c",
+    "IsBranch": true,
+    "Reward": 112,
+    "RewardDisplay": "[{\"Tid\":1,\"Qty\":666}]",
+    "ParentStoryId": [
+      "STm02_01"
+    ],
+    "AvgLuaName": "STm02_02_c",
+    "Aim": "Story.207.3",
+    "AvgMotion": "style_20"
+  },
+  "208": {
+    "Id": 208,
+    "StoryId": "STm02_03_a",
+    "Chapter": 2,
+    "Index": "03A",
+    "Title": "暗夜中的视线",
+    "Desc": "夜色中盯着你们的人不止一个。",
+    "ConditionId": "C02_03_a",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm02_02_a"
+    ],
+    "AvgLuaName": "STm02_03_a",
+    "Aim": "Story.208.3",
+    "AvgMotion": "style_20"
+  },
+  "209": {
+    "Id": 209,
+    "StoryId": "STm02_03_b",
+    "Chapter": 2,
+    "Index": "03B",
+    "Title": "等下班",
+    "Desc": "白垩商会的员工难道不用睡觉吗？",
+    "ConditionId": "C02_03_b",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm02_02_b"
+    ],
+    "AvgLuaName": "STm02_03_b",
+    "Aim": "Story.209.3",
+    "AvgMotion": "style_20"
+  },
+  "210": {
+    "Id": 210,
+    "StoryId": "STm02_04",
+    "Chapter": 2,
+    "Index": "04",
+    "Title": "黑色少女",
+    "Desc": "提升敌人的成本也是一种武器。",
+    "ConditionId": "CBA02_03",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "BAm02_03"
+    ],
+    "AvgLuaName": "STm02_04",
+    "Aim": "Story.210.3",
+    "AvgMotion": "style_20"
+  },
+  "211": {
+    "Id": 211,
+    "StoryId": "STm02_05",
+    "Chapter": 2,
+    "Index": "05",
+    "Title": "仁义与刀",
+    "Desc": "要守护的是主公，以及主公关心的一切。",
+    "ConditionId": "C02_04",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm02_04"
+    ],
+    "AvgLuaName": "STm02_05",
+    "Aim": "Story.211.3",
+    "AvgMotion": "style_20"
+  },
+  "212": {
+    "Id": 212,
+    "StoryId": "STm02_06",
+    "Chapter": 2,
+    "Index": "06",
+    "Title": "公司的权力",
+    "Desc": "规则、金钱和武力，菲金不知道怎么输。",
+    "ConditionId": "C02_05",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm02_05"
+    ],
+    "AvgLuaName": "STm02_06",
+    "Aim": "Story.212.3",
+    "AvgMotion": "style_20"
+  },
+  "213": {
+    "Id": 213,
+    "StoryId": "STm02_07",
+    "Chapter": 2,
+    "Index": "07",
+    "Title": "特许经营",
+    "Desc": "想要对抗公司，只有先成为公司。",
+    "ConditionId": "C02_06",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm02_06"
+    ],
+    "AvgLuaName": "STm02_07",
+    "Aim": "Story.213.3",
+    "AvgMotion": "style_20"
+  },
+  "214": {
+    "Id": 214,
+    "StoryId": "STm02_08",
+    "Chapter": 2,
+    "Index": "08",
+    "Title": "灵魂交易",
+    "Desc": "人类的灵魂要怎么定价？",
+    "ConditionId": "C02_07",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm02_07"
+    ],
+    "AvgLuaName": "STm02_08",
+    "Aim": "Story.214.3",
+    "AvgMotion": "style_20"
+  },
+  "215": {
+    "Id": 215,
+    "StoryId": "STm02_09",
+    "Chapter": 2,
+    "Index": "09",
+    "Title": "一小时战争",
+    "Desc": "战争在开始的那一刻就结束了。",
+    "ConditionId": "C02_08",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm02_08"
+    ],
+    "AvgLuaName": "STm02_09",
+    "Aim": "Story.215.3",
+    "AvgMotion": "style_20"
+  },
+  "216": {
+    "Id": 216,
+    "StoryId": "STm02_10",
+    "Chapter": 2,
+    "Index": "10",
+    "Title": "实现愿望的方法",
+    "Desc": "胜负仅在一瞬间。",
+    "ConditionId": "CBA02_09",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "BAm02_09"
+    ],
+    "AvgLuaName": "STm02_10",
+    "Aim": "Story.216.3",
+    "AvgMotion": "style_20"
+  },
+  "217": {
+    "Id": 217,
+    "StoryId": "STm02_11",
+    "Chapter": 2,
+    "Index": "尾声",
+    "Title": "新的起点",
+    "Desc": "星星和高塔的旅程正式开始了。",
+    "ConditionId": "CBA02_10",
+    "Reward": 104,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":50}]",
+    "ParentStoryId": [
+      "BAm02_10"
+    ],
+    "AvgLuaName": "STm02_11",
+    "Aim": "Story.217.3",
+    "IsLast": true,
+    "AvgMotion": "style_20"
+  },
+  "301": {
+    "Id": 301,
+    "StoryId": "BAm03_04",
+    "Chapter": 3,
+    "Index": "BT01",
+    "Title": "实力评估",
+    "Desc": "了解自身，是成长的第一步。",
+    "TrialBuild": 301,
+    "ConditionId": "C03_04",
+    "IsBattle": true,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm03_04"
+    ],
+    "FloorId": [
+      1030101
+    ],
+    "PreviewMonsterGroupId": 10301,
+    "Aim": "Story.301.3"
+  },
+  "302": {
+    "Id": 302,
+    "StoryId": "BAm03_09",
+    "Chapter": 3,
+    "Index": "BT02",
+    "Title": "猛进之灵",
+    "Desc": "来一决胜负吧，大家伙！",
+    "TrialBuild": 302,
+    "ConditionId": "C03_09",
+    "IsBattle": true,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm03_09"
+    ],
+    "FloorId": [
+      1030201
+    ],
+    "PreviewMonsterGroupId": 10302,
+    "Aim": "Story.302.3"
+  },
+  "304": {
+    "Id": 304,
+    "StoryId": "STm03_00_a",
+    "Chapter": 3,
+    "Index": "幕间 上",
+    "Title": "手机",
+    "Desc": "我的手机里住着一位奇怪的“秘书”。",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "AvgLuaName": "STm03_00_a",
+    "Aim": "Story.304.3",
+    "AvgMotion": "style_19"
+  },
+  "305": {
+    "Id": 305,
+    "StoryId": "STm03_00_b",
+    "Chapter": 3,
+    "Index": "幕间 下",
+    "Title": "维塔",
+    "Desc": "棋子、权能、未来，我真的是传说中的魔王吗？",
+    "ConditionId": "C03_00_a",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm03_00_a"
+    ],
+    "AvgLuaName": "STm03_00_b",
+    "Aim": "Story.305.3",
+    "AvgMotion": "style_19"
+  },
+  "306": {
+    "Id": 306,
+    "StoryId": "STm03_01",
+    "Chapter": 3,
+    "Index": "01",
+    "Title": "三大魔物",
+    "Desc": "传说中的任务，适合传说中的旅人。",
+    "ConditionId": "C03_00_b",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm03_00_b"
+    ],
+    "AvgLuaName": "STm03_01",
+    "Aim": "Story.306.3",
+    "AvgMotion": "style_19"
+  },
+  "307": {
+    "Id": 307,
+    "StoryId": "STm03_02",
+    "Chapter": 3,
+    "Index": "02",
+    "Title": "森林深处的“仙人”",
+    "Desc": "故事中的高人往往隐居在不起眼的地方。",
+    "ConditionId": "C03_01",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm03_01"
+    ],
+    "AvgLuaName": "STm03_02",
+    "Aim": "Story.307.3",
+    "AvgMotion": "style_19"
+  },
+  "308": {
+    "Id": 308,
+    "StoryId": "STm03_03",
+    "Chapter": 3,
+    "Index": "03",
+    "Title": "花令旅团",
+    "Desc": "动起脑筋，玩场游戏。",
+    "ConditionId": "C03_02",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm03_02"
+    ],
+    "AvgLuaName": "STm03_03",
+    "Aim": "Story.308.3",
+    "AvgMotion": "style_19"
+  },
+  "309": {
+    "Id": 309,
+    "StoryId": "STm03_04",
+    "Chapter": 3,
+    "Index": "04",
+    "Title": "失败的讨伐",
+    "Desc": "老朋友与新朋友。",
+    "ConditionId": "C03_03",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm03_03"
+    ],
+    "AvgLuaName": "STm03_04",
+    "Aim": "Story.309.3",
+    "AvgMotion": "style_19"
+  },
+  "310": {
+    "Id": 310,
+    "StoryId": "STm03_05",
+    "Chapter": 3,
+    "Index": "05",
+    "Title": "心理阴影",
+    "Desc": "恐惧来源于过去。",
+    "ConditionId": "CBA03_04",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "BAm03_04"
+    ],
+    "HasEvidence": true,
+    "AvgLuaName": "STm03_05",
+    "Aim": "Story.310.3",
+    "AvgMotion": "style_19"
+  },
+  "311": {
+    "Id": 311,
+    "StoryId": "STm03_06_a",
+    "Chapter": 3,
+    "Index": "06A",
+    "Title": "心理疗法",
+    "Desc": "你需要一个树洞。",
+    "ConditionId": "C03_05_a",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm03_05"
+    ],
+    "AvgLuaName": "STm03_06_a",
+    "Aim": "Story.311.3",
+    "AvgMotion": "style_19"
+  },
+  "312": {
+    "Id": 312,
+    "StoryId": "STm03_06_b",
+    "Chapter": 3,
+    "Index": "06B",
+    "Title": "特训",
+    "Desc": "“负重训练”这个词听起来很热血。",
+    "ConditionId": "C03_05_b",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm03_05"
+    ],
+    "AvgLuaName": "STm03_06_b",
+    "Aim": "Story.312.3",
+    "AvgMotion": "style_19"
+  },
+  "313": {
+    "Id": 313,
+    "StoryId": "STm03_06_c",
+    "Chapter": 3,
+    "Index": "终局",
+    "Title": "刺激疗法",
+    "Desc": "来点刺激的。",
+    "ConditionId": "C03_05_c",
+    "IsBranch": true,
+    "Reward": 112,
+    "RewardDisplay": "[{\"Tid\":1,\"Qty\":666}]",
+    "ParentStoryId": [
+      "STm03_05"
+    ],
+    "AvgLuaName": "STm03_06_c",
+    "Aim": "Story.313.3",
+    "AvgMotion": "style_19"
+  },
+  "314": {
+    "Id": 314,
+    "StoryId": "STm03_07",
+    "Chapter": 3,
+    "Index": "07",
+    "Title": "不被需要的弱者",
+    "Desc": "颤抖，为何停不下来？",
+    "ConditionId": "C03_06",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm03_06_a",
+      "STm03_06_b"
+    ],
+    "AvgLuaName": "STm03_07",
+    "Aim": "Story.314.3",
+    "AvgMotion": "style_19"
+  },
+  "315": {
+    "Id": 315,
+    "StoryId": "STm03_08",
+    "Chapter": 3,
+    "Index": "08",
+    "Title": "讨伐队",
+    "Desc": "这一次，不愿再认输。",
+    "ConditionId": "C03_07",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm03_07"
+    ],
+    "AvgLuaName": "STm03_08",
+    "Aim": "Story.315.3",
+    "AvgMotion": "style_19"
+  },
+  "316": {
+    "Id": 316,
+    "StoryId": "STm03_09",
+    "Chapter": 3,
+    "Index": "09",
+    "Title": "相信的心",
+    "Desc": "每个人的心中都藏着了不起的“魔法”。",
+    "ConditionId": "C03_08",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm03_08"
+    ],
+    "AvgLuaName": "STm03_09",
+    "Aim": "Story.316.3",
+    "AvgMotion": "style_19"
+  },
+  "317": {
+    "Id": 317,
+    "StoryId": "STm03_10",
+    "Chapter": 3,
+    "Index": "10",
+    "Title": "胜利与交易",
+    "Desc": "一起欢笑、一起哭泣，这就是伙伴的真谛。",
+    "ConditionId": "CBA03_09",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "BAm03_09"
+    ],
+    "AvgLuaName": "STm03_10",
+    "Aim": "Story.317.3",
+    "AvgMotion": "style_19"
+  },
+  "318": {
+    "Id": 318,
+    "StoryId": "STm03_11",
+    "Chapter": 3,
+    "Index": "11",
+    "Title": "最后的魔物",
+    "Desc": "有的东西改变了，有些则没有……",
+    "ConditionId": "C03_10",
+    "Reward": 104,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":50}]",
+    "ParentStoryId": [
+      "STm03_10"
+    ],
+    "AvgLuaName": "STm03_11",
+    "Aim": "Story.318.3",
+    "IsLast": true,
+    "AvgMotion": "style_19"
+  },
+  "401": {
+    "Id": 401,
+    "StoryId": "BAm04_04",
+    "Chapter": 4,
+    "Index": "BT01",
+    "Title": "突破重围",
+    "Desc": "又是断后，但陪在身边的人已经不同。",
+    "TrialBuild": 401,
+    "ConditionId": "C04_04",
+    "IsBattle": true,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm04_04_a",
+      "STm04_04_b",
+      "STm04_04_c"
+    ],
+    "FloorId": [
+      1040101
+    ],
+    "PreviewMonsterGroupId": 10401,
+    "Aim": "Story.401.3"
+  },
+  "402": {
+    "Id": 402,
+    "StoryId": "BAm04_09",
+    "Chapter": 4,
+    "Index": "BT02",
+    "Title": "最后的魔物",
+    "Desc": "愿望只能靠自己的双手实现。",
+    "TrialBuild": 402,
+    "ConditionId": "C04_09",
+    "IsBattle": true,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm04_09"
+    ],
+    "FloorId": [
+      1040201
+    ],
+    "PreviewMonsterGroupId": 10402,
+    "Aim": "Story.402.3"
+  },
+  "403": {
+    "Id": 403,
+    "StoryId": "STm04_01",
+    "Chapter": 4,
+    "Index": "01",
+    "Title": "旅人往事",
+    "Desc": "遥远的梦与面前的人。",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "AvgLuaName": "STm04_01",
+    "Aim": "Story.403.3",
+    "AvgMotion": "style_19"
+  },
+  "404": {
+    "Id": 404,
+    "StoryId": "STm04_02",
+    "Chapter": 4,
+    "Index": "02",
+    "Title": "她的选择",
+    "Desc": "有些事，听到了就逃不开了。",
+    "ConditionId": "C04_01",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm04_01"
+    ],
+    "HasEvidence": true,
+    "AvgLuaName": "STm04_02",
+    "Aim": "Story.404.3",
+    "AvgMotion": "style_19"
+  },
+  "405": {
+    "Id": 405,
+    "StoryId": "STm04_03_a",
+    "Chapter": 4,
+    "Index": "终局",
+    "Title": "同归",
+    "Desc": "刻板地遵守承诺，有时并不是好事。",
+    "ConditionId": "C04_03_a",
+    "IsBranch": true,
+    "Reward": 112,
+    "RewardDisplay": "[{\"Tid\":1,\"Qty\":666}]",
+    "ParentStoryId": [
+      "STm04_02"
+    ],
+    "AvgLuaName": "STm04_03_a",
+    "Aim": "Story.405.3",
+    "AvgMotion": "style_19"
+  },
+  "406": {
+    "Id": 406,
+    "StoryId": "STm04_03_b",
+    "Chapter": 4,
+    "Index": "03A",
+    "Title": "夜谈",
+    "Desc": "既然无法说出真相，那就由你来做夏花的帮手。",
+    "ConditionId": "C04_03_b",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm04_02"
+    ],
+    "HasEvidence": true,
+    "AvgLuaName": "STm04_03_b",
+    "Aim": "Story.406.3",
+    "AvgMotion": "style_19"
+  },
+  "407": {
+    "Id": 407,
+    "StoryId": "STm04_03_c",
+    "Chapter": 4,
+    "Index": "03B",
+    "Title": "野营",
+    "Desc": "只要不说出夏花的秘密，就不算违背承诺。",
+    "ConditionId": "C04_03_c",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm04_02"
+    ],
+    "HasEvidence": true,
+    "AvgLuaName": "STm04_03_c",
+    "Aim": "Story.407.3",
+    "AvgMotion": "style_19"
+  },
+  "408": {
+    "Id": 408,
+    "StoryId": "STm04_04_a",
+    "Chapter": 4,
+    "Index": "04A",
+    "Title": "单兵作战",
+    "Desc": "没有最好的战术，只有最适合的战术",
+    "ConditionId": "C04_04_a",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm04_03_b",
+      "STm04_03_c"
+    ],
+    "AvgLuaName": "STm04_04_a",
+    "Aim": "Story.408.3",
+    "AvgMotion": "style_19"
+  },
+  "409": {
+    "Id": 409,
+    "StoryId": "STm04_04_b",
+    "Chapter": 4,
+    "Index": "04B",
+    "Title": "过去的你",
+    "Desc": "肌肉记忆不是想忘记就能忘记的。",
+    "ConditionId": "C04_04_b",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm04_03_b",
+      "STm04_03_c"
+    ],
+    "AvgLuaName": "STm04_04_b",
+    "Aim": "Story.409.3",
+    "AvgMotion": "style_19"
+  },
+  "410": {
+    "Id": 410,
+    "StoryId": "STm04_04_c",
+    "Chapter": 4,
+    "Index": "04C",
+    "Title": "完全压制",
+    "Desc": "魔王点兵，多多益善。",
+    "ConditionId": "C04_04_c",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm04_03_b",
+      "STm04_03_c"
+    ],
+    "AvgLuaName": "STm04_04_c",
+    "Aim": "Story.410.3",
+    "AvgMotion": "style_19"
+  },
+  "411": {
+    "Id": 411,
+    "StoryId": "STm04_05",
+    "Chapter": 4,
+    "Index": "05",
+    "Title": "想要保护的东西",
+    "Desc": "每个人都有想保护的东西，每个人想保护的东西都不同。",
+    "ConditionId": "CBA04_04",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "BAm04_04"
+    ],
+    "AvgLuaName": "STm04_05",
+    "Aim": "Story.411.3",
+    "AvgMotion": "style_19"
+  },
+  "412": {
+    "Id": 412,
+    "StoryId": "STm04_06",
+    "Chapter": 4,
+    "Index": "06",
+    "Title": "外乡人",
+    "Desc": "最廉价的和平，只需献祭一名外乡人。",
+    "ConditionId": "C04_05",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm04_05"
+    ],
+    "AvgLuaName": "STm04_06",
+    "Aim": "Story.412.3",
+    "AvgMotion": "style_19"
+  },
+  "413": {
+    "Id": 413,
+    "StoryId": "STm04_07",
+    "Chapter": 4,
+    "Index": "07",
+    "Title": "一场看气氛的雨",
+    "Desc": "无法让雨停下来的时候，撑起伞就好了。",
+    "ConditionId": "C04_06",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm04_06"
+    ],
+    "AvgLuaName": "STm04_07",
+    "Aim": "Story.413.3",
+    "AvgMotion": "style_19"
+  },
+  "414": {
+    "Id": 414,
+    "StoryId": "STm04_08",
+    "Chapter": 4,
+    "Index": "08",
+    "Title": "必有回响",
+    "Desc": "支援来自令人意外的势力，敌人并非铁板一块。",
+    "ConditionId": "C04_07",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm04_07"
+    ],
+    "AvgLuaName": "STm04_08",
+    "Aim": "Story.414.3",
+    "AvgMotion": "style_19"
+  },
+  "415": {
+    "Id": 415,
+    "StoryId": "STm04_09",
+    "Chapter": 4,
+    "Index": "09",
+    "Title": "梦想彼岸",
+    "Desc": "那场梦的一切都很美好，但夏花偏不想要。",
+    "ConditionId": "C04_08",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm04_08"
+    ],
+    "AvgLuaName": "STm04_09",
+    "Aim": "Story.415.3",
+    "AvgMotion": "style_19"
+  },
+  "416": {
+    "Id": 416,
+    "StoryId": "STm04_10",
+    "Chapter": 4,
+    "Index": "10",
+    "Title": "在星塔下",
+    "Desc": "真正的约定，无须刻印在任何地方",
+    "ConditionId": "CBA04_09",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "BAm04_09"
+    ],
+    "AvgLuaName": "STm04_10",
+    "Aim": "Story.416.3",
+    "AvgMotion": "style_19"
+  },
+  "417": {
+    "Id": 417,
+    "StoryId": "STm04_11",
+    "Chapter": 4,
+    "Index": "尾声",
+    "Title": "尘埃未定",
+    "Desc": "先抓狐狸，再抓豺狼。",
+    "ConditionId": "C04_10",
+    "Reward": 104,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":50}]",
+    "ParentStoryId": [
+      "STm04_10"
+    ],
+    "AvgLuaName": "STm04_11",
+    "Aim": "Story.417.3",
+    "IsLast": true,
+    "AvgMotion": "style_21"
+  },
+  "501": {
+    "Id": 501,
+    "StoryId": "BAm05_05",
+    "Chapter": 5,
+    "Index": "BT01",
+    "Title": "星塔里的调味料",
+    "Desc": "随手掷出的石子，能正中答案的红心吗？",
+    "TrialBuild": 501,
+    "ConditionId": "C05_05",
+    "IsBattle": true,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm05_05"
+    ],
+    "FloorId": [
+      1050101,
+      1050102,
+      1050103
+    ],
+    "PreviewMonsterGroupId": 10501,
+    "Aim": "Story.501.3"
+  },
+  "502": {
+    "Id": 502,
+    "StoryId": "BAm05_08",
+    "Chapter": 5,
+    "Index": "BT02",
+    "Title": "熟悉的佣兵",
+    "Desc": "王座越辉煌，它投下的阴影就越浓重。",
+    "TrialBuild": 502,
+    "ConditionId": "C05_07",
+    "IsBattle": true,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm05_07"
+    ],
+    "FloorId": [
+      1050201
+    ],
+    "PreviewMonsterGroupId": 10502,
+    "Aim": "Story.502.3"
+  },
+  "503": {
+    "Id": 503,
+    "StoryId": "BAm05_10",
+    "Chapter": 5,
+    "Index": "BT03",
+    "Title": "翠煌之刃",
+    "Desc": "欢迎光临这座精心打造、无处可逃的金丝笼。",
+    "TrialBuild": 503,
+    "ConditionId": "C05_09",
+    "IsBattle": true,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm05_09_b"
+    ],
+    "FloorId": [
+      1050301
+    ],
+    "PreviewMonsterGroupId": 10503,
+    "Aim": "Story.503.3"
+  },
+  "504": {
+    "Id": 504,
+    "StoryId": "STm05_00",
+    "Chapter": 5,
+    "Index": "幕间",
+    "Title": "秘密交易",
+    "Desc": "不入虎穴，焉得虎子。",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "AvgLuaName": "STm05_00",
+    "Aim": "Story.504.3",
+    "AvgMotion": "style_21"
+  },
+  "505": {
+    "Id": 505,
+    "StoryId": "STm05_01",
+    "Chapter": 5,
+    "Index": "01",
+    "Title": "特殊面试",
+    "Desc": "成大事者不拘小节。",
+    "ConditionId": "C05_00",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm05_00"
+    ],
+    "AvgLuaName": "STm05_01",
+    "Aim": "Story.505.3",
+    "AvgMotion": "style_21"
+  },
+  "506": {
+    "Id": 506,
+    "StoryId": "STm05_02",
+    "Chapter": 5,
+    "Index": "02",
+    "Title": "茶色夜莺",
+    "Desc": "浮于水上的真相，总只有冰山一角。",
+    "ConditionId": "C05_01",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm05_01"
+    ],
+    "HasEvidence": true,
+    "AvgLuaName": "STm05_02",
+    "Aim": "Story.506.3",
+    "AvgMotion": "style_21"
+  },
+  "507": {
+    "Id": 507,
+    "StoryId": "STm05_03_a",
+    "Chapter": 5,
+    "Index": "03A",
+    "Title": "爆炸艺术",
+    "Desc": "巨响，是灵感迸发的烟火！",
+    "ConditionId": "C05_02_a",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm05_02"
+    ],
+    "AvgLuaName": "STm05_03_a",
+    "Aim": "Story.507.3",
+    "AvgMotion": "style_21"
+  },
+  "508": {
+    "Id": 508,
+    "StoryId": "STm05_03_b",
+    "Chapter": 5,
+    "Index": "03B",
+    "Title": "新老员工",
+    "Desc": "温吞的水，既不沸腾引人注目，也不冰冷招人嫌弃。",
+    "ConditionId": "C05_02_b",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm05_02"
+    ],
+    "AvgLuaName": "STm05_03_b",
+    "Aim": "Story.508.3",
+    "AvgMotion": "style_21"
+  },
+  "509": {
+    "Id": 509,
+    "StoryId": "STm05_03_c",
+    "Chapter": 5,
+    "Index": "03C",
+    "Title": "神奇的草",
+    "Desc": "不知疲倦的伟力，亦是一种傲慢。",
+    "ConditionId": "C05_02_c",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm05_02"
+    ],
+    "AvgLuaName": "STm05_03_c",
+    "Aim": "Story.509.3",
+    "AvgMotion": "style_21"
+  },
+  "510": {
+    "Id": 510,
+    "StoryId": "STm05_04",
+    "Chapter": 5,
+    "Index": "04",
+    "Title": "汇集的线索",
+    "Desc": "将偶然连成线，便是无处可逃的必然。",
+    "ConditionId": "C05_03",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm05_03_c"
+    ],
+    "AvgLuaName": "STm05_04",
+    "Aim": "Story.510.3",
+    "AvgMotion": "style_21"
+  },
+  "511": {
+    "Id": 511,
+    "StoryId": "STm05_05",
+    "Chapter": 5,
+    "Index": "05",
+    "Title": "线索三明治",
+    "Desc": "不要轻易触碰那些摆在路中央的奶酪。",
+    "ConditionId": "C05_04",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm05_04"
+    ],
+    "AvgLuaName": "STm05_05",
+    "Aim": "Story.511.3",
+    "AvgMotion": "style_21"
+  },
+  "512": {
+    "Id": 512,
+    "StoryId": "STm05_06",
+    "Chapter": 5,
+    "Index": "06",
+    "Title": "不同的理念",
+    "Desc": "被轻轻拉动的线头，奇迹般地解开了死结，",
+    "ConditionId": "CBA05_05",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "BAm05_05"
+    ],
+    "AvgLuaName": "STm05_06",
+    "Aim": "Story.512.3",
+    "AvgMotion": "style_21"
+  },
+  "513": {
+    "Id": 513,
+    "StoryId": "STm05_07",
+    "Chapter": 5,
+    "Index": "07",
+    "Title": "规则的意义",
+    "Desc": "真理往往粗糙带刺，虚伪的秩序却总光滑如玉。",
+    "ConditionId": "C05_06",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm05_06"
+    ],
+    "AvgLuaName": "STm05_07",
+    "Aim": "Story.513.3",
+    "AvgMotion": "style_21"
+  },
+  "514": {
+    "Id": 514,
+    "StoryId": "STm05_08",
+    "Chapter": 5,
+    "Index": "08",
+    "Title": "温室的秘密",
+    "Desc": "比起正午的审判，罪恶更畏惧同类的獠牙。",
+    "ConditionId": "CBA05_08",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "BAm05_08"
+    ],
+    "HasEvidence": true,
+    "AvgLuaName": "STm05_08",
+    "Aim": "Story.514.3",
+    "AvgMotion": "style_21"
+  },
+  "515": {
+    "Id": 515,
+    "StoryId": "STm05_09_a",
+    "Chapter": 5,
+    "Index": "终局",
+    "Title": "约瑟夫",
+    "Desc": "困兽亦可吞虎，何况你的铠甲并不坚硬。",
+    "ConditionId": "C05_08_a",
+    "IsBranch": true,
+    "Reward": 112,
+    "RewardDisplay": "[{\"Tid\":1,\"Qty\":666}]",
+    "ParentStoryId": [
+      "STm05_08"
+    ],
+    "AvgLuaName": "STm05_09_a",
+    "Aim": "Story.515.3",
+    "AvgMotion": "style_21"
+  },
+  "516": {
+    "Id": 516,
+    "StoryId": "STm05_09_b",
+    "Chapter": 5,
+    "Index": "09",
+    "Title": "决定的责任",
+    "Desc": "火星落入了枯草，沉寂的暗夜燃起荧光。",
+    "ConditionId": "C05_08_b",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm05_08"
+    ],
+    "AvgLuaName": "STm05_09_b",
+    "Aim": "Story.516.3",
+    "AvgMotion": "style_21"
+  },
+  "517": {
+    "Id": 517,
+    "StoryId": "STm05_09_c",
+    "Chapter": 5,
+    "Index": "终局",
+    "Title": "智慧植物",
+    "Desc": "追逐光明时，别忘了阴影始终跟随身后。",
+    "ConditionId": "C05_08_c",
+    "IsBranch": true,
+    "Reward": 112,
+    "RewardDisplay": "[{\"Tid\":1,\"Qty\":666}]",
+    "ParentStoryId": [
+      "STm05_08"
+    ],
+    "AvgLuaName": "STm05_09_c",
+    "Aim": "Story.517.3",
+    "AvgMotion": "style_21"
+  },
+  "518": {
+    "Id": 518,
+    "StoryId": "STm05_10",
+    "Chapter": 5,
+    "Index": "10",
+    "Title": "头条时刻",
+    "Desc": "要改写结局，就得先踏入风暴的中心。",
+    "ConditionId": "CBA05_10",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "BAm05_10"
+    ],
+    "AvgLuaName": "STm05_10",
+    "Aim": "Story.518.3",
+    "AvgMotion": "style_21"
+  },
+  "519": {
+    "Id": 519,
+    "StoryId": "STm05_11",
+    "Chapter": 5,
+    "Index": "尾声",
+    "Title": "那位大人",
+    "Desc": "尘埃落定，月光下的废墟却是诡异的安详。",
+    "ConditionId": "C05_10",
+    "Reward": 104,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":50}]",
+    "ParentStoryId": [
+      "STm05_10"
+    ],
+    "AvgLuaName": "STm05_11",
+    "Aim": "Story.519.3",
+    "IsLast": true,
+    "AvgMotion": "style_21"
+  },
+  "601": {
+    "Id": 601,
+    "StoryId": "BAm06_01",
+    "Chapter": 6,
+    "Index": "BT01",
+    "Title": "虎口脱险",
+    "Desc": "眼见气氛不妙，就赶紧撤退吧！",
+    "TrialBuild": 601,
+    "ConditionId": "CBA06_01",
+    "IsBattle": true,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm06_02_b",
+      "STm06_02_c"
+    ],
+    "FloorId": [
+      1060101
+    ],
+    "PreviewMonsterGroupId": 10601,
+    "Aim": "Story.601.3"
+  },
+  "602": {
+    "Id": 602,
+    "StoryId": "BAm06_02",
+    "Chapter": 6,
+    "Index": "BT02",
+    "Title": "菲莱之战 中",
+    "Desc": "拨开纷乱的枝条，背影是最好的路标。",
+    "TrialBuild": 602,
+    "ConditionId": "CBA06_02",
+    "IsBattle": true,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm06_09"
+    ],
+    "FloorId": [
+      1060201
+    ],
+    "PreviewMonsterGroupId": 10602,
+    "Aim": "Story.602.3"
+  },
+  "603": {
+    "Id": 603,
+    "StoryId": "BAm06_03",
+    "Chapter": 6,
+    "Index": "BT03",
+    "Title": "流风美人",
+    "Desc": "癫狂挥舞的藤蔓，即将绞杀它的自身。",
+    "TrialBuild": 603,
+    "ConditionId": "CBA06_03",
+    "IsBattle": true,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm06_11"
+    ],
+    "FloorId": [
+      1060301
+    ],
+    "PreviewMonsterGroupId": 10603,
+    "Aim": "Story.603.3"
+  },
+  "604": {
+    "Id": 604,
+    "StoryId": "STm06_00",
+    "Chapter": 6,
+    "Index": "幕间",
+    "Title": "忠诚与背叛",
+    "Desc": "转身之后的她们，裂隙仿若深渊。",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "AvgLuaName": "STm06_00",
+    "Aim": "Story.604.3",
+    "AvgMotion": "style_21"
+  },
+  "605": {
+    "Id": 605,
+    "StoryId": "STm06_01",
+    "Chapter": 6,
+    "Index": "01",
+    "Title": "魔王的传说",
+    "Desc": "铲平废墟，种上鲜花——\n于是，这里便从未有过战争了。",
+    "ConditionId": "C06_01",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm06_00"
+    ],
+    "HasEvidence": true,
+    "AvgLuaName": "STm06_01",
+    "Aim": "Story.605.3",
+    "AvgMotion": "style_21"
+  },
+  "606": {
+    "Id": 606,
+    "StoryId": "STm06_02_a",
+    "Chapter": 6,
+    "Index": "02A",
+    "Title": "与虎谋皮",
+    "Desc": "迂回的捷径，总恰巧通向万劫不复。",
+    "ConditionId": "C06_02_a",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm06_01"
+    ],
+    "AvgLuaName": "STm06_02_a",
+    "Aim": "Story.606.3",
+    "AvgMotion": "style_21"
+  },
+  "607": {
+    "Id": 607,
+    "StoryId": "STm06_02_b",
+    "Chapter": 6,
+    "Index": "02B",
+    "Title": "否认的代价",
+    "Desc": "听见冰裂的声音再跑，就要来不及了。",
+    "ConditionId": "C06_02_b",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm06_01"
+    ],
+    "AvgLuaName": "STm06_02_b",
+    "Aim": "Story.607.3",
+    "AvgMotion": "style_21"
+  },
+  "608": {
+    "Id": 608,
+    "StoryId": "STm06_02_c",
+    "Chapter": 6,
+    "Index": "02C",
+    "Title": "忠臣的忠臣",
+    "Desc": "锁扣之外，便是权力的荒原。",
+    "ConditionId": "C06_02_c",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm06_01"
+    ],
+    "AvgLuaName": "STm06_02_c",
+    "Aim": "Story.608.3",
+    "AvgMotion": "style_21"
+  },
+  "609": {
+    "Id": 609,
+    "StoryId": "STm06_03_a",
+    "Chapter": 6,
+    "Index": "03A",
+    "Title": "忠不可言",
+    "Desc": "飞蛾扑火，是为了在灰飞烟灭前看清火的真容。",
+    "ConditionId": "C06_03_a",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm06_02_a"
+    ],
+    "AvgLuaName": "STm06_03_a",
+    "Aim": "Story.609.3",
+    "AvgMotion": "style_21"
+  },
+  "610": {
+    "Id": 610,
+    "StoryId": "STm06_03_b",
+    "Chapter": 6,
+    "Index": "03B",
+    "Title": "深夜飙车",
+    "Desc": "厚壁在前，要想起来还有这招撑杆跳！",
+    "ConditionId": "C06_03_b",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "BAm06_01"
+    ],
+    "AvgLuaName": "STm06_03_b",
+    "Aim": "Story.610.3",
+    "AvgMotion": "style_21"
+  },
+  "611": {
+    "Id": 611,
+    "StoryId": "STm06_04_a",
+    "Chapter": 6,
+    "Index": "04A",
+    "Title": "覆水难收",
+    "Desc": "过河之卒，既已入局，便再无回头的路。",
+    "ConditionId": "C06_04_a",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm06_03_a"
+    ],
+    "AvgLuaName": "STm06_04_a",
+    "Aim": "Story.611.3",
+    "AvgMotion": "style_21"
+  },
+  "612": {
+    "Id": 612,
+    "StoryId": "STm06_04_b",
+    "Chapter": 6,
+    "Index": "04B",
+    "Title": "缆车站",
+    "Desc": "猎物点燃了火把，烧断了猎人布下的罗网。",
+    "ConditionId": "C06_04_b",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm06_03_b"
+    ],
+    "AvgLuaName": "STm06_04_b",
+    "Aim": "Story.612.3",
+    "AvgMotion": "style_21"
+  },
+  "613": {
+    "Id": 613,
+    "StoryId": "STm06_05_a",
+    "Chapter": 6,
+    "Index": "终局",
+    "Title": "天下静谧",
+    "Desc": "让所有人都抵达幸福的结局……真是可喜可贺？",
+    "ConditionId": "C06_05_a",
+    "IsBranch": true,
+    "Reward": 112,
+    "RewardDisplay": "[{\"Tid\":1,\"Qty\":666}]",
+    "ParentStoryId": [
+      "STm06_04_a"
+    ],
+    "AvgLuaName": "STm06_05_a",
+    "Aim": "Story.613.3",
+    "AvgMotion": "style_21"
+  },
+  "614": {
+    "Id": 614,
+    "StoryId": "STm06_05_b",
+    "Chapter": 6,
+    "Index": "05",
+    "Title": "坠落",
+    "Desc": "危机的藤蔓，已开始汲取可怖的养分。",
+    "ConditionId": "C06_05_b",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm06_04_b"
+    ],
+    "AvgLuaName": "STm06_05_b",
+    "Aim": "Story.614.3",
+    "AvgMotion": "style_21"
+  },
+  "615": {
+    "Id": 615,
+    "StoryId": "STm06_06",
+    "Chapter": 6,
+    "Index": "06",
+    "Title": "第三代智慧植物",
+    "Desc": "在漫长的沉默中，心跳的频率完成了供述。",
+    "ConditionId": "C06_06",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm06_05_b"
+    ],
+    "AvgLuaName": "STm06_06",
+    "Aim": "Story.615.3",
+    "AvgMotion": "style_21"
+  },
+  "616": {
+    "Id": 616,
+    "StoryId": "STm06_07",
+    "Chapter": 6,
+    "Index": "07",
+    "Title": "不得已的交易",
+    "Desc": "所有的试探和退路，都封在了此刻的真诚中。",
+    "ConditionId": "C06_07",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm06_06"
+    ],
+    "AvgLuaName": "STm06_07",
+    "Aim": "Story.616.3",
+    "AvgMotion": "style_21"
+  },
+  "617": {
+    "Id": 617,
+    "StoryId": "STm06_08",
+    "Chapter": 6,
+    "Index": "08",
+    "Title": "翡冷翠",
+    "Desc": "她也深知，这条道路并非坦途，因此……",
+    "ConditionId": "C06_08",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm06_07"
+    ],
+    "AvgLuaName": "STm06_08",
+    "Aim": "Story.617.3",
+    "AvgMotion": "style_21"
+  },
+  "618": {
+    "Id": 618,
+    "StoryId": "STm06_09",
+    "Chapter": 6,
+    "Index": "09",
+    "Title": "菲莱之战 上",
+    "Desc": "对手的引线受潮未燃，而你的火药也恰巧过期。",
+    "ConditionId": "C06_09",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm06_08"
+    ],
+    "AvgLuaName": "STm06_09",
+    "Aim": "Story.618.3",
+    "AvgMotion": "style_21"
+  },
+  "619": {
+    "Id": 619,
+    "StoryId": "STm06_10",
+    "Chapter": 6,
+    "Index": "10",
+    "Title": "菲莱之战 下",
+    "Desc": "阴霾之下，唯有信任的幕帘能遮风避雨。",
+    "ConditionId": "C06_10",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "BAm06_02"
+    ],
+    "AvgLuaName": "STm06_10",
+    "Aim": "Story.619.3",
+    "AvgMotion": "style_21"
+  },
+  "620": {
+    "Id": 620,
+    "StoryId": "STm06_11",
+    "Chapter": 6,
+    "Index": "11",
+    "Title": "困兽犹斗",
+    "Desc": "剑锋划过，她的双眼充血混乱、怒目圆睁——",
+    "ConditionId": "C06_11",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm06_10"
+    ],
+    "AvgLuaName": "STm06_11",
+    "Aim": "Story.620.3",
+    "AvgMotion": "style_21"
+  },
+  "621": {
+    "Id": 621,
+    "StoryId": "STm06_12",
+    "Chapter": 6,
+    "Index": "12",
+    "Title": "最后的忠诚",
+    "Desc": "她吞下了太多的怒焰，咆哮在此刻戛然而止。",
+    "ConditionId": "C06_12",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "BAm06_03"
+    ],
+    "AvgLuaName": "STm06_12",
+    "Aim": "Story.621.3",
+    "AvgMotion": "style_21"
+  },
+  "622": {
+    "Id": 622,
+    "StoryId": "STm06_13",
+    "Chapter": 6,
+    "Index": "13",
+    "Title": "未知的明天",
+    "Desc": "怒火虽灭，但灰烬下的余温仍在烫手。",
+    "ConditionId": "C06_13",
+    "Reward": 104,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":50}]",
+    "ParentStoryId": [
+      "STm06_12"
+    ],
+    "AvgLuaName": "STm06_13",
+    "Aim": "Story.622.3",
+    "IsLast": true,
+    "AvgMotion": "style_21"
+  },
+  "801": {
+    "Id": 801,
+    "StoryId": "BAm07_01",
+    "Chapter": 8,
+    "Index": "BT01",
+    "Title": "远方的心",
+    "Desc": "偶得天时，当执锐以击。",
+    "TrialBuild": 701,
+    "ConditionId": "CBA07_01",
+    "IsBattle": true,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm07_01"
+    ],
+    "FloorId": [
+      1070101
+    ],
+    "PreviewMonsterGroupId": 10701,
+    "Aim": "Story.801.3"
+  },
+  "802": {
+    "Id": 802,
+    "StoryId": "BAm07_02",
+    "Chapter": 8,
+    "Index": "BT02",
+    "Title": "酒店乱战",
+    "Desc": "要紧眼前事，时间不等人。",
+    "TrialBuild": 702,
+    "ConditionId": "CBA07_02",
+    "IsBattle": true,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm07_07"
+    ],
+    "FloorId": [
+      1070201
+    ],
+    "PreviewMonsterGroupId": 10702,
+    "Aim": "Story.802.3"
+  },
+  "803": {
+    "Id": 803,
+    "StoryId": "BAm07_03",
+    "Chapter": 8,
+    "Index": "BT03",
+    "Title": "恐惧的尽头",
+    "Desc": "旧日沉睡的神明，在意外中苏醒。",
+    "TrialBuild": 703,
+    "ConditionId": "CBA07_03",
+    "IsBattle": true,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm07_15"
+    ],
+    "FloorId": [
+      1070301,
+      1070302
+    ],
+    "PreviewMonsterGroupId": 10703,
+    "Aim": "Story.803.3"
+  },
+  "804": {
+    "Id": 804,
+    "StoryId": "STm07_00",
+    "Chapter": 8,
+    "Index": "幕间",
+    "Title": "天穹保险",
+    "Desc": "声名狼藉的污泥，也能被筑成通向高处的台阶。",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "AvgLuaName": "STm07_00",
+    "Aim": "Story.804.3",
+    "AvgMotion": "style_21"
+  },
+  "805": {
+    "Id": 805,
+    "StoryId": "STm07_01",
+    "Chapter": 8,
+    "Index": "01",
+    "Title": "联合种业的历史",
+    "Desc": "时间是一场漫长而隐秘的变异。",
+    "ConditionId": "C07_01",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm07_00"
+    ],
+    "AvgLuaName": "STm07_01",
+    "Aim": "Story.805.3",
+    "AvgMotion": "style_21"
+  },
+  "806": {
+    "Id": 806,
+    "StoryId": "STm07_02",
+    "Chapter": 8,
+    "Index": "02",
+    "Title": "一场交易",
+    "Desc": "风暴将至，底牌于此刻叠为同摞。",
+    "ConditionId": "C07_02",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "BAm07_01"
+    ],
+    "AvgLuaName": "STm07_02",
+    "Aim": "Story.806.3",
+    "AvgMotion": "style_21"
+  },
+  "807": {
+    "Id": 807,
+    "StoryId": "STm07_03",
+    "Chapter": 8,
+    "Index": "03",
+    "Title": "投标日",
+    "Desc": "各怀心思的筹码，皆已明牌亮于台上。",
+    "ConditionId": "C07_03",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm07_02"
+    ],
+    "AvgLuaName": "STm07_03",
+    "Aim": "Story.807.3",
+    "AvgMotion": "style_21"
+  },
+  "808": {
+    "Id": 808,
+    "StoryId": "STm07_04",
+    "Chapter": 8,
+    "Index": "04",
+    "Title": "出价",
+    "Desc": "把理智当做最后的燃料，然后……点火吧！",
+    "ConditionId": "C07_04",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm07_03"
+    ],
+    "HasEvidence": true,
+    "AvgLuaName": "STm07_04",
+    "Aim": "Story.808.3",
+    "AvgMotion": "style_21"
+  },
+  "809": {
+    "Id": 809,
+    "StoryId": "STm07_05_c",
+    "Chapter": 8,
+    "Index": "终局",
+    "Title": "生死不明",
+    "Desc": "片丝的疏忽，也足够让致命的洪流倒灌。",
+    "ConditionId": "C07_05_c",
+    "IsBranch": true,
+    "Reward": 112,
+    "RewardDisplay": "[{\"Tid\":1,\"Qty\":666}]",
+    "ParentStoryId": [
+      "STm07_04"
+    ],
+    "AvgLuaName": "STm07_05_c",
+    "Aim": "Story.809.3",
+    "AvgMotion": "style_21"
+  },
+  "810": {
+    "Id": 810,
+    "StoryId": "STm07_05_a",
+    "Chapter": 8,
+    "Index": "05A",
+    "Title": "念念不忘",
+    "Desc": "坠灭的枯叶，抽出了新芽。",
+    "ConditionId": "C07_05_a",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm07_04"
+    ],
+    "AvgLuaName": "STm07_05_a",
+    "Aim": "Story.810.3",
+    "AvgMotion": "style_21"
+  },
+  "811": {
+    "Id": 811,
+    "StoryId": "STm07_05_b",
+    "Chapter": 8,
+    "Index": "05B",
+    "Title": "亿万",
+    "Desc": "再怎么逃，也甩不掉咬在脚跟的阴影。",
+    "ConditionId": "C07_05_b",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm07_04"
+    ],
+    "HasEvidence": true,
+    "AvgLuaName": "STm07_05_b",
+    "Aim": "Story.811.3",
+    "AvgMotion": "style_21"
+  },
+  "812": {
+    "Id": 812,
+    "StoryId": "STm07_06_ba",
+    "Chapter": 8,
+    "Index": "终局",
+    "Title": "自异世界",
+    "Desc": "这注定是无法平账的死局。",
+    "ConditionId": "C07_06_ba",
+    "IsBranch": true,
+    "Reward": 112,
+    "RewardDisplay": "[{\"Tid\":1,\"Qty\":666}]",
+    "ParentStoryId": [
+      "STm07_05_b"
+    ],
+    "AvgLuaName": "STm07_06_ba",
+    "Aim": "Story.812.3",
+    "AvgMotion": "style_21"
+  },
+  "813": {
+    "Id": 813,
+    "StoryId": "STm07_06_bb",
+    "Chapter": 8,
+    "Index": "终局",
+    "Title": "未竟之约",
+    "Desc": "你摸到的仅仅是最表层的截面。",
+    "ConditionId": "C07_06_bb",
+    "IsBranch": true,
+    "Reward": 112,
+    "RewardDisplay": "[{\"Tid\":1,\"Qty\":666}]",
+    "ParentStoryId": [
+      "STm07_05_b"
+    ],
+    "AvgLuaName": "STm07_06_bb",
+    "Aim": "Story.813.3",
+    "AvgMotion": "style_21"
+  },
+  "814": {
+    "Id": 814,
+    "StoryId": "STm07_06_bc",
+    "Chapter": 8,
+    "Index": "终局",
+    "Title": "联合种业的救赎",
+    "Desc": "懦怯确实囚禁了灵魂，但希望没能还你自由。",
+    "ConditionId": "C07_06_bc",
+    "IsBranch": true,
+    "Reward": 112,
+    "RewardDisplay": "[{\"Tid\":1,\"Qty\":666}]",
+    "ParentStoryId": [
+      "STm07_05_b"
+    ],
+    "AvgLuaName": "STm07_06_bc",
+    "Aim": "Story.814.3",
+    "AvgMotion": "style_21"
+  },
+  "815": {
+    "Id": 815,
+    "StoryId": "STm07_06_a",
+    "Chapter": 8,
+    "Index": "06",
+    "Title": "落花流水",
+    "Desc": "向你喊出那声问候。",
+    "ConditionId": "C07_06_a",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm07_05_a"
+    ],
+    "AvgLuaName": "STm07_06_a",
+    "Aim": "Story.815.3",
+    "AvgMotion": "style_21"
+  },
+  "816": {
+    "Id": 816,
+    "StoryId": "STm07_07",
+    "Chapter": 8,
+    "Index": "07",
+    "Title": "故剑重逢",
+    "Desc": "充满变数的迷雾里，她依旧令人心安。",
+    "ConditionId": "C07_07",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm07_06_a"
+    ],
+    "AvgLuaName": "STm07_07",
+    "Aim": "Story.816.3",
+    "AvgMotion": "style_21"
+  },
+  "817": {
+    "Id": 817,
+    "StoryId": "STm07_08",
+    "Chapter": 8,
+    "Index": "08",
+    "Title": "杂鱼战术",
+    "Desc": "帮手总是多多益善。",
+    "ConditionId": "C07_08",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "BAm07_02"
+    ],
+    "AvgLuaName": "STm07_08",
+    "Aim": "Story.817.3",
+    "AvgMotion": "style_21"
+  },
+  "818": {
+    "Id": 818,
+    "StoryId": "STm07_09",
+    "Chapter": 8,
+    "Index": "09",
+    "Title": "跨越天空",
+    "Desc": "终于，她和你共赏这片天空了。",
+    "ConditionId": "C07_09",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm07_08"
+    ],
+    "AvgLuaName": "STm07_09",
+    "Aim": "Story.818.3",
+    "AvgMotion": "style_21"
+  },
+  "819": {
+    "Id": 819,
+    "StoryId": "STm07_12",
+    "Chapter": 8,
+    "Index": "12",
+    "Title": "先易后难",
+    "Desc": "饭要一口一口吃。",
+    "ConditionId": "C07_12",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm07_08"
+    ],
+    "AvgLuaName": "STm07_12",
+    "Aim": "Story.819.3",
+    "AvgMotion": "style_21"
+  },
+  "820": {
+    "Id": 820,
+    "StoryId": "STm07_10",
+    "Chapter": 8,
+    "Index": "10",
+    "Title": "登塔许愿",
+    "Desc": "水面还在不断上涨，得加紧步伐了。",
+    "ConditionId": "C07_10",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm07_09"
+    ],
+    "AvgLuaName": "STm07_10",
+    "Aim": "Story.820.3",
+    "AvgMotion": "style_21"
+  },
+  "821": {
+    "Id": 821,
+    "StoryId": "STm07_11",
+    "Chapter": 8,
+    "Index": "11",
+    "Title": "谎言与希望",
+    "Desc": "心怀希望总不是坏事。",
+    "ConditionId": "C07_11",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm07_10"
+    ],
+    "AvgLuaName": "STm07_11",
+    "Aim": "Story.821.3",
+    "AvgMotion": "style_21"
+  },
+  "822": {
+    "Id": 822,
+    "StoryId": "STm07_13",
+    "Chapter": 8,
+    "Index": "13",
+    "Title": "各取所需",
+    "Desc": "别多想，这只是一场公平、清醒的交易。",
+    "ConditionId": "C07_13",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm07_12"
+    ],
+    "AvgLuaName": "STm07_13",
+    "Aim": "Story.822.3",
+    "AvgMotion": "style_21"
+  },
+  "823": {
+    "Id": 823,
+    "StoryId": "STm07_14",
+    "Chapter": 8,
+    "Index": "14",
+    "Title": "技术调整",
+    "Desc": "尽管被釜底抽薪，但星星之火也能燎原。",
+    "ConditionId": "C07_14",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm07_13"
+    ],
+    "AvgLuaName": "STm07_14",
+    "Aim": "Story.823.3",
+    "AvgMotion": "style_21"
+  },
+  "824": {
+    "Id": 824,
+    "StoryId": "STm07_15",
+    "Chapter": 8,
+    "Index": "15",
+    "Title": "五十一层",
+    "Desc": "你也要当“断臂的英雄”吗？",
+    "ConditionId": "C07_15",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm07_11",
+      "STm07_14"
+    ],
+    "AvgLuaName": "STm07_15",
+    "Aim": "Story.824.3",
+    "AvgMotion": "style_21"
+  },
+  "825": {
+    "Id": 825,
+    "StoryId": "STm07_16",
+    "Chapter": 8,
+    "Index": "尾声",
+    "Title": "死之权杖",
+    "Desc": "她在提问，你在回答，然后……",
+    "ConditionId": "C07_16",
+    "Reward": 104,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":50}]",
+    "ParentStoryId": [
+      "BAm07_03"
+    ],
+    "AvgLuaName": "STm07_16",
+    "Aim": "Story.825.3",
+    "IsLast": true,
+    "AvgMotion": "style_21"
+  },
+  "901": {
+    "Id": 901,
+    "StoryId": "STm08_01",
+    "Chapter": 9,
+    "Index": "01",
+    "Title": "无罪杀戮",
+    "Desc": "让你消失……难道还需要理由？",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "AvgLuaName": "STm08_01",
+    "Aim": "Story.901.3",
+    "AvgMotion": "style_21"
+  },
+  "902": {
+    "Id": 902,
+    "StoryId": "BAm08_01",
+    "Chapter": 9,
+    "Index": "BT01",
+    "Title": "鸣枪开路",
+    "Desc": "撤退也需要勇气和战术。",
+    "TrialBuild": 801,
+    "ConditionId": "C08_BT01",
+    "IsBattle": true,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm08_01"
+    ],
+    "FloorId": [
+      1080101
+    ],
+    "PreviewMonsterGroupId": 10801,
+    "Aim": "Story.902.3"
+  },
+  "903": {
+    "Id": 903,
+    "StoryId": "STm08_02",
+    "Chapter": 9,
+    "Index": "02",
+    "Title": "剑拔弩张",
+    "Desc": "拔出这权杖，只为确认你的真意。",
+    "ConditionId": "C08_02",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "BAm08_01"
+    ],
+    "AvgLuaName": "STm08_02",
+    "Aim": "Story.903.3",
+    "AvgMotion": "style_21"
+  },
+  "904": {
+    "Id": 904,
+    "StoryId": "STm08_03",
+    "Chapter": 9,
+    "Index": "03",
+    "Title": "我是谁",
+    "Desc": "过去越模糊，这个问题就越沉重。",
+    "ConditionId": "C08_03",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm08_02"
+    ],
+    "AvgLuaName": "STm08_03",
+    "Aim": "Story.904.3",
+    "AvgMotion": "style_21"
+  },
+  "905": {
+    "Id": 905,
+    "StoryId": "STm08_04",
+    "Chapter": 9,
+    "Index": "04",
+    "Title": "自证陷阱",
+    "Desc": "你是不是“坏人”不重要，但总之得先拉拢“好人”。",
+    "ConditionId": "C08_04",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm08_03"
+    ],
+    "AvgLuaName": "STm08_04",
+    "Aim": "Story.905.3",
+    "AvgMotion": "style_21"
+  },
+  "906": {
+    "Id": 906,
+    "StoryId": "STm08_05",
+    "Chapter": 9,
+    "Index": "05",
+    "Title": "同伴",
+    "Desc": "一个人不够，两个人刚好。",
+    "ConditionId": "C08_05",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm08_04"
+    ],
+    "AvgLuaName": "STm08_05",
+    "Aim": "Story.906.3",
+    "AvgMotion": "style_21"
+  },
+  "907": {
+    "Id": 907,
+    "StoryId": "STm08_06",
+    "Chapter": 9,
+    "Index": "06",
+    "Title": "世界尽头",
+    "Desc": "即使刚走过的路，隔天或许就再也找不到了。",
+    "ConditionId": "C08_06",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm08_05"
+    ],
+    "AvgLuaName": "STm08_06",
+    "Aim": "Story.907.3",
+    "AvgMotion": "style_48"
+  },
+  "908": {
+    "Id": 908,
+    "StoryId": "STm08_07",
+    "Chapter": 9,
+    "Index": "追忆",
+    "Title": "空白的正解 上",
+    "Desc": "书读得再多，也有答不上的问题。",
+    "ConditionId": "C08_07",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm08_06"
+    ],
+    "AvgLuaName": "STm08_07",
+    "Aim": "Story.908.3",
+    "AvgMotion": "style_20",
+    "MemoryType": 1
+  },
+  "909": {
+    "Id": 909,
+    "StoryId": "STm08_08",
+    "Chapter": 9,
+    "Index": "追忆",
+    "Title": "空白的正解 中",
+    "Desc": "一个梦想，需要多少支撑呢？",
+    "ConditionId": "C08_08",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm08_07"
+    ],
+    "AvgLuaName": "STm08_08",
+    "Aim": "Story.909.3",
+    "AvgMotion": "style_20",
+    "MemoryType": 1
+  },
+  "910": {
+    "Id": 910,
+    "StoryId": "STm08_09",
+    "Chapter": 9,
+    "Index": "追忆",
+    "Title": "空白的正解 下",
+    "Desc": "最好的选择，未必是最正确的答案。",
+    "ConditionId": "C08_09",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm08_08"
+    ],
+    "AvgLuaName": "STm08_09",
+    "Aim": "Story.910.3",
+    "AvgMotion": "style_43",
+    "MemoryType": 1
+  },
+  "911": {
+    "Id": 911,
+    "StoryId": "STm08_10",
+    "Chapter": 9,
+    "Index": "07",
+    "Title": "初见米拉什",
+    "Desc": "总有人急着用拳头代替问候。",
+    "ConditionId": "C08_10",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm08_09"
+    ],
+    "AvgLuaName": "STm08_10",
+    "Aim": "Story.911.3",
+    "AvgMotion": "style_48"
+  },
+  "912": {
+    "Id": 912,
+    "StoryId": "BAm08_02",
+    "Chapter": 9,
+    "Index": "BT02",
+    "Title": "好人、坏人与丑角",
+    "Desc": "都觉得自己是“好人”的话……那谁说了算？",
+    "TrialBuild": 802,
+    "ConditionId": "C08_BT02",
+    "IsBattle": true,
+    "EnterMethod": 1,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm08_10"
+    ],
+    "FloorId": [
+      1080201
+    ],
+    "PreviewMonsterGroupId": 10802,
+    "Aim": "Story.912.3"
+  },
+  "913": {
+    "Id": 913,
+    "StoryId": "STm08_11",
+    "Chapter": 9,
+    "Index": "08",
+    "Title": "沙漠的规矩",
+    "Desc": "不写在纸上的规矩，叫做默契。",
+    "ConditionId": "C08_11",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "BAm08_02"
+    ],
+    "AvgLuaName": "STm08_11",
+    "Aim": "Story.913.3",
+    "AvgMotion": "style_48"
+  },
+  "914": {
+    "Id": 914,
+    "StoryId": "STm08_12",
+    "Chapter": 9,
+    "Index": "09",
+    "Title": "小鬼当家",
+    "Desc": "众里寻他千百度，那人却在……",
+    "ConditionId": "C08_12",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm08_11"
+    ],
+    "AvgLuaName": "STm08_12",
+    "Aim": "Story.914.3",
+    "AvgMotion": "style_48"
+  },
+  "915": {
+    "Id": 915,
+    "StoryId": "STm08_13",
+    "Chapter": 9,
+    "Index": "10",
+    "Title": "暂停",
+    "Desc": "终于有机会，好好喘一口气。",
+    "ConditionId": "C08_13",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm08_12"
+    ],
+    "AvgLuaName": "STm08_13",
+    "Aim": "Story.915.3",
+    "AvgMotion": "style_48"
+  },
+  "916": {
+    "Id": 916,
+    "StoryId": "STm08_14",
+    "Chapter": 9,
+    "Index": "11",
+    "Title": "米拉什的日常",
+    "Desc": "什么刀枪棍棒的——都是生意！",
+    "ConditionId": "C08_14",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm08_13"
+    ],
+    "AvgLuaName": "STm08_14",
+    "Aim": "Story.916.3",
+    "AvgMotion": "style_48"
+  },
+  "917": {
+    "Id": 917,
+    "StoryId": "STm08_15",
+    "Chapter": 9,
+    "Index": "12",
+    "Title": "黑暗决斗",
+    "Desc": "敌人的敌人就是朋友……吗？",
+    "ConditionId": "C08_15",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm08_14"
+    ],
+    "HasEvidence": true,
+    "AvgLuaName": "STm08_15",
+    "Aim": "Story.917.3",
+    "AvgMotion": "style_48"
+  },
+  "918": {
+    "Id": 918,
+    "StoryId": "STm08_16_a",
+    "Chapter": 9,
+    "Index": "13A",
+    "Title": "白猫的过去",
+    "Desc": "谜团拼在了一起，缺的是同一块。",
+    "ConditionId": "C08_16_a",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm08_15"
+    ],
+    "AvgLuaName": "STm08_16_a",
+    "Aim": "Story.918.3",
+    "AvgMotion": "style_48"
+  },
+  "919": {
+    "Id": 919,
+    "StoryId": "STm08_16_b",
+    "Chapter": 9,
+    "Index": "13B",
+    "Title": "沙蝎的野望",
+    "Desc": "只需要小小的撬动这个支点……",
+    "ConditionId": "C08_16_b",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm08_15"
+    ],
+    "AvgLuaName": "STm08_16_b",
+    "Aim": "Story.919.3",
+    "AvgMotion": "style_48"
+  },
+  "920": {
+    "Id": 920,
+    "StoryId": "STm08_17_a",
+    "Chapter": 9,
+    "Index": "追忆",
+    "Title": "生日快乐 上",
+    "Desc": "那模糊的身影，似是，又非。",
+    "ConditionId": "C08_17_a",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm08_16_a"
+    ],
+    "AvgLuaName": "STm08_17_a",
+    "Aim": "Story.920.3",
+    "AvgMotion": "style_48",
+    "MemoryType": 1
+  },
+  "921": {
+    "Id": 921,
+    "StoryId": "STm08_18_a",
+    "Chapter": 9,
+    "Index": "追忆",
+    "Title": "生日快乐 中",
+    "Desc": "这是不惜用遗忘换来的守护。",
+    "ConditionId": "C08_18_a",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm08_17_a"
+    ],
+    "AvgLuaName": "STm08_18_a",
+    "Aim": "Story.921.3",
+    "AvgMotion": "style_48",
+    "MemoryType": 1
+  },
+  "922": {
+    "Id": 922,
+    "StoryId": "STm08_19_a",
+    "Chapter": 9,
+    "Index": "追忆",
+    "Title": "生日快乐 下",
+    "Desc": "向过去的自己道别。",
+    "ConditionId": "C08_19_a",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm08_18_a"
+    ],
+    "AvgLuaName": "STm08_19_a",
+    "Aim": "Story.922.3",
+    "AvgMotion": "style_48",
+    "MemoryType": 1
+  },
+  "923": {
+    "Id": 923,
+    "StoryId": "STm08_20",
+    "Chapter": 9,
+    "Index": "14A",
+    "Title": "日出米拉什",
+    "Desc": "谎言太多……而现在需要的，是真相与信任。",
+    "ConditionId": "C08_20",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm08_19_a"
+    ],
+    "AvgLuaName": "STm08_20",
+    "Aim": "Story.923.3",
+    "AvgMotion": "style_48"
+  },
+  "924": {
+    "Id": 924,
+    "StoryId": "STm08_17_b",
+    "Chapter": 9,
+    "Index": "14B",
+    "Title": "战争之王",
+    "Desc": "“你知道他们确实这样叫我……但我想你才是。 ”",
+    "ConditionId": "C08_17_b",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm08_16_b"
+    ],
+    "AvgLuaName": "STm08_17_b",
+    "Aim": "Story.924.3",
+    "AvgMotion": "style_48"
+  },
+  "925": {
+    "Id": 925,
+    "StoryId": "BAm08_03",
+    "Chapter": 9,
+    "Index": "BT03",
+    "Title": "古老的智慧",
+    "Desc": "古老的问题，只能用古老的方式来回答。",
+    "TrialBuild": 803,
+    "ConditionId": "C08_BT03",
+    "IsBattle": true,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm08_20"
+    ],
+    "FloorId": [
+      1080301
+    ],
+    "PreviewMonsterGroupId": 10803,
+    "Aim": "Story.925.3"
+  },
+  "926": {
+    "Id": 926,
+    "StoryId": "STm08_21",
+    "Chapter": 9,
+    "Index": "15A",
+    "Title": "我的名字",
+    "Desc": "她已消失不见，而她此刻已至。",
+    "ConditionId": "C08_21",
+    "Reward": 104,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":50}]",
+    "ParentStoryId": [
+      "BAm08_03"
+    ],
+    "AvgLuaName": "STm08_21",
+    "Aim": "Story.926.3",
+    "IsLast": true,
+    "AvgMotion": "style_48"
+  },
+  "927": {
+    "Id": 927,
+    "StoryId": "STm08_18_b",
+    "Chapter": 9,
+    "Index": "15B",
+    "Title": "蝴蝶效应",
+    "Desc": "得不到你想要的，得到了你不想要的。",
+    "ConditionId": "C08_18_b",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm08_17_b"
+    ],
+    "AvgLuaName": "STm08_18_b",
+    "Aim": "Story.927.3",
+    "AvgMotion": "style_48"
+  },
+  "928": {
+    "Id": 928,
+    "StoryId": "STm08_19_b",
+    "Chapter": 9,
+    "Index": "终局",
+    "Title": "妈妈",
+    "Desc": "永远不要与战争有任何瓜葛。",
+    "ConditionId": "C08_19_b",
+    "IsBranch": true,
+    "Reward": 112,
+    "RewardDisplay": "[{\"Tid\":1,\"Qty\":666}]",
+    "ParentStoryId": [
+      "STm08_18_b"
+    ],
+    "AvgLuaName": "STm08_19_b",
+    "Aim": "Story.928.3",
+    "AvgMotion": "style_48"
+  },
+  "1001": {
+    "Id": 1001,
+    "StoryId": "STm09_00_a",
+    "Chapter": 10,
+    "Index": "幕间 上",
+    "Title": "引线",
+    "Desc": "这是一朵终将燃起的火。",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "AvgLuaName": "STm09_00_a",
+    "Aim": "Story.1001.3",
+    "AvgMotion": "style_48"
+  },
+  "1002": {
+    "Id": 1002,
+    "StoryId": "STm09_00_b",
+    "Chapter": 10,
+    "Index": "幕间 下",
+    "Title": "点燃",
+    "Desc": "它毁灭不了你——反使你更强大。",
+    "ConditionId": "C09_00_b",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm09_00_a"
+    ],
+    "HasEvidence": true,
+    "AvgLuaName": "STm09_00_b",
+    "Aim": "Story.1002.3",
+    "AvgMotion": "style_48"
+  },
+  "1003": {
+    "Id": 1003,
+    "StoryId": "STm09_01_a",
+    "Chapter": 10,
+    "Index": "01A",
+    "Title": "风过林梢",
+    "Desc": "不必多言，行动就是答案。",
+    "ConditionId": "C09_01_a",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm09_00_b"
+    ],
+    "AvgLuaName": "STm09_01_a",
+    "Aim": "Story.1003.3",
+    "AvgMotion": "style_48"
+  },
+  "1004": {
+    "Id": 1004,
+    "StoryId": "BAm09_BT01",
+    "Chapter": 10,
+    "Index": "BT01",
+    "Title": "十面张网",
+    "Desc": "四正六隅，仍留一路。",
+    "TrialBuild": 901,
+    "ConditionId": "C09_BT01",
+    "IsBattle": true,
+    "EnterMethod": 1,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm09_01_a"
+    ],
+    "FloorId": [
+      1090101
+    ],
+    "PreviewMonsterGroupId": 10901,
+    "Recommend": "5",
+    "Aim": "Story.1004.3"
+  },
+  "1005": {
+    "Id": 1005,
+    "StoryId": "STm09_02_a",
+    "Chapter": 10,
+    "Index": "02A",
+    "Title": "伤痕暂停",
+    "Desc": "痛楚难以免去，但苦难可以选择。",
+    "ConditionId": "C09_02_a",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "BAm09_BT01"
+    ],
+    "AvgLuaName": "STm09_02_a",
+    "Aim": "Story.1005.3",
+    "AvgMotion": "style_48"
+  },
+  "1006": {
+    "Id": 1006,
+    "StoryId": "STm09_03_a",
+    "Chapter": 10,
+    "Index": "03A",
+    "Title": "休战期",
+    "Desc": "不存在好的战争，也不存在坏的和平。",
+    "ConditionId": "C09_03_a",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm09_02_a"
+    ],
+    "AvgLuaName": "STm09_03_a",
+    "Aim": "Story.1006.3",
+    "AvgMotion": "style_48"
+  },
+  "1007": {
+    "Id": 1007,
+    "StoryId": "STm09_04_a",
+    "Chapter": 10,
+    "Index": "04A",
+    "Title": "薯条和情报",
+    "Desc": "有时候，信比剑更管用。",
+    "ConditionId": "C09_04_a",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm09_03_a"
+    ],
+    "AvgLuaName": "STm09_04_a",
+    "Aim": "Story.1007.3",
+    "AvgMotion": "style_48"
+  },
+  "1008": {
+    "Id": 1008,
+    "StoryId": "STm09_05_a",
+    "Chapter": 10,
+    "Index": "05A",
+    "Title": "尘沙的直觉",
+    "Desc": "“我觉得这次……这次不一样。”",
+    "ConditionId": "C09_05_a",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm09_04_a"
+    ],
+    "AvgLuaName": "STm09_05_a",
+    "Aim": "Story.1008.3",
+    "AvgMotion": "style_48"
+  },
+  "1009": {
+    "Id": 1009,
+    "StoryId": "STm09_06_a",
+    "Chapter": 10,
+    "Index": "06A",
+    "Title": "落不下的雨",
+    "Desc": "阴云密布，愁云惨雾。",
+    "ConditionId": "C09_06_a",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm09_05_a"
+    ],
+    "AvgLuaName": "STm09_06_a",
+    "Aim": "Story.1009.3",
+    "AvgMotion": "style_48"
+  },
+  "1010": {
+    "Id": 1010,
+    "StoryId": "BAm09_BT03",
+    "Chapter": 10,
+    "Index": "BT02",
+    "Title": "一人成军",
+    "Desc": "如城墙一般，她屹立不倒。",
+    "TrialBuild": 903,
+    "ConditionId": "C09_BT03",
+    "IsBattle": true,
+    "EnterMethod": 1,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm09_06_a"
+    ],
+    "FloorId": [
+      1090301
+    ],
+    "PreviewMonsterGroupId": 10903,
+    "Recommend": "5",
+    "Aim": "Story.1010.3"
+  },
+  "1011": {
+    "Id": 1011,
+    "StoryId": "STm09_07_a",
+    "Chapter": 10,
+    "Index": "终局",
+    "Title": "指尖的沙",
+    "Desc": "她依然想保护你。",
+    "ConditionId": "C09_07_a",
+    "IsBranch": true,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "BAm09_BT03"
+    ],
+    "AvgLuaName": "STm09_07_a",
+    "Aim": "Story.1011.3",
+    "AvgMotion": "style_48"
+  },
+  "1012": {
+    "Id": 1012,
+    "StoryId": "STm09_01_b",
+    "Chapter": 10,
+    "Index": "01B",
+    "Title": "未卜先知",
+    "Desc": "运筹至此，方为真知。",
+    "ConditionId": "C09_01_b",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm09_00_b"
+    ],
+    "AvgLuaName": "STm09_01_b",
+    "Aim": "Story.1012.3",
+    "AvgMotion": "style_48"
+  },
+  "1013": {
+    "Id": 1013,
+    "StoryId": "BAm09_BT02",
+    "Chapter": 10,
+    "Index": "BT03",
+    "Title": "两级反转",
+    "Desc": "知己知彼，百战不殆。",
+    "TrialBuild": 902,
+    "ConditionId": "C09_BT02",
+    "IsBattle": true,
+    "EnterMethod": 1,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm09_01_b"
+    ],
+    "FloorId": [
+      1090201
+    ],
+    "PreviewMonsterGroupId": 10902,
+    "Recommend": "5",
+    "Aim": "Story.1013.3"
+  },
+  "1014": {
+    "Id": 1014,
+    "StoryId": "STm09_02_b",
+    "Chapter": 10,
+    "Index": "02B",
+    "Title": "易地而处",
+    "Desc": "这是一场致命的算计。",
+    "ConditionId": "C09_02_b",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "BAm09_BT02"
+    ],
+    "AvgLuaName": "STm09_02_b",
+    "Aim": "Story.1014.3",
+    "AvgMotion": "style_48"
+  },
+  "1015": {
+    "Id": 1015,
+    "StoryId": "STm09_03_b",
+    "Chapter": 10,
+    "Index": "03B",
+    "Title": "沙漠中的雨",
+    "Desc": "多有智慧，就多有愁烦。",
+    "ConditionId": "C09_03_b",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm09_02_b"
+    ],
+    "AvgLuaName": "STm09_03_b",
+    "Aim": "Story.1015.3",
+    "AvgMotion": "style_48"
+  },
+  "1016": {
+    "Id": 1016,
+    "StoryId": "STm09_04_b",
+    "Chapter": 10,
+    "Index": "04B",
+    "Title": "胜利之后",
+    "Desc": "想赢的人，脸上是不会有笑容的。",
+    "ConditionId": "C09_04_b",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm09_03_b"
+    ],
+    "AvgLuaName": "STm09_04_b",
+    "Aim": "Story.1016.3",
+    "AvgMotion": "style_48"
+  },
+  "1017": {
+    "Id": 1017,
+    "StoryId": "STm09_05_b",
+    "Chapter": 10,
+    "Index": "05B",
+    "Title": "适得其反",
+    "Desc": "废墟之上没有赢家。",
+    "ConditionId": "C09_05_b",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm09_04_b"
+    ],
+    "AvgLuaName": "STm09_05_b",
+    "Aim": "Story.1017.3",
+    "AvgMotion": "style_48"
+  },
+  "1018": {
+    "Id": 1018,
+    "StoryId": "STm09_06_b",
+    "Chapter": 10,
+    "Index": "终局",
+    "Title": "身旁的她",
+    "Desc": "只要……能到达那个地方……",
+    "ConditionId": "C09_06_b",
+    "IsBranch": true,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm09_05_b"
+    ],
+    "AvgLuaName": "STm09_06_b",
+    "Aim": "Story.1018.3",
+    "AvgMotion": "style_48"
+  },
+  "1019": {
+    "Id": 1019,
+    "StoryId": "STm09_01_c",
+    "Chapter": 10,
+    "Index": "01C",
+    "Title": "请君入瓮",
+    "Desc": "最好的猎人，最好的诱饵。",
+    "ConditionId": "C09_01_c",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm09_00_b"
+    ],
+    "AvgLuaName": "STm09_01_c",
+    "Aim": "Story.1019.3",
+    "AvgMotion": "style_48"
+  },
+  "1020": {
+    "Id": 1020,
+    "StoryId": "BAm09_BT04",
+    "Chapter": 10,
+    "Index": "BT04",
+    "Title": "主场作战",
+    "Desc": "“有你们在身后，妈妈就不会输。”",
+    "TrialBuild": 904,
+    "ConditionId": "C09_BT04",
+    "IsBattle": true,
+    "EnterMethod": 1,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm09_01_c"
+    ],
+    "FloorId": [
+      1090401,
+      1090402,
+      1090403
+    ],
+    "PreviewMonsterGroupId": 10904,
+    "Recommend": "5",
+    "Aim": "Story.1020.3"
+  },
+  "1021": {
+    "Id": 1021,
+    "StoryId": "STm09_02_c",
+    "Chapter": 10,
+    "Index": "02C",
+    "Title": "魔王之塔",
+    "Desc": "勇者的攀登之路也不过如此了——",
+    "ConditionId": "C09_02_c",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "BAm09_BT04"
+    ],
+    "AvgLuaName": "STm09_02_c",
+    "Aim": "Story.1021.3",
+    "AvgMotion": "style_48"
+  },
+  "1022": {
+    "Id": 1022,
+    "StoryId": "STm09_03_c",
+    "Chapter": 10,
+    "Index": "03C",
+    "Title": "梦开始的地方",
+    "Desc": "回到最初的地方，它依然认得你。",
+    "ConditionId": "C09_03_c",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm09_02_c"
+    ],
+    "AvgLuaName": "STm09_03_c",
+    "Aim": "Story.1022.3",
+    "AvgMotion": "style_48"
+  },
+  "1023": {
+    "Id": 1023,
+    "StoryId": "BAm09_BT05",
+    "Chapter": 10,
+    "Index": "BT05",
+    "Title": "再战星骸",
+    "Desc": "尘埃散尽，它等到了王的归来——",
+    "TrialBuild": 905,
+    "ConditionId": "C09_BT05",
+    "IsBattle": true,
+    "EnterMethod": 2,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm09_03_c"
+    ],
+    "FloorId": [
+      1090501
+    ],
+    "PreviewMonsterGroupId": 10905,
+    "Recommend": "5",
+    "Aim": "Story.1023.3"
+  },
+  "1024": {
+    "Id": 1024,
+    "StoryId": "STm09_04_c",
+    "Chapter": 10,
+    "Index": "04C",
+    "Title": "不变之物",
+    "Desc": "无论重来几次……",
+    "ConditionId": "C09_04_c",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "BAm09_BT05"
+    ],
+    "AvgLuaName": "STm09_04_c",
+    "Aim": "Story.1024.3",
+    "AvgMotion": "style_48"
+  },
+  "1025": {
+    "Id": 1025,
+    "StoryId": "STm09_05_c",
+    "Chapter": 10,
+    "Index": "终局",
+    "Title": "遥远的塔",
+    "Desc": "“我们可能要前往一座过于遥远的塔了……”",
+    "ConditionId": "C09_05_c",
+    "IsBranch": true,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm09_04_c"
+    ],
+    "AvgLuaName": "STm09_05_c",
+    "Aim": "Story.1025.3",
+    "AvgMotion": "style_48"
+  },
+  "1026": {
+    "Id": 1026,
+    "StoryId": "STm09_01_d",
+    "Chapter": 10,
+    "Index": "真·终局",
+    "Title": "窄门",
+    "Desc": "最终，你们来到同一扇门前。",
+    "ConditionId": "C09_01_d",
+    "Reward": 104,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":50}]",
+    "ParentStoryId": [
+      "STm09_00_b"
+    ],
+    "AvgLuaName": "STm09_01_d",
+    "Aim": "Story.1026.3",
+    "IsLast": true,
+    "AvgMotion": "style_3",
+    "MemoryType": 2
+  },
+  "1101": {
+    "Id": 1101,
+    "StoryId": "STm10001_01",
+    "Chapter": 11,
+    "Index": "01",
+    "Title": "昨日重现",
+    "Desc": "又一次醒来，又一段新的人生。",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "AvgLuaName": "STm10001_01",
+    "Aim": "Story.1101.3",
+    "AvgMotion": "style_3"
+  },
+  "1102": {
+    "Id": 1102,
+    "StoryId": "BAm10001_BT01",
+    "Chapter": 11,
+    "Index": "BT01",
+    "Title": "森林弃子",
+    "Desc": "她冲了上去——身影果决而凌厉。",
+    "TrialBuild": 1001,
+    "ConditionId": "Cm10001_BT01",
+    "IsBattle": true,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "FloorId": [
+      1100101
+    ],
+    "PreviewMonsterGroupId": 10906,
+    "Recommend": "5",
+    "Aim": "Story.1102.3"
+  },
+  "1103": {
+    "Id": 1103,
+    "StoryId": "STm10001_02",
+    "Chapter": 11,
+    "Index": "02",
+    "Title": "完璧之城",
+    "Desc": "物是人非，街道上并没有你熟悉的风景……",
+    "ConditionId": "Cm10001_02",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "AvgLuaName": "STm10001_02",
+    "Aim": "Story.1103.3",
+    "AvgMotion": "style_57"
+  },
+  "1104": {
+    "Id": 1104,
+    "StoryId": "STm10001_03",
+    "Chapter": 11,
+    "Index": "03",
+    "Title": "浴场与奴隶",
+    "Desc": "“愿你将我的同伴接入高天之上……”",
+    "ConditionId": "Cm10001_03",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "AvgLuaName": "STm10001_03",
+    "Aim": "Story.1104.3",
+    "AvgMotion": "style_57"
+  },
+  "1105": {
+    "Id": 1105,
+    "StoryId": "STm10001_04",
+    "Chapter": 11,
+    "Index": "04",
+    "Title": "浴场测试",
+    "Desc": "魔力满满，胃里空空……",
+    "ConditionId": "Cm10001_04",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "AvgLuaName": "STm10001_04",
+    "Aim": "Story.1105.3",
+    "AvgMotion": "style_57"
+  },
+  "1106": {
+    "Id": 1106,
+    "StoryId": "STm10001_05",
+    "Chapter": 11,
+    "Index": "05",
+    "Title": "因苏拉",
+    "Desc": "以绝望为基的土地并不能收获希望。",
+    "ConditionId": "Cm10001_05",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "AvgLuaName": "STm10001_05",
+    "Aim": "Story.1106.3",
+    "AvgMotion": "style_57"
+  },
+  "1107": {
+    "Id": 1107,
+    "StoryId": "STm10001_06",
+    "Chapter": 11,
+    "Index": "06",
+    "Title": "圣女的意义",
+    "Desc": "“命运就是用来改变的。”",
+    "ConditionId": "Cm10001_06",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "AvgLuaName": "STm10001_06",
+    "Aim": "Story.1107.3",
+    "AvgMotion": "style_57"
+  },
+  "1108": {
+    "Id": 1108,
+    "StoryId": "STm10001_07",
+    "Chapter": 11,
+    "Index": "07",
+    "Title": "守夜人的日常",
+    "Desc": "人靠衣装，是因为……这里只看得见衣装。",
+    "ConditionId": "Cm10001_07",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "AvgLuaName": "STm10001_07",
+    "Aim": "Story.1108.3",
+    "AvgMotion": "style_57"
+  },
+  "1109": {
+    "Id": 1109,
+    "StoryId": "STm10001_08",
+    "Chapter": 11,
+    "Index": "08",
+    "Title": "禁忌的愿望",
+    "Desc": "——与此一同深埋的是，她的过去与伤痛。",
+    "ConditionId": "Cm10001_08",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "AvgLuaName": "STm10001_08",
+    "Aim": "Story.1109.3",
+    "AvgMotion": "style_57"
+  },
+  "1110": {
+    "Id": 1110,
+    "StoryId": "STm10001_09",
+    "Chapter": 11,
+    "Index": "09",
+    "Title": "角斗士",
+    "Desc": "“对不起……我们明明赢了。明明已经赢了才对……”",
+    "ConditionId": "Cm10001_09",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "AvgLuaName": "STm10001_09",
+    "Aim": "Story.1110.3",
+    "AvgMotion": "style_57"
+  },
+  "1111": {
+    "Id": 1111,
+    "StoryId": "STm10001_10",
+    "Chapter": 11,
+    "Index": "10",
+    "Title": "敬请期待",
+    "Desc": "敬请期待",
+    "ConditionId": "Cm10001_10",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "AvgLuaName": "STm10001_10",
+    "Aim": "Story.1111.3",
+    "AvgMotion": "style_57"
+  },
+  "1112": {
+    "Id": 1112,
+    "StoryId": "STm10001_11",
+    "Chapter": 11,
+    "Index": "11",
+    "Title": "敬请期待",
+    "Desc": "敬请期待",
+    "ConditionId": "Cm10001_11",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "AvgLuaName": "STm10001_11",
+    "Aim": "Story.1112.3",
+    "AvgMotion": "style_57"
+  },
+  "1113": {
+    "Id": 1113,
+    "StoryId": "STm10001_12",
+    "Chapter": 11,
+    "Index": "12",
+    "Title": "敬请期待",
+    "Desc": "敬请期待",
+    "ConditionId": "Cm10001_12",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "AvgLuaName": "STm10001_12",
+    "Aim": "Story.1113.3",
+    "AvgMotion": "style_57"
+  },
+  "1114": {
+    "Id": 1114,
+    "StoryId": "STm10001_13",
+    "Chapter": 11,
+    "Index": "13",
+    "Title": "敬请期待",
+    "Desc": "敬请期待",
+    "ConditionId": "Cm10001_13",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "AvgLuaName": "STm10001_13",
+    "Aim": "Story.1114.3",
+    "AvgMotion": "style_57"
+  },
+  "1115": {
+    "Id": 1115,
+    "StoryId": "STm10001_14",
+    "Chapter": 11,
+    "Index": "14",
+    "Title": "敬请期待",
+    "Desc": "敬请期待",
+    "ConditionId": "Cm10001_14",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "AvgLuaName": "STm10001_14",
+    "Aim": "Story.1115.3",
+    "AvgMotion": "style_57"
+  },
+  "1116": {
+    "Id": 1116,
+    "StoryId": "BAm10001_BT02",
+    "Chapter": 11,
+    "Index": "BT02",
+    "Title": "敬请期待",
+    "Desc": "敬请期待",
+    "TrialBuild": 1002,
+    "ConditionId": "Cm10001_BT02",
+    "IsBattle": true,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "FloorId": [
+      1100201
+    ],
+    "PreviewMonsterGroupId": 10907,
+    "Recommend": "5",
+    "Aim": "Story.1116.3"
+  },
+  "1117": {
+    "Id": 1117,
+    "StoryId": "STm10001_15",
+    "Chapter": 11,
+    "Index": "15",
+    "Title": "敬请期待",
+    "Desc": "敬请期待",
+    "ConditionId": "Cm10001_15",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "AvgLuaName": "STm10001_15",
+    "Aim": "Story.1117.3",
+    "AvgMotion": "style_57"
+  },
+  "1118": {
+    "Id": 1118,
+    "StoryId": "STm10001_16",
+    "Chapter": 11,
+    "Index": "16",
+    "Title": "敬请期待",
+    "Desc": "敬请期待",
+    "ConditionId": "Cm10001_16",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "AvgLuaName": "STm10001_16",
+    "Aim": "Story.1118.3",
+    "AvgMotion": "style_57"
+  },
+  "1119": {
+    "Id": 1119,
+    "StoryId": "STm10001_17",
+    "Chapter": 11,
+    "Index": "17",
+    "Title": "敬请期待",
+    "Desc": "敬请期待",
+    "ConditionId": "Cm10001_17",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "AvgLuaName": "STm10001_17",
+    "Aim": "Story.1119.3",
+    "AvgMotion": "style_57"
+  },
+  "1120": {
+    "Id": 1120,
+    "StoryId": "STm10001_18",
+    "Chapter": 11,
+    "Index": "18",
+    "Title": "敬请期待",
+    "Desc": "敬请期待",
+    "ConditionId": "Cm10001_18",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "AvgLuaName": "STm10001_18",
+    "Aim": "Story.1120.3",
+    "AvgMotion": "style_57"
+  },
+  "1121": {
+    "Id": 1121,
+    "StoryId": "BAm10001_BT03",
+    "Chapter": 11,
+    "Index": "BT03",
+    "Title": "敬请期待",
+    "Desc": "敬请期待",
+    "TrialBuild": 1003,
+    "ConditionId": "Cm10001_BT03",
+    "IsBattle": true,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "FloorId": [
+      1100301,
+      1100302
+    ],
+    "PreviewMonsterGroupId": 10908,
+    "Recommend": "5",
+    "Aim": "Story.1121.3"
+  },
+  "1122": {
+    "Id": 1122,
+    "StoryId": "STm10001_19",
+    "Chapter": 11,
+    "Index": "19",
+    "Title": "敬请期待",
+    "Desc": "敬请期待",
+    "ConditionId": "Cm10001_19",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "AvgLuaName": "STm10001_19",
+    "Aim": "Story.1122.3",
+    "AvgMotion": "style_57"
+  },
+  "1123": {
+    "Id": 1123,
+    "StoryId": "STm10001_20",
+    "Chapter": 11,
+    "Index": "20",
+    "Title": "敬请期待",
+    "Desc": "敬请期待",
+    "ConditionId": "Cm10001_20",
+    "Reward": 104,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":50}]",
+    "AvgLuaName": "STm10001_20",
+    "Aim": "Story.1123.3",
+    "IsLast": true,
+    "AvgMotion": "style_57"
+  },
+  "6501": {
+    "Id": 6501,
+    "StoryId": "BAm06x5_01",
+    "Chapter": 7,
+    "Index": "BT01",
+    "Title": "沙漠来客",
+    "Desc": "只有这点人，不够过瘾啊。",
+    "TrialBuild": 200081,
+    "ConditionId": "CBA06x5_01",
+    "IsBattle": true,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "FloorId": [
+      1060401
+    ],
+    "PreviewMonsterGroupId": 10604,
+    "Aim": "Story.6501.3"
+  },
+  "6502": {
+    "Id": 6502,
+    "StoryId": "BAm06x5_02",
+    "Chapter": 7,
+    "Index": "BT02",
+    "Title": "狂沙之夜",
+    "Desc": "沙漠的风，终究吹不到菲莱。",
+    "TrialBuild": 200082,
+    "ConditionId": "CBA06x5_02",
+    "IsBattle": true,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "FloorId": [
+      1060501
+    ],
+    "PreviewMonsterGroupId": 10605,
+    "Aim": "Story.6502.3"
+  },
+  "6503": {
+    "Id": 6503,
+    "StoryId": "STm06x5_01",
+    "Chapter": 7,
+    "Index": "01",
+    "Title": "午夜来信",
+    "Desc": "终于能与你相见了。",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "AvgLuaName": "STm06x5_01",
+    "Aim": "Story.6503.3",
+    "AvgMotion": "style_42"
+  },
+  "6504": {
+    "Id": 6504,
+    "StoryId": "STm06x5_02",
+    "Chapter": 7,
+    "Index": "02",
+    "Title": "神秘访客",
+    "Desc": "黄昏是人一天中最容易恍惚的时刻。",
+    "ConditionId": "C06x5_01",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "AvgLuaName": "STm06x5_02",
+    "Aim": "Story.6504.3",
+    "AvgMotion": "style_42"
+  },
+  "6505": {
+    "Id": 6505,
+    "StoryId": "STm06x5_03",
+    "Chapter": 7,
+    "Index": "03",
+    "Title": "合作共赢",
+    "Desc": "意料之外的重逢。",
+    "ConditionId": "C06x5_02",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "AvgLuaName": "STm06x5_03",
+    "Aim": "Story.6505.3",
+    "AvgMotion": "style_42"
+  },
+  "6506": {
+    "Id": 6506,
+    "StoryId": "STm06x5_04",
+    "Chapter": 7,
+    "Index": "04",
+    "Title": "故地重游",
+    "Desc": "往事并不使人依恋。",
+    "ConditionId": "C06x5_03",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "AvgLuaName": "STm06x5_04",
+    "Aim": "Story.6506.3",
+    "AvgMotion": "style_42"
+  },
+  "6507": {
+    "Id": 6507,
+    "StoryId": "STm06x5_05",
+    "Chapter": 7,
+    "Index": "05",
+    "Title": "围猎",
+    "Desc": "眼见一定为实吗？",
+    "ConditionId": "C06x5_04",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "AvgLuaName": "STm06x5_05",
+    "Aim": "Story.6507.3",
+    "AvgMotion": "style_42"
+  },
+  "6508": {
+    "Id": 6508,
+    "StoryId": "STm06x5_06",
+    "Chapter": 7,
+    "Index": "06",
+    "Title": "此即约定",
+    "Desc": "就让我做个遵守约定的怪人吧。",
+    "ConditionId": "C06x5_05",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "AvgLuaName": "STm06x5_06",
+    "Aim": "Story.6508.3",
+    "AvgMotion": "style_42"
+  },
+  "6509": {
+    "Id": 6509,
+    "StoryId": "STm06x5_07",
+    "Chapter": 7,
+    "Index": "07",
+    "Title": "变数",
+    "Desc": "改变的不只是身份。",
+    "ConditionId": "C06x5_06",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "AvgLuaName": "STm06x5_07",
+    "Aim": "Story.6509.3",
+    "AvgMotion": "style_42"
+  },
+  "6510": {
+    "Id": 6510,
+    "StoryId": "STm06x5_08",
+    "Chapter": 7,
+    "Index": "08",
+    "Title": "不日之约",
+    "Desc": "让世界变成另外的样子吧。",
+    "ConditionId": "C06x5_07",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "AvgLuaName": "STm06x5_08",
+    "Aim": "Story.6510.3",
+    "AvgMotion": "style_42"
+  },
+  "6511": {
+    "Id": 6511,
+    "StoryId": "STm06x5_09",
+    "Chapter": 7,
+    "Index": "09",
+    "Title": "致辞",
+    "Desc": "无论你身在何方，都祝你度过一个愉快的夜晚。",
+    "ConditionId": "C06x5_08",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "AvgLuaName": "STm06x5_09",
+    "Aim": "Story.6511.3",
+    "AvgMotion": "style_42"
+  },
+  "6512": {
+    "Id": 6512,
+    "StoryId": "STm06x5_10",
+    "Chapter": 7,
+    "Index": "10",
+    "Title": "白昼梦",
+    "Desc": "凝固成金黄的标本，连同消逝的梦。",
+    "ConditionId": "C06x5_09",
+    "Reward": 104,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":50}]",
+    "AvgLuaName": "STm06x5_10",
+    "Aim": "Story.6512.3",
+    "IsLast": true,
+    "AvgMotion": "style_42"
+  }
+}

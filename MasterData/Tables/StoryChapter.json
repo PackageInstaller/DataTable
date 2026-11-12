@@ -1,0 +1,178 @@
+{
+  "1": {
+    "Id": 1,
+    "Type": 1,
+    "WorldClass": 1,
+    "Index": "01",
+    "Name": "第一章",
+    "Desc": "没有记忆的生物",
+    "ChapterIcon": "Icon/MapChapter/chapter_stage_01",
+    "BannerIcon": "UI/big_sprites/banner_avg_chapter1",
+    "ChapterYear": "星塔历 996 年",
+    "UnlockShowStoryId": 101,
+    "StoryLineId": 1
+  },
+  "2": {
+    "Id": 2,
+    "Type": 1,
+    "WorldClass": 7,
+    "PrevStories": [
+      "STm01_10"
+    ],
+    "Index": "02",
+    "Name": "第二章",
+    "Desc": "水道桥上的风",
+    "ChapterIcon": "Icon/MapChapter/chapter_stage_02",
+    "BannerIcon": "UI/big_sprites/banner_avg_chapter2",
+    "ChapterYear": "星塔历 996 年",
+    "UnlockShowStoryId": 204,
+    "StoryLineId": 1
+  },
+  "3": {
+    "Id": 3,
+    "Type": 1,
+    "WorldClass": 9,
+    "PrevStories": [
+      "STm02_11"
+    ],
+    "Index": "03",
+    "Name": "第三章",
+    "Desc": "我们的旅团",
+    "ChapterIcon": "Icon/MapChapter/chapter_stage_03",
+    "BannerIcon": "UI/big_sprites/banner_avg_chapter3",
+    "ChapterYear": "星塔历 996 年",
+    "UnlockShowStoryId": 304,
+    "StoryLineId": 1
+  },
+  "4": {
+    "Id": 4,
+    "Type": 1,
+    "WorldClass": 12,
+    "PrevStories": [
+      "STm03_11"
+    ],
+    "Index": "04",
+    "Name": "第四章",
+    "Desc": "梦的彼岸",
+    "ChapterIcon": "Icon/MapChapter/chapter_stage_04",
+    "BannerIcon": "UI/big_sprites/banner_avg_chapter4",
+    "ChapterYear": "星塔历 996 年",
+    "UnlockShowStoryId": 403,
+    "StoryLineId": 1
+  },
+  "5": {
+    "Id": 5,
+    "Type": 1,
+    "WorldClass": 14,
+    "PrevStories": [
+      "STm04_11"
+    ],
+    "Index": "05",
+    "Name": "第五章",
+    "Desc": "落于暗夜的荧光",
+    "ChapterIcon": "Icon/MapChapter/chapter_stage_05",
+    "BannerIcon": "UI/big_sprites/banner_avg_chapter5",
+    "ChapterYear": "星塔历 996 年",
+    "UnlockShowStoryId": 504,
+    "StoryLineId": 1
+  },
+  "6": {
+    "Id": 6,
+    "Type": 1,
+    "WorldClass": 16,
+    "PrevStories": [
+      "STm05_11"
+    ],
+    "Index": "06",
+    "Name": "第六章",
+    "Desc": "微火的奇迹",
+    "ChapterIcon": "Icon/MapChapter/chapter_stage_06",
+    "BannerIcon": "UI/big_sprites/banner_avg_chapter6",
+    "ChapterYear": "星塔历 996 年",
+    "UnlockShowStoryId": 604,
+    "StoryLineId": 1
+  },
+  "7": {
+    "Id": 7,
+    "Type": 2,
+    "WorldClass": 18,
+    "PrevStories": [
+      "STm06_13"
+    ],
+    "Name": "特别篇",
+    "Desc": "谜影的序曲",
+    "ChapterIcon": "Icon/MapChapter/chapter_stage_SP1",
+    "BannerIcon": "UI/big_sprites/banner_avg_chapter6x5",
+    "ChapterYear": "星塔历 996 年",
+    "UnlockShowStoryId": 6503,
+    "OpenTime": "2026-04-16T12:00:00+08:00",
+    "StoryPanelId": 431,
+    "StoryLineId": 1
+  },
+  "8": {
+    "Id": 8,
+    "Type": 1,
+    "WorldClass": 20,
+    "PrevStories": [
+      "STm06x5_10"
+    ],
+    "Index": "07",
+    "Name": "第七章",
+    "Desc": "星之竞拍",
+    "ChapterIcon": "Icon/MapChapter/chapter_stage_07",
+    "BannerIcon": "UI/big_sprites/banner_avg_chapter7",
+    "ChapterYear": "星塔历 996 年",
+    "UnlockShowStoryId": 804,
+    "OpenTime": "2026-05-08T12:00:00+08:00",
+    "StoryLineId": 1
+  },
+  "9": {
+    "Id": 9,
+    "Type": 1,
+    "WorldClass": 22,
+    "PrevStories": [
+      "STm07_16"
+    ],
+    "Index": "08",
+    "Name": "第八章",
+    "Desc": "往日残影",
+    "ChapterIcon": "Icon/MapChapter/chapter_stage_08",
+    "BannerIcon": "UI/big_sprites/banner_avg_chapter8",
+    "ChapterYear": "星塔历 996 年",
+    "UnlockShowStoryId": 901,
+    "OpenTime": "2026-08-11T12:00:00+08:00",
+    "StoryLineId": 1
+  },
+  "10": {
+    "Id": 10,
+    "Type": 1,
+    "WorldClass": 24,
+    "PrevStories": [
+      "STm08_21"
+    ],
+    "Index": "09",
+    "Name": "第九章",
+    "Desc": "遥远的塔",
+    "ChapterIcon": "Icon/MapChapter/chapter_stage_09",
+    "BannerIcon": "UI/big_sprites/banner_avg_chapter9",
+    "ChapterYear": "星塔历 996 年",
+    "UnlockShowStoryId": 1001,
+    "StoryLineId": 1
+  },
+  "11": {
+    "Id": 11,
+    "Type": 2,
+    "WorldClass": 25,
+    "PrevStories": [
+      "STm09_01_d"
+    ],
+    "Name": "特别篇",
+    "Desc": "完璧之庭·微尘破晓",
+    "ChapterIcon": "Icon/MapChapter/chapter_stage_10001",
+    "BannerIcon": "UI/big_sprites/banner_avg_chapter10001",
+    "ChapterYear": "前星塔历 4 年",
+    "UnlockShowStoryId": 1101,
+    "StoryPanelId": 577,
+    "StoryLineId": 2
+  }
+}

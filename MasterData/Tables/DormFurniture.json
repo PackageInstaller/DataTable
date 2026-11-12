@@ -1,0 +1,1555 @@
+{
+  "720001": {
+    "Id": 720001,
+    "ModelPrefab": "DormFurniture/0001/720001_0001_qiangzhi/720001_0001.prefab",
+    "L": 16,
+    "W": 16,
+    "H": 5,
+    "CanIn": [
+      1
+    ],
+    "PutType": 4,
+    "Fixed": 1,
+    "Tab": 5,
+    "CollectionValue": 10
+  },
+  "720002": {
+    "Id": 720002,
+    "ModelPrefab": "DormFurniture/0001/720002_0001_diban/720002_0001.prefab",
+    "L": 16,
+    "W": 16,
+    "H": 1,
+    "CanIn": [
+      1
+    ],
+    "PutType": 5,
+    "Fixed": 2,
+    "Tab": 6,
+    "CollectionValue": 10
+  },
+  "720003": {
+    "Id": 720003,
+    "ModelPrefab": "DormFurniture/0001/720003_0001_dianti/720003_0001.prefab",
+    "L": 1,
+    "W": 4,
+    "H": 4,
+    "CanIn": [
+      1
+    ],
+    "PutType": 7,
+    "Fixed": 5,
+    "Tab": 7,
+    "CollectionValue": 10
+  },
+  "720000": {
+    "Id": 720000,
+    "ModelPrefab": "DormFurniture/0000/720000_0002_diban/720000_0002.prefab",
+    "L": 20,
+    "W": 20,
+    "H": 1,
+    "CanIn": [
+      0
+    ],
+    "PutType": 5,
+    "Fixed": 2,
+    "Tab": 6,
+    "NotShow": 1
+  },
+  "720011": {
+    "Id": 720011,
+    "ModelPrefab": "DormFurniture/1002/720011_1002_dianti/720011_1002.prefab",
+    "L": 1,
+    "W": 4,
+    "H": 4,
+    "CanIn": [
+      0
+    ],
+    "PutType": 7,
+    "Fixed": 5,
+    "Tab": 7,
+    "CollectionValue": 10
+  },
+  "700001": {
+    "Id": 700001,
+    "ModelPrefab": "DormFurniture/Special/700001_0000_dianhuating/700001_0000.prefab",
+    "L": 2,
+    "W": 2,
+    "H": 4,
+    "CanIn": [
+      0
+    ],
+    "Tab": 8,
+    "Function": 1,
+    "BubbleIcon": "Icon/ZZZOther/dorminter_phone",
+    "CollectionValue": 130
+  },
+  "700002": {
+    "Id": 700002,
+    "ModelPrefab": "DormFurniture/Special/700002_0000_niudanji/700002_0000.prefab",
+    "L": 1,
+    "W": 2,
+    "H": 2,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 8,
+    "Function": 2,
+    "BubbleIcon": "Icon/ZZZOther/dorminter_composite",
+    "CollectionValue": 130
+  },
+  "700003": {
+    "Id": 700003,
+    "ModelPrefab": "DormFurniture/Special/700003_0000_diaosu/700003_0000.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 2,
+    "CanIn": [
+      0,
+      1
+    ],
+    "ProduceItemId": [
+      1
+    ],
+    "Tab": 8,
+    "BubbleIcon": "Icon/ZZZOther/dorminter_get",
+    "CollectionValue": 130
+  },
+  "700004": {
+    "Id": 700004,
+    "ModelPrefab": "DormFurniture/Special/700004_0000_changpianji/700004_0000.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 2,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 8,
+    "Function": 3,
+    "BubbleIcon": "Icon/ZZZOther/dorminter_music",
+    "CollectionValue": 130
+  },
+  "700005": {
+    "Id": 700005,
+    "ModelPrefab": "DormFurniture/Special/700005_0000_dianhuatingS/700005_0000.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      1
+    ],
+    "Tab": 8,
+    "Function": 1,
+    "BubbleIcon": "Icon/ZZZOther/dorminter_phone",
+    "CollectionValue": 130
+  },
+  "710001": {
+    "Id": 710001,
+    "ModelPrefab": "DormFurniture/Exclusive/710001_910001_shouhuo/710001.prefab",
+    "L": 2,
+    "W": 3,
+    "H": 2,
+    "CanIn": [
+      0,
+      1
+    ],
+    "ActorSD_Id": 1,
+    "Tab": 1,
+    "CollectionValue": 500
+  },
+  "710003": {
+    "Id": 710003,
+    "ModelPrefab": "DormFurniture/Exclusive/710003_103_shafa/710003.prefab",
+    "L": 3,
+    "W": 3,
+    "H": 2,
+    "CanIn": [
+      0,
+      1
+    ],
+    "ActorSD_Id": 103,
+    "Tab": 1,
+    "CollectionValue": 500
+  },
+  "710004": {
+    "Id": 710004,
+    "ModelPrefab": "DormFurniture/Exclusive/710004_112_gongju/710004.prefab",
+    "L": 2,
+    "W": 2,
+    "H": 2,
+    "CanIn": [
+      0,
+      1
+    ],
+    "ActorSD_Id": 112,
+    "Tab": 1,
+    "CollectionValue": 500
+  },
+  "710005": {
+    "Id": 710005,
+    "ModelPrefab": "DormFurniture/Exclusive/710005_111_zhuo/710005.prefab",
+    "L": 3,
+    "W": 3,
+    "H": 2,
+    "CanIn": [
+      0,
+      1
+    ],
+    "ActorSD_Id": 111,
+    "Tab": 1,
+    "CollectionValue": 500
+  },
+  "710007": {
+    "Id": 710007,
+    "ModelPrefab": "DormFurniture/Exclusive/710007_133_fengshan/710007.prefab",
+    "L": 1,
+    "W": 2,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "ActorSD_Id": 133,
+    "Tab": 1,
+    "CollectionValue": 500
+  },
+  "710008": {
+    "Id": 710008,
+    "ModelPrefab": "DormFurniture/Exclusive/710008_144_muzhuang/710008.prefab",
+    "L": 2,
+    "W": 3,
+    "H": 2,
+    "CanIn": [
+      0,
+      1
+    ],
+    "ActorSD_Id": 144,
+    "Tab": 1,
+    "CollectionValue": 500
+  },
+  "710010": {
+    "Id": 710010,
+    "ModelPrefab": "DormFurniture/Exclusive/710010_134_xiangzi/710010.prefab",
+    "L": 2,
+    "W": 3,
+    "H": 2,
+    "CanIn": [
+      0,
+      1
+    ],
+    "ActorSD_Id": 134,
+    "Tab": 1,
+    "CollectionValue": 500
+  },
+  "710011": {
+    "Id": 710011,
+    "ModelPrefab": "DormFurniture/Exclusive/710011_156_wawaji/710011.prefab",
+    "L": 2,
+    "W": 3,
+    "H": 2,
+    "CanIn": [
+      0,
+      1
+    ],
+    "ActorSD_Id": 156,
+    "Tab": 1,
+    "CollectionValue": 500
+  },
+  "710012": {
+    "Id": 710012,
+    "ModelPrefab": "DormFurniture/Exclusive/710012_135_guizi/710012.prefab",
+    "L": 2,
+    "W": 2,
+    "H": 3,
+    "CanIn": [
+      0,
+      1
+    ],
+    "ActorSD_Id": 135,
+    "Tab": 1,
+    "CollectionValue": 500
+  },
+  "710013": {
+    "Id": 710013,
+    "ModelPrefab": "DormFurniture/Exclusive/710013_110_chazhuo/710013.prefab",
+    "L": 2,
+    "W": 2,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "ActorSD_Id": 110,
+    "Tab": 1,
+    "CollectionValue": 500
+  },
+  "710014": {
+    "Id": 710014,
+    "ModelPrefab": "DormFurniture/Exclusive/710014_162_qishi/710014.prefab",
+    "L": 3,
+    "W": 2,
+    "H": 2,
+    "CanIn": [
+      0,
+      1
+    ],
+    "ActorSD_Id": 162,
+    "Tab": 1,
+    "CollectionValue": 500
+  },
+  "720039": {
+    "Id": 720039,
+    "ModelPrefab": "DormFurniture/1001/720039_1001_qiangzhi/720039_1001.prefab",
+    "L": 16,
+    "W": 16,
+    "H": 5,
+    "CanIn": [
+      1
+    ],
+    "PutType": 4,
+    "Fixed": 1,
+    "Tab": 5,
+    "CollectionValue": 190
+  },
+  "720040": {
+    "Id": 720040,
+    "ModelPrefab": "DormFurniture/1001/720040_1001_diban/720040_1001.prefab",
+    "L": 16,
+    "W": 16,
+    "H": 1,
+    "CanIn": [
+      1
+    ],
+    "PutType": 5,
+    "Fixed": 2,
+    "Tab": 6,
+    "CollectionValue": 190
+  },
+  "720004": {
+    "Id": 720004,
+    "ModelPrefab": "DormFurniture/1001/720004_1001_chuang/720004_1001.prefab",
+    "L": 2,
+    "W": 3,
+    "H": 2,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 1,
+    "CollectionValue": 110
+  },
+  "720005": {
+    "Id": 720005,
+    "ModelPrefab": "DormFurniture/1001/720005_1001_chuangtougui/720005_1001.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 1,
+    "CollectionValue": 60
+  },
+  "720006": {
+    "Id": 720006,
+    "ModelPrefab": "DormFurniture/1001/720006_1001_shafa/720006_1001.prefab",
+    "L": 2,
+    "W": 2,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 1,
+    "CollectionValue": 60
+  },
+  "720007": {
+    "Id": 720007,
+    "ModelPrefab": "DormFurniture/1001/720007_1001_deng/720007_1001.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 2,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 60
+  },
+  "720008": {
+    "Id": 720008,
+    "ModelPrefab": "DormFurniture/1001/720008_1001_ditan/720008_1001.prefab",
+    "L": 4,
+    "W": 4,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "PutType": 2,
+    "Tab": 3,
+    "CollectionValue": 110
+  },
+  "720009": {
+    "Id": 720009,
+    "ModelPrefab": "DormFurniture/1001/720009_1001_xiaoxiang/720009_1001.prefab",
+    "L": 2,
+    "W": 1,
+    "H": 2,
+    "CanIn": [
+      1
+    ],
+    "PutType": 1,
+    "Tab": 4,
+    "CollectionValue": 60
+  },
+  "720010": {
+    "Id": 720010,
+    "ModelPrefab": "DormFurniture/1001/720010_1001_xiaoxiang/720010_1001.prefab",
+    "L": 2,
+    "W": 1,
+    "H": 2,
+    "CanIn": [
+      1
+    ],
+    "PutType": 1,
+    "Tab": 4,
+    "CollectionValue": 60
+  },
+  "720071": {
+    "Id": 720071,
+    "ModelPrefab": "DormFurniture/1001/720071_1001_penzai/720071_1001.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 3,
+    "CanIn": [
+      1
+    ],
+    "PutType": 1,
+    "Tab": 4,
+    "CollectionValue": 50
+  },
+  "720072": {
+    "Id": 720072,
+    "ModelPrefab": "DormFurniture/1001/720072_1001_guadeng/720072_1001.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 2,
+    "CanIn": [
+      1
+    ],
+    "PutType": 1,
+    "Tab": 4,
+    "CollectionValue": 50
+  },
+  "720073": {
+    "Id": 720073,
+    "ModelPrefab": "DormFurniture/1001/720073_1001_bigui/720073_1001.prefab",
+    "L": 2,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      1
+    ],
+    "PutType": 1,
+    "Tab": 4,
+    "CollectionValue": 50
+  },
+  "720074": {
+    "Id": 720074,
+    "ModelPrefab": "DormFurniture/1001/720074_1001_penzai/720074_1001.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 2,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 50
+  },
+  "720075": {
+    "Id": 720075,
+    "ModelPrefab": "DormFurniture/1001/720075_1001_zhuo/720075_1001.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 1,
+    "CollectionValue": 50
+  },
+  "720076": {
+    "Id": 720076,
+    "ModelPrefab": "DormFurniture/1001/720076_1001_dougui/720076_1001.prefab",
+    "L": 2,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 1,
+    "CollectionValue": 50
+  },
+  "720077": {
+    "Id": 720077,
+    "ModelPrefab": "DormFurniture/1001/720077_1001_yigui/720077_1001.prefab",
+    "L": 2,
+    "W": 1,
+    "H": 3,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 1,
+    "CollectionValue": 50
+  },
+  "720078": {
+    "Id": 720078,
+    "ModelPrefab": "DormFurniture/1001/720078_1001_yizi/720078_1001.prefab",
+    "L": 2,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 1,
+    "CollectionValue": 60
+  },
+  "720079": {
+    "Id": 720079,
+    "ModelPrefab": "DormFurniture/1001/720079_1001_chazhuo/720079_1001.prefab",
+    "L": 2,
+    "W": 2,
+    "H": 2,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 1,
+    "CollectionValue": 60
+  },
+  "720080": {
+    "Id": 720080,
+    "ModelPrefab": "DormFurniture/1001/720080_1001_aigui/720080_1001.prefab",
+    "L": 3,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 1,
+    "CollectionValue": 110
+  },
+  "720081": {
+    "Id": 720081,
+    "ModelPrefab": "DormFurniture/1001/720081_1001_pingfeng/720081_1001.prefab",
+    "L": 3,
+    "W": 1,
+    "H": 2,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 1,
+    "CollectionValue": 110
+  },
+  "720082": {
+    "Id": 720082,
+    "ModelPrefab": "DormFurniture/1001/720082_1001_santong/720082_1001.prefab",
+    "L": 2,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 1,
+    "CollectionValue": 60
+  },
+  "720083": {
+    "Id": 720083,
+    "ModelPrefab": "DormFurniture/1001/720083_1001_maotan/720083_1001.prefab",
+    "L": 2,
+    "W": 2,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "PutType": 2,
+    "Tab": 3,
+    "CollectionValue": 60
+  },
+  "720084": {
+    "Id": 720084,
+    "ModelPrefab": "DormFurniture/1001/720084_1001_penzai/720084_1001.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 60
+  },
+  "720085": {
+    "Id": 720085,
+    "ModelPrefab": "DormFurniture/1001/720085_1001_chuanglian/720085_1001.prefab",
+    "L": 3,
+    "W": 1,
+    "H": 3,
+    "CanIn": [
+      1
+    ],
+    "PutType": 1,
+    "Tab": 4,
+    "CollectionValue": 110
+  },
+  "720086": {
+    "Id": 720086,
+    "ModelPrefab": "DormFurniture/1001/720086_1001_yilou/720086_1001.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 70
+  },
+  "720087": {
+    "Id": 720087,
+    "ModelPrefab": "DormFurniture/1001/720087_1001_shuzhuo/720087_1001.prefab",
+    "L": 2,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 1,
+    "CollectionValue": 70
+  },
+  "720088": {
+    "Id": 720088,
+    "ModelPrefab": "DormFurniture/1001/720088_1001_shuyi/720088_1001.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 1,
+    "CollectionValue": 70
+  },
+  "720089": {
+    "Id": 720089,
+    "ModelPrefab": "DormFurniture/1001/720089_1001_bukuang/720089_1001.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 1,
+    "CollectionValue": 70
+  },
+  "720090": {
+    "Id": 720090,
+    "ModelPrefab": "DormFurniture/1001/720090_1001_shafa/720090_1001.prefab",
+    "L": 2,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 1,
+    "CollectionValue": 60
+  },
+  "720091": {
+    "Id": 720091,
+    "ModelPrefab": "DormFurniture/1001/720091_1001_shugui/720091_1001.prefab",
+    "L": 3,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 1,
+    "CollectionValue": 110
+  },
+  "720092": {
+    "Id": 720092,
+    "ModelPrefab": "DormFurniture/1001/720092_1001_yuanditan/720092_1001.prefab",
+    "L": 6,
+    "W": 6,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "PutType": 2,
+    "Tab": 3,
+    "CollectionValue": 210
+  },
+  "720012": {
+    "Id": 720012,
+    "ModelPrefab": "DormFurniture/1002/720012_1002_tianmu/720012_1002.prefab",
+    "L": 3,
+    "W": 1,
+    "H": 2,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 1,
+    "CollectionValue": 130
+  },
+  "720013": {
+    "Id": 720013,
+    "ModelPrefab": "DormFurniture/1002/720013_1002_gouhuo/720013_1002.prefab",
+    "L": 2,
+    "W": 2,
+    "H": 2,
+    "CanIn": [
+      0
+    ],
+    "Tab": 2,
+    "CollectionValue": 70
+  },
+  "720014": {
+    "Id": 720014,
+    "ModelPrefab": "DormFurniture/1002/720014_1002_dengzi/720014_1002.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 1,
+    "CollectionValue": 60
+  },
+  "720015": {
+    "Id": 720015,
+    "ModelPrefab": "DormFurniture/1002/720015_1002_zhediezhuo/720015_1002.prefab",
+    "L": 2,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 1,
+    "CollectionValue": 60
+  },
+  "720016": {
+    "Id": 720016,
+    "ModelPrefab": "DormFurniture/1002/720016_1002_kaolu/720016_1002.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 2,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 60
+  },
+  "720017": {
+    "Id": 720017,
+    "ModelPrefab": "DormFurniture/1002/720017_1002_deng/720017_1002.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 3,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 50
+  },
+  "720018": {
+    "Id": 720018,
+    "ModelPrefab": "DormFurniture/1002/720018_1002_guanmucong/720018_1002.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 50
+  },
+  "720019": {
+    "Id": 720019,
+    "ModelPrefab": "DormFurniture/1002/720019_1002_fangchaodian/720019_1002.prefab",
+    "L": 2,
+    "W": 2,
+    "H": 2,
+    "CanIn": [
+      0,
+      1
+    ],
+    "PutType": 2,
+    "Tab": 3,
+    "CollectionValue": 50
+  },
+  "720041": {
+    "Id": 720041,
+    "ModelPrefab": "DormFurniture/1002/720041_1002_beibao/720041_1002.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 50
+  },
+  "720042": {
+    "Id": 720042,
+    "ModelPrefab": "DormFurniture/1002/720042_1002_chalu/720042_1002.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 60
+  },
+  "720043": {
+    "Id": 720043,
+    "ModelPrefab": "DormFurniture/1002/720043_1002_shuihu/720043_1002.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 50
+  },
+  "720044": {
+    "Id": 720044,
+    "ModelPrefab": "DormFurniture/1002/720044_1002_biandang/720044_1002.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 50
+  },
+  "720045": {
+    "Id": 720045,
+    "ModelPrefab": "DormFurniture/1002/720045_1002_canjuxiang/720045_1002.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 50
+  },
+  "720046": {
+    "Id": 720046,
+    "ModelPrefab": "DormFurniture/1002/720046_1002_zhedietan/720046_1002.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 50
+  },
+  "720047": {
+    "Id": 720047,
+    "ModelPrefab": "DormFurniture/1002/720047_1002_mumen1/720047_1002.prefab",
+    "L": 3,
+    "W": 1,
+    "H": 3,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 110
+  },
+  "720048": {
+    "Id": 720048,
+    "ModelPrefab": "DormFurniture/1002/720048_1002_mumen2/720048_1002.prefab",
+    "L": 3,
+    "W": 1,
+    "H": 4,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 130
+  },
+  "720049": {
+    "Id": 720049,
+    "ModelPrefab": "DormFurniture/1002/720049_1002_mupai/720049_1002.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 50
+  },
+  "720050": {
+    "Id": 720050,
+    "ModelPrefab": "DormFurniture/1002/720050_1002_mumen3/720050_1002.prefab",
+    "L": 3,
+    "W": 1,
+    "H": 3,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 100
+  },
+  "720051": {
+    "Id": 720051,
+    "ModelPrefab": "DormFurniture/1002/720051_1002_huoba/720051_1002.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 3,
+    "CanIn": [
+      0
+    ],
+    "Tab": 2,
+    "CollectionValue": 60
+  },
+  "720052": {
+    "Id": 720052,
+    "ModelPrefab": "DormFurniture/1002/720052_1002_jiazi/720052_1002.prefab",
+    "L": 2,
+    "W": 1,
+    "H": 2,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 60
+  },
+  "720053": {
+    "Id": 720053,
+    "ModelPrefab": "DormFurniture/1002/720053_1002_mudeng1/720053_1002.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 1,
+    "CollectionValue": 50
+  },
+  "720054": {
+    "Id": 720054,
+    "ModelPrefab": "DormFurniture/1002/720054_1002_mudeng2/720054_1002.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 1,
+    "CollectionValue": 50
+  },
+  "720055": {
+    "Id": 720055,
+    "ModelPrefab": "DormFurniture/1002/720055_1002_mudeng3/720055_1002.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 1,
+    "CollectionValue": 50
+  },
+  "720056": {
+    "Id": 720056,
+    "ModelPrefab": "DormFurniture/1002/720056_1002_mudeng4/720056_1002.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 1,
+    "CollectionValue": 50
+  },
+  "720057": {
+    "Id": 720057,
+    "ModelPrefab": "DormFurniture/1002/720057_1002_muzhuo/720057_1002.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 1,
+    "CollectionValue": 50
+  },
+  "720058": {
+    "Id": 720058,
+    "ModelPrefab": "DormFurniture/1002/720058_1002_guo/720058_1002.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 50
+  },
+  "720059": {
+    "Id": 720059,
+    "ModelPrefab": "DormFurniture/1002/720059_1002_mucai/720059_1002.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 50
+  },
+  "720060": {
+    "Id": 720060,
+    "ModelPrefab": "DormFurniture/1002/720060_1002_chuju/720060_1002.prefab",
+    "L": 2,
+    "W": 1,
+    "H": 2,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 1,
+    "CollectionValue": 60
+  },
+  "720061": {
+    "Id": 720061,
+    "ModelPrefab": "DormFurniture/1002/720061_1002_canzhuo/720061_1002.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 1,
+    "CollectionValue": 60
+  },
+  "720062": {
+    "Id": 720062,
+    "ModelPrefab": "DormFurniture/1002/720062_1002_yizi1/720062_1002.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 1,
+    "CollectionValue": 50
+  },
+  "720063": {
+    "Id": 720063,
+    "ModelPrefab": "DormFurniture/1002/720063_1002_yizi2/720063_1002.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 1,
+    "CollectionValue": 50
+  },
+  "720064": {
+    "Id": 720064,
+    "ModelPrefab": "DormFurniture/1002/720064_1002_xiangzi1/720064_1002.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 50
+  },
+  "720065": {
+    "Id": 720065,
+    "ModelPrefab": "DormFurniture/1002/720065_1002_xiangzi2/720065_1002.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 50
+  },
+  "720066": {
+    "Id": 720066,
+    "ModelPrefab": "DormFurniture/1002/720066_1002_xiangzi3/720066_1002.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 50
+  },
+  "720067": {
+    "Id": 720067,
+    "ModelPrefab": "DormFurniture/1002/720067_1002_kaorou/720067_1002.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 50
+  },
+  "720068": {
+    "Id": 720068,
+    "ModelPrefab": "DormFurniture/1002/720068_1002_diaoyu/720068_1002.prefab",
+    "L": 2,
+    "W": 1,
+    "H": 2,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 50
+  },
+  "720069": {
+    "Id": 720069,
+    "ModelPrefab": "DormFurniture/1002/720069_1002_zhuo/720069_1002.prefab",
+    "L": 2,
+    "W": 1,
+    "H": 2,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 1,
+    "CollectionValue": 50
+  },
+  "720070": {
+    "Id": 720070,
+    "ModelPrefab": "DormFurniture/1002/720070_1002_tuiche/720070_1002.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 50
+  },
+  "720020": {
+    "Id": 720020,
+    "ModelPrefab": "DormFurniture/1003/720020_1003_dianti/720020_1003.prefab",
+    "L": 1,
+    "W": 4,
+    "H": 4,
+    "CanIn": [
+      0
+    ],
+    "PutType": 7,
+    "Fixed": 5,
+    "Tab": 7,
+    "CollectionValue": 270
+  },
+  "720021": {
+    "Id": 720021,
+    "ModelPrefab": "DormFurniture/1003/720021_1003_tianmu/720021_1003.prefab",
+    "L": 5,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 1,
+    "CollectionValue": 500
+  },
+  "720022": {
+    "Id": 720022,
+    "ModelPrefab": "DormFurniture/1003/720022_1003_zhangpeng/720022_1003.prefab",
+    "L": 3,
+    "W": 4,
+    "H": 3,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 1,
+    "CollectionValue": 270
+  },
+  "720023": {
+    "Id": 720023,
+    "ModelPrefab": "DormFurniture/1003/720023_1003_chazhuo/720023_1003.prefab",
+    "L": 2,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 1,
+    "CollectionValue": 110
+  },
+  "720024": {
+    "Id": 720024,
+    "ModelPrefab": "DormFurniture/1003/720024_1003_zhedieyi/720024_1003.prefab",
+    "L": 1,
+    "W": 2,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 1,
+    "CollectionValue": 110
+  },
+  "720025": {
+    "Id": 720025,
+    "ModelPrefab": "DormFurniture/1003/720025_1003_maowo/720025_1003.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 100
+  },
+  "720026": {
+    "Id": 720026,
+    "ModelPrefab": "DormFurniture/1003/720026_1003_deng/720026_1003.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 100
+  },
+  "720027": {
+    "Id": 720027,
+    "ModelPrefab": "DormFurniture/1003/720027_1003_cao/720027_1003.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 100
+  },
+  "720028": {
+    "Id": 720028,
+    "ModelPrefab": "DormFurniture/1003/720028_1003_ditai/720028_1003.prefab",
+    "L": 4,
+    "W": 3,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "PutType": 2,
+    "Tab": 3,
+    "CollectionValue": 220
+  },
+  "720093": {
+    "Id": 720093,
+    "ModelPrefab": "DormFurniture/1003/720093_1003_bao/720093_1003.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 100
+  },
+  "720094": {
+    "Id": 720094,
+    "ModelPrefab": "DormFurniture/1003/720094_1003_shouyinji/720094_1003.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 100
+  },
+  "720095": {
+    "Id": 720095,
+    "ModelPrefab": "DormFurniture/1003/720095_1003_shuihu/720095_1003.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 100
+  },
+  "720096": {
+    "Id": 720096,
+    "ModelPrefab": "DormFurniture/1003/720096_1003_chaihuo/720096_1003.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 100
+  },
+  "720097": {
+    "Id": 720097,
+    "ModelPrefab": "DormFurniture/1003/720097_1003_pengren/720097_1003.prefab",
+    "L": 2,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 1,
+    "CollectionValue": 130
+  },
+  "720098": {
+    "Id": 720098,
+    "ModelPrefab": "DormFurniture/1003/720098_1003_tuiche/720098_1003.prefab",
+    "L": 2,
+    "W": 1,
+    "H": 2,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 130
+  },
+  "720099": {
+    "Id": 720099,
+    "ModelPrefab": "DormFurniture/1003/720099_1003_gongju/720099_1003.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 100
+  },
+  "720100": {
+    "Id": 720100,
+    "ModelPrefab": "DormFurniture/1003/720100_1003_canju/720100_1003.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 100
+  },
+  "720101": {
+    "Id": 720101,
+    "ModelPrefab": "DormFurniture/1003/720101_1003_jita/720101_1003.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 100
+  },
+  "720102": {
+    "Id": 720102,
+    "ModelPrefab": "DormFurniture/1003/720102_1003_chongliang/720102_1003.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 100
+  },
+  "720103": {
+    "Id": 720103,
+    "ModelPrefab": "DormFurniture/1003/720103_1003_dengzi/720103_1003.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 1,
+    "CollectionValue": 110
+  },
+  "720104": {
+    "Id": 720104,
+    "ModelPrefab": "DormFurniture/1003/720104_1003_chuijujia/720104_1003.prefab",
+    "L": 2,
+    "W": 1,
+    "H": 2,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 1,
+    "CollectionValue": 110
+  },
+  "720105": {
+    "Id": 720105,
+    "ModelPrefab": "DormFurniture/1003/720105_1003_mumen/720105_1003.prefab",
+    "L": 3,
+    "W": 1,
+    "H": 3,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 220
+  },
+  "720106": {
+    "Id": 720106,
+    "ModelPrefab": "DormFurniture/1003/720106_1003_huodui/720106_1003.prefab",
+    "L": 1,
+    "W": 1,
+    "H": 1,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 100
+  },
+  "720107": {
+    "Id": 720107,
+    "ModelPrefab": "DormFurniture/1003/720107_1003_mumen/720107_1003.prefab",
+    "L": 3,
+    "W": 1,
+    "H": 3,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 200
+  },
+  "720108": {
+    "Id": 720108,
+    "ModelPrefab": "DormFurniture/1003/720108_1003_zhishipai/720108_1003.prefab",
+    "L": 2,
+    "W": 1,
+    "H": 3,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 110
+  },
+  "720109": {
+    "Id": 720109,
+    "ModelPrefab": "DormFurniture/1003/720109_1003_chaxie/720109_1003.prefab",
+    "L": 2,
+    "W": 2,
+    "H": 2,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 1,
+    "CollectionValue": 110
+  },
+  "720110": {
+    "Id": 720110,
+    "ModelPrefab": "DormFurniture/1003/720110_1003_mumen/720110_1003.prefab",
+    "L": 3,
+    "W": 1,
+    "H": 3,
+    "CanIn": [
+      0,
+      1
+    ],
+    "Tab": 2,
+    "CollectionValue": 200
+  }
+}

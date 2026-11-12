@@ -1,0 +1,10647 @@
+{
+  "1": {
+    "Id": 1,
+    "AchieveId": 10101,
+    "Title": "魔王之路 I",
+    "Desc": "权限等级到达5级",
+    "Rarity": 3,
+    "Type": 1,
+    "CompleteCond": 71,
+    "AimNumShow": 5,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "2": {
+    "Id": 2,
+    "AchieveId": 10102,
+    "Title": "魔王之路 II",
+    "Desc": "权限等级到达10级",
+    "Rarity": 3,
+    "Type": 1,
+    "CompleteCond": 71,
+    "AimNumShow": 10,
+    "Prerequisites": [
+      1
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "3": {
+    "Id": 3,
+    "AchieveId": 10103,
+    "Title": "魔王之路 III",
+    "Desc": "权限等级到达15级",
+    "Rarity": 3,
+    "Type": 1,
+    "CompleteCond": 71,
+    "AimNumShow": 15,
+    "Prerequisites": [
+      2
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "4": {
+    "Id": 4,
+    "AchieveId": 10104,
+    "Title": "魔王之路 IV",
+    "Desc": "权限等级到达20级",
+    "Rarity": 2,
+    "Type": 1,
+    "CompleteCond": 71,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      3
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "5": {
+    "Id": 5,
+    "AchieveId": 10105,
+    "Title": "魔王之路 V",
+    "Desc": "权限等级到达25级",
+    "Rarity": 2,
+    "Type": 1,
+    "CompleteCond": 71,
+    "AimNumShow": 25,
+    "Prerequisites": [
+      4
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "6": {
+    "Id": 6,
+    "AchieveId": 10106,
+    "Title": "魔王之路 VI",
+    "Desc": "权限等级到达30级",
+    "Rarity": 2,
+    "Type": 1,
+    "CompleteCond": 71,
+    "AimNumShow": 30,
+    "Prerequisites": [
+      5
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "7": {
+    "Id": 7,
+    "AchieveId": 10107,
+    "Title": "魔王之路 VII",
+    "Desc": "权限等级到达40级",
+    "Rarity": 1,
+    "Type": 1,
+    "CompleteCond": 71,
+    "AimNumShow": 40,
+    "Prerequisites": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "8": {
+    "Id": 8,
+    "AchieveId": 10201,
+    "Title": "日行一善 I",
+    "Desc": "累计登录10天",
+    "Rarity": 3,
+    "Type": 1,
+    "CompleteCond": 51,
+    "AimNumShow": 10,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "9": {
+    "Id": 9,
+    "AchieveId": 10202,
+    "Title": "日行一善 II",
+    "Desc": "累计登录20天",
+    "Rarity": 3,
+    "Type": 1,
+    "CompleteCond": 51,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      8
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "10": {
+    "Id": 10,
+    "AchieveId": 10203,
+    "Title": "日行一善 III",
+    "Desc": "累计登录30天",
+    "Rarity": 2,
+    "Type": 1,
+    "CompleteCond": 51,
+    "AimNumShow": 30,
+    "Prerequisites": [
+      9
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "11": {
+    "Id": 11,
+    "AchieveId": 10204,
+    "Title": "日行一善 IV",
+    "Desc": "累计登录50天",
+    "Rarity": 2,
+    "Type": 1,
+    "CompleteCond": 51,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      10
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "12": {
+    "Id": 12,
+    "AchieveId": 10205,
+    "Title": "日行一善 V",
+    "Desc": "累计登录100天",
+    "Rarity": 1,
+    "Type": 1,
+    "CompleteCond": 51,
+    "AimNumShow": 100,
+    "Prerequisites": [
+      11
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "13": {
+    "Id": 13,
+    "AchieveId": 10301,
+    "Title": "种瓜得豆 I",
+    "Desc": "累计进行10次合成",
+    "Rarity": 3,
+    "Type": 1,
+    "CompleteCond": 50,
+    "AimNumShow": 10,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "14": {
+    "Id": 14,
+    "AchieveId": 10302,
+    "Title": "种瓜得豆 II",
+    "Desc": "累计进行50次合成",
+    "Rarity": 3,
+    "Type": 1,
+    "CompleteCond": 50,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      13
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "15": {
+    "Id": 15,
+    "AchieveId": 10303,
+    "Title": "种瓜得豆 III",
+    "Desc": "累计进行500次合成",
+    "Rarity": 3,
+    "Type": 1,
+    "CompleteCond": 50,
+    "AimNumShow": 500,
+    "Prerequisites": [
+      14
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "16": {
+    "Id": 16,
+    "AchieveId": 10304,
+    "Title": "种瓜得豆 IV",
+    "Desc": "累计进行1000次合成",
+    "Rarity": 2,
+    "Type": 1,
+    "CompleteCond": 50,
+    "AimNumShow": 1000,
+    "Prerequisites": [
+      15
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "17": {
+    "Id": 17,
+    "AchieveId": 10305,
+    "Title": "种瓜得豆 V",
+    "Desc": "累计进行3000次合成",
+    "Rarity": 1,
+    "Type": 1,
+    "CompleteCond": 50,
+    "AimNumShow": 3000,
+    "Prerequisites": [
+      16
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "18": {
+    "Id": 18,
+    "AchieveId": 10401,
+    "Title": "万事大吉 I",
+    "Desc": "达成50项成就",
+    "Rarity": 3,
+    "Type": 1,
+    "CompleteCond": 2,
+    "AimNumShow": 50,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "19": {
+    "Id": 19,
+    "AchieveId": 10402,
+    "Title": "万事大吉 II",
+    "Desc": "达成100项成就",
+    "Rarity": 2,
+    "Type": 1,
+    "CompleteCond": 2,
+    "AimNumShow": 100,
+    "Prerequisites": [
+      18
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "20": {
+    "Id": 20,
+    "AchieveId": 10403,
+    "Title": "万事大吉 III",
+    "Desc": "达成150项成就",
+    "Rarity": 2,
+    "Type": 1,
+    "CompleteCond": 2,
+    "AimNumShow": 150,
+    "Prerequisites": [
+      19
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "21": {
+    "Id": 21,
+    "AchieveId": 10404,
+    "Title": "万事大吉 IV",
+    "Desc": "达成200项成就",
+    "Rarity": 1,
+    "Type": 1,
+    "CompleteCond": 2,
+    "AimNumShow": 200,
+    "Prerequisites": [
+      20
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "22": {
+    "Id": 22,
+    "AchieveId": 10501,
+    "Title": "灰城区的风",
+    "Desc": "通关剧情第一章",
+    "Rarity": 2,
+    "Type": 1,
+    "CompleteCond": 63,
+    "AimNumShow": 1,
+    "Tid1": 111002,
+    "Qty1": 1,
+    "Tid2": 2,
+    "Qty2": 10
+  },
+  "23": {
+    "Id": 23,
+    "AchieveId": 10502,
+    "Title": "楼顶英雄",
+    "Desc": "通关剧情第二章",
+    "Rarity": 2,
+    "Type": 1,
+    "CompleteCond": 63,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      22
+    ],
+    "Tid1": 111003,
+    "Qty1": 1,
+    "Tid2": 2,
+    "Qty2": 10
+  },
+  "24": {
+    "Id": 24,
+    "AchieveId": 10503,
+    "Title": "花令赞助人",
+    "Desc": "通关剧情第三章",
+    "Rarity": 2,
+    "Type": 1,
+    "CompleteCond": 63,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      23
+    ],
+    "Tid1": 111004,
+    "Qty1": 1,
+    "Tid2": 2,
+    "Qty2": 10
+  },
+  "25": {
+    "Id": 25,
+    "AchieveId": 10601,
+    "Title": "豪掷千金 I",
+    "Desc": "累计消耗100000朵拉",
+    "Rarity": 3,
+    "Type": 1,
+    "CompleteCond": 49,
+    "AimNumShow": 100000,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "26": {
+    "Id": 26,
+    "AchieveId": 10602,
+    "Title": "豪掷千金 II",
+    "Desc": "累计消耗600000朵拉",
+    "Rarity": 3,
+    "Type": 1,
+    "CompleteCond": 49,
+    "AimNumShow": 600000,
+    "Prerequisites": [
+      25
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "27": {
+    "Id": 27,
+    "AchieveId": 10603,
+    "Title": "豪掷千金 III",
+    "Desc": "累计消耗3000000朵拉",
+    "Rarity": 2,
+    "Type": 1,
+    "CompleteCond": 49,
+    "AimNumShow": 3000000,
+    "Prerequisites": [
+      26
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "28": {
+    "Id": 28,
+    "AchieveId": 10604,
+    "Title": "豪掷千金 IV",
+    "Desc": "累计消耗10000000朵拉",
+    "Rarity": 2,
+    "Type": 1,
+    "CompleteCond": 49,
+    "AimNumShow": 10000000,
+    "Prerequisites": [
+      27
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "29": {
+    "Id": 29,
+    "AchieveId": 10605,
+    "Title": "豪掷千金 V",
+    "Desc": "累计消耗30000000朵拉",
+    "Rarity": 1,
+    "Type": 1,
+    "CompleteCond": 49,
+    "AimNumShow": 30000000,
+    "Prerequisites": [
+      28
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "30": {
+    "Id": 30,
+    "AchieveId": 10701,
+    "Title": "星光璀璨 I",
+    "Desc": "累计消耗600征途票根",
+    "Rarity": 3,
+    "Type": 1,
+    "CompleteCond": 49,
+    "AimNumShow": 600,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "31": {
+    "Id": 31,
+    "AchieveId": 10702,
+    "Title": "星光璀璨 II",
+    "Desc": "累计消耗2000征途票根",
+    "Rarity": 3,
+    "Type": 1,
+    "CompleteCond": 49,
+    "AimNumShow": 2000,
+    "Prerequisites": [
+      30
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "32": {
+    "Id": 32,
+    "AchieveId": 10703,
+    "Title": "星光璀璨 III",
+    "Desc": "累计消耗5000征途票根",
+    "Rarity": 2,
+    "Type": 1,
+    "CompleteCond": 49,
+    "AimNumShow": 5000,
+    "Prerequisites": [
+      31
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "33": {
+    "Id": 33,
+    "AchieveId": 10704,
+    "Title": "星光璀璨 IV",
+    "Desc": "累计消耗10000征途票根",
+    "Rarity": 2,
+    "Type": 1,
+    "CompleteCond": 49,
+    "AimNumShow": 10000,
+    "Prerequisites": [
+      32
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "34": {
+    "Id": 34,
+    "AchieveId": 10705,
+    "Title": "星光璀璨 V",
+    "Desc": "累计消耗24000征途票根",
+    "Rarity": 1,
+    "Type": 1,
+    "CompleteCond": 49,
+    "AimNumShow": 24000,
+    "Prerequisites": [
+      33
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "35": {
+    "Id": 35,
+    "AchieveId": 11001,
+    "Title": "别来无恙 I",
+    "Desc": "在招募中累计抽取到5次旅人",
+    "Rarity": 1,
+    "Type": 1,
+    "Hide": true,
+    "CompleteCond": 42,
+    "AimNumShow": 5,
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "36": {
+    "Id": 36,
+    "AchieveId": 11002,
+    "Title": "别来无恙 II",
+    "Desc": "在招募中累计抽取到10次旅人",
+    "Rarity": 1,
+    "Type": 1,
+    "Hide": true,
+    "CompleteCond": 42,
+    "AimNumShow": 10,
+    "Prerequisites": [
+      35
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "37": {
+    "Id": 37,
+    "AchieveId": 11003,
+    "Title": "别来无恙 III",
+    "Desc": "在招募中累计抽取到20次旅人",
+    "Rarity": 1,
+    "Type": 1,
+    "Hide": true,
+    "CompleteCond": 42,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      36
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "38": {
+    "Id": 38,
+    "AchieveId": 11004,
+    "Title": "别来无恙 IV",
+    "Desc": "在招募中累计抽取到30次旅人",
+    "Rarity": 1,
+    "Type": 1,
+    "Hide": true,
+    "CompleteCond": 42,
+    "AimNumShow": 30,
+    "Prerequisites": [
+      37
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "39": {
+    "Id": 39,
+    "AchieveId": 11005,
+    "Title": "别来无恙 V",
+    "Desc": "在招募中累计抽取到50次旅人",
+    "Rarity": 1,
+    "Type": 1,
+    "Hide": true,
+    "CompleteCond": 42,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      38
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "40": {
+    "Id": 40,
+    "AchieveId": 11006,
+    "Title": "别来无恙 VI",
+    "Desc": "在招募中累计抽取到70次旅人",
+    "Rarity": 1,
+    "Type": 1,
+    "Hide": true,
+    "CompleteCond": 42,
+    "AimNumShow": 70,
+    "Prerequisites": [
+      39
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "41": {
+    "Id": 41,
+    "AchieveId": 11007,
+    "Title": "别来无恙 VII",
+    "Desc": "在招募中累计抽取到100次旅人",
+    "Rarity": 1,
+    "Type": 1,
+    "Hide": true,
+    "CompleteCond": 42,
+    "AimNumShow": 100,
+    "Prerequisites": [
+      40
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "42": {
+    "Id": 42,
+    "AchieveId": 11101,
+    "Title": "魔王直聘 I",
+    "Desc": "累计进行50次招募",
+    "Rarity": 1,
+    "Type": 1,
+    "Hide": true,
+    "CompleteCond": 44,
+    "AimNumShow": 50,
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "43": {
+    "Id": 43,
+    "AchieveId": 11102,
+    "Title": "魔王直聘 II",
+    "Desc": "累计进行100次招募",
+    "Rarity": 1,
+    "Type": 1,
+    "Hide": true,
+    "CompleteCond": 44,
+    "AimNumShow": 100,
+    "Prerequisites": [
+      42
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "44": {
+    "Id": 44,
+    "AchieveId": 11103,
+    "Title": "魔王直聘 III",
+    "Desc": "累计进行200次招募",
+    "Rarity": 1,
+    "Type": 1,
+    "Hide": true,
+    "CompleteCond": 44,
+    "AimNumShow": 200,
+    "Prerequisites": [
+      43
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "45": {
+    "Id": 45,
+    "AchieveId": 11104,
+    "Title": "魔王直聘 IV",
+    "Desc": "累计进行300次招募",
+    "Rarity": 1,
+    "Type": 1,
+    "Hide": true,
+    "CompleteCond": 44,
+    "AimNumShow": 300,
+    "Prerequisites": [
+      44
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "46": {
+    "Id": 46,
+    "AchieveId": 11105,
+    "Title": "魔王直聘 V",
+    "Desc": "累计进行400次招募",
+    "Rarity": 1,
+    "Type": 1,
+    "Hide": true,
+    "CompleteCond": 44,
+    "AimNumShow": 400,
+    "Prerequisites": [
+      45
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "47": {
+    "Id": 47,
+    "AchieveId": 11106,
+    "Title": "魔王直聘 VI",
+    "Desc": "累计进行500次招募",
+    "Rarity": 1,
+    "Type": 1,
+    "Hide": true,
+    "CompleteCond": 44,
+    "AimNumShow": 500,
+    "Prerequisites": [
+      46
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "48": {
+    "Id": 48,
+    "AchieveId": 11201,
+    "Title": "开业大吉 I",
+    "Desc": "完成第1组魔王养成任务",
+    "Rarity": 3,
+    "Type": 1,
+    "CompleteCond": 53,
+    "AimNumShow": 1,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "49": {
+    "Id": 49,
+    "AchieveId": 11202,
+    "Title": "开业大吉 II",
+    "Desc": "完成第2组魔王养成任务",
+    "Rarity": 3,
+    "Type": 1,
+    "CompleteCond": 53,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      48
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "50": {
+    "Id": 50,
+    "AchieveId": 11203,
+    "Title": "开业大吉 III",
+    "Desc": "完成第3组魔王养成任务",
+    "Rarity": 3,
+    "Type": 1,
+    "CompleteCond": 53,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      49
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "51": {
+    "Id": 51,
+    "AchieveId": 11204,
+    "Title": "开业大吉 IV",
+    "Desc": "完成第4组魔王养成任务",
+    "Rarity": 2,
+    "Type": 1,
+    "CompleteCond": 53,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      50
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "52": {
+    "Id": 52,
+    "AchieveId": 11205,
+    "Title": "开业大吉 V",
+    "Desc": "完成第5组魔王养成任务",
+    "Rarity": 2,
+    "Type": 1,
+    "CompleteCond": 53,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      51
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "53": {
+    "Id": 53,
+    "AchieveId": 11206,
+    "Title": "开业大吉 VI",
+    "Desc": "完成第6组魔王养成任务",
+    "Rarity": 2,
+    "Type": 1,
+    "CompleteCond": 53,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      52
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "54": {
+    "Id": 54,
+    "AchieveId": 11207,
+    "Title": "开业大吉 VII",
+    "Desc": "完成第7组魔王养成任务",
+    "Rarity": 2,
+    "Type": 1,
+    "CompleteCond": 53,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      53
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "55": {
+    "Id": 55,
+    "AchieveId": 11208,
+    "Title": "开业大吉 VIII",
+    "Desc": "完成第8组魔王养成任务",
+    "Rarity": 1,
+    "Type": 1,
+    "CompleteCond": 53,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      54
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "56": {
+    "Id": 56,
+    "AchieveId": 20101,
+    "Title": "拨云见雾",
+    "Desc": "首次通关原初的迷途",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 507,
+    "AimNumShow": 1,
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "57": {
+    "Id": 57,
+    "AchieveId": 20201,
+    "Title": "抽刀断水 I",
+    "Desc": "首次通关难度1[流水与暗影]",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 507,
+    "AimNumShow": 1,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "58": {
+    "Id": 58,
+    "AchieveId": 20202,
+    "Title": "抽刀断水 II",
+    "Desc": "首次通关难度2[流水与暗影]",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 507,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      57
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "59": {
+    "Id": 59,
+    "AchieveId": 20203,
+    "Title": "抽刀断水 III",
+    "Desc": "首次通关难度3[流水与暗影]",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 507,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      58
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "60": {
+    "Id": 60,
+    "AchieveId": 20204,
+    "Title": "抽刀断水 IV",
+    "Desc": "首次通关难度4[流水与暗影]",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 507,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      59
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "61": {
+    "Id": 61,
+    "AchieveId": 20205,
+    "Title": "抽刀断水 V",
+    "Desc": "首次通关难度5[流水与暗影]",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 507,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      60
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "62": {
+    "Id": 62,
+    "AchieveId": 20206,
+    "Title": "抽刀断水 VI",
+    "Desc": "首次通关难度6[流水与暗影]",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 507,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      61
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "63": {
+    "Id": 63,
+    "AchieveId": 20207,
+    "Title": "抽刀断水 VII",
+    "Desc": "首次通关难度7[流水与暗影]",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 507,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      62
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "64": {
+    "Id": 64,
+    "AchieveId": 20301,
+    "Title": "油尽灯枯 I",
+    "Desc": "首次通关难度1[烈焰与尘埃]",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 507,
+    "AimNumShow": 1,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "65": {
+    "Id": 65,
+    "AchieveId": 20302,
+    "Title": "油尽灯枯 II",
+    "Desc": "首次通关难度2[烈焰与尘埃]",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 507,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      64
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "66": {
+    "Id": 66,
+    "AchieveId": 20303,
+    "Title": "油尽灯枯 III",
+    "Desc": "首次通关难度3[烈焰与尘埃]",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 507,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      65
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "67": {
+    "Id": 67,
+    "AchieveId": 20304,
+    "Title": "油尽灯枯 IV",
+    "Desc": "首次通关难度4[烈焰与尘埃]",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 507,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      66
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "68": {
+    "Id": 68,
+    "AchieveId": 20305,
+    "Title": "油尽灯枯 V",
+    "Desc": "首次通关难度5[烈焰与尘埃]",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 507,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      67
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "69": {
+    "Id": 69,
+    "AchieveId": 20306,
+    "Title": "油尽灯枯 VI",
+    "Desc": "首次通关难度6[烈焰与尘埃]",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 507,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      68
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "70": {
+    "Id": 70,
+    "AchieveId": 20307,
+    "Title": "油尽灯枯 VII",
+    "Desc": "首次通关难度7[烈焰与尘埃]",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 507,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      69
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "71": {
+    "Id": 71,
+    "AchieveId": 20401,
+    "Title": "尘埃落定 I",
+    "Desc": "首次通关难度1[风暴与闪电]",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 507,
+    "AimNumShow": 1,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "72": {
+    "Id": 72,
+    "AchieveId": 20402,
+    "Title": "尘埃落定 II",
+    "Desc": "首次通关难度2[风暴与闪电]",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 507,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      71
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "73": {
+    "Id": 73,
+    "AchieveId": 20403,
+    "Title": "尘埃落定 III",
+    "Desc": "首次通关难度3[风暴与闪电]",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 507,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      72
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "74": {
+    "Id": 74,
+    "AchieveId": 20404,
+    "Title": "尘埃落定 IV",
+    "Desc": "首次通关难度4[风暴与闪电]",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 507,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      73
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "75": {
+    "Id": 75,
+    "AchieveId": 20405,
+    "Title": "尘埃落定 V",
+    "Desc": "首次通关难度5[风暴与闪电]",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 507,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      74
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "76": {
+    "Id": 76,
+    "AchieveId": 20406,
+    "Title": "尘埃落定 VI",
+    "Desc": "首次通关难度6[风暴与闪电]",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 507,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      75
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "77": {
+    "Id": 77,
+    "AchieveId": 20407,
+    "Title": "尘埃落定 VII",
+    "Desc": "首次通关难度7[风暴与闪电]",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 507,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      76
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "78": {
+    "Id": 78,
+    "AchieveId": 20501,
+    "Title": "全栈业务 I",
+    "Desc": "三座主要星塔均通过难度2",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 506,
+    "AimNumShow": 3,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "79": {
+    "Id": 79,
+    "AchieveId": 20502,
+    "Title": "全栈业务 II",
+    "Desc": "三座主要星塔均通过难度4",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 506,
+    "AimNumShow": 3,
+    "Prerequisites": [
+      78
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "80": {
+    "Id": 80,
+    "AchieveId": 20503,
+    "Title": "全栈业务 III",
+    "Desc": "三座主要星塔均通过难度6",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 506,
+    "AimNumShow": 3,
+    "Prerequisites": [
+      79
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "81": {
+    "Id": 81,
+    "AchieveId": 20504,
+    "Title": "全栈业务 IV",
+    "Desc": "三座主要星塔均通过难度7",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 506,
+    "AimNumShow": 3,
+    "Prerequisites": [
+      80
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "82": {
+    "Id": 82,
+    "AchieveId": 20601,
+    "Title": "熟能生巧 I",
+    "Desc": "完整探索3次星塔",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 508,
+    "AimNumShow": 3,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "83": {
+    "Id": 83,
+    "AchieveId": 20602,
+    "Title": "熟能生巧 II",
+    "Desc": "完整探索10次星塔",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 508,
+    "AimNumShow": 10,
+    "Prerequisites": [
+      82
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "84": {
+    "Id": 84,
+    "AchieveId": 20603,
+    "Title": "熟能生巧 III",
+    "Desc": "完整探索20次星塔",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 508,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      83
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "85": {
+    "Id": 85,
+    "AchieveId": 20604,
+    "Title": "熟能生巧 IV",
+    "Desc": "完整探索50次星塔",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 508,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      84
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "86": {
+    "Id": 86,
+    "AchieveId": 20605,
+    "Title": "熟能生巧 V",
+    "Desc": "完整探索100次星塔",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 508,
+    "AimNumShow": 100,
+    "Prerequisites": [
+      85
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "87": {
+    "Id": 87,
+    "AchieveId": 20801,
+    "Title": "出类拔萃",
+    "Desc": "首次获取品质（绿）的纪录",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 504,
+    "AimNumShow": 1,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "88": {
+    "Id": 88,
+    "AchieveId": 20802,
+    "Title": "卓尔不凡",
+    "Desc": "首次获取品质（蓝）的纪录",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 504,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      87
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "89": {
+    "Id": 89,
+    "AchieveId": 20803,
+    "Title": "千锤百炼",
+    "Desc": "首次获取品质（橙）的纪录",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 504,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      88
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "90": {
+    "Id": 90,
+    "AchieveId": 20804,
+    "Title": "至臻化境",
+    "Desc": "首次获取品质（彩）的纪录",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 504,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      89
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "91": {
+    "Id": 91,
+    "AchieveId": 20901,
+    "Title": "王牌导师 I",
+    "Desc": "获取10次品质（彩）的纪录",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 504,
+    "AimNumShow": 10,
+    "Prerequisites": [
+      90
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "92": {
+    "Id": 92,
+    "AchieveId": 20902,
+    "Title": "王牌导师 II",
+    "Desc": "获取20次品质（彩）的纪录",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 504,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      91
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "93": {
+    "Id": 93,
+    "AchieveId": 20903,
+    "Title": "王牌导师 III",
+    "Desc": "获取30次品质（彩）的纪录",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 504,
+    "AimNumShow": 30,
+    "Prerequisites": [
+      92
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "94": {
+    "Id": 94,
+    "AchieveId": 20904,
+    "Title": "王牌导师 IV",
+    "Desc": "获取50次品质（彩）的纪录",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 504,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      93
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "95": {
+    "Id": 95,
+    "AchieveId": 21101,
+    "Title": "术有专精·水 I",
+    "Desc": "队伍成员均为水系的情况下通关5次星塔",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 505,
+    "AimNumShow": 5,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "96": {
+    "Id": 96,
+    "AchieveId": 21102,
+    "Title": "术有专精·水 II",
+    "Desc": "队伍成员均为水系的情况下通关10次星塔",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 505,
+    "AimNumShow": 10,
+    "Prerequisites": [
+      95
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "97": {
+    "Id": 97,
+    "AchieveId": 21103,
+    "Title": "术有专精·水 III",
+    "Desc": "队伍成员均为水系的情况下通关20次星塔",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 505,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      96
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "98": {
+    "Id": 98,
+    "AchieveId": 21104,
+    "Title": "术有专精·水 IV",
+    "Desc": "队伍成员均为水系的情况下通关50次星塔",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 505,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      97
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "99": {
+    "Id": 99,
+    "AchieveId": 21201,
+    "Title": "术有专精·火 I",
+    "Desc": "队伍成员均为火系的情况下通关5次星塔",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 505,
+    "AimNumShow": 5,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "100": {
+    "Id": 100,
+    "AchieveId": 21202,
+    "Title": "术有专精·火 II",
+    "Desc": "队伍成员均为火系的情况下通关10次星塔",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 505,
+    "AimNumShow": 10,
+    "Prerequisites": [
+      99
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "101": {
+    "Id": 101,
+    "AchieveId": 21203,
+    "Title": "术有专精·火 III",
+    "Desc": "队伍成员均为火系的情况下通关20次星塔",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 505,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      100
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "102": {
+    "Id": 102,
+    "AchieveId": 21204,
+    "Title": "术有专精·火 IV",
+    "Desc": "队伍成员均为火系的情况下通关50次星塔",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 505,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      101
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "103": {
+    "Id": 103,
+    "AchieveId": 21301,
+    "Title": "术有专精·地 I",
+    "Desc": "队伍成员均为地系的情况下通关5次星塔",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 505,
+    "AimNumShow": 5,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "104": {
+    "Id": 104,
+    "AchieveId": 21302,
+    "Title": "术有专精·地 II",
+    "Desc": "队伍成员均为地系的情况下通关10次星塔",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 505,
+    "AimNumShow": 10,
+    "Prerequisites": [
+      103
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "105": {
+    "Id": 105,
+    "AchieveId": 21303,
+    "Title": "术有专精·地 III",
+    "Desc": "队伍成员均为地系的情况下通关20次星塔",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 505,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      104
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "106": {
+    "Id": 106,
+    "AchieveId": 21304,
+    "Title": "术有专精·地 IV",
+    "Desc": "队伍成员均为地系的情况下通关50次星塔",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 505,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      105
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "107": {
+    "Id": 107,
+    "AchieveId": 21401,
+    "Title": "术有专精·风 I",
+    "Desc": "队伍成员均为风系的情况下通关5次星塔",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 505,
+    "AimNumShow": 5,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "108": {
+    "Id": 108,
+    "AchieveId": 21402,
+    "Title": "术有专精·风 II",
+    "Desc": "队伍成员均为风系的情况下通关10次星塔",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 505,
+    "AimNumShow": 10,
+    "Prerequisites": [
+      107
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "109": {
+    "Id": 109,
+    "AchieveId": 21403,
+    "Title": "术有专精·风 III",
+    "Desc": "队伍成员均为风系的情况下通关20次星塔",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 505,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      108
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "110": {
+    "Id": 110,
+    "AchieveId": 21404,
+    "Title": "术有专精·风 IV",
+    "Desc": "队伍成员均为风系的情况下通关50次星塔",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 505,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      109
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "111": {
+    "Id": 111,
+    "AchieveId": 21501,
+    "Title": "术有专精·光 I",
+    "Desc": "队伍成员均为光系的情况下通关5次星塔",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 505,
+    "AimNumShow": 5,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "112": {
+    "Id": 112,
+    "AchieveId": 21502,
+    "Title": "术有专精·光 II",
+    "Desc": "队伍成员均为光系的情况下通关10次星塔",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 505,
+    "AimNumShow": 10,
+    "Prerequisites": [
+      111
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "113": {
+    "Id": 113,
+    "AchieveId": 21503,
+    "Title": "术有专精·光 III",
+    "Desc": "队伍成员均为光系的情况下通关20次星塔",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 505,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      112
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "114": {
+    "Id": 114,
+    "AchieveId": 21504,
+    "Title": "术有专精·光 IV",
+    "Desc": "队伍成员均为光系的情况下通关50次星塔",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 505,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      113
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "115": {
+    "Id": 115,
+    "AchieveId": 21601,
+    "Title": "术有专精·暗 I",
+    "Desc": "队伍成员均为暗系的情况下通关5次星塔",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 505,
+    "AimNumShow": 5,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "116": {
+    "Id": 116,
+    "AchieveId": 21602,
+    "Title": "术有专精·暗 II",
+    "Desc": "队伍成员均为暗系的情况下通关10次星塔",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 505,
+    "AimNumShow": 10,
+    "Prerequisites": [
+      115
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "117": {
+    "Id": 117,
+    "AchieveId": 21603,
+    "Title": "术有专精·暗 III",
+    "Desc": "队伍成员均为暗系的情况下通关20次星塔",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 505,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      116
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "118": {
+    "Id": 118,
+    "AchieveId": 21604,
+    "Title": "术有专精·暗 IV",
+    "Desc": "队伍成员均为暗系的情况下通关50次星塔",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 505,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      117
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "119": {
+    "Id": 119,
+    "AchieveId": 21701,
+    "Title": "便利店常客 I",
+    "Desc": "在星塔商店中购物10次",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 514,
+    "AimNumShow": 10,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "120": {
+    "Id": 120,
+    "AchieveId": 21702,
+    "Title": "便利店常客 II",
+    "Desc": "在星塔商店中购物50次",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 514,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      119
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "121": {
+    "Id": 121,
+    "AchieveId": 21703,
+    "Title": "便利店常客 III",
+    "Desc": "在星塔商店中购物200次",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 514,
+    "AimNumShow": 200,
+    "Prerequisites": [
+      120
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "122": {
+    "Id": 122,
+    "AchieveId": 21704,
+    "Title": "便利店常客 IV",
+    "Desc": "在星塔商店中购物500次",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 514,
+    "AimNumShow": 500,
+    "Prerequisites": [
+      121
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "123": {
+    "Id": 123,
+    "AchieveId": 21705,
+    "Title": "便利店常客 V",
+    "Desc": "在星塔商店中购物1000次",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 514,
+    "AimNumShow": 1000,
+    "Prerequisites": [
+      122
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "124": {
+    "Id": 124,
+    "AchieveId": 21706,
+    "Title": "便利店常客 VI",
+    "Desc": "在星塔商店中购物1600次",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 514,
+    "AimNumShow": 1600,
+    "Prerequisites": [
+      123
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "125": {
+    "Id": 125,
+    "AchieveId": 21707,
+    "Title": "便利店常客 VII",
+    "Desc": "在星塔商店中购物2200次",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 514,
+    "AimNumShow": 2200,
+    "Prerequisites": [
+      124
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "126": {
+    "Id": 126,
+    "AchieveId": 21708,
+    "Title": "便利店常客 VIII",
+    "Desc": "在星塔商店中购物2800次",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 514,
+    "AimNumShow": 2800,
+    "Prerequisites": [
+      125
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "127": {
+    "Id": 127,
+    "AchieveId": 21709,
+    "Title": "便利店常客 IX",
+    "Desc": "在星塔商店中购物4000次",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 514,
+    "AimNumShow": 4000,
+    "Prerequisites": [
+      126
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "128": {
+    "Id": 128,
+    "AchieveId": 21710,
+    "Title": "便利店常客 X",
+    "Desc": "在星塔商店中购物6000次",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 514,
+    "AimNumShow": 6000,
+    "Prerequisites": [
+      127
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "129": {
+    "Id": 129,
+    "AchieveId": 21801,
+    "Title": "萍水相逢 I",
+    "Desc": "在星塔中触发20次事件",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 511,
+    "AimNumShow": 20,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "130": {
+    "Id": 130,
+    "AchieveId": 21802,
+    "Title": "萍水相逢 II",
+    "Desc": "在星塔中触发60次事件",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 511,
+    "AimNumShow": 60,
+    "Prerequisites": [
+      129
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "131": {
+    "Id": 131,
+    "AchieveId": 21803,
+    "Title": "萍水相逢 III",
+    "Desc": "在星塔中触发150次事件",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 511,
+    "AimNumShow": 150,
+    "Prerequisites": [
+      130
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "132": {
+    "Id": 132,
+    "AchieveId": 21804,
+    "Title": "萍水相逢 IV",
+    "Desc": "在星塔中触发300次事件",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 511,
+    "AimNumShow": 300,
+    "Prerequisites": [
+      131
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "133": {
+    "Id": 133,
+    "AchieveId": 21805,
+    "Title": "萍水相逢 V",
+    "Desc": "在星塔中触发450次事件",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 511,
+    "AimNumShow": 450,
+    "Prerequisites": [
+      132
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "134": {
+    "Id": 134,
+    "AchieveId": 21806,
+    "Title": "萍水相逢 VI",
+    "Desc": "在星塔中触发600次事件",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 511,
+    "AimNumShow": 600,
+    "Prerequisites": [
+      133
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "135": {
+    "Id": 135,
+    "AchieveId": 21807,
+    "Title": "萍水相逢 VII",
+    "Desc": "在星塔中触发750次事件",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 511,
+    "AimNumShow": 750,
+    "Prerequisites": [
+      134
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "136": {
+    "Id": 136,
+    "AchieveId": 21808,
+    "Title": "萍水相逢 VIII",
+    "Desc": "在星塔中触发900次事件",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 511,
+    "AimNumShow": 900,
+    "Prerequisites": [
+      135
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "137": {
+    "Id": 137,
+    "AchieveId": 21809,
+    "Title": "萍水相逢 IX",
+    "Desc": "在星塔中触发1200次事件",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 511,
+    "AimNumShow": 1200,
+    "Prerequisites": [
+      136
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "138": {
+    "Id": 138,
+    "AchieveId": 21810,
+    "Title": "萍水相逢 X",
+    "Desc": "在星塔中触发1500次事件",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 511,
+    "AimNumShow": 1500,
+    "Prerequisites": [
+      137
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "139": {
+    "Id": 139,
+    "AchieveId": 21901,
+    "Title": "大富翁 I",
+    "Desc": "在星塔中获得2000枚辉光币",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 2000,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "140": {
+    "Id": 140,
+    "AchieveId": 21902,
+    "Title": "大富翁 II",
+    "Desc": "在星塔中获得60000枚辉光币",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 60000,
+    "Prerequisites": [
+      139
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "141": {
+    "Id": 141,
+    "AchieveId": 21903,
+    "Title": "大富翁 III",
+    "Desc": "在星塔中获得140000枚辉光币",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 140000,
+    "Prerequisites": [
+      140
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "142": {
+    "Id": 142,
+    "AchieveId": 21904,
+    "Title": "大富翁 IV",
+    "Desc": "在星塔中获得350000枚辉光币",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 350000,
+    "Prerequisites": [
+      141
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "143": {
+    "Id": 143,
+    "AchieveId": 21905,
+    "Title": "大富翁 V",
+    "Desc": "在星塔中获得650000枚辉光币",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 650000,
+    "Prerequisites": [
+      142
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "144": {
+    "Id": 144,
+    "AchieveId": 21906,
+    "Title": "大富翁 VI",
+    "Desc": "在星塔中获得999999枚辉光币",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 999999,
+    "Prerequisites": [
+      143
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "145": {
+    "Id": 145,
+    "AchieveId": 22001,
+    "Title": "绝对音感·强攻 I",
+    "Desc": "在星塔中获得100个强攻之音",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 100,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "146": {
+    "Id": 146,
+    "AchieveId": 22002,
+    "Title": "绝对音感·强攻 II",
+    "Desc": "在星塔中获得500个强攻之音",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 500,
+    "Prerequisites": [
+      145
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "147": {
+    "Id": 147,
+    "AchieveId": 22003,
+    "Title": "绝对音感·强攻 III",
+    "Desc": "在星塔中获得1200个强攻之音",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 1200,
+    "Prerequisites": [
+      146
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "148": {
+    "Id": 148,
+    "AchieveId": 22004,
+    "Title": "绝对音感·强攻 IV",
+    "Desc": "在星塔中获得3000个强攻之音",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 3000,
+    "Prerequisites": [
+      147
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "149": {
+    "Id": 149,
+    "AchieveId": 22005,
+    "Title": "绝对音感·强攻 V",
+    "Desc": "在星塔中获得5000个强攻之音",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 5000,
+    "Prerequisites": [
+      148
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "150": {
+    "Id": 150,
+    "AchieveId": 22101,
+    "Title": "绝对音感·幸运 I",
+    "Desc": "在星塔中获得100个幸运之音",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 100,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "151": {
+    "Id": 151,
+    "AchieveId": 22102,
+    "Title": "绝对音感·幸运 II",
+    "Desc": "在星塔中获得500个幸运之音",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 500,
+    "Prerequisites": [
+      150
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "152": {
+    "Id": 152,
+    "AchieveId": 22103,
+    "Title": "绝对音感·幸运 III",
+    "Desc": "在星塔中获得1200个幸运之音",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 1200,
+    "Prerequisites": [
+      151
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "153": {
+    "Id": 153,
+    "AchieveId": 22104,
+    "Title": "绝对音感·幸运 IV",
+    "Desc": "在星塔中获得3000个幸运之音",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 3000,
+    "Prerequisites": [
+      152
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "154": {
+    "Id": 154,
+    "AchieveId": 22105,
+    "Title": "绝对音感·幸运 V",
+    "Desc": "在星塔中获得5000个幸运之音",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 5000,
+    "Prerequisites": [
+      153
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "155": {
+    "Id": 155,
+    "AchieveId": 22201,
+    "Title": "绝对音感·暴发 I",
+    "Desc": "在星塔中获得100个暴发之音",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 100,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "156": {
+    "Id": 156,
+    "AchieveId": 22202,
+    "Title": "绝对音感·暴发 II",
+    "Desc": "在星塔中获得500个暴发之音",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 500,
+    "Prerequisites": [
+      155
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "157": {
+    "Id": 157,
+    "AchieveId": 22203,
+    "Title": "绝对音感·暴发 III",
+    "Desc": "在星塔中获得1200个暴发之音",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 1200,
+    "Prerequisites": [
+      156
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "158": {
+    "Id": 158,
+    "AchieveId": 22204,
+    "Title": "绝对音感·暴发 IV",
+    "Desc": "在星塔中获得3000个暴发之音",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 3000,
+    "Prerequisites": [
+      157
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "159": {
+    "Id": 159,
+    "AchieveId": 22205,
+    "Title": "绝对音感·暴发 V",
+    "Desc": "在星塔中获得5000个暴发之音",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 5000,
+    "Prerequisites": [
+      158
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "160": {
+    "Id": 160,
+    "AchieveId": 22301,
+    "Title": "绝对音感·体力 I",
+    "Desc": "在星塔中获得100个体力之音",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 100,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "161": {
+    "Id": 161,
+    "AchieveId": 22302,
+    "Title": "绝对音感·体力 II",
+    "Desc": "在星塔中获得500个体力之音",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 500,
+    "Prerequisites": [
+      160
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "162": {
+    "Id": 162,
+    "AchieveId": 22303,
+    "Title": "绝对音感·体力 III",
+    "Desc": "在星塔中获得1200个体力之音",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 1200,
+    "Prerequisites": [
+      161
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "163": {
+    "Id": 163,
+    "AchieveId": 22304,
+    "Title": "绝对音感·体力 IV",
+    "Desc": "在星塔中获得3000个体力之音",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 3000,
+    "Prerequisites": [
+      162
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "164": {
+    "Id": 164,
+    "AchieveId": 22305,
+    "Title": "绝对音感·体力 V",
+    "Desc": "在星塔中获得5000个体力之音",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 5000,
+    "Prerequisites": [
+      163
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "165": {
+    "Id": 165,
+    "AchieveId": 22401,
+    "Title": "绝对音感·专注 I",
+    "Desc": "在星塔中获得100个专注之音",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 100,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "166": {
+    "Id": 166,
+    "AchieveId": 22402,
+    "Title": "绝对音感·专注 II",
+    "Desc": "在星塔中获得500个专注之音",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 500,
+    "Prerequisites": [
+      165
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "167": {
+    "Id": 167,
+    "AchieveId": 22403,
+    "Title": "绝对音感·专注 III",
+    "Desc": "在星塔中获得1200个专注之音",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 1200,
+    "Prerequisites": [
+      166
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "168": {
+    "Id": 168,
+    "AchieveId": 22404,
+    "Title": "绝对音感·专注 IV",
+    "Desc": "在星塔中获得3000个专注之音",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 3000,
+    "Prerequisites": [
+      167
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "169": {
+    "Id": 169,
+    "AchieveId": 22405,
+    "Title": "绝对音感·专注 V",
+    "Desc": "在星塔中获得5000个专注之音",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 5000,
+    "Prerequisites": [
+      168
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "170": {
+    "Id": 170,
+    "AchieveId": 22501,
+    "Title": "绝对音感·技巧 I",
+    "Desc": "在星塔中获得100个技巧之音",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 100,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "171": {
+    "Id": 171,
+    "AchieveId": 22502,
+    "Title": "绝对音感·技巧 II",
+    "Desc": "在星塔中获得500个技巧之音",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 500,
+    "Prerequisites": [
+      170
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "172": {
+    "Id": 172,
+    "AchieveId": 22503,
+    "Title": "绝对音感·技巧 III",
+    "Desc": "在星塔中获得1200个技巧之音",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 1200,
+    "Prerequisites": [
+      171
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "173": {
+    "Id": 173,
+    "AchieveId": 22504,
+    "Title": "绝对音感·技巧 IV",
+    "Desc": "在星塔中获得3000个技巧之音",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 3000,
+    "Prerequisites": [
+      172
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "174": {
+    "Id": 174,
+    "AchieveId": 22505,
+    "Title": "绝对音感·技巧 V",
+    "Desc": "在星塔中获得5000个技巧之音",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 5000,
+    "Prerequisites": [
+      173
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "175": {
+    "Id": 175,
+    "AchieveId": 22601,
+    "Title": "绝对音感·绝招 I",
+    "Desc": "在星塔中获得100个绝招之音",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 100,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "176": {
+    "Id": 176,
+    "AchieveId": 22602,
+    "Title": "绝对音感·绝招 II",
+    "Desc": "在星塔中获得500个绝招之音",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 500,
+    "Prerequisites": [
+      175
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "177": {
+    "Id": 177,
+    "AchieveId": 22603,
+    "Title": "绝对音感·绝招 III",
+    "Desc": "在星塔中获得1200个绝招之音",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 1200,
+    "Prerequisites": [
+      176
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "178": {
+    "Id": 178,
+    "AchieveId": 22604,
+    "Title": "绝对音感·绝招 IV",
+    "Desc": "在星塔中获得3000个绝招之音",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 3000,
+    "Prerequisites": [
+      177
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "179": {
+    "Id": 179,
+    "AchieveId": 22605,
+    "Title": "绝对音感·绝招 V",
+    "Desc": "在星塔中获得5000个绝招之音",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 5000,
+    "Prerequisites": [
+      178
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "180": {
+    "Id": 180,
+    "AchieveId": 22701,
+    "Title": "绝对音感·水 I",
+    "Desc": "在星塔中获得100个水之音",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 100,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "181": {
+    "Id": 181,
+    "AchieveId": 22702,
+    "Title": "绝对音感·水 II",
+    "Desc": "在星塔中获得500个水之音",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 500,
+    "Prerequisites": [
+      180
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "182": {
+    "Id": 182,
+    "AchieveId": 22703,
+    "Title": "绝对音感·水 III",
+    "Desc": "在星塔中获得1200个水之音",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 1200,
+    "Prerequisites": [
+      181
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "183": {
+    "Id": 183,
+    "AchieveId": 22704,
+    "Title": "绝对音感·水 IV",
+    "Desc": "在星塔中获得3000个水之音",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 3000,
+    "Prerequisites": [
+      182
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "184": {
+    "Id": 184,
+    "AchieveId": 22705,
+    "Title": "绝对音感·水 V",
+    "Desc": "在星塔中获得5000个水之音",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 5000,
+    "Prerequisites": [
+      183
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "185": {
+    "Id": 185,
+    "AchieveId": 22801,
+    "Title": "绝对音感·火 I",
+    "Desc": "在星塔中获得100个火之音",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 100,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "186": {
+    "Id": 186,
+    "AchieveId": 22802,
+    "Title": "绝对音感·火 II",
+    "Desc": "在星塔中获得500个火之音",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 500,
+    "Prerequisites": [
+      185
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "187": {
+    "Id": 187,
+    "AchieveId": 22803,
+    "Title": "绝对音感·火 III",
+    "Desc": "在星塔中获得1200个火之音",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 1200,
+    "Prerequisites": [
+      186
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "188": {
+    "Id": 188,
+    "AchieveId": 22804,
+    "Title": "绝对音感·火 IV",
+    "Desc": "在星塔中获得3000个火之音",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 3000,
+    "Prerequisites": [
+      187
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "189": {
+    "Id": 189,
+    "AchieveId": 22805,
+    "Title": "绝对音感·火 V",
+    "Desc": "在星塔中获得5000个火之音",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 5000,
+    "Prerequisites": [
+      188
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "190": {
+    "Id": 190,
+    "AchieveId": 22901,
+    "Title": "绝对音感·风 I",
+    "Desc": "在星塔中获得100个风之音",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 100,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "191": {
+    "Id": 191,
+    "AchieveId": 22902,
+    "Title": "绝对音感·风 II",
+    "Desc": "在星塔中获得500个风之音",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 500,
+    "Prerequisites": [
+      190
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "192": {
+    "Id": 192,
+    "AchieveId": 22903,
+    "Title": "绝对音感·风 III",
+    "Desc": "在星塔中获得1200个风之音",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 1200,
+    "Prerequisites": [
+      191
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "193": {
+    "Id": 193,
+    "AchieveId": 22904,
+    "Title": "绝对音感·风 IV",
+    "Desc": "在星塔中获得3000个风之音",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 3000,
+    "Prerequisites": [
+      192
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "194": {
+    "Id": 194,
+    "AchieveId": 22905,
+    "Title": "绝对音感·风 V",
+    "Desc": "在星塔中获得5000个风之音",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 5000,
+    "Prerequisites": [
+      193
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "195": {
+    "Id": 195,
+    "AchieveId": 23001,
+    "Title": "绝对音感·地 I",
+    "Desc": "在星塔中获得100个地之音",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 100,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "196": {
+    "Id": 196,
+    "AchieveId": 23002,
+    "Title": "绝对音感·地 II",
+    "Desc": "在星塔中获得500个地之音",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 500,
+    "Prerequisites": [
+      195
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "197": {
+    "Id": 197,
+    "AchieveId": 23003,
+    "Title": "绝对音感·地 III",
+    "Desc": "在星塔中获得1200个地之音",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 1200,
+    "Prerequisites": [
+      196
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "198": {
+    "Id": 198,
+    "AchieveId": 23004,
+    "Title": "绝对音感·地 IV",
+    "Desc": "在星塔中获得3000个地之音",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 3000,
+    "Prerequisites": [
+      197
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "199": {
+    "Id": 199,
+    "AchieveId": 23005,
+    "Title": "绝对音感·地 V",
+    "Desc": "在星塔中获得5000个地之音",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 5000,
+    "Prerequisites": [
+      198
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "200": {
+    "Id": 200,
+    "AchieveId": 23101,
+    "Title": "绝对音感·光 I",
+    "Desc": "在星塔中获得100个光之音",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 100,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "201": {
+    "Id": 201,
+    "AchieveId": 23102,
+    "Title": "绝对音感·光 II",
+    "Desc": "在星塔中获得500个光之音",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 500,
+    "Prerequisites": [
+      200
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "202": {
+    "Id": 202,
+    "AchieveId": 23103,
+    "Title": "绝对音感·光 III",
+    "Desc": "在星塔中获得1200个光之音",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 1200,
+    "Prerequisites": [
+      201
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "203": {
+    "Id": 203,
+    "AchieveId": 23104,
+    "Title": "绝对音感·光 IV",
+    "Desc": "在星塔中获得3000个光之音",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 3000,
+    "Prerequisites": [
+      202
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "204": {
+    "Id": 204,
+    "AchieveId": 23105,
+    "Title": "绝对音感·光 V",
+    "Desc": "在星塔中获得5000个光之音",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 5000,
+    "Prerequisites": [
+      203
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "205": {
+    "Id": 205,
+    "AchieveId": 23201,
+    "Title": "绝对音感·暗 I",
+    "Desc": "在星塔中获得100个暗之音",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 100,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "206": {
+    "Id": 206,
+    "AchieveId": 23202,
+    "Title": "绝对音感·暗 II",
+    "Desc": "在星塔中获得500个暗之音",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 500,
+    "Prerequisites": [
+      205
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "207": {
+    "Id": 207,
+    "AchieveId": 23203,
+    "Title": "绝对音感·暗 III",
+    "Desc": "在星塔中获得1200个暗之音",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 1200,
+    "Prerequisites": [
+      206
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "208": {
+    "Id": 208,
+    "AchieveId": 23204,
+    "Title": "绝对音感·暗 IV",
+    "Desc": "在星塔中获得3000个暗之音",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 3000,
+    "Prerequisites": [
+      207
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "209": {
+    "Id": 209,
+    "AchieveId": 23205,
+    "Title": "绝对音感·暗 V",
+    "Desc": "在星塔中获得5000个暗之音",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 513,
+    "AimNumShow": 5000,
+    "Prerequisites": [
+      208
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "210": {
+    "Id": 210,
+    "AchieveId": 23301,
+    "Title": "更上一层 I",
+    "Desc": "在星塔中发现100次战斗之间",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 100,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "211": {
+    "Id": 211,
+    "AchieveId": 23302,
+    "Title": "更上一层 II",
+    "Desc": "在星塔中发现250次战斗之间",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 250,
+    "Prerequisites": [
+      210
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "212": {
+    "Id": 212,
+    "AchieveId": 23303,
+    "Title": "更上一层 III",
+    "Desc": "在星塔中发现500次战斗之间",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 500,
+    "Prerequisites": [
+      211
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "213": {
+    "Id": 213,
+    "AchieveId": 23304,
+    "Title": "更上一层 IV",
+    "Desc": "在星塔中发现1200次战斗之间",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 1200,
+    "Prerequisites": [
+      212
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "214": {
+    "Id": 214,
+    "AchieveId": 23305,
+    "Title": "更上一层 V",
+    "Desc": "在星塔中发现2000次战斗之间",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 2000,
+    "Prerequisites": [
+      213
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "215": {
+    "Id": 215,
+    "AchieveId": 23306,
+    "Title": "更上一层 VI",
+    "Desc": "在星塔中发现3000次战斗之间",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 3000,
+    "Prerequisites": [
+      214
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "216": {
+    "Id": 216,
+    "AchieveId": 23307,
+    "Title": "更上一层 VII",
+    "Desc": "在星塔中发现4000次战斗之间",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 4000,
+    "Prerequisites": [
+      215
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "217": {
+    "Id": 217,
+    "AchieveId": 23401,
+    "Title": "清扫大师 I",
+    "Desc": "在星塔中发现30次强敌之间",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 30,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "218": {
+    "Id": 218,
+    "AchieveId": 23402,
+    "Title": "清扫大师 II",
+    "Desc": "在星塔中发现80次强敌之间",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 80,
+    "Prerequisites": [
+      217
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "219": {
+    "Id": 219,
+    "AchieveId": 23403,
+    "Title": "清扫大师 III",
+    "Desc": "在星塔中发现200次强敌之间",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 200,
+    "Prerequisites": [
+      218
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "220": {
+    "Id": 220,
+    "AchieveId": 23404,
+    "Title": "清扫大师 IV",
+    "Desc": "在星塔中发现500次强敌之间",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 500,
+    "Prerequisites": [
+      219
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "221": {
+    "Id": 221,
+    "AchieveId": 23405,
+    "Title": "清扫大师 V",
+    "Desc": "在星塔中发现800次强敌之间",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 800,
+    "Prerequisites": [
+      220
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "222": {
+    "Id": 222,
+    "AchieveId": 23406,
+    "Title": "清扫大师 VI",
+    "Desc": "在星塔中发现1200次强敌之间",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 1200,
+    "Prerequisites": [
+      221
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "223": {
+    "Id": 223,
+    "AchieveId": 23407,
+    "Title": "清扫大师 VII",
+    "Desc": "在星塔中发现1600次强敌之间",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 1600,
+    "Prerequisites": [
+      222
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "224": {
+    "Id": 224,
+    "AchieveId": 23501,
+    "Title": "公平对决 I",
+    "Desc": "在星塔中发现20次首领之间",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 20,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "225": {
+    "Id": 225,
+    "AchieveId": 23502,
+    "Title": "公平对决 II",
+    "Desc": "在星塔中发现40次首领之间",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 40,
+    "Prerequisites": [
+      224
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "226": {
+    "Id": 226,
+    "AchieveId": 23503,
+    "Title": "公平对决 III",
+    "Desc": "在星塔中发现80次首领之间",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 80,
+    "Prerequisites": [
+      225
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "227": {
+    "Id": 227,
+    "AchieveId": 23504,
+    "Title": "公平对决 IV",
+    "Desc": "在星塔中发现200次首领之间",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 200,
+    "Prerequisites": [
+      226
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "228": {
+    "Id": 228,
+    "AchieveId": 23505,
+    "Title": "公平对决 V",
+    "Desc": "在星塔中发现320次首领之间",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 320,
+    "Prerequisites": [
+      227
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "229": {
+    "Id": 229,
+    "AchieveId": 23506,
+    "Title": "公平对决 VI",
+    "Desc": "在星塔中发现480次首领之间",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 480,
+    "Prerequisites": [
+      228
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "230": {
+    "Id": 230,
+    "AchieveId": 23507,
+    "Title": "公平对决 VII",
+    "Desc": "在星塔中发现660次首领之间",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 660,
+    "Prerequisites": [
+      229
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "231": {
+    "Id": 231,
+    "AchieveId": 23601,
+    "Title": "得偿所愿 I",
+    "Desc": "在星塔中发现10次魔王之间",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 10,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "232": {
+    "Id": 232,
+    "AchieveId": 23602,
+    "Title": "得偿所愿 II",
+    "Desc": "在星塔中发现20次魔王之间",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      231
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "233": {
+    "Id": 233,
+    "AchieveId": 23603,
+    "Title": "得偿所愿 III",
+    "Desc": "在星塔中发现40次魔王之间",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 40,
+    "Prerequisites": [
+      232
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "234": {
+    "Id": 234,
+    "AchieveId": 23604,
+    "Title": "得偿所愿 IV",
+    "Desc": "在星塔中发现100次魔王之间",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 100,
+    "Prerequisites": [
+      233
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "235": {
+    "Id": 235,
+    "AchieveId": 23605,
+    "Title": "得偿所愿 V",
+    "Desc": "在星塔中发现160次魔王之间",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 160,
+    "Prerequisites": [
+      234
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "236": {
+    "Id": 236,
+    "AchieveId": 23606,
+    "Title": "得偿所愿 VI",
+    "Desc": "在星塔中发现240次魔王之间",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 240,
+    "Prerequisites": [
+      235
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "237": {
+    "Id": 237,
+    "AchieveId": 23607,
+    "Title": "得偿所愿 VII",
+    "Desc": "在星塔中发现320次魔王之间",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 320,
+    "Prerequisites": [
+      236
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "238": {
+    "Id": 238,
+    "AchieveId": 23901,
+    "Title": "欢迎光临 I",
+    "Desc": "在星塔中发现40次交易之间",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 40,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "239": {
+    "Id": 239,
+    "AchieveId": 23902,
+    "Title": "欢迎光临 II",
+    "Desc": "在星塔中发现80次交易之间",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 80,
+    "Prerequisites": [
+      238
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "240": {
+    "Id": 240,
+    "AchieveId": 23903,
+    "Title": "欢迎光临 III",
+    "Desc": "在星塔中发现160次交易之间",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 160,
+    "Prerequisites": [
+      239
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "241": {
+    "Id": 241,
+    "AchieveId": 23904,
+    "Title": "欢迎光临 IV",
+    "Desc": "在星塔中发现400次交易之间",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 400,
+    "Prerequisites": [
+      240
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "242": {
+    "Id": 242,
+    "AchieveId": 23905,
+    "Title": "欢迎光临 V",
+    "Desc": "在星塔中发现640次交易之间",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 640,
+    "Prerequisites": [
+      241
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "243": {
+    "Id": 243,
+    "AchieveId": 23906,
+    "Title": "欢迎光临 VI",
+    "Desc": "在星塔中发现960次交易之间",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 960,
+    "Prerequisites": [
+      242
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "244": {
+    "Id": 244,
+    "AchieveId": 23907,
+    "Title": "欢迎光临 VII",
+    "Desc": "在星塔中发现1200次交易之间",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 1200,
+    "Prerequisites": [
+      243
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "245": {
+    "Id": 245,
+    "AchieveId": 24001,
+    "Title": "休息片刻 I",
+    "Desc": "在星塔中发现30次抉择之间",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 30,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "246": {
+    "Id": 246,
+    "AchieveId": 24002,
+    "Title": "休息片刻 II",
+    "Desc": "在星塔中发现90次抉择之间",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 90,
+    "Prerequisites": [
+      245
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "247": {
+    "Id": 247,
+    "AchieveId": 24003,
+    "Title": "休息片刻 III",
+    "Desc": "在星塔中发现200次抉择之间",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 200,
+    "Prerequisites": [
+      246
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "248": {
+    "Id": 248,
+    "AchieveId": 24004,
+    "Title": "休息片刻 IV",
+    "Desc": "在星塔中发现600次抉择之间",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 600,
+    "Prerequisites": [
+      247
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "249": {
+    "Id": 249,
+    "AchieveId": 24005,
+    "Title": "休息片刻 V",
+    "Desc": "在星塔中发现1000次抉择之间",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 1000,
+    "Prerequisites": [
+      248
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "250": {
+    "Id": 250,
+    "AchieveId": 24006,
+    "Title": "休息片刻 VI",
+    "Desc": "在星塔中发现1500次抉择之间",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 1500,
+    "Prerequisites": [
+      249
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "251": {
+    "Id": 251,
+    "AchieveId": 24007,
+    "Title": "休息片刻 VII",
+    "Desc": "在星塔中发现2000次抉择之间",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 509,
+    "AimNumShow": 2000,
+    "Prerequisites": [
+      250
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "252": {
+    "Id": 252,
+    "AchieveId": 30201,
+    "Title": "磨练技艺 I",
+    "Desc": "累计通关20次技巧试炼",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 90,
+    "AimNumShow": 20,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "253": {
+    "Id": 253,
+    "AchieveId": 30202,
+    "Title": "磨练技艺 II",
+    "Desc": "累计通关40次技巧试炼",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 90,
+    "AimNumShow": 40,
+    "Prerequisites": [
+      252
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "254": {
+    "Id": 254,
+    "AchieveId": 30203,
+    "Title": "磨练技艺 III",
+    "Desc": "累计通关80次技巧试炼",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 90,
+    "AimNumShow": 80,
+    "Prerequisites": [
+      253
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "255": {
+    "Id": 255,
+    "AchieveId": 30204,
+    "Title": "磨练技艺 IV",
+    "Desc": "累计通关240次技巧试炼",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 90,
+    "AimNumShow": 240,
+    "Prerequisites": [
+      254
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "256": {
+    "Id": 256,
+    "AchieveId": 30205,
+    "Title": "磨练技艺 V",
+    "Desc": "累计通关480次技巧试炼",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 90,
+    "AimNumShow": 480,
+    "Prerequisites": [
+      255
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "257": {
+    "Id": 257,
+    "AchieveId": 30206,
+    "Title": "磨练技艺 VI",
+    "Desc": "累计通关800次技巧试炼",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 90,
+    "AimNumShow": 800,
+    "Prerequisites": [
+      256
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "258": {
+    "Id": 258,
+    "AchieveId": 30301,
+    "Title": "干脆利落 I",
+    "Desc": "累计通关20次晋升试炼",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 59,
+    "AimNumShow": 20,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "259": {
+    "Id": 259,
+    "AchieveId": 30302,
+    "Title": "干脆利落 II",
+    "Desc": "累计通关40次晋升试炼",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 59,
+    "AimNumShow": 40,
+    "Prerequisites": [
+      258
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "260": {
+    "Id": 260,
+    "AchieveId": 30303,
+    "Title": "干脆利落 III",
+    "Desc": "累计通关80次晋升试炼",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 59,
+    "AimNumShow": 80,
+    "Prerequisites": [
+      259
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "261": {
+    "Id": 261,
+    "AchieveId": 30304,
+    "Title": "干脆利落 IV",
+    "Desc": "累计通关240次晋升试炼",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 59,
+    "AimNumShow": 240,
+    "Prerequisites": [
+      260
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "262": {
+    "Id": 262,
+    "AchieveId": 30305,
+    "Title": "干脆利落 V",
+    "Desc": "累计通关480次晋升试炼",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 59,
+    "AimNumShow": 480,
+    "Prerequisites": [
+      261
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "263": {
+    "Id": 263,
+    "AchieveId": 30306,
+    "Title": "干脆利落 VI",
+    "Desc": "累计通关800次晋升试炼",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 59,
+    "AimNumShow": 800,
+    "Prerequisites": [
+      262
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "264": {
+    "Id": 264,
+    "AchieveId": 30401,
+    "Title": "无关报酬 I",
+    "Desc": "累计通关30次基础试炼",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 26,
+    "AimNumShow": 30,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "265": {
+    "Id": 265,
+    "AchieveId": 30402,
+    "Title": "无关报酬 II",
+    "Desc": "累计通关60次基础试炼",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 26,
+    "AimNumShow": 60,
+    "Prerequisites": [
+      264
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "266": {
+    "Id": 266,
+    "AchieveId": 30403,
+    "Title": "无关报酬 III",
+    "Desc": "累计通关120次基础试炼",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 26,
+    "AimNumShow": 120,
+    "Prerequisites": [
+      265
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "267": {
+    "Id": 267,
+    "AchieveId": 30404,
+    "Title": "无关报酬 IV",
+    "Desc": "累计通关360次基础试炼",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 26,
+    "AimNumShow": 360,
+    "Prerequisites": [
+      266
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "268": {
+    "Id": 268,
+    "AchieveId": 30405,
+    "Title": "无关报酬 V",
+    "Desc": "累计通关720次基础试炼",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 26,
+    "AimNumShow": 720,
+    "Prerequisites": [
+      267
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "269": {
+    "Id": 269,
+    "AchieveId": 30406,
+    "Title": "无关报酬 VI",
+    "Desc": "累计通关1200次基础试炼",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 26,
+    "AimNumShow": 1200,
+    "Prerequisites": [
+      268
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "270": {
+    "Id": 270,
+    "AchieveId": 30501,
+    "Title": "冠军腰带·无 I",
+    "Desc": "在心危擂台中，通关无极角斗·难度1",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 10,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "271": {
+    "Id": 271,
+    "AchieveId": 30502,
+    "Title": "冠军腰带·风 I",
+    "Desc": "在心危擂台中，通关荒垒震音·难度1",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 10,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "272": {
+    "Id": 272,
+    "AchieveId": 30503,
+    "Title": "冠军腰带·地 I",
+    "Desc": "在心危擂台中，通关清雅流歌·难度1",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 10,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "273": {
+    "Id": 273,
+    "AchieveId": 30504,
+    "Title": "冠军腰带·暗 I",
+    "Desc": "在心危擂台中，通关纷闪派对·难度1",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 10,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "274": {
+    "Id": 274,
+    "AchieveId": 30505,
+    "Title": "冠军腰带·火 I",
+    "Desc": "在心危擂台中，通关飒爽疾奏·难度1",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 10,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "275": {
+    "Id": 275,
+    "AchieveId": 30506,
+    "Title": "冠军腰带·水 I",
+    "Desc": "在心危擂台中，通关炽热狂舞·难度1",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 10,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "276": {
+    "Id": 276,
+    "AchieveId": 30507,
+    "Title": "冠军腰带·光 I",
+    "Desc": "在心危擂台中，通关幽闭仪典·难度1",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 10,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "277": {
+    "Id": 277,
+    "AchieveId": 30601,
+    "Title": "冠军腰带·无 II",
+    "Desc": "在心危擂台中，通关无极角斗·难度2",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      270
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "278": {
+    "Id": 278,
+    "AchieveId": 30602,
+    "Title": "冠军腰带·风 II",
+    "Desc": "在心危擂台中，通关荒垒震音·难度2",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      271
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "279": {
+    "Id": 279,
+    "AchieveId": 30603,
+    "Title": "冠军腰带·地 II",
+    "Desc": "在心危擂台中，通关清雅流歌·难度2",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      272
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "280": {
+    "Id": 280,
+    "AchieveId": 30604,
+    "Title": "冠军腰带·暗 II",
+    "Desc": "在心危擂台中，通关纷闪派对·难度2",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      273
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "281": {
+    "Id": 281,
+    "AchieveId": 30605,
+    "Title": "冠军腰带·火 II",
+    "Desc": "在心危擂台中，通关飒爽疾奏·难度2",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      274
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "282": {
+    "Id": 282,
+    "AchieveId": 30606,
+    "Title": "冠军腰带·水 II",
+    "Desc": "在心危擂台中，通关炽热狂舞·难度2",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      275
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "283": {
+    "Id": 283,
+    "AchieveId": 30607,
+    "Title": "冠军腰带·光 II",
+    "Desc": "在心危擂台中，通关幽闭仪典·难度2",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      276
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "284": {
+    "Id": 284,
+    "AchieveId": 30701,
+    "Title": "冠军腰带·无 III",
+    "Desc": "在心危擂台中，通关无极角斗·难度3",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 30,
+    "Prerequisites": [
+      277
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "285": {
+    "Id": 285,
+    "AchieveId": 30702,
+    "Title": "冠军腰带·风 III",
+    "Desc": "在心危擂台中，通关荒垒震音·难度3",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 30,
+    "Prerequisites": [
+      278
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "286": {
+    "Id": 286,
+    "AchieveId": 30703,
+    "Title": "冠军腰带·地 III",
+    "Desc": "在心危擂台中，通关清雅流歌·难度3",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 30,
+    "Prerequisites": [
+      279
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "287": {
+    "Id": 287,
+    "AchieveId": 30704,
+    "Title": "冠军腰带·暗 III",
+    "Desc": "在心危擂台中，通关纷闪派对·难度3",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 30,
+    "Prerequisites": [
+      280
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "288": {
+    "Id": 288,
+    "AchieveId": 30705,
+    "Title": "冠军腰带·火 III",
+    "Desc": "在心危擂台中，通关飒爽疾奏·难度3",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 30,
+    "Prerequisites": [
+      281
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "289": {
+    "Id": 289,
+    "AchieveId": 30706,
+    "Title": "冠军腰带·水 III",
+    "Desc": "在心危擂台中，通关炽热狂舞·难度3",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 30,
+    "Prerequisites": [
+      282
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "290": {
+    "Id": 290,
+    "AchieveId": 30707,
+    "Title": "冠军腰带·光 III",
+    "Desc": "在心危擂台中，通关幽闭仪典·难度3",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 30,
+    "Prerequisites": [
+      283
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "291": {
+    "Id": 291,
+    "AchieveId": 30801,
+    "Title": "冠军腰带·无 IV",
+    "Desc": "在心危擂台中，通关无极角斗·难度4",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 40,
+    "Prerequisites": [
+      284
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "292": {
+    "Id": 292,
+    "AchieveId": 30802,
+    "Title": "冠军腰带·风 IV",
+    "Desc": "在心危擂台中，通关荒垒震音·难度4",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 40,
+    "Prerequisites": [
+      285
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "293": {
+    "Id": 293,
+    "AchieveId": 30803,
+    "Title": "冠军腰带·地 IV",
+    "Desc": "在心危擂台中，通关清雅流歌·难度4",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 40,
+    "Prerequisites": [
+      286
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "294": {
+    "Id": 294,
+    "AchieveId": 30804,
+    "Title": "冠军腰带·暗 IV",
+    "Desc": "在心危擂台中，通关纷闪派对·难度4",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 40,
+    "Prerequisites": [
+      287
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "295": {
+    "Id": 295,
+    "AchieveId": 30805,
+    "Title": "冠军腰带·火 IV",
+    "Desc": "在心危擂台中，通关飒爽疾奏·难度4",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 40,
+    "Prerequisites": [
+      288
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "296": {
+    "Id": 296,
+    "AchieveId": 30806,
+    "Title": "冠军腰带·水 IV",
+    "Desc": "在心危擂台中，通关炽热狂舞·难度4",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 40,
+    "Prerequisites": [
+      289
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "297": {
+    "Id": 297,
+    "AchieveId": 30807,
+    "Title": "冠军腰带·光 IV",
+    "Desc": "在心危擂台中，通关幽闭仪典·难度4",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 40,
+    "Prerequisites": [
+      290
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "298": {
+    "Id": 298,
+    "AchieveId": 30901,
+    "Title": "冠军腰带·无 V",
+    "Desc": "在心危擂台中，通关无极角斗·难度5",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      291
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "299": {
+    "Id": 299,
+    "AchieveId": 30902,
+    "Title": "冠军腰带·风 V",
+    "Desc": "在心危擂台中，通关荒垒震音·难度5",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      292
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "300": {
+    "Id": 300,
+    "AchieveId": 30903,
+    "Title": "冠军腰带·地 V",
+    "Desc": "在心危擂台中，通关清雅流歌·难度5",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      293
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "301": {
+    "Id": 301,
+    "AchieveId": 30904,
+    "Title": "冠军腰带·暗 V",
+    "Desc": "在心危擂台中，通关纷闪派对·难度5",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      294
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "302": {
+    "Id": 302,
+    "AchieveId": 30905,
+    "Title": "冠军腰带·火 V",
+    "Desc": "在心危擂台中，通关飒爽疾奏·难度5",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      295
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "303": {
+    "Id": 303,
+    "AchieveId": 30906,
+    "Title": "冠军腰带·水 V",
+    "Desc": "在心危擂台中，通关炽热狂舞·难度5",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      296
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "304": {
+    "Id": 304,
+    "AchieveId": 30907,
+    "Title": "冠军腰带·光 V",
+    "Desc": "在心危擂台中，通关幽闭仪典·难度5",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      297
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "305": {
+    "Id": 305,
+    "AchieveId": 31001,
+    "Title": "冠军腰带·无 VI",
+    "Desc": "在心危擂台中，通关无极角斗·难度6",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 60,
+    "Prerequisites": [
+      298
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "306": {
+    "Id": 306,
+    "AchieveId": 31002,
+    "Title": "冠军腰带·风 VI",
+    "Desc": "在心危擂台中，通关荒垒震音·难度6",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 60,
+    "Prerequisites": [
+      299
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "307": {
+    "Id": 307,
+    "AchieveId": 31003,
+    "Title": "冠军腰带·地 VI",
+    "Desc": "在心危擂台中，通关清雅流歌·难度6",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 60,
+    "Prerequisites": [
+      300
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "308": {
+    "Id": 308,
+    "AchieveId": 31004,
+    "Title": "冠军腰带·暗 VI",
+    "Desc": "在心危擂台中，通关纷闪派对·难度6",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 60,
+    "Prerequisites": [
+      301
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "309": {
+    "Id": 309,
+    "AchieveId": 31005,
+    "Title": "冠军腰带·火 VI",
+    "Desc": "在心危擂台中，通关飒爽疾奏·难度6",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 60,
+    "Prerequisites": [
+      302
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "310": {
+    "Id": 310,
+    "AchieveId": 31006,
+    "Title": "冠军腰带·水 VI",
+    "Desc": "在心危擂台中，通关炽热狂舞·难度6",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 60,
+    "Prerequisites": [
+      303
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "311": {
+    "Id": 311,
+    "AchieveId": 31007,
+    "Title": "冠军腰带·光 VI",
+    "Desc": "在心危擂台中，通关幽闭仪典·难度6",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 46,
+    "AimNumShow": 60,
+    "Prerequisites": [
+      304
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "312": {
+    "Id": 312,
+    "AchieveId": 31501,
+    "Title": "斩草除根 I",
+    "Desc": "在晋升试炼玩法中，通关10次[怪诞舞者]",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 58,
+    "AimNumShow": 10,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "313": {
+    "Id": 313,
+    "AchieveId": 31502,
+    "Title": "手到擒来 I",
+    "Desc": "在晋升试炼玩法中，通关10次[终宵萤辉]",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 58,
+    "AimNumShow": 10,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "314": {
+    "Id": 314,
+    "AchieveId": 31503,
+    "Title": "拔山盖世 I",
+    "Desc": "在晋升试炼玩法中，通关10次[热嘟噗噜男爵]",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 58,
+    "AimNumShow": 10,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "315": {
+    "Id": 315,
+    "AchieveId": 31601,
+    "Title": "斩草除根 II",
+    "Desc": "在晋升试炼玩法中，通关20次[怪诞舞者]",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 58,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      312
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "316": {
+    "Id": 316,
+    "AchieveId": 31602,
+    "Title": "手到擒来 II",
+    "Desc": "在晋升试炼玩法中，通关20次[终宵萤辉]",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 58,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      313
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "317": {
+    "Id": 317,
+    "AchieveId": 31603,
+    "Title": "拔山盖世 II",
+    "Desc": "在晋升试炼玩法中，通关20次[热嘟噗噜男爵]",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 58,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      314
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "318": {
+    "Id": 318,
+    "AchieveId": 31604,
+    "Title": "斩草除根 III",
+    "Desc": "在晋升试炼玩法中，通关50次[怪诞舞者]",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 58,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      315
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "319": {
+    "Id": 319,
+    "AchieveId": 31605,
+    "Title": "手到擒来 III",
+    "Desc": "在晋升试炼玩法中，通关50次[终宵萤辉]",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 58,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      316
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "320": {
+    "Id": 320,
+    "AchieveId": 31701,
+    "Title": "拔山盖世 III",
+    "Desc": "在晋升试炼玩法中，通关50次[热嘟噗噜男爵]",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 58,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      317
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "321": {
+    "Id": 321,
+    "AchieveId": 31702,
+    "Title": "斩草除根 IV",
+    "Desc": "在晋升试炼玩法中，通关100次[怪诞舞者]",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 58,
+    "AimNumShow": 100,
+    "Prerequisites": [
+      318
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "322": {
+    "Id": 322,
+    "AchieveId": 31703,
+    "Title": "手到擒来 IV",
+    "Desc": "在晋升试炼玩法中，通关100次[终宵萤辉]",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 58,
+    "AimNumShow": 100,
+    "Prerequisites": [
+      319
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "323": {
+    "Id": 323,
+    "AchieveId": 31704,
+    "Title": "拔山盖世 IV",
+    "Desc": "在晋升试炼玩法中，通关100次[热嘟噗噜男爵]",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 58,
+    "AimNumShow": 100,
+    "Prerequisites": [
+      320
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "324": {
+    "Id": 324,
+    "AchieveId": 31901,
+    "Title": "爱岗敬业旅人模范",
+    "Desc": "在晋升试炼玩法中，3星通关3种领主的难度8关卡",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 56,
+    "AimNumShow": 3,
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "325": {
+    "Id": 325,
+    "AchieveId": 40101,
+    "Title": "晋升之路 I",
+    "Desc": "旅人累计进阶10次",
+    "Rarity": 3,
+    "Type": 4,
+    "CompleteCond": 7,
+    "AimNumShow": 10,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "326": {
+    "Id": 326,
+    "AchieveId": 40102,
+    "Title": "晋升之路 II",
+    "Desc": "旅人累计进阶20次",
+    "Rarity": 3,
+    "Type": 4,
+    "CompleteCond": 7,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      325
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "327": {
+    "Id": 327,
+    "AchieveId": 40103,
+    "Title": "晋升之路 III",
+    "Desc": "旅人累计进阶30次",
+    "Rarity": 3,
+    "Type": 4,
+    "CompleteCond": 7,
+    "AimNumShow": 30,
+    "Prerequisites": [
+      326
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "328": {
+    "Id": 328,
+    "AchieveId": 40104,
+    "Title": "晋升之路 IV",
+    "Desc": "旅人累计进阶40次",
+    "Rarity": 2,
+    "Type": 4,
+    "CompleteCond": 7,
+    "AimNumShow": 40,
+    "Prerequisites": [
+      327
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "329": {
+    "Id": 329,
+    "AchieveId": 40105,
+    "Title": "晋升之路 V",
+    "Desc": "旅人累计进阶50次",
+    "Rarity": 1,
+    "Type": 4,
+    "CompleteCond": 7,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      328
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "330": {
+    "Id": 330,
+    "AchieveId": 40201,
+    "Title": "音律和谐 I",
+    "Desc": "秘纹累计进阶10次",
+    "Rarity": 3,
+    "Type": 4,
+    "CompleteCond": 34,
+    "AimNumShow": 10,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "331": {
+    "Id": 331,
+    "AchieveId": 40202,
+    "Title": "音律和谐 II",
+    "Desc": "秘纹累计进阶20次",
+    "Rarity": 3,
+    "Type": 4,
+    "CompleteCond": 34,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      330
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "332": {
+    "Id": 332,
+    "AchieveId": 40203,
+    "Title": "音律和谐 III",
+    "Desc": "秘纹累计进阶30次",
+    "Rarity": 3,
+    "Type": 4,
+    "CompleteCond": 34,
+    "AimNumShow": 30,
+    "Prerequisites": [
+      331
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "333": {
+    "Id": 333,
+    "AchieveId": 40204,
+    "Title": "音律和谐 IV",
+    "Desc": "秘纹累计进阶40次",
+    "Rarity": 2,
+    "Type": 4,
+    "CompleteCond": 34,
+    "AimNumShow": 40,
+    "Prerequisites": [
+      332
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "334": {
+    "Id": 334,
+    "AchieveId": 40205,
+    "Title": "音律和谐 V",
+    "Desc": "秘纹累计进阶50次",
+    "Rarity": 1,
+    "Type": 4,
+    "CompleteCond": 34,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      333
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "335": {
+    "Id": 335,
+    "AchieveId": 40301,
+    "Title": "顶级团队 I",
+    "Desc": "将3名旅人升至20级",
+    "Rarity": 3,
+    "Type": 4,
+    "CompleteCond": 16,
+    "AimNumShow": 3,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "336": {
+    "Id": 336,
+    "AchieveId": 40302,
+    "Title": "顶级团队 II",
+    "Desc": "将3名旅人升至30级",
+    "Rarity": 3,
+    "Type": 4,
+    "CompleteCond": 16,
+    "AimNumShow": 3,
+    "Prerequisites": [
+      335
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "337": {
+    "Id": 337,
+    "AchieveId": 40303,
+    "Title": "顶级团队 III",
+    "Desc": "将3名旅人升至50级",
+    "Rarity": 2,
+    "Type": 4,
+    "CompleteCond": 16,
+    "AimNumShow": 3,
+    "Prerequisites": [
+      336
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "338": {
+    "Id": 338,
+    "AchieveId": 40304,
+    "Title": "顶级团队 IV",
+    "Desc": "将3名旅人升至90级",
+    "Rarity": 2,
+    "Type": 4,
+    "CompleteCond": 16,
+    "AimNumShow": 3,
+    "Prerequisites": [
+      337
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "339": {
+    "Id": 339,
+    "AchieveId": 40305,
+    "Title": "顶级团队 V",
+    "Desc": "将6名旅人升至90级",
+    "Rarity": 2,
+    "Type": 4,
+    "CompleteCond": 16,
+    "AimNumShow": 6,
+    "Prerequisites": [
+      338
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "340": {
+    "Id": 340,
+    "AchieveId": 40306,
+    "Title": "顶级团队 VI",
+    "Desc": "将9名旅人升至90级",
+    "Rarity": 1,
+    "Type": 4,
+    "CompleteCond": 16,
+    "AimNumShow": 9,
+    "Prerequisites": [
+      339
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "341": {
+    "Id": 341,
+    "AchieveId": 40307,
+    "Title": "顶级团队 VII",
+    "Desc": "将12名旅人升至90级",
+    "Rarity": 1,
+    "Type": 4,
+    "Hide": true,
+    "CompleteCond": 16,
+    "AimNumShow": 12,
+    "Prerequisites": [
+      340
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "342": {
+    "Id": 342,
+    "AchieveId": 40308,
+    "Title": "顶级团队 VIII",
+    "Desc": "将15名旅人升至90级",
+    "Rarity": 1,
+    "Type": 4,
+    "Hide": true,
+    "CompleteCond": 16,
+    "AimNumShow": 15,
+    "Prerequisites": [
+      341
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "343": {
+    "Id": 343,
+    "AchieveId": 40309,
+    "Title": "顶级团队 IX",
+    "Desc": "将18名旅人升至90级",
+    "Rarity": 1,
+    "Type": 4,
+    "Hide": true,
+    "CompleteCond": 16,
+    "AimNumShow": 18,
+    "Prerequisites": [
+      342
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "344": {
+    "Id": 344,
+    "AchieveId": 40401,
+    "Title": "水系专精 I",
+    "Desc": "将3名水属性旅人升至20级",
+    "Rarity": 3,
+    "Type": 4,
+    "CompleteCond": 17,
+    "AimNumShow": 3,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "345": {
+    "Id": 345,
+    "AchieveId": 40402,
+    "Title": "水系专精 II",
+    "Desc": "将3名水属性旅人升至30级",
+    "Rarity": 3,
+    "Type": 4,
+    "CompleteCond": 17,
+    "AimNumShow": 3,
+    "Prerequisites": [
+      344
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "346": {
+    "Id": 346,
+    "AchieveId": 40403,
+    "Title": "水系专精 III",
+    "Desc": "将3名水属性旅人升至50级",
+    "Rarity": 2,
+    "Type": 4,
+    "CompleteCond": 17,
+    "AimNumShow": 3,
+    "Prerequisites": [
+      345
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "347": {
+    "Id": 347,
+    "AchieveId": 40404,
+    "Title": "水系专精 IV",
+    "Desc": "将3名水属性旅人升至90级",
+    "Rarity": 1,
+    "Type": 4,
+    "CompleteCond": 17,
+    "AimNumShow": 3,
+    "Prerequisites": [
+      346
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "348": {
+    "Id": 348,
+    "AchieveId": 40501,
+    "Title": "火系专精 I",
+    "Desc": "将3名火属性旅人升至20级",
+    "Rarity": 3,
+    "Type": 4,
+    "CompleteCond": 17,
+    "AimNumShow": 3,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "349": {
+    "Id": 349,
+    "AchieveId": 40502,
+    "Title": "火系专精 II",
+    "Desc": "将3名火属性旅人升至30级",
+    "Rarity": 3,
+    "Type": 4,
+    "CompleteCond": 17,
+    "AimNumShow": 3,
+    "Prerequisites": [
+      348
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "350": {
+    "Id": 350,
+    "AchieveId": 40503,
+    "Title": "火系专精 III",
+    "Desc": "将3名火属性旅人升至50级",
+    "Rarity": 2,
+    "Type": 4,
+    "CompleteCond": 17,
+    "AimNumShow": 3,
+    "Prerequisites": [
+      349
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "351": {
+    "Id": 351,
+    "AchieveId": 40504,
+    "Title": "火系专精 IV",
+    "Desc": "将3名火属性旅人升至90级",
+    "Rarity": 1,
+    "Type": 4,
+    "CompleteCond": 17,
+    "AimNumShow": 3,
+    "Prerequisites": [
+      350
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "352": {
+    "Id": 352,
+    "AchieveId": 40601,
+    "Title": "地系专精 I",
+    "Desc": "将3名地属性旅人升至20级",
+    "Rarity": 3,
+    "Type": 4,
+    "CompleteCond": 17,
+    "AimNumShow": 3,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "353": {
+    "Id": 353,
+    "AchieveId": 40602,
+    "Title": "地系专精 II",
+    "Desc": "将3名地属性旅人升至30级",
+    "Rarity": 3,
+    "Type": 4,
+    "CompleteCond": 17,
+    "AimNumShow": 3,
+    "Prerequisites": [
+      352
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "354": {
+    "Id": 354,
+    "AchieveId": 40603,
+    "Title": "地系专精 III",
+    "Desc": "将3名地属性旅人升至50级",
+    "Rarity": 2,
+    "Type": 4,
+    "CompleteCond": 17,
+    "AimNumShow": 3,
+    "Prerequisites": [
+      353
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "355": {
+    "Id": 355,
+    "AchieveId": 40604,
+    "Title": "地系专精 IV",
+    "Desc": "将3名地属性旅人升至90级",
+    "Rarity": 1,
+    "Type": 4,
+    "CompleteCond": 17,
+    "AimNumShow": 3,
+    "Prerequisites": [
+      354
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "356": {
+    "Id": 356,
+    "AchieveId": 40701,
+    "Title": "风系专精 I",
+    "Desc": "将3名风属性旅人升至20级",
+    "Rarity": 3,
+    "Type": 4,
+    "CompleteCond": 17,
+    "AimNumShow": 3,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "357": {
+    "Id": 357,
+    "AchieveId": 40702,
+    "Title": "风系专精 II",
+    "Desc": "将3名风属性旅人升至30级",
+    "Rarity": 3,
+    "Type": 4,
+    "CompleteCond": 17,
+    "AimNumShow": 3,
+    "Prerequisites": [
+      356
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "358": {
+    "Id": 358,
+    "AchieveId": 40703,
+    "Title": "风系专精 III",
+    "Desc": "将3名风属性旅人升至50级",
+    "Rarity": 2,
+    "Type": 4,
+    "CompleteCond": 17,
+    "AimNumShow": 3,
+    "Prerequisites": [
+      357
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "359": {
+    "Id": 359,
+    "AchieveId": 40704,
+    "Title": "风系专精 IV",
+    "Desc": "将3名风属性旅人升至90级",
+    "Rarity": 1,
+    "Type": 4,
+    "CompleteCond": 17,
+    "AimNumShow": 3,
+    "Prerequisites": [
+      358
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "360": {
+    "Id": 360,
+    "AchieveId": 40801,
+    "Title": "光系专精 I",
+    "Desc": "将3名光属性旅人升至20级",
+    "Rarity": 3,
+    "Type": 4,
+    "CompleteCond": 17,
+    "AimNumShow": 3,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "361": {
+    "Id": 361,
+    "AchieveId": 40802,
+    "Title": "光系专精 II",
+    "Desc": "将3名光属性旅人升至30级",
+    "Rarity": 3,
+    "Type": 4,
+    "CompleteCond": 17,
+    "AimNumShow": 3,
+    "Prerequisites": [
+      360
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "362": {
+    "Id": 362,
+    "AchieveId": 40803,
+    "Title": "光系专精 III",
+    "Desc": "将3名光属性旅人升至50级",
+    "Rarity": 2,
+    "Type": 4,
+    "CompleteCond": 17,
+    "AimNumShow": 3,
+    "Prerequisites": [
+      361
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "363": {
+    "Id": 363,
+    "AchieveId": 40804,
+    "Title": "光系专精 IV",
+    "Desc": "将3名光属性旅人升至90级",
+    "Rarity": 1,
+    "Type": 4,
+    "CompleteCond": 17,
+    "AimNumShow": 3,
+    "Prerequisites": [
+      362
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "364": {
+    "Id": 364,
+    "AchieveId": 40901,
+    "Title": "暗系专精 I",
+    "Desc": "将3名暗属性旅人升至20级",
+    "Rarity": 3,
+    "Type": 4,
+    "CompleteCond": 17,
+    "AimNumShow": 3,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "365": {
+    "Id": 365,
+    "AchieveId": 40902,
+    "Title": "暗系专精 II",
+    "Desc": "将3名暗属性旅人升至30级",
+    "Rarity": 3,
+    "Type": 4,
+    "CompleteCond": 17,
+    "AimNumShow": 3,
+    "Prerequisites": [
+      364
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "366": {
+    "Id": 366,
+    "AchieveId": 40903,
+    "Title": "暗系专精 III",
+    "Desc": "将3名暗属性旅人升至50级",
+    "Rarity": 2,
+    "Type": 4,
+    "CompleteCond": 17,
+    "AimNumShow": 3,
+    "Prerequisites": [
+      365
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "367": {
+    "Id": 367,
+    "AchieveId": 40904,
+    "Title": "暗系专精 IV",
+    "Desc": "将3名暗属性旅人升至90级",
+    "Rarity": 1,
+    "Type": 4,
+    "CompleteCond": 17,
+    "AimNumShow": 3,
+    "Prerequisites": [
+      366
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "368": {
+    "Id": 368,
+    "AchieveId": 41001,
+    "Title": "珍藏精选集 I",
+    "Desc": "将3张秘纹升至20级",
+    "Rarity": 3,
+    "Type": 4,
+    "CompleteCond": 36,
+    "AimNumShow": 3,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "369": {
+    "Id": 369,
+    "AchieveId": 41002,
+    "Title": "珍藏精选集 II",
+    "Desc": "将3张秘纹升至30级",
+    "Rarity": 3,
+    "Type": 4,
+    "CompleteCond": 36,
+    "AimNumShow": 3,
+    "Prerequisites": [
+      368
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "370": {
+    "Id": 370,
+    "AchieveId": 41003,
+    "Title": "珍藏精选集 III",
+    "Desc": "将3张秘纹升至50级",
+    "Rarity": 2,
+    "Type": 4,
+    "CompleteCond": 36,
+    "AimNumShow": 3,
+    "Prerequisites": [
+      369
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "371": {
+    "Id": 371,
+    "AchieveId": 41004,
+    "Title": "珍藏精选集 IV",
+    "Desc": "将3张秘纹升至90级",
+    "Rarity": 2,
+    "Type": 4,
+    "CompleteCond": 36,
+    "AimNumShow": 3,
+    "Prerequisites": [
+      370
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "372": {
+    "Id": 372,
+    "AchieveId": 41005,
+    "Title": "珍藏精选集 V",
+    "Desc": "将6张秘纹升至90级",
+    "Rarity": 2,
+    "Type": 4,
+    "CompleteCond": 36,
+    "AimNumShow": 6,
+    "Prerequisites": [
+      371
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "373": {
+    "Id": 373,
+    "AchieveId": 41006,
+    "Title": "珍藏精选集 VI",
+    "Desc": "将9张秘纹升至90级",
+    "Rarity": 1,
+    "Type": 4,
+    "CompleteCond": 36,
+    "AimNumShow": 9,
+    "Prerequisites": [
+      372
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "374": {
+    "Id": 374,
+    "AchieveId": 41007,
+    "Title": "珍藏精选集 VII",
+    "Desc": "将12张秘纹升至90级",
+    "Rarity": 1,
+    "Type": 4,
+    "Hide": true,
+    "CompleteCond": 36,
+    "AimNumShow": 12,
+    "Prerequisites": [
+      373
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "375": {
+    "Id": 375,
+    "AchieveId": 41008,
+    "Title": "珍藏精选集 VIII",
+    "Desc": "将15张秘纹升至90级",
+    "Rarity": 1,
+    "Type": 4,
+    "Hide": true,
+    "CompleteCond": 36,
+    "AimNumShow": 15,
+    "Prerequisites": [
+      374
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "376": {
+    "Id": 376,
+    "AchieveId": 41009,
+    "Title": "珍藏精选集 IX",
+    "Desc": "将18张秘纹升至90级",
+    "Rarity": 1,
+    "Type": 4,
+    "Hide": true,
+    "CompleteCond": 36,
+    "AimNumShow": 18,
+    "Prerequisites": [
+      375
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "377": {
+    "Id": 377,
+    "AchieveId": 41101,
+    "Title": "旋律无处不在 I",
+    "Desc": "收集10张秘纹",
+    "Rarity": 3,
+    "Type": 4,
+    "CompleteCond": 29,
+    "AimNumShow": 10,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "378": {
+    "Id": 378,
+    "AchieveId": 41102,
+    "Title": "旋律无处不在 II",
+    "Desc": "收集20张秘纹",
+    "Rarity": 3,
+    "Type": 4,
+    "Hide": true,
+    "CompleteCond": 29,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      377
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "379": {
+    "Id": 379,
+    "AchieveId": 41103,
+    "Title": "旋律无处不在 III",
+    "Desc": "收集30张秘纹",
+    "Rarity": 2,
+    "Type": 4,
+    "Hide": true,
+    "CompleteCond": 29,
+    "AimNumShow": 30,
+    "Prerequisites": [
+      378
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "380": {
+    "Id": 380,
+    "AchieveId": 41104,
+    "Title": "旋律无处不在 IV",
+    "Desc": "收集40张秘纹",
+    "Rarity": 2,
+    "Type": 4,
+    "Hide": true,
+    "CompleteCond": 29,
+    "AimNumShow": 40,
+    "Prerequisites": [
+      379
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "381": {
+    "Id": 381,
+    "AchieveId": 41105,
+    "Title": "旋律无处不在 V",
+    "Desc": "收集50张秘纹",
+    "Rarity": 1,
+    "Type": 4,
+    "Hide": true,
+    "CompleteCond": 29,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      380
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "382": {
+    "Id": 382,
+    "AchieveId": 41201,
+    "Title": "稀世珍宝 I",
+    "Desc": "收集5张彩色品质的秘纹",
+    "Rarity": 1,
+    "Type": 4,
+    "Hide": true,
+    "CompleteCond": 29,
+    "AimNumShow": 5,
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "383": {
+    "Id": 383,
+    "AchieveId": 41202,
+    "Title": "稀世珍宝 II",
+    "Desc": "收集10张彩色品质的秘纹",
+    "Rarity": 1,
+    "Type": 4,
+    "Hide": true,
+    "CompleteCond": 29,
+    "AimNumShow": 10,
+    "Prerequisites": [
+      382
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "384": {
+    "Id": 384,
+    "AchieveId": 41203,
+    "Title": "稀世珍宝 III",
+    "Desc": "收集15张彩色品质的秘纹",
+    "Rarity": 1,
+    "Type": 4,
+    "Hide": true,
+    "CompleteCond": 29,
+    "AimNumShow": 15,
+    "Prerequisites": [
+      383
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "385": {
+    "Id": 385,
+    "AchieveId": 41204,
+    "Title": "稀世珍宝 IV",
+    "Desc": "收集20张彩色品质的秘纹",
+    "Rarity": 1,
+    "Type": 4,
+    "Hide": true,
+    "CompleteCond": 29,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      384
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "386": {
+    "Id": 386,
+    "AchieveId": 41205,
+    "Title": "稀世珍宝 V",
+    "Desc": "收集25张彩色品质的秘纹",
+    "Rarity": 1,
+    "Type": 4,
+    "Hide": true,
+    "CompleteCond": 29,
+    "AimNumShow": 25,
+    "Prerequisites": [
+      385
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "387": {
+    "Id": 387,
+    "AchieveId": 41206,
+    "Title": "稀世珍宝 VI",
+    "Desc": "收集30张彩色品质的秘纹",
+    "Rarity": 1,
+    "Type": 4,
+    "Hide": true,
+    "CompleteCond": 29,
+    "AimNumShow": 30,
+    "Prerequisites": [
+      386
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "388": {
+    "Id": 388,
+    "AchieveId": 41501,
+    "Title": "广结良缘 I",
+    "Desc": "招募签约10名旅人",
+    "Rarity": 3,
+    "Type": 4,
+    "CompleteCond": 20,
+    "AimNumShow": 10,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "389": {
+    "Id": 389,
+    "AchieveId": 41502,
+    "Title": "广结良缘 II",
+    "Desc": "招募签约20名旅人",
+    "Rarity": 3,
+    "Type": 4,
+    "Hide": true,
+    "CompleteCond": 20,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      388
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "390": {
+    "Id": 390,
+    "AchieveId": 41303,
+    "Title": "广结良缘 III",
+    "Desc": "招募签约30名旅人",
+    "Rarity": 2,
+    "Type": 4,
+    "Hide": true,
+    "CompleteCond": 20,
+    "AimNumShow": 30,
+    "Prerequisites": [
+      389
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "391": {
+    "Id": 391,
+    "AchieveId": 41304,
+    "Title": "广结良缘 IV",
+    "Desc": "招募签约40名旅人",
+    "Rarity": 2,
+    "Type": 4,
+    "Hide": true,
+    "CompleteCond": 20,
+    "AimNumShow": 40,
+    "Prerequisites": [
+      390
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "392": {
+    "Id": 392,
+    "AchieveId": 41305,
+    "Title": "广结良缘 V",
+    "Desc": "招募签约50名旅人",
+    "Rarity": 1,
+    "Type": 4,
+    "Hide": true,
+    "CompleteCond": 20,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      391
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "393": {
+    "Id": 393,
+    "AchieveId": 41401,
+    "Title": "银河战舰 I",
+    "Desc": "招募签约5名彩色品质的旅人",
+    "Rarity": 1,
+    "Type": 4,
+    "Hide": true,
+    "CompleteCond": 20,
+    "AimNumShow": 5,
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "394": {
+    "Id": 394,
+    "AchieveId": 41402,
+    "Title": "银河战舰 II",
+    "Desc": "招募签约10名彩色品质的旅人",
+    "Rarity": 1,
+    "Type": 4,
+    "Hide": true,
+    "CompleteCond": 20,
+    "AimNumShow": 10,
+    "Prerequisites": [
+      393
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "395": {
+    "Id": 395,
+    "AchieveId": 41403,
+    "Title": "银河战舰 III",
+    "Desc": "招募签约15名彩色品质的旅人",
+    "Rarity": 1,
+    "Type": 4,
+    "Hide": true,
+    "CompleteCond": 20,
+    "AimNumShow": 15,
+    "Prerequisites": [
+      394
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "396": {
+    "Id": 396,
+    "AchieveId": 41404,
+    "Title": "银河战舰 IV",
+    "Desc": "招募签约20名彩色品质的旅人",
+    "Rarity": 1,
+    "Type": 4,
+    "Hide": true,
+    "CompleteCond": 20,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      395
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "397": {
+    "Id": 397,
+    "AchieveId": 41405,
+    "Title": "银河战舰 V",
+    "Desc": "招募签约25名彩色品质的旅人",
+    "Rarity": 1,
+    "Type": 4,
+    "Hide": true,
+    "CompleteCond": 20,
+    "AimNumShow": 25,
+    "Prerequisites": [
+      396
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "398": {
+    "Id": 398,
+    "AchieveId": 41406,
+    "Title": "银河战舰 VI",
+    "Desc": "招募签约30名彩色品质的旅人",
+    "Rarity": 1,
+    "Type": 4,
+    "Hide": true,
+    "CompleteCond": 20,
+    "AimNumShow": 30,
+    "Prerequisites": [
+      397
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "399": {
+    "Id": 399,
+    "AchieveId": 41601,
+    "Title": "勤学多练 I",
+    "Desc": "将任意3个旅人技能提升至4级",
+    "Rarity": 3,
+    "Type": 4,
+    "CompleteCond": 60,
+    "AimNumShow": 3,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "400": {
+    "Id": 400,
+    "AchieveId": 41602,
+    "Title": "勤学多练 II",
+    "Desc": "将任意10个旅人技能提升至4级",
+    "Rarity": 3,
+    "Type": 4,
+    "CompleteCond": 60,
+    "AimNumShow": 10,
+    "Prerequisites": [
+      399
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "401": {
+    "Id": 401,
+    "AchieveId": 41603,
+    "Title": "勤学多练 III",
+    "Desc": "将任意15个旅人技能提升至4级",
+    "Rarity": 2,
+    "Type": 4,
+    "CompleteCond": 60,
+    "AimNumShow": 15,
+    "Prerequisites": [
+      400
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "402": {
+    "Id": 402,
+    "AchieveId": 41604,
+    "Title": "勤学多练 IV",
+    "Desc": "将任意20个旅人技能提升至7级",
+    "Rarity": 2,
+    "Type": 4,
+    "CompleteCond": 60,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      401
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "403": {
+    "Id": 403,
+    "AchieveId": 41605,
+    "Title": "勤学多练 V",
+    "Desc": "将任意25个旅人技能提升至7级",
+    "Rarity": 1,
+    "Type": 4,
+    "CompleteCond": 60,
+    "AimNumShow": 25,
+    "Prerequisites": [
+      402
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "404": {
+    "Id": 404,
+    "AchieveId": 41606,
+    "Title": "勤学多练 VI",
+    "Desc": "将任意30个旅人技能提升至7级",
+    "Rarity": 1,
+    "Type": 4,
+    "CompleteCond": 60,
+    "AimNumShow": 30,
+    "Prerequisites": [
+      403
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "405": {
+    "Id": 405,
+    "AchieveId": 50101,
+    "Title": "点点心意 I",
+    "Desc": "累计赠礼10次",
+    "Rarity": 3,
+    "Type": 5,
+    "CompleteCond": 45,
+    "AimNumShow": 10,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "406": {
+    "Id": 406,
+    "AchieveId": 50102,
+    "Title": "点点心意 II",
+    "Desc": "累计赠礼20次",
+    "Rarity": 3,
+    "Type": 5,
+    "CompleteCond": 45,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      405
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "407": {
+    "Id": 407,
+    "AchieveId": 50103,
+    "Title": "点点心意 III",
+    "Desc": "累计赠礼50次",
+    "Rarity": 2,
+    "Type": 5,
+    "CompleteCond": 45,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      406
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "408": {
+    "Id": 408,
+    "AchieveId": 50104,
+    "Title": "点点心意 IV",
+    "Desc": "累计赠礼100次",
+    "Rarity": 2,
+    "Type": 5,
+    "CompleteCond": 45,
+    "AimNumShow": 100,
+    "Prerequisites": [
+      407
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "409": {
+    "Id": 409,
+    "AchieveId": 50105,
+    "Title": "点点心意 V",
+    "Desc": "累计赠礼200次",
+    "Rarity": 2,
+    "Type": 5,
+    "CompleteCond": 45,
+    "AimNumShow": 200,
+    "Prerequisites": [
+      408
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "410": {
+    "Id": 410,
+    "AchieveId": 50106,
+    "Title": "点点心意 VI",
+    "Desc": "累计赠礼500次",
+    "Rarity": 1,
+    "Type": 5,
+    "CompleteCond": 45,
+    "AimNumShow": 500,
+    "Prerequisites": [
+      409
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "411": {
+    "Id": 411,
+    "AchieveId": 50107,
+    "Title": "点点心意 VII",
+    "Desc": "累计赠礼1000次",
+    "Rarity": 1,
+    "Type": 5,
+    "CompleteCond": 45,
+    "AimNumShow": 1000,
+    "Prerequisites": [
+      410
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "412": {
+    "Id": 412,
+    "AchieveId": 50201,
+    "Title": "片片柔情 I",
+    "Desc": "累计完成5次邀约",
+    "Rarity": 3,
+    "Type": 5,
+    "CompleteCond": 74,
+    "AimNumShow": 5,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "413": {
+    "Id": 413,
+    "AchieveId": 50202,
+    "Title": "片片柔情 II",
+    "Desc": "累计完成10次邀约",
+    "Rarity": 3,
+    "Type": 5,
+    "CompleteCond": 74,
+    "AimNumShow": 10,
+    "Prerequisites": [
+      412
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "414": {
+    "Id": 414,
+    "AchieveId": 50203,
+    "Title": "片片柔情 III",
+    "Desc": "累计完成20次邀约",
+    "Rarity": 2,
+    "Type": 5,
+    "CompleteCond": 74,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      413
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "415": {
+    "Id": 415,
+    "AchieveId": 50204,
+    "Title": "片片柔情 IV",
+    "Desc": "累计完成50次邀约",
+    "Rarity": 2,
+    "Type": 5,
+    "CompleteCond": 74,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      414
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "416": {
+    "Id": 416,
+    "AchieveId": 50205,
+    "Title": "片片柔情 V",
+    "Desc": "累计完成100次邀约",
+    "Rarity": 1,
+    "Type": 5,
+    "CompleteCond": 74,
+    "AimNumShow": 100,
+    "Prerequisites": [
+      415
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "417": {
+    "Id": 417,
+    "AchieveId": 50301,
+    "Title": "窃窃私语 I",
+    "Desc": "累计完成5次聊天",
+    "Rarity": 3,
+    "Type": 5,
+    "CompleteCond": 23,
+    "AimNumShow": 5,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "418": {
+    "Id": 418,
+    "AchieveId": 50302,
+    "Title": "窃窃私语 II",
+    "Desc": "累计完成10次聊天",
+    "Rarity": 3,
+    "Type": 5,
+    "CompleteCond": 23,
+    "AimNumShow": 10,
+    "Prerequisites": [
+      417
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "419": {
+    "Id": 419,
+    "AchieveId": 50303,
+    "Title": "窃窃私语 III",
+    "Desc": "累计完成20次聊天",
+    "Rarity": 2,
+    "Type": 5,
+    "CompleteCond": 23,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      418
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "420": {
+    "Id": 420,
+    "AchieveId": 50304,
+    "Title": "窃窃私语 IV",
+    "Desc": "累计完成50次聊天",
+    "Rarity": 2,
+    "Type": 5,
+    "CompleteCond": 23,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      419
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "421": {
+    "Id": 421,
+    "AchieveId": 50305,
+    "Title": "窃窃私语 V",
+    "Desc": "累计完成100次聊天",
+    "Rarity": 1,
+    "Type": 5,
+    "CompleteCond": 23,
+    "AimNumShow": 100,
+    "Prerequisites": [
+      420
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "422": {
+    "Id": 422,
+    "AchieveId": 32001,
+    "Title": "川流不息 I",
+    "Desc": "触发10次水系印记",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 10,
+    "AimNumShow": 10,
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      1
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "423": {
+    "Id": 423,
+    "AchieveId": 32002,
+    "Title": "川流不息 II",
+    "Desc": "触发50次水系印记",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 10,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      422
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      1
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "424": {
+    "Id": 424,
+    "AchieveId": 32003,
+    "Title": "川流不息 III",
+    "Desc": "触发100次水系印记",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 10,
+    "AimNumShow": 100,
+    "Prerequisites": [
+      423
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      1
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "425": {
+    "Id": 425,
+    "AchieveId": 32004,
+    "Title": "川流不息 IV",
+    "Desc": "触发300次水系印记",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 10,
+    "AimNumShow": 300,
+    "Prerequisites": [
+      424
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      1
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "426": {
+    "Id": 426,
+    "AchieveId": 32005,
+    "Title": "川流不息 V",
+    "Desc": "触发500次水系印记",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 10,
+    "AimNumShow": 500,
+    "Prerequisites": [
+      425
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      1
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "427": {
+    "Id": 427,
+    "AchieveId": 32006,
+    "Title": "川流不息 VI",
+    "Desc": "触发1000次水系印记",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 10,
+    "AimNumShow": 1000,
+    "Prerequisites": [
+      426
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      1
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "428": {
+    "Id": 428,
+    "AchieveId": 32101,
+    "Title": "超燃烈火 I",
+    "Desc": "触发10次火系印记",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 10,
+    "AimNumShow": 10,
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      2
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "429": {
+    "Id": 429,
+    "AchieveId": 32102,
+    "Title": "超燃烈火 II",
+    "Desc": "触发50次火系印记",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 10,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      428
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      2
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "430": {
+    "Id": 430,
+    "AchieveId": 32103,
+    "Title": "超燃烈火 III",
+    "Desc": "触发100次火系印记",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 10,
+    "AimNumShow": 100,
+    "Prerequisites": [
+      429
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      2
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "431": {
+    "Id": 431,
+    "AchieveId": 32104,
+    "Title": "超燃烈火 IV",
+    "Desc": "触发300次火系印记",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 10,
+    "AimNumShow": 300,
+    "Prerequisites": [
+      430
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      2
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "432": {
+    "Id": 432,
+    "AchieveId": 32105,
+    "Title": "超燃烈火 V",
+    "Desc": "触发500次火系印记",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 10,
+    "AimNumShow": 500,
+    "Prerequisites": [
+      431
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      2
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "433": {
+    "Id": 433,
+    "AchieveId": 32106,
+    "Title": "超燃烈火 VI",
+    "Desc": "触发1000次火系印记",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 10,
+    "AimNumShow": 1000,
+    "Prerequisites": [
+      432
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      2
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "434": {
+    "Id": 434,
+    "AchieveId": 32201,
+    "Title": "地动山摇 I",
+    "Desc": "触发10次地系印记",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 10,
+    "AimNumShow": 10,
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      3
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "435": {
+    "Id": 435,
+    "AchieveId": 32202,
+    "Title": "地动山摇 II",
+    "Desc": "触发50次地系印记",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 10,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      434
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      3
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "436": {
+    "Id": 436,
+    "AchieveId": 32203,
+    "Title": "地动山摇 III",
+    "Desc": "触发100次地系印记",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 10,
+    "AimNumShow": 100,
+    "Prerequisites": [
+      435
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      3
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "437": {
+    "Id": 437,
+    "AchieveId": 32204,
+    "Title": "地动山摇 IV",
+    "Desc": "触发300次地系印记",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 10,
+    "AimNumShow": 300,
+    "Prerequisites": [
+      436
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      3
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "438": {
+    "Id": 438,
+    "AchieveId": 32205,
+    "Title": "地动山摇 V",
+    "Desc": "触发500次地系印记",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 10,
+    "AimNumShow": 500,
+    "Prerequisites": [
+      437
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      3
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "439": {
+    "Id": 439,
+    "AchieveId": 32206,
+    "Title": "地动山摇 VI",
+    "Desc": "触发1000次地系印记",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 10,
+    "AimNumShow": 1000,
+    "Prerequisites": [
+      438
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      3
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "440": {
+    "Id": 440,
+    "AchieveId": 32301,
+    "Title": "风旋气流 I",
+    "Desc": "触发10次风系印记",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 10,
+    "AimNumShow": 10,
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      4
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "441": {
+    "Id": 441,
+    "AchieveId": 32302,
+    "Title": "风旋气流 II",
+    "Desc": "触发50次风系印记",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 10,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      440
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      4
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "442": {
+    "Id": 442,
+    "AchieveId": 32303,
+    "Title": "风旋气流 III",
+    "Desc": "触发100次风系印记",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 10,
+    "AimNumShow": 100,
+    "Prerequisites": [
+      441
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      4
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "443": {
+    "Id": 443,
+    "AchieveId": 32304,
+    "Title": "风旋气流 IV",
+    "Desc": "触发300次风系印记",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 10,
+    "AimNumShow": 300,
+    "Prerequisites": [
+      442
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      4
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "444": {
+    "Id": 444,
+    "AchieveId": 32305,
+    "Title": "风旋气流 V",
+    "Desc": "触发500次风系印记",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 10,
+    "AimNumShow": 500,
+    "Prerequisites": [
+      443
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      4
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "445": {
+    "Id": 445,
+    "AchieveId": 32306,
+    "Title": "风旋气流 VI",
+    "Desc": "触发1000次风系印记",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 10,
+    "AimNumShow": 1000,
+    "Prerequisites": [
+      444
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      4
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "446": {
+    "Id": 446,
+    "AchieveId": 32401,
+    "Title": "光芒万丈 I",
+    "Desc": "触发10次光系印记",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 10,
+    "AimNumShow": 10,
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      5
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "447": {
+    "Id": 447,
+    "AchieveId": 32402,
+    "Title": "光芒万丈 II",
+    "Desc": "触发50次光系印记",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 10,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      446
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      5
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "448": {
+    "Id": 448,
+    "AchieveId": 32403,
+    "Title": "光芒万丈 III",
+    "Desc": "触发100次光系印记",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 10,
+    "AimNumShow": 100,
+    "Prerequisites": [
+      447
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      5
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "449": {
+    "Id": 449,
+    "AchieveId": 32404,
+    "Title": "光芒万丈 IV",
+    "Desc": "触发300次光系印记",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 10,
+    "AimNumShow": 300,
+    "Prerequisites": [
+      448
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      5
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "450": {
+    "Id": 450,
+    "AchieveId": 32405,
+    "Title": "光芒万丈 V",
+    "Desc": "触发500次光系印记",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 10,
+    "AimNumShow": 500,
+    "Prerequisites": [
+      449
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      5
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "451": {
+    "Id": 451,
+    "AchieveId": 32406,
+    "Title": "光芒万丈 VI",
+    "Desc": "触发1000次光系印记",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 10,
+    "AimNumShow": 1000,
+    "Prerequisites": [
+      450
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      5
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "452": {
+    "Id": 452,
+    "AchieveId": 32501,
+    "Title": "长夜幽冥 I",
+    "Desc": "触发10次暗系印记",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 10,
+    "AimNumShow": 10,
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "453": {
+    "Id": 453,
+    "AchieveId": 32502,
+    "Title": "长夜幽冥 II",
+    "Desc": "触发50次暗系印记",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 10,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      452
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "454": {
+    "Id": 454,
+    "AchieveId": 32503,
+    "Title": "长夜幽冥 III",
+    "Desc": "触发100次暗系印记",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 10,
+    "AimNumShow": 100,
+    "Prerequisites": [
+      453
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "455": {
+    "Id": 455,
+    "AchieveId": 32504,
+    "Title": "长夜幽冥 IV",
+    "Desc": "触发300次暗系印记",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 10,
+    "AimNumShow": 300,
+    "Prerequisites": [
+      454
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "456": {
+    "Id": 456,
+    "AchieveId": 32505,
+    "Title": "长夜幽冥 V",
+    "Desc": "触发500次暗系印记",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 10,
+    "AimNumShow": 500,
+    "Prerequisites": [
+      455
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "457": {
+    "Id": 457,
+    "AchieveId": 32506,
+    "Title": "长夜幽冥 VI",
+    "Desc": "触发1000次暗系印记",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 10,
+    "AimNumShow": 1000,
+    "Prerequisites": [
+      456
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "458": {
+    "Id": 458,
+    "AchieveId": 32601,
+    "Title": "终极奥义 I",
+    "Desc": "累计释放10次绝招",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5,
+    "AimNumShow": 10,
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      5
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "459": {
+    "Id": 459,
+    "AchieveId": 32602,
+    "Title": "终极奥义 II",
+    "Desc": "累计释放20次绝招",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      458
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      5
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "460": {
+    "Id": 460,
+    "AchieveId": 32603,
+    "Title": "终极奥义 III",
+    "Desc": "累计释放50次绝招",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      459
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      5
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "461": {
+    "Id": 461,
+    "AchieveId": 32604,
+    "Title": "终极奥义 IV",
+    "Desc": "累计释放100次绝招",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5,
+    "AimNumShow": 100,
+    "Prerequisites": [
+      460
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      5
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "462": {
+    "Id": 462,
+    "AchieveId": 32605,
+    "Title": "终极奥义 V",
+    "Desc": "累计释放300次绝招",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5,
+    "AimNumShow": 300,
+    "Prerequisites": [
+      461
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      5
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "463": {
+    "Id": 463,
+    "AchieveId": 32606,
+    "Title": "终极奥义 VI",
+    "Desc": "累计释放500次绝招",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5,
+    "AimNumShow": 500,
+    "Prerequisites": [
+      462
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      5
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "464": {
+    "Id": 464,
+    "AchieveId": 32607,
+    "Title": "终极奥义 VII",
+    "Desc": "累计释放1000次绝招",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5,
+    "AimNumShow": 1000,
+    "Prerequisites": [
+      463
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      5
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "465": {
+    "Id": 465,
+    "AchieveId": 32701,
+    "Title": "拿手招式 I",
+    "Desc": "累计释放10次主控技能",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5,
+    "AimNumShow": 10,
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      3
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "466": {
+    "Id": 466,
+    "AchieveId": 32702,
+    "Title": "拿手招式 II",
+    "Desc": "累计释放20次主控技能",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      465
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      3
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "467": {
+    "Id": 467,
+    "AchieveId": 32703,
+    "Title": "拿手招式 III",
+    "Desc": "累计释放50次主控技能",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      466
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      3
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "468": {
+    "Id": 468,
+    "AchieveId": 32704,
+    "Title": "拿手招式 IV",
+    "Desc": "累计释放100次主控技能",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5,
+    "AimNumShow": 100,
+    "Prerequisites": [
+      467
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      3
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "469": {
+    "Id": 469,
+    "AchieveId": 32705,
+    "Title": "拿手招式 V",
+    "Desc": "累计释放300次主控技能",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5,
+    "AimNumShow": 300,
+    "Prerequisites": [
+      468
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      3
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "470": {
+    "Id": 470,
+    "AchieveId": 32706,
+    "Title": "拿手招式 VI",
+    "Desc": "累计释放500次主控技能",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5,
+    "AimNumShow": 500,
+    "Prerequisites": [
+      469
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      3
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "471": {
+    "Id": 471,
+    "AchieveId": 32707,
+    "Title": "拿手招式 VII",
+    "Desc": "累计释放1000次主控技能",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5,
+    "AimNumShow": 1000,
+    "Prerequisites": [
+      470
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      3
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "472": {
+    "Id": 472,
+    "AchieveId": 32801,
+    "Title": "可靠支援 I",
+    "Desc": "累计释放10次支援技能",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5,
+    "AimNumShow": 10,
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      4
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "473": {
+    "Id": 473,
+    "AchieveId": 32802,
+    "Title": "可靠支援 II",
+    "Desc": "累计释放20次支援技能",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      472
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      4
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "474": {
+    "Id": 474,
+    "AchieveId": 32803,
+    "Title": "可靠支援 III",
+    "Desc": "累计释放50次支援技能",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      473
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      4
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "475": {
+    "Id": 475,
+    "AchieveId": 32804,
+    "Title": "可靠支援 IV",
+    "Desc": "累计释放100次支援技能",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5,
+    "AimNumShow": 100,
+    "Prerequisites": [
+      474
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      4
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "476": {
+    "Id": 476,
+    "AchieveId": 32805,
+    "Title": "可靠支援 V",
+    "Desc": "累计释放300次支援技能",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5,
+    "AimNumShow": 300,
+    "Prerequisites": [
+      475
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      4
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "477": {
+    "Id": 477,
+    "AchieveId": 32806,
+    "Title": "可靠支援 VI",
+    "Desc": "累计释放500次支援技能",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5,
+    "AimNumShow": 500,
+    "Prerequisites": [
+      476
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      4
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "478": {
+    "Id": 478,
+    "AchieveId": 32807,
+    "Title": "可靠支援 VII",
+    "Desc": "累计释放1000次支援技能",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5,
+    "AimNumShow": 1000,
+    "Prerequisites": [
+      477
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      4
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "479": {
+    "Id": 479,
+    "AchieveId": 32901,
+    "Title": "致命一击 I",
+    "Desc": "单次伤害达到9999点",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 11,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      9999
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "480": {
+    "Id": 480,
+    "AchieveId": 32902,
+    "Title": "致命一击 II",
+    "Desc": "单次伤害达到99999点",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 11,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      479
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      99999
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "481": {
+    "Id": 481,
+    "AchieveId": 32903,
+    "Title": "致命一击 III",
+    "Desc": "单次伤害达到999999点",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 11,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      480
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      999999
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "482": {
+    "Id": 482,
+    "AchieveId": 33001,
+    "Title": "有惊无险 I",
+    "Desc": "在血量低于10%的情况下通过关卡",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 12,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      10
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "483": {
+    "Id": 483,
+    "AchieveId": 33002,
+    "Title": "有惊无险 II",
+    "Desc": "在血量低于5%的情况下通过关卡",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 12,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      482
+    ],
+    "LevelType": [
+      6
+    ],
+    "ClientCompleteParams1": [
+      5
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "484": {
+    "Id": 484,
+    "AchieveId": 33201,
+    "Title": "灾变防卫者 I",
+    "Desc": "累计通关10次灾变防线",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 82,
+    "AimNumShow": 10,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "485": {
+    "Id": 485,
+    "AchieveId": 33202,
+    "Title": "灾变防卫者 II",
+    "Desc": "累计通关20次灾变防线",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 82,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      484
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "486": {
+    "Id": 486,
+    "AchieveId": 33203,
+    "Title": "灾变防卫者 III",
+    "Desc": "累计通关50次灾变防线",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 82,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      485
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "487": {
+    "Id": 487,
+    "AchieveId": 33204,
+    "Title": "灾变防卫者 IV",
+    "Desc": "累计通关100次灾变防线",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 82,
+    "AimNumShow": 100,
+    "Prerequisites": [
+      486
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "488": {
+    "Id": 488,
+    "AchieveId": 33205,
+    "Title": "灾变防卫者 V",
+    "Desc": "累计通关200次灾变防线",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 82,
+    "AimNumShow": 200,
+    "Prerequisites": [
+      487
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "489": {
+    "Id": 489,
+    "AchieveId": 33206,
+    "Title": "灾变防卫者 VI",
+    "Desc": "累计通关500次灾变防线",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 82,
+    "AimNumShow": 500,
+    "Prerequisites": [
+      488
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "490": {
+    "Id": 490,
+    "AchieveId": 33207,
+    "Title": "灾变防卫者 VII",
+    "Desc": "累计通关1000次灾变防线",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 82,
+    "AimNumShow": 1000,
+    "Prerequisites": [
+      489
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "491": {
+    "Id": 491,
+    "AchieveId": 11301,
+    "Title": "热心旅人 I",
+    "Desc": "累计完成10次委托",
+    "Rarity": 3,
+    "Type": 1,
+    "CompleteCond": 84,
+    "AimNumShow": 10,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "492": {
+    "Id": 492,
+    "AchieveId": 11302,
+    "Title": "热心旅人 II",
+    "Desc": "累计完成20次委托",
+    "Rarity": 3,
+    "Type": 1,
+    "CompleteCond": 84,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      491
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "493": {
+    "Id": 493,
+    "AchieveId": 11303,
+    "Title": "热心旅人 III",
+    "Desc": "累计完成50次委托",
+    "Rarity": 2,
+    "Type": 1,
+    "CompleteCond": 84,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      492
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "494": {
+    "Id": 494,
+    "AchieveId": 11304,
+    "Title": "热心旅人 IV",
+    "Desc": "累计完成100次委托",
+    "Rarity": 1,
+    "Type": 1,
+    "CompleteCond": 84,
+    "AimNumShow": 100,
+    "Prerequisites": [
+      493
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "495": {
+    "Id": 495,
+    "AchieveId": 11305,
+    "Title": "热心旅人 V",
+    "Desc": "累计完成200次委托",
+    "Rarity": 1,
+    "Type": 1,
+    "CompleteCond": 84,
+    "AimNumShow": 200,
+    "Prerequisites": [
+      494
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "496": {
+    "Id": 496,
+    "AchieveId": 11306,
+    "Title": "热心旅人 VI",
+    "Desc": "累计完成500次委托",
+    "Rarity": 1,
+    "Type": 1,
+    "CompleteCond": 84,
+    "AimNumShow": 500,
+    "Prerequisites": [
+      495
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "497": {
+    "Id": 497,
+    "AchieveId": 11307,
+    "Title": "热心旅人 VII",
+    "Desc": "累计完成1000次委托",
+    "Rarity": 1,
+    "Type": 1,
+    "CompleteCond": 84,
+    "AimNumShow": 1000,
+    "Prerequisites": [
+      496
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "498": {
+    "Id": 498,
+    "AchieveId": 11401,
+    "Title": "初试星塔探索",
+    "Desc": "完成原初的迷途及任意一座元素星塔",
+    "Rarity": 2,
+    "Type": 1,
+    "CompleteCond": 506,
+    "AimNumShow": 1,
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "499": {
+    "Id": 499,
+    "AchieveId": 11501,
+    "Title": "不适合魔王的职业",
+    "Desc": "完成终局剧情 - 没有旅人的未来",
+    "Rarity": 3,
+    "Type": 1,
+    "CompleteCond": 63,
+    "AimNumShow": 1,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "500": {
+    "Id": 500,
+    "AchieveId": 11502,
+    "Title": "“铁饭碗”",
+    "Desc": "完成终局剧情 - 永恒",
+    "Rarity": 3,
+    "Type": 1,
+    "CompleteCond": 63,
+    "AimNumShow": 1,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "501": {
+    "Id": 501,
+    "AchieveId": 24101,
+    "Title": "途中巧遇 I",
+    "Desc": "星塔事典收录10项逸闻笔记",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 517,
+    "AimNumShow": 10,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "502": {
+    "Id": 502,
+    "AchieveId": 24102,
+    "Title": "途中巧遇 II",
+    "Desc": "星塔事典收录20项逸闻笔记",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 517,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      501
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "503": {
+    "Id": 503,
+    "AchieveId": 24103,
+    "Title": "途中巧遇 III",
+    "Desc": "星塔事典收录30项逸闻笔记",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 517,
+    "AimNumShow": 30,
+    "Prerequisites": [
+      502
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "504": {
+    "Id": 504,
+    "AchieveId": 24104,
+    "Title": "途中巧遇 IV",
+    "Desc": "星塔事典收录40项逸闻笔记",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 517,
+    "AimNumShow": 40,
+    "Prerequisites": [
+      503
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "505": {
+    "Id": 505,
+    "AchieveId": 24105,
+    "Title": "途中巧遇 V",
+    "Desc": "星塔事典收录50项逸闻笔记",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 517,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      504
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "506": {
+    "Id": 506,
+    "AchieveId": 24106,
+    "Title": "途中巧遇 VI",
+    "Desc": "星塔事典收录60项逸闻笔记",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 517,
+    "AimNumShow": 60,
+    "Prerequisites": [
+      505
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "507": {
+    "Id": 507,
+    "AchieveId": 24107,
+    "Title": "途中巧遇 VII",
+    "Desc": "星塔事典收录70项逸闻笔记",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 517,
+    "AimNumShow": 70,
+    "Prerequisites": [
+      506
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "508": {
+    "Id": 508,
+    "AchieveId": 24108,
+    "Title": "途中巧遇 VIII",
+    "Desc": "星塔事典收录80项逸闻笔记",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 517,
+    "AimNumShow": 80,
+    "Prerequisites": [
+      507
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "509": {
+    "Id": 509,
+    "AchieveId": 24109,
+    "Title": "途中巧遇 IX",
+    "Desc": "星塔事典收录90项逸闻笔记",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 517,
+    "AimNumShow": 90,
+    "Prerequisites": [
+      508
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "510": {
+    "Id": 510,
+    "AchieveId": 24201,
+    "Title": "潜能掌握 I",
+    "Desc": "星塔事典收录30项旅人潜能",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 520,
+    "AimNumShow": 30,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "511": {
+    "Id": 511,
+    "AchieveId": 24202,
+    "Title": "潜能掌握 II",
+    "Desc": "星塔事典收录60项旅人潜能",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 520,
+    "AimNumShow": 60,
+    "Prerequisites": [
+      510
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "512": {
+    "Id": 512,
+    "AchieveId": 24203,
+    "Title": "潜能掌握 III",
+    "Desc": "星塔事典收录90项旅人潜能",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 520,
+    "AimNumShow": 90,
+    "Prerequisites": [
+      511
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "513": {
+    "Id": 513,
+    "AchieveId": 24204,
+    "Title": "潜能掌握 IV",
+    "Desc": "星塔事典收录120项旅人潜能",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 520,
+    "AimNumShow": 120,
+    "Prerequisites": [
+      512
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "514": {
+    "Id": 514,
+    "AchieveId": 24205,
+    "Title": "潜能掌握 V",
+    "Desc": "星塔事典收录150项旅人潜能",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 520,
+    "AimNumShow": 150,
+    "Prerequisites": [
+      513
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "515": {
+    "Id": 515,
+    "AchieveId": 24206,
+    "Title": "潜能掌握 VI",
+    "Desc": "星塔事典收录180项旅人潜能",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 520,
+    "AimNumShow": 180,
+    "Prerequisites": [
+      514
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "516": {
+    "Id": 516,
+    "AchieveId": 24207,
+    "Title": "潜能掌握 VII",
+    "Desc": "星塔事典收录210项旅人潜能",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 520,
+    "AimNumShow": 210,
+    "Prerequisites": [
+      515
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "517": {
+    "Id": 517,
+    "AchieveId": 24208,
+    "Title": "潜能掌握 VIII",
+    "Desc": "星塔事典收录240项旅人潜能",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 520,
+    "AimNumShow": 240,
+    "Prerequisites": [
+      516
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "518": {
+    "Id": 518,
+    "AchieveId": 24209,
+    "Title": "潜能掌握 IX",
+    "Desc": "星塔事典收录270项旅人潜能",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 520,
+    "AimNumShow": 270,
+    "Prerequisites": [
+      517
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "519": {
+    "Id": 519,
+    "AchieveId": 24301,
+    "Title": "潜能激发 I",
+    "Desc": "在星塔中使用强化机2次",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 522,
+    "AimNumShow": 2,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "520": {
+    "Id": 520,
+    "AchieveId": 24302,
+    "Title": "潜能激发 II",
+    "Desc": "在星塔中使用强化机10次",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 522,
+    "AimNumShow": 10,
+    "Prerequisites": [
+      519
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "521": {
+    "Id": 521,
+    "AchieveId": 24303,
+    "Title": "潜能激发 III",
+    "Desc": "在星塔中使用强化机70次",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 522,
+    "AimNumShow": 70,
+    "Prerequisites": [
+      520
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "522": {
+    "Id": 522,
+    "AchieveId": 24304,
+    "Title": "潜能激发 IV",
+    "Desc": "在星塔中使用强化机250次",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 522,
+    "AimNumShow": 250,
+    "Prerequisites": [
+      521
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "523": {
+    "Id": 523,
+    "AchieveId": 24305,
+    "Title": "潜能激发 V",
+    "Desc": "在星塔中使用强化机500次",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 522,
+    "AimNumShow": 500,
+    "Prerequisites": [
+      522
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "524": {
+    "Id": 524,
+    "AchieveId": 24306,
+    "Title": "潜能激发 VI",
+    "Desc": "在星塔中使用强化机750次",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 522,
+    "AimNumShow": 750,
+    "Prerequisites": [
+      523
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "525": {
+    "Id": 525,
+    "AchieveId": 24307,
+    "Title": "潜能激发 VII",
+    "Desc": "在星塔中使用强化机1000次",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 522,
+    "AimNumShow": 1000,
+    "Prerequisites": [
+      524
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "526": {
+    "Id": 526,
+    "AchieveId": 24308,
+    "Title": "潜能激发 VIII",
+    "Desc": "在星塔中使用强化机1250次",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 522,
+    "AimNumShow": 1250,
+    "Prerequisites": [
+      525
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "527": {
+    "Id": 527,
+    "AchieveId": 24309,
+    "Title": "潜能激发 IX",
+    "Desc": "在星塔中使用强化机1750次",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 522,
+    "AimNumShow": 1750,
+    "Prerequisites": [
+      526
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "528": {
+    "Id": 528,
+    "AchieveId": 24310,
+    "Title": "潜能激发 X",
+    "Desc": "在星塔中使用强化机2500次",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 522,
+    "AimNumShow": 2500,
+    "Prerequisites": [
+      527
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "529": {
+    "Id": 529,
+    "AchieveId": 24401,
+    "Title": "再思考 I",
+    "Desc": "在星塔中重随机潜能选择5次",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 529,
+    "AimNumShow": 5,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "530": {
+    "Id": 530,
+    "AchieveId": 24402,
+    "Title": "再思考 II",
+    "Desc": "在星塔中重随机潜能选择10次",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 529,
+    "AimNumShow": 10,
+    "Prerequisites": [
+      529
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "531": {
+    "Id": 531,
+    "AchieveId": 24403,
+    "Title": "再思考 III",
+    "Desc": "在星塔中重随机潜能选择20次",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 529,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      530
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "532": {
+    "Id": 532,
+    "AchieveId": 24404,
+    "Title": "再思考 IV",
+    "Desc": "在星塔中重随机潜能选择50次",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 529,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      531
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "533": {
+    "Id": 533,
+    "AchieveId": 24405,
+    "Title": "再思考 V",
+    "Desc": "在星塔中重随机潜能选择100次",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 529,
+    "AimNumShow": 100,
+    "Prerequisites": [
+      532
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "534": {
+    "Id": 534,
+    "AchieveId": 24501,
+    "Title": "货架刷新 I",
+    "Desc": "在星塔中重随机商店货架5次",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 530,
+    "AimNumShow": 5,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "535": {
+    "Id": 535,
+    "AchieveId": 24502,
+    "Title": "货架刷新 II",
+    "Desc": "在星塔中重随机商店货架10次",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 530,
+    "AimNumShow": 10,
+    "Prerequisites": [
+      534
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "536": {
+    "Id": 536,
+    "AchieveId": 24503,
+    "Title": "货架刷新 III",
+    "Desc": "在星塔中重随机商店货架30次",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 530,
+    "AimNumShow": 30,
+    "Prerequisites": [
+      535
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "537": {
+    "Id": 537,
+    "AchieveId": 24504,
+    "Title": "货架刷新 IV",
+    "Desc": "在星塔中重随机商店货架50次",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 530,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      536
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "538": {
+    "Id": 538,
+    "AchieveId": 24505,
+    "Title": "货架刷新 V",
+    "Desc": "在星塔中重随机商店货架100次",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 530,
+    "AimNumShow": 100,
+    "Prerequisites": [
+      537
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "539": {
+    "Id": 539,
+    "AchieveId": 24601,
+    "Title": "潜能迸发 I",
+    "Desc": "获得潜能时触发初次加成5次",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 533,
+    "AimNumShow": 5,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "540": {
+    "Id": 540,
+    "AchieveId": 24602,
+    "Title": "潜能迸发 II",
+    "Desc": "获得潜能时触发初次加成10次",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 533,
+    "AimNumShow": 10,
+    "Prerequisites": [
+      539
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "541": {
+    "Id": 541,
+    "AchieveId": 24603,
+    "Title": "潜能迸发 III",
+    "Desc": "获得潜能时触发初次加成20次",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 533,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      540
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "542": {
+    "Id": 542,
+    "AchieveId": 24604,
+    "Title": "潜能迸发 IV",
+    "Desc": "获得潜能时触发初次加成50次",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 533,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      541
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "543": {
+    "Id": 543,
+    "AchieveId": 24605,
+    "Title": "潜能迸发 V",
+    "Desc": "获得潜能时触发初次加成100次",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 533,
+    "AimNumShow": 100,
+    "Prerequisites": [
+      542
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "544": {
+    "Id": 544,
+    "AchieveId": 24701,
+    "Title": "强化进阶 I",
+    "Desc": "强化潜能时触发额外加成5次",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 534,
+    "AimNumShow": 5,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "545": {
+    "Id": 545,
+    "AchieveId": 24702,
+    "Title": "强化进阶 II",
+    "Desc": "强化潜能时触发额外加成10次",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 534,
+    "AimNumShow": 10,
+    "Prerequisites": [
+      544
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "546": {
+    "Id": 546,
+    "AchieveId": 24703,
+    "Title": "强化进阶 III",
+    "Desc": "强化潜能时触发额外加成20次",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 534,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      545
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "547": {
+    "Id": 547,
+    "AchieveId": 24704,
+    "Title": "强化进阶 IV",
+    "Desc": "强化潜能时触发额外加成50次",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 534,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      546
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "548": {
+    "Id": 548,
+    "AchieveId": 24705,
+    "Title": "强化进阶 V",
+    "Desc": "强化潜能时触发额外加成100次",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 534,
+    "AimNumShow": 100,
+    "Prerequisites": [
+      547
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "549": {
+    "Id": 549,
+    "AchieveId": 24801,
+    "Title": "大甩卖 I",
+    "Desc": "在星塔商店房间购买打折道具5次",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 535,
+    "AimNumShow": 5,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "550": {
+    "Id": 550,
+    "AchieveId": 24802,
+    "Title": "大甩卖 II",
+    "Desc": "在星塔商店房间购买打折道具20次",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 535,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      549
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "551": {
+    "Id": 551,
+    "AchieveId": 24803,
+    "Title": "大甩卖 III",
+    "Desc": "在星塔商店房间购买打折道具200次",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 535,
+    "AimNumShow": 200,
+    "Prerequisites": [
+      550
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "552": {
+    "Id": 552,
+    "AchieveId": 24804,
+    "Title": "大甩卖 IV",
+    "Desc": "在星塔商店房间购买打折道具1000次",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 535,
+    "AimNumShow": 1000,
+    "Prerequisites": [
+      551
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "553": {
+    "Id": 553,
+    "AchieveId": 24805,
+    "Title": "大甩卖 V",
+    "Desc": "在星塔商店房间购买打折道具2000次",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 535,
+    "AimNumShow": 2000,
+    "Prerequisites": [
+      552
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "554": {
+    "Id": 554,
+    "AchieveId": 24901,
+    "Title": "秘纹共鸣 I",
+    "Desc": "在星塔中激活秘纹协奏技能1次",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 536,
+    "AimNumShow": 1,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "555": {
+    "Id": 555,
+    "AchieveId": 24902,
+    "Title": "秘纹共鸣 II",
+    "Desc": "在星塔中激活秘纹协奏技能6次",
+    "Rarity": 3,
+    "Type": 2,
+    "CompleteCond": 536,
+    "AimNumShow": 6,
+    "Prerequisites": [
+      554
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "556": {
+    "Id": 556,
+    "AchieveId": 24903,
+    "Title": "秘纹共鸣 III",
+    "Desc": "在星塔中激活秘纹协奏技能30次",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 536,
+    "AimNumShow": 30,
+    "Prerequisites": [
+      555
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "557": {
+    "Id": 557,
+    "AchieveId": 24904,
+    "Title": "秘纹共鸣 IV",
+    "Desc": "在星塔中激活秘纹协奏技能90次",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 536,
+    "AimNumShow": 90,
+    "Prerequisites": [
+      556
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "558": {
+    "Id": 558,
+    "AchieveId": 24905,
+    "Title": "秘纹共鸣 V",
+    "Desc": "在星塔中激活秘纹协奏技能200次",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 536,
+    "AimNumShow": 200,
+    "Prerequisites": [
+      557
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "559": {
+    "Id": 559,
+    "AchieveId": 24906,
+    "Title": "秘纹共鸣 VI",
+    "Desc": "在星塔中激活秘纹协奏技能300次",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 536,
+    "AimNumShow": 300,
+    "Prerequisites": [
+      558
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "560": {
+    "Id": 560,
+    "AchieveId": 24907,
+    "Title": "秘纹共鸣 VII",
+    "Desc": "在星塔中激活秘纹协奏技能400次",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 536,
+    "AimNumShow": 400,
+    "Prerequisites": [
+      559
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "561": {
+    "Id": 561,
+    "AchieveId": 24908,
+    "Title": "秘纹共鸣 VIII",
+    "Desc": "在星塔中激活秘纹协奏技能500次",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 536,
+    "AimNumShow": 500,
+    "Prerequisites": [
+      560
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "562": {
+    "Id": 562,
+    "AchieveId": 24909,
+    "Title": "秘纹共鸣 IX",
+    "Desc": "在星塔中激活秘纹协奏技能700次",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 536,
+    "AimNumShow": 700,
+    "Prerequisites": [
+      561
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "563": {
+    "Id": 563,
+    "AchieveId": 24910,
+    "Title": "秘纹共鸣 X",
+    "Desc": "在星塔中激活秘纹协奏技能1000次",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 536,
+    "AimNumShow": 1000,
+    "Prerequisites": [
+      562
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "564": {
+    "Id": 564,
+    "AchieveId": 33301,
+    "Title": "功勋集章 I",
+    "Desc": "累计通关3次纹章试炼",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 104,
+    "AimNumShow": 3,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "565": {
+    "Id": 565,
+    "AchieveId": 33302,
+    "Title": "功勋集章 II",
+    "Desc": "累计通关20次纹章试炼",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 104,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      564
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "566": {
+    "Id": 566,
+    "AchieveId": 33303,
+    "Title": "功勋集章 III",
+    "Desc": "累计通关50次纹章试炼",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 104,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      565
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "567": {
+    "Id": 567,
+    "AchieveId": 33304,
+    "Title": "功勋集章 IV",
+    "Desc": "累计通关200次纹章试炼",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 104,
+    "AimNumShow": 200,
+    "Prerequisites": [
+      566
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "568": {
+    "Id": 568,
+    "AchieveId": 33305,
+    "Title": "功勋集章 V",
+    "Desc": "累计通关500次纹章试炼",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 104,
+    "AimNumShow": 500,
+    "Prerequisites": [
+      567
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "569": {
+    "Id": 569,
+    "AchieveId": 33306,
+    "Title": "功勋集章 VI",
+    "Desc": "累计通关1000次纹章试炼",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 104,
+    "AimNumShow": 1000,
+    "Prerequisites": [
+      568
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "570": {
+    "Id": 570,
+    "AchieveId": 39901,
+    "Title": "搬石砸脚",
+    "Desc": "在击破双手的情况下击败魔侍巨像",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 1305101,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "571": {
+    "Id": 571,
+    "AchieveId": 39902,
+    "Title": "注意防晒",
+    "Desc": "在战斗中被魔侍巨像的光束炮击中",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 1305102,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "572": {
+    "Id": 572,
+    "AchieveId": 39903,
+    "Title": "机甲反制专家",
+    "Desc": "无伤击败魔侍巨像",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 1305103,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "573": {
+    "Id": 573,
+    "AchieveId": 39904,
+    "Title": "驯兽大师",
+    "Desc": "强制中断猛进之灵[野性奔突]的释放",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 1000501,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "574": {
+    "Id": 574,
+    "AchieveId": 39905,
+    "Title": "与兽共舞",
+    "Desc": "在猛进之灵释放[野性奔突]过程中不受任何伤害",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 1000502,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "575": {
+    "Id": 575,
+    "AchieveId": 39906,
+    "Title": "注意兽角",
+    "Desc": "在猛进之灵释放[野性奔突]过程中被命中3次以上",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 1000503,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "576": {
+    "Id": 576,
+    "AchieveId": 39907,
+    "Title": "巨兽捕猎专家",
+    "Desc": "无伤击败猛进之灵",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 1000504,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "577": {
+    "Id": 577,
+    "AchieveId": 39908,
+    "Title": "除草能手",
+    "Desc": "累计击败30次寄生之庭中的花苞",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 1050101,
+    "AimNumShow": 30,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "578": {
+    "Id": 578,
+    "AchieveId": 39909,
+    "Title": "植物学家",
+    "Desc": "不消灭花苞通关寄生之庭",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 1050102,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "579": {
+    "Id": 579,
+    "AchieveId": 39910,
+    "Title": "动物关爱者",
+    "Desc": "寄生之庭死亡时场上存在未击败的土拨鼠",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 1050103,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "580": {
+    "Id": 580,
+    "AchieveId": 39911,
+    "Title": "片叶不沾",
+    "Desc": "无伤通关寄生之庭",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 1050104,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "581": {
+    "Id": 581,
+    "AchieveId": 39912,
+    "Title": "严控湿度",
+    "Desc": "阻止冻冻王重新聚合",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5008101,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "582": {
+    "Id": 582,
+    "AchieveId": 39913,
+    "Title": "表面张力",
+    "Desc": "被冻冻王的技能击飞",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5008102,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "583": {
+    "Id": 583,
+    "AchieveId": 39914,
+    "Title": "完美清洁",
+    "Desc": "完美躲过冻冻王聚合后的冲击波",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5008103,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "584": {
+    "Id": 584,
+    "AchieveId": 39915,
+    "Title": "表面活性",
+    "Desc": "在10秒内阻止冻冻王聚合",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5008104,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "585": {
+    "Id": 585,
+    "AchieveId": 39916,
+    "Title": "甩干能手",
+    "Desc": "中断冻冻王的滑行",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5008105,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "586": {
+    "Id": 586,
+    "AchieveId": 39917,
+    "Title": "终结谵妄",
+    "Desc": "无伤击败腐朽之谵妄",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5051101,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "587": {
+    "Id": 587,
+    "AchieveId": 39918,
+    "Title": "远离腐朽",
+    "Desc": "极限情况下闪避躲过腐朽之谵妄的大范围攻击",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5051102,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "588": {
+    "Id": 588,
+    "AchieveId": 39919,
+    "Title": "回避污秽",
+    "Desc": "不被暗影毒池影响的情况下击败渊海主宰",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5050101,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "589": {
+    "Id": 589,
+    "AchieveId": 39920,
+    "Title": "终结愤怒",
+    "Desc": "在渊海主宰进入狂暴后将其强制打断",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5050102,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "590": {
+    "Id": 590,
+    "AchieveId": 39921,
+    "Title": "卷入漩涡",
+    "Desc": "被渊海主宰布设的水域减速累计30秒",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5050103,
+    "AimNumShow": 30,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "591": {
+    "Id": 591,
+    "AchieveId": 39922,
+    "Title": "超级舞者",
+    "Desc": "无伤击败怪诞舞者",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5052101,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "592": {
+    "Id": 592,
+    "AchieveId": 39923,
+    "Title": "嵌入节拍",
+    "Desc": "在与怪诞舞者的战斗中遭遇特殊的[反复演奏]",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5052102,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "593": {
+    "Id": 593,
+    "AchieveId": 39924,
+    "Title": "完美踢踏",
+    "Desc": "在与怪诞舞者的单场战斗中极限情况下闪避10次以上",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5052103,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "594": {
+    "Id": 594,
+    "AchieveId": 39925,
+    "Title": "防患未然",
+    "Desc": "在热嘟噜噗男爵处于破韧状态时将其击败",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5053101,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "595": {
+    "Id": 595,
+    "AchieveId": 39926,
+    "Title": "不留情面",
+    "Desc": "在热嘟噜噗男爵处于小罐子形态时将其击败",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5053102,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "596": {
+    "Id": 596,
+    "AchieveId": 39927,
+    "Title": "厨艺展示",
+    "Desc": "单场战斗中味觉惊惧在场上遗留15把及以上刀叉",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5054101,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "597": {
+    "Id": 597,
+    "AchieveId": 39928,
+    "Title": "禁止翻台",
+    "Desc": "全程阻止味觉惊惧回收刀叉",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5054102,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "598": {
+    "Id": 598,
+    "AchieveId": 39929,
+    "Title": "地狱厨房",
+    "Desc": "累计破坏666把味觉惊惧遗留的刀叉",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5054103,
+    "AimNumShow": 666,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "599": {
+    "Id": 599,
+    "AchieveId": 39930,
+    "Title": "狂梦休止",
+    "Desc": "在梦魇处刑人未进入狂暴状态时将其击败",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5016101,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "600": {
+    "Id": 600,
+    "AchieveId": 39931,
+    "Title": "镇静手术",
+    "Desc": "3个梦魇处刑人在10秒内被相继击败",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5016102,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "601": {
+    "Id": 601,
+    "AchieveId": 39932,
+    "Title": "沉着猎手",
+    "Desc": "不被抗礼冲锋命中情况下将其击败",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 1001201,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "602": {
+    "Id": 602,
+    "AchieveId": 39933,
+    "Title": "粗心猎物",
+    "Desc": "单场战斗中，被抗礼5次冲锋命中",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 1001202,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "603": {
+    "Id": 603,
+    "AchieveId": 39934,
+    "Title": "猎手的直觉",
+    "Desc": "中断抗礼的绝招释放",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 1001203,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "604": {
+    "Id": 604,
+    "AchieveId": 39935,
+    "Title": "分庭抗礼",
+    "Desc": "无伤击败抗礼",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 1001204,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "605": {
+    "Id": 605,
+    "AchieveId": 39936,
+    "Title": "激斗胜者",
+    "Desc": "无伤击败盛怒拳铠",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 1306101,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "606": {
+    "Id": 606,
+    "AchieveId": 39937,
+    "Title": "事不过三",
+    "Desc": "被盛怒拳铠的三连冲锋全部命中",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 1306102,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "607": {
+    "Id": 607,
+    "AchieveId": 39938,
+    "Title": "炸膛时刻",
+    "Desc": "在盛怒拳铠释放多轮火炮时将其击杀",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 1306103,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "608": {
+    "Id": 608,
+    "AchieveId": 39939,
+    "Title": "形单影只",
+    "Desc": "击杀影魔时，场上没有敌方单位存活",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5010101,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "609": {
+    "Id": 609,
+    "AchieveId": 39940,
+    "Title": "隐入尘埃",
+    "Desc": "无伤击败影魔",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5010102,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "610": {
+    "Id": 610,
+    "AchieveId": 39941,
+    "Title": "招蜂惹鸟",
+    "Desc": "在翠煌之刃释放鸟群轰炸期间处在技能中心区域",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 1551001,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "611": {
+    "Id": 611,
+    "AchieveId": 39942,
+    "Title": "三重闪",
+    "Desc": "与翠煌之刃的单场战斗中极限情况下闪避5次",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 1551002,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "612": {
+    "Id": 612,
+    "AchieveId": 39943,
+    "Title": "迅雷不及掩耳",
+    "Desc": "与翠煌之刃战斗中未受到任何召唤物造成的伤害",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 1551003,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "613": {
+    "Id": 613,
+    "AchieveId": 39944,
+    "Title": "迎风而上",
+    "Desc": "在与流风美人的战斗中未被任何龙卷风命中",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 1651001,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "614": {
+    "Id": 614,
+    "AchieveId": 39945,
+    "Title": "横行霸道",
+    "Desc": "中断任意仇厄力士的1次爬行技能",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5001101,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "615": {
+    "Id": 615,
+    "AchieveId": 39946,
+    "Title": "直奔主菜",
+    "Desc": "不击杀周围怪物的情况下击杀香脆不停蹄",
+    "Rarity": 1,
+    "Type": 3,
+    "Hide": true,
+    "CompleteCond": 200,
+    "CompleteCondClient": 5055102,
+    "AimNumShow": 1,
+    "LevelType": [
+      6
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "616": {
+    "Id": 616,
+    "AchieveId": 39947,
+    "Title": "冻冻清理专家",
+    "Desc": "在星塔中累计击败200只各种冻冻",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 14,
+    "AimNumShow": 200,
+    "LevelType": [
+      5
+    ],
+    "ClientCompleteParams1": [
+      5006101,
+      5006102,
+      5006103,
+      5006104,
+      5006105,
+      5006106,
+      5006107,
+      5006181,
+      5006182,
+      5006183,
+      5006184,
+      5006185,
+      5006186,
+      5006187,
+      5007101,
+      5007102,
+      5007103,
+      5007104,
+      5007105,
+      5007106,
+      5007107,
+      5007108,
+      5008101,
+      5013101,
+      5013102,
+      5013103,
+      5013104,
+      5013105,
+      5013106,
+      5013107
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "617": {
+    "Id": 617,
+    "AchieveId": 39948,
+    "Title": "冻冻清理大师",
+    "Desc": "在星塔中累计击败1000只各种冻冻",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 14,
+    "AimNumShow": 1000,
+    "Prerequisites": [
+      616
+    ],
+    "LevelType": [
+      5
+    ],
+    "ClientCompleteParams1": [
+      5006101,
+      5006102,
+      5006103,
+      5006104,
+      5006105,
+      5006106,
+      5006107,
+      5006181,
+      5006182,
+      5006183,
+      5006184,
+      5006185,
+      5006186,
+      5006187,
+      5007101,
+      5007102,
+      5007103,
+      5007104,
+      5007105,
+      5007106,
+      5007107,
+      5007108,
+      5008101,
+      5013101,
+      5013102,
+      5013103,
+      5013104,
+      5013105,
+      5013106,
+      5013107
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "618": {
+    "Id": 618,
+    "AchieveId": 39949,
+    "Title": "罐罐清理专家",
+    "Desc": "在星塔中累计击败100只各种罐罐",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 14,
+    "AimNumShow": 100,
+    "LevelType": [
+      5
+    ],
+    "ClientCompleteParams1": [
+      5009101,
+      5009102,
+      5009103,
+      5009104,
+      5009105,
+      5009106,
+      5009107,
+      5014101,
+      5014102,
+      5014103,
+      5014104,
+      5014105,
+      5014106,
+      5014107,
+      5051101,
+      5051102,
+      5053101,
+      5019101,
+      5019102,
+      5019103,
+      5019104,
+      5019105,
+      5019106,
+      5019107,
+      1001801,
+      1001802,
+      1001803,
+      1001811,
+      1001821,
+      1001831,
+      1001841,
+      1001851,
+      1001861,
+      1001871
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "619": {
+    "Id": 619,
+    "AchieveId": 39950,
+    "Title": "罐罐清理大师",
+    "Desc": "在星塔中累计击败600只各种罐罐",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 14,
+    "AimNumShow": 600,
+    "Prerequisites": [
+      618
+    ],
+    "LevelType": [
+      5
+    ],
+    "ClientCompleteParams1": [
+      5009101,
+      5009102,
+      5009103,
+      5009104,
+      5009105,
+      5009106,
+      5009107,
+      5014101,
+      5014102,
+      5014103,
+      5014104,
+      5014105,
+      5014106,
+      5014107,
+      5051101,
+      5051102,
+      5053101,
+      5019101,
+      5019102,
+      5019103,
+      5019104,
+      5019105,
+      5019106,
+      5019107,
+      1001801,
+      1001802,
+      1001803,
+      1001811,
+      1001821,
+      1001831,
+      1001841,
+      1001851,
+      1001861,
+      1001871
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "620": {
+    "Id": 620,
+    "AchieveId": 39951,
+    "Title": "机械对策专家",
+    "Desc": "在星塔中累计击败100只各种机械",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 14,
+    "AimNumShow": 100,
+    "LevelType": [
+      5
+    ],
+    "ClientCompleteParams1": [
+      5023101,
+      5023181,
+      5023102,
+      5023182,
+      5023103,
+      5023104,
+      5023105,
+      5023186,
+      5023106,
+      5023187,
+      5023107,
+      5022101,
+      5022111,
+      5022121,
+      5022131,
+      5022141,
+      5022151,
+      5022161,
+      5024101,
+      5024102,
+      5024103,
+      5024104,
+      5024105,
+      5024106,
+      5024107,
+      5058101,
+      5058201,
+      5057101,
+      5028101,
+      5028102,
+      5028103,
+      5028104,
+      5028105,
+      5028106,
+      5028107,
+      5028108,
+      5021101,
+      5021102,
+      5021103,
+      5021104,
+      5021105,
+      5021106,
+      5021107
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "621": {
+    "Id": 621,
+    "AchieveId": 39952,
+    "Title": "机械对策大师",
+    "Desc": "在星塔中累计击败600只各种机械",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 14,
+    "AimNumShow": 600,
+    "Prerequisites": [
+      620
+    ],
+    "LevelType": [
+      5
+    ],
+    "ClientCompleteParams1": [
+      5023101,
+      5023181,
+      5023102,
+      5023182,
+      5023103,
+      5023104,
+      5023105,
+      5023186,
+      5023106,
+      5023187,
+      5023107,
+      5022101,
+      5022111,
+      5022121,
+      5022131,
+      5022141,
+      5022151,
+      5022161,
+      5024101,
+      5024102,
+      5024103,
+      5024104,
+      5024105,
+      5024106,
+      5024107,
+      5058101,
+      5058201,
+      5057101,
+      5028101,
+      5028102,
+      5028103,
+      5028104,
+      5028105,
+      5028106,
+      5028107,
+      5028108,
+      5021101,
+      5021102,
+      5021103,
+      5021104,
+      5021105,
+      5021106,
+      5021107
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "622": {
+    "Id": 622,
+    "AchieveId": 39953,
+    "Title": "卫士对策专家",
+    "Desc": "在星塔中累计击败200只各种卫士",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 14,
+    "AimNumShow": 200,
+    "LevelType": [
+      5
+    ],
+    "ClientCompleteParams1": [
+      5002101,
+      5002102,
+      5002103,
+      5002104,
+      5002105,
+      5002106,
+      5002107,
+      5002108,
+      5003101,
+      5003181,
+      5003102,
+      5003182,
+      5003103,
+      5003183,
+      5003104,
+      5003184,
+      5003105,
+      5003185,
+      5003106,
+      5003116,
+      5003186,
+      5003107,
+      5003187,
+      5016101,
+      5016102,
+      5016103,
+      5016104,
+      5016105,
+      5016106,
+      5016107,
+      5020101,
+      5020102,
+      5020103,
+      5020104,
+      5020105,
+      5020106,
+      5020107,
+      5012101,
+      5012102,
+      5012103,
+      5012104,
+      5012105,
+      5012106,
+      5012107,
+      1001201,
+      1001202,
+      1001203,
+      1001204,
+      1001205,
+      1001206,
+      1001207
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "623": {
+    "Id": 623,
+    "AchieveId": 39954,
+    "Title": "卫士对策大师",
+    "Desc": "在星塔中累计击败1000只各种卫士",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 14,
+    "AimNumShow": 1000,
+    "Prerequisites": [
+      622
+    ],
+    "LevelType": [
+      5
+    ],
+    "ClientCompleteParams1": [
+      5002101,
+      5002102,
+      5002103,
+      5002104,
+      5002105,
+      5002106,
+      5002107,
+      5002108,
+      5003101,
+      5003181,
+      5003102,
+      5003182,
+      5003103,
+      5003183,
+      5003104,
+      5003184,
+      5003105,
+      5003185,
+      5003106,
+      5003116,
+      5003186,
+      5003107,
+      5003187,
+      5016101,
+      5016102,
+      5016103,
+      5016104,
+      5016105,
+      5016106,
+      5016107,
+      5020101,
+      5020102,
+      5020103,
+      5020104,
+      5020105,
+      5020106,
+      5020107,
+      5012101,
+      5012102,
+      5012103,
+      5012104,
+      5012105,
+      5012106,
+      5012107,
+      1001201,
+      1001202,
+      1001203,
+      1001204,
+      1001205,
+      1001206,
+      1001207
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "624": {
+    "Id": 624,
+    "AchieveId": 39955,
+    "Title": "法师对策专家",
+    "Desc": "在星塔中累计击败200只各种法师",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 14,
+    "AimNumShow": 200,
+    "LevelType": [
+      5
+    ],
+    "ClientCompleteParams1": [
+      5004101,
+      5004102,
+      5004103,
+      5004104,
+      5004105,
+      5004106,
+      5004107,
+      5010101,
+      5010102,
+      5010103,
+      5010104,
+      5010105,
+      5010106,
+      5010107,
+      5010108,
+      5018101,
+      5018102,
+      5018103,
+      5018104,
+      5018105,
+      5018106,
+      5018107,
+      5002001,
+      5002081,
+      5002002,
+      5002003,
+      5002004,
+      5002005,
+      5002006,
+      5002007,
+      5002017,
+      5002009,
+      5002082,
+      5002083,
+      5002084,
+      5002085,
+      5002086,
+      5011101,
+      5011102,
+      5011103,
+      5011104,
+      5011105,
+      5011106,
+      5011107,
+      5052101
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "625": {
+    "Id": 625,
+    "AchieveId": 39956,
+    "Title": "法师对策大师",
+    "Desc": "在星塔中累计击败1000只各种法师",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 200,
+    "CompleteCondClient": 14,
+    "AimNumShow": 1000,
+    "Prerequisites": [
+      624
+    ],
+    "LevelType": [
+      5
+    ],
+    "ClientCompleteParams1": [
+      5004101,
+      5004102,
+      5004103,
+      5004104,
+      5004105,
+      5004106,
+      5004107,
+      5010101,
+      5010102,
+      5010103,
+      5010104,
+      5010105,
+      5010106,
+      5010107,
+      5010108,
+      5018101,
+      5018102,
+      5018103,
+      5018104,
+      5018105,
+      5018106,
+      5018107,
+      5002001,
+      5002081,
+      5002002,
+      5002003,
+      5002004,
+      5002005,
+      5002006,
+      5002007,
+      5002017,
+      5002009,
+      5002082,
+      5002083,
+      5002084,
+      5002085,
+      5002086,
+      5011101,
+      5011102,
+      5011103,
+      5011104,
+      5011105,
+      5011106,
+      5011107,
+      5052101
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "626": {
+    "Id": 626,
+    "AchieveId": 11209,
+    "Title": "开业大吉 IX",
+    "Desc": "完成第9组魔王养成任务",
+    "Rarity": 1,
+    "Type": 1,
+    "CompleteCond": 53,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      55
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "627": {
+    "Id": 627,
+    "AchieveId": 10504,
+    "Title": "行会贵客",
+    "Desc": "通关剧情第四章",
+    "Rarity": 2,
+    "Type": 1,
+    "CompleteCond": 63,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      24
+    ],
+    "Tid1": 111005,
+    "Qty1": 1,
+    "Tid2": 2,
+    "Qty2": 10
+  },
+  "628": {
+    "Id": 628,
+    "AchieveId": 10505,
+    "Title": "优秀员工",
+    "Desc": "通关剧情第五章",
+    "Rarity": 2,
+    "Type": 1,
+    "CompleteCond": 63,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      627
+    ],
+    "Tid1": 111006,
+    "Qty1": 1,
+    "Tid2": 2,
+    "Qty2": 10
+  },
+  "629": {
+    "Id": 629,
+    "AchieveId": 10506,
+    "Title": "拾光者",
+    "Desc": "通关剧情第六章",
+    "Rarity": 2,
+    "Type": 1,
+    "CompleteCond": 63,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      628
+    ],
+    "Tid1": 111007,
+    "Qty1": 1,
+    "Tid2": 2,
+    "Qty2": 10
+  },
+  "630": {
+    "Id": 630,
+    "AchieveId": 10507,
+    "Title": "追逐魅影",
+    "Desc": "通关剧情特别篇「谜影的序曲」",
+    "Rarity": 2,
+    "Type": 1,
+    "CompleteCond": 63,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      629
+    ],
+    "Tid1": 111008,
+    "Qty1": 1,
+    "Tid2": 2,
+    "Qty2": 10
+  },
+  "631": {
+    "Id": 631,
+    "AchieveId": 20208,
+    "Title": "抽刀断水 VIII",
+    "Desc": "首次通关难度8[流水与暗影]",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 507,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      63
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "632": {
+    "Id": 632,
+    "AchieveId": 20308,
+    "Title": "油尽灯枯 VIII",
+    "Desc": "首次通关难度8[烈焰与尘埃]",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 507,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      70
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "633": {
+    "Id": 633,
+    "AchieveId": 20408,
+    "Title": "尘埃落定 VIII",
+    "Desc": "首次通关难度8[风暴与闪电]",
+    "Rarity": 2,
+    "Type": 2,
+    "CompleteCond": 507,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      77
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "634": {
+    "Id": 634,
+    "AchieveId": 20505,
+    "Title": "全栈业务 V",
+    "Desc": "三座主要星塔均通过难度8",
+    "Rarity": 1,
+    "Type": 2,
+    "CompleteCond": 506,
+    "AimNumShow": 3,
+    "Prerequisites": [
+      81
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "635": {
+    "Id": 635,
+    "AchieveId": 10508,
+    "Title": "许愿大师",
+    "Desc": "通关剧情第七章",
+    "Rarity": 2,
+    "Type": 1,
+    "CompleteCond": 63,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      630
+    ],
+    "Tid1": 111009,
+    "Qty1": 1,
+    "Tid2": 2,
+    "Qty2": 10
+  },
+  "636": {
+    "Id": 636,
+    "AchieveId": 10509,
+    "Title": "雏菊的追忆",
+    "Desc": "通关剧情第八章",
+    "Rarity": 2,
+    "Type": 1,
+    "CompleteCond": 63,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      635
+    ],
+    "Tid1": 111010,
+    "Qty1": 1,
+    "Tid2": 2,
+    "Qty2": 10
+  },
+  "637": {
+    "Id": 637,
+    "AchieveId": 33401,
+    "Title": "追猎达人 Ⅰ",
+    "Desc": "在「猎影合围」中锁定10次围猎目标",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 159,
+    "AimNumShow": 10,
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "638": {
+    "Id": 638,
+    "AchieveId": 33402,
+    "Title": "追猎达人 Ⅱ",
+    "Desc": "在「猎影合围」中锁定20次围猎目标",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 159,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      637
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "639": {
+    "Id": 639,
+    "AchieveId": 33403,
+    "Title": "追猎达人 Ⅲ",
+    "Desc": "在「猎影合围」中锁定40次围猎目标",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 159,
+    "AimNumShow": 40,
+    "Prerequisites": [
+      638
+    ],
+    "Tid1": 71024,
+    "Qty1": 1
+  },
+  "640": {
+    "Id": 640,
+    "AchieveId": 33404,
+    "Title": "追猎达人 Ⅳ",
+    "Desc": "在「猎影合围」中锁定60次围猎目标",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 159,
+    "AimNumShow": 60,
+    "Prerequisites": [
+      639
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "641": {
+    "Id": 641,
+    "AchieveId": 33405,
+    "Title": "追猎达人 Ⅴ",
+    "Desc": "在「猎影合围」中锁定80次围猎目标",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 159,
+    "AimNumShow": 80,
+    "Prerequisites": [
+      640
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "642": {
+    "Id": 642,
+    "AchieveId": 33406,
+    "Title": "追猎达人 Ⅵ",
+    "Desc": "在「猎影合围」中锁定100次围猎目标",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 159,
+    "AimNumShow": 100,
+    "Prerequisites": [
+      641
+    ],
+    "Tid1": 71025,
+    "Qty1": 1
+  },
+  "643": {
+    "Id": 643,
+    "AchieveId": 33407,
+    "Title": "追猎达人 Ⅶ",
+    "Desc": "在「猎影合围」中锁定120次围猎目标",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 159,
+    "AimNumShow": 120,
+    "Prerequisites": [
+      642
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "644": {
+    "Id": 644,
+    "AchieveId": 33408,
+    "Title": "追猎达人 Ⅷ",
+    "Desc": "在「猎影合围」中锁定150次围猎目标",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 159,
+    "AimNumShow": 150,
+    "Prerequisites": [
+      643
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "645": {
+    "Id": 645,
+    "AchieveId": 33409,
+    "Title": "追猎达人 Ⅸ",
+    "Desc": "在「猎影合围」中锁定200次围猎目标",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 159,
+    "AimNumShow": 200,
+    "Prerequisites": [
+      644
+    ],
+    "Tid1": 71026,
+    "Qty1": 1
+  },
+  "646": {
+    "Id": 646,
+    "AchieveId": 33410,
+    "Title": "追猎达人 Ⅹ",
+    "Desc": "在「猎影合围」中锁定500次围猎目标",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 159,
+    "AimNumShow": 500,
+    "Prerequisites": [
+      645
+    ],
+    "Tid1": 20,
+    "Qty1": 10
+  },
+  "647": {
+    "Id": 647,
+    "AchieveId": 33501,
+    "Title": "合围专家 Ⅰ",
+    "Desc": "在「猎影合围」中完成30次协助讨伐",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 160,
+    "AimNumShow": 30,
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "648": {
+    "Id": 648,
+    "AchieveId": 33502,
+    "Title": "合围专家 Ⅱ",
+    "Desc": "在「猎影合围」中完成60次协助讨伐",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 160,
+    "AimNumShow": 60,
+    "Prerequisites": [
+      647
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "649": {
+    "Id": 649,
+    "AchieveId": 33503,
+    "Title": "合围专家 Ⅲ",
+    "Desc": "在「猎影合围」中完成120次协助讨伐",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 160,
+    "AimNumShow": 120,
+    "Prerequisites": [
+      648
+    ],
+    "Tid1": 72024,
+    "Qty1": 1
+  },
+  "650": {
+    "Id": 650,
+    "AchieveId": 33504,
+    "Title": "合围专家 Ⅳ",
+    "Desc": "在「猎影合围」中完成180次协助讨伐",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 160,
+    "AimNumShow": 180,
+    "Prerequisites": [
+      649
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "651": {
+    "Id": 651,
+    "AchieveId": 33505,
+    "Title": "合围专家 Ⅴ",
+    "Desc": "在「猎影合围」中完成240次协助讨伐",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 160,
+    "AimNumShow": 240,
+    "Prerequisites": [
+      650
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "652": {
+    "Id": 652,
+    "AchieveId": 33506,
+    "Title": "合围专家 Ⅵ",
+    "Desc": "在「猎影合围」中完成300次协助讨伐",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 160,
+    "AimNumShow": 300,
+    "Prerequisites": [
+      651
+    ],
+    "Tid1": 72025,
+    "Qty1": 1
+  },
+  "653": {
+    "Id": 653,
+    "AchieveId": 33507,
+    "Title": "合围专家 Ⅶ",
+    "Desc": "在「猎影合围」中完成360次协助讨伐",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 160,
+    "AimNumShow": 360,
+    "Prerequisites": [
+      652
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "654": {
+    "Id": 654,
+    "AchieveId": 33508,
+    "Title": "合围专家 Ⅷ",
+    "Desc": "在「猎影合围」中完成450次协助讨伐",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 160,
+    "AimNumShow": 450,
+    "Prerequisites": [
+      653
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "655": {
+    "Id": 655,
+    "AchieveId": 33509,
+    "Title": "合围专家 Ⅸ",
+    "Desc": "在「猎影合围」中完成600次协助讨伐",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 160,
+    "AimNumShow": 600,
+    "Prerequisites": [
+      654
+    ],
+    "Tid1": 72026,
+    "Qty1": 1
+  },
+  "656": {
+    "Id": 656,
+    "AchieveId": 33510,
+    "Title": "合围专家 Ⅹ",
+    "Desc": "在「猎影合围」中完成1500次协助讨伐",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 160,
+    "AimNumShow": 1500,
+    "Tid1": 114005,
+    "Qty1": 1
+  },
+  "657": {
+    "Id": 657,
+    "AchieveId": 10510,
+    "Title": "再见，魔王大人",
+    "Desc": "通关剧情第九章",
+    "Rarity": 2,
+    "Type": 1,
+    "CompleteCond": 63,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      636
+    ],
+    "Tid1": 111011,
+    "Qty1": 1,
+    "Tid2": 2,
+    "Qty2": 10
+  },
+  "658": {
+    "Id": 658,
+    "AchieveId": 33601,
+    "Title": "深塔探求者 Ⅰ",
+    "Desc": "在「尖兵陷阵」中成功完成1次调查。",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 174,
+    "AimNumShow": 1,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "659": {
+    "Id": 659,
+    "AchieveId": 33602,
+    "Title": "深塔探求者 Ⅱ",
+    "Desc": "在「尖兵陷阵」中成功完成5次调查。",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 174,
+    "AimNumShow": 5,
+    "Prerequisites": [
+      658
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "660": {
+    "Id": 660,
+    "AchieveId": 33603,
+    "Title": "深塔探求者 Ⅲ",
+    "Desc": "在「尖兵陷阵」中成功完成10次调查。",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 174,
+    "AimNumShow": 10,
+    "Prerequisites": [
+      659
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "661": {
+    "Id": 661,
+    "AchieveId": 33604,
+    "Title": "深塔探求者 Ⅳ",
+    "Desc": "在「尖兵陷阵」中成功完成20次调查。",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 174,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      660
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "662": {
+    "Id": 662,
+    "AchieveId": 33605,
+    "Title": "深塔探求者 Ⅴ",
+    "Desc": "在「尖兵陷阵」中成功完成50次调查。",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 174,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      661
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  }
+}

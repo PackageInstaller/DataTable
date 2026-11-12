@@ -1,0 +1,118 @@
+#define LOG_DEBUG
+using System.Collections;
+using TrueSync;
+
+namespace AIScript.DynamicLevel;
+
+public class TrialLevelProcess_139_Main1 : TrialLevelProcessBase
+{
+	private string waveName_taskA = "Monster_Wave_1";
+
+	private string waveName_taskB = "Monster_Wave_2";
+
+	private string waveName_taskC = "Monster_Wave_3";
+
+	private string waveName_taskD = "Monster_Wave_0";
+
+	private readonly int interactiveId_Wall = 2011;
+
+	private readonly string teleportName = "LevelExit_Gizmo";
+
+	private readonly TSVector2 drop_pos = new TSVector2(0, 1);
+
+	private readonly FP drop_Cd = 9999;
+
+	public override void OnLevelStart()
+	{
+		base.OnLevelStart();
+		StartLogicCoroutine(Logic());
+		ChangeEnegyDropCd(drop_Cd);
+		ChangeEnegyDropPos(drop_pos);
+		DropItemEnegy();
+	}
+
+	private IEnumerator Logic()
+	{
+		yield return null;
+		ActiveMonsterSpawnWave(waveName_taskA);
+	}
+
+	private void RefreshAllskillandFullEngergy()
+	{
+		for (int i = 0; i < SceneSingleton<AdventurePlayerController>.Instance.ActorLs.Count; i++)
+		{
+			PlayerAdventureActor playerAdventureActor = SceneSingleton<AdventurePlayerController>.Instance.ActorLs.get_Item(i);
+			if (playerAdventureActor.dataID == actorId)
+			{
+				PlayerSkillCd playerSkillCd = playerAdventureActor.playerSkillCd;
+				playerSkillCd.ResetAllSkillCD();
+				int totalEnergy = playerSkillCd.GetTotalEnergy();
+				playerSkillCd.AddEnergy(totalEnergy);
+			}
+		}
+	}
+
+	protected override void OnGetDrop()
+	{
+		base.OnGetDrop();
+		AddBuffNumByActor(139, 13900002, 3);
+	}
+
+	protected override void OnRoomWaveMonsterCleared(AdventureLevelRoomWaveMonsterClearedEvent ievent)
+	{
+		base.OnRoomWaveMonsterCleared(ievent);
+		string wave = ievent.wave;
+		if (string.Equals(wave, waveName_taskA) && taskProcess <= 1)
+		{
+			ActiveMonsterSpawnWave(waveName_taskA);
+		}
+		if (string.Equals(wave, waveName_taskB) && taskProcess <= 2)
+		{
+			ActiveMonsterSpawnWave(waveName_taskB);
+		}
+		if (string.Equals(wave, waveName_taskC) && taskProcess <= 3)
+		{
+			ActiveMonsterSpawnWave(waveName_taskC);
+		}
+	}
+
+	public override void OnTaskFinish(int taskId, bool isLastTask = false)
+	{
+		base.OnTaskFinish(taskId, isLastTask);
+		if (taskProcess == 2)
+		{
+			RefreshAllskillandFullEngergy();
+			ActiveMonsterSpawnWave(waveName_taskB);
+		}
+		if (taskProcess == 3)
+		{
+			RefreshAllskillandFullEngergy();
+			KillMonsterSpawnWave(waveName_taskB);
+			ActiveMonsterSpawnWave(waveName_taskC);
+		}
+		if (taskProcess == 4)
+		{
+			SendTaskProcessToServer();
+			ActiveMonsterSpawnWave(waveName_taskD);
+			InteractiveManager instance = Singleton<InteractiveManager>.Instance;
+			if (instance != null)
+			{
+				int num = interactiveId_Wall;
+				instance.setInteractiveObjActiveState(num.ToString(), InteractiveManager.processState.state1, null);
+			}
+			OpenTeleporters(teleportName);
+			DropItemEnegy();
+		}
+	}
+
+	public override void OnTaskTargetSuccess(int taskId, int taskTargetId, bool isLasTaskTarget = false)
+	{
+		base.OnTaskTargetSuccess(taskId, taskTargetId, isLasTaskTarget);
+		NovaLogger.Debug($"试玩关目标完成,目标Id:{taskTargetId},是否为最后一个目标:{isLasTaskTarget}");
+	}
+
+	public override void OnLevelEnd()
+	{
+		base.OnLevelEnd();
+	}
+}

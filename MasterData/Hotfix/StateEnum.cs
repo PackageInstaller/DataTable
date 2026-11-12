@@ -1,0 +1,24 @@
+public enum StateEnum
+{
+	Stun,
+	StunWeakened,
+	Frozen,
+	FrozenWeakened,
+	Sleep,
+	SleepWeakened,
+	Charm,
+	CharmWeakened,
+	Terror,
+	TerrorWeakened,
+	Taunt,
+	TauntWeakened,
+	Bondage,
+	BondageWeakened,
+	Silence,
+	SilenceWeakened,
+	Chaos,
+	ChaosWeakened,
+	Blindness,
+	BlindnessWeakened,
+	ReduceFOV
+}

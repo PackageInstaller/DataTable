@@ -1,0 +1,358 @@
+{
+  "1011": {
+    "Id": 1011,
+    "ActivityId": 800001,
+    "Type": 1,
+    "Name": "入镜伊始",
+    "StarScore": [
+      1000,
+      2000,
+      3000
+    ],
+    "FloorId": 101
+  },
+  "1012": {
+    "Id": 1012,
+    "ActivityId": 800001,
+    "Type": 1,
+    "Name": "火之镜",
+    "Prev": 1011,
+    "StarScore": [
+      30000,
+      40000,
+      50000
+    ],
+    "FloorId": 102
+  },
+  "1013": {
+    "Id": 1013,
+    "ActivityId": 800001,
+    "Type": 1,
+    "Name": "水之镜",
+    "Prev": 1012,
+    "StarScore": [
+      30000,
+      50000,
+      70000
+    ],
+    "FloorId": 103
+  },
+  "1014": {
+    "Id": 1014,
+    "ActivityId": 800001,
+    "Type": 1,
+    "Name": "风之镜",
+    "Prev": 1013,
+    "StarScore": [
+      30000,
+      60000,
+      90000
+    ],
+    "FloorId": 104
+  },
+  "1015": {
+    "Id": 1015,
+    "ActivityId": 800001,
+    "Type": 1,
+    "Name": "终焉之镜",
+    "Prev": 1014,
+    "StarScore": [
+      50000,
+      100000,
+      200000
+    ],
+    "FloorId": 105,
+    "ScoreLevel": true
+  },
+  "1021": {
+    "Id": 1021,
+    "ActivityId": 800002,
+    "Type": 1,
+    "Name": "入镜伊始",
+    "StarScore": [
+      2000,
+      9990,
+      9999
+    ],
+    "FloorId": 201
+  },
+  "1022": {
+    "Id": 1022,
+    "ActivityId": 800002,
+    "Type": 1,
+    "Name": "合约之镜",
+    "Prev": 1021,
+    "StarScore": [
+      30000,
+      99990,
+      99999
+    ],
+    "FloorId": 202
+  },
+  "1023": {
+    "Id": 1023,
+    "ActivityId": 800002,
+    "Type": 1,
+    "Name": "火之镜",
+    "Prev": 1022,
+    "StarScore": [
+      50000,
+      99990,
+      99999
+    ],
+    "FloorId": 203
+  },
+  "1024": {
+    "Id": 1024,
+    "ActivityId": 800002,
+    "Type": 1,
+    "Name": "终焉之镜",
+    "Prev": 1023,
+    "StarScore": [
+      200000,
+      999990,
+      999999
+    ],
+    "FloorId": 204,
+    "ScoreLevel": true
+  },
+  "1031": {
+    "Id": 1031,
+    "ActivityId": 800003,
+    "Type": 1,
+    "Name": "入镜伊始",
+    "StarScore": [
+      2000,
+      9990,
+      9999
+    ],
+    "FloorId": 301
+  },
+  "1032": {
+    "Id": 1032,
+    "ActivityId": 800003,
+    "Type": 1,
+    "Name": "合约之镜",
+    "Prev": 1031,
+    "StarScore": [
+      30000,
+      99990,
+      99999
+    ],
+    "FloorId": 302
+  },
+  "1033": {
+    "Id": 1033,
+    "ActivityId": 800003,
+    "Type": 1,
+    "Name": "火之镜",
+    "Prev": 1032,
+    "StarScore": [
+      50000,
+      99990,
+      99999
+    ],
+    "FloorId": 303
+  },
+  "1034": {
+    "Id": 1034,
+    "ActivityId": 800003,
+    "Type": 1,
+    "Name": "终焉之镜",
+    "Prev": 1033,
+    "StarScore": [
+      200000,
+      999990,
+      999999
+    ],
+    "FloorId": 304,
+    "ScoreLevel": true
+  },
+  "1041": {
+    "Id": 1041,
+    "ActivityId": 800004,
+    "Type": 1,
+    "Name": "入镜伊始",
+    "StarScore": [
+      2000,
+      9990,
+      9999
+    ],
+    "FloorId": 401
+  },
+  "1042": {
+    "Id": 1042,
+    "ActivityId": 800004,
+    "Type": 1,
+    "Name": "合约之镜",
+    "Prev": 1041,
+    "StarScore": [
+      30000,
+      99990,
+      99999
+    ],
+    "FloorId": 402
+  },
+  "1043": {
+    "Id": 1043,
+    "ActivityId": 800004,
+    "Type": 1,
+    "Name": "火之镜",
+    "Prev": 1042,
+    "StarScore": [
+      50000,
+      99990,
+      99999
+    ],
+    "FloorId": 403
+  },
+  "1044": {
+    "Id": 1044,
+    "ActivityId": 800004,
+    "Type": 1,
+    "Name": "终焉之镜",
+    "Prev": 1043,
+    "StarScore": [
+      200000,
+      999990,
+      999999
+    ],
+    "FloorId": 404,
+    "ScoreLevel": true
+  },
+  "1051": {
+    "Id": 1051,
+    "ActivityId": 800005,
+    "Type": 1,
+    "Name": "入镜伊始",
+    "StarScore": [
+      2000,
+      9990,
+      9999
+    ],
+    "FloorId": 501
+  },
+  "1052": {
+    "Id": 1052,
+    "ActivityId": 800005,
+    "Type": 1,
+    "Name": "合约之镜",
+    "Prev": 1051,
+    "StarScore": [
+      30000,
+      99990,
+      99999
+    ],
+    "FloorId": 502
+  },
+  "1053": {
+    "Id": 1053,
+    "ActivityId": 800005,
+    "Type": 1,
+    "Name": "火之镜",
+    "Prev": 1052,
+    "StarScore": [
+      50000,
+      99990,
+      99999
+    ],
+    "FloorId": 503
+  },
+  "1054": {
+    "Id": 1054,
+    "ActivityId": 800005,
+    "Type": 1,
+    "Name": "终焉之镜",
+    "Prev": 1053,
+    "StarScore": [
+      200000,
+      999990,
+      999999
+    ],
+    "FloorId": 504,
+    "ScoreLevel": true
+  },
+  "1055": {
+    "Id": 1055,
+    "ActivityId": 800005,
+    "Type": 2,
+    "Name": "超越之镜",
+    "Prev": 1054,
+    "StarScore": [
+      200000,
+      999990,
+      999999
+    ],
+    "FloorId": 505,
+    "ScoreLevel": true
+  },
+  "1061": {
+    "Id": 1061,
+    "ActivityId": 800006,
+    "Type": 1,
+    "Name": "入镜伊始",
+    "StarScore": [
+      2000,
+      9990,
+      9999
+    ],
+    "FloorId": 601,
+    "Skip": true
+  },
+  "1062": {
+    "Id": 1062,
+    "ActivityId": 800006,
+    "Type": 1,
+    "Name": "合约之镜",
+    "Prev": 1061,
+    "StarScore": [
+      30000,
+      99990,
+      99999
+    ],
+    "FloorId": 602,
+    "Skip": true
+  },
+  "1063": {
+    "Id": 1063,
+    "ActivityId": 800006,
+    "Type": 1,
+    "Name": "火之镜",
+    "Prev": 1062,
+    "StarScore": [
+      50000,
+      99990,
+      99999
+    ],
+    "FloorId": 603,
+    "Skip": true
+  },
+  "1064": {
+    "Id": 1064,
+    "ActivityId": 800006,
+    "Type": 1,
+    "Name": "终焉之镜",
+    "Prev": 1063,
+    "StarScore": [
+      200000,
+      999990,
+      999999
+    ],
+    "FloorId": 604,
+    "ScoreLevel": true
+  },
+  "1065": {
+    "Id": 1065,
+    "ActivityId": 800006,
+    "Type": 2,
+    "Name": "超越之镜",
+    "Prev": 1064,
+    "StarScore": [
+      200000,
+      999990,
+      999999
+    ],
+    "FloorId": 605,
+    "ScoreLevel": true
+  }
+}

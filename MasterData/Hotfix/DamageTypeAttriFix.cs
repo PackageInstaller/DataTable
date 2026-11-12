@@ -1,0 +1,36 @@
+using TrueSync;
+
+public class DamageTypeAttriFix : AdventureEffectBase
+{
+	private FDP value;
+
+	public override void Execute()
+	{
+		base.Execute();
+		if (!TryParseStringParamToFDP(effectValueConfig.EffectTypeParam1, out value))
+		{
+			return;
+		}
+		foreach (AdventureActor target in _targets)
+		{
+			Process(target, value);
+		}
+	}
+
+	public override void PostExecute()
+	{
+		base.PostExecute();
+		foreach (AdventureActor target in _targets)
+		{
+			Process(target, -value);
+		}
+	}
+
+	private void Process(AdventureActor actor, FDP val)
+	{
+		int effectTypeFirstSubtype = effectValueConfig.EffectTypeFirstSubtype;
+		int effectTypeSecondSubtype = effectValueConfig.EffectTypeSecondSubtype;
+		int key = CommonHelper.ConvertAttributeTypeAndElementOrDamageTypeToKey(effectTypeFirstSubtype, effectTypeSecondSubtype, isElementType: false, isBaseValue: true, isAssignValue: false);
+		actor.actorInfo.ChangeAttributeValueWithElementOrDamageType(key, val);
+	}
+}

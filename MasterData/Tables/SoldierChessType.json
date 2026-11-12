@@ -1,0 +1,29 @@
+{
+  "1": {
+    "Id": 1,
+    "ChessType": 1,
+    "Name": "主战型",
+    "Icon": "ChessTypeFight",
+    "PositionType": [
+      1
+    ]
+  },
+  "2": {
+    "Id": 2,
+    "ChessType": 2,
+    "Name": "后援型",
+    "Icon": "ChessTypeSupport",
+    "PositionType": [
+      2
+    ]
+  },
+  "3": {
+    "Id": 3,
+    "Name": "平衡型",
+    "Icon": "ChessTypeBalance",
+    "PositionType": [
+      1,
+      2
+    ]
+  }
+}

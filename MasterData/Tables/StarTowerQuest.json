@@ -1,0 +1,705 @@
+{
+  "100": {
+    "Id": 100,
+    "Title": "激活节点「同谐的心弦Ⅰ」（完成后解锁更多研究任务）",
+    "TowerQuestType": 1,
+    "Reward1": 2,
+    "RewardQty1": 10,
+    "Reward2": 1,
+    "RewardQty2": 30000
+  },
+  "200": {
+    "Id": 200,
+    "Title": "激活节点「星梯的密码」（完成后解锁更多研究任务）",
+    "TowerQuestType": 1,
+    "PreTowerQuestIds": [
+      100
+    ],
+    "Reward1": 2,
+    "RewardQty1": 10,
+    "Reward2": 1,
+    "RewardQty2": 50000
+  },
+  "300": {
+    "Id": 300,
+    "Title": "激活节点「冲线的褒奖」「唱机改造I」（完成后解锁更多研究任务）",
+    "TowerQuestType": 1,
+    "PreTowerQuestIds": [
+      200
+    ],
+    "Reward1": 2,
+    "RewardQty1": 10,
+    "Reward2": 1,
+    "RewardQty2": 50000
+  },
+  "400": {
+    "Id": 400,
+    "Title": "激活节点「命运的选择Ⅰ」（完成后解锁更多研究任务）",
+    "TowerQuestType": 1,
+    "PreTowerQuestIds": [
+      300
+    ],
+    "Reward1": 2,
+    "RewardQty1": 10,
+    "Reward2": 1,
+    "RewardQty2": 50000
+  },
+  "500": {
+    "Id": 500,
+    "Title": "激活节点「吞金的陷阱」「唱机改造Ⅱ」（完成后解锁更多研究任务）",
+    "TowerQuestType": 1,
+    "PreTowerQuestIds": [
+      400
+    ],
+    "Reward1": 2,
+    "RewardQty1": 10,
+    "Reward2": 1,
+    "RewardQty2": 100000
+  },
+  "600": {
+    "Id": 600,
+    "Title": "激活节点「无际心海Ⅰ」（完成后解锁更多研究任务）",
+    "TowerQuestType": 1,
+    "PreTowerQuestIds": [
+      500
+    ],
+    "Reward1": 2,
+    "RewardQty1": 10,
+    "Reward2": 1,
+    "RewardQty2": 100000
+  },
+  "700": {
+    "Id": 700,
+    "Title": "激活节点「云彩的骰子」「货仓的钥匙」（完成后解锁更多研究任务）",
+    "TowerQuestType": 1,
+    "PreTowerQuestIds": [
+      600
+    ],
+    "Reward1": 2,
+    "RewardQty1": 10,
+    "Reward2": 1,
+    "RewardQty2": 100000
+  },
+  "800": {
+    "Id": 800,
+    "Title": "激活节点「无际心海Ⅱ」（完成后解锁更多研究任务）",
+    "TowerQuestType": 1,
+    "PreTowerQuestIds": [
+      700
+    ],
+    "Reward1": 2,
+    "RewardQty1": 10,
+    "Reward2": 1,
+    "RewardQty2": 150000
+  },
+  "900": {
+    "Id": 900,
+    "Title": "激活节点「仓管的权能」（完成后解锁更多研究任务）",
+    "TowerQuestType": 1,
+    "PreTowerQuestIds": [
+      800
+    ],
+    "Reward1": 2,
+    "RewardQty1": 10,
+    "Reward2": 1,
+    "RewardQty2": 150000
+  },
+  "1000": {
+    "Id": 1000,
+    "Title": "激活节点「辉光的奇迹」（完成后解锁更多研究任务）",
+    "TowerQuestType": 1,
+    "PreTowerQuestIds": [
+      900
+    ],
+    "Reward1": 2,
+    "RewardQty1": 10,
+    "Reward2": 1,
+    "RewardQty2": 150000
+  },
+  "1100": {
+    "Id": 1100,
+    "Title": "激活节点「后付的代价」",
+    "TowerQuestType": 1,
+    "PreTowerQuestIds": [
+      1000
+    ],
+    "Reward1": 2,
+    "RewardQty1": 10,
+    "Reward2": 1,
+    "RewardQty2": 150000
+  },
+  "101": {
+    "Id": 101,
+    "Title": "参与1次星塔探索",
+    "TowerQuestType": 2,
+    "Reward1": 51,
+    "RewardQty1": 10,
+    "Reward2": 30001,
+    "RewardQty2": 2
+  },
+  "102": {
+    "Id": 102,
+    "Title": "通关1次难度1或以上的烈焰与尘埃",
+    "TowerQuestType": 2,
+    "Reward1": 51,
+    "RewardQty1": 30,
+    "Reward2": 30001,
+    "RewardQty2": 2
+  },
+  "103": {
+    "Id": 103,
+    "Title": "通关1次难度2或以上的星塔探索",
+    "TowerQuestType": 2,
+    "Reward1": 51,
+    "RewardQty1": 70,
+    "Reward2": 30001,
+    "RewardQty2": 3
+  },
+  "201": {
+    "Id": 201,
+    "Title": "通关2次难度2或以上的星塔",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      100,
+      101,
+      103
+    ],
+    "Reward1": 51,
+    "RewardQty1": 60,
+    "Reward2": 30001,
+    "RewardQty2": 3
+  },
+  "202": {
+    "Id": 202,
+    "Title": "商店累计购物10次",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      100
+    ],
+    "Reward1": 51,
+    "RewardQty1": 40,
+    "Reward2": 30001,
+    "RewardQty2": 3
+  },
+  "203": {
+    "Id": 203,
+    "Title": "累计获取音符达到30个",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      100
+    ],
+    "Reward1": 51,
+    "RewardQty1": 40,
+    "Reward2": 30001,
+    "RewardQty2": 5
+  },
+  "301": {
+    "Id": 301,
+    "Title": "获得1个等级达到5级的纪录",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      200
+    ],
+    "Reward1": 51,
+    "RewardQty1": 80,
+    "Reward2": 30002,
+    "RewardQty2": 1
+  },
+  "302": {
+    "Id": 302,
+    "Title": "累计获取音符达到80个",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      200
+    ],
+    "Reward1": 51,
+    "RewardQty1": 40,
+    "Reward2": 30002,
+    "RewardQty2": 1
+  },
+  "303": {
+    "Id": 303,
+    "Title": "「星塔事典」累计收录10项逸闻笔记",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      200
+    ],
+    "Reward1": 51,
+    "RewardQty1": 40,
+    "Reward2": 30002,
+    "RewardQty2": 2
+  },
+  "401": {
+    "Id": 401,
+    "Title": "通关1次难度3或以上的星塔",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      300,
+      201
+    ],
+    "Reward1": 51,
+    "RewardQty1": 100,
+    "Reward2": 30002,
+    "RewardQty2": 2
+  },
+  "402": {
+    "Id": 402,
+    "Title": "商店累计购物20次",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      300,
+      202
+    ],
+    "Reward1": 51,
+    "RewardQty1": 50,
+    "Reward2": 30002,
+    "RewardQty2": 2
+  },
+  "403": {
+    "Id": 403,
+    "Title": "累计使用强化机达到6次",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      300,
+      203
+    ],
+    "Reward1": 51,
+    "RewardQty1": 50,
+    "Reward2": 30002,
+    "RewardQty2": 3
+  },
+  "501": {
+    "Id": 501,
+    "Title": "累计购买8次折扣商品",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      400
+    ],
+    "Reward1": 51,
+    "RewardQty1": 50,
+    "Reward2": 30002,
+    "RewardQty2": 3
+  },
+  "502": {
+    "Id": 502,
+    "Title": "获得1个等级达到10级的纪录",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      400,
+      301
+    ],
+    "Reward1": 51,
+    "RewardQty1": 100,
+    "Reward2": 30002,
+    "RewardQty2": 3
+  },
+  "503": {
+    "Id": 503,
+    "Title": "累计获取音符达到150个",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      400,
+      302
+    ],
+    "Reward1": 51,
+    "RewardQty1": 50,
+    "Reward2": 30002,
+    "RewardQty2": 3
+  },
+  "504": {
+    "Id": 504,
+    "Title": "累计激活10次协奏技能",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      400
+    ],
+    "Reward1": 51,
+    "RewardQty1": 50,
+    "Reward2": 30002,
+    "RewardQty2": 5
+  },
+  "505": {
+    "Id": 505,
+    "Title": "「星塔事典」累计收录20项逸闻笔记",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      400,
+      303
+    ],
+    "Reward1": 51,
+    "RewardQty1": 50,
+    "Reward2": 30002,
+    "RewardQty2": 5
+  },
+  "601": {
+    "Id": 601,
+    "Title": "通关1次难度4或以上的星塔",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      500,
+      401
+    ],
+    "Reward1": 51,
+    "RewardQty1": 100,
+    "Reward2": 30003,
+    "RewardQty2": 3
+  },
+  "602": {
+    "Id": 602,
+    "Title": "累计商店购物50次",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      500,
+      402
+    ],
+    "Reward1": 51,
+    "RewardQty1": 50,
+    "Reward2": 30003,
+    "RewardQty2": 3
+  },
+  "603": {
+    "Id": 603,
+    "Title": "累计使用强化机达到20次",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      500,
+      403
+    ],
+    "Reward1": 51,
+    "RewardQty1": 50,
+    "Reward2": 30003,
+    "RewardQty2": 3
+  },
+  "605": {
+    "Id": 605,
+    "Title": "触发3次节点「惊喜音符」的效果",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      500
+    ],
+    "Reward1": 51,
+    "RewardQty1": 50,
+    "Reward2": 30003,
+    "RewardQty2": 3
+  },
+  "701": {
+    "Id": 701,
+    "Title": "获取新潜能时，触发3次节点「心花怒放」的效果",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      600
+    ],
+    "Reward1": 51,
+    "RewardQty1": 60,
+    "Reward2": 30003,
+    "RewardQty2": 4
+  },
+  "702": {
+    "Id": 702,
+    "Title": "获得1个等级达到20级的纪录",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      600,
+      502
+    ],
+    "Reward1": 51,
+    "RewardQty1": 120,
+    "Reward2": 30003,
+    "RewardQty2": 4
+  },
+  "703": {
+    "Id": 703,
+    "Title": "累计获取音符达到500个",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      600,
+      503
+    ],
+    "Reward1": 51,
+    "RewardQty1": 60,
+    "Reward2": 30003,
+    "RewardQty2": 4
+  },
+  "704": {
+    "Id": 704,
+    "Title": "累计激活25次协奏技能",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      600,
+      504
+    ],
+    "Reward1": 51,
+    "RewardQty1": 60,
+    "Reward2": 30003,
+    "RewardQty2": 4
+  },
+  "705": {
+    "Id": 705,
+    "Title": "「星塔事典」累计收录30项逸闻笔记",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      600,
+      505
+    ],
+    "Reward1": 51,
+    "RewardQty1": 60,
+    "Reward2": 30003,
+    "RewardQty2": 4
+  },
+  "801": {
+    "Id": 801,
+    "Title": "通关5次难度4或以上的星塔",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      700,
+      601
+    ],
+    "Reward1": 51,
+    "RewardQty1": 150,
+    "Reward2": 30003,
+    "RewardQty2": 5
+  },
+  "802": {
+    "Id": 802,
+    "Title": "累计商店购物100次",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      700,
+      602
+    ],
+    "Reward1": 51,
+    "RewardQty1": 100,
+    "Reward2": 30003,
+    "RewardQty2": 5
+  },
+  "803": {
+    "Id": 803,
+    "Title": "累计使用强化机达到80次",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      700,
+      603
+    ],
+    "Reward1": 51,
+    "RewardQty1": 100,
+    "Reward2": 30003,
+    "RewardQty2": 5
+  },
+  "804": {
+    "Id": 804,
+    "Title": "累计进行20次潜能重随",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      700
+    ],
+    "Reward1": 51,
+    "RewardQty1": 100,
+    "Reward2": 30003,
+    "RewardQty2": 5
+  },
+  "901": {
+    "Id": 901,
+    "Title": "通关2次难度5或以上的星塔",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      800,
+      801
+    ],
+    "Reward1": 51,
+    "RewardQty1": 180,
+    "Reward2": 30004,
+    "RewardQty2": 3
+  },
+  "902": {
+    "Id": 902,
+    "Title": "获得1个等级达到25级的纪录",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      800,
+      702
+    ],
+    "Reward1": 51,
+    "RewardQty1": 180,
+    "Reward2": 30004,
+    "RewardQty2": 3
+  },
+  "903": {
+    "Id": 903,
+    "Title": "累计获取音符达到2000个",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      800,
+      703
+    ],
+    "Reward1": 51,
+    "RewardQty1": 80,
+    "Reward2": 30004,
+    "RewardQty2": 3
+  },
+  "904": {
+    "Id": 904,
+    "Title": "累计激活50次协奏技能",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      800,
+      704
+    ],
+    "Reward1": 51,
+    "RewardQty1": 80,
+    "Reward2": 30004,
+    "RewardQty2": 3
+  },
+  "905": {
+    "Id": 905,
+    "Title": "「星塔事典」累计收录40项逸闻笔记",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      800,
+      705
+    ],
+    "Reward1": 51,
+    "RewardQty1": 80,
+    "Reward2": 30004,
+    "RewardQty2": 3
+  },
+  "906": {
+    "Id": 906,
+    "Title": "使用10次商店补货",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      800
+    ],
+    "Reward1": 51,
+    "RewardQty1": 80,
+    "Reward2": 30004,
+    "RewardQty2": 3
+  },
+  "1001": {
+    "Id": 1001,
+    "Title": "通关2次难度6或以上的星塔",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      900,
+      901
+    ],
+    "Reward1": 51,
+    "RewardQty1": 200,
+    "Reward2": 30004,
+    "RewardQty2": 4
+  },
+  "1002": {
+    "Id": 1002,
+    "Title": "累计商店购物200次",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      900,
+      802
+    ],
+    "Reward1": 51,
+    "RewardQty1": 200,
+    "Reward2": 30004,
+    "RewardQty2": 4
+  },
+  "1003": {
+    "Id": 1003,
+    "Title": "累计使用强化机达到150次",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      900,
+      803
+    ],
+    "Reward1": 51,
+    "RewardQty1": 100,
+    "Reward2": 30004,
+    "RewardQty2": 4
+  },
+  "1004": {
+    "Id": 1004,
+    "Title": "获取新潜能时，触发10次节点「心花怒放」的效果",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      900,
+      701
+    ],
+    "Reward1": 51,
+    "RewardQty1": 100,
+    "Reward2": 30004,
+    "RewardQty2": 4
+  },
+  "1005": {
+    "Id": 1005,
+    "Title": "强化潜能时，触发5次节点「潜能飞升」的效果",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      900
+    ],
+    "Reward1": 51,
+    "RewardQty1": 100,
+    "Reward2": 30004,
+    "RewardQty2": 4
+  },
+  "1101": {
+    "Id": 1101,
+    "Title": "通关3次难度8或以上的星塔",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      1000
+    ],
+    "Reward1": 51,
+    "RewardQty1": 240,
+    "Reward2": 30004,
+    "RewardQty2": 5
+  },
+  "1102": {
+    "Id": 1102,
+    "Title": "累计获取音符达到3000个",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      1000,
+      903
+    ],
+    "Reward1": 51,
+    "RewardQty1": 240,
+    "Reward2": 30004,
+    "RewardQty2": 5
+  },
+  "1103": {
+    "Id": 1103,
+    "Title": "新获得1个等级达到31级的纪录",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      1000,
+      902
+    ],
+    "Reward1": 51,
+    "RewardQty1": 240,
+    "Reward2": 30004,
+    "RewardQty2": 5
+  },
+  "1104": {
+    "Id": 1104,
+    "Title": "累计激活80次协奏技能",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      1000,
+      904
+    ],
+    "Reward1": 51,
+    "RewardQty1": 240,
+    "Reward2": 30004,
+    "RewardQty2": 5
+  },
+  "1105": {
+    "Id": 1105,
+    "Title": "获取新潜能时，触发30次节点「心花怒放」的效果",
+    "TowerQuestType": 2,
+    "PreTowerQuestIds": [
+      1000,
+      1004
+    ],
+    "Reward1": 51,
+    "RewardQty1": 240,
+    "Reward2": 30004,
+    "RewardQty2": 5
+  }
+}

@@ -1,0 +1,19 @@
+public enum TargetType
+{
+	None,
+	Owner,
+	Teammate,
+	Friend,
+	Enemy,
+	Both,
+	OwnerSummoned,
+	TeammateSummoned,
+	FriendSummoned,
+	EnemySummoned,
+	BothSummoned,
+	MainPlayerActor,
+	AssitPlayerActor,
+	TeammateWithoutSummoned,
+	TeammateWithoutNotMinionSummoned,
+	FriendWithoutSummoned
+}

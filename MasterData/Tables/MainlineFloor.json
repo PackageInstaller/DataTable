@@ -1,0 +1,822 @@
+{
+  "1000101": {
+    "Id": 1000101,
+    "SceneName": "Levels/Main/Forest/Forest_Main_1_1",
+    "ConfigPrefabName": "Forest_Main_1",
+    "Theme": 7,
+    "BGM": "forest_explore_setState",
+    "LeaveTriggerEvent": "amb_forest_all_stop",
+    "MonsterLv": 1
+  },
+  "1000201": {
+    "Id": 1000201,
+    "SceneName": "Levels/Main/Forest/Forest_Main_1_3_1",
+    "ConfigPrefabName": "Forest_Main_2",
+    "Theme": 7,
+    "BGM": "forest_explore_setState",
+    "LeaveTriggerEvent": "amb_forest_all_stop",
+    "MonsterLv": 2
+  },
+  "1000301": {
+    "Id": 1000301,
+    "SceneName": "Levels/Main/Forest/Forest_Main_1_3",
+    "ConfigPrefabName": "Forest_Main_3",
+    "Theme": 7,
+    "BGM": "forest_explore_setState",
+    "LeaveTriggerEvent": "amb_forest_all_stop",
+    "MonsterLv": 3
+  },
+  "1000401": {
+    "Id": 1000401,
+    "SceneName": "Levels/Main/Forest/Forest_Main_1_4",
+    "ConfigPrefabName": "Forest_Main_4",
+    "Theme": 7,
+    "BGM": "forest_avg_stop_setState",
+    "LeaveTriggerEvent": "amb_forest_all_stop_avg_none",
+    "MonsterLv": 4
+  },
+  "1000501": {
+    "Id": 1000501,
+    "SceneName": "Levels/Main/Forest/Forest_Main_1_5",
+    "ConfigPrefabName": "Forest_Main_5",
+    "Theme": 7,
+    "BGM": "forest_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_forest_all_stop",
+    "MonsterLv": 5
+  },
+  "1000601": {
+    "Id": 1000601,
+    "SceneName": "Levels/Main/ForestRuins/Forest_Ruins_Main_1_6",
+    "ConfigPrefabName": "Forest_Main_6",
+    "Theme": 7,
+    "BGM": "forestRuins_explore_setState",
+    "LeaveTriggerEvent": "amb_forestRuins_all_stop",
+    "MonsterLv": 6
+  },
+  "1000701": {
+    "Id": 1000701,
+    "SceneName": "Levels/Main/ForestRuins/Forest_Ruins_Main_1_7",
+    "ConfigPrefabName": "Forest_Main_7",
+    "Theme": 7,
+    "BGM": "forestRuins_explore_setState",
+    "LeaveTriggerEvent": "amb_forestRuins_all_stop",
+    "MonsterLv": 7
+  },
+  "1000801": {
+    "Id": 1000801,
+    "SceneName": "Levels/Main/ForestRuins/Forest_Ruins_Main_1_8",
+    "ConfigPrefabName": "Forest_Main_8",
+    "Theme": 7,
+    "BGM": "forestRuins_explore_setState",
+    "LeaveTriggerEvent": "amb_forestRuins_all_stop",
+    "MonsterLv": 8
+  },
+  "1000901": {
+    "Id": 1000901,
+    "SceneName": "Levels/Main/ForestRuins/Forest_Ruins_FanRongZhiShiTi_Night",
+    "ConfigPrefabName": "Forest_Main_9",
+    "Theme": 7,
+    "BGM": "forestRuins_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_forestRuins_all_stop",
+    "MonsterLv": 9
+  },
+  "1200102": {
+    "Id": 1200102,
+    "SceneName": "Levels/Main/Desert/Desert_Main_0_5",
+    "ConfigPrefabName": "Desert_Main_0_5",
+    "Theme": 7,
+    "MonsterLv": 2
+  },
+  "1300102": {
+    "Id": 1300102,
+    "SceneName": "Levels/Main/City/City_Main_1_1",
+    "ConfigPrefabName": "City_Main_1",
+    "Theme": 3,
+    "BGM": "city_explore_setState",
+    "LeaveTriggerEvent": "amb_city_all_stop",
+    "MonsterLv": 6
+  },
+  "1300202": {
+    "Id": 1300202,
+    "SceneName": "Levels/Main/City/City_Main_1_2",
+    "ConfigPrefabName": "City_Main_2",
+    "Theme": 2,
+    "BGM": "city_explore_setState",
+    "LeaveTriggerEvent": "amb_city_all_stop",
+    "MonsterLv": 6
+  },
+  "1300301": {
+    "Id": 1300301,
+    "SceneName": "Levels/Main/City/City_Main_1_3",
+    "ConfigPrefabName": "City_Main_3",
+    "Theme": 4,
+    "BGM": "city_explore_setState",
+    "LeaveTriggerEvent": "amb_city_all_stop",
+    "MonsterLv": 6
+  },
+  "1300405": {
+    "Id": 1300405,
+    "SceneName": "Levels/Main/City/City_Main_1_4",
+    "ConfigPrefabName": "City_Main_1_4",
+    "Theme": 6,
+    "BGM": "waterBridge_explore_setState",
+    "LeaveTriggerEvent": "amb_waterBridge_all_stop",
+    "MonsterLv": 12
+  },
+  "1300511": {
+    "Id": 1300511,
+    "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_Entrance_001_1-5",
+    "ConfigPrefabName": "Roguelike_2_Entrance_001_1-5",
+    "Theme": 105,
+    "BGM": "roguelike_explore_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "MonsterLv": 12
+  },
+  "1300512": {
+    "Id": 1300512,
+    "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_Battle_016_1-5",
+    "ConfigPrefabName": "Roguelike_2_Battle_016_1-5",
+    "Theme": 105,
+    "BGM": "roguelike_explore_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "MonsterLv": 12
+  },
+  "1300513": {
+    "Id": 1300513,
+    "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_Battle_015_1-5",
+    "ConfigPrefabName": "Roguelike_2_Battle_015_1-5",
+    "Theme": 105,
+    "BGM": "roguelike_explore_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "MonsterLv": 12
+  },
+  "1300514": {
+    "Id": 1300514,
+    "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_Shop_001_1-5",
+    "ConfigPrefabName": "Roguelike_2_Shop_001_1-5",
+    "Theme": 105,
+    "BGM": "roguelike_explore_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "MonsterLv": 12
+  },
+  "1300515": {
+    "Id": 1300515,
+    "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_Battle_021_1-5",
+    "ConfigPrefabName": "Roguelike_2_Battle_021_1-5",
+    "Theme": 105,
+    "BGM": "roguelike_explore_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "MonsterLv": 12
+  },
+  "1300516": {
+    "Id": 1300516,
+    "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_Battle_010_1-5",
+    "ConfigPrefabName": "Roguelike_2_Battle_010_1-5",
+    "Theme": 105,
+    "BGM": "roguelike_explore_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "MonsterLv": 12
+  },
+  "1300517": {
+    "Id": 1300517,
+    "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_003_1-5",
+    "ConfigPrefabName": "Roguelike_2_MiniBoss_003_1-5",
+    "Theme": 105,
+    "BGM": "monster_mon50521_setState",
+    "LeaveTriggerEvent": "monster_mon50521_exitState",
+    "MonsterLv": 12
+  },
+  "1300518": {
+    "Id": 1300518,
+    "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_Boss_003_1-5",
+    "ConfigPrefabName": "Roguelike_2_Boss_003_1-5",
+    "Theme": 7,
+    "BGM": "roguelike_explore_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "MonsterLv": 12
+  },
+  "1300601": {
+    "Id": 1300601,
+    "SceneName": "Levels/Main/City/City_Main_1_6",
+    "ConfigPrefabName": "City_Main_1_6",
+    "Theme": 6,
+    "BGM": "waterBridge_explore_setState",
+    "LeaveTriggerEvent": "amb_waterBridge_all_stop",
+    "MonsterLv": 16
+  },
+  "1300701": {
+    "Id": 1300701,
+    "SceneName": "Levels/Main/City/City_Main_1_7",
+    "ConfigPrefabName": "City_Main_1_7",
+    "Theme": 6,
+    "BGM": "waterBridge_explore_setState",
+    "LeaveTriggerEvent": "amb_waterBridge_all_stop",
+    "MonsterLv": 16
+  },
+  "1400103": {
+    "Id": 1400103,
+    "SceneName": "Levels/Main/Forest/Forest_Main_1_1",
+    "ConfigPrefabName": "Forest_Main_1",
+    "Theme": 7,
+    "BGM": "forest_explore_setState",
+    "LeaveTriggerEvent": "amb_forest_all_stop",
+    "MonsterLv": 16
+  },
+  "1400202": {
+    "Id": 1400202,
+    "SceneName": "Levels/Main/Forest/Forest_Main_1_3_1",
+    "ConfigPrefabName": "Forest_Main_2_2",
+    "Theme": 7,
+    "BGM": "forest_explore_setState",
+    "LeaveTriggerEvent": "amb_forest_all_stop",
+    "MonsterLv": 16
+  },
+  "1400301": {
+    "Id": 1400301,
+    "SceneName": "Levels/Main/Forest/Forest01",
+    "ConfigPrefabName": "Forest_Main_3",
+    "Theme": 7,
+    "BGM": "forest_explore_setState",
+    "LeaveTriggerEvent": "amb_forest_all_stop",
+    "MonsterLv": 24
+  },
+  "1400402": {
+    "Id": 1400402,
+    "SceneName": "Levels/Main/Forest/Forest_Main_1_3",
+    "ConfigPrefabName": "Forest_Main_2_4",
+    "Theme": 7,
+    "BGM": "forest_explore_setState",
+    "LeaveTriggerEvent": "amb_forest_all_stop",
+    "MonsterLv": 24
+  },
+  "1400501": {
+    "Id": 1400501,
+    "SceneName": "Levels/Main/Forest_New/Forest_Main_2_5",
+    "ConfigPrefabName": "Forest_Main_5",
+    "Theme": 7,
+    "BGM": "forest_explore_setState",
+    "LeaveTriggerEvent": "amb_forest_all_stop",
+    "MonsterLv": 24
+  },
+  "1400602": {
+    "Id": 1400602,
+    "SceneName": "Levels/Main/Forest_New/Forest_Main_2_6",
+    "ConfigPrefabName": "Forest_Main_2_6",
+    "Theme": 10,
+    "BGM": "DarkForest_explore_setState",
+    "LeaveTriggerEvent": "amb_forest_all_stop",
+    "MonsterLv": 30
+  },
+  "1010101": {
+    "Id": 1010101,
+    "SceneName": "Levels/Main/City/City_Main_1_2",
+    "ConfigPrefabName": "City_Main_1_2_Test_3",
+    "Theme": 2,
+    "BGM": "city_explore_setState",
+    "LeaveTriggerEvent": "amb_city_all_stop",
+    "MonsterLv": 1
+  },
+  "1010201": {
+    "Id": 1010201,
+    "SceneName": "Levels/Main/City/City_Main_1_3",
+    "ConfigPrefabName": "City_Main_3",
+    "Theme": 4,
+    "BGM": "city_explore_setState",
+    "LeaveTriggerEvent": "amb_city_all_stop",
+    "MonsterLv": 1
+  },
+  "1020101": {
+    "Id": 1020101,
+    "SceneName": "Levels/Main/City/City_Main_1_6",
+    "ConfigPrefabName": "City_Main_1_6_new",
+    "Theme": 5,
+    "BGM": "waterBridge_explore_setState",
+    "LeaveTriggerEvent": "amb_city_all_stop",
+    "MonsterLv": 2
+  },
+  "1020201": {
+    "Id": 1020201,
+    "SceneName": "Levels/Main/City/City_Main_1_7",
+    "ConfigPrefabName": "City_Main_1_7",
+    "Theme": 6,
+    "BGM": "waterBridge_explore_setState",
+    "LeaveTriggerEvent": "amb_waterBridge_all_stop",
+    "MonsterLv": 2
+  },
+  "1020301": {
+    "Id": 1020301,
+    "SceneName": "Levels/Main/City/City_Main_2_1",
+    "ConfigPrefabName": "City_Main_2_1",
+    "Theme": 3,
+    "BGM": "waterBridge_explore_setState",
+    "LeaveTriggerEvent": "amb_city_all_stop",
+    "MonsterLv": 2
+  },
+  "1030101": {
+    "Id": 1030101,
+    "SceneName": "Levels/Main/Forest/Forest_Main_1_3",
+    "ConfigPrefabName": "Forest_Main_3_1",
+    "Theme": 7,
+    "BGM": "forest_explore_setState",
+    "LeaveTriggerEvent": "amb_forest_all_stop",
+    "MonsterLv": 3
+  },
+  "1030201": {
+    "Id": 1030201,
+    "SceneName": "Levels/Main/Forest/Forest01",
+    "ConfigPrefabName": "Forest_Main_3_2",
+    "Theme": 9,
+    "BGM": "forest_explore_setState",
+    "LeaveTriggerEvent": "amb_forest_all_stop",
+    "MonsterLv": 3
+  },
+  "1040101": {
+    "Id": 1040101,
+    "SceneName": "Levels/Main/Forest_New/Forest_Main_2_5_1",
+    "ConfigPrefabName": "Forest_Main_4_1",
+    "Theme": 17,
+    "BGM": "DarkForest_explore_setState",
+    "LeaveTriggerEvent": "amb_forest_all_stop",
+    "MonsterLv": 4
+  },
+  "1040201": {
+    "Id": 1040201,
+    "SceneName": "Levels/Main/Forest_New/Forest_Main_2_6",
+    "ConfigPrefabName": "Forest_Main_4_2",
+    "Theme": 10,
+    "BGM": "DarkForest_explore_setState",
+    "LeaveTriggerEvent": "amb_forest_all_stop",
+    "MonsterLv": 4
+  },
+  "1050101": {
+    "Id": 1050101,
+    "SceneName": "Levels/Roguelike/Roguelike_Common/Roguelike_Battle_004_A_07_5_1",
+    "ConfigPrefabName": "Company_Main_5_1_1",
+    "Theme": 18,
+    "BGM": "roguelike_combatNomal_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "MonsterLv": 5
+  },
+  "1050102": {
+    "Id": 1050102,
+    "SceneName": "Levels/Roguelike/Roguelike_Common/Roguelike_Battle_020_B_07_5_2",
+    "ConfigPrefabName": "Company_Main_5_1_2",
+    "Theme": 18,
+    "BGM": "roguelike_combatNomal_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "MonsterLv": 5
+  },
+  "1050103": {
+    "Id": 1050103,
+    "SceneName": "Levels/Roguelike/Roguelike_3/Roguelike_3_Reward_001",
+    "ConfigPrefabName": "Company_Main_5_1_3",
+    "Theme": 18,
+    "BGM": "roguelike_combatNomal_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "MonsterLv": 5
+  },
+  "1050201": {
+    "Id": 1050201,
+    "SceneName": "Levels/Main/Company/Company_Main_6_1",
+    "ConfigPrefabName": "Company_Main_5_2",
+    "Theme": 13,
+    "BGM": "company_explore_setState",
+    "LeaveTriggerEvent": "amb_company_all_stop",
+    "MonsterLv": 5
+  },
+  "1050301": {
+    "Id": 1050301,
+    "SceneName": "Levels/Main/Company/Company_Main_5_2",
+    "ConfigPrefabName": "Company_Main_5_3",
+    "Theme": 12,
+    "BGM": "fengNiao_explore_setState",
+    "LeaveTriggerEvent": "amb_company_all_stop",
+    "MonsterLv": 5
+  },
+  "1060101": {
+    "Id": 1060101,
+    "SceneName": "Levels/Main/Company/Company_Main_5_1",
+    "ConfigPrefabName": "Company_Main_6_1",
+    "Theme": 11,
+    "BGM": "garden_explore_setState",
+    "LeaveTriggerEvent": "amb_company_all_stop",
+    "MonsterLv": 6
+  },
+  "1060201": {
+    "Id": 1060201,
+    "SceneName": "Levels/Main/Forest_New/Forest_Main_2_5_2",
+    "ConfigPrefabName": "Forest_Main_6_2",
+    "Theme": 19,
+    "BGM": "forest_explore_setState",
+    "LeaveTriggerEvent": "amb_forest_all_stop",
+    "MonsterLv": 6
+  },
+  "1060301": {
+    "Id": 1060301,
+    "SceneName": "Levels/Main/Company/Company_Main_6_2",
+    "ConfigPrefabName": "Company_Main_6_2",
+    "Theme": 14,
+    "BGM": "fengCao_explore_setState",
+    "LeaveTriggerEvent": "amb_company_all_stop",
+    "MonsterLv": 6
+  },
+  "1060401": {
+    "Id": 1060401,
+    "SceneName": "Levels/StoryActivity/StoryActivity_9/StoryActivity_9_004_A_01",
+    "ConfigPrefabName": "StoryActivity_9_Mainline_1",
+    "Theme": 441,
+    "BGM": "amb_coast_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_coast_all_stop",
+    "MonsterLv": 6
+  },
+  "1060501": {
+    "Id": 1060501,
+    "SceneName": "Levels/StoryActivity/StoryActivity_9/StoryActivity_9_Boss_HaSaNa",
+    "ConfigPrefabName": "StoryActivity_9_Mainline_2",
+    "Theme": 118,
+    "BGM": "amb_coast_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_coast_all_stop",
+    "MonsterLv": 6,
+    "IntroCutscene": "fx_m30931_base_born"
+  },
+  "1070101": {
+    "Id": 1070101,
+    "SceneName": "Levels/Main/City/City_Main_7_1",
+    "ConfigPrefabName": "City_Main_7_1",
+    "Theme": 20,
+    "BGM": "company_explore_setState",
+    "LeaveTriggerEvent": "amb_company_all_stop",
+    "MonsterLv": 6
+  },
+  "1070201": {
+    "Id": 1070201,
+    "SceneName": "Levels/Main/Coast/Coast_Main_7_3",
+    "ConfigPrefabName": "Coast_Main_7_3",
+    "Theme": 21,
+    "BGM": "company_explore_setState",
+    "LeaveTriggerEvent": "amb_company_all_stop",
+    "MonsterLv": 6
+  },
+  "1070301": {
+    "Id": 1070301,
+    "SceneName": "Levels/JointDrill/JointDrill_01/JointDrill_01_JuYuanMeiYing",
+    "ConfigPrefabName": "JuYuanMeiYing_Stage1_MainLine",
+    "Theme": 251,
+    "BGM": "roguelike_combatMedusa_setState",
+    "LeaveTriggerEvent": "amb_company_all_stop",
+    "MonsterLv": 6,
+    "IntroCutscene": "fx_m70001_base_boss_bron_tl"
+  },
+  "1070302": {
+    "Id": 1070302,
+    "SceneName": "Levels/JointDrill/JointDrill_01/JointDrill_01_JuYuanMeiYing01",
+    "ConfigPrefabName": "JuYuanMeiYing_Stage2_MineLine",
+    "Theme": 251,
+    "BGM": "roguelike_combatMedusa2_setState",
+    "LeaveTriggerEvent": "amb_company_all_stop",
+    "MonsterLv": 6,
+    "IntroCutscene": "fx_m70001_base_boss_change_tl"
+  },
+  "1080101": {
+    "Id": 1080101,
+    "SceneName": "Levels/Main/Philae/Philae_Main_8_1",
+    "ConfigPrefabName": "Philae_Main_8_1",
+    "Theme": 22,
+    "BGM": "waterBridge_explore_setState",
+    "LeaveTriggerEvent": "amb_city_all_stop",
+    "MonsterLv": 6,
+    "LevelScript": "AIScript.LevelAndGroupController.Level.EP89CircleControl"
+  },
+  "1080201": {
+    "Id": 1080201,
+    "SceneName": "Levels/Main/Mirage/Mirage_Main_8_2",
+    "ConfigPrefabName": "Mirage_Main_8_2",
+    "Theme": 23,
+    "BGM": "Desert_town_explore_setState",
+    "LeaveTriggerEvent": "amb_Desert_town_all_stop",
+    "MonsterLv": 6,
+    "LevelScript": "AIScript.LevelAndGroupController.Level.EP89CircleControl"
+  },
+  "1080301": {
+    "Id": 1080301,
+    "SceneName": "Levels/Main/Mirage/Mirage_Main_8_3",
+    "ConfigPrefabName": "Mirage_Main_8_3",
+    "Theme": 24,
+    "BGM": "Desert_town_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_Desert_town_all_stop",
+    "MonsterLv": 6,
+    "IntroCutscene": "MapTimeline_m08_BT03_01",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.EP89CircleControl"
+  },
+  "1090101": {
+    "Id": 1090101,
+    "SceneName": "Levels/Main/Mirage/Mirage_Main_9_1",
+    "ConfigPrefabName": "Mirage_Main_9_1",
+    "Theme": 25,
+    "BGM": "Desert_town_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_Desert_town_all_stop",
+    "MonsterLv": 6,
+    "LevelScript": "AIScript.LevelAndGroupController.Level.EP9_LevelController"
+  },
+  "1090201": {
+    "Id": 1090201,
+    "SceneName": "Levels/Main/Mirage/Mirage_Main_9_1",
+    "ConfigPrefabName": "Mirage_Main_9_2",
+    "Theme": 26,
+    "BGM": "Desert_town_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_Desert_town_all_stop",
+    "MonsterLv": 6,
+    "LevelScript": "AIScript.LevelAndGroupController.Level.EP9_LevelController"
+  },
+  "1090301": {
+    "Id": 1090301,
+    "SceneName": "Levels/Main/Mirage/Mirage_Main_9_3",
+    "ConfigPrefabName": "Mirage_Main_9_3",
+    "Theme": 27,
+    "BGM": "Desert_town_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_Desert_town_all_stop",
+    "MonsterLv": 6
+  },
+  "1090401": {
+    "Id": 1090401,
+    "SceneName": "Levels/Main/Desert/Desert_Main_9_4",
+    "ConfigPrefabName": "Desert_Main_9_4_1",
+    "Theme": 28,
+    "BGM": "prologue_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_prologue_all_stop",
+    "MonsterLv": 6
+  },
+  "1090402": {
+    "Id": 1090402,
+    "SceneName": "Levels/Main/Desert/Desert_Main_9_4_1",
+    "ConfigPrefabName": "Desert_Main_9_4_2",
+    "Theme": 28,
+    "BGM": "prologue_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_prologue_all_stop",
+    "MonsterLv": 6
+  },
+  "1090403": {
+    "Id": 1090403,
+    "SceneName": "Levels/Main/Desert/Desert_Main_1_2",
+    "ConfigPrefabName": "Desert_Main_9_4_3",
+    "Theme": 28,
+    "BGM": "prologue_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_prologue_all_stop",
+    "MonsterLv": 6
+  },
+  "1090501": {
+    "Id": 1090501,
+    "SceneName": "Levels/Main/Desert/Desert_Main_0_4_1",
+    "ConfigPrefabName": "Desert _Main_MainLine_9_5",
+    "Theme": 29,
+    "BGM": "prologue_mechaBoss_setState",
+    "LeaveTriggerEvent": "amb_prologue_all_stop",
+    "MonsterLv": 6,
+    "LevelScript": "AIScript.LevelAndGroupController.Level.GaoDa9_5_LevelController"
+  },
+  "1100101": {
+    "Id": 1100101,
+    "SceneName": "Levels/Main/Forest_New/Forest_Main_10_1",
+    "ConfigPrefabName": "Forest_Main_10_1",
+    "Theme": 30,
+    "BGM": "forest_explore_setState",
+    "LeaveTriggerEvent": "amb_forest_all_stop",
+    "MonsterLv": 6
+  },
+  "1100301": {
+    "Id": 1100301,
+    "SceneName": "Levels/JointDrill/JointDrill_03/JointDrill_03",
+    "ConfigPrefabName": "JointDrill_03_Stage1",
+    "Theme": 255,
+    "BGM": "Mode_JointDrill_magician_setState",
+    "LeaveTriggerEvent": "amb_city_all_stop",
+    "MonsterLv": 6,
+    "IntroCutscene": "fx_m72011_base_Born",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.KuiLeiShiLevelController_Mainline"
+  },
+  "1100302": {
+    "Id": 1100302,
+    "SceneName": "Levels/JointDrill/JointDrill_03/JointDrill_03",
+    "ConfigPrefabName": "JointDrill_03_Stage2",
+    "Theme": 255,
+    "BGM": "Mode_JointDrill_magician2_setState",
+    "MonsterLv": 6,
+    "IntroCutscene": "fx_jointdrill_03_base_boss_change_tl"
+  },
+  "9920284": {
+    "Id": 9920284,
+    "SceneName": "Levels/StoryActivity/StoryActivity_2/StoryActivity_2_013_A_01",
+    "ConfigPrefabName": "StoryActivity_15_N1",
+    "Theme": 472,
+    "BGM": "amb_900001_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_900001_all_stop",
+    "MonsterLv": 1
+  },
+  "9920285": {
+    "Id": 9920285,
+    "SceneName": "Levels/StoryActivity/StoryActivity_15/StoryActivity_15_004_A_01",
+    "ConfigPrefabName": "StoryActivity_15_N2",
+    "Theme": 471,
+    "BGM": "amb_900001_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_900001_all_stop",
+    "MonsterLv": 1
+  },
+  "9920286": {
+    "Id": 9920286,
+    "SceneName": "Levels/StoryActivity/StoryActivity_2/StoryActivity_2_001_A_01",
+    "ConfigPrefabName": "StoryActivity_15_N3",
+    "Theme": 472,
+    "BGM": "amb_900001_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_900001_all_stop",
+    "MonsterLv": 1
+  },
+  "9920287": {
+    "Id": 9920287,
+    "SceneName": "Levels/StoryActivity/StoryActivity_15/StoryActivity_15_009_B_01",
+    "ConfigPrefabName": "StoryActivity_15_N4",
+    "Theme": 471,
+    "BGM": "amb_900001_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_900001_all_stop",
+    "MonsterLv": 1
+  },
+  "9920288": {
+    "Id": 9920288,
+    "SceneName": "Levels/StoryActivity/StoryActivity_2/StoryActivity_2_016_A_01",
+    "ConfigPrefabName": "StoryActivity_15_N5",
+    "Theme": 472,
+    "BGM": "amb_900001_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_900001_all_stop",
+    "MonsterLv": 1
+  },
+  "9920289": {
+    "Id": 9920289,
+    "SceneName": "Levels/StoryActivity/StoryActivity_15/StoryActivity_15_011_B_01",
+    "ConfigPrefabName": "StoryActivity_15_N6",
+    "Theme": 471,
+    "BGM": "amb_900001_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_900001_all_stop",
+    "MonsterLv": 1
+  },
+  "9920290": {
+    "Id": 9920290,
+    "SceneName": "Levels/StoryActivity/StoryActivity_2/StoryActivity_2_006_A_01",
+    "ConfigPrefabName": "StoryActivity_15_N7",
+    "Theme": 472,
+    "BGM": "amb_900001_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_900001_all_stop",
+    "MonsterLv": 1
+  },
+  "9920291": {
+    "Id": 9920291,
+    "SceneName": "Levels/Main/City/City_Main_1_2_1",
+    "ConfigPrefabName": "StoryActivity_15_N8",
+    "Theme": 471,
+    "BGM": "amb_900001_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_900001_all_stop",
+    "MonsterLv": 1
+  },
+  "9920292": {
+    "Id": 9920292,
+    "SceneName": "Levels/StoryActivity/StoryActivity_2/StoryActivity_2_013_A_01_Mir",
+    "ConfigPrefabName": "StoryActivity_15_N9",
+    "Theme": 472,
+    "BGM": "amb_900001_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_900001_all_stop",
+    "MonsterLv": 1
+  },
+  "9920293": {
+    "Id": 9920293,
+    "SceneName": "Levels/StoryActivity/StoryActivity_15/StoryActivity_15_010_A_01",
+    "ConfigPrefabName": "StoryActivity_15_N10",
+    "Theme": 471,
+    "BGM": "amb_900001_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_900001_all_stop",
+    "MonsterLv": 1
+  },
+  "9920294": {
+    "Id": 9920294,
+    "SceneName": "Levels/StoryActivity/StoryActivity_2/StoryActivity_2_001_A_01_Mir",
+    "ConfigPrefabName": "StoryActivity_15_N11",
+    "Theme": 472,
+    "BGM": "amb_900001_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_900001_all_stop",
+    "MonsterLv": 1
+  },
+  "9920295": {
+    "Id": 9920295,
+    "SceneName": "Levels/Main/City/City_Main_1_3_Daily_Money",
+    "ConfigPrefabName": "StoryActivity_15_N12",
+    "Theme": 4,
+    "BGM": "amb_900001_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_900001_all_stop",
+    "MonsterLv": 1
+  },
+  "9920296": {
+    "Id": 9920296,
+    "SceneName": "Levels/StoryActivity/StoryActivity_2/StoryActivity_2_006_A_01_Mir",
+    "ConfigPrefabName": "StoryActivity_15_H1",
+    "Theme": 472,
+    "BGM": "amb_900001_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_900001_all_stop",
+    "MonsterLv": 1
+  },
+  "9920297": {
+    "Id": 9920297,
+    "SceneName": "Levels/StoryActivity/StoryActivity_15/StoryActivity_15_009_B_01_Mir",
+    "ConfigPrefabName": "StoryActivity_15_H2",
+    "Theme": 471,
+    "BGM": "amb_900001_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_900001_all_stop",
+    "MonsterLv": 1
+  },
+  "9920298": {
+    "Id": 9920298,
+    "SceneName": "Levels/StoryActivity/StoryActivity_2/StoryActivity_2_016_A_01_Mir",
+    "ConfigPrefabName": "StoryActivity_15_H3",
+    "Theme": 472,
+    "BGM": "amb_900001_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_900001_all_stop",
+    "MonsterLv": 1
+  },
+  "9920299": {
+    "Id": 9920299,
+    "SceneName": "Levels/Main/City/City_Main_1_2_1",
+    "ConfigPrefabName": "StoryActivity_15_H4",
+    "Theme": 471,
+    "BGM": "amb_900001_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_900001_all_stop",
+    "MonsterLv": 1
+  },
+  "9920300": {
+    "Id": 9920300,
+    "SceneName": "Levels/StoryActivity/StoryActivity_2/StoryActivity_2_013_A_01_Mir",
+    "ConfigPrefabName": "StoryActivity_15_H5",
+    "Theme": 472,
+    "BGM": "amb_900001_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_900001_all_stop",
+    "MonsterLv": 1
+  },
+  "9920301": {
+    "Id": 9920301,
+    "SceneName": "Levels/StoryActivity/StoryActivity_15/StoryActivity_15_004_A_01_Mir",
+    "ConfigPrefabName": "StoryActivity_15_H6",
+    "Theme": 471,
+    "BGM": "amb_900001_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_900001_all_stop",
+    "MonsterLv": 1
+  },
+  "9920302": {
+    "Id": 9920302,
+    "SceneName": "Levels/StoryActivity/StoryActivity_2/StoryActivity_2_001_A_01",
+    "ConfigPrefabName": "StoryActivity_15_H7",
+    "Theme": 472,
+    "BGM": "amb_900001_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_900001_all_stop",
+    "MonsterLv": 1
+  },
+  "9920303": {
+    "Id": 9920303,
+    "SceneName": "Levels/Main/City/City_Main_1_3_Daily_Money",
+    "ConfigPrefabName": "StoryActivity_15_H8",
+    "Theme": 4,
+    "BGM": "amb_900001_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_900001_all_stop",
+    "MonsterLv": 1
+  },
+  "9920304": {
+    "Id": 9920304,
+    "SceneName": "Levels/StoryActivity/StoryActivity_2/StoryActivity_2_006_A_01_Mir",
+    "ConfigPrefabName": "StoryActivity_15_C1",
+    "Theme": 472,
+    "BGM": "amb_900001_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_900001_all_stop",
+    "MonsterLv": 1
+  },
+  "9920305": {
+    "Id": 9920305,
+    "SceneName": "Levels/StoryActivity/StoryActivity_15/StoryActivity_15_010_A_01_Mir",
+    "ConfigPrefabName": "StoryActivity_15_C2",
+    "Theme": 471,
+    "BGM": "amb_900001_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_900001_all_stop",
+    "MonsterLv": 1
+  },
+  "9920306": {
+    "Id": 9920306,
+    "SceneName": "Levels/StoryActivity/StoryActivity_2/StoryActivity_2_016_A_01",
+    "ConfigPrefabName": "StoryActivity_15_C3",
+    "Theme": 472,
+    "BGM": "amb_900001_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_900001_all_stop",
+    "MonsterLv": 1
+  },
+  "9920307": {
+    "Id": 9920307,
+    "SceneName": "Levels/Main/City/City_Main_1_3_Daily_Money",
+    "ConfigPrefabName": "StoryActivity_15_C4",
+    "Theme": 4,
+    "BGM": "amb_900001_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_900001_all_stop",
+    "MonsterLv": 1
+  }
+}

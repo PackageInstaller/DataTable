@@ -1,0 +1,38 @@
+{
+  "1": {
+    "Id": 1,
+    "Name": "第一章",
+    "Desc": "三位旅人，历尽千辛万苦，在沙漠星塔里找到稀有的“魔王宝箱”。",
+    "ChapterType": 1,
+    "WorldClass": 1,
+    "CompleteRewards": "{\"7\":[2,50],\"14\":[2,50],\"21\":[2,100]}",
+    "ChapterImg": "Icon/MapChapter/chapter_bg_01",
+    "ChapterIcon": "Icon/MapChapter/chapter_icon_01"
+  },
+  "2": {
+    "Id": 2,
+    "Name": "第二章",
+    "Desc": "正式踏上旅途的我们，为了赚取经费，来到了被称为“旅人之城”的菲莱……",
+    "ChapterType": 1,
+    "WorldClass": 1,
+    "PrevMainlines": [
+      13115
+    ],
+    "CompleteRewards": "{\"3\":[2,50],\"5\":[2,50],\"10\":[2,100]}",
+    "ChapterImg": "Icon/MapChapter/chapter_bg_02",
+    "ChapterIcon": "Icon/MapChapter/chapter_icon_03"
+  },
+  "3": {
+    "Id": 3,
+    "Name": "旅人专属故事",
+    "Desc": "旅人们的专属剧情篇章。",
+    "ChapterType": 1,
+    "WorldClass": 1,
+    "PrevMainlines": [
+      14115
+    ],
+    "CompleteRewards": "{\"3\":[1,10],\"5\":[1,20],\"10\":[1,31]}",
+    "ChapterImg": "Icon/MapChapter/chapter_bg_03",
+    "ChapterIcon": "Icon/MapChapter/chapter_icon_04"
+  }
+}

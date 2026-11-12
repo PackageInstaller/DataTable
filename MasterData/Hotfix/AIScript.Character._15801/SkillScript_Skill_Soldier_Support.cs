@@ -1,0 +1,37 @@
+using System;
+
+namespace AIScript.Character._15801;
+
+public class SkillScript_Skill_Soldier_Support : SkillScript_Summoned
+{
+	protected override void OnSkillEnable()
+	{
+		base.OnSkillEnable();
+		if (_actor.attackTarget != null)
+		{
+			_actor.LookAt(_actor.attackTarget.tsTransform.Position, 0f);
+		}
+	}
+
+	public void OnStart()
+	{
+		Action onComboFinish = OnFinish;
+		Action onInterrupt = OnInterrupt;
+		BeginAttack("15801_Soldier_Skill_Strengthen_Support", flushInputedKeys: true, forceInterruptAttack: false, autoLookAtTarget: false, null, null, default, null, null, onComboFinish, onInterrupt);
+	}
+
+	private void OnFinish()
+	{
+		_skill.Clear();
+	}
+
+	private void OnInterrupt()
+	{
+		OnFinish();
+	}
+
+	protected override void OnSkillDisable()
+	{
+		base.OnSkillDisable();
+	}
+}

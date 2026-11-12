@@ -1,0 +1,4060 @@
+{
+  "100": {
+    "Id": 100,
+    "Name": "半自动射击",
+    "Desc": "对目标发起多段连射攻击",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_70021011",
+    "Element": 2,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      1001
+    ]
+  },
+  "101": {
+    "Id": 101,
+    "Name": "光束狙击",
+    "Desc": "对目标发射光束能量弹",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_70021021",
+    "Element": 2,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      1001
+    ]
+  },
+  "102": {
+    "Id": 102,
+    "Name": "火力全开",
+    "Desc": "解封右眼内的魔神之力，从高空投射弹幕扫荡地面，不断造成火系伤害",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_70021031",
+    "Element": 2,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      1001
+    ]
+  },
+  "103": {
+    "Id": 103,
+    "Name": "二段光束",
+    "Desc": "对目标持续瞄准同时攻击",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_70021041",
+    "Element": 2,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      1001
+    ]
+  },
+  "110": {
+    "Id": 110,
+    "GroupId": 100101,
+    "Difficulty": 7,
+    "Name": "全自动射击",
+    "Desc": "强化突击形态：多段连射会发射更多的子弹",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_70021011",
+    "Element": 2,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "BranchId": 700210111
+  },
+  "111": {
+    "Id": 111,
+    "GroupId": 100102,
+    "Difficulty": 4,
+    "Name": "光束狙击",
+    "Desc": "强化狙击形态：将鬼灭弹增幅为更强大的光束能量弹",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_70021021",
+    "Element": 2,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "BranchId": 700210211
+  },
+  "112": {
+    "Id": 112,
+    "GroupId": 100103,
+    "Difficulty": 9,
+    "Name": "火力全开",
+    "Desc": "强化突击形态：追加附带魔神之眼力量的复合攻击",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_70021031",
+    "Element": 2,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "BranchId": 700210121
+  },
+  "113": {
+    "Id": 113,
+    "GroupId": 100104,
+    "Difficulty": 5,
+    "Name": "二段光束",
+    "Desc": "强化狙击形态：新增光束持续瞄准攻击，并在光束结束时追加爆发攻击",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_70021041",
+    "Element": 2,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "BranchId": 700210221
+  },
+  "114": {
+    "Id": 114,
+    "GroupId": 100105,
+    "Difficulty": 16,
+    "Name": "弹幕增幅",
+    "Desc": "强化突击形态：魔神之眼向外倾泄巨量魔法弹",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_70021051",
+    "Element": 2,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "BranchId": 700210131
+  },
+  "115": {
+    "Id": 115,
+    "GroupId": 100106,
+    "Difficulty": 12,
+    "Name": "魔神之眼",
+    "Desc": "强化魔神之眼：追踪时间更强，威胁更高",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_70021061",
+    "Element": 2,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "BranchId": 700210231
+  },
+  "116": {
+    "Id": 116,
+    "GroupId": 101,
+    "Difficulty": 2,
+    "Name": "攻击提升·小",
+    "Desc": "所有敌人攻击上升<color=#ec6d21>&Param1&</color>",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_10101",
+    "Element": 2,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29010101
+    ],
+    "Param1": "TravelerDuelChallengeAffix,NoLevel,116,Value1,Pct",
+    "Value1": "10"
+  },
+  "117": {
+    "Id": 117,
+    "GroupId": 101,
+    "Difficulty": 6,
+    "UnlockDifficulty": 20,
+    "UnlockDurationTime": 60,
+    "Name": "攻击提升·中",
+    "Desc": "所有敌人攻击上升<color=#ec6d21>&Param1&</color>",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_10102",
+    "Element": 2,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29010102
+    ],
+    "Param1": "TravelerDuelChallengeAffix,NoLevel,117,Value1,Pct",
+    "Value1": "30"
+  },
+  "118": {
+    "Id": 118,
+    "GroupId": 101,
+    "Difficulty": 10,
+    "UnlockDifficulty": 30,
+    "UnlockDurationTime": 120,
+    "Name": "攻击提升·大",
+    "Desc": "所有敌人攻击上升<color=#ec6d21>&Param1&</color>",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_10103",
+    "Element": 2,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29010103
+    ],
+    "Param1": "TravelerDuelChallengeAffix,NoLevel,118,Value1,Pct",
+    "Value1": "50"
+  },
+  "119": {
+    "Id": 119,
+    "GroupId": 102,
+    "Difficulty": 4,
+    "Name": "生命提升·小",
+    "Desc": "所有敌人生命上升<color=#ec6d21>&Param1&</color>",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_10201",
+    "Element": 2,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29010201
+    ],
+    "Param1": "TravelerDuelChallengeAffix,NoLevel,119,Value1,Pct",
+    "Value1": "10"
+  },
+  "120": {
+    "Id": 120,
+    "GroupId": 102,
+    "Difficulty": 12,
+    "UnlockDifficulty": 20,
+    "UnlockDurationTime": 60,
+    "Name": "生命提升·中",
+    "Desc": "所有敌人生命上升<color=#ec6d21>&Param1&</color>",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_10202",
+    "Element": 2,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29010202
+    ],
+    "Param1": "TravelerDuelChallengeAffix,NoLevel,120,Value1,Pct",
+    "Value1": "30"
+  },
+  "121": {
+    "Id": 121,
+    "GroupId": 102,
+    "Difficulty": 20,
+    "UnlockDifficulty": 30,
+    "UnlockDurationTime": 180,
+    "Name": "生命提升·大",
+    "Desc": "所有敌人生命上升<color=#ec6d21>&Param1&</color>",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_10203",
+    "Element": 2,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29010203
+    ],
+    "Param1": "TravelerDuelChallengeAffix,NoLevel,121,Value1,Pct",
+    "Value1": "50"
+  },
+  "122": {
+    "Id": 122,
+    "GroupId": 103,
+    "Difficulty": 2,
+    "Name": "虚弱·小",
+    "Desc": "我方攻击力降低<color=#ec6d21>&Param1&</color>",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_10301",
+    "Element": 2,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29010301
+    ],
+    "Param1": "TravelerDuelChallengeAffix,NoLevel,122,Value1,Pct",
+    "Value1": "5"
+  },
+  "123": {
+    "Id": 123,
+    "GroupId": 103,
+    "Difficulty": 8,
+    "UnlockDifficulty": 15,
+    "UnlockDurationTime": 120,
+    "Name": "虚弱·中",
+    "Desc": "我方攻击力降低<color=#ec6d21>&Param1&</color>",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_10302",
+    "Element": 2,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29010302
+    ],
+    "Param1": "TravelerDuelChallengeAffix,NoLevel,123,Value1,Pct",
+    "Value1": "15"
+  },
+  "124": {
+    "Id": 124,
+    "GroupId": 103,
+    "Difficulty": 20,
+    "UnlockDifficulty": 30,
+    "UnlockDurationTime": 200,
+    "Name": "虚弱·大",
+    "Desc": "我方攻击力降低<color=#ec6d21>&Param1&</color>",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_10303",
+    "Element": 2,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29010303
+    ],
+    "Param1": "TravelerDuelChallengeAffix,NoLevel,124,Value1,Pct",
+    "Value1": "25"
+  },
+  "125": {
+    "Id": 125,
+    "GroupId": 104,
+    "Difficulty": 2,
+    "Name": "缓足·小",
+    "Desc": "每次闪避后，角色攻击降低<color=#ec6d21>&Param1&</color>，持续5秒，最大叠加3层",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_10501",
+    "Element": 2,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29010401
+    ],
+    "Param1": "TravelerDuelChallengeAffix,NoLevel,125,Value1,Pct",
+    "Value1": "5"
+  },
+  "126": {
+    "Id": 126,
+    "GroupId": 104,
+    "Difficulty": 3,
+    "UnlockDifficulty": 10,
+    "UnlockDurationTime": 300,
+    "Name": "缓足·中",
+    "Desc": "每次闪避后，角色攻击降低<color=#ec6d21>&Param1&</color>，持续5秒，最大叠加3层",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_10502",
+    "Element": 2,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29010402
+    ],
+    "Param1": "TravelerDuelChallengeAffix,NoLevel,126,Value1,Pct",
+    "Value1": "10"
+  },
+  "127": {
+    "Id": 127,
+    "GroupId": 104,
+    "Difficulty": 4,
+    "UnlockDifficulty": 15,
+    "UnlockDurationTime": 600,
+    "Name": "缓足·大",
+    "Desc": "每次闪避后，角色攻击降低<color=#ec6d21>&Param1&</color>，持续5秒，最大叠加3层",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_10503",
+    "Element": 2,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29010403
+    ],
+    "Param1": "TravelerDuelChallengeAffix,NoLevel,127,Value1,Pct",
+    "Value1": "15"
+  },
+  "128": {
+    "Id": 128,
+    "GroupId": 105,
+    "Difficulty": 1,
+    "Name": "缓速冷却·小",
+    "Desc": "技能冷却时间提升<color=#ec6d21>&Param1&</color>",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_10401",
+    "Element": 2,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29010501
+    ],
+    "Param1": "TravelerDuelChallengeAffix,NoLevel,128,Value1,Pct",
+    "Value1": "10"
+  },
+  "129": {
+    "Id": 129,
+    "GroupId": 105,
+    "Difficulty": 2,
+    "UnlockDifficulty": 8,
+    "UnlockDurationTime": 60,
+    "Name": "缓速冷却·中",
+    "Desc": "技能冷却时间提升<color=#ec6d21>&Param1&</color>",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_10402",
+    "Element": 2,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29010502
+    ],
+    "Param1": "TravelerDuelChallengeAffix,NoLevel,129,Value1,Pct",
+    "Value1": "20"
+  },
+  "130": {
+    "Id": 130,
+    "GroupId": 105,
+    "Difficulty": 3,
+    "UnlockDifficulty": 15,
+    "UnlockDurationTime": 240,
+    "Name": "缓速冷却·大",
+    "Desc": "技能冷却时间提升<color=#ec6d21>&Param1&</color>",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_10403",
+    "Element": 2,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29010503
+    ],
+    "Param1": "TravelerDuelChallengeAffix,NoLevel,130,Value1,Pct",
+    "Value1": "30"
+  },
+  "131": {
+    "Id": 131,
+    "GroupId": 106,
+    "Difficulty": 10,
+    "Name": "愈战愈勇·小",
+    "Desc": "每战斗15秒，敌人伤害提升<color=#ec6d21>&Param1&</color>，可无限叠加",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_10601",
+    "Element": 2,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29010601
+    ],
+    "Param1": "TravelerDuelChallengeAffix,NoLevel,131,Value1,Pct",
+    "Value1": "5"
+  },
+  "132": {
+    "Id": 132,
+    "GroupId": 106,
+    "Difficulty": 20,
+    "UnlockDifficulty": 30,
+    "UnlockDurationTime": 60,
+    "Name": "愈战愈勇·中",
+    "Desc": "每战斗15秒，敌人伤害提升<color=#ec6d21>&Param1&</color>，可无限叠加",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_10602",
+    "Element": 2,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29010602
+    ],
+    "Param1": "TravelerDuelChallengeAffix,NoLevel,132,Value1,Pct",
+    "Value1": "10"
+  },
+  "133": {
+    "Id": 133,
+    "GroupId": 106,
+    "Difficulty": 30,
+    "UnlockDifficulty": 50,
+    "UnlockDurationTime": 240,
+    "Name": "愈战愈勇·大",
+    "Desc": "每战斗15秒，敌人伤害提升<color=#ec6d21>&Param1&</color>，可无限叠加",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_10603",
+    "Element": 2,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29010603
+    ],
+    "Param1": "TravelerDuelChallengeAffix,NoLevel,133,Value1,Pct",
+    "Value1": "15"
+  },
+  "200": {
+    "Id": 200,
+    "Name": "凌空双刃",
+    "Desc": "花原操控飞镖和苦无连续挥舞攻击",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_70022011",
+    "Element": 4,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      1001
+    ]
+  },
+  "201": {
+    "Id": 201,
+    "Name": "暗夜飞刃",
+    "Desc": "花原投掷飞镖对玩家造成伤害",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_70022021",
+    "Element": 4,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      1001
+    ]
+  },
+  "202": {
+    "Id": 202,
+    "Name": "隐月",
+    "Desc": "花原以极快的速度进行移动，对沿途玩家造成伤害",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_70022051",
+    "Element": 4,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      1001
+    ]
+  },
+  "203": {
+    "Id": 203,
+    "Name": "影舞·花凋",
+    "Desc": "花原召唤影分身协助自己一起攻击",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_70022081",
+    "Element": 4,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      1001
+    ]
+  },
+  "100201": {
+    "Id": 100201,
+    "GroupId": 100201,
+    "Difficulty": 10,
+    "Name": "葵牵绊",
+    "Desc": "强化「葵幻舞」，花原投掷的手里剑会连带丝线，在间隔后朝目标位置牵引。",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_70022021",
+    "Element": 4,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "LogicTag": "SkillTag_FMTrace"
+  },
+  "100202": {
+    "Id": 100202,
+    "GroupId": 100202,
+    "Difficulty": 10,
+    "Name": "隐月·流星",
+    "Desc": "强化「隐月」，花原在冲刺过程中，会在场地内随机生成手里剑。",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_70022071",
+    "Element": 4,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "LogicTag": "SkillTag_DashArea"
+  },
+  "100203": {
+    "Id": 100203,
+    "GroupId": 100202,
+    "Difficulty": 10,
+    "Name": "隐月·疾风",
+    "Desc": "强化「隐月」，花原在冲刺过程中，会持续发动影分身协同攻击。",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_70022061",
+    "Element": 4,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "LogicTag": "SkillTag_DashBunshin"
+  },
+  "100204": {
+    "Id": 100204,
+    "GroupId": 100204,
+    "Difficulty": 10,
+    "Name": "岚纷缠",
+    "Desc": "强化「岚散落」，花原投掷的苦无会连带丝线，在投掷后收回。",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_70022031",
+    "Element": 4,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "LogicTag": "SkillTag_SLJTrace"
+  },
+  "100205": {
+    "Id": 100205,
+    "GroupId": 100205,
+    "Difficulty": 10,
+    "Name": "影舞·叶狂岚",
+    "Desc": "强化「影舞·障叶」，花原发动的分身之间会如同「隐月」一样冲刺并沿路径造成伤害。",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_70022091",
+    "Element": 4,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "LogicTag": "SkillTag_SyncBunsin_SWC"
+  },
+  "100206": {
+    "Id": 100206,
+    "GroupId": 100206,
+    "Difficulty": 10,
+    "Name": "影舞·花镜梦",
+    "Desc": "强化「影舞·花凋」，花原会发动更多的分身协同攻击。",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_70022101",
+    "Element": 4,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "LogicTag": "SkillTag_Illusion_Three"
+  },
+  "29020101": {
+    "Id": 29020101,
+    "GroupId": 201,
+    "Difficulty": 3,
+    "Name": "伤害提升·小",
+    "Desc": "敌方伤害上升<color=#ec6d21>&Param1&</color>",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_101",
+    "Element": 4,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29020101
+    ],
+    "Param1": "EffectValue,NoLevel,29020101,EffectTypeParam1,HdPct"
+  },
+  "29020102": {
+    "Id": 29020102,
+    "GroupId": 201,
+    "Difficulty": 5,
+    "Name": "伤害提升·中",
+    "Desc": "敌方伤害上升<color=#ec6d21>&Param1&</color>",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_102",
+    "Element": 4,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29020102
+    ],
+    "Param1": "EffectValue,NoLevel,29020102,EffectTypeParam1,HdPct"
+  },
+  "29020103": {
+    "Id": 29020103,
+    "GroupId": 201,
+    "Difficulty": 8,
+    "Name": "伤害提升·大",
+    "Desc": "敌方伤害上升<color=#ec6d21>&Param1&</color>",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_103",
+    "Element": 4,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29020103
+    ],
+    "Param1": "EffectValue,NoLevel,29020103,EffectTypeParam1,HdPct"
+  },
+  "29020201": {
+    "Id": 29020201,
+    "GroupId": 202,
+    "Difficulty": 3,
+    "Name": "虚弱·小",
+    "Desc": "全队伤害降低<color=#ec6d21>&Param1&</color>",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_20301",
+    "Element": 4,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29020201
+    ],
+    "Param1": "EffectValue,NoLevel,29020201,EffectTypeParam1,HdPct"
+  },
+  "29020202": {
+    "Id": 29020202,
+    "GroupId": 202,
+    "Difficulty": 5,
+    "Name": "虚弱·中",
+    "Desc": "全队伤害降低<color=#ec6d21>&Param1&</color>",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_20302",
+    "Element": 4,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29020202
+    ],
+    "Param1": "EffectValue,NoLevel,29020202,EffectTypeParam1,HdPct"
+  },
+  "29020203": {
+    "Id": 29020203,
+    "GroupId": 202,
+    "Difficulty": 8,
+    "Name": "虚弱·大",
+    "Desc": "全队伤害降低<color=#ec6d21>&Param1&</color>",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_20303",
+    "Element": 4,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29020203
+    ],
+    "Param1": "EffectValue,NoLevel,29020203,EffectTypeParam1,HdPct"
+  },
+  "29021001": {
+    "Id": 29021001,
+    "GroupId": 210,
+    "Difficulty": 5,
+    "Name": "渴血",
+    "Desc": "主控角色降低<color=#ec6d21>&Param1&</color>最大生命值，每次造成伤害时回复<color=#ec6d21>&Param2&</color>的最大生命的血量。",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_1001",
+    "Element": 4,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29021001,
+      290210011
+    ],
+    "Param1": "EffectValue,NoLevel,29021001,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,290210011,EffectTypeParam1,Pct"
+  },
+  "29021501": {
+    "Id": 29021501,
+    "GroupId": 215,
+    "Difficulty": 3,
+    "Name": "抑制绝招",
+    "Desc": "全队每次施放绝招，主控角色损失当前<color=#ec6d21>&Param1&</color>生命值",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_1501",
+    "Element": 4,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29021501
+    ],
+    "Param1": "EffectValue,NoLevel,29021501,EffectTypeParam1,Pct"
+  },
+  "29021502": {
+    "Id": 29021502,
+    "GroupId": 215,
+    "Difficulty": 8,
+    "Name": "抑制绝招·大",
+    "Desc": "全队每次施放绝招，主控角色损失当前<color=#ec6d21>&Param1&</color>生命值",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_1502",
+    "Element": 4,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29021502
+    ],
+    "Param1": "EffectValue,NoLevel,29021502,EffectTypeParam1,Pct"
+  },
+  "29020401": {
+    "Id": 29020401,
+    "GroupId": 204,
+    "Difficulty": 3,
+    "Name": "风之加护",
+    "Desc": "敌方每隔<color=#ec6d21>&Param1&</color>秒，获得<color=#ec6d21>&Param2&</color>秒高额减伤",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_401",
+    "Element": 4,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29020401
+    ],
+    "Param1": "Effect,NoLevel,290204011,TriggerParam1,Fixed",
+    "Param2": "BuffValue,NoLevel,290204011,Time,10K"
+  },
+  "29020501": {
+    "Id": 29020501,
+    "GroupId": 205,
+    "Difficulty": 5,
+    "Name": "致残打击",
+    "Desc": "闪避冷却时间增加<color=#ec6d21>&Param1&</color>秒",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_501",
+    "Element": 4,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29020501
+    ],
+    "Param1": "EffectValue,NoLevel,29020501,EffectTypeParam1,Fixed"
+  },
+  "29020601": {
+    "Id": 29020601,
+    "GroupId": 206,
+    "Difficulty": 5,
+    "Name": "弱化闪避",
+    "Desc": "闪避时，全队伤害下降<color=#ec6d21>&Param1&</color>，持续<color=#ec6d21>&Param2&</color>秒，最大叠加<color=#ec6d21>&Param3&</color>层",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_601",
+    "Element": 4,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29020601
+    ],
+    "Param1": "EffectValue,NoLevel,290206011,EffectTypeParam1,HdPct",
+    "Param2": "BuffValue,NoLevel,29020601,Time,10K",
+    "Param3": "BuffValue,NoLevel,29020601,LaminatedNum,Fixed"
+  },
+  "29020701": {
+    "Id": 29020701,
+    "GroupId": 207,
+    "Difficulty": 3,
+    "Name": "印记削弱",
+    "Desc": "全队印记伤害降低<color=#ec6d21>&Param1&</color>，绝招伤害提升<color=#ec6d21>&Param2&</color>",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_701",
+    "Element": 4,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29020701,
+      290207011
+    ],
+    "Param1": "EffectValue,NoLevel,29020701,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,290207011,EffectTypeParam1,HdPct"
+  },
+  "29020702": {
+    "Id": 29020702,
+    "GroupId": 207,
+    "Difficulty": 3,
+    "Name": "普攻削弱",
+    "Desc": "全队普攻伤害降低<color=#ec6d21>&Param1&</color>，技能伤害提升<color=#ec6d21>&Param2&</color>",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_702",
+    "Element": 4,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29020702,
+      290207021
+    ],
+    "Param1": "EffectValue,NoLevel,29020702,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,290207021,EffectTypeParam1,HdPct"
+  },
+  "29020703": {
+    "Id": 29020703,
+    "GroupId": 207,
+    "Difficulty": 3,
+    "Name": "技能削弱",
+    "Desc": "全队技能伤害降低<color=#ec6d21>&Param1&</color>，仆从伤害提升<color=#ec6d21>&Param2&</color>",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_703",
+    "Element": 4,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29020703,
+      290207031
+    ],
+    "Param1": "EffectValue,NoLevel,29020703,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,290207031,EffectTypeParam1,HdPct"
+  },
+  "29020801": {
+    "Id": 29020801,
+    "GroupId": 208,
+    "Difficulty": 5,
+    "UnlockDifficulty": 10,
+    "Name": "技之易伤",
+    "Desc": "主控角色每次施放技能时，受到伤害提高<color=#ec6d21>&Param1&</color>，持续<color=#ec6d21>&Param2&</color>秒，最高叠加<color=#ec6d21>&Param3&</color>层",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_801",
+    "Element": 4,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29020801
+    ],
+    "Param1": "EffectValue,NoLevel,290208011,EffectTypeParam1,HdPct",
+    "Param2": "BuffValue,NoLevel,29020801,Time,10K",
+    "Param3": "BuffValue,NoLevel,29020801,LaminatedNum,Fixed"
+  },
+  "29020901": {
+    "Id": 29020901,
+    "GroupId": 209,
+    "Difficulty": 3,
+    "UnlockDifficulty": 10,
+    "Name": "主控缓技",
+    "Desc": "主控角色技能伤害增加<color=#ec6d21>&Param1&</color>，冷却时间延长<color=#ec6d21>&Param2&</color>",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_901",
+    "Element": 4,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29020901,
+      290209011
+    ],
+    "Param1": "EffectValue,NoLevel,290209011,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,29020901,EffectTypeParam1,HdPct"
+  },
+  "29020902": {
+    "Id": 29020902,
+    "GroupId": 209,
+    "Difficulty": 8,
+    "UnlockDifficulty": 10,
+    "Name": "主控缓技·大",
+    "Desc": "主控角色技能伤害增加<color=#ec6d21>&Param1&</color>，冷却时间延长<color=#ec6d21>&Param2&</color>",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_902",
+    "Element": 4,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29020902,
+      290209021
+    ],
+    "Param1": "EffectValue,NoLevel,290209021,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,29020902,EffectTypeParam1,HdPct"
+  },
+  "29021201": {
+    "Id": 29021201,
+    "GroupId": 212,
+    "Difficulty": 5,
+    "UnlockDifficulty": 15,
+    "Name": "暴击调整",
+    "Desc": "全队获得<color=#ec6d21>&Param1&</color>额外暴击率，但是暴击伤害下降<color=#ec6d21>&Param2&</color>",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_1201",
+    "Element": 4,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29021201,
+      290212011
+    ],
+    "Param1": "EffectValue,NoLevel,29021201,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,290212011,EffectTypeParam1,HdPct"
+  },
+  "29021301": {
+    "Id": 29021301,
+    "GroupId": 213,
+    "Difficulty": 3,
+    "UnlockDifficulty": 15,
+    "Name": "援护抑制",
+    "Desc": "援护角色施放技能时，损失绝招能量<color=#ec6d21>&Param1&</color>点",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_1301",
+    "Element": 4,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29021301
+    ],
+    "Param1": "EffectValue,NoLevel,29021301,EffectTypeParam1,Fixed"
+  },
+  "29021302": {
+    "Id": 29021302,
+    "GroupId": 213,
+    "Difficulty": 8,
+    "UnlockDifficulty": 15,
+    "Name": "援护抑制·大",
+    "Desc": "援护角色施放技能时，损失绝招能量<color=#ec6d21>&Param1&</color>点",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_1302",
+    "Element": 4,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29021302
+    ],
+    "Param1": "EffectValue,NoLevel,29021302,EffectTypeParam1,Fixed"
+  },
+  "29021601": {
+    "Id": 29021601,
+    "GroupId": 216,
+    "Difficulty": 3,
+    "UnlockDifficulty": 50,
+    "Name": "愈战愈勇·小",
+    "Desc": "每战斗<color=#ec6d21>&Param1&</color>秒，敌方伤害提升<color=#ec6d21>&Param2&</color>，可无限叠加",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_1601",
+    "Element": 4,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29021601
+    ],
+    "Param1": "Effect,NoLevel,290216011,TriggerParam1,Fixed",
+    "Param2": "EffectValue,NoLevel,290216012,EffectTypeParam1,HdPct"
+  },
+  "29021602": {
+    "Id": 29021602,
+    "GroupId": 216,
+    "Difficulty": 5,
+    "UnlockDifficulty": 50,
+    "Name": "愈战愈勇·中",
+    "Desc": "每战斗<color=#ec6d21>&Param1&</color>秒，敌方伤害提升<color=#ec6d21>&Param2&</color>，可无限叠加",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_1602",
+    "Element": 4,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29021602
+    ],
+    "Param1": "Effect,NoLevel,290216021,TriggerParam1,Fixed",
+    "Param2": "EffectValue,NoLevel,290216022,EffectTypeParam1,HdPct"
+  },
+  "29021603": {
+    "Id": 29021603,
+    "GroupId": 216,
+    "Difficulty": 8,
+    "UnlockDifficulty": 50,
+    "Name": "愈战愈勇·大",
+    "Desc": "每战斗<color=#ec6d21>&Param1&</color>秒，敌方伤害提升<color=#ec6d21>&Param2&</color>，可无限叠加",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_1603",
+    "Element": 4,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29021603
+    ],
+    "Param1": "Effect,NoLevel,290216031,TriggerParam1,Fixed",
+    "Param2": "EffectValue,NoLevel,290216032,EffectTypeParam1,HdPct"
+  },
+  "29021401": {
+    "Id": 29021401,
+    "GroupId": 214,
+    "Difficulty": 5,
+    "UnlockDurationTime": 8160,
+    "Name": "绝招调整",
+    "Desc": "全队充能效率降低<color=#ec6d21>&Param1&</color>，但是绝招伤害增加<color=#ec6d21>&Param2&</color>",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_1401",
+    "Element": 4,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29021401,
+      290214011,
+      290214012
+    ],
+    "Param1": "EffectValue,NoLevel,29021401,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,290214012,EffectTypeParam1,HdPct"
+  },
+  "29021101": {
+    "Id": 29021101,
+    "GroupId": 211,
+    "Difficulty": 3,
+    "UnlockDurationTime": 8160,
+    "Name": "生命汲取",
+    "Desc": "花原击中主控角色时，回复<color=#ec6d21>&Param1&</color>最大生命的血量，每<color=#ec6d21>&Param2&</color>秒最大触发一次",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_1101",
+    "Element": 4,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29021101
+    ],
+    "Param1": "EffectValue,NoLevel,29021101,EffectTypeParam1,Pct",
+    "Param2": "EffectValue,NoLevel,29021101,CD,10K"
+  },
+  "29021102": {
+    "Id": 29021102,
+    "GroupId": 211,
+    "Difficulty": 8,
+    "UnlockDurationTime": 8160,
+    "Name": "生命汲取·大",
+    "Desc": "花原击中主控角色时，回复<color=#ec6d21>&Param1&</color>最大生命的血量，每<color=#ec6d21>&Param2&</color>秒最大触发一次",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_1102",
+    "Element": 4,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29021102
+    ],
+    "Param1": "EffectValue,NoLevel,29021102,EffectTypeParam1,Pct",
+    "Param2": "EffectValue,NoLevel,29021102,CD,10K"
+  },
+  "29020301": {
+    "Id": 29020301,
+    "GroupId": 203,
+    "Difficulty": 3,
+    "UnlockDurationTime": 8160,
+    "Name": "护盾·小",
+    "Desc": "敌方获得<color=#ec6d21>&Param1&</color>最大生命的护盾，敌方存在护盾期间不会被破韧",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_301",
+    "Element": 4,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29020301
+    ],
+    "Param1": "ShieldValue,NoLevel,29020301,ReferenceScale,10KHdPct"
+  },
+  "29020302": {
+    "Id": 29020302,
+    "GroupId": 203,
+    "Difficulty": 5,
+    "UnlockDurationTime": 8160,
+    "Name": "护盾·中",
+    "Desc": "敌方获得<color=#ec6d21>&Param1&</color>最大生命的护盾，敌方存在护盾期间不会被破韧",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_302",
+    "Element": 4,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29020302
+    ],
+    "Param1": "ShieldValue,NoLevel,29020302,ReferenceScale,10KHdPct"
+  },
+  "29020303": {
+    "Id": 29020303,
+    "GroupId": 203,
+    "Difficulty": 8,
+    "UnlockDurationTime": 8160,
+    "Name": "护盾·大",
+    "Desc": "敌方获得<color=#ec6d21>&Param1&</color>最大生命的护盾，敌方存在护盾期间不会被破韧",
+    "Icon": "UI_Activity/_600001/Affix/duelaffix_303",
+    "Element": 4,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29020303
+    ],
+    "Param1": "ShieldValue,NoLevel,29020303,ReferenceScale,10KHdPct"
+  },
+  "200201": {
+    "Id": 200201,
+    "GroupId": 200201,
+    "Difficulty": 5,
+    "Name": "万仞·一斩",
+    "Desc": "强化「万仞归一」，在火垂移动结束后会衔接高威力斩击",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_200201",
+    "Element": 5,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "LogicTag": "SkillTag_Ultra"
+  },
+  "200202": {
+    "Id": 200202,
+    "GroupId": 200202,
+    "Difficulty": 5,
+    "Name": "万象·狂想",
+    "Desc": "强化「万象协奏」，增加浮游兵装坠落的密度和数量",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_200202",
+    "Element": 5,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "LogicTag": "SkillTag_LightBlade"
+  },
+  "200203": {
+    "Id": 200203,
+    "GroupId": 200203,
+    "Difficulty": 5,
+    "Name": "追光重剑",
+    "Desc": "新增「追光重剑」技能，锁定主控角色掷出浮游剑后追加高威力斩击",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_200203",
+    "Element": 5,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "LogicTag": "SkillTag_HotCombo"
+  },
+  "200204": {
+    "Id": 200204,
+    "GroupId": 200204,
+    "Difficulty": 5,
+    "Name": "循环模式",
+    "Desc": "火垂释放技能后，额外获得<color=#ec6d21>5</color>点热力值",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_200204",
+    "Element": 5,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "LogicTag": "SkillTag_HotHitExtra"
+  },
+  "200205": {
+    "Id": 200205,
+    "GroupId": 200205,
+    "Difficulty": 5,
+    "Name": "节能模式",
+    "Desc": "火垂在「热力全开」状态下，释放技能消耗的热力值降低<color=#ec6d21>5</color>点",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_200205",
+    "Element": 5,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "LogicTag": "SkillTag_HotLoss"
+  },
+  "200206": {
+    "Id": 200206,
+    "GroupId": 200205,
+    "Difficulty": 5,
+    "Name": "预热模式",
+    "Desc": "非「热力全开」状态下，火垂每<color=#ec6d21>5</color>秒获得<color=#ec6d21>5</color>点热力值",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_200206",
+    "Element": 5,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "LogicTag": "SkillTag_HotTimeUp"
+  },
+  "29030301": {
+    "Id": 29030301,
+    "GroupId": 303,
+    "Difficulty": 2,
+    "Name": "渴血",
+    "Desc": "最大生命降低<color=#ec6d21>&Param1&</color>，主控角色每次造成技能伤害时回复<color=#ec6d21>&Param2&</color>的最大生命的血量",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_30301",
+    "Element": 5,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29030301,
+      290303011
+    ],
+    "Param1": "EffectValue,NoLevel,29030301,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,290303011,EffectTypeParam1,Pct"
+  },
+  "29030601": {
+    "Id": 29030601,
+    "GroupId": 306,
+    "Difficulty": 1,
+    "Name": "法力燃烧",
+    "Desc": "主控角色被击中时，流失<color=#ec6d21>&Param1&</color>点绝招能量",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_30601",
+    "Element": 5,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29030601
+    ],
+    "Param1": "EffectValue,NoLevel,29030601,EffectTypeParam1,Fixed"
+  },
+  "29030602": {
+    "Id": 29030602,
+    "GroupId": 306,
+    "Difficulty": 4,
+    "Name": "法力燃烧·大",
+    "Desc": "主控角色被击中时，全队流失<color=#ec6d21>&Param1&</color>点绝招能量",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_30602",
+    "Element": 5,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29030602
+    ],
+    "Param1": "EffectValue,NoLevel,29030602,EffectTypeParam1,Fixed"
+  },
+  "29030901": {
+    "Id": 29030901,
+    "GroupId": 309,
+    "Difficulty": 2,
+    "Name": "仆从削弱",
+    "Desc": "仆从伤害降低<color=#ec6d21>&Param1&</color>，绝招伤害提升<color=#ec6d21>&Param2&</color>",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_30901",
+    "Element": 5,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29030901,
+      290309011
+    ],
+    "Param1": "EffectValue,NoLevel,29030901,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,290309011,EffectTypeParam1,HdPct"
+  },
+  "29030902": {
+    "Id": 29030902,
+    "GroupId": 309,
+    "Difficulty": 2,
+    "Name": "印记削弱",
+    "Desc": "印记伤害降低<color=#ec6d21>&Param1&</color>，技能伤害提升<color=#ec6d21>&Param2&</color>",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_30902",
+    "Element": 5,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29030902,
+      290309021
+    ],
+    "Param1": "EffectValue,NoLevel,29030902,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,290309021,EffectTypeParam1,HdPct"
+  },
+  "29030903": {
+    "Id": 29030903,
+    "GroupId": 309,
+    "Difficulty": 2,
+    "Name": "绝招削弱",
+    "Desc": "绝招伤害降低<color=#ec6d21>&Param1&</color>，普攻伤害提升<color=#ec6d21>&Param2&</color>",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_30903",
+    "Element": 5,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29030903,
+      290309031
+    ],
+    "Param1": "EffectValue,NoLevel,29030903,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,290309031,EffectTypeParam1,HdPct"
+  },
+  "29030401": {
+    "Id": 29030401,
+    "GroupId": 304,
+    "Difficulty": 2,
+    "Name": "战斗专注",
+    "Desc": "主控角色降低<color=#ec6d21>&Param1&</color>伤害，每次造成伤害时提升<color=#ec6d21>&Param2&</color>伤害，持续<color=#ec6d21>&Param3&</color>秒，最多叠加<color=#ec6d21>&Param4&</color>层",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_30401",
+    "Element": 5,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29030401,
+      290304011
+    ],
+    "Param1": "EffectValue,NoLevel,29030401,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,290304012,EffectTypeParam1,HdPct",
+    "Param3": "BuffValue,NoLevel,290304011,Time,10K",
+    "Param4": "BuffValue,NoLevel,290304011,LaminatedNum,Fixed"
+  },
+  "29031201": {
+    "Id": 29031201,
+    "GroupId": 312,
+    "Difficulty": 2,
+    "Name": "暴击调整·伤害",
+    "Desc": "全队暴击伤害提升<color=#ec6d21>&Param1&</color>，暴击率降低<color=#ec6d21>&Param2&</color>",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_31201",
+    "Element": 5,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29031201,
+      290312011
+    ],
+    "Param1": "EffectValue,NoLevel,29031201,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,290312011,EffectTypeParam1,HdPct"
+  },
+  "29031202": {
+    "Id": 29031202,
+    "GroupId": 312,
+    "Difficulty": 2,
+    "Name": "暴击调整·几率",
+    "Desc": "全队暴击率提升<color=#ec6d21>&Param1&</color>，暴击伤害降低<color=#ec6d21>&Param2&</color>",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_31202",
+    "Element": 5,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29031202,
+      290312021
+    ],
+    "Param1": "EffectValue,NoLevel,29031202,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,290312021,EffectTypeParam1,HdPct"
+  },
+  "29030101": {
+    "Id": 29030101,
+    "GroupId": 301,
+    "Difficulty": 1,
+    "Name": "伤害提升·小",
+    "Desc": "敌方伤害上升<color=#ec6d21>&Param1&</color>",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_30101",
+    "Element": 5,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29030101
+    ],
+    "Param1": "EffectValue,NoLevel,29030101,EffectTypeParam1,HdPct"
+  },
+  "29030102": {
+    "Id": 29030102,
+    "GroupId": 301,
+    "Difficulty": 2,
+    "Name": "伤害提升·中",
+    "Desc": "敌方伤害上升<color=#ec6d21>&Param1&</color>",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_30102",
+    "Element": 5,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29030102
+    ],
+    "Param1": "EffectValue,NoLevel,29030102,EffectTypeParam1,HdPct"
+  },
+  "29030103": {
+    "Id": 29030103,
+    "GroupId": 301,
+    "Difficulty": 4,
+    "Name": "伤害提升·大",
+    "Desc": "敌方伤害上升<color=#ec6d21>&Param1&</color>",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_30103",
+    "Element": 5,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29030103
+    ],
+    "Param1": "EffectValue,NoLevel,29030103,EffectTypeParam1,HdPct"
+  },
+  "29030201": {
+    "Id": 29030201,
+    "GroupId": 302,
+    "Difficulty": 1,
+    "Name": "抑制·小",
+    "Desc": "全队充能效率降低<color=#ec6d21>&Param1&</color>",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_30201",
+    "Element": 5,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29030201,
+      290302011
+    ],
+    "Param1": "EffectValue,NoLevel,29030201,EffectTypeParam1,HdPct"
+  },
+  "29030202": {
+    "Id": 29030202,
+    "GroupId": 302,
+    "Difficulty": 2,
+    "Name": "抑制·中",
+    "Desc": "全队充能效率降低<color=#ec6d21>&Param1&</color>",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_30202",
+    "Element": 5,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29030202,
+      290302021
+    ],
+    "Param1": "EffectValue,NoLevel,29030202,EffectTypeParam1,HdPct"
+  },
+  "29030203": {
+    "Id": 29030203,
+    "GroupId": 302,
+    "Difficulty": 4,
+    "Name": "抑制·大",
+    "Desc": "全队充能效率降低<color=#ec6d21>&Param1&</color>",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_30203",
+    "Element": 5,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29030203,
+      290302031
+    ],
+    "Param1": "EffectValue,NoLevel,29030203,EffectTypeParam1,HdPct"
+  },
+  "29031401": {
+    "Id": 29031401,
+    "GroupId": 314,
+    "Difficulty": 1,
+    "Name": "神灵武士·小",
+    "Desc": "火垂血量每降低<color=#ec6d21>&Param1&</color>，伤害提升<color=#ec6d21>&Param2&</color>",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_31401",
+    "Element": 5,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      2
+    ],
+    "SkillId": [
+      29031401,
+      290314011,
+      290314012,
+      290314013,
+      290314014,
+      290314015,
+      290314016,
+      290314017,
+      290314018
+    ],
+    "Param1": "Effect,NoLevel,290314018,TriggerParam1,Pct",
+    "Param2": "EffectValue,NoLevel,29031401,EffectTypeParam1,HdPct"
+  },
+  "29031402": {
+    "Id": 29031402,
+    "GroupId": 314,
+    "Difficulty": 2,
+    "Name": "神灵武士·中",
+    "Desc": "火垂血量每降低<color=#ec6d21>&Param1&</color>，伤害提升<color=#ec6d21>&Param2&</color>",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_31402",
+    "Element": 5,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      2
+    ],
+    "SkillId": [
+      29031402,
+      290314021,
+      290314022,
+      290314023,
+      290314024,
+      290314025,
+      290314026,
+      290314027,
+      290314028
+    ],
+    "Param1": "Effect,NoLevel,290314028,TriggerParam1,Pct",
+    "Param2": "EffectValue,NoLevel,29031402,EffectTypeParam1,HdPct"
+  },
+  "29031403": {
+    "Id": 29031403,
+    "GroupId": 314,
+    "Difficulty": 4,
+    "Name": "神灵武士·大",
+    "Desc": "火垂血量每降低<color=#ec6d21>&Param1&</color>，伤害提升<color=#ec6d21>&Param2&</color>",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_31403",
+    "Element": 5,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      2
+    ],
+    "SkillId": [
+      29031403,
+      290314031,
+      290314032,
+      290314033,
+      290314034,
+      290314035,
+      290314036,
+      290314037,
+      290314038
+    ],
+    "Param1": "Effect,NoLevel,290314038,TriggerParam1,Pct",
+    "Param2": "EffectValue,NoLevel,29031403,EffectTypeParam1,HdPct"
+  },
+  "29031501": {
+    "Id": 29031501,
+    "GroupId": 315,
+    "Difficulty": 2,
+    "UnlockDurationTime": 960,
+    "Name": "加速运转",
+    "Desc": "主控角色技能伤害降低<color=#ec6d21>&Param1&</color>，但技能冷却缩短<color=#ec6d21>&Param2&</color>",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_31501",
+    "Element": 5,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29031501,
+      290315011
+    ],
+    "Param1": "EffectValue,NoLevel,29031501,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,290315011,EffectTypeParam1,HdPct"
+  },
+  "29031601": {
+    "Id": 29031601,
+    "GroupId": 316,
+    "Difficulty": 1,
+    "UnlockDurationTime": 960,
+    "Name": "乘胜追击",
+    "Desc": "火垂攻击命中后，伤害提高<color=#ec6d21>&Param1&</color>，持续<color=#ec6d21>&Param2&</color>秒",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_31601",
+    "Element": 5,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      2
+    ],
+    "SkillId": [
+      29031601
+    ],
+    "Param1": "EffectValue,NoLevel,290316011,EffectTypeParam1,HdPct",
+    "Param2": "BuffValue,NoLevel,29031601,Time,10K"
+  },
+  "29031602": {
+    "Id": 29031602,
+    "GroupId": 316,
+    "Difficulty": 4,
+    "UnlockDurationTime": 960,
+    "Name": "乘胜追击·大",
+    "Desc": "火垂攻击命中后，伤害提高<color=#ec6d21>&Param1&</color>，持续<color=#ec6d21>&Param2&</color>秒",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_31602",
+    "Element": 5,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      2
+    ],
+    "SkillId": [
+      29031602
+    ],
+    "Param1": "EffectValue,NoLevel,290316021,EffectTypeParam1,HdPct",
+    "Param2": "BuffValue,NoLevel,29031602,Time,10K"
+  },
+  "29032001": {
+    "Id": 29032001,
+    "GroupId": 320,
+    "Difficulty": 1,
+    "UnlockDurationTime": 2400,
+    "Name": "绝招调整",
+    "Desc": "全队充能效率提高<color=#ec6d21>&Param1&</color>，但是绝招伤害降低<color=#ec6d21>&Param2&</color>",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_32001",
+    "Element": 5,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29032001,
+      290320011,
+      290320012
+    ],
+    "Param1": "EffectValue,NoLevel,29032001,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,290320012,EffectTypeParam1,HdPct"
+  },
+  "29031901": {
+    "Id": 29031901,
+    "GroupId": 319,
+    "Difficulty": 2,
+    "UnlockDurationTime": 2400,
+    "Name": "残刃饮血",
+    "Desc": "主控角色每<color=#ec6d21>&Param1&</color>秒流失当前<color=#ec6d21>&Param2&</color>生命的血量，每次暴击恢复<color=#ec6d21>&Param3&</color>最大生命的血量",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_31901",
+    "Element": 5,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29031901,
+      290319012
+    ],
+    "Param1": "Effect,NoLevel,290319011,TriggerParam1,Fixed",
+    "Param2": "EffectValue,NoLevel,290319011,EffectTypeParam1,Pct",
+    "Param3": "EffectValue,NoLevel,290319012,EffectTypeParam1,Pct"
+  },
+  "29031902": {
+    "Id": 29031902,
+    "GroupId": 319,
+    "Difficulty": 2,
+    "UnlockDurationTime": 2400,
+    "Name": "饮技止伤",
+    "Desc": "主控角色每次释放技能时恢复<color=#ec6d21>&Param1&</color>最大生命的血量，但是受击后会被禁疗<color=#ec6d21>&Param2&</color>秒",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_31902",
+    "Element": 5,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29031902,
+      290319021
+    ],
+    "Param1": "EffectValue,NoLevel,29031902,EffectTypeParam1,Pct",
+    "Param2": "BuffValue,NoLevel,290319021,Time,10K"
+  },
+  "29031301": {
+    "Id": 29031301,
+    "GroupId": 313,
+    "Difficulty": 4,
+    "UnlockDurationTime": 3840,
+    "Name": "功高震主",
+    "Desc": "援护角色充能效率提高<color=#ec6d21>&Param1&</color>，释放援护绝招时，主控角色损失当前<color=#ec6d21>&Param2&</color>生命值",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_31301",
+    "Element": 5,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29031301,
+      290313011
+    ],
+    "Param1": "EffectValue,NoLevel,29031301,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,290313011,EffectTypeParam1,Pct"
+  },
+  "29030501": {
+    "Id": 29030501,
+    "GroupId": 305,
+    "Difficulty": 1,
+    "UnlockDurationTime": 3840,
+    "Name": "透支能量",
+    "Desc": "进入关卡时全队获得<color=#ec6d21>&Param1&</color>能量，但能量获取效率降低<color=#ec6d21>&Param2&</color>",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_30501",
+    "Element": 5,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29030501,
+      290305011,
+      290305012
+    ],
+    "Param1": "EffectValue,NoLevel,29030501,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,290305011,EffectTypeParam1,HdPct"
+  },
+  "29030502": {
+    "Id": 29030502,
+    "GroupId": 305,
+    "Difficulty": 6,
+    "UnlockDurationTime": 3840,
+    "Name": "透支能量·大",
+    "Desc": "进入关卡时全队获得<color=#ec6d21>&Param1&</color>能量，但能量获取效率降低<color=#ec6d21>&Param2&</color>",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_30502",
+    "Element": 5,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29030502,
+      290305021,
+      290305022
+    ],
+    "Param1": "EffectValue,NoLevel,29030502,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,290305021,EffectTypeParam1,HdPct"
+  },
+  "29030801": {
+    "Id": 29030801,
+    "GroupId": 308,
+    "Difficulty": 4,
+    "UnlockDurationTime": 5280,
+    "Name": "高危闪避",
+    "Desc": "闪避后，主控角色受到伤害提高<color=#ec6d21>&Param1&</color>，持续<color=#ec6d21>&Param2&</color>秒",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_30801",
+    "Element": 5,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29030801
+    ],
+    "Param1": "EffectValue,NoLevel,290308011,EffectTypeParam1,HdPct",
+    "Param2": "BuffValue,NoLevel,29030801,Time,10K"
+  },
+  "29030701": {
+    "Id": 29030701,
+    "GroupId": 307,
+    "Difficulty": 6,
+    "UnlockDurationTime": 5280,
+    "Name": "咒缚反击",
+    "Desc": "主控角色被击中时，攻击速度降低<color=#ec6d21>&Param1&</color>，持续<color=#ec6d21>&Param2&</color>秒",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_30701",
+    "Element": 5,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29030701
+    ],
+    "Param1": "EffectValue,NoLevel,290307011,EffectTypeParam1,HdPct",
+    "Param2": "BuffValue,NoLevel,29030701,Time,10K"
+  },
+  "29031801": {
+    "Id": 29031801,
+    "GroupId": 318,
+    "Difficulty": 4,
+    "UnlockDurationTime": 5280,
+    "Name": "以身试险",
+    "Desc": "主控角色受到伤害提升<color=#ec6d21>&Param1&</color>，但是受到伤害时获得<color=#ec6d21>&Param2&</color>点能量值",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_31801",
+    "Element": 5,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29031801,
+      290318011
+    ],
+    "Param1": "EffectValue,NoLevel,29031801,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,290318011,EffectTypeParam1,Fixed"
+  },
+  "29031001": {
+    "Id": 29031001,
+    "GroupId": 310,
+    "Difficulty": 6,
+    "UnlockDurationTime": 6720,
+    "Name": "偏差认知",
+    "Desc": "主控角色技能伤害提高<color=#ec6d21>&Param1&</color>，之后每<color=#ec6d21>&Param3&</color>秒降低<color=#ec6d21>&Param2&</color>",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_31001",
+    "Element": 5,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29031001,
+      290310011
+    ],
+    "Param1": "EffectValue,NoLevel,29031001,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,290310013,EffectTypeParam1,HdPct",
+    "Param3": "Effect,NoLevel,290310012,TriggerParam1,Fixed"
+  },
+  "29031101": {
+    "Id": 29031101,
+    "GroupId": 311,
+    "Difficulty": 1,
+    "UnlockDurationTime": 6720,
+    "Name": "欺软怕硬",
+    "Desc": "火垂生命值高于<color=#ec6d21>&Param1&</color>时受到伤害降低<color=#ec6d21>&Param2&</color>，生命值低于<color=#ec6d21>&Param3&</color>时受到伤害提高<color=#ec6d21>&Param4&</color>",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_31101",
+    "Element": 5,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      2
+    ],
+    "SkillId": [
+      29031101,
+      290311011
+    ],
+    "Param1": "Effect,NoLevel,29031101,TriggerParam1,Pct",
+    "Param2": "EffectValue,NoLevel,29031101,EffectTypeParam1,HdPct",
+    "Param3": "Effect,NoLevel,290311011,TriggerParam1,Pct",
+    "Param4": "EffectValue,NoLevel,290311011,EffectTypeParam1,HdPct"
+  },
+  "29031102": {
+    "Id": 29031102,
+    "GroupId": 311,
+    "Difficulty": 6,
+    "UnlockDurationTime": 6720,
+    "Name": "欺软怕硬·大",
+    "Desc": "火垂生命值高于<color=#ec6d21>&Param1&</color>时受到伤害降低<color=#ec6d21>&Param2&</color>，生命值低于<color=#ec6d21>&Param3&</color>时受到伤害提高<color=#ec6d21>&Param4&</color>",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_31102",
+    "Element": 5,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      2
+    ],
+    "SkillId": [
+      29031102,
+      290311021
+    ],
+    "Param1": "Effect,NoLevel,29031102,TriggerParam1,Pct",
+    "Param2": "EffectValue,NoLevel,29031102,EffectTypeParam1,HdPct",
+    "Param3": "Effect,NoLevel,290311021,TriggerParam1,Pct",
+    "Param4": "EffectValue,NoLevel,290311021,EffectTypeParam1,HdPct"
+  },
+  "29031701": {
+    "Id": 29031701,
+    "GroupId": 317,
+    "Difficulty": 1,
+    "UnlockDurationTime": 8160,
+    "Name": "光铸铠甲·小",
+    "Desc": "火垂每次受到技能攻击时获得<color=#ec6d21>&Param1&</color>伤害减免，持续<color=#ec6d21>&Param2&</color>秒，最多叠加<color=#ec6d21>&Param3&</color>层，每秒最多叠<color=#ec6d21>&Param4&</color>层",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_31701",
+    "Element": 5,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      2
+    ],
+    "SkillId": [
+      29031701
+    ],
+    "Param1": "EffectValue,NoLevel,290317011,EffectTypeParam1,HdPct",
+    "Param2": "BuffValue,NoLevel,29031701,Time,10K",
+    "Param3": "BuffValue,NoLevel,29031701,LaminatedNum,Fixed",
+    "Param4": "EffectValue,NoLevel,29031701,CD,10K"
+  },
+  "29031702": {
+    "Id": 29031702,
+    "GroupId": 317,
+    "Difficulty": 2,
+    "UnlockDurationTime": 8160,
+    "Name": "光铸铠甲·中",
+    "Desc": "火垂每次受到技能攻击时获得<color=#ec6d21>&Param1&</color>伤害减免，持续<color=#ec6d21>&Param2&</color>秒，最多叠加<color=#ec6d21>&Param3&</color>层，每秒最多叠<color=#ec6d21>&Param4&</color>层",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_31702",
+    "Element": 5,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      2
+    ],
+    "SkillId": [
+      29031702
+    ],
+    "Param1": "EffectValue,NoLevel,290317021,EffectTypeParam1,HdPct",
+    "Param2": "BuffValue,NoLevel,29031702,Time,10K",
+    "Param3": "BuffValue,NoLevel,29031702,LaminatedNum,Fixed",
+    "Param4": "EffectValue,NoLevel,29031702,CD,10K"
+  },
+  "29031703": {
+    "Id": 29031703,
+    "GroupId": 317,
+    "Difficulty": 6,
+    "UnlockDurationTime": 8160,
+    "Name": "光铸铠甲·大",
+    "Desc": "火垂每次受到技能攻击时获得<color=#ec6d21>&Param1&</color>伤害减免，持续<color=#ec6d21>&Param2&</color>秒，最多叠加<color=#ec6d21>&Param3&</color>层，每秒最多叠<color=#ec6d21>&Param4&</color>层",
+    "Icon": "UI_Activity/_600002/Affix/duelaffix_31703",
+    "Element": 5,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      2
+    ],
+    "SkillId": [
+      29031703
+    ],
+    "Param1": "EffectValue,NoLevel,290317031,EffectTypeParam1,HdPct",
+    "Param2": "BuffValue,NoLevel,29031703,Time,10K",
+    "Param3": "BuffValue,NoLevel,29031703,LaminatedNum,Fixed",
+    "Param4": "EffectValue,NoLevel,29031703,CD,10K"
+  },
+  "400101": {
+    "Id": 400101,
+    "GroupId": 400101,
+    "Difficulty": 5,
+    "Name": "全自动射击",
+    "Desc": "强化突击模式：[快速射击]时将会发射更多子弹。",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_400101",
+    "Element": 2,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "LogicTag": "SkillTag_AutoShoot"
+  },
+  "400102": {
+    "Id": 400102,
+    "GroupId": 400102,
+    "Difficulty": 5,
+    "Name": "暗黑射线",
+    "Desc": "强化狙击模式：[暗黑子弹]后会释放更强大的暗黑射线。",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_400102",
+    "Element": 2,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "LogicTag": "SkillTag_LaserShoot"
+  },
+  "400103": {
+    "Id": 400103,
+    "GroupId": 400103,
+    "Difficulty": 5,
+    "Name": "火力全开",
+    "Desc": "强化突击模式：连续射击后，猫眼将会召唤法阵，向外发射猫猫子弹。",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_400103",
+    "Element": 2,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "LogicTag": "SkillTag_ShootWithCat"
+  },
+  "400104": {
+    "Id": 400104,
+    "GroupId": 400104,
+    "Difficulty": 5,
+    "Name": "二段光束",
+    "Desc": "强化狙击模式：[镭射光束]将增加二次攻击。",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_400104",
+    "Element": 2,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "LogicTag": "SkillTag_AimLaser"
+  },
+  "400105": {
+    "Id": 400105,
+    "GroupId": 400105,
+    "Difficulty": 5,
+    "Name": "愤怒猫猫",
+    "Desc": "[猫猫弹幕]将会发射更多的猫猫子弹。",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_400105",
+    "Element": 2,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "LogicTag": "SkillTag_MoreCatBullet"
+  },
+  "400106": {
+    "Id": 400106,
+    "GroupId": 400106,
+    "Difficulty": 5,
+    "Name": "喵神之眼",
+    "Desc": "[魔神之眼]的追踪时间更长，追踪速度更快。",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_400106",
+    "Element": 2,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "LogicTag": "SkillTag_DevilEyesEx"
+  },
+  "29040101": {
+    "Id": 29040101,
+    "GroupId": 401,
+    "Difficulty": 1,
+    "Name": "伤害提升·小",
+    "Desc": "敌方伤害上升<color=#ec6d21>&Param1&</color>",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_40101",
+    "Element": 2,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29040101
+    ],
+    "Param1": "EffectValue,NoLevel,29040101,EffectTypeParam1,HdPct"
+  },
+  "29040102": {
+    "Id": 29040102,
+    "GroupId": 401,
+    "Difficulty": 2,
+    "Name": "伤害提升·中",
+    "Desc": "敌方伤害上升<color=#ec6d21>&Param1&</color>",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_40102",
+    "Element": 2,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29040102
+    ],
+    "Param1": "EffectValue,NoLevel,29040102,EffectTypeParam1,HdPct"
+  },
+  "29040103": {
+    "Id": 29040103,
+    "GroupId": 401,
+    "Difficulty": 4,
+    "Name": "伤害提升·大",
+    "Desc": "敌方伤害上升<color=#ec6d21>&Param1&</color>",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_40103",
+    "Element": 2,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29040103
+    ],
+    "Param1": "EffectValue,NoLevel,29040103,EffectTypeParam1,HdPct"
+  },
+  "29040201": {
+    "Id": 29040201,
+    "GroupId": 402,
+    "Difficulty": 1,
+    "Name": "迟滞·小",
+    "Desc": "全队技能冷却增加<color=#ec6d21>&Param1&</color>",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_40201",
+    "Element": 2,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29040201
+    ],
+    "Param1": "EffectValue,NoLevel,29040201,EffectTypeParam1,HdPct"
+  },
+  "29040202": {
+    "Id": 29040202,
+    "GroupId": 402,
+    "Difficulty": 2,
+    "Name": "迟滞·中",
+    "Desc": "全队技能冷却增加<color=#ec6d21>&Param1&</color>",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_40202",
+    "Element": 2,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29040202
+    ],
+    "Param1": "EffectValue,NoLevel,29040202,EffectTypeParam1,HdPct"
+  },
+  "29040203": {
+    "Id": 29040203,
+    "GroupId": 402,
+    "Difficulty": 4,
+    "Name": "迟滞·大",
+    "Desc": "全队技能冷却增加<color=#ec6d21>&Param1&</color>",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_40203",
+    "Element": 2,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29040203
+    ],
+    "Param1": "EffectValue,NoLevel,29040203,EffectTypeParam1,HdPct"
+  },
+  "29040301": {
+    "Id": 29040301,
+    "GroupId": 403,
+    "Difficulty": 2,
+    "Name": "渴血",
+    "Desc": "最大生命降低<color=#ec6d21>&Param1&</color>，主控角色每次造成技能伤害时回复<color=#ec6d21>&Param2&</color>的最大生命的血量",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_40301",
+    "Element": 2,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29040301,
+      290403011
+    ],
+    "Param1": "EffectValue,NoLevel,29040301,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,290403011,EffectTypeParam1,Pct"
+  },
+  "29040401": {
+    "Id": 29040401,
+    "GroupId": 404,
+    "Difficulty": 6,
+    "UnlockDurationTime": 8160,
+    "Name": "协同作战",
+    "Desc": "主控角色造成的伤害降低<color=#ec6d21>&Param1&</color>，援护角色每次造成伤害，主控角色造成伤害提高<color=#ec6d21>&Param2&</color>，持续<color=#ec6d21>&Param3&</color>秒，最多叠加<color=#ec6d21>&Param4&</color>层；",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_40401",
+    "Element": 2,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29040401,
+      290404011
+    ],
+    "Param1": "EffectValue,NoLevel,29040401,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,290404012,EffectTypeParam1,HdPct",
+    "Param3": "BuffValue,NoLevel,29040401,Time,10K",
+    "Param4": "BuffValue,NoLevel,29040401,LaminatedNum,Fixed"
+  },
+  "29040402": {
+    "Id": 29040402,
+    "GroupId": 404,
+    "Difficulty": 6,
+    "UnlockDurationTime": 8160,
+    "Name": "单打独斗",
+    "Desc": "主控角色造成的伤害提高<color=#ec6d21>&Param1&</color>；释放援护技能后，主控角色造成的伤害降低<color=#ec6d21>&Param2&</color>，持续<color=#ec6d21>&Param3&</color>秒；",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_40402",
+    "Element": 2,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29040402,
+      290404021
+    ],
+    "Param1": "EffectValue,NoLevel,29040402,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,290404023,EffectTypeParam1,HdPct",
+    "Param3": "BuffValue,NoLevel,29040402,Time,10K"
+  },
+  "29040501": {
+    "Id": 29040501,
+    "GroupId": 405,
+    "Difficulty": 2,
+    "UnlockDurationTime": 2400,
+    "Name": "战斗疲惫",
+    "Desc": "全队施放技能后的<color=#ec6d21>&Param1&</color>秒内，回能效率降低<color=#ec6d21>&Param2&</color>",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_40501",
+    "Element": 2,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29040501
+    ],
+    "Param1": "BuffValue,NoLevel,29040501,Time,10K",
+    "Param2": "EffectValue,NoLevel,290405011,EffectTypeParam1,HdPct"
+  },
+  "29040601": {
+    "Id": 29040601,
+    "GroupId": 406,
+    "Difficulty": 2,
+    "UnlockDurationTime": 3840,
+    "Name": "愈战愈勇",
+    "Desc": "援护角色造成的伤害降低<color=#ec6d21>&Param1&</color>，主控角色每次受击后，援护角色造成伤害提升<color=#ec6d21>&Param2&</color>，持续<color=#ec6d21>&Param4&</color>秒，最多叠加<color=#ec6d21>&Param3&</color>层",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_40601",
+    "Element": 2,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29040601,
+      290406011
+    ],
+    "Param1": "EffectValue,NoLevel,29040601,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,290406012,EffectTypeParam1,HdPct",
+    "Param3": "BuffValue,NoLevel,29040601,LaminatedNum,Fixed",
+    "Param4": "BuffValue,NoLevel,29040601,Time,10K"
+  },
+  "29040701": {
+    "Id": 29040701,
+    "GroupId": 407,
+    "Difficulty": 1,
+    "UnlockDurationTime": 960,
+    "Name": "节奏紊乱",
+    "Desc": "主控角色被击中时，技能伤害降低<color=#ec6d21>&Param1&</color>，持续<color=#ec6d21>&Param2&</color>秒，每<color=#ec6d21>&Param3&</color>秒最多触发一次",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_40701",
+    "Element": 2,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29040701
+    ],
+    "Param1": "EffectValue,NoLevel,290407011,EffectTypeParam1,HdPct",
+    "Param2": "BuffValue,NoLevel,29040701,Time,10K",
+    "Param3": "EffectValue,NoLevel,29040701,CD,10K"
+  },
+  "29040702": {
+    "Id": 29040702,
+    "GroupId": 407,
+    "Difficulty": 4,
+    "UnlockDurationTime": 960,
+    "Name": "节奏紊乱·大",
+    "Desc": "主控角色被击中时，技能伤害降低<color=#ec6d21>&Param1&</color>，持续<color=#ec6d21>&Param2&</color>秒，每<color=#ec6d21>&Param3&</color>秒最多触发一次",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_40702",
+    "Element": 2,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29040702
+    ],
+    "Param1": "EffectValue,NoLevel,290407021,EffectTypeParam1,HdPct",
+    "Param2": "BuffValue,NoLevel,29040702,Time,10K",
+    "Param3": "EffectValue,NoLevel,29040702,CD,10K"
+  },
+  "29040801": {
+    "Id": 29040801,
+    "GroupId": 408,
+    "Difficulty": 6,
+    "UnlockDurationTime": 6720,
+    "Name": "逃避代价",
+    "Desc": "闪避后，主控角色流失<color=#ec6d21>&Param1&</color>点绝招能量",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_40801",
+    "Element": 2,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29040801
+    ],
+    "Param1": "EffectValue,NoLevel,29040801,EffectTypeParam1,Fixed"
+  },
+  "29040901": {
+    "Id": 29040901,
+    "GroupId": 409,
+    "Difficulty": 4,
+    "UnlockDurationTime": 3840,
+    "Name": "强攻代价",
+    "Desc": "全队技能伤害提升<color=#ec6d21>&Param1&</color>，但受到伤害提高<color=#ec6d21>&Param2&</color>",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_40901",
+    "Element": 2,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29040901,
+      290409011
+    ],
+    "Param1": "EffectValue,NoLevel,29040901,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,290409011,EffectTypeParam1,HdPct"
+  },
+  "29040902": {
+    "Id": 29040902,
+    "GroupId": 409,
+    "Difficulty": 4,
+    "UnlockDurationTime": 3840,
+    "Name": "固守待援",
+    "Desc": "全队技能伤害降低<color=#ec6d21>&Param1&</color>，但受到伤害降低<color=#ec6d21>&Param2&</color>",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_40902",
+    "Element": 2,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29040902,
+      290409021
+    ],
+    "Param1": "EffectValue,NoLevel,29040902,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,290409021,EffectTypeParam1,HdPct"
+  },
+  "29041001": {
+    "Id": 29041001,
+    "GroupId": 410,
+    "Difficulty": 2,
+    "UnlockDurationTime": 8160,
+    "Name": "正面佯攻",
+    "Desc": "援护角色回能效率提升<color=#ec6d21>&Param1&</color>，但主控角色造成伤害降低<color=#ec6d21>&Param2&</color>",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_41001",
+    "Element": 2,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29041001,
+      290410011
+    ],
+    "Param1": "EffectValue,NoLevel,29041001,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,290410011,EffectTypeParam1,HdPct"
+  },
+  "29041101": {
+    "Id": 29041101,
+    "GroupId": 411,
+    "Difficulty": 2,
+    "Name": "印记削弱",
+    "Desc": "全队印记伤害降低<color=#ec6d21>&Param1&</color>，绝招伤害提升<color=#ec6d21>&Param2&</color>",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_41101",
+    "Element": 2,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29041101,
+      290411011
+    ],
+    "Param1": "EffectValue,NoLevel,29041101,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,290411011,EffectTypeParam1,HdPct"
+  },
+  "29041102": {
+    "Id": 29041102,
+    "GroupId": 411,
+    "Difficulty": 2,
+    "Name": "普攻削弱",
+    "Desc": "全队普攻伤害降低<color=#ec6d21>&Param1&</color>，技能伤害提升<color=#ec6d21>&Param2&</color>",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_41102",
+    "Element": 2,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29041102,
+      290411021
+    ],
+    "Param1": "EffectValue,NoLevel,29041102,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,290411021,EffectTypeParam1,HdPct"
+  },
+  "29041103": {
+    "Id": 29041103,
+    "GroupId": 411,
+    "Difficulty": 2,
+    "Name": "技能削弱",
+    "Desc": "全队技能伤害降低<color=#ec6d21>&Param1&</color>，仆从伤害提升<color=#ec6d21>&Param2&</color>",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_41103",
+    "Element": 2,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29041103,
+      290411031
+    ],
+    "Param1": "EffectValue,NoLevel,29041103,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,290411031,EffectTypeParam1,HdPct"
+  },
+  "29041201": {
+    "Id": 29041201,
+    "GroupId": 412,
+    "Difficulty": 1,
+    "Name": "魔神之躯",
+    "Desc": "猫眼初始受到的伤害降低<color=#ec6d21>&Param1&</color>，每经过<color=#ec6d21>&Param2&</color>秒减伤提高<color=#ec6d21>&Param3&</color>，最多叠加<color=#ec6d21>&Param4&</color>层",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_41201",
+    "Element": 2,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      290412013
+    ],
+    "Param1": "EffectValue,NoLevel,29041201,EffectTypeParam1,HdPct",
+    "Param2": "Effect,NoLevel,290412011,TriggerParam1,Fixed",
+    "Param3": "EffectValue,NoLevel,290412012,EffectTypeParam1,HdPct",
+    "Param4": "BuffValue,NoLevel,29041201,LaminatedNum,Fixed"
+  },
+  "29041202": {
+    "Id": 29041202,
+    "GroupId": 412,
+    "Difficulty": 6,
+    "Name": "魔神之躯·大",
+    "Desc": "猫眼初始受到的伤害降低<color=#ec6d21>&Param1&</color>，每经过<color=#ec6d21>&Param2&</color>秒减伤提高<color=#ec6d21>&Param3&</color>，最多叠加<color=#ec6d21>&Param4&</color>层",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_41202",
+    "Element": 2,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      290412023
+    ],
+    "Param1": "EffectValue,NoLevel,29041202,EffectTypeParam1,HdPct",
+    "Param2": "Effect,NoLevel,290412021,TriggerParam1,Fixed",
+    "Param3": "EffectValue,NoLevel,290412022,EffectTypeParam1,HdPct",
+    "Param4": "BuffValue,NoLevel,29041202,LaminatedNum,Fixed"
+  },
+  "29041301": {
+    "Id": 29041301,
+    "GroupId": 413,
+    "Difficulty": 2,
+    "Name": "暴击调整·伤害",
+    "Desc": "全队暴击伤害提升<color=#ec6d21>&Param1&</color>，暴击率降低<color=#ec6d21>&Param2&</color>",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_41301",
+    "Element": 2,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29041301,
+      290413011
+    ],
+    "Param1": "EffectValue,NoLevel,29041301,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,290413011,EffectTypeParam1,HdPct"
+  },
+  "29041302": {
+    "Id": 29041302,
+    "GroupId": 413,
+    "Difficulty": 2,
+    "Name": "暴击调整·几率",
+    "Desc": "全队暴击率提升<color=#ec6d21>&Param1&</color>，暴击伤害降低<color=#ec6d21>&Param2&</color>",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_41302",
+    "Element": 2,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29041302,
+      290413021
+    ],
+    "Param1": "EffectValue,NoLevel,29041302,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,290413021,EffectTypeParam1,HdPct"
+  },
+  "29041401": {
+    "Id": 29041401,
+    "GroupId": 414,
+    "Difficulty": 1,
+    "UnlockDurationTime": 5280,
+    "Name": "每况愈下·小",
+    "Desc": "每战斗<color=#ec6d21>&Param1&</color>秒，全队角色造成的伤害降低<color=#ec6d21>&Param2&</color>，最多叠加<color=#ec6d21>&Param3&</color>层",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_41401",
+    "Element": 2,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29041401
+    ],
+    "Param1": "Effect,NoLevel,290414011,TriggerParam1,Fixed",
+    "Param2": "EffectValue,NoLevel,290414012,EffectTypeParam1,HdPct",
+    "Param3": "BuffValue,NoLevel,29041401,LaminatedNum,Fixed"
+  },
+  "29041402": {
+    "Id": 29041402,
+    "GroupId": 414,
+    "Difficulty": 2,
+    "UnlockDurationTime": 5280,
+    "Name": "每况愈下·中",
+    "Desc": "每战斗<color=#ec6d21>&Param1&</color>秒，全队角色造成的伤害降低<color=#ec6d21>&Param2&</color>，最多叠加<color=#ec6d21>&Param3&</color>层",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_41402",
+    "Element": 2,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29041402
+    ],
+    "Param1": "Effect,NoLevel,290414021,TriggerParam1,Fixed",
+    "Param2": "EffectValue,NoLevel,290414022,EffectTypeParam1,HdPct",
+    "Param3": "BuffValue,NoLevel,29041402,LaminatedNum,Fixed"
+  },
+  "29041403": {
+    "Id": 29041403,
+    "GroupId": 414,
+    "Difficulty": 6,
+    "UnlockDurationTime": 5280,
+    "Name": "每况愈下·大",
+    "Desc": "每战斗<color=#ec6d21>&Param1&</color>秒，全队角色造成的伤害降低<color=#ec6d21>&Param2&</color>，最多叠加<color=#ec6d21>&Param3&</color>层",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_41403",
+    "Element": 2,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29041403
+    ],
+    "Param1": "Effect,NoLevel,290414031,TriggerParam1,Fixed",
+    "Param2": "EffectValue,NoLevel,290414032,EffectTypeParam1,HdPct",
+    "Param3": "BuffValue,NoLevel,29041403,LaminatedNum,Fixed"
+  },
+  "29041501": {
+    "Id": 29041501,
+    "GroupId": 415,
+    "Difficulty": 2,
+    "UnlockDurationTime": 960,
+    "Name": "加速运转",
+    "Desc": "全队绝招伤害降低<color=#ec6d21>&Param1&</color>，但充能效率提高<color=#ec6d21>&Param2&</color>",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_41501",
+    "Element": 2,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29041501,
+      290415011,
+      290415012
+    ],
+    "Param1": "EffectValue,NoLevel,290415012,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,29041501,EffectTypeParam1,HdPct"
+  },
+  "29041601": {
+    "Id": 29041601,
+    "GroupId": 416,
+    "Difficulty": 1,
+    "UnlockDurationTime": 2400,
+    "Name": "魔神标记",
+    "Desc": "主控角色被击中时，受到的伤害提高<color=#ec6d21>&Param1&</color>，持续<color=#ec6d21>&Param2&</color>秒，最多叠加<color=#ec6d21>&Param3&</color>层",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_41601",
+    "Element": 2,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29041601
+    ],
+    "Param1": "EffectValue,NoLevel,290416011,EffectTypeParam1,HdPct",
+    "Param2": "BuffValue,NoLevel,29041601,Time,10K",
+    "Param3": "BuffValue,NoLevel,29041601,LaminatedNum,Fixed"
+  },
+  "29041602": {
+    "Id": 29041602,
+    "GroupId": 416,
+    "Difficulty": 4,
+    "UnlockDurationTime": 2400,
+    "Name": "魔神标记·大",
+    "Desc": "主控角色被击中时，受到的伤害提高<color=#ec6d21>&Param1&</color>，持续<color=#ec6d21>&Param2&</color>秒，最多叠加<color=#ec6d21>&Param3&</color>层",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_41602",
+    "Element": 2,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29041602
+    ],
+    "Param1": "EffectValue,NoLevel,290416021,EffectTypeParam1,HdPct",
+    "Param2": "BuffValue,NoLevel,29041602,Time,10K",
+    "Param3": "BuffValue,NoLevel,29041602,LaminatedNum,Fixed"
+  },
+  "29041701": {
+    "Id": 29041701,
+    "GroupId": 417,
+    "Difficulty": 1,
+    "Name": "魔神之怒·小",
+    "Desc": "猫眼每次受到技能攻击，造成的所有伤害提高<color=#ec6d21>&Param1&</color>，持续<color=#ec6d21>&Param2&</color>秒，最多叠加<color=#ec6d21>&Param3&</color>层，每秒最多叠1层",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_41701",
+    "Element": 2,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29041701
+    ],
+    "Param1": "EffectValue,NoLevel,290417011,EffectTypeParam1,HdPct",
+    "Param2": "BuffValue,NoLevel,29041701,Time,10K",
+    "Param3": "BuffValue,NoLevel,29041701,LaminatedNum,Fixed"
+  },
+  "29041702": {
+    "Id": 29041702,
+    "GroupId": 417,
+    "Difficulty": 2,
+    "Name": "魔神之怒·中",
+    "Desc": "猫眼每次受到技能攻击，造成的所有伤害提高<color=#ec6d21>&Param1&</color>，持续<color=#ec6d21>&Param2&</color>秒，最多叠加<color=#ec6d21>&Param3&</color>层，每秒最多叠1层",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_41702",
+    "Element": 2,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29041702
+    ],
+    "Param1": "EffectValue,NoLevel,290417021,EffectTypeParam1,HdPct",
+    "Param2": "BuffValue,NoLevel,29041702,Time,10K",
+    "Param3": "BuffValue,NoLevel,29041702,LaminatedNum,Fixed"
+  },
+  "29041703": {
+    "Id": 29041703,
+    "GroupId": 417,
+    "Difficulty": 4,
+    "Name": "魔神之怒·大",
+    "Desc": "猫眼每次受到技能攻击，造成的所有伤害提高<color=#ec6d21>&Param1&</color>，持续<color=#ec6d21>&Param2&</color>秒，最多叠加<color=#ec6d21>&Param3&</color>层，每秒最多叠1层",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_41703",
+    "Element": 2,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29041703
+    ],
+    "Param1": "EffectValue,NoLevel,290417031,EffectTypeParam1,HdPct",
+    "Param2": "BuffValue,NoLevel,29041703,Time,10K",
+    "Param3": "BuffValue,NoLevel,29041703,LaminatedNum,Fixed"
+  },
+  "29041801": {
+    "Id": 29041801,
+    "GroupId": 418,
+    "Difficulty": 6,
+    "UnlockDurationTime": 8160,
+    "Name": "以身试险",
+    "Desc": "主控角色受到伤害提升<color=#ec6d21>&Param1&</color>，但是受到伤害时获得<color=#ec6d21>&Param2&</color>点能量值，每<color=#ec6d21>&Param3&</color>秒最多触发1次",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_41801",
+    "Element": 2,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29041801,
+      290418011
+    ],
+    "Param1": "EffectValue,NoLevel,29041801,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,290418011,EffectTypeParam1,Fixed",
+    "Param3": "EffectValue,NoLevel,290418011,CD,10K"
+  },
+  "29041901": {
+    "Id": 29041901,
+    "GroupId": 419,
+    "Difficulty": 2,
+    "UnlockDurationTime": 6720,
+    "Name": "紧急医治",
+    "Desc": "主控角色生命值低于<color=#ec6d21>&Param1&</color>时，立刻恢复<color=#ec6d21>&Param2&</color>最大HP的生命值，但<color=#ec6d21>&Param3&</color>秒内所有伤害降低<color=#ec6d21>&Param4&</color>，冷却<color=#ec6d21>&Param5&</color>秒",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_41901",
+    "Element": 2,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      29041901
+    ],
+    "Param1": "Effect,NoLevel,29041901,TriggerParam1,Pct",
+    "Param2": "EffectValue,NoLevel,290419013,EffectTypeParam1,Pct",
+    "Param3": "BuffValue,NoLevel,29041901,Time,10K",
+    "Param4": "EffectValue,NoLevel,290419012,EffectTypeParam1,HdPct",
+    "Param5": "EffectValue,NoLevel,29041901,CD,10K"
+  },
+  "29041902": {
+    "Id": 29041902,
+    "GroupId": 419,
+    "Difficulty": 2,
+    "UnlockDurationTime": 6720,
+    "Name": "疗愈代价",
+    "Desc": "主控角色每<color=#ec6d21>&Param1&</color>秒恢复<color=#ec6d21>&Param2&</color>最大HP的生命值，但是受到的伤害提高<color=#ec6d21>&Param3&</color>",
+    "Icon": "UI_Activity/_600003/Affix/duelaffix_41902",
+    "Element": 2,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      290419022
+    ],
+    "Param1": "Effect,NoLevel,29041902,TriggerParam1,Fixed",
+    "Param2": "EffectValue,NoLevel,29041902,EffectTypeParam1,Pct",
+    "Param3": "EffectValue,NoLevel,290419021,EffectTypeParam1,HdPct"
+  },
+  "500101": {
+    "Id": 500101,
+    "GroupId": 500101,
+    "Difficulty": 6,
+    "Name": "忠仆秘契",
+    "Desc": "雾语在所有类型的「仆从召唤」技能中都会召唤更多仆从。",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_500101",
+    "Element": 6,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "LogicTag": "LoyalServantTagId"
+  },
+  "500102": {
+    "Id": 500102,
+    "GroupId": 500102,
+    "Difficulty": 6,
+    "Name": "速散浓香",
+    "Desc": "雾语的仆从技能获得增强。",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_500102",
+    "Element": 6,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "LogicTag": "FastExplodeTagId"
+  },
+  "500103": {
+    "Id": 500103,
+    "GroupId": 500103,
+    "Difficulty": 6,
+    "Name": "秘香炼制",
+    "Desc": "雾语自然恢复的香水值提升。",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_500103",
+    "Element": 6,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "LogicTag": "PerfumeBrewTagId"
+  },
+  "500104": {
+    "Id": 500104,
+    "GroupId": 500104,
+    "Difficulty": 6,
+    "Name": "双生诡影",
+    "Desc": "首次释放技能「蓄香唤灵」时，也会召唤「怪脾气」。",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_500104",
+    "Element": 6,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "LogicTag": "DoubleHorrorTagId"
+  },
+  "500105": {
+    "Id": 500105,
+    "GroupId": 500105,
+    "Difficulty": 6,
+    "Name": "诏灵增幅·沁香影灵",
+    "Desc": "雾语在「绮梦环游」时将改为召唤「鬼主意」。",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_500105",
+    "Element": 6,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "LogicTag": "SummonBoostBigHeadTagId"
+  },
+  "500106": {
+    "Id": 500106,
+    "GroupId": 500105,
+    "Difficulty": 6,
+    "Name": "诏灵增幅·熏香影灵",
+    "Desc": "雾语在「绮梦环游」时将改为召唤「坏心眼」。",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_500106",
+    "Element": 6,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "LogicTag": "SummonBoostWarlockTagId"
+  },
+  "29050101": {
+    "Id": 29050101,
+    "GroupId": 501,
+    "Difficulty": 1,
+    "Name": "伤害提升·小",
+    "Desc": "所有敌人伤害强度提升<color=#ec6d21>&Param1&</color>。",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_50101",
+    "Element": 6,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      709054011
+    ],
+    "Param1": "EffectValue,NoLevel,709054011,EffectTypeParam1,HdPct"
+  },
+  "29050102": {
+    "Id": 29050102,
+    "GroupId": 501,
+    "Difficulty": 2,
+    "Name": "伤害提升·中",
+    "Desc": "所有敌人伤害强度提升<color=#ec6d21>&Param1&</color>。",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_50102",
+    "Element": 6,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      709054021
+    ],
+    "Param1": "EffectValue,NoLevel,709054021,EffectTypeParam1,HdPct"
+  },
+  "29050103": {
+    "Id": 29050103,
+    "GroupId": 501,
+    "Difficulty": 4,
+    "Name": "伤害提升·大",
+    "Desc": "所有敌人伤害强度提升<color=#ec6d21>&Param1&</color>。",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_50103",
+    "Element": 6,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      709054031
+    ],
+    "Param1": "EffectValue,NoLevel,709054031,EffectTypeParam1,HdPct"
+  },
+  "29050201": {
+    "Id": 29050201,
+    "GroupId": 502,
+    "Difficulty": 1,
+    "Name": "凝滞秘露·小",
+    "Desc": "全队充能效率减少<color=#ec6d21>&Param1&</color>。",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_50201",
+    "Element": 6,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      709054041,
+      709054042
+    ],
+    "Param1": "EffectValue,NoLevel,709054041,EffectTypeParam1,HdPct"
+  },
+  "29050202": {
+    "Id": 29050202,
+    "GroupId": 502,
+    "Difficulty": 2,
+    "Name": "凝滞秘露·中",
+    "Desc": "全队充能效率减少<color=#ec6d21>&Param1&</color>。",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_50202",
+    "Element": 6,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      709054051,
+      709054052
+    ],
+    "Param1": "EffectValue,NoLevel,709054051,EffectTypeParam1,HdPct"
+  },
+  "29050203": {
+    "Id": 29050203,
+    "GroupId": 502,
+    "Difficulty": 4,
+    "Name": "凝滞秘露·大",
+    "Desc": "全队充能效率减少<color=#ec6d21>&Param1&</color>。",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_50203",
+    "Element": 6,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      709054061,
+      709054062
+    ],
+    "Param1": "EffectValue,NoLevel,709054061,EffectTypeParam1,HdPct"
+  },
+  "29050301": {
+    "Id": 29050301,
+    "GroupId": 503,
+    "Difficulty": 2,
+    "Name": "吸血秘术",
+    "Desc": "主控角色受到伤害强度提升<color=#ec6d21>&Param1&</color>，每次造成技能伤害时，回复<color=#ec6d21>&Param2&</color>生命。",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_50301",
+    "Element": 6,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      709054071,
+      709054072
+    ],
+    "Param1": "EffectValue,NoLevel,709054071,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,709054072,EffectTypeParam1,Pct"
+  },
+  "29050401": {
+    "Id": 29050401,
+    "GroupId": 504,
+    "Difficulty": 4,
+    "Name": "互帮互助",
+    "Desc": "援护角色每在场1秒，主控角色造成伤害强度降低<color=#ec6d21>&Param1&</color>，获取<color=#ec6d21>&Param2&</color>生命的护盾，持续<color=#ec6d21>&Param3&</color>秒，最多叠加<color=#ec6d21>&Param4&</color>层。援护角色上场时立刻获取1层。",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_50401",
+    "Element": 6,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "LogicTag": "Perk8TagId",
+    "Param1": "EffectValue,NoLevel,709054081,EffectTypeParam1,HdPct",
+    "Param2": "ShieldValue,NoLevel,709054081,ReferenceScale,10KHdPct",
+    "Param3": "BuffValue,NoLevel,709054080,Time,10K",
+    "Param4": "BuffValue,NoLevel,709054080,LaminatedNum,Fixed"
+  },
+  "29050402": {
+    "Id": 29050402,
+    "GroupId": 504,
+    "Difficulty": 4,
+    "Name": "围点打援",
+    "Desc": "援护角色每在场1秒，主控角色伤害强度提升<color=#ec6d21>&Param1&</color>，受到伤害强度提升<color=#ec6d21>&Param2&</color>，持续<color=#ec6d21>&Param3&</color>秒，最多叠加<color=#ec6d21>&Param4&</color>层。援护角色上场时立刻获取1层。",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_50402",
+    "Element": 6,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "LogicTag": "Perk9TagId",
+    "Param1": "EffectValue,NoLevel,709054091,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,709054092,EffectTypeParam1,HdPct",
+    "Param3": "BuffValue,NoLevel,709054090,Time,10K",
+    "Param4": "BuffValue,NoLevel,709054090,LaminatedNum,Fixed"
+  },
+  "29050501": {
+    "Id": 29050501,
+    "GroupId": 505,
+    "Difficulty": 1,
+    "UnlockDurationTime": 2400,
+    "Name": "护盾保护",
+    "Desc": "战斗开始后，主控角色获取的护盾量提升<color=#ec6d21>&Param1&</color>，但没有护盾时伤害强度降低<color=#ec6d21>&Param2&</color>。",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_50501",
+    "Element": 6,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      709054101,
+      709054102
+    ],
+    "Param1": "EffectValue,NoLevel,709054101,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,709054102,EffectTypeParam1,HdPct"
+  },
+  "29050601": {
+    "Id": 29050601,
+    "GroupId": 506,
+    "Difficulty": 1,
+    "UnlockDurationTime": 3840,
+    "Name": "恰到好处",
+    "Desc": "主控角色生命大于<color=#ec6d21>&Param1&</color>或小于<color=#ec6d21>&Param2&</color>时，全队伤害强度降低<color=#ec6d21>&Param3&</color>。",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_50601",
+    "Element": 6,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      709054111,
+      709054112
+    ],
+    "Param1": "Effect,NoLevel,709054111,TakeEffectParam1,Pct",
+    "Param2": "Effect,NoLevel,709054112,TakeEffectParam1,Pct",
+    "Param3": "EffectValue,NoLevel,709054111,EffectTypeParam1,HdPct"
+  },
+  "29050701": {
+    "Id": 29050701,
+    "GroupId": 507,
+    "Difficulty": 2,
+    "UnlockDurationTime": 2400,
+    "Name": "虚弱秘术",
+    "Desc": "主控角色被击中时，技能伤害强度降低<color=#ec6d21>&Param1&</color>，持续<color=#ec6d21>&Param2&</color>秒，最多叠加<color=#ec6d21>&Param3&</color>层。",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_50701",
+    "Element": 6,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      709054121
+    ],
+    "Param1": "EffectValue,NoLevel,709054122,EffectTypeParam1,HdPct",
+    "Param2": "BuffValue,NoLevel,709054120,Time,10K",
+    "Param3": "BuffValue,NoLevel,709054120,LaminatedNum,Fixed"
+  },
+  "29050702": {
+    "Id": 29050702,
+    "GroupId": 507,
+    "Difficulty": 6,
+    "UnlockDurationTime": 2400,
+    "Name": "虚弱秘术·大",
+    "Desc": "主控角色被击中时，全队技能伤害强度降低<color=#ec6d21>&Param1&</color>，持续<color=#ec6d21>&Param2&</color>秒，最多叠加<color=#ec6d21>&Param3&</color>层。",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_50702",
+    "Element": 6,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      709054131
+    ],
+    "Param1": "EffectValue,NoLevel,709054132,EffectTypeParam1,HdPct",
+    "Param2": "BuffValue,NoLevel,709054130,Time,10K",
+    "Param3": "BuffValue,NoLevel,709054130,LaminatedNum,Fixed"
+  },
+  "29050801": {
+    "Id": 29050801,
+    "GroupId": 508,
+    "Difficulty": 6,
+    "UnlockDurationTime": 8160,
+    "Name": "失重奇香",
+    "Desc": "闪避后，主控角色防御降低为0，持续<color=#ec6d21>&Param1&</color>秒。",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_50801",
+    "Element": 6,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      709054141
+    ],
+    "Param1": "BuffValue,NoLevel,709054140,Time,10K"
+  },
+  "29050901": {
+    "Id": 29050901,
+    "GroupId": 509,
+    "Difficulty": 4,
+    "UnlockDurationTime": 3840,
+    "Name": "缓醒秘酿",
+    "Desc": "全队在战斗开始后<color=#ec6d21>&Param1&</color>秒内能量获取效率降低100%，时间到后变为提升<color=#ec6d21>&Param2&</color>。",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_50901",
+    "Element": 6,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      709054161,
+      709054166
+    ],
+    "Param1": "BuffValue,NoLevel,709054160,Time,10K",
+    "Param2": "EffectValue,NoLevel,709054167,EffectTypeParam1,HdPct"
+  },
+  "29050902": {
+    "Id": 29050902,
+    "GroupId": 509,
+    "Difficulty": 4,
+    "UnlockDurationTime": 3840,
+    "Name": "昙花一现",
+    "Desc": "全队在战斗开始后<color=#ec6d21>&Param1&</color>秒内能量获取效率提升<color=#ec6d21>&Param2&</color>，但战斗开始<color=#ec6d21>&Param3&</color>秒后能量获取效率降低50%。",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_50902",
+    "Element": 6,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      709054177,
+      709054178,
+      709054179
+    ],
+    "Param1": "BuffValue,NoLevel,709054170,Time,10K",
+    "Param2": "EffectValue,NoLevel,709054173,EffectTypeParam1,HdPct",
+    "Param3": "BuffValue,NoLevel,709054178,Time,10K"
+  },
+  "29051001": {
+    "Id": 29051001,
+    "GroupId": 510,
+    "Difficulty": 2,
+    "UnlockDurationTime": 5280,
+    "Name": "甜蜜毒香",
+    "Desc": "主控角色每<color=#ec6d21>&Param1&</color>秒获得<color=#ec6d21>&Param2&</color>生命的护盾，且<color=#ec6d21>&Param3&</color>秒内受到伤害强度提升<color=#ec6d21>&Param4&</color>。",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_51001",
+    "Element": 6,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      709054152,
+      709054153
+    ],
+    "Param1": "Effect,NoLevel,709054152,TriggerParam1,Fixed",
+    "Param2": "ShieldValue,NoLevel,709054152,ReferenceScale,10KHdPct",
+    "Param3": "BuffValue,NoLevel,709054150,Time,10K",
+    "Param4": "EffectValue,NoLevel,709054151,EffectTypeParam1,HdPct"
+  },
+  "29051101": {
+    "Id": 29051101,
+    "GroupId": 511,
+    "Difficulty": 2,
+    "UnlockDurationTime": 960,
+    "Name": "诏灵之主",
+    "Desc": "全队仆从伤害强度降低<color=#ec6d21>&Param1&</color>，技能伤害强度提升<color=#ec6d21>&Param2&</color>。",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_51101",
+    "Element": 6,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      709054181,
+      709054182
+    ],
+    "Param1": "EffectValue,NoLevel,709054181,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,709054182,EffectTypeParam1,HdPct"
+  },
+  "29051102": {
+    "Id": 29051102,
+    "GroupId": 511,
+    "Difficulty": 2,
+    "UnlockDurationTime": 960,
+    "Name": "舍咒取刃",
+    "Desc": "全队印记伤害强度降低<color=#ec6d21>&Param1&</color>，普攻伤害强度提升<color=#ec6d21>&Param2&</color>。",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_51102",
+    "Element": 6,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      709054191,
+      709054192
+    ],
+    "Param1": "EffectValue,NoLevel,709054191,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,709054192,EffectTypeParam1,HdPct"
+  },
+  "29051103": {
+    "Id": 29051103,
+    "GroupId": 511,
+    "Difficulty": 2,
+    "UnlockDurationTime": 960,
+    "Name": "孤注一掷",
+    "Desc": "全队普攻伤害强度降低<color=#ec6d21>&Param1&</color>，绝招伤害强度提升<color=#ec6d21>&Param2&</color>。",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_51103",
+    "Element": 6,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      709054201,
+      709054202
+    ],
+    "Param1": "EffectValue,NoLevel,709054201,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,709054202,EffectTypeParam1,HdPct"
+  },
+  "29051201": {
+    "Id": 29051201,
+    "GroupId": 512,
+    "Difficulty": 2,
+    "Name": "战斗成长",
+    "Desc": "战斗每进行<color=#ec6d21>&Param1&</color>秒，雾语的仆从的伤害强度提升<color=#ec6d21>&Param2&</color>。",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_51201",
+    "Element": 6,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      2
+    ],
+    "SkillId": [
+      709054211,
+      709054212
+    ],
+    "Param1": "Effect,NoLevel,709054211,TriggerParam1,Fixed",
+    "Param2": "EffectValue,NoLevel,709054213,EffectTypeParam1,HdPct"
+  },
+  "29051202": {
+    "Id": 29051202,
+    "GroupId": 512,
+    "Difficulty": 6,
+    "Name": "战斗成长·大",
+    "Desc": "战斗每进行<color=#ec6d21>&Param1&</color>秒，雾语的仆从的伤害强度提升<color=#ec6d21>&Param2&</color>。",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_51202",
+    "Element": 6,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      2
+    ],
+    "SkillId": [
+      709054221,
+      709054222
+    ],
+    "Param1": "Effect,NoLevel,709054221,TriggerParam1,Fixed",
+    "Param2": "EffectValue,NoLevel,709054223,EffectTypeParam1,HdPct"
+  },
+  "29051301": {
+    "Id": 29051301,
+    "GroupId": 513,
+    "Difficulty": 2,
+    "UnlockDurationTime": 5280,
+    "Name": "暴击调整·几率",
+    "Desc": "全队暴击率提升<color=#ec6d21>&Param1&</color>，暴击伤害降低<color=#ec6d21>&Param2&</color>。",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_51301",
+    "Element": 6,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      709054231,
+      709054232
+    ],
+    "Param1": "EffectValue,NoLevel,709054231,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,709054232,EffectTypeParam1,HdPct"
+  },
+  "29051302": {
+    "Id": 29051302,
+    "GroupId": 513,
+    "Difficulty": 2,
+    "UnlockDurationTime": 5280,
+    "Name": "暴击调整·伤害",
+    "Desc": "全队暴击伤害提升<color=#ec6d21>&Param1&</color>，暴击率降低<color=#ec6d21>&Param2&</color>。",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_51302",
+    "Element": 6,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      709054241,
+      709054242
+    ],
+    "Param1": "EffectValue,NoLevel,709054242,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,709054241,EffectTypeParam1,HdPct"
+  },
+  "29051401": {
+    "Id": 29051401,
+    "GroupId": 514,
+    "Difficulty": 1,
+    "Name": "化血为盾·小",
+    "Desc": "雾语的生命每降低<color=#ec6d21>&Param1&</color>，自身受到伤害强度降低<color=#ec6d21>&Param2&</color>。",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_51401",
+    "Element": 6,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      709054251,
+      709054252,
+      709054253,
+      709054254,
+      709054255,
+      709054256,
+      709054257,
+      709054258,
+      709054259
+    ],
+    "Param1": "TravelerDuelChallengeAffix,NoLevel,29051401,Value1,Pct",
+    "Param2": "EffectValue,NoLevel,709054251,EffectTypeParam1,HdPct",
+    "Value1": "10"
+  },
+  "29051402": {
+    "Id": 29051402,
+    "GroupId": 514,
+    "Difficulty": 2,
+    "Name": "化血为盾·中",
+    "Desc": "雾语的生命每降低<color=#ec6d21>&Param1&</color>，自身与仆从受到伤害强度降低<color=#ec6d21>&Param2&</color>",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_51402",
+    "Element": 6,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      2
+    ],
+    "SkillId": [
+      709054261,
+      709054262,
+      709054263,
+      709054264,
+      709054265,
+      709054266,
+      709054267,
+      709054268,
+      709054269
+    ],
+    "Param1": "TravelerDuelChallengeAffix,NoLevel,29051402,Value1,Pct",
+    "Param2": "EffectValue,NoLevel,709054260,EffectTypeParam1,HdPct",
+    "Value1": "10"
+  },
+  "29051403": {
+    "Id": 29051403,
+    "GroupId": 514,
+    "Difficulty": 6,
+    "Name": "化血为盾·大",
+    "Desc": "雾语的生命每降低<color=#ec6d21>&Param1&</color>，自身与仆从受到伤害强度降低<color=#ec6d21>&Param2&</color>",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_51403",
+    "Element": 6,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      2
+    ],
+    "SkillId": [
+      709054271,
+      709054272,
+      709054273,
+      709054274,
+      709054275,
+      709054276,
+      709054277,
+      709054278,
+      709054279
+    ],
+    "Param1": "TravelerDuelChallengeAffix,NoLevel,29051403,Value1,Pct",
+    "Param2": "EffectValue,NoLevel,709054270,EffectTypeParam1,HdPct",
+    "Value1": "10"
+  },
+  "29051501": {
+    "Id": 29051501,
+    "GroupId": 515,
+    "Difficulty": 6,
+    "UnlockDurationTime": 8160,
+    "Name": "速调轻方",
+    "Desc": "主控角色技能伤害强度降低<color=#ec6d21>&Param1&</color>，技能冷却时间减少<color=#ec6d21>&Param2&</color>。",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_51501",
+    "Element": 6,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      709054281,
+      709054282
+    ],
+    "Param1": "EffectValue,NoLevel,709054281,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,709054282,EffectTypeParam1,HdPct"
+  },
+  "29051601": {
+    "Id": 29051601,
+    "GroupId": 516,
+    "Difficulty": 1,
+    "UnlockDurationTime": 8160,
+    "Name": "重伤秘术",
+    "Desc": "主控角色被击中时，自身无法获取治疗，持续<color=#ec6d21>&Param1&</color>秒。",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_51601",
+    "Element": 6,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      709054291
+    ],
+    "Param1": "BuffValue,NoLevel,709054290,Time,10K"
+  },
+  "29051602": {
+    "Id": 29051602,
+    "GroupId": 516,
+    "Difficulty": 4,
+    "UnlockDurationTime": 8160,
+    "Name": "重伤秘术·大",
+    "Desc": "主控角色被击中时，自身无法获取治疗，持续<color=#ec6d21>&Param1&</color>秒。",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_51602",
+    "Element": 6,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      709054301
+    ],
+    "Param1": "BuffValue,NoLevel,709054300,Time,10K"
+  },
+  "29051701": {
+    "Id": 29051701,
+    "GroupId": 517,
+    "Difficulty": 1,
+    "Name": "魔力汲取·小",
+    "Desc": "雾语每次受到技能伤害，自身和仆从受到伤害强度降低<color=#ec6d21>&Param1&</color>，持续<color=#ec6d21>&Param2&</color>秒，最多叠加<color=#ec6d21>&Param3&</color>层，每秒最多叠1层。",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_51701",
+    "Element": 6,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      709054311
+    ],
+    "Param1": "EffectValue,NoLevel,709054312,EffectTypeParam1,HdPct",
+    "Param2": "BuffValue,NoLevel,709054310,Time,10K",
+    "Param3": "BuffValue,NoLevel,709054310,LaminatedNum,Fixed"
+  },
+  "29051702": {
+    "Id": 29051702,
+    "GroupId": 517,
+    "Difficulty": 2,
+    "Name": "魔力汲取·中",
+    "Desc": "雾语每次受到技能伤害，自身和仆从受到伤害强度降低<color=#ec6d21>&Param1&</color>，持续<color=#ec6d21>&Param2&</color>秒，最多叠加<color=#ec6d21>&Param3&</color>层，每秒最多叠1层。",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_51702",
+    "Element": 6,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      709054321
+    ],
+    "Param1": "EffectValue,NoLevel,709054322,EffectTypeParam1,HdPct",
+    "Param2": "BuffValue,NoLevel,709054320,Time,10K",
+    "Param3": "BuffValue,NoLevel,709054320,LaminatedNum,Fixed"
+  },
+  "29051703": {
+    "Id": 29051703,
+    "GroupId": 517,
+    "Difficulty": 6,
+    "Name": "魔力汲取·大",
+    "Desc": "雾语每次受到技能伤害，自身和仆从受到伤害强度降低<color=#ec6d21>&Param1&</color>，持续<color=#ec6d21>&Param2&</color>秒，最多叠加<color=#ec6d21>&Param3&</color>层，每秒最多叠1层。",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_51703",
+    "Element": 6,
+    "AddCamp": [
+      3
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      709054331
+    ],
+    "Param1": "EffectValue,NoLevel,709054332,EffectTypeParam1,HdPct",
+    "Param2": "BuffValue,NoLevel,709054330,Time,10K",
+    "Param3": "BuffValue,NoLevel,709054330,LaminatedNum,Fixed"
+  },
+  "29051801": {
+    "Id": 29051801,
+    "GroupId": 518,
+    "Difficulty": 2,
+    "UnlockDurationTime": 6720,
+    "Name": "逆伤增威",
+    "Desc": "主控角色受到伤害强度提升<color=#ec6d21>&Param1&</color>，受到伤害时全队技能与绝招当前冷却时间减少<color=#ec6d21>&Param2&</color>秒，每<color=#ec6d21>&Param3&</color>秒最多触发1次。",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_51801",
+    "Element": 6,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      709054341,
+      709054342,
+      709054343
+    ],
+    "Param1": "EffectValue,NoLevel,709054341,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,709054342,EffectTypeParam1,Fixed",
+    "Param3": "EffectValue,NoLevel,709054343,CD,10K"
+  },
+  "29051901": {
+    "Id": 29051901,
+    "GroupId": 519,
+    "Difficulty": 1,
+    "UnlockDurationTime": 6720,
+    "Name": "回光绮愿",
+    "Desc": "主控角色受到致命伤害后，<color=#ec6d21>&Param1&</color>秒内不会死亡，但<color=#ec6d21>&Param2&</color>秒内全队伤害强度降低<color=#ec6d21>&Param3&</color>。该效果整场战斗仅可触发1次。",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_51901",
+    "Element": 6,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "LogicTag": "Perk35TagId",
+    "Param1": "TravelerDuelChallengeAffix,NoLevel,29051901,Value1,Fixed",
+    "Param2": "BuffValue,NoLevel,709054350,Time,10K",
+    "Param3": "EffectValue,NoLevel,709054351,EffectTypeParam1,HdPct",
+    "Value1": "30"
+  },
+  "29052001": {
+    "Id": 29052001,
+    "GroupId": 520,
+    "Difficulty": 1,
+    "UnlockDurationTime": 6720,
+    "Name": "舍盾嗜香",
+    "Desc": "主控角色每次释放技能会回复<color=#ec6d21>&Param1&</color>生命，被击后<color=#ec6d21>&Param2&</color>秒内无法获取护盾。",
+    "Icon": "UI_Activity/_600004/Affix/duelaffix_52001",
+    "Element": 6,
+    "AddCamp": [
+      1,
+      2
+    ],
+    "AddClass": [
+      1
+    ],
+    "SkillId": [
+      709054361,
+      709054362
+    ],
+    "Param1": "EffectValue,NoLevel,709054361,EffectTypeParam1,Pct",
+    "Param2": "BuffValue,NoLevel,709054360,Time,10K"
+  }
+}

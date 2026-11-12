@@ -1,0 +1,123 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "DormInterAnimConfig", menuName = "游戏/后宅/交互动画配置")]
+public class DormInteractionAnimationConfigData : ScriptableObject
+{
+	[Serializable]
+	public class TimelineEntry
+	{
+		public DormCommonInteractionAnimationType actorCommonAnimationType;
+
+		public GameObject actorTimelinePrefab;
+
+		public GameObject interacteeTimelinePrefab;
+
+		[Min(0f)]
+		public int weight = 100;
+
+		public bool isSkip;
+	}
+
+	[Serializable]
+	public class AnimationSegment
+	{
+		public List<TimelineEntry> timelineEntries = new List<TimelineEntry>();
+
+		[Min(1f)]
+		public int loopCountMin = 1;
+
+		[Min(1f)]
+		public int loopCountMax = 1;
+
+		public TimelineEntry PickRandomEntry()
+		{
+			if (timelineEntries == null || timelineEntries.Count == 0)
+			{
+				return null;
+			}
+			if (timelineEntries.Count == 1)
+			{
+				return timelineEntries.get_Item(0);
+			}
+			int num = 0;
+			for (int i = 0; i < timelineEntries.Count; i++)
+			{
+				int weight = timelineEntries.get_Item(i).weight;
+				if (weight > 0)
+				{
+					num += weight;
+				}
+			}
+			if (num <= 0)
+			{
+				return null;
+			}
+			int num2 = UnityEngine.Random.Range(0, num);
+			int num3 = 0;
+			for (int j = 0; j < timelineEntries.Count; j++)
+			{
+				int weight2 = timelineEntries.get_Item(j).weight;
+				if (weight2 > 0)
+				{
+					num3 += weight2;
+					if (num2 < num3)
+					{
+						return timelineEntries.get_Item(j);
+					}
+				}
+			}
+			return null;
+		}
+
+		public int RollLoopCount()
+		{
+			int num = Mathf.Max(1, loopCountMin);
+			int num2 = Mathf.Max(num, loopCountMax);
+			return UnityEngine.Random.Range(num, num2 + 1);
+		}
+	}
+
+	public class InteractionPlaybackSegment
+	{
+		public DormCommonInteractionAnimationType actorCommonAnimationType;
+
+		public GameObject actorTimelinePrefab;
+
+		public GameObject interacteeTimelinePrefab;
+
+		public int loopCount;
+	}
+
+	public class PlaybackData
+	{
+		public List<InteractionPlaybackSegment> sequence;
+	}
+
+	public List<AnimationSegment> segments = new List<AnimationSegment>();
+
+	public PlaybackData Resolve()
+	{
+		PlaybackData playbackData = new PlaybackData
+		{
+			sequence = new List<InteractionPlaybackSegment>()
+		};
+		for (int i = 0; i < segments.Count; i++)
+		{
+			AnimationSegment animationSegment = segments.get_Item(i);
+			TimelineEntry timelineEntry = animationSegment.PickRandomEntry();
+			if (timelineEntry != null && !timelineEntry.isSkip)
+			{
+				playbackData.sequence.Add(new InteractionPlaybackSegment
+				{
+					actorCommonAnimationType = timelineEntry.actorCommonAnimationType,
+					actorTimelinePrefab = timelineEntry.actorTimelinePrefab,
+					interacteeTimelinePrefab = timelineEntry.interacteeTimelinePrefab,
+					loopCount = animationSegment.RollLoopCount()
+				});
+			}
+		}
+		return playbackData;
+	}
+}

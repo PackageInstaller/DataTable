@@ -1,0 +1,174 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>Hotfix</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net40</TargetFramework>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>14.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="GameFramework">
+      <HintPath>../../dll/GameFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>../../dll/UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Live2D.Cubism">
+      <HintPath>../../dll/Live2D.Cubism.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>../../dll/UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline">
+      <HintPath>../../dll/Unity.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="TrueSync">
+      <HintPath>../../dll/TrueSync.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf">
+      <HintPath>../../dll/Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="Game">
+      <HintPath>../../dll/Game.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>../../dll/System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>../../dll/UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>../../dll/DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="MagicaCloth">
+      <HintPath>../../dll/MagicaCloth.dll</HintPath>
+    </Reference>
+    <Reference Include="AstarPathfindingProject">
+      <HintPath>../../dll/AstarPathfindingProject.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.DirectorModule">
+      <HintPath>../../dll/UnityEngine.DirectorModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>../../dll/Cinemachine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>../../dll/UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="LitJson">
+      <HintPath>../../dll/LitJson.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityUIExtensions">
+      <HintPath>../../dll/UnityUIExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="AK.Wwise.Unity.API.WwiseTypes">
+      <HintPath>../../dll/AK.Wwise.Unity.API.WwiseTypes.dll</HintPath>
+    </Reference>
+    <Reference Include="ALINE">
+      <HintPath>../../dll/ALINE.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>../../dll/Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>../../dll/UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>../../dll/UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="GameGraphics">
+      <HintPath>../../dll/GameGraphics.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>../../dll/UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+      <HintPath>../../dll/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InputSystem">
+      <HintPath>../../dll/Unity.InputSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AndroidJNIModule">
+      <HintPath>../../dll/UnityEngine.AndroidJNIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Coffee.UIEffectSnapshot">
+      <HintPath>../../dll/Coffee.UIEffectSnapshot.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader">
+      <HintPath>../../dll/ExcelDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>../../dll/System.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.Core">
+      <HintPath>../../dll/NPOI.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="UIEffect">
+      <HintPath>../../dll/UIEffect.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTweenPro.Scripts">
+      <HintPath>../../dll/DOTweenPro.Scripts.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+      <HintPath>../../dll/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>../../dll/Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="AK.Wwise.Unity.MonoBehaviour">
+      <HintPath>../../dll/AK.Wwise.Unity.MonoBehaviour.dll</HintPath>
+    </Reference>
+    <Reference Include="AK.Wwise.Unity.API">
+      <HintPath>../../dll/AK.Wwise.Unity.API.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>../../dll/Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleAnimationComponent">
+      <HintPath>../../dll/SimpleAnimationComponent.dll</HintPath>
+    </Reference>
+    <Reference Include="spine-unity">
+      <HintPath>../../dll/spine-unity.dll</HintPath>
+    </Reference>
+    <Reference Include="spine-csharp">
+      <HintPath>../../dll/spine-csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AIModule">
+      <HintPath>../../dll/UnityEngine.AIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="HybridCLR.Runtime">
+      <HintPath>../../dll/HybridCLR.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>../../dll/UnityEngine.JSONSerializeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween.Modules">
+      <HintPath>../../dll/DOTween.Modules.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader.DataSet">
+      <HintPath>../../dll/ExcelDataReader.DataSet.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>../../dll/NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTweenPro">
+      <HintPath>../../dll/DOTweenPro.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule">
+      <HintPath>../../dll/UnityEngine.Physics2DModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>../../dll/UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>../../dll/UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

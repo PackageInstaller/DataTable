@@ -1,0 +1,1204 @@
+{
+  "10111": {
+    "Id": 10111,
+    "Name": "溢价竞拍·公文包",
+    "Label": [
+      1,
+      11,
+      21
+    ],
+    "EffectType": 1,
+    "Params": [
+      1.0,
+      40.0
+    ],
+    "Desc": "在本房间中，公文包的价值将额外提升40。",
+    "Icon": "icon_buffcard_10111",
+    "BuffType": 1,
+    "MaxCount": 6,
+    "ConnectItems": [
+      1101,
+      1102,
+      1103
+    ]
+  },
+  "10112": {
+    "Id": 10112,
+    "Name": "溢价竞拍·糖果盒",
+    "Label": [
+      2,
+      11,
+      21
+    ],
+    "EffectType": 1,
+    "Params": [
+      2.0,
+      70.0
+    ],
+    "Desc": "在本房间中，糖果盒的价值将额外提升70。",
+    "Icon": "icon_buffcard_10112",
+    "BuffType": 1,
+    "MaxCount": 5,
+    "ConnectItems": [
+      1104,
+      1105,
+      1106
+    ]
+  },
+  "10113": {
+    "Id": 10113,
+    "Name": "溢价竞拍·宝石",
+    "Label": [
+      3,
+      11,
+      21
+    ],
+    "EffectType": 1,
+    "Params": [
+      3.0,
+      150.0
+    ],
+    "Desc": "在本房间中，宝石的价值将额外提升150。",
+    "Icon": "icon_buffcard_10113",
+    "BuffType": 1,
+    "MaxCount": 3,
+    "ConnectItems": [
+      1107
+    ]
+  },
+  "10114": {
+    "Id": 10114,
+    "Name": "溢价竞拍·情报卷轴",
+    "Label": [
+      4,
+      11,
+      21
+    ],
+    "EffectType": 1,
+    "Params": [
+      4.0,
+      150.0
+    ],
+    "Desc": "在本房间中，情报卷轴的价值将额外提升150。",
+    "Icon": "icon_buffcard_10114",
+    "BuffType": 1,
+    "MaxCount": 4,
+    "ConnectItems": [
+      1108
+    ]
+  },
+  "10115": {
+    "Id": 10115,
+    "Name": "溢价竞拍·窃听器",
+    "Label": [
+      5,
+      11,
+      21
+    ],
+    "EffectType": 1,
+    "Params": [
+      5.0,
+      200.0
+    ],
+    "Desc": "在本房间中，窃听器的价值将额外提升200。",
+    "Icon": "icon_buffcard_10115",
+    "BuffType": 1,
+    "MaxCount": 2,
+    "ConnectItems": [
+      1109
+    ]
+  },
+  "10121": {
+    "Id": 10121,
+    "Name": "提升预期·公文包",
+    "Label": [
+      1,
+      11,
+      22
+    ],
+    "EffectType": 1,
+    "Params": [
+      1.0,
+      40.0
+    ],
+    "Desc": "进入下一房间后，公文包的价值将额外提升40。",
+    "Icon": "icon_buffcard_10121",
+    "BuffType": 2,
+    "MaxCount": 5,
+    "ConnectItems": [
+      1101,
+      1102,
+      1103
+    ]
+  },
+  "10122": {
+    "Id": 10122,
+    "Name": "提升预期·糖果盒",
+    "Label": [
+      2,
+      11,
+      22
+    ],
+    "EffectType": 1,
+    "Params": [
+      2.0,
+      70.0
+    ],
+    "Desc": "进入下一房间后，糖果盒的价值将额外提升70。",
+    "Icon": "icon_buffcard_10122",
+    "BuffType": 2,
+    "MaxCount": 4,
+    "ConnectItems": [
+      1104,
+      1105,
+      1106
+    ]
+  },
+  "10123": {
+    "Id": 10123,
+    "Name": "提升预期·宝石",
+    "Label": [
+      3,
+      11,
+      22
+    ],
+    "EffectType": 1,
+    "Params": [
+      3.0,
+      150.0
+    ],
+    "Desc": "进入下一房间后，宝石的价值将额外提升150。",
+    "Icon": "icon_buffcard_10123",
+    "BuffType": 2,
+    "MaxCount": 2,
+    "ConnectItems": [
+      1107
+    ]
+  },
+  "10124": {
+    "Id": 10124,
+    "Name": "提升预期·情报卷轴",
+    "Label": [
+      4,
+      11,
+      22
+    ],
+    "EffectType": 1,
+    "Params": [
+      4.0,
+      150.0
+    ],
+    "Desc": "进入下一房间后，情报卷轴的价值将额外提升150。",
+    "Icon": "icon_buffcard_10124",
+    "BuffType": 2,
+    "MaxCount": 3,
+    "ConnectItems": [
+      1108
+    ]
+  },
+  "10125": {
+    "Id": 10125,
+    "Name": "提升预期·窃听器",
+    "Label": [
+      5,
+      11,
+      22
+    ],
+    "EffectType": 1,
+    "Params": [
+      5.0,
+      200.0
+    ],
+    "Desc": "进入下一房间后，窃听器的价值将额外提升200。",
+    "Icon": "icon_buffcard_10125",
+    "BuffType": 2,
+    "MaxCount": 2,
+    "ConnectItems": [
+      1109
+    ]
+  },
+  "10131": {
+    "Id": 10131,
+    "Name": "市价操控·公文包",
+    "Label": [
+      1,
+      11,
+      23
+    ],
+    "EffectType": 1,
+    "Params": [
+      1.0,
+      20.0
+    ],
+    "Desc": "公文包的价值将永久提升20。",
+    "Icon": "icon_buffcard_10131",
+    "BuffType": 3,
+    "MaxCount": 4,
+    "ConnectItems": [
+      1101,
+      1102,
+      1103
+    ]
+  },
+  "10132": {
+    "Id": 10132,
+    "Name": "市价操控·糖果盒",
+    "Label": [
+      2,
+      11,
+      23
+    ],
+    "EffectType": 1,
+    "Params": [
+      2.0,
+      30.0
+    ],
+    "Desc": "糖果盒的价值将永久提升30。",
+    "Icon": "icon_buffcard_10132",
+    "BuffType": 3,
+    "MaxCount": 3,
+    "ConnectItems": [
+      1104,
+      1105,
+      1106
+    ]
+  },
+  "10133": {
+    "Id": 10133,
+    "Name": "市价操控·宝石",
+    "Label": [
+      3,
+      11,
+      23
+    ],
+    "EffectType": 1,
+    "Params": [
+      3.0,
+      80.0
+    ],
+    "Desc": "宝石的价值将永久提升80。",
+    "Icon": "icon_buffcard_10133",
+    "BuffType": 3,
+    "MaxCount": 1,
+    "ConnectItems": [
+      1107
+    ]
+  },
+  "10134": {
+    "Id": 10134,
+    "Name": "市价操控·情报卷轴",
+    "Label": [
+      4,
+      11,
+      23
+    ],
+    "EffectType": 1,
+    "Params": [
+      4.0,
+      80.0
+    ],
+    "Desc": "情报卷轴的价值将永久提升80。",
+    "Icon": "icon_buffcard_10134",
+    "BuffType": 3,
+    "MaxCount": 2,
+    "ConnectItems": [
+      1108
+    ]
+  },
+  "10135": {
+    "Id": 10135,
+    "Name": "市价操控·窃听器",
+    "Label": [
+      5,
+      11,
+      23
+    ],
+    "EffectType": 1,
+    "Params": [
+      5.0,
+      100.0
+    ],
+    "Desc": "窃听器的价值将永久提升100。",
+    "Icon": "icon_buffcard_10135",
+    "BuffType": 3,
+    "MaxCount": 1,
+    "ConnectItems": [
+      1109
+    ]
+  },
+  "10211": {
+    "Id": 10211,
+    "Name": "挪移奇术·公文包",
+    "Label": [
+      1,
+      12,
+      21
+    ],
+    "EffectType": 4,
+    "Params": [
+      1.0,
+      8.0
+    ],
+    "Desc": "本房间内，公文包的重量减轻8。",
+    "Icon": "icon_buffcard_10211",
+    "BuffType": 1,
+    "MaxCount": 3,
+    "ConnectItems": [
+      1101,
+      1102,
+      1103
+    ]
+  },
+  "10212": {
+    "Id": 10212,
+    "Name": "挪移奇术·糖果盒",
+    "Label": [
+      2,
+      12,
+      21
+    ],
+    "EffectType": 4,
+    "Params": [
+      2.0,
+      5.0
+    ],
+    "Desc": "本房间内，糖果盒的重量减轻5。",
+    "Icon": "icon_buffcard_10212",
+    "BuffType": 1,
+    "MaxCount": 2,
+    "ConnectItems": [
+      1104,
+      1105,
+      1106
+    ]
+  },
+  "10213": {
+    "Id": 10213,
+    "Name": "挪移奇术·宝石",
+    "Label": [
+      3,
+      12,
+      21
+    ],
+    "EffectType": 4,
+    "Params": [
+      3.0,
+      3.0
+    ],
+    "Desc": "本房间内，宝石的重量减轻3。",
+    "Icon": "icon_buffcard_10213",
+    "BuffType": 1,
+    "MaxCount": 1,
+    "ConnectItems": [
+      1107
+    ]
+  },
+  "10214": {
+    "Id": 10214,
+    "Name": "挪移奇术·情报卷轴",
+    "Label": [
+      4,
+      12,
+      21
+    ],
+    "EffectType": 4,
+    "Params": [
+      4.0,
+      1.0
+    ],
+    "Desc": "本房间内，情报卷轴的重量减轻1。",
+    "Icon": "icon_buffcard_10214",
+    "BuffType": 1,
+    "MaxCount": 1,
+    "ConnectItems": [
+      1108
+    ]
+  },
+  "10215": {
+    "Id": 10215,
+    "Name": "挪移奇术·窃听器",
+    "Label": [
+      5,
+      12,
+      21
+    ],
+    "EffectType": 4,
+    "Params": [
+      5.0,
+      4.0
+    ],
+    "Desc": "本房间内，窃听器的重量减轻4。",
+    "Icon": "icon_buffcard_10215",
+    "BuffType": 1,
+    "MaxCount": 2,
+    "ConnectItems": [
+      1109
+    ]
+  },
+  "10221": {
+    "Id": 10221,
+    "Name": "延迟减重·公文包",
+    "Label": [
+      1,
+      12,
+      22
+    ],
+    "EffectType": 4,
+    "Params": [
+      1.0,
+      8.0
+    ],
+    "Desc": "下一房间内，公文包的重量减轻8。",
+    "Icon": "icon_buffcard_10221",
+    "BuffType": 2,
+    "MaxCount": 3,
+    "ConnectItems": [
+      1101,
+      1102,
+      1103
+    ]
+  },
+  "10222": {
+    "Id": 10222,
+    "Name": "延迟减重·糖果盒",
+    "Label": [
+      2,
+      12,
+      22
+    ],
+    "EffectType": 4,
+    "Params": [
+      2.0,
+      5.0
+    ],
+    "Desc": "下一房间内，糖果盒的重量减轻5。",
+    "Icon": "icon_buffcard_10222",
+    "BuffType": 2,
+    "MaxCount": 2,
+    "ConnectItems": [
+      1104,
+      1105,
+      1106
+    ]
+  },
+  "10223": {
+    "Id": 10223,
+    "Name": "延迟减重·宝石",
+    "Label": [
+      3,
+      12,
+      22
+    ],
+    "EffectType": 4,
+    "Params": [
+      3.0,
+      3.0
+    ],
+    "Desc": "下一房间内，宝石的重量减轻3。",
+    "Icon": "icon_buffcard_10223",
+    "BuffType": 2,
+    "MaxCount": 1,
+    "ConnectItems": [
+      1107
+    ]
+  },
+  "10224": {
+    "Id": 10224,
+    "Name": "延迟减重·情报卷轴",
+    "Label": [
+      4,
+      12,
+      22
+    ],
+    "EffectType": 4,
+    "Params": [
+      4.0,
+      1.0
+    ],
+    "Desc": "下一房间内，情报卷轴的重量减轻1。",
+    "Icon": "icon_buffcard_10224",
+    "BuffType": 2,
+    "MaxCount": 1,
+    "ConnectItems": [
+      1108
+    ]
+  },
+  "10225": {
+    "Id": 10225,
+    "Name": "延迟减重·窃听器",
+    "Label": [
+      5,
+      12,
+      22
+    ],
+    "EffectType": 4,
+    "Params": [
+      5.0,
+      4.0
+    ],
+    "Desc": "下一房间内，窃听器的重量减轻4。",
+    "Icon": "icon_buffcard_10225",
+    "BuffType": 2,
+    "MaxCount": 2,
+    "ConnectItems": [
+      1109
+    ]
+  },
+  "10231": {
+    "Id": 10231,
+    "Name": "轻量化·公文包",
+    "Label": [
+      1,
+      12,
+      23
+    ],
+    "EffectType": 4,
+    "Params": [
+      1.0,
+      4.0
+    ],
+    "Desc": "公文包的重量将永久减轻4。",
+    "Icon": "icon_buffcard_10231",
+    "BuffType": 3,
+    "MaxCount": 2,
+    "ConnectItems": [
+      1101,
+      1102,
+      1103
+    ]
+  },
+  "10232": {
+    "Id": 10232,
+    "Name": "轻量化·糖果盒",
+    "Label": [
+      2,
+      12,
+      23
+    ],
+    "EffectType": 4,
+    "Params": [
+      2.0,
+      3.0
+    ],
+    "Desc": "糖果盒的重量将永久减轻3。",
+    "Icon": "icon_buffcard_10232",
+    "BuffType": 3,
+    "MaxCount": 1,
+    "ConnectItems": [
+      1104,
+      1105,
+      1106
+    ]
+  },
+  "10233": {
+    "Id": 10233,
+    "Name": "轻量化·宝石",
+    "Label": [
+      3,
+      12,
+      23
+    ],
+    "EffectType": 4,
+    "Params": [
+      3.0,
+      2.0
+    ],
+    "Desc": "宝石的重量将永久减轻2。",
+    "Icon": "icon_buffcard_10233",
+    "BuffType": 3,
+    "MaxCount": 1,
+    "ConnectItems": [
+      1107
+    ]
+  },
+  "10234": {
+    "Id": 10234,
+    "Name": "轻量化·情报卷轴",
+    "Label": [
+      4,
+      12,
+      23
+    ],
+    "EffectType": 4,
+    "Params": [
+      4.0,
+      1.0
+    ],
+    "Desc": "情报卷轴的重量将永久减轻1。",
+    "Icon": "icon_buffcard_10234",
+    "BuffType": 3,
+    "MaxCount": 1,
+    "ConnectItems": [
+      1108
+    ]
+  },
+  "10235": {
+    "Id": 10235,
+    "Name": "轻量化·窃听器",
+    "Label": [
+      5,
+      12,
+      23
+    ],
+    "EffectType": 4,
+    "Params": [
+      5.0,
+      2.0
+    ],
+    "Desc": "窃听器的重量将永久减轻2。",
+    "Icon": "icon_buffcard_10235",
+    "BuffType": 3,
+    "MaxCount": 1,
+    "ConnectItems": [
+      1109
+    ]
+  },
+  "10311": {
+    "Id": 10311,
+    "Name": "高频接单·即时",
+    "Label": [
+      6,
+      21
+    ],
+    "EffectType": 2,
+    "Params": [
+      5.0
+    ],
+    "Desc": "本房间内，要求抓取单个物品的特派清单出现率将提升。",
+    "Icon": "icon_buffcard_10311",
+    "BuffType": 1,
+    "MaxCount": 6
+  },
+  "10321": {
+    "Id": 10321,
+    "Name": "高频接单·延迟",
+    "Label": [
+      6,
+      22
+    ],
+    "EffectType": 2,
+    "Params": [
+      4.0
+    ],
+    "Desc": "下一房间内，要求抓取单个物品的特派清单出现率将提升。",
+    "Icon": "icon_buffcard_10321",
+    "BuffType": 2,
+    "MaxCount": 4
+  },
+  "10331": {
+    "Id": 10331,
+    "Name": "高频接单·永久",
+    "Label": [
+      6,
+      23
+    ],
+    "EffectType": 2,
+    "Params": [
+      3.0
+    ],
+    "Desc": "要求抓取单个物品的特派清单出现率永久提升。",
+    "Icon": "icon_buffcard_10331",
+    "BuffType": 3,
+    "MaxCount": 4
+  },
+  "10411": {
+    "Id": 10411,
+    "Name": "特别服务·即时",
+    "Label": [
+      6,
+      21
+    ],
+    "EffectType": 3,
+    "Params": [
+      20.0
+    ],
+    "Desc": "本房间内，所有特派清单的奖励积分将额外提高20%。",
+    "Icon": "icon_buffcard_10411",
+    "BuffType": 1,
+    "MaxCount": 5
+  },
+  "10421": {
+    "Id": 10421,
+    "Name": "特别服务·延迟",
+    "Label": [
+      6,
+      22
+    ],
+    "EffectType": 3,
+    "Params": [
+      10.0
+    ],
+    "Desc": "下一房间内，所有特派清单的奖励积分将额外提高10%。",
+    "Icon": "icon_buffcard_10421",
+    "BuffType": 2,
+    "MaxCount": 5
+  },
+  "10431": {
+    "Id": 10431,
+    "Name": "特别服务·永久",
+    "Label": [
+      6,
+      23
+    ],
+    "EffectType": 3,
+    "Params": [
+      5.0
+    ],
+    "Desc": "特派清单奖励积分将永久提高5%。",
+    "Icon": "icon_buffcard_10431",
+    "BuffType": 3,
+    "MaxCount": 4
+  },
+  "10541": {
+    "Id": 10541,
+    "Name": "爆破专家",
+    "Label": [
+      9,
+      24
+    ],
+    "EffectType": 5,
+    "Params": [
+      1001.0,
+      1.0
+    ],
+    "Desc": "爆破技能的使用次数增加1次。",
+    "Icon": "icon_buffcard_10541",
+    "BuffType": 4,
+    "MaxCount": 3
+  },
+  "10542": {
+    "Id": 10542,
+    "Name": "冷冻大师",
+    "Label": [
+      9,
+      24
+    ],
+    "EffectType": 5,
+    "Params": [
+      1002.0,
+      1.0
+    ],
+    "Desc": "冻结技能的使用次数增加1次。",
+    "Icon": "icon_buffcard_10542",
+    "BuffType": 4,
+    "MaxCount": 3
+  },
+  "10543": {
+    "Id": 10543,
+    "Name": "捕鱼达人",
+    "Label": [
+      9,
+      24
+    ],
+    "EffectType": 5,
+    "Params": [
+      1003.0,
+      1.0
+    ],
+    "Desc": "捕捞技能的使用次数增加1次。",
+    "Icon": "icon_buffcard_10543",
+    "BuffType": 4,
+    "MaxCount": 1
+  },
+  "10611": {
+    "Id": 10611,
+    "Name": "扳机改造·即时",
+    "Label": [
+      8,
+      13,
+      21,
+      7
+    ],
+    "EffectType": 6,
+    "Params": [
+      100.0
+    ],
+    "Desc": "本房间内，钩爪下钩的速度将获得提升。",
+    "Icon": "icon_buffcard_10611",
+    "BuffType": 1,
+    "MaxCount": 2
+  },
+  "10621": {
+    "Id": 10621,
+    "Name": "扳机改造·延迟",
+    "Label": [
+      8,
+      13,
+      22,
+      7
+    ],
+    "EffectType": 6,
+    "Params": [
+      80.0
+    ],
+    "Desc": "下一房间内，钩爪下钩的速度将获得提升。",
+    "Icon": "icon_buffcard_10621",
+    "BuffType": 2,
+    "MaxCount": 2
+  },
+  "10631": {
+    "Id": 10631,
+    "Name": "扳机改造·永久",
+    "Label": [
+      8,
+      13,
+      23
+    ],
+    "EffectType": 6,
+    "Params": [
+      60.0
+    ],
+    "Desc": "钩爪下钩的速度将永久提升。",
+    "Icon": "icon_buffcard_10631",
+    "BuffType": 3,
+    "MaxCount": 2
+  },
+  "10711": {
+    "Id": 10711,
+    "Name": "钩爪加固·即时",
+    "Label": [
+      8,
+      13,
+      21
+    ],
+    "EffectType": 8,
+    "Params": [
+      2.0
+    ],
+    "Desc": "本房间内，重物对钩爪造成的拖拽影响有所减弱。",
+    "Icon": "icon_buffcard_10711",
+    "BuffType": 1,
+    "MaxCount": 3
+  },
+  "10721": {
+    "Id": 10721,
+    "Name": "钩爪加固·延迟",
+    "Label": [
+      8,
+      13,
+      22
+    ],
+    "EffectType": 8,
+    "Params": [
+      1.5
+    ],
+    "Desc": "下一房间内，重物对钩爪造成的拖拽影响有所减弱。",
+    "Icon": "icon_buffcard_10721",
+    "BuffType": 2,
+    "MaxCount": 2
+  },
+  "10731": {
+    "Id": 10731,
+    "Name": "钩爪加固·永久",
+    "Label": [
+      8,
+      13,
+      23
+    ],
+    "EffectType": 8,
+    "Params": [
+      1.0
+    ],
+    "Desc": "重物对钩爪造成的拖拽影响将永久减弱。",
+    "Icon": "icon_buffcard_10731",
+    "BuffType": 3,
+    "MaxCount": 1
+  },
+  "10811": {
+    "Id": 10811,
+    "Name": "瞄具进化·即时",
+    "Label": [
+      8,
+      13,
+      21
+    ],
+    "EffectType": 7,
+    "Params": [
+      3.0
+    ],
+    "Desc": "本房间内，钩爪的抓取半径范围扩大。",
+    "Icon": "icon_buffcard_10811",
+    "BuffType": 1,
+    "MaxCount": 2
+  },
+  "10821": {
+    "Id": 10821,
+    "Name": "瞄具进化·延迟",
+    "Label": [
+      8,
+      13,
+      22
+    ],
+    "EffectType": 7,
+    "Params": [
+      3.0
+    ],
+    "Desc": "下一房间内，钩爪的抓取半径范围扩大。",
+    "Icon": "icon_buffcard_10821",
+    "BuffType": 2,
+    "MaxCount": 2
+  },
+  "10911": {
+    "Id": 10911,
+    "Name": "特工怀表",
+    "Label": [
+      7,
+      21
+    ],
+    "EffectType": 9,
+    "Params": [
+      10.0
+    ],
+    "Desc": "本房间行动的剩余时间增加10秒。",
+    "Icon": "icon_buffcard_10911",
+    "BuffType": 1,
+    "MaxCount": 5
+  },
+  "10931": {
+    "Id": 10931,
+    "Name": "焕然一新",
+    "Label": [
+      23
+    ],
+    "EffectType": 11,
+    "Params": [
+      1.0
+    ],
+    "Desc": "神秘物资刷新次数+1",
+    "Icon": "icon_buffcard_10931",
+    "BuffType": 4,
+    "MaxCount": 1
+  },
+  "11031": {
+    "Id": 11031,
+    "Name": "公文包爱好者",
+    "Label": [
+      10,
+      23,
+      1
+    ],
+    "EffectType": 10,
+    "Params": [
+      1.0,
+      80.0
+    ],
+    "Desc": "提升获得公文包相关强化效果的神秘物资的概率。",
+    "Icon": "icon_buffcard_11031",
+    "BuffType": 3,
+    "MaxCount": 3,
+    "ConnectItems": [
+      1101,
+      1102,
+      1103
+    ]
+  },
+  "11032": {
+    "Id": 11032,
+    "Name": "糖果盒爱好者",
+    "Label": [
+      10,
+      23,
+      2
+    ],
+    "EffectType": 10,
+    "Params": [
+      2.0,
+      80.0
+    ],
+    "Desc": "提升获得糖果盒相关强化效果的神秘物资的概率。",
+    "Icon": "icon_buffcard_11032",
+    "BuffType": 3,
+    "MaxCount": 3,
+    "ConnectItems": [
+      1104,
+      1105,
+      1106
+    ]
+  },
+  "11033": {
+    "Id": 11033,
+    "Name": "宝石爱好者",
+    "Label": [
+      10,
+      23,
+      3
+    ],
+    "EffectType": 10,
+    "Params": [
+      3.0,
+      80.0
+    ],
+    "Desc": "提升获得宝石相关强化效果的神秘物资的概率。",
+    "Icon": "icon_buffcard_11033",
+    "BuffType": 3,
+    "MaxCount": 3,
+    "ConnectItems": [
+      1107
+    ]
+  },
+  "11034": {
+    "Id": 11034,
+    "Name": "情报卷轴爱好者",
+    "Label": [
+      10,
+      23,
+      4
+    ],
+    "EffectType": 10,
+    "Params": [
+      4.0,
+      80.0
+    ],
+    "Desc": "提升获得情报卷轴相关强化效果的神秘物资的概率。",
+    "Icon": "icon_buffcard_11034",
+    "BuffType": 3,
+    "MaxCount": 3,
+    "ConnectItems": [
+      1108
+    ]
+  },
+  "11035": {
+    "Id": 11035,
+    "Name": "窃听器爱好者",
+    "Label": [
+      10,
+      23,
+      5
+    ],
+    "EffectType": 10,
+    "Params": [
+      5.0,
+      80.0
+    ],
+    "Desc": "提升获得窃听器相关强化效果的神秘物资的概率。",
+    "Icon": "icon_buffcard_11035",
+    "BuffType": 3,
+    "MaxCount": 3,
+    "ConnectItems": [
+      1109
+    ]
+  },
+  "11036": {
+    "Id": 11036,
+    "Name": "先利其器",
+    "Label": [
+      10,
+      23,
+      8
+    ],
+    "EffectType": 10,
+    "Params": [
+      8.0,
+      150.0
+    ],
+    "Desc": "提升获得钩爪操作类强化效果的神秘物资的概率。",
+    "Icon": "icon_buffcard_11036",
+    "BuffType": 3,
+    "MaxCount": 3
+  },
+  "11037": {
+    "Id": 11037,
+    "Name": "赏金猎手",
+    "Label": [
+      10,
+      23,
+      6
+    ],
+    "EffectType": 10,
+    "Params": [
+      6.0,
+      150.0
+    ],
+    "Desc": "提升获得特派清单类强化效果的神秘物资的概率。",
+    "Icon": "icon_buffcard_11037",
+    "BuffType": 3,
+    "MaxCount": 3
+  },
+  "11038": {
+    "Id": 11038,
+    "Name": "玩转市场",
+    "Label": [
+      10,
+      23,
+      11
+    ],
+    "EffectType": 10,
+    "Params": [
+      11.0,
+      80.0
+    ],
+    "Desc": "提升获得价值提升类强化效果的神秘物资的概率。",
+    "Icon": "icon_buffcard_11038",
+    "BuffType": 3,
+    "MaxCount": 2
+  },
+  "11039": {
+    "Id": 11039,
+    "Name": "轻若鸿毛",
+    "Label": [
+      10,
+      23,
+      12
+    ],
+    "EffectType": 10,
+    "Params": [
+      12.0,
+      80.0
+    ],
+    "Desc": "提升获得减重类强化效果的神秘物资的概率。",
+    "Icon": "icon_buffcard_11039",
+    "BuffType": 3,
+    "MaxCount": 2
+  },
+  "11040": {
+    "Id": 11040,
+    "Name": "尽速尽美",
+    "Label": [
+      10,
+      23
+    ],
+    "EffectType": 10,
+    "Params": [
+      7.0,
+      150.0
+    ],
+    "Desc": "提升获得时间与速度类强化效果的神秘物资的概率。",
+    "Icon": "icon_buffcard_11040",
+    "BuffType": 3,
+    "MaxCount": 2
+  },
+  "11041": {
+    "Id": 11041,
+    "Name": "精益求精",
+    "Label": [
+      10,
+      23
+    ],
+    "EffectType": 10,
+    "Params": [
+      10.0,
+      80.0
+    ],
+    "Desc": "全面提升各类专项强化型神秘物资的出现概率。",
+    "Icon": "icon_buffcard_11041",
+    "BuffType": 3,
+    "MaxCount": 1
+  },
+  "11042": {
+    "Id": 11042,
+    "Name": "稳健布局",
+    "Label": [
+      10,
+      23
+    ],
+    "EffectType": 10,
+    "Params": [
+      23.0,
+      80.0
+    ],
+    "Desc": "提升获得提供永久增益效果的神秘物资的概率。",
+    "Icon": "icon_buffcard_11042",
+    "BuffType": 3,
+    "MaxCount": 2
+  }
+}

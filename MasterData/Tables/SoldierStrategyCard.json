@@ -1,0 +1,603 @@
+{
+  "2010101": {
+    "Id": 2010101,
+    "GroupId": 101,
+    "Rarity": 5,
+    "Icon": "Soldier_00_BuffCard_Coin_01",
+    "Name": "启动资金",
+    "CardEffectId": 2010101,
+    "Des": "立即获得8贤才金币",
+    "Desc": "立即获得8贤才金币"
+  },
+  "2010102": {
+    "Id": 2010102,
+    "GroupId": 101,
+    "Rarity": 5,
+    "Icon": "Soldier_00_BuffCard_Exp_01",
+    "Name": "行前预习",
+    "CardEffectId": 2010102,
+    "Des": "立即获得8魔王经验",
+    "Desc": "立即获得8魔王经验"
+  },
+  "2010103": {
+    "Id": 2010103,
+    "GroupId": 101,
+    "Rarity": 5,
+    "Icon": "Soldier_00_BuffCard_Shop_01",
+    "Name": "魅力征召",
+    "CardEffectId": 2010103,
+    "Des": "立即获得5次商店免费刷新",
+    "Desc": "立即获得5次商店免费刷新"
+  },
+  "2010104": {
+    "Id": 2010104,
+    "GroupId": 101,
+    "Rarity": 5,
+    "Icon": "Soldier_00_BuffCard_Hp_01",
+    "Name": "短暂休整",
+    "CardEffectId": 2010104,
+    "Des": "恢复10点理智，获得5贤才金币",
+    "Desc": "恢复10点理智，获得5贤才金币"
+  },
+  "2010105": {
+    "Id": 2010105,
+    "GroupId": 101,
+    "Rarity": 5,
+    "Icon": "Soldier_00_BuffCard_Chess_08",
+    "Name": "打包出售",
+    "CardEffectId": 2010105,
+    "Des": "接下来首次出售8个成员，获得10贤才金币",
+    "Desc": "接下来首次出售8个成员，获得10贤才金币"
+  },
+  "2010106": {
+    "Id": 2010106,
+    "GroupId": 101,
+    "Rarity": 5,
+    "Icon": "Soldier_00_BuffCard_Coin_02",
+    "Name": "连战连捷",
+    "CardEffectId": 2010106,
+    "Des": "接下来首次达成3连胜，获得12贤才金币",
+    "Desc": "接下来首次达成3连胜，获得12贤才金币"
+  },
+  "2010107": {
+    "Id": 2010107,
+    "GroupId": 101,
+    "Rarity": 5,
+    "Icon": "Soldier_00_BuffCard_Exp_01",
+    "Name": "败中求学",
+    "CardEffectId": 2010107,
+    "Des": "接下来首次达成3连败，获得12魔王经验",
+    "Desc": "接下来首次达成3连败，获得12魔王经验"
+  },
+  "2010108": {
+    "Id": 2010108,
+    "GroupId": 101,
+    "Rarity": 5,
+    "Icon": "Soldier_00_BuffCard_Coin_02",
+    "Name": "常胜威名",
+    "CardEffectId": 2010108,
+    "Des": "接下来首次达成5连胜，获得15贤才金币",
+    "Desc": "接下来首次达成5连胜，获得15贤才金币",
+    "UnlockCond": 4,
+    "UnlockCondParams": [
+      2
+    ]
+  },
+  "2010109": {
+    "Id": 2010109,
+    "GroupId": 101,
+    "Rarity": 5,
+    "Icon": "Soldier_00_BuffCard_Hp_02",
+    "Name": "冷静保险",
+    "CardEffectId": 2010109,
+    "Des": "理智首次低于20时，获得20贤才金币",
+    "Desc": "理智首次低于20时，获得20贤才金币"
+  },
+  "2010111": {
+    "Id": 2010111,
+    "GroupId": 101,
+    "Rarity": 4,
+    "Icon": "Soldier_00_BuffCard_Exp_01",
+    "Name": "刷新研修",
+    "CardEffectId": 2010111,
+    "Des": "每刷新5次商店，获得2经验",
+    "Desc": "每刷新5次商店，获得2经验"
+  },
+  "2010112": {
+    "Id": 2010112,
+    "GroupId": 101,
+    "Rarity": 5,
+    "Icon": "Soldier_00_BuffCard_Exp_01",
+    "Name": "愈挫愈勇",
+    "CardEffectId": 2010112,
+    "Des": "战斗失败时，额外获得2魔王经验",
+    "Desc": "战斗失败时，额外获得2魔王经验"
+  },
+  "2010113": {
+    "Id": 2010113,
+    "GroupId": 101,
+    "Rarity": 5,
+    "Icon": "Soldier_00_BuffCard_Coin_02",
+    "Name": "额外犒赏",
+    "CardEffectId": 2010113,
+    "Des": "战斗胜利时，额外获得1贤才金币",
+    "Desc": "战斗胜利时，额外获得1贤才金币"
+  },
+  "2010116": {
+    "Id": 2010116,
+    "GroupId": 101,
+    "Rarity": 4,
+    "Icon": "Soldier_00_BuffCard_Shop_01",
+    "Name": "额外刷新",
+    "CardEffectId": 2010116,
+    "Des": "每次购买经验，有概率获得1次免费刷新",
+    "Desc": "每次购买经验，有概率获得1次免费刷新"
+  },
+  "2010117": {
+    "Id": 2010117,
+    "GroupId": 101,
+    "Rarity": 4,
+    "Icon": "Soldier_00_BuffCard_Exp_01",
+    "Name": "批量学习",
+    "CardEffectId": 2010117,
+    "Des": "每合成1个成员，有概率获得2贤才金币",
+    "Desc": "每合成1个成员，有概率获得2贤才金币"
+  },
+  "2010118": {
+    "Id": 2010118,
+    "GroupId": 101,
+    "Rarity": 4,
+    "Icon": "Soldier_00_BuffCard_Coin_02",
+    "Name": "精英计划",
+    "CardEffectId": 2010118,
+    "Des": "接下来每当合成2星3费成员，获得3金币",
+    "Desc": "接下来每当合成2星3费成员，获得3金币"
+  },
+  "2010119": {
+    "Id": 2010119,
+    "GroupId": 101,
+    "Rarity": 4,
+    "Icon": "Soldier_00_BuffCard_Chess_06",
+    "Name": "人才培养",
+    "CardEffectId": 2010119,
+    "Des": "接下来每当合成2星2费成员，随机获得1个2费成员",
+    "Desc": "接下来每当合成2星2费成员，随机获得1个2费成员"
+  },
+  "2010202": {
+    "Id": 2010202,
+    "GroupId": 101,
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Shop_03",
+    "Name": "封闭建设",
+    "CardEffectId": 2010202,
+    "Des": "进入新节点时获得4点经验，但接下来3个节点内商店禁止刷新",
+    "Desc": "进入新节点时获得4点经验，但接下来3个节点内商店禁止刷新",
+    "UnlockCond": 4,
+    "UnlockCondParams": [
+      2
+    ]
+  },
+  "2010203": {
+    "Id": 2010203,
+    "GroupId": 101,
+    "Rarity": 4,
+    "Icon": "Soldier_00_BuffCard_Exp_01",
+    "Name": "理智决策",
+    "CardEffectId": 2010203,
+    "Des": "进入新节点时若理智大于60，额外获得3经验",
+    "Desc": "进入新节点时若理智大于60，额外获得3经验",
+    "UnlockCond": 4,
+    "UnlockCondParams": [
+      3
+    ]
+  },
+  "2010204": {
+    "Id": 2010204,
+    "GroupId": 101,
+    "Rarity": 4,
+    "Icon": "Soldier_00_BuffCard_Chess_04",
+    "Name": "应急征调",
+    "CardEffectId": 2010204,
+    "Des": "进入新节点时若理智小于25，随机获得1个2星4费成员",
+    "Desc": "进入新节点时若理智小于25，随机获得1个2星4费成员",
+    "UnlockCond": 4,
+    "UnlockCondParams": [
+      2
+    ]
+  },
+  "2010205": {
+    "Id": 2010205,
+    "GroupId": 101,
+    "Rarity": 4,
+    "Icon": "Soldier_00_BuffCard_Exp_02",
+    "Name": "厚积薄发",
+    "CardEffectId": 2010205,
+    "Des": "进入新节点时若金币大于60，额外获得5经验",
+    "Desc": "进入新节点时若金币大于60，额外获得5经验"
+  },
+  "2010206": {
+    "Id": 2010206,
+    "GroupId": 101,
+    "Rarity": 4,
+    "Icon": "Soldier_00_BuffCard_Shop_04",
+    "Name": "透支经营",
+    "CardEffectId": 2010206,
+    "Des": "立刻获得20贤才金币，接下来3个遇敌节点主战成员血量减半",
+    "Desc": "立刻获得20贤才金币，接下来3个遇敌节点主战成员血量减半"
+  },
+  "2010208": {
+    "Id": 2010208,
+    "GroupId": 101,
+    "Rarity": 4,
+    "Icon": "Soldier_00_BuffCard_Hp_04",
+    "Name": "命运赌约",
+    "CardEffectId": 2010208,
+    "Des": "理智变为20，获得30金币",
+    "Desc": "理智变为20，获得30金币"
+  },
+  "2010209": {
+    "Id": 2010209,
+    "GroupId": 101,
+    "Rarity": 4,
+    "Icon": "Soldier_00_BuffCard_Shop_07",
+    "Name": "偶见稀客",
+    "CardEffectId": 2010209,
+    "Des": "商店有概率出现1个2星成员",
+    "Desc": "商店有概率出现1个2星成员"
+  },
+  "2010301": {
+    "Id": 2010301,
+    "GroupId": 101,
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Shop_05",
+    "Name": "熟客折扣",
+    "CardEffectId": 2010301,
+    "Des": "累计刷新20次后，刷新的费用永久-1",
+    "Desc": "累计刷新20次后，刷新的费用永久-1"
+  },
+  "2010302": {
+    "Id": 2010302,
+    "GroupId": 101,
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Exp_02",
+    "Name": "进修补贴",
+    "CardEffectId": 2010302,
+    "Des": "累计消耗120个金币，购买经验的费用永久-1",
+    "Desc": "累计消耗120个金币，购买经验的费用永久-1"
+  },
+  "2010303": {
+    "Id": 2010303,
+    "GroupId": 101,
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Hp_05",
+    "Name": "狂赌的深渊",
+    "CardEffectId": 2010303,
+    "Des": "理智立刻变为1，获得50金币",
+    "Desc": "理智立刻变为1，获得50金币"
+  },
+  "2010305": {
+    "Id": 2010305,
+    "GroupId": 101,
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Coin_03",
+    "Name": "利息扩容",
+    "CardEffectId": 2010305,
+    "Des": "贤才金币变为20，利息上限+1",
+    "Desc": "贤才金币变为20，利息上限+1"
+  },
+  "2010306": {
+    "Id": 2010306,
+    "GroupId": 101,
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Hp_05",
+    "Name": "超风险财富",
+    "CardEffectId": 2010306,
+    "Des": "理智变为1，当前拥有的贤才金币变为2倍",
+    "Desc": "理智变为1，当前拥有的贤才金币变为2倍",
+    "UnlockCond": 4,
+    "UnlockCondParams": [
+      2
+    ]
+  },
+  "2010307": {
+    "Id": 2010307,
+    "GroupId": 101,
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Hp_05",
+    "Name": "狡猾的献祭",
+    "CardEffectId": 2010307,
+    "Des": "立即获得5贤才金币，随后交换当前理智值和贤才金币值",
+    "Desc": "立即获得5贤才金币，随后交换当前理智值和贤才金币值"
+  },
+  "2010308": {
+    "Id": 2010308,
+    "GroupId": 101,
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Card_01",
+    "Name": "奇策精选",
+    "CardEffectId": 2010308,
+    "Des": "之后随机到的祝福均为金色品质",
+    "Desc": "之后随机到的祝福均为金色品质"
+  },
+  "2010310": {
+    "Id": 2010310,
+    "GroupId": 101,
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Shop_05",
+    "Name": "再刷一轮",
+    "CardEffectId": 2010310,
+    "Des": "刷新商店时，有概率获得1次免费刷新",
+    "Desc": "刷新商店时，有概率获得1次免费刷新"
+  },
+  "2010311": {
+    "Id": 2010311,
+    "GroupId": 101,
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Shop_01",
+    "Name": "升级仓储",
+    "CardEffectId": 2010311,
+    "Des": "获得3次免费刷新，之后魔王每次升级，获得3次免费刷新",
+    "Desc": "获得3次免费刷新，之后魔王每次升级，获得3次免费刷新"
+  },
+  "2010312": {
+    "Id": 2010312,
+    "GroupId": 101,
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Exp_01",
+    "Name": "灵光一闪",
+    "CardEffectId": 2010312,
+    "Des": "每次刷新商店，有概率获得2经验",
+    "Desc": "每次刷新商店，有概率获得2经验"
+  },
+  "2010313": {
+    "Id": 2010313,
+    "GroupId": 101,
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Coin_03",
+    "Name": "智能型仓储",
+    "CardEffectId": 2010313,
+    "Des": "魔王7级后，购买经验时获得1次免费刷新",
+    "Desc": "魔王7级后，购买经验时获得1次免费刷新"
+  },
+  "2010314": {
+    "Id": 2010314,
+    "GroupId": 101,
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Shop_02",
+    "Name": "高效调度",
+    "CardEffectId": 2010314,
+    "Des": "魔王8级后，每刷新2次商店，获得2金币",
+    "Desc": "魔王8级后，每刷新2次商店，获得2金币"
+  },
+  "2010315": {
+    "Id": 2010315,
+    "GroupId": 101,
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Exp_02",
+    "Name": "熟能生巧",
+    "CardEffectId": 2010315,
+    "Des": "商店刷新满30次后，之后每次刷新额外获得2经验",
+    "Desc": "商店刷新满30次后，之后每次刷新额外获得2经验"
+  },
+  "2010316": {
+    "Id": 2010316,
+    "GroupId": 101,
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Shop_06",
+    "Name": "品质人才库",
+    "CardEffectId": 2010316,
+    "Des": "每次刷新商店，使商店中一个随机成员变为高1费的另一个随机成员",
+    "Desc": "每次刷新商店，使商店中一个随机成员变为高1费的另一个随机成员"
+  },
+  "2010318": {
+    "Id": 2010318,
+    "GroupId": 101,
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Coin_02",
+    "Name": "凯旋三连音",
+    "CardEffectId": 2010318,
+    "Des": "接下来每达成3连胜，获得10贤才金币",
+    "Desc": "接下来每达成3连胜，获得10贤才金币"
+  },
+  "2010319": {
+    "Id": 2010319,
+    "GroupId": 101,
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Chess_11",
+    "Name": "危难救世主",
+    "CardEffectId": 2010319,
+    "Des": "接下来每达成3连败，随机获得1张1星5费成员",
+    "Desc": "接下来每达成3连败，随机获得1张1星5费成员"
+  },
+  "2011204": {
+    "Id": 2011204,
+    "GroupId": 101,
+    "Rarity": 4,
+    "Icon": "Soldier_00_BuffCard_Partner_01_04",
+    "Name": "恩赐预言",
+    "CardEffectId": 2011204,
+    "Des": "接下来商店中恩赐意志成员出现概率提升，获得菈露",
+    "Desc": "接下来商店中恩赐意志成员出现概率提升，获得菈露",
+    "CharacterShow": [
+      2501016
+    ]
+  },
+  "2011206": {
+    "Id": 2011206,
+    "GroupId": 101,
+    "Rarity": 4,
+    "Icon": "Soldier_00_BuffCard_Partner_01_06",
+    "Name": "卫队兵法",
+    "CardEffectId": 2011206,
+    "Des": "接下来商店中帝国卫队成员出现概率提升，获得卫队分团长",
+    "Desc": "接下来商店中帝国卫队成员出现概率提升，获得卫队分团长",
+    "CharacterShow": [
+      2501023
+    ]
+  },
+  "2011209": {
+    "Id": 2011209,
+    "GroupId": 101,
+    "Rarity": 4,
+    "Icon": "Soldier_00_BuffCard_Partner_01_10",
+    "Name": "预制食品技术",
+    "CardEffectId": 2011209,
+    "Des": "接下来商店中联合种业成员出现概率提升，获得资深种业员工",
+    "Desc": "接下来商店中联合种业成员出现概率提升，获得资深种业员工",
+    "CharacterShow": [
+      2501026
+    ]
+  },
+  "2011210": {
+    "Id": 2011210,
+    "GroupId": 101,
+    "Rarity": 4,
+    "Icon": "Soldier_00_BuffCard_Partner_01_11",
+    "Name": "魔物生态学说",
+    "CardEffectId": 2011210,
+    "Des": "接下来商店中森林朋友成员出现概率提升，获得火狼",
+    "Desc": "接下来商店中森林朋友成员出现概率提升，获得火狼",
+    "CharacterShow": [
+      2501037
+    ]
+  },
+  "2011213": {
+    "Id": 2011213,
+    "GroupId": 101,
+    "Rarity": 4,
+    "Icon": "Soldier_00_BuffCard_Partner_01_15",
+    "Name": "精准狙击学说",
+    "CardEffectId": 2011213,
+    "Des": "接下来商店中百步穿杨成员出现概率提升，百步穿杨成员首次合成到2星时随机获得1个百步穿杨成员",
+    "Desc": "接下来商店中百步穿杨成员出现概率提升，百步穿杨成员首次合成到2星时随机获得1个百步穿杨成员"
+  },
+  "2011222": {
+    "Id": 2011222,
+    "GroupId": 101,
+    "Rarity": 4,
+    "Icon": "Soldier_00_BuffCard_Partner_01_22",
+    "Name": "黄沙与暗刃",
+    "CardEffectId": 2011222,
+    "Des": "接下来商店中沙蝎佣兵团成员出现概率提升，获得黄尘弩卫",
+    "Desc": "接下来商店中沙蝎佣兵团成员出现概率提升，获得黄尘弩卫",
+    "CharacterShow": [
+      2501059
+    ]
+  },
+  "2011227": {
+    "Id": 2011227,
+    "GroupId": 101,
+    "Rarity": 4,
+    "Icon": "Soldier_00_BuffCard_Partner_01_27",
+    "Name": "法术同源学说",
+    "CardEffectId": 2011227,
+    "Des": "接下来商店中绮丽魔法成员出现概率提升，获得赤霞",
+    "Desc": "接下来商店中绮丽魔法成员出现概率提升，获得赤霞",
+    "CharacterShow": [
+      2501043
+    ]
+  },
+  "2011228": {
+    "Id": 2011228,
+    "GroupId": 101,
+    "Rarity": 4,
+    "Icon": "Soldier_00_BuffCard_Partner_01_28",
+    "Name": "火力协同学说",
+    "CardEffectId": 2011228,
+    "Des": "接下来商店中火力压制成员出现概率提升，获得种业除虫专家",
+    "Desc": "接下来商店中火力压制成员出现概率提升，获得种业除虫专家",
+    "CharacterShow": [
+      2501058
+    ]
+  },
+  "2011301": {
+    "Id": 2011301,
+    "GroupId": 101,
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Partner_02_06",
+    "Name": "卫队的号令",
+    "CardEffectId": 2011301,
+    "Des": "帝国卫队羁绊达成计数+1",
+    "Desc": "帝国卫队羁绊达成计数+1"
+  },
+  "2011302": {
+    "Id": 2011302,
+    "GroupId": 101,
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Partner_02_09",
+    "Name": "灰风的召唤",
+    "CardEffectId": 2011302,
+    "Des": "灰风俱乐部羁绊达成计数+1",
+    "Desc": "灰风俱乐部羁绊达成计数+1"
+  },
+  "2011303": {
+    "Id": 2011303,
+    "GroupId": 101,
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Partner_02_04",
+    "Name": "以神之名义",
+    "CardEffectId": 2011303,
+    "Des": "恩赐意志羁绊达成计数+1",
+    "Desc": "恩赐意志羁绊达成计数+1"
+  },
+  "2011304": {
+    "Id": 2011304,
+    "GroupId": 101,
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Partner_02_10",
+    "Name": "联合种业聘书",
+    "CardEffectId": 2011304,
+    "Des": "联合种业羁绊达成计数+1",
+    "Desc": "联合种业羁绊达成计数+1"
+  },
+  "2011305": {
+    "Id": 2011305,
+    "GroupId": 101,
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Partner_02_14",
+    "Name": "圣光祝福",
+    "CardEffectId": 2011305,
+    "Des": "沐浴恩典羁绊达成计数+1",
+    "Desc": "沐浴恩典羁绊达成计数+1"
+  },
+  "2011307": {
+    "Id": 2011307,
+    "GroupId": 101,
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Partner_02_22",
+    "Name": "尖刀悬赏令",
+    "CardEffectId": 2011307,
+    "Des": "沙蝎佣兵团羁绊达成计数+1",
+    "Desc": "沙蝎佣兵团羁绊达成计数+1"
+  },
+  "2011308": {
+    "Id": 2011308,
+    "GroupId": 101,
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Partner_02_27",
+    "Name": "奇迹的魔法",
+    "CardEffectId": 2011308,
+    "Des": "绮丽魔法羁绊达成计数+1",
+    "Desc": "绮丽魔法羁绊达成计数+1"
+  },
+  "2011309": {
+    "Id": 2011309,
+    "GroupId": 101,
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Partner_02_15",
+    "Name": "凛风的箭羽",
+    "CardEffectId": 2011309,
+    "Des": "百步穿杨羁绊达成计数+1",
+    "Desc": "百步穿杨羁绊达成计数+1"
+  },
+  "2011310": {
+    "Id": 2011310,
+    "GroupId": 101,
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Partner_02_28",
+    "Name": "裂空的枪火",
+    "CardEffectId": 2011310,
+    "Des": "火力压制羁绊达成计数+1",
+    "Desc": "火力压制羁绊达成计数+1"
+  }
+}

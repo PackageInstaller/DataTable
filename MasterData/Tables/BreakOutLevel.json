@@ -1,0 +1,636 @@
+{
+  "301010111": {
+    "Id": 301010111,
+    "ActivityId": 3010101,
+    "Name": "星屑幻想",
+    "Type": 1,
+    "Difficulty": 1,
+    "FloorId": 82001,
+    "FirstCompleteReward1Tid": 2,
+    "FirstCompleteReward1Qty": 100,
+    "FirstCompleteReward2Tid": 73202,
+    "FirstCompleteReward2Qty": 200,
+    "Characters": [
+      1
+    ],
+    "Desc": "欢迎来到缭乱碎晶球，通过教学关了解基础玩法吧：\n1.尝试移动发射台，发射弹珠或反弹弹珠。\n2.发动角色技能，摧毁晶块。\n3.了解如何得分，以及胜利失败机制。"
+  },
+  "301010112": {
+    "Id": 301010112,
+    "ActivityId": 3010101,
+    "Name": "流星之旅",
+    "Type": 1,
+    "Difficulty": 2,
+    "PreLevelId": 301010111,
+    "FloorId": 82002,
+    "PreviewMonsterGroupId": 8200102,
+    "FirstCompleteReward1Tid": 2,
+    "FirstCompleteReward1Qty": 100,
+    "FirstCompleteReward2Tid": 73202,
+    "FirstCompleteReward2Qty": 200,
+    "Characters": [
+      2
+    ],
+    "Desc": "进阶教学！在此关中可了解以下内容：\n1.敌人会攻击也会移动。需要移动发射台避免被子弹击中。\n2.弹珠或角色技能都可以对敌人造成伤害。\n3.了解各种掉落道具的功能。"
+  },
+  "301010121": {
+    "Id": 301010121,
+    "ActivityId": 3010101,
+    "Name": "卫星环绕",
+    "Type": 2,
+    "Difficulty": 1,
+    "PreLevelId": 301010112,
+    "FloorId": 82003,
+    "PreviewMonsterGroupId": 8200103,
+    "FirstCompleteReward1Tid": 2,
+    "FirstCompleteReward1Qty": 150,
+    "FirstCompleteReward2Tid": 73202,
+    "FirstCompleteReward2Qty": 200,
+    "Characters": [
+      3
+    ],
+    "Desc": "狡猾的敌人躲藏在了晶块后，设法击破晶块后再消灭！\n务必小心判断掉落道具，可能会是危险的炸弹！"
+  },
+  "301010122": {
+    "Id": 301010122,
+    "ActivityId": 3010101,
+    "Name": "行星漫游",
+    "Type": 2,
+    "Difficulty": 2,
+    "PreLevelId": 301010121,
+    "FloorId": 82004,
+    "PreviewMonsterGroupId": 8200104,
+    "FirstCompleteReward1Tid": 2,
+    "FirstCompleteReward1Qty": 150,
+    "FirstCompleteReward2Tid": 73202,
+    "FirstCompleteReward2Qty": 200,
+    "Characters": [
+      1,
+      2
+    ],
+    "Desc": "出现了高防御力晶块！多次攻击才能破坏。\n务必小心判断掉落道具，火球会造成更多伤害并可穿透晶块。"
+  },
+  "301010131": {
+    "Id": 301010131,
+    "ActivityId": 3010101,
+    "DayOpen": 1,
+    "Name": "逐日彗星",
+    "Type": 3,
+    "Difficulty": 1,
+    "PreLevelId": 301010122,
+    "FloorId": 82005,
+    "FirstCompleteReward1Tid": 2,
+    "FirstCompleteReward1Qty": 200,
+    "FirstCompleteReward2Tid": 73202,
+    "FirstCompleteReward2Qty": 200,
+    "Characters": [
+      2,
+      3
+    ],
+    "Desc": "任务地形变得更加复杂了，请小心应对！\n似乎出现了新型掉落道具，可能会使发射台伸长或缩短！"
+  },
+  "301010132": {
+    "Id": 301010132,
+    "ActivityId": 3010101,
+    "DayOpen": 1,
+    "Name": "黑洞边缘",
+    "Type": 3,
+    "Difficulty": 2,
+    "PreLevelId": 301010131,
+    "FloorId": 82006,
+    "PreviewMonsterGroupId": 8200106,
+    "FirstCompleteReward1Tid": 2,
+    "FirstCompleteReward1Qty": 200,
+    "FirstCompleteReward2Tid": 73202,
+    "FirstCompleteReward2Qty": 200,
+    "Characters": [
+      1,
+      3
+    ],
+    "Desc": "发现了新型装置-弹射柱！\n当弹珠撞击到弹射柱时，会获得短时间的加速。"
+  },
+  "301010141": {
+    "Id": 301010141,
+    "ActivityId": 3010101,
+    "DayOpen": 1,
+    "Name": "恒星风暴",
+    "Type": 4,
+    "Difficulty": 1,
+    "PreLevelId": 301010132,
+    "FloorId": 82007,
+    "PreviewMonsterGroupId": 8200107,
+    "FirstCompleteReward1Tid": 2,
+    "FirstCompleteReward1Qty": 300,
+    "FirstCompleteReward2Tid": 73202,
+    "FirstCompleteReward2Qty": 200,
+    "Characters": [
+      1,
+      2,
+      3
+    ],
+    "Desc": "欢迎来到挑战关卡！\n黑洞出现在了这片宙域！弹珠会被黑洞的力量牵引而改变轨迹！"
+  },
+  "301010142": {
+    "Id": 301010142,
+    "ActivityId": 3010101,
+    "DayOpen": 1,
+    "Name": "深渊新星",
+    "Type": 4,
+    "Difficulty": 2,
+    "PreLevelId": 301010141,
+    "FloorId": 82008,
+    "PreviewMonsterGroupId": 8200108,
+    "FirstCompleteReward1Tid": 2,
+    "FirstCompleteReward1Qty": 300,
+    "FirstCompleteReward2Tid": 119011,
+    "FirstCompleteReward2Qty": 1,
+    "Characters": [
+      1,
+      2,
+      3
+    ],
+    "Desc": "欢迎来到挑战关卡！\n直面来自宇宙的愤怒吧，好好表现，军校生！"
+  },
+  "301020111": {
+    "Id": 301020111,
+    "ActivityId": 3010201,
+    "Name": "星云织梦",
+    "Type": 1,
+    "Difficulty": 1,
+    "FloorId": 82011,
+    "FirstCompleteReward1Tid": 2,
+    "FirstCompleteReward1Qty": 100,
+    "FirstCompleteReward2Tid": 73202,
+    "FirstCompleteReward2Qty": 200,
+    "Characters": [
+      11501
+    ],
+    "Desc": "欢迎来到缭乱碎晶球，通过教学关了解基础玩法吧：\n1.尝试移动发射台，发射弹珠或反弹弹珠。\n2.发动角色技能，摧毁晶块。\n3.留意晶块中的爆炸装置，将其破坏后可以摧毁周围晶块。\n4.利用场地中的变速机关可影响球的速度。\n5.了解如何得分，以及胜利失败机制。"
+  },
+  "301020112": {
+    "Id": 301020112,
+    "ActivityId": 3010201,
+    "Name": "星光漫步",
+    "Type": 1,
+    "Difficulty": 2,
+    "PreLevelId": 301020111,
+    "FloorId": 82012,
+    "PreviewMonsterGroupId": 8200112,
+    "FirstCompleteReward1Tid": 2,
+    "FirstCompleteReward1Qty": 100,
+    "FirstCompleteReward2Tid": 73202,
+    "FirstCompleteReward2Qty": 200,
+    "Characters": [
+      14501
+    ],
+    "Desc": "进阶教学！在此关中可了解以下内容：\n1.新增会移动的敌人。\n2.弹珠或角色技能都可以对敌人造成伤害。\n3.了解各种掉落道具的功能。"
+  },
+  "301020121": {
+    "Id": 301020121,
+    "ActivityId": 3010201,
+    "Name": "轨道交响",
+    "Type": 2,
+    "Difficulty": 1,
+    "PreLevelId": 301020112,
+    "FloorId": 82013,
+    "PreviewMonsterGroupId": 8200113,
+    "FirstCompleteReward1Tid": 2,
+    "FirstCompleteReward1Qty": 150,
+    "FirstCompleteReward2Tid": 73202,
+    "FirstCompleteReward2Qty": 200,
+    "Characters": [
+      11501,
+      14501,
+      1
+    ],
+    "Desc": "新增会移动也会攻击的敌人，需要移动发射台避免被子弹击中。\n注意判断掉落道具的种类，可能是危险的炸弹，请及时躲避！"
+  },
+  "301020122": {
+    "Id": 301020122,
+    "ActivityId": 3010201,
+    "Name": "星环捕手",
+    "Type": 2,
+    "Difficulty": 2,
+    "PreLevelId": 301020121,
+    "FloorId": 82014,
+    "PreviewMonsterGroupId": 8200114,
+    "FirstCompleteReward1Tid": 2,
+    "FirstCompleteReward1Qty": 150,
+    "FirstCompleteReward2Tid": 73202,
+    "FirstCompleteReward2Qty": 200,
+    "Characters": [
+      11501,
+      14501,
+      2
+    ],
+    "Desc": "出现了高防御力晶块！需要多次攻击才能破坏。\n注意判断掉落道具的种类，新增的爆炸球在撞到敌人或晶块时将产生范围爆炸！"
+  },
+  "301020131": {
+    "Id": 301020131,
+    "ActivityId": 3010201,
+    "DayOpen": 1,
+    "Name": "光年碎影",
+    "Type": 3,
+    "Difficulty": 1,
+    "PreLevelId": 301020122,
+    "FloorId": 82015,
+    "PreviewMonsterGroupId": 8200115,
+    "FirstCompleteReward1Tid": 2,
+    "FirstCompleteReward1Qty": 200,
+    "FirstCompleteReward2Tid": 73202,
+    "FirstCompleteReward2Qty": 200,
+    "Characters": [
+      11501,
+      14501,
+      3
+    ],
+    "Desc": "任务地形变得更加复杂了，请小心应对！\n注意判断掉落道具的种类，新增的火球会造成更多伤害并可穿透晶块；新增的无敌星会让弹珠速度变快，免疫所有伤害！"
+  },
+  "301020132": {
+    "Id": 301020132,
+    "ActivityId": 3010201,
+    "DayOpen": 1,
+    "Name": "引力涟漪",
+    "Type": 3,
+    "Difficulty": 2,
+    "PreLevelId": 301020131,
+    "FloorId": 82016,
+    "PreviewMonsterGroupId": 8200116,
+    "FirstCompleteReward1Tid": 2,
+    "FirstCompleteReward1Qty": 200,
+    "FirstCompleteReward2Tid": 73202,
+    "FirstCompleteReward2Qty": 200,
+    "Characters": [
+      11501,
+      14501,
+      1,
+      2
+    ],
+    "Desc": "发现全新天文现象——重力井！它会根据自身状态牵引或排斥弹珠，改变弹珠的移动轨迹。\n注意判断掉落道具的种类，新增的分裂球会让弹珠一分为三！"
+  },
+  "301020141": {
+    "Id": 301020141,
+    "ActivityId": 3010201,
+    "DayOpen": 1,
+    "Name": "暗质潮汐",
+    "Type": 4,
+    "Difficulty": 1,
+    "PreLevelId": 301020132,
+    "FloorId": 82017,
+    "PreviewMonsterGroupId": 8200117,
+    "FirstCompleteReward1Tid": 2,
+    "FirstCompleteReward1Qty": 300,
+    "FirstCompleteReward2Tid": 73202,
+    "FirstCompleteReward2Qty": 200,
+    "Characters": [
+      11501,
+      14501,
+      2,
+      3
+    ],
+    "Desc": "欢迎来到挑战关卡！\n这片宙域中的重力井数量将增加为两个！"
+  },
+  "301020142": {
+    "Id": 301020142,
+    "ActivityId": 3010201,
+    "DayOpen": 1,
+    "Name": "银河诗篇",
+    "Type": 4,
+    "Difficulty": 2,
+    "PreLevelId": 301020141,
+    "FloorId": 82018,
+    "PreviewMonsterGroupId": 8200118,
+    "FirstCompleteReward1Tid": 2,
+    "FirstCompleteReward1Qty": 300,
+    "FirstCompleteReward2Tid": 119012,
+    "FirstCompleteReward2Qty": 1,
+    "Characters": [
+      11501,
+      14501,
+      1,
+      3
+    ],
+    "Desc": "欢迎来到挑战关卡！\n直面来自宇宙的愤怒吧，好好表现，军校生！"
+  },
+  "301030111": {
+    "Id": 301030111,
+    "ActivityId": 3010301,
+    "Name": "斗转星移",
+    "Type": 1,
+    "Difficulty": 1,
+    "FloorId": 82021,
+    "FirstCompleteReward1Tid": 2,
+    "FirstCompleteReward1Qty": 100,
+    "FirstCompleteReward2Tid": 73202,
+    "FirstCompleteReward2Qty": 200,
+    "Characters": [
+      15701
+    ],
+    "Desc": "欢迎来到缭乱碎晶球，通过教学关了解基础玩法吧：\n1.尝试移动发射台，发射弹珠或反弹弹珠。\n2.发动角色技能，摧毁晶块。\n3.利用传送门装置，将弹珠传送到上方空隙内。\n4.了解如何得分，以及胜利失败机制。"
+  },
+  "301030112": {
+    "Id": 301030112,
+    "ActivityId": 3010301,
+    "Name": "星层乱步",
+    "Type": 1,
+    "Difficulty": 2,
+    "PreLevelId": 301030111,
+    "FloorId": 82022,
+    "PreviewMonsterGroupId": 8200122,
+    "FirstCompleteReward1Tid": 2,
+    "FirstCompleteReward1Qty": 100,
+    "FirstCompleteReward2Tid": 73202,
+    "FirstCompleteReward2Qty": 200,
+    "Characters": [
+      16001
+    ],
+    "Desc": "进阶教学！在此关中可了解以下内容：\n1.新增会移动的敌人。\n2.弹珠或角色技能都可以对敌人造成伤害。\n3.了解各种掉落道具的功能。\n4.利用传送门装置，将弹珠传送到空隙内攻击敌人。"
+  },
+  "301030121": {
+    "Id": 301030121,
+    "ActivityId": 3010301,
+    "Name": "碎晶围剿",
+    "Type": 2,
+    "Difficulty": 1,
+    "PreLevelId": 301030112,
+    "FloorId": 82023,
+    "PreviewMonsterGroupId": 8200123,
+    "FirstCompleteReward1Tid": 2,
+    "FirstCompleteReward1Qty": 150,
+    "FirstCompleteReward2Tid": 73202,
+    "FirstCompleteReward2Qty": 200,
+    "Characters": [
+      15701,
+      16001,
+      11501
+    ],
+    "Desc": "新增会进行攻击的敌人，需要移动发射台避免被子弹击中。\n注意判断掉落道具，新增的重力按钮可以更加简单地使用传送门。\n合理选择场上的火药道具或是传送门，更高效地消灭敌人。"
+  },
+  "301030122": {
+    "Id": 301030122,
+    "ActivityId": 3010301,
+    "Name": "炽火流星",
+    "Type": 2,
+    "Difficulty": 2,
+    "PreLevelId": 301030121,
+    "FloorId": 82024,
+    "PreviewMonsterGroupId": 8200124,
+    "FirstCompleteReward1Tid": 2,
+    "FirstCompleteReward1Qty": 150,
+    "FirstCompleteReward2Tid": 73202,
+    "FirstCompleteReward2Qty": 200,
+    "Characters": [
+      15701,
+      16001,
+      14501
+    ],
+    "Desc": "出现了高防御力晶块！需要多次攻击才能破坏。\n传送门的位置不易使用，利用好道具来降低难度吧！\n注意判断掉落道具的种类，新增的火焰球可以造成更多伤害并可穿透晶块。\n若成功将弹珠送至上半区域，便能获得源源不断的道具哦！"
+  },
+  "301030131": {
+    "Id": 301030131,
+    "ActivityId": 3010301,
+    "DayOpen": 1,
+    "Name": "双星环引",
+    "Type": 3,
+    "Difficulty": 1,
+    "PreLevelId": 301030122,
+    "FloorId": 82025,
+    "FirstCompleteReward1Tid": 2,
+    "FirstCompleteReward1Qty": 200,
+    "FirstCompleteReward2Tid": 73202,
+    "FirstCompleteReward2Qty": 200,
+    "Characters": [
+      15701,
+      16001,
+      11501,
+      1
+    ],
+    "Desc": "新增加了地形——环绕弹射柱！它会围绕中间的柱体进行环形运动。\n注意判断掉落道具的种类，新增的分裂球会让弹珠一分为三！"
+  },
+  "301030132": {
+    "Id": 301030132,
+    "ActivityId": 3010301,
+    "DayOpen": 1,
+    "Name": "曲线捕手",
+    "Type": 3,
+    "Difficulty": 2,
+    "PreLevelId": 301030131,
+    "FloorId": 82026,
+    "FirstCompleteReward1Tid": 2,
+    "FirstCompleteReward1Qty": 200,
+    "FirstCompleteReward2Tid": 73202,
+    "FirstCompleteReward2Qty": 200,
+    "Characters": [
+      15701,
+      16001,
+      14501,
+      2
+    ],
+    "Desc": "场上将同时出现环绕弹射柱和传送门装置。\n谨慎判断并使用两种装置，祝您好运。"
+  },
+  "301030141": {
+    "Id": 301030141,
+    "ActivityId": 3010301,
+    "DayOpen": 1,
+    "Name": "混沌空间",
+    "Type": 4,
+    "Difficulty": 1,
+    "PreLevelId": 301030132,
+    "FloorId": 82027,
+    "PreviewMonsterGroupId": 8200127,
+    "FirstCompleteReward1Tid": 2,
+    "FirstCompleteReward1Qty": 300,
+    "FirstCompleteReward2Tid": 73202,
+    "FirstCompleteReward2Qty": 200,
+    "Characters": [
+      15701,
+      16001,
+      14501,
+      3
+    ],
+    "Desc": "欢迎来到挑战关卡！\n回想先前使用不同装置时的策略，完成挑战吧！"
+  },
+  "301030142": {
+    "Id": 301030142,
+    "ActivityId": 3010301,
+    "DayOpen": 1,
+    "Name": "银河传说",
+    "Type": 4,
+    "Difficulty": 2,
+    "PreLevelId": 301030141,
+    "FloorId": 82028,
+    "PreviewMonsterGroupId": 8200128,
+    "FirstCompleteReward1Tid": 2,
+    "FirstCompleteReward1Qty": 300,
+    "FirstCompleteReward2Tid": 119013,
+    "FirstCompleteReward2Qty": 1,
+    "Characters": [
+      15701,
+      16001,
+      11501,
+      14501
+    ],
+    "Desc": "欢迎来到挑战关卡！\n利用你的才智迎击最强的敌人吧！"
+  },
+  "301040111": {
+    "Id": 301040111,
+    "ActivityId": 3010401,
+    "Name": "星尘低语",
+    "Type": 1,
+    "Difficulty": 1,
+    "FloorId": 82031,
+    "FirstCompleteReward1Tid": 2,
+    "FirstCompleteReward1Qty": 100,
+    "FirstCompleteReward2Tid": 73202,
+    "FirstCompleteReward2Qty": 200,
+    "Characters": [
+      16201
+    ],
+    "Desc": "欢迎来到缭乱碎晶球，通过教学关了解基础玩法吧：\n1.尝试移动发射台，发射弹珠或反弹弹珠。\n2.发动角色技能，摧毁晶块。\n3.当场上可破坏物数量降至5个以下，触发第二波刷新。"
+  },
+  "301040112": {
+    "Id": 301040112,
+    "ActivityId": 3010401,
+    "Name": "极光幻舞",
+    "Type": 1,
+    "Difficulty": 2,
+    "PreLevelId": 301040111,
+    "FloorId": 82032,
+    "PreviewMonsterGroupId": 8200132,
+    "FirstCompleteReward1Tid": 2,
+    "FirstCompleteReward1Qty": 100,
+    "FirstCompleteReward2Tid": 73202,
+    "FirstCompleteReward2Qty": 200,
+    "Characters": [
+      13901
+    ],
+    "Desc": "进阶教学！在此关中可了解以下内容：\n1.新增会移动的敌人。\n2.弹珠或角色技能都可以对敌人造成伤害。\n3.了解各种掉落道具的功能。\n4.了解特殊能量球的用法。"
+  },
+  "301040121": {
+    "Id": 301040121,
+    "ActivityId": 3010401,
+    "Name": "新星颂歌",
+    "Type": 2,
+    "Difficulty": 1,
+    "PreLevelId": 301040112,
+    "FloorId": 82033,
+    "PreviewMonsterGroupId": 8200133,
+    "FirstCompleteReward1Tid": 2,
+    "FirstCompleteReward1Qty": 150,
+    "FirstCompleteReward2Tid": 73202,
+    "FirstCompleteReward2Qty": 200,
+    "Characters": [
+      16201,
+      13901,
+      16001
+    ],
+    "Desc": "敌人位于可破坏物后方，玩家无法直接击杀，需要持续躲避其子弹。敌人每移动一定距离，会向下投掷1颗炸弹，持续循环。\n新增掉落物：分裂球。搭配升级球可触发全屏大范围爆发，攻击体验强烈。"
+  },
+  "301040122": {
+    "Id": 301040122,
+    "ActivityId": 3010401,
+    "Name": "流星轻吟",
+    "Type": 2,
+    "Difficulty": 2,
+    "PreLevelId": 301040121,
+    "FloorId": 82034,
+    "PreviewMonsterGroupId": 8200134,
+    "FirstCompleteReward1Tid": 2,
+    "FirstCompleteReward1Qty": 150,
+    "FirstCompleteReward2Tid": 73202,
+    "FirstCompleteReward2Qty": 200,
+    "Characters": [
+      16201,
+      13901,
+      15701
+    ],
+    "Desc": "出现了高防御力晶块！需要多次攻击才能破坏。\n注意判断掉落道具，新增的闪电球在撞击点释放扩散电环，可与横纵激光球合成升级。\n新增掉落物：无敌星。"
+  },
+  "301040131": {
+    "Id": 301040131,
+    "ActivityId": 3010401,
+    "DayOpen": 1,
+    "Name": "脉冲序曲",
+    "Type": 3,
+    "Difficulty": 1,
+    "PreLevelId": 301040122,
+    "FloorId": 82035,
+    "PreviewMonsterGroupId": 8200135,
+    "FirstCompleteReward1Tid": 2,
+    "FirstCompleteReward1Qty": 200,
+    "FirstCompleteReward2Tid": 73202,
+    "FirstCompleteReward2Qty": 200,
+    "Characters": [
+      16201,
+      13901,
+      16001,
+      1
+    ],
+    "Desc": "新增新的地形——弹射柱，请小心应对！\n弹射柱固定于场地特定位置，能量球撞击后瞬间大幅加速，随后逐渐回落至正常球速；加速期间玩家接球难度同步上升。"
+  },
+  "301040132": {
+    "Id": 301040132,
+    "ActivityId": 3010401,
+    "DayOpen": 1,
+    "Name": "时空凝望",
+    "Type": 3,
+    "Difficulty": 2,
+    "PreLevelId": 301040131,
+    "FloorId": 82036,
+    "PreviewMonsterGroupId": 8200136,
+    "FirstCompleteReward1Tid": 2,
+    "FirstCompleteReward1Qty": 200,
+    "FirstCompleteReward2Tid": 73202,
+    "FirstCompleteReward2Qty": 200,
+    "Characters": [
+      16201,
+      13901,
+      15701,
+      2
+    ],
+    "Desc": "新增新的地形——分裂柱，请小心应对！\n分裂柱固定在场地的特定位置，被能量球击中时，会从能量球上分裂出一个小球。"
+  },
+  "301040141": {
+    "Id": 301040141,
+    "ActivityId": 3010401,
+    "DayOpen": 1,
+    "Name": "黑洞回响",
+    "Type": 4,
+    "Difficulty": 1,
+    "PreLevelId": 301040132,
+    "FloorId": 82037,
+    "FirstCompleteReward1Tid": 2,
+    "FirstCompleteReward1Qty": 300,
+    "FirstCompleteReward2Tid": 73202,
+    "FirstCompleteReward2Qty": 200,
+    "Characters": [
+      16201,
+      13901,
+      11501,
+      3
+    ],
+    "Desc": "发现全新天文现象——黑洞！黑洞会牵引能量球，改变它的移动轨迹，增加玩家接球的难度。"
+  },
+  "301040142": {
+    "Id": 301040142,
+    "ActivityId": 3010401,
+    "DayOpen": 1,
+    "Name": "银河漫游",
+    "Type": 4,
+    "Difficulty": 2,
+    "PreLevelId": 301040141,
+    "FloorId": 82038,
+    "PreviewMonsterGroupId": 8200138,
+    "FirstCompleteReward1Tid": 2,
+    "FirstCompleteReward1Qty": 300,
+    "FirstCompleteReward2Tid": 119014,
+    "FirstCompleteReward2Qty": 1,
+    "Characters": [
+      16201,
+      13901,
+      11501,
+      14501
+    ],
+    "Desc": "欢迎来到挑战关卡！\n利用你的才智迎击最强的敌人吧！"
+  }
+}

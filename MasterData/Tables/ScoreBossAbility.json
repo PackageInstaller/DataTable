@@ -1,0 +1,407 @@
+{
+  "100000": {
+    "Id": 100000,
+    "Name": "测试用",
+    "Desc": "无",
+    "IconSource": "Icon/MonsterSkill/Bossrush/Icon_Bossrush_Teshujizhi_001",
+    "Value1": "0",
+    "Value2": "0"
+  },
+  "100001": {
+    "Id": 100001,
+    "Name": "星脉狂暴",
+    "Desc": "首领敌人初始拥有1层「狂暴」，且每10秒获得1层「狂暴」，每层「狂暴」使首领敌人造成伤害提升<color=#ec6d21>&Param1&</color>，最多叠加5层。\n当己方在2秒内对首领敌人累计造成10次伤害后，可移除首领敌人全部「狂暴」层数；同时主控角色获得10层「增幅」，最多叠加10层，主控角色每次造成伤害时移除1层「增幅」使该次伤害提升<color=#ec6d21>&Param2&</color>",
+    "IconSource": "Icon/MonsterSkill/Bossrush/Icon_Bossrush_Teshujizhi_001",
+    "ScriptID": [
+      "100001"
+    ],
+    "Param1": "ScoreBossAbility,NoLevel,100001,Value1,Pct",
+    "Param2": "ScoreBossAbility,NoLevel,100001,Value2,Pct",
+    "Value1": "20",
+    "Value2": "50"
+  },
+  "100002": {
+    "Id": 100002,
+    "Name": "灾厄火环",
+    "Desc": "首领敌人拥有「火环」使首领敌人造成伤害提升<color=#ec6d21>&Param1&</color>，且持续对环内的玩家角色造成伤害。\n当己方在5秒内，对首领敌人累计触发3次「元素印记」后，可获得「强化」使全队普攻伤害提升<color=#ec6d21>&Param2&</color>持续10秒，同时让首领敌人「火环」失效10秒",
+    "IconSource": "Icon/MonsterSkill/Bossrush/Icon_Bossrush_Teshujizhi_002",
+    "ScriptID": [
+      "100002"
+    ],
+    "Param1": "ScoreBossAbility,NoLevel,100002,Value1,Pct",
+    "Param2": "ScoreBossAbility,NoLevel,100002,Value2,Pct",
+    "Value1": "30",
+    "Value2": "30"
+  },
+  "100003": {
+    "Id": 100003,
+    "Name": "淋漓酣战",
+    "Desc": "首领每5秒获得1层「酣战」,使自身造成的伤害提升<color=#ec6d21>&Param1&</color>，最多叠加5层。\n主控角色触发「印记」时，移除1层「酣战」。成功移除「酣战」时，全队获得20点能量，并使首领受到绝招伤害提升<color=#ec6d21>&Param2&</color>，持续10秒，每次触发重置时间",
+    "IconSource": "Icon/MonsterSkill/Bossrush/Icon_Bossrush_Teshujizhi_006",
+    "ScriptID": [
+      "100003"
+    ],
+    "Param1": "ScoreBossAbility,NoLevel,100003,Value1,Pct",
+    "Param2": "ScoreBossAbility,NoLevel,100003,Value2,Pct",
+    "Value1": "10",
+    "Value2": "100"
+  },
+  "100004": {
+    "Id": 100004,
+    "Name": "噬心暗环",
+    "Desc": "首领拥有「暗环」时自身造成伤害提升<color=#ec6d21>&Param1&</color>，且每5秒额外造成一次范围伤害。\n当己方在3秒内对首领累计造成20次伤害后，使「暗环」失效15秒，期间首领受到援护角色造成的技能伤害提升<color=#ec6d21>&Param2&</color>",
+    "IconSource": "Icon/MonsterSkill/Bossrush/Icon_Bossrush_Teshujizhi_005",
+    "ScriptID": [
+      "100004"
+    ],
+    "Param1": "ScoreBossAbility,NoLevel,100004,Value1,Pct",
+    "Param2": "ScoreBossAbility,NoLevel,100004,Value2,Pct",
+    "Value1": "30",
+    "Value2": "65"
+  },
+  "100005": {
+    "Id": 100005,
+    "Name": "虚实转换",
+    "Desc": "首领敌人会在【真影状态】和【幻灭状态】状态以<color=#ec6d21>15秒</color>为时间间隔切换。\n【幻灭状态】中，首领受到的仆从伤害提升<color=#ec6d21>&Param1&</color>。每造成1次印记触发都会使当前状态的持续时间延长<color=#ec6d21>&Param2&</color>秒，每秒最多触发1次。\n【真影状态】中，首领受到的技能伤害提升<color=#ec6d21>&Param3&</color>。每造成1次仆从伤害都会使当前状态的持续时间延长<color=#ec6d21>&Param4&</color>秒，每秒最多触发1次。",
+    "IconSource": "Icon/MonsterSkill/Bossrush/Icon_Bossrush_Teshujizhi_007",
+    "ScriptID": [
+      "100005"
+    ],
+    "Param1": "ScoreBossAbility,NoLevel,100005,Value1,Pct",
+    "Param2": "ScoreBossAbility,NoLevel,100005,Value2,Fixed",
+    "Param3": "ScoreBossAbility,NoLevel,100005,Value3,Pct",
+    "Param4": "ScoreBossAbility,NoLevel,100005,Value4,Fixed",
+    "Value1": "50",
+    "Value2": "0.6",
+    "Value3": "50",
+    "Value4": "0.6"
+  },
+  "100006": {
+    "Id": 100006,
+    "Name": "引雷入室",
+    "Desc": "首领拥有「落雷」时自身造成伤害提升<color=#ec6d21>&Param4&</color>，且每3秒额外造成4次小范围伤害；\n当己方<color=#ec6d21>&Param1&</color>秒内对首领累计造成<color=#ec6d21>&Param2&</color>次援护角色技能伤害，使「落雷」失效15秒，期间首领受到援护角色造成的技能伤害提升<color=#ec6d21>&Param3&</color>",
+    "IconSource": "Icon/MonsterSkill/Bossrush/Icon_Bossrush_Teshujizhi_008",
+    "ScriptID": [
+      "100006"
+    ],
+    "Param1": "ScoreBossAbility,NoLevel,100006,Value1,Fixed",
+    "Param2": "ScoreBossAbility,NoLevel,100006,Value2,Fixed",
+    "Param3": "EffectValue,NoLevel,631007002,EffectTypeParam1,HdPct",
+    "Param4": "EffectValue,NoLevel,631007001,EffectTypeParam1,HdPct",
+    "Value1": "5",
+    "Value2": "20"
+  },
+  "100007": {
+    "Id": 100007,
+    "Name": "随势而动",
+    "Desc": "首领拥有<color=#ec6d21>&Param1&</color>的伤害提升。每当1名玩家阵营仆从在场时，首领会暂时减少<color=#ec6d21>&Param2&</color>伤害并额外附加<color=#ec6d21>&Param3&</color>易伤。该效果最多可叠加3层，并在仆从消失后持续<color=#ec6d21>&Param4&</color>秒。",
+    "IconSource": "Icon/MonsterSkill/Bossrush/Icon_Bossrush_Teshujizhi_009",
+    "ScriptID": [
+      "100007"
+    ],
+    "Param1": "ScoreBossAbility,NoLevel,100007,Value1,Pct",
+    "Param2": "ScoreBossAbility,NoLevel,100007,Value2,Pct",
+    "Param3": "ScoreBossAbility,NoLevel,100007,Value3,Pct",
+    "Param4": "ScoreBossAbility,NoLevel,100007,Value4,Fixed",
+    "Value1": "30",
+    "Value2": "10",
+    "Value3": "10",
+    "Value4": "3"
+  },
+  "100008": {
+    "Id": 100008,
+    "Name": "专注",
+    "Desc": "首领每受到<color=#ec6d21>&Param1&</color>次伤害即附加一层【专注】，使自身造成伤害提升<color=#ec6d21>&Param2&</color>。\n在<color=#ec6d21>&Param3&</color>秒内成功进行<color=#ec6d21>&Param4&</color>次印记触发后，清空当前的【专注】。接下来<color=#ec6d21>&Param5&</color>秒内Boss受到的援护角色技能伤害提升<color=#ec6d21>&Param6&</color>。该效果每<color=#ec6d21>&Param7&</color>秒最多触发1次，重复触发重置持续时间。",
+    "IconSource": "Icon/MonsterSkill/Bossrush/Icon_Bossrush_Teshujizhi_010",
+    "ScriptID": [
+      "100008"
+    ],
+    "Param1": "ScoreBossAbility,NoLevel,100008,Value1,Fixed",
+    "Param2": "ScoreBossAbility,NoLevel,100008,Value2,Pct",
+    "Param3": "ScoreBossAbility,NoLevel,100008,Value3,Fixed",
+    "Param4": "ScoreBossAbility,NoLevel,100008,Value4,Fixed",
+    "Param5": "ScoreBossAbility,NoLevel,100008,Value5,Fixed",
+    "Param6": "ScoreBossAbility,NoLevel,100008,Value6,Pct",
+    "Param7": "ScoreBossAbility,NoLevel,100008,Value7,Fixed",
+    "Value1": "20",
+    "Value2": "15",
+    "Value3": "6",
+    "Value4": "2",
+    "Value5": "20",
+    "Value6": "65",
+    "Value7": "15"
+  },
+  "100009": {
+    "Id": 100009,
+    "Name": "男爵姿态",
+    "Desc": "首领会在【猛士】和【蜜罐】形态间来回切换，每战斗<color=#ec6d21>&Param1&</color>秒后切换至另一形态并清除自身所有负面效果。（破韧不计入时间）\n在【猛士】形态时，热嘟噗噜男爵受到的绝招伤害额外减少<color=#ec6d21>&Param2&</color>，受到的普攻伤害额外增加<color=#ec6d21>&Param3&</color>\n在【蜜罐】形态时，热嘟噗噜男爵受到的印记伤害额外减少<color=#ec6d21>&Param4&</color>，受到的技能伤害额外增加<color=#ec6d21>&Param5&</color>",
+    "IconSource": "Icon/MonsterSkill/Bossrush/Icon_Bossrush_DaGuanZi_003",
+    "ScriptID": [
+      "100009"
+    ],
+    "Param1": "ScoreBossAbility,NoLevel,100009,Value1,Fixed",
+    "Param2": "ScoreBossAbility,NoLevel,100009,Value2,Pct",
+    "Param3": "ScoreBossAbility,NoLevel,100009,Value3,Pct",
+    "Param4": "ScoreBossAbility,NoLevel,100009,Value4,Pct",
+    "Param5": "ScoreBossAbility,NoLevel,100009,Value5,Pct",
+    "Value1": "30",
+    "Value2": "30",
+    "Value3": "65",
+    "Value4": "30",
+    "Value5": "65"
+  },
+  "100010": {
+    "Id": 100010,
+    "Name": "水环",
+    "Desc": "首领拥有「水环」时自身造成伤害提升<color=#ec6d21>&Param1&</color>，且每5秒造成一次范围伤害。\n当己方在5秒内对首领累计造成<color=#ec6d21>&Param2&</color>次伤害后，使「水环」失效<color=#ec6d21>&Param3&</color>秒。\n在失效期间，当己方在5秒内对首领累计造成<color=#ec6d21>&Param4&</color>次援护角色伤害后，首领受到的普攻伤害提升<color=#ec6d21>&Param5&</color>\n在失效期间，当己方在5秒内对首领累计造成<color=#ec6d21>&Param6&</color>次主控角色伤害时，首领受到的援护角色技能伤害提升<color=#ec6d21>&Param7&</color>",
+    "IconSource": "Icon/MonsterSkill/Bossrush/Icon_Bossrush_Teshujizhi_004",
+    "ScriptID": [
+      "100010"
+    ],
+    "Param1": "ScoreBossAbility,NoLevel,100010,Value1,Pct",
+    "Param2": "ScoreBossAbility,NoLevel,100010,Value2,Fixed",
+    "Param3": "ScoreBossAbility,NoLevel,100010,Value3,Fixed",
+    "Param4": "ScoreBossAbility,NoLevel,100010,Value4,Fixed",
+    "Param5": "EffectValue,NoLevel,631001002,EffectTypeParam1,HdPct",
+    "Param6": "ScoreBossAbility,NoLevel,100010,Value6,Fixed",
+    "Param7": "EffectValue,NoLevel,631001003,EffectTypeParam1,HdPct",
+    "Value1": "30",
+    "Value2": "10",
+    "Value3": "20",
+    "Value4": "20",
+    "Value5": "45",
+    "Value6": "10",
+    "Value7": "45"
+  },
+  "100011": {
+    "Id": 100011,
+    "Name": "协同增势",
+    "Desc": "主控角色每释放<color=#ec6d21>&Param1&</color>次技能，所有援护角色技能伤害强度增加<color=#ec6d21>&Param2&</color>，持续<color=#ec6d21>&Param3&</color>秒。\n援护角色每造成<color=#ec6d21>&Param4&</color>次伤害，主控角色技能伤害强度增加<color=#ec6d21>&Param5&</color>，持续<color=#ec6d21>&Param6&</color>秒。\n重复触发时，重置时间，不叠加效果。",
+    "IconSource": "Icon/MonsterSkill/Bossrush/Icon_Bossrush_Teshujizhi_011",
+    "ScriptID": [
+      "100011"
+    ],
+    "Param1": "ScoreBossAbility,NoLevel,100011,Value1,Fixed",
+    "Param2": "ScoreBossAbility,NoLevel,100011,Value2,Pct",
+    "Param3": "ScoreBossAbility,NoLevel,100011,Value3,Fixed",
+    "Param4": "ScoreBossAbility,NoLevel,100011,Value4,Fixed",
+    "Param5": "ScoreBossAbility,NoLevel,100011,Value5,Pct",
+    "Param6": "ScoreBossAbility,NoLevel,100011,Value6,Fixed",
+    "Value1": "1",
+    "Value2": "40",
+    "Value3": "9",
+    "Value4": "50",
+    "Value5": "40",
+    "Value6": "12"
+  },
+  "100012": {
+    "Id": 100012,
+    "Name": "连击破势",
+    "Desc": "己方每对首领造成<color=#ec6d21>&Param7&</color>次技能伤害，首领受到绝招伤害强度增加<color=#ec6d21>&Param1&</color>，最多叠加<color=#ec6d21>&Param2&</color>层，持续<color=#ec6d21>&Param3&</color>秒。\n己方每对首领造成<color=#ec6d21>&Param8&</color>次印记伤害，首领受到技能伤害强度增加<color=#ec6d21>&Param4&</color>，最多叠加<color=#ec6d21>&Param5&</color>层，持续<color=#ec6d21>&Param6&</color>秒。",
+    "IconSource": "Icon/MonsterSkill/Bossrush/Icon_Bossrush_Teshujizhi_012",
+    "ScriptID": [
+      "100012"
+    ],
+    "Param1": "EffectValue,NoLevel,631012010,EffectTypeParam1,HdPct",
+    "Param2": "BuffValue,NoLevel,631012010,LaminatedNum,Fixed",
+    "Param3": "BuffValue,NoLevel,631012010,Time,10K",
+    "Param4": "EffectValue,NoLevel,631012020,EffectTypeParam1,HdPct",
+    "Param5": "BuffValue,NoLevel,631012020,LaminatedNum,Fixed",
+    "Param6": "BuffValue,NoLevel,631012020,Time,10K",
+    "Param7": "ScoreBossAbility,NoLevel,100012,Value7,Fixed",
+    "Param8": "ScoreBossAbility,NoLevel,100012,Value8,Fixed",
+    "Value7": "10",
+    "Value8": "1"
+  },
+  "100013": {
+    "Id": 100013,
+    "Name": "引雷入室",
+    "Desc": "首领拥有「落雷」时自身造成伤害提升<color=#ec6d21>&Param4&</color>，且每3秒额外造成4次小范围伤害；\n当己方<color=#ec6d21>&Param1&</color>秒内对首领累计造成<color=#ec6d21>&Param2&</color>次印记伤害，使「落雷」失效15秒，期间首领受到的技能伤害强度增加<color=#ec6d21>&Param3&</color>",
+    "IconSource": "Icon/MonsterSkill/Bossrush/Icon_Bossrush_Teshujizhi_008",
+    "ScriptID": [
+      "100013"
+    ],
+    "Param1": "ScoreBossAbility,NoLevel,100013,Value1,Fixed",
+    "Param2": "ScoreBossAbility,NoLevel,100013,Value2,Fixed",
+    "Param3": "EffectValue,NoLevel,631013002,EffectTypeParam1,HdPct",
+    "Param4": "EffectValue,NoLevel,631013001,EffectTypeParam1,HdPct",
+    "Value1": "5",
+    "Value2": "3"
+  },
+  "100014": {
+    "Id": 100014,
+    "Name": "多方雕琢",
+    "Desc": "援护角色每驻场<color=#ec6d21>&Param1&</color>秒，为自己与主控角色叠加1层【蓄势】。\n每层【蓄势】提供<color=#ec6d21>&Param2&</color>技能伤害强度和<color=#ec6d21>&Param5&</color>普攻伤害强度，最多叠加<color=#ec6d21>&Param3&</color>层，每次叠加时重置持续时间，持续<color=#ec6d21>&Param4&</color>秒。\n两名援护角色可分别为主控角色叠加【蓄势】，层数上限与效果分别计算，可同时存在。",
+    "IconSource": "Icon/MonsterSkill/Bossrush/Icon_Bossrush_Teshujizhi_014",
+    "ScriptID": [
+      "100014"
+    ],
+    "Param1": "ScoreBossAbility,NoLevel,100014,Value1,Fixed",
+    "Param2": "EffectValue,NoLevel,631014001,EffectTypeParam1,HdPct",
+    "Param3": "BuffValue,NoLevel,631014001,LaminatedNum,Fixed",
+    "Param4": "BuffValue,NoLevel,631014001,Time,10K",
+    "Param5": "EffectValue,NoLevel,631014011,EffectTypeParam1,HdPct",
+    "Value1": "1"
+  },
+  "100015": {
+    "Id": 100015,
+    "Name": "男爵威严",
+    "Desc": "热嘟噗噜男爵初始拥有1层「抵御」，且每5秒获得1层「抵御」，每层「抵御」使热嘟噗噜男爵受到的伤害降低<color=#ec6d21>&Param1&</color>，最多叠加<color=#ec6d21>&Param2&</color>层。\n当己方主控角色触发印记后，可移除热嘟噗噜男爵1层「抵御」，并为在场援护角色提供1层「增幅」，每层「增幅」提高<color=#ec6d21>&Param3&</color>伤害，最多叠加<color=#ec6d21>&Param4&</color>层，持续20秒。",
+    "IconSource": "Icon/MonsterSkill/Bossrush/Icon_Bossrush_DaGuanZi_002",
+    "ScriptID": [
+      "100015"
+    ],
+    "Param1": "ScoreBossAbility,NoLevel,100015,Value1,Pct",
+    "Param2": "ScoreBossAbility,NoLevel,100015,Value2,Fixed",
+    "Param3": "ScoreBossAbility,NoLevel,100015,Value3,Pct",
+    "Param4": "ScoreBossAbility,NoLevel,100015,Value4,Fixed",
+    "Value1": "8",
+    "Value2": "10",
+    "Value3": "15",
+    "Value4": "5"
+  },
+  "100016": {
+    "Id": 100016,
+    "Name": "破风激昂",
+    "Desc": "每击破<color=#ec6d21>&Param1&</color>只首领敌人召唤的仆从「风鼓仔」可获得【鼓舞】，为全队提供<color=#ec6d21>&Param2&</color>技能伤害强度，持续<color=#ec6d21>&Param3&</color>秒。\n每当主控角色释放技能时，【鼓舞】的当前持续时长延长<color=#ec6d21>&Param4&</color>秒（最大不超过<color=#ec6d21>&Param5&</color>秒）。",
+    "IconSource": "Icon/MonsterSkill/Bossrush/Icon_Bossrush_Teshujizhi_015",
+    "ScriptID": [
+      "100016"
+    ],
+    "Param1": "ScoreBossAbility,NoLevel,100016,Value1,Fixed",
+    "Param2": "EffectValue,NoLevel,631016011,EffectTypeParam1,HdPct",
+    "Param3": "BuffValue,NoLevel,631016010,Time,10K",
+    "Param4": "ScoreBossAbility,NoLevel,100016,Value4,Fixed",
+    "Param5": "ScoreBossAbility,NoLevel,100016,Value5,Fixed",
+    "Value1": "3",
+    "Value4": "5",
+    "Value5": "20"
+  },
+  "100017": {
+    "Id": 100017,
+    "Name": "以火攻火",
+    "Desc": "首领敌人拥有「火环」，持续对环内的主控角色造成伤害。\n主控角色每对首领敌人触发<color=#ec6d21>&Param1&</color>次「元素印记」，可获得「强化」：全队提升<color=#ec6d21>&Param2&</color>技能伤害强度，持续<color=#ec6d21>&Param3&</color>秒，在此期间首领敌人「火环」失效，且不会重复触发。",
+    "IconSource": "Icon/MonsterSkill/Bossrush/Icon_Bossrush_Teshujizhi_002",
+    "ScriptID": [
+      "100017"
+    ],
+    "Param1": "ScoreBossAbility,NoLevel,100017,Value1,Fixed",
+    "Param2": "ScoreBossAbility,NoLevel,100017,Value2,Pct",
+    "Param3": "ScoreBossAbility,NoLevel,100017,Value3,Fixed",
+    "Value1": "5",
+    "Value2": "80",
+    "Value3": "10"
+  },
+  "100018": {
+    "Id": 100018,
+    "Name": "受击疲劳",
+    "Desc": "首领敌人初始对普攻/技能/印记伤害具有<color=#ec6d21>&Param1&</color>伤害减免。\n主控角色每对首领敌人造成<color=#ec6d21>&Param2&</color>次任意普攻/技能/印记伤害，首领敌人对该类型的伤害减免降低<color=#ec6d21>&Param3&</color>，直至降低为0。此后再次触发时，首领敌人受到该类型伤害提升<color=#ec6d21>&Param4&</color>，最高不超过<color=#ec6d21>&Param5&</color>。",
+    "IconSource": "Icon/MonsterSkill/Bossrush/Icon_Bossrush_Teshujizhi_017",
+    "ScriptID": [
+      "100018"
+    ],
+    "Param1": "ScoreBossAbility,NoLevel,100018,Value1,Pct",
+    "Param2": "ScoreBossAbility,NoLevel,100018,Value2,Fixed",
+    "Param3": "ScoreBossAbility,NoLevel,100018,Value3,Pct",
+    "Param4": "ScoreBossAbility,NoLevel,100018,Value4,Pct",
+    "Param5": "ScoreBossAbility,NoLevel,100018,Value5,Pct",
+    "Value1": "80",
+    "Value2": "6",
+    "Value3": "10",
+    "Value4": "10",
+    "Value5": "40"
+  },
+  "100019": {
+    "Id": 100019,
+    "Name": "破风之楔",
+    "Desc": "主控角色对首领造成普攻伤害后，首领受到的绝招伤害强度提高<color=#ec6d21>&Param1&</color>，持续<color=#ec6d21>&Param2&</color>秒，最多叠加<color=#ec6d21>&Param3&</color>层，每0.5秒最多触发一次。\n全队的防御穿透属性提高<color=#ec6d21>&Param4&</color>点，援护角色在场期间，全队的防御穿透属性提高<color=#ec6d21>&Param5&</color>",
+    "IconSource": "Icon/MonsterSkill/Bossrush/Icon_Bossrush_Teshujizhi_018",
+    "ScriptID": [
+      "100019"
+    ],
+    "Param1": "EffectValue,NoLevel,631019010,EffectTypeParam1,HdPct",
+    "Param2": "BuffValue,NoLevel,631019010,Time,10K",
+    "Param3": "BuffValue,NoLevel,631019010,LaminatedNum,Fixed",
+    "Param4": "EffectValue,NoLevel,631019020,EffectTypeParam1,Fixed",
+    "Param5": "EffectValue,NoLevel,631019030,EffectTypeParam1,HdPct"
+  },
+  "100020": {
+    "Id": 100020,
+    "Name": "私人订制",
+    "Desc": "援护角色每驻场<color=#ec6d21>&Param1&</color>秒，为自己与主控角色叠加1层【蓄势】。\n每层【蓄势】提供<color=#ec6d21>&Param2&</color>技能伤害强度与<color=#ec6d21>&Param5&</color>普攻伤害强度，最多叠加<color=#ec6d21>&Param3&</color>层，每次叠加时重置持续时间，持续<color=#ec6d21>&Param4&</color>秒。\n两名援护角色可分别为主控角色叠加【蓄势】，层数上限与效果分别计算，可同时存在。",
+    "IconSource": "Icon/MonsterSkill/Bossrush/Icon_Bossrush_Teshujizhi_017",
+    "ScriptID": [
+      "100020"
+    ],
+    "Param1": "ScoreBossAbility,NoLevel,100020,Value1,Fixed",
+    "Param2": "EffectValue,NoLevel,631020011,EffectTypeParam1,HdPct",
+    "Param3": "BuffValue,NoLevel,631020010,LaminatedNum,Fixed",
+    "Param4": "BuffValue,NoLevel,631020010,Time,10K",
+    "Param5": "EffectValue,NoLevel,631020012,EffectTypeParam1,HdPct",
+    "Value1": "1"
+  },
+  "100021": {
+    "Id": 100021,
+    "Name": "层层打薄",
+    "Desc": "任意角色每触发<color=#ec6d21>&Param3&</color>次印记，对首领目标附加「破甲」，每层「破甲」使其受到普攻伤害强度提升<color=#ec6d21>&Param4&</color>，受到技能伤害强度提升<color=#ec6d21>&Param5&</color>，可叠加<color=#ec6d21>&Param6&</color>层。",
+    "IconSource": "Icon/MonsterSkill/Bossrush/Icon_Bossrush_Teshujizhi_019",
+    "ScriptID": [
+      "100021"
+    ],
+    "Param1": "BuffValue,NoLevel,631021010,LaminatedNum,Fixed",
+    "Param2": "EffectValue,NoLevel,631021011,EffectTypeParam1,HdPct",
+    "Param3": "ScoreBossAbility,NoLevel,100021,Value3,Fixed",
+    "Param4": "EffectValue,NoLevel,631021021,EffectTypeParam1,HdPct",
+    "Param5": "EffectValue,NoLevel,631021022,EffectTypeParam1,HdPct",
+    "Param6": "BuffValue,NoLevel,631021020,LaminatedNum,Fixed",
+    "Value3": "4"
+  },
+  "100022": {
+    "Id": 100022,
+    "Name": "碎壳追击",
+    "Desc": "援护角色对首领目标造成绝招伤害时，首领目标受到的绝招伤害强度提升<color=#ec6d21>&Param1&</color>，持续<color=#ec6d21>&Param3&</color>秒，可叠加<color=#ec6d21>&Param4&</color>层。\n援护角色对首领目标造成普攻伤害时，首领目标受到的技能伤害强度提升<color=#ec6d21>&Param2&</color>，持续<color=#ec6d21>&Param5&</color>秒，可叠加<color=#ec6d21>&Param6&</color>层。",
+    "IconSource": "Icon/MonsterSkill/Bossrush/Icon_Bossrush_Teshujizhi_020",
+    "ScriptID": [
+      "100022"
+    ],
+    "Param1": "EffectValue,NoLevel,631021032,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,631021031,EffectTypeParam1,HdPct",
+    "Param3": "BuffValue,NoLevel,631021040,Time,10K",
+    "Param4": "BuffValue,NoLevel,631021040,LaminatedNum,Fixed",
+    "Param5": "BuffValue,NoLevel,631021030,Time,10K",
+    "Param6": "BuffValue,NoLevel,631021030,LaminatedNum,Fixed"
+  },
+  "100023": {
+    "Id": 100023,
+    "Name": "裂壳余威",
+    "Desc": "主控角色施放绝招时，首领目标受到的技能伤害强度提升<color=#ec6d21>&Param1&</color>，持续<color=#ec6d21>&Param3&</color>秒。\n主控角色施放绝招时，首领目标受到的印记伤害强度提升<color=#ec6d21>&Param2&</color>，持续<color=#ec6d21>&Param4&</color>秒。",
+    "IconSource": "Icon/MonsterSkill/Bossrush/Icon_Bossrush_Teshujizhi_021",
+    "ScriptID": [
+      "100023"
+    ],
+    "Param1": "EffectValue,NoLevel,631025040,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,631025050,EffectTypeParam1,HdPct",
+    "Param3": "BuffValue,NoLevel,631025040,Time,10K",
+    "Param4": "BuffValue,NoLevel,631025050,Time,10K",
+    "Value3": "5",
+    "Value4": "3"
+  },
+  "100024": {
+    "Id": 100024,
+    "Name": "追猎血契",
+    "Desc": "主控角色最大生命提升<color=#ec6d21>&Param1&</color>，受到伤害提升<color=#ec6d21>&Param2&</color>。\n己方<color=#ec6d21>&Param3&</color>秒内对首领目标累计造成<color=#ec6d21>&Param4&</color>次印记伤害时，首领目标受到的技能伤害强度提升<color=#ec6d21>&Param5&</color>，受到的普攻伤害强度提升<color=#ec6d21>&Param6&</color>，持续<color=#ec6d21>&Param7&</color>秒。",
+    "IconSource": "Icon/MonsterSkill/Bossrush/Icon_Bossrush_Teshujizhi_022",
+    "ScriptID": [
+      "100024"
+    ],
+    "Param1": "EffectValue,NoLevel,631025010,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,631025020,EffectTypeParam1,HdPct",
+    "Param3": "ScoreBossAbility,NoLevel,100024,Value3,Fixed",
+    "Param4": "ScoreBossAbility,NoLevel,100024,Value4,Fixed",
+    "Param5": "EffectValue,NoLevel,631025030,EffectTypeParam1,HdPct",
+    "Param6": "EffectValue,NoLevel,631025031,EffectTypeParam1,HdPct",
+    "Param7": "BuffValue,NoLevel,631025030,Time,10K",
+    "Value3": "5",
+    "Value4": "3"
+  }
+}

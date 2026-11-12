@@ -1,0 +1,495 @@
+{
+  "10001": {
+    "Id": 10001,
+    "NodeId": 1,
+    "Season": 1,
+    "Name": "储备金",
+    "Desc": "初始贤才金币+4",
+    "Position": [
+      1,
+      2
+    ],
+    "Type": 1,
+    "Priority": 1,
+    "Icon": "Icon/SoldierTech/SoldierTechSp_101",
+    "ItemId1": 2701003,
+    "ItemQty1": 20
+  },
+  "10002": {
+    "Id": 10002,
+    "NodeId": 2,
+    "Season": 1,
+    "Name": "尊享补贴",
+    "Desc": "贤才金币的利息上限+3",
+    "Position": [
+      2,
+      2
+    ],
+    "Type": 1,
+    "PreNodes": [
+      10001
+    ],
+    "PreNodesLogic": true,
+    "Priority": 2,
+    "Icon": "Icon/SoldierTech/SoldierTechSp_102",
+    "ItemId1": 2701003,
+    "ItemQty1": 20
+  },
+  "10003": {
+    "Id": 10003,
+    "NodeId": 3,
+    "Season": 1,
+    "Name": "本性天真的魔王",
+    "Desc": "本性天真的魔王",
+    "Position": [
+      3,
+      1
+    ],
+    "Type": 3,
+    "Param": 102,
+    "PreNodes": [
+      10002
+    ],
+    "PreNodesLogic": true,
+    "Priority": 3,
+    "ItemId1": 2701003,
+    "ItemQty1": 30
+  },
+  "10004": {
+    "Id": 10004,
+    "NodeId": 4,
+    "Season": 1,
+    "Name": "指引胜利的魔王",
+    "Desc": "指引胜利的魔王",
+    "Position": [
+      3,
+      2
+    ],
+    "Type": 3,
+    "Param": 103,
+    "PreNodes": [
+      10002
+    ],
+    "PreNodesLogic": true,
+    "Priority": 3,
+    "ItemId1": 2701003,
+    "ItemQty1": 30
+  },
+  "10005": {
+    "Id": 10005,
+    "NodeId": 5,
+    "Season": 1,
+    "Name": "心怀宏伟的魔王",
+    "Desc": "心怀宏伟的魔王",
+    "Position": [
+      3,
+      3
+    ],
+    "Type": 3,
+    "Param": 104,
+    "PreNodes": [
+      10002
+    ],
+    "PreNodesLogic": true,
+    "Priority": 3,
+    "ItemId1": 2701003,
+    "ItemQty1": 30
+  },
+  "10006": {
+    "Id": 10006,
+    "NodeId": 6,
+    "Season": 1,
+    "Name": "及时休整",
+    "Desc": "战斗结束后恢复理智+2",
+    "Position": [
+      4,
+      2
+    ],
+    "Type": 1,
+    "PreNodes": [
+      10003,
+      10004,
+      10005
+    ],
+    "Priority": 4,
+    "Icon": "Icon/SoldierTech/SoldierTechSp_103",
+    "ItemId1": 2701003,
+    "ItemQty1": 30
+  },
+  "10007": {
+    "Id": 10007,
+    "NodeId": 7,
+    "Season": 1,
+    "Name": "初等协同战术",
+    "Desc": "全员攻击力提升20%",
+    "Position": [
+      5,
+      1
+    ],
+    "Type": 2,
+    "PreNodes": [
+      10006
+    ],
+    "PreNodesLogic": true,
+    "EffectClient": [
+      10007
+    ],
+    "Priority": 5,
+    "Icon": "Icon/SoldierTech/SoldierTech_Attr",
+    "ItemId1": 2701003,
+    "ItemQty1": 15
+  },
+  "10008": {
+    "Id": 10008,
+    "NodeId": 8,
+    "Season": 1,
+    "Name": "初等防护魔法",
+    "Desc": "全员最大生命提升20%",
+    "Position": [
+      5,
+      3
+    ],
+    "Type": 2,
+    "PreNodes": [
+      10006
+    ],
+    "PreNodesLogic": true,
+    "EffectClient": [
+      10008
+    ],
+    "Priority": 5,
+    "Icon": "Icon/SoldierTech/SoldierTech_Attr",
+    "ItemId1": 2701003,
+    "ItemQty1": 15
+  },
+  "10009": {
+    "Id": 10009,
+    "NodeId": 9,
+    "Season": 1,
+    "Name": "分段式调查",
+    "Desc": "通关第1阶段、第2阶段后，获得5贤才金币",
+    "Position": [
+      6,
+      2
+    ],
+    "Type": 1,
+    "PreNodes": [
+      10007,
+      10008
+    ],
+    "Priority": 6,
+    "Icon": "Icon/SoldierTech/SoldierTechSp_104",
+    "ItemId1": 2701003,
+    "ItemQty1": 40
+  },
+  "10010": {
+    "Id": 10010,
+    "NodeId": 10,
+    "Season": 1,
+    "Name": "小队作战",
+    "Desc": "解锁主战位置加成效果\n主战1号-防御位：最大生命提升12%，防御力提升8%\n主战2号-进攻位：攻击力提升10%，暴击率提升5%\n主战3号-机动位：攻击速度提升5%，回能效率提升5%",
+    "Position": [
+      7,
+      2
+    ],
+    "Type": 1,
+    "PreNodes": [
+      10009
+    ],
+    "PreNodesLogic": true,
+    "Priority": 7,
+    "Icon": "Icon/SoldierTech/SoldierTechSp_105",
+    "ItemId1": 2701003,
+    "ItemQty1": 40
+  },
+  "10011": {
+    "Id": 10011,
+    "NodeId": 11,
+    "Season": 1,
+    "Name": "迅刃连打",
+    "Desc": "全员攻击速度提升12%",
+    "Position": [
+      7,
+      3
+    ],
+    "Type": 2,
+    "PreNodes": [
+      10009
+    ],
+    "PreNodesLogic": true,
+    "EffectClient": [
+      10011
+    ],
+    "Priority": 7,
+    "Icon": "Icon/SoldierTech/SoldierTech_Attr",
+    "ItemId1": 2701003,
+    "ItemQty1": 15
+  },
+  "10012": {
+    "Id": 10012,
+    "NodeId": 12,
+    "Season": 1,
+    "Name": "战技增幅",
+    "Desc": "全员技能伤害提升8%",
+    "Position": [
+      7,
+      1
+    ],
+    "Type": 2,
+    "PreNodes": [
+      10009
+    ],
+    "PreNodesLogic": true,
+    "EffectBattle": 10012,
+    "BattleType": 4,
+    "BattleTypeParam": 800,
+    "Priority": 7,
+    "Icon": "Icon/SoldierTech/SoldierTech_Attr",
+    "ItemId1": 2701003,
+    "ItemQty1": 15
+  },
+  "10013": {
+    "Id": 10013,
+    "NodeId": 13,
+    "Season": 1,
+    "Name": "稳健型投资",
+    "Desc": "魔王等级提升时，获得3次免费的商店刷新",
+    "Position": [
+      8,
+      2
+    ],
+    "Type": 1,
+    "PreNodes": [
+      10010
+    ],
+    "PreNodesLogic": true,
+    "Priority": 8,
+    "Icon": "Icon/SoldierTech/SoldierTechSp_106",
+    "ItemId1": 2701003,
+    "ItemQty1": 40
+  },
+  "10014": {
+    "Id": 10014,
+    "NodeId": 14,
+    "Season": 1,
+    "Name": "行前热身",
+    "Desc": "全员初始能量+10",
+    "Position": [
+      8,
+      1
+    ],
+    "Type": 2,
+    "PreNodes": [
+      10010
+    ],
+    "PreNodesLogic": true,
+    "EffectClient": [
+      10014
+    ],
+    "Priority": 8,
+    "Icon": "Icon/SoldierTech/SoldierTech_Attr",
+    "ItemId1": 2701003,
+    "ItemQty1": 15
+  },
+  "10015": {
+    "Id": 10015,
+    "NodeId": 15,
+    "Season": 1,
+    "Name": "弱点洞察",
+    "Desc": "全员暴击率提升5%",
+    "Position": [
+      8,
+      3
+    ],
+    "Type": 2,
+    "PreNodes": [
+      10010
+    ],
+    "PreNodesLogic": true,
+    "EffectClient": [
+      10015
+    ],
+    "Priority": 8,
+    "Icon": "Icon/SoldierTech/SoldierTech_Attr",
+    "ItemId1": 2701003,
+    "ItemQty1": 15
+  },
+  "10016": {
+    "Id": 10016,
+    "NodeId": 16,
+    "Season": 1,
+    "Name": "恩能循环",
+    "Desc": "全员回能效率提升6%",
+    "Position": [
+      9,
+      1
+    ],
+    "Type": 2,
+    "PreNodes": [
+      10014
+    ],
+    "PreNodesLogic": true,
+    "EffectClient": [
+      10016
+    ],
+    "Priority": 9,
+    "Icon": "Icon/SoldierTech/SoldierTech_Attr",
+    "ItemId1": 2701003,
+    "ItemQty1": 15
+  },
+  "10017": {
+    "Id": 10017,
+    "NodeId": 17,
+    "Season": 1,
+    "Name": "致命一击",
+    "Desc": "全员暴击伤害提升10%",
+    "Position": [
+      9,
+      3
+    ],
+    "Type": 2,
+    "PreNodes": [
+      10015
+    ],
+    "PreNodesLogic": true,
+    "EffectClient": [
+      10017
+    ],
+    "Priority": 9,
+    "Icon": "Icon/SoldierTech/SoldierTech_Attr",
+    "ItemId1": 2701003,
+    "ItemQty1": 15
+  },
+  "10018": {
+    "Id": 10018,
+    "NodeId": 18,
+    "Season": 1,
+    "Name": "命运加权",
+    "Desc": "任意掷骰时，点数结果额外+2",
+    "Position": [
+      10,
+      2
+    ],
+    "Type": 1,
+    "PreNodes": [
+      10016,
+      10017
+    ],
+    "Priority": 10,
+    "Icon": "Icon/SoldierTech/SoldierTechSp_107",
+    "ItemId1": 2701003,
+    "ItemQty1": 40
+  },
+  "10019": {
+    "Id": 10019,
+    "NodeId": 19,
+    "Season": 1,
+    "Name": "高等协同战术",
+    "Desc": "全员攻击力提升30%",
+    "Position": [
+      11,
+      1
+    ],
+    "Type": 2,
+    "PreNodes": [
+      10018
+    ],
+    "PreNodesLogic": true,
+    "EffectClient": [
+      10019
+    ],
+    "Priority": 11,
+    "Icon": "Icon/SoldierTech/SoldierTech_Attr",
+    "ItemId1": 2701003,
+    "ItemQty1": 15
+  },
+  "10020": {
+    "Id": 10020,
+    "NodeId": 20,
+    "Season": 1,
+    "Name": "高等防护魔法",
+    "Desc": "全员最大生命提升30%",
+    "Position": [
+      11,
+      3
+    ],
+    "Type": 2,
+    "PreNodes": [
+      10018
+    ],
+    "PreNodesLogic": true,
+    "EffectClient": [
+      10020
+    ],
+    "Priority": 11,
+    "Icon": "Icon/SoldierTech/SoldierTech_Attr",
+    "ItemId1": 2701003,
+    "ItemQty1": 15
+  },
+  "10021": {
+    "Id": 10021,
+    "NodeId": 21,
+    "Season": 1,
+    "Name": "强击号角",
+    "Desc": "全员最终伤害提升6%",
+    "Position": [
+      12,
+      1
+    ],
+    "Type": 2,
+    "PreNodes": [
+      10019
+    ],
+    "PreNodesLogic": true,
+    "EffectBattle": 10021,
+    "BattleType": 1,
+    "BattleTypeParam": 600,
+    "Priority": 12,
+    "Icon": "Icon/SoldierTech/SoldierTech_Attr",
+    "ItemId1": 2701003,
+    "ItemQty1": 15
+  },
+  "10022": {
+    "Id": 10022,
+    "NodeId": 22,
+    "Season": 1,
+    "Name": "坚定战域",
+    "Desc": "全员最终减伤提升6%",
+    "Position": [
+      12,
+      3
+    ],
+    "Type": 2,
+    "PreNodes": [
+      10020
+    ],
+    "PreNodesLogic": true,
+    "EffectBattle": 10022,
+    "BattleType": 2,
+    "BattleTypeParam": 600,
+    "Priority": 12,
+    "Icon": "Icon/SoldierTech/SoldierTech_Attr",
+    "ItemId1": 2701003,
+    "ItemQty1": 15
+  },
+  "10023": {
+    "Id": 10023,
+    "NodeId": 23,
+    "Season": 1,
+    "Name": "孤注一掷",
+    "Desc": "理智首次降至0时不会失败，并将理智回复至1点",
+    "Position": [
+      13,
+      2
+    ],
+    "Type": 1,
+    "PreNodes": [
+      10021,
+      10022
+    ],
+    "Priority": 13,
+    "Icon": "Icon/SoldierTech/SoldierTechSp_108",
+    "ItemId1": 2701003,
+    "ItemQty1": 40
+  }
+}

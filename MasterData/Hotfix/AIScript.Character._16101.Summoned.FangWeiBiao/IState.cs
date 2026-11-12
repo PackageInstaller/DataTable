@@ -1,0 +1,29 @@
+namespace AIScript.Character._16101.Summoned.FangWeiBiao;
+
+public class IState
+{
+	private fsmStatus fsmStatus;
+
+	public AdventureActor _actor;
+
+	public bool IsEnd => fsmStatus == fsmStatus.Exit;
+
+	public void Init(AdventureActor actor)
+	{
+		_actor = actor;
+	}
+
+	public virtual void Enter()
+	{
+		fsmStatus = fsmStatus.Enter;
+	}
+
+	public virtual void Update()
+	{
+	}
+
+	public virtual void Exit()
+	{
+		fsmStatus = fsmStatus.Exit;
+	}
+}

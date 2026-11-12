@@ -1,0 +1,742 @@
+{
+  "1": {
+    "Id": 1,
+    "FloorId": 1001,
+    "Size": 3
+  },
+  "2": {
+    "Id": 2,
+    "FloorId": 1002,
+    "Size": 3
+  },
+  "3": {
+    "Id": 3,
+    "FloorId": 1002,
+    "PackageNum": 4,
+    "Size": 4
+  },
+  "4": {
+    "Id": 4,
+    "FloorId": 1003,
+    "Size": 3
+  },
+  "5": {
+    "Id": 5,
+    "FloorId": 1003,
+    "PackageNum": 2,
+    "Size": 4
+  },
+  "6": {
+    "Id": 6,
+    "FloorId": 1004,
+    "Size": 3,
+    "PackagePathsGroupId": 101
+  },
+  "7": {
+    "Id": 7,
+    "FloorId": 1005,
+    "Size": 3,
+    "PackagePathsGroupId": 101
+  },
+  "8": {
+    "Id": 8,
+    "FloorId": 1005,
+    "PackageNum": 3,
+    "Size": 4,
+    "PackagePathsGroupId": 102
+  },
+  "9": {
+    "Id": 9,
+    "FloorId": 1006,
+    "Size": 3,
+    "RhythmlTime": 40,
+    "PreRange": 70,
+    "PostRange": 70
+  },
+  "10": {
+    "Id": 10,
+    "FloorId": 1006,
+    "PackageNum": 2,
+    "Size": 3,
+    "RhythmlTime": 60,
+    "PreRange": 45,
+    "PostRange": 45
+  },
+  "11": {
+    "Id": 11,
+    "FloorId": 1006,
+    "PackageNum": 4,
+    "Size": 3,
+    "RhythmlTime": 68,
+    "PreRange": 35,
+    "PostRange": 35
+  },
+  "12": {
+    "Id": 12,
+    "FloorId": 1007,
+    "Size": 3,
+    "RhythmlTime": 60,
+    "PreRange": 45,
+    "PostRange": 45
+  },
+  "13": {
+    "Id": 13,
+    "FloorId": 1007,
+    "PackageNum": 3,
+    "Size": 4,
+    "RhythmlTime": 75,
+    "PreRange": 35,
+    "PostRange": 35
+  },
+  "14": {
+    "Id": 14,
+    "FloorId": 1008,
+    "Size": 3,
+    "PackagePathsGroupId": 101,
+    "RhythmlTime": 60,
+    "PreRange": 45,
+    "PostRange": 45
+  },
+  "15": {
+    "Id": 15,
+    "FloorId": 1008,
+    "PackageNum": 4,
+    "Size": 4,
+    "PackagePathsGroupId": 102,
+    "RhythmlTime": 68,
+    "PreRange": 35,
+    "PostRange": 35
+  },
+  "16": {
+    "Id": 16,
+    "FloorId": 1008,
+    "PackageNum": 7,
+    "Size": 4,
+    "PackagePathsGroupId": 102,
+    "RhythmlTime": 75,
+    "PreRange": 35,
+    "PostRange": 35
+  },
+  "17": {
+    "Id": 17,
+    "FloorId": 1011,
+    "Size": 3,
+    "CookieTypeNum": [
+      1,
+      2
+    ]
+  },
+  "18": {
+    "Id": 18,
+    "FloorId": 1011,
+    "PackageNum": 2,
+    "Size": 3,
+    "CookieTypeNum": [
+      1,
+      2,
+      3
+    ]
+  },
+  "19": {
+    "Id": 19,
+    "FloorId": 1012,
+    "Size": 3,
+    "CookieTypeNum": [
+      1,
+      2,
+      3
+    ]
+  },
+  "20": {
+    "Id": 20,
+    "FloorId": 1012,
+    "PackageNum": 4,
+    "Size": 4,
+    "CookieTypeNum": [
+      1,
+      2,
+      3
+    ]
+  },
+  "21": {
+    "Id": 21,
+    "FloorId": 1013,
+    "Size": 3,
+    "CookieTypeNum": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "22": {
+    "Id": 22,
+    "FloorId": 1013,
+    "PackageNum": 4,
+    "Size": 4,
+    "CookieTypeNum": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "23": {
+    "Id": 23,
+    "FloorId": 1014,
+    "Size": 3,
+    "PackagePathsGroupId": 101,
+    "CookieTypeNum": [
+      1,
+      2
+    ]
+  },
+  "24": {
+    "Id": 24,
+    "FloorId": 1014,
+    "PackageNum": 2,
+    "Size": 3,
+    "PackagePathsGroupId": 101,
+    "CookieTypeNum": [
+      1,
+      2,
+      3
+    ]
+  },
+  "25": {
+    "Id": 25,
+    "FloorId": 1015,
+    "Size": 3,
+    "PackagePathsGroupId": 101,
+    "CookieTypeNum": [
+      1,
+      2,
+      3
+    ]
+  },
+  "26": {
+    "Id": 26,
+    "FloorId": 1015,
+    "PackageNum": 3,
+    "Size": 4,
+    "PackagePathsGroupId": 102,
+    "CookieTypeNum": [
+      1,
+      2,
+      3
+    ]
+  },
+  "27": {
+    "Id": 27,
+    "FloorId": 1016,
+    "Size": 3,
+    "RhythmlTime": 40,
+    "PreRange": 70,
+    "PostRange": 70,
+    "CookieTypeNum": [
+      1,
+      2
+    ]
+  },
+  "28": {
+    "Id": 28,
+    "FloorId": 1016,
+    "PackageNum": 2,
+    "Size": 3,
+    "RhythmlTime": 50,
+    "PreRange": 50,
+    "PostRange": 50,
+    "CookieTypeNum": [
+      1,
+      2
+    ]
+  },
+  "29": {
+    "Id": 29,
+    "FloorId": 1016,
+    "PackageNum": 5,
+    "Size": 3,
+    "RhythmlTime": 60,
+    "PreRange": 45,
+    "PostRange": 45,
+    "CookieTypeNum": [
+      1,
+      2,
+      3
+    ]
+  },
+  "30": {
+    "Id": 30,
+    "FloorId": 1017,
+    "Size": 3,
+    "RhythmlTime": 50,
+    "PreRange": 50,
+    "PostRange": 50,
+    "CookieTypeNum": [
+      1,
+      2,
+      3
+    ]
+  },
+  "31": {
+    "Id": 31,
+    "FloorId": 1017,
+    "PackageNum": 3,
+    "Size": 3,
+    "RhythmlTime": 60,
+    "PreRange": 45,
+    "PostRange": 45,
+    "CookieTypeNum": [
+      1,
+      2,
+      3
+    ]
+  },
+  "32": {
+    "Id": 32,
+    "FloorId": 1017,
+    "PackageNum": 6,
+    "Size": 4,
+    "RhythmlTime": 68,
+    "PreRange": 35,
+    "PostRange": 35,
+    "CookieTypeNum": [
+      1,
+      2,
+      3
+    ]
+  },
+  "33": {
+    "Id": 33,
+    "FloorId": 1018,
+    "Size": 3,
+    "PackagePathsGroupId": 101,
+    "RhythmlTime": 40,
+    "PreRange": 70,
+    "PostRange": 70,
+    "CookieTypeNum": [
+      1,
+      2,
+      3
+    ]
+  },
+  "34": {
+    "Id": 34,
+    "FloorId": 1018,
+    "PackageNum": 2,
+    "Size": 3,
+    "PackagePathsGroupId": 101,
+    "RhythmlTime": 50,
+    "PreRange": 50,
+    "PostRange": 50,
+    "CookieTypeNum": [
+      1,
+      2,
+      3
+    ]
+  },
+  "35": {
+    "Id": 35,
+    "FloorId": 1018,
+    "PackageNum": 5,
+    "Size": 3,
+    "PackagePathsGroupId": 101,
+    "RhythmlTime": 60,
+    "PreRange": 45,
+    "PostRange": 45,
+    "CookieTypeNum": [
+      1,
+      2,
+      3
+    ]
+  },
+  "36": {
+    "Id": 36,
+    "FloorId": 1018,
+    "PackageNum": 8,
+    "Size": 3,
+    "PackagePathsGroupId": 101,
+    "RhythmlTime": 68,
+    "PreRange": 35,
+    "PostRange": 35,
+    "CookieTypeNum": [
+      1,
+      2,
+      3
+    ]
+  },
+  "37": {
+    "Id": 37,
+    "FloorId": 1018,
+    "PackageNum": 11,
+    "Size": 4,
+    "PackagePathsGroupId": 102,
+    "RhythmlTime": 75,
+    "PreRange": 35,
+    "PostRange": 35,
+    "CookieTypeNum": [
+      1,
+      2,
+      3
+    ]
+  },
+  "38": {
+    "Id": 38,
+    "FloorId": 1018,
+    "PackageNum": 15,
+    "Size": 3,
+    "PackagePathsGroupId": 101,
+    "RhythmlTime": 50,
+    "PreRange": 50,
+    "PostRange": 50,
+    "CookieTypeNum": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "39": {
+    "Id": 39,
+    "FloorId": 1018,
+    "PackageNum": 17,
+    "Size": 3,
+    "PackagePathsGroupId": 101,
+    "RhythmlTime": 60,
+    "PreRange": 45,
+    "PostRange": 45,
+    "CookieTypeNum": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "40": {
+    "Id": 40,
+    "FloorId": 1018,
+    "PackageNum": 20,
+    "Size": 3,
+    "PackagePathsGroupId": 101,
+    "RhythmlTime": 68,
+    "PreRange": 35,
+    "PostRange": 35,
+    "CookieTypeNum": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "41": {
+    "Id": 41,
+    "FloorId": 1021,
+    "Size": 3,
+    "CookieTypeNum": [
+      1,
+      2
+    ]
+  },
+  "42": {
+    "Id": 42,
+    "FloorId": 1021,
+    "PackageNum": 2,
+    "Size": 3,
+    "CookieTypeNum": [
+      1,
+      2,
+      3
+    ]
+  },
+  "43": {
+    "Id": 43,
+    "FloorId": 1022,
+    "Size": 3,
+    "CookieTypeNum": [
+      1,
+      2,
+      3
+    ]
+  },
+  "44": {
+    "Id": 44,
+    "FloorId": 1022,
+    "PackageNum": 4,
+    "Size": 4,
+    "CookieTypeNum": [
+      1,
+      2,
+      3
+    ]
+  },
+  "45": {
+    "Id": 45,
+    "FloorId": 1023,
+    "Size": 3,
+    "CookieTypeNum": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "46": {
+    "Id": 46,
+    "FloorId": 1023,
+    "PackageNum": 4,
+    "Size": 4,
+    "CookieTypeNum": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "47": {
+    "Id": 47,
+    "FloorId": 1024,
+    "Size": 3,
+    "PackagePathsGroupId": 103,
+    "CookieTypeNum": [
+      1,
+      2
+    ]
+  },
+  "48": {
+    "Id": 48,
+    "FloorId": 1024,
+    "PackageNum": 2,
+    "Size": 3,
+    "PackagePathsGroupId": 103,
+    "CookieTypeNum": [
+      1,
+      2,
+      3
+    ]
+  },
+  "49": {
+    "Id": 49,
+    "FloorId": 1025,
+    "Size": 3,
+    "PackagePathsGroupId": 103,
+    "CookieTypeNum": [
+      1,
+      2,
+      3
+    ]
+  },
+  "50": {
+    "Id": 50,
+    "FloorId": 1025,
+    "PackageNum": 3,
+    "Size": 4,
+    "PackagePathsGroupId": 104,
+    "CookieTypeNum": [
+      1,
+      2,
+      3
+    ]
+  },
+  "51": {
+    "Id": 51,
+    "FloorId": 1026,
+    "Size": 3,
+    "RhythmlTime": 40,
+    "PreRange": 70,
+    "PostRange": 70,
+    "CookieTypeNum": [
+      1,
+      2
+    ]
+  },
+  "52": {
+    "Id": 52,
+    "FloorId": 1026,
+    "PackageNum": 2,
+    "Size": 3,
+    "RhythmlTime": 50,
+    "PreRange": 50,
+    "PostRange": 50,
+    "CookieTypeNum": [
+      1,
+      2
+    ]
+  },
+  "53": {
+    "Id": 53,
+    "FloorId": 1026,
+    "PackageNum": 5,
+    "Size": 3,
+    "RhythmlTime": 60,
+    "PreRange": 45,
+    "PostRange": 45,
+    "CookieTypeNum": [
+      1,
+      2,
+      3
+    ]
+  },
+  "54": {
+    "Id": 54,
+    "FloorId": 1027,
+    "Size": 3,
+    "RhythmlTime": 50,
+    "PreRange": 50,
+    "PostRange": 50,
+    "CookieTypeNum": [
+      1,
+      2,
+      3
+    ]
+  },
+  "55": {
+    "Id": 55,
+    "FloorId": 1027,
+    "PackageNum": 3,
+    "Size": 3,
+    "RhythmlTime": 60,
+    "PreRange": 45,
+    "PostRange": 45,
+    "CookieTypeNum": [
+      1,
+      2,
+      3
+    ]
+  },
+  "56": {
+    "Id": 56,
+    "FloorId": 1027,
+    "PackageNum": 6,
+    "Size": 4,
+    "RhythmlTime": 68,
+    "PreRange": 35,
+    "PostRange": 35,
+    "CookieTypeNum": [
+      1,
+      2,
+      3
+    ]
+  },
+  "57": {
+    "Id": 57,
+    "FloorId": 1028,
+    "Size": 3,
+    "PackagePathsGroupId": 103,
+    "RhythmlTime": 40,
+    "PreRange": 70,
+    "PostRange": 70,
+    "CookieTypeNum": [
+      1,
+      2,
+      3
+    ]
+  },
+  "58": {
+    "Id": 58,
+    "FloorId": 1028,
+    "PackageNum": 2,
+    "Size": 3,
+    "PackagePathsGroupId": 103,
+    "RhythmlTime": 50,
+    "PreRange": 50,
+    "PostRange": 50,
+    "CookieTypeNum": [
+      1,
+      2,
+      3
+    ]
+  },
+  "59": {
+    "Id": 59,
+    "FloorId": 1028,
+    "PackageNum": 5,
+    "Size": 3,
+    "PackagePathsGroupId": 103,
+    "RhythmlTime": 60,
+    "PreRange": 45,
+    "PostRange": 45,
+    "CookieTypeNum": [
+      1,
+      2,
+      3
+    ]
+  },
+  "60": {
+    "Id": 60,
+    "FloorId": 1028,
+    "PackageNum": 8,
+    "Size": 3,
+    "PackagePathsGroupId": 103,
+    "RhythmlTime": 68,
+    "PreRange": 35,
+    "PostRange": 35,
+    "CookieTypeNum": [
+      1,
+      2,
+      3
+    ]
+  },
+  "61": {
+    "Id": 61,
+    "FloorId": 1028,
+    "PackageNum": 11,
+    "Size": 4,
+    "PackagePathsGroupId": 104,
+    "RhythmlTime": 75,
+    "PreRange": 35,
+    "PostRange": 35,
+    "CookieTypeNum": [
+      1,
+      2,
+      3
+    ]
+  },
+  "62": {
+    "Id": 62,
+    "FloorId": 1028,
+    "PackageNum": 15,
+    "Size": 3,
+    "PackagePathsGroupId": 103,
+    "RhythmlTime": 50,
+    "PreRange": 50,
+    "PostRange": 50,
+    "CookieTypeNum": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "63": {
+    "Id": 63,
+    "FloorId": 1028,
+    "PackageNum": 17,
+    "Size": 3,
+    "PackagePathsGroupId": 103,
+    "RhythmlTime": 60,
+    "PreRange": 45,
+    "PostRange": 45,
+    "CookieTypeNum": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "64": {
+    "Id": 64,
+    "FloorId": 1028,
+    "PackageNum": 20,
+    "Size": 3,
+    "PackagePathsGroupId": 103,
+    "RhythmlTime": 68,
+    "PreRange": 35,
+    "PostRange": 35,
+    "CookieTypeNum": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

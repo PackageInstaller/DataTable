@@ -1,0 +1,601 @@
+{
+  "101": {
+    "Id": 101,
+    "Cond": 1,
+    "CondParams": [
+      4720
+    ],
+    "RequestDes": "评分等级达到15级"
+  },
+  "102": {
+    "Id": 102,
+    "Cond": 1,
+    "CondParams": [
+      5800
+    ],
+    "RequestDes": "评分等级达到21级"
+  },
+  "103": {
+    "Id": 103,
+    "Cond": 1,
+    "CondParams": [
+      7080
+    ],
+    "RequestDes": "评分等级达到25级"
+  },
+  "104": {
+    "Id": 104,
+    "Cond": 1,
+    "CondParams": [
+      8040
+    ],
+    "RequestDes": "评分等级达到28级"
+  },
+  "105": {
+    "Id": 105,
+    "Cond": 1,
+    "CondParams": [
+      9000
+    ],
+    "RequestDes": "评分等级达到31级"
+  },
+  "106": {
+    "Id": 106,
+    "Cond": 1,
+    "CondParams": [
+      5620
+    ],
+    "RequestDes": "评分等级达到20级"
+  },
+  "201": {
+    "Id": 201,
+    "Cond": 2,
+    "CondParams": [
+      10
+    ],
+    "RequestDes": "音符收集数量大于等于10个"
+  },
+  "202": {
+    "Id": 202,
+    "Cond": 2,
+    "CondParams": [
+      20
+    ],
+    "RequestDes": "音符收集数量大于等于20个"
+  },
+  "203": {
+    "Id": 203,
+    "Cond": 2,
+    "CondParams": [
+      30
+    ],
+    "RequestDes": "音符收集数量大于等于30个"
+  },
+  "204": {
+    "Id": 204,
+    "Cond": 2,
+    "CondParams": [
+      40
+    ],
+    "RequestDes": "音符收集数量大于等于40个"
+  },
+  "205": {
+    "Id": 205,
+    "Cond": 2,
+    "CondParams": [
+      50
+    ],
+    "RequestDes": "音符收集数量大于等于50个"
+  },
+  "301": {
+    "Id": 301,
+    "Cond": 4,
+    "CondParams": [
+      5
+    ],
+    "RequestDes": "收录潜能合计等级大于等于10"
+  },
+  "302": {
+    "Id": 302,
+    "Cond": 4,
+    "CondParams": [
+      15
+    ],
+    "RequestDes": "收录潜能合计等级大于等于15"
+  },
+  "303": {
+    "Id": 303,
+    "Cond": 4,
+    "CondParams": [
+      20
+    ],
+    "RequestDes": "收录潜能合计等级大于等于20"
+  },
+  "304": {
+    "Id": 304,
+    "Cond": 4,
+    "CondParams": [
+      30
+    ],
+    "RequestDes": "收录潜能合计等级大于等于30"
+  },
+  "305": {
+    "Id": 305,
+    "Cond": 4,
+    "CondParams": [
+      35
+    ],
+    "RequestDes": "收录潜能合计等级大于等于35"
+  },
+  "401": {
+    "Id": 401,
+    "Cond": 5,
+    "CondParams": [
+      2,
+      2
+    ],
+    "RequestDes": "收录2个等级达到2的潜能"
+  },
+  "402": {
+    "Id": 402,
+    "Cond": 5,
+    "CondParams": [
+      2,
+      3
+    ],
+    "RequestDes": "收录2个等级达到3的潜能"
+  },
+  "403": {
+    "Id": 403,
+    "Cond": 5,
+    "CondParams": [
+      3,
+      3
+    ],
+    "RequestDes": "收录3个等级达到3的潜能"
+  },
+  "404": {
+    "Id": 404,
+    "Cond": 5,
+    "CondParams": [
+      3,
+      4
+    ],
+    "RequestDes": "收录3个等级达到4的潜能"
+  },
+  "405": {
+    "Id": 405,
+    "Cond": 5,
+    "CondParams": [
+      3,
+      5
+    ],
+    "RequestDes": "收录3个等级达到5的潜能"
+  },
+  "406": {
+    "Id": 406,
+    "Cond": 5,
+    "CondParams": [
+      6,
+      6
+    ],
+    "RequestDes": "收录6个等级达到6的潜能"
+  },
+  "501": {
+    "Id": 501,
+    "Cond": 9,
+    "CondParams": [
+      2,
+      1
+    ],
+    "RequestDes": "激活任意2个协奏技能"
+  },
+  "502": {
+    "Id": 502,
+    "Cond": 9,
+    "CondParams": [
+      3,
+      1
+    ],
+    "RequestDes": "激活任意3个协奏技能"
+  },
+  "503": {
+    "Id": 503,
+    "Cond": 9,
+    "CondParams": [
+      4,
+      1
+    ],
+    "RequestDes": "激活任意4个协奏技能"
+  },
+  "504": {
+    "Id": 504,
+    "Cond": 9,
+    "CondParams": [
+      2,
+      2
+    ],
+    "RequestDes": "激活任意2个2级或以上的协奏技能"
+  },
+  "505": {
+    "Id": 505,
+    "Cond": 9,
+    "CondParams": [
+      3,
+      2
+    ],
+    "RequestDes": "激活任意3个2级或以上的协奏技能"
+  },
+  "506": {
+    "Id": 506,
+    "Cond": 9,
+    "CondParams": [
+      1,
+      1
+    ],
+    "RequestDes": "激活任意协奏技能"
+  },
+  "601": {
+    "Id": 601,
+    "Cond": 6,
+    "CondParams": [
+      1
+    ],
+    "RequestDes": "主控旅人元素属性为「水」"
+  },
+  "602": {
+    "Id": 602,
+    "Cond": 6,
+    "CondParams": [
+      2
+    ],
+    "RequestDes": "主控旅人元素属性为「火」"
+  },
+  "603": {
+    "Id": 603,
+    "Cond": 6,
+    "CondParams": [
+      3
+    ],
+    "RequestDes": "主控旅人元素属性为「地」"
+  },
+  "604": {
+    "Id": 604,
+    "Cond": 6,
+    "CondParams": [
+      4
+    ],
+    "RequestDes": "主控旅人元素属性为「风」"
+  },
+  "605": {
+    "Id": 605,
+    "Cond": 6,
+    "CondParams": [
+      5
+    ],
+    "RequestDes": "主控旅人元素属性为「光」"
+  },
+  "606": {
+    "Id": 606,
+    "Cond": 6,
+    "CondParams": [
+      6
+    ],
+    "RequestDes": "主控旅人元素属性为「暗」"
+  },
+  "607": {
+    "Id": 607,
+    "Cond": 6,
+    "CondParams": [
+      3,
+      6
+    ],
+    "RequestDes": "主控旅人元素属性为「地」或「暗」"
+  },
+  "608": {
+    "Id": 608,
+    "Cond": 6,
+    "CondParams": [
+      1,
+      4
+    ],
+    "RequestDes": "主控旅人元素属性为「风」或「水」"
+  },
+  "609": {
+    "Id": 609,
+    "Cond": 6,
+    "CondParams": [
+      6,
+      1
+    ],
+    "RequestDes": "主控旅人元素属性为「暗」或「水」"
+  },
+  "610": {
+    "Id": 610,
+    "Cond": 6,
+    "CondParams": [
+      5,
+      6
+    ],
+    "RequestDes": "主控旅人元素属性为「光」或「暗」"
+  },
+  "611": {
+    "Id": 611,
+    "Cond": 6,
+    "CondParams": [
+      3,
+      5
+    ],
+    "RequestDes": "主控旅人元素属性为「地」或「光」"
+  },
+  "612": {
+    "Id": 612,
+    "Cond": 6,
+    "CondParams": [
+      2,
+      3
+    ],
+    "RequestDes": "主控旅人元素属性为「火」或「地」"
+  },
+  "613": {
+    "Id": 613,
+    "Cond": 6,
+    "CondParams": [
+      1,
+      2
+    ],
+    "RequestDes": "主控旅人元素属性为「水」或「火」"
+  },
+  "614": {
+    "Id": 614,
+    "Cond": 6,
+    "CondParams": [
+      1,
+      5
+    ],
+    "RequestDes": "主控旅人元素属性为「水」或「光」"
+  },
+  "7011": {
+    "Id": 7011,
+    "Cond": 3,
+    "CondParams": [
+      90011,
+      10
+    ],
+    "RequestDes": "收集至少10个「强攻之音」"
+  },
+  "7012": {
+    "Id": 7012,
+    "Cond": 3,
+    "CondParams": [
+      90011,
+      15
+    ],
+    "RequestDes": "收集至少15个「强攻之音」"
+  },
+  "7013": {
+    "Id": 7013,
+    "Cond": 3,
+    "CondParams": [
+      90011,
+      20
+    ],
+    "RequestDes": "收集至少20个「强攻之音」"
+  },
+  "7021": {
+    "Id": 7021,
+    "Cond": 3,
+    "CondParams": [
+      90012,
+      10
+    ],
+    "RequestDes": "收集至少10个「幸运之音」"
+  },
+  "7022": {
+    "Id": 7022,
+    "Cond": 3,
+    "CondParams": [
+      90012,
+      15
+    ],
+    "RequestDes": "收集至少15个「幸运之音」"
+  },
+  "7023": {
+    "Id": 7023,
+    "Cond": 3,
+    "CondParams": [
+      90012,
+      20
+    ],
+    "RequestDes": "收集至少20个「幸运之音」"
+  },
+  "7041": {
+    "Id": 7041,
+    "Cond": 3,
+    "CondParams": [
+      90014,
+      30
+    ],
+    "RequestDes": "收集至少30个「体力之音」"
+  },
+  "7051": {
+    "Id": 7051,
+    "Cond": 3,
+    "CondParams": [
+      90015,
+      40
+    ],
+    "RequestDes": "收集至少40个「专注之音」"
+  },
+  "7061": {
+    "Id": 7061,
+    "Cond": 3,
+    "CondParams": [
+      90016,
+      30
+    ],
+    "RequestDes": "收集至少30个「技巧之音」"
+  },
+  "8001": {
+    "Id": 8001,
+    "Cond": 7,
+    "CondParams": [
+      1,
+      1
+    ],
+    "RequestDes": "至少1名旅人的元素属性为「水」"
+  },
+  "8002": {
+    "Id": 8002,
+    "Cond": 7,
+    "CondParams": [
+      1,
+      2
+    ],
+    "RequestDes": "至少1名旅人的元素属性为「火」"
+  },
+  "8003": {
+    "Id": 8003,
+    "Cond": 7,
+    "CondParams": [
+      1,
+      3
+    ],
+    "RequestDes": "至少1名旅人的元素属性为「地」"
+  },
+  "8004": {
+    "Id": 8004,
+    "Cond": 7,
+    "CondParams": [
+      1,
+      4
+    ],
+    "RequestDes": "至少1名旅人的元素属性为「风」"
+  },
+  "8005": {
+    "Id": 8005,
+    "Cond": 7,
+    "CondParams": [
+      1,
+      5
+    ],
+    "RequestDes": "至少1名旅人的元素属性为「光」"
+  },
+  "8006": {
+    "Id": 8006,
+    "Cond": 7,
+    "CondParams": [
+      1,
+      6
+    ],
+    "RequestDes": "至少1名旅人的元素属性为「暗」"
+  },
+  "8011": {
+    "Id": 8011,
+    "Cond": 7,
+    "CondParams": [
+      3,
+      1
+    ],
+    "RequestDes": "纪录内全部旅人元素属性为「水」"
+  },
+  "8012": {
+    "Id": 8012,
+    "Cond": 7,
+    "CondParams": [
+      3,
+      2
+    ],
+    "RequestDes": "纪录内全部旅人元素属性为「火」"
+  },
+  "8013": {
+    "Id": 8013,
+    "Cond": 7,
+    "CondParams": [
+      3,
+      3
+    ],
+    "RequestDes": "纪录内全部旅人元素属性为「地」"
+  },
+  "8021": {
+    "Id": 8021,
+    "Cond": 7,
+    "CondParams": [
+      3,
+      4
+    ],
+    "RequestDes": "纪录内全部旅人元素属性为「风」"
+  },
+  "8022": {
+    "Id": 8022,
+    "Cond": 7,
+    "CondParams": [
+      3,
+      5
+    ],
+    "RequestDes": "纪录内全部旅人元素属性为「光」"
+  },
+  "8023": {
+    "Id": 8023,
+    "Cond": 7,
+    "CondParams": [
+      3,
+      6
+    ],
+    "RequestDes": "纪录内全部旅人元素属性为「暗」"
+  },
+  "9011": {
+    "Id": 9011,
+    "Cond": 8,
+    "CondParams": [
+      1,
+      1
+    ],
+    "RequestDes": "纪录内至少有1名「先锋」定位的旅人"
+  },
+  "9012": {
+    "Id": 9012,
+    "Cond": 8,
+    "CondParams": [
+      1,
+      2
+    ],
+    "RequestDes": "纪录内至少有1名「均衡」定位的旅人"
+  },
+  "9013": {
+    "Id": 9013,
+    "Cond": 8,
+    "CondParams": [
+      1,
+      3
+    ],
+    "RequestDes": "纪录内至少有1名「支援」定位的旅人"
+  },
+  "9021": {
+    "Id": 9021,
+    "Cond": 8,
+    "CondParams": [
+      2,
+      1
+    ],
+    "RequestDes": "纪录内至少有2名「先锋」定位的旅人"
+  },
+  "9022": {
+    "Id": 9022,
+    "Cond": 8,
+    "CondParams": [
+      2,
+      2
+    ],
+    "RequestDes": "纪录内至少有2名「均衡」定位的旅人"
+  },
+  "9023": {
+    "Id": 9023,
+    "Cond": 8,
+    "CondParams": [
+      2,
+      3
+    ],
+    "RequestDes": "纪录内至少有2名「支援」定位的旅人"
+  }
+}

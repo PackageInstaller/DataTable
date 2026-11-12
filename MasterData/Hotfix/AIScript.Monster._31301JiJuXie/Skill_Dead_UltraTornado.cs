@@ -1,0 +1,20 @@
+using System.Collections;
+
+namespace AIScript.Monster._31301JiJuXie;
+
+public class Skill_Dead_UltraTornado : SkillSimpleBase
+{
+	protected override void OnSkillEnable()
+	{
+		base.OnSkillEnable();
+		SetCloseBlockEnable();
+	}
+
+	protected override IEnumerator DoMainLogic()
+	{
+		SendDeclareDeadEvent();
+		_actor.PlayDeathAnim();
+		yield return WaitTime(0.1);
+		SetHideModelEnable();
+	}
+}

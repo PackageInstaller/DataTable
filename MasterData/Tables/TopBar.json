@@ -1,0 +1,1513 @@
+{
+  "CharInfo": {
+    "Id": "CharInfo",
+    "Title": "旅人详情",
+    "EntryId": 100101
+  },
+  "CharList": {
+    "Id": "CharList",
+    "Title": "旅人列表"
+  },
+  "GachaSpin": {
+    "Id": "GachaSpin",
+    "Title": "旅人招募",
+    "Coin": true
+  },
+  "ShopPanel": {
+    "Id": "ShopPanel",
+    "Title": "采购",
+    "Coin": true
+  },
+  "ShopPopupPanel": {
+    "Id": "ShopPopupPanel",
+    "Title": "TopBar.ShopPopupPanel.1",
+    "HideBack": true,
+    "Coin": true,
+    "DelayShow": true
+  },
+  "DepotPanel": {
+    "Id": "DepotPanel",
+    "Title": "物资"
+  },
+  "CharSkill": {
+    "Id": "CharSkill",
+    "Title": "旅人能力",
+    "EntryId": 100301,
+    "Coin": true,
+    "CoinIds": [
+      1
+    ]
+  },
+  "RoguelikeBuildBriefList": {
+    "Id": "RoguelikeBuildBriefList",
+    "Title": "纪录管理",
+    "EntryId": 300102
+  },
+  "RogueBossBuildBrief": {
+    "Id": "RogueBossBuildBrief",
+    "Title": "纪录管理",
+    "EntryId": 300102
+  },
+  "RoguelikeBuildDetail": {
+    "Id": "RoguelikeBuildDetail",
+    "Title": "小队信息"
+  },
+  "Quest": {
+    "Id": "Quest",
+    "Title": "任务",
+    "EntryId": 900101
+  },
+  "TravelerDuelLevelQuestPanel": {
+    "Id": "TravelerDuelLevelQuestPanel",
+    "Title": "对决任务"
+  },
+  "Mail": {
+    "Id": "Mail",
+    "Title": "邮件",
+    "Coin": true,
+    "CoinIds": [
+      1,
+      2
+    ],
+    "HideCoinAdd": true
+  },
+  "Friend": {
+    "Id": "Friend",
+    "Title": "好友"
+  },
+  "LevelMenu": {
+    "Id": "LevelMenu",
+    "Title": "旅行"
+  },
+  "Mainline": {
+    "Id": "Mainline",
+    "Title": "旅行故事",
+    "Coin": true,
+    "CoinIds": [
+      1
+    ]
+  },
+  "RoguelikeLevel": {
+    "Id": "RoguelikeLevel",
+    "Title": "星塔探索",
+    "Energy": true
+  },
+  "MainlineFormation": {
+    "Id": "MainlineFormation",
+    "Title": "编队",
+    "EntryId": 200302
+  },
+  "MainlineFormationDisc": {
+    "Id": "MainlineFormationDisc",
+    "Title": "秘纹组合"
+  },
+  "RegionBossFormation": {
+    "Id": "RegionBossFormation",
+    "Title": "纪录"
+  },
+  "RogueBossLevel": {
+    "Id": "RogueBossLevel",
+    "Title": "晋升试炼",
+    "Energy": true
+  },
+  "CharUpPanel": {
+    "Id": "CharUpPanel",
+    "Title": "TopBar.CharUpPanel.1",
+    "EntryId": 100201,
+    "Coin": true,
+    "CoinIds": [
+      1
+    ]
+  },
+  "Achievement": {
+    "Id": "Achievement",
+    "Title": "成就"
+  },
+  "Mall": {
+    "Id": "Mall",
+    "Title": "商城",
+    "Coin": true
+  },
+  "MallPopup": {
+    "Id": "MallPopup",
+    "Title": "TopBar.MallPopup.1",
+    "HideBack": true,
+    "Coin": true,
+    "DelayShow": true
+  },
+  "CharacterSkinPanel": {
+    "Id": "CharacterSkinPanel",
+    "Title": "旅人形象"
+  },
+  "TrekkerVersus": {
+    "Id": "TrekkerVersus",
+    "Title": "巅峰秀场",
+    "EntryId": 200801
+  },
+  "DailyInstanceLevelSelect": {
+    "Id": "DailyInstanceLevelSelect",
+    "Title": "基础试炼",
+    "Energy": true
+  },
+  "ChooseHomePageRolePanel": {
+    "Id": "ChooseHomePageRolePanel",
+    "Title": "设置看板"
+  },
+  "ChooseHomePageSkinPanel": {
+    "Id": "ChooseHomePageSkinPanel",
+    "Title": "更换看板装扮"
+  },
+  "CharacterPlot": {
+    "Id": "CharacterPlot",
+    "Title": "旅人剧情"
+  },
+  "ExChangePanel": {
+    "Id": "ExChangePanel",
+    "Title": "TopBar.ExChangePanel.1",
+    "HideBack": true,
+    "Coin": true,
+    "CoinIds": [
+      2,
+      3
+    ],
+    "HideCoinAdd": true,
+    "DelayShow": true
+  },
+  "GachaPreview": {
+    "Id": "GachaPreview",
+    "Title": "旅人预览"
+  },
+  "Raid": {
+    "Id": "Raid",
+    "Title": "TopBar.Raid.1",
+    "HideBack": true,
+    "Energy": true,
+    "DelayShow": true
+  },
+  "EnergyBuy": {
+    "Id": "EnergyBuy",
+    "Title": "TopBar.EnergyBuy.1",
+    "HideBack": true,
+    "Energy": true,
+    "Coin": true,
+    "CoinIds": [
+      2,
+      3
+    ],
+    "HideCoinAdd": true,
+    "DelayShow": true
+  },
+  "Dictionary": {
+    "Id": "Dictionary",
+    "Title": "旅人百科"
+  },
+  "DictionaryFR": {
+    "Id": "DictionaryFR",
+    "Title": "旅人百科",
+    "HideHome": true
+  },
+  "Crafting": {
+    "Id": "Crafting",
+    "Title": "材料合成"
+  },
+  "CharacterRelation": {
+    "Id": "CharacterRelation",
+    "Title": "旅人默契",
+    "EntryId": 100701
+  },
+  "ActivityList": {
+    "Id": "ActivityList",
+    "Title": "活动"
+  },
+  "BattlePass": {
+    "Id": "BattlePass",
+    "Title": "创业激励基金",
+    "EntryId": 900301
+  },
+  "InfinityTowerSelectTower": {
+    "Id": "InfinityTowerSelectTower",
+    "Title": "心危擂台",
+    "EntryId": 201201
+  },
+  "CharTalent": {
+    "Id": "CharTalent",
+    "Title": "旅人天赋",
+    "EntryId": 100601
+  },
+  "Disc": {
+    "Id": "Disc",
+    "Title": "秘纹",
+    "EntryId": 300104,
+    "Coin": true,
+    "CoinIds": [
+      1
+    ]
+  },
+  "DiscList": {
+    "Id": "DiscList",
+    "Title": "秘纹列表"
+  },
+  "DiscSample": {
+    "Id": "DiscSample",
+    "Title": "秘纹",
+    "HideHome": true
+  },
+  "Equipment": {
+    "Id": "Equipment",
+    "Title": "纹章",
+    "Coin": true,
+    "CoinIds": [
+      1
+    ]
+  },
+  "EquipmentSelect": {
+    "Id": "EquipmentSelect",
+    "Title": "纹章替换"
+  },
+  "EquipmentInstanceLevelSelect": {
+    "Id": "EquipmentInstanceLevelSelect",
+    "Title": "纹章试炼",
+    "Energy": true
+  },
+  "CharEquipment": {
+    "Id": "CharEquipment",
+    "Title": "旅人纹章",
+    "EntryId": 100801
+  },
+  "StarTowerLevelSelect": {
+    "Id": "StarTowerLevelSelect",
+    "Title": "星塔探索",
+    "EntryId": 200201
+  },
+  "StarTowerBuildDetail": {
+    "Id": "StarTowerBuildDetail",
+    "Title": "纪录详情"
+  },
+  "StarTowerBuildBriefList": {
+    "Id": "StarTowerBuildBriefList",
+    "Title": "纪录管理"
+  },
+  "ChangeGender": {
+    "Id": "ChangeGender",
+    "Title": "切换形象"
+  },
+  "CharPotential": {
+    "Id": "CharPotential",
+    "Title": "旅人潜能",
+    "EntryId": 300103
+  },
+  "MainlineEx": {
+    "Id": "MainlineEx",
+    "Title": "主线剧情"
+  },
+  "StoryChapter": {
+    "Id": "StoryChapter",
+    "Title": "主线剧情"
+  },
+  "DispatchPanel": {
+    "Id": "DispatchPanel",
+    "Title": "委托"
+  },
+  "StarTowerBook": {
+    "Id": "StarTowerBook",
+    "Title": "星塔事典"
+  },
+  "StarTowerGrowth": {
+    "Id": "StarTowerGrowth",
+    "Title": "星塔研究",
+    "EntryId": 200202,
+    "Coin": true,
+    "CoinIds": [
+      51
+    ]
+  },
+  "StarTowerRankLevel": {
+    "Id": "StarTowerRankLevel",
+    "Title": "竞速塔"
+  },
+  "StarTowerQuest": {
+    "Id": "StarTowerQuest",
+    "Title": "研究计划"
+  },
+  "VampireSurvivorLevelSelectPanel": {
+    "Id": "VampireSurvivorLevelSelectPanel",
+    "Title": "灾变防线",
+    "EntryId": 201301,
+    "Coin": true,
+    "CoinIds": [
+      31
+    ],
+    "HideCoinAdd": true
+  },
+  "MiningGame": {
+    "Id": "MiningGame",
+    "Title": "幸运寻宝铲",
+    "EntryId": 400101
+  },
+  "ScoreBossSelectPanel": {
+    "Id": "ScoreBossSelectPanel",
+    "Title": "联合讨伐",
+    "EntryId": 201501
+  },
+  "SkillInstanceLevelSelect": {
+    "Id": "SkillInstanceLevelSelect",
+    "Title": "技巧试炼",
+    "Energy": true
+  },
+  "WeeklyCopiesPanel": {
+    "Id": "WeeklyCopiesPanel",
+    "Title": "真格挑战",
+    "EntryId": 201401
+  },
+  "TrialLevelSelect": {
+    "Id": "TrialLevelSelect",
+    "Title": "浅试身手"
+  },
+  "JointDrillBuildList_Mode1": {
+    "Id": "JointDrillBuildList_Mode1",
+    "Title": "出战配置",
+    "EntryId": 201602
+  },
+  "JointDrillLevelSelect_Mode1": {
+    "Id": "JointDrillLevelSelect_Mode1",
+    "Title": "终焉绝响",
+    "EntryId": 201601
+  },
+  "JointDrillRanking_Mode1": {
+    "Id": "JointDrillRanking_Mode1",
+    "Title": "终焉绝响排行榜"
+  },
+  "TowerDefenseCharacterDetailPanel": {
+    "Id": "TowerDefenseCharacterDetailPanel",
+    "Title": "角色详情",
+    "HideHome": true
+  },
+  "TowerDefenseSelectPanel": {
+    "Id": "TowerDefenseSelectPanel",
+    "Title": "活动"
+  },
+  "TowerDefenseLevelDetailPanel": {
+    "Id": "TowerDefenseLevelDetailPanel",
+    "Title": "活动"
+  },
+  "TrialFormation": {
+    "Id": "TrialFormation",
+    "Title": "编队"
+  },
+  "TrialDepot": {
+    "Id": "TrialDepot",
+    "Title": "试玩详情",
+    "HideHome": true
+  },
+  "ScoreBossRankingPanel": {
+    "Id": "ScoreBossRankingPanel",
+    "Title": "联合讨伐排行榜"
+  },
+  "ActivityLevelsSelectPanel": {
+    "Id": "ActivityLevelsSelectPanel",
+    "Title": "战斗关卡",
+    "Energy": true
+  },
+  "SwimTheme": {
+    "Id": "SwimTheme",
+    "Title": "活动",
+    "Coin": true,
+    "CoinIds": [
+      73101
+    ]
+  },
+  "MiningGameGuidePanel": {
+    "Id": "MiningGameGuidePanel",
+    "Title": "宝藏图鉴"
+  },
+  "EquipmentRoll": {
+    "Id": "EquipmentRoll",
+    "Title": "纹章重铸",
+    "Coin": true
+  },
+  "SwimThemeStory": {
+    "Id": "SwimThemeStory",
+    "Title": "剧情故事"
+  },
+  "CharInfoTrial": {
+    "Id": "CharInfoTrial",
+    "Title": "角色预览",
+    "EntryId": 100101,
+    "HideHome": true
+  },
+  "CharSkillTrial": {
+    "Id": "CharSkillTrial",
+    "Title": "技能预览",
+    "EntryId": 100301,
+    "HideHome": true
+  },
+  "CharPotentialTrial": {
+    "Id": "CharPotentialTrial",
+    "Title": "潜能预览",
+    "HideHome": true
+  },
+  "CharTalentTrial": {
+    "Id": "CharTalentTrial",
+    "Title": "天赋预览",
+    "EntryId": 100601,
+    "HideHome": true
+  },
+  "SwimShop": {
+    "Id": "SwimShop",
+    "Title": "活动商店",
+    "Coin": true,
+    "CoinIds": [
+      73101
+    ]
+  },
+  "SwimShopPopup": {
+    "Id": "SwimShopPopup",
+    "Title": "TopBar.SwimShopPopup.1",
+    "HideBack": true,
+    "Coin": true,
+    "DelayShow": true
+  },
+  "SwimTask": {
+    "Id": "SwimTask",
+    "Title": "活动任务",
+    "Coin": true,
+    "CoinIds": [
+      73101
+    ]
+  },
+  "MallSkinPreview": {
+    "Id": "MallSkinPreview",
+    "Title": "商城"
+  },
+  "StorySet": {
+    "Id": "StorySet",
+    "Title": "诺瓦异闻"
+  },
+  "SkinPreviewPanel": {
+    "Id": "SkinPreviewPanel",
+    "Title": "旅人形象"
+  },
+  "CookieBoardPanel": {
+    "Id": "CookieBoardPanel",
+    "Title": "甜心梦工坊"
+  },
+  "CookieGamePanel": {
+    "Id": "CookieGamePanel",
+    "Title": "甜心梦工坊",
+    "EntryId": 400301,
+    "Coin": true,
+    "CoinIds": [
+      73102
+    ]
+  },
+  "CookieQuestPanel": {
+    "Id": "CookieQuestPanel",
+    "Title": "工坊考核"
+  },
+  "OurRegimentThemePanel": {
+    "Id": "OurRegimentThemePanel",
+    "Title": "活动",
+    "Coin": true,
+    "CoinIds": [
+      73102
+    ]
+  },
+  "DreamThemePanel": {
+    "Id": "DreamThemePanel",
+    "Title": "梦的彼岸",
+    "Coin": true,
+    "CoinIds": [
+      73103
+    ]
+  },
+  "Shop_10101": {
+    "Id": "Shop_10101",
+    "Title": "活动商店",
+    "Coin": true
+  },
+  "ShopPopup_10101": {
+    "Id": "ShopPopup_10101",
+    "Title": "TopBar.ShopPopup_10101.1",
+    "HideBack": true,
+    "Coin": true,
+    "DelayShow": true
+  },
+  "Shop_10102": {
+    "Id": "Shop_10102",
+    "Title": "活动商店",
+    "Coin": true
+  },
+  "ShopPopup_10102": {
+    "Id": "ShopPopup_10102",
+    "Title": "TopBar.ShopPopup_10102.1",
+    "HideBack": true,
+    "Coin": true,
+    "DelayShow": true
+  },
+  "ActivityLevelsSelectPanel_10101": {
+    "Id": "ActivityLevelsSelectPanel_10101",
+    "Title": "战斗关卡",
+    "Energy": true
+  },
+  "ActivityLevelsSelectPanel_10102": {
+    "Id": "ActivityLevelsSelectPanel_10102",
+    "Title": "战斗关卡",
+    "Energy": true
+  },
+  "Task_10101": {
+    "Id": "Task_10101",
+    "Title": "活动任务",
+    "Coin": true,
+    "CoinIds": [
+      73102
+    ]
+  },
+  "Task_10102": {
+    "Id": "Task_10102",
+    "Title": "活动任务",
+    "Coin": true,
+    "CoinIds": [
+      73103
+    ]
+  },
+  "BdConvertPanel": {
+    "Id": "BdConvertPanel",
+    "Title": "纪录征集"
+  },
+  "BdConvertBuildDetail": {
+    "Id": "BdConvertBuildDetail",
+    "Title": "纪录详情"
+  },
+  "MiningGame_400002": {
+    "Id": "MiningGame_400002",
+    "Title": "幸运寻宝铲",
+    "EntryId": 400101
+  },
+  "MiningGame_400003": {
+    "Id": "MiningGame_400003",
+    "Title": "幸运寻宝铲",
+    "EntryId": 400101
+  },
+  "MiningGame_400007": {
+    "Id": "MiningGame_400007",
+    "Title": "幸运寻宝铲",
+    "EntryId": 400101
+  },
+  "MiningGameGuidePanel_400002": {
+    "Id": "MiningGameGuidePanel_400002",
+    "Title": "宝藏图鉴"
+  },
+  "MiningGameGuidePanel_400003": {
+    "Id": "MiningGameGuidePanel_400003",
+    "Title": "回收清单"
+  },
+  "MiningGameGuidePanel_400007": {
+    "Id": "MiningGameGuidePanel_400007",
+    "Title": "宝藏图鉴"
+  },
+  "Shop_30101": {
+    "Id": "Shop_30101",
+    "Title": "活动商店",
+    "Coin": true
+  },
+  "ShopPopup_30101": {
+    "Id": "ShopPopup_30101",
+    "Title": "TopBar.ShopPopup_30101.1",
+    "HideBack": true,
+    "Coin": true,
+    "DelayShow": true
+  },
+  "BreakOutThemePanel": {
+    "Id": "BreakOutThemePanel",
+    "Title": "缭乱碎晶球",
+    "Coin": true,
+    "CoinIds": [
+      73202
+    ]
+  },
+  "Task_30101": {
+    "Id": "Task_30101",
+    "Title": "活动任务",
+    "Coin": true,
+    "CoinIds": [
+      73202
+    ]
+  },
+  "QuestNewbie": {
+    "Id": "QuestNewbie",
+    "Title": "教学"
+  },
+  "BreakOutLevelDetailPanel": {
+    "Id": "BreakOutLevelDetailPanel",
+    "Title": "缭乱碎晶球"
+  },
+  "StarTowerBuildDetailPreview": {
+    "Id": "StarTowerBuildDetailPreview",
+    "Title": "纪录详情"
+  },
+  "Main_10103": {
+    "Id": "Main_10103",
+    "Title": "活动",
+    "Coin": true,
+    "CoinIds": [
+      73105
+    ]
+  },
+  "Shop_10103": {
+    "Id": "Shop_10103",
+    "Title": "活动商店",
+    "Coin": true
+  },
+  "ShopPopup_10103": {
+    "Id": "ShopPopup_10103",
+    "Title": "TopBar.ShopPopup_10103.1",
+    "HideBack": true,
+    "Coin": true,
+    "DelayShow": true
+  },
+  "Task_10103": {
+    "Id": "Task_10103",
+    "Title": "活动任务",
+    "Coin": true,
+    "CoinIds": [
+      73105
+    ]
+  },
+  "Shop_20101": {
+    "Id": "Shop_20101",
+    "Title": "活动商店",
+    "Coin": true
+  },
+  "ShopPopup_20101": {
+    "Id": "ShopPopup_20101",
+    "Title": "TopBar.ShopPopup_20101.1",
+    "HideBack": true,
+    "Coin": true,
+    "DelayShow": true
+  },
+  "Task_20101": {
+    "Id": "Task_20101",
+    "Title": "活动任务",
+    "Coin": true,
+    "CoinIds": [
+      73104
+    ]
+  },
+  "ChristmasThemePanel": {
+    "Id": "ChristmasThemePanel",
+    "Title": "活动",
+    "Coin": true,
+    "CoinIds": [
+      73104
+    ]
+  },
+  "ActivityStory_20101": {
+    "Id": "ActivityStory_20101",
+    "Title": "剧情故事"
+  },
+  "CookieBoardPanel_400004": {
+    "Id": "CookieBoardPanel_400004",
+    "Title": "甜心梦工坊"
+  },
+  "CookieGamePanel_400004": {
+    "Id": "CookieGamePanel_400004",
+    "Title": "甜心梦工坊",
+    "EntryId": 400301,
+    "Coin": true,
+    "CoinIds": [
+      73104
+    ]
+  },
+  "ActivityLevelsSelectPanel_10103": {
+    "Id": "ActivityLevelsSelectPanel_10103",
+    "Title": "战斗关卡",
+    "Energy": true
+  },
+  "ActivityLevelsSelectPanel_20101": {
+    "Id": "ActivityLevelsSelectPanel_20101",
+    "Title": "战斗关卡",
+    "Energy": true
+  },
+  "ActivityShopPopup": {
+    "Id": "ActivityShopPopup",
+    "Title": "TopBar.ActivityShopPopup.1",
+    "HideBack": true,
+    "Coin": true,
+    "DelayShow": true
+  },
+  "ThrowGiftPanel": {
+    "Id": "ThrowGiftPanel",
+    "Title": "豪礼抛物线",
+    "Coin": true,
+    "CoinIds": [
+      73107
+    ]
+  },
+  "ThrowGiftPanel_400009": {
+    "Id": "ThrowGiftPanel_400009",
+    "Title": "豪礼抛物线",
+    "Coin": true,
+    "CoinIds": [
+      73110
+    ]
+  },
+  "ThrowGiftPanel_400015": {
+    "Id": "ThrowGiftPanel_400015",
+    "Title": "豪礼抛物线",
+    "Coin": true,
+    "CoinIds": [
+      73114
+    ]
+  },
+  "JointDrillBuildList_Mode2": {
+    "Id": "JointDrillBuildList_Mode2",
+    "Title": "出战配置",
+    "EntryId": 201602
+  },
+  "JointDrillLevelSelect_Mode2": {
+    "Id": "JointDrillLevelSelect_Mode2",
+    "Title": "终焉绝响",
+    "EntryId": 201601
+  },
+  "JointDrillRanking_Mode2": {
+    "Id": "JointDrillRanking_Mode2",
+    "Title": "终焉绝响排行榜"
+  },
+  "Shop_10104": {
+    "Id": "Shop_10104",
+    "Title": "活动商店",
+    "Coin": true
+  },
+  "ActivityLevelsSelectPanel_10104": {
+    "Id": "ActivityLevelsSelectPanel_10104",
+    "Title": "战斗关卡",
+    "Energy": true
+  },
+  "Task_10104": {
+    "Id": "Task_10104",
+    "Title": "活动任务",
+    "Coin": true,
+    "CoinIds": [
+      73106
+    ]
+  },
+  "PenguinCardLevel": {
+    "Id": "PenguinCardLevel",
+    "Title": "命运星牌局",
+    "EntryId": 400501
+  },
+  "SpringFestivalStory": {
+    "Id": "SpringFestivalStory",
+    "Title": "剧情故事"
+  },
+  "SpringFestivalThemePanel": {
+    "Id": "SpringFestivalThemePanel",
+    "Title": "春节活动",
+    "Coin": true,
+    "CoinIds": [
+      73106
+    ]
+  },
+  "CookieGamePanel_400006": {
+    "Id": "CookieGamePanel_400006",
+    "Title": "甜心梦工坊",
+    "EntryId": 400301,
+    "Coin": true
+  },
+  "CookieBoardPanel_400006": {
+    "Id": "CookieBoardPanel_400006",
+    "Title": "甜心梦工坊"
+  },
+  "ActivityLevelsSelectPanel_10105": {
+    "Id": "ActivityLevelsSelectPanel_10105",
+    "Title": "战斗关卡",
+    "Energy": true
+  },
+  "Task_10105": {
+    "Id": "Task_10105",
+    "Title": "活动任务",
+    "Coin": true,
+    "CoinIds": [
+      73107
+    ]
+  },
+  "Shop_10105": {
+    "Id": "Shop_10105",
+    "Title": "活动商店",
+    "Coin": true
+  },
+  "WinterNightThemePanel": {
+    "Id": "WinterNightThemePanel",
+    "Title": "活动",
+    "Coin": true,
+    "CoinIds": [
+      73107
+    ]
+  },
+  "WinterNightStory": {
+    "Id": "WinterNightStory",
+    "Title": "剧情故事"
+  },
+  "ActivityLevelsSelectPanel_10106": {
+    "Id": "ActivityLevelsSelectPanel_10106",
+    "Title": "战斗关卡",
+    "Energy": true
+  },
+  "Shop_10106": {
+    "Id": "Shop_10106",
+    "Title": "活动商店",
+    "Coin": true
+  },
+  "Task_10106": {
+    "Id": "Task_10106",
+    "Title": "活动任务",
+    "Coin": true,
+    "CoinIds": [
+      73108
+    ]
+  },
+  "PostalStory": {
+    "Id": "PostalStory",
+    "Title": "剧情故事"
+  },
+  "PostalThemePanel": {
+    "Id": "PostalThemePanel",
+    "Title": "活动",
+    "Coin": true,
+    "CoinIds": [
+      73108
+    ]
+  },
+  "RankBuildDetail": {
+    "Id": "RankBuildDetail",
+    "Title": "纪录详情"
+  },
+  "TrekkerVersus_600002": {
+    "Id": "TrekkerVersus_600002",
+    "Title": "巅峰秀场",
+    "EntryId": 200801
+  },
+  "EquipmentUpgrade": {
+    "Id": "EquipmentUpgrade",
+    "Title": "TopBar.EquipmentUpgrade.1",
+    "HideBack": true,
+    "Coin": true,
+    "CoinIds": [
+      1,
+      35010
+    ],
+    "DelayShow": true
+  },
+  "PotentialPreselectionList": {
+    "Id": "PotentialPreselectionList",
+    "Title": "潜能预设",
+    "EntryId": 200302
+  },
+  "PotentialPreselectionEdit": {
+    "Id": "PotentialPreselectionEdit",
+    "Title": "潜能预设",
+    "EntryId": 200302
+  },
+  "ActivityLevelsSelectPanel_20102": {
+    "Id": "ActivityLevelsSelectPanel_20102",
+    "Title": "战斗关卡",
+    "Energy": true
+  },
+  "Task_20102": {
+    "Id": "Task_20102",
+    "Title": "活动任务",
+    "Coin": true,
+    "CoinIds": [
+      73109
+    ]
+  },
+  "Shop_20102": {
+    "Id": "Shop_20102",
+    "Title": "活动商店",
+    "Coin": true
+  },
+  "SolodanceThemePanel": {
+    "Id": "SolodanceThemePanel",
+    "Title": "活动",
+    "Coin": true,
+    "CoinIds": [
+      73109
+    ]
+  },
+  "SolodanceStory": {
+    "Id": "SolodanceStory",
+    "Title": "剧情故事"
+  },
+  "GoldenSpyLevelSelectPanel_400008": {
+    "Id": "GoldenSpyLevelSelectPanel_400008",
+    "Title": "月华窃梦人",
+    "Coin": true,
+    "CoinIds": [
+      73109
+    ]
+  },
+  "GoldenSpyLevelSelectPanel_400012": {
+    "Id": "GoldenSpyLevelSelectPanel_400012",
+    "Title": "月华窃梦人",
+    "Coin": true,
+    "CoinIds": [
+      73112
+    ]
+  },
+  "GoldenSpyLevelSelectPanel_400017": {
+    "Id": "GoldenSpyLevelSelectPanel_400017",
+    "Title": "月华窃梦人",
+    "Coin": true,
+    "CoinIds": [
+      73116
+    ]
+  },
+  "ActivityLevelsSelectPanel_10107": {
+    "Id": "ActivityLevelsSelectPanel_10107",
+    "Title": "战斗关卡",
+    "Energy": true
+  },
+  "Task_10107": {
+    "Id": "Task_10107",
+    "Title": "活动任务",
+    "Coin": true,
+    "CoinIds": [
+      73110
+    ]
+  },
+  "Shop_10107": {
+    "Id": "Shop_10107",
+    "Title": "活动商店",
+    "Coin": true
+  },
+  "BreakOutThemePanel_S2": {
+    "Id": "BreakOutThemePanel_S2",
+    "Title": "缭乱碎晶球",
+    "Coin": true,
+    "CoinIds": [
+      73202
+    ]
+  },
+  "Shop_30102": {
+    "Id": "Shop_30102",
+    "Title": "活动商店",
+    "Coin": true
+  },
+  "Task_30102": {
+    "Id": "Task_30102",
+    "Title": "活动任务",
+    "Coin": true,
+    "CoinIds": [
+      73202
+    ]
+  },
+  "BreakOutLevelDetailPanelS2": {
+    "Id": "BreakOutLevelDetailPanelS2",
+    "Title": "缭乱碎晶球"
+  },
+  "Main_10107": {
+    "Id": "Main_10107",
+    "Title": "活动",
+    "Coin": true,
+    "CoinIds": [
+      73110
+    ]
+  },
+  "ViewfinderStory": {
+    "Id": "ViewfinderStory",
+    "Title": "剧情故事"
+  },
+  "Task_10108": {
+    "Id": "Task_10108",
+    "Title": "活动任务",
+    "Coin": true,
+    "CoinIds": [
+      73111
+    ]
+  },
+  "Shop_10108": {
+    "Id": "Shop_10108",
+    "Title": "活动商店",
+    "Coin": true
+  },
+  "Main_10108": {
+    "Id": "Main_10108",
+    "Title": "活动",
+    "Coin": true,
+    "CoinIds": [
+      73111
+    ]
+  },
+  "ActivityLevelsSelectPanel_10108": {
+    "Id": "ActivityLevelsSelectPanel_10108",
+    "Title": "战斗关卡",
+    "Energy": true
+  },
+  "TechStory": {
+    "Id": "TechStory",
+    "Title": "剧情故事"
+  },
+  "CookieGamePanel_400010": {
+    "Id": "CookieGamePanel_400010",
+    "Title": "甜心梦工坊",
+    "EntryId": 400301,
+    "Coin": true
+  },
+  "CookieBoardPanel_400010": {
+    "Id": "CookieBoardPanel_400010",
+    "Title": "甜心梦工坊"
+  },
+  "CookieGamePanel_400016": {
+    "Id": "CookieGamePanel_400016",
+    "Title": "甜心梦工坊",
+    "EntryId": 400301,
+    "Coin": true,
+    "CoinIds": [
+      73115
+    ]
+  },
+  "CookieBoardPanel_400016": {
+    "Id": "CookieBoardPanel_400016",
+    "Title": "甜心梦工坊"
+  },
+  "Task_11100": {
+    "Id": "Task_11100",
+    "Title": "活动任务",
+    "Coin": true,
+    "CoinIds": [
+      73101
+    ]
+  },
+  "ActivityLevelsSelectPanel_11100": {
+    "Id": "ActivityLevelsSelectPanel_11100",
+    "Title": "战斗关卡",
+    "Energy": true
+  },
+  "SwimTheme_11100": {
+    "Id": "SwimTheme_11100",
+    "Title": "活动",
+    "Coin": true,
+    "CoinIds": [
+      73101
+    ]
+  },
+  "SwimThemeStory_11100": {
+    "Id": "SwimThemeStory_11100",
+    "Title": "剧情故事"
+  },
+  "Shop_11100": {
+    "Id": "Shop_11100",
+    "Title": "活动商店",
+    "Coin": true
+  },
+  "MiningGame_400011": {
+    "Id": "MiningGame_400011",
+    "Title": "幸运寻宝铲",
+    "EntryId": 400101
+  },
+  "MiningGameGuidePanel_400011": {
+    "Id": "MiningGameGuidePanel_400011",
+    "Title": "宝藏图鉴"
+  },
+  "ActivityLevelsSelectPanel_10109": {
+    "Id": "ActivityLevelsSelectPanel_10109",
+    "Title": "战斗关卡",
+    "Energy": true
+  },
+  "Shop_10109": {
+    "Id": "Shop_10109",
+    "Title": "活动商店",
+    "Coin": true
+  },
+  "Task_10109": {
+    "Id": "Task_10109",
+    "Title": "活动任务",
+    "Coin": true,
+    "CoinIds": [
+      73112
+    ]
+  },
+  "GunStormStory_10109": {
+    "Id": "GunStormStory_10109",
+    "Title": "剧情故事"
+  },
+  "GunStormPanel": {
+    "Id": "GunStormPanel",
+    "Title": "活动",
+    "Coin": true,
+    "CoinIds": [
+      73112
+    ]
+  },
+  "SoldierTestEnter": {
+    "Id": "SoldierTestEnter",
+    "Title": "自走棋测试"
+  },
+  "TraceHunt": {
+    "Id": "TraceHunt",
+    "Title": "猎影合围",
+    "EntryId": 201701
+  },
+  "TraceHuntHelp": {
+    "Id": "TraceHuntHelp",
+    "Title": "协助讨伐",
+    "EntryId": 201701
+  },
+  "TraceHuntHandBook": {
+    "Id": "TraceHuntHandBook",
+    "Title": "围猎笔记",
+    "EntryId": 201701
+  },
+  "ActivityLevelsSelectPanel_20103": {
+    "Id": "ActivityLevelsSelectPanel_20103",
+    "Title": "战斗关卡",
+    "Energy": true
+  },
+  "Shop_20103": {
+    "Id": "Shop_20103",
+    "Title": "活动商店",
+    "Coin": true
+  },
+  "Task_20103": {
+    "Id": "Task_20103",
+    "Title": "活动任务",
+    "Coin": true,
+    "CoinIds": [
+      73113
+    ]
+  },
+  "SummerCheckinStory_20103": {
+    "Id": "SummerCheckinStory_20103",
+    "Title": "剧情故事"
+  },
+  "Main_20103": {
+    "Id": "Main_20103",
+    "Title": "活动",
+    "Coin": true,
+    "CoinIds": [
+      73113
+    ]
+  },
+  "IceCreamLevelsSelectPanel": {
+    "Id": "IceCreamLevelsSelectPanel",
+    "Title": "沁凉补给站",
+    "Coin": true,
+    "CoinIds": [
+      73113
+    ]
+  },
+  "MiningGame_400014": {
+    "Id": "MiningGame_400014",
+    "Title": "幸运寻宝铲",
+    "EntryId": 400101
+  },
+  "MiningGameGuidePanel_400014": {
+    "Id": "MiningGameGuidePanel_400014",
+    "Title": "宝藏图鉴"
+  },
+  "SoldierMainViewPanel": {
+    "Id": "SoldierMainViewPanel",
+    "Title": "尖兵陷阵"
+  },
+  "SoldierLevelSelectPanel": {
+    "Id": "SoldierLevelSelectPanel",
+    "Title": "深度选择"
+  },
+  "SoldierHandbookPanel": {
+    "Id": "SoldierHandbookPanel",
+    "Title": "图鉴",
+    "HideHome": true
+  },
+  "SoldierRecommendPanel": {
+    "Id": "SoldierRecommendPanel",
+    "Title": "组队策略",
+    "HideHome": true
+  },
+  "SoldierHandbookSelectPanel": {
+    "Id": "SoldierHandbookSelectPanel",
+    "Title": "图鉴",
+    "HideHome": true
+  },
+  "SoldierRecommendDetailPanel": {
+    "Id": "SoldierRecommendDetailPanel",
+    "Title": "组队策略详情",
+    "HideHome": true
+  },
+  "BreakOutThemePanel_S3": {
+    "Id": "BreakOutThemePanel_S3",
+    "Title": "缭乱碎晶球",
+    "Coin": true,
+    "CoinIds": [
+      73202
+    ]
+  },
+  "Shop_30103": {
+    "Id": "Shop_30103",
+    "Title": "活动商店",
+    "Coin": true
+  },
+  "Task_30103": {
+    "Id": "Task_30103",
+    "Title": "活动任务",
+    "Coin": true,
+    "CoinIds": [
+      73202
+    ]
+  },
+  "BreakOutLevelDetailPanelS3": {
+    "Id": "BreakOutLevelDetailPanelS3",
+    "Title": "缭乱碎晶球"
+  },
+  "ActivityLevelsSelectPanel_10110": {
+    "Id": "ActivityLevelsSelectPanel_10110",
+    "Title": "战斗关卡",
+    "Energy": true
+  },
+  "Shop_10110": {
+    "Id": "Shop_10110",
+    "Title": "活动商店",
+    "Coin": true
+  },
+  "Task_10110": {
+    "Id": "Task_10110",
+    "Title": "活动任务",
+    "Coin": true,
+    "CoinIds": [
+      73114
+    ]
+  },
+  "SummerAdvStory_10110": {
+    "Id": "SummerAdvStory_10110",
+    "Title": "剧情故事"
+  },
+  "SummerAdvPanel": {
+    "Id": "SummerAdvPanel",
+    "Title": "活动",
+    "Coin": true,
+    "CoinIds": [
+      73114
+    ]
+  },
+  "ActivityLevelsSelectPanel_10111": {
+    "Id": "ActivityLevelsSelectPanel_10111",
+    "Title": "战斗关卡",
+    "Energy": true
+  },
+  "Shop_10111": {
+    "Id": "Shop_10111",
+    "Title": "活动商店",
+    "Coin": true
+  },
+  "Task_10111": {
+    "Id": "Task_10111",
+    "Title": "活动任务",
+    "Coin": true,
+    "CoinIds": [
+      73115
+    ]
+  },
+  "CultivationManualStory_10111": {
+    "Id": "CultivationManualStory_10111",
+    "Title": "剧情故事"
+  },
+  "CultivationManualPanel": {
+    "Id": "CultivationManualPanel",
+    "Title": "活动",
+    "Coin": true,
+    "CoinIds": [
+      73115
+    ]
+  },
+  "TrialSkinSelectPanel": {
+    "Id": "TrialSkinSelectPanel",
+    "Title": "时装试玩"
+  },
+  "TrialSkinFormationScenePanel": {
+    "Id": "TrialSkinFormationScenePanel",
+    "Title": "编队"
+  },
+  "EventReminderPanel": {
+    "Id": "EventReminderPanel",
+    "Title": "待办事项"
+  },
+  "ActivityLevelsSelectPanel_10112": {
+    "Id": "ActivityLevelsSelectPanel_10112",
+    "Title": "战斗关卡",
+    "Energy": true
+  },
+  "Shop_10112": {
+    "Id": "Shop_10112",
+    "Title": "活动商店",
+    "Coin": true
+  },
+  "Task_10112": {
+    "Id": "Task_10112",
+    "Title": "活动任务",
+    "Coin": true,
+    "CoinIds": [
+      73116
+    ]
+  },
+  "LongestDayPanel": {
+    "Id": "LongestDayPanel",
+    "Title": "活动",
+    "Coin": true,
+    "CoinIds": [
+      73116
+    ]
+  },
+  "BreakOutThemePanel_S4": {
+    "Id": "BreakOutThemePanel_S4",
+    "Title": "缭乱碎晶球",
+    "Coin": true,
+    "CoinIds": [
+      73202
+    ]
+  },
+  "Shop_30104": {
+    "Id": "Shop_30104",
+    "Title": "活动商店",
+    "Coin": true
+  },
+  "Task_30104": {
+    "Id": "Task_30104",
+    "Title": "活动任务",
+    "Coin": true,
+    "CoinIds": [
+      73202
+    ]
+  },
+  "BreakOutLevelDetailPanelS4": {
+    "Id": "BreakOutLevelDetailPanelS4",
+    "Title": "缭乱碎晶球"
+  },
+  "ActivityStoryReview": {
+    "Id": "ActivityStoryReview",
+    "Title": "活动回顾"
+  },
+  "ReengagementPanel": {
+    "Id": "ReengagementPanel",
+    "Title": "归星漫途"
+  },
+  "DormPanel": {
+    "Id": "DormPanel",
+    "Title": "后宅"
+  },
+  "DormRoomSelectPanel": {
+    "Id": "DormRoomSelectPanel",
+    "Title": "房间选择",
+    "HideHome": true
+  },
+  "GuideMission": {
+    "Id": "GuideMission",
+    "Title": "星途回顾",
+    "Coin": true,
+    "CoinIds": [
+      41
+    ]
+  },
+  "MathParkourLevelSelectPanel": {
+    "Id": "MathParkourLevelSelectPanel",
+    "Title": "速度与机擎"
+  },
+  "SoldierTechPanel": {
+    "Id": "SoldierTechPanel",
+    "Title": "策略树",
+    "Coin": true,
+    "CoinIds": [
+      2701003
+    ]
+  },
+  "SoldierLevelRewardPanel": {
+    "Id": "SoldierLevelRewardPanel",
+    "Title": "调查等级"
+  },
+  "SoldierHandbookPartnerDetailPanel": {
+    "Id": "SoldierHandbookPartnerDetailPanel",
+    "Title": "羁绊详情"
+  },
+  "BuildModifierMusicPanel": {
+    "Id": "BuildModifierMusicPanel",
+    "Title": "音符数量调整",
+    "EntryId": 300121,
+    "Coin": true
+  },
+  "BuildModifierPotentialPanel": {
+    "Id": "BuildModifierPotentialPanel",
+    "Title": "潜能等级调整",
+    "EntryId": 300120,
+    "Coin": true
+  },
+  "ActivityLevelsSelectPanel_20104": {
+    "Id": "ActivityLevelsSelectPanel_20104",
+    "Title": "战斗关卡",
+    "Energy": true
+  },
+  "Shop_20104": {
+    "Id": "Shop_20104",
+    "Title": "活动商店",
+    "Coin": true
+  },
+  "Task_20104": {
+    "Id": "Task_20104",
+    "Title": "活动任务",
+    "Coin": true,
+    "CoinIds": [
+      73117
+    ]
+  },
+  "DustDawnPanel": {
+    "Id": "DustDawnPanel",
+    "Title": "活动",
+    "Coin": true,
+    "CoinIds": [
+      73117
+    ]
+  },
+  "DustDawnStory": {
+    "Id": "DustDawnStory",
+    "Title": "主线剧情"
+  },
+  "ActivityLevelsSelectPanel_10113": {
+    "Id": "ActivityLevelsSelectPanel_10113",
+    "Title": "战斗关卡",
+    "Energy": true
+  },
+  "Shop_10113": {
+    "Id": "Shop_10113",
+    "Title": "活动商店",
+    "Coin": true
+  },
+  "Task_10113": {
+    "Id": "Task_10113",
+    "Title": "活动任务",
+    "Coin": true,
+    "CoinIds": [
+      73117
+    ]
+  },
+  "UnchartedMapStory_10113": {
+    "Id": "UnchartedMapStory_10113",
+    "Title": "剧情故事"
+  },
+  "UnchartedMapPanel": {
+    "Id": "UnchartedMapPanel",
+    "Title": "活动",
+    "Coin": true,
+    "CoinIds": [
+      73117
+    ]
+  },
+  "StarTowerTokenBuyPanel": {
+    "Id": "StarTowerTokenBuyPanel",
+    "Title": "TopBar.StarTowerTokenBuyPanel.1",
+    "HideBack": true,
+    "Coin": true,
+    "CoinIds": [
+      2,
+      3
+    ],
+    "HideCoinAdd": true,
+    "DelayShow": true
+  }
+}

@@ -1,0 +1,540 @@
+{
+  "1": {
+    "Id": 1,
+    "PartnerType": 1,
+    "Name": "空白旅团",
+    "Icon": "Soldier_00_Partner_101",
+    "Desc": "【空白旅团】成员施放技能时，全体【空白旅团】成员获得「雏菊」。\n「雏菊」：提升5%攻击<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Atk\" tint></color>，提升10%暴击伤害<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_CritPower\" tint></color>。\n全场「雏菊」总层数达到30层时开启「三连新星」。\n「三连新星」：所有成员提升20%回能效率<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_RecoveryEnergy\" tint></color>，提升100%暴击率<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_CritRate\" tint></color>，持续5秒，结束后清除场上所有「雏菊」。",
+    "ChessCharacterIds": [
+      2501001,
+      2501002,
+      2501003
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_101",
+    "PartnerCatalogue": 1
+  },
+  "2": {
+    "Id": 2,
+    "PartnerType": 2,
+    "Name": "万送屋",
+    "Icon": "Soldier_00_Partner_102",
+    "Desc": "【万送屋】成员的技能造成伤害时，对目标施加「水雾」，每0.5秒最多1层。\n「水雾」：降低5%攻击速度<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_AtkSpd\" tint></color>、降低5%造成伤害<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_GenDmg\" tint></color>，持续10秒。",
+    "ChessCharacterIds": [
+      2501004,
+      2501005,
+      2501006
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_102",
+    "PartnerCatalogue": 1
+  },
+  "3": {
+    "Id": 3,
+    "PartnerType": 3,
+    "Name": "花令旅团",
+    "Icon": "Soldier_00_Partner_103",
+    "Desc": "任意位于后援配置成员施放技能时，【花令旅团】成员立即获得能量<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Energy\" tint></color>，技能伤害<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_SkillDmg\" tint></color>提升。\n位于后援位置【花令旅团】成员的星级会使主战配置【花令旅团】成员技能伤害<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_SkillDmg\" tint></color>提升翻倍，不同成员效果叠加。\n1/2/3星的【花令旅团】成员，提供1/2/3倍的技能伤害<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_SkillDmg\" tint></color>提升。",
+    "ChessCharacterIds": [
+      2501008,
+      2501007,
+      2501009
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_103",
+    "PartnerCatalogue": 1
+  },
+  "4": {
+    "Id": 4,
+    "PartnerType": 4,
+    "Name": "恩赐意志",
+    "Icon": "Soldier_00_Partner_104",
+    "Desc": "【恩赐意志】成员施放技能时，给全体敌方添加恩赐印记：「制裁之印」或「清算之印」；携带印记的成员阵亡后，将自身当前层数的印记转移给最近的同阵营成员。\n「制裁之印」：每2秒损失当前存活的所有【恩赐意志】成员攻击之和10%的生命值，持续8秒。\n「清算之印」：每2秒损失当前存活的所有【恩赐意志】成员攻击之和20%的生命值，持续8秒。",
+    "ChessCharacterIds": [
+      2501015,
+      2501010,
+      2501014,
+      2501016
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_104",
+    "PartnerCatalogue": 1
+  },
+  "5": {
+    "Id": 5,
+    "PartnerType": 5,
+    "Name": "齿轮转转",
+    "Icon": "Soldier_00_Partner_105",
+    "Desc": "【齿轮转转】后援配置成员技能伤害<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_SkillDmg\" tint></color>提升，回能效率<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_RecoveryEnergy\" tint></color>提升。",
+    "ChessCharacterIds": [
+      2501011,
+      2501038,
+      2501039,
+      2501040
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_105",
+    "PartnerCatalogue": 2
+  },
+  "6": {
+    "Id": 6,
+    "PartnerType": 6,
+    "Name": "帝国卫队",
+    "Icon": "Soldier_00_Partner_106",
+    "Desc": "战斗开始时【帝国卫队】成员获得初始能量<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Energy\" tint></color>提升，回能效率<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_RecoveryEnergy\" tint></color>提升。",
+    "ChessCharacterIds": [
+      2501013,
+      2501024,
+      2501023,
+      2501021,
+      2501022,
+      2501063
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_106",
+    "PartnerCatalogue": 1
+  },
+  "7": {
+    "Id": 7,
+    "PartnerType": 7,
+    "Name": "地理协会",
+    "Icon": "Soldier_00_Partner_107",
+    "Desc": "每经过一定时间【地理协会】成员获得「援护火力」。\n「援护火力」：使普攻和技能的最终伤害提升20%。",
+    "ChessCharacterIds": [
+      2501017
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_107",
+    "PartnerCatalogue": 1
+  },
+  "8": {
+    "Id": 8,
+    "PartnerType": 8,
+    "Name": "自由旅人",
+    "Icon": "Soldier_00_Partner_108",
+    "Desc": "出场后给全队提升特定属性，【自由旅人】成员额外获得100%提升。",
+    "ChessCharacterIds": [
+      2501018,
+      2501019,
+      2501046,
+      2501047,
+      2501050,
+      2501051,
+      2501053
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_108",
+    "PartnerCatalogue": 1
+  },
+  "9": {
+    "Id": 9,
+    "PartnerType": 9,
+    "Name": "灰风俱乐部",
+    "Icon": "Soldier_00_Partner_109",
+    "Desc": "【灰风俱乐部】成员对敌人造成伤害时，添加「围攻」标记，标记持续5秒。\n【灰风俱乐部】成员对携带「围攻」标记的成员造成伤害时，提升20%造成伤害<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_GenDmg\" tint></color>。",
+    "ChessCharacterIds": [
+      2501020,
+      2501028,
+      2501027,
+      2501029,
+      2501030
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_109",
+    "PartnerCatalogue": 1
+  },
+  "10": {
+    "Id": 10,
+    "PartnerType": 10,
+    "Name": "联合种业",
+    "Icon": "Soldier_00_Partner_110",
+    "Desc": "可通过多种方式获得额外金币奖励<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Coin\" tint></color>，每通过该羁绊获取1枚金币<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Coin\" tint></color>，叠加1层「绩效」。\n「绩效」：每层使【联合种业】成员提升2%最大生命<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_MaxHp\" tint></color>和5%攻击力<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Atk\" tint></color>。\n当前「绩效」层数：<color=#f98037>==HARVEST==</color>",
+    "ChessCharacterIds": [
+      2501026,
+      2501025,
+      2501058,
+      2501045,
+      2501048
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_110",
+    "PartnerCatalogue": 1
+  },
+  "11": {
+    "Id": 11,
+    "PartnerType": 11,
+    "Name": "森林朋友",
+    "Icon": "Soldier_00_Partner_111",
+    "Desc": "每隔一定时间触发1次「自然生长」。\n「自然生长」：回复主战配置成员3%最大生命<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_MaxHp\" tint></color>，【森林朋友】成员效果翻倍。",
+    "ChessCharacterIds": [
+      2501034,
+      2501033,
+      2501037,
+      2501032,
+      2501031,
+      2501035,
+      2501036
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_111",
+    "PartnerCatalogue": 1
+  },
+  "12": {
+    "Id": 12,
+    "PartnerType": 12,
+    "Name": "夏洛克",
+    "Icon": "Soldier_00_Partner_112",
+    "Desc": "战斗开始后【夏洛克】到出战位时献祭所有除自己外的【森林朋友】成员，继承得其攻击<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Atk\" tint></color>和最大生命<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_MaxHp\" tint></color>，并回复继承值的生命。",
+    "ChessCharacterIds": [
+      2501034
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_112",
+    "PartnerCatalogue": 1
+  },
+  "13": {
+    "Id": 13,
+    "PartnerType": 13,
+    "Name": "生存达人",
+    "Icon": "Soldier_00_Partner_113",
+    "Desc": "上场成员中每有1个【生存达人】成员，所有友方成员最大生命<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_MaxHp\" tint></color>提升。",
+    "ChessCharacterIds": [
+      2501056,
+      2501020,
+      2501001,
+      2501033,
+      2501006
+    ],
+    "PartnerCatalogue": 2
+  },
+  "14": {
+    "Id": 14,
+    "PartnerType": 14,
+    "Name": "沐浴恩典",
+    "Icon": "Soldier_00_Partner_114",
+    "Desc": "所有友方成员攻击<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Atk\" tint></color>提升3%，激活主战配置成员中攻击属性最高的成员为「圣光御体」。\n「圣光御体」：提升30%攻击<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Atk\" tint></color>，提升50%攻击速度<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_AtkSpd\" tint></color>，提升25%回能效率<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_RecoveryEnergy\" tint></color>。",
+    "ChessCharacterIds": [
+      2501015,
+      2501013,
+      2501002,
+      2501016,
+      2501062
+    ],
+    "PartnerCatalogue": 2
+  },
+  "15": {
+    "Id": 15,
+    "PartnerType": 15,
+    "Name": "百步穿杨",
+    "Icon": "Soldier_00_Partner_115",
+    "Desc": "所有友方成员暴击率<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_CritRate\" tint></color>提升，【百步穿杨】成员额外提升。",
+    "ChessCharacterIds": [
+      2501003,
+      2501005,
+      2501022,
+      2501060,
+      2501049,
+      2501052,
+      2501055
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_115",
+    "PartnerCatalogue": 2
+  },
+  "16": {
+    "Id": 16,
+    "PartnerType": 16,
+    "Name": "巅峰战士",
+    "Icon": "Soldier_00_Partner_116",
+    "Desc": "【巅峰战士】成员施放技能时，自身获得1层「武者气势」（上限5层）。\n每层「武者气势」带来技能伤害<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_SkillDmg\" tint></color>提升。",
+    "ChessCharacterIds": [
+      2501018,
+      2501004,
+      2501012,
+      2501007,
+      2501064
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_116",
+    "PartnerCatalogue": 2
+  },
+  "17": {
+    "Id": 17,
+    "PartnerType": 17,
+    "Name": "魅力满溢",
+    "Icon": "Soldier_00_Partner_117",
+    "Desc": "【魅力满溢】成员施放技能时，给全体敌人施加「魅惑」。\n「魅惑」：提升10%受到伤害<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_DmgPlusRcd\" tint></color>，持续8秒。",
+    "ChessCharacterIds": [
+      2501017,
+      2501010,
+      2501019,
+      2501048
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_117",
+    "PartnerCatalogue": 2
+  },
+  "18": {
+    "Id": 18,
+    "PartnerType": 18,
+    "Name": "人多势众",
+    "Icon": "Soldier_00_Partner_118",
+    "Desc": "每激活1种其他羁绊，提升攻击<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Atk\" tint></color>和暴击率<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_CritRate\" tint></color>。",
+    "ChessCharacterIds": [
+      2501057,
+      2501021,
+      2501029,
+      2501031
+    ],
+    "PartnerCatalogue": 2
+  },
+  "19": {
+    "Id": 19,
+    "PartnerType": 19,
+    "Name": "摸鱼高手",
+    "Icon": "Soldier_00_Partner_119",
+    "Desc": "【摸鱼高手】成员每隔一段时间会进入「放松状态」，遇敌节点战斗结束时获得和场上【摸鱼高手】成员数量相等的经验。\n「放松状态」：不主动施放技能和普攻，减少25%受到伤害<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_DmgPlusRcd\" tint></color>。",
+    "ChessCharacterIds": [
+      2501016,
+      2501036,
+      2501047,
+      2501008
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_119",
+    "PartnerCatalogue": 2
+  },
+  "20": {
+    "Id": 20,
+    "PartnerType": 20,
+    "Name": "龙裔",
+    "Icon": "Soldier_00_Partner_120",
+    "Desc": "召唤「九霄瑞彩流光筒」协助战斗，持续发射烟花攻击随机敌人。烟花发射频率随【龙裔】成员总星级提升。",
+    "ChessCharacterIds": [
+      2501041,
+      2501042,
+      2501043
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_120",
+    "PartnerCatalogue": 1
+  },
+  "21": {
+    "Id": 21,
+    "PartnerType": 21,
+    "Name": "白猫剧团",
+    "Icon": "Soldier_00_Partner_121",
+    "Desc": "【白猫剧团】成员技能得到强化。",
+    "ChessCharacterIds": [
+      2501044,
+      2501055
+    ],
+    "PartnerCatalogue": 1
+  },
+  "22": {
+    "Id": 22,
+    "PartnerType": 22,
+    "Name": "沙蝎佣兵团",
+    "Icon": "Soldier_00_Partner_122",
+    "Desc": "召唤「荒沙战傀」协助战斗。\n「荒沙战傀」随羁绊等级提升解锁更多技能，其最大生命<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_MaxHp\" tint></color>和攻击<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Atk\" tint></color>随【沙蝎佣兵团】成员总星级提升。",
+    "ChessCharacterIds": [
+      2501057,
+      2501059,
+      2501060,
+      2501064
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_122",
+    "PartnerCatalogue": 1
+  },
+  "23": {
+    "Id": 23,
+    "PartnerType": 23,
+    "Name": "黎明近卫",
+    "Icon": "Soldier_00_Partner_123",
+    "Desc": "敌方单位死亡时，【黎明近卫】成员立即获得「追猎」效果。\n「追猎」：提升60%技能伤害<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_SkillDmg\" tint></color>，施放技能后消耗1层「追猎」。",
+    "ChessCharacterIds": [
+      2501012,
+      2501061,
+      2501062
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_123",
+    "PartnerCatalogue": 1
+  },
+  "24": {
+    "Id": 24,
+    "PartnerType": 24,
+    "Name": "航海专家",
+    "Icon": "Soldier_00_Partner_124",
+    "Desc": "战斗开始时随机获得一种「天气」效果。【航海专家】成员会获得额外加成并免疫恶劣「天气」。",
+    "ChessCharacterIds": [
+      2501019,
+      2501049
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_124",
+    "PartnerCatalogue": 1
+  },
+  "25": {
+    "Id": 25,
+    "PartnerType": 25,
+    "Name": "王牌特工",
+    "Icon": "Soldier_00_Partner_125",
+    "Desc": "所有友方成员暴击伤害<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_CritPower\" tint></color>提升，【王牌特工】成员获得额外加成。",
+    "ChessCharacterIds": [
+      2501061,
+      2501051,
+      2501052
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_125",
+    "PartnerCatalogue": 2
+  },
+  "26": {
+    "Id": 26,
+    "PartnerType": 26,
+    "Name": "指挥官",
+    "Icon": "Soldier_00_Partner_126",
+    "Desc": "和【指挥官】成员拥有任意相同其他羁绊的成员被视为其「追随者」。【指挥官】施放技能时，「追随者」会获得不同类型的「领袖激励」加成。场上有2/3个【指挥官】登场时失效。",
+    "ChessCharacterIds": [
+      2501044,
+      2501048,
+      2501063,
+      2501064
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_126",
+    "PartnerCatalogue": 2
+  },
+  "27": {
+    "Id": 27,
+    "PartnerType": 27,
+    "Name": "绮丽魔法",
+    "Icon": "Soldier_00_Partner_127",
+    "Desc": "【绮丽魔法】成员获得技能伤害<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_SkillDmg\" tint></color>加成和「双重咏唱」，第二次施法效能会有所衰减。",
+    "ChessCharacterIds": [
+      2501043,
+      2501047,
+      2501009,
+      2501062,
+      2501054
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_127",
+    "PartnerCatalogue": 2
+  },
+  "28": {
+    "Id": 28,
+    "PartnerType": 28,
+    "Name": "火力压制",
+    "Icon": "Soldier_00_Partner_128",
+    "Desc": "【火力压制】成员造成普攻伤害时叠加攻击速度<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_AtkSpd\" tint></color>，每0.5秒最多叠加1层，上限20层。\n达到满层时额外提升60%普攻伤害<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_NormalDmg\" tint></color>。",
+    "ChessCharacterIds": [
+      2501040,
+      2501058,
+      2501059,
+      2501028,
+      2501044,
+      2501050,
+      2501055
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_128",
+    "PartnerCatalogue": 2
+  },
+  "29": {
+    "Id": 29,
+    "PartnerType": 29,
+    "Name": "学富五车",
+    "Icon": "Soldier_00_Partner_129",
+    "Desc": "所有友方成员获得回能效率<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_RecoveryEnergy\" tint></color>提升，【学富五车】成员获得额外提升。",
+    "ChessCharacterIds": [
+      2501011,
+      2501042,
+      2501046,
+      2501015
+    ],
+    "PartnerCatalogue": 2
+  },
+  "30": {
+    "Id": 30,
+    "PartnerType": 30,
+    "Name": "美食鉴赏家",
+    "Icon": "Soldier_00_Partner_130",
+    "Desc": "所有友方成员造成伤害<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_GenDmg\" tint></color>时按比例回复生命<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Hp\" tint></color>，战斗开始10秒后获得当前生命值<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Hp\" tint></color>一定比例的护盾。",
+    "ChessCharacterIds": [
+      2501012,
+      2501041,
+      2501032,
+      2501045
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_130",
+    "PartnerCatalogue": 2
+  },
+  "31": {
+    "Id": 31,
+    "PartnerType": 31,
+    "Name": "骑士精神",
+    "Icon": "Soldier_00_Partner_131",
+    "Desc": "【骑士精神】成员施放技能时，会为自身除外的当前护盾值最少的出战成员生成护盾。",
+    "ChessCharacterIds": [
+      2501013,
+      2501063,
+      2501056
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_131",
+    "PartnerCatalogue": 2
+  },
+  "32": {
+    "Id": 32,
+    "PartnerType": 32,
+    "Name": "武器大师",
+    "Icon": "Soldier_00_Partner_132",
+    "Desc": "【武器大师】成员造成普攻伤害<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_NormalDmg\" tint></color>时获得1层「蓄势」，施放技能时，消耗所有「蓄势」，并获得相同层数的「余威」。\n「蓄势」：每层提升20%技能伤害<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_SkillDmg\" tint></color>。\n「余威」：每次普攻消耗1层，使该次普攻伤害<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_NormalDmg\" tint></color>提升60%。",
+    "ChessCharacterIds": [
+      2501011,
+      2501014,
+      2501050,
+      2501051
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_132",
+    "PartnerCatalogue": 2
+  },
+  "33": {
+    "Id": 33,
+    "PartnerType": 33,
+    "Name": "守夜人",
+    "Icon": "Soldier_00_Partner_137",
+    "Desc": "【尘沙（源初）】登场时激活效果。",
+    "ChessCharacterIds": [
+      2501056
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_137",
+    "PartnerCatalogue": 1
+  },
+  "34": {
+    "Id": 34,
+    "PartnerType": 34,
+    "Name": "搞个大新闻",
+    "Icon": "Soldier_00_Partner_135",
+    "Desc": "【雾语】登场时激活效果。",
+    "ChessCharacterIds": [
+      2501054
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_135",
+    "PartnerCatalogue": 2
+  },
+  "35": {
+    "Id": 35,
+    "PartnerType": 35,
+    "Name": "千变忍者",
+    "Icon": "Soldier_00_Partner_136",
+    "Desc": "【乙叶】登场时激活效果。",
+    "ChessCharacterIds": [
+      2501053
+    ],
+    "PartnerCatalogue": 1
+  },
+  "36": {
+    "Id": 36,
+    "PartnerType": 36,
+    "Name": "忍道传承",
+    "Icon": "Soldier_00_Partner_133",
+    "Desc": "【花原】和【乙叶】同时登场时获得联动效果。",
+    "ChessCharacterIds": [
+      2501052,
+      2501053
+    ],
+    "PartnerCatalogue": 1
+  },
+  "37": {
+    "Id": 37,
+    "PartnerType": 37,
+    "Name": "本尊驾到",
+    "Icon": "Soldier_00_Partner_134",
+    "Desc": "【小禾】和【夏洛克】同时登场时获得联动效果。",
+    "ChessCharacterIds": [
+      2501008,
+      2501034
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_134",
+    "PartnerCatalogue": 1
+  }
+}

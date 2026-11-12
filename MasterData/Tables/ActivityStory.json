@@ -1,0 +1,2336 @@
+{
+  "111000201": {
+    "Id": 111000201,
+    "ChapterId": 11100,
+    "Index": "第一话",
+    "Title": "闪烁的微光",
+    "IconRes": "Icon/ActivityStory/ep_event01_01",
+    "Desc": "夏日的海滨小镇，流传着一则恐怖传说：\n远海之上，闪烁着“幽灵船”的绿光。\n你目睹了那诡异的光芒，被大海吞没……",
+    "Type": 3,
+    "StoryId": "STev_01_01",
+    "ConditionId": 111000201,
+    "Aim": "ActivityStory.111000201.3",
+    "AvgLuaName": "STev_01_01",
+    "AvgMotion": "style_44",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event01_01"
+  },
+  "111000202": {
+    "Id": 111000202,
+    "ChapterId": 11100,
+    "Index": "第二话",
+    "Title": "来自幽灵船",
+    "IconRes": "Icon/ActivityStory/ep_event01_02",
+    "Desc": "两位陌生的兔子少女搭救了你。\n她们要去寻找“幽灵船”光芒的源头。",
+    "Type": 3,
+    "StoryId": "STev_01_02",
+    "ConditionId": 111000202,
+    "ParentStoryId": [
+      "STev_01_01"
+    ],
+    "Aim": "ActivityStory.111000202.3",
+    "AvgLuaName": "STev_01_02",
+    "AvgMotion": "style_44",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event01_02"
+  },
+  "111000203": {
+    "Id": 111000203,
+    "ChapterId": 11100,
+    "Index": "第三话",
+    "Title": "谜团与气味",
+    "IconRes": "Icon/ActivityStory/ep_event01_03",
+    "Desc": "你得知了希娅和花铃此行的目的：\n她们要为奶奶正名。\n不知为何，希娅对你异常亲近……",
+    "Type": 3,
+    "StoryId": "STev_01_03",
+    "ConditionId": 111000203,
+    "ParentStoryId": [
+      "STev_01_02"
+    ],
+    "Aim": "ActivityStory.111000203.3",
+    "AvgLuaName": "STev_01_03",
+    "AvgMotion": "style_44",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event01_03"
+  },
+  "111000204": {
+    "Id": 111000204,
+    "ChapterId": 11100,
+    "Index": "第四话",
+    "Title": "声音的指示",
+    "IconRes": "Icon/ActivityStory/ep_event01_04",
+    "Desc": "行程过半，你们途经一座小岛，暂时休整。\n在岛上，花铃听到了异样的声音——\n一伙图谋不轨的旅人现身了。",
+    "Type": 3,
+    "StoryId": "STev_01_04",
+    "ConditionId": 111000204,
+    "ParentStoryId": [
+      "STev_01_03"
+    ],
+    "Aim": "ActivityStory.111000204.3",
+    "AvgLuaName": "STev_01_04",
+    "AvgMotion": "style_44",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event01_04"
+  },
+  "111000205": {
+    "Id": 111000205,
+    "ChapterId": 11100,
+    "Index": "第五话",
+    "Title": "眼见非实",
+    "IconRes": "Icon/ActivityStory/ep_event01_05",
+    "Desc": "种种线索表明，奶奶撒谎了。\n“幽灵船”只是掩人耳目的幌子。\n“面对真相，我们需要一些勇气。”",
+    "Type": 3,
+    "StoryId": "STev_01_05",
+    "ConditionId": 111000205,
+    "ParentStoryId": [
+      "STev_01_04"
+    ],
+    "Aim": "ActivityStory.111000205.3",
+    "AvgLuaName": "STev_01_05",
+    "AvgMotion": "style_44",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event01_05"
+  },
+  "111000206": {
+    "Id": 111000206,
+    "ChapterId": 11100,
+    "Index": "第六话",
+    "Title": "相似之人",
+    "IconRes": "Icon/ActivityStory/ep_event01_06",
+    "Desc": "对于奶奶的隐瞒，希娅早已有所察觉。\n她决定先走一步，去前方探查情况。\n然而，黑暗中有一个身影始终注视着她。",
+    "Type": 3,
+    "StoryId": "STev_01_06",
+    "ConditionId": 111000206,
+    "ParentStoryId": [
+      "STev_01_05"
+    ],
+    "Aim": "ActivityStory.111000206.3",
+    "AvgLuaName": "STev_01_06",
+    "AvgMotion": "style_44",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event01_06"
+  },
+  "111000207": {
+    "Id": 111000207,
+    "ChapterId": 11100,
+    "Index": "第七话",
+    "Title": "阴影之下",
+    "IconRes": "Icon/ActivityStory/ep_event01_07",
+    "Desc": "巨大的六角鲸袭来，你和花铃合力甩掉了它。\n就在你以为危机消散时，希娅却陷入了漩涡。\n绝望之际，那片幽绿的光芒悄然降临。",
+    "Type": 3,
+    "StoryId": "STev_01_07",
+    "ConditionId": 111000207,
+    "ParentStoryId": [
+      "STev_01_06"
+    ],
+    "Aim": "ActivityStory.111000207.3",
+    "AvgLuaName": "STev_01_07",
+    "AvgMotion": "style_44",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event01_07"
+  },
+  "111000208": {
+    "Id": 111000208,
+    "ChapterId": 11100,
+    "DayOpen": 1,
+    "Index": "第八话",
+    "Title": "回响之地",
+    "IconRes": "Icon/ActivityStory/ep_event01_08",
+    "Desc": "你们终于来到了光芒的源头。\n没有幽灵船，只有一片荒芜的岛屿。\n朝着最终的目标，出发！",
+    "Type": 3,
+    "StoryId": "STev_01_08",
+    "ConditionId": 111000208,
+    "ParentStoryId": [
+      "STev_01_07"
+    ],
+    "Aim": "ActivityStory.111000208.3",
+    "AvgLuaName": "STev_01_08",
+    "AvgMotion": "style_44",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event01_08"
+  },
+  "111000209": {
+    "Id": 111000209,
+    "ChapterId": 11100,
+    "DayOpen": 1,
+    "Index": "第九话",
+    "Title": "光的原点",
+    "IconRes": "Icon/ActivityStory/ep_event01_09",
+    "Desc": "暴雨之中，六角鲸的骸骨散发着强烈的光。\n这里是它们的栖息地、坟墓。\n也是无数旅人误以为埋藏宝藏的天国。",
+    "Type": 3,
+    "StoryId": "STev_01_09",
+    "ConditionId": 111000209,
+    "ParentStoryId": [
+      "STev_01_08"
+    ],
+    "Aim": "ActivityStory.111000209.3",
+    "AvgLuaName": "STev_01_09",
+    "AvgMotion": "style_44",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event01_09"
+  },
+  "111000210": {
+    "Id": 111000210,
+    "ChapterId": 11100,
+    "DayOpen": 1,
+    "Index": "第十话",
+    "Title": "海水的秘密",
+    "IconRes": "Icon/ActivityStory/ep_event01_10",
+    "Desc": "你们击退了一路尾随的寻宝旅人。\n混乱之中，意外找回了奶奶当初留下的日记。\n你洞悉了光芒的秘密。",
+    "Type": 3,
+    "StoryId": "STev_01_10",
+    "ConditionId": 111000210,
+    "ParentStoryId": [
+      "STev_01_09"
+    ],
+    "Aim": "ActivityStory.111000210.3",
+    "AvgLuaName": "STev_01_10",
+    "AvgMotion": "style_44",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event01_10"
+  },
+  "111000211": {
+    "Id": 111000211,
+    "ChapterId": 11100,
+    "DayOpen": 1,
+    "Index": "尾声",
+    "Title": "漫无止境的夏天",
+    "IconRes": "Icon/ActivityStory/ep_event01_11",
+    "Desc": "事情圆满结束，你终于可以安心享受。\n属于你的、你们的、永不结束的夏天。",
+    "Type": 3,
+    "StoryId": "STev_01_11",
+    "ConditionId": 111000211,
+    "ParentStoryId": [
+      "STev_01_10"
+    ],
+    "Aim": "ActivityStory.111000211.3",
+    "AvgLuaName": "STev_01_11",
+    "AvgMotion": "style_44",
+    "IsLast": true,
+    "FirstCompleteReward": "{\"2\":50}",
+    "Icon": "Icon/ActivityStory/ep_event01_11"
+  },
+  "201010201": {
+    "Id": 201010201,
+    "ChapterId": 20101,
+    "Index": "01",
+    "Title": "雪愿节的使者",
+    "Desc": "节日来临，热闹非凡的街道上，你看到一个熟悉的身影……",
+    "Type": 3,
+    "StoryId": "STev_02_01",
+    "ConditionId": 201010201,
+    "Aim": "ActivityStory.201010201.3",
+    "AvgLuaName": "STev_02_01",
+    "AvgMotion": "style_20",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "201010202": {
+    "Id": 201010202,
+    "ChapterId": 20101,
+    "Index": "02",
+    "Title": "送礼大作战",
+    "Desc": "穿上制服，你与菈露来到了期待着礼物的孩子们身边……",
+    "Type": 3,
+    "StoryId": "STev_02_02",
+    "ConditionId": 201010202,
+    "ParentStoryId": [
+      "STev_02_01"
+    ],
+    "Aim": "ActivityStory.201010202.3",
+    "AvgLuaName": "STev_02_02",
+    "AvgMotion": "style_20",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "201010203": {
+    "Id": 201010203,
+    "ChapterId": 20101,
+    "Index": "03",
+    "Title": "精灵的踪迹",
+    "Desc": "“雪愿树精灵”，总会帮你实现愿望。",
+    "Type": 3,
+    "StoryId": "STev_02_03",
+    "ConditionId": 201010203,
+    "ParentStoryId": [
+      "STev_02_02"
+    ],
+    "Aim": "ActivityStory.201010203.3",
+    "AvgLuaName": "STev_02_03",
+    "AvgMotion": "style_20",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "201010204": {
+    "Id": 201010204,
+    "ChapterId": 20101,
+    "Index": "04A",
+    "Title": "热情的焰红",
+    "Desc": "你选择去灰风俱乐部一探究竟……",
+    "Type": 3,
+    "StoryId": "STev_02_04_a",
+    "ConditionId": 201010204,
+    "ParentStoryId": [
+      "STev_02_03"
+    ],
+    "Aim": "ActivityStory.201010204.3",
+    "AvgLuaName": "STev_02_04_a",
+    "AvgMotion": "style_20",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "201010205": {
+    "Id": 201010205,
+    "ChapterId": 20101,
+    "Index": "04B",
+    "Title": "巧合的灰白",
+    "Desc": "你选择继续发放孩子们的礼物……",
+    "Type": 3,
+    "StoryId": "STev_02_04_b",
+    "ConditionId": 201010205,
+    "ParentStoryId": [
+      "STev_02_03"
+    ],
+    "Aim": "ActivityStory.201010205.3",
+    "AvgLuaName": "STev_02_04_b",
+    "AvgMotion": "style_20",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "201010206": {
+    "Id": 201010206,
+    "ChapterId": 20101,
+    "Index": "04C",
+    "Title": "漫雪的蓝调",
+    "Desc": "你选择追上隔壁街信使的脚步……",
+    "Type": 3,
+    "StoryId": "STev_02_04_c",
+    "ConditionId": 201010206,
+    "ParentStoryId": [
+      "STev_02_03"
+    ],
+    "Aim": "ActivityStory.201010206.3",
+    "AvgLuaName": "STev_02_04_c",
+    "AvgMotion": "style_20",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "201010207": {
+    "Id": 201010207,
+    "ChapterId": 20101,
+    "Index": "05",
+    "Title": "相似的闪光",
+    "Desc": "你们终于跟上了“精灵”传闻的脚步。",
+    "Type": 3,
+    "StoryId": "STev_02_05",
+    "ConditionId": 201010207,
+    "ParentStoryId": [
+      "STev_02_04_a",
+      "STev_02_04_b",
+      "STev_02_04_c"
+    ],
+    "Aim": "ActivityStory.201010207.3",
+    "AvgLuaName": "STev_02_05",
+    "AvgMotion": "style_20",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "201010208": {
+    "Id": 201010208,
+    "ChapterId": 20101,
+    "Index": "06",
+    "Title": "寂寞的许愿",
+    "Desc": "所谓的精灵传说，只是一段有些酸楚的回忆。",
+    "Type": 3,
+    "StoryId": "STev_02_06",
+    "ConditionId": 201010208,
+    "ParentStoryId": [
+      "STev_02_05"
+    ],
+    "Aim": "ActivityStory.201010208.3",
+    "AvgLuaName": "STev_02_06",
+    "AvgMotion": "style_20",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "201010209": {
+    "Id": 201010209,
+    "ChapterId": 20101,
+    "DayOpen": 1,
+    "Index": "07",
+    "Title": "友谊的魔法",
+    "Desc": "那天，菈露见识到了她从未见过的“友谊”魔法……",
+    "Type": 3,
+    "StoryId": "STev_02_07",
+    "ConditionId": 201010209,
+    "ParentStoryId": [
+      "STev_02_06"
+    ],
+    "Aim": "ActivityStory.201010209.3",
+    "AvgLuaName": "STev_02_07",
+    "AvgMotion": "style_20",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "201010210": {
+    "Id": 201010210,
+    "ChapterId": 20101,
+    "DayOpen": 1,
+    "Index": "08",
+    "Title": "更宽广的世界",
+    "Desc": "看向水底的鱼，她第一次直面心中的深海。",
+    "Type": 3,
+    "StoryId": "STev_02_08",
+    "ConditionId": 201010210,
+    "ParentStoryId": [
+      "STev_02_07"
+    ],
+    "Aim": "ActivityStory.201010210.3",
+    "AvgLuaName": "STev_02_08",
+    "AvgMotion": "style_20",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "201010211": {
+    "Id": 201010211,
+    "ChapterId": 20101,
+    "DayOpen": 1,
+    "Index": "09",
+    "Title": "庆典时分，盛大登场",
+    "Desc": "节日的氛围来到了最高潮，今天的魔王和菈露真是格外努力！",
+    "Type": 3,
+    "StoryId": "STev_02_09",
+    "ConditionId": 201010211,
+    "ParentStoryId": [
+      "STev_02_08"
+    ],
+    "Aim": "ActivityStory.201010211.3",
+    "AvgLuaName": "STev_02_09",
+    "AvgMotion": "style_20",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "201010212": {
+    "Id": 201010212,
+    "ChapterId": 20101,
+    "DayOpen": 1,
+    "Index": "10",
+    "Title": "危险的“游戏”",
+    "Desc": "为了满足“她”的愿望，你们硬着头皮做了个有些刺激的决定……",
+    "Type": 3,
+    "StoryId": "STev_02_10",
+    "ConditionId": 201010212,
+    "ParentStoryId": [
+      "STev_02_09"
+    ],
+    "Aim": "ActivityStory.201010212.3",
+    "AvgLuaName": "STev_02_10",
+    "AvgMotion": "style_20",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "201010213": {
+    "Id": 201010213,
+    "ChapterId": 20101,
+    "DayOpen": 1,
+    "Index": "BT01",
+    "Title": "节日余兴",
+    "Desc": "暖炉之谗妄突然来袭，为了“保护”火垂，菈露挺身而出……？",
+    "Type": 3,
+    "IsBattle": true,
+    "StoryId": "BAev02_01",
+    "FloorId": [
+      300417
+    ],
+    "TrialBuild": 200010,
+    "PreviewMonsterGroupId": 300408,
+    "Recommend": "5",
+    "ConditionId": 201010213,
+    "ParentStoryId": [
+      "STev_02_10"
+    ],
+    "Aim": "ActivityStory.201010213.3",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "201010214": {
+    "Id": 201010214,
+    "ChapterId": 20101,
+    "DayOpen": 1,
+    "Index": "尾声",
+    "Title": "为你准备的礼物",
+    "Desc": "有惊无险的节日过去了，接下来是属于你们的时间……",
+    "Type": 3,
+    "StoryId": "STev_02_11",
+    "ConditionId": 201010214,
+    "ParentStoryId": [
+      "BAev02_01"
+    ],
+    "Aim": "ActivityStory.201010214.3",
+    "AvgLuaName": "STev_02_11",
+    "AvgMotion": "style_20",
+    "IsLast": true,
+    "FirstCompleteReward": "{\"2\":50}"
+  },
+  "101040201": {
+    "Id": 101040201,
+    "ChapterId": 10104,
+    "Index": "01",
+    "Title": "苍茫人海逢故人",
+    "Desc": "新春佳节之际，你在苍梧街头看到了一个熟悉的身影……",
+    "Type": 3,
+    "StoryId": "STev_03_01",
+    "ConditionId": 101040201,
+    "Aim": "ActivityStory.101040201.3",
+    "AvgLuaName": "STev_03_01",
+    "AvgMotion": "style_33",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "101040202": {
+    "Id": 101040202,
+    "ChapterId": 10104,
+    "Index": "02",
+    "Title": "问津市井",
+    "Desc": "你们在苍梧城内四处打听消息，顺便体验了风土人情。",
+    "Type": 3,
+    "StoryId": "STev_03_02",
+    "ConditionId": 101040202,
+    "ParentStoryId": [
+      "STev_03_01"
+    ],
+    "Aim": "ActivityStory.101040202.3",
+    "AvgLuaName": "STev_03_02",
+    "AvgMotion": "style_33",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "101040203": {
+    "Id": 101040203,
+    "ChapterId": 10104,
+    "Index": "03",
+    "Title": "柳暗花明",
+    "Desc": "你们得到了关键线索，追查了下去。",
+    "Type": 3,
+    "StoryId": "STev_03_03",
+    "ConditionId": 101040203,
+    "ParentStoryId": [
+      "STev_03_02"
+    ],
+    "Aim": "ActivityStory.101040203.3",
+    "AvgLuaName": "STev_03_03",
+    "AvgMotion": "style_33",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "101040204": {
+    "Id": 101040204,
+    "ChapterId": 10104,
+    "Index": "04",
+    "Title": "请君入瓮",
+    "Desc": "你们利用诱饵，引出了“犯人”……",
+    "Type": 3,
+    "StoryId": "STev_03_04",
+    "ConditionId": 101040204,
+    "ParentStoryId": [
+      "STev_03_03"
+    ],
+    "Aim": "ActivityStory.101040204.3",
+    "AvgLuaName": "STev_03_04",
+    "AvgMotion": "style_33",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "101040205": {
+    "Id": 101040205,
+    "ChapterId": 10104,
+    "Index": "BT",
+    "Title": "一网打尽",
+    "Desc": "速战速决，将犯人一网打尽。",
+    "Type": 3,
+    "IsBattle": true,
+    "StoryId": "STev_03_BT01",
+    "FloorId": [
+      300621
+    ],
+    "TrialBuild": 200020,
+    "PreviewMonsterGroupId": 300621,
+    "Recommend": "30",
+    "ConditionId": 101040205,
+    "ParentStoryId": [
+      "STev_03_04"
+    ],
+    "Aim": "ActivityStory.101040205.3",
+    "AvgMotion": "style_33",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "101040206": {
+    "Id": 101040206,
+    "ChapterId": 10104,
+    "Index": "05",
+    "Title": "好事多磨",
+    "Desc": "你们得知了朋友失踪的真相。",
+    "Type": 3,
+    "StoryId": "STev_03_05",
+    "ConditionId": 101040206,
+    "ParentStoryId": [
+      "STev_03_BT01"
+    ],
+    "Aim": "ActivityStory.101040206.3",
+    "AvgLuaName": "STev_03_05",
+    "AvgMotion": "style_33",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "101040207": {
+    "Id": 101040207,
+    "ChapterId": 10104,
+    "Index": "06",
+    "Title": "寻幽探奇",
+    "Desc": "星塔中，有什么地方正在悄然改变……",
+    "Type": 3,
+    "StoryId": "STev_03_06",
+    "ConditionId": 101040207,
+    "ParentStoryId": [
+      "STev_03_05"
+    ],
+    "Aim": "ActivityStory.101040207.3",
+    "AvgLuaName": "STev_03_06",
+    "AvgMotion": "style_33",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "101040208": {
+    "Id": 101040208,
+    "ChapterId": 10104,
+    "DayOpen": 1,
+    "Index": "07",
+    "Title": "拨云见日",
+    "Desc": "这只异兽，并不像想象中的那么凶恶。",
+    "Type": 3,
+    "StoryId": "STev_03_07",
+    "ConditionId": 101040208,
+    "ParentStoryId": [
+      "STev_03_06"
+    ],
+    "Aim": "ActivityStory.101040208.3",
+    "AvgLuaName": "STev_03_07",
+    "AvgMotion": "style_33",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "101040209": {
+    "Id": 101040209,
+    "ChapterId": 10104,
+    "DayOpen": 1,
+    "Index": "BT",
+    "Title": "医者仁心",
+    "Desc": "别跑啊，打针是为了你好！",
+    "Type": 3,
+    "IsBattle": true,
+    "StoryId": "STev_03_BT02",
+    "FloorId": [
+      300622
+    ],
+    "TrialBuild": 200030,
+    "PreviewMonsterGroupId": 300622,
+    "Recommend": "40",
+    "ConditionId": 101040209,
+    "ParentStoryId": [
+      "STev_03_07"
+    ],
+    "Aim": "ActivityStory.101040209.3",
+    "AvgMotion": "style_33",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "101040210": {
+    "Id": 101040210,
+    "ChapterId": 10104,
+    "DayOpen": 1,
+    "Index": "08",
+    "Title": "此去经年",
+    "Desc": "他们只是想过个好年。",
+    "Type": 3,
+    "StoryId": "STev_03_08",
+    "ConditionId": 101040210,
+    "ParentStoryId": [
+      "STev_03_BT02"
+    ],
+    "Aim": "ActivityStory.101040210.3",
+    "AvgLuaName": "STev_03_08",
+    "AvgMotion": "style_33",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "101040211": {
+    "Id": 101040211,
+    "ChapterId": 10104,
+    "DayOpen": 1,
+    "Index": "09",
+    "Title": "人间万象更新时",
+    "Desc": "新春快乐。",
+    "Type": 3,
+    "StoryId": "STev_03_09",
+    "ConditionId": 101040211,
+    "ParentStoryId": [
+      "STev_03_08"
+    ],
+    "Aim": "ActivityStory.101040211.3",
+    "AvgLuaName": "STev_03_09",
+    "AvgMotion": "style_33",
+    "IsLast": true,
+    "FirstCompleteReward": "{\"2\":50}"
+  },
+  "101050201": {
+    "Id": 101050201,
+    "ChapterId": 10105,
+    "Index": "01",
+    "Title": "前往北境之城",
+    "Desc": "嘿，你总算醒了？",
+    "Type": 3,
+    "StoryId": "STev_04_01",
+    "ConditionId": 101050201,
+    "Aim": "ActivityStory.101050201.3",
+    "AvgLuaName": "STev_04_01",
+    "AvgMotion": "style_34",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "101050202": {
+    "Id": 101050202,
+    "ChapterId": 10105,
+    "Index": "BT",
+    "Title": "踏入寒夜",
+    "Desc": "若不踏入寒夜，故事就不算开始。",
+    "Type": 3,
+    "IsBattle": true,
+    "StoryId": "STev_04_BT01",
+    "FloorId": [
+      300721
+    ],
+    "TrialBuild": 200040,
+    "PreviewMonsterGroupId": 300706,
+    "Recommend": "40",
+    "ConditionId": 101050202,
+    "ParentStoryId": [
+      "STev_04_01"
+    ],
+    "Aim": "ActivityStory.101050202.3",
+    "AvgMotion": "style_34",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "101050203": {
+    "Id": 101050203,
+    "ChapterId": 10105,
+    "Index": "02",
+    "Title": "被冰封的废都",
+    "Desc": "离开了光与火，文明将不复存在。",
+    "Type": 3,
+    "StoryId": "STev_04_02",
+    "ConditionId": 101050203,
+    "ParentStoryId": [
+      "STev_04_BT01"
+    ],
+    "Aim": "ActivityStory.101050203.3",
+    "AvgLuaName": "STev_04_02",
+    "AvgMotion": "style_34",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "101050204": {
+    "Id": 101050204,
+    "ChapterId": 10105,
+    "Index": "03",
+    "Title": "故乡的记忆",
+    "Desc": "倘若在故乡思念故乡……",
+    "Type": 3,
+    "StoryId": "STev_04_03",
+    "ConditionId": 101050204,
+    "ParentStoryId": [
+      "STev_04_02"
+    ],
+    "Aim": "ActivityStory.101050204.3",
+    "AvgLuaName": "STev_04_03",
+    "AvgMotion": "style_34",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "101050205": {
+    "Id": 101050205,
+    "ChapterId": 10105,
+    "Index": "04",
+    "Title": "古老秘密",
+    "Desc": "有些秘密不该被打扰……",
+    "Type": 3,
+    "StoryId": "STev_04_04",
+    "ConditionId": 101050205,
+    "ParentStoryId": [
+      "STev_04_03"
+    ],
+    "Aim": "ActivityStory.101050205.3",
+    "AvgLuaName": "STev_04_04",
+    "AvgMotion": "style_34",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "101050206": {
+    "Id": 101050206,
+    "ChapterId": 10105,
+    "Index": "05",
+    "Title": "黎明前夜",
+    "Desc": "人们常说，黎明前的黑暗最深邃……",
+    "Type": 3,
+    "StoryId": "STev_04_05",
+    "ConditionId": 101050206,
+    "ParentStoryId": [
+      "STev_04_04"
+    ],
+    "Aim": "ActivityStory.101050206.3",
+    "AvgLuaName": "STev_04_05",
+    "AvgMotion": "style_34",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "101050207": {
+    "Id": 101050207,
+    "ChapterId": 10105,
+    "Index": "06",
+    "Title": "恶意浮现",
+    "Desc": "野心是不会被风雪和时间掩埋的……",
+    "Type": 3,
+    "StoryId": "STev_04_06",
+    "ConditionId": 101050207,
+    "ParentStoryId": [
+      "STev_04_05"
+    ],
+    "Aim": "ActivityStory.101050207.3",
+    "AvgLuaName": "STev_04_06",
+    "AvgMotion": "style_34",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "101050208": {
+    "Id": 101050208,
+    "ChapterId": 10105,
+    "DayOpen": 1,
+    "Index": "07",
+    "Title": "尊者",
+    "Desc": "疯狂的山脉正在呼啸，古老的存在将要苏醒……",
+    "Type": 3,
+    "StoryId": "STev_04_07",
+    "ConditionId": 101050208,
+    "ParentStoryId": [
+      "STev_04_06"
+    ],
+    "Aim": "ActivityStory.101050208.3",
+    "AvgLuaName": "STev_04_07",
+    "AvgMotion": "style_34",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "101050209": {
+    "Id": 101050209,
+    "ChapterId": 10105,
+    "DayOpen": 1,
+    "Index": "08",
+    "Title": "破晓扳机",
+    "Desc": "勇气上膛，扣下宣告破晓的扳机。",
+    "Type": 3,
+    "StoryId": "STev_04_08",
+    "ConditionId": 101050209,
+    "ParentStoryId": [
+      "STev_04_07"
+    ],
+    "Aim": "ActivityStory.101050209.3",
+    "AvgLuaName": "STev_04_08",
+    "AvgMotion": "style_34",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "101050210": {
+    "Id": 101050210,
+    "ChapterId": 10105,
+    "DayOpen": 1,
+    "Index": "BT",
+    "Title": "鱼死网破",
+    "Desc": "挣扎，是宣告失败前最后的倔强。",
+    "Type": 3,
+    "IsBattle": true,
+    "StoryId": "STev_04_BT02",
+    "FloorId": [
+      300722
+    ],
+    "TrialBuild": 200060,
+    "PreviewMonsterGroupId": 300708,
+    "Recommend": "40",
+    "ConditionId": 101050210,
+    "ParentStoryId": [
+      "STev_04_08"
+    ],
+    "Aim": "ActivityStory.101050210.3",
+    "AvgMotion": "style_34",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "101050211": {
+    "Id": 101050211,
+    "ChapterId": 10105,
+    "DayOpen": 1,
+    "Index": "09",
+    "Title": "何为强大",
+    "Desc": "举起武器，意味承担更大的责任。",
+    "Type": 3,
+    "StoryId": "STev_04_09",
+    "ConditionId": 101050211,
+    "ParentStoryId": [
+      "STev_04_BT02"
+    ],
+    "Aim": "ActivityStory.101050211.3",
+    "AvgLuaName": "STev_04_09",
+    "AvgMotion": "style_34",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "101050212": {
+    "Id": 101050212,
+    "ChapterId": 10105,
+    "DayOpen": 1,
+    "Index": "10",
+    "Title": "告别风雪",
+    "Desc": "风将歇，雪将停，太阳总会照常升起。",
+    "Type": 3,
+    "StoryId": "STev_04_10",
+    "ConditionId": 101050212,
+    "ParentStoryId": [
+      "STev_04_09"
+    ],
+    "Aim": "ActivityStory.101050212.3",
+    "AvgLuaName": "STev_04_10",
+    "AvgMotion": "style_34",
+    "IsLast": true,
+    "FirstCompleteReward": "{\"2\":50}"
+  },
+  "101060201": {
+    "Id": 101060201,
+    "ChapterId": 10106,
+    "Index": "01",
+    "Title": "万送屋的委托",
+    "Desc": "你邮我寄，让信件平安传递！",
+    "Type": 3,
+    "StoryId": "STev_05_01",
+    "ConditionId": 101060201,
+    "Aim": "ActivityStory.101060201.3",
+    "AvgLuaName": "STev_05_01",
+    "AvgMotion": "style_41",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "101060202": {
+    "Id": 101060202,
+    "ChapterId": 10106,
+    "Index": "02A",
+    "Title": "道听途说",
+    "Desc": "多娜表现得这么好，这次报酬就多给点嘛！",
+    "Type": 3,
+    "StoryId": "STev_05_02_a",
+    "ConditionId": 101060202,
+    "ParentStoryId": [
+      "STev_05_01"
+    ],
+    "Aim": "ActivityStory.101060202.3",
+    "AvgLuaName": "STev_05_02_a",
+    "AvgMotion": "style_41",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "101060203": {
+    "Id": 101060203,
+    "ChapterId": 10106,
+    "Index": "02B",
+    "Title": "识字知书",
+    "Desc": "您说，这片大地会有尽头吗？",
+    "Type": 3,
+    "StoryId": "STev_05_02_b",
+    "ConditionId": 101060203,
+    "ParentStoryId": [
+      "STev_05_01"
+    ],
+    "Aim": "ActivityStory.101060203.3",
+    "AvgLuaName": "STev_05_02_b",
+    "AvgMotion": "style_41",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "101060204": {
+    "Id": 101060204,
+    "ChapterId": 10106,
+    "Index": "02C",
+    "Title": "按图索籍",
+    "Desc": "走过的路我都会做标记，这样就不怕迷路啦！",
+    "Type": 3,
+    "StoryId": "STev_05_02_c",
+    "ConditionId": 101060204,
+    "ParentStoryId": [
+      "STev_05_01"
+    ],
+    "Aim": "ActivityStory.101060204.3",
+    "AvgLuaName": "STev_05_02_c",
+    "AvgMotion": "style_41",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "101060205": {
+    "Id": 101060205,
+    "ChapterId": 10106,
+    "Index": "03",
+    "Title": "未敞开的心扉",
+    "Desc": "事到如今，终于送来了……吗？",
+    "Type": 3,
+    "StoryId": "STev_05_03",
+    "ConditionId": 101060205,
+    "ParentStoryId": [
+      "STev_05_02_a",
+      "STev_05_02_b",
+      "STev_05_02_c"
+    ],
+    "Aim": "ActivityStory.101060205.3",
+    "AvgLuaName": "STev_05_03",
+    "AvgMotion": "style_41",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "101060206": {
+    "Id": 101060206,
+    "ChapterId": 10106,
+    "Index": "04",
+    "Title": "路遇偷信大盗",
+    "Desc": "“寻宝业界，可是讲究一个先到先得的哦！”",
+    "Type": 3,
+    "StoryId": "STev_05_04",
+    "ConditionId": 101060206,
+    "ParentStoryId": [
+      "STev_05_03"
+    ],
+    "Aim": "ActivityStory.101060206.3",
+    "AvgLuaName": "STev_05_04",
+    "AvgMotion": "style_41",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "101060207": {
+    "Id": 101060207,
+    "ChapterId": 10106,
+    "Index": "BT01",
+    "Title": "以理服人",
+    "Desc": "剩下的道理……就用这把“理性”来沟通。",
+    "Type": 3,
+    "IsBattle": true,
+    "StoryId": "STev_05_BT01",
+    "FloorId": [
+      300821
+    ],
+    "TrialBuild": 200070,
+    "PreviewMonsterGroupId": 300802,
+    "Recommend": "40",
+    "ConditionId": 101060207,
+    "ParentStoryId": [
+      "STev_05_04"
+    ],
+    "Aim": "ActivityStory.101060207.3",
+    "AvgMotion": "style_41",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "101060208": {
+    "Id": 101060208,
+    "ChapterId": 10106,
+    "Index": "05",
+    "Title": "竟是魔物所为",
+    "Desc": "“那我们岂不是白挨这顿打了——！”",
+    "Type": 3,
+    "StoryId": "STev_05_05",
+    "ConditionId": 101060208,
+    "ParentStoryId": [
+      "STev_05_BT01"
+    ],
+    "Aim": "ActivityStory.101060208.3",
+    "AvgLuaName": "STev_05_05",
+    "AvgMotion": "style_41",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "101060209": {
+    "Id": 101060209,
+    "ChapterId": 10106,
+    "DayOpen": 1,
+    "Index": "06",
+    "Title": "玉米粒大作战",
+    "Desc": "除了玉米粒，也记得观察我留下的路标噢！",
+    "Type": 3,
+    "StoryId": "STev_05_06",
+    "ConditionId": 101060209,
+    "ParentStoryId": [
+      "STev_05_05"
+    ],
+    "Aim": "ActivityStory.101060209.3",
+    "AvgLuaName": "STev_05_06",
+    "AvgMotion": "style_41",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "101060210": {
+    "Id": 101060210,
+    "ChapterId": 10106,
+    "DayOpen": 1,
+    "Index": "BT02",
+    "Title": "直面狂风",
+    "Desc": "咕咕——————嘎——？！？！？",
+    "Type": 3,
+    "IsBattle": true,
+    "StoryId": "STev_05_BT02",
+    "FloorId": [
+      300822
+    ],
+    "TrialBuild": 200080,
+    "PreviewMonsterGroupId": 300808,
+    "Recommend": "40",
+    "ConditionId": 101060210,
+    "ParentStoryId": [
+      "STev_05_06"
+    ],
+    "Aim": "ActivityStory.101060210.3",
+    "AvgMotion": "style_41",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "101060211": {
+    "Id": 101060211,
+    "ChapterId": 10106,
+    "DayOpen": 1,
+    "Index": "07",
+    "Title": "跨越时空的问候",
+    "Desc": "万水千山，皆因信起，风雪无阻，只为信念。",
+    "Type": 3,
+    "StoryId": "STev_05_07",
+    "ConditionId": 101060211,
+    "ParentStoryId": [
+      "STev_05_BT02"
+    ],
+    "Aim": "ActivityStory.101060211.3",
+    "AvgLuaName": "STev_05_07",
+    "AvgMotion": "style_41",
+    "FirstCompleteReward": "{\"2\":30}"
+  },
+  "101060212": {
+    "Id": 101060212,
+    "ChapterId": 10106,
+    "DayOpen": 1,
+    "Index": "08",
+    "Title": "敬启，致珍重的你",
+    "Desc": "趁现在，把贝林港的景色好好印入脑海……",
+    "Type": 3,
+    "StoryId": "STev_05_08",
+    "ConditionId": 101060212,
+    "ParentStoryId": [
+      "STev_05_07"
+    ],
+    "Aim": "ActivityStory.101060212.3",
+    "AvgLuaName": "STev_05_08",
+    "AvgMotion": "style_41",
+    "IsLast": true,
+    "FirstCompleteReward": "{\"2\":50}"
+  },
+  "101070201": {
+    "Id": 101070201,
+    "ChapterId": 10107,
+    "Index": "01",
+    "Title": "再遇",
+    "Desc": "在没有下雪的季节，与那个少女再度相遇。",
+    "Type": 3,
+    "StoryId": "STev_07_01",
+    "ConditionId": 101070201,
+    "Aim": "ActivityStory.101070201.3",
+    "AvgLuaName": "STev_07_01",
+    "AvgMotion": "style_43",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event07_01"
+  },
+  "101070202": {
+    "Id": 101070202,
+    "ChapterId": 10107,
+    "Index": "02",
+    "Title": "胶卷",
+    "Desc": "一场任性的许愿。",
+    "Type": 3,
+    "StoryId": "STev_07_02",
+    "ConditionId": 101070202,
+    "ParentStoryId": [
+      "STev_07_01"
+    ],
+    "Aim": "ActivityStory.101070202.3",
+    "AvgLuaName": "STev_07_02",
+    "AvgMotion": "style_43",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event07_02"
+  },
+  "101070203": {
+    "Id": 101070203,
+    "ChapterId": 10107,
+    "Index": "03",
+    "Title": "监护人",
+    "Desc": "离家出走是不行的哦。",
+    "Type": 3,
+    "StoryId": "STev_07_03",
+    "ConditionId": 101070203,
+    "ParentStoryId": [
+      "STev_07_02"
+    ],
+    "Aim": "ActivityStory.101070203.3",
+    "AvgLuaName": "STev_07_03",
+    "AvgMotion": "style_43",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event07_03"
+  },
+  "101070204": {
+    "Id": 101070204,
+    "ChapterId": 10107,
+    "Index": "04",
+    "Title": "实验体",
+    "Desc": "沉重的枷锁，受缚的飞鸟。",
+    "Type": 3,
+    "StoryId": "STev_07_04",
+    "ConditionId": 101070204,
+    "ParentStoryId": [
+      "STev_07_03"
+    ],
+    "Aim": "ActivityStory.101070204.3",
+    "AvgLuaName": "STev_07_04",
+    "AvgMotion": "style_43",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event07_04"
+  },
+  "101070205": {
+    "Id": 101070205,
+    "ChapterId": 10107,
+    "Index": "05",
+    "Title": "朋友",
+    "Desc": "第一个朋友，最重要的朋友。",
+    "Type": 3,
+    "StoryId": "STev_07_05",
+    "ConditionId": 101070205,
+    "ParentStoryId": [
+      "STev_07_04"
+    ],
+    "Aim": "ActivityStory.101070205.3",
+    "AvgLuaName": "STev_07_05",
+    "AvgMotion": "style_43",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event07_05"
+  },
+  "101070206": {
+    "Id": 101070206,
+    "ChapterId": 10107,
+    "Index": "BT01",
+    "Title": "伸出援手",
+    "Desc": "张开翅膀，拯救他人。",
+    "Type": 3,
+    "IsBattle": true,
+    "StoryId": "STev_07_BT01",
+    "FloorId": [
+      301045
+    ],
+    "TrialBuild": 200083,
+    "PreviewMonsterGroupId": 301021,
+    "Recommend": "40",
+    "ConditionId": 101070206,
+    "ParentStoryId": [
+      "STev_07_05"
+    ],
+    "Aim": "ActivityStory.101070206.3",
+    "AvgMotion": "style_43",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event07_06"
+  },
+  "101070207": {
+    "Id": 101070207,
+    "ChapterId": 10107,
+    "Index": "06",
+    "Title": "第一次的风景",
+    "Desc": "只要微笑就好了。",
+    "Type": 3,
+    "StoryId": "STev_07_06",
+    "ConditionId": 101070207,
+    "ParentStoryId": [
+      "STev_07_BT01"
+    ],
+    "Aim": "ActivityStory.101070207.3",
+    "AvgLuaName": "STev_07_06",
+    "AvgMotion": "style_43",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event07_07"
+  },
+  "101070208": {
+    "Id": 101070208,
+    "ChapterId": 10107,
+    "DayOpen": 1,
+    "Index": "07",
+    "Title": "觉悟",
+    "Desc": "还不到哭泣的时候。",
+    "Type": 3,
+    "StoryId": "STev_07_07",
+    "ConditionId": 101070208,
+    "ParentStoryId": [
+      "STev_07_06"
+    ],
+    "Aim": "ActivityStory.101070208.3",
+    "AvgLuaName": "STev_07_07",
+    "AvgMotion": "style_43",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event07_08"
+  },
+  "101070209": {
+    "Id": 101070209,
+    "ChapterId": 10107,
+    "DayOpen": 1,
+    "Index": "BT02",
+    "Title": "保护大家",
+    "Desc": "竭尽全力，拯救所有人。",
+    "Type": 3,
+    "IsBattle": true,
+    "StoryId": "STev_07_BT02",
+    "FloorId": [
+      301044
+    ],
+    "TrialBuild": 200084,
+    "PreviewMonsterGroupId": 301016,
+    "Recommend": "40",
+    "ConditionId": 101070209,
+    "ParentStoryId": [
+      "STev_07_07"
+    ],
+    "Aim": "ActivityStory.101070209.3",
+    "AvgMotion": "style_43",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event07_09"
+  },
+  "101070210": {
+    "Id": 101070210,
+    "ChapterId": 10107,
+    "DayOpen": 1,
+    "Index": "08",
+    "Title": "笑颜",
+    "Desc": "明天会更好。",
+    "Type": 3,
+    "StoryId": "STev_07_08",
+    "ConditionId": 101070210,
+    "ParentStoryId": [
+      "STev_07_BT02"
+    ],
+    "Aim": "ActivityStory.101070210.3",
+    "AvgLuaName": "STev_07_08",
+    "AvgMotion": "style_43",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event07_10"
+  },
+  "101070211": {
+    "Id": 101070211,
+    "ChapterId": 10107,
+    "DayOpen": 1,
+    "Index": "09",
+    "Title": "普通女孩",
+    "Desc": "向着那个目标，迈出第一步——",
+    "Type": 3,
+    "StoryId": "STev_07_09",
+    "ConditionId": 101070211,
+    "ParentStoryId": [
+      "STev_07_08"
+    ],
+    "Aim": "ActivityStory.101070211.3",
+    "AvgLuaName": "STev_07_09",
+    "AvgMotion": "style_43",
+    "IsLast": true,
+    "FirstCompleteReward": "{\"2\":50}",
+    "Icon": "Icon/ActivityStory/ep_event07_11"
+  },
+  "101080201": {
+    "Id": 101080201,
+    "ChapterId": 10108,
+    "Index": "01",
+    "Title": "能源危机",
+    "Desc": "绿洲号遭遇荒野大危机，你联系上了那位神秘的商人……",
+    "Type": 3,
+    "StoryId": "STev_08_01",
+    "ConditionId": 101080201,
+    "Aim": "ActivityStory.101080201.3",
+    "AvgLuaName": "STev_08_01",
+    "AvgMotion": "style_21",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event08_01"
+  },
+  "101080202": {
+    "Id": 101080202,
+    "ChapterId": 10108,
+    "Index": "02",
+    "Title": "天才工匠的下落",
+    "Desc": "你们根据线索来到菲莱，得知斯帕克拉竟然在一个意料之外的地方。",
+    "Type": 3,
+    "StoryId": "STev_08_02",
+    "ConditionId": 101080202,
+    "ParentStoryId": [
+      "STev_08_01"
+    ],
+    "Aim": "ActivityStory.101080202.3",
+    "AvgLuaName": "STev_08_02",
+    "AvgMotion": "style_21",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event08_02"
+  },
+  "101080203": {
+    "Id": 101080203,
+    "ChapterId": 10108,
+    "Index": "BT01",
+    "Title": "脱逃大作战",
+    "Desc": "我们柔光会社的人，对越狱这件事最熟练了。",
+    "Type": 3,
+    "IsBattle": true,
+    "StoryId": "STev_08_BT01",
+    "FloorId": [
+      301125
+    ],
+    "TrialBuild": 200085,
+    "PreviewMonsterGroupId": 301121,
+    "Recommend": "40",
+    "ConditionId": 101080203,
+    "ParentStoryId": [
+      "STev_08_02"
+    ],
+    "Aim": "ActivityStory.101080203.3",
+    "AvgMotion": "style_21",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event08_03"
+  },
+  "101080204": {
+    "Id": 101080204,
+    "ChapterId": 10108,
+    "Index": "03",
+    "Title": "欢迎来到地下市场",
+    "Desc": "柔光制品，便宜有好货。",
+    "Type": 3,
+    "StoryId": "STev_08_03",
+    "ConditionId": 101080204,
+    "ParentStoryId": [
+      "STev_08_BT01"
+    ],
+    "Aim": "ActivityStory.101080204.3",
+    "AvgLuaName": "STev_08_03",
+    "AvgMotion": "style_21",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event08_04"
+  },
+  "101080205": {
+    "Id": 101080205,
+    "ChapterId": 10108,
+    "Index": "04",
+    "Title": "斯帕克拉的移动工坊",
+    "Desc": "从你身上，我得到了新的灵感。",
+    "Type": 3,
+    "StoryId": "STev_08_04",
+    "ConditionId": 101080205,
+    "ParentStoryId": [
+      "STev_08_03"
+    ],
+    "Aim": "ActivityStory.101080205.3",
+    "AvgLuaName": "STev_08_04",
+    "AvgMotion": "style_21",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event08_05"
+  },
+  "101080206": {
+    "Id": 101080206,
+    "ChapterId": 10108,
+    "Index": "05",
+    "Title": "好戏开场",
+    "Desc": "下面有请一号参赛选手登场。",
+    "Type": 3,
+    "StoryId": "STev_08_05",
+    "ConditionId": 101080206,
+    "ParentStoryId": [
+      "STev_08_04"
+    ],
+    "Aim": "ActivityStory.101080206.3",
+    "AvgLuaName": "STev_08_05",
+    "AvgMotion": "style_21",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event08_06"
+  },
+  "101080207": {
+    "Id": 101080207,
+    "ChapterId": 10108,
+    "DayOpen": 1,
+    "Index": "06",
+    "Title": "收网之刻已至",
+    "Desc": "不许动，你们已经被帝国卫队包围了。",
+    "Type": 3,
+    "StoryId": "STev_08_06",
+    "ConditionId": 101080207,
+    "ParentStoryId": [
+      "STev_08_05"
+    ],
+    "Aim": "ActivityStory.101080207.3",
+    "AvgLuaName": "STev_08_06",
+    "AvgMotion": "style_21",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event08_07"
+  },
+  "101080208": {
+    "Id": 101080208,
+    "ChapterId": 10108,
+    "DayOpen": 1,
+    "Index": "BT02",
+    "Title": "全速前进",
+    "Desc": "魔王，给你留了一个最佳观赏席。",
+    "Type": 3,
+    "IsBattle": true,
+    "StoryId": "STev_08_BT02",
+    "FloorId": [
+      301126
+    ],
+    "TrialBuild": 200086,
+    "PreviewMonsterGroupId": 301124,
+    "Recommend": "40",
+    "ConditionId": 101080208,
+    "ParentStoryId": [
+      "STev_08_06"
+    ],
+    "Aim": "ActivityStory.101080208.3",
+    "AvgMotion": "style_21",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event08_08"
+  },
+  "101080209": {
+    "Id": 101080209,
+    "ChapterId": 10108,
+    "DayOpen": 1,
+    "Index": "07",
+    "Title": "虎口脱险",
+    "Desc": "漂亮的爆炸，我打十分！",
+    "Type": 3,
+    "StoryId": "STev_08_07",
+    "ConditionId": 101080209,
+    "ParentStoryId": [
+      "STev_08_BT02"
+    ],
+    "Aim": "ActivityStory.101080209.3",
+    "AvgLuaName": "STev_08_07",
+    "AvgMotion": "style_21",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event08_09"
+  },
+  "101080210": {
+    "Id": 101080210,
+    "ChapterId": 10108,
+    "DayOpen": 1,
+    "Index": "EX",
+    "Title": "一份新的订单",
+    "Desc": "为了失去的朵拉，努力接订单吧！",
+    "Type": 3,
+    "StoryId": "STev_08_08",
+    "ConditionId": 101080210,
+    "ParentStoryId": [
+      "STev_08_07"
+    ],
+    "Aim": "ActivityStory.101080210.3",
+    "AvgLuaName": "STev_08_08",
+    "AvgMotion": "style_21",
+    "IsLast": true,
+    "FirstCompleteReward": "{\"2\":50}",
+    "Icon": "Icon/ActivityStory/ep_event08_10"
+  },
+  "101090201": {
+    "Id": 101090201,
+    "ChapterId": 10109,
+    "Index": "01",
+    "Title": "远征凯旋……黑暗之力的缺席",
+    "Desc": "远征的白猫终于回到了那座——位于西北沙漠中的佣兵小镇……",
+    "Type": 3,
+    "StoryId": "STev_09_01",
+    "ConditionId": 101090201,
+    "Aim": "ActivityStory.101090201.3",
+    "AvgLuaName": "STev_09_01",
+    "AvgMotion": "style_48",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event09_01"
+  },
+  "101090202": {
+    "Id": 101090202,
+    "ChapterId": 10109,
+    "Index": "02",
+    "Title": "苍梧之战……黑暗之力的证明",
+    "Desc": "为了证明自己的有着完成任务的实力，猫眼说起了之前在苍梧的行动……",
+    "Type": 3,
+    "StoryId": "STev_09_02",
+    "ConditionId": 101090202,
+    "ParentStoryId": [
+      "STev_09_01"
+    ],
+    "Aim": "ActivityStory.101090202.3",
+    "AvgLuaName": "STev_09_02",
+    "AvgMotion": "style_48",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event09_02"
+  },
+  "101090203": {
+    "Id": 101090203,
+    "ChapterId": 10109,
+    "Index": "03",
+    "Title": "千塔演出……黑暗之力的显现",
+    "Desc": "猫眼继续说起了在千塔的经历……",
+    "Type": 3,
+    "StoryId": "STev_09_03",
+    "ConditionId": 101090203,
+    "ParentStoryId": [
+      "STev_09_02"
+    ],
+    "Aim": "ActivityStory.101090203.3",
+    "AvgLuaName": "STev_09_03",
+    "AvgMotion": "style_48",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event09_03"
+  },
+  "101090204": {
+    "Id": 101090204,
+    "ChapterId": 10109,
+    "Index": "04",
+    "Title": "出发……猫眼大人的调查军团",
+    "Desc": "终于……轮到猫眼大人出场了！",
+    "Type": 3,
+    "StoryId": "STev_09_04",
+    "ConditionId": 101090204,
+    "ParentStoryId": [
+      "STev_09_03"
+    ],
+    "Aim": "ActivityStory.101090204.3",
+    "AvgLuaName": "STev_09_04",
+    "AvgMotion": "style_48",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event09_04"
+  },
+  "101090205": {
+    "Id": 101090205,
+    "ChapterId": 10109,
+    "Index": "05",
+    "Title": "深入……黑暗侵蚀的地下巢穴",
+    "Desc": "沙蝎那群家伙，究竟又在搞什么鬼……",
+    "Type": 3,
+    "StoryId": "STev_09_05",
+    "ConditionId": 101090205,
+    "ParentStoryId": [
+      "STev_09_04"
+    ],
+    "Aim": "ActivityStory.101090205.3",
+    "AvgLuaName": "STev_09_05",
+    "AvgMotion": "style_48",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event09_05"
+  },
+  "101090206": {
+    "Id": 101090206,
+    "ChapterId": 10109,
+    "Index": "BT01",
+    "Title": "交火……米拉什大街的大混战",
+    "Desc": "区区沙蝎，怎么会是猫眼大人的对手呢？",
+    "Type": 3,
+    "IsBattle": true,
+    "StoryId": "STev_09_BT01",
+    "FloorId": [
+      301225
+    ],
+    "TrialBuild": 200087,
+    "PreviewMonsterGroupId": 301225,
+    "Recommend": "40",
+    "ConditionId": 101090206,
+    "ParentStoryId": [
+      "STev_09_05"
+    ],
+    "Aim": "ActivityStory.101090206.3",
+    "AvgMotion": "style_48",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event09_06"
+  },
+  "101090207": {
+    "Id": 101090207,
+    "ChapterId": 10109,
+    "DayOpen": 1,
+    "Index": "06",
+    "Title": "矿洞突袭……黑暗巢穴的陷阱",
+    "Desc": "根据逃出矿工的情报，卡西米拉决定突袭矿场",
+    "Type": 3,
+    "StoryId": "STev_09_06",
+    "ConditionId": 101090207,
+    "ParentStoryId": [
+      "STev_09_BT01"
+    ],
+    "Aim": "ActivityStory.101090207.3",
+    "AvgLuaName": "STev_09_06",
+    "AvgMotion": "style_48",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event09_07"
+  },
+  "101090208": {
+    "Id": 101090208,
+    "ChapterId": 10109,
+    "DayOpen": 1,
+    "Index": "BT02",
+    "Title": "魔物对决……拯救被困的旅人",
+    "Desc": "矿洞里怎么会有一只如此巨大的魔物……",
+    "Type": 3,
+    "IsBattle": true,
+    "StoryId": "STev_09_BT02",
+    "FloorId": [
+      301226
+    ],
+    "TrialBuild": 200088,
+    "PreviewMonsterGroupId": 301226,
+    "Recommend": "40",
+    "ConditionId": 101090208,
+    "ParentStoryId": [
+      "STev_09_06"
+    ],
+    "Aim": "ActivityStory.101090208.3",
+    "AvgMotion": "style_48",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event09_08"
+  },
+  "101090209": {
+    "Id": 101090209,
+    "ChapterId": 10109,
+    "DayOpen": 1,
+    "Index": "07",
+    "Title": "冲出重围……黑暗之力的重生",
+    "Desc": "成功似乎近在眼前，但事情显然没有结束……",
+    "Type": 3,
+    "StoryId": "STev_09_07",
+    "ConditionId": 101090209,
+    "ParentStoryId": [
+      "STev_09_BT02"
+    ],
+    "Aim": "ActivityStory.101090209.3",
+    "AvgLuaName": "STev_09_07",
+    "AvgMotion": "style_48",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event09_09"
+  },
+  "101090210": {
+    "Id": 101090210,
+    "ChapterId": 10109,
+    "DayOpen": 1,
+    "Index": "08",
+    "Title": "干杯……敬最强大的猫眼大人",
+    "Desc": "逃出生天不久之后，众人在水吧欢庆……",
+    "Type": 3,
+    "StoryId": "STev_09_08",
+    "ConditionId": 101090210,
+    "ParentStoryId": [
+      "STev_09_07"
+    ],
+    "Aim": "ActivityStory.101090210.3",
+    "AvgLuaName": "STev_09_08",
+    "AvgMotion": "style_48",
+    "IsLast": true,
+    "FirstCompleteReward": "{\"2\":50}",
+    "Icon": "Icon/ActivityStory/ep_event09_10"
+  },
+  "201030201": {
+    "Id": 201030201,
+    "ChapterId": 20103,
+    "Index": "01",
+    "Title": "是时候休个假了！",
+    "Desc": "只有好好休息才能更好地工作！",
+    "Type": 3,
+    "StoryId": "STev_10_01",
+    "ConditionId": 201030201,
+    "Aim": "ActivityStory.201030201.3",
+    "AvgLuaName": "STev_10_01",
+    "AvgMotion": "style_44",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event10_01"
+  },
+  "201030202": {
+    "Id": 201030202,
+    "ChapterId": 20103,
+    "Index": "02",
+    "Title": "穿上泳装，拿起扫帚",
+    "Desc": "这度假村怎么如此冷清……？",
+    "Type": 3,
+    "StoryId": "STev_10_02",
+    "ConditionId": 201030202,
+    "ParentStoryId": [
+      "STev_10_01"
+    ],
+    "Aim": "ActivityStory.201030202.3",
+    "AvgLuaName": "STev_10_02",
+    "AvgMotion": "style_44",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event10_02"
+  },
+  "201030203": {
+    "Id": 201030203,
+    "ChapterId": 20103,
+    "Index": "03",
+    "Title": "沙滩、大海、捉迷藏",
+    "Desc": "都说了要注意安全了！",
+    "Type": 3,
+    "StoryId": "STev_10_03",
+    "ConditionId": 201030203,
+    "ParentStoryId": [
+      "STev_10_02"
+    ],
+    "Aim": "ActivityStory.201030203.3",
+    "AvgLuaName": "STev_10_03",
+    "AvgMotion": "style_44",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event10_03"
+  },
+  "201030204": {
+    "Id": 201030204,
+    "ChapterId": 20103,
+    "Index": "04",
+    "Title": "自动售货神器怪谈",
+    "Desc": "事出蹊跷必有因，原来这里在“闹鬼”？",
+    "Type": 3,
+    "StoryId": "STev_10_04",
+    "ConditionId": 201030204,
+    "ParentStoryId": [
+      "STev_10_03"
+    ],
+    "Aim": "ActivityStory.201030204.3",
+    "AvgLuaName": "STev_10_04",
+    "AvgMotion": "style_44",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event10_04"
+  },
+  "201030205": {
+    "Id": 201030205,
+    "ChapterId": 20103,
+    "Index": "BT01",
+    "Title": "怎么又是你！",
+    "Desc": "与全诺瓦最酷炫的寻宝旅人的激烈战斗！",
+    "Type": 3,
+    "IsBattle": true,
+    "StoryId": "STev_10_BT01",
+    "FloorId": [
+      301325
+    ],
+    "TrialBuild": 200089,
+    "PreviewMonsterGroupId": 301322,
+    "Recommend": "40",
+    "ConditionId": 201030205,
+    "ParentStoryId": [
+      "STev_10_04"
+    ],
+    "Aim": "ActivityStory.201030205.3",
+    "AvgMotion": "style_44",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event10_05"
+  },
+  "201030206": {
+    "Id": 201030206,
+    "ChapterId": 20103,
+    "Index": "05",
+    "Title": "身负秘宝的巨影",
+    "Desc": "你到底扛着多沉重的秘密？！",
+    "Type": 3,
+    "StoryId": "STev_10_05",
+    "ConditionId": 201030206,
+    "ParentStoryId": [
+      "STev_10_BT01"
+    ],
+    "Aim": "ActivityStory.201030206.3",
+    "AvgLuaName": "STev_10_05",
+    "AvgMotion": "style_44",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event10_06"
+  },
+  "201030207": {
+    "Id": 201030207,
+    "ChapterId": 20103,
+    "Index": "06",
+    "Title": "出师不利",
+    "Desc": "海上的天气总是瞬息万变……",
+    "Type": 3,
+    "StoryId": "STev_10_06",
+    "ConditionId": 201030207,
+    "ParentStoryId": [
+      "STev_10_05"
+    ],
+    "Aim": "ActivityStory.201030207.3",
+    "AvgLuaName": "STev_10_06",
+    "AvgMotion": "style_44",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event10_07"
+  },
+  "201030208": {
+    "Id": 201030208,
+    "ChapterId": 20103,
+    "DayOpen": 1,
+    "Index": "07",
+    "Title": "成为你的手",
+    "Desc": "她模糊的记忆深处，埋着疼痛与伤痕",
+    "Type": 3,
+    "StoryId": "STev_10_07",
+    "ConditionId": 201030208,
+    "ParentStoryId": [
+      "STev_10_06"
+    ],
+    "Aim": "ActivityStory.201030208.3",
+    "AvgLuaName": "STev_10_07",
+    "AvgMotion": "style_44",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event10_08"
+  },
+  "201030209": {
+    "Id": 201030209,
+    "ChapterId": 20103,
+    "DayOpen": 1,
+    "Index": "08",
+    "Title": "拨云见日",
+    "Desc": "天气总算好起来了……心情也是。",
+    "Type": 3,
+    "StoryId": "STev_10_08",
+    "ConditionId": 201030209,
+    "ParentStoryId": [
+      "STev_10_07"
+    ],
+    "Aim": "ActivityStory.201030209.3",
+    "AvgLuaName": "STev_10_08",
+    "AvgMotion": "style_44",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event10_09"
+  },
+  "201030210": {
+    "Id": 201030210,
+    "ChapterId": 20103,
+    "DayOpen": 1,
+    "Index": "BT02",
+    "Title": "挥舞大钳的不速之客",
+    "Desc": "话说回来……它其实并没有什么恶意吧？",
+    "Type": 3,
+    "IsBattle": true,
+    "StoryId": "STev_10_BT02",
+    "FloorId": [
+      301326
+    ],
+    "TrialBuild": 200090,
+    "PreviewMonsterGroupId": 301324,
+    "Recommend": "40",
+    "ConditionId": 201030210,
+    "ParentStoryId": [
+      "STev_10_08"
+    ],
+    "Aim": "ActivityStory.201030210.3",
+    "AvgMotion": "style_44",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event10_10"
+  },
+  "201030211": {
+    "Id": 201030211,
+    "ChapterId": 20103,
+    "DayOpen": 1,
+    "Index": "09",
+    "Title": "晴风碧海，悠哉游哉",
+    "Desc": "夏天很长，且漫且慢……",
+    "Type": 3,
+    "StoryId": "STev_10_09",
+    "ConditionId": 201030211,
+    "ParentStoryId": [
+      "STev_10_BT02"
+    ],
+    "Aim": "ActivityStory.201030211.3",
+    "AvgLuaName": "STev_10_09",
+    "AvgMotion": "style_44",
+    "IsLast": true,
+    "FirstCompleteReward": "{\"2\":50}",
+    "Icon": "Icon/ActivityStory/ep_event10_11"
+  },
+  "101100201": {
+    "Id": 101100201,
+    "ChapterId": 10110,
+    "Index": "01",
+    "Title": "海风吹来的委托",
+    "Desc": "夏天的工作才刚开始！",
+    "Type": 3,
+    "StoryId": "STev_11_01",
+    "ConditionId": 101100201,
+    "Aim": "ActivityStory.101100201.3",
+    "AvgLuaName": "STev_11_01",
+    "AvgMotion": "style_44",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/zs_summeradv_story_bg1"
+  },
+  "101100202": {
+    "Id": 101100202,
+    "ChapterId": 10110,
+    "Index": "02",
+    "Title": "梦想在甲板上摇晃",
+    "Desc": "居然晕船了……这也得记录下来！",
+    "Type": 3,
+    "StoryId": "STev_11_02",
+    "ConditionId": 101100202,
+    "ParentStoryId": [
+      "STev_11_01"
+    ],
+    "Aim": "ActivityStory.101100202.3",
+    "AvgLuaName": "STev_11_02",
+    "AvgMotion": "style_44",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/zs_summeradv_story_bg2"
+  },
+  "101100203": {
+    "Id": 101100203,
+    "ChapterId": 10110,
+    "Index": "03",
+    "Title": "空白旅团漂流记",
+    "Desc": "原来这样也能碰见你们的喔！",
+    "Type": 3,
+    "StoryId": "STev_11_03",
+    "ConditionId": 101100203,
+    "ParentStoryId": [
+      "STev_11_02"
+    ],
+    "Aim": "ActivityStory.101100203.3",
+    "AvgLuaName": "STev_11_03",
+    "AvgMotion": "style_44",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/zs_summeradv_story_bg3"
+  },
+  "101100204": {
+    "Id": 101100204,
+    "ChapterId": 10110,
+    "Index": "04",
+    "Title": "海上幻影",
+    "Desc": "追不上的光芒，躲不开的漩涡。",
+    "Type": 3,
+    "StoryId": "STev_11_04",
+    "ConditionId": 101100204,
+    "ParentStoryId": [
+      "STev_11_03"
+    ],
+    "Aim": "ActivityStory.101100204.3",
+    "AvgLuaName": "STev_11_04",
+    "AvgMotion": "style_44",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/zs_summeradv_story_bg1"
+  },
+  "101100205": {
+    "Id": 101100205,
+    "ChapterId": 10110,
+    "Index": "BT01",
+    "Title": "深海星塔",
+    "Desc": "欢迎来到漩涡下的秘密世界！",
+    "Type": 3,
+    "IsBattle": true,
+    "StoryId": "STev_11_BT01",
+    "FloorId": [
+      301443,
+      301444,
+      301445
+    ],
+    "TrialBuild": 200091,
+    "PreviewMonsterGroupId": 301425,
+    "Recommend": "40",
+    "ConditionId": 101100205,
+    "ParentStoryId": [
+      "STev_11_04"
+    ],
+    "Aim": "ActivityStory.101100205.3",
+    "AvgMotion": "style_44",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/zs_summeradv_story_bg4"
+  },
+  "101100206": {
+    "Id": 101100206,
+    "ChapterId": 10110,
+    "Index": "05",
+    "Title": "漩涡深处的收藏家",
+    "Desc": "它只是想找回自己的家。",
+    "Type": 3,
+    "StoryId": "STev_11_05",
+    "ConditionId": 101100206,
+    "ParentStoryId": [
+      "STev_11_BT01"
+    ],
+    "Aim": "ActivityStory.101100206.3",
+    "AvgLuaName": "STev_11_05",
+    "AvgMotion": "style_44",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/zs_summeradv_story_bg2"
+  },
+  "101100207": {
+    "Id": 101100207,
+    "ChapterId": 10110,
+    "Index": "06",
+    "Title": "海螺壳争夺战",
+    "Desc": "要跟这家伙讲规则？！",
+    "Type": 3,
+    "StoryId": "STev_11_06",
+    "ConditionId": 101100207,
+    "ParentStoryId": [
+      "STev_11_05"
+    ],
+    "Aim": "ActivityStory.101100207.3",
+    "AvgLuaName": "STev_11_06",
+    "AvgMotion": "style_44",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/zs_summeradv_story_bg3"
+  },
+  "101100208": {
+    "Id": 101100208,
+    "ChapterId": 10110,
+    "DayOpen": 1,
+    "Index": "07",
+    "Title": "镜框里的海",
+    "Desc": "看不清，也绝不能认输……！",
+    "Type": 3,
+    "StoryId": "STev_11_07",
+    "ConditionId": 101100208,
+    "ParentStoryId": [
+      "STev_11_06"
+    ],
+    "Aim": "ActivityStory.101100208.3",
+    "AvgLuaName": "STev_11_07",
+    "AvgMotion": "style_44",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/zs_summeradv_story_bg1"
+  },
+  "101100209": {
+    "Id": 101100209,
+    "ChapterId": 10110,
+    "DayOpen": 1,
+    "Index": "BT02",
+    "Title": "品德教育",
+    "Desc": "不认账，那就打服它！",
+    "Type": 3,
+    "IsBattle": true,
+    "StoryId": "STev_11_BT02",
+    "FloorId": [
+      301446
+    ],
+    "TrialBuild": 200099,
+    "PreviewMonsterGroupId": 301426,
+    "Recommend": "40",
+    "ConditionId": 101100209,
+    "ParentStoryId": [
+      "STev_11_07"
+    ],
+    "Aim": "ActivityStory.101100209.3",
+    "AvgMotion": "style_44",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/zs_summeradv_story_bg4"
+  },
+  "101100210": {
+    "Id": 101100210,
+    "ChapterId": 10110,
+    "DayOpen": 1,
+    "Index": "08",
+    "Title": "裂痕与归处",
+    "Desc": "虽有裂痕，但这才是它真正的家！",
+    "Type": 3,
+    "StoryId": "STev_11_08",
+    "ConditionId": 101100210,
+    "ParentStoryId": [
+      "STev_11_BT02"
+    ],
+    "Aim": "ActivityStory.101100210.3",
+    "AvgLuaName": "STev_11_08",
+    "AvgMotion": "style_44",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/zs_summeradv_story_bg2"
+  },
+  "101100211": {
+    "Id": 101100211,
+    "ChapterId": 10110,
+    "DayOpen": 1,
+    "Index": "09",
+    "Title": "夏天仍未结束",
+    "Desc": "圆满的夏日，工作的假期，完美的冒险！",
+    "Type": 3,
+    "StoryId": "STev_11_09",
+    "ConditionId": 101100211,
+    "ParentStoryId": [
+      "STev_11_08"
+    ],
+    "Aim": "ActivityStory.101100211.3",
+    "AvgLuaName": "STev_11_09",
+    "AvgMotion": "style_44",
+    "IsLast": true,
+    "FirstCompleteReward": "{\"2\":50}",
+    "Icon": "Icon/ActivityStory/zs_summeradv_story_bg3"
+  },
+  "101110201": {
+    "Id": 101110201,
+    "ChapterId": 10111,
+    "Index": "01",
+    "Title": "大小姐们的茶会",
+    "Desc": "端起茶杯，秉持优雅。",
+    "Type": 3,
+    "StoryId": "STev_12_01",
+    "ConditionId": 101110201,
+    "Aim": "ActivityStory.101110201.3",
+    "AvgLuaName": "STev_12_01",
+    "AvgMotion": "style_20",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event12_01"
+  },
+  "101110202": {
+    "Id": 101110202,
+    "ChapterId": 10111,
+    "Index": "02",
+    "Title": "脚踏实地，谦逊努力",
+    "Desc": "一步两步，向前迈进。",
+    "Type": 3,
+    "StoryId": "STev_12_02",
+    "ConditionId": 101110202,
+    "ParentStoryId": [
+      "STev_12_01"
+    ],
+    "Aim": "ActivityStory.101110202.3",
+    "AvgLuaName": "STev_12_02",
+    "AvgMotion": "style_20",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event12_02"
+  },
+  "101110203": {
+    "Id": 101110203,
+    "ChapterId": 10111,
+    "Index": "03",
+    "Title": "进步",
+    "Desc": "万事俱备，只欠东风。",
+    "Type": 3,
+    "StoryId": "STev_12_03",
+    "ConditionId": 101110203,
+    "ParentStoryId": [
+      "STev_12_02"
+    ],
+    "Aim": "ActivityStory.101110203.3",
+    "AvgLuaName": "STev_12_03",
+    "AvgMotion": "style_20",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event12_03"
+  },
+  "101110204": {
+    "Id": 101110204,
+    "ChapterId": 10111,
+    "Index": "BT01",
+    "Title": "第一份委托",
+    "Desc": "轻轻松松！",
+    "Type": 3,
+    "IsBattle": true,
+    "StoryId": "STev_12_BT01",
+    "FloorId": [
+      301525
+    ],
+    "TrialBuild": 200100,
+    "PreviewMonsterGroupId": 301525,
+    "Recommend": "40",
+    "ConditionId": 101110204,
+    "ParentStoryId": [
+      "STev_12_03"
+    ],
+    "Aim": "ActivityStory.101110204.3",
+    "AvgMotion": "style_20",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event12_04"
+  },
+  "101110205": {
+    "Id": 101110205,
+    "ChapterId": 10111,
+    "Index": "04",
+    "Title": "新生活",
+    "Desc": "双面扮演，双重人生。",
+    "Type": 3,
+    "StoryId": "STev_12_04",
+    "ConditionId": 101110205,
+    "ParentStoryId": [
+      "STev_12_BT01"
+    ],
+    "Aim": "ActivityStory.101110205.3",
+    "AvgLuaName": "STev_12_04",
+    "AvgMotion": "style_20",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event12_05"
+  },
+  "101110206": {
+    "Id": 101110206,
+    "ChapterId": 10111,
+    "Index": "05",
+    "Title": "失踪",
+    "Desc": "临时侦探，临时助手。",
+    "Type": 3,
+    "StoryId": "STev_12_05",
+    "ConditionId": 101110206,
+    "ParentStoryId": [
+      "STev_12_04"
+    ],
+    "Aim": "ActivityStory.101110206.3",
+    "AvgLuaName": "STev_12_05",
+    "AvgMotion": "style_20",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event12_06"
+  },
+  "101110207": {
+    "Id": 101110207,
+    "ChapterId": 10111,
+    "Index": "06",
+    "Title": "伪装",
+    "Desc": "潜入老巢，装傻不易。",
+    "Type": 3,
+    "StoryId": "STev_12_06",
+    "ConditionId": 101110207,
+    "ParentStoryId": [
+      "STev_12_05"
+    ],
+    "Aim": "ActivityStory.101110207.3",
+    "AvgLuaName": "STev_12_06",
+    "AvgMotion": "style_20",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event12_07"
+  },
+  "101110208": {
+    "Id": 101110208,
+    "ChapterId": 10111,
+    "Index": "07",
+    "Title": "突围",
+    "Desc": "冲出重围，一网打尽。",
+    "Type": 3,
+    "StoryId": "STev_12_07",
+    "ConditionId": 101110208,
+    "ParentStoryId": [
+      "STev_12_06"
+    ],
+    "Aim": "ActivityStory.101110208.3",
+    "AvgLuaName": "STev_12_07",
+    "AvgMotion": "style_20",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event12_08"
+  },
+  "101110209": {
+    "Id": 101110209,
+    "ChapterId": 10111,
+    "Index": "BT02",
+    "Title": "直捣黄龙",
+    "Desc": "狠狠地打！",
+    "Type": 3,
+    "IsBattle": true,
+    "StoryId": "STev_12_BT02",
+    "FloorId": [
+      301526
+    ],
+    "TrialBuild": 200101,
+    "PreviewMonsterGroupId": 301526,
+    "Recommend": "40",
+    "ConditionId": 101110209,
+    "ParentStoryId": [
+      "STev_12_07"
+    ],
+    "Aim": "ActivityStory.101110209.3",
+    "AvgMotion": "style_20",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event12_09"
+  },
+  "101110210": {
+    "Id": 101110210,
+    "ChapterId": 10111,
+    "Index": "08",
+    "Title": "荣誉之夜",
+    "Desc": "证明自己，理解万岁。",
+    "Type": 3,
+    "StoryId": "STev_12_08",
+    "ConditionId": 101110210,
+    "ParentStoryId": [
+      "STev_12_BT02"
+    ],
+    "Aim": "ActivityStory.101110210.3",
+    "AvgLuaName": "STev_12_08",
+    "AvgMotion": "style_20",
+    "FirstCompleteReward": "{\"2\":30}",
+    "Icon": "Icon/ActivityStory/ep_event12_10"
+  },
+  "101110211": {
+    "Id": 101110211,
+    "ChapterId": 10111,
+    "Index": "09",
+    "Title": "新的梦想",
+    "Desc": "新的目标，新的约定。",
+    "Type": 3,
+    "StoryId": "STev_12_09",
+    "ConditionId": 101110211,
+    "ParentStoryId": [
+      "STev_12_08"
+    ],
+    "Aim": "ActivityStory.101110211.3",
+    "AvgLuaName": "STev_12_09",
+    "AvgMotion": "style_20",
+    "IsLast": true,
+    "FirstCompleteReward": "{\"2\":50}",
+    "Icon": "Icon/ActivityStory/ep_event12_11"
+  }
+}

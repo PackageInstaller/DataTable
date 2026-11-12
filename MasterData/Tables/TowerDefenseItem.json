@@ -1,0 +1,72 @@
+{
+  "1001": {
+    "Id": 1001,
+    "Name": "酷脆刨冰",
+    "Des": "转动刨冰杯，降下一大片冰冻雪阵！",
+    "ItemTips": "冷却时间：15s",
+    "Cd": 15,
+    "Script": "AIScript.TowerDefenseItem_AreaEffect_IceArea",
+    "CardIcon": "UI/Play_TowerDefence/SpriteAtlas/Item/icon_tower_defense_Item_1",
+    "Head": "Icon/Item/item_tf_1"
+  },
+  "1011": {
+    "Id": 1011,
+    "Name": "大瓶装能量沛沛",
+    "Des": "一大口能量沛沛，活力更是超级加倍充沛！",
+    "ItemTips": "冷却时间：8s",
+    "Amount": 8,
+    "Cd": 8,
+    "Script": "AIScript.TowerDefenseItem_EnergyCapsule",
+    "CardIcon": "UI/Play_TowerDefence/SpriteAtlas/Item/icon_tower_defense_Item_2",
+    "Head": "Icon/Item/item_tf_2"
+  },
+  "1021": {
+    "Id": 1021,
+    "Name": "杂草抑制剂",
+    "Des": "消除一片区域内的草丛！",
+    "ItemTips": "冷却时间：6s",
+    "Cd": 6,
+    "Script": "AIScript.TowerDefenseItem_Herbicide",
+    "CardIcon": "UI/Play_TowerDefence/SpriteAtlas/Item/icon_tower_defense_Item_3",
+    "Head": "Icon/Item/item_tf_3"
+  },
+  "1031": {
+    "Id": 1031,
+    "Name": "罐装乌云",
+    "Des": "释放乌云，天降甘霖！",
+    "ItemTips": "充能时间：8s",
+    "Amount": 5,
+    "ChargeScript": "AIScript.TowerDefenseItemCharge1",
+    "ChargeParam1": 1,
+    "ChargeParam2": 8,
+    "Script": "AIScript.TowerDefenseItem_Spray",
+    "CardIcon": "UI/Play_TowerDefence/SpriteAtlas/Item/icon_tower_defense_Item_4",
+    "Head": "Icon/Item/item_tf_4"
+  },
+  "1041": {
+    "Id": 1041,
+    "Name": "唤魂灯",
+    "Des": "呼唤灵魂为你照亮前方的道路……",
+    "ItemTips": "充能时间：8s",
+    "Amount": 5,
+    "ChargeScript": "AIScript.TowerDefenseItemCharge1",
+    "ChargeParam1": 1,
+    "ChargeParam2": 8,
+    "Script": "AIScript.TowerDefenseItem_Flare",
+    "CardIcon": "UI/Play_TowerDefence/SpriteAtlas/Item/icon_tower_defense_Item_5",
+    "Head": "Icon/Item/item_tf_5"
+  },
+  "1042": {
+    "Id": 1042,
+    "Name": "唤魂灯",
+    "Des": "呼唤灵魂为你照亮前方的道路……",
+    "ItemTips": "充能时间：8s",
+    "Amount": 5,
+    "ChargeScript": "AIScript.TowerDefenseItemCharge1",
+    "ChargeParam1": 3,
+    "ChargeParam2": 8,
+    "Script": "AIScript.TowerDefenseItem_Flare",
+    "CardIcon": "UI/Play_TowerDefence/SpriteAtlas/Item/icon_tower_defense_Item_5",
+    "Head": "Icon/Item/item_tf_5"
+  }
+}

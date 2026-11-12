@@ -1,0 +1,1004 @@
+{
+  "10101": {
+    "Id": 10101,
+    "PartnerType": 1,
+    "Name": "空白旅团",
+    "PartnerLevelQuality": 1,
+    "Desc": "施放技能获得1层「雏菊」",
+    "Level": 1,
+    "Num": 1,
+    "SoldierPartnerNumType": 1
+  },
+  "10102": {
+    "Id": 10102,
+    "PartnerType": 1,
+    "Name": "空白旅团",
+    "PartnerLevelQuality": 2,
+    "Desc": "施放技能获得2层「雏菊」",
+    "Level": 2,
+    "Num": 2,
+    "SoldierPartnerNumType": 1
+  },
+  "10103": {
+    "Id": 10103,
+    "PartnerType": 1,
+    "Name": "空白旅团",
+    "PartnerLevelQuality": 3,
+    "Desc": "施放技能获得3层「雏菊」",
+    "Level": 3,
+    "Num": 3,
+    "SoldierPartnerNumType": 1
+  },
+  "10201": {
+    "Id": 10201,
+    "PartnerType": 2,
+    "Name": "万送屋",
+    "PartnerLevelQuality": 2,
+    "Desc": "每次叠加1层「水雾」，上限5层",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1
+  },
+  "10202": {
+    "Id": 10202,
+    "PartnerType": 2,
+    "Name": "万送屋",
+    "PartnerLevelQuality": 3,
+    "Desc": "每次叠加2层「水雾」，上限10层。「水雾」达到10层时转化为1层「凝结」\n「凝结」：晕眩，提升50%受到伤害<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_DmgPlusRcd\" tint></color>，持续5秒",
+    "Level": 2,
+    "Num": 3,
+    "SoldierPartnerNumType": 1
+  },
+  "10301": {
+    "Id": 10301,
+    "PartnerType": 3,
+    "Name": "花令旅团",
+    "PartnerLevelQuality": 2,
+    "Desc": "获得6<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Energy\" tint></color>，2%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_SkillDmg\" tint></color>",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1
+  },
+  "10302": {
+    "Id": 10302,
+    "PartnerType": 3,
+    "Name": "花令旅团",
+    "PartnerLevelQuality": 3,
+    "Desc": "获得12<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Energy\" tint></color>，3%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_SkillDmg\" tint></color>",
+    "Level": 2,
+    "Num": 3,
+    "SoldierPartnerNumType": 1
+  },
+  "10401": {
+    "Id": 10401,
+    "PartnerType": 4,
+    "Name": "恩赐意志",
+    "PartnerLevelQuality": 1,
+    "Desc": "添加1层「制裁之印」，上限2层",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1
+  },
+  "10402": {
+    "Id": 10402,
+    "PartnerType": 4,
+    "Name": "恩赐意志",
+    "PartnerLevelQuality": 2,
+    "Desc": "添加1层「制裁之印」，上限3层",
+    "Level": 2,
+    "Num": 3,
+    "SoldierPartnerNumType": 1
+  },
+  "10403": {
+    "Id": 10403,
+    "PartnerType": 4,
+    "Name": "恩赐意志",
+    "PartnerLevelQuality": 3,
+    "Desc": "添加1层「清算之印」，上限5层\n达到5层时立即引爆所有印记，目标损失相当于 单层伤害 × 10 倍 的生命值，并清除该目标身上所有「清算之印」",
+    "Level": 3,
+    "Num": 5,
+    "SoldierPartnerNumType": 1
+  },
+  "10501": {
+    "Id": 10501,
+    "PartnerType": 5,
+    "Name": "齿轮转转",
+    "PartnerLevelQuality": 2,
+    "Desc": "5%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_SkillDmg\" tint></color>，10%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_RecoveryEnergy\" tint></color>",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1,
+    "ClientEffect": [
+      1050101
+    ]
+  },
+  "10502": {
+    "Id": 10502,
+    "PartnerType": 5,
+    "Name": "齿轮转转",
+    "PartnerLevelQuality": 3,
+    "Desc": "5%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_SkillDmg\" tint></color>，20%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_RecoveryEnergy\" tint></color>\n【齿轮转转】成员施放技能时，随机1个位于主战配置的成员获得「柔光护盾」，上限1层\n位于后援配置的【齿轮转转】成员每施放3次技能触发1次「柔光充能」\n「柔光护盾」：自身最大生命5%护盾，持续6秒\n「柔光充能」：所有成员回复3%最大生命",
+    "Level": 2,
+    "Num": 4,
+    "SoldierPartnerNumType": 1,
+    "ClientEffect": [
+      1050201
+    ]
+  },
+  "10601": {
+    "Id": 10601,
+    "PartnerType": 6,
+    "Name": "帝国卫队",
+    "PartnerLevelQuality": 1,
+    "Desc": "战斗开始时提升20<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Energy\" tint></color>，20%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_RecoveryEnergy\" tint></color>",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1
+  },
+  "10602": {
+    "Id": 10602,
+    "PartnerType": 6,
+    "Name": "帝国卫队",
+    "PartnerLevelQuality": 2,
+    "Desc": "战斗开始时提升60<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Energy\" tint></color>，60%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_RecoveryEnergy\" tint></color>",
+    "Level": 2,
+    "Num": 4,
+    "SoldierPartnerNumType": 1
+  },
+  "10603": {
+    "Id": 10603,
+    "PartnerType": 6,
+    "Name": "帝国卫队",
+    "PartnerLevelQuality": 3,
+    "Desc": "战斗开始时获得50%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Energy\" tint></color>（最少60），90%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_RecoveryEnergy\" tint></color>\n其他友方成员获得一半效果",
+    "Level": 3,
+    "Num": 6,
+    "SoldierPartnerNumType": 1
+  },
+  "10604": {
+    "Id": 10604,
+    "PartnerType": 6,
+    "Name": "帝国卫队",
+    "PartnerLevelQuality": 4,
+    "Desc": "战斗开始时获得100%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Energy\" tint></color>，120%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_RecoveryEnergy\" tint></color>\n其他友方成员获得一半效果",
+    "Level": 4,
+    "Num": 7,
+    "SoldierPartnerNumType": 1
+  },
+  "10701": {
+    "Id": 10701,
+    "PartnerType": 7,
+    "Name": "地理协会",
+    "PartnerLevelQuality": 4,
+    "Desc": "1星：每经过5秒获得1层，上限6层\n2星：每经过5秒获得2层，上限8层\n3星：每经过4秒获得2层，上限12层",
+    "Level": 1,
+    "Num": 1,
+    "SoldierPartnerNumType": 1
+  },
+  "10801": {
+    "Id": 10801,
+    "PartnerType": 8,
+    "Name": "自由旅人",
+    "PartnerLevelQuality": 3,
+    "Desc": "【千都世】提升6%暴击率<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_CritRate\" tint></color>；\n【希娅】提升12%暴击伤害<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_CritPower\" tint></color>\n【科洛妮丝】战斗开始时为出战成员生成3%最大生命<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_MaxHp\" tint></color>的护盾\n【紫槿】提升3%技能伤害<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_SkillDmg\" tint></color>\n【埃莉诺】提升4%回能效率<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_RecoveryEnergy\" tint></color>\n【艾蕾】提升4%攻击速度<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_AtkSpd\" tint></color>\n【乙叶】斩杀生命<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Hp\" tint></color>低于5%的敌人",
+    "Level": 1,
+    "Num": 1,
+    "SoldierPartnerNumType": 1,
+    "ClientEffect": [
+      1080101,
+      1080102,
+      1080103,
+      1080104,
+      1080105,
+      1080106,
+      1080107,
+      1080108
+    ]
+  },
+  "10901": {
+    "Id": 10901,
+    "PartnerType": 9,
+    "Name": "灰风俱乐部",
+    "PartnerLevelQuality": 1,
+    "Desc": "「围攻」上限3层",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1
+  },
+  "10902": {
+    "Id": 10902,
+    "PartnerType": 9,
+    "Name": "灰风俱乐部",
+    "PartnerLevelQuality": 2,
+    "Desc": "「围攻」上限5层\n每有1个敌人有「围攻」标记，【灰风俱乐部】成员提升20%普攻伤害<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_NormalDmg\" tint></color>，20%回能效率<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_RecoveryEnergy\" tint></color>",
+    "Level": 2,
+    "Num": 4,
+    "SoldierPartnerNumType": 1
+  },
+  "10903": {
+    "Id": 10903,
+    "PartnerType": 9,
+    "Name": "灰风俱乐部",
+    "PartnerLevelQuality": 3,
+    "Desc": "「围攻」上限5层\n每有1个敌人有「围攻」标记，【灰风俱乐部】成员提升20%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_NormalDmg\" tint></color>，20%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_RecoveryEnergy\" tint></color>\n【灰风俱乐部】成员击杀带有「围攻」标记的成员后，击杀者提升10%攻击<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Atk\" tint></color>",
+    "Level": 3,
+    "Num": 5,
+    "SoldierPartnerNumType": 1
+  },
+  "10904": {
+    "Id": 10904,
+    "PartnerType": 9,
+    "Name": "灰风俱乐部",
+    "PartnerLevelQuality": 4,
+    "Desc": "后援配置【灰风俱乐部】成员提升100%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_RecoveryEnergy\" tint></color>\n「围攻」上限5层\n每有1个敌人有「围攻」标记，【灰风俱乐部】成员提升20%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_NormalDmg\" tint></color>，20%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_RecoveryEnergy\" tint></color>\n【灰风俱乐部】成员击杀带有「围攻」标记的成员，击杀者提升10%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Atk\" tint></color>",
+    "Level": 4,
+    "Num": 6,
+    "SoldierPartnerNumType": 1
+  },
+  "11001": {
+    "Id": 11001,
+    "PartnerType": 10,
+    "Name": "联合种业",
+    "PartnerLevelQuality": 1,
+    "Desc": "战斗结束获得1<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Coin\" tint></color>，进入新阶段时获得3<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Coin\" tint></color>",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1,
+    "ServerEffect": 301100
+  },
+  "11002": {
+    "Id": 11002,
+    "PartnerType": 10,
+    "Name": "联合种业",
+    "PartnerLevelQuality": 2,
+    "Desc": "战斗结束获得1<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Coin\" tint></color>，进入新阶段时获得3<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Coin\" tint></color>\n战斗失败时额外获得当前连败回合数的<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Coin\" tint></color>，每场战斗上限5枚",
+    "Level": 2,
+    "Num": 3,
+    "SoldierPartnerNumType": 1,
+    "ServerEffect": 301101
+  },
+  "11003": {
+    "Id": 11003,
+    "PartnerType": 10,
+    "Name": "联合种业",
+    "PartnerLevelQuality": 3,
+    "Desc": "战斗结束获得1<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Coin\" tint></color>，进入新阶段时获得3<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Coin\" tint></color>\n战斗失败时额外获得当前连败回合数的<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Coin\" tint></color>，每场战斗上限5枚\n「绩效」效果额外提升50%",
+    "Level": 3,
+    "Num": 4,
+    "SoldierPartnerNumType": 1,
+    "ServerEffect": 301101
+  },
+  "11004": {
+    "Id": 11004,
+    "PartnerType": 10,
+    "Name": "联合种业",
+    "PartnerLevelQuality": 3,
+    "Desc": "战斗结束获得1<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Coin\" tint></color>，进入新阶段时获得3<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Coin\" tint></color>\n战斗失败时额外获得当前连败回合数的<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Coin\" tint></color>，每场战斗上限5枚\n「绩效」效果额外提升50%，每层「绩效」额外使联合种业成员提升1.5%回能效率<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_RecoveryEnergy\" tint></color>",
+    "Level": 4,
+    "Num": 5,
+    "SoldierPartnerNumType": 1,
+    "ServerEffect": 301101
+  },
+  "11005": {
+    "Id": 11005,
+    "PartnerType": 10,
+    "Name": "联合种业",
+    "PartnerLevelQuality": 4,
+    "Desc": "战斗结束获得1<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Coin\" tint></color>，进入新阶段时获得3<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Coin\" tint></color>\n战斗失败时额外获得当前连败回合数的<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Coin\" tint></color>，每场战斗上限5枚\n「绩效」效果额外提升50%，每层「绩效」额外使联合种业成员提升1.5%回能效率<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_RecoveryEnergy\" tint></color>\n【联合种业】成员施放技能时获得1<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Coin\" tint></color>，每场战斗上限3枚",
+    "Level": 5,
+    "Num": 6,
+    "SoldierPartnerNumType": 1,
+    "ServerEffect": 301102
+  },
+  "11101": {
+    "Id": 11101,
+    "PartnerType": 11,
+    "Name": "森林朋友",
+    "PartnerLevelQuality": 1,
+    "Desc": "每隔10秒触发",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1
+  },
+  "11102": {
+    "Id": 11102,
+    "PartnerType": 11,
+    "Name": "森林朋友",
+    "PartnerLevelQuality": 2,
+    "Desc": "每隔8秒触发",
+    "Level": 2,
+    "Num": 5,
+    "SoldierPartnerNumType": 1
+  },
+  "11103": {
+    "Id": 11103,
+    "PartnerType": 11,
+    "Name": "森林朋友",
+    "PartnerLevelQuality": 3,
+    "Desc": "每隔5秒触发\n每当有成员阵亡时，【森林朋友】成员提升100%回能效率<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_RecoveryEnergy\" tint></color>",
+    "Level": 3,
+    "Num": 7,
+    "SoldierPartnerNumType": 1
+  },
+  "11201": {
+    "Id": 11201,
+    "PartnerType": 12,
+    "Name": "夏洛克",
+    "PartnerLevelQuality": 4,
+    "Desc": "1星：继承60%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Atk\" tint></color>，继承10%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_MaxHp\" tint></color>；\n2星：继承120%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Atk\" tint></color>，继承50%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_MaxHp\" tint></color>；\n3星：继承500%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Atk\" tint></color>，继承100%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_MaxHp\" tint></color>",
+    "Level": 1,
+    "Num": 1,
+    "SoldierPartnerNumType": 1
+  },
+  "11301": {
+    "Id": 11301,
+    "PartnerType": 13,
+    "Name": "生存达人",
+    "PartnerLevelQuality": 1,
+    "Desc": "每人5%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_MaxHp\" tint></color>",
+    "Level": 1,
+    "Num": 1,
+    "SoldierPartnerNumType": 1,
+    "ClientEffect": [
+      1130101,
+      1130102
+    ]
+  },
+  "11302": {
+    "Id": 11302,
+    "PartnerType": 13,
+    "Name": "生存达人",
+    "PartnerLevelQuality": 2,
+    "Desc": "每人10%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_MaxHp\" tint></color>",
+    "Level": 2,
+    "Num": 3,
+    "SoldierPartnerNumType": 1,
+    "ClientEffect": [
+      1130201,
+      1130202
+    ]
+  },
+  "11303": {
+    "Id": 11303,
+    "PartnerType": 13,
+    "Name": "生存达人",
+    "PartnerLevelQuality": 3,
+    "Desc": "每人16%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_MaxHp\" tint></color>",
+    "Level": 3,
+    "Num": 5,
+    "SoldierPartnerNumType": 1,
+    "ClientEffect": [
+      1130301
+    ]
+  },
+  "11401": {
+    "Id": 11401,
+    "PartnerType": 14,
+    "Name": "沐浴恩典",
+    "PartnerLevelQuality": 2,
+    "Desc": "激活1个「圣光御体」",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1,
+    "ClientEffect": [
+      1140101,
+      1140102,
+      1140103
+    ]
+  },
+  "11402": {
+    "Id": 11402,
+    "PartnerType": 14,
+    "Name": "沐浴恩典",
+    "PartnerLevelQuality": 3,
+    "Desc": "额外激活1个「圣光御体」（共2个）",
+    "Level": 2,
+    "Num": 4,
+    "SoldierPartnerNumType": 1,
+    "ClientEffect": [
+      1140201,
+      1140202,
+      1140203
+    ]
+  },
+  "11403": {
+    "Id": 11403,
+    "PartnerType": 14,
+    "Name": "沐浴恩典",
+    "PartnerLevelQuality": 4,
+    "Desc": "额外激活2个「圣光御体」（共3个），「圣光御体」属性额外提升100%",
+    "Level": 3,
+    "Num": 6,
+    "SoldierPartnerNumType": 1,
+    "ClientEffect": [
+      1140301,
+      1140302,
+      1140303
+    ]
+  },
+  "11501": {
+    "Id": 11501,
+    "PartnerType": 15,
+    "Name": "百步穿杨",
+    "PartnerLevelQuality": 1,
+    "Desc": "所有友方成员8%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_CritRate\" tint></color>，【百步穿杨】成员额外10%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_CritRate\" tint></color>",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1,
+    "ClientEffect": [
+      1150101,
+      1150102
+    ]
+  },
+  "11502": {
+    "Id": 11502,
+    "PartnerType": 15,
+    "Name": "百步穿杨",
+    "PartnerLevelQuality": 2,
+    "Desc": "所有友方成员16%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_CritRate\" tint></color>，【百步穿杨】成员额外24%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_CritRate\" tint></color>",
+    "Level": 2,
+    "Num": 4,
+    "SoldierPartnerNumType": 1,
+    "ClientEffect": [
+      1150201,
+      1150202
+    ]
+  },
+  "11503": {
+    "Id": 11503,
+    "PartnerType": 15,
+    "Name": "百步穿杨",
+    "PartnerLevelQuality": 3,
+    "Desc": "所有友方成员20%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_CritRate\" tint></color>，【百步穿杨】成员额外30%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_CritRate\" tint></color>\n【百步穿杨】成员暴击时提升5%暴击伤害<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_CritPower\" tint></color>，最多叠加60层",
+    "Level": 3,
+    "Num": 6,
+    "SoldierPartnerNumType": 1,
+    "ClientEffect": [
+      1150301,
+      1150302
+    ]
+  },
+  "11504": {
+    "Id": 11504,
+    "PartnerType": 15,
+    "Name": "百步穿杨",
+    "PartnerLevelQuality": 4,
+    "Desc": "所有友方成员30%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_CritRate\" tint></color>，【百步穿杨】成员额外45%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_CritRate\" tint></color>\n【百步穿杨】成员暴击时提升5%暴击伤害<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_CritPower\" tint></color>，最多叠加60层\n【百步穿杨】成员攻击生命<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Hp\" tint></color>低于70%的敌人时必定暴击",
+    "Level": 4,
+    "Num": 8,
+    "SoldierPartnerNumType": 1,
+    "ClientEffect": [
+      1150401,
+      1150402
+    ]
+  },
+  "11601": {
+    "Id": 11601,
+    "PartnerType": 16,
+    "Name": "巅峰战士",
+    "PartnerLevelQuality": 1,
+    "Desc": "每有1层「武者气势」，50%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_SkillDmg\" tint></color>",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1
+  },
+  "11602": {
+    "Id": 11602,
+    "PartnerType": 16,
+    "Name": "巅峰战士",
+    "PartnerLevelQuality": 3,
+    "Desc": "每有1层「武者气势」，100%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_SkillDmg\" tint></color>",
+    "Level": 2,
+    "Num": 4,
+    "SoldierPartnerNumType": 1
+  },
+  "11603": {
+    "Id": 11603,
+    "PartnerType": 16,
+    "Name": "巅峰战士",
+    "PartnerLevelQuality": 4,
+    "Desc": "每有1层「武者气势」，150%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_SkillDmg\" tint></color>，层数上限提升至10",
+    "Level": 3,
+    "Num": 6,
+    "SoldierPartnerNumType": 1
+  },
+  "11701": {
+    "Id": 11701,
+    "PartnerType": 17,
+    "Name": "魅力满溢",
+    "PartnerLevelQuality": 1,
+    "Desc": "每次叠加1层「魅惑」，上限3层",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1
+  },
+  "11702": {
+    "Id": 11702,
+    "PartnerType": 17,
+    "Name": "魅力满溢",
+    "PartnerLevelQuality": 2,
+    "Desc": "每次叠加1层「魅惑」，上限6层",
+    "Level": 2,
+    "Num": 3,
+    "SoldierPartnerNumType": 1
+  },
+  "11703": {
+    "Id": 11703,
+    "PartnerType": 17,
+    "Name": "魅力满溢",
+    "PartnerLevelQuality": 3,
+    "Desc": "每次叠加1层「魅惑」，无叠加上限",
+    "Level": 3,
+    "Num": 4,
+    "SoldierPartnerNumType": 1
+  },
+  "11801": {
+    "Id": 11801,
+    "PartnerType": 18,
+    "Name": "人多势众",
+    "PartnerLevelQuality": 1,
+    "Desc": "【人多势众】成员10%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Atk\" tint></color>，5%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_CritRate\" tint></color>",
+    "Level": 1,
+    "Num": 1,
+    "SoldierPartnerNumType": 1,
+    "ClientEffect": [
+      1180101,
+      1180102,
+      1180103,
+      1180104,
+      1180105,
+      1180106,
+      1180107,
+      1180108,
+      1180109,
+      1180110,
+      1180111,
+      1180112,
+      1180113,
+      1180114,
+      1180115,
+      1180116,
+      1180117,
+      1180118
+    ]
+  },
+  "11802": {
+    "Id": 11802,
+    "PartnerType": 18,
+    "Name": "人多势众",
+    "PartnerLevelQuality": 3,
+    "Desc": "所有友方成员10%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Atk\" tint></color>，5%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_CritRate\" tint></color>",
+    "Level": 2,
+    "Num": 4,
+    "SoldierPartnerNumType": 1,
+    "ClientEffect": [
+      1180201,
+      1180202,
+      1180203,
+      1180204,
+      1180205,
+      1180206,
+      1180207,
+      1180208,
+      1180209,
+      1180210,
+      1180211,
+      1180212,
+      1180213,
+      1180214,
+      1180215,
+      1180216,
+      1180217,
+      1180218
+    ]
+  },
+  "11901": {
+    "Id": 11901,
+    "PartnerType": 19,
+    "Name": "摸鱼高手",
+    "PartnerLevelQuality": 1,
+    "Desc": "每12秒进入「放松状态」，持续4秒",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1,
+    "ServerEffect": 301190
+  },
+  "11902": {
+    "Id": 11902,
+    "PartnerType": 19,
+    "Name": "摸鱼高手",
+    "PartnerLevelQuality": 3,
+    "Desc": "每12秒进入「放松状态」，持续4秒\n「放松状态」结束后，触发「做不完了喵」效果，持续至下次「放松状态」\n「做不完了喵」：【摸鱼高手】成员获得100%攻击速度<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_AtkSpd\" tint></color>和100%回能效率<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_RecoveryEnergy\" tint></color>",
+    "Level": 2,
+    "Num": 4,
+    "SoldierPartnerNumType": 1,
+    "ServerEffect": 301190
+  },
+  "12001": {
+    "Id": 12001,
+    "PartnerType": 20,
+    "Name": "龙裔",
+    "PartnerLevelQuality": 1,
+    "Desc": "召唤「九霄瑞彩流光筒」协助战斗",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1
+  },
+  "12002": {
+    "Id": 12002,
+    "PartnerType": 20,
+    "Name": "龙裔",
+    "PartnerLevelQuality": 3,
+    "Desc": "召唤「九霄瑞彩流光筒」协助战斗\n回合结束时，获得随机【龙裔】成员的1个1星版本",
+    "Level": 2,
+    "Num": 3,
+    "SoldierPartnerNumType": 1,
+    "ServerEffect": 301200
+  },
+  "12101": {
+    "Id": 12101,
+    "PartnerType": 21,
+    "Name": "白猫剧团",
+    "PartnerLevelQuality": 5,
+    "Desc": "【卡西米拉】后援技的空投炸弹可眩晕目标，持续0.5秒。且有50%概率额外产生一轮轰炸\n【猫眼】主战技的「黑暗射线」会给命中的敌人施加持续5秒的「暗黑标记」，猫眼对标记敌人造成普攻伤害时，额外造成150%攻击力<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Atk\" tint></color>的附加伤害，同一目标每秒最多触发2次",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1
+  },
+  "12201": {
+    "Id": 12201,
+    "PartnerType": 22,
+    "Name": "沙蝎佣兵团",
+    "PartnerLevelQuality": 1,
+    "Desc": "召唤「荒沙战傀」协助战斗",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1
+  },
+  "12202": {
+    "Id": 12202,
+    "PartnerType": 22,
+    "Name": "沙蝎佣兵团",
+    "PartnerLevelQuality": 2,
+    "Desc": "「荒沙战傀」登场时对附近敌人施加「嘲讽」\n「嘲讽」：强制令目标敌人攻击自身",
+    "Level": 2,
+    "Num": 3,
+    "SoldierPartnerNumType": 1
+  },
+  "12203": {
+    "Id": 12203,
+    "PartnerType": 22,
+    "Name": "沙蝎佣兵团",
+    "PartnerLevelQuality": 3,
+    "Desc": "「荒沙战傀」登场时对附近敌人施加「嘲讽」\n「荒沙战傀」解锁「沙尘暴」技能，会喷吐大范围扇形流沙，对命中的敌人造成300%攻击力<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Atk\" tint></color>的伤害和击退效果",
+    "Level": 3,
+    "Num": 4,
+    "SoldierPartnerNumType": 1
+  },
+  "12204": {
+    "Id": 12204,
+    "PartnerType": 22,
+    "Name": "沙蝎佣兵团",
+    "PartnerLevelQuality": 4,
+    "Desc": "「荒沙战傀」登场时对附近敌人施加「嘲讽」\n「荒沙战傀」解锁「沙尘暴」技能，会喷吐大范围扇形流沙，对命中的敌人造成300%攻击力<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Atk\" tint></color>的伤害和击退效果\n「荒沙战傀」存活时，【沙蝎佣兵团】成员每3秒提升3%暴击率<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_CritRate\" tint></color>和8%暴击伤害<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_CritPower\" tint></color>，上限12层",
+    "Level": 4,
+    "Num": 5,
+    "SoldierPartnerNumType": 1
+  },
+  "12301": {
+    "Id": 12301,
+    "PartnerType": 23,
+    "Name": "黎明近卫",
+    "PartnerLevelQuality": 1,
+    "Desc": "获得1层「追猎」，上限5层",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1
+  },
+  "12302": {
+    "Id": 12302,
+    "PartnerType": 23,
+    "Name": "黎明近卫",
+    "PartnerLevelQuality": 3,
+    "Desc": "获得1层「追猎」，上限5层\n获得「追猎」时额外提升40%能量<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Energy\" tint></color>",
+    "Level": 2,
+    "Num": 3,
+    "SoldierPartnerNumType": 1
+  },
+  "12401": {
+    "Id": 12401,
+    "PartnerType": 24,
+    "Name": "航海专家",
+    "PartnerLevelQuality": 3,
+    "Desc": "「强风」：所有友方成员提升20%攻击速度<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_AtkSpd\" tint></color>，【航海专家】成员额外提升20%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_AtkSpd\" tint></color>，并在战斗开始时获得30%能量<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Energy\" tint></color>\n「晴空」：所有友方成员提升10%伤害<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_GenDmg\" tint></color>，【航海专家】成员额外提升10%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_GenDmg\" tint></color>\n「涨潮」：所有友方成员获得8%最大生命<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_MaxHp\" tint></color>的护盾，【航海专家】成员额外获得8%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_MaxHp\" tint></color>\n「海雾」：所有友方成员降低6%受到伤害<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_DmgPlusRcd\" tint></color>，【航海专家】成员额外降低6%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_DmgPlusRcd\" tint></color>\n「暴雨」：场上所有单位降低15%攻击速度<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_AtkSpd\" tint></color>以及30%回能效率<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_RecoveryEnergy\" tint></color>，【航海专家】成员不受影响",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1
+  },
+  "12501": {
+    "Id": 12501,
+    "PartnerType": 25,
+    "Name": "王牌特工",
+    "PartnerLevelQuality": 1,
+    "Desc": "友方成员30%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_CritPower\" tint></color>，【王牌特工】成员额外30%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_CritPower\" tint></color>",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1,
+    "ClientEffect": [
+      1250101,
+      1250102
+    ]
+  },
+  "12502": {
+    "Id": 12502,
+    "PartnerType": 25,
+    "Name": "王牌特工",
+    "PartnerLevelQuality": 3,
+    "Desc": "友方成员60%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_CritPower\" tint></color>，【王牌特工】成员额外60%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_CritPower\" tint></color>\n【王牌特工】成员造成暴击时降低目标5点防御<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Def\" tint></color>，最多叠加10次",
+    "Level": 2,
+    "Num": 4,
+    "SoldierPartnerNumType": 1,
+    "ClientEffect": [
+      1250201,
+      1250202
+    ]
+  },
+  "12601": {
+    "Id": 12601,
+    "PartnerType": 26,
+    "Name": "指挥官",
+    "PartnerLevelQuality": 1,
+    "Desc": "【卡西米拉】施放技能后，所有「追随者」提升40%攻击速度<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_AtkSpd\" tint></color>，持续4秒\n【翡冷翠】施放技能后，所有「追随者」立即获得15%能量<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Energy\" tint></color>\n【格蕾霍恩】施放技能后，所有「追随者」恢复3%最大生命<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_MaxHp\" tint></color>，提升10%防御<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Def\" tint></color>，上限6层\n【哈萨娜】施放技能后，所有「追随者」造成伤害时无视目标50%防御<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Def\" tint></color>，持续10秒",
+    "Level": 1,
+    "Num": 1,
+    "SoldierPartnerNumType": 2
+  },
+  "12602": {
+    "Id": 12602,
+    "PartnerType": 26,
+    "Name": "指挥官",
+    "PartnerLevelQuality": 3,
+    "Desc": "价值最高的【指挥官】成员成为「总指挥官」，获得全部「领袖激励」效果，且其他所有友方成员均视为其「追随者」。「领袖激励」效果对「总指挥官」自身也会生效，但效能降低20%",
+    "Level": 2,
+    "Num": 4,
+    "SoldierPartnerNumType": 1
+  },
+  "12701": {
+    "Id": 12701,
+    "PartnerType": 27,
+    "Name": "绮丽魔法",
+    "PartnerLevelQuality": 1,
+    "Desc": "50%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_SkillDmg\" tint></color>，第二次技能效能衰减为36%",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1,
+    "Parameter1": 0.36
+  },
+  "12702": {
+    "Id": 12702,
+    "PartnerType": 27,
+    "Name": "绮丽魔法",
+    "PartnerLevelQuality": 3,
+    "Desc": "70%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_SkillDmg\" tint></color>，第二次技能效能衰减为60%",
+    "Level": 2,
+    "Num": 4,
+    "SoldierPartnerNumType": 1,
+    "Parameter1": 0.6
+  },
+  "12703": {
+    "Id": 12703,
+    "PartnerType": 27,
+    "Name": "绮丽魔法",
+    "PartnerLevelQuality": 4,
+    "Desc": "100%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_SkillDmg\" tint></color>，第二次技能效能衰减为90%\n【绮丽魔法】成员额外提升30%回能效率<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_RecoveryEnergy\" tint></color>",
+    "Level": 3,
+    "Num": 6,
+    "SoldierPartnerNumType": 1,
+    "ClientEffect": [
+      1270101
+    ],
+    "Parameter1": 0.9
+  },
+  "12801": {
+    "Id": 12801,
+    "PartnerType": 28,
+    "Name": "火力压制",
+    "PartnerLevelQuality": 1,
+    "Desc": "3%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_AtkSpd\" tint></color>",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1
+  },
+  "12802": {
+    "Id": 12802,
+    "PartnerType": 28,
+    "Name": "火力压制",
+    "PartnerLevelQuality": 2,
+    "Desc": "5%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_AtkSpd\" tint></color>",
+    "Level": 2,
+    "Num": 4,
+    "SoldierPartnerNumType": 1
+  },
+  "12803": {
+    "Id": 12803,
+    "PartnerType": 28,
+    "Name": "火力压制",
+    "PartnerLevelQuality": 3,
+    "Desc": "6%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_AtkSpd\" tint></color>，额外叠加8%攻击<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Atk\" tint></color>",
+    "Level": 3,
+    "Num": 6,
+    "SoldierPartnerNumType": 1
+  },
+  "12804": {
+    "Id": 12804,
+    "PartnerType": 28,
+    "Name": "火力压制",
+    "PartnerLevelQuality": 4,
+    "Desc": "6%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_AtkSpd\" tint></color>，额外叠加20%攻击<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Atk\" tint></color>，上限提升至30层",
+    "Level": 4,
+    "Num": 8,
+    "SoldierPartnerNumType": 1
+  },
+  "12901": {
+    "Id": 12901,
+    "PartnerType": 29,
+    "Name": "学富五车",
+    "PartnerLevelQuality": 1,
+    "Desc": "10%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_RecoveryEnergy\" tint></color>，【学富五车】成员额外10%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_RecoveryEnergy\" tint></color>",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1,
+    "ClientEffect": [
+      1290101,
+      1290102
+    ]
+  },
+  "12902": {
+    "Id": 12902,
+    "PartnerType": 29,
+    "Name": "学富五车",
+    "PartnerLevelQuality": 2,
+    "Desc": "15%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_RecoveryEnergy\" tint></color>，【学富五车】成员额外25%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_RecoveryEnergy\" tint></color>",
+    "Level": 2,
+    "Num": 3,
+    "SoldierPartnerNumType": 1,
+    "ClientEffect": [
+      1290201,
+      1290202
+    ]
+  },
+  "12903": {
+    "Id": 12903,
+    "PartnerType": 29,
+    "Name": "学富五车",
+    "PartnerLevelQuality": 3,
+    "Desc": "30%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_RecoveryEnergy\" tint></color>，【学富五车】成员额外60%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_RecoveryEnergy\" tint></color>",
+    "Level": 3,
+    "Num": 4,
+    "SoldierPartnerNumType": 1,
+    "ClientEffect": [
+      1290301,
+      1290302
+    ]
+  },
+  "13001": {
+    "Id": 13001,
+    "PartnerType": 30,
+    "Name": "美食鉴赏家",
+    "PartnerLevelQuality": 1,
+    "Desc": "恢复2%造成伤害<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_GenDmg\" tint></color>的生命值，10秒后获得3%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Hp\" tint></color>的护盾",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1
+  },
+  "13002": {
+    "Id": 13002,
+    "PartnerType": 30,
+    "Name": "美食鉴赏家",
+    "PartnerLevelQuality": 2,
+    "Desc": "恢复2.5%造成伤害<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_GenDmg\" tint></color>的生命值，10秒后获得5%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Hp\" tint></color>的护盾",
+    "Level": 2,
+    "Num": 3,
+    "SoldierPartnerNumType": 1
+  },
+  "13003": {
+    "Id": 13003,
+    "PartnerType": 30,
+    "Name": "美食鉴赏家",
+    "PartnerLevelQuality": 3,
+    "Desc": "恢复3%造成伤害<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_GenDmg\" tint></color>的生命值，10秒后获得10%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Hp\" tint></color>的护盾\n护盾存在期间受到伤害<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_DmgPlusRcd\" tint></color>降低30%",
+    "Level": 3,
+    "Num": 4,
+    "SoldierPartnerNumType": 1
+  },
+  "13101": {
+    "Id": 13101,
+    "PartnerType": 31,
+    "Name": "骑士精神",
+    "PartnerLevelQuality": 2,
+    "Desc": "生成自身20%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_MaxHp\" tint></color>的护盾，单场战斗最多触发4次",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1
+  },
+  "13102": {
+    "Id": 13102,
+    "PartnerType": 31,
+    "Name": "骑士精神",
+    "PartnerLevelQuality": 3,
+    "Desc": "生成自身20%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_MaxHp\" tint></color>的护盾，同时自己也获得10%<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_MaxHp\" tint></color>的护盾，触发上限提升至8次",
+    "Level": 2,
+    "Num": 3,
+    "SoldierPartnerNumType": 1
+  },
+  "13201": {
+    "Id": 13201,
+    "PartnerType": 32,
+    "Name": "武器大师",
+    "PartnerLevelQuality": 1,
+    "Desc": "「蓄势」上限5层",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1
+  },
+  "13202": {
+    "Id": 13202,
+    "PartnerType": 32,
+    "Name": "武器大师",
+    "PartnerLevelQuality": 3,
+    "Desc": "「蓄势」上限10层",
+    "Level": 2,
+    "Num": 4,
+    "SoldierPartnerNumType": 1
+  },
+  "13301": {
+    "Id": 13301,
+    "PartnerType": 33,
+    "Name": "守夜人",
+    "PartnerLevelQuality": 5,
+    "Desc": "将1%最大生命<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_MaxHp\" tint></color>和50%防御<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Def\" tint></color>转化为攻击力<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Atk\" tint></color>。施放技能时消耗自身全部护盾，每消耗1点护盾，该次技能伤害<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_SkillDmg\" tint></color>提升0.05%",
+    "Level": 1,
+    "Num": 1,
+    "SoldierPartnerNumType": 1
+  },
+  "13401": {
+    "Id": 13401,
+    "PartnerType": 34,
+    "Name": "搞个大新闻",
+    "PartnerLevelQuality": 5,
+    "Desc": "战斗开始时，标记当前敌方目标为「新闻焦点」。「新闻焦点」受到伤害<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_DmgPlusRcd\" tint></color>提升30%。「新闻焦点」死亡时生成一只「南瓜影灵」，之后标记下一个敌方目标为新的「新闻焦点」",
+    "Level": 1,
+    "Num": 1,
+    "SoldierPartnerNumType": 1
+  },
+  "13501": {
+    "Id": 13501,
+    "PartnerType": 35,
+    "Name": "千变忍者",
+    "PartnerLevelQuality": 5,
+    "Desc": "【乙叶】登场后，自动加入【百步穿杨】、【火力压制】、【王牌特工】中当前场上人数最多的羁绊，使该羁绊人数加1并享受其效果\n【乙叶】星级每提升1，可加入羁绊数量加1，最高加入所有3个羁绊",
+    "Level": 1,
+    "Num": 1,
+    "SoldierPartnerNumType": 1
+  },
+  "13601": {
+    "Id": 13601,
+    "PartnerType": 36,
+    "Name": "忍道传承",
+    "PartnerLevelQuality": 5,
+    "Desc": "【花原】技能命中敌人时，有5%概率触发【乙叶】连携追击，对目标发动1次「天诛」造成241%攻击力<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Atk\" tint></color>的技能伤害<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_SkillDmg\" tint></color>，每第3次触发会产生3次「天诛」\n【乙叶】施放技能时，有100%概率触发【花原】连携追击，对目标发动「花影散华」，对沿途敌人造成多段192%攻击力<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Atk\" tint></color>的技能伤害<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_SkillDmg\" tint></color>",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1
+  },
+  "13701": {
+    "Id": 13701,
+    "PartnerType": 37,
+    "Name": "本尊驾到",
+    "PartnerLevelQuality": 5,
+    "Desc": "【小禾】战斗开始时召唤1只「沙包夏洛克」嘲讽场上所有敌人。「沙包夏洛克」存活5秒后自爆，造成100%攻击力<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Atk\" tint></color>的范围技能伤害<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_SkillDmg\" tint></color>并退场，可触发【夏洛克】后援技登场效果\n【夏洛克】登场后每6秒发动1次「摇人」，使【小禾】获得50%能量<color=#f98037><sprite name=\"Soldier_00_PartnerAttr_Energy\" tint></color>",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1
+  }
+}

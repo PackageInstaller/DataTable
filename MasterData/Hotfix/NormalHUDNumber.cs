@@ -1,0 +1,36 @@
+using UnityEngine;
+
+[DisallowMultipleComponent]
+[RequireComponent(typeof(HUDNumber))]
+public class NormalHUDNumber : MonoBehaviour
+{
+	private HUDNumber _hud;
+
+	private void Awake()
+	{
+		_hud = GetComponent<HUDNumber>();
+	}
+
+	private void OnEnable()
+	{
+		_hud.TextFinish += OnTextFinish;
+		_hud.TextFadeIn += OnTextFadeIn;
+	}
+
+	private void OnDisable()
+	{
+		_hud.TextFinish -= OnTextFinish;
+		_hud.TextFadeIn -= OnTextFadeIn;
+	}
+
+	private void OnTextFinish(float dt)
+	{
+		MonoSingleton<LuaManager>.Instance.FireEvent("HudDestroy", _hud.Id);
+	}
+
+	private void OnTextFadeIn(float dt)
+	{
+		float fadeInNormalizedTime = _hud.GetFadeInNormalizedTime(dt);
+		_hud.TextFadeInUpdate(dt, fadeInNormalizedTime);
+	}
+}

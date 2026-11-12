@@ -1,0 +1,39 @@
+using UnityEngine;
+
+public enum ActorState
+{
+	[InspectorName("空状态")]
+	Null,
+	[InspectorName("新生")]
+	Spawn,
+	[InspectorName("空闲")]
+	Idle,
+	[InspectorName("行动")]
+	Action,
+	[InspectorName("失控")]
+	LostControl,
+	[InspectorName("死亡")]
+	Death,
+	[InspectorName("死亡2")]
+	Clear,
+	[InspectorName("待机")]
+	StandBy,
+	[InspectorName("移动")]
+	Move,
+	[InspectorName("跳跃")]
+	Jump,
+	[InspectorName("冲刺")]
+	Dash,
+	[InspectorName("闪避")]
+	Dodge,
+	[InspectorName("非攻击状态")]
+	NonAttack,
+	[InspectorName("攻击前摇")]
+	AttackAnticipation,
+	[InspectorName("攻击中摇")]
+	AttackActivation,
+	[InspectorName("攻击后摇")]
+	AttackRecovery,
+	[InspectorName("弹药重装")]
+	AttackReload
+}

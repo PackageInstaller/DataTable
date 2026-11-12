@@ -1,0 +1,6 @@
+{
+  "1": {
+    "Id": 1,
+    "HtmlFrame": "<!DOCTYPE html>\n   <html>\n       <head>\n           <meta charset='UTF-8'>\n           <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n           <style>\n                ::-webkit-scrollbar {{\n                width: 0 !important;   /* Chrome/Safari/Edge */\n                height: 0 !important;\n                background: transparent !important;\n               }}\n               body {{\n                   -ms-overflow-style: none;\n                   background-color:#F3F6F8 ;\n                   color:black;\n                   margin: 0;\n                   overflow: auto !important; /* 允许滚动 */\n                   -webkit-font-smoothing: antialiased;\n                   text-rendering: optimizeLegibility;\n                   font-family:'Helvetica','Arial','sans-serif';\n               }}\n               img {{ max-width: 100%; height: auto; }}\n           </style>\n       </head>\n       <body>\n           {0}\n       </body>\n   </html>"
+  }
+}

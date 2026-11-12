@@ -1,0 +1,32 @@
+{
+  "1": {
+    "Id": 1,
+    "ResultType": 1,
+    "ResultName": "Excellent",
+    "AddScoreType": 2,
+    "AddScore": 100
+  },
+  "2": {
+    "Id": 2,
+    "ResultType": 2,
+    "ResultName": "Perfect",
+    "Range": 0.08,
+    "OtherCondition": "&",
+    "AddScoreType": 1,
+    "AddScore": 10
+  },
+  "3": {
+    "Id": 3,
+    "ResultType": 3,
+    "ResultName": "Good",
+    "Range": 0.2,
+    "OtherCondition": "&"
+  },
+  "4": {
+    "Id": 4,
+    "ResultType": 4,
+    "ResultName": "Miss",
+    "Range": 0.25,
+    "OtherCondition": "&"
+  }
+}
