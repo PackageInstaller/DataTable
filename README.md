@@ -4,13 +4,7 @@
 
 ## 内容移除说明
 
-2026 年 11 月 4 日，本仓库依据日期为 2026 年 11 月 3 日的 DMCA 提交通知，移除 `game/AzurPromilia` 分支，停止提供 Azur Promilia（蓝色星原）的数据快照及相关工具，也不再维护或重新发布该分支，具体请看[removed](https://github.com/PackageInstaller/DataTable/tree/master/removed)以及 [github开放的dmca](https://github.com/github/dmca/blob/master/2026/11/2026-11-03-manjuu.md)。
-
-### 致 fork 仓库维护者
-
-各 fork 仓库维护者检查并删除 `game/AzurPromilia` 分支，停止维护和重新发布这些内容。
-
-如收到 GitHub 的通知，请按通知要求与 GitHub 沟通。各 fork 的具体处理范围由 GitHub 按其 [DMCA 政策](https://docs.github.com/en/site-policy/content-removal-policies/dmca-takedown-policy)及有效通知核实确定。
+详情请见[DMCA](https://github.com/PackageInstaller/DataTable/tree/master/DMCA)
 
 ## 克隆单个游戏
 
@@ -92,7 +86,7 @@ git clone -b game/xxxxx --single-branch --depth 1 https://github.com/PackageInst
 | `game/StarResonance`            | StarResonance            | 我去星批                                              |
 | `game/StarSavior`               | StarSavior               | 你也是救援者？                                        |
 | `game/StarseedAsniaTrigger`     | StarseedAsniaTrigger     | 星链计划：未来少女                                    |
-| `game/StellaSora` | StellaSora |
+| `game/StellaSora`               | StellaSora               | 星塔旅人                                              |
 | `game/TaimaninSquad`            | TaimaninSquad            | 对魔忍特遣队                                          |
 | `game/Techcronossx`             | Techcronossx             | 铁扣连接                                              |
 | `game/TenkeiParadox`            | TenkeiParadox            | 天启                                                  |
