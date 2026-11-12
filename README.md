@@ -4,6 +4,10 @@
 
 ## 内容移除说明
 
+各位法务，看到了其实直接在Issuses或者Discussions给我发通知即可，没必要向Github发起DMCA，我看到了会删，目前已有：
+
+ - 蛮啾-蓝色星原：旅谣
+ 
 详情请见[DMCA](https://github.com/PackageInstaller/DataTable/tree/master/DMCA)
 
 ## 克隆单个游戏
