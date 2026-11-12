@@ -96,6 +96,7 @@ git clone -b game/xxxxx --single-branch --depth 1 https://github.com/PackageInst
 | `game/StarResonance`            | StarResonance            | 我去星批                                              |
 | `game/StarSavior`               | StarSavior               | 你也是救援者？                                        |
 | `game/StarseedAsniaTrigger`     | StarseedAsniaTrigger     | 星链计划：未来少女                                    |
+| `game/StellaSora` | StellaSora |
 | `game/TaimaninSquad`            | TaimaninSquad            | 对魔忍特遣队                                          |
 | `game/Techcronossx`             | Techcronossx             | 铁扣连接                                              |
 | `game/TenkeiParadox`            | TenkeiParadox            | 天启                                                  |
