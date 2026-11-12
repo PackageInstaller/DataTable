@@ -6,13 +6,9 @@
 
 2026 年 11 月 4 日，本仓库依据日期为 2026 年 11 月 3 日的 DMCA 提交通知，移除 `game/AzurPromilia` 分支，停止提供 Azur Promilia（蓝色星原）的数据快照及相关工具，也不再维护或重新发布该分支，具体请看[removed](https://github.com/PackageInstaller/DataTable/tree/master/removed)以及 [github开放的dmca](https://github.com/github/dmca/blob/master/2026/11/2026-11-03-manjuu.md)。
 
-通知提交方自述受 Manjuu Co., Ltd. 委托，要求移除上述分支，并就游戏数据的提取、解密与传播等行为提出侵权及规避技术保护措施的指控。此处仅说明通知内容与本仓库的下架处理，不代表对通知中的全部指控作出事实或法律认定。
-
-请勿通过本仓库的分支、提交或 Pull Request 重新上传已下架的相关内容。分支列表不再包含该游戏。
-
 ### 致 fork 仓库维护者
 
-各 fork 仓库维护者检查并删除 `game/AzurPromilia` 分支，以及其他分支、标签、提交历史、Release 或附件中保留的 Azur Promilia 数据、解密工具及相关内容，停止维护和重新发布这些内容。
+各 fork 仓库维护者检查并删除 `game/AzurPromilia` 分支，停止维护和重新发布这些内容。
 
 如收到 GitHub 的通知，请按通知要求与 GitHub 沟通。各 fork 的具体处理范围由 GitHub 按其 [DMCA 政策](https://docs.github.com/en/site-policy/content-removal-policies/dmca-takedown-policy)及有效通知核实确定。
 
