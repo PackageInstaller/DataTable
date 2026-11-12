@@ -2,12 +2,12 @@
 
 ## 各位法务，看到了其实直接在Issuses或者Discussions给我发通知即可，没必要向Github发起DMCA，我看到了会删，目前已有：
 
- - 蛮啾-蓝色星原：旅谣
- 
+- 蛮啾-蓝色星原：旅谣
+
 详情请见[DMCA](https://github.com/PackageInstaller/DataTable/tree/master/DMCA)
 
-
 `master` 只保留索引和 git 相关文件，每个游戏一个独立的快照分支（`game/<游戏名>`），方便只拉取自己需要的数据。
+
 ```bash
 git clone -b game/xxxxx --single-branch --depth 1 https://github.com/PackageInstaller/DataTable.git
 ```
@@ -90,7 +90,7 @@ git clone -b game/xxxxx --single-branch --depth 1 https://github.com/PackageInst
 | `game/TaimaninSquad`            | TaimaninSquad            | 对魔忍特遣队                                          |
 | `game/Techcronossx`             | Techcronossx             | 铁扣连接                                              |
 | `game/TenkeiParadox`            | TenkeiParadox            | 天启                                                  |
-| `game/TouhouLostWord` | TouhouLostWord |
+| `game/TouhouLostWord`           | TouhouLostWord           | 东方归言录                                            |
 | `game/TrickcalRevive`           | TrickcalRevive           | 坨坨可爱捏                                            |
 | `game/TwinkleStarKnights`       | TwinkleStarKnights       | 闪耀星骑士                                            |
 | `game/WarshipGirlsR`            | WarshipGirlsR            | 战舰少女R                                             |
