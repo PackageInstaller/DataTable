@@ -11,10 +11,10 @@ spawn 游戏 → hook UnityWebRequest.set_url / SetRequestHeader / DownloadHandl
     startup     : 响应 msgpack 含 ConsecutiveLoginDay1AndDay2
     masterdata  : 响应长度 > 10MB（约 80MB 的全量数据表）
 不写死任何 UUID / 下标 / 类名；每个客户端版本跑一次，结果写入
-Cache/ReverseBlueEndpoints.json 供 ReverseBlue.py 使用。
+脚本目录的 ReverseBlueEndpoints.json。
 
 用法：
-    python3 ReverseBlueFrida.py                     # 抓取并写 Cache/ReverseBlueEndpoints.json
+    python3 ReverseBlueFrida.py                     # 抓取并写 ReverseBlueEndpoints.json
     python3 ReverseBlueFrida.py --timeout 240
     python3 ReverseBlueFrida.py -o /tmp/endpoints.json
 
@@ -36,7 +36,7 @@ from rich.table import Table
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 CACHE_DIR = SCRIPT_DIR / "Cache"
-ENDPOINTS_FILE = CACHE_DIR / "ReverseBlueEndpoints.json"
+ENDPOINTS_FILE = SCRIPT_DIR / "ReverseBlueEndpoints.json"
 AGENT_FILE = SCRIPT_DIR / "ReverseBlueFridaAgent.js"
 
 PACKAGE = "jp.co.happyelements.rxr"

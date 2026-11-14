@@ -13,7 +13,7 @@ from __future__ import annotations
 
 - version-key：优先取 --version-key；否则从 APK 的 global-metadata.dat 自动提取
   （整份 metadata 里唯一的 50 位字母数字字面量，见 ReverseBlueMetadata.py）；
-- 接口映射：优先取 --endpoints JSON；否则读 Cache/ReverseBlueEndpoints.json
+- 接口映射：优先取 --endpoints JSON；否则读脚本目录的 ReverseBlueEndpoints.json
   （由 ReverseBlueFrida.py frida spawn 动态抓包生成）；缺失时自动调用动态抓取
   （每版本一次，需要设备 + frida-server）；
 - appVersion：优先 --version；否则 APK versionName（aapt2/aapt）；再否则用动态抓包
@@ -67,7 +67,8 @@ ASSETS_DIR = SCRIPT_DIR / "Assets"
 MASTER_DIR = SCRIPT_DIR / "MasterData"
 CACHE_DIR = SCRIPT_DIR / "Cache"
 PAINTING_DIR = SCRIPT_DIR / "Painting"
-ENDPOINTS_CACHE = CACHE_DIR / "ReverseBlueEndpoints.json"
+# 接口映射（每个客户端版本由 ReverseBlueFrida.py 动态抓包生成，可随仓库提交）
+ENDPOINTS_FILE = SCRIPT_DIR / "ReverseBlueEndpoints.json"
 DEFAULT_JOBS = 8
 ROLE_ORDER = ("startup", "session", "app_config", "masterdata")
 
@@ -113,11 +114,12 @@ def normalize_uuid(value: str) -> str:
 
 
 def read_cache() -> dict[str, Any]:
-    if not ENDPOINTS_CACHE.is_file():
+    if not ENDPOINTS_FILE.is_file():
         return {}
     try:
-        data = json.loads(ENDPOINTS_CACHE.read_text(encoding="utf-8"))
-    except Exception:  # noqa: BLE001
+        data = json.loads(ENDPOINTS_FILE.read_text(encoding="utf-8"))
+    except Exception as exc:  # noqa: BLE001
+        console.print(f"[yellow]接口映射文件解析失败[/yellow] {ENDPOINTS_FILE}: {exc}")
         return {}
     return data if isinstance(data, dict) else {}
 
@@ -223,7 +225,7 @@ def role_candidates(args: argparse.Namespace, runtime: Runtime, role: str) -> li
 def persist_endpoints(runtime: Runtime) -> None:
     if not runtime.resolved:
         return
-    CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    ENDPOINTS_FILE.parent.mkdir(parents=True, exist_ok=True)
     data = read_cache()
     data["gamePackage"] = GAME_PACKAGE
     if runtime.version:
@@ -232,7 +234,7 @@ def persist_endpoints(runtime: Runtime) -> None:
         data["versionKey"] = data.get("versionKey") or runtime.version_key
     data["uuids"] = runtime.resolved
     data["sources"] = {role: runtime.sources.get(role, "") for role in runtime.resolved}
-    write_json(ENDPOINTS_CACHE, data)
+    write_json(ENDPOINTS_FILE, data)
 
 
 def _mark(runtime: Runtime, role: str, source: str, uuid: str) -> None:
@@ -267,8 +269,9 @@ def ensure_runtime(args: argparse.Namespace) -> Runtime:
         or bool(_missing_roles(args, runtime))
     )
     if need:
-        try_auto_capture(args)
-        runtime = build_runtime(args)
+        if not getattr(args, "no_capture", False):
+            try_auto_capture(args)
+            runtime = build_runtime(args)
     problems: list[str] = []
     if not runtime.version:
         problems.append("客户端版本：--version，或提供 --apk 从 versionName 读取")
@@ -280,7 +283,7 @@ def ensure_runtime(args: argparse.Namespace) -> Runtime:
     if problems:
         raise SystemExit(
             "缺少运行所需的动态数据：\n  - " + "\n  - ".join(problems) +
-            "\n提示：设备已连接时直接重跑（会自动 frida 抓取）；离线可先用 --endpoints/--version 手工提供。"
+            f"\n接口映射文件应为：{ENDPOINTS_FILE}"
         )
     console.print(
         f"[cyan]版本[/cyan] {runtime.version}（{runtime.sources['version']}）  "

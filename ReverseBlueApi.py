@@ -7,7 +7,7 @@ application/x-msgpack，鉴权只依赖固定请求头 + 服务端下发的 X-Se
 
 注意：接口路由（/api/uuid/<uuid>）与 reverse-version-key 是每个客户端版本
 编译进 libil2cpp 的常量，服务端不下发。本模块不内置它们；调用方必须传入从
-Cache/ReverseBlueEndpoints.json（ReverseBlueFrida.py 动态抓包生成）或参数得到的值。
+脚本目录的 ReverseBlueEndpoints.json（ReverseBlueFrida.py 动态抓包生成）或参数得到的值。
 """
 
 import os
