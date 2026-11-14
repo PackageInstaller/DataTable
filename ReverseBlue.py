@@ -7,14 +7,21 @@ from __future__ import annotations
     masterdata  数据表（技能/角色/剧情等）与重要配置 → MasterData/
     all         assets + masterdata
 
-版本相关常量（接口 UUID、reverse-version-key）由服务端在构建时生成并编译进客户端，
-随 APK 的 global-metadata.dat 一起分发，服务端不下发。本工具会尽量从 APK 动态提取：
-    - 439 条 /api/uuid/<uuid> 路由字面量（连续生成块）
-    - 唯一的 50 位字母数字字面量 = reverse-version-key
-    - versionName（aapt2/aapt）
-提取不到时退回 ReverseBlueApi.py 中内置的 1.31.3 常量；接口角色（startup/session/
-app_config/masterdata）优先用内置 UUID，若该 UUID 不在当前版本路由块中，则用
-ENDPOINT_INDICES 下标重新定位并以真实请求验证，成功后写入 Cache/ReverseBlueEndpoints.json。
+版本相关常量（接口路由 /api/uuid/<uuid> 与 reverse-version-key）是每个客户端版本
+由后端生成并编译进 libil2cpp 的，服务端不下发；本工具**不内置**这些值：
+
+- version-key：优先取 --version-key；否则从 APK 的 global-metadata.dat 自动提取
+  （整份 metadata 里唯一的 50 位字母数字字面量，见 ReverseBlueMetadata.py）；
+- 接口映射：优先取 --endpoints JSON；否则读 Cache/ReverseBlueEndpoints.json
+  （由 ReverseBlueFrida.py frida spawn 动态抓包生成）；缺失时自动调用动态抓取
+  （每版本一次，需要设备 + frida-server）；
+- appVersion：优先 --version；否则 APK versionName（aapt2/aapt）；再否则用动态抓包
+  得到的版本号。
+
+动态抓包原理：spawn 游戏后 hook UnityWebRequest.set_url / SetRequestHeader /
+DownloadHandler / UploadHandlerRaw，抓启动流程的真实 URL、reverse-version-key 请求头
+和响应体；再按响应 msgpack 语义判定 startup/session/app_config/masterdata 四个角色，
+不写死 UUID/下标/类名。
 
 资源说明：
     - APK 内置资源（含 split_UnityDataAssetPack.apk 的本地 Addressables）解包后按
@@ -52,12 +59,14 @@ import ReverseBlueMasterData as MasterData
 import ReverseBlueMetadata as Metadata
 
 GAME_TITLE = "反向蓝 / ReverseBlue Re-birthEnd"
+GAME_PACKAGE = "jp.co.happyelements.rxr"
 SCRIPT_DIR = Path(__file__).resolve().parent
 ASSETS_DIR = SCRIPT_DIR / "Assets"
 MASTER_DIR = SCRIPT_DIR / "MasterData"
 CACHE_DIR = SCRIPT_DIR / "Cache"
 ENDPOINTS_CACHE = CACHE_DIR / "ReverseBlueEndpoints.json"
 DEFAULT_JOBS = 8
+ROLE_ORDER = ("startup", "session", "app_config", "masterdata")
 
 console = Console()
 
@@ -87,20 +96,43 @@ def write_json(path: Path, obj: Any) -> None:
     path.write_text(json.dumps(obj, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
+def normalize_uuid(value: str) -> str:
+    value = str(value)
+    if value.startswith("http"):
+        marker = "/api/uuid/"
+        index = value.find(marker)
+        if index < 0:
+            return value
+        value = value[index + len(marker):]
+    if value.startswith("/api/uuid/"):
+        value = value[len("/api/uuid/"):]
+    return value.split("?")[0].strip("/")
+
+
+def read_cache() -> dict[str, Any]:
+    if not ENDPOINTS_CACHE.is_file():
+        return {}
+    try:
+        data = json.loads(ENDPOINTS_CACHE.read_text(encoding="utf-8"))
+    except Exception:  # noqa: BLE001
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
 # ---------------------------------------------------------------------------
-# 运行时配置：版本 / version-key / 路由候选
+# 运行时配置：版本 / version-key / 路由候选（全部来自 APK 或动态抓包，不内置）
 # ---------------------------------------------------------------------------
 
 @dataclass
 class Runtime:
-    version: str
-    version_key: str
-    apks: list[Path]
-    apk_error: str | None
-    routes: list[str]
-    route_fingerprint: str
-    literals: int = 0
+    version: str = ""
+    version_key: str = ""
+    apks: list[Path] = field(default_factory=list)
+    apk_error: str | None = None
+    routes: list[str] = field(default_factory=list)
     route_uuids: list[str] = field(default_factory=list)
+    literals: int = 0
+    cache: dict[str, Any] = field(default_factory=dict)
     sources: dict[str, str] = field(default_factory=dict)
     resolved: dict[str, str] = field(default_factory=dict)
     session: dict[str, Any] | None = None
@@ -121,41 +153,39 @@ def build_runtime(args: argparse.Namespace) -> Runtime:
     routes = Metadata.find_routes(literals)
     auto_key = Metadata.find_version_key(literals)
     auto_version = Metadata.detect_app_version(apks)
+    cache = read_cache()
 
-    version = args.version or auto_version or Api.APP_VERSION
-    version_key = args.version_key or auto_key or Api.VERSION_KEY
     runtime = Runtime(
-        version=version,
-        version_key=version_key,
         apks=apks,
         apk_error=apk_error,
         routes=routes,
-        route_fingerprint=Metadata.route_fingerprint(routes) if routes else "",
-        literals=len(literals),
         route_uuids=[normalize_uuid(text) for text in routes],
+        literals=len(literals),
+        cache=cache,
     )
-    runtime.sources["version"] = "参数" if args.version else ("APK(aapt)" if auto_version else "内置常量")
-    runtime.sources["version_key"] = "参数" if args.version_key else (
-        "APK metadata" if auto_key else "内置常量"
+    runtime.version = args.version or auto_version or str(cache.get("appVersion") or "")
+    runtime.version_key = args.version_key or auto_key or str(cache.get("versionKey") or "")
+    runtime.sources["version"] = (
+        "参数" if args.version else
+        "APK(aapt)" if auto_version else
+        "动态抓包" if cache.get("appVersion") else
+        "未知"
+    )
+    runtime.sources["version_key"] = (
+        "参数" if args.version_key else
+        "APK metadata" if auto_key else
+        "动态抓包" if cache.get("versionKey") else
+        "未知"
     )
     if routes:
-        console.print(
-            f"[cyan]APK metadata[/cyan] {len(literals)} 条字面量 / {len(routes)} 条路由  "
-            f"version-key 来源: {runtime.sources['version_key']}"
-        )
-    console.print(f"[cyan]版本[/cyan] {version}（{runtime.sources['version']}）")
-    if not routes:
-        console.print("[yellow]未从 APK 读取到 metadata 路由，使用内置 1.31.3 接口映射[/yellow]")
+        console.print(f"[cyan]APK metadata[/cyan] {len(literals)} 条字面量 / {len(routes)} 条路由")
+    if cache.get("uuids"):
+        runtime.resolved.update({role: normalize_uuid(uuid) for role, uuid in cache["uuids"].items()})
     return runtime
 
 
-def normalize_uuid(value: str) -> str:
-    prefix = "/api/uuid/"
-    return value[len(prefix):] if value.startswith(prefix) else value
-
-
 def _candidate_sets(args: argparse.Namespace, runtime: Runtime) -> list[tuple[str, dict[str, str], bool]]:
-    """返回 [(来源, {role: uuid}, 是否信任(不校验是否在路由块内))]，按优先级排序。"""
+    """返回 [(来源, {role: uuid}, 是否信任(不校验是否在当前版本路由块内))]，按优先级排序。"""
     sets: list[tuple[str, dict[str, str], bool]] = []
     if args.endpoints:
         path = Path(args.endpoints)
@@ -166,24 +196,10 @@ def _candidate_sets(args: argparse.Namespace, runtime: Runtime) -> list[tuple[st
         uuids = data.get("uuids") if isinstance(data, dict) and "uuids" in data else data
         if not isinstance(uuids, dict) or not uuids:
             raise SystemExit(f"--endpoints {path} 需要 JSON 对象（role -> uuid）")
-        sets.append(("endpoints", {str(k): normalize_uuid(str(v)) for k, v in uuids.items()}, True))
-    if ENDPOINTS_CACHE.is_file():
-        try:
-            cached = json.loads(ENDPOINTS_CACHE.read_text(encoding="utf-8"))
-            uuids = cached.get("uuids") or {}
-            if isinstance(uuids, dict) and uuids:
-                sets.append(("Cache", {str(k): normalize_uuid(str(v)) for k, v in uuids.items()}, False))
-        except Exception:  # noqa: BLE001
-            pass
-    sets.append(("内置", {role: normalize_uuid(uuid) for role, uuid in Api.ENDPOINT_UUIDS.items()}, False))
-    if runtime.routes:
-        indexed = {
-            role: normalize_uuid(runtime.routes[index])
-            for role, index in Api.ENDPOINT_INDICES.items()
-            if 0 <= index < len(runtime.routes)
-        }
-        if indexed:
-            sets.append(("下标", indexed, False))
+        sets.append(("endpoints", {str(k): normalize_uuid(v) for k, v in uuids.items()}, True))
+    cached = runtime.cache.get("uuids") or {}
+    if isinstance(cached, dict) and cached:
+        sets.append(("Cache", {str(k): normalize_uuid(v) for k, v in cached.items()}, False))
     return sets
 
 
@@ -205,25 +221,77 @@ def persist_endpoints(runtime: Runtime) -> None:
     if not runtime.resolved:
         return
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
-    data = {
-        "appVersion": runtime.version,
-        "routeCount": len(runtime.routes),
-        "routeFingerprint": runtime.route_fingerprint,
-        "indices": Api.ENDPOINT_INDICES,
-        "uuids": runtime.resolved,
-        "sources": {role: runtime.sources.get(role, "") for role in runtime.resolved},
-    }
+    data = read_cache()
+    data["gamePackage"] = GAME_PACKAGE
+    if runtime.version:
+        data["appVersion"] = data.get("appVersion") or runtime.version
+    if runtime.version_key:
+        data["versionKey"] = data.get("versionKey") or runtime.version_key
+    data["uuids"] = runtime.resolved
+    data["sources"] = {role: runtime.sources.get(role, "") for role in runtime.resolved}
     write_json(ENDPOINTS_CACHE, data)
 
 
 def _mark(runtime: Runtime, role: str, source: str, uuid: str) -> None:
-    runtime.resolved[role] = uuid
+    runtime.resolved[role] = normalize_uuid(uuid)
     runtime.sources[role] = source
     persist_endpoints(runtime)
 
 
+def _missing_roles(args: argparse.Namespace, runtime: Runtime) -> list[str]:
+    return [role for role in ROLE_ORDER if not role_candidates(args, runtime, role)]
+
+
+def try_auto_capture(args: argparse.Namespace) -> None:
+    """本地没有可用映射时，自动 frida spawn 抓一次（每版本一次）。"""
+    if getattr(args, "no_capture", False):
+        return
+    console.print("[yellow]本地没有可用的动态接口映射，开始 frida 动态抓取（每版本一次）...[/yellow]")
+    try:
+        import ReverseBlueFrida  # noqa: PLC0415
+
+        ReverseBlueFrida.capture(quiet=True)
+        console.print("[green]动态抓取完成[/green]")
+    except Exception as exc:  # noqa: BLE001
+        console.print(f"[yellow]自动抓取失败[/yellow]: {exc}")
+
+
+def ensure_runtime(args: argparse.Namespace) -> Runtime:
+    runtime = build_runtime(args)
+    need = (
+        not runtime.version
+        or not runtime.version_key
+        or bool(_missing_roles(args, runtime))
+    )
+    if need:
+        try_auto_capture(args)
+        runtime = build_runtime(args)
+    problems: list[str] = []
+    if not runtime.version:
+        problems.append("客户端版本：--version，或提供 --apk 从 versionName 读取")
+    if not runtime.version_key:
+        problems.append("reverse-version-key：--version-key，或提供 --apk 从 global-metadata.dat 提取")
+    missing_roles = _missing_roles(args, runtime)
+    for role in missing_roles:
+        problems.append(f"{role} 接口：--endpoints 指定，或运行 ReverseBlueFrida.py 动态抓取")
+    if problems:
+        raise SystemExit(
+            "缺少运行所需的动态数据：\n  - " + "\n  - ".join(problems) +
+            "\n提示：设备已连接时直接重跑（会自动 frida 抓取）；离线可先用 --endpoints/--version 手工提供。"
+        )
+    console.print(
+        f"[cyan]版本[/cyan] {runtime.version}（{runtime.sources['version']}）  "
+        f"version-key 来源: {runtime.sources['version_key']}"
+    )
+    for role in ROLE_ORDER:
+        candidates = role_candidates(args, runtime, role)
+        source = candidates[0][0] if candidates else "?"
+        console.print(f"  [cyan]{role}[/cyan] ← {source}")
+    return runtime
+
+
 # ---------------------------------------------------------------------------
-# 公共 API 流程（每个角色独立尝试候选，成功即缓存）
+# 公共 API 流程（role -> 候选接口，逐个真实请求验证，成功后写 Cache）
 # ---------------------------------------------------------------------------
 
 def resolve_session(args: argparse.Namespace, runtime: Runtime) -> dict[str, Any]:
@@ -251,10 +319,7 @@ def resolve_session(args: argparse.Namespace, runtime: Runtime) -> dict[str, Any
             f"接口来源={source}"
         )
         return session
-    raise SystemExit(
-        "无法调用 session 接口，候选均失败：\n  " + "\n  ".join(errors) +
-        "\n提示：用 --endpoints 指定 role->uuid，或更新 ReverseBlueApi.py 中的常量"
-    )
+    raise SystemExit("无法调用 session 接口：\n  " + "\n  ".join(errors))
 
 
 def resolve_startup(args: argparse.Namespace, runtime: Runtime) -> dict[str, Any]:
@@ -335,6 +400,8 @@ def resolve_catalog_version(
     if args.catalog_version:
         return str(args.catalog_version)
     version = session.get("CatalogVersion")
+    if version is None:
+        version = runtime.cache.get("catalogVersion")
     if version is not None:
         return str(version)
     startup = resolve_startup(args, runtime)
@@ -462,7 +529,7 @@ def cmd_assets(args: argparse.Namespace) -> int:
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
     console.print(f"[bold cyan]=== 整合 APK 与热更资产 → {ASSETS_DIR} ===[/bold cyan]")
 
-    runtime = build_runtime(args)
+    runtime = ensure_runtime(args)
     session = resolve_session(args, runtime)
     catalog_version = resolve_catalog_version(args, runtime, session)
 
@@ -556,7 +623,7 @@ def cmd_masterdata(args: argparse.Namespace) -> int:
     MASTER_DIR.mkdir(parents=True, exist_ok=True)
     console.print(f"[bold cyan]=== 导出数据表与配置 → {MASTER_DIR} ===[/bold cyan]")
 
-    runtime = build_runtime(args)
+    runtime = ensure_runtime(args)
     session = resolve_session(args, runtime)
     catalog_version = resolve_catalog_version(args, runtime, session)
     payload = _fetch_masterdata_payload(args, runtime, catalog_version)
@@ -614,19 +681,24 @@ def _add_common_args(parser: argparse.ArgumentParser) -> None:
     parser.add_argument(
         "--version",
         default="",
-        help="客户端版本号（默认从 APK versionName 自动识别，失败时用内置值）",
+        help="客户端版本号（默认从 APK versionName 或动态抓包结果自动识别）",
     )
     parser.add_argument(
         "--version-key",
         default="",
-        help="reverse-version-key（默认从 APK global-metadata.dat 自动提取，失败时用内置值）",
+        help="reverse-version-key（默认从 APK global-metadata.dat 或动态抓包结果提取）",
     )
     parser.add_argument(
         "--endpoints",
         default="",
-        help="接口映射 JSON 文件（{\"startup\":uuid,\"session\":uuid,\"app_config\":uuid,\"masterdata\":uuid}）",
+        help="接口映射 JSON（{\"startup\":uuid,\"session\":uuid,\"app_config\":uuid,\"masterdata\":uuid}）",
     )
     parser.add_argument("--catalog-version", default="", help="catalog 版本（默认取会话响应的 CatalogVersion）")
+    parser.add_argument(
+        "--no-capture",
+        action="store_true",
+        help="缺少接口映射时不自动 frida 抓取，直接报错",
+    )
 
 
 def build_parser() -> argparse.ArgumentParser:
