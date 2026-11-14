@@ -29,12 +29,30 @@ USER_AGENT = "UnityPlayer/2022.3.61f1 (UnityWebRequest/1.0, libcurl/8.10.1-DEV)"
 TIMEOUT = 120
 CHUNK = 1 << 20
 
-ENDPOINTS = {
-    "startup": "/api/uuid/7074ef60-ad15-452b-afe0-6564da6b3a48",
-    "session": "/api/uuid/9f463175-74d4-41cc-90f9-5856af16aa13",
-    "app_config": "/api/uuid/a0457be5-de77-479d-a093-8bf48a3852fe",
-    "masterdata": "/api/uuid/dc84ef7e-9b1b-43d1-8f4a-635da0e3ee73",
+# 1.31.3 客户端内置的接口 UUID（每个版本由后端重新生成、随 APK 编译进
+# global-metadata.dat 的字符串字面量；服务端不会下发，见 ReverseBlueMetadata.py）。
+ENDPOINT_UUIDS = {
+    "startup": "7074ef60-ad15-452b-afe0-6564da6b3a48",
+    "session": "9f463175-74d4-41cc-90f9-5856af16aa13",
+    "app_config": "a0457be5-de77-479d-a093-8bf48a3852fe",
+    "masterdata": "dc84ef7e-9b1b-43d1-8f4a-635da0e3ee73",
 }
+
+# 439 条路由字面量是连续排布的生成块；该下标在 1.31.3 版本内的位置。
+# 版本更新、UUID 变化时可用这些下标从新版本的 metadata 路由块里重新定位。
+ENDPOINT_INDICES = {
+    "startup": 190,
+    "session": 264,
+    "app_config": 268,
+    "masterdata": 374,
+}
+
+
+def api_path(endpoint: str) -> str:
+    """endpoint 可以是完整路径或裸 UUID。"""
+    if endpoint.startswith("/"):
+        return endpoint
+    return f"/api/uuid/{endpoint}"
 
 
 class ApiError(RuntimeError):
@@ -90,6 +108,7 @@ def _ensure_ok(name: str, payload: Any) -> Any:
 
 def create_session(
     *,
+    endpoint: str = ENDPOINT_UUIDS["session"],
     version: str = APP_VERSION,
     version_key: str = VERSION_KEY,
     timeout: int = TIMEOUT,
@@ -105,7 +124,7 @@ def create_session(
     )
     headers = build_headers(version=version, version_key=version_key)
     resp = requests.post(
-        f"{API_BASE}{ENDPOINTS['session']}", headers=headers, data=body, timeout=timeout
+        f"{API_BASE}{api_path(endpoint)}", headers=headers, data=body, timeout=timeout
     )
     resp.raise_for_status()
     return _ensure_ok("session", _unpack(resp.content))
@@ -114,6 +133,7 @@ def create_session(
 def get_startup_info(
     session_id: str = "",
     *,
+    endpoint: str = ENDPOINT_UUIDS["startup"],
     version: str = APP_VERSION,
     version_key: str = VERSION_KEY,
     timeout: int = TIMEOUT,
@@ -126,7 +146,7 @@ def get_startup_info(
         content_type="application/x-www-form-urlencoded",
     )
     resp = requests.post(
-        f"{API_BASE}{ENDPOINTS['startup']}", headers=headers, data=b"", timeout=timeout
+        f"{API_BASE}{api_path(endpoint)}", headers=headers, data=b"", timeout=timeout
     )
     resp.raise_for_status()
     return _ensure_ok("startup", _unpack(resp.content))
@@ -135,6 +155,7 @@ def get_startup_info(
 def get_app_config(
     session_id: str = "",
     *,
+    endpoint: str = ENDPOINT_UUIDS["app_config"],
     version: str = APP_VERSION,
     version_key: str = VERSION_KEY,
     timeout: int = TIMEOUT,
@@ -142,7 +163,7 @@ def get_app_config(
     """应用配置/公告/隐私政策等文本。"""
     headers = build_headers(session_id=session_id, version=version, version_key=version_key)
     resp = requests.get(
-        f"{API_BASE}{ENDPOINTS['app_config']}", headers=headers, timeout=timeout
+        f"{API_BASE}{api_path(endpoint)}", headers=headers, timeout=timeout
     )
     resp.raise_for_status()
     return _ensure_ok("app_config", _unpack(resp.content))
@@ -151,6 +172,7 @@ def get_app_config(
 def get_masterdata(
     session_id: str = "",
     *,
+    endpoint: str = ENDPOINT_UUIDS["masterdata"],
     version: str = APP_VERSION,
     version_key: str = VERSION_KEY,
     timeout: int = TIMEOUT,
@@ -158,7 +180,7 @@ def get_masterdata(
     """获取全量数据表 msgpack（约 80MB）。"""
     headers = build_headers(session_id=session_id, version=version, version_key=version_key)
     resp = requests.get(
-        f"{API_BASE}{ENDPOINTS['masterdata']}", headers=headers, timeout=timeout
+        f"{API_BASE}{api_path(endpoint)}", headers=headers, timeout=timeout
     )
     resp.raise_for_status()
     payload = _ensure_ok("masterdata", _unpack(resp.content))

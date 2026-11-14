@@ -7,17 +7,27 @@ from __future__ import annotations
     masterdata  数据表（技能/角色/剧情等）与重要配置 → MasterData/
     all         assets + masterdata
 
+版本相关常量（接口 UUID、reverse-version-key）由服务端在构建时生成并编译进客户端，
+随 APK 的 global-metadata.dat 一起分发，服务端不下发。本工具会尽量从 APK 动态提取：
+    - 439 条 /api/uuid/<uuid> 路由字面量（连续生成块）
+    - 唯一的 50 位字母数字字面量 = reverse-version-key
+    - versionName（aapt2/aapt）
+提取不到时退回 ReverseBlueApi.py 中内置的 1.31.3 常量；接口角色（startup/session/
+app_config/masterdata）优先用内置 UUID，若该 UUID 不在当前版本路由块中，则用
+ENDPOINT_INDICES 下标重新定位并以真实请求验证，成功后写入 Cache/ReverseBlueEndpoints.json。
+
 资源说明：
     - APK 内置资源（含 split_UnityDataAssetPack.apk 的本地 Addressables）解包后按
       APK 内 assets/ 的相对路径写入 Assets/；
     - CDN 热更（Aura addressables，catalog 版本取自游戏会话响应 CatalogVersion）
       按 <CDN>/assets/Android/<bundleName>_<md5>.Android.bundle 下载到 Assets/Android/；
-    - 1.31.3 客户端资源均为未加密 UnityFS；如后续加密由 ReverseBlueBundle.ensure_plain 处理。
+    - 1.31.3 客户端抽查资源均为未加密 UnityFS；如后续加密由 ReverseBlueBundle.ensure_plain 处理。
 """
 
 import argparse
 import json
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
@@ -39,14 +49,15 @@ import ReverseBlueApk as Apk
 import ReverseBlueBundle as Bundle
 import ReverseBlueCatalog as Catalog
 import ReverseBlueMasterData as MasterData
+import ReverseBlueMetadata as Metadata
 
 GAME_TITLE = "反向蓝 / ReverseBlue Re-birthEnd"
 SCRIPT_DIR = Path(__file__).resolve().parent
 ASSETS_DIR = SCRIPT_DIR / "Assets"
 MASTER_DIR = SCRIPT_DIR / "MasterData"
 CACHE_DIR = SCRIPT_DIR / "Cache"
+ENDPOINTS_CACHE = CACHE_DIR / "ReverseBlueEndpoints.json"
 DEFAULT_JOBS = 8
-CHUNK = 1 << 20
 
 console = Console()
 
@@ -73,47 +84,274 @@ def make_progress(*extra: Any) -> Progress:
 
 def write_json(path: Path, obj: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(
-        json.dumps(obj, ensure_ascii=False, indent=2) + "\n",
-        encoding="utf-8",
+    path.write_text(json.dumps(obj, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+# ---------------------------------------------------------------------------
+# 运行时配置：版本 / version-key / 路由候选
+# ---------------------------------------------------------------------------
+
+@dataclass
+class Runtime:
+    version: str
+    version_key: str
+    apks: list[Path]
+    apk_error: str | None
+    routes: list[str]
+    route_fingerprint: str
+    literals: int = 0
+    route_uuids: list[str] = field(default_factory=list)
+    sources: dict[str, str] = field(default_factory=dict)
+    resolved: dict[str, str] = field(default_factory=dict)
+    session: dict[str, Any] | None = None
+    startup: dict[str, Any] | None = None
+
+
+def _find_apks(args: argparse.Namespace) -> tuple[list[Path], str | None]:
+    try:
+        return Apk.find_apks(SCRIPT_DIR, args.apk), None
+    except FileNotFoundError as exc:
+        return [], str(exc)
+
+
+def build_runtime(args: argparse.Namespace) -> Runtime:
+    apks, apk_error = _find_apks(args)
+    metadata = Metadata.load_metadata(apks)
+    literals = Metadata.extract_literals(metadata) if metadata else []
+    routes = Metadata.find_routes(literals)
+    auto_key = Metadata.find_version_key(literals)
+    auto_version = Metadata.detect_app_version(apks)
+
+    version = args.version or auto_version or Api.APP_VERSION
+    version_key = args.version_key or auto_key or Api.VERSION_KEY
+    runtime = Runtime(
+        version=version,
+        version_key=version_key,
+        apks=apks,
+        apk_error=apk_error,
+        routes=routes,
+        route_fingerprint=Metadata.route_fingerprint(routes) if routes else "",
+        literals=len(literals),
+        route_uuids=[normalize_uuid(text) for text in routes],
     )
+    runtime.sources["version"] = "参数" if args.version else ("APK(aapt)" if auto_version else "内置常量")
+    runtime.sources["version_key"] = "参数" if args.version_key else (
+        "APK metadata" if auto_key else "内置常量"
+    )
+    if routes:
+        console.print(
+            f"[cyan]APK metadata[/cyan] {len(literals)} 条字面量 / {len(routes)} 条路由  "
+            f"version-key 来源: {runtime.sources['version_key']}"
+        )
+    console.print(f"[cyan]版本[/cyan] {version}（{runtime.sources['version']}）")
+    if not routes:
+        console.print("[yellow]未从 APK 读取到 metadata 路由，使用内置 1.31.3 接口映射[/yellow]")
+    return runtime
+
+
+def normalize_uuid(value: str) -> str:
+    prefix = "/api/uuid/"
+    return value[len(prefix):] if value.startswith(prefix) else value
+
+
+def _candidate_sets(args: argparse.Namespace, runtime: Runtime) -> list[tuple[str, dict[str, str], bool]]:
+    """返回 [(来源, {role: uuid}, 是否信任(不校验是否在路由块内))]，按优先级排序。"""
+    sets: list[tuple[str, dict[str, str], bool]] = []
+    if args.endpoints:
+        path = Path(args.endpoints)
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except Exception as exc:  # noqa: BLE001
+            raise SystemExit(f"读取 --endpoints {path} 失败: {exc}")
+        uuids = data.get("uuids") if isinstance(data, dict) and "uuids" in data else data
+        if not isinstance(uuids, dict) or not uuids:
+            raise SystemExit(f"--endpoints {path} 需要 JSON 对象（role -> uuid）")
+        sets.append(("endpoints", {str(k): normalize_uuid(str(v)) for k, v in uuids.items()}, True))
+    if ENDPOINTS_CACHE.is_file():
+        try:
+            cached = json.loads(ENDPOINTS_CACHE.read_text(encoding="utf-8"))
+            uuids = cached.get("uuids") or {}
+            if isinstance(uuids, dict) and uuids:
+                sets.append(("Cache", {str(k): normalize_uuid(str(v)) for k, v in uuids.items()}, False))
+        except Exception:  # noqa: BLE001
+            pass
+    sets.append(("内置", {role: normalize_uuid(uuid) for role, uuid in Api.ENDPOINT_UUIDS.items()}, False))
+    if runtime.routes:
+        indexed = {
+            role: normalize_uuid(runtime.routes[index])
+            for role, index in Api.ENDPOINT_INDICES.items()
+            if 0 <= index < len(runtime.routes)
+        }
+        if indexed:
+            sets.append(("下标", indexed, False))
+    return sets
+
+
+def role_candidates(args: argparse.Namespace, runtime: Runtime, role: str) -> list[tuple[str, str]]:
+    out: list[tuple[str, str]] = []
+    seen: set[str] = set()
+    for source, uuids, trusted in _candidate_sets(args, runtime):
+        uuid = uuids.get(role)
+        if not uuid or uuid in seen:
+            continue
+        if not trusted and runtime.route_uuids and uuid not in runtime.route_uuids:
+            continue
+        seen.add(uuid)
+        out.append((source, uuid))
+    return out
+
+
+def persist_endpoints(runtime: Runtime) -> None:
+    if not runtime.resolved:
+        return
+    CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    data = {
+        "appVersion": runtime.version,
+        "routeCount": len(runtime.routes),
+        "routeFingerprint": runtime.route_fingerprint,
+        "indices": Api.ENDPOINT_INDICES,
+        "uuids": runtime.resolved,
+        "sources": {role: runtime.sources.get(role, "") for role in runtime.resolved},
+    }
+    write_json(ENDPOINTS_CACHE, data)
+
+
+def _mark(runtime: Runtime, role: str, source: str, uuid: str) -> None:
+    runtime.resolved[role] = uuid
+    runtime.sources[role] = source
+    persist_endpoints(runtime)
 
 
 # ---------------------------------------------------------------------------
-# 公共流程
+# 公共 API 流程（每个角色独立尝试候选，成功即缓存）
 # ---------------------------------------------------------------------------
 
-def resolve_session(args: argparse.Namespace) -> dict[str, Any]:
-    if getattr(args, "session", "") and args.session:
+def resolve_session(args: argparse.Namespace, runtime: Runtime) -> dict[str, Any]:
+    if runtime.session is not None:
+        return runtime.session
+    if args.session:
         console.print(f"[cyan]复用会话[/cyan] {args.session}")
-        return {"SessionId": args.session}
-    console.print("[cyan]创建游客会话[/cyan] ...")
-    session = Api.create_session(version=args.version, version_key=args.version_key)
-    console.print(
-        f"[green]Session[/green] {session.get('SessionId')}  "
-        f"CatalogVersion={session.get('CatalogVersion')}  "
-        f"MasterDataModifiedTime={session.get('MasterDataModifiedTime')}"
+        runtime.session = {"SessionId": args.session}
+        return runtime.session
+    errors: list[str] = []
+    for source, uuid in role_candidates(args, runtime, "session"):
+        try:
+            session = Api.create_session(
+                endpoint=uuid, version=runtime.version, version_key=runtime.version_key
+            )
+        except Exception as exc:  # noqa: BLE001
+            errors.append(f"{source}:{uuid}: {exc}")
+            continue
+        _mark(runtime, "session", source, uuid)
+        runtime.session = session
+        console.print(
+            f"[green]Session[/green] {session.get('SessionId')}  "
+            f"CatalogVersion={session.get('CatalogVersion')}  "
+            f"MasterDataModifiedTime={session.get('MasterDataModifiedTime')}  "
+            f"接口来源={source}"
+        )
+        return session
+    raise SystemExit(
+        "无法调用 session 接口，候选均失败：\n  " + "\n  ".join(errors) +
+        "\n提示：用 --endpoints 指定 role->uuid，或更新 ReverseBlueApi.py 中的常量"
     )
-    return session
 
 
-def resolve_catalog_version(args: argparse.Namespace, session: dict[str, Any]) -> str:
-    if getattr(args, "catalog_version", ""):
+def resolve_startup(args: argparse.Namespace, runtime: Runtime) -> dict[str, Any]:
+    if runtime.startup is not None:
+        return runtime.startup
+    session = resolve_session(args, runtime)
+    errors: list[str] = []
+    for source, uuid in role_candidates(args, runtime, "startup"):
+        try:
+            startup = Api.get_startup_info(
+                session.get("SessionId", ""),
+                endpoint=uuid,
+                version=runtime.version,
+                version_key=runtime.version_key,
+            )
+        except Exception as exc:  # noqa: BLE001
+            errors.append(f"{source}:{uuid}: {exc}")
+            continue
+        if "CatalogVersion" not in startup:
+            errors.append(f"{source}:{uuid}: 响应缺少 CatalogVersion")
+            continue
+        _mark(runtime, "startup", source, uuid)
+        runtime.startup = startup
+        console.print(f"[green]启动信息[/green] 接口来源={source}")
+        return startup
+    raise SystemExit("无法调用 startup 接口：\n  " + "\n  ".join(errors))
+
+
+def fetch_app_config(args: argparse.Namespace, runtime: Runtime) -> dict[str, Any]:
+    session = resolve_session(args, runtime)
+    errors: list[str] = []
+    for source, uuid in role_candidates(args, runtime, "app_config"):
+        try:
+            config = Api.get_app_config(
+                session.get("SessionId", ""),
+                endpoint=uuid,
+                version=runtime.version,
+                version_key=runtime.version_key,
+            )
+        except Exception as exc:  # noqa: BLE001
+            errors.append(f"{source}:{uuid}: {exc}")
+            continue
+        if "AnnouncementUrl" not in config and "TermsOfServiceText" not in config:
+            errors.append(f"{source}:{uuid}: 响应不是 AppConfig")
+            continue
+        _mark(runtime, "app_config", source, uuid)
+        console.print(f"[green]AppConfig[/green] 接口来源={source}")
+        return config
+    raise SystemExit("无法调用 app_config 接口：\n  " + "\n  ".join(errors))
+
+
+def fetch_masterdata(args: argparse.Namespace, runtime: Runtime) -> bytes:
+    session = resolve_session(args, runtime)
+    errors: list[str] = []
+    for source, uuid in role_candidates(args, runtime, "masterdata"):
+        console.print(f"[cyan]拉取 master data[/cyan] 接口来源={source} (约 80MB) ...")
+        try:
+            payload = Api.get_masterdata(
+                session.get("SessionId", ""),
+                endpoint=uuid,
+                version=runtime.version,
+                version_key=runtime.version_key,
+            )
+        except Exception as exc:  # noqa: BLE001
+            errors.append(f"{source}:{uuid}: {exc}")
+            continue
+        if len(payload) < 1024 * 1024:
+            errors.append(f"{source}:{uuid}: 响应仅 {len(payload)}B，不是数据表")
+            continue
+        _mark(runtime, "masterdata", source, uuid)
+        return payload
+    raise SystemExit("无法调用 masterdata 接口：\n  " + "\n  ".join(errors))
+
+
+def resolve_catalog_version(
+    args: argparse.Namespace, runtime: Runtime, session: dict[str, Any]
+) -> str:
+    if args.catalog_version:
         return str(args.catalog_version)
     version = session.get("CatalogVersion")
-    if version is None:
-        raise SystemExit("无法从会话响应获取 CatalogVersion，请用 --catalog-version 指定")
-    return str(version)
+    if version is not None:
+        return str(version)
+    startup = resolve_startup(args, runtime)
+    if startup.get("CatalogVersion") is not None:
+        return str(startup["CatalogVersion"])
+    raise SystemExit("无法获取 CatalogVersion，请用 --catalog-version 指定")
 
 
 # ---------------------------------------------------------------------------
 # 子命令：assets
 # ---------------------------------------------------------------------------
 
-def _extract_apks(args: argparse.Namespace) -> list[Path]:
-    apks = Apk.find_apks(SCRIPT_DIR, args.apk)
-    console.print("[cyan]APK[/cyan] " + ", ".join(p.name for p in apks))
-    for apk in apks:
+def _extract_apks(args: argparse.Namespace, runtime: Runtime) -> None:
+    if not runtime.apks:
+        raise SystemExit(f"APK: {runtime.apk_error or '未找到'}")
+    console.print("[cyan]APK[/cyan] " + ", ".join(path.name for path in runtime.apks))
+    for apk in runtime.apks:
         entries = Apk.apk_entry_infos(apk)
         with make_progress(MofNCompleteColumn()) as progress:
             task = progress.add_task(f"拆 {apk.name}", total=len(entries))
@@ -124,13 +362,10 @@ def _extract_apks(args: argparse.Namespace) -> list[Path]:
             written, skipped, failed = Apk.extract_apk(
                 apk, ASSETS_DIR, force=args.force, on_file=on_file
             )
-        console.print(
-            f"  [green]{apk.name}[/green] 写出 {written}  跳过 {skipped}  失败 {failed}"
-        )
-    detected = Apk.detect_split_names(apks)
+        console.print(f"  [green]{apk.name}[/green] 写出 {written}  跳过 {skipped}  失败 {failed}")
+    detected = Apk.detect_split_names(runtime.apks)
     if detected:
         console.print("[cyan]拆分识别[/cyan] " + "  ".join(f"{k}={v.name}" for k, v in detected.items()))
-    return apks
 
 
 def _write_local_catalog() -> dict[str, Any]:
@@ -218,9 +453,7 @@ def _verify_bundles() -> tuple[int, int, int]:
             decrypted += 1
         else:
             failed += 1
-    console.print(
-        f"[green]bundle 校验[/green] 明文 {plain}  已解密 {decrypted}  异常 {failed}"
-    )
+    console.print(f"[green]bundle 校验[/green] 明文 {plain}  已解密 {decrypted}  异常 {failed}")
     return plain, decrypted, failed
 
 
@@ -229,16 +462,12 @@ def cmd_assets(args: argparse.Namespace) -> int:
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
     console.print(f"[bold cyan]=== 整合 APK 与热更资产 → {ASSETS_DIR} ===[/bold cyan]")
 
-    session = resolve_session(args)
-    catalog_version = resolve_catalog_version(args, session)
+    runtime = build_runtime(args)
+    session = resolve_session(args, runtime)
+    catalog_version = resolve_catalog_version(args, runtime, session)
 
-    apks: list[Path] = []
     if not args.skip_apk:
-        try:
-            apks = _extract_apks(args)
-        except FileNotFoundError as exc:
-            console.print(f"[red]APK[/red] {exc}")
-            return 1
+        _extract_apks(args, runtime)
     else:
         console.print("[yellow]跳过 APK 解包[/yellow]")
 
@@ -261,7 +490,8 @@ def cmd_assets(args: argparse.Namespace) -> int:
     manifest = {
         "game": GAME_TITLE,
         "platform": Api.PLATFORM,
-        "appVersion": args.version,
+        "appVersion": runtime.version,
+        "versionKeySource": runtime.sources.get("version_key"),
         "catalogVersion": catalog.version,
         "catalog": catalog.catalog_name,
         "catalogInfo": catalog.info,
@@ -269,14 +499,15 @@ def cmd_assets(args: argparse.Namespace) -> int:
         "bundleTotalSize": catalog.total_size,
         "addressableCount": len(catalog.addressables),
         "localAddressables": local_meta.get("_meta") if local_meta else None,
-        "apk": [str(path) for path in apks],
+        "apk": [str(path) for path in runtime.apks],
+        "apiEndpoints": runtime.resolved,
         "downloaded": ok,
         "skipped": skip,
         "failed": fail,
         "badBundles": bad_bundles,
     }
     write_json(ASSETS_DIR / "Catalog" / "manifest.json", manifest)
-    console.print(f"[green]manifest[/green] Assets/Catalog/manifest.json")
+    console.print("[green]manifest[/green] Assets/Catalog/manifest.json")
     return 0 if bad_bundles == 0 and fail == 0 else 1
 
 
@@ -285,49 +516,32 @@ def cmd_assets(args: argparse.Namespace) -> int:
 # ---------------------------------------------------------------------------
 
 def _fetch_masterdata_payload(
-    args: argparse.Namespace, session: dict[str, Any], catalog_version: str
+    args: argparse.Namespace, runtime: Runtime, catalog_version: str
 ) -> bytes:
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
     raw_path = CACHE_DIR / f"masterdata_{catalog_version}.bin"
     if raw_path.is_file() and not args.force:
         console.print(f"[cyan]使用缓存[/cyan] {raw_path}")
         return raw_path.read_bytes()
-    console.print("[cyan]拉取 master data[/cyan] (约 80MB) ...")
-    payload = Api.get_masterdata(
-        session.get("SessionId", ""),
-        version=args.version,
-        version_key=args.version_key,
-    )
+    payload = fetch_masterdata(args, runtime)
     raw_path.write_bytes(payload)
     console.print(f"[green]master data[/green] {format_size(len(payload))} → {raw_path}")
     return payload
 
 
-def _write_api_configs(
-    args: argparse.Namespace, session: dict[str, Any], catalog_version: str
-) -> int:
+def _write_api_configs(args: argparse.Namespace, runtime: Runtime, catalog_version: str) -> int:
     config_dir = MASTER_DIR / "Config"
     config_dir.mkdir(parents=True, exist_ok=True)
     written = 0
     try:
-        app_config = Api.get_app_config(
-            session.get("SessionId", ""),
-            version=args.version,
-            version_key=args.version_key,
-        )
-        write_json(config_dir / "AppConfig.json", app_config)
+        write_json(config_dir / "AppConfig.json", fetch_app_config(args, runtime))
         written += 1
-    except Exception as exc:  # noqa: BLE001
+    except SystemExit as exc:
         console.print(f"[yellow]AppConfig 获取失败[/yellow]: {exc}")
     try:
-        startup = Api.get_startup_info(
-            session.get("SessionId", ""),
-            version=args.version,
-            version_key=args.version_key,
-        )
-        write_json(config_dir / "StartupInfo.json", startup)
+        write_json(config_dir / "StartupInfo.json", resolve_startup(args, runtime))
         written += 1
-    except Exception as exc:  # noqa: BLE001
+    except SystemExit as exc:
         console.print(f"[yellow]StartupInfo 获取失败[/yellow]: {exc}")
     try:
         info = Catalog.fetch_catalog_info(CACHE_DIR, catalog_version, force=args.force)
@@ -342,15 +556,14 @@ def cmd_masterdata(args: argparse.Namespace) -> int:
     MASTER_DIR.mkdir(parents=True, exist_ok=True)
     console.print(f"[bold cyan]=== 导出数据表与配置 → {MASTER_DIR} ===[/bold cyan]")
 
-    session = resolve_session(args)
-    catalog_version = resolve_catalog_version(args, session)
-    payload = _fetch_masterdata_payload(args, session, catalog_version)
+    runtime = build_runtime(args)
+    session = resolve_session(args, runtime)
+    catalog_version = resolve_catalog_version(args, runtime, session)
+    payload = _fetch_masterdata_payload(args, runtime, catalog_version)
 
     data = MasterData.unpack(payload)
     tables, scalars = MasterData.split_tables(data)
-    console.print(
-        f"[green]数据表[/green] {len(tables)} 张 / 标量 {len(scalars)} 项"
-    )
+    console.print(f"[green]数据表[/green] {len(tables)} 张 / 标量 {len(scalars)} 项")
 
     with make_progress(MofNCompleteColumn()) as progress:
         task = progress.add_task("写出数据表", total=len(tables))
@@ -364,7 +577,7 @@ def cmd_masterdata(args: argparse.Namespace) -> int:
     MasterData.write_meta(scalars, MASTER_DIR / "_meta.json")
     console.print(f"[bold green]数据表[/bold green] {written} 张 → {MASTER_DIR}")
 
-    configs = _write_api_configs(args, session, catalog_version)
+    configs = _write_api_configs(args, runtime, catalog_version)
     copied = MasterData.copy_configs(ASSETS_DIR, MASTER_DIR)
     catalog_copied = MasterData.copy_catalog_artifacts(ASSETS_DIR, MASTER_DIR)
     console.print(
@@ -398,15 +611,26 @@ def _add_common_args(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--jobs", type=int, default=DEFAULT_JOBS, help=f"并发下载线程数，默认 {DEFAULT_JOBS}")
     parser.add_argument("--force", action="store_true", help="忽略本地已有文件，强制重新处理")
     parser.add_argument("--session", default="", help="复用已有 X-Session（默认自动创建游客会话）")
-    parser.add_argument("--version", default=Api.APP_VERSION, help=f"客户端版本号（默认 {Api.APP_VERSION}）")
-    parser.add_argument("--version-key", default=Api.VERSION_KEY, help="reverse-version-key（默认内置 1.31.3 的值）")
+    parser.add_argument(
+        "--version",
+        default="",
+        help="客户端版本号（默认从 APK versionName 自动识别，失败时用内置值）",
+    )
+    parser.add_argument(
+        "--version-key",
+        default="",
+        help="reverse-version-key（默认从 APK global-metadata.dat 自动提取，失败时用内置值）",
+    )
+    parser.add_argument(
+        "--endpoints",
+        default="",
+        help="接口映射 JSON 文件（{\"startup\":uuid,\"session\":uuid,\"app_config\":uuid,\"masterdata\":uuid}）",
+    )
     parser.add_argument("--catalog-version", default="", help="catalog 版本（默认取会话响应的 CatalogVersion）")
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(
-        description=f"《{GAME_TITLE}》资源整合与数据表导出工具",
-    )
+    parser = argparse.ArgumentParser(description=f"《{GAME_TITLE}》资源整合与数据表导出工具")
     sub = parser.add_subparsers(dest="command", required=True)
 
     p_assets = sub.add_parser("assets", help="APK + CDN 热更资产整合还原到 Assets/")
