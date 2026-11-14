@@ -1,0 +1,47 @@
+[
+  {
+    "Id": 1,
+    "Name": "リバースバベル",
+    "QuestSeriesId": 40101,
+    "HasPartyRestriction": false,
+    "OpenMonday": true,
+    "OpenTuesday": true,
+    "OpenWednesday": true,
+    "OpenThursday": true,
+    "OpenFriday": true,
+    "OpenSaturday": true,
+    "OpenSunday": true,
+    "TowerType": 1,
+    "ScenarioId": 0
+  },
+  {
+    "Id": 2,
+    "Name": "アナザーバベル",
+    "QuestSeriesId": 40102,
+    "HasPartyRestriction": true,
+    "OpenMonday": true,
+    "OpenTuesday": false,
+    "OpenWednesday": true,
+    "OpenThursday": false,
+    "OpenFriday": true,
+    "OpenSaturday": false,
+    "OpenSunday": true,
+    "TowerType": 2,
+    "ScenarioId": 0
+  },
+  {
+    "Id": 3,
+    "Name": "バベルリビルド",
+    "QuestSeriesId": 40103,
+    "HasPartyRestriction": true,
+    "OpenMonday": false,
+    "OpenTuesday": true,
+    "OpenWednesday": false,
+    "OpenThursday": true,
+    "OpenFriday": false,
+    "OpenSaturday": true,
+    "OpenSunday": true,
+    "TowerType": 3,
+    "ScenarioId": 0
+  }
+]

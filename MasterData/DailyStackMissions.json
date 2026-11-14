@@ -1,0 +1,134 @@
+[
+  {
+    "Id": 1001,
+    "MissionType": 101001,
+    "ConditionValue": 0,
+    "ConditionValue2": 0,
+    "ClearThreshold": 1,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "Description": "GARDEN第六層の自室にログイン",
+    "Index": 1001
+  },
+  {
+    "Id": 1002,
+    "MissionType": 401001,
+    "ConditionValue": 0,
+    "ConditionValue2": 0,
+    "ClearThreshold": 1,
+    "LinkTo": "UnitList",
+    "LinkToParameter": 0,
+    "Description": "騎士を1回強化",
+    "Index": 1002
+  },
+  {
+    "Id": 1003,
+    "MissionType": 301001,
+    "ConditionValue": 0,
+    "ConditionValue2": 0,
+    "ClearThreshold": 500,
+    "LinkTo": "ModeSelectTodo",
+    "LinkToParameter": 0,
+    "Description": "メンタルを500消費する",
+    "Index": 1003
+  },
+  {
+    "Id": 1004,
+    "MissionType": 501003,
+    "ConditionValue": 0,
+    "ConditionValue2": 0,
+    "ClearThreshold": 1,
+    "LinkTo": "FacilityRamenShop",
+    "LinkToParameter": 0,
+    "Description": "「運命屋」の売上を1回受け取る",
+    "Index": 1004
+  },
+  {
+    "Id": 2001,
+    "MissionType": 501001,
+    "ConditionValue": 0,
+    "ConditionValue2": 0,
+    "ClearThreshold": 1,
+    "LinkTo": "FacilityRamenShop",
+    "LinkToParameter": 0,
+    "Description": "【期間限定】ラーメンの新レシピを1回考案する",
+    "Index": 1005
+  },
+  {
+    "Id": 2002,
+    "MissionType": 502002,
+    "ConditionValue": 0,
+    "ConditionValue2": 0,
+    "ClearThreshold": 1,
+    "LinkTo": "FacilityHumanHistoryLab",
+    "LinkToParameter": 0,
+    "Description": "【期間限定】研究でデータ提出を1回実行",
+    "Index": 1006
+  },
+  {
+    "Id": 3001,
+    "MissionType": 304001,
+    "ConditionValue": 0,
+    "ConditionValue2": 0,
+    "ClearThreshold": 1,
+    "LinkTo": "RaidPortal",
+    "LinkToParameter": 0,
+    "Description": "【期間限定】戦果報告所でいずれかの商品を交換",
+    "Index": 3001
+  },
+  {
+    "Id": 3002,
+    "MissionType": 602001,
+    "ConditionValue": 0,
+    "ConditionValue2": 0,
+    "ClearThreshold": 3,
+    "LinkTo": "RaidPortal",
+    "LinkToParameter": 0,
+    "Description": "【期間限定】封印戦で封印執行を3回完了",
+    "Index": 3002
+  },
+  {
+    "Id": 4001,
+    "MissionType": 805001,
+    "ConditionValue": 0,
+    "ConditionValue2": 0,
+    "ClearThreshold": 1,
+    "LinkTo": "ShopExchange",
+    "LinkToParameter": 5,
+    "Description": "【期間限定】オモイカネ制圧戦交換所で1回交換",
+    "Index": 3003
+  },
+  {
+    "Id": 4002,
+    "MissionType": 609002,
+    "ConditionValue": 0,
+    "ConditionValue2": 0,
+    "ClearThreshold": 3,
+    "LinkTo": "DominationTop",
+    "LinkToParameter": 0,
+    "Description": "【期間限定】制圧戦で制圧を3セット完了",
+    "Index": 3004
+  },
+  {
+    "Id": 5001,
+    "MissionType": 806001,
+    "ConditionValue": 0,
+    "ConditionValue2": 0,
+    "ClearThreshold": 1,
+    "LinkTo": "ShopExchange",
+    "LinkToParameter": 6,
+    "Description": "【期間限定】防衛戦交換所で1回交換",
+    "Index": 3005
+  },
+  {
+    "Id": 5002,
+    "MissionType": 610002,
+    "ConditionValue": 0,
+    "ConditionValue2": 0,
+    "ClearThreshold": 3,
+    "LinkTo": "PreventionTop",
+    "LinkToParameter": 0,
+    "Description": "【期間限定】防衛戦βで防衛を3回完了",
+    "Index": 3006
+  }
+]

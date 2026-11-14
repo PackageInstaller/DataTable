@@ -1,0 +1,614 @@
+[
+  {
+    "Id": 1003001,
+    "MessageThreadId": 1003,
+    "TriggerType": "Quest",
+    "TriggerId": 103010014,
+    "LinkTo": "MainStory",
+    "LinkToParameter": 0,
+    "ConditionDescription": "2章クリア後、特定任務完了 で解放"
+  },
+  {
+    "Id": 1004001,
+    "MessageThreadId": 1004,
+    "TriggerType": "Quest",
+    "TriggerId": 104010012,
+    "LinkTo": "MainStory",
+    "LinkToParameter": 0,
+    "ConditionDescription": "迎撃戦解放かつ3章クリア後、特定任務完了 で解放"
+  },
+  {
+    "Id": 1004002,
+    "MessageThreadId": 1004,
+    "TriggerType": "MainStoryMission",
+    "TriggerId": 1020112,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 1014001,
+    "MessageThreadId": 1014,
+    "TriggerType": "Quest",
+    "TriggerId": 102010012,
+    "LinkTo": "MainStory",
+    "LinkToParameter": 0,
+    "ConditionDescription": "1章クリアかつ演習戦TWF-01「殲滅演習 Lv.1」を\nクリア後、特定任務完了 で解放"
+  },
+  {
+    "Id": 1014002,
+    "MessageThreadId": 1014,
+    "TriggerType": "Quest",
+    "TriggerId": 204010001,
+    "LinkTo": "GardenOrder",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 1015001,
+    "MessageThreadId": 1015,
+    "TriggerType": "Quest",
+    "TriggerId": 103010007,
+    "LinkTo": "MainStory",
+    "LinkToParameter": 0,
+    "ConditionDescription": "2-6クリア後、特定任務完了 で解放"
+  },
+  {
+    "Id": 1016001,
+    "MessageThreadId": 1016,
+    "TriggerType": "Quest",
+    "TriggerId": 103010002,
+    "LinkTo": "MainStory",
+    "LinkToParameter": 0,
+    "ConditionDescription": "2-1クリア後、特定任務完了 で解放"
+  },
+  {
+    "Id": 1017001,
+    "MessageThreadId": 1017,
+    "TriggerType": "Quest",
+    "TriggerId": 205010001,
+    "LinkTo": "GardenOrder",
+    "LinkToParameter": 0,
+    "ConditionDescription": "迎撃戦AAB-01「第Ⅰ採掘拠点」をクリア後、\n特定任務完了 で解放"
+  },
+  {
+    "Id": 1029001,
+    "MessageThreadId": 1029,
+    "TriggerType": "Quest",
+    "TriggerId": 102010012,
+    "LinkTo": "MainStory",
+    "LinkToParameter": 0,
+    "ConditionDescription": "1章クリア後、特定任務完了 で解放"
+  },
+  {
+    "Id": 1036001,
+    "MessageThreadId": 1036,
+    "TriggerType": "Quest",
+    "TriggerId": 401010015,
+    "LinkTo": "TowerReverseBabel",
+    "LinkToParameter": 0,
+    "ConditionDescription": "リバースバベルDEEP15クリア後、特定任務完了 で解放"
+  },
+  {
+    "Id": 1038001,
+    "MessageThreadId": 1038,
+    "TriggerType": "Quest",
+    "TriggerId": 103010014,
+    "LinkTo": "MainStory",
+    "LinkToParameter": 0,
+    "ConditionDescription": "2章クリア後、特定任務完了 で解放"
+  },
+  {
+    "Id": 1039001,
+    "MessageThreadId": 1039,
+    "TriggerType": "Quest",
+    "TriggerId": 103010014,
+    "LinkTo": "MainStory",
+    "LinkToParameter": 0,
+    "ConditionDescription": "2章クリア後、特定任務完了 で解放"
+  },
+  {
+    "Id": 2001001,
+    "MessageThreadId": 2001,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 11010110,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2001002,
+    "MessageThreadId": 2002,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 11080410,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2003001,
+    "MessageThreadId": 2003,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 11040610,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2004001,
+    "MessageThreadId": 2004,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 11010210,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2005001,
+    "MessageThreadId": 2005,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 11060110,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2006001,
+    "MessageThreadId": 2006,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 11040210,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2007001,
+    "MessageThreadId": 2007,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 11040510,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2008001,
+    "MessageThreadId": 2008,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 11010610,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2009001,
+    "MessageThreadId": 2009,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 11060210,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2010001,
+    "MessageThreadId": 2010,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 11080210,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2011001,
+    "MessageThreadId": 2011,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 11070110,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2012001,
+    "MessageThreadId": 2012,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 11020510,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2013001,
+    "MessageThreadId": 2013,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 11010310,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2014001,
+    "MessageThreadId": 2014,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 11080310,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2015001,
+    "MessageThreadId": 2015,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 11080510,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2016001,
+    "MessageThreadId": 2016,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 11080110,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2017001,
+    "MessageThreadId": 2017,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 11040110,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2018001,
+    "MessageThreadId": 2018,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 11070210,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2019001,
+    "MessageThreadId": 2019,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 11020610,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2020001,
+    "MessageThreadId": 2020,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 11010410,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2021001,
+    "MessageThreadId": 2021,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 11070310,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2022001,
+    "MessageThreadId": 2022,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 11070510,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2023001,
+    "MessageThreadId": 2023,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 11010510,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2024001,
+    "MessageThreadId": 2024,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 11020410,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2025001,
+    "MessageThreadId": 2025,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 21010120,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": ""
+  },
+  {
+    "Id": 2026001,
+    "MessageThreadId": 2026,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 21080410,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": ""
+  },
+  {
+    "Id": 2027001,
+    "MessageThreadId": 2027,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 21040610,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2028001,
+    "MessageThreadId": 2028,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 21010210,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2029001,
+    "MessageThreadId": 2029,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 21070610,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2030001,
+    "MessageThreadId": 2030,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 21060110,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2031001,
+    "MessageThreadId": 2031,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 21040210,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2032001,
+    "MessageThreadId": 2032,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 21040510,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2033001,
+    "MessageThreadId": 2033,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 21010610,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2034001,
+    "MessageThreadId": 2034,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 21060210,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2035001,
+    "MessageThreadId": 2035,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 21060610,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2036001,
+    "MessageThreadId": 2036,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 21080210,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2037001,
+    "MessageThreadId": 2037,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 21070110,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2038001,
+    "MessageThreadId": 2038,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 21020510,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2039001,
+    "MessageThreadId": 2039,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 21010310,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2040001,
+    "MessageThreadId": 2040,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 21080310,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2041001,
+    "MessageThreadId": 2041,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 21080510,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2042001,
+    "MessageThreadId": 2042,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 21080110,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2043001,
+    "MessageThreadId": 2043,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 21040110,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2044001,
+    "MessageThreadId": 2044,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 21070210,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2045001,
+    "MessageThreadId": 2045,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 21030310,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2046001,
+    "MessageThreadId": 2046,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 21080610,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2047001,
+    "MessageThreadId": 2047,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 21020610,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2048001,
+    "MessageThreadId": 2048,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 21010410,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2049001,
+    "MessageThreadId": 2049,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 21070310,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2050001,
+    "MessageThreadId": 2050,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 21070510,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2051001,
+    "MessageThreadId": 2051,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 21010510,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2052001,
+    "MessageThreadId": 2052,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 21020410,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2053001,
+    "MessageThreadId": 2053,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 31010110,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2054001,
+    "MessageThreadId": 2054,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 31080410,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 2055001,
+    "MessageThreadId": 2055,
+    "TriggerType": "BirthdayEventReward",
+    "TriggerId": 31040610,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  },
+  {
+    "Id": 3001001,
+    "MessageThreadId": 3001,
+    "TriggerType": "Message",
+    "TriggerId": 101602025,
+    "LinkTo": "",
+    "LinkToParameter": 0,
+    "ConditionDescription": "-"
+  }
+]

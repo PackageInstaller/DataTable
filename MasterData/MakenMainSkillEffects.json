@@ -1,0 +1,101 @@
+[
+  {
+    "Id": 1000101,
+    "MakenMainSkillId": 10001,
+    "PassiveType": 1060501,
+    "PassiveEffectCategoryId": 210605,
+    "BackgroundType": 1,
+    "Description": "ブレイカーが2人以上出撃しているとき、<color=#4A9DFE>ブレイカー</color>の被ダメージが<color=#4A9DFE>{PassiveFloatValue1}%</color>減少する",
+    "Index": 1
+  },
+  {
+    "Id": 1000201,
+    "MakenMainSkillId": 10002,
+    "PassiveType": 1060501,
+    "PassiveEffectCategoryId": 210605,
+    "BackgroundType": 1,
+    "Description": "出撃中の<color=#4A9DFE>シューター</color>の被ダメージが<color=#4A9DFE>{PassiveFloatValue1}%</color>減少する",
+    "Index": 1
+  },
+  {
+    "Id": 1000301,
+    "MakenMainSkillId": 10003,
+    "PassiveType": 1060501,
+    "PassiveEffectCategoryId": 210605,
+    "BackgroundType": 1,
+    "Description": "出撃中の<color=#4A9DFE>ヒーラー</color>の被ダメージが<color=#4A9DFE>{PassiveFloatValue1}%</color>減少する",
+    "Index": 1
+  },
+  {
+    "Id": 1000401,
+    "MakenMainSkillId": 10004,
+    "PassiveType": 1004101,
+    "PassiveEffectCategoryId": 210041,
+    "BackgroundType": 1,
+    "Description": "アタッカーが2人以上出撃しているとき、<color=#4A9DFE>アタッカー</color>の攻撃力が<color=#4A9DFE>{PassiveFloatValue1}%</color>上昇する",
+    "Index": 1
+  },
+  {
+    "Id": 1000501,
+    "MakenMainSkillId": 10005,
+    "PassiveType": 5010101,
+    "PassiveEffectCategoryId": 250101,
+    "BackgroundType": 1,
+    "Description": "BLADE AUTO中に全騎士が出撃、または再出撃待機状態のとき、コストを<color=#4A9DFE>50</color>消費して敵全体に<color=#4A9DFE>{PassiveFloatValue1}</color>の確定ダメージを<color=#4A9DFE>5回</color>放つ\n<color=#FABC00FF>BLADE AUTOがOFFの間は、任意のタイミングでコストを消費して発動可能</color>",
+    "Index": 2
+  },
+  {
+    "Id": 1000502,
+    "MakenMainSkillId": 10005,
+    "PassiveType": 1004101,
+    "PassiveEffectCategoryId": 210041,
+    "BackgroundType": 1,
+    "Description": "トリックスターが2人以上出撃しているとき、<color=#4A9DFE>トリックスター</color>の攻撃力が<color=#4A9DFE>{PassiveFloatValue1}%</color>上昇する",
+    "Index": 1
+  },
+  {
+    "Id": 1000601,
+    "MakenMainSkillId": 10006,
+    "PassiveType": 1000302,
+    "PassiveEffectCategoryId": 210003,
+    "BackgroundType": 1,
+    "Description": "出撃中の<color=#4A9DFE>アタッカー</color>の通常攻撃時の攻撃力が<color=#4A9DFE>{PassiveFloatValue1}%</color>上昇する",
+    "Index": 1
+  },
+  {
+    "Id": 2000101,
+    "MakenMainSkillId": 20001,
+    "PassiveType": 1060501,
+    "PassiveEffectCategoryId": 210605,
+    "BackgroundType": 1,
+    "Description": "アタッカーが2人以上出撃しているとき、<color=#4A9DFE>アタッカー</color>の被ダメージが<color=#4A9DFE>{PassiveFloatValue1}%</color>減少する",
+    "Index": 1
+  },
+  {
+    "Id": 2000201,
+    "MakenMainSkillId": 20002,
+    "PassiveType": 1180301,
+    "PassiveEffectCategoryId": 211803,
+    "BackgroundType": 1,
+    "Description": "出撃中の<color=#4A9DFE>サポーター</color>のBLADEゲージをためる量が<color=#4A9DFE>{PassiveFloatValue1}%</color>上昇する",
+    "Index": 1
+  },
+  {
+    "Id": 2000301,
+    "MakenMainSkillId": 20003,
+    "PassiveType": 1180301,
+    "PassiveEffectCategoryId": 211803,
+    "BackgroundType": 1,
+    "Description": "ブレイカーが2人以上出撃しているとき、<color=#4A9DFE>ブレイカー</color>のBLADEゲージをためる量が<color=#4A9DFE>{PassiveFloatValue1}%</color>上昇する",
+    "Index": 1
+  },
+  {
+    "Id": 2000401,
+    "MakenMainSkillId": 20004,
+    "PassiveType": 1004301,
+    "PassiveEffectCategoryId": 210043,
+    "BackgroundType": 1,
+    "Description": "味方の千紫騎士が3人以上出撃しているとき、<color=#4A9DFE>味方の千紫騎士</color>の攻撃力が<color=#4A9DFE>{PassiveFloatValue1}%</color>上昇する",
+    "Index": 1
+  }
+]

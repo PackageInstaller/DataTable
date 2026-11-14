@@ -1,0 +1,58 @@
+[
+  {
+    "Id": 101,
+    "FacilityId": 1,
+    "Name": "座席数",
+    "ParameterType": 10,
+    "Description": "店舗に用意された客席。 座席数が増えると、次回の提供メニューから来店する騎士の数が増えます。 多くの仲間で食べるラーメンほど美味しいものです。"
+  },
+  {
+    "Id": 102,
+    "FacilityId": 1,
+    "Name": "販売メニュー数",
+    "ParameterType": 11,
+    "Description": "販売可能なメニューの数。\n時間あたりの売上は、各販売メニューの合計となります。\n選択肢とヤサイは多ければ多いほどいいのです。"
+  },
+  {
+    "Id": 103,
+    "FacilityId": 1,
+    "Name": "販売期間",
+    "ParameterType": 12,
+    "Description": "継続してラーメンを販売できる時間。 一度に補充できるスープの量、とも言いかえられます。"
+  },
+  {
+    "Id": 201,
+    "FacilityId": 2,
+    "Name": "交換レート",
+    "ParameterType": 20,
+    "Description": "各スクリプト強化素材の、研究データあたりの交換量が増えます。"
+  },
+  {
+    "Id": 301,
+    "FacilityId": 3,
+    "Name": "保管上限",
+    "ParameterType": 30,
+    "Description": "オモイカネが24時間で収集するメンタル回復データの量で、補充効率と連動しています。\n受け取ることでメンタルが回復します。"
+  },
+  {
+    "Id": 401,
+    "FacilityId": 4,
+    "Name": "リワードランク",
+    "ParameterType": 40,
+    "Description": "実験に5回協力する毎にもらえる報酬リワードの内容が豪華になります。"
+  },
+  {
+    "Id": 501,
+    "FacilityId": 5,
+    "Name": "培養枠数",
+    "ParameterType": 50,
+    "Description": "培養可能なエッグの枠数。\nたくさんのエッグに囲まれることでヒーリング効果があるという説もあるとか…。"
+  },
+  {
+    "Id": 601,
+    "FacilityId": 6,
+    "Name": "報酬ランク",
+    "ParameterType": 60,
+    "Description": "感謝状の報酬ランク。\n1週間毎の感謝状で、より良いものがもらえるようになります。"
+  }
+]

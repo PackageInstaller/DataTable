@@ -1,0 +1,24 @@
+[
+  {
+    "Id": 1,
+    "Name": "毎週木曜日はリバ×リバの日",
+    "AssetId": "single_weekly_0001",
+    "ScheduleType": 201,
+    "ScheduleResetValue": "thursday",
+    "ScheduleReceivableValue": "",
+    "PlaySortOrder": 100,
+    "IsPlayBeforeBirthday": true,
+    "TimeScheduleId": 800100015
+  },
+  {
+    "Id": 2,
+    "Name": "毎月13日はリバ×リバの日",
+    "AssetId": "single_monthly_0001",
+    "ScheduleType": 302,
+    "ScheduleResetValue": "13",
+    "ScheduleReceivableValue": "13",
+    "PlaySortOrder": 80,
+    "IsPlayBeforeBirthday": true,
+    "TimeScheduleId": 800200004
+  }
+]
