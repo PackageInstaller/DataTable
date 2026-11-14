@@ -6,8 +6,9 @@ from __future__ import annotations
 application/x-msgpack，鉴权只依赖固定请求头 + 服务端下发的 X-Session。
 
 注意：接口路由（/api/uuid/<uuid>）与 reverse-version-key 是每个客户端版本
-编译进 libil2cpp 的常量，服务端不下发。本模块不内置它们；调用方必须传入从
-脚本目录的 ReverseBlueEndpoints.json（ReverseBlueFrida.py 动态抓包生成）或参数得到的值。
+编译进 libil2cpp 的常量，服务端不下发。接口映射由 ReverseBlueFrida.py 动态抓包写入
+ReverseBlueEndpoints.json；reverse-version-key 优先从 APK 的 global-metadata.dat 提取，
+无 APK 时退回本模块的 DEFAULT_VERSION_KEY（1.31.3 常量）。
 """
 
 import os
@@ -26,6 +27,9 @@ DEVICE_AGENT = "OnePlus PJE110:::Android OS 15 / API-35 (TP1A.220905.001/U.1eb77
 USER_AGENT = "UnityPlayer/2022.3.61f1 (UnityWebRequest/1.0, libcurl/8.10.1-DEV)"
 TIMEOUT = 120
 CHUNK = 1 << 20
+
+# 1.31.3 客户端内置的 reverse-version-key（无 APK 时的兜底；版本更新后失效则提示传 --apk）
+DEFAULT_VERSION_KEY = "8AY3HisTx6mNhpgkPpPjXwNTnSQSYMYJsYUFZuUDKxm9VDJyxG"
 
 
 def api_path(endpoint: str) -> str:

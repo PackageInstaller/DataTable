@@ -13,11 +13,15 @@ from __future__ import annotations
 
 - version-key：优先取 --version-key；否则从 APK 的 global-metadata.dat 自动提取
   （整份 metadata 里唯一的 50 位字母数字字面量，见 ReverseBlueMetadata.py）；
+  没有 APK 时退回 ReverseBlueApi.DEFAULT_VERSION_KEY（1.31.3 常量）；
+- appVersion：优先 --version；否则 APK versionName（aapt2/aapt）；没有 APK 时从
+  Play Store（google_play_scraper）读取；再否则用动态抓包/缓存里的版本号；
 - 接口映射：优先取 --endpoints JSON；否则读脚本目录的 ReverseBlueEndpoints.json
   （由 ReverseBlueFrida.py frida spawn 动态抓包生成）；缺失时自动调用动态抓取
-  （每版本一次，需要设备 + frida-server）；
-- appVersion：优先 --version；否则 APK versionName（aapt2/aapt）；再否则用动态抓包
-  得到的版本号。
+  （每版本一次，需要设备 + frida-server）。
+
+若 Play Store 版本已更新而内置 version-key / 接口映射还是旧版，会先尝试；拉 catalog
+或建会话失败时提示传入新版本 --apk（工具会从新 APK 的 global-metadata.dat 提取 key）。
 
 动态抓包原理：spawn 游戏后 hook UnityWebRequest.set_url / SetRequestHeader /
 DownloadHandler / UploadHandlerRaw，抓启动流程的真实 URL、reverse-version-key 请求头
@@ -69,6 +73,7 @@ CACHE_DIR = SCRIPT_DIR / "Cache"
 PAINTING_DIR = SCRIPT_DIR / "Painting"
 # 接口映射（每个客户端版本由 ReverseBlueFrida.py 动态抓包生成，可随仓库提交）
 ENDPOINTS_FILE = SCRIPT_DIR / "ReverseBlueEndpoints.json"
+STORE_VERSION_CACHE = CACHE_DIR / "play_store_version.json"
 DEFAULT_JOBS = 8
 ROLE_ORDER = ("startup", "session", "app_config", "masterdata")
 
@@ -158,6 +163,9 @@ def build_runtime(args: argparse.Namespace) -> Runtime:
     routes = Metadata.find_routes(literals)
     auto_key = Metadata.find_version_key(literals)
     auto_version = Metadata.detect_app_version(apks)
+    store_version = None
+    if not args.version and not auto_version:
+        store_version = Metadata.detect_store_version(STORE_VERSION_CACHE)
     cache = read_cache()
 
     runtime = Runtime(
@@ -168,26 +176,42 @@ def build_runtime(args: argparse.Namespace) -> Runtime:
         literals=len(literals),
         cache=cache,
     )
-    runtime.version = args.version or auto_version or str(cache.get("appVersion") or "")
-    runtime.version_key = args.version_key or auto_key or str(cache.get("versionKey") or "")
+    cached_version = str(cache.get("appVersion") or "")
+    cached_key = str(cache.get("versionKey") or "")
+    runtime.version = args.version or auto_version or store_version or cached_version
+    runtime.version_key = args.version_key or auto_key or cached_key or Api.DEFAULT_VERSION_KEY
     runtime.sources["version"] = (
         "参数" if args.version else
         "APK(aapt)" if auto_version else
-        "动态抓包" if cache.get("appVersion") else
+        "Play Store" if store_version else
+        "动态抓包" if cached_version else
         "未知"
     )
     runtime.sources["version_key"] = (
         "参数" if args.version_key else
         "APK metadata" if auto_key else
-        "动态抓包" if cache.get("versionKey") else
+        "动态抓包" if cached_key else
+        "内置默认(1.31.3)" if runtime.version_key else
         "未知"
     )
     if routes:
         console.print(f"[cyan]APK metadata[/cyan] {len(literals)} 条字面量 / {len(routes)} 条路由")
     if cache.get("uuids"):
         runtime.resolved.update({role: normalize_uuid(uuid) for role, uuid in cache["uuids"].items()})
+    if runtime.sources["version_key"].startswith("内置默认") and runtime.version and runtime.version != "1.31.3":
+        console.print(
+            f"[yellow]提示[/yellow] Play Store/缓存版本 {runtime.version} 与内置 version-key(1.31.3) 不一致；"
+            "先尝试，若拉取 catalog 失败请传 --apk"
+        )
     return runtime
 
+
+def version_update_hint() -> str:
+    return (
+        "可能是游戏版本更新导致 reverse-version-key / 接口映射变化：\n"
+        "  请传入新版本 APK：--apk base.apk split_config.arm64_v8a.apk split_UnityDataAssetPack.apk\n"
+        "  工具会从新 APK 的 global-metadata.dat 提取 version-key，并按需 frida 动态抓取新接口映射。"
+    )
 
 def _candidate_sets(args: argparse.Namespace, runtime: Runtime) -> list[tuple[str, dict[str, str], bool]]:
     """返回 [(来源, {role: uuid}, 是否信任(不校验是否在当前版本路由块内))]，按优先级排序。"""
@@ -274,7 +298,7 @@ def ensure_runtime(args: argparse.Namespace) -> Runtime:
             runtime = build_runtime(args)
     problems: list[str] = []
     if not runtime.version:
-        problems.append("客户端版本：--version，或提供 --apk 从 versionName 读取")
+        problems.append("客户端版本：--version，或提供 --apk；无 APK 时需要能访问 Play Store")
     if not runtime.version_key:
         problems.append("reverse-version-key：--version-key，或提供 --apk 从 global-metadata.dat 提取")
     missing_roles = _missing_roles(args, runtime)
@@ -325,7 +349,7 @@ def resolve_session(args: argparse.Namespace, runtime: Runtime) -> dict[str, Any
             f"接口来源={source}"
         )
         return session
-    raise SystemExit("无法调用 session 接口：\n  " + "\n  ".join(errors))
+    raise SystemExit("无法调用 session 接口：\n  " + "\n  ".join(errors) + "\n" + version_update_hint())
 
 
 def resolve_startup(args: argparse.Namespace, runtime: Runtime) -> dict[str, Any]:
@@ -397,7 +421,7 @@ def fetch_masterdata(args: argparse.Namespace, runtime: Runtime) -> bytes:
             continue
         _mark(runtime, "masterdata", source, uuid)
         return payload
-    raise SystemExit("无法调用 masterdata 接口：\n  " + "\n  ".join(errors))
+    raise SystemExit("无法调用 masterdata 接口：\n  " + "\n  ".join(errors) + "\n" + version_update_hint())
 
 
 def resolve_catalog_version(
@@ -552,7 +576,12 @@ def cmd_assets(args: argparse.Namespace) -> int:
 
     local_meta = _write_local_catalog()
 
-    catalog = Catalog.fetch_catalog(CACHE_DIR, catalog_version, force=args.force)
+    try:
+        catalog = Catalog.fetch_catalog(CACHE_DIR, catalog_version, force=args.force)
+    except Exception as exc:  # noqa: BLE001
+        console.print(f"[red]获取 catalog 失败[/red]: {exc}")
+        console.print(f"[yellow]{version_update_hint()}[/yellow]")
+        return 1
     readable = Catalog.write_readable(
         catalog,
         ASSETS_DIR / "Catalog" / f"{catalog.catalog_name}.json",
@@ -714,12 +743,12 @@ def _add_common_args(parser: argparse.ArgumentParser) -> None:
     parser.add_argument(
         "--version",
         default="",
-        help="客户端版本号（默认从 APK versionName 或动态抓包结果自动识别）",
+        help="客户端版本号（默认 APK versionName；无 APK 时从 Play Store 获取）",
     )
     parser.add_argument(
         "--version-key",
         default="",
-        help="reverse-version-key（默认从 APK global-metadata.dat 或动态抓包结果提取）",
+        help="reverse-version-key（默认从 APK global-metadata.dat 提取；无 APK 用内置 1.31.3 常量）",
     )
     parser.add_argument(
         "--endpoints",

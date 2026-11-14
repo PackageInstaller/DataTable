@@ -8,20 +8,25 @@ global-metadata.dat；服务端不下发这些值，所以它们是**每个客�
 
 - 439 条 /api/uuid/<uuid> 路由字面量（连续排布，随版本重新生成）
 - 唯一的 50 位字母数字 literal 即 reverse-version-key（随版本更换）
-- APK versionName（aapt2/aapt，拿不到时退回内置常量）
+- APK versionName（aapt2/aapt）
+- 没有 APK 时，从 Play Store 读取版本号（google_play_scraper，带 6 小时缓存）
 """
 
 import glob as globmod
 import hashlib
+import json
 import re
 import shutil
 import struct
 import subprocess
+import time
 from pathlib import Path
 from typing import Sequence
 
 import ReverseBlueApk as Apk
 
+STORE_PACKAGE = "jp.co.happyelements.rxr"
+STORE_CACHE_TTL = 6 * 3600
 METADATA_ENTRY = "assets/bin/Data/Managed/Metadata/global-metadata.dat"
 METADATA_SANITY = 0xFAB11BAF
 ROUTE_PREFIX = "/api/uuid/"
@@ -118,3 +123,38 @@ def detect_app_version(apks: Sequence[Path]) -> str | None:
             if match:
                 return match.group(1)
     return None
+
+
+def detect_store_version(cache_file: Path | None = None, ttl_seconds: int = STORE_CACHE_TTL) -> str | None:
+    """从 Play Store 读取 versionName；缓存有效期内直接复用，网络失败退回旧缓存。"""
+    cached_version: str | None = None
+    if cache_file is not None and cache_file.is_file():
+        try:
+            data = json.loads(cache_file.read_text(encoding="utf-8"))
+            cached_version = str(data.get("version") or "").strip() or None
+            fetched_at = float(data.get("fetchedAt") or 0)
+            if cached_version and time.time() - fetched_at < ttl_seconds:
+                return cached_version
+        except Exception:  # noqa: BLE001
+            cached_version = None
+    try:
+        from google_play_scraper import app as playstore_app
+    except ImportError:
+        return cached_version
+    try:
+        result = playstore_app(app_id=STORE_PACKAGE, lang="en", country="jp")
+        version = str(result.get("version") or "").strip()
+    except Exception:  # noqa: BLE001
+        return cached_version
+    if not version:
+        return cached_version
+    if cache_file is not None:
+        try:
+            cache_file.parent.mkdir(parents=True, exist_ok=True)
+            cache_file.write_text(
+                json.dumps({"version": version, "fetchedAt": time.time(), "source": "google_play_scraper"}, ensure_ascii=False),
+                encoding="utf-8",
+            )
+        except Exception:  # noqa: BLE001
+            pass
+    return version
