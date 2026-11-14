@@ -2,6 +2,7 @@
   "game": "反向蓝 / ReverseBlue Re-birthEnd",
   "platform": "Android",
   "appVersion": "1.31.3",
+  "versionKeySource": "动态抓包",
   "catalogVersion": "1251",
   "catalog": "master.Android.v1251.catalog",
   "catalogInfo": {
@@ -20,6 +21,12 @@
     "note": "split_UnityDataAssetPack.apk 内置的本地 Unity Addressables（与 Aura 远端 catalog 是两套系统）"
   },
   "apk": [],
+  "apiEndpoints": {
+    "startup": "7074ef60-ad15-452b-afe0-6564da6b3a48",
+    "session": "9f463175-74d4-41cc-90f9-5856af16aa13",
+    "app_config": "a0457be5-de77-479d-a093-8bf48a3852fe",
+    "masterdata": "dc84ef7e-9b1b-43d1-8f4a-635da0e3ee73"
+  },
   "downloaded": 0,
   "skipped": 0,
   "failed": 0,

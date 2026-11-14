@@ -5,7 +5,8 @@ from __future__ import annotations
 子命令：
     assets      APK（base + split）解包 + CDN 热更 bundle 下载/校验/解密 → Assets/
     masterdata  数据表（技能/角色/剧情等）与重要配置 → MasterData/
-    all         assets + masterdata
+    painting    Unit_* bundle 里的小人(sd_*)/大立绘(stand_img) → Painting/（名称还原）
+    all         assets + masterdata + painting
 
 版本相关常量（接口路由 /api/uuid/<uuid> 与 reverse-version-key）是每个客户端版本
 由后端生成并编译进 libil2cpp 的，服务端不下发；本工具**不内置**这些值：
@@ -57,6 +58,7 @@ import ReverseBlueBundle as Bundle
 import ReverseBlueCatalog as Catalog
 import ReverseBlueMasterData as MasterData
 import ReverseBlueMetadata as Metadata
+import ReverseBluePainting as Painting
 
 GAME_TITLE = "反向蓝 / ReverseBlue Re-birthEnd"
 GAME_PACKAGE = "jp.co.happyelements.rxr"
@@ -64,6 +66,7 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 ASSETS_DIR = SCRIPT_DIR / "Assets"
 MASTER_DIR = SCRIPT_DIR / "MasterData"
 CACHE_DIR = SCRIPT_DIR / "Cache"
+PAINTING_DIR = SCRIPT_DIR / "Painting"
 ENDPOINTS_CACHE = CACHE_DIR / "ReverseBlueEndpoints.json"
 DEFAULT_JOBS = 8
 ROLE_ORDER = ("startup", "session", "app_config", "masterdata")
@@ -655,13 +658,34 @@ def cmd_masterdata(args: argparse.Namespace) -> int:
 
 
 # ---------------------------------------------------------------------------
+# 子命令：painting
+# ---------------------------------------------------------------------------
+
+def cmd_painting(args: argparse.Namespace, limit: int | None = None) -> int:
+    console.print(f"[bold cyan]=== 导出小人/大立绘 → {PAINTING_DIR} ===[/bold cyan]")
+    result = Painting.export_all(
+        assets_dir=Path(getattr(args, "assets_dir", ASSETS_DIR)),
+        master_dir=Path(getattr(args, "master_dir", MASTER_DIR)),
+        painting_dir=Path(getattr(args, "painting_dir", PAINTING_DIR)),
+        jobs=getattr(args, "jobs", DEFAULT_JOBS),
+        limit=getattr(args, "limit", 0) if limit is None else limit,
+        force=getattr(args, "force", False),
+        download=not getattr(args, "no_download", False),
+    )
+    return 0 if result["failed"] == 0 else 1
+
+
+# ---------------------------------------------------------------------------
 # 子命令：all
 # ---------------------------------------------------------------------------
 
 def cmd_all(args: argparse.Namespace) -> int:
     rc = cmd_assets(args)
     rc2 = cmd_masterdata(args)
-    return 0 if rc == 0 and rc2 == 0 else 1
+    rc3 = 0
+    if not getattr(args, "skip_painting", False):
+        rc3 = cmd_painting(args, limit=0)
+    return 0 if rc == 0 and rc2 == 0 and rc3 == 0 else 1
 
 
 # ---------------------------------------------------------------------------
@@ -715,9 +739,19 @@ def build_parser() -> argparse.ArgumentParser:
     p_master = sub.add_parser("masterdata", help="数据表（技能/角色/剧情等）与重要配置 → MasterData/")
     _add_common_args(p_master)
 
-    p_all = sub.add_parser("all", help="依次执行 assets、masterdata")
+    p_paint = sub.add_parser("painting", help="导出 Unit 小人(sd_*)/大立绘(stand_img) → Painting/")
+    p_paint.add_argument("--assets-dir", default=str(ASSETS_DIR), help="Assets 目录")
+    p_paint.add_argument("--master-dir", default=str(MASTER_DIR), help="MasterData 目录")
+    p_paint.add_argument("--painting-dir", default=str(PAINTING_DIR), help="立绘输出目录")
+    p_paint.add_argument("--jobs", type=int, default=DEFAULT_JOBS, help=f"并发线程数，默认 {DEFAULT_JOBS}")
+    p_paint.add_argument("--force", action="store_true", help="覆盖已有立绘")
+    p_paint.add_argument("--limit", type=int, default=0, help="只导出前 N 个 Unit bundle（0 为全部）")
+    p_paint.add_argument("--no-download", action="store_true", help="缺少 Unit bundle 时不自动下载")
+
+    p_all = sub.add_parser("all", help="依次执行 assets、masterdata、painting")
     _add_common_args(p_all)
     p_all.add_argument("--skip-apk", action="store_true", help="跳过 APK 解包")
+    p_all.add_argument("--skip-painting", action="store_true", help="all 时跳过立绘导出")
     p_all.add_argument("--limit", type=int, default=0, help="最多下载多少个 bundle（0 为不限制）")
     p_all.add_argument("--with-resources", action="store_true", help="catalog JSON 附带地址able → bundle 映射")
 
@@ -732,6 +766,8 @@ def main() -> int:
         return cmd_assets(args)
     if command == "masterdata":
         return cmd_masterdata(args)
+    if command == "painting":
+        return cmd_painting(args)
     if command == "all":
         return cmd_all(args)
     parser.error(f"未知的子命令: {command}")
