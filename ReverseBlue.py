@@ -451,6 +451,12 @@ def _write_local_catalog() -> dict[str, Any]:
             f"[green]本地 Addressables[/green] {meta['bundleCount']} 个 bundle / "
             f"{format_size(meta['bundleBytes'])} → Assets/aa/Android"
         )
+    else:
+        console.print(
+            "[yellow]未解出本地 Addressables[/yellow]：如果只传了 base.apk，"
+            "需补 split_UnityDataAssetPack.apk 才能拿到 Assets/aa 下的本地 bundle；"
+            "热更/CDN 资产不受影响。"
+        )
     return data
 
 
