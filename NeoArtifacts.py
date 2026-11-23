@@ -155,9 +155,14 @@ FIXS_DIR = ASSETS_DIR / "fixs"
 STATE_PATH = ROOT / "version.json"
 DATA_DAT = ASSETS_DIR / "data.dat"
 PAINTING_DIR = ROOT / "Painting"
+LUA_DIR = MASTER_DIR / "Lua"
 PAINTING_PREFIX = "来古弥新"
 DRAWING_PATH_RE = re.compile(
     r"^assets/_bundleresources/character/([^/]+)/drawing/([^/]+)\.png$",
+    re.IGNORECASE,
+)
+LUA_PATH_RE = re.compile(
+    r"^assets/_luascripts/(.+?)\.lua(?:\.txt)?$",
     re.IGNORECASE,
 )
 _UNSAFE_FS = re.compile(r'[\\/:*?"<>|\x00-\x1f]')
@@ -1541,6 +1546,112 @@ def cmd_painting(workers: int, limit: int | None, force: bool) -> int:
     return 0 if stats["ok"] or stats["skipped"] else 1
 
 
+def iter_lua_abs(doc: dict[str, Any]) -> list[dict[str, str]]:
+    """从 data.dat 索引中找出包含 _luascripts 的 AB 包列表。"""
+    seen: set[str] = set()
+    items: list[dict[str, str]] = []
+    for ab in doc.get("ABList") or []:
+        logical = ab.get("Name") or ""
+        md5_name = ab.get("MD5Name") or md5_ab_filename(logical)
+        has_lua = any(
+            LUA_PATH_RE.match(p.replace("\\", "/")) for p in (ab.get("PathList") or [])
+        )
+        if not has_lua or md5_name in seen:
+            continue
+        seen.add(md5_name)
+        items.append({"logical": logical, "md5": md5_name})
+    return items
+
+
+def decrypt_lua_bytes(raw: bytes) -> bytes:
+    """按客户端 LuaManager.LuaLoader 逻辑使用 AES-ECB 解密 Lua 脚本文本。"""
+    if not raw:
+        return raw
+    if len(raw) % 16 == 0:
+        try:
+            dec = aes_ecb_decrypt(raw, AES_KEY)
+            if dec:
+                return dec
+        except Exception:  # noqa: BLE001
+            pass
+    return raw
+
+
+def cmd_lua(force: bool) -> int:
+    try:
+        import UnityPy
+    except ImportError:
+        console.print("[red]需要 UnityPy：pip install UnityPy[/]")
+        return 1
+    try:
+        doc = load_build_ab_json()
+    except Exception as exc:  # noqa: BLE001
+        console.print(f"[red]读 data.dat 失败[/] {exc}")
+        return 1
+
+    lua_abs = iter_lua_abs(doc)
+    if not lua_abs:
+        console.print("[red]data.dat 里没有 assets/_luascripts/*.lua.txt[/]")
+        return 1
+
+    UnityPy.config.FALLBACK_UNITY_VERSION = UNITY_VERSION
+    LUA_DIR.mkdir(parents=True, exist_ok=True)
+    stats = {"ok": 0, "skipped": 0, "fail": 0, "missing_ab": 0}
+
+    for item in lua_abs:
+        src = drawing_ab_path(item["md5"])
+        if src is None:
+            stats["missing_ab"] += 1
+            continue
+        raw, st = decrypt_unityfs_ab(src.read_bytes(), item["logical"] or src.name)
+        if st == "fail" and parse_unityfs_header(raw) is None:
+            stats["fail"] += 1
+            continue
+        env = UnityPy.load(raw)
+        entries = list(env.container.items())
+        with Progress(
+            SpinnerColumn(),
+            TextColumn("[progress.description]{task.description}"),
+            BarColumn(),
+            MofNCompleteColumn(),
+            TimeRemainingColumn(),
+            console=console,
+        ) as progress:
+            task = progress.add_task(f"导出 Lua ({item['logical']})", total=len(entries))
+            for container_path, obj in entries:
+                progress.update(task, advance=1)
+                m = LUA_PATH_RE.match(container_path.replace("\\", "/"))
+                if not m:
+                    continue
+                rel = m.group(1) + ".lua"
+                dest = LUA_DIR / rel
+                if dest.is_file() and not force:
+                    stats["skipped"] += 1
+                    continue
+                try:
+                    data_obj = obj.read()
+                    script = data_obj.m_Script
+                    raw_bytes = (
+                        bytes(script)
+                        if isinstance(script, (bytes, bytearray))
+                        else script.encode("utf-8", "surrogateescape")
+                    )
+                    dec = decrypt_lua_bytes(raw_bytes)
+                    dest.parent.mkdir(parents=True, exist_ok=True)
+                    tmp = dest.with_suffix(".lua.tmp")
+                    tmp.write_bytes(dec)
+                    tmp.replace(dest)
+                    stats["ok"] += 1
+                except Exception:  # noqa: BLE001
+                    stats["fail"] += 1
+
+    console.print(
+        f"[bold]完成[/] 导出 {stats['ok']}  已有 {stats['skipped']}  "
+        f"失败 {stats['fail']}  缺 AB {stats['missing_ab']}  → {LUA_DIR}"
+    )
+    return 0 if stats["ok"] or stats["skipped"] else 1
+
+
 def cmd_deserialize() -> int:
     lang: dict[str, str] = {}
     for bin_path in sorted(LANG_DIR.glob("*.bin")):
@@ -2065,6 +2176,12 @@ def main() -> int:
     p_pt.add_argument("--limit", type=int, default=None, help="只导出前 N 张（调试）")
     p_pt.add_argument("--force", action="store_true", help="覆盖已有 PNG")
 
+    p_lua = sub.add_parser(
+        "lua",
+        help="从 data.dat 索引导出并解密 _luascripts 下的 Lua 脚本到 Lua/",
+    )
+    p_lua.add_argument("--force", action="store_true", help="覆盖已有 Lua 文件")
+
     args = parser.parse_args()
     if args.cmd == "status":
         return cmd_status(probe=args.probe)
@@ -2109,6 +2226,8 @@ def main() -> int:
         return cmd_verify_legacy(args.path)
     if args.cmd == "painting":
         return cmd_painting(workers=args.workers, limit=args.limit, force=args.force)
+    if args.cmd == "lua":
+        return cmd_lua(force=args.force)
     parser.error("unknown command")
     return 2
 

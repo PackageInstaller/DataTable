@@ -1,0 +1,45 @@
+SawPuzzleConfig={
+  {
+    type="1",
+    base={
+      row=5,
+      col=7,
+      size=Vector2(120,120),
+      isRotate=true,
+      spacing=35,
+      texPath="Assets/_BundleResources/Images/SawPuzzle/num35/d",
+      
+    },
+    material={
+      _AreaWidth=840,
+      _AreaHight=600,
+      _PieceWidthBase=0,
+      _PieceWidthOff=17.08,
+      _PieceHightBase=96.5,
+      _PieceHightOff=24,
+      _maskRectWidth=188,
+      _offSet=35
+    }
+  },
+  {
+    type="2",
+    base={
+      row=8,
+      col=10,
+      size=Vector2(84,75),
+      isRotate=true,
+      spacing=60,
+      texPath="Assets/_BundleResources/Images/SawPuzzle/num80/2d"
+    },
+    material={
+      _AreaWidth=840,
+      _AreaHight=600,
+      _PieceWidthBase=0.8,
+      _PieceWidthOff=8.41,
+      _PieceHightBase=66.5,
+      _PieceHightOff=9.428,
+      _maskRectWidth=136,
+      _offSet=35
+    }
+  }
+}

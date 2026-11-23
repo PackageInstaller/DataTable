@@ -26970,6 +26970,7 @@
   "49101_M300004": {
     "id": "49101_M300004",
     "NameLan": "monsterLan_monster_nameLan_49101_M300004",
+    "NameLanText": "吴王夫差矛",
     "monsterModel": "D0060",
     "modelType": "1",
     "monsterSkin": "D0060001",
@@ -27008,8 +27009,10 @@
       ]
     ],
     "monsterDesLan": "monsterLan_monster_monsterDesLan_49101_M300004",
+    "monsterDesLanText": "吴王夫差矛",
     "type": 1,
     "monsterTagLan": "monsterLan_monster_monsterTagLan_49101_M300004",
+    "monsterTagLanText": "近战;物理",
     "tipsDesLan": "",
     "size": "",
     "hideShowinfo": true,
@@ -42525,6 +42528,55 @@
     "monsterDesLanText": "于西南深山中尘存千年的神秘蛊虫被曲解之力包裹，化茧，然后蜕变出了这等类人的怪物。\n此曲解背生单翅，首有三角，瓜似鹰雕。据基金会分析，母蛊寄宿在其右眼之中，得之可制蛊解。",
     "type": 2,
     "monsterTagLan": "monsterLan_monster_monsterTagLan_69201_SJZB0301",
+    "monsterTagLanText": "近战;物理",
+    "tipsDesLan": "",
+    "size": "",
+    "hideShowinfo": false,
+    "helpId": "",
+    "threat": [
+      "100",
+      "1-5-40",
+      "6-7-20",
+      "1-20-19"
+    ]
+  },
+  "69201_SJZB0501": {
+    "id": "69201_SJZB0501",
+    "NameLan": "monsterLan_monster_nameLan_69201_SJZB0501",
+    "NameLanText": "佞面",
+    "monsterModel": "EV133",
+    "modelType": "1",
+    "monsterSkin": "EV13301",
+    "AIConfigId": "EV13301",
+    "counterproperty": 2,
+    "attacktype": 2,
+    "job": 2,
+    "attribution": "69201_SJZB0501",
+    "gender": 0,
+    "skills": [
+      [
+        "EV13301",
+        "1"
+      ]
+    ],
+    "passiveskills": [
+      [
+        "EV13331",
+        "1"
+      ],
+      [
+        "EV13304",
+        "1"
+      ],
+      [
+        "EV13305",
+        "1"
+      ]
+    ],
+    "monsterDesLan": "monsterLan_monster_monsterDesLan_69201_SJZB0501",
+    "monsterDesLanText": "恶佞莲鼓召唤物",
+    "type": 1,
+    "monsterTagLan": "monsterLan_monster_monsterTagLan_69201_SJZB0501",
     "monsterTagLanText": "近战;物理",
     "tipsDesLan": "",
     "size": "",

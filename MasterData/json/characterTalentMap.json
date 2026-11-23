@@ -196518,5 +196518,1450 @@
     "rewardItemId": "",
     "talentType": 1,
     "colorClass": 0
+  },
+  "W018500": {
+    "id": "W018500",
+    "namelan": "characterlan_characterTalent_namelan_W018500",
+    "namelanText": "等级上限·初始",
+    "descriptionlan": "",
+    "name": "等级上限·初始",
+    "des": "",
+    "characterId": "W0185",
+    "index": 0,
+    "requireLevel": 0,
+    "requireStar": 0,
+    "requireCoin": null,
+    "requireItems": null,
+    "requireTalent": [],
+    "talentBankId": "T1047",
+    "defaultActive": 1,
+    "talentOption": [
+      "T1069",
+      "T1045",
+      "T1023"
+    ],
+    "talentOptionReset": [
+      {
+        "id": "3",
+        "count": 6000
+      }
+    ],
+    "pointIcon": "res_1",
+    "pointCount": 1,
+    "rewardItemId": "",
+    "talentType": 1,
+    "colorClass": 0
+  },
+  "W018501": {
+    "id": "W018501",
+    "namelan": "characterlan_characterTalent_namelan_W018501",
+    "namelanText": "被动二·解锁",
+    "descriptionlan": "",
+    "name": "被动二·解锁",
+    "des": "",
+    "characterId": "W0185",
+    "index": 1,
+    "requireLevel": 1,
+    "requireStar": 0,
+    "requireCoin": [
+      {
+        "id": "3",
+        "count": 1000
+      }
+    ],
+    "requireItems": [
+      {
+        "id": "1051",
+        "count": 5
+      },
+      {
+        "id": "1031",
+        "count": 5
+      }
+    ],
+    "requireTalent": [
+      "W018500"
+    ],
+    "talentBankId": "T1005",
+    "defaultActive": 0,
+    "talentOption": [],
+    "talentOptionReset": null,
+    "pointIcon": "",
+    "pointCount": 0,
+    "rewardItemId": "",
+    "talentType": 1,
+    "colorClass": 0
+  },
+  "W018502": {
+    "id": "W018502",
+    "namelan": "characterlan_characterTalent_namelan_W018502",
+    "namelanText": "被动一·强化二",
+    "descriptionlan": "",
+    "name": "被动一·强化二",
+    "des": "",
+    "characterId": "W0185",
+    "index": 2,
+    "requireLevel": 10,
+    "requireStar": 0,
+    "requireCoin": [
+      {
+        "id": "3",
+        "count": 2000
+      }
+    ],
+    "requireItems": [
+      {
+        "id": "1051",
+        "count": 5
+      },
+      {
+        "id": "1031",
+        "count": 5
+      },
+      {
+        "id": "1068",
+        "count": 8
+      }
+    ],
+    "requireTalent": [
+      "W018501"
+    ],
+    "talentBankId": "T1003",
+    "defaultActive": 0,
+    "talentOption": [],
+    "talentOptionReset": null,
+    "pointIcon": "",
+    "pointCount": 0,
+    "rewardItemId": "",
+    "talentType": 1,
+    "colorClass": 0
+  },
+  "W018503": {
+    "id": "W018503",
+    "namelan": "characterlan_characterTalent_namelan_W018503",
+    "namelanText": "攻击·强化",
+    "descriptionlan": "",
+    "name": "攻击·强化",
+    "des": "",
+    "characterId": "W0185",
+    "index": 3,
+    "requireLevel": 1,
+    "requireStar": 0,
+    "requireCoin": [
+      {
+        "id": "3",
+        "count": 1000
+      }
+    ],
+    "requireItems": [
+      {
+        "id": "1031",
+        "count": 5
+      }
+    ],
+    "requireTalent": [
+      "W018500"
+    ],
+    "talentBankId": "T1312",
+    "defaultActive": 0,
+    "talentOption": [],
+    "talentOptionReset": null,
+    "pointIcon": "",
+    "pointCount": 0,
+    "rewardItemId": "",
+    "talentType": 1,
+    "colorClass": 0
+  },
+  "W018504": {
+    "id": "W018504",
+    "namelan": "characterlan_characterTalent_namelan_W018504",
+    "namelanText": "生命·强化",
+    "descriptionlan": "",
+    "name": "生命·强化",
+    "des": "",
+    "characterId": "W0185",
+    "index": 4,
+    "requireLevel": 10,
+    "requireStar": 0,
+    "requireCoin": [
+      {
+        "id": "3",
+        "count": 2000
+      }
+    ],
+    "requireItems": [
+      {
+        "id": "1031",
+        "count": 5
+      },
+      {
+        "id": "1080",
+        "count": 8
+      }
+    ],
+    "requireTalent": [
+      "W018503"
+    ],
+    "talentBankId": "T1313",
+    "defaultActive": 0,
+    "talentOption": [],
+    "talentOptionReset": null,
+    "pointIcon": "",
+    "pointCount": 0,
+    "rewardItemId": "",
+    "talentType": 1,
+    "colorClass": 0
+  },
+  "W018505": {
+    "id": "W018505",
+    "namelan": "characterlan_characterTalent_namelan_W018505",
+    "namelanText": "15级上限突破",
+    "descriptionlan": "",
+    "name": "15级上限突破",
+    "des": "",
+    "characterId": "W0185",
+    "index": 5,
+    "requireLevel": 15,
+    "requireStar": 0,
+    "requireCoin": [
+      {
+        "id": "3",
+        "count": 4000
+      }
+    ],
+    "requireItems": [
+      {
+        "id": "1052",
+        "count": 10
+      },
+      {
+        "id": "1032",
+        "count": 10
+      },
+      {
+        "id": "1080",
+        "count": 5
+      }
+    ],
+    "requireTalent": [
+      "W018500"
+    ],
+    "talentBankId": "T1011",
+    "defaultActive": 0,
+    "talentOption": [
+      "T1077",
+      "T1059",
+      "T1033"
+    ],
+    "talentOptionReset": [
+      {
+        "id": "3",
+        "count": 12000
+      }
+    ],
+    "pointIcon": "res_1",
+    "pointCount": 1,
+    "rewardItemId": "",
+    "talentType": 1,
+    "colorClass": 0
+  },
+  "W018506": {
+    "id": "W018506",
+    "namelan": "characterlan_characterTalent_namelan_W018506",
+    "namelanText": "绝技·强化二",
+    "descriptionlan": "",
+    "name": "绝技·强化二",
+    "des": "",
+    "characterId": "W0185",
+    "index": 6,
+    "requireLevel": 15,
+    "requireStar": 0,
+    "requireCoin": [
+      {
+        "id": "3",
+        "count": 4000
+      }
+    ],
+    "requireItems": [
+      {
+        "id": "1052",
+        "count": 5
+      },
+      {
+        "id": "1032",
+        "count": 5
+      },
+      {
+        "id": "1060",
+        "count": 8
+      }
+    ],
+    "requireTalent": [
+      "W018502",
+      "W018505"
+    ],
+    "talentBankId": "T1001",
+    "defaultActive": 0,
+    "talentOption": [],
+    "talentOptionReset": null,
+    "pointIcon": "",
+    "pointCount": 0,
+    "rewardItemId": "",
+    "talentType": 1,
+    "colorClass": 0
+  },
+  "W018507": {
+    "id": "W018507",
+    "namelan": "characterlan_characterTalent_namelan_W018507",
+    "namelanText": "被动二·强化二",
+    "descriptionlan": "",
+    "name": "被动二·强化二",
+    "des": "",
+    "characterId": "W0185",
+    "index": 7,
+    "requireLevel": 20,
+    "requireStar": 0,
+    "requireCoin": [
+      {
+        "id": "3",
+        "count": 6000
+      }
+    ],
+    "requireItems": [
+      {
+        "id": "1052",
+        "count": 5
+      },
+      {
+        "id": "1032",
+        "count": 5
+      },
+      {
+        "id": "1081",
+        "count": 7
+      }
+    ],
+    "requireTalent": [
+      "W018506"
+    ],
+    "talentBankId": "T1006",
+    "defaultActive": 0,
+    "talentOption": [],
+    "talentOptionReset": null,
+    "pointIcon": "",
+    "pointCount": 0,
+    "rewardItemId": "",
+    "talentType": 1,
+    "colorClass": 0
+  },
+  "W018508": {
+    "id": "W018508",
+    "namelan": "characterlan_characterTalent_namelan_W018508",
+    "namelanText": "物防·强化",
+    "descriptionlan": "",
+    "name": "物防·强化",
+    "des": "",
+    "characterId": "W0185",
+    "index": 8,
+    "requireLevel": 15,
+    "requireStar": 0,
+    "requireCoin": [
+      {
+        "id": "3",
+        "count": 4000
+      }
+    ],
+    "requireItems": [
+      {
+        "id": "1032",
+        "count": 5
+      },
+      {
+        "id": "1064",
+        "count": 7
+      }
+    ],
+    "requireTalent": [
+      "W018504",
+      "W018505"
+    ],
+    "talentBankId": "T1314",
+    "defaultActive": 0,
+    "talentOption": [],
+    "talentOptionReset": null,
+    "pointIcon": "",
+    "pointCount": 0,
+    "rewardItemId": "",
+    "talentType": 1,
+    "colorClass": 0
+  },
+  "W018509": {
+    "id": "W018509",
+    "namelan": "characterlan_characterTalent_namelan_W018509",
+    "namelanText": "素防·强化",
+    "descriptionlan": "",
+    "name": "素防·强化",
+    "des": "",
+    "characterId": "W0185",
+    "index": 9,
+    "requireLevel": 20,
+    "requireStar": 0,
+    "requireCoin": [
+      {
+        "id": "3",
+        "count": 6000
+      }
+    ],
+    "requireItems": [
+      {
+        "id": "1032",
+        "count": 5
+      },
+      {
+        "id": "1061",
+        "count": 7
+      }
+    ],
+    "requireTalent": [
+      "W018508"
+    ],
+    "talentBankId": "T1315",
+    "defaultActive": 0,
+    "talentOption": [],
+    "talentOptionReset": null,
+    "pointIcon": "",
+    "pointCount": 0,
+    "rewardItemId": "",
+    "talentType": 1,
+    "colorClass": 0
+  },
+  "W018510": {
+    "id": "W018510",
+    "namelan": "characterlan_characterTalent_namelan_W018510",
+    "namelanText": "30级上限突破",
+    "descriptionlan": "",
+    "name": "30级上限突破",
+    "des": "",
+    "characterId": "W0185",
+    "index": 10,
+    "requireLevel": 30,
+    "requireStar": 0,
+    "requireCoin": [
+      {
+        "id": "3",
+        "count": 8000
+      }
+    ],
+    "requireItems": [
+      {
+        "id": "1053",
+        "count": 8
+      },
+      {
+        "id": "1033",
+        "count": 8
+      },
+      {
+        "id": "1081",
+        "count": 8
+      }
+    ],
+    "requireTalent": [
+      "W018505"
+    ],
+    "talentBankId": "T1012",
+    "defaultActive": 0,
+    "talentOption": [
+      "T1119",
+      "T1105",
+      "T1061"
+    ],
+    "talentOptionReset": [
+      {
+        "id": "3",
+        "count": 20000
+      }
+    ],
+    "pointIcon": "res_1",
+    "pointCount": 1,
+    "rewardItemId": "",
+    "talentType": 1,
+    "colorClass": 0
+  },
+  "W018511": {
+    "id": "W018511",
+    "namelan": "characterlan_characterTalent_namelan_W018511",
+    "namelanText": "被动三·解锁",
+    "descriptionlan": "",
+    "name": "被动三·解锁",
+    "des": "",
+    "characterId": "W0185",
+    "index": 11,
+    "requireLevel": 30,
+    "requireStar": 0,
+    "requireCoin": [
+      {
+        "id": "3",
+        "count": 8000
+      }
+    ],
+    "requireItems": [
+      {
+        "id": "1053",
+        "count": 5
+      },
+      {
+        "id": "1033",
+        "count": 5
+      },
+      {
+        "id": "1073",
+        "count": 5
+      }
+    ],
+    "requireTalent": [
+      "W018507",
+      "W018510"
+    ],
+    "talentBankId": "T1008",
+    "defaultActive": 0,
+    "talentOption": [],
+    "talentOptionReset": null,
+    "pointIcon": "",
+    "pointCount": 0,
+    "rewardItemId": "",
+    "talentType": 1,
+    "colorClass": 0
+  },
+  "W018512": {
+    "id": "W018512",
+    "namelan": "characterlan_characterTalent_namelan_W018512",
+    "namelanText": "被动一·强化三",
+    "descriptionlan": "",
+    "name": "被动一·强化三",
+    "des": "",
+    "characterId": "W0185",
+    "index": 12,
+    "requireLevel": 40,
+    "requireStar": 0,
+    "requireCoin": [
+      {
+        "id": "3",
+        "count": 10000
+      }
+    ],
+    "requireItems": [
+      {
+        "id": "1053",
+        "count": 5
+      },
+      {
+        "id": "1033",
+        "count": 5
+      },
+      {
+        "id": "1065",
+        "count": 8
+      },
+      {
+        "id": "1077",
+        "count": 6
+      }
+    ],
+    "requireTalent": [
+      "W018510",
+      "W018511"
+    ],
+    "talentBankId": "T1004",
+    "defaultActive": 0,
+    "talentOption": [],
+    "talentOptionReset": null,
+    "pointIcon": "",
+    "pointCount": 0,
+    "rewardItemId": "",
+    "talentType": 1,
+    "colorClass": 0
+  },
+  "W018513": {
+    "id": "W018513",
+    "namelan": "characterlan_characterTalent_namelan_W018513",
+    "namelanText": "攻击·强化",
+    "descriptionlan": "",
+    "name": "攻击·强化",
+    "des": "",
+    "characterId": "W0185",
+    "index": 13,
+    "requireLevel": 30,
+    "requireStar": 0,
+    "requireCoin": [
+      {
+        "id": "3",
+        "count": 8000
+      }
+    ],
+    "requireItems": [
+      {
+        "id": "1033",
+        "count": 5
+      },
+      {
+        "id": "1081",
+        "count": 8
+      }
+    ],
+    "requireTalent": [
+      "W018509",
+      "W018510"
+    ],
+    "talentBankId": "T1316",
+    "defaultActive": 0,
+    "talentOption": [],
+    "talentOptionReset": null,
+    "pointIcon": "",
+    "pointCount": 0,
+    "rewardItemId": "",
+    "talentType": 1,
+    "colorClass": 0
+  },
+  "W018514": {
+    "id": "W018514",
+    "namelan": "characterlan_characterTalent_namelan_W018514",
+    "namelanText": "生命·强化",
+    "descriptionlan": "",
+    "name": "生命·强化",
+    "des": "",
+    "characterId": "W0185",
+    "index": 14,
+    "requireLevel": 40,
+    "requireStar": 0,
+    "requireCoin": [
+      {
+        "id": "3",
+        "count": 10000
+      }
+    ],
+    "requireItems": [
+      {
+        "id": "1033",
+        "count": 5
+      },
+      {
+        "id": "1073",
+        "count": 6
+      },
+      {
+        "id": "1069",
+        "count": 7
+      }
+    ],
+    "requireTalent": [
+      "W018510",
+      "W018513"
+    ],
+    "talentBankId": "T1317",
+    "defaultActive": 0,
+    "talentOption": [],
+    "talentOptionReset": null,
+    "pointIcon": "",
+    "pointCount": 0,
+    "rewardItemId": "",
+    "talentType": 1,
+    "colorClass": 0
+  },
+  "W018515": {
+    "id": "W018515",
+    "namelan": "characterlan_characterTalent_namelan_W018515",
+    "namelanText": "50级上限突破",
+    "descriptionlan": "",
+    "name": "50级上限突破",
+    "des": "",
+    "characterId": "W0185",
+    "index": 15,
+    "requireLevel": 50,
+    "requireStar": 0,
+    "requireCoin": [
+      {
+        "id": "3",
+        "count": 15000
+      }
+    ],
+    "requireItems": [
+      {
+        "id": "1054",
+        "count": 5
+      },
+      {
+        "id": "1034",
+        "count": 5
+      },
+      {
+        "id": "1062",
+        "count": 4
+      },
+      {
+        "id": "1082",
+        "count": 5
+      }
+    ],
+    "requireTalent": [
+      "W018510"
+    ],
+    "talentBankId": "T1013",
+    "defaultActive": 0,
+    "talentOption": [
+      "T1105",
+      "T1059",
+      "T1023"
+    ],
+    "talentOptionReset": [
+      {
+        "id": "3",
+        "count": 36000
+      }
+    ],
+    "pointIcon": "res_1",
+    "pointCount": 1,
+    "rewardItemId": "",
+    "talentType": 1,
+    "colorClass": 0
+  },
+  "W018516": {
+    "id": "W018516",
+    "namelan": "characterlan_characterTalent_namelan_W018516",
+    "namelanText": "被动三·强化二",
+    "descriptionlan": "",
+    "name": "被动三·强化二",
+    "des": "",
+    "characterId": "W0185",
+    "index": 16,
+    "requireLevel": 50,
+    "requireStar": 0,
+    "requireCoin": [
+      {
+        "id": "3",
+        "count": 15000
+      }
+    ],
+    "requireItems": [
+      {
+        "id": "1054",
+        "count": 5
+      },
+      {
+        "id": "1034",
+        "count": 5
+      },
+      {
+        "id": "1078",
+        "count": 3
+      },
+      {
+        "id": "1082",
+        "count": 5
+      }
+    ],
+    "requireTalent": [
+      "W018512",
+      "W018515"
+    ],
+    "talentBankId": "T1009",
+    "defaultActive": 0,
+    "talentOption": [],
+    "talentOptionReset": null,
+    "pointIcon": "",
+    "pointCount": 0,
+    "rewardItemId": "",
+    "talentType": 1,
+    "colorClass": 0
+  },
+  "W018517": {
+    "id": "W018517",
+    "namelan": "characterlan_characterTalent_namelan_W018517",
+    "namelanText": "物防·强化",
+    "descriptionlan": "",
+    "name": "物防·强化",
+    "des": "",
+    "characterId": "W0185",
+    "index": 17,
+    "requireLevel": 50,
+    "requireStar": 0,
+    "requireCoin": [
+      {
+        "id": "3",
+        "count": 15000
+      }
+    ],
+    "requireItems": [
+      {
+        "id": "1034",
+        "count": 5
+      },
+      {
+        "id": "1066",
+        "count": 3
+      },
+      {
+        "id": "1074",
+        "count": 3
+      }
+    ],
+    "requireTalent": [
+      "W018514",
+      "W018515"
+    ],
+    "talentBankId": "T1318",
+    "defaultActive": 0,
+    "talentOption": [],
+    "talentOptionReset": null,
+    "pointIcon": "",
+    "pointCount": 0,
+    "rewardItemId": "",
+    "talentType": 1,
+    "colorClass": 0
+  },
+  "W018518": {
+    "id": "W018518",
+    "namelan": "characterlan_characterTalent_namelan_W018518",
+    "namelanText": "精研",
+    "descriptionlan": "",
+    "name": "精研",
+    "des": "",
+    "characterId": "W0185",
+    "index": 18,
+    "requireLevel": 60,
+    "requireStar": 0,
+    "requireCoin": [
+      {
+        "id": "3",
+        "count": 20000
+      }
+    ],
+    "requireItems": [
+      {
+        "id": "1034",
+        "count": 5
+      },
+      {
+        "id": "1074",
+        "count": 9
+      },
+      {
+        "id": "1066",
+        "count": 7
+      }
+    ],
+    "requireTalent": [
+      "W018515"
+    ],
+    "talentBankId": "T1048",
+    "defaultActive": 0,
+    "talentOption": [
+      "T1057",
+      "T1119",
+      "T1120"
+    ],
+    "talentOptionReset": [
+      {
+        "id": "3",
+        "count": 36000
+      }
+    ],
+    "pointIcon": "res_1",
+    "pointCount": 1,
+    "rewardItemId": "9185002",
+    "talentType": 2,
+    "colorClass": 0
+  },
+  "W018519": {
+    "id": "W018519",
+    "namelan": "characterlan_characterTalent_namelan_W018519",
+    "namelanText": "绝技·强化三",
+    "descriptionlan": "",
+    "name": "绝技·强化三",
+    "des": "",
+    "characterId": "W0185",
+    "index": 19,
+    "requireLevel": 60,
+    "requireStar": 0,
+    "requireCoin": [
+      {
+        "id": "3",
+        "count": 20000
+      }
+    ],
+    "requireItems": [
+      {
+        "id": "1054",
+        "count": 5
+      },
+      {
+        "id": "1034",
+        "count": 5
+      },
+      {
+        "id": "1082",
+        "count": 5
+      },
+      {
+        "id": "1078",
+        "count": 3
+      }
+    ],
+    "requireTalent": [
+      "W018516",
+      "W018518"
+    ],
+    "talentBankId": "T1002",
+    "defaultActive": 0,
+    "talentOption": [],
+    "talentOptionReset": null,
+    "pointIcon": "",
+    "pointCount": 0,
+    "rewardItemId": "",
+    "talentType": 1,
+    "colorClass": 0
+  },
+  "W018520": {
+    "id": "W018520",
+    "namelan": "characterlan_characterTalent_namelan_W018520",
+    "namelanText": "素防·强化",
+    "descriptionlan": "",
+    "name": "素防·强化",
+    "des": "",
+    "characterId": "W0185",
+    "index": 20,
+    "requireLevel": 60,
+    "requireStar": 0,
+    "requireCoin": [
+      {
+        "id": "3",
+        "count": 20000
+      }
+    ],
+    "requireItems": [
+      {
+        "id": "1034",
+        "count": 5
+      },
+      {
+        "id": "1066",
+        "count": 4
+      },
+      {
+        "id": "1074",
+        "count": 4
+      }
+    ],
+    "requireTalent": [
+      "W018517",
+      "W018518"
+    ],
+    "talentBankId": "T1319",
+    "defaultActive": 0,
+    "talentOption": [],
+    "talentOptionReset": null,
+    "pointIcon": "",
+    "pointCount": 0,
+    "rewardItemId": "",
+    "talentType": 1,
+    "colorClass": 0
+  },
+  "W018521": {
+    "id": "W018521",
+    "namelan": "characterlan_characterTalent_namelan_W018521",
+    "namelanText": "70级上限突破",
+    "descriptionlan": "",
+    "name": "70级上限突破",
+    "des": "",
+    "characterId": "W0185",
+    "index": 21,
+    "requireLevel": 70,
+    "requireStar": 0,
+    "requireCoin": [
+      {
+        "id": "3",
+        "count": 25000
+      }
+    ],
+    "requireItems": [
+      {
+        "id": "1055",
+        "count": 5
+      },
+      {
+        "id": "1035",
+        "count": 5
+      },
+      {
+        "id": "1079",
+        "count": 2
+      },
+      {
+        "id": "1071",
+        "count": 2
+      }
+    ],
+    "requireTalent": [
+      "W018518"
+    ],
+    "talentBankId": "T1104",
+    "defaultActive": 0,
+    "talentOption": [
+      "T1103",
+      "T1057",
+      "T1034"
+    ],
+    "talentOptionReset": [
+      {
+        "id": "3",
+        "count": 40000
+      }
+    ],
+    "pointIcon": "res_1",
+    "pointCount": 1,
+    "rewardItemId": "",
+    "talentType": 1,
+    "colorClass": 0
+  },
+  "W018522": {
+    "id": "W018522",
+    "namelan": "characterlan_characterTalent_namelan_W018522",
+    "namelanText": "被动二·强化三",
+    "descriptionlan": "",
+    "name": "被动二·强化三",
+    "des": "",
+    "characterId": "W0185",
+    "index": 22,
+    "requireLevel": 70,
+    "requireStar": 0,
+    "requireCoin": [
+      {
+        "id": "3",
+        "count": 25000
+      }
+    ],
+    "requireItems": [
+      {
+        "id": "1055",
+        "count": 5
+      },
+      {
+        "id": "1035",
+        "count": 5
+      },
+      {
+        "id": "1067",
+        "count": 3
+      },
+      {
+        "id": "1071",
+        "count": 2
+      }
+    ],
+    "requireTalent": [
+      "W018519",
+      "W018521"
+    ],
+    "talentBankId": "T1007",
+    "defaultActive": 0,
+    "talentOption": [],
+    "talentOptionReset": null,
+    "pointIcon": "",
+    "pointCount": 0,
+    "rewardItemId": "",
+    "talentType": 1,
+    "colorClass": 0
+  },
+  "W018523": {
+    "id": "W018523",
+    "namelan": "characterlan_characterTalent_namelan_W018523",
+    "namelanText": "攻击·强化",
+    "descriptionlan": "",
+    "name": "攻击·强化",
+    "des": "",
+    "characterId": "W0185",
+    "index": 23,
+    "requireLevel": 70,
+    "requireStar": 0,
+    "requireCoin": [
+      {
+        "id": "3",
+        "count": 25000
+      }
+    ],
+    "requireItems": [
+      {
+        "id": "1035",
+        "count": 5
+      },
+      {
+        "id": "1063",
+        "count": 2
+      },
+      {
+        "id": "1075",
+        "count": 3
+      }
+    ],
+    "requireTalent": [
+      "W018520",
+      "W018521"
+    ],
+    "talentBankId": "T1320",
+    "defaultActive": 0,
+    "talentOption": [],
+    "talentOptionReset": null,
+    "pointIcon": "",
+    "pointCount": 0,
+    "rewardItemId": "",
+    "talentType": 1,
+    "colorClass": 0
+  },
+  "W018524": {
+    "id": "W018524",
+    "namelan": "characterlan_characterTalent_namelan_W018524",
+    "namelanText": "90级上限突破",
+    "descriptionlan": "",
+    "name": "90级上限突破",
+    "des": "",
+    "characterId": "W0185",
+    "index": 24,
+    "requireLevel": 90,
+    "requireStar": 0,
+    "requireCoin": [
+      {
+        "id": "3",
+        "count": 30000
+      }
+    ],
+    "requireItems": [
+      {
+        "id": "1055",
+        "count": 5
+      },
+      {
+        "id": "1035",
+        "count": 5
+      },
+      {
+        "id": "1086",
+        "count": 3
+      },
+      {
+        "id": "1084",
+        "count": 3
+      }
+    ],
+    "requireTalent": [
+      "W018521"
+    ],
+    "talentBankId": "T1014",
+    "defaultActive": 0,
+    "talentOption": [
+      "T1105",
+      "T1098",
+      "T1120"
+    ],
+    "talentOptionReset": [
+      {
+        "id": "3",
+        "count": 48000
+      }
+    ],
+    "pointIcon": "res_1",
+    "pointCount": 1,
+    "rewardItemId": "",
+    "talentType": 1,
+    "colorClass": 0
+  },
+  "W018525": {
+    "id": "W018525",
+    "namelan": "characterlan_characterTalent_namelan_W018525",
+    "namelanText": "被动三·强化三",
+    "descriptionlan": "",
+    "name": "被动三·强化三",
+    "des": "",
+    "characterId": "W0185",
+    "index": 25,
+    "requireLevel": 90,
+    "requireStar": 0,
+    "requireCoin": [
+      {
+        "id": "3",
+        "count": 30000
+      }
+    ],
+    "requireItems": [
+      {
+        "id": "1055",
+        "count": 5
+      },
+      {
+        "id": "1035",
+        "count": 5
+      },
+      {
+        "id": "1089",
+        "count": 3
+      },
+      {
+        "id": "1085",
+        "count": 3
+      }
+    ],
+    "requireTalent": [
+      "W018522",
+      "W018524"
+    ],
+    "talentBankId": "T1010",
+    "defaultActive": 0,
+    "talentOption": [],
+    "talentOptionReset": null,
+    "pointIcon": "",
+    "pointCount": 0,
+    "rewardItemId": "",
+    "talentType": 1,
+    "colorClass": 0
+  },
+  "W018526": {
+    "id": "W018526",
+    "namelan": "characterlan_characterTalent_namelan_W018526",
+    "namelanText": "生命·强化",
+    "descriptionlan": "",
+    "name": "生命·强化",
+    "des": "",
+    "characterId": "W0185",
+    "index": 26,
+    "requireLevel": 90,
+    "requireStar": 0,
+    "requireCoin": [
+      {
+        "id": "3",
+        "count": 30000
+      }
+    ],
+    "requireItems": [
+      {
+        "id": "1035",
+        "count": 5
+      },
+      {
+        "id": "1085",
+        "count": 2
+      },
+      {
+        "id": "1087",
+        "count": 3
+      }
+    ],
+    "requireTalent": [
+      "W018523",
+      "W018524"
+    ],
+    "talentBankId": "T1321",
+    "defaultActive": 0,
+    "talentOption": [],
+    "talentOptionReset": null,
+    "pointIcon": "",
+    "pointCount": 0,
+    "rewardItemId": "",
+    "talentType": 1,
+    "colorClass": 0
+  },
+  "W018527": {
+    "id": "W018527",
+    "namelan": "characterlan_characterTalent_namelan_W018527",
+    "namelanText": "100级上限突破",
+    "descriptionlan": "",
+    "name": "100级上限突破",
+    "des": "",
+    "characterId": "W0185",
+    "index": 27,
+    "requireLevel": 100,
+    "requireStar": 0,
+    "requireCoin": [
+      {
+        "id": "3",
+        "count": 40000
+      }
+    ],
+    "requireItems": [
+      {
+        "id": "1093",
+        "count": 12
+      },
+      {
+        "id": "1035",
+        "count": 6
+      },
+      {
+        "id": "1089",
+        "count": 3
+      }
+    ],
+    "requireTalent": [
+      "W018524"
+    ],
+    "talentBankId": "T1367",
+    "defaultActive": 0,
+    "talentOption": [
+      "T1108",
+      "T1057",
+      "T1105"
+    ],
+    "talentOptionReset": [
+      {
+        "id": "3",
+        "count": 48000
+      }
+    ],
+    "pointIcon": "res_1",
+    "pointCount": 1,
+    "rewardItemId": "",
+    "talentType": 1,
+    "colorClass": 0
+  },
+  "W018528": {
+    "id": "W018528",
+    "namelan": "characterlan_characterTalent_namelan_W018528",
+    "namelanText": "攻击·强化",
+    "descriptionlan": "",
+    "name": "攻击·强化",
+    "des": "",
+    "characterId": "W0185",
+    "index": 28,
+    "requireLevel": 100,
+    "requireStar": 0,
+    "requireCoin": [
+      {
+        "id": "3",
+        "count": 40000
+      }
+    ],
+    "requireItems": [
+      {
+        "id": "1093",
+        "count": 8
+      },
+      {
+        "id": "1035",
+        "count": 4
+      },
+      {
+        "id": "1089",
+        "count": 2
+      }
+    ],
+    "requireTalent": [
+      "W018527",
+      "W018526"
+    ],
+    "talentBankId": "T1320",
+    "defaultActive": 0,
+    "talentOption": [],
+    "talentOptionReset": null,
+    "pointIcon": "",
+    "pointCount": 0,
+    "rewardItemId": "",
+    "talentType": 1,
+    "colorClass": 0
+  },
+  "W018529": {
+    "id": "W018529",
+    "namelan": "characterlan_characterTalent_namelan_W018529",
+    "namelanText": "110级上限突破",
+    "descriptionlan": "",
+    "name": "110级上限突破",
+    "des": "",
+    "characterId": "W0185",
+    "index": 29,
+    "requireLevel": 110,
+    "requireStar": 0,
+    "requireCoin": [
+      {
+        "id": "3",
+        "count": 50000
+      }
+    ],
+    "requireItems": [
+      {
+        "id": "1093",
+        "count": 18
+      },
+      {
+        "id": "1035",
+        "count": 9
+      },
+      {
+        "id": "1089",
+        "count": 5
+      }
+    ],
+    "requireTalent": [
+      "W018527"
+    ],
+    "talentBankId": "T1368",
+    "defaultActive": 0,
+    "talentOption": [
+      "T1108",
+      "T1057",
+      "T1105"
+    ],
+    "talentOptionReset": [
+      {
+        "id": "3",
+        "count": 48000
+      }
+    ],
+    "pointIcon": "res_1",
+    "pointCount": 0,
+    "rewardItemId": "",
+    "talentType": 1,
+    "colorClass": 0
+  },
+  "W018530": {
+    "id": "W018530",
+    "namelan": "characterlan_characterTalent_namelan_W018530",
+    "namelanText": "生命·强化",
+    "descriptionlan": "",
+    "name": "生命·强化",
+    "des": "",
+    "characterId": "W0185",
+    "index": 30,
+    "requireLevel": 110,
+    "requireStar": 0,
+    "requireCoin": [
+      {
+        "id": "3",
+        "count": 50000
+      }
+    ],
+    "requireItems": [
+      {
+        "id": "1093",
+        "count": 12
+      },
+      {
+        "id": "1035",
+        "count": 6
+      },
+      {
+        "id": "1089",
+        "count": 3
+      }
+    ],
+    "requireTalent": [
+      "W018529",
+      "W018528"
+    ],
+    "talentBankId": "T1321",
+    "defaultActive": 0,
+    "talentOption": [],
+    "talentOptionReset": null,
+    "pointIcon": "",
+    "pointCount": 0,
+    "rewardItemId": "",
+    "talentType": 1,
+    "colorClass": 0
   }
 }

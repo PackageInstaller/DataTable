@@ -40261,6 +40261,113 @@
       ]
     ]
   },
+  "A0163061": {
+    "HeroId": "A0163",
+    "GroupId": "A016306",
+    "Level": 1,
+    "Type": 6,
+    "IsConceal": false,
+    "NameLan": "SkillLan_PassiveSkill_NameLan_A01630601",
+    "NameLanText": "斑斓之盒",
+    "DescriptionLan": "SkillLan_PassiveSkill_DescriptionLan_A01630601",
+    "DescriptionLanText": "使用绝技前，使受击敌方单位获得<color=#158bdb>1</color>层<color=#ff6724>粉碎矿物</color>状态；\n绝技对处于<color=#ff6724>粉碎矿物</color>状态的敌方单位造成伤害前，若该单位受击前每损失最大生命值的<color=#158bdb>15%</color>生命值，则使其额外获得<color=#158bdb>1</color>层<color=#ff6724>粉碎矿物</color>状态；\n友方任意单位对处于<color=#ff6724>粉碎矿物</color>状态的敌方单位进行技能攻击并造成物理伤害时，该伤害将被记录，三兔藻井下<color=#158bdb>1</color>次对处于<color=#ff6724>粉碎矿物</color>状态的任意敌方单位造成伤害时，对其造成前述记录伤害的<color=#158bdb>20%</color>的额外真实伤害，并清除伤害记录，重新累计；\n被动技能<color=#ff6724>御水克火</color>效果更新：攻击力加成上限提高至当前攻击力的<color=#158bdb>500%</color>；绝技造成伤害后，若受击单位存在<color=#158bdb>5</color>层<color=#ff6724>粉碎矿物</color>状态，则返还该次绝技消耗的能量；\n被动技能<color=#ff6724>藻饰莲荷</color>效果更新：进入战斗时，自身每存在<color=#158bdb>1%</color>的暴击率，则使自身造成的额外伤害提高<color=#158bdb>1%</color>，造成的技能伤害提高<color=#158bdb>0.5%</color>，防御穿透提高<color=#158bdb>0.5%</color>。\n{Buff_A0163_HZ_1}",
+    "Name": "斑斓之盒",
+    "SkillTag": "SkillLan_SkillTag0",
+    "SkillTagText": "被动触发",
+    "SkillIcon": "skillicon_A016305",
+    "Attr": [
+      [
+        "Condition1,string,"
+      ],
+      [
+        "Condition1Para,string,"
+      ],
+      [
+        "Condition2,string,"
+      ],
+      [
+        "Condition2Para,string,"
+      ],
+      [
+        "Condition3,string,"
+      ],
+      [
+        "Condition3Para,string,"
+      ],
+      [
+        "Condition4,string,"
+      ],
+      [
+        "Condition4Para,string,"
+      ],
+      [
+        "Condition5,string,"
+      ],
+      [
+        "Condition5Para,string,"
+      ],
+      [
+        "Trigger,string,"
+      ],
+      [
+        "TriggerPara,string,"
+      ],
+      [
+        "Timer,string,Fixed"
+      ],
+      [
+        "TimerPara,string,"
+      ],
+      [
+        "Effect1,string,Buff_A0163_HZ_A"
+      ],
+      [
+        "Effect1Para,string,"
+      ],
+      [
+        "Effect1Tips,string,"
+      ],
+      [
+        "Effect2,string,Buff_A0163_HZ_7"
+      ],
+      [
+        "Effect2Para,string,"
+      ],
+      [
+        "Effect2Tips,string,"
+      ],
+      [
+        "Effect3,string,Buff_A0163_HZ_9_1"
+      ],
+      [
+        "Effect3Para,string,"
+      ],
+      [
+        "Effect3Tips,string,"
+      ],
+      [
+        "Effect4,string,"
+      ],
+      [
+        "Effect4Para,string,"
+      ],
+      [
+        "Effect4Tips,string,"
+      ],
+      [
+        "Effect5,string,"
+      ],
+      [
+        "Effect5Para,string,"
+      ],
+      [
+        "Effect5Tips,string,"
+      ],
+      [
+        "Selector,string,Passive,Source"
+      ]
+    ]
+  },
   "A016306npc011": {
     "HeroId": "A0163",
     "GroupId": "A016306npc01",
@@ -43474,7 +43581,7 @@
     "NameLan": "SkillLan_PassiveSkill_NameLan_A01700601",
     "NameLanText": "小小大瓮",
     "DescriptionLan": "SkillLan_PassiveSkill_DescriptionLan_A01700601",
-    "DescriptionLanText": "自身攻击力提升<color=#158bdb>30%</color>；\n绝技最大攻击距离增加至<color=#158bdb>7</color>格，且绝技造成的伤害提升至<color=#158bdb>2</color>倍；\n自身在瞄准状态下使用绝技时，绝技攻击范围变为选定的敌方单体，且后续物理伤害不再平摊；\n使用绝技前，使自身及<color=#158bdb>周围3格</color>的友方全体获得持续<color=#158bdb>2</color>回合的<color=#ff6724>物相</color>和<color=#ff6724>戈焰</color>状态；\n进行绝技攻击前，若自身处于瞄准状态，则使受击单位获得<color=#158bdb>5</color>层<color=#ff6724>瓮中身</color>状态；若自身未处于瞄准状态，则使受击单位获得<color=#158bdb>3</color>层<color=#ff6724>瓮中声</color>状态。{Buff_A0170_hz_AA}{Buff_A0170_hz_BB}",
+    "DescriptionLanText": "自身攻击力提升<color=#158bdb>30%</color>；\n绝技最大攻击距离增加至<color=#158bdb>7</color>格，且绝技造成的伤害提升至<color=#158bdb>2</color>倍；\n自身在瞄准状态下使用绝技时，绝技攻击范围变为选定的敌方单体，且后续物理伤害不再平摊；\n使用绝技前，使自身及<color=#158bdb>周围3格</color>的友方全体获得持续<color=#158bdb>2</color>回合的<color=#ff6724>物相</color>和<color=#ff6724>戈焰</color>状态；\n进行绝技攻击前，若自身处于瞄准状态，则使受击单位获得<color=#158bdb>5</color>层<color=#ff6724>瓮中身</color>状态；若自身未处于瞄准状态，则使受击单位获得<color=#158bdb>3</color>层<color=#ff6724>瓮中声</color>状态。{Buff_A0170_hz_A}{Buff_A0170_hz_B}",
     "Name": "小小大瓮",
     "SkillTag": "SkillLan_SkillTag0",
     "SkillTagText": "被动触发",
@@ -128702,7 +128809,7 @@
         "Effect4Tips,string,"
       ],
       [
-        "Effect5,string,"
+        "Effect5,string,Buff_EV133_1_1"
       ],
       [
         "Effect5Para,string,"
@@ -128908,6 +129015,113 @@
       ],
       [
         "Effect4,string,"
+      ],
+      [
+        "Effect4Para,string,"
+      ],
+      [
+        "Effect4Tips,string,"
+      ],
+      [
+        "Effect5,string,"
+      ],
+      [
+        "Effect5Para,string,"
+      ],
+      [
+        "Effect5Tips,string,"
+      ],
+      [
+        "Selector,string,Passive,Source"
+      ]
+    ]
+  },
+  "EV133311": {
+    "HeroId": "EV133",
+    "GroupId": "EV13331",
+    "Level": 1,
+    "Type": 3,
+    "IsConceal": false,
+    "NameLan": "SkillLan_PassiveSkill_NameLan_EV1330301",
+    "NameLanText": "冥顽不灵",
+    "DescriptionLan": "SkillLan_PassiveSkill_DescriptionLan_EV1330301",
+    "DescriptionLanText": "一阶段：自身受到致命伤害时，使攻击的敌方单位获得<color=#158bdb>1</color>层<color=#ff6724>嗔梦</color>状态；\n二阶段：自身受到致命伤害时，使攻击的敌方单位获得<color=#158bdb>1</color>层<color=#ff6724>善根</color>状态。{Buff_EV133_2_1}{Buff_EV133_2_2}",
+    "Name": "冥顽不灵",
+    "SkillTag": "SkillLan_SkillTag0",
+    "SkillTagText": "被动触发",
+    "SkillIcon": "skillicon_MonsterCommon_3_4",
+    "Attr": [
+      [
+        "Condition1,string,"
+      ],
+      [
+        "Condition1Para,string,"
+      ],
+      [
+        "Condition2,string,"
+      ],
+      [
+        "Condition2Para,string,"
+      ],
+      [
+        "Condition3,string,"
+      ],
+      [
+        "Condition3Para,string,"
+      ],
+      [
+        "Condition4,string,"
+      ],
+      [
+        "Condition4Para,string,"
+      ],
+      [
+        "Condition5,string,"
+      ],
+      [
+        "Condition5Para,string,"
+      ],
+      [
+        "Trigger,string,"
+      ],
+      [
+        "TriggerPara,string,"
+      ],
+      [
+        "Timer,string,Fixed"
+      ],
+      [
+        "TimerPara,string,"
+      ],
+      [
+        "Effect1,string,Buff_EV133_1"
+      ],
+      [
+        "Effect1Para,string,"
+      ],
+      [
+        "Effect1Tips,string,"
+      ],
+      [
+        "Effect2,string,Buff_EV133_2"
+      ],
+      [
+        "Effect2Para,string,"
+      ],
+      [
+        "Effect2Tips,string,"
+      ],
+      [
+        "Effect3,string,Buff_EV133_2_0"
+      ],
+      [
+        "Effect3Para,string,"
+      ],
+      [
+        "Effect3Tips,string,"
+      ],
+      [
+        "Effect4,string,Buff_EV133_6"
       ],
       [
         "Effect4Para,string,"
@@ -266120,6 +266334,113 @@
       ]
     ]
   },
+  "W0079061": {
+    "HeroId": "W0079",
+    "GroupId": "W007906",
+    "Level": 1,
+    "Type": 6,
+    "IsConceal": false,
+    "NameLan": "SkillLan_PassiveSkill_NameLan_W00790601",
+    "NameLanText": "即兴魔术道具",
+    "DescriptionLan": "SkillLan_PassiveSkill_DescriptionLan_W00790601",
+    "DescriptionLanText": "进入战斗后，自身获得<color=#158bdb>1</color>层<color=#ff6724>和鸣</color>状态；\n我方全体对处于控制状态的敌方单位造成的伤害提高<color=#158bdb>40%</color>；\n自身每次行动开始前，刷新自身属性增益类状态的持续时间；\n自身使用绝技后，获得<color=#ff6724>即兴秀</color>状态，此效果每轮次最多可触发<color=#158bdb>2</color>次；\n自身使用职业技能前，获得<color=#158bdb>1</color>层<color=#ff6724>拟具</color>状态；\n职业技能蓄力结束后，立即获得额外行动<color=#158bdb>1</color>次，此效果每轮次最多可触发<color=#158bdb>1</color>次；\n职业技能对敌方单位造成伤害后，使其获得持续<color=#158bdb>1</color>回合的<color=#ff6724>眩晕</color>状态；\n使用职业技能后，自身获得<color=#158bdb>2</color>层被动技能<color=#ff6724>排练</color>中的速度增加<color=#158bdb>30</color>的效果，此效果每轮次最多可触发<color=#158bdb>2</color>次；\n使用职业技能后，使自身<color=#158bdb>十字方向3格</color>内的敌方全体获得<color=#ff6724>震怒</color>状态，且自身获得<color=#158bdb>2</color>层<color=#ff6724>小把戏</color>状态，此效果每轮次最多可触发<color=#158bdb>2</color>次。\n{Buff_W0079_HzPublic_Buff1_Effect1}{Buff_W0079_HzPublic_Buff2}{Buff_W0079_HzPublic_Buff3}",
+    "Name": "即兴魔术道具",
+    "SkillTag": "SkillLan_SkillTag0",
+    "SkillTagText": "被动触发",
+    "SkillIcon": "skillicon_W007906",
+    "Attr": [
+      [
+        "Condition1,string,"
+      ],
+      [
+        "Condition1Para,string,"
+      ],
+      [
+        "Condition2,string,"
+      ],
+      [
+        "Condition2Para,string,"
+      ],
+      [
+        "Condition3,string,"
+      ],
+      [
+        "Condition3Para,string,"
+      ],
+      [
+        "Condition4,string,"
+      ],
+      [
+        "Condition4Para,string,"
+      ],
+      [
+        "Condition5,string,"
+      ],
+      [
+        "Condition5Para,string,"
+      ],
+      [
+        "Trigger,string,"
+      ],
+      [
+        "TriggerPara,string,"
+      ],
+      [
+        "Timer,string,Fixed"
+      ],
+      [
+        "TimerPara,string,"
+      ],
+      [
+        "Effect1,string,Buff_W0079_Hz1"
+      ],
+      [
+        "Effect1Para,string,"
+      ],
+      [
+        "Effect1Tips,string,"
+      ],
+      [
+        "Effect2,string,Buff_W0079_Hz2"
+      ],
+      [
+        "Effect2Para,string,"
+      ],
+      [
+        "Effect2Tips,string,"
+      ],
+      [
+        "Effect3,string,Buff_W0079_Hz3"
+      ],
+      [
+        "Effect3Para,string,"
+      ],
+      [
+        "Effect3Tips,string,"
+      ],
+      [
+        "Effect4,string,Buff_W0079_Hz4"
+      ],
+      [
+        "Effect4Para,string,"
+      ],
+      [
+        "Effect4Tips,string,"
+      ],
+      [
+        "Effect5,string,"
+      ],
+      [
+        "Effect5Para,string,"
+      ],
+      [
+        "Effect5Tips,string,"
+      ],
+      [
+        "Selector,string,Passive,Source"
+      ]
+    ]
+  },
   "W0081031": {
     "HeroId": "W0081",
     "GroupId": "W008103",
@@ -272278,10 +272599,10 @@
         "Effect2Tips,string,"
       ],
       [
-        "Effect3,string,Buff_W0097_11_3"
+        "Effect3,string,Buff_W0097_11_3,#1"
       ],
       [
-        "Effect3Para,string,"
+        "Effect3Para,string,10"
       ],
       [
         "Effect3Tips,string,"
@@ -272385,10 +272706,10 @@
         "Effect2Tips,string,"
       ],
       [
-        "Effect3,string,Buff_W0097_11_3"
+        "Effect3,string,Buff_W0097_11_3,#1"
       ],
       [
-        "Effect3Para,string,"
+        "Effect3Para,string,15"
       ],
       [
         "Effect3Tips,string,"
@@ -272492,10 +272813,10 @@
         "Effect2Tips,string,"
       ],
       [
-        "Effect3,string,Buff_W0097_11_3"
+        "Effect3,string,Buff_W0097_11_3,#1"
       ],
       [
-        "Effect3Para,string,"
+        "Effect3Para,string,20"
       ],
       [
         "Effect3Tips,string,"
@@ -297203,6 +297524,1290 @@
       ],
       [
         "Effect5Para,string,20"
+      ],
+      [
+        "Effect5Tips,string,"
+      ],
+      [
+        "Selector,string,Passive,Source"
+      ]
+    ]
+  },
+  "W0185031": {
+    "HeroId": "W0185",
+    "GroupId": "W018503",
+    "Level": 1,
+    "Type": 3,
+    "IsConceal": false,
+    "NameLan": "SkillLan_PassiveSkill_NameLan_W01850301",
+    "NameLanText": "五方藏山",
+    "DescriptionLan": "SkillLan_PassiveSkill_DescriptionLan_W01850301",
+    "DescriptionLanText": "我方单位进行追击并造成伤害后，刻本山海经获得<color=#158bdb>1</color>层<color=#ff6724>投喂</color>状态；\n自身使用绝技后，立即获得再行动<color=#158bdb>1</color>次和<color=#158bdb>[Effect1Para,1]</color>层<color=#ff6724>语怪</color>状态；\n任意友方单位直接攻击处于刻本山海经<color=#158bdb>周围[Effect3Para,2]格</color>内的敌方单位时，若刻本山海经存在<color=#ff6724>语怪</color>状态，则消耗该状态对该敌方单位进行追击，对其造成刻本山海经攻击力<color=#158bdb>[Effect3Para,1]%</color>的构素伤害。{Buff_W0185_1}{Buff_W0185_2}{Buff_ExtraMove}",
+    "Name": "五方藏山",
+    "SkillTag": "SkillLan_SkillTag0",
+    "SkillTagText": "被动触发",
+    "SkillIcon": "skillicon_W018503",
+    "Attr": [
+      [
+        "Condition1,string,"
+      ],
+      [
+        "Condition1Para,string,"
+      ],
+      [
+        "Condition2,string,"
+      ],
+      [
+        "Condition2Para,string,"
+      ],
+      [
+        "Condition3,string,"
+      ],
+      [
+        "Condition3Para,string,"
+      ],
+      [
+        "Condition4,string,"
+      ],
+      [
+        "Condition4Para,string,"
+      ],
+      [
+        "Condition5,string,"
+      ],
+      [
+        "Condition5Para,string,"
+      ],
+      [
+        "Trigger,string,"
+      ],
+      [
+        "TriggerPara,string,"
+      ],
+      [
+        "Timer,string,Fixed"
+      ],
+      [
+        "TimerPara,string,"
+      ],
+      [
+        "Effect1,string,Buff_W0185_4,#1"
+      ],
+      [
+        "Effect1Para,string,1"
+      ],
+      [
+        "Effect1Tips,string,"
+      ],
+      [
+        "Effect2,string,Buff_W0185_5,#1"
+      ],
+      [
+        "Effect2Para,string,0"
+      ],
+      [
+        "Effect2Tips,string,"
+      ],
+      [
+        "Effect3,string,Buff_W0185_6,#1,#2"
+      ],
+      [
+        "Effect3Para,string,100,5"
+      ],
+      [
+        "Effect3Tips,string,"
+      ],
+      [
+        "Effect4,string,"
+      ],
+      [
+        "Effect4Para,string,"
+      ],
+      [
+        "Effect4Tips,string,"
+      ],
+      [
+        "Effect5,string,"
+      ],
+      [
+        "Effect5Para,string,"
+      ],
+      [
+        "Effect5Tips,string,"
+      ],
+      [
+        "Selector,string,Passive,Source"
+      ]
+    ]
+  },
+  "W0185032": {
+    "HeroId": "W0185",
+    "GroupId": "W018503",
+    "Level": 2,
+    "Type": 3,
+    "IsConceal": false,
+    "NameLan": "SkillLan_PassiveSkill_NameLan_W01850302",
+    "NameLanText": "五方藏山",
+    "DescriptionLan": "SkillLan_PassiveSkill_DescriptionLan_W01850302",
+    "DescriptionLanText": "我方单位进行追击并造成伤害后，刻本山海经获得<color=#158bdb>1</color>层<color=#ff6724>投喂</color>状态；\n自身使用绝技后，立即获得再行动<color=#158bdb>1</color>次和<color=#158bdb>[Effect1Para,1]</color>层<color=#ff6724>语怪</color>状态；\n任意友方单位直接攻击处于刻本山海经<color=#158bdb>周围[Effect3Para,2]格</color>内的敌方单位时，若刻本山海经存在<color=#ff6724>语怪</color>状态，则消耗该状态对该敌方单位进行追击，对其造成刻本山海经攻击力<color=#158bdb>[Effect3Para,1]%</color>的构素伤害。{Buff_W0185_1}{Buff_W0185_2}{Buff_ExtraMove}",
+    "Name": "五方藏山",
+    "SkillTag": "SkillLan_SkillTag0",
+    "SkillTagText": "被动触发",
+    "SkillIcon": "skillicon_W018503",
+    "Attr": [
+      [
+        "Condition1,string,"
+      ],
+      [
+        "Condition1Para,string,"
+      ],
+      [
+        "Condition2,string,"
+      ],
+      [
+        "Condition2Para,string,"
+      ],
+      [
+        "Condition3,string,"
+      ],
+      [
+        "Condition3Para,string,"
+      ],
+      [
+        "Condition4,string,"
+      ],
+      [
+        "Condition4Para,string,"
+      ],
+      [
+        "Condition5,string,"
+      ],
+      [
+        "Condition5Para,string,"
+      ],
+      [
+        "Trigger,string,"
+      ],
+      [
+        "TriggerPara,string,"
+      ],
+      [
+        "Timer,string,Fixed"
+      ],
+      [
+        "TimerPara,string,"
+      ],
+      [
+        "Effect1,string,Buff_W0185_4,#1"
+      ],
+      [
+        "Effect1Para,string,2"
+      ],
+      [
+        "Effect1Tips,string,"
+      ],
+      [
+        "Effect2,string,Buff_W0185_5,#1"
+      ],
+      [
+        "Effect2Para,string,1"
+      ],
+      [
+        "Effect2Tips,string,"
+      ],
+      [
+        "Effect3,string,Buff_W0185_6,#1,#2"
+      ],
+      [
+        "Effect3Para,string,100,5"
+      ],
+      [
+        "Effect3Tips,string,"
+      ],
+      [
+        "Effect4,string,"
+      ],
+      [
+        "Effect4Para,string,"
+      ],
+      [
+        "Effect4Tips,string,"
+      ],
+      [
+        "Effect5,string,"
+      ],
+      [
+        "Effect5Para,string,"
+      ],
+      [
+        "Effect5Tips,string,"
+      ],
+      [
+        "Selector,string,Passive,Source"
+      ]
+    ]
+  },
+  "W0185033": {
+    "HeroId": "W0185",
+    "GroupId": "W018503",
+    "Level": 3,
+    "Type": 3,
+    "IsConceal": false,
+    "NameLan": "SkillLan_PassiveSkill_NameLan_W01850303",
+    "NameLanText": "五方藏山",
+    "DescriptionLan": "SkillLan_PassiveSkill_DescriptionLan_W01850303",
+    "DescriptionLanText": "我方单位进行追击并造成伤害后，刻本山海经获得<color=#158bdb>1</color>层<color=#ff6724>投喂</color>状态；\n自身使用绝技后，立即获得再行动<color=#158bdb>1</color>次和<color=#158bdb>[Effect1Para,1]</color>层<color=#ff6724>语怪</color>状态；\n任意友方单位直接攻击处于刻本山海经<color=#158bdb>周围[Effect3Para,2]格</color>内的敌方单位时，若刻本山海经存在<color=#ff6724>语怪</color>状态，则消耗该状态对该敌方单位进行追击，对其造成刻本山海经攻击力<color=#158bdb>[Effect3Para,1]%</color>的构素伤害。{Buff_W0185_1}{Buff_W0185_2}{Buff_ExtraMove}",
+    "Name": "五方藏山",
+    "SkillTag": "SkillLan_SkillTag0",
+    "SkillTagText": "被动触发",
+    "SkillIcon": "skillicon_W018503",
+    "Attr": [
+      [
+        "Condition1,string,"
+      ],
+      [
+        "Condition1Para,string,"
+      ],
+      [
+        "Condition2,string,"
+      ],
+      [
+        "Condition2Para,string,"
+      ],
+      [
+        "Condition3,string,"
+      ],
+      [
+        "Condition3Para,string,"
+      ],
+      [
+        "Condition4,string,"
+      ],
+      [
+        "Condition4Para,string,"
+      ],
+      [
+        "Condition5,string,"
+      ],
+      [
+        "Condition5Para,string,"
+      ],
+      [
+        "Trigger,string,"
+      ],
+      [
+        "TriggerPara,string,"
+      ],
+      [
+        "Timer,string,Fixed"
+      ],
+      [
+        "TimerPara,string,"
+      ],
+      [
+        "Effect1,string,Buff_W0185_4,#1"
+      ],
+      [
+        "Effect1Para,string,3"
+      ],
+      [
+        "Effect1Tips,string,"
+      ],
+      [
+        "Effect2,string,Buff_W0185_5,#1"
+      ],
+      [
+        "Effect2Para,string,2"
+      ],
+      [
+        "Effect2Tips,string,"
+      ],
+      [
+        "Effect3,string,Buff_W0185_6,#1,#2"
+      ],
+      [
+        "Effect3Para,string,100,5"
+      ],
+      [
+        "Effect3Tips,string,"
+      ],
+      [
+        "Effect4,string,"
+      ],
+      [
+        "Effect4Para,string,"
+      ],
+      [
+        "Effect4Tips,string,"
+      ],
+      [
+        "Effect5,string,"
+      ],
+      [
+        "Effect5Para,string,"
+      ],
+      [
+        "Effect5Tips,string,"
+      ],
+      [
+        "Selector,string,Passive,Source"
+      ]
+    ]
+  },
+  "W018503ex1": {
+    "HeroId": "W0185",
+    "GroupId": "W018503ex",
+    "Level": 1,
+    "Type": 3,
+    "IsConceal": false,
+    "NameLan": "SkillLan_PassiveSkill_NameLan_W018503ex01",
+    "NameLanText": "五方藏山-超群",
+    "DescriptionLan": "SkillLan_PassiveSkill_DescriptionLan_W018503ex01",
+    "DescriptionLanText": "进入战斗后，自身获得<color=#158bdb>5</color>层<color=#ff6724>投喂</color>状态；\n我方单位进行追击并造成伤害后，刻本山海经获得<color=#158bdb>1</color>层<color=#ff6724>投喂</color>状态；\n<color=#ff6724>投喂</color>状态叠加至<color=#158bdb>3</color>层时，自身立即获得<color=#ff6724>说奇</color>状态且绝技冷却时间减少<color=#158bdb>1</color>回合，此效果每轮次最多可触发<color=#158bdb>1</color>次；\n自身使用绝技后，立即获得再行动<color=#158bdb>1</color>次和<color=#158bdb>[Effect1Para,1]</color>层<color=#ff6724>语怪</color>状态；\n任意友方单位直接攻击敌方单位时，若刻本山海经存在<color=#ff6724>说奇</color>状态，则消耗该状态对该敌方全体进行追击，对其造成刻本山海经攻击力<color=#158bdb>[Effect3Para,1]%</color>的构素伤害；若刻本山海经存在<color=#ff6724>语怪</color>状态，则消耗该状态对该敌方单位进行追击，对其造成刻本山海经攻击力<color=#158bdb>[Effect3Para,1]%</color>的构素伤害。{Buff_W0185_1}{Buff_W0185_2}{Buff_W0185_3}{Buff_ExtraMove}",
+    "Name": "五方藏山-超群",
+    "SkillTag": "SkillLan_SkillTag0",
+    "SkillTagText": "被动触发",
+    "SkillIcon": "skillicon_W018503",
+    "Attr": [
+      [
+        "Condition1,string,"
+      ],
+      [
+        "Condition1Para,string,"
+      ],
+      [
+        "Condition2,string,"
+      ],
+      [
+        "Condition2Para,string,"
+      ],
+      [
+        "Condition3,string,"
+      ],
+      [
+        "Condition3Para,string,"
+      ],
+      [
+        "Condition4,string,"
+      ],
+      [
+        "Condition4Para,string,"
+      ],
+      [
+        "Condition5,string,"
+      ],
+      [
+        "Condition5Para,string,"
+      ],
+      [
+        "Trigger,string,"
+      ],
+      [
+        "TriggerPara,string,"
+      ],
+      [
+        "Timer,string,Fixed"
+      ],
+      [
+        "TimerPara,string,"
+      ],
+      [
+        "Effect1,string,Buff_W0185_4,#1"
+      ],
+      [
+        "Effect1Para,string,3"
+      ],
+      [
+        "Effect1Tips,string,"
+      ],
+      [
+        "Effect2,string,Buff_W0185_5,#1"
+      ],
+      [
+        "Effect2Para,string,2"
+      ],
+      [
+        "Effect2Tips,string,"
+      ],
+      [
+        "Effect3,string,Buff_W0185_6,#1,#2"
+      ],
+      [
+        "Effect3Para,string,100,99"
+      ],
+      [
+        "Effect3Tips,string,"
+      ],
+      [
+        "Effect4,string,Buff_W0185_7"
+      ],
+      [
+        "Effect4Para,string,"
+      ],
+      [
+        "Effect4Tips,string,"
+      ],
+      [
+        "Effect5,string,Buff_W0185_8,#1"
+      ],
+      [
+        "Effect5Para,string,100"
+      ],
+      [
+        "Effect5Tips,string,"
+      ],
+      [
+        "Selector,string,Passive,Source"
+      ]
+    ]
+  },
+  "W018503ex2": {
+    "HeroId": "W0185",
+    "GroupId": "W018503ex",
+    "Level": 2,
+    "Type": 3,
+    "IsConceal": false,
+    "NameLan": "SkillLan_PassiveSkill_NameLan_W018503ex02",
+    "NameLanText": "五方藏山-超群",
+    "DescriptionLan": "SkillLan_PassiveSkill_DescriptionLan_W018503ex02",
+    "DescriptionLanText": "进入战斗后，自身获得<color=#158bdb>5</color>层<color=#ff6724>投喂</color>状态；\n我方单位进行追击并造成伤害后，刻本山海经获得<color=#158bdb>1</color>层<color=#ff6724>投喂</color>状态；\n<color=#ff6724>投喂</color>状态叠加至<color=#158bdb>3</color>层时，自身立即获得<color=#ff6724>说奇</color>状态且绝技冷却时间减少<color=#158bdb>1</color>回合，此效果每轮次最多可触发<color=#158bdb>1</color>次；\n自身使用绝技后，立即获得再行动<color=#158bdb>1</color>次和<color=#158bdb>[Effect1Para,1]</color>层<color=#ff6724>语怪</color>状态；\n任意友方单位直接攻击敌方单位时，若刻本山海经存在<color=#ff6724>说奇</color>状态，则消耗该状态对该敌方全体进行追击，对其造成刻本山海经攻击力<color=#158bdb>[Effect3Para,1]%</color>的构素伤害；若刻本山海经存在<color=#ff6724>语怪</color>状态，则消耗该状态对该敌方单位进行追击，对其造成刻本山海经攻击力<color=#158bdb>[Effect3Para,1]%</color>的构素伤害。{Buff_W0185_1}{Buff_W0185_2}{Buff_W0185_3}{Buff_ExtraMove}",
+    "Name": "五方藏山-超群",
+    "SkillTag": "SkillLan_SkillTag0",
+    "SkillTagText": "被动触发",
+    "SkillIcon": "skillicon_W018503",
+    "Attr": [
+      [
+        "Condition1,string,"
+      ],
+      [
+        "Condition1Para,string,"
+      ],
+      [
+        "Condition2,string,"
+      ],
+      [
+        "Condition2Para,string,"
+      ],
+      [
+        "Condition3,string,"
+      ],
+      [
+        "Condition3Para,string,"
+      ],
+      [
+        "Condition4,string,"
+      ],
+      [
+        "Condition4Para,string,"
+      ],
+      [
+        "Condition5,string,"
+      ],
+      [
+        "Condition5Para,string,"
+      ],
+      [
+        "Trigger,string,"
+      ],
+      [
+        "TriggerPara,string,"
+      ],
+      [
+        "Timer,string,Fixed"
+      ],
+      [
+        "TimerPara,string,"
+      ],
+      [
+        "Effect1,string,Buff_W0185_4,#1"
+      ],
+      [
+        "Effect1Para,string,4"
+      ],
+      [
+        "Effect1Tips,string,"
+      ],
+      [
+        "Effect2,string,Buff_W0185_5,#1"
+      ],
+      [
+        "Effect2Para,string,3"
+      ],
+      [
+        "Effect2Tips,string,"
+      ],
+      [
+        "Effect3,string,Buff_W0185_6,#1,#2"
+      ],
+      [
+        "Effect3Para,string,100,99"
+      ],
+      [
+        "Effect3Tips,string,"
+      ],
+      [
+        "Effect4,string,Buff_W0185_7"
+      ],
+      [
+        "Effect4Para,string,"
+      ],
+      [
+        "Effect4Tips,string,"
+      ],
+      [
+        "Effect5,string,Buff_W0185_8,#1"
+      ],
+      [
+        "Effect5Para,string,100"
+      ],
+      [
+        "Effect5Tips,string,"
+      ],
+      [
+        "Selector,string,Passive,Source"
+      ]
+    ]
+  },
+  "W018503ex3": {
+    "HeroId": "W0185",
+    "GroupId": "W018503ex",
+    "Level": 3,
+    "Type": 3,
+    "IsConceal": false,
+    "NameLan": "SkillLan_PassiveSkill_NameLan_W018503ex03",
+    "NameLanText": "五方藏山-超群",
+    "DescriptionLan": "SkillLan_PassiveSkill_DescriptionLan_W018503ex03",
+    "DescriptionLanText": "进入战斗后，自身获得<color=#158bdb>5</color>层<color=#ff6724>投喂</color>状态；\n我方单位进行追击并造成伤害后，刻本山海经获得<color=#158bdb>1</color>层<color=#ff6724>投喂</color>状态；\n<color=#ff6724>投喂</color>状态叠加至<color=#158bdb>3</color>层时，自身立即获得<color=#ff6724>说奇</color>状态且绝技冷却时间减少<color=#158bdb>1</color>回合，此效果每轮次最多可触发<color=#158bdb>1</color>次；\n自身使用绝技后，立即获得再行动<color=#158bdb>1</color>次和<color=#158bdb>[Effect1Para,1]</color>层<color=#ff6724>语怪</color>状态；\n任意友方单位直接攻击敌方单位时，若刻本山海经存在<color=#ff6724>说奇</color>状态，则消耗该状态对该敌方全体进行追击，对其造成刻本山海经攻击力<color=#158bdb>[Effect3Para,1]%</color>的构素伤害；若刻本山海经存在<color=#ff6724>语怪</color>状态，则消耗该状态对该敌方单位进行追击，对其造成刻本山海经攻击力<color=#158bdb>[Effect3Para,1]%</color>的构素伤害。{Buff_W0185_1}{Buff_W0185_2}{Buff_W0185_3}{Buff_ExtraMove}",
+    "Name": "五方藏山-超群",
+    "SkillTag": "SkillLan_SkillTag0",
+    "SkillTagText": "被动触发",
+    "SkillIcon": "skillicon_W018503",
+    "Attr": [
+      [
+        "Condition1,string,"
+      ],
+      [
+        "Condition1Para,string,"
+      ],
+      [
+        "Condition2,string,"
+      ],
+      [
+        "Condition2Para,string,"
+      ],
+      [
+        "Condition3,string,"
+      ],
+      [
+        "Condition3Para,string,"
+      ],
+      [
+        "Condition4,string,"
+      ],
+      [
+        "Condition4Para,string,"
+      ],
+      [
+        "Condition5,string,"
+      ],
+      [
+        "Condition5Para,string,"
+      ],
+      [
+        "Trigger,string,"
+      ],
+      [
+        "TriggerPara,string,"
+      ],
+      [
+        "Timer,string,Fixed"
+      ],
+      [
+        "TimerPara,string,"
+      ],
+      [
+        "Effect1,string,Buff_W0185_4,#1"
+      ],
+      [
+        "Effect1Para,string,5"
+      ],
+      [
+        "Effect1Tips,string,"
+      ],
+      [
+        "Effect2,string,Buff_W0185_5,#1"
+      ],
+      [
+        "Effect2Para,string,4"
+      ],
+      [
+        "Effect2Tips,string,"
+      ],
+      [
+        "Effect3,string,Buff_W0185_6,#1,#2"
+      ],
+      [
+        "Effect3Para,string,100,99"
+      ],
+      [
+        "Effect3Tips,string,"
+      ],
+      [
+        "Effect4,string,Buff_W0185_7"
+      ],
+      [
+        "Effect4Para,string,"
+      ],
+      [
+        "Effect4Tips,string,"
+      ],
+      [
+        "Effect5,string,Buff_W0185_8,#1"
+      ],
+      [
+        "Effect5Para,string,100"
+      ],
+      [
+        "Effect5Tips,string,"
+      ],
+      [
+        "Selector,string,Passive,Source"
+      ]
+    ]
+  },
+  "W0185041": {
+    "HeroId": "W0185",
+    "GroupId": "W018504",
+    "Level": 1,
+    "Type": 4,
+    "IsConceal": false,
+    "NameLan": "SkillLan_PassiveSkill_NameLan_W01850401",
+    "NameLanText": "八方蕴海",
+    "DescriptionLan": "SkillLan_PassiveSkill_DescriptionLan_W01850401",
+    "DescriptionLanText": "使用职业技能前，清除自身全部<color=#ff6724>投喂</color>状态，根据清除的层数，使我方全体获得下述增益效果，且增益效果可叠加获取：\n清除<color=#158bdb>1</color>层<color=#ff6724>投喂</color>状态，使我方全体单位下<color=#158bdb>1</color>次获得属性减益或控制效果时，立即驱散该效果；\n清除<color=#158bdb>3</color>层<color=#ff6724>投喂</color>状态，使我方全体获得<color=#158bdb>[Effect1Para,1]</color>层<color=#ff6724>啸剑</color>状态和<color=#ff6724>蓄势</color>状态；\n清除<color=#158bdb>5</color>层<color=#ff6724>投喂</color>状态，使我方全体获得<color=#158bdb>[Effect1Para,2]</color>层<color=#ff6724>连星</color>状态。{Buff_PursuitAttackDmgIncrease}",
+    "Name": "八方蕴海",
+    "SkillTag": "SkillLan_SkillTag0",
+    "SkillTagText": "被动触发",
+    "SkillIcon": "skillicon_W018504",
+    "Attr": [
+      [
+        "Condition1,string,"
+      ],
+      [
+        "Condition1Para,string,"
+      ],
+      [
+        "Condition2,string,"
+      ],
+      [
+        "Condition2Para,string,"
+      ],
+      [
+        "Condition3,string,"
+      ],
+      [
+        "Condition3Para,string,"
+      ],
+      [
+        "Condition4,string,"
+      ],
+      [
+        "Condition4Para,string,"
+      ],
+      [
+        "Condition5,string,"
+      ],
+      [
+        "Condition5Para,string,"
+      ],
+      [
+        "Trigger,string,"
+      ],
+      [
+        "TriggerPara,string,"
+      ],
+      [
+        "Timer,string,Fixed"
+      ],
+      [
+        "TimerPara,string,"
+      ],
+      [
+        "Effect1,string,Buff_W0185_9,#1,#2"
+      ],
+      [
+        "Effect1Para,string,1,1"
+      ],
+      [
+        "Effect1Tips,string,"
+      ],
+      [
+        "Effect2,string,Buff_W0185_10"
+      ],
+      [
+        "Effect2Para,string,"
+      ],
+      [
+        "Effect2Tips,string,"
+      ],
+      [
+        "Effect3,string,Buff_W0185_11,#1,#2"
+      ],
+      [
+        "Effect3Para,string,2,0"
+      ],
+      [
+        "Effect3Tips,string,"
+      ],
+      [
+        "Effect4,string,Buff_W0185_12,#1,#2,#3"
+      ],
+      [
+        "Effect4Para,string,2,20,0"
+      ],
+      [
+        "Effect4Tips,string,"
+      ],
+      [
+        "Effect5,string,"
+      ],
+      [
+        "Effect5Para,string,"
+      ],
+      [
+        "Effect5Tips,string,"
+      ],
+      [
+        "Selector,string,Passive,Source"
+      ]
+    ]
+  },
+  "W0185042": {
+    "HeroId": "W0185",
+    "GroupId": "W018504",
+    "Level": 2,
+    "Type": 4,
+    "IsConceal": false,
+    "NameLan": "SkillLan_PassiveSkill_NameLan_W01850402",
+    "NameLanText": "八方蕴海",
+    "DescriptionLan": "SkillLan_PassiveSkill_DescriptionLan_W01850402",
+    "DescriptionLanText": "使用职业技能前，清除自身全部<color=#ff6724>投喂</color>状态，根据清除的层数，使我方全体获得下述增益效果，且增益效果可叠加获取：\n清除<color=#158bdb>1</color>层<color=#ff6724>投喂</color>状态，使我方全体单位下<color=#158bdb>1</color>次获得属性减益或控制效果时，立即驱散该效果；\n清除<color=#158bdb>3</color>层<color=#ff6724>投喂</color>状态，使我方全体获得<color=#158bdb>[Effect1Para,1]</color>层<color=#ff6724>啸剑</color>状态和<color=#ff6724>蓄势</color>状态；\n清除<color=#158bdb>5</color>层<color=#ff6724>投喂</color>状态，使我方全体获得<color=#158bdb>[Effect1Para,2]</color>层<color=#ff6724>连星</color>状态。{Buff_PursuitAttackDmgIncrease}",
+    "Name": "八方蕴海",
+    "SkillTag": "SkillLan_SkillTag0",
+    "SkillTagText": "被动触发",
+    "SkillIcon": "skillicon_W018504",
+    "Attr": [
+      [
+        "Condition1,string,"
+      ],
+      [
+        "Condition1Para,string,"
+      ],
+      [
+        "Condition2,string,"
+      ],
+      [
+        "Condition2Para,string,"
+      ],
+      [
+        "Condition3,string,"
+      ],
+      [
+        "Condition3Para,string,"
+      ],
+      [
+        "Condition4,string,"
+      ],
+      [
+        "Condition4Para,string,"
+      ],
+      [
+        "Condition5,string,"
+      ],
+      [
+        "Condition5Para,string,"
+      ],
+      [
+        "Trigger,string,"
+      ],
+      [
+        "TriggerPara,string,"
+      ],
+      [
+        "Timer,string,Fixed"
+      ],
+      [
+        "TimerPara,string,"
+      ],
+      [
+        "Effect1,string,Buff_W0185_9,#1,#2"
+      ],
+      [
+        "Effect1Para,string,2,1"
+      ],
+      [
+        "Effect1Tips,string,"
+      ],
+      [
+        "Effect2,string,Buff_W0185_10"
+      ],
+      [
+        "Effect2Para,string,"
+      ],
+      [
+        "Effect2Tips,string,"
+      ],
+      [
+        "Effect3,string,Buff_W0185_11,#1,#2"
+      ],
+      [
+        "Effect3Para,string,2,1"
+      ],
+      [
+        "Effect3Tips,string,"
+      ],
+      [
+        "Effect4,string,Buff_W0185_12,#1,#2,#3"
+      ],
+      [
+        "Effect4Para,string,2,20,0"
+      ],
+      [
+        "Effect4Tips,string,"
+      ],
+      [
+        "Effect5,string,"
+      ],
+      [
+        "Effect5Para,string,"
+      ],
+      [
+        "Effect5Tips,string,"
+      ],
+      [
+        "Selector,string,Passive,Source"
+      ]
+    ]
+  },
+  "W0185043": {
+    "HeroId": "W0185",
+    "GroupId": "W018504",
+    "Level": 3,
+    "Type": 4,
+    "IsConceal": false,
+    "NameLan": "SkillLan_PassiveSkill_NameLan_W01850403",
+    "NameLanText": "八方蕴海",
+    "DescriptionLan": "SkillLan_PassiveSkill_DescriptionLan_W01850403",
+    "DescriptionLanText": "使用职业技能前，清除自身全部<color=#ff6724>投喂</color>状态，根据清除的层数，使我方全体获得下述增益效果，且增益效果可叠加获取：\n清除<color=#158bdb>1</color>层<color=#ff6724>投喂</color>状态，使我方全体单位下<color=#158bdb>1</color>次获得属性减益或控制效果时，立即驱散该效果；\n清除<color=#158bdb>3</color>层<color=#ff6724>投喂</color>状态，使我方全体获得<color=#158bdb>[Effect1Para,1]</color>层<color=#ff6724>啸剑</color>状态和<color=#ff6724>蓄势</color>状态；\n清除<color=#158bdb>5</color>层<color=#ff6724>投喂</color>状态，使我方全体获得<color=#158bdb>[Effect1Para,2]</color>层<color=#ff6724>连星</color>状态。{Buff_PursuitAttackDmgIncrease}",
+    "Name": "八方蕴海",
+    "SkillTag": "SkillLan_SkillTag0",
+    "SkillTagText": "被动触发",
+    "SkillIcon": "skillicon_W018504",
+    "Attr": [
+      [
+        "Condition1,string,"
+      ],
+      [
+        "Condition1Para,string,"
+      ],
+      [
+        "Condition2,string,"
+      ],
+      [
+        "Condition2Para,string,"
+      ],
+      [
+        "Condition3,string,"
+      ],
+      [
+        "Condition3Para,string,"
+      ],
+      [
+        "Condition4,string,"
+      ],
+      [
+        "Condition4Para,string,"
+      ],
+      [
+        "Condition5,string,"
+      ],
+      [
+        "Condition5Para,string,"
+      ],
+      [
+        "Trigger,string,"
+      ],
+      [
+        "TriggerPara,string,"
+      ],
+      [
+        "Timer,string,Fixed"
+      ],
+      [
+        "TimerPara,string,"
+      ],
+      [
+        "Effect1,string,Buff_W0185_9,#1,#2"
+      ],
+      [
+        "Effect1Para,string,2,2"
+      ],
+      [
+        "Effect1Tips,string,"
+      ],
+      [
+        "Effect2,string,Buff_W0185_10"
+      ],
+      [
+        "Effect2Para,string,"
+      ],
+      [
+        "Effect2Tips,string,"
+      ],
+      [
+        "Effect3,string,Buff_W0185_11,#1,#2"
+      ],
+      [
+        "Effect3Para,string,2,1"
+      ],
+      [
+        "Effect3Tips,string,"
+      ],
+      [
+        "Effect4,string,Buff_W0185_12,#1,#2,#3"
+      ],
+      [
+        "Effect4Para,string,2,20,1"
+      ],
+      [
+        "Effect4Tips,string,"
+      ],
+      [
+        "Effect5,string,"
+      ],
+      [
+        "Effect5Para,string,"
+      ],
+      [
+        "Effect5Tips,string,"
+      ],
+      [
+        "Selector,string,Passive,Source"
+      ]
+    ]
+  },
+  "W0185051": {
+    "HeroId": "W0185",
+    "GroupId": "W018505",
+    "Level": 1,
+    "Type": 5,
+    "IsConceal": false,
+    "NameLan": "SkillLan_PassiveSkill_NameLan_W01850501",
+    "NameLanText": "精良刻印",
+    "DescriptionLan": "SkillLan_PassiveSkill_DescriptionLan_W01850501",
+    "DescriptionLanText": "自身进行直接攻击并造成伤害后，使受击敌方单位获得<color=#158bdb>1</color>层<color=#ff6724>陨星</color>状态；\n自身进行非追击攻击的其他直接攻击并造成伤害后，使受击敌方单位在<color=#158bdb>1</color>回合内移动力减少<color=#158bdb>2</color>，并有<color=#158bdb>[Effect2Para,1]%</color>的概率使其获得<color=#ff6724>止戈</color>、<color=#ff6724>禁足</color>或<color=#ff6724>眩晕</color>中的随机<color=#158bdb>1</color>种，持续<color=#158bdb>1</color>回合。{Buff_BePursuitAttackedDmgIncrease}  ",
+    "Name": "精良刻印",
+    "SkillTag": "SkillLan_SkillTag0",
+    "SkillTagText": "被动触发",
+    "SkillIcon": "skillicon_W018505",
+    "Attr": [
+      [
+        "Condition1,string,"
+      ],
+      [
+        "Condition1Para,string,"
+      ],
+      [
+        "Condition2,string,"
+      ],
+      [
+        "Condition2Para,string,"
+      ],
+      [
+        "Condition3,string,"
+      ],
+      [
+        "Condition3Para,string,"
+      ],
+      [
+        "Condition4,string,"
+      ],
+      [
+        "Condition4Para,string,"
+      ],
+      [
+        "Condition5,string,"
+      ],
+      [
+        "Condition5Para,string,"
+      ],
+      [
+        "Trigger,string,"
+      ],
+      [
+        "TriggerPara,string,"
+      ],
+      [
+        "Timer,string,Fixed"
+      ],
+      [
+        "TimerPara,string,"
+      ],
+      [
+        "Effect1,string,Buff_W0185_13,#1,#2"
+      ],
+      [
+        "Effect1Para,string,2,20"
+      ],
+      [
+        "Effect1Tips,string,"
+      ],
+      [
+        "Effect2,string,Buff_W0185_14,#1"
+      ],
+      [
+        "Effect2Para,string,50"
+      ],
+      [
+        "Effect2Tips,string,"
+      ],
+      [
+        "Effect3,string,Buff_W0185_15"
+      ],
+      [
+        "Effect3Para,string,"
+      ],
+      [
+        "Effect3Tips,string,"
+      ],
+      [
+        "Effect4,string,Buff_W0185_14_1"
+      ],
+      [
+        "Effect4Para,string,"
+      ],
+      [
+        "Effect4Tips,string,"
+      ],
+      [
+        "Effect5,string,"
+      ],
+      [
+        "Effect5Para,string,"
+      ],
+      [
+        "Effect5Tips,string,"
+      ],
+      [
+        "Selector,string,Passive,Source"
+      ]
+    ]
+  },
+  "W0185052": {
+    "HeroId": "W0185",
+    "GroupId": "W018505",
+    "Level": 2,
+    "Type": 5,
+    "IsConceal": false,
+    "NameLan": "SkillLan_PassiveSkill_NameLan_W01850502",
+    "NameLanText": "精良刻印",
+    "DescriptionLan": "SkillLan_PassiveSkill_DescriptionLan_W01850502",
+    "DescriptionLanText": "自身进行直接攻击并造成伤害后，使受击敌方单位获得<color=#158bdb>1</color>层<color=#ff6724>陨星</color>状态；\n自身进行非追击攻击的其他直接攻击并造成伤害后，使受击敌方单位在<color=#158bdb>1</color>回合内移动力减少<color=#158bdb>2</color>，并有<color=#158bdb>[Effect2Para,1]%</color>的概率使其获得<color=#ff6724>止戈</color>、<color=#ff6724>禁足</color>或<color=#ff6724>眩晕</color>中的随机<color=#158bdb>1</color>种，持续<color=#158bdb>1</color>回合。{Buff_BePursuitAttackedDmgIncrease}  ",
+    "Name": "精良刻印",
+    "SkillTag": "SkillLan_SkillTag0",
+    "SkillTagText": "被动触发",
+    "SkillIcon": "skillicon_W018505",
+    "Attr": [
+      [
+        "Condition1,string,"
+      ],
+      [
+        "Condition1Para,string,"
+      ],
+      [
+        "Condition2,string,"
+      ],
+      [
+        "Condition2Para,string,"
+      ],
+      [
+        "Condition3,string,"
+      ],
+      [
+        "Condition3Para,string,"
+      ],
+      [
+        "Condition4,string,"
+      ],
+      [
+        "Condition4Para,string,"
+      ],
+      [
+        "Condition5,string,"
+      ],
+      [
+        "Condition5Para,string,"
+      ],
+      [
+        "Trigger,string,"
+      ],
+      [
+        "TriggerPara,string,"
+      ],
+      [
+        "Timer,string,Fixed"
+      ],
+      [
+        "TimerPara,string,"
+      ],
+      [
+        "Effect1,string,Buff_W0185_13,#1,#2"
+      ],
+      [
+        "Effect1Para,string,2,20"
+      ],
+      [
+        "Effect1Tips,string,"
+      ],
+      [
+        "Effect2,string,Buff_W0185_14,#1"
+      ],
+      [
+        "Effect2Para,string,75"
+      ],
+      [
+        "Effect2Tips,string,"
+      ],
+      [
+        "Effect3,string,Buff_W0185_15"
+      ],
+      [
+        "Effect3Para,string,"
+      ],
+      [
+        "Effect3Tips,string,"
+      ],
+      [
+        "Effect4,string,Buff_W0185_14_1"
+      ],
+      [
+        "Effect4Para,string,"
+      ],
+      [
+        "Effect4Tips,string,"
+      ],
+      [
+        "Effect5,string,"
+      ],
+      [
+        "Effect5Para,string,"
+      ],
+      [
+        "Effect5Tips,string,"
+      ],
+      [
+        "Selector,string,Passive,Source"
+      ]
+    ]
+  },
+  "W0185053": {
+    "HeroId": "W0185",
+    "GroupId": "W018505",
+    "Level": 3,
+    "Type": 5,
+    "IsConceal": false,
+    "NameLan": "SkillLan_PassiveSkill_NameLan_W01850503",
+    "NameLanText": "精良刻印",
+    "DescriptionLan": "SkillLan_PassiveSkill_DescriptionLan_W01850503",
+    "DescriptionLanText": "自身进行直接攻击并造成伤害后，使受击敌方单位获得<color=#158bdb>1</color>层<color=#ff6724>陨星</color>状态；\n自身进行非追击攻击的其他直接攻击并造成伤害后，使受击敌方单位在<color=#158bdb>1</color>回合内移动力减少<color=#158bdb>2</color>，并有<color=#158bdb>[Effect2Para,1]%</color>的概率使其获得<color=#ff6724>止戈</color>、<color=#ff6724>禁足</color>或<color=#ff6724>眩晕</color>中的随机<color=#158bdb>1</color>种，持续<color=#158bdb>1</color>回合。{Buff_BePursuitAttackedDmgIncrease}  ",
+    "Name": "精良刻印",
+    "SkillTag": "SkillLan_SkillTag0",
+    "SkillTagText": "被动触发",
+    "SkillIcon": "skillicon_W018505",
+    "Attr": [
+      [
+        "Condition1,string,"
+      ],
+      [
+        "Condition1Para,string,"
+      ],
+      [
+        "Condition2,string,"
+      ],
+      [
+        "Condition2Para,string,"
+      ],
+      [
+        "Condition3,string,"
+      ],
+      [
+        "Condition3Para,string,"
+      ],
+      [
+        "Condition4,string,"
+      ],
+      [
+        "Condition4Para,string,"
+      ],
+      [
+        "Condition5,string,"
+      ],
+      [
+        "Condition5Para,string,"
+      ],
+      [
+        "Trigger,string,"
+      ],
+      [
+        "TriggerPara,string,"
+      ],
+      [
+        "Timer,string,Fixed"
+      ],
+      [
+        "TimerPara,string,"
+      ],
+      [
+        "Effect1,string,Buff_W0185_13,#1,#2"
+      ],
+      [
+        "Effect1Para,string,2,20"
+      ],
+      [
+        "Effect1Tips,string,"
+      ],
+      [
+        "Effect2,string,Buff_W0185_14,#1"
+      ],
+      [
+        "Effect2Para,string,100"
+      ],
+      [
+        "Effect2Tips,string,"
+      ],
+      [
+        "Effect3,string,Buff_W0185_15"
+      ],
+      [
+        "Effect3Para,string,"
+      ],
+      [
+        "Effect3Tips,string,"
+      ],
+      [
+        "Effect4,string,Buff_W0185_14_1"
+      ],
+      [
+        "Effect4Para,string,"
+      ],
+      [
+        "Effect4Tips,string,"
+      ],
+      [
+        "Effect5,string,"
+      ],
+      [
+        "Effect5Para,string,"
       ],
       [
         "Effect5Tips,string,"

@@ -167807,6 +167807,506 @@
       ]
     ]
   },
+  "False003061": {
+    "HeroId": "False003",
+    "GroupId": "False00306",
+    "Level": 1,
+    "Type": 2,
+    "IsConceal": false,
+    "NameLan": "SkillLan_Skill_NameLan_False0030601",
+    "NameLanText": "共逐天禄",
+    "DescriptionLan": "SkillLan_Skill_DescriptionLan_False0030601",
+    "DescriptionLanText": "对敌方单位造成自身最大生命值<color=#158bdb>30%</color>的<color=#ff6724>技能真实伤害</color>，使其行动<color=#158bdb>大幅</color>推迟并清除其属性增益类状态，同时使该单位获得<color=#ff6724>难问鼎</color>和<color=#ff6724>失其鹿</color>状态。{Buff_ChangYu_4_1}{Buff_ChangYu_4_2}{Buff_RealDamge_Lan_Skill}",
+    "Name": "共逐天禄",
+    "SkillTag": "",
+    "UniqueSkillType": "",
+    "initializeCoolDownValue": 0,
+    "SkillIcon": "skillicon_teamskill004",
+    "Attr": [
+      [
+        "SelectType,string,Enemy"
+      ],
+      [
+        "SelectHeightDiff,string,-4,4"
+      ],
+      [
+        "SelectRange,string,0,0"
+      ],
+      [
+        "SelectRangeType,string,FullMap"
+      ],
+      [
+        "EffectType,string,Enemy"
+      ],
+      [
+        "EffectHeightDiff,string,-1,1"
+      ],
+      [
+        "EffectRange,int,1"
+      ],
+      [
+        "EffectRangeType,string,Square"
+      ],
+      [
+        "AimType,string,"
+      ],
+      [
+        "AimChooseType,string,"
+      ],
+      [
+        "AimChoosePropertyKey,string,"
+      ],
+      [
+        "AimChooseBuffKey,string,"
+      ],
+      [
+        "ChargeRounds,int,"
+      ],
+      [
+        "CoolDownRounds,int,3"
+      ],
+      [
+        "CoolDownType,int,"
+      ],
+      [
+        "InitializeCoolDownValue,int,"
+      ],
+      [
+        "UsageCount,int,"
+      ],
+      [
+        "SpecialReleases,string,"
+      ],
+      [
+        "CostEnergy,int,"
+      ],
+      [
+        "RecoverEnergy,int,"
+      ],
+      [
+        "Effect1,string,Release,Covered,Skill,Hp,0,0,#1,0,61"
+      ],
+      [
+        "Effect1Para,string,30"
+      ],
+      [
+        "Effect2,string,Before,Covered,Buff_ChangYu_4_0,#1,#2"
+      ],
+      [
+        "Effect2Para,string,10,30"
+      ],
+      [
+        "Effect3,string,"
+      ],
+      [
+        "Effect3Para,string,"
+      ],
+      [
+        "Effect4,string,"
+      ],
+      [
+        "Effect4Para,string,"
+      ],
+      [
+        "Effect5,string,"
+      ],
+      [
+        "Effect5Para,string,"
+      ],
+      "[Effect1Tips,string,[Tips,24,Buff_ChangYu_4_1]]",
+      "[Effect2Tips,string,[Tips,24,Buff_ChangYu_4_2]]",
+      [
+        "Effect3Tips,string,"
+      ],
+      [
+        "Effect4Tips,string,"
+      ],
+      [
+        "Effect5Tips,string,"
+      ],
+      [
+        "Ability,int,"
+      ],
+      [
+        "Cancel,string,"
+      ]
+    ]
+  },
+  "False003062": {
+    "HeroId": "False003",
+    "GroupId": "False00306",
+    "Level": 2,
+    "Type": 2,
+    "IsConceal": false,
+    "NameLan": "SkillLan_Skill_NameLan_False0030602",
+    "NameLanText": "共逐天禄",
+    "DescriptionLan": "SkillLan_Skill_DescriptionLan_False0030602",
+    "DescriptionLanText": "对敌方单位造成自身最大生命值<color=#158bdb>30%</color>的<color=#ff6724>技能真实伤害</color>，使其行动<color=#158bdb>大幅</color>推迟并清除其属性增益类状态，同时使该单位获得<color=#ff6724>难问鼎</color>和<color=#ff6724>失其鹿</color>状态。{Buff_ChangYu_4_1}{Buff_ChangYu_4_2}{Buff_RealDamge_Lan_Skill}",
+    "Name": "共逐天禄",
+    "SkillTag": "",
+    "UniqueSkillType": "",
+    "initializeCoolDownValue": 0,
+    "SkillIcon": "skillicon_teamskill004",
+    "Attr": [
+      [
+        "SelectType,string,Enemy"
+      ],
+      [
+        "SelectHeightDiff,string,-4,4"
+      ],
+      [
+        "SelectRange,string,0,0"
+      ],
+      [
+        "SelectRangeType,string,FullMap"
+      ],
+      [
+        "EffectType,string,Enemy"
+      ],
+      [
+        "EffectHeightDiff,string,-1,1"
+      ],
+      [
+        "EffectRange,int,1"
+      ],
+      [
+        "EffectRangeType,string,Square"
+      ],
+      [
+        "AimType,string,"
+      ],
+      [
+        "AimChooseType,string,"
+      ],
+      [
+        "AimChoosePropertyKey,string,"
+      ],
+      [
+        "AimChooseBuffKey,string,"
+      ],
+      [
+        "ChargeRounds,int,"
+      ],
+      [
+        "CoolDownRounds,int,3"
+      ],
+      [
+        "CoolDownType,int,"
+      ],
+      [
+        "InitializeCoolDownValue,int,"
+      ],
+      [
+        "UsageCount,int,"
+      ],
+      [
+        "SpecialReleases,string,"
+      ],
+      [
+        "CostEnergy,int,"
+      ],
+      [
+        "RecoverEnergy,int,"
+      ],
+      [
+        "Effect1,string,Release,Covered,Skill,Hp,0,0,#1,0,61"
+      ],
+      [
+        "Effect1Para,string,30"
+      ],
+      [
+        "Effect2,string,Before,Covered,Buff_ChangYu_4_0,#1,#2"
+      ],
+      [
+        "Effect2Para,string,20,50"
+      ],
+      [
+        "Effect3,string,"
+      ],
+      [
+        "Effect3Para,string,"
+      ],
+      [
+        "Effect4,string,"
+      ],
+      [
+        "Effect4Para,string,"
+      ],
+      [
+        "Effect5,string,"
+      ],
+      [
+        "Effect5Para,string,"
+      ],
+      "[Effect1Tips,string,[Tips,24,Buff_ChangYu_4_1]]",
+      "[Effect2Tips,string,[Tips,24,Buff_ChangYu_4_2]]",
+      [
+        "Effect3Tips,string,"
+      ],
+      [
+        "Effect4Tips,string,"
+      ],
+      [
+        "Effect5Tips,string,"
+      ],
+      [
+        "Ability,int,"
+      ],
+      [
+        "Cancel,string,"
+      ]
+    ]
+  },
+  "False003063": {
+    "HeroId": "False003",
+    "GroupId": "False00306",
+    "Level": 3,
+    "Type": 2,
+    "IsConceal": false,
+    "NameLan": "SkillLan_Skill_NameLan_False0030603",
+    "NameLanText": "共逐天禄",
+    "DescriptionLan": "SkillLan_Skill_DescriptionLan_False0030603",
+    "DescriptionLanText": "对敌方单位造成自身最大生命值<color=#158bdb>30%</color>的<color=#ff6724>技能真实伤害</color>，使其行动<color=#158bdb>大幅</color>推迟并清除其属性增益类状态，同时使该单位获得<color=#ff6724>难问鼎</color>和<color=#ff6724>失其鹿</color>状态。{Buff_ChangYu_4_1}{Buff_ChangYu_4_2}{Buff_RealDamge_Lan_Skill}",
+    "Name": "共逐天禄",
+    "SkillTag": "",
+    "UniqueSkillType": "",
+    "initializeCoolDownValue": 0,
+    "SkillIcon": "skillicon_teamskill004",
+    "Attr": [
+      [
+        "SelectType,string,Enemy"
+      ],
+      [
+        "SelectHeightDiff,string,-4,4"
+      ],
+      [
+        "SelectRange,string,0,0"
+      ],
+      [
+        "SelectRangeType,string,FullMap"
+      ],
+      [
+        "EffectType,string,Enemy"
+      ],
+      [
+        "EffectHeightDiff,string,-1,1"
+      ],
+      [
+        "EffectRange,int,1"
+      ],
+      [
+        "EffectRangeType,string,Square"
+      ],
+      [
+        "AimType,string,"
+      ],
+      [
+        "AimChooseType,string,"
+      ],
+      [
+        "AimChoosePropertyKey,string,"
+      ],
+      [
+        "AimChooseBuffKey,string,"
+      ],
+      [
+        "ChargeRounds,int,"
+      ],
+      [
+        "CoolDownRounds,int,3"
+      ],
+      [
+        "CoolDownType,int,"
+      ],
+      [
+        "InitializeCoolDownValue,int,"
+      ],
+      [
+        "UsageCount,int,"
+      ],
+      [
+        "SpecialReleases,string,"
+      ],
+      [
+        "CostEnergy,int,"
+      ],
+      [
+        "RecoverEnergy,int,"
+      ],
+      [
+        "Effect1,string,Release,Covered,Skill,Hp,0,0,#1,0,61"
+      ],
+      [
+        "Effect1Para,string,30"
+      ],
+      [
+        "Effect2,string,Before,Covered,Buff_ChangYu_4_0,#1,#2"
+      ],
+      [
+        "Effect2Para,string,30,70"
+      ],
+      [
+        "Effect3,string,"
+      ],
+      [
+        "Effect3Para,string,"
+      ],
+      [
+        "Effect4,string,"
+      ],
+      [
+        "Effect4Para,string,"
+      ],
+      [
+        "Effect5,string,"
+      ],
+      [
+        "Effect5Para,string,"
+      ],
+      "[Effect1Tips,string,[Tips,24,Buff_ChangYu_4_1]]",
+      "[Effect2Tips,string,[Tips,24,Buff_ChangYu_4_2]]",
+      [
+        "Effect3Tips,string,"
+      ],
+      [
+        "Effect4Tips,string,"
+      ],
+      [
+        "Effect5Tips,string,"
+      ],
+      [
+        "Ability,int,"
+      ],
+      [
+        "Cancel,string,"
+      ]
+    ]
+  },
+  "False003064": {
+    "HeroId": "False003",
+    "GroupId": "False00306",
+    "Level": 4,
+    "Type": 2,
+    "IsConceal": false,
+    "NameLan": "SkillLan_Skill_NameLan_False0030604",
+    "NameLanText": "共逐天禄",
+    "DescriptionLan": "SkillLan_Skill_DescriptionLan_False0030604",
+    "DescriptionLanText": "对敌方单位造成自身最大生命值<color=#158bdb>30%</color>的<color=#ff6724>技能真实伤害</color>，使其行动<color=#158bdb>大幅</color>推迟并清除其属性增益类状态，同时使该单位获得<color=#ff6724>难问鼎</color>和<color=#ff6724>失其鹿</color>状态。{Buff_ChangYu_4_1}{Buff_ChangYu_4_2}{Buff_RealDamge_Lan_Skill}",
+    "Name": "共逐天禄",
+    "SkillTag": "",
+    "UniqueSkillType": "",
+    "initializeCoolDownValue": 0,
+    "SkillIcon": "skillicon_teamskill004",
+    "Attr": [
+      [
+        "SelectType,string,Enemy"
+      ],
+      [
+        "SelectHeightDiff,string,-4,4"
+      ],
+      [
+        "SelectRange,string,0,0"
+      ],
+      [
+        "SelectRangeType,string,FullMap"
+      ],
+      [
+        "EffectType,string,Enemy"
+      ],
+      [
+        "EffectHeightDiff,string,-1,1"
+      ],
+      [
+        "EffectRange,int,1"
+      ],
+      [
+        "EffectRangeType,string,Square"
+      ],
+      [
+        "AimType,string,"
+      ],
+      [
+        "AimChooseType,string,"
+      ],
+      [
+        "AimChoosePropertyKey,string,"
+      ],
+      [
+        "AimChooseBuffKey,string,"
+      ],
+      [
+        "ChargeRounds,int,"
+      ],
+      [
+        "CoolDownRounds,int,3"
+      ],
+      [
+        "CoolDownType,int,"
+      ],
+      [
+        "InitializeCoolDownValue,int,"
+      ],
+      [
+        "UsageCount,int,"
+      ],
+      [
+        "SpecialReleases,string,"
+      ],
+      [
+        "CostEnergy,int,"
+      ],
+      [
+        "RecoverEnergy,int,"
+      ],
+      [
+        "Effect1,string,Release,Covered,Skill,Hp,0,0,#1,0,61"
+      ],
+      [
+        "Effect1Para,string,30"
+      ],
+      [
+        "Effect2,string,Before,Covered,Buff_ChangYu_4_0,#1,#2"
+      ],
+      [
+        "Effect2Para,string,40,90"
+      ],
+      [
+        "Effect3,string,"
+      ],
+      [
+        "Effect3Para,string,"
+      ],
+      [
+        "Effect4,string,"
+      ],
+      [
+        "Effect4Para,string,"
+      ],
+      [
+        "Effect5,string,"
+      ],
+      [
+        "Effect5Para,string,"
+      ],
+      "[Effect1Tips,string,[Tips,24,Buff_ChangYu_4_1]]",
+      "[Effect2Tips,string,[Tips,24,Buff_ChangYu_4_2]]",
+      [
+        "Effect3Tips,string,"
+      ],
+      [
+        "Effect4Tips,string,"
+      ],
+      [
+        "Effect5Tips,string,"
+      ],
+      [
+        "Ability,int,"
+      ],
+      [
+        "Cancel,string,"
+      ]
+    ]
+  },
   "False0031001": {
     "HeroId": "False001",
     "GroupId": "False003100",
@@ -284311,7 +284811,7 @@
         "Effect1Para,string,100"
       ],
       [
-        "Effect2,string,After,Self,AddActionPoints,200"
+        "Effect2,string,After,Self,AddActionPoints,5000"
       ],
       [
         "Effect2Para,string,"
@@ -284441,7 +284941,7 @@
         "Effect1Para,string,125"
       ],
       [
-        "Effect2,string,After,Self,AddActionPoints,200"
+        "Effect2,string,After,Self,AddActionPoints,5000"
       ],
       [
         "Effect2Para,string,"
@@ -284571,7 +285071,7 @@
         "Effect1Para,string,150"
       ],
       [
-        "Effect2,string,After,Self,AddActionPoints,200"
+        "Effect2,string,After,Self,AddActionPoints,5000"
       ],
       [
         "Effect2Para,string,"
@@ -284701,7 +285201,7 @@
         "Effect1Para,string,100"
       ],
       [
-        "Effect2,string,After,Self,AddActionPoints,200"
+        "Effect2,string,After,Self,AddActionPoints,5000"
       ],
       [
         "Effect2Para,string,"
@@ -284831,7 +285331,7 @@
         "Effect1Para,string,125"
       ],
       [
-        "Effect2,string,After,Self,AddActionPoints,200"
+        "Effect2,string,After,Self,AddActionPoints,5000"
       ],
       [
         "Effect2Para,string,"
@@ -284961,7 +285461,7 @@
         "Effect1Para,string,150"
       ],
       [
-        "Effect2,string,After,Self,AddActionPoints,200"
+        "Effect2,string,After,Self,AddActionPoints,5000"
       ],
       [
         "Effect2Para,string,"
@@ -310907,6 +311407,1176 @@
       ],
       [
         "Ability,int,9"
+      ],
+      [
+        "Cancel,string,"
+      ]
+    ]
+  },
+  "W0185011": {
+    "HeroId": "W0185",
+    "GroupId": "W018501",
+    "Level": 1,
+    "Type": 1,
+    "IsConceal": false,
+    "NameLan": "SkillLan_Skill_NameLan_W01850101",
+    "NameLanText": "舆地",
+    "DescriptionLan": "SkillLan_Skill_DescriptionLan_W01850101",
+    "DescriptionLanText": "对选定的敌方单体造成自身攻击力<color=#158bdb>[Effect1Para,1]%</color>的构素伤害。",
+    "Name": "舆地",
+    "SkillTag": "SkillLan_SkillSelectRange_Edge_1_3",
+    "SkillTagText": "射程3格",
+    "UniqueSkillType": "",
+    "initializeCoolDownValue": 0,
+    "SkillIcon": "skillicon_Commonattack_W",
+    "Attr": [
+      [
+        "SelectType,string,Enemy"
+      ],
+      [
+        "SelectHeightDiff,string,-4,4"
+      ],
+      [
+        "SelectRange,string,1,3"
+      ],
+      [
+        "SelectRangeType,string,Edge"
+      ],
+      [
+        "EffectType,string,Enemy"
+      ],
+      [
+        "EffectHeightDiff,string,-1,1"
+      ],
+      [
+        "EffectRange,int,1"
+      ],
+      [
+        "EffectRangeType,string,Square"
+      ],
+      [
+        "AimType,string,"
+      ],
+      [
+        "AimChooseType,string,"
+      ],
+      [
+        "AimChoosePropertyKey,string,"
+      ],
+      [
+        "AimChooseBuffKey,string,"
+      ],
+      [
+        "ChargeRounds,int,"
+      ],
+      [
+        "CoolDownRounds,int,"
+      ],
+      [
+        "CoolDownType,int,"
+      ],
+      [
+        "InitializeCoolDownValue,int,"
+      ],
+      [
+        "UsageCount,int,"
+      ],
+      [
+        "SpecialReleases,string,"
+      ],
+      [
+        "CostEnergy,int,"
+      ],
+      [
+        "RecoverEnergy,int,1"
+      ],
+      [
+        "Effect1,string,Release,Main,Damage,Atk,0,#1,0,0,0"
+      ],
+      [
+        "Effect1Para,string,100"
+      ],
+      [
+        "Effect2,string,"
+      ],
+      [
+        "Effect2Para,string,"
+      ],
+      [
+        "Effect3,string,"
+      ],
+      [
+        "Effect3Para,string,"
+      ],
+      [
+        "Effect4,string,"
+      ],
+      [
+        "Effect4Para,string,"
+      ],
+      [
+        "Effect5,string,"
+      ],
+      [
+        "Effect5Para,string,"
+      ],
+      [
+        "Effect1Tips,string,"
+      ],
+      [
+        "Effect2Tips,string,"
+      ],
+      [
+        "Effect3Tips,string,"
+      ],
+      [
+        "Effect4Tips,string,"
+      ],
+      [
+        "Effect5Tips,string,"
+      ],
+      [
+        "Ability,int,9"
+      ],
+      [
+        "Cancel,string,"
+      ]
+    ]
+  },
+  "W0185012": {
+    "HeroId": "W0185",
+    "GroupId": "W018501",
+    "Level": 2,
+    "Type": 1,
+    "IsConceal": false,
+    "NameLan": "SkillLan_Skill_NameLan_W01850102",
+    "NameLanText": "舆地",
+    "DescriptionLan": "SkillLan_Skill_DescriptionLan_W01850102",
+    "DescriptionLanText": "对选定的敌方单体造成自身攻击力<color=#158bdb>[Effect1Para,1]%</color>的构素伤害。",
+    "Name": "舆地",
+    "SkillTag": "SkillLan_SkillSelectRange_Edge_1_3",
+    "SkillTagText": "射程3格",
+    "UniqueSkillType": "",
+    "initializeCoolDownValue": 0,
+    "SkillIcon": "skillicon_Commonattack_W",
+    "Attr": [
+      [
+        "SelectType,string,Enemy"
+      ],
+      [
+        "SelectHeightDiff,string,-4,4"
+      ],
+      [
+        "SelectRange,string,1,3"
+      ],
+      [
+        "SelectRangeType,string,Edge"
+      ],
+      [
+        "EffectType,string,Enemy"
+      ],
+      [
+        "EffectHeightDiff,string,-1,1"
+      ],
+      [
+        "EffectRange,int,1"
+      ],
+      [
+        "EffectRangeType,string,Square"
+      ],
+      [
+        "AimType,string,"
+      ],
+      [
+        "AimChooseType,string,"
+      ],
+      [
+        "AimChoosePropertyKey,string,"
+      ],
+      [
+        "AimChooseBuffKey,string,"
+      ],
+      [
+        "ChargeRounds,int,"
+      ],
+      [
+        "CoolDownRounds,int,"
+      ],
+      [
+        "CoolDownType,int,"
+      ],
+      [
+        "InitializeCoolDownValue,int,"
+      ],
+      [
+        "UsageCount,int,"
+      ],
+      [
+        "SpecialReleases,string,"
+      ],
+      [
+        "CostEnergy,int,"
+      ],
+      [
+        "RecoverEnergy,int,1"
+      ],
+      [
+        "Effect1,string,Release,Main,Damage,Atk,0,#1,0,0,0"
+      ],
+      [
+        "Effect1Para,string,105"
+      ],
+      [
+        "Effect2,string,"
+      ],
+      [
+        "Effect2Para,string,"
+      ],
+      [
+        "Effect3,string,"
+      ],
+      [
+        "Effect3Para,string,"
+      ],
+      [
+        "Effect4,string,"
+      ],
+      [
+        "Effect4Para,string,"
+      ],
+      [
+        "Effect5,string,"
+      ],
+      [
+        "Effect5Para,string,"
+      ],
+      [
+        "Effect1Tips,string,"
+      ],
+      [
+        "Effect2Tips,string,"
+      ],
+      [
+        "Effect3Tips,string,"
+      ],
+      [
+        "Effect4Tips,string,"
+      ],
+      [
+        "Effect5Tips,string,"
+      ],
+      [
+        "Ability,int,9"
+      ],
+      [
+        "Cancel,string,"
+      ]
+    ]
+  },
+  "W0185013": {
+    "HeroId": "W0185",
+    "GroupId": "W018501",
+    "Level": 3,
+    "Type": 1,
+    "IsConceal": false,
+    "NameLan": "SkillLan_Skill_NameLan_W01850103",
+    "NameLanText": "舆地",
+    "DescriptionLan": "SkillLan_Skill_DescriptionLan_W01850103",
+    "DescriptionLanText": "对选定的敌方单体造成自身攻击力<color=#158bdb>[Effect1Para,1]%</color>的构素伤害。",
+    "Name": "舆地",
+    "SkillTag": "SkillLan_SkillSelectRange_Edge_1_3",
+    "SkillTagText": "射程3格",
+    "UniqueSkillType": "",
+    "initializeCoolDownValue": 0,
+    "SkillIcon": "skillicon_Commonattack_W",
+    "Attr": [
+      [
+        "SelectType,string,Enemy"
+      ],
+      [
+        "SelectHeightDiff,string,-4,4"
+      ],
+      [
+        "SelectRange,string,1,3"
+      ],
+      [
+        "SelectRangeType,string,Edge"
+      ],
+      [
+        "EffectType,string,Enemy"
+      ],
+      [
+        "EffectHeightDiff,string,-1,1"
+      ],
+      [
+        "EffectRange,int,1"
+      ],
+      [
+        "EffectRangeType,string,Square"
+      ],
+      [
+        "AimType,string,"
+      ],
+      [
+        "AimChooseType,string,"
+      ],
+      [
+        "AimChoosePropertyKey,string,"
+      ],
+      [
+        "AimChooseBuffKey,string,"
+      ],
+      [
+        "ChargeRounds,int,"
+      ],
+      [
+        "CoolDownRounds,int,"
+      ],
+      [
+        "CoolDownType,int,"
+      ],
+      [
+        "InitializeCoolDownValue,int,"
+      ],
+      [
+        "UsageCount,int,"
+      ],
+      [
+        "SpecialReleases,string,"
+      ],
+      [
+        "CostEnergy,int,"
+      ],
+      [
+        "RecoverEnergy,int,1"
+      ],
+      [
+        "Effect1,string,Release,Main,Damage,Atk,0,#1,0,0,0"
+      ],
+      [
+        "Effect1Para,string,110"
+      ],
+      [
+        "Effect2,string,"
+      ],
+      [
+        "Effect2Para,string,"
+      ],
+      [
+        "Effect3,string,"
+      ],
+      [
+        "Effect3Para,string,"
+      ],
+      [
+        "Effect4,string,"
+      ],
+      [
+        "Effect4Para,string,"
+      ],
+      [
+        "Effect5,string,"
+      ],
+      [
+        "Effect5Para,string,"
+      ],
+      [
+        "Effect1Tips,string,"
+      ],
+      [
+        "Effect2Tips,string,"
+      ],
+      [
+        "Effect3Tips,string,"
+      ],
+      [
+        "Effect4Tips,string,"
+      ],
+      [
+        "Effect5Tips,string,"
+      ],
+      [
+        "Ability,int,9"
+      ],
+      [
+        "Cancel,string,"
+      ]
+    ]
+  },
+  "W0185014": {
+    "HeroId": "W0185",
+    "GroupId": "W018501",
+    "Level": 4,
+    "Type": 1,
+    "IsConceal": false,
+    "NameLan": "SkillLan_Skill_NameLan_W01850104",
+    "NameLanText": "舆地",
+    "DescriptionLan": "SkillLan_Skill_DescriptionLan_W01850104",
+    "DescriptionLanText": "对选定的敌方单体造成自身攻击力<color=#158bdb>[Effect1Para,1]%</color>的构素伤害。",
+    "Name": "舆地",
+    "SkillTag": "SkillLan_SkillSelectRange_Edge_1_3",
+    "SkillTagText": "射程3格",
+    "UniqueSkillType": "",
+    "initializeCoolDownValue": 0,
+    "SkillIcon": "skillicon_Commonattack_W",
+    "Attr": [
+      [
+        "SelectType,string,Enemy"
+      ],
+      [
+        "SelectHeightDiff,string,-4,4"
+      ],
+      [
+        "SelectRange,string,1,3"
+      ],
+      [
+        "SelectRangeType,string,Edge"
+      ],
+      [
+        "EffectType,string,Enemy"
+      ],
+      [
+        "EffectHeightDiff,string,-1,1"
+      ],
+      [
+        "EffectRange,int,1"
+      ],
+      [
+        "EffectRangeType,string,Square"
+      ],
+      [
+        "AimType,string,"
+      ],
+      [
+        "AimChooseType,string,"
+      ],
+      [
+        "AimChoosePropertyKey,string,"
+      ],
+      [
+        "AimChooseBuffKey,string,"
+      ],
+      [
+        "ChargeRounds,int,"
+      ],
+      [
+        "CoolDownRounds,int,"
+      ],
+      [
+        "CoolDownType,int,"
+      ],
+      [
+        "InitializeCoolDownValue,int,"
+      ],
+      [
+        "UsageCount,int,"
+      ],
+      [
+        "SpecialReleases,string,"
+      ],
+      [
+        "CostEnergy,int,"
+      ],
+      [
+        "RecoverEnergy,int,1"
+      ],
+      [
+        "Effect1,string,Release,Main,Damage,Atk,0,#1,0,0,0"
+      ],
+      [
+        "Effect1Para,string,115"
+      ],
+      [
+        "Effect2,string,"
+      ],
+      [
+        "Effect2Para,string,"
+      ],
+      [
+        "Effect3,string,"
+      ],
+      [
+        "Effect3Para,string,"
+      ],
+      [
+        "Effect4,string,"
+      ],
+      [
+        "Effect4Para,string,"
+      ],
+      [
+        "Effect5,string,"
+      ],
+      [
+        "Effect5Para,string,"
+      ],
+      [
+        "Effect1Tips,string,"
+      ],
+      [
+        "Effect2Tips,string,"
+      ],
+      [
+        "Effect3Tips,string,"
+      ],
+      [
+        "Effect4Tips,string,"
+      ],
+      [
+        "Effect5Tips,string,"
+      ],
+      [
+        "Ability,int,9"
+      ],
+      [
+        "Cancel,string,"
+      ]
+    ]
+  },
+  "W0185015": {
+    "HeroId": "W0185",
+    "GroupId": "W018501",
+    "Level": 5,
+    "Type": 1,
+    "IsConceal": false,
+    "NameLan": "SkillLan_Skill_NameLan_W01850105",
+    "NameLanText": "舆地",
+    "DescriptionLan": "SkillLan_Skill_DescriptionLan_W01850105",
+    "DescriptionLanText": "对选定的敌方单体造成自身攻击力<color=#158bdb>[Effect1Para,1]%</color>的构素伤害。",
+    "Name": "舆地",
+    "SkillTag": "SkillLan_SkillSelectRange_Edge_1_3",
+    "SkillTagText": "射程3格",
+    "UniqueSkillType": "",
+    "initializeCoolDownValue": 0,
+    "SkillIcon": "skillicon_Commonattack_W",
+    "Attr": [
+      [
+        "SelectType,string,Enemy"
+      ],
+      [
+        "SelectHeightDiff,string,-4,4"
+      ],
+      [
+        "SelectRange,string,1,3"
+      ],
+      [
+        "SelectRangeType,string,Edge"
+      ],
+      [
+        "EffectType,string,Enemy"
+      ],
+      [
+        "EffectHeightDiff,string,-1,1"
+      ],
+      [
+        "EffectRange,int,1"
+      ],
+      [
+        "EffectRangeType,string,Square"
+      ],
+      [
+        "AimType,string,"
+      ],
+      [
+        "AimChooseType,string,"
+      ],
+      [
+        "AimChoosePropertyKey,string,"
+      ],
+      [
+        "AimChooseBuffKey,string,"
+      ],
+      [
+        "ChargeRounds,int,"
+      ],
+      [
+        "CoolDownRounds,int,"
+      ],
+      [
+        "CoolDownType,int,"
+      ],
+      [
+        "InitializeCoolDownValue,int,"
+      ],
+      [
+        "UsageCount,int,"
+      ],
+      [
+        "SpecialReleases,string,"
+      ],
+      [
+        "CostEnergy,int,"
+      ],
+      [
+        "RecoverEnergy,int,1"
+      ],
+      [
+        "Effect1,string,Release,Main,Damage,Atk,0,#1,0,0,0"
+      ],
+      [
+        "Effect1Para,string,120"
+      ],
+      [
+        "Effect2,string,"
+      ],
+      [
+        "Effect2Para,string,"
+      ],
+      [
+        "Effect3,string,"
+      ],
+      [
+        "Effect3Para,string,"
+      ],
+      [
+        "Effect4,string,"
+      ],
+      [
+        "Effect4Para,string,"
+      ],
+      [
+        "Effect5,string,"
+      ],
+      [
+        "Effect5Para,string,"
+      ],
+      [
+        "Effect1Tips,string,"
+      ],
+      [
+        "Effect2Tips,string,"
+      ],
+      [
+        "Effect3Tips,string,"
+      ],
+      [
+        "Effect4Tips,string,"
+      ],
+      [
+        "Effect5Tips,string,"
+      ],
+      [
+        "Ability,int,9"
+      ],
+      [
+        "Cancel,string,"
+      ]
+    ]
+  },
+  "W0185021": {
+    "HeroId": "W0185",
+    "GroupId": "W018502",
+    "Level": 1,
+    "Type": 2,
+    "IsConceal": false,
+    "NameLan": "SkillLan_Skill_NameLan_W01850201",
+    "NameLanText": "异闻兽相",
+    "DescriptionLan": "SkillLan_Skill_DescriptionLan_W01850201",
+    "DescriptionLanText": "对选定的敌方单体及其<color=#158bdb>周围3格</color>内的敌方全体造成自身攻击力<color=#158bdb>[Effect1Para,1]%</color>的构素伤害。",
+    "Name": "异闻兽相",
+    "SkillTag": "SkillLan_SkillSelectRange_Edge_1_3",
+    "SkillTagText": "射程3格",
+    "UniqueSkillType": "",
+    "initializeCoolDownValue": 0,
+    "SkillIcon": "skillicon_W018502",
+    "Attr": [
+      [
+        "SelectType,string,Enemy"
+      ],
+      [
+        "SelectHeightDiff,string,-4,4"
+      ],
+      [
+        "SelectRange,string,1,3"
+      ],
+      [
+        "SelectRangeType,string,Edge"
+      ],
+      [
+        "EffectType,string,Enemy"
+      ],
+      [
+        "EffectHeightDiff,string,-3,3"
+      ],
+      [
+        "EffectRange,int,3"
+      ],
+      [
+        "EffectRangeType,string,Overlap"
+      ],
+      [
+        "AimType,string,"
+      ],
+      [
+        "AimChooseType,string,"
+      ],
+      [
+        "AimChoosePropertyKey,string,"
+      ],
+      [
+        "AimChooseBuffKey,string,"
+      ],
+      [
+        "ChargeRounds,int,"
+      ],
+      [
+        "CoolDownRounds,int,2"
+      ],
+      [
+        "CoolDownType,int,"
+      ],
+      [
+        "InitializeCoolDownValue,int,"
+      ],
+      [
+        "UsageCount,int,"
+      ],
+      [
+        "SpecialReleases,string,"
+      ],
+      [
+        "CostEnergy,int,3"
+      ],
+      [
+        "RecoverEnergy,int,"
+      ],
+      [
+        "Effect1,string,Release,Covered,Skill,Atk,0,#1,0,0,4"
+      ],
+      [
+        "Effect1Para,string,50"
+      ],
+      [
+        "Effect2,string,"
+      ],
+      [
+        "Effect2Para,string,"
+      ],
+      [
+        "Effect3,string,"
+      ],
+      [
+        "Effect3Para,string,"
+      ],
+      [
+        "Effect4,string,"
+      ],
+      [
+        "Effect4Para,string,"
+      ],
+      [
+        "Effect5,string,"
+      ],
+      [
+        "Effect5Para,string,"
+      ],
+      [
+        "Effect1Tips,string,"
+      ],
+      [
+        "Effect2Tips,string,"
+      ],
+      [
+        "Effect3Tips,string,"
+      ],
+      [
+        "Effect4Tips,string,"
+      ],
+      [
+        "Effect5Tips,string,"
+      ],
+      [
+        "Ability,int,"
+      ],
+      [
+        "Cancel,string,"
+      ]
+    ]
+  },
+  "W0185022": {
+    "HeroId": "W0185",
+    "GroupId": "W018502",
+    "Level": 2,
+    "Type": 2,
+    "IsConceal": false,
+    "NameLan": "SkillLan_Skill_NameLan_W01850202",
+    "NameLanText": "异闻兽相",
+    "DescriptionLan": "SkillLan_Skill_DescriptionLan_W01850202",
+    "DescriptionLanText": "对选定的敌方单体及其<color=#158bdb>周围3格</color>内的敌方全体造成自身攻击力<color=#158bdb>[Effect1Para,1]%</color>的构素伤害。",
+    "Name": "异闻兽相",
+    "SkillTag": "SkillLan_SkillSelectRange_Edge_1_3",
+    "SkillTagText": "射程3格",
+    "UniqueSkillType": "",
+    "initializeCoolDownValue": 0,
+    "SkillIcon": "skillicon_W018502",
+    "Attr": [
+      [
+        "SelectType,string,Enemy"
+      ],
+      [
+        "SelectHeightDiff,string,-4,4"
+      ],
+      [
+        "SelectRange,string,1,3"
+      ],
+      [
+        "SelectRangeType,string,Edge"
+      ],
+      [
+        "EffectType,string,Enemy"
+      ],
+      [
+        "EffectHeightDiff,string,-3,3"
+      ],
+      [
+        "EffectRange,int,3"
+      ],
+      [
+        "EffectRangeType,string,Overlap"
+      ],
+      [
+        "AimType,string,"
+      ],
+      [
+        "AimChooseType,string,"
+      ],
+      [
+        "AimChoosePropertyKey,string,"
+      ],
+      [
+        "AimChooseBuffKey,string,"
+      ],
+      [
+        "ChargeRounds,int,"
+      ],
+      [
+        "CoolDownRounds,int,2"
+      ],
+      [
+        "CoolDownType,int,"
+      ],
+      [
+        "InitializeCoolDownValue,int,"
+      ],
+      [
+        "UsageCount,int,"
+      ],
+      [
+        "SpecialReleases,string,"
+      ],
+      [
+        "CostEnergy,int,3"
+      ],
+      [
+        "RecoverEnergy,int,"
+      ],
+      [
+        "Effect1,string,Release,Covered,Skill,Atk,0,#1,0,0,4"
+      ],
+      [
+        "Effect1Para,string,75"
+      ],
+      [
+        "Effect2,string,"
+      ],
+      [
+        "Effect2Para,string,"
+      ],
+      [
+        "Effect3,string,"
+      ],
+      [
+        "Effect3Para,string,"
+      ],
+      [
+        "Effect4,string,"
+      ],
+      [
+        "Effect4Para,string,"
+      ],
+      [
+        "Effect5,string,"
+      ],
+      [
+        "Effect5Para,string,"
+      ],
+      [
+        "Effect1Tips,string,"
+      ],
+      [
+        "Effect2Tips,string,"
+      ],
+      [
+        "Effect3Tips,string,"
+      ],
+      [
+        "Effect4Tips,string,"
+      ],
+      [
+        "Effect5Tips,string,"
+      ],
+      [
+        "Ability,int,"
+      ],
+      [
+        "Cancel,string,"
+      ]
+    ]
+  },
+  "W0185023": {
+    "HeroId": "W0185",
+    "GroupId": "W018502",
+    "Level": 3,
+    "Type": 2,
+    "IsConceal": false,
+    "NameLan": "SkillLan_Skill_NameLan_W01850203",
+    "NameLanText": "异闻兽相",
+    "DescriptionLan": "SkillLan_Skill_DescriptionLan_W01850203",
+    "DescriptionLanText": "对选定的敌方单体及其<color=#158bdb>周围3格</color>内的敌方全体造成自身攻击力<color=#158bdb>[Effect1Para,1]%</color>的构素伤害。",
+    "Name": "异闻兽相",
+    "SkillTag": "SkillLan_SkillSelectRange_Edge_1_3",
+    "SkillTagText": "射程3格",
+    "UniqueSkillType": "",
+    "initializeCoolDownValue": 0,
+    "SkillIcon": "skillicon_W018502",
+    "Attr": [
+      [
+        "SelectType,string,Enemy"
+      ],
+      [
+        "SelectHeightDiff,string,-4,4"
+      ],
+      [
+        "SelectRange,string,1,3"
+      ],
+      [
+        "SelectRangeType,string,Edge"
+      ],
+      [
+        "EffectType,string,Enemy"
+      ],
+      [
+        "EffectHeightDiff,string,-3,3"
+      ],
+      [
+        "EffectRange,int,3"
+      ],
+      [
+        "EffectRangeType,string,Overlap"
+      ],
+      [
+        "AimType,string,"
+      ],
+      [
+        "AimChooseType,string,"
+      ],
+      [
+        "AimChoosePropertyKey,string,"
+      ],
+      [
+        "AimChooseBuffKey,string,"
+      ],
+      [
+        "ChargeRounds,int,"
+      ],
+      [
+        "CoolDownRounds,int,2"
+      ],
+      [
+        "CoolDownType,int,"
+      ],
+      [
+        "InitializeCoolDownValue,int,"
+      ],
+      [
+        "UsageCount,int,"
+      ],
+      [
+        "SpecialReleases,string,"
+      ],
+      [
+        "CostEnergy,int,3"
+      ],
+      [
+        "RecoverEnergy,int,"
+      ],
+      [
+        "Effect1,string,Release,Covered,Skill,Atk,0,#1,0,0,4"
+      ],
+      [
+        "Effect1Para,string,100"
+      ],
+      [
+        "Effect2,string,"
+      ],
+      [
+        "Effect2Para,string,"
+      ],
+      [
+        "Effect3,string,"
+      ],
+      [
+        "Effect3Para,string,"
+      ],
+      [
+        "Effect4,string,"
+      ],
+      [
+        "Effect4Para,string,"
+      ],
+      [
+        "Effect5,string,"
+      ],
+      [
+        "Effect5Para,string,"
+      ],
+      [
+        "Effect1Tips,string,"
+      ],
+      [
+        "Effect2Tips,string,"
+      ],
+      [
+        "Effect3Tips,string,"
+      ],
+      [
+        "Effect4Tips,string,"
+      ],
+      [
+        "Effect5Tips,string,"
+      ],
+      [
+        "Ability,int,"
+      ],
+      [
+        "Cancel,string,"
+      ]
+    ]
+  },
+  "W0185111": {
+    "HeroId": "W0185",
+    "GroupId": "W018511",
+    "Level": 1,
+    "Type": 11,
+    "IsConceal": false,
+    "NameLan": "SkillLan_Skill_NameLan_W01851101",
+    "NameLanText": "山海博物",
+    "DescriptionLan": "SkillLan_Skill_DescriptionLan_W01851101",
+    "DescriptionLanText": "对选定的敌方单体及其<color=#158bdb>周围2格</color>内的敌方全体造成自身攻击力<color=#158bdb>[Effect1Para,1]%</color>的构素伤害。",
+    "Name": "山海博物",
+    "SkillTag": "SkillLan_SkillSelectRange_Edge_1_3",
+    "SkillTagText": "射程3格",
+    "UniqueSkillType": "",
+    "initializeCoolDownValue": 0,
+    "SkillIcon": "skillicon_W018511",
+    "Attr": [
+      [
+        "SelectType,string,Enemy"
+      ],
+      [
+        "SelectHeightDiff,string,-4,4"
+      ],
+      [
+        "SelectRange,string,1,3"
+      ],
+      [
+        "SelectRangeType,string,Edge"
+      ],
+      [
+        "EffectType,string,Enemy"
+      ],
+      [
+        "EffectHeightDiff,string,-2,2"
+      ],
+      [
+        "EffectRange,int,2"
+      ],
+      [
+        "EffectRangeType,string,Overlap"
+      ],
+      [
+        "AimType,string,"
+      ],
+      [
+        "AimChooseType,string,"
+      ],
+      [
+        "AimChoosePropertyKey,string,"
+      ],
+      [
+        "AimChooseBuffKey,string,"
+      ],
+      [
+        "ChargeRounds,int,"
+      ],
+      [
+        "CoolDownRounds,int,"
+      ],
+      [
+        "CoolDownType,int,"
+      ],
+      [
+        "InitializeCoolDownValue,int,"
+      ],
+      [
+        "UsageCount,int,"
+      ],
+      [
+        "SpecialReleases,string,"
+      ],
+      [
+        "CostEnergy,int,2"
+      ],
+      [
+        "RecoverEnergy,int,"
+      ],
+      [
+        "Effect1,string,Release,Covered,Skill,Atk,0,#1,0,0,0"
+      ],
+      [
+        "Effect1Para,string,100"
+      ],
+      [
+        "Effect2,string,"
+      ],
+      [
+        "Effect2Para,string,"
+      ],
+      [
+        "Effect3,string,"
+      ],
+      [
+        "Effect3Para,string,"
+      ],
+      [
+        "Effect4,string,"
+      ],
+      [
+        "Effect4Para,string,"
+      ],
+      [
+        "Effect5,string,"
+      ],
+      [
+        "Effect5Para,string,"
+      ],
+      [
+        "Effect1Tips,string,"
+      ],
+      [
+        "Effect2Tips,string,"
+      ],
+      [
+        "Effect3Tips,string,"
+      ],
+      [
+        "Effect4Tips,string,"
+      ],
+      [
+        "Effect5Tips,string,"
+      ],
+      [
+        "Ability,int,"
       ],
       [
         "Cancel,string,"

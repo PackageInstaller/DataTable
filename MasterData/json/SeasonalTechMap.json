@@ -1612,25 +1612,25 @@
     "Group": 202,
     "TabName": "游灵万象",
     "Point": [
-      -1673,
+      -1433,
       63
     ],
     "Size": [
-      84,
-      19
+      88,
+      116
     ],
     "LinePoint": [
-      75,
+      79,
       -10
     ],
-    "LineType": 1010,
-    "Img": "sjz-zlfy-kjs-gricon-js-01",
+    "LineType": 1020,
+    "Img": "sjz-zlfy-kjs-gricon-js-02",
     "Sort": 1,
     "Unlock": [],
     "ConsumeAll": [
       {
         "id": "5301",
-        "count": 20000
+        "count": 30000
       }
     ],
     "CostMatID": "72",
@@ -1651,18 +1651,18 @@
         "count": 100
       }
     ],
-    "Name": "招摇肆",
-    "Desc": "在【榑桑遗境】中，行会成员的全部单位攻击力提高<color=#158bdb>3%</color>。",
+    "Name": "亶爰贰",
+    "Desc": "在【榑桑遗境】中，行会成员的全部单位暴击率增加<color=#158bdb>3%</color>。",
     "Type": 4,
     "Para": [
-      "TB_S1TG0101",
-      "TB_S1TG0102",
-      "TB_S1TG0103"
+      "TB_S1TG0401",
+      "TB_S1TG0402",
+      "TB_S1TG0403"
     ],
     "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0401",
-    "NameLanText": "招摇肆",
+    "NameLanText": "亶爰贰",
     "DescLan": "activeLan_SeasonalTech_descLan_S1TG0401",
-    "DescLanText": "在【榑桑遗境】中，行会成员的全部单位攻击力提高<color=#158bdb>3%</color>。",
+    "DescLanText": "在【榑桑遗境】中，行会成员的全部单位暴击率增加<color=#158bdb>3%</color>。",
     "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0401",
     "TabNameLanText": "游灵万象"
   },
@@ -1674,27 +1674,27 @@
     "Group": 202,
     "TabName": "游灵万象",
     "Point": [
-      -1433,
-      63
+      -1196,
+      168
     ],
     "Size": [
-      88,
-      116
+      62,
+      112
     ],
     "LinePoint": [
-      79,
-      -10
+      148,
+      -110
     ],
-    "LineType": 1020,
-    "Img": "sjz-zlfy-kjs-gricon-js-02",
+    "LineType": 1021,
+    "Img": "sjz-zlfy-kjs-gricon-js-03",
     "Sort": 2,
     "Unlock": [
       "S1TG0401"
     ],
     "ConsumeAll": [
       {
-        "id": "5301",
-        "count": 30000
+        "id": "5302",
+        "count": 20000
       }
     ],
     "CostMatID": "72",
@@ -1719,9 +1719,9 @@
     "Desc": "在【榑桑遗境】中，行会成员的【芝草露华】产量提高<color=#158bdb>3%</color>。",
     "Type": 1,
     "Para": [
-      "PB_S1TG0104",
-      "PB_S1TG0105",
-      "PB_S1TG0106"
+      "PB_S1TG0404",
+      "PB_S1TG0405",
+      "PB_S1TG0406"
     ],
     "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0402",
     "NameLanText": "句余叁",
@@ -1732,70 +1732,6 @@
   },
   "S1TG0403": {
     "Id": "S1TG0403",
-    "SeasonId": "S1",
-    "Tab": 2,
-    "UnlockTime": 22,
-    "Group": 202,
-    "TabName": "游灵万象",
-    "Point": [
-      -1196,
-      168
-    ],
-    "Size": [
-      62,
-      112
-    ],
-    "LinePoint": [
-      148,
-      -110
-    ],
-    "LineType": 1021,
-    "Img": "sjz-zlfy-kjs-gricon-js-03",
-    "Sort": 3,
-    "Unlock": [
-      "S1TG0402"
-    ],
-    "ConsumeAll": [
-      {
-        "id": "5302",
-        "count": 20000
-      }
-    ],
-    "CostMatID": "72",
-    "CostMatCount": [
-      1800,
-      3600,
-      5400
-    ],
-    "Consume": [
-      {
-        "id": "5304",
-        "count": 1000
-      }
-    ],
-    "ContributeItem": [
-      {
-        "id": "5307",
-        "count": 100
-      }
-    ],
-    "Name": "长右叁",
-    "Desc": "在【榑桑遗境】中，行会成员的全部单位防御穿透提高3%。",
-    "Type": 4,
-    "Para": [
-      "TB_S1TG0107",
-      "TB_S1TG0108",
-      "TB_S1TG0109"
-    ],
-    "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0403",
-    "NameLanText": "长右叁",
-    "DescLan": "activeLan_SeasonalTech_descLan_S1TG0403",
-    "DescLanText": "在【榑桑遗境】中，行会成员的全部单位防御穿透提高3%。",
-    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0403",
-    "TabNameLanText": "游灵万象"
-  },
-  "S1TG0404": {
-    "Id": "S1TG0404",
     "SeasonId": "S1",
     "Tab": 2,
     "UnlockTime": 22,
@@ -1813,11 +1749,11 @@
       79,
       -10
     ],
-    "LineType": 1010,
+    "LineType": 0,
     "Img": "sjz-zlfy-kjs-gricon-js-04",
-    "Sort": 4,
+    "Sort": 3,
     "Unlock": [
-      "S1TG0403"
+      "S1TG0402"
     ],
     "ConsumeAll": [
       {
@@ -1843,81 +1779,23 @@
         "count": 100
       }
     ],
-    "Name": "青丘贰",
-    "Desc": "在【榑桑遗境】中，行会成员的全部单位暴击伤害提高<color=#158bdb>3%</color>。",
-    "Type": 4,
+    "Name": "尧光贰",
+    "Desc": "在【榑桑遗境】中，行会成员的【木板】产量提高<color=#158bdb>3%</color>。",
+    "Type": 1,
     "Para": [
-      "TB_S1TG0110",
-      "TB_S1TG0111",
-      "TB_S1TG0112"
+      "PB_S1TG0407",
+      "PB_S1TG0408",
+      "PB_S1TG0409"
     ],
-    "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0404",
-    "NameLanText": "青丘贰",
-    "DescLan": "activeLan_SeasonalTech_descLan_S1TG0404",
-    "DescLanText": "在【榑桑遗境】中，行会成员的全部单位暴击伤害提高<color=#158bdb>3%</color>。",
-    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0404",
+    "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0403",
+    "NameLanText": "尧光贰",
+    "DescLan": "activeLan_SeasonalTech_descLan_S1TG0403",
+    "DescLanText": "在【榑桑遗境】中，行会成员的【木板】产量提高<color=#158bdb>3%</color>。",
+    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0403",
     "TabNameLanText": "游灵万象"
   },
-  "S1TG0405": {
-    "Id": "S1TG0405",
-    "SeasonId": "S1",
-    "Tab": 2,
-    "UnlockTime": 22,
-    "Group": 202,
-    "TabName": "游灵万象",
-    "Point": [
-      -727,
-      63
-    ],
-    "Size": [],
-    "LinePoint": [],
-    "LineType": 0,
-    "Img": "sjz-zlfy-kjs-gricon-js-05",
-    "Sort": 5,
-    "Unlock": [
-      "S1TG0404"
-    ],
-    "ConsumeAll": [
-      {
-        "id": "5302",
-        "count": 30000
-      }
-    ],
-    "CostMatID": "72",
-    "CostMatCount": [
-      1800,
-      3600,
-      5400
-    ],
-    "Consume": [
-      {
-        "id": "5304",
-        "count": 1000
-      }
-    ],
-    "ContributeItem": [
-      {
-        "id": "5307",
-        "count": 100
-      }
-    ],
-    "Name": "沮叶叁",
-    "Desc": "进入战斗后，我方轻锐职业全体获得<color=#158bdb>1</color>层<color=#ff6724>浸于金石</color>状态。",
-    "Type": 2,
-    "Para": [
-      "Buff_S1TG0113",
-      "Buff_S1TG0114",
-      "Buff_S1TG0115"
-    ],
-    "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0405",
-    "NameLanText": "沮叶叁",
-    "DescLan": "activeLan_SeasonalTech_descLan_S1TG0405",
-    "DescLanText": "进入战斗后，我方轻锐职业全体获得<color=#158bdb>1</color>层<color=#ff6724>浸于金石</color>状态。",
-    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0405",
-    "TabNameLanText": "游灵万象"
-  },
-  "S1TG0406": {
-    "Id": "S1TG0406",
+  "S1TG0404": {
+    "Id": "S1TG0404",
     "SeasonId": "S1",
     "Tab": 2,
     "UnlockTime": 22,
@@ -1937,7 +1815,7 @@
     ],
     "LineType": 1042,
     "Img": "sjz-zlfy-kjs-gricon-js-06",
-    "Sort": 6,
+    "Sort": 4,
     "Unlock": [],
     "ConsumeAll": [
       {
@@ -1963,23 +1841,23 @@
         "count": 100
       }
     ],
-    "Name": "壑市肆",
-    "Desc": "进入战斗后，我方远击职业全体获得<color=#158bdb>1</color>层<color=#ff6724>乌号之弓</color>状态。",
-    "Type": 2,
+    "Name": "猨翼贰",
+    "Desc": "在【榑桑遗境】中，行会成员的全部单位物理防御力提高<color=#158bdb>3%</color>。",
+    "Type": 4,
     "Para": [
-      "Buff_S1TG0128",
-      "Buff_S1TG0129",
-      "Buff_S1TG0130"
+      "TB_S1TG0410",
+      "TB_S1TG0411",
+      "TB_S1TG0412"
     ],
-    "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0406",
-    "NameLanText": "壑市肆",
-    "DescLan": "activeLan_SeasonalTech_descLan_S1TG0406",
-    "DescLanText": "进入战斗后，我方远击职业全体获得<color=#158bdb>1</color>层<color=#ff6724>乌号之弓</color>状态。",
-    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0406",
+    "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0404",
+    "NameLanText": "猨翼贰",
+    "DescLan": "activeLan_SeasonalTech_descLan_S1TG0404",
+    "DescLanText": "在【榑桑遗境】中，行会成员的全部单位物理防御力提高<color=#158bdb>3%</color>。",
+    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0404",
     "TabNameLanText": "游灵万象"
   },
-  "S1TG0407": {
-    "Id": "S1TG0407",
+  "S1TG0405": {
+    "Id": "S1TG0405",
     "SeasonId": "S1",
     "Tab": 2,
     "UnlockTime": 22,
@@ -1999,9 +1877,9 @@
     ],
     "LineType": 1043,
     "Img": "sjz-zlfy-kjs-gricon-js-07",
-    "Sort": 7,
+    "Sort": 5,
     "Unlock": [
-      "S1TG0406"
+      "S1TG0404"
     ],
     "ConsumeAll": [
       {
@@ -2027,23 +1905,23 @@
         "count": 100
       }
     ],
-    "Name": "浮玉肆",
-    "Desc": "在【榑桑遗境】中，行会成员的【证量琼浆】产量提高<color=#158bdb>3%</color>。",
+    "Name": "瞿父叁",
+    "Desc": "在【榑桑遗境】中，行会成员的【砖块】产量提高<color=#158bdb>3%</color>。",
     "Type": 1,
     "Para": [
-      "PB_S1TG0119",
-      "PB_S1TG0120",
-      "PB_S1TG0121"
+      "PB_S1TG0413",
+      "PB_S1TG0414",
+      "PB_S1TG0415"
     ],
-    "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0407",
-    "NameLanText": "浮玉肆",
-    "DescLan": "activeLan_SeasonalTech_descLan_S1TG0407",
-    "DescLanText": "在【榑桑遗境】中，行会成员的【证量琼浆】产量提高<color=#158bdb>3%</color>。",
-    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0407",
+    "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0405",
+    "NameLanText": "瞿父叁",
+    "DescLan": "activeLan_SeasonalTech_descLan_S1TG0405",
+    "DescLanText": "在【榑桑遗境】中，行会成员的【砖块】产量提高<color=#158bdb>3%</color>。",
+    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0405",
     "TabNameLanText": "游灵万象"
   },
-  "S1TG0408": {
-    "Id": "S1TG0408",
+  "S1TG0406": {
+    "Id": "S1TG0406",
     "SeasonId": "S1",
     "Tab": 2,
     "UnlockTime": 22,
@@ -2057,9 +1935,9 @@
     "LinePoint": [],
     "LineType": 0,
     "Img": "sjz-zlfy-kjs-gricon-js-08",
-    "Sort": 8,
+    "Sort": 6,
     "Unlock": [
-      "S1TG0407"
+      "S1TG0405"
     ],
     "ConsumeAll": [
       {
@@ -2085,99 +1963,38 @@
         "count": 100
       }
     ],
-    "Name": "堂庭贰",
-    "Desc": "在【榑桑遗境】中，行会成员的全部单位最大生命值提高<color=#158bdb>3%</color>。",
+    "Name": "箕尾贰",
+    "Desc": "在【榑桑遗境】中，行会成员的全部单位造成的伤害提高<color=#158bdb>3%</color>。",
     "Type": 4,
     "Para": [
-      "TB_S1TG0122",
-      "TB_S1TG0123",
-      "TB_S1TG0124"
+      "TB_S1TG0419",
+      "TB_S1TG0420",
+      "TB_S1TG0421"
     ],
-    "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0408",
-    "NameLanText": "堂庭贰",
-    "DescLan": "activeLan_SeasonalTech_descLan_S1TG0408",
-    "DescLanText": "在【榑桑遗境】中，行会成员的全部单位最大生命值提高<color=#158bdb>3%</color>。",
-    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0408",
+    "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0406",
+    "NameLanText": "箕尾贰",
+    "DescLan": "activeLan_SeasonalTech_descLan_S1TG0406",
+    "DescLanText": "在【榑桑遗境】中，行会成员的全部单位造成的伤害提高<color=#158bdb>3%</color>。",
+    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0406",
     "TabNameLanText": "游灵万象"
   },
-  "S1TG0409": {
-    "Id": "S1TG0409",
+  "S1TG0407": {
+    "Id": "S1TG0407",
     "SeasonId": "S1",
     "Tab": 2,
     "UnlockTime": 22,
     "Group": 202,
     "TabName": "游灵万象",
     "Point": [
-      -1316,
-      -22
-    ],
-    "Size": [],
-    "LinePoint": [
-      79,
-      -10
-    ],
-    "LineType": 1010,
-    "Img": "sjz-zlfy-kjs-gricon-js-09",
-    "Sort": 9,
-    "Unlock": [],
-    "ConsumeAll": [
-      {
-        "id": "5303",
-        "count": 50000
-      }
-    ],
-    "CostMatID": "72",
-    "CostMatCount": [
-      1800,
-      3600,
-      5400
-    ],
-    "Consume": [
-      {
-        "id": "5304",
-        "count": 1000
-      }
-    ],
-    "ContributeItem": [
-      {
-        "id": "5307",
-        "count": 100
-      }
-    ],
-    "Name": "大幽贰",
-    "Desc": "在【榑桑遗境】中，进入战斗后的第<color=#158bdb>1</color>轮次内，我方任意单位首次受到的伤害特别降低<color=#158bdb>30%</color>。",
-    "Type": 2,
-    "Para": [
-      "Buff_S1TG0125",
-      "Buff_S1TG0126",
-      "Buff_S1TG0127"
-    ],
-    "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0409",
-    "NameLanText": "大幽贰",
-    "DescLan": "activeLan_SeasonalTech_descLan_S1TG0409",
-    "DescLanText": "在【榑桑遗境】中，进入战斗后的第<color=#158bdb>1</color>轮次内，我方任意单位首次受到的伤害特别降低<color=#158bdb>30%</color>。",
-    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0409",
-    "TabNameLanText": "游灵万象"
-  },
-  "S1TG0410": {
-    "Id": "S1TG0410",
-    "SeasonId": "S1",
-    "Tab": 2,
-    "UnlockTime": 22,
-    "Group": 202,
-    "TabName": "游灵万象",
-    "Point": [
-      -1076,
+      -1196,
       -22
     ],
     "Size": [],
     "LinePoint": [],
     "LineType": 0,
     "Img": "sjz-zlfy-kjs-gricon-js-01",
-    "Sort": 10,
-    "Unlock": [
-      "S1TG0409"
-    ],
+    "Sort": 7,
+    "Unlock": [],
     "ConsumeAll": [
       {
         "id": "5303",
@@ -2210,11 +2027,11 @@
       "2",
       "2"
     ],
-    "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0410",
+    "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0407",
     "NameLanText": "仆勾贰",
-    "DescLan": "activeLan_SeasonalTech_descLan_S1TG0410",
+    "DescLan": "activeLan_SeasonalTech_descLan_S1TG0407",
     "DescLanText": "在【榑桑遗境】中，行会成员的行动力上限增加<color=#158bdb>%s</color>。",
-    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0410",
+    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0407",
     "TabNameLanText": "游灵万象"
   },
   "S1TG0501": {
@@ -2225,69 +2042,7 @@
     "Group": 202,
     "TabName": "游灵万象",
     "Point": [
-      -496,
-      63
-    ],
-    "Size": [
-      84,
-      19
-    ],
-    "LinePoint": [
-      75,
-      -10
-    ],
-    "LineType": 1010,
-    "Img": "sjz-zlfy-kjs-gricon-js-01",
-    "Sort": 11,
-    "Unlock": [],
-    "ConsumeAll": [
-      {
-        "id": "5301",
-        "count": 20000
-      }
-    ],
-    "CostMatID": "72",
-    "CostMatCount": [
-      1800,
-      3600,
-      5400
-    ],
-    "Consume": [
-      {
-        "id": "5304",
-        "count": 1000
-      }
-    ],
-    "ContributeItem": [
-      {
-        "id": "5307",
-        "count": 100
-      }
-    ],
-    "Name": "猨翼贰",
-    "Desc": "在【榑桑遗境】中，行会成员的全部单位物理防御力提高<color=#158bdb>3%</color>。",
-    "Type": 4,
-    "Para": [
-      "TB_S1TG0201",
-      "TB_S1TG0202",
-      "TB_S1TG0203"
-    ],
-    "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0501",
-    "NameLanText": "猨翼贰",
-    "DescLan": "activeLan_SeasonalTech_descLan_S1TG0501",
-    "DescLanText": "在【榑桑遗境】中，行会成员的全部单位物理防御力提高<color=#158bdb>3%</color>。",
-    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0501",
-    "TabNameLanText": "游灵万象"
-  },
-  "S1TG0502": {
-    "Id": "S1TG0502",
-    "SeasonId": "S1",
-    "Tab": 2,
-    "UnlockTime": 22,
-    "Group": 202,
-    "TabName": "游灵万象",
-    "Point": [
-      -256,
+      -456,
       63
     ],
     "Size": [
@@ -2300,10 +2055,8 @@
     ],
     "LineType": 1020,
     "Img": "sjz-zlfy-kjs-gricon-js-02",
-    "Sort": 12,
-    "Unlock": [
-      "S1TG0501"
-    ],
+    "Sort": 8,
+    "Unlock": [],
     "ConsumeAll": [
       {
         "id": "5301",
@@ -2328,30 +2081,30 @@
         "count": 100
       }
     ],
-    "Name": "朝云叁",
-    "Desc": "进入战斗后，我方宿卫职业全体获得<color=#158bdb>1</color>层<color=#ff6724>霜雪无迹</color>状态。",
-    "Type": 2,
+    "Name": "箕尾叁",
+    "Desc": "在【榑桑遗境】中，行会成员的全部单位造成的伤害提高<color=#158bdb>3%</color>。",
+    "Type": 4,
     "Para": [
-      "Buff_S1TG0204",
-      "Buff_S1TG0205",
-      "Buff_S1TG0206"
+      "TB_S1TG0501",
+      "TB_S1TG0502",
+      "TB_S1TG0503"
     ],
-    "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0502",
-    "NameLanText": "朝云叁",
-    "DescLan": "activeLan_SeasonalTech_descLan_S1TG0502",
-    "DescLanText": "进入战斗后，我方宿卫职业全体获得<color=#158bdb>1</color>层<color=#ff6724>霜雪无迹</color>状态。",
-    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0502",
+    "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0501",
+    "NameLanText": "箕尾叁",
+    "DescLan": "activeLan_SeasonalTech_descLan_S1TG0501",
+    "DescLanText": "在【榑桑遗境】中，行会成员的全部单位造成的伤害提高<color=#158bdb>3%</color>。",
+    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0501",
     "TabNameLanText": "游灵万象"
   },
-  "S1TG0503": {
-    "Id": "S1TG0503",
+  "S1TG0502": {
+    "Id": "S1TG0502",
     "SeasonId": "S1",
     "Tab": 2,
     "UnlockTime": 22,
     "Group": 202,
     "TabName": "游灵万象",
     "Point": [
-      -19,
+      -219,
       168
     ],
     "Size": [
@@ -2364,136 +2117,14 @@
     ],
     "LineType": 1021,
     "Img": "sjz-zlfy-kjs-gricon-js-03",
-    "Sort": 13,
+    "Sort": 9,
     "Unlock": [
-      "S1TG0502"
+      "S1TG0501"
     ],
     "ConsumeAll": [
       {
         "id": "5302",
         "count": 20000
-      }
-    ],
-    "CostMatID": "72",
-    "CostMatCount": [
-      1800,
-      3600,
-      5400
-    ],
-    "Consume": [
-      {
-        "id": "5304",
-        "count": 1000
-      }
-    ],
-    "ContributeItem": [
-      {
-        "id": "5307",
-        "count": 100
-      }
-    ],
-    "Name": "浮玉伍",
-    "Desc": "在【榑桑遗境】中，行会成员的【证量琼浆】产量提高<color=#158bdb>3%</color>。",
-    "Type": 1,
-    "Para": [
-      "PB_S1TG0207",
-      "PB_S1TG0208",
-      "PB_S1TG0209"
-    ],
-    "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0503",
-    "NameLanText": "浮玉伍",
-    "DescLan": "activeLan_SeasonalTech_descLan_S1TG0503",
-    "DescLanText": "在【榑桑遗境】中，行会成员的【证量琼浆】产量提高<color=#158bdb>3%</color>。",
-    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0503",
-    "TabNameLanText": "游灵万象"
-  },
-  "S1TG0504": {
-    "Id": "S1TG0504",
-    "SeasonId": "S1",
-    "Tab": 2,
-    "UnlockTime": 22,
-    "Group": 202,
-    "TabName": "游灵万象",
-    "Point": [
-      217,
-      63
-    ],
-    "Size": [
-      88,
-      20
-    ],
-    "LinePoint": [
-      79,
-      -10
-    ],
-    "LineType": 1010,
-    "Img": "sjz-zlfy-kjs-gricon-js-04",
-    "Sort": 14,
-    "Unlock": [
-      "S1TG0503"
-    ],
-    "ConsumeAll": [
-      {
-        "id": "5303",
-        "count": 20000
-      }
-    ],
-    "CostMatID": "72",
-    "CostMatCount": [
-      1800,
-      3600,
-      5400
-    ],
-    "Consume": [
-      {
-        "id": "5304",
-        "count": 1000
-      }
-    ],
-    "ContributeItem": [
-      {
-        "id": "5307",
-        "count": 100
-      }
-    ],
-    "Name": "句余肆",
-    "Desc": "在【榑桑遗境】中，行会成员的【芝草露华】产量提高<color=#158bdb>3%</color>。",
-    "Type": 1,
-    "Para": [
-      "PB_S1TG0210",
-      "PB_S1TG0211",
-      "PB_S1TG0212"
-    ],
-    "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0504",
-    "NameLanText": "句余肆",
-    "DescLan": "activeLan_SeasonalTech_descLan_S1TG0504",
-    "DescLanText": "在【榑桑遗境】中，行会成员的【芝草露华】产量提高<color=#158bdb>3%</color>。",
-    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0504",
-    "TabNameLanText": "游灵万象"
-  },
-  "S1TG0505": {
-    "Id": "S1TG0505",
-    "SeasonId": "S1",
-    "Tab": 2,
-    "UnlockTime": 22,
-    "Group": 202,
-    "TabName": "游灵万象",
-    "Point": [
-      450,
-      63
-    ],
-    "Size": [],
-    "LinePoint": [],
-    "LineType": 0,
-    "Img": "sjz-zlfy-kjs-gricon-js-05",
-    "Sort": 15,
-    "Unlock": [
-      "S1TG0504"
-    ],
-    "ConsumeAll": [
-      {
-        "id": "5302",
-        "count": 30000
       }
     ],
     "CostMatID": "72",
@@ -2518,26 +2149,90 @@
     "Desc": "在【榑桑遗境】中，行会成员的全部单位构素防御力提高<color=#158bdb>3%</color>。",
     "Type": 4,
     "Para": [
-      "TB_S1TG0213",
-      "TB_S1TG0214",
-      "TB_S1TG0215"
+      "TB_S1TG0504",
+      "TB_S1TG0505",
+      "TB_S1TG0506"
     ],
-    "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0505",
+    "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0502",
     "NameLanText": "杻阳贰",
-    "DescLan": "activeLan_SeasonalTech_descLan_S1TG0505",
+    "DescLan": "activeLan_SeasonalTech_descLan_S1TG0502",
     "DescLanText": "在【榑桑遗境】中，行会成员的全部单位构素防御力提高<color=#158bdb>3%</color>。",
-    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0505",
+    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0502",
     "TabNameLanText": "游灵万象"
   },
-  "S1TG0506": {
-    "Id": "S1TG0506",
+  "S1TG0503": {
+    "Id": "S1TG0503",
     "SeasonId": "S1",
     "Tab": 2,
     "UnlockTime": 22,
     "Group": 202,
     "TabName": "游灵万象",
     "Point": [
-      -356,
+      17,
+      63
+    ],
+    "Size": [
+      88,
+      20
+    ],
+    "LinePoint": [
+      79,
+      -10
+    ],
+    "LineType": 0,
+    "Img": "sjz-zlfy-kjs-gricon-js-04",
+    "Sort": 10,
+    "Unlock": [
+      "S1TG0502"
+    ],
+    "ConsumeAll": [
+      {
+        "id": "5303",
+        "count": 20000
+      }
+    ],
+    "CostMatID": "72",
+    "CostMatCount": [
+      1800,
+      3600,
+      5400
+    ],
+    "Consume": [
+      {
+        "id": "5304",
+        "count": 1000
+      }
+    ],
+    "ContributeItem": [
+      {
+        "id": "5307",
+        "count": 100
+      }
+    ],
+    "Name": "浮玉肆",
+    "Desc": "在【榑桑遗境】中，行会成员的【证量琼浆】产量提高<color=#158bdb>3%</color>。",
+    "Type": 1,
+    "Para": [
+      "PB_S1TG0507",
+      "PB_S1TG0508",
+      "PB_S1TG0509"
+    ],
+    "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0503",
+    "NameLanText": "浮玉肆",
+    "DescLan": "activeLan_SeasonalTech_descLan_S1TG0503",
+    "DescLanText": "在【榑桑遗境】中，行会成员的【证量琼浆】产量提高<color=#158bdb>3%</color>。",
+    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0503",
+    "TabNameLanText": "游灵万象"
+  },
+  "S1TG0504": {
+    "Id": "S1TG0504",
+    "SeasonId": "S1",
+    "Tab": 2,
+    "UnlockTime": 22,
+    "Group": 202,
+    "TabName": "游灵万象",
+    "Point": [
+      -556,
       -107
     ],
     "Size": [
@@ -2550,7 +2245,7 @@
     ],
     "LineType": 1042,
     "Img": "sjz-zlfy-kjs-gricon-js-06",
-    "Sort": 16,
+    "Sort": 11,
     "Unlock": [],
     "ConsumeAll": [
       {
@@ -2576,30 +2271,30 @@
         "count": 100
       }
     ],
-    "Name": "瞿父叁",
-    "Desc": "在【榑桑遗境】中，行会成员的【砖块】产量提高<color=#158bdb>3%</color>。",
-    "Type": 1,
+    "Name": "鹿吴壹",
+    "Desc": "在【榑桑遗境】中，行会成员的全部单位受到的伤害特别降低<color=#158bdb>3%</color>。",
+    "Type": 4,
     "Para": [
-      "PB_S1TP0216",
-      "PB_S1TP0217",
-      "PB_S1TP0218"
+      "TB_S1TG0510",
+      "TB_S1TG0511",
+      "TB_S1TG0512"
     ],
-    "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0506",
-    "NameLanText": "瞿父叁",
-    "DescLan": "activeLan_SeasonalTech_descLan_S1TG0506",
-    "DescLanText": "在【榑桑遗境】中，行会成员的【砖块】产量提高<color=#158bdb>3%</color>。",
-    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0506",
+    "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0504",
+    "NameLanText": "鹿吴壹",
+    "DescLan": "activeLan_SeasonalTech_descLan_S1TG0504",
+    "DescLanText": "在【榑桑遗境】中，行会成员的全部单位受到的伤害特别降低<color=#158bdb>3%</color>。",
+    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0504",
     "TabNameLanText": "游灵万象"
   },
-  "S1TG0507": {
-    "Id": "S1TG0507",
+  "S1TG0505": {
+    "Id": "S1TG0505",
     "SeasonId": "S1",
     "Tab": 2,
     "UnlockTime": 22,
     "Group": 202,
     "TabName": "游灵万象",
     "Point": [
-      -19,
+      -219,
       -213
     ],
     "Size": [
@@ -2612,9 +2307,9 @@
     ],
     "LineType": 1043,
     "Img": "sjz-zlfy-kjs-gricon-js-07",
-    "Sort": 17,
+    "Sort": 12,
     "Unlock": [
-      "S1TG0506"
+      "S1TG0504"
     ],
     "ConsumeAll": [
       {
@@ -2640,39 +2335,39 @@
         "count": 100
       }
     ],
-    "Name": "招摇伍",
-    "Desc": "在【榑桑遗境】中，行会成员的全部单位攻击力提高<color=#158bdb>3%</color>。",
-    "Type": 4,
+    "Name": "句余肆",
+    "Desc": "在【榑桑遗境】中，行会成员的【芝草露华】产量提高<color=#158bdb>3%</color>。",
+    "Type": 1,
     "Para": [
-      "TB_S1TG0219",
-      "TB_S1TG0220",
-      "TB_S1TG0221"
+      "PB_S1TG0513",
+      "PB_S1TG0514",
+      "PB_S1TG0515"
     ],
-    "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0507",
-    "NameLanText": "招摇伍",
-    "DescLan": "activeLan_SeasonalTech_descLan_S1TG0507",
-    "DescLanText": "在【榑桑遗境】中，行会成员的全部单位攻击力提高<color=#158bdb>3%</color>。",
-    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0507",
+    "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0505",
+    "NameLanText": "句余肆",
+    "DescLan": "activeLan_SeasonalTech_descLan_S1TG0505",
+    "DescLanText": "在【榑桑遗境】中，行会成员的【芝草露华】产量提高<color=#158bdb>3%</color>。",
+    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0505",
     "TabNameLanText": "游灵万象"
   },
-  "S1TG0508": {
-    "Id": "S1TG0508",
+  "S1TG0506": {
+    "Id": "S1TG0506",
     "SeasonId": "S1",
     "Tab": 2,
     "UnlockTime": 22,
     "Group": 202,
     "TabName": "游灵万象",
     "Point": [
-      306,
+      106,
       -107
     ],
     "Size": [],
     "LinePoint": [],
     "LineType": 0,
     "Img": "sjz-zlfy-kjs-gricon-js-08",
-    "Sort": 18,
+    "Sort": 13,
     "Unlock": [
-      "S1TG0507"
+      "S1TG0505"
     ],
     "ConsumeAll": [
       {
@@ -2698,19 +2393,19 @@
         "count": 100
       }
     ],
-    "Name": "亶爰贰",
-    "Desc": "在【榑桑遗境】中，行会成员的全部单位暴击率增加<color=#158bdb>3%</color>。",
+    "Name": "青丘壹",
+    "Desc": "在【榑桑遗境】中，行会成员的全部单位暴击伤害提高<color=#158bdb>3%</color>。",
     "Type": 4,
     "Para": [
-      "TB_S1TG0222",
-      "TB_S1TG0223",
-      "TB_S1TG0224"
+      "TB_S1TG0516",
+      "TB_S1TG0517",
+      "TB_S1TG0518"
     ],
-    "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0508",
-    "NameLanText": "亶爰贰",
-    "DescLan": "activeLan_SeasonalTech_descLan_S1TG0508",
-    "DescLanText": "在【榑桑遗境】中，行会成员的全部单位暴击率增加<color=#158bdb>3%</color>。",
-    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0508",
+    "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0506",
+    "NameLanText": "青丘壹",
+    "DescLan": "activeLan_SeasonalTech_descLan_S1TG0506",
+    "DescLanText": "在【榑桑遗境】中，行会成员的全部单位暴击伤害提高<color=#158bdb>3%</color>。",
+    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0506",
     "TabNameLanText": "游灵万象"
   },
   "S1TG0601": {
@@ -2721,69 +2416,7 @@
     "Group": 202,
     "TabName": "游灵万象",
     "Point": [
-      681,
-      63
-    ],
-    "Size": [
-      84,
-      19
-    ],
-    "LinePoint": [
-      75,
-      -10
-    ],
-    "LineType": 1010,
-    "Img": "sjz-zlfy-kjs-gricon-js-01",
-    "Sort": 19,
-    "Unlock": [],
-    "ConsumeAll": [
-      {
-        "id": "5301",
-        "count": 20000
-      }
-    ],
-    "CostMatID": "72",
-    "CostMatCount": [
-      1800,
-      3600,
-      5400
-    ],
-    "Consume": [
-      {
-        "id": "5304",
-        "count": 1000
-      }
-    ],
-    "ContributeItem": [
-      {
-        "id": "5307",
-        "count": 100
-      }
-    ],
-    "Name": "沮叶肆",
-    "Desc": "进入战斗后，我方轻锐职业全体获得<color=#158bdb>1</color>层<color=#ff6724>浸于金石</color>状态。",
-    "Type": 2,
-    "Para": [
-      "Buff_S1TG0301",
-      "Buff_S1TG0302",
-      "Buff_S1TG0303"
-    ],
-    "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0601",
-    "NameLanText": "沮叶肆",
-    "DescLan": "activeLan_SeasonalTech_descLan_S1TG0601",
-    "DescLanText": "进入战斗后，我方轻锐职业全体获得<color=#158bdb>1</color>层<color=#ff6724>浸于金石</color>状态。",
-    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0601",
-    "TabNameLanText": "游灵万象"
-  },
-  "S1TG0602": {
-    "Id": "S1TG0602",
-    "SeasonId": "S1",
-    "Tab": 2,
-    "UnlockTime": 22,
-    "Group": 202,
-    "TabName": "游灵万象",
-    "Point": [
-      921,
+      521,
       63
     ],
     "Size": [
@@ -2796,10 +2429,8 @@
     ],
     "LineType": 1020,
     "Img": "sjz-zlfy-kjs-gricon-js-02",
-    "Sort": 20,
-    "Unlock": [
-      "S1TG0601"
-    ],
+    "Sort": 14,
+    "Unlock": [],
     "ConsumeAll": [
       {
         "id": "5301",
@@ -2824,16 +2455,80 @@
         "count": 100
       }
     ],
-    "Name": "尧光贰",
+    "Name": "堂庭贰",
+    "Desc": "在【榑桑遗境】中，行会成员的全部单位最大生命值提高<color=#158bdb>3%</color>。",
+    "Type": 4,
+    "Para": [
+      "TB_S1TG0601",
+      "TB_S1TG0602",
+      "TB_S1TG0603"
+    ],
+    "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0601",
+    "NameLanText": "堂庭贰",
+    "DescLan": "activeLan_SeasonalTech_descLan_S1TG0601",
+    "DescLanText": "在【榑桑遗境】中，行会成员的全部单位最大生命值提高<color=#158bdb>3%</color>。",
+    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0601",
+    "TabNameLanText": "游灵万象"
+  },
+  "S1TG0602": {
+    "Id": "S1TG0602",
+    "SeasonId": "S1",
+    "Tab": 2,
+    "UnlockTime": 22,
+    "Group": 202,
+    "TabName": "游灵万象",
+    "Point": [
+      758,
+      168
+    ],
+    "Size": [
+      62,
+      112
+    ],
+    "LinePoint": [
+      148,
+      -110
+    ],
+    "LineType": 1021,
+    "Img": "sjz-zlfy-kjs-gricon-js-03",
+    "Sort": 15,
+    "Unlock": [
+      "S1TG0601"
+    ],
+    "ConsumeAll": [
+      {
+        "id": "5302",
+        "count": 20000
+      }
+    ],
+    "CostMatID": "72",
+    "CostMatCount": [
+      1800,
+      3600,
+      5400
+    ],
+    "Consume": [
+      {
+        "id": "5304",
+        "count": 1000
+      }
+    ],
+    "ContributeItem": [
+      {
+        "id": "5307",
+        "count": 100
+      }
+    ],
+    "Name": "尧光叁",
     "Desc": "在【榑桑遗境】中，行会成员的【木板】产量提高<color=#158bdb>3%</color>。",
     "Type": 1,
     "Para": [
-      "PB_S1TG0304",
-      "PB_S1TG0305",
-      "PB_S1TG0306"
+      "PB_S1TG0604",
+      "PB_S1TG0605",
+      "PB_S1TG0606"
     ],
     "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0602",
-    "NameLanText": "尧光贰",
+    "NameLanText": "尧光叁",
     "DescLan": "activeLan_SeasonalTech_descLan_S1TG0602",
     "DescLanText": "在【榑桑遗境】中，行会成员的【木板】产量提高<color=#158bdb>3%</color>。",
     "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0602",
@@ -2847,71 +2542,7 @@
     "Group": 202,
     "TabName": "游灵万象",
     "Point": [
-      1158,
-      168
-    ],
-    "Size": [
-      62,
-      112
-    ],
-    "LinePoint": [
-      148,
-      -110
-    ],
-    "LineType": 1021,
-    "Img": "sjz-zlfy-kjs-gricon-js-03",
-    "Sort": 21,
-    "Unlock": [
-      "S1TG0602"
-    ],
-    "ConsumeAll": [
-      {
-        "id": "5302",
-        "count": 20000
-      }
-    ],
-    "CostMatID": "72",
-    "CostMatCount": [
-      1800,
-      3600,
-      5400
-    ],
-    "Consume": [
-      {
-        "id": "5304",
-        "count": 1000
-      }
-    ],
-    "ContributeItem": [
-      {
-        "id": "5307",
-        "count": 100
-      }
-    ],
-    "Name": "浮玉陆",
-    "Desc": "在【榑桑遗境】中，行会成员的【证量琼浆】产量提高<color=#158bdb>3%</color>。",
-    "Type": 1,
-    "Para": [
-      "PB_S1TG0307",
-      "PB_S1TG0308",
-      "PB_S1TG0309"
-    ],
-    "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0603",
-    "NameLanText": "浮玉陆",
-    "DescLan": "activeLan_SeasonalTech_descLan_S1TG0603",
-    "DescLanText": "在【榑桑遗境】中，行会成员的【证量琼浆】产量提高<color=#158bdb>3%</color>。",
-    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0603",
-    "TabNameLanText": "游灵万象"
-  },
-  "S1TG0604": {
-    "Id": "S1TG0604",
-    "SeasonId": "S1",
-    "Tab": 2,
-    "UnlockTime": 22,
-    "Group": 202,
-    "TabName": "游灵万象",
-    "Point": [
-      1394,
+      994,
       63
     ],
     "Size": [
@@ -2922,11 +2553,11 @@
       79,
       -10
     ],
-    "LineType": 1010,
+    "LineType": 0,
     "Img": "sjz-zlfy-kjs-gricon-js-04",
-    "Sort": 22,
+    "Sort": 16,
     "Unlock": [
-      "S1TG0603"
+      "S1TG0602"
     ],
     "ConsumeAll": [
       {
@@ -2952,44 +2583,48 @@
         "count": 100
       }
     ],
-    "Name": "招摇陆",
-    "Desc": "在【榑桑遗境】中，行会成员的全部单位攻击力提高<color=#158bdb>3%</color>。",
+    "Name": "青丘贰",
+    "Desc": "在【榑桑遗境】中，行会成员的全部单位暴击伤害提高<color=#158bdb>3%</color>。",
     "Type": 4,
     "Para": [
-      "TB_S1TG0310",
-      "TB_S1TG0311",
-      "TB_S1TG0312"
+      "TB_S1TG0607",
+      "TB_S1TG0608",
+      "TB_S1TG0609"
     ],
-    "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0604",
-    "NameLanText": "招摇陆",
-    "DescLan": "activeLan_SeasonalTech_descLan_S1TG0604",
-    "DescLanText": "在【榑桑遗境】中，行会成员的全部单位攻击力提高<color=#158bdb>3%</color>。",
-    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0604",
+    "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0603",
+    "NameLanText": "青丘贰",
+    "DescLan": "activeLan_SeasonalTech_descLan_S1TG0603",
+    "DescLanText": "在【榑桑遗境】中，行会成员的全部单位暴击伤害提高<color=#158bdb>3%</color>。",
+    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0603",
     "TabNameLanText": "游灵万象"
   },
-  "S1TG0605": {
-    "Id": "S1TG0605",
+  "S1TG0604": {
+    "Id": "S1TG0604",
     "SeasonId": "S1",
     "Tab": 2,
     "UnlockTime": 22,
     "Group": 202,
     "TabName": "游灵万象",
     "Point": [
-      1627,
-      63
+      421,
+      -107
     ],
-    "Size": [],
-    "LinePoint": [],
-    "LineType": 0,
-    "Img": "sjz-zlfy-kjs-gricon-js-05",
-    "Sort": 23,
-    "Unlock": [
-      "S1TG0604"
+    "Size": [
+      158,
+      153
     ],
+    "LinePoint": [
+      91,
+      17
+    ],
+    "LineType": 1042,
+    "Img": "sjz-zlfy-kjs-gricon-js-06",
+    "Sort": 17,
+    "Unlock": [],
     "ConsumeAll": [
       {
-        "id": "5302",
-        "count": 30000
+        "id": "5301",
+        "count": 50000
       }
     ],
     "CostMatID": "72",
@@ -3010,47 +2645,49 @@
         "count": 100
       }
     ],
-    "Name": "长右肆",
-    "Desc": "在【榑桑遗境】中，行会成员的全部单位防御穿透提高<color=#158bdb>3%</color>。",
+    "Name": "漆吴壹",
+    "Desc": "在【榑桑遗境】中，行会成员的全部单位造成的伤害特别提高<color=#158bdb>3%</color>。",
     "Type": 4,
     "Para": [
-      "TB_S1TG0313",
-      "TB_S1TG0314",
-      "TB_S1TG0315"
+      "TB_S1TG0610",
+      "TB_S1TG0611",
+      "TB_S1TG0612"
     ],
-    "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0605",
-    "NameLanText": "长右肆",
-    "DescLan": "activeLan_SeasonalTech_descLan_S1TG0605",
-    "DescLanText": "在【榑桑遗境】中，行会成员的全部单位防御穿透提高<color=#158bdb>3%</color>。",
-    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0605",
+    "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0604",
+    "NameLanText": "漆吴壹",
+    "DescLan": "activeLan_SeasonalTech_descLan_S1TG0604",
+    "DescLanText": "在【榑桑遗境】中，行会成员的全部单位造成的伤害特别提高<color=#158bdb>3%</color>。",
+    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0604",
     "TabNameLanText": "游灵万象"
   },
-  "S1TG0606": {
-    "Id": "S1TG0606",
+  "S1TG0605": {
+    "Id": "S1TG0605",
     "SeasonId": "S1",
     "Tab": 2,
     "UnlockTime": 22,
     "Group": 202,
     "TabName": "游灵万象",
     "Point": [
-      821,
-      -107
+      758,
+      -213
     ],
     "Size": [
-      158,
-      153
+      167,
+      148
     ],
     "LinePoint": [
-      91,
-      17
+      244,
+      123
     ],
-    "LineType": 1042,
-    "Img": "sjz-zlfy-kjs-gricon-js-06",
-    "Sort": 24,
-    "Unlock": [],
+    "LineType": 1043,
+    "Img": "sjz-zlfy-kjs-gricon-js-07",
+    "Sort": 18,
+    "Unlock": [
+      "S1TG0604"
+    ],
     "ConsumeAll": [
       {
-        "id": "5301",
+        "id": "5302",
         "count": 50000
       }
     ],
@@ -3076,99 +2713,35 @@
     "Desc": "在【榑桑遗境】中，行会成员的【砖块】产量提高<color=#158bdb>3%</color>。",
     "Type": 1,
     "Para": [
-      "PB_S1TP0316",
-      "PB_S1TP0317",
-      "PB_S1TP0318"
+      "PB_S1TG0613",
+      "PB_S1TG0614",
+      "PB_S1TG0615"
     ],
-    "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0606",
+    "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0605",
     "NameLanText": "瞿父肆",
-    "DescLan": "activeLan_SeasonalTech_descLan_S1TG0606",
+    "DescLan": "activeLan_SeasonalTech_descLan_S1TG0605",
     "DescLanText": "在【榑桑遗境】中，行会成员的【砖块】产量提高<color=#158bdb>3%</color>。",
-    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0606",
+    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0605",
     "TabNameLanText": "游灵万象"
   },
-  "S1TG0607": {
-    "Id": "S1TG0607",
+  "S1TG0606": {
+    "Id": "S1TG0606",
     "SeasonId": "S1",
     "Tab": 2,
     "UnlockTime": 22,
     "Group": 202,
     "TabName": "游灵万象",
     "Point": [
-      1158,
-      -213
-    ],
-    "Size": [
-      167,
-      148
-    ],
-    "LinePoint": [
-      244,
-      123
-    ],
-    "LineType": 1043,
-    "Img": "sjz-zlfy-kjs-gricon-js-07",
-    "Sort": 25,
-    "Unlock": [
-      "S1TG0606"
-    ],
-    "ConsumeAll": [
-      {
-        "id": "5302",
-        "count": 50000
-      }
-    ],
-    "CostMatID": "72",
-    "CostMatCount": [
-      1800,
-      3600,
-      5400
-    ],
-    "Consume": [
-      {
-        "id": "5304",
-        "count": 1000
-      }
-    ],
-    "ContributeItem": [
-      {
-        "id": "5307",
-        "count": 100
-      }
-    ],
-    "Name": "箕尾贰",
-    "Desc": "在【榑桑遗境】中，行会成员的全部单位造成的伤害提高<color=#158bdb>3%</color>。",
-    "Type": 4,
-    "Para": [
-      "TB_S1TG0319",
-      "TB_S1TG0320",
-      "TB_S1TG0321"
-    ],
-    "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0607",
-    "NameLanText": "箕尾贰",
-    "DescLan": "activeLan_SeasonalTech_descLan_S1TG0607",
-    "DescLanText": "在【榑桑遗境】中，行会成员的全部单位造成的伤害提高<color=#158bdb>3%</color>。",
-    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0607",
-    "TabNameLanText": "游灵万象"
-  },
-  "S1TG0608": {
-    "Id": "S1TG0608",
-    "SeasonId": "S1",
-    "Tab": 2,
-    "UnlockTime": 22,
-    "Group": 202,
-    "TabName": "游灵万象",
-    "Point": [
-      1483,
+      1083,
       -107
     ],
     "Size": [],
     "LinePoint": [],
     "LineType": 0,
     "Img": "sjz-zlfy-kjs-gricon-js-08",
-    "Sort": 26,
+    "Sort": 19,
     "Unlock": [
-      "S1TG0607"
+      "S1TG0605"
     ],
     "ConsumeAll": [
       {
@@ -3194,19 +2767,19 @@
         "count": 100
       }
     ],
-    "Name": "朝云肆",
-    "Desc": "进入战斗后，我方宿卫职业全体获得<color=#158bdb>1</color>层<color=#ff6724>霜雪无迹</color>状态。",
-    "Type": 2,
+    "Name": "长右叁",
+    "Desc": "在【榑桑遗境】中，行会成员的全部单位防御穿透提高<color=#158bdb>3%</color>。",
+    "Type": 4,
     "Para": [
-      "Buff_S1TG0322",
-      "Buff_S1TG0323",
-      "Buff_S1TG0324"
+      "TB_S1TG0616",
+      "TB_S1TG0617",
+      "TB_S1TG0618"
     ],
-    "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0608",
-    "NameLanText": "朝云肆",
-    "DescLan": "activeLan_SeasonalTech_descLan_S1TG0608",
-    "DescLanText": "进入战斗后，我方宿卫职业全体获得<color=#158bdb>1</color>层<color=#ff6724>霜雪无迹</color>状态。",
-    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0608",
+    "NameLan": "activeLan_SeasonalTech_nameLan_S1TG0606",
+    "NameLanText": "长右叁",
+    "DescLan": "activeLan_SeasonalTech_descLan_S1TG0606",
+    "DescLanText": "在【榑桑遗境】中，行会成员的全部单位防御穿透提高<color=#158bdb>3%</color>。",
+    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TG0606",
     "TabNameLanText": "游灵万象"
   },
   "S1TP0101": {
@@ -4525,55 +4098,6 @@
     "Group": 102,
     "TabName": "游灵万象",
     "Point": [
-      -1351,
-      63
-    ],
-    "Size": [],
-    "LinePoint": [
-      79,
-      -10
-    ],
-    "LineType": 1010,
-    "Img": "sjz-zlfy-kjs-gricon-js-01",
-    "Sort": 1,
-    "Unlock": [],
-    "ConsumeAll": [
-      {
-        "id": "5301",
-        "count": 2000
-      }
-    ],
-    "CostMatID": "5304",
-    "CostMatCount": [
-      6700,
-      13400,
-      20100
-    ],
-    "Consume": null,
-    "ContributeItem": null,
-    "Name": "祷过叁",
-    "Desc": "在【榑桑遗境】中，我方全体最大生命值提高<color=#158bdb>3%</color>。",
-    "Type": 4,
-    "Para": [
-      "TB_S1TP0101",
-      "TB_S1TP0102",
-      "TB_S1TP0103"
-    ],
-    "NameLan": "activeLan_SeasonalTech_nameLan_S1TP0401",
-    "NameLanText": "祷过叁",
-    "DescLan": "activeLan_SeasonalTech_descLan_S1TP0401",
-    "DescLanText": "在【榑桑遗境】中，我方全体最大生命值提高<color=#158bdb>3%</color>。",
-    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TP0401",
-    "TabNameLanText": "游灵万象"
-  },
-  "S1TP0402": {
-    "Id": "S1TP0402",
-    "SeasonId": "S1",
-    "Tab": 1,
-    "UnlockTime": 22,
-    "Group": 102,
-    "TabName": "游灵万象",
-    "Point": [
       -1110,
       63
     ],
@@ -4584,41 +4108,39 @@
     ],
     "LineType": 1020,
     "Img": "sjz-zlfy-kjs-gricon-js-02",
-    "Sort": 2,
-    "Unlock": [
-      "S1TP0401"
-    ],
+    "Sort": 1,
+    "Unlock": [],
     "ConsumeAll": [
       {
         "id": "5301",
         "count": 3000
       }
     ],
-    "CostMatID": "5304",
+    "CostMatID": "73",
     "CostMatCount": [
-      6700,
-      13400,
-      20100
+      1,
+      2,
+      3
     ],
     "Consume": null,
     "ContributeItem": null,
-    "Name": "阳夹叁",
-    "Desc": "在【榑桑遗境】中，我方全体构素防御力提高<color=#158bdb>3%</color>。",
+    "Name": "天虞贰",
+    "Desc": "在【榑桑遗境】中，我方全体攻击力提高<color=#158bdb>3%</color>。",
     "Type": 4,
     "Para": [
-      "TB_S1TP0104",
-      "TB_S1TP0105",
-      "TB_S1TP0106"
+      "TB_S1TP0401",
+      "TB_S1TP0402",
+      "TB_S1TP0403"
     ],
-    "NameLan": "activeLan_SeasonalTech_nameLan_S1TP0402",
-    "NameLanText": "阳夹叁",
-    "DescLan": "activeLan_SeasonalTech_descLan_S1TP0402",
-    "DescLanText": "在【榑桑遗境】中，我方全体构素防御力提高<color=#158bdb>3%</color>。",
-    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TP0402",
+    "NameLan": "activeLan_SeasonalTech_nameLan_S1TP0401",
+    "NameLanText": "天虞贰",
+    "DescLan": "activeLan_SeasonalTech_descLan_S1TP0401",
+    "DescLanText": "在【榑桑遗境】中，我方全体攻击力提高<color=#158bdb>3%</color>。",
+    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TP0401",
     "TabNameLanText": "游灵万象"
   },
-  "S1TP0403": {
-    "Id": "S1TP0403",
+  "S1TP0402": {
+    "Id": "S1TP0402",
     "SeasonId": "S1",
     "Tab": 1,
     "UnlockTime": 22,
@@ -4635,9 +4157,9 @@
     ],
     "LineType": 1021,
     "Img": "sjz-zlfy-kjs-gricon-js-03",
-    "Sort": 3,
+    "Sort": 2,
     "Unlock": [
-      "S1TP0402"
+      "S1TP0401"
     ],
     "ConsumeAll": [
       {
@@ -4645,31 +4167,31 @@
         "count": 2000
       }
     ],
-    "CostMatID": "5304",
+    "CostMatID": "73",
     "CostMatCount": [
-      6700,
-      13400,
-      20100
+      1,
+      2,
+      3
     ],
     "Consume": null,
     "ContributeItem": null,
-    "Name": "宪翼肆",
-    "Desc": "在聚沙成塔中，激活了木板Ⅰ效果，当前木板产量提升2%",
+    "Name": "即翼叁",
+    "Desc": "在【榑桑遗境】中，【砖块】的产量提高<color=#158bdb>3%</color>。",
     "Type": 1,
     "Para": [
-      "PB_S1TP0107",
-      "PB_S1TP0108",
-      "PB_S1TP0109"
+      "PB_S1TP0404",
+      "PB_S1TP0405",
+      "PB_S1TP0406"
     ],
-    "NameLan": "activeLan_SeasonalTech_nameLan_S1TP0403",
-    "NameLanText": "宪翼肆",
-    "DescLan": "activeLan_SeasonalTech_descLan_S1TP0403",
-    "DescLanText": "在聚沙成塔中，激活了木板Ⅰ效果，当前木板产量提升2%",
-    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TP0403",
+    "NameLan": "activeLan_SeasonalTech_nameLan_S1TP0402",
+    "NameLanText": "即翼叁",
+    "DescLan": "activeLan_SeasonalTech_descLan_S1TP0402",
+    "DescLanText": "在【榑桑遗境】中，【砖块】的产量提高<color=#158bdb>3%</color>。",
+    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TP0402",
     "TabNameLanText": "游灵万象"
   },
-  "S1TP0404": {
-    "Id": "S1TP0404",
+  "S1TP0403": {
+    "Id": "S1TP0403",
     "SeasonId": "S1",
     "Tab": 1,
     "UnlockTime": 22,
@@ -4684,11 +4206,11 @@
       79,
       -10
     ],
-    "LineType": 1010,
+    "LineType": 0,
     "Img": "sjz-zlfy-kjs-gricon-js-04",
-    "Sort": 4,
+    "Sort": 3,
     "Unlock": [
-      "S1TP0403"
+      "S1TP0402"
     ],
     "ConsumeAll": [
       {
@@ -4696,82 +4218,31 @@
         "count": 2000
       }
     ],
-    "CostMatID": "5304",
+    "CostMatID": "73",
     "CostMatCount": [
-      6700,
-      13400,
-      20100
+      1,
+      2,
+      3
     ],
     "Consume": null,
     "ContributeItem": null,
-    "Name": "灌湘叁",
-    "Desc": "在【榑桑遗境】中，我方全体暴击率增加<color=#158bdb>3%</color>。",
+    "Name": "发爽壹",
+    "Desc": "在【榑桑遗境】中，我方全体造成的伤害特别提高<color=#158bdb>3%</color>。",
     "Type": 4,
     "Para": [
-      "TB_S1TP0110",
-      "TB_S1TP0111",
-      "TB_S1TP0112"
+      "TB_S1TP0407",
+      "TB_S1TP0408",
+      "TB_S1TP0409"
     ],
-    "NameLan": "activeLan_SeasonalTech_nameLan_S1TP0404",
-    "NameLanText": "灌湘叁",
-    "DescLan": "activeLan_SeasonalTech_descLan_S1TP0404",
-    "DescLanText": "在【榑桑遗境】中，我方全体暴击率增加<color=#158bdb>3%</color>。",
-    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TP0404",
+    "NameLan": "activeLan_SeasonalTech_nameLan_S1TP0403",
+    "NameLanText": "发爽壹",
+    "DescLan": "activeLan_SeasonalTech_descLan_S1TP0403",
+    "DescLanText": "在【榑桑遗境】中，我方全体造成的伤害特别提高<color=#158bdb>3%</color>。",
+    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TP0403",
     "TabNameLanText": "游灵万象"
   },
-  "S1TP0405": {
-    "Id": "S1TP0405",
-    "SeasonId": "S1",
-    "Tab": 1,
-    "UnlockTime": 22,
-    "Group": 102,
-    "TabName": "游灵万象",
-    "Point": [
-      -401,
-      63
-    ],
-    "Size": [],
-    "LinePoint": [
-      79,
-      -10
-    ],
-    "LineType": 0,
-    "Img": "sjz-zlfy-kjs-gricon-js-05",
-    "Sort": 5,
-    "Unlock": [
-      "S1TP0404"
-    ],
-    "ConsumeAll": [
-      {
-        "id": "5302",
-        "count": 3000
-      }
-    ],
-    "CostMatID": "5304",
-    "CostMatCount": [
-      6700,
-      13400,
-      20100
-    ],
-    "Consume": null,
-    "ContributeItem": null,
-    "Name": "仑者叁",
-    "Desc": "在【榑桑遗境】中，我方全体造成的伤害提高<color=#158bdb>3%</color>。",
-    "Type": 4,
-    "Para": [
-      "TB_S1TP0113",
-      "TB_S1TP0114",
-      "TB_S1TP0115"
-    ],
-    "NameLan": "activeLan_SeasonalTech_nameLan_S1TP0405",
-    "NameLanText": "仑者叁",
-    "DescLan": "activeLan_SeasonalTech_descLan_S1TP0405",
-    "DescLanText": "在【榑桑遗境】中，我方全体造成的伤害提高<color=#158bdb>3%</color>。",
-    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TP0405",
-    "TabNameLanText": "游灵万象"
-  },
-  "S1TP0406": {
-    "Id": "S1TP0406",
+  "S1TP0404": {
+    "Id": "S1TP0404",
     "SeasonId": "S1",
     "Tab": 1,
     "UnlockTime": 22,
@@ -4783,12 +4254,12 @@
     ],
     "Size": [],
     "LinePoint": [
-      151,
-      -117
+      75,
+      21
     ],
-    "LineType": 1021,
+    "LineType": 1042,
     "Img": "sjz-zlfy-kjs-gricon-js-06",
-    "Sort": 6,
+    "Sort": 4,
     "Unlock": [],
     "ConsumeAll": [
       {
@@ -4796,50 +4267,50 @@
         "count": 5000
       }
     ],
-    "CostMatID": "5304",
+    "CostMatID": "73",
     "CostMatCount": [
-      6700,
-      13400,
-      20100
+      1,
+      2,
+      3
     ],
     "Consume": null,
     "ContributeItem": null,
-    "Name": "丹穴叁",
-    "Desc": "在【榑桑遗境】中，我方全体物理防御力提高<color=#158bdb>3%</color>。",
-    "Type": 4,
+    "Name": "宪翼肆",
+    "Desc": "在【榑桑遗境】中，【木板】的产量提高<color=#158bdb>3%</color>。",
+    "Type": 1,
     "Para": [
-      "TB_S1TP0116",
-      "TB_S1TP0117",
-      "TB_S1TP0118"
+      "PB_S1TP0413",
+      "PB_S1TP0414",
+      "PB_S1TP0415"
     ],
-    "NameLan": "activeLan_SeasonalTech_nameLan_S1TP0406",
-    "NameLanText": "丹穴叁",
-    "DescLan": "activeLan_SeasonalTech_descLan_S1TP0406",
-    "DescLanText": "在【榑桑遗境】中，我方全体物理防御力提高<color=#158bdb>3%</color>。",
-    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TP0406",
+    "NameLan": "activeLan_SeasonalTech_nameLan_S1TP0404",
+    "NameLanText": "宪翼肆",
+    "DescLan": "activeLan_SeasonalTech_descLan_S1TP0404",
+    "DescLanText": "在【榑桑遗境】中，【木板】的产量提高<color=#158bdb>3%</color>。",
+    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TP0404",
     "TabNameLanText": "游灵万象"
   },
-  "S1TP0407": {
-    "Id": "S1TP0407",
+  "S1TP0405": {
+    "Id": "S1TP0405",
     "SeasonId": "S1",
     "Tab": 1,
     "UnlockTime": 22,
     "Group": 102,
     "TabName": "游灵万象",
     "Point": [
-      -1011,
-      -215
+      -874,
+      -200
     ],
     "Size": [],
     "LinePoint": [
-      87,
-      -10
+      277,
+      121
     ],
-    "LineType": 1010,
+    "LineType": 1043,
     "Img": "sjz-zlfy-kjs-gricon-js-07",
-    "Sort": 7,
+    "Sort": 5,
     "Unlock": [
-      "S1TP0406"
+      "S1TP0404"
     ],
     "ConsumeAll": [
       {
@@ -4847,82 +4318,31 @@
         "count": 5000
       }
     ],
-    "CostMatID": "5304",
+    "CostMatID": "73",
     "CostMatCount": [
-      6700,
-      13400,
-      20100
+      1,
+      2,
+      3
     ],
     "Consume": null,
     "ContributeItem": null,
-    "Name": "即翼叁",
-    "Desc": "在【榑桑遗境】中，【砖块】的产量提高<color=#158bdb>3%</color>。",
-    "Type": 1,
-    "Para": [
-      "PB_S1TP0119",
-      "PB_S1TP0120",
-      "PB_S1TP0121"
-    ],
-    "NameLan": "activeLan_SeasonalTech_nameLan_S1TP0407",
-    "NameLanText": "即翼叁",
-    "DescLan": "activeLan_SeasonalTech_descLan_S1TP0407",
-    "DescLanText": "在【榑桑遗境】中，【砖块】的产量提高<color=#158bdb>3%</color>。",
-    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TP0407",
-    "TabNameLanText": "游灵万象"
-  },
-  "S1TP0408": {
-    "Id": "S1TP0408",
-    "SeasonId": "S1",
-    "Tab": 1,
-    "UnlockTime": 22,
-    "Group": 102,
-    "TabName": "游灵万象",
-    "Point": [
-      -752,
-      -215
-    ],
-    "Size": [],
-    "LinePoint": [
-      76,
-      -7
-    ],
-    "LineType": 1020,
-    "Img": "sjz-zlfy-kjs-gricon-js-08",
-    "Sort": 8,
-    "Unlock": [
-      "S1TP0407"
-    ],
-    "ConsumeAll": [
-      {
-        "id": "5303",
-        "count": 3000
-      }
-    ],
-    "CostMatID": "5304",
-    "CostMatCount": [
-      6700,
-      13400,
-      20100
-    ],
-    "Consume": null,
-    "ContributeItem": null,
-    "Name": "令丘叁",
-    "Desc": "在【榑桑遗境】中，我方全体暴击伤害提高<color=#158bdb>3%</color>。",
+    "Name": "阳夹叁",
+    "Desc": "在【榑桑遗境】中，我方全体构素防御力提高<color=#158bdb>3%</color>。",
     "Type": 4,
     "Para": [
-      "TB_S1TP0125",
-      "TB_S1TP0126",
-      "TB_S1TP0127"
+      "TB_S1TP0416",
+      "TB_S1TP0417",
+      "TB_S1TP0418"
     ],
-    "NameLan": "activeLan_SeasonalTech_nameLan_S1TP0408",
-    "NameLanText": "令丘叁",
-    "DescLan": "activeLan_SeasonalTech_descLan_S1TP0408",
-    "DescLanText": "在【榑桑遗境】中，我方全体暴击伤害提高<color=#158bdb>3%</color>。",
-    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TP0408",
+    "NameLan": "activeLan_SeasonalTech_nameLan_S1TP0405",
+    "NameLanText": "阳夹叁",
+    "DescLan": "activeLan_SeasonalTech_descLan_S1TP0405",
+    "DescLanText": "在【榑桑遗境】中，我方全体构素防御力提高<color=#158bdb>3%</color>。",
+    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TP0405",
     "TabNameLanText": "游灵万象"
   },
-  "S1TP0409": {
-    "Id": "S1TP0409",
+  "S1TP0406": {
+    "Id": "S1TP0406",
     "SeasonId": "S1",
     "Tab": 1,
     "UnlockTime": 22,
@@ -4939,9 +4359,9 @@
     ],
     "LineType": 0,
     "Img": "sjz-zlfy-kjs-gricon-js-09",
-    "Sort": 9,
+    "Sort": 6,
     "Unlock": [
-      "S1TP0408"
+      "S1TP0405"
     ],
     "ConsumeAll": [
       {
@@ -4949,31 +4369,31 @@
         "count": 5000
       }
     ],
-    "CostMatID": "5304",
+    "CostMatID": "73",
     "CostMatCount": [
-      6700,
-      13400,
-      20100
+      1,
+      2,
+      3
     ],
     "Consume": null,
     "ContributeItem": null,
-    "Name": "钉灵贰",
-    "Desc": "我方任意单位击败敌方单位后，自身回复最大生命值<color=#158bdb>5%</color>的生命值。",
-    "Type": 2,
+    "Name": "泽更叁",
+    "Desc": "在【榑桑遗境】中，【芝草露华】的产量提高<color=#158bdb>3%</color>。",
+    "Type": 1,
     "Para": [
-      "Buff_S1TP0128",
-      "Buff_S1TP0129",
-      "Buff_S1TP0130"
+      "PB_S1TP0419",
+      "PB_S1TP0420",
+      "PB_S1TP0421"
     ],
-    "NameLan": "activeLan_SeasonalTech_nameLan_S1TP0409",
-    "NameLanText": "钉灵贰",
-    "DescLan": "activeLan_SeasonalTech_descLan_S1TP0409",
-    "DescLanText": "我方任意单位击败敌方单位后，自身回复最大生命值<color=#158bdb>5%</color>的生命值。",
-    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TP0409",
+    "NameLan": "activeLan_SeasonalTech_nameLan_S1TP0406",
+    "NameLanText": "泽更叁",
+    "DescLan": "activeLan_SeasonalTech_descLan_S1TP0406",
+    "DescLanText": "在【榑桑遗境】中，【芝草露华】的产量提高<color=#158bdb>3%</color>。",
+    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TP0406",
     "TabNameLanText": "游灵万象"
   },
-  "S1TP0410": {
-    "Id": "S1TP0410",
+  "S1TP0407": {
+    "Id": "S1TP0407",
     "SeasonId": "S1",
     "Tab": 1,
     "UnlockTime": 22,
@@ -4990,7 +4410,7 @@
     ],
     "LineType": 0,
     "Img": "sjz-zlfy-kjs-gricon-js-01",
-    "Sort": 10,
+    "Sort": 7,
     "Unlock": [],
     "ConsumeAll": [
       {
@@ -4998,11 +4418,11 @@
         "count": 5000
       }
     ],
-    "CostMatID": "5304",
+    "CostMatID": "73",
     "CostMatCount": [
-      6700,
-      13400,
-      20100
+      1,
+      2,
+      3
     ],
     "Consume": null,
     "ContributeItem": null,
@@ -5014,11 +4434,11 @@
       "1",
       "1"
     ],
-    "NameLan": "activeLan_SeasonalTech_nameLan_S1TP0410",
+    "NameLan": "activeLan_SeasonalTech_nameLan_S1TP0407",
     "NameLanText": "鹿水贰",
-    "DescLan": "activeLan_SeasonalTech_descLan_S1TP0410",
+    "DescLan": "activeLan_SeasonalTech_descLan_S1TP0407",
     "DescLanText": "在榑桑遗境内，行动力上限提高<color=#158bdb>%s</color>。",
-    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TP0410",
+    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TP0407",
     "TabNameLanText": "游灵万象"
   },
   "S1TP0501": {
@@ -5039,7 +4459,7 @@
     ],
     "LineType": 1020,
     "Img": "sjz-zlfy-kjs-gricon-js-02",
-    "Sort": 11,
+    "Sort": 8,
     "Unlock": [],
     "ConsumeAll": [
       {
@@ -5047,26 +4467,26 @@
         "count": 2000
       }
     ],
-    "CostMatID": "5304",
+    "CostMatID": "73",
     "CostMatCount": [
-      6700,
-      13400,
-      20100
+      1,
+      2,
+      3
     ],
     "Consume": null,
     "ContributeItem": null,
-    "Name": "天虞贰",
-    "Desc": "在【榑桑遗境】中，我方全体攻击力提高<color=#158bdb>3%</color>。",
+    "Name": "南禺贰",
+    "Desc": "在【榑桑遗境】中，我方全体防御穿透提高<color=#158bdb>3%</color>。",
     "Type": 4,
     "Para": [
-      "TB_S1TP0201",
-      "TB_S1TP0202",
-      "TB_S1TP0203"
+      "TB_S1TP0501",
+      "TB_S1TP0502",
+      "TB_S1TP0503"
     ],
     "NameLan": "activeLan_SeasonalTech_nameLan_S1TP0501",
-    "NameLanText": "天虞贰",
+    "NameLanText": "南禺贰",
     "DescLan": "activeLan_SeasonalTech_descLan_S1TP0501",
-    "DescLanText": "在【榑桑遗境】中，我方全体攻击力提高<color=#158bdb>3%</color>。",
+    "DescLanText": "在【榑桑遗境】中，我方全体防御穿透提高<color=#158bdb>3%</color>。",
     "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TP0501",
     "TabNameLanText": "游灵万象"
   },
@@ -5088,7 +4508,7 @@
     ],
     "LineType": 1021,
     "Img": "sjz-zlfy-kjs-gricon-js-03",
-    "Sort": 12,
+    "Sort": 9,
     "Unlock": [
       "S1TP0501"
     ],
@@ -5098,24 +4518,24 @@
         "count": 3000
       }
     ],
-    "CostMatID": "5304",
+    "CostMatID": "73",
     "CostMatCount": [
-      6700,
-      13400,
-      20100
+      1,
+      2,
+      3
     ],
     "Consume": null,
     "ContributeItem": null,
-    "Name": "泽更叁",
+    "Name": "泽更肆",
     "Desc": "在【榑桑遗境】中，【芝草露华】的产量提高<color=#158bdb>3%</color>。",
     "Type": 1,
     "Para": [
-      "PB_S1TP0204",
-      "PB_S1TP0205",
-      "PB_S1TP0206"
+      "PB_S1TP0504",
+      "PB_S1TP0505",
+      "PB_S1TP0506"
     ],
     "NameLan": "activeLan_SeasonalTech_nameLan_S1TP0502",
-    "NameLanText": "泽更叁",
+    "NameLanText": "泽更肆",
     "DescLan": "activeLan_SeasonalTech_descLan_S1TP0502",
     "DescLanText": "在【榑桑遗境】中，【芝草露华】的产量提高<color=#158bdb>3%</color>。",
     "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TP0502",
@@ -5139,7 +4559,7 @@
     ],
     "LineType": 0,
     "Img": "sjz-zlfy-kjs-gricon-js-04",
-    "Sort": 13,
+    "Sort": 10,
     "Unlock": [
       "S1TP0502"
     ],
@@ -5149,26 +4569,26 @@
         "count": 2000
       }
     ],
-    "CostMatID": "5304",
+    "CostMatID": "73",
     "CostMatCount": [
-      6700,
-      13400,
-      20100
+      1,
+      2,
+      3
     ],
     "Consume": null,
     "ContributeItem": null,
-    "Name": "仑者肆",
-    "Desc": "在【榑桑遗境】中，我方全体造成的伤害提高<color=#158bdb>3%</color>。",
+    "Name": "泛水壹",
+    "Desc": "在【榑桑遗境】中，我方全体受到的伤害特别降低<color=#158bdb>3%</color>。",
     "Type": 4,
     "Para": [
-      "TB_S1TP0207",
-      "TB_S1TP0208",
-      "TB_S1TP0209"
+      "TB_S1TP0507",
+      "TB_S1TP0508",
+      "TB_S1TP0509"
     ],
     "NameLan": "activeLan_SeasonalTech_nameLan_S1TP0503",
-    "NameLanText": "仑者肆",
+    "NameLanText": "泛水壹",
     "DescLan": "activeLan_SeasonalTech_descLan_S1TP0503",
-    "DescLanText": "在【榑桑遗境】中，我方全体造成的伤害提高<color=#158bdb>3%</color>。",
+    "DescLanText": "在【榑桑遗境】中，我方全体受到的伤害特别降低<color=#158bdb>3%</color>。",
     "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TP0503",
     "TabNameLanText": "游灵万象"
   },
@@ -5185,12 +4605,12 @@
     ],
     "Size": [],
     "LinePoint": [
-      151,
-      -117
+      75,
+      18
     ],
-    "LineType": 1021,
+    "LineType": 1042,
     "Img": "sjz-zlfy-kjs-gricon-js-06",
-    "Sort": 14,
+    "Sort": 11,
     "Unlock": [],
     "ConsumeAll": [
       {
@@ -5198,26 +4618,26 @@
         "count": 2000
       }
     ],
-    "CostMatID": "5304",
+    "CostMatID": "73",
     "CostMatCount": [
-      6700,
-      13400,
-      20100
+      1,
+      2,
+      3
     ],
     "Consume": null,
     "ContributeItem": null,
-    "Name": "宪翼伍",
-    "Desc": "在【榑桑遗境】中，【木板】的产量提高<color=#158bdb>3%</color>。",
-    "Type": 1,
+    "Name": "令丘叁",
+    "Desc": "在【榑桑遗境】中，我方全体暴击伤害提高<color=#158bdb>3%</color>。",
+    "Type": 4,
     "Para": [
-      "PB_S1TP0210",
-      "PB_S1TP0211",
-      "PB_S1TP0212"
+      "TB_S1TP0510",
+      "TB_S1TP0511",
+      "TB_S1TP0512"
     ],
     "NameLan": "activeLan_SeasonalTech_nameLan_S1TP0504",
-    "NameLanText": "宪翼伍",
+    "NameLanText": "令丘叁",
     "DescLan": "activeLan_SeasonalTech_descLan_S1TP0504",
-    "DescLanText": "在【榑桑遗境】中，【木板】的产量提高<color=#158bdb>3%</color>。",
+    "DescLanText": "在【榑桑遗境】中，我方全体暴击伤害提高<color=#158bdb>3%</color>。",
     "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TP0504",
     "TabNameLanText": "游灵万象"
   },
@@ -5229,17 +4649,17 @@
     "Group": 102,
     "TabName": "游灵万象",
     "Point": [
-      -61,
-      -215
+      76,
+      -207
     ],
     "Size": [],
     "LinePoint": [
-      87,
-      -10
+      277,
+      124
     ],
-    "LineType": 1010,
+    "LineType": 1043,
     "Img": "sjz-zlfy-kjs-gricon-js-07",
-    "Sort": 15,
+    "Sort": 12,
     "Unlock": [
       "S1TP0504"
     ],
@@ -5249,26 +4669,26 @@
         "count": 2000
       }
     ],
-    "CostMatID": "5304",
+    "CostMatID": "73",
     "CostMatCount": [
-      6700,
-      13400,
-      20100
+      1,
+      2,
+      3
     ],
     "Consume": null,
     "ContributeItem": null,
-    "Name": "祷过肆",
-    "Desc": "在【榑桑遗境】中，我方全体最大生命值提高<color=#158bdb>3%</color>。",
-    "Type": 4,
+    "Name": "滂水贰",
+    "Desc": "在【榑桑遗境】中，【证量琼浆】的产量提高<color=#158bdb>3%</color>。",
+    "Type": 1,
     "Para": [
-      "TB_S1TP0213",
-      "TB_S1TP0214",
-      "TB_S1TP0215"
+      "PB_S1TP0513",
+      "PB_S1TP0514",
+      "PB_S1TP0515"
     ],
     "NameLan": "activeLan_SeasonalTech_nameLan_S1TP0505",
-    "NameLanText": "祷过肆",
+    "NameLanText": "滂水贰",
     "DescLan": "activeLan_SeasonalTech_descLan_S1TP0505",
-    "DescLanText": "在【榑桑遗境】中，我方全体最大生命值提高<color=#158bdb>3%</color>。",
+    "DescLanText": "在【榑桑遗境】中，【证量琼浆】的产量提高<color=#158bdb>3%</color>。",
     "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TP0505",
     "TabNameLanText": "游灵万象"
   },
@@ -5280,17 +4700,17 @@
     "Group": 102,
     "TabName": "游灵万象",
     "Point": [
-      198,
-      -215
+      428,
+      -100
     ],
     "Size": [],
     "LinePoint": [
       76,
       -7
     ],
-    "LineType": 1020,
+    "LineType": 0,
     "Img": "sjz-zlfy-kjs-gricon-js-08",
-    "Sort": 16,
+    "Sort": 13,
     "Unlock": [
       "S1TP0505"
     ],
@@ -5300,127 +4720,27 @@
         "count": 3000
       }
     ],
-    "CostMatID": "5304",
+    "CostMatID": "73",
     "CostMatCount": [
-      6700,
-      13400,
-      20100
+      1,
+      2,
+      3
     ],
     "Consume": null,
     "ContributeItem": null,
-    "Name": "滂水贰",
-    "Desc": "在【榑桑遗境】中，【证量琼浆】的产量提高<color=#158bdb>3%</color>。",
-    "Type": 1,
-    "Para": [
-      "PB_S1TP0216",
-      "PB_S1TP0217",
-      "PB_S1TP0218"
-    ],
-    "NameLan": "activeLan_SeasonalTech_nameLan_S1TP0506",
-    "NameLanText": "滂水贰",
-    "DescLan": "activeLan_SeasonalTech_descLan_S1TP0506",
-    "DescLanText": "在【榑桑遗境】中，【证量琼浆】的产量提高<color=#158bdb>3%</color>。",
-    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TP0506",
-    "TabNameLanText": "游灵万象"
-  },
-  "S1TP0507": {
-    "Id": "S1TP0507",
-    "SeasonId": "S1",
-    "Tab": 1,
-    "UnlockTime": 22,
-    "Group": 102,
-    "TabName": "游灵万象",
-    "Point": [
-      428,
-      -100
-    ],
-    "Size": [],
-    "LinePoint": [
-      79,
-      -10
-    ],
-    "LineType": 0,
-    "Img": "sjz-zlfy-kjs-gricon-js-09",
-    "Sort": 17,
-    "Unlock": [
-      "S1TP0506"
-    ],
-    "ConsumeAll": [
-      {
-        "id": "5301",
-        "count": 5000
-      }
-    ],
-    "CostMatID": "5304",
-    "CostMatCount": [
-      6700,
-      13400,
-      20100
-    ],
-    "Consume": null,
-    "ContributeItem": null,
-    "Name": "南禺贰",
-    "Desc": "在【榑桑遗境】中，我方全体防御穿透提高<color=#158bdb>3%</color>。",
+    "Name": "仑者叁",
+    "Desc": "在【榑桑遗境】中，我方全体造成的伤害提高<color=#158bdb>3%</color>。",
     "Type": 4,
     "Para": [
-      "TB_S1TP0219",
-      "TB_S1TP0220",
-      "TB_S1TP0221"
+      "TB_S1TP0516",
+      "TB_S1TP0517",
+      "TB_S1TP0518"
     ],
-    "NameLan": "activeLan_SeasonalTech_nameLan_S1TP0507",
-    "NameLanText": "南禺贰",
-    "DescLan": "activeLan_SeasonalTech_descLan_S1TP0507",
-    "DescLanText": "在【榑桑遗境】中，我方全体防御穿透提高<color=#158bdb>3%</color>。",
-    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TP0507",
-    "TabNameLanText": "游灵万象"
-  },
-  "S1TP0508": {
-    "Id": "S1TP0508",
-    "SeasonId": "S1",
-    "Tab": 1,
-    "UnlockTime": 22,
-    "Group": 102,
-    "TabName": "游灵万象",
-    "Point": [
-      76,
-      -22
-    ],
-    "Size": [],
-    "LinePoint": [
-      79,
-      -10
-    ],
-    "LineType": 0,
-    "Img": "sjz-zlfy-kjs-gricon-js-01",
-    "Sort": 18,
-    "Unlock": [],
-    "ConsumeAll": [
-      {
-        "id": "5302",
-        "count": 5000
-      }
-    ],
-    "CostMatID": "5304",
-    "CostMatCount": [
-      6700,
-      13400,
-      20100
-    ],
-    "Consume": null,
-    "ContributeItem": null,
-    "Name": "列襄贰",
-    "Desc": "我方单位进行直接攻击时，有<color=#158bdb>10%</color>概率清除受击敌方单位<color=#158bdb>1</color>个属性增益状态。",
-    "Type": 2,
-    "Para": [
-      "Buff_S1TP0222",
-      "Buff_S1TP0223",
-      "Buff_S1TP0224"
-    ],
-    "NameLan": "activeLan_SeasonalTech_nameLan_S1TP0508",
-    "NameLanText": "列襄贰",
-    "DescLan": "activeLan_SeasonalTech_descLan_S1TP0508",
-    "DescLanText": "我方单位进行直接攻击时，有<color=#158bdb>10%</color>概率清除受击敌方单位<color=#158bdb>1</color>个属性增益状态。",
-    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TP0508",
+    "NameLan": "activeLan_SeasonalTech_nameLan_S1TP0506",
+    "NameLanText": "仑者叁",
+    "DescLan": "activeLan_SeasonalTech_descLan_S1TP0506",
+    "DescLanText": "在【榑桑遗境】中，我方全体造成的伤害提高<color=#158bdb>3%</color>。",
+    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TP0506",
     "TabNameLanText": "游灵万象"
   },
   "S1TP0601": {
@@ -5441,7 +4761,7 @@
     ],
     "LineType": 1020,
     "Img": "sjz-zlfy-kjs-gricon-js-01",
-    "Sort": 19,
+    "Sort": 14,
     "Unlock": [],
     "ConsumeAll": [
       {
@@ -5449,26 +4769,26 @@
         "count": 2000
       }
     ],
-    "CostMatID": "5304",
+    "CostMatID": "73",
     "CostMatCount": [
-      8360,
-      16720,
-      25080
+      1,
+      2,
+      3
     ],
     "Consume": null,
     "ContributeItem": null,
-    "Name": "丹穴肆",
-    "Desc": "在【榑桑遗境】中，我方全体物理防御力提高<color=#158bdb>3%</color>。",
+    "Name": "祷过叁",
+    "Desc": "在【榑桑遗境】中，我方全体最大生命值提高<color=#158bdb>3%</color>。",
     "Type": 4,
     "Para": [
-      "TB_S1TP0301",
-      "TB_S1TP0302",
-      "TB_S1TP0303"
+      "TB_S1TP0601",
+      "TB_S1TP0602",
+      "TB_S1TP0603"
     ],
     "NameLan": "activeLan_SeasonalTech_nameLan_S1TP0601",
-    "NameLanText": "丹穴肆",
+    "NameLanText": "祷过叁",
     "DescLan": "activeLan_SeasonalTech_descLan_S1TP0601",
-    "DescLanText": "在【榑桑遗境】中，我方全体物理防御力提高<color=#158bdb>3%</color>。",
+    "DescLanText": "在【榑桑遗境】中，我方全体最大生命值提高<color=#158bdb>3%</color>。",
     "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TP0601",
     "TabNameLanText": "游灵万象"
   },
@@ -5490,7 +4810,7 @@
     ],
     "LineType": 1021,
     "Img": "sjz-zlfy-kjs-gricon-js-02",
-    "Sort": 20,
+    "Sort": 15,
     "Unlock": [
       "S1TP0601"
     ],
@@ -5500,24 +4820,24 @@
         "count": 3000
       }
     ],
-    "CostMatID": "5304",
+    "CostMatID": "73",
     "CostMatCount": [
-      8360,
-      16720,
-      25080
+      1,
+      2,
+      3
     ],
     "Consume": null,
     "ContributeItem": null,
-    "Name": "宪翼陆",
+    "Name": "宪翼伍",
     "Desc": "在【榑桑遗境】中，【木板】的产量提高<color=#158bdb>3%</color>。",
     "Type": 1,
     "Para": [
-      "PB_S1TP0304",
-      "PB_S1TP0305",
-      "PB_S1TP0306"
+      "PB_S1TP0604",
+      "PB_S1TP0605",
+      "PB_S1TP0606"
     ],
     "NameLan": "activeLan_SeasonalTech_nameLan_S1TP0602",
-    "NameLanText": "宪翼陆",
+    "NameLanText": "宪翼伍",
     "DescLan": "activeLan_SeasonalTech_descLan_S1TP0602",
     "DescLanText": "在【榑桑遗境】中，【木板】的产量提高<color=#158bdb>3%</color>。",
     "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TP0602",
@@ -5541,7 +4861,7 @@
     ],
     "LineType": 0,
     "Img": "sjz-zlfy-kjs-gricon-js-03",
-    "Sort": 21,
+    "Sort": 16,
     "Unlock": [
       "S1TP0602"
     ],
@@ -5551,26 +4871,26 @@
         "count": 2000
       }
     ],
-    "CostMatID": "5304",
+    "CostMatID": "73",
     "CostMatCount": [
-      8360,
-      16720,
-      25080
+      1,
+      2,
+      3
     ],
     "Consume": null,
     "ContributeItem": null,
-    "Name": "壑市贰",
-    "Desc": "进入战斗后，我方远击职业全体获得<color=#158bdb>1</color>层<color=#ff6724>乌号之弓</color>状态。",
-    "Type": 2,
+    "Name": "仑者肆",
+    "Desc": "在【榑桑遗境】中，我方全体造成的伤害提高<color=#158bdb>3%</color>。",
+    "Type": 4,
     "Para": [
-      "Buff_S1TP0307",
-      "Buff_S1TP0308",
-      "Buff_S1TP0309"
+      "TB_S1TP0607",
+      "TB_S1TP0608",
+      "TB_S1TP0609"
     ],
     "NameLan": "activeLan_SeasonalTech_nameLan_S1TP0603",
-    "NameLanText": "壑市贰",
+    "NameLanText": "仑者肆",
     "DescLan": "activeLan_SeasonalTech_descLan_S1TP0603",
-    "DescLanText": "进入战斗后，我方远击职业全体获得<color=#158bdb>1</color>层<color=#ff6724>乌号之弓</color>状态。",
+    "DescLanText": "在【榑桑遗境】中，我方全体造成的伤害提高<color=#158bdb>3%</color>。",
     "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TP0603",
     "TabNameLanText": "游灵万象"
   },
@@ -5587,12 +4907,12 @@
     ],
     "Size": [],
     "LinePoint": [
-      151,
-      -117
+      75,
+      18
     ],
-    "LineType": 1021,
+    "LineType": 1042,
     "Img": "sjz-zlfy-kjs-gricon-js-03",
-    "Sort": 22,
+    "Sort": 17,
     "Unlock": [],
     "ConsumeAll": [
       {
@@ -5600,26 +4920,26 @@
         "count": 2000
       }
     ],
-    "CostMatID": "5304",
+    "CostMatID": "73",
     "CostMatCount": [
-      8360,
-      16720,
-      25080
+      1,
+      2,
+      3
     ],
     "Consume": null,
     "ContributeItem": null,
-    "Name": "灌湘肆",
-    "Desc": "在【榑桑遗境】中，我方全体暴击率增加<color=#158bdb>3%</color>。",
+    "Name": "发爽贰",
+    "Desc": "在【榑桑遗境】中，我方全体造成的伤害特别提高<color=#158bdb>3%</color>。",
     "Type": 4,
     "Para": [
-      "TB_S1TP0310",
-      "TB_S1TP0311",
-      "TB_S1TP0312"
+      "TB_S1TP0610",
+      "TB_S1TP0611",
+      "TB_S1TP0612"
     ],
     "NameLan": "activeLan_SeasonalTech_nameLan_S1TP0604",
-    "NameLanText": "灌湘肆",
+    "NameLanText": "发爽贰",
     "DescLan": "activeLan_SeasonalTech_descLan_S1TP0604",
-    "DescLanText": "在【榑桑遗境】中，我方全体暴击率增加<color=#158bdb>3%</color>。",
+    "DescLanText": "在【榑桑遗境】中，我方全体造成的伤害特别提高<color=#158bdb>3%</color>。",
     "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TP0604",
     "TabNameLanText": "游灵万象"
   },
@@ -5631,17 +4951,17 @@
     "Group": 102,
     "TabName": "游灵万象",
     "Point": [
-      889,
-      -215
+      1026,
+      -207
     ],
     "Size": [],
     "LinePoint": [
-      87,
-      -10
+      277,
+      124
     ],
-    "LineType": 1010,
+    "LineType": 1043,
     "Img": "sjz-zlfy-kjs-gricon-js-04",
-    "Sort": 23,
+    "Sort": 18,
     "Unlock": [
       "S1TP0604"
     ],
@@ -5651,26 +4971,26 @@
         "count": 2000
       }
     ],
-    "CostMatID": "5304",
+    "CostMatID": "73",
     "CostMatCount": [
-      8360,
-      16720,
-      25080
+      1,
+      2,
+      3
     ],
     "Consume": null,
     "ContributeItem": null,
-    "Name": "阳夹肆",
-    "Desc": "在【榑桑遗境】中，我方全体构素防御力提高<color=#158bdb>3%</color>。",
-    "Type": 4,
+    "Name": "即翼肆",
+    "Desc": "在【榑桑遗境】中，【砖块】的产量提高<color=#158bdb>3%</color>。",
+    "Type": 1,
     "Para": [
-      "TB_S1TP0313",
-      "TB_S1TP0314",
-      "TB_S1TP0315"
+      "PB_S1TP0613",
+      "PB_S1TP0614",
+      "PB_S1TP0615"
     ],
     "NameLan": "activeLan_SeasonalTech_nameLan_S1TP0605",
-    "NameLanText": "阳夹肆",
+    "NameLanText": "即翼肆",
     "DescLan": "activeLan_SeasonalTech_descLan_S1TP0605",
-    "DescLanText": "在【榑桑遗境】中，我方全体构素防御力提高<color=#158bdb>3%</color>。",
+    "DescLanText": "在【榑桑遗境】中，【砖块】的产量提高<color=#158bdb>3%</color>。",
     "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TP0605",
     "TabNameLanText": "游灵万象"
   },
@@ -5682,17 +5002,17 @@
     "Group": 102,
     "TabName": "游灵万象",
     "Point": [
-      1148,
-      -215
+      1378,
+      -100
     ],
     "Size": [],
     "LinePoint": [
       76,
       -7
     ],
-    "LineType": 1020,
+    "LineType": 0,
     "Img": "sjz-zlfy-kjs-gricon-js-05",
-    "Sort": 24,
+    "Sort": 19,
     "Unlock": [
       "S1TP0605"
     ],
@@ -5702,111 +5022,11 @@
         "count": 3000
       }
     ],
-    "CostMatID": "5304",
+    "CostMatID": "73",
     "CostMatCount": [
-      8360,
-      16720,
-      25080
-    ],
-    "Consume": null,
-    "ContributeItem": null,
-    "Name": "即翼肆",
-    "Desc": "在【榑桑遗境】中，【砖块】的产量提高<color=#158bdb>3%</color>。",
-    "Type": 1,
-    "Para": [
-      "PB_S1TP0316",
-      "PB_S1TP0317",
-      "PB_S1TP0318"
-    ],
-    "NameLan": "activeLan_SeasonalTech_nameLan_S1TP0606",
-    "NameLanText": "即翼肆",
-    "DescLan": "activeLan_SeasonalTech_descLan_S1TP0606",
-    "DescLanText": "在【榑桑遗境】中，【砖块】的产量提高<color=#158bdb>3%</color>。",
-    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TP0606",
-    "TabNameLanText": "游灵万象"
-  },
-  "S1TP0607": {
-    "Id": "S1TP0607",
-    "SeasonId": "S1",
-    "Tab": 1,
-    "UnlockTime": 22,
-    "Group": 102,
-    "TabName": "游灵万象",
-    "Point": [
-      1378,
-      -100
-    ],
-    "Size": [],
-    "LinePoint": [
-      79,
-      -10
-    ],
-    "LineType": 0,
-    "Img": "sjz-zlfy-kjs-gricon-js-06",
-    "Sort": 25,
-    "Unlock": [
-      "S1TP0606"
-    ],
-    "ConsumeAll": [
-      {
-        "id": "5301",
-        "count": 5000
-      }
-    ],
-    "CostMatID": "5304",
-    "CostMatCount": [
-      8360,
-      16720,
-      25080
-    ],
-    "Consume": null,
-    "ContributeItem": null,
-    "Name": "泽更肆",
-    "Desc": "在【榑桑遗境】中，【芝草露华】的产量提高<color=#158bdb>3%</color>。",
-    "Type": 1,
-    "Para": [
-      "PB_S1TP0319",
-      "PB_S1TP0320",
-      "PB_S1TP0321"
-    ],
-    "NameLan": "activeLan_SeasonalTech_nameLan_S1TP0607",
-    "NameLanText": "泽更肆",
-    "DescLan": "activeLan_SeasonalTech_descLan_S1TP0607",
-    "DescLanText": "在【榑桑遗境】中，【芝草露华】的产量提高<color=#158bdb>3%</color>。",
-    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TP0607",
-    "TabNameLanText": "游灵万象"
-  },
-  "S1TP0608": {
-    "Id": "S1TP0608",
-    "SeasonId": "S1",
-    "Tab": 1,
-    "UnlockTime": 22,
-    "Group": 102,
-    "TabName": "游灵万象",
-    "Point": [
-      1026,
-      -22
-    ],
-    "Size": [],
-    "LinePoint": [
-      79,
-      -10
-    ],
-    "LineType": 0,
-    "Img": "sjz-zlfy-kjs-gricon-js-07",
-    "Sort": 26,
-    "Unlock": [],
-    "ConsumeAll": [
-      {
-        "id": "5302",
-        "count": 5000
-      }
-    ],
-    "CostMatID": "5304",
-    "CostMatCount": [
-      8360,
-      16720,
-      25080
+      1,
+      2,
+      3
     ],
     "Consume": null,
     "ContributeItem": null,
@@ -5814,15 +5034,15 @@
     "Desc": "在【榑桑遗境】中，我方全体暴击伤害提高<color=#158bdb>3%</color>。",
     "Type": 4,
     "Para": [
-      "TB_S1TP0322",
-      "TB_S1TP0323",
-      "TB_S1TP0324"
+      "TB_S1TP0616",
+      "TB_S1TP0617",
+      "TB_S1TP0618"
     ],
-    "NameLan": "activeLan_SeasonalTech_nameLan_S1TP0608",
+    "NameLan": "activeLan_SeasonalTech_nameLan_S1TP0606",
     "NameLanText": "令丘肆",
-    "DescLan": "activeLan_SeasonalTech_descLan_S1TP0608",
+    "DescLan": "activeLan_SeasonalTech_descLan_S1TP0606",
     "DescLanText": "在【榑桑遗境】中，我方全体暴击伤害提高<color=#158bdb>3%</color>。",
-    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TP0608",
+    "TabNameLan": "activeLan_SeasonalTech_tabNameLan_S1TP0606",
     "TabNameLanText": "游灵万象"
   }
 }

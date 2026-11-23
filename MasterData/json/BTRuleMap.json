@@ -77,6 +77,28 @@
     "RuleShowLanText": "敌方单位每次受到直接攻击时，获得<color=#158bdb>1</color> 层<color=#ff6724>试炼·寒英</color> 状态。\n<color=#ff6724>试炼·寒英</color>：每层此状态使敌方单位受到的伤害提高<color=#158bdb>1%</color> ；此状态最多可叠加<color=#158bdb>30</color> 层，持续<color=#158bdb>2</color> 回合。\n<color=#ff6724>【肆层新增】</color>行动结束时，敌方单位获得<color=#158bdb>1</color> 层<color=#ff6724>试炼·冷香</color> 状态；若该单位存在的<color=#ff6724>试炼·寒英</color> 状态小于<color=#158bdb>12</color> 层，则额外获得<color=#158bdb>1</color> 层<color=#ff6724>试炼·冷香</color> 状态。\n<color=#ff6724>试炼·冷香</color>：每层此状态使敌方单位暴击率提高<color=#158bdb>10%</color> ；若<color=#ff6724>试炼·冷香</color> 状态叠加至<color=#158bdb>2</color> 层，则敌方单位立即获得<color=#158bdb>1</color> 次额外行动，并在回合结束时清除敌方单位所有的<color=#ff6724>试炼·冷香</color> 状态层数；此状态最多可叠加<color=#158bdb>2</color> 层，效果持续整场战斗。\n<color=#ff6724>【肆层新增】</color>部分敌方单位根据自身最大基础生命值，受到以最大生命值百分比计算的伤害小幅度降低。",
     "RuleShowType": 3
   },
+  "105": {
+    "Group": "1",
+    "RuleId": "105",
+    "Filter": "all",
+    "Action": [
+      "globalbuff"
+    ],
+    "RuleShowLan": "activeLan_BTRule_ruleShowLan_105",
+    "RuleShowLanText": "任意单位每召唤<color=#158bdb>1</color>个召唤物前，场上全体单位获得<color=#158bdb>1</color>层<color=#ff6724>试炼·玉浆</color>状态。\n<color=#ff6724>试炼·玉浆</color>：每层此状态使自身造成的技能伤害提高<color=#158bdb>10%</color>，最多可叠加<color=#158bdb>5</color>层；此状态叠加至<color=#158bdb>5</color>层时，自身下<color=#158bdb>1</color>次造成技能伤害后，清除自身全部此状态。\n<color=#ff6724>【肆层新增】</color>敌方任意单位使用职业技能后，使距离其最近的我方单体获得<color=#ff6724>流失</color>、<color=#ff6724>融伤</color>或<color=#ff6724>灼烧</color>状态中的随机<color=#158bdb>1</color>种状态。\n<color=#ff6724>【肆层新增】</color>部分敌方单位根据自身最大基础生命值，受到以最大生命值百分比计算的伤害小幅度降低。",
+    "RuleShowType": 3
+  },
+  "106": {
+    "Group": "1",
+    "RuleId": "106",
+    "Filter": "all",
+    "Action": [
+      "globalbuff"
+    ],
+    "RuleShowLan": "activeLan_BTRule_ruleShowLan_106",
+    "RuleShowLanText": "敌方全体受到的追击伤害提高<color=#158bdb>30%</color>；敌方任意单位处于控制状态时，自身受到的伤害提高<color=#158bdb>20%</color>。\n<color=#ff6724>【肆层新增】</color>进入战斗后，敌方全体获得<color=#158bdb>8</color>层<color=#ff6724>试炼·龙鳞</color>状态。\n<color=#ff6724>试炼·龙鳞</color>：每层此状态使自身造成的伤害提高<color=#158bdb>5%</color>，持续整场战斗；每次受到追击攻击后，减少<color=#158bdb>1</color>层此状态。\n<color=#ff6724>【肆层新增】</color>敌方任意单位回合结束时，若自身存在<color=#ff6724>试炼·龙鳞</color>状态，则获得额外行动<color=#158bdb>1</color>次，每个单位每轮次最多可通过此方式获得<color=#158bdb>1</color>次额外行动。\n<color=#ff6724>【肆层新增】</color>部分敌方单位根据自身最大基础生命值，受到以最大生命值百分比计算的伤害小幅度降低。",
+    "RuleShowType": 3
+  },
   "11": {
     "Group": "1",
     "RuleId": "11",

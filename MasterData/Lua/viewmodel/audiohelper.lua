@@ -1,0 +1,85 @@
+
+
+AudioNames= {
+	EButtonHeavy = "Click_heavy",
+	EButtonLight = "Click_light",
+	EButtonSoft = "Click_soft",
+	EButtonRound = "Click_round",
+	EButtonSpecial1 = "Click_special_1",
+	EButtonSpecial2 = "Click_special_2",
+	EButtonChoose = "Click_light",
+	EButtonDel = "Click_special_1",
+	EButtonClear = "Click_special_1",
+	EHandleAttract1 = "handle_attract_1",
+	EHandleAttract2 = "handle_attract_2",
+	EStateChangeUnfold = "change_unfold",
+	EStateChangeSwitch = "change_switch",
+	EStateChangeLvUp = "change_LvUp",
+	EStateChangeExpUp = "change_ExpUp",
+	EStateChangeLock1 = "change_lock_1",
+	EStateChangeLock2 = "change_lock_2",
+	ETipWndSmall = "window_S",
+	ETipWndMiddle = "window_M",
+	ETipWndBig = "window_L",
+	EBanHeavy = "Click_special_1",
+	EBanLight = "Click_special_1",
+	EItem_reward= "item_reward",
+	EItem_Get1= "item_get_1",
+	EItem_Get2= "item_get_2",
+	EItem_Gold= "item_goldMove",
+	EText_typing= "text_typing",
+	EDragEnd= "select",
+	ESpecialtyStore_open= "SpecialtyStore_open",
+	ESpecialtyStore_switch= "SpecialtyStore_switch",
+	EDailyDungeon_switch1= "DailyDungeon_switch1",
+	EDailyDungeon_select= "DailyDungeon_select",
+	EDailyDungeon_switch2= "DailyDungeon_switch2",
+	ERewarded= "rewarded",
+	EtagComplete= "tag_complete",
+	EEat_Snack= "Eat_snack",
+	ELevel_Up1= "Level_up_1",
+	ELevel_Up2= "Level_up_2",
+	EPlane= "plane",
+	EStar_Up= "Star_up",
+	ETalent_Up= "Talent_up",
+	Mission_Light_001= "Mission_Light_001",
+	Mission_Light_002= "Mission_Light_002",
+	Mission_LightFly= "Mission_LightFly",
+	Talent_Choose1= "Talent_Choose1",
+	Talent_Choose2= "Talent_Choose2",
+	Character_StarUp= "Character_StarUp",
+	Skin_get="skin_get",
+	HuaZhao_1="huazhao_1",
+	HuaZhao_2="huazhao_2",
+	HuaZhao_3="huazhao_3",
+	HuaZhao_donghua1="huazhao_donghua1",
+	HuaZhao_donghua2="huazhao_donghua2",
+	HuaZhao_puzzle="huazhao_puzzle",
+	EClimb_click_001="climb_click-001",
+	EClimb_click_002="climb_click-002",
+	EClimb_click_003="climb_click-003",
+	EClimb_click_004="climb_click-004",
+	EClimb_enter="climb_enter",
+	EHandleAttract1 = "handle_attract_1",
+	LevelrewardItem_zhong = "Levelreward_item_zhong",
+	LevelrewardItem_liang = "Levelreward_item_liang",
+	LevelrewardItem_you = "Levelreward_item_you",
+	Equip_levelup = "equip_levelup",
+	Equip_starup = "equip_starup",
+	Equip_strengthen = "equip_strengthen",
+	Unlocktips = "Unlocktips",
+	Dispatch_1 = "dispatch_1",
+	Character_Sz = "Character_Sz",
+}
+
+AudioHelper={
+	
+}
+
+function AudioHelper.PlayUISFX(eAudoDefine)
+	local path=Path.audio_PATH.."newUI/"..eAudoDefine..".mp3";
+	AudioMgr.Singleton:PlayUISFX(path);
+end 
+
+
+return AudioHelper

@@ -44292,6 +44292,655 @@
       }
     ]
   },
+  "803120031": {
+    "id": "803120031",
+    "tab": "period",
+    "type": "803",
+    "NameLan": "missionslan_PassesTask_namelan_803120031",
+    "NameLanText": "累计消耗行动力600",
+    "rewards": [
+      {
+        "itemId": "19",
+        "count": 1000
+      }
+    ],
+    "pageSkip": "945001",
+    "skipTip": "",
+    "group": 119,
+    "condition1": [
+      {
+        "ConditionType": 182,
+        "ElementID": "5300",
+        "ElementID2": "",
+        "Count": 600,
+        "ElementIds": [
+          "5300"
+        ]
+      }
+    ]
+  },
+  "803120032": {
+    "id": "803120032",
+    "tab": "period",
+    "type": "803",
+    "NameLan": "missionslan_PassesTask_namelan_803120032",
+    "NameLanText": "累计消耗行动力1500",
+    "rewards": [
+      {
+        "itemId": "19",
+        "count": 1000
+      }
+    ],
+    "pageSkip": "945001",
+    "skipTip": "",
+    "group": 119,
+    "condition1": [
+      {
+        "ConditionType": 182,
+        "ElementID": "5300",
+        "ElementID2": "",
+        "Count": 1500,
+        "ElementIds": [
+          "5300"
+        ]
+      }
+    ]
+  },
+  "803120033": {
+    "id": "803120033",
+    "tab": "period",
+    "type": "803",
+    "NameLan": "missionslan_PassesTask_namelan_803120033",
+    "NameLanText": "累计消耗行动力1800",
+    "rewards": [
+      {
+        "itemId": "19",
+        "count": 1000
+      }
+    ],
+    "pageSkip": "945001",
+    "skipTip": "",
+    "group": 119,
+    "condition1": [
+      {
+        "ConditionType": 182,
+        "ElementID": "5300",
+        "ElementID2": "",
+        "Count": 1800,
+        "ElementIds": [
+          "5300"
+        ]
+      }
+    ]
+  },
+  "803120034": {
+    "id": "803120034",
+    "tab": "period",
+    "type": "803",
+    "NameLan": "missionslan_PassesTask_namelan_803119036",
+    "NameLanText": "完成【无稽妄语】中的所有剧情",
+    "rewards": [
+      {
+        "itemId": "19",
+        "count": 2000
+      }
+    ],
+    "pageSkip": "48001",
+    "skipTip": "",
+    "group": 118,
+    "condition1": [
+      {
+        "ConditionType": 3,
+        "ElementID": "E053008",
+        "ElementID2": "",
+        "Count": 1,
+        "ElementIds": [
+          "E053008"
+        ]
+      }
+    ]
+  },
+  "803120035": {
+    "id": "803120035",
+    "tab": "period",
+    "type": "803",
+    "NameLan": "missionslan_PassesTask_namelan_803120035",
+    "NameLanText": "在榑桑遗境中累计进行20次战斗",
+    "rewards": [
+      {
+        "itemId": "19",
+        "count": 1000
+      }
+    ],
+    "pageSkip": "945001",
+    "skipTip": "",
+    "group": 119,
+    "condition1": [
+      {
+        "ConditionType": 191,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 20,
+        "ElementIds": []
+      }
+    ]
+  },
+  "803120036": {
+    "id": "803120036",
+    "tab": "period",
+    "type": "803",
+    "NameLan": "missionslan_PassesTask_namelan_803120036",
+    "NameLanText": "在榑桑遗境中累计进行40次战斗",
+    "rewards": [
+      {
+        "itemId": "19",
+        "count": 1000
+      }
+    ],
+    "pageSkip": "945001",
+    "skipTip": "",
+    "group": 119,
+    "condition1": [
+      {
+        "ConditionType": 191,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 40,
+        "ElementIds": []
+      }
+    ]
+  },
+  "803120037": {
+    "id": "803120037",
+    "tab": "period",
+    "type": "803",
+    "NameLan": "missionslan_PassesTask_namelan_803120037",
+    "NameLanText": "在榑桑遗境中累计进行60次战斗",
+    "rewards": [
+      {
+        "itemId": "19",
+        "count": 1000
+      }
+    ],
+    "pageSkip": "945001",
+    "skipTip": "",
+    "group": 119,
+    "condition1": [
+      {
+        "ConditionType": 191,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 60,
+        "ElementIds": []
+      }
+    ]
+  },
+  "803120038": {
+    "id": "803120038",
+    "tab": "period",
+    "type": "803",
+    "NameLan": "missionslan_PassesTask_namelan_803120038",
+    "NameLanText": "累计进行30小时派遣",
+    "rewards": [
+      {
+        "itemId": "19",
+        "count": 1000
+      }
+    ],
+    "pageSkip": "945001",
+    "skipTip": "",
+    "group": 119,
+    "condition1": [
+      {
+        "ConditionType": 187,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 30,
+        "ElementIds": []
+      }
+    ]
+  },
+  "803120039": {
+    "id": "803120039",
+    "tab": "period",
+    "type": "803",
+    "NameLan": "missionslan_PassesTask_namelan_803120039",
+    "NameLanText": "累计进行60小时派遣",
+    "rewards": [
+      {
+        "itemId": "19",
+        "count": 1000
+      }
+    ],
+    "pageSkip": "945001",
+    "skipTip": "",
+    "group": 119,
+    "condition1": [
+      {
+        "ConditionType": 187,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 60,
+        "ElementIds": []
+      }
+    ]
+  },
+  "803120040": {
+    "id": "803120040",
+    "tab": "period",
+    "type": "803",
+    "NameLan": "missionslan_PassesTask_namelan_803120040",
+    "NameLanText": "累计进行90小时派遣",
+    "rewards": [
+      {
+        "itemId": "19",
+        "count": 2000
+      }
+    ],
+    "pageSkip": "945001",
+    "skipTip": "",
+    "group": 119,
+    "condition1": [
+      {
+        "ConditionType": 187,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 90,
+        "ElementIds": []
+      }
+    ]
+  },
+  "803120041": {
+    "id": "803120041",
+    "tab": "period",
+    "type": "803",
+    "NameLan": "missionslan_PassesTask_namelan_803120041",
+    "NameLanText": "累计参与25次派遣",
+    "rewards": [
+      {
+        "itemId": "19",
+        "count": 2000
+      }
+    ],
+    "pageSkip": "945001",
+    "skipTip": "",
+    "group": 119,
+    "condition1": [
+      {
+        "ConditionType": 174,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 25,
+        "ElementIds": []
+      }
+    ]
+  },
+  "803120042": {
+    "id": "803120042",
+    "tab": "period",
+    "type": "803",
+    "NameLan": "missionslan_PassesTask_namelan_803120042",
+    "NameLanText": "参与5次冲突讨伐",
+    "rewards": [
+      {
+        "itemId": "19",
+        "count": 3000
+      }
+    ],
+    "pageSkip": "945001",
+    "skipTip": "",
+    "group": 119,
+    "condition1": [
+      {
+        "ConditionType": 176,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 5,
+        "ElementIds": []
+      }
+    ]
+  },
+  "803120043": {
+    "id": "803120043",
+    "tab": "period",
+    "type": "803",
+    "NameLan": "missionslan_PassesTask_namelan_803120043",
+    "NameLanText": "在聚沙成塔升级5次",
+    "rewards": [
+      {
+        "itemId": "19",
+        "count": 2000
+      }
+    ],
+    "pageSkip": "945017",
+    "skipTip": "",
+    "group": 119,
+    "condition1": [
+      {
+        "ConditionType": 171,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 5,
+        "ElementIds": []
+      }
+    ]
+  },
+  "803120044": {
+    "id": "803120044",
+    "tab": "period",
+    "type": "803",
+    "NameLan": "missionslan_PassesTask_namelan_803120044",
+    "NameLanText": "完成奇遇事件15次",
+    "rewards": [
+      {
+        "itemId": "19",
+        "count": 2000
+      }
+    ],
+    "pageSkip": "945001",
+    "skipTip": "",
+    "group": 119,
+    "condition1": [
+      {
+        "ConditionType": 188,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 15,
+        "ElementIds": []
+      }
+    ]
+  },
+  "803120045": {
+    "id": "803120045",
+    "tab": "period",
+    "type": "803",
+    "NameLan": "missionslan_PassesTask_namelan_803120045",
+    "NameLanText": "累计获取砖块50000个",
+    "rewards": [
+      {
+        "itemId": "19",
+        "count": 3000
+      }
+    ],
+    "pageSkip": "945001",
+    "skipTip": "",
+    "group": 119,
+    "condition1": [
+      {
+        "ConditionType": 190,
+        "ElementID": "5301",
+        "ElementID2": "",
+        "Count": 50000,
+        "ElementIds": [
+          "5301"
+        ]
+      }
+    ]
+  },
+  "803120046": {
+    "id": "803120046",
+    "tab": "period",
+    "type": "803",
+    "NameLan": "missionslan_PassesTask_namelan_803120046",
+    "NameLanText": "累计获取木板50000个",
+    "rewards": [
+      {
+        "itemId": "19",
+        "count": 3000
+      }
+    ],
+    "pageSkip": "945001",
+    "skipTip": "",
+    "group": 119,
+    "condition1": [
+      {
+        "ConditionType": 190,
+        "ElementID": "5302",
+        "ElementID2": "",
+        "Count": 50000,
+        "ElementIds": [
+          "5302"
+        ]
+      }
+    ]
+  },
+  "803120047": {
+    "id": "803120047",
+    "tab": "period",
+    "type": "803",
+    "NameLan": "missionslan_PassesTask_namelan_803120047",
+    "NameLanText": "累计获取芝草露华50000个",
+    "rewards": [
+      {
+        "itemId": "19",
+        "count": 3000
+      }
+    ],
+    "pageSkip": "945001",
+    "skipTip": "",
+    "group": 119,
+    "condition1": [
+      {
+        "ConditionType": 190,
+        "ElementID": "5303",
+        "ElementID2": "",
+        "Count": 50000,
+        "ElementIds": [
+          "5303"
+        ]
+      }
+    ]
+  },
+  "803120048": {
+    "id": "803120048",
+    "tab": "period",
+    "type": "801",
+    "NameLan": "missionslan_PassesTask_namelan_803120048",
+    "NameLanText": "参与5次设施建造",
+    "rewards": [
+      {
+        "itemId": "19",
+        "count": 2000
+      }
+    ],
+    "pageSkip": "945001",
+    "skipTip": "",
+    "group": 119,
+    "condition1": [
+      {
+        "ConditionType": 177,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 5,
+        "ElementIds": []
+      }
+    ]
+  },
+  "803120049": {
+    "id": "803120049",
+    "tab": "period",
+    "type": "803",
+    "NameLan": "missionslan_PassesTask_namelan_803120049",
+    "NameLanText": "参与10次设施建造",
+    "rewards": [
+      {
+        "itemId": "19",
+        "count": 2000
+      }
+    ],
+    "pageSkip": "945001",
+    "skipTip": "",
+    "group": 119,
+    "condition1": [
+      {
+        "ConditionType": 177,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 10,
+        "ElementIds": []
+      }
+    ]
+  },
+  "803120050": {
+    "id": "803120050",
+    "tab": "period",
+    "type": "803",
+    "NameLan": "missionslan_PassesTask_namelan_803120050",
+    "NameLanText": "参与15次设施建造",
+    "rewards": [
+      {
+        "itemId": "19",
+        "count": 2000
+      }
+    ],
+    "pageSkip": "945001",
+    "skipTip": "",
+    "group": 119,
+    "condition1": [
+      {
+        "ConditionType": 177,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 15,
+        "ElementIds": []
+      }
+    ]
+  },
+  "803120051": {
+    "id": "803120051",
+    "tab": "period",
+    "type": "803",
+    "NameLan": "missionslan_PassesTask_namelan_803120051",
+    "NameLanText": "挑战1次地土重现",
+    "rewards": [
+      {
+        "itemId": "19",
+        "count": 3000
+      }
+    ],
+    "pageSkip": "945001",
+    "skipTip": "",
+    "group": 119,
+    "condition1": [
+      {
+        "ConditionType": 156,
+        "ElementID": "S1B04",
+        "ElementID2": "",
+        "Count": 1,
+        "ElementIds": [
+          "S1B04"
+        ]
+      }
+    ]
+  },
+  "803120052": {
+    "id": "803120052",
+    "tab": "period",
+    "type": "803",
+    "NameLan": "missionslan_PassesTask_namelan_803120052",
+    "NameLanText": "挑战1次恶佞莲鼓重现",
+    "rewards": [
+      {
+        "itemId": "19",
+        "count": 3000
+      }
+    ],
+    "pageSkip": "945001",
+    "skipTip": "",
+    "group": 119,
+    "condition1": [
+      {
+        "ConditionType": 156,
+        "ElementID": "S1B05",
+        "ElementID2": "",
+        "Count": 1,
+        "ElementIds": [
+          "S1B05"
+        ]
+      }
+    ]
+  },
+  "803120053": {
+    "id": "803120053",
+    "tab": "period",
+    "type": "803",
+    "NameLan": "missionslan_PassesTask_namelan_803120053",
+    "NameLanText": "挑战1次寄蛊傀重现",
+    "rewards": [
+      {
+        "itemId": "19",
+        "count": 3000
+      }
+    ],
+    "pageSkip": "945001",
+    "skipTip": "",
+    "group": 119,
+    "condition1": [
+      {
+        "ConditionType": 156,
+        "ElementID": "S1B06",
+        "ElementID2": "",
+        "Count": 1,
+        "ElementIds": [
+          "S1B06"
+        ]
+      }
+    ]
+  },
+  "803120054": {
+    "id": "803120054",
+    "tab": "period",
+    "type": "803",
+    "NameLan": "missionslan_PassesTask_namelan_803120054",
+    "NameLanText": "完成试炼·墨华谱·石榴",
+    "rewards": [
+      {
+        "itemId": "19",
+        "count": 3000
+      }
+    ],
+    "pageSkip": "3070",
+    "skipTip": "",
+    "group": 119,
+    "condition1": [
+      {
+        "ConditionType": 1,
+        "ElementID": "BT208705",
+        "ElementID2": "",
+        "Count": 1,
+        "ElementIds": [
+          "BT208705"
+        ]
+      }
+    ]
+  },
+  "803120055": {
+    "id": "803120055",
+    "tab": "period",
+    "type": "803",
+    "NameLan": "missionslan_PassesTask_namelan_803120055",
+    "NameLanText": "完成试炼·墨华谱·蒲松",
+    "rewards": [
+      {
+        "itemId": "19",
+        "count": 3000
+      }
+    ],
+    "pageSkip": "3070",
+    "skipTip": "",
+    "group": 119,
+    "condition1": [
+      {
+        "ConditionType": 1,
+        "ElementID": "BT208805",
+        "ElementID2": "",
+        "Count": 1,
+        "ElementIds": [
+          "BT208805"
+        ]
+      }
+    ]
+  },
   "803209001": {
     "id": "803209001",
     "tab": "period",
@@ -75674,6 +76323,248 @@
       }
     ]
   },
+  "S1T20412": {
+    "id": "S1T20412",
+    "tab": "seasonal",
+    "type": "S204",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T20412",
+    "NameLanText": "1档奖励",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 42,
+        "ElementID": "5307",
+        "ElementID2": "",
+        "Count": 200,
+        "ElementIds": [
+          "5307"
+        ]
+      }
+    ]
+  },
+  "S1T20413": {
+    "id": "S1T20413",
+    "tab": "seasonal",
+    "type": "S204",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T20413",
+    "NameLanText": "2档奖励",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 42,
+        "ElementID": "5307",
+        "ElementID2": "",
+        "Count": 300,
+        "ElementIds": [
+          "5307"
+        ]
+      }
+    ]
+  },
+  "S1T20414": {
+    "id": "S1T20414",
+    "tab": "seasonal",
+    "type": "S204",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T20414",
+    "NameLanText": "3档奖励",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 42,
+        "ElementID": "5307",
+        "ElementID2": "",
+        "Count": 400,
+        "ElementIds": [
+          "5307"
+        ]
+      }
+    ]
+  },
+  "S1T20415": {
+    "id": "S1T20415",
+    "tab": "seasonal",
+    "type": "S204",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T20415",
+    "NameLanText": "4档奖励",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 42,
+        "ElementID": "5307",
+        "ElementID2": "",
+        "Count": 500,
+        "ElementIds": [
+          "5307"
+        ]
+      }
+    ]
+  },
+  "S1T20416": {
+    "id": "S1T20416",
+    "tab": "seasonal",
+    "type": "S204",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T20416",
+    "NameLanText": "5档奖励",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 42,
+        "ElementID": "5307",
+        "ElementID2": "",
+        "Count": 600,
+        "ElementIds": [
+          "5307"
+        ]
+      }
+    ]
+  },
+  "S1T20417": {
+    "id": "S1T20417",
+    "tab": "seasonal",
+    "type": "S204",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T20417",
+    "NameLanText": "6档奖励",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 42,
+        "ElementID": "5307",
+        "ElementID2": "",
+        "Count": 700,
+        "ElementIds": [
+          "5307"
+        ]
+      }
+    ]
+  },
+  "S1T20418": {
+    "id": "S1T20418",
+    "tab": "seasonal",
+    "type": "S204",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T20418",
+    "NameLanText": "7档奖励",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 42,
+        "ElementID": "5307",
+        "ElementID2": "",
+        "Count": 800,
+        "ElementIds": [
+          "5307"
+        ]
+      }
+    ]
+  },
+  "S1T20419": {
+    "id": "S1T20419",
+    "tab": "seasonal",
+    "type": "S204",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T20419",
+    "NameLanText": "8档奖励",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 42,
+        "ElementID": "5307",
+        "ElementID2": "",
+        "Count": 900,
+        "ElementIds": [
+          "5307"
+        ]
+      }
+    ]
+  },
+  "S1T20420": {
+    "id": "S1T20420",
+    "tab": "seasonal",
+    "type": "S204",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T20420",
+    "NameLanText": "9档奖励",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 42,
+        "ElementID": "5307",
+        "ElementID2": "",
+        "Count": 1000,
+        "ElementIds": [
+          "5307"
+        ]
+      }
+    ]
+  },
+  "S1T20421": {
+    "id": "S1T20421",
+    "tab": "seasonal",
+    "type": "S204",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T20421",
+    "NameLanText": "10档奖励",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 42,
+        "ElementID": "5307",
+        "ElementID2": "",
+        "Count": 1100,
+        "ElementIds": [
+          "5307"
+        ]
+      }
+    ]
+  },
+  "S1T20422": {
+    "id": "S1T20422",
+    "tab": "seasonal",
+    "type": "S204",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T20422",
+    "NameLanText": "11档奖励",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 42,
+        "ElementID": "5307",
+        "ElementID2": "",
+        "Count": 1200,
+        "ElementIds": [
+          "5307"
+        ]
+      }
+    ]
+  },
   "S1T30101": {
     "id": "S1T30101",
     "tab": "seasonal",
@@ -76000,6 +76891,336 @@
         "Count": 120000000,
         "ElementIds": [
           "S1B03"
+        ]
+      }
+    ]
+  },
+  "S1T30131": {
+    "id": "S1T30131",
+    "tab": "seasonal",
+    "type": "S305",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T30131",
+    "NameLanText": "终极挑战 一",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 160,
+        "ElementID": "S1B04",
+        "ElementID2": "",
+        "Count": 6000000,
+        "ElementIds": [
+          "S1B04"
+        ]
+      }
+    ]
+  },
+  "S1T30132": {
+    "id": "S1T30132",
+    "tab": "seasonal",
+    "type": "S305",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T30132",
+    "NameLanText": "终极挑战 二",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 160,
+        "ElementID": "S1B04",
+        "ElementID2": "",
+        "Count": 12000000,
+        "ElementIds": [
+          "S1B04"
+        ]
+      }
+    ]
+  },
+  "S1T30133": {
+    "id": "S1T30133",
+    "tab": "seasonal",
+    "type": "S305",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T30133",
+    "NameLanText": "终极挑战 三",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 160,
+        "ElementID": "S1B04",
+        "ElementID2": "",
+        "Count": 30000000,
+        "ElementIds": [
+          "S1B04"
+        ]
+      }
+    ]
+  },
+  "S1T30134": {
+    "id": "S1T30134",
+    "tab": "seasonal",
+    "type": "S305",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T30134",
+    "NameLanText": "终极挑战 四",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 160,
+        "ElementID": "S1B04",
+        "ElementID2": "",
+        "Count": 60000000,
+        "ElementIds": [
+          "S1B04"
+        ]
+      }
+    ]
+  },
+  "S1T30135": {
+    "id": "S1T30135",
+    "tab": "seasonal",
+    "type": "S305",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T30135",
+    "NameLanText": "终极挑战 五",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 160,
+        "ElementID": "S1B04",
+        "ElementID2": "",
+        "Count": 120000000,
+        "ElementIds": [
+          "S1B04"
+        ]
+      }
+    ]
+  },
+  "S1T30141": {
+    "id": "S1T30141",
+    "tab": "seasonal",
+    "type": "S305",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T30141",
+    "NameLanText": "终极挑战 一",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 160,
+        "ElementID": "S1B05",
+        "ElementID2": "",
+        "Count": 6000000,
+        "ElementIds": [
+          "S1B05"
+        ]
+      }
+    ]
+  },
+  "S1T30142": {
+    "id": "S1T30142",
+    "tab": "seasonal",
+    "type": "S305",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T30142",
+    "NameLanText": "终极挑战 二",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 160,
+        "ElementID": "S1B05",
+        "ElementID2": "",
+        "Count": 12000000,
+        "ElementIds": [
+          "S1B05"
+        ]
+      }
+    ]
+  },
+  "S1T30143": {
+    "id": "S1T30143",
+    "tab": "seasonal",
+    "type": "S305",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T30143",
+    "NameLanText": "终极挑战 三",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 160,
+        "ElementID": "S1B05",
+        "ElementID2": "",
+        "Count": 30000000,
+        "ElementIds": [
+          "S1B05"
+        ]
+      }
+    ]
+  },
+  "S1T30144": {
+    "id": "S1T30144",
+    "tab": "seasonal",
+    "type": "S305",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T30144",
+    "NameLanText": "终极挑战 四",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 160,
+        "ElementID": "S1B05",
+        "ElementID2": "",
+        "Count": 60000000,
+        "ElementIds": [
+          "S1B05"
+        ]
+      }
+    ]
+  },
+  "S1T30145": {
+    "id": "S1T30145",
+    "tab": "seasonal",
+    "type": "S305",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T30145",
+    "NameLanText": "终极挑战 五",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 160,
+        "ElementID": "S1B05",
+        "ElementID2": "",
+        "Count": 120000000,
+        "ElementIds": [
+          "S1B05"
+        ]
+      }
+    ]
+  },
+  "S1T30151": {
+    "id": "S1T30151",
+    "tab": "seasonal",
+    "type": "S305",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T30151",
+    "NameLanText": "终极挑战 一",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 160,
+        "ElementID": "S1B06",
+        "ElementID2": "",
+        "Count": 6000000,
+        "ElementIds": [
+          "S1B06"
+        ]
+      }
+    ]
+  },
+  "S1T30152": {
+    "id": "S1T30152",
+    "tab": "seasonal",
+    "type": "S305",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T30152",
+    "NameLanText": "终极挑战 二",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 160,
+        "ElementID": "S1B06",
+        "ElementID2": "",
+        "Count": 12000000,
+        "ElementIds": [
+          "S1B06"
+        ]
+      }
+    ]
+  },
+  "S1T30153": {
+    "id": "S1T30153",
+    "tab": "seasonal",
+    "type": "S305",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T30153",
+    "NameLanText": "终极挑战 三",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 160,
+        "ElementID": "S1B06",
+        "ElementID2": "",
+        "Count": 30000000,
+        "ElementIds": [
+          "S1B06"
+        ]
+      }
+    ]
+  },
+  "S1T30154": {
+    "id": "S1T30154",
+    "tab": "seasonal",
+    "type": "S305",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T30154",
+    "NameLanText": "终极挑战 四",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 160,
+        "ElementID": "S1B06",
+        "ElementID2": "",
+        "Count": 60000000,
+        "ElementIds": [
+          "S1B06"
+        ]
+      }
+    ]
+  },
+  "S1T30155": {
+    "id": "S1T30155",
+    "tab": "seasonal",
+    "type": "S305",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T30155",
+    "NameLanText": "终极挑战 五",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 160,
+        "ElementID": "S1B06",
+        "ElementID2": "",
+        "Count": 120000000,
+        "ElementIds": [
+          "S1B06"
         ]
       }
     ]
@@ -76335,6 +77556,341 @@
         "Count": 110,
         "ElementIds": [
           "S1B03"
+        ]
+      }
+    ]
+  },
+  "S1T30716": {
+    "id": "S1T30716",
+    "tab": "seasonal",
+    "type": "S899",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T30716",
+    "NameLanText": "讨伐冲突",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 193,
+        "ElementID": "S1B04",
+        "ElementID2": "",
+        "Count": 100,
+        "ElementIds": [
+          "S1B04"
+        ]
+      }
+    ]
+  },
+  "S1T30717": {
+    "id": "S1T30717",
+    "tab": "seasonal",
+    "type": "S998",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T30717",
+    "NameLanText": "全服贡献值任务",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 193,
+        "ElementID": "S1B04",
+        "ElementID2": "",
+        "Count": 80,
+        "ElementIds": [
+          "S1B04"
+        ]
+      }
+    ]
+  },
+  "S1T30718": {
+    "id": "S1T30718",
+    "tab": "seasonal",
+    "type": "S998",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T30718",
+    "NameLanText": "全服贡献值任务",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 193,
+        "ElementID": "S1B04",
+        "ElementID2": "",
+        "Count": 90,
+        "ElementIds": [
+          "S1B04"
+        ]
+      }
+    ]
+  },
+  "S1T30719": {
+    "id": "S1T30719",
+    "tab": "seasonal",
+    "type": "S998",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T30719",
+    "NameLanText": "全服贡献值任务",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 193,
+        "ElementID": "S1B04",
+        "ElementID2": "",
+        "Count": 100,
+        "ElementIds": [
+          "S1B04"
+        ]
+      }
+    ]
+  },
+  "S1T30720": {
+    "id": "S1T30720",
+    "tab": "seasonal",
+    "type": "S998",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T30720",
+    "NameLanText": "全服贡献值任务",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 193,
+        "ElementID": "S1B04",
+        "ElementID2": "",
+        "Count": 110,
+        "ElementIds": [
+          "S1B04"
+        ]
+      }
+    ]
+  },
+  "S1T30721": {
+    "id": "S1T30721",
+    "tab": "seasonal",
+    "type": "S899",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T30721",
+    "NameLanText": "清除障碍",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 185,
+        "ElementID": "0,1",
+        "ElementID2": "",
+        "Count": 50000000,
+        "ElementIds": [
+          "0",
+          "1"
+        ]
+      }
+    ]
+  },
+  "S1T30722": {
+    "id": "S1T30722",
+    "tab": "seasonal",
+    "type": "S998",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T30722",
+    "NameLanText": "全服贡献值任务",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 185,
+        "ElementID": "0,1",
+        "ElementID2": "",
+        "Count": 40000000,
+        "ElementIds": [
+          "0",
+          "1"
+        ]
+      }
+    ]
+  },
+  "S1T30723": {
+    "id": "S1T30723",
+    "tab": "seasonal",
+    "type": "S998",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T30723",
+    "NameLanText": "全服贡献值任务",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 185,
+        "ElementID": "0,1",
+        "ElementID2": "",
+        "Count": 45000000,
+        "ElementIds": [
+          "0",
+          "1"
+        ]
+      }
+    ]
+  },
+  "S1T30724": {
+    "id": "S1T30724",
+    "tab": "seasonal",
+    "type": "S998",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T30724",
+    "NameLanText": "全服贡献值任务",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 185,
+        "ElementID": "0,1",
+        "ElementID2": "",
+        "Count": 50000000,
+        "ElementIds": [
+          "0",
+          "1"
+        ]
+      }
+    ]
+  },
+  "S1T30725": {
+    "id": "S1T30725",
+    "tab": "seasonal",
+    "type": "S998",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T30725",
+    "NameLanText": "全服贡献值任务",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 185,
+        "ElementID": "0,1",
+        "ElementID2": "",
+        "Count": 55000000,
+        "ElementIds": [
+          "0",
+          "1"
+        ]
+      }
+    ]
+  },
+  "S1T30726": {
+    "id": "S1T30726",
+    "tab": "seasonal",
+    "type": "S899",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T30726",
+    "NameLanText": "讨伐冲突",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 193,
+        "ElementID": "S1B06",
+        "ElementID2": "",
+        "Count": 100,
+        "ElementIds": [
+          "S1B06"
+        ]
+      }
+    ]
+  },
+  "S1T30727": {
+    "id": "S1T30727",
+    "tab": "seasonal",
+    "type": "S998",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T30727",
+    "NameLanText": "全服贡献值任务",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 193,
+        "ElementID": "S1B06",
+        "ElementID2": "",
+        "Count": 80,
+        "ElementIds": [
+          "S1B06"
+        ]
+      }
+    ]
+  },
+  "S1T30728": {
+    "id": "S1T30728",
+    "tab": "seasonal",
+    "type": "S998",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T30728",
+    "NameLanText": "全服贡献值任务",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 193,
+        "ElementID": "S1B06",
+        "ElementID2": "",
+        "Count": 90,
+        "ElementIds": [
+          "S1B06"
+        ]
+      }
+    ]
+  },
+  "S1T30729": {
+    "id": "S1T30729",
+    "tab": "seasonal",
+    "type": "S998",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T30729",
+    "NameLanText": "全服贡献值任务",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 193,
+        "ElementID": "S1B06",
+        "ElementID2": "",
+        "Count": 100,
+        "ElementIds": [
+          "S1B06"
+        ]
+      }
+    ]
+  },
+  "S1T30730": {
+    "id": "S1T30730",
+    "tab": "seasonal",
+    "type": "S998",
+    "NameLan": "activeLan_SeasonalTask_nameLan_S1T30730",
+    "NameLanText": "全服贡献值任务",
+    "rewards": null,
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 193,
+        "ElementID": "S1B06",
+        "ElementID2": "",
+        "Count": 110,
+        "ElementIds": [
+          "S1B06"
         ]
       }
     ]

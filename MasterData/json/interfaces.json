@@ -12870,7 +12870,7 @@
       "5302",
       "5303",
       "5304",
-      "5300"
+      "73"
     ],
     "pageInfoType": false,
     "pageInfo": [],
@@ -13527,7 +13527,8 @@
     "tab": "",
     "scene": "",
     "resourceTitle": [
-      "5306"
+      "5306",
+      "5312"
     ],
     "pageInfoType": false,
     "pageInfo": [],
@@ -13557,6 +13558,69 @@
     "OpenCondition": [],
     "GotoLan": "interfaceLan_interface_gotoLan_47002",
     "GotoLanText": "经以山海剧情界面",
+    "firstPreload": 0,
+    "childPreload": [],
+    "keepOut": 0
+  },
+  {
+    "id": "48001",
+    "NameLan": "interfaceLan_interface_nameLan_48001",
+    "NameLanText": "万象纪事",
+    "screen": "YLWXNovelPanel",
+    "tab": "",
+    "scene": "",
+    "resourceTitle": [],
+    "pageInfoType": false,
+    "pageInfo": [],
+    "hideBack": 0,
+    "firstHelps": [],
+    "returnHome": 0,
+    "OpenCondition": [],
+    "GotoLan": "interfaceLan_interface_gotoLan_48001",
+    "GotoLanText": "游灵万象剧情界面",
+    "firstPreload": 0,
+    "childPreload": [],
+    "keepOut": 0
+  },
+  {
+    "id": "48002",
+    "NameLan": "interfaceLan_interface_nameLan_48002",
+    "NameLanText": "游灵万象",
+    "screen": "SeasonSLGShopPanel",
+    "tab": "",
+    "scene": "",
+    "resourceTitle": [
+      "5306",
+      "5312"
+    ],
+    "pageInfoType": false,
+    "pageInfo": [],
+    "hideBack": 0,
+    "firstHelps": [],
+    "returnHome": 0,
+    "OpenCondition": [],
+    "GotoLan": "interfaceLan_interface_gotoLan_48002",
+    "GotoLanText": "游灵万象商店",
+    "firstPreload": 0,
+    "childPreload": [],
+    "keepOut": 0
+  },
+  {
+    "id": "48003",
+    "NameLan": "interfaceLan_interface_nameLan_48003",
+    "screen": "SeasonSLG1Main1ViewModel",
+    "tab": "1",
+    "scene": "",
+    "resourceTitle": [
+      "5300"
+    ],
+    "pageInfoType": false,
+    "pageInfo": [],
+    "hideBack": 0,
+    "firstHelps": [],
+    "returnHome": 1,
+    "OpenCondition": [],
+    "GotoLan": "interfaceLan_interface_gotoLan_48003",
     "firstPreload": 0,
     "childPreload": [],
     "keepOut": 0

@@ -1,0 +1,86 @@
+CrisisContract3DungeonItem = {};
+
+CrisisContract3DungeonItem.__index = CrisisContract3DungeonItem;
+
+local objs = {
+    clickBtn = { path = "Group/Bg", type = "Button" },
+    Indextxt = { path = "Group/Index", type = "Text" },
+    ScoreGo = { path = "Group/Score", type = "GameObject" },
+    Scoretxt = { path = "Group/Score/Text", type = "Text" },
+    NoScoreGo = { path = "Group/Score/NoScore", type = "GameObject" },
+    UnLockGo = { path = "Group/Unlock", type = "GameObject" },
+    UnLockTips = { path = "Group/Unlock/Tips", type = "Text" },
+    SelectGo = { path = "Group/Select", type = "GameObject" },
+    RedGo = { path = "Group/Red", type = "GameObject" },
+    groupImage = { path = "Group", type = "Image" },
+}
+
+function CrisisContract3DungeonItem.New(obj)
+    local self = {};
+    setmetatable(self, CrisisContract3DungeonItem);
+    self.gameObject = obj
+    return self;
+end
+
+function CrisisContract3DungeonItem:Init()
+    UITool.Parse(self.gameObject, self, objs);
+    self.onClickCommand = function()
+        if self.data.callBack ~= nil then
+            self.data.callBack(self.data.index);
+        end
+    end
+    LuaMgr.AddClick(self.clickBtn, self.onClickCommand);
+    SetActive(self.UnLockGo, false)
+    SetActive(self.SelectGo, false)
+end
+
+function CrisisContract3DungeonItem:SetData(pdata)
+    self.data = pdata
+    local plotId = self.data.plotId
+    self.Indextxt.text = tostring(self.data.index)
+    local leftTime = self.data.unlockTime - LuaMgr.Timestamp()
+    local isUnLock = leftTime <= 0
+    if isUnLock then
+        local score = CrisisContract3Mgr.GetCurPlotScore(plotId)
+        self.Scoretxt.text = score
+        SetActive(self.NoScoreGo, score <= 0)
+        SetActive(self.Scoretxt.gameObject, score > 0)
+        SetActive(self.ScoreGo, true)
+        SetActive(self.UnLockGo, false)
+    else
+        SetActive(self.ScoreGo, false)
+        SetActive(self.UnLockGo, true)
+        self.data.addTimer(plotId, {
+            tips = self.UnLockTips,
+            leftTime = leftTime,
+        })
+        self.UnLockTips.text = string.format(LuaMgr.GetLangText("CrisisContract3LevelViewModel_0"), CrisisContract3Mgr.GetLeftTimeStr(leftTime))
+    end
+    SetActive(self.SelectGo, self.data.getChoosePlotId() == plotId)
+    self.groupImage.sprite = LuaMgr.GetSprite("CrisisContract2","ui_hd_eh_gq_0" .. (self.data.index % 6 + 1))
+    SetActive(self.RedGo,RedMgr.Singleton:GetRedStateById(self.data.redId) > 0)
+    
+    SetActive(self.gameObject, true)
+end
+
+function CrisisContract3DungeonItem:Hide()
+    SetActive(self.gameObject, false)
+end
+
+function CrisisContract3DungeonItem:Clear()
+    self.data = nil
+end
+
+function CrisisContract3DungeonItem:Destroy()
+    LuaMgr.DestroyImmediateGO(self.gameObject)
+    if (self.onClickCommand ~= nil) then
+        LuaMgr.RemoveClick(self.clickBtn, self.onClickCommand)
+        self.onClickCommand = nil
+    end
+    self.clickBtn = nil
+    self.Nametxt = nil
+    self.Scoretxt = nil
+    self.UnLockGo = nil
+    self.UnLockTips = nil
+    self.SelectGo = nil
+end 

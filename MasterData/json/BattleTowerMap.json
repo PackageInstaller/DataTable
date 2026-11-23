@@ -6182,5 +6182,151 @@
       "Buff_BT_Lively",
       "Buff_BT_Lively_2"
     ]
+  },
+  "BT2087": {
+    "GroupId": "BT2087",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2087",
+    "GroupnameLanText": "石榴",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2087",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "105",
+        "Buff_BT_Group105_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 200
+      },
+      {
+        "id": "1",
+        "count": 190
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 42,
+    "Second": 1814400,
+    "PrevCond": "BT2004",
+    "Opentime": 0,
+    "RotationUI": "mo5",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": [
+      "Buff_BT_Lively",
+      "Buff_BT_Lively_2"
+    ]
+  },
+  "BT2088": {
+    "GroupId": "BT2088",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2088",
+    "GroupnameLanText": "蒲松",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2088",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "106",
+        "Buff_BT_Group106_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 200
+      },
+      {
+        "id": "1",
+        "count": 190
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 42,
+    "Second": 1814400,
+    "PrevCond": "BT2087",
+    "Opentime": 0,
+    "RotationUI": "mo5",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": [
+      "Buff_BT_Lively",
+      "Buff_BT_Lively_2"
+    ]
   }
 }
