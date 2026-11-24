@@ -1,0 +1,71 @@
+SeasonSLGOverviewTabItem = {};
+
+SeasonSLGOverviewTabItem.__index = SeasonSLGOverviewTabItem;
+
+local objs = {
+    btnClick = { path = "", type = "Button" },
+    redIconListener = { path = "", type = "RedIconListener" },
+    goNormal = { path = "goNormal", type = "GameObject" },
+    goSelected = { path = "goSelected", type = "GameObject" },
+    goDisabled = { path = "goDisabled", type = "GameObject" },
+    txtNormalName = { path = "goNormal/txtName", type = "Text" },
+    txtSelectedName = { path = "goSelected/txtName", type = "Text" },
+    txtDisabledName = { path = "goDisabled/txtName", type = "Text" },
+};
+
+local function SetText(text, value)
+    if text ~= nil then
+        text.text = value or "";
+    end
+end
+
+function SeasonSLGOverviewTabItem.New()
+    local self = {};
+    setmetatable(self, SeasonSLGOverviewTabItem);
+    self.onClick = nil;
+    return self;
+end
+
+function SeasonSLGOverviewTabItem:Init()
+    UITool.Parse(self.gameObject, self, objs);
+    self.onClick = function()
+        if self.data ~= nil and self.data.callBack ~= nil then
+            self.data.callBack(self.data);
+        end
+    end
+    LuaMgr.AddClick(self.btnClick, self.onClick);
+end
+
+function SeasonSLGOverviewTabItem:SetData(pdata)
+    self.data = nil;
+    if pdata ~= nil then
+        self.data = pdata.data;
+    end
+    if self.data == nil then
+        return;
+    end
+    self.redIconListener.RedId = "18006_" .. self.data.name
+    local name = self.data.name;
+    local disabled = self.data.disabled == true;
+    local selected = self.data.selected == true;
+
+    SetText(self.txtNormalName, name);
+    SetText(self.txtSelectedName, name);
+    SetText(self.txtDisabledName, name);
+
+    SetActive(self.goNormal, not selected and not disabled);
+    SetActive(self.goSelected, selected and not disabled);
+    SetActive(self.goDisabled, disabled);
+end
+
+function SeasonSLGOverviewTabItem:Clear()
+    self.data = nil;
+end
+
+function SeasonSLGOverviewTabItem:Destroy()
+    if self.btnClick ~= nil and self.onClick ~= nil then
+        LuaMgr.RemoveClick(self.btnClick, self.onClick);
+    end
+    LuaMgr.DestroyImmediateGO(self.gameObject);
+    self.gameObject = nil;
+end

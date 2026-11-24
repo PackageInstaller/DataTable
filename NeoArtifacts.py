@@ -802,7 +802,9 @@ def ab_dest(ab: dict[str, Any]) -> Path:
     return (ASSETS_DIR / rel) / name
 
 
-def packet_already_split(info: dict[str, Any]) -> bool:
+def packet_already_split(
+    info: dict[str, Any], final_sizes: dict[Path, int] | None = None
+) -> bool:
     dic = info.get("dicAB") or {}
     if not dic:
         return False
@@ -810,8 +812,14 @@ def packet_already_split(info: dict[str, Any]) -> bool:
         dest = ab_dest(ab)
         if not dest.is_file():
             return False
-        if dest.stat().st_size != int(ab["size"]):
-            return False
+        actual = dest.stat().st_size
+        expect = int(ab["size"])
+        if actual == expect:
+            continue
+        # 若该 AB 已被后续增量补丁包覆盖且本地已是最新补丁尺寸，则无需重下旧基础包
+        if final_sizes is not None and final_sizes.get(dest) == actual:
+            continue
+        return False
     return True
 
 
@@ -1938,16 +1946,54 @@ def cmd_download(
     items = collect_download_items(
         cdn, resver, packet_cfg, category, extra, limit, packet_names
     )
-    if not items and category in ("all", "tables") and not extra.get("cfcVersion"):
+    # 增量补丁资源（如 SmallPack=s2856 之上叠加 ResVersion=r1993 -> target=r3137）
+    patch_items: list[dict[str, Any]] = []
+    patch_target_ver = packet_cfg.get("targetVersion")
+    launch_res = str(extra.get("launchResVersion") or "").strip()
+    if category in ("all", "assets") and launch_res and launch_res != resver and not res_version:
+        try:
+            p_cdn, p_ver, patch_doc = discover_res_version(cdns, launch_res, launch_res, False)
+            (ASSETS_DIR / "packet_config_patch.json").write_text(
+                json.dumps(patch_doc, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+            )
+            for p_cfg in patch_doc.get("list") or []:
+                if p_cfg.get("targetVersion"):
+                    patch_target_ver = p_cfg["targetVersion"]
+                for pf in iter_packet_files(p_cfg):
+                    if packet_names and pf.get("name") not in set(packet_names):
+                        continue
+                    patch_items.append(
+                        {
+                            "kind": "packet",
+                            "name": pf["name"],
+                            "url": url_packet(p_cdn, p_ver, pf["name"]),
+                            "dest": PACKETS_DIR / pf["name"],
+                            "md5": pf.get("md5") or "",
+                            "size": int(pf.get("size") or 0),
+                            "meta": pf,
+                        }
+                    )
+            if limit is not None:
+                patch_items = patch_items[:limit]
+            if patch_items:
+                console.print(
+                    f"[green]增量补丁[/] {p_ver}  target={patch_target_ver}  "
+                    f"{len(patch_items)} 个包 / {format_size(sum(int(i.get('size') or 0) for i in patch_items))}"
+                )
+        except Exception as exc:  # noqa: BLE001
+            console.print(f"[yellow]读取增量补丁 {launch_res} 失败（已跳过）[/] {exc}")
+
+    all_items = items + patch_items
+    if not all_items and category in ("all", "tables") and not extra.get("cfcVersion"):
         console.print("[yellow]没有 cfcVersion：数据表 URL 要 HAR / --cfc / 登录后的 ConfigURL[/]")
-    if not items:
+    if not all_items:
         console.print("[red]没有可下载项[/]")
         return 1
 
-    total_bytes = sum(int(i.get("size") or 0) for i in items)
+    total_bytes = sum(int(i.get("size") or 0) for i in all_items)
     console.print(
-        f"{GAME} {resver}  target={packet_cfg.get('targetVersion')}  "
-        f"{len(items)} 个文件 / {format_size(total_bytes)}  cdn={cdn}"
+        f"{GAME} {resver}  target={patch_target_ver}  "
+        f"{len(all_items)} 个文件 / {format_size(total_bytes)}  cdn={cdn}"
     )
 
     stats = {"ok": 0, "skip": 0, "fail": 0}
@@ -1956,7 +2002,14 @@ def cmd_download(
     bytes_lock = threading.Lock()
     cdn_urls_for = lambda item: failover_urls(item["url"], cdn, cdns)
 
-    progress_total = total_bytes if total_bytes else len(items)
+    # 计算基础包 + 增量补丁按顺序叠加后的每个 AB 最终期望尺寸（后写入覆盖先写入）
+    final_ab_sizes: dict[Path, int] = {}
+    for it in all_items:
+        if it["kind"] in ("packet", "fix_packet"):
+            for ab in ((it.get("meta") or {}).get("dicAB") or {}).values():
+                final_ab_sizes[ab_dest(ab)] = int(ab["size"])
+
+    progress_total = total_bytes if total_bytes else len(all_items)
     columns = [
         SpinnerColumn(),
         TextColumn("[progress.description]{task.description}"),
@@ -1973,7 +2026,7 @@ def cmd_download(
         def work(item: dict[str, Any]) -> tuple[str, dict[str, Any], str]:
             note = ""
             if item["kind"] in ("packet", "fix_packet") and not force:
-                if packet_already_split(item.get("meta") or {}):
+                if packet_already_split(item.get("meta") or {}, final_ab_sizes):
                     d, _s = xor_decrypt_packet(item.get("meta") or {})
                     note = f"XOR 解密 {d}" if d else ""
                     return "skip", item, note
@@ -1997,6 +2050,7 @@ def cmd_download(
                 note = "密文缓存"
             return status, item, note
 
+        # 先并发处理基础包，再按顺序叠加增量补丁包，确保新版 AB 覆盖旧版
         with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
             futures = {pool.submit(work, it): it for it in items}
             for fut in as_completed(futures):
@@ -2022,10 +2076,26 @@ def cmd_download(
                     done_bytes += step
                     progress.update(task, completed=min(done_bytes, progress_total))
 
+        for item in patch_items:
+            try:
+                status, item, note = work(item)
+                stats[status] = stats.get(status, 0) + 1
+                if note:
+                    console.print(f"[green]{item['name']}[/] {note}")
+            except Exception as exc:  # noqa: BLE001
+                stats["fail"] += 1
+                errors.append(f"{item['name']}: {exc}")
+                console.print(f"[red]FAIL[/] {item['name']}: {exc}")
+            with bytes_lock:
+                step = int(item.get("size") or 0) if total_bytes else 1
+                done_bytes += step
+                progress.update(task, completed=min(done_bytes, progress_total))
+
     save_state(
         {
             "resVersion": resver,
-            "targetVersion": packet_cfg.get("targetVersion"),
+            "launchResVersion": launch_res or None,
+            "targetVersion": patch_target_ver,
             "cdn": cdn,
             "cfcVersion": extra.get("cfcVersion"),
             "langVersion": extra.get("langVersion"),
